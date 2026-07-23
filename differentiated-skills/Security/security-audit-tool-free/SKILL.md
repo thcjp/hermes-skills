@@ -56,8 +56,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 # 安全审计工具(免费版)
 
 ## 概述
@@ -69,7 +70,7 @@ suggested_price: 99.9
 ### 扫描维度
 
 | 维度 | 检测内容 | 严重等级 |
-|------|----------|----------|
+|---|----|----|
 | 凭据检测 | API Key、Token、命令历史中的密钥、硬编码密码 | CRITICAL |
 | 端口扫描 | 意外开放端口、互联网暴露服务、缺失防火墙规则 | HIGH |
 | 配置验证 | 速率限制、认证配置、默认凭据、CORS策略 | MEDIUM |
@@ -83,7 +84,7 @@ suggested_price: 99.9
 ### 免费版与专业版对比
 
 | 功能 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 扫描维度 | 5个 | 8个(+合规/K8s/云) |
 | 自动修复 | 基础修复 | 智能修复+回滚 |
 | 报告格式 | JSON | HTML/PDF/SARIF |
@@ -113,7 +114,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 安全审计工具(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -121,7 +122,7 @@ suggested_price: 99.9
 ```bash
 # 常见问题
 node （请参考skill目录中的脚本文件）
-
+# ...
 # 示例
 # 审计报告
 # ═══════════════════════════════════════
@@ -139,7 +140,7 @@ node （请参考skill目录中的脚本文件）
 ```bash
 # 完整审计(全面扫描)
 node （请参考skill目录中的脚本文件） --full
-
+# ...
 # 输出JSON报告
 node （请参考skill目录中的脚本文件） --full --json > audit-report.json
 ```
@@ -149,7 +150,7 @@ node （请参考skill目录中的脚本文件） --full --json > audit-report.j
 ```bash
 # 自动修复
 node （请参考skill目录中的脚本文件） --fix
-
+# ...
 # 修复内容:
 # - 设置.env文件权限为600
 # - 创建.gitignore(如缺失)
@@ -162,16 +163,16 @@ node （请参考skill目录中的脚本文件） --fix
 ```bash
 # 只检查凭据泄露
 node （请参考skill目录中的脚本文件） --credentials
-
+# ...
 # 只检查开放端口
 node （请参考skill目录中的脚本文件） --ports
-
+# ...
 # 只检查配置安全
 node （请参考skill目录中的脚本文件） --configs
-
+# ...
 # 只检查文件权限
 node （请参考skill目录中的脚本文件） --permissions
-
+# ...
 # 只检查Docker安全
 node （请参考skill目录中的脚本文件） --docker
 ```
@@ -205,10 +206,10 @@ import json
 import subprocess
 from datetime import datetime
 from pathlib import Path
-
+# ...
 class SecurityAuditor:
     """安全审计工具"""
-
+# ...
     SECRET_PATTERNS = [
         (r"AKIA[0-9A-Z]{16}", "AWS Access Key", "CRITICAL"),
         (r"gh[pousr]_[A-Za-z0-9_]{36}", "GitHub Token", "CRITICAL"),
@@ -219,7 +220,7 @@ class SecurityAuditor:
         (r"secret\s*[:=]\s*['\"][^'\"]{16,}['\"]", "Secret", "HIGH"),
         (r"token\s*[:=]\s*['\"][^'\"]{20,}['\"]", "Token", "HIGH"),
     ]
-
+# ...
     HIGH_RISK_PORTS = {
         6379: "Redis",
         2375: "Docker API",
@@ -229,11 +230,11 @@ class SecurityAuditor:
         9200: "Elasticsearch",
         5601: "Kibana"
     }
-
+# ...
     def __init__(self):
         self.findings = []
         self.audit_time = datetime.now().isoformat()
-
+# ...
     def audit(self, full=False, fix=False, target="."):
         """执行安全审计"""
         if full or not any([full]):
@@ -242,16 +243,16 @@ class SecurityAuditor:
             self._check_configs(target)
             self._check_permissions(target)
             self._check_docker(target)
-
+# ...
         if fix:
             self._auto_fix()
-
+# ...
         return self._generate_report()
-
+# ...
     def _check_credentials(self, target):
         """检查凭据泄露"""
         target_path = Path(target)
-
+# ...
         # 检查.env文件
         env_files = list(target_path.glob(".env*"))
         for env_file in env_files:
@@ -264,7 +265,7 @@ class SecurityAuditor:
                 "file": str(env_file),
                 "fix": "确保.env文件已添加到.gitignore"
             })
-
+# ...
         # 扫描代码中的硬编码凭据
         for filepath in target_path.rglob("*"):
             if filepath.suffix in {".js", ".ts", ".py", ".json", ".yaml", ".yml"}:
@@ -286,7 +287,7 @@ class SecurityAuditor:
                             })
                 except Exception:
                     pass
-
+# ...
     def _check_ports(self):
         """检查开放端口"""
         try:
@@ -305,11 +306,11 @@ class SecurityAuditor:
                         })
         except Exception:
             pass
-
+# ...
     def _check_configs(self, target):
         """检查配置安全"""
         target_path = Path(target)
-
+# ...
         # 检查CORS配置
         for filepath in target_path.rglob("*"):
             if filepath.suffix in {".js", ".ts", ".json", ".yaml"}:
@@ -335,11 +336,11 @@ class SecurityAuditor:
                         })
                 except Exception:
                     pass
-
+# ...
     def _check_permissions(self, target):
         """检查文件权限"""
         target_path = Path(target)
-
+# ...
         sensitive_files = [".env", ".env.local", ".env.production", "id_rsa", "config.json"]
         for filename in sensitive_files:
             filepath = target_path / filename
@@ -354,7 +355,7 @@ class SecurityAuditor:
                         "file": str(filepath),
                         "fix": f"执行: chmod 600 {filename}"
                     })
-
+# ...
     def _check_docker(self, target):
         """检查Docker安全"""
         dockerfile = Path(target) / "Dockerfile"
@@ -376,32 +377,32 @@ class SecurityAuditor:
                     "file": str(dockerfile),
                     "fix": "移除--privileged,使用--cap-add指定具体权限"
                 })
-
+# ...
     def _auto_fix(self):
         """自动修复常见问题"""
         fixes = []
-
+# ...
         # 修复.env权限
         env_file = Path(".env")
         if env_file.exists():
             os.chmod(env_file, 0o600)
             fixes.append("已设置.env文件权限为600")
-
+# ...
         # 创建.gitignore
         gitignore = Path(".gitignore")
         if not gitignore.exists():
             gitignore.write_text(".env\n.env.local\nnode_modules/\ndist/\n")
             fixes.append("已创建.gitignore文件")
-
+# ...
         return fixes
-
+# ...
     def _generate_report(self):
         """生成审计报告"""
         critical = sum(1 for f in self.findings if f["level"] == "CRITICAL")
         high = sum(1 for f in self.findings if f["level"] == "HIGH")
         medium = sum(1 for f in self.findings if f["level"] == "MEDIUM")
         info = sum(1 for f in self.findings if f["level"] == "INFO")
-
+# ...
         return {
             "audit_time": self.audit_time,
             "total_findings": len(self.findings),
@@ -494,7 +495,7 @@ A: 免费版覆盖5个核心维度。专业版增加了合规审计、Kubernetes
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python/Node.js | 运行时 | 必需 | 系统自带 |
 | ss/netstat | 系统工具 | 可选 | 系统自带(端口扫描用) |
 | Docker | 运行时 | 可选 | docker.com(Docker检查用) |
@@ -508,9 +509,8 @@ A: 免费版覆盖5个核心维度。专业版增加了合规审计、Kubernetes
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

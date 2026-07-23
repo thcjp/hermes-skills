@@ -16,11 +16,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # XML转JSON（免费版）
 
 > **把"XML与JSON互转"从手写解析器踩坑压缩到一条命令搞定。双向转换+属性处理+命名空间三件套。**
@@ -45,14 +46,14 @@ Agent会按本工具的模板规则输出：
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | XML转JSON(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```python
 import xmltodict, json
-
+# ...
 def xml_to_json(xml_path: str, json_path: str, attr_prefix: str = '@'):
     """XML转JSON（BadgerFish约定）"""
     with open(xml_path, 'r', encoding='utf-8') as f:
@@ -67,7 +68,7 @@ def xml_to_json(xml_path: str, json_path: str, attr_prefix: str = '@'):
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     return data
-
+# ...
 result = xml_to_json('response.xml', 'response.json')
 print('转换完成：response.xml -> response.json')
 ```
@@ -103,7 +104,7 @@ Agent会按"JSON转XML规则"输出：
 ### 功能1：双向转换约定
 
 | 转换方向 | 约定规则 | 示例 |
-|----------|----------|------|
+|:-----|:-----|:-----|
 | XML属性 → JSON键 | 加 `@` 前缀 | `<a id="1">` → `{"a": {"@id": "1"}}` |
 | XML文本 → JSON键 | 用 `#text` 键 | `<a>hello</a>` → `{"a": {"#text": "hello"}}` |
 | XML子元素 → JSON键 | 直接用标签名 | `<a><b/></a>` → `{"a": {"b": null}}` |
@@ -122,15 +123,15 @@ Agent会按"JSON转XML规则"输出：
 
 ```python
 import xmltodict
-
+# ...
 # 1. 保留命名空间前缀（默认）
 data = xmltodict.parse(xml_content, process_namespaces=False)
 # 输出：{"ns:root": {"ns:child": "..."}}
-
+# ...
 # 2. 剥离命名空间前缀
 data = xmltodict.parse(xml_content, process_namespaces=True)
 # 输出：{"root": {"child": "..."}}
-
+# ...
 # 3. 自定义命名空间映射
 namespaces = {
     'http://example.com/ns1': 'ns1',
@@ -149,7 +150,7 @@ data = xmltodict.parse(xml_content, process_namespaces=True, namespaces=namespac
 ### 功能3：CDATA与注释处理
 
 | XML特性 | 默认处理 | 可选处理 |
-|----------|----------|----------|
+|---:|---:|---:|
 | CDATA块 | 当作文本节点，合并到 `#text` | 单独保留为 `#cdata` |
 | 注释 `<!-- -->` | 默认丢弃 | 保留为 `#comment` |
 | 处理指令 `<? ?>` | 默认丢弃 | 保留为 `#pi` |
@@ -166,7 +167,7 @@ data = xmltodict.parse(xml_content, process_namespaces=True, namespaces=namespac
 
 ```python
 import xmltodict, json
-
+# ...
 def json_to_xml(json_path: str, xml_path: str, root: str = 'root'):
     """JSON转XML"""
     with open(json_path, 'r', encoding='utf-8') as f:
@@ -263,7 +264,7 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
 | xmltodict | Python库 | 必需 | `pip install xmltodict` |
 | json | Python模块 | 必需 | Python标准库，无需安装 |
@@ -321,14 +322,14 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 ### 示例1：基础用法
 
 ```
-### 30秒上手：XML转JSON
-
+### 30秒上手：XML转JSON(补充)
+# ...
 直接对Agent说：
-
+# ...
 > "帮我把 response.xml 转成 JSON，属性用 @ 前缀。"
-
+# ...
 Agent会按本工具的模板规则输出：
-
+# ...
 ```python
 import xmltodict, json
 
@@ -344,12 +345,13 @@ def xml_to_json(xml_path: str, json_path: str, attr_prefix: str = '@'):
         process_namespaces=False
   
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+# ...

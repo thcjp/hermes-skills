@@ -18,14 +18,15 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 # Azure VoiceLive 实时语音AI (免费版)
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Azure实时语音AI免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,7 +39,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -91,7 +92,7 @@ AZURE_COGNITIVE_SERVICES_KEY=<api-key>
 import asyncio, os
 from azure.ai.voicelive.aio import connect
 from azure.core.credentials import AzureKeyCredential
-
+# ...
 async def main():
     async with connect(
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
@@ -103,13 +104,13 @@ async def main():
             "modalities": ["text", "audio"],
             "voice": "alloy"
         })
-
+# ...
         async for event in conn:
             if event.type == "response.audio_transcript.done":
                 print(f"Transcript: {event.transcript}")
             elif event.type == "response.done":
                 break
-
+# ...
 asyncio.run(main())
 ```
 
@@ -120,7 +121,7 @@ asyncio.run(main())
 监听 `response.audio.delta` 事件,将base64音频块解码为PCM字节送入扬声器:
 ```python
 import base64
-
+# ...
 async for event in conn:
     if event.type == "response.audio.delta":
         audio_bytes = base64.b64decode(event.delta)
@@ -136,14 +137,13 @@ async for event in conn:
 读取麦克风PCM块,base64编码后通过 `input_audio_buffer.append` 上行:
 ```python
 import base64
-
+# ...
 audio_chunk = await read_audio_from_microphone()
 b64_audio = base64.b64encode(audio_chunk).decode()
 await conn.input_audio_buffer.append(audio=b64_audio)
 ```
 
 ## 异常处理
-
 
 ### WebSocket连接中断
 现象: 抛出 `ConnectionClosed` 异常,带 `code` 与 `reason`。
@@ -186,9 +186,8 @@ await conn.input_audio_buffer.append(audio=b64_audio)
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

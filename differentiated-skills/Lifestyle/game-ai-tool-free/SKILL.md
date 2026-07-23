@@ -29,15 +29,16 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 本工具为独立游戏开发者与学生提供游戏 AI 开发指南与代码模板,涵盖有限状态机 (FSM)、行为树 (Behavior Tree)、A* 寻路、效用 AI、感知系统、群体行为等主流 AI 架构。每种架构都配有完整的可运行代码示例,适合学习、原型验证与 Game Jam 使用。
 
 免费版聚焦个人学习与原型开发,适合独立开发者与学生使用。
 
 ## 核心能力
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 有限状态机 (FSM) | 简单敌人与 Boss 阶段 AI | 支持 |
 | 行为树 (BT) | 复杂 NPC 与战术 AI | 支持 |
 | A* 寻路 | 标准寻路算法 | 支持 |
@@ -83,8 +84,6 @@ suggested_price: 29.9
 ### 场景二: 复杂 NPC AI (行为树)
 为 NPC 实现模块化、可复用的复杂行为。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三: 寻路与群体行为
 实现 A* 寻路与鸟群模拟。
 
@@ -93,23 +92,23 @@ suggested_price: 29.9
 public class AStar
 {
     private readonly Grid _grid;
-
+# ...
     public List<Point> FindPath(Point start, Point end)
     {
         var openSet = new PriorityQueue<Point>();
         var cameFrom = new Dictionary<Point, Point>();
         var gScore = new Dictionary<Point, float>();
         var fScore = new Dictionary<Point, float>();
-
+# ...
         openSet.Enqueue(start, 0);
         gScore[start] = 0;
         fScore[start] = Heuristic(start, end);
-
+# ...
         while (openSet.Count > 0)
         {
             var current = openSet.Dequeue();
             if (current == end) return ReconstructPath(cameFrom, current);
-
+# ...
             foreach (var neighbor in _grid.GetNeighbors(current))
             {
                 float tentativeGScore = gScore[current] + _grid.GetCost(current, neighbor);
@@ -125,22 +124,22 @@ public class AStar
         }
         return null;
     }
-
+# ...
     private float Heuristic(Point a, Point b) =>
         Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y); // 曼哈顿距离
 }
-
+# ...
 // Boids 群体行为
 public class Boid : Node2D
 {
     private Vector2 _velocity;
-
+# ...
     public override void _Process(double delta)
     {
         var separation = CalculateSeparation();
         var alignment = CalculateAlignment();
         var cohesion = CalculateCohesion();
-
+# ...
         var acceleration = separation * 1.5f + alignment * 1.0f + cohesion * 1.0f;
         _velocity += acceleration * (float)delta;
         _velocity = _velocity.LimitLength(MaxSpeed);
@@ -171,12 +170,12 @@ public class Boid : Node2D
     适用: 简单敌人、Boss 阶段切换
     优点: 简单直观、易调试
     缺点: 状态多时难维护
-
+# ...
   行为树 (BT):
     适用: 复杂 NPC、战术 AI
     优点: 模块化、可复用、易扩展
     缺点: 需要框架支持
-
+# ...
   效用 AI:
     适用: 模拟人生类、策略游戏
     优点: 灵活、智能决策
@@ -193,13 +192,13 @@ public class Boid : Node2D
 public partial class Enemy : CharacterBody2D
 {
     private EnemyFSM _fsm;
-
+# ...
     public override void _Ready()
     {
         _fsm = new EnemyFSM();
         AddChild(_fsm);
     }
-
+# ...
     public override void _PhysicsProcess(double delta)
     {
         // FSM 自动处理移动逻辑
@@ -221,7 +220,7 @@ enemy_types:
       attack_range: 50
       attack_damage: 10
       speed: 100
-
+# ...
   elite:
     behavior_tree:
       priorities: [attack, chase, patrol, flee]
@@ -243,12 +242,12 @@ enemy_types:
 public class UtilityAI
 {
     private readonly List<UtilityAction> _actions = new();
-
+# ...
     public UtilityAction ChooseBestAction()
     {
         float bestScore = float.MinValue;
         UtilityAction bestAction = null;
-
+# ...
         foreach (var action in _actions)
         {
             float score = action.CalculateScore();
@@ -262,11 +261,11 @@ public class UtilityAI
         return bestAction;
     }
 }
-
+# ...
 public class AttackAction : UtilityAction
 {
     private readonly Enemy _enemy;
-
+# ...
     public override float CalculateScore()
     {
         float score = 0f;
@@ -276,7 +275,7 @@ public class AttackAction : UtilityAction
         score += _enemy.HealthPercent * 0.2f;
         return score;
     }
-
+# ...
     public override void Execute() => _enemy.Attack();
 }
 ```
@@ -289,7 +288,7 @@ public override void _Draw()
 {
     DrawArc(Vector2.Zero, ViewDistance, -ViewAngle / 2, ViewAngle / 2, 32, Colors.Yellow, 1.0f);
 }
-
+# ...
 // 状态切换日志
 public void ChangeState(EnemyState newState)
 {
@@ -304,12 +303,12 @@ public void ChangeState(EnemyState newState)
 ```csharp
 // 避免每帧调用 GetFirstNodeInGroup
 private Node2D _playerCache;
-
+# ...
 public override void _Ready()
 {
     _playerCache = GetTree().GetFirstNodeInGroup("player") as Node2D;
 }
-
+# ...
 // 限制 AI 计算频率
 private float _aiUpdateTimer = 0f;
 public override void _Process(double delta)
@@ -332,7 +331,7 @@ public class AIConfig
     public float AttackRange { get; set; }
     public float Speed { get; set; }
 }
-
+# ...
 // 配置与逻辑分离,便于平衡调整
 ```
 
@@ -359,7 +358,7 @@ public class AIConfig
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Godot 4.x | 游戏引擎 | 推荐 | godotengine.org 下载 |
 | .NET 8 SDK | 运行时 | 可选 | dot.net 下载 (C# 支持) |
@@ -377,7 +376,7 @@ export GAME_AI_LANGUAGE="csharp"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

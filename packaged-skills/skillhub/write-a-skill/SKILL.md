@@ -17,19 +17,20 @@ homepage: "https://skillhub.cn"
 tags:
   - 通用办公
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 技能创建工具
 
 创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 技能创建工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,10 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 一句话描述 | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -50,7 +54,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -58,7 +62,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -199,10 +202,10 @@ tools:
 ```bash
 # 检查行数
 wc -l SKILL.md
-
+# ...
 # 检查描述字符数
 head -20 SKILL.md | grep "description" | wc -c
-
+# ...
 # 检查引用文件深度
 grep -r "\[.*\](.*\.md)" SKILL.md
 ```
@@ -235,27 +238,27 @@ tools:
   - read
   - exec
 ---
-
+# ...
 # 数据验证工具
-
-## 依赖说明
-
+# ...
+## 环境依赖补充
+# ...
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | LLM API (用于AI推理和内容生成) | 外部服务 | 是 | 见核心能力章节 |
 | Shell环境 (用于执行命令行操作) | 运行环境 | 否 | 见核心能力章节 |
 | Python 3.8+ | 运行环境 | 否 | 见核心能力章节 |
-
-## 核心能力
+# ...
+## 能力速查
 ### 1. JSON Schema验证
 ### 2. CSV格式检查
 ### 3. 数据清洗
-
+# ...
 ## 使用示例
 \`\`\`bash
 python3 （请参考skill目录中的脚本文件） --input data.json --schema schema.json
 \`\`\`
-
+# ...
 详见 [REFERENCE.md](REFERENCE.md) 获取完整API参考。
 ```
 
@@ -265,19 +268,19 @@ python3 （请参考skill目录中的脚本文件） --input data.json --schema 
 
 ```markdown
 # 数据验证工具 - 详细参考
-
+# ...
 ## JSON Schema验证
-
+# ...
 ### 支持的Schema类型
 - type: string, number, integer, boolean, array, object, null
 - format: date-time, email, uri, uuid
 - constraints: minLength, maxLength, pattern, minimum, maximum
-
+# ...
 ### 验证命令
 \`\`\`bash
 python3 （请参考skill目录中的脚本文件） --input data.json --schema user-schema.json
 \`\`\`
-
+# ...
 ### 输出格式
 \`\`\`json
 {"valid": true, "errors": [], "warnings": []}
@@ -290,11 +293,11 @@ python3 （请参考skill目录中的脚本文件） --input data.json --schema 
 # 检查SKILL.md行数
 wc -l my-skill/SKILL.md
 # 输出: 85 my-skill/SKILL.md
-
+# ...
 # 检查描述字符数
 sed -n '/^description:/,/^---/p' my-skill/SKILL.md | wc -c
 # 输出: 456
-
+# ...
 # 检查引用文件深度
 grep -oP '\[.*?\]\(.*?\.md\)' my-skill/SKILL.md
 # 输出: [REFERENCE.md](REFERENCE.md)
@@ -307,17 +310,17 @@ grep -oP '\[.*?\]\(.*?\.md\)' my-skill/SKILL.md
 # （请参考skill目录中的脚本文件）
 #!/usr/bin/env python3
 import json, sys, argparse
-
+# ...
 parser = argparse.ArgumentParser()
 parser.add_argument("--input", required=True)
 parser.add_argument("--schema", required=True)
 args = parser.parse_args()
-
+# ...
 with open(args.input) as f:
     data = json.load(f)
 with open(args.schema) as f:
     schema = json.load(f)
-
+# ...
 # 验证逻辑...
 print(json.dumps({"valid": True, "errors": []}))
 ```
@@ -325,7 +328,7 @@ print(json.dumps({"valid": True, "errors": []}))
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | SKILL.md超过100行 | 内容过多 | 将详细参考拆分到 `REFERENCE.md`，示例拆分到 `EXAMPLES.md` |
 | 描述超过1024字符 | description字段过长 | 精简描述，只保留核心功能和场景说明，详细内容移入正文 |
 | 引用文件超过1层深度 | REFERENCE.md引用EXAMPLES.md | 合并到同一文件，或直接在SKILL.md中内联关键内容 |

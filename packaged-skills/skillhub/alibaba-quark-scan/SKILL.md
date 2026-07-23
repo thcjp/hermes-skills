@@ -20,16 +20,17 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 文档扫描增强工具
 
 通过扫描服务API对图片进行高清扫描、画质优化和瑕疵去除。支持13种场景识别，每次请求只执行一个意图类型。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 文档扫描增强处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,7 +38,7 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | 文档扫描增强文档高清扫描 | 不支持 | 支持 |
 | 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
@@ -70,7 +71,7 @@ skill-platform config set skills.entries.alibaba-quark-scan.env.SCAN_WEBSERVICE_
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -78,7 +79,6 @@ skill-platform config set skills.entries.alibaba-quark-scan.env.SCAN_WEBSERVICE_
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -276,7 +276,7 @@ python3 （请参考skill目录中的脚本文件） --scene "remove-watermark" 
 ## 不支持的场景
 
 | 不支持的场景 | 原因 | 建议替代方案 |
-| :-- | :-- | :-- |
+|:-----:|:-----:|:-----:|
 | 视频处理 | 仅支持单张静态图片 | 先提取视频帧，再逐帧处理 |
 | 批量处理 | 每次调用仅限单张图片 | 循环调用或联系管理员 |
 | 实时摄像头流 | 非实时流处理架构 | 使用专用视频处理服务 |
@@ -285,9 +285,8 @@ python3 （请参考skill目录中的脚本文件） --scene "remove-watermark" 
 
 ## 错误处理
 
-
 | 错误场景 | 错误码/原因 | 处理方式 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | 缺少图片输入 | `A0201` | 提供图片URL、文件路径或BASE64数据 |
 | 图片超过5MB限制 | API拒绝处理 | 先压缩或裁剪图片至5MB以下 |
 | 不支持的图片格式 | 格式校验失败 | 转换为jpg/jpeg/png/gif/bmp/webp/tiff/wbmp之一 |

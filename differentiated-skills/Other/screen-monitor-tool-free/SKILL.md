@@ -46,8 +46,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
 ---
-
 # 屏幕监控工具 - 免费版
 
 ## 概述
@@ -111,7 +112,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 屏幕监控工具-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -119,12 +120,12 @@ suggested_price: 29.9
 ```bash
 # 截取全屏
 python3 screen_capture.py --mode single --output /tmp/screenshot.png
-
+# ...
 # 截取指定区域
 python3 screen_capture.py --mode single \
   --region "100,100,800,600" \
   --output /tmp/region.png
-
+# ...
 # 截取并查看
 python3 screen_capture.py --mode single --output /tmp/shot.png
 open /tmp/shot.png  # macOS
@@ -140,7 +141,7 @@ python3 screen_capture.py --mode interval \
   --interval 300 \
   --output-dir /tmp/screenshots \
   --duration 3600
-
+# ...
 # 输出:
 # 屏幕监控已启动
 # 间隔: 300 秒
@@ -157,7 +158,7 @@ python3 screen_capture.py --mode interval \
 ```bash
 # 截图并提取文字
 python3 screen_capture.py --mode single --output /tmp/shot.png --ocr
-
+# ...
 # 输出:
 # 截图已保存: /tmp/shot.png
 # === OCR 识别结果 ===
@@ -192,7 +193,7 @@ python3 screen_capture.py --mode single --output /tmp/shot.png --ocr
 ```bash
 # Python 依赖
 pip install Pillow pyautogui pytesseract
-
+# ...
 # 系统依赖(OCR)
 # macOS: brew install tesseract
 # Linux: apt install tesseract-ocr tesseract-ocr-chi-sim
@@ -204,7 +205,7 @@ pip install Pillow pyautogui pytesseract
 ```bash
 # 截取全屏
 python3 screen_capture.py --mode single --output ~/screenshot.png
-
+# ...
 # 查看截图
 open ~/screenshot.png  # macOS
 xdg-open ~/screenshot.png  # Linux
@@ -215,7 +216,7 @@ xdg-open ~/screenshot.png  # Linux
 ### 命令参数
 
 | 参数 | 说明 | 默认值 |
-|------|------|--------|
+|:-----|:-----|:-----|
 | `--mode` | 运行模式(single/interval) | single |
 | `--output` | 输出文件路径(单次) | screenshot.png |
 | `--output-dir` | 输出目录(定时) | ./screenshots |
@@ -231,7 +232,7 @@ xdg-open ~/screenshot.png  # Linux
 ```text
 单次模式: {指定文件名}.png
 定时模式: {output-dir}/{YYYYMMDD_HHMMSS}.png
-
+# ...
 示例:
 /tmp/screenshots/20250115_100000.png
 /tmp/screenshots/20250115_100500.png
@@ -274,7 +275,7 @@ A: 免费版默认截取主显示器。多显示器支持需要 PRO 版。
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | Pillow | 图像处理 | 必需 | pip install Pillow |
 | pyautogui | 截图 | 必需 | pip install pyautogui |
@@ -295,9 +296,8 @@ A: 免费版默认截取主显示器。多显示器支持需要 PRO 版。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -14,6 +14,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
 ---
 # Dlazy Audio LITE
 
@@ -21,11 +23,10 @@ homepage: "https://skillhub.cn"
 
 **范围外**(本技能不做): 音乐生成、音效生成、语音克隆、多角色对话、管道串联、ElevenLabs、Gemini、Qwen、Suno 等高级模型(需升级付费版)。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Dlazy Audio LITE处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,7 +39,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -46,7 +47,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -80,7 +80,7 @@ Key 获取: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建。
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 中文有声书朗读 | 为这段中文文本生成女声朗读 | MP3 音频文件 |
 | 中英文配音 | 用男声朗读这段英文简介 | MP3 音频文件 |
 
@@ -145,9 +145,8 @@ dlazy keling-tts \
 
 ## 错误处理
 
-
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|
 | 401 unauthorized | `code: "unauthorized"` | Key 缺失或失效 | 引导用户访问 `dlazy.com/dashboard/organization/api-key` 获取并 `dlazy auth set` |
 | 501 missing_param | `error: required option '--text <text>' not specified` | 必填参数未提供 | 运行 `dlazy doubao-tts -h` 查看必填参数并补全 |
 | 503 insufficient_balance | `code: "insufficient_balance"` | 账户余额不足 | 明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值 |

@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 论文写作助手免费版
 
 ## 概述
@@ -37,7 +38,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 论文写作助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -45,7 +46,7 @@ suggested_price: 29.9
 ```bash
 # 生成论文大纲
 thesis-helper outline --topic "大语言模型在医疗诊断中的应用" --level 3
-
+# ...
 # 指定论文类型生成大纲
 thesis-helper outline --topic "社交媒体对青少年心理健康的影响" --type empirical
 ```
@@ -54,13 +55,13 @@ thesis-helper outline --topic "社交媒体对青少年心理健康的影响" --
 
 ```text
 论文大纲:大语言模型在医疗诊断中的应用
-
+# ...
 第一章 绪论
   1.1 研究背景与意义
   1.2 国内外研究现状
   1.3 研究目标与内容
   1.4 论文结构安排
-
+# ...
 第二章 相关技术与理论基础
   2.1 大语言模型技术概述
   2.2 医疗诊断知识体系
@@ -79,7 +80,7 @@ thesis-helper outline --topic "社交媒体对青少年心理健康的影响" --
 ```bash
 # 按时间线组织文献综述
 thesis-helper literature --topic "深度学习发展" --method timeline
-
+# ...
 # 按主题分类组织文献综述
 thesis-helper literature --topic "推荐系统算法" --method thematic
 ```
@@ -96,7 +97,7 @@ thesis-helper literature --topic "推荐系统算法" --method thematic
 ```bash
 # 生成中文摘要(200-300字)
 thesis-helper abstract --topic "基于图神经网络的社交网络分析" --lang zh --words 250
-
+# ...
 # 生成英文摘要(150-250 words)
 thesis-helper abstract --topic "Graph Neural Network for Social Network Analysis" --lang en --words 200
 ```
@@ -113,7 +114,7 @@ thesis-helper abstract --topic "Graph Neural Network for Social Network Analysis
 ```bash
 # APA 转 MLA
 thesis-helper cite --input "Smith, J. (2023). AI Research. Journal of CS, 15(3), 45-67." --from apa --to mla
-
+# ...
 # 转换为中文国标格式(GB-T7714)
 thesis-helper cite --input "Smith, J. (2023). AI Research. Journal of CS, 15(3), 45-67." --from apa --to gbt7714
 ```
@@ -130,7 +131,7 @@ thesis-helper cite --input "Smith, J. (2023). AI Research. Journal of CS, 15(3),
 ```bash
 # 检查论文格式
 thesis-helper format --file my_thesis.docx
-
+# ...
 # 检查特定格式项
 thesis-helper format --file my_thesis.docx --check headings,references,tables
 ```
@@ -147,7 +148,7 @@ thesis-helper format --file my_thesis.docx --check headings,references,tables
 ```bash
 # 生成答辩准备要点
 thesis-helper defense --file my_thesis.docx
-
+# ...
 # 常见问题
 thesis-helper defense --file my_thesis.docx --questions
 ```
@@ -170,27 +171,27 @@ thesis-helper outline \
   --topic "基于深度学习的图像识别算法研究" \
   --type undergraduate \
   --level 3
-
+# ...
 # 步骤2:搭建文献综述框架
 thesis-helper literature \
   --topic "深度学习图像识别" \
   --method timeline
-
+# ...
 # 步骤3:撰写中文摘要
 thesis-helper abstract \
   --topic "基于卷积神经网络的图像识别算法优化" \
   --lang zh \
   --words 300
-
+# ...
 # 步骤4:转换参考文献格式为国标
 thesis-helper cite \
   --batch references.txt \
   --from apa \
   --to gbt7714
-
+# ...
 # 步骤5:格式检查
 thesis-helper format --file thesis_draft.docx
-
+# ...
 # 步骤6:答辩准备
 thesis-helper defense --file thesis_final.docx
 ```
@@ -205,7 +206,7 @@ thesis-helper literature \
   --topic "自然语言处理在对话系统中的应用" \
   --method thematic \
   --years "2020-2026"
-
+# ...
 # 生成综述大纲
 thesis-helper outline \
   --topic "对话系统研究综述" \
@@ -219,10 +220,10 @@ thesis-helper outline \
 ```bash
 # 分析论文结构
 thesis-helper analyze --file excellent_paper.pdf
-
+# ...
 # 提取结构模板
 thesis-helper template --extract --file excellent_paper.pdf
-
+# ...
 # 套用结构模板
 thesis-helper outline --topic "我的研究主题" --template extracted_template.json
 ```
@@ -234,7 +235,7 @@ thesis-helper outline --topic "我的研究主题" --template extracted_template
 ```bash
 # 查看所有命令
 thesis-helper help
-
+# ...
 # 查看特定命令的用法
 thesis-helper outline --help
 thesis-helper literature --help
@@ -245,7 +246,7 @@ thesis-helper literature --help
 ```bash
 # 生成简单的大纲
 thesis-helper outline --topic "人工智能在教育中的应用"
-
+# ...
 # 生成详细的大纲(3级)
 thesis-helper outline --topic "人工智能在教育中的应用" --level 3
 ```
@@ -255,13 +256,12 @@ thesis-helper outline --topic "人工智能在教育中的应用" --level 3
 ```bash
 # 生成中文摘要
 thesis-helper abstract --topic "智能教育系统的设计与实现" --lang zh
-
+# ...
 # 生成英文摘要
 thesis-helper abstract --topic "Design and Implementation of Intelligent Education System" --lang en
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -295,7 +295,7 @@ thesis-helper config set --field "humanities" --template Chicago
 ```bash
 # 先生成完整大纲
 thesis-helper outline --topic "研究主题" --level 3 > outline.md
-
+# ...
 # 根据大纲逐章撰写
 # 大纲是骨架,内容是血肉
 ```
@@ -305,7 +305,7 @@ thesis-helper outline --topic "研究主题" --level 3 > outline.md
 ```bash
 # 先按主题分类
 thesis-helper literature --topic "研究主题" --method thematic > categories.json
-
+# ...
 # 再对每个分类进行综述
 thesis-helper literature --topic "分类1" --method timeline
 ```
@@ -315,7 +315,7 @@ thesis-helper literature --topic "分类1" --method timeline
 ```bash
 # 尽早确定引用格式,避免后期大量转换
 thesis-helper config set --citation_style "gbt7714"
-
+# ...
 # 写作过程中实时检查格式
 thesis-helper cite --check --file references.bib
 ```
@@ -325,10 +325,10 @@ thesis-helper cite --check --file references.bib
 ```bash
 # 初稿阶段:检查结构
 thesis-helper format --file draft.docx --check headings
-
+# ...
 # 修改稿阶段:检查引用
 thesis-helper format --file revision.docx --check references
-
+# ...
 # 终稿阶段:全面检查
 thesis-helper format --file final.docx
 ```
@@ -382,7 +382,7 @@ thesis-helper outline \
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | 文档解析库 | 库 | 格式检查需要 | 通过 `npm install` 自动安装 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -399,9 +399,8 @@ thesis-helper outline \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

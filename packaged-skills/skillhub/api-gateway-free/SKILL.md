@@ -15,6 +15,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # API 网关集成路由（免费版）
 
@@ -22,11 +24,10 @@ homepage: "https://skillhub.cn"
 
 > **升级提示**: 触发器管理、事件重放、写操作审批流程、高危操作审查、多语言调用等高级功能为付费版专享。升级付费版解锁完整能力。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | API网关路由免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -47,7 +48,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -124,7 +124,7 @@ maton connection list
 ```bash
 # 列出 Slack 频道
 maton slack channel list --types public_channel --limit 10
-
+# ...
 # 列出 Stripe 客户
 maton stripe customer list -L 10
 ```
@@ -167,9 +167,8 @@ maton stripe customer list -L 10
 
 ## 错误处理
 
-
 | 错误场景 | HTTP 状态码 | 原因分析 | 处理方式 |
-|---------|------------|---------|---------|
+|---:|---:|---:|---:|
 | 缺少连接 | 400 | 请求的 app 未创建连接 | 通过连接管理创建对应服务的连接 |
 | API Key 无效 | 401 | `MATON_API_KEY` 缺失或失效 | 运行 `maton whoami` 验证,重新设置 Key |
 | 速率超限 | 429 | 超过 10 请求/秒/账户 | 降低请求频率,等待后检查网络连接和配置后重试 |

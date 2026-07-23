@@ -42,8 +42,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "Telegram,社交,通信"
 ---
-
 # 电报聊天工具 - 免费版
 
 ## 概述
@@ -124,7 +125,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 电报聊天工具免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -144,7 +145,7 @@ messaging:
 ```text
 # 在群组中发送消息测试
 @你的Bot用户名 你好
-
+# ...
 # 预期收到回复
 你好!我是你的专属Bot,有什么可以帮你?
 ```
@@ -186,7 +187,7 @@ messaging:
 地点:3号会议室
 主题:Q3 项目进度同步
 参会人:@成员A @成员B @成员C
-
+# ...
 请准时参加,如有冲突请提前说明。
 ```
 
@@ -236,7 +237,7 @@ messaging:
 ### 第四步:验证配置
 
 | 测试项 | 操作 | 预期结果 |
-|:-------|:-----|:---------|
+|:-----|:-----|:-----|
 | 基础回复 | 在群组发 `@你的Bot 你好` | 收到 Bot 回复 |
 | 跨 Bot 通信 | 在群组发 `@其他人的Bot` 消息 | 对方 Bot 收到并响应 |
 | 消息接收 | 在群组发普通消息 | Bot 能读取消息内容 |
@@ -262,7 +263,7 @@ messaging:
 ```bash
 # 方法一:通过 Telegram API 获取
 curl "https://api.telegram.org/bot配置值/getUpdates" | python3 -m json.tool
-
+# ...
 # 方法二:使用 @userinfobot
 # 在 Telegram 中搜索 @userinfobot,将群组转发给它即可获取 ID
 ```
@@ -273,7 +274,7 @@ curl "https://api.telegram.org/bot配置值/getUpdates" | python3 -m json.tool
 
 ```text
 | 成员姓名 | Bot用户名        | 专长       |
-|:---------|:-----------------|:-----------|
+|---:|---:|---:|
 | 张三     | @zhangsan_bot    | 前端开发   |
 | 李四     | @lisi_bot        | 后端开发   |
 | 王五     | @wangwu_bot      | 产品设计   |
@@ -322,7 +323,7 @@ messaging:
 ```text
 # 正确格式
 @zhangsan_bot 请帮忙看一下接口文档
-
+# ...
 # 错误格式(缺少空格或用户名错误)
 @zhangsan_bot请帮忙...    # 缺少空格
 @张三 请帮忙...            # 应使用Bot用户名而非中文姓名
@@ -377,7 +378,7 @@ messaging:
 ```bash
 # 方法一:调用 Telegram API
 curl "https://api.telegram.org/bot配置值/getUpdates"
-
+# ...
 # 方法二:使用 @userinfobot 辅助工具
 # 在 Telegram 搜索 @userinfobot,转发群组消息给它
 ```
@@ -402,7 +403,7 @@ curl "https://api.telegram.org/bot配置值/getUpdates"
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Telegram 账户 | 账户 | 必需 | 注册 Telegram |
 | Telegram Bot Token | 凭据 | 必需 | 通过 @BotFather 创建 |
 | skill-platform.yaml | 配置 | 必需 | 手动创建配置文件 |
@@ -423,9 +424,8 @@ curl "https://api.telegram.org/bot配置值/getUpdates"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

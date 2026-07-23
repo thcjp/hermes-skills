@@ -20,6 +20,8 @@ tools:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
 # Web工件工作室
 
@@ -36,7 +38,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 交互式演示 | 演示需求 + 交互逻辑 | React 应用 + 事件处理 + 可点击演示 |
 | 数据仪表盘 | 数据源 + 图表需求 + 过滤器 | 状态管理仪表盘 + 图表 + 交互筛选 |
 | 表单工作流 | 表单字段 + 校验规则 + 分步 | 多步表单 + 路由 + 状态校验 |
@@ -65,7 +67,7 @@ pricing_model: "per_use"
 1. **目录结构**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Web工件工作室处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,19 +152,19 @@ import { Select, SelectContent, SelectItem } from '@/ui/select';
 import { SalesChart } from './components/SalesChart';
 import { DataTable } from './components/DataTable';
 import salesData from './data/sales.json';
-
+# ...
 export default function App() {
   const [region, setRegion] = useState<string>('all');
-
+# ...
   const filteredData = useMemo(() => {
     if (region === 'all') return salesData;
     return salesData.filter(item => item.region === region);
   }, [region]);
-
+# ...
   return (
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-bold">销售数据仪表盘</h1>
-
+# ...
       <Select value={region} onValueChange={setRegion}>
         <SelectContent>
           <SelectItem value="all">全部地区</SelectItem>
@@ -170,14 +172,14 @@ export default function App() {
           <SelectItem value="华北">华北</SelectItem>
         </SelectContent>
       </Select>
-
+# ...
       <Card>
         <CardHeader>月度销售趋势</CardHeader>
         <CardContent>
           <SalesChart data={filteredData} />
         </CardContent>
       </Card>
-
+# ...
       <Card>
         <CardHeader>销售明细</CardHeader>
         <CardContent>
@@ -206,25 +208,25 @@ import { useState } from 'react';
 import { Button } from '@/ui/button';
 import { Input } from '@/ui/input';
 import { Label } from '@/ui/label';
-
+# ...
 const STEPS = ['基本信息', '联系方式', '确认提交'];
-
+# ...
 export function MultiStepForm() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState(() => {
     const saved = localStorage.getItem('form-data');
     return saved ? JSON.parse(saved) : { name: '', email: '', phone: '' };
   });
-
+# ...
   const updateField = (field: string, value: string) => {
     const newData = { ...formData, [field]: value };
     setFormData(newData);
     localStorage.setItem('form-data', JSON.stringify(newData));
   };
-
+# ...
   const next = () => step < STEPS.length - 1 && setStep(step + 1);
   const prev = () => step > 0 && setStep(step - 1);
-
+# ...
   return (
     <div className="max-w-md mx-auto p-6">
       <div className="flex gap-2 mb-6">
@@ -232,9 +234,9 @@ export function MultiStepForm() {
           <div key={i} className={`flex-1 h-2 rounded ${i <= step ? 'bg-blue-500' : 'bg-gray-200'}`} />
         ))}
       </div>
-
+# ...
       <h2 className="text-xl font-bold mb-4">{STEPS[step]}</h2>
-
+# ...
       {step === 0 && (
         <div className="space-y-4">
           <div>
@@ -262,7 +264,7 @@ export function MultiStepForm() {
           <p>手机: {formData.phone}</p>
         </div>
       )}
-
+# ...
       <div className="flex justify-between mt-6">
         <Button variant="outline" onClick={prev} disabled={step === 0}>上一步</Button>
         {step < STEPS.length - 1 ? (
@@ -290,7 +292,7 @@ export function MultiStepForm() {
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { viteSingleFile } from 'vite-plugin-singlefile';
-
+// ...
 export default defineConfig({
   plugins: [react(), viteSingleFile()],
   build: {
@@ -315,7 +317,7 @@ npm run build
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | Node.js 未安装 | 环境缺少 Node.js | 提示安装 Node.js 18+,提供下载链接 |
 | npm install 失败 | 网络问题或权限 | 切换国内镜像 `npm config set registry https://registry.npmmirror.com` |
 | shadcn/ui 组件缺失 | 未通过 CLI 添加 | 使用 `npx shadcn-ui@latest add button card dialog` 添加 |
@@ -336,7 +338,7 @@ npm run build
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | Node.js 18+ | 运行时 | 必需 | nodejs.org | npmmirror 国内镜像 |
 | React 18 | 库 | 必需 | `npm install react react-dom` | npmmirror |
 | TypeScript | 库 | 必需 | `npm install -D typescript` | npmmirror |
@@ -385,7 +387,7 @@ import { Card, CardHeader, CardContent, CardTitle } from '@/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/ui/table';
 import salesData from './data/sales.json';
-
+# ...
 // Zustand 全局状态
 interface DashboardStore {
   region: string;
@@ -393,14 +395,14 @@ interface DashboardStore {
   setRegion: (r: string) => void;
   setProduct: (p: string) => void;
 }
-
+# ...
 const useDashboardStore = create<DashboardStore>((set) => ({
   region: 'all',
   product: 'all',
   setRegion: (r) => set({ region: r }),
   setProduct: (p) => set({ product: p }),
 }));
-
+# ...
 // KPI 卡片组件
 function KPICard({ title, value, subtitle }: { title: string; value: string; subtitle: string }) {
   return (
@@ -413,17 +415,17 @@ function KPICard({ title, value, subtitle }: { title: string; value: string; sub
     </Card>
   );
 }
-
+# ...
 export default function App() {
   const { region, product, setRegion, setProduct } = useDashboardStore();
-
+# ...
   const filteredData = useMemo(() => {
     return salesData.filter(item =>
       (region === 'all' || item.region === region) &&
       (product === 'all' || item.product === product)
     );
   }, [region, product]);
-
+# ...
   // KPI 计算
   const totalSales = filteredData.reduce((sum, d) => sum + d.amount, 0);
   const avgGrowth = filteredData.length > 0
@@ -434,25 +436,25 @@ export default function App() {
     filteredData.forEach(d => { regionMap[d.region] = (regionMap[d.region] || 0) + d.amount; });
     return Object.entries(regionMap).sort((a, b) => b[1] - a[1])[0]?.[0] || '-';
   }, [filteredData]);
-
+# ...
   // 图表数据(按月份聚合)
   const chartData = useMemo(() => {
     const monthMap: Record<string, number> = {};
     filteredData.forEach(d => { monthMap[d.month] = (monthMap[d.month] || 0) + d.amount; });
     return Object.entries(monthMap).map(([month, amount]) => ({ month, amount }));
   }, [filteredData]);
-
+# ...
   return (
     <div className="p-6 space-y-6 max-w-6xl mx-auto">
       <h1 className="text-2xl font-bold">销售数据仪表盘</h1>
-
+# ...
       {/* KPI 卡片 */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <KPICard title="总销售额" value={`¥${totalSales.toLocaleString()}`} subtitle={`${filteredData.length} 条记录`} />
         <KPICard title="平均增长率" value={`${avgGrowth}%`} subtitle="同比" />
         <KPICard title="最高地区" value={topRegion} subtitle="按销售额" />
       </div>
-
+# ...
       {/* 筛选器 */}
       <div className="flex gap-4">
         <Select value={region} onValueChange={setRegion}>
@@ -474,7 +476,7 @@ export default function App() {
           </SelectContent>
         </Select>
       </div>
-
+# ...
       {/* 图表 */}
       <Card>
         <CardHeader><CardTitle>月度销售趋势</CardTitle></CardHeader>
@@ -490,7 +492,7 @@ export default function App() {
           </ResponsiveContainer>
         </CardContent>
       </Card>
-
+# ...
       {/* 数据表格 */}
       <Card>
         <CardHeader><CardTitle>销售明细</CardTitle></CardHeader>
@@ -548,9 +550,9 @@ import { Input } from '@/ui/input';
 import { Label } from '@/ui/label';
 import { Checkbox } from '@/ui/checkbox';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/card';
-
+# ...
 const STEPS = ['基本信息', '联系方式', '偏好设置', '确认提交'] as const;
-
+# ...
 // Zod Schema 定义
 const formSchema = z.object({
   name: z.string().min(1, '姓名不能为空'),
@@ -560,17 +562,17 @@ const formSchema = z.object({
   interests: z.array(z.string()),
   notifications: z.boolean(),
 });
-
+# ...
 type FormData = z.infer<typeof formSchema>;
 type FormErrors = Partial<Record<keyof FormData, string>>;
-
+# ...
 const INTEREST_OPTIONS = ['技术', '设计', '产品', '运营', '市场'];
-
+# ...
 export function MultiStepForm() {
   const [step, setStep] = useState(0);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
-
+# ...
   // localStorage 持久化
   const [formData, setFormData] = useState<FormData>(() => {
     try {
@@ -582,19 +584,19 @@ export function MultiStepForm() {
     } catch (e) { /* 隐私模式降级 */ }
     return { name: '', age: 0, email: '', phone: '', interests: [], notifications: false };
   });
-
+# ...
   // 自动保存
   useEffect(() => {
     try {
       localStorage.setItem('registration-form', JSON.stringify(formData));
     } catch (e) { /* 隐私模式降级 */ }
   }, [formData]);
-
+# ...
   const updateField = <K extends keyof FormData>(field: K, value: FormData[K]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     setErrors(prev => ({ ...prev, [field]: undefined }));
   };
-
+# ...
   const validateStep = (): boolean => {
     const newErrors: FormErrors = {};
     if (step === 0) {
@@ -611,7 +613,7 @@ export function MultiStepForm() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+# ...
   const next = () => {
     if (validateStep()) {
       setStep(s => Math.min(s + 1, STEPS.length - 1));
@@ -629,7 +631,7 @@ export function MultiStepForm() {
       ) as FormErrors);
     }
   };
-
+# ...
   if (submitted) {
     return (
       <Card className="max-w-md mx-auto mt-10">
@@ -644,7 +646,7 @@ export function MultiStepForm() {
       </Card>
     );
   }
-
+# ...
   return (
     <div className="max-w-md mx-auto p-6">
       {/* 进度条 */}
@@ -658,7 +660,7 @@ export function MultiStepForm() {
           </div>
         ))}
       </div>
-
+# ...
       <Card>
         <CardHeader><CardTitle>{STEPS[step]}</CardTitle></CardHeader>
         <CardContent className="space-y-4">
@@ -677,7 +679,7 @@ export function MultiStepForm() {
               </div>
             </>
           )}
-
+# ...
           {/* Step 1: 联系方式 */}
           {step === 1 && (
             <>
@@ -693,7 +695,7 @@ export function MultiStepForm() {
               </div>
             </>
           )}
-
+# ...
           {/* Step 2: 偏好设置 */}
           {step === 2 && (
             <>
@@ -721,7 +723,7 @@ export function MultiStepForm() {
               </div>
             </>
           )}
-
+# ...
           {/* Step 3: 确认 */}
           {step === 3 && (
             <div className="space-y-2 text-sm">
@@ -733,7 +735,7 @@ export function MultiStepForm() {
               <div><span className="text-gray-500">通知:</span> {formData.notifications ? '是' : '否'}</div>
             </div>
           )}
-
+# ...
           {/* 导航按钮 */}
           <div className="flex justify-between pt-4">
             <Button variant="outline" onClick={prev} disabled={step === 0}>上一步</Button>
@@ -773,10 +775,10 @@ import { HashRouter, Routes, Route, useParams, useNavigate, Link } from 'react-r
 import { Button } from '@/ui/button';
 import { Input } from '@/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/card';
-
+# ...
 type Status = 'todo' | 'doing' | 'done';
 interface Task { id: string; title: string; description: string; status: Status; createdAt: string; }
-
+# ...
 // Context 状态管理
 interface KanbanContextType {
   tasks: Task[];
@@ -785,10 +787,10 @@ interface KanbanContextType {
   moveTask: (id: string, status: Status) => void;
   getTask: (id: string) => Task | undefined;
 }
-
+# ...
 const KanbanContext = createContext<KanbanContextType | null>(null);
 const useKanban = () => useContext(KanbanContext)!;
-
+# ...
 function KanbanProvider({ children }: { children: ReactNode }) {
   const [tasks, setTasks] = useState<Task[]>(() => {
     try {
@@ -796,11 +798,11 @@ function KanbanProvider({ children }: { children: ReactNode }) {
       return saved ? JSON.parse(saved) : [];
     } catch { return []; }
   });
-
+# ...
   useEffect(() => {
     try { localStorage.setItem('kanban-tasks', JSON.stringify(tasks)); } catch {}
   }, [tasks]);
-
+# ...
   const addTask = (title: string) => {
     setTasks(prev => [...prev, {
       id: `task-${Date.now()}`, title, description: '', status: 'todo', createdAt: new Date().toISOString(),
@@ -810,38 +812,38 @@ function KanbanProvider({ children }: { children: ReactNode }) {
   const moveTask = (id: string, status: Status) =>
     setTasks(prev => prev.map(t => t.id === id ? { ...t, status } : t));
   const getTask = (id: string) => tasks.find(t => t.id === id);
-
+# ...
   return (
     <KanbanContext.Provider value={{ tasks, addTask, deleteTask, moveTask, getTask }}>
       {children}
     </KanbanContext.Provider>
   );
 }
-
+# ...
 // 看板视图
 function KanbanBoard() {
   const { tasks, addTask, deleteTask, moveTask } = useKanban();
   const [newTitle, setNewTitle] = useState('');
   const [draggedId, setDraggedId] = useState<string | null>(null);
-
+# ...
   const columns: { status: Status; label: string; color: string }[] = [
     { status: 'todo', label: '待办', color: 'bg-gray-100' },
     { status: 'doing', label: '进行中', color: 'bg-blue-50' },
     { status: 'done', label: '已完成', color: 'bg-green-50' },
   ];
-
+# ...
   const handleAdd = () => {
     if (newTitle.trim()) { addTask(newTitle.trim()); setNewTitle(''); }
   };
-
+# ...
   const handleDrop = (status: Status) => {
     if (draggedId) { moveTask(draggedId, status); setDraggedId(null); }
   };
-
+# ...
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">任务看板</h1>
-
+# ...
       {/* 添加任务 */}
       <div className="flex gap-2 mb-6">
         <Input value={newTitle} onChange={e => setNewTitle(e.target.value)}
@@ -849,7 +851,7 @@ function KanbanBoard() {
           placeholder="输入任务标题..." className="flex-1" />
         <Button onClick={handleAdd}>添加</Button>
       </div>
-
+# ...
       {/* 三列看板 */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {columns.map(col => (
@@ -880,18 +882,18 @@ function KanbanBoard() {
     </div>
   );
 }
-
+# ...
 // 任务详情页
 function TaskDetail() {
   const { id } = useParams();
   const { getTask, moveTask, deleteTask } = useKanban();
   const navigate = useNavigate();
   const task = id ? getTask(id) : undefined;
-
+# ...
   if (!task) {
     return <div className="p-6"><p>任务不存在</p><Link to="/kanban"><Button>返回看板</Button></Link></div>;
   }
-
+# ...
   return (
     <div className="p-6 max-w-2xl mx-auto">
       <Link to="/kanban" className="text-blue-600 mb-4 inline-block">← 返回看板</Link>
@@ -919,7 +921,7 @@ function TaskDetail() {
     </div>
   );
 }
-
+# ...
 export default function App() {
   return (
     <KanbanProvider>
@@ -959,7 +961,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/ui/
 import { Badge } from '@/ui/badge';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from '@/ui/dialog';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/ui/table';
-
+# ...
 // 代码展示组件
 function CodeBlock({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
@@ -980,7 +982,7 @@ function CodeBlock({ code }: { code: string }) {
     </div>
   );
 }
-
+# ...
 // 组件展示卡片
 function ComponentShowcase({ title, description, children, code }: {
   title: string; description: string; children: React.ReactNode; code: string;
@@ -1000,10 +1002,10 @@ function ComponentShowcase({ title, description, children, code }: {
     </Card>
   );
 }
-
+# ...
 export default function App() {
   const [dark, setDark] = useState(false);
-
+# ...
   return (
     <div className={dark ? 'dark' : ''}>
       <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 p-6">
@@ -1013,7 +1015,7 @@ export default function App() {
             {dark ? '☀️ 亮色' : '🌙 暗色'}
           </Button>
         </div>
-
+# ...
         <div className="space-y-6 max-w-4xl mx-auto">
           {/* Button */}
           <ComponentShowcase
@@ -1026,7 +1028,7 @@ export default function App() {
             <Button size="sm">小尺寸</Button>
             <Button size="lg">大尺寸</Button>
           </ComponentShowcase>
-
+# ...
           {/* Badge */}
           <ComponentShowcase
             title="Badge" description="标签徽章组件"
@@ -1036,7 +1038,7 @@ export default function App() {
             <Badge variant="destructive">错误</Badge>
             <Badge variant="outline">轮廓</Badge>
           </ComponentShowcase>
-
+# ...
           {/* Input */}
           <ComponentShowcase
             title="Input" description="输入框组件"
@@ -1045,7 +1047,7 @@ export default function App() {
             <Input type="email" placeholder="邮箱" className="w-48" />
             <Input type="password" placeholder="密码" className="w-48" />
           </ComponentShowcase>
-
+# ...
           {/* Dialog */}
           <ComponentShowcase
             title="Dialog" description="对话框/弹窗组件"
@@ -1064,7 +1066,7 @@ export default function App() {
               </DialogContent>
             </Dialog>
           </ComponentShowcase>
-
+# ...
           {/* Table */}
           <ComponentShowcase
             title="Table" description="数据表格组件"

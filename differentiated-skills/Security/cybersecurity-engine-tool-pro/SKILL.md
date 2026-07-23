@@ -29,6 +29,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # 网络安全评估引擎专业版
 ## 概述
@@ -36,7 +38,7 @@ pricing_model: "monthly"
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 十二阶段评估 | 从态势评估到供应链安全的完整覆盖 |
 | 合规框架映射 | SOC 2/ISO 27001/GDPR/HIPAA/PCI DSS |
 | 多维评分 | 100分制8维度加权评分体系 |
@@ -50,7 +52,7 @@ pricing_model: "monthly"
 ### 1. 十二阶段深度评估(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 网络安全评估引擎专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -85,7 +87,7 @@ compliance_mapping:
     CC6:  "逻辑与物理访问 -> 认证授权(Phase 8)"
     CC7:  "系统运行 -> 漏洞管理(Phase 5)"
     CC8:  "变更管理 -> CI/CD安全(Phase 11)"
-
+# ...
   ISO_27001:
     A5:   "信息安全策略 -> 安全程序设计(Phase 9)"
     A6:   "组织安全 -> 角色与职责"
@@ -93,13 +95,13 @@ compliance_mapping:
     A9:   "人力资源安全 -> 安全意识培训"
     A12:  "运营安全 -> 漏洞管理(Phase 5)"
     A14:  "系统获取与维护 -> 供应链安全(Phase 11)"
-
+# ...
   GDPR:
     Art5:  "数据原则 -> 数据分类(Phase 1)"
     Art25: "设计与默认隐私 -> 安全设计(Phase 3)"
     Art32: "安全处理 -> 加密与访问控制(Phase 4, 8)"
     Art33: "违规通知 -> 事件响应(Phase 6)"
-
+# ...
   HIPAA:
     Admin:  "管理保障 -> 安全程序(Phase 9)"
     Phys:   "物理保障 -> 基础设施安全(Phase 4)"
@@ -115,10 +117,10 @@ compliance_mapping:
 ```python
 #!/usr/bin/env python3
 """专业版安全评分引擎"""
-
+# ...
 class SecurityScoringEngine:
     """8维度100分制安全评分"""
-
+# ...
     DIMENSIONS = {
         "authentication_access": {"weight": 0.20, "name": "认证与访问控制"},
         "data_protection": {"weight": 0.15, "name": "数据保护"},
@@ -129,18 +131,18 @@ class SecurityScoringEngine:
         "code_security": {"weight": 0.10, "name": "代码安全"},
         "supply_chain": {"weight": 0.05, "name": "供应链安全"},
     }
-
+# ...
     def __init__(self):
         self.scores = {}
         self.findings = {}
-
+# ...
     def score_dimension(self, dimension, score, findings=None):
         """设置维度得分(0-10)与发现项"""
         if dimension not in self.DIMENSIONS:
             raise ValueError(f"未知维度: {dimension}")
         self.scores[dimension] = min(max(score, 0), 10)
         self.findings[dimension] = findings or []
-
+# ...
     def calculate_composite(self):
         """计算综合得分(0-100)"""
         if not self.scores:
@@ -150,26 +152,26 @@ class SecurityScoringEngine:
             if dim in self.scores:
                 total += self.scores[dim] * config["weight"] * 10
         return round(total)
-
+# ...
     def get_tier(self, score):
         """获取安全等级"""
         if score >= 90: return ("S", "卓越 - 安全是竞争优势")
         elif score >= 70: return ("A", "良好 - 基础扎实,持续改进")
         elif score >= 50: return ("B", "待改进 - 存在显著差距")
         else: return ("F", "危险 - 暂停功能开发,修复安全问题")
-
+# ...
     def generate_report(self):
         """生成评分报告"""
         composite = self.calculate_composite()
         tier, label = self.get_tier(composite)
-
+# ...
         report = {
             "composite_score": composite,
             "tier": tier,
             "label": label,
             "dimensions": {}
         }
-
+# ...
         for dim, config in self.DIMENSIONS.items():
             score = self.scores.get(dim, 0)
             report["dimensions"][dim] = {
@@ -178,14 +180,14 @@ class SecurityScoringEngine:
                 "weight": f"{config['weight']*100:.0f}%",
                 "findings": self.findings.get(dim, [])
             }
-
+# ...
         return report
-
+# ...
 # 使用示例
 if __name__ == "__main__":
     import json
     engine = SecurityScoringEngine()
-
+# ...
     # 评分各维度(0-10分)
     engine.score_dimension("authentication_access", 8, ["MFA覆盖率95%"])
     engine.score_dimension("data_protection", 7, ["静态加密已启用"])
@@ -195,7 +197,7 @@ if __name__ == "__main__":
     engine.score_dimension("incident_response", 4, ["响应计划未测试"])
     engine.score_dimension("code_security", 9, ["SAST已集成CI"])
     engine.score_dimension("supply_chain", 6, ["缺少SBOM生成"])
-
+# ...
     report = engine.generate_report()
     print(json.dumps(report, indent=2, ensure_ascii=False))
 ```
@@ -215,20 +217,20 @@ vulnerability_sla:
     escalation: "立即通知CTO/CISO"
     auto_ticket: true
     sla_breach_action: "阻断部署"
-
+# ...
   high:
     cvss_range: "7.0-8.9"
     remediation_sla: "7天"
     escalation: "通知团队负责人"
     auto_ticket: true
     sla_breach_action: "标记逾期"
-
+# ...
   medium:
     cvss_range: "4.0-6.9"
     remediation_sla: "30天"
     escalation: "加入迭代待办"
     auto_ticket: false
-
+# ...
   low:
     cvss_range: "0.1-3.9"
     remediation_sla: "90天"
@@ -253,7 +255,7 @@ echo "============================================"
 echo "企业安全架构评审"
 echo "评审时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "============================================"
-
+# ...
 # Phase 1: 安全态势评估
 echo ""
 echo "=== Phase 1: 安全态势评估 ==="
@@ -265,7 +267,7 @@ for pattern in 'AKIA[0-9A-Z]\{16\}' 'BEGIN.*PRIVATE KEY'; do
     [ "$count" -gt 0 ] && CRITICAL=$((CRITICAL + count))
 done
 echo "关键风险: ${CRITICAL} 项"
-
+# ...
 # Phase 4: 基础设施安全
 echo ""
 echo "=== Phase 4: 基础设施安全 ==="
@@ -274,13 +276,13 @@ if command -v ss &> /dev/null; then
     DANGEROUS_PORTS=$(ss -tlnp 2>/dev/null | grep -E '6379|2375|3306|27017' | wc -l)
     echo "危险端口暴露: ${DANGEROUS_PORTS} 个"
 fi
-
+# ...
 # Phase 8: 认证授权
 echo ""
 echo "=== Phase 8: 认证授权检查 ==="
 JWT_ISSUES=$(grep -rn "alg.*none\|HS256.*shared" --include='*.{js,ts,py}' . 2>/dev/null | wc -l)
 echo "JWT配置问题: ${JWT_ISSUES} 处"
-
+# ...
 echo ""
 echo "============================================"
 echo "评审完成,详细报告请查看专业版HTML输出"
@@ -291,10 +293,10 @@ echo "============================================"
 ```python
 #!/usr/bin/env python3
 """专业版合规审计准备工具"""
-
+# ...
 class CompliancePrep:
     """合规框架检查清单生成器"""
-
+# ...
     FRAMEWORKS = {
         "SOC2": {
             "name": "SOC 2 Type II",
@@ -331,29 +333,29 @@ class CompliancePrep:
             ]
         }
     }
-
+# ...
     def generate_checklist(self, framework):
         """生成合规检查清单"""
         fw = self.FRAMEWORKS.get(framework)
         if not fw:
             return f"未知框架: {framework}"
-
+# ...
         print(f"\n{'='*50}")
         print(f"合规检查清单: {fw['name']}")
         print(f"{'='*50}")
-
+# ...
         print(f"\n控制类别:")
         for code, desc in fw["categories"].items():
             print(f"  [{code}] {desc}")
             print(f"       状态: [ ] 已实施  [ ] 部分实施  [ ] 未实施")
-
+# ...
         print(f"\n所需证据材料:")
         for i, evidence in enumerate(fw["evidence_required"], 1):
             print(f"  {i}. {evidence}")
             print(f"     状态: [ ] 已准备  [ ] 准备中  [ ] 未准备")
-
+# ...
         return f"\n检查清单已生成,共 {len(fw['categories'])} 个控制类别, {len(fw['evidence_required'])} 项证据材料"
-
+# ...
 if __name__ == "__main__":
     prep = CompliancePrep()
     print(prep.generate_checklist("SOC2"))
@@ -373,7 +375,7 @@ security_program:
       - "7-8: 基础扫描(依赖、代码密钥)"
       - "9-10: 事件响应计划"
       - "11-12: 安全意识基础"
-
+# ...
   Q2_automation:
     name: "自动化"
     items:
@@ -382,7 +384,7 @@ security_program:
       - "集中化日志与基础告警"
       - "季度访问审查"
       - "漏洞管理流程"
-
+# ...
   Q3_maturity:
     name: "成熟度提升"
     items:
@@ -391,7 +393,7 @@ security_program:
       - "数据分类与处理策略"
       - "供应商安全评估"
       - "漏洞赏金计划(小规模启动)"
-
+# ...
   Q4_optimization:
     name: "优化"
     items:
@@ -427,7 +429,7 @@ security_program:
 ```bash
 # 免费版:基础三层检查
 bash security-check.sh
-
+# ...
 # 专业版:十二阶段深度评估
 bash security-check.sh --full --compliance SOC2 --report html
 ```
@@ -460,7 +462,7 @@ security_dashboard:
 
 ### 扫描计划配置
 | 扫描类型 | 频率 | 工具示例 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 依赖扫描 | 每次CI构建 | npm audit, pip-audit, trivy |
 | SAST(代码) | 每次PR | Semgrep, CodeQL, Bandit |
 | 密钥扫描 | 每次提交 | GitLeaks, truffleHog |
@@ -502,7 +504,7 @@ security_dashboard:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | grep | 文本搜索工具 | 必需 | 系统自带 |
 | python3 | 运行时环境 | 推荐 | python.org 下载 |
 | npm | 包管理器 | 按需 | nodejs.org 下载 |
@@ -522,7 +524,7 @@ security_dashboard:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

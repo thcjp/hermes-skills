@@ -28,8 +28,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 日历提醒工具 免费版
 
 ## 概述
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 每晚定时扫描 | 22:00 自动扫描明日全部日历日程 |
 | 时段分类提醒 | 上午日程提前 2 小时提醒，下午日程 12:00 统一提醒 |
 | 飞书通知 | 通过飞书机器人发送提醒消息 |
@@ -84,15 +85,15 @@ suggested_price: 29.9
 ```text
 # 22:00 扫描完成汇报（飞书消息）
 📅 明日日程扫描完成（2026-07-19）
-
+# ...
 上午日程（提前2小时提醒）:
 - 09:00 项目周会 (会议室A)
 - 11:00 客户需求评审 (线上)
-
+# ...
 下午日程（12:00统一提醒）:
 - 14:00 技术方案评审 (会议室B)
 - 16:00 一对一沟通 (线上)
-
+# ...
 共 4 项日程，已设置提醒 ✅
 ```
 
@@ -118,7 +119,7 @@ suggested_price: 29.9
 📅 下午日程提醒
 🕐 14:00 技术方案评审 (会议室B)
 🕐 16:00 一对一沟通 (线上)
-
+# ...
 共 2 项下午日程，请合理安排时间
 ```
 
@@ -165,27 +166,26 @@ python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.p
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 免费版配置通过脚本参数与环境变量控制。
 
 ```python
 # calendar_reminder.py 配置部分
-
+# ...
 # 飞书通知配置
 FEISHU_CONFIG = {
     "target": "user:ou_xxxxxxxxxxxxxxxx",  # 你的飞书 open_id
     "bot_name": "日历提醒助手",
 }
-
+# ...
 # 提醒规则配置
 REMINDER_RULES = {
     "morning_threshold": "12:00",      # 上午/下午分界
     "morning_advance_hours": 2,        # 上午日程提前提醒小时数
     "afternoon_reminder_time": "12:00", # 下午日程统一提醒时间
 }
-
+# ...
 # 扫描配置
 SCAN_CONFIG = {
     "timezone": "Asia/Shanghai",
@@ -199,10 +199,10 @@ SCAN_CONFIG = {
 ```bash
 # 查看已注册的定时任务
 skill-platform cron list
-
+# ...
 # 查看任务详情
 skill-platform cron get --name "calendar-daily-scan"
-
+# ...
 # 删除定时任务（如需重新配置）
 skill-platform cron remove --name "calendar-daily-scan"
 ```
@@ -279,7 +279,7 @@ python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.p
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :------- | :----- | :--------- | :--------- |
+|:-----|:-----|:-----|:-----|
 | Python 3.9+ | 运行时 | 必需 | python.org 官方下载 |
 | owa-outlook skill | skill 依赖 | 必需 | 提供 `owa_calendar.py` 日历读取模块 |
 | skill-platform CLI | 命令行工具 | 必需 | 定时任务注册与管理 |
@@ -307,9 +307,8 @@ export OUTLOOK_EMAIL="your_work_email@company.com"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

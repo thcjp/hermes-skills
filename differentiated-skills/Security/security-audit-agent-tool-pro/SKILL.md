@@ -22,12 +22,14 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 专业版为企业安全团队提供完整的AI Agent安全审计平台,涵盖多Agent批量审计、上下文感知深度提示注入检测、沙盒逃逸分析、工具参数投毒检测、供应链安全审查与CI/CD安全门禁。在免费版基础审计能力之上,新增企业级深度检测、自动化修复建议与合规报告导出。专业版完全兼容免费版审计方法,已有审计流程可无缝升级。
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 多Agent审计 | 批量审计多个Agent项目,统一管理 |
 | 深度注入检测 | 上下文感知,检测复杂多轮注入 |
 | 沙盒逃逸分析 | 检测Agent突破沙盒限制的行为 |
@@ -41,7 +43,7 @@ pricing_model: "monthly"
 ### 1. 多Agent批量审计(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Agent安全审计专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -50,37 +52,37 @@ pricing_model: "monthly"
 #!/bin/bash
 AGENTS_DIR="${1:-./agents}"
 REPORT_FILE="agent-audit-report.json"
-
+# ...
 echo "============================================"
 echo "多Agent批量安全审计"
 echo "审计时间: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
 echo "============================================"
-
+# ...
 echo "[" > "$REPORT_FILE"
 FIRST=true
-
+# ...
 for agent_dir in "$AGENTS_DIR"/*/; do
     agent_name=$(basename "$agent_dir")
     echo ""
     echo "审计Agent: ${agent_name}"
-
+# ...
     ISSUES=0
-
+# ...
     CODE_ISSUES=$(grep -rn 'eval(\|exec(\|system(' \
       --include='*.{js,ts,py}' "$agent_dir" 2>/dev/null | \
       grep -v 'node_modules\|test' | wc -l)
-
+# ...
     SECRET_ISSUES=$(grep -rn 'sk-[A-Za-z0-9]\{20,\}\|AKIA[0-9A-Z]\{16\}' \
       --include='*.{js,ts,py,json,yaml}' "$agent_dir" 2>/dev/null | \
       grep -v 'node_modules\|example' | wc -l)
-
+# ...
     INJECTION_ISSUES=0
     for pattern in 'ignore.*previous\|disregard.*above\|you.*are.*now'; do
         count=$(grep -ric "$pattern" "$agent_dir" 2>/dev/null | \
                 awk -F: '{s+=$2} END {print s}')
         INJECTION_ISSUES=$((INJECTION_ISSUES + count))
     done
-
+# ...
     TOOL_ISSUES=0
     if [ -f "${agent_dir}tools.json" ]; then
         TOOL_COUNT=$(jq '. | length' "${agent_dir}tools.json" 2>/dev/null)
@@ -88,18 +90,18 @@ for agent_dir in "$AGENTS_DIR"/*/; do
             "${agent_dir}tools.json" 2>/dev/null)
         TOOL_ISSUES=$PERMISSIONLESS
     fi
-
+# ...
     TOTAL=$((CODE_ISSUES + SECRET_ISSUES + INJECTION_ISSUES + TOOL_ISSUES))
     echo "  代码问题: ${CODE_ISSUES}"
     echo "  密钥泄露: ${SECRET_ISSUES}"
     echo "  注入风险: ${INJECTION_ISSUES}"
     echo "  工具权限: ${TOOL_ISSUES}"
     echo "  总计: ${TOTAL}"
-
+# ...
     [ "$FIRST" = true ] && FIRST=false || echo "," >> "$REPORT_FILE"
     echo "{\"agent\": \"${agent_name}\", \"code\": ${CODE_ISSUES}, \"secrets\": ${SECRET_ISSUES}, \"injection\": ${INJECTION_ISSUES}, \"tools\": ${TOOL_ISSUES}, \"total\": ${TOTAL}}" >> "$REPORT_FILE"
 done
-
+# ...
 echo "]" >> "$REPORT_FILE"
 echo ""
 echo "审计完成,报告: ${REPORT_FILE}"
@@ -122,31 +124,31 @@ echo "审计完成,报告: ${REPORT_FILE}"
 ```bash
 #!/bin/bash
 echo "=== 沙盒逃逸风险分析 ==="
-
+# ...
 echo ""
 echo "--- 1. 文件系统越权 ---"
 FS_ACCESS=$(grep -rn 'open(\|readFile(\|writeFile(\|fs\.' \
   --include='*.{js,ts}' . 2>/dev/null | \
   grep -v 'node_modules\|test' | wc -l)
 echo "  文件系统操作: ${FS_ACCESS} 处"
-
+# ...
 PATH_TRAVERSAL=$(grep -rn '\.\./\|\.\.\\\|%2e%2e' \
   --include='*.{js,ts,py}' . 2>/dev/null | \
   grep -v 'node_modules\|test' | wc -l)
 [ "$PATH_TRAVERSAL" -gt 0 ] && echo "  [!] 路径遍历风险: ${PATH_TRAVERSAL} 处"
-
+# ...
 echo ""
 echo "--- 2. 网络访问 ---"
 NET_ACCESS=$(grep -rn 'fetch(\|http\.get\|requests\.\|axios\.' \
   --include='*.{js,ts,py}' . 2>/dev/null | \
   grep -v 'node_modules\|test' | wc -l)
 echo "  网络请求: ${NET_ACCESS} 处"
-
+# ...
 if ! grep -rn 'allowed.*url\|whitelist.*url\|allowedDomains' \
   --include='*.{js,ts,py,json}' . 2>/dev/null | grep -v 'node_modules'; then
     echo "  [!] 未发现URL白名单配置"
 fi
-
+# ...
 echo ""
 echo "--- 3. 进程执行 ---"
 PROC_EXEC=$(grep -rn 'exec\|spawn\|system\|subprocess' \
@@ -162,8 +164,6 @@ echo "  进程执行: ${PROC_EXEC} 处"
 
 ### 4. SARIF报告导出(专业版独有)
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供SARIF报告导出(专业版独有)所需的指令和必要参数。
 **处理**: 解析SARIF报告导出(专业版独有)的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回SARIF报告导出(专业版独有)的响应数据,包含状态码、结果和日志。
@@ -176,19 +176,19 @@ echo "  进程执行: ${PROC_EXEC} 处"
 echo "============================================"
 echo "企业Agent安全治理"
 echo "============================================"
-
+# ...
 echo "阶段1: 批量审计"
 bash multi_agent_audit.sh ./agents --output audit-report.json
-
+# ...
 echo "阶段2: 深度注入检测"
 python3 deep_injection_scan.py --dir ./agents --output injection-report.json
-
+# ...
 echo "阶段3: 沙盒逃逸分析"
 bash sandbox_escape_check.sh ./agents
-
+# ...
 echo "阶段4: 报告生成"
 python3 generate_sarif.py --input audit-report.json --output agent-audit.sarif
-
+# ...
 echo ""
 echo "治理完成"
 echo "  审计报告: audit-report.json"
@@ -200,13 +200,13 @@ echo "  SARIF报告: agent-audit.sarif"
 ```yaml
 name: Agent Security Gate
 on: [push, pull_request]
-
+# ...
 jobs:
   agent-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+# ...
       - name: Run Agent Security Audit
         run: |
           CRITICAL=0
@@ -214,16 +214,16 @@ jobs:
             count=$(grep -rn "$pattern" --include='*.{js,ts,py}' . | grep -v 'node_modules\|test' | wc -l)
             [ "$count" -gt 0 ] && echo "Found: $pattern ($count)" && CRITICAL=$((CRITICAL + count))
           done
-
+# ...
           python3 deep_injection_scan.py --dir . --output injection.json
           INJECTION_COUNT=$(jq '.total_findings' injection.json)
-
+# ...
           if [ "$CRITICAL" -gt 0 ] || [ "$INJECTION_COUNT" -gt 0 ]; then
             echo "Security gate FAILED"
             exit 1
           fi
           echo "Security gate PASSED"
-
+# ...
       - name: Upload SARIF
         uses: github/codeql-action/upload-sarif@v3
         with:
@@ -234,13 +234,13 @@ jobs:
 ```python
 #!/usr/bin/env python3
 """工具参数投毒检测"""
-
+# ...
 import re
 import json
-
+# ...
 class ParameterPoisoningDetector:
     """检测Agent工具参数中的恶意载荷"""
-
+# ...
     MALICIOUS_PATTERNS = {
         "command_injection": [
             r';\s*(rm|del|format|shutdown)',
@@ -271,12 +271,12 @@ class ParameterPoisoningDetector:
             r'http://0\.0\.0\.0',
         ]
     }
-
+# ...
     def check_parameter(self, param_name, param_value):
         """检查单个参数"""
         findings = []
         value_str = str(param_value)
-
+# ...
         for attack_type, patterns in self.MALICIOUS_PATTERNS.items():
             for pattern in patterns:
                 if re.search(pattern, value_str, re.IGNORECASE):
@@ -287,9 +287,9 @@ class ParameterPoisoningDetector:
                         "value_snippet": value_str[:100],
                         "severity": "CRITICAL"
                     })
-
+# ...
         return findings
-
+# ...
     def check_tool_call(self, tool_name, parameters):
         """检查工具调用的所有参数"""
         all_findings = []
@@ -299,15 +299,15 @@ class ParameterPoisoningDetector:
                 f["tool"] = tool_name
                 all_findings.append(f)
         return all_findings
-
+# ...
 if __name__ == "__main__":
     detector = ParameterPoisoningDetector()
-
+# ...
     findings = detector.check_tool_call("file_reader", {
         "path": "../../../etc/passwd",
         "command": "ls; rm -rf /"
     })
-
+# ...
     print(json.dumps(findings, indent=2, ensure_ascii=False))
 ```
 
@@ -321,7 +321,7 @@ if __name__ == "__main__":
 ### 从免费版升级
 ```bash
 bash codebase_scan.sh
-
+# ...
 bash multi_agent_audit.sh ./agents --full --output report.json
 ```
 
@@ -339,21 +339,21 @@ rules:
     enabled: true
     patterns: "deep"  # deep模式启用上下文感知
     severity_threshold: "MEDIUM"
-
+# ...
   sandbox_escape:
     enabled: true
     check_fs: true
     check_network: true
     check_process: true
-
+# ...
   parameter_poisoning:
     enabled: true
     attack_types: [command, path, sql, xss, ssrf]
-
+# ...
   hardcoded_secrets:
     enabled: true
     patterns: [api_key, token, password, private_key]
-
+# ...
   tool_permissions:
     enabled: true
     require_schema: true
@@ -362,7 +362,7 @@ rules:
 
 ### 安全等级矩阵
 | 发现类型 | 严重 | 高危 | 中危 | 低危 |
-|:---------|:-----|:-----|:-----|:-----|
+|---:|---:|---:|---:|---:|
 | 提示注入 | 直接覆盖 | 角色劫持 | 编码绕过 | 间接泄露 |
 | 沙盒逃逸 | 进程执行 | 文件越权 | 网络访问 | 信息泄露 |
 | 参数投毒 | 命令注入 | 路径遍历 | SQL注入 | XSS |
@@ -401,7 +401,7 @@ rules:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | grep | 文本搜索工具 | 必需 | 系统自带 |
 | python3 | 运行时环境 | 推荐 | python.org 下载 |
 | jq | JSON处理工具 | 必需 | `apt install jq` / `brew install jq` |
@@ -420,7 +420,7 @@ rules:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -19,27 +19,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Java代码审查专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版新增 | 不支持 | 支持 |
-| 审查范围 | 不支持 | 支持 |
-| 批量多文件/多模块/全项目 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 审查范围 | 单文件/diff | 批量多文件/多模块/全项目 |
 | 审查规则 | 内置固定规则 | 自定义规则 + 团队配置 |
 | 报告格式 | Markdown | Markdown + HTML + JSON |
@@ -83,65 +85,65 @@ pricing_model: "per_use"
 PROJECT_DIR=$1
 REPORT_DIR="reports/java-review-$(date +%Y%m%d)"
 mkdir -p "$REPORT_DIR"
-
+# ...
 echo "=== Java 批量代码审查 ==="
 echo "项目目录: $PROJECT_DIR"
 echo "报告目录: $REPORT_DIR"
 echo ""
-
+# ...
 JAVA_FILES=$(find "$PROJECT_DIR" -name "*.java" -not -path "*/test/*")
 FILE_COUNT=$(echo "$JAVA_FILES" | wc -l)
 echo "审查文件数: $FILE_COUNT"
-
+# ...
 TOTAL_ISSUES=0
 CRITICAL=0
 MAJOR=0
 MINOR=0
 SUGGESTION=0
-
+# ...
 cat > "$REPORT_DIR/summary.md" << 'EOF'
 EOF
-
+# ...
 echo "| 指标 | 数值 |" >> "$REPORT_DIR/summary.md"
 echo "| --- | --- |" >> "$REPORT_DIR/summary.md"
 echo "| 审查日期 | $(date) |" >> "$REPORT_DIR/summary.md"
 echo "| 审查范围 | $PROJECT_DIR |" >> "$REPORT_DIR/summary.md"
 echo "| 文件数量 | $FILE_COUNT |" >> "$REPORT_DIR/summary.md"
-
+# ...
 echo "$JAVA_FILES" | while read file; do
   REL_PATH=${file#$PROJECT_DIR/}
-
+# ...
   SQL_INJECTION=$(grep -n "String sql.*+.*\"" "$file" | head -5)
   if [ -n "$SQL_INJECTION" ]; then
     echo "[Critical] $REL_PATH: 可能的 SQL 注入" >> "$REPORT_DIR/issues.md"
     echo "$SQL_INJECTION" >> "$REPORT_DIR/issues.md"
   fi
-
+# ...
   HARDCODED_PWD=$(grep -in "password.*=.*\"\|secret.*=.*\"" "$file" | head -5)
   if [ -n "$HARDCODED_PWD" ]; then
     echo "[Critical] $REL_PATH: 硬编码密码/密钥" >> "$REPORT_DIR/issues.md"
     echo "$HARDCODED_PWD" >> "$REPORT_DIR/issues.md"
   fi
-
+# ...
   EMPTY_CATCH=$(awk '/catch.*\{/{flag=1;next}/\}/{if(flag && NR-prev<3) print FILENAME":"prev; flag=0}flag{prev=NR}' "$file")
   if [ -n "$EMPTY_CATCH" ]; then
     echo "[Major] $REL_PATH: 空 catch 块" >> "$REPORT_DIR/issues.md"
     echo "$EMPTY_CATCH" >> "$REPORT_DIR/issues.md"
   fi
-
+# ...
   UNCLOSED=$(grep -n "new FileInputStream\|new FileOutputStream\|getConnection" "$file" | grep -v "try.*(" | head -5)
   if [ -n "$UNCLOSED" ]; then
     echo "[Major] $REL_PATH: 资源可能未正确关闭" >> "$REPORT_DIR/issues.md"
     echo "$UNCLOSED" >> "$REPORT_DIR/issues.md"
   fi
-
+# ...
   LONG_METHODS=$(awk '/public|private|protected.*\(/{start=NR;name=$0}/^\}/{if(NR-start>50) print FILENAME":"start"-"NR" ("NR-start"行) "name; start=0}' "$file")
   if [ -n "$LONG_METHODS" ]; then
     echo "[Minor] $REL_PATH: 方法过长" >> "$REPORT_DIR/issues.md"
     echo "$LONG_METHODS" >> "$REPORT_DIR/issues.md"
   fi
 done
-
+# ...
 echo ""
 echo "=== 审查完成 ==="
 echo "报告位置: $REPORT_DIR/"
@@ -154,9 +156,9 @@ echo "报告位置: $REPORT_DIR/"
 version: "2.0"
 team: "后端开发组"
 updated: "2026-07-18"
-
+# ...
 extends: "default"
-
+# ...
 rules:
   naming:
     max_method_length: 40        # 比默认 50 更严格
@@ -166,7 +168,7 @@ rules:
       service: "Service"
       repository: "Repository"
       dto: "DTO"
-
+# ...
   security:
     owasp_top_10: true           # 启用 OWASP Top 10 检查
     forbidden_apis:              # 禁止使用的 API
@@ -177,7 +179,7 @@ rules:
       - "RequestMapping"
       - "PostMapping"
       - "GetMapping"
-
+# ...
   performance:
     warn_collection_init: true   # 集合未指定初始容量时告警
     warn_string_concat: true     # 循环内字符串拼接告警
@@ -209,7 +211,7 @@ name: Java 代码质量门禁
 on:
   pull_request:
     branches: [main, develop]
-
+# ...
 jobs:
   code-review:
     runs-on: ubuntu-latest
@@ -222,11 +224,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
+# ...
       - name: 执行代码审查
         run: |
           （请参考skill目录中的脚本文件） src/
-
+# ...
       - name: 检查 Critical 问题数
         run: |
           CRITICAL_COUNT=$(grep -c "\[Critical\]" reports/java-review-*/issues.md || echo 0)
@@ -235,7 +237,7 @@ jobs:
             echo "::error::发现 $CRITICAL_COUNT 个 Critical 问题，阻止合并"
             exit 1
           fi
-
+# ...
       - name: 检查 Major 问题数
         run: |
           MAJOR_COUNT=$(grep -c "\[Major\]" reports/java-review-*/issues.md || echo 0)
@@ -243,14 +245,14 @@ jobs:
           if [ "$MAJOR_COUNT" -gt 5 ]; then
             echo "::warning::Major 问题数超过 5 个，建议修复后再合并"
           fi
-
+# ...
       - name: 上传审查报告
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: java-review-report
           path: reports/
-
+# ...
       - name: 评论审查结果
         if: always()
         uses: actions/github-script@v7
@@ -270,7 +272,7 @@ jobs:
 
 ### OWASP 安全审计检查清单
 | OWASP 类别 | 检查项 | 检测方法 |
-| --- | --- | --- |
+|------:|------:|------:|
 | 注入 | SQL 注入 | 检查字符串拼接 SQL |
 | 注入 | 命令注入 | 检查 Runtime.exec 调用 |
 | 认证失效 | 硬编码凭据 | 搜索 password/secret 赋值 |
@@ -317,12 +319,12 @@ jobs:
             <li class="suggestion">Suggestion: 建议优化</li>
         </ul>
     </div>
-
+# ...
     <h2>问题趋势</h2>
     <div class="chart">
         <!-- 历史趋势图表 -->
     </div>
-
+# ...
     <h2>问题详情</h2>
     <table>
         <tr>
@@ -354,7 +356,7 @@ jobs:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | java-reviewer处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -401,9 +403,8 @@ jobs:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -416,9 +417,9 @@ jobs:
 - **JDK 版本**: 建议 11 及以上
 - **CI/CD 平台**: GitHub Actions / GitLab CI / Jenkins 等
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | JDK | 编译器/运行时 | 推荐 | oracle.com 或 openjdk.net 下载 |
 | Git | 命令行工具 | 必需 | 系统包管理器安装 |
 | Maven/Gradle | 构建工具 | 可选 | maven.apache.org / gradle.org |
@@ -440,18 +441,18 @@ jobs:
 ### 需求一致性检查
 ```text
 审查时提供需求文档，工具会检查代码实现与需求的一致性
-
+# ...
 输入：
 1. git diff 输出
 2. 需求文档（可选）
 3. 设计文档（可选）
-
+# ...
 一致性检查项：
 - 需求中的功能点是否都已实现
 - 代码改动是否超出需求范围
 - 接口设计是否与文档一致
 - 数据结构是否与设计匹配
-
+# ...
 输出：
 - [已实现] 用户注册接口（需求 3.1）
 - [已实现] 邮箱验证功能（需求 3.2）
@@ -463,27 +464,26 @@ jobs:
 ```bash
 #!/bin/bash
 echo "日期,Critical,Major,Minor,Suggestion,总文件数" > quality-trend.csv
-
+# ...
 for report in reports/java-review-*/summary.md; do
   date=$(echo $report | grep -o '[0-9]*' | head -1)
-
+# ...
   critical=$(grep -c "Critical:" "$report" 2>/dev/null || echo 0)
   major=$(grep -c "Major:" "$report" 2>/dev/null || echo 0)
   minor=$(grep -c "Minor:" "$report" 2>/dev/null || echo 0)
   suggestion=$(grep -c "Suggestion:" "$report" 2>/dev/null || echo 0)
   files=$(grep "文件数量" "$report" | grep -o '[0-9]*')
-
+# ...
   echo "$date,$critical,$major,$minor,$suggestion,$files" >> quality-trend.csv
 done
-
+# ...
 echo "趋势数据已保存到 quality-trend.csv"
 ```
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -514,7 +514,7 @@ severity_override:
 ### Q3：如何集成到 SonarQube？
 ```bash
 （请参考skill目录中的脚本文件） reports/java-review-latest/ > sonar-issues.json
-
+# ...
 [
   {
     "rule": "java:S2077",
@@ -528,7 +528,7 @@ severity_override:
 
 ### Q4：如何统计代码质量指标？
 | 指标 | 计算方式 | 目标值 |
-| --- | --- | --- |
+|----|:--:|---:|
 | Critical 密度 | Critical 数 / 千行 | 0 |
 | Major 密度 | Major 数 / 千行 | < 2 |
 | 代码合规率 | (1 - 问题文件数 / 总文件数) × 100% | > 95% |
@@ -538,18 +538,19 @@ severity_override:
 ### Q5：如何做安全审计？
 ```bash
 echo "=== OWASP 安全审计 ==="
-
+# ...
 echo "检查 SQL 注入..."
 grep -rn "String sql.*+.*\"" src/ --include="*.java"
-
+# ...
 echo "检查硬编码凭据..."
 grep -rn "password.*=.*\"\|secret.*=.*\"" src/ --include="*.java"
-
+# ...
 echo "检查明文传输..."
-
-
+# ...
+# ...
 ## 已知限制
-
+# ...
 - 每次请求仅处理单一任务,不支持批量并发
 - 
 - 和网络环境
+# ...

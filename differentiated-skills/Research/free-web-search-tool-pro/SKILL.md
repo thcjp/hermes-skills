@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
 # 网页搜索工具专业版
 
@@ -45,7 +47,7 @@ pricing_model: "per_use"
 ### 功能对比
 
 | 能力 | 免费版 | PRO 版 |
-| --- | --- | --- |
+|---|---|-----|
 | 双引擎路由 | 是 | 是 |
 | 中文优化 | 是 | 是 |
 | 正文抓取 | 上限 5 条 | 上限 20 条 |
@@ -81,10 +83,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 导出为 JSON
 python （请参考skill目录中的脚本文件） "关键词" --export=json --output=data.json
-
+# ...
 # 导出为 CSV
 python （请参考skill目录中的脚本文件） "关键词" --export=csv --output=data.csv
-
+# ...
 # 导出为 Markdown 报告
 python （请参考skill目录中的脚本文件） "关键词" --export=md --output=report.md
 ```
@@ -94,10 +96,10 @@ python （请参考skill目录中的脚本文件） "关键词" --export=md --ou
 ```bash
 # 使用 HTTP 代理
 python （请参考skill目录中的脚本文件） "关键词" --proxy=http://127.0.0.1:7890
-
+# ...
 # 使用 SOCKS5 代理
 python （请参考skill目录中的脚本文件） "关键词" --proxy=socks5://127.0.0.1:1080
-
+# ...
 # 配置请求超时与重试
 python （请参考skill目录中的脚本文件） "关键词" --timeout=30 --retry=5
 ```
@@ -140,7 +142,7 @@ cat > competitors.txt <<EOF
 竞品C 定价策略
 竞品D 市场份额
 EOF
-
+# ...
 # 批量搜索并导出
 python （请参考skill目录中的脚本文件） \
   --keywords-file competitors.txt \
@@ -212,7 +214,7 @@ python （请参考skill目录中的脚本文件） \
 # 现有配置自动兼容，无需迁移
 # 依赖说明
 pip install requests-cache apscheduler
-
+# ...
 # 验证升级
 python （请参考skill目录中的脚本文件） --version
 # 输出: free-web-search-tool-pro v1.0.0
@@ -225,7 +227,7 @@ python （请参考skill目录中的脚本文件） --version
 echo "Python 异步编程
 Docker 容器化部署
 Kubernetes 集群管理" > topics.txt
-
+# ...
 # 执行批量搜索
 python （请参考skill目录中的脚本文件） \
   --keywords-file topics.txt \
@@ -247,22 +249,22 @@ search:
   full_text_limit: 10
   timeout: 30
   retry: 3
-
+# ...
 proxy:
   enabled: true
   type: socks5
   host: 127.0.0.1
   port: 1080
-
+# ...
 cache:
   enabled: true
   ttl: 3600
   storage: ./cache
-
+# ...
 export:
   default_format: json
   output_dir: ./exports
-
+# ...
 schedule:
   enabled: true
   timezone: Asia/Shanghai
@@ -274,7 +276,7 @@ schedule:
 ```bash
 # 启动 REST API 服务
 python （请参考skill目录中的脚本文件） --port=8000
-
+# ...
 # 调用 API 执行搜索
 curl -X POST http://localhost:8000/search \
   -H "Content-Type: application/json" \
@@ -284,7 +286,7 @@ curl -X POST http://localhost:8000/search \
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 范围 | 说明 |
-| --- | --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|:-----|
 | `query` | 字符串 | 无 | 必填 | 搜索关键词 |
 | `--max` | 整数 | 20 | 1-50 | 最多返回条数 |
 | `--full` | 整数 | 0 | 0-20 | 抓取前 N 条全文 |
@@ -303,7 +305,7 @@ curl -X POST http://localhost:8000/search \
 ```python
 # batch_config.py - 批量搜索配置示例
 from batch_search import BatchSearchConfig
-
+# ...
 config = BatchSearchConfig(
     max_results=20,
     full_text_limit=5,
@@ -315,7 +317,7 @@ config = BatchSearchConfig(
     export_format="json",
     deduplicate=True
 )
-
+# ...
 # 执行批量搜索
 results = config.execute("keywords.txt")
 print(f"完成 {len(results)} 个关键词搜索")
@@ -329,7 +331,7 @@ python （请参考skill目录中的脚本文件） \
   --team-id=market_research \
   --share-dir=./shared_searches \
   --members=alice,bob,charlie
-
+# ...
 # 查看团队成员搜索记录
 python （请参考skill目录中的脚本文件） \
   --team-id=market_research \
@@ -346,7 +348,7 @@ python （请参考skill目录中的脚本文件） \
   --output=merged.json \
   --deduplicate \
   --sort-by=relevance
-
+# ...
 # 生成分析报告
 python （请参考skill目录中的脚本文件） \
   --input=merged.json \
@@ -361,10 +363,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 增加并行工作线程
 python （请参考skill目录中的脚本文件） --workers=8 keywords.txt
-
+# ...
 # 启用缓存减少重复请求
 python （请参考skill目录中的脚本文件） --cache keywords.txt
-
+# ...
 # 调整查询间隔
 python （请参考skill目录中的脚本文件） --delay=1 keywords.txt
 ```
@@ -374,7 +376,7 @@ python （请参考skill目录中的脚本文件） --delay=1 keywords.txt
 ```bash
 # 测试代理可用性
 curl --proxy socks5://127.0.0.1:1080 https://www.google.com
-
+# ...
 # 切换代理协议
 python （请参考skill目录中的脚本文件） "测试" --proxy=http://127.0.0.1:7890
 ```
@@ -384,10 +386,10 @@ python （请参考skill目录中的脚本文件） "测试" --proxy=http://127.
 ```bash
 # 检查 cron 配置
 python （请参考skill目录中的脚本文件） --list
-
+# ...
 # 查看任务日志
 cat ./logs/scheduled_search.log
-
+# ...
 # 手动触发测试
 python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
@@ -397,10 +399,10 @@ python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```bash
 # 检查端口占用
 netstat -tlnp | grep 8000
-
+# ...
 # 查看服务日志
 python （请参考skill目录中的脚本文件） --debug
-
+# ...
 # 验证 API 响应
 curl http://localhost:8000/health
 ```
@@ -418,7 +420,7 @@ curl http://localhost:8000/health
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 是 | 系统包管理器安装 |
 | playwright | Python 库 | 是 | `pip install playwright` |
 | Chromium | 浏览器引擎 | 是 | `playwright install chromium` |
@@ -450,9 +452,8 @@ export SMTP_PASSWORD=your_password
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

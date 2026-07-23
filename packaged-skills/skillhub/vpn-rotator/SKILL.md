@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # VPN轮换工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版增强 | 不支持 | 支持 |
-| :--------- | 不支持 | 支持 |
-| :----------- | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 专业版增强 |
-|:---------|:-----|:-----------|
+|:-----|:-----|:-----|
 | VPN连接管理 | 连接/断开/状态查询 | 支持多VPN并发会话池 |
 | IP轮换 | 按请求/时间切换 | 支持智能轮换策略 |
 | 自动重连 | 断线恢复 | 指数退避自动重连 |
@@ -82,7 +84,7 @@ pricing_model: "monthly"
 
 ```python
 from vpn_rotator import VPNPool, LoadBalancer, CircuitBreaker
-
+# ...
 # 初始化VPN会话池
 pool = VPNPool(
     max_connections=20,            # 最大并发VPN连接数
@@ -90,21 +92,21 @@ pool = VPNPool(
     reconnect_backoff="exponential", # 指数退避
     health_check_interval=30,      # 健康检查间隔
 )
-
+# ...
 # 负载均衡器：智能选择最优VPN
 balancer = LoadBalancer(
     strategy="weighted",           # 加权轮询
     metrics=["latency", "success_rate", "stability"],
     fallback_on_failure=True,
 )
-
+# ...
 # 熔断器：连续失败自动隔离
 breaker = CircuitBreaker(
     failure_threshold=5,           # 连续失败5次熔断
     reset_timeout=300,             # 5分钟后尝试恢复
     half_open_max_calls=3,
 )
-
+# ...
 async def scrape_with_pool(url):
     """从池中获取VPN并执行采集"""
     vpn = await pool.acquire(balancer=balancer, breaker=breaker)
@@ -134,7 +136,7 @@ class GeoRouter:
         "amazon.co.jp": "JP",
         "amazon.fr": "FR",
     }
-
+# ...
     async def route(self, target_url):
         region = self._detect_region(target_url)
         vpn = await self.pool.acquire(
@@ -142,7 +144,7 @@ class GeoRouter:
             balancer=self.balancer
         )
         return vpn
-
+# ...
     def _detect_region(self, url):
         for domain, region in self.REGION_MAP.items():
             if domain in url:
@@ -160,7 +162,7 @@ class ProxyChain:
     def __init__(self, vpn_pool, socks_pool):
         self.vpn_pool = vpn_pool
         self.socks_pool = socks_pool
-
+# ...
     async def request(self, url):
         # 优秀层：VPN连接
         vpn = await self.vpn_pool.acquire()
@@ -186,7 +188,7 @@ class ProxyChain:
 
 ```python
 from vpn_rotator import VPNPool, LoadBalancer, MetricsCollector
-
+# ...
 # 企业级配置
 pool = VPNPool(
     max_connections=20,
@@ -200,18 +202,17 @@ pool = VPNPool(
     reconnect_backoff_base=2.0,
     health_check_interval=30,
 )
-
+# ...
 balancer = LoadBalancer(strategy="weighted")
 metrics = MetricsCollector()
 ```
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | vpn-rotator处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -258,9 +259,8 @@ metrics = MetricsCollector()
 
 ## 异常处理
 
-
 | 问题现象 | 可能原因 | 排查步骤 | 优先级 |
-|:---------|:---------|:---------|:-------|
+|:---:|:---:|:---:|:---:|
 | 所有VPN连接失败 | 网络中断或凭证过期 | ，验证凭证 | P0 |
 | 大量请求超时 | VPN延迟过高 | 查看延迟指标，切换低延迟节点 | P0 |
 | 频繁重连 | VPN服务器不稳定 | 查看重连日志，拉黑不稳定节点 | P1 |
@@ -278,10 +278,10 @@ metrics = MetricsCollector()
 - **sudo权限**: 配置openvpn免密执行
 - **Redis**: 6.0+（会话池状态存储，可选）
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | OpenVPN | 系统软件 | 必需 | `apt install openvpn` / 官网下载 |
 | aiohttp | Python库 | 必需 | `pip install aiohttp` |
@@ -423,9 +423,8 @@ A：如果你有以下需求之一，建议升级：(1) 需要同时管理多个
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

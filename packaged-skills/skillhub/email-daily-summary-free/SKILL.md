@@ -16,16 +16,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
 # Email Daily Summary Free
 
 通过 `browser-use` CLI 驱动浏览器自动化登录 Web 邮箱,抓取当日邮件并生成基础日报。本免费版支持单邮箱当日摘要,适合个人日常使用。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Email Summary Free处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,7 +39,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -98,7 +99,7 @@ browser-use install
 ## 支持的邮箱服务
 
 | 邮箱服务 | 收件箱 URL |
-| --- | --- |
+|---:|---:|
 | Gmail | https://mail.google.com |
 | Outlook | https://outlook.live.com |
 | QQ 邮箱 | https://mail.qq.com |
@@ -126,13 +127,13 @@ browser-use install
 DATE=$(date +%Y-%m-%d)
 OUTPUT_DIR="./email_summaries"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 browser-use --browser real open https://mail.google.com
 sleep 3
-
+# ...
 browser-use state
 browser-use screenshot "$OUTPUT_DIR/inbox_$DATE.png"
-
+# ...
 browser-use eval "
   const emails = [];
   document.querySelectorAll('tr.zA').forEach((row, i) => {
@@ -146,7 +147,7 @@ browser-use eval "
   });
   JSON.stringify(emails, null, 2);
 "
-
+# ...
 browser-use close
 ```
 
@@ -158,7 +159,7 @@ browser-use close
 ==========================================
 未读邮件: 12 封
 可见邮件: 50 封
-
+# ...
 前 20 封邮件:
 1. boss@company.com | 项目进度汇报 | 09:30
 2. finance@bank.com | 账单提醒 | 08:15
@@ -167,7 +168,6 @@ browser-use close
 ```
 
 ## 异常处理
-
 
 ### 1. browser-use CLI 未安装
 
@@ -214,9 +214,8 @@ browser-use close
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

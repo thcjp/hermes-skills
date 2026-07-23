@@ -23,16 +23,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 精英长记忆
 
 解决AI Agent三大记忆顽疾：跨会话遗忘、检索不准、成本失控。本系统将六种成熟记忆策略整合为一套防弹架构，配合WAL写前日志协议，确保永不丢失上下文、永不遗忘决策、永不重复犯错。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 精英长记忆处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,13 +41,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 精英长记忆三路混合检索 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -58,7 +59,7 @@ pricing_model: "per_use"
 
 ### 六层存储架构速查
 | 层级 | 存储 | 用途 | 持久化 | 加载时机 |
-|:---|:---|:---|:---|:---|
+|---:|---:|---:|---:|---:|
 | L1热内存 | SESSION-STATE.md | 当前任务、关键上下文、待办 | 抗压缩/重启 | 会话开始立即加载 |
 | L2温向量 | LanceDB | 语义相似召回 | 本地向量库 | 按需检索 |
 | L3冷图谱 | Git-Notes | 结构化决策、分支关联 | Git永久 | 决策/查询时 |
@@ -131,7 +132,7 @@ pricing_model: "per_use"
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:---:|:---:|:---:|
 | 全部遗忘（新会话无历史） | memory_search未启用或embedding provider未配置OPENAI_API_KEY | 启用memory_search，配置OPENAI_API_KEY；无API Key时降级为本地embedding |
 | 记忆文件未加载 | Agent跳过读取记忆步骤，会话开始未读取SESSION-STATE.md | 在AGENTS.md中写入强制规则：会话开始必须读取SESSION-STATE.md |
 | 子代理上下文孤立 | 派生子代理时未注入上下文继承块，子代理无法获取主代理决策 | 使用上下文传递协议，在子代理任务提示词中注入项目/任务/决策/偏好/约束五项上下文 |
@@ -161,7 +162,7 @@ pricing_model: "per_use"
 SESSION-STATE.md: "决策：MySQL生产环境/SQLite开发环境"
 Git-Notes: "决策#001: 数据库选型 MySQL生产/SQLite开发 [branch:main]"
 memory_store: {"id":"mem_001","content":"用户偏好MySQL生产/SQLite开发","importance":0.9,"category":"decision"}
-
+# ...
 # 会话B召回
 memory_recall query="部署 数据库" → 召回mem_001（score=0.87）
 → 生成MySQL部署脚本（包含连接池配置、字符集utf8mb4、时区设置）
@@ -182,7 +183,7 @@ memory_recall query="部署 数据库" → 召回mem_001（score=0.87）
 # 会话A WAL写入
 lessons.md: "教训#003: 生成Dockerfile必须同时生成.dockerignore，否则镜像体积过大"
 memory_store: {"id":"mem_007","content":"Dockerfile必须配.dockerignore","importance":0.95,"category":"lesson"}
-
+# ...
 # 会话B召回
 memory_recall query="Dockerfile" → 召回mem_007（score=0.92）
 → 同时输出Dockerfile和.dockerignore两个文件
@@ -202,7 +203,7 @@ memory_recall query="Dockerfile" → 召回mem_007（score=0.92）
 - 关键决策: 支付用Stripe / 货币用USD / 支持订阅与一次性付款
 - 已知约束: 必须PCI合规 / 信用卡数据不落本地
 - 历史教训: 上次支付模块因未处理Webhook重试导致重复扣款
-
+# ...
 子代理基于继承上下文进行审查，无需重新询问，直接关注PCI合规与Webhook重试逻辑。
 ```
 
@@ -229,7 +230,7 @@ A：达到100%预算后自动降级为只读模式，此时新记忆无法写入
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|:------|------:|:------|:------|
 | Agent平台 | 运行环境 | 必需 | 安装支持SKILL.md的AI Agent |
 | Python 3.8+ | 运行时 | 推荐 | python.org安装（Git-Notes脚本） |
 | Node.js 16+ | 运行时 | 推荐 | nodejs.org安装（LanceDB向量库） |
@@ -245,7 +246,6 @@ A：达到100%预算后自动降级为只读模式，此时新记忆无法写入
 - SUPERMEMORY_API_KEY：跨设备云同步（可选）
 
 **可用性分类：** MD+EXEC（核心记忆协议纯Markdown即可工作；向量检索、自动抽取等高级功能需对应依赖）
-
 
 **API Key配置方式**:
 ```bash

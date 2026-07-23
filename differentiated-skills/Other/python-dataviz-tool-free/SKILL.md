@@ -43,8 +43,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
-
 # Python 数据可视化 - 免费版
 
 ## 概述
@@ -105,7 +106,7 @@ Python 数据可视化工具免费版使用 matplotlib、seaborn、plotly 三大
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Python数据可视化-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -113,10 +114,10 @@ Python 数据可视化工具免费版使用 matplotlib、seaborn、plotly 三大
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
-
+# ...
 # 读取 CSV 数据
 df = pd.read_csv('sales_data.csv')
-
+# ...
 # 创建折线图
 plt.figure(figsize=(10, 6))
 plt.plot(df['date'], df['revenue'], linewidth=2, color='#667eea')
@@ -126,7 +127,7 @@ plt.ylabel('营收 (元)')
 plt.grid(alpha=0.3)
 plt.xticks(rotation=45)
 plt.tight_layout()
-
+# ...
 plt.savefig('revenue_trend.png', dpi=300, bbox_inches='tight')
 ```
 
@@ -135,14 +136,14 @@ plt.savefig('revenue_trend.png', dpi=300, bbox_inches='tight')
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+# ...
 # 设置样式
 sns.set_theme(style="whitegrid")
 sns.set_palette("husl")
-
+# ...
 # 示例
 tips = sns.load_dataset("tips")
-
+# ...
 # 创建箱线图
 plt.figure(figsize=(8, 6))
 sns.boxplot(data=tips, x='day', y='total_bill')
@@ -155,14 +156,14 @@ plt.savefig('bill_distribution.png', dpi=300)
 ```python
 import plotly.express as px
 import pandas as pd
-
+# ...
 # 创建数据
 df = pd.DataFrame({
     '产品': ['A', 'B', 'C', 'D'],
     '销量': [120, 180, 90, 150],
     '利润': [30, 45, 20, 38]
 })
-
+# ...
 # 创建交互式散点图
 fig = px.scatter(df, x='销量', y='利润', text='产品',
                  title='产品销量与利润关系')
@@ -197,7 +198,7 @@ fig.write_html('product_scatter.html')
 python3 -m venv .venv
 source .venv/（请参考skill目录中的脚本文件）  # Linux/macOS
 # .venv\Scripts\activate   # Windows
-
+# ...
 # 依赖说明
 pip install matplotlib seaborn plotly pandas numpy
 ```
@@ -207,11 +208,11 @@ pip install matplotlib seaborn plotly pandas numpy
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
-
+# ...
 # 生成数据
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
-
+# ...
 # 绘图
 plt.figure(figsize=(10, 6))
 plt.plot(x, y, linewidth=2, color='#667eea')
@@ -220,7 +221,7 @@ plt.xlabel('X 轴')
 plt.ylabel('Y 轴')
 plt.grid(alpha=0.3)
 plt.tight_layout()
-
+# ...
 # 保存
 plt.savefig('sine_wave.png', dpi=300, bbox_inches='tight')
 plt.savefig('sine_wave.svg', bbox_inches='tight')
@@ -231,7 +232,7 @@ plt.savefig('sine_wave.svg', bbox_inches='tight')
 ### 图表选择指南
 
 | 数据关系 | 推荐图表 | 函数 |
-|----------|----------|------|
+|:-----|:-----|:-----|
 | 趋势变化 | 折线图 | `plt.plot()` / `sns.lineplot()` |
 | 数值比较 | 柱状图 | `plt.bar()` / `sns.barplot()` |
 | 相关性 | 散点图 | `plt.scatter()` / `sns.scatterplot()` |
@@ -248,10 +249,10 @@ plt.savefig('sine_wave.svg', bbox_inches='tight')
 sns.set_theme()
 sns.set_style("whitegrid")  # whitegrid, darkgrid, white, dark, ticks
 sns.set_palette("deep")     # deep, muted, pastel, bright, dark, colorblind
-
+# ...
 # 设置 matplotlib 样式
 plt.style.use('seaborn-v0_8-darkgrid')  # ggplot, bmh, fivethirtyeight
-
+# ...
 # 自定义颜色
 colors = ['#667eea', '#764ba2', '#f6ad55', '#4299e1']
 ```
@@ -261,13 +262,13 @@ colors = ['#667eea', '#764ba2', '#f6ad55', '#4299e1']
 ```python
 # PNG(适合网页)
 plt.savefig('chart.png', dpi=300, bbox_inches='tight')
-
+# ...
 # SVG(适合矢量编辑)
 plt.savefig('chart.svg', bbox_inches='tight')
-
+# ...
 # PDF(适合打印)
 plt.savefig('chart.pdf', bbox_inches='tight')
-
+# ...
 # 透明背景
 plt.savefig('chart.png', dpi=300, transparent=True)
 ```
@@ -310,7 +311,7 @@ A: 使用 `plt.subplots(rows, cols)` 创建多子图。例如 `fig, axes = plt.s
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | matplotlib | 绘图库 | 必需 | pip install matplotlib |
 | seaborn | 统计绘图 | 推荐 | pip install seaborn |
@@ -333,9 +334,8 @@ A: 使用 `plt.subplots(rows, cols)` 创建多子图。例如 `fig, axes = plt.s
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

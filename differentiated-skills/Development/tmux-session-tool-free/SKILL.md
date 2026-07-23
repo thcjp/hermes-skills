@@ -50,8 +50,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # Tmux 会话工具免费版
 
 ## 概述
@@ -68,7 +69,7 @@ Tmux 会话工具免费版为个人开发者提供通过纯 tmux 指令管理终
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Tmux会话工具免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -146,10 +147,10 @@ tmux capture-pane -p -J -t <target> -S -400
 # 1. 定位窗格
 tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index} #{pane_title}' \
   | grep "^myproject" | grep -i claude
-
+# ...
 # 假设找到: myproject:0.1 claude
 TARGET="myproject:0.1"
-
+# ...
 # 2. 查看最新交互
 tmux capture-pane -p -J -t $TARGET -S -200
 ```
@@ -170,12 +171,12 @@ tmux capture-pane -p -J -t $TARGET -S -200
 ```bash
 # 1. 定位窗格(同上)
 TARGET="myproject:0.1"
-
+# ...
 # 2. 发送指令
 tmux send-keys -t $TARGET -l -- "请重构 src/auth/login.py 模块"
 sleep 0.1
 tmux send-keys -t $TARGET Enter
-
+# ...
 # 3. 等待并查看回复(轮询)
 sleep 30
 tmux capture-pane -p -J -t $TARGET -S -200
@@ -188,9 +189,9 @@ tmux capture-pane -p -J -t $TARGET -S -200
 ```bash
 # 1. 转储完整缓冲区
 tmux capture-pane -p -J -t $TARGET -S -400
-
+# ...
 # 2. 分析输出,查找错误信息
-
+# ...
 # 3. 如果使用非默认 socket
 tmux -S /path/to/socket list-panes -a
 ```
@@ -202,10 +203,10 @@ tmux -S /path/to/socket list-panes -a
 ```bash
 # 创建命名会话
 tmux new-session -s myproject
-
+# ...
 # 在会话中启动代码助手
 claude
-
+# ...
 # 重命名窗格标题为 claude
 # 按 Ctrl-b : 输入 select-pane -T claude
 ```
@@ -242,7 +243,7 @@ tmux send-keys -t myproject:0.1 Enter
 ### 会话命名规范
 
 | 命名规则 | 示例 | 说明 |
-|:---------|:-----|:-----|
+|:-----|:-----|:-----|
 | 项目名 | `myproject` | 按项目命名会话 |
 | 环境-项目 | `dev-myapp` | 区分环境 |
 | 项目-功能 | `myapp-auth` | 按功能模块 |
@@ -259,7 +260,7 @@ Ctrl-b : select-pane -T tests
 ### 常用快捷操作
 
 | 操作 | 快捷键 | 命令 |
-|:-----|:-------|:-----|
+|---:|---:|---:|
 | 重命名窗格 | `Ctrl-b :` | `select-pane -T <name>` |
 | 分割窗格 | `Ctrl-b %` 或 `Ctrl-b "` | 水平/垂直分割 |
 | 切换窗格 | `Ctrl-b 方向键` | 切换焦点 |
@@ -274,7 +275,7 @@ Ctrl-b : select-pane -T tests
 ```bash
 # 先查看当前窗格内容
 tmux capture-pane -p -J -t $TARGET -S -50
-
+# ...
 # 确认无误后再发送
 tmux send-keys -t $TARGET -l -- "指令"
 ```
@@ -313,7 +314,7 @@ done
 # 设置 3 分钟超时
 TIMEOUT=180
 ELAPSED=0
-
+# ...
 while [ $ELAPSED -lt $TIMEOUT ]; do
   output=$(tmux capture-pane -p -J -t $TARGET -S -50)
   if echo "$output" | grep -q "⏺"; then
@@ -323,7 +324,7 @@ while [ $ELAPSED -lt $TIMEOUT ]; do
   sleep 10
   ELAPSED=$((ELAPSED + 10))
 done
-
+# ...
 if [ $ELAPSED -ge $TIMEOUT ]; then
   echo "超时: 助手尚未回复,仍在处理中"
 fi
@@ -373,7 +374,7 @@ tmux -S /path/to/socket capture-pane -p -J -t $TARGET -S -200
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | tmux | CLI 工具 | 必需 | 系统包管理器 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
@@ -390,9 +391,8 @@ tmux -S /path/to/socket capture-pane -p -J -t $TARGET -S -200
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

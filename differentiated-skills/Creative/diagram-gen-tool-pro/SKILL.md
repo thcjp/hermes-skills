@@ -21,8 +21,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 图表生成工具（专业版）
 
 ## 概述
@@ -36,7 +37,7 @@ suggested_price: 99.9
 ### 格式与类型对比
 
 | 图表类型 | 免费版 | 专业版 | 默认格式 | 默认方向 |
-|:---------|:-------|:-------|:---------|:---------|
+|----|---|---|----|----|
 | 流程图 | 支持 | 支持 | Mermaid | 垂直 |
 | 序列图 | 支持 | 支持 | Mermaid | 自动 |
 | 网络拓扑 | 不支持 | 支持 | Draw.io | 垂直 |
@@ -50,11 +51,11 @@ suggested_price: 99.9
 **处理**: 解析格式与类型对比的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回格式与类型对比的响应数据,包含状态码、结果和日志。
 
-### 核心能力
+### 核心能力(补充)
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 图表生成工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -64,7 +65,7 @@ suggested_price: 99.9
   - Draw.io (.drawio)     → 复杂架构与拓扑图
   - Mermaid (.mmd)         → 文档内嵌图表
   - Excalidraw (.excalidraw) → 手绘风格白板
-
+# ...
 图表类型:
   - 网络拓扑（环境→数据中心→区域→设备）
   - 系统架构（分层组件视图）
@@ -73,7 +74,7 @@ suggested_price: 99.9
   - UML（序列/类/ER图）
   - 思维导图（层级展开）
   - 白板草图（手绘风格概念图）
-
+# ...
 高级功能:
   - JSON 规范驱动生成
   - 质量门禁自动校验
@@ -157,7 +158,7 @@ suggested_price: 99.9
 # 通过 MCP工具 生成
 # 调用 mcp__mcp-diagram-generator__generate_diagram
 # 传入上述 JSON 规范
-
+# ...
 # 输出: diagrams/drawio/network-topology.drawio
 ```
 
@@ -218,10 +219,10 @@ suggested_price: 99.9
 # 批量图表生成脚本
 import json
 from pathlib import Path
-
+# ...
 class BatchDiagramGenerator:
     """批量图表生成器"""
-
+# ...
     def __init__(self, output_base="diagrams"):
         self.output_base = Path(output_base)
         self.playbooks = {
@@ -232,7 +233,7 @@ class BatchDiagramGenerator:
             "uml": "references/playbook-uml.md",
             "excalidraw": "references/playbook-excalidraw.md"
         }
-
+# ...
     def generate_batch(self, task_list):
         """批量生成图表"""
         results = []
@@ -247,7 +248,7 @@ class BatchDiagramGenerator:
             }
             results.append(result)
         return results
-
+# ...
     def _build_spec(self, task):
         """根据任务构建JSON规范"""
         format_map = {
@@ -267,7 +268,7 @@ class BatchDiagramGenerator:
             "elements": task.get("elements", []),
             "direction": task.get("direction", "vertical")
         }
-
+# ...
 # 批量任务定义
 tasks = [
     {"id": "D001", "name": "user-register-flow", "type": "flowchart",
@@ -283,7 +284,7 @@ tasks = [
     {"id": "D006", "name": "concept-sketch", "type": "whiteboard",
      "title": "概念白板草图"}
 ]
-
+# ...
 generator = BatchDiagramGenerator()
 results = generator.generate_batch(tasks)
 for r in results:
@@ -310,7 +311,7 @@ for r in results:
 ```text
 # 调用 MCP工具 初始化默认配置
 mcp__mcp-diagram-generator__init_config
-
+# ...
 # 查看当前配置
 mcp__mcp-diagram-generator__get_config
 ```
@@ -336,7 +337,6 @@ mcp__mcp-diagram-generator__get_config
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -365,7 +365,7 @@ quality_checks:
   - edges_top_level: true              # 边必须在顶层
   - colors_hex_format: true            # 颜色用 #RRGGBB
   - unique_ids: true                   # ID 唯一
-
+# ...
 auto_fix:
   suggest_only: true
   max_suggestions: 5
@@ -438,7 +438,7 @@ A: 可以。Draw.io 支持 `style` 对象自定义填充色、边框、圆角等
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js 16+ | 运行时 | 必需 | nodejs.org 官方下载 |
 | mcp-diagram-generator | MCP工具 | 必需 | `npx -y mcp-diagram-generator` |
@@ -457,9 +457,8 @@ A: 可以。Draw.io 支持 `style` 对象自定义填充色、边框、圆角等
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

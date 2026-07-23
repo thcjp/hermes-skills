@@ -42,8 +42,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # WhatsApp 表情搜索（免费版）
 
 ## 概述
@@ -53,7 +54,7 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | GIF 搜索 | 搜索 Tenor 和 Giphy 平台 | 是 |
 | 格式转换 | GIF 自动转 MP4 | 是 |
 | 发送到 WhatsApp | 通过 message 工具发送 | 是 |
@@ -119,7 +120,7 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | WhatsApp表情搜索处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -127,12 +128,12 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 ```bash
 # 搜索庆祝类 GIF
 gifgrep "celebration" --max 5 --format url
-
+# ...
 # 下载并转换格式
 curl -sL "GIF_URL" -o /tmp/gif.gif
 ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
   -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" /tmp/gif.mp4 -y
-
+# ...
 # 发送到 WhatsApp
 cp /tmp/gif.mp4 /root/.skill-platform/workspace/gif.mp4
 message action=send to=NUMBER message=" " \
@@ -148,7 +149,7 @@ message action=send to=NUMBER message=" " \
 ```bash
 # 搜索新年祝福 GIF
 gifgrep "happy new year fireworks" --max 5 --format url
-
+# ...
 # 选择最合适的一个，下载并发送
 curl -sL "SELECTED_URL" -o /tmp/newyear.gif
 ffmpeg -i /tmp/newyear.gif -movflags faststart -pix_fmt yuv420p \
@@ -165,7 +166,7 @@ message action=send to=FRIEND_NUMBER message="新年快乐" \
 ```bash
 # 搜索搞笑表情
 gifgrep "laughing funny" --max 5 --format url
-
+# ...
 # 快速发送（一行命令）
 curl -sL "URL" -o /tmp/g.gif && \
 ffmpeg -i /tmp/g.gif -movflags faststart -pix_fmt yuv420p \
@@ -198,14 +199,14 @@ cp /tmp/g.mp4 /root/.skill-platform/workspace/g.mp4
 ```bash
 # 安装 gifgrep（GIF 搜索工具）
 # 参考 gifgrep 官方文档安装
-
+# ...
 # 安装 ffmpeg（格式转换）
 # macOS
 brew install ffmpeg
-
+# ...
 # Ubuntu/Debian
 sudo apt install ffmpeg
-
+# ...
 # 验证安装
 ffmpeg -version
 gifgrep --version
@@ -216,17 +217,17 @@ gifgrep --version
 ```bash
 # 1. 搜索 GIF
 gifgrep "thumbs up" --max 3 --format url
-
+# ...
 # 2. 下载 GIF
 curl -sL "GIF_URL_FROM_RESULTS" -o /tmp/gif.gif
-
+# ...
 # 3. 转换为 MP4
 ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
   -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" /tmp/gif.mp4 -y
-
+# ...
 # 4. 复制到工作区
 cp /tmp/gif.mp4 /root/.skill-platform/workspace/gif.mp4
-
+# ...
 # 5. 发送
 message action=send to=CONTACT_NUMBER message=" " \
   filePath=/root/.skill-platform/workspace/gif.mp4 gifPlayback=true
@@ -240,7 +241,7 @@ message action=send to=CONTACT_NUMBER message=" " \
 ### 常用搜索关键词
 
 | 情感 | 推荐搜索词 |
-| --- | --- |
+|---:|---:|
 | 开心 | celebration, party, dancing, excited |
 | 赞同 | thumbs up, nice, good job, applause |
 | 搞笑 | laugh, lol, haha, funny |
@@ -274,7 +275,7 @@ message action=send to=CONTACT_NUMBER message=" " \
 ```bash
 # 获取多个结果进行对比
 gifgrep "thank you" --max 5 --format url
-
+# ...
 # 查看文件名和描述，选择最合适的
 # 避免选择过大或过小的 GIF
 # 优选 480p 或 720p 分辨率的 GIF
@@ -293,10 +294,10 @@ gifgrep "thank you" --max 5 --format url
 ```bash
 # 检查网络连接
 curl -I https://media.tenor.com
-
+# ...
 # 尝试更换关键词
 gifgrep "happy" --max 5 --format url  # 使用更通用的词
-
+# ...
 # 检查 gifgrep 配置
 gifgrep --config
 ```
@@ -306,11 +307,11 @@ gifgrep --config
 ```bash
 # 检查 ffmpeg 是否安装
 ffmpeg -version
-
+# ...
 # 重新安装 ffmpeg
 # macOS
 brew reinstall ffmpeg
-
+# ...
 # 验证 GIF 文件完整性
 file /tmp/gif.gif
 ```
@@ -325,7 +326,7 @@ file /tmp/gif.gif
 ```bash
 # 正确流程
 cp /tmp/gif.mp4 /root/.skill-platform/workspace/gif.mp4
-
+# ...
 # 然后再发送
 message action=send to=NUMBER message=" " \
   filePath=/root/.skill-platform/workspace/gif.mp4 gifPlayback=true
@@ -337,7 +338,7 @@ message action=send to=NUMBER message=" " \
 # 确保设置了 gifPlayback=true
 message action=send to=NUMBER message=" " \
   filePath=/root/.skill-platform/workspace/gif.mp4 gifPlayback=true
-
+# ...
 # 检查 MP4 格式参数
 ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
   -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" /tmp/gif.mp4 -y
@@ -355,7 +356,7 @@ ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|
 | gifgrep | CLI 工具 | 是 | 参考官方文档安装 |
 | ffmpeg | 多媒体处理 | 是 | `brew install ffmpeg` 或 `apt install ffmpeg` |
 | curl | 文件下载 | 是 | 系统自带 |
@@ -377,9 +378,8 @@ ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

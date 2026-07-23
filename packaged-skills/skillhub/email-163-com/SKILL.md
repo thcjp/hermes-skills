@@ -34,14 +34,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
 # 163邮箱管理专家
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 163邮箱管理专家处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -49,13 +50,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **IMAP ID认证**: 163邮箱强制要求IMAP ID扩展(RFC 2971),未配置会触发 `SELECT Unsafe Login` 错误 | 支持 | 支持 |
-| **发送邮件**: 支持纯文本(`--body`)、HTML(`--html`)、文件正文(`--file`)、多附件(`--attach`) | 不支持 | 支持 |
-| **读取邮件**: 支持 `--count`、`--folder`、`--id`、`--full`、`--unread` 多维筛选 | 不支持 | 支持 |
-| **文件夹管理**: 列出(`folders`)、创建(`folder create`)、删除(`folder delete`) | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -65,7 +66,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -177,10 +178,10 @@ email-163-com send \
 ```bash
 # 第一步:搜索Cloudflare邮件
 email-163-com search --from "Cloudflare" --subject "verify" --count 5
-
+# ...
 # 第二步:查看邮件ID为15的附件列表
 email-163-com attachments --id 15
-
+# ...
 # 第三步:下载附件到指定目录
 email-163-com attachments --id 15 --download --output ~/Downloads/
 ```
@@ -208,13 +209,13 @@ email-163-com attachments --id 15 --download --output ~/Downloads/
 ```bash
 # 第一步:查看垃圾邮件
 email-163-com search --folder "垃圾邮件" --count 100
-
+# ...
 # 第二步:定位阿里云通知邮件(ID=42),移动到收件箱
 email-163-com move --id 42 --to "INBOX"
-
+# ...
 # 第三步:标记为已读
 email-163-com flag --id 42 --set seen
-
+# ...
 # 第四步:批量删除剩余垃圾邮件
 email-163-com delete --folder "垃圾邮件" --all
 ```
@@ -277,9 +278,8 @@ A: 支持 `--from`(发件人)、`--subject`(主题)、`--folder`(文件夹)、`-
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

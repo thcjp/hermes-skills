@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 谷歌字体工具（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 加载优化 | display=swap + 双 preconnect | 标准加载 |
 | 变量字体 | 单文件多字重 | 推荐 4 款 |
 | 子集控制 | latin/latin-ext 选择 | 基础子集 |
@@ -102,7 +103,7 @@ font-family: 'Inter', system-ui, sans-serif;
 ### 场景二：按用途选字体
 
 | 用途 | 推荐字体 |
-|:-----|:---------|
+|:-----|:-----|
 | 长文阅读 | Merriweather / Lora / Source Serif Pro |
 | UI 界面 | Inter / Roboto / Open Sans |
 | 冲击标题 | Playfair Display / Oswald / Bebas Neue（勿用于正文） |
@@ -114,7 +115,7 @@ font-family: 'Inter', system-ui, sans-serif;
 衬线 + 无衬线（经典对比）:
   Playfair Display（标题）+ Source Sans Pro（正文）
   Lora（标题）+ Roboto（正文）
-
+# ...
 纯无衬线（现代干净）:
   Inter（标题正文同族，字重区分层级）
   Montserrat（标题）+ Hind（正文）
@@ -145,7 +146,6 @@ python -m http.server 8000
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -206,10 +206,10 @@ A：会有短暂 FOUT（无样式文本闪现），但优于不可见文字。
 ```css
 /* 衬线展示体回退 */
 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-
+// ...
 /* 无衬线 UI 回退 */
 font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-
+// ...
 /* 等宽回退 */
 font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 ```
@@ -237,7 +237,7 @@ font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 ## 常见坑速查
 
 | 现象 | 原因 | 修复 |
-|:-----|:-----|:-----|
+|---:|---:|---:|
 | 文字不可见 | 缺 display=swap | 加 display=swap |
 | 字重没生效 | 未加载该字重 | 链接加上对应字重 |
 | 加载慢 | 字重过多 | 精简到 2-3 个 |
@@ -253,7 +253,7 @@ font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Google Fonts CDN | 字体资源 | 必需 | fonts.googleapis.com |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
@@ -267,9 +267,8 @@ font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

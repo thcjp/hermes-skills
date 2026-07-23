@@ -44,11 +44,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
-
 # 视频上传工具 - 免费版
 
 ## 概述
@@ -69,7 +70,7 @@ suggested_price: 29.9
 ### 能力清单
 
 | 能力 | 描述 | 免费版 |
-|:-----|:-----|:-------|
+|---|---|---|
 | 默认上传 | 仅需标题快速上传 | 支持 |
 | 三步流程 | 创建 → 上传 → 完成 | 支持 |
 | HLS 链接 | 获取流媒体播放链接 | 支持 |
@@ -89,7 +90,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 视频上传-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -175,7 +176,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 FILE_SIZE=$(stat -c%s /videos/python-tutorial.mp4)
 END_POS=$((FILE_SIZE - 1))
 HASH=$(md5sum /videos/python-tutorial.mp4 | awk '{print $1}')
-
+# ...
 curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
   -H 'stream-public-key: PUBLIC_KEY' \
   -H 'stream-secret-key: SECRET_KEY' \
@@ -250,7 +251,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 FILE_SIZE=$(stat -c%s /path/to/video.mp4)
 END_POS=$((FILE_SIZE - 1))
 HASH=$(md5sum /path/to/video.mp4 | awk '{print $1}')
-
+# ...
 # 上传文件分片
 curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
   -H 'stream-public-key: PUBLIC_KEY' \
@@ -268,7 +269,7 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
 curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete" \
   -H 'stream-public-key: PUBLIC_KEY' \
   -H 'stream-secret-key: SECRET_KEY'
-
+# ...
 # 查询视频详情获取 HLS 链接
 curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
   -H 'stream-public-key: PUBLIC_KEY' \
@@ -283,7 +284,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
 ### 上传参数说明
 
 | 参数 | 类型 | 是否必需 | 默认值 | 说明 |
-|:-----|:-----|:---------|:-------|:-----|
+|---:|---:|---:|---:|---:|
 | title | 字符串 | 必需 | - | 视频标题 |
 | stream-public-key | Header | 必需 | - | 平台公钥 |
 | stream-secret-key | Header | 必需 | - | 平台私钥 |
@@ -297,24 +298,23 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
 Step 1: POST /api/videos/create
    请求体: {"title": "视频标题"}
    响应: {"data": {"id": "VIDEO_ID"}}
-
+# ...
 Step 2: POST /api/videos/VIDEO_ID/part
    Header: Content-Range: bytes 0-{end}/{total}
    表单: file, index, hash
    响应: 上传成功确认
-
+# ...
 Step 3: GET /api/videos/VIDEO_ID/complete
    响应: 触发转码，上传完成
-
+# ...
 查询: GET /api/videos/VIDEO_ID
    响应: 包含 HLS/DASH 流媒体链接
 ```
 
 ## 错误处理
 
-
 | 错误码 | 含义 | 处理建议 |
-|:-------|:-----|:---------|
+|:---:|:---:|:---:|
 | 401 | API Key 无效 | 检查公钥与私钥是否正确 |
 | 400 | 请求格式错误 | 检查请求体格式与参数 |
 | 500 | 服务器错误 | 稍后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -327,7 +327,7 @@ Step 3: GET /api/videos/VIDEO_ID/complete
 # 小文件（< 50MB）：单分片上传
 FILE_SIZE=$(stat -c%s video.mp4)
 END_POS=$((FILE_SIZE - 1))
-
+# ...
 # 大文件（> 50MB）：建议使用 PRO 版本多分片上传
 # 免费版仅支持单分片，大文件可能超时
 ```
@@ -339,10 +339,10 @@ END_POS=$((FILE_SIZE - 1))
 ```bash
 # Linux
 HASH=$(md5sum video.mp4 | awk '{print $1}')
-
+# ...
 # macOS
 HASH=$(md5 -q video.mp4)
-
+# ...
 # Windows (Git Bash)
 HASH=$(certutil -hashfile video.mp4 MD5 | grep -v ":" | tr -d ' ')
 ```
@@ -354,7 +354,7 @@ HASH=$(certutil -hashfile video.mp4 MD5 | grep -v ":" | tr -d ' ')
 STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
   -H 'stream-public-key: PUBLIC_KEY' \
   -H 'stream-secret-key: SECRET_KEY' | jq -r '.data.status')
-
+# ...
 # 状态说明：
 # transcoding - 转码中（需等待）
 # done - 转码完成（可获取链接）
@@ -363,7 +363,7 @@ STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
 ### 4. 视频文件建议
 
 | 项目 | 推荐值 |
-|:-----|:-------|
+|:------|------:|
 | 格式 | mp4（兼容性最佳） |
 | 大小 | < 50MB（免费版单分片） |
 | 分辨率 | 720p 或 1080p |
@@ -375,9 +375,6 @@ STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
 ### Q1：如何获取 API Key？
 
 **A：** 需要流媒体平台账号。注册后可在控制台获取：
-
-- `stream-public-key`：公钥
-- `stream-secret-key`：私钥
 
 若用户未提供，Agent 会主动询问。
 
@@ -399,7 +396,7 @@ while true; do
   STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
     -H 'stream-public-key: PUBLIC_KEY' \
     -H 'stream-secret-key: SECRET_KEY' | jq -r '.data.status')
-  
+# ...
   if [ "$STATUS" = "done" ]; then
     echo "转码完成"
     break
@@ -440,7 +437,7 @@ done
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|---:|:---|---:|---:|:---|
 | curl | 命令行工具 | 必需 | 系统自带 | 任意版本 |
 | md5sum | 命令行工具 | 必需 | 系统自带 | 任意版本 |
 | stat | 命令行工具 | 必需 | 系统自带 | 任意版本 |
@@ -452,10 +449,10 @@ done
 ```bash
 # macOS 安装 jq
 brew install jq
-
+# ...
 # Ubuntu / Debian 安装 jq
 sudo apt install jq
-
+# ...
 # 验证安装
 curl --version
 md5sum --version
@@ -468,7 +465,7 @@ jq --version
 免费版需要以下 API Key：
 
 | API 类型 | 环境变量 | 用途 | 获取方式 |
-|:---------|:---------|:-----|:---------|
+|:--------:|----------|:---------|:--------:|
 | 流媒体公钥 | `STREAM_PUBLIC_KEY` | API 认证 | 流媒体平台控制台 |
 | 流媒体私钥 | `STREAM_SECRET_KEY` | API 认证 | 流媒体平台控制台 |
 
@@ -476,7 +473,7 @@ jq --version
 # 配置环境变量
 export STREAM_PUBLIC_KEY="your_public_key"
 export STREAM_SECRET_KEY="your_secret_key"
-
+# ...
 # 验证配置
 curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
   -X POST \

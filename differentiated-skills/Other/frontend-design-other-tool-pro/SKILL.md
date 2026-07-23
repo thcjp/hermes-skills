@@ -41,6 +41,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # 前端设计工具（专业版）
 
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 设计系统 | 令牌 → 组件 → 模板三层架构 | 多主题 + 暗色模式 |
 | 组件库 | 可复用组件与变体管理 | 团队共享版本化 |
 | 多页站点 | 站点级信息架构与导航 | 一致性自动巡检 |
@@ -103,7 +105,7 @@ pricing_model: "per_use"
   --color-ink: #F6F4EF;
   --color-paper: #12141A;
 }
-
+// ...
 /* 组件层 */
 .btn { padding: var(--space-4); border-radius: var(--radius-sm); }
 .btn--primary { background: var(--color-sage); color: var(--color-paper); }
@@ -169,7 +171,6 @@ npx @axe-core/cli http://localhost:8000 --tags wcag2a,wcag2aa --save a11y-report
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 配置示例
 
 设计系统清单文件（`design-system.json`）：
@@ -197,7 +198,7 @@ npx @axe-core/cli http://localhost:8000 --tags wcag2a,wcag2aa --save a11y-report
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 令牌格式 | 相同 | 相同（纳入系统） |
 | 单页设计 | 支持 | 支持（作为模板） |
 | 多主题 | 不支持 | 支持 |
@@ -232,12 +233,12 @@ A：有。专业版享设计评审优先排期与专属支持通道。
   ├── color.css      色彩令牌
   ├── type.css       字体与字阶
   └── space.css      间距与圆角
-
+# ...
 组件层 (components/): 消费令牌，前端维护
   ├── btn/           按钮及变体
   ├── card/          卡片
   └── form/          表单
-
+# ...
 模板层 (templates/): 组合组件，业务维护
   ├── landing/       落地页
   ├── detail/        详情页
@@ -281,7 +282,7 @@ python （请参考skill目录中的脚本文件） --src templates/ --report re
 
 ```text
 免费版令牌 → 纳入 tokens/ → 定义组件层 → 多主题 → 模板复用 → CI 巡检
-
+# ...
 每个阶段可独立交付价值，不必一步到位。
 ```
 
@@ -294,7 +295,7 @@ python （请参考skill目录中的脚本文件） --src templates/ --report re
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Google Fonts | 字体资源 | 推荐 | fonts.google.com |
 | axe-core | 审计工具 | 审计时必需 | `npm install -D @axe-core/cli` |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -309,9 +310,8 @@ python （请参考skill目录中的脚本文件） --src templates/ --report re
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

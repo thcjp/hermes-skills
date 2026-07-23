@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 真实浏览器控制免费版
 
 ## 概述
@@ -37,7 +38,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 真实浏览器控制免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -45,7 +46,7 @@ suggested_price: 29.9
 ```bash
 # 检查连接状态
 tmwd_status()
-
+# ...
 # 列出已连接的标签页
 tmwd_status()  # 返回所有已连接标签页列表
 ```
@@ -62,13 +63,13 @@ tmwd_status()  # 返回所有已连接标签页列表
 ```bash
 # 切换到指定标签页
 tmwd_switch(pattern="example.com")
-
+# ...
 # 导航到指定 URL
 tmwd_navigate(url="https://example.com")
-
+# ...
 # 获取页面可见文本
 tmwd_text(max_chars=5000)
-
+# ...
 # 获取简化 HTML
 tmwd_scan()
 ```
@@ -85,10 +86,10 @@ tmwd_scan()
 ```bash
 # 列出可交互元素
 tmwd_elements()
-
+# ...
 # 执行 JavaScript(点击按钮)
 tmwd_exec(code="document.querySelector('#submit').click()")
-
+# ...
 # 填写表单
 tmwd_exec(code="var e=document.querySelector('#email'); e.value='user@example.com'; e.dispatchEvent(new Event('input',{bubbles:true}))")
 ```
@@ -105,10 +106,10 @@ tmwd_exec(code="var e=document.querySelector('#email'); e.value='user@example.co
 ```bash
 # 提取文本内容
 tmwd_exec(code="return document.querySelector('.content').innerText")
-
+# ...
 # 提取列表数据
 tmwd_exec(code="return Array.from(document.querySelectorAll('h2')).map(e=>e.textContent)")
-
+# ...
 # 提取表格数据
 tmwd_exec(code="var rows=document.querySelectorAll('table tr'); var d=[]; rows.forEach(function(r){var c=[]; r.querySelectorAll('td,th').forEach(function(e){c.push(e.innerText.trim())}); if(c.length) d.push(c)}); return d")
 ```
@@ -125,7 +126,7 @@ tmwd_exec(code="var rows=document.querySelectorAll('table tr'); var d=[]; rows.f
 ```bash
 # 打开新标签页
 tmwd_newtab(url="https://example.com")
-
+# ...
 # 切换到匹配的标签页
 tmwd_switch(pattern="example.com")
 ```
@@ -143,7 +144,7 @@ tmwd_switch(pattern="example.com")
 # 当 tmwd_exec 返回 csp_blocked: true 时,回退到内置浏览器
 # 步骤1:使用内置浏览器打开相同 URL
 browser(action="open", profile="skill-platform", url="<same-url>")
-
+# ...
 # 步骤2:获取页面快照
 browser(action="snapshot", targetId=<targetId>)
 ```
@@ -163,13 +164,13 @@ browser(action="snapshot", targetId=<targetId>)
 ```bash
 # 步骤1:验证连接
 tmwd_status()
-
+# ...
 # 步骤2:切换到电商网站标签页
 tmwd_switch(pattern="shopping.example.com")
-
+# ...
 # 步骤3:导航到订单页面
 tmwd_navigate(url="https://shopping.example.com/orders")
-
+# ...
 # 步骤4:提取订单列表
 tmwd_exec(code="var orders=document.querySelectorAll('.order-item'); var data=[]; orders.forEach(function(o){data.push({id:o.querySelector('.order-id').innerText,date:o.querySelector('.order-date').innerText,amount:o.querySelector('.order-amount').innerText})}); return data")
 ```
@@ -181,13 +182,13 @@ tmwd_exec(code="var orders=document.querySelectorAll('.order-item'); var data=[]
 ```bash
 # 步骤1:导航到表单页面
 tmwd_navigate(url="https://form.example.com/apply")
-
+# ...
 # 步骤2:填写表单字段
 tmwd_exec(code="var f={'#username':'liming','#email':'liming@example.com','#phone':'13800138000'}; Object.keys(f).forEach(function(s){var e=document.querySelector(s); e.value=f[s]; e.dispatchEvent(new Event('input',{bubbles:true}))})")
-
+# ...
 # 步骤3:提交表单
 tmwd_exec(code="document.querySelector('#submit').click()")
-
+# ...
 # 步骤4:验证提交结果
 tmwd_text(max_chars=1000)
 ```
@@ -199,10 +200,10 @@ tmwd_text(max_chars=1000)
 ```bash
 # 步骤1:切换到目标页面
 tmwd_switch(pattern="article.example.com")
-
+# ...
 # 步骤2:提取文章标题和内容
 tmwd_exec(code="return {title:document.querySelector('h1').innerText,content:document.querySelector('.article-body').innerText}")
-
+# ...
 # 步骤3:提取所有链接
 tmwd_exec(code="return Array.from(document.querySelectorAll('a')).map(function(a){return {text:a.innerText,href:a.href}})")
 ```
@@ -225,7 +226,7 @@ skill-platform plugins install skill-platform-tmwd --registry https://registry.n
 ```bash
 # 检查连接状态
 tmwd_status()
-
+# ...
 # 如果返回已连接的标签页列表,说明连接成功
 ```
 
@@ -234,7 +235,7 @@ tmwd_status()
 ```bash
 # 读取当前页面内容
 tmwd_text(max_chars=5000)
-
+# ...
 # 执行简单操作
 tmwd_exec(code="return document.title")
 ```
@@ -284,7 +285,7 @@ tmwd_exec(code="return document.title")
 ```bash
 # 正确做法:先尝试 tmwd,失败再回退
 tmwd_exec(code="document.querySelector('#btn').click()")
-
+# ...
 # 如果返回 csp_blocked: true,再回退到内置浏览器
 browser(action="open", profile="skill-platform", url="<same-url>")
 ```
@@ -294,7 +295,7 @@ browser(action="open", profile="skill-platform", url="<same-url>")
 ```bash
 # 对于 React/Vue 应用,设置值后必须触发事件
 tmwd_exec(code="var e=document.querySelector('#input'); e.value='new_value'; e.dispatchEvent(new Event('input',{bubbles:true}))")
-
+# ...
 # 直接设置 value 不会触发框架响应
 tmwd_exec(code="document.querySelector('#input').value='new_value'")  # 无效
 ```
@@ -304,7 +305,7 @@ tmwd_exec(code="document.querySelector('#input').value='new_value'")  # 无效
 ```bash
 # 有 return:返回执行结果
 tmwd_exec(code="return document.querySelector('.title').innerText")
-
+# ...
 # 无 return:无输出
 tmwd_exec(code="document.querySelector('.title').innerText")  # 无输出
 ```
@@ -314,7 +315,7 @@ tmwd_exec(code="document.querySelector('.title').innerText")  # 无输出
 ```bash
 # 操作前先检查连接
 tmwd_status()
-
+# ...
 # 如果显示"No connected tabs",检查浏览器右下角指示灯
 # 绿色:已连接
 # 红色:连接断开,刷新页面即可重连
@@ -338,7 +339,7 @@ tmwd_status()
 ```bash
 # 直接 click 可能无效
 tmwd_exec(code="document.querySelector('#btn').click()")
-
+# ...
 # 改用事件分发
 tmwd_exec(code="document.querySelector('#btn').dispatchEvent(new MouseEvent('click',{bubbles:true}))")
 ```
@@ -376,7 +377,7 @@ browser(action="snapshot", targetId=<targetId>)
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Chrome 浏览器 | 浏览器 | 必需 | 官方网站下载安装 |
 | Tampermonkey | 浏览器扩展 | 必需 | Chrome 应用商店安装 |
 | skill-platform-tmwd | 插件 | 必需 | 通过 `skill-platform plugins install` 安装 |
@@ -395,9 +396,8 @@ browser(action="snapshot", targetId=<targetId>)
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

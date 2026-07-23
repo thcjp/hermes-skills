@@ -33,22 +33,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
 ---
 # Slack工作区管理专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Slack工作区管理专业版Slack工作区管理 | 不支持 | 支持 |
+| Slack工作区管理专业版用户组管理 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -103,17 +105,17 @@ pricing_model: "per_use"
 # batch_channel_setup.py
 class BatchChannelSetup:
     """批量频道配置器"""
-
+# ...
     def __init__(self, slack_client):
         self.client = slack_client
-
+# ...
     def setup_project_channels(self, project_config):
         """
         批量创建项目频道并配置
         :param project_config: 项目频道配置
         """
         results = []
-
+# ...
         for channel_spec in project_config['channels']:
             # 1. 创建频道
             channel = self.client.create_channel(
@@ -121,7 +123,7 @@ class BatchChannelSetup:
                 is_private=channel_spec.get('is_private', False)
             )
             channel_id = channel['id']
-
+# ...
             # 2. 设置主题与用途
             if channel_spec.get('topic'):
                 self.client.set_channel_topic(
@@ -133,28 +135,28 @@ class BatchChannelSetup:
                     channel=channel_id,
                     purpose=channel_spec['purpose']
                 )
-
+# ...
             # 3. 批量邀请成员
             if channel_spec.get('members'):
                 self.client.invite_users(
                     channel=channel_id,
                     users=channel_spec['members']
                 )
-
+# ...
             # 4. 发送欢迎消息
             self.client.send_message(
                 channel=channel_id,
                 text=channel_spec.get('welcome', f"欢迎来到 {channel_spec['name']} 频道！")
             )
-
+# ...
             results.append({
                 'name': channel_spec['name'],
                 'id': channel_id,
                 'status': 'created'
             })
-
+# ...
         return results
-
+# ...
 # 示例
 setup = BatchChannelSetup(slack_client)
 results = setup.setup_project_channels({
@@ -182,17 +184,17 @@ results = setup.setup_project_channels({
 # audit_monitor.py
 class AuditMonitor:
     """审计日志监控器"""
-
+# ...
     def __init__(self, slack_client):
         self.client = slack_client
-
+# ...
     def get_security_events(self, days=7):
         """获取安全相关事件"""
         logs = self.client.read_audit_logs(
             action='*',
             count=1000
         )
-
+# ...
         security_events = []
         for entry in logs:
             if entry['action'] in [
@@ -212,19 +214,19 @@ class AuditMonitor:
                     '实体': entry['entity'],
                     'IP地址': entry.get('ip_address', 'N/A')
                 })
-
+# ...
         return self.format_report(security_events)
-
+# ...
     def check_anomalies(self, events):
         """检测异常行为"""
         anomalies = []
-
+# ...
         # 检测非工作时间的大量操作
         # 检测异常IP地址
         # 检测权限变更
         # 检测频道批量删除
         return anomalies
-
+# ...
 # 使用示例
 monitor = AuditMonitor()
 events = monitor.get_security_events(days=30)
@@ -237,15 +239,15 @@ anomalies = monitor.check_anomalies(events)
 slack-workspace-manager-pro create-user-group \
   --name "engineering-leads" \
   --description "工程团队负责人"
-
+# ...
 # 添加成员到用户组
 slack-workspace-manager-pro update-user-group \
   --group-id "S0123456789" \
   --add-users "U001,U002,U003"
-
+# ...
 # 列出所有用户组
 slack-workspace-manager-pro list-user-groups
-
+# ...
 # 创建Canvas文档记录团队规范
 slack-workspace-manager-pro create-canvas \
   --title "工程团队协作规范" \
@@ -268,7 +270,7 @@ npx skillhub@latest install slack-workspace-manager-pro
 ```bash
 # 连接Slack工作区（需要企业Grid管理员权限）
 slack-workspace-manager-pro connect --enterprise-grid
-
+# ...
 # 验证企业连接
 slack-workspace-manager-pro list-enterprise-teams
 ```
@@ -277,19 +279,19 @@ slack-workspace-manager-pro list-enterprise-teams
 ```bash
 # 企业Grid - 列出所有团队
 slack-workspace-manager-pro list-enterprise-teams
-
+# ...
 # 审计日志 - 读取最近30天日志
 slack-workspace-manager-pro read-audit-logs --days 30
-
+# ...
 # 批量操作 - 批量创建频道
 slack-workspace-manager-pro batch-create-channels \
   --config channels.yaml
-
+# ...
 # 用户组管理
 slack-workspace-manager-pro create-user-group \
   --name "oncall-team" \
   --description "值班团队"
-
+# ...
 # Canvas文档
 slack-workspace-manager-pro create-canvas \
   --title "项目文档" \
@@ -300,7 +302,7 @@ slack-workspace-manager-pro create-canvas \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | slack-workspace-manager处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -347,9 +349,8 @@ slack-workspace-manager-pro create-canvas \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -363,9 +364,9 @@ slack-workspace-manager-pro create-canvas \
 - **网络环境**: 需能访问Slack API端点
 - **Slack套餐**: 企业Grid功能需要Enterprise Grid套餐
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Slack OAuth Token | API凭证 | 必需 | OAuth授权流程获取 |
 | Enterprise Grid权限 | 权限 | Grid功能必需 | Slack企业管理员授予 |
@@ -380,7 +381,7 @@ slack-workspace-manager-pro create-canvas \
 ```bash
 # 通过OAuth流程自动配置（推荐）
 slack-workspace-manager-pro connect --enterprise-grid
-
+# ...
 # 专业版所需OAuth Scopes:
 # 基础（与免费版相同）:
 # - chat:write              发送消息
@@ -407,7 +408,6 @@ slack-workspace-manager-pro connect --enterprise-grid
 - **支持级别**: 优先技术支持，工作日24小时内响应
 - **合规说明**: 审计日志功能满足企业合规要求，支持操作追溯与安全监控
 
-
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
@@ -426,12 +426,12 @@ export API_KEY="your_api_key_here"
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -448,12 +448,12 @@ export API_KEY="your_api_key_here"
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -470,12 +470,12 @@ export API_KEY="your_api_key_here"
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -498,20 +498,20 @@ export API_KEY="your_api_key_here"
 ```bash
 # 创建Canvas
 slack-workspace-manager-pro create-canvas --title "文档标题" --content "内容"
-
+# ...
 # 编辑分区
 slack-workspace-manager-pro edit-canvas --canvas-id "F001" --section-id "S001" --content "新内容"
-
+# ...
 # 查找分区ID
 slack-workspace-manager-pro lookup-canvas-sections --canvas-id "F001"
-
+# ...
 # 删除Canvas
 slack-workspace-manager-pro delete-canvas --canvas-id "F001" --confirm
 ```
 
 ### Q: 用户组与频道有什么区别？
 | 特性 | 用户组 | 频道 |
-|:-----|:-------|:-----|
+|:------|------:|:------|
 | 用途 | 角色与权限管理 | 消息沟通 |
 | 成员 | 跨频道 | 频道内 |
 | 提及 | `@group-name` | `@channel` |
@@ -528,10 +528,10 @@ slack-workspace-manager-pro delete-canvas --canvas-id "F001" --confirm
 ```bash
 # 列出企业Grid下所有团队
 slack-workspace-manager-pro list-enterprise-teams
-
+# ...
 # 切换当前操作团队
 slack-workspace-manager-pro switch-team --team-id "T0123456789"
-
+# ...
 # 跨团队用户管理
 slack-workspace-manager-pro invite-user-to-workspace \
   --team-id "T0123456789" \
@@ -540,9 +540,8 @@ slack-workspace-manager-pro invite-user-to-workspace \
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

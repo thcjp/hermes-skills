@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 自动更新工具 - 专业版
 
@@ -143,7 +145,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 自动更新工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -172,10 +174,10 @@ cat > cluster-update.json << 'EOF'
   "autoRollback": true
 }
 EOF
-
+# ...
 # 执行滚动更新
 ./updater-pro deploy --config cluster-update.json
-
+# ...
 # 输出:
 # === 滚动更新: api-gateway ===
 # 目标版本: 2.1.0 (当前: 2.0.0)
@@ -209,7 +211,7 @@ EOF
   --monitor-interval "5m" \
   --success-rate 99.5 \
   --auto-rollback
-
+# ...
 # 输出:
 # === 灰度发布: payment-service ===
 # 版本: 3.0.0 (当前: 2.9.0)
@@ -243,27 +245,27 @@ EOF
 ```bash
 # 当前活跃环境: 蓝
 # 备用环境: 绿
-
+# ...
 # 1. 在绿环境部署新版本
 ./updater-pro blue-green \
   --service "web-app" \
   --version "5.0.0" \
   --inactive-env "green" \
   --deploy
-
+# ...
 # 2. 在绿环境验证
 ./updater-pro blue-green \
   --service "web-app" \
   --env "green" \
   --health-check \
   --smoke-test
-
+# ...
 # 3. 切换流量到绿环境
 ./updater-pro blue-green \
   --service "web-app" \
   --switch-to "green" \
   --drain-timeout "60s"
-
+# ...
 # 输出:
 # 正在排空蓝环境流量...
 # 蓝环境流量: 100% -> 50% -> 0%
@@ -280,7 +282,7 @@ EOF
 ./updater-pro audit log \
   --from 2025-01-01 --to 2025-01-31 \
   --service "all"
-
+# ...
 # 输出:
 # === 更新审计日志 ===
 # 时间         服务          版本         策略     操作者    结果
@@ -288,7 +290,7 @@ EOF
 # 01-16 14:00  payment       2.9->3.0     灰度     bob       成功
 # 01-18 09:15  web-app       4.9->5.0     蓝绿     alice     成功
 # 01-20 16:30  auth-service  1.5->1.6     滚动     charlie   失败(已回滚)
-
+# ...
 # 生成合规报告
 ./updater-pro audit report \
   --period 2025-01 \
@@ -322,7 +324,7 @@ EOF
 # 免费版配置自动兼容
 # 依赖说明
 ./updater-pro upgrade --from free
-
+# ...
 # 配置多节点
 ./updater-pro nodes add --file nodes.json
 ```
@@ -341,7 +343,6 @@ EOF
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -392,7 +393,7 @@ EOF
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 节点数 | 单节点 | 多节点批量 |
 | 更新策略 | 手动 | 滚动/灰度/蓝绿 |
 | 健康检查 | 手动 | 自动验证 |
@@ -443,7 +444,7 @@ A: 专业版支持 Kubernetes 原生部署策略。通过 K8s Deployment 的 `Ro
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | curl | CLI工具 | 必需 | 系统自带 |
 | jq | CLI工具 | JSON处理推荐 | 包管理器安装 |
 | Ansible | 配置管理 | 多节点推荐 | pip install ansible |
@@ -470,9 +471,8 @@ A: 专业版支持 Kubernetes 原生部署策略。通过 K8s Deployment 的 `Ro
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

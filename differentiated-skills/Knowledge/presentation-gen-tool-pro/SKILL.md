@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 演示文稿生成（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `把这份报告转为PPT
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：商务演示
 
 生成包含数据图表的商业分析演示文稿。**示例指令**：`
 
 `生成季度业绩汇报PPT
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 演示文稿生成（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -166,7 +158,7 @@ from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
-
+# ...
 @dataclass
 class SlideContent:
     title: str
@@ -175,12 +167,12 @@ class SlideContent:
     chart_data: Optional[dict] = None
     speaker_notes: Optional[str] = None
     background_color: Optional[str] = None
-
+# ...
 class PresentationGenerator:
     def __init__(self, template_path: str = None):
         self.template_path = template_path
         self.prs = Presentation(template_path) if template_path else Presentation()
-
+# ...
     def generate_from_topic(self, topic: str, slide_count: int = 10) -> str:
         """从主题生成PPT（PRO 专属：智能规划）"""
         slides = self._plan_slides(topic, slide_count)
@@ -189,7 +181,7 @@ class PresentationGenerator:
         output = f"{topic}_presentation.pptx"
         self.prs.save(output)
         return output
-
+# ...
     def generate_from_document(self, doc_path: str) -> str:
         """从文档生成PPT（PRO 专属：内容提取）"""
         content = self._read_document(doc_path)
@@ -199,7 +191,7 @@ class PresentationGenerator:
         output = doc_path.replace(".md", "").replace(".txt", "") + "_presentation.pptx"
         self.prs.save(output)
         return output
-
+# ...
     def batch_generate(self, topics: List[str],
                       output_dir: str = "./output") -> List[str]:
         """批量生成PPT（PRO 专属）"""
@@ -208,7 +200,7 @@ class PresentationGenerator:
             output = self.generate_from_topic(topic)
             results.append(output)
         return results
-
+# ...
     def _plan_slides(self, topic: str, count: int) -> List[SlideContent]:
         slides = []
         slides.append(SlideContent(title=topic, layout="title_slide"))
@@ -220,12 +212,12 @@ class PresentationGenerator:
             ))
         slides.append(SlideContent(title="谢谢", layout="title_slide"))
         return slides
-
+# ...
     def _get_sections(self, topic: str, count: int) -> List[dict]:
         return [{"title": f"{topic} - 第{i}部分",
                  "points": ["要点1", "要点2", "要点3"]}
                 for i in range(1, count + 1)]
-
+# ...
     def _add_slide(self, content: SlideContent):
         layout_map = {
             "title_slide": 0,
@@ -242,11 +234,11 @@ class PresentationGenerator:
             body.text = NL.join(content.body)
         if content.speaker_notes:
             slide.notes_slide.notes_text_frame.text = content.speaker_notes
-
+# ...
     def _read_document(self, path: str) -> str:
         with open(path, "r", encoding="utf-8") as f:
             return f.read()
-
+# ...
     def _extract_slides_from_content(self, content: str) -> List[SlideContent]:
         slides = []
         current = None
@@ -264,7 +256,7 @@ class PresentationGenerator:
         if current:
             slides.append(current)
         return slides
-
+# ...
 gen = PresentationGenerator()
 output = gen.generate_from_topic("人工智能趋势", slide_count=8)
 print(f"PPT已生成: {output}")
@@ -309,7 +301,7 @@ presentation:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -321,7 +313,7 @@ presentation:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -393,7 +385,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | python-pptx | Python库 | 必需 | pip install python-pptx |
 
@@ -407,9 +399,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

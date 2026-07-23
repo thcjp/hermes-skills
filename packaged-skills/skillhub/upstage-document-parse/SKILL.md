@@ -20,17 +20,18 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "文档处理,工具,效率"
 ---
 # Document Parse
 
 document-parse 将文档转换为结构化的 HTML/Markdown。识别表格、图片、公式、图表等版面元素，
 并返回边界框坐标（bounding box coordinates）。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Document Parse处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,13 +39,13 @@ document-parse 将文档转换为结构化的 HTML/Markdown。识别表格、图
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Document Parse文档解析 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -54,7 +55,7 @@ document-parse 将文档转换为结构化的 HTML/Markdown。识别表格、图
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -131,7 +132,7 @@ export API_KEY="your_api_key_here"
 ```python
 import os
 import requests
-
+# ...
 with open("report.pdf", "rb") as f:
     response = requests.post(
         "https://api.example.com/v1/document-digitization",
@@ -145,7 +146,7 @@ with open("report.pdf", "rb") as f:
             "coordinates": "true"
         }
     )
-
+# ...
 result = response.json()
 print(result["content"]["markdown"])
 # 输出：
@@ -158,10 +159,10 @@ print(result["content"]["markdown"])
 # |---------|---------|--------|
 # | Q1 2026 | $39.2M | +18%  |
 # | Q2 2026 | $48.2M | +23%  |
-
+# ...
 print(f"Pages processed: {result['usage']['pages']}")
 # 输出：Pages processed: 12
-
+# ...
 print(f"Elements found: {len(result['elements'])}")
 # 输出：Elements found: 47
 ```
@@ -171,7 +172,7 @@ print(f"Elements found: {len(result['elements'])}")
 ```python
 import os
 import requests
-
+# ...
 with open("financial_statements.pdf", "rb") as f:
     response = requests.post(
         "https://api.example.com/v1/document-digitization",
@@ -186,14 +187,14 @@ with open("financial_statements.pdf", "rb") as f:
             "coordinates": "true"
         }
     )
-
+# ...
 result = response.json()
-
+# ...
 # 查看表格元素
 tables = [e for e in result["elements"] if e["category"] == "table"]
 print(f"Tables found: {len(tables)}")
 # 输出：Tables found: 8
-
+# ...
 # 查看第一个表格的坐标
 if tables:
     first_table = tables[0]
@@ -202,7 +203,7 @@ if tables:
     # 输出：
     # Table on page 3
     # Coordinates: [{"x": 0.06, "y": 0.15}, {"x": 0.94, "y": 0.15}, ...]
-
+# ...
 # 写入输出文件
 import tempfile
 output_path = os.path.join(tempfile.gettempdir(), "financial_statements.parsed.md")
@@ -214,9 +215,8 @@ print(f"Output saved to: {output_path}")
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | API Key 缺失或无效 | 环境变量 `DOCUMENT_PARSE_API_KEY` 未设置或过期 | 在控制台重新获取 API Key，设置到环境变量中 |
 | 文件超过 50 MB 限制 | 文档体积超出同步和异步模式的统一上限 | 拆分文档后分批处理，或压缩 PDF 后 |
 | 同步模式页数超过 100 页 | 文档页数超出同步模式限制 | 切换到异步模式 `/v1/document-digitization/async`，支持最多 1000 页 |

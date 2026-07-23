@@ -43,6 +43,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 韦特塔罗占卜（专业版）
 
@@ -53,7 +55,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 牌意库 | 78 张默认牌意 | 78 张 + 自定义牌意覆盖 |
 | 牌阵模板 | 单张、时间之流 | 单张、时间之流、凯尔特十字、关系阵、年运阵、抉择阵、月相阵、自定义 |
 | 正逆位概率 | 固定 50% | 可配置（0%-100%） |
@@ -97,7 +99,7 @@ pricing_model: "per_use"
 ```bash
 # 为客户「陈先生」执行凯尔特十字牌阵并归档
 tarot-reader-pro draw --spread celtic-cross --client "陈先生" --question "本年度事业方向" --archive
-
+# ...
 # 示例
 # 牌阵: 凯尔特十字（10张）
 # 客户: 陈先生
@@ -108,12 +110,12 @@ tarot-reader-pro draw --spread celtic-cross --client "陈先生" --question "本
 解读报告（节选）：
 1. 现状 — 女祭司（正位）
    你正处于一个需要倾听内在直觉的阶段，答案已在你心中浮现。
-
+# ...
 2. 挑战 — 月亮（逆位）
    之前的迷雾正在散去，但残留的不安仍需被看见。
-
+# ...
 ...（共10个位置）
-
+# ...
 ✨ 整体指引
 本年度的核心课题是「从直觉到行动」。女祭司的智慧需要通过战车的执行力落地，避免停留在思考层面。
 ```
@@ -125,7 +127,7 @@ tarot-reader-pro draw --spread celtic-cross --client "陈先生" --question "本
 ```bash
 # 批量为 12 星座生成月度运势
 tarot-reader-pro batch --template monthly-horoscope --count 12 --format markdown --output ./2026-07-report/
-
+# ...
 # 每个星座抽取时间之流牌阵并生成 300-500 字解读
 # 输出目录：./2026-07-report/
 ```
@@ -137,7 +139,7 @@ tarot-reader-pro batch --template monthly-horoscope --count 12 --format markdown
 ```bash
 # 生成教学案例（含牌面位置说明 + 解读 + 教学注解）
 tarot-reader-pro demo --spread three-card --teaching-mode --format markdown
-
+# ...
 # 输出包含：牌面位置含义、正逆位说明、解读思路、常见误读提醒
 ```
 
@@ -164,20 +166,19 @@ tarot-reader-pro demo --spread three-card --teaching-mode --format markdown
 ```bash
 # 1. 初始化专业版工作区
 tarot-reader-pro init --workspace ~/tarot-reader-pro
-
+# ...
 # 2. 执行首次占卜
 tarot-reader-pro draw --spread three-card --question "本季度的核心课题"
-
+# ...
 # 3. 查看客户档案与历史
 tarot-reader-pro client list
 tarot-reader-pro client history --name "陈先生"
-
+# ...
 # 4. 搜索历史占卜
 tarot-reader-pro archive search --keyword "女祭司"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配置示例
 
@@ -213,7 +214,7 @@ export:
 ## 牌阵模板库
 
 | 牌阵 | 张数 | 适用场景 | 教学难度 |
-|:-----|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | 单张牌 | 1 | 每日指引 | 入门 |
 | 时间之流 | 3 | 简单问题、趋势预览 | 入门 |
 | 凯尔特十字 | 10 | 深度问题分析 | 进阶 |
@@ -260,7 +261,7 @@ A：可以。需安装 PDF 导出依赖（如 pandoc + LaTeX），通过 `--form
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需 | 官方站点下载 |
 | pandoc | 工具 | 可选（PDF导出） | 系统包管理器安装 |
@@ -276,9 +277,8 @@ A：可以。需安装 PDF 导出依赖（如 pandoc + LaTeX），通过 `--form
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

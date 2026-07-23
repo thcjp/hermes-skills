@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 安全加密工具 - 专业版
 
@@ -143,7 +145,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 安全加密工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -158,7 +160,7 @@ safe-pro encrypt-dir \
   --compress \
   --recursive \
   --exclude "*.log,tmp/*"
-
+# ...
 # 输出:
 # 正在扫描目录...
 # 发现文件: 1,247 个
@@ -169,7 +171,7 @@ safe-pro encrypt-dir \
 # 加密完成: 1,224/1,224
 # 压缩率: 62%
 # 总耗时: 45.3s
-
+# ...
 # 递归解密
 safe-pro decrypt-dir \
   --input /data/sensitive-project-encrypted \
@@ -189,19 +191,19 @@ safe-pro kms create-key \
   --algorithm ML-KEM-768 \
   --rotation "90d" \
   --description "财务数据加密密钥"
-
+# ...
 # 列出密钥版本
 safe-pro kms list-versions --name "financial-data"
 # 版本 1: 创建于 2025-01-01, 状态: 活跃
 # 版本 2: 创建于 2025-04-01, 状态: 活跃(当前)
 # 版本 3: 创建于 2025-07-01, 状态: 活跃(当前)
-
+# ...
 # 使用特定密钥版本加密
 safe-pro encrypt \
   --input report.pdf \
   --output report.pdf.encrypted \
   --kms-key "financial-data@v3"
-
+# ...
 # 旧版本数据仍可解密
 safe-pro decrypt \
   --input old_report.pdf.encrypted \
@@ -216,7 +218,7 @@ safe-pro decrypt \
 safe-pro audit log \
   --from 2025-01-01 --to 2025-01-31 \
   --user "alice@company.com"
-
+# ...
 # 输出:
 # === 加密操作审计日志 ===
 # 时间                 用户              操作   文件              算法       密钥
@@ -224,13 +226,13 @@ safe-pro audit log \
 # 2025-01-15 14:22:10  alice@company.com  解密  financial/Q1.pdf  ML-KEM-768  financial-data@v2
 # 2025-01-16 10:15:33  alice@company.com  加密  financial/Q2.pdf  ML-KEM-768  financial-data@v2
 # 总计: 47 次操作
-
+# ...
 # 生成合规报告
 safe-pro audit report \
   --period 2025-01 \
   --format pdf \
   --output compliance-report-2025-01.pdf
-
+# ...
 # 报告包含:
 # - 加密操作统计
 # - 密钥使用情况
@@ -264,11 +266,11 @@ safe-pro audit report \
 # 免费版加密文件完全兼容
 # 升级到专业版
 safe-pro upgrade --from free
-
+# ...
 # 配置 KMS
 export KMS_ENDPOINT="https://kms.company.com"
 export KMS_API_KEY="your-kms-api-key"
-
+# ...
 # 验证 KMS 连接
 safe-pro kms ping
 # 输出: KMS 连接正常,版本 2.1.0
@@ -342,7 +344,7 @@ EOF
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 文件加密 | 单文件 | 单文件 + 批量 + 目录 |
 | 密码方式 | passphrase | passphrase + KMS |
 | 算法 | ML-KEM-512 | 512/768/1024 |
@@ -393,7 +395,7 @@ A: 专业版审计日志记录所有加密/解密操作的完整信息(操作者
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | SAFE CLI Pro | 加密工具 | 必需 | 官方安装包 |
 | KMS 服务 | 密钥管理 | 必需 | 自建或云服务 |
 | PostgreSQL | 数据库 | 审计日志必需 | 官方网站下载 |
@@ -418,9 +420,8 @@ A: 专业版审计日志记录所有加密/解密操作的完整信息(操作者
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

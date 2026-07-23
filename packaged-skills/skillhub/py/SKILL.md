@@ -17,16 +17,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Python健壮编程
 
 编写可靠Python代码,避免可变默认值、导入陷阱与常见运行时意外。涵盖从动态类型陷阱到并发模型的完整防护指南。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Python健壮编程处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -34,18 +35,18 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **迭代修改安全**: 迭代时修改列表会跳过元素,使用 `for x in list(items):` 迭代副本或使用推导式创建新列表 | 支持 | 支持 |
-| **资源管理**: `open()` 不使用上下文管理器会泄漏文件句柄,始终使用 `with open():` 确保资源释放 | 不支持 | 支持 |
-| **循环导入处理**: 循环导入会静默失败或部分加载,在函数内部导入打破循环或将公共依赖提取到独立模块 | 不支持 | 支持 |
-| **浮点精度与货币计算**: `0.1 + 0.2 != 0.3` 是浮点精度问题,货币计算使用 `decimal.Decimal` 保证精确 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 快速参考
 
 | 主题 | 文件 |
-| --- | --- |
+|---:|---:|
 | 动态类型、类型提示、鸭子类型 | `types.md` |
 | List/dict/set陷阱、推导式 | `collections.md` |
 | Args/kwargs、闭包、装饰器、生成器 | `functions.md` |
@@ -62,7 +63,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -146,7 +147,6 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1:可变默认参数陷阱
@@ -156,17 +156,17 @@ export API_KEY="your_api_key_here"
 def add_item(item, items=[]):
     items.append(item)
     return items
-
+# ...
 print(add_item(1))  # [1]
 print(add_item(2))  # [1, 2] — 不是预期的 [2]!
-
+# ...
 # 正确: 使用 None 作为哨兵值
 def add_item(item, items=None):
     if items is None:
         items = []
     items.append(item)
     return items
-
+# ...
 print(add_item(1))  # [1]
 print(add_item(2))  # [2] — 正确
 ```
@@ -180,14 +180,14 @@ for item in items:
     if item % 2 == 0:
         items.remove(item)
 print(items)  # [1, 3, 5] — 跳过了4!
-
+# ...
 # 正确: 迭代副本
 items = [1, 2, 3, 4, 5]
 for item in list(items):
     if item % 2 == 0:
         items.remove(item)
 print(items)  # [1, 3, 5] — 正确
-
+# ...
 # 正确: 使用推导式创建新列表
 items = [1, 2, 3, 4, 5]
 items = [x for x in items if x % 2 != 0]
@@ -200,10 +200,10 @@ print(items)  # [1, 3, 5]
 # 错误: 浮点数精度问题
 print(0.1 + 0.2 == 0.3)  # False
 print(0.1 + 0.2)         # 0.30000000000000004
-
+# ...
 # 正确: 货币计算使用 decimal.Decimal
 from decimal import Decimal
-
+# ...
 price = Decimal('19.99')
 tax_rate = Decimal('0.08')
 total = price + (price * tax_rate)
@@ -215,18 +215,18 @@ print(total == Decimal('21.5892'))  # True
 
 ```python
 from itertools import tee
-
+# ...
 # 错误: 生成器一次迭代后耗尽
 gen = (x * 2 for x in range(5))
 print(list(gen))  # [0, 2, 4, 6, 8]
 print(list(gen))  # [] — 已耗尽!
-
+# ...
 # 正确: 使用 itertools.tee 复制迭代器
 gen = (x * 2 for x in range(5))
 gen1, gen2 = tee(gen)
 print(list(gen1))  # [0, 2, 4, 6, 8]
 print(list(gen2))  # [0, 2, 4, 6, 8] — 可独立遍历
-
+# ...
 # 正确: 转换为列表多次使用
 data = list(x * 2 for x in range(5))
 print(data)  # [0, 2, 4, 6, 8]
@@ -240,12 +240,12 @@ print(data)  # [0, 2, 4, 6, 8] — 可重复访问
 f = open('data.txt', 'r')
 content = f.read()  # 若此处抛出异常,f.close() 不执行
 f.close()
-
+# ...
 # 正确: 使用 with 语句自动释放资源
 with open('data.txt', 'r', encoding='utf-8') as f:
     content = f.read()
 # f 在 with 块结束后自动关闭,即使抛出异常
-
+# ...
 # 正确: 多资源同时管理
 with open('input.txt', 'r', encoding='utf-8') as fin, \
      open('output.txt', 'w', encoding='utf-8') as fout:
@@ -256,7 +256,7 @@ with open('input.txt', 'r', encoding='utf-8') as fin, \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 可变默认参数共享状态 | `def f(items=[])` 的 `[]` 在函数定义时创建一次,所有调用共享 | 使用 `items=None` 作为默认值,函数体内 `if items is None: items = []` 创建新实例 |
 | `UnboundLocalError` | 函数内赋值外部作用域变量,Python将其视为局部变量 | 在函数内使用 `nonlocal`(嵌套函数)或 `global`(模块级)声明外部变量 |
 | 迭代时跳过元素 | `for item in items: items.remove(item)` 修改列表长度导致索引偏移 | 迭代副本 `for item in list(items):` 或使用推导式 `[x for x in items if cond]` |

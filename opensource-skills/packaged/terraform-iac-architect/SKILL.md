@@ -19,6 +19,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # IaC架构师
 
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 云基础设施搭建 | 云厂商、资源需求清单、拓扑图 | 完整 Terraform 模块代码 + 部署说明 |
 | 多环境管理 | dev/staging/prod 环境矩阵 + 差异配置 | Workspace/Terragrunt 配置 + 环境隔离方案 |
 | 模块化设计 | 团队复用需求 + 资源分组 | 可复用模块 + 版本管理 + 文档 |
@@ -132,7 +134,7 @@ pricing_model: "per_use"
 ## 国内外云 Provider 对照
 
 | 维度 | AWS | 阿里云 | 腾讯云 | 华为云 |
-|:-----|:----|:------|:------|:------|
+|:-----|:-----|:-----|:-----|:-----|
 | Provider | hashicorp/aws | aliyun/alicloud | tencentcloudstack/tencentcloud | huaweicloud/huaweicloud |
 | 对象存储 | S3 | OSS | COS | OBS |
 | 计算 | EC2 | ECS | CVM | ECS |
@@ -149,7 +151,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | IaC架构师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -171,32 +173,32 @@ terraform {
     }
   }
 }
-
+# ...
 resource "aws_vpc" "this" {
   cidr_block           = var.cidr_block
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = merge(var.tags, { Name = "${var.name_prefix}-vpc" })
 }
-
+# ...
 resource "aws_subnet" "public" {
   for_each = toset(var.availability_zones)
-
+# ...
   vpc_id                  = aws_vpc.this.id
   cidr_block              = cidrsubnet(var.cidr_block, 8, index(var.availability_zones, each.value))
   availability_zone       = each.value
   map_public_ip_on_launch = true
   tags = merge(var.tags, { Name = "${var.name_prefix}-public-${each.value}" })
 }
-
+# ...
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
   tags   = merge(var.tags, { Name = "${var.name_prefix}-igw" })
 }
-
+# ...
 resource "aws_nat_gateway" "this" {
   for_each = toset(var.availability_zones)
-
+# ...
   allocation_id = aws_eip.nat[each.key].id
   subnet_id     = aws_subnet.public[each.key].id
   depends_on     = [aws_internet_gateway.this]
@@ -223,15 +225,15 @@ terraform {
     }
   }
 }
-
+# ...
 resource "alicloud_vpc" "this" {
   vpc_name   = "${var.name_prefix}-vpc"
   cidr_block = var.cidr_block
 }
-
+# ...
 resource "alicloud_vswitch" "public" {
   for_each = toset(var.availability_zones)
-
+# ...
   vpc_id            = alicloud_vpc.this.id
   cidr_block        = cidrsubnet(var.cidr_block, 8, index(var.availability_zones, each.value))
   zone_id           = each.value
@@ -270,7 +272,7 @@ environments/
 - 重试机制: 失败时自动重试, 最多3次
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | 状态锁定 | 上一次 apply 异常中断,锁未释放 | 等待 5 分钟或手动 `terraform force-unlock <lock-id>` |
 | 资源漂移 | 人工修改了云资源 | `terraform plan` 检测差异,`terraform apply` 修正或 `terraform import` 导入 |
 | 资源删除失败 | 存在依赖关系 | 先删除依赖资源(如先删 ECS 再删 VPC) |
@@ -291,7 +293,7 @@ environments/
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Terraform CLI | 工具 | 必需 | hashicorp.com 官方下载 | 国内镜像源 mirrors.aliyun.com/terraform |
 | AWS CLI | 工具 | AWS 必需 | aws.amazon.com/cli | 阿里云 CLI(aliyun cli) |
 | 阿里云 CLI | 工具 | 阿里云必需 | aliyun.com | - |
@@ -342,33 +344,33 @@ terraform {
     }
   }
 }
-
+# ...
 resource "alicloud_vpc" "this" {
   vpc_name   = "${var.name_prefix}-vpc"
   cidr_block = var.cidr_block
   tags       = merge(var.tags, { Name = "${var.name_prefix}-vpc" })
 }
-
+# ...
 resource "alicloud_vswitch" "private" {
   for_each = toset(var.availability_zones)
-
+# ...
   vpc_id       = alicloud_vpc.this.id
   cidr_block   = cidrsubnet(var.cidr_block, 8, index(var.availability_zones, each.value) + 10)
   zone_id      = each.value
   vswitch_name = "${var.name_prefix}-private-${each.value}"
   tags         = merge(var.tags, { Name = "${var.name_prefix}-private-${each.value}" })
 }
-
+# ...
 resource "alicloud_vswitch" "public" {
   for_each = toset(var.availability_zones)
-
+# ...
   vpc_id       = alicloud_vpc.this.id
   cidr_block   = cidrsubnet(var.cidr_block, 8, index(var.availability_zones, each.value))
   zone_id      = each.value
   vswitch_name = "${var.name_prefix}-public-${each.value}"
   tags         = merge(var.tags, { Name = "${var.name_prefix}-public-${each.value}" })
 }
-
+# ...
 resource "alicloud_nat_gateway" "this" {
   vpc_id        = alicloud_vpc.this.id
   nat_gateway_name = "${var.name_prefix}-nat"
@@ -376,20 +378,20 @@ resource "alicloud_nat_gateway" "this" {
   vswitch_id    = alicloud_vswitch.public[var.availability_zones[0]].id
   tags          = var.tags
 }
-
+# ...
 resource "alicloud_eip" "nat" {
   bandwidth            = 100
   internet_charge_type = "PayByTraffic"
 }
-
+# ...
 resource "alicloud_eip_association" "nat" {
   allocation_id = alicloud_eip.nat.id
   instance_id   = alicloud_nat_gateway.this.id
 }
-
+# ...
 resource "alicloud_snat_entry" "this" {
   for_each = alicloud_vswitch.private
-
+# ...
   snat_table_id     = alicloud_nat_gateway.this.snat_table_ids[0]
   source_vswitch_id = each.value.id
   snat_ip           = alicloud_eip.nat.ip_address
@@ -402,18 +404,18 @@ variable "name_prefix" {
   description = "资源命名前缀,如 myapp-prod"
   type        = string
 }
-
+# ...
 variable "cidr_block" {
   description = "VPC CIDR块,如 10.0.0.0/16"
   type        = string
   default     = "10.0.0.0/16"
 }
-
+# ...
 variable "availability_zones" {
   description = "可用区列表"
   type        = list(string)
 }
-
+# ...
 variable "tags" {
   description = "全局标签"
   type        = map(string)
@@ -427,12 +429,12 @@ output "vpc_id" {
   description = "VPC ID"
   value       = alicloud_vpc.this.id
 }
-
+# ...
 output "private_subnet_ids" {
   description = "私有子网ID映射"
   value       = { for k, v in alicloud_vswitch.private : k => v.id }
 }
-
+# ...
 output "public_subnet_ids" {
   description = "公有子网ID映射"
   value       = { for k, v in alicloud_vswitch.public : k => v.id }
@@ -448,7 +450,7 @@ resource "alicloud_security_group" "this" {
   vpc_id      = var.vpc_id
   tags        = var.tags
 }
-
+# ...
 resource "alicloud_security_group_rule" "allow_http" {
   type              = "ingress"
   ip_protocol       = "tcp"
@@ -456,7 +458,7 @@ resource "alicloud_security_group_rule" "allow_http" {
   security_group_id = alicloud_security_group.this.id
   cidr_ip           = "0.0.0.0/0"
 }
-
+# ...
 resource "alicloud_security_group_rule" "allow_https" {
   type              = "ingress"
   ip_protocol       = "tcp"
@@ -464,7 +466,7 @@ resource "alicloud_security_group_rule" "allow_https" {
   security_group_id = alicloud_security_group.this.id
   cidr_ip           = "0.0.0.0/0"
 }
-
+# ...
 resource "alicloud_security_group_rule" "allow_ssh" {
   type              = "ingress"
   ip_protocol       = "tcp"
@@ -472,10 +474,10 @@ resource "alicloud_security_group_rule" "allow_ssh" {
   security_group_id = alicloud_security_group.this.id
   cidr_ip           = var.ssh_cidr
 }
-
+# ...
 resource "alicloud_instance" "this" {
   for_each = toset(var.availability_zones)
-
+# ...
   instance_type           = var.instance_type
   image_id                = var.image_id
   security_groups         = [alicloud_security_group.this.id]
@@ -500,7 +502,7 @@ resource "alicloud_slb_load_balancer" "this" {
   internet_charge_type = "PayByTraffic"
   tags                 = var.tags
 }
-
+# ...
 resource "alicloud_slb_listener" "http" {
   load_balancer_id = alicloud_slb_load_balancer.this.id
   backend_port     = 80

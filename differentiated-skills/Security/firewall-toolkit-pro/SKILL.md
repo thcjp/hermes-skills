@@ -28,12 +28,14 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 专业版为企业安全团队提供完整的防火墙管理与网络安全加固平台,在免费版iptables/ufw配置能力之上,新增云安全组(AWS/Azure/GCP)管理、nftables高级配置、批量多机部署、CIS安全基线完整审计、实时日志分析与告警、规则版本管理与回滚。专业版完全兼容免费版配置方法,已有防火墙规则可无缝升级,适合企业级网络安全运维。
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 云安全组 | AWS/Azure/GCP安全组统一管理 |
 | nftables | 新一代Linux防火墙框架 |
 | 批量部署 | 多机并行配置,一键部署 |
@@ -54,8 +56,6 @@ pricing_model: "monthly"
 
 ### 2. nftables高级配置(专业版独有)
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供nftables高级配置(专业版独有)所需的指令和必要参数。
 **处理**: 解析nftables高级配置(专业版独有)的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回nftables高级配置(专业版独有)的响应数据,包含状态码、结果和日志。
@@ -63,7 +63,7 @@ pricing_model: "monthly"
 ### 3. 批量多机部署(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 防火墙配置工具包专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -72,21 +72,21 @@ pricing_model: "monthly"
 #!/bin/bash
 HOSTS_FILE="hosts.txt"  # 格式: IP SSH_PORT
 RULES_FILE="firewall-rules.sh"
-
+# ...
 echo "=== 批量防火墙部署 ==="
 echo "目标主机文件: ${HOSTS_FILE}"
 echo "规则文件: ${RULES_FILE}"
 echo ""
-
+# ...
 SUCCESS=0
 FAIL=0
-
+# ...
 while IFS=' ' read -r ip port; do
     [ -z "$ip" ] && continue
     port=${port:-22}
-
+# ...
     echo "--- 部署到: ${ip}:${port} ---"
-
+# ...
     if scp -P "$port" "$RULES_FILE" "root@${ip}:/tmp/firewall-rules.sh" 2>/dev/null; then
         if ssh -p "$port" "root@${ip}" "bash /tmp/firewall-rules.sh && rm /tmp/firewall-rules.sh" 2>/dev/null; then
             echo "  [OK] ${ip} 部署成功"
@@ -100,7 +100,7 @@ while IFS=' ' read -r ip port; do
         ((FAIL++))
     fi
 done < "$HOSTS_FILE"
-
+# ...
 echo ""
 echo "========================================="
 echo "部署完成: 成功 ${SUCCESS} 台, 失败 ${FAIL} 台"
@@ -117,17 +117,17 @@ echo "========================================="
 #!/bin/bash
 echo "=== CIS防火墙安全基线审计 ==="
 echo ""
-
+# ...
 PASS=0
 FAIL=0
 WARN=0
-
+# ...
 check_cis() {
     local id=$1
     local name=$2
     local condition=$3
     local level=$4
-
+# ...
     if eval "$condition"; then
         echo "  [PASS] [$id] $name"
         ((PASS++))
@@ -141,37 +141,37 @@ check_cis() {
         fi
     fi
 }
-
+# ...
 check_cis "3.5.1.1" "默认入站策略为DROP" \
     "iptables -L INPUT -n | head -1 | grep -q DROP || ufw status verbose | grep -q 'deny (incoming)'" "high"
-
+# ...
 check_cis "3.5.1.2" "默认出站策略已配置" \
     "iptables -L OUTPUT -n | head -1 | grep -qE 'DROP|ACCEPT'" "medium"
-
+# ...
 check_cis "3.5.1.3" "默认转发策略为DROP" \
     "iptables -L FORWARD -n | head -1 | grep -q DROP" "medium"
-
+# ...
 check_cis "3.5.1.4" "回环接口已配置" \
     "iptables -L INPUT -n | grep -q 'lo.*ACCEPT'" "high"
-
+# ...
 check_cis "3.5.1.5" "已建立连接规则已配置" \
     "iptables -L INPUT -n | grep -q 'ESTABLISHED'" "high"
-
+# ...
 check_cis "3.5.2.1" "防火墙已启用" \
     "ufw status | grep -q 'Status: active' || systemctl is-active nftables | grep -q active" "high"
-
+# ...
 check_cis "4.2.1" "SSH最大认证尝试 <= 4" \
     "grep -q 'MaxAuthTries [1-4]' /etc/ssh/sshd_config" "medium"
-
+# ...
 check_cis "4.2.2" "SSH忽略rhosts" \
     "grep -q 'IgnoreRhosts yes' /etc/ssh/sshd_config" "medium"
-
+# ...
 check_cis "4.2.3" "SSH禁止root登录" \
     "grep -q 'PermitRootLogin no' /etc/ssh/sshd_config" "high"
-
+# ...
 check_cis "4.2.4" "SSH禁用空密码" \
     "grep -q 'PermitEmptyPasswords no' /etc/ssh/sshd_config" "high"
-
+# ...
 echo ""
 echo "========================================="
 echo "CIS基线审计结果"
@@ -192,21 +192,21 @@ echo "========================================="
 ```bash
 #!/bin/bash
 echo "=== 企业网络安全架构部署 ==="
-
+# ...
 echo "--- 配置DMZ防火墙 ---"
 nft add rule inet firewall input tcp dport { 80, 443 } accept comment '"DMZ: Web服务"'
 nft add rule inet firewall input tcp dport 22 ip saddr @admin_ips accept comment '"DMZ: 管理SSH"'
-
+# ...
 echo "--- 配置内网防火墙 ---"
 nft add rule inet firewall forward ip saddr 10.0.1.0/24 ip daddr 10.0.2.0/24 tcp dport 3306 accept comment '"内网: Web->DB"'
 nft add rule inet firewall forward ip saddr 10.0.1.0/24 ip daddr 10.0.2.0/24 tcp dport 6379 accept comment '"内网: Web->Redis"'
-
+# ...
 echo ""
 echo "--- 云安全组配置 ---"
 echo "  Web安全组: 入站 80/443 对0.0.0.0/0开放, 22仅管理网段"
 echo "  DB安全组: 入站 3306 仅Web安全组, 22仅管理网段"
 echo "  Redis安全组: 入站 6379 仅Web安全组"
-
+# ...
 echo ""
 echo "企业网络安全架构部署完成"
 ```
@@ -215,28 +215,28 @@ echo "企业网络安全架构部署完成"
 ```python
 #!/usr/bin/env python3
 """多云安全组统一管理"""
-
+# ...
 class MultiCloudFirewallManager:
     """多云防火墙统一管理"""
-
+# ...
     def __init__(self):
         self.providers = {}
-
+# ...
     def register_provider(self, name, manager):
         self.providers[name] = manager
-
+# ...
     def unified_audit(self):
         """统一安全审计"""
         all_findings = []
-
+# ...
         for provider_name, manager in self.providers.items():
             findings = manager.audit_open_ports()
             for f in findings:
                 f["provider"] = provider_name
                 all_findings.append(f)
-
+# ...
         return all_findings
-
+# ...
     def generate_compliance_report(self, findings):
         """生成合规报告"""
         report = {
@@ -245,16 +245,16 @@ class MultiCloudFirewallManager:
             "by_provider": {},
             "findings": findings
         }
-
+# ...
         for f in findings:
             sev = f["severity"]
             report["by_severity"][sev] = report["by_severity"].get(sev, 0) + 1
-
+# ...
             prov = f["provider"]
             report["by_provider"][prov] = report["by_provider"].get(prov, 0) + 1
-
+# ...
         return report
-
+# ...
 if __name__ == "__main__":
     import json
     manager = MultiCloudFirewallManager()
@@ -262,7 +262,7 @@ if __name__ == "__main__":
         {"provider": "aws", "severity": "CRITICAL", "description": "SSH开放给0.0.0.0/0"},
         {"provider": "azure", "severity": "HIGH", "description": "数据库端口开放给0.0.0.0/0"},
     ]
-
+# ...
     report = manager.generate_compliance_report(findings)
     print(json.dumps(report, indent=2, ensure_ascii=False))
 ```
@@ -272,18 +272,18 @@ if __name__ == "__main__":
 #!/bin/bash
 RULES_DIR="/etc/firewall-versions"
 mkdir -p "$RULES_DIR"
-
+# ...
 save_version() {
     local version_name=$1
     local timestamp=$(date '+%Y%m%d%H%M%S')
     local filename="${RULES_DIR}/${timestamp}_${version_name}.rules"
-
+# ...
     iptables-save > "$filename"
-
+# ...
     echo "${timestamp} ${version_name} $(wc -l < "$filename")行" >> "${RULES_DIR}/versions.log"
     echo "已保存版本: ${version_name} (${filename})"
 }
-
+# ...
 list_versions() {
     echo "=== 防火墙规则版本历史 ==="
     if [ -f "${RULES_DIR}/versions.log" ]; then
@@ -292,21 +292,21 @@ list_versions() {
         echo "暂无保存的版本"
     fi
 }
-
+# ...
 rollback() {
     local version_file=$1
-
+# ...
     if [ ! -f "$version_file" ]; then
         echo "版本文件不存在: ${version_file}"
         return 1
     fi
-
+# ...
     save_version "pre-rollback"
-
+# ...
     iptables-restore < "$version_file"
     echo "已回滚到: ${version_file}"
 }
-
+# ...
 save_version "initial-baseline"
 list_versions
 ```
@@ -333,7 +333,7 @@ list_versions
 ### 从免费版升级
 ```bash
 ufw allow 80/tcp
-
+# ...
 bash batch_deploy.sh hosts.txt firewall-rules.sh
 python3 cloud_sg_manager.py --audit --provider aws
 ```
@@ -344,7 +344,7 @@ python3 cloud_sg_manager.py --audit --provider aws
 ## 配置示例
 ### 专业版功能矩阵
 | 功能 | 免费版 | 专业版 | 说明 |
-|:-----|:-------|:-------|:-----|
+|---:|---:|---:|---:|
 | iptables | 支持 | 支持 | Linux防火墙 |
 | UFW | 支持 | 支持 | 简化防火墙 |
 | nftables | 不支持 | 支持 | 新一代防火墙 |
@@ -356,7 +356,7 @@ python3 cloud_sg_manager.py --audit --provider aws
 
 ### CIS基线覆盖范围
 | 控制项 | 免费版 | 专业版 |
-|:-------|:-------|:-------|
+|:---:|:---:|:---:|
 | 3.5.1.x 防火墙默认策略 | 基础 | 完整 |
 | 3.5.2.x 防火墙启用状态 | 基础 | 完整 |
 | 4.2.x SSH配置 | 基础 | 完整 |
@@ -396,7 +396,7 @@ python3 cloud_sg_manager.py --audit --provider aws
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | iptables | 防火墙工具 | 必需 | 系统自带 |
 | ufw | 防火墙工具 | 推荐 | `apt install ufw` |
 | nftables | 防火墙工具 | 推荐 | `apt install nftables` |
@@ -419,7 +419,7 @@ python3 cloud_sg_manager.py --audit --provider aws
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

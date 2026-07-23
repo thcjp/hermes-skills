@@ -26,13 +26,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 # Azure网关CLI专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 大数据集流式处理 | 不支持 | 支持 |
 | 多数据源关联查询 | 不支持 | 支持 |
@@ -166,7 +168,7 @@ curl http://localhost:18790/tenants/team-a/cost
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | azure-gateway-cli处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -213,9 +215,8 @@ curl http://localhost:18790/tenants/team-a/cost
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --: | --: | --: |
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -229,9 +230,9 @@ curl http://localhost:18790/tenants/team-a/cost
 - **网络**: 需可访问所有配置的Azure OpenAI端点
 - **可选**: systemd（用于服务化部署）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | Node.js | 运行时 | 必需 | nodejs.org官方下载 |
 | Azure OpenAI服务 | API | 必需 | Azure门户订阅 |
 | YAML解析库 | npm依赖 | 必需 | `npm install js-yaml` |
@@ -252,7 +253,7 @@ curl http://localhost:18790/tenants/team-a/cost
 ### 完整环境变量
 
 | 变量名 | 默认值 | 说明 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | `AZURE_PROXY_PORT` | `18790` | 监听端口 |
 | `AZURE_PROXY_BIND` | `127.0.0.1` | 绑定地址 |
 | `AZURE_PROXY_CONFIG` | `config.yaml` | 配置文件路径 |
@@ -318,9 +319,8 @@ cache:
 
 ## 错误处理
 
-
 | 错误场景2 | 原因 | 处理方式 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -19,16 +19,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 协作平台卡片
 
 向协作平台用户或群组发送富交互卡片。支持Markdown（代码块、表格）、标题、彩色头部、按钮组件、图片嵌入和多种AI人格化消息样式。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 协作平台卡片处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -36,13 +37,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 前置依赖
 
@@ -57,7 +58,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -127,7 +128,7 @@ export API_KEY="your_api_key_here"
 ```bash
 # 将Markdown内容写入临时文件
 write temp/msg.md "# 周报\n\n| 指标 | 数值 |\n|------|------|\n| 任务完成 | 15 |\n| 待处理 | 3 |\n\n```js\nconsole.log('done');\n```"
-
+# ...
 # 发送带标题、颜色和按钮的卡片
 node skills/feishu-card/send.js \
   --target "ou_abc123def456" \
@@ -146,7 +147,7 @@ node skills/feishu-card/send_persona.js \
   --target "oc_group123456" \
   --persona "d-guide" \
   --text "服务API响应延迟超过5000ms，已触发自动降级。当前错误率: 12.3%"
-
+# ...
 # 使用green-tea人格发送日常提醒
 node skills/feishu-card/send_persona.js \
   --target "ou_xyz789abc" \
@@ -157,7 +158,7 @@ node skills/feishu-card/send_persona.js \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | `--text` 中反引号消失 | Shell将反引号解释为命令替换 | 改用 `--text-file` 从文件读取内容，或使用 `send_safe.js` 包装器 |
 | 目标ID格式错误 | 传入的ID不以 `ou_` 或 `oc_` 开头 | 确认Open ID格式为 `ou_` 前缀，群组Chat ID为 `oc_` 前缀 |
 | 图片上传失败 | 图片路径不存在或格式不支持 | 确认 `--image-path` 指向有效图片文件（PNG/JPG/GIF），检查文件路径 |

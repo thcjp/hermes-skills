@@ -38,19 +38,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Tmux会话工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Tmux会话工具专业版企业级多会话管理 | 不支持 | 支持 |
+| Tmux会话工具专业版会话编排 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -58,7 +60,7 @@ pricing_model: "monthly"
 ```bash
 # 列出所有会话
 tmux list-sessions -F '#{session_name}: #{window_count} windows, #{pane_count} panes'
-
+# ...
 # 批量向多个会话发送指令
 for session in project-a project-b project-c; do
   target="${session}:0.1"
@@ -75,16 +77,16 @@ done
 ```bash
 # 定义任务流水线
 SESSIONS=("setup" "build" "test" "deploy")
-
+# ...
 for i in "${!SESSIONS[@]}"; do
   session="${SESSIONS[$i]}"
   target="${session}:0.0"
-
+# ...
   # 等待上一个会话完成
   if [ $i -gt 0 ]; then
     wait_for_session "${SESSIONS[$((i-1))]}"
   fi
-
+# ...
   # 执行当前阶段
   tmux send-keys -t $target -l -- "${COMMANDS[$i]}"
   tmux send-keys -t $target Enter
@@ -104,7 +106,7 @@ done
 # 示例
 import subprocess
 import time
-
+# ...
 def monitor_sessions(sessions, interval=60):
     while True:
         for session in sessions:
@@ -113,13 +115,13 @@ def monitor_sessions(sessions, interval=60):
                  '-t', f'{session}:0.1', '-S', '-50'],
                 capture_output=True, text=True
             )
-
+# ...
             # 检查错误关键词
             if 'error' in result.stdout.lower():
                 send_alert(session, "检测到错误")
             if 'completed' in result.stdout.lower():
                 log_completion(session)
-
+# ...
         time.sleep(interval)
 ```- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
@@ -132,7 +134,7 @@ def monitor_sessions(sessions, interval=60):
 ```bash
 # 启用会话日志记录
 tmux pipe-pane -t $TARGET -o 'cat >> .tmux-logs/$(date +%Y%m%d)-session.log'
-
+# ...
 # 查看历史日志
 cat .tmux-logs/20260718-session.log
 ```
@@ -180,27 +182,27 @@ cat .tmux-logs/20260718-session.log
 ```bash
 # 批量创建项目会话
 PROJECTS=("auth-service" "order-service" "payment-service")
-
+# ...
 for project in "${PROJECTS[@]}"; do
   # 创建会话
   tmux new-session -d -s $project -c "/projects/$project"
-
+# ...
   # 分割窗格
   tmux split-window -t $project -h
   tmux split-window -t $project -v
-
+# ...
   # 设置窗格标题
   tmux select-pane -t $project:0.0 -T editor
   tmux select-pane -t $project:0.1 -T claude
   tmux select-pane -t $project:0.2 -T logs
-
+# ...
   # 在各窗格启动程序
   tmux send-keys -t $project:0.0 -l -- "cd /projects/$project && vim"
   tmux send-keys -t $project:0.0 Enter
   tmux send-keys -t $project:0.1 -l -- "cd /projects/$project && claude"
   tmux send-keys -t $project:0.1 Enter
 done
-
+# ...
 echo "已创建 ${#PROJECTS[@]} 个项目会话"
 ```
 
@@ -211,16 +213,16 @@ echo "已创建 ${#PROJECTS[@]} 个项目会话"
 ```bash
 # 流水线编排
 PIPELINE_STAGES=("lint" "build" "test" "security-scan")
-
+# ...
 for stage in "${PIPELINE_STAGES[@]}"; do
   # 创建会话
   tmux new-session -d -s "ci-$stage"
-
+# ...
   # 发送命令
   tmux send-keys -t "ci-$stage" -l -- "npm run $stage"
   tmux send-keys -t "ci-$stage" Enter
 done
-
+# ...
 # 监控所有阶段完成
 for stage in "${PIPELINE_STAGES[@]}"; do
   while true; do
@@ -243,15 +245,15 @@ done
 #!/bin/bash
 SESSIONS=("team-dev" "team-test" "team-deploy")
 ALERT_EMAIL="team@example.com"
-
+# ...
 for session in "${SESSIONS[@]}"; do
   output=$(tmux capture-pane -p -J -t "$session" -S -50 2>/dev/null)
-
+# ...
   # 检查错误
   if echo "$output" | grep -qi "error\|failed\|exception"; then
     echo "告警: 会话 $session 检测到错误" | mail -s "Tmux会话告警" $ALERT_EMAIL
   fi
-
+# ...
   # 检查空闲(长时间无输出)
   if tmux show-options -t "$session" | grep -q "idle-timeout"; then
     echo "会话 $session 已空闲,考虑清理"
@@ -265,7 +267,7 @@ done
 
 ```bash
 mkdir -p .tmux-toolkit/{logs,templates,configs}
-
+# ...
 cat > .tmux-toolkit/config.json << 'EOF'
 {
   "edition": "pro",
@@ -306,7 +308,7 @@ EOF
 ```bash
 # 应用模板创建会话
 python3 .tmux-toolkit/apply-template.py dev-environment
-
+# ...
 # 批量查看所有会话状态
 python3 .tmux-toolkit/status.py
 ```
@@ -315,7 +317,7 @@ python3 .tmux-toolkit/status.py
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | tmux-session处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -362,9 +364,8 @@ python3 .tmux-toolkit/status.py
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -378,10 +379,10 @@ python3 .tmux-toolkit/status.py
 - **tmux**: 3.0 或更高版本
 - **Python**: 3.8+(监控与模板脚本)
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | tmux | CLI 工具 | 必需 | 系统包管理器 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 脚本必需 | python.org |
@@ -416,12 +417,12 @@ export TMUX_ALERT_EMAIL="team@example.com"
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -438,12 +439,12 @@ export TMUX_ALERT_EMAIL="team@example.com"
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -460,12 +461,12 @@ export TMUX_ALERT_EMAIL="team@example.com"
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -516,9 +517,8 @@ export TMUX_ALERT_EMAIL="team@example.com"
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

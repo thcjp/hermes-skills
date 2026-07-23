@@ -42,6 +42,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 工具调用重试工具（专业版）
 
@@ -52,7 +54,7 @@ pricing_model: "monthly"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 重试机制 | 固定指数退避 | 指数/线性/抖动/自定义 |
 | 错误处理 | 不支持 | 自定义错误修复函数 |
 | 幂等性 | 内存存储 | 持久化存储（跨进程/跨实例） |
@@ -128,7 +130,7 @@ const result = await skills.toolCallRetry({
     config: { host: "redis.local", port: 6379, ttl: 86400 }
   }
 });
-
+// ...
 // 即使多个实例同时调用，相同 key 只会执行一次
 ```
 
@@ -189,7 +191,7 @@ const result = await skills.toolCallRetry({
     if (attempt >= 3) return { abort: true };
   }
 });
-
+// ...
 // 2. 自定义退避策略
 const result = await skills.toolCallRetry({
   toolFn: yourToolFunction,
@@ -198,7 +200,7 @@ const result = await skills.toolCallRetry({
   initialDelayMs: 500,
   maxDelayMs: 10000
 });
-
+// ...
 // 3. 持久化幂等
 const result = await skills.toolCallRetry({
   toolFn: yourToolFunction,
@@ -245,7 +247,7 @@ error_handler:
 ## 退避策略库
 
 | 策略 | 说明 | 适用场景 |
-|:-----|:-----|:---------|
+|:-----|:-----|:-----|
 | exponential | 指数退避（1s, 2s, 4s...） | 通用默认 |
 | exponential-jitter | 指数+抖动（避免惊群） | 分布式场景 |
 | linear | 线性退避（1s, 2s, 3s...） | 轻度不稳定 |
@@ -292,7 +294,7 @@ A：专业版支持输出 OpenTelemetry 格式的 span，便于与 Jaeger/Zipkin
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Redis | 服务 | 可选（持久化幂等） | 官方部署或云服务 |
 | Zod | 库 | 可选（类型校验） | npm 安装 |
@@ -308,9 +310,8 @@ A：专业版支持输出 OpenTelemetry 格式的 span，便于与 Jaeger/Zipkin
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

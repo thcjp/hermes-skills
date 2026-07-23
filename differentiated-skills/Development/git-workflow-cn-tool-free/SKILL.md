@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
-
 # Git 工作流助手（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 典型用法 |
-| --- | --- | --- |
+|----|---|----|
 | 分支管理 | 创建、切换、合并、删除分支 | `创建并切换到 feature/login 分支` |
 | 冲突解决 | 识别冲突标记并提供解决策略 | `帮我解决 Git 合并冲突` |
 | 提交规范 | 生成符合 Conventional Commits 的提交信息 | `为这些改动生成提交信息` |
@@ -90,15 +91,15 @@ suggested_price: 29.9
 
 ```text
 用户：我要开发登录功能，帮我规划分支策略
-
+# ...
 助手：
 1. 从 main 分支创建功能分支
    git checkout -b feature/login main
-
+# ...
 2. 开发完成后提交
    git add .
    git commit -m "feat(auth): 添加登录功能"
-
+# ...
 3. 合并回主分支
    git checkout main
    git merge feature/login
@@ -113,10 +114,10 @@ suggested_price: 29.9
 用户：为以下改动生成提交信息
 - 修改了支付模块的金额计算逻辑
 - 修复了小数精度丢失问题
-
+# ...
 助手：
 git commit -m "fix(payment): 修复支付金额计算精度丢失问题
-
+# ...
 - 使用整数分单位替代浮点元单位
 - 统一金额计算入口方法
 - 补充边界测试用例"
@@ -128,22 +129,22 @@ git commit -m "fix(payment): 修复支付金额计算精度丢失问题
 
 ```text
 用户：合并 feature/login 时出现冲突，怎么处理
-
+# ...
 助手：
 1. 查看冲突文件
    git status
-
+# ...
 2. 冲突标记格式
    <<<<<<< HEAD
    当前分支内容
    =======
    合并分支内容
    >>>>>>> feature/login
-
+# ...
 3. 手动编辑后标记解决
    git add .
    git commit
-
+# ...
 4. 如需放弃合并
    git merge --abort
 ```
@@ -174,10 +175,10 @@ git commit -m "fix(payment): 修复支付金额计算精度丢失问题
 # 初始化身份信息
 git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
-
+# ...
 # 设置默认分支名
 git config --global init.defaultBranch main
-
+# ...
 # 配置常用别名
 git config --global alias.co checkout
 git config --global alias.br branch
@@ -196,7 +197,7 @@ git log --graph --oneline --all    # 图形化日志
 git diff                           # 查看未暂存改动
 git diff --staged                  # 查看已暂存改动
 git show COMMIT_ID                 # 查看提交详情
-
+# ...
 # 分支操作
 git branch                         # 本地分支列表
 git branch -a                      # 所有分支（含远程）
@@ -207,11 +208,11 @@ git checkout feature/login         # 切换分支
 git switch feature/login           # 新语法切换
 git branch -d feature/login        # 安全删除（已合并）
 git branch -D feature/login        # 强制删除
-
+# ...
 # 合并操作
 git merge feature/login            # 合并分支
 git merge --no-ff feature/login    # 禁用快进合并（保留记录）
-
+# ...
 # 远程操作
 git remote -v                      # 查看远程仓库
 git fetch origin                   # 获取远程更新
@@ -231,14 +232,14 @@ Conventional Commits 格式：
 
 ```text
 <type>(<scope>): <subject>
-
+# ...
 <body>
-
+# ...
 <footer>
 ```
 
 | Type | 描述 | 示例 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | feat | 新功能 | `feat(auth): 添加登录功能` |
 | fix | 修复缺陷 | `fix(api): 修复接口超时` |
 | docs | 文档更新 | `docs(readme): 更新安装说明` |
@@ -333,7 +334,7 @@ git clean -fd                     # 删除未追踪文件和目录
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Git | 命令行工具 | 必需 | 系统包管理器安装 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
@@ -347,9 +348,8 @@ git clean -fd                     # 删除未追踪文件和目录
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

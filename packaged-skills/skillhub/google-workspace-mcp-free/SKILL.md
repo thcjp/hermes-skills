@@ -15,6 +15,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Google Workspace MCP 免费版
 
@@ -22,11 +24,10 @@ homepage: "https://skillhub.cn"
 
 免费版聚焦基础读取场景,提供邮件检索、日程查看、文件下载与文档表格文本提取能力。所有工具通过同一OAuth凭证访问,无需为每个服务单独配置。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Workspace MCP免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -156,7 +157,6 @@ mcporter call --server google-workspace --tool "time.getCurrentDate"
 
 ## 异常处理
 
-
 - **OAuth令牌过期**: 工具返回401或未授权时,调用 `auth.refreshToken` 刷新; 仍失败则 `auth.clear` 后重新触发浏览器授权。
 - **首次授权浏览器未弹出**: 确认系统默认浏览器已设置且非headless环境; 远程SSH场景需本地授权后复制 `~/.config/google-workspace-mcp/` 目录。
 - **gmail.search 返回空**: 校验查询语法(如 `is:unread`、`from:`、`after:`),放宽时间或标签条件; Gmail查询不支持正则,仅支持其原生搜索运算符。
@@ -164,7 +164,7 @@ mcporter call --server google-workspace --tool "time.getCurrentDate"
 - **sheets.getRange 范围超界**: 工作表名需与实际一致(默认 `Sheet1`),区域引用如 `Sheet1!A1:B10`; 超出已用区域返回空值而非报错。
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试;确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 对照使用流程章节检查输入格式;参考示例章节修正输入 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述,补充必要的上下文信息 |
@@ -186,9 +186,8 @@ mcporter call --server google-workspace --tool "time.getCurrentDate"
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:------:|:------:|:------:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -15,16 +15,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 安全合规
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # 区块链安全防护（免费版）
 
 面向AI代理的区块链安全API免费版，提供基础的交易前安全扫描能力。每日100次免费检查额度，支持Ethereum和Base链的地址声誉检查和代币蜜罐检测。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 区块链安全基础版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -44,7 +45,7 @@ tags:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -107,7 +108,7 @@ export API_KEY="your_api_key_here"
 # 查询免费额度
 curl "https://security-api.example.com/v1/usage" \
   -H "X-Client-Fingerprint: agent-default"
-
+# ...
 # 响应
 # {
 #   "freeTier": {
@@ -120,7 +121,7 @@ curl "https://security-api.example.com/v1/usage" \
 #   },
 #   "_meta": { "requestId": "uuid-xxx", "tier": "free", "latencyMs": 4 }
 # }
-
+# ...
 # 检查Base链上的地址安全性
 curl "https://security-api.example.com/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" \
   -H "X-Client-Fingerprint: agent-default"
@@ -131,15 +132,14 @@ curl "https://security-api.example.com/v1/check-address/0x742d35Cc6634C0532925a3
 ```bash
 curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" \
   -H "X-Client-Fingerprint: agent-default"
-
+# ...
 # 响应包含 honeypot概率、riskLevel、threatSignals 等字段
 ```
 
 ## 错误处理
 
-
 | 错误场景 | HTTP状态 | 原因 | 处理方式 |
-|---------|---------|------|---------|
+|---:|---:|---:|---:|
 | 免费额度耗尽 | 402 | 当日100次免费配额已用完 | 等待UTC次日0点重置，或升级至完整版启用x402付费 |
 | 地址标记为恶意 | 200 | `isSafe=false`，地址在黑名单中 | 阻止交易，向用户展示威胁信号详情 |
 | 代币蜜罐检测阳性 | 200 | honeypot概率高，存在卖出限制 | 警告用户该代币可能无法卖出，建议不购买 |

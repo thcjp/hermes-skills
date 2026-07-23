@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 中英翻译中枢（免费版）
 
 > 一句话输入，秒级返回准确翻译。自动识别语言方向，保留代码与格式，内置术语库保证一致性。
@@ -33,7 +34,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 中英翻译中枢(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -41,7 +42,7 @@ suggested_price: 99.9
 ```text
 输入："Hello world"
 识别：英文 → 输出中文："你好，世界"
-
+# ...
 输入："今天天气不错"
 识别：中文 → 输出英文："The weather is nice today."
 ```
@@ -75,7 +76,7 @@ def calculate_total(items):
     for item in items:
         total += item.price  # Add item price to total
     return total
-
+# ...
 # 输出
 def calculate_total(items):
     # 计算所有项目的总和
@@ -99,7 +100,7 @@ def calculate_total(items):
 翻译Markdown文档时完整保留格式结构：
 
 | 格式元素 | 处理方式 |
-|----------|----------|
+|:-----|:-----|
 | 标题（#/##/###） | 保留层级，翻译标题文字 |
 | 列表（-/* / 1.） | 保留列表符号与缩进 |
 | 代码块（```） | 不翻译代码内容，仅翻译语言标识后的注释 |
@@ -120,13 +121,13 @@ authentication: 认证
 authorization: 授权
 middleware: 中间件
 serialization: 序列化
-
+# ...
 # 商务术语示例
 stakeholder: 利益相关方
 deliverable: 交付物
 milestone: 里程碑
 baseline: 基线
-
+# ...
 # 日常术语示例
 deadline: 截止日期
 feedback: 反馈
@@ -171,7 +172,7 @@ def process_data(data):
     # Sort by timestamp
     data.sort(key=lambda x: x.timestamp)
     return data"
-
+# ...
 输出：
 def process_data(data):
     # 过滤无效条目
@@ -185,28 +186,28 @@ def process_data(data):
 
 ```text
 用户："翻译这个Markdown段落：
-
+# ...
 ## 示例
-
+# ...
 ### 基本用法
-
+# ...
 **输入**：用户提供操作指令和必要参数
-
+# ...
 **输出**：返回执行结果,包含操作状态和输出数据
-
+# ...
 ```text
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
-
+# ...
 ## Getting Started
 Install the package via npm:
 ```bash
 npm install my-package
 ```
 Then import it in your code."
-
+# ...
 输出：
 ## 快速开始
 通过npm安装该包：
@@ -283,7 +284,7 @@ npm install my-package
 ## 错误处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|---:|---:|---:|
 | 翻译方向识别错误 | 中英混合文本导致误判 | 明确指定方向，如"翻译成英文：..." | 中 |
 | 代码注释翻译遗漏 | 注释符号非标准 | 检查注释符号；明确指出需翻译的注释 | 中 |
 | Markdown格式丢失 | 文本中包含非标准Markdown | 检查Markdown语法；用标准格式重写 | 低 |
@@ -299,7 +300,7 @@ npm install my-package
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o-mini） |
 
 ### API Key 配置

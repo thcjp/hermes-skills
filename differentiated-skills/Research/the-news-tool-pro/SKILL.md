@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 全球新闻情报专业版是企业级的新闻情报分析平台。在完整兼容免费版 API 的基础上,专业版引入了批量多国并行查询、长期新闻归档、情感分析、趋势追踪、定时监控预警等高级能力,适用于企业公关舆情监控、行业研究、跨国市场情报收集等专业场景。
 
@@ -32,7 +34,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 全球新闻情报专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -44,9 +46,9 @@ pricing_model: "per_use"
   "concurrency": 8,
   "output_format": "json"
 }
-
+# ...
 curl -s "https://www.thehear.org/api/batch-view" -d @batch_countries.json | jq
-
+# ...
 news-tool batch status
 ```
 
@@ -64,12 +66,12 @@ news-tool archive create \
   --from "2026-01-01" \
   --to "2026-07-17" \
   --output archive_2026_h1.json
-
+# ...
 news-tool archive query \
   --archive archive_2026_h1.json \
   --country "us" \
   --date-range "2026-03-01:2026-03-31"
-
+# ...
 news-tool archive export \
   --archive archive_2026_h1.json \
   --format csv \
@@ -89,12 +91,12 @@ news-tool analyze sentiment \
   --country "us" \
   --topic "economic policy" \
   --date-range "2026-07-01:2026-07-17"
-
+# ...
 news-tool analyze topics \
   --countries "us,uk,germany" \
   --method "kmeans" \
   --clusters 10
-
+# ...
 news-tool analyze compare \
   --countries "us,uk,germany,france" \
   --topic "climate change" \
@@ -121,11 +123,11 @@ news-tool analyze compare \
     }
   ]
 }
-
+# ...
 news-tool monitor start monitor_config.json
-
+# ...
 news-tool monitor status
-
+# ...
 news-tool monitor alerts --date $(date +%Y-%m-%d)
 ```
 
@@ -143,14 +145,14 @@ news-tool report generate \
   --countries "us,uk,germany,china,japan" \
   --date $(date +%Y-%m-%d) \
   --output daily_brief.html
-
+# ...
 news-tool report generate \
   --type weekly_trend \
   --topic "technology" \
   --countries "us,china" \
   --format pdf \
   --output tech_weekly.pdf
-
+# ...
 news-tool report generate \
   --type comparison \
   --countries "us,china,russia" \
@@ -196,15 +198,15 @@ cat > brand_monitor.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 news-tool monitor start brand_monitor.json
-
+# ...
 news-tool report generate \
   --type brand_daily \
   --config brand_monitor.json \
   --date $(date +%Y-%m-%d) \
   --output brand_daily_$(date +%Y%m%d).html
-
+# ...
 news-tool analyze trend \
   --keywords "CompanyName" \
   --countries "us,uk,germany,china" \
@@ -224,21 +226,21 @@ cat > tech_research.json << 'EOF'
   "output_format": "json"
 }
 EOF
-
+# ...
 news-tool batch research tech_research.json --output tech_news_raw.json
-
+# ...
 news-tool analyze topics \
   --input tech_news_raw.json \
   --method "lda" \
   --clusters 15 \
   --output tech_topics.json
-
+# ...
 news-tool analyze compare \
   --input tech_news_raw.json \
   --countries "us,china,japan,germany" \
   --topic "AI" \
   --metric "sentiment,volume,trend"
-
+# ...
 news-tool report generate \
   --type industry_research \
   --input tech_news_raw.json \
@@ -276,9 +278,9 @@ cat > market_intel.json << 'EOF'
   "report_language": "zh-CN"
 }
 EOF
-
+# ...
 news-tool monitor start market_intel.json
-
+# ...
 news-tool report generate \
   --type market_intelligence \
   --config market_intel.json \
@@ -290,9 +292,9 @@ news-tool report generate \
 ```bash
 cd ~/.skill-platform/workspace/skills/the-news-tool-pro
 npm install
-
+# ...
 news-tool --version --edition
-
+# ...
 news-tool batch query --countries "us,uk,germany" --limit 3
 ```
 
@@ -301,15 +303,15 @@ news-tool batch query --countries "us,uk,germany" --limit 3
 cat > .env << 'EOF'
 NEWS_API_BASE=https://www.thehear.org/api
 NEWS_API_KEY=your_premium_api_key
-
+# ...
 ARCHIVE_DIR=./archives
 ARCHIVE_FORMAT=json
 ARCHIVE_COMPRESSION=gzip
-
+# ...
 SENTIMENT_MODEL=multilingual
 TOPIC_MODEL=lda
 LANGUAGE_DETECTION=true
-
+# ...
 MONITOR_INTERVAL=3600
 ALERT_WEBHOOK=https://your-webhook.example.com/alert
 EOF
@@ -320,11 +322,11 @@ EOF
 news-tool batch query \
   --countries "us,uk,germany,france,japan,china" \
   --output news_batch.json
-
+# ...
 news-tool analyze sentiment \
   --input news_batch.json \
   --output sentiment_report.json
-
+# ...
 news-tool report generate \
   --type analysis \
   --input sentiment_report.json \
@@ -397,9 +399,9 @@ news-tool report generate \
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 curl -s "https://www.thehear.org/api/country-view/us" | jq
-
+# ...
 news-tool batch query --countries "us,uk,germany"
-
+# ...
 news-tool analyze sentiment --country "us" --topic "economy"
 ```
 
@@ -409,7 +411,7 @@ news-tool batch query \
   --countries "$(cat all_countries.txt | tr '\n' ',')" \
   --concurrency 10 \
   --timeout 30
-
+# ...
 news-tool batch query \
   --countries "us,uk,germany" \
   --cache-dir ./cache \
@@ -434,7 +436,7 @@ news-tool batch query \
 
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础新闻查询 | 支持 | 支持 |
 | 国家覆盖 | 20 个 | 20+(含扩展) |
 | 批量并行查询 | 不支持 | 支持 |
@@ -471,9 +473,9 @@ news-tool config set alert_channels \
 
 ```bash
 news-tool archive export --archive my_archive.json --format csv
-
+# ...
 news-tool archive backup --destination s3://my-bucket/news-archives/
-
+# ...
 news-tool archive restore --source s3://my-bucket/news-archives/
 ```
 
@@ -494,7 +496,7 @@ news-tool team config set --role viewer --permissions "view,export"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | curl | HTTP 工具 | 必需 | 系统自带 |
 | jq | JSON 解析 | 推荐 | 包管理器安装 |
@@ -508,9 +510,9 @@ news-tool team config set --role viewer --permissions "view,export"
 
 ```bash
 NEWS_API_KEY=your_premium_news_api_key
-
+# ...
 SENTIMENT_API_KEY=your_sentiment_api_key
-
+# ...
 SLACK_WEBHOOK=your_slack_webhook_url
 ALERT_EMAIL=alerts@example.com
 ```
@@ -525,7 +527,7 @@ ALERT_EMAIL=alerts@example.com
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

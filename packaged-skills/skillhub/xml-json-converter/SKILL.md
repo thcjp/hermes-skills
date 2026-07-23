@@ -20,25 +20,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # XML转JSON(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| XML转JSON(专业版)支持批量转换 | 不支持 | 支持 |
+| XML转JSON(专业版)XSD校验 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 能力1：批量并行转换
 | 模式 | 适用场景 | 并发策略 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 串行单文件 | 调试期、单次任务 | 单线程 |
 | 并行多文件 | 10+个XML批量处理 | ThreadPoolExecutor，默认8线程 |
 | 流式转换 | GB级大XML | lxml迭代解析 |
@@ -49,7 +51,7 @@ pricing_model: "per_use"
 ### 能力2：XSD Schema校验
 ```python
 from lxml import etree
-
+# ...
 def validate_xsd(xml_path: str, xsd_path: str) -> dict:
     """按XSD校验XML结构合法性"""
     xsd = etree.XMLSchema(etree.parse(xsd_path))
@@ -127,7 +129,7 @@ mapping:
 from lxml import etree
 import json, ijson
 from io import StringIO
-
+# ...
 def stream_xml_to_json(xml_path: str, json_path: str, item_xpath: str = '//Item'):
     """流式转换GB级XML，常量内存"""
     context = etree.iterparse(xml_path, events=('end',))
@@ -157,7 +159,7 @@ def stream_xml_to_json(xml_path: str, json_path: str, item_xpath: str = '//Item'
 ```python
 from lxml import etree
 import xmltodict, json
-
+# ...
 def parse_soap(soap_xml: str) -> dict:
     """解析SOAP报文，提取Header/Body/Fault"""
     data = xmltodict.parse(soap_xml)
@@ -180,7 +182,7 @@ def parse_soap(soap_xml: str) -> dict:
             business_payload = {k: v}
             break
     return {'type': 'response', 'header': header, 'payload': business_payload}
-
+# ...
 def build_soap_request(operation: str, namespace: str, payload: dict) -> str:
     """构造SOAP请求报文"""
     payload_xml = xmltodict.unparse(payload, full_document=False)
@@ -204,7 +206,7 @@ def build_soap_request(operation: str, namespace: str, payload: dict) -> str:
 import psycopg2, json
 from psycopg2.extras import execute_values
 from lxml import etree
-
+# ...
 def xml_to_postgres(xml_path: str, table: str, mapping: dict, dsn: str):
     """XML按XPath提取后直写 关系型数据库"""
     tree = etree.parse(xml_path)
@@ -275,9 +277,9 @@ import xmltodict, json, glob
 from pathlib import Path
 from lxml import etree
 from concurrent.futures import ThreadPoolExecutor
-
+# ...
 XSD = etree.XMLSchema(etree.parse('schema.xsd'))
-
+# ...
 def validate_and_convert(xml_path: str, out_dir: str) -> dict:
     # 1. XSD校验
     try:
@@ -294,12 +296,12 @@ def validate_and_convert(xml_path: str, out_dir: str) -> dict:
         return {'file': xml_path, 'status': 'ok', 'output': str(out_path)}
     except Exception as e:
         return {'file': xml_path, 'status': 'convert_error', 'error': str(e)}
-
+# ...
 # 并行批量处理
 files = glob.glob('./xml/**/*.xml', recursive=True)
 with ThreadPoolExecutor(max_workers=8) as pool:
     results = list(pool.map(lambda f: validate_and_convert(f, './out'), files))
-
+# ...
 ok = [r for r in results if r['status'] == 'ok']
 print(f'成功: {len(ok)} 失败: {len(results) - len(ok)}')
 for r in results:
@@ -313,7 +315,7 @@ for r in results:
 ```python
 from lxml import etree, html
 import json
-
+# ...
 def extract_by_xpath(xml_path: str, mapping: dict) -> dict:
     """按XPath映射提取XML字段转为JSON"""
     tree = etree.parse(xml_path)
@@ -327,7 +329,7 @@ def extract_by_xpath(xml_path: str, mapping: dict) -> dict:
         else:
             result[json_key] = [e.text if hasattr(e, 'text') else str(e) for e in elements]
     return result
-
+# ...
 # XPath映射配置
 mapping = {
     'order_id': '//Order/@id',
@@ -336,7 +338,7 @@ mapping = {
     'total': '//Total/text()',
     'shipping_address': '//Shipping/Address/text()'
 }
-
+# ...
 data = extract_by_xpath('order.xml', mapping)
 print(json.dumps(data, ensure_ascii=False, indent=2))
 ```
@@ -347,11 +349,10 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 3. 按照能力描述提供输入参数,执行操作
 4. 查看输出结果,确认任务完成状态
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | xml-json-converter处理的内容输入 |,  |
 | content | string | 否 | xml-json-converter处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -379,9 +380,8 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -396,7 +396,7 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | xmltodict | Python库 | 必需 | `pip install xmltodict`（XML-JSON互转） |
 | lxml | Python库 | 必需 | `pip install lxml`（XSD校验+XPath+流式） |
@@ -421,13 +421,13 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 
 ### 示例1：基础用法
 ```
-### 60秒上手：批量转换+XSD校验
+### 60秒上手：批量转换+XSD校验(补充)
 直接对Agent说：
-
+# ...
 > "帮我把 ./xml 目录下所有XML批量转JSON，按 schema.xsd 校验结构。"
-
+# ...
 Agent会按本工具的批量校验模板输出：
-
+# ...
 ```python
 import xmltodict, json, glob
 from pathlib import Path
@@ -444,45 +444,46 @@ def validate_and_convert(xml_path: str, out_dir: str) -> dict:
     except etree.DocumentInvalid as e:
         return
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1：专业版能处理多大的XML文件？
 专业版采用流式转换，理论上无大小限制。实测单文件5GB（约5000万元素）可在20分钟内完成转换，内存占用稳定在200MB以内。建议单文件不超过20GB，超过则按元素拆分后并行处理。
-
+# ...
 ### Q2：XSD校验失败后如何排查？
 专业版将校验失败的错误信息结构化输出：错误行号、列号、错误类型、错误消息、XPath路径。可按错误类型分类统计，定位到具体报文与字段。
-
+# ...
 ### Q3：XPath映射支持复杂表达式吗？
 支持XPath 1.0全部语法，包括轴（axis）、谓语（predicate）、函数（function）。常见用法：条件过滤 `//Item[Price>100]`、属性提取 `//Item/@id`、文本提取 `//Name/text()`、命名空间 `//ns:Item`。
-
+# ...
 ### Q4：SOAP解析支持SOAP 1.2吗？
 支持。专业版同时支持SOAP 1.1（`http://schemas.xmlsoap.org/soap/envelope/`）与SOAP 1.2（`http://www.w3.org/2003/05/soap-envelope`）两种命名空间，自动识别。
-
+# ...
 ### Q5：流式转换支持所有XML结构吗？
 流式转换适合"扁平+重复元素"结构（如 `<Items><Item/>...</Items>`）。对深层嵌套且无重复元素的XML，流式优势不明显。建议先分析XML结构，再决定是否流式。
-
+# ...
 ### Q6：数据库直写支持事务吗？
 支持。专业版默认每批5000行一个事务，批内失败回滚该批，不影响已提交的批次。若需全量事务，设置 `--single-transaction` 参数。
-
-### 依赖说明
+# ...
+### 依赖说明(补充)
 专业版支持依赖声明（`# @depends: master.xml`），转换时按拓扑排序处理依赖。无依赖的文件并行处理，有依赖的文件串行处理。
 ### Q8：专业版与免费版的脚本可以混用吗？
 可以。专业版兼容免费版的所有模板，免费版的单文件转换脚本在专业版环境下可直接运行。反向不兼容：专业版的批量、XSD、XPath、SOAP脚本依赖额外库，在免费版环境下需先安装依赖。
-
+# ...
 ### Q9：如何监控转换任务的性能指标？
 专业版在转换完成后输出指标摘要：总元素数、成功数、失败数、耗时、吞吐量（元素/秒）。指标同时写入 `.metrics.json` 供Prometheus采集。
-
+# ...
 ### Q10：专业版如何与消息队列集成？
 专业版提供Kafka与RabbitMQ的集成模板：XML转换后作为JSON消息发送到指定Topic/Queue，支持批量发送与异步确认。消息体格式遵循CloudEvents规范。
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
+# ...

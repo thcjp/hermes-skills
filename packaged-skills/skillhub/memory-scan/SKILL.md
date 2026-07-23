@@ -20,16 +20,17 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
 ---
 # 记忆安全扫描（Memory Scan）
 
 面向 AI Agent 记忆文件与工作区配置的**安全扫描工具**，对 MEMORY.md、每日日志、工作区配置文件进行安全审计，检测恶意内容、凭证泄漏与注入攻击，保障Agent运行安全。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 记忆安全扫描处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 记忆安全扫描记忆文件与工作区配置 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -98,19 +99,19 @@ pricing_model: "monthly"
 ```bash
 # 扫描全部记忆文件（本地模式）
 python3 （请参考skill目录中的脚本文件）
-
+# ...
 # 允许远程LLM分析（仅传输脱敏内容）
 python3 （请参考skill目录中的脚本文件） --allow-remote
-
+# ...
 # 扫描指定文件
 python3 （请参考skill目录中的脚本文件） --file memory/2026-07-18.md
-
+# ...
 # 静默模式（用于自动化场景）
 python3 （请参考skill目录中的脚本文件） --quiet
-
+# ...
 # JSON输出（用于集成到其他工具）
 python3 （请参考skill目录中的脚本文件） --json
-
+# ...
 # 自定义扫描天数范围
 python3 （请参考skill目录中的脚本文件） --days 60
 ```
@@ -157,9 +158,8 @@ python3 （请参考skill目录中的脚本文件） --restore memory/2026-07-18
 
 ## 错误处理
 
-
 | 错误类型 | 原因 | 处理方式 |
-|:---|:---|:---|
+|---:|---:|---:|
 | 扫描报错找不到文件 | 路径配置错误或文件已被移动 | 检查工作区路径，用 `--file` 指定正确路径或确认文件存在 |
 | 远程LLM不可用 | OPENAI_API_KEY未配置或已过期 | 配置OPENAI_API_KEY环境变量，或移除 `--allow-remote` 使用本地模式 |
 | 定时任务告警未发送 | 告警渠道环境变量未配置 | 配置告警渠道环境变量，检查告警接收人设置 |
@@ -184,14 +184,14 @@ python3 （请参考skill目录中的脚本文件）
 ```
 Memory Security Scan
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+# ...
 Scanning memory files...
-
+# ...
 ✓ MEMORY.md - SAFE
 ✓ memory/2026-07-18.md - SAFE
 ⚠ memory/2026-07-15.md - MEDIUM (line 42)
   → Potential credential leakage: API key pattern detected (sk-***)
-
+# ...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Overall: MEDIUM
 Action: Review memory/2026-07-15.md:42
@@ -286,7 +286,7 @@ Channel: configured alert channel
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -294,7 +294,6 @@ Channel: configured alert channel
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash

@@ -20,16 +20,17 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
 ---
 # Docker核心操作指南
 
 涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Docker核心操作指南处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Docker核心操作指南镜像管理 | 不支持 | 支持 |
+| Docker核心操作指南系统管理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -61,7 +62,6 @@ pricing_model: "monthly"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -265,7 +265,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-
+# ...
 FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 ```
@@ -289,7 +289,7 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 
 ```
 用户: 帮我启动一个Nginx容器，端口映射8080到80
-
+# ...
 Agent: docker run -d --name my-nginx -p 8080:80 nginx
 - 容器已在后台启动
 - 访问 http://localhost:8080 即可查看Nginx欢迎页
@@ -300,7 +300,7 @@ Agent: docker run -d --name my-nginx -p 8080:80 nginx
 
 ```
 用户: 用docker-compose启动一个web+redis的应用
-
+# ...
 Agent: 以下是docker-compose.yml配置：
 version: '3'
 services:
@@ -312,7 +312,7 @@ services:
       - redis
   redis:
     image: redis:alpine
-
+# ...
 执行: docker-compose up -d
 - 两个服务已在后台启动
 - 使用 docker-compose ps 查看状态
@@ -323,12 +323,12 @@ services:
 
 ```
 用户: 我的app容器有问题，帮我进去看看
-
+# ...
 Agent: 执行调试命令：
 1. docker logs --tail 50 app  # 查看最近日志
 2. docker exec -it app sh     # 进入容器shell
 3. docker stats app           # 查看资源使用
-
+# ...
 如需复制文件：
 docker cp app:/var/log/app.log ./app.log
 ```
@@ -336,7 +336,7 @@ docker cp app:/var/log/app.log ./app.log
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | `Cannot connect to the Docker daemon` | Docker服务未启动 | 执行 `systemctl start docker`（Linux）或启动Docker Desktop（Win/Mac） |
 | `port is already allocated` | 端口被占用 | 使用 `docker ps` 查看占用端口的容器；更换映射端口或停止占用容器 |
 | `Conflict. The container name is already in use` | 容器名冲突 | 执行 `docker rm -f <name>` 删除旧容器，或使用新名称 |

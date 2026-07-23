@@ -19,9 +19,11 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # API 代码生成器
 
@@ -29,11 +31,10 @@ pricing_model: "per_use"
 
 **范围外**（本技能不做）: 数据库迁移脚本生成、前端 UI 代码、CI/CD 配置、生产环境部署。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | API代码生成器处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -41,7 +42,7 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | 代码静态分析与质量评分 | 不支持 | 支持 |
 | 依赖漏洞检测与升级建议 | 不支持 | 支持 |
@@ -56,7 +57,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -64,7 +65,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -113,7 +113,7 @@ bash （请参考skill目录中的脚本文件） <command> <resource_name> [opt
 ```
 
 | 命令 | 参数 | 说明 |
-| :-- | :-- | :-- |
+|:---:|:---:|:---:|
 | `rest` | `<name>` | 生成 RESTful CRUD 端点（Express.js） |
 | `graphql` | `<name>` | 生成 GraphQL schema |
 | `swagger` | `<name>` | 生成 OpenAPI 3.0 文档 |
@@ -220,7 +220,7 @@ bash （请参考skill目录中的脚本文件） rate-limit token-bucket
 ## 错误处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | 命令不存在 | `Unknown command: <cmd>` | 使用了未定义的命令 | 检查命令列表,使用 rest/graphql/swagger/client/mock/auth/rate-limit/test |
 | 资源名缺失 | `Resource name required` | 未提供 `<name>` 参数 | 补充资源名参数,如 `bash （请参考skill目录中的脚本文件） rest user` |
 | 认证类型无效 | `Invalid auth type: <type>` | auth 命令类型不在支持列表 | 使用 `jwt`、`oauth` 或 `apikey` |

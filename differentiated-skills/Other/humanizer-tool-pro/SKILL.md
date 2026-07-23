@@ -41,6 +41,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 文本人性化工具（专业版）
 
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 批量去痕 | 多文档流水线处理 | CI 集成 |
 | 品牌风格库 | 语气、禁用词、模板 | 版本化治理 |
 | 痕迹评分 | AI 痕迹密度量化 | 回归追踪 |
@@ -92,7 +94,7 @@ pricing_model: "per_use"
 # 批量处理脚本
 import os, json
 from pathlib import Path
-
+# ...
 style = json.load(open("brand-voice.json"))
 for md in Path("content/").glob("*.md"):
     text = md.read_text(encoding="utf-8")
@@ -153,7 +155,6 @@ for md in Path("content/").glob("*.md"):
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 风格库配置（`brand-voice.json`）：
@@ -178,7 +179,7 @@ for md in Path("content/").glob("*.md"):
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 24 类痕迹 | 相同 | 相同（纳入风格库） |
 | 范围 | 单篇 | 批量流水线 |
 | 语气 | 基础注入 | 品牌风格库 |
@@ -208,7 +209,7 @@ A：有。专业版享风格库设计与语气调优咨询。
 ```python
 # CI 集成：内容发布前跑痕迹评分
 import json, subprocess, sys
-
+# ...
 def humanize_file(path, style):
     text = open(path, encoding="utf-8").read()
     # 调用 Agent 按 style 去痕
@@ -218,7 +219,7 @@ def humanize_file(path, style):
         print(f"{path}: 痕迹分 {score} 超阈值，阻断")
         sys.exit(1)
     open(path, "w", encoding="utf-8").write(result)
-
+# ...
 for md in Path("content/").glob("*.md"):
     humanize_file(md, json.load(open("brand-voice.json")))
 ```
@@ -249,7 +250,7 @@ for md in Path("content/").glob("*.md"):
 ```bash
 # 归档每次评分
 python （请参考skill目录中的脚本文件） --input content/ --save scores/$(date +%F).json
-
+# ...
 # 趋势对比
 python （请参考skill目录中的脚本文件） --dir scores/ --baseline main
 ```
@@ -286,7 +287,7 @@ python （请参考skill目录中的脚本文件） --dir scores/ --baseline mai
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python | 运行时 | 批量脚本必需 | python.org |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
@@ -299,9 +300,8 @@ python （请参考skill目录中的脚本文件） --dir scores/ --baseline mai
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

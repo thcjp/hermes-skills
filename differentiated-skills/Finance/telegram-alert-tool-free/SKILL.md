@@ -21,8 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
 ---
-
 # Telegram告警入门（免费版）
 
 ## 概述
@@ -34,7 +35,7 @@ suggested_price: 29.9
 ### 告警功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 消息推送 | Telegram Bot发送 | 支持 |
 | 价格触发 | 阈值告警 | 基础（高于/低于） |
 | 群组数量 | 目标群组 | 单一群组 |
@@ -79,7 +80,7 @@ python3 （请参考skill目录中的脚本文件） add \
   --threshold 60000 \
   --channel telegram \
   --chat-id "@my_trading_group"
-
+# ...
 # 启动监控
 python3 （请参考skill目录中的脚本文件） monitor
 ```
@@ -120,7 +121,7 @@ python3 （请参考skill目录中的脚本文件） schedule \
 ```bash
 # 依赖说明
 pip install python-telegram-bot requests
-
+# ...
 # 配置Bot Token
 # 1. 在Telegram中找到 @BotFather
 # 2. 创建新Bot，获取Token
@@ -133,13 +134,13 @@ export TELEGRAM_BOT_TOKEN="your_bot_token"
 ```bash
 # 发送消息
 python3 （请参考skill目录中的脚本文件） send --message "测试消息" --chat-id "@group"
-
+# ...
 # 添加告警
 python3 （请参考skill目录中的脚本文件） add --ticker BTC-USD --condition below --threshold 60000
-
+# ...
 # 查看告警列表
 python3 （请参考skill目录中的脚本文件） list
-
+# ...
 # 启动监控
 python3 （请参考skill目录中的脚本文件） monitor
 ```
@@ -154,22 +155,22 @@ alert_config:
   telegram:
     bot_token: "${TELEGRAM_BOT_TOKEN}"
     default_chat_id: "@my_trading_group"
-
+# ...
   alerts:
     - ticker: BTC-USD
       condition: below
       threshold: 60000
       message: "BTC跌破60000，注意风险"
-
+# ...
     - ticker: AAPL
       condition: above
       threshold: 180
       message: "AAPL突破180阻力位"
-
+# ...
   monitoring:
     check_interval: 60          # 检查间隔（秒）
     data_source: "yahoo_finance"
-
+# ...
   history:
     enabled: true
     max_records: 100
@@ -184,7 +185,7 @@ alert_config:
 4. **时区注意**：定时任务注意配置正确的时区
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:-----|:-----|
 | Bot Token安全 | 不要将Token提交到代码仓库 |
 | 群组权限 | Bot需为群组成员才能发送消息 |
 | 频率控制 | 避免短时间内发送大量消息（Telegram限流） |
@@ -220,7 +221,7 @@ alert_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | python-telegram-bot | Python库 | 必需 | `pip install python-telegram-bot` |
@@ -229,7 +230,7 @@ alert_config:
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-|:-------|:---------|:---------|:-----|
+|:---:|:---:|:---:|:---:|
 | Telegram Bot | `TELEGRAM_BOT_TOKEN` | 必需 | Bot消息发送 |
 
 - Bot Token通过@BotFather获取，免费
@@ -243,9 +244,8 @@ alert_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

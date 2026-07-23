@@ -49,8 +49,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 顺序阅读工具 - 免费版
 
 ## 概述
@@ -113,7 +114,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 顺序阅读工具-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -125,7 +126,7 @@ python3 sequential_read.py \
   --segment-by paragraph \
   --output notes/paper_notes.md \
   --reflect
-
+# ...
 # 交互式阅读流程:
 # === 第 1 段 (共 47 段) ===
 # [段落内容显示]
@@ -151,7 +152,7 @@ python3 sequential_read.py \
   --output notes/api_docs_notes.md \
   --reflect \
   --extract-concepts
-
+# ...
 # 输出概念表:
 # === 关键概念表 ===
 # | 概念 | 定义 | 出现位置 |
@@ -174,7 +175,7 @@ python3 sequential_read.py \
   --output notes/ch1_notes.md \
   --reflect \
   --discussion-points
-
+# ...
 # 输出讨论要点:
 # === 讨论要点 ===
 # 1. 作者对"数字化转型的核心不是技术而是组织变革"的论述是否成立?
@@ -213,7 +214,7 @@ python3 sequential_read.py \
 ```bash
 # 查看阅读进度
 python3 sequential_read.py --progress notes/article_notes.md
-
+# ...
 # 从断点继续
 python3 sequential_read.py \
   --input article.txt \
@@ -225,7 +226,7 @@ python3 sequential_read.py \
 ### 分段策略
 
 | 策略 | 参数 | 说明 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 按段落 | `--segment-by paragraph` | 按空行分段 |
 | 按标题 | `--segment-by heading` | 按 Markdown 标题分段 |
 | 按字数 | `--segment-by chars --max-chars 500` | 固定字数分段 |
@@ -235,23 +236,23 @@ python3 sequential_read.py \
 
 ```markdown
 # 阅读笔记: {文件名}
-
+# ...
 ## 元信息
 - 来源: {文件路径}
 - 总段落数: {N}
 - 阅读进度: {current}/{N}
 - 开始时间: {timestamp}
-
+# ...
 ## 第 1 段
 ### 原文摘要
 {段落摘要}
-
+# ...
 ### 反思
 - **核心观点**: {主要观点}
 - **关键概念**: {概念列表}
 - **疑问点**: {疑问}
 - **关联知识**: {与已有知识的联系}
-
+# ...
 ## 第 2 段
 ...
 ```
@@ -259,7 +260,7 @@ python3 sequential_read.py \
 ### 命令参数
 
 | 参数 | 说明 | 默认值 |
-|------|------|--------|
+|---:|---:|---:|
 | `--input` | 输入文件路径 | 必需 |
 | `--segment-by` | 分段策略 | paragraph |
 | `--max-chars` | 最大字符数(chars模式) | 500 |
@@ -307,7 +308,7 @@ A: 调整 `--max-chars` 参数增大每段字数,或使用 `--segment-by heading
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | pdftotext | PDF转换 | PDF输入推荐 | poppler-utils 包 |
 | pandoc | 格式转换 | 导出推荐 | 官方网站下载 |
@@ -326,9 +327,8 @@ A: 调整 `--max-chars` 参数增大每段字数,或使用 `--segment-by heading
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 > **不是教你入门Obsidian，而是提供一套综合工具箱。vault发现、笔记管理、模板入门、插件认知，一站式服务。**
 
 Obsidian的强大在于其灵活的笔记管理与丰富的插件生态。但如何自动发现多个vault？如何在移动笔记时自动更新wikilink？如何设计可复用的模板？如何选择合适的插件？本技能聚焦综合工具箱能力，帮助Agent成为Obsidian用户的得力助手。
@@ -29,7 +30,7 @@ Obsidian的强大在于其灵活的笔记管理与丰富的插件生态。但如
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Obsidian工具箱(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -103,19 +104,19 @@ cat ~/Library/Application\ Support/obsidian/obsidian.json
 
 ```bash
 obsidian-cli set-default "MyVault"
-
+# ...
 obsidian-cli print-default
 obsidian-cli search "项目"
 obsidian-cli search-content "架构设计"
 obsidian-cli create "Projects/新项目" --content "# 新项目
 [项目描述]
-
+# ...
 4. [ ] 决策1
 5. [ ] 决策2
 " --open
-
+# ...
 obsidian-cli move "old/path/note" "new/path/note"
-
+# ...
 obsidian-cli delete "path/to/note"
 ```
 
@@ -124,7 +125,7 @@ obsidian-cli delete "path/to/note"
 
 ```bash
 mkdir -p ~/Documents/MyVault/Templates
-
+# ...
 cat > ~/Documents/MyVault/Templates/meeting.md << 'EOF'
 type: meeting
 date: {{date}}
@@ -132,34 +133,34 @@ time: {{time}}
 attendees: []
 tags: [meeting]
 6. -
-
+# ...
 7. [ ]
-
+# ...
 8. [ ] @负责人 任务描述（截止：日期）
 EOF
-
+# ...
 cat > ~/Documents/MyVault/Templates/project.md << 'EOF'
 type: project
 created: {{date}}
 status: active
 tags: [project]
 [项目描述]
-
+# ...
 9. [ ] 目标1
 10. [ ] 目标2
-
+# ...
 11. [ ] 决策1
-
+# ...
 12. [[项目主页]]
 13. [[会议记录]]
 EOF
-
+# ...
 cat > ~/Documents/MyVault/Templates/daily.md << 'EOF'
 type: daily
 date: {{date}}
 tags: [daily]
 14. [ ]
-
+# ...
 15. -
 EOF
 ```
@@ -182,7 +183,7 @@ EOF
 **多vault场景**：
 
 | 场景 | vault配置 | 使用建议 |
-|------|-----------|----------|
+|:-----|:-----|:-----|
 | 个人+工作分离 | iCloud个人vault + Documents工作vault | 用set-default切换 |
 | 多设备同步 | iCloud同步的vault | 确保路径在iCloud目录 |
 | 项目独立vault | 每个项目独立vault | 用@vault前缀指定 |
@@ -212,7 +213,7 @@ obsidian-cli search-content "关键词"
 #### 创建
 ```bash
 obsidian-cli create "Folder/NoteName" --content "内容" --open
-
+# ...
 TEMPLATE=$(cat ~/Documents/MyVault/Templates/meeting.md)
 obsidian-cli create "Meetings/2026-07-18评审会" --content "$TEMPLATE" --open
 ```
@@ -225,7 +226,7 @@ obsidian-cli create "Meetings/2026-07-18评审会" --content "$TEMPLATE" --open
 #### 移动与重命名（安全重构）
 ```bash
 obsidian-cli move "old/path/note" "new/path/note"
-
+# ...
 obsidian-cli move "path/old-name" "path/new-name"
 ```
 
@@ -235,9 +236,9 @@ obsidian-cli move "path/old-name" "path/new-name"
 移动前：
   note-a.md 包含 [[note-b]]
   note-b.md 位于 old/path/
-
+# ...
 执行 move "old/path/note-b" "new/path/note-b"
-
+# ...
 移动后：
   note-a.md 自动更新为 [[new/path/note-b]] 或保持 [[note-b]]（取决于配置）
   note-b.md 移动到 new/path/
@@ -263,7 +264,7 @@ obsidian-cli delete "path/note"
 **基础模板变量**：
 
 | 变量 | 说明 | 示例 |
-|------|------|------|
+|---:|---:|---:|
 | `{{date}}` | 当前日期 | 2026-07-18 |
 | `{{time}}` | 当前时间 | 10:30 |
 | `{{title}}` | 笔记标题 | 会议记录 |
@@ -275,7 +276,7 @@ TEMPLATE=$(cat Templates/meeting.md)
 TEMPLATE=${TEMPLATE//\{\{date\}\}/$(date +%Y-%m-%d)}
 TEMPLATE=${TEMPLATE//\{\{time\}\}/$(date +%H:%M)}
 obsidian-cli create "Meetings/新会议" --content "$TEMPLATE" --open
-
+# ...
 ```
 
 **frontmatter规范**：
@@ -301,7 +302,7 @@ status: active         # 状态
 **核心插件启用建议**（免费版入门）：
 
 | 插件 | 功能 | 启用建议 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 文件列表 | 显示vault文件树 | 必须启用（默认） |
 | 搜索 | 全文搜索 | 必须启用（默认） |
 | 标签面板 | 按标签浏览 | 推荐启用 |
@@ -326,17 +327,17 @@ status: active         # 状态
 
 ```bash
 obsidian-cli search-content "架构"
-
+# ...
 obsidian-cli create "Architecture/index" --content "# 架构主题索引
 - [[架构原则]]
 - [[架构模式]]
 - [[架构决策]]
 "
-
+# ...
 obsidian-cli move "notes/架构原则" "Architecture/架构原则"
 obsidian-cli move "notes/架构模式" "Architecture/架构模式"
 obsidian-cli move "random/架构决策" "Architecture/架构决策"
-
+# ...
 obsidian-cli search-content "[[架构"
 ```
 
@@ -350,9 +351,9 @@ TEMPLATE=$(cat Templates/meeting.md)
 TEMPLATE=${TEMPLATE//\{\{date\}\}/$(date +%Y-%m-%d)}
 TEMPLATE=${TEMPLATE//\{\{time\}\}/$(date +%H:%M)}
 TEMPLATE=${TEMPLATE//\{\{title\}\}/"Q3规划评审会"}
-
+# ...
 obsidian-cli create "Meetings/2026-07-18-Q3规划评审会" --content "$TEMPLATE" --open
-
+# ...
 obsidian-cli search "2026-07"
 ```
 
@@ -364,15 +365,15 @@ obsidian-cli search "2026-07"
 ```bash
 obsidian-cli print-default
 obsidian-cli set-default "PersonalVault"
-
+# ...
 obsidian-cli create "Personal/读书笔记" --content "# 读书笔记
 [书名]
-
+# ...
 [摘要]
-
+# ...
 -
 "
-
+# ...
 obsidian-cli set-default "WorkVault"
 ```
 
@@ -384,21 +385,21 @@ obsidian-cli set-default "WorkVault"
 ```bash
 obsidian-cli create "Projects/ProjectA/index" --content "# 项目A
 [项目描述]
-
+# ...
 - [[Projects/ProjectA/需求]]
 - [[Projects/ProjectA/设计]]
 - [[Projects/ProjectA/会议]]
 "
-
+# ...
 obsidian-cli create "Projects/ProjectA/需求" --content "# 需求文档
 - [ ] 功能1
 - [ ] 功能2
 "
-
+# ...
 obsidian-cli create "Projects/ProjectA/设计" --content "# 设计文档
 [内容]
 "
-
+# ...
 obsidian-cli create "Projects/ProjectA/会议" --content "# 会议记录
 - 参与者：
 - 讨论内容：
@@ -431,7 +432,7 @@ obsidian-cli create "Projects/ProjectA/会议" --content "# 会议记录
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Obsidian | 应用 | 必需 | 从obsidian.md下载安装 |
 | obsidian-cli | 工具 | 必需 | `npm install -g obsidian-cli` |
 | Node.js | 运行时 | 必需 | 从nodejs.org安装 |
@@ -492,7 +493,7 @@ obsidian-cli create "Projects/ProjectA/会议" --content "# 会议记录
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

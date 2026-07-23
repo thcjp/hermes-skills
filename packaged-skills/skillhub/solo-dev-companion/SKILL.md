@@ -22,19 +22,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 独立开发伙伴(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -45,22 +47,13 @@ pricing_model: "per_use"
 **处理**: 解析MCP工具集成（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回MCP工具集成（专业版）的处理结果,包含执行状态码、结果数据和执行日志。
 
-### 2. 多语言质量工具（专业版）
-> 详细内容已移至 `references/detail.md`
-
 **输入**: 用户提供多语言质量工具（专业版）所需的指令和必要参数。
 **处理**: 解析多语言质量工具（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回多语言质量工具（专业版）的处理结果,包含执行状态码、结果数据和执行日志。
 
-### 3. 视觉验证（专业版）
-> 详细内容已移至 `references/detail.md`
-
 **输入**: 用户提供视觉验证（专业版）所需的指令和必要参数。
 **处理**: 解析视觉验证（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回视觉验证（专业版）的处理结果,包含执行状态码、结果数据和执行日志。
-
-### 4. 阶段检查点（专业版）
-> 详细内容已移至 `references/detail.md`
 
 **输入**: 用户提供阶段检查点（专业版）所需的指令和必要参数。
 **处理**: 解析阶段检查点（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -71,7 +64,7 @@ pricing_model: "per_use"
 solo-dev init-tracker
 solo-dev update-tracker --task 1.3 --status in_progress
 solo-dev update-tracker --task 1.3 --status completed
-
+# ...
 solo-dev progress-report
 ```
 
@@ -83,7 +76,7 @@ solo-dev progress-report
 引擎内置反模式检测，当出现以下想法时自动警告：
 
 | 危险想法 | 现实提醒 |
-|----------|----------|
+|:-----|:-----|
 | "这太简单不用测试" | 简单代码也会崩，写测试 |
 | "稍后补测试" | 事后测试立即通过，证明不了什么 |
 | "我手动测试过了" | 手动测试不持久，自动化才持久 |
@@ -108,11 +101,11 @@ solo-dev progress-report
 
 ```bash
 project_code_search "auth middleware" --project "my-app"
-
+# ...
 session_search "如何实现JWT认证"
-
+# ...
 codegraph_query "MATCH (f:File)-[:IMPORTS]->(dep) WHERE f.path CONTAINS 'auth' RETURN dep.path"
-
+# ...
 codegraph_explain --project "my-app"
 ```
 
@@ -125,13 +118,13 @@ codegraph_explain --project "my-app"
 
 ```bash
 cd frontend && pnpm lint --fix && pnpm tsc --noEmit
-
+# ...
 cd backend && uv run ruff check --fix . && uv run ty check .
-
+# ...
 cd ios && swiftlint lint --strict && swift-format format --in-place --recursive Sources/
-
+# ...
 cd android && ./gradlew detekt && ./gradlew ktlintCheck
-
+# ...
 make quality-all
 ```
 
@@ -146,7 +139,7 @@ xcrun simctl install booted build/MyApp.app
 xcrun simctl launch booted com.example.MyApp
 xcrun simctl io booted screenshot /tmp/screenshot.png
 xcrun simctl spawn booted log stream --style compact --timeout 10
-
+# ...
 ./gradlew assembleDebug
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 adb shell am start -n com.example/.MainActivity
@@ -162,7 +155,7 @@ adb logcat '*:E' --format=time -d 2>&1 | tail -20
 ```bash
 solo-dev verify --phase 1
 solo-dev audit-shas --phase 1
-
+# ...
 solo-dev checkpoint --phase 1
 ```
 
@@ -189,7 +182,7 @@ uv run pytest --hypothesis-show-statistics
 ### 基础搭建（<60秒）
 ```bash
 ls docs/plan/*/plan.md
-
+# ...
 solo-dev execute
 ```
 
@@ -201,21 +194,21 @@ cat > docs/workflow.md << 'EOF'
 1. Level: strict  # strict / moderate / none
 2. Format: conventional commits
 3. Scope: per-task atomic
-
+# ...
 4. Run after each phase
 5. Include: tests, linter, type-check, build
-
+# ...
 6. Paths: src/api/**, src/pipeline/**
 7. Command: make integration
 EOF
-
+# ...
 ```
 
 #
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | solo-dev-companion处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -263,7 +256,7 @@ EOF
 ## 异常处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:---:|:---:|:---:|:---:|
 | MCP工具无响应 | MCP服务未启动或配置错误 | 检查MCP连接；验证配置；回退到Glob+Grep | 高 |
 | 测试失败后继续执行 | 错误处理配置过松 | 检查workflow.md；启用strict模式 | 高 |
 | 视觉验证阻塞完成 | 工具不可用但未降级 | 检查gracefulDegradation配置 | 中 |
@@ -286,7 +279,7 @@ EOF
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | Git | 工具 | 必需 | 系统自带或从git-scm.com安装 |
 | Make | 构建工具 | 可选 | 系统自带 |
@@ -314,7 +307,7 @@ EOF
 ```bash
 solo-dev verify --phase current --strict
 solo-dev audit-shas --phase current
-
+# ...
 if ! solo-dev verify --phase current; then
   echo "Quality gate failed"
   exit 1
@@ -344,7 +337,7 @@ LLM路由至GPT-4o，确保复杂开发决策的质量。
 ### 与代码审查集成
 ```bash
 solo-dev progress-report --phase 1 --output "phase-1-report.md"
-
+# ...
 solo-dev export-shas --phase 1 --format json > shas.json
 ```
 
@@ -359,7 +352,7 @@ solo-dev export-shas --phase 1 --format json > shas.json
 
 ### 版本更新历史
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|---:|:---|---:|
 | 1.0.0 | 2026-01 | 初版发布，含六大高级功能 |
 
 ## 常见问题
@@ -396,9 +389,8 @@ solo-dev export-shas --phase 1 --format json > shas.json
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

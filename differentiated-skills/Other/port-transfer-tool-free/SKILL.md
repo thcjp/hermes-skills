@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # 工具移植工具（免费版）
 
 ## 概述
@@ -56,7 +57,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 配置导出 | 导出为可移植 JSON 清单 | 单环境 |
 | 配置导入 | 跨环境导入并安装 | 单环境 |
 | 凭证处理 | 敏感值占位符化 | 全覆盖 |
@@ -110,7 +111,7 @@ suggested_price: 29.9
 ```bash
 # 导入到另一个 Agent 环境
 {baseDir}/（请参考skill目录中的脚本文件） import --to cursor --bundle bundle.json
-
+# ...
 # 替换占位符（导入后填真实凭证）
 {baseDir}/（请参考skill目录中的脚本文件） fill --bundle bundle.json --env .env
 ```
@@ -134,7 +135,7 @@ suggested_price: 29.9
 凭证占位符约定：
 
 | 占位符 | 说明 |
-|:-------|:-----|
+|:-----|:-----|
 | `{{PLACEHOLDER:KEY}}` | 导出时敏感值占位 |
 | `.env` | 导入后填真实值 |
 | `secrets` 字段 | 集中管理所有占位符 |
@@ -197,7 +198,7 @@ A：能。清单为 JSON，路径用占位符，导入时按 OS 适配。
 ```bash
 # .env 文件填真实凭证
 SEARCH_API_KEY=sk-real-key-xxx
-
+# ...
 # 导入时自动替换占位符
 {baseDir}/（请参考skill目录中的脚本文件） import --to cursor --bundle bundle.json --env .env
 ```
@@ -215,7 +216,7 @@ SEARCH_API_KEY=sk-real-key-xxx
 ```bash
 # 校验格式与依赖
 {baseDir}/（请参考skill目录中的脚本文件） validate --bundle bundle.json
-
+# ...
 # 校验结果
 {baseDir}/（请参考skill目录中的脚本文件） validate --bundle bundle.json --report
 ```
@@ -232,7 +233,7 @@ SEARCH_API_KEY=sk-real-key-xxx
 ## 跨环境适配
 
 | 环境 | 配置位置 | 适配说明 |
-|:-----|:---------|:---------|
+|---:|---:|---:|
 | Claude | `.claude/agents/` | JSON 配置 |
 | Cursor | `.cursor/` | 设置文件 |
 | Codex | 配置文件 | 兼容格式 |
@@ -257,7 +258,7 @@ SEARCH_API_KEY=sk-real-key-xxx
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Node.js | 运行时 | 必需 | nodejs.org |
 | jq | JSON 处理 | 推荐 | 系统包管理器 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -272,9 +273,8 @@ SEARCH_API_KEY=sk-real-key-xxx
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

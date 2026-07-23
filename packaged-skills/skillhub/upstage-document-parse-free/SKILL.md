@@ -15,17 +15,18 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 文档处理
+tools: ["read", "write", "exec"]
+tags: "文档处理,工具,效率"
 ---
 # Document Parse Free
 
 document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和图片的同步模式解析，
 识别基础版面元素（段落、标题、表格）。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Document Parse Free处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,7 +39,7 @@ document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -90,7 +91,7 @@ export API_KEY="your_api_key_here"
 ```python
 import os
 import requests
-
+# ...
 with open("report.pdf", "rb") as f:
     response = requests.post(
         "https://api.example.com/v1/document-digitization",
@@ -104,7 +105,7 @@ with open("report.pdf", "rb") as f:
             "coordinates": "true"
         }
     )
-
+# ...
 result = response.json()
 print(result["content"]["markdown"])
 # 输出：
@@ -112,7 +113,7 @@ print(result["content"]["markdown"])
 #
 # ## Revenue Summary
 # Total revenue reached $48.2M, representing a 23% year-over-year growth.
-
+# ...
 print(f"Pages processed: {result['usage']['pages']}")
 # 输出：Pages processed: 12
 ```
@@ -120,7 +121,7 @@ print(f"Pages processed: {result['usage']['pages']}")
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | API Key 缺失或无效 | 环境变量 `DOCUMENT_PARSE_API_KEY` 未设置 | 在控制台获取 API Key，设置到环境变量中 |
 | 文件超过 50 MB 限制 | 文档体积超出上限 | 拆分文档后分批处理 |
 | 同步模式页数超过 100 页 | 文档页数超出同步模式限制 | 升级到完整版使用异步模式，支持最多 1000 页 |

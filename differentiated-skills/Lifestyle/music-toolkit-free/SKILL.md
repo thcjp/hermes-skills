@@ -26,11 +26,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "音乐生成,音频,创意"
 ---
-
 # 音乐工具箱 (免费版)
 
 ## 概述
@@ -42,7 +43,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | MIDI 生成 | 程序化生成旋律与伴奏 | 支持 |
 | 音频处理 | 混音、效果、格式转换 | 基础 |
 | 乐理分析 | 调性、和弦、节奏分析 | 支持 |
@@ -90,7 +91,7 @@ suggested_price: 29.9
 ```python
 from midiutil import MIDIFile
 import random
-
+# ...
 def generate_melody(key="C", scale="major", bars=4, bpm=120):
     """生成旋律 MIDI"""
     # 音阶定义
@@ -100,14 +101,14 @@ def generate_melody(key="C", scale="major", bars=4, bpm=120):
         "pentatonic": [0, 2, 4, 7, 9],
     }
     key_notes = {"C": 60, "D": 62, "E": 64, "F": 65, "G": 67, "A": 69, "B": 71}
-
+# ...
     base_note = key_notes[key]
     scale_notes = scales.get(scale, scales["major"])
-
+# ...
     # 创建 MIDI 文件
     midi = MIDIFile(1)
     midi.addTempo(0, 0, bpm)
-
+# ...
     # 生成旋律
     current_time = 0
     for bar in range(bars):
@@ -117,15 +118,15 @@ def generate_melody(key="C", scale="major", bars=4, bpm=120):
             octave = random.choice([-1, 0, 0, 1])
             note = base_note + scale_notes[scale_idx] + 12 * octave
             duration = random.choice([0.5, 1, 1, 2])
-
+# ...
             midi.addNote(0, 0, note, current_time, duration, 100)
             current_time += duration
-
+# ...
     # 保存
     with open("melody.mid", "wb") as f:
         midi.writeFile(f)
     return "melody.mid"
-
+# ...
 generate_melody(key="C", scale="pentatonic", bars=8, bpm=128)
 ```
 
@@ -149,12 +150,12 @@ class ChordProgressionGenerator:
             "i-VII-VI-VII": ["Am", "G", "F", "G"],  # 暗黑
         },
     }
-
+# ...
     def recommend(self, key="C", mood="happy", bars=4):
         """推荐和弦进行"""
         scale = "major" if mood == "happy" else "minor"
         progressions = self.PROGRESSIONS[scale]
-
+# ...
         recommendations = []
         for name, chords in progressions.items():
             recommendations.append({
@@ -164,7 +165,7 @@ class ChordProgressionGenerator:
                 "difficulty": self._difficulty(name),
             })
         return recommendations
-
+# ...
     def _describe(self, name):
         descriptions = {
             "I-V-vi-IV": "流行音乐最常用,温暖正能量",
@@ -176,12 +177,12 @@ class ChordProgressionGenerator:
             "i-VII-VI-VII": "暗黑神秘,紧张",
         }
         return descriptions.get(name, "")
-
+# ...
     def _difficulty(self, name):
         if "ii-V-I" in name: return "advanced"
         if "VII" in name or "III" in name: return "intermediate"
         return "beginner"
-
+# ...
 gen = ChordProgressionGenerator()
 for r in gen.recommend(mood="happy"):
     print(f"{r['name']}: {r['chords']} - {r['description']}")
@@ -194,24 +195,24 @@ for r in gen.recommend(mood="happy"):
 ```python
 from pydub import AudioSegment
 import numpy as np
-
+# ...
 class AudioProcessor:
     def __init__(self, file_path):
         self.audio = AudioSegment.from_file(file_path)
-
+# ...
     def normalize(self, target_db=-20):
         """音量标准化"""
         change = target_db - self.audio.dBFS
         return self.audio.apply_gain(change)
-
+# ...
     def fade_in_out(self, fade_in_ms=2000, fade_out_ms=3000):
         """渐入渐出"""
         return self.audio.fade_in(fade_in_ms).fade_out(fade_out_ms)
-
+# ...
     def cut_segment(self, start_ms, end_ms):
         """截取片段"""
         return self.audio[start_ms:end_ms]
-
+# ...
     def add_reverb(self, decay=0.5):
         """添加简单混响 (示例)"""
         # 这里使用简化的混响算法
@@ -226,12 +227,12 @@ class AudioProcessor:
             channels=self.audio.channels,
         )
         return self.audio
-
+# ...
     def export(self, output_path, format="mp3", bitrate="192k"):
         """导出音频"""
         self.audio.export(output_path, format=format, bitrate=bitrate)
         return output_path
-
+# ...
 # 示例
 processor = AudioProcessor("input.wav")
 processor.normalize().fade_in_out().export("output.mp3", format="mp3")
@@ -256,7 +257,7 @@ processor.normalize().fade_in_out().export("output.mp3", format="mp3")
 ```bash
 # Python 音乐处理库
 pip install midiutil pydub numpy
-
+# ...
 # 系统依赖 (FFmpeg)
 # macOS: brew install ffmpeg
 # Ubuntu: sudo apt install ffmpeg
@@ -267,13 +268,13 @@ pip install midiutil pydub numpy
 
 ```python
 from midiutil import MIDIFile
-
+# ...
 midi = MIDIFile(1)
 midi.addTempo(0, 0, 120)
 midi.addNote(0, 0, 60, 0, 1, 100)  # C4, 1拍
 midi.addNote(0, 0, 64, 1, 1, 100)  # E4
 midi.addNote(0, 0, 67, 2, 1, 100)  # G4
-
+# ...
 with open("first_melody.mid", "wb") as f:
     midi.writeFile(f)
 ```
@@ -296,20 +297,20 @@ generation:
   default_scale: major
   default_bpm: 120
   default_bars: 8
-
+# ...
   scales:
     major: [0, 2, 4, 5, 7, 9, 11]
     minor: [0, 2, 3, 5, 7, 8, 10]
     pentatonic: [0, 2, 4, 7, 9]
     blues: [0, 3, 5, 6, 7, 10]
-
+# ...
 audio:
   sample_rate: 44100
   bit_depth: 16
   channels: 2
   default_format: mp3
   default_bitrate: 192k
-
+# ...
 instruments:
   - piano
   - guitar
@@ -430,7 +431,7 @@ DRUM_PATTERNS = {
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 推荐 | python.org 下载 |
 | midiutil | Python 库 | MIDI 生成 | `pip install midiutil` |
@@ -443,7 +444,7 @@ DRUM_PATTERNS = {
 ```bash
 # 免费版无需外部 API Key
 # 所有处理在本地完成
-
+# ...
 # 可选: 默认配置
 export MUSIC_DEFAULT_KEY="C"
 export MUSIC_DEFAULT_BPM="120"
@@ -458,9 +459,8 @@ export MUSIC_OUTPUT_FORMAT="mp3"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

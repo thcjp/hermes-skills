@@ -44,8 +44,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 模型切换工具(免费版)
 
 ## 概述
@@ -59,7 +60,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 三层切换 | Haiku → Sonnet → Opus 决策框架 |
 | 黄金规则 | 30秒人类思考阈值决定是否升级 |
 | 成本对比 | Haiku 1x → Sonnet 12x → Opus 60x 相对成本 |
@@ -103,10 +104,10 @@ suggested_price: 29.9
 ```text
 用户: 今天天气怎么样?
 工具: 💚 HAIKU — 简单事实查询,使用Haiku
-
+# ...
 用户: 帮我写一个REST API端点
 工具: 💛 SONNET — 代码生成,使用Sonnet
-
+# ...
 用户: 设计一个多租户的数据库schema
 工具: ❤️ OPUS — 架构决策,使用Opus
 ```
@@ -118,10 +119,10 @@ suggested_price: 29.9
 ```javascript
 // 例行监控 — 用Haiku
 sessions_spawn(task="检查备份状态", model="haiku")
-
+// ...
 // 标准代码工作 — 用Sonnet
 sessions_spawn(task="构建REST API端点", model="sonnet")
-
+// ...
 // 架构决策 — 用Opus
 sessions_spawn(task="设计多租户数据库schema", model="opus")
 ```
@@ -169,7 +170,7 @@ sessions_spawn(task="设计多租户数据库schema", model="opus")
 ### 2. 成本对比速览
 
 | 模型 | 输入价格 | 输出价格 | 相对成本 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | Haiku | $0.25/M | $1.25/M | 1x(基线) |
 | Sonnet | $3.00/M | $15.00/M | 12x |
 | Opus | $15.00/M | $75.00/M | 60x |
@@ -182,11 +183,11 @@ sessions_spawn(task="设计多租户数据库schema", model="opus")
 是问候、查询、状态检查或1-2句回答?
   是 → HAIKU
   否 ↓
-
+# ...
 是代码、分析、规划、写作或多步骤?
   是 → SONNET
   否 ↓
-
+# ...
 是架构、深度推理或关键决策?
   是 → OPUS
   否 → 默认SONNET,卡住再升级
@@ -266,7 +267,7 @@ Haiku禁止做的事:
 
 ```text
 原则:START CHEAP → SCALE ONLY WHEN NEEDED
-
+# ...
 默认用Haiku → 卡住或质量不足 → 升级Sonnet → 仍不足 → 升级Opus
 ```
 
@@ -287,10 +288,10 @@ Haiku禁止做的事:
 ```javascript
 // 简单监控任务
 sessions_spawn(task="检查服务健康", model="haiku")
-
+// ...
 // 标准开发任务
 sessions_spawn(task="实现用户认证模块", model="sonnet")
-
+// ...
 // 复杂架构任务
 sessions_spawn(task="设计微服务拆分方案", model="opus")
 ```
@@ -339,7 +340,7 @@ sessions_spawn(task="设计微服务拆分方案", model="opus")
 ### Q4:免费版与PRO版差异?
 
 | 维度 | 免费版 | PRO版 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 切换决策 | 三层决策树 | 三层+自定义规则 |
 | 成本分析 | 不支持 | 仪表盘与告警 |
 | 批量切换 | 不支持 | 批量任务分发 |
@@ -362,7 +363,7 @@ sessions_spawn(task="设计微服务拆分方案", model="opus")
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Claude API | API | 必需 | 自行申请API Key |
 
@@ -379,9 +380,8 @@ sessions_spawn(task="设计微服务拆分方案", model="opus")
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

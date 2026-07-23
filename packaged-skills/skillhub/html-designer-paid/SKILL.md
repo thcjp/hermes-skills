@@ -21,22 +21,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # HTML设计工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| HTML设计工具专业版批量生成 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -65,7 +67,7 @@ color:
     background: "#0F172A"
     foreground: "#F1F5F9"
     card: "#1E293B"
-
+# ...
 typography:
   display:
     family: "Calistoga, serif"
@@ -75,18 +77,18 @@ typography:
     sizes: { sm: 0.875rem, md: 1rem, lg: 1.125rem }
   mono:
     family: "JetBrains Mono, monospace"
-
+# ...
 spacing:
   scale: [0, 0.25, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 16]  # rem
   section_padding: "py-28 to py-44"
   container_max: "max-w-6xl"
-
+# ...
 shadow:
   sm: "0 1px 3px rgba(0,0,0,0.06)"
   md: "0 4px 6px rgba(0,0,0,0.07)"
   xl: "0 20px 25px rgba(0,0,0,0.1)"
   accent: "0 4px 14px rgba(0,82,255,0.25)"
-
+# ...
 radius:
   sm: "4px"
   md: "8px"
@@ -107,7 +109,7 @@ components = {
     "feedback": ["alert", "toast", "modal", "progress", "skeleton"],
     "data_display": ["table", "timeline", "accordion", "badge", "chip"]
 }
-
+# ...
 # 为每个组件生成 HTML + CSS + 文档
 for category, items in components.items():
     for item in items:
@@ -123,7 +125,7 @@ const themes = {
   dark: { "--bg": "#0F172A", "--fg": "#F1F5F9", "--accent": "#4D7CFF" },
   brand_custom: { "--bg": "#FFF8F0", "--fg": "#2D1B0E", "--accent": "#E67E22" }
 };
-
+// ...
 function switchTheme(themeName) {
   const root = document.documentElement;
   Object.entries(themes[themeName]).forEach(([key, value]) => {
@@ -138,7 +140,7 @@ function switchTheme(themeName) {
 ```bash
 # 批量生成多个页面
 python3 generate_pages.py --config pages-config.yml --output ./dist/
-
+# ...
 # 示例
 # pages:
 #   - name: "首页"
@@ -174,10 +176,10 @@ design_system = DesignSystem(
     themes=["light", "dark", "brand"],
     guidelines=load_guidelines("docs/")
 )
-
+# ...
 # 生成设计系统文档
 design_system.generate_docs(output="./docs/design-system/")
-
+# ...
 # 导出为多平台格式
 design_system.export(format=["html", "figma-tokens", "css-variables", "tailwind-config"])
 ```
@@ -264,7 +266,7 @@ tenants = {
         "components": "custom_override"  # 自定义覆盖部分组件
     }
 }
-
+# ...
 # 为每个租户生成独立设计包
 for tenant_id, config in tenants.items():
     generate_tenant_package(tenant_id, config)
@@ -313,7 +315,7 @@ python3 generate_pages.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | html-designer处理的内容输入 |,  |
 | content | string | 否 | html-designer处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -341,9 +343,8 @@ python3 generate_pages.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -357,10 +358,10 @@ python3 generate_pages.py \
 - **Node.js**: 18+(用于组件库构建与CI/CD)
 - **Python**: 3.10+(用于批量生成与审计脚本)
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js 18+ | 运行时 | 推荐 | nodejs.org 下载 |
 | Python 3.10+ | 运行时 | 推荐 | python.org 下载 |
@@ -382,20 +383,6 @@ python3 generate_pages.py \
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -449,9 +436,8 @@ A: 支持语义化版本控制,每次变更自动生成变更日志。可集成G
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

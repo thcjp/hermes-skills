@@ -31,6 +31,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 投屏控制专业版
 
@@ -41,7 +43,7 @@ pricing_model: "per_use"
 ### 免费版与专业版对比
 
 | 能力 | 免费版 | 专业版 |
-| --- | --- | --- |
+|---|---|---|
 | 设备发现 | 支持 | 支持+自动注册 |
 | 视频投屏 | 单设备 | 多设备同步 |
 | 播放控制 | 基础控制 | 全功能+字幕 |
@@ -60,7 +62,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 投屏控制专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -69,13 +71,13 @@ pricing_model: "per_use"
 import subprocess
 import json
 from concurrent.futures import ThreadPoolExecutor
-
+# ...
 class ChromecastManager:
     def __init__(self):
         self.devices = {}
         self.groups = {}
         self.discover_devices()
-
+# ...
     def discover_devices(self):
         """发现并注册所有设备"""
         result = subprocess.run(
@@ -92,7 +94,7 @@ class ChromecastManager:
                     'status': 'idle',
                     'current_media': None
                 }
-
+# ...
     def cast_to_device(self, device_name, url):
         """向指定设备投屏"""
         subprocess.run([
@@ -100,24 +102,24 @@ class ChromecastManager:
         ])
         self.devices[device_name]['status'] = 'playing'
         self.devices[device_name]['current_media'] = url
-
+# ...
     def cast_to_all(self, url):
         """向所有设备同步投屏"""
         with ThreadPoolExecutor(max_workers=5) as executor:
             for name in self.devices:
                 executor.submit(self.cast_to_device, name, url)
-
+# ...
     def create_group(self, group_name, device_names):
         """创建设备分组"""
         self.groups[group_name] = device_names
-
+# ...
     def cast_to_group(self, group_name, url):
         """向设备分组投屏"""
         if group_name in self.groups:
             with ThreadPoolExecutor(max_workers=5) as executor:
                 for name in self.groups[group_name]:
                     executor.submit(self.cast_to_device, name, url)
-
+# ...
     def get_all_status(self):
         """获取所有设备状态"""
         statuses = {}
@@ -145,28 +147,28 @@ class PlaylistManager:
     def __init__(self, cast_manager):
         self.manager = cast_manager
         self.queues = {}  # device_name -> [urls]
-
+# ...
     def add_to_queue(self, device_name, url):
         """添加到播放队列"""
         if device_name not in self.queues:
             self.queues[device_name] = []
         self.queues[device_name].append(url)
-
+# ...
     def add_batch_to_queue(self, device_name, urls):
         """批量添加到队列"""
         if device_name not in self.queues:
             self.queues[device_name] = []
         self.queues[device_name].extend(urls)
-
+# ...
     def remove_from_queue(self, device_name, index):
         """从队列中移除"""
         if device_name in self.queues and index < len(self.queues[device_name]):
             self.queues[device_name].pop(index)
-
+# ...
     def get_queue(self, device_name):
         """获取当前队列"""
         return self.queues.get(device_name, [])
-
+# ...
     def play_next(self, device_name):
         """播放队列中的下一个"""
         if device_name in self.queues and self.queues[device_name]:
@@ -174,7 +176,7 @@ class PlaylistManager:
             self.manager.cast_to_device(device_name, next_url)
             return next_url
         return None
-
+# ...
     def clear_queue(self, device_name):
         """清空队列"""
         if device_name in self.queues:
@@ -192,20 +194,20 @@ class PlaylistManager:
 import schedule
 import time
 import threading
-
+# ...
 class AutomationManager:
     def __init__(self, cast_manager):
         self.manager = cast_manager
         self.scheduler = schedule.Scheduler()
         self.running = False
         self.thread = None
-
+# ...
     def schedule_cast(self, device_name, url, time_str):
         """定时投屏"""
         self.scheduler.every().day.at(time_str).do(
             self.manager.cast_to_device, device_name, url
         )
-
+# ...
     def schedule_playlist(self, device_name, urls, time_str):
         """定时播放列表"""
         def play_playlist():
@@ -213,26 +215,26 @@ class AutomationManager:
                 self.manager.cast_to_device(device_name, url)
                 time.sleep(300)  # 每个内容播放5分钟
         self.scheduler.every().day.at(time_str).do(play_playlist)
-
+# ...
     def schedule_stop_all(self, time_str):
         """定时停止所有设备"""
         self.scheduler.every().day.at(time_str).do(self.stop_all)
-
+# ...
     def stop_all(self):
         """停止所有设备"""
         for name in self.manager.devices:
             subprocess.run(['catt', '-d', name, 'stop'])
-
+# ...
     def start(self):
         """启动自动化调度"""
         self.running = True
         self.thread = threading.Thread(target=self._run, daemon=True)
         self.thread.start()
-
+# ...
     def stop(self):
         """停止自动化调度"""
         self.running = False
-
+# ...
     def _run(self):
         while self.running:
             self.scheduler.run_pending()
@@ -253,11 +255,11 @@ class StatusMonitor:
         self.callbacks = []
         self.monitoring = False
         self.thread = None
-
+# ...
     def register_callback(self, callback):
         """注册状态变化回调"""
         self.callbacks.append(callback)
-
+# ...
     def start_monitoring(self, interval=10):
         """开始监控"""
         self.monitoring = True
@@ -265,11 +267,11 @@ class StatusMonitor:
             target=self._monitor_loop, args=(interval,), daemon=True
         )
         self.thread.start()
-
+# ...
     def stop_monitoring(self):
         """停止监控"""
         self.monitoring = False
-
+# ...
     def _monitor_loop(self, interval):
         import time
         while self.monitoring:
@@ -278,18 +280,18 @@ class StatusMonitor:
                 if self._has_changed(name, status):
                     self._notify_change(name, status)
             time.sleep(interval)
-
+# ...
     def _get_device_status(self, device_name):
         result = subprocess.run(
             ['catt', '-d', device_name, 'status'],
             capture_output=True, text=True, timeout=5
         )
         return result.stdout.strip()
-
+# ...
     def _has_changed(self, device_name, new_status):
         old = self.manager.devices[device_name].get('detailed_status')
         return old != new_status
-
+# ...
     def _notify_change(self, device_name, new_status):
         self.manager.devices[device_name]['detailed_status'] = new_status
         for callback in self.callbacks:
@@ -312,17 +314,17 @@ class StatusMonitor:
 # 初始化管理器
 manager = ChromecastManager()
 print(f"发现设备: {list(manager.devices.keys())}")
-
+# ...
 # 创建设备分组
 manager.create_group('entrance', ['入口屏1', '入口屏2'])
 manager.create_group('main_hall', ['主展厅1', '主展厅2', '主展厅3'])
 manager.create_group('exit', ['出口屏'])
-
+# ...
 # 向不同区域投屏不同内容
 manager.cast_to_group('entrance', 'https://example.com/welcome.mp4')
 manager.cast_to_group('main_hall', 'https://example.com/product-demo.mp4')
 manager.cast_to_group('exit', 'https://example.com/thanks.mp4')
-
+# ...
 # 设置自动化：每天9点开始播放，18点停止
 automation = AutomationManager(manager)
 automation.schedule_cast('entrance', 'https://example.com/welcome.mp4', '09:00')
@@ -338,13 +340,13 @@ automation.start()
 ```python
 # 多房间音频同步
 manager = ChromecastManager()
-
+# ...
 # 创建全屋音频组
 manager.create_group('whole_house', ['客厅', '卧室', '厨房', '阳台'])
-
+# ...
 # 同步播放音乐
 manager.cast_to_group('whole_house', 'https://example.com/jazz.mp3')
-
+# ...
 # 创建播放队列
 playlist = PlaylistManager(manager)
 playlist.add_batch_to_queue('whole_house', [
@@ -352,7 +354,7 @@ playlist.add_batch_to_queue('whole_house', [
     'https://example.com/song2.mp3',
     'https://example.com/song3.mp3',
 ])
-
+# ...
 # 监控播放状态，自动播放下一首
 monitor = StatusMonitor(manager)
 monitor.register_callback(lambda device, status: 
@@ -369,26 +371,26 @@ monitor.start_monitoring(interval=5)
 # 定时内容轮播
 manager = ChromecastManager()
 automation = AutomationManager(manager)
-
+# ...
 # 早上播放晨间内容
 automation.schedule_playlist('展示屏', [
     'https://example.com/morning-ad1.mp4',
     'https://example.com/morning-ad2.mp4',
     'https://example.com/morning-ad3.mp4',
 ], '08:00')
-
+# ...
 # 下午播放午间内容
 automation.schedule_playlist('展示屏', [
     'https://example.com/afternoon-ad1.mp4',
     'https://example.com/afternoon-ad2.mp4',
 ], '12:00')
-
+# ...
 # 晚上播放晚间内容
 automation.schedule_playlist('展示屏', [
     'https://example.com/evening-ad1.mp4',
     'https://example.com/evening-ad2.mp4',
 ], '18:00')
-
+# ...
 automation.start()
 print("定时轮播已启动")
 ```
@@ -411,10 +413,10 @@ pip install catt schedule
 
 ```python
 from chromecast_manager import ChromecastManager
-
+# ...
 manager = ChromecastManager()
 print(f"发现 {len(manager.devices)} 台设备")
-
+# ...
 for name, info in manager.devices.items():
     print(f"  {name}: {info['ip']}")
 ```
@@ -428,13 +430,12 @@ manager.cast_to_group('living_area', 'https://example.com/video.mp4')
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 设备分组策略
 
 | 分组类型 | 适用场景 | 示例 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 区域分组 | 按物理区域 | 入口组、主厅组、出口组 |
 | 功能分组 | 按功能用途 | 展示组、音频组、信息组 |
 | 时间分组 | 按时段切换 | 晨间组、午间组、晚间组 |
@@ -442,7 +443,7 @@ manager.cast_to_group('living_area', 'https://example.com/video.mp4')
 ### 自动化场景
 
 | 场景 | 触发条件 | 动作 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | 展厅开启 | 每天09:00 | 投屏欢迎内容 |
 | 展厅关闭 | 每天18:00 | 停止所有设备 |
 | 内容轮播 | 定时间隔 | 切换播放内容 |
@@ -451,7 +452,7 @@ manager.cast_to_group('living_area', 'https://example.com/video.mp4')
 ### 监控指标
 
 | 指标 | 说明 | 告警阈值 |
-| --- | --- | --- |
+|:------|------:|:------|
 | 设备在线状态 | 在线/离线 | 离线超过5分钟 |
 | 播放状态 | 播放/暂停/停止 | 异常停止 |
 | 当前内容 | 正在播放的URL | 内容不匹配 |
@@ -501,7 +502,7 @@ manager.cast_to_group('living_area', 'https://example.com/video.mp4')
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | catt | Python工具 | 必需 | `pip install catt` |
@@ -521,9 +522,8 @@ manager.cast_to_group('living_area', 'https://example.com/video.mp4')
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

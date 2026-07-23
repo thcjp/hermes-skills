@@ -22,8 +22,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
-
 # 视频帧提取工具 - 专业版
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 99.9
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 单帧抓取 | 支持 | 支持 |
 | 首帧抓取 | 支持 | 支持 |
 | 缩略图生成 | ≤10 张 | 无上限 |
@@ -59,7 +60,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 视频帧提取-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -231,7 +232,7 @@ segments:
 ```bash
 # 检查 ffmpeg 版本（需 4.0+）
 ffmpeg -version
-
+# ...
 # 检查 Python 版本（需 3.8+）
 python3 --version
 ```
@@ -277,7 +278,7 @@ python3 --version
   --watermark /assets/logo.png \
   --wm-position bottom-right \
   --wm-opacity 0.7
-
+# ...
 # 文字水印
 {baseDir}/（请参考skill目录中的脚本文件） /videos/promo.mp4 \
   --time 00:00:10 \
@@ -298,14 +299,14 @@ batch:
   max_retries: 3                    # 失败重试次数
   retry_delay: 5                    # 重试间隔（秒）
   queue_file: /tmp/queue.json      # 任务队列文件
-
+# ...
 output:
   format: jpg                       # 输出格式（jpg/png）
   quality: 2                         # JPEG 质量（1-31，越小越好）
   resolution: "1920x1080"           # 输出分辨率
   keep_aspect: true                 # 保持纵横比
   naming: "{filename}_{timestamp}"   # 文件命名规则
-
+# ...
 watermark:
   enabled: true
   image: /assets/logo.png           # 水印图片路径
@@ -313,14 +314,14 @@ watermark:
   opacity: 0.8                       # 透明度（0-1）
   margin_x: 20                       # 水平边距
   margin_y: 20                       # 垂直边距
-
+# ...
 keyframe_detection:
   enabled: false
   scene_threshold: 0.3               # 场景变化阈值（0-1）
   min_interval: 5                    # 最小帧间隔（秒）
   max_frames: 50                     # 最大帧数
   skip_blackframes: true             # 跳过黑屏帧
-
+# ...
 report:
   enabled: true
   output: /tmp/reports/batch-report.json
@@ -330,7 +331,7 @@ report:
 ### 水印位置说明
 
 | 位置参数 | 说明 |
-|:---------|:-----|
+|---:|---:|
 | top-left | 左上角 |
 | top-right | 右上角 |
 | bottom-left | 左下角 |
@@ -345,7 +346,7 @@ report:
 根据 CPU 核心数合理设置并行数：
 
 | CPU 核心数 | 建议并行数 | 说明 |
-|:-----------|:-----------|:-----|
+|:------:|:------:|:------:|
 | 2 核 | 2-3 | 保留系统资源 |
 | 4 核 | 4-6 | 推荐配置 |
 | 8 核 | 6-8 | 平衡性能与稳定性 |
@@ -356,10 +357,10 @@ report:
 ```bash
 # 场景变化明显的视频（如电影、动画）
 --scene-threshold 0.4 --min-interval 3s
-
+# ...
 # 场景变化平缓的视频（如讲座、会议）
 --scene-threshold 0.2 --min-interval 10s
-
+# ...
 # 极致去重（仅保留显著变化）
 --scene-threshold 0.5 --min-interval 15s --max-frames 20
 ```
@@ -373,10 +374,10 @@ report:
   --parallel 8 \
   --queue /tmp/queue.json \
   --report /tmp/report.json
-
+# ...
 # 查询进度
 {baseDir}/（请参考skill目录中的脚本文件） --queue /tmp/queue.json
-
+# ...
 # 断点续传
 {baseDir}/（请参考skill目录中的脚本文件） --resume /tmp/queue.json
 ```
@@ -400,7 +401,7 @@ report:
 ```bash
 # 方式一：仅重试失败任务
 {baseDir}/（请参考skill目录中的脚本文件） --retry-failed /tmp/queue.json
-
+# ...
 # 方式二：从断点续传
 {baseDir}/（请参考skill目录中的脚本文件） --resume /tmp/queue.json
 ```
@@ -468,7 +469,7 @@ report:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | ffmpeg | 命令行工具 | 必需 | 系统包管理器 | 4.0+ |
 | ffprobe | 命令行工具 | 必需 | 随 ffmpeg 安装 | 4.0+ |
 | Python | 运行时 | 必需 | python.org | 3.8+ |
@@ -481,7 +482,7 @@ report:
 # 安装 ffmpeg + Python 依赖
 sudo apt update && sudo apt install ffmpeg python3 python3-pip
 pip3 install pyyaml
-
+# ...
 # 验证安装
 ffmpeg -version
 python3 --version
@@ -511,9 +512,8 @@ python3 -c "import yaml; print('PyYAML ready')"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

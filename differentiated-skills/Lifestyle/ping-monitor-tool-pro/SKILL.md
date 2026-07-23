@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
 ---
 # 网络监控 (专业版)
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | ICMP Ping | 主机检测 | 支持 | 支持 |
 | HTTP 检测 | 网站健康 | 支持 | 支持 |
 | 多地区监控 | 多地域检测 | 不支持 | 支持 (全球 20+ 节点) |
@@ -91,14 +93,14 @@ pricing_model: "per_use"
 import os
 import requests
 from datetime import datetime
-
+# ...
 API_BASE = "https://api.ping-monitor-pro.local/v1"
 ADMIN_KEY = os.environ["PING_MONITOR_ADMIN_KEY"]
-
+# ...
 class EnterpriseMonitor:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-
+# ...
     def add_monitor(self, target_config):
         """添加监控目标"""
         payload = {
@@ -118,7 +120,7 @@ class EnterpriseMonitor:
             timeout=30,
         )
         return resp.json()
-
+# ...
     def multi_region_check(self, monitor_id):
         """多地区检测结果"""
         resp = requests.get(
@@ -127,7 +129,7 @@ class EnterpriseMonitor:
             timeout=60,
         )
         return resp.json()
-
+# ...
     def api_performance(self, monitor_id, period="24h"):
         """API 性能监控"""
         resp = requests.get(
@@ -137,7 +139,7 @@ class EnterpriseMonitor:
             timeout=60,
         )
         return resp.json()
-
+# ...
 monitor = EnterpriseMonitor(ADMIN_KEY)
 # 添加多地区监控
 m = monitor.add_monitor({
@@ -183,7 +185,7 @@ def create_status_page(config):
         timeout=60,
     )
     return resp.json()
-
+# ...
 def create_incident(title, impact, components, updates):
     """创建故障事件"""
     payload = {
@@ -295,17 +297,17 @@ api:
   admin_key: ${PING_MONITOR_ADMIN_KEY}
   org_id: ${PING_MONITOR_ORG_ID}
   timeout: 60
-
+# ...
 regions:
   available: [us_east, us_west, eu_west, eu_central, ap_east, ap_southeast, ap_northeast]
   default: [us_east, eu_west, ap_east]
-
+# ...
 monitoring:
   types: [icmp, http, tcp, dns, ssl_cert, api_performance]
   intervals: [30s, 1min, 5min, 10min]
   timeout: 30s
   retry: 3
-
+# ...
 alerting:
   channels:
     email: true
@@ -322,29 +324,29 @@ alerting:
     dedup: true
     grouping: true
     suppression: true
-
+# ...
 status_page:
   custom_domain: true
   branding: true
   history_days: 90
   incident_communication: true
   subscriber_notifications: true
-
+# ...
 team:
   max_members: 50
   roles: [admin, manager, responder, viewer]
   oncall_schedule: true
-
+# ...
 sla:
   tracking: true
   reporting: true
   credits: true
-
+# ...
 data_retention:
   raw_data: 90_days
   aggregated: 2_years
   incidents: permanent
-
+# ...
 integrations:
   jira: true
   pagerduty: true
@@ -364,7 +366,7 @@ def sla_report(monitor_id, period="month"):
         timeout=60,
     )
     return resp.json()
-
+# ...
 # 输出示例
 # {
 #   "target_sla": 99.95,
@@ -483,7 +485,7 @@ SLA = (总时间 - 故障时间) / 总时间 × 100%。可按月或按年计算�
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Ping Monitor Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -497,14 +499,14 @@ SLA = (总时间 - 故障时间) / 总时间 × 100%。可按月或按年计算�
 export PING_MONITOR_ADMIN_KEY="sk_pro_admin_xxx"
 export PING_MONITOR_ORG_ID="org_your_id"
 export PING_MONITOR_EDITION="pro"
-
+# ...
 # 可选: 告警渠道
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 export DINGTALK_WEBHOOK="..."
 export FEISHU_WEBHOOK="..."
 export SMS_API_KEY="..."
 export PAGERDUTY_KEY="..."
-
+# ...
 # 可选: 集成
 export JIRA_API_KEY="..."
 export DATADOG_API_KEY="..."
@@ -519,9 +521,8 @@ export DATADOG_API_KEY="..."
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

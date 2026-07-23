@@ -15,16 +15,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 版本化写作工具（免费版）
 
 带基础版本控制的写作工具，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 版本化写作工具（免费版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,7 +38,7 @@ tags:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Bash/Shell | 运行时 | 必需 | 用于执行scripts目录下的shell脚本 |
 
@@ -69,7 +70,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 提供核心shell脚本：
 
 | Script | 用途 |
-|:-------|:-----|
+|----:|----:|
 | `init-workspace.sh` | 创建项目结构 |
 | `new-piece.sh` | 启动新写作piece并分配ID |
 | `edit.sh` | 编辑并自动版本备份 |
@@ -118,32 +119,32 @@ Request → Plan → Draft → Audit → Refine → Deliver
 Step 1 - 初始化工作空间:
   $ （请参考skill目录中的脚本文件） ~/writing
   → 创建项目结构（pieces/、scripts/、references/、config.json）
-
+# ...
 Step 2 - 创建新piece:
   $ （请参考skill目录中的脚本文件）
   → 分配 piece ID: piece-001
-
+# ...
 Step 3 - 配置:
   config.json:
     depth: "standard"
     auto_audit: false
-
+# ...
 Step 4 - Draft（委托sub-agent）:
   Main agent: 委托起草任务给sub-agent
   Sub-agent: 起草，输出至 pieces/piece-001/draft-v1.md
-
+# ...
 Step 5 - Audit:
   $ （请参考skill目录中的脚本文件） piece-001
   → 生成审计报告
-
+# ...
 Step 6 - Refine（通过edit.sh，自动版本备份）:
   $ （请参考skill目录中的脚本文件） piece-001
   → 编辑内容，自动备份为version
-
+# ...
 Step 7 - 查看versions:
   $ （请参考skill目录中的脚本文件）
   → 显示 piece-001 的所有versions
-
+# ...
 Step 8 - Deliver & Cleanup:
   用户确认最终后:
   $ （请参考skill目录中的脚本文件） piece-001
@@ -152,9 +153,8 @@ Step 8 - Deliver & Cleanup:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | init-workspace.sh执行失败 | 目录已存在或无写权限 | 检查目标目录是否已初始化，确认有写权限后检查网络连接和配置后重试或更换路径 |
 | edit.sh编辑失败 | piece ID不存在或文件权限问题 | 先运行`new-piece.sh`创建piece，确认pieces目录权限 |
 | restore.sh恢复失败 | 指定version不存在 | 运行`list.sh`确认可用versions，使用正确version名称 |

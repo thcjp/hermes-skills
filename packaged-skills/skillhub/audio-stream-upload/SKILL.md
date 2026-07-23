@@ -25,16 +25,18 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
 ---
 # 音频流上传专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 音频流上传专业版分片上传与元数据管理 | 不支持 | 支持 |
 | 高清分辨率与无损输出 | 不支持 | 支持 |
@@ -391,7 +393,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | audio-stream-upload处理的内容输入 |,  |
 | content | string | 否 | audio-stream-upload处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -419,9 +421,8 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --: | --: | --: |
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -438,7 +439,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | curl | 系统工具 | 必需 | 系统自带或包管理器安装 |
 | 流媒体平台API | 外部API | 必需 | 在平台注册获取 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
@@ -456,7 +457,6 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行高级音频上传任务。支持批量处理、自定义编码、分片上传等企业级功能，通过Python脚本实现复杂逻辑。与免费版完全兼容，可直接复用免费版的API密钥与基础上传流程。
 
-
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
@@ -467,7 +467,7 @@ export API_KEY="your_api_key_here"
 ### 质量预设参考
 
 | 预设 | 分辨率字段 | 适用场景 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | 标准 | `standard` | 语音内容、播客 |
 | 良好 | `good` | 日常音乐播放 |
 | 最高 | `highest` | 高品质音乐 |
@@ -476,7 +476,7 @@ export API_KEY="your_api_key_here"
 ### 比特率推荐
 
 | 内容类型 | 推荐比特率 | 推荐采样率 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | 语音/播客 | 64000-128000 | 22050或32000 |
 | 标准音乐 | 128000-192000 | 44100 |
 | 高品质音乐 | 192000-256000 | 48000 |
@@ -485,7 +485,7 @@ export API_KEY="your_api_key_here"
 ### 流媒体格式对比
 
 | 格式 | type字段 | 容器格式 | 适用场景 |
-| --: | :-- | :-: | --- |
+|:------:|--------|:-------|:------:|
 | HLS | `hls` | mpegts / mp4 | 移动端、直播 |
 | DASH | `dash` | fmp4 | Web端、自适应码率 |
 
@@ -513,9 +513,8 @@ bitrate单位为bits/sec，例如320kbps应写为320000，128kbps应写为128000
 
 ## 错误处理
 
-
 | 错误场景2 | 原因 | 处理方式 |
-| :-- | :-: | --- |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

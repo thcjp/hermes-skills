@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 独立审计工具（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `分析Agent的性能瓶颈
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：合规检查
 
 检查Agent是否符合安全合规要求。**示例指令**：`
 
 `检查合规性
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 不适用场景
 
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 独立审计工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -158,7 +150,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -174,7 +166,7 @@ from typing import List, Dict, Optional
 from pathlib import Path
 from dataclasses import dataclass, field
 from datetime import datetime
-
+# ...
 @dataclass
 class AuditFinding:
     category: str
@@ -185,14 +177,14 @@ class AuditFinding:
     line: int = 0
     recommendation: str = ""
     cwe_id: str = ""  # Common Weakness Enumeration
-
+# ...
 @dataclass
 class AuditReport:
     target: str
     timestamp: str
     findings: List[AuditFinding] = field(default_factory=list)
     summary: Dict = field(default_factory=dict)
-
+# ...
 class SoloAuditEngine:
     SECURITY_PATTERNS = {
         "hardcoded_secret": {
@@ -231,7 +223,7 @@ class SoloAuditEngine:
             "recommendation": "生产环境关闭调试"
         }
     }
-
+# ...
     COMPLIANCE_CHECKS = {
         "data_privacy": {
             "patterns": [r"个人信息", r"phone", r"email", r"身份证"],
@@ -246,12 +238,12 @@ class SoloAuditEngine:
             "requirement": "需要完善的异常处理"
         }
     }
-
+# ...
     def __init__(self):
         self.report = AuditReport(
             target="", timestamp=datetime.now().isoformat()
         )
-
+# ...
     def audit_security(self, project_dir: str) -> List[AuditFinding]:
         """安全审计（PRO 专属：深度扫描）"""
         self.report.target = project_dir
@@ -273,7 +265,7 @@ class SoloAuditEngine:
                         cwe_id=check["cwe"]
                     ))
         return [f for f in self.report.findings if f.category == "security"]
-
+# ...
     def audit_performance(self, project_dir: str) -> List[AuditFinding]:
         """性能审计（PRO 专属）"""
         findings = []
@@ -297,7 +289,7 @@ class SoloAuditEngine:
                 ))
         self.report.findings.extend(findings)
         return findings
-
+# ...
     def audit_compliance(self, project_dir: str) -> List[AuditFinding]:
         """合规审计（PRO 专属）"""
         findings = []
@@ -320,7 +312,7 @@ class SoloAuditEngine:
                 ))
         self.report.findings.extend(findings)
         return findings
-
+# ...
     def run_full_audit(self, project_dir: str) -> AuditReport:
         """完整审计（PRO 专属）"""
         self.audit_security(project_dir)
@@ -328,7 +320,7 @@ class SoloAuditEngine:
         self.audit_compliance(project_dir)
         self._compute_summary()
         return self.report
-
+# ...
     def generate_report(self, output_path: str, format: str = "json"):
         """生成审计报告（PRO 专属）"""
         self._compute_summary()
@@ -343,7 +335,7 @@ class SoloAuditEngine:
                 json.dump(report_data, f, ensure_ascii=False, indent=2)
             else:
                 f.write(str(report_data))
-
+# ...
     def batch_audit(self, project_dirs: List[str]) -> List[dict]:
         """批量审计（PRO 专属）"""
         results = []
@@ -355,7 +347,7 @@ class SoloAuditEngine:
                 "summary": report.summary
             })
         return results
-
+# ...
     def _compute_summary(self):
         severity_counts = {}
         category_counts = {}
@@ -368,7 +360,7 @@ class SoloAuditEngine:
             "by_category": category_counts,
             "risk_level": self._compute_risk_level(severity_counts)
         }
-
+# ...
     def _compute_risk_level(self, counts: dict) -> str:
         if counts.get("critical", 0) > 0:
             return "CRITICAL"
@@ -379,7 +371,7 @@ class SoloAuditEngine:
         elif counts.get("medium", 0) > 0:
             return "LOW"
         return "SAFE"
-
+# ...
 engine = SoloAuditEngine()
 report = engine.run_full_audit("./project")
 print(f"审计结果: {report.summary['total_findings']} 个发现")
@@ -425,7 +417,7 @@ solo_audit:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -437,7 +429,7 @@ solo_audit:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -509,7 +501,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -522,9 +514,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

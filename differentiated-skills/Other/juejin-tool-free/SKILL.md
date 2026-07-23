@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 掘金工具（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 热门排行 | 分类/全站热门文章 | 只读 |
 | 文章下载 | 单篇/作者文章转 Markdown | 单篇/少量 |
 | 草稿发布 | 本地 md 发布为草稿 | 默认草稿 |
@@ -94,7 +95,7 @@ AI: 正在获取掘金前端分类的热门文章...
 ```bash
 # 分类列表
 GET https://api.juejin.cn/tag_api/v1/query_category_briefs
-
+# ...
 # 热门文章
 POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed
 ```
@@ -141,7 +142,7 @@ AI: 正在登录掘金账号并发布草稿...
 激活条件（严格字面匹配）：
 
 | 场景 | 触发要求 |
-|:-----|:---------|
+|:-----|:-----|
 | 热门排行 | 字面含「掘金」+ 热门/排行榜 |
 | 草稿发布 | 字面含「发布/草稿」+ 掘金 + md 路径 |
 | 文章下载 | 字面给 juejin.cn 链接 + 下载 |
@@ -179,7 +180,7 @@ A：不能。仅接受 juejin.cn 域名链接。
 # 全站热门
 POST https://api.juejin.cn/recommend_api/v1/article/recommend_all_feed
   body: {"cursor":"0","limit":20}
-
+# ...
 # 分类热门（如前端 category_id=6809637767543259144）
 POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed
   body: {"cate_id":"6809637767543259144","cursor":"0","limit":20}
@@ -190,7 +191,7 @@ POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed
 ```bash
 # 下载单篇（保留元信息）
 {baseDir}/（请参考skill目录中的脚本文件） download https://juejin.cn/post/7300000000000000000
-
+# ...
 # 下载作者全部文章（默认上限 20 篇，需显式确认）
 {baseDir}/（请参考skill目录中的脚本文件） download-author --user-id XXX --confirm
 ```
@@ -228,7 +229,7 @@ POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed
 ## 工作流分类
 
 | 操作类别 | 处理方式 | 示例 |
-|:---------|:---------|:-----|
+|---:|---:|---:|
 | 信息查询 | 直接执行 | 热门排行 |
 | 设置调整 | 直接执行 | 草稿配置 |
 | 破坏性 | 先确认 | 公开发布 |
@@ -244,7 +245,7 @@ POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python | 运行时 | 必需 | python.org |
 | Playwright | 浏览器自动化 | 登录时必需 | `pip install playwright` |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -259,9 +260,8 @@ POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 豆包助手（免费版）
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 豆包助手(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -66,7 +67,7 @@ curl -X POST \
 豆包支持联网搜索能力，可在对话中获取实时信息。
 
 | 模式 | 说明 | 适用场景 |
-|:-----|:-----|:---------|
+|:-----|:-----|:-----|
 | 默认模式 | 基于模型知识回答 | 知识类问题 |
 | 联网搜索 | 搜索后综合回答 | 时效性问题 |
 
@@ -97,9 +98,8 @@ const conversationHistory = [
 
 ## 错误处理
 
-
 | 错误类型 | 状态码 | 处理策略 |
-|:---------|:-------|:---------|
+|---:|---:|---:|
 | 凭据无效 | 401 | 检查会话凭据是否过期 |
 | 请求格式错误 | 400 | 检查 JSON 结构与字段 |
 | 服务不可用 | 503 | 等待后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -150,7 +150,7 @@ curl -X POST \
 ```javascript
 // chat.js - 最小可用脚本
 const sessionId = process.env.DOUBAO_SESSIONID;
-
+// ...
 async function chat(message) {
   const resp = await fetch('https://api.example.com/v1/chat/completions', {
     method: 'POST',
@@ -162,15 +162,15 @@ async function chat(message) {
       messages: [{ role: 'user', content: message }]
     })
   });
-
+// ...
   if (!resp.ok) {
     throw new Error(`API错误: ${resp.status}`);
   }
-
+// ...
   const data = await resp.json();
   return data.choices[0].message.content;
 }
-
+// ...
 // 命令行调用
 chat(process.argv[2]).then(console.log).catch(console.error);
 ```
@@ -224,7 +224,7 @@ const systemPrompts = {
 
 问答场景用低 temperature（0.3-0.5）保证准确性；创作场景用高 temperature（0.7-0.9）增加多样性。
 
-## 常见问题
+## 常见问题(补充)
 
 ### Q1：凭据从哪里获取？
 
@@ -255,7 +255,7 @@ const systemPrompts = {
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | 豆包会话凭据 | 凭据 | 必需 | 豆包平台获取 |
 | Node.js / Python | 运行时 | 可选 | 官方网站下载 |

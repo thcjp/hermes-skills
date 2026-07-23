@@ -23,8 +23,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
-
 HTML编码工具专业版是企业级 HTML 开发平台，覆盖 HTML5 全部 API、Web Components 组件化开发、WCAG 2.1 全面合规检查和性能优化策略。从基础语义化标记到高级 Canvas 绘图、SVG 操作、Web Storage 和地理定位，专业版提供完整的 HTML 开发能力。
 
 本版本与免费版完全兼容——免费版的语义化 HTML、表单验证和响应式图片能力在专业版中完整保留。专业版新增 HTML5 高级 API、Web Components、WCAG 全面合规和性能优化等能力。
@@ -32,7 +33,7 @@ HTML编码工具专业版是企业级 HTML 开发平台，覆盖 HTML5 全部 AP
 ## 核心能力
 ### 能力对比
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 语义化HTML | 支持 | 支持 |
 | 表单验证 | HTML5基础 | 企业级复杂验证 |
 | 响应式图片 | picture/srcset | +性能优化策略 |
@@ -50,10 +51,10 @@ HTML编码工具专业版是企业级 HTML 开发平台，覆盖 HTML5 全部 AP
 **处理**: 解析能力对比的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回能力对比的响应数据,包含状态码、结果和日志。
 
-### 核心能力
+### 核心能力(补充)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | HTML编码工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -69,33 +70,33 @@ HTML5 高级API:
   - Web Workers: 后台多线程
   - WebSockets: 实时通信
   - History API: 单页应用路由
-
+# ...
 Web Components:
   - Custom Elements: 自定义HTML标签
   - Shadow DOM: 样式与DOM隔离
   - HTML Templates: 可复用模板
   - 组件生命周期管理
-
+# ...
 WCAG 合规:
   - A级: 基础可访问性
   - AA级: 主流合规标准
   - AAA级: 最高可访问性
   - 自动检查 + 修复建议
-
+# ...
 性能优化:
   - 关键CSS内联
   - 资源预加载（preload/prefetch）
   - 懒加载（loading=lazy + Intersection Observer）
   - 字体加载优化（font-display）
   - 图片格式优化（WebP/AVIF）
-
+# ...
 企业级表单:
   - 多步骤表单
   - 条件逻辑字段
   - 异步验证
   - 自定义验证器
   - 表单状态管理
-
+# ...
 结构化数据:
   - Schema.org 标记
   - JSON-LD 格式
@@ -149,12 +150,12 @@ WCAG 合规:
       </table>
     </canvas>
   </section>
-
+# ...
   <script>
     // Canvas 数据可视化
     const canvas = document.getElementById('sales-chart');
     const ctx = canvas.getContext('2d');
-
+# ...
     const data = [
       { month: '1月', value: 120 },
       { month: '2月', value: 150 },
@@ -163,28 +164,28 @@ WCAG 合规:
       { month: '5月', value: 200 },
       { month: '6月', value: 220 },
     ];
-
+# ...
     // 绘制柱状图
     const barWidth = 80;
     const gap = 40;
     const maxHeight = 300;
     const maxValue = Math.max(...data.map(d => d.value));
-
+# ...
     data.forEach((item, index) => {
       const x = 60 + index * (barWidth + gap);
       const barHeight = (item.value / maxValue) * maxHeight;
       const y = 350 - barHeight;
-
+# ...
       // 绘制柱子
       ctx.fillStyle = '#1a1a2e';
       ctx.fillRect(x, y, barWidth, barHeight);
-
+# ...
       // 绘制数值
       ctx.fillStyle = '#e94560';
       ctx.font = '14px IBM Plex Sans';
       ctx.textAlign = 'center';
       ctx.fillText(`${item.value}万`, x + barWidth / 2, y - 10);
-
+# ...
       // 绘制月份
       ctx.fillStyle = '#8892b0';
       ctx.fillText(item.month, x + barWidth / 2, 380);
@@ -200,8 +201,6 @@ WCAG 合规:
 > 详细代码示例已移至 `references/detail.md`
 
 ### 场景三：WCAG 全面合规检查
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 不适用场景
 
@@ -234,11 +233,11 @@ WCAG 合规:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+# ...
   <!-- 性能优化: 预加载关键资源 -->
   <link rel="preload" href="critical.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="hero.jpg" as="image">
-
+# ...
   <!-- SEO: 结构化数据 -->
   <script type="application/ld+json">
   {
@@ -248,25 +247,25 @@ WCAG 合规:
     "description": "页面描述"
   }
   </script>
-
+# ...
   <!-- Open Graph -->
   <meta property="og:title" content="页面标题">
   <meta property="og:description" content="页面描述">
   <meta property="og:image" content="og-image.jpg">
-
+# ...
   <title>高级HTML页面</title>
 </head>
 <body>
   <!-- 可访问性: 跳过导航 -->
   <a href="#main" class="skip-link">跳到主内容</a>
-
+# ...
   <header role="banner"><!-- 导航 --></header>
-
+# ...
   <main id="main" role="main">
     <!-- Web Component -->
     <data-chart type="bar" data='[{"label":"A","value":10}]'></data-chart>
   </main>
-
+# ...
   <footer role="contentinfo"><!-- 页脚 --></footer>
 </body>
 </html>
@@ -275,7 +274,7 @@ WCAG 合规:
 ### 第三步：运行合规检查
 ```bash
 python3 wcag-checker.py --file index.html --level AA
-
+# ...
 npx lighthouse https://example.com --output html --output-path ./report.html
 ```
 
@@ -287,7 +286,7 @@ npx lighthouse https://example.com --output html --output-path ./report.html
 <link rel="preload" href="critical-font.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="hero-image.webp" as="image">
 <link rel="prefetch" href="next-page.html">
-
+# ...
 <!-- 字体优化 -->
 <style>
   @font-face {
@@ -296,14 +295,14 @@ npx lighthouse https://example.com --output html --output-path ./report.html
     font-display: swap;  /* 加载期间使用回退字体 */
   }
 </style>
-
+# ...
 <!-- 图片格式优化 -->
 <picture>
   <source srcset="image.avif" type="image/avif">
   <source srcset="image.webp" type="image/webp">
   <img src="image.jpg" alt="描述" loading="lazy" decoding="async">
 </picture>
-
+# ...
 <!-- 脚本优化 -->
 <script src="non-critical.js" defer></script>
 <script type="module" src="app.js"></script>
@@ -316,10 +315,10 @@ localStorage.setItem('userPrefs', JSON.stringify({
   theme: 'dark',
   fontSize: 'medium'
 }));
-
+// ...
 // sessionStorage 会话级存储
 sessionStorage.setItem('formData', JSON.stringify(formData));
-
+// ...
 // IndexedDB 客户端数据库
 const db = indexedDB.open('AppDB', 1);
 db.onupgradeneeded = (event) => {
@@ -373,7 +372,7 @@ A: JSON-LD 结构化数据帮助搜索引擎理解页面内容，可触发富文
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | 浏览器 | 工具 | 必需 | 现代浏览器 |
 | Lighthouse（可选） | 工具 | 推荐 | `npm install -g lighthouse`（性能审计） |
@@ -392,7 +391,7 @@ A: JSON-LD 结构化数据帮助搜索引擎理解页面内容，可触发富文
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

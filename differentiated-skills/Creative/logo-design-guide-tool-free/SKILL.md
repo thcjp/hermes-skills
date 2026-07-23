@@ -22,8 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
-
 # Logo设计指南免费版
 
 ## 概述
@@ -37,7 +38,7 @@ Logo设计指南免费版帮助个人用户掌握AI Logo设计的核心原则与
 ### Logo类型识别
 
 | 类型 | 描述 | 适用场景 | 示例 |
-|------|------|---------|------|
+|---|---|----|---|
 | 文字标 | 公司名称作为Logo | 品牌名简短有力(<10字符) | Google、Coca-Cola |
 | 字母标 | 仅首字母缩写 | 公司名称较长、偏正式 | IBM、HBO |
 | 图形标 | 可识别的图标/符号 | 通用品牌,无需文字即可识别 | Apple、Twitter |
@@ -69,7 +70,7 @@ Logo设计指南免费版帮助个人用户掌握AI Logo设计的核心原则与
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Logo设计指南免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -105,7 +106,7 @@ flat vector logo of [主题], [风格], [颜色约束], [背景], [附加细节]
 Logo必须在所有尺寸下都有效:
 
 | 使用场景 | 尺寸 | 必须保证 |
-|---------|------|---------|
+|---:|---:|---:|
 | Favicon | 16x16 px | 轮廓可识别 |
 | 应用图标 | 1024x1024 px | 全部细节可见 |
 | 社交头像 | 400x400 px | 一眼清晰 |
@@ -123,7 +124,7 @@ Logo必须在所有尺寸下都有效:
 - 色彩心理学参考
 
 | 颜色 | 心理暗示 | 适用行业 |
-|------|---------|---------|
+|:---:|:---:|:---:|
 | 蓝色 | 信任、专业 | 金融、科技、医疗 |
 | 红色 | 能量、紧迫 | 餐饮、娱乐、零售 |
 | 绿色 | 成长、自然 | 健康、可持续发展 |
@@ -147,7 +148,7 @@ Logo必须在所有尺寸下都有效:
 # 提示词:"flat vector abstract logo, interlocking hexagonal shapes
 #         forming a letter S, minimal geometric style, single navy
 #         blue color, white background, clean sharp edges"
-
+# ...
 # 关键点:
 # - 指定flat vector(扁平矢量风格)
 # - 明确几何形状(hexagonal)
@@ -164,7 +165,7 @@ Logo必须在所有尺寸下都有效:
 # 提示词:"flat vector logo of a fox head in profile, geometric
 #         faceted style, orange and white, minimal clean lines,
 #         white background, negative space design"
-
+# ...
 # 关键点:
 # - 明确动物与视角(fox head in profile)
 # - 指定风格(geometric faceted)
@@ -181,7 +182,7 @@ Logo必须在所有尺寸下都有效:
 # 提示词:"friendly cartoon owl mascot logo, simple flat
 #         illustration, wearing graduation cap, purple and gold
 #         colors, white background, clean vector style"
-
+# ...
 # 关键点:
 # - 明确角色(friendly cartoon owl)
 # - 指定风格(simple flat illustration)
@@ -206,7 +207,7 @@ Logo必须在所有尺寸下都有效:
 ```text
 # 基础公式
 flat vector logo of [主题], [风格], [颜色约束], [背景], [附加细节]
-
+# ...
 # 示例
 flat vector logo of a lighthouse, minimal geometric,
 single navy blue color, white background, negative space design
@@ -226,7 +227,6 @@ single navy blue color, white background, negative space design
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 提示词模板库
@@ -239,14 +239,14 @@ abstract:
     - "interlocking hexagonal shapes forming letter S"
     - "interconnected nodes forming brain shape"
     - "concentric circles with negative space"
-
+# ...
 pictorial:
   template: "flat vector logo of {subject}, {style}, {colors}, minimal clean lines, white background"
   examples:
     - "fox head in profile, geometric faceted style"
     - "mountain peak with sunrise, minimal geometric"
     - "lighthouse with light beam, line art"
-
+# ...
 mascot:
   template: "friendly cartoon {character} mascot logo, simple flat illustration, {features}, {colors}, white background"
   examples:
@@ -259,7 +259,7 @@ mascot:
 
 ```markdown
 ## Logo可扩展性检查
-
+# ...
 - [ ] 16px favicon下轮廓可识别(眯眼测试)
 - [ ] 单色(黑色)下可读
 - [ ] 反色(白色)下可读
@@ -273,7 +273,7 @@ mascot:
 ### 文件格式交付
 
 | 格式 | 使用场景 |
-|------|---------|
+|:------|------:|
 | SVG | 可缩放矢量,Web使用,可编辑 |
 | PNG(透明) | 数字使用,演示文稿 |
 | PNG(白底) | 文档,邮件签名 |
@@ -287,7 +287,7 @@ mascot:
 ## 错误处理
 
 | 错误 | 问题 | 修复方法 |
-|------|------|---------|
+|---:|:---|---:|
 | 细节过多 | 小尺寸下失去清晰度 | 简化为核心形状 |
 | 依赖颜色 | 黑白场景下失效 | 先设计黑色版本 |
 | AI生成文字 | 字母模糊/拼错 | 仅生成图标,文字手动添加 |
@@ -299,16 +299,16 @@ mascot:
 
 ```bash
 # Logo设计迭代流程
-
+# ...
 # 第1轮:基础生成
 # 提示词:"flat vector logo of a lighthouse, minimal geometric, single color, white background"
-
+# ...
 # 第2轮:优化细节
 # 提示词:"flat vector logo of a geometric lighthouse with light beam rays, minimal line art, navy blue, white background, negative space design"
-
+# ...
 # 第3轮:提升分辨率
 # 使用高分辨率模型:"flat vector logo of a geometric lighthouse with radiating light beams, minimal clean design, navy blue single color, pure white background"
-
+# ...
 # 第4轮:放大优选版本
 # 使用图像放大工具:scale 4x
 ```
@@ -359,7 +359,7 @@ A: 设计时同时准备浅色背景与深色背景版本。检查单色(黑白)
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | AI图像生成工具 | 服务 | 必需 | 各AI平台提供 |
 | 设计工具 | 工具 | 推荐 | Figma / Canva / Illustrator |

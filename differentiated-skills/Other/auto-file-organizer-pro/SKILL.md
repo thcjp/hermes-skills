@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 > **全功能文件自动整理。重复清理、智能内容分类、批量定时整理、实时监控。**
 
@@ -31,7 +33,7 @@ pricing_model: "per_use"
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 自动整理专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -77,13 +79,13 @@ pricing_model: "per_use"
 ### 配置并启动全功能文件整理
 ```bash
 python3 （请参考skill目录中的脚本文件） init --config pro-config.yaml
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup scan ~/Documents/ ~/Downloads/
-
+# ...
 python3 （请参考skill目录中的脚本文件） rules set rules/smart-rules.yaml
-
+# ...
 python3 （请参考skill目录中的脚本文件） schedule add --cron "0 9 * * *" --paths ~/Downloads ~/Desktop
-
+# ...
 python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-organize
 ```
 
@@ -93,11 +95,10 @@ python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-o
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 1. 重复文件清理
 | 能力 | 说明 | 应用场景 |
-|------|------|----------|
+|:-----|:-----|:-----|
 | 内容哈希比对 | SHA-256哈希识别内容相同文件 | 精准识别重复 |
 | 保留策略 | 保留最新/最大/最早/最短路径 | 灵活去重决策 |
 | 相似文件识别 | 文件名相似度匹配（非完全相同） | 识别"副本"类文件 |
@@ -106,11 +107,11 @@ python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-o
 
 ```bash
 python3 （请参考skill目录中的脚本文件） dedup scan ~/Documents/
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup plan ~/Documents/ --keep latest
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup execute ~/Documents/ --keep latest
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup report ~/Documents/
 ```
 
@@ -119,8 +120,6 @@ python3 （请参考skill目录中的脚本文件） dedup report ~/Documents/
 **输出**: 返回重复文件清理的响应数据,包含状态码、结果和日志。
 
 ### 2. 智能内容分类
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供智能内容分类所需的指令和必要参数。
 **处理**: 解析智能内容分类的输入参数,完成核心逻辑,返回结构化响应。
@@ -135,14 +134,14 @@ python3 （请参考skill目录中的脚本文件） schedule add \
   --action organize \
   --dedup \
   --notify email
-
+# ...
 python3 （请参考skill目录中的脚本文件） schedule list
-
+# ...
 python3 （请参考skill目录中的脚本文件） schedule history --name "每日下载整理"
 ```
 
 | 调度能力 | 说明 |
-|----------|------|
+|---:|---:|
 | cron表达式 | 支持标准cron定时 |
 | 多目录批量 | 一次任务处理多个目录 |
 | 增量扫描 | 仅处理新增或修改的文件 |
@@ -161,7 +160,7 @@ python3 （请参考skill目录中的脚本文件） batch organize \
   --rules smart-rules.yaml \
   --dedup \
   --report
-
+# ...
 python3 （请参考skill目录中的脚本文件） batch stats \
   ~/Downloads ~/Desktop ~/Documents/
 ```
@@ -173,7 +172,7 @@ python3 （请参考skill目录中的脚本文件） batch stats \
 
 ### 5. 整理报告导出
 | 报告格式 | 内容 | 适用场景 |
-|----------|------|----------|
+|:---:|:---:|:---:|
 | HTML | 交互式报告含筛选与排序 | 日常查看 |
 | PDF | 完整报告含图表 | 存档备查 |
 | CSV | 文件明细表 | 数据分析 |
@@ -188,9 +187,9 @@ python3 （请参考skill目录中的脚本文件） batch stats \
 ### 6. 文件变更实时监控
 ```bash
 python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-organize
-
+# ...
 python3 （请参考skill目录中的脚本文件） watch ~/Downloads ~/Desktop --auto-organize
-
+# ...
 python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-organize --dedup
 ```
 
@@ -207,11 +206,11 @@ python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-o
 ### 7. 团队共享规则配置
 ```bash
 python3 （请参考skill目录中的脚本文件） rules create --team --name team-standard
-
+# ...
 python3 （请参考skill目录中的脚本文件） rules deploy --team --all-members
-
+# ...
 python3 （请参考skill目录中的脚本文件） rules sync --interval weekly
-
+# ...
 python3 （请参考skill目录中的脚本文件） rules audit --team
 ```
 
@@ -228,11 +227,11 @@ python3 （请参考skill目录中的脚本文件） rules audit --team
 **解决方案**：
 ```bash
 python3 （请参考skill目录中的脚本文件） dedup scan ~/Documents/ --min-size 1KB
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup plan ~/Documents/ --keep latest
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup execute ~/Documents/ --keep latest
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup report ~/Documents/
 ```
 
@@ -271,7 +270,7 @@ python3 （请参考skill目录中的脚本文件） schedule add \
   --name "每日整理" --cron "0 9 * * *" \
   --paths ~/Downloads ~/Desktop \
   --action organize --dedup --notify email
-
+# ...
 python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-organize
 ```
 
@@ -283,9 +282,9 @@ python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-o
 **解决方案**：
 ```bash
 python3 （请参考skill目录中的脚本文件） rules create --team --name team-standard
-
+# ...
 python3 （请参考skill目录中的脚本文件） rules deploy --team --all-members
-
+# ...
 python3 （请参考skill目录中的脚本文件） rules sync --interval weekly
 ```
 
@@ -293,8 +292,6 @@ python3 （请参考skill目录中的脚本文件） rules sync --interval weekl
 
 ## 示例
 ### 完整专业版配置
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 智能分类规则示例
 ```yaml
@@ -305,19 +302,19 @@ rules:
       content_keywords: [合同, 协议, 甲方, 乙方, 签约]
       file_types: [pdf, docx]
     target: 合同文档/
-
+# ...
   - name: 项目截图
     type: filename_pattern
     match:
       pattern: "Screenshot*|截图*|Screen*"
     target: 项目截图/
-
+# ...
   - name: 项目文档组
     type: contextual
     match:
       same_dir_keywords: [README, package.json, .git]
     target: 代码项目/
-
+# ...
   - name: 大文件归档
     type: conditional
     match:
@@ -374,7 +371,7 @@ rules:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
 | PyYAML | Python库 | 必需 | `pip install pyyaml` |
@@ -405,7 +402,7 @@ rules:
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|:---|---:|---:|
 | 免费体验版 | ¥0 | 核心功能+基础示例 | 个人试用 |
 | 收费专业版 | ¥19.9/月 | 全功能+高级特性+优先支持 | 团队/高效用户 |
 
@@ -429,7 +426,7 @@ MIT license允许使用、复制、修改和分发。
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

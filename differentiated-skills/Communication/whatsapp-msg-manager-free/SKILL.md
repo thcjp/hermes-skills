@@ -45,11 +45,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
-
 # WhatsApp消息管理(免费版)
 
 ## 概述
@@ -61,7 +62,7 @@ WhatsApp消息管理免费版是一款面向个人用户和小型团队的轻量
 ### 免费版与PRO版能力对比
 
 | 能力维度 | 免费版 | PRO版 |
-|:---------|:-------|:------|
+|----|---|----|
 | 文本消息发送 | 支持 | 支持 |
 | 媒体消息(图片/视频/文档) | 不支持 | 支持 |
 | 交互式按钮/列表消息 | 不支持 | 支持 |
@@ -80,7 +81,7 @@ WhatsApp消息管理免费版是一款面向个人用户和小型团队的轻量
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | WhatsApp消息管理-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -106,7 +107,7 @@ connector_call_tool --tool "whatsapp_send_message" --params '{
 ```bash
 # 查询所有电话号码
 connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
-
+# ...
 # 查询单个号码详情
 connector_call_tool --tool "whatsapp_get_phone_number" --params '{
   "phone_number_id": "PHONE_NUMBER_ID"
@@ -125,7 +126,7 @@ connector_call_tool --tool "whatsapp_get_phone_number" --params '{
 ```bash
 # 列出所有消息模板
 connector_call_tool --tool "whatsapp_get_message_templates" --params '{}'
-
+# ...
 # 查询特定模板的审批状态
 connector_call_tool --tool "whatsapp_get_template_status" --params '{
   "template_name": "shipping_confirmation"
@@ -227,7 +228,7 @@ connector_begin_pairing
 ```bash
 # 验证连接
 connector_list_integrations
-
+# ...
 # 查看WhatsApp可用工具
 connector_list_tools --integration whatsapp
 ```
@@ -237,7 +238,7 @@ connector_list_tools --integration whatsapp
 ```bash
 # 获取号码ID
 connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
-
+# ...
 # 发送消息
 connector_call_tool --tool "whatsapp_send_message" --params '{
   "phone_number_id": "你的号码ID",
@@ -248,7 +249,6 @@ connector_call_tool --tool "whatsapp_send_message" --params '{
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 配置示例
 
 ### 基础配置文件
@@ -258,13 +258,13 @@ connector_call_tool --tool "whatsapp_send_message" --params '{
 whatsapp:
   # 默认发送号码ID(从 whatsapp_get_phone_numbers 获取)
   default_phone_number_id: "1029384756"
-
+# ...
   # 消息发送确认模式
   confirm_before_send: true
-
+# ...
   # 默认语言代码
   default_language: "zh_CN"
-
+# ...
   # 消息长度限制(字符)
   max_message_length: 4096
 ```
@@ -276,10 +276,10 @@ whatsapp:
 security:
   # 发送前必须预览
   require_preview: true
-
+# ...
   # 收件人号码必须包含国家代码
   require_country_code: true
-
+# ...
   # 禁止发送给黑名单号码
   blocklist_enabled: true
   blocklist: []
@@ -294,7 +294,7 @@ security:
 ```python
 # Python示例:号码格式校验
 import re
-
+# ...
 def validate_phone(phone: str) -> bool:
     """校验WhatsApp号码格式"""
     pattern = r'^\+\d{6,15}$'
@@ -303,7 +303,7 @@ def validate_phone(phone: str) -> bool:
         print("正确格式: +国家代码+号码,例如 +8613800138000")
         return False
     return True
-
+# ...
 # 使用示例
 validate_phone("+8613800138000")  # 正确
 validate_phone("13800138000")      # 错误:缺少国家代码
@@ -315,14 +315,14 @@ WhatsApp规定,自由格式消息只能在用户与商家互动后的24小时内
 
 ```python
 from datetime import datetime, timedelta
-
+# ...
 def check_message_window(last_interaction: str) -> dict:
     """检查是否在24小时客服窗口内"""
     last_time = datetime.fromisoformat(last_interaction)
     now = datetime.now(last_time.tzinfo)
     elapsed = now - last_time
     remaining = timedelta(hours=24) - elapsed
-
+# ...
     if remaining.total_seconds() > 0:
         return {
             "in_window": True,
@@ -349,7 +349,7 @@ connector_preview_tool --tool "whatsapp_send_message" --params '{
   "recipient_phone": "+8613800138000",
   "message": "预览:这是一条测试消息"
 }'
-
+# ...
 # 步骤2:用户确认后执行
 connector_call_tool --tool "whatsapp_send_message" --params '{
   "phone_number_id": "1029384756",
@@ -360,7 +360,6 @@ connector_call_tool --tool "whatsapp_send_message" --params '{
 
 ## 错误处理
 
-
 ```python
 # 常见错误码处理
 ERROR_CODES = {
@@ -369,11 +368,11 @@ ERROR_CODES = {
     "131047": "已超出24小时窗口:请改用模板消息发送",
     "131042": "消息内容包含违规内容",
 }
-
+# ...
 def handle_error(error_code: str, context: dict) -> str:
     """处理WhatsApp API错误"""
     message = ERROR_CODES.get(error_code, f"未知错误: {error_code}")
-
+# ...
     if error_code == "131047":
         return f"{message}\n建议:使用 whatsapp_send_template_message 发送已审批模板"
     elif error_code == "133010":
@@ -383,7 +382,7 @@ def handle_error(error_code: str, context: dict) -> str:
 ```
 
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|---:|---:|---:|---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -438,7 +437,7 @@ connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | 连接器插件 | 平台插件 | 必需 | SkillHub插件市场安装 |
 | WhatsApp Business账号 | 服务账号 | 必需 | Meta Business平台注册 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |

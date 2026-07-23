@@ -34,8 +34,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 模型切换工具(专业版)
 
 ## 概述
@@ -49,7 +50,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|----|---|------|
 | 三层切换 | Haiku → Sonnet → Opus 决策 | 与免费版一致 |
 | 黄金规则 | 30秒思考阈值 | 与免费版一致 |
 | 自定义规则 | 团队切换规则引擎(正则/关键词/任务类型) | 免费版无 |
@@ -94,7 +95,7 @@ suggested_price: 99.9
 ```bash
 # 查看本月成本仪表盘
 node （请参考skill目录中的脚本文件） --period month --group-by project
-
+# ...
 # 输出
 # 项目成本仪表盘: 2026-07
 #
@@ -135,21 +136,21 @@ alerts:
 ```javascript
 // batch-switch.mjs 批量切换分发
 import { switchBatch } from './lib/switcher.mjs';
-
+// ...
 const tasks = [
   { id: 't1', content: '翻译这段话', expectedComplexity: 'low' },
   { id: 't2', content: '实现用户认证模块', expectedComplexity: 'medium' },
   { id: 't3', content: '设计多区域部署架构', expectedComplexity: 'high' },
   // ... 100个任务
 ];
-
+// ...
 const results = await switchBatch(tasks, {
   concurrency: 10,
   costCap: 50,          // 单批成本上限$50
   fallbackModel: 'haiku',  // 超成本降级
   onProgress: (done, total) => console.log(`${done}/${total}`),
 });
-
+// ...
 // 输出
 // {
 //   results: [...],
@@ -178,7 +179,7 @@ rules:
         - regex: "(架构|设计|重构)"
     switch_to: opus
     reason: "敏感/架构类任务需要深度推理"
-
+# ...
   - name: 翻译任务用Haiku
     match:
       allOf:
@@ -186,7 +187,7 @@ rules:
         - maxLength: 500
     switch_to: haiku
     reason: "短文本翻译用Haiku足够"
-
+# ...
   - name: 代码审查用Sonnet
     match:
       anyOf:
@@ -194,14 +195,14 @@ rules:
         - filePattern: "*.py"
     switch_to: sonnet
     reason: "代码审查是Sonnet主力场景"
-
+# ...
   - name: 成本上限降级
     condition:
       monthlyBudgetUsed: ">80%"
     switch_to: haiku
     fallback: true
     reason: "月度预算超80%,降级到Haiku"
-
+# ...
 default: sonnet  # 未匹配规则时的默认切换
 ```
 
@@ -232,7 +233,7 @@ default: sonnet  # 未匹配规则时的默认切换
 mkdir -p config reports
 cp config/switching-rules.example.yaml config/switching-rules.yaml
 cp config/budget-alerts.example.yaml config/budget-alerts.yaml
-
+# ...
 # 编辑团队规则
 vi config/switching-rules.yaml
 ```
@@ -241,13 +242,13 @@ vi config/switching-rules.yaml
 
 ```javascript
 import { switchModel } from './lib/switcher.mjs';
-
+// ...
 // 自动决策
 const result = await switchModel({
   content: '设计多租户数据库schema',
 });
 // → { model: 'opus', tier: 'opus', reason: '架构决策' }
-
+// ...
 // 强制指定层级
 const result2 = await switchModel({
   content: '翻译这段话',
@@ -264,7 +265,7 @@ node （请参考skill目录中的脚本文件） \
   --concurrency 10 \
   --cost-cap 50 \
   --output results.json
-
+# ...
 # 输出成本与切换报告
 node （请参考skill目录中的脚本文件） \
   --input tasks.json \
@@ -276,10 +277,10 @@ node （请参考skill目录中的脚本文件） \
 ```bash
 # 月度成本报告
 node （请参考skill目录中的脚本文件） --period month --format html > reports/month.html
-
+# ...
 # 按团队分组
 node （请参考skill目录中的脚本文件） --period month --group-by team
-
+# ...
 # 导出CSV
 node （请参考skill目录中的脚本文件） --period month --format csv > reports/month.csv
 ```
@@ -309,7 +310,7 @@ policy:
 ### 自动降级策略
 
 | 预算使用率 | 自动动作 | 说明 |
-| --- | --- | --- |
+|:------|:------|:------|
 | <50% | 无 | 正常使用 |
 | 50-80% | 警告 | 通知团队,关注趋势 |
 | 80-95% | 降级Sonnet→Haiku | 非关键任务降级 |
@@ -320,7 +321,7 @@ policy:
 ### 1. 成本治理三阶段
 
 | 阶段 | 动作 | 验收标准 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 1. 透明化 | 接入仪表盘,统计现状 | 各项目成本可见 |
 | 2. 优化 | 应用规则,降级冗余任务 | 月成本下降30%+ |
 | 3. 治理 | 预算告警与降级策略 | 超预算自动降级 |
@@ -336,7 +337,7 @@ policy:
 ### 3. 批量分发参数调优
 
 | 参数 | 推荐值 | 说明 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | concurrency | 10 | 平衡速度与API限流 |
 | costCap | 单批$50 | 控制单批成本 |
 | fallbackModel | haiku | 超成本降级 |
@@ -346,7 +347,7 @@ policy:
 ### 4. 监控告警分级
 
 | 告警级别 | 触发条件 | 动作 |
-| --- | --- | --- |
+|:------|------:|:------|
 | 提示 | 预算使用50% | 仅记录仪表盘 |
 | 警告 | 预算使用80% | 通知团队,准备降级 |
 | 严重 | 预算使用95% | 自动降级到Haiku |
@@ -373,7 +374,7 @@ opus_governance:
 ```bash
 # 查询切换审计日志
 node （请参考skill目录中的脚本文件） --task-id t-2026-07-18-001
-
+# ...
 # 导出合规报告
 node （请参考skill目录中的脚本文件） \
   --since 2026-07-01 \
@@ -423,7 +424,7 @@ node （请参考skill目录中的脚本文件） \
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Claude API | API | 必需 | 自行申请API Key |
 | Node.js | 运行时 | 必需 | nodejs.org 下载 |
@@ -444,9 +445,8 @@ node （请参考skill目录中的脚本文件） \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

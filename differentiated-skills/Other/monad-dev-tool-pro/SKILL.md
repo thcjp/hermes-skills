@@ -52,6 +52,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Monad 开发工具 - 专业版
 
@@ -144,7 +146,7 @@ Monad 开发工具专业版是企业级 Monad 区块链 DApp 开发平台,在免
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Monad开发工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -173,13 +175,13 @@ cat > deploy.config.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 # 依赖说明
 （请参考skill目录中的脚本文件） --env testnet --batch --verify
-
+# ...
 # 3. 安全审计
 （请参考skill目录中的脚本文件） --contracts src/ --check reentrancy,overflow,access
-
+# ...
 # 4. 主网部署(需多签确认)
 （请参考skill目录中的脚本文件） --env mainnet --batch --multisig --require-approvals 3
 ```
@@ -191,13 +193,13 @@ EOF
 ```yaml
 # .github/workflows/monad-deploy.yml
 name: Monad Contract Deploy
-
+# ...
 on:
   push:
     branches: [develop]
   release:
     types: [published]
-
+# ...
 jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
@@ -232,10 +234,10 @@ jobs:
 ```bash
 # Gas 分析报告
 forge test --gas-report --json > gas-report.json
-
+# ...
 # 安全审计扫描
 （请参考skill目录中的脚本文件） --contracts src/ --output audit-report.md
-
+# ...
 # 示例
 # === Monad 合约安全审计报告 ===
 # 扫描合约: 5 个
@@ -271,7 +273,7 @@ forge test --gas-report --json > gas-report.json
 # 免费版项目结构完全兼容,直接配置主网环境
 export MONAD_MAINNET_PRIVATE_KEY="your_mainnet_key"
 export MONAD_MULTISIG_THRESHOLD="3"
-
+# ...
 # 验证主网连接
 cast chain-id --rpc-url https://rpc.monad.xyz
 # 输出: 143
@@ -282,17 +284,17 @@ cast chain-id --rpc-url https://rpc.monad.xyz
 ```bash
 # 1. 测试网全量测试通过
 forge test -vvv
-
+# ...
 # 2. 安全审计
 （请参考skill目录中的脚本文件） --contracts src/
-
+# ...
 # 3. Gas 优化
 forge test --gas-report
-
+# ...
 # 4. 多签钱包准备
 cast wallet new --unsafe-password
 # 将生成的签名者地址加入多签合约
-
+# ...
 # 5. 主网部署
 forge script （请参考skill目录中的脚本文件）:DeployScript \
   --rpc-url https://rpc.monad.xyz \
@@ -346,7 +348,7 @@ evm_version = "prague"
 solc_version = "0.8.28"
 optimizer = true
 optimizer_runs = 200
-
+# ...
 [profile.mainnet]
 evm_version = "prague"
 solc_version = "0.8.28"
@@ -357,7 +359,7 @@ optimizer_runs = 1000
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 测试网部署 | 支持 | 支持 |
 | 主网部署 | 不支持 | 支持 |
 | 批量合约部署 | 不支持 | 支持 |
@@ -412,7 +414,7 @@ A: 1) 开启 `via_ir` 进行深度优化;2) 调高 `optimizer_runs`(主网推荐
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Foundry | CLI工具 | 必需 | 官方安装脚本 foundryup |
 | OpenZeppelin Contracts | Solidity库 | 必需 | forge install |
 | Gnosis Safe | 多签合约 | 主网推荐 | 官方部署 |
@@ -439,9 +441,8 @@ A: 1) 开启 `via_ir` 进行深度优化;2) 调高 `optimizer_runs`(主网推荐
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

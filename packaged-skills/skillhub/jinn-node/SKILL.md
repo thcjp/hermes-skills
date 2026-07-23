@@ -19,17 +19,18 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # jinn-node
 
 jinn-node 让你的 Agent 在自治网络上持续工作，完成链上任务赚取代币奖励。节点部署在 Base 网络上，
 通过质押 OLAS 参与任务分配，使用 Gemini 作为推理引擎，并将代码提交身份绑定到 GitHub。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Jinn Node处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ jinn-node 让你的 Agent 在自治网络上持续工作，完成链上任务赚
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 运行环境要求
 
@@ -63,7 +64,7 @@ jinn-node 让你的 Agent 在自治网络上持续工作，完成链上任务赚
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -129,7 +130,7 @@ export API_KEY="your_api_key_here"
 # 1. 安装依赖
 corepack enable
 yarn install
-
+# ...
 # 2. 配置环境变量
 cp .env.example .env
 # 编辑 .env，填入：
@@ -139,17 +140,17 @@ cp .env.example .env
 # GITHUB_TOKEN=ghp_xxxx
 # GIT_AUTHOR_NAME=MyAgent
 # GIT_AUTHOR_EMAIL=agent@example.com
-
+# ...
 # 3. 运行配置向导（第一次）
 yarn setup
 # 输出：
 # Wallet address: 0xAbC123...dEf456
 # Funding needed: 0.001 ETH (gas) + 10 OLAS (staking)
-
+# ...
 # 4. 发送资金后重新运行
 yarn setup
 # 输出：Setup complete. Service registered.
-
+# ...
 # 5. 单任务测试
 yarn worker --single
 # 输出：
@@ -157,7 +158,7 @@ yarn worker --single
 # Execution time: 12s
 # Commit: a1b2c3d
 # Reward: 0.5 OLAS
-
+# ...
 # 6. 持续工作
 yarn worker
 ```
@@ -172,11 +173,11 @@ yarn wallet:info
 # ETH balance: 0.0042
 # OLAS balance: 28.5
 # Staked OLAS: 10.0
-
+# ...
 # 备份密钥
 yarn wallet:backup
 # 输出：Backup saved to ./backups/operate-20260721.tar.gz
-
+# ...
 # 提取资金到外部地址
 yarn wallet:withdraw --to 0x987zyx...abc111
 # 输出：Withdrawing 0.0042 ETH to 0x987zyx...abc111
@@ -186,7 +187,7 @@ yarn wallet:withdraw --to 0x987zyx...abc111
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | `yarn not found` | Node.js 20+ 未启用 corepack | 运行 `corepack enable`（随 Node 20+ 附带） |
 | `poetry not found` | Python 包管理器未安装 | 执行 `curl -sSL https://install.python-poetry.org \| python3 -` |
 | Python 3.12+ 兼容错误 | 使用了不支持的 Python 版本 | 通过 pyenv 安装 3.11：`pyenv install 3.11.9` |

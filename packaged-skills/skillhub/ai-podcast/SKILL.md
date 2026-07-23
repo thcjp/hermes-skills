@@ -20,14 +20,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
 ---
 # AI播客生成 - PDF与文本转对话式播客
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AI播客生成处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -35,7 +36,7 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | AI播客生成几分钟生成 | 不支持 | 支持 |
 | 高清分辨率与无损输出 | 不支持 | 支持 |
@@ -51,7 +52,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -210,7 +211,6 @@ curl -sS "$MAGICPODCAST_API_URL/agent/v1/jobs/$JOB_ID" \
 
 ## 异常处理
 
-
 ### API密钥缺失或无效
 
 当MAGICPODCAST_API_KEY未设置或已失效时，API返回401认证错误。需引导用户访问 https://www.magicpodcast.app/skill-platform 获取有效密钥。提示用户注册免费，一分钟内即可完成，使用Google账号登录后复制API密钥。
@@ -271,9 +271,8 @@ curl -sS "$MAGICPODCAST_API_URL/agent/v1/jobs/$JOB_ID" \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| :-- | :-- | :-- |
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 上下文压缩器（专业版）
 
@@ -46,7 +48,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Context Compressor处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -106,7 +108,7 @@ pricing_model: "per_use"
 ```bash
 # 压缩单日日志
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md
-
+# ...
 # 指定输出路径
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/compressed.md
 ```
@@ -118,7 +120,7 @@ node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/comp
 ```bash
 # 批量压缩本周日志（专业版一键命令）
 node （请参考skill目录中的脚本文件） --batch memory/2026-03-{08..14}.md --output /tmp/week-compressed.md
-
+# ...
 # 智能分类压缩（自动归档到五个类别）
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md --classify --output memory/classified/
 ```
@@ -171,7 +173,7 @@ node （请参考skill目录中的脚本文件） memory/2026-03-14.md --classif
 三步混合策略，确保零数据丢失：
 
 | 步骤 | 策略 | 说明 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 第一步 | 关键词匹配 | 扫描标题，识别40+种中英文模式 |
 | 第二步 | 兜底提取 | 无关键词匹配时，提取所有章节顶部条目 |
 | 第三步 | 混合模式 | 多日文件中，匹配与兜底共存 |
@@ -183,7 +185,7 @@ node （请参考skill目录中的脚本文件） memory/2026-03-14.md --classif
 ### 2. 四大压缩原则
 
 | 原则 | 含义 | 示例 |
-|------|------|------|
+|---:|---:|---:|
 | 去重复 | 提及一次即足够 | 不在3个章节重复"WebSocket重连" |
 | 留转折 | 只保留变化点 | "从nginx切换到直连Node.js WSS" > 5段调试过程 |
 | 去过程 | 结果重于过程 | "失败3次后用X修复" > 3段失败描述 |
@@ -200,10 +202,10 @@ node （请参考skill目录中的脚本文件） memory/2026-03-14.md --classif
 ```bash
 # 批量压缩指定日期范围
 node （请参考skill目录中的脚本文件） --batch memory/2026-03-{01..31}.md --output memory/compressed/2026-03.md
-
+# ...
 # 并行压缩（4进程）
 node （请参考skill目录中的脚本文件） --batch memory/2026-03-*.md --parallel 4
-
+# ...
 # 启用检查点（中断后可恢复）
 node （请参考skill目录中的脚本文件） --batch memory/2026-03-*.md --checkpoint
 ```
@@ -238,7 +240,7 @@ memory/classified/2026-03-14/
 ```
 
 | 类别 | 识别模式 | 重要性权重 |
-|------|----------|------------|
+|:---:|:---:|:---:|
 | 决策 | 决定、选择、采用、放弃 | 1.0 |
 | 教训 | 教训、反思、失败、踩坑 | 0.9 |
 | 待办 | 待办、紧急、重要、后续 | 0.8 |
@@ -256,10 +258,10 @@ memory/classified/2026-03-14/
 ```bash
 # 增量压缩（首次执行为全量，后续为增量）
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md --incremental
-
+# ...
 # 查看增量缓存
 node （请参考skill目录中的脚本文件） --cache-status
-
+# ...
 # 清理增量缓存
 node （请参考skill目录中的脚本文件） --cache-clear
 ```
@@ -281,7 +283,7 @@ node （请参考skill目录中的脚本文件） --cache-clear
 ```bash
 # 压缩并评分
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md --score
-
+# ...
 # 评分维度
 # - retention: 信息保留率（关键实体覆盖率）
 # - density: 信息密度（有效信息/总字数）
@@ -296,13 +298,13 @@ node （请参考skill目录中的脚本文件） memory/2026-03-14.md --score
 原始字数：2,580
 压缩字数：385
 压缩比：6.7:1
-
+# ...
 评分明细：
 - 信息保留率 (retention): 92/100
 - 信息密度 (density): 88/100
 - 结构化程度 (structure): 95/100
 - 综合评分：91/100
-
+# ...
 评估：优秀（信息保留率高，结构清晰）
 ```
 
@@ -318,31 +320,31 @@ node （请参考skill目录中的脚本文件） memory/2026-03-14.md --score
 ```bash
 # 使用自定义模板
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md --template ~/workspace/.compressor-templates/team-meeting.md
-
+# ...
 # 列出可用模板
 node （请参考skill目录中的脚本文件） --list-templates
 ```
 
 模板示例（`team-meeting.md`）：
 ```markdown
-
+# ...
 **输入**: 用户提供自定义输出模板（专业版）所需的指令和必要参数。
 **处理**: 解析自定义输出模板（专业版）的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回自定义输出模板（专业版）的响应数据,包含状态码、结果和日志。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：智能压缩对话日志、含批量处理、Token、成本降低、上下文压缩器专业、Agent、记忆管理的终极压、缩方案、在免费版基础上解、锁批量压缩自动化、智能分类归档、偏好五类、仅处理新增内容、信息保留率量化评、压缩历史追踪、多语言混合日志优、化七大高级功能等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+# ...
 ## {{date}} 团队会议纪要
-
+# ...
 ### 议决事项
 {{#decisions}}
 - {{content}}
 {{/decisions}}
-
+# ...
 ### 经验教训
 {{#lessons}}
 - {{content}}
 {{/lessons}}
-
+# ...
 ### 行动项
 {{#todos}}
 - [ ] {{content}}
@@ -356,10 +358,10 @@ node （请参考skill目录中的脚本文件） --list-templates
 ```bash
 # 查看压缩历史
 node （请参考skill目录中的脚本文件） --history
-
+# ...
 # 查看指定文件的历史
 node （请参考skill目录中的脚本文件） --history --file memory/2026-03-14.md
-
+# ...
 # 导出历史报告
 node （请参考skill目录中的脚本文件） --history --export /tmp/compression-report.json
 ```
@@ -429,7 +431,7 @@ node （请参考skill目录中的脚本文件） --history --export /tmp/compre
 # 批量压缩团队本周所有日志
 node （请参考skill目录中的脚本文件） --batch team-logs/2026-03-{08..14}-*.md \
   --classify --output team-archive/2026-W11/
-
+# ...
 # 生成团队周报摘要
 node （请参考skill目录中的脚本文件） team-archive/2026-W11/ --template weekly-report.md \
   --output reports/2026-W11-summary.md
@@ -446,7 +448,7 @@ node （请参考skill目录中的脚本文件） team-archive/2026-W11/ --templ
 # 增量压缩整个项目周期日志
 node （请参考skill目录中的脚本文件） --batch project-logs/ --incremental \
   --classify --output knowledge-base/
-
+# ...
 # 按主题生成知识库
 node （请参考skill目录中的脚本文件） knowledge-base/decisions/ \
   --template architecture-decisions.md \
@@ -465,7 +467,7 @@ node （请参考skill目录中的脚本文件） knowledge-base/decisions/ \
 node （请参考skill目录中的脚本文件） audit-logs/2026-03/ \
   --batch --quality --min-score 90 \
   --output archive/2026-03-compressed/
-
+# ...
 # 导出压缩报告用于合规证明
 node （请参考skill目录中的脚本文件） --history --export \
   /tmp/audit-compression-report.json
@@ -495,7 +497,7 @@ node （请参考skill目录中的脚本文件） team-logs/ \
 ```bash
 # 分析Token使用情况
 node （请参考skill目录中的脚本文件） --analyze memory/ --token-report
-
+# ...
 # 批量压缩并评估Token节省
 node （请参考skill目录中的脚本文件） --batch memory/ \
   --incremental --token-savings-report
@@ -508,7 +510,7 @@ node （请参考skill目录中的脚本文件） --batch memory/ \
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:------|------:|:------|:------|
 | 技术负责人 | 企业级记忆管理 | 批量+分类+质量评分 | 合规审计、成本控制 |
 | 项目经理 | 团队协作归档 | 批量+分类+自定义模板 | 周报生成、知识共享 |
 | 架构师 | 长期项目沉淀 | 增量+分类+历史追踪 | 知识库建设、决策检索 |
@@ -608,7 +610,7 @@ node （请参考skill目录中的脚本文件） build-logs/ \
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|---:|:---|---:|
 | 1.0.0 | 2026-01 | 初版发布，含七大高级功能 |
 
 ---
@@ -621,9 +623,8 @@ node （请参考skill目录中的脚本文件） build-logs/ \
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:------:|--------|:-------|:------:|--------|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -679,7 +680,7 @@ node （请参考skill目录中的脚本文件） build-logs/ \
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|:--:|---:|----|
 | 批量压缩中断 | 内存不足或进程被杀 | 启用`--checkpoint`，从断点恢复 | 高 |
 | 增量压缩失效 | 快照缓存损坏 | 执行`--cache-clear`清理后重新全量压缩 | 高 |
 | 质量评分过低 | 日志结构混乱或冗余过多 | 调整压缩策略，启用更保守的模式 | 中 |
@@ -703,7 +704,7 @@ node （请参考skill目录中的脚本文件） build-logs/ \
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|----|----|----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
 | context-compressor.js | 脚本 | 必需 | 随本技能提供 |
@@ -771,7 +772,7 @@ node （请参考skill目录中的脚本文件） build-logs/ \
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | 免费体验版 | ¥0 | 单文件压缩+固定模板+基础关键词匹配+基础示例+基础FAQ | 个人试用、轻量压缩需求 |
 | 收费专业版 | ¥29.9/月 | 批量压缩+智能分类+增量压缩+质量评分+自定义模板+历史追踪+多语言优化+多角色指南+性能优化+优先支持 | 团队/企业、大规模日志管理 |
 

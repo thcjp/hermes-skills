@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 专业版面向游戏工作室与商业项目,在免费版全流程指导之上,扩展团队协作、资产管理、玩家数据分析、CI/CD 自动化、商业化支持与多平台发布等企业级能力。支持数十人团队协作开发,提供完整的项目管理、版本控制、资产管线与数据驱动的运营决策能力。
 
@@ -37,7 +39,7 @@ pricing_model: "per_use"
 
 ## 核心能力
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 游戏设计文档 | GDD 撰写 | 支持 | 支持 |
 | 编码指导 | 架构与代码 | 支持 | 支持 |
 | 测试策略 | 测试用例 | 支持 | 支持 |
@@ -111,7 +113,7 @@ def analyze_player_data(game_id, time_range):
         timeout=120,
     )
     return resp.json()
-
+# ...
 ```
 
 ### 场景三: CI/CD 自动化
@@ -123,35 +125,35 @@ pipeline:
     on_push: [develop, main]
     on_pr: [develop]
     on_tag: ["v*"]
-
+# ...
   stages:
     - name: lint
       run: godot --headless --check-only
       fail_fast: true
-
+# ...
     - name: unit_test
       run: godot --headless --run-tests
       coverage_threshold: 80
-
+# ...
     - name: build
       matrix:
         platform: [windows, macos, linux, android, ios]
       run: godot --export $PLATFORM
       artifacts: true
-
+# ...
     - name: integration_test
       run: python tests/integration.py
       depends_on: build
-
+# ...
     - name: deploy_staging
       when: branch == "develop"
       run: deploy --env staging
-
+# ...
     - name: deploy_production
       when: tag matches "v*"
       approval: required
       run: deploy --env production
-
+# ...
   notifications:
     on_success: [slack, email]
     on_failure: [slack, pagerduty]
@@ -205,11 +207,7 @@ curl -X POST -H "X-API-Key: $GAME_DEV_ADMIN_KEY" \
 ## 配置示例
 ### 企业级配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 资产管理示例
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 数据分析仪表盘
 ```python
@@ -268,7 +266,7 @@ COLLABORATION_GUIDELINES = {
 def data_driven_iteration(game_id):
     """基于数据的迭代决策"""
     analysis = analyze_player_data(game_id, "last_30_days")
-
+# ...
     decisions = []
     for insight in analysis["insights"]:
         if "流失" in insight and "第一关" in insight:
@@ -277,7 +275,7 @@ def data_driven_iteration(game_id):
             decisions.append({"action": "优化首充礼包", "priority": "medium"})
         if "留存" in insight:
             decisions.append({"action": "增加留存活动", "priority": "high"})
-
+# ...
     return sorted(decisions, key=lambda x: {"high": 0, "medium": 1, "low": 2}[x["priority"]])
 ```
 
@@ -363,7 +361,7 @@ def design_monetization(game_id, model):
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Game Dev Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Git | 版本控制 | 必需 | git-scm.com 下载 |
@@ -377,14 +375,14 @@ def design_monetization(game_id, model):
 export GAME_DEV_ADMIN_KEY="sk_pro_admin_xxx"
 export GAME_DEV_ORG_ID="org_your_id"
 export GAME_DEV_EDITION="pro"
-
+# ...
 export S3_BUCKET="game-assets"
 export AWS_ACCESS_KEY_ID="..."
 export AWS_SECRET_ACCESS_KEY="..."
-
+# ...
 export BIGQUERY_PROJECT="game-analytics"
 export BIGQUERY_KEY_FILE="/etc/game-dev/bigquery.json"
-
+# ...
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 ```
 
@@ -397,7 +395,7 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

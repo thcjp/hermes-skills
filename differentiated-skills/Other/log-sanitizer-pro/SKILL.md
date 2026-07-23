@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 日志脱敏工具（专业版）
 > **企业级日志脱敏解决方案。批量定时监控、MCP工具流水线、合规报告导出、实时告警集成。**
@@ -32,7 +34,7 @@ pricing_model: "monthly"
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 日志脱敏专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -81,14 +83,14 @@ pricing_model: "monthly"
 ```bash
 # 1. 初始化企业配置
 python3 （请参考skill目录中的脚本文件） init --config enterprise.yaml
-
+# ...
 # 2. 配置自定义规则与告警通道
 python3 （请参考skill目录中的脚本文件） config set-rules rules/custom-rules.yaml
 python3 （请参考skill目录中的脚本文件） config set-alert email --smtp smtp.example.com
-
+# ...
 # 3. 启动定时扫描任务
 python3 （请参考skill目录中的脚本文件） schedule --cron "0 2 * * *" --path /var/log/
-
+# ...
 # 4. 立即执行全量脱敏并生成合规报告
 python3 （请参考skill目录中的脚本文件） scan /var/log/ --redact --report pdf --output reports/
 ```
@@ -139,7 +141,7 @@ Skill: 执行完成,结果如下: 操作成功
 ## 核心能力
 ### 1. 批量定时监控
 | 能力 | 说明 | 应用场景 |
-|------|------|----------|
+|:-----|:-----|:-----|
 | cron任务调度 | 支持标准cron表达式定时扫描 | 每日凌晨2点全量扫描 |
 | 批量目录扫描 | 一次配置多个日志目录 | 多业务线日志统一治理 |
 | 增量扫描 | 仅扫描新增或修改的日志文件 | 大型日志目录高效处理 |
@@ -162,14 +164,14 @@ rules:
       keywords: [database, db, connection, connect]
     replacement: 'password=***REDACTED***'
     severity: HIGH
-
+# ...
   - name: 条件性脱敏（仅生产环境）
     type: conditional
     pattern: 'env\s*[=:]\s*production'
     action: enable_rules
     rules: [db_password, api_key, secret_key]
     severity: HIGH
-
+# ...
   - name: 多行日志块脱敏
     type: multiline
     pattern: 'BEGIN_SECRET[\s\S]*?END_SECRET'
@@ -194,24 +196,24 @@ pipeline:
       type: mcp-endpoint
       endpoint: log-collector
       output: raw_logs
-
+# ...
     - name: 敏感信息扫描
       type: log-sanitizer
       action: scan
       input: raw_logs
       rules: enterprise-rules.yaml
-
+# ...
     - name: 自动脱敏
       type: log-sanitizer
       action: redact
       input: raw_logs
       backup: true
-
+# ...
     - name: 合规报告生成
       type: report-generator
       format: pdf
       output: reports/
-
+# ...
     - name: 告警通知
       type: alert-sender
       channel: email
@@ -225,7 +227,7 @@ pipeline:
 
 ### 4. 合规报告导出
 | 报告格式 | 内容 | 适用场景 |
-|----------|------|----------|
+|---:|---:|---:|
 | PDF | 完整脱敏报告含图表 | 提交合规审计 |
 | HTML | 交互式报告含筛选 | 内部安全评审 |
 | CSV | 脱敏记录明细表 | 数据分析 |
@@ -241,10 +243,10 @@ pipeline:
 ```bash
 # 手动更新规则库
 python3 （请参考skill目录中的脚本文件） rules update
-
+# ...
 # 查看规则库版本
 python3 （请参考skill目录中的脚本文件） rules version
-
+# ...
 # 启用自动更新（每周）
 python3 （请参考skill目录中的脚本文件） rules auto-update --cron "0 3 * * 0"
 ```
@@ -276,7 +278,7 @@ python3 （请参考skill目录中的脚本文件） rules auto-update --cron "0
 # 配置企业级定时扫描
 python3 （请参考skill目录中的脚本文件） schedule --cron "0 2 * * *" \
   --path /var/log/ --rules enterprise-rules.yaml --alert email
-
+# ...
 # 每月生成合规报告
 python3 （请参考skill目录中的脚本文件） report monthly --format pdf \
   --output /reports/compliance-$(date +%Y%m).pdf
@@ -315,7 +317,7 @@ python3 （请参考skill目录中的脚本文件） scan --config business-unit
 ```bash
 # 部署MCP工具流水线
 python3 （请参考skill目录中的脚本文件） pipeline deploy pipeline.yaml
-
+# ...
 # 监控流水线执行状态
 python3 （请参考skill目录中的脚本文件） pipeline status
 ```
@@ -344,7 +346,7 @@ python3 （请参考skill目录中的脚本文件） monitor --realtime \
 enterprise:
   name: 我的公司
   version: "1.0"
-
+# ...
   scan:
     paths:
       - /var/log/app/
@@ -353,19 +355,19 @@ enterprise:
     schedule: "0 2 * * *"
     incremental: true
     exclude: ["*.gz", "*.tmp"]
-
+# ...
   rules:
     builtin: all
     custom:
       - rules/payment.yaml
       - rules/user-privacy.yaml
     auto_update: "0 3 * * 0"
-
+# ...
   redact:
     backup: true
     backup_path: /backup/log-redaction/
     backup_retention_days: 90
-
+# ...
   alert:
     email:
       recipients: [security@example.com, ops@example.com]
@@ -376,13 +378,13 @@ enterprise:
       url: https://hooks.example.com/log-alert
       method: POST
     threshold: HIGH
-
+# ...
   report:
     format: [pdf, html]
     output: /reports/
     retention_days: 365
     monthly_summary: true
-
+# ...
   pipeline:
     enabled: true
     config: pipeline.yaml
@@ -460,7 +462,7 @@ enterprise:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
 | PyYAML | Python库 | 必需 | `pip install pyyaml` |
@@ -494,7 +496,7 @@ enterprise:
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | ¥0 | 核心功能+基础示例 | 个人试用 |
 | 收费专业版 | ¥29.9/月 | 全功能+高级特性+优先支持 | 团队/企业 |
 
@@ -520,7 +522,7 @@ MIT license允许使用、复制、修改和分发。
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

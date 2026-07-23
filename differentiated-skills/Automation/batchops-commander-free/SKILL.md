@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 批处理指挥官（免费版）
 
 > **批量处理多项目的安全管家。进度追踪+检查点保存+错误恢复，批量任务可监控、可恢复、可追溯。**
@@ -43,7 +44,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Batchops Commander处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -167,9 +168,8 @@ checkpoint:
 
 ## 错误处理
 
-
 | 错误类型 | 处理策略 | 示例 |
-|---------|---------|------|
+|:-----|:-----|:-----|
 | 超时、速率限制 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令3次，指数退避（1s, 2s, 4s） | API调用超时 |
 | 格式错误、数据缺失 | 跳过，记录，继续 | 文件格式不正确 |
 | 认证失败、磁盘满 | 中止整批，保护数据 | 凭据过期 |
@@ -194,7 +194,7 @@ checkpoint:
 ```bash
 # 先用少量数据测试处理逻辑
 batch process --items file_1.txt,file_2.txt,file_3.txt --dry-run
-
+# ...
 # 示例
 # [预览] file_1.txt → file_1_renamed.txt
 # [预览] file_2.txt → file_2_renamed.txt
@@ -257,15 +257,15 @@ batch process --items file_1.txt,file_2.txt,file_3.txt --dry-run
 ```bash
 #!/bin/bash
 set -euo pipefail
-
+# ...
 ITEMS=(*.txt)
 TOTAL=${#ITEMS[@]}
 PROCESSED=0
 FAILED=0
 FAILED_ITEMS="failed.json"
-
+# ...
 echo "[]" > "$FAILED_ITEMS"
-
+# ...
 for item in "${ITEMS[@]}"; do
   if process_item "$item"; then
     ((PROCESSED++))
@@ -274,18 +274,18 @@ for item in "${ITEMS[@]}"; do
     # 记录失败项
     jq --arg item "$item" --arg err "$?" '. += [{"item": $item, "error": $err}]' "$FAILED_ITEMS" > tmp && mv tmp "$FAILED_ITEMS"
   fi
-
+# ...
   # 每10项报告进度
   if (( PROCESSED % 10 == 0 )); then
     echo "$PROCESSED/$TOTAL完成（$(( PROCESSED * 100 / TOTAL ))%）"
   fi
-
+# ...
   # 每50项保存检查点
   if (( PROCESSED % 50 == 0 )); then
     echo "{\"processed\": $PROCESSED, \"total\": $TOTAL}" > .batch-checkpoint.json
   fi
 done
-
+# ...
 echo "批处理完成"
 echo "成功：$((TOTAL - FAILED))"
 echo "失败：$FAILED（已保存至$FAILED_ITEMS供重试）"
@@ -325,7 +325,7 @@ Dry-run模式用2-3项数据模拟执行处理逻辑，展示"如果实际执行
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | jq | 命令行工具 | 可选 | 用于JSON处理，系统自带或通过包管理器安装 |
 

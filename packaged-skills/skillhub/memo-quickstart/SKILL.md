@@ -25,16 +25,17 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # 记忆快速启动
 
 面向零依赖场景的本地记忆系统，用三层架构和混合检索算法，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无API Key、无云、无追踪，纯本地记忆。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 记忆快速启动处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,13 +43,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 记忆快速启动混合检索 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -60,7 +61,7 @@ pricing_model: "per_use"
 
 ### 记忆类型与重要度参考
 | 类型 | 使用场景 | 重要度范围 |
-|:---|:---|:---|
+|---:|---:|---:|
 | preference | 用户表达喜好 | 0.8-1.0 |
 | decision | 项目决策 | 0.9-1.0 |
 | fact | 重要信息 | 0.6-0.8 |
@@ -148,9 +149,8 @@ memory-cleanup --days 30                                  # 清理
 #
 ## 错误处理
 
-
 | 错误类型 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:---:|:---:|:---:|
 | 搜索无结果：目录不存在 | memories/目录未创建，memory-init未执行 | 运行 `memory-init` 初始化目录结构，创建memories/、SESSION-STATE.json、MEMORY.md |
 | 搜索无结果：JSON格式无效 | 记忆文件JSON语法错误，如未转义引号、缺少逗号 | 用 `jq` 工具验证JSON格式：`jq . memories/*.json`，修复语法错误后重新检索 |
 | 搜索无结果：关键词太窄 | 搜索词过于具体，无匹配结果 | 扩大搜索词范围，利用标签匹配补充召回：`memory-search "前端" --tag frontend` |
@@ -177,11 +177,11 @@ memory-cleanup --days 30                                  # 清理
 ```bash
 # SESSION-STATE.json 更新
 {"activeDecisions": [{"content":"用Tailwind不用vanilla CSS","timestamp":"2026-07-21T10:00:00Z"}]}
-
+# ...
 # memory-store 输出
 Stored: uuid-001 (type=decision, importance=0.9, tags=[frontend,css])
 Stored: uuid-002 (type=preference, importance=0.95, tags=[frontend,css])
-
+# ...
 # 响应
 "明白，用Tailwind。已保存此偏好。"
 ```
@@ -203,13 +203,13 @@ memory-search "React 选型" → uuid-001 (score=0.87)
   type: decision
   importance: 0.95
   related_to: [uuid-002]
-
+# ...
 # 关联记忆
 uuid-002 (score=0.82)
   content: "团队React熟悉度评估得分8/10"
   type: fact
   importance: 0.7
-
+# ...
 # 返回
 "选React是因为团队熟悉度高（评估得分8/10），且需要组件化架构。此决策记录于2026-07-15。"
 ```
@@ -227,11 +227,11 @@ uuid-002 (score=0.82)
 ```bash
 # 导出旧系统数据
 memory-export > old-backup.json
-
+# ...
 # 转换格式
 node convert-to-memo-quickstart.js old-backup.json > new-backup.json
 # 转换日志：处理150条记忆，成功148条，跳过2条（格式不兼容）
-
+# ...
 # 导入
 memory-import --file new-backup.json
 # 导入结果：成功导入148条记忆，其中decision 35条/preference 42条/fact 51条/lesson 12条/context 8条
@@ -260,7 +260,7 @@ A：存储记忆时通过 `--related-to uuid-001` 参数指定关联记忆。检
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|:------|------:|:------|:------|
 | Agent平台 | 运行环境 | 必需 | 安装支持SKILL.md的AI Agent |
 | Node.js | 运行时 | 必需 | nodejs.org安装（运行记忆CLI） |
 | simple-local-memory | npm包 | 必需 | `npm install -g simple-local-memory` |

@@ -40,8 +40,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 浏览器智能代理工具(免费版)
 
 ## 概述
@@ -59,7 +60,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力分类 | 命令示例 | 说明 |
-|:-------|:-----|:-----|
+|----|----|---|
 | 导航 | `open` / `back` / `forward` / `reload` | 页面跳转与历史控制 |
 | 快照 | `snapshot -i --json` | 获取可交互元素的可访问性树 |
 | 交互 | `click` / `fill` / `type` / `select` | 基于 ref 的元素操作 |
@@ -103,19 +104,19 @@ suggested_price: 29.9
 ```bash
 # 打开签到页面
 agent-browser open https://example.com/checkin
-
+# ...
 # 获取可交互元素快照
 agent-browser snapshot -i --json
-
+# ...
 # 点击签到按钮(根据快照返回的 ref)
 agent-browser click @e2
-
+# ...
 # 等待页面稳定
 agent-browser wait --load networkidle
-
+# ...
 # 截图保存
 agent-browser screenshot checkin_$(date +%Y%m%d).png
-
+# ...
 # 关闭浏览器
 agent-browser close
 ```
@@ -144,12 +145,12 @@ agent-browser get attr @e4 "href" --json
 agent-browser --session admin open https://app.example.com
 agent-browser --session admin state load admin-auth.json
 agent-browser --session admin snapshot -i --json
-
+# ...
 # 普通用户会话
 agent-browser --session user open https://app.example.com
 agent-browser --session user state load user-auth.json
 agent-browser --session user snapshot -i --json
-
+# ...
 # 查看所有会话
 agent-browser session list
 ```
@@ -188,14 +189,14 @@ agent-browser install --with-deps
 ```bash
 # 打开页面
 agent-browser open https://example.com
-
+# ...
 # 获取可交互元素快照(始终使用 -i --json)
 agent-browser snapshot -i --json
-
+# ...
 # 基于 ref 进行操作
 agent-browser click @e2
 agent-browser fill @e3 "文本内容"
-
+# ...
 # 再次快照以获取新的 ref
 agent-browser snapshot -i --json
 ```
@@ -216,7 +217,6 @@ agent-browser drag @e7 @e8             # 拖拽
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -334,7 +334,7 @@ agent-browser screenshot debug.png
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | agent-browser | CLI 工具 | 必需 | `npm install -g agent-browser` |
 | Chromium | 运行时 | 必需 | `agent-browser install` 自动下载 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -350,9 +350,8 @@ agent-browser screenshot debug.png
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

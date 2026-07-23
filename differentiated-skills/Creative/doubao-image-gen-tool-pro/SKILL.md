@@ -22,15 +22,16 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "图像处理,AI绘图,创意"
 ---
-
 豆包图片生成专业版是一款面向企业团队与专业设计师的高级 AI 图片生成平台。在免费版单图生成能力之上，专业版扩展了批量生成、多比例输出、风格预设、提示词增强、参考图生成等企业级能力。
 
 专业版采用任务队列架构，支持并行生成、失败重试、断点续传，可稳定处理 50+ 图片的批量生成任务。同时完全兼容免费版工作流，已有配置可无缝迁移。
 
 ### 免费版与专业版能力对比
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 单图生成 | 支持 | 支持 |
 | 提示词输入 | 支持 | 支持 |
 | 比例选择 | 支持（3:4 默认） | 支持（全比例） |
@@ -54,7 +55,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 豆包图片生成-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -80,7 +81,7 @@ suggested_price: 99.9
 一次提示词生成多种比例版本：
 
 | 比例 | 适用场景 |
-|:-----|:---------|
+|---:|---:|
 | 3:4 | 竖版社交媒体 |
 | 1:1 | 方形头像/商品图 |
 | 4:3 | 横版配图 |
@@ -206,16 +207,16 @@ python3 prompt_enhancer.py \
   --input "一只猫" \
   --style-preset "photorealistic" \
   --output /tmp/enhanced-prompt.txt
-
+# ...
 ```
 
 ## 快速开始
 ### 第一步：环境检查
 ```bash
 python3 --version
-
+# ...
 google-chrome --version
-
+# ...
 ls ~/.skill-platform/workspace/
 ```
 
@@ -260,7 +261,7 @@ python3 batch_generate.py \
 python3 prompt_enhancer.py \
   --input "咖啡店" \
   --output /tmp/enhanced.txt
-
+# ...
 python3 prompt_enhancer.py \
   --batch /tmp/prompts.txt \
   --output-dir /tmp/enhanced/
@@ -269,20 +270,14 @@ python3 prompt_enhancer.py \
 ## 配置示例
 ### 完整配置文件模板
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 风格预设示例
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 提示词模板库
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 最佳实践
 ### 1. 并行生成数调优
 | 浏览器实例 | 建议并行数 | 单图耗时 |
-|:-----------|:-----------|:---------|
+|:----:|:----:|:----:|
 | 1 个 | 1 | 30-60 秒 |
 | 4 个 | 4 | 30-60 秒 |
 | 8 个 | 8 | 30-60 秒 |
@@ -293,7 +288,7 @@ python3 style_manager.py create \
   --name "品牌风格" \
   --keywords "科技感,暖色调" \
   --output /config/styles/brand.json
-
+# ...
 python3 batch_generate.py \
   --config items.json \
   --style-preset /config/styles/brand.json
@@ -305,7 +300,7 @@ python3 prompt_enhancer.py \
   --input "咖啡店" \
   --style-preset "warm-cozy" \
   --level "detailed"
-
+# ...
 ```
 
 ### 4. 质量评估
@@ -326,7 +321,7 @@ python3 batch_generate.py \
 
 ```bash
 python3 batch_generate.py --retry-failed /tmp/generate-queue.json
-
+# ...
 python3 batch_generate.py --resume /tmp/generate-queue.json
 ```
 
@@ -391,7 +386,7 @@ python3 batch_generate.py \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | Chrome | 浏览器 | 必需 | google.com | 100+ |
 | message | 平台工具 | 必需 | Skill 平台安装 | - |
@@ -404,7 +399,7 @@ python3 batch_generate.py \
 #### 完整安装命令
 ```bash
 pip3 install requests pyyaml Pillow
-
+# ...
 python3 --version
 google-chrome --version
 which message
@@ -415,14 +410,14 @@ python3 -c "import requests; print('requests ready')"
 专业版需要以下配置：
 
 | 配置项 | 环境变量 | 用途 | 获取方式 |
-|:-------|:---------|:-----|:---------|
+|---:|:---|---:|---:|
 | 豆包账号 | 浏览器登录 | 访问豆包 AI 服务 | 豆包平台注册 |
 | Skill 平台 Token | 平台配置 | 平台认证 | Skill 平台控制台 |
 | 提示词增强 API | `PROMPT_ENHANCE_API_KEY` | AI 提示词增强（可选） | 对应 AI 服务商 |
 
 ```bash
 export PROMPT_ENHANCE_API_KEY="your_enhance_key"
-
+# ...
 ```
 
 ### 可用性分类
@@ -441,7 +436,7 @@ export PROMPT_ENHANCE_API_KEY="your_enhance_key"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

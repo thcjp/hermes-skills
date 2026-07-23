@@ -27,8 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 # 物料清单漏洞情报免费版
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 99.9
 ### 免费版与专业版对比
 
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 支持的包管理器 | npm, pip | npm, pip, go, cargo, maven, nuget |
 | SBOM格式 | JSON基础格式 | CycloneDX, SPDX, CDX |
 | 漏洞数据库 | OSV, GHSA | OSV, GHSA, NVD, OSV-API |
@@ -55,7 +56,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 物料清单漏洞情报免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -74,7 +75,7 @@ query_npm_package() {
         dependencies_count: (.versions[."dist-tags".latest].dependencies | length)
     }'
 }
-
+# ...
 # 查询pip包信息
 query_pip_package() {
     local pkg=$1
@@ -87,7 +88,7 @@ query_pip_package() {
         requires_python: .info.requires_python
     }'
 }
-
+# ...
 # 示例
 query_npm_package "express"
 query_pip_package "flask"
@@ -105,17 +106,17 @@ query_pip_package "flask"
 ```bash
 #!/bin/bash
 # 生成基础SBOM(JSON格式)
-
+# ...
 PROJECT_NAME=$(basename "$(pwd)")
 TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
-
+# ...
 echo "{"
 echo "  \"bomFormat\": \"JSON\","
 echo "  \"specVersion\": \"1.0\","
 echo "  \"project\": \"${PROJECT_NAME}\","
 echo "  \"generated\": \"${TIMESTAMP}\","
 echo "  \"components\": ["
-
+# ...
 # npm组件
 if [ -f package.json ]; then
     echo "    // npm依赖:"
@@ -123,7 +124,7 @@ if [ -f package.json ]; then
         "    {\"name\": \"\(.key)\", \"version\": \"\(.value)\", \"ecosystem\": \"npm\"}"' | \
         jq -s '.' 2>/dev/null
 fi
-
+# ...
 # pip组件
 if [ -f requirements.txt ]; then
     echo "    // pip依赖:"
@@ -135,7 +136,7 @@ if [ -f requirements.txt ]; then
         echo "    {\"name\": \"${pkg}\", \"version\": \"${ver:-latest}\", \"ecosystem\": \"pip\"}"
     done < requirements.txt
 fi
-
+# ...
 echo "  ]"
 echo "}"
 ```
@@ -152,14 +153,14 @@ echo "}"
 ```bash
 #!/bin/bash
 # 使用OSV API查询漏洞
-
+# ...
 check_osv() {
     local pkg=$1
     local version=$2
     local ecosystem=$3  # npm 或 PyPI
-    
+# ...
     echo "检查: ${pkg}@${version} (${ecosystem})"
-    
+# ...
     RESULT=$(curl -s -X POST "https://api.osv.dev/v1/query" \
         -H "Content-Type: application/json" \
         -d "{
@@ -169,9 +170,9 @@ check_osv() {
             },
             \"version\": \"${version}\"
         }")
-    
+# ...
     VULN_COUNT=$(echo "$RESULT" | jq '.vulns | length // 0')
-    
+# ...
     if [ "$VULN_COUNT" -gt 0 ]; then
         echo "  [!] 发现 ${VULN_COUNT} 个漏洞:"
         echo "$RESULT" | jq -r '.vulns[]? | "    - \(.id): \(.summary // .details[:80] // "无描述")"'
@@ -179,11 +180,11 @@ check_osv() {
         echo "  [OK] 未发现已知漏洞"
     fi
 }
-
+# ...
 # 示例:检查npm包
 check_osv "lodash" "4.17.20" "npm"
 check_osv "axios" "0.21.0" "npm"
-
+# ...
 # 示例:检查pip包
 check_osv "requests" "2.25.0" "PyPI"
 ```
@@ -202,7 +203,7 @@ if [ -f package.json ]; then
     echo "=== npm依赖树 ==="
     npm ls --depth=2 2>/dev/null || echo "请运行 npm install 后再查看依赖树"
 fi
-
+# ...
 # 显示pip依赖树
 if [ -f requirements.txt ]; then
     echo "=== pip依赖列表 ==="
@@ -225,14 +226,14 @@ fi
 ```bash
 #!/bin/bash
 # 更新依赖前全面漏洞检查
-
+# ...
 echo "========================================="
 echo "依赖漏洞检查: $(basename "$(pwd)")"
 echo "检查时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "========================================="
-
+# ...
 TOTAL_VULNS=0
-
+# ...
 # npm依赖检查
 if [ -f package.json ]; then
     echo ""
@@ -241,11 +242,11 @@ if [ -f package.json ]; then
     while read -r pkg version; do
         version=$(echo "$version" | tr -d '^~>=' | head -1)
         [ -z "$version" ] && version="latest"
-        
+# ...
         RESULT=$(curl -s -X POST "https://api.osv.dev/v1/query" \
             -H "Content-Type: application/json" \
             -d "{\"package\": {\"name\": \"${pkg}\", \"ecosystem\": \"npm\"}, \"version\": \"${version}\"}")
-        
+# ...
         COUNT=$(echo "$RESULT" | jq '.vulns | length // 0')
         if [ "$COUNT" -gt 0 ]; then
             echo "  [!] ${pkg}@${version}: ${COUNT} 个漏洞"
@@ -253,7 +254,7 @@ if [ -f package.json ]; then
         fi
     done
 fi
-
+# ...
 # pip依赖检查
 if [ -f requirements.txt ]; then
     echo ""
@@ -263,18 +264,18 @@ if [ -f requirements.txt ]; then
         [ -z "$line" ] && continue
         pkg=$(echo "$line" | sed 's/[=<>].*//')
         ver=$(echo "$line" | grep -oP '[\d.]+')
-        
+# ...
         RESULT=$(curl -s -X POST "https://api.osv.dev/v1/query" \
             -H "Content-Type: application/json" \
             -d "{\"package\": {\"name\": \"${pkg}\", \"ecosystem\": \"PyPI\"}, \"version\": \"${ver:-1.0.0}\"}")
-        
+# ...
         COUNT=$(echo "$RESULT" | jq '.vulns | length // 0')
         if [ "$COUNT" -gt 0 ]; then
             echo "  [!] ${pkg}@${ver}: ${COUNT} 个漏洞"
         fi
     done < requirements.txt
 fi
-
+# ...
 echo ""
 echo "检查完成"
 ```
@@ -284,19 +285,19 @@ echo "检查完成"
 ```bash
 #!/bin/bash
 # 生成项目SBOM并保存
-
+# ...
 OUTPUT_FILE="sbom-$(date +%Y%m%d).json"
 PROJECT_NAME=$(basename "$(pwd)")
-
+# ...
 echo "正在生成SBOM: ${OUTPUT_FILE}"
-
+# ...
 {
     echo "{"
     echo "  \"bomFormat\": \"JSON\","
     echo "  \"project\": \"${PROJECT_NAME}\","
     echo "  \"generated\": \"$(date -u '+%Y-%m-%dT%H:%M:%SZ')\","
     echo "  \"components\": ["
-    
+# ...
     FIRST=true
     if [ -f package.json ]; then
         cat package.json | jq -r '.dependencies // {} | to_entries[] | 
@@ -306,11 +307,11 @@ echo "正在生成SBOM: ${OUTPUT_FILE}"
                 echo "    $comp"
             done
     fi
-    
+# ...
     echo "  ]"
     echo "}"
 } > "$OUTPUT_FILE"
-
+# ...
 echo "SBOM已生成: ${OUTPUT_FILE}"
 echo "组件数量: $(jq '.components | length' "$OUTPUT_FILE")"
 ```
@@ -320,17 +321,17 @@ echo "组件数量: $(jq '.components | length' "$OUTPUT_FILE")"
 ```bash
 #!/bin/bash
 # 评估单个npm包是否安全引入
-
+# ...
 PACKAGE=$1
 VERSION=$2
-
+# ...
 if [ -z "$PACKAGE" ]; then
     echo "用法: $0 <package-name> [version]"
     exit 1
 fi
-
+# ...
 echo "=== 包安全评估: ${PACKAGE} ==="
-
+# ...
 # 1. 查询包信息
 echo ""
 echo "1. 包基本信息:"
@@ -340,7 +341,7 @@ curl -s "https://registry.npmjs.org/${PACKAGE}" | jq "{
     license: .versions[.\"dist-tags\".latest].license,
     deprecated: .versions[.\"dist-tags\".latest].deprecated
 }"
-
+# ...
 # 2. 查询漏洞
 echo ""
 echo "2. 漏洞检查:"
@@ -348,12 +349,12 @@ VER="${VERSION:-latest}"
 if [ "$VER" = "latest" ]; then
     VER=$(curl -s "https://registry.npmjs.org/${PACKAGE}" | jq -r '."dist-tags".latest')
 fi
-
+# ...
 curl -s -X POST "https://api.osv.dev/v1/query" \
     -H "Content-Type: application/json" \
     -d "{\"package\": {\"name\": \"${PACKAGE}\", \"ecosystem\": \"npm\"}, \"version\": \"${VER}\"}" | \
     jq '.vulns | if . then "发现 \(length) 个漏洞" else "未发现已知漏洞" end'
-
+# ...
 # 3. npm审计
 echo ""
 echo "3. npm审计:"
@@ -388,7 +389,7 @@ npm audit --package-name="$PACKAGE" 2>/dev/null || echo "(需要安装后审计)
 ```bash
 # 检查npm依赖漏洞
 npm audit --audit-level=moderate 2>/dev/null
-
+# ...
 # 检查pip依赖漏洞
 pip-audit -r requirements.txt 2>/dev/null
 ```
@@ -421,7 +422,7 @@ npx sbom-tool generate -p . -o sbom.json 2>/dev/null || \
 ### 漏洞严重级别参考
 
 | 级别 | CVSS范围 | 建议处理 |
-|:-----|:---------|:---------|
+|---:|---:|---:|
 | 严重 | 9.0-10.0 | 立即更新 |
 | 高危 | 7.0-8.9 | 本周更新 |
 | 中危 | 4.0-6.9 | 下次迭代更新 |
@@ -430,7 +431,7 @@ npx sbom-tool generate -p . -o sbom.json 2>/dev/null || \
 ### 支持的包生态(免费版)
 
 | 生态系统 | 包管理器 | SBOM生成 | 漏洞查询 |
-|:---------|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | npm | package.json | 支持 | 支持 |
 | PyPI | requirements.txt | 支持 | 支持 |
 | Go | go.mod | 不支持 | 不支持 |
@@ -449,15 +450,15 @@ npx sbom-tool generate -p . -o sbom.json 2>/dev/null || \
 safe_update() {
     local pkg=$1
     echo "安全更新: ${pkg}"
-    
+# ...
     # 1. 检查当前版本漏洞
     echo "检查当前版本..."
     npm audit --package-name="$pkg"
-    
+# ...
     # 2. 查询最新安全版本
     LATEST=$(npm view "$pkg" version 2>/dev/null)
     echo "最新版本: ${LATEST}"
-    
+# ...
     # 3. 检查最新版本漏洞
     echo "检查最新版本漏洞..."
     curl -s -X POST "https://api.osv.dev/v1/query" \
@@ -499,7 +500,7 @@ OSV匹配基于包名和版本号,可能存在误报。建议结合npm audit或p
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | curl | 命令行工具 | 必需 | 系统自带 |
 | jq | JSON处理工具 | 推荐 | `apt install jq` / `brew install jq` |
 | npm | 包管理器 | 按需 | nodejs.org 下载 |
@@ -516,9 +517,8 @@ OSV匹配基于包名和版本号,可能存在误报。建议结合npm audit或p
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

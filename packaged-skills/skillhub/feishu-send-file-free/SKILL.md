@@ -15,6 +15,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # feishu-send-file-free
 
@@ -22,11 +24,10 @@ homepage: "https://skillhub.cn"
 
 本免费版封装普通文件两步上传链路的基础调用方式。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 飞书发文件(免费)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -110,7 +111,7 @@ TOKEN=$(curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_
   -H "Content-Type: application/json" \
   -d '{"app_id":"<APP_ID>","app_secret":"<APP_SECRET>"}' \
   | python3 -c "import json,sys; print(json.load(sys.stdin)['tenant_access_token'])")
-
+# ...
 FILE_KEY=$(curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/files" \
   -H "Authorization: Bearer $TOKEN" \
   -F "file_type=stream" \
@@ -214,9 +215,8 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

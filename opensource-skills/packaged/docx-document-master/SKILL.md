@@ -19,6 +19,8 @@ tools:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "文档处理,工具,效率"
 ---
 # 文档处理大师
 
@@ -27,7 +29,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 文档创建 | 文档类型+大纲+样式要求 | 格式化.docx文件(含标题/段落/表格/图片) |
 | 文档编辑 | 现有docx+修改需求 | 编辑后docx+修订记录 |
 | 协作审阅 | 多人批注+修订 | 修订模式docx+批注+接受/拒绝记录 |
@@ -100,7 +102,7 @@ pricing_model: "per_use"
 ### 依赖项
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Python 3.8+ | 运行时 | 必需 | python-docx库执行环境 |
 | python-docx | Python库 | 必需 | `pip install python-docx` |
 | LLM API | API | 可选 | 由Agent内置LLM提供内容生成 |
@@ -110,7 +112,7 @@ pricing_model: "per_use"
 ### 国内镜像加速(替代海外PyPI)
 
 | 海外源 | 国内镜像 | 说明 |
-|:-------|:---------|:-----|
+|---:|---:|---:|
 | pypi.org | 清华大学pypi | `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-docx` |
 | pypi.org | 阿里云pypi | `pip install -i https://mirrors.aliyun.com/pypi/simple python-docx` |
 
@@ -129,7 +131,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | input | string | 是 | 文档处理大师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -146,43 +148,43 @@ pricing_model: "per_use"
 from docx import Document
 from docx.shared import Pt, Inches, Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-
+# ...
 doc = Document()
-
+# ...
 # 样式设置
 style = doc.styles['Normal']
 style.font.name = '宋体'
 style.font.size = Pt(11)
 style.paragraph_format.line_spacing = 1.5
-
+# ...
 # 封面
 title = doc.add_heading('TaskFlow项目管理工具\n产品方案', level=0)
 title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
+# ...
 doc.add_paragraph('\n\n\n')
 p = doc.add_paragraph('编制:产品部')
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p = doc.add_paragraph('日期:2024年7月')
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
+# ...
 doc.add_page_break()
-
+# ...
 # 目录
 doc.add_heading('目录', level=1)
 doc.add_paragraph('(自动生成目录)')
-
+# ...
 doc.add_page_break()
-
+# ...
 # 正文
 doc.add_heading('1. 项目背景', level=1)
 doc.add_paragraph('当前中小企业项目管理面临以下痛点...')
 doc.add_heading('1.1 行业现状', level=2)
 doc.add_paragraph('根据艾瑞咨询2024年报告...')
-
+# ...
 doc.add_heading('2. 产品概述', level=1)
 doc.add_heading('2.1 产品定位', level=2)
 doc.add_paragraph('TaskFlow是一款面向10-50人团队的...')
-
+# ...
 doc.add_heading('3. 功能设计', level=1)
 # 表格
 table = doc.add_table(rows=4, cols=3)
@@ -199,14 +201,14 @@ for i, (m, d, p) in enumerate(features):
     table.rows[i+1].cells[0].text = m
     table.rows[i+1].cells[1].text = d
     table.rows[i+1].cells[2].text = p
-
+# ...
 # 页眉页脚
 section = doc.sections[0]
 footer = section.footer
 footer_p = footer.paragraphs[0]
 footer_p.text = 'TaskFlow产品方案 | 机密'
 footer_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
+# ...
 doc.save('output/taskflow-proposal/document.docx')
 print('文档已生成')
 ```
@@ -226,18 +228,18 @@ print('文档已生成')
 import pandas as pd
 from docx import Document
 import os
-
+# ...
 # 读取数据源
 df = pd.read_csv('attendees.csv')
-
+# ...
 # 读取模板
 template = Document('invitation_template.docx')
-
+# ...
 os.makedirs('output/invitations/merged', exist_ok=True)
-
+# ...
 for idx, row in df.iterrows():
     doc = Document('invitation_template.docx')
-    
+# ...
     # 替换占位符
     for paragraph in doc.paragraphs:
         if '{{name}}' in paragraph.text:
@@ -246,7 +248,7 @@ for idx, row in df.iterrows():
             paragraph.text = paragraph.text.replace('{{company}}', row['company'])
         if '{{date}}' in paragraph.text:
             paragraph.text = paragraph.text.replace('{{date}}', row['date'])
-    
+# ...
     # 同样处理表格中的占位符
     for table in doc.tables:
         for row in table.rows:
@@ -254,10 +256,10 @@ for idx, row in df.iterrows():
                 for paragraph in cell.paragraphs:
                     if '{{name}}' in paragraph.text:
                         paragraph.text = paragraph.text.replace('{{name}}', row['name'])
-    
+# ...
     filename = f"output/invitations/merged/invitation_{row['name']}.docx"
     doc.save(filename)
-
+# ...
 print(f'已生成{len(df)}份邀请函')
 ```
 
@@ -273,7 +275,7 @@ output/invitations/merged/
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:------|------:|:------|
 | python-docx未安装 | 环境未配置 | `pip install python-docx`,提供国内镜像加速命令 |
 | 文档打开失败 | 文件损坏/格式不支持 | 检查文件格式(.doc/.docx),建议另存为.docx |
 | 中文乱码 | 字体不支持中文 | 设置中文字体:宋体/黑体/微软雅黑,指定`font.name = '宋体'` |
@@ -307,9 +309,9 @@ from docx.shared import Pt, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
-
+# ...
 doc = Document()
-
+# ...
 # 页面设置
 section = doc.sections[0]
 section.page_width = Cm(21)
@@ -318,21 +320,21 @@ section.top_margin = Cm(2.54)
 section.bottom_margin = Cm(2.54)
 section.left_margin = Cm(3.18)
 section.right_margin = Cm(3.18)
-
+# ...
 # 样式设置
 style = doc.styles['Normal']
 style.font.name = '宋体'
 style.font.size = Pt(12)
 style.element.rPr.rFonts.set(qn('w:eastAsia'), '宋体')
 style.paragraph_format.line_spacing = 1.5
-
+# ...
 # 页眉(合同编号)
 header = section.header
 header_p = header.paragraphs[0]
 header_p.text = '合同编号: DEV-2024-0815'
 header_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 header_p.runs[0].font.size = Pt(9)
-
+# ...
 # 封面
 title = doc.add_heading('软件定制开发服务合同', level=0)
 title.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -340,24 +342,24 @@ for run in title.runs:
     run.font.name = '黑体'
     run.element.rPr.rFonts.set(qn('w:eastAsia'), '黑体')
     run.font.size = Pt(22)
-
+# ...
 doc.add_paragraph('\n\n\n\n')
-
+# ...
 # 甲乙方信息
 p = doc.add_paragraph()
 p.add_run('甲方(委托方): ').bold = True
 p.add_run('____________________')
-
+# ...
 p = doc.add_paragraph()
 p.add_run('乙方(开发方): ').bold = True
 p.add_run('____________________')
-
+# ...
 p = doc.add_paragraph()
 p.add_run('签订日期: ').bold = True
 p.add_run('2024年___月___日')
-
+# ...
 doc.add_page_break()
-
+# ...
 # 正文条款
 def add_clause(num, title_text, content):
     h = doc.add_heading(f'{num}. {title_text}', level=1)
@@ -370,32 +372,32 @@ def add_clause(num, title_text, content):
             doc.add_paragraph(f'{i}. {item}')
     else:
         doc.add_paragraph(content)
-
+# ...
 add_clause('一', '服务内容', [
     '乙方根据甲方需求，定制开发"企业管理系统"，包含以下模块: 用户管理、权限管理、数据看板、报表导出',
     '开发周期为90个工作日，自合同签订之日起计算',
     '交付物包括: 源代码、技术文档、用户手册、部署脚本',
 ])
-
+# ...
 add_clause('二', '交付标准', [
     '功能完整性: 完成需求文档中100%功能点',
     '性能标准: 页面加载<2秒，API响应<500ms，支持100并发',
     '测试通过率: 单元测试覆盖率>80%，UAT测试通过率>95%',
 ])
-
+# ...
 # 付款方式(含表格)
 h = doc.add_heading('三. 付款方式', level=1)
 for run in h.runs:
     run.font.name = '黑体'
     run.element.rPr.rFonts.set(qn('w:eastAsia'), '黑体')
     run.font.size = Pt(14)
-
+# ...
 doc.add_paragraph('本项目总金额为人民币贰拾万元整(¥200,000)，按以下节点支付:')
-
+# ...
 table = doc.add_table(rows=5, cols=4)
 table.style = 'Table Grid'
 table.alignment = WD_TABLE_ALIGNMENT.CENTER
-
+# ...
 headers = ['付款节点', '比例', '金额(元)', '触发条件']
 for i, h in enumerate(headers):
     cell = table.rows[0].cells[i]
@@ -404,7 +406,7 @@ for i, h in enumerate(headers):
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         for run in p.runs:
             run.bold = True
-
+# ...
 data = [
     ('首付款', '30%', '60,000', '合同签订后5个工作日'),
     ('里程碑1', '20%', '40,000', '需求确认+原型设计完成'),
@@ -414,38 +416,38 @@ data = [
 for i, row in enumerate(data):
     for j, val in enumerate(row):
         table.rows[i+1].cells[j].text = val
-
+# ...
 add_clause('四', '知识产权', [
     '本项目开发成果的知识产权归甲方所有',
     '乙方保证交付软件不含任何第三方侵权代码',
     '乙方有权在不涉及甲方商业秘密的前提下使用通用技术框架',
 ])
-
+# ...
 add_clause('五', '保密条款', [
     '双方对在合作过程中获知的对方商业秘密负有保密义务',
     '保密期限为合同终止后3年',
     '违反保密义务的，违约方应赔偿守约方全部损失',
 ])
-
+# ...
 add_clause('六', '违约责任', [
     '乙方逾期交付的，每逾期1日按合同总额0.5%支付违约金',
     '甲方逾期付款的，每逾期1日按应付金额0.5%支付滞纳金',
     '任何一方严重违约的，守约方有权解除合同并要求赔偿',
 ])
-
+# ...
 # 签署页
 doc.add_page_break()
 doc.add_paragraph('\n\n\n')
-
+# ...
 p = doc.add_paragraph()
 p.add_run('甲方(盖章): ').bold = True
 doc.add_paragraph('\n法定代表人:\n日期:      年    月    日')
-
+# ...
 doc.add_paragraph('\n\n')
 p = doc.add_paragraph()
 p.add_run('乙方(盖章): ').bold = True
 doc.add_paragraph('\n法定代表人:\n日期:      年    月    日')
-
+# ...
 doc.save('output/software-contract/document.docx')
 print('合同文档已生成')
 ```
@@ -453,7 +455,7 @@ print('合同文档已生成')
 ```markdown
 # output/software-contract/outline.md
 # 软件定制开发服务合同 - 大纲
-
+# ...
 ## 文档结构
 1. 封面(标题+甲乙方信息+日期)
 2. 一. 服务内容(3条)
@@ -463,7 +465,7 @@ print('合同文档已生成')
 6. 五. 保密条款(3条)
 7. 六. 违约责任(3条)
 8. 签署页(甲乙方盖章)
-
+# ...
 ## 样式规范
 - 标题: 黑体, 14pt, 加粗
 - 正文: 宋体, 12pt, 1.5倍行距
@@ -497,9 +499,9 @@ from docx.shared import Pt, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
-
+# ...
 doc = Document()
-
+# ...
 # 页面设置
 section = doc.sections[0]
 section.page_width = Cm(21)
@@ -508,14 +510,14 @@ section.top_margin = Cm(2.5)
 section.bottom_margin = Cm(2.5)
 section.left_margin = Cm(3)
 section.right_margin = Cm(2.5)
-
+# ...
 def set_font(run, font_name, size, bold=False):
     run.font.name = font_name
     run.font.size = Pt(size)
     run.bold = bold
     r = run._element
     r.rPr.rFonts.set(qn('w:eastAsia'), font_name)
-
+# ...
 def add_heading_custom(doc, text, level):
     """自定义标题样式"""
     p = doc.add_paragraph()
@@ -534,7 +536,7 @@ def add_heading_custom(doc, text, level):
         p.paragraph_format.space_before = Pt(12)
         p.paragraph_format.space_after = Pt(6)
     return p
-
+# ...
 def add_body_paragraph(doc, text):
     """正文段落: 宋体小四，首行缩进2字符，1.5倍行距"""
     p = doc.add_paragraph()
@@ -544,30 +546,30 @@ def add_body_paragraph(doc, text):
     p.paragraph_format.line_spacing = 1.5
     p.paragraph_format.space_after = Pt(0)
     return p
-
+# ...
 # ========== 封面 ==========
 for _ in range(4):
     doc.add_paragraph()
-
+# ...
 p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 run = p.add_run('XX大学')
 set_font(run, '黑体', 26, True)
-
+# ...
 p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 run = p.add_run('硕士学位论文')
 set_font(run, '黑体', 22, True)
-
+# ...
 doc.add_paragraph('\n\n\n')
-
+# ...
 p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 run = p.add_run('基于深度学习的文本分类研究')
 set_font(run, '黑体', 18, True)
-
+# ...
 doc.add_paragraph('\n\n\n\n')
-
+# ...
 info = [
     ('研究生:', '张三'),
     ('学号:', '2023XXXXXX'),
@@ -580,46 +582,46 @@ for label, value in info:
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(f'{label} {value}')
     set_font(run, '宋体', 14)
-
+# ...
 doc.add_page_break()
-
+# ...
 # ========== 目录(占位符) ==========
 p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 run = p.add_run('目  录')
 set_font(run, '黑体', 16, True)
-
+# ...
 doc.add_paragraph('（请在Word中右键更新目录域）')
 doc.add_page_break()
-
+# ...
 # ========== 摘要 ==========
 add_heading_custom(doc, '摘  要', 1)
 add_body_paragraph(doc, '随着互联网信息的爆炸式增长，文本分类作为自然语言处理的基础任务，具有重要的研究价值与应用意义。本文针对传统文本分类方法在特征提取与语义理解方面的不足，提出了一种基于深度学习的文本分类模型...')
 add_body_paragraph(doc, '本文的主要贡献包括: (1) 提出了一种融合注意力机制的BERT文本分类模型；(2) 设计了多任务学习框架，联合训练主题分类与情感分类；(3) 在3个公开数据集上验证了模型的有效性，F1值较基线提升5.2%。')
-
+# ...
 p = doc.add_paragraph()
 run = p.add_run('关键词: ')
 set_font(run, '黑体', 12, True)
 run = p.add_run('深度学习；文本分类；BERT；注意力机制；多任务学习')
 set_font(run, '宋体', 12)
-
+# ...
 doc.add_page_break()
-
+# ...
 # ========== 正文 ==========
 add_heading_custom(doc, '第一章 绪论', 1)
-
+# ...
 add_heading_custom(doc, '1.1 研究背景与意义', 2)
 add_body_paragraph(doc, '文本分类是自然语言处理领域的基础任务之一，旨在将文本按照预定义的类别进行归类。随着深度学习技术的发展，基于神经网络的文本分类方法逐渐取代了传统的机器学习方法...')
-
+# ...
 add_heading_custom(doc, '1.1.1 研究背景', 3)
 add_body_paragraph(doc, '互联网的快速发展产生了海量的文本数据，如何高效地组织、管理和检索这些文本数据成为一个重要挑战。文本分类作为解决这一问题的核心技术...')
-
+# ...
 add_heading_custom(doc, '1.2 国内外研究现状', 2)
 add_body_paragraph(doc, '文本分类方法经历了从基于规则的方法，到传统机器学习方法，再到深度学习方法的演进过程...')
-
+# ...
 add_heading_custom(doc, '1.3 本文研究内容', 2)
 add_body_paragraph(doc, '本文围绕基于深度学习的文本分类展开研究，主要内容包括以下几个方面:')
-
+# ...
 # 列表
 items = [
     '研究基于BERT的文本分类模型，分析预训练语言模型在文本分类任务中的优势',
@@ -632,10 +634,10 @@ for i, item in enumerate(items, 1):
     set_font(run, '宋体', 12)
     p.paragraph_format.first_line_indent = Cm(0.74)
     p.paragraph_format.line_spacing = 1.5
-
+# ...
 # ========== 参考文献 ==========
 add_heading_custom(doc, '参考文献', 1)
-
+# ...
 references = [
     '[1] Devlin J, Chang M W, Lee K, et al. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding[C]. NAACL-HLT, 2019: 4171-4186.',
     '[2] Vaswani A, Shazeer N, Parmar N, et al. Attention Is All You Need[C]. NIPS, 2017: 5998-6008.',
@@ -647,14 +649,14 @@ for ref in references:
     set_font(run, '宋体', 10.5)  # 五号
     p.paragraph_format.line_spacing = 1.5
     p.paragraph_format.hanging_indent = Cm(0.74)
-
+# ...
 # ========== 页眉页脚 ==========
 section = doc.sections[0]
 # 页脚: 页码居中
 footer = section.footer
 footer_p = footer.paragraphs[0]
 footer_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
+# ...
 # 添加页码域
 run = footer_p.add_run()
 fldChar1 = OxmlElement('w:fldChar')
@@ -668,7 +670,7 @@ run._r.append(fldChar1)
 run._r.append(instrText)
 run._r.append(fldChar2)
 set_font(run, '宋体', 10.5)
-
+# ...
 doc.save('output/thesis-formatting/document.docx')
 print('论文文档已生成')
 ```
@@ -696,11 +698,11 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 import os
-
+# ...
 # 读取数据
 df = pd.read_csv('trainees.csv')
 os.makedirs('output/certificates/merged', exist_ok=True)
-
+# ...
 def set_font(run, font_name, size, bold=False, color=None):
     run.font.name = font_name
     run.font.size = Pt(size)
@@ -708,7 +710,7 @@ def set_font(run, font_name, size, bold=False, color=None):
     run._element.rPr.rFonts.set(qn('w:eastAsia'), font_name)
     if color:
         run.font.color.rgb = color
-
+# ...
 def add_page_border(doc):
     """添加页面边框装饰"""
     sectPr = doc.sections[0]._sectPr
@@ -722,10 +724,10 @@ def add_page_border(doc):
         border.set(qn('w:color'), '1F497D')
         pgBorders.append(border)
     sectPr.append(pgBorders)
-
+# ...
 for idx, row in df.iterrows():
     doc = Document()
-    
+# ...
     # 页面设置(横向)
     section = doc.sections[0]
     section.page_width = Cm(29.7)
@@ -734,41 +736,41 @@ for idx, row in df.iterrows():
     section.bottom_margin = Cm(3)
     section.left_margin = Cm(4)
     section.right_margin = Cm(4)
-    
+# ...
     # 添加边框
     add_page_border(doc)
-    
+# ...
     # 标题
     doc.add_paragraph('\n')
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('结 业 证 书')
     set_font(run, '黑体', 36, True, RGBColor(0x1F, 0x49, 0x7D))
-    
+# ...
     doc.add_paragraph('\n\n')
-    
+# ...
     # 证书编号
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     cert_no = f'证书编号: CERT-2024-{idx+1:04d}'
     run = p.add_run(cert_no)
     set_font(run, '宋体', 10.5)
-    
+# ...
     doc.add_paragraph('\n')
-    
+# ...
     # 正文
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(row['name'])
     set_font(run, '黑体', 18, True)
-    
+# ...
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('同学: ')
     set_font(run, '宋体', 14)
-    
+# ...
     doc.add_paragraph('\n')
-    
+# ...
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('于')
@@ -777,39 +779,39 @@ for idx, row in df.iterrows():
     set_font(run, '宋体', 14)
     run = p.add_run('参加')
     set_font(run, '宋体', 14)
-    
+# ...
     doc.add_paragraph('\n')
-    
+# ...
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(f'《{row["course"]}》')
     set_font(run, '黑体', 16, True, RGBColor(0x1F, 0x49, 0x7D))
-    
+# ...
     doc.add_paragraph('\n')
-    
+# ...
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('培训课程，完成全部学习内容，考试成绩: ')
     set_font(run, '宋体', 14)
-    
+# ...
     # 成绩+优秀标注
     score = int(row['score'])
     run = p.add_run(f'{score}分')
     set_font(run, '黑体', 14, True)
-    
+# ...
     if score >= 90:
         run = p.add_run(' (优秀)')
         set_font(run, '黑体', 14, True, RGBColor(0xC0, 0x00, 0x00))
-    
+# ...
     doc.add_paragraph('\n')
-    
+# ...
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('特发此证，以资证明。')
     set_font(run, '宋体', 14)
-    
+# ...
     doc.add_paragraph('\n\n\n')
-    
+# ...
     # 签发信息
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
@@ -817,11 +819,11 @@ for idx, row in df.iterrows():
     set_font(run, '宋体', 14)
     run = p.add_run(f'{row["date"]}')
     set_font(run, '宋体', 14)
-    
+# ...
     # 保存
     filename = f'output/certificates/merged/certificate_{idx+1:03d}_{row["name"]}.docx'
     doc.save(filename)
-
+# ...
 print(f'已生成{len(df)}份结业证书')
 ```
 
@@ -855,18 +857,18 @@ from docx.shared import Pt
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 from datetime import datetime
-
+# ...
 doc = Document('contract_draft.docx')
-
+# ...
 REVIEWER = '法务审阅'
 DATE = datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
-
+# ...
 def enable_track_changes(doc):
     """开启修订跟踪模式"""
     settings = doc.settings.element
     track_changes = OxmlElement('w:trackChanges')
     settings.append(track_changes)
-
+# ...
 def add_revision_replace(paragraph, old_text, new_text, author, date):
     """添加替换修订(删除旧文本+插入新文本)"""
     for run in paragraph.runs:
@@ -875,10 +877,10 @@ def add_revision_replace(paragraph, old_text, new_text, author, date):
             idx = run.text.index(old_text)
             before = run.text[:idx]
             after = run.text[idx + len(old_text):]
-            
+# ...
             # 清空当前run
             run.text = before
-            
+# ...
             # 添加删除标记
             del_run = paragraph.add_run(old_text)
             del_rpr = OxmlElement('w:rPr')
@@ -889,7 +891,7 @@ def add_revision_replace(paragraph, old_text, new_text, author, date):
             del_run._element.insert(0, del_mark)
             del_run.font.strike = True
             del_run.font.color.rgb = None
-            
+# ...
             # 添加插入标记
             ins_run = paragraph.add_run(new_text)
             ins_mark = OxmlElement('w:ins')
@@ -898,57 +900,57 @@ def add_revision_replace(paragraph, old_text, new_text, author, date):
             ins_mark.set(qn('w:date'), date)
             ins_run._element.insert(0, ins_mark)
             ins_run.bold = True
-            
+# ...
             # 添加剩余文本
             if after:
                 paragraph.add_run(after)
             break
-
+# ...
 def add_comment(paragraph, comment_text, author, date, comment_id):
     """添加批注"""
     # 创建批注引用范围
     comment_range_start = OxmlElement('w:commentRangeStart')
     comment_range_start.set(qn('w:id'), str(comment_id))
-    
+# ...
     comment_range_end = OxmlElement('w:commentRangeEnd')
     comment_range_end.set(qn('w:id'), str(comment_id))
-    
+# ...
     comment_ref = OxmlElement('w:commentReference')
     comment_ref.set(qn('w:id'), str(comment_id))
     ref_run = paragraph.add_run()
     ref_run._element.append(comment_ref)
-    
+# ...
     # 插入到段落开头
     paragraph._element.insert(0, comment_range_start)
     paragraph._element.append(comment_range_end)
-    
+# ...
     # 创建批注内容(在comments部分)
     comments_part = doc.part._comments_part if hasattr(doc.part, '_comments_part') else None
     # 简化: 记录到revisions.md
     return comment_text
-
+# ...
 # 开启修订跟踪
 enable_track_changes(doc)
-
+# ...
 # 遍历段落进行修改
 for i, para in enumerate(doc.paragraphs):
     text = para.text
-    
+# ...
     # 修改1: 合同金额
     if '合同金额: 15万元' in text:
         add_revision_replace(para, '15万元', '20万元', REVIEWER, DATE)
         print(f'段落{i}: 合同金额 15万→20万 (已标记修订)')
-    
+# ...
     # 修改2: 交付周期批注
     if '交付周期30天' in text:
         comment = add_comment(para, '建议改为45天，含测试时间', REVIEWER, DATE, 1)
         print(f'段落{i}: 交付周期 (已添加批注: {comment})')
-    
+# ...
     # 修改3: 保密期限
     if '保密期限' in text and '2年' in text:
         add_revision_replace(para, '2年', '3年', REVIEWER, DATE)
         print(f'段落{i}: 保密期限 2年→3年 (已标记修订)')
-
+# ...
 doc.save('output/contract-review/document_revised.docx')
 print('修订文档已保存')
 ```
@@ -956,35 +958,35 @@ print('修订文档已保存')
 ```markdown
 # output/contract-review/revisions.md
 # 修订记录
-
+# ...
 ## 修订概览
 - 审阅人: 法务审阅
 - 审阅日期: 2024-07-20
 - 修订数: 3处(2处文本替换+1处批注)
-
+# ...
 ## 修订详情
-
+# ...
 ### 修订1: 合同金额调整
 - 位置: 第X条 付款方式
 - 原文: 合同金额: ~~15万元~~
 - 修订: 合同金额: **20万元**
 - 修订人: 法务审阅
 - 修订原因: 根据最新报价调整
-
+# ...
 ### 批注1: 交付周期建议
 - 位置: 第3条 交付周期
 - 原文: 交付周期30天
 - 批注内容: 建议改为45天，含测试时间
 - 批注人: 法务审阅
 - 状态: 待回复
-
+# ...
 ### 修订2: 保密期限延长
 - 位置: 第5条 保密条款
 - 原文: 保密期限~~2年~~
 - 修订: 保密期限**3年**
 - 修订人: 法务审阅
 - 修订原因: 涉及核心技术，建议延长保密期
-
+# ...
 ## 后续操作
 1. 作者审阅修订，接受/拒绝
 2. 回复批注
@@ -1010,9 +1012,9 @@ from docx import Document
 from docx.shared import Pt, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
-
+# ...
 doc = Document()
-
+# ...
 def set_font(run, name, size, bold=False, color=None):
     run.font.name = name
     run.font.size = Pt(size)
@@ -1020,7 +1022,7 @@ def set_font(run, name, size, bold=False, color=None):
     run._element.rPr.rFonts.set(qn('w:eastAsia'), name)
     if color:
         run.font.color.rgb = color
-
+# ...
 def add_code_block(doc, code, language='json'):
     """添加代码块(等宽字体+灰色底纹)"""
     p = doc.add_paragraph()
@@ -1039,7 +1041,7 @@ def add_code_block(doc, code, language='json'):
     shd.set(qn('w:color'), 'auto')
     shd.set(qn('w:fill'), 'F5F5F5')
     pPr.append(shd)
-
+# ...
 def add_param_table(doc, params):
     """添加参数表格"""
     table = doc.add_table(rows=len(params)+1, cols=4)
@@ -1054,30 +1056,30 @@ def add_param_table(doc, params):
     for i, param in enumerate(params):
         for j, val in enumerate(param):
             table.rows[i+1].cells[j].text = val
-
+# ...
 # 标题
 title = doc.add_heading('TaskFlow API v2.0 接口文档', level=0)
 title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
+# ...
 # 概述
 doc.add_heading('1. 概述', level=1)
 p = doc.add_paragraph()
 set_font(p.add_run('TaskFlow API v2.0 提供项目管理功能的RESTful接口，支持任务管理、项目看板、甘特图等核心功能。'), '宋体', 11)
-
+# ...
 # 认证方式
 doc.add_heading('2. 认证方式', level=1)
 p = doc.add_paragraph()
 set_font(p.add_run('所有接口需在Header中携带API Token:'), '宋体', 11)
 add_code_block(doc, 'Authorization: Bearer <your_api_token>')
-
+# ...
 # 接口1: 创建任务
 doc.add_heading('3. 接口列表', level=1)
 doc.add_heading('3.1 创建任务', level=2)
-
+# ...
 p = doc.add_paragraph()
 set_font(p.add_run('POST '), 'Consolas', 11, True, RGBColor(0x00, 0x80, 0x00))
 set_font(p.add_run('/api/v2/tasks'), 'Consolas', 11)
-
+# ...
 doc.add_heading('请求参数', level=3)
 add_param_table(doc, [
     ['title', 'string', '是', '任务标题(最长200字符)'],
@@ -1086,7 +1088,7 @@ add_param_table(doc, [
     ['priority', 'integer', '否', '优先级(1-5)，默认3'],
     ['due_date', 'string', '否', '截止日期(YYYY-MM-DD)'],
 ])
-
+# ...
 doc.add_heading('请求示例', level=3)
 add_code_block(doc, '''curl -X POST https://api.taskflow.com/v2/tasks \\
   -H "Authorization: Bearer abc123" \\
@@ -1098,7 +1100,7 @@ add_code_block(doc, '''curl -X POST https://api.taskflow.com/v2/tasks \\
     "priority": 4,
     "due_date": "2024-08-15"
   }''', 'bash')
-
+# ...
 doc.add_heading('响应示例', level=3)
 add_code_block(doc, '''{
   "code": 200,
@@ -1114,20 +1116,20 @@ add_code_block(doc, '''{
     "created_at": "2024-07-20T10:30:00Z"
   }
 }''', 'json')
-
+# ...
 # 接口2: 获取任务列表
 doc.add_heading('3.2 获取任务列表', level=2)
 p = doc.add_paragraph()
 set_font(p.add_run('GET '), 'Consolas', 11, True, RGBColor(0x00, 0x80, 0x00))
 set_font(p.add_run('/api/v2/tasks?project_id={project_id}&status={status}&page={page}'), 'Consolas', 11)
-
+# ...
 add_param_table(doc, [
     ['project_id', 'integer', '是', '项目ID'],
     ['status', 'string', '否', '任务状态(todo/doing/done)'],
     ['page', 'integer', '否', '页码，默认1'],
     ['per_page', 'integer', '否', '每页数量，默认20'],
 ])
-
+# ...
 # 错误码
 doc.add_heading('4. 错误码', level=1)
 table = doc.add_table(rows=6, cols=3)
@@ -1143,7 +1145,7 @@ errors = [
 for i, row in enumerate(errors):
     for j, val in enumerate(row):
         table.rows[i].cells[j].text = val
-
+# ...
 # 更新日志
 doc.add_heading('5. 更新日志', level=1)
 table = doc.add_table(rows=4, cols=3)
@@ -1157,7 +1159,7 @@ logs = [
 for i, row in enumerate(logs):
     for j, val in enumerate(row):
         table.rows[i].cells[j].text = val
-
+# ...
 doc.save('output/api-doc/document.docx')
 print('API文档已生成')
 ```

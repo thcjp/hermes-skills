@@ -47,6 +47,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # AI 工作工具（专业版）
 
@@ -57,7 +59,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 批量接单 | 多任务批量提案接单 | 并发管理 |
 | 团队派单 | 按技能智能分配成员 | 负载均衡 |
 | 收益看板 | 收益、成本、ROI | 集中核算 |
@@ -97,7 +99,7 @@ pricing_model: "per_use"
 ```bash
 # 批量提案（专业版）
 {baseDir}/（请参考skill目录中的脚本文件） propose-batch --tasks tasks.json
-
+# ...
 # 智能派单给团队成员
 {baseDir}/（请参考skill目录中的脚本文件） dispatch --team team.json --strategy skill-match
 ```
@@ -133,7 +135,7 @@ TOP 技能: backend（$1,800）
 ```bash
 # 发起争议（专业版）
 {baseDir}/（请参考skill目录中的脚本文件） dispute --task TASK-001 --reason "交付方失联"
-
+# ...
 # 缴纳保证金
 {baseDir}/（请参考skill目录中的脚本文件） deposit --amount 100 --currency USDC
 ```
@@ -159,7 +161,6 @@ TOP 技能: backend（$1,800）
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 团队与派单配置（`work-team.json`）：
@@ -184,7 +185,7 @@ TOP 技能: backend（$1,800）
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 任务格式 | 相同 | 相同（可批量） |
 | 接单 | 单任务 | 批量/派单 |
 | 收益 | 个人查看 | 团队看板 |
@@ -221,7 +222,7 @@ def dispatch(task, team):
     # 负载均衡：选当前负载最低的
     candidates.sort(key=lambda m: m["current_load"] / m["capacity"])
     return candidates[0]
-
+# ...
 def match_skills(required, have):
     return set(required) & set(have)  # 有交集即可
 ```
@@ -241,7 +242,7 @@ def match_skills(required, have):
   固定分成: 按约定比例（如 60/40）
   贡献分成: 按完成任务数/质量加权
   角色分成: 开发/测试/PM 按角色分
-
+# ...
 多签分配流程:
   1. 任务结算 USDC 进多签钱包
   2. 按分成规则计算各成员份额
@@ -255,11 +256,11 @@ def match_skills(required, have):
 ```bash
 # 缴纳保证金
 {baseDir}/（请参考skill目录中的脚本文件） deposit --amount 100 --currency USDC
-
+# ...
 # 发起争议
 {baseDir}/（请参考skill目录中的脚本文件） dispute --task TASK-001 \
   --reason "交付方失联" --evidence ./chat-log.txt
-
+# ...
 # 查看仲裁进度
 {baseDir}/（请参考skill目录中的脚本文件） arbitration --task TASK-001
 ```
@@ -271,7 +272,7 @@ def match_skills(required, have):
   3. 仲裁方介入调查
   4. 裁决: 胜诉方获保证金 / 各自承担
   5. 信誉调整 + 留痕
-
+# ...
 仲裁原则:
   - 证据为王（聊天记录/交付物）
   - 按约定 SLA 判定
@@ -295,7 +296,7 @@ def match_skills(required, have):
   各技能领域收益
   ROI（收益/成本）
   结算周期与坏账率
-
+# ...
 成本项:
   gas 费
   算力/云服务
@@ -321,7 +322,7 @@ def match_skills(required, have):
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | curl | 命令行工具 | 必需 | 系统包管理器 |
 | Python | 运行时 | 看板脚本必需 | python.org |
 | EVM 钱包 | 签名结算 | 必需 | 多签钱包推荐 |
@@ -339,9 +340,8 @@ def match_skills(required, have):
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

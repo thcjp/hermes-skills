@@ -31,16 +31,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Who Is Actor
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Git repository actor identification skill | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Who Is ActorGit仓库参与者识别 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -53,7 +58,7 @@ pricing_model: "per_use"
 - When users want to understand the visible-engagement distribution across the repository as a starting point for conversation, **not** as a verdict on individuals
 - When users need a structured, data-driven artifact to facilitate retrospective discussions about workflow
 
-### 适用场景
+### 适用场景(补充)
 - Performance reviews, calibration, ranking, hiring, firing, layoffs, compensation, or any HR action
 - Producing rankings or judgments of individuals' worth, intelligence, or commitment
 - Surveillance of specific employees without their knowledge or consent
@@ -70,7 +75,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | who-is-actor处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -129,9 +134,8 @@ pricing_model: "per_use"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -144,7 +148,7 @@ pricing_model: "per_use"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -153,7 +157,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -171,7 +174,7 @@ You don't need to memorize any commands or parameters — simply describe what y
 💬 "Show aggregate commit-cadence and churn signals for /path/to/my-project since 2024-01-01"
 💬 "What does the commit-time distribution look like on branch main in /path/to/my-project?"
 💬 "Is there a bus-factor risk in /path/to/my-project?"
-
+# ...
 ```
 
 ### 中文
@@ -181,7 +184,7 @@ You don't need to memorize any commands or parameters — simply describe what y
 💬 "从 2024 年 1 月开始，分析 main 分支的提交节奏分布"
 💬 "看看这个仓库有没有巴士因子风险"
 💬 "统计 /path/to/my-project 中提交消息的约定式合规率"
-
+# ...
 ```
 
 ### 日本語
@@ -224,17 +227,10 @@ You don't need to memorize any commands or parameters — simply describe what y
 ### Q1: 如何开始使用Who Is Actor？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Who Is Actor有什么限制？
-A: 
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

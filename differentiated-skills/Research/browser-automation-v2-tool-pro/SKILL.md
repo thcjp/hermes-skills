@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 > **批量URL+并发锁+Cloudflare绕过+截图PDF+企业集成。完整工具链覆盖企业级场景。**
 
@@ -30,7 +32,7 @@ pricing_model: "monthly"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 单页面操作 | 支持 | 支持 |
 | 批量URL处理 | 不支持 | 支持（并发模式） |
 | 并发锁机制 | 不支持 | 支持（防profile冲突） |
@@ -54,15 +56,11 @@ pricing_model: "monthly"
 
 ### 2. 并发锁机制（防profile冲突）
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供并发锁机制（防profile冲突）所需的指令和必要参数。
 **处理**: 解析并发锁机制（防profile冲突）的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回并发锁机制（防profile冲突）的响应数据,包含状态码、结果和日志。
 
 ### 3. Cloudflare自动绕过
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供Cloudflare自动绕过所需的指令和必要参数。
 **处理**: 解析Cloudflare自动绕过的输入参数,完成核心逻辑,返回结构化响应。
@@ -70,15 +68,11 @@ pricing_model: "monthly"
 
 ### 4. 页面截图与PDF导出
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供页面截图与PDF导出所需的指令和必要参数。
 **处理**: 解析页面截图与PDF导出的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回页面截图与PDF导出的响应数据,包含状态码、结果和日志。
 
 ### 5. 复杂表单填写
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供复杂表单填写所需的指令和必要参数。
 **处理**: 解析复杂表单填写的输入参数,完成核心逻辑,返回结构化响应。
@@ -87,7 +81,7 @@ pricing_model: "monthly"
 ### 6. 结构化数据提取
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 浏览器自动化(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -95,7 +89,7 @@ pricing_model: "monthly"
 ```python
 class DataExtractor:
     """结构化数据提取器（专业版）"""
-
+# ...
     def extract_by_css(self, url, selector, attribute=None):
         """CSS选择器提取"""
         cmd = [
@@ -107,13 +101,13 @@ class DataExtractor:
             cmd.extend(["--attribute", attribute])
         result = subprocess.run(cmd, capture_output=True, text=True)
         return json.loads(result.stdout) if result.returncode == 0 else []
-
+# ...
     def extract_by_xpath(self, url, xpath):
         """XPath提取"""
         cmd = ["node", "extract-data.js", url, "--method", "xpath", "--selector", xpath]
         result = subprocess.run(cmd, capture_output=True, text=True)
         return json.loads(result.stdout) if result.returncode == 0 else []
-
+# ...
     def extract_table(self, url, table_selector="table"):
         """提取表格数据"""
         rows = self.extract_by_css(url, f"{table_selector} tr")
@@ -122,7 +116,7 @@ class DataExtractor:
             cells = self.extract_by_css(url, f"{table_selector} tr:nth-child({rows.index(row)+1}) td")
             table_data.append(cells)
         return table_data
-
+# ...
 extractor = DataExtractor()
 titles = extractor.extract_by_css("https://news.example.com", ".article-title", "text")
 links = extractor.extract_by_css("https://news.example.com", ".article-link", "href")
@@ -140,14 +134,14 @@ links = extractor.extract_by_css("https://news.example.com", ".article-link", "h
 
 ```python
 processor = BatchProcessor(max_workers=5, profile_lock=True)
-
+# ...
 urls = [
     {"url": f"https://shop.example.com/product/{pid}", "config": {"extract": ["title", "price", "stock", "rating"]}}
     for pid in range(1, 101)
 ]
-
+# ...
 results = processor.process_batch(urls)
-
+# ...
 import json
 with open("products.json", "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
@@ -159,7 +153,7 @@ with open("products.json", "w", encoding="utf-8") as f:
 ```python
 handler = CloudflareHandler(max_wait=60)
 extractor = DataExtractor()
-
+# ...
 def crawl_competitor():
     """爬取竞争对手数据"""
     url = "https://competitor.com/products"
@@ -167,11 +161,11 @@ def crawl_competitor():
     if not page.get("success"):
         send_alert(f"爬取失败：{page.get('error')}")
         return
-
+# ...
     products = extractor.extract_by_css(page["url"], ".product-item")
     save_to_db(products)
     print(f"成功抓取 {len(products)} 个商品")
-
+# ...
 schedule.every().hour.do(crawl_competitor)
 ```
 
@@ -180,13 +174,13 @@ schedule.every().hour.do(crawl_competitor)
 
 ```python
 exporter = PageExporter()
-
+# ...
 critical_pages = [
     "https://app.example.com/login",
     "https://app.example.com/dashboard",
     "https://app.example.com/profile"
 ]
-
+# ...
 for page in critical_pages:
     success = exporter.screenshot(page, f"./screenshots/{page.split('/')[-1]}.png")
     if not success:
@@ -210,7 +204,7 @@ export BROWSER_RETRIES=3
 export MAX_CONCURRENCY=5
 export CLOUDFLARE_BYPASS=true
 export DEBUG=1
-
+# ...
 node multi-pages.js "https://a.com" "https://b.com" "https://c.com" --output results.json
 ```
 
@@ -218,15 +212,15 @@ node multi-pages.js "https://a.com" "https://b.com" "https://c.com" --output res
 ```bash
 npm install playwright playwright-extra puppeteer-extra-plugin-stealth
 npx playwright install chromium
-
+# ...
 export BROWSER_PROFILE=enterprise-pro
 export BROWSER_TIMEOUT=60000
 export MAX_CONCURRENCY=5
 export PROFILE_LOCK=true
 export CLOUDFLARE_BYPASS=true
-
+# ...
 node multi-pages.js --input urls.txt --output results.json --format json
-
+# ...
 node screenshot.js "https://example.com" --output report.png --full-page
 ```
 
@@ -240,30 +234,30 @@ browser:
   headless: true
   max_concurrency: 5
   profile_lock: true
-
+# ...
 cloudflare:
   bypass: true
   max_wait: 60
   check_interval: 2
-
+# ...
 export:
   screenshot: true
   pdf: true
   format: png
   full_page: true
-
+# ...
 extraction:
   method: css
   selectors:
     title: "h1.article-title"
     content: "div.article-body"
     date: "span.publish-date"
-
+# ...
 monitoring:
   webhook: https://hooks.slack.com/services/xxx
   alert_on_failure: true
   alert_threshold: 3
-
+# ...
 logging:
   level: DEBUG
   file: ./logs/browser-automation.log
@@ -329,7 +323,7 @@ def send_alert(message, webhook_url=None):
     if webhook_url:
         requests.post(webhook_url, json={"text": message})
     print(f"[ALERT] {message}")
-
+# ...
 if processor.stats["failed"] / processor.stats["total"] > 0.2:
     send_alert(f"批量处理失败率过高：{processor.stats['failed']}/{processor.stats['total']}")
 ```
@@ -368,7 +362,7 @@ if processor.stats["failed"] / processor.stats["total"] > 0.2:
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js 18+ | 运行时 | 必需 | 官网下载安装 |
 | Playwright | npm包 | 必需 | `npm install playwright` |
 | playwright-extra | npm包 | 推荐 | `npm install playwright-extra` |
@@ -412,7 +406,7 @@ if processor.stats["failed"] / processor.stats["total"] > 0.2:
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 单页面操作 + 基础表单 + 超时重试 + 标签清理 | 个人试用、简单抓取 |
 | 收费专业版 | ¥49/月 | 批量处理 + 并发锁 + CF绕过 + 截图PDF + 复杂表单 + 数据提取 + CI/CD + 监控告警 + 优先支持 | 团队/企业、批量任务 |
 
@@ -421,7 +415,7 @@ if processor.stats["failed"] / processor.stats["total"] > 0.2:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

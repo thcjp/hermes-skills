@@ -23,14 +23,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 # Azure VoiceLive 实时语音AI开发
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Azure实时语音AI开发处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,7 +39,7 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | 代码静态分析与质量评分 | 不支持 | 支持 |
 | 依赖漏洞检测与升级建议 | 不支持 | 支持 |
@@ -53,7 +54,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -254,7 +255,6 @@ async for event in conn:
 
 ## 异常处理
 
-
 ### WebSocket连接中断
 现象: 抛出 `ConnectionClosed`,带 `code` 与 `reason`。
 原因: 网络抖动、服务端超时、鉴权令牌过期。
@@ -317,9 +317,8 @@ OpenAI音色 (`alloy`/`echo`/`shimmer` 等) 走实时模型内置TTS;Azure原生
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| :-- | :-- | :-- |
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -22,8 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # K8s清单生成入门（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ### 清单生成功能
 
 | 资源类型 | 生成 | 校验 | 模板 |
-| --- | --- | --- | --- |
+|----|---|---|---|
 | Deployment | 支持 | 支持 | Web应用/任务 |
 | Service | 支持 | 支持 | ClusterIP/NodePort |
 | ConfigMap | 支持 | 支持 | 配置文件 |
@@ -82,7 +83,7 @@ python3 （请参考skill目录中的脚本文件） deployment \
   --replicas 3 \
   --port 80 \
   --output deployment.yaml
-
+# ...
 # 输出文件内容
 cat deployment.yaml
 ```
@@ -99,7 +100,7 @@ python3 （请参考skill目录中的脚本文件） stack \
   --app-image my-app:v1 \
   --db-image postgres:15 \
   --output-dir ./manifests/
-
+# ...
 # 输出：
 # ./manifests/deployment.yaml
 # ./manifests/service.yaml
@@ -117,7 +118,7 @@ python3 （请参考skill目录中的脚本文件） stack \
 python3 （请参考skill目录中的脚本文件） validate \
   --file deployment.yaml \
   --dry-run
-
+# ...
 # 输出：
 # [OK] 语法正确
 # [OK] 必填字段完整
@@ -138,7 +139,7 @@ python3 （请参考skill目录中的脚本文件） validate \
 ```bash
 # 依赖说明
 pip install pyyaml jsonschema
-
+# ...
 # 生成清单
 python3 （请参考skill目录中的脚本文件） deployment --name my-app --image nginx:1.25
 ```
@@ -150,19 +151,18 @@ python3 （请参考skill目录中的脚本文件） deployment --name my-app --
 python3 （请参考skill目录中的脚本文件） deployment --name my-app --image my-image:v1 --replicas 3
 python3 （请参考skill目录中的脚本文件） service --name my-service --port 80 --type ClusterIP
 python3 （请参考skill目录中的脚本文件） configmap --name my-config --from-file ./config.yaml
-
+# ...
 # 生成应用栈
 python3 （请参考skill目录中的脚本文件） stack --template "web_db" --app-name my-app
-
+# ...
 # 校验清单
 python3 （请参考skill目录中的脚本文件） validate --file deployment.yaml --dry-run
-
+# ...
 # 查看模板列表
 python3 （请参考skill目录中的脚本文件） templates list
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -175,7 +175,7 @@ generate_config:
     namespace: "default"
     replicas: 2
     image_pull_policy: "IfNotPresent"
-
+# ...
   resources:
     requests:
       cpu: "100m"
@@ -183,7 +183,7 @@ generate_config:
     limits:
       cpu: "500m"
       memory: "512Mi"
-
+# ...
   templates:
     - name: "web_app"
       resources: ["deployment", "service", "configmap", "ingress"]
@@ -191,7 +191,7 @@ generate_config:
       resources: ["deployment", "service", "configmap", "secret", "pvc"]
     - name: "cron_job"
       resources: ["cronjob", "configmap"]
-
+# ...
   validation:
     schema_check: true
     dry_run: true               # kubectl dry-run验证
@@ -206,7 +206,7 @@ generate_config:
 4. **标签统一**：使用统一的标签规范
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:-----|:-----|
 | 资源限制 | 生成的清单包含resources默认值 |
 | 健康检查 | 模板中预置探针配置 |
 | 镜像版本 | 使用具体版本号，避免latest |
@@ -248,7 +248,7 @@ generate_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | PyYAML | Python库 | 必需 | `pip install pyyaml` |
@@ -267,9 +267,8 @@ generate_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

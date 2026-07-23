@@ -19,8 +19,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 广告洞察中枢（Ad Insight Hub）
 
 面向广告投放与市场分析场景的**结构化广告情报数据中枢**。在原始 API 之上叠加参数翻译、依赖编排、缓存复用、可信度标注四层能力，让 Agent 用最少的往返拿到最可用的数据。
@@ -88,7 +89,7 @@ suggested_price: 99.9
 ### Step 1：检查 API Key（永不打印值）
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 广告洞察中枢处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -110,7 +111,7 @@ suggested_price: 99.9
 内置高频参数映射表（节选）：
 
 | 自然语言 | 代码 | 自然语言 | 代码 |
-|----------|------|----------|------|
+|:-----|:-----|:-----|:-----|
 | 游戏 | 602 | 美国 | US |
 | 金融 | 607 | 日本 | JP |
 | 电商 | 601 | 韩国 | KR |
@@ -127,7 +128,7 @@ suggested_price: 99.9
   filter-options / distribute-dims / screen-types / page-config
   search / count / count-all / distribute
   market-search / unified-product-search / company-search
-
+# ...
 依赖前序结果（必须串行）：
   content-detail    ← 依赖 search 返回的创意 ID
   item-apps         ← 依赖 search 返回的创意 ID
@@ -150,7 +151,7 @@ suggested_price: 99.9
 #
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入**："监控某竞品最近 7 天在美国的视频创意变化"
 
@@ -200,9 +201,8 @@ curl -X POST "https://api.admapix.com/api/data/revenue-country" \
 
 ## 错误处理
 
-
 | 场景 | 原因 | 处理方式 |
-|------|------|----------|
+|---:|---:|---:|
 | 401 INVALID_API_KEY | Key 缺失/格式错/已禁用 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，引导用户检查 Key；永不打印 Key |
 | 403 FORBIDDEN | 权限不足或套餐限制 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，提示升级套餐 |
 | 429 RATE_LIMITED | 触发限流 | 指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令（1s/2s/4s），最多 3 次；降低并发到 3 |
@@ -216,7 +216,7 @@ curl -X POST "https://api.admapix.com/api/data/revenue-country" \
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | AdMapix API | 远程 HTTP API | 必需 | https://www.admapix.com 注册获取 |
 | ADMAPIX_API_KEY | 环境变量 | 必需 | 控制台 API Keys 创建；仅作 `X-API-Key` 请求头 |
 | curl 或等价 HTTP 客户端 | 命令行工具 | 必需 | 系统自带或包管理器安装 |

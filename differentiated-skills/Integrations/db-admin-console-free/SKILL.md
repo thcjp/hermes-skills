@@ -33,11 +33,12 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 数据库管理台 免费版
 
 ## 一、概述
@@ -57,7 +58,7 @@ suggested_price: 29.9
 - **数据类型选择**:
 
 | 类型 | 适用场景 | 注意事项 |
-|------|----------|----------|
+|---|----|----|
 | `VARCHAR(n)` | 变长字符串 | 明确长度上限 |
 | `TEXT` | 不限长文本 | 不建索引 |
 | `BIGINT` | 大整数(超过 int 范围) | 避免溢出 |
@@ -86,7 +87,7 @@ suggested_price: 29.9
 ### 2.3 查询优化
 
 | 查询类型 | 关键要点 |
-|----------|----------|
+|:-----|:-----|
 | JOIN | 选择小表为驱动表,关联字段必须有索引 |
 | 聚合 | GROUP BY 字段选择性要高,避免 HAVING 过滤 |
 | 子查询 | 优先用 CTE 提升可读性 |
@@ -113,7 +114,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 数据库管理台(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -139,7 +140,7 @@ COMMIT;
 ### 2.6 数据库维护
 
 | 操作 | 命令 | 注意事项 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 建表 | `CREATE TABLE` | 设计好主键与索引 |
 | 改表 | `ALTER TABLE` | 大表加列用默认值,避免重写 |
 | 删表 | `DROP TABLE` | 不可逆,谨慎使用 |
@@ -155,7 +156,7 @@ COMMIT;
 ## 适用场景
 
 | 角色 | 典型场景 | 输入 | 输出 |
-|------|----------|------|------|
+|:------|------:|:------|:------|
 | 独立开发者 | 设计新业务表结构 | 业务字段清单 | DDL 脚本 + 索引建议 |
 | 后端工程师 | 写复杂查询 | 业务需求 | SQL + 执行计划分析 |
 | 兼职 DBA | 日常维护任务 | 维护需求 | 操作脚本 + 注意事项 |
@@ -188,7 +189,6 @@ LIMIT 100;
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 5.1 数据库连接(凭证走环境变量)
@@ -196,7 +196,7 @@ LIMIT 100;
 ```python
 import os
 import psycopg2
-
+# ...
 conn = psycopg2.connect(
     host=os.environ['DB_HOST'],
     port=os.environ.get('DB_PORT', '5432'),
@@ -220,9 +220,9 @@ CREATE TABLE users (
     created_at  TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT chk_status CHECK (status IN (0, 1, 2))
 );
-
+# ...
 CREATE INDEX idx_users_created_at ON users(created_at);
-
+# ...
 -- 订单表(外键关联用户)
 CREATE TABLE orders (
     id           BIGSERIAL PRIMARY KEY,
@@ -234,7 +234,7 @@ CREATE TABLE orders (
         REFERENCES users(id) ON DELETE RESTRICT,
     CONSTRAINT chk_amount CHECK (amount >= 0)
 );
-
+# ...
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 CREATE INDEX idx_orders_created_at ON orders(created_at);
 CREATE INDEX idx_orders_status_created ON orders(status, created_at);
@@ -276,14 +276,14 @@ BEGIN;
   UPDATE stock_info
   SET quantity = quantity - 1
   WHERE product_name = '苹果' AND quantity > 0;
-
+# ...
   -- 若未扣减成功则回滚
   -- 通过应用层判断 rowcount
-
+# ...
   -- 创建订单
   INSERT INTO orders (user_id, amount, status)
   VALUES (123, 8.50, 'completed');
-
+# ...
   -- 写审计日志
   INSERT INTO audit_log (action, target, created_at)
   VALUES ('order_create', 'order', CURRENT_TIMESTAMP);
@@ -354,7 +354,7 @@ A: **必须**通过环境变量传入,**禁止**硬编码。推荐存放于 `d:\
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | psycopg2 | Python 库 | 可选 | `pip install psycopg2-binary`(`PostgreSQL`) |
 | mysql-connector | Python 库 | 可选 | `pip install mysql-connector-python`(MySQL) |
@@ -373,9 +373,8 @@ A: **必须**通过环境变量传入,**禁止**硬编码。推荐存放于 `d:\
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

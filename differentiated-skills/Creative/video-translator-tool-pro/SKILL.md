@@ -23,15 +23,16 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
-
 视频翻译专业版是一款面向企业团队与跨国内容机构的多语言视频本地化平台。在免费版中英互译能力之上，专业版扩展了 8 种源语言支持、双语字幕烧录、批量翻译处理、语音克隆、翻译记忆库等企业级能力。
 
 专业版采用任务队列架构，支持优先级调度、断点续传、失败重试，可稳定处理 50+ 视频的批量翻译任务。同时完全兼容免费版 API Key 与调用方式，已有项目可无缝迁移。
 
 ### 免费版与专业版能力对比
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 中英互译 | 支持 | 支持 |
 | 多语言翻译 | 不支持（仅 zh/en） | 8 种源语言 |
 | 双语字幕 | 不支持 | 支持 |
@@ -50,7 +51,7 @@ suggested_price: 99.9
 专业版支持 8 种源语言，目标语言覆盖中英：
 
 | 源语言 | 代码 | 目标语言选项 |
-|:-------|:-----|:-------------|
+|:-----|:-----|:-----|
 | 英文 | en | zh |
 | 中文 | zh | en |
 | 韩文 | ko | zh / en |
@@ -81,7 +82,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 视频翻译-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -181,8 +182,6 @@ python3 batch_translate.py --config /path/to/batch-translate.json --parallel 8
 
 **多语言配置 `multilingual.yaml`：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 **执行命令：**
 
 ```bash
@@ -201,13 +200,11 @@ python3 batch_translate.py --config /path/to/multilingual.yaml --parallel 6
 
 **示例配置：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## 快速开始
 ### 第一步：环境检查
 ```bash
 python3 --version
-
+# ...
 curl --version
 jq --version
 ```
@@ -215,7 +212,7 @@ jq --version
 ### 第二步：配置 API Key
 ```bash
 export VIDEO_TRANSLATE_SERVICE_API_KEY="your_api_key_here"
-
+# ...
 curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
 ```
@@ -255,18 +252,14 @@ python3 batch_translate.py \
 ## 示例
 ### 完整配置文件模板
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 术语表示例
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 任务队列管理
 ```bash
 python3 queue_manager.py status --queue /tmp/translate-queue.json
-
+# ...
 python3 queue_manager.py priority --task-id task-001 --level urgent
-
+# ...
 python3 queue_manager.py pause --queue /tmp/translate-queue.json
 ```
 
@@ -285,11 +278,11 @@ priority_order:
 python3 glossary_manager.py create \
   --domain technology \
   --output /config/glossary-tech.json
-
+# ...
 python3 glossary_manager.py import \
   --file /data/terms.csv \
   --domain technology
-
+# ...
 python3 batch_translate.py \
   --config batch.json \
   --glossary /config/glossary-tech.json
@@ -300,7 +293,7 @@ python3 batch_translate.py \
 python3 memory_manager.py cleanup \
   --database /data/translation-memory.db \
   --min-quality 0.8
-
+# ...
 python3 memory_manager.py export \
   --database /data/translation-memory.db \
   --output /data/memory-export.json
@@ -328,7 +321,7 @@ python3 memory_manager.py export \
 
 ```bash
 python3 batch_translate.py --retry-failed /tmp/translate-queue.json
-
+# ...
 python3 batch_translate.py --resume /tmp/translate-queue.json
 ```
 
@@ -348,7 +341,7 @@ subtitle:
 
 ```bash
 python3 memory_manager.py export --project A --output /data/memory-a.json
-
+# ...
 python3 memory_manager.py import --project B --file /data/memory-a.json
 ```
 
@@ -357,7 +350,7 @@ python3 memory_manager.py import --project B --file /data/memory-a.json
 
 ```bash
 python3 quota_manager.py status
-
+# ...
 python3 quota_manager.py set --project "培训本地化" --limit 10000
 ```
 
@@ -378,7 +371,7 @@ python3 glossary_manager.py import --file /data/terms.csv --format csv
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | curl | 命令行工具 | 必需 | 系统自带 | 任意版本 |
 | jq | JSON 处理 | 可选 | 系统包管理器 | 1.6+ |
@@ -389,7 +382,7 @@ python3 glossary_manager.py import --file /data/terms.csv --format csv
 #### 完整安装命令
 ```bash
 pip3 install requests pyyaml
-
+# ...
 python3 --version
 python3 -c "import requests; print('requests ready')"
 curl --version
@@ -399,14 +392,14 @@ curl --version
 专业版需要以下 API Key：
 
 | API 类型 | 环境变量 | 用途 | 获取方式 |
-|:---------|:---------|:-----|:---------|
+|:--------|--------:|:--------|:--------|
 | 翻译服务 | `VIDEO_TRANSLATE_SERVICE_API_KEY` | 视频翻译 API 调用 | `https://luoji.cn` |
 | 语音克隆 | `VOICE_CLONE_API_KEY` | 语音克隆服务（可选） | 对应语音克隆服务商 |
 
 ```bash
 export VIDEO_TRANSLATE_SERVICE_API_KEY="your_translation_api_key"
 export VOICE_CLONE_API_KEY="your_voice_clone_key"
-
+# ...
 curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
 ```
@@ -427,7 +420,7 @@ curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

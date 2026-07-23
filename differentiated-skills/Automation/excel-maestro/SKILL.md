@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # Excel大师
 
@@ -30,7 +32,7 @@ pricing_model: "per_use"
 ## 四大痛点与对策
 
 | 痛点 | 典型表现 | 本skill对策 |
-|:-----|:---------|:------------|
+|---|----|--------|
 | 大文件内存爆炸 | 50万行xlsx一加载OOM | 文件规模分层 + read_only/write_only流式 |
 | 格式丢失 | pandas读写后颜色/公式/图表全没了 | 格式保留矩阵 + 两条路径 |
 | 科学计数法 | 身份证号变成1.23E+19 | 列格式强制文本 + 写入前预处理 |
@@ -41,7 +43,7 @@ pricing_model: "per_use"
 ## 第一步：按文件规模选工具
 
 | 文件规模 | 行数估计 | 推荐工具 | 关键参数 |
-|:---------|:---------|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | 小文件 | <1万行 | pandas | `pd.read_excel(engine="openpyxl")` |
 | 中文件 | 1万-50万行 | openpyxl | `load_workbook(read_only=True)` |
 | 大文件 | >50万行 | openpyxl流式 + 分块 | `read_only=True` + `write_only=True` + 分页 |
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 
 ```python
 from openpyxl import load_workbook
-
+# ...
 # read_only=True 不把整个文件载入内存
 wb = load_workbook("big.xlsx", read_only=True, data_only=True)
 ws = wb["Sheet1"]
@@ -65,7 +67,7 @@ wb.close()  # read_only 必须显式关闭
 
 ```python
 from openpyxl import Workbook
-
+# ...
 wb = Workbook(write_only=True)  # 流式写，无法修改已写行
 ws = wb.create_sheet("结果")
 ws.append(["列A", "列B", "列C"])
@@ -81,7 +83,7 @@ wb.save("output.xlsx")  # 不会OOM
 > 90%的"格式丢失"问题源于选错了工具。
 
 | 操作需求 | 用pandas | 用openpyxl | 说明 |
-|:---------|:--------:|:----------:|:-----|
+|---:|---:|---:|---:|
 | 纯数据读写 | ✅ | ✅ | pandas更简洁 |
 | 保留单元格颜色/字体 | ❌ | ✅ | pandas会丢 |
 | 保留公式 | ❌ | ✅ | pandas只存值或公式字符串 |
@@ -121,7 +123,7 @@ wb.save("output.xlsx")
 wb = openpyxl.load_workbook("file.xlsx", data_only=True)
 ws = wb.active
 print(ws["A1"].value)  # None，因为公式结果从未被Excel计算并保存
-
+# ...
 # 正确方案1：用Excel打开保存一次（让Excel写入缓存值）
 # 正确方案2：用formulas库重算
 # pip install formulas
@@ -139,16 +141,16 @@ print(ws["A1"].value)  # "=SUM(B1:B10)" 公式字符串
 # 错误：身份证号110101199001011234变成1.10E+17
 df = pd.read_excel("input.xlsx")
 df["身份证号"]  # 已是float，精度丢失
-
+# ...
 # 正确方案1：读取时指定dtype
 df = pd.read_excel("input.xlsx", dtype={"身份证号": str})
-
+# ...
 # 正确方案2：openpyxl读
 wb = openpyxl.load_workbook("input.xlsx")
 ws = wb.active
 for row in ws.iter_rows(values_only=True):
     id_card = str(row[0])  # 字符串保留
-
+# ...
 # 正确方案3：写入前强制文本格式
 from openpyxl.styles import numbers
 ws["A1"].number_format = numbers.FORMAT_TEXT
@@ -160,7 +162,7 @@ ws["A1"] = "110101199001011234"
 ```python
 # 错误：中文乱码或报错
 df = pd.read_csv("input.csv")  # 默认UTF-8，但Excel导出的CSV可能是GBK
-
+# ...
 # 正确方案1：尝试多种编码
 for enc in ["utf-8", "gbk", "gb18030", "utf-8-sig"]:
     try:
@@ -168,7 +170,7 @@ for enc in ["utf-8", "gbk", "gb18030", "utf-8-sig"]:
         break
     except UnicodeDecodeError:
         continue
-
+# ...
 # 正确方案2：写入CSV时加BOM（让Excel正确识别UTF-8）
 df.to_csv("output.csv", index=False, encoding="utf-8-sig")
 ```
@@ -183,7 +185,7 @@ for row in ws.iter_rows():
         if cell.value is None and cell.coordinate in ws.merged_cells:
             # 处于合并区域内，取左上角值
             pass
-
+# ...
 # 写入：先解除合并再写
 from openpyxl.utils import range_boundaries
 for merged_range in list(ws.merged_cells.ranges):
@@ -196,7 +198,7 @@ ws["A1"] = value
 ## 第四步：脚本速查表
 
 | 你想做的事 | 调用脚本 | 典型参数 |
-|:-----------|:---------|:---------|
+|:----:|:----:|:----:|
 | 多Excel/多sheet合成一张表 | merge_sheets.py | `--inputs 文件或目录 --output out.xlsx` |
 | sheet导出CSV | excel_to_csv.py | `--input file.xlsx --output file.csv` |
 | CSV转Excel | csv_to_excel.py | `--input a.csv --output a.xlsx` |
@@ -244,11 +246,11 @@ rows = list(ws.iter_rows(values_only=True))
 header = rows[0]
 data = [dict(zip(header, row)) for row in rows[1:]]
 wb.close()
-
+# ...
 # pandas（适合分析、过滤、合并）
 import pandas as pd
 df = pd.read_excel("input.xlsx", sheet_name=0, engine="openpyxl")
-
+# ...
 # 指定区域
 df = pd.read_excel("input.xlsx", usecols="A:D", header=0, nrows=100)
 ```
@@ -267,12 +269,12 @@ for row in data_rows:
     ws.append(row)
 ws["A1"].font = Font(bold=True)
 wb.save("output.xlsx")
-
+# ...
 # pandas多sheet写出
 with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
     df1.to_excel(writer, sheet_name="汇总", index=False)
     df2.to_excel(writer, sheet_name="明细", index=False)
-
+# ...
 # 追加到已有文件
 wb = openpyxl.load_workbook("existing.xlsx")
 ws = wb["Sheet1"]
@@ -288,7 +290,7 @@ wb.save("existing.xlsx")
 ```python
 from pathlib import Path
 import openpyxl, json
-
+# ...
 results = []
 errors = []
 for file in Path("目录").glob("*.xlsx"):
@@ -301,7 +303,7 @@ for file in Path("目录").glob("*.xlsx"):
     except Exception as e:
         errors.append({"file": file.name, "error": str(e)})
         continue  # 出错继续处理其余文件
-
+# ...
 # 汇总报错列表
 if errors:
     with open("errors.json", "w", encoding="utf-8") as f:
@@ -315,7 +317,7 @@ if errors:
 ## 第七步：性能优化技巧
 
 | 场景 | 慢的原因 | 优化方案 |
-|:-----|:---------|:---------|
+|:------|------:|:------|
 | 逐单元格写入 | 每次write触发渲染 | 用`ws.append(row)`批量行写入 |
 | 大文件读取OOM | 整文件载入 | `read_only=True`流式 |
 | 大文件写出OOM | 整工作簿在内存 | `write_only=True`流式 |
@@ -336,7 +338,7 @@ if errors:
 ### 常见错误代码
 
 | 错误 | 原因 | 解决 |
-|:-----|:-----|:-----|
+|---:|:---|---:|
 | `InvalidFileException` | 文件不是有效xlsx/xls | 检查文件是否损坏、是否实为.csv改后缀 |
 | `KeyError: 'Sheet1'` | 工作表名不存在 | 用`wb.sheetnames`查看实际表名 |
 | `PermissionError` | 文件被Excel占用 | 关闭Excel再处理 |
@@ -384,7 +386,7 @@ A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8。
 ## 故障排查
 
 | 症状 | 可能原因 | 解决 |
-|:-----|:---------|:-----|
+|:------:|--------|:-------|
 | 打开文件报InvalidFile | 文件损坏或后缀不符 | 用Excel打开验证，或另存为xlsx |
 | sheet名找不到 | 有隐藏空格 | `wb.sheetnames`查看，strip空格 |
 | 写入后打不开 | write_only模式未append任何行 | 确保至少append一行再save |
@@ -403,7 +405,7 @@ A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8。
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | openpyxl | Python库 | 必需 | `pip install openpyxl` |
 | pandas | Python库 | 必需 | `pip install pandas` |
 | xlrd | Python库 | 可选（读.xls） | `pip install xlrd` |
@@ -454,7 +456,7 @@ A：写入时`encoding="utf-8-sig"`加BOM，Excel就能正确识别UTF-8。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|----|----|----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景

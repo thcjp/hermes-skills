@@ -55,8 +55,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
 ---
-
 # 播客章节工具 - 免费版
 
 ## 概述
@@ -68,7 +69,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 免费版 | 说明 |
-|:-----|:-------|:-----|
+|---|---|---|
 | 章节标记 | 支持 | 时间戳 + 标题 |
 | 高光片段 | 支持 | 时间定位 + 描述 |
 | 节目笔记 | 支持 | 草稿生成 |
@@ -115,19 +116,19 @@ suggested_price: 29.9
 ```python
 def generate_chapters(transcript, min_chapter_length=120):
     """从文字稿生成章节标记
-
+# ...
     Args:
         transcript: 带时间戳的文字稿(Whisper JSON 格式)
         min_chapter_length: 最小章节时长(秒)
     """
     chapters = []
     current_chapter = {"start": 0, "title": "开场", "segments": []}
-
+# ...
     for segment in transcript["segments"]:
         # 基于话题转换检测章节边界
         text = segment["text"]
         start = segment["start"]
-
+# ...
         # 简单规则:检测转换词
         transitions = ["接下来", "那么", "另外一个", "说到这里", "让我们"]
         if any(t in text for t in transitions):
@@ -139,23 +140,23 @@ def generate_chapters(transcript, min_chapter_length=120):
                     "segments": [segment]
                 }
                 continue
-
+# ...
         current_chapter["segments"].append(segment)
-
+# ...
     chapters.append(current_chapter)
-
+# ...
     # 格式化输出
     for ch in chapters:
         mins, secs = divmod(int(ch["start"]), 60)
         print(f"{mins:02d}:{secs:02d} - {ch['title']}")
-
+# ...
     return chapters
-
+# ...
 # 示例
 import json
 with open("transcript.json", "r", encoding="utf-8") as f:
     transcript = json.load(f)
-
+# ...
 chapters = generate_chapters(transcript)
 ```
 
@@ -168,10 +169,10 @@ def extract_highlights(transcript, num_highlights=5):
     """提取高光片段建议"""
     highlights = []
     segments = transcript["segments"]
-
+# ...
     # 启发式规则:较长且含关键词的片段
     keywords = ["最重要", "关键", "有趣", "发现", "建议", "经验", "教训"]
-
+# ...
     scored = []
     for seg in segments:
         score = 0
@@ -179,20 +180,20 @@ def extract_highlights(transcript, num_highlights=5):
         score += len(text) * 0.1  # 长度加分
         score += sum(2 for k in keywords if k in text)  # 关键词加分
         scored.append((seg, score))
-
+# ...
     # 取评分最高的 N 个
     top = sorted(scored, key=lambda x: x[1], reverse=True)[:num_highlights]
     top.sort(key=lambda x: x[0]["start"])  # 按时间排序
-
+# ...
     for seg, score in top:
         start = seg["start"]
         end = seg.get("end", start + 30)
         mins_s, secs_s = divmod(int(start), 60)
         mins_e, secs_e = divmod(int(end), 60)
         print(f"[{mins_s:02d}:{secs_s:02d} - {mins_e:02d}:{secs_e:02d}] {seg['text'][:50]}...")
-
+# ...
     return top
-
+# ...
 highlights = extract_highlights(transcript)
 ```
 
@@ -204,15 +205,15 @@ highlights = extract_highlights(transcript)
 # 生成节目笔记模板
 cat > show-notes-draft.md << 'EOF'
 # 第 042 期:AI 工具实战分享
-
+# ...
 ## 节目信息
 - 时长:38 分钟
 - 形式:嘉宾访谈
 - 嘉宾:张三(独立开发者)
-
+# ...
 ## 内容简介
 本期邀请独立开发者张三,分享 AI 工具在日常开发中的实战经验,涵盖代码生成、文档自动化与测试辅助等场景。
-
+# ...
 ## 章节时间轴
 - 00:00 开场与嘉宾介绍
 - 03:15 AI 工具使用现状
@@ -222,16 +223,16 @@ cat > show-notes-draft.md << 'EOF'
 - 28:10 踩过的坑与教训
 - 34:00 总结与建议
 - 36:30 下期预告
-
+# ...
 ## 高光片段
 - [08:30] 三款代码生成工具深度对比
 - [15:20] 文档自动化让效率提升 3 倍
 - [28:10] 最昂贵的踩坑经历
-
+# ...
 ## 相关链接
 - 嘉宾作品: github.com/guest-ai/codegen-bench
 - 提到的工具: Cursor、GitHub Copilot、Windsurf、Mintlify
-
+# ...
 ## 互动
 - 你最常用的 AI 工具是什么?评论区告诉我
 EOF
@@ -250,7 +251,7 @@ EOF
 ```bash
 # 方式一:已有文字稿(Whisper JSON 格式)
 whisper audio.mp3 --model small --output_format json --output_dir .
-
+# ...
 # 方式二:直接提供文本(需手动标注时间)
 # 手动编写带时间戳的文字稿
 ```
@@ -266,7 +267,7 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 
 ```markdown
 ## 章节标记(MM:SS 格式)
-
+# ...
 00:00 - 开场介绍
 03:15 - 话题引入
 08:30 - 核心讨论一
@@ -301,7 +302,7 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 ### 章节生成参数
 
 | 参数 | 默认值 | 说明 |
-|:-----|:-------|:-----|
+|:-----|:-----|:-----|
 | 最小章节时长 | 120 秒 | 避免过短章节 |
 | 时间戳格式 | MM:SS | 短节目用;长节目用 HH:MM:SS |
 | 高光数量 | 5 | 建议提取的高光片段数 |
@@ -367,7 +368,7 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Whisper(可选) | Python 库 | 推荐(音频输入) | `pip install openai-whisper` |
 | Python 3.9+ | 运行时 | 可选(脚本) | `python.org` 下载 |
 | Markdown 编辑器 | 工具 | 推荐 | VS Code / Obsidian |
@@ -384,9 +385,8 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

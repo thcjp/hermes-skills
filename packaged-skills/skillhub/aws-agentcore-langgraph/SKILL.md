@@ -24,16 +24,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # aws-agentcore-langgraph
 
 Multi-agent systems on AWS Bedrock AgentCore with LangGraph orchestration. 
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AgentCore LangGraph处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -41,13 +42,13 @@ Multi-agent systems on AWS Bedrock AgentCore with LangGraph orchestration.
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **AgentCore Runtime**: 端口 8080 的 HTTP 服务,处理 `/invocations` 与 `/ping` 端点 | 支持 | 支持 |
-| **AgentCore Memory**: 托管式跨会话/跨智能体记忆,支持 STM 与 LTM | 不支持 | 支持 |
-| **LangGraph Routing**: `tools_condition` 负责智能体到工具的路由,`ToolNode` 负责执行 | 不支持 | 支持 |
-| **AgentCore Gateway**: 将 API/Lambda 转换为带鉴权的 MCP 工具 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| AgentCore LangGraph多智能体编排 | 不支持 | 支持 |
+| 高级参数配置与自定义规则 | 不支持 | 支持 |
+| 批量任务编排与队列管理 | 不支持 | 支持 |
+| 结果导出与多格式转换 | 不支持 | 支持 |
+| 实时状态监控与异常告警 | 不支持 | 支持 |
 
 ## 安装
 
@@ -65,17 +66,17 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from typing import Annotated
 from typing_extensions import TypedDict
-
+# ...
 class State(TypedDict):
     messages: Annotated[list, add_messages]
-
+# ...
 builder = StateGraph(State)
 builder.add_node("agent", agent_node)
 builder.add_node("tools", ToolNode(tools))
 builder.add_conditional_edges("agent", tools_condition)
 builder.add_edge(START, "agent")
 graph = builder.compile()
-
+# ...
 app = BedrockAgentCoreApp()  # 端口 8080,提供 /invocations 与 /ping
 @app.entrypoint
 def invoke(payload, context):
@@ -117,7 +118,7 @@ app.run()
 ## CLI 命令
 
 | 命令 | 用途 |
-| --- | --- |
+|---:|---:|
 | `agentcore configure -e agent.py --region us-east-1` | 初始化配置 |
 | `agentcore configure -e agent.py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 |
 | `agentcore launch --deployment-type container` | 容器模式部署 |
@@ -179,7 +180,7 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:---:|:---:|:---:|
 | 多智能体编排部署 | 编排器与专家智能体定义 | 容器化部署的多智能体服务,共享 session_id |
 | 跨会话持久记忆 | session_id、actor_id、事件数据 | STM 逐轮记忆与 LTM 跨会话事实存储 |
 | Gateway 工具集成 | Lambda/REST API 定义与鉴权配置 | 转换为 MCP 工具并自动配置 Gateway URL |
@@ -194,7 +195,7 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -228,7 +229,7 @@ def orchestrator(state):
     if "订单" in state["messages"][-1].content:
         return {"next": "ecommerce_specialist"}
     return {"next": "customer_service"}
-
+# ...
 builder.add_conditional_edges("orchestrator", orchestrator)
 builder.add_node("customer_service", cs_agent)
 builder.add_node("ecommerce_specialist", eco_agent)
@@ -268,7 +269,7 @@ result = gateway.call("search_products", query="laptop", limit=10)
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | `on-demand throughput isn't supported` | 使用了不支持按需吞吐的推理配置 | 改用 `us.anthropic.claude-*` 推理配置文件 |
 | `Model use case details not submitted` | 未提交 Anthropic 模型用例申请 | 在 Bedrock 控制台填写 Anthropic 用例表单 |
 | `Invalid agent name` | 智能体名称含连字符等非法字符 | 使用下划线而非连字符,如 `my_agent` |

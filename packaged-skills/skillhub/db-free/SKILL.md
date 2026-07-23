@@ -21,14 +21,15 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 数据库设计与运维（免费版）
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据库设计与运维(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ homepage: "https://skillhub.cn"
 ## 核心能力
 ### 基础连接管理
 | 陷阱 | 表现 | 规避方案 |
-|------|------|---------|
+|:-----|:-----|:-----|
 | 连接池耗尽 | 应用静默挂起 | 设置最大连接数，监控连接池使用率 |
 | 空闲连接占用内存 | 大量空闲连接耗尽内存 | 设置 `idle_in_transaction_session_timeout`，定期清理 |
 
@@ -49,8 +50,8 @@ homepage: "https://skillhub.cn"
 **输入**: 用户提供基础连接管理所需的指令和必要参数。
 **输出**: 返回基础连接管理的处理结果,包含执行状态码、结果数据和执行日志。
 ### 基础事务陷阱
-| 陷阱 | 表现 | 规避方案 |
-|------|------|---------|
+| 陷阱(续)| 表现 | 规避方案 |
+|---:|---:|---:|
 | 死锁 | 多事务以不同顺序锁定相同资源 | 统一加锁顺序，使用 `SELECT FOR UPDATE` 预锁定 |
 | 丢失更新 | 读-改-写无锁导致并发覆盖 | 使用 `SELECT FOR UPDATE` 悲观锁或乐观锁（版本号） |
 | 隐式自动提交差异 | 不同数据库自动提交行为不一致 | 显式使用 `BEGIN`/`COMMIT`，不依赖隐式行为 |
@@ -62,7 +63,7 @@ homepage: "https://skillhub.cn"
 **输出**: 返回基础事务陷阱的处理结果,包含执行状态码、结果数据和执行日志。
 ### 基础查询优化
 | 问题 | 原因 | 优化方案 |
-|------|------|---------|
+|:---:|:---:|:---:|
 | N+1查询 | ORM懒加载关联关系 | 预加载（`eager load`）或批量查询 |
 | 外键缺索引 | JOIN和级联删除全表扫描 | 为外键列创建索引 |
 | 无界SELECT | `SELECT * FROM huge_table` 导致OOM | 必须加 `LIMIT`，或使用游标分批读取 |
@@ -74,7 +75,7 @@ homepage: "https://skillhub.cn"
 ### 基础数据完整性
 
 | 陷阱 | 后果 | 保障方案 |
-|------|------|---------|
+|:------|------:|:------|
 | 应用层唯一检查竞态 | 并发下产生重复数据 | 使用数据库唯一约束（`UNIQUE`） |
 | 时区混乱 | 跨时区显示错误 | 存储 `UTC`，显示时转换（`TIMESTAMPTZ`） |
 | 浮点数存金额 | 舍入误差导致账目不平 | 使用 `DECIMAL` 或整数分（`INTEGER` 存分） |
@@ -90,7 +91,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -119,7 +120,7 @@ export API_KEY="your_api_key_here"
 -- 错误: 读-改-写无锁，并发下丢失更新
 SELECT balance FROM accounts WHERE id = 1;  -- 读到 balance=100
 UPDATE accounts SET balance = 80 WHERE id = 1;  -- 丢失了另一事务的扣减
-
+# ...
 -- 正确: 使用 SELECT FOR UPDATE 悲观锁
 BEGIN;
 SELECT balance FROM accounts WHERE id = 1 FOR UPDATE;  -- 加行锁
@@ -132,7 +133,7 @@ COMMIT;
 ```sql
 -- 错误: 浮点数存金额（舍入误差）
 CREATE TABLE bad_orders (total FLOAT);  -- 0.1+0.2 = 0.30000000000000004
-
+# ...
 -- 正确: DECIMAL 精确存储
 CREATE TABLE good_orders (total DECIMAL(10,2));  -- 0.10+0.20 = 0.30
 ```
@@ -144,7 +145,7 @@ CREATE TABLE good_orders (total DECIMAL(10,2));  -- 0.10+0.20 = 0.30
 orders = Order.objects.all()
 for order in orders:
     print(order.customer.name)  # 每次循环1次查询
-
+# ...
 # 正确: 预加载（2次查询）
 orders = Order.objects.select_related('customer').all()
 for order in orders:
@@ -153,9 +154,8 @@ for order in orders:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | `deadlock detected` 死锁 | 多事务以不同顺序锁定相同资源 | 统一加锁顺序，捕获死锁异常后检查网络连接和配置后重试事务 |
 | `too many connections` 连接耗尽 | 连接池配置过小 | 设置 `max_connections` 上限，监控连接数 |
 | `out of memory` 查询OOM | `SELECT *` 无界查询加载全表 | 添加 `LIMIT`，或使用游标分批读取 |

@@ -23,27 +23,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # SSL工具箱(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 与免费版差异 | 不支持 | 支持 |
-| 基础证书申请 | 不支持 | 支持 |
-| 与免费版一致 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| SSL工具箱(专业版)全服务器配置 | 不支持 | 支持 |
+| SSL工具箱(专业版)自动化监控 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础证书申请 | certbot/acme.sh/Caddy | 与免费版一致 |
 | 证书类型 | 单域名 | 与免费版一致 |
 | 进阶证书 | 通配符/SAN/多域名/EV | 免费版无 |
@@ -90,11 +92,11 @@ pricing_model: "per_use"
 # 申请通配符证书(需DNS-01验证)
 certbot certonly --manual --preferred-challenges dns \
   -d "*.example.com" -d "example.com"
-
+# ...
 # 或使用acme.sh(支持更多DNS服务商)
 acme.sh --issue --dns dns_cf \
   -d "*.example.com" -d "example.com"
-
+# ...
 # 查看企业所有证书资产
 node （请参考skill目录中的脚本文件） --root /etc/letsencrypt/live/
 ```
@@ -102,22 +104,22 @@ node （请参考skill目录中的脚本文件） --root /etc/letsencrypt/live/
 证书资产清单输出:
 
 ```text
-
+# ...
 ## 使用流程
-
+# ...
 ### 1. 全主流服务器配置
-
+# ...
 #### Caddy(自动HTTPS)
-
+# ...
 ```caddy
 example.com {
     reverse_proxy localhost:3000
     # Caddy自动申请并续期Let's Encrypt证书
 }
 ```
-
+# ...
 #### Traefik(自动HTTPS)
-
+# ...
 ```yaml
 # traefik.yml
 entryPoints:
@@ -139,9 +141,9 @@ certificatesResolvers:
       httpChallenge:
         entryPoint: web
 ```
-
+# ...
 #### HAProxy
-
+# ...
 ```haproxy
 frontend https
     bind *:443 ssl crt /etc/ssl/certs/example.com.pem alpn h2
@@ -150,9 +152,9 @@ frontend https
 
 # 证书文件需合并:cat fullchain.pem privkey.pem > example.com.pem
 ```
-
+# ...
 #### Node.js
-
+# ...
 ```javascript
 import https from 'node:https';
 import fs from 'node:fs';
@@ -173,9 +175,9 @@ const server = https.createServer({
 
 server.listen(443);
 ```
-
+# ...
 ### 2. mTLS双向TLS配置
-
+# ...
 ```nginx
 server {
     listen 443 ssl http2;
@@ -198,9 +200,9 @@ server {
     }
 }
 ```
-
+# ...
 ### 3. 自动化部署流水线
-
+# ...
 ```yaml
 # .github/workflows/cert-renew.yml 证书自动续期与部署
 name: Certificate Renewal
@@ -232,17 +234,17 @@ jobs:
         with:
           slack-message: "证书续期$相关信息"
 ```
-
+# ...
 #
 ## 输入格式
-
+# ...
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | ssl-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
-
+# ...
 ## 输出格式
-
+# ...
 ```json
 {
   "success": true,
@@ -281,29 +283,29 @@ jobs:
   "error": null
 }
 ```
-
+# ...
 ## 异常处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
-
+# ...
 ## 依赖说明
-
+# ...
 ### 运行环境
-
+# ...
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Web服务器**: Nginx / Apache / Caddy / Traefik / HAProxy / Node.js 任一
 - **DNS服务商**: 通配符证书需要支持API的DNS服务商
-
-### 依赖说明
-
+# ...
+### 依赖说明(补充)
+# ...
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | openssl | 命令行工具 | 必需 | 系统自带 |
 | certbot | 命令行工具 | 推荐 | `pip install certbot` |
@@ -312,23 +314,23 @@ jobs:
 | Node.js | 运行时 | 推荐 | nodejs.org 下载(审计脚本) |
 | DNS插件 | certbot插件 | 通配符必需 | `pip install certbot-dns-cloudflare` 等 |
 | 通知渠道 | webhook | 可选 | Slack/PagerDuty/飞书等 |
-
+# ...
 ### API Key 配置
-
+# ...
 - 本Skill基于指令驱动,无需额外API Key。
 - Let's Encrypt 通过ACME协议自动签发,无需API Key。
 - 通配符证书的DNS-01验证需要DNS服务商的API令牌(如Cloudflare API Token),配置为环境变量,不入库。
 - 监控告警的webhook URL需配置为环境变量或密钥管理器。
-
+# ...
 ### 可用性分类
-
+# ...
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,。PRO版面向团队与企业,提供全证书类型、全主流服务器配置、安全审计、自动化监控与多域名治理能力,完全兼容免费版证书申请与基础配置。
-
+# ...
 ## 案例展示
-
+# ...
 | 域名 | 类型 | 签发者 | 到期日 | 剩余天数 | 状态 |
-| --- | --- | --- | --- | --- | --- |
+|---:|:---|---:|---:|:---|---:|
 | *.example.com | 通配符 | Let's Encrypt | 2026-09-17 | 61 | 正常 |
 | api.example.com | 单域名 | Let's Encrypt | 2026-08-05 | 18 | 即将到期 |
 | *.staging.example.com | 通配符 | Let's Encrypt | 2026-10-01 | 75 | 正常 |
@@ -342,7 +344,7 @@ jobs:
 ```bash
 # 扫描TLS配置并评分
 node （请参考skill目录中的脚本文件） --host example.com --port 443 --format html > audit-report.html
-
+# ...
 # 输出
 # TLS安全审计报告: example.com
 #
@@ -365,25 +367,25 @@ node （请参考skill目录中的脚本文件） --host example.com --port 443 
 server {
     listen 443 ssl http2;
     server_name example.com;
-
+# ...
     ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
-
+# ...
     # 仅启用TLS 1.2与1.3
     ssl_protocols TLSv1.2 TLSv1.3;
-
+# ...
     # 优化Cipher套件(前向保密优先)
     ssl_ciphers 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:!aNULL:!MD5:!CBC';
     ssl_prefer_server_ciphers off;
-
+# ...
     # 启用HSTS
     add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
-
+# ...
     # 启用OCSP装订
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/example.com/chain.pem;
-
+# ...
     # 会话复用
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 1d;
@@ -398,7 +400,7 @@ server {
 ```bash
 # 配置监控
 node （请参考skill目录中的脚本文件） --config config/cert-watch.yaml
-
+# ...
 # 证书监控配置
 ```
 
@@ -409,16 +411,16 @@ monitors:
     port: 443
     alertDays: 30      # 30天前预警
     criticalDays: 7    # 7天前严重
-
+# ...
   - host: api.example.com
     port: 443
     alertDays: 30
     criticalDays: 7
-
+# ...
   - file: /etc/letsencrypt/live/staging.example.com/cert.pem
     alertDays: 30
     criticalDays: 7
-
+# ...
 alerts:
   - level: warning
     threshold: 30
@@ -429,7 +431,7 @@ alerts:
     targets:
       - slack: "#devops-alerts"
       - pagerduty: "cert-expiry"
-
+# ...
 schedule:
   cron: "0 8 * * *"   # 每天8点检查
 ```
@@ -465,9 +467,8 @@ mTLS需要为每个客户端签发证书,通常配合私有CA管理。
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

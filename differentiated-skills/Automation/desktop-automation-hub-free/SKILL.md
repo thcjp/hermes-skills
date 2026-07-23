@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 桌面自动化中枢（免费版）
 
 > **让AI Agent精准操控你的桌面。鼠标、键盘、截图、窗口、剪贴板，五大核心能力开箱即用。**
@@ -32,7 +33,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 桌面自动化中枢(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -81,10 +82,10 @@ pip install pyautogui pillow pygetwindow
 
 ```python
 from desktop_automation_hub import DesktopController
-
+# ...
 # 初始化控制器（开启failsafe紧急停止）
 dc = DesktopController(failsafe=True)
-
+# ...
 # 第一个自动化操作：移动鼠标并截图
 dc.move_mouse(500, 300)           # 移动到坐标(500, 300)
 dc.click()                        # 左键单击
@@ -100,7 +101,7 @@ dc.screenshot(filename='first_capture.png')  # 截图保存
 ### 一、鼠标控制
 
 | 功能 | 方法 | 说明 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 绝对定位 | `move_mouse(x, y, duration=0, smooth=True)` | 移动到屏幕绝对坐标 |
 | 相对移动 | `move_relative(x_offset, y_offset, duration=0)` | 相对当前位置移动 |
 | 单击 | `click(x=None, y=None, button='left', clicks=1)` | 左/右/中键单击或双击 |
@@ -111,16 +112,16 @@ dc.screenshot(filename='first_capture.png')  # 截图保存
 ```python
 # 平滑移动到目标位置（1秒动画）
 dc.move_mouse(1000, 500, duration=1.0)
-
+# ...
 # 右键点击
 dc.click(500, 300, button='right')
-
+# ...
 # 双击
 dc.click(500, 300, clicks=2)
-
+# ...
 # 向下滚动5格
 dc.scroll(-5)
-
+# ...
 # 拖拽文件从(200,300)到(800,500)
 dc.drag(200, 300, 800, 500, duration=1.0)
 ```
@@ -131,8 +132,8 @@ dc.drag(200, 300, 800, 500, duration=1.0)
 
 ### 二、键盘控制
 
-| 功能 | 方法 | 说明 |
-|------|------|------|
+| 功能(续)| 方法 | 说明 |
+|---:|---:|---:|
 | 文本输入 | `type_text(text, interval=0, wpm=None)` | 按字或按WPM速度输入 |
 | 单键按下 | `press(key, presses=1)` | 按下并释放单个键 |
 | 热键组合 | `hotkey(*keys, interval=0.05)` | 组合键如Ctrl+C |
@@ -141,17 +142,17 @@ dc.drag(200, 300, 800, 500, duration=1.0)
 ```python
 # 快速输入文本
 dc.type_text("你好，桌面自动化中枢")
-
+# ...
 # 模拟人类打字速度（每分钟60词）
 dc.type_text("Hello World", wpm=60)
-
+# ...
 # 常用热键
 dc.hotkey('ctrl', 'c')      # 复制
 dc.hotkey('ctrl', 'v')      # 粘贴
 dc.hotkey('ctrl', 's')      # 保存
 dc.hotkey('ctrl', 'a')      # 全选
 dc.hotkey('win', 'r')       # 打开运行窗口
-
+# ...
 # 按住Shift输入大写
 dc.key_down('shift')
 dc.type_text("hello")       # 实际输入"HELLO"
@@ -164,8 +165,8 @@ dc.key_up('shift')
 
 ### 三、屏幕操作
 
-| 功能 | 方法 | 说明 |
-|------|------|------|
+| 功能(续)(续)| 方法 | 说明 |
+|:-------:|:-------:|:-------:|
 | 全屏截图 | `screenshot(filename=None)` | 截取整个屏幕 |
 | 区域截图 | `screenshot(region=(left, top, w, h))` | 截取指定区域 |
 | 像素取色 | `get_pixel_color(x, y)` | 获取坐标处RGB颜色 |
@@ -175,14 +176,14 @@ dc.key_up('shift')
 # 全屏截图
 img = dc.screenshot()
 dc.screenshot(filename='full_screen.png')
-
+# ...
 # 区域截图（左100, 上100, 宽800, 高600）
 dc.screenshot(region=(100, 100, 800, 600), filename='region.png')
-
+# ...
 # 获取像素颜色
 r, g, b = dc.get_pixel_color(500, 300)
 print(f"坐标(500,300)颜色: RGB({r}, {g}, {b})")
-
+# ...
 # 获取屏幕分辨率
 width, height = dc.get_screen_size()
 print(f"屏幕分辨率: {width}x{height}")
@@ -194,8 +195,8 @@ print(f"屏幕分辨率: {width}x{height}")
 
 ### 四、窗口管理
 
-| 功能 | 方法 | 说明 |
-|------|------|------|
+| 功能(续)(续)| 方法 | 说明 |
+|:----------|----------:|:----------|
 | 窗口列表 | `get_all_windows()` | 获取所有打开的窗口标题 |
 | 激活窗口 | `activate_window(title_substring)` | 按标题模糊匹配激活 |
 | 当前窗口 | `get_active_window()` | 获取当前焦点窗口标题 |
@@ -205,13 +206,13 @@ print(f"屏幕分辨率: {width}x{height}")
 windows = dc.get_all_windows()
 for title in windows:
     print(f"窗口: {title}")
-
+# ...
 # 激活Chrome浏览器
 dc.activate_window("Chrome")
-
+# ...
 # 激活VS Code
 dc.activate_window("Visual Studio Code")
-
+# ...
 # 查看当前焦点窗口
 active = dc.get_active_window()
 print(f"当前窗口: {active}")
@@ -226,7 +227,7 @@ print(f"当前窗口: {active}")
 ```python
 # 写入剪贴板
 dc.copy_to_clipboard("这是要复制的内容")
-
+# ...
 # 读取剪贴板
 text = dc.get_from_clipboard()
 print(f"剪贴板内容: {text}")
@@ -242,17 +243,17 @@ print(f"剪贴板内容: {text}")
 ```python
 # 开启failsafe（推荐始终开启）
 dc = DesktopController(failsafe=True)
-
+# ...
 # 暂停机制
 dc.pause(2.0)  # 暂停2秒
-
+# ...
 # 安全检查
 if dc.is_safe():
     dc.click(500, 500)
 ```
 
 | 安全特性 | 说明 |
-|----------|------|
+|---:|:---|
 | Failsafe | 鼠标移至屏幕四角立即中止 |
 | 边界检查 | 防止坐标超出屏幕范围 |
 | 暂停控制 | 可编程暂停与恢复 |
@@ -268,7 +269,7 @@ if dc.is_safe():
 ## 键名速查表
 
 | 类别 | 键名 |
-|------|------|
+|:------:|--------|
 | 字母 | `'a'` ~ `'z'` |
 | 数字 | `'0'` ~ `'9'` |
 | 功能键 | `'f1'` ~ `'f24'` |
@@ -294,13 +295,13 @@ if dc.is_safe():
 
 ```python
 dc = DesktopController(failsafe=True)
-
+# ...
 # 假设表单字段顺序：姓名 -> 邮箱 -> 部门 -> 工号
 records = [
     ("张三", "zhangsan@company.com", "技术部", "T00231"),
     ("李四", "lisi@company.com", "市场部", "M00452"),
 ]
-
+# ...
 for name, email, dept, emp_id in records:
     dc.click(300, 200)                    # 点击姓名输入框
     dc.type_text(name, wpm=80)
@@ -324,10 +325,10 @@ for name, email, dept, emp_id in records:
 
 ```python
 import datetime
-
+# ...
 dc = DesktopController(failsafe=True)
 apps = ["Chrome", "VS Code", "Notion", "Slack"]
-
+# ...
 for app in apps:
     dc.activate_window(app)
     dc.pause(1.0)  # 等待窗口切换
@@ -345,13 +346,13 @@ for app in apps:
 
 ```python
 dc = DesktopController(failsafe=True)
-
+# ...
 # 从数据库客户端复制
 dc.activate_window("DBeaver")
 dc.pause(0.5)
 dc.hotkey('ctrl', 'a')    # 全选结果
 dc.hotkey('ctrl', 'c')    # 复制
-
+# ...
 # 切换到Excel粘贴
 dc.activate_window("Excel")
 dc.pause(0.5)
@@ -396,7 +397,7 @@ dc.press('down')          # 移动到下一行
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | PyAutoGUI | Python库 | 必需 | `pip install pyautogui` |
 | Pillow | Python库 | 必需 | `pip install pillow` |
 | PyGetWindow | Python库 | 必需 | `pip install pygetwindow` |
@@ -454,22 +455,22 @@ dc.press('down')          # 移动到下一行
 ### 示例1：基础用法
 
 ```
-### 60秒上手
-
+### 60秒上手(补充)
+# ...
 安装依赖并执行第一个自动化操作：
-
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -486,3 +487,4 @@ dc.press('down')          # 移动到下一行
   "error": null
 }
 ```
+# ...

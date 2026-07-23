@@ -27,8 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 # Go安全漏洞扫描免费版
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 99.9
 ### 免费版与专业版对比
 
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 扫描工具 | govulncheck | govulncheck + gosec + custom |
 | 扫描范围 | 依赖漏洞 | 依赖+代码+配置 |
 | 影响分析 | 基础(是否调用) | 深度(调用路径分析) |
@@ -53,7 +54,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Go安全漏洞扫描免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -61,22 +62,22 @@ suggested_price: 99.9
 ```bash
 #!/bin/bash
 # Go项目漏洞扫描脚本
-
+# ...
 echo "=== Go安全漏洞扫描 ==="
 echo "项目: $(basename "$(pwd)")"
 echo "时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo ""
-
+# ...
 # 依赖说明
 if ! command -v govulncheck &> /dev/null; then
     echo "安装govulncheck..."
     go install golang.org/x/vuln/cmd/govulncheck@latest
 fi
-
+# ...
 # 运行漏洞扫描
 echo "--- 运行govulncheck ---"
 govulncheck ./... 2>&1
-
+# ...
 echo ""
 echo "--- 扫描完成 ---"
 ```
@@ -91,21 +92,21 @@ echo "--- 扫描完成 ---"
 ```bash
 #!/bin/bash
 # 漏洞影响评估(JSON输出)
-
+# ...
 echo "=== 漏洞影响评估 ==="
-
+# ...
 # 以JSON格式获取扫描结果
 govulncheck -json ./... > /tmp/vuln-results.json 2>/dev/null
-
+# ...
 # 解析漏洞信息
 echo ""
 echo "--- 漏洞列表 ---"
 jq -r '.osv // empty | "漏洞ID: \(.id)\n  描述: \(.summary // .details[:100] // "无描述")\n  严重性: \(.database_specific.severity // "未知")\n"' /tmp/vuln-results.json 2>/dev/null
-
+# ...
 echo ""
 echo "--- 受影响模块 ---"
 jq -r '.finding // empty | "模块: \(.trace[0].module)\n  版本: \(.trace[0].version)\n  漏洞: \(.osv)\n  是否调用: \(.trace[1].function // "未直接调用")\n"' /tmp/vuln-results.json 2>/dev/null
-
+# ...
 echo ""
 echo "--- 统计 ---"
 TOTAL=$(jq -s '[.[] | select(.osv)] | length' /tmp/vuln-results.json 2>/dev/null || echo "0")
@@ -125,10 +126,10 @@ echo "  未调用漏洞: $((TOTAL - CALLED))"
 ```bash
 #!/bin/bash
 # 漏洞修复建议
-
+# ...
 echo "=== 漏洞修复建议 ==="
 echo ""
-
+# ...
 # 获取受影响的模块及其漏洞
 govulncheck -json ./... 2>/dev/null | jq -r '
     .osv // empty | 
@@ -138,7 +139,7 @@ govulncheck -json ./... 2>/dev/null | jq -r '
     "  受影响模块: \(.affected[0].package.name)",
     ""
 ' 2>/dev/null
-
+# ...
 echo ""
 echo "--- 可修复的漏洞 ---"
 echo "执行以下命令更新依赖:"
@@ -161,15 +162,15 @@ echo "  go get module-name@latest"
 ```bash
 #!/bin/bash
 # Go依赖版本与安全状态检查
-
+# ...
 echo "=== Go依赖版本检查 ==="
 echo ""
-
+# ...
 if [ ! -f go.mod ]; then
     echo "未找到go.mod文件,请在Go项目根目录运行"
     exit 1
 fi
-
+# ...
 echo "--- 直接依赖 ---"
 grep -E '^\s+[^\s]+\s+v[0-9]' go.mod | while read -r module version; do
     # 检查是否有可用更新
@@ -182,7 +183,7 @@ grep -E '^\s+[^\s]+\s+v[0-9]' go.mod | while read -r module version; do
         echo "  [OK] ${module} ${version}"
     fi
 done
-
+# ...
 echo ""
 echo "--- 间接依赖数量 ---"
 INDIRECT=$(grep -c '// indirect' go.mod 2>/dev/null || echo "0")
@@ -202,21 +203,21 @@ echo "  间接依赖: ${INDIRECT} 个"
 ```bash
 #!/bin/bash
 # Go项目上线前安全检查
-
+# ...
 echo "========================================="
 echo "Go项目上线前安全检查"
 echo "项目: $(basename "$(pwd)")"
 echo "时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "========================================="
 echo ""
-
+# ...
 # 1. 检查Go版本
 echo "--- 1. Go环境检查 ---"
 echo "  Go版本: $(go version)"
 echo "  GOPATH: $(go env GOPATH)"
 echo "  GOOS: $(go env GOOS)"
 echo "  GOARCH: $(go env GOARCH)"
-
+# ...
 # 2. 检查go.mod
 echo ""
 echo "--- 2. 模块信息 ---"
@@ -229,7 +230,7 @@ else
     echo "  [!] 未找到go.mod"
     exit 1
 fi
-
+# ...
 # 3. 编译检查
 echo ""
 echo "--- 3. 编译检查 ---"
@@ -239,14 +240,14 @@ else
     echo "  [!] 编译失败"
     go build ./... 2>&1 | head -5
 fi
-
+# ...
 # 4. 漏洞扫描
 echo ""
 echo "--- 4. 漏洞扫描 ---"
 if command -v govulncheck &> /dev/null; then
     VULN_OUTPUT=$(govulncheck ./... 2>&1)
     VULN_COUNT=$(echo "$VULN_OUTPUT" | grep -c "Vulnerability\|GO-" || echo "0")
-    
+# ...
     if [ "$VULN_COUNT" -eq 0 ]; then
         echo "  [OK] 未发现已知漏洞"
     else
@@ -256,7 +257,7 @@ if command -v govulncheck &> /dev/null; then
 else
     echo "  [!] govulncheck未安装,请运行: go install golang.org/x/vuln/cmd/govulncheck@latest"
 fi
-
+# ...
 # 5. go vet检查
 echo ""
 echo "--- 5. 静态分析(go vet) ---"
@@ -267,7 +268,7 @@ else
     echo "  [!] go vet发现问题:"
     echo "$VET_OUTPUT" | head -5
 fi
-
+# ...
 echo ""
 echo "========================================="
 echo "安全检查完成"
@@ -279,28 +280,28 @@ echo "========================================="
 ```bash
 #!/bin/bash
 # 依赖更新前安全评估
-
+# ...
 echo "=== 依赖更新前安全评估 ==="
 echo ""
-
+# ...
 # 记录当前状态
 echo "--- 1. 当前依赖漏洞 ---"
 BEFORE_COUNT=$(govulncheck ./... 2>&1 | grep -c "GO-" || echo "0")
 echo "  当前漏洞数: ${BEFORE_COUNT}"
-
+# ...
 # 更新依赖
 echo ""
 echo "--- 2. 更新依赖 ---"
 go get -u ./... 2>/dev/null
 go mod tidy 2>/dev/null
 echo "  依赖已更新"
-
+# ...
 # 更新后扫描
 echo ""
 echo "--- 3. 更新后漏洞 ---"
 AFTER_COUNT=$(govulncheck ./... 2>&1 | grep -c "GO-" || echo "0")
 echo "  更新后漏洞数: ${AFTER_COUNT}"
-
+# ...
 # 对比
 echo ""
 echo "--- 4. 对比结果 ---"
@@ -320,21 +321,21 @@ fi
 # .github/workflows/go-security.yml
 name: Go Security Scan
 on: [push, pull_request]
-
+# ...
 jobs:
   security:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+# ...
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
           go-version: '1.21'
-      
+# ...
       - name: Install govulncheck
         run: go install golang.org/x/vuln/cmd/govulncheck@latest
-      
+# ...
       - name: Run vulnerability scan
         run: |
           VULNS=$(govulncheck ./... 2>&1 | grep -c "GO-" || true)
@@ -344,7 +345,7 @@ jobs:
             exit 1
           fi
           echo "No vulnerabilities found"
-      
+# ...
       - name: Run go vet
         run: go vet ./...
 ```
@@ -368,7 +369,7 @@ jobs:
 ```bash
 # 安装govulncheck
 go install golang.org/x/vuln/cmd/govulncheck@latest
-
+# ...
 # 验证安装
 govulncheck -version
 ```
@@ -378,7 +379,7 @@ govulncheck -version
 ```bash
 # 进入Go项目目录
 cd /path/to/your/go/project
-
+# ...
 # 运行漏洞扫描
 govulncheck ./...
 ```
@@ -388,7 +389,7 @@ govulncheck ./...
 ```bash
 # 查看修复建议
 govulncheck ./... | grep "Fixed in"
-
+# ...
 # 更新受影响的依赖
 go get affected-module@latest
 go mod tidy
@@ -402,7 +403,7 @@ go mod tidy
 ### govulncheck输出格式
 
 | 格式参数 | 说明 | 适用场景 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 默认(文本) | 人类可读 | 日常使用 |
 | -json | JSON格式 | 程序解析 |
 | -mode source | 源码模式(默认) | 扫描项目源码 |
@@ -411,7 +412,7 @@ go mod tidy
 ### 漏洞严重级别
 
 | 级别 | 说明 | 建议处理 |
-|:-----|:-----|:---------|
+|:---:|:---:|:---:|
 | CRITICAL | 严重漏洞,可直接利用 | 立即修复 |
 | HIGH | 高危漏洞,有利用可能 | 本周修复 |
 | MEDIUM | 中危漏洞,需要条件触发 | 下次迭代修复 |
@@ -420,7 +421,7 @@ go mod tidy
 ### 常见Go安全工具
 
 | 工具 | 类型 | 免费版 | 说明 |
-|:-----|:-----|:-------|:-----|
+|:------|------:|:------|:------|
 | govulncheck | 依赖漏洞 | 支持 | 官方漏洞扫描器 |
 | gosec | 代码安全 | 不支持 | 静态安全分析 |
 | go vet | 代码质量 | 支持 | 内置静态检查 |
@@ -438,36 +439,36 @@ go mod tidy
 # 最佳实践:安全更新流程
 safe_go_update() {
     local module=$1
-    
+# ...
     echo "安全更新: ${module}"
-    
+# ...
     # 1. 扫描当前漏洞
     echo "更新前漏洞扫描..."
     BEFORE=$(govulncheck ./... 2>&1 | grep -c "GO-" || echo "0")
-    
+# ...
     # 2. 更新模块
     go get "${module}@latest"
     go mod tidy
-    
+# ...
     # 3. 编译验证
     if ! go build ./...; then
         echo "编译失败,回退更新"
         go get "${module}@previous"
         return 1
     fi
-    
+# ...
     # 4. 扫描更新后漏洞
     echo "更新后漏洞扫描..."
     AFTER=$(govulncheck ./... 2>&1 | grep -c "GO-" || echo "0")
-    
+# ...
     echo "漏洞变化: ${BEFORE} -> ${AFTER}"
-    
+# ...
     # 5. 运行测试
     if ! go test ./...; then
         echo "测试失败,建议检查更新影响"
         return 1
     fi
-    
+# ...
     echo "更新完成"
 }
 ```
@@ -505,7 +506,7 @@ govulncheck需要分析调用图,大型项目可能较慢。可以使用 `-mode 
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | go | Go工具链 | 必需 | golang.org 下载 |
 | govulncheck | 漏洞扫描器 | 必需 | `go install golang.org/x/vuln/cmd/govulncheck@latest` |
 | jq | JSON处理 | 推荐 | `apt install jq` / `brew install jq` |
@@ -521,9 +522,8 @@ govulncheck需要分析调用图,大型项目可能较慢。可以使用 `-mode 
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

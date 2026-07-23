@@ -22,14 +22,15 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
 # 数据格式转换器（免费版）
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据格式转换(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -44,11 +45,11 @@ homepage: "https://skillhub.cn"
 
 ```python
 import csv, json
-
+# ...
 with open('data.csv', 'r', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     rows = list(reader)
-
+# ...
 json_str = json.dumps(rows, ensure_ascii=False, indent=2)
 ```
 
@@ -59,10 +60,10 @@ json_str = json.dumps(rows, ensure_ascii=False, indent=2)
 
 ```python
 import csv, json
-
+# ...
 with open('data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
-
+# ...
 fieldnames = list(data[0].keys())
 with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -77,10 +78,10 @@ with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
 
 ```python
 import yaml, json
-
+# ...
 with open('data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
-
+# ...
 yaml_str = yaml.safe_dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
 ```
 
@@ -91,10 +92,10 @@ yaml_str = yaml.safe_dump(data, default_flow_style=False, allow_unicode=True, so
 
 ```python
 import yaml, json
-
+# ...
 with open('data.yaml', 'r', encoding='utf-8') as f:
     data = yaml.safe_load(f)
-
+# ...
 json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
 
@@ -112,7 +113,7 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -143,7 +144,7 @@ export API_KEY="your_api_key_here"
 name,age,city
 张三,30,北京
 李四,25,上海
-
+# ...
 输出 (JSON):
 [
   {"name": "张三", "age": "30", "city": "北京"},
@@ -156,7 +157,7 @@ name,age,city
 ```text
 输入 (JSON):
 {"database": {"host": "localhost", "port": 5432}, "debug": true}
-
+# ...
 输出 (YAML):
 database:
   host: localhost
@@ -167,7 +168,7 @@ debug: true
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | `json.JSONDecodeError` | JSON格式错误（尾随逗号、单引号） | 使用 `json.loads()` 严格解析，报告出错行号 |
 | CSV含嵌套数据无法扁平化 | CSV单元格内含JSON字符串 | 免费版需手动扁平化，升级付费版获取自动处理 |
 | `UnicodeDecodeError` 编码错误 | 文件非UTF-8编码 | 尝试 `encoding='gbk'` 或 `encoding='latin-1'` 读取 |

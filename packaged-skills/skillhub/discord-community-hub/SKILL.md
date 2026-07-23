@@ -34,24 +34,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
 ---
 # Discord社区中心专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 免费版 | 不支持 | 支持 |
-| :----- | 不支持 | 支持 |
-| :------: | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Discord社区中心专业版社区管理 | 不支持 | 支持 |
+| Discord社区中心专业版权益管理 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 免费版 | Pro 版 |
-|:-------|:-----|:------:|:------:|
+|:-----|:-----|:-----|:-----|
 | 用户/身份 | 资料查询 | 只读 | 只读+修改 |
 | 服务器/组件 | 服务器与 widget | 只读 | 只读+离开 |
 | 应用命令 | 权限管理 | 不支持 | 支持(单条+批量) |
@@ -102,7 +104,7 @@ const perm = await integration.call_tool({
     command_id: "111111"
   }
 });
-
+// ...
 // 2. 批量获取所有命令的权限
 const allPerms = await integration.call_tool({
   tool: "discord_get_batch_application_command_permissions",
@@ -111,7 +113,7 @@ const allPerms = await integration.call_tool({
     guild_id: "123456789"
   }
 });
-
+// ...
 // 3. 编辑某命令的权限(需 MANAGE_GUILD)
 await integration.call_tool({
   tool: "discord_edit_application_command_permissions",
@@ -136,13 +138,13 @@ const entitlements = await integration.call_tool({
   tool: "discord_get_current_user_application_entitlements",
   parameters: { application_id: "987654321" }
 });
-
+// ...
 // 2. 列出某 SKU 的所有订阅
 const subs = await integration.call_tool({
   tool: "discord_list_sku_subscriptions",
   parameters: { sku_id: "123456789" }
 });
-
+// ...
 // 3. 获取特定订阅详情
 const sub = await integration.call_tool({
   tool: "discord_get_sku_subscription",
@@ -151,13 +153,13 @@ const sub = await integration.call_tool({
     subscription_id: "sub_abc123"
   }
 });
-
+// ...
 // 4. 消费消耗型权益(用户已使用该权益)
 await integration.call_tool({
   tool: "discord_consume_entitlement",
   parameters: { entitlement_id: "ent_xyz" }
 });
-
+// ...
 // 5. 清理测试权益
 await integration.call_tool({
   tool: "discord_delete_test_entitlement",
@@ -175,7 +177,7 @@ const roleConn = await integration.call_tool({
   tool: "discord_get_user_application_role_connection",
   parameters: { application_id: "987654321" }
 });
-
+// ...
 // 2. 更新角色连接(写入游戏标签等元数据)
 await integration.call_tool({
   tool: "discord_update_user_application_role_connection",
@@ -191,7 +193,7 @@ await integration.call_tool({
     }
   }
 });
-
+// ...
 // 3. 清除角色连接(用户解绑)
 await integration.call_tool({
   tool: "discord_delete_user_application_role_connection",
@@ -218,7 +220,7 @@ const auth = await integration.call_tool({
   tool: "discord_get_my_oauth2_authorization",
   parameters: {}
 });
-
+// ...
 // 确认目标服务器管理权限
 const member = await integration.call_tool({
   tool: "discord_get_my_guild_member",
@@ -243,11 +245,10 @@ await integration.call_tool({
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | discord-community-hub处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -294,9 +295,8 @@ await integration.call_tool({
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -310,10 +310,10 @@ await integration.call_tool({
 - **网络**: 需稳定访问 Discord API 与集成网关
 - **浏览器**: OAuth 授权流程需在浏览器中完成
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM 能力 | API | 必需 | 由 Agent 内置大模型提供 |
 | 集成网关插件 | 插件 | 必需 | Agent 平台插件市场安装 |
 | Discord OAuth2 | 授权 | 必需 | Discord Developer Portal 注册应用 |
@@ -336,7 +336,6 @@ await integration.call_tool({
 - **兼容性**: 与 `discord-community-hub-free` 工具格式完全兼容,可平滑升级
 - **支持级别**: 优先支持(Pro 版享有问题优先响应与功能迭代建议通道)
 
-
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
@@ -349,7 +348,7 @@ export API_KEY="your_api_key_here"
 ```javascript
 // 批量配置多个命令的权限
 const commands = ["cmd_001", "cmd_002", "cmd_003"];
-
+// ...
 for (const cmdId of commands) {
   await integration.call_tool({
     tool: "discord_edit_application_command_permissions",
@@ -370,17 +369,17 @@ for (const cmdId of commands) {
 
 ```javascript
 // 完整的权益发放与消费流程
-
+// ...
 // 1. 查询用户是否有有效订阅
 const entitlements = await integration.call_tool({
   tool: "discord_get_current_user_application_entitlements",
   parameters: { application_id: "987654321" }
 });
-
+// ...
 const activeEnt = entitlements.find(e =>
   e.type === "subscription" && !e.consumed
 );
-
+// ...
 // 2. 用户使用后消费权益
 if (activeEnt) {
   await integration.call_tool({
@@ -398,7 +397,7 @@ const externalUsers = [
   { discord_id: "111", gamer_tag: "Alpha", level: 50 },
   { discord_id: "222", gamer_tag: "Beta", level: 30 }
 ];
-
+// ...
 for (const u of externalUsers) {
   await integration.call_tool({
     tool: "discord_update_user_application_role_connection",
@@ -441,8 +440,8 @@ await integration.call_tool({
 确认:查询的 `application_id` 正确;用户确实有该应用的付费订阅;OAuth2 授权包含 `applications.entitlements` scope。测试权益需通过 `discord_delete_test_entitlement` 单独管理,不在正式权益列表中返回。
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -470,17 +469,14 @@ Pro 版支持遍历服务器列表批量执行操作。建议:按操作类型分
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|:------------:|--------------|:-------------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
 # 多邮箱管理专业版
 **版本**: 1.0.0
@@ -115,7 +117,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 多邮箱管理专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -147,7 +149,7 @@ porteden email batch-send \
   --subject "工单 {{ticket_id}} 处理通知" \
   --rate-limit 10 \
   --dry-run
-
+# ...
 # 正式发送
 porteden email batch-send \
   --profile support \
@@ -165,7 +167,7 @@ porteden email batch-send \
    Profile: support
    收件人: 100
    速率: 10 封/分钟
-
+# ...
 [1/100] ✅ customer1@example.com - 张三 - T001
 [2/100] ✅ customer2@example.com - 李四 - T002
 ...
@@ -178,10 +180,10 @@ porteden email batch-send \
 ```bash
 # 工作邮箱今日邮件
 porteden email messages --profile work --today -jc
-
+# ...
 # 个人邮箱今日邮件
 porteden email messages --profile personal --today -jc
-
+# ...
 # 跨账户搜索
 porteden email search-all \
   --profiles work,personal \
@@ -203,7 +205,7 @@ porteden email export \
   --before "2026-07-18" \
   --format csv \
   --output compliance_report.csv
-
+# ...
 # 查看审计日志
 porteden email audit-log \
   --profile finance \
@@ -216,7 +218,7 @@ porteden email audit-log \
 ```text
 📜 审计日志 - finance 账户
 时间范围: 2026-07-01 至 2026-07-18
-
+# ...
 2026-07-18 10:30:15 | EXPORT | 48 封邮件导出至 compliance_report.csv
 2026-07-17 14:22:03 | SEND  | 发送至 vendor@example.com | 主题: 合同确认
 2026-07-16 09:15:30 | DELETE | 删除邮件 google:abc123 | 主题: 测试邮件
@@ -238,7 +240,7 @@ porteden email audit-log \
 # 免费版命令依然有效
 porteden email messages --today -jc
 porteden email send --to x@y.com --subject "测试" --body "内容"
-
+# ...
 # 专业版新增命令
 porteden email batch-send --recipients list.csv --template tpl.html
 porteden email audit-log --since "2026-07-01"
@@ -248,16 +250,16 @@ porteden email audit-log --since "2026-07-01"
 ```bash
 # 添加工作账户
 porteden profile add --name work --login
-
+# ...
 # 添加个人账户
 porteden profile add --name personal --login
-
+# ...
 # 添加客服账户
 porteden profile add --name support --login
-
+# ...
 # 列出所有 Profile
 porteden profile list
-
+# ...
 # 验证所有账户状态
 porteden profile health-check --all
 ```
@@ -337,11 +339,11 @@ porteden profile health-check --all
 ```bash
 # 始终先试运行
 porteden email batch-send --recipients list.csv --template tpl.html --dry-run
-
+# ...
 # 控制速率与重试
 porteden email batch-send --recipients list.csv --template tpl.html \
   --rate-limit 10 --retry 3 --retry-delay 60
-
+# ...
 # 记录失败用例
 porteden email batch-send --recipients list.csv --template tpl.html \
   --log batch.log --on-failure log
@@ -353,10 +355,10 @@ porteden email batch-send --recipients list.csv --template tpl.html \
 porteden profile add --name finance --login
 porteden profile add --name hr --login
 porteden profile add --name support --login
-
+# ...
 # 操作时指定 Profile，避免误操作
 porteden email messages --profile finance --today -jc
-
+# ...
 # 定期检查凭证有效性
 porteden profile health-check --all
 ```
@@ -379,7 +381,7 @@ porteden email audit-export \
 
 ## 免费版与专业版对比
 | 能力 | 免费版 | 专业版 |
-|:-----|:------:|:------:|
+|:-----|:-----|:-----|
 | 基础邮件收发 | ✅ | ✅ |
 | 邮件搜索 | 基础搜索 | 高级组合搜索 |
 | Profile 隔离 | 单 Profile | 多 Profile 租户隔离 |
@@ -413,7 +415,7 @@ porteden email batch-send --recipients list.csv --template tpl.html --rate-limit
 ```bash
 # 验证 Profile
 porteden profile test --name work
-
+# ...
 # 重新登录失效 Profile
 porteden profile login --name work
 ```
@@ -424,7 +426,7 @@ porteden profile login --name work
 ```bash
 # 压缩旧日志
 porteden audit compress --older-than 30
-
+# ...
 # 清理过期日志
 porteden audit clean --older-than 365
 ```
@@ -443,7 +445,7 @@ porteden email template validate --name "回复" --data sample.json
 ```bash
 # 查看团队成员权限
 porteden team members --mailbox support@company.com
-
+# ...
 # 更新权限
 porteden team update --member agent1@company.com --role editor
 ```
@@ -452,7 +454,7 @@ porteden team update --member agent1@company.com --role editor
 
 ## 命令参考速查
 | 命令 | 功能 | 专业版独有 |
-|:-----|:-----|:----------:|
+|---:|---:|---:|
 | `messages` | 列出邮件 | - |
 | `message` | 单封详情 | - |
 | `send` | 发送邮件 | - |
@@ -479,7 +481,7 @@ porteden team update --member agent1@company.com --role editor
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | porteden CLI | CLI工具 | 必需 | `brew install porteden/tap/porteden` |
 | 邮箱账户 | 账户 | 必需 | Gmail/Outlook/Exchange 账户 |
@@ -500,7 +502,7 @@ porteden team update --member agent1@company.com --role editor
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

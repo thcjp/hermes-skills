@@ -49,8 +49,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Sonos 控制工具 - 免费版
 
 ## 概述
@@ -122,7 +123,7 @@ Sonos 控制工具免费版通过命令行控制 Sonos 音箱,支持播放控制
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Sonos控制工具-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -130,25 +131,25 @@ Sonos 控制工具免费版通过命令行控制 Sonos 音箱,支持播放控制
 ```bash
 # 发现网络中的 Sonos 设备
 sonos-cli discover
-
+# ...
 # 输出:
 # 发现 Sonos 设备:
 # 1. 客厅 (192.168.1.100) - Sonos Play:5
 # 2. 卧室 (192.168.1.101) - Sonos One
 # 3. 厨房 (192.168.1.102) - Sonos Beam
-
+# ...
 # 播放音乐
 sonos-cli play --room "客厅"
-
+# ...
 # 暂停
 sonos-cli pause --room "客厅"
-
+# ...
 # 下一曲
 sonos-cli next --room "客厅"
-
+# ...
 # 查看当前播放
 sonos-cli status --room "客厅"
-
+# ...
 # 输出:
 # 客厅 - 正在播放
 # 曲目: Bohemian Rhapsody
@@ -167,13 +168,13 @@ sonos-cli status --room "客厅"
 sonos-cli group create \
   --name "楼下" \
   --members "客厅,厨房"
-
+# ...
 # 分组播放
 sonos-cli play --room "楼下"
-
+# ...
 # 调整分组音量
 sonos-cli volume --room "楼下" --set 30
-
+# ...
 # 解散分组
 sonos-cli group dissolve --name "楼下"
 ```
@@ -190,10 +191,10 @@ sonos-cli alarm create \
   --playlist "晨间音乐" \
   --volume 20 \
   --repeat daily
-
+# ...
 # 设置 30 分钟后休眠
 sonos-cli sleep-timer --room "卧室" --minutes 30
-
+# ...
 # 查看所有定时任务
 sonos-cli timer list
 # 闹钟: 07:00 卧室 晨间音乐 (每日)
@@ -225,7 +226,7 @@ sonos-cli timer list
 ```bash
 # 依赖说明
 npm install -g sonos-cli
-
+# ...
 # 或使用 Python 版
 pip install soco-cli
 ```
@@ -235,7 +236,7 @@ pip install soco-cli
 ```bash
 # 自动发现网络中的 Sonos 设备
 sonos-cli discover
-
+# ...
 # 手动指定 IP
 sonos-cli --ip 192.168.1.100 status
 ```
@@ -245,23 +246,22 @@ sonos-cli --ip 192.168.1.100 status
 ```bash
 # 播放
 sonos-cli play --room "客厅"
-
+# ...
 # 调节音量
 sonos-cli volume --room "客厅" --set 30
-
+# ...
 # 查看状态
 sonos-cli status --room "客厅"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 命令参数
 
 | 命令 | 说明 | 示例 |
-|------|------|------|
+|:-----|:-----|:-----|
 | `discover` | 发现设备 | `sonos-cli discover` |
 | `play` | 播放 | `sonos-cli play --room 客厅` |
 | `pause` | 暂停 | `sonos-cli pause --room 客厅` |
@@ -331,7 +331,7 @@ A: 不冲突。CLI 和 App 都通过 Sonos API 控制,操作会实时同步。CL
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时(Node版) | Node版必需 | 官方网站下载 |
 | Python 3 | 运行时(Python版) | Python版必需 | 官方网站下载 |
 | soco | Python库 | Python版必需 | pip install soco |
@@ -351,9 +351,8 @@ A: 不冲突。CLI 和 App 都通过 Sonos API 控制,操作会实时同步。CL
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

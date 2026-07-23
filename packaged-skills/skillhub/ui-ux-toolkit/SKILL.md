@@ -28,22 +28,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # UI/UX设计工具箱专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 专业版支持全部10个设计域的深度搜索:
 
 | 域 | 用途 | 示例关键词 |
-|----|------|-----------|
+|:-----|:-----|:-----|
 | `product` | 产品类型推荐 | SaaS, 电商, 作品集, 医疗, 美容, 服务 |
 | `style` | UI风格与效果 | 玻璃态, 极简, 暗色模式, 粗野主义 |
 | `typography` | 字体配对 | 优雅, 活泼, 专业, 现代 |
@@ -68,7 +70,7 @@ pricing_model: "per_use"
 - 参考`批量搜索与多格式输出`的配置文档进行参数调优
 ### 2. 全技术栈支持
 | 技术栈 | 聚焦领域 |
-|--------|----------|
+|---:|---:|
 | `html-tailwind` | Tailwind工具类, 响应式, 无障碍(默认) |
 | `react` | 状态管理, Hooks, 性能, 模式 |
 | `nextjs` | SSR, 路由, 图片, API路由 |
@@ -87,7 +89,7 @@ pricing_model: "per_use"
 ```bash
 # 持久化设计系统到项目目录
 python3 （请参考skill目录中的脚本文件） "fintech crypto dashboard" --design-system --persist -p "FinApp"
-
+# ...
 # 创建页面级覆盖
 python3 （请参考skill目录中的脚本文件） "fintech crypto" --design-system --persist -p "FinApp" --page "dashboard"
 ```
@@ -125,7 +127,7 @@ python3 （请参考skill目录中的脚本文件） "healthcare SaaS" --design-
 ```bash
 # Markdown格式输出
 python3 （请参考skill目录中的脚本文件） "fintech crypto" --design-system -f markdown
-
+# ...
 # 批量搜索多个域并合并结果
 python3 （请参考skill目录中的脚本文件） "glassmorphism" --domain style -n 5
 python3 （请参考skill目录中的脚本文件） "modern elegant" --domain typography -n 5
@@ -143,15 +145,15 @@ python3 （请参考skill目录中的脚本文件） "fintech" --domain color -n
 # 第1步:生成并持久化MASTER设计系统
 python3 （请参考skill目录中的脚本文件） "fintech SaaS dashboard professional" \
   --design-system --persist -p "FinApp"
-
+# ...
 # 第2步:为仪表盘页面创建覆盖规则
 python3 （请参考skill目录中的脚本文件） "real-time data visualization dark" \
   --design-system --persist -p "FinApp" --page "dashboard"
-
+# ...
 # 第3步:为结算页面创建覆盖规则
 python3 （请参考skill目录中的脚本文件） "checkout payment trust security" \
   --design-system --persist -p "FinApp" --page "checkout"
-
+# ...
 # 第4步:获取React技术栈实现指引
 python3 （请参考skill目录中的脚本文件） "state hooks performance" --stack react
 ```
@@ -173,13 +175,13 @@ python3 （请参考skill目录中的脚本文件） "state hooks performance" -
 ```bash
 # 统一的设计系统
 python3 （请参考skill目录中的脚本文件） "enterprise SaaS professional" --design-system --persist -p "UnifiedApp"
-
+# ...
 # Web端实现指引
 python3 （请参考skill目录中的脚本文件） "component state hooks" --stack react
-
+# ...
 # iOS端实现指引
 python3 （请参考skill目录中的脚本文件） "views state navigation" --stack swiftui
-
+# ...
 # Android端实现指引
 python3 （请参考skill目录中的脚本文件） "composables modifiers state" --stack jetpack-compose
 ```
@@ -191,10 +193,10 @@ python3 （请参考skill目录中的脚本文件） "composables modifiers stat
 ```bash
 # 审计无障碍和交互规则
 python3 （请参考skill目录中的脚本文件） "accessibility focus keyboard touch" --domain ux -n 10
-
+# ...
 # 审计性能和布局规则
 python3 （请参考skill目录中的脚本文件） "performance layout responsive" --domain ux -n 10
-
+# ...
 # 审计React性能反模式
 python3 （请参考skill目录中的脚本文件） "rerender waterfall bundle memo" --domain react -n 10
 ```
@@ -207,7 +209,7 @@ python3 （请参考skill目录中的脚本文件） "rerender waterfall bundle 
 # 验证Python环境
 python3 --version
 # 预期: Python 3.10+
-
+# ...
 # 验证专业版功能
 python3 （请参考skill目录中的脚本文件） "test" --design-system --persist -p "TestProject"
 ls design-system/MASTER.md
@@ -218,19 +220,19 @@ ls design-system/MASTER.md
 ```bash
 # 第1步:分析需求
 # 提取:产品类型、行业、风格关键词、技术栈
-
+# ...
 # 第2步:生成并持久化MASTER设计系统
 python3 （请参考skill目录中的脚本文件） "beauty spa wellness elegant" \
   --design-system --persist -p "Serenity Spa"
-
+# ...
 # 第3步:创建页面级覆盖(按需)
 python3 （请参考skill目录中的脚本文件） "booking calendar soft" \
   --design-system --persist -p "Serenity Spa" --page "booking"
-
+# ...
 # 第4步:补充详细搜索
 python3 （请参考skill目录中的脚本文件） "animation accessibility" --domain ux
 python3 （请参考skill目录中的脚本文件） "hero testimonial pricing" --domain landing
-
+# ...
 # 第5步:获取技术栈指引
 python3 （请参考skill目录中的脚本文件） "layout responsive form" --stack html-tailwind
 ```
@@ -239,7 +241,7 @@ python3 （请参考skill目录中的脚本文件） "layout responsive form" --
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | ui-ux-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -286,9 +288,8 @@ python3 （请参考skill目录中的脚本文件） "layout responsive form" --
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -301,10 +302,10 @@ python3 （请参考skill目录中的脚本文件） "layout responsive form" --
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.10 及以上(推荐3.12)
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Python 3 | 运行时 | 必需 | 系统包管理器安装 |
 | CSV数据文件 | 数据 | 必需 | 随Skill包内置 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -315,10 +316,10 @@ Python安装命令:
 ```bash
 # macOS
 brew install python3
-
+# ...
 # Ubuntu/Debian
 sudo apt update && sudo apt install python3 python3-pip
-
+# ...
 # Windows
 winget install Python.Python.3.12
 ```
@@ -362,40 +363,41 @@ winget install Python.Python.3.12
 
 ```markdown
 # Dashboard 页面设计覆盖
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: 专业版是否兼容免费版的查询语法?
-
+# ...
 完全兼容。专业版支持免费版的所有命令和参数,免费版用户可无缝升级。专业版新增 `--persist`、`--page`、`-f markdown`、`--domain react/web/chart/prompt` 等高级参数。
-
+# ...
 ### Q2: MASTER和页面覆盖的优先级如何工作?
-
+# ...
 构建特定页面时:首先检查 `design-system/pages/<page>.md`。若存在,其规则**覆盖**MASTER文件中的对应规则;若不存在,则使用MASTER规则。页面覆盖文件只需定义与MASTER不同的规则。
-
+# ...
 ### Q3: 如何在团队中共享设计系统?
-
+# ...
 将 `design-system/` 目录纳入版本控制(Git),团队成员克隆仓库后即可使用相同的MASTER和页面覆盖规则。每次修改设计系统后提交变更,确保全员设计决策一致。
-
+# ...
 ### Q4: 推理规则引擎如何工作?
-
+# ...
 推理引擎读取 `ui-reasoning.csv` 中定义的规则,在生成设计系统时自动匹配产品类型、行业和风格关键词,选择优秀设计方案并解释选择理由,同时标注应避免的反模式。
-
+# ...
 ### Q5: 支持哪些输出格式?
-
+# ...
 专业版支持纯文本(默认)和Markdown格式输出。使用 `-f markdown` 获取格式化输出,便于直接粘贴到文档或Wiki中。
-
+# ...
 ### Q6: 批量搜索如何提升效率?
-
+# ...
 通过组合多个域的搜索结果,一次性获取完整的设计系统建议。例如,同时搜索style + typography + color + landing + chart五个域,获取从风格到图表的完整推荐。
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
+# ...

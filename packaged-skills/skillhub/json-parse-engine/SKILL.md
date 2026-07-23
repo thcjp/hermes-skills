@@ -21,19 +21,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # JSON解析引擎专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| JSON解析引擎专业版企业级JSON解析 | 不支持 | 支持 |
+| JSON解析引擎专业版支持流式解析 | 不支持 | 支持 |
+| JSON解析引擎专业版批量处理 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -60,7 +62,7 @@ pricing_model: "per_use"
 **输入**: 用户提供DataFrame表格转换所需的指令和必要参数。
 **处理**: 解析DataFrame表格转换的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 自定义展平策略
 | 策略参数 | 说明 | 默认值 |
-|----------|------|--------|
+|:-----|:-----|:-----|
 | `max_depth` | 最大展平深度 | 无限 |
 | `separator` | 键名分隔符 | `_` |
 | `array_handling` | 数组处理方式 | index |
@@ -92,7 +94,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 角色 | 价值 | 推荐能力 |
-|------|------|------|----------|
+|---:|---:|---:|---:|
 | 大规模日志解析 | 数据工程师 | GB级日志结构化 | 流式解析+增量 |
 | 企业数仓ETL | 数据架构师 | JSON转表格入仓 | DataFrame+批量 |
 | API响应批量处理 | 后端开发者 | 批量解析API返回 | 批量+展平 |
@@ -106,12 +108,12 @@ pricing_model: "per_use"
 
 ```python
 from parse_engine import StreamingParser
-
+# ...
 parser = StreamingParser(
     memory_limit="10MB",
     checkpoint_interval="100MB"
 )
-
+# ...
 for record in parser.parse_stream("large-log.json", path="$.events[*]"):
     process(record)  # 逐条处理，内存稳定
 ```
@@ -120,10 +122,10 @@ for record in parser.parse_stream("large-log.json", path="$.events[*]"):
 
 ```python
 from parse_engine import BatchParser
-
+# ...
 parser = BatchParser(parallel=8)
 result = parser.parse_dir("./data", flatten=True)
-
+# ...
 df = result.to_dataframe()
 df.to_csv("output.csv", index=False)
 print(f"处理 {result.file_count} 文件，{len(df)} 行")
@@ -147,7 +149,7 @@ flat = parser.flatten_json(data)
 
 ```python
 from parse_engine import IncrementalParser
-
+# ...
 parser = IncrementalParser(cache_dir=".parse-cache")
 result = parser.parse_incremental("./data")
 print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {result.skipped_count}")
@@ -157,7 +159,7 @@ print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {resu
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | json-parse-engine处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -217,7 +219,7 @@ print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {resu
 ## 异常处理
 
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
-|------|----------|----------|--------|
+|:------|------:|:------|:------|
 | 流式解析内存溢出 | 缓冲区过大/单行过长 | 降低buffer_size，使用大行解析器 | 高 |
 | 批量解析卡住 | 目录过大/IO瓶颈 | 启用增量模式，增加并行线程 | 中 |
 | DataFrame转换失败 | 类型推断错误 | 显式指定dtypes，统一列类型 | 高 |
@@ -233,9 +235,9 @@ print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {resu
 - **Python**: 3.8+（用于解析引擎与DataFrame转换）
 - **Node.js**: 16+（用于流式解析命令行工具，可选）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | JSON解析器 | 运行时 | 必需 | Python内置json模块 |
 | pandas | pip包 | 必需 | `pip install pandas` |
@@ -256,7 +258,7 @@ print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {resu
 ### 流式解析参数
 
 | 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
+|:------:|--------|:-------|:------:|
 | `memory_limit` | string | 10MB | 内存上限 |
 | `checkpoint_interval` | string | 100MB | 检查点间隔 |
 | `buffer_size` | string | 64KB | 读写缓冲区 |
@@ -264,8 +266,8 @@ print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {resu
 
 ### 批量解析参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
+| 参数(续)| 类型 | 默认值 | 说明 |
+|----|:--:|---:|----|
 | `parallel` | integer | 8 | 并行线程数 |
 | `recursive` | boolean | true | 是否递归 |
 | `incremental` | boolean | false | 增量模式 |
@@ -273,8 +275,8 @@ print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {resu
 
 ### DataFrame转换参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
+| 参数(续)(续)| 类型 | 默认值 | 说明 |
+|--------|--------|--------|--------|
 | `flatten` | boolean | true | 是否展平 |
 | `export_format` | string | csv | csv/excel/parquet |
 | `encoding` | string | utf-8 | 输出编码 |
@@ -282,8 +284,8 @@ print(f"新增 {result.new_count}，更新 {result.updated_count}，跳过 {resu
 
 ### 展平策略参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
+| 参数(续)(续)| 类型 | 默认值 | 说明 |
+|:---------|:---------|:---------|:---------|
 | `max_depth` | integer | -1 | 最大深度（-1无限） |
 | `separator` | string | _ | 键名分隔符 |
 | `array_handling` | string | index | index/concat/count/skip |
@@ -324,9 +326,8 @@ A：流式解析的检查点机制支持恢复。检查点文件位于`.parse-ch
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "音乐生成,音频,创意"
 ---
 # 音乐工具箱 (专业版)
 ## 概述
@@ -39,7 +41,7 @@ pricing_model: "per_use"
 
 ## 核心能力
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | MIDI 生成 | 程序化生成 | 支持 | 支持 |
 | 音频处理 | 混音、效果 | 基础 | 完整 |
 | 乐理分析 | 调性、和弦 | 支持 | 支持 |
@@ -85,14 +87,14 @@ pricing_model: "per_use"
 ```python
 import os
 import requests
-
+# ...
 API_BASE = "https://api.music-toolkit-pro.local/v1"
 ADMIN_KEY = os.environ["MUSIC_ADMIN_KEY"]
-
+# ...
 class FilmScoringStudio:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-
+# ...
     def create_score(self, project_info, scenes):
         """创建影视配乐项目"""
         payload = {
@@ -118,7 +120,7 @@ class FilmScoringStudio:
             timeout=600,
         )
         return resp.json()
-
+# ...
     def ai_arrange(self, melody_midi, style, instruments):
         """AI 智能编曲"""
         payload = {
@@ -135,7 +137,7 @@ class FilmScoringStudio:
             timeout=300,
         )
         return resp.json()
-
+# ...
 studio = FilmScoringStudio(ADMIN_KEY)
 # 为电影创建配乐
 score = studio.create_score(
@@ -168,7 +170,7 @@ def multitrack_recording(project_id, tracks):
         timeout=300,
     )
     return resp.json()
-
+# ...
 def professional_mixing(project_id, settings):
     """专业混音"""
     payload = {
@@ -223,7 +225,7 @@ def master_audio(project_id, target_platforms):
         timeout=600,
     )
     return resp.json()
-
+# ...
 def distribute_to_platforms(project_id, metadata):
     """发行到流媒体平台"""
     payload = {
@@ -292,48 +294,48 @@ api:
   admin_key: ${MUSIC_ADMIN_KEY}
   org_id: ${MUSIC_ORG_ID}
   timeout: 600
-
+# ...
 studio:
   sample_rate: 96000
   bit_depth: 32
   channels: [stereo, 5.1_surround, 7.1_surround]
   format: [wav, flac, aiff]
-
+# ...
 ai_arrangement:
   enabled: true
   styles: [orchestral, electronic, jazz, rock, pop, world]
   complexity: professional
   reference_matching: true
-
+# ...
 sound_libraries:
   storage: s3
   size_gb: 50
   categories: [orchestra, drums, synths, world, vocals]
   customization: true
-
+# ...
 mixing:
   ai_assist: true
   automation: full
   plugins: [waves, fabfilter, izotope]
-
+# ...
 mastering:
   loudness_targets:
     spotify: -14
     apple_music: -16
     youtube: -14
   formats: [wav_24bit, ddpi, dsd]
-
+# ...
 collaboration:
   multi_user: true
   version_control: true
   real_time_editing: true
   cloud_storage: true
-
+# ...
 distribution:
   platforms: [spotify, apple_music, youtube_music, netease, qq_music, amazon]
   territories: worldwide
   royalty_tracking: true
-
+# ...
 licensing:
   commercial_use: true
   sync_licensing: true
@@ -346,24 +348,24 @@ def ai_arrangement_workflow(melody_midi, brief):
     """AI 编曲完整工作流"""
     # 1. 分析旋律
     analysis = analyze_melody(melody_midi)
-
+# ...
     # 2. AI 编曲
     arrangement = studio.ai_arrange(
         melody_midi=melody_midi,
         style=brief["style"],
         instruments=brief["instruments"],
     )
-
+# ...
     # 3. 生成多轨 MIDI
     tracks = arrangement["tracks"]
     for track in tracks:
         export_midi(track, f"track_{track['name']}.mid")
-
+# ...
     # 4. 渲染音频 (使用专业音色)
     render_audio(tracks, sound_library="orchestra_pro")
-
+# ...
     return arrangement
-
+# ...
 def analyze_melody(midi_file):
     """分析旋律特征"""
     payload = {"midi": midi_file}
@@ -441,7 +443,7 @@ def create_version(project_id, description):
         timeout=30,
     )
     return resp.json()
-
+# ...
 def compare_versions(project_id, v1, v2):
     """对比版本差异"""
     resp = requests.get(
@@ -479,7 +481,7 @@ def compare_versions(project_id, v1, v2):
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Music Toolkit Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -493,12 +495,12 @@ def compare_versions(project_id, v1, v2):
 export MUSIC_ADMIN_KEY="sk_pro_admin_xxx"
 export MUSIC_ORG_ID="org_your_id"
 export MUSIC_EDITION="pro"
-
+# ...
 # 可选: 云存储
 export S3_BUCKET="music-assets"
 export AWS_ACCESS_KEY_ID="..."
 export AWS_SECRET_ACCESS_KEY="..."
-
+# ...
 # 可选: 发行平台
 export SPOTIFY_DISTRIBUTOR_KEY="..."
 export APPLE_MUSIC_API_KEY="..."
@@ -513,7 +515,7 @@ export APPLE_MUSIC_API_KEY="..."
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

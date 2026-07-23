@@ -37,19 +37,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # 代码质量检查专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码质量检查专业版批量扫描 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -57,7 +59,7 @@ pricing_model: "monthly"
 覆盖 OWASP Top 10 全部安全风险类别,提供漏洞定位、风险评级和修复建议。
 
 | OWASP 类别 | 检查内容 | 风险等级 |
-|:-----------|:---------|:---------|
+|:---------|:---------|:---------|
 | A01 权限失效 | 越权访问、缺少访问控制 | 高危 |
 | A02 加密失败 | 弱加密算法、明文传输 | 高危 |
 | A03 注入攻击 | SQL注入、命令注入、XSS | 严重 |
@@ -72,18 +74,18 @@ pricing_model: "monthly"
 ```bash
 #!/bin/bash
 echo "=== OWASP Top 10 深度扫描 ==="
-
+# ...
 echo "[A03] 注入攻击检查..."
 grep -rnE "(eval|exec)\s*\(" src/ --include="*.js" --include="*.py" --include="*.php"
 grep -rnE "query\s*\(\s*['\"].*\+.*['\"]" src/ --include="*.js" --include="*.py"
-
+# ...
 echo "[A02] 加密失败检查..."
 grep -rnE "(md5|sha1|des|rc4)\s*\(" src/ --include="*.js" --include="*.py"
 grep -rn "http://" src/ --include="*.js" | grep -v "localhost\|127.0.0.1"
-
+# ...
 echo "[A05] 配置错误检查..."
 grep -rnE "(debug\s*[:=]\s*true|allow_origin\s*[:=]\s*['\"]\*['\"])" src/
-
+# ...
 echo "[A06] 脆弱组件检查..."
 if [ -f "package.json" ]; then
     npm audit --json > security-audit.json 2>/dev/null
@@ -106,26 +108,26 @@ fi
 ```yaml
 version: "2.0"
 edition: pro
-
+# ...
 custom_rules:
   - id: CUSTOM-001
     name: 禁止使用内部测试密钥
     pattern: "TEST_KEY_\\d+"
     severity: high
     message: "检测到内部测试密钥,请使用环境变量"
-
+# ...
   - id: CUSTOM-002
     name: API 路径必须包含版本号
     pattern: "/api/(?!v\\d+/)"
     severity: medium
     message: "API 路径需包含版本号,如 /api/v1/"
-
+# ...
   - id: CUSTOM-003
     name: 数据库连接必须使用连接池
     pattern: "createConnection\\s*\\("
     severity: medium
     message: "建议使用连接池替代单个连接"
-
+# ...
 compliance_templates:
   - name: 等保2.0三级
     rules: [owasp_top10, data_protection, access_control, audit_log]
@@ -133,7 +135,7 @@ compliance_templates:
     rules: [data_privacy, consent_check, right_to_erasure]
   - name: PCI-DSS
     rules: [card_data_handling, encryption_required, access_audit]
-
+# ...
 ci_cd:
   fail_on: [critical, high]
   report_format: [sarif, html, json]
@@ -150,13 +152,13 @@ ci_cd:
 
 ```bash
 echo "=== 生成审计报告 ==="
-
+# ...
 python audit.py --format json --output report.json
-
+# ...
 python audit.py --format sarif --output report.sarif
-
+# ...
 python audit.py --format html --output report.html
-
+# ...
 python audit.py --format summary
 ```- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
@@ -175,22 +177,22 @@ echo "=== 企业级代码安全审计 ==="
 echo "项目目录: $PROJECT_DIR"
 echo "扫描时间: $(date)"
 echo ""
-
+# ...
 python audit.py \
     --project "$PROJECT_DIR" \
     --rules ".codequality.yml" \
     --compliance "owasp_top10,pci_dss" \
     --format sarif,html,json \
     --output ./reports/
-
+# ...
 python audit.py --summary --output executive-summary.txt
-
+# ...
 CRITICAL_COUNT=$(python audit.py --count --severity critical)
 if [ "$CRITICAL_COUNT" -gt 0 ]; then
     echo "警告: 发现 $CRITICAL_COUNT 个严重问题,建议立即修复"
     exit 1
 fi
-
+# ...
 echo "审计完成,报告已输出到 ./reports/ 目录"
 ```
 
@@ -226,11 +228,11 @@ code_quality_scan:
 ```python
 class CollaborativeReview:
     """多租户协同代码审查"""
-
+# ...
     def __init__(self, tenant_id):
         self.tenant_id = tenant_id
         self.reviews = {}
-
+# ...
     def assign_review(self, issue_id, reviewer, priority="normal"):
         """分配审查任务"""
         self.reviews[issue_id] = {
@@ -240,7 +242,7 @@ class CollaborativeReview:
             "status": "assigned",
             "assigned_at": datetime.now().isoformat()
         }
-
+# ...
     def batch_assign(self, issues, reviewers):
         """批量分配审查任务"""
         for i, issue in enumerate(issues):
@@ -281,7 +283,7 @@ ci_cd:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | code-quality处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -328,9 +330,8 @@ ci_cd:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -343,9 +344,9 @@ ci_cd:
 - **运行时**:Python 3.8+ / Node.js 18+ / Bash
 - **CI/CD**:支持主流 CI/CD 平台
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | grep/ripgrep | 系统工具 | 必需 | 系统自带 |
 | npm audit | CLI工具 | 可选 | Node.js 自带 |
@@ -386,12 +387,12 @@ external_services:
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -408,12 +409,12 @@ external_services:
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -430,12 +431,12 @@ external_services:
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -464,7 +465,7 @@ jobs:
 
 ### Q3:扫描大型项目性能如何?
 | 项目规模 | 文件数 | 扫描时间 | 内存占用 |
-|:---------|:-------|:---------|:---------|
+|---:|:---|---:|---:|
 | 小型 | <500 | <30s | <100MB |
 | 中型 | 500-5000 | 1-5min | 100-500MB |
 | 大型 | 5000-50000 | 5-30min | 500MB-2GB |
@@ -486,9 +487,8 @@ multi_tenant:
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

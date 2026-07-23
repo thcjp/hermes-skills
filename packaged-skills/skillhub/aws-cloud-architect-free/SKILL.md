@@ -19,16 +19,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # AWS 云架构师 (免费版)
 
 基础 AWS 架构设计、服务选型与只读资源查询助手。遵循 Well-Architected Framework 基本原则。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AWS 架构师免费处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -46,7 +47,7 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 **输出**: 返回先验证账户上下文的处理结果,包含执行状态码、结果数据和执行日志。
 ### 2. 成本优先架构
 | 阶段 | 推荐技术栈 | 月成本 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | MVP(<1k 用户) | 单 EC2 + RDS | ~$50 |
 | Growth(1-10k) | ALB + ASG + RDS Multi-AZ | ~$200 |
 
@@ -68,7 +69,7 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 ## 服务选型(基础)
 
 | 需求 | 服务 | 原因 |
-| --: | --: | --: |
+|---:|---:|---:|
 | 静态站点 | S3 + CloudFront | 极低成本,全球 CDN |
 | API 后端 | Lambda + API Gateway | 零闲置成本 |
 | 数据库 | RDS PostgreSQL | 托管,支持 Multi-AZ |
@@ -109,7 +110,7 @@ ALB 零流量也计费。删除未使用的负载均衡器。
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-| :-- | :-- | :-- |
+|:---:|:---:|:---:|
 | 基础架构选型 | 业务需求与用户规模 | MVP 阶段服务选型与月成本估算 |
 | 只读资源盘点 | AWS 账户与 Region | 现有 VPC/EC2/RDS 资源清单 |
 
@@ -123,7 +124,7 @@ ALB 零流量也计费。删除未使用的负载均衡器。
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -179,7 +180,7 @@ aws logs describe-log-groups \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | NAT Gateway 月费异常高 | S3/DynamoDB 流量经 NAT 处理($0.045/GB) | 创建 VPC 终端节点,S3/DynamoDB 终端节点免费 |
 | EBS 快照无限累积 | 自动备份未设置生命周期 | 配置快照生命周期策略定期清理 |
 | CloudWatch Logs 账单增长 | 日志组默认永久保留 | 用 `put-retention-policy` 设置保留天数 |

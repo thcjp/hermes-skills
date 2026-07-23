@@ -17,26 +17,28 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Java Development Man
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **【强制】** | 支持 | 支持 |
-| 违反可能导致严重问题 | 不支持 | 支持 |
-| **【推荐】** | 不支持 | 支持 |
-| 提升代码质量和可维护性 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
+| 零日漏洞检测与防护规则下发 | 不支持 | 支持 |
 
 ## 核心能力
 
 本手册基于阿里巴巴Java开发手册（嵩山版），将规约分为7个维度。规约按约束力强弱分为：
 
 | 级别 | 含义 | 说明 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | **【强制】** | 必须遵守 | 违反可能导致严重问题 |
 | **【推荐】** | 建议遵守 | 提升代码质量和可维护性 |
 | **【参考】** | 可选择性采纳 | 根据实际情况判断 |
@@ -78,14 +80,13 @@ pricing_model: "per_use"
 按审查标准执行检查
 解析待审查内容, 提取以下要素:
 - 关键要素: 关键要素
-- 关键要素: 关键要素
 
 ### Step 2: 逐项检查
 按审查标准执行检查
 按照 `references/checklist.md` 中的检查清单逐项审查:
 
 | 检查项 | 检查方法 | 通过标准 |
-|--------|---------|---------|
+|---:|---:|---:|
 | 代码风格 | 多维度审查 | 符合标准 |
 | 安全合规 | 多维度审查 | 符合标准 |
 | 无障碍性 | 多维度审查 | 符合标准 |
@@ -105,7 +106,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | java-development-manual处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -152,9 +153,8 @@ pricing_model: "per_use"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
 | 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后 |
 | 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
@@ -167,9 +167,9 @@ pricing_model: "per_use"
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -178,7 +178,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -191,7 +190,7 @@ export API_KEY="your_api_key_here"
 
 ```
 ### 代码审查场景
-
+# ...
 1. **命名检查** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"命名风格"章节
 2. **并发问题** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"并发处理"章节
 3. **异常处理** → 查看 [exception-log.md](/api/v1/skills/java-development-manual/file?path=references%2Fexception-log.md&ownerHandle=shinelon)
@@ -203,17 +202,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Java Development Man？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Java Development Man有什么限制？
-A: 
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

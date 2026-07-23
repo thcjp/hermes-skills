@@ -20,6 +20,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 调试医生
 
@@ -28,7 +30,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 复杂Bug | Bug现象+代码环境+复现步骤 | 4阶段调试报告+根因+修复方案+回归测试 |
 | 生产事故 | 告警信息+日志+影响范围 | 止血方案+根因分析+防复发措施 |
 | 间歇性故障 | 偶发现象+触发条件+日志 | 条件等待策略+监控增强方案+根因 |
@@ -128,7 +130,7 @@ pricing_model: "per_use"
 ### 依赖项
 
 | 依赖类型 | 要求 | 说明 |
-|:---------|:-----|:-----|
+|:-----|:-----|:-----|
 | LLM | 任意支持 Agent Skills 的 LLM | Claude/GPT/Gemini 等 |
 | 调试工具 | 语言相关Debugger/Profiler | 见下方中外工具对照 |
 | 可选 | Git | 用于 git bisect 二分定位 |
@@ -138,7 +140,7 @@ pricing_model: "per_use"
 ### 中外调试工具对照(国内替代方案)
 
 | 海外工具 | 国内替代 | 说明 |
-|:---------|:---------|:-----|
+|---:|---:|---:|
 | ELK Stack | 阿里云SLS日志服务 | 日志聚合与分析 |
 | Grafana + Prometheus | 腾讯云监控/华为云APM | 监控与可视化 |
 | Datadog | 阿里云ARMS | 应用性能监控 |
@@ -161,7 +163,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | input | string | 是 | 调试医生处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -175,38 +177,38 @@ pricing_model: "per_use"
 **输出** (`output/api-timeout/debug-report.md`):
 ```markdown
 # API间歇性超时调试报告
-
+# ...
 ## 阶段1: 复现
 - Staging环境用高并发(100 QPS)模拟,复现率约3%
 - 本地无法复现(单线程/低并发)
 - 日志无明显错误,仅表现为响应时间突增
-
+# ...
 ## 阶段2: 定位
 ### 二分查找
 - 禁用缓存层:超时率不变(排除Redis)
 - 禁用数据库层:超时消失(锁定MySQL)
-
+# ...
 ### 日志增强
 - 添加连接池日志:发现连接获取偶尔>5s(正常<100ms)
 - 数据库慢查询日志:特定查询偶发慢(正常50ms,异常时5s+)
 - 锁等待分析:发现表锁竞争
-
+# ...
 ## 阶段3: 缩减
 ### 最小复现用例
 - 单表并发更新(100并发)→复现率提升至8%
 - 根因:缺失索引导致UPDATE语句全表扫描,锁升级为表锁
 - 高并发时多个UPDATE竞争表锁,导致连接等待超时
-
+# ...
 ## 阶段4: 修复
 ### 修复实施
 - 添加缺失索引:`CREATE INDEX idx_user_id ON orders(user_id)`
 - 设置查询超时:`SET STATEMENT_TIMEOUT = '30s'`
-
+# ...
 ### 验证闭环
 - 回归测试:编写并发更新测试用例(先验证失败)
 - 修复后测试:并发测试通过,超时消失
 - 完整测试套件:全通过,无回归
-
+# ...
 ### 防御深度
 - 连接池监控告警:获取时间>1s告警
 - 慢查询监控:>1s告警
@@ -225,30 +227,30 @@ pricing_model: "per_use"
 **输出** (`output/oom-leak/debug-report.md`):
 ```markdown
 # Java服务内存泄漏调试报告
-
-## 阶段1: 复现
+# ...
+## 阶段1: 复现(续1)
 - 本地压测72小时,内存从1.2GB持续增长至3.8GB
 - GC频率逐渐增加,Full GC后内存不释放
 - 本地可稳定复现(72小时周期)
-
-## 阶段2: 定位
+# ...
+## 阶段2: 定位(续1)
 ### 工具辅助
 - jmap dump:堆内存快照(3.5GB时)
 - MAT(Memory Analyzer)分析:HashMap占80%内存(2.8GB)
 - 引用链分析:CustomCache.userMap → HashMap → 大量User对象
-
-### 日志增强
+# ...
+### 日志增强(补充)
 - 添加缓存put/get日志:发现写入量远大于读取
 - 缓存大小监控:持续增长,无淘汰
-
-## 阶段3: 缩减
-### 最小复现用例
+# ...
+## 阶段3: 缩减(续1)
+### 最小复现用例(补充)
 - 循环写入缓存(100万次),不读取
 - 60分钟后内存增长500MB
 - 根因:缓存无TTL过期,无LRU淘汰策略,持续写入不清理
-
-## 阶段4: 修复
-### 修复实施
+# ...
+## 阶段4: 修复(续1)
+### 修复实施(补充)
 - 替换为Caffeine缓存(TTL=1h, maxSize=10000)
 ```java
 Caffeine.newBuilder()
@@ -256,13 +258,13 @@ Caffeine.newBuilder()
     .maximumSize(10000)
     .build();
 ```
-
-### 验证闭环
+# ...
+### 验证闭环(补充)
 - 回归测试:缓存淘汰测试(写入>maxSize后自动淘汰)
 - 修复后测试:72小时压测,内存稳定在1.5GB
 - 完整测试套件:全通过
-
-### 防御深度
+# ...
+### 防御深度(补充)
 - 内存使用率告警:80%告警,90%紧急
 - 缓存命中率监控:<60%告警(可能缓存配置问题)
 - 定期堆内存快照:每日自动dump分析
@@ -271,7 +273,7 @@ Caffeine.newBuilder()
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:------|------:|:------|
 | 无法复现 | 环境差异/数据依赖/时序问题 | 增加日志覆盖率,部署监控,等待下次触发,收集生产环境快照 |
 | 修复后回归 | 修复引入新问题/副作用 | 立即回滚,重新分析根因,检查修复副作用,增加回归测试 |
 | 多个根因 | 复杂问题多因素叠加 | 逐个修复,每修一个验证一次,记录每个根因的贡献度 |
@@ -298,23 +300,23 @@ Caffeine.newBuilder()
 ```markdown
 # output/api-timeout/debug-report.md
 # API间歇性超时调试报告
-
+# ...
 ## 阶段1: 复现(Reproduce)
 - **环境**: Staging环境用JMeter模拟100 QPS并发
 - **结果**: 复现率约3%，本地单线程无法复现
 - **现象**: 响应时间从正常50ms突增至5s+，无错误日志
 - **可靠性**: 间歇性，需高并发触发
-
+# ...
 ## 阶段2: 定位(Isolate)
-
+# ...
 ### 二分查找法
 | 步骤 | 操作 | 结果 | 结论 |
-|:-----|:-----|:-----|:-----|
+|---:|:---|---:|---:|
 | 1 | 禁用Redis缓存层 | 超时率不变(3%) | 排除Redis |
 | 2 | 禁用MySQL，用Mock数据 | 超时消失(0%) | 锁定MySQL |
 | 3 | 启用MySQL，禁用特定表 | 仅禁用orders表时超时消失 | 锁定orders表 |
-
-### 日志增强
+# ...
+### 日志增强(补充)(补充)
 ```java
 // 添加连接池监控日志
 logger.info("Connection acquire time: {}ms, pool size: {}/{}", 
@@ -336,15 +338,15 @@ public class SlowQueryAspect {
     }
 }
 ```
-
+# ...
 **发现**:
 - 连接池获取时间偶尔>5s（正常<100ms）
 - 特定UPDATE查询偶发慢（正常50ms，异常时5s+）
 - MySQL锁等待日志显示表锁竞争
-
+# ...
 ## 阶段3: 缩减(Minimize)
-
-### 最小复现用例
+# ...
+### 最小复现用例(补充)(补充)
 ```java
 @Test
 public void testConcurrentUpdate() throws InterruptedException {
@@ -370,16 +372,16 @@ public void testConcurrentUpdate() throws InterruptedException {
     // 复现率提升至8%
 }
 ```
-
+# ...
 ### 根因确认
 - **根因**: orders表缺少user_id索引，UPDATE WHERE user_id=? 导致全表扫描
 - 全表扫描期间触发表锁（InnoDB行锁升级）
 - 高并发时多个UPDATE竞争表锁，连接等待超时
 - **验证**: 添加索引后，最小复现用例超时率为0%
-
+# ...
 ## 阶段4: 修复(Fix)
-
-### 修复实施
+# ...
+### 修复实施(补充)(补充)
 ```sql
 -- 1. 添加缺失索引
 CREATE INDEX idx_user_id ON orders(user_id);
@@ -391,8 +393,8 @@ SET SESSION max_execution_time = 30000;  -- 30秒
 UPDATE orders USE INDEX(idx_user_id) 
 SET status = 'processed' WHERE user_id = ?;
 ```
-
-### 验证闭环
+# ...
+### 验证闭环(补充)(补充)
 1. **回归测试**（先验证失败）:
 ```java
 @Test
@@ -406,12 +408,12 @@ public void testConcurrentUpdateNoTimeout() {
         duration < 5000);
 }
 ```
-
+# ...
 2. **修复后测试**: 并发测试通过，超时消失
 3. **完整测试套件**: 全通过，无回归
 4. **Staging压测**: 100 QPS持续1小时，超时率0%
-
-### 防御深度
+# ...
+### 防御深度(补充)(补充)
 - 连接池监控: 获取时间>1s告警
 - 慢查询监控: >1s告警
 - 索引使用率监控: 定期检查（每月EXPLAIN分析）
@@ -433,15 +435,15 @@ public void testConcurrentUpdateNoTimeout() {
 ```markdown
 # output/oom-leak/debug-report.md
 # Java服务内存泄漏调试报告
-
-## 阶段1: 复现
+# ...
+## 阶段1: 复现(续2)
 - **本地压测**: 72小时持续运行，内存从1.2GB增长至3.8GB
 - **现象**: GC频率逐渐增加，Full GC后内存不释放
 - **复现性**: 本地可稳定复现（72小时周期）
-
-## 阶段2: 定位
-
-### 工具辅助
+# ...
+## 阶段2: 定位(续2)
+# ...
+### 工具辅助(补充)
 ```bash
 # 1. 堆内存快照（3.5GB时）
 jmap -dump:format=b,file=heap.hprof <pid>
@@ -450,8 +452,8 @@ jmap -dump:format=b,file=heap.hprof <pid>
 # - HashMap占用80%内存(2.8GB)
 # - 引用链: CustomCache.userMap → HashMap → 大量User对象
 ```
-
-### 日志增强
+# ...
+### 日志增强(补充)(补充2)
 ```java
 // 缓存监控日志
 @Scheduled(fixedRate = 60000)  // 每分钟记录
@@ -463,14 +465,14 @@ public void logCacheStats() {
         cacheStats.evictions);
 }
 ```
-
+# ...
 **发现**:
 - 缓存写入量远大于读取（10:1）
 - 缓存大小持续增长，无淘汰（evictions=0）
-
-## 阶段3: 缩减
-
-### 最小复现用例
+# ...
+## 阶段3: 缩减(续2)
+# ...
+### 最小复现用例(补充)(补充2)
 ```java
 public class CacheLeakTest {
     @Test
@@ -492,15 +494,15 @@ public class CacheLeakTest {
     }
 }
 ```
-
-### 根因确认
+# ...
+### 根因确认(补充)
 - **根因**: CustomCache使用HashMap，无TTL过期，无LRU淘汰策略
 - 持续写入不清理，导致内存持续增长
 - **验证**: 替换为Caffeine后，60分钟内存增长<10MB
-
-## 阶段4: 修复
-
-### 修复实施
+# ...
+## 阶段4: 修复(续2)
+# ...
+### 修复实施(补充)(补充2)
 ```java
 // 修复前: 无界HashMap
 public class CustomCache {
@@ -529,8 +531,8 @@ public class CustomCache {
     }
 }
 ```
-
-### 验证闭环
+# ...
+### 验证闭环(补充)(补充2)
 1. **回归测试**:
 ```java
 @Test
@@ -558,12 +560,12 @@ public void testCacheTTL() throws InterruptedException {
     assertNull("Should expire after TTL", cache.get("user_1"));
 }
 ```
-
+# ...
 2. **修复后测试**: 72小时压测，内存稳定在1.5GB
 3. **完整测试套件**: 全通过
 4. **生产灰度**: 5%流量观察7天，内存稳定
-
-### 防御深度
+# ...
+### 防御深度(补充)(补充2)
 - 内存使用率告警: 80%警告，90%紧急
 - 缓存命中率监控: <60%告警（配置问题）
 - 每日堆内存快照: 自动dump分析
@@ -585,14 +587,14 @@ public void testCacheTTL() throws InterruptedException {
 ```markdown
 # output/deadlock/debug-report.md
 # 并发死锁调试报告
-
-## 阶段1: 复现
+# ...
+## 阶段1: 复现(续3)
 - **压测**: 100并发转账，运行10分钟后复现死锁
 - **现象**: 所有Goroutine阻塞在锁获取，服务无响应
 - **复现率**: 约0.1%（高并发下偶发）
-
-## 阶段2: 定位
-
+# ...
+## 阶段2: 定位(续3)
+# ...
 ### 线程转储分析
 ```bash
 # Go goroutine dump
@@ -600,7 +602,7 @@ kill -SIGQUIT <pid>
 # 或
 curl http://localhost:6060/debug/pprof/goroutine?debug=2 > goroutine.txt
 ```
-
+# ...
 **分析发现**:
 ```
 goroutine 1 [semacquire]:  // 等待锁
@@ -613,7 +615,7 @@ sync.runtime_SemacquireMutex(0xc0000e01bc, 0x0)
 sync.(*Mutex).Lock(0xc0000e01b8)
 main.AccountService.Transfer(0xc0000e01b0, 0x5678, 0x1234, 0x100)
 ```
-
+# ...
 ### 锁图分析
 ```
 Goroutine 1: 持有 Account_A 锁 → 等待 Account_B 锁
@@ -621,7 +623,7 @@ Goroutine 2: 持有 Account_B 锁 → 等待 Account_A 锁
          ↓
     形成等待环（死锁）
 ```
-
+# ...
 ### 根因
 ```go
 // 问题代码: 锁顺序不一致
@@ -638,15 +640,15 @@ func (s *AccountService) Transfer(from, to int64, amount int) error {
     // 转账逻辑
 }
 ```
-
+# ...
 **问题**: 
 - A→B转账: 锁顺序 A, B
 - B→A转账: 锁顺序 B, A
 - 并发时形成死锁
-
-## 阶段3: 缩减
-
-### 最小复现用例
+# ...
+## 阶段3: 缩减(续3)
+# ...
+### 最小复现用例(补充)(补充3)
 ```go
 func TestDeadlock(t *testing.T) {
     service := NewAccountService()
@@ -685,9 +687,9 @@ func TestDeadlock(t *testing.T) {
     }
 }
 ```
-
-## 阶段4: 修复
-
+# ...
+## 阶段4: 修复(续3)
+# ...
 ### 修复实施: 统一锁顺序
 ```go
 // 修复: 按账户ID排序，确保锁顺序一致
@@ -718,7 +720,7 @@ func (s *AccountService) Transfer(from, to int64, amount int) error {
     return nil
 }
 ```
-
+# ...
 ### 替代方案: TryLock + 超时
 ```go
 func (s *AccountService) Transfer(from, to int64, amount int) error {
@@ -739,14 +741,14 @@ func (s *AccountService) Transfer(from, to int64, amount int) error {
     // 转账逻辑
 }
 ```
-
-### 验证闭环
+# ...
+### 验证闭环(补充)(补充3)
 1. **回归测试**: 死锁检测测试（5秒超时）
 2. **修复后测试**: 100并发转账10分钟，无死锁
 3. **完整测试**: 全通过
 4. **生产灰度**: 5%流量7天，无死锁
-
-### 防御深度
+# ...
+### 防御深度(补充)(补充3)
 - 死锁检测: Go runtime自带死锁检测
 - 锁超时: 所有锁操作带超时
 - 监控告警: Goroutine数量>1000告警
@@ -769,14 +771,14 @@ func (s *AccountService) Transfer(from, to int64, amount int) error {
 ```markdown
 # output/perf-regression/debug-report.md
 # 性能回归调试报告
-
-## 阶段1: 复现
+# ...
+## 阶段1: 复现(续4)
 - **Staging环境**: 复现响应时间500ms（正常50ms）
 - **现象**: 所有API端点变慢，无错误
 - **可靠性**: 每次必现
-
-## 阶段2: 定位
-
+# ...
+## 阶段2: 定位(续4)
+# ...
 ### Git Bisect回归定位
 ```bash
 # 1. 启动bisect
@@ -799,7 +801,7 @@ git bisect good/bad  # 根据测试结果
 git bisect reset
 git show abc1234
 ```
-
+# ...
 **定位结果**:
 ```
 commit abc1234 "feat: 添加用户活动日志记录"
@@ -817,21 +819,21 @@ Date: 2024-10-08
 +     response = await call_next(request)
 +     return response
 ```
-
+# ...
 ### 性能剖析
 ```bash
 # 使用py-spy采样剖析
 py-spy record -o profile.svg --pid <pid> --duration 60
 ```
-
+# ...
 **火焰图分析**:
 - `ActivityLog.create` 占用80% CPU时间
 - 每个请求同步写入数据库，阻塞响应
 - 数据库连接池耗尽，排队等待
-
-## 阶段3: 缩减
-
-### 最小复现用例
+# ...
+## 阶段3: 缩减(续4)
+# ...
+### 最小复现用例(补充)(补充4)
 ```python
 import time
 import asyncio
@@ -852,13 +854,13 @@ async def test():
 # 测试: curl http://localhost/test
 # 响应时间: 450ms+（确认中间件是根因）
 ```
-
-### 根因确认
+# ...
+### 根因确认(补充)(补充)
 - **根因**: 日志中间件同步写入数据库，每个请求增加450ms
 - **验证**: 移除中间件后，响应时间恢复50ms
-
-## 阶段4: 修复
-
+# ...
+## 阶段4: 修复(续4)
+# ...
 ### 修复实施: 异步日志写入
 ```python
 # 修复前: 同步写入
@@ -899,8 +901,8 @@ async def log_consumer():
 async def startup():
     asyncio.create_task(log_consumer())
 ```
-
-### 验证闭环
+# ...
+### 验证闭环(补充)(补充4)
 1. **回归测试**:
 ```python
 def test_api_response_time():
@@ -909,12 +911,12 @@ def test_api_response_time():
     duration = time.time() - start
     assert duration < 0.1, f"Response took {duration}s"
 ```
-
+# ...
 2. **修复后测试**: 响应时间50ms，日志延迟<1秒
 3. **完整测试**: 全通过
 4. **压测**: 1000 QPS稳定，日志正常写入
-
-### 防御深度
+# ...
+### 防御深度(补充)(补充4)
 - 性能基准测试: CI集成，响应时间>100ms告警
 - 中间件性能监控: 每个中间件耗时记录
 - 日志队列监控: 队列积压>1000告警
@@ -936,32 +938,32 @@ def test_api_response_time():
 ```markdown
 # output/frontend-leak/debug-report.md
 # 前端内存泄漏调试报告
-
-## 阶段1: 复现
+# ...
+## 阶段1: 复现(续5)
 - **操作**: 持续使用SPA 2小时（页面切换/弹窗开关/数据加载）
 - **现象**: Chrome DevTools显示内存从100MB增至500MB+
 - **复现性**: 本地Chrome稳定复现
-
-## 阶段2: 定位
-
+# ...
+## 阶段2: 定位(续5)
+# ...
 ### Chrome DevTools Memory分析
 1. **Heap Snapshot对比**:
    - 初始快照: 100MB
    - 2小时后快照: 500MB
    - 对比Delta: +400MB
-
+# ...
 2. **泄漏对象类型**:
    ```
    Detached DOM nodes: 250MB (5000个)
    Closures: 100MB
    Event listeners: 50MB
    ```
-
+# ...
 3. **引用链分析**:
    - Detached DOM nodes被Redux store中的旧数据引用
    - 弹窗组件卸载后，事件监听器未移除
    - setInterval定时器未清理
-
+# ...
 ### 代码定位
 ```javascript
 // 问题1: 弹窗组件未清理事件监听
@@ -997,10 +999,10 @@ function reducer(state, action) {
   }
 }
 ```
-
-## 阶段3: 缩减
-
-### 最小复现用例
+# ...
+## 阶段3: 缩减(续5)
+# ...
+### 最小复现用例(补充)(补充5)
 ```javascript
 // React组件: 模拟弹窗开关1000次
 function LeakTest() {
@@ -1022,10 +1024,10 @@ function LeakTest() {
 
 // 1000次开关后，内存增长50MB（确认弹窗泄漏）
 ```
-
-## 阶段4: 修复
-
-### 修复实施
+# ...
+## 阶段4: 修复(续5)
+# ...
+### 修复实施(补充)(补充3)
 ```javascript
 // 修复1: 清理事件监听
 function Modal({ onClose }) {
@@ -1063,8 +1065,8 @@ function reducer(state, action) {
   }
 }
 ```
-
-### 验证闭环
+# ...
+### 验证闭环(补充)(补充5)
 1. **回归测试**:
 ```javascript
 // Jest + React Testing Library
@@ -1083,12 +1085,12 @@ test('Dashboard cleans up interval on unmount', () => {
   expect(clearSpy).toHaveBeenCalled();
 });
 ```
-
+# ...
 2. **修复后测试**: 2小时使用，内存稳定在120MB
 3. **完整测试**: 全通过
 4. **Lighthouse审计**: 内存泄漏检测通过
-
-### 防御深度
+# ...
+### 防御深度(补充)(补充5)
 - ESLint规则: eslint-plugin-react-hooks检测未清理的effect
 - 内存监控: window.performance.memory定期采样
 - 自动化测试: 每次PR运行内存泄漏检测

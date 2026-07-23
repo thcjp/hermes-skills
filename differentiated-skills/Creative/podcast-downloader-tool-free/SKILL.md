@@ -23,8 +23,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
 ---
-
 # 播客下载工具 - 免费版
 
 ## 概述
@@ -36,7 +37,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 免费版 | 说明 |
-|:-----|:-------|:-----|
+|---|---|---|
 | 单集下载 | 支持 | 指定 URL 下载 |
 | 音频格式转换 | m4a -> mp3 | 兼容更多设备 |
 | 节目笔记提取 | 支持 | 输出 Markdown |
@@ -83,7 +84,7 @@ suggested_price: 29.9
 ```bash
 # 下载单集
 （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123def456"
-
+# ...
 # 指定输出目录
 PODCAST_DIR="/mnt/sdcard/podcasts" （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
 ```
@@ -95,10 +96,10 @@ PODCAST_DIR="/mnt/sdcard/podcasts" （请参考skill目录中的脚本文件） 
 ```bash
 # 最佳音质(文件较大)
 AUDIO_QUALITY=0 （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
-
+# ...
 # 普通音质(节省空间)
 AUDIO_QUALITY=4 （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
-
+# ...
 # 保留原始 m4a 文件
 KEEP_M4A=true （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
 ```
@@ -110,7 +111,7 @@ KEEP_M4A=true （请参考skill目录中的脚本文件） "https://www.xiaoyuzh
 ```bash
 # 下载后自动生成 Show Notes Markdown
 （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
-
+# ...
 # 输出结构
 # /output/节目名-单集标题/
 # ├── 单集标题.mp3       # 音频文件
@@ -130,10 +131,10 @@ KEEP_M4A=true （请参考skill目录中的脚本文件） "https://www.xiaoyuzh
 ```bash
 # macOS
 brew install curl jq ffmpeg
-
+# ...
 # Ubuntu / Debian
 sudo apt install curl jq ffmpeg
-
+# ...
 # Windows (scoop)
 scoop install curl jq ffmpeg
 ```
@@ -160,7 +161,7 @@ scoop install curl jq ffmpeg
 ### 环境变量配置
 
 | 变量 | 默认值 | 说明 |
-|:-----|:-------|:-----|
+|:-----|:-----|:-----|
 | `PODCAST_DIR` | `~/Documents/podcast/` | 输出目录 |
 | `AUDIO_QUALITY` | `0` | MP3 音质(0=最佳, 2=良好, 4=普通) |
 | `KEEP_M4A` | `false` | 是否保留原始 m4a 文件 |
@@ -168,7 +169,7 @@ scoop install curl jq ffmpeg
 ### 音质选择指南
 
 | 等级 | 码率 | 文件大小(30分钟) | 适用场景 |
-|:-----|:-----|:-------------------|:---------|
+|---:|---:|---:|---:|
 | 0 | 320kbps | ~70MB | 最佳音质,耳机收听 |
 | 2 | 192kbps | ~45MB | 良好平衡,日常推荐 |
 | 4 | 128kbps | ~30MB | 节省空间,扬声器 |
@@ -178,41 +179,41 @@ scoop install curl jq ffmpeg
 ```bash
 #!/bin/bash
 # download.sh - 单集下载脚本
-
+# ...
 URL="$1"
 OUTPUT_DIR="${PODCAST_DIR:-$HOME/Documents/podcast/}"
 QUALITY="${AUDIO_QUALITY:-0}"
 KEEP_M4A="${KEEP_M4A:-false}"
-
+# ...
 # 1. 提取页面信息
 HTML=$(curl -s "$URL")
 DATA=$(echo "$HTML" | grep -o '__NEXT_DATA__.*' | head -1)
-
+# ...
 # 2. 解析音频地址与标题
 AUDIO_URL=$(echo "$DATA" | jq -r '.props.pageProps.episodeInfo.audioUrl')
 TITLE=$(echo "$DATA" | jq -r '.props.pageProps.episodeInfo.title')
 SHOW_NAME=$(echo "$DATA" | jq -r '.props.pageProps.episodeInfo.podcast.title')
-
+# ...
 # 3. 创建输出目录
 EPISODE_DIR="${OUTPUT_DIR}/${SHOW_NAME}-${TITLE}"
 mkdir -p "$EPISODE_DIR"
-
+# ...
 # 4. 下载 m4a
 curl -L -o "$EPISODE_DIR/${TITLE}.m4a" "$AUDIO_URL"
-
+# ...
 # 5. 转换为 MP3
 ffmpeg -i "$EPISODE_DIR/${TITLE}.m4a" \
     -codec:a libmp3lame -qscale:a "$QUALITY" \
     "$EPISODE_DIR/${TITLE}.mp3"
-
+# ...
 # 6. 删除 m4a(可选)
 if [ "$KEEP_M4A" != "true" ]; then
     rm "$EPISODE_DIR/${TITLE}.m4a"
 fi
-
+# ...
 # 7. 提取节目笔记
 echo "$DATA" | jq -r '.props.pageProps.episodeInfo.shownotes' > "$EPISODE_DIR/${TITLE}.md"
-
+# ...
 echo "下载完成: $EPISODE_DIR"
 ```
 
@@ -285,7 +286,7 @@ ffmpeg -version
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | curl | 命令行工具 | 必需 | 系统自带或下载 |
 | jq | JSON 处理工具 | 必需 | `brew install jq` / `apt install jq` |
 | ffmpeg | 音频转换工具 | 必需 | `brew install ffmpeg` / `apt install ffmpeg` |
@@ -303,9 +304,8 @@ ffmpeg -version
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

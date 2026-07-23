@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
 ---
 面向团队与企业的全功能多云存储管理平台。在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等8项高级能力。
 
@@ -49,7 +51,7 @@ pricing_model: "monthly"
 
 ## 核心能力
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|----|---|---|
 | 多Provider接入与统一API | ✅ | ✅ |
 | 单文件上传/下载 | ✅ | ✅ |
 | 单向同步 | ✅ | ✅ |
@@ -150,10 +152,10 @@ csm upload \
 
 ```bash
 csm team create --name "DataTeam"
-
+# ...
 csm team invite --team DataTeam \
   --members "alice@corp.com:admin,bob@corp.com:operator,charlie@corp.com:viewer"
-
+# ...
 csm team share-config --team DataTeam \
   --providers s3,r2,azure-blob \
   --credentials-vault hashicorp-vault://secrets/data-team
@@ -252,25 +254,21 @@ csm batch-migrate --source s3://src/ --targets r2://dst/ --estimate-cost
 
 ### 双向同步规则配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 智能分层配置
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### KMS加密配置
 ```yaml
 default_algorithm: AES256
-
+# ...
 providers:
   aws-kms:
     key_id: arn:aws:kms:us-east-1:123:key/abc
     rotation: 365d
-
+# ...
   azure-keyvault:
     vault_url: https://my-vault.vault.azure.net
     key_name: cloud-storage-key
-
+# ...
   hashicorp-vault:
     address: https://vault.corp.com:8200
     transit_key: cloud-storage-encryption
@@ -305,7 +303,7 @@ providers:
 
 ## 错误处理
 | 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
-|------|---------|---------|--------|
+|:---------|:---------|:---------|:---------|
 | 批量迁移部分失败 | 个别文件权限错误 | 查看`batch-status.json`定位失败文件 | P0 |
 | 双向同步冲突频繁 | 并发修改多 | 增加`debounce`时间，调整`conflict-strategy` | P1 |
 | KMS解密失败 | 密钥被禁用 | 检查KMS密钥状态，使用`csm kms verify` | P0 |
@@ -347,7 +345,7 @@ A：操作者、时间、操作类型、源/目标、文件大小、校验和、
 
 ## 版本升级迁移指南
 | 版本 | 变更 | 迁移建议 |
-|------|------|---------|
+|---:|---:|---:|
 | 免费版 → 专业版 | 新增8项高级能力 | 使用`csm migrate free-to-pro`自动迁移配置 |
 | 1.0 → 1.1 | 双向同步引擎升级 | 兼容旧规则，自动迁移到新格式 |
 | 1.1 → 1.2 | 新增KMS集成 | 无需迁移，新增Provider配置即可 |
@@ -370,25 +368,23 @@ A：操作者、时间、操作类型、源/目标、文件大小、校验和、
 
 ### Kubernetes CronJob集成（定时同步）
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### HashiCorp Vault集成（凭据集中管理）
 ```bash
 csm config import --vault hashicorp-vault://secrets/cloud-providers
-
+# ...
 csm config rotate --all --vault hashicorp-vault://secrets/cloud-providers --schedule "0 0 1 */3 *"
 ```
 
 ## 已知限制
 | 操作 | 默认重试 | 退避策略 | 超时 |
-|------|---------|---------|------|
+|:---:|:---:|:---:|:---:|
 | 单文件上传 | 3次 | 指数退避（1s/2s/4s）| 300s |
 | 批量迁移 | 5次 | 指数退避（5s/10s/20s/40s/80s）| 3600s |
 | 双向同步 | 5次 | 固定退避（10s）| 60s |
 | KMS操作 | 3次 | 指数退避（2s/4s/8s）| 30s |
 | 生命周期策略 | 不重试 | - | 60s |
 
-## 错误处理
+## 错误处理补充
 所有错误返回结构化格式：
 
 ```json
@@ -419,7 +415,7 @@ csm config rotate --all --vault hashicorp-vault://secrets/cloud-providers --sche
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | ¥0 | 单源单目标基础操作+成本预估 | 个人开发者试用 |
 | 收费专业版 | ¥99/月 | 全功能+批量迁移+双向同步+KMS+RBAC+分层+成本分析+优先支持 | 团队/企业多云管理 |
 
@@ -433,7 +429,7 @@ csm config rotate --all --vault hashicorp-vault://secrets/cloud-providers --sche
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | AWS CLI | 命令行工具 | 可选（S3需要） | `pip install awscli` |
 | rclone | 命令行工具 | 可选（多Provider抽象层） | `apt install rclone` |
 | HashiCorp Vault | 密钥管理 | 可选（KMS集成需要） | `apt install vault` |

@@ -42,6 +42,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 视觉文件整理工具（专业版）
 
@@ -52,7 +54,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 分类规则 | 固定四分类 | 自定义规则 + 模板 |
 | 批量处理 | 单次 ≤50 | 无上限 + 目录递归 |
 | 操作历史 | 不支持 | 完整历史 + 一键回滚 |
@@ -102,7 +104,7 @@ file-sorter-pro organize \
   --rules ./rules/content-team.yaml \
   --recursive \
   --archive-history
-
+# ...
 # 示例
 # 分类:
 #   - 名称: 视频素材
@@ -113,7 +115,7 @@ file-sorter-pro organize \
 #     条件: 类型=图片 AND 内容含"设计"
 #     命名: [项目名]_[版本]_[日期]
 #     目录: ./asset-library/设计/
-
+# ...
 # 输出
 # 📊 素材库整理报告
 # 总文件数: 456
@@ -137,7 +139,7 @@ file-sorter-pro organize \
   --rules ./rules/finance.yaml \
   --deduplicate \
   --report ./reports/invoice-report.csv
-
+# ...
 # 输出
 # 📊 发票处理报告
 # 总发票数: 234
@@ -157,16 +159,16 @@ file-sorter-pro organize \
 ```bash
 # 查看操作历史
 file-sorter-pro history list --limit 10
-
+# ...
 # 输出
 # 📜 操作历史
 # 2026-07-18 14:30 - 整理 ~/Downloads (28个文件)
 # 2026-07-18 10:15 - 整理 ~/Desktop (15个文件)
 # 2026-07-17 16:45 - 整理 ./raw-materials (456个文件)
-
+# ...
 # 回滚指定操作
 file-sorter-pro history rollback --id 2026-07-18-1430
-
+# ...
 # 输出
 # ✅ 已回滚操作 2026-07-18-1430
 # 已恢复 28 个文件至原始位置与名称
@@ -195,17 +197,17 @@ file-sorter-pro history rollback --id 2026-07-18-1430
 ```bash
 # 1. 初始化专业版工作区
 file-sorter-pro init --workspace ~/file-sorter-pro
-
+# ...
 # 2. 导入分类规则
 file-sorter-pro rules import --file ./rules/company.yaml
-
+# ...
 # 3. 批量整理
 file-sorter-pro organize --target ./raw/ --destination ./sorted/ --rules ./rules/company.yaml --recursive
-
+# ...
 # 4. 查看历史与回滚
 file-sorter-pro history list
 file-sorter-pro history rollback --id <operation-id>
-
+# ...
 # 5. 生成报告
 file-sorter-pro report generate --format pdf --output sorting-report.pdf
 ```
@@ -305,7 +307,7 @@ A：专业版支持导出 CSV 元数据，便于与 DMS、ERP 等系统对接。
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需 | 官方站点下载 |
 | 视觉模型 | 模型 | 必需 | Agent 内置或多模态模型 |
@@ -321,9 +323,8 @@ A：专业版支持导出 CSV 元数据，便于与 DMS、ERP 等系统对接。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

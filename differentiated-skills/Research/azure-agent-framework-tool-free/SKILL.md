@@ -41,8 +41,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
-
 # Azure智能体框架工具(免费版)
 
 ## 概述
@@ -64,7 +65,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力 | 说明 | 适用场景 |
-|:-----|:-----|:-----|
+|---|---|----|
 | 创建智能体 | `create_agent()` 创建持久化智能体 | 构建 AI 助手 |
 | 函数工具 | 将 Python 函数作为工具提供给智能体 | 自定义业务逻辑 |
 | 托管工具 | 代码解释器、文件搜索、Web 搜索 | 复杂任务处理 |
@@ -108,7 +109,7 @@ suggested_price: 99.9
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import AzureCliCredential
-
+# ...
 async def main():
     async with (
         AzureCliCredential() as credential,
@@ -119,11 +120,11 @@ async def main():
             name="MyAgent",
             instructions="你是一个乐于助人的助手。",
         )
-
+# ...
         # 运行并获取响应
         result = await agent.run("你好!")
         print(result.text)
-
+# ...
 asyncio.run(main())
 ```
 
@@ -137,18 +138,18 @@ from typing import Annotated
 from pydantic import Field
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import AzureCliCredential
-
+# ...
 def get_weather(
     location: Annotated[str, Field(description="城市名称")],
 ) -> str:
     """获取指定城市的天气。"""
     return f"{location} 的天气: 22°C, 晴"
-
+# ...
 def get_current_time() -> str:
     """获取当前 UTC 时间。"""
     from datetime import datetime, timezone
     return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-
+# ...
 async def main():
     async with (
         AzureCliCredential() as credential,
@@ -159,10 +160,10 @@ async def main():
             instructions="你帮助用户查询天气和时间。",
             tools=[get_weather, get_current_time],  # 直接传入函数
         )
-
+# ...
         result = await agent.run("北京今天天气怎么样?")
         print(result.text)
-
+# ...
 asyncio.run(main())
 ```
 
@@ -174,7 +175,7 @@ asyncio.run(main())
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import AzureCliCredential
-
+# ...
 async def main():
     async with (
         AzureCliCredential() as credential,
@@ -184,21 +185,21 @@ async def main():
             name="ChatAgent",
             instructions="你是一个乐于助人的助手。",
         )
-
+# ...
         # 创建会话线程
         thread = agent.get_new_thread()
-
+# ...
         # 第一轮对话
         result1 = await agent.run("北京的天气怎么样?", thread=thread)
         print(f"助手: {result1.text}")
-
+# ...
         # 第二轮对话(上下文保持)
         result2 = await agent.run("那上海呢?", thread=thread)
         print(f"助手: {result2.text}")
-
+# ...
         # 保存线程 ID 以便后续恢复
         print(f"会话 ID: {thread.conversation_id}")
-
+# ...
 asyncio.run(main())
 ```
 
@@ -241,10 +242,10 @@ export BING_CONNECTION_ID="your-bing-connection-id"  # Web 搜索可选
 
 ```python
 from azure.identity.aio import AzureCliCredential, DefaultAzureCredential
-
+# ...
 # 方式一:Azure CLI 认证(推荐本地开发)
 credential = AzureCliCredential()
-
+# ...
 # 方式二:默认认证链(适用多种环境)
 credential = DefaultAzureCredential()
 ```
@@ -262,7 +263,7 @@ from agent_framework import (
 )
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import AzureCliCredential
-
+# ...
 async def main():
     async with (
         AzureCliCredential() as credential,
@@ -276,10 +277,10 @@ async def main():
                 HostedWebSearchTool(name="Bing"),   # Web 搜索
             ],
         )
-
+# ...
         result = await agent.run("用 Python 计算 20 的阶乘")
         print(result.text)
-
+# ...
 asyncio.run(main())
 ```
 
@@ -295,7 +296,7 @@ async def main():
             name="StreamingAgent",
             instructions="你是一个乐于助人的助手。",
         )
-
+# ...
         print("助手: ", end="", flush=True)
         async for chunk in agent.run_stream("讲一个短故事"):
             if chunk.text:
@@ -307,15 +308,15 @@ async def main():
 
 ```python
 from pydantic import BaseModel, ConfigDict
-
+# ...
 class WeatherResponse(BaseModel):
     model_config = ConfigDict(extra="forbid")
-
+# ...
     location: str
     temperature: float
     unit: str
     conditions: str
-
+# ...
 async def main():
     async with (
         AzureCliCredential() as credential,
@@ -326,7 +327,7 @@ async def main():
             instructions="以结构化格式提供天气信息。",
             response_format=WeatherResponse,
         )
-
+# ...
         result = await agent.run("北京的天气?")
         weather = WeatherResponse.model_validate_json(result.text)
         print(f"{weather.location}: {weather.temperature}°{weather.unit}, {weather.conditions}")
@@ -389,7 +390,7 @@ az account show
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | agent-framework | Python 包 | 必需 | `pip install agent-framework --pre` |
 | agent-framework-azure-ai | Python 包 | 必需 | `pip install agent-framework-azure-ai --pre` |
 | azure-identity | Python 包 | 必需 | 随 agent-framework-azure-ai 安装 |
@@ -410,9 +411,8 @@ az account show
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

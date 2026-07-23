@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
-
 # 网页浏览助手免费版
 
 ## 概述
@@ -37,7 +38,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 网页浏览助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -45,10 +46,10 @@ suggested_price: 29.9
 ```bash
 # 访问指定网页
 web-browsing fetch "https://example.com"
-
+# ...
 # 获取网页内容并总结
 web-browsing fetch "https://news.example.com" --summarize
-
+# ...
 # 获取特定格式的输出
 web-browsing fetch "https://docs.example.com" --format markdown
 ```
@@ -65,7 +66,7 @@ web-browsing fetch "https://docs.example.com" --format markdown
 ```bash
 # 总结网页内容
 web-browsing summarize "https://long-article.example.com"
-
+# ...
 # 指定总结长度
 web-browsing summarize "https://article.example.com" --length short
 web-browsing summarize "https://article.example.com" --length detailed
@@ -83,10 +84,10 @@ web-browsing summarize "https://article.example.com" --length detailed
 ```bash
 # 基础搜索
 web-browsing search "最新人工智能研究进展"
-
+# ...
 # 搜索并总结
 web-browsing search "气候变化最新报告" --summarize
-
+# ...
 # 指定搜索结果数量
 web-browsing search "React 教程" --limit 5
 ```
@@ -103,10 +104,10 @@ web-browsing search "React 教程" --limit 5
 ```bash
 # 提取特定数据
 web-browsing extract "https://product.example.com" --fields "name,price,rating"
-
+# ...
 # 提取表格数据
 web-browsing extract "https://data.example.com" --selector "table" --format csv
-
+# ...
 # 提取列表数据
 web-browsing extract "https://list.example.com" --selector ".item" --format json
 ```
@@ -126,10 +127,10 @@ web-browsing extract "https://list.example.com" --selector ".item" --format json
 ```bash
 # 步骤1:访问网站并获取内容
 web-browsing fetch "https://target-website.com"
-
+# ...
 # 步骤2:总结网站主要内容
 web-browsing summarize "https://target-website.com"
-
+# ...
 # 步骤3:提取特定信息
 web-browsing extract "https://target-website.com" --fields "title,author,date"
 ```
@@ -141,11 +142,11 @@ web-browsing extract "https://target-website.com" --fields "title,author,date"
 ```bash
 # 步骤1:搜索相关内容
 web-browsing search "深度学习优化算法" --limit 10
-
+# ...
 # 步骤2:访问搜索结果中的网页
 web-browsing fetch "https://result1.example.com" --summarize
 web-browsing fetch "https://result2.example.com" --summarize
-
+# ...
 # 步骤3:提取结构化数据
 web-browsing extract "https://paper.example.com" --fields "title,abstract,authors"
 ```
@@ -157,10 +158,10 @@ web-browsing extract "https://paper.example.com" --fields "title,abstract,author
 ```bash
 # 步骤1:搜索最新科技新闻
 web-browsing search "今日科技新闻" --freshness today
-
+# ...
 # 步骤2:访问新闻网站
 web-browsing fetch "https://tech-news.example.com"
-
+# ...
 # 步骤3:总结新闻要点
 web-browsing summarize "https://tech-news.example.com" --length short
 ```
@@ -172,7 +173,7 @@ web-browsing summarize "https://tech-news.example.com" --length short
 ```bash
 # 查看所有命令
 web-browsing help
-
+# ...
 # 查看特定命令用法
 web-browsing fetch --help
 web-browsing search --help
@@ -183,7 +184,7 @@ web-browsing search --help
 ```bash
 # 访问简单网页
 web-browsing fetch "https://example.com"
-
+# ...
 # 总结网页内容
 web-browsing summarize "https://example.com"
 ```
@@ -193,7 +194,7 @@ web-browsing summarize "https://example.com"
 ```bash
 # 搜索网络
 web-browsing search "人工智能最新进展"
-
+# ...
 # 搜索并总结
 web-browsing search "人工智能最新进展" --summarize --limit 3
 ```
@@ -243,7 +244,7 @@ web-browsing config set-search \
 ```bash
 # 正确做法:明确说明需要什么
 web-browsing fetch "https://example.com" --fields "title,price,availability"
-
+# ...
 # 错误做法:目标不明确
 web-browsing fetch "https://example.com"  # 不知道需要什么内容
 ```
@@ -253,7 +254,7 @@ web-browsing fetch "https://example.com"  # 不知道需要什么内容
 ```bash
 # 长文章用总结
 web-browsing summarize "https://long-article.example.com" --length short
-
+# ...
 # 需要详情时直接获取
 web-browsing fetch "https://article.example.com" --format markdown
 ```
@@ -264,7 +265,7 @@ web-browsing fetch "https://article.example.com" --format markdown
 # 搜索时限定时间范围
 web-browsing search "最新新闻" --freshness today
 web-browsing search "本周热点" --freshness week
-
+# ...
 # 限定语言
 web-browsing search "AI research" --language en
 web-browsing search "人工智能研究" --language zh
@@ -330,7 +331,7 @@ done
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | curl | HTTP 工具 | 必需 | 系统自带 |
 | web_search | 搜索工具 | 必需 | Agent 内置或外部搜索 API |
 | web_fetch | 网页抓取 | 必需 | Agent 内置或外部抓取工具 |
@@ -353,9 +354,8 @@ SEARCH_API_KEY=your_search_api_key
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

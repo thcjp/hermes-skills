@@ -24,14 +24,15 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # SQL查询引擎
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | SQL查询引擎处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,13 +40,13 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| SQL查询引擎SQL查询 | 不支持 | 支持 |
+| SQL查询引擎ema设计与事务管理 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -55,7 +56,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -63,7 +64,6 @@ pricing_model: "monthly"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -76,7 +76,7 @@ export API_KEY="your_api_key_here"
 ```sql
 -- EXPLAIN ANALYZE 分析查询计划
 EXPLAIN ANALYZE SELECT * FROM orders WHERE user_id = 42;
-
+# ...
 -- N+1查询问题修复：子查询改为JOIN
 -- 问题：循环中执行N次查询
 -- 修复：单次JOIN查询
@@ -84,7 +84,7 @@ SELECT u.name, o.order_date, o.total
 FROM users u
 JOIN orders o ON u.id = o.user_id
 WHERE u.id IN (1, 2, 3, 4, 5);
-
+# ...
 -- 窗口函数：排名/累计/分桶
 SELECT
   product_name,
@@ -94,7 +94,7 @@ SELECT
   SUM(price) OVER (PARTITION BY category) AS category_total,
   PERCENT_RANK() OVER (ORDER BY price) AS price_percentile
 FROM products;
-
+# ...
 -- CTE递归查询：组织架构树
 WITH RECURSIVE org_tree AS (
   SELECT id, name, parent_id, 1 AS level
@@ -116,17 +116,17 @@ SELECT * FROM org_tree ORDER BY level, name;
 -- B-Tree索引（默认，适合等值和范围查询）
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 CREATE INDEX idx_orders_created_at ON orders(created_at DESC);
-
+# ...
 -- 复合索引（注意列顺序：等值→范围）
 CREATE INDEX idx_orders_user_date ON orders(user_id, created_at);
-
+# ...
 -- 部分索引（仅索引满足条件的行，减少索引体积）
 CREATE INDEX idx_orders_active ON orders(user_id) WHERE status = 'active';
-
+# ...
 -- 表达式索引（解决函数导致索引失效）
 CREATE INDEX idx_users_lower_email ON users(LOWER(email));
 -- 现在可以使用：SELECT * FROM users WHERE LOWER(email) = 'test@example.com'
-
+# ...
 -- GIN索引（PostgreSQL，适合JSONB/全文检索/数组）
 CREATE INDEX idx_products_attrs ON products USING GIN(attributes);
 SELECT * FROM products WHERE attributes @> '{"color": "red"}';
@@ -144,7 +144,7 @@ SELECT * FROM products WHERE attributes @> '{"color": "red"}';
 -- 1NF：消除重复组（每列原子值）
 -- 2NF：消除部分依赖（非主键列依赖完整主键）
 -- 3NF：消除传递依赖（非主键列不依赖其他非主键列）
-
+# ...
 -- 反规范化策略：读多写少场景适当冗余
 -- 订单表冗余存储用户名（避免每次JOIN users表）
 CREATE TABLE orders (
@@ -156,14 +156,14 @@ CREATE TABLE orders (
   created_at TIMESTAMPTZ DEFAULT NOW(),
   CONSTRAINT chk_status CHECK (status IN ('pending','paid','shipped','delivered','cancelled'))
 );
-
+# ...
 -- 分区表（按时间分区大表）
 CREATE TABLE events (
   id BIGSERIAL,
   event_time TIMESTAMPTZ NOT NULL,
   event_data JSONB
 ) PARTITION BY RANGE (event_time);
-
+# ...
 CREATE TABLE events_2026_01 PARTITION OF events
   FOR VALUES FROM ('2026-01-01') TO ('2026-02-01');
 ```
@@ -180,19 +180,19 @@ CREATE TABLE events_2026_01 PARTITION OF events
 -- 隔离级别
 SET TRANSACTION ISOLATION LEVEL READ COMMITTED;   -- PostgreSQL默认
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;     -- 最高隔离，防幻读
-
+# ...
 -- 乐观锁（版本号控制）
 UPDATE products SET stock = stock - 1, version = version + 1
 WHERE id = 42 AND version = 5;
 -- 若affected_rows = 0，说明已被其他事务修改，需重试
-
+# ...
 -- 悲观锁（SELECT FOR UPDATE）
 BEGIN;
 SELECT * FROM accounts WHERE id = 1 FOR UPDATE;
 -- 业务逻辑
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 COMMIT;
-
+# ...
 -- 死锁避免：固定加锁顺序
 -- 事务A: 先锁account 1 再锁account 2
 -- 事务B: 先锁account 1 再锁account 2（而非先2后1）
@@ -211,7 +211,7 @@ INSERT INTO users (email, name, updated_at)
 VALUES ('test@example.com', 'Test', NOW())
 ON CONFLICT (email) DO UPDATE
 SET name = EXCLUDED.name, updated_at = NOW();
-
+# ...
 -- LATERAL JOIN（子查询引用外层表）
 SELECT u.name, recent_orders.*
 FROM users u
@@ -221,7 +221,7 @@ LEFT JOIN LATERAL (
   ORDER BY created_at DESC
   LIMIT 3
 ) recent_orders ON true;
-
+# ...
 -- 交叉表（行转列）
 SELECT user_id,
   SUM(CASE WHEN month = 1 THEN amount ELSE 0 END) AS jan,
@@ -242,7 +242,7 @@ GROUP BY user_id;
 ```sql
 -- VACUUM ANALYZE（回收空间+更新统计信息）
 VACUUM ANALYZE orders;
-
+# ...
 -- 查看表大小和索引大小
 SELECT
   relname AS table_name,
@@ -251,7 +251,7 @@ SELECT
   pg_size_pretty(pg_indexes_size(relid)) AS index_size
 FROM pg_catalog.pg_statio_user_tables
 ORDER BY pg_total_relation_size(relid) DESC;
-
+# ...
 -- 慢查询日志配置
 ALTER SYSTEM SET log_min_duration_statement = 1000;  -- 记录>1秒的查询
 ALTER SYSTEM SET shared_buffers = '256MB';
@@ -263,7 +263,7 @@ SELECT pg_reload_conf();
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:---:|:---:|:---:|
 | 查询优化 | 慢SQL+表结构 | EXPLAIN分析+优化建议+改写SQL |
 | 索引设计 | 表结构+查询模式 | 索引创建方案+预期效果分析 |
 | Schema设计 | 业务需求+数据关系 | 建表语句+约束+索引+分区策略 |
@@ -308,9 +308,8 @@ SELECT pg_reload_conf();
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `EXPLAIN ANALYZE` 显示Seq Scan而非Index Scan | 查询条件导致索引失效（函数包裹列/类型不匹配/OR条件） | 移除列上的函数（`DATE(col)`→范围查询），确保比较类型一致，OR改为UNION ALL |
 | `INSERT` 报 deadlock detected | 两个事务以不同顺序锁定相同资源 | 统一加锁顺序（按主键排序后加锁），缩小事务范围，使用`ON CONFLICT`替代先查后插 |
 | 查询使用 `LIKE '%keyword%'` 全表扫描 | 前缀通配符无法使用B-Tree索引 | 使用全文检索（`tsvector`+`GIN`索引）或trigram索引（`pg_trgm`扩展） |

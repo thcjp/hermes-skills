@@ -27,19 +27,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 # Azure语音转写专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | Azure语音转写专业版批量处理 | 不支持 | 支持 |
-| 高级参数配置与自定义 | 不支持 | 支持 |
-| 批量处理与自动化 | 不支持 | 支持 |
-| 结果导出与格式转换 | 不支持 | 支持 |
-| 实时监控与告警通知 | 不支持 | 支持 |
+| 高级参数配置与自定义规则 | 不支持 | 支持 |
+| 批量任务编排与队列管理 | 不支持 | 支持 |
+| 结果导出与多格式转换 | 不支持 | 支持 |
+| 实时状态监控与异常告警 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -322,7 +324,7 @@ manager.export_results(format='srt')
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | azure-transcription处理的内容输入 |,  |
 | content | string | 否 | azure-transcription处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -350,9 +352,8 @@ manager.export_results(format='srt')
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --: | --: | --: |
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -368,7 +369,7 @@ manager.export_results(format='srt')
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | azure-ai-transcription | Python SDK | 必需 | `pip install azure-ai-transcription` |
@@ -386,7 +387,6 @@ manager.export_results(format='srt')
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业语音转写任务。支持实时流式转写、说话人分离、批量队列等企业级功能，通过Python SDK调用Azure AI服务。与免费版完全兼容，可直接复用免费版的认证配置与基础转写流程。
 
-
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
@@ -397,7 +397,7 @@ export API_KEY="your_api_key_here"
 ### 转写参数配置
 
 | 参数 | 说明 | 免费版 | 专业版 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | `locale` | 语言代码 | 支持 | 支持 |
 | `diarization_enabled` | 说话人分离 | 不支持 | 支持 |
 | `max_speakers` | 最大说话人数 | 不支持 | 可配置 |
@@ -408,7 +408,7 @@ export API_KEY="your_api_key_here"
 ### 输出格式对比
 
 | 格式 | 用途 | 特点 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | 纯文本 | 文档归档 | 最简格式 |
 | SRT | 视频字幕 | 带序号与时间戳 |
 | VTT | Web视频字幕 | HTML5标准 |
@@ -438,9 +438,8 @@ export API_KEY="your_api_key_here"
 
 ## 错误处理
 
-
 | 错误场景2 | 原因 | 处理方式 |
-| --: | :-- | :-: |
+|:-------:|---------|:--------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

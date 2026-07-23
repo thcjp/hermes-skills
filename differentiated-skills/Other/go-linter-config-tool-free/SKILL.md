@@ -40,8 +40,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Go Lint 配置工具（免费版）
 
 ## 概述
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 配置模板 | 最小（仅 gofmt）与标准（7 个 linter） | 两套 |
 | 排障清单 | 导入解析、类型检查、CI 依赖 | 常见项 |
 | linter 选用 | 按用途推荐 | 基础 7 个 |
@@ -94,7 +95,7 @@ brew install golangci-lint
 # 通用 (Go 工具链)
 go install golangci-lint/cmd/golangci-lint@latest
 # 或从官方发布页下载二进制
-
+# ...
 # 运行
 golangci-lint run ./...
 ```
@@ -172,13 +173,12 @@ golangci-lint run --config .golangci.yml ./...
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 基础 linter 选用：
 
 | linter | 用途 |
-|:-------|:-----|
+|:-------|:-------|
 | gofmt | 格式一致性 |
 | govet | 语义错误 |
 | errcheck | 未检查错误 |
@@ -222,7 +222,7 @@ A：能。免费版提供基础 CI 工作流示例。
 ```bash
 # 本地
 golangci-lint run ./...
-
+# ...
 # CI 显式指定最小配置
 golangci-lint run --config .golangci.minimal.yml ./...
 ```
@@ -232,7 +232,7 @@ golangci-lint run --config .golangci.minimal.yml ./...
 标准 7 个之外，按项目需要增量启用：
 
 | linter | 何时启用 |
-|:-------|:---------|
+|----:|----:|
 | gocyclo | 关注圈复杂度时 |
 | misspell | 多语言注释项目 |
 | gosec | 安全敏感项目 |
@@ -278,7 +278,7 @@ CI lint 报错
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | golangci-lint | 命令行工具 | 必需 | `go install ...@latest` |
 | Go | 工具链 | 必需 | go.dev 下载 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -292,9 +292,8 @@ CI lint 报错
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # CSV洞察 专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力域 | 支持 | 支持 |
-| 流式统计 | 不支持 | 支持 |
-| GB 级文件流式统计 | 不支持 | 支持 |
-| `correlate` | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| CSV洞察 专业版全功能CSV分析 | 不支持 | 支持 |
+| CSV洞察 专业版相关性分析 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力域 | 命令 | 说明 | 专业版增强 |
-|--------|------|------|-----------|
+|:-----|:-----|:-----|:-----|
 | 流式统计 | `stream stats` | GB 级文件流式统计 | 专业版独有 |
 | 相关性分析 | `correlate` | 列间相关系数矩阵 | 专业版独有 |
 | 分布可视化 | `plot histogram` / `plot boxplot` / `plot scatter` | 直方图/箱线图/散点图 | 专业版独有 |
@@ -85,7 +87,7 @@ pricing_model: "per_use"
 ```bash
 # 流式统计（内存占用 < 300MB）
 csv-insight stream stats access_log.csv --chunk-size 100MB
-
+# ...
 # 流式分组聚合
 csv-insight stream group access_log.csv \
   --by status_code \
@@ -100,10 +102,10 @@ csv-insight stream group access_log.csv \
 ```bash
 # 计算所有数值列的相关系数
 csv-insight correlate features.csv --method pearson
-
+# ...
 # 输出热力图（ASCII）
 csv-insight correlate features.csv --method pearson --heatmap
-
+# ...
 # 识别强相关对（|r| > 0.8）
 csv-insight correlate features.csv --method pearson --threshold 0.8
 ```
@@ -117,7 +119,7 @@ age       1.000   0.452   -0.123   0.089
 income    0.452   1.000    0.678   0.234
 score    -0.123   0.678    1.000   0.567
 visits    0.089   0.234    0.567   1.000
-
+# ...
 强相关对（|r| > 0.5）:
   income  <->  score    : 0.678
   score   <->  visits   : 0.567
@@ -130,10 +132,10 @@ visits    0.089   0.234    0.567   1.000
 ```bash
 # 直方图（自动分箱）
 csv-insight plot histogram data.csv --column amount --bins 20
-
+# ...
 # 箱线图（识别离群点）
 csv-insight plot boxplot data.csv --column amount
-
+# ...
 # 散点图（两列关系）
 csv-insight plot scatter data.csv --x income --y score
 ```
@@ -158,13 +160,13 @@ amount 分布直方图（20 箱）:
 ```bash
 # IQR 方法（适合偏态分布）
 csv-insight anomalies data.csv --column amount --method iqr --factor 1.5
-
+# ...
 # DBSCAN 方法（适合多维异常）
 csv-insight anomalies data.csv \
   --columns amount,frequency,recency \
   --method dbscan \
   --eps 0.5 --min-samples 5
-
+# ...
 # 多方法对比
 csv-insight anomalies data.csv --column amount --method all --compare
 ```
@@ -190,7 +192,7 @@ csv-insight report data.csv \
   --include stats,schema,anomalies,distribution,correlation \
   --format markdown \
   --output data-quality-report.md
-
+# ...
 # HTML 格式（含图表）
 csv-insight report data.csv \
   --include stats,schema,anomalies,distribution \
@@ -220,7 +222,7 @@ export CSV_INSIGHT_HOME="$HOME/.csv-insight"
 ```bash
 # 验证流式统计
 csv-insight stream stats large.csv --chunk-size 10MB
-
+# ...
 # 验证相关性分析
 csv-insight correlate sample.csv --method pearson
 ```
@@ -237,7 +239,7 @@ csv-insight correlate sample.csv --method pearson
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|---:|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 | Python | 运行时 | 必需 | 官网下载 | 3.8+ |
 | csv 模块 | Python 标准库 | 必需 | Python 自带 | - |
@@ -259,7 +261,7 @@ csv-insight correlate sample.csv --method pearson
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | csv-insight处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -311,7 +313,7 @@ csv-insight correlate sample.csv --method pearson
 - 机制: 失败时自动 最多3次
 
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
-|------|----------|----------|--------|
+|:------|------:|:------|:------|
 | OOM 内存溢出 | 全量加载大文件 | 切换流式处理 | P0 |
 | 相关系数为 NaN | 列含缺失值 | 用 `--handle-missing` 处理 | P1 |
 | DBSCAN 聚类失败 | 数据未标准化 | 先 z-score 标准化 | P1 |
@@ -321,10 +323,10 @@ csv-insight correlate sample.csv --method pearson
 | 流式中断 | 网络或进程被杀 | 从检查点恢复 | P2 |
 | 多文件对比列不匹配 | 列名不一致 | 启用 `--normalize-headers` | P2 |
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -377,7 +379,7 @@ correlation_method: pearson
 ### 异常检测算法对比
 
 | 算法 | 适用场景 | 优点 | 局限 |
-|------|----------|------|------|
+|:------:|--------|:-------|:------:|
 | Z-Score | 正态分布数据 | 计算简单 | 不适合偏态分布 |
 | IQR | 偏态分布数据 | 不受极端值影响 | 仅单变量 |
 | DBSCAN | 多维异常 | 可识别聚类异常 | 需调参（eps/min_samples） |
@@ -430,9 +432,8 @@ csv-insight stream stats large.csv --checkpoint --resume-on-failure
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

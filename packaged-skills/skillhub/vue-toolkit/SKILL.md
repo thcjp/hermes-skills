@@ -19,27 +19,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Vue工具箱(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 响应式进阶 | 支持 | 支持 |
-| 大对象性能优化 | 不支持 | 支持 |
-| 性能优化 | 不支持 | 支持 |
-| 首屏 < 1.5s | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 模块 | 能力点 | 价值 |
-|------|--------|------|
+|:-----|:-----|:-----|
 | 响应式进阶 | shallowRef、triggerRef、customRef、markRaw | 大对象性能优化 |
 | 性能优化 | v-memo、defineAsyncComponent、Suspense、keep-alive | 首屏 < 1.5s |
 | SSR/SSG | hydration、async setup、streaming、Nuxt 集成 | SEO 与首屏 |
@@ -106,19 +108,19 @@ pricing_model: "per_use"
 ```vue
 <script setup lang="ts">
 import { shallowRef, triggerRef, defineAsyncComponent } from 'vue'
-
+# ...
 // 大数据用 shallowRef 避免深度代理开销
 const bigList = shallowRef<Array<{ id: number; name: string }>>([])
-
+# ...
 function updateList(newList: typeof bigList.value) {
   bigList.value = newList
   triggerRef(bigList) // 显式触发更新
 }
-
+# ...
 // 路由级懒加载
 const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'))
 </script>
-
+# ...
 <template>
   <!-- v-memo 跳过未变化的项 -->
   <div v-for="item in bigList" :key="item.id" v-memo="[item.id, item.name]">
@@ -131,7 +133,7 @@ const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'))
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | vue-toolkit处理的内容输入 |,  |
 | content | string | 否 | vue-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -159,9 +161,8 @@ const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'))
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -176,7 +177,7 @@ const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'))
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | Vue 3 | npm 包 | 必需 | `npm install vue@^3.4` |
 | Pinia | npm 包 | 推荐 | `npm install pinia` |
@@ -204,20 +205,20 @@ const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'))
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { useAuthStore } from './auth'
-
+// ...
 export const useUserStore = defineStore('user', () => {
   const auth = useAuthStore() // 跨 store 注入
   const profile = ref<{ name: string; role: string } | null>(null)
-
+// ...
   const isAdmin = computed(() => profile.value?.role === 'admin')
-
+// ...
   async function fetchProfile() {
     if (!auth.token) throw new Error('未登录')
     profile.value = await fetch('/api/me', {
       headers: { Authorization: `Bearer ${auth.token}` }
     }).then((r) => r.json())
   }
-
+// ...
   return { profile, isAdmin, fetchProfile }
 })
 ```
@@ -229,16 +230,16 @@ export const useUserStore = defineStore('user', () => {
 import { createSSRApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
-
+// ...
 export async function createApp() {
   const app = createSSRApp(App)
   const pinia = createPinia()
   app.use(pinia)
-
+// ...
   // 预取数据
   const userStore = useUserStore(pinia)
   await userStore.fetchProfile()
-
+// ...
   // 序列化状态到 HTML
   const state = JSON.stringify(pinia.state.value)
   return { app, state }
@@ -250,13 +251,13 @@ export async function createApp() {
 ```ts
 // composables/useFetch.ts
 import { ref, shallowRef, onUnmounted, type Ref } from 'vue'
-
+// ...
 export function useFetch<T>(url: string) {
   const data = shallowRef<T | null>(null) as Ref<T | null>
   const error = ref<Error | null>(null)
   const loading = ref(false)
   let controller: AbortController | null = null
-
+// ...
   async function refresh() {
     controller?.abort()
     controller = new AbortController()
@@ -271,7 +272,7 @@ export function useFetch<T>(url: string) {
       loading.value = false
     }
   }
-
+// ...
   onUnmounted(() => controller?.abort())
   refresh()
   return { data, error, loading, refresh }
@@ -285,7 +286,7 @@ export function useFetch<T>(url: string) {
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
 import Button from './Button.vue'
-
+// ...
 describe('Button', () => {
   it('emits click event', async () => {
     const wrapper = mount(Button, { props: { label: 'Submit' } })
@@ -303,7 +304,7 @@ A：当数据量大且结构深、但你只关心整体替换时用 `shallowRef`
 ### Q2：SSR 项目里 window 未定义怎么办？
 A：使用 `import.meta.env.SSR`（Vite）或 `process.server`（Nuxt）做环境判断，把客户端 only 的逻辑放到 `onMounted` 中执行，或用 `<ClientOnly>` 组件包裹。
 
-### 依赖说明
+### 依赖说明(补充)
 A：不会。Pinia 在 `defineStore` 工厂函数内调用 `useOtherStore()` 是惰性求值，只要不在模块顶层直接调用即可避免循环。
 
 ### Q4：Composable 里发请求怎么取消？
@@ -329,9 +330,8 @@ A：用 `flushPromises` from `@vue/test-utils`，或 `await nextTick()`。涉及
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

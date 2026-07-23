@@ -23,19 +23,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "图像处理,AI绘图,创意"
 ---
 # 豆包图片生成-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 豆包图片生成-专业版企业级AI图片生成 | 不支持 | 支持 |
+| 豆包图片生成-专业版支持批量生成 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -63,7 +65,7 @@ pricing_model: "per_use"
 一次提示词生成多种比例版本：
 
 | 比例 | 适用场景 |
-|:-----|:---------|
+|:-----|:-----|
 | 3:4 | 竖版社交媒体 |
 | 1:1 | 方形头像/商品图 |
 | 4:3 | 横版配图 |
@@ -180,7 +182,7 @@ python3 prompt_enhancer.py \
   --input "一只猫" \
   --style-preset "photorealistic" \
   --output /tmp/enhanced-prompt.txt
-
+# ...
 ```
 
 ## 使用流程
@@ -188,9 +190,9 @@ python3 prompt_enhancer.py \
 ### 优秀步：环境检查
 ```bash
 python3 --version
-
+# ...
 google-chrome --version
-
+# ...
 ls ~/.skill-platform/workspace/
 ```
 
@@ -235,7 +237,7 @@ python3 batch_generate.py \
 python3 prompt_enhancer.py \
   --input "咖啡店" \
   --output /tmp/enhanced.txt
-
+# ...
 python3 prompt_enhancer.py \
   --batch /tmp/prompts.txt \
   --output-dir /tmp/enhanced/
@@ -245,7 +247,7 @@ python3 prompt_enhancer.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | doubao-image-gen处理的内容输入 |,  |
 | content | string | 否 | doubao-image-gen处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -273,9 +275,8 @@ python3 prompt_enhancer.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -290,9 +291,9 @@ python3 prompt_enhancer.py \
 - **网络**：需要网络连接（访问豆包服务）
 - **内存**：建议 16GB+（多浏览器实例并行）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | Chrome | 浏览器 | 必需 | google.com | 100+ |
 | message | 平台工具 | 必需 | Skill 平台安装 | - |
@@ -305,7 +306,7 @@ python3 prompt_enhancer.py \
 #### 完整安装命令
 ```bash
 pip3 install requests pyyaml Pillow
-
+# ...
 python3 --version
 google-chrome --version
 which message
@@ -316,14 +317,14 @@ python3 -c "import requests; print('requests ready')"
 专业版需要以下配置：
 
 | 配置项 | 环境变量 | 用途 | 获取方式 |
-|:-------|:---------|:-----|:---------|
+|---:|:---|---:|---:|
 | 豆包账号 | 浏览器登录 | 访问豆包 AI 服务 | 豆包平台注册 |
 | Skill 平台 Token | 平台配置 | 平台认证 | Skill 平台控制台 |
 | 提示词增强 API | `PROMPT_ENHANCE_API_KEY` | AI 提示词增强（可选） | 对应 AI 服务商 |
 
 ```bash
 export PROMPT_ENHANCE_API_KEY="your_enhance_key"
-
+# ...
 ```
 
 ### 可用性分类
@@ -336,20 +337,6 @@ export PROMPT_ENHANCE_API_KEY="your_enhance_key"
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -385,7 +372,7 @@ export PROMPT_ENHANCE_API_KEY="your_enhance_key"
 
 ```bash
 python3 batch_generate.py --retry-failed /tmp/generate-queue.json
-
+# ...
 python3 batch_generate.py --resume /tmp/generate-queue.json
 ```
 
@@ -441,9 +428,8 @@ python3 batch_generate.py \
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

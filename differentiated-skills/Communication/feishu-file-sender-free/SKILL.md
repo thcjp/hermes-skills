@@ -18,11 +18,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # 飞书文件发送免费版
 
 **版本**: 1.0.0
@@ -107,13 +108,13 @@ python3 （请参考skill目录中的脚本文件） \
 📤 文件发送中...
    文件: report.html (256 KB)
    接收者: ou_xxxxxxx
-
+# ...
 Step 1: 上传文件...
   ✅ 上传成功, file_key: file_v3_xxxx
-
+# ...
 Step 2: 发送消息...
   ✅ 发送成功!
-
+# ...
 📋 发送完成: 用户已在飞书中收到 report.html
 ```
 
@@ -128,7 +129,7 @@ python3 （请参考skill目录中的脚本文件） \
   ou_xxxxxxx \
   your_app_id \
   your_app_secret
-
+# ...
 # 国际版 Lark
 python3 （请参考skill目录中的脚本文件） \
   /path/to/chart.png \
@@ -145,7 +146,7 @@ python3 （请参考skill目录中的脚本文件） \
 ```bash
 # 先压缩文件
 zip -r project.zip project/
-
+# ...
 # 发送 ZIP 文件
 python3 （请参考skill目录中的脚本文件） \
   project.zip \
@@ -177,7 +178,7 @@ grep -A 2 '"feishu"' config.json | grep -E '(appId|appSecret)'
 ```bash
 # 发送普通文件
 python3 （请参考skill目录中的脚本文件） <file_path> <open_id> <app_id> <app_secret> [file_name]
-
+# ...
 # 发送图片
 python3 （请参考skill目录中的脚本文件） <image_path> <open_id> <app_id> <app_secret> [domain]
 ```
@@ -185,7 +186,7 @@ python3 （请参考skill目录中的脚本文件） <image_path> <open_id> <app
 ### 参数说明
 
 | 参数 | 说明 | 示例 |
-|:-----|:-----|:-----|
+|---|---|---|
 | `file_path` | 文件路径 | `/path/to/report.html` |
 | `open_id` | 接收者 ID | `ou_xxxxxxx` |
 | `app_id` | 飞书应用 ID | `cli_xxxxxxx` |
@@ -239,7 +240,7 @@ TOKEN=$(curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_
   -H "Content-Type: application/json" \
   -d '{"app_id":"<APP_ID>","app_secret":"<APP_SECRET>"}' \
   | python3 -c "import json,sys; print(json.load(sys.stdin)['tenant_access_token'])")
-
+# ...
 # 上传文件获取 file_key
 FILE_KEY=$(curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/files" \
   -H "Authorization: Bearer $TOKEN" \
@@ -247,7 +248,7 @@ FILE_KEY=$(curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/files" \
   -F "file_name=report.html" \
   -F "file=@/path/to/report.html" \
   | python3 -c "import json,sys; print(json.load(sys.stdin)['data']['file_key'])")
-
+# ...
 echo "file_key: $FILE_KEY"
 ```
 
@@ -270,14 +271,14 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 **关键原则**: 普通文件与图片使用不同的 API 链路，不要混用。
 
 | 类型 | 上传 API | 获取的 Key | 消息类型 |
-|:-----|:---------|:-----------|:---------|
+|:-----|:-----|:-----|:-----|
 | 普通文件 | `im/v1/files` | `file_key` | `msg_type=file` |
 | 图片 | `im/v1/images` | `image_key` | `msg_type=image` |
 
 ```bash
 # 普通文件：使用 send_file.py
 python3 （请参考skill目录中的脚本文件） report.pdf ou_xxx app_id app_secret
-
+# ...
 # 图片：使用 send_image.py（不要用 send_file.py 发图片）
 python3 （请参考skill目录中的脚本文件） chart.png ou_xxx app_id app_secret
 ```
@@ -342,7 +343,7 @@ python3 （请参考skill目录中的脚本文件） compressed.zip ou_xxx app_i
 ```bash
 # 普通文件
 python3 （请参考skill目录中的脚本文件） /path/to/file.pdf ou_xxx app_id app_secret
-
+# ...
 # 图片（特别重要）
 python3 （请参考skill目录中的脚本文件） /path/to/image.png ou_xxx app_id app_secret
 ```
@@ -358,7 +359,7 @@ Error: 文件上传失败
 ```bash
 # 确认文件存在且可读
 ls -la /path/to/file.pdf
-
+# ...
 # 已知限制
 du -h /path/to/file.pdf
 ```
@@ -385,7 +386,7 @@ curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/in
 ```bash
 # 国内版飞书（默认）
 python3 （请参考skill目录中的脚本文件） image.png ou_xxx app_id app_secret
-
+# ...
 # 国际版 Lark
 python3 （请参考skill目录中的脚本文件） image.png ou_xxx app_id app_secret lark
 ```
@@ -397,7 +398,7 @@ python3 （请参考skill目录中的脚本文件） image.png ou_xxx app_id app
 ```bash
 # 个人用户
 receive_id_type=open_id, receive_id=ou_xxx
-
+# ...
 # 群聊
 receive_id_type=chat_id, receive_id=oc_xxx
 ```
@@ -416,7 +417,7 @@ receive_id_type=chat_id, receive_id=oc_xxx
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 官方网站下载安装 |
 | Python 标准库 | 运行库 | 必需 | Python 自带（requests, json） |
@@ -438,9 +439,8 @@ receive_id_type=chat_id, receive_id=oc_xxx
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

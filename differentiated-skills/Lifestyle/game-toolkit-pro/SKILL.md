@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 游戏设计工具箱 (专业版)
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 桌游设计 | 完整规则与组件 | 支持 | 支持 |
 | 派对游戏 | 社交互动游戏 | 支持 | 支持 |
 | 儿童游戏 | 分龄段游戏 | 支持 | 支持 |
@@ -90,14 +92,14 @@ pricing_model: "per_use"
 ```python
 import os
 import requests
-
+# ...
 API_BASE = "https://api.game-designer-pro.local/v1"
 ADMIN_KEY = os.environ["GAME_DESIGNER_ADMIN_KEY"]
-
+# ...
 class CommercialGameStudio:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-
+# ...
     def design_commercial_boardgame(self, concept, target_market, budget):
         """设计商业桌游"""
         payload = {
@@ -122,7 +124,7 @@ class CommercialGameStudio:
             timeout=300,
         )
         return resp.json()
-
+# ...
 studio = CommercialGameStudio(ADMIN_KEY)
 game = studio.design_commercial_boardgame(
     concept="中世纪城堡建设策略游戏",
@@ -161,7 +163,7 @@ def create_curriculum_package(subject, grade_level, sessions):
         timeout=300,
     )
     return resp.json()
-
+# ...
 # 创建小学数学游戏化课程
 curriculum = create_curriculum_package(
     subject="数学",
@@ -203,7 +205,7 @@ def create_team_building_package(company_size, duration, objectives):
         timeout=300,
     )
     return resp.json()
-
+# ...
 # 50 人科技公司半天团建
 package = create_team_building_package(
     company_size=50,
@@ -257,30 +259,30 @@ api:
   admin_key: ${GAME_DESIGNER_ADMIN_KEY}
   org_id: ${GAME_DESIGNER_ORG_ID}
   timeout: 300
-
+# ...
 commercial:
   manufacturing_partners: [panda_gm, ludofact, whatz_games]
   shipping_calculator: true
   kickstarter_templates: true
   retailer_database: true
-
+# ...
 education:
   curriculum_standards: [common_core, ib, montessori]
   grade_levels: [k-12]
   assessment_frameworks: true
   multi_language: [zh, en, ja, ko]
-
+# ...
 team_building:
   activity_library: 500+
   customization: true
   facilitator_certification: true
   industry_templates: [tech, finance, healthcare, education]
-
+# ...
 ip_management:
   copyright_tracking: true
   license_generation: true
   royalty_calculator: true
-
+# ...
 collaboration:
   version_control: true
   multi_user_editing: true
@@ -416,7 +418,7 @@ curl -X POST -H "X-API-Key: $GAME_DESIGNER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"game_id":"g001","license_type":"commercial","territory":"worldwide"}' \
   "https://api.game-designer-pro.local/v1/ip/register"
-
+# ...
 # 生成授权协议
 curl -X POST -H "X-API-Key: $GAME_DESIGNER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -478,7 +480,7 @@ def batch_generate_concepts(theme, count, variations=True):
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Game Designer Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -492,11 +494,11 @@ def batch_generate_concepts(theme, count, variations=True):
 export GAME_DESIGNER_ADMIN_KEY="sk_pro_admin_xxx"
 export GAME_DESIGNER_ORG_ID="org_your_id"
 export GAME_DESIGNER_EDITION="pro"
-
+# ...
 # 可选: 制造商对接
 export PANDA_GM_API_KEY="..."
 export LUDOFACT_API_KEY="..."
-
+# ...
 # 可选: 教育标准对接
 export COMMON_CORE_API_KEY="..."
 ```
@@ -510,9 +512,8 @@ export COMMON_CORE_API_KEY="..."
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

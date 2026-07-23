@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # XML处理工具（专业版）
 
@@ -40,7 +42,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 解析模式 | DOM（全加载） | DOM + SAX/StAX（流式） |
 | 模式验证 | 良构检查 | DTD + XSD + RelaxNG |
 | 格式互转 | 不支持 | XML/JSON/YAML/CSV 互转 |
@@ -83,21 +85,21 @@ pricing_model: "per_use"
 
 ```python
 import xml.sax
-
+# ...
 class MyHandler(xml.sax.ContentHandler):
     def __init__(self):
         self.current = ""
         self.count = 0
-
+# ...
     def startElement(self, name, attrs):
         self.current = name
-
+# ...
     def characters(self, content):
         if self.current == "record":
             self.count += 1
             if self.count % 10000 == 0:
                 print(f"已处理 {self.count} 条记录")
-
+# ...
 # 流式解析大文件
 parser = xml.sax.make_parser()
 parser.setContentHandler(MyHandler())
@@ -115,7 +117,7 @@ xml-pro validate \
   --schema ./schemas/config.xsd \
   --recursive \
   --report validation-report.md
-
+# ...
 # 输出
 # 📊 验证报告
 # 总文件: 45
@@ -137,14 +139,14 @@ xml-pro convert xml-to-json \
   --output config.json \
   --preserve-namespaces \
   --pretty
-
+# ...
 # JSON 转 XML
 xml-pro convert json-to-xml \
   --input data.json \
   --output data.xml \
   --root "data" \
   --encoding utf-8
-
+# ...
 # 批量转换
 xml-pro convert batch \
   --input ./xml/ \
@@ -164,19 +166,19 @@ xml-pro convert batch \
 ```bash
 # 1. 初始化专业版工作区
 xml-pro init --workspace ~/xml-pro
-
+# ...
 # 2. 解析（兼容免费版）
 xml-pro parse --file input.xml --format pretty
-
+# ...
 # 3. 流式解析大文件
 xml-pro parse --file large.xml --mode stream --handler record-counter
-
+# ...
 # 4. XSD 验证
 xml-pro validate --file config.xml --schema config.xsd
-
+# ...
 # 5. 格式转换
 xml-pro convert xml-to-json --file config.xml --output config.json
-
+# ...
 # 6. 批量处理
 xml-pro batch convert --input ./xml/ --to json --output ./json/
 ```
@@ -221,7 +223,7 @@ report:
 ## 格式互转对照
 
 | 源格式 | 目标格式 | 说明 |
-|:-------|:---------|:-----|
+|:-----|:-----|:-----|
 | XML | JSON | 保留命名空间前缀 |
 | XML | YAML | 简化结构表示 |
 | XML | CSV | 提取重复元素为行 |
@@ -270,7 +272,7 @@ A：专业版支持将 XML 解析结果导出为 SQL 插入语句，便于导入
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 官方站点下载 |
 | lxml | 库 | 推荐 | pip 安装 |
@@ -285,9 +287,8 @@ A：专业版支持将 XML 解析结果导出为 SQL 插入语句，便于导入
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

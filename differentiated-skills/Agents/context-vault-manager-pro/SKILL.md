@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 上下文保险库（专业版）
 
@@ -46,7 +48,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Context Vault Manage处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -129,7 +131,7 @@ const result = await skills.contextVaultManager({
   searchMode: "semantic",
   limit: 5
 });
-
+// ...
 // 混合检索（关键词+语义）
 const hybrid = await skills.contextVaultManager({
   action: "search",
@@ -188,7 +190,7 @@ const hybrid = await skills.contextVaultManager({
 ### 1. 三层记忆分层（基础+增强）
 
 | 层级 | 类型 | 存储策略 | 清理机制 | 专业版增强 |
-|------|------|----------|----------|------------|
+|:-----|:-----|:-----|:-----|:-----|
 | 短期记忆 | short-term | 内存+向量 | 智能清理 | 基于重要性+时效性 |
 | 长期记忆 | long-term | 内存+磁盘+向量 | 永久存储 | 向量索引 |
 | 重要记忆 | important | 内存+磁盘+向量 | 永不清理 | 优先检索 |
@@ -236,7 +238,7 @@ const hybrid = await skills.contextVaultManager({
 ```
 
 | 检索模式 | 算法 | 准确率 | 适用场景 |
-|----------|------|--------|----------|
+|---:|---:|---:|---:|
 | keyword | TF-IDF关键词匹配 | 75% | 精确关键词查询 |
 | semantic | 向量语义相似度 | 85% | 概念相关查询 |
 | hybrid | 关键词+语义融合 | 92% | 通用场景（推荐） |
@@ -264,7 +266,7 @@ LLM自动生成记忆摘要，无需手动触发：
     "max_summary_tokens": 500
   }
 }
-
+// ...
 // 手动触发摘要
 const summary = await skills.contextVaultManager({
   action: "summarize",
@@ -297,7 +299,7 @@ LanceDB/Chroma向量数据库支持：
     "embedding_model": "text-embedding-3-small"
   }
 }
-
+// ...
 // 存储记忆时自动生成向量
 await skills.contextVaultManager({
   action: "add",
@@ -328,13 +330,13 @@ await skills.contextVaultManager({
   action: "create-project",
   project: "project-alpha"
 });
-
+// ...
 // 切换项目
 await skills.contextVaultManager({
   action: "switch-project",
   project: "project-alpha"
 });
-
+// ...
 // 在项目上下文中操作
 await skills.contextVaultManager({
   action: "add",
@@ -397,7 +399,7 @@ await skills.contextVaultManager({
   type: "important",
   relatedTo: ["uuid-of-auth-memory"]
 });
-
+// ...
 // 关联检索
 const related = await skills.contextVaultManager({
   action: "search",
@@ -459,7 +461,7 @@ const related = await skills.contextVaultManager({
 // 创建项目记忆空间
 await skills.contextVaultManager({ action: "create-project", project: "project-a" });
 await skills.contextVaultManager({ action: "create-project", project: "project-b" });
-
+// ...
 // 在项目A上下文中操作
 await skills.contextVaultManager({
   action: "add",
@@ -467,7 +469,7 @@ await skills.contextVaultManager({
   type: "long-term",
   project: "project-a"
 });
-
+// ...
 // 跨项目检索共享知识
 const shared = await skills.contextVaultManager({
   action: "search",
@@ -488,7 +490,7 @@ const shared = await skills.contextVaultManager({
 // 为每个产品线创建记忆空间
 await skills.contextVaultManager({ action: "create-project", project: "product-a" });
 await skills.contextVaultManager({ action: "create-project", project: "product-b" });
-
+// ...
 // 存储产品知识
 await skills.contextVaultManager({
   action: "add",
@@ -496,7 +498,7 @@ await skills.contextVaultManager({
   type: "important",
   project: "product-a"
 });
-
+// ...
 // 混合检索
 const result = await skills.contextVaultManager({
   action: "search",
@@ -521,7 +523,7 @@ await skills.contextVaultManager({
   type: "important",
   relatedTo: ["uuid-of-team-growth"]
 });
-
+// ...
 // 自动摘要控制Token
 const summary = await skills.contextVaultManager({
   action: "summarize",
@@ -575,7 +577,7 @@ const insights = await skills.contextVaultManager({
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:---:|:---:|:---:|:---:|
 | 架构师 | RAG应用记忆层 | 混合检索+向量数据库 | RAG准确率+40% |
 | 独立开发者 | 多项目记忆 | 多项目隔离+跨项目检索 | 项目隔离、知识共享 |
 | 客服主管 | 客服知识库 | 多项目+混合检索+自动摘要 | 知识隔离、响应提速 |
@@ -637,7 +639,7 @@ const retrieved = await skills.contextVaultManager({
   searchMode: "hybrid",
   limit: 5
 });
-
+// ...
 // 将检索结果注入RAG上下文
 const context = retrieved.memories.map(m => m.content).join("\n");
 const response = await rag.generate(userQuery, context);
@@ -695,7 +697,7 @@ skills.contextVaultManager action="export" project="project-a" \
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:------|------:|:------|
 | 1.0.0 | 2026-01 | 初版发布，含七大高级功能 |
 
 ---
@@ -708,9 +710,8 @@ skills.contextVaultManager action="export" project="project-a" \
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|:---|---:|---:|:---|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -766,7 +767,7 @@ skills.contextVaultManager action="export" project="project-a" \
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:------:|--------|:-------|:------:|
 | 语义检索无结果 | 向量数据库未初始化 | 检查vector_db配置；验证嵌入模型API Key | 高 |
 | 混合检索慢 | 向量索引未优化 | 调整索引参数；启用结果缓存 | 中 |
 | 自动摘要质量差 | LLM模型能力不足 | 使用更强LLM；调整摘要参数 | 中 |
@@ -790,7 +791,7 @@ skills.contextVaultManager action="export" project="project-a" \
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
 | LanceDB | 向量数据库 | 专业版必需 | `pip install lancedb` |
@@ -861,7 +862,7 @@ skills.contextVaultManager action="export" project="project-a" \
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|----|----|----|----|
 | 免费体验版 | ¥0 | 三层分层+关键词检索+手动摘要+持久化+基础示例+基础FAQ | 个人试用、轻量记忆需求 |
 | 收费专业版 | ¥29.9/月 | 语义检索+混合检索+自动摘要+向量数据库+多项目隔离+智能清理+关系网络+多角色指南+性能优化+优先支持 | 团队/企业、RAG应用、多项目管理 |
 

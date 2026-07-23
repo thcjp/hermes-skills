@@ -39,19 +39,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # Git助手专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Git助手专业版支持智能冲突分析 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -64,31 +66,31 @@ pricing_model: "per_use"
 ```python
 class ConflictResolver:
     """冲突自动修复工具"""
-
+# ...
     @staticmethod
     def auto_resolve(filepath, cwd=None):
         """自动解决可自动处理的冲突"""
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
-
+# ...
         resolved_count = 0
         pattern = re.compile(
             r'<<<<<<< (\S+)\n(.*?)=======\n(.*?)>>>>>>> (\S+)',
             re.DOTALL
         )
-
+# ...
         def resolver(match):
             nonlocal resolved_count
             our_code = match.group(2)
             their_code = match.group(3)
-
+# ...
             analysis = ConflictAnalyzer._analyze_conflict_content(
                 our_code.strip(), their_code.strip()
             )
-
+# ...
             if analysis["auto_resolvable"]:
                 resolved_count += 1
-
+# ...
                 if analysis["type"] == "whitespace":
                     return our_code.strip() + '\n'
                 elif analysis["type"] == "import":
@@ -101,19 +103,19 @@ class ConflictResolver:
                     return our_code if our_code.strip() else their_code
             else:
                 return match.group(0)
-
+# ...
         new_content = pattern.sub(resolver, content)
-
+# ...
         if resolved_count > 0:
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(new_content)
-
+# ...
         return {
             "file": filepath,
             "auto_resolved": resolved_count,
             "remaining": content.count('<<<<<<<') - resolved_count
         }
-
+# ...
     @staticmethod
     def batch_auto_resolve(cwd=None):
         """批量自动解决冲突"""
@@ -122,12 +124,12 @@ class ConflictResolver:
             capture_output=True, text=True, cwd=cwd
         )
         files = result.stdout.strip().split('\n') if result.stdout.strip() else []
-
+# ...
         results = []
         for f in files:
             if f:
                 results.append(ConflictResolver.auto_resolve(f, cwd))
-
+# ...
         return {
             "total_files": len(files),
             "results": results,
@@ -147,15 +149,9 @@ class ConflictResolver:
 **处理**: 解析批量仓库诊断的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回批量仓库诊断的处理结果,包含执行状态码、结果数据和执行日志。
 
-### 4. 自动化故障恢复
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供自动化故障恢复所需的指令和必要参数。
 **处理**: 解析自动化故障恢复的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回自动化故障恢复的处理结果,包含执行状态码、结果数据和执行日志。
-
-### 5. 团队知识库
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供团队知识库所需的指令和必要参数。
 **处理**: 解析团队知识库的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -170,7 +166,7 @@ class ConflictResolver:
 ```bash
 #!/bin/bash
 echo "=== 智能冲突解决 ==="
-
+# ...
 echo "1. 分析冲突..."
 python3 -c "
 from conflict_analyzer import ConflictAnalyzer
@@ -181,17 +177,17 @@ print(f\"\\n冲突总数: {analysis['summary']['total_conflicts']}\")
 print(f\"可自动解决: {analysis['summary']['auto_resolvable']}\")
 print(f\"需手动处理: {analysis['summary']['manual_required']}\")
 "
-
+# ...
 echo -e "\n2. 自动解决冲突..."
 python3 -c "
 from conflict_resolver import ConflictResolver
 result = ConflictResolver.batch_auto_resolve()
 print(f'自动解决: {result[\"total_auto_resolved\"]} 个')
 "
-
+# ...
 echo -e "\n3. 剩余冲突需手动处理"
 git diff --name-only --diff-filter=U
-
+# ...
 echo -e "\n4. 所有冲突解决后:"
 echo "  git add ."
 echo "  git commit"
@@ -203,25 +199,25 @@ echo "  git commit"
 ```bash
 #!/bin/bash
 echo "=== 批量仓库健康检查 ==="
-
+# ...
 python3 -c "
 from batch_diagnostics import BatchRepositoryDiagnostics
 import json
-
+# ...
 repos = [
     '/home/user/project-a',
     '/home/user/project-b',
     '/home/user/project-c'
 ]
-
+# ...
 diagnostics = BatchRepositoryDiagnostics(repos)
 report = diagnostics.diagnose_all()
-
+# ...
 print(f\"总仓库数: {report['total_repos']}\")
 print(f\"健康: {report['healthy']}\")
 print(f\"需关注: {report['needs_attention']}\")
 print(f\"错误: {report['errors']}\")
-
+# ...
 for repo, diag in report['details'].items():
     status = diag['status']
     issues = len(diag.get('issues', []))
@@ -235,24 +231,24 @@ for repo, diag in report['details'].items():
 ```bash
 #!/bin/bash
 echo "=== Git故障检测 ==="
-
+# ...
 python3 -c "
 from recovery_assistant import GitRecoveryAssistant
 import json
-
+# ...
 issues = GitRecoveryAssistant.detect_issue()
 if issues:
     print('检测到问题:')
     for issue in issues:
         print(f'  - {issue[\"message\"]}')
-
+# ...
         plan = GitRecoveryAssistant.get_recovery_plan(issue['scenario'])
         if plan:
             print(f'    描述: {plan[\"description\"]}')
             print(f'    步骤:')
             for step in plan['steps']:
                 print(f'      {step}')
-
+# ...
             print(f'    尝试自动恢复...')
             result = GitRecoveryAssistant.auto_recover(issue['scenario'])
             print(f'    结果: {\"成功\" if result[\"success\"] else \"失败\"}')
@@ -282,7 +278,7 @@ else:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | git-helper处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -329,9 +325,8 @@ else:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -343,9 +338,9 @@ else:
 - **操作系统**:Windows / macOS / Linux
 - **运行时**:Git 2.20+ / Python 3.8+ / Bash
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Git 2.20+ | 运行时 | 必需 | git-scm.com 下载 |
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | Bash | 运行时 | 推荐 | 系统自带 |
@@ -357,7 +352,7 @@ else:
 
 ```bash
 ssh-keygen -t ed25519 -C "your@email.com"
-
+# ...
 git config --global credential.helper store
 ```
 
@@ -380,12 +375,12 @@ git config --global credential.helper store
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -402,12 +397,12 @@ git config --global credential.helper store
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -424,12 +419,12 @@ git config --global credential.helper store
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -445,7 +440,7 @@ git config --global credential.helper store
 
 ### Q3:支持多少个仓库批量诊断?
 | 仓库数量 | 耗时 | 并行 |
-|:---------|:-----|:-----|
+|:------|------:|:------|
 | 1-10 | <30s | 串行 |
 | 10-50 | 1-3min | 并行 |
 | 50-100 | 3-10min | 并行 |
@@ -462,9 +457,8 @@ custom_faq:
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -24,16 +24,18 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "B站,视频,媒体"
 ---
 # B站工具箱专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | B站工具箱专业版据追踪与凭证安全管理 | 不支持 | 支持 |
 | 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
@@ -310,7 +312,7 @@ asyncio.run(batch_archive())
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | httpx | Python库 | 必需 | `pip install httpx` |
@@ -334,7 +336,6 @@ asyncio.run(batch_archive())
 10. **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 11. **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业B站运营任务。支持视频发布、高清下载、批量操作、数据追踪等全功能能力，通过Python脚本调用B站API实现。与免费版完全兼容，可直接复用免费版的无登录功能。
 
-
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
@@ -345,7 +346,7 @@ export API_KEY="your_api_key_here"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | content | string | 否 | bilibili-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -392,17 +393,16 @@ export API_KEY="your_api_key_here"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| :-- | :-- | :-- |
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -416,7 +416,7 @@ export API_KEY="your_api_key_here"
 登录bilibili.com，打开浏览器开发者工具（F12）→ Application → Cookies，复制以下值：
 
 | 凭证 | 说明 | 用途 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | `SESSDATA` | 会话凭证 | 登录验证 |
 | `bili_jct` | CSRF Token | 写操作（发布/编辑） |
 | `buvid3` | 设备标识 | 辅助验证 |
@@ -424,7 +424,7 @@ export API_KEY="your_api_key_here"
 ### 发布参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --: | :-- | :-: | --- |
+|:------:|--------|:-------|:------:|
 | `file_path` | string | 必填 | 视频文件路径 |
 | `title` | string | 必填 | 标题（最多80字） |
 | `description` | string | 空 | 简介（最多2000字） |
@@ -437,7 +437,7 @@ export API_KEY="your_api_key_here"
 ### 凭证安全说明
 
 | 关注点 | 说明 |
-| :-- | :-: |
+|----|:--:|
 | 凭证类型 | 完整浏览器会话Cookie，非受限API Key |
 | 存储方式 | 默认内存存储，不落盘 |
 | 持久化 | 可选启用，0600权限保护 |
@@ -468,9 +468,8 @@ export API_KEY="your_api_key_here"
 
 ## 错误处理
 
-
 | 错误场景2 | 原因 | 处理方式 |
-| :-: | --- | --: |
+|-----|-----|-----|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

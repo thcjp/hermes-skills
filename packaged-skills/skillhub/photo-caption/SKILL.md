@@ -31,19 +31,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 照片配文工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 照片配文工具专业版全平台照片配文生成 | 不支持 | 支持 |
+| 照片配文工具专业版品牌风格定制与编辑 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 每个平台拥有独立的语气、格式与标签策略:
 
 | 平台 | 语气风格 | 格式特点 | 标签策略 |
-|:-----|:---------|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Instagram | 简洁、具体、观察式 | 1-2行+器材+5标签 | 精选5个高质量标签 |
 | Flickr | 描述性、沉思感 | 标题+1-3句+器材 | 无标签限制 |
 | X (Twitter) | 简练、有冲击力 | 280字符以内 | 不堆砌标签 |
@@ -126,9 +128,9 @@ pricing_model: "per_use"
 
 ```text
 The road ends where the sky turns orange. Dust and heat in the air.
-
+# ...
 Canon EOS 1V · Tri-X 400
-
+# ...
 ```
 
 **Flickr**:
@@ -156,9 +158,9 @@ Canon EOS 1V · Tri-X 400
 
 ```text
 **Amboy, California**
-
+# ...
 Drove out to the desert to clear my head and the sky did this thing where it just kept getting more intense. Ten minutes of light worth sitting in the dust for. The Tri-X grain feels right for a place this dry and quiet.
-
+# ...
 #film photography #desert #route 66 #mojave #analog photography #road trip #canon eos 1v #tri x 400 #american west #sunset
 ```
 
@@ -187,7 +189,7 @@ Camera: Canon EOS 1V · Lens: 50mm · Film: Tri-X 400
 
 ```text
 Title: Desert road at dusk, Amboy California [Canon EOS 1V, Tri-X 400]
-
+# ...
 Comment: Shot this on Route 66 last weekend. The light changed fast, maybe a ten minute window. Tri-X 400 at box speed, developed in HC-110. The desert just keeps going out there.
 Posted to r/analog
 ```
@@ -232,13 +234,13 @@ Edit Analysis:
 
 ```text
 请为以下5张照片批量生成 Instagram 配文,保持系列风格统一:
-
+# ...
 照片1:武康路梧桐树下光影,Leica M6, Portra 400
 照片2:外滩夜景反光,Leica M6, Portra 400
 照片3:弄堂里老人下棋,Leica M6, Portra 400
 照片4:雨后街道水洼倒影,Leica M6, Portra 400
 照片5:咖啡馆窗边阅读的人,Leica M6, Portra 400
-
+# ...
 系列主题:上海日常
 统一风格:安静、观察式、不煽情
 ```
@@ -253,7 +255,7 @@ Edit Analysis:
 禁用词:amazing, stunning, perfect
 标签策略:固定使用 #analogco #filmlife,其余按内容选2个
 语言:中英双语
-
+# ...
 请为以下产品照生成配文:
 照片内容:皮质相机包放在木桌上,自然光
 器材: Hasselblad 500C/M, Kodak Portra 160
@@ -274,7 +276,7 @@ Edit Analysis:
 ### 第二步:指定目标平台
 ```text
 请为这张照片生成所有平台的配文。
-
+# ...
 请为这张照片生成 Instagram、Flickr、500px、Reddit 的配文。
 ```
 
@@ -284,7 +286,7 @@ Edit Analysis:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | photo-caption处理的内容输入 |,  |
 | content | string | 否 | photo-caption处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -312,9 +314,8 @@ Edit Analysis:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -326,9 +327,9 @@ Edit Analysis:
 - **操作系统**: Windows / macOS / Linux
 - **网络环境**: 无特殊网络要求(纯文本生成)
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | photo-edit-analysis | 技能 | 推荐 | 随 Skill 安装(编辑分析功能) |
 
@@ -368,19 +369,19 @@ brand:
 系列主题: [系列名称]
 统一风格: [风格描述]
 平台: [目标平台,如 Instagram]
-
+# ...
 照片1:
   内容: [描述]
   地点: [地点]
   器材: [器材]
   氛围: [氛围]
-
+# ...
 照片2:
   内容: [描述]
   地点: [地点]
   器材: [器材]
   氛围: [氛围]
-
+# ...
 [更多照片...]
 ```
 
@@ -393,39 +394,39 @@ Instagram:
   - 空行
   - 恰好5个标签
   - 禁止使用破折号(—)
-
+# ...
 Flickr:
   - 标题(纯文本,无markdown)
   - 破折号
   - 1-3句故事/背景
   - 器材信息
-
+# ...
 X (Twitter):
   - 280字符以内
   - 单行强表达
   - 器材自然融入末尾
-
+# ...
 Glass:
   - 1-3句
   - 器材单独一行,用中点(·)分隔
   - 无标签,无互动诱饵
-
+# ...
 Tumblr:
   - 粗体地点作为标题
   - 2-4句叙事/反思
   - 器材行
   - 8-12个标签(标签内用空格)
-
+# ...
 500px:
   - 标题行
   - 1-3句技术/条件描述
   - 完整器材细节
-
+# ...
 VSCO:
   - 最多1行
   - 有时只需一个词或短语
   - 无标签,无器材(除非胶片型号)
-
+# ...
 Pinterest:
   - 标题(5-10词,关键词丰富)
   - 描述(2-3句,含自然关键词)
@@ -445,7 +446,7 @@ Pinterest:
 
 ```text
 请使用 brand_a.yaml 的品牌风格为这张照片生成配文。
-
+# ...
 请使用 brand_b.yaml 的品牌风格为这张照片生成配文。
 ```
 
@@ -458,7 +459,7 @@ Pinterest:
 ```text
 Instagram (中文):
 公路尽头是橘红色的天...
-
+# ...
 Instagram (English):
 The road ends where the sky turns orange...
 ```
@@ -471,9 +472,8 @@ The road ends where the sky turns orange...
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

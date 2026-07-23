@@ -19,6 +19,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 本地长记忆（LocalMemo Pro）
 
@@ -71,7 +73,7 @@ L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（Lance
 **何时使用：**
 
 | 触发情境 | 示例 |
-|:---|:---|
+|----|---|
 | 隐私敏感行业 | "记录患者对青霉素过敏"（医疗，数据不出域） |
 | 离线/弱网环境 | "飞机上回忆上次怎么解决 CORS" |
 | 合规要求数据不出域 | "金融 Agent 记忆需符合 GDPR/HIPAA" |
@@ -95,7 +97,7 @@ L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（Lance
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 本地长记忆处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -103,12 +105,12 @@ L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（Lance
 ```bash
 # macOS/Linux
 curl -fsSL https://ollama.com/install.sh | sh
-
+# ...
 # Windows: 从 https://ollama.com/download 下载安装包
-
+# ...
 # 拉取 embedding 模型（约 274MB）
 ollama pull nomic-embed-text
-
+# ...
 # 验证
 ollama --version
 ```
@@ -133,13 +135,13 @@ node （请参考skill目录中的脚本文件）
 ```bash
 # 存储
 node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --importance 0.9 --category preference
-
+# ...
 # 搜索
 node （请参考skill目录中的脚本文件） search "用户界面偏好"
-
+# ...
 # 统计
 node （请参考skill目录中的脚本文件） stats
-
+# ...
 # 遗忘
 node （请参考skill目录中的脚本文件） forget --query "深色模式"
 ```
@@ -175,7 +177,7 @@ node （请参考skill目录中的脚本文件） forget --query "深色模式"
 ### Step 5：会话中使用记忆
 
 | 阶段 | 动作 |
-|:---|:---|
+|---:|---:|
 | 会话开始 | 读取 SESSION-STATE.md → memory_recall 搜索相关历史 → 检查 memory/YYYY-MM-DD.md 近期活动 |
 | 对话进行中 | 用户给出细节先写 SESSION-STATE.md 再回复；重要决策 memory_store；表达偏好 store --importance 0.9 --category preference；出现错误写 lessons.md |
 | 会话结束 | 更新 SESSION-STATE.md 最终状态 → 重要内容移至 MEMORY.md → 创建/更新 memory/YYYY-MM-DD.md |
@@ -194,7 +196,7 @@ node （请参考skill目录中的脚本文件） cache-clean --older-than 30d  
 #
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入：**
 ```
@@ -210,7 +212,7 @@ node （请参考skill目录中的脚本文件） cache-clean --older-than 30d  
 ```
 已存储记忆（id: mem_001, importance: 1.0, category: medical）
 embedding 由本地 nomic-embed-text 生成，数据未离开本机
-
+# ...
 后续查询：
   memory_recall query="患者过敏史"
   → 本地检索，零数据外传
@@ -234,7 +236,7 @@ embedding 由本地 nomic-embed-text 生成，数据未离开本机
 ```
 召回：mem_042 "CORS 用代理中间件解决，配置在 middleware/cors.js"（相似度 0.89）
 召回：mem_043 "生产环境 CORS 需配置白名单域名"（相似度 0.85）
-
+# ...
 无需网络即可回忆历史决策
 ```
 
@@ -250,18 +252,18 @@ embedding 由本地 nomic-embed-text 生成，数据未离开本机
 ```
 云端方案（对照）：
   embedding 费用约 $0.5-1/月（存储）+ $0.3/月（检索）= $0.8-1.3/月
-
+# ...
 本地方案：
   一次性模型下载 274MB（nomic-embed-text）
   月度费用：$0（embedding 缓存命中后 <1ms）
-
+# ...
 年度节省：约 $10-15
 ```
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:---:|:---:|:---:|
 | Ollama 连接失败 | Ollama 服务未启动 | `ollama serve` 启动服务；检查 `curl http://localhost:11434/api/tags` |
 | 模型未找到 | 未拉取 embedding 模型 | `ollama pull nomic-embed-text`；`ollama list` 确认 |
 | 向量搜索无结果 | 记忆库为空或 dbPath 错误 | `node （请参考skill目录中的脚本文件） stats` 确认已存储记忆；检查 dbPath 配置 |
@@ -275,7 +277,7 @@ embedding 由本地 nomic-embed-text 生成，数据未离开本机
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | Ollama | 本地推理引擎 | 必需 | https://ollama.com/install |
 | nomic-embed-text | embedding 模型 | 必需 | `ollama pull nomic-embed-text` |

@@ -16,16 +16,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 智能助手
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
 ---
 # 记忆编排器免费版
 
 基础记忆管理系统，两层架构与关键词检索。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 记忆编排器免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ tags:
 - **输出**：写入确认与记忆 ID
 
 | 层级 | 名称 | 容量 | 清理策略 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | 第一层 | 短期记忆 | 上限 100 条 | FIFO 淘汰 |
 | 第二层 | 长期记忆 | 无上限 | 手动管理 |
 
@@ -120,9 +121,8 @@ await skills.memoryOrchestrator({
 
 ## 错误处理
 
-
 | 错误类型 | 原因 | 处理方式 |
-|----------|------|----------|
+|---:|---:|---:|
 | 搜索结果不准 | 关键词检索无法匹配语义相似内容 | 精确查询用 keyword 模式，模糊查询建议升级到付费版使用 hybrid 模式 |
 | 持久化失败 | persistPath 路径无写入权限 | 检查 persistPath 写入权限，确认磁盘空间充足后检查网络连接和配置后重试 |
 | 短期记忆爆满 | 超 100 条上限未清理 | 触发 FIFO 淘汰，最旧条目自动移除，或手动清理过期记忆 |
@@ -135,7 +135,7 @@ await skills.memoryOrchestrator({
 
 ```text
 用户："记住我喜欢深色模式，不加糖的咖啡"
-
+# ...
 执行：
 1. 添加长期记忆：
    await skills.memoryOrchestrator({
@@ -144,13 +144,13 @@ await skills.memoryOrchestrator({
      type: "long-term",
      persist: true
    });
-
+# ...
 2. 持久化保存：
    await skills.memoryOrchestrator({
      action: "save",
      persistPath: "./my-memory.json"
    });
-
+# ...
 3. 后续会话检索：
    const result = await skills.memoryOrchestrator({
      action: "search",
@@ -185,7 +185,7 @@ await skills.memoryOrchestrator({
 ### 依赖项
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
 ### API Key 配置

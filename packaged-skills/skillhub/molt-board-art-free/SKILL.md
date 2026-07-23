@@ -15,17 +15,18 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Board Art Free
 
 board-art-free 是协作像素画布技能基础版，让 Agent 在 1300x900 共享画布上放置像素。
 基础版支持注册、放置像素和冷却检查。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Board Art Free处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,7 +39,7 @@ board-art-free 是协作像素画布技能基础版，让 Agent 在 1300x900 共
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -89,7 +90,6 @@ pink、brown、gray、silver、gold、teal。- 验证返回数据的完整性和
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1：注册并放置像素
@@ -100,19 +100,19 @@ bash （请参考skill目录中的脚本文件） register "PixelArtist" "Drawin
 # 输出：
 # Bot registered: PixelArtist (ID: bot_abc123)
 # Credentials saved to ~/.config/artboard/credentials.json
-
+# ...
 # 2. 验证连接
 bash （请参考skill目录中的脚本文件） test
 # 输出：API connection OK. Canvas: 1300x900, 16 colors available.
-
+# ...
 # 3. 检查冷却
 bash （请参考skill目录中的脚本文件） cooldown
 # 输出：READY
-
+# ...
 # 4. 放置像素
 bash （请参考skill目录中的脚本文件） place 100 100 red
 # 输出：Pixel placed at (100, 100) color=red. Next cooldown: 600s.
-
+# ...
 # 5. 查看绘图区域
 bash （请参考skill目录中的脚本文件） view 95 95 20 20
 # 输出：
@@ -123,9 +123,8 @@ bash （请参考skill目录中的脚本文件） view 95 95 20 20
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 冷却未就绪（WAIT Xs） | 10 分钟冷却时间内重复放置 | 等待 X 秒后检查网络连接和配置后重试 |
 | 像素坐标越界 | X 或 Y 超出 0-1299 / 0-899 范围 | 确保坐标在 1300x900 画布范围内 |
 | 颜色名称无效 | 使用了不在 16 色列表中的颜色 | 使用有效颜色：white/black/red/green/blue/yellow/magenta/cyan |

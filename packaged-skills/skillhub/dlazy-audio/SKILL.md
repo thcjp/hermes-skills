@@ -25,26 +25,28 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
 ---
 # 音频生成工具-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 音频生成工具-专业版全功能音频生成 | 不支持 | 支持 |
+| 音频生成工具-专业版音乐生成 | 不支持 | 支持 |
+| 音频生成工具-专业版话与管道链接批量处理 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 模型覆盖对比
 
 | 模型类别 | 免费版 | 专业版 | 代表模型 |
-|:---------|:-------|:-------|:---------|
+|:-----|:-----|:-----|:-----|
 | 基础TTS | 3个 | 5个 | doubao-tts, keling-tts, gemini-2.5-tts, elevenlabs-tts, qwen-tts |
 | 语音克隆 | 不支持 | 4个 | elevenlabs-voice-clone, qwen-audio-clone, kling-audio-clone, vidu-audio-clone |
 | 音乐生成 | 不支持 | 2个 | suno-music, elevenlabs-music |
@@ -53,31 +55,27 @@ pricing_model: "per_use"
 | 声音搜索 | 不支持 | 1个 | elevenlabs-search |
 | 管道链接 | 不支持 | 支持 | 多步骤串联 |- 验证返回数据的完整性和格式正确性
 - 参考`核心能力`的配置文档进行参数调优
-### 核心能力
+### 核心能力(补充)
 ```text
 语音克隆:
   - ElevenLabs IVC（即时语音克隆）
   - Qwen3-TTS 语音克隆（阿里百炼）
   - Kling 自定义音色克隆
   - Vidu 真人声音克隆
-
+# ...
 音乐生成:
   - Suno V5.5（灵感模式/自定义模式）
   - ElevenLabs Music（10-300秒原创音乐）
-
 多角色对话:
   - ElevenLabs Dialogue（最多10角色）
   - 支持音频标签: [giggling] [whispers] 等
   - 一键渲染整段对话
-
 音效生成:
   - ElevenLabs SFX（1-22秒音效）
   - Keling SFX（文本转音效 + 视频匹配）
-
 声音库搜索:
   - ElevenLabs Search（关键词/来源/分类）
   - 返回可试听的预览音频
-
 管道链接:
   - 步骤间自动传递输出
   - 支持管道引用: -, @N, @N.path, @*, @stdin
@@ -110,14 +108,14 @@ pricing_model: "per_use"
 dlazy elevenlabs-voice-clone \
   --audio-file "./samples/host-voice-sample.wav" \
   --name "host-voice"
-
+# ...
 # 第2步: 使用克隆声音生成主持人台词
 dlazy elevenlabs-tts \
   --text "欢迎收听本期播客，今天我们聊聊AI音频技术的最新进展。" \
   --voice "host-voice" \
   --stability 0.7 \
   --similarity 0.8
-
+# ...
 # 第3步: 生成背景音乐
 dlazy suno-music \
   --mode "custom" \
@@ -125,7 +123,7 @@ dlazy suno-music \
   --title "Podcast Intro" \
   --instrumental true \
   --duration 30
-
+# ...
 # 第4步: 生成过渡音效
 dlazy elevenlabs-sfx \
   --prompt "soft whoosh transition sound, gentle fade" \
@@ -156,11 +154,11 @@ dlazy elevenlabs-dialogue \
 # 示例
 dlazy seedream-4.5 --prompt "lighthouse at dawn" \
   | dlazy keling-tts --text "Welcome to the coast." --image @0.url
-
+# ...
 # 管道链接示例2: 批量生成多张图片 → 超分辨率
 dlazy seedream-4.5 --prompt "city skyline" --n 4 \
   | dlazy superres --images @*
-
+# ...
 # 管道链接示例3: 搜索声音 → 用选中声音生成TTS
 dlazy elevenlabs-search \
   --keyword "warm female narrator" \
@@ -171,7 +169,7 @@ dlazy elevenlabs-search \
 ### 管道引用速查
 
 | 引用 | 解析为 |
-|:-----|:-------|
+|---:|---:|
 | `-` | 上游输出的自然值 |
 | `@N` | 第N个输出的主值（@0 = 优秀个输出URL） |
 | `@N.path` | 深入第N个输出（@0.url, @1.meta.fps） |
@@ -190,7 +188,7 @@ dlazy elevenlabs-search \
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js 16+ | 运行时 | 必需 | nodejs.org 官方下载 |
 | @dlazy/cli | CLI工具 | 必需 | `npm install -g @dlazy/cli@latest` |
@@ -214,7 +212,7 @@ dlazy elevenlabs-search \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:------|------:|:------|:------|
 | content | string | 否 | dlazy-audio处理的内容输入 |,  |
 | content | string | 否 | dlazy-audio处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -242,17 +240,16 @@ dlazy elevenlabs-search \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|:------:|--------|:-------|:------:|
 | LLM | 模型 | 是 | 需要LLM进行内容生成, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要, 本地LLM不需要 |
 
@@ -263,20 +260,6 @@ dlazy elevenlabs-search \
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -330,9 +313,8 @@ A: dlazy 文件服务托管的 URL 有一定有效期。建议生成后通过 `-
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

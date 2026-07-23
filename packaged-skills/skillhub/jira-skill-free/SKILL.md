@@ -23,16 +23,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Jira集成助手（免费版）
 
 Jira集成助手免费版提供Jira事务的只读浏览能力。支持模糊搜索、事务详情查看、浏览器链接生成与可用流转列表查看。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Jira集成助手-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -58,7 +59,7 @@ Jira集成助手免费版提供Jira事务的只读浏览能力。支持模糊搜
 所有命令位于 `{baseDir}/（请参考skill目录中的脚本文件）`。
 
 | 命令 | 用途 |
-|------|------|
+|:-----|:-----|
 | `jira.sh search "关键词" [max]` | 在 `JIRA_BOARD` 内按summary或key模糊搜索 |
 | `jira.sh link ABC-123` | 生成事务浏览器链接 |
 | `jira.sh issue ABC-123` | 快速查看事务详情 |
@@ -75,7 +76,7 @@ Jira集成助手免费版提供Jira事务的只读浏览能力。支持模糊搜
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -91,36 +92,32 @@ export API_KEY="your_api_key_here"
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 核心能力
 
-### 环境配置
-
-1. 获取API Token: <https://id.atlassian.com/manage-profile/security/api-tokens>
-2. 点击"Create API Token"
-3. 设置环境变量：
+### 环境配置(补充)
 
    ```bash
    export JIRA_EMAIL="you@example.com"
    export JIRA_API_TOKEN="[REDACTED]
-
+# ...
 **输入**: 用户提供环境配置相关的配置参数、输入数据和处理选项。
 **处理**: 解析环境配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回环境配置的处理结果,包含执行状态码、结果数据和执行日志。
-
-### 快速命令（免费版）
-
+# ...
+### 快速命令（免费版）(补充)
+# ...
 所有命令位于 `{baseDir}/（请参考skill目录中的脚本文件）`。
-
-| 命令 | 用途 |
-|------|------|
+# ...
+| 命令(续)| 用途 |
+|:----:|:----:|
 | `jira.sh search "关键词" [max]` | 在 `JIRA_BOARD` 内按summary或key模糊搜索 |
 | `jira.sh link ABC-123` | 生成事务浏览器链接 |
 | `jira.sh issue ABC-123` | 
-
+# ...
 **输入**: 用户提供快速命令（免费版）相关的配置参数、输入数据和处理选项。
 **处理**: 解析快速命令（免费版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+# ...
 ### 核心能力（免费版）
-
-
+# ...
+# ...
 **输入**: 用户提供核心能力（免费版）所需的指令和必要参数。
 **处理**: 解析核心能力（免费版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回核心能力（免费版）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
@@ -129,9 +126,9 @@ export API_KEY="your_api_key_here"
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） search "payment failure" [maxResults]
 ```
-
+# ...
 在 `JIRA_BOARD` 项目范围内按 summary 或 key 模糊搜索。`maxResults` 可选，控制返回条数。
-
+# ...
 **输入**: 用户提供事务搜索所需的指令和必要参数。
 ### 2. 事务链接与详情
 ```bash
@@ -163,9 +160,9 @@ export API_KEY="your_api_key_here"
 - 参考`jira.sh search "关键词" max`的配置文档进行参数调优
 
 #
-## 核心能力（免费版）
+## 核心能力（免费版）(补充)
 
-### 1. 事务搜索
+### 1. 事务搜索(补充)
 
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） search "payment failure" [maxResults]
@@ -173,7 +170,7 @@ export API_KEY="your_api_key_here"
 
 在 `JIRA_BOARD` 项目范围内按 summary 或 key 模糊搜索。`maxResults` 可选，控制返回条数。
 
-### 2. 事务链接与详情
+### 2. 事务链接与详情(补充)
 
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） link ABC-321       # 浏览器链接
@@ -205,7 +202,6 @@ export API_KEY="your_api_key_here"
 5. **跳转浏览器**：用 `link` 生成浏览器链接，手动在Jira Web界面执行变更操作。
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
-
 
 ## 示例
 
@@ -239,9 +235,7 @@ export API_KEY="your_api_key_here"
 # 输出：指派给自己的10条未关闭事务
 ```
 
-## 付费版专享能力
-
-> 升级付费版解锁以下高级能力：
+## 付费版专享能力(补充)
 
 - **状态变更**：`status ABC-123 "Done"` 变更状态（含流转校验）。
 - **指派**：`assign ABC-123 "Jane Doe"` 按姓名/邮箱搜索后指派；`assign-me` 指派给自己。
@@ -254,9 +248,8 @@ export API_KEY="your_api_key_here"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `JIRA_API_TOKEN` 未设置 | 环境变量缺失 | 在 shell 配置中 `export JIRA_API_TOKEN`，重新加载会话 |
 | `JIRA_URL` 格式错误 | 未包含 `https://` 或域名错误 | 确保格式为 `https://your-domain.atlassian.net` |
 | `401 Unauthorized` | 邮箱与Token不匹配 | 校验 `JIRA_EMAIL` 与 `JIRA_API_TOKEN` 是否对应同一账户 |

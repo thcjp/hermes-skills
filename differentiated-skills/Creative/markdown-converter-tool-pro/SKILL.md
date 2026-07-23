@@ -23,8 +23,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "Markdown,文档,工具"
 ---
-
 # Markdown转换器专业版
 ## 概述
 Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,PRO版增加批量处理、目录扫描、自定义输出模板、元数据提取、文档质量审计与CI/CD集成能力,满足企业级文档处理的效率与质量需求。
@@ -35,7 +36,7 @@ PRO版完全兼容免费版,可直接继承免费版的转换命令与选项,并
 ### 批量目录扫描
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Markdown转换器专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -85,18 +86,18 @@ template:
     converted: "{conversion_date}"
     format: "{source_format}"
     ---
-
+# ...
   body: |
     # {title}
     > 来源: {source_file}
     > 转换时间: {conversion_date}
-
+# ...
     {content}
-
+# ...
   footer: |
     ---
     *本文档由Markdown转换器专业版自动生成*
-
+# ...
   metadata:
     extract:
       - title
@@ -301,7 +302,7 @@ python3 generate_index.py \
   --input ./output/ \
   --format "html,markdown" \
   --searchable
-
+# ...
 # 质量审计
 python3 audit_conversion.py \
   --input ./output/ \
@@ -315,7 +316,7 @@ python3 audit_conversion.py \
 project:
   name: "企业文档数字化"
   version: "1.0.0"
-
+# ...
 input:
   directories:
     - path: "./documents/"
@@ -325,29 +326,29 @@ input:
     - "*.tmp"
     - "*.bak"
     - "temp/"
-
+# ...
 output:
   directory: "./markdown/"
   preserve_structure: true
   encoding: "UTF-8"
-
+# ...
 template:
   file: "enterprise-template.yml"
   frontmatter: true
   metadata: true
-
+# ...
 processing:
   parallel_workers: 16
   skip_existing: true
   quality_check: true
   extract_metadata: true
-
+# ...
 index:
   generate: true
   format: "html"
   searchable: true
   categories: true
-
+# ...
 audit:
   enabled: true
   checks: ["structure", "completeness", "format", "encoding"]
@@ -398,7 +399,7 @@ jobs:
 ## 最佳实践
 ### 免费版与PRO版能力对比
 | 能力维度 | 免费版 | PRO版 |
-|---------|--------|-------|
+|:-----|:-----|:-----|
 | 转换方式 | 单文件 | 批量+目录递归 |
 | 并行处理 | 不支持 | 多线程并行 |
 | 输出模板 | 标准Markdown | 自定义模板 |
@@ -440,7 +441,7 @@ quality_assurance = {
 
 ### 性能优化
 | 优化项 | 说明 | 效果 |
-|--------|------|------|
+|---:|---:|---:|
 | 并行处理 | 多线程同时转换 | 提速4-8倍 |
 | 跳过已转换 | 检测已有输出 | 节省时间 |
 | 缓存依赖 | 首次安装后复用 | 后续更快 |
@@ -470,7 +471,7 @@ A: 支持GitHub Actions、GitLab CI、Jenkins等主流CI/CD平台。提供标准
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | uv/uvx | 工具 | 必需 | astral.sh安装 |
 | markitdown | Python包 | 必需 | uvx自动安装 |
@@ -491,7 +492,7 @@ A: 支持GitHub Actions、GitLab CI、Jenkins等主流CI/CD平台。提供标准
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

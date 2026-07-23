@@ -27,14 +27,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
 # 数据格式转换器
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据格式转换器处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,13 +43,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 数据格式转换器支持批量处理 | 不支持 | 支持 |
+| 数据格式转换器与嵌套结构处理 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
 
 ## 概述
 
@@ -62,7 +63,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -83,11 +84,11 @@ export API_KEY="your_api_key_here"
 
 ```python
 import csv, json
-
+# ...
 with open('data.csv', 'r', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     rows = list(reader)
-
+# ...
 json_str = json.dumps(rows, ensure_ascii=False, indent=2)
 ```
 
@@ -95,10 +96,10 @@ json_str = json.dumps(rows, ensure_ascii=False, indent=2)
 
 ```python
 import csv, json
-
+# ...
 with open('data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
-
+# ...
 fieldnames = list(data[0].keys())
 with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -113,10 +114,10 @@ with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
 
 ```python
 import yaml, json
-
+# ...
 with open('data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
-
+# ...
 yaml_str = yaml.safe_dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
 ```
 
@@ -124,10 +125,10 @@ yaml_str = yaml.safe_dump(data, default_flow_style=False, allow_unicode=True, so
 
 ```python
 import yaml, json
-
+# ...
 with open('data.yaml', 'r', encoding='utf-8') as f:
     data = yaml.safe_load(f)
-
+# ...
 json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
 
@@ -136,10 +137,10 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 
 ```python
 import xmltodict, json
-
+# ...
 with open('data.xml', 'r', encoding='utf-8') as f:
     xml_str = f.read()
-
+# ...
 data = xmltodict.parse(xml_str)
 json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
@@ -148,10 +149,10 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 
 ```python
 import xmltodict, json
-
+# ...
 with open('data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
-
+# ...
 xml_str = xmltodict.unparse(data, pretty=True)
 ```
 
@@ -164,10 +165,10 @@ xml_str = xmltodict.unparse(data, pretty=True)
 
 ```python
 import toml, json
-
+# ...
 with open('data.toml', 'r', encoding='utf-8') as f:
     data = toml.load(f)
-
+# ...
 json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
 
@@ -175,10 +176,10 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 
 ```python
 import toml, json
-
+# ...
 with open('data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
-
+# ...
 toml_str = toml.dumps(data)
 ```
 
@@ -192,12 +193,12 @@ toml_str = toml.dumps(data)
 
 ```python
 from pathlib import Path
-
+# ...
 def batch_convert(input_dir, output_dir, from_fmt, to_fmt):
     input_path = Path(input_dir)
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
-
+# ...
     for file in input_path.glob(f'*.{from_fmt}'):
         # 读取源文件 -> 转换 -> 写入目标文件
         output_file = output_path / f'{file.stem}.{to_fmt}'
@@ -208,7 +209,7 @@ def batch_convert(input_dir, output_dir, from_fmt, to_fmt):
 ## 支持格式矩阵
 
 | 输入\输出 | CSV | JSON | YAML | XML | TOML |
-|----------|-----|------|------|-----|------|
+|:----:|:----:|:----:|:----:|:----:|:----:|
 | CSV | - | 支持 | 间接 | 间接 | 间接 |
 | JSON | 支持 | - | 支持 | 支持 | 支持 |
 | YAML | 间接 | 支持 | - | 间接 | 间接 |
@@ -234,7 +235,7 @@ def batch_convert(input_dir, output_dir, from_fmt, to_fmt):
 name,age,city
 张三,30,北京
 李四,25,上海
-
+# ...
 输出 (JSON):
 [
   {"name": "张三", "age": "30", "city": "北京"},
@@ -247,7 +248,7 @@ name,age,city
 ```text
 输入 (JSON):
 {"database": {"host": "localhost", "port": 5432}, "debug": true}
-
+# ...
 输出 (YAML):
 database:
   host: localhost
@@ -260,7 +261,7 @@ debug: true
 ```text
 输入 (XML):
 <user id="101"><name>张三</name><age>30</age></user>
-
+# ...
 输出 (JSON):
 {"user": {"@id": "101", "name": "张三", "age": "30"}}
 ```
@@ -272,10 +273,10 @@ debug: true
 [server]
 host = "127.0.0.1"
 port = 8080
-
+# ...
 [[users]]
 name = "admin"
-
+# ...
 输出 (JSON):
 {"server": {"host": "127.0.0.1", "port": 8080}, "users": [{"name": "admin"}]}
 ```
@@ -291,7 +292,7 @@ name = "admin"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `json.JSONDecodeError` | JSON格式错误（如尾随逗号、单引号） | 使用 `json.loads()` 严格解析，报告出错行号与列位置 |
 | CSV含嵌套数据无法扁平化 | CSV单元格内含JSON字符串 | 先用 `json.loads()` 解析单元格内容，再展开为多列 |
 | XML属性与子元素同名冲突 | `xmltodict` 属性加 `@` 前缀，但子元素同名 | 自定义 `attr_prefix` 参数，如 `attr_prefix='_'` |

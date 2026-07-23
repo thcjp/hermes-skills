@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # XML读取器工具（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ XML读取器工具免费版帮助你快速读取与浏览 XML 文件结构。提
 ## 核心能力
 
 | 能力 | 说明 |
-|:-----|:-----|
+|---|---|
 | 节点遍历 | 深度优先/广度优先遍历所有节点 |
 | XPath 查询 | 简单 XPath 1.0 查询 |
 | 格式化输出 | 缩进、高亮、树形展示 |
@@ -92,7 +93,7 @@ XML读取器工具免费版帮助你快速读取与浏览 XML 文件结构。提
 ```bash
 # 查看结构概览
 xml-reader tree config.xml
-
+# ...
 # 输出
 # 📄 config.xml 结构
 # <configuration>
@@ -115,10 +116,10 @@ xml-reader tree config.xml
 ```bash
 # 查询所有 add 元素
 xml-reader query config.xml --xpath "//add"
-
+# ...
 # 查询特定属性
 xml-reader query config.xml --xpath "//add[@key='server']"
-
+# ...
 # 输出
 # 🔍 XPath 查询结果
 # 查询: //add[@key='server']
@@ -133,7 +134,7 @@ xml-reader query config.xml --xpath "//add[@key='server']"
 ```bash
 # 格式化输出
 xml-reader format minified.xml --indent 2 --output formatted.xml
-
+# ...
 # 输入: <root><child>text</child></root>
 # 输出:
 # <root>
@@ -152,35 +153,34 @@ xml-reader format minified.xml --indent 2 --output formatted.xml
 ```bash
 # 1. 查看结构
 xml-reader tree config.xml
-
+# ...
 # 2. 查询节点
 xml-reader query config.xml --xpath "//target"
-
+# ...
 # 3. 格式化
 xml-reader format config.xml --indent 2
-
+# ...
 # 4. 统计信息
 xml-reader stats config.xml
-
+# ...
 # 5. 提取文本
 xml-reader text config.xml --xpath "//description"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ```bash
 # 命令参数说明
 | 命令   | 参数              | 说明                |
-|:-------|:------------------|:--------------------|
+|:-----|:-----|:-----|
 | tree   | <file>            | 显示树形结构        |
 | query  | <file> --xpath X  | XPath 查询          |
 | format | <file> --indent N | 格式化输出          |
 | stats  | <file>            | 显示统计信息        |
 | text   | <file> --xpath X  | 提取文本内容        |
-
+# ...
 # 输出格式选项
 --output json     # JSON 格式输出
 --output text     # 纯文本输出
@@ -222,7 +222,7 @@ A：免费版支持输出至终端。如需导出至文件或 JSON，请使用 P
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 官方站点下载 |
 | xml.etree.ElementTree | 库 | 必需 | Python 标准库 |
@@ -236,9 +236,8 @@ A：免费版支持输出至终端。如需导出至文件或 JSON，请使用 P
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

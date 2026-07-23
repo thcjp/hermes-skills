@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 任务队列管理器（免费版）
 
 > **让AI Agent管理持久化任务队列。崩溃可恢复、幂等不重复，批量任务可靠执行。**
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 任务队列管理器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -82,23 +83,23 @@ python3 （请参考skill目录中的脚本文件） init my-batch-task
 
 ```python
 from task_queue_manager import TaskQueue
-
+# ...
 # 初始化队列
 queue = TaskQueue("my-batch-task", batch_size=10)
-
+# ...
 # 批量入队（支持幂等键）
 for item in data_list:
     queue.enqueue(
         task_id=item["id"],        # 幂等键（重复入队自动去重）
         payload=item["data"]
     )
-
+# ...
 # 逐条处理
 while queue.has_pending():
     task = queue.dequeue()
     result = process(task.payload)
     queue.mark_done(task.id, result)
-
+# ...
 # 查看状态
 print(queue.status())
 ```
@@ -108,7 +109,7 @@ print(queue.status())
 ```bash
 # 查看队列状态
 python3 （请参考skill目录中的脚本文件） status my-batch-task
-
+# ...
 # 清理过期锁
 python3 （请参考skill目录中的脚本文件） clear-stale-lock my-batch-task
 ```
@@ -119,7 +120,7 @@ python3 （请参考skill目录中的脚本文件） clear-stale-lock my-batch-t
 ### 一、任务队列初始化
 
 | 命令 | 说明 |
-|------|------|
+|:-----|:-----|
 | `python3 （请参考skill目录中的脚本文件） init <slug>` | 初始化任务目录与状态文件 |
 | `python3 （请参考skill目录中的脚本文件） status <slug>` | 查看队列状态 |
 | `python3 （请参考skill目录中的脚本文件） clear-stale-lock <slug>` | 清理过期锁 |
@@ -127,7 +128,7 @@ python3 （请参考skill目录中的脚本文件） clear-stale-lock my-batch-t
 ```bash
 # 初始化一个图片处理任务队列
 python3 （请参考skill目录中的脚本文件） init image-processing
-
+# ...
 # 输出：
 # 已创建任务目录: workspace/tasks/image-processing/
 # 已初始化状态文件: queue.jsonl, progress.json, done.jsonl, failed.jsonl, lock.json
@@ -140,7 +141,7 @@ python3 （请参考skill目录中的脚本文件） init image-processing
 ### 二、任务入队与去重
 
 | 功能 | 方法 | 说明 |
-|------|------|------|
+|---:|---:|---:|
 | 单条入队 | `queue.enqueue(task_id, payload)` | 入队单条任务 |
 | 批量入队 | `queue.enqueue_batch(tasks)` | 批量入队 |
 | 幂等去重 | 基于task_id自动去重 | 相同task_id不会重复入队 |
@@ -148,13 +149,13 @@ python3 （请参考skill目录中的脚本文件） init image-processing
 
 ```python
 queue = TaskQueue("user-sync")
-
+# ...
 # 单条入队（幂等）
 queue.enqueue(task_id="user_001", payload={"name": "张三", "email": "zhangsan@test.com"})
-
+# ...
 # 重复入队相同task_id会被自动忽略
 queue.enqueue(task_id="user_001", payload={"name": "张三"})  # 跳过，已存在
-
+# ...
 # 批量入队
 users = [
     {"id": "user_002", "data": {"name": "李四"}},
@@ -170,8 +171,8 @@ queue.enqueue_batch([(u["id"], u["data"]) for u in users])
 
 ### 三、任务处理与进度追踪
 
-| 功能 | 方法 | 说明 |
-|------|------|------|
+| 功能(续)| 方法 | 说明 |
+|:----:|:----:|:----:|
 | 出队 | `queue.dequeue()` | 取出待处理任务 |
 | 标记完成 | `queue.mark_done(task_id, result)` | 标记任务完成 |
 | 标记失败 | `queue.mark_failed(task_id, error)` | 标记任务失败 |
@@ -180,7 +181,7 @@ queue.enqueue_batch([(u["id"], u["data"]) for u in users])
 
 ```python
 queue = TaskQueue("file-convert")
-
+# ...
 # 处理循环
 while queue.has_pending():
     task = queue.dequeue()
@@ -191,7 +192,7 @@ while queue.has_pending():
     except Exception as e:
         queue.mark_failed(task.id, str(e))
         print(f"失败: {task.id} - {e}")
-
+# ...
 # 最终状态
 status = queue.status()
 print(f"总计: {status.total}")
@@ -209,16 +210,16 @@ print(f"耗时: {status.duration}")
 ```python
 # 场景：任务处理到一半程序崩溃
 # 重新启动后自动从断点恢复
-
+# ...
 queue = TaskQueue("data-import")
-
+# ...
 # 自动跳过已完成的任务
 while queue.has_pending():
     task = queue.dequeue()
     # 已完成的任务不会再次出现
     result = process(task.payload)
     queue.mark_done(task.id, result)
-
+# ...
 print(f"恢复完成，剩余: {queue.pending_count()} 条")
 ```
 
@@ -230,18 +231,18 @@ print(f"恢复完成，剩余: {queue.pending_count()} 条")
 ### 五、锁机制与并发控制
 
 | 功能 | 说明 |
-|------|------|
+|:------|------:|
 | 自动加锁 | 处理任务时自动加锁，防止并发冲突 |
 | 锁过期 | 锁超过指定时间自动释放（默认30分钟） |
 | 手动清理 | `clear-stale-lock` 清理过期锁 |
 
 ```python
 queue = TaskQueue("batch-process", lock_stale_minutes=30)
-
+# ...
 # 锁会自动管理
 # 如果程序崩溃，锁会在30分钟后自动过期
 # 其他进程可以接管继续处理
-
+# ...
 # 手动清理过期锁
 queue.clear_stale_lock()
 ```
@@ -254,10 +255,10 @@ queue.clear_stale_lock()
 
 ```python
 queue = TaskQueue("api-calls")
-
+# ...
 # 处理完成后查看失败任务
 failed_tasks = queue.get_failed()
-
+# ...
 # 手动重试失败任务
 for task in failed_tasks:
     try:
@@ -265,7 +266,7 @@ for task in failed_tasks:
         queue.retry_done(task.id, result)  # 从失败列表移至完成
     except Exception as e:
         print(f"重试失败: {task.id} - {e}")
-
+# ...
 # 重新入队所有失败任务
 queue.requeue_all_failed()
 ```
@@ -290,7 +291,7 @@ workspace/tasks/<task-slug>/
 ```
 
 | 文件 | 格式 | 说明 |
-|------|------|------|
+|---:|:---|---:|
 | queue.jsonl | JSONL | 每行一个待处理任务，追加写入 |
 | progress.json | JSON | 进度统计，每次完成更新 |
 | done.jsonl | JSONL | 已完成任务归档 |
@@ -309,13 +310,13 @@ workspace/tasks/<task-slug>/
 
 ```python
 queue = TaskQueue("image-compress", batch_size=50)
-
+# ...
 # 1. 批量入队
 import glob
 for img_path in glob.glob("./images/*.png"):
     task_id = img_path  # 用文件路径作为幂等键
     queue.enqueue(task_id, {"input": img_path, "format": "webp", "quality": 80})
-
+# ...
 # 2. 逐条处理（支持断点恢复）
 while queue.has_pending():
     task = queue.dequeue()
@@ -324,7 +325,7 @@ while queue.has_pending():
         queue.mark_done(task.id, result)
     except Exception as e:
         queue.mark_failed(task.id, str(e))
-
+# ...
 # 3. 查看结果
 status = queue.status()
 print(f"成功: {status.done}/{status.total}, 失败: {status.failed}")
@@ -340,11 +341,11 @@ print(f"成功: {status.done}/{status.total}, 失败: {status.failed}")
 
 ```python
 queue = TaskQueue("user-sync", batch_size=100)
-
+# ...
 # 1. 批量入队（幂等去重）
 for user in old_db.get_all_users():
     queue.enqueue(task_id=f"user_{user.id}", payload=user.to_dict())
-
+# ...
 # 2. 分批处理（控制API速率）
 while queue.has_pending():
     batch = queue.dequeue_batch(100)  # 每次取100条
@@ -370,11 +371,11 @@ while queue.has_pending():
 
 ```python
 queue = TaskQueue("product-fetch", batch_size=20)
-
+# ...
 # 1. 入队所有商品ID
 for product_id in product_ids:
     queue.enqueue(task_id=f"prod_{product_id}", payload={"id": product_id})
-
+# ...
 # 2. 处理（含自动重试）
 while queue.has_pending():
     task = queue.dequeue()
@@ -388,7 +389,7 @@ while queue.has_pending():
                 time.sleep(5 * (attempt + 1))  # 指数退避
             else:
                 queue.mark_failed(task.id, "超时3次")
-
+# ...
 # 3. 重试失败任务
 failed = queue.get_failed()
 print(f"失败: {len(failed)} 条，可手动重试")
@@ -431,7 +432,7 @@ print(f"失败: {len(failed)} 条，可手动重试")
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | Python 3.8+ | 运行时 | 必需 | 系统自带或从python.org安装 |
 | queue_task.py | 脚本 | 必需 | 随本技能提供 |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
@@ -489,18 +490,19 @@ print(f"失败: {len(failed)} 条，可手动重试")
 ### 示例1：基础用法
 
 ```
-### 60秒上手
-
+### 60秒上手(补充)
+# ...
 初始化任务队列并执行第一个批量任务：
-
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+# ...

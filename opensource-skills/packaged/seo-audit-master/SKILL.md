@@ -17,9 +17,11 @@ tools:
 - read
 - exec
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # SEO审计大师
 
@@ -36,7 +38,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 全站审计 | 网站域名、sitemap、访问日志 | SEO 审计报告 + 按优先级排序的问题清单 |
 | 排名下降诊断 | 域名、下降时间段、目标关键词 | 排名下降原因分析 + 恢复建议 |
 | 新站优化 | 新站 URL、目标市场(国内/海外) | SEO 基础配置清单 + 内容策略 |
@@ -86,7 +88,7 @@ pricing_model: "per_use"
 ## 双引擎适配说明
 
 | 维度 | Google | 百度 |
-|:-----|:-------|:-----|
+|:-----|:-----|:-----|
 | 站长平台 | Google Search Console | 百度搜索资源平台 |
 | 索引查询 | `site:domain.com` | `site:domain.com` |
 | 提交入口 | sitemap 提交 + URL 检查 | 链接提交 + 主动推送 |
@@ -118,7 +120,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | SEO审计大师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -133,35 +135,35 @@ pricing_model: "per_use"
 **输出**(seo-audit.md 片段):
 ```markdown
 ## SEO 审计报告
-
+# ...
 ### 站点概况
 - 总页面数: 487
 - 已索引(百度): 312 (64%)
 - 已索引(Google): 401 (82%)
 - Core Web Vitals 通过率: 73%
-
+# ...
 ### Critical 问题(3项)
 1. [Critical] 商品页缺少 canonical 标签
    - 影响: 175 个商品页存在重复内容
    - 修复: 在 `<head>` 添加 `<link rel="canonical" href="https://shop.example.com/product/{id}" />`
-
+# ...
 2. [Critical] 移动端 LCP 超标(4.8s,应 <2.5s)
    - 影响: 移动端排名下降
    - 修复: 1) 首屏图片懒加载;2) 关键 CSS 内联;3) 图片转 WebP
-
+# ...
 3. [Critical] sitemap.xml 缺失
    - 影响: 爬虫无法发现新页面
    - 修复: 生成 sitemap.xml 并提交至百度/Google
-
+# ...
 ### Important 问题(5项)
 4. [Important] 38% 页面 title 重复
 5. [Important] 商品图片缺少 alt 文本
 6. [Important] 结构化数据错误(JSON-LD 缺少 price 字段)
 ...
-
+# ...
 ### Suggested 建议(8项)
 ...
-
+# ...
 ### 预期收益
 - 修复 Critical 后预计索引覆盖率提升至 90%+
 - 移动端排名预计提升 20-30%
@@ -179,13 +181,13 @@ CMS: WordPress
 **输出**(recommendations.md 片段):
 ```markdown
 ## 新站 SEO 基础配置清单
-
+# ...
 ### 1. 站长平台注册
 - [ ] 注册百度搜索资源平台(ziyuan.baidu.com)
 - [ ] 添加站点并验证所有权
 - [ ] 提交 sitemap.xml
 - [ ] 开启主动推送 API
-
+# ...
 ### 2. robots.txt 配置
 ```
 User-agent: *
@@ -194,13 +196,13 @@ Disallow: /wp-admin/
 Disallow: /wp-includes/
 Sitemap: https://blog.example.com/sitemap.xml
 ```
-
+# ...
 ### 3. 基础 SEO 插件配置
 - 安装 Yoast SEO 或 Rank Math
 - 启用 XML sitemap 自动生成
 - 配置面包屑导航
 - 启用结构化数据(Article schema)
-
+# ...
 ### 4. 内容策略
 - 首月发布 10+ 篇高质量原创文章(>1500字)
 - 每篇文章聚焦 1 个主关键词 + 3-5 个长尾词
@@ -211,7 +213,7 @@ Sitemap: https://blog.example.com/sitemap.xml
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | 网站无法访问 | DNS 解析失败或服务器宕机 | 检查域名状态与服务器健康,待恢复后重试 |
 | 站长平台 API 超时 | 国内访问 Google Search Console 较慢 | 切换至百度搜索资源平台 API,或使用代理 |
 | sitemap.xml 缺失 | 站点未生成 sitemap | 提供在线生成工具建议(xml-sitemaps.com)或脚本生成 |
@@ -229,7 +231,7 @@ Sitemap: https://blog.example.com/sitemap.xml
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | LLM API | API | 必需 | Agent 内置 LLM 提供分析 | 通义千问/文心一言/智谱 |
 | Google Search Console | API | 可选 | 需要 Google 账号验证 | 百度搜索资源平台 |
 | Lighthouse | 工具 | 可选 | `npm install -g lighthouse` | PageSpeed Insights 国内镜像 |
@@ -262,10 +264,10 @@ Sitemap: https://blog.example.com/sitemap.xml
 **LLM生成输出** (`output/shop-seo/seo-audit.md`):
 ```markdown
 # SEO审计报告 - shop.example.com
-
-## 站点概况
+# ...
+## 站点概况(补充)
 | 指标 | 数值 | 评价 |
-|:-----|:-----|:-----|
+|---:|:---|---:|
 | 总页面数 | 487 | - |
 | 已索引(百度) | 312 (64%) | 需提升 |
 | 已索引(Google) | 401 (82%) | 良好 |
@@ -273,11 +275,11 @@ Sitemap: https://blog.example.com/sitemap.xml
 | 移动友好性 | 通过 | 良好 |
 | HTTPS | 已启用 | 良好 |
 | sitemap.xml | 已提交 | 良好 |
-
+# ...
 ## 问题清单(按优先级排序)
-
+# ...
 ### Critical(3项)
-
+# ...
 #### 1. [Critical] 175个商品页缺少canonical标签
 - **影响**: 商品页存在URL参数变体(?color=red&size=L),导致重复内容,百度判定为重复页面拒绝索引
 - **位置**: 所有 `/product/{id}` 页面
@@ -289,7 +291,7 @@ Sitemap: https://blog.example.com/sitemap.xml
 ```
 - **预期收益**: 百度索引覆盖率从64%提升至85%+
 - **实施难度**: 低(模板修改)
-
+# ...
 #### 2. [Critical] 移动端LCP超标(4.8s,目标<2.5s)
 - **影响**: Google移动端排名下降,百度移动友好度评分降低
 - **根因**: Hero Banner图片3.2MB JPEG未压缩,CSS渲染阻塞1.2s
@@ -309,7 +311,7 @@ Sitemap: https://blog.example.com/sitemap.xml
 ```
 - **预期收益**: LCP从4.8s降至2.2s,移动端排名提升20-30%
 - **实施难度**: 中
-
+# ...
 #### 3. [Critical] sitemap.xml不完整
 - **影响**: 爬虫无法发现新增的120个商品页
 - **当前状态**: sitemap仅包含367个URL,缺少120个新商品页
@@ -322,9 +324,9 @@ python generate_sitemap.py --db sqlite:///products.db --output public/sitemap.xm
 ```
 - **预期收益**: 120个新页面被百度/Google发现并索引
 - **实施难度**: 低
-
+# ...
 ### Important(5项)
-
+# ...
 #### 4. [Important] 38%页面title标签重复
 - **影响**: 百度无法区分页面主题,影响关键词排名
 - **示例**: 175个商品页title均为"商品详情 - 某某商城"
@@ -339,11 +341,11 @@ export async function generateMetadata({ params }) {
   };
 }
 ```
-
+# ...
 #### 5. [Important] 商品图片缺少alt文本
 - **影响**: 图片搜索无法索引,无障碍体验差
 - **修复方案**: 为所有商品图片添加alt属性: `alt="{商品名称} - {商品规格}"`
-
+# ...
 #### 6. [Important] 结构化数据缺少price字段
 - **影响**: 搜索结果无法显示价格富媒体,点击率降低15-20%
 - **修复方案**:
@@ -364,11 +366,11 @@ export async function generateMetadata({ params }) {
 }
 </script>
 ```
-
+# ...
 #### 7. [Important] 内部链接结构不合理
 - **影响**: 重要商品页点击深度>4,爬虫难以发现,权重传递不足
 - **修复方案**: 在首页和分类页添加热门商品链接,确保所有页面点击深度≤3
-
+# ...
 #### 8. [Important] robots.txt阻止了JS/CSS文件
 - **影响**: 百度爬虫无法渲染页面,影响JS生成内容的索引
 - **修复方案**:
@@ -380,7 +382,7 @@ Allow: /js/
 Disallow: /admin/
 Sitemap: https://shop.example.com/sitemap.xml
 ```
-
+# ...
 ### Suggested(8项)
 9. 商品页面包屑导航缺少结构化数据(BreadcrumbList)
 10. 部分页面meta description超过160字符
@@ -390,10 +392,10 @@ Sitemap: https://shop.example.com/sitemap.xml
 14. 页面加载时无骨架屏(CLS=0.15)
 15. 未使用hreflang(如有多语言需求)
 16. 百度主动推送API未配置
-
+# ...
 ## 预期收益汇总
 | 修复阶段 | 预期效果 | 时间 |
-|:---------|:---------|:-----|
+|:------:|--------|:-------|
 | 修复Critical(3项) | 索引覆盖率64%→90%,移动排名+30% | 1周 |
 | 修复Important(5项) | 点击率+20%,关键词排名+15% | 2周 |
 | 修复Suggested(8项) | 用户体验提升,长尾流量+10% | 4周 |
@@ -415,17 +417,17 @@ Sitemap: https://shop.example.com/sitemap.xml
 **LLM生成输出** (`output/blog-diagnosis/ranking-drop.md`):
 ```markdown
 # 排名下降诊断报告 - blog.example.com
-
+# ...
 ## 下降概况
 | 指标 | 下降前(5月) | 下降后(7月) | 变化 |
-|:-----|:-----------|:-----------|:-----|
+|----|:--:|---:|----|
 | 百度自然流量 | 12,000/天 | 6,600/天 | -45% |
 | "Python教程"排名 | 第3页 | 第8页 | -5页 |
 | 索引页面数 | 320 | 285 | -35页 |
 | 移动端收录 | 280 | 210 | -25% |
-
+# ...
 ## 原因分析
-
+# ...
 ### 根因1: HTTPS迁移未正确配置301重定向(权重损失)
 - **严重程度**: Critical
 - **证据**:
@@ -452,7 +454,7 @@ server {
 }
 ```
 - **预期恢复**: 修复后2-4周内排名逐步恢复
-
+# ...
 ### 根因2: 迁移后canonical标签指向HTTP版本
 - **严重度**: High
 - **证据**: 检查页面源码发现:
@@ -466,7 +468,7 @@ server {
 <!-- 修正:canonical指向HTTPS -->
 <link rel="canonical" href="https://blog.example.com/python-tutorial/" />
 ```
-
+# ...
 ### 根因3: sitemap.xml未更新为HTTPS URL
 - **严重度**: Medium
 - **证据**: sitemap.xml中所有URL仍为HTTP
@@ -478,36 +480,36 @@ sed -i 's/http:\/\//https:\/\//g' public/sitemap.xml
 # 重新提交至百度站长平台
 curl -H "Content-Type: text/plain" --data-urlencode "sitemap=https://blog.example.com/sitemap.xml" "https://ziyuan.baidu.com/ping?site=https://blog.example.com&resource_name=sitemap"
 ```
-
+# ...
 ### 根因4: 百度主动推送API未更新
 - **严重度**: Low
 - **证据**: 推送API中URL仍为HTTP格式
 - **修复方案**: 更新推送脚本中的URL为HTTPS格式
-
+# ...
 ## 恢复计划
-
+# ...
 ### 第一周(紧急修复)
 1. [P0] 修复301重定向(Nginx配置)
 2. [P0] 修正所有canonical标签为HTTPS
 3. [P1] 更新sitemap.xml为HTTPS URL并重新提交
-
+# ...
 ### 第二周(验证)
 4. [P1] 百度站长平台提交"抓取诊断",验证HTTPS页面可正常抓取
 5. [P1] 检查索引覆盖率变化(预期:285→320恢复)
 6. [P2] 监控关键词排名变化
-
+# ...
 ### 第三-四周(观察)
 7. [P2] 持续监控自然流量恢复情况
 8. [P2] 如未恢复,检查是否有其他因素(内容质量/外链/算法更新)
-
+# ...
 ## 预期恢复时间线
 | 时间节点 | 预期状态 |
-|:---------|:---------|
+|----|----|
 | 修复后1周 | 百度重新抓取HTTPS页面,索引开始恢复 |
 | 修复后2周 | 索引页面数恢复至300+,关键词排名回升 |
 | 修复后4周 | 自然流量恢复至下降前80-90% |
 | 修复后8周 | 完全恢复(需外链权重传递到位) |
-
+# ...
 ## 教训总结
 HTTPS迁移SEO检查清单:
 - [ ] 301重定向全部配置正确(无遗漏页面)
@@ -535,15 +537,15 @@ CMS: WordPress
 **LLM生成输出** (`output/new-blog-seo/recommendations.md`):
 ```markdown
 # 新站SEO基础配置清单 - blog.example.com
-
+# ...
 ## 1. 百度站长平台配置
-
+# ...
 ### 1.1 注册与验证
 - [ ] 注册百度搜索资源平台(ziyuan.baidu.com)
 - [ ] 添加站点 https://blog.example.com
 - [ ] 完成所有权验证(推荐HTML标签验证)
 - [ ] 选择站点类型(普通网站)
-
+# ...
 ### 1.2 链接提交配置
 ```php
 // WordPress主动推送插件代码(functions.php)
@@ -559,11 +561,11 @@ function baidu_push($post_id) {
     curl_exec($ch);
 }
 ```
-
+# ...
 ### 1.3 sitemap提交
 - [ ] 安装Yoast SEO插件,自动生成sitemap
 - [ ] 在百度站长平台提交: https://blog.example.com/sitemap_index.xml
-
+# ...
 ## 2. robots.txt配置
 ```
 User-agent: *
@@ -579,25 +581,25 @@ Allow: /
 
 Sitemap: https://blog.example.com/sitemap_index.xml
 ```
-
+# ...
 ## 3. 基础SEO插件配置(Yoast SEO)
-
+# ...
 ### 3.1 全局设置
 - [ ] 标题模板: `%%title%% %%page%% - %%sitename%%`
 - [ ] Meta描述模板: `%%excerpt%%`
 - [ ] 开启XML sitemap
 - [ ] 开启面包屑导航
-
+# ...
 ### 3.2 内容类型设置
 | 内容类型 | 是否索引 | 显示日期 | sitemap |
-|:---------|:---------|:---------|:--------|
+|:-----|:-----|:-----|:-----|
 | 文章(post) | 是 | 是 | 包含 |
 | 页面(page) | 是 | 否 | 包含 |
 | 分类 | 是 | 否 | 包含 |
 | 标签 | 否(内容少时) | 否 | 视情况 |
-
+# ...
 ## 4. 结构化数据配置
-
+# ...
 ### 4.1 Article Schema(文章)
 ```html
 <script type="application/ld+json">
@@ -618,7 +620,7 @@ Sitemap: https://blog.example.com/sitemap_index.xml
 }
 </script>
 ```
-
+# ...
 ### 4.2 Breadcrumb Schema(面包屑)
 ```html
 <script type="application/ld+json">
@@ -633,36 +635,36 @@ Sitemap: https://blog.example.com/sitemap_index.xml
 }
 </script>
 ```
-
+# ...
 ## 5. 内容策略(前3个月)
-
+# ...
 ### 第1月: 基础内容建设
 | 周 | 发布计划 | 关键词 | 字数 |
-|:---|:---------|:-------|:-----|
+|---:|---:|---:|---:|
 | 1 | 3篇Python入门教程 | Python安装/变量/数据类型 | 2000+ |
 | 2 | 3篇Python进阶 | Python装饰器/生成器/异常处理 | 2500+ |
 | 3 | 2篇Java基础 | Java环境搭建/基础语法 | 2000+ |
 | 4 | 2篇DevOps入门 | Docker入门/CI/CD概念 | 2500+ |
-
+# ...
 ### 关键词策略
 | 主关键词 | 搜索量(百度指数) | 竞争度 | 目标排名 |
-|:---------|:-----------------|:-------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python教程 | 8,000 | 高 | 前3页(3月内) |
 | Python入门 | 5,000 | 中 | 前2页(2月内) |
 | Java教程 | 6,000 | 高 | 前3页(3月内) |
 | Docker入门 | 3,000 | 中 | 前2页(2月内) |
-
+# ...
 ### 长尾关键词策略
 - 每篇主文章配套3-5篇长尾内容(如"Python列表去重的5种方法")
 - 长尾词搜索量低但竞争小,容易获得排名
 - 目标:3个月内覆盖200+长尾关键词
-
+# ...
 ## 6. 内链策略
 - 每篇文章包含3-5个内链(指向相关文章)
 - 使用关键词作为锚文本(非"点击这里")
 - 分类页链接所有该分类下的文章
 - 首页展示最新10篇文章+热门文章
-
+# ...
 ## 7. 技术SEO检查清单
 - [ ] HTTPS证书有效(无混合内容)
 - [ ] 移动端响应式设计
@@ -672,10 +674,10 @@ Sitemap: https://blog.example.com/sitemap_index.xml
 - [ ] 固定链接结构: /%category%/%postname%/
 - [ ] 404页面含搜索建议
 - [ ] 图片全部有alt文本
-
+# ...
 ## 8. 监控指标
 | 指标 | 工具 | 频率 | 目标(3月) |
-|:-----|:-----|:-----|:---------|
+|:------|------:|:------|:------|
 | 百度收录量 | site:blog.example.com | 每周 | 100+ |
 | 百度索引量 | 百度站长平台 | 每周 | 100+ |
 | 关键词排名 | 百度搜索手动查 | 每周 | 前3页 |
@@ -698,73 +700,73 @@ Sitemap: https://blog.example.com/sitemap_index.xml
 **LLM生成输出** (`output/competitor-analysis/gap-analysis.md`):
 ```markdown
 # SEO竞品差距分析报告
-
+# ...
 ## 1. 三方对比概览
 | 指标 | my-shop.com | competitor-a | competitor-b | 差距 |
-|:-----|:-----------|:-------------|:-------------|:-----|
+|---:|:---|---:|---:|:---|
 | 百度收录 | 156 | 892 | 645 | -736 / -489 |
 | Google收录 | 203 | 1,150 | 780 | -947 / -577 |
 | 预估自然流量 | 2,000/月 | 45,000/月 | 28,000/月 | -43,000 / -26,000 |
 | 关键词覆盖 | 320 | 2,800 | 1,600 | -2,480 / -1,280 |
 | 外链数量 | 45 | 1,200 | 680 | -1,155 / -635 |
 | Core Web Vitals | 60%通过 | 95%通过 | 80%通过 | -35% / -20% |
-
+# ...
 ## 2. 差距分析
-
+# ...
 ### 2.1 技术SEO差距
 | 维度 | my-shop.com | competitor-a | 优先级 |
-|:-----|:-----------|:-------------|:-------|
+|:------:|--------|:-------|:------:|
 | 页面速度(LCP) | 4.2s | 1.8s | P0 |
 | 移动适配 | 基本响应式 | AMP+响应式 | P1 |
 | 结构化数据 | 无 | Course+FAQ+Review | P1 |
 | sitemap | 部分完整 | 完整+自动更新 | P2 |
 | 内链结构 | 扁平(1层) | 层级(3层+面包屑) | P2 |
-
+# ...
 ### 2.2 内容SEO差距
-| 维度 | my-shop.com | competitor-a | 优先级 |
-|:-----|:-----------|:-------------|:-------|
+| 维度(续)| my-shop.com | competitor-a | 优先级 |
+|----|:--:|---:|----|
 | 总内容量 | 156篇 | 892篇 | P0 |
 | 平均字数 | 800字 | 2,500字 | P0 |
 | 关键词覆盖 | 320个 | 2,800个 | P0 |
 | 长尾词覆盖 | 50个 | 1,500个 | P1 |
 | 内容更新频率 | 2篇/周 | 10篇/周 | P1 |
 | 原创比例 | 70% | 95% | P1 |
-
+# ...
 ### 2.3 关键词差距(Top 50差距关键词)
 | 关键词 | 竞品A排名 | 我方排名 | 月搜索量 | 赶超难度 |
-|:-------|:---------|:---------|:---------|:---------|
+|----|----|----|----|----|
 | Python在线课程 | 第1页第3位 | 未排名 | 8,000 | 中(需10篇+内容) |
 | Java培训 | 第1页第5位 | 第5页 | 6,500 | 高(需50+外链) |
 | 编程入门 | 第1页第2位 | 第3页第8位 | 12,000 | 中(内容优化) |
 | 在线编程学习 | 第1页第4位 | 未排名 | 4,500 | 低(新内容即可) |
 | 算法教程 | 第1页第6位 | 第4页 | 3,200 | 中(需深度内容) |
-
+# ...
 ## 3. 赶超路径(6个月计划)
-
+# ...
 ### 第1-2月: 技术SEO修复(基础)
 - [P0] 修复Core Web Vitals(LCP 4.2s→2.0s)
 - [P0] 添加Course结构化数据
 - [P1] 优化内链结构(3层+面包屑)
 - [P1] 完善sitemap自动更新机制
 - 预期: 技术SEO评分从60%提升至90%
-
+# ...
 ### 第3-4月: 内容建设(核心)
 - [P0] 每周发布10篇深度文章(2500字+)
 - [P0] 覆盖Top 50差距关键词中的20个
 - [P1] 每篇文章配套3-5篇长尾内容
 - [P1] 优化已有156篇内容的深度和关键词
 - 预期: 关键词覆盖320→800,收录156→400
-
+# ...
 ### 第5-6月: 外链建设(加速)
 - [P0] 获取30+高质量教育类外链
 - [P1] 与5+教育博客建立内容合作
 - [P1] 发布2篇行业研究报告(吸引自然外链)
 - [P2] 优化社交媒体分享(Open Graph标签)
 - 预期: 外链45→200,自然流量2,000→8,000/月
-
+# ...
 ## 4. 6个月预期效果
 | 指标 | 当前 | 6月后预期 | 竞品A差距 |
-|:-----|:-----|:---------|:----------|
+|:-----|:-----|:-----|:-----|
 | 百度收录 | 156 | 500+ | 缩小至1:1.8 |
 | 关键词覆盖 | 320 | 1,200+ | 缩小至1:2.3 |
 | 自然流量 | 2,000/月 | 10,000+/月 | 缩小至1:4.5 |

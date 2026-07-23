@@ -38,8 +38,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
 ---
-
 # 音频生成工具（免费版）
 
 ## 概述
@@ -55,7 +56,7 @@ suggested_price: 29.9
 **处理流程**：执行音频生成命令,调用对应模型API处理文本输入,返回生成的音频文件。用户通过参数指定模型和语音风格。
 
 | 模型 | 类型 | 说明 |
-|:-----|:-----|:-----|
+|---|---|---|
 | doubao-tts | 文本转语音 | 多语言语音合成，自然流畅，适合新闻与有声书 |
 | keling-tts | 文本转语音 | 支持语种、音色、语速、输出格式设置 |
 | gemini-2.5-tts | 文本转语音 | 中英双语，多种情感音色 |
@@ -65,7 +66,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 音频生成工具-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -76,7 +77,7 @@ suggested_price: 29.9
   - 基础音效生成（1个SFX模型）
   - 中英双语支持
   - 标准音色选择
-
+# ...
 不支持（需专业版）:
   - 语音克隆（Voice Clone）
   - 音乐生成（Music Generation）
@@ -98,7 +99,7 @@ suggested_price: 29.9
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级文本转语音、支持多语言、与基础音效生成、适合个人内容创作、音频生成工具免费、面向个人创作者的、文本转语音与基础、音效生成方案、核心能力、自动模型选择、支持中英双语及多、API、Key、认证与本地配置等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
-### 核心功能执行
+### 核心功能执行(补充)
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
 **输入**: 用户提供核心功能执行所需的指令和必要参数。
@@ -118,7 +119,7 @@ dlazy doubao-tts \
   --text "欢迎来到本教程，今天我们将学习如何使用音频生成工具提升内容创作效率。" \
   --language "zh" \
   --voice "female-warm"
-
+# ...
 # 使用 gemini-2.5-tts 生成中英混合配音
 dlazy gemini-2.5-tts \
   --text "Hello everyone, 今天我们来说说 AI 音频生成技术的最新进展。" \
@@ -133,17 +134,17 @@ dlazy gemini-2.5-tts \
 # 有声书章节朗读脚本
 import subprocess
 import os
-
+# ...
 def generate_audiobook_chapter(text_file, output_dir="audio_output"):
     """将文本文件转为音频"""
     os.makedirs(output_dir, exist_ok=True)
-
+# ...
     with open(text_file, 'r', encoding='utf-8') as f:
         text = f.read()
-
+# ...
     chapter_name = os.path.splitext(os.path.basename(text_file))[0]
     output_path = os.path.join(output_dir, f"{chapter_name}.wav")
-
+# ...
     # 调用 dlazy CLI 生成音频
     cmd = [
         "dlazy", "doubao-tts",
@@ -155,7 +156,7 @@ def generate_audiobook_chapter(text_file, output_dir="audio_output"):
     result = subprocess.run(cmd, capture_output=True, text=True)
     print(f"章节 {chapter_name} 生成完成: {output_path}")
     return output_path
-
+# ...
 # 批量处理章节
 chapters = ["chapter01.txt", "chapter02.txt", "chapter03.txt"]
 for chapter in chapters:
@@ -171,7 +172,7 @@ for chapter in chapters:
 dlazy keling-sfx \
   --prompt "轻柔的春雨声，打在树叶上，持续背景音" \
   --duration 10
-
+# ...
 # 生成提示音
 dlazy keling-sfx \
   --prompt "清脆的电子提示音，短促，用于通知提醒" \
@@ -197,10 +198,10 @@ dlazy keling-sfx \
 ```bash
 # 方式一：免安装直接运行
 npx @dlazy/cli@latest <command>
-
+# ...
 # 方式二：全局安装
 npm install -g @dlazy/cli@latest
-
+# ...
 # 设置 API Key
 dlazy auth set YOUR_API_KEY
 ```
@@ -210,7 +211,7 @@ dlazy auth set YOUR_API_KEY
 ```bash
 # 查看模型帮助
 dlazy doubao-tts -h
-
+# ...
 # 生成语音
 dlazy doubao-tts --text "你好，这是第一段AI生成的语音。" --language "zh"
 ```
@@ -224,7 +225,6 @@ dlazy doubao-tts --text "你好，这是第一段AI生成的语音。" --languag
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### API Key 配置
@@ -235,10 +235,10 @@ dlazy auth set YOUR_API_KEY
 # 配置文件位置:
 #   macOS/Linux: ~/.dlazy/config.json
 #   Windows:     %USERPROFILE%\.dlazy\config.json
-
+# ...
 # 方式二：环境变量（临时）
 export DLAZY_API_KEY="YOUR_API_KEY"
-
+# ...
 # 方式三：单次调用传入
 DLAZY_API_KEY="YOUR_API_KEY" dlazy doubao-tts --text "测试"
 ```
@@ -253,7 +253,7 @@ dlazy doubao-tts \
   --voice "female-warm"    # 音色选择
   --speed 1.0              # 语速: 0.5-2.0
   --output "./output.wav"  # 输出路径
-
+# ...
 # keling-tts 常用参数
 dlazy keling-tts \
   --text "要朗读的文本内容" \
@@ -315,13 +315,13 @@ A: 建议单次请求文本不超过 500 字。长文本请分段生成，专业
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js 16+ | 运行时 | 必需 | nodejs.org 官方下载 |
 | @dlazy/cli | CLI工具 | 必需 | `npm install -g @dlazy/cli@latest` |
 | dlazy API Key | 认证 | 必需 | dlazy.com/dashboard 获取 |
 
-### API Key 配置
+### API Key 配置(补充)
 - **必需**: dlazy API Key
 - **获取方式**: 访问 dlazy.com/dashboard/organization/api-key
 - **配置方式**: `dlazy auth set YOUR_API_KEY` 或环境变量 `DLAZY_API_KEY`
@@ -334,9 +334,8 @@ A: 建议单次请求文本不超过 500 字。长文本请分段生成，专业
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

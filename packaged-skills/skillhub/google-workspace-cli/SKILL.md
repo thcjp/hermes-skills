@@ -33,19 +33,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 谷歌办公命令行专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -104,7 +106,7 @@ pricing_model: "per_use"
 # batch_notify.sh - 批量会议通知
 SUBJECT="2026 Q3 季度总结会议通知"
 BODY="各位同事,定于2026年7月25日14:00在3号会议室召开Q3季度总结会议,请准时参加。"
-
+# ...
 while IFS=, read -r name email; do
     echo "正在发送给: $name <$email>"
     if gog gmail send --to "$email" --subject "$SUBJECT" --body "$BODY" --no-input; then
@@ -132,20 +134,20 @@ done < attendees.csv
 import subprocess
 import json
 from datetime import datetime
-
+# ...
 SHEET_ID = "your_sheet_id_here"
 TODAY = datetime.now().strftime("%Y-%m-%d")
-
+# ...
 # 今日销售数据
 sales_data = [
     ["2026-07-18", "华东区", "¥128,500", "32单"],
     ["2026-07-18", "华南区", "¥96,300", "28单"],
     ["2026-07-18", "华北区", "¥152,800", "41单"],
 ]
-
+# ...
 # 转为 JSON 格式
 values_json = json.dumps(sales_data)
-
+# ...
 # 追加数据到 Sheets
 subprocess.run([
     'gog', 'sheets', 'append', SHEET_ID, '销售数据!A:D',
@@ -153,7 +155,7 @@ subprocess.run([
     '--insert', 'INSERT_ROWS',
     '--no-input'
 ])
-
+# ...
 print(f"已写入 {len(sales_data)} 条销售记录")
 ```
 
@@ -166,7 +168,7 @@ print(f"已写入 {len(sales_data)} 条销售记录")
 # archive_docs.sh - 文档归档
 ARCHIVE_DIR="/tmp/project_archive_$(date +%Y%m%d)"
 mkdir -p "$ARCHIVE_DIR"
-
+# ...
 # 文档ID列表
 doc_ids=(
     "doc_id_1:需求文档"
@@ -174,7 +176,7 @@ doc_ids=(
     "doc_id_3:测试报告"
     "doc_id_4:上线 checklist"
 )
-
+# ...
 for entry in "${doc_ids[@]}"; do
     doc_id="${entry%%:*}"
     name="${entry##*:}"
@@ -182,7 +184,7 @@ for entry in "${doc_ids[@]}"; do
     echo "正在导出: $name"
     gog docs export "$doc_id" --format pdf --out "$output" --no-input
 done
-
+# ...
 echo "归档完成,共 ${#doc_ids[@]} 份文档,存储于 $ARCHIVE_DIR"
 ```
 
@@ -198,7 +200,7 @@ echo "归档完成,共 ${#doc_ids[@]} 份文档,存储于 $ARCHIVE_DIR"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Google OAuth 凭据 | 凭据 | 必需 | Google Cloud Console 创建 |
 | gog 命令行工具 | CLI | 必需 | 通过包管理器安装 |
 | Google Workspace 账户 | 账户 | 必需 | 企业版或个人版均可 |
@@ -215,7 +217,6 @@ echo "归档完成,共 ${#doc_ids[@]} 份文档,存储于 $ARCHIVE_DIR"
 9. **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 10. **说明**: 基于命令行的企业级 AI Skill,通过自然语言指令驱动 Agent 执行 Google Workspace 六大服务的深度操作。专业版完全兼容免费版命令体系,额外提供 Sheets/Docs/Contacts 高级操作、批量处理能力与企业级自动化工作流模板,适合团队协作与规模化办公场景。
 
-
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
@@ -226,7 +227,7 @@ export API_KEY="your_api_key_here"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | google-workspace-cli处理的内容输入 |,  |
 | content | string | 否 | google-workspace-cli处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -254,19 +255,18 @@ export API_KEY="your_api_key_here"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 输入content为空 | 用户未提供必要信息 | 提示用户提供content, 并给出示例格式 |
 | 输入内容过长(>5000字) | 超出单次处理能力 | 建议分段处理, 每段不超过2000字 |
 | 风格参数不识别 | 传入不支持的风格 | 列出支持的风格选项, 使用默认风格 |
 | 生成内容不达标 | 质量校验未通过 | 自动1次, 仍不达标则标注问题返回 |
 | 其他异常 | 内部处理异常 | 检查输入后 |
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|:------|------:|:------|:------|
 | LLM | 模型 | 是 | 需要LLM进行内容生成, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要, 本地LLM不需要 |
 
@@ -290,13 +290,13 @@ retry_interval: 5
 ```bash
 # 默认账户
 export GOG_ACCOUNT=you@company.com
-
+# ...
 # JSON 输出
 export GOG_OUTPUT=json
-
+# ...
 # 不交互模式
 export GOG_NO_INPUT=true
-
+# ...
 # 重试策略
 export GOG_RETRY_COUNT=3
 export GOG_RETRY_INTERVAL=5
@@ -309,12 +309,12 @@ export GOG_RETRY_INTERVAL=5
 import subprocess
 import json
 from datetime import datetime, timedelta
-
+# ...
 class WorkspaceAutomation:
     def __init__(self, account):
         self.account = account
         self.base_cmd = ['gog', '--no-input', '--json', '--account', account]
-
+# ...
     def get_today_events(self):
         """获取今日日历事件"""
         today = datetime.now().strftime('%Y-%m-%d')
@@ -325,7 +325,7 @@ class WorkspaceAutomation:
             capture_output=True, text=True
         )
         return json.loads(result.stdout)
-
+# ...
     def get_unread_emails(self, max_count=20):
         """获取未读邮件"""
         result = subprocess.run(
@@ -334,7 +334,7 @@ class WorkspaceAutomation:
             capture_output=True, text=True
         )
         return json.loads(result.stdout)
-
+# ...
     def write_report(self, sheet_id, data):
         """将日报数据写入 Sheets"""
         values_json = json.dumps(data)
@@ -342,12 +342,12 @@ class WorkspaceAutomation:
             self.base_cmd + ['sheets', 'append', sheet_id, '日报!A:E',
                            '--values-json', values_json, '--insert', 'INSERT_ROWS']
         )
-
+# ...
     def generate_daily_brief(self, sheet_id):
         """生成并发送每日简报"""
         events = self.get_today_events()
         emails = self.get_unread_emails()
-
+# ...
         brief_data = [[
             datetime.now().strftime('%Y-%m-%d'),
             f'{len(events)} 场会议',
@@ -357,7 +357,7 @@ class WorkspaceAutomation:
         ]]
         self.write_report(sheet_id, brief_data)
         return f"日报已生成: {len(events)} 场会议, {len(emails)} 封未读邮件"
-
+# ...
 # 使用示例
 automation = WorkspaceAutomation('you@company.com')
 result = automation.generate_daily_brief('your_sheet_id')
@@ -372,7 +372,7 @@ print(result)
 ```bash
 # 账户 A 操作
 gog gmail search 'is:unread' --account admin@company.com --max 10
-
+# ...
 # 切换到账户 B
 export GOG_ACCOUNT=hr@company.com
 gog gmail search 'is:unread' --max 10
@@ -404,9 +404,8 @@ gog sheets update <sheetId> "Sheet1!A1" \
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

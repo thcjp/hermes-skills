@@ -27,14 +27,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
 # 数据分析师
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据分析师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,13 +43,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 数据分析师统计分析 | 不支持 | 支持 |
+| 数据分析师时间序列分析 | 不支持 | 支持 |
+| 数据分析师可视化代码生成与分析 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
 
 ## 概述
 
@@ -62,7 +63,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -80,7 +81,7 @@ export API_KEY="your_api_key_here"
 
 ### 多源数据读取
 | 数据源 | 代码 | 说明 |
-|--------|------|------|
+|:---:|:---:|:---:|
 | CSV | `pd.read_csv('data.csv')` | 读取CSV文件 |
 | Excel | `pd.read_excel('data.xlsx', sheet_name='Sheet1')` | 指定Sheet读取 |
 | JSON | `pd.read_json('data.json')` | 读取JSON文件 |
@@ -94,11 +95,11 @@ print(df.shape)        # 行列数，如 (1542, 7)
 print(df.columns)      # 列名列表
 print(df.dtypes)       # 数据类型
 print(df.info())       # 详细信息（含内存占用）
-
+# ...
 print(df.head())       # 前 5 行
 print(df.tail())       # 后 5 行
 print(df.sample(5))    # 随机 5 行
-
+# ...
 print(df.describe())   # 数值列统计
 print(df.describe(include='all'))  # 所有列（含分类列）
 ```
@@ -193,17 +194,17 @@ pd.crosstab(df['col1'], df['col2'])
 ```python
 df['date'] = pd.to_datetime(df['date'])
 df = df.set_index('date')
-
+# ...
 df.resample('D').sum()      # 按天汇总
 df.resample('W').mean()     # 按周均值
 df.resample('M').sum()      # 按月汇总
-
+# ...
 df['rolling_mean'] = df['col'].rolling(window=7).mean()  # 7日滚动均值
 df['rolling_std'] = df['col'].rolling(window=7).std()    # 7日滚动标准差
-
+# ...
 df['diff'] = df['col'].diff()              # 一阶差分
 df['pct_change'] = df['col'].pct_change()  # 环比变化率
-
+# ...
 from statsmodels.tsa.seasonal import seasonal_decompose
 result = seasonal_decompose(df['col'], model='additive', period=12)
 result.plot()
@@ -215,7 +216,7 @@ result.plot()
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+# ...
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 ```
@@ -223,7 +224,7 @@ plt.rcParams['axes.unicode_minus'] = False
 **基础图表**：
 
 | 图表类型 | 代码 | 适用场景 |
-|---------|------|---------|
+|:------|------:|:------|
 | 折线图 | `plt.plot(df['date'], df['value'])` | 趋势变化 |
 | 柱状图 | `plt.bar(df['category'], df['value'])` | 分类对比 |
 | 散点图 | `plt.scatter(df['x'], df['y'], alpha=0.5)` | 关系分布 |
@@ -237,13 +238,13 @@ plt.rcParams['axes.unicode_minus'] = False
 # 分组柱状图
 df_grouped = df.groupby(['category', 'type'])['value'].sum().unstack()
 df_grouped.plot(kind='bar', figsize=(12, 6))
-
+# ...
 # 小提琴图
 sns.violinplot(data=df, x='category', y='value')
-
+# ...
 # 成对关系图
 sns.pairplot(df[['col1', 'col2', 'col3', 'category']], hue='category')
-
+# ...
 # 多轴趋势图（含置信区间）
 fig, ax = plt.subplots(figsize=(14, 6))
 ax.plot(df.index, df['value'], label='实际值')
@@ -257,27 +258,27 @@ ax.legend()
 ```python
 def generate_report(df):
     report = f"""
-
+# ...
 **输入**: 用户提供分析报告自动生成所需的指令和必要参数。
 **处理**: 解析分析报告自动生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+# ...
 #
 ## 1. 数据概览
 - 数据量：{len(df)} 行 × {len(df.columns)} 列
 - 时间范围：{df['date'].min()} 至 {df['date'].max()}
 - 缺失值：{df.isnull().sum().sum()} 个
-
+# ...
 ## 2. 关键指标
 - 总销售额：¥{df['sales'].sum():,.2f}
 - 平均订单：¥{df['sales'].mean():,.2f}
-
+# ...
 ## 3. 分布特征
 - 偏度：{df['sales'].skew():.2f}
 - 峰度：{df['sales'].kurt():.2f}
-
+# ...
 ## 4. Top 5 类别
 {df.groupby('category')['sales'].sum().sort_values(ascending=False).head().to_markdown()}
-
+# ...
 ## 5. 趋势分析
 - 环比增长：{df['sales'].pct_change().mean()*100:.2f}%
 """
@@ -300,13 +301,13 @@ def generate_report(df):
 
 ```text
 输入: 分析这个 CSV 文件：sales.csv
-
+# ...
 处理:
 - df = pd.read_csv('sales.csv')
 - 缺失值: df['sales'].fillna(df['sales'].mean())
 - 异常值: Q1=120, Q3=450, IQR=330, 保留 [Q1-1.5*IQR, Q3+1.5*IQR] 范围
 - 统计: 均值¥45,230, 中位数¥38,500, 偏度1.2
-
+# ...
 输出: 清洗后 1485 行（原 1542 行），销售额右偏分布
 ```
 
@@ -314,7 +315,7 @@ def generate_report(df):
 
 ```text
 输入: 为这些数据生成折线图代码
-
+# ...
 输出:
 plt.figure(figsize=(10, 6))
 plt.plot(df['date'], df['value'])
@@ -328,7 +329,7 @@ plt.show()
 
 ```text
 输入: 对月度销售数据做季节性分解
-
+# ...
 处理:
 - df['date'] = pd.to_datetime(df['date'])
 - df = df.set_index('date')
@@ -336,14 +337,14 @@ plt.show()
 - 趋势组件: 稳定上升
 - 季节组件: 12月峰值，6月谷值
 - 残差: 无明显模式
-
+# ...
 输出: 分解图含趋势/季节/残差三子图
 ```
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 中文图表显示方框 | 未配置SimHei字体 | 执行 `plt.rcParams['font.sans-serif'] = ['SimHei']` 和 `plt.rcParams['axes.unicode_minus'] = False` |
 | `KeyError` 列名不存在 | 列名含空格或大小写不一致 | 先 `print(df.columns)` 检查实际列名，用 `df.columns = df.columns.str.strip()` 清洗 |
 | `fillna(df.mean())` 报错 | 含非数值列无法求均值 | 仅对数值列填充：`df.select_dtypes(include='number').fillna(df.mean())` |

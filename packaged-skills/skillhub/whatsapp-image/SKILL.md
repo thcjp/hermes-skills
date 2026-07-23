@@ -24,19 +24,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "图像处理,AI绘图,创意"
 ---
 # WhatsApp图片发送-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| WhatsApp图片发送-专业版支持批量发送 | 不支持 | 支持 |
+| WhatsApp图片发送-专业版定时发送 | 不支持 | 支持 |
+| WhatsApp图片发送-专业版群组消息与模板管理 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -44,7 +46,7 @@ pricing_model: "per_use"
 专业版支持完整多媒体类型：
 
 | 类型 | 格式 | 适用场景 |
-|:-----|:-----|:---------|
+|:-----|:-----|:-----|
 | 图片 | JPG/PNG/GIF/WebP | 照片、截图、设计稿 |
 | 视频 | MP4/MOV/AVI | 宣传片、教程、演示 |
 | 音频 | MP3/WAV/AAC | 语音消息、音乐 |
@@ -218,17 +220,17 @@ python3 scheduled_send.py --config /path/to/schedule.json
 ```bash
 cp /videos/meeting.mp4 ~/.skill-platform/workspace/
 cp /docs/minutes.pdf ~/.skill-platform/workspace/
-
+# ...
 message --channel whatsapp \
   --target "项目群组 ID" \
   --filePath ~/.skill-platform/workspace/meeting.mp4 \
   --message "本次会议录制"
-
+# ...
 message --channel whatsapp \
   --target "项目群组 ID" \
   --filePath ~/.skill-platform/workspace/minutes.pdf \
   --message "会议纪要文档"
-
+# ...
 rm ~/.skill-platform/workspace/meeting.mp4
 rm ~/.skill-platform/workspace/minutes.pdf
 ```
@@ -238,9 +240,9 @@ rm ~/.skill-platform/workspace/minutes.pdf
 ### 优秀步：环境检查
 ```bash
 python3 --version
-
+# ...
 which message
-
+# ...
 ls ~/.skill-platform/workspace/
 ```
 
@@ -283,7 +285,7 @@ python3 batch_send.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | whatsapp-image处理的内容输入 |,  |
 | content | string | 否 | whatsapp-image处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -311,9 +313,8 @@ python3 batch_send.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -327,9 +328,9 @@ python3 batch_send.py \
 - **网络**：需要网络连接（发送消息）
 - **Skill 平台**：需安装并提供 `message` 命令
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | curl | 命令行工具 | 必需 | 系统自带 | 任意版本 |
 | message | 平台工具 | 必需 | Skill 平台安装 | - |
@@ -341,7 +342,7 @@ python3 batch_send.py \
 #### 完整安装命令
 ```bash
 pip3 install requests pyyaml
-
+# ...
 python3 --version
 curl --version
 which message
@@ -351,7 +352,7 @@ which message
 专业版需要以下配置：
 
 | 配置项 | 环境变量 | 用途 | 获取方式 |
-|:-------|:---------|:-----|:---------|
+|---:|:---|---:|---:|
 | WhatsApp 凭证 | 平台配置 | WhatsApp 账号认证 | Skill 平台配置 |
 | Skill 平台 Token | 平台配置 | 平台认证 | Skill 平台控制台 |
 | 多账号 Token | 配置文件 | 多账号轮询 | Skill 平台控制台 |
@@ -369,20 +370,6 @@ which message
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -414,8 +401,8 @@ which message
 **A：** 完全兼容。专业版包含免费版所有工作流，单图发送命令可直接运行。专业版扩展的是批量、定时、模板等能力。
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -460,7 +447,7 @@ python3 batch_send.py \
 ```bash
 message --channel whatsapp --target +8613800138000 \
   --filePath ~/.skill-platform/workspace/image.jpg --message "商品图片"
-
+# ...
 message --channel whatsapp --target +8613800138000 \
   --filePath ~/.skill-platform/workspace/doc.pdf --message "合同文档"
 ```
@@ -489,17 +476,14 @@ accounts:
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|-------|:-----:|------:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

@@ -39,8 +39,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
 ---
-
 # 播客下载工具 - 专业版
 
 ## 概述
@@ -54,7 +55,7 @@ suggested_price: 99.9
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 | 增量价值 |
-|:-----|:-------|:-------|:---------|
+|---|---|---|----|
 | 单集下载 | 支持 | 支持 | - |
 | MP3 转换 | 支持 | 支持 | - |
 | 节目笔记 | 支持 | 支持 | - |
@@ -99,24 +100,24 @@ suggested_price: 99.9
 ```bash
 #!/bin/bash
 # batch_download.sh - 批量下载
-
+# ...
 URL_FILE="download_list.txt"
 OUTPUT_DIR="/data/podcasts"
 MAX_PARALLEL=3
-
+# ...
 # 读取 URL 列表
 mapfile -t URLs < "$URL_FILE"
-
+# ...
 # 并发下载
 for url in "${URLs[@]}"; do
     # 控制并发数
     while [ $(jobs -r | wc -l) -ge $MAX_PARALLEL ]; do
         sleep 1
     done
-
+# ...
     PODCAST_DIR="$OUTPUT_DIR" （请参考skill目录中的脚本文件） "$url" &
 done
-
+# ...
 wait
 echo "批量下载完成: ${#URLs[@]} 集"
 ```
@@ -139,15 +140,15 @@ import time
 import hashlib
 from pathlib import Path
 import requests
-
+# ...
 class PodcastSubscriber:
     """播客订阅管理器"""
-
+# ...
     def __init__(self, config_file="subscriptions.json"):
         self.config_file = config_file
         self.subscriptions = self._load()
         self.downloaded = self._load_downloaded()
-
+# ...
     def _load(self):
         """加载订阅配置"""
         try:
@@ -155,7 +156,7 @@ class PodcastSubscriber:
                 return json.load(f)
         except FileNotFoundError:
             return {"shows": []}
-
+# ...
     def _load_downloaded(self):
         """加载已下载记录(去重)"""
         try:
@@ -163,7 +164,7 @@ class PodcastSubscriber:
                 return set(json.load(f))
         except FileNotFoundError:
             return set()
-
+# ...
     def subscribe(self, show_name, feed_url, platform="xiaoyuzhoufm"):
         """订阅新节目"""
         self.subscriptions["shows"].append({
@@ -176,7 +177,7 @@ class PodcastSubscriber:
             "output_dir": f"/data/podcasts/{show_name}"
         })
         self._save()
-
+# ...
     def check_updates(self):
         """检查所有订阅的更新"""
         new_episodes = []
@@ -187,7 +188,7 @@ class PodcastSubscriber:
                 if ep_hash not in self.downloaded:
                     new_episodes.append((show, ep))
         return new_episodes
-
+# ...
     def sync(self):
         """同步下载所有新集"""
         new_eps = self.check_updates()
@@ -202,15 +203,15 @@ class PodcastSubscriber:
             self.downloaded.add(ep_hash)
         self._save_downloaded()
         print(f"同步完成: 新增 {len(new_eps)} 集")
-
+# ...
     def _save(self):
         with open(self.config_file, "w", encoding="utf-8") as f:
             json.dump(self.subscriptions, f, ensure_ascii=False, indent=2)
-
+# ...
     def _save_downloaded(self):
         with open(".downloaded.json", "w", encoding="utf-8") as f:
             json.dump(list(self.downloaded), f)
-
+# ...
 # 使用
 sub = PodcastSubscriber()
 sub.subscribe("独立开发者", "https://www.xiaoyuzhoufm.com/podcast/abc123")
@@ -224,10 +225,10 @@ sub.sync()
 ```bash
 # 编辑 crontab
 crontab -e
-
+# ...
 # 每天早上 6 点同步下载
 0 6 * * * cd /path/to/podcast-downloader && python subscriber.py sync >> /var/log/podcast-sync.log 2>&1
-
+# ...
 # 每周日凌晨清理 30 天前的已下载记录
 0 3 * * 0 find /data/podcasts -name "*.mp3" -mtime +30 -delete
 ```
@@ -239,7 +240,7 @@ crontab -e
 ```python
 import subprocess
 import os
-
+# ...
 def embed_metadata(mp3_path, title, artist, album, cover_path=None):
     """嵌入 ID3 元数据"""
     cmd = [
@@ -250,14 +251,14 @@ def embed_metadata(mp3_path, title, artist, album, cover_path=None):
         "-metadata", "genre=Podcast",
         "-codec", "copy"
     ]
-
+# ...
     if cover_path and os.path.exists(cover_path):
         cmd.extend(["-i", cover_path, "-map", "0:a", "-map", "1:v",
                    "-c:v", "mjpeg", "-disposition:v", "attached_pic"])
-
+# ...
     cmd.append(mp3_path.replace(".mp3", "_tagged.mp3"))
     subprocess.run(cmd, check=True)
-
+# ...
     # 替换原文件
     os.replace(mp3_path.replace(".mp3", "_tagged.mp3"), mp3_path)
 ```
@@ -289,7 +290,7 @@ def embed_metadata(mp3_path, title, artist, album, cover_path=None):
 brew install curl jq ffmpeg  # macOS
 # 或
 sudo apt install curl jq ffmpeg  # Linux
-
+# ...
 # Python 依赖(订阅功能)
 pip install requests
 ```
@@ -325,7 +326,7 @@ pip install requests
 ```bash
 # 手动同步一次
 python subscriber.py sync
-
+# ...
 # 配置定时任务
 crontab -e
 # 0 6 * * * cd /path/to/tool && python subscriber.py sync
@@ -365,21 +366,21 @@ sync:
 ```python
 class MultiPlatformDownloader:
     """多平台下载器"""
-
+# ...
     def __init__(self):
         self.platforms = {
             "xiaoyuzhoufm": self._download_xiaoyuzhoufm,
             "rss": self._download_rss,
             "apple": self._download_apple,
         }
-
+# ...
     def download(self, url, output_dir, quality=2):
         platform = self._detect_platform(url)
         downloader = self.platforms.get(platform)
         if downloader:
             return downloader(url, output_dir, quality)
         raise ValueError(f"不支持的平台: {platform}")
-
+# ...
     def _detect_platform(self, url):
         if "xiaoyuzhoufm.com" in url:
             return "xiaoyuzhoufm"
@@ -412,16 +413,16 @@ class MultiPlatformDownloader:
 # 自动清理脚本
 #!/bin/bash
 # cleanup.sh - 清理旧文件
-
+# ...
 PODCAST_DIR="/data/podcasts"
 DAYS=30
-
+# ...
 # 清理 30 天前的 MP3
 find "$PODCAST_DIR" -name "*.mp3" -mtime +$DAYS -delete
-
+# ...
 # 清理空目录
 find "$PODCAST_DIR" -type d -empty -delete
-
+# ...
 # 统计当前存储
 du -sh "$PODCAST_DIR"
 ```
@@ -484,7 +485,7 @@ du -sh "$PODCAST_DIR"
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | curl | 命令行工具 | 必需 | 系统自带或下载 |
 | jq | JSON 处理工具 | 必需 | `brew install jq` / `apt install jq` |
 | ffmpeg | 音频转换工具 | 必需 | `brew install ffmpeg` / `apt install ffmpeg` |
@@ -505,9 +506,8 @@ du -sh "$PODCAST_DIR"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

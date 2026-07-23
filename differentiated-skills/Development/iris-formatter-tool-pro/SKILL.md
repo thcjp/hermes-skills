@@ -35,8 +35,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # IRIS 代码格式化工具（专业版）
 ## 概述
 本工具面向企业级 IRIS 开发团队，提供 ObjectScript 代码的批量审查与治理方案。在免费版基础规范检查能力之上，专业版新增批量多文件审查、自定义规范规则配置、结构化审查报告导出、SQL 格式与性能检查、陷阱深度分析与安全审计、代码复杂度与重复度分析等能力。通过可配置的规则引擎与自动化报告，帮助团队建立统一的代码质量标准。
@@ -45,7 +46,7 @@ suggested_price: 99.9
 
 ## 核心能力
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|----|---|-----|
 | 代码审查 | 单文件审查 | 批量多文件/多类审查 |
 | 规范规则 | 内置固定规则 | 自定义规则 + 团队配置 |
 | 报告输出 | 文本报告 | Markdown/HTML 结构化报告 |
@@ -89,39 +90,39 @@ suggested_price: 99.9
 # （请参考skill目录中的脚本文件） - 批量审查 IRIS 代码
 MODULE_DIR=$1
 REPORT_FILE="iris-review-report-$(date +%Y%m%d).md"
-
+# ...
 echo "# IRIS 代码审查报告" > "$REPORT_FILE"
 echo "**审查时间**: $(date)" >> "$REPORT_FILE"
 echo "**审查范围**: $MODULE_DIR" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
-
+# ...
 # 统计文件数
 FILE_COUNT=$(find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" -o -name "*.inc" | wc -l)
 echo "**文件数量**: $FILE_COUNT" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
-
+# ...
 echo "=== 开始批量审查 $FILE_COUNT 个文件 ==="
-
+# ...
 # 批量审查
 TOTAL_ISSUES=0
 CRITICAL_COUNT=0
 WARNING_COUNT=0
-
+# ...
 find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" | while read file; do
   echo "审查: $file"
-
+# ...
   # 检查命名规范
   ISSUES=$(grep -n "yonghu\|dingdan\|zhifu" "$file" | wc -l)
   if [ "$ISSUES" -gt 0 ]; then
     echo "- [严重] $file: 发现拼音命名" >> "$REPORT_FILE"
   fi
-
+# ...
   # 检查锁规范
   LOCK_ISSUES=$(grep -n "l +\^" "$file" | grep -v ":3\|:5\|:10" | wc -l)
   if [ "$LOCK_ISSUES" -gt 0 ]; then
     echo "- [警告] $file: 锁未设置超时" >> "$REPORT_FILE"
   fi
-
+# ...
   # 检查事务规范
   TS_COUNT=$(grep -c "ts\b" "$file")
   TC_COUNT=$(grep -c "tc\b" "$file")
@@ -129,14 +130,14 @@ find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" | while read file; do
   if [ "$TS_COUNT" -ne "$((TC_COUNT + TRO_COUNT))" ]; then
     echo "- [严重] $file: 事务不闭合 (ts:$TS_COUNT tc:$TC_COUNT tro:$TRO_COUNT)" >> "$REPORT_FILE"
   fi
-
+# ...
   # 检查后置表达式格式
   POSTFIX_ISSUES=$(grep -n ") && (\|) || (" "$file" | wc -l)
   if [ "$POSTFIX_ISSUES" -gt 0 ]; then
     echo "- [严重] $file: 后置表达式格式错误（括号与&&间有空格）" >> "$REPORT_FILE"
   fi
 done
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 审查完成" >> "$REPORT_FILE"
 echo "详细报告: $REPORT_FILE"
@@ -157,7 +158,7 @@ rules:
     max_method_length: 30
     forbidden_prefixes: ["is", "arr", "str"]
     required_boolean_suffix: "Flag"
-
+# ...
   # 锁规范
   lock:
     require_timeout: true
@@ -165,7 +166,7 @@ rules:
     require_paired: true
     forbid_table_global_lock: true
     require_subscript: true
-
+# ...
   # 事务规范
   transaction:
     require_closure: true
@@ -181,14 +182,14 @@ rules:
     full_spell_commands: ["for", "while", "if", "elseif", "else", "continue"]
     max_line_length: 120
     max_method_lines: 50
-
+# ...
   # SQL 规范
   sql:
     fields_per_line: 5
     indent_after_newline: 3
     comma_at_end: true
     command_case: "lower"
-
+# ...
   # 陷阱规范
   trap:
     require_error_handler: true
@@ -196,7 +197,7 @@ rules:
     require_zt_reset: true
     require_tl_check: true
     require_lock_release: true
-
+# ...
 # 严重程度映射
 severity:
   naming_pinyin: critical
@@ -216,16 +217,16 @@ severity:
 #!/bin/bash
 # （请参考skill目录中的脚本文件） - 代码复杂度分析
 TARGET=$1
-
+# ...
 echo "=== IRIS 代码复杂度分析 ==="
 echo "目标: $TARGET"
 echo ""
-
+# ...
 # 方法行数统计
 echo "## 方法行数统计（超过 50 行需重构）"
 echo "| 文件 | 方法 | 行数 | 状态 |"
 echo "| --- | --- | --- | --- |"
-
+# ...
 find "$TARGET" -name "*.cls" | while read file; do
   # 提取方法及其行数
   awk '
@@ -251,7 +252,7 @@ find "$TARGET" -name "*.cls" | while read file; do
     }
   ' "$file"
 done
-
+# ...
 echo ""
 echo "## 重复代码检测"
 # 查找重复的代码块（5 行以上相同）
@@ -313,7 +314,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
             <td>{{total_issues}}</td>
         </tr>
     </table>
-
+# ...
     <h2>问题详情</h2>
     <table>
         <tr>
@@ -347,7 +348,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 // 3. 逗号在行末
 // 4. 每行不超过 120 字符
 // 5. SQL 命令统一小写
-
+# ...
 // 正确格式
 &sql(
    select id, name, age, email, phone
@@ -355,14 +356,13 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
          from user_table
          where id = :userId
 )
-
+# ...
 // 错误格式
 &sql(SELECT ID,NAME,AGE,EMAIL,PHONE,ADDRESS,STATUS FROM USER_TABLE WHERE ID=:userId)
 // 问题：字段过多、命令大写、单行过长
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 ### 审查规则配置文件
@@ -371,10 +371,10 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 version: "2.0"
 team: "后端开发组"
 updated: "2026-07-18"
-
+# ...
 # 继承基础规则
 extends: "default"
-
+# ...
 # 团队自定义覆盖
 overrides:
   naming:
@@ -382,7 +382,7 @@ overrides:
     service_prefix: "Svc"
     controller_prefix: "Ctrl"
     dao_prefix: "DAO"
-
+# ...
   format:
     # 团队约定的方法最大行数
     max_method_lines: 40  # 比默认 50 更严格
@@ -391,7 +391,7 @@ overrides:
     forbid_sql_in_loop: true
     # 必须使用参数化查询
     require_parameterized: true
-
+# ...
 # 排除规则
 excludes:
   - "**/test/**"
@@ -504,7 +504,7 @@ find src/ -name "*.cls" -exec cat {} \; | \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | InterSystems IRIS | 运行时 | 推荐 | InterSystems 官方获取 |
 | Git | 命令行工具 | 推荐 | 系统包管理器安装 |
 | YAML 解析器 | 工具 | 可选 | 系统包管理器安装 |
@@ -522,7 +522,7 @@ find src/ -name "*.cls" -exec cat {} \; | \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

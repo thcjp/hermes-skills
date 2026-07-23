@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # 编解码工具箱（免费版）
 
 本 Skill 聚焦日常开发与运维场景下最高频的编解码任务，提供"诊断—选择—执行"三段式工作流，避免用户在多个工具间反复切换。免费版覆盖六大主流场景，满足绝大多数日常调试需求。
@@ -32,7 +33,7 @@ suggested_price: 19.9
 ## 核心能力
 
 | 能力模块 | 输入示例 | 输出 | 适用场景 |
-|---------|---------|------|---------|
+|----|----|---|----|
 | Base64 编解码 | `Hello, World!` / `SGVsbG8sIFdvcmxkIQ==` | 双向转换 | API 响应解析、邮件附件、数据嵌入 |
 | URL 编解码 | `hello world & foo=bar` | `hello%20world%20%26%20foo%3Dbar` | HTTP 请求拼装、参数解析 |
 | Hex 视图与转换 | `Hello` / `48656c6c6f` | 字节序检视、字符串互转 | 二进制调试、协议分析 |
@@ -91,19 +92,19 @@ suggested_price: 19.9
 # 1. Base64 编码
 echo -n "Hello, World!" | base64
 # 输出：SGVsbG8sIFdvcmxkIQ==
-
+# ...
 # 2. Base64 解码
 echo "SGVsbG8sIFdvcmxkIQ==" | base64 -d
 # 输出：Hello, World!
-
+# ...
 # 3. URL 编码
 python3 -c "from urllib.parse import quote; print(quote('hello world & foo=bar'))"
 # 输出：hello%20world%20%26%20foo%3Dbar
-
+# ...
 # 4. SHA-256 哈希
 echo -n "Hello" | sha256sum
 # 输出：185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969
-
+# ...
 # 5. JWT 解析（仅查看 Payload）
 echo "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMifQ.signature" | cut -d. -f2 | tr '-_' '+/' | base64 -d 2>/dev/null
 ```
@@ -117,7 +118,7 @@ echo "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMifQ.signature" | cut -d. -f2 | tr '-_'
 import base64
 from urllib.parse import unquote
 import re
-
+# ...
 def smart_decode(text: str) -> str:
     """自动识别并尝试解码 Base64 / URL / JWT / Hex。"""
     # JWT 优先匹配
@@ -136,7 +137,7 @@ def smart_decode(text: str) -> str:
         return base64.b64decode(text, validate=True).decode('utf-8')
     except Exception:
         return text
-
+# ...
 print(smart_decode('SGVsbG8sIFdvcmxkIQ=='))
 ```
 
@@ -145,7 +146,7 @@ print(smart_decode('SGVsbG8sIFdvcmxkIQ=='))
 ```javascript
 const crypto = require('crypto');
 const fs = require('fs');
-
+// ...
 function fileSha256(path) {
   const hash = crypto.createHash('sha256');
   const stream = fs.createReadStream(path);
@@ -191,7 +192,7 @@ A：UTF-8 BOM 为 `EF BB BF`，使用 `sed -i '1s/^\xEF\xBB\xBF//' file.txt` 移
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | coreutils (base64/od/xxd) | 系统工具 | 可选 | Linux/macOS 自带，Windows 通过 WSL 或 Git Bash |
 | Python3 | 运行时 | 可选 | 官网下载，部分示例依赖 |
@@ -218,9 +219,8 @@ A：UTF-8 BOM 为 `EF BB BF`，使用 `sed -i '1s/^\xEF\xBB\xBF//' file.txt` 移
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

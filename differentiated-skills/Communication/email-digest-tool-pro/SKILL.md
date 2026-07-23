@@ -21,8 +21,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
-
 # 邮件日报专业版
 **版本**: 1.0.0
 **适用对象**: 企业管理者、团队负责人、运维与运营人员
@@ -109,7 +110,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 邮件日报专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -121,7 +122,7 @@ email-digest-tool aggregate \
   --date today \
   --format html \
   --output reports/daily_$(date +%Y%m%d).html
-
+# ...
 # 自动推送到飞书
 email-digest-tool aggregate \
   --accounts gmail,outlook \
@@ -135,26 +136,26 @@ email-digest-tool aggregate \
 ==========================================
 📧 多邮箱日报 - 2026-07-18
 ==========================================
-
+# ...
 📊 账户概览:
 - Gmail (manager@company.com): 未读 15 封
 - Outlook (manager@company.onmicrosoft.com): 未读 8 封
 - 合计未读: 23 封
-
+# ...
 🔴 高优先级邮件 (3 封):
 1. [Gmail] 来自 ceo@company.com
    主题: 董事会决议 - 需要签字
    时间: 08:45 | 评分: 9.5/10
    建议: 立即处理
-
+# ...
 2. [Outlook] 来自 legal@company.com
    主题: 合同审核 - 紧急
    时间: 09:12 | 评分: 9.0/10
    建议: 今日内回复
-
+# ...
 🟡 中优先级邮件 (12 封):
 ...
-
+# ...
 💡 AI 建议:
 - 优先回复董事会决议邮件
 - 3 封合同邮件需今日审批
@@ -175,10 +176,10 @@ email-digest-tool schedule create \
   --push feishu \
   --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/xxx" \
   --timezone "Asia/Shanghai"
-
+# ...
 # 查看所有定时任务
 email-digest-tool schedule list
-
+# ...
 # 查看任务执行历史
 email-digest-tool schedule history --name "morning-digest"
 ```
@@ -194,17 +195,17 @@ email-digest-tool alert create \
   --channel feishu \
   --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/xxx" \
   --priority critical
-
+# ...
 email-digest-tool alert create \
   --name "urgent-keyword" \
   --condition "subject contains:紧急,urgent,critical" \
   --channel email \
   --notify "admin@company.com" \
   --priority high
-
+# ...
 # 启动告警监控
 email-digest-tool alert start --all
-
+# ...
 # 查看告警历史
 email-digest-tool alert log --since "2026-07-01"
 ```
@@ -226,7 +227,7 @@ email-digest-tool alert log --since "2026-07-01"
 browser-use --browser real open https://mail.google.com
 browser-use state
 browser-use screenshot inbox.png
-
+# ...
 # 专业版新增命令
 email-digest-tool aggregate --accounts gmail --format html
 ```
@@ -279,7 +280,6 @@ email-digest-tool aggregate --accounts gmail --format html
 ---
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 ### AI 摘要配置
@@ -364,7 +364,7 @@ email-digest-tool aggregate --accounts gmail --format html
 # 按角色分组管理邮箱
 email-digest-tool accounts group create --name "管理层" --accounts gmail,outlook
 email-digest-tool accounts group create --name "客服" --accounts service1,service2
-
+# ...
 # 按分组生成摘要
 email-digest-tool aggregate --group "管理层" --format html
 ```
@@ -377,7 +377,7 @@ email-digest-tool aggregate --group "管理层" --format html
 ```bash
 # 测试告警规则
 email-digest-tool alert test --name "ceo-alert"
-
+# ...
 # 调整静默时段
 email-digest-tool alert update --name "ceo-alert" --silent-hours "22:00-08:00"
 ```
@@ -386,7 +386,7 @@ email-digest-tool alert update --name "ceo-alert" --silent-hours "22:00-08:00"
 ```bash
 # 归档历史报告
 email-digest-tool archive --since "2026-01-01" --dir reports/archive/
-
+# ...
 # 检索历史报告
 email-digest-tool archive search --keyword "董事会" --since "2026-01-01"
 ```
@@ -395,7 +395,7 @@ email-digest-tool archive search --keyword "董事会" --since "2026-01-01"
 
 ## 免费版与专业版对比
 | 能力 | 免费版 | 专业版 |
-|:-----|:------:|:------:|
+|:-----|:-----|:-----|
 | 单邮箱摘要 | ✅ | ✅ |
 | 浏览器会话复用 | ✅ | ✅ |
 | 邮件统计 | 基础统计 | 高级统计 |
@@ -418,7 +418,7 @@ email-digest-tool archive search --keyword "董事会" --since "2026-01-01"
 ```bash
 # 验证账户状态
 email-digest-tool accounts health-check
-
+# ...
 # 重新登录失效账户
 browser-use --browser real open https://mail.google.com
 ```
@@ -429,7 +429,7 @@ browser-use --browser real open https://mail.google.com
 ```bash
 # 更新评分规则
 email-digest-tool config update --ai-scoring rules.json
-
+# ...
 # 查看评分详情
 email-digest-tool aggregate --accounts gmail --show-scores
 ```
@@ -440,7 +440,7 @@ email-digest-tool aggregate --accounts gmail --show-scores
 ```bash
 # 测试推送渠道
 email-digest-tool push test --channel feishu
-
+# ...
 # 查看推送日志
 email-digest-tool push log --since "2026-07-01"
 ```
@@ -451,7 +451,7 @@ email-digest-tool push log --since "2026-07-01"
 ```bash
 # 查看告警频率统计
 email-digest-tool alert stats
-
+# ...
 # 调整告警阈值
 email-digest-tool alert update --name "unread-alert" --threshold 100
 ```
@@ -468,7 +468,7 @@ email-digest-tool convert --input report.html --format markdown
 
 ## 命令参考速查
 | 命令 | 功能 | 专业版独有 |
-|:-----|:-----|:----------:|
+|---:|---:|---:|
 | `aggregate` | 多邮箱聚合摘要 | ✅ |
 | `schedule` | 定时任务管理 | ✅ |
 | `alert` | 告警规则管理 | ✅ |
@@ -490,7 +490,7 @@ email-digest-tool convert --input report.html --format markdown
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | browser-use | CLI工具 | 必需 | `uv pip install browser-use[cli]` |
 | Chrome 浏览器 | 浏览器 | 必需 | 官方网站下载安装 |
@@ -512,7 +512,7 @@ email-digest-tool convert --input report.html --format markdown
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

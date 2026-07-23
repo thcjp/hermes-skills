@@ -25,19 +25,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 # Azure语音交互专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | Azure语音交互专业版高级会话与中断处理 | 不支持 | 支持 |
-| 高级参数配置与自定义 | 不支持 | 支持 |
-| 批量处理与自动化 | 不支持 | 支持 |
-| 结果导出与格式转换 | 不支持 | 支持 |
-| 实时监控与告警通知 | 不支持 | 支持 |
+| 高级参数配置与自定义规则 | 不支持 | 支持 |
+| 批量任务编排与队列管理 | 不支持 | 支持 |
+| 结果导出与多格式转换 | 不支持 | 支持 |
+| 实时状态监控与异常告警 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -409,7 +411,7 @@ asyncio.run(main())
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | azure-voicelive处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -456,9 +458,8 @@ asyncio.run(main())
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --: | --: | --: |
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -471,10 +472,10 @@ asyncio.run(main())
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.8及以上
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | azure-ai-voicelive | Python SDK | 必需 | `pip install azure-ai-voicelive` |
@@ -494,7 +495,6 @@ asyncio.run(main())
 - **分类**: MD+EXEC（纯Markdown指令，核心功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行专业实时语音交互任务。支持函数调用、自定义语音、电话音频格式等企业级功能，通过Python异步SDK调用Azure VoiceLive服务。与免费版完全兼容，可直接复用免费版的认证配置与基础会话流程。
 
-
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
@@ -505,7 +505,7 @@ export API_KEY="your_api_key_here"
 ### 音频格式对比
 
 | 格式 | 采样率 | 适用场景 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | `pcm16` | 24kHz | 默认，高质量 |
 | `pcm16-8000hz` | 8kHz | 电话 |
 | `pcm16-16000hz` | 16kHz | 语音助手 |
@@ -515,7 +515,7 @@ export API_KEY="your_api_key_here"
 ### VAD选项对比
 
 | VAD类型 | 说明 | 适用场景 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | `server_vad` | 基于阈值的服务器端检测 | 通用场景 |
 | `azure_semantic_vad` | 语义级端点检测 | 高精度场景 |
 | `azure_semantic_vad_multilingual` | 多语言语义检测 | 多语言应用 |
@@ -523,7 +523,7 @@ export API_KEY="your_api_key_here"
 ### 语音类型对比
 
 | 类型 | 说明 | 适用场景 |
-| --: | :-- | :-: |
+|:------:|--------|:-------|
 | 内置语音 | alloy/echo/shimmer等 | 通用 |
 | AzureStandardVoice | Azure神经语音 | 生产环境 |
 | AzureCustomVoice | 自定义训练语音 | 品牌专属 |
@@ -531,9 +531,8 @@ export API_KEY="your_api_key_here"
 
 ## 错误处理
 
-
 | 错误场景2 | 原因 | 处理方式 |
-| :-- | :-: | --- |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -548,7 +547,6 @@ export API_KEY="your_api_key_here"
 ### Q2：电话音频质量不佳怎么办？
 
 确保使用正确的G.711格式（美国用ulaw，欧洲用alaw），适当调整silence_duration_ms。
-
 
 ## 已知限制
 

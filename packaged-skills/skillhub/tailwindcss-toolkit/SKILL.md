@@ -28,28 +28,30 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Tailwind CSS工具包专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 免费版 vs 专业版对比
 | 能力 | 免费版 | 专业版 | 增量价值 |
-|:-----|:-------|:-------|:---------|
+|:-----|:-----|:-----|:-----|
 | 实用类编写 | 支持 | 支持 | - |
 | 响应式设计 | 支持 | 支持 | - |
 | 暗黑模式 | 支持 | 支持 | - |
@@ -95,7 +97,7 @@ pricing_model: "per_use"
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: 'class',
-
+// ...
   theme: {
     extend: {
       // 设计令牌:颜色
@@ -115,13 +117,13 @@ module.exports = {
           info: '#3b82f6',
         }
       },
-
+// ...
       // 设计令牌:字体
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
-
+// ...
       // 设计令牌:间距(8px 网格)
       spacing: {
         'xs': '0.5rem',   // 8px
@@ -130,7 +132,7 @@ module.exports = {
         'lg': '2rem',      // 32px
         'xl': '3rem',      // 48px
       },
-
+// ...
       // 设计令牌:圆角
       borderRadius: {
         'sm': '0.25rem',
@@ -138,13 +140,13 @@ module.exports = {
         'lg': '0.75rem',
         'xl': '1rem',
       },
-
+// ...
       // 设计令牌:阴影
       boxShadow: {
         'card': '0 1px 3px rgba(0,0,0,0.1)',
         'elevated': '0 4px 12px rgba(0,0,0,0.15)',
       },
-
+// ...
       // 设计令牌:动画
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',
@@ -159,7 +161,7 @@ module.exports = {
       },
     },
   },
-
+// ...
   plugins: [
     require('./plugins/components'),
     require('./plugins/utilities'),
@@ -173,7 +175,7 @@ module.exports = {
 ```javascript
 // plugins/components.js - 组件类插件
 const plugin = require('tailwindcss/plugin')
-
+// ...
 module.exports = plugin(function({ addComponents, theme }) {
   // 预定义组件样式
   addComponents({
@@ -209,7 +211,7 @@ module.exports = plugin(function({ addComponents, theme }) {
     },
   })
 })
-
+// ...
 // plugins/utilities.js - 自定义工具类
 module.exports = plugin(function({ addUtilities, theme }) {
   addUtilities({
@@ -232,7 +234,7 @@ module.exports = plugin(function({ addUtilities, theme }) {
 // tailwind.config.js
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-
+// ...
   // 使用 CSS 变量实现多主题
   theme: {
     extend: {
@@ -259,7 +261,7 @@ module.exports = {
   --brand-600: #2563eb;
   --brand-700: #1d4ed8;
 }
-
+// ...
 [data-theme="brand-green"] {
   --brand-50: #f0fdf4;
   --brand-100: #dcfce7;
@@ -267,7 +269,7 @@ module.exports = {
   --brand-600: #16a34a;
   --brand-700: #15803d;
 }
-
+// ...
 [data-theme="brand-purple"] {
   --brand-50: #faf5ff;
   --brand-100: #f3e8ff;
@@ -293,19 +295,19 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
   ],
-
+// ...
   // 避免过度使用 safelist
   safelist: [
     // 仅 safelist 确实需要的动态类
     'bg-red-500', 'bg-green-500', 'bg-blue-500',
   ],
-
+// ...
   // 关闭未使用的 core 插件
   corePlugins: {
     preflight: true,
     container: false,  // 不使用 container
   },
-
+// ...
   // 重要的全局设置
   important: false,  // 避免全局 !important
 }
@@ -314,9 +316,9 @@ module.exports = {
 ```bash
 npx tailwindcss --content ./src/**/*.html \
   -o ./dist/style.css --minify
-
+# ...
 ls -lh ./dist/style.css
-
+# ...
 npm install -D purgecss
 ```
 
@@ -326,10 +328,10 @@ npm install -D purgecss
 ```bash
 mkdir my-design-system && cd my-design-system
 npm init -y
-
+# ...
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
-
+# ...
 mkdir -p src/components plugins themes
 ```
 
@@ -347,10 +349,10 @@ cp themes/default.css ./themes/
 module.exports = {
   // Tailwind 通过 PostCSS 自动处理
 }
-
+// ...
 // React 组件中使用设计系统
 import { Button } from './components/ui'
-
+// ...
 function App() {
   return <Button variant="primary">点击</Button>
 }
@@ -360,7 +362,7 @@ function App() {
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | tailwindcss-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -407,9 +409,8 @@ function App() {
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -423,7 +424,7 @@ function App() {
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | tailwindcss | npm 库 | 必需 | `npm install -D tailwindcss` |
 | postcss | npm 库 | 必需 | `npm install -D postcss` |
 | autoprefixer | npm 库 | 必需 | `npm install -D autoprefixer` |
@@ -447,14 +448,14 @@ function App() {
 ```typescript
 // components/ui/Button.tsx
 import { clsx } from 'clsx'
-
+// ...
 interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   children: React.ReactNode
   onClick?: () => void
 }
-
+// ...
 export function Button({ variant = 'primary', size = 'md', children, onClick }: ButtonProps) {
   return (
     <button
@@ -481,18 +482,18 @@ export function Button({ variant = 'primary', size = 'md', children, onClick }: 
                focus-visible:ring-offset-2">
   按钮
 </button>
-
+# ...
 <!-- 屏幕阅读器 -->
 <div class="sr-only">仅屏幕阅读器可见</div>
 <div class="not-sr-only">视觉可见且屏幕阅读器可见</div>
-
+# ...
 <!-- 键盘导航 -->
 <nav class="space-y-2">
   <a class="block px-3 py-2 rounded-md
             focus:bg-brand-50 focus:text-brand-700"
      href="#">链接</a>
 </nav>
-
+# ...
 <!-- 减少动画(尊重用户偏好) -->
 <div class="animate-fade-in motion-reduce:animate-none">
   内容
@@ -525,9 +526,8 @@ export function Button({ variant = 'primary', size = 'md', children, onClick }: 
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

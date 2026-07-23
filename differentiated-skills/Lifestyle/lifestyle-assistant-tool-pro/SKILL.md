@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 生活助手 (专业版)
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 任务捕获与分解 | 记录、拆解大任务为可执行步骤 | 支持 | 支持 |
 | 邮件摘要 | 长邮件提炼要点与行动项 | 10封/日 | 不限 |
 | 日程冲突检测 | 安排会议前检查冲突 | 支持 | 支持 |
@@ -89,14 +91,14 @@ pricing_model: "per_use"
 import os
 import requests
 from datetime import datetime
-
+# ...
 API_BASE = "https://api.assistant-pro.local/v1"
 ADMIN_KEY = os.environ["ASSISTANT_ADMIN_KEY"]
-
+# ...
 class TeamProject:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-
+# ...
     def create_project(self, name, members):
         """创建项目并邀请成员"""
         payload = {
@@ -111,7 +113,7 @@ class TeamProject:
             timeout=30,
         )
         return resp.json()
-
+# ...
     def assign_task(self, project_id, title, assignee, due, priority="medium"):
         """分派任务给指定成员"""
         payload = {
@@ -128,7 +130,7 @@ class TeamProject:
             timeout=30,
         )
         return resp.json()
-
+# ...
     def progress_report(self, project_id):
         """生成项目进度报告"""
         resp = requests.get(
@@ -137,7 +139,7 @@ class TeamProject:
             timeout=60,
         )
         return resp.json()
-
+# ...
 proj = TeamProject(ADMIN_KEY)
 project = proj.create_project("Q3 产品迭代", ["alice", "bob", "carol"])
 proj.assign_task(project["id"], "用户调研", "alice", "2026-07-25", "high")
@@ -168,7 +170,7 @@ def batch_process_emails(folder="inbox", limit=100):
         timeout=300,
     )
     return resp.json()
-
+# ...
 # 示例
 # {
 #   "processed": 87,
@@ -198,7 +200,7 @@ def create_workflow(name, trigger, actions):
         timeout=30,
     )
     return resp.json()
-
+# ...
 # 示例: 客户邮件到达时自动创建任务并通知销售
 workflow = create_workflow(
     name="客户邮件自动路由",
@@ -257,7 +259,7 @@ curl -X POST -H "X-API-Key: $ASSISTANT_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"provider":"google_calendar","credentials":"..."}' \
   "https://api.assistant-pro.local/v1/integrations/calendar"
-
+# ...
 # 对接即时通讯
 curl -X POST -H "X-API-Key: $ASSISTANT_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -280,29 +282,29 @@ api:
   timeout: 60
   rate_limit:
     requests_per_minute: 500
-
+# ...
 team:
   default_project_view: kanban
   standup_time: "09:30"
   retro_schedule: "last_friday_of_month"
-
+# ...
 workflow:
   max_workflows_per_org: 100
   async_execution: true
   retry_policy: {max_attempts: 3, backoff: exponential}
-
+# ...
 integrations:
   calendar: [google, outlook, apple]
   im: [slack, dingtalk, feishu]
   crm: [salesforce, hubspot]
   storage: [s3, oss]
-
+# ...
 knowledge_base:
   enabled: true
   sharing: team_scope
   versioning: true
   search: full_text
-
+# ...
 audit:
   log_enabled: true
   retention_days: 365
@@ -345,7 +347,7 @@ ROLE_PERMISSIONS = {
     "member": ["read", "write_own", "comment"],
     "viewer": ["read"],
 }
-
+# ...
 def check_permission(user_role, action):
     return action in ROLE_PERMISSIONS.get(user_role, [])
 ```
@@ -364,7 +366,7 @@ def submit_async_task(task_type, payload):
         timeout=30,
     )
     return resp.json()["task_id"]
-
+# ...
 def poll_task(task_id, interval=5, max_wait=300):
     """轮询异步任务状态"""
     import time
@@ -403,7 +405,7 @@ def create_kb_entry(title, content, tags, category):
         timeout=30,
     )
     return resp.json()
-
+# ...
 def search_kb(query, limit=10):
     """全文检索知识库"""
     resp = requests.get(
@@ -463,7 +465,7 @@ python migrate.py --from ~/.assistant/ --to pro --org $ASSISTANT_ORG_ID
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Assistant Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -479,12 +481,12 @@ python migrate.py --from ~/.assistant/ --to pro --org $ASSISTANT_ORG_ID
 export ASSISTANT_ADMIN_KEY="sk_pro_admin_xxx"
 export ASSISTANT_ORG_ID="org_your_id"
 export ASSISTANT_EDITION="pro"
-
+# ...
 # 集成凭证 (按需配置)
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 export GOOGLE_CALENDAR_CREDENTIALS="/etc/assistant/google-creds.json"
 export SALESFORCE_TOKEN="..."
-
+# ...
 # 审计日志数据库 (使用兼容数据库连接)
 export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 ```
@@ -498,9 +500,8 @@ export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

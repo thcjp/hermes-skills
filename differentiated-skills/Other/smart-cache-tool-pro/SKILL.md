@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 智能缓存工具 - 专业版
 
@@ -143,14 +145,14 @@ Web 看板展示缓存状态、热点 key 分析与性能趋势。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 智能缓存工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```python
 from smart_cache_pro import MultiLevelCache, RedisBackend
-
+# ...
 # 配置多级缓存
 cache = MultiLevelCache(
     levels=[
@@ -173,17 +175,17 @@ cache = MultiLevelCache(
     consistency="eventual",            # 最终一致性
     invalidation="broadcast"           # 失效广播
 )
-
+# ...
 # 使用方式与免费版完全一致
 @cache.cached(prefix="product", ttl=3600)
 def get_product(product_id):
     return db.query("SELECT * FROM products WHERE id = %s", product_id)
-
+# ...
 # 查询流程:
 # 1. 查 L1 本地缓存 -> 命中则返回
 # 2. 查 L2 Redis 缓存 -> 命中则回填 L1 并返回
 # 3. 查数据库 -> 回填 L1 和 L2
-
+# ...
 # 缓存统计
 stats = cache.stats()
 # 输出:
@@ -200,7 +202,7 @@ stats = cache.stats()
 
 ```python
 from smart_cache_pro import SmartCachePro, ProtectionConfig
-
+# ...
 cache = SmartCachePro(
     backend="redis",
     host="redis-cluster.internal",
@@ -209,18 +211,18 @@ cache = SmartCachePro(
         anti_penetration=True,
         null_cache_ttl=60,            # 空结果缓存 60 秒
         bloom_filter=True,
-
+# ...
         # 防击穿:热点 key 互斥锁
         anti_breakdown=True,
         lock_timeout=10,              # 锁超时 10 秒
         lock_retry=3,                 # 重试 3 次
-
+# ...
         # 防雪崩:TTL 随机化
         anti_avalanche=True,
         ttl_jitter=0.2                # TTL 随机偏移 20%
     )
 )
-
+# ...
 # 热点 key 获取(自动加锁防击穿)
 def get_hot_product(product_id):
     return cache.get_or_set(
@@ -228,7 +230,7 @@ def get_hot_product(product_id):
         ttl=3600,
         loader=lambda: db.get_product(product_id)  # 缓存未命中时执行
     )
-
+# ...
 # 批量预热(防雪崩)
 def warmup_products(product_ids):
     cache.batch_warmup(
@@ -254,13 +256,13 @@ cache.configure_warmup(
     top_n=1000,                       # 预热 Top 1000 热点 key
     predictive_model="arima"          # ARIMA 时间序列预测
 )
-
+# ...
 # 手动触发预热
 cache.warmup(
     keys=["product:1", "product:2", "product:3"],
     loader=lambda k: db.get_product(k.split(":")[1])
 )
-
+# ...
 # 输出:
 # === 缓存预热报告 ===
 # 分析周期: 2025-01-08 ~ 2025-01-15
@@ -277,7 +279,7 @@ cache.warmup(
 ./cache-pro-cli dashboard \
   --port 8080 \
   --refresh 5
-
+# ...
 # 访问 http://localhost:8080
 # 看板包含:
 # - 实时命中率曲线
@@ -313,7 +315,7 @@ cache.warmup(
 # 免费版 API 完全兼容
 # 依赖说明
 pip install smart-cache-pro
-
+# ...
 # 配置 Redis
 export REDIS_CLUSTER_URL="redis://redis-cluster.internal:6379"
 ```
@@ -322,7 +324,7 @@ export REDIS_CLUSTER_URL="redis://redis-cluster.internal:6379"
 
 ```python
 from smart_cache_pro import SmartCachePro
-
+# ...
 cache = SmartCachePro(
     backend="redis",
     cluster_url="redis://redis-cluster.internal:6379",
@@ -330,7 +332,7 @@ cache = SmartCachePro(
     protection=True,                   # 启用缓存防护
     monitoring=True                    # 启用监控
 )
-
+# ...
 # 使用方式与免费版一致
 cache.set("key", "value", ttl=300)
 value = cache.get("key")
@@ -389,7 +391,7 @@ value = cache.get("key")
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 缓存类型 | 本地内存 | 本地 + Redis 分布式 |
 | 多级缓存 | 不支持 | L1+L2 多级 |
 | 缓存策略 | LRU/LFU | +自适应策略 |
@@ -442,7 +444,7 @@ A: 基于 ARIMA 时间序列模型,对周期性访问模式预测准确率约 85
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | redis-py | Redis客户端 | 分布式必需 | pip install redis |
 |Memcached | Memcached客户端 | 可选 | pip install python-memcached |
@@ -469,9 +471,8 @@ A: 基于 ARIMA 时间序列模型,对周期性访问模式预测准确率约 85
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

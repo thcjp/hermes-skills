@@ -17,9 +17,11 @@ tools:
 - read
 - exec
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
 # 网页抓取引擎
 
@@ -36,7 +38,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 竞品分析 | 竞品网站列表 + 采集字段 | 产品/价格/评论结构化数据 + 对比报告 |
 | 价格监控 | 电商商品 URL + 监控频率 | 定时抓取结果 + 价格变动报告 |
 | 内容采集 | 站点 URL + 内容类型 | 文章/博客 Markdown + 聚合站点 |
@@ -116,7 +118,7 @@ pricing_model: "per_use"
 ## 国内外抓取方案对照
 
 | 维度 | Firecrawl(海外) | Crawl4AI(开源) | Playwright | Scrapy |
-|:-----|:----------------|:--------------|:----------|:------|
+|:-----|:-----|:-----|:-----|:-----|
 | 类型 | SaaS API | 开源库 | 开源库 | 开源框架 |
 | 国内可用 | 需代理 | 完全可用 | 完全可用 | 完全可用 |
 | 费用 | 免费500页/月,付费$20+/月 | 完全免费 | 完全免费 | 完全免费 |
@@ -134,7 +136,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 网页抓取引擎处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,9 +152,9 @@ pricing_model: "per_use"
 # scrape.py
 from firecrawl import FirecrawlApp
 import json
-
+# ...
 app = FirecrawlApp(api_key=os.environ['FIRECRAWL_API_KEY'])
-
+# ...
 # Schema 定义
 schema = {
     "type": "object",
@@ -166,7 +168,7 @@ schema = {
         "scraped_at": {"type": "string"}
     }
 }
-
+# ...
 # 抓取结果
 results = [
     {
@@ -188,21 +190,21 @@ results = [
         "scraped_at": "2026-01-15T10:00:00Z"
     }
 ]
-
+# ...
 # 导出 CSV
 import pandas as pd
 df = pd.DataFrame(results)
 df.to_csv('price_monitor.csv', index=False)
-
+# ...
 # 价格对比报告
 report = f"""
 ## 价格监控报告 ({results[0]['scraped_at']})
-
+# ...
 | 平台 | 价格 | 可用性 |
-|:-----|:-----|:------|
+|:---:|:---:|:---:|
 | 京东 | ¥7999 | 有货 |
 | 拼多多 | ¥7599 | 有货 |
-
+# ...
 最低价: 拼多多 ¥7599
 最高价: 京东 ¥7999
 价差: ¥400 (5%)
@@ -225,7 +227,7 @@ from crawl4ai import AsyncWebCrawler
 from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
 import asyncio
 import json
-
+# ...
 async def scrape_news():
     async with AsyncWebCrawler() as crawler:
         # CSS 选择器提取策略
@@ -239,21 +241,21 @@ async def scrape_news():
                 {"name": "summary", "selector": ".summary", "type": "text"}
             ]
         })
-
+# ...
         result = await crawler.arun(
             url="https://news.example.com",
             extraction_strategy=extraction_strategy,
             bypass_cache=True
         )
-
+# ...
         # 输出结构化 JSON
         articles = json.loads(result.extracted_content)
         print(f"抓取到 {len(articles)} 篇文章")
-
+# ...
         # 导出
         with open('articles.json', 'w', encoding='utf-8') as f:
             json.dump(articles, f, ensure_ascii=False, indent=2)
-
+# ...
 asyncio.run(scrape_news())
 ```
 
@@ -271,23 +273,23 @@ asyncio.run(scrape_news())
 from playwright.async_api import async_playwright
 import pandas as pd
 import asyncio
-
+# ...
 async def scrape_with_form():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
-
+# ...
         # 1. 加载页面
         await page.goto('https://search.example.com')
-
+# ...
         # 2. 填写表单
         await page.fill('#keyword', '人工智能')
         await page.select_option('#date-range', 'last-30-days')
-
+# ...
         # 3. 点击搜索
         await page.click('button[type="submit"]')
         await page.wait_for_selector('.result-item')
-
+# ...
         # 4. 翻页采集
         all_results = []
         while True:
@@ -297,28 +299,28 @@ async def scrape_with_form():
                 title = await (await item.query_selector('.title')).inner_text()
                 url = await (await item.query_selector('a')).get_attribute('href')
                 all_results.append({'title': title, 'url': url})
-
+# ...
             # 检查是否有下一页
             next_btn = await page.query_selector('.next-page:not([disabled])')
             if not next_btn:
                 break
             await next_btn.click()
             await page.wait_for_selector('.result-item')
-
+# ...
         # 5. 导出 CSV
         df = pd.DataFrame(all_results)
         df.to_csv('search_results.csv', index=False)
         print(f"采集完成,共 {len(all_results)} 条结果")
-
+# ...
         await browser.close()
-
+# ...
 asyncio.run(scrape_with_form())
 ```
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:------|------:|:------|
 | 页面加载超时 | 网络慢或页面资源过多 | 设置 30s 超时,重试 3 次,跳过失败页 |
 | JS 渲染失败 | SPA 应用加载慢 | 增加 wait_for_selector 等待关键元素 |
 | 反爬虫检测 | 频率过高或 User-Agent 异常 | 使用代理 IP,降低速率,设置随机延迟 |
@@ -339,7 +341,7 @@ asyncio.run(scrape_with_form())
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代 |
-|:-------|:-----|:---------|:---------|:---------|
+|---:|:---|---:|---:|:---|
 | LLM API | API | 必需 | Agent 内置 LLM | 通义/文心/智谱 |
 | Firecrawl SDK | SDK | 可选(海外) | `pip install firecrawl-py` | Crawl4AI(开源) |
 | Crawl4AI | 库 | 推荐(国内) | `pip install crawl4ai` | - |
@@ -383,9 +385,9 @@ import json
 import csv
 from datetime import datetime
 from firecrawl import FirecrawlApp
-
+# ...
 app = FirecrawlApp(api_key=os.environ['FIRECRAWL_API_KEY'])
-
+# ...
 # JSON Schema 定义
 price_schema = {
     "type": "object",
@@ -399,17 +401,17 @@ price_schema = {
     },
     "required": ["product_name", "price", "currency", "availability"]
 }
-
+# ...
 # 目标URL列表
 targets = [
     {"platform": "京东", "url": "https://item.jd.com/100074466498.html"},
     {"platform": "拼多多", "url": "https://mobile.yangkeduo.com/goods.html?goods_id=420001234567"},
     {"platform": "天猫", "url": "https://detail.tmall.com/item.htm?id=678901234567"},
 ]
-
+# ...
 results = []
 scraped_at = datetime.utcnow().isoformat() + "Z"
-
+# ...
 for target in targets:
     try:
         response = app.scrape_url(target['url'], params={
@@ -420,14 +422,14 @@ for target in targets:
             },
             'waitFor': 3000  # 等待JS渲染
         })
-
+# ...
         data = response.get('json', {})
         data['platform'] = target['platform']
         data['url'] = target['url']
         data['scraped_at'] = scraped_at
         results.append(data)
         print(f"[{target['platform']}] {data.get('product_name', 'N/A')} - ¥{data.get('price', 'N/A')}")
-
+# ...
     except Exception as e:
         print(f"[{target['platform']}] 抓取失败: {e}")
         results.append({
@@ -436,7 +438,7 @@ for target in targets:
             'scraped_at': scraped_at,
             'error': str(e)
         })
-
+# ...
 # 导出CSV
 csv_file = 'price_monitor.csv'
 fieldnames = ['platform', 'product_name', 'price', 'original_price', 'currency',
@@ -446,45 +448,45 @@ with open(csv_file, 'w', newline='', encoding='utf-8-sig') as f:
     writer.writeheader()
     writer.writerows(results)
 print(f"\nCSV导出: {csv_file}")
-
+# ...
 # 生成价格对比报告
 valid_results = [r for r in results if 'price' in r]
 if valid_results:
     prices = [(r['platform'], r['price']) for r in valid_results]
     min_platform, min_price = min(prices, key=lambda x: x[1])
     max_platform, max_price = max(prices, key=lambda x: x[1])
-
+# ...
     report = f"""# 价格监控报告
-
+# ...
 **抓取时间**: {scraped_at}
 **商品**: iPhone 15 Pro 256GB
-
+# ...
 ## 价格对比
-
+# ...
 | 平台 | 商品名称 | 售价 | 原价 | 是否有货 | 优惠 |
-|:-----|:---------|:-----|:-----|:---------|:-----|
+|:------:|--------|:-------|:------:|--------|:-------|
 """
     for r in valid_results:
         report += f"| {r['platform']} | {r.get('product_name','N/A')} | ¥{r.get('price','N/A')} | ¥{r.get('original_price','-')} | {'有货' if r.get('availability') else '缺货'} | {r.get('discount','-')} |\n"
-
+# ...
     report += f"""
 ## 分析
-
+# ...
 - **最低价**: {min_platform} ¥{min_price}
 - **最高价**: {max_platform} ¥{max_price}
 - **价差**: ¥{max_price - min_price} ({(max_price - min_price) / min_price * 100:.1f}%)
-
+# ...
 ## 建议
-
+# ...
 """
     if max_price - min_price > 200:
         report += f"- 价差较大(¥{max_price - min_price}),建议在{min_platform}购买\n"
     else:
         report += "- 各平台价格接近,建议选择物流最快的平台\n"
-
+# ...
     report += "- 拼多多价格通常最低,但需注意百亿补贴商品真伪\n"
     report += "- 京东自营售后最有保障,适合追求稳妥的用户\n"
-
+# ...
     with open('price_report.md', 'w', encoding='utf-8') as f:
         f.write(report)
     print(f"报告导出: price_report.md")
@@ -519,7 +521,7 @@ import json
 import hashlib
 from crawl4ai import AsyncWebCrawler
 from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
-
+# ...
 # CSS提取策略(36氪文章列表)
 extraction_strategy = JsonCssExtractionStrategy({
     "name": "36Kr Articles",
@@ -532,20 +534,20 @@ extraction_strategy = JsonCssExtractionStrategy({
         {"name": "date", "selector": "span.article-item-time", "type": "text"}
     ]
 })
-
+# ...
 # URL规范化(去重用)
 def normalize_url(url: str) -> str:
     """移除查询参数和锚点,统一为小写"""
     from urllib.parse import urlparse, urlunparse
     parsed = urlparse(url)
     return urlunparse((parsed.scheme, parsed.netloc, parsed.path, '', '', '')).lower()
-
+# ...
 # 内容哈希(去重用)
 def content_hash(article: dict) -> str:
     """基于标题+摘要生成哈希"""
     content = f"{article.get('title','')}{article.get('summary','')}"
     return hashlib.md5(content.encode('utf-8')).hexdigest()
-
+# ...
 async def scrape_36kr():
     async with AsyncWebCrawler(
         headless=True,
@@ -554,59 +556,59 @@ async def scrape_36kr():
         # 速率限制
         delay_before_return_html=2
     ) as crawler:
-
+# ...
         # 抓取首页文章列表
         result = await crawler.arun(
             url="https://36kr.com/information/technology/",
             extraction_strategy=extraction_strategy,
             bypass_cache=True
         )
-
+# ...
         if not result.extracted_content:
             print("未提取到内容")
             return
-
+# ...
         articles = json.loads(result.extracted_content)
         print(f"原始抓取: {len(articles)} 篇文章")
-
+# ...
         # 去重: URL规范化 + 内容哈希
         seen_urls = set()
         seen_hashes = set()
         unique_articles = []
-
+# ...
         for article in articles:
             # 补全URL
             url = article.get('url', '')
             if url.startswith('/'):
                 article['url'] = f"https://36kr.com{url}"
-
+# ...
             # URL去重
             norm_url = normalize_url(article['url'])
             if norm_url in seen_urls:
                 continue
             seen_urls.add(norm_url)
-
+# ...
             # 内容去重
             chash = content_hash(article)
             if chash in seen_hashes:
                 continue
             seen_hashes.add(chash)
-
+# ...
             # 清洗数据
             article['title'] = article.get('title', '').strip()
             article['summary'] = article.get('summary', '').strip()
             article['author'] = article.get('author', '36氪').strip()
             article['date'] = article.get('date', '').strip()
-
+# ...
             unique_articles.append(article)
-
+# ...
         print(f"去重后: {len(unique_articles)} 篇文章")
-
+# ...
         # 导出JSON
         with open('articles.json', 'w', encoding='utf-8') as f:
             json.dump(unique_articles, f, ensure_ascii=False, indent=2)
         print("JSON导出: articles.json")
-
+# ...
         # 导出Markdown摘要
         with open('articles_summary.md', 'w', encoding='utf-8') as f:
             f.write(f"# 36氪科技文章摘要\n\n")
@@ -620,9 +622,9 @@ async def scrape_36kr():
                 f.write(f"- **链接**: {article['url']}\n")
                 f.write(f"- **摘要**: {article['summary'][:100]}...\n\n")
         print("Markdown导出: articles_summary.md")
-
+# ...
         return unique_articles
-
+# ...
 # 运行
 articles = asyncio.run(scrape_36kr())
 ```
@@ -671,7 +673,7 @@ import asyncio
 import csv
 import random
 from playwright.async_api import async_playwright
-
+# ...
 async def scrape_orders():
     async with async_playwright() as p:
         # 启动浏览器(stealth模式)
@@ -684,53 +686,53 @@ async def scrape_orders():
             viewport={'width': 1920, 'height': 1080},
             locale='zh-CN'
         )
-
+# ...
         # 注入stealth脚本(隐藏webdriver特征)
         await context.add_init_script("""
             Object.defineProperty(navigator, 'webdriver', {get: () => undefined});
             Object.defineProperty(navigator, 'plugins', {get: () => [1, 2, 3, 4, 5]});
             window.chrome = { runtime: {} };
         """)
-
+# ...
         page = await context.new_page()
-
+# ...
         # ===== Step 1: 登录 =====
         print("Step 1: 登录...")
         await page.goto('https://internal.example.com/login', wait_until='networkidle')
         await page.fill('#username', 'admin')
         await page.fill('#password', 'secure_password_123')
         await page.click('button[type="submit"]')
-
+# ...
         # 等待登录成功(跳转到首页)
         await page.wait_for_url('**/dashboard', timeout=10000)
         print("登录成功")
         await asyncio.sleep(random.uniform(1, 3))  # 随机延迟
-
+# ...
         # ===== Step 2: 导航到搜索页 =====
         print("Step 2: 导航到搜索页...")
         await page.click('a[href="/orders/search"]')
         await page.wait_for_selector('#search-keyword', timeout=10000)
-
+# ...
         # ===== Step 3: 填写搜索条件 =====
         print("Step 3: 填写搜索条件...")
         await page.fill('#search-keyword', '已完成订单')
         await page.select_option('#date-range', 'last-30-days')
         await page.select_option('#status', 'completed')
-
+# ...
         # ===== Step 4: 点击搜索 =====
         print("Step 4: 执行搜索...")
         await page.click('button#btn-search')
         await page.wait_for_selector('.order-row', timeout=15000)
         print("搜索结果已加载")
-
+# ...
         # ===== Step 5: 翻页采集 =====
         all_orders = []
         page_num = 1
-
+# ...
         while True:
             print(f"  采集第 {page_num} 页...")
             await asyncio.sleep(random.uniform(2, 4))  # 随机延迟防反爬
-
+# ...
             # 提取当前页数据
             rows = await page.query_selector_all('.order-row')
             for row in rows:
@@ -742,18 +744,18 @@ async def scrape_orders():
                     'date': await (await row.query_selector('.col-date')).inner_text(),
                 }
                 all_orders.append(order)
-
+# ...
             # 检查是否有下一页
             next_btn = await page.query_selector('.pagination .next:not(.disabled)')
             if not next_btn:
                 print("  已到最后一页")
                 break
-
+# ...
             await next_btn.click()
             await page.wait_for_selector('.order-row', timeout=10000)
             await asyncio.sleep(random.uniform(1, 2))  # 翻页延迟
             page_num += 1
-
+# ...
         # ===== Step 6: 导出CSV =====
         print(f"\n采集完成,共 {len(all_orders)} 条订单")
         csv_file = 'orders_export.csv'
@@ -762,13 +764,13 @@ async def scrape_orders():
             writer.writeheader()
             writer.writerows(all_orders)
         print(f"CSV导出: {csv_file}")
-
+# ...
         # 截图保存(可视化验证)
         await page.screenshot(path='final_page.png', full_page=True)
         print("截图保存: final_page.png")
-
+# ...
         await browser.close()
-
+# ...
 asyncio.run(scrape_orders())
 ```
 
@@ -786,7 +788,7 @@ Step 4: 执行搜索...
   采集第 4 页...
   采集第 5 页...
   已到最后一页
-
+# ...
 采集完成,共 50 条订单
 CSV导出: orders_export.csv
 截图保存: final_page.png
@@ -813,7 +815,7 @@ import sqlite3
 import hashlib
 from crawl4ai import AsyncWebCrawler
 from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
-
+# ...
 # 统一职位Schema
 job_schema_fields = [
     {"name": "title", "selector": ".job-title", "type": "text"},
@@ -826,7 +828,7 @@ job_schema_fields = [
     {"name": "publish_date", "selector": ".publish-time", "type": "text"},
     {"name": "detail_url", "selector": "a.job-link", "type": "attribute", "attribute": "href"}
 ]
-
+# ...
 # 各站点配置(选择器可能不同)
 site_configs = {
     "lagou": {
@@ -845,12 +847,12 @@ site_configs = {
         "fields": job_schema_fields
     }
 }
-
+# ...
 def dedup_key(job: dict) -> str:
     """公司名+职位标题组合去重键"""
     combined = f"{job.get('company','')}-{job.get('title','')}"
     return hashlib.md5(combined.encode('utf-8')).hexdigest()
-
+# ...
 def parse_salary(salary_str: str) -> dict:
     """解析薪资字符串 '15-25K·13薪' -> {min, max, unit, months}"""
     import re
@@ -864,11 +866,11 @@ def parse_salary(salary_str: str) -> dict:
     if months_match:
         result['months'] = int(months_match.group(1))
     return result
-
+# ...
 async def scrape_all_sites():
     all_jobs = []
     seen_keys = set()
-
+# ...
     async with AsyncWebCrawler(headless=True) as crawler:
         for site_name, config in site_configs.items():
             print(f"\n抓取 {site_name}...")
@@ -878,54 +880,54 @@ async def scrape_all_sites():
                     "baseSelector": config["base_selector"],
                     "fields": config["fields"]
                 })
-
+# ...
                 result = await crawler.arun(
                     url=config["url"],
                     extraction_strategy=strategy,
                     bypass_cache=True
                 )
-
+# ...
                 if not result.extracted_content:
                     print(f"  {site_name}: 未提取到内容")
                     continue
-
+# ...
                 jobs = json.loads(result.extracted_content)
                 print(f"  {site_name}: 抓取到 {len(jobs)} 条")
-
+# ...
                 for job in jobs:
                     # 添加来源信息
                     job['source'] = site_name
                     job['source_url'] = config['url']
-
+# ...
                     # 去重
                     key = dedup_key(job)
                     if key in seen_keys:
                         continue
                     seen_keys.add(key)
-
+# ...
                     # 薪资解析
                     salary_info = parse_salary(job.get('salary', ''))
                     job['salary_min'] = salary_info['min']
                     job['salary_max'] = salary_info['max']
                     job['salary_months'] = salary_info['months']
-
+# ...
                     # 清洗
                     for k, v in job.items():
                         if isinstance(v, str):
                             job[k] = v.strip()
-
+# ...
                     all_jobs.append(job)
-
+# ...
             except Exception as e:
                 print(f"  {site_name} 抓取失败: {e}")
-
+# ...
     print(f"\n去重后总计: {len(all_jobs)} 条职位")
-
+# ...
     # 导出JSON
     with open('jobs.json', 'w', encoding='utf-8') as f:
         json.dump(all_jobs, f, ensure_ascii=False, indent=2)
     print("JSON导出: jobs.json")
-
+# ...
     # 写入SQLite数据库
     conn = sqlite3.connect('jobs.db')
     cursor = conn.cursor()
@@ -941,7 +943,7 @@ async def scrape_all_sites():
             scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     ''')
-
+# ...
     for job in all_jobs:
         job['dedup_key'] = dedup_key(job)
         try:
@@ -956,11 +958,11 @@ async def scrape_all_sites():
             ''', job)
         except sqlite3.IntegrityError:
             pass  # 去重
-
+# ...
     conn.commit()
     print(f"数据库写入: jobs.db ({cursor.execute('SELECT COUNT(*) FROM jobs').fetchone()[0]} 条)")
     conn.close()
-
+# ...
 asyncio.run(scrape_all_sites())
 ```
 
@@ -972,7 +974,7 @@ asyncio.run(scrape_all_sites())
   boss: 抓取到 20 条
 抓取 51job...
   51job: 抓取到 18 条
-
+# ...
 去重后总计: 47 条职位(去重6条)
 JSON导出: jobs.json
 数据库写入: jobs.db (47 条)

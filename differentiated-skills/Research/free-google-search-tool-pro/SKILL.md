@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 > **批量搜索+AI摘要+定时监控+多语言。企业级Google搜索全功能覆盖。**
 
@@ -30,7 +32,7 @@ pricing_model: "per_use"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 浏览器自动化搜索 | 支持 | 支持 |
 | 结果解析 | 支持 | 支持 |
 | 基础筛选 | 支持 | 支持+AI增强 |
@@ -56,15 +58,11 @@ pricing_model: "per_use"
 
 ### 2. AI智能摘要
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供AI智能摘要所需的指令和必要参数。
 **处理**: 解析AI智能摘要的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回AI智能摘要的响应数据,包含状态码、结果和日志。
 
 ### 3. 定时监控
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供定时监控所需的指令和必要参数。
 **处理**: 解析定时监控的输入参数,完成核心逻辑,返回结构化响应。
@@ -73,7 +71,7 @@ pricing_model: "per_use"
 ### 4. 多语言搜索
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 谷歌搜索(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -81,7 +79,7 @@ pricing_model: "per_use"
 ```python
 class MultiLanguageSearcher:
     """多语言搜索器（专业版）"""
-
+# ...
     LANGUAGE_CONFIG = {
         'zh-CN': {'name': '中文', 'country': 'cn'},
         'en-US': {'name': 'English', 'country': 'us'},
@@ -91,44 +89,44 @@ class MultiLanguageSearcher:
         'fr-FR': {'name': 'Français', 'country': 'fr'},
         'de-DE': {'name': 'Deutsch', 'country': 'de'},
     }
-
+# ...
     def search_multilang(self, query, languages=None, num_results=10):
         """多语言搜索"""
         if languages is None:
             languages = ['zh-CN', 'en-US']
-
+# ...
         all_results = {}
         searcher = GoogleSearcher()
-
+# ...
         for lang in languages:
             if lang not in self.LANGUAGE_CONFIG:
                 print(f"不支持的语言：{lang}")
                 continue
-
+# ...
             config = self.LANGUAGE_CONFIG[lang]
             print(f"搜索 {config['name']} 结果...")
-
+# ...
             translated_query = self._translate_query(query, lang)
-
+# ...
             result = searcher.search(
                 translated_query,
                 num_results=num_results,
                 language=lang
             )
-
+# ...
             if result.get("success"):
                 all_results[lang] = {
                     'language': config['name'],
                     'query': translated_query,
                     'results': result["results"]
                 }
-
+# ...
         return all_results
-
+# ...
     def _translate_query(self, query, target_lang):
         """翻译查询（由LLM提供）"""
         return query
-
+# ...
     def generate_multilang_report(self, multilang_results):
         """生成多语言报告"""
         lines = ["# 多语言搜索报告\n"]
@@ -136,16 +134,16 @@ class MultiLanguageSearcher:
             lines.append(f"## {data['language']}（{lang}）")
             lines.append(f"**查询**：{data['query']}")
             lines.append(f"**结果数**：{len(data['results'])}\n")
-
+# ...
             for i, r in enumerate(data['results'][:5], 1):
                 lines.append(f"{i}. {r.get('title', '')}")
                 lines.append(f"   URL: {r.get('url', '')}")
             lines.append("")
-
+# ...
         return "\n".join(lines)
-
+# ...
 ml_searcher = MultiLanguageSearcher()
-
+# ...
 results = ml_searcher.search_multilang("人工智能", languages=['zh-CN', 'en-US'])
 report = ml_searcher.generate_multilang_report(results)
 print(report)
@@ -157,8 +155,6 @@ print(report)
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 结果缓存
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供结果缓存所需的指令和必要参数。
 **处理**: 解析结果缓存的输入参数,完成核心逻辑,返回结构化响应。
@@ -172,15 +168,15 @@ print(report)
 ```python
 batch = BatchGoogleSearcher(max_workers=3)
 summarizer = AISearchSummarizer()
-
+# ...
 queries = [
     "AI芯片市场2025",
     "新能源车销量预测",
     "半导体行业趋势"
 ]
-
+# ...
 results = batch.search_batch(queries, num_results=10)
-
+# ...
 for query, result in results.items():
     if result.get("success"):
         summary = summarizer.generate_summary(query, result["results"])
@@ -194,7 +190,7 @@ for query, result in results.items():
 ```python
 ml_searcher = MultiLanguageSearcher()
 summarizer = AISearchSummarizer()
-
+# ...
 competitors = ["CompetitorA", "CompetitorB", "CompetitorC"]
 for competitor in competitors:
     results = ml_searcher.search_multilang(
@@ -225,7 +221,7 @@ monitor.add_keyword("我的品牌 评测", interval=3600)
 ### 30秒上手
 ```bash
 python3 batch_search.py --queries queries.txt --output results.json
-
+# ...
 python3 ai_summary.py --input results.json --output summaries.md
 ```
 
@@ -234,19 +230,19 @@ python3 ai_summary.py --input results.json --output summaries.md
 npm install playwright
 npx playwright install chromium
 pip install requests schedule
-
+# ...
 cat > search_config.yaml <<EOF
 batch:
   max_workers: 3
   cache_enabled: true
   cache_dir: ./cache
   cache_ttl_hours: 24
-
+# ...
 ai_summary:
   enabled: true
   model: gpt-4o
   max_results_for_summary: 10
-
+# ...
 monitor:
   keywords:
     - name: 品牌监控
@@ -256,16 +252,16 @@ monitor:
     - name: 竞品监控
       query: 竞争对手
       interval: 7200
-
+# ...
 multilang:
   languages: [zh-CN, en-US, ja-JP]
   translate_query: true
-
+# ...
 export:
   formats: [json, markdown, csv]
   output_dir: ./output
 EOF
-
+# ...
 python3 search_service.py --config search_config.yaml
 ```
 
@@ -280,13 +276,13 @@ batch:
   cache_enabled: true
   cache_dir: ./cache
   cache_ttl_hours: 24
-
+# ...
 ai_summary:
   model: gpt-4o
   max_results_for_summary: 10
   generate_insights: true
   generate_comparison: true
-
+# ...
 monitor:
   keywords:
     - name: 品牌监控
@@ -300,17 +296,17 @@ monitor:
     - name: 行业动态
       query: AI芯片 行业
       interval: 86400
-
+# ...
 multilang:
   languages: [zh-CN, en-US, ja-JP, ko-KR]
   translate_query: true
   generate_multilang_report: true
-
+# ...
 specialized_search:
   image_search: true
   news_search: true
   scholar_search: true
-
+# ...
 export:
   formats: [json, markdown, csv]
   output_dir: ./output
@@ -374,7 +370,7 @@ MONITOR_INTERVALS = {
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js 16+ | 运行时 | 二选一 | 官网下载安装 |
 | Bun 1.0+ | 运行时 | 二选一 | `curl -fsSL https://bun.sh/install \| bash` |
 | Playwright | npm包 | 必需 | `npm install playwright` |
@@ -419,7 +415,7 @@ MONITOR_INTERVALS = {
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 浏览器搜索+结果解析+基础筛选+单次搜索+JSON导出 | 个人试用、单次搜索 |
 | 收费专业版 | ¥39/月 | 批量搜索+AI摘要+定时监控+多语言+缓存+图片/新闻/学术搜索+优先支持 | 团队/企业、市场调研 |
 
@@ -428,7 +424,7 @@ MONITOR_INTERVALS = {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

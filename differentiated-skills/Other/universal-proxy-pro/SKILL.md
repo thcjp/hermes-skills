@@ -20,6 +20,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 当企业内部署大规模Agent系统时，免费版的单电路代理模型会遇到瓶颈：**单电路带宽有限、无法指定出口地区、缺乏审计日志、节点不可控、无故障切换**。一个电路被反爬识别后整个采集任务停摆，一次网络抖动导致代理中断而无人知晓。
 
@@ -41,7 +43,7 @@ pricing_model: "per_use"
 在多电路间智能分配请求：
 
 | 策略 | 算法 | 适用场景 |
-|------|------|----------|
+|---|---|----|
 | 轮询 | Round-Robin | 均匀分配负载 |
 | 最少连接 | Least Connections | 长连接场景 |
 | 地区亲和 | Region Affinity | 按目标地区路由 |
@@ -49,7 +51,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 通用代理工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -75,7 +77,7 @@ load_balancer:
 universal-proxy request \
   --url https://us-only-api.com \
   --region us-east
-
+# ...
 universal-proxy request \
   --url https://eu-only-api.com \
   --region eu-west
@@ -103,7 +105,7 @@ routing:
 完整记录所有代理通信，满足合规要求：
 
 | 日志字段 | 说明 | 示例 |
-|----------|------|------|
+|---:|---:|---:|
 | timestamp | 精确到毫秒 | 2026-07-18T10:23:45.123Z |
 | request_id | 请求唯一ID | req-abc123 |
 | circuit_id | 使用的电路 | circuit-us-east |
@@ -129,8 +131,6 @@ universal-proxy audit report \
 ### 能力5：自建代理节点
 接入企业自有的中继节点，构建私有代理网络：
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供能力5：自建代理节点所需的指令和必要参数。
 **处理**: 解析能力5：自建代理节点的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回能力5：自建代理节点的响应数据,包含状态码、结果和日志。
@@ -148,8 +148,6 @@ universal-proxy audit report \
 
 ### 能力7：流量监控与告警
 实时监控代理流量与电路健康：
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供能力7：流量监控与告警所需的指令和必要参数。
 **处理**: 解析能力7：流量监控与告警的输入参数,完成核心逻辑,返回结构化响应。
@@ -233,27 +231,16 @@ universal-proxy audit report \
 
 ### 60秒上手（企业部署）
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 配置多电路负载均衡
 
-> 详细代码示例已移至 `references/detail.md`
-
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 ### 示例1：金融行业完整配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 示例2：多地区爬虫配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 示例3：自建节点配置
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 最佳实践
 ### 实践1：电路池规模按业务峰值规划
@@ -328,7 +315,7 @@ A：支持。可通过插件机制实现自定义负载均衡算法。
 ## 错误处理
 
 | 错误场景(现象) | 可能原因 | 排查步骤 | 优先级 | 处理方式 |
-|------|----------|----------|--------|------|
+|:-------:|:-------:|:-------:|:-------:|:-------:|
 | 电路建立失败 | 节点不可达 | 检查节点endpoint连通性 | P0 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 请求超时 | 目标服务慢 | 增加timeout至30s+ | P1 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 地区路由错误 | 规则配置错误 | 检查 `routing.region_rules` | P1 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -350,7 +337,7 @@ monitoring:
       - proxy_latency_p99
       - proxy_bandwidth_bytes
       - proxy_error_rate
-
+# ...
   grafana:
     dashboard: ./dashboards/proxy-overview.json
     alerts:
@@ -390,26 +377,26 @@ integration:
 ### 从免费版迁移至专业版
 ```bash
 npm install -g universal-proxy-client@pro
-
+# ...
 universal-proxy init --mode enterprise --migrate-from free
-
+# ...
 universal-proxy db migrate \
   --from sqlite \
   --to postgresql://user:pass@db:5432/proxy
-
+# ...
 universal-proxy circuit add --count 10 --regions us-east,eu-west
-
+# ...
 universal-proxy node add --id node-hq --endpoint relay-hq.company.com:9001
-
+# ...
 universal-proxy audit enable --standards SOX,等保2.0
-
+# ...
 universal-proxy verify --all
 ```
 
 字段映射表：
 
 | 免费版字段 | 专业版字段 | 迁移策略 |
-|-----------|-----------|----------|
+|:-------|-------:|:-------|
 | sqlite存储 | `PostgreSQL` | 数据迁移 |
 | 单电路 | 多电路池 | 保留原电路，新增N个 |
 | 自动选择地区 | 按地区路由 | 默认保持自动，按需配置规则 |
@@ -431,7 +418,7 @@ universal-proxy verify --all
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|:---|---:|---:|
 | 免费体验版 | ¥0 | 单电路+本地代理+基础路由 | 个人试用 |
 | 收费专业版 | ¥99/月 或 ¥999/年 | 全功能+企业级特性+优先支持 | 团队/企业 |
 
@@ -446,7 +433,7 @@ universal-proxy verify --all
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------:|--------|:-------|:------:|--------|
 | Node.js | 运行时 | 必需 | 官方下载 | 18+ |
 | `PostgreSQL` | 数据库 | 推荐 | 官方下载 | 13+ |
 | SQLite | 数据库 | 可选 | Node.js内置 | 3.x |

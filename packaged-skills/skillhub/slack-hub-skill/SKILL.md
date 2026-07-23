@@ -24,16 +24,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
 ---
 # Slack消息中枢（Slack Hub Skill）
 
 面向团队协作场景的Slack消息与搜索集成。通过Bot Token直连Slack Web API，提供消息投递、线程回复、工作区搜索、频道发现四大能力。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Slack消息中枢处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -41,13 +42,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Slack消息中枢Slack消息发送 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -57,7 +58,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -65,7 +66,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -96,15 +96,15 @@ Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/
 
 ### 频道寻址
 | 输入格式 | 说明 | 示例 |
-|:---------|:-----|:-----|
+|:---:|:---:|:---:|
 | 频道ID | 以 `C` 开头的9位字符串 | `C0123456789` |
 | 频道名 | 以 `#` 开头或纯名称 | `#general` 或 `general` |
 
 频道名解析：`#general` 会先调 `conversations.list` 匹配 `name` 字段获取 `id`，再发送消息。
 
 ### 用户寻址
-| 输入格式 | 说明 | 示例 |
-|:---------|:-----|:-----|
+| 输入格式(续)| 说明 | 示例 |
+|:---------|---------:|:---------|
 | 用户ID | 以 `U` 开头的9位字符串 | `U0123456789` |
 | DM频道ID | 以 `D` 开头的9位字符串 | `D0123456789` |
 
@@ -113,7 +113,7 @@ Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+|---:|:---|---:|---:|
 | 部署通知发布 | 向#deployments频道发送v2.1.0上线通知 | 消息投递确认+时间戳 | 消息发送 |
 | 讨论路由到线程 | 回复#general里关于API变更的消息，说周三评审 | 线程回复确认 | 线程回复 |
 | 工作区知识检索 | 搜索工作区里关于数据库迁移方案的讨论 | 匹配消息列表+来源频道+作者 | 工作区搜索 |
@@ -162,7 +162,7 @@ Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/
 # 解析频道名到ID（首次需要）
 curl -s "https://slack.com/api/conversations.list?types=public_channel&limit=200" \
   -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" | jq '.channels[] | select(.name=="deployments") | .id'
-
+# ...
 # 发送部署通知
 curl -s -X POST "https://slack.com/api/chat.postMessage" \
   -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
@@ -231,7 +231,7 @@ curl -s "https://slack.com/api/search.messages?query=migration%20in%3A%23eng-pla
 # 第一步：搜索找到目标消息的ts
 curl -s "https://slack.com/api/search.messages?query=API%20change%20in%3A%23general&count=1" \
   -H "Authorization: Bearer ${SLACK_BOT_TOKEN}"
-
+# ...
 # 第二步：用thread_ts回复该消息的线程
 curl -s -X POST "https://slack.com/api/chat.postMessage" \
   -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
@@ -260,9 +260,8 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
 
 ## 错误处理
 
-
 | 错误码 | 错误信息 | 原因分析 | 处理方式 |
-|:-------|:---------|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | `invalid_auth` | `{ok:false, error:"invalid_auth"}` | Token无效/过期/格式错误 | 引导用户检查 `SLACK_BOT_TOKEN` 是否以 `xoxb-` 开头 |
 | `channel_not_found` | `{ok:false, error:"channel_not_found"}` | 频道ID不存在或Bot不是成员 | 引导用户用 `/invite @botname` 将Bot加入频道 |
 | `not_in_channel` | `{ok:false, error:"not_in_channel"}` | Bot未加入目标频道 | 同上，需先将Bot邀请到频道 |

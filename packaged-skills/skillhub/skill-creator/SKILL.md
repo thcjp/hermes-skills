@@ -17,19 +17,20 @@ homepage: "https://skillhub.cn"
 tags:
   - 通用办公
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # AI技能创建指南
 
 创建有效AI Skill的完整指南，覆盖从需求理解到skill打包的完整流程，基于Core Principles与Progressive Disclosure设计原则。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AI技能创建指南处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -54,7 +55,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 用于执行skill初始化与打包脚本 |
 | Bash/Shell | 运行时 | 可选 | 用于测试skill中的脚本 |
@@ -217,7 +218,7 @@ Step 5 - Validate:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | init_skill.py执行失败 | Python版本不兼容或路径不存在 | 确认Python 3.8+，检查`--path`目录存在且有写权限 |
 | frontmatter格式错误 | YAML缩进或字段缺失 | 确保`name`和`description`字段存在且格式正确，description不为空 |
 | package_skill.py验证失败 | SKILL.md超限或reference缺失 | 检查SKILL.md是否<500 lines，确认所有reference路径有效 |

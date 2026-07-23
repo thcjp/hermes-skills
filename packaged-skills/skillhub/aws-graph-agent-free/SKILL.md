@@ -20,16 +20,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # AWS Graph LITE
 
 基于 AWS Bedrock AgentCore 与 LangGraph 的基础代理编排工具。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AWS Graph LITE处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,7 +43,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -50,7 +51,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -80,7 +80,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+|---:|---:|---:|---:|
 | 单一代理部署 | "部署一个带工具调用的代理到 8080 端口" | 容器部署+健康检查 | Runtime + CLI |
 | 工具调用代理 | "代理自动判断是否调用工具" | tools_condition 自动路由 | StateGraph |
 | 本地开发调试 | "热重载本地开发代理" | agentcore dev 热重载 | CLI |
@@ -97,7 +97,7 @@ uv tool install bedrock-agentcore-starter-toolkit  # 安装 agentcore CLI
 
 ### Step 2: 预检清单
 | 检查项 | 要求 | 不满足的后果 |
-|--------|------|-------------|
+|:---:|:---:|:---:|
 | 模型使用审批 | 在 Bedrock Console 填写 Anthropic 表单 | `Model use case details not submitted` |
 | 推理配置 | 使用 `us.anthropic.claude-*` 推理配置文件 | `on-demand throughput isn't supported` |
 | 代理命名 | 字母开头，仅字母/数字/下划线，1-48 字符 | `Invalid agent name` |
@@ -111,17 +111,17 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from typing import Annotated
 from typing_extensions import TypedDict
-
+# ...
 class State(TypedDict):
     messages: Annotated[list, add_messages]
-
+# ...
 builder = StateGraph(State)
 builder.add_node("agent", agent_node)
 builder.add_node("tools", ToolNode(tools))
 builder.add_conditional_edges("agent", tools_condition)
 builder.add_edge(START, "agent")
 graph = builder.compile()
-
+# ...
 app = BedrockAgentCoreApp()
 @app.entrypoint
 def invoke(payload, context):
@@ -172,7 +172,7 @@ agentcore invoke '{"prompt": "查询北京今天天气"}'
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+|:------|------:|:------|:------|
 | 推理配置不支持 | `on-demand throughput isn't supported` | 未使用跨区域推理配置文件 | 改用 `us.anthropic.claude-*` 推理配置文件 |
 | 模型审批未提交 | `Model use case details not submitted` | 未在 Bedrock Console 填写使用表单 | 进入 Bedrock Console 填写 Anthropic 模型使用审批表单 |
 | 代理名称无效 | `Invalid agent name` | 名称含连字符或非法字符 | 改用下划线，字母开头，1-48 字符（如 `my-agent` → `my_agent`） |
@@ -202,9 +202,8 @@ A: 免费版（LITE）包含 StateGraph 状态图编排和 AgentCore Runtime 容
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

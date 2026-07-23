@@ -47,15 +47,16 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 时间线摘要工具免费版是一款X(Twitter)时间线信息聚合工具。通过命令行工具抓取For You和Following两个时间线的最新推文,进行增量过滤、硬去重和近似去重处理,最终生成结构化的JSON摘要数据,帮助用户快速了解关注领域的最新动态,减少信息噪音。
 
 本版本聚焦单次摘要生成能力,内置增量过滤机制避免重复处理。适合个人用户的日常信息聚合阅读需求。如需定时自动调度、智能分类摘要、多源聚合等高级功能,请升级至PRO版。
 
 ### 免费版与PRO版能力对比
 | 能力维度 | 免费版 | PRO版 |
-|:---------|:-------|:------|
+|----|---|----|
 | 时间线抓取 | For You + Following | For You + Following + 自定义列表 |
 | 硬去重(ID) | 支持 | 支持 |
 | 近似去重(文本相似度) | 支持 | 支持(可调阈值) |
@@ -74,14 +75,14 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 时间线摘要工具-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
 bird home -n 100 --json > for_you_raw.json
-
+# ...
 bird home --following -n 60 --json > following_raw.json
 ```
 
@@ -100,21 +101,21 @@ bird home --following -n 60 --json > following_raw.json
 ```python
 import json
 from datetime import datetime, timezone
-
+# ...
 class IncrementalFilter:
     """增量过滤器"""
-
+# ...
     def __init__(self, state: dict):
         self.last_run_at = state.get("lastRunAt")
         self.sent_ids = state.get("sentTweetIds", {})
-
+# ...
     def filter_new(self, tweets: list) -> list:
         """过滤出未处理过的新推文"""
         if not self.last_run_at:
             return tweets  # 首次运行,全部处理
         last_time = datetime.fromisoformat(self.last_run_at)
         new_tweets = []
-
+# ...
         for tweet in tweets:
             if tweet["id"] in self.sent_ids:
                 continue
@@ -123,9 +124,9 @@ class IncrementalFilter:
             )
             if tweet_time > last_time:
                 new_tweets.append(tweet)
-
+# ...
         return new_tweets
-
+# ...
     def update_state(self, tweets: list) -> dict:
         """更新状态文件"""
         now = datetime.now(timezone.utc).isoformat()
@@ -147,7 +148,7 @@ class IncrementalFilter:
 ```python
 class Deduplicator:
     """推文去重器"""
-
+# ...
     def dedup_by_id(self, tweets: list) -> list:
         """基于推文ID去重"""
         seen_ids = set()
@@ -157,11 +158,11 @@ class Deduplicator:
                 seen_ids.add(tweet["id"])
                 unique.append(tweet)
         return unique
-
+# ...
     def dedup_near_duplicate(self, tweets: list, threshold: float = 0.9) -> list:
         """基于文本相似度的近似去重"""
         from difflib import SequenceMatcher
-
+# ...
         unique = []
         for tweet in tweets:
             is_duplicate = False
@@ -194,38 +195,38 @@ class Deduplicator:
 ```python
 class HeuristicFilter:
     """启发式内容过滤器"""
-
+# ...
     SPAM_PATTERNS = [
         r'^(gm|good morning)\s*$',           # 纯问候
         r'^(gn|good night)\s*$',             # 纯晚安
         r'https?://\S+\s*$',                 # 纯链接
         r'^(liked|retweeted)\b',             # 系统通知
     ]
-
+# ...
     SPAM_KEYWORDS = [
         "giveaway", "follow me", "check out",
         "limited time", "click here", "free crypto",
     ]
-
+# ...
     def filter(self, tweets: list) -> list:
         """过滤低价值内容"""
         import re
         filtered = []
-
+# ...
         for tweet in tweets:
             text = tweet["text"].strip().lower()
-
+# ...
             if len(text) < 10:
                 continue
-
+# ...
             if any(re.match(p, text, re.IGNORECASE) for p in self.SPAM_PATTERNS):
                 continue
-
+# ...
             if any(kw in text for kw in self.SPAM_KEYWORDS):
                 continue
-
+# ...
             filtered.append(tweet)
-
+# ...
         return filtered
 ```
 
@@ -238,25 +239,25 @@ class HeuristicFilter:
 ```python
 import json
 from datetime import datetime, timezone, timedelta
-
+# ...
 class DigestGenerator:
     """摘要生成器"""
-
+# ...
     def __init__(self, config: dict):
         self.interval_hours = config.get("intervalHours", 6)
         self.max_items = config.get("maxItemsPerDigest", 25)
-
+# ...
     def generate(self, tweets: list) -> dict:
         """生成结构化摘要"""
         now = datetime.now(timezone.utc)
         window_start = now - timedelta(hours=self.interval_hours)
-
+# ...
         sorted_tweets = sorted(
             tweets,
             key=lambda t: t.get("createdAt", ""),
             reverse=True
         )[:self.max_items]
-
+# ...
         return {
             "window": {
                 "start": window_start.isoformat(),
@@ -279,15 +280,15 @@ class DigestGenerator:
                 for t in sorted_tweets
             ]
         }
-
+# ...
 config = {"intervalHours": 6, "maxItemsPerDigest": 25}
 generator = DigestGenerator(config)
-
+# ...
 tweets = [
     {"id": "123", "text": "AI最新进展...", "author": "@technews",
      "createdAt": "2026-07-18T10:00:00+08:00", "sources": ["forYou"]}
 ]
-
+# ...
 digest = generator.generate(tweets)
 print(json.dumps(digest, indent=2, ensure_ascii=False))
 ```
@@ -305,9 +306,9 @@ print(json.dumps(digest, indent=2, ensure_ascii=False))
 ```bash
 bird home -n 100 --json > for_you.json
 bird home --following -n 60 --json > following.json
-
+# ...
 python3 generate_digest.py --for-you for_you.json --following following.json > digest.json
-
+# ...
 python3 format_digest.py --input digest.json
 ```
 
@@ -344,7 +345,7 @@ python3 format_digest.py --input digest.json
 
 ```bash
 python3 generate_digest.py --filter "AI,LLM,GPT,大模型" > ai_digest.json
-
+# ...
 python3 format_digest.py --input ai_digest.json --format text
 ```
 
@@ -353,7 +354,7 @@ python3 format_digest.py --input ai_digest.json --format text
 
 ```bash
 python3 generate_digest.py --stats-only
-
+# ...
 ```
 
 ## 不适用场景
@@ -377,7 +378,7 @@ python3 generate_digest.py --stats-only
 ```bash
 bird --version
 bird auth status
-
+# ...
 cat > config.json << 'EOF'
 {
   "intervalHours": 6,
@@ -388,18 +389,17 @@ cat > config.json << 'EOF'
   "statePath": "~/.timeline-digest/state.json"
 }
 EOF
-
+# ...
 mkdir -p ~/.timeline-digest
 ```
 
 ### 首次运行
 ```bash
 python3 generate_digest.py --config config.json
-
+# ...
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配置示例
 ### 基础配置
@@ -416,7 +416,7 @@ python3 generate_digest.py --config config.json
 
 ### 配置项说明
 | 配置项 | 类型 | 默认值 | 说明 |
-|:-------|:-----|:-------|:-----|
+|---:|---:|---:|---:|
 | intervalHours | number | 6 | 时间窗口(小时) |
 | fetchLimitForYou | number | 100 | For You抓取数量 |
 | fetchLimitFollowing | number | 60 | Following抓取数量 |
@@ -448,24 +448,24 @@ THRESHOLD_GUIDE = {
 import os
 import json
 from datetime import datetime, timedelta
-
+# ...
 def cleanup_state(state_path: str, retain_days: int = 30):
     """清理过期的状态记录"""
     with open(state_path, 'r') as f:
         state = json.load(f)
-
+# ...
     cutoff = datetime.now() - timedelta(days=retain_days)
     sent_ids = state.get("sentTweetIds", {})
-
+# ...
     cleaned = {
         tid: ts for tid, ts in sent_ids.items()
         if datetime.fromisoformat(ts) > cutoff
     }
-
+# ...
     state["sentTweetIds"] = cleaned
     with open(state_path, 'w') as f:
         json.dump(state, f, indent=2)
-
+# ...
     removed = len(sent_ids) - len(cleaned)
     print(f"清理完成: 移除 {removed} 条过期记录")
 ```
@@ -498,7 +498,7 @@ def cleanup_state(state_path: str, retain_days: int = 30):
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | bird | CLI工具 | 必需 | 参考bird工具文档安装 |
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -518,7 +518,7 @@ def cleanup_state(state_path: str, retain_days: int = 30):
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

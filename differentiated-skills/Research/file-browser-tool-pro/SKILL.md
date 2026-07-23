@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 > **批量操作+高级搜索+文件监控+云存储。企业级文件管理全功能覆盖。**
 
@@ -30,7 +32,7 @@ pricing_model: "per_use"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 目录浏览 | 支持 | 支持 |
 | 文件查看 | 支持 | 支持 |
 | 基础搜索 | 支持（find/grep） | 支持+高级 |
@@ -56,15 +58,11 @@ pricing_model: "per_use"
 
 ### 2. 高级搜索
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供高级搜索所需的指令和必要参数。
 **处理**: 解析高级搜索的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回高级搜索的响应数据,包含状态码、结果和日志。
 
 ### 3. 文件监控
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供文件监控所需的指令和必要参数。
 **处理**: 解析文件监控的输入参数,完成核心逻辑,返回结构化响应。
@@ -72,15 +70,11 @@ pricing_model: "per_use"
 
 ### 4. 压缩解压
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供压缩解压所需的指令和必要参数。
 **处理**: 解析压缩解压的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回压缩解压的响应数据,包含状态码、结果和日志。
 
 ### 5. 文件比较
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供文件比较所需的指令和必要参数。
 **处理**: 解析文件比较的输入参数,完成核心逻辑,返回结构化响应。
@@ -89,7 +83,7 @@ pricing_model: "per_use"
 ### 6. 云存储集成
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 文件浏览器(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -97,11 +91,11 @@ pricing_model: "per_use"
 ```python
 class CloudStorageManager:
     """云存储管理器（专业版）"""
-
+# ...
     def __init__(self, provider="s3"):
         self.provider = provider
         self.client = None
-
+# ...
     def configure_s3(self, access_key, secret_key, region, bucket):
         """配置AWS S3"""
         self.client = {
@@ -112,36 +106,36 @@ class CloudStorageManager:
             'bucket': bucket
         }
         print(f"S3已配置：{bucket} ({region})")
-
+# ...
     def upload(self, local_path, remote_path):
         """上传文件"""
         if self.provider == "s3":
             return self._upload_s3(local_path, remote_path)
         return {"error": "不支持的provider"}
-
+# ...
     def download(self, remote_path, local_path):
         """下载文件"""
         if self.provider == "s3":
             return self._download_s3(remote_path, local_path)
         return {"error": "不支持的provider"}
-
+# ...
     def list_remote(self, prefix=""):
         """列出远程文件"""
         if self.provider == "s3":
             return self._list_s3(prefix)
         return []
-
+# ...
     def _upload_s3(self, local, remote):
         print(f"上传 {local} → s3://{remote}")
         return {"success": True}
-
+# ...
     def _download_s3(self, remote, local):
         print(f"下载 s3://{remote} → {local}")
         return {"success": True}
-
+# ...
     def _list_s3(self, prefix):
         return [{"key": "file1.txt", "size": 1024}]
-
+# ...
 cloud = CloudStorageManager("s3")
 cloud.configure_s3(
     access_key="your-access-key",
@@ -149,11 +143,11 @@ cloud.configure_s3(
     region="us-east-1",
     bucket="my-bucket"
 )
-
+# ...
 cloud.upload("./local_file.txt", "remote/file.txt")
-
+# ...
 cloud.download("remote/file.txt", "./downloaded.txt")
-
+# ...
 files = cloud.list_remote()
 for f in files:
     print(f"  {f['key']} ({f['size']} bytes)")
@@ -171,14 +165,14 @@ for f in files:
 
 ```python
 batch = BatchFileOperations(max_workers=10)
-
+# ...
 import os
 files = os.listdir("./raw_data")
 rename_pairs = []
 for i, f in enumerate(files, 1):
     new_name = f"data_{i:04d}.csv"  # data_0001.csv, data_0002.csv, ...
     rename_pairs.append((f"./raw_data/{f}", f"./processed/{new_name}"))
-
+# ...
 results = batch.batch_rename(rename_pairs)
 ```
 
@@ -187,10 +181,10 @@ results = batch.batch_rename(rename_pairs)
 
 ```python
 comparator = FileComparator()
-
+# ...
 diff = comparator.generate_diff_report("main_v1.py", "main_v2.py")
 print(diff)
-
+# ...
 result = comparator.compare_directories("./v1", "./v2")
 print(f"新增文件：{result['only_in_dir2']}")
 print(f"删除文件：{result['only_in_dir1']}")
@@ -202,11 +196,11 @@ print(f"修改文件：{result['different']}")
 
 ```python
 monitor = FileMonitor()
-
+# ...
 def on_config_change(change):
     if change['action'] in ['modified', 'deleted']:
         print(f"告警：配置文件变化 - {change['path']}")
-
+# ...
 monitor.watch("/etc/myapp", callback=on_config_change, recursive=True)
 monitor.start()
 ```
@@ -221,43 +215,43 @@ monitor.start()
 ### 30秒上手
 ```bash
 python3 batch_ops.py --operation rename --pattern "old_*" --replace "new_*"
-
+# ...
 python3 search.py --regex "^\d+" --dir . --max 50
-
+# ...
 python3 monitor.py --watch ./important_dir
 ```
 
 ### 120秒标准搭建
 ```bash
 pip install watchdog boto3
-
+# ...
 cat > file_browser_config.yaml <<EOF
 batch:
   max_workers: 5
   operations: [copy, move, delete, rename]
-
+# ...
 search:
   regex_enabled: true
   attributes: [size, modified, owner, permissions]
   max_results: 100
-
+# ...
 monitor:
   watch_dirs:
     - ./important
     - ./config
   recursive: true
   alert_on_delete: true
-
+# ...
 compression:
   formats: [zip, tar, gzip]
   default: zip
-
+# ...
 cloud:
   provider: s3
   bucket: my-bucket
   region: us-east-1
 EOF
-
+# ...
 python3 file_browser_service.py --config file_browser_config.yaml
 ```
 
@@ -268,7 +262,7 @@ batch:
   max_workers: 10
   retry_failed: true
   retry_count: 3
-
+# ...
 search:
   regex_enabled: true
   content_search: true
@@ -281,7 +275,7 @@ search:
     - node_modules
     - .git
     - __pycache__
-
+# ...
 monitor:
   watch_dirs:
     - path: /etc/myapp
@@ -293,17 +287,17 @@ monitor:
   alert_channels:
     - type: webhook
       url: https://hooks.slack.com/services/xxx
-
+# ...
 compression:
   formats: [zip, tar, gzip, rar]
   default: zip
   password_protected: true
-
+# ...
 comparison:
   ignore_whitespace: true
   ignore_case: false
   context_lines: 3
-
+# ...
 cloud:
   providers:
     - type: s3
@@ -320,12 +314,12 @@ cloud:
 def safe_batch_operation(operation, pairs):
     backup_dir = f"./backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     os.makedirs(backup_dir, exist_ok=True)
-
+# ...
     results = operation(pairs)
-
+# ...
     if any(not r['result'].get('success') for r in results):
         print("部分操作失败，可从备份恢复")
-
+# ...
     return results
 ```
 
@@ -336,7 +330,7 @@ class IndexedSearcher:
     def __init__(self):
         self.index = {}
         self.last_indexed = None
-
+# ...
     def build_index(self, root_dir):
         """构建索引"""
         self.index = {}
@@ -351,7 +345,7 @@ class IndexedSearcher:
 ### 3. 监控告警
 ```python
 CRITICAL_FILES = ['/etc/passwd', '/etc/shadow', '/etc/sudoers']
-
+# ...
 def alert_critical_change(change):
     if change['path'] in CRITICAL_FILES:
         send_alert(f"关键文件变化：{change['path']} ({change['action']})")
@@ -390,7 +384,7 @@ def alert_critical_change(change):
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
 | os/shutil/fnmatch | Python库 | 必需 | Python标准库 |
 | concurrent.futures | Python库 | 必需 | Python标准库（批量操作） |
@@ -434,7 +428,7 @@ def alert_critical_change(change):
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 目录浏览+文件查看+基础搜索+单文件操作 | 个人试用、日常管理 |
 | 收费专业版 | ¥35/月 | 批量操作+高级搜索+文件监控+压缩解压+二进制查看+权限管理+文件比较+云存储+优先支持 | 团队/企业、批量处理 |
 
@@ -443,7 +437,7 @@ def alert_critical_change(change):
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

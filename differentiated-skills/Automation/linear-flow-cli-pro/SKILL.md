@@ -36,6 +36,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # Linear流程CLI（专业版）
 
@@ -45,7 +47,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Linear流程CLI(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -94,26 +96,26 @@ title,description,team,priority,priority_label
 "实现权限管理模块","RBAC权限模型",ENG,2,High
 "实现日志模块","结构化日志+ELK对接",ENG,3,Medium
 EOF
-
+# ...
 linear issue batch-create --csv /tmp/batch_create.csv --dry-run
 # 预览输出：
 # {"planned": 3, "teams": ["ENG"], "preview": true}
 # {"issue": 1, "title": "实现用户登录模块", "team": "ENG", "status": "will_create"}
 # {"issue": 2, "title": "实现权限管理模块", "team": "ENG", "status": "will_create"}
 # {"issue": 3, "title": "实现日志模块", "team": "ENG", "status": "will_create"}
-
+# ...
 # 确认无误后执行
 linear issue batch-create --csv /tmp/batch_create.csv
 # 输出：
 # {"created": 3, "identifiers": ["ENG-201", "ENG-202", "ENG-203"]}
-
+# ...
 # 批量更新状态
 linear issue batch-update --json '[
   {"id": "ENG-201", "state": "In Progress"},
   {"id": "ENG-202", "state": "In Progress"},
   {"id": "ENG-203", "state": "Todo"}
 ]'
-
+# ...
 # 批量分配负责人
 linear issue batch-assign --csv /tmp/assign.csv
 ```
@@ -141,7 +143,7 @@ linear issue create \
 #     "will_create": true
 #   }
 # }
-
+# ...
 # 预览状态变更
 linear issue update ENG-123 --state "Done" --dry-run --json
 # 输出：
@@ -162,7 +164,7 @@ linear issue update ENG-123 --state "Done" --dry-run --json
 通过 `--autonomy-policy` 控制Agent的自主级别：
 
 | 策略 | 行为 | 适用场景 |
-|------|------|----------|
+|:-----|:-----|:-----|
 | `suggest-only` | 仅生成建议，不执行任何写入 | 审慎场景、人工审批流 |
 | `preview-required` | 必须先dry-run预览，确认后才执行 | 生产环境、关键操作 |
 | `autonomous` | 自动执行，仅输出结果 | 受信任的自动化流水线 |
@@ -171,11 +173,11 @@ linear issue update ENG-123 --state "Done" --dry-run --json
 # suggest-only：仅建议
 linear issue create --title "..." --autonomy-policy suggest-only
 # 输出建议，不创建
-
+# ...
 # preview-required：必须预览
 linear issue create --title "..." --autonomy-policy preview-required
 # 提示先执行 --dry-run
-
+# ...
 # autonomous：自动执行
 linear issue create --title "..." --autonomy-policy autonomous
 # 直接创建，输出结果
@@ -202,13 +204,13 @@ cat > /tmp/context.json <<'EOF'
   }
 }
 EOF
-
+# ...
 # 使用上下文文件创建Issue
 linear issue create \
   --context-file /tmp/context.json \
   --apply-triage \
   --autonomy-policy preview-required
-
+# ...
 # --apply-triage 会自动应用 hints 中的团队/优先级/标签
 # 输出：
 # {
@@ -232,16 +234,16 @@ Git提交自动关联Linear Issue，提交时自动更新任务状态：
 linear config set git.auto-link true
 linear config set git.commit-prefix "ENG"
 linear config set git.done-on-merge true
-
+# ...
 # 提交时自动关联Issue
 git commit -m "ENG-123: 实现用户登录接口"
 # Linear自动将 ENG-123 状态更新为 "In Progress"
-
+# ...
 # PR合并后自动完成Issue
 git merge feature/login
 # Linear自动将 ENG-123 状态更新为 "Done"
 # 并添加评论："Issue closed via PR merge: feature/login"
-
+# ...
 # 查看Issue的Git关联
 linear issue get ENG-123 --include git-history
 # 输出：
@@ -268,15 +270,15 @@ linear issue get ENG-123 --include git-history
 linear query template "member-cycle-tasks" \
   --var member="U123" \
   --var cycle="current"
-
+# ...
 # 查询某项目的进度统计
 linear query template "project-progress" \
   --var project="用户中心重构"
-
+# ...
 # 查询逾期任务
 linear query template "overdue-issues" \
   --var team="ENG"
-
+# ...
 # 自定义GraphQL查询（含非null类型，用heredoc）
 linear api --variable teamId=abc123 <<'GRAPHQL'
 query($teamId: String!) {
@@ -301,22 +303,22 @@ GRAPHQL
 ```bash
 # 列出Webhook
 linear webhook list
-
+# ...
 # 创建Webhook
 linear webhook create \
   --url "https://my-app.com/webhook/linear" \
   --events "issue.create,issue.update,issue.delete" \
   --team ENG
-
+# ...
 # 查看Webhook详情
 linear webhook get "wh_abc123"
-
+# ...
 # 更新Webhook
 linear webhook update "wh_abc123" --events "issue.create"
-
+# ...
 # 删除Webhook
 linear webhook delete "wh_abc123"
-
+# ...
 # 通知管理
 linear notification list
 linear notification read "n_abc123"
@@ -331,22 +333,22 @@ linear notification read-all
 ```bash
 # 列出所有Initiative
 linear initiative list
-
+# ...
 # 创建跨团队Initiative
 linear initiative create \
   --name "2026 Q1 平台升级" \
   --description-file /tmp/initiative.md \
   --teams "ENG,INFRA,SEC"
-
+# ...
 # 关联项目至Initiative
 linear initiative update "用户中心重构" --add-projects "用户中心重构,认证升级,数据库迁移"
-
+# ...
 # 创建里程碑
 linear milestone create \
   --name "Q1 里程碑" \
   --project "用户中心重构" \
   --target-date 2026-03-31
-
+# ...
 # 发布项目状态更新
 linear project-update create \
   --project "用户中心重构" \
@@ -370,14 +372,14 @@ linear project-update create \
 ```bash
 # 确认认证
 linear auth status
-
+# ...
 # 创建任务（先预览）
 linear issue create \
   --title "实现API网关" \
   --description-file /tmp/api.md \
   --team ENG \
   --dry-run --json
-
+# ...
 # 确认预览无误后执行
 linear issue create \
   --title "实现API网关" \
@@ -393,11 +395,11 @@ linear issue create \
 # 配置Git联动
 linear config set git.auto-link true
 linear config set git.done-on-merge true
-
+# ...
 # 批量创建Sprint任务
 linear issue batch-create --csv /tmp/sprint_tasks.csv --dry-run
 linear issue batch-create --csv /tmp/sprint_tasks.csv
-
+# ...
 # 提交代码自动关联
 git commit -m "ENG-201: 完成登录接口"
 # ENG-201 自动更新为 In Progress
@@ -413,7 +415,7 @@ runtime:
   autonomy_policy: preview-required
   json_strict: true
   timeout_aware: true
-
+# ...
 integrations:
   git:
     auto_link: true
@@ -422,12 +424,12 @@ integrations:
   slack:
     context_parsing: true
     apply_triage: true
-
+# ...
 templates:
   - member-cycle-tasks
   - project-progress
   - overdue-issues
-
+# ...
 webhooks:
   - url: "https://my-app.com/webhook/linear"
     events: ["issue.create", "issue.update"]
@@ -436,7 +438,7 @@ webhooks:
 ```bash
 # 加载配置
 linear config load agent_config.yaml
-
+# ...
 # Agent运行时推荐流程
 linear capabilities                          # 1. 发现能力
 linear issue list --json                     # 2. 读取状态
@@ -459,7 +461,7 @@ echo $?                                      # 5. 检查退出码与error.detail
 runtime:
   autonomy_policy: autonomous
   json_strict: true
-
+# ...
 integrations:
   slack:
     context_parsing: true
@@ -512,11 +514,11 @@ integrations:
 linear initiative create \
   --name "2026 平台升级" \
   --teams "FE,BE,INFRA"
-
+# ...
 # 关联各团队的项目
 linear initiative update "2026 平台升级" \
   --add-projects "前端重构,API网关,数据库迁移,CI/CD升级"
-
+# ...
 # 创建里程碑
 linear milestone create --name "Q1 完成" --project "前端重构" --target-date 2026-03-31
 linear milestone create --name "Q2 完成" --project "API网关" --target-date 2026-06-30
@@ -558,7 +560,7 @@ linear issue create \
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|---:|---:|---:|---:|
 | 开发者 | Agent深度自动化 | 全功能+Slack集成+Git联动 | 人工操作减少90% |
 | Scrum Master | 任务分流与汇总 | Slack集成+批量+查询模板 | 分流效率提升20倍 |
 | 项目经理 | 批量迁移与重构 | 批量操作+dry-run+检查点 | 迁移效率提升100倍 |
@@ -640,7 +642,7 @@ jobs:
 # Slack Bot接收消息，创建Linear Issue
 from slack_bolt import App
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
-
+# ...
 @app.message("#eng-tasks")
 def handle_task_message(message, say):
     # 生成上下文文件
@@ -652,7 +654,7 @@ def handle_task_message(message, say):
         "hints": extract_hints(message["text"])
     }
     Path("/tmp/slack_context.json").write_text(json.dumps(context))
-
+# ...
     # 调用Linear CLI创建Issue
     import subprocess
     result = subprocess.run([
@@ -662,7 +664,7 @@ def handle_task_message(message, say):
         "--autonomy-policy", "preview-required",
         "--json"
     ], capture_output=True, text=True)
-
+# ...
     issue_data = json.loads(result.stdout)
     say(f"已创建Linear任务：{issue_data['identifier']}")
 ```
@@ -673,10 +675,10 @@ def handle_task_message(message, say):
 # Git Hook：提交时自动关联Issue
 #!/bin/bash
 # .git/hooks/post-commit
-
+# ...
 COMMIT_MSG=$(git log -1 --pretty=%B)
 ISSUE_IDS=$(echo "$COMMIT_MSG" | grep -oE '[A-Z]+-[0-9]+')
-
+# ...
 for ISSUE_ID in $ISSUE_IDS; do
     linear issue update $ISSUE_ID --state "In Progress" --silent
     linear issue comment add $ISSUE_ID --body "提交关联：$(git rev-parse --short HEAD)" --silent
@@ -698,7 +700,7 @@ done
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 1.0.0 | 2026-01 | 初版发布，含全部八大高级功能 |
 
 ## 已知限制
@@ -709,9 +711,8 @@ done
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:------|------:|:------|:------|------:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -769,7 +770,7 @@ done
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|:---|---:|---:|
 | 批量创建部分失败 | 部分数据格式错误或字段缺失 | 查看error.details；修复数据后重试失败项 | 高 |
 | dry-run与实际执行结果不一致 | 预览后数据被他人修改 | 重新dry-run；使用乐观锁（--expected-version） | 中 |
 | 自动化策略不生效 | 配置未加载或被覆盖 | 检查agent_config.yaml；确认命令行未覆盖 | 高 |
@@ -794,7 +795,7 @@ done
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o） |
 | linear CLI | 命令行工具 | 必需 | 通过Linear官方渠道安装 |
 | Linear账号 | 账号 | 必需 | 从linear.com注册 |
@@ -860,7 +861,7 @@ done
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|----|:--:|---:|----|
 | 免费体验版 | ¥0 | 任务查询与基础创建+团队/项目读取+JSON输出+Markdown文件化处理 | 个人使用、小型团队、轻量任务管理 |
 | 收费专业版 | ¥29.9/月 | 全部高级功能（批量操作+dry-run+自动化策略+Slack集成+Git联动+GraphQL模板+Webhook+Initiative）+多角色指南+性能优化+优先支持 | 工程团队、AI Agent自动化、跨团队协作、企业级Linear工作流 |
 

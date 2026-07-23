@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 论文写作助手专业版是面向高校、研究机构和企业研发团队的学术写作解决方案。在完整兼容免费版所有功能的基础上,专业版引入了批量文档处理、团队协作、查重检测、跨文档引用管理、多语言学术规范等高级能力,适用于大规模论文质量管理、期刊稿件初审、企业技术文档标准化等专业场景。
 
@@ -32,7 +34,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 论文写作助手专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,12 +44,12 @@ thesis-helper batch outline \
   --input topics.json \
   --output outlines/ \
   --concurrency 10
-
+# ...
 thesis-helper batch format \
   --input theses/ \
   --output format_report.json \
   --check all
-
+# ...
 thesis-helper batch abstract \
   --input theses/ \
   --lang zh \
@@ -67,16 +69,16 @@ thesis-helper team create \
   --project "thesis_2026" \
   --members "advisor,student1,student2" \
   --roles "reviewer,author,author"
-
+# ...
 thesis-helper team invite \
   --project "thesis_2026" \
   --email "reviewer@university.edu" \
   --role "reviewer"
-
+# ...
 thesis-helper team history \
   --project "thesis_2026" \
   --file "chapter1.md"
-
+# ...
 thesis-helper team comments \
   --project "thesis_2026" \
   --file "chapter1.md" \
@@ -96,13 +98,13 @@ thesis-helper plagiarism \
   --file my_thesis.docx \
   --engine "standard" \
   --output plagiarism_report.html
-
+# ...
 thesis-helper batch plagiarism \
   --input theses/ \
   --engine "premium" \
   --output reports/ \
   --threshold 0.15
-
+# ...
 thesis-helper plagiarism stats \
   --input reports/ \
   --output summary.json
@@ -120,12 +122,12 @@ thesis-helper plagiarism stats \
 thesis-helper citations network \
   --input theses/ \
   --output citation_network.json
-
+# ...
 thesis-helper citations visualize \
   --network citation_network.json \
   --format graph \
   --output citation_graph.html
-
+# ...
 thesis-helper citations check \
   --input theses/ \
   --check "orphan,self_cite,cycle"
@@ -144,7 +146,7 @@ thesis-helper abstract multilang \
   --topic "研究主题" \
   --languages "zh,en,ja,de,fr" \
   --output multilang_abstracts/
-
+# ...
 thesis-helper format multilang \
   --file thesis.docx \
   --languages "zh,en" \
@@ -163,7 +165,7 @@ thesis-helper format multilang \
 thesis-helper ethics check \
   --file thesis.docx \
   --checks "data_fabrication,plagiarism,authorship,conflict_of_interest"
-
+# ...
 thesis-helper ethics report \
   --file thesis.docx \
   --output ethics_report.html
@@ -201,21 +203,17 @@ thesis-helper defense --file thesis.docx
 ### 场景二:期刊编辑部稿件批量初审
 某学术期刊编辑部每月收到 100+ 篇投稿,需要快速进行初步筛选。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三:企业研发团队技术文档标准化
 某科技公司研发团队需要将内部技术文档统一为标准格式。
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 快速开始
 ### 依赖详情
 ```bash
 cd ~/.skill-platform/workspace/skills/thesis-helper-tool-pro
 npm install
-
+# ...
 thesis-helper --version --edition
-
+# ...
 thesis-helper batch --help
 ```
 
@@ -239,7 +237,7 @@ cat > team_config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 thesis-helper team init team_config.json
 ```
 
@@ -254,7 +252,7 @@ cat > topics.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 thesis-helper batch outline \
   --input topics.json \
   --output outlines/ \
@@ -263,8 +261,6 @@ thesis-helper batch outline \
 
 ## 示例
 ### 企业级配置
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 查重引擎配置
 ```json
@@ -297,9 +293,9 @@ thesis-helper batch outline \
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 thesis-helper outline --topic "研究主题"
-
+# ...
 thesis-helper batch outline --input topics.json
-
+# ...
 thesis-helper plagiarism --file thesis.docx
 ```
 
@@ -309,7 +305,7 @@ thesis-helper batch format \
   --input theses/ \
   --concurrency 15 \
   --timeout 180000
-
+# ...
 thesis-helper batch format \
   --input theses/ \
   --cache-dir ./cache \
@@ -321,11 +317,11 @@ thesis-helper batch format \
 thesis-helper team permissions \
   --role "author" \
   --permissions "edit_own,comment"
-
+# ...
 thesis-helper team permissions \
   --role "reviewer" \
   --permissions "view_all,comment,approve"
-
+# ...
 thesis-helper team permissions \
   --role "admin" \
   --permissions "all"
@@ -337,7 +333,7 @@ thesis-helper batch plagiarism \
   --input submissions/ \
   --engine standard \
   --threshold 0.20
-
+# ...
 thesis-helper batch plagiarism \
   --input flagged/ \
   --engine academic \
@@ -346,7 +342,7 @@ thesis-helper batch plagiarism \
 
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | 大纲生成 | 支持 | 支持 |
 | 文献综述框架 | 支持 | 支持 |
 | 摘要撰写 | 支持 | 支持 |
@@ -398,7 +394,7 @@ thesis-helper team permissions --role reviewer --permissions "view_all,comment,a
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | 文档解析库 | 库 | 必需 | 通过 `npm install` 自动安装 |
 | 查重引擎 | API | 查重功能必需 | 专业版内置或对接外部服务 |
@@ -410,9 +406,9 @@ thesis-helper team permissions --role reviewer --permissions "view_all,comment,a
 
 ```bash
 PLAGIARISM_API_KEY=your_plagiarism_api_key
-
+# ...
 TEAM_API_TOKEN=your_team_api_token
-
+# ...
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=thesis_helper
@@ -430,7 +426,7 @@ DB_PASSWORD=your_password
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

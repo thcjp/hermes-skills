@@ -16,11 +16,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Excel 工艺（免费版）
 
 本 Skill 把 Excel 生成任务脚本化——通过 Python 与 openpyxl 生成结构化、可复用、可版本控制的 .xlsx 文件。免费版覆盖日常报表生成场景。
@@ -32,7 +33,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 输入 | 输出 | 说明 |
-|---------|------|------|------|
+|----|---|---|---|
 | 多 Sheet 工作簿 | Sheet 名 + 数据 | .xlsx 文件 | 跨 Sheet 引用 |
 | 单元格格式化 | 格式类型 | 应用样式 | 表头 / 数字 / 货币 / 日期 |
 | 公式 | 公式表达式 | 写入单元格 | SUM / AVERAGE / VLOOKUP |
@@ -90,7 +91,7 @@ suggested_price: 29.9
 ```bash
 # 依赖说明
 pip install openpyxl
-
+# ...
 # 示例
 python3 sales_report.py
 ```
@@ -100,22 +101,22 @@ python3 sales_report.py
 ```python
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
-
+# ...
 wb = Workbook()
 ws = wb.active
 ws.title = "销售数据"
-
+# ...
 # 标题
 ws['A1'] = "2026 年第一季度销售报告"
 ws['A1'].font = Font(bold=True, size=16)
-
+# ...
 # 表头
 headers = ['月份', '产品A', '产品B', '产品C', '总计']
 for col, h in enumerate(headers, 1):
     cell = ws.cell(row=3, column=col, value=h)
     cell.font = Font(bold=True, color='FFFFFF')
     cell.fill = PatternFill(start_color='3182CE', end_color='3182CE', fill_type='solid')
-
+# ...
 # 数据
 data = [
     ['1月', 150000, 230000, 180000],
@@ -127,7 +128,7 @@ for r, row in enumerate(data, 4):
         ws.cell(row=r, column=c, value=v)
     # 总计公式
     ws.cell(row=r, column=5, value=f'=SUM(B{r}:D{r})')
-
+# ...
 wb.save('sales_report.xlsx')
 print("已生成 sales_report.xlsx")
 ```
@@ -137,7 +138,7 @@ print("已生成 sales_report.xlsx")
 ### 格式化类型对照表
 
 | 格式类型 | 字体 | 填充 | 对齐 | 数字格式 |
-|---------|------|------|------|---------|
+|:-----|:-----|:-----|:-----|:-----|
 | 标题 | 粗体 16 号 | - | 居中 | - |
 | 表头 | 粗体 12 号 白色 | 蓝色 | 居中 | - |
 | 数字 | - | - | 右对齐 | `#,##0.00` |
@@ -149,7 +150,7 @@ print("已生成 sales_report.xlsx")
 ### 图表类型选择
 
 | 类型 | 代码 | 适用场景 |
-|------|------|---------|
+|---:|---:|---:|
 | 柱状图 | `BarChart` | 数据对比 |
 | 折线图 | `LineChart` | 趋势分析 |
 | 饼图 | `PieChart` | 占比分析 |
@@ -160,10 +161,10 @@ print("已生成 sales_report.xlsx")
 ```python
 # Sheet1 引用 Sheet2 的 A1
 ws1['A1'] = '=Sheet2!A1'
-
+# ...
 # 跨 Sheet 求和
 ws1['A2'] = '=SUM(Sheet1:Sheet3!A1)
-
+# ...
 # 跨 Sheet 条件求和
 ws1['A3'] = '=SUMIF(Sheet1!A:A, "条件", Sheet1!B:B)'
 ```
@@ -204,7 +205,7 @@ A：这是 Excel 的设计——合并范围内只有左上角单元格保留值
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | Python3 | 运行时 | 必需 | 官网下载 |
 | openpyxl | Python 库 | 必需 | `pip install openpyxl` |
@@ -235,9 +236,8 @@ A：这是 Excel 的设计——合并范围内只有左上角单元格保留值
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

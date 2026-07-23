@@ -27,11 +27,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # 仪表盘构建工具（免费版）
 
 ## 概述
@@ -43,7 +44,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力项 | 说明 | 输出物 |
-|--------|------|--------|
+|---|---|---|
 | 仪表盘生成 | 根据描述生成 HTML 页面 | `index.html` |
 | 抓取脚本 | 生成数据获取脚本 | `fetch.sh` |
 | 配置管理 | 存储布局与组件配置 | `config.json` |
@@ -188,7 +189,7 @@ curl -s -u "$STRIPE_API_KEY:" \
 ### 设计默认值
 
 | 元素 | 深色模式 | 浅色模式 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 背景 | `#0f172a` | `#f8fafc` |
 | 文字 | `#e2e8f0` | `#1e293b` |
 | 间距 | 16px / 24px / 32px | 同左 |
@@ -201,7 +202,7 @@ curl -s -u "$STRIPE_API_KEY:" \
 ```bash
 # 每 15 分钟刷新 Stripe 数据
 */15 * * * * ~/dashboard/stripe/fetch.sh
-
+# ...
 # 每分钟刷新服务器资源
 * * * * * ~/dashboard/server/fetch.sh
 ```
@@ -215,7 +216,7 @@ curl -s -u "$STRIPE_API_KEY:" \
 ```bash
 # /etc/environment 或 ~/.env
 STRIPE_API_KEY=sk_xxx
-
+# ...
 # cron 中加载
 */15 * * * * source ~/.env && ~/dashboard/stripe/fetch.sh
 ```
@@ -282,7 +283,7 @@ curl -s ... | jq 'del(.customer.email, .customer.phone)' > data.json
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | curl | 命令行工具 | 必需 | 系统自带 |
 | jq | JSON 处理 | 必需 | `apt install jq` 或 `brew install jq` |
 | Python | 本地服务器 | 推荐 | 用于 `python -m http.server` |
@@ -316,9 +317,8 @@ curl -s ... | jq 'del(.customer.email, .customer.phone)' > data.json
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -34,6 +34,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # UI/UX ProMax V2 - 专业版
 
@@ -48,7 +50,7 @@ UI/UX ProMax V2专业版是一款面向设计团队和企业的综合UI/UX设计
 ### 1. 全域设计数据库
 
 | 域 | 用途 | 示例关键词 |
-|----|------|-----------|
+|---|---|-----|
 | `product` | 产品类型推荐 | SaaS, 电商, 作品集, 医疗, 美容, 服务 |
 | `style` | UI风格与效果 | 玻璃态, 极简, 暗色模式, 粗野主义 |
 | `typography` | 字体配对 | 优雅, 活泼, 专业, 现代 |
@@ -67,7 +69,7 @@ UI/UX ProMax V2专业版是一款面向设计团队和企业的综合UI/UX设计
 ### 2. 全技术栈支持
 
 | 技术栈 | 聚焦领域 |
-|--------|----------|
+|:-----|:-----|
 | `html-tailwind` | Tailwind工具类, 响应式, 无障碍(默认) |
 | `react` | 状态, Hooks, 性能, 模式 |
 | `nextjs` | SSR, 路由, 图片, API路由 |
@@ -87,7 +89,7 @@ UI/UX ProMax V2专业版是一款面向设计团队和企业的综合UI/UX设计
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | UI/UX ProMax V2专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -95,7 +97,7 @@ UI/UX ProMax V2专业版是一款面向设计团队和企业的综合UI/UX设计
 ```bash
 # 持久化MASTER设计系统
 python3 （请参考skill目录中的脚本文件） "fintech SaaS dashboard" --design-system --persist -p "FinApp"
-
+# ...
 # 创建页面级覆盖
 python3 （请参考skill目录中的脚本文件） "real-time data dark" --design-system --persist -p "FinApp" --page "dashboard"
 ```
@@ -136,7 +138,7 @@ python3 （请参考skill目录中的脚本文件） "healthcare SaaS" --design-
 ### 5. 8级优先级深度审计
 
 | 优先级 | 类别 | 免费版 | 专业版 |
-|--------|------|--------|--------|
+|:---:|:---:|:---:|:---:|
 | 1 | 无障碍 | 基础检查 | WCAG深度审计 |
 | 2 | 触摸交互 | 基础检查 | 全交互模式审计 |
 | 3 | 性能 | 基础建议 | React性能反模式检测 |
@@ -158,11 +160,11 @@ python3 （请参考skill目录中的脚本文件） "healthcare SaaS" --design-
 ```bash
 # 生成MASTER
 python3 （请参考skill目录中的脚本文件） "fintech SaaS professional" --design-system --persist -p "FinApp"
-
+# ...
 # 页面覆盖
 python3 （请参考skill目录中的脚本文件） "real-time data dark" --design-system --persist -p "FinApp" --page "dashboard"
 python3 （请参考skill目录中的脚本文件） "checkout payment trust" --design-system --persist -p "FinApp" --page "checkout"
-
+# ...
 # React实现指引
 python3 （请参考skill目录中的脚本文件） "state hooks performance" --stack react
 ```
@@ -181,7 +183,7 @@ python3 （请参考skill目录中的脚本文件） "state hooks performance" -
 ```bash
 # 统一设计系统
 python3 （请参考skill目录中的脚本文件） "enterprise SaaS" --design-system --persist -p "UnifiedApp"
-
+# ...
 # 多端实现
 python3 （请参考skill目录中的脚本文件） "component state" --stack react
 python3 （请参考skill目录中的脚本文件） "views navigation" --stack swiftui
@@ -193,10 +195,10 @@ python3 （请参考skill目录中的脚本文件） "composables state" --stack
 ```bash
 # 无障碍深度审计
 python3 （请参考skill目录中的脚本文件） "accessibility focus keyboard aria" --domain ux -n 10
-
+# ...
 # React性能反模式
 python3 （请参考skill目录中的脚本文件） "rerender waterfall bundle memo suspense" --domain react -n 10
-
+# ...
 # Web界面规范
 python3 （请参考skill目录中的脚本文件） "semantic virtualize aria focus" --domain web -n 10
 ```
@@ -226,24 +228,23 @@ python3 （请参考skill目录中的脚本文件） "semantic virtualize aria f
 ```bash
 # 第1步:分析需求
 # 产品类型、行业、风格、技术栈
-
+# ...
 # 第2步:MASTER持久化
 python3 （请参考skill目录中的脚本文件） "beauty spa elegant" --design-system --persist -p "Serenity Spa"
-
+# ...
 # 第3步:页面覆盖
 python3 （请参考skill目录中的脚本文件） "booking calendar" --design-system --persist -p "Serenity Spa" --page "booking"
-
+# ...
 # 第4步:补充搜索
 python3 （请参考skill目录中的脚本文件） "animation accessibility" --domain ux
 python3 （请参考skill目录中的脚本文件） "hero testimonial" --domain landing
 python3 （请参考skill目录中的脚本文件） "real-time trend" --domain chart
-
+# ...
 # 第5步:技术栈指引
 python3 （请参考skill目录中的脚本文件） "layout form" --stack html-tailwind
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -266,7 +267,7 @@ python3 （请参考skill目录中的脚本文件） "layout form" --stack html-
 ### 专业版与免费版完整对比
 
 | 功能维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|:------|------:|:------|
 | 设计域 | 5个基础域 | 全部10个域 |
 | 技术栈 | html-tailwind | 全部10种 |
 | 持久化 | 不支持 | MASTER+页面覆盖 |
@@ -287,7 +288,7 @@ python3 （请参考skill目录中的脚本文件） "layout form" --stack html-
 # 正确
 python3 （请参考skill目录中的脚本文件） "enterprise SaaS" --design-system --persist -p "MyApp"
 python3 （请参考skill目录中的脚本文件） "data table" --design-system --persist -p "MyApp" --page "reports"
-
+# ...
 # 错误:跳过MASTER
 python3 （请参考skill目录中的脚本文件） "data table" --design-system --persist -p "MyApp" --page "reports"
 ```
@@ -307,7 +308,7 @@ python3 （请参考skill目录中的脚本文件） "data table" --design-syste
 ### 3. 交付前深度审计矩阵
 
 | 维度 | 命令 | 标准 |
-|------|------|------|
+|---:|:---|---:|
 | 无障碍 | `--domain ux "accessibility"` | WCAG AA |
 | 交互 | `--domain ux "touch interaction"` | 44x44px |
 | 性能 | `--domain ux "performance"` | WebP/懒加载 |
@@ -320,7 +321,7 @@ python3 （请参考skill目录中的脚本文件） "data table" --design-syste
 ### 4. 专业UI规则
 
 | 规则 | 正确 | 错误 |
-|------|------|------|
+|:------:|--------|:-------|
 | 图标 | SVG(Heroicons/Lucide/Simple Icons) | emoji |
 | 品牌Logo | Simple Icons官方SVG | 猜测路径 |
 | 悬停 | 颜色/透明度过渡 | 缩放偏移布局 |
@@ -369,7 +370,7 @@ python3 （请参考skill目录中的脚本文件） "data table" --design-syste
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | Python 3 | 运行时 | 必需 | 系统包管理器 |
 | CSV数据文件 | 数据 | 必需 | 随Skill包内置 |
 | LLM API | API | 必需 | Agent内置LLM |
@@ -378,10 +379,10 @@ python3 （请参考skill目录中的脚本文件） "data table" --design-syste
 ```bash
 # macOS
 brew install python3
-
+# ...
 # Ubuntu/Debian
 sudo apt install python3 python3-pip
-
+# ...
 # Windows
 winget install Python.Python.3.12
 ```
@@ -397,9 +398,8 @@ CLI搜索工具基于本地数据文件运行,无需额外API Key。推理引擎
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

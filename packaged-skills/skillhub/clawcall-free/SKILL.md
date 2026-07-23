@@ -24,6 +24,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 语音通话服务（免费版）
 
@@ -62,7 +64,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---|---|----|----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -182,9 +184,8 @@ X-Api-Key: voicecall_sk_abc123
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:-----|:-----|:-----|
 | `invalid_phone` | `to` 非美国 `+1XXXXXXXXXX` 格式 | 索要有效美国号码，校验11位数字与+1前缀 |
 | `missing_fields` | 缺 `to` 或 `task` | 补全收件号码与通话指令后重发 |
 | `auth_required` / `invalid_api_key` | API密钥缺失或失效 | 移除坏密钥，重新发起首次外呼获取新密钥 |

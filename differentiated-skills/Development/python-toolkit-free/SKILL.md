@@ -45,11 +45,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Python工具箱(免费版)
 
 ## 概述
@@ -61,7 +62,7 @@ Python工具箱(免费版)为个人开发者提供实用的Python编码规范与
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | PEP 8规范 | 缩进、行长、空行、导入顺序、命名约定 |
 | Pythonic模式 | 推导式、上下文管理器、解包、f-string |
 | 依赖管理 | uv优先,pip回退 |
@@ -102,19 +103,19 @@ Python工具箱(免费版)为个人开发者提供实用的Python编码规范与
 
 ```python
 """处理JSON数据文件的工具脚本。"""
-
+# ...
 import json
 from pathlib import Path
-
+# ...
 def load_config(config_path: str) -> dict:
     """加载JSON配置文件。
-
+# ...
     Args:
         config_path: 配置文件路径。
-
+# ...
     Returns:
         解析后的配置字典。
-
+# ...
     Raises:
         FileNotFoundError: 文件不存在时。
         json.JSONDecodeError: JSON格式错误时。
@@ -122,14 +123,14 @@ def load_config(config_path: str) -> dict:
     path = Path(config_path)
     if not path.exists():
         raise FileNotFoundError(f"配置文件不存在: {config_path}")
-
+# ...
     with path.open(encoding="utf-8") as f:
         return json.load(f)
-
+# ...
 def main() -> None:
     config = load_config("config.json")
     print(f"加载配置成功,共 {len(config)} 项")
-
+# ...
 if __name__ == "__main__":
     main()
 ```
@@ -141,10 +142,10 @@ if __name__ == "__main__":
 ```bash
 # 语法检查
 python -m py_compile *.py
-
+# ...
 # 测试
 python -m pytest tests/ -v 2>/dev/null || python -m unittest discover -v 2>/dev/null || echo "未找到测试"
-
+# ...
 # 风格检查(优先ruff,回退black)
 ruff check . --fix 2>/dev/null || python -m black --check . 2>/dev/null
 ```
@@ -157,35 +158,35 @@ ruff check . --fix 2>/dev/null || python -m black --check . 2>/dev/null
 # 推导式
 squares = [x**2 for x in range(10)]
 lookup = {item.id: item for item in items}
-
+# ...
 # 上下文管理器
 with open("file.txt") as f:
     data = f.read()
-
+# ...
 # 解包
 first, *rest = items
 a, b = b, a  # 交换
-
+# ...
 # f-string
 msg = f"Hello {name}, you have {count} items"
-
+# ...
 # 类型注解
 def process(items: list[str]) -> dict[str, int]:
     ...
-
+# ...
 # dataclass
 from dataclasses import dataclass
-
+# ...
 @dataclass
 class User:
     name: str
     email: str
     active: bool = True
-
+# ...
 # pathlib
 from pathlib import Path
 config = Path.home() / ".config" / "app.json"
-
+# ...
 # 枚举与zip
 for i, item in enumerate(items):
     ...
@@ -245,7 +246,6 @@ ruff check . --fix
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 基础ruff配置
@@ -255,7 +255,7 @@ ruff check . --fix
 [tool.ruff]
 line-length = 88
 target-version = "py311"
-
+# ...
 [tool.ruff.lint]
 select = [
     "E",   # pycodestyle errors
@@ -266,7 +266,7 @@ select = [
     "UP",  # pyupgrade
 ]
 ignore = ["E501"]  # 行长由formatter处理
-
+# ...
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
@@ -298,14 +298,14 @@ addopts = "-v --tb=short"
 ```python
 def fetch_user(user_id: int, include_deleted: bool = False) -> User | None:
     """按ID从数据库获取用户。
-
+# ...
     Args:
         user_id: 用户唯一标识。
         include_deleted: 是否包含软删除用户。
-
+# ...
     Returns:
         找到则返回User对象,否则返回None。
-
+# ...
     Raises:
         DatabaseError: 连接失败时。
     """
@@ -317,17 +317,17 @@ def fetch_user(user_id: int, include_deleted: bool = False) -> User | None:
 # 错误:可变默认参数(跨调用共享)
 def bad(items=[]):
     ...
-
+# ...
 # 正确
 def good(items=None):
     items = items or []
-
+# ...
 # 错误:裸except(捕获SystemExit、KeyboardInterrupt)
 try:
     ...
 except:
     ...
-
+# ...
 # 正确
 try:
     ...
@@ -370,7 +370,7 @@ except Exception:
 ### Q4:免费版与PRO版差异?
 
 | 维度 | 免费版 | PRO版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 规范覆盖 | PEP 8 + Pythonic | 全规范 + 类型系统 + 异步 + 性能 |
 | 适用对象 | 个人开发者 | 团队与企业 |
 | 测试策略 | 基础pytest | 完整测试金字塔 + 覆盖率门禁 |
@@ -393,7 +393,7 @@ except Exception:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | python.org 下载 |
 | ruff | 命令行工具 | 推荐 | `pip install ruff` 或 `uv tool install ruff` |
@@ -412,9 +412,8 @@ except Exception:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -21,8 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
 ---
-
 # 系统监控入门工具（免费版）
 
 ## 概述
@@ -34,7 +35,7 @@ suggested_price: 29.9
 ### 监控指标
 
 | 指标类别 | 具体指标 | 免费版支持 |
-| --- | --- | --- |
+|----|----|-----|
 | CPU | 使用率/负载/核心数 | 支持 |
 | 内存 | 总量/使用/可用 | 支持 |
 | 磁盘 | 容量/IO/分区 | 支持 |
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ### 告警功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 阈值告警 | CPU/内存超过阈值 | 支持 |
 | 通知方式 | 邮件/控制台 | 支持 |
 | 告警去重 | 避免重复通知 | 基础去重 |
@@ -79,7 +80,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 系统监控入门工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -87,7 +88,7 @@ suggested_price: 29.9
 ```bash
 # 查看系统概览
 python3 （请参考skill目录中的脚本文件） status
-
+# ...
 # 输出：
 # === 系统状态 2026-07-18 10:30:00 ===
 # CPU使用率: 35.2% (8核)
@@ -108,7 +109,7 @@ python3 （请参考skill目录中的脚本文件） alert add \
   --threshold 80 \
   --condition "above" \
   --notify "email"
-
+# ...
 # 启动监控
 python3 （请参考skill目录中的脚本文件） watch
 ```
@@ -120,7 +121,7 @@ python3 （请参考skill目录中的脚本文件） watch
 ```bash
 # TOP进程
 python3 （请参考skill目录中的脚本文件） top --sort cpu --count 10
-
+# ...
 # 输出占用最高的10个进程
 ```
 
@@ -137,7 +138,7 @@ python3 （请参考skill目录中的脚本文件） top --sort cpu --count 10
 ```bash
 # 依赖说明
 pip install psutil
-
+# ...
 # 查看状态
 python3 （请参考skill目录中的脚本文件） status
 ```
@@ -147,23 +148,22 @@ python3 （请参考skill目录中的脚本文件） status
 ```bash
 # 系统状态
 python3 （请参考skill目录中的脚本文件） status
-
+# ...
 # TOP进程
 python3 （请参考skill目录中的脚本文件） top --sort cpu --count 10
 python3 （请参考skill目录中的脚本文件） top --sort memory --count 10
-
+# ...
 # 设置告警
 python3 （请参考skill目录中的脚本文件） alert add --metric cpu_usage --threshold 80 --notify email
-
+# ...
 # 启动监控
 python3 （请参考skill目录中的脚本文件） watch --interval 60
-
+# ...
 # 历史数据
 python3 （请参考skill目录中的脚本文件） history --metric cpu --hours 24
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -174,14 +174,14 @@ monitor_config:
   interval: 60                  # 采集间隔（秒）
   storage: "sqlite"             # 数据存储
   db_path: "./monitor.db"
-
+# ...
   metrics:
     cpu: true
     memory: true
     disk: true
     network: true
     process: true
-
+# ...
   alerts:
     - metric: cpu_usage
       threshold: 80
@@ -195,7 +195,7 @@ monitor_config:
       threshold: 85
       condition: "above"
       notify: "email"
-
+# ...
   notification:
     email:
       smtp_host: "${SMTP_HOST}"
@@ -203,7 +203,7 @@ monitor_config:
       username: "${EMAIL_USER}"
       password: "${EMAIL_PASS}"
       to: "admin@example.com"
-
+# ...
   history:
     retention_days: 30          # 历史数据保留天数
 ```
@@ -216,7 +216,7 @@ monitor_config:
 4. **告警测试**：设置告警后先测试通知是否正常
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:---:|:---:|
 | 阈值设置 | CPU 80%/内存90%/磁盘85%为常见阈值 |
 | 采集频率 | 60秒适合大多数场景 |
 | 数据保留 | 30天历史足够日常分析 |
@@ -251,7 +251,7 @@ monitor_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | psutil | Python库 | 必需 | `pip install psutil` |
@@ -259,7 +259,7 @@ monitor_config:
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-|:-------|:---------|:---------|:-----|
+|---:|:---|---:|---:|
 | SMTP | `SMTP_HOST`等 | 可选 | 告警邮件发送 |
 
 - 未配置SMTP时仅控制台告警
@@ -273,9 +273,8 @@ monitor_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

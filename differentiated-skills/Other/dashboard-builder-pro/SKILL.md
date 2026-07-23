@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # 仪表盘构建工具（专业版）
 
@@ -34,7 +36,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力域 | 说明 | 专业版独有 |
-|--------|------|-----------|
+|---|---|-----|
 | 基础看板生成 | 单源 HTML 看板 | 否（免费版可用） |
 | 多源聚合 | API+数据库+文件混合展示 | 是 |
 | 高级图表 | 折线/柱状/饼图/热力图/桑基图 | 是 |
@@ -127,7 +129,7 @@ uv run dashboard_alert.py --dashboard ops --rule '{
 ```bash
 # 保存模板
 uv run dashboard_template.py --save ops-template --from ~/dashboard/ops/
-
+# ...
 # 应用模板
 uv run dashboard_template.py --apply ops-template --to ~/dashboard/new-product/ \
   --data-source '{"stripe": "sk_new", "db": "new_db_dsn"}'
@@ -240,7 +242,7 @@ jq -R -s '...' ~/dashboard/ops/users.csv > ~/dashboard/ops/users.json
 ```bash
 # 设置基线截图
 uv run dashboard_qa.py --dashboard ops --set-baseline
-
+# ...
 # 运行自动 QA（含自动修复）
 uv run dashboard_qa.py --dashboard ops --auto-fix --threshold 4.5
 ```
@@ -338,7 +340,7 @@ uv run dashboard_export.py --dashboard ops --format xlsx --range 30d
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本兼容性 |
-|:-------|:-----|:---------|:---------|:-----------|
+|:-----|:-----|:-----|:-----|:-----|
 | curl | 命令行工具 | 必需 | 系统自带 | 不限 |
 | jq | JSON 处理 | 必需 | `apt install jq` | 1.6+ |
 | Python | 脚本运行 | 必需 | 系统自带 | 3.11+ |
@@ -375,7 +377,7 @@ uv run dashboard_export.py --dashboard ops --format xlsx --range 30d
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|---:|---:|---:|
 | 免费体验版 | 0 元 | 单源看板 + 基础图表 + 手动 QA | 个人试用 |
 | 收费专业版 | 49.9 元/月 | 全功能 + 多源聚合 + 告警 + 优先支持 | 团队/企业 |
 
@@ -383,9 +385,8 @@ uv run dashboard_export.py --dashboard ops --format xlsx --range 30d
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

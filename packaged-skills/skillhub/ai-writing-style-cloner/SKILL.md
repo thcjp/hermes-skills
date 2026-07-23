@@ -13,9 +13,10 @@ tools:
   - read
   - exec
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
 ---
 # AI写作分身工厂
 
@@ -24,7 +25,7 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 大数据集流式处理 | 不支持 | 支持 |
 | 多数据源关联查询 | 不支持 | 支持 |
@@ -42,7 +43,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | 风格蒸馏 | 作者5-10篇历史文章文本 | 6维结构化风格指纹JSON+推荐公式 | 适用 |
 | 风格保存 | 作者确认后的风格指纹JSON | 持久化保存到style_fingerprints/{author_id}.json | 适用 |
 | 风格预览 | author_id | 已保存的风格指纹+raw_analysis+updated_at | 适用 |
@@ -83,7 +84,7 @@ pricing_model: "per_use"
 ## 6维风格分析维度
 
 | 维度 | 字段名 | 类型 | 说明 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | 词汇丰富度 | vocabulary_score | FLOAT(0-1) | 常用词频率/专业术语密度/口语化程度综合评分 |
 | 句式结构 | sentence_structure | TEXT | 平均句长/短句比例/问句使用,结构化描述 |
 | 语调倾向 | tone_tendency | TEXT | 正式/随意/权威/亲和/幽默/严肃,分类标签 |
@@ -96,7 +97,7 @@ pricing_model: "per_use"
 风格指纹蒸馏完成后,结合以下14种写作公式生成风格一致的内容:
 
 | 编号 | 公式名称 | 结构 | 适用场景 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | 1 | SCQA框架 | 情境-冲突-问题-答案 | 深度分析文章 |
 | 2 | AIDA模型 | 注意-兴趣-欲望-行动 | 营销转化文案 |
 | 3 | PREP结构 | 观点-理由-案例-观点 | 观点表达文章 |
@@ -166,9 +167,8 @@ pricing_model: "per_use"
 
 ## 异常处理
 
-
 | 异常场景 | 原因 | 处理方式 | 错误代码 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | 内容样本为空 | distill/preview未提供content参数 | 返回错误+提示需提供content参数 | MISSING_CONTENT |
 | 风格指纹为空 | save未提供fingerprint参数 | 返回错误+提示需提供fingerprint参数 | MISSING_FINGERPRINT |
 | LLM调用失败 | LLM API Key无效或服务不可用 | 返回错误+LLM错误详情,建议或检查API Key | LLM_FAILED |
@@ -181,7 +181,7 @@ pricing_model: "per_use"
 ## 数据存储
 
 | 存储位置 | 说明 |
-| --- | --: |
+|---:|:---|
 | style_fingerprints/{author_id}.json | 6维风格指纹持久化,每作者一个JSON文件,覆盖更新 |
 | raw_analysis字段 | 完整风格指纹JSON,含style_summary等扩展字段 |
 | 内容生成时自动读取 | 注入Prompt半静态层,确保风格一致 |
@@ -209,9 +209,9 @@ pricing_model: "per_use"
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
-| --: | :-- | :-: | --- | --: |
+|:------:|--------|:-------|:------:|--------|
 | LLM API | API | 必需 | 任意LLM服务商,由Agent内置LLM提供 | DeepSeek/通义千问/文心一言/Kimi等国内模型(原描述提及OpenAI/Claude,国内推荐使用DeepSeek/通义千问替代) |
 | JSON文件存储 | 文件系统 | 必需 | Agent的exec工具自动创建style_fingerprints/目录 | 本地文件系统,无海外依赖 |
 
@@ -220,7 +220,7 @@ pricing_model: "per_use"
 - 配置方式: 在Agent的环境变量中设置
 - **零暴露原则**: API Key必须通过环境变量注入(如`$env:LLM_API_KEY`),严禁硬编码在SKILL.md或脚本源码中;所有示例代码中Key位置使用环境变量占位符;禁止在日志、错误信息、输出JSON中打印Key明文
 
-### 使用流程
+### 使用流程(补充)
 本Skill通过Agent内置LLM完成风格分析,通过exec工具读写JSON文件持久化风格指纹。
 
 只需将SKILL.md文件放入Agent的skills目录即可直接使用。
@@ -533,9 +533,8 @@ A: author_id需符合安全校验,禁止包含特殊字符(如`../`、`<>`、`&`
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| :-- | :-: | --- |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -552,5 +551,5 @@ A: author_id需符合安全校验,禁止包含特殊字符(如`../`、`<>`、`&`
 ## 变更历史
 
 | 版本 | 日期 | 变更说明 |
-| :-: | --- | --: |
+|----|----|----|
 | v1.0.0 | 2026-07-17 | 初版创建,支持distill/preview/save三种操作,6维风格分析+14种写作公式,JSON文件持久化 |

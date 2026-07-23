@@ -18,8 +18,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 精英长记忆（LongMemo Elite）
 
 解决 AI Agent 三大记忆顽疾：**跨会话遗忘、检索不准、成本失控**。本系统将六种成熟记忆策略整合为一套防弹架构，配合 WAL 写前日志协议，确保永不丢失上下文、永不遗忘决策、永不重复犯错。
@@ -35,7 +36,7 @@ suggested_price: 99.9
 ### 六层存储架构速查
 
 | 层级 | 存储 | 用途 | 持久化 | 加载时机 |
-|:---|:---|:---|:---|:---|
+|---|---|---|---|----|
 | L1 热内存 | SESSION-STATE.md | 当前任务、关键上下文、待办 | 抗压缩/重启 | 会话开始立即加载 |
 | L2 温向量 | LanceDB | 语义相似召回 | 本地向量库 | 按需检索 |
 | L3 冷图谱 | Git-Notes | 结构化决策、分支关联 | Git 永久 | 决策/查询时 |
@@ -144,7 +145,7 @@ suggested_price: 99.9
 
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入：**
 - 会话 A（周一）：用户说"数据库用 MySQL，开发环境用 SQLite"
@@ -173,7 +174,7 @@ suggested_price: 99.9
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:-----|:-----|:-----|
 | 全部遗忘（新会话无历史） | memory_search 未启用或 embedding provider 未配置 | 启用 memory_search，配置 embedding provider（OPENAI_API_KEY） |
 | 记忆文件未加载 | 代理跳过读取记忆步骤 | 在 AGENTS.md 中写入强制规则：会话开始必须读取 SESSION-STATE.md |
 | 事实未自动捕获 | 未启用 Mem0 自动抽取 | 启用 Mem0 或改为手动 memory_store 记录 |
@@ -188,7 +189,7 @@ suggested_price: 99.9
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|---:|---:|---:|---:|
 | Agent 平台（Claude Code/Cursor/Codex 等） | 运行环境 | 必需 | 安装对应 Agent |
 | Python 3.8+ | 运行时 | 推荐 | python.org 安装（Git-Notes 脚本） |
 | Node.js 16+ | 运行时 | 推荐 | nodejs.org 安装（LanceDB 向量库） |

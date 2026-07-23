@@ -39,8 +39,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
-
 # 代码执行工具专业版
 ## 概述
 代码执行工具专业版为企业团队提供高级 PTY 代码执行能力。在免费版单任务执行基础上,扩展了批量并发、执行审计、CI/CD 集成、多用户隔离等功能,满足企业级自动化开发的需求。
@@ -51,14 +52,14 @@ suggested_price: 99.9
 ### 1. 批量任务执行
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 代码执行工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```python
 from code_runner import run_batch_tasks
-
+# ...
 tasks = [
     {
         "workdir": "/path/to/auth-service",
@@ -76,7 +77,7 @@ tasks = [
         "priority": "medium"
     }
 ]
-
+# ...
 results = run_batch_tasks(tasks, max_concurrent=3)
 ```
 
@@ -103,7 +104,7 @@ pipeline = [
     {"id": "api", "prompt": "添加 API 端点", "depends_on": ["logic"]},
     {"id": "test", "prompt": "运行集成测试", "depends_on": ["api"]}
 ]
-
+# ...
 results = run_pipeline(pipeline, max_concurrent=2)
 ```
 
@@ -127,7 +128,7 @@ audit_config = {
 审计记录包含:
 
 | 记录项 | 说明 |
-|:-------|:-----|
+|---:|---:|
 | 任务 ID | 唯一标识 |
 | 执行时间 | 开始/结束时间 |
 | 执行用户 | 以哪个用户运行 |
@@ -195,7 +196,7 @@ custom_responses = {
 
 ```python
 from code_runner import run_batch_tasks
-
+# ...
 # 批量处理微服务
 services = ["auth", "order", "payment", "notification", "user"]
 tasks = [
@@ -207,9 +208,9 @@ tasks = [
     }
     for svc in services
 ]
-
+# ...
 results = run_batch_tasks(tasks, max_concurrent=3)
-
+# ...
 # 生成汇总报告
 for task_id, result in results.items():
     status = "成功" if result.success else "失败"
@@ -225,14 +226,14 @@ for task_id, result in results.items():
 成功: 4
 失败: 1
 总耗时: 812 秒
-
+# ...
 详情:
 auth-service:        成功 (耗时 156秒)
 order-service:       成功 (耗时 198秒)
 payment-service:     成功 (耗时 175秒)
 notification-service:成功 (耗时 142秒)
 user-service:        失败 (超时,建议增加超时或拆分任务)
-
+# ...
 审计日志: .code-runner/logs/batch-20260718-143000.log
 ```
 
@@ -249,14 +250,14 @@ python3 -m code_runner \
   --user ci-runner \
   --timeout 600 \
   --audit
-
+# ...
 # 2. 运行测试
 python3 -m code_runner \
   --workdir $CI_PROJECT_DIR \
   --prompt "运行全量测试,报告通过率和失败详情" \
   --user ci-runner \
   --timeout 300
-
+# ...
 # 3. 代码审查
 python3 -m code_runner \
   --workdir $CI_PROJECT_DIR \
@@ -275,7 +276,7 @@ projects = [
     {"name": "backend", "workdir": "/projects/backend-api"},
     {"name": "mobile", "workdir": "/projects/mobile-app"}
 ]
-
+# ...
 tasks = [
     {
         "workdir": p["workdir"],
@@ -284,9 +285,9 @@ tasks = [
     }
     for p in projects
 ]
-
+# ...
 results = run_batch_tasks(tasks, max_concurrent=3)
-
+# ...
 # 按项目汇总
 for p in projects:
     result = results.get(p["name"])
@@ -299,10 +300,10 @@ for p in projects:
 ```bash
 # 安装依赖
 pip install code-runner-pro
-
+# ...
 # 初始化配置
 mkdir -p .code-runner/{logs,reports,configs}
-
+# ...
 cat > .code-runner/config.json << 'EOF'
 {
   "edition": "pro",
@@ -326,13 +327,13 @@ EOF
 ### 第二步: 执行批量任务
 ```python
 from code_runner import run_batch_tasks
-
+# ...
 tasks = [
     {"workdir": "/projects/app1", "prompt": "添加健康检查端点"},
     {"workdir": "/projects/app2", "prompt": "添加健康检查端点"},
     {"workdir": "/projects/app3", "prompt": "添加健康检查端点"}
 ]
-
+# ...
 results = run_batch_tasks(tasks, max_concurrent=3)
 ```
 
@@ -402,7 +403,7 @@ code_runner:
 ## 最佳实践
 ### 1. 任务拆分与编排
 | 原则 | 说明 |
-|:-----|:-----|
+|:---:|:---:|
 | 单一职责 | 每个任务只做一件事 |
 | 合理大小 | 单任务 5-10 分钟 |
 | 消除依赖 | 尽量并行执行 |
@@ -410,14 +411,14 @@ code_runner:
 
 ### 2. 并发度配置
 | 场景 | 建议并发度 | 说明 |
-|:-----|:-----------|:-----|
+|:------|------:|:------|
 | 开发环境 | 2-3 | 避免资源争抢 |
 | CI/CD | 3-5 | 平衡速度与稳定 |
 | 专用服务器 | 5-10 | 充分利用资源 |
 
 ### 3. 免费版与专业版能力对比
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---:|:---|---:|
 | 执行方式 | 单任务 | 批量并发 |
 | 任务编排 | 不支持 | 支持(依赖+优先级) |
 | 执行审计 | 不支持 | 支持(90天) |
@@ -493,7 +494,7 @@ variables:
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | Python 3.8+ | 运行时 | 必需 | python.org |
 | 代码 CLI | CLI 工具 | 必需 | `npm install -g @anthropic-ai/claude-code` |
 | LLM API | API | 必需 | 由代码 CLI 内置 LLM 提供 |
@@ -504,7 +505,7 @@ variables:
 ```bash
 # 代码 CLI 认证
 export ANTHROPIC_API_KEY="your-api-key"
-
+# ...
 # 工具配置
 export CODE_RUNNER_USER="code-runner"
 export CODE_RUNNER_TIMEOUT="600"
@@ -519,7 +520,7 @@ export CODE_RUNNER_AUDIT="true"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

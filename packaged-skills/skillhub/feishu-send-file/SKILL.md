@@ -18,9 +18,11 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # feishu-send-file
 
@@ -28,11 +30,10 @@ pricing_model: "per_use"
 
 本技能封装两条链路的稳定调用方式,并提供针对"本地图片路径被发成路径文本"故障的可靠补救脚本。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 飞书发文件处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,12 +41,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 多域名适配:中国版飞书 `open.feishu.cn` 与国际版 Lark `open.larksuite.com` 通过 domain 参数切换 | 支持 | 支持 |
-| 接收者类型切换:`receive_id_type=open_id` 对应个人用户,`receive_id_type=chat_id` 对应群聊 | 不支持 | 支持 |
-| 文件类型统一处理:普通文件一律使用 `file_type=stream`,兼容 HTML、ZIP、PDF、代码文件、CSV 等所有非媒体类型 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| 飞书发文件飞书发送 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -55,7 +57,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -127,7 +129,7 @@ TOKEN=$(curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_
   -H "Content-Type: application/json" \
   -d '{"app_id":"<APP_ID>","app_secret":"<APP_SECRET>"}' \
   | python3 -c "import json,sys; print(json.load(sys.stdin)['tenant_access_token'])")
-
+# ...
 FILE_KEY=$(curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/files" \
   -H "Authorization: Bearer $TOKEN" \
   -F "file_type=stream" \
@@ -342,9 +344,8 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

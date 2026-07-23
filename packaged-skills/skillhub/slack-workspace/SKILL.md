@@ -25,16 +25,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
 ---
 # Slack工作区管家（Slack Workspace）
 
 通过ClawLink OAuth托管连接管理Slack工作区，覆盖消息、频道、文件、用户、提醒、画布等60+ API工具。内置读写分级安全策略，写操作需用户确认后执行。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Slack工作区管家处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,13 +43,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Slack工作区管家ack全量工作区管理 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -59,7 +60,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | ClawLink 插件 | 集成插件 | 必需 | Agent 平台插件市场安装 `clawlink-plugin` |
 | Slack OAuth 连接 | OAuth 授权 | 必需 | 通过 ClawLink Dashboard 连接 Slack 工作区 |
 | curl 或等价 HTTP 客户端 | 命令行工具 | 必需 | 系统自带或包管理器安装 |
@@ -159,20 +160,20 @@ clawlink_call_tool --tool "工具名" --params '{JSON参数}'
 ```bash
 # 确认Slack已连接
 clawlink_list_integrations
-
+# ...
 # 查看Slack可用工具目录（以返回列表为准）
 clawlink_list_tools --integration slack
-
+# ...
 # 搜索工具
 clawlink_search_tools --query "send message" --integration slack
-
+# ...
 # 查看工具参数说明
 clawlink_describe_tool --tool "slack_send_message"
 ```
 
 ### 读写分级安全策略
 | 操作类型 | 执行方式 | 示例工具 |
-|:---------|:---------|:---------|
+|:---:|:---:|:---:|
 | 读操作（list/get/search/find） | 直接执行 | `slack_list_all_channels`、`slack_fetch_conversation_history` |
 | 写操作（send/create/update/delete） | 需用户确认后执行 | `slack_send_message`、`slack_create_channel`、`slack_delete_file` |
 | 破坏性操作（delete/archive） | 高风险确认 | `slack_delete_file`、`slack_archive_conversation`、`slack_deletes_a_message_from_a_chat` |
@@ -182,7 +183,7 @@ clawlink_describe_tool --tool "slack_send_message"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+|:------|------:|:------|:------|
 | 项目频道搭建 | 创建#project-alpha频道，邀请5名成员，设置话题 | 频道创建确认+成员邀请结果 | 频道治理+用户查询 |
 | 事件响应协作 | 向#incidents发送告警，线程跟进状态，置顶解决结论 | 告警消息+线程回复+置顶确认 | 消息管理+置顶 |
 | 文件分发 | 将Q1报告上传到#reports频道 | 文件上传确认+分享链接 | 文件操作 |
@@ -215,7 +216,7 @@ clawlink_call_tool --tool "slack_find_channels" --params '{"name":"general"}'
 ```bash
 # 预览写操作效果
 clawlink_preview_tool --tool "slack_send_message" --params '{"channel":"C0123456789","text":"Hello"}'
-
+# ...
 # 用户确认后执行
 clawlink_call_tool --tool "slack_send_message" --params '{"channel":"C0123456789","text":"Hello"}'
 ```
@@ -234,10 +235,10 @@ clawlink_call_tool --tool "slack_send_message" --params '{"channel":"C0123456789
 ```bash
 # 创建公开频道
 clawlink_call_tool --tool "slack_create_channel" --params '{"name":"project-alpha","is_private":false}'
-
+# ...
 # 设置频道话题
 clawlink_call_tool --tool "slack_set_channel_topic" --params '{"channel":"C0NEW12345","topic":"Project Alpha - 新支付系统"}'
-
+# ...
 # 按邮箱查找用户并邀请
 clawlink_call_tool --tool "slack_find_user_by_email_address" --params '{"email":"alice@company.com"}'
 clawlink_call_tool --tool "slack_invite_users_to_a_slack_channel" --params '{"channel":"C0NEW12345","users":"U0ALICE01,U0BOB002,U0CAROL03"}'
@@ -247,10 +248,10 @@ clawlink_call_tool --tool "slack_invite_users_to_a_slack_channel" --params '{"ch
 ```json
 // create_channel
 {"ok": true, "channel": {"id": "C0NEW12345", "name": "project-alpha", "is_channel": true}}
-
+# ...
 // set_channel_topic
 {"ok": true, "channel": {"id": "C0NEW12345", "topic": {"value": "Project Alpha - 新支付系统"}}}
-
+# ...
 // invite_users
 {"ok": true, "channel": {"id": "C0NEW12345", "members": ["U0ALICE01","U0BOB002","U0CAROL03"]}}
 ```
@@ -267,14 +268,14 @@ clawlink_call_tool --tool "slack_send_message" --params '{
   "channel": "C0INCIDENT1",
   "text": ":rotating_light: *P1告警* 支付服务5xx错误率上升至12%\n影响范围: us-east-1\n开始时间: 14:32 UTC"
 }'
-
+# ...
 # 线程回复处理进展
 clawlink_call_tool --tool "slack_send_thread_reply" --params '{
   "channel": "C0INCIDENT1",
   "thread_ts": "1721452800.123456",
   "text": "已定位根因：数据库连接池耗尽。正在扩容连接池，预计5分钟恢复。"
 }'
-
+# ...
 # 置顶解决结论
 clawlink_call_tool --tool "slack_pin_item" --params '{
   "channel": "C0INCIDENT1",
@@ -286,10 +287,10 @@ clawlink_call_tool --tool "slack_pin_item" --params '{
 ```json
 // send_message
 {"ok": true, "channel": "C0INCIDENT1", "ts": "1721452800.123456"}
-
+# ...
 // send_thread_reply
 {"ok": true, "channel": "C0INCIDENT1", "ts": "1721453000.456789", "message": {"thread_ts": "1721452800.123456"}}
-
+# ...
 // pin_item
 {"ok": true, "channel": "C0INCIDENT1", "pinned": true}
 ```
@@ -331,7 +332,7 @@ clawlink_call_tool --tool "slack_upload_file_to_channel" --params '{
 ## 错误处理
 
 | 错误码 | 错误信息 | 原因分析 | 处理方式 |
-|:-------|:---------|:---------|:---------|
+|---:|:---|---:|---:|
 | `channel_not_found` | 频道ID不存在或Bot不是成员 | 频道ID拼写错误或频道已删除 | 用 `slack_find_channels` 重新解析频道名到ID |
 | `user_not_found` | 用户邮箱或ID不匹配任何成员 | 邮箱拼写错误或用户已离开工作区 | 用 `slack_find_users` 模糊搜索确认用户是否存在 |
 | `not_authed` | OAuth Token无效或已撤销 | 用户在Dashboard断开了Slack连接 | 引导用户重新连接 Slack |

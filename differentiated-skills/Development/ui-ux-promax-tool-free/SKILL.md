@@ -42,8 +42,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # UI/UX 设计助手(免费版)
 
 ## 概述
@@ -55,7 +56,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 分诊提问 | 快速确认目标平台、技术栈、设计目标与现有素材 |
 | UI 概念与布局 | 视觉方向、网格、关键屏幕布局建议 |
 | 配色系统 | 主色、辅色、语义色生成与对比度检查 |
@@ -114,13 +115,13 @@ suggested_price: 29.9
   --color-primary-500: #0066ff;
   --color-primary-700: #0052cc;
   --color-primary-900: #003d99;
-
+// ...
   /* 语义色 */
   --color-success: #00875a;
   --color-warning: #ffab00;
   --color-danger: #cc0000;
   --color-info: #0066ff;
-
+// ...
   /* 中性色 */
   --color-bg: #ffffff;
   --color-surface: #f5f5f5;
@@ -145,11 +146,11 @@ suggested_price: 29.9
   --font-size-xl: 1.25rem;    /* 20px - 标题 */
   --font-size-2xl: 1.5rem;    /* 24px - 大标题 */
   --font-size-3xl: 2rem;      /* 32px - 页面标题 */
-
+// ...
   --line-height-tight: 1.25;
   --line-height-base: 1.5;
   --line-height-relaxed: 1.75;
-
+// ...
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
@@ -190,7 +191,7 @@ suggested_price: 29.9
 ```bash
 # 将令牌保存为 CSS 文件
 cp tokens.css src/styles/tokens.css
-
+# ...
 # 在 Tailwind 配置中引用
 # tailwind.config.js
 ```
@@ -263,7 +264,7 @@ cp tokens.css src/styles/tokens.css
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | 浏览器 | 系统工具 | 必需 | 系统预装 |
 | 文本编辑器 | 系统工具 | 必需 | 系统预装 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -280,9 +281,8 @@ cp tokens.css src/styles/tokens.css
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -16,19 +16,20 @@ homepage: "https://skillhub.cn"
 tags:
   - 通用办公
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # CSS避坑指南
 
 用户需要CSS专业能力时提供支持,从布局挑战到生产级优化。覆盖堆叠上下文、flexbox/grid模式、响应式设计、性能与可访问性。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | CSS避坑指南处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -36,13 +37,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -52,7 +53,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -60,7 +61,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -179,7 +179,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:---:|:---:|:---:|
 | z-index失效 | DOM结构与CSS | 堆叠上下文诊断与修复方案 |
 | flex布局异常 | flex容器与子元素CSS | min-width/basis/gap修复 |
 | 响应式适配 | 设计稿与断点 | 移动优先+容器查询方案 |
@@ -235,7 +235,7 @@ h1 { font-size: clamp(1rem, 2.5vw, 2rem); }
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `z-index` 不生效 | 元素未定位或非flex/grid子元素 | 添加 `position: relative` 或改用 `isolation: isolate` |
 | flex子元素文本无法截断 | 默认 `min-width: min-content` | 设置 `min-width: 0` 后再加 `overflow: hidden` |
 | `1fr 1fr` 不是50%宽度 | fr是剩余空间等分,非总宽度 | 改用 `50% 50%` 或 `minmax(min-content, 1fr)` |

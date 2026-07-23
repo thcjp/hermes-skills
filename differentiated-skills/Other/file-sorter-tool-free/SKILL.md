@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 视觉文件整理工具（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-|:-----|:-----|
+|---|---|
 | 文件遍历 | 自动遍历目标文件夹，过滤系统隐藏文件与临时文件 |
 | 视觉识别 | 打开文件并截屏识别内容，提取关键元数据 |
 | 智能重命名 | 按规则生成新文件名（财务/工作/图片/未分类） |
@@ -92,7 +93,7 @@ suggested_price: 29.9
 ```bash
 # 整理下载文件夹
 file-sorter organize --target ~/Downloads
-
+# ...
 # 示例
 # 📂 扫描: ~/Downloads
 # 📊 发现 28 个待处理文件
@@ -113,7 +114,7 @@ file-sorter organize --target ~/Downloads
 ```bash
 # 整理桌面
 file-sorter organize --target ~/Desktop --destination ~/Documents/Sorted/
-
+# ...
 # 重命名规则示例：
 # 发票.pdf → [2026-07]_发票_某某科技.pdf
 # 合同.docx → [2026-07-15]_租房合同.docx
@@ -127,7 +128,7 @@ file-sorter organize --target ~/Desktop --destination ~/Documents/Sorted/
 ```bash
 # 仅整理财务类文件
 file-sorter organize --target ~/Downloads --filter "financial" --destination ~/Documents/Sorted/财务账单/
-
+# ...
 # 输出
 # 📊 财务文件整理报告
 # 已识别: 12 张发票/收据
@@ -158,13 +159,13 @@ file-sorter organize --target ~/Downloads --filter "financial" --destination ~/D
 ```bash
 # 1. 整理下载文件夹（默认目标）
 file-sorter organize
-
+# ...
 # 2. 指定目标与归档目录
 file-sorter organize --target ~/Downloads --destination ~/Documents/Sorted/
-
+# ...
 # 3. 仅整理特定类型
 file-sorter organize --target ~/Desktop --filter "financial"
-
+# ...
 # 4. 预览模式（不实际移动）
 file-sorter organize --target ~/Downloads --dry-run
 ```
@@ -180,7 +181,7 @@ file-sorter organize --target ~/Downloads --dry-run
 # 工作/正式文档: [YYYY-MM-DD]_[文档核心主题].[扩展名]
 # 图片/多媒体素材: [画面内容描述].[扩展名]
 # 错误处理
-
+# ...
 # 归档目录结构
 ~/Documents/Sorted/
 ├── 财务账单/
@@ -206,9 +207,8 @@ file-sorter organize --target ~/Downloads --dry-run
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:-----|:-----|:-----|:-----|:-----|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -239,7 +239,7 @@ A：支持图片、PDF、Office 文档等可通过视觉识别的文件。加密
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | 视觉模型 | 模型 | 必需 | Agent 内置或多模态模型 |
 | 文件预览 | 工具 | 可选 | 系统自带（open/start） |

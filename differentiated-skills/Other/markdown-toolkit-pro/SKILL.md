@@ -40,6 +40,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Markdown,文档,工具"
 ---
 # Markdown 工具箱（专业版）
 
@@ -50,7 +52,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 多文件站点 | 目录结构与 TOC 生成 | 站点级 |
 | 文档 lint | 规则集与豁免治理 | CI 集成 |
 | 链接校验 | 死链检测与锚点校验 | 全站扫描 |
@@ -123,7 +125,7 @@ markdownlint docs/**/*.md --config .markdownlint.json
 ```bash
 # 死链检测
 {baseDir}/（请参考skill目录中的脚本文件） check-links docs/
-
+# ...
 # 多格式导出
 {baseDir}/（请参考skill目录中的脚本文件） export --to pdf --src docs/ --out build/
 ```
@@ -173,7 +175,7 @@ markdownlint docs/**/*.md --config .markdownlint.json
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 规则 | 相同 | 相同（纳入规则集） |
 | 范围 | 单文件 | 多文件站点 |
 | 校验 | 基础 | lint + 死链 |
@@ -240,10 +242,10 @@ toc:
 ```bash
 # 内部链接检测
 {baseDir}/（请参考skill目录中的脚本文件） check-links docs/ --internal
-
+# ...
 # 锚点检测
 {baseDir}/（请参考skill目录中的脚本文件） check-links docs/ --anchors
-
+# ...
 # 输出报告
 {baseDir}/（请参考skill目录中的脚本文件） check-links docs/ --report broken.json
 ```
@@ -262,10 +264,10 @@ toc:
 pandoc docs/*.md -o build/manual.pdf \
   --pdf-engine=xelatex \
   -V CJKmainfont="Noto Sans CJK SC"
-
+# ...
 # 导出 HTML 站点
 {baseDir}/（请参考skill目录中的脚本文件） export --to html --src docs/ --out build/
-
+# ...
 # 导出 DocBook
 pandoc docs/*.md -o build/manual.xml -t docbook
 ```
@@ -273,7 +275,7 @@ pandoc docs/*.md -o build/manual.xml -t docbook
 ## 文档规范 lint 规则
 
 | 规则 | 说明 | 严重级 |
-|:-----|:-----|:-------|
+|---:|---:|---:|
 | MD041 | 首行应为 H1 | block |
 | MD024 | 标题不重复 | warn |
 | MD012 | 去除多余空行 | warn |
@@ -297,7 +299,7 @@ pandoc docs/*.md -o build/manual.xml -t docbook
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | markdownlint-cli | lint 工具 | 必需 | `npm install -g markdownlint-cli` |
 | pandoc | 格式转换 | 导出时必需 | pandoc.org |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -311,9 +313,8 @@ pandoc docs/*.md -o build/manual.xml -t docbook
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

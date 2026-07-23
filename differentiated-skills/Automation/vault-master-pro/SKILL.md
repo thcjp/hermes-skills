@@ -20,6 +20,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 知识库大师
 
@@ -30,7 +32,7 @@ pricing_model: "per_use"
 Obsidian vault = 普通磁盘文件夹。典型结构：
 
 | 路径 | 内容 | 是否脚本可改 |
-|:-----|:-----|:-------------|
+|---|---|------|
 | `*.md` | Markdown 笔记 | 是 |
 | `.obsidian/` | 工作区 + 插件配置 | 通常不动 |
 | `*.canvas` | 画板（JSON） | 谨慎改 |
@@ -51,7 +53,7 @@ Obsidian 桌面端在以下位置记录所有 vault（真相源）：
 ```bash
 # 已设默认库
 obsidian-cli print-default --path-only
-
+# ...
 # 未设默认 → 读 obsidian.json，取 "open": true 的条目
 # 多库常见：iCloud vs ~/Documents、工作 vs 个人
 ```
@@ -76,20 +78,20 @@ obsidian-cli print-default            # 确认当前默认
 ```bash
 # 1. 发现库
 obsidian-cli print-default --path-only
-
+# ...
 # 2. 切到目标库（如需要）
 obsidian-cli set-default "my-knowledge"
-
+# ...
 # 3. 搜索
 obsidian-cli search "项目管理"
 obsidian-cli search-content "OKR"
-
+# ...
 # 4. 创建
 obsidian-cli create "Projects/新项目" --content "# 新项目" --open
-
+# ...
 # 5. 安全移动（自动更新双链）
 obsidian-cli move "old/path/note" "new/path/note"
-
+# ...
 # 6. 删除
 obsidian-cli delete "path/note"
 ```
@@ -118,7 +120,7 @@ for note in Notes/*.md; do
   name=$(basename "$note" .md)
   obsidian-cli move "Notes/$name" "Inbox/$name"
 done
-
+# ...
 # 批量改名：旧名 → 新名（从 CSV）
 # rename.csv: old_name,new_name
 tail -n +2 rename.csv | while IFS=, read -r old new; do
@@ -230,9 +232,8 @@ obsidian-cli create "Folder/New note" --content "..." --open
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|---:|---:|---:|---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -257,7 +258,7 @@ A: `move`/`delete`/`search` 直接操作磁盘，不需要 Obsidian 运行。`cr
 ## 故障排查
 
 | 现象 | 排查路径 |
-|:-----|:---------|
+|:---:|:---:|
 | `print-default` 返回空 | 未设默认 → 读 obsidian.json 找 `"open": true` 的条目 |
 | `create --open` 无反应 | Obsidian 未运行 → 启动 → 检查 URI handler 关联 |
 | `move` 后链接未更新 | 检查链接是否为非标准格式 → 手动修复 → 反馈 CLI |
@@ -274,7 +275,7 @@ A: `move`/`delete`/`search` 直接操作磁盘，不需要 Obsidian 运行。`cr
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | `obsidian-cli` | 命令行工具 | 必需 | npm / 官方仓库 |
 | Obsidian 桌面版 | 软件 | 推荐（URI handler） | obsidian.md 下载 |
 | `jq` | JSON 处理 | 可选 | 系统包管理器 |

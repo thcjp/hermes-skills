@@ -20,16 +20,17 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
 ---
 # 长期记忆系统
 
 融合六种成熟方法的AI代理记忆架构,从会话状态到云端备份,通过WAL协议保证持久性,永不丢失上下文、决策与教训。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 长期记忆系统处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 长期记忆系统WAL协议与向量检索 | 不支持 | 支持 |
+| 多租户管理与权限分配 | 不支持 | 支持 |
+| 操作审计与合规日志 | 不支持 | 支持 |
+| 自定义仪表盘与报表 | 不支持 | 支持 |
+| API开放与第三方集成 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -61,7 +62,6 @@ pricing_model: "monthly"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -144,7 +144,7 @@ export API_KEY="your_api_key_here"
 
 ### 9. 故障模式诊断
 | 失败模式 | 原因 | 修复 |
-|---------|------|------|
+|:---:|:---:|:---:|
 | 忘记一切 | `memory_search` 禁用 | 启用并添加 API key |
 | 文件未加载 | 代理跳过读取记忆 | 加入 AGENTS.md 规则 |
 | 事实未捕获 | 无自动提取 | 使用事实提取工具或手动记录 |
@@ -169,7 +169,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:------|------:|:------|
 | 会话开始 | 无 | 读取 SESSION-STATE.md + 召回相关记忆 + 检查当日日志 |
 | 对话中捕获 | 用户陈述偏好/决策 | 写入 SESSION-STATE.md → 存入知识图谱 → 存入向量库 → 再响应 |
 | 会话结束 | 无 | 更新 SESSION-STATE.md + 迁移重要项到 MEMORY.md + 创建当日日志 |
@@ -194,7 +194,7 @@ export API_KEY="your_api_key_here"
 ### 示例1:WAL协议执行
 ```
 用户: "这个项目用 Tailwind,不用原生 CSS"
-
+# ...
 代理(内部):
 1. 写入 SESSION-STATE.md: "Decision: Use Tailwind, not vanilla CSS"
 2. 存入知识图谱: 关于CSS框架的决策
@@ -232,16 +232,16 @@ export API_KEY="your_api_key_here"
 ```markdown
 ## Current Task
 重构用户认证模块
-
+# ...
 ## Key Context
 - User preference: 优先函数式风格
 - Decision made: 用 JWT 不用 session
 - Blocker: 等待设计团队确认登录页
-
+# ...
 ## Pending Actions
 - [ ] 完成token刷新逻辑
 - [ ] 编写认证中间件测试
-
+# ...
 ## Recent Decisions
 2026-07-21: 采用 JWT 无状态认证
 ```
@@ -249,7 +249,7 @@ export API_KEY="your_api_key_here"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 代理对话中频繁遗忘 | `SESSION-STATE.md` 未更新 | 检查WAL协议执行,确认在响应前写入 |
 | 注入无关记忆 | autoCapture 开启或 minImportance 过低 | 关闭 autoCapture,提高 `minImportance` 阈值至 0.7+ |
 | 记忆过大召回缓慢 | 向量库累积垃圾 | 运行卫生流程:`memory_recall query="*" limit=50` 清除旧向量 |

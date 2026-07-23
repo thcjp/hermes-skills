@@ -23,19 +23,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
 # 视频帧提取-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 视频帧提取-专业版支持批量处理 | 不支持 | 支持 |
+| 视频帧提取-专业版区间抓取 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -201,7 +203,7 @@ segments:
 ```bash
 # 检查 ffmpeg 版本（需 4.0+）
 ffmpeg -version
-
+# ...
 # 检查 Python 版本（需 3.8+）
 python3 --version
 ```
@@ -247,7 +249,7 @@ python3 --version
   --watermark /assets/logo.png \
   --wm-position bottom-right \
   --wm-opacity 0.7
-
+# ...
 # 文字水印
 {baseDir}/（请参考skill目录中的脚本文件） /videos/promo.mp4 \
   --time 00:00:10 \
@@ -261,7 +263,7 @@ python3 --version
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | video-frames处理的内容输入 |,  |
 | content | string | 否 | video-frames处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -289,9 +291,8 @@ python3 --version
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -306,10 +307,10 @@ python3 --version
 - **Shell**：Bash 或兼容 Shell
 - **磁盘空间**：建议预留输出目录 5GB+ 可用空间
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | ffmpeg | 命令行工具 | 必需 | 系统包管理器 | 4.0+ |
 | ffprobe | 命令行工具 | 必需 | 随 ffmpeg 安装 | 4.0+ |
 | Python | 运行时 | 必需 | python.org | 3.8+ |
@@ -322,7 +323,7 @@ python3 --version
 # 安装 ffmpeg + Python 依赖
 sudo apt update && sudo apt install ffmpeg python3 python3-pip
 pip3 install pyyaml
-
+# ...
 # 验证安装
 ffmpeg -version
 python3 --version
@@ -346,20 +347,6 @@ python3 -c "import yaml; print('PyYAML ready')"
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -398,7 +385,7 @@ python3 -c "import yaml; print('PyYAML ready')"
 ```bash
 # 方式一：仅重试失败任务
 {baseDir}/（请参考skill目录中的脚本文件） --retry-failed /tmp/queue.json
-
+# ...
 # 方式二：从断点续传
 {baseDir}/（请参考skill目录中的脚本文件） --resume /tmp/queue.json
 ```
@@ -455,9 +442,8 @@ python3 -c "import yaml; print('PyYAML ready')"
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

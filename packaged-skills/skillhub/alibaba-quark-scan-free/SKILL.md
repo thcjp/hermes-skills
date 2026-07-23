@@ -16,6 +16,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 夸克扫描王(免费版) - 基础文件扫描与增强
 
@@ -27,7 +29,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---|---|----|----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -35,7 +37,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -117,10 +118,10 @@ export SCAN_WEBSERVICE_KEY="your_scan_webservice_key_here"
 ```bash
 # URL输入
 python3 （请参考skill目录中的脚本文件） --scene "${SCENE_VALUE}" --url "${IMAGE_URL}" --platform "${AGENT_NAME}"
-
+# ...
 # 本地文件输入
 python3 （请参考skill目录中的脚本文件） --scene "${SCENE_VALUE}" --path "${IMAGE_FILE_PATH}" --platform "${AGENT_NAME}"
-
+# ...
 # BASE64输入
 python3 （请参考skill目录中的脚本文件） --scene "${SCENE_VALUE}" --base64 "${IMAGE_BASE64}" --platform "${AGENT_NAME}"
 ```
@@ -145,7 +146,6 @@ AGENT_NAME替换为当前运行的Agent平台名称，无法确定时填communit
 一位学生需要清除做过的试卷上的手写答案，还原空白卷重新练习。上传试卷照片后，系统匹配remove-handwriting场景。执行后手写笔迹被清除，原始印刷文字完整保留，返回干净空白试卷的图片路径。
 
 ## 异常处理
-
 
 ### 缺少图片输入
 
@@ -187,9 +187,8 @@ SCAN_WEBSERVICE_KEY未配置或失效时返回认证错误。需访问 https://s
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:-----|:-----|:-----|
 | 扫描结果为空 | 文档内容无法识别 | 确保文档清晰,调整扫描参数 |
 | API调用超时 | 网络延迟或服务繁忙 | 检查网络连接和配置后重试或降低并发数 |
 | OCR识别率低 | 文档质量差或语言不支持 | 使用更高分辨率或切换语言模型 |

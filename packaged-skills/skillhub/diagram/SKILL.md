@@ -15,19 +15,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Diagram
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| DiagramASCII从描述生成 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -37,7 +42,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 图表生成 | 架构描述和图表类型 | Mermaid/PlantUML/ASCII图表 |
 | 流程图绘制 | 业务流程描述 | 标准流程图和泳道图 |
 | 架构图创建 | 系统组件和关系 | 系统架构图和部署图 |
@@ -54,7 +59,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | description | string | 是 | 图表内容描述 |
 | format | string | 否 | 输出格式, 可选: mermaid/plantuml/ascii, 默认: mermaid |
 
@@ -107,7 +112,7 @@ pricing_model: "per_use"
 
 ### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -128,16 +133,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Diagram？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Diagram有什么限制？
-A: 
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

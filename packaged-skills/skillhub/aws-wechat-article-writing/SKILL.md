@@ -22,16 +22,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # Aws Wechat Article Writing
 
 公众号长文 AI 写作引擎 —— 从提纲或话题生成完整初稿,支持改写、续写、润色,多模型可切。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 公众号长文写作引擎处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | 公众号长文写作引擎从提纲或话题生成 | 不支持 | 支持 |
 | 多渠道消息批量发送 | 不支持 | 支持 |
@@ -68,7 +69,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -233,7 +234,6 @@ export API_KEY="your_api_key_here"
 
 ## 异常处理
 
-
 ### write.py 退出码 2(模型未配置)
 stderr 含 `[NO_MODEL]`。自动降级:运行 `write.py prompt <mode> <input>` 取提示词 JSON,Agent 按该 `system_prompt` 和 `user_prompt` 写文章输出到 `-o` 指定路径。无须用户确认或本次例外。
 
@@ -280,9 +280,8 @@ stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| :-- | :-- | :-- |
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

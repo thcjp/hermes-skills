@@ -21,16 +21,17 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 加密协议博弈论分析
 
 面向web3协议的激励系统设计与博弈论分析框架，用于识别Nash Equilibrium、评估MEV风险与治理攻击向量。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 加密协议博弈论分析处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,13 +39,13 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 加密协议博弈论分析治理系统的博弈论分析 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -54,7 +55,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Bash/Shell | 运行时 | 可选 | 用于执行分析脚本 |
 | Nashpy | Python库 | 可选 | `pip install nashpy` 用于Nash Equilibrium计算 |
@@ -82,7 +83,7 @@ pricing_model: "monthly"
 
 ### 核心博弈论概念应用
 | 概念 | 定义 | Crypto应用场景 |
-|:-----|:-----|:---------------|
+|:---:|:---:|:---:|
 | Nash Equilibrium | 没有玩家能通过单方面改变策略而改善收益的状态 | Staking系统中validator的stake分布均衡 |
 | Dominant Strategy | 无论他人如何行动都是最优的策略 | Second-price auction中真实报价是Dominant Strategy |
 | Pareto Efficiency | 无法在不损害他人的前提下使某人更好的状态 | AMM fee结构对traders和LPs的Pareto效率 |
@@ -191,7 +192,7 @@ Step 5 - Recommendations:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:------|------:|:------|
 | 无法识别players | 协议参与者角色不清晰 | 检查on-chain合约与文档，补充隐式参与者（如searchers、arbitrageurs） |
 | Nash Equilibrium不收敛 | 策略空间连续或博弈无限重复 | 使用Nashpy库进行数值求解，或转为离散策略空间近似 |
 | 误判博弈模式 | 协议同时具有多种博弈特征 | 优先识别dominant特征，对次要特征单独分析后综合 |

@@ -19,11 +19,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # K8s集群管理入门（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ### 管理功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 资源管理 | Pod/Service/Deployment等 | 支持 |
 | 多Agent | 协作管理模式 | 支持 |
 | 配置管理 | ConfigMap/Secret | 支持 |
@@ -52,7 +53,7 @@ suggested_price: 29.9
 ### 支持的资源类型
 
 | 资源 | 创建 | 查询 | 更新 | 删除 |
-| --- | --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|:-----|
 | Pod | 支持 | 支持 | 有限 | 支持 |
 | Deployment | 支持 | 支持 | 支持 | 支持 |
 | Service | 支持 | 支持 | 支持 | 支持 |
@@ -83,7 +84,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | K8s集群管理入门处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -96,7 +97,7 @@ python3 （请参考skill目录中的脚本文件） deploy \
   --replicas 3 \
   --port 80 \
   --namespace default
-
+# ...
 # 创建Service
 python3 （请参考skill目录中的脚本文件） expose \
   --deployment nginx-app \
@@ -115,7 +116,7 @@ python3 （请参考skill目录中的脚本文件） agents config \
   --agent dev-agent --namespace development \
   --agent staging-agent --namespace staging \
   --agent prod-agent --namespace production
-
+# ...
 # 各Agent独立管理各自命名空间
 python3 （请参考skill目录中的脚本文件） agents status
 ```
@@ -127,7 +128,7 @@ python3 （请参考skill目录中的脚本文件） agents status
 ```bash
 # 查询资源
 python3 （请参考skill目录中的脚本文件） list --namespace default --all-resources
-
+# ...
 # 输出：
 # Deployments: nginx-app (3/3)
 # Services: nginx-service (ClusterIP: 10.96.0.10)
@@ -149,7 +150,7 @@ python3 （请参考skill目录中的脚本文件） list --namespace default --
 # 依赖说明
 # 安装Python依赖
 pip install kubernetes
-
+# ...
 # 验证连接
 python3 （请参考skill目录中的脚本文件） info
 ```
@@ -159,26 +160,25 @@ python3 （请参考skill目录中的脚本文件） info
 ```bash
 # 部署应用
 python3 （请参考skill目录中的脚本文件） deploy --name my-app --image my-image:v1 --replicas 3
-
+# ...
 # 查询资源
 python3 （请参考skill目录中的脚本文件） list --namespace default
 python3 （请参考skill目录中的脚本文件） get pod --name my-app-xxx
 python3 （请参考skill目录中的脚本文件） logs --name my-app-xxx --tail 100
-
+# ...
 # 更新资源
 python3 （请参考skill目录中的脚本文件） scale --deployment my-app --replicas 5
 python3 （请参考skill目录中的脚本文件） rollout --deployment my-app --status
-
+# ...
 # 配置管理
 python3 （请参考skill目录中的脚本文件） configmap create --name my-config --from-file ./config.yaml
 python3 （请参考skill目录中的脚本文件） secret create --name my-secret --from-literal password=xxx
-
+# ...
 # 故障排查
 python3 （请参考skill目录中的脚本文件） diagnose --pod my-app-xxx
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -189,7 +189,7 @@ k8s_config:
   kubeconfig: "~/.kube/config"
   context: "default"
   namespace: "default"
-
+# ...
   agents:
     mode: "collaborative"         # collaborative | single
     max_agents: 5
@@ -198,13 +198,13 @@ k8s_config:
         namespace: "development"
       - agent: "prod-agent"
         namespace: "production"
-
+# ...
   defaults:
     replicas: 2
     image_pull_policy: "IfNotPresent"
     restart_policy: "Always"
     service_type: "ClusterIP"
-
+# ...
   resources:
     default_requests:
       cpu: "100m"
@@ -222,7 +222,7 @@ k8s_config:
 4. **配置分离**：使用ConfigMap/Secret管理配置
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:---:|:---:|
 | 资源限制 | 所有Pod设置resources |
 | 镜像版本 | 使用固定版本号 |
 | 健康检查 | 配置liveness/readiness |
@@ -258,7 +258,7 @@ k8s_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | kubernetes | Python库 | 必需 | `pip install kubernetes` |

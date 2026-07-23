@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 聊天Agent工具（专业版）
 
@@ -37,7 +39,7 @@ pricing_model: "per_use"
 单实例支持50+并发房间，按业务线/项目/团队隔离：
 
 | 房间类型 | 用途 | 持久化策略 |
-|----------|------|-----------|
+|----|---|-----|
 | 临时房间 | 一次性协作 | 内存，停即清 |
 | 项目房间 | 长期任务流 | 持久化至数据库 |
 | 归档房间 | 历史查询 | 只读归档 |
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 支持两种持久化后端，按规模选择：
 
 | 后端 | 适用规模 | 优势 |
-|------|----------|------|
+|:-----|:-----|:-----|
 | SQLite | 单机/小规模（<10万条/天） | 零配置、零运维 |
 | `PostgreSQL` | 企业级（百万级/天） | 高并发、支持复杂查询 |
 
@@ -59,7 +61,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 聊天Agent工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -67,7 +69,7 @@ pricing_model: "per_use"
 ```bash
 # 加入房间并回放最近100条消息
 chat-agent join --url <url> --token <jwt> --agent-name bot1 --replay 100
-
+# ...
 # 按时间范围回放
 chat-agent join --url <url> --token <jwt> --agent-name bot1 \
   --replay-from "2026-07-01T00:00:00Z" --replay-to "2026-07-18T00:00:00Z"
@@ -82,7 +84,7 @@ chat-agent join --url <url> --token <jwt> --agent-name bot1 \
 支持三种鉴权模式，按场景选择：
 
 | 模式 | 适用场景 | 配置 |
-|------|----------|------|
+|:---:|:---:|:---:|
 | 密码 | 临时协作（兼容免费版） | `--password` |
 | JWT | Agent服务间调用 | `--token <jwt>` |
 | OAuth 2.0/SAML | 人类用户接入企业SSO | 集成IdP |
@@ -92,7 +94,7 @@ JWT鉴权示例：
 ```python
 import jwt
 from datetime import datetime, timedelta
-
+# ...
 def generate_agent_token(agent_id, secret, room_id, ttl_hours=24):
     payload = {
         'agent_id': agent_id,
@@ -135,7 +137,7 @@ Web UI完全可定制：
 满足金融、医疗等行业合规要求的审计能力：
 
 | 日志字段 | 说明 | 示例 |
-|----------|------|------|
+|:------|------:|:------|
 | timestamp | 精确到毫秒 | 2026-07-18T10:23:45.123Z |
 | actor | 操作主体 | agent:researcher / user:alice |
 | action | 操作类型 | join/send/leave/create_room |
@@ -237,10 +239,10 @@ Web UI完全可定制：
 chat-agent init --mode enterprise \
   --db postgresql://user:pass@db:5432/chatagent \
   --auth oauth --idp-url https://idp.company.com
-
+# ...
 # 2. 启动服务（多实例）
 chat-agent serve --port 8765 --workers 4
-
+# ...
 # 3. 创建第一个持久化房间
 chat-agent room create \
   --name "Q3项目协作" \
@@ -278,35 +280,35 @@ server:
   tls:
     cert: /etc/ssl/chat.cert
     key: /etc/ssl/chat.key
-
+# ...
 database:
   backend: postgresql
   url: postgresql://chatagent:***@db-cluster:5432/chatagent
   pool_size: 50
   backup_schedule: daily
-
+# ...
 auth:
   mode: oauth
   provider: azure_ad
   jwt_expiry_hours: 12
   refresh_token: true
-
+# ...
 encryption:
   mode: e2e
   algorithm: aes-256-gcm
   key_exchange: x25519
-
+# ...
 audit:
   enabled: true
   log_path: /var/log/chatagent/audit
   retention_days: 2555  # 7年
   immutable: true
-
+# ...
 rooms:
   max_concurrent: 100
   default_persistence: on
   default_encryption: e2e
-
+# ...
 branding:
   logo_url: https://company.com/logo.svg
   primary_color: "#0066CC"
@@ -323,7 +325,7 @@ upstream chatagent_cluster {
   server chat2.internal:8765;
   server chat3.internal:8765;
 }
-
+# ...
 # 共享存储层
 database:
   backend: postgresql
@@ -405,9 +407,8 @@ A：企业版支持完全私有化部署，所有数据不出企业网络。
 
 ## 错误处理
 
-
 | 错误场景(现象) | 可能原因 | 排查步骤 | 优先级 | 处理方式 |
-|------|----------|----------|--------|------|
+|-----:|:-----|-----:|-----:|:-----|
 | 房间创建失败 | 数据库连接超时 | 检查`PostgreSQL`连接池 | P0 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | JWT验证失败 | 时钟漂移 | 同步NTP服务 | P1 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 消息回放缺失 | 持久化未启用 | 检查房间 `persistence` 配置 | P1 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -469,7 +470,7 @@ integration:
 ```bash
 # 迁移步骤
 chat-agent upgrade --from free --to pro --preserve-config
-
+# ...
 # 验证
 chat-agent version  # 应显示 pro
 chat-agent room list  # 应显示已有房间
@@ -492,7 +493,7 @@ chat-agent room list  # 应显示已有房间
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------:|--------|:-------|:------:|
 | 免费体验版 | ¥0 | 单房间+内存级+基础隧道 | 个人试用 |
 | 收费专业版 | ¥99/月 或 ¥999/年 | 全功能+企业级特性+优先支持 | 团队/企业 |
 
@@ -508,7 +509,7 @@ chat-agent room list  # 应显示已有房间
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|----|:--:|---:|----|:--:|
 | Python | 运行时 | 必需 | 官方下载 | 3.10+ |
 | `PostgreSQL` | 数据库 | 推荐 | 官方下载 | 13+ |
 | SQLite | 数据库 | 可选 | Python内置 | 3.x |

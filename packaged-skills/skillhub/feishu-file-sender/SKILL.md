@@ -19,22 +19,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 飞书文件发送专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -117,7 +119,7 @@ python3 （请参考skill目录中的脚本文件） \
   --recipients recipients.csv \
   --rate-limit 10 \
   --dry-run
-
+# ...
 # 正式发送
 python3 （请参考skill目录中的脚本文件） \
   --recipients recipients.csv \
@@ -132,7 +134,7 @@ python3 （请参考skill目录中的脚本文件） \
 📋 批量文件分发任务
    收件人: 50
    速率: 10 个/分钟
-
+# ...
 [1/50] ✅ ou_001 - 张三 - 技术部7月报表.pdf (2.3 MB)
 [2/50] ✅ ou_002 - 李四 - 市场部7月报表.pdf (1.8 MB)
 [3/50] ✅ ou_003 - 王五 - 财务部7月报表.pdf (3.1 MB)
@@ -167,10 +169,10 @@ python3 （请参考skill目录中的脚本文件） create \
   --recipients monitor_team.csv \
   --file-generator "generate_report.py" \
   --timezone "Asia/Shanghai"
-
+# ...
 # 查看定时任务
 python3 （请参考skill目录中的脚本文件） list
-
+# ...
 # 查看任务历史
 python3 （请参考skill目录中的脚本文件） history --name "daily-monitor-report"
 ```
@@ -187,7 +189,7 @@ python3 （请参考skill目录中的脚本文件） history --name "daily-monit
 # 免费版命令依然有效
 python3 （请参考skill目录中的脚本文件） file.pdf ou_详情见说明 app_id app_secret
 python3 （请参考skill目录中的脚本文件） image.png ou_详情见说明 app_id app_secret
-
+# ...
 # 专业版新增命令
 python3 （请参考skill目录中的脚本文件） --recipients list.csv
 python3 （请参考skill目录中的脚本文件） --target oc_详情见说明 --files f1.pdf,f2.pdf
@@ -229,7 +231,7 @@ python3 （请参考skill目录中的脚本文件） --target oc_详情见说明
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | feishu-file-sender处理的内容输入 |,  |
 | content | string | 否 | feishu-file-sender处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -257,9 +259,8 @@ python3 （请参考skill目录中的脚本文件） --target oc_详情见说明
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -274,10 +275,10 @@ python3 （请参考skill目录中的脚本文件） --target oc_详情见说明
 - **网络环境**: 需可访问飞书开放平台 API（国内: open.feishu.cn / 国际: open.larksuite.com）
 - **磁盘空间**: 队列与日志建议预留 1GB 以上
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 官方网站下载安装 |
 | Python 标准库 | 运行库 | 必需 | Python 自带（requests, json, csv） |
@@ -352,8 +353,8 @@ python3 （请参考skill目录中的脚本文件） --target oc_详情见说明
 ## 常见问题
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -387,7 +388,7 @@ python3 （请参考skill目录中的脚本文件） \
 ```bash
 # 查看队列状态
 python3 （请参考skill目录中的脚本文件） status
-
+# ...
 # 增加并发数
 python3 （请参考skill目录中的脚本文件） config --concurrency 10
 ```
@@ -399,7 +400,7 @@ python3 （请参考skill目录中的脚本文件） config --concurrency 10
 ```bash
 # 压缩旧日志
 python3 （请参考skill目录中的脚本文件） compress --older-than 30
-
+# ...
 # 清理过期日志
 python3 （请参考skill目录中的脚本文件） clean --older-than 365
 ```
@@ -411,7 +412,7 @@ python3 （请参考skill目录中的脚本文件） clean --older-than 365
 ```bash
 # 查看失败列表
 cat failures.csv
-
+# ...
 # 重发失败文件
 python3 （请参考skill目录中的脚本文件） --recipients failures.csv --retry 3
 ```
@@ -420,17 +421,14 @@ python3 （请参考skill目录中的脚本文件） --recipients failures.csv -
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|-------:|:-------|-------:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

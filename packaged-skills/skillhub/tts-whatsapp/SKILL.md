@@ -37,19 +37,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
 # TTS WhatsApp
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 🎙️ **High-quality TTS** powered by Piper (40+ languages) | 支持 | 支持 |
-| 🎵 **Automatic conversion** to OGG/Opus (WhatsApp format) | 不支持 | 支持 |
-| 📤 **Automatic sending** via SkillHub | 不支持 | 支持 |
-| 👥 **Group support** - Send to individuals or WhatsApp groups | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -64,7 +66,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -103,11 +105,10 @@ tts-whatsapp "High quality" --quality high --target "+1..."
 3. 按照能力描述提供输入参数,执行操作
 4. 查看输出结果,确认任务完成状态
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | tts-whatsapp处理的内容输入 |,  |
 | content | string | 否 | tts-whatsapp处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -135,9 +136,8 @@ tts-whatsapp "High quality" --quality high --target "+1..."
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -148,9 +148,9 @@ tts-whatsapp "High quality" --quality high --target "+1..."
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -159,7 +159,6 @@ tts-whatsapp "High quality" --quality high --target "+1..."
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -171,26 +170,26 @@ export API_KEY="your_api_key_here"
 ### 示例1：基础用法
 
 ```
-### Basic usage
-
+### Basic usage(补充)
+# ...
 ```bash
 tts-whatsapp "Hello, this is a test" --target "+15555550123"
 ```
-
-### Send to WhatsApp group
-
+# ...
+### Send to WhatsApp group(补充)
+# ...
 ```bash
 tts-whatsapp "Hello everyone" --target "120363257357161211@g.us"
 ```
-
-### Change language
-
+# ...
+### Change language(补充)
+# ...
 ```bash
 tts-whatsapp "Hola mundo" --lang es_ES --voice carlfm --target "+34..."
 ```
-
-### Different quality levels
-
+# ...
+### Different quality levels(补充)
+# ...
 ```bash
 tts-whatsapp "High quality" --quality high --target "+1..."
 ```
@@ -201,17 +200,10 @@ tts-whatsapp "High quality" --quality high --target "+1..."
 ### Q1: 如何开始使用TTS WhatsApp？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: TTS WhatsApp有什么限制？
-A: 
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

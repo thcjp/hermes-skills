@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
 # 网络摄像头工具 - 专业版
 
@@ -143,7 +145,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 网络摄像头工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -173,10 +175,10 @@ cat > webcam-pro-config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 # 手动触发抓取
 ./webcam-cli capture --config webcam-pro-config.json
-
+# ...
 # 生成延时视频
 ./webcam-cli timelapse \
   --camera "工地东侧" \
@@ -211,10 +213,10 @@ cat > ai-analysis-config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 # 执行分析
 ./webcam-cli analyze --image /tmp/webcam1.jpg --config ai-analysis-config.json
-
+# ...
 # 示例
 # === 图像分析报告 ===
 # 摄像头: 工地东侧
@@ -236,7 +238,7 @@ EOF
   --port 8080 \
   --config webcam-pro-config.json \
   --refresh 60
-
+# ...
 # 访问 http://localhost:8080 查看仪表盘
 # 支持:
 # - 实时画面网格展示
@@ -270,10 +272,10 @@ EOF
 ```bash
 # 免费版收藏列表自动兼容
 cp favorites.json webcam-pro-config.json
-
+# ...
 # 添加专业版配置
 ./webcam-cli upgrade --config webcam-pro-config.json
-
+# ...
 # 启用定时抓取
 ./webcam-cli schedule start --config webcam-pro-config.json
 ```
@@ -284,10 +286,10 @@ cp favorites.json webcam-pro-config.json
 # Telegram 推送
 export TELEGRAM_BOT_TOKEN="your_bot_token"
 export TELEGRAM_CHAT_ID="your_chat_id"
-
+# ...
 # 钉钉推送
 export DINGTALK_WEBHOOK_URL="https://oapi.dingtalk.com/robot/send?access_token=..."
-
+# ...
 # 邮件推送
 export SMTP_HOST="smtp.example.com"
 export SMTP_USER="alert@example.com"
@@ -334,7 +336,7 @@ export SMTP_PASSWORD="your_password"
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 快照获取 | 手动 | 手动 + 定时自动 |
 | 收藏列表 | 支持 | 支持 + 团队共享 |
 | 历史归档 | 不支持 | 支持 + 时间轴回放 |
@@ -390,7 +392,7 @@ A: 单张 1200px JPG 约 200-500KB。每 2 小时抓取一个摄像头,一年约
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | requests | Python库 | 必需 | pip install requests |
 | FFmpeg | CLI工具 | 延时视频必需 | 官方网站下载 |
@@ -418,9 +420,8 @@ A: 单张 1200px JPG 约 200-500KB。每 2 小时抓取一个摄像头,一年约
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

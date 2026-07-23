@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 面向专业数据工程师与数据治理团队的全功能 CSV 清洗平台，在免费版基础上解锁流式处理、自定义规则、Schema 校验与数据质量评分。
 
@@ -37,7 +39,7 @@ CSV Processor 专业版将 CSV 清洗从"单文件处理"升级为"生产级 ETL
 
 ## 核心能力
 | 能力域 | 命令族 | 说明 | 专业版增强 |
-|--------|--------|------|-----------|
+|---|---|---|-----|
 | 流式清洗 | `stream process` | GB 级文件分块清洗 | 专业版独有 |
 | 自定义规则 | `rules apply` | YAML 配置清洗规则 | 专业版独有 |
 | Schema 校验 | `schema validate` | 列类型与约束校验 | 专业版独有 |
@@ -87,7 +89,7 @@ csv-processor stream process trades.csv \
   --chunk-size 100MB \
   --rules cleaning-rules.yaml \
   --output cleaned_trades.csv
-
+# ...
 csv-processor stream process trades.csv \
   --chunk-size 100MB \
   --rules cleaning-rules.yaml \
@@ -104,13 +106,13 @@ rules:
     "Order ID": order_id
     "Customer Name": customer_name
     "Total Amount": total_amount
-
+# ...
   value_replace:
     status:
       "P": "pending"
       "C": "completed"
       "X": "cancelled"
-
+# ...
   conditional:
     - when: "amount > 1000000"
       then:
@@ -118,11 +120,11 @@ rules:
     - when: "status == 'cancelled'"
       then:
         drop_row: true
-
+# ...
   drop_columns:
     - raw_input
     - debug_field
-
+# ...
   fillna:
     amount: 0
     customer_name: "未知客户"
@@ -144,15 +146,15 @@ csv-processor quality score data.csv --output quality-report.md
 ```
 数据质量评分报告
 ================
-
+# ...
 总评分: 82/100 (良好)
-
+# ...
 维度评分:
   完整性: 90/100  (缺失率 10%)
   一致性: 85/100  (格式不一致 15%)
   准确性: 75/100  (异常值 25 条)
   时效性: 78/100  (过期数据 22%)
-
+# ...
 问题清单:
   [P0] amount 列存在 5 个负值（应为非负）
   [P1] email 列格式不正确 12 条
@@ -170,7 +172,7 @@ csv-processor merge incremental \
   --key order_id \
   --strategy upsert \
   --output merged.csv
-
+# ...
 csv-processor dedup data.csv \
   --method hash \
   --columns "order_id,amount,created_at" \
@@ -182,7 +184,7 @@ csv-processor dedup data.csv \
 
 ```bash
 csv-processor schema validate production.csv --schema schema.yaml
-
+# ...
 csv-processor schema validate production.csv \
   --schema schema.yaml \
   --coerce \
@@ -222,7 +224,7 @@ csv-processor rules apply data.csv \
   --rules cleaning-rules.yaml \
   --audit-log audit.jsonl \
   --output cleaned.csv
-
+# ...
 csv-processor audit lineage --log audit.jsonl --output lineage.md
 ```
 
@@ -252,7 +254,7 @@ export CSV_PROCESSOR_HOME="$HOME/.csv-processor"
 ### 验证专业版能力（约 30 秒）
 ```bash
 csv-processor stream process sample.csv --chunk-size 10MB
-
+# ...
 csv-processor quality score sample.csv
 ```
 
@@ -266,26 +268,26 @@ csv-processor quality score sample.csv
 ```yaml
 version: "1.0"
 name: production-cleaning
-
+# ...
 rules:
   column_rename:
     "订单编号": order_id
     "客户名称": customer_name
     "订单金额": amount
     "下单时间": created_at
-
+# ...
   drop_columns:
     - raw_input
     - debug_field
     - temp_flag
-
+# ...
   value_replace:
     status:
       "P": "pending"
       "C": "completed"
       "X": "cancelled"
       "": "unknown"
-
+# ...
   conditional:
     - when: "amount < 0"
       then:
@@ -297,16 +299,16 @@ rules:
     - when: "status == 'cancelled' AND amount > 0"
       then:
         log_warning: "已取消订单金额非零"
-
+# ...
   fillna:
     amount: 0
     customer_name: "未知客户"
     status: "unknown"
-
+# ...
   dedup:
     key: [order_id]
     strategy: keep_last
-
+# ...
   sort:
     by: created_at
     ascending: true
@@ -434,7 +436,7 @@ csv-processor stream process large.csv --checkpoint --resume-on-failure
 基于标准测试环境（Python 3.10，SSD，16GB 内存）的典型性能：
 
 | 文件大小 | 免费版全量 | 专业版流式 | 内存峰值 |
-|----------|------------|------------|----------|
+|:-----|:-----|:-----|:-----|
 | 10MB | <1s | <1s | 150MB |
 | 100MB | 5-10s | 8-15s | 250MB |
 | 1GB | OOM 风险 | 80-120s | 350MB |
@@ -448,7 +450,7 @@ csv-processor stream process large.csv --checkpoint --resume-on-failure
 - 降级策略: 异常时返回默认值, 确保流程不中断
 - 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令机制: 失败时自动执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令, 最多3次
 | 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
-|------|----------|----------|--------|
+|------:|------:|------:|------:|
 | OOM 内存溢出 | 全量加载大文件 | 切换流式处理 | P0 |
 | 规则应用失败 | YAML 语法错误 | `rules validate` 校验语法 | P0 |
 | Schema 校验全失败 | 列名不匹配 | 核对 Schema 与数据列名 | P1 |
@@ -466,7 +468,7 @@ csv-processor stream process large.csv --checkpoint --resume-on-failure
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 | Python | 运行时 | 必需 | 官网下载 | 3.8+ |
 | pandas | 第三方库 | 必需 | `pip install pandas` | 1.3+ |
@@ -498,7 +500,7 @@ csv-processor stream process large.csv --checkpoint --resume-on-failure
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | ¥0 | 编码/分隔符检测 + 清洗 + 合并 + 拆分 + 类型转换（100MB 内） | 个人数据工程师 |
 | 收费专业版 | ¥49.9/月 | 流式大文件 + 自定义规则 + Schema + 质量评分 + 审计 + 优先支持 | 团队/生产环境/数据治理 |
 

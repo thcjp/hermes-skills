@@ -42,11 +42,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # UI/UX设计工具箱 - 免费版
 
 ## 概述
@@ -63,7 +64,7 @@ UI/UX设计工具箱免费版是一款面向个人开发者的轻量级设计资
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | UI/UX设计工具箱免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -71,7 +72,7 @@ UI/UX设计工具箱免费版是一款面向个人开发者的轻量级设计资
 ```bash
 # 按产品类型和行业搜索设计系统
 python3 （请参考skill目录中的脚本文件） "SaaS dashboard fintech" --design-system
-
+# ...
 # 按特定域搜索
 python3 （请参考skill目录中的脚本文件） "glassmorphism dark" --domain style
 python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain typography
@@ -87,7 +88,7 @@ python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain t
 设计规则按优先级分层,确保关键问题优先处理:
 
 | 优先级 | 类别 | 影响等级 | 所属域 |
-|--------|------|----------|--------|
+|:-----|:-----|:-----|:-----|
 | 1 | 无障碍设计 | 关键 | ux |
 | 2 | 触摸与交互 | 关键 | ux |
 | 3 | 性能优化 | 高 | ux |
@@ -104,7 +105,7 @@ python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain t
 ### 3. 基础设计域支持
 
 | 域 | 用途 | 示例关键词 |
-|----|------|-----------|
+|---:|---:|---:|
 | `product` | 产品类型推荐 | SaaS, 电商, 作品集, 医疗 |
 | `style` | UI风格与效果 | 玻璃态, 极简, 暗色模式 |
 | `typography` | 字体配对 | 优雅, 活泼, 专业, 现代 |
@@ -138,10 +139,10 @@ python3 （请参考skill目录中的脚本文件） "layout responsive form" --
 ```bash
 # 步骤1:生成基础设计系统
 python3 （请参考skill目录中的脚本文件） "SaaS productivity tool minimal" --design-system -p "TaskFlow"
-
+# ...
 # 步骤2:补充字体搜索
 python3 （请参考skill目录中的脚本文件） "modern clean sans-serif" --domain typography
-
+# ...
 # 步骤3:获取Tailwind实现指引
 python3 （请参考skill目录中的脚本文件） "dashboard card layout" --stack html-tailwind
 ```
@@ -162,7 +163,7 @@ python3 （请参考skill目录中的脚本文件） "dashboard card layout" --s
 ```bash
 # 搜索适合播客/媒体类产品的风格
 python3 （请参考skill目录中的脚本文件） "podcast media creative bold" --domain style
-
+# ...
 # 搜索落地页结构建议
 python3 （请参考skill目录中的脚本文件） "hero testimonial pricing" --domain landing
 ```
@@ -174,7 +175,7 @@ python3 （请参考skill目录中的脚本文件） "hero testimonial pricing" 
 ```bash
 # 检查动画和无障碍相关规则
 python3 （请参考skill目录中的脚本文件） "animation accessibility" --domain ux
-
+# ...
 # 检查布局和响应式规则
 python3 （请参考skill目录中的脚本文件） "responsive viewport" --domain ux
 ```
@@ -205,7 +206,7 @@ python3 （请参考skill目录中的脚本文件） "responsive viewport" --dom
 # 验证Python环境
 python3 --version
 # 预期输出: Python 3.10+
-
+# ...
 # 验证搜索工具可用
 python3 （请参考skill目录中的脚本文件） "minimal" --domain style -n 3
 ```
@@ -215,11 +216,11 @@ python3 （请参考skill目录中的脚本文件） "minimal" --domain style -n
 ```bash
 # 第1步:分析需求并搜索
 python3 （请参考skill目录中的脚本文件） "beauty spa wellness elegant" --design-system -p "Serenity Spa"
-
+# ...
 # 第2步:补充详细搜索
 python3 （请参考skill目录中的脚本文件） "elegant luxury serif" --domain typography
 python3 （请参考skill目录中的脚本文件） "soft pastel" --domain color
-
+# ...
 # 第3步:获取技术栈指引
 python3 （请参考skill目录中的脚本文件） "layout responsive" --stack html-tailwind
 ```
@@ -255,7 +256,7 @@ python3 （请参考skill目录中的脚本文件） "layout responsive" --stack
 ### 免费版与专业版功能对比
 
 | 功能项 | 免费版 | 专业版 |
-|--------|--------|--------|
+|:---:|:---:|:---:|
 | 基础设计域搜索 | 5个(product/style/typography/color/ux) | 全部10个域 |
 | 技术栈支持 | html-tailwind(默认) | 全部10种技术栈 |
 | 设计系统生成 | 基础推荐 | 完整系统+推理规则 |
@@ -271,7 +272,7 @@ python3 （请参考skill目录中的脚本文件） "layout responsive" --stack
 ```bash
 # 不推荐:过于宽泛
 python3 （请参考skill目录中的脚本文件） "app" --design-system
-
+# ...
 # 推荐:具体到产品类型和行业
 python3 （请参考skill目录中的脚本文件） "healthcare SaaS dashboard minimal" --design-system
 ```
@@ -296,7 +297,7 @@ python3 （请参考skill目录中的脚本文件） "animation performance" --d
 ### 4. 专业UI质量检查清单
 
 | 检查项 | 正确做法 | 错误做法 |
-|--------|----------|----------|
+|:------|------:|:------|
 | 图标使用 | SVG图标(Heroicons/Lucide) | 使用emoji作为UI图标 |
 | 悬停状态 | 颜色/透明度过渡 | 缩放变换导致布局偏移 |
 | 光标样式 | 可点击元素添加cursor-pointer | 保留默认光标 |
@@ -336,7 +337,7 @@ python3 （请参考skill目录中的脚本文件） "animation performance" --d
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Python 3 | 运行时 | 必需 | 系统包管理器安装 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
@@ -345,10 +346,10 @@ Python安装命令:
 ```bash
 # macOS
 brew install python3
-
+# ...
 # Ubuntu/Debian
 sudo apt update && sudo apt install python3
-
+# ...
 # Windows
 winget install Python.Python.3.12
 ```
@@ -364,9 +365,8 @@ winget install Python.Python.3.12
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

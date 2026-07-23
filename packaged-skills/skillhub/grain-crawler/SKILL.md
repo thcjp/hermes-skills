@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 归档检索(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 免费版 | 支持 | 支持 |
-| 本地优先检索 | 不支持 | 支持 |
-| 关键词检索 | 不支持 | 支持 |
-| 笔记详情 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 归档检索(专业版)归档检索 | 不支持 | 支持 |
+| 归档检索(专业版)批量导出 | 不支持 | 支持 |
+| 多标签页并行抓取 | 不支持 | 支持 |
+| 反爬虫策略自动绕过 | 不支持 | 支持 |
+| 页面结构变化自适应 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力 | 说明 | 免费版 | 专业版 |
-|------|------|--------|--------|
+|:-----|:-----|:-----|:-----|
 | 本地优先检索 | 先用本地归档响应 | 是 | 是 |
 | 笔记搜索 | 关键词检索 | 是 | 是 |
 | 笔记详情 | 读取单条笔记 | 是 | 是 |
@@ -135,11 +137,10 @@ grain-crawler --json sql "select title, updated_at from notes where title like '
 3. 按照能力描述提供输入参数,执行操作
 4. 查看输出结果,确认任务完成状态
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | grain-crawler处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -186,9 +187,8 @@ grain-crawler --json sql "select title, updated_at from notes where title like '
 
 ## 异常处理
 
-
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
-|------|----------|----------|--------|
+|:---:|:---:|:---:|:---:|
 | 归档为空 | 未登录 / 未同步 | 桌面端登录后运行 `sync` | P1 |
 | 同步失败 | 网络不通 / 凭证失效 | ，回退 desktop-cache | P1 |
 | SQL 报错只读 | 执行了非 SELECT 语句 | 改用 SELECT 查询 | P2 |
@@ -205,9 +205,9 @@ grain-crawler --json sql "select title, updated_at from notes where title like '
 - **操作系统**：Windows / macOS / Linux（macOS 与 Granola 桌面端兼容性优秀）
 - **Python**：3.8+（用于运行命令行工具与 SQL 查询）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | Granola 桌面端 | 应用 | 必需 | 官方渠道下载安装 |
 | grain-crawler CLI | 命令行工具 | 必需 | 随 Skill 附带或按文档安装 |
@@ -230,14 +230,14 @@ grain-crawler --json sql "select title, updated_at from notes where title like '
 ### 同步来源参数
 
 | 参数值 | 含义 | 适用场景 |
-|--------|------|----------|
+|---:|:---|---:|
 | `private-api` | 云端私有 API | 跨设备同步、团队共享 |
 | `desktop-cache` | 桌面端缓存 | 本地快速刷新、离线兜底 |
 
 ### SQL 查询能力
 
 | 查询类型 | 示例 | 说明 |
-|----------|------|------|
+|:------:|--------|:-------|
 | 计数 | `select count(*) as notes from notes;` | 统计笔记总数 |
 | 排序 | `select title, updated_at from notes order by updated_at desc limit 20;` | 按时间倒序取最新 |
 | 分组 | `select source, count(*) from notes group by source;` | 按来源分组统计 |
@@ -249,7 +249,7 @@ grain-crawler --json sql "select title, updated_at from notes where title like '
 ### 输出字段扩展
 
 | 字段 | 类型 | 来源 | 说明 |
-|------|------|------|------|
+|----|:--:|---:|----|
 | `note_id` | string | notes | 笔记唯一标识 |
 | `title` | string | notes | 笔记标题 |
 | `updated_at` | string | notes | 最后更新时间 |
@@ -303,9 +303,8 @@ A：支持。通过 `sync --account <account-id>` 指定账号，适合一人管
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

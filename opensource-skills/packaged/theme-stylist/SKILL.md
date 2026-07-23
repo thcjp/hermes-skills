@@ -19,6 +19,8 @@ tools:
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 主题造型师
 
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 幻灯片美化 | PPT 文件 + 内容调性 | 应用主题的 PPT + 配色方案 + 字体规范 |
 | 文档美化 | DOCX/MD 文件 + 调性 | 美化后的文档 + 主题样式表 |
 | 报告配色 | 数据报告 + 图表 | 统一配色的报告 + 图表色板 |
@@ -170,7 +172,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 主题造型师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -275,22 +277,22 @@ PPT 文件: 30 页企业报告
 **输出**(consistency-report.md 片段):
 ```markdown
 ## 主题一致性检查报告
-
+# ...
 ### 色彩使用
 - 符合比例: 24/30 页 (80%)
 - 偏差点: 6 页
   - P5: 使用 #999999 灰色(应为 #6b7280)
   - P12: 强调色用 #ff0000(应为 #f59e0b)
   - P18-P20: 图表色板未使用主题色序列
-
+# ...
 ### 字体使用
 - 符合: 28/30 页 (93%)
 - 偏差: P3 使用宋体(应为 Inter/思源黑体)
-
+# ...
 ### 间距一致性
 - 符合: 26/30 页 (87%)
 - 偏差: P7/P15 标题间距过小(应 24px,实际 16px)
-
+# ...
 ### 修复建议
 1. 全局替换 #999999 → #6b7280
 2. 全局替换 #ff0000 → #f59e0b
@@ -301,7 +303,7 @@ PPT 文件: 30 页企业报告
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 品牌色为非 HEX 格式 | RGB/HSL/CMYK 格式 | 自动转换工具 rgb-to-hex,提示用户输入 HEX |
 | 品牌色对比度不足 | 主色与背景色对比度 < 4.5 | 自动调整明暗,确保 WCAG AA 合规 |
 | 字体不可用 | 系统未安装指定字体 | 提供备用字体栈(优先 Web 字体 CDN) |
@@ -320,7 +322,7 @@ PPT 文件: 30 页企业报告
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | Agent 内置 LLM 提供设计能力 | 通义/文心/智谱 |
 | Tailwind CSS | 工具 | 可选(HTML) | `npm install -D tailwindcss` | npmmirror 镜像 |
 | Google Fonts | CDN | 可选(字体) | fonts.google.com | 字体 CDN(bootcdn/75CDN) |
@@ -386,37 +388,37 @@ PPT 文件: 30 页企业报告
 **LLM生成输出** (`output/annual-report/ppt-styles.md` - PPT样式映射指南):
 ```markdown
 ## PPT 样式应用指南(Corporate主题)
-
+# ...
 ### 封面页
 - 背景: #1a56db 纯色
 - 标题: 思源黑体 36pt 白色 加粗
 - 副标题: 思源黑体 18pt #93c5fd
 - 日期: 思源黑体 14pt #bfdbfe
-
+# ...
 ### 目录页
 - 背景: #ffffff
 - 标题: 思源黑体 28pt #1a56db 加粗
 - 正文: 思源黑体 16pt #111827
 - 页码: 思源黑体 12pt #9ca3af
-
+# ...
 ### 内容页(数据图表)
 - 背景: #ffffff
 - 标题: 思源黑体 22pt #111827 加粗
 - 图表色板: #1a56db → #3b82f6 → #f59e0b → #10b981 → #8b5cf6
 - 图表标题: 思源黑体 14pt #6b7280
 - 数据标签: 思源黑体 12pt #111827
-
+# ...
 ### 表格样式
 ```html
 | 季度 | 营收 | 同比 | 目标完成率 |
-|------|------|------|-----------|
+|:------|------:|:------|:------|
 | Q1   | 1.2亿| +15% | 102%      |
 | Q2   | 1.5亿| +22% | 105%      |
 ```
 - 表头: 背景#1a56db, 文字白色, 思源黑体14pt加粗
 - 数据行: 奇数行#ffffff, 偶数行#f8fafc
 - 边框: #e2e8f0, 1px
-
+# ...
 ### 强调与高亮
 - 关键数据: #f59e0b(琥珀色)加粗
 - 正向指标: #10b981(绿色)
@@ -503,11 +505,11 @@ PPT 文件: 30 页企业报告
   --color-warning: #f59e0b;
   --color-error: #ef4444;
   --color-info: #3b82f6;
-
+// ...
   --font-heading: 'Inter', '思源黑体', sans-serif;
   --font-body: 'Inter', '思源黑体', sans-serif;
   --font-mono: 'JetBrains Mono', '思源等宽', monospace;
-
+// ...
   --chart-1: #6366f1;
   --chart-2: #06b6d4;
   --chart-3: #10b981;
@@ -515,7 +517,7 @@ PPT 文件: 30 页企业报告
   --chart-5: #ef4444;
   --chart-6: #8b5cf6;
 }
-
+// ...
 /* 暗色模式 */
 [data-theme="dark"] {
   --color-primary: #818cf8;
@@ -530,7 +532,7 @@ PPT 文件: 30 页企业报告
   --color-warning: #fbbf24;
   --color-error: #f87171;
   --color-info: #60a5fa;
-
+// ...
   --chart-1: #818cf8;
   --chart-2: #22d3ee;
   --chart-3: #34d399;
@@ -557,7 +559,7 @@ const neuroFlowTheme = {
     textStyle: { color: '#e0e7ff' }
   }
 };
-
+// ...
 // 暗色模式色板
 const neuroFlowDarkTheme = {
   ...neuroFlowTheme,
@@ -572,10 +574,10 @@ const neuroFlowDarkTheme = {
     textStyle: { color: '#e0e7ff' }
   }
 };
-
+// ...
 echarts.registerTheme('neuroflow', neuroFlowTheme);
 echarts.registerTheme('neuroflow-dark', neuroFlowDarkTheme);
-
+// ...
 // 使用: echarts.init(dom, 'neuroflow')
 ```
 
@@ -616,13 +618,13 @@ echarts.registerTheme('neuroflow-dark', neuroFlowDarkTheme);
 // Tech主题 ECharts 完整配置
 const techTheme = {
   color: ['#0ea5e9', '#6366f1', '#22d3ee', '#10b981', '#f59e0b', '#ec4899'],
-
+// ...
   // 柱状图
   bar: {
     itemStyle: { borderRadius: [4, 4, 0, 0] },
     emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(14,165,233,0.5)' } }
   },
-
+// ...
   // 折线图
   line: {
     itemStyle: { borderWidth: 2 },
@@ -630,14 +632,14 @@ const techTheme = {
     symbolSize: 6,
     smooth: true
   },
-
+// ...
   // 饼图
   pie: {
     itemStyle: { borderColor: '#0f172a', borderWidth: 2 },
     label: { color: '#e2e8f0' },
     emphasis: { itemStyle: { shadowBlur: 15, shadowColor: 'rgba(14,165,233,0.3)' } }
   },
-
+// ...
   // 通用样式
   backgroundColor: '#0f172a',
   textStyle: { fontFamily: 'Inter, 思源黑体', color: '#e2e8f0' },
@@ -660,9 +662,9 @@ const techTheme = {
     splitLine: { lineStyle: { color: '#1e293b', type: 'dashed' } }
   }
 };
-
+// ...
 echarts.registerTheme('tech', techTheme);
-
+// ...
 // 使用示例
 const chart = echarts.init(document.getElementById('chart'), 'tech');
 chart.setOption({
@@ -685,7 +687,7 @@ chart.setOption({
   font-family: 'Inter', '思源黑体', sans-serif;
   font-size: 14px;
 }
-
+// ...
 .tech-table thead th {
   background: #1e293b;
   color: #38bdf8;
@@ -694,20 +696,20 @@ chart.setOption({
   font-weight: 600;
   border-bottom: 2px solid #0ea5e9;
 }
-
+// ...
 .tech-table tbody tr:nth-child(even) {
   background: #1e293b;
 }
-
+// ...
 .tech-table tbody td {
   padding: 10px 16px;
   border-bottom: 1px solid #334155;
 }
-
+// ...
 .tech-table .positive { color: #10b981; font-weight: 500; }
 .tech-table .negative { color: #ef4444; font-weight: 500; }
 .tech-table .neutral  { color: #94a3b8; }
-
+// ...
 /* 悬停高亮 */
 .tech-table tbody tr:hover {
   background: #334155;
@@ -734,46 +736,46 @@ PPT文件: 30页企业汇报(多人协作制作)
 **LLM生成输出** (`output/ppt-audit/consistency-report.md`):
 ```markdown
 # PPT主题一致性检查报告
-
+# ...
 ## 检查摘要
 | 检查维度 | 符合页数 | 总页数 | 符合率 | 状态 |
-|:---------|:---------|:-------|:-------|:-----|
+|---:|:---|---:|---:|:---|
 | 色彩使用 | 22/30 | 30 | 73% | 需修复 |
 | 字体使用 | 28/30 | 30 | 93% | 轻微偏差 |
 | 间距一致 | 26/30 | 30 | 87% | 轻微偏差 |
 | 图表配色 | 24/30 | 30 | 80% | 需修复 |
 | 总体评分 | - | - | 83% | 需优化 |
-
+# ...
 ## 偏差详情
-
+# ...
 ### [Critical] 色彩偏差(8页)
-
+# ...
 #### P5, P8, P12: 使用非主题灰色
 - **当前**: #999999 (中灰)
 - **应为**: #6b7280 (Corporate次级文字色)
 - **影响**: 与主题灰阶不一致,视觉突兀
 - **修复**: 全局查找替换 #999999 → #6b7280
-
+# ...
 #### P15, P18: 强调色错误
 - **当前**: #ff0000 (纯红)
 - **应为**: #f59e0b (琥珀色,Corporate强调色)
 - **影响**: 纯红过于刺眼,不符合商务调性
 - **修复**: 全局查找替换 #ff0000 → #f59e0b
-
+# ...
 #### P20-P25: 图表使用Office默认色板
 - **当前**: #4472C4, #ED7D31, #A5A5A5, #FFC000... (Office默认)
 - **应为**: #1a56db, #3b82f6, #f59e0b, #10b981, #8b5cf6 (Corporate色板)
 - **影响**: 图表与PPT整体风格割裂
 - **修复**: 重新设置图表色板
-
+# ...
 ### [High] 字体偏差(2页)
 - P3, P7: 标题使用宋体 → 应为思源黑体
 - **修复**: 选中P3/P7标题,字体改为"思源黑体"
-
+# ...
 ### [Medium] 间距偏差(2页)
 - P10, P22: 标题与正文间距16px → 应为24px
 - **修复**: 调整段落间距为24px
-
+# ...
 ## 修复脚本(Python-pptx)
 ```python
 from pptx import Presentation
@@ -826,10 +828,10 @@ for slide_idx, slide in enumerate(prs.slides, 1):
 prs.save('report_fixed.pptx')
 print("修复完成: report_fixed.pptx")
 ```
-
+# ...
 ## 修复后预期
 | 维度 | 修复前 | 修复后 |
-|:-----|:-------|:-------|
+|:------:|--------|:-------|
 | 色彩符合率 | 73% | 100% |
 | 字体符合率 | 93% | 100% |
 | 间距符合率 | 87% | 100% |

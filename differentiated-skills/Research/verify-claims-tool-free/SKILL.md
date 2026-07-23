@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 事实核查助手免费版
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 事实核查助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -46,10 +47,10 @@ suggested_price: 29.9
 ```bash
 # 核查单个声明
 verify-claims check "5G 技术会导致 COVID-19"
-
+# ...
 # 核查文章内容
 verify-claims check --file article.txt
-
+# ...
 # 核查视频描述
 verify-claims check --text "这段视频声称的内容"
 ```
@@ -66,7 +67,7 @@ verify-claims check --text "这段视频声称的内容"
 ```bash
 # 核查特定地区的内容
 verify-claims check "法国总统的最新声明" --region "france"
-
+# ...
 # 核查多地区内容
 verify-claims check "中美贸易政策报道" --regions "us,china"
 ```
@@ -83,7 +84,7 @@ verify-claims check "中美贸易政策报道" --regions "us,china"
 ```bash
 # 中文用户优先使用中文核查源
 verify-claims check "某条中文新闻" --language "zh"
-
+# ...
 # 英文内容使用英文核查源
 verify-claims check "English claim about politics" --language "en"
 ```
@@ -100,7 +101,7 @@ verify-claims check "English claim about politics" --language "en"
 ```bash
 # 获取结构化核查结果
 verify-claims check "疫苗会导致自闭症" --format json
-
+# ...
 # 示例
 # {
 #   "claim": "疫苗会导致自闭症",
@@ -126,10 +127,10 @@ verify-claims check "疫苗会导致自闭症" --format json
 ```bash
 # 保存核查结果
 verify-claims check "声明内容" --save
-
+# ...
 # 查看历史核查记录
 verify-claims history --list
-
+# ...
 # 查看特定核查详情
 verify-claims history --id "check_001"
 ```
@@ -149,13 +150,13 @@ verify-claims history --id "check_001"
 ```bash
 # 步骤1:核查新闻声明
 verify-claims check "某地发现外星人遗迹"
-
+# ...
 # 步骤2:指定核查区域
 verify-claims check "某地发现外星人遗迹" --region "china"
-
+# ...
 # 步骤3:获取详细结果
 verify-claims check "某地发现外星人遗迹" --verbose
-
+# ...
 # 输出示例:
 # 核查结论:虚假
 # 置信度:高
@@ -173,10 +174,10 @@ verify-claims check "某地发现外星人遗迹" --verbose
 ```bash
 # 步骤1:提取帖子中的声明
 verify-claims check "某公司CEO宣布公司将关闭所有线下门店"
-
+# ...
 # 步骤2:指定内容类型
 verify-claims check "某公司CEO宣布公司将关闭所有线下门店" --type "social_media"
-
+# ...
 # 步骤3:多角度核查
 verify-claims check "某公司CEO宣布公司将关闭所有线下门店" --perspectives "company,industry,general"
 ```
@@ -188,10 +189,10 @@ verify-claims check "某公司CEO宣布公司将关闭所有线下门店" --pers
 ```bash
 # 步骤1:核查数据声明
 verify-claims check "全球气候变化导致海平面上升 3 米"
-
+# ...
 # 步骤2:指定学术核查源
 verify-claims check "全球气候变化导致海平面上升 3 米" --sources "scientific"
-
+# ...
 # 步骤3:获取详细引用
 verify-claims check "全球气候变化导致海平面上升 3 米" --citations
 ```
@@ -203,10 +204,10 @@ verify-claims check "全球气候变化导致海平面上升 3 米" --citations
 ```bash
 # 查看所有命令
 verify-claims help
-
+# ...
 # 查看核查命令用法
 verify-claims check --help
-
+# ...
 # 查看支持的核查机构
 verify-claims sources --list
 ```
@@ -216,7 +217,7 @@ verify-claims sources --list
 ```bash
 # 核查简单声明
 verify-claims check "地球是平的"
-
+# ...
 # 核查复杂内容
 verify-claims check --file "path/to/article.txt"
 ```
@@ -226,7 +227,7 @@ verify-claims check --file "path/to/article.txt"
 ```bash
 # 查看最近核查结果
 verify-claims last
-
+# ...
 # 查看核查历史
 verify-claims history --list --limit 10
 ```
@@ -265,7 +266,7 @@ verify-claims config set-sources \
 ```bash
 # 正确做法:提供具体可验证的声明
 verify-claims check "某研究显示每天喝咖啡可以延长寿命 10 年"
-
+# ...
 # 错误做法:声明过于模糊
 verify-claims check "咖啡好不好"  # 太模糊,无法核查
 ```
@@ -282,7 +283,7 @@ verify-claims check "法国总统的最新政策声明" --region "france"
 ```bash
 # 使用多个核查源交叉验证
 verify-claims check "声明内容" --min-sources 5
-
+# ...
 # 查看不同核查源的结论
 verify-claims check "声明内容" --show-all-sources
 ```
@@ -292,7 +293,7 @@ verify-claims check "声明内容" --show-all-sources
 ```bash
 # 保存核查结果以备后续查阅
 verify-claims check "重要声明" --save --tag "important"
-
+# ...
 # 按标签查看
 verify-claims history --tag "important"
 ```
@@ -344,7 +345,7 @@ verify-claims history --tag "important"
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | curl | HTTP 工具 | 必需 | 系统自带 |
 | web_search | 搜索工具 | 必需 | Agent 内置或外部搜索 API |
 | web_fetch | 网页抓取 | 必需 | Agent 内置或外部抓取工具 |
@@ -367,9 +368,8 @@ SEARCH_API_KEY=your_search_api_key
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

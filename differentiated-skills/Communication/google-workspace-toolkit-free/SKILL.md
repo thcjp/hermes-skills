@@ -36,11 +36,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # 谷歌办公工具接口 - 免费版
 
 ## 概述
@@ -114,7 +115,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 谷歌办公工具接口免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -122,14 +123,14 @@ suggested_price: 29.9
 ```bash
 # 依赖说明
 npm install -g @presto-ai/google-workspace-toolkit
-
+# ...
 # 第二步:注册工具服务(仅需一次)
 gwtool config add google-workspace \
     --command "npx" \
     --arg "-y" \
     --arg "@presto-ai/google-workspace-toolkit" \
     --scope home
-
+# ...
 # 第三步:首次调用时浏览器弹出 OAuth 登录
 gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=10
 ```
@@ -143,7 +144,7 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 ```bash
 # 列出所有日历
 gwtool call --server google-workspace --tool "calendar.list"
-
+# ...
 # 查询本周事件(以2026年7月14日-20日为例)
 gwtool call --server google-workspace \
     --tool "calendar.listEvents" \
@@ -161,7 +162,7 @@ gwtool call --server google-workspace \
 gwtool call --server google-workspace \
     --tool "drive.search" \
     query="季度报告"
-
+# ...
 # 下载文件(使用上一步获取的 fileId)
 gwtool call --server google-workspace \
     --tool "drive.downloadFile" \
@@ -188,7 +189,7 @@ gwtool call --server google-workspace \
 ```bash
 # 安装工具接口
 npm install -g @presto-ai/google-workspace-toolkit
-
+# ...
 # 注册 Google Workspace 服务
 gwtool config add google-workspace \
     --command "npx" \
@@ -213,10 +214,10 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 ```bash
 # 搜索邮件
 gwtool call --server google-workspace --tool "gmail.search" query="newer_than:7d" maxResults=10
-
+# ...
 # 查看日历
 gwtool call --server google-workspace --tool "calendar.list"
-
+# ...
 # 搜索文件
 gwtool call --server google-workspace --tool "drive.search" query="报告"
 ```
@@ -232,10 +233,10 @@ gwtool config add google-workspace \
     --arg "-y" \
     --arg "@presto-ai/google-workspace-toolkit" \
     --scope home
-
+# ...
 # 查看已注册服务
 gwtool config list
-
+# ...
 # 移除服务
 gwtool config remove google-workspace
 ```
@@ -245,7 +246,7 @@ gwtool config remove google-workspace
 ```bash
 # 凭据默认存储路径
 ~/.config/google-workspace-toolkit/
-
+# ...
 # 查看凭据文件
 ls -la ~/.config/google-workspace-toolkit/
 ```
@@ -257,7 +258,7 @@ ls -la ~/.config/google-workspace-toolkit/
 """每日邮件摘要 - 工具接口版"""
 import subprocess
 import json
-
+# ...
 def call_tool(tool_name, **params):
     """调用 Google Workspace 工具"""
     cmd = ['gwtool', 'call', '--server', 'google-workspace', '--tool', tool_name]
@@ -265,7 +266,7 @@ def call_tool(tool_name, **params):
         cmd.extend([f'{key}={value}'])
     result = subprocess.run(cmd, capture_output=True, text=True)
     return json.loads(result.stdout) if result.stdout else []
-
+# ...
 # 获取未读邮件
 emails = call_tool('gmail.search', query='is:unread newer_than:1d', maxResults=10)
 print(f"未读邮件 {len(emails)} 封:")
@@ -328,7 +329,7 @@ gwtool call --server google-workspace \
 ```bash
 # 手动刷新令牌
 gwtool call --server google-workspace --tool "auth.refreshToken"
-
+# ...
 # 或直接执行业务命令(自动刷新)
 gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
 ```
@@ -340,7 +341,7 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 ```bash
 # 清除凭据
 gwtool call --server google-workspace --tool "auth.clear"
-
+# ...
 # 执行任意命令重新触发 OAuth 登录
 gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
 ```
@@ -369,7 +370,7 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Node.js 18+ | 运行时 | 必需 | nodejs.org 下载 |
 | npm / npx | 包管理 | 必需 | 随 Node.js 安装 |
 | @presto-ai/google-workspace-toolkit | 工具接口 | 必需 | npm 全局安装 |
@@ -391,9 +392,8 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

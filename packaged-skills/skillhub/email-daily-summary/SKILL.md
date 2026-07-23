@@ -22,16 +22,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
 # Email Daily Summary
 
 通过 `browser-use` CLI 驱动浏览器自动化登录 Web 邮箱,抓取当日邮件并生成结构化日报。优先复用本机 Chrome 已登录会话(`--browser real`),避免在脚本中存储明文密码。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Email Daily Summary处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,13 +40,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **邮件列表抓取**:通过 DOM 选择器提取收件箱行(`tr.zA` 等),获取发件人、主题、摘要片段、时间戳四元组 | 支持 | 支持 |
-| **统计聚合**:实时计算未读数(`.zE`)、可见总数、按发件人域名/主题关键词分类 | 不支持 | 支持 |
-| **AI 智能摘要**:`browser-use extract` 用自然语言指令提取前 N 封邮件并按重要性排序 | 不支持 | 支持 |
-| **截图归档**:每日 inbox 快照保存为 PNG,按日期归档到本地目录 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| Email Daily Summary自动登录邮箱并生成 | 不支持 | 支持 |
+| 多标签页并行抓取 | 不支持 | 支持 |
+| 反爬虫策略自动绕过 | 不支持 | 支持 |
+| 页面结构变化自适应 | 不支持 | 支持 |
+| 批量导出结构化数据 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -55,7 +56,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -119,7 +120,7 @@ browser-use install
 ## 支持的邮箱服务
 
 | 邮箱服务 | 登录 URL | 收件箱 URL |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | Gmail | https://accounts.google.com | https://mail.google.com |
 | Outlook | https://login.live.com | https://outlook.live.com |
 | QQ 邮箱 | https://mail.qq.com | https://mail.qq.com |
@@ -170,16 +171,16 @@ browser-use install
 DATE=$(date +%Y-%m-%d)
 OUTPUT_DIR="./email_summaries"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 browser-use --browser real open https://mail.google.com
 sleep 3
-
+# ...
 # 探测页面状态
 browser-use state
-
+# ...
 # 截图归档
 browser-use screenshot "$OUTPUT_DIR/inbox_$DATE.png"
-
+# ...
 # 提取前 20 封邮件四元组
 browser-use eval "
   const emails = [];
@@ -194,7 +195,7 @@ browser-use eval "
   });
   JSON.stringify(emails, null, 2);
 "
-
+# ...
 # 未读统计
 browser-use eval "
 (() => {
@@ -203,7 +204,7 @@ browser-use eval "
   return JSON.stringify({ unread, visible, timestamp: new Date().toISOString() });
 })()
 "
-
+# ...
 browser-use close
 ```
 
@@ -217,11 +218,11 @@ browser-use close
 - 未读邮件: 12 封
 - 可见邮件: 50 封
 - 命中白名单: 2 封
-
+# ...
 重要邮件:
 1. boss@company.com | 项目进度汇报 - 紧急 | 09:30
 2. finance@bank.com | 账单提醒 | 08:15
-
+# ...
 建议操作:
 - 回复 boss@company.com
 - 处理 3 封审批邮件
@@ -233,7 +234,7 @@ browser-use close
 ```bash
 browser-use --browser real open https://mail.google.com
 sleep 3
-
+# ...
 browser-use eval "
   const hits = [];
   document.querySelectorAll('tr.zA').forEach(row => {
@@ -265,21 +266,21 @@ browser-use eval "
 DATE=$(date +%Y-%m-%d)
 REPORT="$OUTPUT_DIR/daily_$DATE.md"
 echo "# 跨邮箱日报 $DATE" > "$REPORT"
-
+# ...
 # Gmail 分节
 browser-use --browser real open https://mail.google.com
 sleep 3
 echo "## Gmail" >> "$REPORT"
 browser-use extract "提取前 10 封邮件的发件人、主题、时间,按重要性排序" >> "$REPORT"
 browser-use close
-
+# ...
 # QQ 邮箱分节
 browser-use --browser real open https://mail.qq.com
 sleep 3
 echo "## QQ 邮箱" >> "$REPORT"
 browser-use extract "提取前 10 封邮件的发件人、主题、时间,按重要性排序" >> "$REPORT"
 browser-use close
-
+# ...
 echo "报告已生成: $REPORT"
 ```
 
@@ -302,7 +303,6 @@ launchctl load ~/Library/LaunchAgents/com.email.dailysummary.plist
 ```
 
 ## 异常处理
-
 
 ### 1. browser-use CLI 未安装或不可用
 
@@ -372,9 +372,8 @@ launchctl load ~/Library/LaunchAgents/com.email.dailysummary.plist
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

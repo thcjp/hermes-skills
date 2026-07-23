@@ -28,25 +28,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 精英前端设计-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 精英前端设计-专业版一致性与高级动效编排 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 能力对比
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | 输出格式 | HTML/CSS | HTML/CSS + React + Vue + TypeScript |
 | 页面范围 | 单页面 | 多页面应用全站 |
 | 组件管理 | 无 | 组件库 + TypeScript 类型 |
@@ -57,44 +59,44 @@ pricing_model: "per_use"
 | 可访问性 | 基础 | WCAG 合规检查 |
 
 **输入**: 用户提供能力对比所需的指令和必要参数。
-### 核心能力
+### 核心能力(补充)
 ```text
 多页面应用:
   - 统一视觉语言贯穿全站
   - 页面间导航动效一致性
   - 布局系统复用
   - 路由级动画过渡
-
+# ...
 组件库生成:
   - React 组件（含 TypeScript 类型定义）
   - Vue 组件（含 Composition API）
   - 组件 Props/Events/Slots 规范
   - 组件文档与示例
-
+# ...
 高级动效:
   - Framer Motion: staggerChildren, whileHover, layoutId
   - Vue: <Transition> + <TransitionGroup>
   - 页面级转场动画
   - 滚动驱动动效
-
+# ...
 设计系统:
   - Design Token 自动生成
   - 色彩系统（主色/强调/语义色/中性色）
   - 字体系统（标题/正文/代码 + 字重/字号阶梯）
   - 间距系统（4px 基准 + 语义间距）
   - 组件规范（圆角/阴影/边框）
-
+# ...
 品牌管理:
   - 品牌色彩体系
   - 品牌字体规范
   - 品牌组件风格
   - 一致性自动校验
-
+# ...
 响应式策略:
   - 多断点设计（mobile/tablet/desktop/wide）
   - 流式布局 + 自适应排版
   - 触摸/鼠标交互适配
-
+# ...
 可访问性:
   - WCAG 2.1 AA 合规
   - 语义化 HTML
@@ -123,8 +125,6 @@ pricing_model: "per_use"
 ### 场景二：设计系统与 Design Token 生成
 自动生成完整的设计系统配置。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三：Vue 组件库生成
 ```vue
 <!-- Vue 3 + Composition API 组件示例 -->
@@ -141,37 +141,37 @@ pricing_model: "per_use"
     </div>
   </TransitionGroup>
 </template>
-
+# ...
 <script setup lang="ts">
 import { ref } from 'vue';
-
+# ...
 interface Card {
   id: string;
   title: string;
   content: string;
 }
-
+# ...
 const cards = ref<Card[]>([
   { id: '1', title: '设计系统', content: '统一的视觉语言' },
   { id: '2', title: '组件库', content: '可复用的 UI 组件' },
   { id: '3', title: '品牌一致性', content: '全站统一规范' },
 ]);
 </script>
-
+# ...
 <style scoped>
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-
+# ...
 .card {
   background: var(--color-bg-secondary, #16213e);
   border: 1px solid rgba(233, 69, 96, 0.2);
   border-radius: 12px;
   padding: 1.5rem;
 }
-
+# ...
 /* TransitionGroup 交错动效 */
 .stagger-enter-active {
   transition: all 0.6s ease;
@@ -208,13 +208,13 @@ const cards = ref<Card[]>([
 ### 第二步：生成设计系统
 ```bash
 python3 generate-design-system.py --brand brand.json --output tokens.css
-
+# ...
 ```
 
 ### 第三步：生成组件库
 ```bash
 generate-components --framework react --typescript --tokens tokens.json
-
+# ...
 generate-components --framework vue --typescript --tokens tokens.json
 ```
 
@@ -222,7 +222,7 @@ generate-components --framework vue --typescript --tokens tokens.json
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | elite-frontend处理的内容输入 |,  |
 | content | string | 否 | elite-frontend处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -250,9 +250,8 @@ generate-components --framework vue --typescript --tokens tokens.json
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -264,9 +263,9 @@ generate-components --framework vue --typescript --tokens tokens.json
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 16+（组件构建工具需要）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js 16+ | 运行时 | 必需 | nodejs.org 官方下载 |
 | Framer Motion | 库 | 可选 | `npm install framer-motion`（React动效） |
@@ -287,20 +286,6 @@ generate-components --framework vue --typescript --tokens tokens.json
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -345,9 +330,8 @@ A: 采用移动优先策略，通过 Design Token 统一间距和字号，各断
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

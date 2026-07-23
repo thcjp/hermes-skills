@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 > **获取、解析、转换、保存。四步完成RSS到Markdown的转换。**
 
 无需复杂配置，通过简单的脚本即可将RSS订阅内容转换为结构化的Markdown文档。免费版聚焦轻量场景，提供基础的转换能力。
@@ -31,7 +32,7 @@ suggested_price: 29.9
 
 ### 核心定位
 | 维度 | 免费版能力 |
-|------|------------|
+|---|-----|
 | 单源转换 | 支持 |
 | 批量转换 | 不支持（需专业版） |
 | 自定义模板 | 不支持（需专业版） |
@@ -53,7 +54,7 @@ suggested_price: 29.9
 ### 2. Markdown转换
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | RSS转MD(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -61,35 +62,35 @@ suggested_price: 29.9
 ```python
 class MarkdownConverter:
     """Markdown转换器（免费版）"""
-
+# ...
     def convert(self, feed_info, max_items=None):
         """转换为Markdown"""
         lines = []
-
+# ...
         lines.append(f"# {feed_info.get('title', '未知订阅源')}")
         lines.append("")
         if feed_info.get('description'):
             lines.append(f"> {feed_info['description']}")
             lines.append("")
-
+# ...
         lines.append(f"**订阅源链接**：{feed_info.get('link', '无')}")
         if feed_info.get('last_build_date'):
             lines.append(f"**最后更新**：{feed_info['last_build_date']}")
         lines.append("")
         lines.append("---")
         lines.append("")
-
+# ...
         items = feed_info.get('items', [])
         if max_items:
             items = items[:max_items]
-
+# ...
         lines.append(f"## 条目列表（共 {len(items)} 条）")
         lines.append("")
-
+# ...
         for i, item in enumerate(items, 1):
             lines.append(f"### {i}. {item.get('title', '无标题')}")
             lines.append("")
-
+# ...
             if item.get('pub_date'):
                 lines.append(f"**发布日期**：{item['pub_date']}")
             if item.get('author'):
@@ -97,7 +98,7 @@ class MarkdownConverter:
             if item.get('link'):
                 lines.append(f"**原文链接**：[{item['link']}]({item['link']})")
             lines.append("")
-
+# ...
             if item.get('description'):
                 desc = self._strip_html(item['description'])
                 lines.append(desc[:500])
@@ -105,18 +106,18 @@ class MarkdownConverter:
                     lines.append("")
                     lines.append(f"... [查看完整内容]({item.get('link', '')})")
                 lines.append("")
-
+# ...
             lines.append("---")
             lines.append("")
-
+# ...
         return "\n".join(lines)
-
+# ...
     def _strip_html(self, text):
         """移除HTML标签"""
         import re
         clean = re.compile('<.*?>')
         return re.sub(clean, '', text).strip()
-
+# ...
 converter = MarkdownConverter()
 markdown = converter.convert(feed, max_items=10)
 print(markdown[:500])
@@ -131,14 +132,14 @@ print(markdown[:500])
 ```python
 import os
 from datetime import datetime
-
+# ...
 class FileSaver:
     """文件保存器（免费版）"""
-
+# ...
     def __init__(self, output_dir="./output"):
         self.output_dir = output_dir
         os.makedirs(output_dir, exist_ok=True)
-
+# ...
     def save(self, content, filename=None, feed_title=None):
         """保存Markdown文件"""
         if filename is None:
@@ -147,15 +148,15 @@ class FileSaver:
                 filename = f"{safe_title}_{datetime.now().strftime('%Y%m%d')}.md"
             else:
                 filename = f"feed_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
-
+# ...
         filepath = os.path.join(self.output_dir, filename)
-
+# ...
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
-
+# ...
         print(f"已保存：{filepath}")
         return filepath
-
+# ...
     def save_batch_info(self, feed_info):
         """保存订阅源基本信息"""
         info = {
@@ -166,14 +167,14 @@ class FileSaver:
             'item_count': len(feed_info.get('items', [])),
             'saved_at': datetime.now().isoformat()
         }
-
+# ...
         info_file = os.path.join(self.output_dir, "feed_info.json")
         import json
         with open(info_file, 'w', encoding='utf-8') as f:
             json.dump(info, f, ensure_ascii=False, indent=2)
-
+# ...
         return info_file
-
+# ...
 saver = FileSaver("./output")
 filepath = saver.save(markdown, feed_title=feed.get('title'))
 saver.save_batch_info(feed)
@@ -193,13 +194,13 @@ saver.save_batch_info(feed)
 parser = RSSParser()
 converter = MarkdownConverter()
 saver = FileSaver("./archives")
-
+# ...
 xml = parser.fetch("https://example.com/feed.xml")
-
+# ...
 feed = parser.parse(xml)
-
+# ...
 markdown = converter.convert(feed)
-
+# ...
 saver.save(markdown, feed_title=feed['title'])
 ```
 
@@ -210,14 +211,14 @@ saver.save(markdown, feed_title=feed['title'])
 parser = RSSParser()
 converter = MarkdownConverter()
 saver = FileSaver("./blog_backup")
-
+# ...
 blog_feed = "https://myblog.com/rss.xml"
 xml = parser.fetch(blog_feed)
 feed = parser.parse(xml)
-
+# ...
 markdown = converter.convert(feed, max_items=None)  # 全部条目
 saver.save(markdown, feed_title="blog_backup")
-
+# ...
 for item in feed['items']:
     single_feed = {'title': item['title'], 'items': [item]}
     single_md = converter.convert(single_feed)
@@ -231,12 +232,12 @@ for item in feed['items']:
 parser = RSSParser()
 converter = MarkdownConverter()
 saver = FileSaver("./learning")
-
+# ...
 tech_feeds = [
     "https://example.com/tech-feed-1.xml",
     "https://example.com/tech-feed-2.xml",
 ]
-
+# ...
 for url in tech_feeds:
     xml = parser.fetch(url)
     if xml:
@@ -258,12 +259,12 @@ for url in tech_feeds:
 python3 << 'PYEOF'
 import requests
 import xml.etree.ElementTree as ET
-
+# ...
 url = "https://example.com/feed.xml"
 r = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
 root = ET.fromstring(r.content)
 channel = root.find('channel')
-
+# ...
 print(f"# {channel.find('title').text}\n")
 for item in channel.findall('item')[:5]:
     print(f"## {item.find('title').text}")
@@ -273,35 +274,32 @@ PYEOF
 
 ### 120秒标准搭建
 
-> 详细代码示例已移至 `references/detail.md`
-
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配置示例
 ### 基础配置
 ```python
 import os
-
+# ...
 class FeedToMdConfig:
     """RSS转MD配置（免费版）"""
     OUTPUT_DIR = os.getenv("F2M_OUTPUT_DIR", "./output")
     TIMEOUT = int(os.getenv("F2M_TIMEOUT", "10"))
     MAX_ITEMS = int(os.getenv("F2M_MAX_ITEMS", "0"))  # 0表示全部
     USER_AGENT = os.getenv("F2M_USER_AGENT", "Mozilla/5.0")
-
+# ...
     INCLUDE_AUTHOR = True
     INCLUDE_DATE = True
     INCLUDE_DESCRIPTION = True
     DESCRIPTION_MAX_LENGTH = 500
-
+# ...
     @classmethod
     def show(cls):
         print("=== RSS转MD配置 ===")
         print(f"输出目录：{cls.OUTPUT_DIR}")
         print(f"超时时间：{cls.TIMEOUT}s")
         print(f"最大条目数：{cls.MAX_ITEMS if cls.MAX_ITEMS > 0 else '全部'}")
-
+# ...
 FeedToMdConfig.show()
 ```
 
@@ -310,19 +308,19 @@ FeedToMdConfig.show()
 OUTPUT_TEMPLATE = """# {title}
 **订阅源链接**：{link}
 **最后更新**：{last_build_date}
-
+# ...
 {items_content}
-
+# ...
 *转换时间：{converted_at}*
 """
-
+# ...
 ITEM_TEMPLATE = """### {index}. {title}
 **发布日期**：{pub_date}
 **作者**：{author}
 **原文链接**：[{link}]({link})
-
+# ...
 {description}
-
+# ...
 """
 ```
 
@@ -336,11 +334,11 @@ def safe_fetch_and_convert(url):
         xml = parser.fetch(url)
         if not xml:
             return None
-
+# ...
         feed = parser.parse(xml)
         if not feed:
             return None
-
+# ...
         converter = MarkdownConverter()
         return converter.convert(feed)
     except Exception as e:
@@ -365,7 +363,7 @@ def generate_filename(feed_title, item_title=None):
     """生成规范文件名"""
     from datetime import datetime
     date_str = datetime.now().strftime('%Y%m%d')
-
+# ...
     if item_title:
         safe_title = "".join(c for c in item_title if c.isalnum() or c in (' ', '-', '_')).strip()
         return f"{safe_title[:50]}_{date_str}.md"
@@ -401,7 +399,7 @@ def generate_filename(feed_title, item_title=None):
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
 | requests | Python库 | 必需 | `pip install requests` |
 | xml.etree.ElementTree | Python库 | 必需 | Python标准库（XML解析） |

@@ -24,8 +24,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
-
 # Linear工具箱(免费版)
 
 本工具通过GraphQL API帮助用户与Linear交互，实现问题查询、项目管理、团队协作等核心功能。免费版聚焦日常查阅与基础操作需求。
@@ -39,7 +40,7 @@ Linear是现代软件开发团队青睐的任务管理工具，其GraphQL API提
 ## 核心能力
 
 | 能力 | 说明 | 免费版可用 |
-|------|------|-----------|
+|---|---|-----|
 | 问题查询 | 按团队/状态/标题过滤查询 | 是 |
 | 问题详情 | 查看问题完整信息 | 是 |
 | 问题创建 | 创建新问题 | 是 |
@@ -98,7 +99,7 @@ Linear是现代软件开发团队青睐的任务管理工具，其GraphQL API提
 ```bash
 # 通过NPM安装
 npm install -g @maton/cli
-
+# ...
 # 或通过Homebrew安装
 brew install maton-ai/cli/maton
 ```
@@ -107,10 +108,10 @@ brew install maton-ai/cli/maton
 ```bash
 # 浏览器登录获取API密钥
 maton login
-
+# ...
 # 或交互式输入API密钥
 maton login --interactive
-
+# ...
 # 验证认证状态
 maton whoami
 ```
@@ -119,7 +120,7 @@ maton whoami
 ```bash
 # 创建OAuth连接
 maton connection create linear
-
+# ...
 # 打开返回的URL完成OAuth授权
 ```
 
@@ -127,7 +128,7 @@ maton connection create linear
 ```bash
 # 列出团队的最近10个问题
 maton linear issue list -c ABC -L 10
-
+# ...
 # 查看特定问题详情
 maton linear issue view ABC-123
 ```
@@ -143,7 +144,7 @@ export MATON_API_KEY="你的API密钥"
 ### CLI命令速查
 
 | 命令 | 说明 | 示例 |
-|------|------|------|
+|:-----|:-----|:-----|
 | maton linear whoami | 查看当前用户 | `maton linear whoami` |
 | maton linear org view | 查看组织信息 | `maton linear org view` |
 | maton linear team list | 列出团队 | `maton linear team list` |
@@ -161,7 +162,7 @@ export MATON_API_KEY="你的API密钥"
 ### 问题优先级说明
 
 | 值 | 含义 | 使用场景 |
-|----|------|----------|
+|---:|---:|---:|
 | 0 | 无优先级 | 待评估的问题 |
 | 1 | 紧急 | 阻塞发布的关键问题 |
 | 2 | 高 | 本迭代必须完成 |
@@ -171,7 +172,7 @@ export MATON_API_KEY="你的API密钥"
 ### 工作流状态类型
 
 | 类型 | 说明 |
-|------|------|
+|:---:|:---:|
 | backlog | 待办池 |
 | unstarted | 未开始 |
 | started | 进行中 |
@@ -214,9 +215,8 @@ A：免费版不限制使用次数，但批量操作、Webhook集成与高级分
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 错误处理
 
-
 | 错误场景(现象) | 可能原因 | 解决方案 |
-|------|----------|----------|
+|:----------|----------:|:----------|
 | 401 Unauthorized | API密钥无效 | 重新执行maton login |
 | 400 Bad Request | 缺少连接或GraphQL错误 | 创建连接，检查查询语法 |
 | 403 Forbidden | OAuth权限不足 | 申请额外权限范围 |
@@ -245,7 +245,7 @@ A：免费版不限制使用次数，但批量操作、Webhook集成与高级分
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Node.js | 运行时 | 必需 | nodejs.org官方下载 |
 | Maton CLI | CLI工具 | 必需 | `npm install -g @maton/cli` |

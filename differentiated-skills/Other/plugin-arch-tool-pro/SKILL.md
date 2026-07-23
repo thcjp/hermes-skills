@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 插件架构工具 - 专业版
 
@@ -143,7 +145,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 插件架构工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -154,16 +156,16 @@ pricing_model: "per_use"
   --name "企业插件市场" \
   --storage "/data/plugin-market" \
   --registry "internal-registry.example.com"
-
+# ...
 # 发布插件到市场
 ./plugin-cli publish \
   --plugin ./my-plugin \
   --version 1.0.0 \
   --visibility "internal"
-
+# ...
 # 依赖说明
 ./plugin-cli install data-dashboard --version 1.0.0
-
+# ...
 # 列出已安装插件
 ./plugin-cli list --installed
 ```
@@ -188,7 +190,7 @@ pricing_model: "per_use"
     "network": ["api.example.com"]
   }
 }
-
+// ...
 // 管理员审批权限
 // plugin-cli approve data-export --permissions "read:user-data"
 ```
@@ -201,10 +203,10 @@ pricing_model: "per_use"
 # 查看当前版本
 ./plugin-cli info data-dashboard
 # 版本: 1.0.0, 状态: 运行中
-
+# ...
 # 热更新到新版本
 ./plugin-cli update data-dashboard --version 1.1.0 --hot-reload
-
+# ...
 # 输出:
 # 正在下载 data-dashboard@1.1.0...
 # 沙箱检查通过
@@ -223,14 +225,14 @@ pricing_model: "per_use"
   --template "dashboard" \
   --author "your-name" \
   --license MIT
-
+# ...
 # 开发模式运行
 cd my-plugin
 ./plugin-cli dev --watch
-
+# ...
 # 构建发布包
 ./plugin-cli build --production
-
+# ...
 # 运行测试
 ./plugin-cli test
 ```
@@ -261,7 +263,7 @@ cd my-plugin
 # 免费版注册的视图自动兼容
 # 升级框架
 ./plugin-cli upgrade --from free --to pro
-
+# ...
 # 迁移已有插件
 ./plugin-cli migrate --source ./old-plugins --target ./plugin-market
 ```
@@ -271,7 +273,7 @@ cd my-plugin
 ```bash
 # 初始化插件市场
 ./plugin-cli init --enterprise
-
+# ...
 # 配置权限策略
 cat > plugin-policy.json << 'EOF'
 {
@@ -286,7 +288,6 @@ EOF
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -351,7 +352,7 @@ EOF
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 视图注册 | 支持 | 支持 |
 | 插件市场 | 不支持 | 支持 |
 | 权限管控 | 不支持 | RBAC 细粒度 |
@@ -406,7 +407,7 @@ A: 内置模板包括:dashboard(数据看板)、settings(配置管理)、chat-wi
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载 |
 | TypeScript | 开发语言 | 必需 | npm install typescript |
 | React | UI框架 | 必需 | npm install react |
@@ -432,9 +433,8 @@ A: 内置模板包括:dashboard(数据看板)、settings(配置管理)、chat-wi
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

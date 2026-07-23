@@ -19,6 +19,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 演示文稿大师
 
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 从零生成 | 演讲主题+受众+时长 | 大纲→自动生成PPT,输出到`output/{name}/presentation.pptx` |
 | 现有PPT编辑 | 已有.pptx文件+修改需求 | 读取/调整/输出修改后的PPT |
 | 模板应用 | 品牌风格规范+PPT内容 | 应用母版/主题/配色的统一风格PPT |
@@ -87,7 +89,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 演示文稿大师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -105,10 +107,10 @@ pricing_model: "per_use"
 ```javascript
 const PptxGenJS = require("pptxgenjs");
 const pptx = new PptxGenJS();
-
+// ...
 pptx.defineLayout({ name: "CUSTOM", width: 13.33, height: 7.5 });
 pptx.layout = "CUSTOM";
-
+// ...
 // 定义主题
 const theme = {
   primary: "1A2B3C",
@@ -116,14 +118,14 @@ const theme = {
   bg: "FFFFFF",
   text: "333333",
 };
-
+// ...
 // 封面页
 const slide1 = pptx.addSlide();
 slide1.background = { color: theme.primary };
 slide1.addText("智能助手X", { x: 1, y: 2.5, w: 11, h: 1.5, fontSize: 44, color: "FFFFFF", bold: true });
 slide1.addText("重新定义AI助手", { x: 1, y: 4, w: 11, h: 0.8, fontSize: 24, color: theme.accent });
 slide1.addText("2024年产品发布会", { x: 1, y: 5.5, w: 11, h: 0.5, fontSize: 18, color: "CCCCCC" });
-
+// ...
 // 市场痛点页
 const slide2 = pptx.addSlide();
 slide2.addText("市场痛点", { x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true });
@@ -132,7 +134,7 @@ slide2.addText([
   { text: "成本高昂: 现有方案月费超500元\n", options: { fontSize: 24, color: theme.text } },
   { text: "体验差: 学习曲线陡峭,上手困难", options: { fontSize: 24, color: theme.text } },
 ], { x: 0.5, y: 1.5, w: 12, h: 4, valign: "top" });
-
+// ...
 // 数据图表页
 const slide3 = pptx.addSlide();
 slide3.addText("市场增长趋势", { x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true });
@@ -141,7 +143,7 @@ slide3.addChart(pptx.ChartType.line, [{
   labels: ["2021", "2022", "2023", "2024E", "2025E"],
   values: [120, 180, 280, 420, 600],
 }], { x: 1, y: 1.5, w: 11, h: 5, showValue: true });
-
+// ...
 pptx.writeFile({ fileName: "output/product-launch/presentation.pptx" });
 ```
 
@@ -159,11 +161,11 @@ pptx.writeFile({ fileName: "output/product-launch/presentation.pptx" });
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
 from pptx.enum.chart import XL_CHART_TYPE
-
+# ...
 prs = Presentation()
 prs.slide_width = Inches(13.33)
 prs.slide_height = Inches(7.5)
-
+# ...
 # 柱状图页
 slide = prs.slides.add_slide(prs.slide_layouts[5])
 slide.shapes.title.text = "各产品线销售额"
@@ -171,7 +173,7 @@ chart_data = CategoryChartData()
 chart_data.categories = ["产品A", "产品B", "产品C"]
 chart_data.add_series("销售额(亿元)", (1.2, 0.8, 0.5))
 slide.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED, Inches(1), Inches(2), Inches(6), Inches(4), chart_data)
-
+# ...
 # 饼图页
 slide2 = prs.slides.add_slide(prs.slide_layouts[5])
 slide2.shapes.title.text = "区域销售分布"
@@ -179,14 +181,14 @@ pie_data = CategoryChartData()
 pie_data.categories = ["华东", "华北", "华南", "其他"]
 pie_data.add_series("占比", (40, 25, 20, 15))
 slide2.shapes.add_chart(XL_CHART_TYPE.PIE, Inches(1), Inches(2), Inches(6), Inches(4), pie_data)
-
+# ...
 prs.save("output/sales-report/presentation.pptx")
 ```
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | PptxGenJS安装失败 | 网络问题或Node.js版本低 | 用cnpm安装,Node.js 18+ |
 | 中文字体显示异常 | 系统缺少中文字体 | 指定中文字体(微软雅黑/思源黑体),或嵌入字体 |
 | 图表数据格式错误 | 数据类型不匹配或缺失 | 校验数据格式,数值型数据不能传字符串 |
@@ -203,9 +205,9 @@ prs.save("output/sales-report/presentation.pptx")
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
-|:-------|:-----|:---------|:---------|:-------------|
+|:---:|:---:|:---:|:---:|:---:|
 | Node.js 18+ | 运行时 | 可选 | PptxGenJS运行环境 | Node.js官网,国内用cnpm/nvm镜像 |
 | PptxGenJS | 库 | 可选 | `npm install pptxgenjs` | `cnpm install pptxgenjs` |
 | Python 3.8+ | 运行时 | 可选 | python-pptx运行环境 | Python官网下载 |
@@ -258,7 +260,7 @@ prs.save("output/sales-report/presentation.pptx")
 **LLM生成输出** (`output/q3-report/outline.md`):
 ```markdown
 # 2024年Q3业务汇报 - 大纲
-
+# ...
 ## 幻灯片结构(12页)
 1. 封面页: Q3业务汇报 + 汇报人 + 日期
 2. 议程页: 业绩概览 → 增长分析 → 产品表现 → 挑战与对策 → Q4规划
@@ -272,13 +274,13 @@ prs.save("output/sales-report/presentation.pptx")
 10. Q4规划: 目标+策略+预算需求
 11. 总结: 核心要点回顾+行动号召
 12. Q&A: 感谢+联系方式
-
+# ...
 ## 配色方案
 - 主色: #1A2B3C(深蓝)
 - 强调色: #FF6B35(橙色)
 - 背景: #FFFFFF(白色)
 - 文字: #333333(深灰)
-
+# ...
 ## 字体规范
 - 标题: 36pt 微软雅黑 加粗
 - 正文: 24pt 微软雅黑
@@ -289,10 +291,10 @@ prs.save("output/sales-report/presentation.pptx")
 ```javascript
 const PptxGenJS = require("pptxgenjs");
 const pptx = new PptxGenJS();
-
+// ...
 pptx.defineLayout({ name: "WIDE", width: 13.33, height: 7.5 });
 pptx.layout = "WIDE";
-
+// ...
 const theme = {
   primary: "1A2B3C",
   accent: "FF6B35",
@@ -300,7 +302,7 @@ const theme = {
   text: "333333",
   light: "CCCCCC",
 };
-
+// ...
 // Slide 1: 封面
 const s1 = pptx.addSlide();
 s1.background = { color: theme.primary };
@@ -313,7 +315,7 @@ s1.addText("持续高速增长 突破历史新高", {
 s1.addText("汇报人: 张明  |  2024年10月15日", {
   x: 1, y: 5.5, w: 11, h: 0.5, fontSize: 18, color: theme.light, fontFace: "微软雅黑",
 });
-
+// ...
 // Slide 2: 议程
 const s2 = pptx.addSlide();
 s2.addText("议程", {
@@ -326,7 +328,7 @@ s2.addText([
   { text: "4. 挑战与对策\n", options: { fontSize: 24, color: theme.text, fontFace: "微软雅黑" } },
   { text: "5. Q4规划与预算", options: { fontSize: 24, color: theme.text, fontFace: "微软雅黑" } },
 ], { x: 1, y: 1.5, w: 11, h: 5, valign: "top", lineSpacing: 40 });
-
+// ...
 // Slide 4: 营收趋势柱状图
 const s4 = pptx.addSlide();
 s4.addText("季度营收趋势(万元)", {
@@ -349,7 +351,7 @@ s4.addChart(pptx.ChartType.bar, [{
 s4.addText("数据来源: 财务部 2024年Q3报表", {
   x: 0.5, y: 6.8, w: 12, h: 0.4, fontSize: 12, color: theme.light, fontFace: "微软雅黑",
 });
-
+// ...
 // Slide 5: 用户增长折线图
 const s5 = pptx.addSlide();
 s5.addText("用户增长趋势(万人)", {
@@ -369,7 +371,7 @@ s5.addChart(pptx.ChartType.line, [{
   catAxisLabelColor: theme.text,
   valAxisLabelColor: theme.text,
 });
-
+// ...
 // Slide 6: 产品线分布饼图
 const s6 = pptx.addSlide();
 s6.addText("产品线营收占比", {
@@ -387,12 +389,12 @@ s6.addChart(pptx.ChartType.pie, [{
   dataLabelColor: "FFFFFF",
   dataLabelFontSize: 14,
 });
-
+// ...
 // 演讲备注
 s4.addNotes("Q3营收1850万,环比增长54%。重点强调Q3增速远超Q2的50%。企业版贡献主要营收增长,占比从50%提升至60%。");
 s5.addNotes("用户数Q3达28万,环比增长133%。增长主要来自企业版直销渠道和合作伙伴渠道。获客成本从Q2的320元降至280元。");
 s6.addNotes("企业版60%占比是健康的产品结构,说明产品在企业市场获得认可。Q4计划进一步提升企业版占比至65%。");
-
+// ...
 pptx.writeFile({ fileName: "output/q3-report/presentation.pptx" });
 ```
 
@@ -415,7 +417,7 @@ const PptxGenJS = require("pptxgenjs");
 const pptx = new PptxGenJS();
 pptx.defineLayout({ name: "WIDE", width: 13.33, height: 7.5 });
 pptx.layout = "WIDE";
-
+// ...
 const theme = {
   primary: "2D5BFF",
   accent: "00C896",
@@ -423,7 +425,7 @@ const theme = {
   text: "2C3E50",
   code: "1E1E1E",
 };
-
+// ...
 // Slide 1: 封面
 const s1 = pptx.addSlide();
 s1.background = { color: theme.primary };
@@ -436,7 +438,7 @@ s1.addText("从概念到实战,30分钟掌握装饰器", {
 s1.addText("讲师: 李老师  |  Python进阶课程", {
   x: 1, y: 5.5, w: 11, h: 0.5, fontSize: 18, color: "CCCCCC", fontFace: "微软雅黑",
 });
-
+// ...
 // Slide 2: 什么是装饰器
 const s2 = pptx.addSlide();
 s2.background = { color: theme.bg };
@@ -449,7 +451,7 @@ s2.addText([
   { text: "\n核心作用", options: { fontSize: 28, color: theme.accent, bold: true, fontFace: "微软雅黑", breakLine: true } },
   { text: "在不修改原函数代码的前提下,增加额外功能", options: { fontSize: 22, color: theme.text, fontFace: "微软雅黑" } },
 ], { x: 0.5, y: 1.5, w: 12, h: 5, valign: "top", lineSpacing: 36 });
-
+// ...
 // Slide 3: 代码示例(深色背景模拟代码块)
 const s3 = pptx.addSlide();
 s3.background = { color: theme.code };
@@ -463,7 +465,7 @@ s3.addText(
     align: "left", valign: "top", lineSpacing: 22,
   }
 );
-
+// ...
 // Slide 4: 常用场景对比表
 const s4 = pptx.addSlide();
 s4.background = { color: theme.bg };
@@ -485,7 +487,7 @@ s4.addTable([
   border: { type: "solid", color: theme.light, pt: 1 },
   colW: [3, 3, 6],
 });
-
+// ...
 pptx.writeFile({ fileName: "output/python-decorator/presentation.pptx" });
 ```
 
@@ -508,14 +510,14 @@ pptx.writeFile({ fileName: "output/python-decorator/presentation.pptx" });
 from pptx import Presentation
 from pptx.util import Inches, Pt
 import os
-
+# ...
 # 读取现有PPT
 pptx_path = "output/template/company-template.pptx"
 prs = Presentation(pptx_path)
-
+# ...
 print(f"读取PPT: {pptx_path}")
 print(f"幻灯片数量: {len(prs.slides)}")
-
+# ...
 # 需求1: 修改第3页标题
 slide3 = prs.slides[2]  # 0-indexed
 for shape in slide3.shapes:
@@ -525,7 +527,7 @@ for shape in slide3.shapes:
                 if "2023年总结" in run.text:
                     run.text = run.text.replace("2023年总结", "2024年Q3总结")
                     print(f"已修改第3页标题: 2023年总结 → 2024年Q3总结")
-
+# ...
 # 需求2: 第5页添加文字
 slide5 = prs.slides[4]
 left = Inches(1)
@@ -542,12 +544,12 @@ run.font.bold = True
 run.font.color.rgb = None  # 使用默认颜色
 run.font.name = "微软雅黑"
 print("已在第5页添加: 同比增长54%")
-
+# ...
 # 需求3: 全局替换Logo图片
 old_logo = "old-logo.png"
 new_logo = "new-logo.png"
 logo_count = 0
-
+# ...
 for slide in prs.slides:
     for shape in slide.shapes:
         if shape.shape_type == 13:  # PICTURE
@@ -558,19 +560,19 @@ for slide in prs.slides:
                 top = shape.top
                 width = shape.width
                 height = shape.height
-
+# ...
                 # 删除旧图片
                 sp = shape._element
                 sp.getparent().remove(sp)
-
+# ...
                 # 添加新图片到相同位置
                 slide.shapes.add_picture(
                     new_logo, left, top, width, height
                 )
                 logo_count += 1
-
+# ...
 print(f"已替换Logo图片: {logo_count}处")
-
+# ...
 # 保存修改后的PPT
 output_path = "output/template/company-template-modified.pptx"
 prs.save(output_path)
@@ -596,7 +598,7 @@ print(f"已保存修改后的PPT: {output_path}")
 ```javascript
 const PptxGenJS = require("pptxgenjs");
 const fs = require("fs");
-
+// ...
 // 读取数据源
 const regions = [
   { name: "华东", sales: 1850, growth: 54, rank: 1 },
@@ -610,23 +612,23 @@ const regions = [
   { name: "港澳台", sales: 180, growth: 15, rank: 9 },
   { name: "其他", sales: 90, growth: 10, rank: 10 },
 ];
-
+// ...
 const theme = {
   primary: "1A2B3C",
   accent: "FF6B35",
   gold: "FFD700",
   text: "333333",
 };
-
+// ...
 // 批量生成函数
 function generateRegionPPT(region) {
   const pptx = new PptxGenJS();
   pptx.defineLayout({ name: "WIDE", width: 13.33, height: 7.5 });
   pptx.layout = "WIDE";
-
+// ...
   // 根据排名选择颜色
   const rankColor = region.rank <= 3 ? theme.gold : theme.accent;
-
+// ...
   // 封面页
   const s1 = pptx.addSlide();
   s1.background = { color: theme.primary };
@@ -639,13 +641,13 @@ function generateRegionPPT(region) {
   s1.addText(`全国排名第 ${region.rank} 位`, {
     x: 1, y: 4.5, w: 11, h: 0.6, fontSize: 22, color: "CCCCCC", fontFace: "微软雅黑",
   });
-
+// ...
   // 业绩数据页
   const s2 = pptx.addSlide();
   s2.addText("核心业绩指标", {
     x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true, fontFace: "微软雅黑",
   });
-
+// ...
   // 三个数据卡片
   const cardY = 1.5;
   const cardH = 2.5;
@@ -658,7 +660,7 @@ function generateRegionPPT(region) {
     x: 0.5, y: cardY + 0.6, w: 3.8, h: 1.5, fontSize: 40, color: theme.primary, bold: true,
     fontFace: "微软雅黑", align: "center", fill: { color: "F0F0F0" },
   });
-
+// ...
   // 增长率卡片
   s2.addText("同比增长", {
     x: 4.7, y: cardY, w: 3.8, h: 0.5, fontSize: 18, color: theme.text, fontFace: "微软雅黑",
@@ -668,7 +670,7 @@ function generateRegionPPT(region) {
     x: 4.7, y: cardY + 0.6, w: 3.8, h: 1.5, fontSize: 40, color: theme.accent, bold: true,
     fontFace: "微软雅黑", align: "center", fill: { color: "F0F0F0" },
   });
-
+// ...
   // 排名卡片
   s2.addText("全国排名", {
     x: 8.9, y: cardY, w: 3.8, h: 0.5, fontSize: 18, color: theme.text, fontFace: "微软雅黑",
@@ -678,19 +680,19 @@ function generateRegionPPT(region) {
     x: 8.9, y: cardY + 0.6, w: 3.8, h: 1.5, fontSize: 40, color: rankColor, bold: true,
     fontFace: "微软雅黑", align: "center", fill: { color: "F0F0F0" },
   });
-
+// ...
   const fileName = `output/batch-sales/${region.name}-Q3-report.pptx`;
   pptx.writeFile({ fileName });
   console.log(`已生成: ${fileName}`);
   return fileName;
 }
-
+// ...
 // 批量执行
 const outputDir = "output/batch-sales";
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
-
+// ...
 console.log(`开始批量生成 ${regions.length} 份PPT...`);
 const files = regions.map(generateRegionPPT);
 console.log(`\n批量生成完成! 共 ${files.length} 份PPT`);

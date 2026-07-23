@@ -25,11 +25,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 智能灯控工具（免费版）
 
 ## 概述
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力项 | 说明 | 命令参数 |
-|--------|------|----------|
+|---|---|----|
 | 开关控制 | 打开或关闭指定灯泡 | `--on` / `--off` |
 | 亮度调节 | 0-100 百分比无级调光 | `--brightness <0-100>` |
 | HSV 调色 | 色相/饱和度/明度三通道调色 | `--hsv <H> <S> <V>` |
@@ -155,7 +156,7 @@ uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 
 ```bash
 # 开灯（默认全亮暖白）
 uv run control_kasa_light.py --ip 192.168.1.50 --on
-
+# ...
 # 关灯
 uv run control_kasa_light.py --ip 192.168.1.50 --off
 ```
@@ -165,10 +166,10 @@ uv run control_kasa_light.py --ip 192.168.1.50 --off
 ```bash
 # 红色 80% 亮度
 uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 80
-
+# ...
 # 蓝色 50% 亮度
 uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 240 100 50 --brightness 50
-
+# ...
 # 高色温白光（9000K 接近日光）
 uv run control_kasa_light.py --ip 192.168.1.50 --on --white-temp 9000
 ```
@@ -254,7 +255,7 @@ HSV 即色相（Hue，0-360）、饱和度（Saturation，0-100）、明度（Va
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | python-kasa | Python 库 | 必需 | `uv pip install python-kasa>=0.10.2` |
 | uv | 包管理器 | 推荐 | `pip install uv` 或 `brew install uv` |
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
@@ -285,9 +286,8 @@ HSV 即色相（Hue，0-360）、饱和度（Saturation，0-100）、明度（Va
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

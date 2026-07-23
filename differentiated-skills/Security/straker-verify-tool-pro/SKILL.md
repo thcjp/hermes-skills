@@ -60,13 +60,15 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。在免费版基础翻译功能上,增加AI质量增强、专业人工审核、翻译记忆库(TM)与术语表管理、批量并行翻译、Webhook翻译完成回调等企业级功能。支持无限API调用,提供HTML/JSON专业翻译报告。与免费版完全兼容,API接口和项目格式可无缝迁移。
 
 ## 核心能力
 ### 功能矩阵
 | 功能模块 | 描述 | 免费版 | 专业版 |
-|----------|------|--------|--------|
+|----|---|---|---|
 | AI翻译 | 基础翻译 | 100+语言 | 100+语言+质量增强 |
 | 人工审核 | 人工验证 | 不支持 | 专业译员审核 |
 | 翻译记忆 | TM复用 | 不支持 | TM+术语表 |
@@ -83,7 +85,7 @@ AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。
 ### 翻译质量层次
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | AI翻译验证(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -155,7 +157,7 @@ python （请参考skill目录中的脚本文件） \
 ### 场景四:Webhook自动化流水线
 ```python
 client = TranslationClientPro(api_key=os.environ["TRANSLATE_API_KEY"])
-
+# ...
 result = client.create_project(
     file_path="product_docs.pdf",
     target_langs=["fr", "de", "es", "ja", "zh"],
@@ -181,19 +183,19 @@ import json
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
-
+# ...
 class TranslationClientPro:
     """企业级翻译客户端"""
-
+# ...
     BASE_URL = "https://api-verify.example.com"
-
+# ...
     def __init__(self, api_key=None):
         self.api_key = api_key or os.environ.get("TRANSLATE_API_KEY")
         if not self.api_key:
             raise ValueError("请设置 TRANSLATE_API_KEY 环境变量")
         self.headers = {"Authorization": f"Bearer {self.api_key}"}
         self.tm_cache = {}
-
+# ...
     def create_project(self, file_path, target_langs, **options):
         """创建翻译项目(支持高级选项)"""
         with open(file_path, 'rb') as f:
@@ -201,20 +203,20 @@ class TranslationClientPro:
                 "title": options.get("title", f"翻译_{file_path}"),
                 "confirmation_required": str(options.get("confirm", True)).lower(),
             }
-
+# ...
             if options.get("quality_boost"):
                 data["quality_boost"] = "true"
-
+# ...
             if options.get("human_verify"):
                 data["human_verify"] = "true"
                 data["priority"] = options.get("priority", "normal")
-
+# ...
             if options.get("webhook_url"):
                 data["webhook_url"] = options["webhook_url"]
                 data["webhook_events"] = json.dumps(
                     options.get("webhook_events", ["project.completed"])
                 )
-
+# ...
             if options.get("use_tm"):
                 data["use_translation_memory"] = "true"
                 if options.get("tm_file"):
@@ -235,16 +237,16 @@ class TranslationClientPro:
             else:
                 lang_uuids = [self._get_lang_uuid(lang) for lang in target_langs]
                 data["languages"] = ",".join(filter(None, lang_uuids))
-
+# ...
                 response = requests.post(
                     f"{self.BASE_URL}/project",
                     headers=self.headers,
                     files={"files": f},
                     data=data
                 )
-
+# ...
         return response.json()
-
+# ...
     def quality_boost(self, file_path, target_lang):
         """AI质量增强"""
         lang_uuid = self._get_lang_uuid(target_lang)
@@ -256,7 +258,7 @@ class TranslationClientPro:
                 data={"language": lang_uuid}
             )
         return response.json()
-
+# ...
     def human_verify(self, file_path, target_lang):
         """人工审核翻译"""
         lang_uuid = self._get_lang_uuid(target_lang)
@@ -268,12 +270,12 @@ class TranslationClientPro:
                 data={"language": lang_uuid}
             )
         return response.json()
-
+# ...
     def batch_translate(self, files_dir, target_langs, threads=5, **options):
         """批量并行翻译"""
         files = list(Path(files_dir).glob("*"))
         results = []
-
+# ...
         with ThreadPoolExecutor(max_workers=threads) as executor:
             futures = {}
             for file_path in files:
@@ -284,7 +286,7 @@ class TranslationClientPro:
                         **options
                     )
                     futures[future] = (file_path.name, lang)
-
+# ...
             for future in as_completed(futures):
                 file_name, lang = futures[future]
                 try:
@@ -304,21 +306,21 @@ class TranslationClientPro:
                         "error": str(e)
                     })
                     print(f"[失败] {file_name} -> {lang}: {str(e)}")
-
+# ...
         return results
-
+# ...
     def generate_report(self, results, format="html", output_path="translation_report"):
         """生成翻译报告"""
         if format == "html":
             return self._generate_html_report(results, output_path + ".html")
         elif format == "json":
             return self._generate_json_report(results, output_path + ".json")
-
+# ...
     def _generate_html_report(self, results, output_path):
         """生成HTML报告"""
         success_count = sum(1 for r in results if r["status"] == "success")
         total = len(results)
-
+# ...
         html = f"""<!DOCTYPE html>
 <html>
 <head><title>翻译项目报告</title></head>
@@ -327,24 +329,24 @@ class TranslationClientPro:
 <p>生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M')}</p>
 <p>总项目数: {total}</p>
 <p>成功: {success_count} / 失败: {total - success_count}</p>
-
+# ...
 <h2>项目详情</h2>
 <table border="1">
 <tr><th>文件</th><th>语言</th><th>状态</th><th>项目ID</th></tr>"""
-
+# ...
         for r in results:
             status = "✅ 成功" if r["status"] == "success" else "❌ 失败"
             project_id = r.get("result", {}).get("data", {}).get("project_id", "N/A")
             html += f"<tr><td>{r['file']}</td><td>{r['language']}</td><td>{status}</td><td>{project_id}</td></tr>"
-
+# ...
         html += """</table>
 </body>
 </html>"""
-
+# ...
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(html)
         return output_path
-
+# ...
     def _generate_json_report(self, results, output_path):
         """生成JSON报告"""
         report = {
@@ -356,15 +358,15 @@ class TranslationClientPro:
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
         return output_path
-
+# ...
     def _get_lang_uuid(self, lang_code):
         """获取语言UUID"""
         if lang_code in self.tm_cache:
             return self.tm_cache[lang_code]
-
+# ...
         response = requests.get(f"{self.BASE_URL}/languages")
         languages = response.json().get("data", [])
-
+# ...
         for lang in languages:
             if lang.get("code") == lang_code:
                 self.tm_cache[lang_code] = lang.get("uuid")
@@ -465,7 +467,7 @@ content_types = {
     "technical": {"quality_boost": True, "human_verify": False, "use_tm": True},
     "user_manual": {"quality_boost": True, "human_verify": True, "priority": "normal"}
 }
-
+# ...
 for content_type, config in content_types.items():
     client.create_project(f"{content_type}.pdf", ["ja", "zh"], **config)
 ```
@@ -476,7 +478,7 @@ name: Translate Documentation
 on:
   push:
     paths: ['docs/**']
-
+# ...
 jobs:
   translate:
     runs-on: ubuntu-latest
@@ -514,7 +516,7 @@ A: 在创建项目时指定 `webhook_url` 和 `webhook_events`。翻译完成后
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python | 运行时 | 必需 | 系统自带 |
 | requests | Python包 | 必需 | `pip install requests` |
 | curl | CLI工具 | 可选 | 系统自带 |
@@ -531,7 +533,7 @@ A: 在创建项目时指定 `webhook_url` 和 `webhook_events`。翻译完成后
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

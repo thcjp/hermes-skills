@@ -36,8 +36,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
-
 代码质量检查工具专业版为企业研发团队提供深度代码审计能力。在免费版基础能力之上,专业版新增 OWASP Top 10 漏洞扫描、全项目批量分析、自定义规则引擎、多格式报告输出和 CI/CD 流水线集成,满足企业级 DevSecOps 实践需求。
 
 专业版完全兼容免费版的配置文件和检查规则,企业用户可从免费版无缝升级,已有配置无需修改即可在专业版中使用。
@@ -47,7 +48,7 @@ suggested_price: 99.9
 覆盖 OWASP Top 10 全部安全风险类别,提供漏洞定位、风险评级和修复建议。
 
 | OWASP 类别 | 检查内容 | 风险等级 |
-|:-----------|:---------|:---------|
+|--------|----|----|
 | A01 权限失效 | 越权访问、缺少访问控制 | 高危 |
 | A02 加密失败 | 弱加密算法、明文传输 | 高危 |
 | A03 注入攻击 | SQL注入、命令注入、XSS | 严重 |
@@ -61,7 +62,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 代码质量检查专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -69,18 +70,18 @@ suggested_price: 99.9
 ```bash
 #!/bin/bash
 echo "=== OWASP Top 10 深度扫描 ==="
-
+# ...
 echo "[A03] 注入攻击检查..."
 grep -rnE "(eval|exec)\s*\(" src/ --include="*.js" --include="*.py" --include="*.php"
 grep -rnE "query\s*\(\s*['\"].*\+.*['\"]" src/ --include="*.js" --include="*.py"
-
+# ...
 echo "[A02] 加密失败检查..."
 grep -rnE "(md5|sha1|des|rc4)\s*\(" src/ --include="*.js" --include="*.py"
 grep -rn "http://" src/ --include="*.js" | grep -v "localhost\|127.0.0.1"
-
+# ...
 echo "[A05] 配置错误检查..."
 grep -rnE "(debug\s*[:=]\s*true|allow_origin\s*[:=]\s*['\"]\*['\"])" src/
-
+# ...
 echo "[A06] 脆弱组件检查..."
 if [ -f "package.json" ]; then
     npm audit --json > security-audit.json 2>/dev/null
@@ -107,26 +108,26 @@ fi
 ```yaml
 version: "2.0"
 edition: pro
-
+# ...
 custom_rules:
   - id: CUSTOM-001
     name: 禁止使用内部测试密钥
     pattern: "TEST_KEY_\\d+"
     severity: high
     message: "检测到内部测试密钥,请使用环境变量"
-
+# ...
   - id: CUSTOM-002
     name: API 路径必须包含版本号
     pattern: "/api/(?!v\\d+/)"
     severity: medium
     message: "API 路径需包含版本号,如 /api/v1/"
-
+# ...
   - id: CUSTOM-003
     name: 数据库连接必须使用连接池
     pattern: "createConnection\\s*\\("
     severity: medium
     message: "建议使用连接池替代单个连接"
-
+# ...
 compliance_templates:
   - name: 等保2.0三级
     rules: [owasp_top10, data_protection, access_control, audit_log]
@@ -134,7 +135,7 @@ compliance_templates:
     rules: [data_privacy, consent_check, right_to_erasure]
   - name: PCI-DSS
     rules: [card_data_handling, encryption_required, access_audit]
-
+# ...
 ci_cd:
   fail_on: [critical, high]
   report_format: [sarif, html, json]
@@ -152,13 +153,13 @@ ci_cd:
 
 ```bash
 echo "=== 生成审计报告 ==="
-
+# ...
 python audit.py --format json --output report.json
-
+# ...
 python audit.py --format sarif --output report.sarif
-
+# ...
 python audit.py --format html --output report.html
-
+# ...
 python audit.py --format summary
 ```
 
@@ -179,22 +180,22 @@ echo "=== 企业级代码安全审计 ==="
 echo "项目目录: $PROJECT_DIR"
 echo "扫描时间: $(date)"
 echo ""
-
+# ...
 python audit.py \
     --project "$PROJECT_DIR" \
     --rules ".codequality.yml" \
     --compliance "owasp_top10,pci_dss" \
     --format sarif,html,json \
     --output ./reports/
-
+# ...
 python audit.py --summary --output executive-summary.txt
-
+# ...
 CRITICAL_COUNT=$(python audit.py --count --severity critical)
 if [ "$CRITICAL_COUNT" -gt 0 ]; then
     echo "警告: 发现 $CRITICAL_COUNT 个严重问题,建议立即修复"
     exit 1
 fi
-
+# ...
 echo "审计完成,报告已输出到 ./reports/ 目录"
 ```
 
@@ -230,11 +231,11 @@ code_quality_scan:
 ```python
 class CollaborativeReview:
     """多租户协同代码审查"""
-
+# ...
     def __init__(self, tenant_id):
         self.tenant_id = tenant_id
         self.reviews = {}
-
+# ...
     def assign_review(self, issue_id, reviewer, priority="normal"):
         """分配审查任务"""
         self.reviews[issue_id] = {
@@ -244,7 +245,7 @@ class CollaborativeReview:
             "status": "assigned",
             "assigned_at": datetime.now().isoformat()
         }
-
+# ...
     def batch_assign(self, issues, reviewers):
         """批量分配审查任务"""
         for i, issue in enumerate(issues):
@@ -296,8 +297,6 @@ ci_cd:
 ## 配置示例
 ### 企业级完整配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## 最佳实践
 1. **分层扫描**:先运行快速扫描阻断关键问题,再进行深度审计
 2. **规则版本化**:将 `.codequality.yml` 纳入版本控制,确保团队规则一致
@@ -309,10 +308,10 @@ ci_cd:
 echo "=== 第一层:快速阻断 ==="
 python audit.py --quick --fail-on critical
 if [ $? -ne 0 ]; then exit 1; fi
-
+# ...
 echo "=== 第二层:深度审计 ==="
 python audit.py --deep --format sarif,html --output ./reports/
-
+# ...
 echo "=== 第三层:增量检查 ==="
 git diff --name-only HEAD~1 | python audit.py --incremental
 ```
@@ -339,7 +338,7 @@ jobs:
 
 ### Q3:扫描大型项目性能如何?
 | 项目规模 | 文件数 | 扫描时间 | 内存占用 |
-|:---------|:-------|:---------|:---------|
+|---:|---:|---:|---:|
 | 小型 | <500 | <30s | <100MB |
 | 中型 | 500-5000 | 1-5min | 100-500MB |
 | 大型 | 5000-50000 | 5-30min | 500MB-2GB |
@@ -368,7 +367,7 @@ multi_tenant:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | grep/ripgrep | 系统工具 | 必需 | 系统自带 |
 | npm audit | CLI工具 | 可选 | Node.js 自带 |
@@ -399,7 +398,7 @@ external_services:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

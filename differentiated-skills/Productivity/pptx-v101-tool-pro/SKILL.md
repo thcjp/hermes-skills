@@ -29,6 +29,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # PPT 工具 v1.0 专业版
 
@@ -41,7 +43,7 @@ PRO 版本与 FREE 版本完全兼容,在基础功能之上扩展了企业级能
 ### 版本定位
 
 | 维度 | FREE 版本 | PRO 版本 |
-|:-----|:----------|:---------|
+|---|-------|------|
 | 目标用户 | 个人用户 | 企业团队 |
 | 功能范围 | 核心功能 | 全部功能 |
 | 批量操作 | 不支持 | 支持 |
@@ -100,7 +102,7 @@ PRO 版本提供以下能力:
 PRO 版本完全包含 FREE 版本的所有功能,并在此基础上扩展了以下企业级能力:
 
 | 功能类别 | FREE 版本 | PRO 版本增量 |
-|:---------|:----------|:-------------|
+|:-----|:-----|:-----|
 | 基础操作 | 单次执行 | 批量执行 + 并发控制 |
 | 数据管理 | 手动输入 | 自动采集 + 多源聚合 |
 | 协作能力 | 个人使用 | 团队协作 + 权限管理 |
@@ -121,7 +123,7 @@ PRO 版本完全包含 FREE 版本的所有功能,并在此基础上扩展了以
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | PPT 工具 v1.0 专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -161,7 +163,7 @@ for target in "${targets[@]}"; do
   result=$(process_target "$target")
   echo "  Result: $result"
 done
-
+# ...
 # 批量结果汇总
 echo "Batch operation completed: ${#targets[@]} items processed"
 ```
@@ -169,18 +171,18 @@ echo "Batch operation completed: ${#targets[@]} items processed"
 ```python
 # Python 批量处理示例
 import concurrent.futures
-
+# ...
 def process_item(item):
     # 处理单个项目
     # 执行处理逻辑
     return {"item": item, "status": "success"}
-
+# ...
 items = ["item1", "item2", "item3", "item4", "item5"]
-
+# ...
 # 使用线程池并发处理
 with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
     results = list(executor.map(process_item, items))
-
+# ...
 # 输出结果
 for r in results:
     print(f"  {r["item"]}: {r["status"]}")
@@ -276,7 +278,7 @@ Agent 将自动:
 **PRO 配置项说明:**
 
 | 配置项 | 类型 | 默认值 | 说明 |
-|:-------|:-----|:-------|:-----|
+|:---:|:---:|:---:|:---:|
 | batch_mode | bool | true | 启用批量操作模式 |
 | max_concurrent | int | 10 | 最大并发数 |
 | auto_retry | bool | true | 自动重试失败操作 |
@@ -343,7 +345,7 @@ A: PRO 版本用户可通过以下渠道获取优先技术支持:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | curl | CLI 工具 | 推荐 | 系统自带或包管理器安装 |
 | jq | JSON 处理 | 推荐 | apt install jq / brew install jq |
@@ -372,7 +374,7 @@ PRO 版本支持以下 API Key 管理方式:
 **版本信息**
 
 | 项目 | 值 |
-|:-----|:---|
+|---:|:---|
 | 版本号 | 1.0.0 |
 | 版本类型 | PRO |
 | 许可证 | MIT |
@@ -380,9 +382,8 @@ PRO 版本支持以下 API Key 管理方式:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

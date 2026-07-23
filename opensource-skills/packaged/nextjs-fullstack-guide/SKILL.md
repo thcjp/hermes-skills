@@ -21,6 +21,8 @@ tools:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # Next.js全栈指南
 
@@ -37,7 +39,7 @@ pricing_model: "monthly"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 全栈Web应用 | 业务需求+技术栈选择 | App Router+API Routes+数据库的全栈项目代码,输出到`output/{project}/` |
 | 电商网站 | 商品/购物车/支付需求 | SSR/ISR产品页+Server Actions购物车+支付集成,输出到`output/{project}/` |
 | SaaS面板 | 仪表盘+认证+API需求 | Middleware认证+Server Components仪表盘+API路由,输出到`output/{project}/` |
@@ -84,7 +86,7 @@ pricing_model: "monthly"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Next.js全栈指南处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -99,9 +101,9 @@ pricing_model: "monthly"
 import { notFound } from "next/navigation";
 import ProductGallery from "@/components/ProductGallery";
 import { addToCart } from "@/actions/add-to-cart";
-
+# ...
 export const revalidate = 60; // ISR: 每60秒重新验证
-
+# ...
 async function getProduct(id: string) {
   const res = await fetch(`https://api.example.com/products/${id}`, {
     next: { revalidate: 60 },
@@ -109,7 +111,7 @@ async function getProduct(id: string) {
   if (!res.ok) notFound();
   return res.json();
 }
-
+# ...
 export default async function ProductPage({ params }: { params: { id: string } }) {
   const product = await getProduct(params.id);
   return (
@@ -178,26 +180,26 @@ export async function addToCart(formData: FormData) {
 ```typescript
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-
+// ...
 export function middleware(request: NextRequest) {
   const session = request.cookies.get("session");
   const isAuthPath = request.nextUrl.pathname.startsWith("/login");
-
+// ...
   // 已登录访问登录页,重定向到dashboard
   if (session && isAuthPath) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
-
+// ...
   // 未登录访问受保护路由,重定向到login
   if (!session && request.nextUrl.pathname.startsWith("/dashboard")) {
     const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("from", request.nextUrl.pathname);
     return NextResponse.redirect(loginUrl);
   }
-
+// ...
   return NextResponse.next();
 }
-
+// ...
 export const config = {
   matcher: ["/dashboard/:path*", "/login"],
 };
@@ -206,7 +208,7 @@ export const config = {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 水合错误(Hydration) | Server/Client组件边界不清,window/document在Server端使用 | 检查'use client'边界,浏览器API用useEffect包裹 |
 | 数据获取失败 | API不可达或返回错误 | error.tsx错误边界+重试机制,fetch设置cache策略 |
 | 构建失败 | TypeScript类型错误或环境变量缺失 | 检查tsconfig,验证.env文件,`next build`查看详细错误 |
@@ -223,9 +225,9 @@ export const config = {
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
-|:-------|:-----|:---------|:---------|:-------------|
+|:---:|:---:|:---:|:---:|:---:|
 | Node.js 18.17+ | 运行时 | 必需 | Next.js最低版本要求 | Node.js官网下载,国内用cnpm/nvm镜像 |
 | Next.js 14+(推荐15+) | 框架 | 必需 | App Router需要13.4+ | `cnpm install next` 或 `pnpm add next` |
 | 包管理 | 工具 | 必需 | npm/pnpm/yarn | 推荐pnpm(性能更好),国内用cnpm/tnpm |
@@ -246,7 +248,7 @@ export const config = {
 ## 异常处理
 
 | 异常场景 | 处理方式 |
-|:---------|:---------|
+|:------|------:|
 | 水合错误 | 检查Server/Client组件边界,避免window/document在Server端使用 |
 | 数据获取失败 | error.tsx错误边界+重试机制 |
 | 构建失败 | 检查TypeScript类型,验证环境变量 |
@@ -274,13 +276,13 @@ export const config = {
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
-
+// ...
 const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET!);
-
+// ...
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const token = request.cookies.get("session")?.value;
-
+// ...
   // 公开路由不需要认证
   const publicPaths = ["/login", "/register", "/api/auth"];
   if (publicPaths.some((p) => pathname.startsWith(p))) {
@@ -290,7 +292,7 @@ export async function middleware(request: NextRequest) {
     }
     return NextResponse.next();
   }
-
+// ...
   // 受保护路由需要认证
   if (pathname.startsWith("/dashboard")) {
     if (!token) {
@@ -311,10 +313,10 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(loginUrl);
     }
   }
-
+// ...
   return NextResponse.next();
 }
-
+// ...
 export const config = {
   matcher: ["/dashboard/:path*", "/login", "/register"],
 };
@@ -328,20 +330,20 @@ import { headers } from "next/headers";
 import DataCards from "@/components/dashboard/DataCards";
 import ActivityList from "@/components/dashboard/ActivityList";
 import ChartSkeleton from "@/components/dashboard/ChartSkeleton";
-
+# ...
 // 动态渲染,不缓存
 export const dynamic = "force-dynamic";
-
+# ...
 async function RevenueChart() {
   const headersList = headers();
   const userId = headersList.get("x-user-id");
-
+# ...
   // 实时获取收入数据(不缓存)
   const res = await fetch(`${process.env.API_BASE}/api/revenue?userId=${userId}`, {
     cache: "no-store",
   });
   const data = await res.json();
-
+# ...
   return (
     <div className="chart-container">
       <h3 className="text-lg font-semibold mb-4">收入趋势</h3>
@@ -359,24 +361,24 @@ async function RevenueChart() {
     </div>
   );
 }
-
+# ...
 export default async function DashboardPage() {
   const headersList = headers();
   const userId = headersList.get("x-user-id");
-
+# ...
   // 并行获取卡片数据和活动列表
   const [statsRes, activityRes] = await Promise.all([
     fetch(`${process.env.API_BASE}/api/stats?userId=${userId}`, { cache: "no-store" }),
     fetch(`${process.env.API_BASE}/api/activities?userId=${userId}&limit=10`, { cache: "no-store" }),
   ]);
-
+# ...
   const stats = await statsRes.json();
   const activities = await activityRes.json();
-
+# ...
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">仪表盘</h1>
-
+# ...
       {/* 数据卡片 - 立即渲染 */}
       <DataCards
         revenue={stats.revenue}
@@ -384,12 +386,12 @@ export default async function DashboardPage() {
         users={stats.users}
         conversionRate={stats.conversionRate}
       />
-
+# ...
       {/* 图表 - 流式渲染 */}
       <Suspense fallback={<ChartSkeleton />}>
         <RevenueChart />
       </Suspense>
-
+# ...
       {/* 最近活动 - 立即渲染 */}
       <ActivityList activities={activities} />
     </div>
@@ -433,13 +435,13 @@ export default function Loading() {
 // app/blog/page.tsx (SSG - 构建时生成文章列表)
 import Link from "next/link";
 import { getSortedPosts } from "@/lib/posts";
-
+# ...
 // 静态生成
 export const dynamic = "force-static";
-
+# ...
 export default async function BlogListPage() {
   const posts = await getSortedPosts();
-
+# ...
   return (
     <div className="max-w-3xl mx-auto py-8">
       <h1 className="text-3xl font-bold mb-8">技术博客</h1>
@@ -468,16 +470,16 @@ import { notFound } from "next/navigation";
 import { getPost, getAllPostSlugs } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { Metadata } from "next";
-
+# ...
 // ISR: 每300秒重新验证
 export const revalidate = 300;
-
+# ...
 // 静态路径生成
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
   return slugs.map((slug) => ({ slug }));
 }
-
+# ...
 // 动态生成SEO元数据
 export async function generateMetadata({
   params,
@@ -486,7 +488,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const post = await getPost(params.slug);
   if (!post) return {};
-
+# ...
   return {
     title: post.title,
     description: post.excerpt,
@@ -506,11 +508,11 @@ export async function generateMetadata({
     },
   };
 }
-
+# ...
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);
   if (!post) notFound();
-
+# ...
   return (
     <article className="max-w-3xl mx-auto py-8">
       <header className="mb-8">
@@ -536,9 +538,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-
+// ...
 const postsDirectory = path.join(process.cwd(), "content", "blog");
-
+// ...
 export interface PostMeta {
   slug: string;
   title: string;
@@ -548,11 +550,11 @@ export interface PostMeta {
   author: string;
   coverImage?: string;
 }
-
+// ...
 export interface Post extends PostMeta {
   content: string;
 }
-
+// ...
 export async function getSortedPosts(): Promise<PostMeta[]> {
   const fileNames = fs.readdirSync(postsDirectory);
   const posts = fileNames
@@ -573,7 +575,7 @@ export async function getSortedPosts(): Promise<PostMeta[]> {
     });
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
-
+// ...
 export async function getPost(slug: string): Promise<Post | null> {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   if (!fs.existsSync(fullPath)) return null;
@@ -590,7 +592,7 @@ export async function getPost(slug: string): Promise<Post | null> {
     content,
   };
 }
-
+// ...
 export async function getAllPostSlugs(): Promise<string[]> {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.filter((f) => f.endsWith(".mdx")).map((f) => f.replace(/\.mdx$/, ""));
@@ -615,20 +617,20 @@ export async function getAllPostSlugs(): Promise<string[]> {
 // app/api/tasks/stream/route.ts (SSE端点)
 import { NextRequest } from "next/server";
 import { headers } from "next/headers";
-
+// ...
 export const dynamic = "force-dynamic";
-
+// ...
 export async function GET(request: NextRequest) {
   const headersList = headers();
   const userId = headersList.get("x-user-id");
-
+// ...
   const stream = new ReadableStream({
     start(controller) {
       const encoder = new TextEncoder();
-
+// ...
       // 发送初始连接确认
       controller.enqueue(encoder.encode("data: connected\n\n"));
-
+// ...
       // 模拟监听数据库变更(实际可用PostgreSQL LISTEN/NOTIFY)
       const interval = setInterval(async () => {
         const updates = await checkTaskUpdates(userId);
@@ -636,7 +638,7 @@ export async function GET(request: NextRequest) {
           controller.enqueue(encoder.encode(`data: ${JSON.stringify(updates)}\n\n`));
         }
       }, 5000);
-
+// ...
       // 客户端断开时清理
       request.signal.addEventListener("abort", () => {
         clearInterval(interval);
@@ -644,7 +646,7 @@ export async function GET(request: NextRequest) {
       });
     },
   });
-
+// ...
   return new Response(stream, {
     headers: {
       "Content-Type": "text/event-stream",
@@ -653,7 +655,7 @@ export async function GET(request: NextRequest) {
     },
   });
 }
-
+// ...
 async function checkTaskUpdates(userId: string | null) {
   // 实际实现:查询最近变更的任务
   return [];
@@ -666,30 +668,30 @@ async function checkTaskUpdates(userId: string | null) {
 "use server";
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
-
+// ...
 export async function createTask(formData: FormData) {
   const title = formData.get("title") as string;
   const description = formData.get("description") as string;
   const column = formData.get("column") as string;
-
+// ...
   if (!title || title.trim().length === 0) {
     return { error: "任务标题不能为空" };
   }
-
+// ...
   const headersList = headers();
   const userId = headersList.get("x-user-id");
-
+// ...
   try {
     const res = await fetch(`${process.env.API_BASE}/api/tasks`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, description, column, userId }),
     });
-
+// ...
     if (!res.ok) {
       return { error: "创建任务失败" };
     }
-
+// ...
     // 重验证看板页面
     revalidatePath("/board");
     return { success: true };
@@ -697,7 +699,7 @@ export async function createTask(formData: FormData) {
     return { error: "网络错误,请重试" };
   }
 }
-
+// ...
 export async function moveTask(taskId: string, targetColumn: string) {
   try {
     const res = await fetch(`${process.env.API_BASE}/api/tasks/${taskId}`, {
@@ -705,11 +707,11 @@ export async function moveTask(taskId: string, targetColumn: string) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ column: targetColumn }),
     });
-
+// ...
     if (!res.ok) {
       return { error: "移动任务失败" };
     }
-
+// ...
     revalidatePath("/board");
     return { success: true };
   } catch {
@@ -724,23 +726,23 @@ export async function moveTask(taskId: string, targetColumn: string) {
 "use client";
 import { useState, useEffect, useRef, useTransition } from "react";
 import { moveTask } from "@/actions/tasks";
-
+# ...
 interface Task {
   id: string;
   title: string;
   column: string;
 }
-
+# ...
 export default function KanbanBoard({ initialTasks }: { initialTasks: Task[] }) {
   const [tasks, setTasks] = useState(initialTasks);
   const [isPending, startTransition] = useTransition();
   const eventSourceRef = useRef<EventSource | null>(null);
-
+# ...
   // SSE监听实时更新
   useEffect(() => {
     const eventSource = new EventSource("/api/tasks/stream");
     eventSourceRef.current = eventSource;
-
+# ...
     eventSource.onmessage = (event) => {
       const updates = JSON.parse(event.data);
       if (Array.isArray(updates)) {
@@ -751,7 +753,7 @@ export default function KanbanBoard({ initialTasks }: { initialTasks: Task[] }) 
         });
       }
     };
-
+# ...
     eventSource.onerror = () => {
       eventSource.close();
       // 5秒后重连
@@ -759,19 +761,19 @@ export default function KanbanBoard({ initialTasks }: { initialTasks: Task[] }) 
         eventSourceRef.current = new EventSource("/api/tasks/stream");
       }, 5000);
     };
-
+# ...
     return () => eventSource.close();
   }, []);
-
+# ...
   // 乐观更新:先更新UI,再发送请求
   const handleMoveTask = (taskId: string, targetColumn: string) => {
     const originalTasks = [...tasks];
-
+# ...
     // 乐观更新:立即更新UI
     setTasks((prev) =>
       prev.map((t) => (t.id === taskId ? { ...t, column: targetColumn } : t))
     );
-
+# ...
     // 发送Server Action
     startTransition(async () => {
       const result = await moveTask(taskId, targetColumn);
@@ -782,9 +784,9 @@ export default function KanbanBoard({ initialTasks }: { initialTasks: Task[] }) 
       }
     });
   };
-
+# ...
   const columns = ["todo", "in_progress", "done"];
-
+# ...
   return (
     <div className="flex gap-4">
       {columns.map((col) => (
@@ -828,18 +830,18 @@ export default function KanbanBoard({ initialTasks }: { initialTasks: Task[] }) 
 **LLM生成输出** (`output/perf-optimization/optimization-report.md`):
 ```markdown
 # Core Web Vitals性能优化方案
-
+# ...
 ## 当前问题诊断
 | 指标 | 当前值 | 目标值 | 根因 |
-|:-----|:-------|:-------|:-----|
+|---:|:---|---:|---:|
 | LCP | 4.2s | <2.5s | Hero大图未压缩(3.2MB),无next/image |
 | CLS | 0.25 | <0.1 | 图片无width/height,字体加载导致布局偏移 |
 | FID | 180ms | <100ms | 第三方分析脚本阻塞主线程 |
-
+# ...
 ## 优化方案
-
+# ...
 ### 1. LCP优化(4.2s → 2.1s)
-
+# ...
 #### 1.1 使用next/image优化Hero图片
 ```tsx
 // 优化前
@@ -859,7 +861,7 @@ import Image from "next/image";
 />
 ```
 **效果**: 自动WebP转换+响应式srcset+懒加载非首屏图,LCP降低至2.1s
-
+# ...
 #### 1.2 图片预加载
 ```tsx
 import { ImageLoader } from "next/image";
@@ -874,9 +876,9 @@ import { ImageLoader } from "next/image";
   />
 </head>
 ```
-
+# ...
 ### 2. CLS优化(0.25 → 0.05)
-
+# ...
 #### 2.1 为所有图片添加尺寸属性
 ```tsx
 // 优化前 - 无尺寸导致布局偏移
@@ -891,7 +893,7 @@ import { ImageLoader } from "next/image";
   sizes="(max-width: 768px) 100vw, 400px"
 />
 ```
-
+# ...
 #### 2.2 使用next/font消除字体闪烁
 ```tsx
 // app/layout.tsx
@@ -912,9 +914,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 **效果**: 字体在构建时自托管,消除FOUT/FOIT,CLS降至0.05
-
+# ...
 ### 3. FID/INP优化(180ms → 85ms)
-
+# ...
 #### 3.1 延迟加载第三方脚本
 ```tsx
 import Script from "next/script";
@@ -929,7 +931,7 @@ import Script from "next/script";
   defer
 />
 ```
-
+# ...
 #### 3.2 代码分割减少主线程阻塞
 ```tsx
 import dynamic from "next/dynamic";
@@ -940,7 +942,7 @@ const HeavyChart = dynamic(() => import("@/components/HeavyChart"), {
   ssr: false,  // 仅客户端渲染
 });
 ```
-
+# ...
 #### 3.3 React并发特性优化
 ```tsx
 import { useTransition } from "react";
@@ -963,14 +965,14 @@ function SearchResults() {
   );
 }
 ```
-
+# ...
 ## 优化后预期指标
 | 指标 | 优化前 | 优化后 | 提升 |
-|:-----|:-------|:-------|:-----|
+|:------:|--------|:-------|:------:|
 | LCP | 4.2s | 2.1s | 50% |
 | CLS | 0.25 | 0.05 | 80% |
 | FID | 180ms | 85ms | 53% |
-
+# ...
 ## 验证方法
 1. Lighthouse: `npx lighthouse http://localhost:3000 --view`
 2. Chrome DevTools: Performance面板录制页面加载

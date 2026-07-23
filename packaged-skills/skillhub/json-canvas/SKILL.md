@@ -18,17 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Json Canvas
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Create and edit JSON Canvas files ( | 支持 | 支持 |
-| canvas) with nodes, edges, groups, | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Json Canvas创建编辑 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -39,7 +43,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 画布创建 | 节点类型和连接关系 | JSON Canvas格式文件 |
 | 画布编辑 | 现有.canvas文件和修改 | 编辑后的画布和节点结构 |
 | 节点管理 | 节点ID和属性 | 节点增删改和边连接 |
@@ -56,7 +60,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | canvas_path | string | 否 | Canvas文件路径, 新建时留空 |
 | node_type | string | 否 | 节点类型, 可选: text/group/file/link, 默认: text |
 
@@ -109,7 +113,7 @@ pricing_model: "per_use"
 
 ### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -133,16 +137,10 @@ See [references/EXAMPLES.md](/api/v1/skills/json-canvas/file?path=references%2FE
 ### Q1: 如何开始使用Json Canvas？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Json Canvas有什么限制？
-A: 
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

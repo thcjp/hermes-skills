@@ -18,18 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Pandoc Convert
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **Smart Defaults**: Optimized settings for each conversion path | 支持 | 支持 |
-| **Metadata Preservation**: Keep titles, authors, dates across formats | 不支持 | 支持 |
-| **Error Recovery**: Validation and helpful error messages | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -68,7 +71,7 @@ pricing_model: "monthly"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -79,9 +82,9 @@ pricing_model: "monthly"
 
 ```bash
 python （请参考skill目录中的脚本文件） input.md output.pdf
-
+# ...
 python （请参考skill目录中的脚本文件） report.md report.pdf --template business --toc
-
+# ...
 python （请参考skill目录中的脚本文件） --batch *.md --format pdf --output-dir ./pdfs
 ```
 
@@ -89,7 +92,7 @@ python （请参考skill目录中的脚本文件） --batch *.md --format pdf --
 
 ```bash
 （请参考skill目录中的脚本文件） input/*.md pdf output/
-
+# ...
 （请参考skill目录中的脚本文件） output/document.pdf
 （请参考skill目录中的脚本文件） output/book.epub
 ```
@@ -98,9 +101,9 @@ python （请参考skill目录中的脚本文件） --batch *.md --format pdf --
 
 ```bash
 pandoc input.md -o output.pdf
-
+# ...
 pandoc input.md -o output.docx
-
+# ...
 pandoc input.docx -o output.md --extract-media=./media
 ```
 
@@ -108,7 +111,7 @@ pandoc input.docx -o output.md --extract-media=./media
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | pandoc-convert-openclaw处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -167,7 +170,6 @@ pandoc input.docx -o output.md --extract-media=./media
 
 ## 异常处理
 
-
 ### Common Issues
 
 * **"pandoc: command not found"** → Install pandoc (see INSTALL.md)
@@ -179,7 +181,7 @@ pandoc input.docx -o output.md --extract-media=./media
 See `references/troubleshooting.md` for comprehensive solutions.
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ;确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 对照使用流程章节检查输入格式;参考示例章节修正输入 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述,补充必要的上下文信息 |
@@ -191,9 +193,9 @@ See `references/troubleshooting.md` for comprehensive solutions.
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -202,7 +204,6 @@ See `references/troubleshooting.md` for comprehensive solutions.
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -214,8 +215,8 @@ export API_KEY="your_api_key_here"
 ### 示例1：基础用法
 
 ```
-### Using Python Helper (Recommended)
-
+### Using Python Helper (Recommended)(补充)
+# ...
 ```bash
 python （请参考skill目录中的脚本文件） input.md output.pdf
 
@@ -223,42 +224,43 @@ python （请参考skill目录中的脚本文件） report.md report.pdf --templ
 
 python （请参考skill目录中的脚本文件） --batch *.md --format pdf --output-dir ./pdfs
 ```
-
-### Using Bash Utilities
-
+# ...
+### Using Bash Utilities(补充)
+# ...
 ```bash
 （请参考skill目录中的脚本文件） input/*.md pdf output/
 
 （请参考skill目录中的脚本文件） output/document.pdf
 （请参考skill目录中的脚本文件） output/book.epub
 ```
-
-### Direct Pandoc
-
+# ...
+### Direct Pandoc(补充)
+# ...
 ```bash
 pandoc input.md -o output.pdf
 
 pandoc input.md -o output.
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: 如何开始使用Pandoc Convert？
 A: 
-
+# ...
 ### Q2: 遇到错误怎么办？
 A: 
-
+# ...
 ### Q3: Pandoc Convert有什么限制？
 A: 
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
+# ...

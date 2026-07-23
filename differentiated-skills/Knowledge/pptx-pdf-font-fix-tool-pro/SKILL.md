@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # PPT字体修复工具（专业版）
 
@@ -114,21 +116,11 @@ PPT字体修复工具是针对文档处理领域的专业化AI辅助工具。专
 
 `把PPT转为PDF，确保字体正确
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：批量字体修复
 
 批量修复多个PPT文件的字体问题。**示例指令**：`
 
 `批量修复这些PPT的字体
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ PPT字体修复工具是针对文档处理领域的专业化AI辅助工具。专
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | PPT字体修复工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ PPT字体修复工具是针对文档处理领域的专业化AI辅助工具。专
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -166,7 +158,7 @@ from pathlib import Path
 from pptx import Presentation
 from pptx.util import Pt
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class FontIssue:
     slide_num: int
@@ -174,7 +166,7 @@ class FontIssue:
     font_name: str
     issue_type: str  # missing, embedded, substituted
     fix_applied: str = ""
-
+# ...
 class PPTFontFixEngine:
     FONT_MAP = {
         "宋体": "SimSun",
@@ -185,13 +177,13 @@ class PPTFontFixEngine:
         "Arial": "Arial",
         "Times New Roman": "Times New Roman",
     }
-
+# ...
     SAFE_FONTS = ["SimSun", "SimHei", "Microsoft YaHei", "Arial"]
-
+# ...
     def __init__(self):
         self.issues: List[FontIssue] = []
         self.fixed_fonts: Dict[str, str] = {}
-
+# ...
     def analyze(self, pptx_path: str) -> List[FontIssue]:
         """分析字体问题（PRO 专属）"""
         prs = Presentation(pptx_path)
@@ -213,7 +205,7 @@ class PPTFontFixEngine:
                                         issue_type="potentially_unsafe"
                                     ))
         return self.issues
-
+# ...
     def fix_fonts(self, pptx_path: str, output_path: str,
                  font_mapping: Dict[str, str] = None) -> dict:
         """修复字体（PRO 专属：自动替换）"""
@@ -238,7 +230,7 @@ class PPTFontFixEngine:
             "fonts_replaced": len(replaced),
             "mapping": replaced
         }
-
+# ...
     def convert_to_pdf(self, pptx_path: str, output_pdf: str) -> dict:
         """转为PDF（PRO 专属：字体安全）"""
         import subprocess
@@ -253,7 +245,7 @@ class PPTFontFixEngine:
             "output": output_pdf,
             "error": result.stderr if result.returncode != 0 else None
         }
-
+# ...
     def batch_fix(self, pptx_files: List[str],
                  output_dir: str = "./output") -> List[dict]:
         """批量修复（PRO 专属）"""
@@ -265,7 +257,7 @@ class PPTFontFixEngine:
             result["source"] = pptx_file
             results.append(result)
         return results
-
+# ...
     def generate_report(self, output_path: str):
         """生成修复报告（PRO 专属）"""
         report = {
@@ -279,14 +271,14 @@ class PPTFontFixEngine:
                 report["issues_by_type"].get(issue.issue_type, 0) + 1
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
-
+# ...
     def _get_default_mapping(self) -> Dict[str, str]:
         mapping = {}
         for cn_name, en_name in self.FONT_MAP.items():
             if cn_name != en_name:
                 mapping[cn_name] = en_name
         return mapping
-
+# ...
 engine = PPTFontFixEngine()
 issues = engine.analyze("presentation.pptx")
 print(f"发现 {len(issues)} 个字体问题")
@@ -328,7 +320,7 @@ pptx_font_fix:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -340,7 +332,7 @@ pptx_font_fix:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -412,7 +404,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | python-pptx | Python库 | 必需 | pip install python-pptx |
 | libreoffice | 系统工具 | 可选 | PDF转换需要LibreOffice |
@@ -427,9 +419,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 报告工具包 - 专业版
 
@@ -143,7 +145,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 报告工具包-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -165,7 +167,7 @@ pricing_model: "monthly"
     <h1>{{ company_name }} 月度经营报告</h1>
     <p>报告期间: {{ period }}</p>
   </div>
-
+# ...
   <h2>核心指标</h2>
   <table class="table">
     <tr><th>指标</th><th>本月</th><th>上月</th><th>环比</th></tr>
@@ -178,10 +180,10 @@ pricing_model: "monthly"
     </tr>
     {% endfor %}
   </table>
-
+# ...
   <h2>趋势分析</h2>
   <div class="chart">{{ revenue_chart }}</div>
-
+# ...
   <h2>分析总结</h2>
   <p>{{ analysis }}</p>
 </body>
@@ -196,7 +198,7 @@ pricing_model: "monthly"
   --period "2025-01" \
   --format pdf \
   --deliver "email,dingtalk"
-
+# ...
 # 输出:
 # 正在获取数据...
 # 正在生成图表...
@@ -217,12 +219,12 @@ pricing_model: "monthly"
   --name "客户A" \
   --admin "admin@a.com" \
   --brand-color "#e63946"
-
+# ...
 ./report-pro-cli tenant create \
   --name "客户B" \
   --admin "admin@b.com" \
   --brand-color "#2a9d8f"
-
+# ...
 # 为租户配置报告
 ./report-pro-cli report create \
   --tenant "客户A" \
@@ -230,7 +232,7 @@ pricing_model: "monthly"
   --schedule "0 9 * * 1" \
   --template "corporate-weekly" \
   --deliver "email"
-
+# ...
 # 列出租户报告
 ./report-pro-cli report list --tenant "客户A"
 ```
@@ -245,10 +247,10 @@ pricing_model: "monthly"
   --name "quarterly-report" \
   --status draft \
   --format pdf
-
+# ...
 # 提交审批
 ./report-pro-cli submit --report-id "q4-2024" --approver "manager@company.com"
-
+# ...
 # 审批通过后自动发布
 ./report-pro-cli approve --report-id "q4-2024" --action publish
 # 报告已发布,已推送到配置的交付渠道
@@ -279,7 +281,7 @@ pricing_model: "monthly"
 ```bash
 # 免费版配置自动兼容
 ./report-pro-cli upgrade --from free
-
+# ...
 # 迁移已有报告
 ./report-pro-cli migrate --source ~/report --tenant "default"
 ```
@@ -291,15 +293,15 @@ pricing_model: "monthly"
 export SMTP_HOST="smtp.example.com"
 export SMTP_USER="report@company.com"
 export SMTP_PASSWORD="your_password"
-
+# ...
 # 钉钉
 export DINGTALK_WEBHOOK_URL="https://oapi.dingtalk.com/..."
 export DINGTALK_SECRET="your_secret"
-
+# ...
 # 飞书
 export FEISHU_WEBHOOK_URL="https://open.feishu.cn/..."
 export FEISHU_SECRET="your_secret"
-
+# ...
 # Slack
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/..."
 ```
@@ -347,7 +349,7 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/..."
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 报告数量 | 最多 5 个 | 无限制 |
 | 多租户 | 不支持 | 支持 |
 | 模板 | 基础 | 企业级 + 品牌定制 |
@@ -399,7 +401,7 @@ A: 调用 `POST /api/reports/{name}/generate` 接口,传入参数(period、forma
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | Jinja2 | 模板引擎 | 必需 | pip install jinja2 |
 | matplotlib | 图表生成 | 推荐 | pip install matplotlib |
@@ -429,9 +431,8 @@ A: 调用 `POST /api/reports/{name}/generate` 接口,传入参数(period、forma
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

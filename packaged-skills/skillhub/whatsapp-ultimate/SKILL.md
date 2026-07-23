@@ -20,16 +20,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
 # 通讯应用工具
 
 通讯应用消息发送、交互反应、群组管理和多Agent讨论。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 通讯应用工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 通讯应用工具通讯应用消息发送 | 不支持 | 支持 |
+| 通讯应用工具群组管理 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -146,11 +147,10 @@ python3 （请参考skill目录中的脚本文件） --group "project-group@g.us
 ```bash
 # 生成贴纸
 ffmpeg -i input.png -vf "scale=512:512:force_original_aspect_ratio=decrease" -lossless 1 output.webp
-
+# ...
 # 生成语音消息
 ffmpeg -i input.wav -ar 48000 -ac 1 -b:a 64k -c:a libopus output.opus
 ```
-
 
 ### 输出格式
 
@@ -168,7 +168,7 @@ ffmpeg -i input.wav -ar 48000 -ac 1 -b:a 64k -c:a libopus output.opus
 ## 消息格式要求
 
 | 消息类型 | 格式要求 | 最大大小 |
-|---------|---------|---------|
+|:---:|:---:|:---:|
 | 文本 | UTF-8编码 | 无限制 |
 | 图片 | jpg/png/webp | 16MB |
 | 语音 | opus格式，64k采样率 | 16MB |
@@ -202,7 +202,7 @@ python3 （请参考skill目录中的脚本文件） action=send \
 ```bash
 # 先用ffmpeg转换音频
 ffmpeg -i recording.wav -ar 48000 -ac 1 -b:a 64k -c:a libopus voice_msg.opus
-
+# ...
 # 发送语音消息
 python3 （请参考skill目录中的脚本文件） action=send \
   --to "8613800138000@s.whatsapp.net" \
@@ -267,7 +267,7 @@ python3 （请参考skill目录中的脚本文件） action=search \
 ```bash
 # 生成贴纸
 ffmpeg -i sticker_input.png -vf "scale=512:512:force_original_aspect_ratio=decrease" -lossless 1 /tmp/sticker.webp
-
+# ...
 # 发送贴纸
 python3 （请参考skill目录中的脚本文件） action=send \
   --to "8613800138000@s.whatsapp.net" \
@@ -288,9 +288,8 @@ python3 （请参考skill目录中的脚本文件） action=send \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 消息发送速率限制 | 短时间内发送过多消息 | 等待30秒后控制发送频率 |
 | JID格式无效 | 收件人ID格式错误 | 确保格式为 `数字@s.whatsapp.net`（个人）或 `ID@g.us`（群组） |
 | 语音消息格式错误 | 非opus格式或采样率不是64k | 用 `ffmpeg -ar 48000 -b:a 64k -c:a libopus` 转换 |

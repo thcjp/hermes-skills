@@ -40,16 +40,17 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 本工具为 JavaScript 开发者提供代码陷阱防范与优选实践指引，覆盖相等性比较、this 绑定、闭包、数组变异、异步编程、类型转换、严格模式等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 JavaScript 中常见的陷阱，编写更加健壮、可靠的代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例。
 
 ## 核心能力
 | 能力模块 | 描述 | 典型陷阱 |
-| --- | --- | --- |
+|----|---|----|
 | 相等性比较 | == 与 === 的区别 | `"0" == false` 为 true |
 | this 绑定 | 函数中 this 的指向 | 回调中 this 丢失 |
 | 闭包陷阱 | 变量捕获问题 | 循环中共享变量 |
@@ -93,12 +94,8 @@ suggested_price: 29.9
 ### 场景二：this 绑定问题修复
 开发者的事件回调中 this 指向错误。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三：数组不可变操作
 开发者修改数组后发现原始数据被意外修改。
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 不适用场景
 
@@ -130,13 +127,13 @@ suggested_price: 29.9
 "0" === false    // false（安全）
 null == undefined  // true
 null === undefined // false
-
+// ...
 // NaN 判断
 NaN === NaN        // false
 Number.isNaN(NaN)  // true（正确方式）
 isNaN("hello")     // true（会先转换类型）
 Number.isNaN("hello")  // false（不转换类型）
-
+// ...
 // null 检查
 typeof null        // "object"（历史遗留）
 typeof undefined   // "undefined"
@@ -146,36 +143,33 @@ null === undefined // false
 
 ### 闭包陷阱速查
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 数字精度速查
 ```javascript
 // 浮点数精度问题
 0.1 + 0.2          // 0.30000000000000004
 0.1 + 0.2 === 0.3  // false
-
+// ...
 // 解决方案一：整数计算（推荐用于金额）
 const cents = 10 + 20;  // 以分为单位
 const yuan = cents / 100;
-
+// ...
 // 解决方案二：toFixed（用于显示）
 (0.1 + 0.2).toFixed(2)  // "0.30"（字符串）
-
+// ...
 // 解决方案三：精度库
 // npm install decimal.js
 import Decimal from 'decimal.js';
 new Decimal(0.1).plus(0.2).toNumber()  // 0.3
-
+// ...
 // 大整数精度
 Number.MAX_SAFE_INTEGER  // 9007199254740991
 9007199254740992 === 9007199254740993  // true（精度丢失）
-
+// ...
 // 使用 BigInt
 9007199254740992n === 9007199254740993n  // false
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 ### 隐式类型转换速查
@@ -186,20 +180,20 @@ Number.MAX_SAFE_INTEGER  // 9007199254740991
 [] + []      // ""（数组转字符串）
 [] + {}      // "[object Object]"
 {} + []      // 0（特殊：{} 被解析为块）
-
+// ...
 // 减法：数字优先
 "5" - 1      // 4（字符串转数字）
 "5" - "2"    // 3
 true - 1     // 0
-
+// ...
 // 比较运算
 "10" < "9"   // true（字符串比较）
 "10" < 9     // false（转为数字比较）
-
+// ...
 // 布尔转换（falsy 值）
 // false, 0, -0, 0n, "", null, undefined, NaN
 // 所有其他值都是 truthy
-
+// ...
 // 显式转换（推荐）
 String(123)      // "123"
 Number("123")    // 123
@@ -215,25 +209,25 @@ const obj = { a: 1, b: 2 };
 for (const key in obj) {
     console.log(key);  // "a", "b"
 }
-
+// ...
 // for...of：遍历值（需要可迭代）
 const arr = [1, 2, 3];
 for (const val of arr) {
     console.log(val);  // 1, 2, 3
 }
-
+// ...
 // 对象不可直接用 for...of
 for (const val of obj) { }  // TypeError
-
+// ...
 // 对象遍历的正确方式
 Object.keys(obj)      // ["a", "b"]  键
 Object.values(obj)    // [1, 2]      值
 Object.entries(obj)   // [["a", 1], ["b", 2]]  键值对
-
+// ...
 for (const [key, val] of Object.entries(obj)) {
     console.log(key, val);
 }
-
+// ...
 // 获取所有属性（含 Symbol）
 Reflect.ownKeys(obj)  // 包括 Symbol 和不可枚举属性
 ```
@@ -242,25 +236,25 @@ Reflect.ownKeys(obj)  // 包括 Symbol 和不可枚举属性
 ```javascript
 // 文件顶部启用严格模式
 "use strict";
-
+// ...
 // 严格模式下的变化：
 // 1. 隐式全局变量报错
 x = 5;  // ReferenceError
-
+// ...
 // 2. this 默认为 undefined
 function test() {
     return this;  // undefined（非严格模式为 globalThis）
 }
-
+// ...
 // 3. 禁止重复参数
 function bad(a, a) { }  // SyntaxError
-
+// ...
 // 4. 禁止 with 语句
 with (obj) { }  // SyntaxError
-
+// ...
 // 5. 禁止删除不可删除属性
 delete Object.prototype;  // TypeError
-
+// ...
 // 模块默认启用严格模式
 // ES Module 中无需手动声明
 export function test() {
@@ -295,7 +289,7 @@ async function bad() {
     });
     // 不会等待！
 }
-
+// ...
 // 正确：for...of
 async function good() {
     for (const n of [1, 2, 3]) {
@@ -311,7 +305,7 @@ const results = await Promise.all([
     fetch('/api/1'),
     fetch('/api/2'),  // 如果失败，整个 Promise.all 失败
 ]);
-
+// ...
 // allSettled：等待所有完成，无论成功失败
 const results = await Promise.allSettled([
     fetch('/api/1'),
@@ -325,13 +319,13 @@ const results = await Promise.allSettled([
 // 浅拷贝
 const shallow = { ...obj };
 const shallowArr = [...arr];
-
+// ...
 // 深拷贝方式一：structuredClone（推荐）
 const deep = structuredClone(obj);
-
+// ...
 // 深拷贝方式二：JSON（不支持函数、Symbol、循环引用）
 const deep = JSON.parse(JSON.stringify(obj));
-
+// ...
 // 深拷贝方式三：递归
 function deepClone(obj) {
     if (obj === null || typeof obj !== 'object') return obj;
@@ -351,11 +345,11 @@ function deepClone(obj) {
 ```javascript
 // 错误：typeof
 typeof []  // "object"
-
+// ...
 // 正确方式
 Array.isArray([1, 2])  // true
 Array.isArray('abc')   // false
-
+// ...
 // 跨框架安全
 Array.isArray(document.querySelectorAll('div'))  // false（NodeList）
 ```
@@ -364,14 +358,14 @@ Array.isArray(document.querySelectorAll('div'))  // false（NodeList）
 ```javascript
 // 可选链 ?.
 const name = user?.profile?.name;  // 不会报错，返回 undefined
-
+// ...
 // 空值合并 ??
 const displayName = user?.name ?? '匿名';  // 仅 null/undefined 时用默认值
-
+// ...
 // 与 || 的区别
 0 ?? 'default'   // 0（?? 不处理 0）
 0 || 'default'   // "default"（|| 处理所有 falsy）
-
+// ...
 // 函数调用可选链
 const result = obj?.method?.();  // 安全调用
 ```
@@ -382,18 +376,18 @@ const result = obj?.method?.();  // 安全调用
 const timer = setInterval(() => {}, 1000);
 // 组件销毁时
 clearInterval(timer);
-
+// ...
 // 2. 移除事件监听
 const handler = () => {};
 element.addEventListener('click', handler);
 // 组件销毁时
 element.removeEventListener('click', handler);
-
+// ...
 // 3. 清除引用
 let heavyData = largeArray;
 // 使用完后
 heavyData = null;  // 释放引用
-
+// ...
 // 4. 使用 WeakMap/WeakSet
 const cache = new WeakMap();
 cache.set(element, data);  // element 被回收时自动清理
@@ -408,7 +402,7 @@ cache.set(element, data);  // element 被回收时自动清理
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Node.js | 运行时 | 推荐 | nodejs.org 下载 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
@@ -423,7 +417,7 @@ cache.set(element, data);  // element 被回收时自动清理
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

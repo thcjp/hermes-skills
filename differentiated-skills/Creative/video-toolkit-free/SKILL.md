@@ -22,11 +22,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
-
 # 视频工具箱 - 免费版
 
 ## 概述
@@ -39,7 +40,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 视频工具箱免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -47,10 +48,10 @@ suggested_price: 29.9
 ```bash
 # 转换为MP4(H.264+AAC,最大兼容性)
 ffmpeg -i input.mov -c:v libx264 -c:a aac -movflags +faststart output.mp4
-
+# ...
 # 压缩视频(CRF 23为默认平衡值,越小质量越高文件越大)
 ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k output.mp4
-
+# ...
 # 压缩为WhatsApp规格(目标<64MB)
 ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -fs 62M output.mp4
 ```
@@ -58,7 +59,7 @@ ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -fs 62M 
 压缩参数说明:
 
 | 参数 | 说明 | 推荐值 |
-|------|------|--------|
+|:-----|:-----|:-----|
 | CRF | 质量控制(18-28) | 23(默认)/28(高压缩) |
 | preset | 编码速度 | medium(平衡)/slow(高质量) |
 | -b:a | 音频比特率 | 128k(标准)/96k(压缩) |
@@ -74,10 +75,10 @@ ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -fs 62M 
 ```bash
 # 使用Whisper生成SRT字幕
 whisper input.mp4 --model small --language zh --output_format srt
-
+# ...
 # 将字幕烧入视频(硬字幕)
 ffmpeg -i input.mp4 -vf subtitles=input.srt -c:a copy output.mp4
-
+# ...
 # 生成VTT字幕(Web格式)
 whisper input.mp4 --model small --language zh --output_format vtt
 ```
@@ -92,10 +93,10 @@ whisper input.mp4 --model small --language zh --output_format vtt
 ```bash
 # 裁剪为9:16(竖屏,TikTok/Reels)
 ffmpeg -i input.mp4 -vf "crop=ih*9/16:ih" -c:a copy output.mp4
-
+# ...
 # 填充为16:9(横屏,加黑边)
 ffmpeg -i input.mp4 -vf "pad=ceil(iw/16)*16:ih:(ow-iw)/2:(oh-ih)/2:black" -c:a copy output.mp4
-
+# ...
 # 裁剪为1:1(正方形,Instagram)
 ffmpeg -i input.mp4 -vf "crop=ih:ih" -c:a copy output.mp4
 ```
@@ -110,13 +111,13 @@ ffmpeg -i input.mp4 -vf "crop=ih:ih" -c:a copy output.mp4
 ```bash
 # 音频标准化(统一音量)
 ffmpeg -i input.mp4 -af "loudnorm=I=-16:TP=-1.5:LRA=11" -c:v copy output.mp4
-
+# ...
 # 降噪
 ffmpeg -i input.mp4 -af "highpass=f=200,lowpass=f=3000" -c:v copy output.mp4
-
+# ...
 # 提取音频为MP3
 ffmpeg -i input.mp4 -vn -acodec mp3 -b:a 192k output.mp3
-
+# ...
 # 替换视频音频
 ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 output.mp4
 ```
@@ -131,7 +132,7 @@ ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 output
 ```bash
 # 获取视频详细信息
 ffprobe -v quiet -print_format json -show_format -show_streams input.mp4
-
+# ...
 # 快速查看关键信息
 ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,duration,bit_rate -of default=noprint_wrappers=1 input.mp4
 ```
@@ -144,7 +145,7 @@ ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,heigh
 ### 6. 主流平台规格
 
 | 平台 | 宽高比 | 最大时长 | 最大文件 | 推荐编码 |
-|------|--------|----------|----------|----------|
+|---:|---:|---:|---:|---:|
 | TikTok | 9:16 | 3分钟 | 287MB | H.264/AAC |
 | Instagram Reels | 9:16 | 90秒 | 250MB | H.264/AAC |
 | YouTube Shorts | 9:16 | 60秒 | 无限制 | H.264/AAC |
@@ -165,14 +166,14 @@ ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,heigh
 ```bash
 # 步骤1:检测源视频信息
 ffprobe -v error -select_streams v:0 -show_entries stream=width,height,duration input.mp4
-
+# ...
 # 步骤2:裁剪为9:16竖屏
 ffmpeg -i input.mp4 -vf "crop=ih*9/16:ih" -c:a copy temp.mp4
-
+# ...
 # 步骤3:检查时长(<=3分钟)
 # 如果超过3分钟,截取前3分钟
 ffmpeg -i temp.mp4 -t 180 -c copy output.mp4
-
+# ...
 # 步骤4:压缩确保<287MB
 ffmpeg -i output.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k -movflags +faststart final.mp4
 ```
@@ -184,10 +185,10 @@ ffmpeg -i output.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k -mov
 ```bash
 # 步骤1:使用Whisper生成字幕
 whisper tutorial.mp4 --model small --language zh --output_format srt
-
+# ...
 # 步骤2:将字幕烧入视频
 ffmpeg -i tutorial.mp4 -vf subtitles=tutorial.srt -c:v libx264 -crf 23 -c:a copy tutorial_subbed.mp4
-
+# ...
 # 步骤3:验证字幕显示
 ffprobe tutorial_subbed.mp4
 ```
@@ -199,15 +200,15 @@ ffprobe tutorial_subbed.mp4
 ```bash
 # 步骤1:检测源文件大小和时长
 ffprobe -v error -show_entries format=size,duration -of default=noprint_wrappers=1 input.mp4
-
+# ...
 # 步骤2:计算目标比特率
 # 目标大小: 62MB(留2MB余量)
 # 时长: 120秒
 # 比特率 = (62 * 8192) / 120 - 96(音频) = 4134kbps
-
+# ...
 # 步骤3:压缩
 ffmpeg -i input.mp4 -c:v libx264 -b:v 4000k -maxrate 5000k -bufsize 8000k -c:a aac -b:a 96k -fs 62M output.mp4
-
+# ...
 # 步骤4:验证文件大小
 ls -lh output.mp4
 ```
@@ -226,7 +227,7 @@ ls -lh output.mp4
 # 检查FFmpeg
 ffmpeg -version
 ffprobe -version
-
+# ...
 # 检查Whisper(可选,用于字幕)
 whisper --version 2>/dev/null || pip install openai-whisper
 ```
@@ -234,7 +235,7 @@ whisper --version 2>/dev/null || pip install openai-whisper
 ### 常用请求快速对照
 
 | 用户需求 | 执行命令 |
-|----------|----------|
+|:---:|:---:|
 | 适配TikTok | 裁剪9:16,检查时长<=3分钟,压缩 |
 | 添加字幕 | Whisper生成SRT,烧入视频 |
 | WhatsApp压缩 | 目标<64MB,H.264,AAC |
@@ -298,7 +299,7 @@ whisper --version 2>/dev/null || pip install openai-whisper
 ### 免费版与专业版功能对比
 
 | 功能项 | 免费版 | 专业版 |
-|--------|--------|--------|
+|:------|------:|:------|
 | 格式转换 | 单文件 | 批量处理 |
 | 视频压缩 | 基础CRF | 自适应+多码率 |
 | 字幕生成 | Whisper基础 | 多语言+样式定制 |
@@ -332,7 +333,7 @@ whisper --version 2>/dev/null || pip install openai-whisper
 ### 3. 常用FFmpeg参数速查
 
 | 参数 | 作用 | 常用值 |
-|------|------|--------|
+|---:|:---|---:|
 | -crf | 质量控制 | 18(高质量)/23(默认)/28(压缩) |
 | -preset | 编码速度 | ultrafast/fast/medium/slow |
 | -b:a | 音频比特率 | 192k(高质量)/128k(标准)/96k(压缩) |
@@ -373,7 +374,7 @@ Whisper支持30+种语言的自动转录,包括中文、英文、日语、韩语
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | FFmpeg/FFprobe | 核心工具 | 必需 | 系统包管理器或官网下载 |
 | Whisper | 字幕生成 | 可选 | pip install openai-whisper |
 | Python 3 | Whisper依赖 | 可选(字幕功能) | 系统包管理器 |
@@ -384,10 +385,10 @@ FFmpeg安装:
 ```bash
 # macOS
 brew install ffmpeg
-
+# ...
 # Ubuntu/Debian
 sudo apt update && sudo apt install ffmpeg
-
+# ...
 # Windows
 winget install Gyan.FFmpeg
 # 或下载: https://ffmpeg.org/download.html
@@ -410,9 +411,8 @@ pip install openai-whisper
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

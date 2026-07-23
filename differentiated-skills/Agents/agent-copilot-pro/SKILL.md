@@ -20,6 +20,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 代理副驾驶（Agent Copilot Pro）
 
@@ -100,7 +102,7 @@ pricing_model: "per_use"
 ### Step 3：五段式 Prompt 生成
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 代理副驾驶处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -118,7 +120,7 @@ pricing_model: "per_use"
 统计三因素指标：
 
 | 因素 | 检测方法 | 触发阈值 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 信息密度衰减 | 每轮非重复信息 token 占比 | < 30% 触发治理 |
 | 噪声累积 | 无关工具结果/客套话 token 占比 | > 40% 触发清理 |
 | 注意力漂移 | 核心约束关键词出现频率 | 连续 5 轮未引用触发提醒 |
@@ -151,7 +153,7 @@ pricing_model: "per_use"
 
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入**："帮我设计一个客服 Agent 的 system prompt，处理退款咨询"
 
@@ -191,23 +193,22 @@ DAG：
 [收集竞品列表] ──┬──> [抓取功能] ──┐
                  ├──> [抓取定价] ──┤──> [聚合分析] ──> [生成报告] ──> [质量校验]
                  └──> [抓取评价] ──┘
-
+# ...
 节点分配：
 - [收集竞品列表]  Agent: 检索Agent  tokens: 2000  tools: [搜索引擎]  granularity: 0.8
 - [抓取功能/定价/评价]  Agent: 爬虫Agent  tokens: 3000  tools: [浏览器]  granularity: 0.7（并行3节点）
 - [聚合分析]  Agent: 分析Agent  tokens: 4000  tools: [计算器]  granularity: 0.75
 - [生成报告]  Agent: 写作Agent  tokens: 3000  granularity: 0.8
 - [质量校验]  Agent: 评审Agent  tokens: 1500  granularity: 0.9
-
+# ...
 全局质量门禁：每节点输出经 schema 校验，失败则重试→换Agent→转人工
 数据传递 schema：{"competitors":[...],"features":{...},"analysis":{...}}
 ```
 
 ## 错误处理
 
-
 | 场景 | 原因 | 处理方式 |
-|------|------|----------|
+|---:|---:|---:|
 | Agent 反复调用同一工具 | 工具结果未被正确解析 | 检查输出 schema，增加结果校验步骤 |
 | 长会话输出质量骤降 | 上下文腐烂 | 运行三因素诊断器，应用治理建议 |
 | 任务拆解后无法执行 | DAG 依赖关系有环 | 检查 DAG 是否有环，重新排序节点 |
@@ -220,7 +221,7 @@ DAG：
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | JSON Schema 校验库 | 代码库 | 可选 | ajv（JS）/ jsonschema（Python），用于输出校验 |
 | Agent 平台 | 运行环境 | 必需 | Claude Code / Cursor / Codex / Gemini CLI 等 |

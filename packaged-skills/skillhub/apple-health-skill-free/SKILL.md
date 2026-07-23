@@ -15,16 +15,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 生活服务
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 运动健康数据（免费版）
 
 使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录。通过健康数据同步服务获取运动手环/手表同步的健康数据。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 运动健康数据基础版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -49,7 +50,7 @@ export HEALTH_API_KEY="[REDACTED]"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -105,7 +106,7 @@ export API_KEY="your_api_key_here"
 # 获取45分钟跑步训练方案
 curl "https://health-api.example.com/api/v1/wod?sport=run&duration=45"
 # 响应包含结构化训练计划：热身、主训练、放松等阶段
-
+# ...
 # 获取30分钟力量训练方案
 curl "https://health-api.example.com/api/v1/wod?sport=strength&duration=30"
 ```
@@ -117,7 +118,7 @@ curl "https://health-api.example.com/api/v1/wod?sport=strength&duration=30"
 curl -H "X-API-Key: $HEALTH_API_KEY" \
   "https://health-api.example.com/api/v1/workouts?start=2026-02-09&end=2026-02-15"
 # 响应包含训练类型、时长、距离、心率等数据
-
+# ...
 # 获取运动员档案
 curl -H "X-API-Key: $HEALTH_API_KEY" \
   "https://health-api.example.com/api/v1/profile"
@@ -126,7 +127,7 @@ curl -H "X-API-Key: $HEALTH_API_KEY" \
 ## 错误处理
 
 | 错误场景 | HTTP状态 | 原因 | 处理方式 |
-|---------|---------|------|---------|
+|---:|---:|---:|---:|
 | API Key未设置 | 401 | `HEALTH_API_KEY` 环境变量缺失或为空 | 在健康数据同步服务中生成API Key并设置环境变量 |
 | 日期范围超过90天 | 400 | `start` 和 `end` 间隔超过最大范围 | 将查询范围缩小到90天以内，分段查询 |
 | 日期格式错误 | 400 | `start` 或 `end` 非YYYY-MM-DD格式 | 使用标准日期格式，如 `2026-02-09` |

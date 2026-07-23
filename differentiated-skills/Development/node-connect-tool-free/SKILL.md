@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 节点连接工具(免费版)
 
 ## 概述
@@ -58,7 +59,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 拓扑识别 | 识别同机器/局域网拓扑,不混淆 |
 | 标准检查命令 | 配置、绑定、QR、设备列表等标准化命令 |
 | 根因映射 | 常见错误到根因的映射表 |
@@ -123,10 +124,10 @@ skill-platform nodes status
 ```bash
 # 检查网关绑定
 skill-platform config get gateway.bind
-
+# ...
 # 生成配对码(JSON格式,与Android扫描载荷一致)
 skill-platform qr --json
-
+# ...
 # 查看待配对设备
 skill-platform devices list
 ```
@@ -172,7 +173,7 @@ skill-platform qr --json
 诊断前先判断你处于哪种拓扑,不要混淆:
 
 | 拓扑 | 特征 | 适用场景 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 同机器 | 节点与应用在同一设备/模拟器/USB隧道 | 本地开发 |
 | 同局域网 | 节点与应用在同一Wi-Fi/LAN | 家庭/办公室 |
 
@@ -199,7 +200,7 @@ skill-platform qr --json
 skill-platform config get gateway.mode
 skill-platform config get gateway.bind
 skill-platform config get gateway.auth.mode
-
+# ...
 # 二维码与配对
 skill-platform qr --json
 skill-platform devices list
@@ -208,13 +209,12 @@ skill-platform nodes status
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 根因映射表
 
 | 应用提示 | 根因 | 修复 |
-| --- | --- | --- |
+|---:|---:|---:|
 | `Gateway is only bound to loopback` | 远程节点无法连接 | 设置 `gateway.bind=lan`,生成新配对码 |
 | `pairing required` | 网络与鉴权已通过 | 批准待配对设备 `devices approve --latest` |
 | `bootstrap token invalid or expired` | 配对码过期 | 重新生成 `qr --json` 并重新扫描 |
@@ -223,7 +223,7 @@ skill-platform nodes status
 ### 启发式快速判断
 
 | 现象 | 判断 |
-| --- | --- |
+|:---:|:---:|
 | 同Wi-Fi + 网关广播 `127.0.0.1`/`localhost`/loopback | 错误:应设为 `lan` |
 | `devices list` 显示待配对请求 | 停止改网络配置,先批准配对 |
 | QR仍广播非预期地址 | 检查 `urlSource`,配置并非你以为的那样 |
@@ -236,7 +236,7 @@ skill-platform nodes status
 
 ```text
 ## 诊断结论: [owner/repo 或 节点ID]
-
+# ...
 **根因:** 一句话说明真实问题
 **当前配置:** gateway.bind=loopback, urlSource=loopback
 **预期配置:** gateway.bind=lan, urlSource=lan
@@ -306,7 +306,7 @@ skill-platform qr --json
 ### Q4:免费版与PRO版差异?
 
 | 维度 | 免费版 | PRO版 |
-| --- | --- | --- |
+|:------|------:|:------|
 | 拓扑支持 | 同机器/局域网 | 全拓扑(含尾网/公网/远程) |
 | 多设备配对 | 单设备 | 批量配对 |
 | 审计日志 | 不支持 | 连接审计与回溯 |
@@ -328,7 +328,7 @@ skill-platform qr --json
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | skill-platform CLI | 命令行工具 | 必需 | 随技能平台安装 |
 | 网络诊断工具 | 命令行工具 | 推荐 | ping / traceroute / nc 等系统自带 |
@@ -345,9 +345,8 @@ skill-platform qr --json
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

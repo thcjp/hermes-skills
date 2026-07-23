@@ -19,16 +19,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 创意设计
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # 记忆快速启动（基础版）
 
 面向零依赖场景的本地记忆系统基础版，用三层架构和TF-IDF检索，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无API Key、无云、无追踪，纯本地记忆。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 记忆快速启动处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -95,9 +96,8 @@ memory-search "TypeScript"
 #
 ## 错误处理
 
-
 | 错误类型 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:-----|:-----|:-----|
 | 搜索无结果 | memories/目录未创建，memory-init未执行 | 运行 `memory-init` 初始化目录结构 |
 | 记忆未保存 | 文件权限不足或磁盘空间不足 | 检查工作区写入权限与磁盘空间，清理后检查网络连接和配置后重试 |
 | 检索变慢 | 记忆条目过多（>1000条） | 执行 `memory-archive --days 7` 归档旧记忆 |
@@ -117,10 +117,10 @@ memory-search "TypeScript"
 ```bash
 # SESSION-STATE.json 更新
 {"activeDecisions": [{"content":"用Tailwind不用vanilla CSS","timestamp":"2026-07-21T10:00:00Z"}]}
-
+# ...
 # memory-store 输出
 Stored: uuid-001 (type=decision, importance=0.9)
-
+# ...
 # 响应
 "明白，用Tailwind。已保存此偏好。"
 ```
@@ -139,7 +139,7 @@ A：可以。本系统独立运行于 `memories/` 目录，不干扰其他系统
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|---:|---:|---:|---:|
 | Agent平台 | 运行环境 | 必需 | 安装支持SKILL.md的AI Agent |
 | Node.js | 运行时 | 必需 | nodejs.org安装（运行记忆CLI） |
 | simple-local-memory | npm包 | 必需 | `npm install -g simple-local-memory` |

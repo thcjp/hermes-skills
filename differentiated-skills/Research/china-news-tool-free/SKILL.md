@@ -21,8 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 > **RSS订阅、智能分类、生成简报。三步完成中国主流媒体新闻聚合。**
 
 无需复杂配置，通过RSS订阅即可获取主流媒体的最新新闻。免费版聚焦轻量场景，提供基础的新闻聚合与分类能力。
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ### 核心定位
 | 维度 | 免费版能力 |
-|------|------------|
+|---|-----|
 | RSS订阅模式 | 支持 |
 | 浏览器自动化模式 | 不支持（需专业版） |
 | AI智能摘要 | 不支持（需专业版） |
@@ -46,7 +47,7 @@ suggested_price: 29.9
 ### 1. RSS订阅获取新闻
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 中国新闻聚合(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -55,10 +56,10 @@ suggested_price: 29.9
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime
-
+# ...
 class RSSFetcher:
     """RSS订阅获取器（免费版）"""
-
+# ...
     def __init__(self):
         self.sources = {
             '新浪国内': 'https://rss.sina.com.cn/news/china/roll.xml',
@@ -70,7 +71,7 @@ class RSSFetcher:
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'
         }
-
+# ...
     def fetch_all(self):
         """获取所有RSS源"""
         all_news = []
@@ -81,19 +82,19 @@ class RSSFetcher:
                 item['source'] = source_name
             all_news.extend(items)
         return all_news
-
+# ...
     def fetch_single(self, url, timeout=10):
         """获取单个RSS源"""
         try:
             response = requests.get(url, timeout=timeout, headers=self.headers)
             root = ET.fromstring(response.content)
             items = []
-
+# ...
             for item in root.findall('.//item'):
                 title = item.find('title')
                 link = item.find('link')
                 desc = item.find('description')
-
+# ...
                 if title is not None and title.text:
                     items.append({
                         'title': title.text.strip(),
@@ -101,12 +102,12 @@ class RSSFetcher:
                         'desc': desc.text[:200] if desc is not None and desc.text else '',
                         'fetched_at': datetime.now().isoformat()
                     })
-
+# ...
             return items[:15]  # 每源最多15条
         except Exception as e:
             print(f"    获取失败：{e}")
             return []
-
+# ...
 fetcher = RSSFetcher()
 news = fetcher.fetch_all()
 print(f"\n共获取 {len(news)} 条新闻")
@@ -121,7 +122,7 @@ print(f"\n共获取 {len(news)} 条新闻")
 ```python
 class NewsCategorizer:
     """新闻分类器（免费版）"""
-
+# ...
     def __init__(self):
         self.categories = {
             '时事': ['政治', '国际', '外交', '政策', '政府', '两会', '选举', '主席', '总理'],
@@ -131,12 +132,12 @@ class NewsCategorizer:
             '娱乐': ['明星', '电影', '音乐', '综艺', '八卦', '热播', '娱乐', '演员'],
             '社会': ['事故', '案件', '民生', '教育', '医疗', '疫情', '社会', '安全']
         }
-
+# ...
     def categorize(self, news_list):
         """分类新闻列表"""
         categorized = {cat: [] for cat in self.categories}
         categorized['其他'] = []
-
+# ...
         for news in news_list:
             matched = False
             for category, keywords in self.categories.items():
@@ -146,16 +147,16 @@ class NewsCategorizer:
                     break
             if not matched:
                 categorized['其他'].append(news)
-
+# ...
         return {k: v for k, v in categorized.items() if v}
-
+# ...
     def get_stats(self, categorized):
         """获取分类统计"""
         stats = {}
         for cat, news_list in categorized.items():
             stats[cat] = len(news_list)
         return stats
-
+# ...
 categorizer = NewsCategorizer()
 categorized = categorizer.categorize(news)
 stats = categorizer.get_stats(categorized)
@@ -173,19 +174,19 @@ for cat, count in stats.items():
 ```python
 class NewsBriefGenerator:
     """新闻简报生成器（免费版）"""
-
+# ...
     def generate(self, categorized_news, date_str=None):
         """生成新闻简报"""
         if date_str is None:
             date_str = datetime.now().strftime('%Y年%m月%d日 %H:%M')
-
+# ...
         lines = []
         lines.append(f"# 每日新闻速递")
         lines.append(f"**{date_str}**")
         lines.append("")
         lines.append("---")
         lines.append("")
-
+# ...
         lines.append("## 热点速递")
         lines.append("")
         for category, news_list in categorized_news.items():
@@ -195,7 +196,7 @@ class NewsBriefGenerator:
         lines.append("")
         lines.append("---")
         lines.append("")
-
+# ...
         for category, news_list in categorized_news.items():
             if news_list:
                 lines.append(f"## {category}新闻（{len(news_list)}条）")
@@ -207,27 +208,27 @@ class NewsBriefGenerator:
                     if source:
                         lines.append(f"   - 来源：{source}")
                 lines.append("")
-
+# ...
         lines.append("---")
         lines.append(f"*共 {sum(len(v) for v in categorized_news.values())} 条新闻*")
-
+# ...
         return "\n".join(lines)
-
+# ...
     def save_to_file(self, content, filename=None):
         """保存到文件"""
         import os
         if filename is None:
             filename = f"news_{datetime.now().strftime('%Y%m%d')}.md"
-
+# ...
         output_dir = os.environ.get('OUTPUT_DIR', os.getcwd())
         output_path = os.path.join(output_dir, filename)
-
+# ...
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(content)
-
+# ...
         print(f"简报已保存：{output_path}")
         return output_path
-
+# ...
 generator = NewsBriefGenerator()
 brief = generator.generate(categorized)
 print(brief[:500])
@@ -248,15 +249,15 @@ generator.save_to_file(brief)
 fetcher = RSSFetcher()
 categorizer = NewsCategorizer()
 generator = NewsBriefGenerator()
-
+# ...
 print("正在获取新闻...")
 news = fetcher.fetch_all()
-
+# ...
 categorized = categorizer.categorize(news)
-
+# ...
 brief = generator.generate(categorized)
 print(brief)
-
+# ...
 generator.save_to_file(brief)
 ```
 
@@ -266,10 +267,10 @@ generator.save_to_file(brief)
 ```python
 fetcher = RSSFetcher()
 categorizer = NewsCategorizer()
-
+# ...
 news = fetcher.fetch_all()
 categorized = categorizer.categorize(news)
-
+# ...
 for category in ['科技', '财经']:
     if category in categorized:
         print(f"\n=== {category}新闻 ===")
@@ -293,7 +294,7 @@ class EnglishBriefGenerator:
         '社会': 'Society',
         '其他': 'Others'
     }
-
+# ...
     def generate(self, categorized_news):
         lines = ["# Daily News Brief", ""]
         for cat, news_list in categorized_news.items():
@@ -303,7 +304,7 @@ class EnglishBriefGenerator:
                 lines.append(f"{i}. {news['title']}")
             lines.append("")
         return "\n".join(lines)
-
+# ...
 en_generator = EnglishBriefGenerator()
 print(en_generator.generate(categorized))
 ```
@@ -320,13 +321,13 @@ print(en_generator.generate(categorized))
 python3 << 'PYEOF'
 import requests
 import xml.etree.ElementTree as ET
-
+# ...
 response = requests.get(
     'https://rss.sina.com.cn/news/china/roll.xml',
     headers={'User-Agent': 'Mozilla/5.0'}, timeout=10
 )
 root = ET.fromstring(response.content)
-
+# ...
 for item in root.findall('.//item')[:5]:
     title = item.find('title').text
     print(f"- {title}")
@@ -336,17 +337,17 @@ PYEOF
 ### 120秒标准搭建
 ```bash
 pip install requests
-
+# ...
 cat > news_aggregator.py << 'PYEOF'
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime
-
+# ...
 sources = {
     '新浪国内': 'https://rss.sina.com.cn/news/china/roll.xml',
     '新浪科技': 'https://rss.sina.com.cn/tech/roll.xml',
 }
-
+# ...
 all_news = []
 for name, url in sources.items():
     try:
@@ -357,17 +358,16 @@ for name, url in sources.items():
             all_news.append({'title': title, 'source': name})
     except Exception as e:
         print(f"{name} 获取失败：{e}")
-
+# ...
 print(f"\n共获取 {len(all_news)} 条新闻\n")
 for i, news in enumerate(all_news, 1):
     print(f"{i}. [{news['source']}] {news['title']}")
 PYEOF
-
+# ...
 python3 news_aggregator.py
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配置示例
 ### RSS源配置
@@ -381,7 +381,7 @@ RSS_SOURCES = {
     '36氪': 'https://36kr.com/feed',
     '凤凰资讯': 'https://news.ifeng.com/rss/',
 }
-
+# ...
 CATEGORIES = {
     '时事': ['政治', '国际', '外交', '政策', '政府'],
     '财经': ['股市', '基金', '经济', '金融', '投资'],
@@ -423,7 +423,7 @@ def safe_fetch_all(fetcher):
         except Exception as e:
             print(f"  {name} 失败：{e}")
             failed_sources.append(name)
-
+# ...
     if failed_sources:
         print(f"\n警告：{len(failed_sources)} 个源获取失败：{failed_sources}")
     return all_news
@@ -441,7 +441,7 @@ def deduplicate(news_list):
             seen.add(title)
             unique.append(news)
     return unique
-
+# ...
 unique_news = deduplicate(news)
 print(f"去重前：{len(news)} 条，去重后：{len(unique_news)} 条")
 ```
@@ -451,20 +451,20 @@ print(f"去重前：{len(news)} 条，去重后：{len(unique_news)} 条")
 import os
 import json
 from datetime import datetime
-
+# ...
 class NewsCache:
     """新闻缓存（免费版）"""
     def __init__(self, cache_dir="./cache"):
         self.cache_dir = cache_dir
         os.makedirs(cache_dir, exist_ok=True)
-
+# ...
     def get(self, date_str):
         cache_file = os.path.join(self.cache_dir, f"news_{date_str}.json")
         if os.path.exists(cache_file):
             with open(cache_file, 'r', encoding='utf-8') as f:
                 return json.load(f)
         return None
-
+# ...
     def set(self, date_str, data):
         cache_file = os.path.join(self.cache_dir, f"news_{date_str}.json")
         with open(cache_file, 'w', encoding='utf-8') as f:
@@ -497,7 +497,7 @@ class NewsCache:
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
 | requests | Python库 | 必需 | `pip install requests` |
 | xml.etree.ElementTree | Python库 | 必需 | Python标准库（RSS解析） |

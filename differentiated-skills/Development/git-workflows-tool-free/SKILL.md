@@ -40,8 +40,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
-
 # Git 高级操作助手（免费版）
 
 ## 概述
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 典型用法 |
-| --- | --- | --- |
+|----|---|----|
 | 交互式变基 | 整理、合并、重排、编辑提交 | `帮我合并最近 5 个提交` |
 | 二分查找 | 定位引入缺陷的提交 | `用 bisect 找到引入 bug 的提交` |
 | 工作树 | 并行处理多个分支 | `创建工作树处理紧急修复` |
@@ -92,31 +93,31 @@ suggested_price: 29.9
 
 ```text
 用户：我的功能分支有 5 个琐碎提交，合并前想整理一下
-
+# ...
 助手：使用交互式变基
-
+# ...
 1. 启动变基
    git rebase -i HEAD~5
-
+# ...
 2. 编辑器中会显示提交列表
    pick a1b2c3d 添加用户模型
    pick e4f5g6h 修复模型拼写错误
    pick i7j8k9l 添加用户控制器
    pick m0n1o2p 添加用户路由
    pick q3r4s5t 修复控制器导入
-
+# ...
 3. 修改操作指令（合并修复提交）
    pick a1b2c3d 添加用户模型
    fixup e4f5g6h 修复模型拼写错误
    pick i7j8k9l 添加用户控制器
    fixup q3r4s5t 修复控制器导入
    pick m0n1o2p 添加用户路由
-
+# ...
 4. 保存退出后自动完成变基
-
+# ...
 5. 如需放弃变基
    git rebase --abort
-
+# ...
 6. 如遇冲突解决后继续
    git add .
    git rebase --continue
@@ -128,23 +129,23 @@ suggested_price: 29.9
 
 ```text
 用户：登录功能在某个提交后坏了，帮我用 bisect 找出来
-
+# ...
 助手：
 1. 启动二分查找
    git bisect start
-
+# ...
 2. 标记当前版本为坏
    git bisect bad
-
+# ...
 3. 标记已知正常的版本
    git bisect good v1.2.0
-
+# ...
 4. Git 会自动切换到中间提交，测试后标记
    git bisect good   # 这个提交正常
    git bisect bad    # 这个提交有问题
-
+# ...
 5. 重复直到定位到具体提交
-
+# ...
 6. 完成后重置
    git bisect reset
 ```
@@ -156,19 +157,19 @@ suggested_price: 29.9
 ```bash
 # 创建工作树处理紧急修复
 git worktree add ../project-hotfix hotfix/urgent-fix
-
+# ...
 # 创建新分支的工作树
 git worktree add ../project-feature -b feature/new-thing
-
+# ...
 # 查看所有工作树
 git worktree list
-
+# ...
 # 在工作树中完成工作后移除
 cd ../project-hotfix
 # 完成修复并推送
 cd ../project
 git worktree remove ../project-hotfix
-
+# ...
 # 清理无效的工作树引用
 git worktree prune
 ```
@@ -206,7 +207,7 @@ git rebase --skip             # 跳过当前提交
 变基操作指令：
 
 | 指令 | 作用 | 说明 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | pick | 保留提交 | 使用提交原样 |
 | reword | 修改信息 | 保留提交但修改提交信息 |
 | edit | 暂停编辑 | 停在此提交进行修改 |
@@ -220,7 +221,7 @@ git rebase --skip             # 跳过当前提交
 # 创建修复提交（自动标记目标）
 git commit --fixup=a1b2c3d
 git commit --squash=a1b2c3d
-
+# ...
 # 自动整理
 git rebase -i --autosquash main
 ```
@@ -232,11 +233,11 @@ git rebase -i --autosquash main
 git bisect start
 git bisect bad
 git bisect good v1.2.0
-
+# ...
 # 自动化二分（带测试脚本）
 git bisect start HEAD v1.2.0
 git bisect run （请参考skill目录中的脚本文件）
-
+# ...
 # 示例
 cat > /tmp/（请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
@@ -244,7 +245,7 @@ npm test -- --grep "login should redirect" 2>/dev/null
 EOF
 chmod +x /tmp/（请参考skill目录中的脚本文件）
 git bisect run /tmp/（请参考skill目录中的脚本文件）
-
+# ...
 # 跳过无法构建的提交
 git bisect skip
 ```
@@ -261,17 +262,17 @@ git bisect skip
 git reflog
 git reflog show feature/my-branch
 git reflog --date=relative
-
+# ...
 # 恢复到指定状态
 git reset --hard HEAD@{2}      # 回到 2 步之前的状态
 git reset --hard ghi789        # 回到指定提交
-
+# ...
 # 恢复误删的分支
 git branch recovered-branch abc123
-
+# ...
 # 查找丢失的提交
 git fsck --unreachable | grep commit
-
+# ...
 # 查找丢弃的暂存
 git stash list
 git log --walk-reflogs --all -- stash
@@ -282,16 +283,16 @@ git log --walk-reflogs --all -- stash
 ```bash
 # 挑选单个提交
 git cherry-pick abc123
-
+# ...
 # 挑选多个提交
 git cherry-pick abc123 def456 ghi789
-
+# ...
 # 挑选提交范围
 git cherry-pick abc123..ghi789
-
+# ...
 # 不自动提交
 git cherry-pick --no-commit abc123
-
+# ...
 # 冲突处理
 git add resolved-file.ts
 git cherry-pick --continue
@@ -326,13 +327,13 @@ git cherry-pick --abort
 ```bash
 # 放弃变基
 git rebase --abort
-
+# ...
 # 或逐个解决
 git status
 # 编辑冲突文件
 git add .
 git rebase --continue
-
+# ...
 # 跳过无法解决的提交
 git rebase --skip
 ```
@@ -349,11 +350,11 @@ git bisect skip v1.3.0..v1.3.5    # 跳过指定范围
 ```bash
 # 追踪文件重命名的历史
 git log --follow --oneline -- src/auth.ts
-
+# ...
 # 查看文件每行最后修改者
 git blame src/auth.ts
 git blame -L 50,70 src/auth.ts    # 指定行范围
-
+# ...
 # 查找字符串被添加/删除的提交
 git log -S "function oldName" --oneline
 git log -G "TODO.*hack" --oneline
@@ -364,7 +365,7 @@ git log -G "TODO.*hack" --oneline
 ```bash
 # 强制删除
 git worktree remove --force ../project-hotfix
-
+# ...
 # 清理无效引用
 git worktree prune
 ```
@@ -381,11 +382,11 @@ git reset --hard abc123           # 恢复到该提交
 ```bash
 # 查看冲突文件
 git status
-
+# ...
 # 解决冲突后
 git add .
 git cherry-pick --continue
-
+# ...
 # 放弃樱桃挑选
 git cherry-pick --abort
 ```
@@ -400,7 +401,7 @@ git cherry-pick --abort
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Git | 命令行工具 | 必需 | 系统包管理器安装 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
@@ -414,9 +415,8 @@ git cherry-pick --abort
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

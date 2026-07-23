@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
-
 # 网页抓取引擎（免费版）
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 网页抓取引擎(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -75,7 +76,7 @@ print(' '.join(t for t in p.text if t))
 将社区频道（如 Discord、Slack）的消息归档到本地数据库，建立可检索的历史记录。
 
 | 归档维度 | 说明 | 存储字段 |
-|:---------|:-----|:---------|
+|:-----|:-----|:-----|
 | 消息内容 | 正文与附件 URL | content, attachments |
 | 发送者 | 用户名与 ID | author, author_id |
 | 时间戳 | 发送时间与编辑时间 | timestamp, edited_at |
@@ -93,10 +94,10 @@ print(' '.join(t for t in p.text if t))
 ```bash
 # 已知限制
 search --limit 20 "关键词"
-
+# ...
 # 按频道与时间范围搜索
 messages --channel '#tech-news' --days 7
-
+# ...
 # 查看最近私信
 dms --last 20
 ```
@@ -113,10 +114,10 @@ dms --last 20
 ```bash
 # 检查归档状态
 status --json
-
+# ...
 # 诊断工具
 doctor
-
+# ...
 # 示例
 # {
 #   "last_sync": "2026-07-18T10:00:00Z",
@@ -189,14 +190,14 @@ CREATE TABLE messages (
     edited_at DATETIME,
     reply_to TEXT
 );
-
+# ...
 -- 全文搜索索引
 CREATE VIRTUAL TABLE messages_fts USING fts5(
     content, author_name, channel_name,
     content='messages',
     content_rowid='rowid'
 );
-
+# ...
 -- 频道元数据
 CREATE TABLE channels (
     channel_id TEXT PRIMARY KEY,
@@ -214,7 +215,7 @@ freshness:
   stale_threshold_hours: 24    # 超过24小时标记为stale
   auto_sync: false              # 免费版不自动同步
   sync_on_query: false          # 查询时不自动触发同步
-
+# ...
 search:
   default_limit: 20             # 默认返回结果数
   max_limit: 100                # 单次最大结果数
@@ -280,7 +281,7 @@ search:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | SQLite | 数据库 | 必需 | Python 内置 sqlite3 模块 |
 | curl / HTTP 客户端 | 工具 | 推荐 | 系统自带或安装 |
@@ -310,9 +311,8 @@ search:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

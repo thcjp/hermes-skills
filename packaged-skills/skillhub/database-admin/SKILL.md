@@ -24,17 +24,18 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
 # 数据库管理专家
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据库管理专家处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,13 +43,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 数据库管理专家类型处理 | 不支持 | 支持 |
+| 数据库管理专家安全的全面数据库管理 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
 
 ## 概述
 
@@ -62,7 +63,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -104,7 +105,7 @@ export API_KEY="your_api_key_here"
 **输出**: 返回查询优化的处理结果,包含执行状态码、结果数据和执行日志。### 数据库维护
 
 | 操作 | SQL命令 | 说明 |
-|------|---------|------|
+|:---:|:---:|:---:|
 | 创建表 | `CREATE TABLE` | 定义表结构与约束 |
 | 修改表 | `ALTER TABLE` | 添加/修改/删除列与约束 |
 | 删除表 | `DROP TABLE` | 删除表及其数据 |
@@ -147,10 +148,10 @@ CREATE TABLE stock_info (
     category VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+# ...
 -- 为 product_name 创建索引
 CREATE INDEX idx_stock_product_name ON stock_info(product_name);
-
+# ...
 -- 为 category 创建索引加速分组查询
 CREATE INDEX idx_stock_category ON stock_info(category);
 ```
@@ -160,15 +161,15 @@ CREATE INDEX idx_stock_category ON stock_info(category);
 ```sql
 -- 使用事务批量插入
 BEGIN;
-
+# ...
 INSERT INTO stock_info (product_name, quantity, price, category) VALUES
     ('苹果', 100, 8.50, '水果'),
     ('香蕉', 200, 3.20, '水果'),
     ('牛肉', 50, 45.00, '肉类'),
     ('三文鱼', 30, 120.00, '海鲜');
-
+# ...
 COMMIT;
-
+# ...
 -- 大批量导入使用 COPY（10万条以上推荐）
 -- COPY stock_info FROM '/path/to/data.csv' WITH (FORMAT csv, HEADER true);
 ```
@@ -185,7 +186,7 @@ FROM stock_info
 WHERE quantity > 50
 GROUP BY category
 ORDER BY avg_price DESC;
-
+# ...
 -- 输出示例:
 -- category | product_count | avg_price | total_value
 -- 水果     | 2             | 5.85      | 1460.00
@@ -217,11 +218,11 @@ CREATE TABLE event_logs (
     payload JSONB,                   -- 存储JSON结构数据
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+# ...
 -- 插入BIGINT值
 INSERT INTO event_logs (id, event_type, payload) VALUES
     (1752345678901234567, 'login', '{"user_id": 12345, "ip": "192.168.1.1"}');
-
+# ...
 -- 查询JSONB字段
 SELECT * FROM event_logs WHERE payload->>'user_id' = '12345';
 ```
@@ -232,7 +233,7 @@ SELECT * FROM event_logs WHERE payload->>'user_id' = '12345';
 -- 分析查询执行计划
 EXPLAIN ANALYZE
 SELECT * FROM stock_info WHERE category = '水果' AND quantity > 50;
-
+# ...
 -- 如果出现 Seq Scan（全表扫描），说明索引未命中
 -- 添加组合索引优化：
 CREATE INDEX idx_stock_category_qty ON stock_info(category, quantity);
@@ -241,7 +242,7 @@ CREATE INDEX idx_stock_category_qty ON stock_info(category, quantity);
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `BIGINT 溢出` | 数值超出 BIGINT 范围（>9223372036854775807） | 改用 `NUMERIC` 或 `DECIMAL` 类型存储超大数 |
 | `主键冲突 (duplicate key)` | `INSERT` 的主键值已存在 | 使用 `INSERT ... ON CONFLICT DO NOTHING` 或 `ON CONFLICT DO UPDATE` |
 | `外键违规 (foreign key violation)` | 插入的外键值在引用表中不存在 | 先插入引用表数据，或检查外键值有效性 |

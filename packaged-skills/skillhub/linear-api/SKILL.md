@@ -20,16 +20,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # 项目管理API集成
 
 通过项目管理工具的 GraphQL API 操作工作项全生命周期,从创建到状态推进,覆盖项目、周期、标签、评论与关联管理。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 项目管理API处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 项目管理API覆盖创建查询转换 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -61,7 +62,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -163,7 +163,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:---:|:---:|:---:|
 | 创建工作项 | title+teamId+priority | 工作项对象(含 id、identifier) |
 | 周期规划 | 工作项列表+周期名 | 周期 ID + 工作项更新结果 |
 | GraphQL查询 | 查询语句 | 匹配工作项列表(first 50) |
@@ -242,7 +242,7 @@ mutation {
   }
 }
 // 返回: {"success": true, "cycle": {"id": "cycle-uuid-789", "number": 30}}
-
+# ...
 // 将工作项加入周期
 mutation {
   issueUpdate(input: {
@@ -269,7 +269,7 @@ mutation {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | API Key 无效(401 Unauthorized) | key 过期或权限不足 | 重新生成 API Key,确认 key 对目标团队有读写权限 |
 | GraphQL 语法错误(400 Bad Request) | 字段名拼写错误或类型不匹配 | 检查 mutation/query 结构,确认字段名与枚举值合法 |
 | teamId 不存在(404 Not Found) | 团队 ID 拼写错误或已删除 | 用 `query { teams { id name key } }` 验证 teamId |

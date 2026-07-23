@@ -22,6 +22,8 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
 # Email Gmail Outlook
 
@@ -35,11 +37,10 @@ brew install porteden/tap/porteden
 go install 相关技术文档
 ```
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Email Gmail Outlook处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -47,13 +48,13 @@ go install 相关技术文档
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **全文搜索**:`-q "keyword"` 关键词搜索,可与日期范围组合 | 支持 | 支持 |
-| **单封与线程获取**:`message <id>` 获取单封(默认含正文),`thread <threadId>` 获取完整对话 | 不支持 | 支持 |
-| **自动分页**:`--all` 自动拉取所有分页,通过 `hasMore` 与 `nextPageToken` 控制 | 不支持 | 支持 |
-| **JSON 紧凑输出**:`-jc` 针对AI场景优化,降低上下文 token 占用 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -63,7 +64,7 @@ go install 相关技术文档
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -219,13 +220,13 @@ porteden email delete google:abc123
 ```bash
 # 1. 列出本周未读邮件
 porteden email messages --week --unread -jc
-
+# ...
 # 输出示例(截断):
 # [
 #   { "id": "google:abc123", "from": "boss@company.com", "subject": "项目进度汇报", "unread": true },
 #   { "id": "m365:xyz789", "from": "finance@bank.com", "subject": "账单提醒", "unread": true }
 # ]
-
+# ...
 # 2. 对高优先级邮件标记重要(执行前回显确认)
 porteden email modify google:abc123 --add-labels IMPORTANT
 porteden email modify google:abc123 --mark-read
@@ -236,10 +237,10 @@ porteden email modify google:abc123 --mark-read
 ```bash
 # 1. 查找带附件的未读邮件
 porteden email messages --unread --has-attachment -jc
-
+# ...
 # 2. 获取单封正文(用户明确需要时)
 porteden email message google:abc123 -jc
-
+# ...
 # 3. 回复(执行前回显收件人、消息 ID、正文)
 porteden email reply google:abc123 --body "附件已收到,本周内评审反馈" --reply-all
 ```
@@ -249,15 +250,14 @@ porteden email reply google:abc123 --body "附件已收到,本周内评审反馈
 ```bash
 # 在 work 账号搜索
 porteden email messages --profile work -q "Q3 财报" --week -jc
-
+# ...
 # 在 personal 账号搜索
 porteden email messages --profile personal -q "Q3 财报" --week -jc
-
+# ...
 # 合并结果后统一展示
 ```
 
 ## 异常处理
-
 
 ### 1. porteden CLI 未安装
 
@@ -327,9 +327,8 @@ porteden 用 `provider:id` 格式区分不同邮箱 provider(如 `google:abc123`
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

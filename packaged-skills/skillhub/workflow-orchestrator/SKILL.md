@@ -22,19 +22,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工作流,自动化,效率"
 ---
 # 工作流编排器(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 工作流编排器(专业版)全功能工作流编排 | 不支持 | 支持 |
+| 工作流编排器(专业版)含cron调度 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -44,7 +46,7 @@ pricing_model: "per_use"
 **cron表达式说明**：
 
 | 表达式 | 含义 |
-|--------|------|
+|:-----|:-----|
 | `0 2 * * *` | 每天凌晨2点 |
 | `*/15 * * * *` | 每15分钟 |
 | `0 9 * * 1-5` | 工作日早上9点 |
@@ -61,7 +63,7 @@ pricing_model: "per_use"
 **重试策略对比**：
 
 | 策略 | 适用场景 | 优点 | 缺点 |
-|------|----------|------|------|
+|---:|---:|---:|---:|
 | 固定间隔 | 临时故障 | 简单 | 可能加重负载 |
 | 指数退避 | 网络抖动 | 自动适应 | 耗时较长 |
 | 熔断器 | 级联故障 | 保护系统 | 需恢复时间 |
@@ -70,16 +72,13 @@ pricing_model: "per_use"
 **输入**: 用户提供复杂重试策略（专业版）所需的指令和必要参数。
 **处理**: 解析复杂重试策略（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
-### 3. DAG并行执行（专业版）
-> 详细代码示例已移至 `references/detail.md`
-
 **DAG执行示例**：
 
 ```text
 fetch-a ──┐
 fetch-b ──┼──> merge ──> transform ──> output
 fetch-c ──┘
-
+# ...
 时间线：
 T0: fetch-a, fetch-b, fetch-c 并行执行
 T1: 全部完成后，merge执行
@@ -94,7 +93,7 @@ T3: output执行
 **监控指标**：
 
 | 指标 | 说明 | 默认阈值 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | duration | 执行时长 | >3600s |
 | success_rate | 成功率 | <95% |
 | error_count | 错误数 | >0 |
@@ -109,20 +108,20 @@ T3: output执行
 ```bash
 workflow node add --name "worker-1" --host "worker-1.local" --capacity 4
 workflow node add --name "worker-2" --host "worker-2.local" --capacity 4
-
+# ...
 workflow node list --verbose
-
+# ...
 workflow distribute --flow my-flow --strategy least-loaded
-
+# ...
 workflow remote execute --flow my-flow --node "worker-1"
-
+# ...
 workflow balance --strategy round-robin
 ```
 
 **分发策略**：
 
 | 策略 | 说明 | 适用场景 |
-|------|------|----------|
+|:------|------:|:------|
 | round-robin | 轮询分配 | 节点性能均匀 |
 | least-loaded | 最少负载 | 节点性能不均 |
 | affinity | 亲和性 | 数据本地化 |
@@ -134,13 +133,13 @@ workflow balance --strategy round-robin
 ### 6. 版本管理（专业版）
 ```bash
 workflow version log --flow my-flow
-
+# ...
 workflow version diff --flow my-flow --from "v1.0" --to "v2.0"
-
+# ...
 workflow version rollback --flow my-flow --to "v1.0"
-
+# ...
 workflow version tag --flow my-flow --tag "stable"
-
+# ...
 workflow version export --flow my-flow --version "v1.0" --output "flow-v1.0.tar.gz"
 ```
 
@@ -154,11 +153,11 @@ workflow version export --flow my-flow --version "v1.0" --output "flow-v1.0.tar.
 ### 7. 可视化编排（专业版）
 ```bash
 workflow visualize --port 8080
-
+# ...
 workflow visualize dag --flow my-flow --output "dag.png"
-
+# ...
 workflow visualize realtime --flow my-flow
-
+# ...
 workflow visualize report --flow my-flow --run-id "run-001" --output "report.html"
 ```- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
@@ -174,9 +173,9 @@ workflow visualize report --flow my-flow --run-id "run-001" --output "report.htm
 
 ```bash
 workflow dag execute --file pipelines/etl-dag.yaml --max-workers 8
-
+# ...
 workflow retry circuit-breaker --flow etl-pipeline --threshold 5 --cooldown 300
-
+# ...
 workflow monitor alert --flow etl-pipeline --metric success_rate --threshold 95
 workflow monitor notify --flow etl-pipeline --channels "slack,pagerduty"
 ```
@@ -190,9 +189,9 @@ workflow monitor notify --flow etl-pipeline --channels "slack,pagerduty"
 
 ```bash
 workflow schedule add --flow team-a-pipeline --cron "0 2 * * *"
-
+# ...
 workflow remote execute --flow team-b-pipeline --node "worker-2"
-
+# ...
 workflow version diff --flow shared-pipeline --from "team-a" --to "team-b"
 ```
 
@@ -204,7 +203,7 @@ workflow version diff --flow shared-pipeline --from "team-a" --to "team-b"
 ```bash
 workflow monitor alert --flow sla-critical --metric duration --threshold 3600
 workflow monitor notify --flow sla-critical --channels "pagerduty"
-
+# ...
 workflow retry fallback --flow sla-critical --fallback-flow sla-critical-degraded
 ```
 
@@ -215,7 +214,7 @@ workflow retry fallback --flow sla-critical --fallback-flow sla-critical-degrade
 
 ```bash
 workflow dag execute --file etl-parallel.yaml --max-workers 16
-
+# ...
 workflow distribute --flow etl-parallel --strategy least-loaded
 ```
 
@@ -238,9 +237,9 @@ workflow retry fallback --flow auto-process --fallback-flow auto-process-safe
 
 ```bash
 workflow monitor history --flow compliance-flow --period "90d"
-
+# ...
 workflow monitor report --flow compliance-flow --period "90d" --format csv --output "audit.csv"
-
+# ...
 workflow version log --flow compliance-flow
 ```
 
@@ -267,15 +266,13 @@ mkdir -p workflows/flows/my-flow/{state,data,logs}
 ### 标准搭建（<120秒）
 在基础搭建之上，启用调度与监控：
 
-> 详细代码示例已移至 `references/detail.md`
-
 > 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
 
 #
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | content | string | 否 | workflow-orchestrator处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -334,9 +331,8 @@ mkdir -p workflows/flows/my-flow/{state,data,logs}
 
 ## 异常处理
 
-
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:------:|--------|:-------|:------:|
 | 调度未触发 | cron表达式错误或时区错误 | 验证cron语法；检查时区配置 | 高 |
 | DAG并行度低 | 依赖过多或worker不足 | 分析依赖图；增加max-workers | 中 |
 | 熔断器频繁触发 | 下游服务不稳定 | 检查下游服务；调整threshold与cooldown | 高 |
@@ -359,7 +355,7 @@ mkdir -p workflows/flows/my-flow/{state,data,logs}
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | jq | JSON处理 | 必需 | 系统包管理器安装 |
 | yq | YAML解析 | 必需 | 系统包管理器安装 |
@@ -383,23 +379,23 @@ mkdir -p workflows/flows/my-flow/{state,data,logs}
 ### 与CI/CD集成
 ```bash
 workflow trigger --flow deploy-pipeline --params "branch=$BRANCH"
-
+# ...
 workflow wait --flow deploy-pipeline --timeout 3600
-
+# ...
 workflow version rollback --flow deploy-pipeline --tag "stable"
 ```
 
 ### 与监控系统集成
 ```bash
 workflow monitor export --format prometheus --port 9090
-
+# ...
 workflow monitor dashboard --import grafana-template.json
 ```
 
 ### 与告警系统集成
 ```bash
 workflow monitor notify --channel pagerduty --integration-key "$PD_KEY"
-
+# ...
 workflow monitor notify --channel slack --webhook "$SLACK_WEBHOOK"
 ```
 
@@ -447,9 +443,8 @@ LLM路由至GPT-4o，确保复杂调度决策的质量。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -32,27 +32,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Vue组件生成(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 是否兼容免费版 | 支持 | 支持 |
-| 单组件生成 | 不支持 | 支持 |
-| 完全兼容 | 不支持 | 支持 |
-| 企业组件库结构 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Vue组件生成(专业版)批量生成 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力 | 说明 | 是否兼容免费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 单组件生成 | 免费版全部 Composition/Options/TS/SCSS 能力 | 完全兼容 |
 | 企业组件库结构 | 目录、文档、版本管理、barrel 导出 | Pro 新增 |
 | 批量组件生成 | 脚手架脚本一次性生成整套组件 | Pro 新增 |
@@ -125,21 +127,21 @@ src/
 #!/usr/bin/env bash
 # （请参考skill目录中的脚本文件） — 批量生成 Vue 组件
 set -euo pipefail
-
+# ...
 COMPONENTS=(
   "Button" "Input" "Select" "Checkbox" "Radio"
   "Table" "Pagination" "Tag" "Badge"
   "Card" "Modal" "Drawer" "Tooltip"
   "Navbar" "Sidebar" "Breadcrumb"
 )
-
+# ...
 BASE_DIR="src/components"
-
+# ...
 for comp in "${COMPONENTS[@]}"; do
   dir="$BASE_DIR/$comp"
   mkdir -p "$dir"
   comp_kebab=$(echo "$comp" | sed 's/\([A-Z]\)/-\1/g' | tr '[:upper:]' '[:lower:]' | sed 's/^-//')
-
+# ...
   # 组件实现(<script setup lang="ts"> + 可访问性)
   cat > "$dir/$comp.vue" <<EOF
 <template>
@@ -152,31 +154,31 @@ for comp in "${COMPONENTS[@]}"; do
     <slot />
   </component>
 </template>
-
+# ...
 <script setup lang="ts">
 interface Props {
   tag?: string
   disabled?: boolean
 }
-
+# ...
 withDefaults(defineProps<Props>(), {
   tag: 'div',
   disabled: false
 })
 </script>
-
+# ...
 <style scoped lang="scss">
 .${comp_kebab} {
   padding: var(--spacing-4);
   border-radius: var(--radius-md);
   transition: var(--motion-duration-base) var(--motion-ease-in-out);
-
+# ...
   &[aria-disabled="true"] {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
   }
-
+# ...
   &:focus-visible {
     outline: 3px solid var(--color-primary-500);
     outline-offset: 2px;
@@ -184,25 +186,25 @@ withDefaults(defineProps<Props>(), {
 }
 </style>
 EOF
-
+# ...
   # 类型定义
   cat > "$dir/types.ts" <<EOF
 export interface ${comp}Props {
   tag?: string
   disabled?: boolean
 }
-
+# ...
 export interface ${comp}Emits {
   // 详情见说明: 定义事件
 }
 EOF
-
+# ...
   # 单元测试模板
   cat > "$dir/$comp.test.ts" <<EOF
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import ${comp} from './${comp}.vue'
-
+# ...
 describe('${comp}', () => {
   it('应正确渲染默认 slot', () => {
     const wrapper = mount(${comp}, {
@@ -210,7 +212,7 @@ describe('${comp}', () => {
     })
     expect(wrapper.text()).toContain('内容')
   })
-
+# ...
   it('disabled 时应设置 aria-disabled', () => {
     const wrapper = mount(${comp}, {
       props: { disabled: true }
@@ -218,36 +220,36 @@ describe('${comp}', () => {
     expect(wrapper.attributes('aria-disabled')).toBe('true')
     expect(wrapper.attributes('tabindex')).toBe('-1')
   })
-
+# ...
   it('键盘应可聚焦', async () => {
     const wrapper = mount(${comp})
     expect(wrapper.attributes('tabindex')).toBe('0')
   })
 })
 EOF
-
+# ...
   # 文档
   cat > "$dir/README.md" <<EOF
 # ${comp}
-
+# ...
 ## 使用流程
-
+# ...
 ### 优秀步:声明团队上下文
-
+# ...
 在对话中说明团队规模、技术栈与组件库目标,例如:
-
+# ...
 ```
 我们是 12 人的前端团队,技术栈是 Vue 3 + TypeScript + Vite,
 需要从 0 搭建企业组件库,要求 WCAG AA 合规,含单元测试,
 支持暗色模式,并集成到 CI。
 ```
-
+# ...
 ### 第二步:获取工程方案
-
+# ...
 工具会输出组件库目录结构、批量生成脚本、可访问性模板、测试模板与 CI 配置。
-
+# ...
 ### 第三步:落地与维护
-
+# ...
 ```bash
 # 应用设计令牌
 cp tokens.scss src/styles/
@@ -261,18 +263,18 @@ npx vitest run
 # 启动 Storybook 文档
 npm run storybook
 ```
-
+# ...
 #
 ## 输入格式
-
+# ...
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | vue-component-gen处理的内容输入 |,  |
 | content | string | 否 | vue-component-gen处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
-
+# ...
 ## 输出格式
-
+# ...
 ```json
 {
   "success": true,
@@ -289,32 +291,32 @@ npm run storybook
   "error": null
 }
 ```
-
+# ...
 输出模板参考: `assets/output.json`
-
+# ...
 ## 异常处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
-
+# ...
 ## 依赖说明
-
+# ...
 ### 运行环境
-
+# ...
 - **Agent 平台**:支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**:Windows / macOS / Linux
 - **Node.js**:建议 20 LTS+
 - **Vue**:建议 3.3+
 - **CI 平台**:GitHub Actions / GitLab CI / Jenkins
-
-### 依赖说明
-
+# ...
+### 依赖说明(补充)
+# ...
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Vue 3 | npm 包 | 必需 | `npm i vue` |
 | TypeScript | npm 包 | 必需 | `npm i -D typescript` |
 | vue-tsc | npm 包 | 必需 | `npm i -D vue-tsc` |
@@ -324,23 +326,23 @@ npm run storybook
 | @storybook/vue3 | 文档工具 | 推荐 | `npx storybook init` |
 | eslint-plugin-vue | npm 包 | 推荐 | `npm i -D eslint-plugin-vue` |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
-
+# ...
 ### API Key 配置
-
+# ...
 - 本 Skill 完全基于 Markdown 指令,无需额外 API Key
 - 私有 npm 发布需配置 `NODE_AUTH_TOKEN` 环境变量
 - 视觉回归工具(Chromatic)需配置 `CHROMATIC_TOKEN`
 - 代码覆盖率上传(Codecov)需配置 `CODECOV_TOKEN`
-
+# ...
 ### 可用性分类
-
+# ...
 - **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出企业级 Vue 组件工程方案;脚手架与测试脚本需在仓库中落地并由本地或 CI 执行
-
+# ...
 ## 案例展示
-
+# ...
 ### CI/CD 组件质量门禁
-
+# ...
 ```yaml
 # .github/workflows/component-quality.yml
 name: Vue Component Quality Gate
@@ -378,43 +380,44 @@ jobs:
       - name: 上传覆盖率
         uses: codecov/codecov-action@v4
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: 企业组件库如何发布与版本化?
-
+# ...
 将组件库配置为独立 npm 包,采用语义化版本(1.0.0),通过 CHANGELOG 记录变更。CI 中自动发布到私有 npm 注册表。
-
+# ...
 ### Q2: 多项目如何复用组件库?
-
+# ...
 发布为私有 npm 包,各项目通过 `npm i @your-org/vue-components` 安装。配合语义化版本,实现可控升级。
-
+# ...
 ### Q3: 可访问性测试如何自动化?
-
+# ...
 Vitest 中编写可访问性测试(键盘聚焦、aria 属性、对比度),CI 中运行。更深入测试推荐 `@axe/playwright`。
-
+# ...
 ### Q4: 设计令牌如何与 Tailwind / UnoCSS 协同?
-
+# ...
 Tailwind:在 `tailwind.config.js` 中将令牌映射为 theme 字段;UnoCSS:在 `unocss.config.ts` 中将令牌映射为 theme 字段。
-
+# ...
 ### Q5: Pro 版与免费版如何协同?
-
+# ...
 Pro 版完全兼容免费版的所有单组件输出。个人开发者可继续使用免费版,团队场景启用 Pro 版获得企业级结构、批量生成与可访问性能力。两个版本可在同一仓库并存。
-
+# ...
 ### Q6: 如何度量组件库健康度?
-
+# ...
 跟踪四个指标:组件复用率、WCAG AA 合规率、单元测试覆盖率、文档覆盖率。四者共同反映组件库健康度。
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
 ## 已知限制
-
+# ...
 - 需要API Key，无Key环境无法使用
+# ...

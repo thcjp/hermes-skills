@@ -38,18 +38,19 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Go 语言工具包（免费版）
 ## 概述
 本工具为 Go 开发者提供代码陷阱防范与优选实践指引，覆盖并发编程、接口与类型系统、错误处理、集合操作等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 Goroutine 泄漏、Channel 死锁、接口误用、Slice 共享内存等常见陷阱，编写更加可靠、高效的 Go 代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例。
 
 ## 核心能力
 | 能力模块 | 描述 | 典型陷阱 |
-| --- | --- | --- |
+|----|---|----|
 | Goroutine 管理 | 协程泄漏检测与防范 | 无发送者的 Channel 阻塞导致泄漏 |
 | Channel 使用 | 通道陷阱识别 | 向已关闭 Channel 发送导致 panic |
 | Defer 机制 | 延迟执行陷阱 | 循环中 defer 堆积 |
@@ -90,9 +91,9 @@ suggested_price: 29.9
 
 ```text
 用户：我写了这段并发代码，帮我检查是否有 Goroutine 泄漏
-
+# ...
 助手：检查以下常见泄漏模式
-
+# ...
 1. Channel 无发送者 → 泄漏
    // 错误：没有 goroutine 向 ch 发送数据
    func bad() {
@@ -101,7 +102,7 @@ suggested_price: 29.9
            <-ch  // 永远阻塞
        }()
    }
-
+# ...
 2. Context 未检查 → 泄漏
    // 错误：未检查 ctx.Done()
    func bad(ctx context.Context) {
@@ -117,7 +118,7 @@ suggested_price: 29.9
            }
        }()
    }
-
+# ...
 3. 正确模式
    func good(ctx context.Context) {
        ch := make(chan int, 1)
@@ -139,22 +140,22 @@ suggested_price: 29.9
 
 ```text
 用户：为什么我的接口变量明明是 nil，但判断 i != nil 却是 true
-
+# ...
 助手：这是 Go 接口的经典陷阱
-
+# ...
 // 陷阱：nil 具体值放入接口后不为 nil
 var p *MyType = nil
 var i interface{} = p
 fmt.Println(i == nil)  // false！
-
+# ...
 // 原因：接口包含 (类型, 值) 两个部分
 // p 的类型是 *MyType，值是 nil
 // 接口 i 的类型不为 nil，所以 i != nil
-
+# ...
 // 正确做法：直接用 nil 接口
 var i interface{} = nil
 fmt.Println(i == nil)  // true
-
+# ...
 // 或在赋值前判断
 func process(v interface{}) {
     if v == nil {
@@ -174,24 +175,24 @@ func process(v interface{}) {
 // 陷阱：Slice 共享底层数组
 func main() {
     original := []int{1, 2, 3, 4, 5}
-
+// ...
     // 切片共享内存
     sub := original[1:3]  // [2, 3]
     sub[0] = 99
     fmt.Println(original)  // [1, 99, 3, 4, 5]  原始数据被修改！
-
+// ...
     // 正确做法：使用 copy 创建独立副本
     sub2 := make([]int, 2)
     copy(sub2, original[1:3])
     sub2[0] = 99
     fmt.Println(original)  // [1, 2, 3, 4, 5]  原始数据不变
-
+// ...
     // Append 可能或可能不重新分配
     appended := append(original, 6)
     appended[0] = 0
     fmt.Println(original)  // 可能被修改也可能不被修改，取决于容量
 }
-
+// ...
 // 安全的 Slice 操作模式
 func safeSlice(original []int, start, end int) []int {
     result := make([]int, end-start)
@@ -223,7 +224,7 @@ func worker(ctx context.Context, ch <-chan int) {
         }
     }
 }
-
+// ...
 // 2. 使用 WaitGroup 等待所有 goroutine
 func processAll(items []int) {
     var wg sync.WaitGroup
@@ -236,7 +237,7 @@ func processAll(items []int) {
     }
     wg.Wait()
 }
-
+// ...
 // 3. 使用缓冲 Channel 防止阻塞
 func pipeline() {
     ch := make(chan int, 10)  // 适当缓冲
@@ -261,19 +262,19 @@ func producer(ch chan<- int) {
         ch <- i
     }
 }
-
+// ...
 // 2. 向已关闭 Channel 发送会 panic
 func bad(ch chan int) {
     close(ch)
     ch <- 1  // panic: send on closed channel
 }
-
+// ...
 // 3. 从 nil Channel 接收永远阻塞
 func nilChannelTrap() {
     var ch chan int  // nil channel
     <-ch  // 永远阻塞
 }
-
+// ...
 // 4. select 多路复用
 func selectPattern(ch1, ch2 <-chan int) {
     for {
@@ -301,21 +302,21 @@ func readFile(path string) ([]byte, error) {
     }
     return data, nil
 }
-
+// ...
 // 2. 使用 errors.Is 判断包装的错误
 if errors.Is(err, os.ErrNotExist) {
     // 文件不存在
 }
-
+// ...
 // 3. 哨兵错误定义
 var ErrNotFound = errors.New("not found")
-
+// ...
 // 4. 自定义错误类型
 type ValidationError struct {
     Field   string
     Message string
 }
-
+// ...
 func (e *ValidationError) Error() string {
     return fmt.Sprintf("%s: %s", e.Field, e.Message)
 }
@@ -329,14 +330,14 @@ func deferArgs() {
     defer fmt.Println(i)  // 输出 1，不是 2
     i = 2
 }
-
+// ...
 // 2. 循环中 defer 堆积
 func loopDeferTrap() {
     for i := 0; i < 1000000; i++ {
         defer func() {}()  // 所有 defer 在函数结束时才执行
     }
 }
-
+// ...
 // 正确做法：将循环体提取为函数
 func loopDeferFixed() {
     for i := 0; i < 1000000; i++ {
@@ -345,7 +346,7 @@ func loopDeferFixed() {
         }()
     }
 }
-
+// ...
 // 3. 命名返回值与 defer
 func namedReturn() (err error) {
     defer func() {
@@ -364,16 +365,16 @@ func namedReturn() (err error) {
 var m map[string]int
 _ = m["key"]  // 返回 0，不 panic
 m["key"] = 1  // panic: assignment to entry in nil map
-
+// ...
 // 正确：使用 make 初始化
 m := make(map[string]int)
 m["key"] = 1  // OK
-
+// ...
 // 2. Map 迭代顺序随机
 for k, v := range m {
     // 顺序不保证，每次运行可能不同
 }
-
+// ...
 // 3. Map 非并发安全
 // 错误：并发读写 map
 func concurrentMapBad() {
@@ -385,17 +386,17 @@ func concurrentMapBad() {
         _ = m[1]  // 可能 panic
     }()
 }
-
+// ...
 // 正确：使用 sync.Map 或 mutex
 var mu sync.RWMutex
 m := make(map[int]int)
-
+// ...
 func set(key, val int) {
     mu.Lock()
     defer mu.Unlock()
     m[key] = val
 }
-
+// ...
 func get(key int) int {
     mu.RLock()
     defer mu.RUnlock()
@@ -431,12 +432,12 @@ func get(key int) int {
 ```go
 // 使用 runtime 查看 goroutine 数量
 import "runtime"
-
+// ...
 fmt.Println(runtime.NumGoroutine())
-
+// ...
 // 生产环境使用 pprof
 import _ "net/http/pprof"
-
+// ...
 go http.ListenAndServe("localhost:6060", nil)
 // 访问 http://localhost:6060/debug/pprof/goroutine
 ```
@@ -448,7 +449,7 @@ for _, f := range files {
     file, _ := os.Open(f)
     defer file.Close()  // 堆积到函数结束
 }
-
+// ...
 // 正确
 for _, f := range files {
     func() {
@@ -465,7 +466,7 @@ for _, f := range files {
 if err != nil {
     return fmt.Errorf("处理用户 %s 失败: %w", userID, err)
 }
-
+// ...
 // 上游可以使用 errors.Is 判断
 if errors.Is(err, sql.ErrNoRows) {
     // 处理未找到
@@ -476,10 +477,10 @@ if errors.Is(err, sql.ErrNoRows) {
 ```go
 s := "你好"
 fmt.Println(len(s))  // 6（字节数，UTF-8 编码每个中文 3 字节）
-
+// ...
 // 获取字符数
 fmt.Println(utf8.RuneCountInString(s))  // 2
-
+// ...
 // range 遍历的是 rune
 for i, r := range s {
     fmt.Printf("%d: %c\n", i, r)
@@ -492,12 +493,12 @@ for i, r := range s {
 func (s *Server) Start() {
     s.running = true
 }
-
+// ...
 // 值接收者：方法不会修改对象
 func (s Server) Status() string {
     return s.status
 }
-
+// ...
 // 规则：如果有一个方法用指针接收者，所有方法都应该用指针接收者
 ```
 
@@ -508,7 +509,7 @@ type SafeChan struct {
     ch   chan struct{}
     once sync.Once
 }
-
+// ...
 func (sc *SafeChan) Close() {
     sc.once.Do(func() {
         close(sc.ch)
@@ -524,7 +525,7 @@ func (sc *SafeChan) Close() {
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Go | 编译器/运行时 | 必需 | golang.org 下载 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 

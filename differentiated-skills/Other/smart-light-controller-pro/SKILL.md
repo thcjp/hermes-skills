@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 智能灯控工具（专业版）
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力项 | 说明 | 专业版独有 |
-|--------|------|-----------|
+|---|---|-----|
 | 多灯批量同步 | 一条指令控制多盏灯泡 | 是 |
 | 灯光秀编排 | 渐变、闪烁、节拍同步序列 | 是 |
 | 场景预设管理 | 保存/切换/导入导出场景 | 是 |
@@ -208,7 +210,7 @@ uv run light_show.py --ip 192.168.1.50 \
 ```bash
 # 日落时自动开灯
 uv run light_schedule.py --rule sunset-on --offset 0 --scene evening
-
+# ...
 # 日出前 30 分钟渐亮唤醒
 uv run light_schedule.py --rule sunrise-wake --offset -30 --duration 20
 ```
@@ -331,7 +333,7 @@ uv run light_stats.py --range 30d --output usage-report.html
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本兼容性 |
-|:-------|:-----|:---------|:---------|:-----------|
+|:-----|:-----|:-----|:-----|:-----|
 | python-kasa | Python 库 | 必需 | `uv pip install python-kasa>=0.10.2` | 兼容 0.10.x - 0.13.x |
 | astral | Python 库 | 日出日落功能必需 | `uv pip install astral>=3.2` | 兼容 3.x |
 | uv | 包管理器 | 推荐 | `pip install uv` | 兼容 0.4+ |
@@ -366,7 +368,7 @@ uv run light_stats.py --range 30d --output usage-report.html
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|---:|---:|---:|
 | 免费体验版 | 0 元 | 单灯核心控制 + 基础示例 | 个人试用 |
 | 收费专业版 | 29.9 元/月 | 全功能 + 高级特性 + 优先支持 | 团队/企业 |
 
@@ -374,9 +376,8 @@ uv run light_stats.py --range 30d --output usage-report.html
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

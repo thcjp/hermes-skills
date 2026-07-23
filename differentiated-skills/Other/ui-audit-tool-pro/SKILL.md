@@ -42,6 +42,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # UI审计工具（专业版）
 
@@ -52,7 +54,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 审计维度 | 3 维 | 8 维（含导航、可用性、表单、社交证明、引导） |
 | 设计系统 | 不支持 | 组件库对齐 + 一致性检查 |
 | 批量审计 | 不支持 | 项目级批量 + 目录递归 |
@@ -100,7 +102,7 @@ ui-audit-pro batch audit \
   --pages ./pages/ \
   --dimensions all \
   --report ./reports/
-
+# ...
 # 输出
 # 📊 批量审计报告
 # 总页面数: 45
@@ -123,7 +125,7 @@ ui-audit-pro batch audit \
 ui-audit-pro design-system check \
   --system ./design-system.json \
   --implementation ./src/components/
-
+# ...
 # 输出
 # 📊 设计系统一致性报告
 # 组件总数: 32
@@ -144,13 +146,13 @@ ui-audit-pro design-system check \
 ```bash
 # 创建审计项目
 ui-audit-pro project create --name "Q3 界面审计" --team "设计团队"
-
+# ...
 # 邀请团队成员
 ui-audit-pro project invite --members "designer-a,designer-b,dev-lead"
-
+# ...
 # 执行审计并邀请评论
 ui-audit-pro audit run --page "checkout-flow" --invite-comments
-
+# ...
 # 生成团队审计报告
 ui-audit-pro report generate --project "Q3 界面审计" --format pdf --include-comments
 ```
@@ -178,16 +180,16 @@ ui-audit-pro report generate --project "Q3 界面审计" --format pdf --include-
 ```bash
 # 1. 初始化专业版工作区
 ui-audit-pro init --workspace ~/ui-audit-pro
-
+# ...
 # 2. 导入设计系统
 ui-audit-pro design-system import --file ./design-system.json
-
+# ...
 # 3. 批量审计
 ui-audit-pro batch audit --project "我的项目" --pages ./pages/ --dimensions all
-
+# ...
 # 4. Figma 集成审计
 ui-audit-pro figma audit --file-key "abc123" --frames "Login,Dashboard"
-
+# ...
 # 5. 生成报告
 ui-audit-pro report generate --format pdf --output audit-report.pdf
 ```
@@ -239,7 +241,7 @@ history:
 ## 审计维度库
 
 | 维度 | 适用场景 | 检查项数 |
-|:-----|:---------|:---------|
+|:-----|:-----|:-----|
 | 视觉层级 | 所有界面 | 8 |
 | 视觉风格 | 所有界面 | 8 |
 | 可访问性 | 所有界面 | 8 |
@@ -289,7 +291,7 @@ A：专业版支持命令行模式，可在 CI/CD 中自动执行审计并阻断
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需 | 官方站点下载 |
 | Figma API | 服务 | 可选（Figma集成） | Figma 官方 |
@@ -305,9 +307,8 @@ A：专业版支持命令行模式，可在 CI/CD 中自动执行审计并阻断
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

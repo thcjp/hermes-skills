@@ -19,11 +19,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
-
 # Azure管理入门工具（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ### 资源管理
 
 | 资源类型 | 功能 | 免费版支持 |
-| --- | --- | --- |
+|----|---|-----|
 | 虚拟机 | 创建/启动/停止/删除 | 支持 |
 | 存储账户 | 创建/上传/下载 | 支持 |
 | 虚拟网络 | 网络/子网配置 | 支持 |
@@ -80,7 +81,7 @@ python3 （请参考skill目录中的脚本文件） vm create \
   --image UbuntuLTS \
   --size Standard_B1s \
   --admin-username azureuser
-
+# ...
 # 输出虚拟机信息
 ```
 
@@ -94,7 +95,7 @@ python3 （请参考skill目录中的脚本文件） storage create \
   --name mystorage2026 \
   --resource-group my-rg \
   --sku Standard_LRS
-
+# ...
 # 上传文件
 python3 （请参考skill目录中的脚本文件） storage upload \
   --account mystorage2026 \
@@ -112,7 +113,7 @@ python3 （请参考skill目录中的脚本文件） vnet create \
   --name my-vnet \
   --resource-group my-rg \
   --address-prefix 10.0.0.0/16
-
+# ...
 # 创建子网
 python3 （请参考skill目录中的脚本文件） vnet subnet create \
   --vnet my-vnet \
@@ -134,10 +135,10 @@ python3 （请参考skill目录中的脚本文件） vnet subnet create \
 # 依赖说明
 # macOS: brew install azure-cli
 # Windows: 下载官方安装包
-
+# ...
 # 登录Azure
 az login
-
+# ...
 # 安装Python依赖
 pip install azure-mgmt-compute azure-mgmt-storage azure-identity
 ```
@@ -150,17 +151,16 @@ python3 （请参考skill目录中的脚本文件） vm create --name "my-vm" --
 python3 （请参考skill目录中的脚本文件） vm list --resource-group my-rg
 python3 （请参考skill目录中的脚本文件） vm start --name "my-vm" --resource-group my-rg
 python3 （请参考skill目录中的脚本文件） vm stop --name "my-vm" --resource-group my-rg
-
+# ...
 # 存储管理
 python3 （请参考skill目录中的脚本文件） storage create --name mystorage --resource-group my-rg
 python3 （请参考skill目录中的脚本文件） storage upload --account mystorage --container data --file ./file.txt
-
+# ...
 # 虚拟网络
 python3 （请参考skill目录中的脚本文件） vnet create --name my-vnet --resource-group my-rg --address-prefix 10.0.0.0/16
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -172,7 +172,7 @@ azure_config:
   tenant_id: "${AZURE_TENANT_ID}"
   client_id: "${AZURE_CLIENT_ID}"
   client_secret: "${AZURE_CLIENT_SECRET}"
-
+# ...
   defaults:
     location: "eastus"
     resource_group: "my-rg"
@@ -183,7 +183,7 @@ azure_config:
     storage:
       sku: "Standard_LRS"
       encryption: true
-
+# ...
   tags:
     Project: "my-project"
     Environment: "dev"
@@ -198,7 +198,7 @@ azure_config:
 4. **标签规范**：统一标签规范，便于成本追踪
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:-----|:-----|
 | 凭证安全 | 服务主体密钥不要写入代码 |
 | 成本控制 | 及时停止/删除不用的资源 |
 | 位置选择 | 选择离用户最近的位置 |
@@ -234,7 +234,7 @@ azure_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | azure-identity | Python库 | 必需 | `pip install azure-identity` |
@@ -245,7 +245,7 @@ azure_config:
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-|:-------|:---------|:---------|:-----|
+|:---:|:---:|:---:|:---:|
 | 订阅ID | `AZURE_SUBSCRIPTION_ID` | 必需 | 资源订阅 |
 | 租户ID | `AZURE_TENANT_ID` | 必需 | AD认证 |
 | 客户端ID | `AZURE_CLIENT_ID` | 必需 | 服务主体 |
@@ -262,9 +262,8 @@ azure_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

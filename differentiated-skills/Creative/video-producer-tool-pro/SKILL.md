@@ -24,6 +24,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
 短视频生成专业版是一款面向企业团队与 MCN 机构的规模化视频生产平台。在免费版核心生产流程之上，专业版扩展了批量生产、多语言配音、自定义模板、A/B 变体、品牌一致性管理等企业级能力。
 
@@ -31,7 +33,7 @@ pricing_model: "per_use"
 
 ### 免费版与专业版能力对比
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 单视频生成 | 支持 | 支持 |
 | 画面规划 | 支持 | 支持 |
 | AI 素材生成 | 支持 | 支持 |
@@ -53,7 +55,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 短视频生成-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -81,7 +83,7 @@ pricing_model: "per_use"
 支持 10+ 语种配音，自动匹配场景语气：
 
 | 语言 | 代码 | 适用场景 |
-|:-----|:-----|:---------|
+|---:|---:|---:|
 | 中文 | zh | 国内市场 |
 | 英文 | en | 国际市场 |
 | 日文 | ja | 日本市场 |
@@ -175,8 +177,6 @@ node batch-produce.js --config /path/to/multilingual.yaml --parallel 6
 
 **A/B 配置 `ab-test.json`：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 **执行命令：**
 
 ```bash
@@ -187,9 +187,9 @@ node batch-produce.js --config /path/to/ab-test.json --generate-variants
 ### 第一步：环境检查
 ```bash
 node --version
-
+# ...
 npx remotion --version
-
+# ...
 npx remotion cores
 ```
 
@@ -233,23 +233,21 @@ node batch-produce.js \
 ## 配置示例
 ### 完整配置文件模板
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 渲染队列管理
 ```bash
 node queue-manager.js status --queue /tmp/render-queue.json
-
+# ...
 node queue-manager.js priority --task-id task-001 --level urgent
-
+# ...
 node queue-manager.js pause --queue /tmp/render-queue.json
-
+# ...
 node queue-manager.js resume --queue /tmp/render-queue.json
 ```
 
 ## 最佳实践
 ### 1. 并行生产数调优
 | CPU 核心数 | GPU | 建议并行数 | 单视频耗时 |
-|:-----------|:----|:-----------|:-----------|
+|:------:|:------:|:------:|:------:|
 | 4 核 | 无 | 2-3 | 5-8 分钟 |
 | 8 核 | 无 | 4-6 | 3-5 分钟 |
 | 8 核 | 有 | 6-8 | 1-3 分钟 |
@@ -272,7 +270,7 @@ node asset-manager.js add \
   --source /videos/project-a/materials/ \
   --library /assets/library/ \
   --tags "tech,ai,background"
-
+# ...
 node batch-produce.js \
   --config /tmp/batch.json \
   --use-library /assets/library/ \
@@ -294,7 +292,7 @@ node batch-produce.js \
 
 ```bash
 node batch-produce.js --retry-failed /tmp/render-queue.json
-
+# ...
 node batch-produce.js --resume /tmp/render-queue.json
 ```
 
@@ -317,7 +315,7 @@ voice_map:
 ```javascript
 // /templates/intro-3s.js
 import {useCurrentFrame} from 'remotion';
-
+// ...
 export const Intro = ({logo}) => {
   const frame = useCurrentFrame();
   // 自定义动画逻辑
@@ -330,7 +328,7 @@ export const Intro = ({logo}) => {
 
 ```bash
 node batch-produce.js --config urgent.json --priority urgent
-
+# ...
 ```
 
 ### Q6：4K 视频渲染需要什么配置？
@@ -346,7 +344,7 @@ node batch-produce.js --config urgent.json --priority urgent
 
 ```bash
 node team-manager.js create --project "MCN 日更" --members user1,user2
-
+# ...
 node batch-produce.js --config batch.json --team "MCN 日更"
 ```
 
@@ -361,7 +359,7 @@ node batch-produce.js --config batch.json --team "MCN 日更"
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Node.js | 运行时 | 必需 | nodejs.org | 18+ |
 | Remotion | npm 包 | 必需 | `npm install remotion` | 4.0+ |
 | FFmpeg | 命令行工具 | 必需 | 系统包管理器 | 4.0+ |
@@ -375,9 +373,9 @@ node batch-produce.js --config batch.json --team "MCN 日更"
 ```bash
 npm install -g remotion
 npm install
-
+# ...
 pip3 install pyyaml
-
+# ...
 node --version
 npx remotion --version
 npx remotion browser ensure
@@ -388,7 +386,7 @@ ffmpeg -version
 专业版需要以下 API Key：
 
 | API 类型 | 环境变量 | 用途 | 获取方式 |
-|:---------|:---------|:-----|:---------|
+|---:|:---|---:|---:|
 | AI 生图 | `IMAGE_GEN_API_KEY` | 生成画面素材 | 对应 AI 生图服务商 |
 | 多语言 TTS | `MULTILINGUAL_TTS_API_KEY` | 多语言配音 | 对应 TTS 服务商 |
 | 渲染加速 | `RENDER_API_KEY` | 云端渲染加速（可选） | 对应云渲染服务商 |
@@ -415,7 +413,7 @@ export RENDER_API_KEY="your_render_key"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

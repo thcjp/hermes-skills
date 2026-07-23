@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 > **定时推送+AI分析+多渠道分发+趋势预测。企业级新闻简报全功能覆盖。**
 
@@ -30,7 +32,7 @@ pricing_model: "per_use"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 多源新闻搜集 | 支持 | 支持 |
 | 智能筛选 | 基础（关键词） | AI增强（LLM） |
 | 简报生成 | 支持 | 支持 |
@@ -55,23 +57,17 @@ pricing_model: "per_use"
 
 ### 2. 多渠道推送
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供多渠道推送所需的指令和必要参数。
 **处理**: 解析多渠道推送的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回多渠道推送的响应数据,包含状态码、结果和日志。
 
 ### 3. AI智能分析
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供AI智能分析所需的指令和必要参数。
 **处理**: 解析AI智能分析的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回AI智能分析的响应数据,包含状态码、结果和日志。
 
 ### 4. 个性化定制
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供个性化定制所需的指令和必要参数。
 **处理**: 解析个性化定制的输入参数,完成核心逻辑,返回结构化响应。
@@ -84,7 +80,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 每日新闻简报(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -108,13 +104,13 @@ class MultiLanguageBrief:
         'ja': '日本語ブリーフ',
         'ko': '한국어 브리프'
     }
-
+# ...
     def generate_all_languages(self, filtered_news):
         briefs = {}
         for lang, title in self.LANGUAGES.items():
             briefs[lang] = self._generate(filtered_news, lang)
         return briefs
-
+# ...
     def _generate(self, news, lang):
         return f"[{lang}] Brief content"
 ```
@@ -125,14 +121,14 @@ class MultiLanguageBrief:
 ```python
 analyzer = AINewsAnalyzer()
 collector = NewsCollector()
-
+# ...
 news = collector.collect_all()
 all_items = []
 for items in news.values():
     all_items.extend(items)
-
+# ...
 analyzed = analyzer.sentiment_analysis(all_items)
-
+# ...
 for item in analyzed:
     if item.get('sentiment') == 'negative' and '我的品牌' in item.get('title', ''):
         print(f"[告警] 负面新闻：{item['title']}")
@@ -150,14 +146,14 @@ for item in analyzed:
 ```bash
 export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
 export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
-
+# ...
 python3 news_brief_service.py --schedule daily --push feishu,dingtalk
 ```
 
 ### 120秒标准搭建
 ```bash
 pip install requests beautifulsoup4 schedule
-
+# ...
 cat > news_brief_config.yaml <<EOF
 sources:
   international:
@@ -169,26 +165,26 @@ sources:
   technology:
     - https://tech.sina.com.cn
     - https://techcrunch.com
-
+# ...
 schedule:
   morning: "0 8 * * *"
   noon: "0 12 * * *"
   evening: "0 20 * * *"
   weekly: "0 9 * * 1"
-
+# ...
 push:
   feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
   dingtalk: https://oapi.dingtalk.com/robot/send?access_token=xxx
   wechat: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
   email: https://api.email-service.com/send
   slack: https://hooks.slack.com/services/xxx
-
+# ...
 ai_analysis:
   enabled: true
   model: gpt-4o
   sentiment: true
   trend_prediction: true
-
+# ...
 customization:
   keywords:
     international:
@@ -200,7 +196,7 @@ customization:
   max_per_category: 5
   languages: [zh, en]
 EOF
-
+# ...
 python3 news_brief_service.py --config news_brief_config.yaml
 ```
 
@@ -220,13 +216,13 @@ sources:
     - https://tech.sina.com.cn
     - https://techcrunch.com
     - https://www.theverge.com/tech
-
+# ...
 schedule:
   morning_brief: "0 8 * * *"
   noon_express: "0 12 * * *"
   evening_summary: "0 20 * * *"
   weekly_report: "0 9 * * 1"
-
+# ...
 push:
   channels:
     - name: feishu
@@ -244,13 +240,13 @@ push:
     - name: slack
       type: slack
       url: https://hooks.slack.com/services/xxx
-
+# ...
 ai_analysis:
   model: gpt-4o
   sentiment_analysis: true
   trend_prediction: true
   alert_negative: true
-
+# ...
 customization:
   template: formal
   max_per_category: 5
@@ -335,7 +331,7 @@ ANALYSIS_TEMPLATES = {
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
 | requests | Python库 | 必需 | `pip install requests` |
 | beautifulsoup4 | Python库 | 必需 | `pip install beautifulsoup4` |
@@ -376,7 +372,7 @@ ANALYSIS_TEMPLATES = {
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 多源搜集 + 基础筛选 + Markdown输出 + 手动触发 | 个人试用、单次生成 |
 | 收费专业版 | ¥39/月 | 定时推送 + 多渠道 + AI分析 + 个性化 + 多语言 + 情感分析 + 趋势预测 + 优先支持 | 团队/企业、定时推送 |
 
@@ -385,7 +381,7 @@ ANALYSIS_TEMPLATES = {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

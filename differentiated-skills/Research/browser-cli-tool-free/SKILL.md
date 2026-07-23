@@ -40,8 +40,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 浏览器CLI工具(免费版)
 
 ## 概述
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ### 适用场景
 
 | 场景 | 是否推荐本工具 |
-|:-----|:--------------|
+|---|-------|
 | 自动化浏览器操作(签到/填表/点击) | 推荐 |
 | 需要截图或抓取页面信息 | 推荐 |
 | 需要可视化查看浏览器界面 | 推荐(配合 `--headed`) |
@@ -74,7 +75,7 @@ suggested_price: 29.9
 ### 命令总览
 
 | 命令分类 | 命令示例 | 说明 |
-|:-------|:-----|:-----|
+|:-----|:-----|:-----|
 | 导航 | `open <url>` / `back` / `forward` / `reload` | 页面跳转控制 |
 | 交互 | `click` / `fill` / `type` / `select` / `check` | 元素操作 |
 | 获取信息 | `snapshot` / `get text` / `get html` / `screenshot` | 信息提取 |
@@ -110,19 +111,19 @@ suggested_price: 29.9
 ```bash
 # 打开签到页面
 agent-browser open https://example.com/checkin
-
+# ...
 # 获取页面快照,查看可交互元素
 agent-browser snapshot
-
+# ...
 # 点击签到按钮(根据 snapshot 输出的 ref)
 agent-browser click @eXX
-
+# ...
 # 等待页面响应
 sleep 2
-
+# ...
 # 再次快照确认结果
 agent-browser snapshot
-
+# ...
 # 关闭浏览器
 agent-browser close
 ```
@@ -134,11 +135,11 @@ agent-browser close
 ```bash
 agent-browser open https://example.com/form
 agent-browser snapshot
-
+# ...
 # 通过 label 定位并填写
 agent-browser find label "用户名" fill "myuser"
 agent-browser find label "密码" fill "mypassword"
-
+# ...
 # 通过 ARIA 角色点击提交按钮
 agent-browser find role button click --name "提交"
 ```
@@ -157,9 +158,9 @@ agent-browser find role button click --name "签到"
 agent-browser screenshot /tmp/checkin_$(date +%Y%m%d).png
 agent-browser close
 EOF
-
+# ...
 chmod +x ~/.skill-platform/（请参考skill目录中的脚本文件）
-
+# ...
 # 加入 crontab(每天 9:00 执行)
 # crontab -e
 # 0 9 * * * ~/.skill-platform/（请参考skill目录中的脚本文件）
@@ -187,22 +188,21 @@ agent-browser install
 ```bash
 # 打开网页
 agent-browser open <url>
-
+# ...
 # 获取页面可访问性树(推荐)
 agent-browser snapshot
-
+# ...
 # 点击元素(用 ref 引用)
 agent-browser click @<ref>
-
+# ...
 # 填入内容
 agent-browser fill @<ref> "内容"
-
+# ...
 # 关闭浏览器
 agent-browser close
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -289,7 +289,7 @@ agent-browser find placeholder "Search" type "query"
 ```bash
 # 检查 Node.js 版本(需 >= 18)
 node --version
-
+# ...
 # 重新安装
 npm uninstall -g agent-browser
 npm install -g agent-browser
@@ -317,7 +317,7 @@ agent-browser screenshot debug.png
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | agent-browser | CLI 工具 | 必需 | `npm install -g agent-browser` |
 | Chromium | 运行时 | 必需 | `agent-browser install` 自动下载 |
 | Node.js | 运行环境 | 必需 | 系统包管理器安装 |
@@ -332,9 +332,8 @@ agent-browser screenshot debug.png
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

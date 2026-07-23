@@ -18,6 +18,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # CDP浏览器大师
 
@@ -96,7 +98,7 @@ UA天然真实(用已登录浏览器)、启动参数`--disable-blink-features=Au
 **Edge(端口9222)**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | CDP浏览器大师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -153,7 +155,7 @@ await edge.waitNetworkIdle();
 
 ## 示例
 
-### 示例
+### 示例(补充)
 **输入**: 抓取某UP主主页前5个视频的标题和播放量
 
 **输出**:
@@ -180,7 +182,7 @@ const videos = JSON.parse(r.result.value);
 // Step 1: 先入可访问页面(直接navigate子路由会404)
 await edge.goto('https://platform.minimaxi.com/user-center/basic-information');
 await edge.waitNetworkIdle();
-
+// ...
 // Step 2: JS点击侧边栏div触发SPA路由(注意:不是<a>标签)
 await edge.eval(`
     (function() {
@@ -196,7 +198,7 @@ await edge.eval(`
     })()
 `);
 await edge.waitNetworkIdle();
-
+// ...
 // Step 3: 提取配额数据
 const r = await edge.eval(`(function(){
   var t = document.body.innerText;
@@ -211,7 +213,7 @@ const r = await edge.eval(`(function(){
 ## 错误处理
 
 | 场景 | 原因 | 处理方式 |
-|:-----|:-----|:---------|
+|:-----|:-----|:-----|
 | 连接9222失败 | 端口被占或浏览器未启动 | `netstat -ano \| findstr :9222`查端口,`taskkill /F /PID <pid>`清残留,重启浏览器 |
 | eval返回空值 | 页面未渲染完 | 用`waitNetworkIdle`替代固定sleep,JS密集页面手动加到8-10s |
 | click无反应 | 选择器未命中或元素不可点 | 用探测模式验证选择器,用`elementFromPoint`模拟点击 |
@@ -225,7 +227,7 @@ const r = await edge.eval(`(function(){
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Agent LLM | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需(运行cdp-automation.js) | nodejs.org |
 | Edge/Chrome | 浏览器 | 必需 | 系统自带或官网下载 |

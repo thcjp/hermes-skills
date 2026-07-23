@@ -34,6 +34,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 图纸解析（专业版）
 
@@ -43,7 +45,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 图纸解析(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -86,14 +88,14 @@ pricing_model: "per_use"
 
 ```python
 import ezdxf
-
+# ...
 def analyze_dwg(dwg_path: str):
     doc = ezdxf.readfile(dwg_path)
     msp = doc.modelspace()
-
+# ...
     dimensions = []
     annotations = []
-
+# ...
     for entity in msp:
         if entity.dxftype() == 'DIMENSION':
             dimensions.append({
@@ -107,7 +109,7 @@ def analyze_dwg(dwg_path: str):
                 'location': tuple(entity.dxf.insert),
                 'layer': entity.dxf.layer
             })
-
+# ...
     return {'dimensions': dimensions, 'annotations': annotations}
 ```
 
@@ -119,7 +121,7 @@ def analyze_dwg(dwg_path: str):
 ```python
 import pytesseract
 from pdf2image import convert_from_path
-
+# ...
 def ocr_preprocess(pdf_path: str, lang: str = "chi_sim+eng"):
     images = convert_from_path(pdf_path, dpi=300)
     full_text = ""
@@ -155,7 +157,7 @@ def generate_drawing_index(results: list) -> str:
 基于关键词词典识别中文注释类型：
 
 | 中文注释类型 | 关键词词典 | 处理逻辑 |
-|--------------|-----------|----------|
+|:-------|:-------|:-------|
 | 房间标签 | 房间、卧室、客厅、厨房、卫生间 | 提取房间编号 |
 | 门窗编号 | 门、窗、M、C、FM | 匹配 M-1023 / C-0815 模式 |
 | 标高 | 标高、EL、±0.000 | 解析标高数值与单位 |
@@ -173,7 +175,7 @@ def generate_drawing_index(results: list) -> str:
 def diff_drawings(result_old, result_new):
     old_dims = {d.associated_text for d in result_old.dimensions}
     new_dims = {d.associated_text for d in result_new.dimensions}
-
+# ...
     return {
         'added_dimensions': new_dims - old_dims,
         'removed_dimensions': old_dims - new_dims,
@@ -202,7 +204,7 @@ title_block_patterns:
   scale:
     - 'SCALE:\s*(.+?)(?:\n|$)'
     - '比例:\s*(.+?)(?:\n|$)'
-
+# ...
 quality_rules:
   - name: 必须包含防火分区说明
     check: any('防火' in a.text for a in annotations)
@@ -210,7 +212,7 @@ quality_rules:
   - name: 比例不得为NTS
     check: scale_factor > 0
     severity: medium
-
+# ...
 export_formats: [markdown, json, csv, xlsx]
 ```
 
@@ -223,15 +225,15 @@ export_formats: [markdown, json, csv, xlsx]
 from multiprocessing import Pool
 import json
 from pathlib import Path
-
+# ...
 def batch_analyze(pdf_dir: str, workers: int = 4, checkpoint: str = None):
     # 断点续传：加载已完成的文件
     completed = set()
     if checkpoint and Path(checkpoint).exists():
         completed = set(json.loads(Path(checkpoint).read_text()))
-
+# ...
     pdf_files = [f for f in Path(pdf_dir).glob('*.pdf') if f.name not in completed]
-
+# ...
     with Pool(workers) as pool:
         for i, result in enumerate(pool.imap_unordered(analyze_one, pdf_files)):
             yield result
@@ -260,7 +262,7 @@ pip install pdfplumber ezdxf pytesseract pdf2image openpyxl
 
 ```python
 from drawing_insight_pro import DrawingAnalyzerPro
-
+# ...
 analyzer = DrawingAnalyzerPro()
 result = analyzer.analyze("A101_Floor_Plan.pdf", enable_ocr=True, lang="chi_sim+eng")
 print(analyzer.generate_report(result))
@@ -272,18 +274,18 @@ print(analyzer.generate_report(result))
 
 ```python
 analyzer = DrawingAnalyzerPro()
-
+# ...
 # 批量解析整个项目
 results = list(analyzer.batch_analyze(
     pdf_dir="./project_drawings/",
     workers=4,
     checkpoint="./.drawing_checkpoints.json"
 ))
-
+# ...
 # 生成跨图纸索引表
 index_md = analyzer.generate_drawing_index(results)
 Path("drawing_index.md").write_text(index_md, encoding="utf-8")
-
+# ...
 # 多格式导出
 analyzer.export(results, format="xlsx", path="results.xlsx")
 analyzer.export(results, format="json", path="results.json")
@@ -298,20 +300,20 @@ analyzer.export(results, format="json", path="results.json")
 project:
   name: 绿地中心项目
   code: GF-2026-001
-
+# ...
 parsing:
   enable_ocr: true
   ocr_lang: chi_sim+eng
   dwg_native: true
   chinese_classifier: true
-
+# ...
 templates:
   - custom_template.yaml
-
+# ...
 quality:
   strict_mode: true
   custom_rules: true
-
+# ...
 export:
   formats: [markdown, json, csv, xlsx]
   output_dir: ./reports/
@@ -320,7 +322,7 @@ export:
 ```python
 analyzer = DrawingAnalyzerPro.from_config("project_config.yaml")
 results = analyzer.batch_analyze("./project_drawings/")
-
+# ...
 # 版本差异分析
 diff = analyzer.diff_versions(
     old_results=analyzer.load_results("./v1_reports/"),
@@ -439,7 +441,7 @@ project/
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|---:|---:|---:|---:|
 | 造价员 | 大批量算量数据抽取 | 批量解析+DWG+Excel导出 | 数据抽取效率提升95% |
 | BIM工程师 | 建模前图纸体检 | 质量检查+跨图纸索引 | 返工率降低40% |
 | 设计负责人 | 版本管理与差异分析 | 版本差异+自定义模板 | 变更遗漏率降至0 |
@@ -529,7 +531,7 @@ jobs:
 # Webhook自动解析新图纸
 from flask import Flask, request
 app = Flask(__name__)
-
+# ...
 @app.route('/webhook/drawing-added', methods=['POST'])
 def auto_parse():
     payload = request.json
@@ -562,7 +564,7 @@ def auto_parse():
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 1.0.0 | 2026-01 | 初版发布，含全部七大高级功能 |
 
 ## 已知限制
@@ -573,9 +575,8 @@ def auto_parse():
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:------|------:|:------|:------|------:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -629,7 +630,7 @@ def auto_parse():
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|:---|---:|---:|
 | DWG解析报错"unsupported version" | DWG版本过高或过低 | 用AutoCAD另存为R2010/R2018版本；或先转DXF | 高 |
 | OCR准确率低 | 扫描质量差或DPI不足 | 提升至400 DPI；做二值化预处理；分区域OCR | 高 |
 | 批量处理内存溢出 | 单PDF过大或worker过多 | 减少worker数量；按页处理；增加虚拟内存 | 高 |
@@ -653,7 +654,7 @@ def auto_parse():
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o） |
 | pdfplumber | Python库 | 必需 | `pip install pdfplumber` |
 | ezdxf | Python库 | 专业版必需 | `pip install ezdxf` |
@@ -719,7 +720,7 @@ def auto_parse():
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|----|:--:|---:|----|
 | 免费体验版 | ¥0 | 单文件PDF解析+标题栏识别+尺寸抽取+注释分类+基础质量检查+5张批量 | 个人试用、轻量需求 |
 | 收费专业版 | ¥29.9/月 | 全部高级功能（DWG解析+OCR+跨图纸索引+中文分类+版本差异+自定义模板+批量并行）+多角色指南+性能优化+优先支持 | 工程团队、造价咨询机构、设计院、监理单位 |
 

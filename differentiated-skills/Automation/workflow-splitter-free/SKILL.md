@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 工作流分解器（免费版）
 
 > **将复杂任务拆解为可执行子步骤。模型匹配+进度跟踪，让复杂任务不再无从下手。**
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 工作流分解器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ suggested_price: 29.9
 ```text
 拆解流程：
 复杂任务 → 任务分析 → 步骤拆解 → 模型匹配 → 执行与跟踪 → 完成
-
+# ...
 每步输出：
 1. 拆解模型：明确使用的是哪个模型
 2. 工作流进度：清晰标识进行到哪一步（如：步骤 2/8）
@@ -56,16 +57,16 @@ suggested_price: 29.9
 ```bash
 # 1. 提交复杂任务
 workflow-splitter split "帮我创建一个待办事项Web应用"
-
+# ...
 # 2. 查看拆解报告
 workflow-splitter report
-
+# ...
 # 3. 开始执行第一步
 workflow-splitter execute --step 1
-
+# ...
 # 4. 查看进度
 workflow-splitter progress
-
+# ...
 # 5. 继续下一步
 workflow-splitter next
 ```
@@ -85,14 +86,13 @@ workflow-splitter next
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 1. 任务接收与分析
 
 ```bash
 # 提交任务
 workflow-splitter split "分析这个项目的代码质量"
-
+# ...
 # 指定拆解粒度
 workflow-splitter split "开发用户认证模块" --granularity medium
 # granular: fine(5-10min) / medium(10-20min) / coarse(20-30min)
@@ -101,7 +101,7 @@ workflow-splitter split "开发用户认证模块" --granularity medium
 **任务分析维度**：
 
 | 维度 | 说明 | 示例 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 技能类型 | 编码/写作/分析/创作 | 编码 |
 | 复杂度 | 低/中/高 | 高 |
 | 依赖关系 | 前置条件 | 需先完成数据库设计 |
@@ -122,7 +122,7 @@ workflow-splitter split "开发用户认证模块" --granularity medium
 ```bash
 # 查看拆解结果
 workflow-splitter steps
-
+# ...
 # 示例
 # 步骤 1/6: 需求分析 (推理模型)
 # 步骤 2/6: 技术栈选择 (推理模型)
@@ -141,7 +141,7 @@ workflow-splitter steps
 根据步骤特性选择最合适的模型：
 
 | 步骤类型 | 推荐模型 | 理由 |
-|----------|----------|------|
+|---:|---:|---:|
 | 需求分析 | 推理模型 | 需要深度思考 |
 | 技术选型 | 推理模型 | 需要权衡比较 |
 | 代码生成 | 代码模型 | 擅长编程 |
@@ -158,7 +158,7 @@ workflow-splitter steps
 ```bash
 # 查看当前进度
 workflow-splitter progress
-
+# ...
 # 输出：
 # 进行到: 步骤 3/6
 # 当前步骤: 项目结构创建
@@ -178,7 +178,7 @@ workflow-splitter progress
 ```bash
 # 诊断问题
 workflow-splitter diagnose --step 4
-
+# ...
 # 输出：
 # 问题类型: 模型理解错误
 # 原因分析: 输入描述不够清晰
@@ -205,7 +205,7 @@ workflow-splitter diagnose --step 4
 
 ```bash
 workflow-splitter split "帮我创建一个待办事项Web应用"
-
+# ...
 # 拆解结果：
 # 步骤 1/6: 需求分析 (推理模型)
 # 步骤 2/6: 技术栈选择 (推理模型)
@@ -225,7 +225,7 @@ workflow-splitter split "帮我创建一个待办事项Web应用"
 
 ```bash
 workflow-splitter split "分析这个项目的代码质量"
-
+# ...
 # 拆解结果：
 # 步骤 1/4: 代码库扫描 (推理模型)
 # 步骤 2/4: 静态分析 (代码模型)
@@ -241,7 +241,7 @@ workflow-splitter split "分析这个项目的代码质量"
 
 ```bash
 workflow-splitter split "学习React开发" --granularity coarse
-
+# ...
 # 拆解结果：
 # 步骤 1/5: JavaScript基础复习 (推理模型)
 # 步骤 2/5: React核心概念 (推理模型)
@@ -284,7 +284,7 @@ workflow-splitter split "学习React开发" --granularity coarse
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
 | workflow-splitter CLI | 命令行工具 | 必需 | 随本技能提供 |
 
@@ -338,9 +338,8 @@ workflow-splitter split "学习React开发" --granularity coarse
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

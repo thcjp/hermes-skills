@@ -22,14 +22,15 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
 # 数据库管理（免费版）
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据库管理(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -51,7 +52,7 @@ homepage: "https://skillhub.cn"
 ```sql
 -- 单条插入
 INSERT INTO stock_info (product_name, quantity, price) VALUES ('苹果', 100, 8.50);
-
+# ...
 -- 批量插入（事务包裹）
 BEGIN;
 INSERT INTO stock_info (product_name, quantity, price) VALUES
@@ -69,7 +70,7 @@ COMMIT;
 ```sql
 -- 条件查询
 SELECT * FROM stock_info WHERE quantity > 50;
-
+# ...
 -- 分组统计
 SELECT category, COUNT(*) AS count, AVG(price) AS avg_price
 FROM stock_info
@@ -103,7 +104,7 @@ COMMIT;
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -137,7 +138,7 @@ CREATE TABLE stock_info (
     price DECIMAL(10,2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+# ...
 CREATE INDEX idx_stock_product_name ON stock_info(product_name);
 ```
 
@@ -145,14 +146,14 @@ CREATE INDEX idx_stock_product_name ON stock_info(product_name);
 
 ```sql
 BEGIN;
-
+# ...
 INSERT INTO stock_info (product_name, quantity, price) VALUES
     ('苹果', 100, 8.50),
     ('香蕉', 200, 3.20),
     ('牛肉', 50, 45.00);
-
+# ...
 COMMIT;
-
+# ...
 SELECT category, COUNT(*) AS count, AVG(price) AS avg_price
 FROM stock_info
 WHERE quantity > 50
@@ -163,7 +164,7 @@ ORDER BY avg_price DESC;
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | `主键冲突 (duplicate key)` | `INSERT` 的主键值已存在 | 检查 `SERIAL` 自增序列是否同步，或使用付费版 `ON CONFLICT` 处理 |
 | `类型不匹配` | `VARCHAR` 列插入数值 | 使用 `CAST(col AS type)` 显式转换类型 |
 | `NOT NULL 约束违规` | 插入时未提供必填字段值 | 检查表定义中 `NOT NULL` 列，确保插入时提供值 |

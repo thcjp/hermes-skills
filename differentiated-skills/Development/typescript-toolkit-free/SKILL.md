@@ -37,11 +37,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # TypeScript 工具集(免费版)
 
 ## 概述
@@ -53,7 +54,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 类型收窄指导 | `typeof`、`in`、`Array.isArray` 等收窄技巧与陷阱识别 |
 | `any` 替代方案 | 用 `unknown`、泛型、类型守卫替换 `any` 的实战方法 |
 | 字面量陷阱修复 | `let` vs `const`、对象属性拓宽、函数返回类型拓宽 |
@@ -98,7 +99,7 @@ async function fetchUser(): Promise<any> {
   const res = await fetch('/api/user');
   return res.json();
 }
-
+// ...
 // 推荐:用 unknown 强制收窄
 async function fetchUser(): Promise<User> {
   const res = await fetch('/api/user');
@@ -108,7 +109,7 @@ async function fetchUser(): Promise<User> {
   }
   throw new Error('Invalid user payload');
 }
-
+// ...
 function isValidUser(value: unknown): value is User {
   return (
     typeof value === 'object' &&
@@ -126,7 +127,7 @@ function isValidUser(value: unknown): value is User {
 ```typescript
 // 不推荐:filtered 仍是 (string | null)[]
 const filtered = list.filter(Boolean);
-
+// ...
 // 推荐:显式类型谓词,filtered 收窄为 string[]
 const filtered = list.filter((x): x is string => Boolean(x));
 ```
@@ -260,7 +261,7 @@ JavaScript 的 `Boolean` 函数签名返回 `boolean`,TypeScript 无法据此推
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | TypeScript | npm 包 | 推荐 | `npm i -D typescript` |
 | ESLint + @typescript-eslint | npm 包 | 可选 | `npm i -D eslint @typescript-eslint/eslint-plugin` |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -277,9 +278,8 @@ JavaScript 的 `Boolean` 函数签名返回 `boolean`,TypeScript 无法据此推
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

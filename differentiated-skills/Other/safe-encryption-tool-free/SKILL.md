@@ -41,8 +41,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 安全加密工具 - 免费版
 
 ## 概述
@@ -105,7 +106,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 安全加密工具-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -116,11 +117,11 @@ safe encrypt \
   --input secrets.txt \
   --output secrets.txt.encrypted \
   --passphrase "your-strong-passphrase"
-
+# ...
 # 安全删除原始文件(可选)
 shred -u secrets.txt  # Linux
 # 或 srm secrets.txt  # macOS
-
+# ...
 # 解密文件
 safe decrypt \
   --input secrets.txt.encrypted \
@@ -138,10 +139,10 @@ safe encrypt \
   --input report.pdf \
   --output report.pdf.encrypted \
   --passphrase "shared-secret-passphrase"
-
+# ...
 # 通过邮件/即时通讯发送加密文件
 # 通过安全渠道(如电话)告知密码
-
+# ...
 # 接收方:解密文件
 safe decrypt \
   --input report.pdf.encrypted \
@@ -160,7 +161,7 @@ for file in *.txt; do
     --passphrase "your-passphrase"
   echo "已加密: $file"
 done
-
+# ...
 # 批量解密
 for file in *.txt.encrypted; do
   original="${file%.encrypted}"
@@ -205,23 +206,23 @@ safe --version
 ```bash
 # 创建测试文件
 echo "这是敏感数据" > secret.txt
-
+# ...
 # 加密
 safe encrypt \
   --input secret.txt \
   --output secret.txt.encrypted \
   --passphrase "my-passphrase-123"
-
+# ...
 # 查看加密文件(应为二进制乱码)
 file secret.txt.encrypted
 # 输出: data
-
+# ...
 # 解密验证
 safe decrypt \
   --input secret.txt.encrypted \
   --output secret_decrypted.txt \
   --passphrase "my-passphrase-123"
-
+# ...
 # 对比内容
 diff secret.txt secret_decrypted.txt && echo "解密成功,内容一致"
 ```
@@ -231,7 +232,7 @@ diff secret.txt secret_decrypted.txt && echo "解密成功,内容一致"
 ### 命令参数
 
 | 参数 | 说明 | 必需 |
-|------|------|------|
+|:-----|:-----|:-----|
 | `--input` | 输入文件路径 | 是 |
 | `--output` | 输出文件路径 | 是 |
 | `--passphrase` | 加密密码 | 是 |
@@ -257,7 +258,7 @@ diff secret.txt secret_decrypted.txt && echo "解密成功,内容一致"
 ### 算法对比
 
 | 算法 | 类型 | 量子安全 | 密钥大小 | 推荐场景 |
-|------|------|----------|----------|----------|
+|---:|---:|---:|---:|---:|
 | ML-KEM-512 | 后量子 | 是 | 512 bits | 个人文件(默认) |
 | ML-KEM-768 | 后量子 | 是 | 768 bits | 企业数据 |
 | RSA-2048 | 传统 | 否 | 2048 bits | 遗留兼容 |
@@ -302,7 +303,7 @@ A: 免费版不支持目录加密。可以先将目录打包(`tar`/`zip`),再加
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | SAFE CLI | 加密工具 | 必需 | 官方安装包 |
 | coreutils | 文件工具 | 推荐 | 系统自带(shred/srm) |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -320,9 +321,8 @@ A: 免费版不支持目录加密。可以先将目录打包(`tar`/`zip`),再加
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

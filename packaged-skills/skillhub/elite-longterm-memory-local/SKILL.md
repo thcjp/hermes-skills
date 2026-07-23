@@ -23,16 +23,17 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
 ---
 # 本地向量记忆系统（Elite Longterm Memory Local）
 
 **本地优先，隐私至上。** 基于 LanceDB 与 Ollama 本地 Embedding 的向量记忆系统，零外部 API 依赖，所有数据完全留在本地。通过五层记忆架构与 WAL 协议，让 Agent 具备高效的语义搜索与上下文召回能力，同时保障数据隐私。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 本地向量记忆系统处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,13 +41,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
+| 数据质量检测与清洗规则 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -102,7 +103,7 @@ pricing_model: "per_use"
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |
-|:---|:---|:---|
+|---:|---:|---:|
 | Ollama 连接失败 | ollama serve 未运行或 OLLAMA_HOST 环境变量配置错误 | 检查 `ollama serve` 是否运行；检查 OLLAMA_HOST 环境变量；确认 ollamaUrl 配置为 http://localhost:11434 |
 | 向量搜索无结果 | LanceDB 路径错误或记忆库为空 | 检查 dbPath 配置是否指向 ./memory/vectors；执行 `node （请参考skill目录中的脚本文件） stats` 确认已存储记忆；若为空先执行 memory_store 存入初始记忆 |
 | nomic-embed-text 模型未下载 | 未执行 ollama pull nomic-embed-text | 执行 `ollama pull nomic-embed-text` 下载模型；确认 `ollama list` 中包含该模型 |
@@ -120,10 +121,10 @@ pricing_model: "per_use"
 ```bash
 # 存储用户偏好
 node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --importance 0.9 --category preference
-
+# ...
 # 存储项目决策
 node （请参考skill目录中的脚本文件） store "项目前端框架选用 React" --importance 0.8 --category decision
-
+# ...
 # 存储技术事实
 node （请参考skill目录中的脚本文件） store "API 网关使用 Kong" --importance 0.7 --category fact
 ```
@@ -134,12 +135,12 @@ node （请参考skill目录中的脚本文件） store "API 网关使用 Kong" 
   ID: mem_001 | 内容: 用户喜欢深色模式 | 类别: preference | 重要性: 0.9
   ID: mem_002 | 内容: 项目前端框架选用 React | 类别: decision | 重要性: 0.8
   ID: mem_003 | 内容: API 网关使用 Kong | 类别: fact | 重要性: 0.7
-
+# ...
 # 语义搜索（无需精确关键词匹配）
 node （请参考skill目录中的脚本文件） search "用户界面偏好"
 → 返回 mem_001（相似度: 0.92）"用户喜欢深色模式"
   （语义匹配："界面偏好" 与 "深色模式" 语义相关）
-
+# ...
 node （请参考skill目录中的脚本文件） search "前端技术选型"
 → 返回 mem_002（相似度: 0.89）"项目前端框架选用 React"
 ```
@@ -151,19 +152,19 @@ node （请参考skill目录中的脚本文件） search "前端技术选型"
 会话开始：
   Agent 读取 SESSION-STATE.md → 获取上次任务上下文
   Agent 执行 memory_recall "当前项目状态" → 召回相关历史记忆
-
+# ...
 用户对话：
   "数据库从 MongoDB 迁移到 PostgreSQL 数据库，事务支持更好"
   → WAL 协议：先写入 SESSION-STATE.md
   → memory_store "数据库迁移到 PostgreSQL 数据库，因事务支持更好" --importance 0.9 --category decision
-
+# ...
 会话结束：
   Agent 更新 SESSION-STATE.md 最终状态
   Agent 迁移重要内容到 MEMORY.md：
     ## 决策
     - 数据库迁移到 PostgreSQL 数据库（事务支持更好）
   Agent 创建 memory/2026-07-21.md 每日日志
-
+# ...
 后续会话：
   memory_recall "数据库选型" → 召回 PostgreSQL 决策记录
   → Agent 自动遵循该决策，不再建议 MongoDB

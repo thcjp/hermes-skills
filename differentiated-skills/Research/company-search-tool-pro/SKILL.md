@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 > **尽调报告+风险筛查+批量查询+监控告警。企业级查询全功能覆盖。**
 
@@ -30,7 +32,7 @@ pricing_model: "monthly"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 企业模糊搜索 | 支持 | 支持 |
 | 基本信息查询 | 支持 | 支持 |
 | 股东/人员/投资/变更 | 支持 | 支持 |
@@ -56,15 +58,11 @@ pricing_model: "monthly"
 
 ### 2. 风险筛查
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供风险筛查所需的指令和必要参数。
 **处理**: 解析风险筛查的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回风险筛查的响应数据,包含状态码、结果和日志。
 
 ### 3. 批量查询
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供批量查询所需的指令和必要参数。
 **处理**: 解析批量查询的输入参数,完成核心逻辑,返回结构化响应。
@@ -73,7 +71,7 @@ pricing_model: "monthly"
 ### 4. 监控告警
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 企业查询助手(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -81,21 +79,21 @@ pricing_model: "monthly"
 ```python
 import time
 from datetime import datetime
-
+# ...
 class CompanyMonitor:
     """企业监控告警（专业版）"""
-
+# ...
     def __init__(self, check_interval=86400):  # 默认每日检查
         self.check_interval = check_interval
         self.monitored = {}
         self.last_state = {}
         self.notifier = WebhookNotifier()
-
+# ...
     def add(self, company_name, dimensions=None):
         """添加监控企业"""
         self.monitored[company_name] = dimensions or ["工商变更", "被执行人", "经营异常"]
         print(f"已添加监控：{company_name}")
-
+# ...
     def check_changes(self):
         """检查所有监控企业的状态变化"""
         for company, dimensions in self.monitored.items():
@@ -103,19 +101,19 @@ class CompanyMonitor:
             for dim in dimensions:
                 current = self._query_dimension(company, dim)
                 key = f"{company}_{dim}"
-
+# ...
                 if key not in self.last_state:
                     self.last_state[key] = current
                     continue
-
+# ...
                 if current != self.last_state[key]:
                     self._alert_change(company, dim, self.last_state[key], current)
                     self.last_state[key] = current
-
+# ...
     def _query_dimension(self, company, dimension):
         """查询维度"""
         return f"{dimension}_state_{datetime.now().strftime('%Y%m%d')}"
-
+# ...
     def _alert_change(self, company, dimension, old_state, new_state):
         """发送变化告警"""
         message = f"企业监控告警\n企业：{company}\n维度：{dimension}\n变化：{old_state} → {new_state}"
@@ -126,7 +124,7 @@ class CompanyMonitor:
         while True:
             self.check_changes()
             time.sleep(self.check_interval)
-
+# ...
 monitor = CompanyMonitor(check_interval=86400)
 monitor.add("腾讯", ["工商变更", "被执行人"])
 monitor.add("阿里巴巴", ["工商变更", "经营异常"])
@@ -138,8 +136,6 @@ monitor.add("阿里巴巴", ["工商变更", "经营异常"])
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 关联关系分析
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供关联关系分析所需的指令和必要参数。
 **处理**: 解析关联关系分析的输入参数,完成核心逻辑,返回结构化响应。
@@ -154,7 +150,7 @@ monitor.add("阿里巴巴", ["工商变更", "经营异常"])
 dd = DueDiligenceReport()
 report = dd.generate_report("目标公司")
 print(report)
-
+# ...
 if "风险记录" in report:
     screener = RiskScreener()
     risk = screener.screen("目标公司")
@@ -168,7 +164,7 @@ if "风险记录" in report:
 batch = BatchCompanySearcher(max_workers=5)
 suppliers = ["供应商A", "供应商B", "供应商C", "供应商D"]
 results = batch.search_batch(suppliers, "基本信息")
-
+# ...
 screener = RiskScreener()
 for supplier in suppliers:
     risk = screener.screen(supplier)
@@ -195,14 +191,14 @@ monitor.start_monitoring()
 ### 30秒上手（尽调报告）
 ```bash
 node （请参考skill目录中的脚本文件） generate-report "腾讯" --output report.json
-
+# ...
 node （请参考skill目录中的脚本文件） risk-screen "腾讯"
 ```
 
 ### 120秒标准搭建
 ```bash
 export FN_API_KEY=your_private_key
-
+# ...
 cat > companies.txt <<EOF
 腾讯
 阿里巴巴
@@ -210,11 +206,11 @@ cat > companies.txt <<EOF
 百度
 京东
 EOF
-
+# ...
 node （请参考skill目录中的脚本文件） batch-search --input companies.txt --output results.json
-
+# ...
 python3 due_diligence.py --company "腾讯" --output report.txt
-
+# ...
 python3 monitor.py --config monitor.yaml
 ```
 
@@ -225,7 +221,7 @@ api:
   private_key: ${FN_API_KEY}
   timeout: 30
   max_workers: 5
-
+# ...
 due_diligence:
   dimensions:
     - basic_info
@@ -239,7 +235,7 @@ due_diligence:
     - business_anomaly
     - serious_violation
     - administrative_penalty
-
+# ...
 risk_screening:
   alert_on_high_risk: true
   alert_channels:
@@ -247,12 +243,12 @@ risk_screening:
       url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
     - type: email
       url: https://api.email-service.com/send
-
+# ...
 batch:
   max_workers: 5
   cache_enabled: true
   cache_dir: ./cache
-
+# ...
 monitoring:
   check_interval: 86400  # 每日
   alert_on_change: true
@@ -261,7 +257,7 @@ monitoring:
       dimensions: [changes, executed_person, business_anomaly]
     - name: 阿里巴巴
       dimensions: [changes, dishonest, restricted_high_consumption]
-
+# ...
 relationship:
   max_depth: 2
   limit_per_level: 5
@@ -275,7 +271,7 @@ class CachedBatchSearcher(BatchCompanySearcher):
         super().__init__()
         self.cache_dir = cache_dir
         os.makedirs(cache_dir, exist_ok=True)
-
+# ...
     def _search_single(self, company, dimension):
         cache_file = os.path.join(self.cache_dir, f"{company}_{dimension}.json")
         if os.path.exists(cache_file):
@@ -346,7 +342,7 @@ MONITOR_INTERVALS = {
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js 16+ | 运行时 | 必需 | 官网下载安装 |
 | 企业查询API | API | 必需 | 内置公用Key 或 私有Key |
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
@@ -390,7 +386,7 @@ MONITOR_INTERVALS = {
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 单维度查询 + 模糊搜索 + 6维度 + 公用Key(1000次/日) | 个人查询、轻量尽调 |
 | 收费专业版 | ¥59/月 | 尽调报告 + 风险筛查 + 批量查询 + 监控告警 + 关联分析 + 历史数据 + 知识产权 + 招投标 + 私有Key + 优先支持 | 团队/企业、深度尽调 |
 
@@ -399,7 +395,7 @@ MONITOR_INTERVALS = {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
-
 # API连接中心（免费版）
 
 > **把"对接第三方API"从凭证乱贴、调用乱写、错误乱扛，变为注册一次、安全调用、自动重试。**
@@ -45,7 +46,7 @@ Agent输出连接器注册YAML：
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | API连接中心(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -87,21 +88,21 @@ endpoints:
 import os
 import requests
 from connectors import load_connector
-
+# ...
 # 加载连接器配置
 conn = load_connector('github')
-
+# ...
 # 安全读取凭证（从环境变量）
 token = os.environ.get(conn.auth.credential_env)
 if not token:
     raise RuntimeError(f"环境变量 {conn.auth.credential_env} 未设置")
-
+# ...
 # 构造请求头
 headers = {
     conn.auth.header: f"{conn.auth.prefix} {token}",
     'Accept': 'application/vnd.github.v3+json',
 }
-
+# ...
 # 调用端点（含自动重试）
 response = conn.call('list_repos', headers=headers, retry=True)
 print(f"获取到 {len(response.json())} 个仓库")
@@ -150,7 +151,7 @@ endpoints:
 四种认证方式的安全接入规范：
 
 | 认证方式 | 凭证位置 | 存储方式 | 安全要点 |
-|----------|----------|----------|----------|
+|:-----|:-----|:-----|:-----|
 | API Key | Header或Query | 环境变量 | 禁止放URL Query（会被日志记录） |
 | OAuth2 | Authorization: Bearer | 环境变量+刷新机制 | access_token短期，refresh_token长期 |
 | JWT | Authorization: Bearer | 环境变量 | 密钥至少32字符，建议RS256 |
@@ -171,26 +172,26 @@ GITHUB_TOKEN=ghp_xxxxxxxxxxxx
 SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxx
 STRIPE_SECRET_KEY=sk_live_xxxxxxxxxxxx
 NOTION_TOKEN=secret_xxxxxxxxxxxx
-
+# ...
 # 凭证加载与脱敏
 ```
 
 ```python
 import os
-
+# ...
 def get_credential(env_name):
     """安全读取凭证"""
     value = os.environ.get(env_name)
     if not value:
         raise RuntimeError(f"凭证未配置：请设置环境变量 {env_name}")
     return value
-
+# ...
 def mask_credential(value, visible=4):
     """凭证脱敏（仅显示前4位）"""
     if len(value) <= visible:
         return '*' * len(value)
     return value[:visible] + '*' * (len(value) - visible)
-
+# ...
 # 使用
 token = get_credential('GITHUB_TOKEN')
 print(f"使用Token: {mask_credential(token)}")  # 输出: 使用Token: ghp_************
@@ -208,7 +209,7 @@ print(f"使用Token: {mask_credential(token)}")  # 输出: 使用Token: ghp_****
 # 统一调用模板
 import requests
 import time
-
+# ...
 def call_api(connector, endpoint_name, path_params=None, query=None, body=None, retry=True):
     """
     统一API调用模板
@@ -220,14 +221,14 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
     :param retry: 是否启用重试
     """
     endpoint = connector.endpoints[endpoint_name]
-    
+# ...
     # 1. 构造URL
     path = endpoint.path
     if path_params:
         for k, v in path_params.items():
             path = path.replace(f'{{{k}}}', str(v))
     url = connector.base_url + path
-    
+# ...
     # 2. 构造请求头
     token = get_credential(connector.auth.credential_env)
     headers = {
@@ -236,7 +237,7 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
         'Accept': 'application/json',
         'User-Agent': 'APIConnectHub/1.0',
     }
-    
+# ...
     # 3. 发送请求（含重试）
     max_retries = 3 if retry else 0
     for attempt in range(max_retries + 1):
@@ -249,12 +250,12 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
                 json=body,
                 timeout=30,
             )
-            
+# ...
             # 4. 速率限制检查
             remaining = response.headers.get(connector.rate_limit.remaining_header)
             if remaining and int(remaining) < 100:
                 print(f"警告: {connector.name} 速率限制即将耗尽，剩余 {remaining} 次")
-            
+# ...
             # 5. 错误处理
             if response.status_code == 429:
                 # 限流：读Retry-After头，等待后重试
@@ -262,17 +263,17 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
                 print(f"触发限流，等待 {retry_after} 秒后重试")
                 time.sleep(retry_after)
                 continue
-            
+# ...
             if response.status_code >= 500 and attempt < max_retries:
                 # 5xx：指数退避重试
                 wait = 2 ** attempt
                 print(f"服务端错误 {response.status_code}，{wait}秒后重试")
                 time.sleep(wait)
                 continue
-            
+# ...
             response.raise_for_status()
             return response
-            
+# ...
         except requests.exceptions.Timeout:
             if attempt < max_retries:
                 wait = 2 ** attempt
@@ -287,7 +288,7 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
                 time.sleep(wait)
                 continue
             raise
-    
+# ...
     return response
 ```
 
@@ -301,7 +302,7 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 三种重试策略，按错误类型选择：
 
 | 错误类型 | 重试策略 | 退避方式 | 最大重试 |
-|----------|----------|----------|----------|
+|---:|---:|---:|---:|
 | 429 限流 | 读Retry-After头等待 | 固定等待 | 3次 |
 | 5xx 服务端错误 | 指数退避 | 1s→2s→4s | 3次 |
 | 网络超时/连接失败 | 指数退避+抖动 | 1s±0.5s→2s±1s | 3次 |
@@ -324,7 +325,7 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 内置连接器模板，开箱即用：
 
 | 服务 | 认证方式 | 基础URL | 速率限制 |
-|------|----------|---------|----------|
+|:---:|:---:|:---:|:---:|
 | GitHub | API Key (token) | https://api.github.com | 5000/小时 |
 | Slack | Bearer Token | https://slack.com/api | 1/秒（工作区级） |
 | Notion | Bearer Token | https://api.notion.com/v1 | 3/秒 |
@@ -408,7 +409,7 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
 | requests | Python包 | 推荐 | `pip install requests` |
 | python-dotenv | Python包 | 推荐 | `pip install python-dotenv`，用于加载.env文件 |
@@ -469,22 +470,23 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 ### 示例1：基础用法
 
 ```
-### 30秒上手：注册一个连接器
-
+### 30秒上手：注册一个连接器(补充)
+# ...
 对Agent说：
-
+# ...
 > "帮我注册一个GitHub连接器，用Personal Access Token认证。"
-
+# ...
 Agent输出连接器注册YAML：
-
+# ...
 ```yaml
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+# ...

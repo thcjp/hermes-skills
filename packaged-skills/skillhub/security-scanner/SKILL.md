@@ -15,19 +15,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # Security Scanner
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| This appears to be a legitimate security-scanning skill, but users must | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Security Scanner安全扫描 | 不支持 | 支持 |
+| Security Scanner主动扫描 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -37,7 +42,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 安全扫描 | 目标URL或代码路径 | 漏洞扫描报告和风险等级 |
 | 依赖漏洞检测 | 依赖文件(package.json/requirements.txt) | 已知漏洞和修复版本 |
 | 配置安全检查 | 配置文件和环境变量 | 安全配置问题和修复建议 |
@@ -68,7 +73,7 @@ sslscan TARGET
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | scan_target | string | 是 | 扫描目标URL或文件路径 |
 | scan_mode | string | 否 | 扫描模式, 可选: quick/full/custom, 默认: quick |
 
@@ -89,7 +94,7 @@ Save reports to `reports/security-scan-YYYY-MM-DD.md` with:
 
 ### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -109,20 +114,20 @@ export API_KEY="your_api_key_here"
 ### 示例1：基础用法
 
 ```
-### Port Scan
-
+### Port Scan(补充)
+# ...
 ```bash
 nmap -sV -sC -oN scan.txt TARGET
 ```
-
-### Vulnerability Scan
-
+# ...
+### Vulnerability Scan(补充)
+# ...
 ```bash
 nuclei -u TARGET -o results.txt
 ```
-
-### SSL Check
-
+# ...
+### SSL Check(补充)
+# ...
 ```bash
 sslscan TARGET
 ```
@@ -133,16 +138,10 @@ sslscan TARGET
 ### Q1: 如何开始使用Security Scanner？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Security Scanner有什么限制？
-A: 
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

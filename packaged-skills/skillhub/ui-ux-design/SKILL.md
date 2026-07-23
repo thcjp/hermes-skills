@@ -17,19 +17,20 @@ homepage: "https://skillhub.cn"
 tags:
   - 创意设计
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # UI/UX设计指南
 
 涵盖设计原则、配色系统、Shadcn/ui+Tailwind栈、响应式设计与WCAG 2.2无障碍的完整指南。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | UI/UX设计指南处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -61,7 +62,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -245,13 +245,13 @@ WCAG 2.2无障碍标准合规：
 
 ```
 用户: 帮我搭建一个Shadcn/ui + Tailwind的Next.js项目
-
+# ...
 Agent: 执行以下命令：
 1. npx create-next-app@latest my-app --typescript --tailwind --app
 2. cd my-app
 3. npx shadcn@latest init
 4. npx shadcn@latest add button card dialog
-
+# ...
 - 组件位于 components/ui/
 - 使用CSS变量主题
 - 支持暗色模式
@@ -261,7 +261,7 @@ Agent: 执行以下命令：
 
 ```
 用户: 设计一个响应式卡片网格，移动端单列，桌面三列
-
+# ...
 Agent: 使用auto-fit grid模式：
 .grid {
   display: grid;
@@ -277,7 +277,7 @@ Agent: 使用auto-fit grid模式：
 
 ```
 用户: 我的按钮用#999灰底白字，符合WCAG吗？
-
+# ...
 Agent: 对比度检查：
 - 背景 #999999 (L: 0.358)
 - 文字 #FFFFFF (L: 1.000)
@@ -290,7 +290,7 @@ Agent: 对比度检查：
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | Shadcn初始化失败 | Node.js版本过低 | 升级Node.js至18+；检查package.json兼容性 |
 | Tailwind类不生效 | CSS配置错误 | 检查tailwind.config.js的content路径；确认CSS导入了tailwind指令 |
 | 对比度不达标 | 配色选择不当 | 使用WebAIM Contrast Checker验证；调整颜色深度至4.5:1以上 |

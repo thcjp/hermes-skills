@@ -20,6 +20,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # DuckDB 分析引擎
 
@@ -28,7 +30,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | CSV/Parquet分析 | CSV/Parquet文件+SQL查询 | 查询结果(表格/CSV/JSON) |
 | 日志分析 | 日志文件(已结构化) | 聚合统计+异常检测报告 |
 | 数据探查EDA | 任意格式数据文件 | 数据概览+统计摘要+分布分析 |
@@ -92,7 +94,7 @@ DuckDB 支持多种格式与来源:
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | DuckDB分析引擎处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -101,18 +103,18 @@ DuckDB 支持多种格式与来源:
 -- CSV(自动类型推断)
 SELECT * FROM read_csv_auto('sales.csv');
 CREATE TABLE sales AS SELECT * FROM read_csv_auto('sales.csv');
-
+# ...
 -- Parquet(列式存储)
 SELECT * FROM read_parquet('data.parquet');
 SELECT * FROM read_parquet('data/*.parquet');  -- 多文件
-
+# ...
 -- JSON
 SELECT * FROM read_json_auto('events.json');
-
+# ...
 -- Excel(需 spatial 扩展)
 INSTALL spatial; LOAD spatial;
 SELECT * FROM st_read('data.xlsx');
-
+# ...
 -- 远程文件
 SELECT * FROM read_csv_auto('https://example.com/data.csv');
 ```
@@ -122,13 +124,13 @@ SELECT * FROM read_csv_auto('https://example.com/data.csv');
 ```sql
 -- 概览(自动统计)
 SUMMARIZE sales;
-
+# ...
 -- 类型与Schema
 DESCRIBE sales;
-
+# ...
 -- 抽样
 SELECT * FROM sales USING SAMPLE 10 PERCENT;
-
+# ...
 -- 基础统计
 SELECT
   count(*) AS total_rows,
@@ -152,7 +154,7 @@ SELECT
     ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
   ) AS moving_avg_7d
 FROM daily_sales;
-
+# ...
 -- CTE 递归:组织架构层级
 WITH RECURSIVE org_tree AS (
   SELECT id, name, parent_id, 1 AS level
@@ -163,7 +165,7 @@ WITH RECURSIVE org_tree AS (
   JOIN org_tree t ON e.parent_id = t.id
 )
 SELECT * FROM org_tree;
-
+# ...
 -- 联邦查询:跨文件 JOIN
 SELECT
   o.order_id,
@@ -179,10 +181,10 @@ LEFT JOIN read_csv_auto('customers.csv') c
 ```sql
 -- CSV
 COPY (SELECT * FROM sales) TO 'output.csv' (HEADER, DELIMITER ',');
-
+# ...
 -- Parquet(列式存储,压缩)
 COPY (SELECT * FROM sales) TO 'output.parquet' (FORMAT PARQUET);
-
+# ...
 -- JSON
 COPY (SELECT * FROM sales) TO 'output.json';
 ```
@@ -192,12 +194,12 @@ COPY (SELECT * FROM sales) TO 'output.json';
 ```python
 import duckdb
 import pandas as pd
-
+# ...
 con = duckdb.connect()
-
+# ...
 # DuckDB → Pandas
 df = con.execute("SELECT * FROM read_csv_auto('sales.csv')").df()
-
+# ...
 # Pandas → DuckDB(零拷贝)
 con.register('df_view', df)
 result = con.execute("SELECT product, sum(sales) FROM df_view GROUP BY product").df()
@@ -209,7 +211,7 @@ result = con.execute("SELECT product, sum(sales) FROM df_view GROUP BY product")
 # Jupyter Notebook 中
 %load_ext duckdb
 %sql SELECT * FROM read_csv_auto('sales.csv') LIMIT 10
-
+# ...
 # 或使用 duckdb-engine
 import duckdb
 duckdb.sql("SELECT * FROM read_csv_auto('sales.csv')").show()
@@ -232,7 +234,7 @@ duckdb.sql("SELECT * FROM read_csv_auto('sales.csv')").show()
 ### 依赖项
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | DuckDB CLI | 工具 | 可选 | 下载二进制 或 `pip install duckdb` |
 | Python 3.8+ | 运行时 | 可选 | Python集成使用 |
 | duckdb(Python包) | Python库 | 可选 | `pip install duckdb` |
@@ -244,7 +246,7 @@ duckdb.sql("SELECT * FROM read_csv_auto('sales.csv')").show()
 ```bash
 # 方式1: Python包(推荐)
 pip install duckdb
-
+# ...
 # 方式2: CLI二进制
 # Windows
 winget install DuckDB.cli
@@ -252,7 +254,7 @@ winget install DuckDB.cli
 brew install duckdb
 # Linux
 sudo apt install duckdb  # 或下载二进制
-
+# ...
 # 国内镜像加速
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple duckdb
 ```
@@ -281,7 +283,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple duckdb
 ```sql
 -- 1. 概览
 SUMMARIZE read_csv_auto('app_logs.csv');
-
+# ...
 -- 2. 慢页面Top10
 SELECT
   page,
@@ -294,7 +296,7 @@ WHERE status = 200
 GROUP BY page
 ORDER BY p95_duration DESC
 LIMIT 10;
-
+# ...
 -- 3. 错误率分析
 SELECT
   page,
@@ -305,7 +307,7 @@ FROM read_csv_auto('app_logs.csv')
 GROUP BY page
 HAVING count(*) > 100
 ORDER BY error_rate_pct DESC;
-
+# ...
 -- 4. 每小时趋势
 SELECT
   date_trunc('hour', timestamp) AS hour,
@@ -352,7 +354,7 @@ LEFT JOIN read_parquet('customers.parquet') c
   ON o.customer_id = c.customer_id
 LEFT JOIN read_json_auto('products.json') p
   ON o.product_id = p.product_id;
-
+# ...
 -- 区域销售汇总
 SELECT
   region,
@@ -363,7 +365,7 @@ SELECT
 FROM sales_summary
 GROUP BY ROLLUP (region, category)
 ORDER BY region, total_revenue DESC;
-
+# ...
 -- 导出结果
 COPY (
   SELECT * FROM sales_summary
@@ -374,7 +376,7 @@ COPY (
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | CSV类型推断错误 | 混合类型列/日期格式多样 | 手动指定:`read_csv_auto('f.csv', types={'col': 'DATE'})` |
 | 内存不足 | 数据量过大(>内存) | 设置`PRAGMA memory_limit='4GB'`,启用磁盘溢出 |
 | 编码错误 | 非UTF-8编码(GBK/GB2312) | 指定编码:`read_csv_auto('f.csv', encoding='gbk')` |
@@ -400,11 +402,11 @@ COPY (
 **LLM生成输出**:
 ```sql
 -- output/sales-analysis/query.sql
-
+# ...
 -- 1. 数据加载与概览
 CREATE TABLE sales AS SELECT * FROM read_csv_auto('sales_2024.csv');
 SUMMARIZE sales;
-
+# ...
 -- 2. RFM用户分群分析
 WITH rfm AS (
   SELECT
@@ -447,9 +449,9 @@ SELECT
     ELSE '一般客户'
   END AS customer_segment
 FROM rfm_score;
-
+# ...
 SELECT * FROM rfm_result ORDER BY monetary DESC;
-
+# ...
 -- 3. 品类销售分析(含环比)
 WITH monthly_category AS (
   SELECT
@@ -477,7 +479,7 @@ category_growth AS (
 SELECT * FROM category_growth
 WHERE month >= '2024-06-01'
 ORDER BY month, revenue DESC;
-
+# ...
 -- 4. 渠道对比分析
 SELECT
   channel,
@@ -489,7 +491,7 @@ SELECT
 FROM sales
 GROUP BY channel
 ORDER BY total_revenue DESC;
-
+# ...
 -- 5. 导出RFM结果
 COPY (
   SELECT * FROM rfm_result
@@ -522,7 +524,7 @@ APP,89234,312456,98760000,316.05,1106.65
 **LLM生成输出**:
 ```sql
 -- output/sales-federation/query.sql
-
+# ...
 -- 1. 跨格式联邦查询(无需预先加载)
 CREATE TABLE sales_detail AS
 SELECT
@@ -541,7 +543,7 @@ LEFT JOIN read_parquet('customers/part-*.parquet') c
   ON o.customer_id = c.customer_id
 LEFT JOIN read_json_auto('products.json') p
   ON o.product_id = p.product_id;
-
+# ...
 -- 2. 区域-品类销售汇总(含小计)
 SELECT
   CASE WHEN grouping(region) = 1 THEN '总计' ELSE region END AS region,
@@ -554,7 +556,7 @@ SELECT
 FROM sales_detail
 GROUP BY ROLLUP (region, category)
 ORDER BY region, total_revenue DESC;
-
+# ...
 -- 3. 高价值客户Top10(按区域)
 WITH ranked_customers AS (
   SELECT
@@ -570,7 +572,7 @@ WITH ranked_customers AS (
 SELECT * FROM ranked_customers
 WHERE rank_in_region <= 10
 ORDER BY region, rank_in_region;
-
+# ...
 -- 4. 品类同比增长(使用窗口函数)
 WITH monthly_sales AS (
   SELECT
@@ -596,7 +598,7 @@ SELECT
   END AS yoy_growth_pct
 FROM monthly_sales
 ORDER BY category, month;
-
+# ...
 -- 5. 导出汇总报表
 COPY (
   SELECT
@@ -647,10 +649,10 @@ region,category,order_count,total_revenue,avg_order_value,revenue_share_pct
 **LLM生成输出**:
 ```sql
 -- output/log-analysis/query.sql
-
+# ...
 -- 1. 数据加载与概览(Parquet直接查询，无需加载到内存)
 SUMMARIZE read_parquet('app_logs.parquet');
-
+# ...
 -- 2. 慢接口Top10(P95延迟)
 SELECT
   path,
@@ -666,7 +668,7 @@ WHERE status_code < 400
 GROUP BY path, method
 ORDER BY p95_ms DESC
 LIMIT 10;
-
+# ...
 -- 3. 错误率分析(按接口)
 SELECT
   path,
@@ -682,7 +684,7 @@ GROUP BY path, method
 HAVING COUNT(CASE WHEN status_code >= 400 THEN 1 END) > 0
 ORDER BY error_rate_pct DESC
 LIMIT 15;
-
+# ...
 -- 4. 小时趋势(异常检测)
 WITH hourly_stats AS (
   SELECT
@@ -717,7 +719,7 @@ CROSS JOIN stats_baseline s
 WHERE h.avg_duration_ms > s.avg_duration + 2 * s.stddev_duration
    OR h.server_errors > 10
 ORDER BY h.hour DESC;
-
+# ...
 -- 5. 响应体大小分析
 SELECT
   path,
@@ -729,7 +731,7 @@ FROM read_parquet('app_logs.parquet')
 GROUP BY path
 HAVING COUNT(CASE WHEN response_size > 1048576 THEN 1 END) > 0
 ORDER BY avg_size_kb DESC;
-
+# ...
 -- 6. 导出异常时段报告
 COPY (
   SELECT * FROM (
@@ -779,7 +781,7 @@ import duckdb
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-
+# ...
 # 1. 生成示例数据(模拟800万行销售数据)
 np.random.seed(42)
 n = 8_000_000
@@ -793,14 +795,14 @@ df = pd.DataFrame({
     'order_date': pd.date_range('2023-01-01', periods=n, freq='30s'),
     'region': np.random.choice(['华东', '华北', '华南', '西南', '东北'], n),
 })
-
+# ...
 print(f"DataFrame行数: {len(df):,}")
 print(f"内存占用: {df.memory_usage(deep=True).sum() / 1024**2:.1f} MB")
-
+# ...
 # 2. DuckDB零拷贝注册DataFrame
 con = duckdb.connect()
 con.register('sales_df', df)  # 零拷贝，不复制数据
-
+# ...
 # 3. 复杂SQL查询(窗口函数+CTE，Pandas写很繁琐)
 result = con.execute("""
 WITH customer_stats AS (
@@ -848,13 +850,13 @@ WHERE rank_in_region <= 100  -- 每区域Top100客户
 GROUP BY region, frequency_tier
 ORDER BY region, total_spending DESC
 """).df()  # 结果转回Pandas DataFrame
-
+# ...
 print("\n区域Top100客户分析:")
 print(result.to_string(index=False))
-
+# ...
 # 4. 对比: DuckDB vs Pandas执行时间
 import time
-
+# ...
 # DuckDB执行
 start = time.time()
 duckdb_result = con.execute("""
@@ -867,7 +869,7 @@ duckdb_result = con.execute("""
 """).df()
 duckdb_time = time.time() - start
 print(f"\nDuckDB聚合耗时: {duckdb_time:.3f}秒")
-
+# ...
 # Pandas执行同样聚合
 start = time.time()
 df['revenue'] = df['quantity'] * df['unit_price']
@@ -875,7 +877,7 @@ pandas_result = df.groupby(['category', 'region'])['revenue'].agg(['sum', 'mean'
 pandas_time = time.time() - start
 print(f"Pandas聚合耗时: {pandas_time:.3f}秒")
 print(f"DuckDB加速比: {pandas_time / duckdb_time:.1f}x")
-
+# ...
 # 5. 导出结果
 result.to_csv('output/pandas-integration/customer_analysis.csv', index=False)
 print(f"\n结果已导出: {len(result)}行")
@@ -885,7 +887,7 @@ print(f"\n结果已导出: {len(result)}行")
 # 执行输出
 DataFrame行数: 8,000,000
 内存占用: 856.3 MB
-
+# ...
 区域Top100客户分析:
 region frequency_tier  customer_count  avg_spending  total_spending  avg_order_count
 华东    高频客户              85     45678.32      3882657.20             7.2
@@ -893,11 +895,11 @@ region frequency_tier  customer_count  avg_spending  total_spending  avg_order_c
 华北    高频客户              82     44987.15      3688946.30             7.1
 华南    高频客户              88     46234.89      4068669.72             7.3
 ...
-
+# ...
 DuckDB聚合耗时: 0.234秒
 Pandas聚合耗时: 1.876秒
 DuckDB加速比: 8.0x
-
+# ...
 结果已导出: 15行
 ```
 
@@ -915,11 +917,11 @@ DuckDB加速比: 8.0x
 **LLM生成输出**:
 ```sql
 -- output/iot-downsampling/query.sql
-
+# ...
 -- 1. 设置内存限制(15GB数据，限制4GB内存，启用磁盘溢出)
 PRAGMA memory_limit='4GB';
 PRAGMA threads=8;
-
+# ...
 -- 2. 原始数据概览
 SELECT
   COUNT(*) AS total_rows,
@@ -929,7 +931,7 @@ SELECT
   ROUND(COUNT(*) * 1.0 / 
     (EXTRACT(EPOCH FROM (MAX(timestamp) - MIN(timestamp))) / 3600), 0) AS rows_per_hour
 FROM read_parquet('iot_sensors.parquet');
-
+# ...
 -- 3. 降采样: 秒级→小时级(物化视图)
 CREATE TABLE sensor_hourly AS
 SELECT
@@ -946,7 +948,7 @@ SELECT
   COUNT(CASE WHEN temperature > 80 OR temperature < -20 THEN 1 END) AS anomaly_count
 FROM read_parquet('iot_sensors.parquet')
 GROUP BY sensor_id, date_trunc('hour', timestamp);
-
+# ...
 -- 验证降采样效果
 SELECT 
   (SELECT COUNT(*) FROM read_parquet('iot_sensors.parquet')) AS original_rows,
@@ -955,7 +957,7 @@ SELECT
     (SELECT COUNT(*) FROM sensor_hourly) * 100.0 / 
     (SELECT COUNT(*) FROM read_parquet('iot_sensors.parquet')), 4
   ) AS compression_ratio_pct;
-
+# ...
 -- 4. 异常检测(基于3σ规则)
 CREATE TABLE temp_stats AS
   SELECT
@@ -964,7 +966,7 @@ CREATE TABLE temp_stats AS
     STDDEV(avg_temp) AS std_temp
   FROM sensor_hourly
   GROUP BY sensor_id;
-
+# ...
 SELECT
   h.sensor_id,
   h.hour,
@@ -986,7 +988,7 @@ WHERE h.avg_temp > s.mean_temp + 3 * s.std_temp
    OR h.anomaly_count > 100
 ORDER BY h.hour DESC, h.sensor_id
 LIMIT 100;
-
+# ...
 -- 5. 传感器电池电量趋势(预警低电量)
 WITH battery_trend AS (
   SELECT
@@ -1018,11 +1020,11 @@ WHERE avg_battery < 40
    OR (avg_battery - rolling_avg_24h) < -5
 ORDER BY avg_battery ASC
 LIMIT 50;
-
+# ...
 -- 6. 导出降采样数据与异常报告
 COPY (SELECT * FROM sensor_hourly ORDER BY sensor_id, hour) 
   TO 'output/iot-downsampling/sensor_hourly.parquet' (FORMAT PARQUET);
-
+# ...
 COPY (
   SELECT * FROM (
     SELECT

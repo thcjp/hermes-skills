@@ -24,19 +24,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 品牌标识设计专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 品牌标识设计专业版多品牌管理 | 不支持 | 支持 |
+| 品牌标识设计专业版批量生成 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -50,7 +52,7 @@ brand:
     mission: "用技术赋能每一个团队"
     values: ["创新", "可靠", "协作", "成长"]
     personality: "专业、前瞻、可信、温暖"
-
+# ...
   identity:
     logo:
       primary: "assets/logo-primary.svg"
@@ -62,7 +64,7 @@ brand:
         - monochrome
       clear_space: "logo高度的1/2"
       min_size: "24px digital / 10mm print"
-
+# ...
     color_system:
       primary: "#0052FF"
       secondary: "#4D7CFF"
@@ -74,24 +76,24 @@ brand:
         error: "#EF4444"
         info: "#3B82F6"
       usage_rules: "主色占比60%,辅助色30%,强调色10%"
-
+# ...
     typography:
       display: { family: "Calistoga, serif", sizes: [2, 3, 4, 5] }
       body: { family: "Inter, sans-serif", sizes: [0.875, 1, 1.125] }
       mono: { family: "JetBrains Mono, monospace" }
       hierarchy: "h1-h6明确的字号与字重规范"
-
+# ...
     imagery:
       style: "明亮、自然光、真实人物"
       photography: "避免摆拍感,强调真实瞬间"
       illustration: "扁平化、几何、品牌色调"
       iconography: "线描风格,线宽2px"
-
+# ...
     voice:
       tone: "专业但平易近人"
       personality: "知识丰富、赋能、前瞻"
       writing_rules: "避免空洞的企业话术,用具体例子说话"
-
+# ...
   assets:
     digital:
       - website_header
@@ -145,7 +147,7 @@ brand_portfolio = {
         }
     ]
 }
-
+# ...
 # 批量生成所有品牌资产
 for brand in brand_portfolio["sub_brands"]:
     generate_brand_system(brand, shared=brand_portfolio["master_brand"])
@@ -300,7 +302,7 @@ group_config = {
         "strict": ["clear_space", "min_size"]
     }
 }
-
+# ...
 # 批量生成所有品牌系统
 generate_brand_portfolio(group_config)
 ```
@@ -351,7 +353,7 @@ python3 audit_brand.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | logo-brand-identity处理的内容输入 |,  |
 | content | string | 否 | logo-brand-identity处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -379,9 +381,8 @@ python3 audit_brand.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -394,9 +395,9 @@ python3 audit_brand.py \
 - **Python**: 3.10+
 - **Node.js**: 18+(用于CI/CD集成)
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | AI图像生成 | 服务 | 必需 | 各AI平台提供 |
 | 图像处理库 | 库 | 推荐 | pip install Pillow |
@@ -419,35 +420,36 @@ python3 audit_brand.py \
 ### 品牌指南文档结构
 ```markdown
 # 品牌指南 - [品牌名称]
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: 如何从免费版迁移至PRO版?
 A: PRO版完全兼容免费版。现有品牌简介与配置可直接使用。运行迁移脚本将免费版资产升级为完整品牌系统:
-
+# ...
 ```bash
 python3 migrate.py --from free --to pro --upgrade-assets
 ```
-
+# ...
 ### Q2: 多品牌如何确保一致性?
 A: PRO版提供"一致性规则"配置,指定哪些元素必须共享(如字体、Logo结构),哪些可以灵活调整(如主色、图像风格)。系统自动验证规则遵守情况。
-
+# ...
 ### Q3: 品牌审计能检测哪些问题?
 A: 可检测:颜色未使用品牌色、字体不符合规范、Logo使用不当(清晰空间不足、尺寸过小)、文案语调偏离品牌个性等。生成详细报告并提供修复建议。
-
+# ...
 ### Q4: 支持哪些输出格式?
 A: 数字资产:SVG、PNG、HTML、PPTX。印刷资产:PDF、AI、EPS。动态资产:MP4、GIF。可根据使用场景自动选择优秀格式。
-
+# ...
 ### Q5: 如何管理品牌资产的版本?
 A: PRO版支持语义化版本控制,每次品牌变更自动生成变更日志。可集成Git进行团队协作,支持品牌资产的审批与发布流程。
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
+# ...

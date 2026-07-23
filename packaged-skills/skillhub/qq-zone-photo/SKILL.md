@@ -19,16 +19,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 社交空间相册
 
 社交空间相册的自动化管理工具，支持扫码登录、相册浏览、照片上传/下载、相册创建等功能。通过 `qzone_photos.py` 脚本调用社交空间非官方API实现自动化操作。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 社交空间相册处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -36,13 +37,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 安全与隐私
 
@@ -59,7 +60,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -116,7 +117,6 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1：扫码登录并备份整个相册
@@ -126,13 +126,13 @@ export API_KEY="your_api_key_here"
 python3 （请参考skill目录中的脚本文件） --action login --cookies cookies.json
 # 输出: 二维码已生成，请使用社交平台App扫描登录...
 # 登录成功后: Cookie已保存到 cookies.json
-
+# ...
 # 列出所有相册
 python3 （请参考skill目录中的脚本文件） --action list --cookies cookies.json
 # 输出示例:
 # 相册ID: V0003 | 标题: 旅行 | 照片数: 45
 # 相册ID: V0005 | 标题: 2024毕业季 | 照片数: 28
-
+# ...
 # 下载整个旅行相册
 python3 （请参考skill目录中的脚本文件） --action download-album --album-id "V0003" --output ./downloads --cookies cookies.json
 ```
@@ -143,11 +143,11 @@ python3 （请参考skill目录中的脚本文件） --action download-album --a
 # 创建新相册
 python3 （请参考skill目录中的脚本文件） --action create --title "2024毕业季" --desc "毕业旅行照片" --cookies cookies.json
 # 输出: 相册创建成功，album-id: V0007
-
+# ...
 # 上传照片到新相册
 python3 （请参考skill目录中的脚本文件） --action upload --photo "/path/to/graduation1.jpg" --album-id "V0007" --cookies cookies.json
 python3 （请参考skill目录中的脚本文件） --action upload --photo "/path/to/graduation2.jpg" --album-id "V0007" --cookies cookies.json
-
+# ...
 # 浏览相册确认上传结果
 python3 （请参考skill目录中的脚本文件） --action photos --album-id "V0007" --cookies cookies.json
 ```
@@ -155,7 +155,7 @@ python3 （请参考skill目录中的脚本文件） --action photos --album-id 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | Cookie过期 | `p_skey` 或 `skey` 失效 | 重新执行 `--action login` 扫码登录获取新Cookie |
 | 相册ID无效 | `--album-id` 指向不存在的相册 | 先执行 `--action list` 获取有效的 `album-id` |
 | 上传照片路径不存在 | `--photo` 指向的文件不存在或路径错误 | 检查图片文件路径，使用绝对路径确保可访问 |

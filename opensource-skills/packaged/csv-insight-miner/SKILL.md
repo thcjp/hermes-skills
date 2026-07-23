@@ -20,6 +20,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # CSV洞察挖掘机
 
@@ -28,7 +30,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 数据探查 | 陌生CSV文件 | 自动概览报告(行列数/类型/统计/缺失) |
 | 快速洞察 | CSV+分析目标 | 趋势/异常/关联发现报告+Top5关键发现 |
 | 报表自动化 | CSV+报表模板 | 模板化分析报告+可视化图表合集 |
@@ -110,7 +112,7 @@ pricing_model: "per_use"
 ### 依赖项
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Python 3.8+ | 运行时 | 可选 | 数据分析(pandas/matplotlib/seaborn) |
 | pandas | Python库 | 可选 | `pip install pandas` |
 | matplotlib | Python库 | 可选 | `pip install matplotlib` |
@@ -120,7 +122,7 @@ pricing_model: "per_use"
 ### 国内镜像加速(替代海外PyPI)
 
 | 海外源 | 国内镜像 | 说明 |
-|:-------|:---------|:-----|
+|---:|---:|---:|
 | pypi.org | 清华大学pypi | `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple` |
 | pypi.org | 阿里云pypi | `pip install -i https://mirrors.aliyun.com/pypi/simple` |
 | pypi.org | 腾讯云pypi | `pip install -i https://mirrors.cloud.tencent.com/pypi/simple` |
@@ -140,7 +142,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | input | string | 是 | CSV洞察挖掘机处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -154,16 +156,16 @@ pricing_model: "per_use"
 **输出** (`output/sales/insight-report.md`):
 ```markdown
 # sales.csv 洞察报告
-
+# ...
 ## 一、数据概览
 - 文件:sales.csv
 - 行数:10,000 | 列数:8
 - 内存占用:1.2MB
 - 类型分布:数值(3) | 文本(4) | 日期(1)
-
+# ...
 ## 二、质量报告
 | 列名 | 缺失数 | 缺失率 | 异常数 | 重复数 |
-|:-----|:-------|:-------|:-------|:-------|
+|:------|------:|:------|:------|------:|
 | order_id | 0 | 0% | 0 | 0 |
 | customer_id | 12 | 0.12% | 0 | - |
 | product | 0 | 0% | 0 | - |
@@ -171,32 +173,32 @@ pricing_model: "per_use"
 | price | 0 | 0% | 15 | - |
 | order_date | 0 | 0% | 0 | - |
 | region | 45 | 0.45% | 0 | - |
-
+# ...
 ## 三、统计摘要
 ### 数值列
 | 列 | 均值 | 中位数 | 标准差 | 最小 | 最大 | Q1 | Q3 |
-|:---|:-----|:-------|:-------|:-----|:-----|:---|:---|
+|---:|:---|---:|---:|:---|---:|---:|:---|
 | quantity | 2.8 | 2 | 1.9 | 1 | 50 | 1 | 4 |
 | price | 156.3 | 89.0 | 245.7 | 9.9 | 2999 | 45 | 199 |
-
+# ...
 ### 异常值检测(IQR)
 - quantity: 23个异常值(>7,正常范围1-4)
 - price: 15个异常值(>500,正常范围9.9-199)
-
+# ...
 ## 四、关键发现(Top 5)
 1. **销售额TOP3品类**:电子产品(38%) > 服装(25%) > 家居(18%)
 2. **地区差异显著**:华东地区客单价(¥210) vs 西北(¥89),差异136%
 3. **时间趋势**:Q4销售额环比增长45%,双11贡献62%
 4. **异常订单**:23个quantity异常订单,均为批发客户(B2B)
 5. **强相关**:price与category强相关(r=0.82),电子产品价格最高
-
+# ...
 ## 五、可视化集
 - charts/distribution_quantity.png(数量分布直方图)
 - charts/category_sales.png(品类销售条形图)
 - charts/region_heatmap.png(地区销售热力图)
 - charts/time_trend.png(月度销售趋势)
 - charts/correlation_matrix.png(相关性矩阵)
-
+# ...
 ## 六、下一步建议
 1. 深入分析双11/618大促对销售的拉动效应
 2. 调查华东vs西北客单价差异原因
@@ -207,15 +209,15 @@ pricing_model: "per_use"
 **输出** (`output/sales/cleaning-suggestions.md`):
 ```markdown
 # 数据清洗建议
-
+# ...
 ## 缺失值处理
 - customer_id(12条,0.12%):删除(占比极低,不影响分析)
 - region(45条,0.45%):填充为"未知"(保留订单数据)
-
+# ...
 ## 异常值处理
 - quantity(23条):保留(为B2B批发订单,属正常业务)
 - price(15条):保留(高价电子产品,需单独标注)
-
+# ...
 ## 类型转换
 - order_date:字符串→datetime(当前为object类型)
 - order_id:字符串(当前被推断为数值,应保持文本)
@@ -233,13 +235,13 @@ pricing_model: "per_use"
 ```markdown
 ## 质量报告
 | 问题类型 | 数量 | 占比 | 严重程度 |
-|:---------|:-----|:-----|:---------|
+|:------:|--------|:-------|:------:|
 | 完全重复行 | 342 | 3.4% | 高 |
 | user_id缺失 | 89 | 0.9% | 中 |
 | duration负值 | 15 | 0.15% | 高 |
 | timestamp格式错误 | 7 | 0.07% | 高 |
 | page为空 | 23 | 0.23% | 低 |
-
+# ...
 ## 关键发现
 1. **重复率3.4%**:可能是日志重复上报,建议去重
 2. **duration负值15条**:数据采集bug,需排查埋点
@@ -254,7 +256,7 @@ pricing_model: "per_use"
 - 重试机制: 失败时自动重试, 最多3次
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|----|:--:|---:|
 | 文件编码错误 | 非UTF-8编码(GBK/GB2312) | 自动尝试多编码检测(chardet),回退到GBK |
 | 分隔符识别失败 | 非标准分隔符(分号/制表符) | 自动检测(sniff),回退到手动指定 |
 | 列类型推断错误 | 混合类型列/日期格式多样 | 提供手动类型指定,支持多日期格式尝试 |
@@ -285,41 +287,41 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import json
 from pathlib import Path
-
+# ...
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 中文支持
 plt.rcParams['axes.unicode_minus'] = False
-
+# ...
 # 1. 自动数据探查
 df = pd.read_csv('sales.csv', encoding='utf-8')
 print(f"行数: {len(df)} | 列数: {len(df.columns)}")
 print(f"内存占用: {df.memory_usage(deep=True).sum() / 1024**2:.2f} MB")
-
+# ...
 # 类型推断
 df['order_date'] = pd.to_datetime(df['order_date'])
 print("\n列类型:")
 print(df.dtypes)
-
+# ...
 # 2. 基础统计
 stats = df.describe(include='all')
 stats.to_csv('output/sales/statistics.csv')
-
+# ...
 # 3. 缺失值分析
 missing = df.isnull().sum()
 print("\n缺失值:")
 print(missing[missing > 0])
-
+# ...
 # 4. 异常值检测(IQR)
 def detect_outliers_iqr(series):
     Q1, Q3 = series.quantile([0.25, 0.75])
     IQR = Q3 - Q1
     lower, upper = Q1 - 1.5*IQR, Q3 + 1.5*IQR
     return series[(series < lower) | (series > upper)]
-
+# ...
 quantity_outliers = detect_outliers_iqr(df['quantity'])
 price_outliers = detect_outliers_iqr(df['price'])
 print(f"\nquantity异常: {len(quantity_outliers)}个")
 print(f"price异常: {len(price_outliers)}个")
-
+# ...
 # 5. 相关性分析
 numeric_cols = df.select_dtypes(include=['number']).columns
 corr = df[numeric_cols].corr()
@@ -328,7 +330,7 @@ sns.heatmap(corr, annot=True, cmap='coolwarm', center=0)
 plt.title('相关性矩阵')
 plt.tight_layout()
 plt.savefig('output/sales/charts/correlation_matrix.png', dpi=150)
-
+# ...
 # 6. 可视化
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 df['category'].value_counts().plot(kind='bar', ax=axes[0,0], title='品类销售分布')
@@ -343,29 +345,29 @@ plt.savefig('output/sales/charts/overview.png', dpi=150)
 ```markdown
 # output/sales/insight-report.md (节选)
 # sales.csv 洞察报告
-
-## 一、数据概览
+# ...
+## 一、数据概览(续1)
 - 文件: sales.csv
 - 行数: 10,000 | 列数: 8
 - 内存占用: 1.2MB
 - 类型分布: 数值(3) | 文本(4) | 日期(1)
-
-## 二、质量报告
+# ...
+## 二、质量报告(续1)
 | 列名 | 缺失数 | 缺失率 | 异常数 |
-|:-----|:-------|:-------|:-------|
+|----|----|----|----|
 | order_id | 0 | 0% | 0 |
 | customer_id | 12 | 0.12% | 0 |
 | quantity | 0 | 0% | 23 |
 | price | 0 | 0% | 15 |
 | region | 45 | 0.45% | 0 |
-
+# ...
 ## 三、关键发现(Top 5)
 1. **销售额TOP3品类**: 电子产品(38%) > 服装(25%) > 家居(18%)
 2. **地区差异显著**: 华东客单价(¥210) vs 西北(¥89)，差异136%
 3. **时间趋势**: Q4销售额环比增长45%，双11贡献62%
 4. **异常订单**: 23个quantity异常订单，均为B2B批发
 5. **强相关**: price与category相关(r=0.82)，电子产品最高
-
+# ...
 ## 四、下一步建议
 1. 深入分析双11/618大促拉动效应
 2. 调查华东vs西北客单价差异原因
@@ -387,30 +389,30 @@ plt.savefig('output/sales/charts/overview.png', dpi=150)
 ```python
 # output/user_events/quality_check.py
 import pandas as pd
-
+# ...
 df = pd.read_csv('user_events.csv')
-
+# ...
 # 1. 完全重复行检测
 duplicates = df.duplicated().sum()
 print(f"完全重复行: {duplicates} ({duplicates/len(df)*100:.2f}%)")
-
+# ...
 # 2. 缺失值检测
 missing_report = df.isnull().sum()
 missing_report = missing_report[missing_report > 0].sort_values(ascending=False)
-
+# ...
 # 3. 异常值检测
 # duration负值（业务异常）
 negative_duration = df[df['duration'] < 0]
 print(f"duration负值: {len(negative_duration)}条")
-
+# ...
 # timestamp格式错误
 invalid_ts = df[pd.to_datetime(df['timestamp'], errors='coerce').isnull()]
 print(f"timestamp格式错误: {len(invalid_ts)}条")
-
+# ...
 # 4. 唯一性检查（user_id应为非空）
 empty_user = df[df['user_id'].isnull()]
 print(f"user_id缺失: {len(empty_user)}条")
-
+# ...
 # 5. 生成质量报告
 quality_report = {
     'total_rows': len(df),
@@ -424,22 +426,13 @@ quality_report = {
 
 ```markdown
 # output/user_events/insight-report.md (节选)
-## 质量报告
-| 问题类型 | 数量 | 占比 | 严重程度 |
-|:---------|:-----|:-----|:---------|
-| 完全重复行 | 342 | 3.4% | 高 |
-| user_id缺失 | 89 | 0.9% | 中 |
-| duration负值 | 15 | 0.15% | 高 |
-| timestamp格式错误 | 7 | 0.07% | 高 |
-| page为空 | 23 | 0.23% | 低 |
-
-## 关键发现
+## 关键发现(续1)
 1. **重复率3.4%**: 可能是日志重复上报，建议去重
 2. **duration负值15条**: 数据采集bug，需排查埋点
 3. **设备分布**: Mobile(62%) > Desktop(31%) > Tablet(7%)
 4. **事件类型**: page_view(48%) > click(28%) > scroll(24%)
 5. **高频页面**: 首页(35%) > 商品页(22%) > 搜索(15%)
-
+# ...
 ## 清洗建议
 - 去重: df.drop_duplicates() 删除342条重复
 - duration负值: 删除或置为0（15条）
@@ -464,14 +457,14 @@ quality_report = {
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+# ...
 df = pd.read_csv('employee_survey.csv')
-
+# ...
 # 1. 相关性分析（Pearson + Spearman）
 numeric_cols = ['age', 'salary', 'tenure', 'satisfaction', 'work_hours', 'performance']
 pearson_corr = df[numeric_cols].corr(method='pearson')
 spearman_corr = df[numeric_cols].corr(method='spearman')
-
+# ...
 # 强相关对（>0.7）
 strong_pairs = []
 for i in range(len(numeric_cols)):
@@ -479,7 +472,7 @@ for i in range(len(numeric_cols)):
         r = pearson_corr.iloc[i, j]
         if abs(r) > 0.7:
             strong_pairs.append((numeric_cols[i], numeric_cols[j], r))
-
+# ...
 # 2. 分组对比
 dept_stats = df.groupby('department')['performance'].agg(['mean', 'std', 'count'])
 # 显著差异检测
@@ -488,11 +481,11 @@ dept_a = df[df['department'] == 'Engineering']['performance']
 dept_b = df[df['department'] == 'Sales']['performance']
 t_stat, p_value = stats.ttest_ind(dept_a, dept_b)
 print(f"Engineering vs Sales: t={t_stat:.2f}, p={p_value:.4f}")
-
+# ...
 # 3. 散点矩阵
 sns.pairplot(df[numeric_cols + ['department']], hue='department', diag_kind='kde')
 plt.savefig('output/employee_survey/charts/pairplot.png', dpi=150)
-
+# ...
 # 4. 分组箱线图
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 df.boxplot(column='performance', by='department', ax=axes[0])
@@ -506,7 +499,7 @@ plt.savefig('output/employee_survey/charts/dept_comparison.png', dpi=150)
 ```markdown
 # output/employee_survey/insight-report.md
 ## 关键发现(Top 5)
-
+# ...
 1. **满意度与绩效强相关**: r=0.78(p<0.001)
    - 满意度>7的员工，绩效平均高出23%
    - 建议: 优先改善低满意度团队的工作环境

@@ -49,6 +49,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 求职申请专业版
 
@@ -61,7 +63,7 @@ pricing_model: "per_use"
 ### 功能对比
 
 | 能力 | 免费版 | PRO 版 |
-| --- | --- | --- |
+|---|---|-----|
 | 多平台搜索 | 2 个平台 | 5+ 个平台 |
 | 智能匹配 | 基础匹配 | AI 智能匹配 |
 | 求职信生成 | 是 | AI 定制生成 |
@@ -101,7 +103,7 @@ python （请参考skill目录中的脚本文件） \
 python （请参考skill目录中的脚本文件） \
   --status all \
   --output=tracking_report.json
-
+# ...
 # 设置状态变更提醒
 python （请参考skill目录中的脚本文件） \
   --alert-on-change \
@@ -158,7 +160,7 @@ python （请参考skill目录中的脚本文件） \
   --batch-apply \
   --max-per-candidate 20 \
   --tracking-enabled
-
+# ...
 # 生成候选人状态报告
 python （请参考skill目录中的脚本文件） \
   --output=candidates_status.md \
@@ -219,10 +221,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 依赖说明
 pip install pandas apscheduler openai
-
+# ...
 # 导入免费版资料
 python （请参考skill目录中的脚本文件） --from-free --import-profiles
-
+# ...
 # 验证升级
 python （请参考skill目录中的脚本文件） --version
 # 输出: job-auto-apply-tool-pro v1.0.0
@@ -235,7 +237,7 @@ python （请参考skill目录中的脚本文件） --version
 mkdir -p ./candidates
 cp profile_template.json ./candidates/candidate_1.json
 cp profile_template.json ./candidates/candidate_2.json
-
+# ...
 # 执行批量投递
 python （请参考skill目录中的脚本文件） \
   --profiles-dir ./candidates/ \
@@ -271,32 +273,32 @@ platforms:
   - name: wellfound
     enabled: true
     rate_limit: 10
-
+# ...
 batch:
   parallel_workers: 4
   max_applications: 100
   rate_limit_per_hour: 50
   retry_on_failure: true
   retry_count: 3
-
+# ...
 ai_matching:
   enabled: true
   min_score: 0.8
   model: gpt-4
   recommendations: true
-
+# ...
 tracking:
   enabled: true
   storage: ./tracking
   alert_on_change: true
   alert_email: recruiter@agency.com
-
+# ...
 analytics:
   enabled: true
   report_frequency: weekly
   storage: ./analytics
   optimization_suggestions: true
-
+# ...
 team:
   members:
     - recruiter1
@@ -310,15 +312,15 @@ team:
 ```bash
 # 启动 REST API 服务
 python （请参考skill目录中的脚本文件） --port 8000
-
+# ...
 # 提交批量申请
 curl -X POST http://localhost:8000/batch-apply \
   -H "Content-Type: application/json" \
   -d '{"profiles": ["profile1.json"], "platforms": ["linkedin", "indeed"]}'
-
+# ...
 # 查询申请状态
 curl http://localhost:8000/applications?status=all
-
+# ...
 # 获取分析报告
 curl http://localhost:8000/analytics?period=monthly
 ```
@@ -326,7 +328,7 @@ curl http://localhost:8000/analytics?period=monthly
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `--profiles-dir` | 字符串 | 无 | 候选人资料目录 |
 | `--platforms` | 字符串 | all | 平台列表 |
 | `--max-applications` | 整数 | 100 | 最多申请数 |
@@ -344,7 +346,7 @@ curl http://localhost:8000/analytics?period=monthly
 ```python
 # batch_config.py - 批量投递配置
 from batch_apply import BatchApplyConfig
-
+# ...
 config = BatchApplyConfig(
     parallel_workers=4,
     max_applications=100,
@@ -354,7 +356,7 @@ config = BatchApplyConfig(
     min_match_score=0.8,
     tracking_enabled=True
 )
-
+# ...
 # 执行批量投递
 results = config.execute(
     profiles_dir="./candidates/",
@@ -367,10 +369,10 @@ results = config.execute(
 ```bash
 # 查看所有申请状态
 python （请参考skill目录中的脚本文件） --status all
-
+# ...
 # 过滤特定状态
 python （请参考skill目录中的脚本文件） --status "interview,offer"
-
+# ...
 # 生成追踪报告
 python （请参考skill目录中的脚本文件） \
   --output=tracking_report.md \
@@ -387,7 +389,7 @@ python （请参考skill目录中的脚本文件） \
   --output=performance.md \
   --metrics="response_rate,interview_rate,offer_rate" \
   --optimization-suggestions
-
+# ...
 # 导出详细数据
 python （请参考skill目录中的脚本文件） export \
   --format=csv \
@@ -402,7 +404,7 @@ python （请参考skill目录中的脚本文件） \
   --model=gpt-4 \
   --min-score 0.85 \
   --weights="skills:0.4,experience:0.3,location:0.2,salary:0.1"
-
+# ...
 # 训练自定义匹配模型
 python （请参考skill目录中的脚本文件） train \
   --training-data=historical_applications.json \
@@ -416,10 +418,10 @@ python （请参考skill目录中的脚本文件） train \
 ```bash
 # 降低投递频率
 python （请参考skill目录中的脚本文件） --rate-limit 3 --delay 20
-
+# ...
 # 分散投递时间
 python （请参考skill目录中的脚本文件） --cron="0 9,14,18 * * 1-5"
-
+# ...
 # 使用多账号轮换
 python （请参考skill目录中的脚本文件） --account-rotation
 ```
@@ -429,10 +431,10 @@ python （请参考skill目录中的脚本文件） --account-rotation
 ```bash
 # 手动刷新状态
 python （请参考skill目录中的脚本文件） --refresh --all
-
+# ...
 # 检查追踪配置
 python （请参考skill目录中的脚本文件） --config-check
-
+# ...
 # 查看追踪日志
 cat ./logs/tracking.log
 ```
@@ -442,10 +444,10 @@ cat ./logs/tracking.log
 ```bash
 # 调整匹配权重
 python （请参考skill目录中的脚本文件） --weights="skills:0.5,experience:0.3"
-
+# ...
 # 降低匹配阈值
 python （请参考skill目录中的脚本文件） --min-score 0.7
-
+# ...
 # 更换匹配模型
 python （请参考skill目录中的脚本文件） --model=gpt-4
 ```
@@ -455,10 +457,10 @@ python （请参考skill目录中的脚本文件） --model=gpt-4
 ```bash
 # 查看团队任务分配
 python （请参考skill目录中的脚本文件） --tasks --member=all
-
+# ...
 # 重新分配任务
 python （请参考skill目录中的脚本文件） --reassign --balance
-
+# ...
 # 解决冲突
 python （请参考skill目录中的脚本文件） --resolve-conflicts --strategy=latest
 ```
@@ -476,7 +478,7 @@ python （请参考skill目录中的脚本文件） --resolve-conflicts --strate
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 是 | 系统包管理器安装 |
 | requests | HTTP 库 | 是 | `pip install requests` |
 | beautifulsoup4 | HTML 解析 | 是 | `pip install beautifulsoup4` |
@@ -495,17 +497,17 @@ LINKEDIN_ACCESS_TOKEN=your_linkedin_token
 INDEED_API_KEY=your_indeed_key
 GLASSDOOR_API_KEY=your_glassdoor_key
 ZIPRECRUITER_API_KEY=your_ziprecruiter_key
-
+# ...
 # AI 匹配服务（如使用）
 OPENAI_API_KEY=your_openai_key
-
+# ...
 # 数据库（如使用追踪功能）
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=job_applications
 DB_USER=admin
 DB_PASSWORD=your_password
-
+# ...
 # 邮件通知（如使用）
 SMTP_HOST=smtp.provider.com
 SMTP_PORT=587
@@ -524,9 +526,8 @@ SMTP_PASSWORD=your_password
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -15,16 +15,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 系统运维
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
 ---
 # Docker核心操作指南（免费版）
 
 涵盖容器管理、镜像操作与基础调试的Docker核心命令。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Docker核心操作免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,7 +38,7 @@ tags:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -45,7 +46,6 @@ tags:
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -99,7 +99,7 @@ docker inspect container_name          # 容器详情
 ```bash
 # 开发容器
 docker run -it --rm -v $(pwd):/app -w /app -p 3000:3000 node:18 npm run dev
-
+# ...
 # 数据库容器
 docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/lib/postgresql/data -p 5432:5432 postgres:15
 ```
@@ -121,7 +121,7 @@ docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/
 
 ```
 用户: 帮我启动一个Nginx容器
-
+# ...
 Agent: docker run -d --name my-nginx -p 8080:80 nginx
 - 容器已在后台启动
 - 访问 http://localhost:8080 查看欢迎页
@@ -131,7 +131,7 @@ Agent: docker run -d --name my-nginx -p 8080:80 nginx
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | `Cannot connect to the Docker daemon` | Docker服务未启动 | 启动Docker服务或Docker Desktop |
 | `port is already allocated` | 端口被占用 | 更换映射端口或停止占用容器 |
 | `image not found locally` | 镜像不存在 | 执行 `docker pull <image>` 拉取镜像 |

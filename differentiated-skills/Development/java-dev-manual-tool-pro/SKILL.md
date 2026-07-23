@@ -35,15 +35,16 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 本工具面向企业级 Java 开发团队，提供开发规约的完整治理方案。在免费版 7 大维度规约速查能力之上，专业版新增团队级规则定制、规约合规性自动检查、新项目脚手架集成、架构分层约束、设计模式示例库、CI/CD 规约门禁等能力。通过可配置的规则引擎与自动化检查脚本，帮助团队建立统一、可执行、可追踪的编码规范体系。
 
 **版本兼容性说明**：专业版完全兼容免费版（`java-dev-manual-tool-free`）的所有规约内容与速查表，可无缝升级。
 
 ## 核心能力
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|----|---|-----|
 | 规约查询 | 7 维度速查 | 团队级自定义规则 |
 | 合规检查 | 手动对照 | 自动化检查脚本 |
 | 项目初始化 | - | 规范脚手架生成 |
@@ -88,8 +89,6 @@ suggested_price: 99.9
 ### 场景二：新项目脚手架生成
 新项目需要快速搭建符合规范的工程结构。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三：规约合规性审计
 团队需要对整个项目进行规约合规性审计。
 
@@ -97,67 +96,67 @@ suggested_price: 99.9
 #!/bin/bash
 PROJECT_DIR=$1
 REPORT_FILE="convention-audit-$(date +%Y%m%d).md"
-
+# ...
 echo "# Java 规约合规性审计报告" > "$REPORT_FILE"
 echo "**审计日期**: $(date)" >> "$REPORT_FILE"
 echo "**审计范围**: $PROJECT_DIR" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
-
+# ...
 JAVA_FILES=$(find "$PROJECT_DIR" -name "*.java" -not -path "*/test/*")
 FILE_COUNT=$(echo "$JAVA_FILES" | wc -l)
-
+# ...
 echo "## 审计概览" >> "$REPORT_FILE"
 echo "| 指标 | 数值 |" >> "$REPORT_FILE"
 echo "| --- | --- |" >> "$REPORT_FILE"
 echo "| Java 文件数 | $FILE_COUNT |" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 1. 命名规范审计" >> "$REPORT_FILE"
 echo "### 类名后缀合规性" >> "$REPORT_FILE"
 echo "| 规则 | 合规数 | 违规数 | 合规率 |" >> "$REPORT_FILE"
 echo "| --- | --- | --- | --- |" >> "$REPORT_FILE"
-
+# ...
 CONTROLLER_OK=$(find "$PROJECT_DIR" -name "*Controller.java" | wc -l)
 CONTROLLER_BAD=$(find "$PROJECT_DIR" -path "*/controller/*" -name "*.java" ! -name "*Controller.java" | wc -l)
 echo "| Controller 后缀 | $CONTROLLER_OK | $CONTROLLER_BAD | $(echo "scale=0; $CONTROLLER_OK * 100 / ($CONTROLLER_OK + $CONTROLLER_BAD + 1)" | bc)% |" >> "$REPORT_FILE"
-
+# ...
 echo "### 拼音命名检查" >> "$REPORT_FILE"
 PINYIN_ISSUES=$(grep -rn "yonghu\|dingdan\|zhifu\|shangpin\|gongsi" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 拼音命名违规: $PINYIN_ISSUES 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 2. 异常处理审计" >> "$REPORT_FILE"
 EMPTY_CATCH=$(grep -rn "catch.*Exception.*\{" "$PROJECT_DIR" --include="*.java" -A 1 | grep -c "^.*--$" || echo 0)
 echo "- 空 catch 块: $EMPTY_CATCH 处" >> "$REPORT_FILE"
-
+# ...
 SYSTEM_OUT=$(grep -rn "System\.out\.\|System\.err\." "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 使用 System.out: $SYSTEM_OUT 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 3. 安全审计" >> "$REPORT_FILE"
 SQL_CONCAT=$(grep -rn "String sql.*+.*\"" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- SQL 拼接: $SQL_CONCAT 处" >> "$REPORT_FILE"
-
+# ...
 HARDCODED_PWD=$(grep -rin "password.*=.*\"\|secret.*=.*\"" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 硬编码密码: $HARDCODED_PWD 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 4. 并发审计" >> "$REPORT_FILE"
 EXECUTORS_USE=$(grep -rn "Executors\." "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 使用 Executors: $EXECUTORS_USE 处" >> "$REPORT_FILE"
-
+# ...
 THREADLOCAL_NO_REMOVE=$(grep -rn "ThreadLocal" "$PROJECT_DIR" --include="*.java" -l | while read f; do
   SET_COUNT=$(grep -c "\.set(" "$f")
   REMOVE_COUNT=$(grep -c "\.remove(" "$f")
   if [ "$SET_COUNT" -gt "$REMOVE_COUNT" ]; then echo "$f"; fi
 done | wc -l)
 echo "- ThreadLocal 未清理: $THREADLOCAL_NO_REMOVE 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 5. 架构分层审计" >> "$REPORT_FILE"
 BAD_DEP=$(grep -rn "import.*repository\." "$PROJECT_DIR"/src/main/java/*/controller/ 2>/dev/null | wc -l)
 echo "- Controller 直接依赖 Repository: $BAD_DEP 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 审计完成"
 echo "报告: $REPORT_FILE"
@@ -217,7 +216,7 @@ src/main/java/com/company/project/
 **分层依赖规则**：
 
 | 层 | 允许依赖 | 禁止依赖 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | Controller | Service | Repository, Entity |
 | Service | Repository, Domain | Controller |
 | Repository | Entity | Service, Controller |
@@ -229,27 +228,27 @@ src/main/java/com/company/project/
 public interface PaymentStrategy {
     PayResult pay(PayRequest request);
 }
-
+// ...
 @Component
 public class AlipayStrategy implements PaymentStrategy {
     public PayResult pay(PayRequest request) { /* ... */ }
 }
-
+// ...
 @Component
 public class WechatPayStrategy implements PaymentStrategy {
     public PayResult pay(PayRequest request) { /* ... */ }
 }
-
+// ...
 @Component
 public class PaymentStrategyFactory {
     @Autowired
     private Map<String, PaymentStrategy> strategies;
-
+// ...
     public PaymentStrategy get(String type) {
         return strategies.get(type + "Strategy");
     }
 }
-
+// ...
 // 模板方法模式：数据导出
 public abstract class DataExporter {
     public final void export() {
@@ -269,16 +268,16 @@ public abstract class DataExporter {
 ```yaml
 name: Java 规约检查
 on: [pull_request]
-
+# ...
 jobs:
   convention:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+# ...
       - name: 执行规约审计
         run: （请参考skill目录中的脚本文件） src/
-
+# ...
       - name: 检查 Critical 违规
         run: |
           CRITICAL=$(grep -c "硬编码密码\|SQL 拼接\|使用 Executors" convention-audit-*.md)
@@ -307,9 +306,8 @@ jobs:
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|---:|---:|---:|---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -340,18 +338,18 @@ public enum ErrorCode {
     SUCCESS("00000", "成功"),
     PARAM_ERROR("10001", "参数错误"),
     SYSTEM_ERROR("10002", "系统繁忙"),
-
+// ...
     // 用户模块 2xxxx
     USER_NOT_FOUND("20001", "用户不存在"),
     USER_DISABLED("20002", "用户已被禁用"),
-
+// ...
     // 订单模块 3xxxx
     ORDER_NOT_FOUND("30001", "订单不存在"),
     ORDER_PAID("30002", "订单已支付");
-
+// ...
     private final String code;
     private final String message;
-
+// ...
     ErrorCode(String code, String message) {
         this.code = code;
         this.message = message;
@@ -365,20 +363,20 @@ public enum ErrorCode {
 public abstract class BaseEntity {
     @CreatedBy
     private String createBy;
-
+// ...
     @CreatedDate
     private LocalDateTime createTime;
-
+// ...
     @LastModifiedBy
     private String updateBy;
-
+// ...
     @LastModifiedDate
     private LocalDateTime updateTime;
-
+// ...
     @TableLogic
     private Integer isDeleted;
 }
-
+// ...
 // 使用时继承 BaseEntity
 @Entity
 @Table(name = "users")
@@ -399,14 +397,14 @@ public class UserControllerV1 {
     @GetMapping("/{id}")
     public Result getUser(@PathVariable Long id) { }
 }
-
+// ...
 @RestController
 @RequestMapping("/api/v2/users")
 public class UserControllerV2 {
     @GetMapping("/{id}")
     public Result getUser(@PathVariable Long id) { }
 }
-
+// ...
 // Header 版本
 @GetMapping(value = "/users/{id}", headers = "X-API-Version=2")
 public Result getUserV2(@PathVariable Long id) { }
@@ -430,7 +428,7 @@ echo "合规率: $COMPLIANCE%"
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | JDK | 编译器/运行时 | 必需 | oracle.com 或 openjdk.net 下载 |
 | Maven | 构建工具 | 推荐 | maven.apache.org 下载 |
 | SLF4J | 日志框架 | 推荐 | maven 中央仓库 |

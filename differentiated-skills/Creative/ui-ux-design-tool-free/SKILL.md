@@ -48,8 +48,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
-
 # UI/UX设计指南 - 免费版
 
 ## 概述
@@ -66,7 +67,7 @@ UI/UX设计指南免费版是一款面向个人开发者和小型团队的界面
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | UI/UX设计指南免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -94,7 +95,7 @@ UI/UX设计指南免费版是一款面向个人开发者和小型团队的界面
 通过以下维度引导用户注意力:
 
 | 维度 | 作用 | 示例 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 尺寸 | 越大越重要 | h1 > h2 > h3 |
 | 颜色 | 高对比吸引注意 | CTA按钮使用主色 |
 | 留白 | 更多空间=更强强调 | 段落间距48-64px |
@@ -117,12 +118,12 @@ UI/UX设计指南免费版是一款面向个人开发者和小型团队的界面
   --primary-500: #3b82f6;
   --primary-600: #2563eb;
   --primary-900: #1e3a8a;
-
+// ...
   /* 中性色 - 灰阶(文字、背景、边框) */
   --gray-50:  #f9fafb;
   --gray-500: #6b7280;
   --gray-900: #111827;
-
+// ...
   /* 语义色 */
   --success: #10b981;  /* 绿色 - 成功 */
   --error:   #ef4444;  /* 红色 - 错误 */
@@ -172,7 +173,7 @@ text-5xl:  48px / 1         (Hero大标题)
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
-
+// ...
 /* Flexbox - 一维布局(组件内部) */
 .card-content {
   display: flex;
@@ -203,12 +204,12 @@ space-4:  16px   space-16: 64px
   transform: scale(1.05);
   transition: transform 0.2s ease;
 }
-
+// ...
 /* 点击反馈 - 轻微缩小 */
 .button:active {
   transform: scale(0.95);
 }
-
+// ...
 /* 仅动画 transform 和 opacity(GPU加速) */
 .card {
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -270,7 +271,7 @@ space-4:  16px   space-16: 64px
     免费开始使用
   </button>
 </section>
-
+# ...
 <!-- 功能卡片网格 -->
 <section class="max-w-6xl mx-auto py-16 px-4">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -332,7 +333,7 @@ space-4:  16px   space-16: 64px
 # 使用Next.js + Tailwind CSS
 npx create-next-app@latest my-project --typescript --tailwind --app
 cd my-project
-
+# ...
 # 或使用Vite + Tailwind CSS
 npm create vite@latest my-project -- --template react
 cd my-project
@@ -378,7 +379,7 @@ module.exports = {
 ### 免费版与专业版功能对比
 
 | 功能项 | 免费版 | 专业版 |
-|--------|--------|--------|
+|---:|---:|---:|
 | 设计原则 | 核心原则 | 完整体系+2026趋势 |
 | 配色系统 | 基础色阶 | 设计令牌+语义系统 |
 | 组件库 | Tailwind基础 | Shadcn/ui完整集成 |
@@ -397,11 +398,11 @@ module.exports = {
 .section {
   padding: 64px 0;  /* 区块间距 */
 }
-
+// ...
 .card {
   padding: 24px 32px;  /* 卡片内边距 */
 }
-
+// ...
 /* 错误:内容挤在一起 */
 .section-too-tight {
   padding: 8px 0;
@@ -417,7 +418,7 @@ module.exports = {
 ### 3. 美好UI的五条法则
 
 | 法则 | 说明 |
-|------|------|
+|:---:|:---:|
 | 对比创造层次 | 大vs小,深vs浅 |
 | 留白创造宁静 | 不要害怕空白 |
 | 一致性建立信任 | 重复相同模式 |
@@ -431,7 +432,7 @@ module.exports = {
 - 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令机制: 失败时自动执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令, 最多3次
 
 | 错误 | 处理方式(正确做法) |
-|------|----------|
+|:------|------:|
 | 文字接触屏幕边缘 | 移动端最小px-4内边距 |
 | 使用emoji作为图标 | 使用SVG图标 |
 | 纯黑背景 | 使用分层暗色(bg-900 > bg-800) |
@@ -471,7 +472,7 @@ module.exports = {
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Node.js | 运行时 | 必需 | 官网下载或nvm安装 |
 | Tailwind CSS | 前端框架 | 必需 | npm install -D tailwindcss |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -481,11 +482,11 @@ Node.js安装命令:
 ```bash
 # macOS
 brew install node
-
+# ...
 # Ubuntu/Debian
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install nodejs
-
+# ...
 # Windows
 winget install OpenJS.NodeJS.LTS
 ```

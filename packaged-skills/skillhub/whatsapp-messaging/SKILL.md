@@ -22,16 +22,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
 # WhatsApp
 
 通过 WhatsApp Business API 发送消息、管理模板、处理媒体，自动化 WhatsApp Business 消息工作流。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | WhatsApp 商业消息处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,13 +40,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 多类型消息发送：文本、图片、视频、音频、文档、位置、联系人、交互按钮、列表、模板 | 支持 | 支持 |
-| 模板全生命周期管理：创建、查询审批状态、列出、删除，支持窗口外触达 | 不支持 | 支持 |
-| 媒体上传与复用：上传媒体获取 media ID，后续可通过 ID 复用发送，避免重复上传 | 不支持 | 支持 |
-| 电话号码与业务资料查询：列出账户下所有手机号及业务资料信息 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## How It Works
 
@@ -86,9 +87,9 @@ skill-platform gateway restart
 
 ```bash
 clawlink_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
-
+# ...
 clawlink_call_tool --tool "whatsapp_send_message" --params '{"phone_number": "+15551234567", "message": "Hello!"}'
-
+# ...
 clawlink_call_tool --tool "whatsapp_get_message_templates" --params '{}'
 ```
 
@@ -99,7 +100,6 @@ clawlink_call_tool --tool "whatsapp_get_message_templates" --params '{}'
 3. 验证处理结果的正确性
 
 **结果处理**: 执行完成后,输出格式化的处理结果供用户查看和保存。结果包含执行状态、输出数据和错误信息(如有)。
-
 
 ## Authentication
 
@@ -151,14 +151,14 @@ clawlink_list_tools --integration whatsapp
 ### Phone Numbers
 
 | Tool | Description | Mode |
-| --- | --- | --- |
+|---:|---:|---:|
 | `whatsapp_get_phone_numbers` | 列出账户下所有手机号 | Read |
 | `whatsapp_get_phone_number` | 获取指定手机号详情 | Read |
 
 ### Messages
 
-| Tool | Description | Mode |
-| --- | --- | --- |
+| Tool(续)| Description | Mode |
+|:------:|:------:|:------:|
 | `whatsapp_send_message` | 发送文本消息 | Write |
 | `whatsapp_send_media` | 发送图片、视频、音频或文档 | Write |
 | `whatsapp_send_media_by_id` | 通过已上传的 media ID 发送媒体 | Write |
@@ -170,15 +170,15 @@ clawlink_list_tools --integration whatsapp
 
 ### Media
 
-| Tool | Description | Mode |
-| --- | --- | --- |
+| Tool(续)(续)| Description | Mode |
+|:------------|------------:|:------------|
 | `whatsapp_upload_media` | 上传媒体到 WhatsApp 服务器 | Write |
 | `whatsapp_get_media_info` | 获取已上传媒体的元数据与下载 URL | Read |
 
 ### Message Templates
 
-| Tool | Description | Mode |
-| --- | --- | --- |
+| Tool(续)(续)| Description | Mode |
+|-------:|:-------|-------:|
 | `whatsapp_get_message_templates` | 列出所有消息模板 | Read |
 | `whatsapp_get_template_status` | 查询指定模板的审批状态 | Read |
 | `whatsapp_create_message_template` | 创建新消息模板 | Write |
@@ -186,8 +186,8 @@ clawlink_list_tools --integration whatsapp
 
 ### Business Profile
 
-| Tool | Description | Mode |
-| --- | --- | --- |
+| Tool(续)(续)| Description | Mode |
+|:------------:|--------------|:-------------|
 | `whatsapp_get_business_profile` | 获取业务资料信息 | Read |
 
 ## 依赖说明
@@ -198,7 +198,7 @@ clawlink_list_tools --integration whatsapp
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -295,7 +295,7 @@ clawlink_call_tool --tool "whatsapp_upload_media" \
     "media_url": "https://example.com/receipt.png",
     "media_type": "image/png"
   }'
-
+# ...
 # 通过 URL 直接发送图片（附带说明）
 clawlink_call_tool --tool "whatsapp_send_media" \
   --params '{
@@ -390,9 +390,8 @@ WhatsApp 未连接。处理：引导用户访问 `https://claw-link.dev/dashboar
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

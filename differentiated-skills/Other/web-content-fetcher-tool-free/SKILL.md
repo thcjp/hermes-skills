@@ -23,8 +23,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
-
 # 网页内容获取工具（免费版）
 
 ## 概述
@@ -34,7 +35,7 @@ suggested_price: 19.9
 ## 核心能力
 
 | 能力 | 说明 |
-|:-----|:-----|
+|---|---|
 | 多服务降级 | r.jina.ai → markdown.new → defuddle.md 自动降级 |
 | Markdown 输出 | 所有服务统一输出 Markdown 格式 |
 | 命令行调用 | 提供 （请参考skill目录中的脚本文件） 脚本直接调用 |
@@ -75,7 +76,7 @@ suggested_price: 19.9
 ```bash
 # 首先用 r.jina.ai 获取（最稳定）
 curl -s "https://r.jina.ai/https://example.com/article"
-
+# ...
 # 输出 Markdown 格式的网页内容
 ```
 
@@ -86,7 +87,7 @@ curl -s "https://r.jina.ai/https://example.com/article"
 ```bash
 # 使用 markdown.new（Cloudflare 专用）
 curl -s "https://markdown.new/https://protected-site.com"
-
+# ...
 # 输出 Markdown 格式内容
 ```
 
@@ -110,12 +111,12 @@ curl -s "https://defuddle.md/https://example.com"
 ```bash
 # 1. 直接调用脚本（自动降级）
 （请参考skill目录中的脚本文件） https://example.com
-
+# ...
 # 2. 指定服务
 （请参考skill目录中的脚本文件） https://example.com jina
 （请参考skill目录中的脚本文件） https://example.com markdown
 （请参考skill目录中的脚本文件） https://example.com defuddle
-
+# ...
 # 3. 使用 curl 直接调用
 curl -s "https://r.jina.ai/https://example.com"
 curl -s "https://markdown.new/https://example.com"
@@ -124,17 +125,16 @@ curl -s "https://defuddle.md/https://example.com"
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ```bash
 # 适用场景
 | 优先级 | 服务           | 用法                              | 适用场景            |
-|:-------|:---------------|:----------------------------------|:--------------------|
+|:-----|:-----|:-----|:-----|
 | 1      | r.jina.ai      | https://r.jina.ai/{url}           | 最稳定，通用性强    |
 | 2      | markdown.new   | https://markdown.new/{url}        | Cloudflare 保护站点 |
 | 3      | defuddle.md    | https://defuddle.md/{url}         | 备用方案            |
-
+# ...
 # API 调用格式
 fetch_webpage <url>
 fetch_webpage <url> --method jina|markdown|defuddle
@@ -175,7 +175,7 @@ A：不支持。三个服务均不支持需要认证的页面。
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | curl | 工具 | 必需 | 系统自带 |
 | r.jina.ai | 服务 | 必需 | 公共服务，免费 |
@@ -192,9 +192,8 @@ A：不支持。三个服务均不支持需要认证的页面。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

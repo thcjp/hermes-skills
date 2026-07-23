@@ -36,25 +36,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # OpenAI助手专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| OpenAI助手专业版API管理 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 免费版 vs 专业版能力对比
 | 能力分类 | 免费版 | 专业版 | 增量价值 |
-|:---------|:-------|:-------|:---------|
+|:-----|:-----|:-----|:-----|
 | 对话补全 | 支持 | 支持 | - |
 | 文本嵌入 | 支持 | 支持 | - |
 | 文件上传 | 支持 | 支持 | - |
@@ -96,9 +98,9 @@ pricing_model: "monthly"
 import os
 import json
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider()
-
+# ...
 # 1. 准备批量请求文件(JSONL 格式)
 requests = []
 for i, text in enumerate(long_text_list):
@@ -114,14 +116,14 @@ for i, text in enumerate(long_text_list):
             ]
         }
     })
-
+# ...
 # 2. 写入 JSONL 并上传
 with open("batch_input.jsonl", "w") as f:
     for r in requests:
         f.write(json.dumps(r) + "\n")
-
+# ...
 file = client.files.create(file=open("batch_input.jsonl", "rb"), purpose="batch")
-
+# ...
 # 3. 创建批量任务
 batch = client.batches.create(
     input_file_id=file.id,
@@ -129,7 +131,7 @@ batch = client.batches.create(
     completion_window="24h",
     metadata={"project": "content-review"}
 )
-
+# ...
 # 4. 轮询状态
 import time
 while batch.status not in ("completed", "failed", "cancelled"):
@@ -148,7 +150,7 @@ curl -X POST "https://api.llm-provider.com/v1/files" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -F "purpose=fine-tune" \
   -F "file=@./training_data.jsonl"
-
+# ...
 # 2. 创建微调任务
 curl -X POST "https://api.llm-provider.com/v1/fine_tuning/jobs" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
@@ -160,7 +162,7 @@ curl -X POST "https://api.llm-provider.com/v1/fine_tuning/jobs" \
     "hyperparameters": {"n_epochs": 3, "batch_size": "auto"},
     "suffix": "legal-advisor"
   }'
-
+# ...
 # 3. 查询检查点
 curl "https://api.llm-provider.com/v1/fine_tuning/jobs/ftjob-abc/checkpoints" \
   -H "Authorization: Bearer $OPENAI_API_KEY"
@@ -172,12 +174,12 @@ curl "https://api.llm-provider.com/v1/fine_tuning/jobs/ftjob-abc/checkpoints" \
 
 ```python
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider()
-
+# ...
 # 1. 创建向量存储
 vs = client.vector_stores.create(name="企业知识库-2026")
-
+# ...
 # 2. 批量上传文件并关联
 import glob
 for path in glob.glob("./docs/*.pdf"):
@@ -186,7 +188,7 @@ for path in glob.glob("./docs/*.pdf"):
         vector_store_id=vs.id,
         file_id=file.id
     )
-
+# ...
 # 3. 创建绑定向量存储的助手
 assistant = client.beta.assistants.create(
     name="企业知识助手",
@@ -196,7 +198,7 @@ assistant = client.beta.assistants.create(
         "file_search": {"vector_store_ids": [vs.id]}
     }
 )
-
+# ...
 # 常见问题
 thread = client.beta.threads.create()
 client.beta.threads.messages.create(
@@ -246,7 +248,7 @@ curl -X POST "https://api.llm-provider.com/v1/batches" \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | openai-ai处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -293,9 +295,8 @@ curl -X POST "https://api.llm-provider.com/v1/batches" \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -308,10 +309,10 @@ curl -X POST "https://api.llm-provider.com/v1/batches" \
 - **网络**: 需稳定访问 `api.llm-provider.com`,建议配置代理与超时
 - **存储**: 批量任务与微调需要本地 JSONL 文件读写能力
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | llm-provider Python SDK | Python 库 | 必需 | `pip install llm-provider>=1.50` |
 | llm-provider Node SDK | npm 库 | 必需(Node 场景) | `npm install llm-provider` |
 | curl | 命令行工具 | 推荐 | 系统自带 |
@@ -339,7 +340,7 @@ curl -X POST "https://api.llm-provider.com/v1/batches" \
 ```python
 import os
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider(
     api_key=os.environ["OPENAI_API_KEY"],
     organization=os.environ["OPENAI_ORG_ID"],
@@ -347,7 +348,7 @@ client = llm-provider(
     max_retries=5,
     timeout=120.0,
 )
-
+# ...
 # 配置默认请求头(审计追踪)
 client.with_options(
     default_headers={"X-Team": "content-ops", "X-Env": "production"}
@@ -359,14 +360,14 @@ client.with_options(
 ```python
 import time
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider()
-
+# ...
 class AsyncTaskManager:
     """异步任务统一管理器,支持 batch / fine-tune / video"""
-
+# ...
     POLL_INTERVAL = 30
-
+# ...
     def wait_for_batch(self, batch_id, timeout=86400):
         deadline = time.time() + timeout
         while time.time() < deadline:
@@ -377,7 +378,7 @@ class AsyncTaskManager:
                 return batch
             time.sleep(self.POLL_INTERVAL)
         raise TimeoutError(f"批量任务 {batch_id} 超时")
-
+# ...
     def wait_for_fine_tune(self, job_id, timeout=86400):
         deadline = time.time() + timeout
         while time.time() < deadline:
@@ -421,9 +422,8 @@ class AsyncTaskManager:
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

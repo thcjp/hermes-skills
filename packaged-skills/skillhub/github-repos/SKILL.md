@@ -18,16 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # GitHub
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Work with GitHub repositories, issues, pull requests, commits, branches, | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -37,7 +42,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -46,9 +51,9 @@ pricing_model: "per_use"
 
 ```bash
 clawlink_call_tool --tool "github_list_repositories_for_the_authenticated_user" --params '{}'
-
+# ...
 clawlink_call_tool --tool "github_get_a_repository" --params '{"owner": "owner", "repo": "repo-name"}'
-
+# ...
 clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owner": "owner", "repo": "repo-name", "state": "open"}'
 ```
 
@@ -56,7 +61,7 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | github-repos处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -115,7 +120,7 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 
 ## 错误处理
 | Status / Error | Meaning |
-| --- | --- |
+|:-------------:|:-------------:|
 | Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration github`. |
 | Missing connection | GitHub is not connected. Direct the user to <https://claw-link.dev/dashboard?add=github>. |
 | `404 Not Found` | Repository, issue, or PR does not exist. Verify owner, repo, and number. |
@@ -155,9 +160,9 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -166,7 +171,6 @@ clawlink_call_tool --tool "github_list_issues_for_a_repository" --params '{"owne
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -230,12 +234,6 @@ clawlink_call_tool --tool "github_create_a_pull_request" \
 ## 常见问题
 
 ### Q1: 如何开始使用GitHub？
-A: 
-
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: GitHub有什么限制？
 A: 
 
 ## 已知限制

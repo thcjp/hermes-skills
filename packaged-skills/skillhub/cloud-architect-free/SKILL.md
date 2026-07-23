@@ -18,16 +18,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
 ---
 # 云架构师免费版
 
 基础云架构设计技能,覆盖 AWS、Azure、GCP 三大云平台的服务选型、迁移策略框架与基础架构设计原则,适合单云架构设计入门与常见云架构咨询。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 云架构师免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -123,7 +124,6 @@ homepage: "https://skillhub.cn"
 
 ## 异常处理
 
-
 ### 服务选型产生冲突
 原因:多个云服务均能满足需求,难以抉择。
 处理:从延迟敏感度、运维成本、计费模式三个维度对比;无状态短任务选 Lambda,长驻服务选 EC2 或容器服务;输出简要选型对比。
@@ -172,11 +172,11 @@ terraform {
     }
   }
 }
-
+# ...
 provider "aws" {
   region = "ap-northeast-1"
 }
-
+# ...
 # VPC
 resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"
@@ -186,7 +186,7 @@ resource "aws_vpc" "main" {
     Name = "main-vpc"
   }
 }
-
+# ...
 # 公有子网
 resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.main.id
@@ -195,7 +195,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
   tags = { Name = "public-subnet-1a" }
 }
-
+# ...
 # 私有子网(数据库层)
 resource "aws_subnet" "private" {
   vpc_id            = aws_vpc.main.id
@@ -203,12 +203,12 @@ resource "aws_subnet" "private" {
   availability_zone = "ap-northeast-1a"
   tags = { Name = "private-subnet-1a" }
 }
-
+# ...
 # 互联网网关
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 }
-
+# ...
 # EC2 Web 服务器
 resource "aws_instance" "web" {
   ami                    = "ami-0c7217cdde317cfec"
@@ -216,22 +216,22 @@ resource "aws_instance" "web" {
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.web.id]
   key_name               = "prod-key"
-
+# ...
   user_data = <<-EOF
     #!/bin/bash
     yum install -y httpd
     systemctl enable httpd
     systemctl start httpd
   EOF
-
+# ...
   tags = { Name = "web-server" }
 }
-
+# ...
 # 安全组: 仅允许 HTTP/SSH
 resource "aws_security_group" "web" {
   name        = "web-sg"
   vpc_id      = aws_vpc.main.id
-
+# ...
   ingress {
     from_port   = 80
     to_port     = 80
@@ -251,7 +251,7 @@ resource "aws_security_group" "web" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
+# ...
 # RDS PostgreSQL
 resource "aws_db_instance" "db" {
   engine               = "postgres"
@@ -276,13 +276,13 @@ aws ce get-cost-and-usage \
   --granularity MONTHLY \
   --metrics "UnblendedCost" \
   --group-by Type=DIMENSION,Key=SERVICE Type=DIMENSION,Key=INSTANCE_TYPE
-
+# ...
 # 列出所有运行中的 EC2 实例及其实例类型
 aws ec2 describe-instances \
   --filters "Name=instance-state-name,Values=running" \
   --query 'Reservations[*].Instances[*].[InstanceId,InstanceType,State.Name,Tags[?Key==`Name`].Value | [0]]' \
   --output table
-
+# ...
 # 查找 CPU 利用率低于 10% 的实例(Right-sizing 候选)
 for instance_id in $(aws ec2 describe-instances \
   --filters "Name=instance-state-name,Values=running" \
@@ -310,7 +310,7 @@ done
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -321,9 +321,8 @@ done
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

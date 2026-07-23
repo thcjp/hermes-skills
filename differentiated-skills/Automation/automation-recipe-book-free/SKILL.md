@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 自动化配方手册（免费版）
 
 > **8个开箱即用的自动化配方。复制即用，改参数即定制，从套用到创造。**
@@ -44,7 +45,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 自动化配方手册(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -69,13 +70,13 @@ suggested_price: 29.9
 ```bash
 # 1. 复制配方到配方目录
 cp daily-news.yaml ~/workspace/automations/recipes/
-
+# ...
 # 2. 修改参数（URL、时间等）
 # 编辑 ~/workspace/automations/recipes/daily-news.yaml
-
+# ...
 # 3. 启用配方（对Agent说）
 "启用daily-news配方"
-
+# ...
 # 4. 查看运行状态
 "查看daily-news配方上次执行结果"
 ```
@@ -87,7 +88,7 @@ cp daily-news.yaml ~/workspace/automations/recipes/
 trigger:
   type: schedule
   cron: "0 */4 * * *"  # 每4小时
-
+# ...
 actions:
   - type: fetch
     url: "https://example.com/product"  # 改成你的商品URL
@@ -112,25 +113,24 @@ actions:
 ```bash
 # 1. 浏览所有可用配方
 ls ~/workspace/automations/recipes/
-
+# ...
 # 2. 查看配方详情
 cat ~/workspace/automations/recipes/daily-news.yaml
-
+# ...
 # 3. 启用多个配方
 "启用daily-news和price-monitor配方"
-
+# ...
 # 4. 查看执行日志
 tail -20 ~/workspace/automations/logs/2026-07-18.jsonl
-
+# ...
 # 5. 禁用配方
 "禁用price-monitor配方"
-
+# ...
 # 6. 立即触发配方（测试用）
 "立即执行daily-news配方"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配方结构解析
 
@@ -139,20 +139,20 @@ tail -20 ~/workspace/automations/logs/2026-07-18.jsonl
 ```yaml
 # 配方名称（必填）
 name: 配方名称
-
+# ...
 # 配方描述（可选）
 description: 一句话描述配方用途
-
+# ...
 # 触发条件（必填）
 trigger:
   type: schedule | email | github | calendar | message | webhook
   # type不同，后续字段不同
-
+# ...
 # 执行动作（必填，按顺序执行）
 actions:
   - type: fetch | extract | summarize | send | reply | condition | backup | classify | route | generate | publish | analyze | prioritize
     # 各type有不同参数
-
+# ...
 # 失败处理（可选）
 on_failure:
   retry: 3
@@ -162,7 +162,7 @@ on_failure:
 **trigger类型说明**：
 
 | type | 触发方式 | 典型字段 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | schedule | 定时触发 | cron |
 | email | 邮件触发 | keywords |
 | github | GitHub事件 | event, repo |
@@ -173,7 +173,7 @@ on_failure:
 **action类型说明**：
 
 | type | 作用 | 典型字段 |
-|------|------|----------|
+|---:|---:|---:|
 | fetch | 抓取URL | url |
 | extract | 提取内容 | selector |
 | summarize | 摘要 | prompt |
@@ -407,7 +407,7 @@ actions:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | 调度器 | 内置 | 必需 | Agent平台调度能力 |
 
@@ -507,20 +507,20 @@ actions:
 ### 示例1：基础用法
 
 ```
-### 60秒上手（启用第一个配方）
-
+### 60秒上手（启用第一个配方）(补充)
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -537,3 +537,4 @@ actions:
   "error": null
 }
 ```
+# ...

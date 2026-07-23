@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # IRIS 代码格式化工具（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 检查内容 |
-| --- | --- | --- |
+|----|---|----|
 | 变量命名 | 命名规范检查 | lowerCamelCase、常量全大写 |
 | 方法命名 | 方法命名规范 | UpperCamelCase、动宾结构 |
 | 锁规范 | 锁操作检查 | 成对出现、超时退出 |
@@ -93,20 +94,20 @@ suggested_price: 29.9
 ```text
 用户：格式化这段 IRIS 代码
 （附代码内容）
-
+# ...
 助手：按以下规范格式化
-
+# ...
 1. 命令缩写：除 for/while/if 外使用缩写
    - set → s, do → d, quit → q, kill → k
-
+# ...
 2. 系统函数缩写
    - $extract → $e, $piece → $p, $length → $l
-
+# ...
 3. 运算符两侧加空格
    - a = b（不是 a=b）
-
+# ...
 4. 方法内一个 Tab 缩进
-
+# ...
 5. 输出完整的格式化后代码
 ```
 
@@ -116,36 +117,36 @@ suggested_price: 29.9
 
 ```text
 用户：检查这段代码是否符合规范
-
+# ...
 助手：生成代码审查报告
-
+# ...
 ## 不适用场景
-
+# ...
 以下场景IRIS代码格式化免费版不适合处理：
-
+# ...
 - 无明确技术栈的模糊需求
 - 纯架构设计决策
 - 运维部署管理
-
+# ...
 ## 触发条件
-
+# ...
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
-
+# ...
 ## 代码审查报告
-
+# ...
 ### 问题汇总
 - [严重] 变量命名使用拼音（第 5 行）
 - [警告] 锁未设置超时（第 12 行）
 - [警告] 事务未添加空行（第 20 行）
-
+# ...
 ### 详细说明
-
+# ...
 #### 1. 变量命名问题
 位置：第 5 行
 问题：变量名使用了拼音
 规范依据：禁止拼音与英文混合
 建议修正：将 yonghuMing 改为 userName
-
+# ...
 #### 2. 锁规范问题
 位置：第 12 行
 问题：锁未设置超时退出
@@ -161,7 +162,7 @@ suggested_price: 29.9
 ; 错误格式 - 会导致 IRIS 编译错误
 continue:(hospId '= "") && (hospId '= ($p(^CTLOC(locId),"^",22)))
 q:(inci = "") && (arcim = "") && (phcdf = "")
-
+# ...
 ; 正确格式 - 括号内运算符两侧加空格，括号与 && 之间不加空格
 continue:(hospId '= "")&&(hospId '= ($p(^CTLOC(locId),"^",22)))
 q:(inci = "")&&(arcim = "")&&(phcdf = "")
@@ -184,13 +185,13 @@ q:(inci = "")&&(arcim = "")&&(phcdf = "")
 // - 参数名、成员变量、局部变量用 lowerCamelCase
 // - 常量全大写
 // - 变量不超过 31 个字符
-
+# ...
 // 正确示例
 s userName = "张三"
 s maxCount = 100
 s dispFlag = $$$YES    ; 布尔用 Flag 后缀
 s bisData = ^bis(1)   ; 引用 global 用 表ID+Data
-
+# ...
 // 错误示例
 s yonghuMing = "张三"  ; 拼音
 s a = 1               ; 无意义变量
@@ -208,13 +209,13 @@ Class MyApp.UserService
     {
         q $$$YES
     }
-    
+# ...
     // 动宾结构
     Method GetUserById(id As %String)
     {
         // 方法控制在 50 行以内
     }
-    
+# ...
     // 查询用 Query
     Method QueryUserList()
     {
@@ -232,12 +233,12 @@ Class MyApp.UserService
 l +^MyApp("lock", id):3
 ; ... 业务逻辑 ...
 l -^MyApp("lock", id)
-
+# ...
 // 事务规范
 // - 必须有 tc 或 tro
 // - ts/tc/tro 位置保持近距离
 // - 禁止跨方法提交事务
-
+# ...
 ts
 ; ... 业务逻辑 ...
 if (条件) {
@@ -252,7 +253,7 @@ if (条件) {
 ### 命令缩写规范速查
 
 | 全拼 | 缩写 | 说明 | 全拼 | 缩写 | 说明 |
-| --- | --- | --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|:-----|:-----|
 | set | s | 赋值 | tstart | ts | 事务开始 |
 | do | d | 执行 | tcommit | tc | 事务提交 |
 | quit | q | 退出 | trollback | tro | 事务回滚 |
@@ -267,7 +268,7 @@ if (条件) {
 ### 系统函数缩写速查
 
 | 全拼 | 缩写 | 说明 |
-| --- | --- | --- |
+|---:|---:|---:|
 | $extract | $e | 提取子串 |
 | $piece | $p | 按分隔符提取 |
 | $length | $l | 获取长度 |
@@ -286,10 +287,10 @@ if (条件) {
 ```objectscript
 // 单行注释用 #;
 #; 这是一个单行注释
-
+# ...
 // 句尾注释用 //
 s name = "test"  // 设置名称
-
+# ...
 // 类、方法头注释用 ///
 /// desc:        方法描述
 /// author:      作者
@@ -327,7 +328,7 @@ Method MyMethod()
 ```objectscript
 // 错误：括号与 && 之间有空格
 q:(a = "") && (b = "")
-
+# ...
 // 正确：括号与 && 之间无空格
 q:(a = "")&&(b = "")
 ```
@@ -337,10 +338,10 @@ q:(a = "")&&(b = "")
 ```objectscript
 // 临时 Global：以 ^CacheTemp 开头
 s ^CacheTemp.MyApp("data") = value
-
+# ...
 // 进程 Global：必须携带 pid
 s ^||TMP($JOB) = value
-
+# ...
 // 禁止的命名方式
 s ^Temp("data") = value    ; 旧命名，不合法
 s ^TMP("data") = value     ; 旧命名，不合法
@@ -351,7 +352,7 @@ s ^TMP("data") = value     ; 旧命名，不合法
 ```objectscript
 // 错误：用 is 开头
 s isDisp = 1
-
+# ...
 // 正确：用 Flag 后缀
 s dispFlag = $$$YES
 ```
@@ -361,7 +362,7 @@ s dispFlag = $$$YES
 ```objectscript
 // 同一方法内不应出现事务嵌套
 // 如需嵌套，拆分到不同方法
-
+# ...
 // 正确：外层方法
 Method ProcessOrder()
 {
@@ -370,7 +371,7 @@ Method ProcessOrder()
     d ..SaveOrder()
     tc
 }
-
+# ...
 // 内层方法不应有独立事务
 Method ValidateOrder()
 {
@@ -386,12 +387,12 @@ Method MyMethod()
 {
     // 设置陷阱
     s $zt = "Error"
-    
+# ...
     // 业务逻辑
     // ...
-    
+# ...
     q
-    
+# ...
 Error
     s $zt = ""           ; 避免死循环
     i $tl > 0 tro         ; 避免开放性事务
@@ -414,7 +415,7 @@ if (status = 1) {
 } else {
     d ..HandleDefault()
 }
-
+# ...
 // 正确：用 $case
 d $case(status,
     1:..HandleStatus1(),
@@ -434,7 +435,7 @@ d $case(status,
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | InterSystems IRIS | 运行时 | 推荐 | InterSystems 官方获取 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
@@ -448,9 +449,8 @@ d $case(status,
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -22,13 +22,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # API脚手架生成器(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 代码静态分析与质量评分 | 不支持 | 支持 |
 | 依赖漏洞检测与升级建议 | 不支持 | 支持 |
@@ -43,7 +45,7 @@ pricing_model: "monthly"
 **专业版能力**：支持四种语言的主流框架。
 
 | 语言 | 框架 | 特点 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | Node.js | NestJS | 依赖注入、模块化、装饰器、类似Spring |
 | Python | Django REST | 全功能、admin后台、ORM一体 |
 | Java | Spring Boot | 企业级、生态丰富、注解驱动 |
@@ -236,7 +238,7 @@ api-scaffold-gen deploy order-service \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | content | string | 否 | api-scaffold-gen处理的内容输入 |,  |
 | content | string | 否 | api-scaffold-gen处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -265,7 +267,7 @@ api-scaffold-gen deploy order-service \
 ## 异常处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | ORM迁移失败 | 数据库连接错或字段类型不匹配 | 检查DATABASE_URL，核对字段类型 | 高 |
 | DDD分层循环依赖 | 层间依赖方向错 | domain不依赖任何层，application依赖domain | 高 |
 | 微服务注册不上 | 注册中心地址错或网络不通 | 检查Eureka/Nacos地址与网络 | 高 |
@@ -287,9 +289,9 @@ api-scaffold-gen deploy order-service \
 - **Go**: 1.21+（生成Gin项目时需要）
 - **Python**: 3.9+（生成Python项目时需要）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | Node.js 18+ | 运行时 | Node.js项目必需 | 从nodejs.org安装 |
 | Docker | 工具 | 部署配置必需 | 从docker.com安装 |
@@ -426,9 +428,8 @@ CD部分支持：
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

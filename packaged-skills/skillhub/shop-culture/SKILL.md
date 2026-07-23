@@ -19,16 +19,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 生活方式购物
 
 AI代理自主购物技能，为生活方式商店提供完整的浏览、下单和跟踪能力。支持自然语言搜索、多链加密支付和x402协议结账，无需API Key。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 生活方式购物处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -36,13 +37,13 @@ AI代理自主购物技能，为生活方式商店提供完整的浏览、下单
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
+| 零日漏洞检测与防护规则下发 | 不支持 | 支持 |
 
 ## 安全准则
 
@@ -60,7 +61,7 @@ AI代理自主购物技能，为生活方式商店提供完整的浏览、下单
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -152,10 +153,10 @@ export API_KEY="your_api_key_here"
 curl -X POST "https://lifestyle-store.example.com/api/agent/shop" \
   -H "Content-Type: application/json" \
   -d '{"message": "wireless headphones under $200", "context": {"priceRange": {"max": 200}}}'
-
+# ...
 # 响应
 # {"reply": "Found great options...", "products": [{"id": "prod_sony_wh1000xm4", "title": "Sony WH-1000XM4", "price": 198.00, "inStock": true, "badge": "bestseller"}]}
-
+# ...
 # 创建订单
 curl -X POST "https://lifestyle-store.example.com/api/checkout" \
   -H "Content-Type: application/json" \
@@ -173,19 +174,18 @@ curl -X POST "https://lifestyle-store.example.com/api/checkout" \
 ```bash
 # 查询订单状态
 curl "https://lifestyle-store.example.com/api/orders/order_j4rv15_001/status"
-
+# ...
 # 响应
 # {"status": "shipped", "tracking": {"carrier": "USPS", "number": "9405511899223456", "url": "https://tools.usps.com/..."}, "_actions": {"next": "Your order shipped! Track it here."}}
-
+# ...
 # 获取完整订单详情
 curl "https://lifestyle-store.example.com/api/orders/order_j4rv15_001"
 ```
 
 ## 错误处理
 
-
 | 错误场景 | HTTP状态 | 原因 | 处理方式 |
-|---------|---------|------|---------|
+|:---:|:---:|:---:|:---:|
 | 搜索返回0结果 | 200 | 查询过窄或无匹配商品 | 扩大查询范围，尝试 `/categories` 推荐替代分类，移除价格过滤器 |
 | 商品缺货 | 200 | variant `inStock=false` | 从 `relatedProducts` 推荐替代商品，或选择同商品其他 `inStock` 变体 |
 | 订单过期 | 200 | 支付窗口15分钟超时，status=expired | 告知用户并创建新订单，重新发起结账流程 |

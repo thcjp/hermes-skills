@@ -24,8 +24,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
 ---
-
 # 音频生成工具（专业版）
 
 ## 概述
@@ -39,7 +40,7 @@ suggested_price: 99.9
 ### 模型覆盖对比
 
 | 模型类别 | 免费版 | 专业版 | 代表模型 |
-|:---------|:-------|:-------|:---------|
+|----|---|---|----|
 | 基础TTS | 3个 | 5个 | doubao-tts, keling-tts, gemini-2.5-tts, elevenlabs-tts, qwen-tts |
 | 语音克隆 | 不支持 | 4个 | elevenlabs-voice-clone, qwen-audio-clone, kling-audio-clone, vidu-audio-clone |
 | 音乐生成 | 不支持 | 2个 | suno-music, elevenlabs-music |
@@ -52,11 +53,11 @@ suggested_price: 99.9
 **处理**: 解析模型覆盖对比的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回模型覆盖对比的响应数据,包含状态码、结果和日志。
 
-### 核心能力
+### 核心能力(补充)
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 音频生成工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -67,24 +68,24 @@ suggested_price: 99.9
   - Qwen3-TTS 语音克隆（阿里百炼）
   - Kling 自定义音色克隆
   - Vidu 真人声音克隆
-
+# ...
 音乐生成:
   - Suno V5.5（灵感模式/自定义模式）
   - ElevenLabs Music（10-300秒原创音乐）
-
+# ...
 多角色对话:
   - ElevenLabs Dialogue（最多10角色）
   - 支持音频标签: [giggling] [whispers] 等
   - 一键渲染整段对话
-
+# ...
 音效生成:
   - ElevenLabs SFX（1-22秒音效）
   - Keling SFX（文本转音效 + 视频匹配）
-
+# ...
 声音库搜索:
   - ElevenLabs Search（关键词/来源/分类）
   - 返回可试听的预览音频
-
+# ...
 管道链接:
   - 步骤间自动传递输出
   - 支持管道引用: -, @N, @N.path, @*, @stdin
@@ -115,14 +116,14 @@ suggested_price: 99.9
 dlazy elevenlabs-voice-clone \
   --audio-file "./samples/host-voice-sample.wav" \
   --name "host-voice"
-
+# ...
 # 步骤2: 使用克隆声音生成主持人台词
 dlazy elevenlabs-tts \
   --text "欢迎收听本期播客，今天我们聊聊AI音频技术的最新进展。" \
   --voice "host-voice" \
   --stability 0.7 \
   --similarity 0.8
-
+# ...
 # 步骤3: 生成背景音乐
 dlazy suno-music \
   --mode "custom" \
@@ -130,7 +131,7 @@ dlazy suno-music \
   --title "Podcast Intro" \
   --instrumental true \
   --duration 30
-
+# ...
 # 步骤4: 生成过渡音效
 dlazy elevenlabs-sfx \
   --prompt "soft whoosh transition sound, gentle fade" \
@@ -161,11 +162,11 @@ dlazy elevenlabs-dialogue \
 # 示例
 dlazy seedream-4.5 --prompt "lighthouse at dawn" \
   | dlazy keling-tts --text "Welcome to the coast." --image @0.url
-
+# ...
 # 管道链接示例2: 批量生成多张图片 → 超分辨率
 dlazy seedream-4.5 --prompt "city skyline" --n 4 \
   | dlazy superres --images @*
-
+# ...
 # 管道链接示例3: 搜索声音 → 用选中声音生成TTS
 dlazy elevenlabs-search \
   --keyword "warm female narrator" \
@@ -176,7 +177,7 @@ dlazy elevenlabs-search \
 ### 管道引用速查
 
 | 引用 | 解析为 |
-|:-----|:-------|
+|---:|---:|
 | `-` | 上游输出的自然值 |
 | `@N` | 第N个输出的主值（@0 = 第一个输出URL） |
 | `@N.path` | 深入第N个输出（@0.url, @1.meta.fps） |
@@ -203,7 +204,7 @@ dlazy elevenlabs-search \
 ```bash
 # 全局安装 CLI
 npm install -g @dlazy/cli@latest
-
+# ...
 # 认证
 dlazy auth set YOUR_API_KEY
 ```
@@ -216,7 +217,7 @@ dlazy elevenlabs-search \
   --keyword "calm male storyteller" \
   --source "professional" \
   --category "audiobook"
-
+# ...
 # 预览返回的音色，选择 voice_id
 ```
 
@@ -227,7 +228,7 @@ dlazy elevenlabs-search \
 dlazy elevenlabs-voice-clone \
   --audio-file "./voice-samples/clean-sample.wav" \
   --name "my-custom-voice"
-
+# ...
 # 使用克隆声音生成TTS
 dlazy elevenlabs-tts \
   --text "使用我克隆的声音朗读这段文字" \
@@ -260,7 +261,7 @@ dlazy suno-music \
   --with-vocals true \
   --style-weight 0.7 \
   --weirdness 0.3
-
+# ...
 # 自定义模式（手动指定歌词）
 dlazy suno-music \
   --mode "custom" \
@@ -340,7 +341,7 @@ A: dlazy 文件服务托管的 URL 有一定有效期。建议生成后通过 `-
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js 16+ | 运行时 | 必需 | nodejs.org 官方下载 |
 | @dlazy/cli | CLI工具 | 必需 | `npm install -g @dlazy/cli@latest` |
@@ -362,9 +363,8 @@ A: dlazy 文件服务托管的 URL 有一定有效期。建议生成后通过 `-
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -23,27 +23,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 本地语音合成专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 专业版 | 支持 | 支持 |
-| :---: | 不支持 | 支持 |
-| 单条文本合成 | 不支持 | 支持 |
-| 预置音色 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
+| 数据质量检测与清洗规则 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-| --- | :---: | :---: |
+|:-----|:-----|:-----|
 | 单条文本合成 | 支持 | 支持 |
 | 预置音色 | 4 个 | 全部音色库 |
 | 批量合成 | - | 支持 |
@@ -91,7 +93,7 @@ pricing_model: "per_use"
 import os
 import subprocess
 import json
-
+# ...
 # 章节配置
 chapters = [
     {"id": "ch01", "title": "优秀章 序章",  "file": "book/ch01.txt"},
@@ -100,17 +102,17 @@ chapters = [
     {"id": "ch04", "title": "第四章 挑战",  "file": "book/ch04.txt"},
     {"id": "ch05", "title": "第五章 转折",  "file": "book/ch05.txt"},
 ]
-
+# ...
 voice = "zh_CN-huayan-medium"  # 中文音色
 output_dir = "audiobook/output"
 os.makedirs(output_dir, exist_ok=True)
-
+# ...
 # 第1步: 批量合成各章节
 results = []
 for ch in chapters:
     with open(ch["file"], "r", encoding="utf-8") as f:
         text = f.read().strip()
-
+# ...
     output_path = os.path.join(output_dir, f"{ch['id']}.mp3")
     cmd = [
         "piper-speak-pro",
@@ -123,19 +125,19 @@ for ch in chapters:
     subprocess.run(cmd, check=True)
     results.append({"chapter": ch["id"], "title": ch["title"], "file": output_path})
     print(f"✅ {ch['title']} 合成完成 -> {output_path}")
-
+# ...
 # 第2步: 拼接为完整有声书
 concat_file = os.path.join(output_dir, "concat_list.txt")
 with open(concat_file, "w", encoding="utf-8") as f:
     for r in results:
         f.write(f"file '{r['file']}'\n")
-
+# ...
 full_output = os.path.join(output_dir, "full_audiobook.mp3")
 subprocess.run([
     "ffmpeg", "-f", "concat", "-safe", "0",
     "-i", concat_file, "-c", "copy", full_output
 ], check=True)
-
+# ...
 print(f"\n📚 有声书合成完成: {full_output}")
 print(f"   共 {len(results)} 章，总时长约 {len(results) * 15} 分钟")
 ```
@@ -174,7 +176,7 @@ piper-speak-pro --ssml ssml_input.xml --voice zh_CN-huayan-medium --output news_
 # 第1步: 准备训练数据（至少30分钟清晰录音 + 对应文本）
 # audio_samples/  目录存放 WAV 录音
 # transcripts/    目录存放对应文本
-
+# ...
 # 第2步: 启动音色训练
 piper-train-pro \
   --name "BrandVoice-Aria" \
@@ -183,11 +185,11 @@ piper-train-pro \
   --transcript-dir transcripts/ \
   --quality "high" \
   --output-dir models/custom/
-
+# ...
 # 训练完成后输出
 # 模型路径: models/custom/zh_CN-BrandVoice-Aria-high.onnx
 # 配置文件: models/custom/zh_CN-BrandVoice-Aria-high.json
-
+# ...
 # 第3步: 使用自定义音色合成
 piper-speak-pro \
   --text "欢迎致电客户服务中心，我是您的专属助手。" \
@@ -206,37 +208,37 @@ from pydantic import BaseModel
 import subprocess
 import uuid
 import os
-
+# ...
 app = FastAPI(title="Piper TTS Pro API")
-
+# ...
 class TTSRequest(BaseModel):
     text: str
     voice: str = "zh_CN-huayan-medium"
     speed: float = 1.0
     pitch: int = 0
     ssml: str = None
-
+# ...
 @app.post("/api/tts")
 async def synthesize(req: TTSRequest, bg: BackgroundTasks):
     task_id = str(uuid.uuid4())
     output_path = f"output/{task_id}.mp3"
-
+# ...
     cmd = ["piper-speak-pro", "--output", output_path, "--voice", req.voice]
     if req.ssml:
         cmd += ["--ssml", req.ssml]
     else:
         cmd += ["--text", req.text, "--speed", str(req.speed), "--pitch", str(req.pitch)]
-
+# ...
     bg.add_task(run_synthesis, cmd)
     return {"task_id": task_id, "status": "processing", "output": output_path}
-
+# ...
 @app.get("/api/tts/{task_id}")
 async def get_status(task_id: str):
     path = f"output/{task_id}.mp3"
     if os.path.exists(path):
         return {"task_id": task_id, "status": "completed", "output": path}
     return {"task_id": task_id, "status": "processing"}
-
+# ...
 def run_synthesis(cmd):
     subprocess.run(cmd, check=True)
 ```
@@ -244,7 +246,7 @@ def run_synthesis(cmd):
 ```bash
 # 启动 API 服务
 uvicorn tts_api_server:app --host 0.0.0.0 --port 8100
-
+# ...
 # 示例
 curl -X POST http://localhost:8100/api/tts \
   -H "Content-Type: application/json" \
@@ -275,7 +277,7 @@ piper-speak-pro --batch input_texts.json --voice zh_CN-huayan-medium --output-di
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | piper-tts-engine处理的内容输入 |,  |
 | content | string | 否 | piper-tts-engine处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -303,9 +305,8 @@ piper-speak-pro --batch input_texts.json --voice zh_CN-huayan-medium --output-di
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -319,10 +320,10 @@ piper-speak-pro --batch input_texts.json --voice zh_CN-huayan-medium --output-di
 - **运行时**：Python 3.9+
 - **GPU（可选）**：NVIDIA GPU + CUDA（音色训练推荐）
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :------- | :----- | :--------- | :--------- |
+|:------|------:|:------|:------|
 | Python 3.9+ | 运行时 | 必需 | python.org 官方下载 |
 | piper-tts-pro | Python 包 | 必需 | `pip install piper-tts-pro`（安装脚本自动处理） |
 | onnxruntime | Python 包 | 必需 | `pip install onnxruntime`（自动安装） |
@@ -352,20 +353,6 @@ export CUDA_HOME="/usr/local/cuda"  # GPU训练需要
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -442,9 +429,8 @@ export CUDA_HOME="/usr/local/cuda"  # GPU训练需要
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

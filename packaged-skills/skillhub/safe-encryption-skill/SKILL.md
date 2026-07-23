@@ -15,19 +15,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Safe Encryption
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG alternative | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
+| 零日漏洞检测与防护规则下发 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -37,39 +42,6 @@ pricing_model: "per_use"
 ## 适用场景
 
 ### Protect API Keys / .env Files
-> 已移至 `references/detail.md`
-
-### Share Secrets with a Teammate
-> 已移至 `references/detail.md`
-
-### Encrypt Backup Before Cloud Upload
-> 已移至 `references/detail.md`
-
-### Encrypt Entire Directories
-> 已移至 `references/detail.md`
-
-### Git-Friendly Encrypted Secrets
-> 已移至 `references/detail.md`
-
-### Separation of Duties (Two People Required)
-> 已移至 `references/detail.md`
-
-### Two-Factor Encryption (Password + Key)
-> 已移至 `references/detail.md`
-
-### Team Encryption + Emergency Backup
-> 已移至 `references/detail.md`
-
-### Post-Quantum Hybrid Protection
-> 已移至 `references/detail.md`
-
-### Temporary Decryption (No File on Disk)
-> 已移至 `references/detail.md`
-
-### Password Rotation
-> 已移至 `references/detail.md`
-
-### Key Rotation (Compromised Key)
 > 已移至 `references/detail.md`
 
 ## 使用流程
@@ -82,7 +54,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | safe-encryption-skill处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -129,9 +101,8 @@ pricing_model: "per_use"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
 | 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后 |
 | 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
@@ -140,20 +111,10 @@ pricing_model: "per_use"
 
 ## 依赖说明
 
-### 运行环境
-> 已移至 `references/detail.md`
-
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-> 已移至 `references/detail.md`
-
-### 可用性分类
-> 已移至 `references/detail.md`
-
 
 **API Key配置方式**:
 ```bash
@@ -162,29 +123,12 @@ export API_KEY="your_api_key_here"
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 案例展示
 
-> 已移至 `references/detail.md`
-
-### 示例1：基础用法
-> 已移至 `references/detail.md`
-
 ## 常见问题
-
-> 已移至 `references/detail.md`
-
-### Q1: 如何开始使用Safe Encryption？
-> 已移至 `references/detail.md`
-
-### Q2: 遇到错误怎么办？
-> 已移至 `references/detail.md`
-
-### Q3: Safe Encryption有什么限制？
-> 已移至 `references/detail.md`
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

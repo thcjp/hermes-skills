@@ -21,8 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
 ---
-
 # 容器检查入门工具（免费版）
 
 ## 概述
@@ -34,7 +35,7 @@ suggested_price: 29.9
 ### 检查功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 状态检查 | 运行状态/退出码/启动时间 | 支持 |
 | 日志查看 | 实时/历史日志 | 支持 |
 | 资源监控 | CPU/内存/网络IO | 支持 |
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ### 兼容引擎
 
 | 引擎 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | Podman | 无守护进程容器引擎 | 支持 |
 | Docker | 标准容器引擎 | 支持 |
 | 自动检测 | 自动识别已安装引擎 | 支持 |
@@ -77,7 +78,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 容器检查入门工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -85,7 +86,7 @@ suggested_price: 29.9
 ```bash
 # 检查所有容器
 python3 （请参考skill目录中的脚本文件） ps --all
-
+# ...
 # 输出：
 # NAME        STATUS    AGE    PORTS
 # web-app     running   2h     8080:80
@@ -100,10 +101,10 @@ python3 （请参考skill目录中的脚本文件） ps --all
 ```bash
 # 查看日志
 python3 （请参考skill目录中的脚本文件） logs --name web-app --tail 100
-
+# ...
 # 实时跟踪日志
 python3 （请参考skill目录中的脚本文件） logs --name web-app --follow
-
+# ...
 # 过滤错误日志
 python3 （请参考skill目录中的脚本文件） logs --name web-app --grep "ERROR"
 ```
@@ -115,7 +116,7 @@ python3 （请参考skill目录中的脚本文件） logs --name web-app --grep 
 ```bash
 # 资源使用统计
 python3 （请参考skill目录中的脚本文件） stats --sort memory
-
+# ...
 # 输出：
 # NAME        CPU%   MEM USAGE      NET I/O
 # postgres    5.2%   512MiB/1GiB   10MB/50MB
@@ -137,10 +138,10 @@ python3 （请参考skill目录中的脚本文件） stats --sort memory
 # 依赖说明
 # Podman: brew install podman (macOS)
 # Docker: 见docker-toolkit安装
-
+# ...
 # 安装Python依赖
 pip install subprocess
-
+# ...
 # 验证
 python3 （请参考skill目录中的脚本文件） info
 ```
@@ -151,27 +152,26 @@ python3 （请参考skill目录中的脚本文件） info
 # 容器状态
 python3 （请参考skill目录中的脚本文件） ps --all
 python3 （请参考skill目录中的脚本文件） inspect --name web-app
-
+# ...
 # 日志
 python3 （请参考skill目录中的脚本文件） logs --name web-app --tail 100
 python3 （请参考skill目录中的脚本文件） logs --name web-app --follow
 python3 （请参考skill目录中的脚本文件） logs --name web-app --grep "ERROR"
-
+# ...
 # 资源
 python3 （请参考skill目录中的脚本文件） stats
 python3 （请参考skill目录中的脚本文件） stats --sort cpu
-
+# ...
 # 配置检查
 python3 （请参考skill目录中的脚本文件） config --name web-app
 python3 （请参考skill目录中的脚本文件） ports --name web-app
 python3 （请参考skill目录中的脚本文件） volumes --name web-app
-
+# ...
 # 健康检查
 python3 （请参考skill目录中的脚本文件） health --name web-app
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -183,12 +183,12 @@ ctl_config:
   socket:
     podman: "unix:///run/podman/podman.sock"
     docker: "unix:///var/run/docker.sock"
-
+# ...
   defaults:
     log_tail: 100
     stats_interval: 5
     timeout: 30
-
+# ...
   output:
     format: "table"              # table | json | yaml
     color: true
@@ -202,7 +202,7 @@ ctl_config:
 4. **健康检查**：配置容器健康检查，自动发现异常
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:---:|:---:|
 | 引擎兼容 | 命令兼容Podman和Docker，无需修改 |
 | 日志量 | 大量日志时使用--tail限制输出 |
 | 资源限制 | 检查资源使用，确认是否达到限制 |
@@ -238,7 +238,7 @@ Podman无需守护进程（daemonless），更安全；Docker需要dockerd守护
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | Podman或Docker | CLI工具 | 必需 | 系统安装 |
@@ -256,9 +256,8 @@ Podman无需守护进程（daemonless），更安全；Docker需要dockerd守护
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

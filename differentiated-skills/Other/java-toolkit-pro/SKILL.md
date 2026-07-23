@@ -41,6 +41,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Java 工具箱（专业版）
 
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 全项目扫描 | 多模块批量规则检查 | 回归追踪 |
 | 规则集治理 | 规则、豁免、严重级 | 版本化 |
 | JVM 主题 | GC、内存、模块化 | 深度专题 |
@@ -184,7 +186,7 @@ java -Xlog:gc*=info:file=gc.log -jar app.jar
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 14 条规则 | 相同 | 相同（纳入规则集） |
 | 范围 | 单文件 | 全项目批量 |
 | 规则集 | 不支持 | 版本化治理 |
@@ -214,7 +216,7 @@ A：有。专业版享规则定制与 JVM 调优咨询。
 ```bash
 # GC 日志（JDK 11+）
 java -Xlog:gc*=info:file=gc.log:time,level,tags -jar app.jar
-
+# ...
 # 常用 GC 参数
 java -XX:+UseG1GC \
      -XX:MaxGCPauseMillis=200 \
@@ -241,7 +243,7 @@ module-info.java:
       exports com.example.api;
       opens com.example.internal to spring.core;
   }
-
+# ...
 模块化收益:
   - 强封装，明确导出
   - 启动更快（少加载）
@@ -300,7 +302,7 @@ check.dependsOn jacocoTestCoverageVerification
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | JDK | 工具链 | 必需 | adoptium.net |
 | Gradle/Maven | 构建工具 | 推荐 | gradle.org / maven.apache.org |
 | JaCoCo | 覆盖率 | 门禁时必需 | `org.jacoco` 插件 |
@@ -315,9 +317,8 @@ check.dependsOn jacocoTestCoverageVerification
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

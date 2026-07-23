@@ -48,6 +48,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 浏览器智能代理工具(专业版)
 
@@ -58,7 +60,7 @@ pricing_model: "monthly"
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---|---|---|
 | 基础导航与交互 | 支持 | 支持 |
 | 可访问性树快照 | 支持 | 支持 |
 | 会话隔离 | 支持(基础) | 支持(并发池) |
@@ -77,7 +79,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 浏览器智能代理工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -85,10 +87,10 @@ pricing_model: "monthly"
 ```bash
 # 拦截并阻止广告请求
 agent-browser network route "**/ads/*" --abort
-
+# ...
 # Mock API 响应
 agent-browser network route "**/api/*" --body '{"code":0,"data":{}}'
-
+# ...
 # 查看网络请求
 agent-browser network requests --filter api
 ```
@@ -146,7 +148,7 @@ echo "批量签到完成"
 ```bash
 # 通过环境变量配置代理池
 export BROWSER_PROXY_POOL="http://proxy1:8080,http://proxy2:8080,http://proxy3:8080"
-
+# ...
 # 启动时自动轮换代理
 agent-browser --proxy-pool open https://example.com
 ```
@@ -161,7 +163,7 @@ agent-browser --proxy-pool open https://example.com
 ```bash
 # 启用指标采集
 agent-browser --metrics enable
-
+# ...
 # 导出指标
 agent-browser metrics export --format json > metrics.json
 agent-browser metrics export --format prometheus > metrics.prom
@@ -197,24 +199,24 @@ agent-browser workspace list
 #!/bin/bash
 # competitor-price-monitor.sh
 COMPETITORS=("competitor-a.com" "competitor-b.com" "competitor-c.com")
-
+# ...
 for site in "${COMPETITORS[@]}"; do
   # 使用代理池轮换
   agent-browser --proxy-pool open "https://${site}/products"
-
+# ...
   # 拦截无关资源,提升速度
   agent-browser network route "**/ads/*" --abort
   agent-browser network route "**/analytics/*" --abort
-
+# ...
   agent-browser wait --load networkidle
   agent-browser snapshot -i --json > "snapshots/${site}_$(date +%Y%m%d).json"
-
+# ...
   # 提取价格数据
   agent-browser get text "@price-element" --json >> "prices/${site}.log"
-
+# ...
   agent-browser close
 done
-
+# ...
 # 生成报告
 echo "竞品价格采集完成,详见 prices/ 目录"
 ```
@@ -227,17 +229,17 @@ echo "竞品价格采集完成,详见 prices/ 目录"
 #!/bin/bash
 # e2e-test.sh - 集成到 CI/CD
 set -e
-
+# ...
 agent-browser open https://staging.example.com
 agent-browser state load test-auth.json
 agent-browser snapshot -i --json
-
+# ...
 # 执行测试步骤
 agent-browser fill @e1 "test@example.com"
 agent-browser fill @e2 "password123"
 agent-browser click @e3
 agent-browser wait --url "**/dashboard"
-
+# ...
 # 断言
 RESULT=$(agent-browser get text "@welcome" --json | jq -r '.data.text')
 if [[ "$RESULT" == *"欢迎"* ]]; then
@@ -249,7 +251,7 @@ else
   agent-browser close
   exit 1
 fi
-
+# ...
 agent-browser close
 ```
 
@@ -263,13 +265,13 @@ agent-browser close
 import subprocess
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+# ...
 ACCOUNTS = [
     {"name": "brand_a", "auth": "auth/brand_a.json", "url": "https://app.example.com/post"},
     {"name": "brand_b", "auth": "auth/brand_b.json", "url": "https://app.example.com/post"},
     {"name": "brand_c", "auth": "auth/brand_c.json", "url": "https://app.example.com/post"},
 ]
-
+# ...
 def run_account(account):
     """单个账号的发布流程"""
     session = account["name"]
@@ -282,7 +284,7 @@ def run_account(account):
     subprocess.run(["agent-browser", "--session", session, "screenshot", f"logs/{session}.png"])
     subprocess.run(["agent-browser", "--session", session, "close"])
     return session
-
+# ...
 # 并发执行,最大并发数 3
 with ThreadPoolExecutor(max_workers=3) as executor:
     futures = {executor.submit(run_account, acc): acc for acc in ACCOUNTS}
@@ -320,7 +322,7 @@ with ThreadPoolExecutor(max_workers=3) as executor:
 ```bash
 npm install -g agent-browser
 agent-browser install --with-deps
-
+# ...
 # 专业版初始化(可选)
 agent-browser pro init
 agent-browser pro config set metrics.enabled true
@@ -344,7 +346,7 @@ agent-browser snapshot -i --json
 ```bash
 # 使用内置批量执行器
 agent-browser batch run --file tasks.json --concurrency 5
-
+# ...
 # tasks.json 示例
 # [
 #   {"url": "https://a.com", "action": "snapshot"},
@@ -386,10 +388,10 @@ alerts:
 ```bash
 # Prometheus 格式
 agent-browser metrics export --format prometheus
-
+# ...
 # JSON 格式(供下游分析)
 agent-browser metrics export --format json | jq '.metrics'
-
+# ...
 # 关键指标示例
 # agent_browser_requests_total{status="success"} 1024
 # agent_browser_requests_total{status="failed"} 12
@@ -451,7 +453,7 @@ agent-browser --proxy-pool open https://example.com
 ## 与免费版的兼容性
 
 | 维度 | 兼容性 |
-|:-----|:------|
+|---:|---:|
 | 命令语法 | 100% 兼容 |
 | 状态文件格式 | 100% 兼容(专业版可读取免费版状态) |
 | 脚本工作流 | 100% 兼容(无需修改即可运行) |
@@ -469,7 +471,7 @@ agent-browser --proxy-pool open https://example.com
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | agent-browser(pro) | CLI 工具 | 必需 | `npm install -g agent-browser@pro` |
 | Chromium | 运行时 | 必需 | `agent-browser install` 自动下载 |
 | Node.js | 运行环境 | 必需 | 系统包管理器安装 |
@@ -489,9 +491,8 @@ agent-browser --proxy-pool open https://example.com
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -15,16 +15,19 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+pricing_tier: "L2-标准级"
+suggested_price: "19.9 CNY/per_use"
 ---
 # 投屏设备控制（免费版）
 
 使用 `catt`（Cast All The Things）工具控制局域网内的投屏协议设备。免费版提供设备发现、基础媒体投放、播放控制和音量调节功能。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 投屏设备基础版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,7 +40,7 @@ tags:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -99,7 +102,6 @@ tags:
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1：发现设备并投放YouTube视频
@@ -110,13 +112,13 @@ catt scan
 # 输出示例:
 # 192.168.1.163 - Living Room TV
 # 192.168.1.200 - Bedroom Speaker
-
+# ...
 # 投放YouTube视频到指定设备
 catt -d "Living Room TV" cast "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-
+# ...
 # 暂停播放
 catt -d "Living Room TV" pause
-
+# ...
 # 设置音量为50
 catt -d "Living Room TV" volume 50
 ```
@@ -126,13 +128,13 @@ catt -d "Living Room TV" volume 50
 ```bash
 # 投放本地MP4文件
 catt -d 192.168.1.163 cast ./video.mp4
-
+# ...
 # 恢复播放
 catt -d 192.168.1.163 play
-
+# ...
 # 增加音量10
 catt -d 192.168.1.163 volumeup 10
-
+# ...
 # 停止播放
 catt -d 192.168.1.163 stop
 ```
@@ -140,7 +142,7 @@ catt -d 192.168.1.163 stop
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | `catt scan` 找不到设备 | 网络阻止mDNS发现 | 使用设备IP地址直接连接：`catt -d 192.168.1.163 cast <url>` |
 | 本地文件投放失败 | TCP端口45000-47000被防火墙阻止 | 开放端口45000-47000范围，或使用网络共享URL代替本地文件 |
 | 设备未响应 | 设备休眠或网络断开 | 确认设备已开机且在同一局域网，重新运行 `catt scan` |

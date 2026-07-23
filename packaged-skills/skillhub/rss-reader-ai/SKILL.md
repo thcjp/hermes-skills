@@ -33,22 +33,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "RSS,订阅,信息"
 ---
 # RSS智能阅读器专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| RSS智能阅读器专业版支持多源批量抓取 | 不支持 | 支持 |
+| RSS智能阅读器专业版定时调度与数据分析 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -98,16 +100,16 @@ pricing_model: "per_use"
 import yaml
 import schedule
 import time
-
+# ...
 class CompetitorMonitor:
     """竞品情报监控器"""
-
+# ...
     def __init__(self, config_path):
         with open(config_path, 'r', encoding='utf-8') as f:
             self.config = yaml.safe_load(f)
         self.feeds = self.config['feeds']
         self.routes = self.config['routes']
-
+# ...
     def fetch_and_summarize(self):
         """抓取并生成摘要"""
         for feed in self.feeds:
@@ -116,7 +118,7 @@ class CompetitorMonitor:
                 summary = self.ai_summarize(article, depth="deep")
                 keywords = self.extract_keywords(article)
                 sentiment = self.analyze_sentiment(article)
-
+# ...
                 route = self.routes.get(feed['category'], 'default')
                 self.push_to_channels(route, {
                     'title': article['title'],
@@ -126,7 +128,7 @@ class CompetitorMonitor:
                     'source': feed['name'],
                     'url': article['link']
                 })
-
+# ...
     def ai_summarize(self, article, depth="deep"):
         """AI深度摘要"""
         prompt = f"""
@@ -136,11 +138,11 @@ class CompetitorMonitor:
         3. 判断情感倾向（正面/中性/负面）
         4. 评估重要性（1-5分）
         5. 识别提及的竞品名称
-
+# ...
         内容: {article['content']}
         """
         return self.call_llm(prompt)
-
+# ...
 monitor = CompetitorMonitor("competitor_config.yaml")
 monitor.fetch_and_summarize()
 ```
@@ -157,7 +159,7 @@ feeds:
   - name: "产品更新"
     url: "https://feeds.example.com/product-updates.xml"
     category: "product"
-
+# ...
 routes:
   industry:
     channels: ["feishu:industry-channel", "email:leadership@company.com"]
@@ -171,7 +173,7 @@ routes:
   default:
     channels: ["feishu:general-channel"]
     priority: "low"
-
+# ...
 notify:
   feishu:
     enabled: true
@@ -180,13 +182,13 @@ notify:
       tech-channel: "${FEISHU_TECH_WEBHOOK}"
       product-channel: "${FEISHU_PRODUCT_WEBHOOK}"
       general-channel: "${FEISHU_GENERAL_WEBHOOK}"
-
+# ...
   telegram:
     enabled: true
     bot_token: "${TELEGRAM_BOT_TOKEN}"
     chat_ids:
       tech-group: "${TELEGRAM_TECH_CHAT_ID}"
-
+# ...
   email:
     enabled: true
     smtp_host: "smtp.company.com"
@@ -195,7 +197,7 @@ notify:
     password: "${SMTP_PASSWORD}"
     recipients:
       leadership: "leadership@company.com"
-
+# ...
   webhook:
     enabled: true
     url: "https://internal.company.com/api/rss-webhook"
@@ -208,7 +210,7 @@ notify:
 ```python
 class ContentAnalytics:
     """内容趋势分析报告生成器"""
-
+# ...
     def generate_weekly_report(self):
         """生成周度分析报告"""
         report = {
@@ -223,7 +225,7 @@ class ContentAnalytics:
             "推送渠道统计": self.get_channel_stats()
         }
         return self.format_report(report)
-
+# ...
     def get_trending_keywords(self, top_n=20):
         """获取热点关键词"""
         return [
@@ -231,7 +233,7 @@ class ContentAnalytics:
             {"keyword": "WebAssembly", "count": 32, "trend": "+15%"},
             {"keyword": "边缘计算", "count": 28, "trend": "+8%"},
         ]
-
+# ...
 analytics = ContentAnalytics()
 report = analytics.generate_weekly_report()
 print(report)
@@ -243,27 +245,27 @@ print(report)
 ```bash
 mkdir ~/rss-reader-pro && cd ~/rss-reader-pro
 pip install -r requirements.txt
-
+# ...
 python migrate.py --from-free ~/rss-reader/my_config.yaml --to-pro ./config.yaml
 ```
 
 ### 基本使用
 ```bash
 python main.py --once
-
+# ...
 python main.py --daemon
-
+# ...
 python main.py --report weekly
-
+# ...
 python main.py --import-feeds feeds.opml
-
+# ...
 python main.py --export-feeds --format opml --output my_feeds.opml
 ```
 
 ### 命令行参数
 ```bash
 python main.py [options]
-
+# ...
 --config, -c        配置文件路径 (默认: config.yaml)
 --once              单次执行模式
 --daemon            守护进程模式（定时调度）
@@ -280,7 +282,7 @@ python main.py [options]
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | rss-reader-ai处理的内容输入 |,  |
 | content | string | 否 | rss-reader-ai处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -308,9 +310,8 @@ python main.py [options]
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -326,7 +327,7 @@ python main.py [options]
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python 3.8+ | 运行时 | 必需 | python.org 官方下载 |
 | feedparser | Python库 | 必需 | `pip install feedparser` |
 | requests | Python库 | 必需 | `pip install requests` |
@@ -343,7 +344,7 @@ python main.py [options]
 ```bash
 export ANTHROPIC_API_KEY="your_claude_api_key"
 export OPENAI_API_KEY="your_openai_api_key"
-
+# ...
 export FEISHU_DEFAULT_WEBHOOK="your_feishu_webhook_1"
 export FEISHU_TECH_WEBHOOK="your_feishu_webhook_2"
 export TELEGRAM_BOT_TOKEN="your_telegram_bot_token"
@@ -364,20 +365,6 @@ export WEBHOOK_TOKEN="your_webhook_auth_token"
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -428,7 +415,7 @@ schedule:
 ```bash
 python team_manager.py add-member --user "alice" --role "editor"
 python team_manager.py add-member --user "bob" --role "viewer"
-
+# ...
 python team_manager.py share-feed --feed-id 12 --team "engineering"
 ```
 
@@ -441,9 +428,8 @@ python main.py --report weekly --format json --output report.json
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

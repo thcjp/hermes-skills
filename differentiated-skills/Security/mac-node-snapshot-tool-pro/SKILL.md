@@ -28,6 +28,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # macOS截图工具专业版
 ## 概述
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 多屏支持 | 精确选择指定显示器截图 |
 | 音频录屏 | 同时录制系统音频与麦克风 |
 | 定时批量 | 定时自动截图,无人值守 |
@@ -49,7 +51,7 @@ pricing_model: "per_use"
 ### 1. 多显示器截图(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | macOS截图工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -60,19 +62,19 @@ pricing_model: "per_use"
 OUTPUT_DIR="${HOME}/Desktop/screenshots"
 mkdir -p "$OUTPUT_DIR"
 TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
-
+# ...
 # 获取所有显示器信息
 echo "=== 检测到的显示器 ==="
 system_profiler SPDisplaysDataType 2>/dev/null | grep -A5 "Resolution"
-
+# ...
 # 截取所有显示器(拼接到一张图)
 screencapture "${OUTPUT_DIR}/all_displays_${TIMESTAMP}.png"
 echo "全部显示器: ${OUTPUT_DIR}/all_displays_${TIMESTAMP}.png"
-
+# ...
 # 分别截取每个显示器
 # 获取显示器ID列表
 DISPLAY_IDS=$(system_profiler SPDisplaysDataType 2>/dev/null | grep "Display Serial" | wc -l)
-
+# ...
 # 方法:使用display参数(需要知道display ID)
 # 通过 CGGetActiveDisplayList 获取display ID
 # 专业版支持通过display ID精确截图指定显示器
@@ -94,7 +96,7 @@ echo "  screencapture -D 2 display2.png  # 第二显示器"
 OUTPUT_DIR="${HOME}/Desktop/recordings"
 mkdir -p "$OUTPUT_DIR"
 TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
-
+# ...
 # 方式1: 使用screencapture(基础视频+无音频)
 # screencapture -v "${OUTPUT_DIR}/basic_${TIMESTAMP}.mov"
 # 依赖说明
@@ -102,13 +104,13 @@ echo "=== 屏幕录制(带音频) ==="
 echo "录制模式: 屏幕 + 系统音频"
 echo "按 Ctrl+C 停止录制"
 echo ""
-
+# ...
 OUTPUT_FILE="${OUTPUT_DIR}/recording_audio_${TIMESTAMP}.mp4"
-
+# ...
 # 使用ffmpeg录制(需要BlackHole安装)
 # 屏幕尺寸
 SCREEN_SIZE=$(system_profiler SPDisplaysDataType 2>/dev/null | grep "Resolution" | head -1 | awk '{print $2"x"$4}')
-
+# ...
 ffmpeg -f avfoundation \
     -framerate 30 \
     -i "1:0" \
@@ -116,11 +118,11 @@ ffmpeg -f avfoundation \
     -c:a aac \
     -preset fast \
     "$OUTPUT_FILE" 2>/dev/null &
-
+# ...
 FFMPEG_PID=$!
 echo "录制中... PID: ${FFMPEG_PID}"
 echo "输出: ${OUTPUT_FILE}"
-
+# ...
 wait $FFMPEG_PID
 echo ""
 echo "录制完成: ${OUTPUT_FILE}"
@@ -138,7 +140,7 @@ echo "文件大小: $(du -h "$OUTPUT_FILE" | cut -f1)"
 # 专业版定时批量截图(无人值守)
 OUTPUT_DIR="${HOME}/Desktop/batch-screenshots"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 INTERVAL="${1:-30}"       # 截图间隔(秒)
 DURATION="${2:-3600}"     # 总时长(秒),默认1小时
 FORMAT="${3:-png}"        # 图片格式
@@ -148,23 +150,23 @@ echo "总时长: ${DURATION}秒 ($((DURATION/60))分钟)"
 echo "格式: ${FORMAT}"
 echo "输出: ${OUTPUT_DIR}"
 echo ""
-
+# ...
 START_TIME=$(date +%s)
 END_TIME=$((START_TIME + DURATION))
 COUNT=0
-
+# ...
 while [ "$(date +%s)" -lt "$END_TIME" ]; do
     COUNT=$((COUNT + 1))
     TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
     FILENAME="${OUTPUT_DIR}/batch_${COUNT}_${TIMESTAMP}.${FORMAT}"
-
+# ...
     # 截图(可添加 -C 包含光标)
     screencapture -t "$FORMAT" "$FILENAME"
-
+# ...
     # 记录日志
     SIZE=$(du -h "$FILENAME" | cut -f1)
     echo "[$(date '+%H:%M:%S')] #${COUNT} ${SIZE} ${FILENAME}"
-
+# ...
     # 检查是否到达结束时间
     NOW=$(date +%s)
     REMAINING=$((END_TIME - NOW))
@@ -172,10 +174,10 @@ while [ "$(date +%s)" -lt "$END_TIME" ]; do
         echo "剩余时间不足一次间隔,结束截图"
         break
     fi
-
+# ...
     sleep "$INTERVAL"
 done
-
+# ...
 echo ""
 echo "=== 批量截图完成 ==="
 echo "总数量: ${COUNT}"
@@ -194,24 +196,24 @@ echo "时间跨度: $(date -r "$START_TIME" '+%H:%M:%S') - $(date '+%H:%M:%S')"
 # 截图OCR文字识别
 OUTPUT_DIR="${HOME}/Desktop/ocr-results"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 echo "=== 截图OCR文字识别 ==="
 echo "请选择要识别的文字区域..."
 echo ""
-
+# ...
 # 截取区域
 TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
 IMAGE_FILE="${OUTPUT_DIR}/ocr_input_${TIMESTAMP}.png"
 screencapture -i "$IMAGE_FILE"
-
+# ...
 if [ ! -f "$IMAGE_FILE" ]; then
     echo "截图已取消"
     exit 1
 fi
-
+# ...
 echo "截图已保存: ${IMAGE_FILE}"
 echo ""
-
+# ...
 # OCR识别(使用macOS Vision框架)
 # 方法1: 使用 shortcuts(快捷指令) - 需预先创建OCR快捷指令
 # 方法2: 使用Python + Vision框架
@@ -220,27 +222,27 @@ import subprocess
 import json
 import sys
 import os
-
+# ...
 image_path = sys.argv[1] if len(sys.argv) > 1 else ""
-
+# ...
 # 使用macOS Vision框架进行OCR
 script = f'''
 import Cocoa
 import Vision
 import sys
-
+# ...
 image_path = "{image_path}"
 if not image_path:
     print("No image path provided")
     sys.exit(1)
-
+# ...
 image_url = Cocoa.NSURL.fileURLWithPath_(image_path)
 request = Vision.VNRecognizeTextRequest.alloc().init()
 request.setRecognitionLanguages_(["zh-Hans", "zh-Hant", "en-US"])
 request.setRecognitionLevel_(1)  # accurate
 handler = Vision.VNImageRequestHandler.alloc().initWithURL_options_(image_url, None)
 success = handler.performRequests_error_([request], None)
-
+# ...
 if success:
     results = request.results()
     texts = []
@@ -252,17 +254,17 @@ if success:
 else:
     print("OCR failed")
 '''
-
+# ...
 result = subprocess.run(
     ["python3", "-c", script],
     capture_output=True,
     text=True
 )
-
+# ...
 if result.stdout:
     print("=== OCR识别结果 ===")
     print(result.stdout)
-
+# ...
     # 保存结果
     output_file = image_path.replace(".png", "_ocr.txt")
     with open(output_file, "w") as f:
@@ -271,7 +273,7 @@ if result.stdout:
 else:
     print("OCR识别失败:", result.stderr)
 PYTHON
-
+# ...
 # 回退方案:使用tesseract(如已安装)
 if ! command -v tesseract &> /dev/null; then
     echo ""
@@ -291,40 +293,40 @@ fi
 # 录屏转GIF动图
 OUTPUT_DIR="${HOME}/Desktop/gifs"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 INPUT_FILE=$1
 TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
-
+# ...
 if [ -z "$INPUT_FILE" ]; then
     echo "请先录制视频"
     echo "录制中..."
     INPUT_FILE="${OUTPUT_DIR}/temp_recording_${TIMESTAMP}.mov"
     screencapture -v "$INPUT_FILE"
 fi
-
+# ...
 OUTPUT_GIF="${OUTPUT_DIR}/output_${TIMESTAMP}.gif"
-
+# ...
 echo "转换 ${INPUT_FILE} -> ${OUTPUT_GIF}"
-
+# ...
 # 使用ffmpeg转换为GIF(优化大小)
 # 1. 先生成调色板
 ffmpeg -i "$INPUT_FILE" \
     -vf "fps=10,scale=800:-1:flags=lanczos,palettegen" \
     -y "${OUTPUT_DIR}/palette.png" 2>/dev/null
-
+# ...
 # 2. 使用调色板生成GIF
 ffmpeg -i "$INPUT_FILE" \
     -i "${OUTPUT_DIR}/palette.png" \
     -lavfi "fps=10,scale=800:-1:flags=lanczos [x]; [x][1:v] paletteuse" \
     -y "$OUTPUT_GIF" 2>/dev/null
-
+# ...
 # 清理调色板
 rm -f "${OUTPUT_DIR}/palette.png"
-
+# ...
 echo ""
 echo "GIF已生成: ${OUTPUT_GIF}"
 echo "文件大小: $(du -h "$OUTPUT_GIF" | cut -f1)"
-
+# ...
 # 清理临时视频
 [ -f "${OUTPUT_DIR}/temp_recording_"*".mov" ] && rm -f "${OUTPUT_DIR}/temp_recording_"*".mov"
 ```
@@ -341,11 +343,11 @@ echo "文件大小: $(du -h "$OUTPUT_GIF" | cut -f1)"
 #!/bin/bash
 # 专业教程制作流程
 echo "=== 专业教程制作 ==="
-
+# ...
 PROJECT_NAME="${1:-tutorial}"
 OUTPUT_DIR="${HOME}/Desktop/tutorials/${PROJECT_NAME}"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 # 1. 录制屏幕
 echo "1. 开始录制(带音频)..."
 echo "   按 Ctrl+C 停止"
@@ -361,7 +363,7 @@ for i in 1 2 3; do
     sleep 5
     screencapture "${OUTPUT_DIR}/keyframe_${i}.png"
 done
-
+# ...
 echo ""
 echo "教程素材制作完成"
 echo "输出目录: ${OUTPUT_DIR}"
@@ -374,30 +376,30 @@ ls -la "$OUTPUT_DIR"
 # 自动化测试截图(定时捕获应用状态)
 OUTPUT_DIR="${HOME}/Desktop/test-screenshots"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 echo "=== 自动化测试截图 ==="
 echo "每30秒截图一次,持续5分钟"
 echo ""
-
+# ...
 START=$(date +%s)
 DURATION=300  # 5分钟
 INTERVAL=30
 COUNT=0
-
+# ...
 while true; do
     ELAPSED=$(( $(date +%s) - START ))
     [ "$ELAPSED" -ge "$DURATION" ] && break
-
+# ...
     COUNT=$((COUNT + 1))
     TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
     FILE="${OUTPUT_DIR}/test_${COUNT}_${TIMESTAMP}.png"
-
+# ...
     screencapture "$FILE"
     echo "  [${COUNT}] ${FILE} ($(du -h "$FILE" | cut -f1))"
-
+# ...
     sleep "$INTERVAL"
 done
-
+# ...
 echo ""
 echo "测试截图完成: ${COUNT}张"
 echo "总大小: $(du -sh "$OUTPUT_DIR" | cut -f1)"
@@ -409,18 +411,18 @@ echo "总大小: $(du -sh "$OUTPUT_DIR" | cut -f1)"
 # 截图并OCR转换为文本文档
 OUTPUT_DIR="${HOME}/Desktop/ocr-docs"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 echo "=== 截图OCR文档化 ==="
 echo "选择包含文字的区域进行截图..."
 echo ""
-
+# ...
 # 截图
 TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
 IMAGE="${OUTPUT_DIR}/doc_${TIMESTAMP}.png"
 screencapture -i "$IMAGE"
-
+# ...
 [ ! -f "$IMAGE" ] && echo "取消" && exit 1
-
+# ...
 # OCR处理
 echo "正在识别文字..."
 # (调用OCR识别功能)
@@ -453,7 +455,7 @@ echo "  文本: ${IMAGE%.png}.txt"
 ```bash
 # 免费版:基础截图
 screencapture output.png
-
+# ...
 # 专业版:截图+OCR
 screencapture -i output.png && python3 ocr.py output.png
 ```
@@ -462,7 +464,7 @@ screencapture -i output.png && python3 ocr.py output.png
 ## 示例
 ### 专业版功能矩阵
 | 功能 | 免费版 | 专业版 | 说明 |
-|:-----|:-------|:-------|:-----|
+|---:|---:|---:|---:|
 | 全屏截图 | 支持 | 支持 | 基础功能 |
 | 区域截图 | 支持 | 支持 | 交互选择 |
 | 窗口截图 | 支持 | 支持 | 窗口捕获 |
@@ -476,7 +478,7 @@ screencapture -i output.png && python3 ocr.py output.png
 
 ### 支持的图片格式
 | 格式 | 扩展名 | 特点 | 适用场景 |
-|:-----|:-------|:-----|:---------|
+|:---:|:---:|:---:|:---:|
 | PNG | .png | 无损压缩,文件大 | 截图默认格式 |
 | JPG | .jpg/.jpeg | 有损压缩,文件小 | 照片类截图 |
 | HEIC | .heic | 高效压缩 | macOS原生格式 |
@@ -514,7 +516,7 @@ screencapture -i output.png && python3 ocr.py output.png
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | screencapture | 截图工具 | 必需 | macOS系统自带 |
 | sips | 图片处理 | 必需 | macOS系统自带 |
 | ffmpeg | 视频/音频处理 | 推荐 | `brew install ffmpeg` |
@@ -534,7 +536,7 @@ screencapture -i output.png && python3 ocr.py output.png
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # 定时任务设置指南（免费版）
 
 > **不是教你写cron表达式，而是教你完整配置一个定时任务。调度类型、会话模式、投递通道，配置细节一网打尽。**
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 定时任务设置指南(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -149,7 +150,7 @@ skill-platform cron add \
 JSON Schema字段速查：
 
 | 字段 | 类型 | 必填 | 说明 |
-|------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | `name` | string | 是 | 作业名称 |
 | `schedule.kind` | enum | 是 | `at` / `every` / `cron` |
 | `schedule.at` | string | 条件 | kind=at时指定，ISO时间或相对时间 |
@@ -172,7 +173,7 @@ JSON Schema字段速查：
 ### 三种调度类型
 
 | 类型 | 字段 | 适用场景 | 示例 |
-|------|------|----------|------|
+|---:|---:|---:|---:|
 | **一次性** | `schedule.kind: "at"` | 单次提醒、未来事件 | `"2026-07-20T10:00:00Z"` 或 `"20m"` |
 | **固定间隔** | `schedule.kind: "every"` | 周期性轮询、心跳检查 | `everyMs: 3600000`（1小时） |
 | **Cron表达式** | `schedule.kind: "cron"` | 复杂时间规则 | `expr: "0 7 * * *"`（每天7点） |
@@ -199,7 +200,7 @@ JSON Schema字段速查：
 ### 双会话模式
 
 | 模式 | 用途 | payload类型 | 上下文继承 |
-|------|------|-------------|------------|
+|:---:|:---:|:---:|:---:|
 | **main**（主会话） | 系统事件，融入正常心跳流程 | `systemEvent` | 继承主会话上下文 |
 | **isolated**（独立会话） | 后台任务，不污染主会话历史 | `agentTurn` | 独立上下文 |
 
@@ -216,7 +217,7 @@ JSON Schema字段速查：
 ### 基础投递配置
 
 | 模式 | 说明 | 适用场景 |
-|------|------|----------|
+|:------|------:|:------|
 | `announce` | 投递到指定频道，并在主会话发送简短摘要 | 需要外部通知的任务 |
 | `none` | 仅内部执行，无投递 | 仅需内部记录的任务 |
 
@@ -227,7 +228,7 @@ JSON Schema字段速查：
 ```bash
 # Telegram 投递
 --channel telegram --to "+8613800138000"
-
+# ...
 # Discord 投递
 --channel discord --to "channel:1476104553148452958"
 ```
@@ -241,16 +242,16 @@ JSON Schema字段速查：
 ```bash
 # 列出所有作业
 skill-platform cron list
-
+# ...
 # 立即运行指定作业（不等待调度）
 skill-platform cron run <job-id>
-
+# ...
 # 查看作业的运行历史（最近10次）
 skill-platform cron runs --id <job-id> --limit 10
-
+# ...
 # 编辑作业的message
 skill-platform cron edit <job-id> --message "新提示词"
-
+# ...
 # 删除作业
 skill-platform cron remove <job-id>
 ```
@@ -364,7 +365,7 @@ skill-platform cron add \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Agent Gateway | 运行时 | 必需 | Agent平台内置 |
 | skill-platform CLI | 工具 | 必需 | Agent平台内置 |
 | Telegram Bot | 投递通道 | 否 | 注册Telegram Bot获取 |
@@ -434,22 +435,22 @@ skill-platform cron add \
 ### 示例1：基础用法
 
 ```
-### 60秒上手（创建一次性提醒）
-
+### 60秒上手（创建一次性提醒）(补充)
+# ...
 最小化配置，立即创建一个主会话的一次性提醒：
-
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -466,3 +467,4 @@ skill-platform cron add \
   "error": null
 }
 ```
+# ...

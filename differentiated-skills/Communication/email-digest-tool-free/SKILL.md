@@ -25,8 +25,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
-
 # 邮件日报免费版
 
 **版本**: 1.0.0
@@ -98,7 +99,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 邮件日报免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -106,13 +107,13 @@ suggested_price: 29.9
 ```bash
 # 使用已登录的浏览器会话打开 Gmail
 browser-use --browser real open https://mail.google.com
-
+# ...
 # 等待页面加载
 sleep 3
-
+# ...
 # 获取邮箱当前状态
 browser-use state
-
+# ...
 # 截图保存收件箱
 browser-use screenshot emails_$(date +%Y%m%d).png
 ```
@@ -198,28 +199,28 @@ browser-use screenshot daily_digest.png
 
 ```bash
 #!/bin/bash
-
+# ...
 DATE=$(date +%Y-%m-%d)
 TIME=$(date +%H:%M:%S)
 OUTPUT_DIR="./email_summaries"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 echo "=========================================="
 echo "📧 邮件日报生成中..."
 echo "日期: $DATE $TIME"
 echo "=========================================="
-
+# ...
 browser-use --browser real open https://mail.google.com
 sleep 3
-
+# ...
 echo ""
 echo "📋 当前邮箱状态:"
 browser-use state
-
+# ...
 echo ""
 echo "📸 保存截图..."
 browser-use screenshot "$OUTPUT_DIR/inbox_$DATE.png"
-
+# ...
 echo ""
 echo "📊 邮件统计:"
 browser-use eval "
@@ -233,7 +234,7 @@ browser-use eval "
   });
 })()
 "
-
+# ...
 echo ""
 echo "✅ 完成！截图保存至: $OUTPUT_DIR/inbox_$DATE.png"
 browser-use close
@@ -246,7 +247,7 @@ browser-use close
 ### 支持的邮箱服务
 
 | 邮箱服务 | 登录 URL | 收件箱 URL |
-|:---------|:---------|:-----------|
+|:-----|:-----|:-----|
 | Gmail | https://accounts.google.com | https://mail.google.com |
 | Outlook | https://login.live.com | https://outlook.live.com |
 | QQ邮箱 | https://mail.qq.com | https://mail.qq.com |
@@ -260,7 +261,7 @@ browser-use close
 # 自定义输出目录
 OUTPUT_DIR="$HOME/Documents/email-digests"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 # 截图命名规则
 SCREENSHOT_NAME="inbox_$(date +%Y%m%d_%H%M%S).png"
 ```
@@ -271,18 +272,18 @@ SCREENSHOT_NAME="inbox_$(date +%Y%m%d_%H%M%S).png"
 
 ```bash
 browser-use --headed open https://accounts.google.com
-
+# ...
 # 查看页面元素
 browser-use state
-
+# ...
 # 输入邮箱
 browser-use input <email_input_index> "your-email@gmail.com"
 browser-use click <next_button_index>
-
+# ...
 # 输入密码
 browser-use input <password_input_index> "your-password"
 browser-use click <login_button_index>
-
+# ...
 # 打开邮箱
 browser-use open https://mail.google.com
 ```
@@ -300,7 +301,7 @@ browser-use open https://mail.google.com
 ```bash
 # 安全做法：复用会话
 browser-use --browser real open https://mail.google.com
-
+# ...
 # 完成后关闭
 browser-use close
 ```
@@ -312,7 +313,7 @@ browser-use close
 DAILY_DIR="./email_summaries/$(date +%Y/%m)"
 mkdir -p "$DAILY_DIR"
 browser-use screenshot "$DAILY_DIR/inbox_$(date +%d).png"
-
+# ...
 # 定期清理旧截图（保留30天）
 find ./email_summaries -name "*.png" -mtime +30 -delete
 ```
@@ -365,7 +366,7 @@ browser-use --browser real open https://mail.google.com
 ```bash
 uv pip install browser-use[cli]
 browser-use install
-
+# ...
 # 验证安装
 browser-use --version
 ```
@@ -396,25 +397,25 @@ browser-use screenshot inbox.png
 ==========================================
 📧 邮件日报 - 2026-07-18
 ==========================================
-
+# ...
 📊 统计概览:
 - 未读邮件: 12 封
 - 可见邮件: 50 封
 - 截图: inbox_20260718.png
-
+# ...
 📬 重要未读邮件:
 1. 来自 boss@company.com
    主题: 项目进度汇报 - 紧急
    时间: 09:30
-
+# ...
 2. 来自 finance@bank.com
    主题: 账单提醒
    时间: 08:15
-
+# ...
 💡 建议操作:
 - 回复 boss@company.com 的邮件
 - 处理需要审批的邮件
-
+# ...
 ==========================================
 ```
 
@@ -432,7 +433,7 @@ browser-use screenshot inbox.png
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | browser-use | CLI工具 | 必需 | `uv pip install browser-use[cli]` |
 | Chrome 浏览器 | 浏览器 | 必需 | 官方网站下载安装 |
@@ -451,9 +452,8 @@ browser-use screenshot inbox.png
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -23,15 +23,16 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "YouTube,视频,媒体"
 ---
-
 YouTube 内容分析专业版是一款面向企业团队与内容研究机构的高级字幕提取与分析平台。在免费版单视频字幕提取能力之上，专业版扩展了批量提取、频道监控、多语言对比、关键词追踪等企业级能力。
 
 专业版采用任务队列架构，支持并行提取、失败重试、断点续传，可稳定处理 50+ 视频的批量提取任务。同时完全兼容免费版配置，已有项目可无缝迁移。
 
 ### 免费版与专业版能力对比
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 单视频字幕提取 | 支持 | 支持 |
 | 自动字幕 | 支持 | 支持 |
 | CC 字幕 | 支持 | 支持 |
@@ -56,7 +57,7 @@ YouTube 内容分析专业版是一款面向企业团队与内容研究机构的
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | YouTube字幕提取-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -161,13 +162,11 @@ python3 batch_extract.py --config /path/to/batch-extract.json --parallel 8
 
 **频道监控配置 `channel-monitor.yaml`：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 **执行命令：**
 
 ```bash
 python3 channel_monitor.py --config /path/to/channel-monitor.yaml --daemon
-
+# ...
 python3 channel_monitor.py --config /path/to/channel-monitor.yaml --check-now
 ```
 
@@ -226,7 +225,7 @@ python3 keyword_tracker.py --config /path/to/keyword-config.json --parallel 8
 ### 第一步：环境检查
 ```bash
 python3 --version
-
+# ...
 yt-dlp --version
 ```
 
@@ -271,8 +270,6 @@ python3 keyword_tracker.py \
 > 详细内容已移至 `references/detail.md` - ### 完整配置文件模板
 ### 时间戳标记格式
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 频道监控配置
 ```yaml
 channels:
@@ -286,7 +283,7 @@ channels:
 ## 最佳实践
 ### 1. 并行提取数调优
 | 网络带宽 | 建议并行数 | 单视频耗时 |
-|:---------|:-----------|:-----------|
+|---:|---:|---:|
 | 10 Mbps | 2-3 | 5-10 秒 |
 | 50 Mbps | 4-6 | 3-5 秒 |
 | 100 Mbps+ | 6-8 | 1-3 秒 |
@@ -308,7 +305,7 @@ python3 keyword_tracker.py \
 
 ### 4. 结果导出格式选择
 | 格式 | 适用场景 | 特点 |
-|:-----|:---------|:-----|
+|:---:|:---:|:---:|
 | JSON | 程序处理 | 结构化，含元数据 |
 | CSV | 表格分析 | 适合 Excel 处理 |
 | Markdown | 人工阅读 | 可读性最佳 |
@@ -322,7 +319,7 @@ python3 keyword_tracker.py \
 
 ```bash
 python3 batch_extract.py --retry-failed /tmp/extract-queue.json
-
+# ...
 python3 batch_extract.py --resume /tmp/extract-queue.json
 ```
 
@@ -354,7 +351,7 @@ python3 batch_extract.py \
 
 ```bash
 python3 keyword_tracker.py --config config.json --output report.csv
-
+# ...
 python3 keyword_tracker.py --config config.json --output report.json
 ```
 
@@ -391,7 +388,7 @@ python3 search_engine.py \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | yt-dlp | 命令行工具 | 必需 | `pip install yt-dlp` | 2023.0+ |
 | requests | Python 库 | 必需 | `pip install requests` | 2.25+ |
@@ -402,7 +399,7 @@ python3 search_engine.py \
 #### 完整安装命令
 ```bash
 pip3 install yt-dlp requests pyyaml whoosh
-
+# ...
 python3 --version
 yt-dlp --version
 python3 -c "import requests; print('requests ready')"
@@ -433,7 +430,7 @@ yt-dlp --cookies /path/to/cookies.txt "URL"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

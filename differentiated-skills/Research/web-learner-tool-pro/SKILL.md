@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
 自主学习助手专业版是企业级的知识获取与管理平台。在完整兼容免费版所有搜索和学习能力的基础上,专业版引入了批量主题学习、知识库管理与版本控制、定时知识更新、团队协作、自定义学习策略等高级能力,适用于企业研发情报追踪、大规模知识采集、行业知识积累等专业场景。
 
@@ -33,7 +35,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 自主学习助手专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -49,11 +51,11 @@ pricing_model: "per_use"
   "sources_per_topic": 5,
   "language": "zh-CN"
 }
-
+# ...
 web-learner batch learn batch_learning.json
-
+# ...
 web-learner batch status
-
+# ...
 web-learner batch export --format json --output knowledge_batch.json
 ```
 
@@ -71,16 +73,16 @@ web-learner knowledge add \
   --content "学习到的内容" \
   --sources "url1,url2,url3" \
   --tags "AI,技术"
-
+# ...
 web-learner knowledge query --keyword "深度学习" --tag "AI"
-
+# ...
 web-learner knowledge version \
   --create --message "更新 AI 领域知识"
-
+# ...
 web-learner knowledge version --list
-
+# ...
 web-learner knowledge version --diff v1.0 v1.1
-
+# ...
 web-learner knowledge merge --deduplicate --threshold 0.8
 ```
 
@@ -104,11 +106,11 @@ web-learner knowledge merge --deduplicate --threshold 0.8
     }
   ]
 }
-
+# ...
 web-learner schedule start update_schedule.json
-
+# ...
 web-learner schedule history
-
+# ...
 web-learner schedule changes --period "2026-07"
 ```
 
@@ -126,7 +128,7 @@ web-learner learn deep \
   --sources 10 \
   --cross-validate true \
   --output deep_knowledge.json
-
+# ...
 web-learner integrate \
   --input sources/ \
   --dimensions "facts,opinions,data,timeline" \
@@ -143,11 +145,11 @@ web-learner integrate \
 
 ```bash
 web-learner team create --name "research_team"
-
+# ...
 web-learner team share --knowledge knowledge_001.json --team "research_team"
-
+# ...
 web-learner team collaborate --knowledge-base "shared_kb" --mode "edit"
-
+# ...
 web-learner team permissions \
   --role "editor" \
   --permissions "add,edit,delete"
@@ -167,7 +169,7 @@ web-learner config set-strategy \
   --sources-per-topic 5 \
   --cross-validate true \
   --language-priority "zh,en"
-
+# ...
 web-learner config set-scoring \
   --weights '{"relevance": 0.3, "credibility": 0.3, "freshness": 0.2, "completeness": 0.2}'
 ```
@@ -201,14 +203,12 @@ browser_start()
 ### 场景二:研究机构大规模知识采集
 某研究机构需要从互联网采集特定领域的系统化知识。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三:咨询公司行业知识积累
 某咨询公司需要为客户项目持续积累行业知识。
 
 ```bash
 web-learner knowledge create --name "client_project_kb" --category "industry_research"
-
+# ...
 cat > industry_learning.json << 'EOF'
 {
   "topics": [
@@ -221,9 +221,9 @@ cat > industry_learning.json << 'EOF'
   "schedule": "0 8 * * *"
 }
 EOF
-
+# ...
 web-learner schedule start industry_learning.json
-
+# ...
 web-learner report consulting \
   --knowledge-base "client_project_kb" \
   --template industry_analysis \
@@ -235,15 +235,13 @@ web-learner report consulting \
 ```bash
 cd ~/.skill-platform/workspace/skills/web-learner-tool-pro
 npm install
-
+# ...
 web-learner --version --edition
-
+# ...
 web-learner batch --help
 ```
 
 ### 第二步:配置知识库
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 第三步:运行首次批量学习
 ```bash
@@ -257,9 +255,9 @@ cat > first_batch.json << 'EOF'
   "concurrency": 3
 }
 EOF
-
+# ...
 web-learner batch learn first_batch.json
-
+# ...
 web-learner batch status
 web-learner batch export --output learnings.json
 ```
@@ -268,55 +266,51 @@ web-learner batch export --output learnings.json
 ## 示例
 ### 企业级配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 知识库配置
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 最佳实践
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 web_search("关键词")
 web_fetch("https://example.com")
-
+# ...
 web-learner batch learn batch.json
-
+# ...
 web-learner knowledge create --name "my_kb"
 ```
 
 ### 2. 批量学习的性能优化
 ```bash
 web-learner batch learn batch.json --concurrency 15
-
+# ...
 web-learner batch learn batch.json --cache-dir ./cache --skip-cached
-
+# ...
 web-learner batch learn large_batch.json --batch-size 50
 ```
 
 ### 3. 知识库的持续积累
 ```bash
 web-learner knowledge add --auto-from-batch --batch-id "batch_001"
-
+# ...
 web-learner knowledge organize --deduplicate --merge-similar
-
+# ...
 web-learner knowledge version --create --message "定期更新"
 ```
 
 ### 4. 团队协作的知识管理
 ```bash
 web-learner team assign --task "learn_topic" --member "researcher1"
-
+# ...
 web-learner team collaborate --topic "AI进展" --members "r1,r2,r3"
-
+# ...
 web-learner team review --knowledge "k001" --reviewers "lead"
-
+# ...
 web-learner team publish --knowledge "k001" --kb "shared_kb"
 ```
 
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | Web 搜索 | 支持 | 支持 |
 | 网页抓取 | 支持 | 支持 |
 | 浏览器交互 | 支持 | 支持 |
@@ -362,7 +356,7 @@ web-learner config set-storage --type database --host localhost --port 5432
 
 ```bash
 web-learner team config set --conflict-detection true
-
+# ...
 web-learner team config set --conflict-strategy "merge"  # 合并
 web-learner team config set --conflict-strategy "manual"  # 手动解决
 ```
@@ -372,9 +366,9 @@ web-learner team config set --conflict-strategy "manual"  # 手动解决
 
 ```bash
 web-learner knowledge import --file external_kb.json
-
+# ...
 web-learner knowledge export --format json --output kb_export.json
-
+# ...
 web-learner config set-webhook --url "https://your-system.example.com/webhook"
 ```
 
@@ -387,7 +381,7 @@ web-learner config set-webhook --url "https://your-system.example.com/webhook"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | web_search | 搜索工具 | 推荐 | Agent 内置或 Brave Search API |
 | web_fetch | 网页抓取 | 必需 | Agent 内置 |
@@ -401,15 +395,15 @@ web-learner config set-webhook --url "https://your-system.example.com/webhook"
 
 ```bash
 BRAVE_API_KEY=your_brave_api_key
-
+# ...
 TEAM_API_TOKEN=your_team_api_token
-
+# ...
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=knowledge_base
 DB_USER=admin
 DB_PASSWORD=your_password
-
+# ...
 WEBHOOK_URL=https://your-system.example.com/webhook
 ```
 
@@ -423,7 +417,7 @@ WEBHOOK_URL=https://your-system.example.com/webhook
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Mongo管理工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力分类 | 支持 | 支持 |
-| 专业版 | 不支持 | 支持 |
-| Schema设计 | 不支持 | 支持 |
-| 分片键设计+数据分布 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Mongo管理工具专业版ngoDB企业级管理 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|:-----|:-----|:-----|
 | Schema设计 | 单机设计 | 分片键设计+数据分布 |
 | 高可用 | 无 | 副本集自动故障切换 |
 | 水平扩展 | 无 | 分片集群+均衡器调优 |
@@ -82,12 +84,12 @@ pricing_model: "monthly"
 ```javascript
 // 启用分片
 sh.enableSharding("mydb")
-
+// ...
 // 选择分片键（避免单调递增导致热点）
 // 错误：{createdAt: 1}（所有写入集中到一个分片）
 // 正确：{userId: 1, createdAt: 1}（哈希分布）
 sh.shardCollection("mydb.orders", {userId: "hashed"})
-
+// ...
 // 查看分片状态
 sh.status()
 db.orders.getShardDistribution()
@@ -107,7 +109,7 @@ rs.initiate({
         {_id: 2, host: "mongo3:27017", arbiterOnly: true} // 仲裁节点
     ]
 })
-
+// ...
 // 故障切换配置
 rs.conf().settings.electionTimeoutMillis = 10000  // 10秒超时
 rs.conf().settings.chainingAllowed = true          // 允许从节点链式复制
@@ -125,7 +127,7 @@ db.collection.createSearchIndex({
         {name: "chineseAnalyzer", charFilters: [], tokenizer: {type: "standard"}, tokenFilters: []}
     ]
 })
-
+// ...
 // 全文搜索查询
 db.collection.aggregate([
     {$search: {
@@ -145,7 +147,7 @@ db.collection.aggregate([
 const changeStream = db.collection.watch([
     {$match: {operationType: {$in: ["insert", "update", "delete"]}}}
 ], {fullDocument: "updateLookup"})
-
+// ...
 changeStream.on("change", (event) => {
     // 同步到下游
     syncToElasticsearch(event)
@@ -161,7 +163,7 @@ changeStream.on("change", (event) => {
 ```javascript
 // 分片集群连接（mongos路由）
 mongodb://mongos1:27017,mongos2:27017/mydb?replicaSet=rs0
-
+// ...
 // 副本集连接
 mongodb://mongo1:27017,mongo2:27017,mongo3:27017/mydb?replicaSet=rs0
 ```
@@ -171,10 +173,10 @@ mongodb://mongo1:27017,mongo2:27017,mongo3:27017/mydb?replicaSet=rs0
 ```javascript
 // 启用分片
 sh.enableSharding("mydb")
-
+// ...
 // 对集合分片
 sh.shardCollection("mydb.orders", {userId: "hashed"})
-
+// ...
 // 配置均衡器
 sh.setBalancerState(true)
 sh.startBalancer()
@@ -193,11 +195,10 @@ db.articles.createSearchIndex({
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | mongo-manager处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -256,9 +257,8 @@ db.articles.createSearchIndex({
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -271,9 +271,9 @@ db.articles.createSearchIndex({
 - **MongoDB**: 5.0+（推荐6.0+以使用Atlas Search等特性）
 - **mongosh**: 1.5+
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | MongoDB | 数据库 | 必需 | mongodb.com 官方下载 |
 | mongosh | 客户端 | 必需 | 随MongoDB附带 |
 | PyMongo | Python驱动 | 可选 | `pip install pymongo` |
@@ -298,7 +298,7 @@ db.articles.createSearchIndex({
 ### 分片键设计决策表
 
 | 数据特征 | 推荐分片键 | 示例 |
-|---------|-----------|------|
+|---:|:---|---:|
 | 用户数据，按用户查询 | `{userId: "hashed"}` | 用户订单 |
 | 时间序列数据，按时间范围查询 | `{timestamp: 1, deviceId: "hashed"}` | IoT数据 |
 | 地理分布数据 | `{region: 1, id: "hashed"}` | 多地部署 |
@@ -312,7 +312,7 @@ replication:
   replSetName: rs0
   oplogSizeMB: 2048       # oplog大小
   enableMajorityReadConcern: true
-
+# ...
 # 故障切换参数
 setParameter:
   electionTimeoutMillis: 10000
@@ -346,13 +346,13 @@ db.products.createSearchIndex({
 ```javascript
 // 使用resumeToken保证不丢事件
 let resumeToken = loadResumeToken() // 从持久化存储加载
-
+// ...
 const stream = db.collection.watch([], {
     resumeAfter: resumeToken,
     fullDocument: "updateLookup",
     maxAwaitTimeMS: 30000
 })
-
+// ...
 stream.on("change", (event) => {
     try {
         processEvent(event)
@@ -400,9 +400,8 @@ A：(1) 同构MongoDB使用Atlas Live Migration；(2) 异构系统使用Change S
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -42,6 +42,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Skill编写工具（专业版）
 
@@ -52,7 +54,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 模板库 | 基础模板 | 分类模板库 + 复用 |
 | 协作模式 | 个人 | 多人 + 审核 + 评论 |
 | 质量评估 | 审查清单 | 自动评分 + 多维评估 |
@@ -101,18 +103,18 @@ skill-writer-pro create \
   --template "utility-skill" \
   --category "数据处理" \
   --team "数据工具组"
-
+# ...
 # 邀请协作者
 skill-writer-pro invite --skill "data-validator" --members "writer-a,reviewer-b"
-
+# ...
 # 提交审核
 skill-writer-pro submit --skill "data-validator" --reviewer "reviewer-b"
-
+# ...
 # 审核反馈
 skill-writer-pro review --skill "data-validator" \
   --status "needs-revision" \
   --comment "适用关键词需补充'校验'与'验证'"
-
+# ...
 # 输出
 # 📊 技能生产流程
 # 创建: ✅ 基于模板 utility-skill
@@ -128,7 +130,7 @@ skill-writer-pro review --skill "data-validator" \
 ```bash
 # 执行质量评估
 skill-writer-pro assess --skill "data-validator"
-
+# ...
 # 输出
 # 📊 技能质量评估报告
 # 技能: data-validator
@@ -151,14 +153,14 @@ skill-writer-pro assess --skill "data-validator"
 ```bash
 # 搜索技能
 skill-writer-pro search --keyword "数据校验" --category "数据处理"
-
+# ...
 # 输出
 # 🔍 技能搜索结果
 # 1. data-validator (v1.2) - 数据校验工具
 #    评分: 92/100 | 下载: 1,234 | 团队: 数据工具组
 # 2. schema-checker (v2.0) - Schema 校验
 #    评分: 88/100 | 下载: 856 | 团队: API工具组
-
+# ...
 # 发现相关技能
 skill-writer-pro discover --related-to "data-validator"
 ```
@@ -174,26 +176,25 @@ skill-writer-pro discover --related-to "data-validator"
 ```bash
 # 1. 初始化专业版工作区
 skill-writer-pro init --workspace ~/skill-writer-pro
-
+# ...
 # 2. 创建技能（基于模板）
 skill-writer-pro create --name "my-skill" --template "utility-skill"
-
+# ...
 # 3. 协作编写
 skill-writer-pro invite --skill "my-skill" --members "writer-a"
-
+# ...
 # 4. 质量评估
 skill-writer-pro assess --skill "my-skill"
-
+# ...
 # 5. 提交审核与发布
 skill-writer-pro submit --skill "my-skill"
 skill-writer-pro publish --skill "my-skill" --version "1.0.0"
-
+# ...
 # 6. 搜索与发现
 skill-writer-pro search --keyword "工具"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配置示例
 
@@ -240,7 +241,7 @@ report:
 ## 技能模板库
 
 | 模板名 | 适用场景 | 包含内容 |
-|:-------|:---------|:---------|
+|:-----|:-----|:-----|
 | utility-skill | 通用工具技能 | SKILL.md + scripts/ |
 | integration-skill | 集成类技能 | SKILL.md + REFERENCE.md + scripts/ |
 | analysis-skill | 分析类技能 | SKILL.md + REFERENCE.md + EXAMPLES.md |
@@ -288,7 +289,7 @@ A：支持。搜索索引支持模糊匹配与相关性排序。
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需 | 官方站点下载 |
 | Git | 工具 | 可选（版本控制） | 系统自带 |
@@ -303,9 +304,8 @@ A：支持。搜索索引支持模糊匹配与相关性排序。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

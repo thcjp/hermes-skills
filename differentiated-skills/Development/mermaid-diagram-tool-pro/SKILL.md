@@ -34,8 +34,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Mermaid图表工具(专业版)
 
 ## 概述
@@ -49,7 +50,7 @@ Mermaid图表工具(专业版)面向团队与企业,在兼容免费版7种基础
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|----|---|------|
 | 基础类型 | 流程图、时序图、状态图、脑图、ER图、时间线、用户旅程 | 与免费版一致 |
 | 进阶类型 | C4架构图、Git图、类图、需求图、Sankey图 | 免费版无 |
 | 复杂图 | 多节点子图分组、跨图引用、注释分段 | 免费版仅简单图 |
@@ -143,7 +144,7 @@ node （请参考skill目录中的脚本文件） \
   --output docs/diagrams/ \
   --format mermaid \
   --embed
-
+# ...
 # 输出
 # docs/diagrams/prd-001-用户注册.mmd
 # docs/diagrams/prd-001-登录流程.mmd
@@ -191,10 +192,10 @@ node （请参考skill目录中的脚本文件） \
 ```bash
 # 初始化团队图表规范目录
 mkdir -p diagrams theme templates scripts
-
+# ...
 # 复制品牌主题模板
 cp config/brand-theme.example.yaml theme/brand-theme.yaml
-
+# ...
 # 复制图表模板库
 cp -r config/templates/* templates/
 ```
@@ -267,7 +268,7 @@ templates/
 ### 自定义主题变量
 
 | 变量 | 说明 | 示例 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `primaryColor` | 主色 | `#1a73e8` |
 | `primaryTextColor` | 主色文字 | `#ffffff` |
 | `primaryBorderColor` | 主色边框 | `#1557b0` |
@@ -392,7 +393,7 @@ node （请参考skill目录中的脚本文件） \
 ### 5. CI校验最佳实践
 
 | 校验项 | 工具 | 阻断级别 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 语法错误 | `mmdc` 渲染 | 阻断 |
 | 嵌入同步 | `validate-embed.mjs` | 阻断 |
 | 主题一致 | `check-theme.mjs` | 警告 |
@@ -437,7 +438,7 @@ C4是一种架构描述方法,分Context/Container/Component/Code四层。本工
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | @mermaid-js/mermaid-cli | npm包 | 必需 | `npm i -g @mermaid-js/mermaid-cli` |
 | puppeteer | npm包 | 必需 | mmdc 依赖,自动安装 |
@@ -457,9 +458,8 @@ C4是一种架构描述方法,分Context/Container/Component/Code四层。本工
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

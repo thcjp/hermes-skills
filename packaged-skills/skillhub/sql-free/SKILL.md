@@ -18,16 +18,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 数据存储
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # SQL查询助手(免费版)
 
 SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQLServer，覆盖自然语言转SQL、性能优化与Schema设计。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | SQL查询助手(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQ
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -48,7 +49,6 @@ SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQ
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -106,7 +106,7 @@ HAVING total_spent > 1000;
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|---:|---:|---:|
 | 查询生成 | 自然语言问题+表结构 | 可执行SQL+方言适配 |
 | 性能调优 | 慢查询SQL+表数据量 | EXPLAIN分析+优化建议+重写SQL |
 | Schema设计 | 业务需求描述 | 表结构DDL+索引策略+ER图 |
@@ -153,7 +153,7 @@ ORDER BY user_id, month;
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | `ERROR 1146: Table doesn't exist` | 表名拼写错误或未选择数据库 | 检查表名大小写（Linux下MySQL区分大小写），执行 `SHOW TABLES;` 确认表存在，执行 `USE database_name;` 选择数据库 |
 | `ERROR 1052: Column 'id' in field list is ambiguous` | JOIN多表存在同名字段未指定表前缀 | 为所有字段添加表别名前缀，如 `SELECT u.id, o.id FROM users u JOIN orders o` |
 | 查询超时或极慢 | 缺少索引或全表扫描大数据量 | 执行 `EXPLAIN` 检查执行计划，为WHERE/JOIN条件添加索引，避免 `SELECT *`，考虑分页查询 |
@@ -175,7 +175,6 @@ ORDER BY user_id, month;
 - 无法直接连接数据库执行查询（需用户提供数据库客户端或连接）
 - 生成的SQL需用户自行验证执行结果
 - 性能优化建议基于执行计划分析，实际效果受数据分布影响
-
 
 ## 升级提示
 

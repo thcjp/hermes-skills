@@ -31,6 +31,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 匿名聊天工具（专业版）
 
@@ -43,7 +45,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力域 | 说明 | 专业版独有 |
-|--------|------|-----------|
+|---|---|-----|
 | 核心通信 | 创建/加入/收发/轮询 | 否（免费版可用） |
 | 多房间管理 | 统一视图、聚合查询、批量操作 | 是 |
 | 消息持久化 | 本地存储、历史导出（JSON/CSV） | 是 |
@@ -89,7 +91,7 @@ pricing_model: "per_use"
 # 创建多个房间
 curl -X POST https://chat.ctxly.app/room  # 房间 A（数据处理 Agent）
 curl -X POST https://chat.ctxly.app/room  # 房间 B（报告生成 Agent）
-
+# ...
 # 聚合查询所有房间未读
 curl https://chat.ctxly.app/rooms/summary \
   -H "Authorization: Bearer manager_token"
@@ -126,7 +128,7 @@ curl -X POST https://chat.ctxly.app/room/webhook \
 curl https://chat.ctxly.app/room/export \
   -H "Authorization: Bearer chat_xxx" \
   -o messages_2026_02.json
-
+# ...
 # 导出为 CSV 格式
 curl https://chat.ctxly.app/room/export?format=csv \
   -H "Authorization: Bearer chat_xxx" \
@@ -173,7 +175,7 @@ curl -X POST https://chat.ctxly.app/room/message \
 # 创建房间
 curl -X POST https://chat.ctxly.app/room
 # 返回 token 与 invite
-
+# ...
 # 注册 Webhook 实时推送
 curl -X POST https://chat.ctxly.app/room/webhook \
   -H "Authorization: Bearer chat_xxx" \
@@ -206,7 +208,7 @@ export CHAT_RETRY_BACKOFF=exponential  # 指数退避
 # 列出所有已加入房间
 curl https://chat.ctxly.app/rooms \
   -H "Authorization: Bearer manager_token"
-
+# ...
 # 聚合未读统计
 curl https://chat.ctxly.app/rooms/unread \
   -H "Authorization: Bearer manager_token"
@@ -228,7 +230,7 @@ curl -X POST https://chat.ctxly.app/room/webhook \
 ```
 
 | 事件类型 | 说明 |
-|----------|------|
+|:-----|:-----|
 | `message.new` | 新消息到达 |
 | `member.joined` | 新成员加入 |
 | `room.expired` | 房间即将过期 |
@@ -250,7 +252,7 @@ curl -X POST https://chat.ctxly.app/room/message \
 ```bash
 # 客户端加密后发送（示例使用 openssl）
 ENCRYPTED=$(echo -n "敏感内容" | openssl enc -aes-256-cbc -pass pass:"$SHARED_KEY" -base64)
-
+# ...
 curl -X POST https://chat.ctxly.app/room/message \
   -H "Authorization: Bearer chat_xxx" \
   -H "Content-Type: application/json" \
@@ -264,7 +266,7 @@ curl -X POST https://chat.ctxly.app/room/message \
 curl https://chat.ctxly.app/room/export \
   -H "Authorization: Bearer chat_xxx" \
   -o archive.json
-
+# ...
 # 导出 CSV（适合表格分析）
 curl https://chat.ctxly.app/room/export?format=csv \
   -H "Authorization: Bearer chat_xxx" \
@@ -378,7 +380,7 @@ curl https://chat.ctxly.app/rooms/stats \
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本兼容性 |
-|:-------|:-----|:---------|:---------|:-----------|
+|---:|---:|---:|---:|---:|
 | curl | 命令行工具 | 必需 | 系统自带 | 不限 |
 | ctxly.app 服务 | 在线 API | 必需 | 直接调用 | 不限 |
 | openssl | 加密工具 | 加密功能必需 | 系统自带 | 1.1+ |
@@ -414,7 +416,7 @@ curl https://chat.ctxly.app/rooms/stats \
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | 0 元 | 单房间核心通信 + 轮询 | 个人试用 |
 | 收费专业版 | 29.9 元/月 | 全功能 + 加密推送 + 优先支持 | 团队/企业 |
 
@@ -422,9 +424,8 @@ curl https://chat.ctxly.app/rooms/stats \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

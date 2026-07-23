@@ -29,8 +29,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 游戏开发助手 (免费版)
 
 ## 概述
@@ -42,7 +43,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 游戏概念设计 | 概念文档与市场分析 | 支持 |
 | GDD 撰写 | 完整设计文档 | 支持 |
 | 编码指导 | 架构与代码示例 | 支持 |
@@ -87,58 +88,58 @@ suggested_price: 99.9
 
 ```markdown
 # 游戏设计文档 (GDD)
-
+# ...
 ## 不适用场景
-
+# ...
 以下场景游戏开发助手免费版不适合处理：
-
+# ...
 - 无明确技术栈的模糊需求
 - 纯架构设计决策
 - 运维部署管理
-
+# ...
 ## 触发条件
-
+# ...
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求。
-
+# ...
 ## 1. 游戏概述
 - 游戏名称: [名称]
 - 类型: [RPG/动作/策略/...]
 - 平台: [PC/移动/主机/...]
 - 目标受众: [年龄与玩家类型]
 - 一句话描述: [核心卖点]
-
+# ...
 ## 2. 核心玩法
 - 核心循环: [探索 → 战斗 → 收集 → 升级]
 - 独特卖点 (USP): [与同类游戏的差异]
 - 玩家动机: [成就感/探索/社交/...]
 - 失败状态: [玩家失败的条件与惩罚]
-
+# ...
 ## 3. 游戏系统
 ### 3.1 角色系统
 - 属性: [生命/攻击/防御/速度/...]
 - 等级: [最大等级、经验曲线]
 - 技能树: [分支结构、解锁条件]
-
+# ...
 ### 3.2 战斗系统
 - 类型: [实时/回合/动作]
 - 伤害公式: [基础伤害 = 攻击力 × 技能倍率 - 防御力]
 - 状态效果: [中毒/眩晕/增益/...]
-
+# ...
 ### 3.3 经济系统
 - 货币: [金币/钻石/...]
 - 获取: [战斗/任务/出售]
 - 消耗: [购买/升级/解锁]
-
+# ...
 ## 4. 内容设计
 - 主线剧情: [章节大纲]
 - 关卡设计: [难度曲线、关卡数量]
 - 角色 NPC: [主要角色列表]
-
+# ...
 ## 5. 美术与音效
 - 美术风格: [像素/手绘/3D/...]
 - 音乐风格: [史诗/轻松/紧张/...]
 - 音效: [环境/UI/战斗]
-
+# ...
 ## 6. 技术规格
 - 引擎: [Unity/Godot/Unreal/...]
 - 目标性能: [60FPS @ 1080p]
@@ -157,23 +158,23 @@ public class PlayerModel
     public int Health { get; private set; }
     public int MaxHealth { get; private set; }
     public int Level { get; private set; }
-
+# ...
     public event Action<int, int> HealthChanged;
     public event Action<int> LevelUp;
-
+# ...
     public PlayerModel(int maxHealth)
     {
         MaxHealth = maxHealth;
         Health = maxHealth;
         Level = 1;
     }
-
+# ...
     public void TakeDamage(int damage)
     {
         Health = Math.Max(0, Health - damage);
         HealthChanged?.Invoke(Health, MaxHealth);
     }
-
+# ...
     public void GainExperience(int xp)
     {
         if (xp >= Level * 100)
@@ -183,41 +184,41 @@ public class PlayerModel
         }
     }
 }
-
+# ...
 // View: 显示层
 public class PlayerView : Node
 {
     private ProgressBar _healthBar;
     private Label _levelLabel;
-
+# ...
     public override void _Ready()
     {
         _healthBar = GetNode<ProgressBar>("HealthBar");
         _levelLabel = GetNode<Label>("LevelLabel");
     }
-
+# ...
     public void UpdateHealth(int current, int max)
     {
         _healthBar.Value = (float)current / max * 100;
     }
-
+# ...
     public void UpdateLevel(int level)
     {
         _levelLabel.Text = $"Lv.{level}";
     }
 }
-
+# ...
 // Controller: 控制层
 public class PlayerController : Node
 {
     private PlayerModel _model;
     private PlayerView _view;
-
+# ...
     public override void _Ready()
     {
         _model = new PlayerModel(100);
         _view = GetNode<PlayerView>("PlayerView");
-
+# ...
         _model.HealthChanged += _view.UpdateHealth;
         _model.LevelUp += _view.UpdateLevel;
     }
@@ -249,7 +250,7 @@ test_plan = {
         "load_time_seconds": 5,
     },
 }
-
+# ...
 # 发布清单
 release_checklist = [
     "所有 P0/P1 缺陷已修复",
@@ -272,7 +273,7 @@ release_checklist = [
 # 创建项目目录
 mkdir -p ~/my-game/{design,src,assets,tests,docs}
 cd ~/my-game
-
+# ...
 # 初始化设计文档
 cat > design/GDD.md << 'EOF'
 # 游戏设计文档
@@ -313,7 +314,6 @@ milestones:
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 项目配置文件
@@ -325,21 +325,21 @@ project:
   version: "0.1.0"
   engine: godot
   target_platforms: [windows, macos, linux]
-
+# ...
 team:
   size: 1-3
   roles: [designer, programmer, artist]
-
+# ...
 development:
   version_control: git
   branches: [main, dev, feature/*]
   code_review: optional
-
+# ...
 testing:
   framework: gotcha
   coverage_target: 80%
   playtest_schedule: "every_2_weeks"
-
+# ...
 release:
   platforms: [steam, itch_io]
   target_date: "2026-12-01"
@@ -380,7 +380,7 @@ MVP 原则:
 - 用最简资产验证玩法是否有趣
 - 尽早让真实玩家试玩
 - 根据反馈迭代,而非闭门造车
-
+# ...
 砍功能清单 (常见陷阱):
 - 多人模式 (除非核心玩法)
 - 复杂剧情 (除非叙事为核心)
@@ -398,7 +398,7 @@ git flow:
   feature/*:   # 功能分支
   hotfix/*:    # 紧急修复
   release/*:   # 发布准备
-
+# ...
 # 标签管理
 git tag -a v0.1.0 -m "Alpha 版本"
 git tag -a v0.5.0 -m "Beta 版本"
@@ -479,7 +479,7 @@ jobs:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Git | 版本控制 | 推荐 | git-scm.com 下载 |
 | 游戏引擎 | 开发工具 | 必需 | 按选择下载 |
@@ -489,7 +489,7 @@ jobs:
 ```bash
 # 免费版无需外部 API Key
 # 所有指导通过 Agent LLM 本地推理完成
-
+# ...
 # 可选: 项目默认配置
 export GAME_DEV_ENGINE="godot"
 export GAME_DEV_PROJECT_DIR="~/my-game"
@@ -503,9 +503,8 @@ export GAME_DEV_PROJECT_DIR="~/my-game"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

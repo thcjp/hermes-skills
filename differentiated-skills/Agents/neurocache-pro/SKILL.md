@@ -16,9 +16,11 @@ tools:
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 神经缓存增强（NeuroCache Pro）
 
@@ -98,7 +100,7 @@ depth=0 即时（<10ms，快速事实）、depth=1 上下文（~50ms，标准召
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 神经缓存增强处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -139,7 +141,7 @@ nmem stats
 ### 第 5 步：对话进行中存储与检索
 
 | 情境 | 动作 |
-|:---|:---|
+|:-----|:-----|
 | 做出决策 | `nmem_remember` type="decision" |
 | 发生错误 | `nmem_remember` type="error" |
 | 用户表达偏好 | `nmem_remember` type="preference" |
@@ -156,10 +158,9 @@ nmem stats
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入：** 用户问"上周部署为什么失败？"
 
@@ -200,7 +201,7 @@ nmem stats
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---|:---|:---|
+|---:|---:|---:|
 | 召回为空 | 大脑为空或路径错误 | `nmem stats` 确认非空，检查大脑路径，确认已存入记忆 |
 | 召回太慢 | 神经元规模过大 | 降低 depth 到 1-2；启用自动剪枝；超 10000 考虑分区 |
 | 矛盾未检测 | 记忆 type/tags 不正确 | 检查 CONTRADICTS 突触是否创建，确认记忆 type/tags 正确 |
@@ -213,7 +214,7 @@ nmem stats
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|:---:|:---:|:---:|:---:|
 | Agent 平台（Claude Code/Cursor/Codex 等） | 运行环境 | 必需 | 安装对应 Agent |
 | Python 3.9+ | 运行时 | 必需 | python.org 安装（运行 neural-memory 包） |
 | neural-memory | Python 包 | 必需 | `pip install neural-memory` |

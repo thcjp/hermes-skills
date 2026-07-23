@@ -28,14 +28,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 数据库设计与运维
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据库设计与运维处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -43,13 +44,13 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 概述
 
@@ -63,7 +64,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -81,7 +82,7 @@ export API_KEY="your_api_key_here"
 
 ### 连接管理陷阱
 | 陷阱 | 表现 | 规避方案 |
-|------|------|---------|
+|:---:|:---:|:---:|
 | 连接池耗尽 | 应用静默挂起，无错误日志 | 设置最大连接数，监控连接池使用率 |
 | Serverless连接泄漏 | 每次调用打开新连接 | 使用连接池代理（`RDS Proxy`、`PgBouncer`） |
 | 连接阻塞Schema变更 | `ALTER TABLE` 等待所有事务完成 | 维护窗口期执行，或设置 `lock_timeout` |
@@ -89,8 +90,8 @@ export API_KEY="your_api_key_here"
 
 **输入**: 用户提供连接管理陷阱所需的指令和必要参数。
 **输出**: 返回连接管理陷阱的处理结果,包含执行状态码、结果数据和执行日志。### 事务陷阱
-| 陷阱 | 表现 | 规避方案 |
-|------|------|---------|
+| 陷阱(续)| 表现 | 规避方案 |
+|:-------|-------:|:-------|
 | 长事务锁膨胀 | 事务持锁过久，MVCC版本堆积 | 保持事务简短，避免事务内做HTTP调用 |
 | 只读事务阻塞清理 | 只读事务仍取快照，阻塞 `VACUUM` | Postgres 中设置 `statement_timeout`，及时关闭事务 |
 | 隐式自动提交差异 | 不同数据库自动提交行为不一致 | 显式使用 `BEGIN`/`COMMIT`，不依赖隐式行为 |
@@ -101,7 +102,7 @@ export API_KEY="your_api_key_here"
 **输出**: 返回事务陷阱的处理结果,包含执行状态码、结果数据和执行日志。### Schema变更安全策略
 
 | 操作 | 风险 | 安全方案 |
-|------|------|---------|
+|---:|:---|---:|
 | 带默认值加列 | 旧版MySQL/Postgres全表重写 | 先加 `NULL` 默认列，回填数据，再 `ALTER` 设默认值 |
 | 创建索引 | 部分数据库锁写操作 | Postgres 用 `CREATE INDEX CONCURRENTLY`，MySQL 8+ 用 `ONLINE` |
 | 重命名列 | 运行中应用引用旧列名报错 | 先加新列，迁移代码，再删旧列 |
@@ -110,7 +111,7 @@ export API_KEY="your_api_key_here"
 
 ### 备份与恢复
 | 陷阱 | 风险 | 最佳实践 |
-|------|------|---------|
+|:------:|--------|:-------|
 | 逻辑备份锁表 | `pg_dump`/`mysqldump` 锁表或丢失并发写入 | 使用一致性快照（`--snapshot` 或 `--single-transaction`） |
 | PITR不可用 | 未配置WAL/binlog保留 | 在需要之前配置WAL归档（`archive_mode=on`） |
 | 备份未验证 | 恢复时才发现备份损坏 | 定期从备份恢复到测试环境验证 |
@@ -119,8 +120,8 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供备份与恢复所需的指令和必要参数。
 **处理**: 解析备份与恢复的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回备份与恢复的处理结果,包含执行状态码、结果数据和执行日志。### 复制陷阱
-| 陷阱 | 表现 | 规避方案 |
-|------|------|---------|
+| 陷阱(续)(续)| 表现 | 规避方案 |
+|-----|:---:|----:|
 | 复制延迟导致脏读 | 从副本读取到过期数据 | 读取前检查复制延迟（`pg_stat_replication`） |
 | 副本写入破坏复制 | 写入副本导致复制中断 | 设置副本为只读（`hot_standby=on` + `default_transaction_read_only=on`） |
 | Schema变更破坏复制 | 分别在主从执行Schema变更 | 通过复制通道同步Schema变更，不手动在副本执行 |
@@ -130,7 +131,7 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供复制陷阱所需的指令和必要参数。
 **输出**: 返回复制陷阱的处理结果,包含执行状态码、结果数据和执行日志。### 查询性能模式
 | 问题 | 原因 | 优化方案 |
-|------|------|---------|
+|----|----|----|
 | N+1查询 | ORM懒加载关联关系 | 预加载（`eager load`）或批量查询 |
 | 外键缺索引 | JOIN和级联删除全表扫描 | 为外键列创建索引 |
 | 大IN子句变慢 | `IN (1,2,...,10000)` 性能下降 | 拆分为多个查询或使用临时表JOIN |
@@ -140,7 +141,7 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供查询性能模式所需的指令和必要参数。
 **处理**: 解析查询性能模式的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 数据完整性
 | 陷阱 | 后果 | 保障方案 |
-|------|------|---------|
+|:-----|:-----|:-----|
 | 应用层唯一检查竞态 | 并发下产生重复数据 | 使用数据库唯一约束（`UNIQUE`） |
 | CHECK约束被禁用 | 数据逐渐腐化 | 保持 `CHECK` 约束启用，不做"灵活性"让步 |
 | 外键缺失致孤儿行 | 引用完整性破坏 | 先清理孤儿行，再添加 `FOREIGN KEY` 约束 |
@@ -151,7 +152,7 @@ export API_KEY="your_api_key_here"
 **输出**: 返回数据完整性的处理结果,包含执行状态码、结果数据和执行日志。### 扩展性限制
 
 | 限制 | 阈值 | 规划方案 |
-|------|------|---------|
+|---:|---:|---:|
 | 单表行数过多 | 超过 1 亿（100M）行 | 提前规划分片策略，按时间或哈希分区 |
 | Autovacuum滞后 | 死元组比率过高 | 监控 `pg_stat_user_tables` 的死元组比率，调优 `autovacuum` 参数 |
 | 统计信息过期 | 批量导入后查询计划变差 | 大批量导入后手动执行 `ANALYZE` |
@@ -176,7 +177,6 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 详细示例
 
 ### 示例1：安全添加带默认值的列
@@ -184,15 +184,15 @@ export API_KEY="your_api_key_here"
 ```sql
 -- 错误做法（旧版Postgres会全表重写，锁表数小时）:
 -- ALTER TABLE orders ADD COLUMN status VARCHAR(20) DEFAULT 'pending';
-
+# ...
 -- 安全做法（分三步）:
 -- 第一步: 添加NULL列（瞬时完成，不锁表）
 ALTER TABLE orders ADD COLUMN status VARCHAR(20);
-
+# ...
 -- 第2步: 分批回填数据
 UPDATE orders SET status = 'pending' WHERE id BETWEEN 1 AND 100000;
 UPDATE orders SET status = 'pending' WHERE id BETWEEN 100001 AND 200000;
-
+# ...
 -- 第3步: 设置默认值与非空约束
 ALTER TABLE orders ALTER COLUMN status SET DEFAULT 'pending';
 ALTER TABLE orders ALTER COLUMN status SET NOT NULL;
@@ -203,7 +203,7 @@ ALTER TABLE orders ALTER COLUMN status SET NOT NULL;
 ```sql
 -- Postgres: CONCURRENTLY 不阻塞写入（但不能在事务块中使用）
 CREATE INDEX CONCURRENTLY idx_orders_customer_id ON orders(customer_id);
-
+# ...
 -- MySQL 8+: ONLINE DDL
 ALTER TABLE orders ADD INDEX idx_customer_id (customer_id), ALGORITHM=INPLACE, LOCK=NONE;
 ```
@@ -215,7 +215,7 @@ ALTER TABLE orders ADD INDEX idx_customer_id (customer_id), ALGORITHM=INPLACE, L
 orders = Order.objects.all()  # 1次查询
 for order in orders:
     print(order.customer.name)  # 每次循环1次查询
-
+# ...
 # 正确: 预加载（2次查询）
 orders = Order.objects.select_related('customer').all()  # JOIN一次查出
 for order in orders:
@@ -229,7 +229,7 @@ for order in orders:
 SELECT balance FROM accounts WHERE id = 1;  -- 读到 balance=100
 -- 另一事务同时读到100，各自扣减20
 UPDATE accounts SET balance = 80 WHERE id = 1;  -- 丢失了另一事务的扣减
-
+# ...
 -- 正确: 使用 SELECT FOR UPDATE 悲观锁
 BEGIN;
 SELECT balance FROM accounts WHERE id = 1 FOR UPDATE;  -- 加行锁
@@ -242,10 +242,10 @@ COMMIT;
 ```sql
 -- 错误: 浮点数存金额（舍入误差）
 CREATE TABLE bad_orders (total FLOAT);  -- 0.1+0.2 = 0.30000000000000004
-
+# ...
 -- 正确: DECIMAL 精确存储
 CREATE TABLE good_orders (total DECIMAL(10,2));  -- 0.10+0.20 = 0.30
-
+# ...
 -- 或: 整数分存储
 CREATE TABLE cent_orders (total_cents INT);  -- 10分+20分=30分
 ```
@@ -255,19 +255,18 @@ CREATE TABLE cent_orders (total_cents INT);  -- 10分+20分=30分
 ```sql
 -- 慢: COUNT(*) 全表扫描（1亿行需数十秒）
 SELECT COUNT(*) FROM huge_table;
-
+# ...
 -- 快: 近似计数（毫秒级，误差约5%）
 SELECT reltuples::BIGINT FROM pg_class WHERE relname = 'huge_table';
-
+# ...
 -- 或: 缓存计数
 SELECT count FROM table_count_cache WHERE table_name = 'huge_table';
 ```
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | `lock timeout` Schema变更超时 | `ALTER TABLE` 等待长事务释放锁 | 设置 `lock_timeout='5s'`，超时后避免无限等待 |
 | `deadlock detected` 死锁 | 多事务以不同顺序锁定相同资源 | 统一加锁顺序，捕获死锁异常后事务 |
 | `too many connections` 连接耗尽 | 连接池配置过小或连接泄漏 | 使用 `PgBouncer` 连接池，设置 `max_connections` 上限 |

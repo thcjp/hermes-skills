@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 专业版面向家庭、慢病患者与健康机构,在免费版个人健康管理之上,扩展慢病管理、医生数据共享、AI 辅助诊断、穿戴设备同步、家庭多成员管理等企业级能力。支持构建完整的个人健康档案,与医疗系统协作,适合慢病管理、术后康复、家庭健康关怀等专业场景。
 
@@ -37,7 +39,7 @@ pricing_model: "per_use"
 
 ## 核心能力
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 健康数据记录 | 运动、睡眠、饮食 | 支持 | 支持 |
 | 体检报告解读 | 指标分析 | 支持 | 支持 |
 | 运动计划 | 个性化方案 | 支持 | 支持 |
@@ -85,8 +87,6 @@ pricing_model: "per_use"
 ### 场景二: 医生协作
 与主治医生共享健康数据,远程协作管理。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三: AI 辅助诊断
 基于健康数据进行 AI 辅助诊断。
 
@@ -118,7 +118,7 @@ def ai_diagnosis(patient_id, symptoms):
         timeout=120,
     )
     return resp.json()
-
+# ...
 ```
 
 ## 不适用场景
@@ -170,42 +170,42 @@ api:
   admin_key: ${HEALTH_ADMIN_KEY}
   org_id: ${HEALTH_ORG_ID}
   timeout: 120
-
+# ...
 family:
   max_members: 20
   permissions:
     admin: [manage_all, view_all]
     member: [view_own, edit_own]
     caregiver: [view_assigned, log_data]
-
+# ...
 chronic_diseases:
   supported: [diabetes, hypertension, hyperlipidemia, copd, asthma]
   tracking: comprehensive
   medication_management: true
   alert_thresholds: customizable
-
+# ...
 medical_collaboration:
   doctor_sharing: true
   hl7_fhir: true
   electronic_health_record: true
   telemedicine: true
-
+# ...
 ai_diagnosis:
   enabled: true
   models: [risk_stratification, symptom_analysis, trend_prediction]
   icd10_codes: true
   disclaimer: required
-
+# ...
 devices:
   supported: [apple_watch, fitbit, garmin, huawei_band, xiaomi_band, omron_bp]
   sync_frequency: realtime
   data_types: [heart_rate, steps, sleep, blood_pressure, blood_glucose, ecg]
-
+# ...
 alerts:
   channels: [push, email, sms, emergency_call]
   levels: [info, warning, critical, emergency]
   escalation: true
-
+# ...
 data_security:
   encryption: AES-256
   hipaa_compliant: true
@@ -362,7 +362,7 @@ Apple Watch、Fitbit、Garmin、华为手环、小米手环、欧姆龙血压计
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Health Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -375,14 +375,14 @@ Apple Watch、Fitbit、Garmin、华为手环、小米手环、欧姆龙血压计
 export HEALTH_ADMIN_KEY="sk_pro_admin_xxx"
 export HEALTH_ORG_ID="org_your_id"
 export HEALTH_EDITION="pro"
-
+# ...
 export APPLE_HEALTH_TOKEN="..."
 export FITBIT_TOKEN="..."
 export OMRON_DEVICE_ID="..."
-
+# ...
 export HL7_FHIR_ENDPOINT="https://fhir.hospital.com"
 export EMR_API_KEY="..."
-
+# ...
 export EMERGENCY_SMS_API="https://sms-api.example.com"
 ```
 
@@ -395,7 +395,7 @@ export EMERGENCY_SMS_API="https://sms-api.example.com"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -20,6 +20,8 @@ tools:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # 认证安全架构师
 
@@ -36,7 +38,7 @@ pricing_model: "monthly"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | SaaS 认证 | 应用类型 + 认证方式需求 | auth.ts 配置 + 数据库 Schema + 登录表单 + 2FA 设置组件 |
 | 企业 SSO | 企业身份提供商(IdP) + 组织结构 | SAML/OIDC 配置 + 组织管理 API + 权限中间件 |
 | 双因素认证 | 安全等级要求 + 2FA 方式 | TOTP 配置 + QR 码生成 + 备份码 + 验证流程 |
@@ -98,7 +100,7 @@ pricing_model: "monthly"
 **输入**：
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 认证安全架构师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -114,7 +116,7 @@ pricing_model: "monthly"
 import { betterAuth } from "better-auth";
 import { totp, admin } from "better-auth/plugins";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-
+// ...
 export const auth = betterAuth({
   database: drizzleAdapter(db, { provider: "pg" }),
   emailAndPassword: {
@@ -153,7 +155,7 @@ CREATE TABLE users (
   password_hash TEXT,  -- argon2 哈希
   created_at TIMESTAMP DEFAULT NOW()
 );
-
+# ...
 CREATE TABLE sessions (
   id TEXT PRIMARY KEY,
   user_id TEXT REFERENCES users(id) ON DELETE CASCADE,
@@ -163,7 +165,7 @@ CREATE TABLE sessions (
   user_agent TEXT,
   created_at TIMESTAMP DEFAULT NOW()
 );
-
+# ...
 CREATE TABLE two_factor (
   id TEXT PRIMARY KEY,
   user_id TEXT REFERENCES users(id) ON DELETE CASCADE,
@@ -185,7 +187,7 @@ CREATE TABLE two_factor (
 ```typescript
 // auth.ts 添加 organization 插件
 import { organization } from "better-auth/plugins";
-
+// ...
 export const auth = betterAuth({
   // ... 之前的配置
   plugins: [
@@ -209,18 +211,18 @@ export const auth = betterAuth({
     }),
   ],
 });
-
+// ...
 // 权限中间件示例
 export async function requireRole(role: "owner" | "admin" | "member") {
   return async (req: Request) => {
     const session = await auth.api.getSession({ headers: req.headers });
     if (!session) return Response.json({ error: "Unauthorized" }, { status: 401 });
-
+// ...
     const member = await auth.api.getFullOrganization({
       headers: req.headers,
       query: { organizationId: req.headers.get("x-org-id")! },
     });
-
+// ...
     if (!member || member.role !== role) {
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
@@ -232,7 +234,7 @@ export async function requireRole(role: "owner" | "admin" | "member") {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 登录暴力破解 | 攻击者尝试大量密码组合 | 速率限制（5 次/15 分钟）+ 账号锁定 + IP 封禁 |
 | 令牌泄露 | Access Token 被窃取 | 立即撤销所有会话，强制重新登录，轮换刷新令牌 |
 | OAuth Provider 故障 | 第三方 IdP 不可用 | 回退到邮箱密码登录，显示 Provider 状态页 |
@@ -251,7 +253,7 @@ export async function requireRole(role: "owner" | "admin" | "member") {
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | better-auth | npm 包 | 必需 | `npm install better-auth` |
 | 数据库 | 关系型数据库 | 必需 | MySQL/PostgreSQL/SQLite |
 | OAuth Provider Keys | API Key | 可选 | Google/GitHub Provider 的 Client ID/Secret |
@@ -260,7 +262,7 @@ export async function requireRole(role: "owner" | "admin" | "member") {
 
 ### 国内替代方案
 | 海外服务 | 国内替代 | 说明 |
-|:---------|:---------|:-----|
+|:------|------:|:------|
 | Google OAuth | 微信开放平台 / 支付宝开放平台 | 国内社交登录首选 |
 | GitHub OAuth | Gitee OAuth / 飞书登录 / 钉钉登录 | 国内开发者身份 |
 | Twilio 短信 | 阿里云短信 / 腾讯云短信 | 短信验证码服务 |
@@ -302,7 +304,7 @@ import { totp, admin, organization } from "better-auth/plugins";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "./db";
 import { nextCookies } from "better-auth/next-js";
-
+// ...
 export const auth = betterAuth({
   database: drizzleAdapter(db, { provider: "pg" }),
   emailAndPassword: {
@@ -371,7 +373,7 @@ export const auth = betterAuth({
     useSecureCookies: true,
   },
 });
-
+// ...
 // 强制2FA中间件
 export async function requireAdmin2FA(req: Request) {
   const session = await auth.api.getSession({ headers: req.headers });
@@ -402,7 +404,7 @@ CREATE TABLE users (
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW()
 );
-
+# ...
 CREATE TABLE sessions (
   id TEXT PRIMARY KEY,
   user_id TEXT REFERENCES users(id) ON DELETE CASCADE,
@@ -412,7 +414,7 @@ CREATE TABLE sessions (
   user_agent TEXT,
   created_at TIMESTAMP DEFAULT NOW()
 );
-
+# ...
 CREATE TABLE two_factor (
   id TEXT PRIMARY KEY,
   user_id TEXT REFERENCES users(id) ON DELETE CASCADE,
@@ -421,7 +423,7 @@ CREATE TABLE two_factor (
   verified BOOLEAN DEFAULT FALSE,
   created_at TIMESTAMP DEFAULT NOW()
 );
-
+# ...
 CREATE INDEX idx_sessions_user_id ON sessions(user_id);
 CREATE INDEX idx_sessions_token ON sessions(token);
 ```
@@ -446,7 +448,7 @@ CREATE INDEX idx_sessions_token ON sessions(token);
 import { betterAuth } from "better-auth";
 import { sso } from "better-auth/plugins/sso";
 import { SAMLProvider } from "better-auth/sso/saml";
-
+// ...
 // 按域名路由到不同IdP的配置
 const samlProviders: Record<string, SAMLProvider> = {
   "company-a.com": {
@@ -471,7 +473,7 @@ const samlProviders: Record<string, SAMLProvider> = {
     wantAssertionsSigned: true,
   },
 };
-
+// ...
 export const auth = betterAuth({
   // ... 其他配置
   plugins: [
@@ -493,41 +495,41 @@ export const auth = betterAuth({
     }),
   ],
 });
-
+// ...
 // 路由处理: SP发起的登录
 // app/api/auth/saml/login/route.ts
 import { auth } from "@/auth";
-
+// ...
 export async function POST(req: Request) {
   const { email } = await req.json();
   const domain = email.split("@")[1];
-  
+// ...
   if (!samlProviders[domain]) {
     return Response.json(
       { error: "SSO not configured for this domain" },
       { status: 404 }
     );
   }
-
+// ...
   // 重定向到对应IdP
   const redirectUrl = await auth.api.saml.getLoginRedirectURL({
     body: { provider: domain, email },
   });
-  
+// ...
   return Response.json({ redirectUrl });
 }
-
+// ...
 // SAML ACS (Assertion Consumer Service) 端点
 // app/api/auth/saml/acs/route.ts
 export async function POST(req: Request) {
   const result = await auth.api.saml.handleAssertion({
     request: req,
   });
-  
+// ...
   if (result.error) {
     return Response.redirect(`/login?error=saml_failed`);
   }
-  
+// ...
   // 创建会话并重定向到首页
   return Response.redirect(`${process.env.APP_URL}/dashboard`);
 }
@@ -545,7 +547,7 @@ export async function POST(req: Request) {
    - name: user.firstName + " " + user.lastName
    - department: user.department
 6. 测试SSO登录流程
-
+# ...
 ## 安全要求
 - 所有SAML响应必须签名验证(wantResponseSigned: true)
 - 断言必须签名(wantAssertionsSigned: true)
@@ -569,7 +571,7 @@ export async function POST(req: Request) {
 ```typescript
 // output/rbac-system/organization-rbac.ts
 import { organization } from "better-auth/plugins";
-
+// ...
 // 角色定义
 const roles = {
   owner: {
@@ -611,7 +613,7 @@ const roles = {
     ],
   },
 } as const;
-
+// ...
 export const auth = betterAuth({
   plugins: [
     organization({
@@ -634,7 +636,7 @@ export const auth = betterAuth({
     }),
   ],
 });
-
+// ...
 // 权限检查中间件
 export function requirePermission(permission: string) {
   return async (req: Request, ctx: { params: { orgId: string } }) => {
@@ -642,24 +644,24 @@ export function requirePermission(permission: string) {
     if (!session) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
-
+// ...
     const orgId = ctx.params.orgId;
     const membership = await auth.api.getFullOrganization({
       headers: req.headers,
       query: { organizationId: orgId },
     });
-
+// ...
     if (!membership) {
       return Response.json({ error: "Not a member" }, { status: 403 });
     }
-
+// ...
     // 检查权限（支持通配符）
     const userPermissions = roles[membership.role as keyof typeof roles].permissions;
     const hasPermission = userPermissions.some(
       (p) => p === permission || 
       p.endsWith(":*") && permission.startsWith(p.slice(0, -1))
     );
-
+// ...
     if (!hasPermission) {
       // 记录权限拒绝审计日志
       await logPermissionDenied({
@@ -674,17 +676,17 @@ export function requirePermission(permission: string) {
         { status: 403 }
       );
     }
-
+// ...
     return null;  // 继续处理
   };
 }
-
+// ...
 // 跨组织切换API
 // app/api/auth/switch-organization/route.ts
 export async function POST(req: Request) {
   const { orgId } = await req.json();
   const session = await auth.api.getSession({ headers: req.headers });
-  
+// ...
   // 验证用户是该组织成员
   const membership = await db.query.organizationMembers.findFirst({
     where: and(
@@ -692,20 +694,20 @@ export async function POST(req: Request) {
       eq(organizationMembers.organizationId, orgId)
     ),
   });
-
+// ...
   if (!membership) {
     return Response.json({ error: "Not a member" }, { status: 403 });
   }
-
+// ...
   // 更新当前活动组织
   await auth.api.updateSession({
     headers: req.headers,
     body: { activeOrganizationId: orgId },
   });
-
+// ...
   // 记录审计日志
   await logOrganizationSwitch(session.user.id, orgId);
-  
+// ...
   return Response.json({ success: true });
 }
 ```
@@ -714,7 +716,7 @@ export async function POST(req: Request) {
 // output/rbac-system/permission-audit.ts
 // 权限审计日志Schema
 import { pgTable, text, timestamp, jsonb } from "drizzle-orm/pg-core";
-
+// ...
 export const permissionAuditLog = pgTable("permission_audit_log", {
   id: text("id").primaryKey(),
   userId: text("user_id").notNull(),
@@ -727,7 +729,7 @@ export const permissionAuditLog = pgTable("permission_audit_log", {
   ipAddress: text("ip_address"),
   timestamp: timestamp("timestamp").defaultNow().notNull(),
 });
-
+// ...
 // 查询用户权限变更历史
 export async function getUserPermissionHistory(userId: string) {
   return await db.query.permissionAuditLog.findMany({
@@ -757,12 +759,12 @@ export async function getUserPermissionHistory(userId: string) {
 // output/two-factor-backup/backup-codes.ts
 import { hash, verify } from "argon2";
 import { randomBytes } from "crypto";
-
+// ...
 // 1. 生成备份码（格式: XXXX-XXXX，去除易混淆字符）
 export function generateBackupCodes(count: 10): string[] {
   const charset = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";  // 去除0/O/1/I/L
   const codes: string[] = [];
-  
+// ...
   for (let i = 0; i < count; i++) {
     const bytes = randomBytes(8);
     let code = "";
@@ -774,7 +776,7 @@ export function generateBackupCodes(count: 10): string[] {
   }
   return codes;
 }
-
+// ...
 // 2. 哈希存储（每个码独立哈希）
 export async function hashBackupCodes(codes: string[]): Promise<string[]> {
   return Promise.all(codes.map(code => hash(code, {
@@ -784,7 +786,7 @@ export async function hashBackupCodes(codes: string[]): Promise<string[]> {
     parallelism: 4,
   })));
 }
-
+// ...
 // 3. 验证备份码（按索引匹配后逐个尝试）
 export async function verifyBackupCode(
   inputCode: string,
@@ -799,23 +801,23 @@ export async function verifyBackupCode(
   }
   return { valid: false };
 }
-
+// ...
 // 4. 启用2FA时生成备份码
 // app/api/auth/2fa/enable/route.ts
 export async function POST(req: Request) {
   const session = await auth.api.getSession({ headers: req.headers });
   const { totpCode, secret } = await req.json();
-
+// ...
   // 验证TOTP码
   const isValid = verifyTOTP(secret, totpCode);
   if (!isValid) {
     return Response.json({ error: "Invalid TOTP code" }, { status: 400 });
   }
-
+// ...
   // 生成备份码
   const plainCodes = generateBackupCodes(10);
   const hashedCodes = await hashBackupCodes(plainCodes);
-
+// ...
   // 存储（仅哈希）
   await db.update(twoFactor)
     .set({
@@ -824,12 +826,12 @@ export async function POST(req: Request) {
       verified: true,
     })
     .where(eq(twoFactor.userId, session.user.id));
-
+// ...
   // 用户启用2FA
   await db.update(users)
     .set({ twoFactorEnabled: true })
     .where(eq(users.id, session.user.id));
-
+// ...
   // 返回明文备份码（仅此一次）
   return Response.json({
     message: "2FA enabled. Save these backup codes securely.",
@@ -837,51 +839,51 @@ export async function POST(req: Request) {
     warning: "These codes will only be shown once. Store them in a safe place.",
   });
 }
-
+// ...
 // 5. 使用备份码登录（替代TOTP）
 // app/api/auth/2fa/backup-verify/route.ts
 export async function POST(req: Request) {
   const { email, password, backupCode } = await req.json();
-
+// ...
   // 1. 验证邮箱密码
   const user = await verifyPassword(email, password);
   if (!user) {
     return Response.json({ error: "Invalid credentials" }, { status: 401 });
   }
-
+// ...
   // 2. 验证备份码
   const twoFactorRecord = await db.query.twoFactor.findFirst({
     where: eq(twoFactor.userId, user.id),
   });
-  
+// ...
   const result = await verifyBackupCode(
     backupCode.toUpperCase(),
     twoFactorRecord.backupCodes
   );
-
+// ...
   if (!result.valid) {
     // 限流计数
     await incrementFailedAttempts(user.id);
     return Response.json({ error: "Invalid backup code" }, { status: 400 });
   }
-
+// ...
   // 3. 标记该备份码已使用（设为null）
   const updatedCodes = [...twoFactorRecord.backupCodes];
   updatedCodes[result.usedIndex!] = null;
-  
+// ...
   await db.update(twoFactor)
     .set({ backupCodes: updatedCodes })
     .where(eq(twoFactor.userId, user.id));
-
+// ...
   // 4. 创建会话
   const session = await auth.api.createSession({ userId: user.id });
-  
+// ...
   // 5. 安全提醒
   await sendSecurityEmail(user.email, {
     subject: "备份码已使用",
     body: "您的2FA备份码已被使用。如非本人操作请立即修改密码并重新生成备份码。",
   });
-
+// ...
   return Response.json({ session, warning: "Backup code consumed. Consider regenerating." });
 }
 ```
@@ -906,7 +908,7 @@ export async function POST(req: Request) {
 // output/mobile-auth/mobile-token-strategy.ts
 import { betterAuth } from "better-auth";
 import { jwt } from "better-auth/plugins";
-
+// ...
 export const auth = betterAuth({
   // 移动端使用JWT模式（无状态，减少查库）
   session: {
@@ -931,7 +933,7 @@ export const auth = betterAuth({
     }),
   ],
 });
-
+// ...
 // 设备信息记录
 export interface DeviceInfo {
   deviceId: string;        // 设备唯一标识
@@ -942,23 +944,23 @@ export interface DeviceInfo {
   pushToken?: string;      // 推送通知token
   biometricEnabled: boolean;
 }
-
+// ...
 // 登录时注册设备
 // app/api/auth/mobile/login/route.ts
 export async function POST(req: Request) {
   const { email, password, deviceInfo, biometricSetupToken } = await req.json();
-
+// ...
   // 1. 验证凭证
   const user = await verifyCredentials(email, password);
   if (!user) {
     return Response.json({ error: "Invalid credentials" }, { status: 401 });
   }
-
+// ...
   // 2. 检查设备数量限制
   const activeDevices = await db.query.devices.findMany({
     where: and(eq(devices.userId, user.id), eq(devices.active, true)),
   });
-  
+// ...
   if (activeDevices.length >= 5) {
     return Response.json({
       error: "Too many devices",
@@ -970,11 +972,11 @@ export async function POST(req: Request) {
       })),
     }, { status: 409 });
   }
-
+// ...
   // 3. 创建会话
   const session = await auth.api.createSession({ userId: user.id });
   const refreshToken = await auth.api.generateRefreshToken({ userId: user.id });
-
+// ...
   // 4. 注册设备
   await db.insert(devices).values({
     userId: user.id,
@@ -989,7 +991,7 @@ export async function POST(req: Request) {
     active: true,
     lastActiveAt: new Date(),
   });
-
+// ...
   // 5. 生物识别设置（可选）
   let biometricToken: string | null = null;
   if (biometricSetupToken) {
@@ -999,7 +1001,7 @@ export async function POST(req: Request) {
       .set({ biometricEnabled: true })
       .where(eq(devices.deviceId, deviceInfo.deviceId));
   }
-
+// ...
   return Response.json({
     accessToken: session.token,
     refreshToken,
@@ -1008,12 +1010,12 @@ export async function POST(req: Request) {
     user: { id: user.id, email: user.email, name: user.name },
   });
 }
-
+// ...
 // 生物识别快速登录
 // app/api/auth/mobile/biometric-login/route.ts
 export async function POST(req: Request) {
   const { biometricToken, deviceId } = await req.json();
-
+// ...
   // 验证生物识别token（设备绑定）
   const device = await db.query.devices.findFirst({
     where: and(
@@ -1022,11 +1024,11 @@ export async function POST(req: Request) {
       eq(devices.active, true),
     ),
   });
-
+// ...
   if (!device) {
     return Response.json({ error: "Invalid biometric token" }, { status: 401 });
   }
-
+// ...
   // 检查token是否过期（7天）
   if (Date.now() - device.biometricTokenCreatedAt.getTime() > 7 * 24 * 60 * 60 * 1000) {
     return Response.json({
@@ -1034,27 +1036,27 @@ export async function POST(req: Request) {
       code: "REQUIRE_PASSWORD_LOGIN",
     }, { status: 401 });
   }
-
+// ...
   // 签发新的Access Token
   const session = await auth.api.createSession({ userId: device.userId });
-  
+// ...
   // 更新设备活跃时间
   await db.update(devices)
     .set({ lastActiveAt: new Date() })
     .where(eq(devices.deviceId, deviceId));
-
+// ...
   return Response.json({
     accessToken: session.token,
     expiresIn: 900,
   });
 }
-
+// ...
 // 远程登出某台设备
 // app/api/auth/mobile/revoke-device/route.ts
 export async function POST(req: Request) {
   const session = await auth.api.getSession({ headers: req.headers });
   const { deviceId } = await req.json();
-
+// ...
   // 验证设备属于当前用户
   const device = await db.query.devices.findFirst({
     where: and(
@@ -1062,11 +1064,11 @@ export async function POST(req: Request) {
       eq(devices.deviceId, deviceId),
     ),
   });
-
+// ...
   if (!device) {
     return Response.json({ error: "Device not found" }, { status: 404 });
   }
-
+// ...
   // 标记设备为非活跃
   await db.update(devices)
     .set({ 
@@ -1075,10 +1077,10 @@ export async function POST(req: Request) {
       biometricTokenHash: null,
     })
     .where(eq(devices.deviceId, deviceId));
-
+// ...
   // 撤销该设备的Refresh Token（加入黑名单）
   await revokeRefreshToken(device.refreshTokenHash);
-
+// ...
   // 推送通知该设备
   if (device.pushToken) {
     await sendPushNotification(device.pushToken, {
@@ -1086,7 +1088,7 @@ export async function POST(req: Request) {
       body: "您的账号已在另一台设备上登出此设备",
     });
   }
-
+// ...
   return Response.json({ success: true });
 }
 ```

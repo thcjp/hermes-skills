@@ -48,8 +48,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
-
 # 短视频生成工具 - 免费版
 
 ## 概述
@@ -70,7 +71,7 @@ suggested_price: 29.9
 ### 能力清单
 
 | 能力 | 描述 | 免费版 |
-|:-----|:-----|:-------|
+|---|---|---|
 | 画面规划 | 自动生成分镜表 | 支持 |
 | AI 素材生成 | 按关键词生成画面素材 | 支持 |
 | TTS 配音 | 场景级配音 | 支持（仅中文） |
@@ -91,7 +92,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 短视频生成-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -236,7 +237,7 @@ node produce.js "学习要点" '[
 ```bash
 # 检查 Node.js 版本（需 16+）
 node --version
-
+# ...
 # 依赖说明
 npx remotion --version
 ```
@@ -276,9 +277,9 @@ ls -la test-video/
 
 ```markdown
 **总时长：** 10秒
-
+# ...
 | 场景 | 时间 | 类型 | 口播 | 素材 |
-|:----:|------|------|------|------|
+|---:|---:|---:|---:|---:|
 | 0 | 0-2s | 开场 | 主题... | 科技背景 |
 | 1 | 2-7s | 核心观点 | 口播... | AI, 工作 |
 | 2 | 7-10s | 结尾 | 口播... | 未来科技 |
@@ -288,7 +289,7 @@ ls -la test-video/
 
 ```markdown
 | 元素 | 类型 | Prompt | 尺寸 | 保存路径 |
-|------|------|--------|------|----------|
+|:---:|:---:|:---:|:---:|:---:|
 | 科技背景 | 背景 | 抽象科技背景 | 9:16 | s00_科技背景.png |
 | AI | 素材 | AI机器人头像 | 1:1 | s01_AI.png |
 ```
@@ -298,7 +299,7 @@ ls -la test-video/
 免费版内置常用关键词到素材的映射：
 
 | 关键词 | 素材描述 |
-|:-------|:---------|
+|:------|------:|
 | AI / 机器人 | 逼真的 AI 机器人头像 |
 | 数据 / 录入 | 数据流动画 |
 | 设计 / 创意 | 设计师工作场景 |
@@ -343,7 +344,7 @@ test-video/
 // 视频代码自动引用素材路径
 import img0_科技背景 from 'materials/s00_科技背景.png';
 import img1_AI from 'materials/s01_AI.png';
-
+// ...
 // 在场景中使用
 <img src={img0_科技背景} style={{ position: 'absolute', ... }} />
 ```
@@ -355,9 +356,9 @@ import img1_AI from 'materials/s01_AI.png';
 ```bash
 # 步骤 1：生成画面设计方案（暂停等待确认）
 node produce.js --plan-only "AI 主题" '...'
-
+# ...
 # 步骤 2：手动修改 storyboard.md
-
+# ...
 # 步骤 3：基于修改后的分镜表继续渲染
 node produce.js --from-storyboard test-video/storyboard.md
 ```
@@ -365,7 +366,7 @@ node produce.js --from-storyboard test-video/storyboard.md
 ### 4. 场景时长建议
 
 | 视频总时长 | 建议场景数 | 每场景时长 |
-|:-----------|:-----------|:-----------|
+|---:|:---|---:|
 | 10 秒 | 3-4 个 | 2-3 秒 |
 | 15 秒 | 4-5 个 | 3 秒 |
 | 20 秒 | 5-6 个 | 3-4 秒 |
@@ -424,7 +425,7 @@ node produce.js --from-storyboard test-video/storyboard.md
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------:|--------|:-------|:------:|--------|
 | Node.js | 运行时 | 必需 | nodejs.org | 16+ |
 | Remotion | npm 包 | 必需 | `npm install remotion` | 4.0+ |
 | FFmpeg | 命令行工具 | 必需 | 系统包管理器 | 4.0+ |
@@ -438,7 +439,7 @@ node produce.js --from-storyboard test-video/storyboard.md
 # 安装 Node.js 与 Remotion
 npm install -g remotion
 npm install
-
+# ...
 # 验证安装
 node --version
 npx remotion --version
@@ -450,7 +451,7 @@ ffmpeg -version
 免费版需要以下 API Key：
 
 | API 类型 | 环境变量 | 用途 | 获取方式 |
-|:---------|:---------|:-----|:---------|
+|----|:--:|---:|----|
 | AI 生图 | `IMAGE_GEN_API_KEY` | 生成画面素材 | 对应 AI 生图服务商 |
 | TTS 服务 | `TTS_API_KEY` | 场景配音 | 对应 TTS 服务商 |
 
@@ -475,9 +476,8 @@ export TTS_API_KEY="your_tts_key"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

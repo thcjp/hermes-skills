@@ -26,28 +26,30 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # Notion API工具箱(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Notion API工具箱(专业版)支持多连接管理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 与免费版能力对比
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 连接数量 | 单个 | 无限制 |
 | 写操作 | 单条 | 单条 + 批量(万级) |
 | Webhook订阅 | 不支持 | 全事件订阅 |
@@ -91,13 +93,13 @@ pricing_model: "per_use"
 notion-toolkit connection create notion --name research
 notion-toolkit connection create notion --name product
 notion-toolkit connection create notion --name marketing
-
+# ...
 # 2. 列出所有连接
 notion-toolkit connection list --status ACTIVE
-
+# ...
 # 3. 跨连接搜索
 notion-toolkit search "项目周报" --connections research,product
-
+# ...
 # 4. 指定连接执行操作
 notion-toolkit page view <pageId> --connection research
 ```
@@ -113,18 +115,18 @@ notion-toolkit page batch-create \
   --input ./data/pages.json \
   --checkpoint --interval 100 \
   --idempotency-key "migration-2026-07"
-
+# ...
 # 2. 批量更新页面属性
 notion-toolkit page batch-update \
   --input ./data/updates.json \
   --on-failure continue \
   --max-retries 3
-
+# ...
 # 3. 批量归档
 notion-toolkit page batch-archive \
   --filter '{"property":"Status","select":{"equals":"Archived"}}' \
   --confirm
-
+# ...
 # 4. 查看迁移进度
 notion-toolkit batch status --job-id <jobId>
 ```
@@ -140,13 +142,13 @@ notion-toolkit webhook create \
   --url https://your-app.example/hooks/notion \
   --events page.created,page.updated,page.deleted \
   --secret $WEBHOOK_SECRET
-
+# ...
 # 2. 验证Webhook签名
 notion-toolkit webhook verify --signature $SIGNATURE --payload $PAYLOAD
-
+# ...
 # 3. 查看投递日志
 notion-toolkit webhook logs --webhook-id <webhookId> --limit 100
-
+# ...
 # 4. 手动重投失败事件
 notion-toolkit webhook replay --webhook-id <webhookId> --event-id <eventId>
 ```
@@ -179,7 +181,7 @@ notion-toolkit database query <databaseId> --paginate --page-size 100
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | notion-api-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -226,9 +228,8 @@ notion-toolkit database query <databaseId> --paginate --page-size 100
 
 ## 异常处理
 
-
 | 症状 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:---:|:---:|:---:|:---:|
 | 批量操作部分失败 | 个别数据格式错误 | 查看failedItems,修正后用幂等键 | 高 |
 | Webhook投递延迟 | 接收端响应慢 | 检查接收端性能,启用异步队列 | 高 |
 | 多连接权限错乱 | 连接指定错误 | 明确指定`--connection`,检查默认连接 | 高 |
@@ -246,9 +247,9 @@ notion-toolkit database query <databaseId> --paginate --page-size 100
 - **Python**: 3.8+(可选,用于辅助脚本与ETL)
 - **Docker**: 20+(可选,用于分布式部署)
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | notion-api-toolkit CLI | 命令行工具 | 必需 | `npm install -g notion-api-toolkit` |
 | Notion账户 | 在线服务 | 必需 | 通过notion.so注册 |
@@ -282,20 +283,20 @@ connections:
   - name: product
     appId: notion
     scopes: [page:read, database:read]
-
+# ...
 webhooks:
   - name: product-sync
     connection: product
     url: https://your-app.example/hooks/notion
     events: [page.created, page.updated]
     secret: ${WEBHOOK_SECRET}
-
+# ...
 batch:
   defaultPageSize: 100
   maxRetries: 3
   backoff: exponential
   checkpoint: true
-
+# ...
 audit:
   enabled: true
   retention: 180d
@@ -311,19 +312,19 @@ notion-toolkit page batch-create \
   --input ./data/pages.json \
   --parallel 5 \
   --checkpoint
-
+# ...
 # pages.json格式:
 # [
 #   {"title": "页面1", "properties": {"Status": {"select": {"name": "Active"}}}},
 #   {"title": "页面2", "properties": {"Status": {"select": {"name": "Done"}}}}
 # ]
-
+# ...
 # 批量更新
 notion-toolkit page batch-update \
   --input ./data/updates.json \
   --filter 'Status=Active' \
   --parallel 5
-
+# ...
 # 自动分页查询
 notion-toolkit database query <databaseId> \
   --paginate --page-size 100 \
@@ -342,7 +343,7 @@ notion-toolkit database query <databaseId> \
       {"property": "Created", "date": {"after": "2026-01-01"}}
     ]
   }'
-
+# ...
 # 嵌套逻辑(OR + AND)
 notion-toolkit database query <databaseId> \
   --filter '{
@@ -354,7 +355,7 @@ notion-toolkit database query <databaseId> \
       {"property": "Tags", "multi_select": {"contains": "urgent"}}
     ]
   }'
-
+# ...
 # 自动分页 + 高级筛选
 notion-toolkit database query <databaseId> \
   --filter '<复合条件>' \
@@ -382,63 +383,61 @@ notion-toolkit database query <databaseId> \
 
 ```jinja2
 {# ./templates/page-to-task.md.j2 #}
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: 多连接如何切换?
-
+# ...
 A: 1)用`--connection <name>`指定;2)用`connection use <name>`设置默认连接;3)不指定时使用默认连接。
-
+# ...
 ### Q2: 批量操作失败如何重试?
-
+# ...
 A: 使用`Idempotency-Key`重发同一批请求,系统跳过已成功部分。也可通过`batch status --job-id`查看进度,用`batch resume --job-id`断点续传。
-
+# ...
 ### Q3: Webhook收不到事件?
-
+# ...
 A: 1)检查接收端是否返回200;2)检查签名校验;3)查看`webhook logs`;4)手动`webhook replay`。
-
+# ...
 ### Q4: 自动分页会触发频率限制吗?
-
+# ...
 A: 不会。自动分页内置并发控制与速率限制(默认10 req/sec),可通过`--rate-limit`调整。
-
+# ...
 ### Q5: 高级筛选支持哪些操作符?
-
+# ...
 A: 支持equals/does_not_equal/contains/does_not_contain/starts_with/ends_with/is_empty/is_not_empty/greater_than/less_than,以及and/or嵌套逻辑。
-
+# ...
 ### Q6: 审计日志可以导出吗?
-
+# ...
 A: 可以。支持按时间、操作类型、资源ID筛选,导出为JSON或CSV。
-
+# ...
 ### Q7: 自定义转换器支持哪些模板语法?
-
+# ...
 A: 支持Jinja2完整语法,包括变量、条件、循环、过滤器、宏等。
-
+# ...
 ### Q8: 幂等键如何生成?
-
+# ...
 A: 建议使用`任务标识-批次号-时间戳`格式(如`migration-2026-07-batch1-1721234567`),保证同一批请求的幂等键一致。
-
+# ...
 ### Q9: 专业版的SLA承诺是什么?
-
+# ...
 A: 99.9%可用性,故障4小时响应,数据可恢复性RPO<15分钟、RTO<4小时。
-
+# ...
 ### Q10: 如何监控API用量?
-
+# ...
 A: `notion-toolkit metrics`命令查看请求量、缓存命中率、批量任务数等指标,支持设置预算告警。
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
 ## 已知限制
-
+# ...
 - 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
-
+# ...
+# ...

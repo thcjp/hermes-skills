@@ -20,8 +20,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # SQL大师工具（专业版）
 
 专业版在免费版核心能力之上，新增自动化迁移工具、增量压缩备份、多数据库Schema对比同步、性能基准测试、高可用与读写分离配置、灾备恢复等高级能力，专为团队协作、企业生产环境与高可用场景设计。
@@ -35,7 +36,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|----|---|---|
 | 迁移管理 | 手动脚本 | 自动化工具+回滚+校验 |
 | 备份策略 | 手动全量 | 全量+增量+压缩+加密 |
 | Schema对比 | 无 | 多库差异对比+同步脚本 |
@@ -79,7 +80,7 @@ suggested_price: 99.9
 
 ```python
 from sql_master_tool import ProFeatures
-
+# ...
 pro = ProFeatures(db_url="postgresql://user:pass@localhost/mydb")
 pro.migrations.add("005_add_orders_shipping", up_sql="""
     ALTER TABLE orders ADD COLUMN shipping_address TEXT;
@@ -151,7 +152,7 @@ pro.pitr_recovery(
 
 ```python
 from sql_master_tool import ProFeatures
-
+# ...
 pro = ProFeatures(db_url="postgresql://user:pass@localhost/mydb")
 pro.auto_backup("backups/", schedule="daily", time="02:00")
 pro.enable_monitor(alert_webhook_env="OPS_WEBHOOK")
@@ -180,7 +181,6 @@ print(diff.summary())
 完整上手时间约120秒。
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -302,7 +302,7 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQLite 3.35+。SQL Server部分功能支持
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | 免费体验版 | 0元 | 核心功能+基础示例 | 个人试用 |
 | 收费专业版 | 99元/月 | 全功能+高级特性+优先支持 | 团队/企业 |
 
@@ -317,7 +317,7 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQLite 3.35+。SQL Server部分功能支持
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | psql | CLI工具 | 必需 | `PostgreSQL` 安装包 |
 | mysql | CLI工具 | 可选 | MySQL 客户端安装包 |
 | sqlite3 | CLI工具 | 可选 | 系统自带或官网下载 |
@@ -338,9 +338,8 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQLite 3.35+。SQL Server部分功能支持
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

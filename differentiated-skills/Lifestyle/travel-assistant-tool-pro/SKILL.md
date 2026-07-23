@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 旅行规划助手专业版
 
@@ -63,7 +65,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 | 说明 |
-|:-----|:------:|:------:|:-----|
+|---|---|---|---|
 | 旅行信息总览表 | 支持 | 支持 | 完整兼容,平滑升级 |
 | 护照签证检查 | 支持 | 支持 | 增加批量检查与提醒 |
 | 实时天气查询 | 基础 | 高级 | 多目的地+动态监控 |
@@ -112,11 +114,11 @@ pricing_model: "per_use"
 # 示例
 class MultiDestinationPlanner:
     """多目的地行程规划器"""
-
+# ...
     def __init__(self, policy_config=None):
         self.destinations = []
         self.policy = policy_config or {}
-
+# ...
     def add_destination(self, city, arrival, departure, purpose):
         """添加目的地"""
         self.destinations.append({
@@ -127,11 +129,11 @@ class MultiDestinationPlanner:
             "weather": None,
             "visa_required": None
         })
-
+# ...
     def optimize_route(self):
         """优化路线,按时间窗与地理就近原则排序"""
         return sorted(self.destinations, key=lambda x: x["arrival"])
-
+# ...
     def batch_check_documents(self, travelers):
         """批量检查同行人员证件"""
         results = []
@@ -143,13 +145,13 @@ class MultiDestinationPlanner:
                 "vaccination": self._check_vaccination(traveler)
             })
         return results
-
+# ...
 # 使用示例:跨国商务行程
 planner = MultiDestinationPlanner()
 planner.add_destination("东京", "2025-08-01", "2025-08-04", "商务会议")
 planner.add_destination("首尔", "2025-08-04", "2025-08-06", "客户拜访")
 planner.add_destination("上海", "2025-08-06", "2025-08-08", "总部述职")
-
+# ...
 route = planner.optimize_route()
 print(f"优化后路线: {[d['city'] for d in route]}")
 ```
@@ -166,7 +168,7 @@ travel-pro batch-plan \
   --output-file team_itinerary.pdf \
   --compliance-check \
   --budget-limit 500000
-
+# ...
 # 输出结果示例:
 # [INFO] 批量规划启动: 12人, 3目的地
 # [CHECK] 证件检查: 12/12 通过
@@ -326,7 +328,7 @@ corporate_policy:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | wttr.in | 公开API | 可选 | 免费免Key,天气查询 |
 | Open-Meteo | 公开API | 可选 | 免费免Key,天气查询备选 |
@@ -354,9 +356,8 @@ corporate_policy:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -42,6 +42,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 横幅插画生成工具（专业版）
 
@@ -52,7 +54,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 生成模式 | 单张 | 单张 + 批量 + 多尺寸 |
 | Prompt 模板 | 不支持 | 模板库 + 变量替换 |
 | 风格预设 | 不支持 | 预设风格 + 自定义 |
@@ -102,7 +104,7 @@ banner-gen-pro batch generate \
   --sizes "facebook-1200x628,instagram-1080x1080,twitter-1500x500" \
   --output ./campaign-summer/ \
   --resolution 2K
-
+# ...
 # 输出
 # 📊 批量生成报告
 # 模板: campaign-summer
@@ -124,7 +126,7 @@ banner-gen-pro template save \
   --name "watercolor-banner" \
   --prompt "Create an image of: {subject}. Style: watercolor. Composition: wide shot. Lighting: soft morning. Background: nature. Color palette: pastel. Avoid: text, watermark." \
   --variables "subject"
-
+# ...
 # 应用模板
 banner-gen-pro template apply \
   --name "watercolor-banner" \
@@ -140,16 +142,16 @@ banner-gen-pro template apply \
 ```bash
 # 查看生成历史
 banner-gen-pro history list --limit 10
-
+# ...
 # 输出
 # 📜 生成历史
 # 2026-07-18 14:30 - garden-banner.png (4K, 模板: watercolor-banner)
 # 2026-07-18 14:15 - garden-banner-v2.png (2K, 编辑自 v1)
 # 2026-07-18 14:00 - garden-banner-v1.png (1K, 草稿)
-
+# ...
 # 对比版本
 banner-gen-pro history diff --v1 "garden-banner-v1.png" --v2 "garden-banner.png"
-
+# ...
 # 输出
 # 📊 版本对比
 # v1: 1K, 草稿, Prompt 简版
@@ -180,20 +182,20 @@ banner-gen-pro history diff --v1 "garden-banner-v1.png" --v2 "garden-banner.png"
 ```bash
 # 1. 初始化专业版工作区
 banner-gen-pro init --workspace ~/banner-gen-pro
-
+# ...
 # 2. 设置 API Key
 export GEMINI_API_KEY="your-api-key"
-
+# ...
 # 3. 单张生成（兼容免费版）
 banner-gen-pro generate --prompt "描述" --filename "output.png" --resolution 4K
-
+# ...
 # 4. 批量生成
 banner-gen-pro batch generate --template "summer-campaign" --sizes "fb,ig,tw" --output ./output/
-
+# ...
 # 5. 保存与应用模板
 banner-gen-pro template save --name "my-template" --prompt "..."
 banner-gen-pro template apply --name "my-template" --variables '{"key": "value"}'
-
+# ...
 # 6. 查看历史
 banner-gen-pro history list
 ```
@@ -244,7 +246,7 @@ report:
 ## 风格预设库
 
 | 预设名 | 风格描述 | 适用场景 |
-|:-------|:---------|:---------|
+|:-----|:-----|:-----|
 | watercolor | 水彩、柔边、流动色彩 | 文艺博客、个人品牌 |
 | flat-design | 扁平、大胆色彩、极少阴影 | 科技产品、UI 设计 |
 | photorealistic | 写实、自然光照、高细节 | 产品展示、营销素材 |
@@ -293,7 +295,7 @@ A：专业版支持导出 PNG/JPG 至指定目录，便于与 Figma、Sketch 等
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 官方站点下载 |
 | uv | 工具 | 必需 | 官方安装 |
@@ -310,9 +312,8 @@ A：专业版支持导出 PNG/JPG 至指定目录，便于与 Figma、Sketch 等
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

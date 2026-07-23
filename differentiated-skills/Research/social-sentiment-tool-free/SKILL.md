@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "社交媒体,营销,通信"
 ---
-
 # 社交情感分析免费版
 
 ## 概述
@@ -58,7 +59,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 说明 | 免费版支持 |
-|:--------|:-----|:----------|
+|----|---|-----|
 | 数据采集 | 社交媒体关键词搜索 | 支持(单平台) |
 | 情感分类 | 正面/负面/中性分类 | 支持(词典法) |
 | 主题提取 | 讨论主题识别 | 支持(基础) |
@@ -131,29 +132,29 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 社交情感分析免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```python
 import pandas as pd
-
+# ...
 # 从CSV导入社交媒体数据(手动导出或API获取)
 df = pd.read_csv('social-mentions.csv')
-
+# ...
 # 情感分类词典
 POSITIVE = ['love', 'amazing', 'best', 'recommend', '喜欢', '推荐', '好用', '优秀']
 NEGATIVE = ['hate', 'terrible', 'worst', 'broken', '讨厌', '糟糕', '难用', '问题']
-
+# ...
 def classify(text):
     t = str(text).lower()
     pos = sum(1 for k in POSITIVE if k in t)
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
-
+# ...
 df['sentiment'] = df['text'].apply(classify)
-
+# ...
 # 情感分布统计
 print(df['sentiment'].value_counts(normalize=True).round(2))
 ```
@@ -172,36 +173,36 @@ neutral     0.18
 
 ```python
 import pandas as pd
-
+# ...
 # 加载用户反馈数据
 df = pd.read_csv('product-feedback.csv')
-
+# ...
 # 情感分类
 POSITIVE = ['好', '棒', '爱了', '推荐', '方便', '快速', 'nice', 'great', 'love']
 NEGATIVE = ['差', '烂', '问题', 'bug', '崩溃', '慢', 'bad', 'broken', 'hate']
-
+# ...
 def classify(text):
     t = str(text).lower()
     pos = sum(1 for k in POSITIVE if k in t)
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
-
+# ...
 df['sentiment'] = df['text'].apply(classify)
-
+# ...
 # 负面反馈分析
 negative_feedback = df[df['sentiment'] == 'negative']
 print("=== 负面反馈样本 ===")
 for _, row in negative_feedback.head(10).iterrows():
     print(f"- {row['text'][:100]}")
-
+# ...
 # 主题关键词提取(简单词频)
 from collections import Counter
 import re
-
+# ...
 words = []
 for text in negative_feedback['text']:
     words.extend(re.findall(r'[\u4e00-\u9fa5]{2,4}', str(text)))
-
+# ...
 print("\n=== 负面反馈高频词 ===")
 for word, count in Counter(words).most_common(10):
     print(f"  {word}: {count}次")
@@ -214,23 +215,23 @@ for word, count in Counter(words).most_common(10):
 ```python
 import pandas as pd
 from datetime import datetime
-
+# ...
 # 加载带时间戳的数据
 df = pd.read_csv('topic-timeline.csv')
 df['date'] = pd.to_datetime(df['created_at']).dt.date
-
+# ...
 # 情感分类
 POSITIVE = ['好', '支持', '赞', 'nice', 'great', 'love', '支持']
 NEGATIVE = ['反对', '差', '问题', 'bad', 'hate', '糟糕']
-
+# ...
 def classify(text):
     t = str(text).lower()
     pos = sum(1 for k in POSITIVE if k in t)
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
-
+# ...
 df['sentiment'] = df['text'].apply(classify)
-
+# ...
 # 按日统计情感分布
 daily = df.groupby('date')['sentiment'].value_counts(normalize=True).unstack()
 print(daily.fillna(0).round(2))
@@ -272,20 +273,20 @@ id,text,created_at,author
 
 ```python
 import pandas as pd
-
+# ...
 df = pd.read_csv('social-mentions.csv')
-
+# ...
 POSITIVE = ['好', '推荐', '好用', '优秀', 'love', 'amazing', 'best']
 NEGATIVE = ['差', '糟糕', '问题', 'bug', 'hate', 'terrible', 'broken']
-
+# ...
 def classify(text):
     t = str(text).lower()
     pos = sum(1 for k in POSITIVE if k in t)
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
-
+# ...
 df['sentiment'] = df['text'].apply(classify)
-
+# ...
 # 输出结果
 print(df[['text', 'sentiment']])
 print("\n情感分布:")
@@ -298,19 +299,19 @@ print(df['sentiment'].value_counts(normalize=True).round(2))
 # 生成情感分析报告
 report = f"""
 # 情感分析报告
-
+# ...
 ## 数据概况
 - 总提及数: {len(df)}
 - 分析时间: {datetime.now().strftime('%Y-%m-%d %H:%M')}
-
+# ...
 ## 情感分布
 - 正面: {(df['sentiment']=='positive').sum()} 条 ({(df['sentiment']=='positive').mean()*100:.1f}%)
 - 负面: {(df['sentiment']=='negative').sum()} 条 ({(df['sentiment']=='negative').mean()*100:.1f}%)
 - 中性: {(df['sentiment']=='neutral').sum()} 条 ({(df['sentiment']=='neutral').mean()*100:.1f}%)
-
+# ...
 ## 情感得分: {((df['sentiment']=='positive').mean()*100 - (df['sentiment']=='negative').mean()*100):.0f}/100
 """
-
+# ...
 print(report)
 ```
 
@@ -329,7 +330,7 @@ POSITIVE = [
     # 产品领域正面词
     '流畅', '稳定', ' intuitive', '易用', '高效', '专业'
 ]
-
+# ...
 NEGATIVE = [
     # 通用负面词
     '差', '烂', '问题', 'bug', '崩溃', '慢', '讨厌',
@@ -344,7 +345,7 @@ NEGATIVE = [
 ```csv
 # 必需字段
 text           # 文本内容(必需)
-
+# ...
 # 可选字段(增强分析)
 created_at     # 创建时间(趋势分析)
 author         # 作者(用户分析)
@@ -358,15 +359,15 @@ platform       # 平台来源
 ```python
 #!/usr/bin/env python3
 """社交情感分析免费版 - 分析脚本模板"""
-
+# ...
 import pandas as pd
 import sys
 from datetime import datetime
-
+# ...
 # 情感词典
 POSITIVE = ['好', '棒', '推荐', '喜欢', 'love', 'amazing', 'best', 'great']
 NEGATIVE = ['差', '烂', '问题', 'bug', 'hate', 'terrible', 'broken', 'bad']
-
+# ...
 def classify_sentiment(text):
     """基于词典的情感分类"""
     t = str(text).lower()
@@ -378,25 +379,25 @@ def classify_sentiment(text):
         return 'negative'
     else:
         return 'neutral'
-
+# ...
 def analyze(csv_path):
     """执行情感分析"""
     df = pd.read_csv(csv_path)
     df['sentiment'] = df['text'].apply(classify_sentiment)
-    
+# ...
     # 统计
     total = len(df)
     pos = (df['sentiment'] == 'positive').sum()
     neg = (df['sentiment'] == 'negative').sum()
     neu = (df['sentiment'] == 'neutral').sum()
     score = int((pos - neg) / total * 100) if total > 0 else 0
-    
+# ...
     print(f"总提及数: {total}")
     print(f"正面: {pos} ({pos/total*100:.1f}%)")
     print(f"负面: {neg} ({neg/total*100:.1f}%)")
     print(f"中性: {neu} ({neu/total*100:.1f}%)")
     print(f"情感得分: {score}/100")
-
+# ...
 if __name__ == '__main__':
     analyze(sys.argv[1])
 ```
@@ -476,7 +477,7 @@ A: 可以。情感词典支持多语言,只需在词典中添加目标语言的�
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 必需 | https://python.org |
 | pandas | Python库 | 必需 | `pip3 install pandas` |
 | 社交媒体数据 | 数据源 | 必需 | 平台导出或API获取 |
@@ -497,9 +498,8 @@ A: 可以。情感词典支持多语言,只需在词典中添加目标语言的�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

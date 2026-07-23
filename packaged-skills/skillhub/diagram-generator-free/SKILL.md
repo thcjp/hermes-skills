@@ -14,6 +14,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Diagram Generator LITE
 
@@ -21,11 +23,10 @@ homepage: "https://skillhub.cn"
 
 **范围外**(本技能不做): Excalidraw 白板手绘、网络拓扑、泳道、UML 时序/类/ER、自定义输出路径、复杂几何坐标控制(需升级付费版)。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Diagram基础版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,7 +39,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -46,7 +47,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -66,25 +66,25 @@ export API_KEY="your_api_key_here"
 {
   "mcpServers": {
     "mcp-diagram-generator": {
-   
-
+# ...
+# ...
 **输入**: 用户提供必需 MCP 工具相关的配置参数、输入数据和处理选项。
 **处理**: 解析必需 MCP 工具的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+# ...
 ### 支持的格式与图类型(基础)
-
+# ...
 | 图类型 | 默认格式 | 默认方向 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 流程图 | Mermaid | 垂直 |
 | 系统架构 | Draw.io | 垂直 |
-
+# ...
 > **升级提示**: Excalidraw 白板手绘、网络拓扑、泳道、UML 时序/类/ER、自定义输出路径、复杂几何坐标控制等高级能力仅在 diagram-generator 付费版中提供。
-
+# ...
 **处理**: 解析支持的格式与图类型(基础)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-
+# ...
 ### 主工作流
-
-
+# ...
+# ...
 **输入**: 用户提供主工作流所需的指令和必要参数。
 **处理**: 解析主工作流的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回主工作流的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
@@ -94,7 +94,7 @@ export API_KEY="your_api_key_here"
 - 图类型(流程图或系统架构)
 - 输出格式(Mermaid 或 Draw.io)
 - 可选文件名
-
+# ...
 **输入**: 用户提供采集意图所需的指令和必要参数。
 **处理**: 解析采集意图的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 ### 构建 JSON 规范
@@ -129,10 +129,7 @@ export API_KEY="your_api_key_here"
 - 参考`流程图`的配置文档进行参数调优
 
 #
-## 必需 MCP 工具
-
-- `mcp__mcp-diagram-generator__generate_diagram`: 提交 JSON 规范生成图表
-- `mcp__mcp-diagram-generator__get_config`: 查看输出目录配置
+## 必需 MCP 工具(补充)
 
 若工具缺失,需配置 MCP 服务器:
 ```json
@@ -146,25 +143,25 @@ export API_KEY="your_api_key_here"
 }
 ```
 
-## 支持的格式与图类型(基础)
+## 支持的格式与图类型(基础)(补充)
 
-| 图类型 | 默认格式 | 默认方向 |
-| --- | --- | --- |
+| 图类型(续)| 默认格式 | 默认方向 |
+|:-----:|:-----:|:-----:|
 | 流程图 | Mermaid | 垂直 |
 | 系统架构 | Draw.io | 垂直 |
 
 > **升级提示**: Excalidraw 白板手绘、网络拓扑、泳道、UML 时序/类/ER、自定义输出路径、复杂几何坐标控制等高级能力仅在 diagram-generator 付费版中提供。
 
-## 主工作流
+## 主工作流(补充)
 
-### 采集意图
+### 采集意图(补充)
 
 收集以下基础选项:
 - 图类型(流程图或系统架构)
 - 输出格式(Mermaid 或 Draw.io)
 - 可选文件名
 
-### 构建 JSON 规范
+### 构建 JSON 规范(补充)
 
 核心结构:
 ```json
@@ -197,7 +194,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 |
-| --- | --- | --- |
+|:------|------:|:------|
 | 流程文档化 | 为用户注册流程画流程图 | Mermaid 流程图文件 |
 | 基础架构图 | 为单体应用画架构图 | Draw.io 架构图文件 |
 
@@ -208,7 +205,7 @@ export API_KEY="your_api_key_here"
 ### 检查 MCP 工具可用性
 确认 `mcp__mcp-diagram-generator__generate_diagram` 已注册。若缺失,按"必需 MCP 工具"章节配置。
 
-### 采集意图
+### 采集意图(补充)(补充)
 收集图类型(流程图/架构)与可选文件名。
 
 ### 构建规范
@@ -275,7 +272,7 @@ export API_KEY="your_api_key_here"
 ## 错误处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| --- | --- | --- | --- |
+|---:|:---|---:|---:|
 | mcp_tool_missing | `mcp__mcp-diagram-generator__*` 未注册 | MCP 服务器未配置 | 配置 `mcp-diagram-generator` 服务器并重启 Agent |
 | schema_validation_failed | `Error: schema validation failed` | ID 重复或边 source/target 无效 | 检查 ID 唯一性与边引用 |
 | directory_error | `EACCES: permission denied` | 输出目录无写权限 | 检查目录权限,必要时 `init_config()` 重置 |

@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 本地向量记忆（免费版）
 
 **零 API、零云端、零数据出域**的本地向量记忆系统免费体验版。基于 Ollama + LanceDB，在本地完成 embedding 生成与语义检索，适合隐私敏感、离线、成本敏感场景的快速体验。
@@ -28,7 +29,7 @@ suggested_price: 29.9
 ## 痛点与对策速查
 
 | 用户痛点 | 发生场景 | 本系统对策 |
-|:---|:---|:---|
+|----|----|-----|
 | 数据隐私担忧 | 云端 embedding 数据出域 | 纯本地 Ollama embedding，数据不出本机 |
 | API 费用高 | 云端 embedding 按 token 收费 | 本地 nomic-embed-text 完全免费 |
 | 离线不可用 | 无网络时记忆系统瘫痪 | 本地运行，完全离线可用 |
@@ -39,7 +40,7 @@ suggested_price: 29.9
 ## 本地 vs 云端对比
 
 | 对比维度 | 云端 API（OpenAI） | 本地方案（Ollama） |
-|:---|:---|:---|
+|:-----|:-----|:-----|
 | 费用 | 按 token 收费 | 完全免费 |
 | 延迟 | 网络往返 100-500ms | 本地 10-50ms |
 | 隐私 | 数据出域 | 完全本地 |
@@ -54,7 +55,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 本地向量记忆(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -87,7 +88,7 @@ suggested_price: 29.9
 ## 三层存储系统
 
 | 层级 | 文件/系统 | 用途 | 持久化 | 免费版支持 |
-|:---|:---|:---|:---|:---|
+|:---:|:---:|:---:|:---:|:---:|
 | L1 热内存 | SESSION-STATE.md | 活跃任务上下文 | 抗压缩/重启 | ✅ 完整支持 |
 | L2 温向量 | LanceDB Vectors | 语义检索 | 本地向量库 | ✅ 基础检索 |
 | L3 冷归档 | MEMORY.md + daily/ | 人类可读长期记忆 | 文件持久化 | ✅ 完整支持 |
@@ -107,13 +108,13 @@ suggested_price: 29.9
 ```bash
 # 依赖说明
 ollama pull nomic-embed-text
-
+# ...
 # 初始化记忆系统
 node （请参考skill目录中的脚本文件）
-
+# ...
 # 存储第一条记忆
 node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --importance 0.9 --category preference
-
+# ...
 # 检索记忆
 node （请参考skill目录中的脚本文件） search "用户界面偏好"
 ```
@@ -123,17 +124,17 @@ node （请参考skill目录中的脚本文件） search "用户界面偏好"
 ```bash
 # 第 1 步：安装 Ollama（macOS/Linux）
 curl -fsSL https://ollama.com/install.sh | sh
-
+# ...
 # Windows 用户从官网下载安装包
 # https://ollama.com/download
-
+# ...
 # 第 2 步：拉取 embedding 模型
 ollama pull nomic-embed-text
-
+# ...
 # 第 3 步：安装项目依赖
 cd skills/local-vector-memory
 npm install
-
+# ...
 # 第 4 步：初始化记忆系统
 node （请参考skill目录中的脚本文件）
 ```
@@ -141,7 +142,7 @@ node （请参考skill目录中的脚本文件）
 初始化后创建以下文件：
 
 | 文件/目录 | 用途 |
-|:---|:---|
+|:-------|-------:|
 | `SESSION-STATE.md` | 热内存，活跃任务上下文 |
 | `MEMORY.md` | 长期记忆，人类可读归档 |
 | `memory/` | 每日日志目录 |
@@ -175,7 +176,7 @@ node （请参考skill目录中的脚本文件）
 启用后可使用以下工具：
 
 | 工具 | 功能 | 免费版 |
-|:---|:---|:---|
+|---:|:---|---:|
 | `memory_recall` | 搜索相关记忆 | ✅ 基础检索 |
 | `memory_store` | 存储重要信息 | ✅ 完整支持 |
 | `memory_forget` | 删除记忆 | ✅ 完整支持 |
@@ -193,13 +194,13 @@ node （请参考skill目录中的脚本文件）
 ```bash
 # 存储开发偏好
 node （请参考skill目录中的脚本文件） store "用户使用 2 空格缩进，偏好驼峰命名" --importance 0.9 --category preference
-
+# ...
 node （请参考skill目录中的脚本文件） store "用户主要用 TypeScript 和 Python" --importance 0.8 --category skill
-
+# ...
 # 新会话开始时检索
 node （请参考skill目录中的脚本文件） search "用户编码偏好"
 # 返回：2 空格缩进、驼峰命名、TypeScript/Python
-
+# ...
 # 更新热内存
 # SESSION-STATE.md 自动追加：
 # - 编码偏好：2 空格、驼峰命名
@@ -216,16 +217,16 @@ node （请参考skill目录中的脚本文件） search "用户编码偏好"
 ```bash
 # 初始化时确保完全离线
 ollama serve  # 启动本地服务
-
+# ...
 # 存储患者概况（脱敏后）
 node （请参考skill目录中的脚本文件） store "患者A：高血压病史3年，药物控制中" --importance 0.95 --category medical_history
-
+# ...
 node （请参考skill目录中的脚本文件） store "患者A：对青霉素过敏" --importance 1.0 --category allergy
-
+# ...
 # 下次问诊前检索
 node （请参考skill目录中的脚本文件） search "患者A 过敏史"
 # 返回：青霉素过敏
-
+# ...
 node （请参考skill目录中的脚本文件） search "患者A 慢性病"
 # 返回：高血压3年
 ```
@@ -240,16 +241,16 @@ node （请参考skill目录中的脚本文件） search "患者A 慢性病"
 ```bash
 # 离线环境下（无网络）
 # Ollama 本地运行，无需联网
-
+# ...
 # 记录考察发现
 node （请参考skill目录中的脚本文件） store "样地A：发现稀有兰花品种，海拔1200米" --importance 0.9 --category observation
-
+# ...
 node （请参考skill目录中的脚本文件） store "样地A：土壤pH值5.8，湿度偏高" --importance 0.7 --category measurement
-
+# ...
 # 语义检索（即使关键词不完全匹配）
 node （请参考skill目录中的脚本文件） search "兰花生长环境"
 # 返回：样地A的土壤和海拔数据
-
+# ...
 # 导出备份
 node （请参考skill目录中的脚本文件） export --format json > expedition.json
 ```
@@ -261,7 +262,7 @@ node （请参考skill目录中的脚本文件） export --format json > expedit
 **核心原则**：先写状态，再回复。确保崩溃/压缩时不丢失上下文。
 
 | 触发条件 | 动作 | 优先级 |
-|:---|:---|:---|
+|:------:|--------|:-------|
 | 用户表达偏好 | 写入 SESSION-STATE.md → 然后回复 | 高 |
 | 用户做出决策 | 写入 SESSION-STATE.md → 然后回复 | 高 |
 | 用户给出期限 | 写入 SESSION-STATE.md → 然后回复 | 中 |
@@ -276,17 +277,17 @@ node （请参考skill目录中的脚本文件） export --format json > expedit
 
 ```markdown
 ## 记忆协议
-
+# ...
 ### 会话开始时
 1. 读取 SESSION-STATE.md — 获取热上下文
 2. 使用 memory_recall 搜索相关历史
 3. 检查 memory/YYYY-MM-DD.md 了解近期活动
-
+# ...
 ### 对话中
 - 用户给出具体细节？→ 先写入 SESSION-STATE.md，再回复
 - 重要决策？→ 使用 memory_store 存储
 - 表达偏好？→ memory_store --importance 0.9 --category preference
-
+# ...
 ### 会话结束时
 1. 更新 SESSION-STATE.md 最终状态
 2. 重要内容移至 MEMORY.md
@@ -298,19 +299,19 @@ node （请参考skill目录中的脚本文件） export --format json > expedit
 ```bash
 # 查看记忆统计
 node （请参考skill目录中的脚本文件） stats
-
+# ...
 # 浏览全部记忆
 node （请参考skill目录中的脚本文件） search "*" --limit 50
-
+# ...
 # 去重
 node （请参考skill目录中的脚本文件） dedup
-
+# ...
 # 导出备份
 node （请参考skill目录中的脚本文件） export --format json > memories.json
-
+# ...
 # 创建压缩备份
 node （请参考skill目录中的脚本文件） backup ./backups/memory-$(date +%Y%m%d).zip
-
+# ...
 # 清理旧记忆（30天前）
 node （请参考skill目录中的脚本文件） cleanup --before 30d
 ```
@@ -318,7 +319,7 @@ node （请参考skill目录中的脚本文件） cleanup --before 30d
 ## 错误处理
 
 | 序号 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|:---|:---|:---|:---|:---|
+|----|:--:|---:|----|:--:|
 | 1 | Ollama 连接失败 | Ollama 服务未启动 | 运行 `ollama serve`；检查 `OLLAMA_HOST` 环境变量 | 高 |
 | 2 | 向量搜索无结果 | LanceDB 路径错误或无数据 | 确认 `dbPath` 配置；运行 `node （请参考skill目录中的脚本文件） stats` 确认已存储记忆 | 高 |
 | 3 | embedding 生成缓慢 | 模型首次加载 | 首次调用需加载模型到内存，后续调用毫秒级；预热：`ollama run nomic-embed-text ""` | 中 |
@@ -381,7 +382,7 @@ node （请参考skill目录中的脚本文件） cleanup --before 30d
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|----|----|----|----|----|
 | Ollama | 本地服务 | 必需 | https://ollama.com/download | 0.1.0+ |
 | nomic-embed-text | embedding 模型 | 必需 | `ollama pull nomic-embed-text` | latest |
 | LanceDB (vectordb) | npm 包 | 必需 | `npm install vectordb` | 0.9.0+ |
@@ -469,11 +470,8 @@ md 热内存持久化（抗压缩/重启）、WAL 写前日志协议（防数据
 
 ## 适用场景
 
-**角色**：独立开发者，使用 Agent 辅助编码
-**痛点**：每次新会话都要重新说明偏好（深色模式、Tab 宽度、命名风格）
-
 ```bash
-
+# ...
 ## 输出格式
 ```json
 {
@@ -490,3 +488,4 @@ md 热内存持久化（抗压缩/重启）、WAL 写前日志协议（防数据
   "error": null
 }
 ```
+# ...

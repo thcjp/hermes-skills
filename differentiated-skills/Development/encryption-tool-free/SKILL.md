@@ -51,8 +51,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 加密工具免费版为开发者提供日常数据加密保护能力。工具涵盖文件加密解密、密码哈希存储、加密算法选择指南和基础代码安全审计,帮助开发者在开发阶段正确使用加密技术保护敏感数据。
 
 本版本适合敏感文件加密保护、用户密码安全存储和基础安全代码审查。所有操作通过命令行工具和代码示例完成。
@@ -62,7 +63,7 @@ suggested_price: 99.9
 根据使用场景推荐合适的加密算法。
 
 | 用途 | 推荐算法 | 应避免 |
-|:-----|:---------|:-------|
+|---|----|---|
 | 密码存储 | argon2id, bcrypt (cost>=12) | MD5, SHA1, 明文SHA256 |
 | 对称加密 | AES-256-GCM, ChaCha20-Poly1305 | AES-ECB, DES, RC4 |
 | 非对称加密 | RSA-4096+OAEP, Ed25519, P-256 | RSA-1024, PKCS#1 v1.5 |
@@ -79,7 +80,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 加密工具基础版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -110,26 +111,26 @@ done
 import hashlib
 import os
 import hmac
-
+# ...
 import bcrypt
-
+# ...
 def hash_password_bcrypt(password: str) -> str:
     """使用bcrypt哈希密码"""
     salt = bcrypt.gensalt(rounds=12)
     hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
     return hashed.decode('utf-8')
-
+# ...
 def verify_password_bcrypt(password: str, hashed: str) -> bool:
     """验证bcrypt密码"""
     return bcrypt.checkpw(password.encode('utf-8'), hashed.encode('utf-8'))
-
+# ...
 def hash_password_pbkdf2(password: str) -> str:
     """使用PBKDF2哈希密码"""
     salt = os.urandom(32)
     iterations = 600000
     hashed = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, iterations)
     return f"pbkdf2${iterations}${salt.hex()}${hashed.hex()}"
-
+# ...
 def verify_password_pbkdf2(password: str, stored: str) -> bool:
     """验证PBKDF2密码"""
     parts = stored.split('$')
@@ -138,7 +139,7 @@ def verify_password_pbkdf2(password: str, stored: str) -> bool:
     stored_hash = parts[3]
     computed = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, iterations)
     return hmac.compare_digest(computed.hex(), stored_hash)
-
+# ...
 password = "mySecurePassword123"
 hashed = hash_password_bcrypt(password)
 print(f"哈希值: {hashed}")
@@ -148,7 +149,7 @@ print(f"验证: {verify_password_bcrypt(password, hashed)}")
 ```javascript
 // Node.js密码哈希示例
 const crypto = require('crypto');
-
+// ...
 // 使用PBKDF2
 function hashPassword(password) {
     const salt = crypto.randomBytes(32);
@@ -156,7 +157,7 @@ function hashPassword(password) {
     const hashed = crypto.pbkdf2Sync(password, salt, iterations, 64, 'sha512');
     return `pbkdf2$${iterations}$${salt.toString('hex')}$${hashed.toString('hex')}`;
 }
-
+// ...
 function verifyPassword(password, stored) {
     const parts = stored.split('$');
     const iterations = parseInt(parts[1]);
@@ -168,7 +169,7 @@ function verifyPassword(password, stored) {
         computed
     );
 }
-
+// ...
 // 安全随机数生成
 function generateSecureToken(length = 32) {
     return crypto.randomBytes(length).toString('hex');
@@ -186,26 +187,26 @@ function generateSecureToken(length = 32) {
 ```bash
 #!/bin/bash
 echo "=== 加密安全审计 ==="
-
+# ...
 echo "--- 弱哈希算法检查 ---"
 grep -rnE "\b(md5|sha1)\s*\(" . --include="*.js" --include="*.py" --include="*.java" | \
     grep -v "node_modules\|test\|\.min\."
-
+# ...
 echo -e "\n--- 硬编码密钥检查 ---"
 grep -rnE "(secret|key|password|token)\s*=\s*['\"][^'\"]{8,}['\"]" . \
     --include="*.js" --include="*.py" | grep -v "node_modules\|test"
-
+# ...
 echo -e "\n--- 不安全随机数检查 ---"
 grep -rn "Math.random" . --include="*.js" | grep -v "node_modules\|\.min\."
 grep -rn "random.random" . --include="*.py" | grep -v "secrets\|test"
-
+# ...
 echo -e "\n--- 证书验证检查 ---"
 grep -rnE "rejectUnauthorized\s*:\s*false" . --include="*.js"
 grep -rn "verify\s*=\s*False" . --include="*.py"
-
+# ...
 echo -e "\n--- ECB模式检查 ---"
 grep -rn "ECB\|ecb" . --include="*.js" --include="*.py" | grep -v "node_modules"
-
+# ...
 echo -e "\n=== 审计完成 ==="
 ```
 
@@ -220,12 +221,12 @@ echo -e "\n=== 审计完成 ==="
 ```bash
 echo | openssl s_client -connect example.com:443 -servername example.com 2>/dev/null | \
   openssl x509 -noout -subject -issuer -dates
-
+# ...
 openssl s_client -showcerts -connect example.com:443 < /dev/null 2>/dev/null | \
   awk '/BEGIN CERT/,/END CERT/' > chain.pem
-
+# ...
 openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt server.pem
-
+# ...
 for version in tls1 tls1_1 tls1_2 tls1_3; do
     echo -n "$version: "
     echo | openssl s_client -connect example.com:443 -$version 2>/dev/null | \
@@ -246,11 +247,11 @@ done
 ```bash
 #!/bin/bash
 echo "=== 配置文件加密 ==="
-
+# ...
 age-keygen -o ~/.config/age/key.txt
 RECIPIENT=$(grep -oP 'age1\w+' ~/.config/age/key.txt)
 echo "公钥: $RECIPIENT"
-
+# ...
 for f in .env.production database.yml secrets.json; do
     if [ -f "$f" ]; then
         age -r "$RECIPIENT" -o "${f}.age" "$f"
@@ -258,7 +259,7 @@ for f in .env.production database.yml secrets.json; do
         shred -u "$f"
     fi
 done
-
+# ...
 ```
 
 ### 场景二:用户密码安全存储
@@ -268,20 +269,20 @@ done
 import bcrypt
 import secrets
 import hmac
-
+# ...
 class PasswordManager:
     """安全的密码管理器"""
-
+# ...
     @staticmethod
     def hash_password(password: str) -> str:
         """哈希用户密码"""
         if len(password) < 8:
             raise ValueError("密码长度至少8位")
-
+# ...
         salt = bcrypt.gensalt(rounds=12)
         hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
         return hashed.decode('utf-8')
-
+# ...
     @staticmethod
     def verify_password(password: str, hashed: str) -> bool:
         """验证密码(常量时间比较)"""
@@ -289,27 +290,27 @@ class PasswordManager:
             return bcrypt.checkpw(password.encode('utf-8'), hashed.encode('utf-8'))
         except Exception:
             return False
-
+# ...
     @staticmethod
     def generate_token(length: int = 32) -> str:
         """生成安全随机令牌"""
         return secrets.token_urlsafe(length)
-
+# ...
     @staticmethod
     def generate_api_key() -> str:
         """生成API密钥"""
         return f"sk_{secrets.token_hex(32)}"
-
+# ...
 pm = PasswordManager()
-
+# ...
 password = "UserSecurePass123!"
 hashed = pm.hash_password(password)
 print(f"存储哈希: {hashed}")
-
+# ...
 input_password = "UserSecurePass123!"
 is_valid = pm.verify_password(input_password, hashed)
 print(f"密码验证: {'成功' if is_valid else '失败'}")
-
+# ...
 api_key = pm.generate_api_key()
 print(f"API密钥: {api_key}")
 ```
@@ -320,28 +321,28 @@ print(f"API密钥: {api_key}")
 ```javascript
 // Node.js API数据加密
 const crypto = require('crypto');
-
+// ...
 class DataEncryptor {
     constructor(key) {
         this.key = Buffer.from(key, 'hex');  // 32字节密钥
         this.algorithm = 'aes-256-gcm';
     }
-
+// ...
     encrypt(plaintext) {
         const iv = crypto.randomBytes(12);  // GCM推荐12字节IV
         const cipher = crypto.createCipheriv(this.algorithm, this.key, iv);
-
+// ...
         let encrypted = cipher.update(plaintext, 'utf8', 'hex');
         encrypted += cipher.final('hex');
         const authTag = cipher.getAuthTag();
-
+// ...
         return {
             iv: iv.toString('hex'),
             encrypted: encrypted,
             authTag: authTag.toString('hex')
         };
     }
-
+// ...
     decrypt(encryptedData) {
         const decipher = crypto.createDecipheriv(
             this.algorithm,
@@ -349,21 +350,21 @@ class DataEncryptor {
             Buffer.from(encryptedData.iv, 'hex')
         );
         decipher.setAuthTag(Buffer.from(encryptedData.authTag, 'hex'));
-
+// ...
         let decrypted = decipher.update(encryptedData.encrypted, 'hex', 'utf8');
         decrypted += decipher.final('utf8');
         return decrypted;
     }
 }
-
+// ...
 // 使用示例
 const key = crypto.randomBytes(32).toString('hex');
 const encryptor = new DataEncryptor(key);
-
+// ...
 const sensitiveData = '{"ssn":"123-45-6789","credit_card":"4532-1234-5678-9010"}';
 const encrypted = encryptor.encrypt(sensitiveData);
 console.log('加密数据:', encrypted);
-
+// ...
 const decrypted = encryptor.decrypt(encrypted);
 console.log('解密数据:', decrypted);
 ```
@@ -393,22 +394,22 @@ Agent 会生成加密密钥并提供安全存储建议。
 ### 加密工具配置
 ```yaml
 version: "1.0"
-
+# ...
 file_encryption:
   tool: age                    # age 或 gpg
   key_path: ~/.config/age/key.txt
   encrypt_extensions: [.env, .yml, .json, .key]
-
+# ...
 password_hashing:
   algorithm: bcrypt
   cost: 12
-
+# ...
 audit:
   check_weak_hashes: true
   check_hardcoded_secrets: true
   check_insecure_random: true
   check_cert_validation: true
-
+# ...
 tls:
   min_version: "1.2"
   check_cert_expiry: true
@@ -420,7 +421,7 @@ tls:
 
 ```python
 hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt(12))
-
+# ...
 ```
 
 2. **永远不要重用IV/Nonce**:AES-GCM重复使用Nonce会导致灾难性安全问题
@@ -429,7 +430,7 @@ hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt(12))
 // 正确:每次加密生成新IV
 const iv = crypto.randomBytes(12);
 const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
-
+// ...
 // 错误:固定IV
 // const iv = Buffer.from('fixed-iv-12byt');
 ```
@@ -439,7 +440,7 @@ const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
 ```python
 import secrets
 token = secrets.token_hex(32)
-
+# ...
 import random
 token = ''.join(random.choices('0123456789abcdef', k=64))
 ```
@@ -449,7 +450,7 @@ token = ''.join(random.choices('0123456789abcdef', k=64))
 ```python
 import hmac
 hmac.compare_digest(stored_hash, computed_hash)
-
+# ...
 ```
 
 5. **密钥分离**:不同用途使用不同密钥
@@ -464,7 +465,7 @@ keys:
 ## 常见问题
 ### Q1:bcrypt和argon2应该选哪个?
 | 特性 | bcrypt | argon2 |
-|:-----|:-------|:-------|
+|---:|---:|---:|
 | 成熟度 | 非常成熟 | 较新 |
 | 抗GPU | 一般 | 强 |
 | 抗ASIC | 一般 | 强 |
@@ -474,14 +475,14 @@ keys:
 ### Q2:如何安全存储加密密钥?
 ```bash
 export ENCRYPTION_KEY="your-key-here"
-
+# ...
 age-keygen -o ~/.config/age/key.txt
 chmod 600 ~/.config/age/key.txt
 ```
 
 ### Q3:免费版与专业版有何区别?
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:---:|:---:|:---:|
 | 密钥管理 | 手动 | KMS/Vault集成 |
 | 代码审计 | 基础规则 | 深度审计 |
 | 合规检查 | 不支持 | 合规模板 |
@@ -492,7 +493,7 @@ chmod 600 ~/.config/age/key.txt
 ### Q4:如何检查TLS配置是否安全?
 ```bash
 nmap --script ssl-enum-ciphers -p 443 example.com
-
+# ...
 echo | openssl s_client -connect example.com:443 2>/dev/null | \
   grep -E "Protocol|Cipher|Verify"
 ```
@@ -505,7 +506,7 @@ echo | openssl s_client -connect example.com:443 2>/dev/null | \
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | age | 加密工具 | 推荐 | FiloSottile/age |
 | gpg | 加密工具 | 可选 | 系统自带或安装 gnupg |
 | openssl | TLS工具 | 必需 | 系统自带 |
@@ -518,7 +519,7 @@ echo | openssl s_client -connect example.com:443 2>/dev/null | \
 
 ```bash
 export ENCRYPTION_KEY="${ENCRYPTION_KEY}"
-
+# ...
 export AGE_KEY_FILE="~/.config/age/key.txt"
 ```
 
@@ -530,7 +531,7 @@ export AGE_KEY_FILE="~/.config/age/key.txt"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

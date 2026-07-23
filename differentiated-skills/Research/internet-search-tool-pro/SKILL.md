@@ -29,6 +29,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 聚合搜索专业版
 
@@ -41,7 +43,7 @@ pricing_model: "per_use"
 ### 功能对比
 
 | 能力 | 免费版 | PRO 版 |
-| --- | --- | --- |
+|---|---|-----|
 | 多引擎聚合 | 是 | 是 |
 | 分类路由 | 是 | 是 |
 | SearXNG 语法 | 是 | 是 |
@@ -81,12 +83,12 @@ python （请参考skill目录中的脚本文件） add \
   --name="学术优先" \
   --engines="arxiv,google scholar,pubmed" \
   --category=academic
-
+# ...
 python （请参考skill目录中的脚本文件） add \
   --name="技术搜索" \
   --engines="stackoverflow,github,brave" \
   --category=general
-
+# ...
 # 使用自定义引擎
 internet_search("query", engine="学术优先")
 ```
@@ -99,7 +101,7 @@ python （请参考skill目录中的脚本文件） \
   --query="关键词" \
   --format=json \
   --output=data.json
-
+# ...
 # 导出为 CSV
 python （请参考skill目录中的脚本文件） \
   --query="关键词" \
@@ -146,7 +148,7 @@ cat > market_keywords.txt <<EOF
 竞品C 定价策略
 竞品D 最新动态
 EOF
-
+# ...
 # 批量搜索并导出
 python （请参考skill目录中的脚本文件） \
   --keywords-file market_keywords.txt \
@@ -199,7 +201,7 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 依赖说明
 pip install apscheduler pandas redis
-
+# ...
 # 现有 SearXNG 配置自动兼容
 python （请参考skill目录中的脚本文件） --version
 # 输出: internet-search-tool-pro v1.0.0
@@ -212,7 +214,7 @@ python （请参考skill目录中的脚本文件） --version
 echo "Python 异步编程
 Docker 容器化部署
 Kubernetes 集群管理" > topics.txt
-
+# ...
 # 执行批量搜索
 python （请参考skill目录中的脚本文件） \
   --keywords-file topics.txt \
@@ -232,7 +234,7 @@ searxng:
   url: http://localhost:8080
   timeout: 15
   retry: 3
-
+# ...
 engines:
   - name: 学术优先
     engines: [arxiv, google scholar, pubmed]
@@ -243,7 +245,7 @@ engines:
   - name: 新闻聚合
     engines: [bing news, ddg news]
     category: news
-
+# ...
 batch:
   parallel_workers: 4
   delay_between_queries: 1
@@ -251,16 +253,16 @@ batch:
   cache_enabled: true
   cache_ttl: 3600
   deduplicate: true
-
+# ...
 export:
   default_format: json
   output_dir: ./exports
-
+# ...
 schedule:
   enabled: true
   timezone: Asia/Shanghai
   archive_dir: ./archive
-
+# ...
 analytics:
   enabled: true
   track_engine_performance: true
@@ -273,12 +275,12 @@ analytics:
 ```bash
 # 启动 REST API 服务
 python （请参考skill目录中的脚本文件） --port 8000
-
+# ...
 # 调用 API 执行搜索
 curl -X POST http://localhost:8000/search \
   -H "Content-Type: application/json" \
   -d '{"query": "Python 教程", "count": 10, "category": "general"}'
-
+# ...
 # 批量搜索
 curl -X POST http://localhost:8000/batch-search \
   -H "Content-Type: application/json" \
@@ -288,7 +290,7 @@ curl -X POST http://localhost:8000/batch-search \
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `--keywords-file` | 字符串 | 无 | 关键词文件 |
 | `--engine` | 字符串 | default | 引擎组合名称 |
 | `--category` | 字符串 | general | 搜索类别 |
@@ -305,7 +307,7 @@ curl -X POST http://localhost:8000/batch-search \
 ```python
 # batch_config.py - 批量搜索配置
 from batch_search import BatchSearchConfig
-
+# ...
 config = BatchSearchConfig(
     parallel_workers=4,
     delay_between_queries=1,
@@ -315,7 +317,7 @@ config = BatchSearchConfig(
     deduplicate=True,
     retry_on_failure=True
 )
-
+# ...
 # 执行批量搜索
 results = config.execute("keywords.txt")
 print(f"完成 {len(results)} 个关键词搜索")
@@ -326,13 +328,13 @@ print(f"完成 {len(results)} 个关键词搜索")
 ```bash
 # 查看已配置的引擎组合
 python （请参考skill目录中的脚本文件） list
-
+# ...
 # 创建引擎组合
 python （请参考skill目录中的脚本文件） create \
   --name="综合搜索" \
   --engines="google,bing,brave,ddg" \
   --category=general
-
+# ...
 # 测试引擎性能
 python （请参考skill目录中的脚本文件） benchmark \
   --engine="学术优先" \
@@ -348,7 +350,7 @@ python （请参考skill目录中的脚本文件） \
   --output=merged.json \
   --deduplicate \
   --sort-by=relevance
-
+# ...
 # 生成分析报告
 python （请参考skill目录中的脚本文件） \
   --input=merged.json \
@@ -363,10 +365,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 增加并行线程
 python （请参考skill目录中的脚本文件） --workers 8 keywords.txt
-
+# ...
 # 启用缓存
 python （请参考skill目录中的脚本文件） --cache keywords.txt
-
+# ...
 # 调整查询间隔
 python （请参考skill目录中的脚本文件） --delay 0.5 keywords.txt
 ```
@@ -376,10 +378,10 @@ python （请参考skill目录中的脚本文件） --delay 0.5 keywords.txt
 ```bash
 # 检查 SearXNG 负载
 curl http://localhost:8080/stats
-
+# ...
 # 减少引擎数量
 python （请参考skill目录中的脚本文件） optimize --max-engines=3
-
+# ...
 # 增加超时时间
 python （请参考skill目录中的脚本文件） --timeout 30 keywords.txt
 ```
@@ -389,10 +391,10 @@ python （请参考skill目录中的脚本文件） --timeout 30 keywords.txt
 ```bash
 # 验证引擎可用性
 python （请参考skill目录中的脚本文件） check-all
-
+# ...
 # 禁用失败引擎
 python （请参考skill目录中的脚本文件） disable-failed
-
+# ...
 # 重置为默认配置
 python （请参考skill目录中的脚本文件） reset
 ```
@@ -402,10 +404,10 @@ python （请参考skill目录中的脚本文件） reset
 ```bash
 # 检查 cron 配置
 python （请参考skill目录中的脚本文件） --list
-
+# ...
 # 查看任务日志
 cat ./logs/scheduled_search.log
-
+# ...
 # 手动触发测试
 python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
@@ -423,7 +425,7 @@ python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | SearXNG | 搜索引擎聚合 | 是 | Docker 部署或使用公共实例 |
 | Docker | 容器运行时 | 否（自托管时） | `docker.com` 下载 |
 | Python 3.7+ | 运行时 | 是 | 系统包管理器安装 |
@@ -454,9 +456,8 @@ export REDIS_URL=redis://localhost:6379/0
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

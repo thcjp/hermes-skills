@@ -46,8 +46,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # JavaScript规范工具(免费版)
 
 ## 概述
@@ -59,7 +60,7 @@ JavaScript规范工具(免费版)面向个人开发者,提供经过提炼的Java
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 风格规则指导 | 覆盖引用、对象、数组、函数、箭头函数、字符串等核心规则 |
 | 代码生成 | 输出符合规范的JavaScript代码片段 |
 | 基础代码审查 | 识别常见风格问题并给出修正建议 |
@@ -109,10 +110,10 @@ function deepClone(source) {
   if (typeof structuredClone === 'function') {
     return structuredClone(source);
   }
-
+// ...
   return JSON.parse(JSON.stringify(source));
 }
-
+// ...
 export default deepClone;
 ```
 
@@ -124,7 +125,7 @@ export default deepClone;
 // 修正前
 var count = 1;
 var items = new Array();
-
+// ...
 // 修正后
 const count = 1;
 const items = [];
@@ -139,10 +140,10 @@ const items = [];
 function getFullName({ firstName, lastName }) {
   return `${firstName} ${lastName}`;
 }
-
+// ...
 // 数组解构
 const [first, , third] = [1, 2, 3];
-
+// ...
 // ES 模块
 import { fetchData } from './utils';
 export default fetchData;
@@ -174,7 +175,6 @@ export default fetchData;
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -224,7 +224,7 @@ module.exports = {
 const count = 1;
 let mutableValue = 1;
 mutableValue += 1;
-
+// ...
 // 不推荐
 var count = 1;
 ```
@@ -237,7 +237,7 @@ var count = 1;
 // 推荐
 const item = {};
 const items = [];
-
+// ...
 // 不推荐
 const item = new Object();
 const items = new Array();
@@ -250,7 +250,7 @@ const items = new Array();
 ```javascript
 // 推荐
 [1, 2, 3].map((x) => x * 2);
-
+// ...
 [1, 2, 3].map((x) => {
   const y = x + 1;
   return x * y;
@@ -276,14 +276,14 @@ const greeting = `Hello, ${name}!`;
 function getFullName({ firstName, lastName }) {
   return `${firstName} ${lastName}`;
 }
-
+// ...
 const { left, top } = processInput(input);
 ```
 
 ### 6. 命名约定
 
 | 类型 | 约定 | 示例 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 变量与函数 | camelCase | `calculateTotal` |
 | 类与构造函数 | PascalCase | `class User {}` |
 | 常量 | UPPERCASE_SNAKE_CASE | `MAX_RETRY_COUNT` |
@@ -296,7 +296,7 @@ const { left, top } = processInput(input);
 // 推荐
 if (name !== '') { /* ... */ }
 if (collection.length > 0) { /* ... */ }
-
+// ...
 // 不推荐
 if (name != '') { /* ... */ }
 ```
@@ -312,7 +312,7 @@ import {
   longNameA,
   longNameB,
 } from 'path/to/module';
-
+// ...
 export default fetchData;
 ```
 
@@ -333,7 +333,7 @@ export default fetchData;
 ### Q4:免费版与PRO版的主要差异?
 
 | 维度 | 免费版 | PRO版 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 规则覆盖 | 核心规则集 | 全量规则 + 性能优化 + 安全审查 |
 | 适用对象 | 个人开发者 | 团队与企业 |
 | 自动化集成 | 基础配置示例 | CI/CD + 预提交钩子 + 自定义规则 |
@@ -355,7 +355,7 @@ export default fetchData;
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | ESLint | npm包 | 可选 | `npm i -D eslint` |
 | Prettier | npm包 | 可选 | `npm i -D prettier` |
@@ -373,9 +373,8 @@ export default fetchData;
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

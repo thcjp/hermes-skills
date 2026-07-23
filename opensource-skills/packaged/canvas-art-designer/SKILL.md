@@ -20,6 +20,8 @@ tools:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # 画布艺术设计器
 
@@ -36,7 +38,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 海报设计 | 主题 + 用途 + 情感基调 + 尺寸 | 原创构图海报 PNG + PDF 打印版 + 设计说明 |
 | 艺术作品 | 创作主题 + 风格倾向 + 画布规格 | 可打印艺术 PNG + SVG 矢量版 + 创作说明 |
 | 信息图 | 数据/流程内容 + 受众 | 静态信息图 PNG + 数据可视化代码 |
@@ -93,7 +95,7 @@ pricing_model: "per_use"
 **输入**：
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 画布艺术设计器处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -111,11 +113,11 @@ pricing_model: "per_use"
 // poster.js - 使用 node-canvas 生成
 const { createCanvas, registerFont } = require('canvas');
 const fs = require('fs');
-
+// ...
 // A3 @ 300DPI: 3508 x 4961 px
 const canvas = createCanvas(3508, 4961);
 const ctx = canvas.getContext('2d');
-
+// ...
 // 配色：温暖极简（米白背景 + 深棕主色 + 暖橙强调）
 const colors = {
   background: '#F5F1EA',  // 米白
@@ -123,11 +125,11 @@ const colors = {
   accent: '#D97706',      // 暖橙
   text: '#1F1410',        // 深褐
 };
-
+// ...
 // 1. 背景
 ctx.fillStyle = colors.background;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+// ...
 // 2. 主视觉：咖啡杯图形（几何极简）
 const centerX = canvas.width / 2;
 const cupY = canvas.height * 0.38;
@@ -145,24 +147,24 @@ ctx.stroke();
 // 咖啡液面（暖橙强调）
 ctx.fillStyle = colors.accent;
 ctx.fillRect(centerX - 560, cupY + 40, 1120, 60);
-
+// ...
 // 3. 标题
 ctx.fillStyle = colors.text;
 ctx.font = 'bold 180px Inter';
 ctx.textAlign = 'center';
 ctx.fillText('代码与咖啡', centerX, canvas.height * 0.62);
-
+// ...
 // 4. 副标题
 ctx.font = '60px Inter';
 ctx.fillStyle = colors.primary;
 ctx.fillText('Code & Coffee Meetup', centerX, canvas.height * 0.68);
-
+// ...
 // 5. 信息（时间地点）
 ctx.font = '48px Inter';
 ctx.fillStyle = colors.text;
 ctx.fillText('2026.08.15  14:00', centerX, canvas.height * 0.78);
 ctx.fillText('上海创新中心', centerX, canvas.height * 0.82);
-
+// ...
 // 6. 装饰线（克制）
 ctx.strokeStyle = colors.accent;
 ctx.lineWidth = 6;
@@ -170,7 +172,7 @@ ctx.beginPath();
 ctx.moveTo(centerX - 200, canvas.height * 0.72);
 ctx.lineTo(centerX + 200, canvas.height * 0.72);
 ctx.stroke();
-
+// ...
 // 输出
 fs.writeFileSync('output/code-coffee/preview.png', canvas.toBuffer('image/png'));
 ```
@@ -205,43 +207,43 @@ const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
   <!-- 配色：深蓝 + 白 + 青绿强调 -->
   <rect width="1080" height="1920" fill="#0F172A"/>
-
+// ...
   <!-- 标题区 -->
   <text x="540" y="120" text-anchor="middle" fill="#F8FAFC"
         font-family="Inter" font-size="56" font-weight="bold">
     2026 AI 开发者调查
   </text>
   <line x1="440" y1="160" x2="640" y2="160" stroke="#10B981" stroke-width="4"/>
-
+// ...
   <!-- 核心数据 1：使用比例 -->
   <text x="540" y="280" text-anchor="middle" fill="#94A3B8" font-size="32">使用 AI 工具的开发者</text>
   <text x="540" y="420" text-anchor="middle" fill="#10B981" font-size="200" font-weight="bold">78%</text>
-
+// ...
   <!-- 核心数据 2：生产力提升 -->
   <text x="540" y="560" text-anchor="middle" fill="#94A3B8" font-size="32">平均生产力提升</text>
   <text x="540" y="700" text-anchor="middle" fill="#F8FAFC" font-size="160" font-weight="bold">40%</text>
-
+// ...
   <!-- 工具使用占比（横向条形图） -->
   <text x="540" y="850" text-anchor="middle" fill="#F8FAFC" font-size="36" font-weight="bold">最常用工具</text>
-
+// ...
   <!-- Copilot 52% -->
   <rect x="140" y="920" width="800" height="60" fill="#1E293B" rx="8"/>
   <rect x="140" y="920" width="416" height="60" fill="#3B82F6" rx="8"/>
   <text x="160" y="960" fill="#F8FAFC" font-size="28">Copilot</text>
   <text x="920" y="960" text-anchor="end" fill="#F8FAFC" font-size="28">52%</text>
-
+// ...
   <!-- ChatGPT 31% -->
   <rect x="140" y="1010" width="800" height="60" fill="#1E293B" rx="8"/>
   <rect x="140" y="1010" width="248" height="60" fill="#8B5CF6" rx="8"/>
   <text x="160" y="1050" fill="#F8FAFC" font-size="28">ChatGPT</text>
   <text x="920" y="1050" text-anchor="end" fill="#F8FAFC" font-size="28">31%</text>
-
+// ...
   <!-- Cursor 17% -->
   <rect x="140" y="1100" width="800" height="60" fill="#1E293B" rx="8"/>
   <rect x="140" y="1100" width="136" height="60" fill="#10B981" rx="8"/>
   <text x="160" y="1140" fill="#F8FAFC" font-size="28">Cursor</text>
   <text x="920" y="1140" text-anchor="end" fill="#F8FAFC" font-size="28">17%</text>
-
+// ...
   <!-- 底部来源 -->
   <text x="540" y="1800" text-anchor="middle" fill="#64748B" font-size="24">
     数据来源：2026 全球开发者调查 | 样本量 12,000
@@ -254,7 +256,7 @@ fs.writeFileSync('output/ai-survey/infographic.svg', svg);
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 字体未注册 | node-canvas 未加载自定义字体 | 使用 `registerFont()` 注册 woff2/ttf，或降级为系统字体 |
 | 渲染超时 | Canvas 复杂图形渲染慢 | 分层渲染（背景→图形→文字），异步合成 |
 | PDF 字体替换 | PDF 未嵌入字体导致替换 | 使用 `pdf-lib` 嵌入字体，或转曲为路径 |
@@ -272,7 +274,7 @@ fs.writeFileSync('output/ai-survey/infographic.svg', svg);
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Canvas API | 运行时 | 可选 | 浏览器内置 Canvas API |
 | Node.js | 运行时 | 可选 | 服务端渲染（node-canvas） |
 | Python | 运行时 | 可选 | 服务端渲染（Pillow/matplotlib） |
@@ -281,7 +283,7 @@ fs.writeFileSync('output/ai-survey/infographic.svg', svg);
 
 ### 国内替代方案
 | 海外服务/工具 | 国内替代 | 说明 |
-|:--------------|:---------|:-----|
+|:---------|---------:|:---------|
 | Google Fonts | 字节跳动字体 / 阿里巴巴字体库 | 中文字体 CDN |
 | Sharp（图像处理） | jimp / sharp（npm 包，无地域限制） | 图像处理库 |
 | Cloudinary | 阿里云 IMG / 腾讯云 CI | 云端图像处理 |
@@ -315,11 +317,11 @@ fs.writeFileSync('output/ai-survey/infographic.svg', svg);
 // output/code-coffee/poster.js - node-canvas 生成
 const { createCanvas, registerFont } = require('canvas');
 const fs = require('fs');
-
+// ...
 // A3 @ 300DPI: 3508 x 4961 px
 const canvas = createCanvas(3508, 4961);
 const ctx = canvas.getContext('2d');
-
+// ...
 // 配色: 温暖极简（米白背景 + 深棕主色 + 暖橙强调，3色克制）
 const colors = {
   background: '#F5F1EA',  // 米白
@@ -327,43 +329,43 @@ const colors = {
   accent: '#D97706',      // 暖橙
   text: '#1F1410',        // 深褐
 };
-
+// ...
 // 1. 背景
 ctx.fillStyle = colors.background;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+// ...
 // 2. 主视觉: 咖啡杯几何图形（视觉焦点，垂直38%位置）
 const centerX = canvas.width / 2;
 const cupY = canvas.height * 0.38;
-
+// ...
 // 杯身（圆角矩形）
 ctx.fillStyle = colors.primary;
 ctx.beginPath();
 ctx.roundRect(centerX - 600, cupY, 1200, 1000, 20);
 ctx.fill();
-
+// ...
 // 杯把（圆弧）
 ctx.lineWidth = 80;
 ctx.strokeStyle = colors.primary;
 ctx.beginPath();
 ctx.arc(centerX + 600, cupY + 500, 300, -Math.PI/2, Math.PI/2);
 ctx.stroke();
-
+// ...
 // 咖啡液面（暖橙强调，视觉点睛）
 ctx.fillStyle = colors.accent;
 ctx.fillRect(centerX - 560, cupY + 40, 1120, 60);
-
+// ...
 // 3. 标题（强对比字号: 标题180px vs 正文48px）
 ctx.fillStyle = colors.text;
 ctx.font = 'bold 180px Inter';
 ctx.textAlign = 'center';
 ctx.fillText('代码与咖啡', centerX, canvas.height * 0.62);
-
+// ...
 // 4. 副标题（英文，双语层次）
 ctx.font = '60px Inter';
 ctx.fillStyle = colors.primary;
 ctx.fillText('Code & Coffee Meetup', centerX, canvas.height * 0.68);
-
+// ...
 // 5. 装饰线（克制，仅一条）
 ctx.strokeStyle = colors.accent;
 ctx.lineWidth = 6;
@@ -371,39 +373,39 @@ ctx.beginPath();
 ctx.moveTo(centerX - 200, canvas.height * 0.72);
 ctx.lineTo(centerX + 200, canvas.height * 0.72);
 ctx.stroke();
-
+// ...
 // 6. 信息（时间地点，最底层）
 ctx.font = '48px Inter';
 ctx.fillStyle = colors.text;
 ctx.fillText('2026.08.15  14:00', centerX, canvas.height * 0.78);
 ctx.fillText('上海创新中心', centerX, canvas.height * 0.82);
-
+// ...
 // 输出PNG
 fs.writeFileSync('output/code-coffee/preview.png', canvas.toBuffer('image/png'));
 ```
 
 ```markdown
 # output/code-coffee/design-notes.md
-## 设计说明
-
+## 设计说明(续1)
+# ...
 ### 构图
 - 垂直三段式: 图形(38%) + 标题(25%) + 信息(37%)
 - 视觉焦点: 咖啡杯几何图形，位于画面黄金分割点(0.38)
 - 留白: 四周200px，避免画面拥挤
-
+# ...
 ### 配色（3色克制）
 | 角色 | 色名 | HEX | 用途 |
-|:-----|:-----|:----|:-----|
+|---:|:---|---:|---:|
 | 背景 | 米白 | #F5F1EA | 温暖基调 |
 | 主色 | 深棕 | #3D2817 | 咖啡杯+标题 |
 | 强调 | 暖橙 | #D97706 | 液面+装饰线 |
-
+# ...
 ### 字体
 - Inter Bold 180px: 主标题"代码与咖啡"
 - Inter Regular 60px: 英文副标题
 - Inter Regular 48px: 时间地点信息
 - 字号对比比: 180/48 = 3.75x（强对比）
-
+# ...
 ### 设计哲学守护
 - 图像主导: 咖啡杯承担视觉重心，文字辅助
 - 克制色彩: 仅3色，无渐变无毛玻璃
@@ -433,50 +435,50 @@ const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
   <!-- 配色: 深蓝底 + 白文字 + 青绿强调（数据感） -->
   <rect width="1080" height="1920" fill="#0F172A"/>
-
+// ...
   <!-- 标题区 -->
   <text x="540" y="120" text-anchor="middle" fill="#F8FAFC"
         font-family="Inter" font-size="56" font-weight="bold">
     2026 AI 开发者调查
   </text>
   <line x1="440" y1="160" x2="640" y2="160" stroke="#10B981" stroke-width="4"/>
-
+// ...
   <!-- 核心数据1: 使用比例（大数字突出） -->
   <text x="540" y="280" text-anchor="middle" fill="#94A3B8" font-size="32">使用 AI 工具的开发者</text>
   <text x="540" y="420" text-anchor="middle" fill="#10B981" font-size="200" font-weight="bold">78%</text>
-
+// ...
   <!-- 核心数据2: 生产力提升 -->
   <text x="540" y="560" text-anchor="middle" fill="#94A3B8" font-size="32">平均生产力提升</text>
   <text x="540" y="700" text-anchor="middle" fill="#F8FAFC" font-size="160" font-weight="bold">40%</text>
-
+// ...
   <!-- 工具使用占比横向条形图 -->
   <text x="540" y="850" text-anchor="middle" fill="#F8FAFC" font-size="36" font-weight="bold">最常用工具</text>
-
+// ...
   <!-- Copilot 52% -->
   <rect x="140" y="920" width="800" height="60" fill="#1E293B" rx="8"/>
   <rect x="140" y="920" width="416" height="60" fill="#3B82F6" rx="8"/>
   <text x="160" y="960" fill="#F8FAFC" font-size="28">Copilot</text>
   <text x="920" y="960" text-anchor="end" fill="#F8FAFC" font-size="28">52%</text>
-
+// ...
   <!-- ChatGPT 31% -->
   <rect x="140" y="1010" width="800" height="60" fill="#1E293B" rx="8"/>
   <rect x="140" y="1010" width="248" height="60" fill="#8B5CF6" rx="8"/>
   <text x="160" y="1050" fill="#F8FAFC" font-size="28">ChatGPT</text>
   <text x="920" y="1050" text-anchor="end" fill="#F8FAFC" font-size="28">31%</text>
-
+// ...
   <!-- Cursor 17% -->
   <rect x="140" y="1100" width="800" height="60" fill="#1E293B" rx="8"/>
   <rect x="140" y="1100" width="136" height="60" fill="#10B981" rx="8"/>
   <text x="160" y="1140" fill="#F8FAFC" font-size="28">Cursor</text>
   <text x="920" y="1140" text-anchor="end" fill="#F8FAFC" font-size="28">17%</text>
-
+// ...
   <!-- 底部数据来源 -->
   <text x="540" y="1800" text-anchor="middle" fill="#64748B" font-size="24">
     数据来源: 2026 全球开发者调查 | 样本量 12,000
   </text>
 </svg>
 `;
-
+// ...
 // SVG转PNG（用于社交分享）
 const { createCanvas, loadImage } = require('canvas');
 async function svgToPng() {
@@ -491,7 +493,7 @@ svgToPng();
 
 ```markdown
 # output/ai-survey/design-notes.md
-## 设计说明
+## 设计说明(续2)
 - **构图**: 垂直流式叙事（标题→核心数据1→核心数据2→对比数据→来源）
 - **视觉层级**: 200px大数字（焦点）> 160px中数字 > 36px小标题 > 28px标签
 - **配色**: 深蓝底#0F172A + 白文字 + 青绿#10B981强调（数据感）
@@ -519,11 +521,11 @@ svgToPng();
 const { createCanvas, registerFont } = require('canvas');
 const fs = require('fs');
 const { PDFDocument, rgb } = require('pdf-lib');
-
+// ...
 // 注册字体
 registerFont('NotoSerifSC-Bold.otf', { family: 'Noto Serif SC' });
 registerFont('NotoSansSC-Regular.otf', family: 'Noto Sans SC' });
-
+// ...
 // 名片尺寸 @ 300DPI: 85x54mm = 1004 x 638 px
 // 含3mm出血: 91x60mm = 1075 x 709 px
 const card = { w: 1075, h: 709 };
@@ -533,19 +535,19 @@ const colors = {
   bg: '#FBF6F0',         // 奶油白
   text: '#3D2817',       // 深可可
 };
-
+// ...
 // === 正面 ===
 const frontCanvas = createCanvas(card.w, card.h);
 const fctx = frontCanvas.getContext('2d');
-
+// ...
 // 1. 背景
 fctx.fillStyle = colors.bg;
 fctx.fillRect(0, 0, card.w, card.h);
-
+// ...
 // 2. 左侧色块（品牌色，占30%）
 fctx.fillStyle = colors.primary;
 fctx.fillRect(0, 0, card.w * 0.3, card.h);
-
+// ...
 // 3. Logo（云朵图形，简化几何）
 fctx.fillStyle = colors.accent;
 fctx.beginPath();
@@ -556,18 +558,18 @@ fctx.arc(card.w * 0.08, card.h * 0.4, 50, 0, Math.PI * 2);
 fctx.fill();
 // 云朵底部线
 fctx.fillRect(card.w * 0.05, card.h * 0.5, card.w * 0.2, 60);
-
+// ...
 // 4. 品牌名（右侧，思源宋体）
 fctx.fillStyle = colors.primary;
 fctx.font = 'bold 72px "Noto Serif SC"';
 fctx.textAlign = 'left';
 fctx.fillText('云朵咖啡', card.w * 0.38, card.h * 0.45);
-
+// ...
 // 5. 英文名（副标题）
 fctx.font = '28px "Noto Sans SC"';
 fctx.fillStyle = colors.accent;
 fctx.fillText('YunDuo Coffee', card.w * 0.38, card.h * 0.6);
-
+// ...
 // 6. 装饰线
 fctx.strokeStyle = colors.accent;
 fctx.lineWidth = 3;
@@ -575,63 +577,63 @@ fctx.beginPath();
 fctx.moveTo(card.w * 0.38, card.h * 0.7);
 fctx.lineTo(card.w * 0.55, card.h * 0.7);
 fctx.stroke();
-
+// ...
 // === 背面 ===
 const backCanvas = createCanvas(card.w, card.h);
 const bctx = backCanvas.getContext('2d');
-
+// ...
 // 1. 背景
 bctx.fillStyle = colors.primary;
 bctx.fillRect(0, 0, card.w, card.h);
-
+// ...
 // 2. 顶部装饰条
 bctx.fillStyle = colors.accent;
 bctx.fillRect(0, 0, card.w, 12);
-
+// ...
 // 3. 持卡人姓名
 bctx.fillStyle = colors.bg;
 bctx.font = 'bold 56px "Noto Serif SC"';
 bctx.textAlign = 'left';
 bctx.fillText('张小明', 80, 200);
-
+// ...
 // 4. 职位
 bctx.font = '28px "Noto Sans SC"';
 bctx.fillStyle = colors.accent;
 bctx.fillText('店长 / Store Manager', 80, 250);
-
+// ...
 // 5. 联系信息
 bctx.fillStyle = colors.bg;
 bctx.font = '24px "Noto Sans SC"';
 bctx.fillText('电话: 138-0000-0000', 80, 400);
 bctx.fillText('邮箱: zhang@yunduo.coffee', 80, 450);
 bctx.fillText('地址: 上海市愚园路123号', 80, 500);
-
+// ...
 // 6. 底部品牌名
 bctx.font = '20px "Noto Sans SC"';
 bctx.fillStyle = colors.accent;
 bctx.fillText('云朵咖啡 · 用心烘焙每一杯', 80, 620);
-
+// ...
 // === 生成PDF（含出血线和裁切标记） ===
 async function generatePDF() {
   const doc = await PDFDocument.create();
-  
+// ...
   // 正面页
   const frontPage = doc.addPage([card.w, card.h]);
   const frontPng = await doc.embedPng(frontCanvas.toBuffer('image/png'));
   frontPage.drawImage(frontPng, { x: 0, y: 0 });
-  
+// ...
   // 裁切标记
   frontPage.drawLine({
     start: { x: 0, y: 3*300/25.4 },  // 3mm出血线
     end: { x: 20, y: 3*300/25.4 },
     thickness: 0.5, color: rgb(0,0,0)
   });
-  
+// ...
   // 背面页
   const backPage = doc.addPage([card.w, card.h]);
   const backPng = await doc.embedPng(backCanvas.toBuffer('image/png'));
   backPage.drawImage(backPng, { x: 0, y: 0 });
-  
+// ...
   fs.writeFileSync('output/yunduo-card/print.pdf', await doc.save());
 }
 generatePDF();
@@ -639,7 +641,7 @@ generatePDF();
 
 ```markdown
 # output/yunduo-card/design-notes.md
-## 设计说明
+## 设计说明(续3)
 - **尺寸**: 85x54mm标准名片，含3mm出血，@300DPI
 - **正面构图**: 左30%品牌色块 + 右侧品牌名，黄金分割
 - **背面构图**: 顶部装饰条 + 信息分4层（姓名/职位/联系/品牌）
@@ -669,7 +671,7 @@ generatePDF();
 // output/summer-latte/multi-size.js
 const { createCanvas } = require('canvas');
 const fs = require('fs');
-
+// ...
 // 配色: 夏日清新（粉莓+奶油+绿叶）
 const colors = {
   bg: '#FFF5F0',         // 奶油粉
@@ -678,26 +680,26 @@ const colors = {
   text: '#3D2817',       // 深可可
   sub: '#8B5A3C',        // 浅棕
 };
-
+// ...
 // 通用绘制函数（参数化尺寸）
 function drawPoster(width, height, platform) {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
   const cx = width / 2;
-  
+// ...
   // 1. 背景（渐变奶油粉）
   const gradient = ctx.createLinearGradient(0, 0, 0, height);
   gradient.addColorStop(0, '#FFF5F0');
   gradient.addColorStop(1, '#FFE4E1');
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
-  
+// ...
   // 2. 主视觉: 拿铁杯几何图形
   const cupW = Math.min(width, height) * 0.35;
   const cupH = cupW * 1.3;
   const cupX = cx - cupW / 2;
   const cupY = height * 0.25;
-  
+// ...
   // 杯身
   ctx.fillStyle = colors.bg;
   ctx.strokeStyle = colors.text;
@@ -710,19 +712,19 @@ function drawPoster(width, height, platform) {
   ctx.closePath();
   ctx.fill();
   ctx.stroke();
-  
+// ...
   // 咖啡液面（莓果红）
   ctx.fillStyle = colors.primary;
   ctx.beginPath();
   ctx.ellipse(cx, cupY + 10, cupW * 0.45, 12, 0, 0, Math.PI * 2);
   ctx.fill();
-  
+// ...
   // 拉花（绿色叶子图案）
   ctx.fillStyle = colors.accent;
   ctx.beginPath();
   ctx.ellipse(cx, cupY + 30, cupW * 0.3, 8, 0, 0, Math.PI * 2);
   ctx.fill();
-  
+// ...
   // 3. 装饰元素: 莓果（3个圆点散布）
   const berryPositions = [
     { x: width * 0.15, y: height * 0.15, r: 15 },
@@ -740,20 +742,20 @@ function drawPoster(width, height, platform) {
     ctx.arc(p.x - p.r * 0.3, p.y - p.r * 0.3, p.r * 0.3, 0, Math.PI * 2);
     ctx.fill();
   });
-  
+// ...
   // 4. 标题（根据尺寸调整字号）
   const titleSize = Math.min(width, height) * 0.07;
   ctx.fillStyle = colors.text;
   ctx.font = `bold ${titleSize}px "Noto Serif SC"`;
   ctx.textAlign = 'center';
   ctx.fillText('夏日莓果拿铁', cx, height * 0.7);
-  
+// ...
   // 5. 副标题
   const subSize = titleSize * 0.4;
   ctx.font = `${subSize}px "Noto Sans SC"`;
   ctx.fillStyle = colors.sub;
   ctx.fillText('Summer Berry Latte', cx, height * 0.76);
-  
+// ...
   // 6. 装饰线
   ctx.strokeStyle = colors.accent;
   ctx.lineWidth = 3;
@@ -761,21 +763,21 @@ function drawPoster(width, height, platform) {
   ctx.moveTo(cx - 100, height * 0.82);
   ctx.lineTo(cx + 100, height * 0.82);
   ctx.stroke();
-  
+// ...
   // 7. 行动号召（根据平台调整）
   ctx.font = `${subSize * 0.8}px "Noto Sans SC"`;
   ctx.fillStyle = colors.primary;
   ctx.fillText('限时新品 · 7月15日上市', cx, height * 0.88);
-  
+// ...
   // 8. 平台标识（右下角水印）
   ctx.font = `${subSize * 0.6}px "Noto Sans SC"`;
   ctx.fillStyle = colors.sub;
   ctx.textAlign = 'right';
   ctx.fillText(`@云朵咖啡`, width - 30, height - 30);
-  
+// ...
   return canvas;
 }
-
+// ...
 // 生成4种尺寸
 const sizes = [
   { name: 'instagram', w: 1080, h: 1080 },
@@ -783,7 +785,7 @@ const sizes = [
   { name: 'xiaohongshu', w: 1080, h: 1440 },
   { name: 'weibo', w: 1080, h: 608 },
 ];
-
+// ...
 sizes.forEach(s => {
   const canvas = drawPoster(s.w, s.h, s.name);
   fs.writeFileSync(`output/summer-latte/${s.name}.png`, canvas.toBuffer('image/png'));
@@ -823,13 +825,13 @@ output/summer-latte/
 const { createCanvas, registerFont } = require('canvas');
 const fs = require('fs');
 const { PDFDocument, rgb } = require('pdf-lib');
-
+// ...
 // A2 @ 300DPI: 4961 x 7016 px
 // 含3mm出血: 435x609mm = 5137 x 7260 px
 const W = 5137, H = 7260;
 const canvas = createCanvas(W, H);
 const ctx = canvas.getContext('2d');
-
+// ...
 // 配色: 神秘夜空（深紫蓝 + 金黄星 + 银白文字）
 const colors = {
   bgTop: '#0F0A2E',      // 深夜紫蓝
@@ -839,7 +841,7 @@ const colors = {
   text: '#F8FAFC',       // 银白
   accent: '#A78BFA',     // 浅紫强调
 };
-
+// ...
 // 1. 背景渐变（夜空）
 const gradient = ctx.createLinearGradient(0, 0, 0, H);
 gradient.addColorStop(0, colors.bgTop);
@@ -847,7 +849,7 @@ gradient.addColorStop(0.5, '#1A1245');
 gradient.addColorStop(1, colors.bgBottom);
 ctx.fillStyle = gradient;
 ctx.fillRect(0, 0, W, H);
-
+// ...
 // 2. 星星（随机分布，大小不一）
 const stars = [];
 for (let i = 0; i < 200; i++) {
@@ -876,7 +878,7 @@ stars.forEach(s => {
   ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
   ctx.fill();
 });
-
+// ...
 // 3. 月亮（主视觉，黄金分割点）
 const moonX = W * 0.5, moonY = H * 0.3, moonR = 300;
 // 月光晕
@@ -897,18 +899,18 @@ ctx.fillStyle = colors.bgTop;
 ctx.beginPath();
 ctx.arc(moonX + moonR * 0.4, moonY, moonR * 0.95, 0, Math.PI * 2);
 ctx.fill();
-
+// ...
 // 4. 标题（手写感字体）
 ctx.fillStyle = colors.text;
 ctx.font = 'bold 280px "Noto Serif SC"';
 ctx.textAlign = 'center';
 ctx.fillText('星夜之声', W / 2, H * 0.55);
-
+// ...
 // 5. 英文副标题
 ctx.font = '80px Inter';
 ctx.fillStyle = colors.accent;
 ctx.fillText('Voice of the Starry Night', W / 2, H * 0.62);
-
+// ...
 // 6. 装饰线
 ctx.strokeStyle = colors.star;
 ctx.lineWidth = 4;
@@ -916,7 +918,7 @@ ctx.beginPath();
 ctx.moveTo(W * 0.35, H * 0.66);
 ctx.lineTo(W * 0.65, H * 0.66);
 ctx.stroke();
-
+// ...
 // 7. 阵容（5支乐队）
 ctx.font = '60px "Noto Sans SC"';
 ctx.fillStyle = colors.text;
@@ -924,7 +926,7 @@ const bands = ['星轨乐队', '月光奏鸣', '银河漫游者', '夜空诗人'
 bands.forEach((band, i) => {
   ctx.fillText(band, W / 2, H * (0.72 + i * 0.03));
 });
-
+// ...
 // 8. 时间地点
 ctx.font = '70px "Noto Sans SC"';
 ctx.fillStyle = colors.star;
@@ -932,21 +934,21 @@ ctx.fillText('2026.09.20  18:00', W / 2, H * 0.9);
 ctx.font = '50px "Noto Sans SC"';
 ctx.fillStyle = colors.text;
 ctx.fillText('北京奥林匹克公园', W / 2, H * 0.94);
-
+// ...
 // === 生成印刷PDF ===
 async function generatePrintPDF() {
   const doc = await PDFDocument.create();
   const page = doc.addPage([W, H]);
-  
+// ...
   // 嵌入海报图
   const png = await doc.embedPng(canvas.toBuffer('image/png'));
   page.drawImage(png, { x: 0, y: 0, width: W, height: H });
-  
+// ...
   // 裁切标记（4角8条线）
   const cropSize = 50;  // 裁切线长度
   const bleed = 3 * 300 / 25.4;  // 3mm出血 = 35px
   const black = rgb(0, 0, 0);
-  
+// ...
   // 左上角
   page.drawLine({ start: {x: 0, y: H - bleed}, end: {x: cropSize, y: H - bleed}, thickness: 1, color: black });
   page.drawLine({ start: {x: bleed, y: H}, end: {x: bleed, y: H - cropSize}, thickness: 1, color: black });
@@ -959,7 +961,7 @@ async function generatePrintPDF() {
   // 右下角
   page.drawLine({ start: {x: W - cropSize, y: bleed}, end: {x: W, y: bleed}, thickness: 1, color: black });
   page.drawLine({ start: {x: W - bleed, y: 0}, end: {x: W - bleed, y: cropSize}, thickness: 1, color: black });
-  
+// ...
   fs.writeFileSync('output/starry-night/print.pdf', await doc.save());
 }
 generatePrintPDF();
@@ -973,8 +975,8 @@ generatePrintPDF();
 - **色彩模式**: 设计用RGB，印刷时转CMYK
 - **出血线**: 3mm，4角8条裁切标记
 - **字体嵌入**: PDF已嵌入字体，避免替换
-
-## 设计说明
+# ...
+## 设计说明(续4)
 - **构图**: 垂直三段（星空月亮38% + 标题20% + 阵容信息42%）
 - **主视觉**: 新月+200颗星星，黄金分割点
 - **配色**: 深紫蓝夜空 + 金黄星 + 银白文字（3色克制）

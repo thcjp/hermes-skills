@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
-
 # AWS云巡检免费版（aws-cloud-inspector-free）
 
 本Skill基于本地AWS CLI提供只读云基础设施查询能力。所有操作默认只读，任何变更/破坏性操作必须用户显式确认后才执行。
@@ -33,7 +34,7 @@ suggested_price: 99.9
 本工具属"中等工具"级别，完整上手目标 < 120秒。
 
 | 阶段 | 目标耗时 | 任务 |
-|------|----------|------|
+|---|----|---|
 | 环境检查 | < 30秒 | 确认AWS CLI已安装且凭证已配置 |
 | 身份确认 | < 30秒 | `aws sts get-caller-identity` 验证身份 |
 | 资源清点 | < 60秒 | 执行第一个只读查询命令 |
@@ -46,7 +47,7 @@ AWS CLI标准配置路径：
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | AWS云巡检免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -103,7 +104,7 @@ aws ec2 describe-instances --query 'Reservations[].Instances[].{ID:InstanceId,St
 本Skill在以下标准路径查找AWS配置（已修复原版占位符问题）：
 
 | 平台 | 配置文件路径 | 凭证文件路径 |
-|------|-------------|-------------|
+|---:|---:|---:|
 | Linux/macOS | `~/.aws/config` | `~/.aws/credentials` |
 | Windows | `%USERPROFILE%\.aws\config` | `%USERPROFILE%\.aws\credentials` |
 
@@ -112,7 +113,7 @@ aws ec2 describe-instances --query 'Reservations[].Instances[].{ID:InstanceId,St
 [default]
 region = us-east-1
 output = json
-
+# ...
 [profile production]
 region = ap-northeast-1
 output = table
@@ -123,7 +124,7 @@ output = table
 [default]
 aws_access_key_id = AKIA...
 aws_secret_access_key = ...
-
+# ...
 [production]
 aws_access_key_id = AKIA...
 aws_secret_access_key = ...
@@ -134,7 +135,7 @@ aws_secret_access_key = ...
 ## 四、任务指南（常见巡检请求）
 
 | 任务类型 | 推荐命令 | 操作属性 | 免费版支持 |
-|----------|----------|----------|-----------|
+|:---:|:---:|:---:|:---:|
 | 资源清点 | `list` / `describe` / `get` 类命令 | 只读 | ✅ |
 | 健康检查 | CloudWatch metrics / logs 查询 | 只读 | ✅ |
 | 基础安全核查 | IAM列表、S3公开访问、SG暴露、KMS使用 | 只读 | ✅ 基础核查 |
@@ -153,7 +154,7 @@ aws_secret_access_key = ...
 ```bash
 # 步骤1：确认身份
 aws sts get-caller-identity
-
+# ...
 # 步骤2：列出所有region的EC2实例
 aws ec2 describe-regions --query 'Regions[].RegionName' --output text | tr '\t' '\n' | while read region; do
   echo "=== $region ==="
@@ -161,10 +162,10 @@ aws ec2 describe-regions --query 'Regions[].RegionName' --output text | tr '\t' 
     --query 'Reservations[].Instances[].{ID:InstanceId,State:State.Name,Type:InstanceType}' \
     --output table
 done
-
+# ...
 # 步骤3：列出所有S3桶
 aws s3api list-buckets --query 'Buckets[].{Name:Name,Created:CreationDate}' --output table
-
+# ...
 # 步骤4：列出所有IAM用户
 aws iam list-users --query 'Users[].{Name:UserName,Created:CreateDate}' --output table
 ```
@@ -177,12 +178,12 @@ aws iam list-users --query 'Users[].{Name:UserName,Created:CreateDate}' --output
 ```bash
 # 检查1：S3桶公开访问阻止配置
 aws s3api get-public-access-block --bucket my-bucket 2>/dev/null || echo "未配置公开访问阻止"
-
+# ...
 # 检查2：安全组是否暴露22端口到0.0.0.0/0
 aws ec2 describe-security-groups \
   --query 'SecurityGroups[?IpPermissions[?FromPort==`22` && IpRanges[?CidrIp==`0.0.0.0/0`]].GroupId' \
   --output text
-
+# ...
 # 检查3：IAM访问密钥年龄（超过90天需关注）
 aws iam list-access-keys --user-name my-user \
   --query 'AccessKeyMetadata[].{KeyID:AccessKeyId,Created:CreateDate,Status:Status}' --output table
@@ -204,7 +205,7 @@ aws cloudwatch get-metric-statistics \
   --period 300 \
   --statistics Average \
   --output table
-
+# ...
 # 查看最近告警状态
 aws cloudwatch describe-alarms --state-value ALARM \
   --query 'MetricAlarms[].{Name:AlarmName,Metric:MetricName,State:StateValue}' --output table
@@ -239,9 +240,8 @@ A：使用 `--query` 参数配合JMESPath语法过滤。例如 `--query 'Reserva
 
 ## 错误处理
 
-
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
-|------|------|------|----------|--------|
+|:------|------:|:------|:------|------:|
 | 1 | `Unable to locate credentials` | 未配置AWS凭证 | 运行 `aws configure` 或检查 `~/.aws/credentials` | P0 |
 | 2 | `InvalidClientTokenId` | 凭证无效或已过期 | 重新生成access key并更新配置 | P0 |
 | 3 | `AccessDenied` | IAM权限不足 | 联系管理员添加所需权限，或切换有权限的profile | P1 |
@@ -270,7 +270,7 @@ A：使用 `--query` 参数配合JMESPath语法过滤。例如 `--query 'Reserva
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 免费版兼容性 |
-|:-------|:-----|:---------|:---------|:------------|
+|---:|:---|---:|---:|:---|
 | AWS CLI v2 | 命令行工具 | 必需 | 官方安装包 | ✅ 完整可用 |
 | AWS账户 | 云服务 | 必需 | AWS官网注册 | ✅ 只读权限即可 |
 | IAM只读权限 | IAM策略 | 必需 | IAM控制台分配 | ✅ 免费版仅需只读 |
@@ -381,13 +381,10 @@ aws/credentials` 标准位置）
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的只读云基础设施、查询助手、免费提供资源清点、健康检查与基础安、全核查能力、适合个人开发者日、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
-## 适用场景
-
-**用户角色**：新入职运维工程师
-**目标**：盘点刚接手的AWS账号下所有核心资源。
+## 适用场景(补充)
 
 ```bash
-
+# ...
 ## 输出格式
 ```json
 {
@@ -404,3 +401,4 @@ aws/credentials` 标准位置）
   "error": null
 }
 ```
+# ...

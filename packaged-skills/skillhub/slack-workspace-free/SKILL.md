@@ -17,16 +17,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
 ---
 # Slack工作区管家 LITE（Slack Workspace Free）
 
 面向团队协作场景的Slack基础工作区管理（免费版）。通过ClawLink OAuth托管连接，提供频道消息发送、频道列表、用户列表三大能力。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Slack工作区管家LITE处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | ClawLink 插件 | 集成插件 | 必需 | Agent 平台插件市场安装 `clawlink-plugin` |
 | Slack OAuth 连接 | OAuth 授权 | 必需 | 通过 ClawLink Dashboard 连接 Slack 工作区 |
 | curl 或等价 HTTP 客户端 | 命令行工具 | 必需 | 系统自带或包管理器安装 |
@@ -74,7 +75,7 @@ homepage: "https://skillhub.cn"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+|---:|---:|---:|---:|
 | 通知发布 | 向#general发送会议提醒 | 消息投递确认+时间戳 | 消息发送 |
 | 频道发现 | 列出所有频道 | 频道列表（ID、名称、成员数） | 频道列表 |
 | 成员查询 | 列出工作区所有用户 | 用户列表（ID、姓名、邮箱） | 用户列表 |
@@ -112,7 +113,7 @@ clawlink_list_integrations
 ```bash
 # 列出频道找到#general的ID
 clawlink_call_tool --tool "slack_list_all_channels" --params '{}'
-
+# ...
 # 发送版本发布提醒
 clawlink_call_tool --tool "slack_send_message" --params '{
   "channel": "C0GENERAL01",
@@ -124,7 +125,7 @@ clawlink_call_tool --tool "slack_send_message" --params '{
 ```json
 // list_all_channels（截取）
 {"ok": true, "channels": [{"id": "C0GENERAL01", "name": "general", "num_members": 42}]}
-
+# ...
 // send_message
 {"ok": true, "channel": "C0GENERAL01", "ts": "1721452800.123456"}
 ```
@@ -133,9 +134,8 @@ clawlink_call_tool --tool "slack_send_message" --params '{
 
 ## 错误处理
 
-
 | 错误码 | 错误信息 | 原因分析 | 处理方式 |
-|:-------|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | `channel_not_found` | 频道ID不存在或Bot不是成员 | 频道ID拼写错误或频道已删除 | 用 `slack_list_all_channels` 重新获取频道ID |
 | `not_authed` | OAuth Token无效或已撤销 | 用户在Dashboard断开了Slack连接 | 引导用户重新连接 Slack |
 | `missing_scope` | Token缺少所需权限范围 | 连接时未授权 `chat:write` 等Scope | 引导用户在Dashboard重新授权 |

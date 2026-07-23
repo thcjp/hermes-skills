@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 飞书文档写入（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `按标题分块写入长报告
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：批量块操作
 
 批量创建、更新、删除飞书文档块。**示例指令**：`
 
 `批量更新文档块
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 飞书文档写入（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -164,19 +156,19 @@ import time
 import subprocess
 from typing import List, Dict
 from dataclasses import dataclass
-
+# ...
 @dataclass
 class FeishuBlock:
     block_id: str
     block_type: int
     content: str
     children_ids: List[str] = None
-
+# ...
 class FeishuDocWriter:
     def __init__(self, app_id: str, app_secret: str):
         self.app_id = app_id
         self.app_secret = app_secret
-
+# ...
     def write_long_document(self, doc_token: str, content: str) -> dict:
         """长文档分块写入（PRO 专属）"""
         chunks = self._split_by_heading(content)
@@ -186,7 +178,7 @@ class FeishuDocWriter:
             results.append(result)
             time.sleep(0.3)
         return {"total_chunks": len(chunks), "results": results}
-
+# ...
     def batch_block_operations(self, doc_token: str,
                                operations: List[dict]) -> List[dict]:
         """批量块操作（PRO 专属）"""
@@ -203,7 +195,7 @@ class FeishuDocWriter:
             results.append(r)
             time.sleep(0.2)
         return results
-
+# ...
     def _split_by_heading(self, content: str) -> List[str]:
         """按标题分块"""
         chunks = []
@@ -217,14 +209,14 @@ class FeishuDocWriter:
         if current:
             chunks.append("\n".join(current))
         return chunks
-
+# ...
     def _append_block(self, token, content):
         result = subprocess.run([
             "node", "index.js", "--action", "append",
             "--token", token, "--content", content
         ], capture_output=True, text=True)
         return {"status": "ok", "output": result.stdout.strip()}
-
+# ...
     def _update_block(self, token, block_id, content):
         result = subprocess.run([
             "node", "index.js", "--action", "update",
@@ -232,14 +224,14 @@ class FeishuDocWriter:
             "--content", content
         ], capture_output=True, text=True)
         return {"status": "ok", "block_id": block_id}
-
+# ...
     def _delete_block(self, token, block_id):
         result = subprocess.run([
             "node", "index.js", "--action", "delete",
             "--token", token, "--block-id", block_id
         ], capture_output=True, text=True)
         return {"status": "deleted", "block_id": block_id}
-
+# ...
 writer = FeishuDocWriter("APP_ID", "APP_SECRET")
 writer.write_long_document("doccnXXXX", "# 第一章\n内容...\n# 第二章\n内容...")
 print("长文档写入完成")
@@ -280,7 +272,7 @@ feishu_write:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -292,7 +284,7 @@ feishu_write:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -366,7 +358,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需 | v16+ |
 
@@ -381,9 +373,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -28,12 +28,14 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 专业版为企业提供完整的CDN管理与优化平台,在免费版基础配置能力之上,新增多CDN智能调度、Edge Workers边缘计算、高级WAF与DDoS防护、实时性能监控与告警、缓存预热与批量刷新、SARIF合规报告等企业级功能。专业版完全兼容免费版配置方法,已有CDN配置可无缝升级,适合全球内容分发与高并发场景。
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 多CDN调度 | 智能选择最优CDN,故障自动切换 |
 | 边缘计算 | Edge Workers在边缘节点执行逻辑 |
 | 高级WAF | 自定义规则+机器学习威胁检测 |
@@ -55,7 +57,7 @@ pricing_model: "monthly"
 ### 2. Edge Workers边缘计算(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | CDN配置工具包专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -65,10 +67,10 @@ pricing_model: "monthly"
 export default {
     async fetch(request, env) {
         const url = new URL(request.url);
-
+// ...
         // A/B测试:50%用户看到新版页面
         const variant = Math.random() < 0.5 ? 'A' : 'B';
-
+// ...
         // 添加变体标识到请求头
         const modifiedRequest = new Request(request, {
             headers: {
@@ -76,25 +78,25 @@ export default {
                 'X-AB-Variant': variant
             }
         });
-
+// ...
         // 获取源站响应
         const response = await fetch(modifiedRequest);
-
+// ...
         // 在边缘修改响应
         const modifiedResponse = new Response(response.body, response);
         modifiedResponse.headers.set('X-AB-Variant', variant);
         modifiedResponse.headers.set('X-Edge-Location', request.cf?.colo || 'unknown');
-
+// ...
         return modifiedResponse;
     }
 };
-
+// ...
 // Edge Worker: 边缘缓存API响应
 export default {
     async fetch(request, env) {
         const cache = caches.default;
         const cacheKey = new Request(request.url, request);
-
+// ...
         // 检查缓存
         let response = await cache.match(cacheKey);
         if (response) {
@@ -103,21 +105,21 @@ export default {
             response.headers.set('X-Cache-Status', 'HIT');
             return response;
         }
-
+// ...
         // 回源获取
         response = await fetch(request);
-
+// ...
         // 仅缓存成功响应
         if (response.status === 200) {
             response = new Response(response.body, response);
             response.headers.set('X-Cache-Status', 'MISS');
             response.headers.set('Cache-Control', 'public, max-age=300');
-
+// ...
             // 异步写入缓存
             const event = new Request(request.url, { method: 'GET' });
             await cache.put(event, response.clone());
         }
-
+// ...
         return response;
     }
 };
@@ -133,7 +135,7 @@ export default {
 #!/bin/bash
 API_TOKEN="你的API_TOKEN"
 ZONE_ID="你的ZONE_ID"
-
+# ...
 curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
@@ -147,7 +149,7 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets"
             "description": "阻止SQL注入攻击"
         }]
     }' | jq '.success'
-
+# ...
 curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
@@ -167,12 +169,12 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets"
             "description": "API每分钟100次限制"
         }]
     }' | jq '.success'
-
+# ...
 curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/ddos_protection/l7" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     -d '{"sensitivity_level":"high"}' | jq '.success'
-
+# ...
 curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/bot_management" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
@@ -189,8 +191,6 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/bot_manag
 
 ### 4. 实时监控与告警(专业版独有)
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供实时监控与告警(专业版独有)所需的指令和必要参数。
 **处理**: 解析实时监控与告警(专业版独有)的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回实时监控与告警(专业版独有)的响应数据,包含状态码、结果和日志。
@@ -201,26 +201,26 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/bot_manag
 ```bash
 #!/bin/bash
 echo "=== 全球CDN部署 ==="
-
+# ...
 echo "配置中国区CDN(阿里云)..."
 aliyun cdn AddCdnDomain --DomainName cn.example.com \
     --CdnType web --Sources '[{"content":"origin.example.com","type":"domain","priority":"20"}]'
-
+# ...
 echo "配置全球区CDN(Cloudflare)..."
 curl -s -X POST "https://api.cloudflare.com/client/v4/zones" \
     -H "Authorization: Bearer ${CF_TOKEN}" \
     -d '{"name":"example.com","account":{"id":"ACCOUNT_ID"}}'
-
+# ...
 echo "配置智能DNS路由..."
 echo "  cn.example.com -> 阿里云CDN(中国大陆用户)"
 echo "  global.example.com -> Cloudflare(全球用户)"
-
+# ...
 echo "执行缓存预热..."
 for path in / /index.html /assets/app.js /assets/style.css; do
     curl -s -o /dev/null "https://cn.example.com${path}"
     curl -s -o /dev/null "https://global.example.com${path}"
 done
-
+# ...
 echo "全球CDN部署完成"
 ```
 
@@ -228,10 +228,10 @@ echo "全球CDN部署完成"
 ```python
 #!/usr/bin/env python3
 """高并发活动CDN保障方案"""
-
+# ...
 class EventCDNGuard:
     """活动期间CDN保障"""
-
+# ...
     def __init__(self):
         self.config = {
             "cache_ttl_static": 86400,      # 静态资源缓存1天
@@ -243,7 +243,7 @@ class EventCDNGuard:
             "compression": "brotli",         # Brotli压缩
             "http_version": "http3",         # HTTP/3
         }
-
+# ...
     def pre_event_setup(self):
         """活动前配置"""
         print("=== 活动前CDN配置 ===")
@@ -255,14 +255,14 @@ class EventCDNGuard:
         print(f"  源站防护: {'启用' if self.config['origin_shield'] else '关闭'}")
         print(f"  压缩: {self.config['compression']}")
         print(f"  HTTP版本: {self.config['http_version']}")
-
+# ...
     def warmup_cache(self, urls):
         """缓存预热"""
         print(f"\n=== 缓存预热: {len(urls)}个URL ===")
         for url in urls:
             print(f"  预热: {url}")
         print("预热完成")
-
+# ...
     def generate_report(self):
         """生成保障报告"""
         return {
@@ -275,7 +275,7 @@ class EventCDNGuard:
                 "配置故障切换备用CDN"
             ]
         }
-
+# ...
 if __name__ == "__main__":
     guard = EventCDNGuard()
     guard.pre_event_setup()
@@ -293,7 +293,7 @@ if __name__ == "__main__":
 #!/bin/bash
 ZONE_ID="你的ZONE_ID"
 API_TOKEN="你的API_TOKEN"
-
+# ...
 echo "=== 批量URL刷新 ==="
 curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
     -H "Authorization: Bearer ${API_TOKEN}" \
@@ -305,7 +305,7 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cac
             "https://example.com/app.js"
         ]
     }' | jq '.success'
-
+# ...
 # curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
 echo "=== 按前缀刷新 ==="
 curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
@@ -314,7 +314,7 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cac
     -d '{
         "prefixes": ["example.com/assets/", "example.com/images/"]
     }' | jq '.success'
-
+# ...
 echo "=== 缓存预热 ==="
 URLS=(
     "https://example.com/"
@@ -362,7 +362,7 @@ python3 multi_cdn_router.py --region global --provider cloudflare
 ## 示例
 ### 专业版功能矩阵
 | 功能 | 免费版 | 专业版 | 说明 |
-|:-----|:-------|:-------|:-----|
+|---:|---:|---:|---:|
 | 基础缓存 | 支持 | 支持 | 缓存策略配置 |
 | 多CDN调度 | 不支持 | 支持 | 智能路由 |
 | Edge Workers | 不支持 | 支持 | 边缘计算 |
@@ -412,7 +412,7 @@ python3 multi_cdn_router.py --region global --provider cloudflare
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | curl | 命令行工具 | 必需 | 系统自带 |
 | jq | JSON处理工具 | 必需 | `apt install jq` |
 | python3 | 运行时环境 | 推荐 | python.org 下载 |
@@ -434,7 +434,7 @@ python3 multi_cdn_router.py --region global --provider cloudflare
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

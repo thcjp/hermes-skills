@@ -28,28 +28,30 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
 # 在线表单笔记(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 在线表单笔记(专业版)企业级表单管理 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 与免费版能力对比
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 表单CRUD | 单次≤10字段 | 无限制 |
 | 提交数据 | 单条操作 | 单条 + 批量(万级) |
 | Webhook订阅 | 不支持 | 全事件订阅 |
@@ -105,7 +107,7 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
       {"path": "reason", "label": "事由", "type": "textarea"}
     ]
   }'
-
+# ...
 # 2. 基于模板批量创建审批表单
 curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -118,7 +120,7 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
       {"name": "调岗审批", "projectId": "proj_hr"}
     ]
   }'
-
+# ...
 # 3. 配置Webhook推送审批事件
 curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -145,7 +147,7 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
     "description": "仅可向销售部表单提交数据",
     "scopes": ["form:submit:sales_*"]
   }'
-
+# ...
 # 2. 分配用户到角色
 curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -156,7 +158,7 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
     "roleId": "role_详情见说明",
     "orgId": "org_详情见说明"
   }'
-
+# ...
 # 3. 批量查询各部门提交情况
 curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -179,7 +181,7 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   -H "Content-Type: application/json" \
   "https://api.web-notepad.example/v1/forms/{formId}/submissions/batch" \
   -d '{"submissions": [<数据从data.jsonl流式读取>]}'
-
+# ...
 # 2. 启用并行查询与缓存
 curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -191,7 +193,7 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
     "cacheKey": "export_2026_01",
     "ttl": 3600
   }'
-
+# ...
 # 3. 查询审计日志
 curl -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   "https://api.web-notepad.example/v1/audit-logs?resourceType=form&resourceId={formId}&action=export&limit=100"
@@ -211,7 +213,7 @@ curl -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
 # 列出组织
 curl -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   "https://api.web-notepad.example/v1/orgs"
-
+# ...
 # 创建角色
 curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
   -H "Content-Type: application/json" \
@@ -227,7 +229,7 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | web-notepad处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -274,9 +276,8 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
 
 ## 异常处理
 
-
 | 症状 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:---:|:---:|:---:|:---:|
 | 批量提交部分失败 | 个别数据格式错误 | 查看响应中的`failedItems`,修正后用Idempotency-Key | 高 |
 | Webhook投递延迟 | 接收端响应慢或5xx | 检查接收端性能,启用异步处理队列 | 高 |
 | RBAC权限不生效 | 角色继承层次过深或循环 | 用`roles trace`命令查看继承链,简化层次 | 中 |
@@ -293,9 +294,9 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
 - **Python**: 3.8+(可选,用于辅助脚本与ETL)
 - **Node.js**: 16+(可选,用于运行CLI工具)
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | curl | 命令行工具 | 必需 | 操作系统自带或通过包管理器安装 |
 | jq | JSON处理工具 | 推荐 | 通过`apt install jq`或`brew install jq`安装 |
@@ -334,7 +335,7 @@ curl -X POST -H "Authorization: Bearer $WEB_NOTEPAD_API_KEY" \
 ### RBAC权限模型
 
 | 维度 | 说明 | 示例 |
-|------|------|------|
+|---:|:---|---:|
 | 用户(Users) | 主体,可属于多个组 | user@example.com |
 | 组(Groups) | 用户集合,便于批量授权 | 工程组、运营组 |
 | 角色(Roles) | 权限集合,可继承 | 管理员、提交员、查看员 |
@@ -401,9 +402,8 @@ A: 控制台"用量分析"页面提供按小时维度的请求量、缓存命中
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -19,29 +19,30 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工作流,自动化,效率"
 ---
 # 工作流分解器(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 工作流分解器(专业版)多模型并行编排 | 不支持 | 支持 |
+| 工作流分解器(专业版)性能分析 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
 
 ## 核心能力
 
 > 详细内容已移至 `references/detail.md` - 
 
 ### 1. 智能拆解算法（专业版）
-
 
 **输入**: 用户提供智能拆解算法（专业版）所需的指令和必要参数。
 **处理**: 解析智能拆解算法（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -54,16 +55,16 @@ workflow-splitter route config \
   --reasoning "gpt-4o,claude-opus" \
   --coding "claude-sonnet,gpt-4o" \
   --creative "claude-opus"
-
+# ...
 workflow-splitter route prefer --provider "anthropic" --task-type "coding"
-
+# ...
 workflow-splitter route fallback --primary "gpt-4o" --secondary "claude-sonnet"
 ```
 
 **编排策略**：
 
 | 策略 | 说明 | 适用场景 |
-|------|------|----------|
+|:-----|:-----|:-----|
 | vote | 多模型投票选最优 | 关键决策步骤 |
 | cascade | 主模型失败切换备选 | 高可用要求 |
 | parallel | 多模型并行取最快 | 时间敏感 |
@@ -76,11 +77,11 @@ workflow-splitter route fallback --primary "gpt-4o" --secondary "claude-sonnet"
 ### 3. 并行执行（专业版）
 ```bash
 workflow-splitter analyze-deps --task-id "task-001"
-
+# ...
 workflow-splitter execute-parallel --task-id "task-001" --max-workers 8
-
+# ...
 workflow-splitter plan --task-id "task-001" --visualize
-
+# ...
 workflow-splitter dag --task-id "task-001" --output "deps.png"
 ```
 
@@ -92,18 +93,15 @@ workflow-splitter dag --task-id "task-001" --output "deps.png"
 第2步: UI设计   ──┤
                   ├──> 第5步: 测试（依赖4）
 第3步: API设计  ──┘
-
+# ...
 并行执行：
 T0: 步骤1, 2, 3 并行
 T1: 步骤4（等待1,2,3完成）
 T2: 步骤5（等待4完成）
 ```
 
-> 详细内容已移至 `references/detail.md` -
-
 **输入**: 用户提供并行执行（专业版）所需的指令和必要参数。
 ### 4. 性能分析（专业版）
-
 
 **输入**: 用户提供性能分析（专业版）所需的指令和必要参数。
 **处理**: 解析性能分析（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -112,16 +110,16 @@ T2: 步骤5（等待4完成）
 ### 5. 模板库（专业版）
 ```bash
 workflow-splitter template list
-
+# ...
 workflow-splitter template install --pack software-dev
 workflow-splitter template install --pack data-analysis
 workflow-splitter template install --pack consulting
 workflow-splitter template install --pack research
-
+# ...
 workflow-splitter split "开发电商平台" --template "software-dev"
-
+# ...
 workflow-splitter template create "my-template" --from-task "task-001"
-
+# ...
 workflow-splitter template export "software-dev" --output "sd.json"
 workflow-splitter template import "custom.json"
 ```
@@ -129,7 +127,7 @@ workflow-splitter template import "custom.json"
 **模板分类**：
 
 | 模板包 | 适用场景 | 步骤数 |
-|--------|----------|--------|
+|---:|---:|---:|
 | software-dev | 软件开发 | 6-10步 |
 | data-analysis | 数据分析 | 4-6步 |
 | consulting | 咨询项目 | 8-12步 |
@@ -144,11 +142,11 @@ workflow-splitter route add \
   --condition "task_type=coding AND complexity=high" \
   --model "claude-sonnet" \
   --priority 1
-
+# ...
 workflow-splitter route list
-
+# ...
 workflow-splitter route test --task "开发登录API"
-
+# ...
 workflow-splitter route priority --rule-id "rule-001" --priority 1
 ```
 
@@ -161,20 +159,20 @@ workflow-splitter route priority --rule-id "rule-001" --priority 1
 workflow-splitter team add --member "alice" --skills "frontend"
 workflow-splitter team add --member "bob" --skills "backend"
 workflow-splitter team add --member "charlie" --skills "devops"
-
+# ...
 workflow-splitter assign --task-id "task-001" --strategy balanced
-
+# ...
 workflow-splitter team status
-
+# ...
 workflow-splitter sync --task-id "task-001"
-
+# ...
 workflow-splitter team report --task-id "task-001"
 ```
 
 **分配策略**：
 
-| 策略 | 说明 | 适用场景 |
-|------|------|----------|
+| 策略(续)| 说明 | 适用场景 |
+|:----:|:----:|:----:|
 | balanced | 按负载均衡分配 | 通用 |
 | skill-based | 按技能匹配 | 专业要求高 |
 | round-robin | 轮询分配 | 任务均匀 |
@@ -186,11 +184,11 @@ workflow-splitter team report --task-id "task-001"
 ### 8. 版本管理（专业版）
 ```bash
 workflow-splitter version log --task-id "task-001"
-
+# ...
 workflow-splitter version diff --task-id "task-001" --from "v1" --to "v2"
-
+# ...
 workflow-splitter version rollback --task-id "task-001" --to "v1"
-
+# ...
 workflow-splitter version tag --task-id "task-001" --tag "approved"
 ```
 
@@ -207,9 +205,9 @@ workflow-splitter version tag --task-id "task-001" --tag "approved"
 
 ```bash
 workflow-splitter split "企业ERP系统实施" --template "consulting" --smart
-
+# ...
 workflow-splitter report --task-id "task-001" --format wbs --output "wbs.md"
-
+# ...
 workflow-splitter assign --task-id "task-001" --strategy skill-based
 ```
 
@@ -222,9 +220,9 @@ workflow-splitter assign --task-id "task-001" --strategy skill-based
 
 ```bash
 workflow-splitter split "开发支付模块" --smart
-
+# ...
 workflow-splitter assign --task-id "task-001" --strategy skill-based
-
+# ...
 workflow-splitter team status
 ```
 
@@ -235,7 +233,7 @@ workflow-splitter team status
 
 ```bash
 workflow-splitter execute --step 1 --multi-model --strategy vote
-
+# ...
 workflow-splitter execute --step 3 --multi-model --strategy specialize
 ```
 
@@ -246,9 +244,9 @@ workflow-splitter execute --step 3 --multi-model --strategy specialize
 
 ```bash
 workflow-splitter analyze-deps --task-id "sprint-1"
-
+# ...
 workflow-splitter execute-parallel --task-id "sprint-1" --max-workers 5
-
+# ...
 workflow-splitter dag --task-id "sprint-1" --output "sprint-deps.png"
 ```
 
@@ -259,11 +257,11 @@ workflow-splitter dag --task-id "sprint-1" --output "sprint-deps.png"
 
 ```bash
 workflow-splitter split "数字化转型咨询" --template "consulting"
-
+# ...
 workflow-splitter version tag --task-id "task-001" --tag "client-approved"
-
+# ...
 workflow-splitter rebalance --task-id "task-001"
-
+# ...
 workflow-splitter report --task-id "task-001" --format gantt --output "gantt.html"
 ```
 
@@ -274,9 +272,9 @@ workflow-splitter report --task-id "task-001" --format gantt --output "gantt.htm
 
 ```bash
 workflow-splitter split "产品v2.0发布" --template "release-checklist"
-
+# ...
 workflow-splitter assign --task-id "task-001" --team "marketing,dev,ops"
-
+# ...
 workflow-splitter progress --task-id "task-001"
 ```
 
@@ -287,7 +285,7 @@ workflow-splitter progress --task-id "task-001"
 ### 基础搭建（<60秒）
 ```bash
 workflow-splitter split "重构微服务架构"
-
+# ...
 workflow-splitter report
 ```
 
@@ -296,13 +294,13 @@ workflow-splitter report
 
 ```bash
 workflow-splitter smart enable
-
+# ...
 workflow-splitter template install --pack software-dev
 workflow-splitter template install --pack data-analysis
 workflow-splitter template install --pack consulting
-
+# ...
 workflow-splitter split "开发电商平台" --template "software-dev"
-
+# ...
 workflow-splitter template list
 ```
 
@@ -312,7 +310,7 @@ workflow-splitter template list
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:------|------:|:------|:------|
 | content | string | 否 | workflow-splitter处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -371,9 +369,8 @@ workflow-splitter template list
 
 ## 异常处理
 
-
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|:---|---:|---:|
 | 拆解步骤过粗/过细 | granularity设置不当 | 调整`--granularity`参数 | 中 |
 | 智能算法建议不准 | 历史数据不足 | 提供更多反馈；禁用smart用模板 | 中 |
 | 多模型结果冲突 | 模型差异大 | 切换策略（vote→consensus） | 中 |
@@ -395,7 +392,7 @@ workflow-splitter template list
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | workflow-splitter CLI | 命令行工具 | 必需 | 随本技能提供 |
 | Python 3.8+ | 运行时 | 专业版必需 | 从python.org安装 |
@@ -416,9 +413,9 @@ workflow-splitter template list
 ### 与项目管理工具集成
 ```bash
 workflow-splitter export --task-id "task-001" --format jira --output "jira.json"
-
+# ...
 workflow-splitter export --task-id "task-001" --format asana --output "asana.csv"
-
+# ...
 workflow-splitter import --from jira --project "PROJ-001"
 ```
 
@@ -444,7 +441,7 @@ LLM路由至GPT-4o，确保复杂拆解决策的质量。
 ### 与CI/CD集成
 ```bash
 workflow-splitter split "实现PR #$PR_NUMBER" --smart
-
+# ...
 workflow-splitter assign --task-id "task-001" --team "reviewers"
 ```
 
@@ -460,7 +457,7 @@ workflow-splitter assign --task-id "task-001" --team "reviewers"
 
 ### 版本更新历史
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|----|:--:|---:|
 | 1.0.0 | 2026-01 | 初版发布，含八大高级功能 |
 
 ## 常见问题
@@ -496,9 +493,8 @@ workflow-splitter assign --task-id "task-001" --team "reviewers"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

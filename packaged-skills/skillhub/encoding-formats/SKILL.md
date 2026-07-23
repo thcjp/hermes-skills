@@ -20,16 +20,17 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 编码格式工具
 
 编码、解码和检查常见数据格式。覆盖Base64、URL编码、Hex、Unicode、JWT、哈希校验和序列化格式。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 编码格式工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 编码格式工具码解码与数据格式转换 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -61,7 +62,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -76,10 +76,10 @@ export API_KEY="your_api_key_here"
 ```bash
 echo -n "Hello, World!" | base64
 # 输出: SGVsbG8sIFdvcmxkIQ==
-
+# ...
 echo "SGVsbG8sIFdvcmxkIQ==" | base64 -d
 # 输出: Hello, World!
-
+# ...
 # URL安全变体
 echo -n "Hello" | base64 | tr '+/' '-_' | tr -d '='
 ```- 验证返回数据的完整性和格式正确性
@@ -90,7 +90,7 @@ echo -n "Hello" | base64 | tr '+/' '-_' | tr -d '='
 ```bash
 python3 -c "from urllib.parse import quote; print(quote('hello world & foo=bar'))"
 # 输出: hello%20world%20%26%20foo%3Dbar
-
+# ...
 python3 -c "from urllib.parse import unquote; print(unquote('hello%20world%20%26%20foo%3Dbar'))"
 # 输出: hello world & foo=bar
 ```- 验证执行结果,确认输出符合预期格式
@@ -146,7 +146,7 @@ echo "$TOKEN" | cut -d. -f2 | tr '-_' '+/' | base64 -d 2>/dev/null | jq
 ```bash
 echo -n "Hello" | sha256sum
 # 输出: 185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969
-
+# ...
 sha256sum *.tar.gz > checksums.sha256
 sha256sum -c checksums.sha256    # 验证
 ```
@@ -196,7 +196,7 @@ curl -G --data-urlencode "q=hello world & more" https://api.example.com/search
 
 ```python
 import json, base64, time
-
+# ...
 token = "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjk3NDI0Mjg4MDB9.signature"
 payload_b64 = token.split('.')[1]
 # 添加padding
@@ -212,7 +212,7 @@ print(f"Expired: {is_expired}")
 ```bash
 sha256sum file.bin
 # 输出: 3a7bd8e1c4f2b9a6e8d5c1f4b7a2e9d6c3f8b1a4e7d2c9f6b3a8e1d5c4f7b2a9  file.bin
-
+# ...
 sha256sum -c checksums.sha256
 # 输出: file.bin: OK
 ```
@@ -230,7 +230,7 @@ iconv -f UTF-8 -t ISO-8859-1 document.txt 2>/dev/null | iconv -f UTF-8 -t UTF-8
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | Base64解码失败 | 输入包含非Base64字符或padding错误 | 检查输入是否为有效Base64，添加 `=` padding |
 | Mojibake（乱码） | 文件编码假设错误 | 用 `file -bi` 检测实际编码，用 `iconv` 转换 |
 | JWT解码返回乱码 | Base64url使用 `-` 和 `_` 而非 `+` 和 `/` | 先 `tr '-_' '+/'` 转换再解码，添加padding |

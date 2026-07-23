@@ -46,11 +46,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "图像处理,AI绘图,创意"
 ---
-
 # 卡片图生成器(免费版)
 ## 概述
 卡片图生成器免费版是一款将文字文案渲染为PNG格式卡片图片的工具。支持文字海报(金句/大字报)、长文分页卡片和公众号文章封面图三种基础模板,内置公众号和小红书配色预设,帮助个人创作者快速生成社交媒体配图。
@@ -59,7 +60,7 @@ suggested_price: 29.9
 
 ### 免费版与PRO版能力对比
 | 能力维度 | 免费版 | PRO版 |
-|:---------|:-------|:------|
+|----|---|----|
 | 文字海报(3:4) | 支持 | 支持 |
 | 长文分页卡片 | 支持 | 支持 |
 | 公众号封面图 | 支持 | 支持 |
@@ -77,7 +78,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 卡片图生成器-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -88,14 +89,14 @@ python3 render_card.py \
   --template poster-3-4 \
   --text " simplicity is the ultimate sophistication " \
   --out tmp/poster.png
-
+# ...
 # 带高亮的海报
 python3 render_card.py \
   --template poster-3-4 \
   --text "保持简单,保持专注" \
   --hl1 "保持简单" \
   --out tmp/poster_highlighted.png
-
+# ...
 # 使用小红书配色
 python3 render_card.py \
   --template poster-3-4 \
@@ -109,7 +110,7 @@ python3 render_card.py \
 **参数说明:**
 
 | 参数 | 说明 | 示例 |
-|:-----|:-----|:-----|
+|---:|---:|---:|
 | `--template` | 模板名称 | `poster-3-4` |
 | `--text` | 文案内容 | "保持简单" |
 | `--hl1` | 整行高亮文本1 | "保持简单" |
@@ -132,7 +133,7 @@ python3 render_article.py \
   --template article-3-4 \
   --text "第一章:入门指南。本章将介绍基础概念和核心原则..." \
   --out tmp/article_page1.png
-
+# ...
 # 多页生成(手动指定每页内容)
 python3 render_article.py \
   --template article-3-4 \
@@ -140,7 +141,7 @@ python3 render_article.py \
   --page 1 \
   --total 3 \
   --out tmp/article_p1.png
-
+# ...
 python3 render_article.py \
   --template article-3-4 \
   --text "第二页内容..." \
@@ -190,7 +191,7 @@ PLATFORM_PRESETS = {
         "highlight": "#e53935",  # 红色高亮
     }
 }
-
+# ...
 # 平台选择逻辑:
 # - 用户提到"小红书配图" -> 使用小红书预设
 # - 用户提到"小绿书" -> 使用公众号预设
@@ -280,7 +281,7 @@ python3 --version
 ls "/Applications/Google Chrome.app"
 # Linux:
 which chromium
-
+# ...
 # 3. 如果缺少环境,会有提示但不中止流程
 ```
 
@@ -291,7 +292,7 @@ python3 render_card.py \
   --template poster-3-4 \
   --text "Hello World! 这是我第一张卡片图" \
   --out tmp/hello.png
-
+# ...
 # 查看生成的图片
 ls -la tmp/hello.png
 ```
@@ -301,10 +302,10 @@ ls -la tmp/hello.png
 import subprocess
 import os
 import platform
-
+# ...
 class EnvironmentChecker:
     """环境检测器"""
-
+# ...
     def check_all(self) -> dict:
         """检测所有依赖环境"""
         results = {
@@ -312,7 +313,7 @@ class EnvironmentChecker:
             "chrome": self._check_chrome(),
             "system": platform.system()
         }
-
+# ...
         # 输出检测结果
         for item, result in results.items():
             if item == "system":
@@ -323,9 +324,9 @@ class EnvironmentChecker:
                 print(f"  {item}: {status} {version}")
                 if not result["installed"]:
                     print(f"    提示: {result.get('hint', '')}")
-
+# ...
         return results
-
+# ...
     def _check_python(self) -> dict:
         try:
             result = subprocess.run(
@@ -340,7 +341,7 @@ class EnvironmentChecker:
             "installed": False,
             "hint": "未检测到Python 3,渲染可能失败。请安装Python 3.6+"
         }
-
+# ...
     def _check_chrome(self) -> dict:
         system = platform.system()
         if system == "Darwin":  # macOS
@@ -358,7 +359,7 @@ class EnvironmentChecker:
             "installed": False,
             "hint": "未检测到Chrome浏览器,请安装Google Chrome"
         }
-
+# ...
 # 运行检测
 checker = EnvironmentChecker()
 checker.check_all()
@@ -371,13 +372,13 @@ checker.check_all()
 card_image:
   # 默认模板
   default_template: poster-3-4
-
+# ...
   # 默认输出目录
   output_dir: tmp/
-
+# ...
   # 默认平台预设
   default_platform: 公众号
-
+# ...
   # 平台预设
   platforms:
     公众号:
@@ -407,7 +408,7 @@ templates:
       - footer (可选): 页脚文字
       - bg (可选): 背景色
       - highlight (可选): 高亮色
-
+# ...
   article-3-4:
     ratio: "3:4"
     size: "900x1200"
@@ -417,7 +418,7 @@ templates:
       - text (必需): 文章内容
       - page (可选): 当前页码
       - total (可选): 总页数
-
+# ...
   wechat-cover-split:
     ratio: "335:100"
     size: "1340x400"
@@ -474,7 +475,7 @@ python3 render_card.py \
   --template poster-3-4 \
   --text "测试文案" \
   --out ./tmp/cards/poster_001.png
-
+# ...
 # 如需给外部工具上传,使用绝对路径
 python3 render_card.py \
   --template poster-3-4 \
@@ -513,7 +514,7 @@ python3 render_card.py \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python 3.6+ | 运行时 | 必需 | python.org 下载 |
 | Google Chrome | 浏览器 | 必需 | google.com/chrome 下载 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -533,7 +534,7 @@ python3 render_card.py \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

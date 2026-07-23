@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Word文档工具V1（专业版）
 
@@ -114,21 +116,11 @@ Word文档工具V1是针对文档处理领域的专业化AI辅助工具。专业
 
 `在文档末尾添加一段内容
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：格式设置
 
 设置文档的字体、大小和段落格式。**示例指令**：`
 
 `设置文档标题格式
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ Word文档工具V1是针对文档处理领域的专业化AI辅助工具。专业
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Word文档工具V1（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ Word文档工具V1是针对文档处理领域的专业化AI辅助工具。专业
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -167,7 +159,7 @@ from docx.shared import Pt, Inches, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.section import WD_ORIENT
 from dataclasses import dataclass
-
+# ...
 @dataclass
 class FormatConfig:
     font_name: str = "SimSun"
@@ -177,17 +169,17 @@ class FormatConfig:
     color: str = "000000"
     alignment: str = "left"
     line_spacing: float = 1.5
-
+# ...
 class WordV1Engine:
     def __init__(self):
         self.doc = Document()
         self._setup_default_style()
-
+# ...
     def _setup_default_style(self):
         style = self.doc.styles["Normal"]
         style.font.name = "SimSun"
         style.font.size = Pt(12)
-
+# ...
     def add_heading(self, text: str, level: int = 1,
                    fmt: FormatConfig = None) -> str:
         """添加标题（PRO 专属：自定义格式）""
@@ -198,7 +190,7 @@ class WordV1Engine:
                 run.font.size = Pt(fmt.font_size)
                 run.font.color.rgb = RGBColor.from_string(fmt.color)
         return text
-
+# ...
     def add_paragraph(self, text: str,
                      fmt: FormatConfig = None) -> str:
         """添加段落（PRO 专属：格式控制）"""
@@ -220,13 +212,13 @@ class WordV1Engine:
             para_format = para.paragraph_format
             para_format.line_spacing = fmt.line_spacing
         return text
-
+# ...
     def add_list(self, items: List[str], ordered: bool = False):
         """添加列表（PRO 专属）"""
         style = "List Number" if ordered else "List Bullet"
         for item in items:
             self.doc.add_paragraph(item, style=style)
-
+# ...
     def add_table(self, data: List[List[str]],
                  style: str = "Table Grid") -> str:
         """添加表格（PRO 专属）"""
@@ -238,7 +230,7 @@ class WordV1Engine:
             for j, cell in enumerate(row):
                 table.cell(i, j).text = str(cell)
         return f"table_{rows}x{cols}"
-
+# ...
     def set_page(self, width: float = 21, height: float = 29.7,
                 margin: float = 2.5, landscape: bool = False):
         """页面设置（PRO 专属）"""
@@ -254,7 +246,7 @@ class WordV1Engine:
         section.right_margin = Cm(margin)
         section.top_margin = Cm(margin)
         section.bottom_margin = Cm(margin)
-
+# ...
     def batch_create(self, specs: List[dict],
                     output_dir: str = "./output") -> List[str]:
         """批量创建（PRO 专属）"""
@@ -277,7 +269,7 @@ class WordV1Engine:
             engine.save(output)
             outputs.append(output)
         return outputs
-
+# ...
     def insert_content_at(self, doc_path: str, content: str,
                           position: str = "end") -> str:
         """在指定位置插入内容（PRO 专属）"""
@@ -290,10 +282,10 @@ class WordV1Engine:
                 first_para.insert_paragraph_before(content)
         doc.save(doc_path)
         return doc_path
-
+# ...
     def save(self, output_path: str):
         self.doc.save(output_path)
-
+# ...
 engine = WordV1Engine()
 engine.set_page(margin=2.0)
 engine.add_heading("项目方案", level=0,
@@ -342,7 +334,7 @@ word_v1:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -354,7 +346,7 @@ word_v1:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -426,7 +418,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | python-docx | Python库 | 必需 | pip install python-docx |
 
@@ -440,9 +432,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

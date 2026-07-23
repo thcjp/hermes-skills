@@ -48,8 +48,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # AI新闻工具(免费版)
 
 ## 概述
@@ -69,7 +70,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 示例 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 每日新闻列表 | 获取指定日期的新闻列表 | `curl -s "https://news-api.example.com/api/v1/daily?date=2026-03-10"` |
 | 新闻详情 | 获取单条新闻详情 | `curl -s "https://news-api.example.com/api/v1/articles/8533"` |
 | 热点排行 | 按热度排序展示 | 按返回数据的 `heat` 字段排序 |
@@ -78,7 +79,7 @@ suggested_price: 29.9
 ### 新闻分类参考
 
 | 分类 ID | 分类名称 |
-|:-------|:---------|
+|:------|:------|
 | 1 | 娱乐 |
 | 2 | 时政 |
 | 3 | 社会 |
@@ -116,10 +117,10 @@ suggested_price: 29.9
 ```bash
 # 获取当前日期(格式:YYYY-MM-DD)
 TODAY=$(date +%Y-%m-%d)
-
+# ...
 # 调用 API 获取今日新闻
 curl -s "https://news-api.example.com/api/v1/daily?date=${TODAY}"
-
+# ...
 # 解析返回的新闻列表,按热度排序展示前 10 条
 ```
 
@@ -127,15 +128,15 @@ curl -s "https://news-api.example.com/api/v1/daily?date=${TODAY}"
 
 ```text
 今日(2026-03-10)每日新闻摘要
-
+# ...
 共 17 条新闻,以下是热点 TOP10:
-
+# ...
 1. [热度 93] 交通部约谈两大国际航运巨头:直指运价暴涨和乱收费
    2026 年 3 月 9 日交通运输部就国际航运经营行为...
-
+# ...
 2. [热度 88] 某科技公司发布新一代 AI 智能体平台
    ...
-
+# ...
 回复"新闻 1"、"新闻 2"等查看具体新闻详情
 ```
 
@@ -146,7 +147,7 @@ curl -s "https://news-api.example.com/api/v1/daily?date=${TODAY}"
 ```bash
 # 解析用户输入的日期
 DATE="2026-03-10"
-
+# ...
 # 调用 API 获取指定日期新闻
 curl -s "https://news-api.example.com/api/v1/daily?date=${DATE}"
 ```
@@ -159,7 +160,7 @@ curl -s "https://news-api.example.com/api/v1/daily?date=${DATE}"
 # 从上下文获取当前新闻列表
 # 提取用户指定的文章 ID(如第1条对应 article_id=8533)
 ARTICLE_ID=8533
-
+# ...
 # 调用 API 获取新闻详情
 curl -s "https://news-api.example.com/api/v1/articles/${ARTICLE_ID}"
 ```
@@ -168,17 +169,17 @@ curl -s "https://news-api.example.com/api/v1/articles/${ARTICLE_ID}"
 
 ```text
 交通部约谈两大国际航运巨头:直指运价暴涨和乱收费
-
+# ...
 分类:时政
 热度:93
 发布时间:2026-03-10 15:05
-
+# ...
 新闻摘要:
 2026 年 3 月 9 日交通运输部就国际航运经营行为...
-
+# ...
 详细内容:
 (新闻正文,去除 HTML 标签)
-
+# ...
 影响分析:
 (影响分析内容,去除 HTML 标签)
 ```
@@ -191,7 +192,7 @@ curl -s "https://news-api.example.com/api/v1/articles/${ARTICLE_ID}"
 - 小规模数据手动分析
 - 非结构化文本情感分析
 
-## 触发条件
+## 触发条件(补充)
 
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
 
@@ -208,7 +209,7 @@ curl -s "https://news-api.example.com/api/v1/articles/${ARTICLE_ID}"
 ```bash
 # 获取最新日期的新闻(不传日期参数)
 curl -s "https://news-api.example.com/api/v1/daily"
-
+# ...
 # 获取指定日期的新闻
 curl -s "https://news-api.example.com/api/v1/daily?date=2026-03-10"
 ```
@@ -275,7 +276,7 @@ curl -s "https://news-api.example.com/api/v1/articles/8533"
 # 获取新闻列表(可选指定日期)
 node （请参考skill目录中的脚本文件）
 node （请参考skill目录中的脚本文件） 2026-03-10
-
+# ...
 # 获取新闻详情
 node （请参考skill目录中的脚本文件） 8533
 ```
@@ -287,10 +288,10 @@ node （请参考skill目录中的脚本文件） 8533
 ```bash
 # 先获取当日新闻列表
 RESPONSE=$(curl -s "https://news-api.example.com/api/v1/daily?date=$(date +%Y-%m-%d)")
-
+# ...
 # 按分类筛选(如只看科技类 category_id=5)
 echo "$RESPONSE" | jq '.data.articles[] | select(.category_id == 5)'
-
+# ...
 # 按热度排序
 echo "$RESPONSE" | jq '.data.articles | sort_by(-.heat) | .[] | {title, heat}'
 ```
@@ -304,7 +305,7 @@ TODAY=$(date +%Y-%m-%d)
 curl -s "https://news-api.example.com/api/v1/daily?date=${TODAY}" | \
   jq -r '.data.articles | sort_by(-.heat) | .[0:5] | .[] | "[\(.heat)] \(.title)"' \
   > ~/news-summary-${TODAY}.txt
-
+# ...
 echo "新闻摘要已保存到 ~/news-summary-${TODAY}.txt"
 cat ~/news-summary-${TODAY}.txt
 ```
@@ -364,7 +365,7 @@ jq '.data.articles' ~/news-cache-${TODAY}.json
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | curl | 网络工具 | 必需 | 系统自带 |
 | jq | JSON 处理 | 推荐 | 系统包管理器安装 |
 | Node.js | 运行环境 | 可选(脚本工具) | 系统包管理器安装(>= 16) |
@@ -381,9 +382,8 @@ jq '.data.articles' ~/news-cache-${TODAY}.json
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 短篇网文写作 - 专业版
 
@@ -143,7 +145,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 短篇网文写作-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -156,7 +158,7 @@ pricing_model: "per_use"
   --words 3000-5000 \
   --style-variation true \
   --output "monthly/"
-
+# ...
 # 输出:
 # === 批量产出报告 ===
 # 生成: 20 篇
@@ -183,16 +185,16 @@ pricing_model: "per_use"
   --url "https://wenxuegang.com" \
   --payment "200-500/篇" \
   --response-time "7-14天"
-
+# ...
 # 投稿
 ./short-pro submit \
   --story "最后一班地铁" \
   --platform "文学港" \
   --date "2025-01-15"
-
+# ...
 # 查看投稿状态
 ./short-pro submission list
-
+# ...
 # 输出:
 # === 投稿记录 ===
 # 标题           平台      投稿日期    状态      稿费
@@ -219,7 +221,7 @@ pricing_model: "per_use"
   --stories "monthly/*.md" \
   --data "reader-stats.json" \
   --output analysis.md
-
+# ...
 # 输出:
 # === 读者数据分析 ===
 # 总阅读量: 125,400
@@ -248,7 +250,7 @@ pricing_model: "per_use"
   --level "deep" \
   --focus "rhythm,emotion,language" \
   --preserve-style "作者风格"
-
+# ...
 # 输出:
 # === AI 润色报告 ===
 # 原文: 4,230字 -> 润色后: 4,180字
@@ -291,7 +293,7 @@ pricing_model: "per_use"
 # 免费版创作流程完全兼容
 # 依赖说明
 pip install short-story-pro
-
+# ...
 # 导入已有作品
 ./short-pro import --from ~/stories/
 ```
@@ -306,7 +308,7 @@ pip install short-story-pro
 # 科幻想象: 8 个模板
 # 言情甜宠: 10 个模板
 # 奇幻冒险: 10 个模板
-
+# ...
 # 使用模板创作
 ./short-pro create \
   --template "悬疑推理/密室杀人" \
@@ -315,7 +317,6 @@ pip install short-story-pro
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -359,7 +360,7 @@ pip install short-story-pro
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 创作 | 单篇 | 批量+排期 |
 | 模板 | 无 | 50+ 模板库 |
 | 投稿管理 | 不支持 | 多平台追踪 |
@@ -409,7 +410,7 @@ A: 专业版提供系列管理功能:1) 共享人物卡与世界观设定;2) 自
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | jieba | 中文分词 | 查重推荐 | pip install jieba |
 | difflib | 文本比较 | 查重必需 | Python内置 |
@@ -433,9 +434,8 @@ A: 专业版提供系列管理功能:1) 共享人物卡与世界观设定;2) 自
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

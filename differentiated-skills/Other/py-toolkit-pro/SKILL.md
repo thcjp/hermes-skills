@@ -49,6 +49,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Python 工具包 - 专业版
 
@@ -141,7 +143,7 @@ pyproject.toml 完整配置,语义化版本管理,PyPI 发布,私有包仓库搭
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Python工具包-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,24 +152,24 @@ pyproject.toml 完整配置,语义化版本管理,PyPI 发布,私有包仓库搭
 # 使用 cProfile 分析性能瓶颈
 import cProfile
 import pstats
-
+# ...
 def slow_function():
     result = []
     for i in range(100000):
         result.append(str(i).upper())
     return result
-
+# ...
 # 性能分析
 profiler = cProfile.Profile()
 profiler.enable()
 slow_function()
 profiler.disable()
-
+# ...
 # 输出报告
 stats = pstats.Stats(profiler)
 stats.sort_stats('cumulative')
 stats.print_stats(10)
-
+# ...
 # 优化建议:
 # 1. 使用列表推导式替代 append 循环
 # 2. 使用 map 替代显式循环
@@ -184,9 +186,9 @@ def fast_function():
 import asyncio
 from fastapi import FastAPI, BackgroundTasks
 from contextlib import asynccontextmanager
-
+# ...
 app = FastAPI()
-
+# ...
 # 异步上下文管理器
 @asynccontextmanager
 async def db_session():
@@ -195,7 +197,7 @@ async def db_session():
         yield conn
     finally:
         await conn.close()
-
+# ...
 # 异步路由
 @app.get("/users/{user_id}")
 async def get_user(user_id: int):
@@ -204,7 +206,7 @@ async def get_user(user_id: int):
             "SELECT * FROM users WHERE id = $1", user_id
         )
         return dict(user) if user else {"error": "not found"}
-
+# ...
 # 后台任务
 @app.post("/send-email")
 async def send_email_endpoint(
@@ -213,7 +215,7 @@ async def send_email_endpoint(
 ):
     background_tasks.add_task(send_email_async, email)
     return {"status": "queued"}
-
+# ...
 async def send_email_async(email: str):
     await asyncio.sleep(2)  # 模拟发送
     print(f"Email sent to {email}")
@@ -226,13 +228,13 @@ async def send_email_async(email: str):
 ```yaml
 # .github/workflows/python-ci.yml
 name: Python CI/CD
-
+# ...
 on:
   push:
     branches: [main, develop]
   pull_request:
     branches: [main]
-
+# ...
 jobs:
   quality:
     runs-on: ubuntu-latest
@@ -261,7 +263,7 @@ jobs:
         run: pytest --cov=src --cov-report=xml --cov-fail-under=80
       - name: Upload coverage
         uses: codecov/codecov-action@v4
-
+# ...
   deploy:
     needs: quality
     if: github.ref == 'refs/heads/main'
@@ -299,7 +301,7 @@ jobs:
   --lint "ruff,mypy" \
   --test "pytest" \
   --cicd "github-actions"
-
+# ...
 # 项目结构
 # my-project/
 # ├── src/my_project/
@@ -321,19 +323,18 @@ jobs:
 ```bash
 # 依赖说明
 pip install py-spy line_profiler memory_profiler
-
+# ...
 # 采样分析(无需修改代码)
 py-spy record -o profile.svg -- python my_script.py
-
+# ...
 # 逐行分析
 python -m line_profiler my_script.py.lprof
-
+# ...
 # 内存分析
 python -m memory_profiler my_script.py
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -349,7 +350,7 @@ dependencies = [
     "uvicorn[standard]>=0.20.0",
     "asyncpg>=0.28.0",
 ]
-
+# ...
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0",
@@ -360,22 +361,22 @@ dev = [
     "bandit>=1.7.0",
     "safety>=2.3.0",
 ]
-
+# ...
 [tool.ruff]
 line-length = 88
 target-version = "py310"
 select = ["E", "F", "I", "N", "W", "UP", "B", "SIM"]
-
+# ...
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S101"]
-
+# ...
 [tool.mypy]
 python_version = "3.10"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
-
+# ...
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 addopts = "--cov=src --cov-report=html --cov-fail-under=80"
@@ -413,7 +414,7 @@ repos:
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 常见陷阱检测 | 13 类 | 13 类 + 扩展 |
 | 类型提示 | 基础 | 深度(strict 模式) |
 | 性能优化 | 不支持 | cProfile/py-spy 深度分析 |
@@ -469,7 +470,7 @@ A: pyproject.toml 是现代 Python 项目的标准配置文件(PEP 621),替代 s
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3.10+ | 运行时 | 必需 | 官方网站下载 |
 | ruff | Linter | 必需 | pip install ruff |
 | mypy | 类型检查 | 必需 | pip install mypy |
@@ -497,9 +498,8 @@ A: pyproject.toml 是现代 Python 项目的标准配置文件(PEP 621),替代 s
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

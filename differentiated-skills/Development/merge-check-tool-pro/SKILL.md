@@ -34,8 +34,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 合并检查工具(专业版)
 
 ## 概述
@@ -49,7 +50,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|----|---|------|
 | 单PR分析 | 技术信号+PR卫生+架构契合+评审状态+流程合规+社交元信号 | 与免费版一致,深度更深 |
 | 批量分析 | 一次分析多个PR,输出团队看板 | 免费版仅单PR |
 | 历史趋势 | 作者/仓库历史合并率与趋势 | 免费版仅当前快照 |
@@ -93,7 +94,7 @@ suggested_price: 99.9
 ```bash
 # 批量分析仓库所有开放PR
 bash （请参考skill目录中的脚本文件） owner/repo --state open --limit 20
-
+# ...
 # 输出团队看板
 bash （请参考skill目录中的脚本文件） owner/repo --format dashboard > pr-dashboard.html
 ```
@@ -102,21 +103,21 @@ bash （请参考skill目录中的脚本文件） owner/repo --format dashboard 
 
 ```text
 ## 不适用场景
-
+# ...
 以下场景合并检查工具(专业版)不适合处理：
-
+# ...
 - 实时流数据处理
 - 小规模数据手动分析
 - 非结构化文本情感分析
-
+# ...
 ## 触发条件
-
+# ...
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
-
+# ...
 ## 团队PR看板: owner/repo (20个开放PR)
-
+# ...
 | PR | 标题 | 评分 | 关键风险 | 优先动作 |
-| --- | --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|:-----|
 | #201 | 修复登录超时 | 高(88%) | 无 | 可合并 |
 | #198 | 重构数据层 | 中(62%) | 1200行变更 | 建议拆分 |
 | #195 | 新增导出功能 | 中(58%) | 评审意见未处理 | 等待作者响应 |
@@ -179,9 +180,9 @@ bash （请参考skill目录中的脚本文件） owner/repo \
 
 ```text
 ## 贡献者健康度报告: owner/repo (近90天)
-
+# ...
 | 贡献者 | PR总数 | 已合并 | 合并率 | 平均关闭时长 | 健康度 |
-| --- | --- | --- | --- | --- | --- |
+|---:|---:|---:|---:|---:|---:|
 | alice | 12 | 11 | 92% | 1.8天 | 优秀 |
 | bob | 8 | 6 | 75% | 3.2天 | 良好 |
 | carol | 5 | 2 | 40% | 8.5天 | 需指导 |
@@ -201,7 +202,7 @@ bash （请参考skill目录中的脚本文件） owner/repo \
 ```bash
 # 初始化团队规则配置
 cp config/team-rules.example.json config/team-rules.json
-
+# ...
 # 编辑团队阈值与规则
 vi config/team-rules.json
 ```
@@ -217,13 +218,13 @@ bash （请参考skill目录中的脚本文件） owner/repo#123 --full-dimensio
 ```bash
 # 分析所有开放PR
 bash （请参考skill目录中的脚本文件） owner/repo --state open
-
+# ...
 # 按标签筛选
 bash （请参考skill目录中的脚本文件） owner/repo --label "needs-review"
-
+# ...
 # 按作者筛选
 bash （请参考skill目录中的脚本文件） owner/repo --author "alice"
-
+# ...
 # 生成HTML看板
 bash （请参考skill目录中的脚本文件） owner/repo --format dashboard --output pr-board.html
 ```
@@ -233,7 +234,7 @@ bash （请参考skill目录中的脚本文件） owner/repo --format dashboard 
 ```bash
 # 导出仓库近6个月合并趋势
 bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format csv > trend.csv
-
+# ...
 # 生成趋势图
 bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format chart > trend.html
 ```
@@ -276,7 +277,7 @@ bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format
 ### CI/CD门禁阈值分级
 
 | 阈值 | 评分范围 | 流水线动作 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | 通过 | ≥70 | 允许合并,标记 |
 | 警告 | 50-69 | 允许合并,提醒评审 |
 | 阻断 | 30-49 | 阻断合并,要求处理 |
@@ -290,20 +291,20 @@ bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format
 #!/usr/bin/env bash
 # （请参考skill目录中的脚本文件） 每日PR分流
 set -euo pipefail
-
+# ...
 REPO="${1:?用法: （请参考skill目录中的脚本文件） owner/repo}"
-
+# ...
 echo "## 每日PR分流 - $(date +%Y-%m-%d)"
 echo ""
-
+# ...
 # 高概率可合并
 echo "### 可合并(评分≥80)"
 bash （请参考skill目录中的脚本文件） "$REPO" --state open --min-score 80 --format list
-
+# ...
 # 需关注(评分50-79)
 echo "### 需关注(评分50-79)"
 bash （请参考skill目录中的脚本文件） "$REPO" --state open --score-range 50-79 --format list
-
+# ...
 # 需介入(评分<50)
 echo "### 需介入(评分<50)"
 bash （请参考skill目录中的脚本文件） "$REPO" --state open --max-score 49 --format list
@@ -373,7 +374,7 @@ jobs:
 ### 5. 趋势分析与持续改进
 
 | 指标 | 健康范围 | 预警阈值 |
-| --- | --- | --- |
+|:------|------:|:------|
 | 平均合并时长 | <3天 | >7天 |
 | 合并率 | 60-85% | <40% 或 >95% |
 | 平均PR规模 | <400行 | >800行 |
@@ -418,7 +419,7 @@ jobs:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | gh CLI | 命令行工具 | 必需 | cli/cli 下载 |
 | jq | JSON处理 | 必需 | 系统包管理器安装 |
@@ -440,9 +441,8 @@ jobs:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

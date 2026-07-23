@@ -37,15 +37,16 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "exec"]
+tags: "新闻,信息,资讯"
 ---
-
 舆情情绪分析工具专业版是一款面向专业投资者与企业用户的企业级舆情监控解决方案。在完全兼容免费版单股扫描能力的基础上,专业版解锁了批量多股票扫描、自定义权重配置、结构化报告导出、历史趋势对比分析、异常情绪实时预警等高级能力。
 
 无论是监控整个投资组合的舆情动态、对比行业板块情绪强弱、还是设置公关危机预警阈值,专业版都能通过命令行高效完成,为投资决策与风险管控提供数据支撑。
 
 ### 免费版与专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 单股扫描 | 支持 | 支持 |
 | 批量多股扫描 | 不支持 | 支持(无上限) |
 | 跨市场混合扫描 | 不支持 | 支持(A/港/美混合) |
@@ -127,7 +128,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 舆情情绪分析专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -176,9 +177,9 @@ NIO,us,蔚来
 ==================================================
 新能源汽车板块情绪对比报告
 ==================================================
-
+# ...
 扫描周期:最近7天 | 扫描时间:2026-07-18
-
+# ...
 板块情绪排名:
 1. 比亚迪(002594)      +5.2  偏正面    ▲
 2. 赛力斯(601127)      +3.8  轻微正面  ▲
@@ -186,10 +187,10 @@ NIO,us,蔚来
 4. 小鹏汽车(9868.HK)   -0.8  中性      ▼
 5. 蔚来(NIO)           -2.3  轻微负面  ▼
 6. 小鹏汽车(XPEV)      -3.1  轻微负面  ▼
-
+# ...
 板块整体情绪:+0.7(中性偏正面)
 板块内分化:明显(最高+5.2,最低-3.1)
-
+# ...
 领涨股:比亚迪(+5.2)
 领跌股:小鹏汽车 XPEV(-3.1)
 ```
@@ -267,7 +268,7 @@ EOF
 ### 第二步:执行批量扫描
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format html --output report.html
 ```
 
@@ -288,18 +289,14 @@ for r in data['results']:
 ## 示例
 ### 自定义权重配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 定时任务配置
 ```bash
 0 8 * * * python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output /tmp/daily_report.json
-
+# ...
 0 8 * * 1 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --compare --format html --output /tmp/weekly_report.html
 ```
 
 ### 企业级自动化工作流
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 最佳实践
 ### 1. 批量扫描使用文件导入
@@ -307,7 +304,7 @@ for r in data['results']:
 
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --codes "002594,600519,0700.HK" 7
 ```
 
@@ -316,9 +313,9 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --codes "002594
 
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7 --weights conservative.json
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7 --weights aggressive.json
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7
 ```
 
@@ -334,7 +331,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfol
 
 ### 4. 预警阈值合理设置
 | 资产类型 | 负面阈值 | 正面阈值 | 说明 |
-|:---------|:---------|:---------|:-----|
+|---:|---:|---:|---:|
 | 稳健型持仓 | -3 | 5 | 低阈值,敏感预警 |
 | 均衡型持仓 | -5 | 7 | 中阈值,平衡预警 |
 | 激进型持仓 | -7 | 8 | 高阈值,仅预警极端事件 |
@@ -344,7 +341,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfol
 
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format csv --output report.csv
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
 ```
 
@@ -396,7 +393,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfol
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | sentiment_scan.py | 脚本 | 必需 | 随 Skill 安装 |
 | sentiment_monitor.py | 脚本 | 必需 | 随 Skill 安装(专业版) |
@@ -420,7 +417,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfol
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -22,19 +22,20 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "RSS,订阅,信息"
 ---
 # RSS AI 摘要推送
 
 自动抓取 RSS/Atom 订阅源,通过 LLM 生成中文摘要,推送到飞书、Telegram、Email。基于 SQLite 去重,支持定时任务。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | RSS AI 摘要推送处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,13 +43,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| RSS AI 摘要推送RSS自动抓取 | 不支持 | 支持 |
+| RSS AI 摘要推送与LLM摘要生成 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -59,7 +60,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供,或配置 ai-assistant / llm-provider 的 API Key |
 | 飞书 Webhook | 凭证 | 可选 | 飞书群机器人配置后获取 Webhook URL |
 | Telegram Bot Token | 凭证 | 可选 | 通过 @BotFather 创建 Bot 获取 token 与 chat_id |
@@ -123,7 +124,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:---:|:---:|:---:|
 | 技术博客监控 | Hacker News、阮一峰、V2EX 等 feed 列表 | 新文章中文摘要推送到飞书群 |
 | 新闻早报推送 | 多个新闻源 feed,每日定时执行 | 每日早间飞书群收到摘要合集 |
 | 竞品动态追踪 | 竞品官方博客 feed 列表 | 竞品更新摘要推送到 Telegram |
@@ -152,12 +153,12 @@ feeds:
   - name: "阮一峰周刊"
     url: "https://www.ruanyifeng.com/blog/atom.xml"
     category: "tech"
-
+# ...
 llm:
   provider: "ai-assistant"
   model: "ai-assistant-sonnet-4-20250514"
   api_key: "${ANTHROPIC_API_KEY}"
-
+# ...
 notify:
   feishu:
     enabled: true
@@ -178,7 +179,7 @@ notify:
 
 ```bash
 python main.py [options]
-
+# ...
 --config, -c  配置文件路径 (默认: config.yaml)
 --once        只执行一次抓取与推送
 --stats       显示数据库中的统计信息
@@ -201,12 +202,12 @@ feeds:
   - name: "阮一峰周刊"
     url: "https://www.ruanyifeng.com/blog/atom.xml"
     category: "tech"
-
+# ...
 llm:
   provider: "ai-assistant"
   model: "ai-assistant-sonnet-4-20250514"
   api_key: "${ANTHROPIC_API_KEY}"
-
+# ...
 notify:
   feishu:
     enabled: true
@@ -223,19 +224,19 @@ python main.py --config my_config.yaml --once
 
 ```text
 📰 Hacker News
-
+# ...
 **Why SQLite is Taking Over**
-
+# ...
 📝 SQLite 正在从嵌入式数据库扩展到更多应用场景。文章分析了其在边缘计算、移动应用中的优势,并对比了 PostgreSQL 在轻量级场景下的局限。
-
+# ...
 [🔗 阅读原文]
-
+# ...
 📰 阮一峰周刊
-
+# ...
 **科技爱好者周刊第 350 期**
-
+# ...
 📝 本期周刊介绍了 WebGPU 的最新进展、一个开源的 Markdown 编辑器项目,以及关于 AI Agent 架构的讨论。
-
+# ...
 [🔗 阅读原文]
 ```
 
@@ -252,12 +253,12 @@ feeds:
   - name: "arXiv LLM"
     url: "https://rss.arxiv.org/rss/cs.CL"
     category: "research"
-
+# ...
 llm:
   provider: "llm-provider"
   model: "gpt-4o"
   api_key: "${OPENAI_API_KEY}"
-
+# ...
 notify:
   telegram:
     enabled: true
@@ -275,11 +276,11 @@ python main.py --config my_config.yaml --once
 
 ```text
 📰 arXiv LLM
-
+# ...
 **Scaling Laws for Multilingual Language Models**
-
+# ...
 📝 本文研究了多语言大语言模型的缩放规律,发现在低资源语言上的性能提升速度低于高资源语言。作者提出了跨语言迁移的量化模型。
-
+# ...
 [🔗 阅读原文]
 ```
 
@@ -288,8 +289,6 @@ python main.py --config my_config.yaml --once
 ### 案例 3: 竞品博客监控,推送到 Email
 
 **场景**: 产品团队监控三个竞品官方博客,新文章摘要通过邮件发送
-
-**配置文件关键片段**:
 
 ```yaml
 feeds:
@@ -302,12 +301,12 @@ feeds:
   - name: "竞品C博客"
     url: "https://competitor-c.com/feed"
     category: "competitor"
-
+# ...
 llm:
   provider: "ai-assistant"
   model: "ai-assistant-sonnet-4-20250514"
   api_key: "${ANTHROPIC_API_KEY}"
-
+# ...
 notify:
   email:
     enabled: true
@@ -327,11 +326,11 @@ python main.py --config my_config.yaml --once
 
 ```text
 📰 竞品A博客
-
+# ...
 **Introducing v3.0: New API Gateway**
-
+# ...
 📝 竞品A 发布了 3.0 版本,新增 API 网关功能,支持自动限流与熔断。文章重点介绍了与上一版的性能对比数据。
-
+# ...
 [🔗 阅读原文]
 ```
 
@@ -339,9 +338,8 @@ python main.py --config my_config.yaml --once
 
 ## 异常处理
 
-
 | 错误场景 | 错误现象 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+|:------|------:|:------|:------|
 | Feed URL 无法访问 | 抓取报 `ConnectionError` 或超时 | 网络不通或 feed URL 已失效 | ,在浏览器中打开 feed URL 确认是否可访问;URL 失效则更新配置 |
 | LLM API 调用失败 | 报 `401 Unauthorized` 或 `429 Too Many Requests` | API Key 无效或额度耗尽 | 核对环境变量中的 API Key 是否正确;429 时降低抓取频率或更换 provider |
 | 摘要内容为空 | LLM 返回空字符串或仅含标点 | feed 条目正文为空或 LLM 判断无有效内容 | 检查 feed 条目是否含 summary 或 content 字段;在 prompt 中加入"若内容过少则输出原文标题"兜底 |
@@ -373,9 +371,8 @@ A: 运行 `python main.py --stats --config my_config.yaml` 即可。输出包含
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

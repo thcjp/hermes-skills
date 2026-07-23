@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 上下文压缩器（免费版）
 
 > **让Agent的记忆瘦身。4-8倍压缩比，关键信息零丢失。**
@@ -34,7 +35,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Context Compressor处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -75,10 +76,10 @@ suggested_price: 29.9
 ```bash
 # 压缩单日日志为结构化摘要
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md
-
+# ...
 # 指定输出路径
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/compressed.md
-
+# ...
 # 压缩后追加到长期记忆
 node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/today.md
 cat /tmp/today.md >> MEMORY.md
@@ -89,7 +90,7 @@ cat /tmp/today.md >> MEMORY.md
 将以下内容加入Agent的维护周期：
 
 ```markdown
-
+# ...
 #
 ## 记忆维护（每2-3天执行）
 1. 执行：node （请参考skill目录中的脚本文件） memory/YYYY-MM-DD.md /tmp/compressed.md
@@ -109,7 +110,7 @@ cat /tmp/today.md >> MEMORY.md
 **第一步 - 关键词匹配**：扫描标题，识别40+种中英文模式：
 
 | 类别 | 中文模式 | 英文模式 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 事件 | 重大进展、突破、里程碑、决策 | breakthrough, milestone, decision |
 | 教训 | 教训、反思、洞察、收获 | insight, takeaway, lesson |
 | 成长 | 进化、改进、优化 | evolution, improvement |
@@ -126,7 +127,7 @@ cat /tmp/today.md >> MEMORY.md
 ### 2. 四大压缩原则
 
 | 原则 | 含义 | 示例 |
-|------|------|------|
+|---:|---:|---:|
 | 去重复 | 提及一次即足够 | 不在3个章节重复"WebSocket重连" |
 | 留转折 | 只保留变化点 | "从nginx切换到直连Node.js WSS" > 5段调试过程 |
 | 去过程 | 结果重于过程 | "失败3次后用X修复" > 3段失败描述 |
@@ -139,24 +140,24 @@ cat /tmp/today.md >> MEMORY.md
 ### 3. 结构化输出模板
 
 ```markdown
-
+# ...
 **输入**: 用户提供结构化输出模板所需的指令和必要参数。
 **处理**: 解析结构化输出模板的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回结构化输出模板的响应数据,包含状态码、结果和日志。
-
+# ...
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：智能压缩对话日志、为结构化摘要、倍压缩比、保留关键决策与教、Token、上下文压缩器免费、版解决、Agent、长期协作中、记忆膨胀、的核心痛点、MEMORY、动辄上万字、每日日志堆积如山、关键决策被冗余信、息淹没、成本随对话增长线、性飙升、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策、适用于独立开发者、企业团队和自动化、工作流场景等。
-
+# ...
 ## 2026-03-14 关键经验
-
+# ...
 ### 关键事件
 - **事件标题**
   - 细节1
   - 细节2
-
+# ...
 ### 核心教训
 - 教训内容
-
+# ...
 ### 待办/遗留
 - 紧急事项
 - 重要事项
@@ -165,7 +166,7 @@ cat /tmp/today.md >> MEMORY.md
 ### 4. 边界情况处理
 
 | 场景 | 处理方式 |
-|------|----------|
+|:---:|:---:|
 | 空文件 | 优雅跳过，不报错 |
 | BOM编码 | 自动检测并剥离 |
 | 非UTF-8编码 | 警告并继续处理 |
@@ -187,7 +188,7 @@ cat /tmp/today.md >> MEMORY.md
 for file in memory/2026-03-{08..14}.md; do
     [ -f "$file" ] && node （请参考skill目录中的脚本文件） "$file" "/tmp/$(basename $file)"
 done
-
+# ...
 # 合并压缩结果到长期记忆
 cat /tmp/2026-03-*.md >> MEMORY.md
 ```
@@ -202,7 +203,7 @@ cat /tmp/2026-03-*.md >> MEMORY.md
 ```bash
 # 每月定期压缩
 node （请参考skill目录中的脚本文件） memory/2026-02.md /tmp/feb-summary.md
-
+# ...
 # 审核后替换原始日志
 mv /tmp/feb-summary.md memory/2026-02-compressed.md
 ```
@@ -219,7 +220,7 @@ mv /tmp/feb-summary.md memory/2026-02-compressed.md
 for file in memory/2026-{02,03,04}-*.md; do
     [ -f "$file" ] && node （请参考skill目录中的脚本文件） "$file" "/tmp/$(basename $file)"
 done
-
+# ...
 # 生成项目决策摘要
 cat /tmp/2026-*.md > PROJECT-DECISIONS.md
 ```
@@ -234,11 +235,11 @@ cat /tmp/2026-*.md > PROJECT-DECISIONS.md
 用法：
   node （请参考skill目录中的脚本文件） <日志文件> [输出文件]
   node （请参考skill目录中的脚本文件） --help
-
+# ...
 参数：
   <日志文件>    必填，要压缩的日志文件路径
   [输出文件]    可选，压缩结果输出路径，默认输出到标准输出
-
+# ...
 示例：
   node （请参考skill目录中的脚本文件） memory/2026-03-14.md
   node （请参考skill目录中的脚本文件） memory/2026-03-14.md /tmp/compressed.md
@@ -279,7 +280,7 @@ cat /tmp/2026-*.md > PROJECT-DECISIONS.md
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
 | context-compressor.js | 脚本 | 必需 | 随本技能提供 |
@@ -336,20 +337,20 @@ cat /tmp/2026-*.md > PROJECT-DECISIONS.md
 ### 示例1：基础用法
 
 ```
-### 一分钟压缩你的第一个日志
-
+### 一分钟压缩你的第一个日志(补充)
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -366,3 +367,4 @@ cat /tmp/2026-*.md > PROJECT-DECISIONS.md
   "error": null
 }
 ```
+# ...

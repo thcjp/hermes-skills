@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # Mac 系统工具（免费版）
 
 ## 概述
@@ -56,7 +57,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 系统信息 | 软件/硬件/内存/磁盘/电池 | 只读 |
 | 进程管理 | CPU/内存排序、查找、结束 | 二次确认 |
 | 音量亮度 | 查询与设置 | 基础 |
@@ -97,10 +98,10 @@ suggested_price: 29.9
 ```bash
 # 系统软硬件信息
 system_profiler SPSoftwareDataType SPHardwareDataType
-
+# ...
 # CPU 占用前 10
 ps aux --sort=-%cpu | head -11
-
+# ...
 # 磁盘与电池
 df -h /
 pmset -g batt
@@ -111,10 +112,10 @@ pmset -g batt
 ```bash
 # 查询音量
 osascript -e 'output volume of (get volume settings)'
-
+# ...
 # 设置音量
 osascript -e 'set volume output volume 50'
-
+# ...
 # 亮度（需 brightness 工具）
 brightness 0.8
 ```
@@ -124,10 +125,10 @@ brightness 0.8
 ```bash
 # 全屏截图到桌面
 screencapture ~/Desktop/screenshot.png
-
+# ...
 # 区域截图
 screencapture -i ~/Desktop/region.png
-
+# ...
 # 复制内容到剪贴板
 echo "内容" | pbcopy
 pbpaste
@@ -154,13 +155,12 @@ pbpaste
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 工作流分类：
 
 | 类别 | 处理方式 |
-|:-----|:---------|
+|:-----|:-----|
 | 信息查询 | 直接执行并展示 |
 | 设置调整 | 直接执行 |
 | 破坏性 | 先向用户确认 |
@@ -199,12 +199,12 @@ A：不能。执行前务必确认，命令不可逆。
 # 软件信息
 sw_vers                          # macOS 版本
 uname -a                         # 内核信息
-
+# ...
 # 硬件信息
 sysctl -n machdep.cpu.brand_string   # CPU 型号
 sysctl -n hw.memsize                  # 内存（字节）
 system_profiler SPHardwareDataType    # 硬件概览
-
+# ...
 # 磁盘与电池
 df -h /                          # 磁盘占用
 pmset -g batt                    # 电池状态
@@ -215,13 +215,13 @@ pmset -g batt                    # 电池状态
 ```bash
 # CPU 占用前 10
 ps aux --sort=-%cpu | head -11
-
+# ...
 # 内存占用前 10
 ps aux --sort=-%mem | head -11
-
+# ...
 # 查找进程
 pgrep -fl "chrome"
-
+# ...
 # 结束进程（先确认）
 kill PID          # 正常结束
 kill -9 PID       # 强制结束（谨慎）
@@ -232,11 +232,11 @@ kill -9 PID       # 强制结束（谨慎）
 ```bash
 # WiFi 信息
 networksetup -getairportnetwork en0
-
+# ...
 # IP 与 DNS
 ifconfig | grep "inet "
 scutil --dns | grep nameserver
-
+# ...
 # 连通性
 ping -c 4 example.com
 traceroute example.com
@@ -245,7 +245,7 @@ traceroute example.com
 ## 常用操作速查
 
 | 操作 | 命令 |
-|:-----|:-----|
+|---:|---:|
 | 音量查询 | `osascript -e 'output volume of (get volume settings)'` |
 | 设置音量 | `osascript -e 'set volume output volume 50'` |
 | 静音 | `osascript -e 'set volume output muted true'` |
@@ -272,7 +272,7 @@ traceroute example.com
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | osascript | 系统工具 | 必需 | macOS 自带 |
 | brightness | 亮度控制 | 可选 | Homebrew 安装 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -287,9 +287,8 @@ traceroute example.com
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

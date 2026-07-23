@@ -26,8 +26,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
-
 # Azure语音转写专业版
 
 ## 概述
@@ -37,7 +38,7 @@ Azure语音转写专业版是企业级语音转写工具，在免费版批量转
 ### 免费版与专业版对比
 
 | 能力 | 免费版 | 专业版 |
-| --- | --- | --- |
+|---|---|---|
 | 批量转写 | 支持 | 支持 |
 | 实时流式转写 | 不支持 | 支持 |
 | 说话人分离 | 不支持 | 支持 |
@@ -54,7 +55,7 @@ Azure语音转写专业版是企业级语音转写工具，在免费版批量转
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Azure语音转写专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -62,18 +63,18 @@ Azure语音转写专业版是企业级语音转写工具，在免费版批量转
 ```python
 import os
 from azure.ai.transcription import TranscriptionClient
-
+# ...
 client = TranscriptionClient(
     endpoint=os.environ["TRANSCRIPTION_ENDPOINT"],
     credential=os.environ["TRANSCRIPTION_KEY"]
 )
-
+# ...
 # 实时流式转写
 stream = client.begin_stream_transcription(locale="zh-CN")
-
+# ...
 # 发送音频文件进行实时转写
 stream.send_audio_file("realtime_audio.wav")
-
+# ...
 # 接收实时转写结果
 for event in stream:
     if event.is_partial:
@@ -101,9 +102,9 @@ job = client.begin_transcription(
         "enabled": True
     }
 )
-
+# ...
 result = job.result()
-
+# ...
 # 输出带说话人标识的转写结果
 for segment in result.segments:
     speaker = segment.speaker  # 说话人标识: Speaker1, Speaker2, ...
@@ -121,14 +122,14 @@ for segment in result.segments:
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from azure.ai.transcription import TranscriptionClient
-
+# ...
 class BatchTranscriptionManager:
     def __init__(self, endpoint, key, max_workers=5):
         self.client = TranscriptionClient(endpoint=endpoint, credential=key)
         self.max_workers = max_workers
         self.results = []
         self.failed = []
-
+# ...
     def submit_transcription(self, audio_url, name, locale="zh-CN", 
                               diarization=True, callback=None):
         """提交单个转写任务"""
@@ -140,7 +141,7 @@ class BatchTranscriptionManager:
                 diarization_enabled=diarization
             )
             result = job.result()
-            
+# ...
             output = {
                 'name': name,
                 'status': result.status,
@@ -148,14 +149,14 @@ class BatchTranscriptionManager:
                 'segments': result.segments if hasattr(result, 'segments') else []
             }
             self.results.append(output)
-            
+# ...
             if callback:
                 callback(output)
             return output
         except Exception as e:
             self.failed.append({'name': name, 'error': str(e)})
             return None
-
+# ...
     def batch_transcribe(self, audio_files, locale="zh-CN", diarization=True):
         """批量转写"""
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
@@ -166,12 +167,12 @@ class BatchTranscriptionManager:
                     audio['url'], audio['name'], locale, diarization
                 )
                 futures.append(future)
-            
+# ...
             for future in as_completed(futures):
                 future.result()
-        
+# ...
         return {'success': self.results, 'failed': self.failed}
-
+# ...
     def export_results(self, format='srt', output_dir='./transcripts'):
         """导出转写结果"""
         os.makedirs(output_dir, exist_ok=True)
@@ -182,7 +183,7 @@ class BatchTranscriptionManager:
                 self._export_vtt(result, output_dir)
             elif format == 'json':
                 self._export_json(result, output_dir)
-
+# ...
     def _export_srt(self, result, output_dir):
         path = os.path.join(output_dir, f"{result['name']}.srt")
         with open(path, 'w', encoding='utf-8') as f:
@@ -191,7 +192,7 @@ class BatchTranscriptionManager:
                 end = self._format_time(seg.end_time)
                 speaker = f"[{seg.speaker}] " if hasattr(seg, 'speaker') else ""
                 f.write(f"{i}\n{start} --> {end}\n{speaker}{seg.text}\n\n")
-
+# ...
     def _format_time(self, seconds):
         h = int(seconds // 3600)
         m = int((seconds % 3600) // 60)
@@ -218,16 +219,16 @@ meeting_manager = BatchTranscriptionManager(
     endpoint=os.environ["TRANSCRIPTION_ENDPOINT"],
     key=os.environ["TRANSCRIPTION_KEY"]
 )
-
+# ...
 # 实时流式转写会议音频
 stream = client.begin_stream_transcription(locale="zh-CN")
-
+# ...
 print("=== 会议实时字幕 ===")
 for event in stream:
     if not event.is_partial:
         timestamp = event.timestamp
         print(f"[{timestamp}] {event.text}")
-
+# ...
 # 会后批量处理录音（带说话人分离）
 meeting_manager.submit_transcription(
     audio_url="https://<storage>/meetings/full_meeting.wav",
@@ -248,7 +249,7 @@ manager = BatchTranscriptionManager(
     key=os.environ["TRANSCRIPTION_KEY"],
     max_workers=5
 )
-
+# ...
 # 定义批量任务
 call_recordings = [
     {"url": "https://<storage>/calls/call_001.wav", "name": "call_001"},
@@ -257,13 +258,13 @@ call_recordings = [
     {"url": "https://<storage>/calls/call_004.wav", "name": "call_004"},
     {"url": "https://<storage>/calls/call_005.wav", "name": "call_005"},
 ]
-
+# ...
 # 批量转写（启用说话人分离）
 results = manager.batch_transcribe(call_recordings, locale="zh-CN", diarization=True)
-
+# ...
 # 导出为SRT格式
 manager.export_results(format='srt', output_dir='./call_transcripts')
-
+# ...
 print(f"成功: {len(results['success'])}, 失败: {len(results['failed'])}")
 ```
 
@@ -278,7 +279,7 @@ video_manager = BatchTranscriptionManager(
     key=os.environ["TRANSCRIPTION_KEY"],
     max_workers=3
 )
-
+# ...
 # 中文视频生成中文字幕
 chinese_videos = [
     {"url": "https://<storage>/videos/video_cn_01.wav", "name": "video_cn_01"},
@@ -286,7 +287,7 @@ chinese_videos = [
 ]
 video_manager.batch_transcribe(chinese_videos, locale="zh-CN", diarization=False)
 video_manager.export_results(format='vtt', output_dir='./subtitles/zh-CN')
-
+# ...
 # 英文视频生成英文字幕
 english_videos = [
     {"url": "https://<storage>/videos/video_en_01.wav", "name": "video_en_01"},
@@ -321,7 +322,7 @@ video_manager.export_results(format='vtt', output_dir='./subtitles/en-US')
 ```bash
 # 依赖说明
 pip install azure-ai-transcription
-
+# ...
 # 配置环境变量
 export TRANSCRIPTION_ENDPOINT="https://<resource>.cognitiveservices.azure.com"
 export TRANSCRIPTION_KEY="配置值"
@@ -332,16 +333,16 @@ export TRANSCRIPTION_KEY="配置值"
 ```python
 import os
 from azure.ai.transcription import TranscriptionClient
-
+# ...
 client = TranscriptionClient(
     endpoint=os.environ["TRANSCRIPTION_ENDPOINT"],
     credential=os.environ["TRANSCRIPTION_KEY"]
 )
-
+# ...
 # 启动实时转写
 stream = client.begin_stream_transcription(locale="zh-CN")
 stream.send_audio_file("audio.wav")
-
+# ...
 for event in stream:
     print(event.text)
 ```
@@ -353,13 +354,13 @@ manager = BatchTranscriptionManager(
     endpoint=os.environ["TRANSCRIPTION_ENDPOINT"],
     key=os.environ["TRANSCRIPTION_KEY"]
 )
-
+# ...
 results = manager.batch_transcribe(
     audio_files=[{"url": "https://<storage>/audio.wav", "name": "test"}],
     locale="zh-CN",
     diarization=True
 )
-
+# ...
 manager.export_results(format='srt')
 ```
 
@@ -369,7 +370,7 @@ manager.export_results(format='srt')
 ### 转写参数配置
 
 | 参数 | 说明 | 免费版 | 专业版 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | `locale` | 语言代码 | 支持 | 支持 |
 | `diarization_enabled` | 说话人分离 | 不支持 | 支持 |
 | `max_speakers` | 最大说话人数 | 不支持 | 可配置 |
@@ -380,7 +381,7 @@ manager.export_results(format='srt')
 ### 输出格式对比
 
 | 格式 | 用途 | 特点 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | 纯文本 | 文档归档 | 最简格式 |
 | SRT | 视频字幕 | 带序号与时间戳 |
 | VTT | Web视频字幕 | HTML5标准 |
@@ -429,7 +430,7 @@ manager.export_results(format='srt')
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | azure-ai-transcription | Python SDK | 必需 | `pip install azure-ai-transcription` |
@@ -450,9 +451,8 @@ manager.export_results(format='srt')
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

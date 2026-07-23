@@ -16,17 +16,18 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 创意设计
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # Frontend Design Free
 
 frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI slop"美学。
 基础版支持 3 种美学方向和 CSS-only 动画方案。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Frontend Design Free处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI sl
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -158,7 +159,7 @@ Motion 库（React）集成。
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 使用 Inter/Roboto/Arial 通用字体 | 默认使用系统字体或流行字体 | 选择 Distinctive 字体配对，如 Playfair Display + DM Sans |
 | 白底紫色渐变老套配色 | AI 默认倾向常见的科技感配色 | 根据美学方向选择独特配色：editorial 用 ink+paper+accent |
 | 可预测的居中三列卡片布局 | 默认使用对称网格 | 使用非对称 grid-template-columns（如 2fr 1fr） |

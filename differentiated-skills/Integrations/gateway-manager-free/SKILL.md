@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # API网关管理器（免费版）
 
 > **把"网关配置"从翻文档翻半天压缩到填个表。声明式路由+统一认证+限流+监控，四件套。**
@@ -46,7 +47,7 @@ Agent输出声明式YAML：
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | API网关管理器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -78,13 +79,13 @@ routes:
 ```bash
 # 生成Kong声明式配置
 gateway-manager render --config gateway.yaml --target kong --output kong.yaml
-
+# ...
 # 生成APISIX路由
 gateway-manager render --config gateway.yaml --target apisix --output apisix-routes.yaml
-
+# ...
 # 生成Nginx配置
 gateway-manager render --config gateway.yaml --target nginx --output nginx.conf
-
+# ...
 # 生成Envoy配置
 gateway-manager render --config gateway.yaml --target envoy --output envoy.yaml
 ```
@@ -96,7 +97,7 @@ gateway-manager render --config gateway.yaml --target envoy --output envoy.yaml
 统一的YAML DSL，一次编写多网关生成：
 
 | 匹配维度 | 字段 | 示例 |
-|----------|------|------|
+|:-----|:-----|:-----|
 | 路径前缀 | `path` | `/api/v1/users/*` |
 | HTTP方法 | `methods` | `[GET, POST]` |
 | Host头 | `hosts` | `[api.example.com]` |
@@ -124,7 +125,7 @@ auth:
   header: X-API-Key
   key_store: env  # 从环境变量读取
   key_env: API_KEY_STORE
-
+# ...
 # JWT认证
 auth:
   type: jwt
@@ -134,13 +135,13 @@ auth:
     - sub        # 用户ID
     - exp        # 过期时间
     - scope      # 权限范围
-
+# ...
 # OAuth2 Token Introspection
 auth:
   type: oauth2
   introspection_url: http://auth-service:8080/oauth/introspect
   cache_ttl: 60  # introspection结果缓存60秒
-
+# ...
 # Basic Auth
 auth:
   type: basic
@@ -162,7 +163,7 @@ auth:
 两种限流算法，按需选择：
 
 | 算法 | 适用场景 | 配置示例 |
-|------|----------|----------|
+|---:|---:|---:|
 | 固定窗口 | 简单场景，容忍边界突刺 | `type: fixed_window, qps: 100` |
 | 滑动窗口 | 精确限流，边界平滑 | `type: sliding_window, qps: 100, burst: 20` |
 
@@ -217,7 +218,7 @@ P95 Latency:       180ms
 P99 Latency:       420ms
 Error Rate (5xx):  0.3%
 Rate Limited (429): 2.1%
-
+# ...
 Top Routes by QPS:
 1. /api/v1/users      450 QPS  P95:120ms
 2. /api/v1/orders     320 QPS  P95:200ms
@@ -234,7 +235,7 @@ Top Routes by QPS:
 不知道选哪个网关？按以下矩阵决策：
 
 | 维度 | Kong | APISIX | Nginx | Envoy |
-|------|------|--------|-------|-------|
+|:---:|:---:|:---:|:---:|:---:|
 | 性能 | 高 | 极高 | 极高 | 高 |
 | 插件生态 | 丰富 | 丰富 | 中（Lua） | 中（Filter） |
 | 配置方式 | DB/声明式 | 声明式 | 文件 | xDS动态 |
@@ -313,7 +314,7 @@ Top Routes by QPS:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
 | 目标网关 | 软件 | 必需 | 从对应官网安装 |
 | Prometheus | 监控 | 可选 | 从prometheus.io安装，用于指标采集 |
@@ -374,22 +375,23 @@ Top Routes by QPS:
 ### 示例1：基础用法
 
 ```
-### 30秒上手：生成一个路由配置
-
+### 30秒上手：生成一个路由配置(补充)
+# ...
 对Agent说：
-
+# ...
 > "帮我配置一个网关路由：把 /api/v1/users/* 转发到用户服务 http://user-service:8001，需要JWT认证，限流100QPS。"
-
+# ...
 Agent输出声明式YAML：
-
+# ...
 ```yaml
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+# ...

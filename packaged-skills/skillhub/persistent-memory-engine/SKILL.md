@@ -21,16 +21,17 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
 ---
 # 持久记忆引擎
 
 面向 AI Agent 的无限分层持久记忆系统，在内置记忆之上构建并行、可扩展、可检索的结构化本地存储，解决跨会话遗忘与记忆膨胀问题。本系统完全位于 `~/memory/`，与内置 Agent 记忆并行运作，永不修改内置 `MEMORY.md` 与 workspace `memory/` 目录。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 持久记忆引擎处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,13 +39,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 多租户管理与权限分配 | 不支持 | 支持 |
+| 操作审计与合规日志 | 不支持 | 支持 |
+| 自定义仪表盘与报表 | 不支持 | 支持 |
+| API开放与第三方集成 | 不支持 | 支持 |
+| 资源配额管理与计费统计 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -74,7 +75,7 @@ expires: 2026-12-31
 根索引 -> 分类索引 -> 条目文件，三层导航确保大规模快速定位：
 
 | 层级 | 文件路径 | 作用 |
-|------|---------|------|
+|---:|---:|---:|
 | 根索引 | `~/memory/INDEX.md` | 列出所有分类、描述、条目数、更新时间 |
 | 分类索引 | `~/memory/{分类}/INDEX.md` | 列出该分类所有条目、状态、时间、文件名 |
 | 条目文件 | `~/memory/{分类}/{条目}.md` | 完整条目内容与 frontmatter 元数据 |
@@ -90,7 +91,7 @@ expires: 2026-12-31
 按规模自动适配最优检索路径：
 
 | 文件规模 | 检索策略 | 命令 | 延迟 |
-|---------|---------|------|------|
+|:---:|:---:|:---:|:---:|
 | 小规模（<50文件） | grep 全文搜索 | `grep -r "关键词" ~/memory/{分类}/` | <100ms |
 | 中规模（50-500文件） | 索引导航优先 | 查 INDEX.md 定位 -> 读条目文件 | <200ms |
 | 超大规模（500+文件） | 向量语义检索（可选） | 接入 Chroma/LanceDB/Qdrant | <500ms |
@@ -101,7 +102,7 @@ expires: 2026-12-31
 每个条目经历四阶段生命周期，避免记忆膨胀拖慢检索：
 
 | 阶段 | 触发条件 | 状态变化 | 检索权重 |
-|------|---------|---------|---------|
+|:------|------:|:------|:------|
 | 写入 | 用户分享重要信息 | status=active | 最高 |
 | 激活 | 被检索或更新 | status=active（刷新时间戳） | 高 |
 | 归档 | 超过90天未更新 | status=archived，移入 `archived/` 子目录 | 降低 |
@@ -121,7 +122,7 @@ expires: 2026-12-31
 - **历史**：版本历史记录在条目文件的"版本历史"章节
 
 ```markdown
-
+# ...
 #
 ## 版本历史
 - v1 (2026-06-01)：用户偏好深色模式
@@ -183,7 +184,7 @@ expires: 2026-12-31
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 找不到记忆条目 | 索引未同步更新，条目已写入但 INDEX.md 未追加记录 | 检查 INDEX.md 是否含该条目行，手动补录条目记录到分类索引 |
 | 检索结果噪音过大 | 单分类过大（超过100条目），grep 返回过多无关结果 | 按状态或时间分裂为子分类，缩小检索范围；或启用 tags 过滤 |
 | 同一信息重复存储 | 写入前未执行去重检查，同一内容被多次写入 | 执行 grep 去重，合并重复条目，保留 version 最高的版本 |
@@ -212,15 +213,15 @@ tags: [web, react, typescript, tailwind]
 importance: 0.8
 related: []
 ---
-
+# ...
 ## 项目概要
 技术栈：React + TypeScript + Tailwind
 目标：构建客户管理系统
-
+# ...
 ## 关键决策
 - 2026-07-18：选定 React 而非 Vue（团队熟悉度）
 EOF
-
+# ...
 # 更新分类索引
 echo "| Alpha项目 | active | 2026-07 | alpha.md |" >> ~/memory/projects/INDEX.md
 ```
@@ -237,18 +238,18 @@ echo "| Alpha项目 | active | 2026-07 | alpha.md |" >> ~/memory/projects/INDEX.
 3. 读取发现旧记录："用户偏好深色模式（2026-06-01）"
 4. 冲突检测：新信息与旧记录矛盾
 5. 不直接覆盖，递增版本：
-
+# ...
    ---
    title: UI偏好
    status: active
    version: 2
    updated: 2026-07-18
    ---
-
+# ...
    ## 当前偏好
    用户偏好浅色模式
-
-   ## 版本历史
+# ...
+## 版本历史(续1)
    - v1 (2026-06-01)：用户偏好深色模式
    - v2 (2026-07-18)：用户偏好浅色模式（冲突，已确认最新）
 ```
@@ -266,12 +267,12 @@ mv ~/memory/projects/beta.md ~/memory/projects/archived/beta.md
 # 更新条目 status
 sed -i 's/status: active/status: archived/' ~/memory/projects/archived/beta.md
 # 更新分类索引，将beta行标记为archived
-
+# ...
 # 180天后无引用，移入回收站
 mkdir -p ~/memory/.trash
 mv ~/memory/projects/archived/beta.md ~/memory/.trash/beta.md
 echo "| beta项目 | expired | 2026-07-18 | projects/archived/beta.md |" >> ~/memory/.trash/INDEX.md
-
+# ...
 # 用户要求恢复（30天内）
 mv ~/memory/.trash/beta.md ~/memory/projects/beta.md
 sed -i 's/status: archived/status: active/' ~/memory/projects/beta.md
@@ -316,7 +317,7 @@ sed -i 's/status: archived/status: active/' ~/memory/projects/beta.md
 ### 依赖项
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | 文件系统（可写 `~/memory/`） | 本地存储 | 必需 | 操作系统自带 |
 | grep / find | 系统命令 | 必需 | 操作系统自带 |

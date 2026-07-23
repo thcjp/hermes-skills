@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 工具发现引擎专业版是企业级的工具发现与评估平台。在完整兼容免费版所有搜索和安装能力的基础上,专业版引入了批量并行搜索、团队推荐、工具评估报告、自动化部署、使用统计等高级能力,适用于企业团队统一工具选型、DevOps 批量部署、技术评审等复杂场景。
 
@@ -33,7 +35,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 工具发现引擎专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -49,9 +51,9 @@ pricing_model: "per_use"
   "concurrency": 5,
   "merge_results": true
 }
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search batch_search.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch status
 ```
 
@@ -65,11 +67,11 @@ pricing_model: "per_use"
 
 ```bash
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team create --name "dev_tools_eval"
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team invite --email "colleague@company.com"
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team share --result search_result.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team collect-ratings --tool "target-tool"
 ```
 
@@ -83,9 +85,9 @@ pricing_model: "per_use"
 
 ```bash
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） evaluate "target-tool" --output report.html
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch evaluate --input tools.json --output reports/
-
+# ...
 ```
 
 **输入**: 用户提供工具评估报告所需的指令和必要参数。
@@ -106,9 +108,9 @@ pricing_model: "per_use"
   "environment": "production",
   "auto_configure": true
 }
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch deploy deploy.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch verify --input deploy.json
 ```
 
@@ -122,9 +124,9 @@ pricing_model: "per_use"
 
 ```bash
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats usage --period "2026-07"
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats leaderboard --team "dev_team"
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats export --format csv --output usage_report.csv
 ```
 
@@ -139,7 +141,7 @@ pricing_model: "per_use"
 ```bash
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） config set-scoring \
   --weights '{"community": 0.3, "quality": 0.3, "security": 0.2, "maintenance": 0.2}'
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） config set-scoring \
   --min-threshold 3.0 \
   --custom-rules custom_rules.json
@@ -181,18 +183,18 @@ cat > selection_search.json << 'EOF'
   "min_rating": 3.0
 }
 EOF
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search selection_search.json --output candidates.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch evaluate \
   --input candidates.json \
   --output evaluations/ \
   --dimensions "community,quality,security,maintenance"
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team collect-ratings \
   --input candidates.json \
   --team "tech_committee"
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） report selection \
   --evaluations evaluations/ \
   --team-ratings team_ratings.json \
@@ -217,11 +219,11 @@ cat > project_deploy.json << 'EOF'
   "verify_after_install": true
 }
 EOF
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch deploy project_deploy.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch verify --input project_deploy.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） report deploy \
   --input project_deploy.json \
   --output deployment_report.html
@@ -232,7 +234,7 @@ EOF
 
 ```bash
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） catalog scan --output inventory.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch evaluate \
   --input inventory.json \
   --output evaluations/ \
@@ -241,7 +243,7 @@ EOF
   --inventory inventory.json \
   --evaluations evaluations/ \
   --output tool_catalog.html
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats analyze \
   --period "2026-Q3" \
   --identify-low-usage \
@@ -253,9 +255,9 @@ EOF
 ```bash
 cd ~/.skill-platform/workspace/skills/tool-finder-tool-pro
 npm install
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） --version --edition
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch --help
 ```
 
@@ -283,7 +285,7 @@ cat > team_config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team init team_config.json
 ```
 
@@ -299,9 +301,9 @@ cat > first_batch.json << 'EOF'
   "concurrency": 3
 }
 EOF
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search first_batch.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch status
 ```
 
@@ -381,9 +383,9 @@ EOF
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） search "web search"
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search batch.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） evaluate "target-tool"
 ```
 
@@ -393,7 +395,7 @@ EOF
   batch.json \
   --concurrency 8 \
   --timeout 30
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search \
   batch.json \
   --cache-dir ./cache \
@@ -411,17 +413,17 @@ EOF
 ### 4. 团队协作的流程化
 ```bash
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch search candidates.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch evaluate --input results.json
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team review --input evaluations/
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） report final --output report.html
 ```
 
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础搜索 | 支持 | 支持 |
 | 名称匹配优先 | 支持 | 支持 |
 | 评分排序 | 支持 | 支持 |
@@ -457,7 +459,7 @@ EOF
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team config set \
   --role "evaluator" \
   --permissions "search,evaluate,rate"
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team config set \
   --role "viewer" \
   --permissions "view,export"
@@ -470,7 +472,7 @@ EOF
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch deploy \
   deploy.json \
   --rollback-on-failure
-
+# ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch rollback \
   --deployment-id "deploy_001"
 ```
@@ -493,7 +495,7 @@ EOF
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | npx | 包执行器 | 必需 | 随 Node.js 安装 |
 | curl | HTTP 工具 | 必需 | 系统自带 |
@@ -506,15 +508,15 @@ EOF
 
 ```bash
 SKILLHUB_API_TOKEN=your_api_token
-
+# ...
 TEAM_API_TOKEN=your_team_api_token
-
+# ...
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=tool_finder
 DB_USER=admin
 DB_PASSWORD=your_password
-
+# ...
 WEBHOOK_URL=https://your-system.example.com/webhook
 ```
 
@@ -528,7 +530,7 @@ WEBHOOK_URL=https://your-system.example.com/webhook
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

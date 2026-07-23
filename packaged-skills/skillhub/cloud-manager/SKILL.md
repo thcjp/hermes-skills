@@ -18,27 +18,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
 ---
 # 云存储管家 专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力域 | 支持 | 支持 |
-| 专业版增强 | 不支持 | 支持 |
-| 多云统一视图 | 不支持 | 支持 |
-| 专业版独有 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 云存储管家 专业版全功能云存储管理 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力域 | 说明 | 专业版增强 |
-|--------|------|-----------|
+|:-----|:-----|:-----|
 | 多云统一视图 | 聚合多个云盘的文件列表与存储用量 | 专业版独有 |
 | 跨盘迁移 | 云盘之间的文件迁移向导 | 专业版独有 |
 | 家庭共享 | 家庭相册、共享文件夹、成员权限 | 专业版独有 |
@@ -85,10 +87,10 @@ pricing_model: "per_use"
 # 添加云盘账户
 cloud-manager account add --provider icloud --email "user@example.com"
 cloud-manager account add --provider gdrive --email "user@gmail.com"
-
+# ...
 # 查看统一文件视图
 cloud-manager files list --all-providers --sort-by date
-
+# ...
 # 查看存储用量聚合
 cloud-manager storage summary --all-providers
 ```
@@ -100,13 +102,13 @@ cloud-manager storage summary --all-providers
 ```bash
 # 创建家庭共享文件夹
 cloud-manager share create --name "家庭相册" --type folder
-
+# ...
 # 邀请成员并设置权限
 cloud-manager share invite --folder "家庭相册" \
   --member "spouse@example.com" --role editor
 cloud-manager share invite --folder "家庭相册" \
   --member "child@example.com" --role viewer
-
+# ...
 # 查看共享权限矩阵
 cloud-manager share matrix --folder "家庭相册"
 ```
@@ -116,7 +118,7 @@ cloud-manager share matrix --folder "家庭相册"
 团队需要共享文档库，并按角色控制权限。专业版提供团队权限模型：
 
 | 角色 | 权限 | 适用成员 |
-|------|------|----------|
+|---:|---:|---:|
 | owner | 全部权限（含删除、权限管理） | 团队负责人 |
 | editor | 编辑、上传、下载、评论 | 核心成员 |
 | contributor | 上传、下载、评论自己的文件 | 外部协作者 |
@@ -125,7 +127,7 @@ cloud-manager share matrix --folder "家庭相册"
 ```bash
 # 创建团队文档库
 cloud-manager team create --name "产品文档库" --provider onedrive
-
+# ...
 # 批量设置成员权限
 cloud-manager team members --library "产品文档库" --file members.csv
 ```
@@ -141,14 +143,14 @@ cloud-manager backup rule create \
   --target "gdrive://Photos/$(date +%Y/%m)" \
   --schedule "daily 02:00" \
   --retain 90d
-
+# ...
 # 配置文档每周备份
 cloud-manager backup rule create \
   --source "~/Documents" \
   --target "onedrive://Backup/Documents" \
   --schedule "weekly sunday 03:00" \
   --retain 12w
-
+# ...
 # 查看所有备份规则
 cloud-manager backup rule list
 ```
@@ -160,10 +162,10 @@ cloud-manager backup rule list
 ```bash
 # 生成存储分析报表
 cloud-manager storage analyze --provider all --format markdown --output report.md
-
+# ...
 # 按文件类型分析
 cloud-manager storage analyze --group-by type --top 10
-
+# ...
 # 识别大文件
 cloud-manager storage find --size ">500MB" --older-than "180d"
 ```
@@ -179,7 +181,7 @@ cloud-manager migrate wizard \
   --target onedrive \
   --path "/Work" \
   --strategy "copy-then-verify"
-
+# ...
 # 查看迁移进度
 cloud-manager migrate status --job-id abc123
 ```
@@ -202,7 +204,7 @@ export CLOUD_MANAGER_CONFIG="$CLOUD_MANAGER_HOME/config.yaml"
 ```bash
 # 添加优秀个云盘账户
 cloud-manager account add --provider gdrive --email "you@gmail.com"
-
+# ...
 # 查看存储聚合
 cloud-manager storage summary
 ```
@@ -219,7 +221,7 @@ cloud-manager storage summary
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 | 云盘客户端 | 软件 | 必需 | 各厂商官方下载 | 最新版 |
 | rclone | 命令行工具 | 可选 | `apt install rclone` / 官网下载 | 1.60+ |
@@ -237,7 +239,6 @@ cloud-manager storage summary
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 调用命令行工具完成任务
 
-
 **API Key配置方式**:
 ```bash
 export API_KEY="your_api_key_here"
@@ -248,7 +249,7 @@ export API_KEY="your_api_key_here"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:------|------:|:------|:------|
 | content | string | 否 | cloud-manager处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -295,9 +296,8 @@ export API_KEY="your_api_key_here"
 
 ## 异常处理
 
-
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
-|------|----------|----------|--------|
+|---:|:---|---:|---:|
 | 账户添加失败 | 凭据无效或网络问题 | 重新授权，
 | 同步不生效 | sync_interval 过长或守护进程未运行 | 调整间隔，重启守护进程 | P1 |
 | 共享权限不生效 | 客户端缓存 | 重新登录或刷新客户端 | P1 |
@@ -306,10 +306,10 @@ export API_KEY="your_api_key_here"
 | 存储分析耗时过长 | 文件数量大 | 限制扫描深度或排除大目录 | P2 |
 | 去重误删 | 哈希冲突（极罕见） | 从回收站恢复，反馈问题 | P0 |
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|:------:|--------|:-------|:------:|
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -336,12 +336,12 @@ accounts:
   - provider: dropbox
     email: user@dropbox.com
     sync_interval: 3600
-
+# ...
 backup:
   default_retain: 90d
   max_concurrent: 3
   checkpoint: true
-
+# ...
 sharing:
   default_role: viewer
   expire_default: 30d
@@ -350,7 +350,7 @@ sharing:
 ### 家庭共享权限矩阵
 
 | 成员 | 家庭相册 | 财务文档 | 旅行计划 |
-|------|----------|----------|----------|
+|----|:--:|---:|----|
 | 户主 | owner | owner | owner |
 | 配偶 | editor | editor | editor |
 | 子女 | viewer | 无权限 | viewer |
@@ -359,7 +359,7 @@ sharing:
 ### 团队权限矩阵
 
 | 角色 | 文档库 | 财务库 | 代码库 |
-|------|--------|--------|--------|
+|----|----|----|----|
 | owner | 全部 | 全部 | 全部 |
 | editor | 编辑 | 查看 | 编辑 |
 | contributor | 上传 | 无权限 | 上传 |
@@ -368,7 +368,7 @@ sharing:
 ### 定时备份规则
 
 | 备份目标 | 源路径 | 调度 | 保留期 |
-|----------|--------|------|--------|
+|:-----|:-----|:-----|:-----|
 | 照片 | ~/Pictures | 每日 02:00 | 90 天 |
 | 文档 | ~/Documents | 每周日 03:00 | 12 周 |
 | 代码 | ~/Projects | 每日 23:00 | 30 天 |
@@ -424,9 +424,8 @@ cloud-manager dedup find --provider all --min-size "1MB"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

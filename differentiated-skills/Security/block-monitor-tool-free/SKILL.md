@@ -27,13 +27,14 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
 ---
-
 本工具为AI应用开发者提供内容验证与策略管理能力,在AI生成内容输出前执行策略检查,通过黑白名单机制过滤不当内容。免费版支持基础策略检查、内容分类标记与验证结果记录,适合个人开发者对AI输出进行基础内容审核。
 
 ### 免费版与专业版对比
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 策略类型 | 黑白名单 | +正则+语义+上下文 |
 | 规则数量 | 最多50条 | 无限制 |
 | 批量验证 | 不支持 | 批量处理 |
@@ -46,7 +47,7 @@ suggested_price: 29.9
 ### 1. 内容策略检查
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 内容验证网关免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -54,20 +55,20 @@ suggested_price: 29.9
 ```python
 #!/usr/bin/env python3
 """免费版内容策略检查引擎"""
-
+# ...
 import re
 import json
 from datetime import datetime
-
+# ...
 class ContentPolicyChecker:
     """内容策略检查器"""
-
+# ...
     def __init__(self):
         self.blocklist = set()
         self.allowlist = set()
         self.patterns = []
         self.load_rules()
-
+# ...
     def load_rules(self):
         """加载规则文件"""
         try:
@@ -75,13 +76,13 @@ class ContentPolicyChecker:
                 self.blocklist = set(line.strip().lower() for line in f if line.strip())
         except FileNotFoundError:
             pass
-
+# ...
         try:
             with open("allowlist.txt", "r", encoding="utf-8") as f:
                 self.allowlist = set(line.strip().lower() for line in f if line.strip())
         except FileNotFoundError:
             pass
-
+# ...
     def check_content(self, content):
         """检查内容是否合规"""
         result = {
@@ -90,9 +91,9 @@ class ContentPolicyChecker:
             "passed": True,
             "violations": []
         }
-
+# ...
         content_lower = content.lower()
-
+# ...
         for term in self.blocklist:
             if term in content_lower:
                 result["violations"].append({
@@ -101,7 +102,7 @@ class ContentPolicyChecker:
                     "severity": "HIGH"
                 })
                 result["passed"] = False
-
+# ...
         if not result["passed"]:
             for term in self.allowlist:
                 if term in content_lower:
@@ -109,14 +110,14 @@ class ContentPolicyChecker:
                         v for v in result["violations"]
                         if v["term"] not in content_lower or term == v["term"]
                     ]
-
+# ...
         sensitive_patterns = [
             (r'\b\d{3}-\d{2}-\d{4}\b', "SSN格式", "CRITICAL"),
             (r'\b\d{16}\b', "信用卡号格式", "CRITICAL"),
             (r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', "邮箱地址", "MEDIUM"),
             (r'\b\d{3}\.\d{3}\.\d{3}\.\d{3}\b', "IP地址", "MEDIUM"),
         ]
-
+# ...
         for pattern, desc, severity in sensitive_patterns:
             matches = re.findall(pattern, content)
             if matches:
@@ -128,12 +129,12 @@ class ContentPolicyChecker:
                 })
                 if severity in ["CRITICAL", "HIGH"]:
                     result["passed"] = False
-
+# ...
         return result
-
+# ...
 if __name__ == "__main__":
     checker = ContentPolicyChecker()
-
+# ...
     test_content = "这是一段测试内容,包含敏感词和 user@example.com 邮箱地址"
     result = checker.check_content(test_content)
     print(json.dumps(result, indent=2, ensure_ascii=False))
@@ -149,21 +150,21 @@ if __name__ == "__main__":
 #!/bin/bash
 RULES_DIR="./rules"
 mkdir -p "$RULES_DIR"
-
+# ...
 add_blocklist() {
     local term=$1
     echo "$term" >> "${RULES_DIR}/blocklist.txt"
     sort -u "${RULES_DIR}/blocklist.txt" -o "${RULES_DIR}/blocklist.txt"
     echo "已添加到黑名单: ${term}"
 }
-
+# ...
 add_allowlist() {
     local term=$1
     echo "$term" >> "${RULES_DIR}/allowlist.txt"
     sort -u "${RULES_DIR}/allowlist.txt" -o "${RULES_DIR}/allowlist.txt"
     echo "已添加到白名单: ${term}"
 }
-
+# ...
 list_rules() {
     echo "=== 黑名单 ==="
     [ -f "${RULES_DIR}/blocklist.txt" ] && cat "${RULES_DIR}/blocklist.txt" || echo "(空)"
@@ -171,14 +172,14 @@ list_rules() {
     echo "=== 白名单 ==="
     [ -f "${RULES_DIR}/allowlist.txt" ] && cat "${RULES_DIR}/allowlist.txt" || echo "(空)"
 }
-
+# ...
 remove_term() {
     local term=$1
     local file=$2
     sed -i "/^${term}$/d" "${RULES_DIR}/${file}"
     echo "已移除: ${term}"
 }
-
+# ...
 echo "初始化规则目录..."
 add_blocklist "密码"
 add_blocklist "信用卡"
@@ -196,12 +197,12 @@ list_rules
 ```python
 #!/usr/bin/env python3
 """内容分类标记工具"""
-
+# ...
 import re
-
+# ...
 class ContentClassifier:
     """内容分类器"""
-
+# ...
     CATEGORIES = {
         "personal_info": {
             "patterns": [
@@ -238,11 +239,11 @@ class ContentClassifier:
             "label": "代码片段"
         }
     }
-
+# ...
     def classify(self, content):
         """分类内容"""
         classifications = []
-
+# ...
         for category, config in self.CATEGORIES.items():
             matches = []
             for pattern, desc in config["patterns"]:
@@ -253,20 +254,20 @@ class ContentClassifier:
                         "count": len(found),
                         "sample": found[0][:50] if found else ""
                     })
-
+# ...
             if matches:
                 classifications.append({
                     "category": category,
                     "label": config["label"],
                     "matches": matches
                 })
-
+# ...
         return classifications
-
+# ...
 if __name__ == "__main__":
     import json
     classifier = ContentClassifier()
-
+# ...
     test = "用户的邮箱是 test@example.com,password=123456"
     result = classifier.classify(test)
     print(json.dumps(result, indent=2, ensure_ascii=False))
@@ -283,20 +284,20 @@ if __name__ == "__main__":
 LOG_DIR="./logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="${LOG_DIR}/verification_$(date '+%Y%m%d').log"
-
+# ...
 log_verification() {
     local content_preview=$1
     local result=$2
     local timestamp=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
-
+# ...
     echo "[${timestamp}] Result: ${result} | Preview: ${content_preview}" >> "$LOG_FILE"
 }
-
+# ...
 view_today_log() {
     echo "=== 今日验证日志 ==="
     [ -f "$LOG_FILE" ] && cat "$LOG_FILE" || echo "今日暂无日志"
 }
-
+# ...
 stats_log() {
     echo "=== 验证统计 ==="
     TOTAL=$(wc -l < "$LOG_FILE" 2>/dev/null || echo "0")
@@ -319,13 +320,13 @@ stats_log() {
 ```python
 #!/usr/bin/env python3
 """AI输出内容审核流程"""
-
+# ...
 import json
-
+# ...
 def audit_ai_output(content, checker):
     """审核AI生成的内容"""
     result = checker.check_content(content)
-
+# ...
     if result["passed"]:
         return {
             "decision": "ALLOW",
@@ -335,7 +336,7 @@ def audit_ai_output(content, checker):
     else:
         violations = result["violations"]
         critical = [v for v in violations if v.get("severity") == "CRITICAL"]
-
+# ...
         if critical:
             return {
                 "decision": "BLOCK",
@@ -348,9 +349,9 @@ def audit_ai_output(content, checker):
                 "message": f"内容需要人工审核: {len(violations)}项违规",
                 "violations": len(violations)
             }
-
+# ...
 from content_policy import ContentPolicyChecker
-
+# ...
 checker = ContentPolicyChecker()
 ai_output = "AI生成的内容..."
 decision = audit_ai_output(ai_output, checker)
@@ -362,23 +363,23 @@ print(json.dumps(decision, indent=2, ensure_ascii=False))
 #!/bin/bash
 INPUT_FILE=$1
 OUTPUT_FILE="${1%.txt}_filtered.txt"
-
+# ...
 echo "=== 敏感信息过滤 ==="
 echo "输入: ${INPUT_FILE}"
 echo "输出: ${OUTPUT_FILE}"
 echo ""
-
+# ...
 BLOCKLIST=$(cat rules/blocklist.txt 2>/dev/null)
-
+# ...
 CONTENT=$(cat "$INPUT_FILE")
 FILTERED="$CONTENT"
-
+# ...
 for term in $BLOCKLIST; do
     FILTERED=$(echo "$FILTERED" | sed "s/${term}/***REDACTED***/gi")
 done
-
+# ...
 echo "$FILTERED" > "$OUTPUT_FILE"
-
+# ...
 REPLACEMENTS=$(diff "$INPUT_FILE" "$OUTPUT_FILE" | grep -c "REDACTED" || echo "0")
 echo "过滤完成: 替换了 ${REPLACEMENTS} 处敏感内容"
 ```
@@ -387,33 +388,33 @@ echo "过滤完成: 替换了 ${REPLACEMENTS} 处敏感内容"
 ```bash
 #!/bin/bash
 CONTENT_FILE=$1
-
+# ...
 echo "=== 发布前内容检查 ==="
 echo ""
-
+# ...
 echo "--- 1. 策略检查 ---"
 python3 -c "
 import json
 from content_policy import ContentPolicyChecker
-
+# ...
 checker = ContentPolicyChecker()
 with open('${CONTENT_FILE}', 'r') as f:
     content = f.read()
-
+# ...
 result = checker.check_content(content)
 print(json.dumps(result, indent=2, ensure_ascii=False))
-
+# ...
 if not result['passed']:
     print('\n[!] 内容未通过验证,请修正后发布')
     exit(1)
 else:
     print('\n[OK] 内容通过验证')
 "
-
+# ...
 echo ""
 echo "--- 2. 敏感信息检查 ---"
 grep -in "password\|secret\|key.*=\|token" "$CONTENT_FILE" | head -5 || echo "  未发现敏感信息"
-
+# ...
 echo ""
 echo "=== 检查完成 ==="
 ```
@@ -429,7 +430,7 @@ echo "敏感词2" >> rules/blocklist.txt
 ### 第二步:运行内容检查
 ```python
 from content_policy import ContentPolicyChecker
-
+# ...
 checker = ContentPolicyChecker()
 result = checker.check_content("要检查的内容")
 print("通过" if result["passed"] else "拒绝")
@@ -443,14 +444,14 @@ cat logs/verification_$(date '+%Y%m%d').log
 ## 配置示例
 ### 规则文件格式
 | 文件 | 格式 | 说明 |
-|:-----|:-----|:-----|
+|---:|---:|---:|
 | blocklist.txt | 每行一个词条 | 黑名单,匹配则拒绝 |
 | allowlist.txt | 每行一个词条 | 白名单,豁免黑名单 |
 | patterns.json | JSON数组 | 正则模式规则 |
 
 ### 敏感信息检测模式
 | 模式名称 | 正则表达式 | 严重级别 |
-|:---------|:-----------|:---------|
+|:---:|:---:|:---:|
 | SSN | `\d{3}-\d{2}-\d{4}` | CRITICAL |
 | 信用卡 | `\d{16}` | CRITICAL |
 | 身份证 | `\d{17}[\dXx]` | CRITICAL |
@@ -489,7 +490,7 @@ cat logs/verification_$(date '+%Y%m%d').log
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | python3 | 运行时环境 | 推荐 | python.org 下载 |
 | grep | 文本搜索 | 必需 | 系统自带 |
 | sed | 文本处理 | 推荐 | 系统自带 |
@@ -506,7 +507,7 @@ cat logs/verification_$(date '+%Y%m%d').log
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

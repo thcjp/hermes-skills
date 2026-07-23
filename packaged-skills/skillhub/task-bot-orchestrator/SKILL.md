@@ -22,25 +22,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "任务管理,效率,工具"
 ---
 # 任务编排机器人(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 任务编排机器人(专业版)全功能任务编排 | 不支持 | 支持 |
+| 任务编排机器人(专业版)高级编排 | 不支持 | 支持 |
+| 任务编排机器人(专业版)数据库集成与监控 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 一、条件触发（专业版独有）
 | 触发类型 | 方法 | 说明 |
-|----------|------|------|
+|:-----|:-----|:-----|
 | 文件到达 | `Trigger.on_file_arrive(path).do(task)` | 目录有新文件时触发 |
 | 邮件接收 | `Trigger.on_email_receive(filter).do(task)` | 收到匹配邮件时触发 |
 | API调用 | `Trigger.on_api_call(endpoint).do(task)` | API被调用时触发 |
@@ -50,21 +52,21 @@ pricing_model: "monthly"
 
 ```python
 Trigger.on_file_arrive("/data/input/").do(process_new_file)
-
+# ...
 Trigger.on_email_receive(
     sender="reports@company.com",
     subject_contains="月度报表"
 ).do(process_monthly_report)
-
+# ...
 Trigger.on_api_call("/api/trigger/report").do(generate_report)
-
+# ...
 Trigger.on_db_change(table="orders", event="insert").do(sync_to_warehouse)
 ```
 
 > 详细内容已移至 `references/detail.md` - ### 二、高级编排（专业版独有）
 ### 三、数据库集成（专业版独有）
 | 数据库 | 支持操作 | 说明 |
-|--------|----------|------|
+|---:|---:|---:|
 | `关系型数据库` | 增删改查、批量操作 | 企业级关系数据库 |
 | MySQL | 增删改查、批量操作 | 流行关系数据库 |
 | SQLite | 增删改查 | 轻量级本地数据库 |
@@ -73,16 +75,16 @@ Trigger.on_db_change(table="orders", event="insert").do(sync_to_warehouse)
 
 ```python
 db = orch.database
-
+# ...
 db.postgres.insert("orders", order_data)
 db.postgres.query("SELECT * FROM orders WHERE date > %s", (yesterday,))
 db.postgres.update("orders", {"status": "completed"}, {"id": order_id})
-
+# ...
 db.postgres.batch_insert("logs", log_entries)
-
+# ...
 db.mongo.insert("events", event_data)
 db.mongo.find("events", {"type": "purchase", "date": {"$gte": today}})
-
+# ...
 db.redis.set("last_sync", timestamp, ttl=3600)
 db.redis.get("last_sync")
 ```
@@ -91,7 +93,7 @@ db.redis.get("last_sync")
 **处理**: 解析三、数据库集成（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回三、数据库集成（专业版独有）的处理结果,包含执行状态码、结果数据和执行日志。### 四、错误恢复（专业版独有）
 | 功能 | 说明 |
-|------|------|
+|:---:|:---:|
 | 自动重试 | 失败后按策略自动重试（可配置次数与间隔） |
 | 断点续传 | 长流程记录检查点，失败后从断点恢复 |
 | 回滚机制 | 关键操作失败时自动回滚已执行步骤 |
@@ -103,7 +105,7 @@ db.redis.get("last_sync")
 **输入**: 用户提供四、错误恢复（专业版独有）所需的指令和必要参数。
 **输出**: 返回四、错误恢复（专业版独有）的处理结果,包含执行状态码、结果数据和执行日志。### 五、多渠道通知（专业版独有）
 | 渠道 | 适用场景 | 特点 |
-|------|----------|------|
+|:------|------:|:------|
 | 邮件 | 正式通知 | 支持附件、HTML模板 |
 | 企业微信 | 团队协作 | 群消息、@提醒 |
 | 飞书 | 团队协作 | 富文本、交互卡片 |
@@ -113,13 +115,11 @@ db.redis.get("last_sync")
 | 短信 | 紧急通知 | 即时到达、高送达率 |
 | 电话 | 紧急告警 | 语音通知、按键确认 |
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供五、多渠道通知（专业版独有）所需的指令和必要参数。
 **处理**: 解析五、多渠道通知（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回五、多渠道通知（专业版独有）的处理结果,包含执行状态码、结果数据和执行日志。### 六、监控仪表盘（专业版独有）
-| 功能 | 说明 |
-|------|------|
+| 功能(续)| 说明 |
+|---:|:---|
 | 实时状态 | 查看当前运行中的任务与状态 |
 | 历史统计 | 任务执行历史、成功率、耗时趋势 |
 | 告警面板 | 失败任务、超时任务、资源告警 |
@@ -133,12 +133,12 @@ orch.enable_dashboard(
     username="admin",
     password="${DASHBOARD_PASSWORD}"
 )
-
+# ...
 ```
 
 ### 七、团队协作（专业版独有）
-| 功能 | 说明 |
-|------|------|
+| 功能(续)(续)| 说明 |
+|:----------:|------------|
 | 多用户管理 | 添加/删除团队成员 |
 | 权限控制 | 管理员/编辑者/查看者三级权限 |
 | 任务共享 | 团队共享工作流与任务 |
@@ -160,16 +160,12 @@ orch.enable_dashboard(
 
 **解决方案**：
 
-> 详细代码示例已移至 `references/detail.md`
-
 **效果**：数据处理管道完全自动化，失败自动重试，处理效率提升5倍。
 
 ### 场景二：CI/CD流水线编排（DevOps工程师）
 **痛点**：代码提交后需触发构建、测试、部署流程，需条件分支与并行执行。
 
 **解决方案**：
-
-> 详细代码示例已移至 `references/detail.md`
 
 **效果**：CI/CD流水线全自动，构建到部署从30分钟缩短至8分钟。
 
@@ -178,16 +174,12 @@ orch.enable_dashboard(
 
 **解决方案**：
 
-> 详细代码示例已移至 `references/detail.md`
-
 **效果**：订单处理全自动，支付失败自动退款，错误率降至0.1%以下。
 
 ### 场景四：监控告警系统（运维工程师）
 **痛点**：系统监控指标异常时需立即告警并触发自动恢复流程。
 
 **解决方案**：
-
-> 详细代码示例已移至 `references/detail.md`
 
 **效果**：告警响应从分钟级提升至秒级，自动恢复率达80%。
 
@@ -196,16 +188,12 @@ orch.enable_dashboard(
 
 **解决方案**：
 
-> 详细代码示例已移至 `references/detail.md`
-
 **效果**：跨系统数据同步从半天缩短至15分钟，数据一致性达99.9%。
 
 ### 场景六：团队协作任务管理（项目经理）
 **痛点**：团队任务分配与进度跟踪需要协作工具，手动管理效率低。
 
 **解决方案**：
-
-> 详细代码示例已移至 `references/detail.md`
 
 **效果**：团队任务管理效率提升40%，审批流程标准化。
 
@@ -221,31 +209,27 @@ pip install slack-sdk discord.py
 
 ```python
 from task_bot_orchestrator import Orchestrator, Database, Trigger
-
+# ...
 orch = Orchestrator(
     database=Database(postgres_url="关系型数据库://..."),
     enable_monitoring=True,
     enable_team_collaboration=True
 )
-
+# ...
 Trigger.on_file_arrive("/data/input/").do(process_file)
 ```
 
 ### 标准搭建（<120秒）
 配置工作流引擎与多渠道通知：
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 完整搭建（<300秒）
 配置团队协作与错误恢复：
-
-> 详细代码示例已移至 `references/detail.md`
 
 #
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|----|:--:|---:|----|
 | content | string | 否 | task-bot-orchestrator处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -304,9 +288,8 @@ Trigger.on_file_arrive("/data/input/").do(process_file)
 
 ## 异常处理
 
-
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|----|----|----|
 | 条件触发不生效 | 监听配置错误/权限不足 | 检查监听路径与权限；验证触发条件 | 高 |
 | 工作流执行中断 | 单个步骤失败导致中断 | 启用错误恢复；配置retry与fallback | 高 |
 | 数据库连接失败 | 连接配置错误/网络问题 | 验证连接字符串；
@@ -328,7 +311,7 @@ Trigger.on_file_arrive("/data/input/").do(process_file)
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | pandas | Python库 | 必需 | `pip install pandas` |
 | openpyxl | Python库 | 必需 | `pip install openpyxl` |
 | schedule | Python库 | 必需 | `pip install schedule` |
@@ -366,20 +349,18 @@ db = Database(
 ### 与消息队列集成
 ```python
 Trigger.on_kafka_topic("orders").do(process_order)
-
+# ...
 Trigger.on_rabbitmq_queue("tasks").do(execute_task)
 ```
 
 ### 与云服务集成
 ```python
 Trigger.on_s3_event(bucket="data-bucket").do(process_file)
-
+# ...
 Trigger.on_azure_event(topic="orders").do(process_order)
 ```
 
 ### 与协作平台集成
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 常见问题
 
@@ -421,9 +402,8 @@ Trigger.on_azure_event(topic="orders").do(process_order)
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

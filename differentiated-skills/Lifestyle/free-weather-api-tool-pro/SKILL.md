@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # 天气查询 (专业版)
 
@@ -42,7 +44,7 @@ pricing_model: "monthly"
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 实时天气 | 当前温度、天气、湿度、风力 | 支持 | 支持 |
 | 多日预报 | 未来天气预报 | 7 天 | 15 天 |
 | 空气质量 | AQI、PM2.5、紫外线 | 支持 | 支持 |
@@ -90,14 +92,14 @@ pricing_model: "monthly"
 import os
 import requests
 from datetime import datetime, timedelta
-
+# ...
 API_BASE = "https://api.weather-pro.local/v1"
 API_KEY = os.environ["WEATHER_PRO_API_KEY"]
-
+# ...
 class LogisticsWeather:
     def __init__(self, api_key):
         self.headers = {"X-API-Key": api_key, "X-Edition": "pro"}
-
+# ...
     def route_weather(self, cities):
         """批量查询运输路线沿线天气"""
         payload = {"cities": cities, "days": 3}
@@ -108,7 +110,7 @@ class LogisticsWeather:
             timeout=60,
         )
         return resp.json()
-
+# ...
     def minute_precip(self, city):
         """获取分钟级降水预报"""
         resp = requests.get(
@@ -118,7 +120,7 @@ class LogisticsWeather:
             timeout=30,
         )
         return resp.json()
-
+# ...
     def route_risk_alert(self, route_cities):
         """运输路线风险预警"""
         weather = self.route_weather(route_cities)
@@ -137,7 +139,7 @@ class LogisticsWeather:
                     "advice": "注意货物固定,避免高速行驶",
                 })
         return risks
-
+# ...
 lw = LogisticsWeather(API_KEY)
 route = ["北京", "济南", "南京", "上海"]
 risks = lw.route_risk_alert(route)
@@ -172,7 +174,7 @@ def agri_weather(region, crop):
         timeout=60,
     )
     return resp.json()
-
+# ...
 # 示例
 # {
 #   "region": "山东寿光",
@@ -205,7 +207,7 @@ def generate_broadcast(cities, template="news"):
         timeout=60,
     )
     return resp.json()
-
+# ...
 # 生成新闻联播风格天气稿
 script = generate_broadcast(
     ["北京", "上海", "广州", "成都"],
@@ -280,7 +282,7 @@ api:
   rate_limit:
     requests_per_minute: 500
     burst: 100
-
+# ...
 features:
   forecast_days: 15
   historical_years: 10
@@ -288,20 +290,20 @@ features:
   agri_weather: true
   batch_query: true
   scheduled_push: true
-
+# ...
 integrations:
   webhook: true
   email: true
   sms: true
   slack: true
   feishu: true
-
+# ...
 cache:
   enabled: true
   ttl_seconds: 300
   backend: redis
   redis_url: ${REDIS_URL}
-
+# ...
 monitoring:
   metrics: true
   alerting: true
@@ -326,7 +328,7 @@ def batch_weather(cities, days=7):
         timeout=120,
     )
     return resp.json()
-
+# ...
 def compare_cities(cities, metric="temperature"):
     """多城市天气对比"""
     data = batch_weather(cities)
@@ -359,7 +361,7 @@ def historical_weather(city, start_date, end_date):
         timeout=120,
     )
     return resp.json()
-
+# ...
 # 查询过去 10 年北京 7 月平均气温
 from datetime import datetime
 this_year = datetime.now().year
@@ -375,9 +377,9 @@ for y in range(this_year - 10, this_year):
 ```python
 import redis
 import json
-
+# ...
 r = redis.Redis.from_url(os.environ.get("REDIS_URL"))
-
+# ...
 def cached_weather(city, ttl=300):
     cache_key = f"weather:{city}"
     cached = r.get(cache_key)
@@ -392,7 +394,7 @@ def cached_weather(city, ttl=300):
 
 ```python
 from tenacity import retry, stop_after_attempt, wait_exponential
-
+# ...
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
 def robust_query(city):
     try:
@@ -407,7 +409,7 @@ def robust_query(city):
 ```python
 import asyncio
 import aiohttp
-
+# ...
 async def async_batch_weather(cities):
     """异步批量查询"""
     async with aiohttp.ClientSession() as session:
@@ -416,7 +418,7 @@ async def async_batch_weather(cities):
             for city in cities
         ]
         return await asyncio.gather(*tasks)
-
+# ...
 async def fetch_one(session, city):
     async with session.get(
         f"{API_BASE}/weather",
@@ -482,7 +484,7 @@ def setup_monitoring():
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | 天气 Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -497,7 +499,7 @@ def setup_monitoring():
 export WEATHER_PRO_API_KEY="sk_pro_xxx"
 export WEATHER_ORG_ID="org_your_id"
 export WEATHER_EDITION="pro"
-
+# ...
 # 可选: 缓存与监控
 export REDIS_URL="redis://localhost:6379/0"
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
@@ -512,9 +514,8 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -27,8 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 体测扫描工具 免费版
 
 ## 概述
@@ -40,7 +41,7 @@ suggested_price: 19.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 视频扫描提交 | 通过 Telegram 提交体测视频，启动扫描任务 |
 | 状态轮询 | 自动每 10-15 秒轮询扫描状态，完成后返回结果 |
 | 基础围度测量 | 返回肩宽、胸围、腰围、臀围等基础围度数据 |
@@ -83,14 +84,14 @@ suggested_price: 19.9
 ```text
 用户：帮我做一次体测，这是我的视频
 [视频附件]
-
+# ...
 机器人：请补充以下信息：
 - 性别（male / female）
 - 身高（cm，100-250）
 - 手机型号（如 iPhone 15 Pro）
-
+# ...
 用户：male，178，iPhone 15 Pro
-
+# ...
 机器人：
 📋 扫描已提交
 - scan_id: scan_20260718_001
@@ -118,14 +119,14 @@ suggested_price: 19.9
 
 ```text
 用户：三个月前我的腰围是 82.1 cm，现在帮我重新测一下
-
+# ...
 机器人：
 📋 新扫描已提交
 - scan_id: scan_20261018_002
 - 状态: processing
-
+# ...
 [轮询中...]
-
+# ...
 机器人：扫描完成 ✅
 📊 测量结果
 - 腰围: 78.9 cm
@@ -142,7 +143,7 @@ suggested_price: 19.9
 **所需输入**
 
 | 参数 | 说明 | 取值范围 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `gender` | 性别 | `male` / `female` |
 | `height_cm` | 身高（厘米） | 100 - 250 |
 | `video` | 体测视频 | 视频附件或可下载的 https URL |
@@ -155,7 +156,7 @@ suggested_price: 19.9
 ```python
 # body_scan_free.py
 import time
-
+# ...
 # 步骤1: 提交扫描
 scan = anthrovision_bridge_submit_scan(
     gender="male",
@@ -165,14 +166,14 @@ scan = anthrovision_bridge_submit_scan(
 )
 scan_id = scan["scan_id"]
 print(f"扫描已提交: {scan_id}, 状态: {scan['status']}")
-
+# ...
 # 步骤2: 轮询状态
 while True:
     result = anthrovision_bridge_check_scan(scan_id=scan_id)
     if result["status"] != "processing":
         break
     time.sleep(12)  # 每12秒轮询一次
-
+# ...
 # 步骤3: 输出结果
 print(f"扫描状态: {result['status']}")
 for key, value in result.get("measurements", {}).items():
@@ -231,7 +232,7 @@ print(f"腰臀比: {result.get('waist_hip_ratio', 'N/A')}")
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :------- | :----- | :--------- | :--------- |
+|---:|---:|---:|---:|
 | AnthroVision 扫描服务 | API | 必需 | 体测扫描后端服务（由平台提供） |
 | Telegram Bot | 通信渠道 | 必需 | 通过 `@BotFather` 创建机器人 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -250,9 +251,8 @@ print(f"腰臀比: {result.get('waist_hip_ratio', 'N/A')}")
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

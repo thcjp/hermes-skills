@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 文字游戏机 (专业版)
 ## 概述
@@ -39,7 +41,7 @@ pricing_model: "per_use"
 
 ## 核心能力
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 多类型游戏 | 冒险、悬疑等 | 支持 | 支持 |
 | 剧情分支 | 多结局 | 支持 | 支持 |
 | 角色互动 | NPC 对话 | 支持 | 支持 (AI 增强) |
@@ -86,10 +88,10 @@ AI 实时生成剧情,玩家自由探索。
 import os
 import requests
 from datetime import datetime
-
+# ...
 API_BASE = "https://api.text-game-pro.local/v1"
 ADMIN_KEY = os.environ["TEXT_GAME_ADMIN_KEY"]
-
+# ...
 class AIDynamicStory:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
@@ -99,7 +101,7 @@ class AIDynamicStory:
             "plot_points": [],
             "player_choices": [],
         }
-
+# ...
     def generate_dynamic_scene(self, player_action, current_state):
         """AI 动态生成场景"""
         payload = {
@@ -123,7 +125,7 @@ class AIDynamicStory:
             timeout=60,
         )
         return resp.json()
-
+# ...
     def ai_npc_dialogue(self, npc_id, player_input, relationship_level):
         """AI NPC 对话"""
         payload = {
@@ -141,7 +143,7 @@ class AIDynamicStory:
             timeout=30,
         )
         return resp.json()
-
+# ...
 story = AIDynamicStory(ADMIN_KEY)
 # 玩家自由输入,AI 实时响应
 scene = story.generate_dynamic_scene(
@@ -177,7 +179,7 @@ class CollaborativeGameProject:
             timeout=30,
         )
         return resp.json()
-
+# ...
     def assign_scene(self, project_id, scene_id, writer_id):
         """分配场景给作者"""
         payload = {
@@ -275,7 +277,7 @@ api:
   admin_key: ${TEXT_GAME_ADMIN_KEY}
   org_id: ${TEXT_GAME_ORG_ID}
   timeout: 300
-
+# ...
 ai_story:
   enabled: true
   features:
@@ -288,21 +290,21 @@ ai_story:
     story_generator: "gpt-4-class"
     npc_dialogue: "gpt-3.5-class"
   personalization: high
-
+# ...
 collaboration:
   max_collaborators: 20
   roles: [writer, designer, editor, publisher, tester]
   version_control: git
   real_time_editing: true
   review_workflow: required
-
+# ...
 editor:
   visual: true
   scene_graph: true
   branching_tree: true
   testing_mode: true
   asset_management: true
-
+# ...
 publishing:
   platforms: [steam, itch_io, app_store, google_play, web]
   monetization: [premium, freemium, episodic, subscription]
@@ -310,7 +312,7 @@ publishing:
   age_ratings: [esrb, pegi, cero]
   achievements: true
   cloud_saves: true
-
+# ...
 analytics:
   player_behavior: true
   completion_rate: true
@@ -469,7 +471,7 @@ Steam、itch.io、App Store、Google Play、Web 等主流平台。
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Text Game Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -482,12 +484,12 @@ Steam、itch.io、App Store、Google Play、Web 等主流平台。
 export TEXT_GAME_ADMIN_KEY="sk_pro_admin_xxx"
 export TEXT_GAME_ORG_ID="org_your_id"
 export TEXT_GAME_EDITION="pro"
-
+# ...
 # 可选: 发布平台
 export STEAM_API_KEY="..."
 export APPLE_APP_STORE_KEY="..."
 export GOOGLE_PLAY_KEY="..."
-
+# ...
 # 可选: AI 模型
 export OPENAI_API_KEY="..."
 export ANTHROPIC_API_KEY="..."
@@ -502,7 +504,7 @@ export ANTHROPIC_API_KEY="..."
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

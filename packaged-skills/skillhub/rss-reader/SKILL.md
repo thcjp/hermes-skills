@@ -15,20 +15,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "RSS,订阅,信息"
 ---
 # RSS Reader
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Monitor RSS and Atom feeds for content research | 支持 | 支持 |
-| Track blogs, news sites, | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -46,7 +50,7 @@ Monitor competitor blogs, industry publications, and thought leaders:
 node （请参考skill目录中的脚本文件） add "https://competitor.com/blog/feed" --category competitors
 node （请参考skill目录中的脚本文件） add "https://techcrunch.com/feed" --category news
 node （请参考skill目录中的脚本文件） add "https://news.ycombinator.com/rss" --category tech
-
+# ...
 node （请参考skill目录中的脚本文件） check --since 24h --format ideas
 ```
 
@@ -70,13 +74,13 @@ node （请参考skill目录中的脚本文件） check --keywords "AI,agents,au
 
 ```bash
 node （请参考skill目录中的脚本文件） add "https://example.com/feed.xml" --category tech
-
+# ...
 node （请参考skill目录中的脚本文件） check
-
+# ...
 node （请参考skill目录中的脚本文件） check --category tech
-
+# ...
 node （请参考skill目录中的脚本文件） list
-
+# ...
 node （请参考skill目录中的脚本文件） remove "https://example.com/feed.xml"
 ```
 
@@ -84,7 +88,7 @@ node （请参考skill目录中的脚本文件） remove "https://example.com/fe
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 
 ## 输出格式
 
@@ -101,9 +105,8 @@ node （请参考skill目录中的脚本文件） remove "https://example.com/fe
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -114,9 +117,9 @@ node （请参考skill目录中的脚本文件） remove "https://example.com/fe
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -125,7 +128,6 @@ node （请参考skill目录中的脚本文件） remove "https://example.com/fe
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -152,9 +154,8 @@ node （请参考skill目录中的脚本文件） remove "https://example.com/fe
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

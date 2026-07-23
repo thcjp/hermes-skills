@@ -22,8 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
-
 # 极简设计系统免费版
 
 ## 概述
@@ -39,7 +40,7 @@ suggested_price: 29.9
 #### 色彩
 
 | 令牌 | 数值 | 用途 |
-|------|------|------|
+|---|---|---|
 | `background` | `#FAFAFA` | 主画布 |
 | `foreground` | `#0F172A` | 主文字/深色背景 |
 | `muted` | `#F1F5F9` | 次要表面 |
@@ -195,11 +196,11 @@ function HeroSection() {
   --color-accent-secondary: #4D7CFF;
   --color-border: #E2E8F0;
   --color-card: #FFFFFF;
-  
+// ...
   --font-display: "Calistoga", serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  
+// ...
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
   --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
@@ -235,7 +236,7 @@ function Button({ variant = "primary", children, ...props }) {
     secondary: "bg-muted text-foreground hover:bg-muted/80",
     ghost: "bg-transparent text-foreground hover:bg-muted/50"
   };
-  
+# ...
   return (
     <button
       className={`px-6 py-3 rounded-xl transition-all
@@ -306,22 +307,22 @@ module.exports = {
   --color-accent-2: #4D7CFF;
   --color-border: #E2E8F0;
   --color-card: #FFFFFF;
-  
+// ...
   /* 字体 */
   --font-display: "Calistoga", serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  
+// ...
   /* 间距 */
   --space-section: 7rem;
   --container-max: 72rem;
-  
+// ...
   /* 阴影 */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
   --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
   --shadow-accent: 0 4px 14px rgba(0,82,255,0.25);
-  
+// ...
   /* 圆角 */
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -334,7 +335,7 @@ module.exports = {
 ### 设计原则
 
 | 原则 | 说明 | 实践要点 |
-|------|------|---------|
+|:-----|:-----|:-----|
 | 设计令牌中心化 | 通过全局变量统一管理 | 所有颜色/字体/间距使用令牌 |
 | 可复用性与组合性 | 无状态、高内聚组件 | 组件不包含业务逻辑 |
 | 消除样式冗余 | 拒绝一次性硬编码 | 使用设计令牌而非硬编码值 |
@@ -349,7 +350,7 @@ module.exports = {
 /* lg: 1024px - 平板横屏/小屏笔记本 */
 /* xl: 1280px - 桌面 */
 /* 2xl: 1536px - 大屏桌面 */
-
+// ...
 /* 移动优先策略 */
 .container {
   width: 100%;           /* 移动端 */
@@ -394,7 +395,7 @@ const motionConfig = {
     }
   }
 };
-
+// ...
 // 尊重用户偏好
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
@@ -434,7 +435,7 @@ A: 合理使用动效不会显著影响性能。建议:1)使用transform和opaci
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Tailwind CSS | 构建工具 | 推荐 | npm install tailwindcss |
 | Framer Motion | 动效库 | 可选 | npm install framer-motion |
@@ -454,9 +455,8 @@ A: 合理使用动效不会显著影响性能。建议:1)使用transform和opaci
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -22,19 +22,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "定时任务,调度,自动化"
 ---
 # 任务调度管家(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 任务调度管家(专业版)全功能任务调度 | 不支持 | 支持 |
+| 任务调度管家(专业版)团队时区协调与监控 | 不支持 | 支持 |
+| 任务调度管家(专业版)支撑企业级调度 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -102,7 +104,7 @@ pricing_model: "monthly"
 ```bash
 export GOOGLE_CALENDAR_ID="your-calendar@gmail.com"
 export GOOGLE_CREDENTIALS_PATH="~/.credentials/google.json"
-
+# ...
 export OUTLOOK_CALENDAR_ID="your-calendar@outlook.com"
 export OUTLOOK_TOKEN_PATH="~/.credentials/outlook.json"
 ```
@@ -131,7 +133,7 @@ export OUTLOOK_TOKEN_PATH="~/.credentials/outlook.json"
 **输出**: 返回功能五：团队时区协调视图的处理结果,包含执行状态码、结果数据和执行日志。### 功能六：监控仪表盘
 ```bash
 python3 ~/workspace/schedule/dashboard.py --port 19196
-
+# ...
 ```
 
 **仪表盘指标**：
@@ -172,8 +174,6 @@ python3 ~/workspace/schedule/dashboard.py --port 19196
 
 **配置**：
 
-> 详细代码示例已移至 `references/detail.md`
-
 **效果**：流水线全自动化，unit_test与security_scan并行执行缩短30%耗时，任一失败立即钉钉告警并暂停下游，避免错误代码进入生产环境。
 
 ## 使用流程
@@ -183,7 +183,7 @@ python3 ~/workspace/schedule/dashboard.py --port 19196
 
 ```bash
 ls ~/workspace/schedule/
-
+# ...
 cat ~/workspace/schedule/preferences.json | grep edition
 ```
 
@@ -197,7 +197,7 @@ cat ~/workspace/schedule/preferences.json | grep edition
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | cron解析库 | 库 | 必需 | Python `croniter` |
 | Express | npm包 | 仪表盘必需 | `npm install express` |
@@ -220,7 +220,7 @@ cat ~/workspace/schedule/preferences.json | grep edition
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | schedule-manager处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -279,9 +279,8 @@ cat ~/workspace/schedule/preferences.json | grep edition
 
 ## 异常处理
 
-
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:---:|:---:|:---:|:---:|
 | 任务链不触发 | trigger配置错误或时区不匹配 | 检查cron表达式与timezone字段；用`schedule dry-run <chain>`验证 | 高 |
 | 依赖节点不执行 | 上游节点失败或被跳过 | 检查上游节点状态；查看是否触发`on_failure`策略 | 高 |
 | 不生效 | retry配置缺失或触发条件不匹配 | 检查`retry_on`是否包含实际错误类型；查看日志中的error分类 | 高 |
@@ -294,10 +293,10 @@ cat ~/workspace/schedule/preferences.json | grep edition
 | 时区显示错误 | preferences中timezone配置错误 | 显式设置timezone；检查系统时区是否正确 | 低 |
 | 优先级抢占失效 | priority字段未配置或资源池未隔离 | 检查priority与resource_pool配置；确认并发限制 | 中 |
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|:------|------:|:------|:------|
 | LLM | 模型 | 是 | 需要LLM执行各步骤的智能处理, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -307,14 +306,7 @@ cat ~/workspace/schedule/preferences.json | grep edition
 
 ## 案例展示
 
-### 场景一：企业级CI/CD流水线编排（DevOps工程师角色）
-**痛点**：CI/CD流水线涉及构建、测试、扫描、部署多步骤，步骤间有严格依赖，任一失败需立即告警。
-
 **配置**：
-
-> 详细代码示例已移至 `references/detail.md`
-
-**效果**：流水线全自动化，unit_test与security_scan并行执行缩短30%耗时，任一失败立即钉钉告警并暂停下游，避免错误代码进入生产环境。
 
 ### 场景二：跨时区分布式团队协作（技术负责人角色）
 **痛点**：团队分布在3个时区，定期同步会议时间难以协调，数据备份任务需在所有人下班后执行。
@@ -333,8 +325,6 @@ cat ~/workspace/schedule/preferences.json | grep edition
 **痛点**：关键业务任务（如每日结算）失败后无人知晓，影响次日业务，缺乏全局监控视角。
 
 **配置**：
-
-> 详细代码示例已移至 `references/detail.md`
 
 **效果**：结算任务失败立即多通道告警（含电话呼叫），3次重试后进入死信队列触发紧急告警。监控仪表盘实时展示成功率与P95耗时，SLA超时自动升级告警级别。
 
@@ -400,9 +390,8 @@ cat ~/workspace/schedule/preferences.json | grep edition
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

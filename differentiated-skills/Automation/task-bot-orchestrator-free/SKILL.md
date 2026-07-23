@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 任务编排机器人（免费版）
 
 > **让AI Agent帮你编排重复性效率任务。数据处理、定时调度、通知推送，一键完成。**
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 任务编排机器人(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -82,11 +83,11 @@ pip install pandas openpyxl schedule
 
 ```python
 from task_bot_orchestrator import Scheduler, DataProcessor
-
+# ...
 # 数据处理：清洗CSV并导出
 processor = DataProcessor()
 processor.clean("dirty_data.csv").export("clean_data.csv")
-
+# ...
 # 定时任务：每天9:00发送提醒
 scheduler = Scheduler()
 scheduler.every_day.at("9:00").do(send_morning_reminder)
@@ -98,10 +99,10 @@ scheduler.start()
 ```text
 # 数据处理任务
 用户："清洗dirty_data.csv，去除空行和重复项，导出为clean_data.xlsx"
-
+# ...
 # 定时提醒任务
 用户："每天早上9点提醒我查看昨日销售数据"
-
+# ...
 # 批量处理任务
 用户："将data文件夹下所有CSV合并为一个Excel"
 ```
@@ -112,7 +113,7 @@ scheduler.start()
 ### 一、数据自动化处理
 
 | 功能 | 方法 | 说明 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 读取CSV | `processor.read_csv(path)` | 读取CSV文件 |
 | 读取Excel | `processor.read_excel(path)` | 读取Excel文件 |
 | 去重 | `processor.deduplicate(key_columns)` | 按关键字段去重 |
@@ -124,7 +125,7 @@ scheduler.start()
 ```python
 # 数据处理管道
 processor = DataProcessor()
-
+# ...
 # 链式处理
 processor
     .read_csv("sales_data.csv")
@@ -132,7 +133,7 @@ processor
     .transform({"date": "to_datetime", "amount": "to_float"})
     .filter("amount > 100")
     .export("cleaned_sales.xlsx")
-
+# ...
 # 生成处理报告
 report = processor.report()
 print(f"原始记录: {report.original_count}")
@@ -147,8 +148,8 @@ print(f"耗时: {report.duration}秒")
 
 ### 二、定时任务调度
 
-| 功能 | 方法 | 说明 |
-|------|------|------|
+| 功能(续)| 方法 | 说明 |
+|---:|---:|---:|
 | 每日执行 | `scheduler.every_day.at("9:00").do(task)` | 每天固定时间执行 |
 | 间隔执行 | `scheduler.every(30).minutes.do(task)` | 按间隔执行 |
 | 每周执行 | `scheduler.every_week.on("monday").at("9:00").do(task)` | 每周固定时间 |
@@ -157,16 +158,16 @@ print(f"耗时: {report.duration}秒")
 
 ```python
 scheduler = Scheduler()
-
+# ...
 # 每天早上9点生成日报
 scheduler.every_day.at("9:00").do(generate_daily_report)
-
+# ...
 # 每30分钟同步一次数据
 scheduler.every(30).minutes.do(sync_data)
-
+# ...
 # 每周一早上10点生成周报
 scheduler.every_week.on("monday").at("10:00").do(generate_weekly_report)
-
+# ...
 # 启动调度器
 scheduler.start()
 ```
@@ -178,23 +179,23 @@ scheduler.start()
 ### 三、通知推送
 
 | 渠道 | 方法 | 说明 |
-|------|------|------|
+|:---:|:---:|:---:|
 | 邮件 | `notify.email(to, subject, body)` | 邮件通知 |
 | Webhook | `notify.webhook(url, payload)` | 自定义Webhook |
 | 控制台 | `notify.console(message)` | 控制台输出 |
 
 ```python
 from task_bot_orchestrator import Notifier
-
+# ...
 notify = Notifier()
-
+# ...
 # 邮件通知
 notify.email(
     to="team@company.com",
     subject="日报已生成",
     body="今日销售日报已生成，请查收附件"
 )
-
+# ...
 # Webhook通知（支持企业微信/钉钉/飞书机器人）
 notify.webhook(
     url="https://hook.wechat.work/webhook",
@@ -210,10 +211,10 @@ notify.webhook(
 
 ```python
 from task_bot_orchestrator import Pipeline
-
+# ...
 # 定义任务管道
 pipeline = Pipeline()
-
+# ...
 # 串联多个步骤
 pipeline
     .step("读取数据", read_sales_data)
@@ -221,10 +222,10 @@ pipeline
     .step("生成图表", generate_charts)
     .step("导出报告", export_report)
     .step("发送邮件", send_email)
-
+# ...
 # 执行管道
 result = pipeline.execute()
-
+# ...
 # 查看执行报告
 for step in result.steps:
     print(f"{step.name}: {step.status} ({step.duration}秒)")
@@ -249,31 +250,31 @@ for step in result.steps:
 ```python
 # 配置每日日报任务
 scheduler = Scheduler()
-
+# ...
 def daily_sales_report():
     processor = DataProcessor()
     notify = Notifier()
-
+# ...
     # 1. 读取昨日销售数据
     processor.read_csv("yesterday_sales.csv")
-
+# ...
     # 2. 清洗转换
     processor.deduplicate(["order_id"])
     processor.transform({"date": "to_datetime"})
-
+# ...
     # 3. 生成汇总
     summary = processor.summarize(group_by="product", metrics=["sum", "count"])
-
+# ...
     # 4. 导出报告
     processor.export("daily_report.xlsx")
-
+# ...
     # 5. 发送邮件
     notify.email(
         to="ops@company.com",
         subject="每日销售日报",
         body=f"昨日销售汇总已生成，总销售额: {summary.total}"
     )
-
+# ...
 # 每天早上8:30自动执行
 scheduler.every_day.at("8:30").do(daily_sales_report)
 scheduler.start()
@@ -289,19 +290,19 @@ scheduler.start()
 
 ```python
 processor = DataProcessor()
-
+# ...
 # 批量读取并合并
 files = ["data1.csv", "data2.json", "data3.xlsx", "data4.csv"]
 for f in files:
     processor.read(f)  # 自动识别格式
-
+# ...
 # 统一清洗
 processor.deduplicate(["id"])
 processor.transform({"phone": "normalize_phone", "email": "lowercase"})
-
+# ...
 # 导出
 processor.export("unified_data.xlsx")
-
+# ...
 # 处理报告
 report = processor.report()
 print(f"合并 {len(files)} 个文件，共 {report.final_count} 条记录")
@@ -317,18 +318,18 @@ print(f"合并 {len(files)} 个文件，共 {report.final_count} 条记录")
 
 ```python
 scheduler = Scheduler()
-
+# ...
 def sync_data():
     processor = DataProcessor()
     notify = Notifier()
-
+# ...
     try:
         # 从源库读取
         data = processor.read_db("source_db", query="SELECT * FROM logs WHERE created_at > NOW() - INTERVAL 1 HOUR")
-
+# ...
         # 写入目标库
         processor.write_db("target_db", table="logs")
-
+# ...
         notify.console(f"同步成功: {len(data)}条记录")
     except Exception as e:
         notify.email(
@@ -336,7 +337,7 @@ def sync_data():
             subject="数据同步失败",
             body=f"错误: {str(e)}"
         )
-
+# ...
 # 每小时执行
 scheduler.every(60).minutes.do(sync_data)
 scheduler.start()
@@ -379,7 +380,7 @@ scheduler.start()
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | pandas | Python库 | 必需 | `pip install pandas` |
 | openpyxl | Python库 | 必需 | `pip install openpyxl` |
 | schedule | Python库 | 必需 | `pip install schedule` |
@@ -440,22 +441,22 @@ scheduler.start()
 ### 示例1：基础用法
 
 ```
-### 60秒上手
-
+### 60秒上手(补充)
+# ...
 安装依赖并执行第一个任务编排：
-
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -472,3 +473,4 @@ scheduler.start()
   "error": null
 }
 ```
+# ...

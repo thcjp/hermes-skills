@@ -18,13 +18,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 # Azure DevOps
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 跨平台任务同步 | 不支持 | 支持 |
 | 智能优先级排序 | 不支持 | 支持 |
@@ -41,7 +43,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 项目管理 | 项目名称和查询条件 | 项目列表和仓库分支信息 |
 | Pull Request创建 | 源分支和目标分支 | PR链接和审查状态 |
 | CI/CD管道管理 | 管道定义和触发条件 | 构建状态和部署结果 |
@@ -58,7 +60,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | project_name | string | 是 | Azure DevOps项目名称 |
 | action_type | string | 否 | 操作类型, 可选: list/create/merge, 默认: list |
 
@@ -111,7 +113,7 @@ pricing_model: "per_use"
 
 ### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -199,16 +201,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Azure DevOps？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Azure DevOps有什么限制？
-A: 
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

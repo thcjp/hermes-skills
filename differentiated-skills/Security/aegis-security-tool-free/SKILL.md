@@ -27,8 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 # 区块链安全扫描免费版
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 29.9
 ### 免费版与专业版对比
 
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 每日检查额度 | 100次/天 | 无限制 |
 | 交易模拟 | 不支持 | 支持 |
 | 多链覆盖 | 8条主流链 | 15条链+测试网 |
@@ -55,7 +56,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 区块链安全扫描免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -63,7 +64,7 @@ suggested_price: 29.9
 ```bash
 # 查询以太坊地址信誉
 curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1" | jq
-
+# ...
 # 查询Base链地址信誉
 curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" | jq
 ```
@@ -142,20 +143,20 @@ curl -s "https://aegis402.xyz/v1/usage" | jq
 ```bash
 #!/bin/bash
 # 交易前安全检查脚本(免费版)
-
+# ...
 TOKEN_ADDRESS="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
 CHAIN_ID=1
-
+# ...
 echo "正在检查代币安全性..."
 RESULT=$(curl -s "https://aegis402.xyz/v1/check-token/${TOKEN_ADDRESS}?chain_id=${CHAIN_ID}")
-
+# ...
 RISK_LEVEL=$(echo "$RESULT" | jq -r '.risk_level')
 IS_SAFE=$(echo "$RESULT" | jq -r '.is_safe')
-
+# ...
 echo "代币地址: ${TOKEN_ADDRESS}"
 echo "风险等级: ${RISK_LEVEL}"
 echo "是否安全: ${IS_SAFE}"
-
+# ...
 if [ "$RISK_LEVEL" = "CRITICAL" ] || [ "$IS_SAFE" = "false" ]; then
     echo "警告: 该代币存在高风险,建议不要交易!"
     exit 1
@@ -172,10 +173,10 @@ fi
 #!/bin/bash
 # 收款地址风险评估
 RECEIVER="0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
-
+# ...
 RESULT=$(curl -s "https://aegis402.xyz/v1/check-address/${RECEIVER}?chain_id=1")
 RISK=$(echo "$RESULT" | jq -r '.risk_level')
-
+# ...
 case $RISK in
     LOW)      echo "风险等级: 低 - 可以安全交互" ;;
     MEDIUM)   echo "风险等级: 中 - 建议谨慎,核实对方身份" ;;
@@ -197,7 +198,7 @@ ADDRESSES=(
     "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
     "0xdAC17F958D2ee523a2206206994597C13D831ec7"
 )
-
+# ...
 for addr in "${ADDRESSES[@]}"; do
     RISK=$(curl -s "https://aegis402.xyz/v1/check-address/${addr}?chain_id=${CHAIN_ID}" | jq -r '.risk_level')
     echo "${addr} -> ${RISK}"
@@ -249,7 +250,7 @@ curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454
 ```bash
 # 在请求头中设置指纹
 FINGERPRINT="user-$(whoami)-$(hostname)"
-
+# ...
 curl -s -H "X-Client-Fingerprint: ${FINGERPRINT}" \
   "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1"
 ```
@@ -257,7 +258,7 @@ curl -s -H "X-Client-Fingerprint: ${FINGERPRINT}" \
 ### 支持的链
 
 | 链名称 | Chain ID | 地址检查 | 代币检查 |
-|:-------|:---------|:---------|:---------|
+|---:|---:|---:|---:|
 | Ethereum | 1 | 支持 | 支持 |
 | Base | 8453 | 支持 | 支持 |
 | Polygon | 137 | 支持 | 支持 |
@@ -270,7 +271,7 @@ curl -s -H "X-Client-Fingerprint: ${FINGERPRINT}" \
 ### 风险等级说明
 
 | 等级 | 含义 | 建议操作 |
-|:-----|:-----|:---------|
+|:---:|:---:|:---:|
 | LOW | 风险较低,基本安全 | 可以正常交互 |
 | MEDIUM | 存在部分风险 | 建议人工复核 |
 | HIGH | 风险显著 | 不建议交互 |
@@ -290,32 +291,32 @@ check_before_transact() {
     local to_addr=$1
     local chain=$2
     local fingerprint="my-agent-$(date +%Y%m%d)"
-
+# ...
     echo "=== 交易前安全检查 ==="
     echo "目标地址: ${to_addr}"
     echo "链 ID: ${chain}"
-
+# ...
     # 查询额度
     USAGE=$(curl -s -H "X-Client-Fingerprint: ${fingerprint}" "https://aegis402.xyz/v1/usage")
     REMAINING=$(echo "$USAGE" | jq -r '.freeTier.remainingChecks')
     echo "剩余免费额度: ${REMAINING}"
-
+# ...
     if [ "$REMAINING" -lt 5 ]; then
         echo "警告: 免费额度不足,请谨慎使用"
     fi
-
+# ...
     # 地址检查
     RESULT=$(curl -s -H "X-Client-Fingerprint: ${fingerprint}" \
         "https://aegis402.xyz/v1/check-address/${to_addr}?chain_id=${chain}")
-
+# ...
     RISK=$(echo "$RESULT" | jq -r '.risk_level')
     echo "地址风险等级: ${RISK}"
-
+# ...
     if [ "$RISK" = "CRITICAL" ] || [ "$RISK" = "HIGH" ]; then
         echo "阻止: 地址风险过高,建议取消交易"
         return 1
     fi
-
+# ...
     echo "通过: 地址检查完成,可以继续交易"
     return 0
 }
@@ -353,7 +354,7 @@ Solana链使用字符串 `solana` 作为chain_id,而非数字。
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | curl | 命令行工具 | 必需 | 系统自带或包管理器安装 |
 | jq | JSON处理工具 | 推荐 | `apt install jq` / `brew install jq` |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -368,9 +369,8 @@ Solana链使用字符串 `solana` 作为chain_id,而非数字。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

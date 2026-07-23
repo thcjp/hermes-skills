@@ -21,8 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # QQ空间相册入门工具（免费版）
 
 ## 概述
@@ -34,7 +35,7 @@ suggested_price: 19.9
 ### 管理功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 登录认证 | QQ空间登录 | 支持 |
 | 相册浏览 | 相册列表查看 | 支持 |
 | 照片查看 | 在线浏览照片 | 支持 |
@@ -74,10 +75,10 @@ suggested_price: 19.9
 ```bash
 # 登录QQ空间
 python3 （请参考skill目录中的脚本文件） login --qq 123456789
-
+# ...
 # 查看相册列表
 python3 （请参考skill目录中的脚本文件） albums list
-
+# ...
 # 输出：
 # === 我的相册 ===
 # 1. 旅行照片 (156张)
@@ -94,7 +95,7 @@ python3 （请参考skill目录中的脚本文件） albums list
 python3 （请参考skill目录中的脚本文件） photos list \
   --album "旅行照片" \
   --page 1
-
+# ...
 # 输出照片列表（缩略图链接）
 ```
 
@@ -107,7 +108,7 @@ python3 （请参考skill目录中的脚本文件） photos list \
 python3 （请参考skill目录中的脚本文件） photo download \
   --photo-id 12345 \
   --output ./downloads/
-
+# ...
 # 下载到指定目录
 ```
 
@@ -124,7 +125,7 @@ python3 （请参考skill目录中的脚本文件） photo download \
 ```bash
 # 依赖说明
 pip install requests beautifulsoup4
-
+# ...
 # 登录QQ空间
 python3 （请参考skill目录中的脚本文件） login --qq 123456789
 # 根据提示完成登录认证
@@ -135,16 +136,16 @@ python3 （请参考skill目录中的脚本文件） login --qq 123456789
 ```bash
 # 登录
 python3 （请参考skill目录中的脚本文件） login --qq 123456789
-
+# ...
 # 相册管理
 python3 （请参考skill目录中的脚本文件） albums list
 python3 （请参考skill目录中的脚本文件） albums info --name "旅行照片"
-
+# ...
 # 照片管理
 python3 （请参考skill目录中的脚本文件） photos list --album "旅行照片"
 python3 （请参考skill目录中的脚本文件） photo download --photo-id 12345 --output ./downloads/
 python3 （请参考skill目录中的脚本文件） photo info --photo-id 12345
-
+# ...
 # 登出
 python3 （请参考skill目录中的脚本文件） logout
 ```
@@ -159,12 +160,12 @@ qzone_config:
     method: "cookie"              # cookie | qrcode
     cookie_file: "./qzone_cookies.json"
     qrcode_timeout: 120
-
+# ...
   download:
     default_dir: "./downloads"
     naming: "original"            # original | sequential | date
     quality: "original"           # original | thumbnail
-
+# ...
   cache:
     enabled: true
     ttl: 3600
@@ -178,7 +179,7 @@ qzone_config:
 4. **遵守规则**：仅下载自己的照片，尊重他人隐私
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:-----|:-----|
 | Cookie有效期 | Cookie可能过期，需重新登录 |
 | 下载频率 | 避免频繁请求，防止被限制 |
 | 照片质量 | 优先下载原图，保证清晰度 |
@@ -213,7 +214,7 @@ qzone_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | requests | Python库 | 必需 | `pip install requests` |
@@ -233,9 +234,8 @@ qzone_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

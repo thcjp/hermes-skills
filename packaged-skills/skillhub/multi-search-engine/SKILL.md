@@ -32,16 +32,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # Multi Search Engine
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Multi search engine integration with 16 engines (7 CN + 9 Global) | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 多源数据聚合与去重 | 不支持 | 支持 |
+| 语义搜索与智能摘要 | 不支持 | 支持 |
+| 定时监控与变化推送 | 不支持 | 支持 |
+| 研究结论结构化导出 | 不支持 | 支持 |
+| 知识图谱构建与关系推理 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -50,7 +55,7 @@ pricing_model: "monthly"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 多引擎搜索 | 搜索关键词和目标引擎 | 聚合搜索结果和排名 |
 | 中文搜索 | 中文查询词 | 国内搜索引擎结果汇总 |
 | 全球搜索 | 英文查询词 | 国际搜索引擎结果汇总 |
@@ -68,7 +73,7 @@ pricing_model: "monthly"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | query | string | 是 | 搜索关键词 |
 | engines | string | 否 | 搜索引擎列表, 如: google,bing,baidu, 默认: 全部16引擎 |
 
@@ -121,7 +126,7 @@ pricing_model: "monthly"
 
 ### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -141,22 +146,22 @@ export API_KEY="your_api_key_here"
 ```javascript
 // Basic search
 web_fetch({"url": "https://www.google.com/search?q=python+tutorial"})
-
+// ...
 // Site-specific
 web_fetch({"url": "https://www.google.com/search?q=site:github.com+react"})
-
+// ...
 // File type
 web_fetch({"url": "https://www.google.com/search?q=machine+learning+filetype:pdf"})
-
+// ...
 // Time filter (past week)
 web_fetch({"url": "https://www.google.com/search?q=ai+news&tbs=qdr:w"})
-
+// ...
 // Privacy search
 web_fetch({"url": "https://duckduckgo.com/html/?q=privacy+tools"})
-
+// ...
 // DuckDuckGo Bangs
 web_fetch({"url": "https://duckduckgo.com/html/?q=!gh+tensorflow"})
-
+// ...
 // Knowledge calculation
 web_fetch({"url": "https://www.wolframalpha.com/input?i=100+USD+to+CNY"})
 ```
@@ -166,16 +171,10 @@ web_fetch({"url": "https://www.wolframalpha.com/input?i=100+USD+to+CNY"})
 ### Q1: 如何开始使用Multi Search Engine？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Multi Search Engine有什么限制？
-A: 
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

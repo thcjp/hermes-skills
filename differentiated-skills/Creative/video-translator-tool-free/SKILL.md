@@ -47,8 +47,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
-
 # 视频翻译工具 - 免费版
 
 ## 概述
@@ -69,7 +70,7 @@ suggested_price: 29.9
 ### 能力清单
 
 | 能力 | 描述 | 免费版 |
-|:-----|:-----|:-------|
+|---|---|---|
 | 视频翻译 | 中英双向翻译 | 支持（zh/en） |
 | 字幕翻译 | 烧录字幕出片 | 支持（单语种） |
 | 双语字幕 | 中英同时显示 | 不支持 |
@@ -237,7 +238,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 ```bash
 # 从上一步响应中获取 job_id
 JOB_ID="returned_job_id"
-
+# ...
 # 轮询任务状态
 curl -s "https://audiox-api-global.luoji.cn/video-trans/jobs/$JOB_ID" \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
@@ -249,7 +250,7 @@ curl -s "https://audiox-api-global.luoji.cn/video-trans/jobs/$JOB_ID" \
 ### 输入参数说明
 
 | 参数 | 类型 | 是否必需 | 默认值 | 说明 |
-|:-----|:-----|:---------|:-------|:-----|
+|:-----|:-----|:-----|:-----|:-----|
 | video | 文件 | 二选一 | - | 二进制视频文件 |
 | video_url | URL | 二选一 | - | 可访问的视频链接 |
 | api_key | Header | 必需 | - | `Authorization: Bearer <key>` |
@@ -271,9 +272,6 @@ curl -s "https://audiox-api-global.luoji.cn/video-trans/jobs/$JOB_ID" \
 
 免费版源语言支持：
 
-- 中文 → `zh`
-- 英文 → `en`
-
 若用户未指定源语言，按目标语言推断：
 
 - `targetLanguage=en` → `sourceLanguage=zh`
@@ -284,7 +282,7 @@ curl -s "https://audiox-api-global.luoji.cn/video-trans/jobs/$JOB_ID" \
 ```bash
 # 不显示字幕（默认）
 show=false&bilingual=false
-
+# ...
 # 显示单语字幕
 show=true&bilingual=false
 ```
@@ -306,7 +304,7 @@ show=true&bilingual=false
 ```bash
 # 已知源语言时明确指定（更准确）
 sourceLanguage=zh&targetLanguage=en
-
+# ...
 # 不确定源语言时可省略（自动推断）
 targetLanguage=en
 ```
@@ -314,7 +312,7 @@ targetLanguage=en
 ### 2. 字幕开关建议
 
 | 场景 | 建议配置 |
-|:-----|:---------|
+|---:|---:|
 | 配音版本（无字幕） | `show=false` |
 | 学习辅助（带字幕） | `show=true` |
 | 静音观看（仅字幕） | `show=true` |
@@ -326,7 +324,7 @@ targetLanguage=en
 while true; do
   STATUS=$(curl -s "https://audiox-api-global.luoji.cn/video-trans/jobs/$JOB_ID" \
     -H "Authorization: Bearer $API_KEY" | jq -r '.status')
-  
+# ...
   if [ "$STATUS" = "succeeded" ] || [ "$STATUS" = "failed" ]; then
     break
   fi
@@ -401,7 +399,7 @@ done
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | curl | 命令行工具 | 必需 | 系统自带 | 任意版本 |
 | jq | JSON 处理 | 可选 | 系统包管理器 | 1.6+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
@@ -411,10 +409,10 @@ done
 ```bash
 # macOS 安装 jq
 brew install jq
-
+# ...
 # Ubuntu / Debian 安装 jq
 sudo apt install jq
-
+# ...
 # 验证安装
 curl --version
 jq --version
@@ -425,13 +423,13 @@ jq --version
 免费版需要以下 API Key：
 
 | API 类型 | 环境变量 | 用途 | 获取方式 |
-|:---------|:---------|:-----|:---------|
+|:--------|--------:|:--------|:--------|
 | 翻译服务 | `VIDEO_TRANSLATE_SERVICE_API_KEY` | 视频翻译 API 调用 | `https://luoji.cn` |
 
 ```bash
 # 配置环境变量
 export VIDEO_TRANSLATE_SERVICE_API_KEY="your_translation_api_key"
-
+# ...
 # 验证配置
 curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
@@ -452,9 +450,8 @@ curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

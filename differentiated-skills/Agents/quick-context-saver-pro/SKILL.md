@@ -35,6 +35,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # 快速上下文记忆（专业版）
 
@@ -48,7 +50,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Quick Context Saver处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -119,7 +121,7 @@ memory-init
 memory-store --type decision --content "采用JWT认证" \
   --importance 0.9 --tags auth,security \
   --related-to "uuid-of-auth-memory"
-
+# ...
 # 三模式搜索
 memory-search "认证方式" --mode semantic    # 语义搜索
 memory-search "auth" --mode fuzzy           # 模糊匹配
@@ -193,7 +195,7 @@ memory-search "JWT" --mode related          # 关联检索
 基础TF-IDF搜索配合三种高级搜索模式：
 
 | 搜索模式 | 算法 | 适用场景 | 专业版 |
-|----------|------|----------|--------|
+|:-----|:-----|:-----|:-----|
 | keyword | TF-IDF关键词匹配 | 精确关键词查询 | 基础 |
 | semantic | 语义相似度匹配 | 概念相关查询 | 专业版 |
 | fuzzy | 模糊匹配（编辑距离） | 容错查询 | 专业版 |
@@ -203,13 +205,13 @@ memory-search "JWT" --mode related          # 关联检索
 ```bash
 # 自动模式（专业版智能选择最优搜索算法）
 memory-search "数据库选择" --mode auto
-
+# ...
 # 语义搜索（找到概念相关的记忆）
 memory-search "数据存储方案" --mode semantic
-
+# ...
 # 模糊匹配（容错查询）
 memory-search "PostgrsSQL" --mode fuzzy  # 拼写错误也能找到
-
+# ...
 # 关联检索（通过关系图谱遍历）
 memory-search "JWT" --mode related  # 找到所有关联记忆
 ```
@@ -236,10 +238,10 @@ memory-search "JWT" --mode related  # 找到所有关联记忆
 # 存储带关联的记忆
 memory-store --type decision --content "采用JWT认证" \
   --related-to "uuid-of-auth-memory"
-
+# ...
 # 查看记忆的关系图谱
 memory-relations --id "uuid-1"
-
+# ...
 # 关联检索
 memory-search "JWT" --mode related
 ```
@@ -272,10 +274,10 @@ memory-search "JWT" --mode related
 # 存储带置信度的记忆
 memory-store --type fact --content "PostgreSQL支持JSONB类型" \
   --confidence 0.9 --source "official_docs"
-
+# ...
 # 验证记忆（增加验证次数）
 memory-verify --id "uuid-1" --by "user"
-
+# ...
 # 查看高置信度记忆
 memory-list --min-confidence 0.8
 ```
@@ -306,13 +308,13 @@ memory-list --min-confidence 0.8
 # 存储带过期的记忆
 memory-store --type context --content "当前Sprint使用临时配置" \
   --expires-in 30d
-
+# ...
 # 查看过期记忆
 memory-list --expired
-
+# ...
 # 手动归档过期记忆
 memory-archive --expired
-
+# ...
 # 清理已归档记忆
 memory-cleanup --archived --older-than 90d
 ```
@@ -334,11 +336,11 @@ AES加密敏感记忆：
 ```bash
 # 设置加密密钥
 export MEMORY_ENCRYPTION_KEY="your-secret-key"
-
+# ...
 # 存储加密记忆
 memory-store --type fact --content "API_KEY=sk-xxx" \
   --encrypt --importance 1.0
-
+# ...
 # 读取加密记忆（自动解密）
 memory-search "API_KEY"
 ```
@@ -360,10 +362,10 @@ memory-search "API_KEY"
 ```bash
 # 启用自动压缩
 memory-compress --enable --after-days 30
-
+# ...
 # 手动压缩指定时间前的记忆
 memory-compress --older-than 30d
-
+# ...
 # 查看压缩统计
 memory-stats --compression
 ```
@@ -385,13 +387,13 @@ memory-stats --compression
 ```bash
 # 配置同步
 memory-sync --setup --provider gist --token "$GITHUB_TOKEN"
-
+# ...
 # 推送记忆到Gist
 memory-sync --push
-
+# ...
 # 拉取记忆到本地
 memory-sync --pull
-
+# ...
 # 双向同步
 memory-sync --both
 ```
@@ -452,13 +454,13 @@ memory-sync --both
 ```bash
 # 在台式机配置同步
 memory-sync --setup --provider gist --token "$GITHUB_TOKEN"
-
+# ...
 # 推送记忆到Gist
 memory-sync --push
-
+# ...
 # 在笔记本拉取记忆
 memory-sync --pull
-
+# ...
 # 双向同步（合并变更）
 memory-sync --both
 ```
@@ -474,10 +476,10 @@ memory-sync --both
 # 存储带关联的决策
 memory-store --type decision --content "采用微服务架构" \
   --related-to "uuid-of-domain-design" --importance 1.0
-
+# ...
 memory-store --type decision --content "使用API网关" \
   --related-to "uuid-of-microservice" --followed-by "uuid-of-auth-design"
-
+# ...
 # 关联检索
 memory-search "微服务" --mode related
 ```
@@ -493,10 +495,10 @@ memory-search "微服务" --mode related
 # 存储带来源的记忆
 memory-store --type fact --content "实验组准确率提升15%" \
   --confidence 0.95 --source "experiment-2026-03-15"
-
+# ...
 # 验证记忆
 memory-verify --id "uuid-1" --by "peer-review"
-
+# ...
 # 按置信度过滤
 memory-list --min-confidence 0.9 --source "experiment"
 ```
@@ -512,7 +514,7 @@ memory-list --min-confidence 0.9 --source "experiment"
 # 加密存储敏感信息
 memory-store --type fact --content "客户案件编号CASE-2026-001" \
   --encrypt --expires-in 90d
-
+# ...
 # 自动过期清理
 memory-archive --expired
 memory-cleanup --archived --older-than 180d
@@ -528,10 +530,10 @@ memory-cleanup --archived --older-than 180d
 ```bash
 # 启用自动压缩
 memory-compress --enable --after-days 30
-
+# ...
 # 关联检索替代全量搜索
 memory-search "部署" --mode related
-
+# ...
 # 定期归档清理
 memory-archive --expired
 memory-cleanup --archived --older-than 90d
@@ -544,7 +546,7 @@ memory-cleanup --archived --older-than 90d
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|---:|---:|---:|---:|
 | 数据保护官 | 企业隐私保护 | 加密+置信度+过期 | 合规满足、数据安全 |
 | 独立开发者 | 多设备同步 | Git Gist同步+增量 | 多设备无缝切换 |
 | 架构师 | 知识图谱 | 关系图谱+关联检索 | 决策追溯、关联发现 |
@@ -631,7 +633,7 @@ memory-export --format json --include-confidence --include-source \
 ```bash
 # 加密备份全部记忆
 memory-export --format json --encrypt --output encrypted-backup.json
-
+# ...
 # 推送备份到Gist
 memory-sync --push --backup
 ```
@@ -658,10 +660,10 @@ memory-sync --push --backup
 ```bash
 # 从云端记忆系统导出
 memory-export > cloud-backup.json
-
+# ...
 # 转换为本地格式
 node convert-to-local.js cloud-backup.json > local-backup.json
-
+# ...
 # 导入本地记忆系统
 memory-import --file local-backup.json
 ```
@@ -669,7 +671,7 @@ memory-import --file local-backup.json
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 1.0.0 | 2026-01 | 初版发布，含七大高级功能 |
 
 ---
@@ -682,9 +684,8 @@ memory-import --file local-backup.json
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:------|------:|:------|:------|------:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -740,7 +741,7 @@ auto模式根据查询特征自动选择最优算法：(1) 查询包含精确关
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|:---|---:|---:|
 | 加密记忆无法解密 | 密钥错误或缺失 | 验证MEMORY_ENCRYPTION_KEY环境变量 | 高 |
 | 同步冲突 | 多设备同时修改 | 手动解决冲突；配置自动合并策略 | 中 |
 | 关联检索无结果 | 关系图谱未建立 | 检查related_to字段；启用auto_link | 中 |
@@ -764,7 +765,7 @@ auto模式根据查询特征自动选择最优算法：(1) 查询包含精确关
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
 | quick-context-saver | npm包 | 必需 | `npm install -g quick-context-saver` |
@@ -835,7 +836,7 @@ auto模式根据查询特征自动选择最优算法：(1) 查询包含精确关
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|----|:--:|---:|----|
 | 免费体验版 | ¥0 | 本地存储+TF-IDF搜索+手动管理+五类分类+基础示例+基础FAQ | 个人试用、轻量记忆需求 |
 | 收费专业版 | ¥19.9/月 | 关系图谱+置信度+过期+加密+高级搜索+压缩+多设备同步+多角色指南+性能优化+优先支持 | 团队/企业、隐私合规场景 |
 

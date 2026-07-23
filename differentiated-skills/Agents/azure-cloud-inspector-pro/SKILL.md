@@ -36,6 +36,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 # Azure巡检员(专业版)
 
@@ -46,7 +48,7 @@ pricing_model: "per_use"
 ### 30秒:确认身份
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Azure巡检员专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -60,7 +62,7 @@ az account show --query '{Subscription:name, Tenant:tenantId, User:user.name}' -
 ```bash
 # 1. 列出当前订阅所有资源组
 az group list --query '[].{Name:name, Location:location}' --output table
-
+# ...
 # 2. 巡检指定资源组(替换 <RG>)
 az group show -n <RG> --query '{Name:name, State:properties.provisioningState, Tags:tags}'
 az resource list -g <RG> --query '[].{Name:name, Type:type, Location:location}' --output table
@@ -150,13 +152,13 @@ az storage account list --query '[].{Name:name, HTTPS:enableHttpsTrafficOnly}' -
 ```bash
 echo "=== 订阅级角色分配清单 ==="
 az role assignment list --all --query '[].{Principal:principalName, Role:roleDefinitionName, Scope:scope}' --output table
-
+# ...
 echo "=== Owner角色分配(过度权限检测) ==="
 az role assignment list --role "Owner" --query '[].{Principal:principalName, Scope:scope}' --output table
-
+# ...
 echo "=== 自定义角色审计 ==="
 az role definition list --custom-role-only true --query '[].{Name:roleName, Description:description}' --output table
-
+# ...
 echo "=== 特权身份发现(Owner/Contributor/User Access Administrator) ==="
 az role assignment list --all --query "[?roleDefinitionName=='Owner' || roleDefinitionName=='Contributor' || roleDefinitionName=='User Access Administrator'].{Principal:principalName, Role:roleDefinitionName}" --output table
 ```
@@ -170,14 +172,14 @@ az costmanagement query --type ActualCost \
   --dataset-grouping name=ResourceGroupName type=Dimension \
   --dataset-aggregation totalCost=name=Cost function=Sum \
   --query '[].{ResourceGroup:ResourceGroupName, Cost:Cost}' --output table
-
+# ...
 echo "=== 本月成本(按服务) ==="
 az costmanagement query --type ActualCost \
   --timeframe MonthToDate \
   --dataset-grouping name=ServiceName type=Dimension \
   --dataset-aggregation totalCost=name=Cost function=Sum \
   --query '[].{Service:ServiceName, Cost:Cost}' --output table
-
+# ...
 echo "=== 空闲资源识别 ==="
 echo "停止的VM:"; az vm list -d --query "[?powerState=='VM stopped'].{Name:name, RG:resourceGroup}" --output table
 echo "未挂载磁盘:"; az disk list --query "[?diskState=='Unattached'].{Name:name, RG:resourceGroup, Size:diskSizeGb}" --output table
@@ -189,7 +191,7 @@ echo "未使用公网IP:"; az network public-ip list --query '[?ipConfiguration=
 ```bash
 echo "=== NSG清单 ==="
 az network nsg list --query '[].{Name:name, RG:resourceGroup}' --output table
-
+# ...
 echo "=== 全订阅NSG入站规则扫描 ==="
 for nsg in $(az network nsg list --query '[].{Name:name, RG:resourceGroup}' -o tsv); do
   IFS=$'\t' read -r name rg <<< "$nsg"
@@ -198,7 +200,7 @@ for nsg in $(az network nsg list --query '[].{Name:name, RG:resourceGroup}' -o t
     --query "[?direction=='Inbound' && (sourceAddressPrefix=='*' || sourceAddressPrefix=='0.0.0.0/0' || sourceAddressPrefix=='Internet')].{Name:name, Port:destinationPortRange, Access:access, Priority:priority}" \
     --output table
 done
-
+# ...
 echo "=== 端口暴露矩阵 ==="
 # 汇总所有NSG的0.0.0.0/0入站规则,生成端口暴露矩阵
 az network nsg list --query '[].name' -o tsv | while read nsg; do
@@ -231,7 +233,7 @@ bash ~/.azure-inspector/templates/databases-inspection.sh
 每次巡检后按五维评分(0-10分,0=最低风险,10=最高风险),输出总体风险等级。专业版支持自定义权重。
 
 | 维度 | 检查项 | 评分方法 | 高风险阈值 | 默认权重 |
-|------|--------|----------|------------|----------|
+|:-----|:-----|:-----|:-----|:-----|
 | 暴露面 | 公网IP、开放端口、公共存储、NSG 0.0.0.0/0 | 每发现一项暴露+2分 | ≥6分 | 1.5x |
 | 加密 | 磁盘加密、传输加密、Key Vault | 未加密项+3分 | ≥4分 | 1.2x |
 | 访问控制 | RBAC角色、Owner数量、特权身份、公共访问 | Owner>3加3分,特权身份+2分 | ≥6分 | 1.3x |
@@ -240,7 +242,7 @@ bash ~/.azure-inspector/templates/databases-inspection.sh
 
 ### 风险等级映射
 | 总分 | 等级 | 建议 |
-|------|------|------|
+|---:|---:|---:|
 | 0-15 | 低 | 例行巡检,记录归档 |
 | 16-35 | 中 | 48小时内修复 |
 | 36-60 | 高 | 24小时内修复 |
@@ -258,7 +260,7 @@ cat > ~/.azure-inspector/weights.json <<EOF
   "health": 0.8
 }
 EOF
-
+# ...
 # 评分计算脚本(读取权重)
 exposure_score=$(计算暴露面得分)
 weights=$(jq -r '.' ~/.azure-inspector/weights.json)
@@ -274,16 +276,16 @@ echo "加权风险总分: $weighted_total"
 ```bash
 echo "=== 公网IP清单 ==="
 az network public-ip list --query '[].{Name:name, IP:ipAddress, Associated:ipConfiguration!=null}' --output table
-
+# ...
 echo "=== 未关联的公网IP ==="
 az network public-ip list --query '[?ipConfiguration==null].{Name:name, IP:ipAddress}' --output table
-
+# ...
 echo "=== 存储账户公共访问 ==="
 az storage account list --query '[?allowBlobPublicAccess==true].{Name:name, RG:resourceGroup}' --output table
-
+# ...
 echo "=== 公网负载均衡器 ==="
 az network lb list --query '[].{Name:name, RG:resourceGroup, FrontendIPs:length(frontendIpConfigurations)}' --output table
-
+# ...
 echo "=== 应用网关公网前端 ==="
 az network application-gateway list --query '[].{Name:name, RG:resourceGroup, FrontendIPs:length(frontendIpConfigurations)}' --output table
 ```
@@ -295,14 +297,14 @@ az network application-gateway list --query '[].{Name:name, RG:resourceGroup, Fr
 ```bash
 # 1. 生成当前配置快照
 az resource list --query '[].{Name:name, Type:type, RG:resourceGroup, Tags:tags}' > /tmp/azure-snapshot-current.json
-
+# ...
 # 2. 与基线快照对比
 if [ -f ~/.azure-inspector/baseline.json ]; then
   echo "=== 与基线对比 ==="
   diff <(jq -r '.[] | "\(.Type)/\(.Name)"' ~/.azure-inspector/baseline.json | sort) \
        <(jq -r '.[] | "\(.Type)/\(.Name)"' /tmp/azure-snapshot-current.json | sort) || true
 fi
-
+# ...
 # 3. 保存为新基线(用户确认后)
 # cp /tmp/azure-snapshot-current.json ~/.azure-inspector/baseline.json
 ```
@@ -336,7 +338,7 @@ done
 # 示例:每日9点执行巡检并发送报告
 # crontab -e
 # 0 9 * * * bash ~/.azure-inspector/scheduled-inspection.sh >> /var/log/azure-inspector.log 2>&1
-
+# ...
 # scheduled-inspection.sh
 cat > ~/.azure-inspector/scheduled-inspection.sh <<'EOF'
 #!/bin/bash
@@ -345,7 +347,7 @@ REPORT_DIR=~/.azure-inspector/reports
 mkdir -p "$REPORT_DIR"
 DATE=$(date +%Y%m%d-%H%M%S)
 REPORT="$REPORT_DIR/inspection-$DATE.md"
-
+# ...
 echo "# Azure定时巡检报告 $DATE" > "$REPORT"
 echo "" >> "$REPORT"
 echo "- 订阅: $(az account show --query name -o tsv)" >> "$REPORT"
@@ -370,7 +372,7 @@ chmod +x ~/.azure-inspector/scheduled-inspection.sh
 ```bash
 # 1. 列出历史巡检报告
 ls -lt ~/.azure-inspector/reports/ | head -20
-
+# ...
 # 2. 对比最近两次巡检
 LATEST=$(ls -t ~/.azure-inspector/reports/inspection-*.md | head -1)
 PREVIOUS=$(ls -t ~/.azure-inspector/reports/inspection-*.md | head -2 | tail -1)
@@ -379,7 +381,7 @@ echo "上次巡检: $PREVIOUS"
 echo ""
 echo "=== 趋势对比 ==="
 diff <(grep -E '^\- ' "$PREVIOUS") <(grep -E '^\- ' "$LATEST") || true
-
+# ...
 # 3. 生成趋势图表数据(可导入Excel或BI工具)
 echo "日期,停止VM数,未关联IP数,Owner角色数" > ~/.azure-inspector/trend.csv
 for report in $(ls ~/.azure-inspector/reports/inspection-*.md); do
@@ -398,43 +400,43 @@ echo "趋势数据已导出: ~/.azure-inspector/trend.csv"
 
 ```bash
 REPORT="/tmp/azure-inspection-$(date +%Y%m%d-%H%M%S).md"
-
+# ...
 cat > "$REPORT" <<EOF
 # Azure巡检报告(专业版)
-
+# ...
 - 巡检时间: $(date)
 - 订阅: $(az account show --query name -o tsv)
 - 巡检范围: ${1:-全订阅}
 - 巡检模板: ${2:-完整巡检}
-
+# ...
 ## 资源概览
 $(az resource list --query '[].type' -o tsv | sort | uniq -c | sort -rn)
-
+# ...
 ## 健康状态
 - 停止的VM: $(az vm list -d --query "[?powerState=='VM stopped'] | length(@)" -o tsv) 个
 - 未挂载磁盘: $(az disk list --query "[?diskState=='Unattached'] | length(@)" -o tsv) 个
 - 未关联公网IP: $(az network public-ip list --query '[?ipConfiguration==null] | length(@)' -o tsv) 个
-
+# ...
 ## RBAC审计
 - Owner角色数: $(az role assignment list --role "Owner" --query 'length(@)' -o tsv) 个
 - 自定义角色数: $(az role definition list --custom-role-only true --query 'length(@)' -o tsv) 个
-
+# ...
 ## 成本概览(本月)
 $(az costmanagement query --type ActualCost --timeframe MonthToDate --dataset-grouping name=ServiceName type=Dimension --dataset-aggregation totalCost=name=Cost function=Sum --query '[].{Service:ServiceName, Cost:Cost}' --output table 2>/dev/null || echo "Cost Management未配置")
-
+# ...
 ## NSG暴露矩阵
 - 开放入站0.0.0.0/0的NSG: [需扫描]
-
+# ...
 ## 风险等级
 [根据五维评分模型计算,使用自定义权重]
-
+# ...
 ## 建议项
 [根据检查结果生成,含优先级与修复命令]
-
+# ...
 ## 历史趋势
 [与上次巡检对比,标记变化项]
 EOF
-
+# ...
 echo "专业版巡检报告已生成: $REPORT"
 ```
 
@@ -444,7 +446,7 @@ echo "专业版巡检报告已生成: $REPORT"
 ```text
 角色: 运维工程师
 任务: "帮我跑一次日常巡检,关注资源组prod-rg,生成报告"
-
+# ...
 执行流程:
 1. 应用模板1(资源组日常巡检)
 2. 执行五维风险评分(自定义权重:暴露面1.5x)
@@ -458,7 +460,7 @@ echo "专业版巡检报告已生成: $REPORT"
 ```text
 角色: 安全工程师
 任务: "季度审计,检查所有订阅的RBAC配置,找出过度授权"
-
+# ...
 执行流程:
 1. 跨订阅批量巡检(遍历所有可访问订阅)
 2. 应用模板4(RBAC深度审计)
@@ -472,7 +474,7 @@ echo "专业版巡检报告已生成: $REPORT"
 ```text
 角色: FinOps专员
 任务: "月度成本审计,找出本月异常增长和空闲资源"
-
+# ...
 执行流程:
 1. 应用模板5(Cost Management成本管理)
 2. 按资源组/服务维度查询本月成本
@@ -486,7 +488,7 @@ echo "专业版巡检报告已生成: $REPORT"
 ```text
 角色: 云架构师
 任务: "新服务上线前,做一次全面暴露面扫描"
-
+# ...
 执行流程:
 1. 应用模板6(NSG暴露矩阵)
 2. 扫描所有公网IP,识别未关联的(浪费且暴露)
@@ -500,7 +502,7 @@ echo "专业版巡检报告已生成: $REPORT"
 ```text
 角色: 合规审计员
 任务: "生成合规检查报告,含存储加密、HTTPS、Key Vault防火墙等"
-
+# ...
 执行流程:
 1. 应用合规检查清单(存储公共访问/HTTPS/Key Vault防火墙/NSG/Owner/磁盘加密)
 2. 逐项执行检查命令,记录合规/不合规
@@ -517,9 +519,8 @@ echo "专业版巡检报告已生成: $REPORT"
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:---:|:---:|:---:|:---:|:---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -562,7 +563,7 @@ A: 专业版在免费版基础上新增:RBAC深度安全审计(Owner过度授权
 ## 故障排查
 
 | 问题 | 原因 | 解决方案 |
-|------|------|----------|
+|:------|------:|:------|
 | `Please run az login` | 未登录 | 运行 `az login --use-device-code` |
 | `Subscription not found` | 订阅ID错误或无权限 | 用 `az account list` 确认可访问的订阅 |
 | `Access denied` | RBAC权限不足 | 检查身份 `az account show`,确认Reader角色;RBAC审计需Reader+Role Based Access Control Reader |
@@ -586,7 +587,7 @@ A: 专业版在免费版基础上新增:RBAC深度安全审计(Owner过度授权
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Azure CLI | 工具 | 必需 | 从docs.microsoft.com/cli/azure安装 |
 | Azure账户 | 账户 | 必需 | 注册Azure账户 |
 | jq | 工具 | 推荐(配置漂移对比与权重计算) | 从stedolan.github.io/jq安装 |
@@ -619,7 +620,7 @@ A: 专业版在免费版基础上新增:RBAC深度安全审计(Owner过度授权
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------:|--------|:-------|:------:|
 | 免费体验版 | ¥0 | 核心巡检能力(资源清单/健康检查/暴露面扫描/配置漂移/巡检报告) | 个人试用、小团队日常巡检 |
 | 收费专业版 | ¥49.9/月 | 全功能+RBAC审计+成本管理+NSG暴露矩阵+跨订阅批量+定时调度+趋势对比 | 运维团队、安全团队、FinOps专员、合规审计 |
 

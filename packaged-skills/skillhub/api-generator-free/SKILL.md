@@ -16,6 +16,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # API 代码生成器（免费版）
 
@@ -23,11 +25,10 @@ homepage: "https://skillhub.cn"
 
 > **升级提示**: OpenAPI 文档、Python 客户端、Mock 服务器、认证代码、速率限制器等高级功能为付费版专享。升级付费版解锁完整能力。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | API代码生成器免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -48,7 +49,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -96,7 +96,7 @@ bash （请参考skill目录中的脚本文件） <command> <resource_name> [opt
 ```
 
 | 命令 | 免费版 | 说明 |
-|------|--------|------|
+|---:|---:|---:|
 | `rest` | 可用 | 生成 RESTful CRUD 端点（Express.js） |
 | `graphql` | 可用 | 生成 GraphQL schema |
 | `test` | 可用 | 生成 Jest+Supertest 测试套件 |
@@ -175,7 +175,7 @@ bash （请参考skill目录中的脚本文件） test order
 ## 错误处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+|:---:|:---:|:---:|:---:|
 | 命令不存在 | `Unknown command: <cmd>` | 使用了未定义的命令 | 使用 rest/graphql/test（免费版）或升级付费版 |
 | 资源名缺失 | `Resource name required` | 未提供 `<name>` 参数 | 补充资源名,如 `bash （请参考skill目录中的脚本文件） rest user` |
 | 命令需付费 | `Paid feature: <cmd>` | 使用了付费版专享命令 | 升级付费版解锁 swagger/client/mock/auth/rate-limit |

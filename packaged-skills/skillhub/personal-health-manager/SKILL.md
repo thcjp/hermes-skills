@@ -18,19 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Personal Health Mana
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Personal Health Mana个人健康管理 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -39,7 +41,7 @@ Track and record various health metrics 基于 user profile:
 
 #### Blood Pressure 💉
 | Category | Systolic | Diastolic |
-| --- | --- | --- |
+|:---------|:---------|:---------|
 | Normal | <120 | <80 |
 | Elevated | 120-129 | <80 |
 | Stage 1 HTN | 130-139 | 80-89 |
@@ -48,14 +50,14 @@ Track and record various health metrics 基于 user profile:
 
 #### Blood Glucose 🍬
 | Status | Fasting | 2h Post-Meal |
-| --- | --- | --- |
+|----:|----:|----:|
 | Normal | <100 | <140 |
 | Prediabetes | 100-125 | 140-199 |
 | Diabetes | ≥126 | ≥200 |
 
 #### Heart Rate ❤️
 | Age Group | Normal Resting | Max Heart Rate |
-| --- | --- | --- |
+|:--------:|:--------:|:--------:|
 | 20-29 | 60-100 | 190-200 |
 | 30-39 | 60-100 | 180-190 |
 | 40-49 | 60-100 | 170-180 |
@@ -64,7 +66,7 @@ Track and record various health metrics 基于 user profile:
 
 #### BMI Calculator ⚖️
 | Category | BMI Range |
-| --- | --- |
+|:----------|----------:|
 | Underweight | <18.5 |
 | Normal | 18.5-24.9 |
 | Overweight | 25-29.9 |
@@ -125,7 +127,7 @@ Track and record various health metrics 基于 user profile:
 **Drug Interactions to Watch:**
 
 | Drug A | Drug B | Effect |
-| --- | --- | --- |
+|---:|:---|---:|
 | Warfarin | Aspirin | Bleeding risk |
 | Metformin | Alcohol | Lactic acidosis |
 | Statins | Grapefruit | Increased side effects |
@@ -207,8 +209,6 @@ Track and record various health metrics 基于 user profile:
 * Avoid heavy weightlifting
 * Include cool-down
 
-**Diabetes:**
-
 * Check blood sugar before/after exercise
 * Carry fast-acting carbs
 * Avoid exercise if glucose >250
@@ -238,8 +238,6 @@ Track and record various health metrics 基于 user profile:
 * Model healthy eating
 * Don't force foods
 
-**Adults:**
-
 * Balanced macronutrients
 * Meal prep for busy days
 * Mindful eating
@@ -252,21 +250,14 @@ Track and record various health metrics 基于 user profile:
 * Easy-to-chew foods
 * Small, frequent meals
 
-#### By Condition
-**High Blood Pressure:**
-
 * Low sodium (<1500mg/day)
 * DASH diet
 * Limit alcohol
-
-**Diabetes:**
 
 * Consistent carb intake
 * High fiber
 * Limit simple sugars
 * Spread meals throughout day
-
-**High Cholesterol:**
 
 * Low saturated fat
 * High fiber
@@ -280,8 +271,6 @@ Track and record various health metrics 基于 user profile:
 * Limit added sugars
 * Drink water before meals
 
-> 详细内容已移至 `references/detail.md` -
-
 **输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数。
 **输出**: 返回Nutrition Advice 🥗的处理结果,包含执行状态码、结果数据和执行日志。
 ### 8. Travel Health Preparation ✈️
@@ -293,7 +282,7 @@ Track and record various health metrics 基于 user profile:
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:------:|--------|:-------|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -308,7 +297,7 @@ Track and record various health metrics 基于 user profile:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|----|:--:|---:|----|
 | content | string | 否 | personal-health-manager处理的内容输入 |,  |
 | content | string | 否 | personal-health-manager处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -336,9 +325,8 @@ Track and record various health metrics 基于 user profile:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -349,9 +337,9 @@ Track and record various health metrics 基于 user profile:
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -360,7 +348,6 @@ Track and record various health metrics 基于 user profile:
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -373,17 +360,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Personal Health Mana？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Personal Health Mana有什么限制？
-A: 
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|-----:|-----:|-----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

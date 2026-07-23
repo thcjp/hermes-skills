@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 日历提醒工具 专业版
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-| --- | :---: | :---: |
+|---|---|---|
 | 单日历扫描 | 支持 | 支持 |
 | 时段分类提醒 | 支持 | 支持 |
 | 飞书通知 | 支持 | 支持 |
@@ -92,18 +94,18 @@ pricing_model: "per_use"
 # calendar_reminder_pro.py
 from datetime import datetime, timedelta
 import json
-
+# ...
 # 多日历配置
 CALENDARS = [
     {"id": "work",     "source": "owa_calendar",  "priority": 1, "color": "🔵"},
     {"id": "personal", "source": "owa_calendar",  "priority": 2, "color": "🟢"},
     {"id": "team",     "source": "owa_calendar",  "priority": 1, "color": "🟡"},
 ]
-
+# ...
 # 扫描明日全部日历
 tomorrow = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
 all_events = []
-
+# ...
 for cal in CALENDARS:
     events = owa_calendar.get_events(
         calendar_id=cal["id"],
@@ -116,14 +118,14 @@ for cal in CALENDARS:
         evt["priority"] = cal["priority"]
         evt["color"] = cal["color"]
         all_events.append(evt)
-
+# ...
 # 按时间排序
 all_events.sort(key=lambda x: x["start_time"])
-
+# ...
 # 按时段分组
 morning = [e for e in all_events if e["start_hour"] < 12]
 afternoon = [e for e in all_events if e["start_hour"] >= 12]
-
+# ...
 # 生成聚合汇报
 report = generate_report(morning, afternoon)
 send_feishu(target=ADMIN_OPEN_ID, message=report)
@@ -133,19 +135,19 @@ send_feishu(target=ADMIN_OPEN_ID, message=report)
 
 ```text
 📅 明日日程扫描完成（2026-07-19）
-
+# ...
 🔵 工作日历 | 🟢 个人日历 | 🟡 团队日历
-
+# ...
 上午日程（提前2小时递进提醒）:
 🔵 09:00 项目周会 (会议室A) [高优先级]
 🟡 10:30 团队站会 (线上)
 🟢 11:30 健身预约 (健身房)
-
+# ...
 下午日程（12:00统一提醒）:
 🔵 14:00 技术方案评审 (会议室B) [高优先级]
 🔵 16:00 客户电话 (线上)
 🟢 19:00 家庭聚餐
-
+# ...
 共 6 项日程（3 工作 / 2 个人 / 1 团队）
 ⚠️ 检测到 1 个潜在冲突
 ✅ 已设置递进提醒
@@ -170,7 +172,7 @@ PROGRESSIVE_REMINDERS = {
         {"offset_hours": 0.5, "message": "📅 会议 30 分钟后开始"},
     ],
 }
-
+# ...
 # 为每个日程生成递进提醒
 for event in all_events:
     priority = event.get("priority_level", "medium")
@@ -193,11 +195,11 @@ def detect_conflicts(events):
     """检测日程冲突"""
     conflicts = []
     sorted_events = sorted(events, key=lambda x: x["start_time"])
-
+# ...
     for i in range(len(sorted_events) - 1):
         curr = sorted_events[i]
         next_evt = sorted_events[i + 1]
-
+# ...
         # 检测时间重叠
         if curr["end_time"] > next_evt["start_time"]:
             overlap = (curr["end_time"] - next_evt["start_time"]).total_seconds() / 60
@@ -208,7 +210,7 @@ def detect_conflicts(events):
                 "suggestion": suggest_resolution(curr, next_evt, overlap)
             })
     return conflicts
-
+# ...
 def suggest_resolution(e1, e2, overlap):
     """生成冲突解决建议"""
     suggestions = []
@@ -221,7 +223,7 @@ def suggest_resolution(e1, e2, overlap):
         if e1.get("location") == e2.get("location"):
             suggestions.append("⚠️ 同一地点背靠背日程，注意转场时间")
     return "；".join(suggestions)
-
+# ...
 # 执行冲突检测
 conflicts = detect_conflicts(all_events)
 if conflicts:
@@ -244,7 +246,7 @@ if conflicts:
 # weekly_analysis.py
 import csv
 from datetime import datetime, timedelta
-
+# ...
 # 获取本周全部已完成日程
 week_start = datetime.now() - timedelta(days=datetime.now().weekday())
 week_events = owa_calendar.get_events(
@@ -253,7 +255,7 @@ week_events = owa_calendar.get_events(
     end_date=datetime.now().strftime("%Y-%m-%d"),
     status="completed"
 )
-
+# ...
 # 统计分析
 analysis = {
     "total_meetings": len(week_events),
@@ -263,7 +265,7 @@ analysis = {
     "conflict_count": 0,
     "avg_duration": 0,
 }
-
+# ...
 for evt in week_events:
     # 按类型统计
     mtype = evt.get("category", "其他")
@@ -271,28 +273,28 @@ for evt in week_events:
     # 按日期统计
     day = evt["start_time"].strftime("%m-%d")
     analysis["by_day"][day] = analysis["by_day"].get(day, 0) + evt["duration_hours"]
-
+# ...
 analysis["avg_duration"] = analysis["total_hours"] / max(analysis["total_meetings"], 1)
-
+# ...
 # 生成报表
 report = f"""📊 本周日程效率分析（{week_start.strftime('%m-%d')} ~ {datetime.now().strftime('%m-%d')}）
-
+# ...
 📈 总览:
 - 会议总数: {analysis['total_meetings']} 场
 - 总时长: {analysis['total_hours']:.1f} 小时
 - 平均时长: {analysis['avg_duration']:.1f} 小时
 - 冲突次数: {analysis['conflict_count']} 次
-
+# ...
 📅 按日分布:"""
-
+# ...
 for day, hours in sorted(analysis["by_day"].items()):
     bar = "█" * int(hours) + "░" * (8 - int(hours))
     report += f"\n  {day} {bar} {hours:.1f}h"
-
+# ...
 report += f"\n\n📋 按类型分布:"
 for mtype, count in sorted(analysis["by_type"].items(), key=lambda x: -x[1]):
     report += f"\n  {mtype}: {count} 场"
-
+# ...
 report += "\n\n💡 优化建议:"
 if analysis["total_hours"] > 20:
     report += "\n  - 本周会议时长偏高，建议增加专注时间块"
@@ -300,9 +302,9 @@ if analysis["avg_duration"] > 1.5:
     report += "\n  - 平均会议时长偏长，建议控制在 1 小时以内"
 if analysis["conflict_count"] > 0:
     report += "\n  - 存在日程冲突，建议提前协调"
-
+# ...
 send_feishu(target=ADMIN_OPEN_ID, message=report)
-
+# ...
 # 导出 CSV
 with open("weekly_calendar_report.csv", "w", encoding="utf-8-sig", newline="") as f:
     writer = csv.writer(f)
@@ -365,7 +367,6 @@ python3 calendar_reminder_pro.py
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -473,7 +474,7 @@ python3 calendar_reminder_pro.py
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :------- | :----- | :--------- | :--------- |
+|:-----|:-----|:-----|:-----|
 | Python 3.9+ | 运行时 | 必需 | python.org 官方下载 |
 | owa-outlook skill | skill 依赖 | 必需 | 提供 `owa_calendar.py` 日历读取模块 |
 | skill-platform CLI | 命令行工具 | 必需 | 定时任务注册与管理 |
@@ -506,9 +507,8 @@ export TG_BOT_TOKEN="your_telegram_bot_token"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

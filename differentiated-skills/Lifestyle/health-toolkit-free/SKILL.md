@@ -26,11 +26,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 健康管理工具箱 (免费版)
 
 ## 概述
@@ -42,7 +43,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 运动记录 | 跑步、力量、骑行等记录 | 支持 |
 | 睡眠追踪 | 睡眠时长、质量评估 | 支持 |
 | 饮食日记 | 食物摄入、热量计算 | 支持 |
@@ -91,12 +92,12 @@ suggested_price: 29.9
 import json
 from datetime import datetime
 from pathlib import Path
-
+# ...
 class WorkoutTracker:
     def __init__(self, data_dir="~/.health/workouts"):
         self.data_dir = Path(data_dir).expanduser()
         self.data_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
     def log_workout(self, workout_type, duration_min, intensity, notes=""):
         """记录一次运动"""
         workout = {
@@ -111,7 +112,7 @@ class WorkoutTracker:
         path = self.data_dir / f"{workout['id']}.json"
         path.write_text(json.dumps(workout, ensure_ascii=False, indent=2))
         return workout
-
+# ...
     def weekly_summary(self):
         """周度运动汇总"""
         from datetime import timedelta
@@ -121,26 +122,26 @@ class WorkoutTracker:
             w = json.loads(f.read_text())
             if w["date"] >= week_ago:
                 workouts.append(w)
-
+# ...
         return {
             "total_workouts": len(workouts),
             "total_duration": sum(w["duration_min"] for w in workouts),
             "by_type": self._group_by(workouts, "type"),
             "avg_intensity": self._avg_intensity(workouts),
         }
-
+# ...
     def _group_by(self, items, key):
         groups = {}
         for item in items:
             groups.setdefault(item[key], []).append(item)
         return {k: len(v) for k, v in groups.items()}
-
+# ...
     def _avg_intensity(self, workouts):
         if not workouts: return "N/A"
         scores = {"low": 1, "medium": 2, "high": 3}
         avg = sum(scores[w["intensity"]] for w in workouts) / len(workouts)
         return {1: "low", 2: "medium", 3: "high"}.get(round(avg), "medium")
-
+# ...
 tracker = WorkoutTracker()
 tracker.log_workout("running", 30, "medium", "5公里晨跑")
 tracker.log_workout("strength", 45, "high", "胸+三头")
@@ -156,14 +157,14 @@ class SleepTracker:
     def __init__(self, data_dir="~/.health/sleep"):
         self.data_dir = Path(data_dir).expanduser()
         self.data_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
     def log_sleep(self, bed_time, wake_time, quality, disturbances=0):
         """记录睡眠"""
         from datetime import datetime
         bed = datetime.strptime(bed_time, "%Y-%m-%d %H:%M")
         wake = datetime.strptime(wake_time, "%Y-%m-%d %H:%M")
         duration = (wake - bed).total_seconds() / 3600
-
+# ...
         record = {
             "date": bed.strftime("%Y-%m-%d"),
             "bed_time": bed_time,
@@ -175,25 +176,25 @@ class SleepTracker:
         path = self.data_dir / f"sleep_{record['date']}.json"
         path.write_text(json.dumps(record, ensure_ascii=False, indent=2))
         return record
-
+# ...
     def sleep_trend(self, days=30):
         """睡眠趋势分析"""
         records = []
         for f in sorted(self.data_dir.glob("*.json"))[-days:]:
             records.append(json.loads(f.read_text()))
-
+# ...
         if not records:
             return "无数据"
-
+# ...
         avg_duration = sum(r["duration_hours"] for r in records) / len(records)
         quality_dist = self._group_by(records, "quality")
-
+# ...
         return {
             "avg_duration_hours": round(avg_duration, 2),
             "quality_distribution": quality_dist,
             "recommendation": self._recommendation(avg_duration),
         }
-
+# ...
     def _recommendation(self, avg_hours):
         if avg_hours < 6:
             return "睡眠不足,建议保证 7-9 小时睡眠"
@@ -201,7 +202,7 @@ class SleepTracker:
             return "睡眠过长,建议调整作息"
         else:
             return "睡眠时长良好,继续保持"
-
+# ...
     def _group_by(self, items, key):
         groups = {}
         for item in items:
@@ -222,7 +223,7 @@ class DietTracker:
         "鱼": 145, "豆腐": 81, "西兰花": 34, "苹果": 52,
         "香蕉": 89, "可乐": 42, "咖啡": 1,
     }
-
+# ...
     def log_meal(self, meal_type, foods):
         """记录一餐"""
         total_calories = 0
@@ -232,7 +233,7 @@ class DietTracker:
             calories = cal_per_100g * grams / 100
             total_calories += calories
             items.append({"food": food, "grams": grams, "calories": round(calories, 1)})
-
+# ...
         record = {
             "date": datetime.now().strftime("%Y-%m-%d"),
             "time": datetime.now().strftime("%H:%M"),
@@ -292,26 +293,26 @@ profile:
   height_cm: 175
   weight_kg: 70
   activity_level: moderate  # sedentary, light, moderate, active
-
+# ...
 goals:
   weekly_workouts: 4
   weekly_duration_min: 180
   daily_steps: 10000
   daily_calories: 2000
   sleep_hours: 8
-
+# ...
 tracking:
   workouts: true
   sleep: true
   diet: true
   weight: true
   heart_rate: false  # 需要设备
-
+# ...
 storage:
   type: local
   path: ~/.health/
   backup: weekly
-
+# ...
 notifications:
   workout_reminder: "18:00"
   sleep_reminder: "22:30"
@@ -324,7 +325,7 @@ notifications:
 class GoalTracker:
     def __init__(self, config_path="~/.health/goals.yaml"):
         self.goals = self._load_goals(config_path)
-
+# ...
     def progress(self, metric, current_value):
         """计算目标进度"""
         target = self.goals.get(metric)
@@ -338,7 +339,7 @@ class GoalTracker:
             "progress_pct": round(progress_pct, 1),
             "status": "on_track" if progress_pct >= 80 else "behind",
         }
-
+# ...
     def weekly_report(self):
         """生成周度报告"""
         return {
@@ -359,7 +360,7 @@ class GoalTracker:
 - 每晚固定时间记录睡眠
 - 每餐后记录饮食
 - 每周固定时间称重
-
+# ...
 数据越完整,分析越准确。
 ```
 
@@ -384,7 +385,7 @@ def set_smart_goal(metric, current, target, timeframe_weeks):
 ```bash
 # 定期备份健康数据
 tar -czf health-backup-$(date +%Y%m%d).tar.gz ~/.health/
-
+# ...
 # 同步到云盘 (可选)
 rsync -av ~/.health/ ~/cloud/health-backup/
 ```
@@ -422,7 +423,7 @@ rsync -av ~/.health/ ~/cloud/health-backup/
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 推荐 | python.org 下载 |
 | PyYAML | Python 库 | 可选 | `pip install pyyaml` |
@@ -432,7 +433,7 @@ rsync -av ~/.health/ ~/cloud/health-backup/
 ```bash
 # 免费版无需外部 API Key
 # 所有数据本地存储
-
+# ...
 # 可选: 个人偏好
 export HEALTH_USER_NAME="你的名字"
 export HEALTH_DATA_DIR="~/.health"
@@ -446,9 +447,8 @@ export HEALTH_DATA_DIR="~/.health"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

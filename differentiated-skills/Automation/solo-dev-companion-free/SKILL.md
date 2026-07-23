@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 独立开发伙伴（免费版）
 
 > **独立开发者的TDD工作流引擎。自动执行计划、红绿重构、原子提交，让一人开发也有团队规范。**
@@ -49,16 +50,16 @@ suggested_price: 29.9
 ```bash
 # 1. 确认计划文件存在
 ls docs/plan/*/plan.md
-
+# ...
 # 2. 启动执行引擎
 solo-dev execute
-
+# ...
 # 3. 指定track执行
 solo-dev execute auth-feature
-
+# ...
 # 4. 跳转到指定任务
 solo-dev execute --task 2.3
-
+# ...
 # 5. 恢复中断的任务
 solo-dev resume
 ```
@@ -69,7 +70,7 @@ solo-dev resume
 # 依赖说明
 [ -f .husky/pre-commit ] && echo "husky OK" || echo "NOT ACTIVE"
 [ -f .pre-commit-config.yaml ] && [ -f .git/hooks/pre-commit ] && echo "pre-commit OK" || echo "NOT ACTIVE"
-
+# ...
 # 如未安装，按技术栈安装
 # JS/TS: pnpm prepare
 # Python: uv run pre-commit install
@@ -86,10 +87,10 @@ solo-dev resume
 ```bash
 # 自动发现计划文件
 solo-dev discover
-
+# ...
 # 查看所有track及进度
 solo-dev tracks
-
+# ...
 # 查看指定track详情
 solo-dev track auth-feature
 ```
@@ -98,37 +99,37 @@ solo-dev track auth-feature
 
 ```markdown
 # Auth Feature Plan
-
+# ...
 **Status:** [ ] Not Started
-
+# ...
 **输入**: 用户提供计划发现与解析所需的指令和必要参数。
 **处理**: 解析计划发现与解析的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回计划发现与解析的响应数据,包含状态码、结果和日志。
-
+# ...
 ### 核心功能执行
 用`input_params`参数进行配置。
-
+# ...
 **输入**: 用户提供核心功能执行所需的指令和必要参数。
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
+# ...
 ### 参数配置与调用
 用`config_options`参数进行配置。
-
+# ...
 **输入**: 用户提供参数配置与调用所需的指令和必要参数。
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
-
+# ...
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：独立开发者、TDD、工作流引擎、自动执行实施计划、提交代码并更新进、独立开发伙伴免费、版为独立开发者与、一人公司提供轻量、聚焦实施计划、的自动执行、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+# ...
 ## Phase 1: 基础架构
 - [ ] Task 1.1: 创建用户模型
 - [ ] Task 1.2: 实现密码哈希
 - [~] Task 1.3: 创建注册API <!-- sha:abc1234 -->
-
+# ...
 ## Phase 2: 认证流程
 - [ ] Task 2.1: 实现JWT生成
 - [ ] Task 2.2: 实现登录API
@@ -139,7 +140,7 @@ solo-dev track auth-feature
 ```bash
 # 执行下一个未完成任务
 solo-dev execute
-
+# ...
 # 执行时自动完成：
 # 1. 标记任务为[~]（进行中）
 # 2. 研究相关代码
@@ -153,7 +154,7 @@ solo-dev execute
 **TDD三阶段**：
 
 | 阶段 | 动作 | 验证 |
-|------|------|------|
+|---|---|---|
 | 红 | 写失败测试 | 测试必须失败 |
 | 绿 | 实现最小代码 | 测试必须通过 |
 | 重构 | 优化代码 | 测试保持通过 |
@@ -163,7 +164,7 @@ solo-dev execute
 ```bash
 # 自动提交（conventional commits格式）
 git commit -m "feat(auth): 实现用户注册API"
-
+# ...
 # 提交后自动捕获SHA并写入plan.md
 # - [x] Task 1.3: 创建注册API <!-- sha:abc1234 -->
 ```
@@ -173,7 +174,7 @@ git commit -m "feat(auth): 实现用户注册API"
 ### 4. 进度状态管理
 
 | 标记 | 含义 | 说明 |
-|------|------|------|
+|:-----|:-----|:-----|
 | `[ ]` | 未开始 | 待执行的任务 |
 | `[~]` | 进行中 | 当前正在执行 |
 | `[x]` | 已完成 | 已提交代码并记录SHA |
@@ -216,10 +217,10 @@ make help    # 查看可用目标
 ```bash
 # 创建功能计划
 # docs/plan/auth-feature/plan.md
-
+# ...
 # 执行第一个任务
 solo-dev execute auth-feature
-
+# ...
 # 引擎自动完成TDD循环与提交
 # 完成后继续下一个任务
 solo-dev execute auth-feature
@@ -236,10 +237,10 @@ solo-dev execute auth-feature
 ```bash
 # 每天开始工作时执行
 solo-dev tracks    # 查看所有track进度
-
+# ...
 # 执行当天计划的任务
 solo-dev execute
-
+# ...
 # 中断后恢复
 solo-dev resume
 ```
@@ -253,7 +254,7 @@ solo-dev resume
 ```bash
 # 创建一个简单的TDD练习计划
 # docs/plan/tdd-practice/plan.md
-
+# ...
 # 执行并观察TDD循环
 solo-dev execute tdd-practice
 ```
@@ -293,7 +294,7 @@ solo-dev execute tdd-practice
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
 | Git | 工具 | 必需 | 系统自带或从git-scm.com安装 |
 | Make | 构建工具 | 可选 | 系统自带 |
@@ -350,20 +351,20 @@ solo-dev execute tdd-practice
 ### 示例1：基础用法
 
 ```
-### 120秒上手
-
+### 120秒上手(补充)
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -380,3 +381,4 @@ solo-dev execute tdd-practice
   "error": null
 }
 ```
+# ...

@@ -40,19 +40,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # UI/UX开发工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| UI/UX开发工具专业版面React项目生成 | 不支持 | 支持 |
+| UI/UX开发工具专业版Zip导出 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -131,15 +133,15 @@ serve/
 
 ```bash
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/desktop-full.png 1920 1080
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/desktop.png 1440 900
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/tablet.png 1024 768
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/tablet-portrait.png 768 1024
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/mobile.png 390 844
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/mobile-small.png 320 568
 ```
 
@@ -156,12 +158,12 @@ PROJECT=$1
 BASE_URL="http://localhost:5174/${PROJECT}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 OUTPUT_DIR="/tmp/reviews/${PROJECT}_${TIMESTAMP}"
-
+# ...
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 PAGES=("landing" "about" "pricing" "contact" "dashboard")
 RESOLUTIONS=("1920x1080" "1440x900" "768x1024" "390x844")
-
+# ...
 for page in "${PAGES[@]}"; do
   for res in "${RESOLUTIONS[@]}"; do
     width=$(echo $res | cut -d'x' -f1)
@@ -171,7 +173,7 @@ for page in "${PAGES[@]}"; do
     echo "截图完成: ${page} @ ${res}"
   done
 done
-
+# ...
 echo "批量截图完成,输出目录: ${OUTPUT_DIR}"
 ```
 
@@ -183,30 +185,30 @@ echo "批量截图完成,输出目录: ${OUTPUT_DIR}"
 #!/bin/bash
 INPUT_DIR=$1
 QUALITY=${2:-80}
-
+# ...
 total_before=0
 total_after=0
 count=0
-
+# ...
 for img in "$INPUT_DIR"/*.{png,jpg,jpeg}; do
   if [ -f "$img" ]; then
     filename=$(basename "$img" | sed 's/\.[^.]*$//')
     output="$INPUT_DIR/${filename}.webp"
-
+# ...
     before_size=$(stat -f%z "$img" 2>/dev/null || stat -c%s "$img")
     bash （请参考skill目录中的脚本文件） "$img" "$output" "$QUALITY"
     after_size=$(stat -f%z "$output" 2>/dev/null || stat -c%s "$output")
-
+# ...
     reduction=$((100 - (after_size * 100 / before_size)))
     total_before=$((total_before + before_size))
     total_after=$((total_after + after_size))
     count=$((count + 1))
-
+# ...
     echo "转换: $(basename $img) -> ${filename}.webp"
     echo "  大小: $(numfmt --to=iec $before_size) -> $(numfmt --to=iec $after_size) (减少${reduction}%)"
   fi
 done
-
+# ...
 echo ""
 echo "=== 批量转换报告 ==="
 echo "处理文件数: ${count}"
@@ -223,7 +225,7 @@ echo "总节省: $(numfmt --to=iec $((total_before - total_after)))"
 ### 6. Zip打包导出
 ```bash
 cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/
-
+# ...
 cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/ \
   -x "*.DS_Store" "*/tmp/*" "*/.git/*"
 ```
@@ -259,11 +261,11 @@ mkdir -p serve/client-c/{landing,assets}
 
 ```bash
 mkdir -p serve/enterprise/{landing,features,pricing,about,contact,assets}
-
+# ...
 bash （请参考skill目录中的脚本文件） enterprise
-
+# ...
 bash （请参考skill目录中的脚本文件） serve/enterprise/assets 85
-
+# ...
 cd serve && zip -r /tmp/enterprise.zip enterprise/
 ```
 
@@ -274,13 +276,13 @@ cd serve && zip -r /tmp/enterprise.zip enterprise/
 #!/bin/bash
 PROJECT=$1
 ISSUES_FOUND=0
-
+# ...
 bash （请参考skill目录中的脚本文件） "$PROJECT"
-
+# ...
 for screenshot in /tmp/reviews/${PROJECT}_*/*.png; do
   echo "检查: $(basename $screenshot)"
 done
-
+# ...
 if [ $ISSUES_FOUND -gt 0 ]; then
   echo "质量门禁未通过:发现 ${ISSUES_FOUND} 个问题"
   exit 1
@@ -295,10 +297,10 @@ fi
 ### 专业版项目初始化
 ```bash
 bash （请参考skill目录中的脚本文件） 5174
-
+# ...
 PROJECT_NAME="my-enterprise-app"
 mkdir -p serve/${PROJECT_NAME}/{landing,about,pricing,contact,assets}
-
+# ...
 cat > serve/${PROJECT_NAME}/project.json << 'EOF'
 {
   "name": "my-enterprise-app",
@@ -322,11 +324,11 @@ cat > serve/${PROJECT_NAME}/project.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 bash （请参考skill目录中的脚本文件） ${PROJECT_NAME}
-
+# ...
 bash （请参考skill目录中的脚本文件） serve/${PROJECT_NAME}/assets 85
-
+# ...
 cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 ```
 
@@ -334,7 +336,7 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | ui-ux-dev处理的内容输入 |,  |
 | content | string | 否 | ui-ux-dev处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -362,9 +364,8 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -378,9 +379,9 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 - **本地服务器**: Python http.server或Node.js静态服务器
 - **Bash**: 批量脚本执行(Windows需Git Bash或WSL)
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Bash | 运行时 | 必需 | 系统内置或Git Bash |
 | Chrome/Chromium | 截图工具 | 必需 | 浏览器安装 |
 | cwebp | 图片转换 | 必需 | libwebp工具包 |
@@ -393,9 +394,9 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 
 ```bash
 brew install webp
-
+# ...
 sudo apt install webp zip coreutils
-
+# ...
 ```
 
 ### API Key 配置
@@ -437,7 +438,7 @@ sudo apt install webp zip coreutils
   <div id="root"></div>
   <script type="text/babel">
     const { useState, useEffect } = React;
-
+# ...
     // 组件化开发
     function Navbar() {
       const [menuOpen, setMenuOpen] = useState(false);
@@ -462,7 +463,7 @@ sudo apt install webp zip coreutils
         </header>
       );
     }
-
+# ...
     function App() {
       return (
         <div className="min-h-screen bg-slate-50">
@@ -481,7 +482,7 @@ sudo apt install webp zip coreutils
 
 ### 专业版与免费版完整对比
 | 功能维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|:------|------:|:------|
 | 页面生成 | 单页面 | 多页面项目管理 |
 | 项目配置 | 基础JSON | 设计系统持久化引用 |
 | 截图审查 | 桌面+移动(2种) | 6种分辨率全覆盖 |
@@ -517,9 +518,8 @@ sudo apt install webp zip coreutils
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

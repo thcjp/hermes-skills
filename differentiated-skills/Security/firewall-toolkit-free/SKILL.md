@@ -27,8 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 # 防火墙配置工具包免费版
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 99.9
 ### 免费版与专业版对比
 
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 防火墙类型 | iptables/ufw | +云安全组+nftables |
 | 规则管理 | 手动配置 | 模板化+批量部署 |
 | 安全基线 | 基础检查 | 完整CIS基线 |
@@ -53,7 +54,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 防火墙配置工具包免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -61,34 +62,34 @@ suggested_price: 99.9
 ```bash
 #!/bin/bash
 # UFW基础安全配置脚本
-
+# ...
 echo "=== UFW防火墙基础配置 ==="
-
+# ...
 # 重置防火墙规则
 ufw --force reset
-
+# ...
 # 设置默认策略
 ufw default deny incoming     # 默认拒绝所有入站
 ufw default allow outgoing    # 默认允许所有出站
-
+# ...
 # 允许SSH连接(重要:先放行SSH避免锁死)
 ufw allow 22/tcp comment 'SSH'
-
+# ...
 # 允许HTTP/HTTPS
 ufw allow 80/tcp comment 'HTTP'
 ufw allow 443/tcp comment 'HTTPS'
-
+# ...
 # 已知限制
 ufw limit 22/tcp comment 'SSH限速'
-
+# ...
 # 启用防火墙
 ufw --force enable
-
+# ...
 # 显示状态
 echo ""
 echo "=== 当前防火墙规则 ==="
 ufw status numbered
-
+# ...
 echo ""
 echo "防火墙配置完成"
 ```
@@ -103,50 +104,50 @@ echo "防火墙配置完成"
 ```bash
 #!/bin/bash
 # iptables安全加固脚本
-
+# ...
 echo "=== iptables安全加固 ==="
-
+# ...
 # 清除现有规则
 iptables -F
 iptables -X
 iptables -Z
-
+# ...
 # 设置默认策略
 iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -P OUTPUT ACCEPT
-
+# ...
 # 允许回环接口
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A OUTPUT -o lo -j ACCEPT
-
+# ...
 # 允许已建立的连接
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-
+# ...
 # 允许SSH(限制速率:每分钟最多5次新连接)
 iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set
 iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 -j DROP
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-
+# ...
 # 允许HTTP/HTTPS
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
-
+# ...
 # 防止SYN Flood攻击
 iptables -A INPUT -p tcp --syn -m limit --limit 1/s --limit-burst 3 -j ACCEPT
 iptables -A INPUT -p tcp --syn -j DROP
-
+# ...
 # 防止端口扫描
 iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
 iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
-
+# ...
 # 记录被拒绝的连接(限速避免日志洪水)
 iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables-dropped: " --log-level 4
 iptables -A INPUT -j DROP
-
+# ...
 # 保存规则
 iptables-save > /etc/iptables/rules.v4
-
+# ...
 echo "iptables安全加固完成"
 echo ""
 echo "=== 当前规则 ==="
@@ -163,14 +164,14 @@ iptables -L -n -v --line-numbers
 ```bash
 #!/bin/bash
 # 端口安全检查脚本
-
+# ...
 echo "=== 端口安全检查 ==="
 echo ""
-
+# ...
 # 1. 检查监听端口
 echo "--- 1. 监听端口列表 ---"
 ss -tlnp | awk 'NR>1 {printf "  %-8s %-20s %s\n", $4, $6, $7}' | sort
-
+# ...
 echo ""
 echo "--- 2. 危险端口检查 ---"
 DANGEROUS_PORTS="21 23 25 53 69 110 143 161 389 445 636 873 993 995 1433 1521 2375 3306 3389 5432 5900 6379 9200 11211 27017"
@@ -180,12 +181,12 @@ for port in $DANGEROUS_PORTS; do
         echo "  [!] 端口 ${port} 正在监听: ${SERVICE}"
     fi
 done
-
+# ...
 echo ""
 echo "--- 3. 外部可达端口检查 ---"
 echo "  以下端口对外开放(0.0.0.0):"
 ss -tlnp | grep "0.0.0.0:" | awk '{print "    " $4}' | sort -u
-
+# ...
 echo ""
 echo "--- 4. 防火墙规则中的开放端口 ---"
 if command -v ufw &> /dev/null; then
@@ -205,13 +206,13 @@ fi
 ```bash
 #!/bin/bash
 # 防火墙安全基线检查
-
+# ...
 echo "=== 防火墙安全基线检查 ==="
 echo ""
-
+# ...
 PASS=0
 FAIL=0
-
+# ...
 check() {
     local name=$1
     local condition=$2
@@ -223,28 +224,28 @@ check() {
         ((FAIL++))
     fi
 }
-
+# ...
 # 1. 防火墙是否启用
 if command -v ufw &> /dev/null; then
     check "UFW防火墙已启用" "ufw status | grep -q 'Status: active'"
 elif command -v iptables &> /dev/null; then
     check "iptables INPUT策略为DROP" "iptables -L INPUT -n | head -1 | grep -q DROP"
 fi
-
+# ...
 # 2. SSH是否限制
 check "SSH端口已配置规则" "ss -tlnp | grep -q ':22 '"
-
+# ...
 # 3. 默认入站策略
 if command -v ufw &> /dev/null; then
     check "默认拒绝入站" "ufw status verbose | grep -q 'Default: deny (incoming)'"
 fi
-
+# ...
 # 4. 仅必要端口开放
 check "无Telnet端口(23)" "! ss -tlnp | grep -q ':23 '"
 check "无FTP端口(21)" "! ss -tlnp | grep -q ':21 '"
 check "无Redis端口(6379)对外" "! ss -tlnp | grep '0.0.0.0:6379'"
 check "无数据库端口(3306/5432)对外" "! ss -tlnp | grep -E '0.0.0.0:(3306|5432)'"
-
+# ...
 echo ""
 echo "========================================="
 echo "基线检查完成: 通过 ${PASS} 项, 失败 ${FAIL} 项"
@@ -265,12 +266,12 @@ echo "========================================="
 ```bash
 #!/bin/bash
 # 新服务器完整安全加固脚本
-
+# ...
 echo "=== 新服务器安全加固 ==="
 echo "服务器: $(hostname)"
 echo "时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo ""
-
+# ...
 # 1. 配置防火墙
 echo "--- 1. 配置UFW防火墙 ---"
 ufw --force reset
@@ -281,7 +282,7 @@ ufw allow 80/tcp      # HTTP
 ufw allow 443/tcp     # HTTPS
 ufw --force enable
 echo "防火墙已启用"
-
+# ...
 # 2. 关闭危险服务
 echo ""
 echo "--- 2. 关闭危险服务 ---"
@@ -290,7 +291,7 @@ for service in telnet rsh rlogin rexec; do
     systemctl disable "$service" 2>/dev/null
     echo "  已关闭: ${service}"
 done
-
+# ...
 # 3. SSH安全加固
 echo ""
 echo "--- 3. SSH安全加固 ---"
@@ -305,7 +306,7 @@ if [ -f "$SSH_CONFIG" ]; then
     systemctl restart sshd
     echo "SSH配置已加固"
 fi
-
+# ...
 # 依赖说明
 echo ""
 echo "--- 4. 安装Fail2Ban ---"
@@ -315,7 +316,7 @@ if ! command -v fail2ban-client &> /dev/null; then
     systemctl start fail2ban
     echo "Fail2Ban已安装"
 fi
-
+# ...
 echo ""
 echo "=== 服务器加固完成 ==="
 ufw status
@@ -326,29 +327,29 @@ ufw status
 ```bash
 #!/bin/bash
 # Web服务器专用防火墙配置
-
+# ...
 echo "=== Web服务器防火墙配置 ==="
-
+# ...
 ufw --force reset
 ufw default deny incoming
 ufw default allow outgoing
-
+# ...
 # SSH(限速防暴力破解)
 ufw limit 22/tcp
-
+# ...
 # Web服务
 ufw allow 80/tcp       # HTTP
 ufw allow 443/tcp      # HTTPS
-
+# ...
 # 仅允许指定IP访问管理端口
 # ufw allow from 192.168.1.100 to any port 8080  # 管理后台
-
+# ...
 # 拒绝数据库端口外部访问
 ufw deny 3306/tcp      # MySQL
 ufw deny 5432/tcp      # `PostgreSQL`数据库端口
 ufw deny 6379/tcp      # Redis
 ufw deny 27017/tcp     # MongoDB
-
+# ...
 ufw --force enable
 echo "Web服务器防火墙配置完成"
 ufw status
@@ -359,24 +360,24 @@ ufw status
 ```bash
 #!/bin/bash
 # 防火墙规则审计
-
+# ...
 echo "=== 防火墙规则审计 ==="
 echo ""
-
+# ...
 echo "--- 1. UFW规则列表 ---"
 ufw status numbered 2>/dev/null || echo "UFW未安装"
-
+# ...
 echo ""
 echo "--- 2. iptables规则 ---"
 iptables -L -n --line-numbers 2>/dev/null
-
+# ...
 echo ""
 echo "--- 3. 规则数量统计 ---"
 INPUT_RULES=$(iptables -L INPUT -n 2>/dev/null | wc -l)
 OUTPUT_RULES=$(iptables -L OUTPUT -n 2>/dev/null | wc -l)
 echo "  INPUT规则: ${INPUT_RULES}"
 echo "  OUTPUT规则: ${OUTPUT_RULES}"
-
+# ...
 echo ""
 echo "--- 4. 开放端口统计 ---"
 OPEN_PORTS=$(ufw status 2>/dev/null | grep "ALLOW" | wc -l)
@@ -390,7 +391,7 @@ echo "  开放端口数: ${OPEN_PORTS}"
 ```bash
 # 检查UFW状态
 sudo ufw status verbose
-
+# ...
 # 检查iptables状态
 sudo iptables -L -n
 ```
@@ -412,7 +413,7 @@ sudo ufw --force enable
 ```bash
 # 查看规则
 sudo ufw status numbered
-
+# ...
 # 测试端口连通性
 curl -s -o /dev/null -w "%{http_code}" http://localhost
 ```
@@ -425,7 +426,7 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 ### 常用端口参考
 
 | 端口 | 服务 | 是否开放 | 说明 |
-|:-----|:-----|:---------|:-----|
+|---:|---:|---:|---:|
 | 22 | SSH | 限制开放 | 限速防暴力破解 |
 | 80 | HTTP | 开放 | Web服务 |
 | 443 | HTTPS | 开放 | Web服务(SSL) |
@@ -438,7 +439,7 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 ### UFW常用命令
 
 | 命令 | 说明 |
-|:-----|:-----|
+|:---:|:---:|
 | `ufw enable` | 启用防火墙 |
 | `ufw disable` | 禁用防火墙 |
 | `ufw status` | 查看状态 |
@@ -461,18 +462,18 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 safe_firewall_change() {
     local action=$1
     local rule=$2
-    
+# ...
     echo "变更前规则:"
     ufw status numbered
-    
+# ...
     echo ""
     echo "执行: ufw ${action} ${rule}"
     ufw "$action" "$rule"
-    
+# ...
     echo ""
     echo "变更后规则:"
     ufw status numbered
-    
+# ...
     echo ""
     echo "请验证服务是否正常,如异常请执行回滚:"
     echo "  ufw delete ${rule}"
@@ -517,7 +518,7 @@ UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用ip
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | ufw | 防火墙工具 | 推荐 | `apt install ufw` |
 | iptables | 防火墙工具 | 必需 | 系统自带 |
 | ss | 端口检查 | 必需 | `apt install iproute2` |
@@ -538,7 +539,7 @@ UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用ip
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

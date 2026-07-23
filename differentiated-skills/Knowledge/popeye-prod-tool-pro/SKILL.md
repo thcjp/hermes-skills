@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 生产力增强工具（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `分析我这周的时间使用
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：工作流自动化
 
 将重复性工作自动化处理。**示例指令**：`
 
 `自动化我的日报流程
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 生产力增强工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -163,7 +155,7 @@ import json
 from typing import List, Dict, Optional
 from datetime import datetime, timedelta
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class Task:
     id: str
@@ -176,7 +168,7 @@ class Task:
     time_spent: float = 0.0
     created: str = ""
     completed: Optional[str] = None
-
+# ...
 @dataclass
 class TimeEntry:
     task_id: str
@@ -184,14 +176,14 @@ class TimeEntry:
     end: str
     duration: float
     category: str
-
+# ...
 @dataclass
 class Workflow:
     name: str
     steps: List[dict] = field(default_factory=list)
     trigger: str = "manual"
     enabled: bool = True
-
+# ...
 class ProductivityEngine:
     def __init__(self):
         self.tasks: Dict[str, Task] = {}
@@ -199,7 +191,7 @@ class ProductivityEngine:
         self.workflows: Dict[str, Workflow] = {}
         self.habits: Dict[str, dict] = {}
         self.focus_sessions: List[dict] = []
-
+# ...
     def create_task(self, title: str, priority: str = "medium",
                    due: str = None, tags: List[str] = None,
                    subtasks: List[str] = None) -> Task:
@@ -212,7 +204,7 @@ class ProductivityEngine:
         )
         self.tasks[task_id] = task
         return task
-
+# ...
     def track_time(self, task_id: str, duration: float,
                   category: str = "work") -> TimeEntry:
         """时间追踪（PRO 专属）"""
@@ -226,7 +218,7 @@ class ProductivityEngine:
         if task_id in self.tasks:
             self.tasks[task_id].time_spent += duration
         return entry
-
+# ...
     def start_focus_session(self, duration: int = 25,
                           task_id: str = None) -> dict:
         """专注模式（PRO 专属：番茄钟）"""
@@ -238,14 +230,14 @@ class ProductivityEngine:
         }
         self.focus_sessions.append(session)
         return session
-
+# ...
     def create_workflow(self, name: str, steps: List[dict],
                        trigger: str = "manual") -> Workflow:
         """创建自动化工作流（PRO 专属）"""
         wf = Workflow(name=name, steps=steps, trigger=trigger)
         self.workflows[name] = wf
         return wf
-
+# ...
     def execute_workflow(self, name: str) -> dict:
         """执行工作流（PRO 专属）"""
         wf = self.workflows.get(name)
@@ -259,7 +251,7 @@ class ProductivityEngine:
                 "status": "executed"
             })
         return {"workflow": name, "steps_executed": len(results), "results": results}
-
+# ...
     def track_habit(self, name: str, target: int = 1) -> dict:
         """习惯追踪（PRO 专属）"""
         today = datetime.now().strftime("%Y-%m-%d")
@@ -267,7 +259,7 @@ class ProductivityEngine:
             self.habits[name] = {"target": target, "history": {}}
         self.habits[name]["history"][today] = self.habits[name]["history"].get(today, 0) + 1
         return {"habit": name, "today": self.habits[name]["history"][today]}
-
+# ...
     def analyze_productivity(self, period: str = "week") -> dict:
         """效率分析（PRO 专属）"""
         now = datetime.now()
@@ -295,7 +287,7 @@ class ProductivityEngine:
             "time_by_category": {k: round(v, 1) for k, v in categories.items()},
             "avg_daily_hours": round(total_time / 7, 1) if period == "week" else round(total_time, 1)
         }
-
+# ...
     def generate_daily_report(self) -> str:
         """生成日报（PRO 专属）"""
         today = datetime.now().strftime("%Y-%m-%d")
@@ -315,7 +307,7 @@ class ProductivityEngine:
         report += f"- 总时长: {analysis['total_hours']}小时{NL}"
         report += f"- 专注次数: {analysis['focus_sessions']}{NL}"
         return report
-
+# ...
     def batch_create_tasks(self, task_list: List[dict]) -> List[str]:
         """批量创建任务（PRO 专属）"""
         ids = []
@@ -324,7 +316,7 @@ class ProductivityEngine:
                                    item.get("due"), item.get("tags"))
             ids.append(task.id)
         return ids
-
+# ...
 engine = ProductivityEngine()
 engine.create_task("完成项目报告", "high", "今天", ["工作", "报告"])
 engine.create_task("团队会议", "medium", "明天", ["会议"])
@@ -380,7 +372,7 @@ productivity:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -392,7 +384,7 @@ productivity:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -464,7 +456,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -477,9 +469,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

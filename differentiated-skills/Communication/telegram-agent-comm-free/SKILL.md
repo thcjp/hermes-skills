@@ -27,8 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 电报通信助手 免费版
 
 ## 概述
@@ -40,7 +41,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 单账号发送 | 通过默认 `accountId` 向指定用户发送 Telegram 消息 |
 | 标准消息格式 | 统一 `action / channel / target / message` 字段结构 |
 | 任务汇报模板 | 提供任务开始、完成、遇阻三类消息模板 |
@@ -200,12 +201,12 @@ message({
 # send-log.sh
 LOG_FILE="$HOME/logs/telegram-send.log"
 mkdir -p "$(dirname "$LOG_FILE")"
-
+# ...
 log_send() {
   local msg="$1"
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] SEND: ${msg}" >> "$LOG_FILE"
 }
-
+# ...
 # 在发送消息后调用
 log_send "脚本执行完成通知已发送"
 ```
@@ -213,7 +214,7 @@ log_send "脚本执行完成通知已发送"
 ## 免费版与专业版对比
 
 | 能力 | 免费版 | 专业版 |
-| --- | :---: | :---: |
+|:-----|:-----|:-----|
 | 单账号文本发送 | 支持 | 支持 |
 | 多角色账号映射 | - | 支持 |
 | 批量消息调度 | - | 支持 |
@@ -253,7 +254,7 @@ tg_send() {
   # 此处由 Agent 解析并调用 message 工具
   echo "[TG-SEND] target=${target} msg=${msg}"
 }
-
+# ...
 # 使用示例
 tg_send "✅ 数据库备份完成 $(date '+%F %T')"
 tg_send "🚨 磁盘使用率超过 90%" "100001"
@@ -267,7 +268,7 @@ tg_send "🚨 磁盘使用率超过 90%" "100001"
 # crontab -e
 # 每天早上 8:00 发送每日提醒
 0 8 * * * /path/to/agent run "通过 telegram-agent-comm 发送消息：☀️ 早上好，今日待办事项已整理至 ~/todo/today.md"
-
+# ...
 # 每周一生成周报提醒
 0 9 * * 1 /path/to/agent run "通过 telegram-agent-comm 发送消息：📊 请提交本周工作周报"
 ```
@@ -283,7 +284,7 @@ tg_send "🚨 磁盘使用率超过 90%" "100001"
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :------- | :----- | :--------- | :--------- |
+|---:|---:|---:|---:|
 | Telegram Bot Token | API 凭证 | 必需 | 通过 `@BotFather` 创建机器人获取 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | Node.js | 运行时 | 可选 | 部分脚本执行需要，v16+ |
@@ -300,9 +301,8 @@ tg_send "🚨 磁盘使用率超过 90%" "100001"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

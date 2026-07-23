@@ -20,6 +20,8 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # REST API 参考手册
 
@@ -27,11 +29,10 @@ pricing_model: "monthly"
 
 **范围外**（本技能不做）: 逆向工程闭源 API、代用户执行实际 API 请求、管理用户 API Key、代理 API 调用。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | REST API参考手册处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,13 +40,13 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **147 服务覆盖**: 涵盖 AI/ML、支付、通信、CRM、数据库、媒体等 16 大类服务 | 支持 | 支持 |
-| **认证文档**: 每个服务的认证方式（API Key / OAuth2 / Bearer Token / Basic Auth） | 不支持 | 支持 |
-| **端点参考**: 含 curl 示例的端点说明,支持快速查阅 | 不支持 | 支持 |
-| **速率限制**: 各服务的 `X-RateLimit-Remaining` 头与 429 处理策略 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -55,7 +56,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -63,7 +64,6 @@ pricing_model: "monthly"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -108,7 +108,7 @@ export API_KEY="your_api_key_here"
 ## API 分类索引
 
 | 分类 | 文件 | 代表服务 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | AI/ML | `apis/ai-ml.md` | anthropic, openai, cohere, groq, mistral, perplexity, huggingface, replicate, stability, elevenlabs, deepgram, assemblyai |
 | Payments | `apis/payments.md` | stripe, paypal, square, plaid, chargebee, paddle, lemonsqueezy, recurly, wise, coinbase, binance |
 | Communication | `apis/communication.md` | twilio, sendgrid, mailgun, postmark, resend, mailchimp, slack, discord, telegram, zoom |
@@ -129,7 +129,7 @@ export API_KEY="your_api_key_here"
 ## 参考文件
 
 | 文件 | 用途 |
-| --- | --- |
+|:------|------:|
 | `setup.md` | 使用指南与首次配置 |
 | `credentials.md` | 多账户凭证命名规范 `{SERVICE}_{ACCOUNT}_{TYPE}` |
 | `auth.md` | 认证模式详解（API Key / OAuth2 / Bearer / Basic） |
@@ -137,7 +137,7 @@ export API_KEY="your_api_key_here"
 | `resilience.md` | 错误处理与重试模式 |
 | `webhooks.md` | Webhook 签名验证与重试策略 |
 
-## 核心能力
+## 能力速查
 1. **先定位文件** — 用 API 分类索引表找到服务所属类别文件
 2. **先读索引再跳转** — 每个文件顶部有索引表,标注服务名与行号,按行号读取对应段落
 3. **必带 Content-Type** — POST/PUT/PATCH 请求需 `Content-Type: application/json`
@@ -242,9 +242,8 @@ sed -n '180,250p' apis/communication.md
 
 ## 错误处理
 
-
 | 错误场景 | 原因分析 | 处理方式 |
-|---------|---------|---------|
+|---:|:---|---:|
 | 缺少 `Content-Type` | POST 请求未设 `Content-Type: application/json` | 所有 POST/PUT/PATCH 必带该头,否则返回 415 或 400 |
 | API Key 暴露在 URL | 将密钥放在查询参数 `?api_key=xxx` | 改用请求头 `Authorization: Bearer xxx`,避免日志泄露 |
 | 忽略分页 | 未处理 `cursor` / `next_page_token` | 默认返回 10-25 项,需循环分页获取完整数据 |

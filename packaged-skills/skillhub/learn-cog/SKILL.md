@@ -20,16 +20,17 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 个性化学习助手
 
 AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 个性化学习助手处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ AI驱动的个性化学习助手，支持项目教程、语言学习、写作反
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -54,7 +55,7 @@ AI驱动的个性化学习助手，支持项目教程、语言学习、写作反
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | CellCog SDK | Python库 | 可选 | `pip install -U cellcog` |
 | CELLCOG_API_KEY | API密钥 | 可选 | CellCog平台获取 |
@@ -63,7 +64,6 @@ AI驱动的个性化学习助手，支持项目教程、语言学习、写作反
 ### 可用性分类
 - **分类**: MD+EXEC（）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行学习辅导任务
-
 
 **API Key配置方式**:
 ```bash
@@ -153,21 +153,20 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1：学习React Hooks
 
 ```
 用户: Teach me React hooks, I know basic JavaScript, never used React
-
+# ...
 Agent: React Hooks学习计划：
 1. What problem do hooks solve? - 状态逻辑复用与组件简化
 2. useState with simple examples - 计数器示例
 3. useEffect with practical use cases - 数据获取与副作用
 4. When to use which hook - 决策树
 5. A mini-project putting it together - Todo App
-
+# ...
 [附带可运行的代码示例]
 ```
 
@@ -175,7 +174,7 @@ Agent: React Hooks学习计划：
 
 ```
 用户: Create a study guide for the AWS Solutions Architect exam
-
+# ...
 Agent: AWS Solutions Architect学习指南：
 - Key services and when to use them (EC2, S3, RDS, Lambda...)
 - Networking concepts (VPC, Subnets, Route53...)
@@ -188,7 +187,7 @@ Agent: AWS Solutions Architect学习指南：
 
 ```
 用户: Help me practice Japanese, Level: JLPT N4, Focus: Conversational
-
+# ...
 Agent: 日语对话练习 - 在东京问路：
 - Scenario: Asking for directions in Tokyo
 - Vocabulary list: 駅、交差点、右、左...
@@ -201,7 +200,7 @@ Agent: 日语对话练习 - 在东京问路：
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | CellCog SDK未安装 | 未执行pip install | 运行 `pip install -U cellcog` 安装SDK |
 | CELLCOG_API_KEY缺失 | 环境变量未设置 | 设置 `CELLCOG_API_KEY` 环境变量；或使用Agent内置LLM |
 | 学习内容过浅/过深 | 未说明当前水平 | 明确说明水平：Complete beginner / Intermediate / Advanced |

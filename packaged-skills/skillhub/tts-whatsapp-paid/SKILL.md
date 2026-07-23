@@ -34,28 +34,30 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
 # WhatsApp语音消息专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| WhatsApp语音消息专业版定时发送 | 不支持 | 支持 |
+| WhatsApp语音消息专业版批量处理 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 免费版 vs 专业版对比
 | 能力 | 免费版 | 专业版 | 增量价值 |
-|:-----|:-------|:-------|:---------|
+|:-----|:-----|:-----|:-----|
 | TTS 合成 | 支持 | 支持 | - |
 | 多语言 | 40+ | 40+ | - |
 | 单人发送 | 支持 | 支持 | - |
@@ -101,7 +103,7 @@ tts-whatsapp "各位同事,明天上午十点有团队会议,请准时参加。"
     --lang zh_CN \
     --voice zh_CN-huayan-medium \
     --target "120363257357161211@g.us"
-
+# ...
 # 群组通知(多语言版本)
 tts-whatsapp "Team, reminder: meeting tomorrow at 10 AM." \
     --lang en_US \
@@ -115,18 +117,18 @@ tts-whatsapp "Team, reminder: meeting tomorrow at 10 AM." \
 import csv
 import subprocess
 import os
-
+# ...
 class BatchWhatsAppSender:
     """批量 WhatsApp 语音发送器"""
-
+# ...
     def __init__(self, default_lang="zh_CN", voice="zh_CN-huayan-medium"):
         self.default_lang = default_lang
         self.voice = voice
         self.results = []
-
+# ...
     def send_from_csv(self, csv_path, template):
         """从 CSV 批量发送
-
+# ...
         Args:
             csv_path: 联系人 CSV 文件路径
             template: 消息模板,用 {name} 等占位符
@@ -137,11 +139,11 @@ class BatchWhatsAppSender:
                 # 变量替换
                 message = template.format(**row)
                 target = row["phone"]
-
+# ...
                 # 根据联系人语言选择
                 lang = row.get("language", self.default_lang)
                 voice = row.get("voice", self.voice)
-
+# ...
                 # 发送
                 result = self.send_one(message, target, lang, voice)
                 self.results.append({
@@ -150,9 +152,9 @@ class BatchWhatsAppSender:
                     "status": "success" if result else "failed",
                     "message": message[:50]
                 })
-
+# ...
         self.generate_report()
-
+# ...
     def send_one(self, text, target, lang, voice):
         """发送单条"""
         try:
@@ -168,23 +170,23 @@ class BatchWhatsAppSender:
         except Exception as e:
             print(f"发送失败 {target}: {e}")
             return False
-
+# ...
     def generate_report(self):
         """生成发送报告"""
         success = sum(1 for r in self.results if r["status"] == "success")
         failed = len(self.results) - success
-
+# ...
         print(f"\n发送报告")
         print(f"成功: {success}")
         print(f"失败: {failed}")
         print(f"总计: {len(self.results)}")
-
+# ...
         # 保存详细报告
         with open("send_report.csv", "w", encoding="utf-8") as f:
             f.write("name,phone,status,message\n")
             for r in self.results:
                 f.write(f"{r['name']},{r['phone']},{r['status']},{r['message']}\n")
-
+# ...
 # 使用
 sender = BatchWhatsAppSender()
 sender.send_from_csv(
@@ -208,34 +210,34 @@ John,+15555550123,en_US,Product Review,2026-07-20 14:00
 import schedule
 import time
 import subprocess
-
+# ...
 class ScheduledSender:
     """定时语音消息发送器"""
-
+# ...
     def __init__(self):
         self.jobs = []
-
+# ...
     def add_daily(self, time_str, message, target, lang="zh_CN"):
         """添加每日定时任务"""
         schedule.every().day.at(time_str).do(
             self._send, message=message, target=target, lang=lang
         )
         self.jobs.append({"type": "daily", "time": time_str, "target": target})
-
+# ...
     def add_weekly(self, day, time_str, message, target, lang="zh_CN"):
         """添加每周定时任务"""
         getattr(schedule.every(), day).at(time_str).do(
             self._send, message=message, target=target, lang=lang
         )
         self.jobs.append({"type": "weekly", "day": day, "time": time_str})
-
+# ...
     def _send(self, message, target, lang):
         """执行发送"""
         cmd = ["tts-whatsapp", message, "--lang", lang, "--target", target]
         result = subprocess.run(cmd, capture_output=True, text=True)
         status = "成功" if result.returncode == 0 else "失败"
         print(f"[{time.strftime('%H:%M:%S')}] {status}: {message[:30]}")
-
+# ...
     def run(self):
         """启动调度器"""
         print(f"已加载 {len(self.jobs)} 个定时任务")
@@ -244,17 +246,17 @@ class ScheduledSender:
         while True:
             schedule.run_pending()
             time.sleep(60)
-
+# ...
 # 使用
 scheduler = ScheduledSender()
-
+# ...
 # 每天早上 9 点发送提醒
 scheduler.add_daily("09:00", "早上好!记得查看今日待办事项。", "+8613800138000")
-
+# ...
 # 每周一发送周报提醒
 scheduler.add_weekly("monday", "10:00",
     "各位同事,请记得提交本周工作周报。", "group-id@g.us")
-
+# ...
 scheduler.run()
 ```
 
@@ -265,9 +267,9 @@ scheduler.run()
 from fastapi import FastAPI, BackgroundTasks
 from fastapi.responses import JSONResponse
 import subprocess
-
+# ...
 app = FastAPI(title="WhatsApp TTS 服务", version="1.0.0")
-
+# ...
 @app.post("/api/v1/send")
 async def send_voice(
     text: str,
@@ -283,13 +285,13 @@ async def send_voice(
            "--quality", quality, "--speed", str(speed)]
     if voice:
         cmd.extend(["--voice", voice])
-
+# ...
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
-
+# ...
     if result.returncode == 0:
         return JSONResponse({"status": "success", "target": target})
     return JSONResponse({"status": "failed", "error": result.stderr}, status_code=500)
-
+# ...
 @app.post("/api/v1/broadcast")
 async def broadcast(
     text: str,
@@ -304,10 +306,10 @@ async def broadcast(
                 ["tts-whatsapp", text, "--lang", lang, "--target", target],
                 capture_output=True, timeout=30
             )
-
+# ...
     background_tasks.add_task(send_batch)
     return {"status": "accepted", "count": len(targets)}
-
+# ...
 @app.post("/api/v1/schedule")
 async def schedule_send(
     text: str,
@@ -322,7 +324,7 @@ async def schedule_send(
         json.dump({"text": text, "target": target, "time": send_at, "lang": lang}, f)
         f.write("\n")
     return {"status": "scheduled", "send_at": send_at}
-
+# ...
 # 启动: uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
@@ -338,7 +340,7 @@ async def schedule_send(
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | piper-tts | Python 库 | 必需 | `pip install piper-tts` |
 | ffmpeg | 系统工具 | 必需 | `brew install ffmpeg` / `apt install ffmpeg` |
 | schedule | Python 库 | 可选(定时) | `pip install schedule` |
@@ -362,7 +364,7 @@ async def schedule_send(
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | tts-whatsapp处理的内容输入 |,  |
 | content | string | 否 | tts-whatsapp处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -390,17 +392,16 @@ async def schedule_send(
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | LLM | 模型 | 是 | 需要LLM进行内容生成, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要, 本地LLM不需要 |
 
@@ -435,7 +436,7 @@ schedules:
     message: "早上好!记得查看今日待办。"
     target: "+8613800138000"
     lang: "zh_CN"
-
+# ...
   - name: "周报提醒"
     day: "monday"
     time: "10:00"
@@ -446,7 +447,7 @@ schedules:
 
 ### 消息模板变量
 | 变量 | 说明 | 示例 |
-|:-----|:-----|:-----|
+|:------:|--------|:-------|
 | `{name}` | 联系人姓名 | 张三 |
 | `{phone}` | 手机号 | +86138... |
 | `{event}` | 事件名称 | 产品评审会 |
@@ -457,8 +458,8 @@ schedules:
 ## 常见问题
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -491,17 +492,14 @@ schedules:
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|----------|----------|----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

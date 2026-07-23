@@ -17,19 +17,20 @@ homepage: "https://skillhub.cn"
 tags:
   - 创意设计
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # 构建执行引擎
 
 执行实现计划中的任务,采用TDD工作流、自动提交与阶段门检查。从 `plan.md` 选取下一个未完成任务,实现、提交、更新进度,直至全部完成。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 构建执行引擎处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -61,7 +62,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -199,7 +199,7 @@ export API_KEY="your_api_key_here"
 
 ### 16. 理性化防护目录
 | 想法 | 现实 |
-|------|------|
+|:---:|:---:|
 | "太简单不用测试" | 简单代码也会坏,写测试 |
 | "以后加测试" | 后写的测试立即通过,证明不了什么 |
 | "我手动测过了" | 手动测试不持久,自动化才持久 |
@@ -220,7 +220,6 @@ export API_KEY="your_api_key_here"
 7. 测试输出精简:`head -50` 或 `--reporter=dot`/`-q`,只显示失败详情
 8. 验证后再说完成:运行命令、读完整输出、确认成功后再标记完成
 
-
 ### 输出格式
 
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
@@ -229,7 +228,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:------|------:|:------|
 | 执行计划 | plan.md + spec.md | 全部任务完成 + 提交记录 |
 | 恢复中断 | [~]标记的任务 | 从断点继续 |
 | 单任务执行 | --task X.Y | 该任务实现+测试+提交 |
@@ -252,7 +251,7 @@ export API_KEY="your_api_key_here"
 ### 示例1:任务执行循环
 ```
 Starting Task 2.1: 实现用户登录接口
-
+# ...
 1. 研究: project_code_search(query="login auth", project="myapp")
    找到 src/auth/login.ts,读取
 2. TDD Red: 写 tests/login.test.ts,运行 `make test` 确认失败
@@ -267,10 +266,10 @@ Starting Task 2.1: 实现用户登录接口
 Tests failing after Task 3.2:
   FAIL  tests/payment.test.js
   ● payment processor › should reject invalid card
-
+# ...
   Expected: rejected
   Received: accepted
-
+# ...
 1. Attempt to fix
 2. Rollback task changes (git checkout)
 3. Pause for manual intervention
@@ -293,16 +292,16 @@ All tasks complete. Final verification:
   ✓ Build successful
   $ make test
   Tests: 120 passed, 0 failed
-
+# ...
 **Status:** [x] Complete
-
+# ...
 <solo:done/>
 ```
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 无plan.md | 未运行 `/plan` 创建轨道 | 提示 "No plans found. Run /plan first." |
 | 测试失败 | 实现破坏现有功能 | 尝试修复 → 失败则 `git checkout` 回滚 → 暂停等用户输入 |
 | 阶段检查点失败 | 阶段边界测试或linter失败 | 修复后重跑该阶段验证,不跳过 |

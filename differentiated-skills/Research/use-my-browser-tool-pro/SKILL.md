@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 真实浏览器控制专业版是企业级的真实浏览器自动化解决方案。在完整兼容免费版所有单浏览器控制能力的基础上,专业版引入了批量会话管理、多浏览器实例控制、安全审计、团队协作等高级能力,适用于企业级 Web 自动化测试、跨账号数据采集、批量表单处理等复杂场景。
 
@@ -32,7 +34,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 真实浏览器控制专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -47,11 +49,11 @@ pricing_model: "per_use"
   "concurrency": 3,
   "auto_reconnect": true
 }
-
+# ...
 tmwd batch start batch_sessions.json
-
+# ...
 tmwd batch status
-
+# ...
 tmwd batch exec --all-sessions --code "return document.querySelector('.notification').innerText"
 ```
 
@@ -66,10 +68,10 @@ tmwd batch exec --all-sessions --code "return document.querySelector('.notificat
 ```bash
 tmwd profile create --name "account_a" --isolated
 tmwd profile create --name "account_b" --isolated
-
+# ...
 tmwd exec --profile "account_a" --code "document.querySelector('#user-menu').click()"
 tmwd exec --profile "account_b" --code "document.querySelector('#user-menu').click()"
-
+# ...
 tmwd profile list
 tmwd profile delete --name "old_account"
 ```
@@ -84,13 +86,13 @@ tmwd profile delete --name "old_account"
 
 ```bash
 tmwd audit enable --log-dir ./audit_logs
-
+# ...
 tmwd audit log --date $(date +%Y-%m-%d)
-
+# ...
 tmwd audit log --session "session_1"
-
+# ...
 tmwd audit export --format csv --output audit_report.csv
-
+# ...
 ```
 
 **输入**: 用户提供安全审计与操作日志所需的指令和必要参数。
@@ -103,11 +105,11 @@ tmwd audit export --format csv --output audit_report.csv
 
 ```bash
 tmwd team create --name "qa_team"
-
+# ...
 tmwd profile share --name "test_env" --team "qa_team"
-
+# ...
 tmwd session share --id "session_1" --team "qa_team"
-
+# ...
 tmwd team resources --team "qa_team"
 ```
 
@@ -121,9 +123,9 @@ tmwd team resources --team "qa_team"
 
 ```bash
 tmwd exec --code "document.querySelector('#btn').click()" --auto-strategy
-
+# ...
 tmwd exec --code "document.querySelector('#btn').click()" --force-cdp
-
+# ...
 tmwd exec --code "document.querySelector('#btn').click()" --stealth
 ```
 
@@ -149,9 +151,9 @@ tmwd exec --code "document.querySelector('#btn').click()" --stealth
     }
   ]
 }
-
+# ...
 tmwd schedule start schedule.json
-
+# ...
 tmwd schedule status
 ```
 
@@ -196,9 +198,9 @@ cat > test_sessions.json << 'EOF'
   "concurrency": 3
 }
 EOF
-
+# ...
 tmwd batch start test_sessions.json
-
+# ...
 tmwd batch exec --all-sessions --code "
   var result = {
     title: document.title,
@@ -208,9 +210,9 @@ tmwd batch exec --all-sessions --code "
   };
   return result;
 "
-
+# ...
 tmwd batch results --output test_results.json
-
+# ...
 tmwd report generate --input test_results.json --output qa_report.html
 ```
 
@@ -228,9 +230,9 @@ cat > social_sessions.json << 'EOF'
   "concurrency": 3
 }
 EOF
-
+# ...
 tmwd batch start social_sessions.json
-
+# ...
 tmwd batch exec --all-sessions --code "
   var metrics = {
     followers: document.querySelector('.follower-count').innerText,
@@ -239,9 +241,9 @@ tmwd batch exec --all-sessions --code "
   };
   return metrics;
 "
-
+# ...
 tmwd batch results --output social_metrics.json
-
+# ...
 tmwd report consolidate --input social_metrics.json --output social_report.html
 ```
 
@@ -258,13 +260,13 @@ cat > form_data.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 tmwd batch form-fill --input form_data.json --url "https://form.example.com/apply"
-
+# ...
 tmwd batch verify --input form_data.json
-
+# ...
 tmwd batch submit --input form_data.json --confirm
-
+# ...
 tmwd report generate --input results.json --output form_report.html
 ```
 
@@ -272,7 +274,7 @@ tmwd report generate --input results.json --output form_report.html
 ### 依赖详情
 ```bash
 skill-platform plugins install skill-platform-tmwd-pro --registry https://registry.npmjs.org
-
+# ...
 tmwd --version --edition
 ```
 
@@ -303,7 +305,7 @@ cat > enterprise_config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 tmwd config init enterprise_config.json
 ```
 
@@ -318,14 +320,13 @@ cat > first_batch.json << 'EOF'
   "concurrency": 2
 }
 EOF
-
+# ...
 tmwd batch start first_batch.json
-
+# ...
 tmwd batch status
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 ### 企业级配置
@@ -401,9 +402,9 @@ tmwd batch status
 ```bash
 tmwd_status()
 tmwd_exec(code="document.querySelector('#btn').click()")
-
+# ...
 tmwd batch start sessions.json
-
+# ...
 tmwd audit enable
 tmwd profile create --name "test_env" --isolated
 ```
@@ -411,16 +412,16 @@ tmwd profile create --name "test_env" --isolated
 ### 2. 批量任务的性能优化
 ```bash
 tmwd batch start sessions.json --concurrency 5
-
+# ...
 tmwd session pool create --size 10 --profile "default"
 ```
 
 ### 3. 安全审计的最佳实践
 ```bash
 tmwd audit enable --log-dir ./audit_logs --encrypt
-
+# ...
 tmwd audit export --format csv --output monthly_audit.csv --period "2026-07"
-
+# ...
 tmwd audit config set --retention-days 90 --auto-cleanup
 ```
 
@@ -428,13 +429,13 @@ tmwd audit config set --retention-days 90 --auto-cleanup
 ```bash
 tmwd team permissions --role "operator" --permissions "execute,create_session"
 tmwd team permissions --role "viewer" --permissions "view,export_logs"
-
+# ...
 tmwd profile share --name "test_env" --team "qa_team" --read-only
 ```
 
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | 真实浏览器控制 | 支持 | 支持 |
 | 页面导航与提取 | 支持 | 支持 |
 | JavaScript 执行 | 支持 | 支持 |
@@ -460,9 +461,9 @@ tmwd profile share --name "test_env" --team "qa_team" --read-only
 
 ```bash
 tmwd session pool create --size 10 --profile "default"
-
+# ...
 tmwd resources status
-
+# ...
 tmwd config set --auto-cleanup --idle-timeout 300
 ```
 
@@ -502,7 +503,7 @@ tmwd report generate --input ci_results.json --format junit --output test_report
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Chrome 浏览器 | 浏览器 | 必需 | 官方网站下载安装 |
 | Tampermonkey | 浏览器扩展 | 必需 | Chrome 应用商店安装 |
 | skill-platform-tmwd-pro | 插件 | 必需 | 通过 `skill-platform plugins install` 安装 |
@@ -515,13 +516,13 @@ tmwd report generate --input ci_results.json --format junit --output test_report
 
 ```bash
 TEAM_API_TOKEN=your_team_api_token
-
+# ...
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=browser_automation
 DB_USER=admin
 DB_PASSWORD=your_password
-
+# ...
 ENCRYPTION_KEY=your_encryption_key
 ```
 
@@ -535,7 +536,7 @@ ENCRYPTION_KEY=your_encryption_key
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

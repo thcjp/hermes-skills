@@ -34,6 +34,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # Excel忍者（专业版）
 
@@ -44,7 +46,7 @@ Excel是办公中最常见的数据载体，但手工处理大量表格既耗时
 ## 脚本总览
 
 | 序号 | 脚本 | 功能 | 典型参数 |
-|------|------|------|----------|
+|---|---|---|----|
 | 1 | **merge_sheets.py** | 多Excel或同文件多sheet合并 | `--inputs 文件或目录 --output out.xlsx` |
 | 2 | **excel_to_csv.py** | 指定sheet导出为CSV | `--input file.xlsx --output file.csv` |
 | 3 | **csv_to_excel.py** | CSV转Excel（单/多CSV转多sheet） | `--input a.csv --output a.xlsx` |
@@ -68,7 +70,7 @@ Excel是办公中最常见的数据载体，但手工处理大量表格既耗时
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Excel忍者(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -76,10 +78,10 @@ Excel是办公中最常见的数据载体，但手工处理大量表格既耗时
 ```bash
 # 安装依赖
 pip install openpyxl pandas xlrd
-
+# ...
 # 或使用自带依赖文件
 pip install -r （请参考skill目录中的脚本文件）
-
+# ...
 # 验证全部脚本可用
 python （请参考skill目录中的脚本文件） --help
 python （请参考skill目录中的脚本文件） --help
@@ -94,13 +96,13 @@ python （请参考skill目录中的脚本文件） \
   --main 客户主表.xlsx \
   --lookups "订单表.xlsx:客户ID" "积分表.xlsx:客户ID" "标签表.xlsx:客户ID" \
   --output 客户全视图.xlsx
-
+# ...
 # 示例：模板填充——用数据表批量生成报表
 python （请参考skill目录中的脚本文件） \
   --template 月报模板.xlsx \
   --data 月度数据.csv \
   --output 生成的月报.xlsx
-
+# ...
 # 示例：条件格式——销售额大于10000的标红
 python （请参考skill目录中的脚本文件） \
   --input 销售表.xlsx \
@@ -116,19 +118,19 @@ python （请参考skill目录中的脚本文件） \
 # 完整数据处理流水线示例
 # 第一步：合并3个月的数据
 python （请参考skill目录中的脚本文件） --inputs 1月.xlsx 2月.xlsx 3月.xlsx --output Q1原始.xlsx
-
+# ...
 # 第二步：去重
 python （请参考skill目录中的脚本文件） --input Q1原始.xlsx --keys 订单号 --keep first --output Q1去重.xlsx
-
+# ...
 # 第三步：校验
 python （请参考skill目录中的脚本文件） --input Q1去重.xlsx --require-cols "订单号,客户,金额" --key-cols "订单号"
-
+# ...
 # 第四步：关联产品信息（VLOOKUP）
 python （请参考skill目录中的脚本文件） --left Q1去重.xlsx --right 产品目录.xlsx --on 产品ID --output Q1完整.xlsx
-
+# ...
 # 第五步：按地区聚合
 python （请参考skill目录中的脚本文件） --input Q1完整.xlsx --group-by 地区 --agg "金额:sum,订单号:count" --output Q1地区统计.xlsx
-
+# ...
 # 第六步：条件格式高亮
 python （请参考skill目录中的脚本文件） --input Q1地区统计.xlsx --column "金额:sum" --rule gt --value 500000 --fill red --output Q1最终报告.xlsx
 ```
@@ -137,7 +139,7 @@ python （请参考skill目录中的脚本文件） --input Q1地区统计.xlsx 
 ### 基础脚本（8个，与免费版一致）
 
 | 脚本 | 功能 | 典型参数 |
-|------|------|----------|
+|---:|---:|---:|
 | merge_sheets.py | 多表合并 | `--inputs 文件或目录 --output out.xlsx` |
 | excel_to_csv.py | Excel转CSV | `--input file.xlsx --output file.csv` |
 | csv_to_excel.py | CSV转Excel | `--input a.csv --output a.xlsx` |
@@ -160,10 +162,10 @@ python （请参考skill目录中的脚本文件） --input Q1地区统计.xlsx 
 ```bash
 # 只保留指定列
 python （请参考skill目录中的脚本文件） --input data.xlsx --columns "姓名,电话,地址" --output 精简.xlsx
-
+# ...
 # 重命名列
 python （请参考skill目录中的脚本文件） --input data.xlsx --rename "姓名:客户名称,电话:联系方式" --output 重命名.xlsx
-
+# ...
 # 选择并重命名
 python （请参考skill目录中的脚本文件） --input data.xlsx --columns "姓名,电话" --rename "姓名:客户名称" --output 结果.xlsx
 ```
@@ -175,10 +177,10 @@ python （请参考skill目录中的脚本文件） --input data.xlsx --columns 
 ```bash
 # 左连接（保留左表全部行）
 python （请参考skill目录中的脚本文件） --left 订单表.xlsx --right 客户表.xlsx --on 客户ID --output 合并.xlsx
-
+# ...
 # 内连接（只保留两表都有的行）
 python （请参考skill目录中的脚本文件） --left 订单表.xlsx --right 客户表.xlsx --on 客户ID --join inner --output 交集.xlsx
-
+# ...
 # 外连接（保留两表全部行）
 python （请参考skill目录中的脚本文件） --left 订单表.xlsx --right 客户表.xlsx --on 客户ID --join outer --output 全集.xlsx
 ```
@@ -193,7 +195,7 @@ python （请参考skill目录中的脚本文件） \
   --main 客户主表.xlsx \
   --lookups "订单表.xlsx:客户ID" "积分表.xlsx:客户ID" "标签表.xlsx:客户ID" \
   --output 客户全视图.xlsx
-
+# ...
 # 每个查找表可以用不同的键列
 python （请参考skill目录中的脚本文件） \
   --main 员工表.xlsx \
@@ -222,7 +224,7 @@ python （请参考skill目录中的脚本文件） \
   --template 月报模板.xlsx \
   --data 部门数据.csv \
   --output 月报输出.xlsx
-
+# ...
 # 模板中的占位符示例：
 # {{部门名称}} 本月销售额：{{销售额}}，同比增长：{{增长率}}%
 ```
@@ -236,13 +238,13 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 按原名映射重命名
 python （请参考skill目录中的脚本文件） --input file.xlsx --rename "Sheet1:1月,Sheet2:2月,Sheet3:3月"
-
+# ...
 # 添加前缀
 python （请参考skill目录中的脚本文件） --input file.xlsx --prefix "2024_"
-
+# ...
 # 添加后缀
 python （请参考skill目录中的脚本文件） --input file.xlsx --suffix "_已审核"
-
+# ...
 # 按索引重命名
 python （请参考skill目录中的脚本文件） --input file.xlsx --rename "0:汇总,1:明细,2:图表"
 ```
@@ -254,16 +256,16 @@ python （请参考skill目录中的脚本文件） --input file.xlsx --rename "
 ```bash
 # 大于某值标红
 python （请参考skill目录中的脚本文件） --input data.xlsx --column 金额 --rule gt --value 10000 --fill red --output 高亮.xlsx
-
+# ...
 # 小于某值标黄
 python （请参考skill目录中的脚本文件） --input data.xlsx --column 库存 --rule lt --value 10 --fill yellow --output 预警.xlsx
-
+# ...
 # 介于两个值之间标绿
 python （请参考skill目录中的脚本文件） --input data.xlsx --column 分数 --rule between --value 80 100 --fill green --output 优秀.xlsx
-
+# ...
 # 重复值标红
 python （请参考skill目录中的脚本文件） --input data.xlsx --column 订单号 --rule duplicate --fill red --output 查重.xlsx
-
+# ...
 # 色阶（渐变色）
 python （请参考skill目录中的脚本文件） --input data.xlsx --column 销售额 --rule colorscale --output 色阶.xlsx
 ```
@@ -302,16 +304,16 @@ python （请参考skill目录中的脚本文件） --input data.xlsx --columns 
 ```bash
 # 第一步：合并5个渠道数据
 python （请参考skill目录中的脚本文件） --inputs ./渠道数据/ --output 本周原始.xlsx
-
+# ...
 # 第二步：去重
 python （请参考skill目录中的脚本文件） --input 本周原始.xlsx --keys 订单号 --keep first --output 本周去重.xlsx
-
+# ...
 # 第三步：关联产品信息
 python （请参考skill目录中的脚本文件） --left 本周去重.xlsx --right 产品目录.xlsx --on 产品ID --output 本周完整.xlsx
-
+# ...
 # 第四步：按渠道分组统计
 python （请参考skill目录中的脚本文件） --input 本周完整.xlsx --group-by 渠道 --agg "访客数:sum,转化率:mean,金额:sum" --output 本周周报.xlsx
-
+# ...
 # 第五步：高亮高转化渠道
 python （请参考skill目录中的脚本文件） --input 本周周报.xlsx --column "转化率:mean" --rule gt --value 0.05 --fill green --output 本周周报_高亮.xlsx
 ```
@@ -328,10 +330,10 @@ python （请参考skill目录中的脚本文件） \
   --main 客户主表.xlsx \
   --lookups "订单表.xlsx:客户ID" "积分表.xlsx:客户ID" "标签表.xlsx:客户ID" \
   --output 客户360视图.xlsx
-
+# ...
 # 筛选高价值客户
 python （请参考skill目录中的脚本文件） --input 客户360视图.xlsx --where "总消费>50000" --output 高价值客户.xlsx
-
+# ...
 # 选择关键字段
 python （请参考skill目录中的脚本文件） --input 高价值客户.xlsx --columns "客户ID,姓名,总消费,积分,标签" --output 高价值客户_精简.xlsx
 ```
@@ -345,7 +347,7 @@ python （请参考skill目录中的脚本文件） --input 高价值客户.xlsx
 ```bash
 # 准备模板（含{{部门}}、{{收入}}、{{支出}}、{{利润}}占位符）
 # 准备数据表（CSV，每行一个部门的数据）
-
+# ...
 # 批量生成
 python （请参考skill目录中的脚本文件） \
   --template 月报模板.xlsx \
@@ -362,13 +364,13 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 第一步：校验必填列和键列
 python （请参考skill目录中的脚本文件） --input 员工表.xlsx --require-cols "工号,姓名,身份证号,部门" --key-cols "工号,身份证号"
-
+# ...
 # 第二步：去重
 python （请参考skill目录中的脚本文件） --input 员工表.xlsx --keys 工号 --keep first --output 员工去重.xlsx
-
+# ...
 # 第三步：身份证号设为文本格式（避免科学计数法）
 python （请参考skill目录中的脚本文件） --input 员工去重.xlsx --columns "身份证号,银行卡号" --output 员工最终.xlsx
-
+# ...
 # 第四步：按部门统计人数
 python （请参考skill目录中的脚本文件） --input 员工最终.xlsx --group-by 部门 --agg "工号:count" --output 部门人数.xlsx
 ```
@@ -382,7 +384,7 @@ python （请参考skill目录中的脚本文件） --input 员工最终.xlsx --
 ```bash
 # 宽表转长表（转置）
 python （请参考skill目录中的脚本文件） --input 宽表.xlsx --output 长表.xlsx
-
+# ...
 # 转置后按月份聚合
 python （请参考skill目录中的脚本文件） --input 长表.xlsx --group-by 月份 --agg "销售额:sum" --output 月度趋势.xlsx
 ```
@@ -396,7 +398,7 @@ python （请参考skill目录中的脚本文件） --input 长表.xlsx --group-
 ```bash
 # 批量重命名（添加前缀）
 python （请参考skill目录中的脚本文件） --input 年度数据.xlsx --prefix "2024_"
-
+# ...
 # 或按序号重命名
 python （请参考skill目录中的脚本文件） --input 年度数据.xlsx --rename "0:Q1,13:Q2,26:Q3,39:Q4"
 ```
@@ -406,7 +408,7 @@ python （请参考skill目录中的脚本文件） --input 年度数据.xlsx --
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐脚本组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:---:|:---:|:---:|:---:|
 | 运营人员 | 周报汇总、渠道分析 | merge + aggregate + format_conditional | 自动化报表生成，高亮关键指标 |
 | 数据分析师 | 多源关联、宽长表转换 | vlookup_multi + select_columns + transpose | 数据整合一键完成，格式灵活转换 |
 | 财务人员 | 月报批量生成、费用拆分 | template_fill + split + validate | 模板批量填充，费用自动拆分 |
@@ -452,12 +454,12 @@ python （请参考skill目录中的脚本文件） --inputs ./分块结果/ --o
 for /f %%f in ('dir /b *.xlsx') do (
     python （请参考skill目录中的脚本文件） --input "%%f" --output "%%~nf.csv"
 )
-
+# ...
 # 批量转换（Linux/macOS）
 for f in *.xlsx; do
     python （请参考skill目录中的脚本文件） --input "$f" --output "${f%.xlsx}.csv"
 done
-
+# ...
 # 批量处理出错时的错误汇总
 # 脚本会自动记录：文件名 | 错误类型 | 错误信息
 # 处理完成后输出错误汇总表
@@ -466,7 +468,7 @@ done
 ## 技术栈
 
 | 技术 | 用途 | 说明 |
-|------|------|------|
+|:------|------:|:------|
 | openpyxl | 读写.xlsx | 保留格式、公式、多工作表，支持read_only/write_only模式 |
 | pandas | 数据分析/透视 | 筛选、聚合、合并多表，性能优于openpyxl |
 | xlrd | 读取旧格式.xls | 只读模式，兼容旧文件 |
@@ -479,7 +481,7 @@ done
 
 ```python
 import openpyxl
-
+# ...
 wb = openpyxl.load_workbook("input.xlsx", read_only=True, data_only=True)
 ws = wb.active
 rows = list(ws.iter_rows(min_row=1, values_only=True))
@@ -492,7 +494,7 @@ wb.close()
 
 ```python
 import pandas as pd
-
+# ...
 df = pd.read_excel("input.xlsx", sheet_name=0, engine="openpyxl")
 ```
 
@@ -502,7 +504,7 @@ df = pd.read_excel("input.xlsx", sheet_name=0, engine="openpyxl")
 # openpyxl读取区域
 for row in ws["A1:D10"]:
     ...
-
+# ...
 # pandas读取区域
 df = pd.read_excel("input.xlsx", usecols="A:D", header=0, nrows=100)
 ```
@@ -514,7 +516,7 @@ df = pd.read_excel("input.xlsx", usecols="A:D", header=0, nrows=100)
 ```python
 from openpyxl import Workbook
 from openpyxl.styles import Font, Alignment
-
+# ...
 wb = Workbook()
 ws = wb.active
 ws.title = "结果"
@@ -553,7 +555,7 @@ wb.save("existing.xlsx")
 ## 常见任务速查
 
 | 任务 | 推荐脚本 | 备选方案 |
-|------|----------|----------|
+|---:|:---|---:|
 | 多文件合并 | merge_sheets.py | pandas read_excel + concat + to_excel |
 | CSV与Excel互转 | excel_to_csv.py / csv_to_excel.py | pandas读写 |
 | 按条件筛选 | filter_excel.py | df[df["列"]==值] / df.query() |
@@ -579,9 +581,8 @@ wb.save("existing.xlsx")
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:------:|--------|:-------|:------:|--------|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -647,7 +648,7 @@ format_conditional.py支持五种规则：
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|:--:|---:|----|
 | 文件读取失败 | 文件路径含特殊字符或文件被占用 | 检查路径是否含中文引号；关闭Excel后重试 | 高 |
 | 列名找不到 | 列名含空格或不可见字符 | 用validate_excel.py检查实际列名；去除首尾空格 | 高 |
 | 合并后数据错位 | 各文件列名不一致 | 统一列名后再合并；用select_columns.py对齐列 | 高 |
@@ -669,7 +670,7 @@ format_conditional.py支持五种规则：
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|----|----|----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | openpyxl | Python库 | 必需 | `pip install openpyxl` |
 | pandas | Python库 | 必需 | `pip install pandas` |
@@ -735,7 +736,7 @@ format_conditional.py支持五种规则：
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | 免费体验版 | ¥0 | 8个核心脚本（合并/转换/筛选/拆分/去重/聚合/校验）+ 基础示例 + 基础FAQ | 个人试用、轻量表格处理 |
 | 收费专业版 | ¥29.9/月 | 全部16个脚本（含VLOOKUP/模板填充/条件格式等高级功能）+ 多角色指南 + 性能优化 + 优先支持 | 团队/企业、高频表格处理 |
 

@@ -40,8 +40,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # Brave搜索工具(免费版)
 
 ## 概述
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ### 适用场景
 
 | 场景 | 是否推荐本工具 |
-|:-----|:--------------|
+|---|-------|
 | 搜索文档或 API 参考 | 推荐 |
 | 查询事实或最新信息 | 推荐 |
 | 从特定 URL 提取内容 | 推荐 |
@@ -110,10 +111,10 @@ suggested_price: 29.9
 ```bash
 # 基础搜索(5条结果)
 ./search.js "Python asyncio gather 用法"
-
+# ...
 # 获取更多结果
 ./search.js "Python asyncio gather 用法" -n 10
-
+# ...
 # 包含页面内容(Markdown格式)
 ./search.js "Python asyncio gather 用法" --content
 ```
@@ -125,7 +126,7 @@ suggested_price: 29.9
 ```bash
 # 查询事实
 ./search.js "Python 3.12 新特性"
-
+# ...
 # 查询最新信息
 ./search.js "2026 年 AI 智能体最新进展" -n 10
 ```
@@ -137,7 +138,7 @@ suggested_price: 29.9
 ```bash
 # 提取页面内容
 ./content.js https://example.com/article
-
+# ...
 # 提取并保存
 ./content.js https://example.com/article > article.md
 ```
@@ -156,7 +157,7 @@ suggested_price: 29.9
 # 进入工具目录,安装依赖
 cd /path/to/brave-search-tool
 npm ci
-
+# ...
 # 配置 API Key
 export BRAVE_API_KEY="your-brave-api-key"
 ```
@@ -166,13 +167,13 @@ export BRAVE_API_KEY="your-brave-api-key"
 ```bash
 # 基础搜索(5条结果)
 ./search.js "查询词"
-
+# ...
 # 指定结果数量
 ./search.js "查询词" -n 10
-
+# ...
 # 包含页面内容
 ./search.js "查询词" --content
-
+# ...
 # 组合使用
 ./search.js "查询词" -n 3 --content
 ```
@@ -195,12 +196,12 @@ export BRAVE_API_KEY="your-brave-api-key"
 摘要: 来自搜索结果的描述
 内容: (使用 --content 标志时显示)
   从页面提取的 Markdown 内容...
-
+# ...
 --- 结果 2 ---
 标题: 网页标题
 链接: https://example.com/page
 摘要: 来自搜索结果的描述
-
+# ...
 ...
 ```
 
@@ -209,13 +210,13 @@ export BRAVE_API_KEY="your-brave-api-key"
 ```bash
 # 基础搜索
 ./search.js "React hooks"
-
+# ...
 # 更多结果
 ./search.js "React hooks" -n 10
-
+# ...
 # 带内容
 ./search.js "React hooks" --content
-
+# ...
 # 精简结果 + 内容
 ./search.js "React hooks" -n 3 --content
 ```
@@ -225,7 +226,7 @@ export BRAVE_API_KEY="your-brave-api-key"
 ```bash
 # Brave API Key(必需)
 export BRAVE_API_KEY="your-brave-api-key"
-
+# ...
 # 可选:默认结果数量
 export BRAVE_SEARCH_DEFAULT_COUNT=5
 ```
@@ -235,22 +236,22 @@ export BRAVE_SEARCH_DEFAULT_COUNT=5
 ```bash
 #!/bin/bash
 # advanced-search.sh - 进阶搜索工作流示例
-
+# ...
 # 1. 先用 search.js 找到相关 URL
 echo "=== 第一步:关键词搜索 ==="
 ./search.js "Python 异步编程教程" -n 5
-
+# ...
 # 2. 从结果中选取重要 URL,用 content.js 提取全文
 echo "=== 第二步:内容提取 ==="
 ./content.js https://example.com/python-async-tutorial > tutorial.md
 echo "内容已保存到 tutorial.md"
-
+# ...
 # 3. 多次搜索,覆盖不同角度
 echo "=== 第三步:多角度搜索 ==="
 ./search.js "Python asyncio 入门" -n 3
 ./search.js "Python asyncio 进阶" -n 3
 ./search.js "Python asyncio 常见问题" -n 3
-
+# ...
 # 4. 搜索结果归档
 echo "=== 第四步:归档结果 ==="
 ./search.js "Python 异步编程" --content > "archive/python-async-$(date +%Y%m%d).txt"
@@ -262,7 +263,7 @@ echo "已归档到 archive/python-async-$(date +%Y%m%d).txt"
 ```bash
 # 提取搜索结果中的所有 URL
 ./search.js "AI 智能体" -n 10 | grep "链接:" | awk '{print $2}'
-
+# ...
 # 批量提取多个 URL 的内容
 for url in $(./search.js "Python 教程" -n 5 | grep "链接:" | awk '{print $2}'); do
   echo "=== $url ==="
@@ -317,7 +318,7 @@ done
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | search.js | 脚本工具 | 必需 | 随 Skill 安装 |
 | content.js | 脚本工具 | 必需 | 随 Skill 安装 |
 | Node.js | 运行环境 | 必需 | 系统包管理器安装 |
@@ -338,9 +339,8 @@ done
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

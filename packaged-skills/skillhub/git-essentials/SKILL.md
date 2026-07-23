@@ -17,16 +17,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # Git核心操作
 
 涵盖Git版本控制核心命令与工作流,支持分支管理、合并、变基、标签与协作场景。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Git核心操作处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -34,19 +35,22 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **常见工作流模式**: 特性分支工作流、热修复工作流、Fork同步工作流 | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| Git核心操作标签与冲突处理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 初始配置
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
-
+# ...
 git init
-
+# ...
 git clone https://git.example.com/user/repo.git
 git clone https://git.example.com/user/repo.git custom-name
 ```
@@ -59,7 +63,7 @@ git clone https://git.example.com/user/repo.git custom-name
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -118,15 +122,15 @@ export API_KEY="your_api_key_here"
 
 ```bash
 git status
-
+# ...
 git add file.txt
 git add .
 git add -A  # 包含删除的所有变更
-
+# ...
 git commit -m "Commit message"
-
+# ...
 git commit -am "Message"  # 跳过暂存直接提交已跟踪文件
-
+# ...
 git commit --amend -m "New message"
 git commit --amend --no-edit  # 保留原提交信息
 ```
@@ -135,11 +139,11 @@ git commit --amend --no-edit  # 保留原提交信息
 
 ```bash
 git diff
-
+# ...
 git diff --staged
-
+# ...
 git diff file.txt
-
+# ...
 git diff commit1 commit2
 ```
 
@@ -150,18 +154,18 @@ git diff commit1 commit2
 ```bash
 git branch
 git branch -a  # 包含远程分支
-
+# ...
 git branch feature-name
-
+# ...
 git checkout feature-name
 git switch feature-name  # 现代替代方式
-
+# ...
 git checkout -b feature-name
 git switch -c feature-name
-
+# ...
 git branch -d branch-name
 git branch -D branch-name  # 强制删除
-
+# ...
 git branch -m old-name new-name
 ```
 
@@ -169,11 +173,11 @@ git branch -m old-name new-name
 
 ```bash
 git merge feature-name
-
+# ...
 git merge --no-ff feature-name  # 保留合并提交
-
+# ...
 git merge --abort  # 取消合并
-
+# ...
 git diff --name-only --diff-filter=U  # 列出冲突文件
 ```
 
@@ -183,11 +187,11 @@ git diff --name-only --diff-filter=U  # 列出冲突文件
 
 ```bash
 git remote -v
-
+# ...
 git remote add origin https://git.example.com/user/repo.git
-
+# ...
 git remote set-url origin https://git.example.com/user/new-repo.git
-
+# ...
 git remote remove origin
 ```
 
@@ -195,15 +199,15 @@ git remote remove origin
 
 ```bash
 git fetch origin
-
+# ...
 git pull
-
+# ...
 git pull --rebase  # 变基方式拉取
-
+# ...
 git push
-
+# ...
 git push -u origin branch-name  # 设置上游分支
-
+# ...
 git push --force-with-lease  # 安全强制推送
 ```
 
@@ -213,18 +217,18 @@ git push --force-with-lease  # 安全强制推送
 
 ```bash
 git log
-
+# ...
 git log --oneline
-
+# ...
 git log --graph --oneline --all
-
+# ...
 git log -5  # 最近5条提交
-
+# ...
 git log --author="Name"
-
+# ...
 git log --since="2 weeks ago"
 git log --until="2024-01-01"
-
+# ...
 git log -- file.txt
 ```
 
@@ -232,11 +236,11 @@ git log -- file.txt
 
 ```bash
 git log --grep="bug fix"
-
+# ...
 git log -S "function_name"  # 搜索包含特定字符串的提交
-
+# ...
 git blame file.txt
-
+# ...
 git bisect start
 git bisect bad
 git bisect good commit-hash
@@ -249,7 +253,7 @@ git bisect good commit-hash
 ```bash
 git restore file.txt
 git checkout -- file.txt  # 旧方式
-
+# ...
 git restore .
 ```
 
@@ -258,7 +262,7 @@ git restore .
 ```bash
 git restore --staged file.txt
 git reset HEAD file.txt  # 旧方式
-
+# ...
 git reset
 ```
 
@@ -266,11 +270,11 @@ git reset
 
 ```bash
 git reset --soft HEAD~1  # 撤销提交,保留变更在暂存区
-
+# ...
 git reset --hard HEAD~1  # 撤销提交,丢弃变更
-
+# ...
 git revert commit-hash  # 创建反向提交
-
+# ...
 git reset --hard commit-hash  # 重置到指定提交
 ```
 
@@ -278,19 +282,19 @@ git reset --hard commit-hash  # 重置到指定提交
 
 ```bash
 git stash
-
+# ...
 git stash save "Work in progress"
-
+# ...
 git stash list
-
+# ...
 git stash apply
-
+# ...
 git stash pop
-
+# ...
 git stash apply stash@{2}  # 应用指定暂存
-
+# ...
 git stash drop stash@{0}  # 删除指定暂存
-
+# ...
 git stash clear  # 清空所有暂存
 ```
 
@@ -298,13 +302,13 @@ git stash clear  # 清空所有暂存
 
 ```bash
 git rebase main
-
+# ...
 git rebase -i HEAD~3  # 交互式变基最近3个提交
-
+# ...
 git rebase --continue
-
+# ...
 git rebase --skip
-
+# ...
 git rebase --abort
 ```
 
@@ -312,17 +316,17 @@ git rebase --abort
 
 ```bash
 git tag
-
+# ...
 git tag v1.0.0
-
+# ...
 git tag -a v1.0.0 -m "Version 1.0.0"  # 附注标签
-
+# ...
 git tag v1.0.0 commit-hash  # 为指定提交打标签
-
+# ...
 git push origin v1.0.0
-
+# ...
 git push --tags
-
+# ...
 git tag -d v1.0.0  # 删除本地标签
 git push origin --delete v1.0.0  # 删除远程标签
 ```
@@ -333,7 +337,7 @@ git push origin --delete v1.0.0  # 删除远程标签
 
 ```bash
 git cherry-pick commit-hash
-
+# ...
 git cherry-pick -n commit-hash  # 不自动提交
 ```
 
@@ -341,11 +345,11 @@ git cherry-pick -n commit-hash  # 不自动提交
 
 ```bash
 git submodule add https://git.example.com/user/repo.git path/
-
+# ...
 git submodule init
-
+# ...
 git submodule update
-
+# ...
 git clone --recursive https://git.example.com/user/repo.git
 ```
 
@@ -353,11 +357,11 @@ git clone --recursive https://git.example.com/user/repo.git
 
 ```bash
 git clean -n  # 预览
-
+# ...
 git clean -f  # 删除未跟踪文件
-
+# ...
 git clean -fd  # 包含目录
-
+# ...
 git clean -fdx  # 包含.gitignore忽略的文件
 ```
 
@@ -456,7 +460,7 @@ git checkout -b recovered-feature a1b2c3d
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 合并冲突(CONFLICT) | 两个分支修改了同一文件的同一区域 | 使用 `git diff --name-only --diff-filter=U` 定位冲突文件,手动编辑解决后 `git add`,再 `git commit` |
 | 误提交到错误分支 | 在main分支直接提交了特性代码 | `git reset --soft HEAD~1` 撤销提交保留变更,`git switch -c feature` 创建正确分支后重新提交 |
 | 误删分支 | 执行了 `git branch -D` 删除了未合并的分支 | 使用 `git reflog` 找到分支最后一个提交的哈希,`git checkout -b branch-name <commit-hash>` 恢复 |

@@ -18,16 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # Figma
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Read files, manage comments, extract design tokens, download images, | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -37,7 +42,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -46,9 +51,9 @@ pricing_model: "per_use"
 
 ```bash
 clawlink_call_tool --tool "figma_get_current_user" --params '{}'
-
+# ...
 clawlink_call_tool --tool "figma_discover_figma_resources" --params '{"figma_url": "https://www.figma.com/file/ABC123xyz/MyFile"}'
-
+# ...
 clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xyz"}'
 ```
 
@@ -56,7 +61,7 @@ clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xy
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | figma-design处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -115,7 +120,7 @@ clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xy
 
 ## 错误处理
 | Status / Error | Meaning |
-| --- | --- |
+|:-------------:|:-------------:|
 | Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration figma`. |
 | Missing connection | Figma is not connected. Direct the user to <https://claw-link.dev/dashboard?add=figma>. |
 | `400 File type not supported` | File is a FigJam board or Slides file, not a Design file. Only Design files work with `get_file_json`. |
@@ -155,9 +160,9 @@ clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xy
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -166,7 +171,6 @@ clawlink_call_tool --tool "figma_get_file_json" --params '{"file_key": "ABC123xy
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -228,7 +232,7 @@ clawlink_call_tool --tool "figma_extract_design_tokens" \
   --params '{
     "file_key": "ABC123xyz"
   }'
-
+# ...
 clawlink_call_tool --tool "figma_design_tokens_to_tailwind" \
   --params '{
     "tokens": { "$schema": "...", "colors": {...} }
@@ -238,12 +242,6 @@ clawlink_call_tool --tool "figma_design_tokens_to_tailwind" \
 ## 常见问题
 
 ### Q1: 如何开始使用Figma？
-A: 
-
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Figma有什么限制？
 A: 
 
 ## 已知限制

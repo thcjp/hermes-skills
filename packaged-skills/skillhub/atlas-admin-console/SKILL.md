@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Atlas管理台专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力分类 | 支持 | 支持 |
-| 专业版 | 不支持 | 支持 |
-| API调用 | 不支持 | 支持 |
-| 批量并发（多线程） | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Atlas管理台专业版Atlas全功能管理 | 不支持 | 支持 |
+| Atlas管理台专业版结果导出 | 不支持 | 支持 |
+| Atlas管理台专业版多API编排与监控 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|:-----|:-----|:-----|
 | API调用 | 单次串行 | 批量并发（多线程） |
 | 结果导出 | 无 | CSV/JSON/Excel导出 |
 | 历史记录 | 无 | 调用历史+回放 |
@@ -87,7 +89,7 @@ atlas-pro batch \
   --output cluster-health-$(date +%Y%m%d).csv \
   --format csv \
   --parallel 5
-
+# ...
 # 批量检查备份状态
 atlas-pro batch \
   --operation listSnapshots \
@@ -129,22 +131,22 @@ terraform {
     }
   }
 }
-
+# ...
 provider "mongodbatlas" {
   public_key  = var.atlas_public_key
   private_key = var.atlas_private_key
 }
-
+# ...
 resource "mongodbatlas_cluster" "main" {
   project_id   = var.project_id
   name         = "production-cluster"
   cluster_type = "REPLICASET"
-  
+# ...
   replication_factor = 3
   provider_name      = "AWS"
   region_name        = "us-east-1"
   provider_instance_size_name = "M30"
-  
+# ...
   backup_enabled = true
   auto_scaling_disk_gb_enabled = true
 }
@@ -164,13 +166,13 @@ steps:
       providerSettings:
         providerName: "AWS"
         instanceSizeName: "M10"
-  
+# ...
   - name: wait-for-ready
     operation: getCluster
     until: "status == 'IDLE'"
     timeout: 600s
     interval: 30s
-  
+# ...
   - name: create-db-user
     operation: createDatabaseUser
     depends_on: wait-for-ready
@@ -178,7 +180,7 @@ steps:
       username: ""console_metadata""
       password: ""console_status""
       roles: [{roleName: "readWrite", databaseName: "admin"}]
-  
+# ...
   - name: add-ip-to-whitelist
     operation: createProjectIpAddress
     params:
@@ -226,7 +228,7 @@ atlas-pro alert start --config alert-rules.yml
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | atlas-admin-console处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -273,9 +275,8 @@ atlas-pro alert start --config alert-rules.yml
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -288,9 +289,9 @@ atlas-pro alert start --config alert-rules.yml
 - **Node.js**: 18+
 - **Terraform**: 1.0+（基础设施即代码管理需要）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Node.js | 运行时 | 必需 | nodejs.org 官方下载 |
 | atlas-pro.mjs | 脚本 | 必需 | 随本Skill分发 |
 | Terraform | IaC工具 | 可选 | terraform.io 官方下载 |
@@ -341,20 +342,20 @@ steps:
     params:
       clusterName: ""console_details""
       description: "automated-test-"console_count""
-  
+# ...
   - id: wait_snapshot_complete
     operation: getSnapshot
     depends_on: create_snapshot
     until: "status == 'completed'"
     timeout: 1800s
-  
+# ...
   - id: restore_to_test_cluster
     operation: createRestoreJob
     depends_on: wait_snapshot_complete
     params:
       snapshotId: "按流程执行"
       targetClusterName: "test-cluster"
-  
+# ...
   - id: verify_restore
     operation: getCluster
     depends_on: restore_to_test_cluster
@@ -369,13 +370,13 @@ steps:
 ```bash
 # 初始化Terraform
 terraform init
-
+# ...
 # 查看变更计划
 terraform plan -out=tfplan
-
+# ...
 # 应用变更
 terraform apply tfplan
-
+# ...
 # 销毁资源（谨慎）
 terraform destroy -target=mongodbatlas_cluster.main
 ```
@@ -399,7 +400,7 @@ rules:
         url: "${ALERT_WEBHOOK_URL}"
       - type: dingtalk
         token: "${DINGTALK_TOKEN}"
-  
+# ...
   - name: disk-space-low
     condition:
       metric: disk.used_percent
@@ -411,7 +412,7 @@ rules:
       params:
         diskSizeGB: "current * 1.5"
     cooldown: 1h
-  
+# ...
   - name: connection-pool-exhausted
     condition:
       metric: connections.current
@@ -446,8 +447,8 @@ A：(1) 设置合理的`cooldown`冷却期；(2) 增加`duration`持续时间要
 A：在`credentials.yml`中配置多个profile，使用`--profile all`遍历所有配置的组织与项目。专业版支持跨组织统一视图，便于集团级管理。
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -467,17 +468,14 @@ A：(1) 批量导出集群信息为JSON，定时同步到CMDB；(2) 通过Webhoo
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|:------------:|--------------|:-------------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

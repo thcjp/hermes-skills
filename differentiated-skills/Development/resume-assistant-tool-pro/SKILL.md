@@ -39,6 +39,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 简历助手工具(专业版)
 
@@ -53,7 +55,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|----|---|------|
 | 简历润色 | 40+项清单审查,8大类别 | 与免费版一致 |
 | 基础评分 | 100分制,5维度 | 与免费版一致 |
 | 岗位定制 | JD分析+差距分析+关键词优化 | 免费版无 |
@@ -98,29 +100,29 @@ pricing_model: "per_use"
 用户: 针对以下岗位定制我的简历:
 高级后端工程师 | 某支付公司
 要求:Go、分布式系统、支付API...
-
+# ...
 工具: 🎯 岗位分析完成
 📊 当前匹配度: 62% → 优化后: 89%
-
+# ...
 JD拆解:
 - 必需技能: Go, 分布式系统, 支付API, 微服务
 - 偏好技能: Kubernetes, gRPC, 消息队列
 - 关键职责: 支付系统设计、性能优化、稳定性保障
 - 关键词: 高并发、最终一致、对账、风控
-
+# ...
 差距分析矩阵:
 | 要求 | 你的简历 | 状态 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | Go | 有(2年) | ✅ |
 | 分布式系统 | 有(微服务) | ✅ |
 | 支付API | 无显式提及 | ⚠️ 建议补充 |
 | 高并发 | 有(QPS提升) | ✅ |
-
+# ...
 [输出定制后简历,关键词自然融入]
-
+# ...
 关键词覆盖报告:
 优化前: 60% → 优化后: 89%
-
+# ...
 附赠:
 - 求职信要点
 - 面试准备要点
@@ -132,7 +134,7 @@ JD拆解:
 
 ```text
 用户: 把简历导出为PDF,使用modern模板
-
+# ...
 工具: [生成PDF,采用modern模板]
 - HTML自包含文件,嵌入CSS,4种配色主题
 - @media print 优化,适合打印
@@ -142,7 +144,7 @@ JD拆解:
 格式与模板选择:
 
 | 格式 | 特点 | 适用场景 |
-| --- | --- | --- |
+|---:|---:|---:|
 | Word | Pandoc优化,带YAML front matter | 在线投递(可编辑) |
 | Markdown | 结构化,版本控制友好 | 工作格式 |
 | HTML | 自包含,4种配色主题 | 在线作品集 |
@@ -150,7 +152,7 @@ JD拆解:
 | PDF | A4优化,多转换方法 | 正式投递 |
 
 | 模板 | 风格 | 适用 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | professional | 海军蓝、衬线标题、经典边框 | 金融/咨询/法律/医疗 |
 | modern | 青色强调、创意布局、emoji图标 | 科技/初创/产品/市场 |
 | minimal | 单色、极简、内容密集 | 资深人士/工程 |
@@ -162,35 +164,35 @@ JD拆解:
 
 ```text
 用户: 评估我的简历,目标岗位:高级前端工程师
-
+# ...
 工具: 📊 简历评分: 82/100 (等级: B)
-
+# ...
 评分明细:
 | 维度 | 分数 | 说明 |
-| --- | --- | --- |
+|:------|------:|:------|
 | 内容质量 | 26/30 | 量化成果充分 |
 | 结构格式 | 22/25 | 章节顺序合理 |
 | 语言语法 | 18/20 | 时态统一 |
 | ATS优化 | 13/15 | 关键词覆盖87% |
 | 印象冲击 | 3/10 | 缺少记忆点 |
-
+# ...
 优势:
 1. ✅ 工作经历量化充分(性能提升35%)
 2. ✅ 技术栈完整,匹配度高
 3. ✅ 倒序排列,格式专业
-
+# ...
 优先改进(附Before→After改写):
 1. 🔴 个人简介缺少差异化
    Before: 5年前端经验
    After: 5年前端经验,主导3个百万级DAU产品首屏优化
 2. 🟡 补充技术领导力证据
-
+# ...
 岗位匹配度:
 - 匹配度: 87/100
 - 竞争力百分位: 75%(优于75%的同类简历)
 - 优势: React生态深度、性能优化
 - 差距: 团队管理经验
-
+# ...
 5步行动计划(含工作量估算):
 1. 补充个人简介差异化(15分钟)
 2. 添加团队领导经历(30分钟)
@@ -249,7 +251,7 @@ JD拆解:
 ### 2. 命令参考
 
 | 命令 | 参数 | 输出 |
-| --- | --- | --- |
+|---:|:---|---:|
 | `/resume polish` | resume_content, language | 40+项清单+润色版本 |
 | `/resume customize` | resume_content, job_description, language | JD分析+定制版本 |
 | `/resume export` | resume_content, format, template | 对应格式文件 |
@@ -275,7 +277,7 @@ curl -X POST https://your-agent-api.com/skills/resume-assistant/customize \
     "job_description": "JD内容...",
     "language": "zh"
   }'
-
+# ...
 curl -X POST https://your-agent-api.com/skills/resume-assistant/export \
   -H "Content-Type: application/json" \
   -d '{
@@ -289,7 +291,7 @@ curl -X POST https://your-agent-api.com/skills/resume-assistant/export \
 
 ```python
 from langchain.tools import Tool
-
+# ...
 resume_tools = [
     Tool(
         name="resume_customize",
@@ -317,7 +319,7 @@ resume_tools = [
 ### 完整配置
 
 | 键 | 值 | 说明 |
-| --- | --- | --- |
+|:------:|--------|:-------|
 | `max_resume_length` | 10000字符 | 最大输入长度 |
 | `supported_languages` | en, zh | 支持语言 |
 | `supported_export_formats` | word, markdown, html, latex, pdf | 导出格式 |
@@ -343,16 +345,16 @@ templates/
 \usepackage[UTF8]{ctex}
 \usepackage{geometry}
 \geometry{margin=2cm}
-
+# ...
 \title{张三 \\ 高级前端工程师}
 \date{}
-
+# ...
 \begin{document}
 \maketitle
-
+# ...
 \section*{个人简介}
 5年前端开发经验,主导多个百万级DAU产品...
-
+# ...
 \section*{工作经历}
 \subsection*{高级前端工程师 | ABC科技 | 2022-至今}
 \begin{itemize}
@@ -389,7 +391,7 @@ Markdown转换到所有其他格式都干净,建议:
 ### 4. 模板与岗位匹配
 
 | 岗位类型 | 推荐模板 | 格式 |
-| --- | --- | --- |
+|----|:--:|---:|
 | 金融/咨询/法律 | professional | PDF |
 | 科技/初创 | modern | PDF |
 | 资深工程 | minimal | PDF |
@@ -400,7 +402,7 @@ Markdown转换到所有其他格式都干净,建议:
 
 ```text
 强动词 + 具体动作 + 量化结果 + 业务影响
-
+# ...
 示例:
 "主导 + React 18升级 + 首屏时间从4.2s降至2.1s(提升50%) + 月活用户增长12%"
 ```
@@ -452,7 +454,7 @@ Markdown转换到所有其他格式都干净,建议:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|----|----|----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Pandoc | 命令行工具 | 可选 | pandoc.org 下载(Word/LaTeX转换) |
 | XeLaTeX | 排版系统 | 可选 | TeX Live / MacTeX / MiKTeX(LaTeX导出) |
@@ -472,9 +474,8 @@ Markdown转换到所有其他格式都干净,建议:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:-----|:-----|:-----|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

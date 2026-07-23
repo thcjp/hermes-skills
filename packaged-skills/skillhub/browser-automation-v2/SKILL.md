@@ -19,13 +19,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # Browser Automation V
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 多标签页并行抓取 | 不支持 | 支持 |
 | 反爬虫策略自动绕过 | 不支持 | 支持 |
@@ -43,7 +45,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 场景1: 企业级浏览器自动化 | 用户请求数据 | 结构化处理结果 |
 | 场景2: 自动清标签/超时重试/并发锁 | 用户请求数据 | 结构化处理结果 |
 
@@ -59,7 +61,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | content | string | 否 | browser-automation-v2处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -118,9 +120,8 @@ pricing_model: "per_use"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| :-- | :-- | :-- |
+|:---:|:---:|:---:|
 | 页面加载超时 | 目标网站响应慢或网络延迟 | 增加超时阈值,启用重试机制,检查代理配置 |
 | 页面结构变化导致选择器失效 | 目标网站更新了DOM结构 | 切换到可访问性树定位元素,或提示用户提供新的选择器 |
 | 反爬虫机制触发 | 频繁请求被目标站点识别 | 降低请求频率,启用随机延迟,更换User-Agent |
@@ -131,9 +132,9 @@ pricing_model: "per_use"
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -142,7 +143,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -155,17 +155,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Browser Automation V？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Browser Automation V有什么限制？
-A: 
-
 ## 错误处理
 
-
 | 错误场景2 | 原因 | 处理方式 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

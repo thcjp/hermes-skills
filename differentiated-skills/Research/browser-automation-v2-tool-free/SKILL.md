@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 浏览器自动化助手（免费版）
 
 > **打开页面、等待加载、提取内容、自动清理。四步完成单页面自动化。**
@@ -35,7 +36,7 @@ suggested_price: 99.9
 ### 核心定位
 
 | 维度 | 免费版能力 |
-|------|------------|
+|---|-----|
 | 单页面操作 | 支持（打开/等待/提取/关闭） |
 | 批量URL处理 | 不支持（需升级专业版） |
 | 并发锁机制 | 不支持（需升级专业版） |
@@ -50,7 +51,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 浏览器自动化(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -58,7 +59,7 @@ suggested_price: 99.9
 ```python
 import subprocess
 import json
-
+# ...
 def open_page(url, timeout=30):
     """打开页面并等待加载"""
     cmd = [
@@ -71,7 +72,7 @@ def open_page(url, timeout=30):
     if result.returncode != 0:
         return {"success": False, "error": result.stderr}
     return json.loads(result.stdout)
-
+# ...
 # 示例
 page = open_page("https://example.com")
 print(page.get("title", "未获取到标题"))
@@ -98,7 +99,7 @@ def smart_wait(selector=None, wait_type="loadstate", timeout=30000):
         "selector": selector,
         "timeout": timeout
     }
-
+# ...
 # 等待元素出现
 config = smart_wait(selector="#main-content", wait_type="selector")
 print(f"等待策略：{config['strategy']}, 选择器：{config['selector']}")
@@ -113,7 +114,7 @@ print(f"等待策略：{config['strategy']}, 选择器：{config['selector']}")
 
 ```python
 import time
-
+# ...
 def fetch_with_retry(url, max_retries=3, base_timeout=30):
     """带指数退避的重试机制"""
     for attempt in range(max_retries):
@@ -142,30 +143,30 @@ def fetch_with_retry(url, max_retries=3, base_timeout=30):
 ```python
 class TabManager:
     """标签页管理器（免费版）"""
-
+# ...
     def __init__(self):
         self.tabs = []
-
+# ...
     def open_tab(self, url):
         """打开新标签页"""
         tab_id = f"tab_{len(self.tabs) + 1}"
         self.tabs.append({"id": tab_id, "url": url, "status": "open"})
         return tab_id
-
+# ...
     def close_tab(self, tab_id):
         """关闭标签页"""
         for tab in self.tabs:
             if tab["id"] == tab_id:
                 tab["status"] = "closed"
                 print(f"已关闭 {tab_id}")
-
+# ...
     def cleanup(self):
         """清理所有未关闭的标签页"""
         for tab in self.tabs:
             if tab["status"] == "open":
                 self.close_tab(tab["id"])
         print(f"清理完成，共处理 {len(self.tabs)} 个标签页")
-
+# ...
 manager = TabManager()
 tab = manager.open_tab("https://example.com")
 # ... 执行操作 ...
@@ -190,12 +191,12 @@ def fetch_page_summary(url):
     result = fetch_with_retry(url)
     if not result.get("success"):
         return "获取失败"
-
+# ...
     # 解析页面内容
     title = result.get("title", "无标题")
     description = result.get("description", "")[:200]
     return f"标题：{title}\n摘要：{description}"
-
+# ...
 summary = fetch_page_summary("https://example.com")
 print(summary)
 ```
@@ -218,7 +219,7 @@ def fill_login_form(url, email, password):
     ]
     result = subprocess.run(cmd, capture_output=True, text=True)
     return json.loads(result.stdout) if result.returncode == 0 else {"error": result.stderr}
-
+# ...
 # 使用示例
 result = fill_login_form("https://example.com/login", "user@test.com", "secret")
 print("登录结果：", result)
@@ -231,7 +232,7 @@ print("登录结果：", result)
 ```python
 import schedule
 import time
-
+# ...
 def daily_price_check():
     """每日价格检查"""
     url = "https://example.com/product/123"
@@ -241,7 +242,7 @@ def daily_price_check():
         print(f"[{time.strftime('%Y-%m-%d %H:%M')}] 当前价格：{price}")
     else:
         print(f"[{time.strftime('%Y-%m-%d %H:%M')}] 抓取失败：{result.get('error')}")
-
+# ...
 # 每天早上8点执行
 schedule.every().day.at("08:00").do(daily_price_check)
 while True:
@@ -265,10 +266,10 @@ export BROWSER_PROFILE=my-profile
 export BROWSER_TIMEOUT=30000
 export BROWSER_RETRIES=2
 export DEBUG=1
-
+# ...
 # 执行搜索
 node search-google.js "查询关键词"
-
+# ...
 # 获取页面摘要
 node fetch-summary.js "https://example.com"
 ```
@@ -278,15 +279,15 @@ node fetch-summary.js "https://example.com"
 ```bash
 # 依赖说明
 npm install playwright
-
+# ...
 # 2. 配置浏览器
 export BROWSER_PROFILE=skill-free
 export BROWSER_TIMEOUT=30000
 export BROWSER_RETRIES=2
-
+# ...
 # 3. 执行单页面任务
 node fetch-summary.js "https://news.example.com" --output result.json
-
+# ...
 # 4. 自动填表
 node fill-form.js "https://example.com/form" '{"name":"张三","email":"zhang@test.com"}'
 ```
@@ -302,11 +303,11 @@ browser:
   timeout: 30000
   retries: 2
   headless: true
-
+# ...
 logging:
   level: INFO
   debug: false
-
+# ...
 output:
   format: json
   directory: ./output
@@ -316,14 +317,14 @@ output:
 
 ```python
 import os
-
+# ...
 class Config:
     """配置管理器"""
     BROWSER_PROFILE = os.getenv("BROWSER_PROFILE", "default")
     BROWSER_TIMEOUT = int(os.getenv("BROWSER_TIMEOUT", "30000"))
     BROWSER_RETRIES = int(os.getenv("BROWSER_RETRIES", "2"))
     DEBUG = os.getenv("DEBUG", "0") == "1"
-
+# ...
     @classmethod
     def show(cls):
         print("当前配置：")
@@ -331,7 +332,7 @@ class Config:
         print(f"  Timeout: {cls.BROWSER_TIMEOUT}ms")
         print(f"  Retries: {cls.BROWSER_RETRIES}")
         print(f"  Debug:   {cls.DEBUG}")
-
+# ...
 Config.show()
 ```
 
@@ -361,7 +362,7 @@ class BrowserSession:
         return self
     def __exit__(self, *args):
         print("关闭浏览器会话，清理标签页")
-
+# ...
 with BrowserSession() as session:
     # 执行操作
     pass
@@ -373,7 +374,7 @@ with BrowserSession() as session:
 # 开启DEBUG日志定位问题
 import os
 os.environ["DEBUG"] = "1"
-
+# ...
 # 查看详细的执行流程
 # [DEBUG] Opening URL: https://example.com
 # [DEBUG] Waiting for networkidle...
@@ -418,7 +419,7 @@ os.environ["DEBUG"] = "1"
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js 18+ | 运行时 | 必需 | 官网下载安装 |
 | Playwright | npm包 | 必需 | `npm install playwright` |
 | Chromium | 浏览器 | 必需 | `npx playwright install chromium` |

@@ -50,8 +50,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # UI/UX开发工具 - 免费版
 
 ## 概述
@@ -68,7 +69,7 @@ UI/UX开发工具免费版是一款面向个人开发者的自然语言驱动Rea
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | UI/UX开发工具免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -152,7 +153,7 @@ UI/UX开发工具免费版是一款面向个人开发者的自然语言驱动Rea
 ```bash
 # 桌面端截图审查(1400x900)
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/landing-review.png 1400 900
-
+# ...
 # 移动端截图审查(390x844)
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/landing-mobile.png 390 844
 ```
@@ -169,10 +170,10 @@ bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-proj
 ```bash
 # 转换图片为WebP(默认质量80)
 bash （请参考skill目录中的脚本文件） input.png output.webp 80
-
+# ...
 # Hero横幅图片(质量85)
 bash （请参考skill目录中的脚本文件） hero.jpg hero.webp 85
-
+# ...
 # 缩略图/图标(质量70)
 bash （请参考skill目录中的脚本文件） icon.png icon.webp 70
 ```
@@ -187,7 +188,7 @@ bash （请参考skill目录中的脚本文件） icon.png icon.webp 70
 生成的页面自动遵循以下设计原则:
 
 | 原则类别 | 规则 |
-|----------|------|
+|:-----|:-----|
 | 布局间距 | 使用Tailwind标准间距(4/6/8/12/16/24),最大宽度max-w-5xl或max-w-6xl |
 | 排版层次 | h1最大,最多3-4种字号,行宽65-75字符,加粗标题+常规正文 |
 | 色彩对比 | WCAG AA标准4.5:1,最多1主色+1强调色+中性色 |
@@ -216,7 +217,7 @@ bash （请参考skill目录中的脚本文件） icon.png icon.webp 70
 ```bash
 # 启动本地服务
 bash （请参考skill目录中的脚本文件） 5174
-
+# ...
 # 生成页面后截图审查
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/ProductLaunch/landing/" /tmp/review.png 1400 900
 ```
@@ -239,14 +240,14 @@ bash （请参考skill目录中的脚本文件） "http://localhost:5174/Product
 <script type="text/babel">
   function App() {
     const [timeLeft, setTimeLeft] = React.useState('');
-
+# ...
     React.useEffect(() => {
       const timer = setInterval(() => {
         // 倒计时逻辑
       }, 1000);
       return () => clearInterval(timer);
     }, []);
-
+# ...
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-600 to-purple-700">
         <main className="max-w-4xl mx-auto px-4 py-24 text-center">
@@ -294,7 +295,7 @@ bash （请参考skill目录中的脚本文件） "http://localhost:5174/Product
 # 检查端口配置(默认5174)
 # 运行首次设置脚本
 bash （请参考skill目录中的脚本文件） 5174
-
+# ...
 # 验证服务启动
 curl http://localhost:5174/
 ```
@@ -304,7 +305,7 @@ curl http://localhost:5174/
 ```bash
 # 第1步:创建项目目录
 mkdir -p serve/my-project/landing
-
+# ...
 # 第2步:创建项目配置
 cat > serve/my-project/project.json << 'EOF'
 {
@@ -317,13 +318,13 @@ cat > serve/my-project/project.json << 'EOF'
   "pages": ["landing"]
 }
 EOF
-
+# ...
 # 第3步:生成React页面到 index.html
 # (Agent根据需求生成页面代码)
-
+# ...
 # 第4步:截图审查
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/review.png 1400 900
-
+# ...
 # 第5步:移动端审查
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/mobile.png 390 844
 ```
@@ -351,7 +352,7 @@ serve/
 ### 免费版与专业版功能对比
 
 | 功能项 | 免费版 | 专业版 |
-|--------|--------|--------|
+|---:|---:|---:|
 | 页面生成 | 单页面 | 多页面项目管理 |
 | 项目配置 | 基础JSON | 完整设计系统持久化 |
 | 截图审查 | 桌面+移动 | 多分辨率+自动化循环 |
@@ -385,16 +386,15 @@ serve/
 ```bash
 # 桌面端(1400x900)
 bash （请参考skill目录中的脚本文件） "<url>" /tmp/desktop.png 1400 900
-
+# ...
 # 移动端(390x844)
 bash （请参考skill目录中的脚本文件） "<url>" /tmp/mobile.png 390 844
 ```
 
 ## 错误处理
 
-
 | 错误 | 正确做法 | 处理方式 |
-|------|----------|------|
+|:---:|:---:|:---:|
 | 文字触碰屏幕边缘 | 移动端最小px-4内边距 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | emoji用作图标 | 使用SVG图标 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 纯黑背景 | 使用分层暗色(bg-900 > bg-800) | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -449,7 +449,7 @@ CDN方式无需构建步骤,直接在浏览器中运行。限制包括:无法使
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Bash | 运行时 | 必需 | 系统内置(macOS/Linux)或Git Bash(Windows) |
 | Chrome/Chromium | 截图工具 | 必需 | 浏览器安装 |
 | cwebp | 图片转换 | 推荐 | libwebp工具包 |
@@ -467,10 +467,10 @@ CDN加载的前端库:
 ```bash
 # macOS
 brew install webp
-
+# ...
 # Ubuntu/Debian
 sudo apt install webp
-
+# ...
 # Windows
 # 下载 libwebp 并添加到PATH
 ```

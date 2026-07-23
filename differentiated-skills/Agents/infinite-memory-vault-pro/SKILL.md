@@ -34,6 +34,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 无限记忆库（专业版）
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 痛点与对策速查
 
 | 用户痛点 | 发生场景 | 本系统对策 | 专业版增强 |
-|:---|:---|:---|:---|
+|----|----|-----|-----|
 | 内置记忆容量有限 | 项目历史/联系人/决策堆积溢出 | 无限分类存储，`~/memory/` 独立目录 | 大规模索引支持万级文件 |
 | 记忆无组织 | 内置记忆像一锅粥，找不到东西 | INDEX.md 索引导航，每类别独立管理 | 自动索引维护 |
 | 写入延迟 | 重要信息说完就忘 | 即写即存协议，先写再回复 | 自动捕获关键信息 |
@@ -57,7 +59,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 无限记忆库(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -116,7 +118,7 @@ pricing_model: "per_use"
 **用户自定义分类**，常见示例：
 
 | 分类目录 | 用途 | 示例条目 | 专业版规模 |
-|:---|:---|:---|:---|
+|---:|---:|---:|---:|
 | `projects/` | 详细项目上下文 | 项目背景、技术栈、里程碑 | 支持万级项目 |
 | `people/` | 联系人网络 | 联系方式、关系、互动记录 | 支持万级联系人 |
 | `decisions/` | 决策日志 | 决策内容、原因、结果 | 支持时间线追溯 |
@@ -132,10 +134,10 @@ pricing_model: "per_use"
 ```bash
 # 初始化专业版记忆库（自动创建目录+索引+语义搜索配置）
 node （请参考skill目录中的脚本文件） --edition pro
-
+# ...
 # 存储第一条记忆
 node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --category preference
-
+# ...
 # 语义搜索（无需关键词匹配）
 node （请参考skill目录中的脚本文件） search "界面颜色偏好"
 # 返回：用户喜欢深色模式（即使没有"颜色"关键词）
@@ -151,15 +153,15 @@ node （请参考skill目录中的脚本文件） --edition pro
 # - ~/memory/INDEX.md 总索引
 # - ~/memory/.semantic-index/ 语义索引
 # - ~/memory/config.json 专业版配置
-
+# ...
 # 第 2 步：创建分类并存储
 node （请参考skill目录中的脚本文件） create-category projects
 node （请参考skill目录中的脚本文件） store "项目Alpha：React+TypeScript，2026-07开始" --category projects --name alpha
-
+# ...
 # 第 3 步：语义搜索
 node （请参考skill目录中的脚本文件） search "前端技术栈" --category projects
 # 返回：项目Alpha（语义匹配"前端技术栈"→"React+TypeScript"）
-
+# ...
 # 第 4 步：自动同步内置记忆
 node （请参考skill目录中的脚本文件） sync --enable --source built-in --target preferences
 ```
@@ -170,18 +172,18 @@ node （请参考skill目录中的脚本文件） sync --enable --source built-i
 
 ```markdown
 ## 无限记忆库协议（专业版）
-
+# ...
 ### 会话开始时
 1. 系统自动语义检索相关记忆并注入上下文
 2. 读取 ~/memory/INDEX.md — 了解分类全貌
 3. 自动同步内置记忆的更新
-
+# ...
 ### 对话中（即写即存 + 自动捕获）
 - 用户分享项目信息？→ 自动写入 ~/memory/projects/，更新索引
 - 用户提到联系人？→ 自动写入 ~/memory/people/，更新索引
 - 用户做出决策？→ 自动写入 ~/memory/decisions/，更新索引
 - 系统自动维护语义索引
-
+# ...
 ### 会话结束时
 1. 自动更新 ~/memory/INDEX.md
 2. 触发自动卫生（去重/归档/拆分）
@@ -195,21 +197,21 @@ node （请参考skill目录中的脚本文件） sync --enable --source built-i
 node （请参考skill目录中的脚本文件） config set semantic.enabled true
 node （请参考skill目录中的脚本文件） config set semantic.model "nomic-embed-text"
 node （请参考skill目录中的脚本文件） config set semantic.ollamaUrl "http://localhost:11434"
-
+# ...
 # 构建语义索引
 node （请参考skill目录中的脚本文件） index rebuild
 # 扫描所有 .md 文件，生成 embedding 向量
-
+# ...
 # 配置自动同步
 node （请参考skill目录中的脚本文件） config set sync.enabled true
 node （请参考skill目录中的脚本文件） config set sync.schedule "hourly"
 node （请参考skill目录中的脚本文件） config set sync.rules '[{"source":"built-in/preferences","target":"sync/preferences.md"}]'
-
+# ...
 # 配置大规模索引
 node （请参考skill目录中的脚本文件） config set largeScale.enabled true
 node （请参考skill目录中的脚本文件） config set largeScale.autoSplit true
 node （请参考skill目录中的脚本文件） config set largeScale.splitThreshold 100
-
+# ...
 # 启动后台服务（自动同步 + 索引维护）
 node （请参考skill目录中的脚本文件） daemon start
 ```
@@ -232,18 +234,18 @@ node （请参考skill目录中的脚本文件） daemon start
 ```bash
 # 批量导入现有文档
 node （请参考skill目录中的脚本文件） batch-import ./docs/ --category knowledge --recursive
-
+# ...
 # 构建语义索引
 node （请参考skill目录中的脚本文件） index rebuild
 # 输出：已索引 3427 个文件，生成 3427 个向量
-
+# ...
 # 语义搜索（无需关键词匹配）
 node （请参考skill目录中的脚本文件） search "如何处理高并发场景"
 # 返回：
 # 1. [95%] scaling-strategies.md — "水平扩展、读写分离..."
 # 2. [89%] performance-tuning.md — "连接池优化、缓存策略..."
 # 3. [85%] architecture-decisions.md — "微服务拆分决策..."
-
+# ...
 # 跨分类搜索
 node （请参考skill目录中的脚本文件） search "用户认证方案" --cross-category
 # 同时搜索 knowledge/ 和 decisions/ 分类
@@ -260,18 +262,18 @@ node （请参考skill目录中的脚本文件） search "用户认证方案" --
 # 批量导入客户档案
 node （请参考skill目录中的脚本文件） batch-import ./contacts/ --category people --recursive
 # 输出：已导入 1247 个客户档案
-
+# ...
 # 自动拆分子分类（> 100 条时）
 node （请参考skill目录中的脚本文件） index auto-split --category people
 # 自动拆分为：
 # ~/memory/people/active/ (312 条)
 # ~/memory/people/inactive/ (528 条)
 # ~/memory/people/prospects/ (407 条)
-
+# ...
 # 语义搜索客户
 node （请参考skill目录中的脚本文件） search "对数据安全关注的客户" --category people
 # 返回：张三（ABC科技CTO）、李四（XYZ金融架构师）...
-
+# ...
 # 按状态过滤
 node （请参考skill目录中的脚本文件） search "本月需跟进" --filter "status=following,date=this-month"
 ```
@@ -290,17 +292,17 @@ node （请参考skill目录中的脚本文件） sync add-rule \
   --target "decisions/" \
   --format "structured" \
   --schedule "hourly"
-
+# ...
 # 自动同步启动后，内置记忆中的决策自动同步到结构化目录
 # 例如：内置记忆记录 "决定使用 PostgreSQL"
 # 自动同步为：
 # ~/memory/decisions/2026-07-18-database.md
 # 包含：日期、决策内容、关联上下文
-
+# ...
 # 语义追溯决策
 node （请参考skill目录中的脚本文件） search "为什么选 PostgreSQL" --category decisions
 # 返回：决策文件 + 关联讨论 + 备选方案
-
+# ...
 # 决策时间线
 node （请参考skill目录中的脚本文件） timeline --category decisions --from 2026-01 --to 2026-07
 # 输出：1-7 月所有技术决策的时间线
@@ -318,14 +320,14 @@ node （请参考skill目录中的脚本文件） timeline --category decisions 
 node （请参考skill目录中的脚本文件） create-category collections/ideas
 node （请参考skill目录中的脚本文件） create-category collections/drafts
 node （请参考skill目录中的脚本文件） create-category collections/references
-
+# ...
 # 存储灵感
 node （请参考skill目录中的脚本文件） store "关于AI替代创意工作的思考：工具增强而非替代" --category collections/ideas
-
+# ...
 # 语义搜索灵感（模糊匹配）
 node （请参考skill目录中的脚本文件） search "人工智能对创作的影响"
 # 返回：AI替代创意工作的思考（语义匹配）
-
+# ...
 # 跨分类检索
 node （请参考skill目录中的脚本文件） search "AI 创意" --cross-category
 # 同时搜索 ideas/、drafts/、references/
@@ -342,11 +344,11 @@ node （请参考skill目录中的脚本文件） search "AI 创意" --cross-cat
 # 批量导入文献笔记
 node （请参考skill目录中的脚本文件） batch-import ./papers/ --category knowledge --recursive
 # 输出：已导入 856 篇文献笔记
-
+# ...
 # 语义搜索（学术概念匹配）
 node （请参考skill目录中的脚本文件） search "对比学习方法" --category knowledge
 # 返回：相关文献，按语义相似度排序
-
+# ...
 # 自动生成主题聚类
 node （请参考skill目录中的脚本文件） cluster --category knowledge --algorithm semantic
 # 输出：
@@ -367,7 +369,6 @@ node （请参考skill目录中的脚本文件） cluster --category knowledge -
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 规则 1：与内置记忆分离
 
@@ -387,7 +388,7 @@ node （请参考skill目录中的脚本文件） cluster --category knowledge -
 初始化时，询问用户需要存储什么。根据需求创建分类：
 
 | 用户说... | 创建 | 专业版智能建议 |
-|:---|:---|:---|
+|:-----:|:-----:|:-----:|
 | "我有很多项目" | `~/memory/projects/` | 建议拆分 active/archived |
 | "我认识很多人" | `~/memory/people/` | 建议按行业/关系拆分 |
 | "我想记录决策" | `~/memory/decisions/` | 建议按时间/主题索引 |
@@ -405,10 +406,10 @@ node （请参考skill目录中的脚本文件） cluster --category knowledge -
 ```bash
 # 手动更新索引
 node （请参考skill目录中的脚本文件） index update --category projects
-
+# ...
 # 自动维护（新增文件时自动更新索引）
 node （请参考skill目录中的脚本文件） config set index.autoUpdate true
-
+# ...
 # 索引健康检查
 node （请参考skill目录中的脚本文件） index health-check
 # 输出：各分类索引状态、过期索引、缺失索引
@@ -430,7 +431,7 @@ node （请参考skill目录中的脚本文件） index health-check
 ```bash
 # 手动存储
 node （请参考skill目录中的脚本文件） store "内容" --category projects --name alpha
-
+# ...
 # 自动捕获（已开启时无需手动）
 # 系统自动识别：项目信息、联系人、决策、偏好等
 # 自动存储到对应分类，更新索引
@@ -452,13 +453,13 @@ node （请参考skill目录中的脚本文件） store "内容" --category proj
 # 语义搜索（专业版推荐）
 node （请参考skill目录中的脚本文件） search "用户界面颜色偏好"
 # 返回语义匹配结果，无需关键词精确匹配
-
+# ...
 # 带过滤的语义搜索
 node （请参考skill目录中的脚本文件） search "项目技术栈" --category projects --filter "status=active"
-
+# ...
 # 跨分类搜索
 node （请参考skill目录中的脚本文件） search "AI 相关" --cross-category
-
+# ...
 # grep 关键词搜索（仍可用）
 grep -r "关键词" ~/memory/
 ```
@@ -477,14 +478,14 @@ node （请参考skill目录中的脚本文件） sync add-rule \
   --source "built-in/preferences" \
   --target "sync/preferences.md" \
   --schedule "hourly"
-
+# ...
 # 手动触发同步
 node （请参考skill目录中的脚本文件） sync run
-
+# ...
 # 查看同步状态
 node （请参考skill目录中的脚本文件） sync status
 # 输出：最后同步时间、同步条目数、冲突项
-
+# ...
 # 同步是单向的：内置 → 本系统
 # 绝不修改内置记忆
 ```
@@ -502,11 +503,11 @@ node （请参考skill目录中的脚本文件） sync status
 # 自动拆分（> 100 条时触发）
 node （请参考skill目录中的脚本文件） config set largeScale.autoSplit true
 node （请参考skill目录中的脚本文件） config set largeScale.splitThreshold 100
-
+# ...
 # 手动拆分
 node （请参考skill目录中的脚本文件） split --category projects --by status
 # 自动拆分为：active/、archived/、paused/
-
+# ...
 # 自动生成子索引
 # ~/memory/projects/
 # ├── INDEX.md           # 指向子分类
@@ -529,7 +530,7 @@ node （请参考skill目录中的脚本文件） split --category projects --by
 ### 语义索引优化
 
 | 优化项 | 策略 | 效果 |
-|:---|:---|:---|
+|:------|------:|:------|
 | 增量索引 | 新增文件时自动加入索引 | 避免全量重建 |
 | 索引压缩 | 定期压缩向量索引 | 减少磁盘占用 |
 | 缓存预热 | 常用查询预计算 | 毫秒级响应 |
@@ -539,7 +540,7 @@ node （请参考skill目录中的脚本文件） split --category projects --by
 # 索引优化
 node （请参考skill目录中的脚本文件） index optimize
 # 输出：压缩 23% 磁盘占用，预热 50 个常用查询
-
+# ...
 # 索引重建（重大变更后）
 node （请参考skill目录中的脚本文件） index rebuild --incremental
 ```
@@ -547,7 +548,7 @@ node （请参考skill目录中的脚本文件） index rebuild --incremental
 ### 大规模检索优化
 
 | 规模 | 检索策略 | 响应时间 |
-|:---|:---|:---|
+|---:|:---|---:|
 | < 100 文件 | 全量语义搜索 | < 50ms |
 | 100-500 文件 | 分类过滤 + 语义搜索 | < 100ms |
 | 500-5000 文件 | 层级索引 + 语义搜索 | < 200ms |
@@ -558,11 +559,11 @@ node （请参考skill目录中的脚本文件） index rebuild --incremental
 ```bash
 # 手动触发卫生
 node （请参考skill目录中的脚本文件） hygiene --dedup --archive --split
-
+# ...
 # 设置自动卫生
 node （请参考skill目录中的脚本文件） config set hygiene.auto true
 node （请参考skill目录中的脚本文件） config set hygiene.schedule "weekly"
-
+# ...
 # 卫生策略：
 # - 去重：语义相似度 > 0.95 的条目合并
 # - 归档：不活跃条目移到 archived/
@@ -576,35 +577,35 @@ node （请参考skill目录中的脚本文件） config set hygiene.schedule "w
 # 查看记忆库统计（专业版详细）
 node （请参考skill目录中的脚本文件） stats --detailed
 # 输出：总文件数、分类数、索引大小、语义向量数、缓存命中率
-
+# ...
 # 语义搜索
 node （请参考skill目录中的脚本文件） search "自然语言查询" --cross-category --limit 20
-
+# ...
 # 批量导入
 node （请参考skill目录中的脚本文件） batch-import ./docs/ --category knowledge --recursive
-
+# ...
 # 索引管理
 node （请参考skill目录中的脚本文件） index rebuild
 node （请参考skill目录中的脚本文件） index update --category projects
 node （请参考skill目录中的脚本文件） index optimize
 node （请参考skill目录中的脚本文件） index health-check
-
+# ...
 # 同步管理
 node （请参考skill目录中的脚本文件） sync run
 node （请参考skill目录中的脚本文件） sync status
 node （请参考skill目录中的脚本文件） sync add-rule --source "built-in/preferences" --target "sync/preferences.md"
-
+# ...
 # 大规模管理
 node （请参考skill目录中的脚本文件） split --category projects --by status
 node （请参考skill目录中的脚本文件） cluster --category knowledge --algorithm semantic
-
+# ...
 # 卫生管理
 node （请参考skill目录中的脚本文件） hygiene --dedup --archive --split
 node （请参考skill目录中的脚本文件） hygiene --auto --schedule weekly
-
+# ...
 # 备份（含语义索引）
 node （请参考skill目录中的脚本文件） backup ./backups/vault-$(date +%Y%m%d).zip --include-index
-
+# ...
 # 后台服务
 node （请参考skill目录中的脚本文件） daemon start    # 启动自动同步+索引维护
 node （请参考skill目录中的脚本文件） daemon stop
@@ -647,7 +648,7 @@ export VAULT_EDITION=pro
 export VAULT_SEMANTIC_ENABLED=true
 export VAULT_AUTO_SYNC=true
 export VAULT_OLLAMA_URL=http://localhost:11434
-
+# ...
 # 启动 Agent 时自动加载
 codex --skill infinite-memory-vault-pro
 ```
@@ -655,7 +656,7 @@ codex --skill infinite-memory-vault-pro
 ## 故障排查表
 
 | 序号 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|:---|:---|:---|:---|:---|
+|:------:|--------|:-------|:------:|--------|
 | 1 | 语义搜索无结果 | 索引未构建或为空 | 运行 `node （请参考skill目录中的脚本文件） index rebuild`；确认 Ollama 运行 | 高 |
 | 2 | 语义搜索慢 | 索引未优化或文件过多 | 运行 `index optimize`；启用大规模索引自动拆分 | 中 |
 | 3 | 自动同步不触发 | 同步规则未配置或 daemon 未启动 | 运行 `sync status` 检查；`daemon start` 启动后台服务 | 高 |
@@ -677,9 +678,8 @@ codex --skill infinite-memory-vault-pro
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|----|:--:|---:|----|:--:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -737,7 +737,7 @@ codex --skill infinite-memory-vault-pro
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|:---|:---|:---|:---|
+|----|----|----|----|
 | 免费体验版 | ¥0 | 核心存储+分类管理+索引导航+grep 检索 | 个人试用 |
 | 收费专业版 | ¥19.9/月 | 全功能+语义搜索+自动同步+大规模索引+自动卫生+聚类 | 团队/企业/创作者 |
 
@@ -752,24 +752,24 @@ codex --skill infinite-memory-vault-pro
 ```bash
 # 1. 备份现有记忆库
 cp -r ~/memory/ ~/backups/pre-upgrade/
-
+# ...
 # 2. 替换 SKILL.md 为专业版
 # 3. 运行专业版初始化（补充创建语义索引和配置）
 node （请参考skill目录中的脚本文件） --edition pro
-
+# ...
 # 4. 为现有文件构建语义索引
 node （请参考skill目录中的脚本文件） index rebuild
 # 输出：已索引 N 个文件，生成 N 个向量
-
+# ...
 # 5. 验证数据完整性
 node （请参考skill目录中的脚本文件） stats --detailed
 # 确认文件数量与升级前一致
-
+# ...
 # 6. 启用高级功能
 node （请参考skill目录中的脚本文件） config set semantic.enabled true
 node （请参考skill目录中的脚本文件） config set sync.enabled true
 node （请参考skill目录中的脚本文件） config set largeScale.enabled true
-
+# ...
 # 7. 启动后台服务
 node （请参考skill目录中的脚本文件） daemon start
 ```
@@ -777,7 +777,7 @@ node （请参考skill目录中的脚本文件） daemon start
 ### 专业版版本升级
 
 | 升级类型 | 操作 | 数据迁移 |
-|:---|:---|:---|
+|:-----|:-----|:-----|
 | Patch 更新（1.0.0→1.0.1） | 替换 SKILL.md | 无需迁移 |
 | Minor 更新（1.0.0→1.1.0） | 替换 SKILL.md + 运行迁移脚本 | 自动迁移索引 |
 | Major 更新（1.0→2.0） | 替换 SKILL.md + 手动迁移 | 参考迁移文档 |
@@ -795,7 +795,7 @@ node （请参考skill目录中的脚本文件） daemon start
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 | 专业版用途 |
-|:-------|:-----|:---------|:---------|:---------|:---------|
+|---:|---:|---:|---:|---:|---:|
 | grep | 系统命令 | 必需 | 系统自带；Windows 需 Git Bash | 任意 | 关键词检索 |
 | 文件系统 | 存储 | 必需 | 操作系统内置 | - | 记忆存储 |
 | Ollama | 本地服务 | 推荐 | https://ollama.com/download | 0.1.0+ | 语义搜索 embedding |

@@ -22,25 +22,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 命理咨询专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 命理咨询专业版专业命理分析 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### PRO版功能增强对比
 | 功能 | 免费版 | PRO版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 命理体系 | 仅八字 | 八字+紫微斗数 |
 | 合婚分析 | 不支持 | 完整合婚报告 |
 | 大运流年 | 不支持 | 十年走势推演 |
@@ -53,7 +55,7 @@ pricing_model: "per_use"
 **输入**: 用户提供PRO版功能增强对比所需的指令和必要参数。
 ### 支持的命理体系
 | 体系 | 功能 | PRO版特性 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 八字命理 | 四柱排盘+大运流年 | 深度分析 |
 | 紫微斗数 | 十二宫排盘+星曜解读 | 完整命盘 |
 | 合婚分析 | 两人命盘匹配度 | 匹配评分 |
@@ -83,7 +85,7 @@ python3 （请参考skill目录中的脚本文件） chart \
   --year 1990 --month 5 --day 15 --hour 8 \
   --gender male \
   --output ziwei_chart.html
-
+# ...
 # 输出包含：
 # - 十二宫位图
 # - 主星副星分布
@@ -101,7 +103,7 @@ python3 （请参考skill目录中的脚本文件） analyze \
   --person1 "1990-05-15 08:00 male" \
   --person2 "1992-08-20 14:00 female" \
   --output marriage_report.pdf
-
+# ...
 # 输出包含：
 # - 八字匹配度评分
 # - 五行互补分析
@@ -120,7 +122,7 @@ python3 （请参考skill目录中的脚本文件） \
   --output-dir ./charts/ \
   --format html \
   --parallel 5
-
+# ...
 # CSV格式：
 # name,year,month,day,hour,gender
 # 张三,1990,5,15,8,male
@@ -134,7 +136,7 @@ python3 （请参考skill目录中的脚本文件） \
 ```bash
 # 依赖说明
 pip install -r requirements_pro.txt
-
+# ...
 # 示例
 python3 （请参考skill目录中的脚本文件） --load-cases
 ```
@@ -144,16 +146,16 @@ python3 （请参考skill目录中的脚本文件） --load-cases
 ```bash
 # 紫微斗数
 python3 （请参考skill目录中的脚本文件） chart --year 1990 --month 5 --day 15 --hour 8 --gender male
-
+# ...
 # 合婚分析
 python3 （请参考skill目录中的脚本文件） analyze --person1 "1990-05-15 08:00 male" --person2 "1992-08-20 14:00 female"
-
+# ...
 # 大运流年
 python3 （请参考skill目录中的脚本文件） dayun --year 1990 --month 5 --day 15 --hour 8 --gender male
-
+# ...
 # 批量排盘
 python3 （请参考skill目录中的脚本文件） --input people.csv --output-dir ./charts/
-
+# ...
 # 案例查询
 python3 （请参考skill目录中的脚本文件） search --keyword "富贵命"
 ```
@@ -162,7 +164,7 @@ python3 （请参考skill目录中的脚本文件） search --keyword "富贵命
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | university-app处理的内容输入 |,  |
 | content | string | 否 | university-app处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -190,9 +192,8 @@ python3 （请参考skill目录中的脚本文件） search --keyword "富贵命
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -208,7 +209,7 @@ python3 （请参考skill目录中的脚本文件） search --keyword "富贵命
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | lunardate | Python库 | 必需 | `pip install lunardate`（农历） |
@@ -233,20 +234,6 @@ python3 （请参考skill目录中的脚本文件） search --keyword "富贵命
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -296,9 +283,8 @@ PRO版单批次支持最多100人的批量排盘。结果自动生成HTML/PDF格
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

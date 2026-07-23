@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 健康数据助手 (专业版)
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | AI 教练对话 | 自然语言查询健康数据 | 3次/日 | 100次/日 |
 | 运动记录查询 | 按日期检索历史运动 | 100次/日 | 10000次/日 |
 | 每日运动推荐 | 生成结构化训练方案 | 支持 | 支持 |
@@ -90,14 +92,14 @@ pricing_model: "per_use"
 import os
 import requests
 from datetime import datetime, timedelta
-
+# ...
 API_BASE = "https://api.transition.fun"
 ADMIN_KEY = os.environ["TRANSITION_ADMIN_KEY"]
-
+# ...
 class StudioManager:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Admin-Scope": "all"}
-
+# ...
     def list_members(self):
         """列出全部会员"""
         resp = requests.get(
@@ -106,7 +108,7 @@ class StudioManager:
             timeout=30,
         )
         return resp.json().get("members", [])
-
+# ...
     def batch_pmc(self, member_ids):
         """批量获取 PMC 疲劳指标"""
         results = []
@@ -118,7 +120,7 @@ class StudioManager:
             )
             results.append({"member_id": mid, "pmc": resp.json()})
         return results
-
+# ...
     def flag_fatigued(self, threshold=-20):
         """识别疲劳会员 (TSB 低于阈值)"""
         members = self.list_members()
@@ -128,7 +130,7 @@ class StudioManager:
             for m, p in zip(members, pmc_data)
             if p["pmc"].get("tsb", 0) < threshold
         ]
-
+# ...
 manager = StudioManager(ADMIN_KEY)
 fatigued = manager.flag_fatigued()
 for f in fatigued:
@@ -149,7 +151,7 @@ def team_training_load(team_id, date_range):
         timeout=60,
     )
     return resp.json()
-
+# ...
 # 示例
 # {
 #   "team_id": "t_001",
@@ -184,7 +186,7 @@ def generate_hr_report(department, quarter):
         timeout=120,
     )
     return resp.json()
-
+# ...
 # 报告包含:
 # - 部门整体活动圆环完成率趋势
 # - 平均步数、睡眠时长对比
@@ -243,7 +245,7 @@ m002,李四,lisi@example.com,2026-02-01,basic
 curl -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
   -H "X-Org-Id: studio_a" \
   "https://api.transition.fun/api/v1/admin/members"
-
+# ...
 curl -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
   -H "X-Org-Id: studio_b" \
   "https://api.transition.fun/api/v1/admin/members"
@@ -266,13 +268,13 @@ api:
   rate_limit:
     requests_per_minute: 200
     burst: 50
-
+# ...
 multi_org:
   enabled: true
   isolation: strict
   audit_log: true
   audit_path: /var/log/apple-health-audit/
-
+# ...
 reports:
   templates_dir: /etc/apple-health-tool/templates/
   output_dir: /var/log/apple-health-reports/
@@ -280,7 +282,7 @@ reports:
   schedule:
     weekly_summary: "0 8 * * 1"
     monthly_report: "0 9 1 * *"
-
+# ...
 notifications:
   fatigued_member:
     enabled: true
@@ -293,25 +295,25 @@ notifications:
 
 ```python
 from jinja2 import Template
-
+# ...
 TEMPLATE = Template("""
 # {{ team_name }} 周度训练报告
-
+# ...
 ## 概览
 - 报告周期: {{ period }}
 - 参与人数: {{ member_count }}
 - 平均 CTL: {{ avg_ctl }}
 - 平均 TSB: {{ avg_tsb }}
-
+# ...
 ## 风险预警
 {% for m in at_risk_members %}
 - {{ m.name }}: TSB={{ m.tsb }} ({{ m.risk_level }})
 {% endfor %}
-
+# ...
 ## 建议
 {{ recommendation }}
 """)
-
+# ...
 def render_report(data):
     return TEMPLATE.render(**data)
 ```
@@ -344,7 +346,7 @@ def with_org(org_id, func):
 
 ```python
 import uuid
-
+# ...
 def batch_update(members):
     """幂等批量更新"""
     batch_id = str(uuid.uuid4())
@@ -367,7 +369,7 @@ def batch_update(members):
 
 ```python
 import time
-
+# ...
 def submit_report_job(template, params):
     """提交异步报告任务"""
     resp = requests.post(
@@ -377,7 +379,7 @@ def submit_report_job(template, params):
         timeout=30,
     )
     return resp.json()["job_id"]
-
+# ...
 def poll_job(job_id, interval=10, max_wait=600):
     """轮询任务状态"""
     elapsed = 0
@@ -446,7 +448,7 @@ curl -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Transition API Pro | 在线 API | 必需 | 联系销售开通专业版账户 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -462,10 +464,10 @@ curl -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
 export TRANSITION_ADMIN_KEY="sk_live_admin_xxx"
 export TRANSITION_ORG_ID="org_your_id"
 export TRANSITION_EDITION="pro"
-
+# ...
 # 可选: Webhook 通知
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
-
+# ...
 # 可选: 数据库审计日志存储 (使用兼容数据库)
 export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 ```
@@ -479,9 +481,8 @@ export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

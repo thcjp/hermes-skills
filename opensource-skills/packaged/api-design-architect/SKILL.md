@@ -16,9 +16,11 @@ tools:
 - read
 - exec
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # API设计架构师
 
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 新 API 设计 | 业务能力描述 + 协议选择(REST/GraphQL/gRPC) | OpenAPI 契约 + 设计文档 + 错误码表 |
 | 模块边界划分 | 系统功能清单 + 依赖关系 | 接口清单 + 依赖方向图 + 职责划分 |
 | 公共接口暴露 | 内部能力 + 对外开放范围 | 公共 API 契约 + 版本策略 + 文档 |
@@ -89,7 +91,7 @@ pricing_model: "per_use"
 **输入**：
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | API设计架构师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -159,7 +161,7 @@ components:
 ```markdown
 # error-codes.md (节选)
 | 错误码 | HTTP | 含义 | 可重试 |
-|:-------|:-----|:-----|:-------|
+|---:|---:|---:|---:|
 | VALIDATION_FAILED | 400 | 请求参数校验失败 | 否 |
 | IDEMPOTENCY_CONFLICT | 409 | 幂等键冲突 | 否 |
 | INSUFFICIENT_STOCK | 409 | 库存不足 | 是(等待补货) |
@@ -180,22 +182,22 @@ components:
 # evolution.md
 ## 变更分类
 - **破坏性变更**：字段结构改变（email → email + emailVerified）
-
+# ...
 ## 迁移策略
 ### 阶段 1：双写并存（第 0-2 周）
 - 新增 GET /v2/users 返回 {id, name, email, emailVerified}
 - /v1/users 保持不变，但响应头增加 `Sunset: Sat, 31 Dec 2026 23:59:59 GMT`
 - /v1/users 响应头增加 `Deprecation: true` 和 `Link: </v2/users>; rel="successor-version"`
-
+# ...
 ### 阶段 2：通知迁移（第 2-4 周）
 - 邮件通知所有已知调用方
 - Dashboard 显示 v1 调用量趋势
 - 文档首页置顶迁移指南
-
+# ...
 ### 阶段 3：监控旧版（第 4-8 周）
 - 监控 /v1/users 调用量，目标降至 < 1% 总流量
 - 对未迁移调用方单独触达
-
+# ...
 ### 阶段 4：下线（第 8 周后）
 - /v1/users 返回 410 Gone + 迁移指引
 - 保留错误响应 30 天后彻底移除路由
@@ -204,7 +206,7 @@ components:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | 契约与实现不一致 | 实现未遵循契约或契约未更新 | 以契约为准，使用 schema 验证中间件拦截不一致响应 |
 | 破坏性变更误判为兼容 | 字段语义改变但类型不变 | 审查所有字段语义变更，语义变更视为破坏性 |
 | 幂等键冲突 | 客户端重复提交相同幂等键 | 返回 409 + 原订单信息，不重复创建 |
@@ -221,7 +223,7 @@ components:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 可选 | 由 Agent 内置 LLM 提供，辅助设计决策 |
 | Mermaid 渲染器 | 工具 | 可选 | 设计文档图表渲染 |
 | Swagger Editor | 工具 | 可选 | OpenAPI 契约校验与预览 |
@@ -258,13 +260,13 @@ info:
   contact:
     name: API支持
     email: api@example.com
-
+# ...
 servers:
   - url: https://api.example.com/v1
     description: 生产环境
   - url: https://api-staging.example.com/v1
     description: 预发布环境
-
+# ...
 paths:
   /posts:
     get:
@@ -312,7 +314,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-
+# ...
   /posts/{postId}:
     parameters:
       - name: postId
@@ -343,7 +345,7 @@ paths:
           description: 更新成功
         '422':
           description: 校验失败
-
+# ...
 components:
   securitySchemes:
     oauth2:
@@ -393,8 +395,8 @@ components:
 
 ```markdown
 # output/blog-api/error-codes.md
-| 错误码 | HTTP | 含义 | 可重试 |
-|:-------|:-----|:-----|:-------|
+| 错误码(续)| HTTP | 含义 | 可重试 |
+|---:|:---|---:|---:|
 | VALIDATION_FAILED | 400 | 请求参数校验失败 | 否 |
 | UNAUTHORIZED | 401 | 未授权或令牌过期 | 否 |
 | FORBIDDEN | 403 | 权限不足 | 否 |
@@ -423,21 +425,21 @@ type Query {
   authors(first: Int = 20, after: String): AuthorConnection!
   author(id: ID!): Author
 }
-
+# ...
 type Mutation {
   createPost(input: CreatePostInput!): CreatePostPayload!
   updatePost(id: ID!, input: UpdatePostInput!): UpdatePostPayload!
   deletePost(id: ID!): DeletePostPayload!
   publishPost(id: ID!, idempotencyKey: String): PublishPostPayload!
 }
-
+# ...
 input PostFilter {
   tag: String
   authorId: ID
   status: PostStatus
   createdAfter: DateTime
 }
-
+# ...
 input CreatePostInput {
   title: String!
   content: String!
@@ -445,7 +447,7 @@ input CreatePostInput {
   tagIds: [ID!]!
   clientMutationId: String
 }
-
+# ...
 type Post implements Node {
   id: ID!
   title: String!
@@ -459,35 +461,35 @@ type Post implements Node {
   createdAt: DateTime!
   updatedAt: DateTime!
 }
-
+# ...
 type PostConnection {
   edges: [PostEdge!]!
   pageInfo: PageInfo!
   totalCount: Int!
 }
-
+# ...
 type PostEdge {
   node: Post!
   cursor: String!
 }
-
+# ...
 type PageInfo {
   hasNextPage: Boolean!
   hasPreviousPage: Boolean!
   startCursor: String
   endCursor: String
 }
-
+# ...
 enum PostStatus {
   DRAFT
   PUBLISHED
   ARCHIVED
 }
-
+# ...
 interface Node {
   id: ID!
 }
-
+# ...
 scalar DateTime
 ```
 
@@ -498,13 +500,13 @@ scalar DateTime
 - `createPost`：需`posts:write`权限
 - `deletePost`：需`posts:delete`权限或作者本人
 - `comments.author.email`：仅管理员可查
-
+# ...
 ## 分页规范
 采用Relay风格游标分页：
 - `first`/`after`：正向翻页
 - `last`/`before`：反向翻页（少用，性能差）
 - 游标采用base64编码的`{id, createdAt}`组合
-
+# ...
 ## 演化策略
 - 向后兼容：新增可选字段、新增枚举值（客户端必须处理未知值）
 - 破坏性变更：字段重命名采用`@deprecated`标记，6个月后移除
@@ -524,12 +526,12 @@ scalar DateTime
 **LLM生成输出**:
 ```markdown
 # output/product-api/evolution.md
-## 变更分类
+## 变更分类(续1)
 - **破坏性变更**: 字段类型改变（price: number → price: object）
 - 原因: 单一price字段无法表达多币种场景，类型变更无法向后兼容
-
-## 迁移策略
-
+# ...
+## 迁移策略(续1)
+# ...
 ### 阶段1: 双写并存（第0-4周）
 - 新增 GET /v2/products 返回 {id, name, price: {amount, currency}}
 - /v1/products 响应头增加:
@@ -540,24 +542,24 @@ scalar DateTime
   ```
 - /v1/products 保持原有响应格式不变
 - 响应体增加 `priceV2: {amount, currency}` 作为过渡字段（非破坏性）
-
+# ...
 ### 阶段2: 通知与文档（第4-8周）
 - 邮件通知所有已注册的50个调用方
 - API文档首页置顶迁移指南
 - Dashboard增加v1调用量趋势图，供调用方自查
 - 提供v1→v2的代码迁移示例（Python/Node.js/Java）
-
+# ...
 ### 阶段3: 监控与触达（第8-16周）
 - 监控 /v1/products 调用量，目标: 降至总流量 < 1%
 - 对未迁移调用方单独邮件+电话触达
 - 对Top 10调用量调用方提供专属技术支持
 - 周报通报迁移进度
-
+# ...
 ### 阶段4: 渐进式限制（第16-20周）
 - /v1/products 增加速率限制: 原QPS的50%
 - 响应头增加警告: `Warning: 299 - "API will be removed"`
 - 仍能使用但性能下降，促使迁移
-
+# ...
 ### 阶段5: 下线（第20周后）
 - /v1/products 返回 410 Gone
 ```json
@@ -588,36 +590,36 @@ scalar DateTime
 ```protobuf
 // output/order-service/order.proto
 syntax = "proto3";
-
+# ...
 package com.example.order.v1;
-
+# ...
 option go_package = "github.com/example/proto/order/v1;orderv1";
 option java_multiple_files = true;
 option java_package = "com.example.order.v1";
-
+# ...
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/field_mask.proto";
 import "google/rpc/code.proto";
-
+# ...
 // 订单服务
 service OrderService {
   // 创建订单
   rpc CreateOrder(CreateOrderRequest) returns (Order);
-  
+# ...
   // 查询订单
   rpc GetOrder(GetOrderRequest) returns (Order);
-  
+# ...
   // 批量查询订单
   rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
-  
+# ...
   // 取消订单
   rpc CancelOrder(CancelOrderRequest) returns (Order);
-  
+# ...
   // 流式订阅订单状态变更
   rpc WatchOrderStatus(WatchOrderStatusRequest) 
       returns (stream OrderStatusEvent);
 }
-
+# ...
 message Order {
   string id = 1;  // 订单ID，格式: ord_xxx
   string user_id = 2;
@@ -627,18 +629,18 @@ message Order {
   OrderStatus status = 6;
   google.protobuf.Timestamp created_at = 7;
   google.protobuf.Timestamp updated_at = 8;
-  
+# ...
   // 下次版本预留
   reserved 9 to 19;
   reserved "shipping_address", "billing_address";
 }
-
+# ...
 message OrderItem {
   string sku_id = 1;
   int32 quantity = 2;
   int64 unit_price = 3;
 }
-
+# ...
 enum OrderStatus {
   ORDER_STATUS_UNSPECIFIED = 0;
   ORDER_STATUS_PENDING = 1;
@@ -647,13 +649,13 @@ enum OrderStatus {
   ORDER_STATUS_DELIVERED = 4;
   ORDER_STATUS_CANCELLED = 5;
 }
-
+# ...
 message CreateOrderRequest {
   string user_id = 1;
   repeated OrderItem items = 2;
   string idempotency_key = 3;  // 幂等键
 }
-
+# ...
 message OrderStatusEvent {
   string order_id = 1;
   OrderStatus previous_status = 2;
@@ -666,7 +668,7 @@ message OrderStatusEvent {
 ```markdown
 # output/order-service/error-codes.md
 | gRPC Code | HTTP映射 | 含义 | 可重试 |
-|:----------|:---------|:-----|:-------|
+|:-----------:|-------------|:------------|:-----------:|
 | INVALID_ARGUMENT | 400 | 请求参数校验失败 | 否 |
 | NOT_FOUND | 404 | 订单不存在 | 否 |
 | ALREADY_EXISTS | 409 | 幂等键冲突，订单已存在 | 否 |
@@ -690,33 +692,33 @@ message OrderStatusEvent {
 ```markdown
 # output/user-api-review/review-report.md
 # API质量审查报告
-
+# ...
 ## 评分总览
 | 维度 | 评分 | 等级 |
-|:-----|:-----|:-----|
+|----|:--:|---:|
 | 命名规范 | 8/10 | B |
 | 版本管理 | 6/10 | C |
 | 错误处理 | 7/10 | B |
 | 安全设计 | 9/10 | A |
 | 文档完整性 | 5/10 | C |
 | **总评** | **35/50** | **B-** |
-
+# ...
 ## 详细审查
-
+# ...
 ### 1. 命名规范 (8/10)
 ✓ 资源路径使用复数名词: /users, /users/{id}
 ✓ HTTP方法语义正确: GET查询, POST创建, PATCH更新
 ✗ 字段命名不一致: 混用snake_case(user_id)和camelCase(userId)
   建议: 统一采用snake_case，与JSON社区惯例一致
 ✗ 错误码命名缺少模块前缀: NOT_FOUND 应为 USER_NOT_FOUND
-
+# ...
 ### 2. 版本管理 (6/10)
 ✓ URL路径包含版本: /v1/users
 ✗ 未配置 Sunset / Deprecation 响应头
 ✗ 缺少版本变更日志(CHANGELOG)
 ✗ 未声明版本支持策略(如:每个版本支持多久)
   建议: 文档明确版本支持周期(如N+1模式，新版本发布后旧版本支持6个月)
-
+# ...
 ### 3. 错误处理 (7/10)
 ✓ 统一错误格式: {error: {code, message}}
 ✓ HTTP状态码使用合理
@@ -724,7 +726,7 @@ message OrderStatusEvent {
 ✗ 缺少 retryable 字段，客户端无法判断是否重试
 ✗ 错误码未集中注册，可能命名冲突
   建议: 补充requestId和retryable字段，建立全局错误码注册表
-
+# ...
 ### 4. 安全设计 (9/10)
 ✓ OAuth 2.0授权
 ✓ 输入参数校验(minLength/maxLength/pattern)
@@ -732,7 +734,7 @@ message OrderStatusEvent {
 ✓ 速率限制头: X-RateLimit-*
 ✗ 缺少幂等键支持(Idempotency-Key)
   建议: 写操作(POST/PUT/PATCH)支持Idempotency-Key头
-
+# ...
 ### 5. 文档完整性 (5/10)
 ✓ 每个端点有summary
 ✗ 缺少 description 详细说明
@@ -740,7 +742,7 @@ message OrderStatusEvent {
 ✗ 缺少错误场景示例
 ✗ 未说明分页约定(cursor还是offset)
   建议: 每个端点补充description、example，文档中明确分页/过滤/排序约定
-
+# ...
 ## 改进优先级
 1. **高优先级**: 补充requestId、retryable字段; 统一字段命名
 2. **中优先级**: 添加版本支持策略; 补充端点示例

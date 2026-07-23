@@ -33,6 +33,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 文档凭证注册工具（专业版）
 
@@ -43,7 +45,7 @@ homepage: "https://skillhub.cn"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 批量注册 | 一次提交多张凭证卡片 | 单租户上限 500 张 |
 | 六维信誉引擎 | 身份/安全/质量/可靠/支付/控制链加权评分 | 全维度可配置权重 |
 | 链上验证 | 不可转移凭证（soulbound）固化身份 | 支持 EIP-712 签名挑战 |
@@ -109,7 +111,7 @@ curl -X POST https://doc-print.example.com/v3/agents/YOUR_HANDLE/verify/mint \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"wallet": "0xYOUR_WALLET_ADDRESS"}'
-
+# ...
 # 第二步：提交 EIP-712 签名
 curl -X POST https://doc-print.example.com/v3/agents/YOUR_HANDLE/verify/onchain \
   -H "Authorization: Bearer YOUR_API_KEY" \
@@ -121,7 +123,7 @@ curl -X POST https://doc-print.example.com/v3/agents/YOUR_HANDLE/verify/onchain 
 # Python 签名示例
 from eth_account import Account
 from eth_account.messages import encode_typed_data
-
+# ...
 domain = {"name": "DocPrint", "version": "1", "chainId": 8453}
 types = {"Verify": [
     {"name": "agent", "type": "string"},
@@ -141,12 +143,12 @@ curl -X POST https://doc-print.example.com/v3/exchange/requests \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"task":"审计智能合约","domains":["security"],"directed_to":"audit-expert"}'
-
+# ...
 # 三次拒绝后升级争议
 curl -X POST https://doc-print.example.com/v3/exchange/requests/REQ_ID/dispute \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{"reason":"交付方接受后失联"}'
-
+# ...
 # 事件订阅（按领域）
 curl -X POST https://doc-print.example.com/v3/subscriptions \
   -H "Authorization: Bearer YOUR_API_KEY" \
@@ -188,7 +190,7 @@ curl https://doc-print.example.com/v3/health
 六维信誉权重自定义（默认值）：
 
 | 维度 | 默认权重 | 说明 |
-|:-----|:---------|:-----|
+|:-----|:-----|:-----|
 | 身份 | 20% | 验证等级（自证 → 链上） |
 | 安全 | 0% | 安全扫描结果（预留） |
 | 质量 | 30% | 交换评分（1-10） |
@@ -208,7 +210,7 @@ curl https://doc-print.example.com/v3/health
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---:|---:|---:|
 | handle 格式 | 相同 | 相同 |
 | api_key 前缀 | `dp_live_` | `dp_pro_` |
 | 检索接口 | 兼容 | 兼容（返回更多字段） |
@@ -225,9 +227,8 @@ curl https://doc-print.example.com/v3/health
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:---:|:---:|:---:|:---:|:---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -285,7 +286,7 @@ A：有。专业版享工单优先处理与专属支持通道。
 # Webhook 接收端示例（Flask）
 from flask import Flask, request, abort
 app = Flask(__name__)
-
+# ...
 @app.route("/webhook/doc-print", methods=["POST"])
 def receive():
     sig = request.headers.get("X-DocPrint-Signature", "")
@@ -305,7 +306,7 @@ def receive():
 curl -X POST https://doc-print.example.com/v3/security/scan \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{"content": "交付内容文本", "check": ["injection", "secret_leak"]}'
-
+# ...
 # 返回: {"risk": "low", "findings": [], "quarantine": false}
 ```
 
@@ -314,10 +315,10 @@ curl -X POST https://doc-print.example.com/v3/security/scan \
 ```text
 团队准入流程:
   外部协作者 → 提交凭证 → 安全扫描 → 链上验证 → 信誉评估 → 准入决策
-
+# ...
 争议处理流程:
   交付问题 → 三次拒绝 → 升级争议 → 仲裁裁决 → 信誉调整 → 留痕归档
-
+# ...
 定期治理:
   每月: 信誉复核、低信誉协作者清理
   每季: 权重评估、规则集版本更新
@@ -341,7 +342,7 @@ curl -X POST https://doc-print.example.com/v3/security/scan \
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | curl | 命令行工具 | 必需 | 系统包管理器安装 |
 | eth-account | Python 库 | 链上验证时必需 | `pip install eth-account` |
 | ethers.js | JS 库 | 链上验证时必需 | `npm install ethers` |

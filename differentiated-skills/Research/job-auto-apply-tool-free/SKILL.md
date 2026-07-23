@@ -51,8 +51,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 求职自动申请（免费版）
 
 ## 概述
@@ -62,7 +63,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 多平台搜索 | 跨平台职位搜索 | 是（2 个平台） |
 | 智能匹配 | 职位与资料匹配 | 是 |
 | 求职信生成 | 自动生成求职信 | 是 |
@@ -136,7 +137,7 @@ python job_search_apply.py \
   --remote \
   --max-applications 10 \
   --dry-run
-
+# ...
 # 实际提交（需确认）
 python job_search_apply.py \
   --profile ~/job_profile.json \
@@ -197,7 +198,7 @@ python job_search_apply.py \
 ```bash
 # 复制资料模板
 cp profile_template.json ~/job_profile.json
-
+# ...
 # 编辑个人资料
 vim ~/job_profile.json
 ```
@@ -232,20 +233,19 @@ python job_search_apply.py \
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 配置示例
 
 ### 支持的招聘平台
 
 | 平台 | 支持方式 | 说明 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | LinkedIn | API + 爬取 | 含 Easy Apply |
 | Indeed | API | 官方 API |
 
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | `--profile` | 字符串 | 无 | 个人资料文件路径 |
 | `--title` | 字符串 | 无 | 职位名称 |
 | `--location` | 字符串 | 无 | 工作地点 |
@@ -301,14 +301,14 @@ python job_search_apply.py \
 
 ```text
 Dear Hiring Manager at {company},
-
+# ...
 I am excited to apply for the {position} role. With {years} years of
 experience in {skills}, I believe I would be an excellent fit.
-
+# ...
 {custom_paragraph}
-
+# ...
 I look forward to discussing how I can contribute to {company}'s success.
-
+# ...
 Best regards,
 {name}
 ```
@@ -323,7 +323,7 @@ python job_search_apply.py \
   --title "Developer" \
   --location "Remote" \
   --dry-run
-
+# ...
 # 尝试不同关键词
 python job_search_apply.py \
   --title "Software Engineer" \
@@ -336,10 +336,10 @@ python job_search_apply.py \
 ```bash
 # 检查资料完整性
 python job_search_apply.py --validate-profile
-
+# ...
 # 验证平台连接
 python job_search_apply.py --check-platforms
-
+# ...
 # 使用试运行模式测试
 python job_search_apply.py --dry-run
 ```
@@ -349,7 +349,7 @@ python job_search_apply.py --dry-run
 ```bash
 # 优化个人资料中的技能描述
 vim ~/job_profile.json
-
+# ...
 # 自定义求职信模板
 python job_search_apply.py --cover-letter-template custom_template.txt
 ```
@@ -359,7 +359,7 @@ python job_search_apply.py --cover-letter-template custom_template.txt
 ```bash
 # 降低匹配阈值（谨慎使用）
 python job_search_apply.py --min-match-score 0.6
-
+# ...
 # 优化资料中的技能关键词
 # 确保技能与目标职位匹配
 ```
@@ -376,7 +376,7 @@ python job_search_apply.py --min-match-score 0.6
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|
 | Python 3.8+ | 运行时 | 是 | 系统包管理器安装 |
 | requests | HTTP 库 | 是 | `pip install requests` |
 | beautifulsoup4 | HTML 解析 | 是 | `pip install beautifulsoup4` |
@@ -407,9 +407,8 @@ export INDEED_API_KEY=your_key
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

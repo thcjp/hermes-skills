@@ -21,6 +21,8 @@ tools:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
 ---
 # 边缘计算开发者
 
@@ -37,7 +39,7 @@ pricing_model: "monthly"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 边缘 API | API 端点 + 数据存储需求 | Worker 入口 + 路由 + D1/KV 绑定 + 部署配置 |
 | CDN 优化 | 静态/动态内容 + 加速需求 | 缓存策略 + 边缘重写 + 图片优化配置 |
 | 边缘函数 | 请求/响应转换需求 | Header 重写 + URL 重定向 + A/B 测试代码 |
@@ -105,7 +107,7 @@ pricing_model: "monthly"
 **输入**：
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 边缘计算开发者处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -120,15 +122,15 @@ pricing_model: "monthly"
 // src/index.ts
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-
+// ...
 const app = new Hono<{ Bindings: { DB: D1Database } }>();
-
+// ...
 app.use('*', cors({
   origin: ['https://myapp.com'],  // 白名单
   allowMethods: ['GET', 'POST', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization'],
 }));
-
+// ...
 // GET /api/users - 获取用户列表
 app.get('/api/users', async (c) => {
   const result = await c.env.DB.prepare(
@@ -136,31 +138,31 @@ app.get('/api/users', async (c) => {
   ).all();
   return c.json({ users: result.results });
 });
-
+// ...
 // POST /api/users - 创建用户
 app.post('/api/users', async (c) => {
   const { name, email } = await c.req.json();
-
+// ...
   // 输入校验
   if (!name || !email || !email.includes('@')) {
     return c.json({ error: 'VALIDATION_FAILED', message: 'name and valid email required' }, 400);
   }
-
+// ...
   // 检查邮箱唯一
   const existing = await c.env.DB.prepare('SELECT id FROM users WHERE email = ?').bind(email).first();
   if (existing) {
     return c.json({ error: 'EMAIL_EXISTS', message: 'email already registered' }, 409);
   }
-
+// ...
   // 插入
   const id = crypto.randomUUID();
   await c.env.DB.prepare(
     'INSERT INTO users (id, name, email, created_at) VALUES (?, ?, ?, ?)'
   ).bind(id, name, email, new Date().toISOString()).run();
-
+// ...
   return c.json({ id, name, email }, 201);
 });
-
+// ...
 export default app;
 ```
 
@@ -208,35 +210,35 @@ CREATE INDEX idx_users_created ON users(created_at);
 export class CollabRoom {
   state: DurableObjectState;
   sessions: Map<WebSocket, { userId: string; cursor: { x: number; y: number } }>;
-
+// ...
   constructor(state: DurableObjectState) {
     this.state = state;
     this.sessions = new Map();
   }
-
+// ...
   // 处理 WebSocket 连接
   async fetch(request: Request): Promise<Response> {
     const upgradeHeader = request.headers.get('Upgrade');
     if (upgradeHeader !== 'websocket') {
       return new Response('Expected websocket', { status: 426 });
     }
-
+// ...
     const pair = new WebSocketPair();
     const [client, server] = Object.values(pair);
-
+// ...
     // 接受连接
     this.state.acceptWebSocket(server);
-
+// ...
     const userId = request.headers.get('x-user-id') || 'anonymous';
     this.sessions.set(server, { userId, cursor: { x: 0, y: 0 } });
-
+// ...
     // 广播用户加入
     this.broadcast({
       type: 'user_joined',
       userId,
       onlineCount: this.sessions.size,
     }, server);
-
+// ...
     server.addEventListener('message', (event) => {
       const data = JSON.parse(event.data as string);
       if (data.type === 'cursor_move') {
@@ -249,15 +251,15 @@ export class CollabRoom {
         this.broadcast({ type: 'content', content: data.content }, server);
       }
     });
-
+// ...
     server.addEventListener('close', () => {
       this.sessions.delete(server);
       this.broadcast({ type: 'user_left', userId, onlineCount: this.sessions.size });
     });
-
+// ...
     return new Response(null, { status: 101, webSocket: client });
   }
-
+// ...
   // 广播消息（排除发送者）
   private broadcast(message: object, exclude?: WebSocket) {
     const data = JSON.stringify(message);
@@ -274,31 +276,31 @@ export class CollabRoom {
 // src/index.ts - 路由
 import { Hono } from 'hono';
 export { CollabRoom } from './collab-room';
-
+// ...
 const app = new Hono<{ Bindings: { COLLAB_ROOM: DurableObjectNamespace } }>();
-
+// ...
 app.get('/room/:roomId', (c) => {
   const roomId = c.req.param('roomId');
   const id = c.env.COLLAB_ROOM.idFromName(roomId);
   const stub = c.env.COLLAB_ROOM.get(id);
-
+// ...
   // 升级为 WebSocket
   const headers = new Headers(c.req.headers);
   headers.set('x-user-id', c.req.query('userId') || 'anonymous');
-
+// ...
   return stub.fetch(new Request(c.req.url, {
     method: c.req.method,
     headers,
   }));
 });
-
+// ...
 export default app;
 ```
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | Worker 超时 | CPU 时间超限（免费 10ms/付费 30s） | 优化代码 + 减少同步计算 + 异步化非关键路径 |
 | 子请求超限 | 每请求最多 50 子请求 | 批量合并请求 + 使用 Cache API 减少出站 |
 | KV 一致性延迟 | 最终一致，写入后延迟可读 | 关键数据用 Durable Objects + 读写同一副本 |
@@ -317,7 +319,7 @@ export default app;
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | wrangler | CLI | 必需 | `npm install -g wrangler` |
 | Cloudflare 账号 | 服务 | 必需 | Cloudflare 官网注册（免费版可用） |
 | Cloudflare API Token | API Key | 必需 | Cloudflare Dashboard 创建 |
@@ -326,7 +328,7 @@ export default app;
 
 ### 国内替代方案
 | Cloudflare 服务 | 腾讯云替代 | 阿里云替代 | 说明 |
-|:----------------|:-----------|:-----------|:-----|
+|:---------------|---------------:|:---------------|:---------------|
 | Workers（边缘函数） | 腾讯云 EdgeOne 边缘函数 | 阿里云函数计算（FC） | 边缘/serverless 计算 |
 | Workers（国内 CDN） | 腾讯云 EdgeOne | 阿里云 CDN/DCDN | 国内 CDN 加速 |
 | KV（键值存储） | 腾讯云 COS + Redis | 阿里云 OSS + Redis | 键值/对象存储 |
@@ -368,14 +370,14 @@ export default app;
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { z } from 'zod';
-
+// ...
 type Bindings = {
   DB: D1Database;
   API_KEY: string;
 };
-
+// ...
 const app = new Hono<{ Bindings: Bindings }>();
-
+// ...
 // CORS配置
 app.use('*', cors({
   origin: ['https://myapp.com', 'https://staging.myapp.com'],
@@ -384,16 +386,16 @@ app.use('*', cors({
   exposeHeaders: ['X-Total-Count'],
   maxAge: 86400,
 }));
-
+// ...
 // 输入校验Schema
 const createUserSchema = z.object({
   name: z.string().min(1).max(100),
   email: z.string().email(),
   age: z.number().int().min(0).max(150).optional(),
 });
-
+// ...
 const updateUserSchema = createUserSchema.partial();
-
+// ...
 // 统一错误响应
 function errorResponse(code: string, message: string, status: number) {
   return Response.json(
@@ -401,7 +403,7 @@ function errorResponse(code: string, message: string, status: number) {
     { status }
   );
 }
-
+// ...
 // 鉴权中间件
 app.use('/api/*', async (c, next) => {
   const auth = c.req.header('Authorization');
@@ -413,20 +415,20 @@ app.use('/api/*', async (c, next) => {
   }
   await next();
 });
-
+// ...
 // GET /api/users - 列表查询(分页)
 app.get('/api/users', async (c) => {
   const page = Math.max(1, parseInt(c.req.query('page') || '1'));
   const pageSize = Math.min(100, Math.max(1, parseInt(c.req.query('pageSize') || '20')));
   const offset = (page - 1) * pageSize;
-
+// ...
   const [users, countResult] = await Promise.all([
     c.env.DB.prepare(
       'SELECT id, name, email, age, created_at FROM users ORDER BY created_at DESC LIMIT ? OFFSET ?'
     ).bind(pageSize, offset).all(),
     c.env.DB.prepare('SELECT COUNT(*) as total FROM users').first(),
   ]);
-
+// ...
   return c.json({
     users: users.results,
     pagination: {
@@ -436,7 +438,7 @@ app.get('/api/users', async (c) => {
     },
   });
 });
-
+// ...
 // POST /api/users - 创建用户
 app.post('/api/users', async (c) => {
   const body = await c.req.json();
@@ -444,9 +446,9 @@ app.post('/api/users', async (c) => {
   if (!parsed.success) {
     return errorResponse('VALIDATION_FAILED', parsed.error.message, 400);
   }
-
+// ...
   const { name, email, age } = parsed.data;
-
+// ...
   // 检查邮箱唯一
   const existing = await c.env.DB.prepare(
     'SELECT id FROM users WHERE email = ?'
@@ -454,29 +456,29 @@ app.post('/api/users', async (c) => {
   if (existing) {
     return errorResponse('EMAIL_EXISTS', 'Email already registered', 409);
   }
-
+// ...
   const id = crypto.randomUUID();
   const now = new Date().toISOString();
   await c.env.DB.prepare(
     'INSERT INTO users (id, name, email, age, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)'
   ).bind(id, name, email, age || null, now, now).run();
-
+// ...
   return c.json({ id, name, email, age, created_at: now }, 201);
 });
-
+// ...
 // GET /api/users/:id
 app.get('/api/users/:id', async (c) => {
   const id = c.req.param('id');
   const user = await c.env.DB.prepare(
     'SELECT id, name, email, age, created_at, updated_at FROM users WHERE id = ?'
   ).bind(id).first();
-
+// ...
   if (!user) {
     return errorResponse('USER_NOT_FOUND', 'User not found', 404);
   }
   return c.json(user);
 });
-
+// ...
 // PUT /api/users/:id
 app.put('/api/users/:id', async (c) => {
   const id = c.req.param('id');
@@ -485,7 +487,7 @@ app.put('/api/users/:id', async (c) => {
   if (!parsed.success) {
     return errorResponse('VALIDATION_FAILED', parsed.error.message, 400);
   }
-
+// ...
   const updates = parsed.data;
   const setClauses = [];
   const values = [];
@@ -496,36 +498,36 @@ app.put('/api/users/:id', async (c) => {
   setClauses.push('updated_at = ?');
   values.push(new Date().toISOString());
   values.push(id);
-
+// ...
   const result = await c.env.DB.prepare(
     `UPDATE users SET ${setClauses.join(', ')} WHERE id = ?`
   ).bind(...values).run();
-
+// ...
   if (!result.success || result.meta.changes === 0) {
     return errorResponse('USER_NOT_FOUND', 'User not found', 404);
   }
   return c.json({ id, ...updates });
 });
-
+// ...
 // DELETE /api/users/:id
 app.delete('/api/users/:id', async (c) => {
   const id = c.req.param('id');
   const result = await c.env.DB.prepare(
     'DELETE FROM users WHERE id = ?'
   ).bind(id).run();
-
+// ...
   if (result.meta.changes === 0) {
     return errorResponse('USER_NOT_FOUND', 'User not found', 404);
   }
   return new Response(null, { status: 204 });
 });
-
+// ...
 // 全局错误处理
 app.onError((err, c) => {
   console.error(err);
   return errorResponse('INTERNAL_ERROR', 'Something went wrong', 500);
 });
-
+// ...
 export default app;
 ```
 
@@ -563,50 +565,50 @@ export class CollabRoom {
   state: DurableObjectState;
   sessions: Map<WebSocket, { userId: string; name: string; cursor: { x: number; y: number }; color: string }>;
   content: string = '';
-
+// ...
   constructor(state: DurableObjectState) {
     this.state = state;
     this.sessions = new Map();
   }
-
+// ...
   async fetch(request: Request): Promise<Response> {
     if (request.headers.get('Upgrade') !== 'websocket') {
       return new Response('Expected websocket', { status: 426 });
     }
-
+// ...
     // 加载持久化内容
     if (this.content === '') {
       this.content = (await this.state.storage.get('content')) || '';
     }
-
+// ...
     const pair = new WebSocketPair();
     const [client, server] = Object.values(pair);
     this.state.acceptWebSocket(server);
-
+// ...
     const userId = request.headers.get('x-user-id') || crypto.randomUUID();
     const name = request.headers.get('x-user-name') || '匿名用户';
     const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8'];
     const color = colors[this.sessions.size % colors.length];
-
+// ...
     this.sessions.set(server, { userId, name, cursor: { x: 0, y: 0 }, color });
-
+// ...
     // 发送当前状态给新用户
     server.send(JSON.stringify({
       type: 'init',
       content: this.content,
       users: Array.from(this.sessions.values()),
     }));
-
+// ...
     // 广播用户加入
     this.broadcast({
       type: 'user_joined',
       user: { userId, name, color },
       onlineCount: this.sessions.size,
     }, server);
-
+// ...
     server.addEventListener('message', (event) => {
       const data = JSON.parse(event.data as string);
-      
+// ...
       switch (data.type) {
         case 'cursor_move':
           const session = this.sessions.get(server);
@@ -617,7 +619,7 @@ export class CollabRoom {
             cursor: data.cursor,
           }, server);
           break;
-
+// ...
         case 'content_update':
           // 简化版: 最后写入胜出(生产环境用CRDT)
           this.content = data.content;
@@ -628,7 +630,7 @@ export class CollabRoom {
             updatedBy: userId,
           }, server);
           break;
-
+// ...
         case 'content_delta':
           // 增量更新(性能更优)
           this.content = this.applyDelta(this.content, data.delta);
@@ -641,7 +643,7 @@ export class CollabRoom {
           break;
       }
     });
-
+// ...
     server.addEventListener('close', () => {
       const session = this.sessions.get(server);
       this.sessions.delete(server);
@@ -651,10 +653,10 @@ export class CollabRoom {
         onlineCount: this.sessions.size,
       });
     });
-
+// ...
     return new Response(null, { status: 101, webSocket: client });
   }
-
+// ...
   private broadcast(message: object, exclude?: WebSocket) {
     const data = JSON.stringify(message);
     for (const [ws] of this.sessions) {
@@ -663,7 +665,7 @@ export class CollabRoom {
       }
     }
   }
-
+// ...
   private applyDelta(content: string, delta: { position: number; insert?: string; delete?: number }): string {
     let result = content;
     if (delta.delete) {
@@ -681,26 +683,26 @@ export class CollabRoom {
 // output/collab-editor/src/index.ts
 import { Hono } from 'hono';
 export { CollabRoom } from './room';
-
+// ...
 const app = new Hono<{ Bindings: { COLLAB_ROOM: DurableObjectNamespace } }>();
-
+// ...
 // WebSocket升级路由
 app.get('/room/:roomId', (c) => {
   const roomId = c.req.param('roomId');
   if (!roomId.match(/^[a-zA-Z0-9_-]{1,64}$/)) {
     return c.json({ error: 'Invalid room ID' }, 400);
   }
-
+// ...
   const id = c.env.COLLAB_ROOM.idFromName(roomId);
   const stub = c.env.COLLAB_ROOM.get(id);
-
+// ...
   const headers = new Headers(c.req.headers);
   headers.set('x-user-id', c.req.query('userId') || crypto.randomUUID());
   headers.set('x-user-name', c.req.query('name') || '匿名用户');
-
+// ...
   return stub.fetch(new Request(c.req.url, { headers }));
 });
-
+// ...
 export default app;
 ```
 
@@ -719,14 +721,14 @@ export default app;
 ```typescript
 // output/ab-testing/src/index.ts
 import { Hono } from 'hono';
-
+// ...
 type Bindings = {
   AB_CONFIG: KVNamespace;  // 实验配置
   AB_RESULTS: KVNamespace; // 实验结果
 };
-
+// ...
 const app = new Hono<{ Bindings: Bindings }>();
-
+// ...
 // 实验配置类型
 interface Experiment {
   id: string;
@@ -734,7 +736,7 @@ interface Experiment {
   variants: { name: string; weight: number; url: string }[];
   status: 'running' | 'paused' | 'completed';
 }
-
+// ...
 // 一致性哈希分流(粘性)
 function assignVariant(userId: string, experiment: Experiment): string {
   // 基于userId的稳定哈希
@@ -742,7 +744,7 @@ function assignVariant(userId: string, experiment: Experiment): string {
   const hashNum = Array.from(new Uint8Array(hash)).reduce((a, b) => a + b, 0);
   const totalWeight = experiment.variants.reduce((sum, v) => sum + v.weight, 0);
   const point = hashNum % totalWeight;
-  
+// ...
   let cumulative = 0;
   for (const variant of experiment.variants) {
     cumulative += variant.weight;
@@ -750,25 +752,25 @@ function assignVariant(userId: string, experiment: Experiment): string {
   }
   return experiment.variants[0].name;
 }
-
+// ...
 // 分流中间件
 app.use('/api/*', async (c, next) => {
   const experimentId = c.req.query('exp');
   if (!experimentId) return next();
-
+// ...
   const experimentStr = await c.env.AB_CONFIG.get(`exp:${experimentId}`);
   if (!experimentStr) return next();
-
+// ...
   const experiment: Experiment = JSON.parse(experimentStr);
   if (experiment.status !== 'running') return next();
-
+// ...
   // 获取或生成分流标识
   let userId = c.req.cookie('ab_user_id');
   if (!userId) {
     userId = crypto.randomUUID();
     c.header('Set-Cookie', `ab_user_id=${userId}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=31536000`);
   }
-
+// ...
   // 分流(粘性)
   const variantName = await c.env.AB_CONFIG.get(`assignment:${experimentId}:${userId}`);
   if (!variantName) {
@@ -778,27 +780,27 @@ app.use('/api/*', async (c, next) => {
   } else {
     c.set('variant', variantName);
   }
-
+// ...
   c.set('experimentId', experimentId);
   c.set('userId', userId);
-
+// ...
   await next();
 });
-
+// ...
 // 转换追踪端点
 app.post('/api/track', async (c) => {
   const { experimentId, event, userId } = await c.req.json();
-  
+// ...
   // 增量计数(使用KV的metadata)
   const key = `result:${experimentId}:${event}`;
   const current = await c.env.AB_RESULTS.get(key);
   const count = current ? parseInt(current) + 1 : 1;
-  
+// ...
   await c.env.AB_RESULTS.put(key, count.toString());
-  
+// ...
   return c.json({ tracked: true });
 });
-
+// ...
 // 实验结果查询
 app.get('/api/results/:experimentId', async (c) => {
   const experimentId = c.req.param('experimentId');
@@ -806,7 +808,7 @@ app.get('/api/results/:experimentId', async (c) => {
   if (!experimentStr) {
     return c.json({ error: 'Experiment not found' }, 404);
   }
-
+// ...
   const experiment: Experiment = JSON.parse(experimentStr);
   const results = await Promise.all(
     experiment.variants.map(async (v) => {
@@ -824,10 +826,10 @@ app.get('/api/results/:experimentId', async (c) => {
       };
     })
   );
-
+// ...
   return c.json({ experiment: experiment.name, results });
 });
-
+// ...
 // 边缘重写: 按分流重定向到不同版本
 app.get('/', async (c) => {
   const variant = c.get('variant');
@@ -842,7 +844,7 @@ app.get('/', async (c) => {
   }
   return c.text('Welcome');
 });
-
+// ...
 export default app;
 ```
 
@@ -861,15 +863,15 @@ export default app;
 ```typescript
 // output/ai-image/src/index.ts
 import { Hono } from 'hono';
-
+// ...
 type Bindings = {
   AI: Ai;                    // Workers AI绑定
   IMAGES_BUCKET: R2Bucket;   // R2存储
   RATE_LIMITER: RateLimit;   // 限流
 };
-
+// ...
 const app = new Hono<{ Bindings: Bindings }>();
-
+// ...
 // 限流: 10次/分钟/用户
 app.use('/api/*', async (c, next) => {
   const ip = c.req.header('CF-Connecting-IP') || 'unknown';
@@ -879,27 +881,27 @@ app.use('/api/*', async (c, next) => {
   }
   await next();
 });
-
+// ...
 // POST /api/generate - 文生图
 app.post('/api/generate', async (c) => {
   const { prompt, negativePrompt, width, height, numSteps, guidance } = await c.req.json();
-
+// ...
   // 输入校验
   if (!prompt || prompt.length > 500) {
     return c.json({ error: 'INVALID_PROMPT', message: 'Prompt required, max 500 chars' }, 400);
   }
-
+// ...
   // 生成缓存key(相同参数返回缓存结果)
   const paramsHash = await generateHash(JSON.stringify({ prompt, negativePrompt, width, height, numSteps, guidance }));
   const cacheKey = `ai-image:${paramsHash}`;
-
+// ...
   // 检查Cache API
   const cache = caches.default;
   const cachedResponse = await cache.match(new Request(`https://cache.local/${cacheKey}`));
   if (cachedResponse) {
     return cachedResponse;
   }
-
+// ...
   // 检查R2(长期缓存)
   const r2Object = await c.env.IMAGES_BUCKET.get(cacheKey);
   if (r2Object) {
@@ -907,13 +909,13 @@ app.post('/api/generate', async (c) => {
     r2Object.writeHttpMetadata(headers);
     headers.set('Content-Type', 'image/png');
     headers.set('Cache-Control', 'public, max-age=86400');
-    
+// ...
     const response = new Response(r2Object.body, { headers });
     // 写入Cache API(短期)
     c.executionCtx.waitUntil(cache.put(new Request(`https://cache.local/${cacheKey}`), response.clone()));
     return response;
   }
-
+// ...
   // 调用Workers AI生成图像
   try {
     const inputs = {
@@ -924,18 +926,18 @@ app.post('/api/generate', async (c) => {
       num_steps: numSteps || 20,
       guidance: guidance || 7.5,
     };
-
+// ...
     const response = await c.env.AI.run(
       '@cf/stabilityai/stable-diffusion-xl-base-1.0',
       inputs
     );
-
+// ...
     if (!response.success) {
       return c.json({ error: 'AI_FAILED', message: response.errors }, 500);
     }
-
+// ...
     const imageBuffer = response.result;
-
+// ...
     // 存储到R2(长期缓存)
     c.executionCtx.waitUntil(
       c.env.IMAGES_BUCKET.put(cacheKey, imageBuffer, {
@@ -943,50 +945,50 @@ app.post('/api/generate', async (c) => {
         customMetadata: { prompt, createdAt: new Date().toISOString() },
       })
     );
-
+// ...
     // 返回图像
     const headers = new Headers({
       'Content-Type': 'image/png',
       'Cache-Control': 'public, max-age=86400',
       'X-Cache': 'MISS',
     });
-    
+// ...
     const finalResponse = new Response(imageBuffer, { headers });
-    
+// ...
     // 写入Cache API
     c.executionCtx.waitUntil(
       cache.put(new Request(`https://cache.local/${cacheKey}`), finalResponse.clone())
     );
-
+// ...
     return finalResponse;
   } catch (err) {
     return c.json({ error: 'AI_TIMEOUT', message: 'Generation timed out' }, 504);
   }
 });
-
+// ...
 // 批量生成
 app.post('/api/generate-batch', async (c) => {
   const { prompts } = await c.req.json();
   if (!Array.isArray(prompts) || prompts.length > 4) {
     return c.json({ error: 'BATCH_LIMIT', message: 'Max 4 prompts per batch' }, 400);
   }
-
+// ...
   const results = await Promise.allSettled(
     prompts.map(prompt =>
       c.env.AI.run('@cf/stabilityai/stable-diffusion-xl-base-1.0', { prompt })
     )
   );
-
+// ...
   const images = results.map((r, i) => ({
     prompt: prompts[i],
     status: r.status,
     image: r.status === 'fulfilled' && r.value.success ? 
       `data:image/png;base64,${base64(r.value.result)}` : null,
   }));
-
+// ...
   return c.json({ results: images });
 });
-
+// ...
 // 辅助函数: 生成SHA-256哈希
 async function generateHash(input: string): Promise<string> {
   const data = new TextEncoder().encode(input);
@@ -995,11 +997,11 @@ async function generateHash(input: string): Promise<string> {
     .map(b => b.toString(16).padStart(2, '0'))
     .join('');
 }
-
+// ...
 function base64(buffer: ArrayBuffer): string {
   return btoa(String.fromCharCode(...new Uint8Array(buffer)));
 }
-
+// ...
 export default app;
 ```
 
@@ -1036,13 +1038,13 @@ export default app;
 ```typescript
 // output/image-cdn/src/index.ts
 import { Hono } from 'hono';
-
+// ...
 type Bindings = {
   ORIGINAL_BUCKET: R2Bucket;
 };
-
+// ...
 const app = new Hono<{ Bindings: Bindings }>();
-
+// ...
 interface ImageOptions {
   width?: number;
   height?: number;
@@ -1050,7 +1052,7 @@ interface ImageOptions {
   format?: 'webp' | 'avif' | 'jpeg' | 'png';
   fit?: 'cover' | 'contain' | 'scale-down';
 }
-
+// ...
 // 解析请求参数
 function parseOptions(req: Request): ImageOptions {
   const url = new URL(req.url);
@@ -1063,7 +1065,7 @@ function parseOptions(req: Request): ImageOptions {
     fit: (url.searchParams.get('fit') as ImageOptions['fit']) || 'scale-down',
   };
 }
-
+// ...
 // 检测浏览器支持的最优格式
 function detectBestFormat(accept?: string | null): ImageOptions['format'] {
   if (!accept) return 'webp';
@@ -1071,7 +1073,7 @@ function detectBestFormat(accept?: string | null): ImageOptions['format'] {
   if (accept.includes('image/webp')) return 'webp';
   return 'jpeg';
 }
-
+// ...
 // 生成缓存key
 async function cacheKey(path: string, options: ImageOptions): Promise<string> {
   const optionsStr = JSON.stringify(options);
@@ -1079,20 +1081,20 @@ async function cacheKey(path: string, options: ImageOptions): Promise<string> {
   const hashHex = Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
   return `optimized:${hashHex}`;
 }
-
+// ...
 // GET /images/:path - 图片优化
 app.get('/images/*', async (c) => {
   const path = c.req.path.replace('/images/', '');
   const options = parseOptions(c.req.raw);
-
+// ...
   // 验证路径安全
   if (path.includes('..') || path.startsWith('/')) {
     return c.json({ error: 'INVALID_PATH' }, 400);
   }
-
+// ...
   const cache = caches.default;
   const cKey = await cacheKey(path, options);
-
+// ...
   // 1. 检查边缘缓存
   const cached = await cache.match(c.req.raw);
   if (cached) {
@@ -1100,15 +1102,15 @@ app.get('/images/*', async (c) => {
       headers: { ...cached.headers, 'X-Cache': 'HIT' },
     });
   }
-
+// ...
   // 2. 获取原始图片
   const original = await c.env.ORIGINAL_BUCKET.get(path);
   if (!original) {
     return c.json({ error: 'IMAGE_NOT_FOUND' }, 404);
   }
-
+// ...
   const originalBuffer = await original.arrayBuffer();
-
+// ...
   // 3. 图片处理(使用Cloudflare Images或wasm)
   // 注: 实际生产环境使用Cloudflare Images服务
   // 这里展示逻辑流程
@@ -1116,10 +1118,10 @@ app.get('/images/*', async (c) => {
   const contentType = options.format === 'avif' ? 'image/avif' :
                       options.format === 'webp' ? 'image/webp' :
                       options.format === 'png' ? 'image/png' : 'image/jpeg';
-
+// ...
   // 简化: 直接返回原图(实际用@cf/image-resizing binding)
   optimizedBuffer = originalBuffer;
-
+// ...
   // 4. 设置响应头
   const headers = new Headers({
     'Content-Type': contentType,
@@ -1129,44 +1131,44 @@ app.get('/images/*', async (c) => {
     'X-Original-Size': originalBuffer.byteLength.toString(),
     'X-Optimized-Size': optimizedBuffer.byteLength.toString(),
   });
-
+// ...
   const response = new Response(optimizedBuffer, { headers });
-
+// ...
   // 5. 写入边缘缓存
   c.executionCtx.waitUntil(cache.put(c.req.raw, response.clone()));
-
+// ...
   return response;
 });
-
+// ...
 // 上传图片(管理员)
 app.post('/admin/upload', async (c) => {
   const formData = await c.req.formData();
   const file = formData.get('file') as File;
   if (!file) return c.json({ error: 'NO_FILE' }, 400);
-
+// ...
   // 类型校验
   const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
   if (!allowedTypes.includes(file.type)) {
     return c.json({ error: 'INVALID_TYPE' }, 400);
   }
-
+// ...
   // 大小限制(10MB)
   if (file.size > 10 * 1024 * 1024) {
     return c.json({ error: 'FILE_TOO_LARGE' }, 400);
   }
-
+// ...
   const id = crypto.randomUUID();
   const ext = file.name.split('.').pop();
   const path = `${id}.${ext}`;
-
+// ...
   await c.env.ORIGINAL_BUCKET.put(path, file.stream(), {
     httpMetadata: { contentType: file.type },
     customMetadata: { originalName: file.name, uploadedAt: new Date().toISOString() },
   });
-
+// ...
   return c.json({ path, url: `/images/${path}` });
 });
-
+// ...
 export default app;
 ```
 
@@ -1179,7 +1181,7 @@ export default app;
 - 自适应格式: /images/abc123.jpg (根据Accept头自动选择AVIF/WebP)
 - 调整质量: /images/abc123.jpg?q=60
 - 裁剪: /images/abc123.jpg?w=400&h=400&fit=cover
-
+# ...
 ## 性能优化
 - 边缘缓存: Cache API (31536000秒, immutable)
 - 格式自适应: AVIF > WebP > JPEG (按浏览器能力)

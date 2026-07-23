@@ -15,16 +15,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 社交空间相册（免费版）
 
 社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能。通过 `qzone_photos.py` 脚本调用社交空间非官方API实现自动化操作。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 社交空间相册基础版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -44,7 +45,7 @@ tags:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -93,7 +94,6 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1：扫码登录并浏览相册
@@ -103,7 +103,7 @@ export API_KEY="your_api_key_here"
 python3 （请参考skill目录中的脚本文件） --action login --cookies cookies.json
 # 输出: 二维码已生成，请使用社交平台App扫描登录...
 # 登录成功后: Cookie已保存到 cookies.json
-
+# ...
 # 列出所有相册
 python3 （请参考skill目录中的脚本文件） --action list --cookies cookies.json
 # 输出示例:
@@ -124,7 +124,7 @@ python3 （请参考skill目录中的脚本文件） --action photos --album-id 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | Cookie过期 | `p_skey` 或 `skey` 失效 | 重新执行 `--action login` 扫码登录获取新Cookie |
 | 相册ID无效 | `--album-id` 指向不存在的相册 | 先执行 `--action list` 获取有效的 `album-id` |
 | Cookie文件格式错误 | `cookies.json` JSON格式不正确 | 确认文件包含 `qq_number`、`p_skey`、`skey`、`uin` 四个字段且JSON格式有效 |

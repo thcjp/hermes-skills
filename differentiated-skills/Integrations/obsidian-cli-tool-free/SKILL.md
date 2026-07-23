@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # Obsidian CLI工具（免费版）
 
 通过命令行驱动AI Agent操作Obsidian笔记库，实现笔记的自动化创建、检索与整理。免费版提供核心文件操作、搜索和日常笔记功能，满足个人知识管理的基础需求。
@@ -35,7 +36,7 @@ Obsidian是一款流行的本地优先知识管理工具，但其图形界面操
 ## 核心能力
 
 | 能力模块 | 免费版支持 | 说明 |
-|:---------|:-----------|:-----|
+|----|-----|---|
 | 文件读写 | 支持 | 创建、读取、追加、列表文件 |
 | 全文搜索 | 支持 | 关键词搜索、路径过滤、结果格式化 |
 | 标签管理 | 支持 | 查看标签、按频率排序 |
@@ -106,22 +107,21 @@ obsidian version
 ```bash
 # 1. 查看当前活动文件信息
 obsidian file
-
+# ...
 # 2. 列出所有文件
 obsidian files
-
+# ...
 # 3. 创建一篇新笔记
 obsidian create name="我的第一篇笔记" content="# 标题 正文内容"
-
+# ...
 # 4. 搜索包含关键词的笔记
 obsidian search query="会议记录"
-
+# ...
 # 5. 读取指定笔记内容
 obsidian read file="我的第一篇笔记"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -148,16 +148,16 @@ obsidian <命令> [参数名=参数值] [标志]
 ```bash
 # 列出文件并按文件夹过滤
 obsidian files folder="项目/"
-
+# ...
 # 列出所有文件夹
 obsidian folders
-
+# ...
 # 打开指定文件
 obsidian open file="会议纪要"
-
+# ...
 # 追加内容到已有笔记
 obsidian append file="日志" content="\n- 新追加的条目"
-
+# ...
 # 在Frontmatter后插入内容
 obsidian prepend file="日志" content="## 上午事项"
 ```
@@ -167,19 +167,19 @@ obsidian prepend file="日志" content="## 上午事项"
 ```bash
 # 全文搜索并显示上下文
 obsidian search query="项目架构" matches
-
+# ...
 # 按路径范围搜索
 obsidian search query="项目" path="项目/"
-
+# ...
 # 限定返回数量并区分大小写
 obsidian search query="API" limit=10 case
-
+# ...
 # 以JSON格式输出搜索结果
 obsidian search query="报告" format=json
-
+# ...
 # 查看当前文件标签
 obsidian tags
-
+# ...
 # 查看全库所有标签并按频率排序
 obsidian tags all counts sort=count
 ```
@@ -189,16 +189,16 @@ obsidian tags all counts sort=count
 ```bash
 # 读取笔记属性
 obsidian properties file="项目计划"
-
+# ...
 # 读取单个属性
 obsidian property:read name=status file="项目计划"
-
+# ...
 # 设置属性值
 obsidian property:set name=status value=进行中 file="项目计划"
-
+# ...
 # 设置列表类型属性
 obsidian property:set name=tags value="a,b,c" type=list file="项目计划"
-
+# ...
 # 移除属性
 obsidian property:remove name=draft file="项目计划"
 ```
@@ -208,10 +208,10 @@ obsidian property:remove name=draft file="项目计划"
 ```bash
 # 打开今日笔记
 obsidian daily
-
+# ...
 # 读取今日笔记内容
 obsidian daily:read
-
+# ...
 # 追加待办事项到今日笔记
 obsidian daily:append content="- [ ] 完成周报"
 ```
@@ -221,16 +221,16 @@ obsidian daily:append content="- [ ] 完成周报"
 ```bash
 # 列出当前文件的待办事项
 obsidian tasks
-
+# ...
 # 列出全库所有待办事项
 obsidian tasks all
-
+# ...
 # 仅显示未完成的任务
 obsidian tasks all todo
-
+# ...
 # 切换任务完成状态
 obsidian task ref="日志.md:8" toggle
-
+# ...
 # 标记任务为已完成
 obsidian task file="日志" line=8 done
 ```
@@ -282,7 +282,7 @@ Obsidian应用必须处于运行状态，CLI通过内部API与应用通信。请
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Obsidian应用 | 桌面应用 | 必需 | 从Obsidian官网下载安装 |
 | obsidian CLI | 命令行工具 | 必需 | 在Obsidian设置中启用命令行接口 |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
@@ -312,9 +312,8 @@ Obsidian应用必须处于运行状态，CLI通过内部API与应用通信。请
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

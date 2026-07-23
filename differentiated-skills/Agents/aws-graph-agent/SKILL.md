@@ -19,8 +19,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
-
 # AWS图代理（AWS Graph Agent）
 
 基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具。
@@ -88,7 +89,7 @@ suggested_price: 99.9
 ### 依赖详情
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AWS图代理处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -100,7 +101,7 @@ uv tool install bedrock-agentcore-starter-toolkit  # 安装 agentcore CLI
 
 ### Step 2：预检清单（部署前必读）
 | 检查项 | 要求 | 不满足的后果 |
-|--------|------|-------------|
+|:-----|:-----|:-----|
 | 模型使用审批 | 在 Bedrock Console 填写 Anthropic 表单 | `Model use case details not submitted` |
 | 推理配置 | 使用 `us.anthropic.claude-*` 推理配置文件 | `on-demand throughput isn't supported` |
 | 代理命名 | 字母开头，仅字母/数字/下划线，1-48 字符 | `Invalid agent name` |
@@ -116,17 +117,17 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from typing import Annotated
 from typing_extensions import TypedDict
-
+# ...
 class State(TypedDict):
     messages: Annotated[list, add_messages]
-
+# ...
 builder = StateGraph(State)
 builder.add_node("agent", agent_node)
 builder.add_node("tools", ToolNode(tools))
 builder.add_conditional_edges("agent", tools_condition)
 builder.add_edge(START, "agent")
 graph = builder.compile()
-
+# ...
 app = BedrockAgentCoreApp()
 @app.entrypoint
 def invoke(payload, context):
@@ -169,7 +170,7 @@ agentcore destroy
 
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入**：部署一个带工具调用的简单代理
 
@@ -194,10 +195,10 @@ graph = builder.compile()
 ```python
 from bedrock_agentcore.memory import MemoryClient
 import time
-
+# ...
 memory = MemoryClient()
 memory.create_event(session_id, actor_id, event_type, payload)  # 写入
-
+# ...
 # 最终一致性验证（指数退避：2s→4s→8s→16s→30s，最多 5 次）
 def verify_with_backoff(memory, session_id, actor_id, event_type, payload,
                         base=2, max_wait=30, max_retries=5):
@@ -208,7 +209,7 @@ def verify_with_backoff(memory, session_id, actor_id, event_type, payload,
         if attempt < max_retries - 1:
             memory.create_event(session_id, actor_id, event_type, payload)  # 重写
     raise RuntimeError(f"记忆一致性验证失败：{max_retries} 次重试后仍为空")
-
+# ...
 verify_with_backoff(memory, session_id, actor_id, event_type, payload)
 # 注意：event['payload'] 是列表类型；确认 actor_id 和 session_id 匹配
 ```
@@ -221,21 +222,21 @@ verify_with_backoff(memory, session_id, actor_id, event_type, payload)
 ```python
 from langgraph.graph import StateGraph, START, END
 from typing_extensions import TypedDict
-
+# ...
 class State(TypedDict):
     messages: list
     expert: str
-
+# ...
 def orchestrator(state):
     intent = classify(state["messages"][-1])  # 意图分类
     return {"expert": {"投诉": "cs_expert", "账单": "billing_expert"}[intent]}
-
+# ...
 def cs_expert(state):
     return {"messages": [handle_cs(state)]}      # 客服专家处理
-
+# ...
 def billing_expert(state):
     return {"messages": [handle_billing(state)]}  # 计费专家处理
-
+# ...
 builder = StateGraph(State)
 builder.add_node("orchestrator", orchestrator)
 builder.add_node("cs_expert", cs_expert)
@@ -255,7 +256,7 @@ graph = builder.compile()
 **输出**（Gateway 注册+代理调用+三种传输模式）：
 ```python
 from bedrock_agentcore.gateway import GatewayClient
-
+# ...
 # 三种传输模式按环境选择
 mode = "production"  # "mock"（本地开发）/ "local"（本地协议）/ "production"（生产网关）
 gateway = GatewayClient(mode=mode)
@@ -264,7 +265,7 @@ tools = gateway.register_tools([
     {"name": "issue_refund",  "lambda_arn": "arn:aws:lambda:us-east-1:…:Refund"},
 ])
 # 工具名必须去除 Lambda 的 ___ 前缀，否则返回 "Unknown tool"
-
+# ...
 agent = create_agent_with_tools(tools)  # 工具自动注入 StateGraph
 ```
 调用：`agentcore invoke '{"prompt": "查询订单 #1234 并退款"}'`。代理自动调用 `search_orders`→`issue_refund`，Gateway 处理 Lambda 认证与调用。本地开发用 `mode="mock"` 返回假数据无需真实 Lambda；生产用 `mode="production"` 走网关鉴权。
@@ -272,7 +273,7 @@ agent = create_agent_with_tools(tools)  # 工具自动注入 StateGraph
 ## 错误处理
 
 | 场景 | 原因 | 处理方式 |
-|------|------|----------|
+|---:|---:|---:|
 | `on-demand throughput isn't supported` | 推理配置不支持按需 | 使用 `us.anthropic.claude-*` 推理配置文件 |
 | `Model use case details not submitted` | 未填写模型使用审批 | 在 Bedrock Console 填写 Anthropic 表单 |
 | `Invalid agent name` | 名称含连字符或非法字符 | 改用下划线，字母开头，1-48 字符（如 `my-agent`→`my_agent`） |
@@ -286,7 +287,7 @@ agent = create_agent_with_tools(tools)  # 工具自动注入 StateGraph
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | bedrock-agentcore | Python 包 | 必需 | `pip install bedrock-agentcore` |
 | bedrock-agentcore-starter-toolkit | Python 包 | 必需 | `pip install bedrock-agentcore-starter-toolkit` |
 | langgraph | Python 包 | 必需 | `pip install langgraph` |

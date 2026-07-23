@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 > **批量转换+自定义模板+AI增强+定时归档。企业级内容归档全功能覆盖。**
 
@@ -30,7 +32,7 @@ pricing_model: "per_use"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 单源转换 | 支持 | 支持 |
 | 批量转换 | 不支持 | 支持（并发处理） |
 | 自定义模板 | 不支持 | 支持（完全自定义） |
@@ -53,15 +55,11 @@ pricing_model: "per_use"
 
 ### 2. 自定义模板
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供自定义模板所需的指令和必要参数。
 **处理**: 解析自定义模板的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回自定义模板的响应数据,包含状态码、结果和日志。
 
 ### 3. AI内容增强
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供AI内容增强所需的指令和必要参数。
 **处理**: 解析AI内容增强的输入参数,完成核心逻辑,返回结构化响应。
@@ -69,15 +67,11 @@ pricing_model: "per_use"
 
 ### 4. 定时归档
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供定时归档所需的指令和必要参数。
 **处理**: 解析定时归档的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回定时归档的响应数据,包含状态码、结果和日志。
 
 ### 5. 多格式输出
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供多格式输出所需的指令和必要参数。
 **处理**: 解析多格式输出的输入参数,完成核心逻辑,返回结构化响应。
@@ -90,7 +84,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | RSS转MD(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -108,13 +102,13 @@ archiver.start()
 
 ```python
 converter = BatchFeedConverter(max_workers=5)
-
+# ...
 blogs = [
     "https://blog1.com/feed",
     "https://blog2.com/feed",
     "https://blog3.com/feed",
 ]
-
+# ...
 results = converter.convert_batch(blogs, "./migrated")
 ```
 
@@ -125,14 +119,14 @@ results = converter.convert_batch(blogs, "./migrated")
 parser = RSSParser()
 enhancer = AIContentEnhancer()
 template_converter = TemplateBasedConverter("detailed")
-
+# ...
 xml = parser.fetch("https://tech-blog.com/feed.xml")
 feed = parser.parse(xml)
-
+# ...
 enhanced_feed = enhancer.enhance_feed(feed)
-
+# ...
 markdown = template_converter.convert(enhanced_feed, template_name="detailed")
-
+# ...
 saver = FileSaver("./docs")
 saver.save(markdown, feed_title=feed['title'])
 ```
@@ -147,7 +141,7 @@ saver.save(markdown, feed_title=feed['title'])
 ### 30秒上手
 ```bash
 python3 batch_convert.py --input feeds.txt --output ./archives
-
+# ...
 python3 convert.py --url https://example.com/feed.xml --template detailed --output ./output
 ```
 
@@ -159,26 +153,26 @@ cat > feed_to_md_config.yaml <<EOF
 feeds:
   - https://example.com/feed1.xml
   - https://example.com/feed2.xml
-
+# ...
 batch:
   max_workers: 5
   output_dir: ./archives
-
+# ...
 template: detailed  # default / academic / minimal / detailed
 ai_enhancement:
   enabled: true
   generate_summary: true
   extract_keywords: true
   generate_tags: true
-
+# ...
 schedule:
   daily_archive: "0 2 * * *"
-
+# ...
 export:
   formats: [md, html, pdf]
   output_dir: ./exports
 EOF
-
+# ...
 python3 feed_to_md_service.py --config feed_to_md_config.yaml
 ```
 
@@ -195,19 +189,19 @@ feeds:
   - url: https://research-papers.com/atom
     name: 学术论文
     template: academic
-
+# ...
 batch:
   max_workers: 5
   cache_enabled: true
   cache_dir: ./cache
-
+# ...
 templates:
   custom_templates:
     - name: enterprise
       header: "# {title}\n\n## 企业归档\n\n"
       item: "### {title}\n**日期**：{pub_date}\n**摘要**：{ai_summary}\n**关键词**：{keywords}\n\n"
       footer: "\n---\n*归档时间：{converted_at}*\n"
-
+# ...
 ai_enhancement:
   enabled: true
   model: gpt-4o
@@ -217,17 +211,17 @@ ai_enhancement:
   keywords_count: 5
   generate_tags: true
   tags_count: 3
-
+# ...
 schedule:
   daily_archive: "0 2 * * *"
   weekly_digest: "0 9 * * 1"
-
+# ...
 export:
   formats: [md, html, pdf]
   output_dir: ./exports
   include_images: true
   image_dir: ./images
-
+# ...
 deduplication:
   enabled: true
   method: title_similarity
@@ -242,17 +236,17 @@ class CachedBatchConverter(BatchFeedConverter):
         super().__init__()
         self.cache_dir = cache_dir
         os.makedirs(cache_dir, exist_ok=True)
-
+# ...
     def _convert_single(self, url, output_dir):
         import hashlib
         cache_key = hashlib.md5(url.encode()).hexdigest()
         cache_file = os.path.join(self.cache_dir, f"{cache_key}.json")
-
+# ...
         if os.path.exists(cache_file):
             import json
             with open(cache_file, 'r') as f:
                 return json.load(f)
-
+# ...
         result = super()._convert_single(url, output_dir)
         import json
         with open(cache_file, 'w') as f:
@@ -269,7 +263,7 @@ TEMPLATE_LIBRARY = {
     'detailed': '详细格式，包含所有元信息',
     'enterprise': '企业格式，含AI摘要与关键词',
 }
-
+# ...
 def share_template(team_name, template_name, template_dict):
     """分享模板到团队"""
     print(f"已分享模板 {template_name} 到团队 {team_name}")
@@ -281,7 +275,7 @@ def cleanup_old_archives(archive_dir, keep_days=30):
     """清理超过N天的归档"""
     import os
     from datetime import datetime, timedelta
-
+# ...
     cutoff = datetime.now() - timedelta(days=keep_days)
     for item in os.listdir(archive_dir):
         item_path = os.path.join(archive_dir, item)
@@ -326,7 +320,7 @@ def cleanup_old_archives(archive_dir, keep_days=30):
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
 | requests | Python库 | 必需 | `pip install requests` |
 | schedule | Python库 | 必需 | `pip install schedule`（定时归档） |
@@ -369,7 +363,7 @@ def cleanup_old_archives(archive_dir, keep_days=30):
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 单源转换 + 基础解析 + Markdown输出 + 文件保存 | 个人试用、单次转换 |
 | 收费专业版 | ¥29/月 | 批量转换 + 自定义模板 + AI增强 + 定时归档 + 多格式 + 图片下载 + 全文获取 + 去重 + 优先支持 | 团队/企业、批量归档 |
 
@@ -378,7 +372,7 @@ def cleanup_old_archives(archive_dir, keep_days=30):
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

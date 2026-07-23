@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
 网页浏览助手专业版是企业级的网页信息获取平台。在完整兼容免费版所有浏览和搜索能力的基础上,专业版引入了批量 URL 处理、定时内容监控、深度内容分析、团队协作、自定义提取规则等高级能力,适用于企业竞品监控、大规模信息采集、内容监测与汇总等专业场景。
 
@@ -32,7 +34,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 网页浏览助手专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -47,11 +49,11 @@ pricing_model: "per_use"
   "concurrency": 20,
   "timeout": 60
 }
-
+# ...
 web-browsing batch process batch_urls.json
-
+# ...
 web-browsing batch status
-
+# ...
 web-browsing batch export --format csv --output results.csv
 ```
 
@@ -76,11 +78,11 @@ web-browsing batch export --format csv --output results.csv
     }
   ]
 }
-
+# ...
 web-browsing monitor start monitor_config.json
-
+# ...
 web-browsing monitor status
-
+# ...
 web-browsing monitor changes --date $(date +%Y-%m-%d)
 ```
 
@@ -97,12 +99,12 @@ web-browsing analyze deep \
   --url "https://article.example.com" \
   --dimensions "sentiment,entities,topics,summary" \
   --output deep_analysis.json
-
+# ...
 web-browsing analyze batch \
   --input urls.json \
   --dimensions "sentiment,entities,topics" \
   --output analysis_results/
-
+# ...
 ```
 
 **输入**: 用户提供深度内容分析所需的指令和必要参数。
@@ -115,11 +117,11 @@ web-browsing analyze batch \
 
 ```bash
 web-browsing team create --name "research_team"
-
+# ...
 web-browsing team share --result fetch_001.json --team "research_team"
-
+# ...
 web-browsing knowledge add --url "https://example.com" --category "market_research"
-
+# ...
 web-browsing knowledge query --keyword "市场分析" --category "market_research"
 ```
 
@@ -145,7 +147,7 @@ web-browsing diff detect \
   --url "https://example.com" \
   --baseline "previous_snapshot.html" \
   --current "current_snapshot.html"
-
+# ...
 web-browsing diff report \
   --url "https://example.com" \
   --period "2026-07-01:2026-07-17" \
@@ -177,8 +179,6 @@ web-browsing extract "https://example.com" --fields "title,price"
 ### 场景一:企业竞品监控
 某企业市场团队需要每日监控竞品网站的价格和产品变化。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景二:研究机构大规模信息采集
 某研究机构需要从数百个网站采集特定主题的信息。
 
@@ -193,14 +193,14 @@ cat > research_urls.json << 'EOF'
   "concurrency": 20
 }
 EOF
-
+# ...
 web-browsing batch process research_urls.json --output raw_content/
-
+# ...
 web-browsing analyze batch \
   --input raw_content/ \
   --dimensions "sentiment,entities,topics" \
   --output analysis_results/
-
+# ...
 web-browsing report research \
   --input analysis_results/ \
   --template academic \
@@ -223,9 +223,9 @@ cat > news_monitor.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 web-browsing monitor start news_monitor.json
-
+# ...
 web-browsing report digest \
   --config news_monitor.json \
   --date $(date +%Y-%m-%d) \
@@ -237,9 +237,9 @@ web-browsing report digest \
 ```bash
 cd ~/.skill-platform/workspace/skills/web-browsing-tool-pro
 npm install
-
+# ...
 web-browsing --version --edition
-
+# ...
 web-browsing batch --help
 ```
 
@@ -261,7 +261,7 @@ cat > team_config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 web-browsing team init team_config.json
 ```
 
@@ -277,41 +277,36 @@ cat > first_batch.json << 'EOF'
   "concurrency": 3
 }
 EOF
-
+# ...
 web-browsing batch process first_batch.json
-
+# ...
 web-browsing batch status
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 ### 企业级配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 监控配置
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 最佳实践
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 web-browsing fetch "https://example.com"
 web-browsing search "关键词"
-
+# ...
 web-browsing batch process batch.json
-
+# ...
 web-browsing monitor start monitor.json
 ```
 
 ### 2. 批量处理的性能优化
 ```bash
 web-browsing batch process batch.json --concurrency 15
-
+# ...
 web-browsing batch process batch.json --cache-dir ./cache --cache-ttl 3600
-
+# ...
 web-browsing batch process large_batch.json --batch-size 50
 ```
 
@@ -329,17 +324,17 @@ web-browsing batch process large_batch.json --batch-size 50
 ### 4. 数据管道的构建
 ```bash
 web-browsing monitor start data_pipeline.json
-
+# ...
 web-browsing batch extract --rules rules.json --input monitored_urls.json
-
+# ...
 web-browsing analyze batch --input extracted_data/
-
+# ...
 web-browsing report generate --input analysis_results/ --output report.html
 ```
 
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | URL 访问 | 支持 | 支持 |
 | 内容总结 | 支持 | 支持 |
 | 网络搜索 | 支持 | 支持 |
@@ -377,9 +372,9 @@ web-browsing report generate --input analysis_results/ --output report.html
 
 ```bash
 web-browsing team share --result result.json --team "team_name"
-
+# ...
 web-browsing knowledge share --category "research" --team "team_name"
-
+# ...
 web-browsing knowledge export --format json --output knowledge_base.json
 ```
 
@@ -401,7 +396,7 @@ web-browsing config set-webhook \
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | curl | HTTP 工具 | 必需 | 系统自带 |
 | web_search | 搜索工具 | 必需 | Agent 内置或外部搜索 API |
@@ -414,15 +409,15 @@ web-browsing config set-webhook \
 
 ```bash
 SEARCH_API_KEY=your_search_api_key
-
+# ...
 TEAM_API_TOKEN=your_team_api_token
-
+# ...
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=web_browsing
 DB_USER=admin
 DB_PASSWORD=your_password
-
+# ...
 WEBHOOK_URL=https://your-system.example.com/webhook
 ```
 
@@ -436,7 +431,7 @@ WEBHOOK_URL=https://your-system.example.com/webhook
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

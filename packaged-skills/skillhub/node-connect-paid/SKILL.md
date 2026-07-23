@@ -38,24 +38,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 节点连接工具(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 与免费版差异 | 不支持 | 支持 |
-| 本地/局域网诊断 | 不支持 | 支持 |
-| 与免费版一致 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 本地/局域网诊断 | 同机器、同Wi-Fi拓扑诊断 | 与免费版一致 |
 | 尾网诊断 | Tailscale Serve/Funnel 配置与排查 | 免费版无 |
 | 公网反代 | 公共URL与反向代理配置诊断 | 免费版无 |
@@ -119,7 +121,7 @@ tailscale status --json
 # 检查公共URL配置
 skill-platform config get plugins.entries.device-pair.config.publicUrl
 skill-platform config get gateway.remote.url
-
+# ...
 # 远程模式QR
 skill-platform qr --remote --json
 ```
@@ -138,14 +140,14 @@ skill-platform qr --remote --json
 ```bash
 # 批量查看所有待配对设备
 skill-platform devices list --state pending
-
+# ...
 # 批量批准
 skill-platform devices approve --all
-
+# ...
 # 按设备类型筛选
 skill-platform devices list --type ios
 skill-platform devices list --type android
-
+# ...
 # 查看节点状态概览
 skill-platform nodes status --summary
 ```
@@ -153,11 +155,11 @@ skill-platform nodes status --summary
 工具输出设备状态看板:
 
 ```text
-
+# ...
 ## 使用流程
-
+# ...
 ### 1. 全拓扑诊断脚本
-
+# ...
 ```bash
 # diagnose.sh 全拓扑一键诊断
 #!/usr/bin/env bash
@@ -196,9 +198,9 @@ if [ -n "$(skill-platform config get gateway.remote.url)" ]; then
   skill-platform qr --remote --json
 fi
 ```
-
+# ...
 ### 2. 自动修复脚本
-
+# ...
 ```bash
 # auto-fix.sh 自动诊断并应用修复
 #!/usr/bin/env bash
@@ -229,9 +231,9 @@ case "$URL_SOURCE" in
     ;;
 esac
 ```
-
+# ...
 ### 3. 批量配对工作流
-
+# ...
 ```bash
 # 批量配对新设备
 skill-platform devices list --state pending --format json | jq '.[].id' | while read id; do
@@ -239,17 +241,17 @@ skill-platform devices list --state pending --format json | jq '.[].id' | while 
   skill-platform devices approve --id "$id"
 done
 ```
-
+# ...
 #
 ## 输入格式
-
+# ...
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | node-connect处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
-
+# ...
 ## 输出格式
-
+# ...
 ```json
 {
   "success": true,
@@ -288,114 +290,115 @@ done
   "error": null
 }
 ```
-
+# ...
 ## 异常处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
-
+# ...
 ## 依赖说明
-
+# ...
 ### 运行环境
-
+# ...
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **网络环境**: 视拓扑而定,可能需要Tailscale或公网可达
 - **Tailscale版本**: 建议 1.50 及以上(用于尾网拓扑)
-
-### 依赖说明
-
+# ...
+### 依赖说明(补充)
+# ...
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | skill-platform CLI | 命令行工具 | 必需 | 随技能平台安装 |
 | Tailscale | VPN工具 | 视拓扑而定 | tailscale.com 下载(尾网场景) |
 | jq | JSON处理 | 推荐 | 系统包管理器安装 |
 | 网络诊断工具 | 命令行工具 | 推荐 | ping / traceroute / nc 等 |
-
+# ...
 ### API Key 配置
-
+# ...
 - 本Skill基于指令驱动,无需额外API Key。
 - `skill-platform` CLI 鉴权由所在平台处理。
 - Tailscale 通过 `tailscale up` 完成OAuth认证,凭据存储在系统钥匙串。
 - 远程网关若使用反向代理,需按代理服务文档配置SSL证书与访问控制。
-
+# ...
 ### 可用性分类
-
+# ...
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,。PRO版面向团队与运维,提供全拓扑诊断、批量配对、审计日志与自动修复能力,完全兼容免费版本地与局域网诊断流程。
-
+# ...
 ## 案例展示
-
+# ...
 ### 全拓扑配置矩阵
-
+# ...
 | 拓扑 | 关键配置 | QR命令 |
-| --- | --- | --- |
+|---:|:---|---:|
 | 同机器 | `gateway.bind=loopback` | `qr --json` |
 | 同局域网 | `gateway.bind=lan` | `qr --json` |
 | Tailscale尾网 | `gateway.tailscale.mode=serve` | `qr --json` |
 | Tailscale公网 | `gateway.tailscale.mode=funnel` | `qr --json` |
 | 公网反代 | `plugins.entries.device-pair.config.publicUrl` | `qr --json` |
 | 远程网关 | `gateway.remote.url` | `qr --remote --json` |
-
+# ...
 ### 鉴权配置参考
-
+# ...
 | 鉴权模式 | 配置 | 适用场景 |
-| --- | --- | --- |
+|:------:|--------|:-------|
 | 令牌 | `gateway.auth.mode=token` | 通用 |
 | 密码 | `gateway.auth.mode=password` | 简单场景 |
 | Tailscale | `gateway.auth.allowTailscale=true` | 尾网内信任 |
 | 混合 | token + allowTailscale | 兼容多场景 |
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1:PRO版与免费版如何共存?
-
+# ...
 两者本地与局域网诊断流程完全兼容,PRO版包含免费版全部能力。团队升级时直接替换Skill文件,已有诊断脚本与根因映射无需改造。
-
+# ...
 ### Q2:Tailscale Funnel与Serve有何区别?
-
+# ...
 - Serve:仅尾网内可访问(需Tailscale客户端)
 - Funnel:公网可访问(无需Tailscale客户端),但安全性较低,建议额外启用令牌鉴权
-
+# ...
 ### Q3:远程网关与公网反代有何区别?
-
+# ...
 - 远程网关:节点连接到独立的远程网关实例,通过 `gateway.remote.url` 配置
 - 公网反代:本地网关通过反向代理暴露到公网,通过 `publicUrl` 配置
 - 两者可共存,但通常二选一以简化运维
-
+# ...
 ### Q4:批量配对会触发限流吗?
-
+# ...
 不会触发API限流,但建议分批进行(每批10-20台),便于观察异常。批量批准后立即运行 `nodes status` 确认全部在线,失败的设备单独处理。
-
+# ...
 ### Q5:审计日志保留多久?
-
+# ...
 默认保留90天。可在配置中调整:
-
+# ...
 ```bash
 skill-platform config set audit.retention-days 180
 ```
-
+# ...
 合规要求更长的场景,建议定期导出到外部归档系统。
-
+# ...
 ### Q6:支持多租户隔离吗?
-
+# ...
 支持。通过不同网关实例实现租户隔离,各租户的节点、设备、审计日志物理隔离。租户间数据互不影响。
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
 ## 已知限制
-
+# ...
 - 本地运行，不支持多设备同步
+# ...

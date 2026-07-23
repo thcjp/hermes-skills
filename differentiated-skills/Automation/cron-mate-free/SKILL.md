@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 > **写cron不用查文档。自然语言描述，自动生成表达式，一键验证语法。**
 
 将"每天早上8点"翻译成 `0 8 * * *`，将 `0 8 * * 1-5` 翻译成"工作日每天8点"。本技能提供cron表达式的辅助编写与验证能力，让定时规则编写变得直观高效。
@@ -29,7 +30,7 @@ suggested_price: 29.9
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | cron表达式助手(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -67,11 +68,11 @@ suggested_price: 29.9
 ### 30秒上手（自然语言转表达式）
 ```python
 import re
-
+# ...
 def nl_to_cron(text):
     """自然语言转cron表达式（基础版）"""
     text = text.strip().lower()
-
+# ...
     patterns = {
         r'每天(\d+)点': lambda m: f"0 {m.group(1)} * * *",
         r'每天(\d+):(\d+)': lambda m: f"{m.group(2)} {m.group(1)} * * *",
@@ -90,7 +91,7 @@ def nl_to_cron(text):
         r'每小时整点': lambda m: f"0 * * * *",
         r'每分钟': lambda m: f"* * * * *",
     }
-
+# ...
     for pattern, func in patterns.items():
         match = re.match(pattern, text)
         if match:
@@ -99,19 +100,19 @@ def nl_to_cron(text):
             print(f"cron：{cron}")
             print(f"含义：{cron_to_chinese(cron)}")
             return cron
-
+# ...
     print(f"未识别：{text}，请尝试更标准的表述")
     return None
-
+# ...
 def cron_to_chinese(cron):
     """cron表达式转中文描述"""
     parts = cron.split()
     if len(parts) != 5:
         return "格式错误"
-
+# ...
     minute, hour, day, month, weekday = parts
     desc_parts = []
-
+# ...
     if minute == "*" and hour == "*":
         desc_parts.append("每分钟")
     elif minute == "0" and hour == "*":
@@ -125,7 +126,7 @@ def cron_to_chinese(cron):
             h = int(hour)
             time_str = f"{h:02d}:{int(minute):02d}" if minute != "*" else f"{h:02d}:00"
             desc_parts.append(f"每天{time_str}")
-
+# ...
     if weekday == "1-5":
         desc_parts.append("（仅工作日）")
     elif weekday == "0" or weekday == "7":
@@ -138,12 +139,12 @@ def cron_to_chinese(cron):
             desc_parts.append(f"（仅{names[int(weekday)]}）")
         except (ValueError, IndexError):
             pass
-
+# ...
     if day not in ["*", "?"]:
         desc_parts.append(f"每月{day}号")
-
+# ...
     return "".join(desc_parts)
-
+# ...
 nl_to_cron("每天8点")        # 0 8 * * *
 nl_to_cron("每15分钟")       # */15 * * * *
 nl_to_cron("工作日9:30")     # 30 9 * * 1-5
@@ -161,11 +162,11 @@ nl_to_cron("每周一10点")     # 0 10 * * 1
 ```python
 class InteractiveCronMate(CronMate):
     """交互式cron编写助手"""
-
+# ...
     def interactive_create(self):
         """交互式创建cron表达式"""
         print("=== 交互式cron表达式创建 ===\n")
-
+# ...
         print("选择执行频率：")
         print("1. 每X分钟")
         print("2. 每X小时")
@@ -173,9 +174,9 @@ class InteractiveCronMate(CronMate):
         print("4. 工作日指定时间")
         print("5. 每周指定天")
         print("6. 每月指定日")
-
+# ...
         choice = input("\n请选择(1-6): ").strip()
-
+# ...
         if choice == "1":
             n = input("每几分钟？(1-59): ").strip()
             cron = f"*/{n} * * * *"
@@ -203,7 +204,7 @@ class InteractiveCronMate(CronMate):
         else:
             print("无效选择")
             return None
-
+# ...
         valid, msg = self.validate(cron)
         if valid:
             print(f"\n✓ 表达式：{cron}")
@@ -212,7 +213,7 @@ class InteractiveCronMate(CronMate):
         else:
             print(f"\n✗ 验证失败：{msg}")
             return None
-
+# ...
     def quick_search(self, keyword):
         """按关键词搜索模板"""
         templates = self.templates()
@@ -224,13 +225,13 @@ class InteractiveCronMate(CronMate):
         else:
             print(f"未找到匹配 '{keyword}' 的模板")
         return results
-
+# ...
 ```
 
 ## 核心能力
 ### 自然语言转换
 | 输入 | 输出 |
-|------|------|
+|:-----|:-----|
 | 每天8点 | `0 8 * * *` |
 | 每天9:30 | `30 9 * * *` |
 | 每15分钟 | `*/15 * * * *` |
@@ -247,7 +248,7 @@ class InteractiveCronMate(CronMate):
 
 ### 语法验证
 | 验证项 | 说明 |
-|--------|------|
+|---:|---:|
 | 字段数 | 必须为5个字段 |
 | 数值范围 | 分钟(0-59)/小时(0-23)/日(1-31)/月(1-12)/周(0-7) |
 | 特殊字符 | 支持 `*` `?` `/` `,` `-` |
@@ -288,11 +289,11 @@ class InteractiveCronMate(CronMate):
 
 ```python
 mate = CronMate()
-
+# ...
 cron = mate.nl_to_cron("每5分钟")  # */5 * * * *
 valid, msg = mate.validate(cron)
 print(f"验证结果：{msg}")
-
+# ...
 print(f"含义：{mate.translate(cron)}")
 ```
 
@@ -304,7 +305,7 @@ print(f"含义：{mate.translate(cron)}")
 ```python
 mate = CronMate()
 templates = mate.templates()
-
+# ...
 print("=== 团队标准cron模板 ===")
 for name, expr in templates.items():
     valid, _ = mate.validate(expr)
@@ -319,13 +320,13 @@ for name, expr in templates.items():
 
 ```python
 mate = CronMate()
-
+# ...
 expressions = [
     "0 2 * * 6",      # 周六凌晨2点
     "*/30 * * * *",   # 每30分钟
     "0 0 1 1,7 *",    # 1月和7月的1号零点
 ]
-
+# ...
 for expr in expressions:
     valid, msg = mate.validate(expr)
     if valid:
@@ -358,7 +359,7 @@ for expr in expressions:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python标准库 | 内置 | 必需 | Python自带（re模块） |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
@@ -413,7 +414,7 @@ for expr in expressions:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

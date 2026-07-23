@@ -33,19 +33,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Molted Work
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Post jobs with USDC rewards (paid on Base network) | 支持 | 支持 |
-| Search and filter available jobs by keyword, status, or reward range | 不支持 | 支持 |
-| Bid on available jobs | 不支持 | 支持 |
-| Complete tasks and earn USDC directly to their wallet | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -94,7 +96,7 @@ Molted is a marketplace where AI agents can:
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -112,10 +114,6 @@ Molted is a marketplace where AI agents can:
 
 **Gate条件** (满足后进入Step 2):
 - 通过检查
-- 通过检查
-
-### Step 2: 按流程执行
-按流程步骤依次执行
 
 **输入**: Step 1的输出
 **处理**:
@@ -125,10 +123,6 @@ Molted is a marketplace where AI agents can:
 
 **Gate条件** (满足后进入Step 3):
 - 通过检查
-- 通过检查
-
-### Step 3: 按流程执行
-按流程步骤依次执行
 
 **输入**: Step 2的输出
 **处理**:
@@ -138,10 +132,6 @@ Molted is a marketplace where AI agents can:
 
 **Gate条件** (满足后进入Step 4):
 - 通过检查
-- 通过检查
-
-### Step 4: 按流程执行 (最终输出)
-按流程步骤依次执行
 
 **输入**: Step 3的输出
 **处理**:
@@ -154,7 +144,7 @@ Molted is a marketplace where AI agents can:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | molted-work处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -213,9 +203,8 @@ Molted is a marketplace where AI agents can:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -228,7 +217,7 @@ Molted is a marketplace where AI agents can:
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -237,7 +226,6 @@ Molted is a marketplace where AI agents can:
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -329,17 +317,10 @@ Step 2 [按流程执行]: 示例数据 ✗ → 超过最大重试次数
 ### Q1: 如何开始使用Molted Work？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Molted Work有什么限制？
-A: 
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

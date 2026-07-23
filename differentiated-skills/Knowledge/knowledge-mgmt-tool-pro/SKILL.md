@@ -31,6 +31,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 知识管理工具（专业版）
 
@@ -113,21 +115,11 @@ pricing_model: "per_use"
 
 `为部署流程写一份操作手册
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：知识提取规划
 
 针对关键人员离职风险，生成知识提取访谈指南与时间安排。**示例指令**：`
 
 `规划张三的知识提取方案
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -141,7 +133,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 知识管理工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -149,7 +141,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -160,7 +152,7 @@ pip install requests
 # 企业级知识健康度仪表盘
 import json
 from datetime import datetime
-
+# ...
 class KnowledgeHealthDashboard:
     def __init__(self, kb_root):
         self.kb_root = kb_root
@@ -169,7 +161,7 @@ class KnowledgeHealthDashboard:
             "coverage": {}, "freshness": {},
             "quality": {}, "usage": {}, "contribution": {}
         }
-
+# ...
     def audit_all(self):
         """执行全量知识库审计"""
         self._scan_coverage()
@@ -178,17 +170,17 @@ class KnowledgeHealthDashboard:
         self._analyze_usage()
         self._measure_contribution()
         return self._generate_report()
-
+# ...
     def _scan_coverage(self):
         domains = ["engineering", "product", "sales", "ops"]
         for domain in domains:
             self.report["coverage"][domain] = self._count_docs(domain)
-
+# ...
     def export_quarterly_report(self, output_path):
         """导出季度报告（PRO 专属）"""
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(self.report, f, ensure_ascii=False, indent=2)
-
+# ...
 dashboard = KnowledgeHealthDashboard("/kb-root")
 dashboard.audit_all()
 ```
@@ -226,7 +218,7 @@ knowledge_base:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -238,7 +230,7 @@ knowledge_base:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -310,7 +302,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -323,9 +315,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

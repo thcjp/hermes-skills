@@ -17,16 +17,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
 # WhatsApp（免费版）
 
 通过 WhatsApp Business API 发送基础消息。免费版支持文本消息、图片消息与手机号查询，满足日常触达需求。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | WhatsApp 消息（免费版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -35,9 +36,9 @@ homepage: "https://skillhub.cn"
 
 ```bash
 clawlink_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
-
+# ...
 clawlink_call_tool --tool "whatsapp_send_message" --params '{"phone_number": "+15551234567", "message": "Hello!"}'
-
+# ...
 clawlink_call_tool --tool "whatsapp_send_media" --params '{"phone_number": "+15551234567", "media_url": "https://example.com/image.png", "caption": "See this"}'
 ```
 
@@ -48,7 +49,6 @@ clawlink_call_tool --tool "whatsapp_send_media" --params '{"phone_number": "+155
 3. 验证处理结果的正确性
 
 **结果处理**: 执行完成后,输出格式化的处理结果供用户查看和保存。结果包含执行状态、输出数据和错误信息(如有)。
-
 
 ## Authentication
 
@@ -70,7 +70,7 @@ clawlink_call_tool --tool "whatsapp_send_media" --params '{"phone_number": "+155
 ## Tool Reference
 
 | Tool | Description | Mode |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `whatsapp_get_phone_numbers` | 列出账户下所有手机号 | Read |
 | `whatsapp_send_message` | 发送文本消息 | Write |
 | `whatsapp_send_media` | 发送图片、视频、音频或文档 | Write |
@@ -85,7 +85,7 @@ clawlink_call_tool --tool "whatsapp_send_media" --params '{"phone_number": "+155
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -180,9 +180,8 @@ WhatsApp 未连接。处理：引导用户访问 `https://claw-link.dev/dashboar
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 浏览器自动化工具专业版
 ## 概述
@@ -34,7 +36,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 浏览器自动化工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -44,13 +46,13 @@ pricing_model: "monthly"
 # .env 文件配置
 BROWSERBASE_API_KEY=your_api_key_here
 BROWSERBASE_PROJECT_ID=your_project_id_here
-
+# ...
 # 启动远程浏览器会话
 browser navigate https://target-site.com --mode remote
-
+# ...
 # 远程模式支持隐身模式
 browser act "启用隐身模式浏览" --stealth
-
+# ...
 # 远程模式支持代理
 browser navigate https://region-specific.com --proxy "us-east"
 ```
@@ -75,13 +77,13 @@ browser navigate https://region-specific.com --proxy "us-east"
   "retry": 3,
   "timeout": 60000
 }
-
+# ...
 # 执行批量任务
 browser batch run batch_tasks.json
-
+# ...
 # 查看任务进度
 browser batch status
-
+# ...
 # 导出任务结果
 browser batch export --format csv --output results.csv
 ```
@@ -97,10 +99,10 @@ browser batch export --format csv --output results.csv
 ```bash
 # 配置代理池
 browser proxy configure proxies.json
-
+# ...
 # 自动验证码处理
 browser act "填写表单并提交" --captcha auto
-
+# ...
 # 地理位置模拟
 browser navigate https://region-site.com --geo "US,California"
 ```
@@ -116,10 +118,10 @@ browser navigate https://region-site.com --geo "US,California"
 ```bash
 # 保存当前浏览器会话
 browser session save --name "project_a_session"
-
+# ...
 # 恢复之前的会话
 browser session restore --name "project_a_session"
-
+# ...
 # 共享会话给团队成员
 browser session share --name "project_a_session" --team "dev_team"
 ```
@@ -168,10 +170,10 @@ cat > price_monitor.json << 'EOF'
   "schedule": "0 9 * * *"
 }
 EOF
-
+# ...
 # 步骤2:执行批量监控(远程浏览器,避开反爬)
 browser batch run price_monitor.json --mode remote --stealth
-
+# ...
 # 步骤3:导出结果并生成报告
 browser batch export --format json --output prices_$(date +%Y%m%d).json
 browser report generate --input prices_*.json --template price_comparison
@@ -193,10 +195,10 @@ cat > global_tasks.json << 'EOF'
   "parallel_regions": true
 }
 EOF
-
+# ...
 # 执行多地区并行任务
 browser batch run global_tasks.json --mode remote
-
+# ...
 # 汇总各地区数据
 browser batch merge --output global_inventory.json
 ```
@@ -216,13 +218,13 @@ cat > regression_tests.json << 'EOF'
   "screenshot_on_failure": true
 }
 EOF
-
+# ...
 # 集成到 CI 流程(无头模式)
 browser batch run regression_tests.json --headless --mode remote
-
+# ...
 # 生成测试报告
 browser report generate --input test_results.json --template qa_report --output qa_report.html
-
+# ...
 # 失败用例自动重试
 browser batch retry --failed-only --max-retries 3
 ```
@@ -234,13 +236,13 @@ browser batch retry --failed-only --max-retries 3
 ```bash
 # 进入工具目录
 cd ~/.skill-platform/workspace/skills/stagehand-browser-tool-pro
-
+# ...
 # 安装专业版依赖(包含远程浏览器支持)
 npm install
-
+# ...
 # 升级全局命令
 npm link
-
+# ...
 # 验证专业版功能
 browser --version --edition
 ```
@@ -251,17 +253,17 @@ browser --version --edition
 cat > .env << 'EOF'
 BROWSERBASE_API_KEY=your_api_key_here
 BROWSERBASE_PROJECT_ID=your_project_id_here
-
+# ...
 # 代理配置(可选)
 PROXY_ENABLED=true
 PROXY_POOL=premium
-
+# ...
 # 高级配置
 MAX_CONCURRENT_SESSIONS=20
 SESSION_TIMEOUT=300000
 RETRY_ATTEMPTS=3
 EOF
-
+# ...
 # 验证远程连接
 browser navigate https://example.com --mode remote
 ```
@@ -280,10 +282,10 @@ cat > first_batch.json << 'EOF'
   "mode": "remote"
 }
 EOF
-
+# ...
 # 执行批量任务
 browser batch run first_batch.json
-
+# ...
 # 查看执行结果
 browser batch status
 ```
@@ -351,14 +353,14 @@ browser batch status
 ```bash
 # 1. 备份免费版配置
 cp ~/.skill-platform/workspace/skills/stagehand-browser-tool-free/.env .env.backup
-
+# ...
 # 2. 安装专业版
 cd ~/.skill-platform/workspace/skills/stagehand-browser-tool-pro
 npm install && npm link
-
+# ...
 # 3. 恢复配置(免费版配置在专业版中完全有效)
 cp .env.backup .env
-
+# ...
 # 4. 验证原有脚本仍可运行
 browser navigate https://example.com
 browser extract "页面标题"
@@ -387,7 +389,7 @@ browser extract "页面标题"
 # 根据任务复杂度调整并发数
 # 简单任务:高并发
 browser batch run simple_tasks.json --concurrency 20
-
+# ...
 # 复杂任务:适中并发,避免超时
 browser batch run complex_tasks.json --concurrency 5 --timeout 120000
 ```
@@ -396,17 +398,17 @@ browser batch run complex_tasks.json --concurrency 5 --timeout 120000
 ```bash
 # 启用审计日志
 browser config set audit_log true
-
+# ...
 # 查看操作日志
 browser audit log --date $(date +%Y-%m-%d)
-
+# ...
 # 导出审计报告
 browser audit export --format csv --output audit_report.csv
 ```
 
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | 本地浏览器操作 | 支持 | 支持 |
 | 自然语言指令 | 支持 | 支持 |
 | 页面导航与提取 | 支持 | 支持 |
@@ -434,10 +436,10 @@ browser audit export --format csv --output audit_report.csv
 ```bash
 # 查看失败任务详情
 browser batch status --failed
-
+# ...
 # 查看特定任务的执行日志
 browser batch log --task-id task_001
-
+# ...
 # 查看失败任务的截图
 browser batch screenshots --task-id task_001
 ```
@@ -468,7 +470,7 @@ browser team config set --role viewer --permissions "batch_status,report_view"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | Chrome 浏览器 | 浏览器 | 本地模式必需 | 官方网站下载安装 |
 | Browserbase API | 远程服务 | 远程模式必需 | 官方网站注册获取 |
@@ -484,10 +486,10 @@ browser team config set --role viewer --permissions "batch_status,report_view"
 # 远程浏览器服务
 BROWSERBASE_API_KEY=your_browserbase_api_key
 BROWSERBASE_PROJECT_ID=your_project_id
-
+# ...
 # 代理服务(可选)
 PROXY_API_KEY=your_proxy_api_key
-
+# ...
 # 团队协作服务(可选)
 TEAM_API_TOKEN=your_team_api_token
 ```
@@ -501,7 +503,7 @@ TEAM_API_TOKEN=your_team_api_token
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

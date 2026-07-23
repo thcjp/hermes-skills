@@ -41,8 +41,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 谷歌搜索工具（免费版）
 
 ## 概述
@@ -52,7 +53,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | Google CSE 搜索 | 通过官方 API 搜索 | 是 |
 | 结构化结果 | 返回标题、链接、摘要 | 是 |
 | 中英文搜索 | 支持中文和英文关键词 | 是 |
@@ -179,7 +180,7 @@ cat > .env <<EOF
 GOOGLE_API_KEY=your_api_key_here
 GOOGLE_CSE_ID=your_cx_id_here
 EOF
-
+# ...
 # 或直接设置环境变量
 export GOOGLE_API_KEY=your_api_key_here
 export GOOGLE_CSE_ID=your_cx_id_here
@@ -190,7 +191,7 @@ export GOOGLE_CSE_ID=your_cx_id_here
 ```bash
 # 基础搜索
 python3 （请参考skill目录中的脚本文件） "Python 编程教程"
-
+# ...
 # 指定返回结果数量
 python3 （请参考skill目录中的脚本文件） "machine learning" --max 5
 ```
@@ -200,7 +201,7 @@ python3 （请参考skill目录中的脚本文件） "machine learning" --max 5
 ```bash
 # 测试 API 连通性
 python3 （请参考skill目录中的脚本文件） "test" --max 1
-
+# ...
 # 如果返回结果，说明配置成功
 ```
 
@@ -212,7 +213,7 @@ python3 （请参考skill目录中的脚本文件） "test" --max 1
 ```bash
 # 使用环境变量
 python3 （请参考skill目录中的脚本文件） "搜索关键词"
-
+# ...
 # 直接传入凭证（不推荐，用于测试）
 GOOGLE_API_KEY=xxx GOOGLE_CSE_ID=yyy \
   python3 （请参考skill目录中的脚本文件） "搜索关键词"
@@ -221,7 +222,7 @@ GOOGLE_API_KEY=xxx GOOGLE_CSE_ID=yyy \
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `query` | 字符串 | 无 | 搜索关键词（必填） |
 | `--max` | 整数 | 10 | 返回结果数量（1-10） |
 | `--safe` | 布尔 | true | 启用安全搜索 |
@@ -232,7 +233,7 @@ GOOGLE_API_KEY=xxx GOOGLE_CSE_ID=yyy \
 ### 搜索关键词优化
 
 | 场景 | 推荐写法 | 说明 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 学术论文 | `paper title keywords year` | 包含年份和关键词 |
 | 技术文档 | `technology name documentation` | 使用英文名更准确 |
 | 新闻动态 | `topic 2026 最新` | 添加时效性词 |
@@ -243,7 +244,7 @@ GOOGLE_API_KEY=xxx GOOGLE_CSE_ID=yyy \
 ```bash
 # 查看剩余配额
 python3 （请参考skill目录中的脚本文件） --quota
-
+# ...
 # 减少不必要的查询
 # 先使用本地知识，仅在需要时搜索
 # 缓存常用搜索结果
@@ -264,7 +265,7 @@ python3 （请参考skill目录中的脚本文件） --quota
 # 检查环境变量
 echo $GOOGLE_API_KEY
 echo $GOOGLE_CSE_ID
-
+# ...
 # 验证 Key 格式
 python3 （请参考skill目录中的脚本文件） --validate-key
 ```
@@ -279,10 +280,10 @@ python3 （请参考skill目录中的脚本文件） --validate-key
 ```bash
 # 检查搜索引擎配置
 # 确认 CSE 配置为搜索全网（而非限定站点）
-
+# ...
 # 尝试英文关键词
 python3 （请参考skill目录中的脚本文件） "english keywords"
-
+# ...
 # 检查配额是否用尽
 python3 （请参考skill目录中的脚本文件） --quota
 ```
@@ -294,7 +295,7 @@ Google Custom Search API 免费额度：
 - 每日 100 次查询
 - 每次查询最多 10 条结果
 - 超出需付费使用
-
+# ...
 建议：
 - 优化查询，减少无效搜索
 - 缓存常用结果
@@ -306,7 +307,7 @@ Google Custom Search API 免费额度：
 ```bash
 # 测试 Google API 连通性
 curl -I https://www.googleapis.com
-
+# ...
 # 使用代理（如需要）
 export HTTPS_PROXY=http://proxy:port
 python3 （请参考skill目录中的脚本文件） "query"
@@ -324,7 +325,7 @@ python3 （请参考skill目录中的脚本文件） "query"
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|
 | Python 3.7+ | 运行时 | 是 | 系统包管理器安装 |
 | requests | HTTP 库 | 是 | `pip install requests` |
 | python-dotenv | 环境变量 | 否（推荐） | `pip install python-dotenv` |
@@ -338,7 +339,7 @@ python3 （请参考skill目录中的脚本文件） "query"
 # 必需的 API Key
 GOOGLE_API_KEY=your_api_key_here      # Google API 密钥
 GOOGLE_CSE_ID=your_cx_id_here         # 自定义搜索引擎 ID
-
+# ...
 # 获取方式：
 # 1. 访问 Google Cloud Console
 # 2. 创建项目并启用 Custom Search API
@@ -356,9 +357,8 @@ GOOGLE_CSE_ID=your_cx_id_here         # 自定义搜索引擎 ID
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

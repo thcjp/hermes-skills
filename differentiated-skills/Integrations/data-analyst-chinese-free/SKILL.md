@@ -36,8 +36,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
-
 # 中文数据分析 免费版
 
 ## 一、概述
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ### 2.1 数据读取统一封装
 
 | 数据源 | 代码片段 | 适用场景 |
-|--------|----------|----------|
+|---|----|----|
 | CSV | `pd.read_csv('data.csv')` | 通用文本数据 |
 | Excel | `pd.read_excel('data.xlsx', sheet_name='Sheet1')` | 财务/运营报表 |
 | JSON | `pd.read_json('data.json')` | API 返回数据 |
@@ -77,7 +78,7 @@ suggested_price: 29.9
 ### 2.3 统计分析方法库
 
 | 方法 | 代码 | 用途 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 描述统计 | `df.describe()` | 中心趋势与离散度 |
 | 分位数 | `df['col'].quantile([.25,.5,.75])` | 分布形态 |
 | 偏度峰度 | `df['col'].skew()` / `kurt()` | 正态性诊断 |
@@ -115,7 +116,7 @@ suggested_price: 29.9
 ## 适用场景
 
 | 角色 | 典型场景 | 输出形态 |
-|------|----------|----------|
+|---:|---:|---:|
 | 数据分析师 | 销售明细周度复盘 | 清洗后数据 + 图表 + Markdown 报告 |
 | 产品经理 | 用户行为漏斗分析 | 漏斗图 + 转化率 + 改进建议 |
 | 运营专员 | 促销活动效果评估 | 对比图 + 增长率 + 结论 |
@@ -141,7 +142,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | input | string | 是 | 中文数据分析(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -160,11 +161,11 @@ suggested_price: 29.9
 
 ```python
 import pandas as pd
-
+# ...
 df = pd.read_csv('data.csv')          # CSV
 df = pd.read_excel('data.xlsx', sheet_name='Sheet1')  # Excel
 df = pd.read_json('data.json')        # JSON
-
+# ...
 import sqlite3
 conn = sqlite3.connect('database.db')
 df = pd.read_sql('SELECT * FROM table', conn)
@@ -189,13 +190,13 @@ df.dropna()                             # 删除缺失行
 df.fillna(0)                            # 填充 0
 df['col'].fillna(df['col'].mean())      # 填充均值
 df['col'].fillna(df['col'].mode()[0])   # 填充众数
-
+# ...
 df.duplicated().sum()                   # 统计重复
 df.drop_duplicates()                    # 删除重复
-
+# ...
 df['date'] = pd.to_datetime(df['date'])
 df['price'] = df['price'].astype(float)
-
+# ...
 # IQR 异常值过滤
 Q1 = df['col'].quantile(0.25)
 Q3 = df['col'].quantile(0.75)
@@ -211,15 +212,15 @@ df['col'].median()    # 中位数
 df['col'].std()       # 标准差
 df['col'].skew()      # 偏度
 df['col'].kurt()      # 峰度
-
+# ...
 df.corr()             # 相关矩阵
 df.corr()['target']   # 与目标的相关性
-
+# ...
 df.groupby('category').agg({
     'sales': ['sum', 'mean', 'count'],
     'profit': 'mean'
 })
-
+# ...
 pd.crosstab(df['col1'], df['col2'])
 ```
 
@@ -228,17 +229,17 @@ pd.crosstab(df['col1'], df['col2'])
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+# ...
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
-
+# ...
 plt.figure(figsize=(10, 6))
 plt.plot(df['date'], df['value'])
 plt.title('趋势图')
 plt.xlabel('日期')
 plt.ylabel('数值')
 plt.show()
-
+# ...
 sns.heatmap(df.corr(), annot=True, cmap='coolwarm', center=0)
 plt.show()
 ```
@@ -252,21 +253,21 @@ def generate_report(df):
 ## 1. 数据概览
 - 数据量: {len(df)} 行 × {len(df.columns)} 列
 - 缺失值: {df.isnull().sum().sum()} 个
-
+# ...
 ## 2. 关键指标
 - 总销售额: ¥{df['sales'].sum():,.2f}
 - 平均订单: ¥{df['sales'].mean():,.2f}
-
+# ...
 ## 3. 分布特征
 - 偏度: {df['sales'].skew():.2f}
 - 标准差: {df['sales'].std():,.2f}
-
+# ...
 ## 4. Top 5 类别
 {df.groupby('category')['sales'].sum().sort_values(ascending=False).head().to_markdown()}
-
+# ...
 ## 5. 趋势分析
 - 环比增长: {df['sales'].pct_change().mean()*100:.2f}%
-
+# ...
 ## 6. 建议
 1. 重点推广 Top 3 类别
 2. 优化低转化品类
@@ -333,7 +334,7 @@ A: 推荐 IQR 法(1.5 倍四分位距外为异常);正态分布数据可用 3σ 
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | pandas | Python 库 | 必需 | `pip install pandas` |
 | numpy | Python 库 | 必需 | `pip install numpy` |
@@ -354,9 +355,8 @@ A: 推荐 IQR 法(1.5 倍四分位距外为异常);正态分布数据可用 3σ 
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

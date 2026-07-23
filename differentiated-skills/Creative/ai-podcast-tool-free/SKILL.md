@@ -44,8 +44,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
 ---
-
 # AI播客生成工具 - 免费版
 
 ## 概述
@@ -57,7 +58,7 @@ AI播客生成免费版是一款面向个人用户的文档转播客工具。通
 ## 核心能力
 
 | 能力项 | 免费版支持 | 说明 |
-|:-------|:-----------|:-----|
+|---|-----|---|
 | PDF 转播客 | 是 | PDF URL 输入 |
 | 文本转播客 | 是 | 粘贴文本输入 |
 | 多语种支持 | 是 | 中英日韩等 |
@@ -104,10 +105,10 @@ AI播客生成免费版是一款面向个人用户的文档转播客工具。通
 # 配置 API
 export MAGICPODCAST_API_URL="https://api.magicpodcast.app"
 export MAGICPODCAST_API_KEY="your_api_key"
-
+# ...
 # 从文本创建播客
 payload="$(jq -n --arg text "$SOURCE_TEXT" --arg language "$LANGUAGE" '{text:$text,language:$language}')"
-
+# ...
 curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/text" \
   -H "Content-Type: application/json" \
   -H "x-api-key: $MAGICPODCAST_API_KEY" \
@@ -122,15 +123,15 @@ curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/text" \
 # 从 PDF URL 创建播客
 PDF_URL="https://example.com/report.pdf"
 LANGUAGE="zh"
-
+# ...
 # 验证 URL 有效性
 if ! printf '%s' "$PDF_URL" | grep -Eq '^https?://[^[:space:]]+$'; then
   echo "Invalid PDF URL" >&2
   exit 1
 fi
-
+# ...
 payload="$(jq -n --arg pdfUrl "$PDF_URL" --arg language "$LANGUAGE" '{pdfUrl:$pdfUrl,language:$language}')"
-
+# ...
 curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/pdf" \
   -H "Content-Type: application/json" \
   -H "x-api-key: $MAGICPODCAST_API_KEY" \
@@ -148,7 +149,7 @@ curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/pdf" \
 3. 询问播客语言
 4. 确认后创建播客
 5. 返回分享链接
-
+# ...
 用户: 把我的机器学习笔记转成播客
 系统: 请粘贴你的笔记文本
 用户: [粘贴文本]
@@ -199,16 +200,16 @@ export MAGICPODCAST_API_KEY="your_api_key"
 # 环境变量
 MAGICPODCAST_API_URL=https://api.magicpodcast.app
 MAGICPODCAST_API_KEY=your_key
-
+# ...
 # 安全命令模板
 safe_job_id() {
   printf '%s' "$1" | grep -Eq '^[A-Za-z0-9_-]{8,128}$'
 }
-
+# ...
 safe_http_url() {
   printf '%s' "$1" | grep -Eq '^https?://[^[:space:]]+$'
 }
-
+# ...
 # 查询任务状态
 curl -sS "$MAGICPODCAST_API_URL/agent/v1/jobs/$JOB_ID" \
   -H "x-api-key: $MAGICPODCAST_API_KEY"
@@ -249,7 +250,7 @@ A:免费版仅提供在线分享链接。如需下载音频文件,请使用 PRO 
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | MagicPodcast API | 外部 API | 必需 | 官网注册免费获取 |
 | curl | 命令行工具 | 必需 | 系统自带 |
 | jq | JSON 处理 | 必需 | 包管理器安装 |
@@ -266,9 +267,8 @@ A:免费版仅提供在线分享链接。如需下载音频文件,请使用 PRO 
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

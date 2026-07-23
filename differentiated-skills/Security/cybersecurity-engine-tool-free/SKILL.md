@@ -27,8 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 # 网络安全评估引擎免费版
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 29.9
 ### 免费版与专业版对比
 
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 安全评估深度 | 基础三层检查 | 完整十二阶段 |
 | 威胁建模 | STRIDE基础 | STRIDE+攻击树 |
 | 漏洞管理 | 手动登记 | 自动化SLA跟踪 |
@@ -57,7 +58,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 网络安全评估引擎免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -67,25 +68,25 @@ suggested_price: 29.9
 # 关键安全风险检查脚本
 echo "=== 关键安全风险检查 ==="
 ISSUES=0
-
+# ...
 # 检查硬编码密钥
 SECRETS=$(grep -rn 'AKIA[0-9A-Z]\{16\}\|BEGIN.*PRIVATE KEY\|sk-[A-Za-z0-9]\{20,\}' \
   --include='*.{js,ts,py,go,env,yml,yaml,json}' . 2>/dev/null | \
   grep -v 'node_modules\|\.git\|example' | wc -l)
 [ "$SECRETS" -gt 0 ] && echo "[!] 发现 ${SECRETS} 处疑似硬编码密钥" && ((ISSUES++))
-
+# ...
 # 检查生产环境调试模式
 DEBUG=$(grep -rn 'DEBUG\s*=\s*True\|debug:\s*true' \
   --include='*.{py,js,ts,yml,yaml,json}' . 2>/dev/null | \
   grep -v 'node_modules\|\.git\|test' | wc -l)
 [ "$DEBUG" -gt 0 ] && echo "[!] 发现 ${DEBUG} 处调试模式开启" && ((ISSUES++))
-
+# ...
 # 检查CORS通配符
 CORS=$(grep -rn "Access-Control-Allow-Origin.*\*" \
   --include='*.{py,js,ts,go}' . 2>/dev/null | \
   grep -v 'node_modules\|\.git' | wc -l)
 [ "$CORS" -gt 0 ] && echo "[!] 发现 ${CORS} 处CORS通配符配置" && ((ISSUES++))
-
+# ...
 echo ""
 echo "关键风险检查完成,发现问题: ${ISSUES} 项"
 ```
@@ -115,26 +116,26 @@ echo "关键风险检查完成,发现问题: ${ISSUES} 项"
 #!/bin/bash
 # OWASP Top 10 基础检查
 echo "=== OWASP Top 10 基础审计 ==="
-
+# ...
 echo ""
 echo "--- A01: 访问控制失效 ---"
 grep -rn "params\.id\|req\.params\." --include='*.{py,js,ts,go}' . 2>/dev/null | \
   grep -i "user\|account\|order" | head -5
-
+# ...
 echo ""
 echo "--- A02: 加密失败 ---"
 grep -rn "md5\|sha1" --include='*.{py,js,ts,go}' . 2>/dev/null | grep -i "password"
-
+# ...
 echo ""
 echo "--- A03: 注入 ---"
 grep -rn "query\|execute" --include='*.{py,js,ts}' . 2>/dev/null | \
   grep -i "f\"\|format(\|%s\|\${" | grep -iv "parameterized\|prepared" | head -5
-
+# ...
 echo ""
 echo "--- A07: XSS ---"
 grep -rn "innerHTML\|dangerouslySetInnerHTML\|v-html" \
   --include='*.{js,ts,jsx,tsx,vue}' . 2>/dev/null | head -5
-
+# ...
 echo ""
 echo "--- A05: 安全配置错误 ---"
 grep -rn "DEBUG\s*=\s*True\|debug:\s*true" \
@@ -163,7 +164,7 @@ threats:
     mitigation: "强制验证JWT算法为RS256或EdDSA"
     priority: "P0"
     status: "open"
-
+# ...
   - id: "T-002"
     component: "用户输入处理"
     category: "T"  # Tampering
@@ -191,14 +192,14 @@ threats:
 # 项目上线前安全自查脚本
 PROJECT_DIR="${1:-.}"
 cd "$PROJECT_DIR"
-
+# ...
 echo "========================================="
 echo "项目安全自查: $(basename "$(pwd)")"
 echo "检查时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "========================================="
-
+# ...
 ISSUES=0
-
+# ...
 echo ""
 echo "--- 1. 密钥泄露检查 ---"
 for pattern in 'AKIA[0-9A-Z]\{16\}' 'BEGIN.*PRIVATE KEY' 'sk-[A-Za-z0-9]\{20,\}' 'ghp_[A-Za-z0-9]\{36\}'; do
@@ -206,7 +207,7 @@ for pattern in 'AKIA[0-9A-Z]\{16\}' 'BEGIN.*PRIVATE KEY' 'sk-[A-Za-z0-9]\{20,\}'
             grep -v 'node_modules\|\.git\|example\|test' | wc -l)
     [ "$count" -gt 0 ] && echo "  [!] 发现 ${count} 处匹配: ${pattern}" && ((ISSUES++))
 done
-
+# ...
 echo ""
 echo "--- 2. 依赖漏洞检查 ---"
 if [ -f package.json ]; then
@@ -215,7 +216,7 @@ fi
 if [ -f requirements.txt ]; then
     pip-audit -r requirements.txt 2>/dev/null && echo "  [OK] pip: 无已知漏洞" || echo "  [!] pip审计发现问题"
 fi
-
+# ...
 echo ""
 echo "--- 3. .gitignore 覆盖检查 ---"
 if [ ! -f .gitignore ]; then
@@ -226,13 +227,13 @@ else
         grep -q "$entry" .gitignore 2>/dev/null && echo "  [OK] .gitignore包含: $entry" || echo "  [!] .gitignore缺失: $entry"
     done
 fi
-
+# ...
 echo ""
 echo "--- 4. SSL验证检查 ---"
 SSL_DISABLED=$(grep -rn "verify\s*=\s*False\|rejectUnauthorized.*false" \
   --include='*.{py,js,ts,go}' . 2>/dev/null | grep -v 'test\|spec' | wc -l)
 [ "$SSL_DISABLED" -gt 0 ] && echo "  [!] 发现 ${SSL_DISABLED} 处SSL验证禁用" && ((ISSUES++))
-
+# ...
 echo ""
 echo "========================================="
 echo "自查完成,发现问题: ${ISSUES} 项"
@@ -248,7 +249,7 @@ echo "========================================="
 [用户] -> [CDN/WAF] -> [负载均衡] -> [应用服务器] -> [数据库]
                                         ↘ [缓存]
                                         ↘ [消息队列]
-
+# ...
 信任边界识别:
 - 互联网 -> DMZ (公网服务边界)
 - DMZ -> 内网 (应用与数据库边界)
@@ -264,7 +265,7 @@ echo "========================================="
 - P1 (风险 12-19): 一周内修复
 - P2 (风险 6-11): 一个迭代内修复
 - P3 (风险 <= 5): 有空时修复
-
+# ...
 风险评分 = 可能性(1-5) x 影响(1-5)
 ```
 
@@ -275,7 +276,7 @@ echo "========================================="
 ```bash
 # 克隆或进入项目目录
 cd /path/to/your/project
-
+# ...
 # 运行关键风险检查
 bash security-check.sh
 ```
@@ -285,7 +286,7 @@ bash security-check.sh
 ```bash
 # 检查注入风险
 grep -rn "query\|execute" --include='*.py' . | grep -i "f\"\|%s"
-
+# ...
 # 检查XSS风险
 grep -rn "innerHTML\|dangerouslySetInnerHTML" --include='*.{js,ts,jsx}' .
 ```
@@ -334,7 +335,7 @@ password_policy:
 ### 严重级别与修复SLA
 
 | 严重级别 | CVSS范围 | 修复SLA | 升级路径 |
-|:---------|:---------|:---------|:---------|
+|---:|---:|---:|---:|
 | 严重 | 9.0-10.0 | 24小时 | 立即通知CTO/CISO |
 | 高危 | 7.0-8.9 | 7天 | 通知团队负责人 |
 | 中危 | 4.0-6.9 | 30天 | 加入迭代待办 |
@@ -395,7 +396,7 @@ done
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | grep | 文本搜索工具 | 必需 | 系统自带 |
 | npm | 包管理器 | 按需 | nodejs.org 下载 |
 | pip-audit | Python审计工具 | 按需 | `pip install pip-audit` |
@@ -412,9 +413,8 @@ done
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

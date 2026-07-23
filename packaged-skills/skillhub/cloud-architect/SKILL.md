@@ -27,16 +27,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
 ---
 # 云架构师
 
 资深云架构师,专精 AWS、Azure、GCP 三大平台的企业级架构设计、多云策略、迁移模式、成本优化与云原生架构,遵循 Well-Architected Framework 原则提供高可用、安全、经济的云基础设施设计。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 云架构师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -44,13 +45,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -189,7 +190,6 @@ pricing_model: "per_use"
 
 ## 异常处理
 
-
 ### 服务选型产生冲突
 原因:多个云服务均能满足需求,各有取舍(如 Lambda vs Fargate vs EC2)。
 处理:从延迟敏感度、运维成本、冷启动容忍、计费模式四个维度对比;无状态短任务选 Lambda,长驻容器服务选 Fargate,需要系统级控制选 EC2;输出选型对比矩阵供决策。
@@ -274,16 +274,16 @@ terraform {
     encrypt        = true
   }
 }
-
+# ...
 provider "aws" {
   region = "us-east-1"
 }
-
+# ...
 # VPC 与子网(3 可用区高可用)
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.0.0"
-
+# ...
   name                 = "prod-vpc"
   cidr                 = "10.0.0.0/16"
   azs                  = ["us-east-1a", "us-east-1b", "us-east-1c"]
@@ -294,14 +294,14 @@ module "vpc" {
   single_nat_gateway   = false
   enable_dns_hostnames = true
 }
-
+# ...
 # KMS 密钥用于 RDS 加密
 resource "aws_kms_key" "rds" {
   description             = "KMS key for RDS encryption"
   enable_key_rotation     = true
   deletion_window_in_days = 30
 }
-
+# ...
 # RDS PostgreSQL 多可用区部署
 resource "aws_db_instance" "main" {
   engine                  = "postgres"
@@ -321,7 +321,7 @@ resource "aws_db_instance" "main" {
   skip_final_snapshot     = false
   final_snapshot_identifier = "prod-rds-final-${formatdate("YYYYMMDD", timestamp())}"
 }
-
+# ...
 # EC2 Auto Scaling: Web 层
 resource "aws_launch_template" "web" {
   name_prefix          = "web-asg"
@@ -329,7 +329,7 @@ resource "aws_launch_template" "web" {
   instance_type        = "t3.large"
   key_name             = "prod-key"
   vpc_security_group_ids = [aws_security_group.web.id]
-
+# ...
   user_data = base64encode(<<-EOF
     #!/bin/bash
     yum install -y nginx
@@ -338,19 +338,19 @@ resource "aws_launch_template" "web" {
   EOF
   )
 }
-
+# ...
 resource "aws_autoscaling_group" "web" {
   vpc_zone_identifier = module.vpc.private_subnets
   desired_capacity    = 3
   max_size             = 6
   min_size             = 2
   target_group_arns    = [aws_lb_target_group.web.arn]
-
+# ...
   launch_template {
     id      = aws_launch_template.web.id
     version = "$Latest"
   }
-
+# ...
   tag {
     key                 = "Name"
     value               = "web-asg"
@@ -365,7 +365,7 @@ resource "aws_autoscaling_group" "web" {
 # s3-secure-bucket.yaml
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'Secure S3 bucket with KMS encryption, versioning, and lifecycle'
-
+# ...
 Resources:
   SecureBucket:
     Type: AWS::S3::Bucket
@@ -395,7 +395,7 @@ Resources:
         BlockPublicPolicy: true
         IgnorePublicAcls: true
         RestrictPublicBuckets: true
-
+# ...
   BucketKMSKey:
     Type: AWS::KMS::Key
     Properties:
@@ -409,7 +409,7 @@ Resources:
               AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
             Action: 'kms:*'
             Resource: '*'
-
+# ...
   BucketDenyInsecureTransport:
     Type: AWS::S3::BucketPolicy
     Properties:
@@ -436,7 +436,7 @@ Resources:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -447,9 +447,8 @@ Resources:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

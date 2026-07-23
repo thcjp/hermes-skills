@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # 知识图谱构建器（专业版）
 
@@ -46,7 +48,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Knowledge Graph Buil处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -99,7 +101,7 @@ pricing_model: "per_use"
 ```bash
 # 若已有免费版数据，直接升级
 ls memory/knowledge-graph/graph.jsonl 2>/dev/null && echo "检测到免费版数据，将自动升级"
-
+# ...
 # 若无免费版数据，初始化
 mkdir -p memory/knowledge-graph/{snapshots,visualizations,reports}
 touch memory/knowledge-graph/graph.jsonl
@@ -119,7 +121,7 @@ cat > memory/knowledge-graph/.storage-config.json << 'EOF'
   "fullTextSearch": true
 }
 EOF
-
+# ...
 # 2. 启用图可视化
 cat > memory/knowledge-graph/.viz-config.json << 'EOF'
 {
@@ -135,7 +137,7 @@ cat > memory/knowledge-graph/.viz-config.json << 'EOF'
   "interactive": true
 }
 EOF
-
+# ...
 # 3. 启用版本追踪
 cat > memory/knowledge-graph/.version-config.json << 'EOF'
 {
@@ -146,7 +148,7 @@ cat > memory/knowledge-graph/.version-config.json << 'EOF'
   "branchSupport": true
 }
 EOF
-
+# ...
 # 4. 启用跨技能通信
 cat > memory/knowledge-graph/.event-config.json << 'EOF'
 {
@@ -159,7 +161,7 @@ cat > memory/knowledge-graph/.event-config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 # 验证配置
 ls -la memory/knowledge-graph/
 ```
@@ -221,7 +223,7 @@ ls -la memory/knowledge-graph/
 ### 1. 类型化实体系统（基础+增强）
 
 | 维度 | 免费版能力 | 专业版增强 |
-|------|-----------|-----------|
+|:-----|:-----|:-----|
 | 核心类型 | 12+固定类型 | +自定义类型+继承 |
 | 属性 | 必填/可选 | +类型验证+默认值+计算属性 |
 | 约束 | 7类基础约束 | +自定义规则+跨实体验证 |
@@ -238,28 +240,28 @@ ls -la memory/knowledge-graph/
 ```bash
 # 检查是否需要迁移
 kg storage status
-
+# ...
 # 输出：
 # 当前存储：JSONL
 # 记录数：1500（超过阈值1000，建议迁移）
 # 查询性能：450ms（SQLite预计：12ms）
-
+# ...
 # 执行迁移
 kg storage migrate --to sqlite
-
+# ...
 # 输出：
 # 迁移完成：1500条记录
 # 创建索引：type, status, assignee, due
 # 启用全文搜索
 # 性能提升：37x
-
+# ...
 # 自动迁移模式（推荐）
 # 设置backend=auto，超过阈值自动迁移
 ```
 
 **SQLite优势**：
 | 维度 | JSONL | SQLite |
-|------|-------|--------|
+|---:|---:|---:|
 | 查询性能 | O(n)全扫描 | O(log n)索引查询 |
 | 1000条查询 | 450ms | 12ms |
 | 10000条查询 | 4500ms | 15ms |
@@ -276,18 +278,18 @@ kg storage migrate --to sqlite
 ```bash
 # 生成网络图
 kg viz render --format mermaid --max-nodes 100
-
+# ...
 # 输出（Mermaid格式）：
 # graph TD
 #   proj_001[网站重设计] -->|has_owner| p_001[张三]
 #   proj_001 -->|has_task| task_001[设计首页]
 #   proj_001 -->|has_task| task_002[开发后端]
 #   task_002 -->|blocks| task_003[部署]
-
+# ...
 # 生成SVG/PNG
 kg viz render --format svg --output reports/graph.svg
 kg viz render --format png --output reports/graph.png
-
+# ...
 # 交互式探索
 kg viz interactive --layout force-directed
 ```
@@ -308,7 +310,7 @@ kg viz interactive --layout force-directed
 ```bash
 # 简单查询
 kg query "SELECT ?task WHERE { ?task rdf:type Task . ?task status 'open' }"
-
+# ...
 # 多跳查询
 kg query "SELECT ?person ?project WHERE {
   ?project rdf:type Project .
@@ -316,13 +318,13 @@ kg query "SELECT ?person ?project WHERE {
   ?project has_task ?task .
   ?task status 'blocked'
 }"
-
+# ...
 # 聚合统计
 kg query "SELECT ?status (COUNT(?task) AS ?count) WHERE {
   ?task rdf:type Task .
   ?task status ?status
 } GROUP BY ?status"
-
+# ...
 # 路径查询
 kg query "SELECT ?path WHERE {
   ?start rdf:type Task .
@@ -330,7 +332,7 @@ kg query "SELECT ?path WHERE {
   PATH ?start (blocks+) ?end .
   ?end title ?path
 }"
-
+# ...
 # 复杂模式匹配
 kg query "SELECT ?person ?projectCount WHERE {
   ?person rdf:type Person .
@@ -342,7 +344,7 @@ kg query "SELECT ?person ?projectCount WHERE {
 
 **查询能力**：
 | 查询类型 | 示例 | 用途 |
-|----------|------|------|
+|:---:|:---:|:---:|
 | 简单查询 | SELECT ?task WHERE type=Task | 按类型查询 |
 | 多跳查询 | A→B→C 关系链 | 关系网络分析 |
 | 聚合统计 | GROUP BY + COUNT | 统计分析 |
@@ -358,13 +360,13 @@ kg query "SELECT ?person ?projectCount WHERE {
 ```bash
 # 创建快照
 kg snapshot create --label "v2.0发布前"
-
+# ...
 # 查看历史快照
 kg snapshot list
-
+# ...
 # 对比两个时间点
 kg snapshot diff --from "2026-01-01" --to "2026-01-31"
-
+# ...
 # 输出：
 # 图谱差异报告
 #
@@ -381,10 +383,10 @@ kg snapshot diff --from "2026-01-01" --to "2026-01-31"
 #
 # 新增关系：18
 # 删除关系：3
-
+# ...
 # 回滚到指定快照
 kg snapshot restore --id snap_20260115 --confirm
-
+# ...
 # 分支式回滚（不覆盖当前）
 kg snapshot branch --from snap_20260115 --name "v1.x-maintenance"
 ```
@@ -406,18 +408,18 @@ knowledge_graph.create("Task", {
 })
 # 自动发布事件：task.created
 # 订阅者：notification-skill, scheduler-skill
-
+# ...
 # 技能B：notification-skill订阅task.created
 @subscribe("task.created")
 def notify(task):
     send_notification(task.assignee, f"新任务: {task.title}")
-
+# ...
 # 技能C：scheduler-skill订阅task.created
 @subscribe("task.created")
 def schedule(task):
     if task.due:
         add_to_calendar(task.due, task.title)
-
+# ...
 # 技能D：report-skill订阅task.completed
 @subscribe("task.completed")
 def update_report(task):
@@ -439,13 +441,13 @@ def update_report(task):
 ```bash
 # 与CI/CD集成
 kg integrate ci-cd --on-deploy "snapshot create --label 'deploy-v$VERSION'"
-
+# ...
 # 与团队协作平台集成
 kg integrate team --sync --interval 300
-
+# ...
 # 与知识库集成
 kg integrate knowledge-base --export --format markdown
-
+# ...
 # 与项目管理工具集成
 kg integrate jira --sync --direction both
 ```
@@ -465,21 +467,21 @@ types:
     extends: Person
     required: [name, skills[]]
     optional: [github?, level?]
-    
+# ...
   # 完全新类型
   Bug:
     required: [title, severity, status]
     severity_enum: [critical, high, medium, low]
     status_enum: [reported, confirmed, fixing, resolved, closed]
     validate: "resolved_date >= reported_date if resolved_date exists"
-
+# ...
 relations:
   # 自定义关系
   reported_by:
     from_types: [Bug]
     to_types: [Person]
     cardinality: many_to_one
-    
+# ...
   fixed_by:
     from_types: [Bug]
     to_types: [Developer]
@@ -505,10 +507,10 @@ relations:
 # 迁移至SQLite
 kg storage migrate --to sqlite
 # 性能提升37x
-
+# ...
 # 生成全局关系网络图
 kg viz render --format mermaid --max-nodes 500 --filter "type=Project OR type=Person"
-
+# ...
 # 高级查询：找出负责3个以上活跃项目的人
 kg query "SELECT ?person ?count WHERE {
   ?person rdf:type Person .
@@ -528,10 +530,10 @@ kg query "SELECT ?person ?count WHERE {
 ```bash
 # 合并多团队图谱
 kg merge --from team-a --from team-b --from team-c
-
+# ...
 # 可视化跨团队依赖
 kg viz render --format svg --highlight "cross-team"
-
+# ...
 # 查询跨团队依赖
 kg query "SELECT ?taskA ?teamA ?taskB ?teamB WHERE {
   ?taskA rdf:type Task .
@@ -558,12 +560,12 @@ kg query "SELECT ?path WHERE {
   PATH ?start (depends_on+) ?end .
   ?end name ?path
 }"
-
+# ...
 # 输出：
 # 用户服务 → 订单服务 → 支付服务 → 银行接口
 # 用户服务 → 通知服务 → 短信网关
 # 用户服务 → 推荐服务 → 数据仓库
-
+# ...
 # 影响范围分析
 kg query "SELECT ?affected WHERE {
   ?start name '用户服务' .
@@ -583,17 +585,17 @@ kg query "SELECT ?affected WHERE {
 ```bash
 # 查看半年间的变化
 kg snapshot diff --from "2025-07-01" --to "2026-01-01"
-
+# ...
 # 输出：
 # 新增实体：450
 # 删除实体：80
 # 修改实体：230
 # 关系变化：+380, -120
-
+# ...
 # 查看特定类型的变化
 kg snapshot diff --from "2025-07-01" --to "2026-01-01" --type Project
 # 输出：新增15个项目，完成8个项目
-
+# ...
 # 回滚到半年前（分支式）
 kg snapshot branch --from "2025-07-01" --name "历史分析"
 ```
@@ -610,7 +612,7 @@ kg snapshot branch --from "2025-07-01" --name "历史分析"
 # 当任务创建时，自动通知与调度
 # 当任务完成时，自动更新报告
 # 当项目状态变更时，自动更新仪表盘
-
+# ...
 # 技能间通过图谱事件总线通信
 # 无需直接调用，松耦合协作
 ```
@@ -620,7 +622,7 @@ kg snapshot branch --from "2025-07-01" --name "历史分析"
 ### 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:------|------:|:------|:------|
 | CTO | 大规模图谱管理 | SQLite+可视化+SPARQL | 毫秒查询+全局可视 |
 | 产品总监 | 跨团队可视化 | 合并+可视化+跨团队查询 | 协作机会发现 |
 | 架构师 | 深度依赖分析 | SPARQL路径查询+影响分析 | 事故风险-70% |
@@ -687,10 +689,10 @@ kg snapshot branch --from "2025-07-01" --name "历史分析"
 ```bash
 # 部署前创建快照
 kg snapshot create --label "deploy-v$VERSION"
-
+# ...
 # 部署后记录变更
 kg create --type Action --props "{\"type\":\"deploy\",\"target\":\"v$VERSION\",\"outcome\":\"success\"}"
-
+# ...
 # 定期生成知识报告
 kg report --format markdown --output reports/knowledge-report.md
 ```
@@ -710,10 +712,10 @@ kg report --format markdown --output reports/knowledge-report.md
 ```bash
 # 导出为知识库格式
 kg export --format markdown --output knowledge-base/
-
+# ...
 # 从知识库导入
 kg import --from knowledge-base/ --format markdown
-
+# ...
 # 双向同步
 kg sync --with knowledge-base/ --direction both
 ```
@@ -739,7 +741,7 @@ kg sync --with knowledge-base/ --direction both
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|---:|:---|---:|
 | 1.0.0 | 2026-01 | 初版发布，含SQLite+可视化+SPARQL+版本追踪+事件总线+多平台集成 |
 
 ---
@@ -747,7 +749,7 @@ kg sync --with knowledge-base/ --direction both
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:------:|--------|:-------|:------:|
 | SQLite迁移失败 | 数据格式不一致 | 验证JSONL格式；修复后重试 | 高 |
 | 可视化渲染慢 | 节点过多 | 限制maxNodes；启用分层展示 | 中 |
 | SPARQL查询超时 | 查询过于复杂 | 限制maxHops；优化查询模式 | 中 |
@@ -771,9 +773,8 @@ kg sync --with knowledge-base/ --direction both
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|----|:--:|---:|----|:--:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -846,7 +847,7 @@ kg sync --with knowledge-base/ --direction both
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|----|----|----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
 | PyYAML | Python包 | 必需 | `pip install pyyaml` |
@@ -922,7 +923,7 @@ kg sync --with knowledge-base/ --direction both
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | 免费体验版 | ¥0 | 12+核心类型+关系系统+约束验证+JSONL存储+图遍历查询+规划即图变换+技能契约+5种角色场景 | 个人试用、轻量知识管理 |
 | 收费专业版 | ¥49.9/月 | 全功能（SQLite+可视化+SPARQL+版本追踪+事件总线+多平台集成+自定义类型）+7种角色指南+性能优化+优先支持 | 团队/企业、大规模图谱、深度查询 |
 

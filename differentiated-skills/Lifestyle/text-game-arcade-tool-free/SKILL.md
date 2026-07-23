@@ -28,8 +28,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # 文字游戏机 (免费版)
 
 ## 概述
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 多类型游戏 | 冒险、悬疑、恋爱等 | 支持 |
 | 剧情分支 | 多结局设计 | 支持 |
 | 角色互动 | NPC 对话系统 | 支持 |
@@ -88,42 +89,42 @@ suggested_price: 29.9
 
 ```text
 用户: "我想玩一个文字冒险游戏"
-
+# ...
 助手:
 === 暗夜古堡 ===
-
+# ...
 你站在一座古老城堡的大门前。夜色浓重,月光被乌云遮蔽。
 大门微微敞开,似乎在邀请你进去。
-
+# ...
 你的任务: 找到失踪的考古学家。
-
+# ...
 你的状态:
 - 生命: 100/100
 - 物品: 手电筒、钥匙、笔记本
-
+# ...
 你打算:
 1. 推开大门进入
 2. 绕着城堡走一圈
 3. 用手电筒照亮周围
 4. 在笔记本上记录现状
-
+# ...
 > 1
-
+# ...
 你推开沉重的大门,发出吱呀一声。
 一阵冷风扑面而来,带着霉味和某种甜腻的气息。
-
+# ...
 大厅里一片漆黑。你听到远处似乎有脚步声...
-
+# ...
 你的状态更新:
 - 位置: 城堡大厅
 - 警觉度: 高
-
+# ...
 你打算:
 1. 用手电筒照亮大厅
 2. 蹲下倾听脚步声
 3. 大声呼喊
 4. 退回门外
-
+# ...
 >
 ```
 
@@ -133,26 +134,26 @@ suggested_price: 29.9
 
 ```text
 用户: "生成一个悬疑推理游戏,场景是大学校园"
-
+# ...
 助手:
 === 沉默的图书馆 ===
-
+# ...
 背景:
 你是私立青山大学的学生。
 昨晚,图书馆管理员张教授被发现死在闭馆后的图书馆内。
 警方初步判定为意外,但你是最后一个见到他的人...
-
+# ...
 嫌疑人:
 1. 李同学 - 与张教授有学术纠纷
 2. 王老师 - 正在申请终身教职,张教授是评审
 3. 赵馆长 - 与张教授争夺图书馆经费
-
+# ...
 你的任务: 在 7 天内找出真凶,洗清自己的嫌疑。
-
+# ...
 第一天 - 早上 9:00
 你站在图书馆门前,手机上还留着张教授昨晚发来的消息:
 "如果你看到这条消息,说明我出事了。查 201 房间的资料..."
-
+# ...
 你打算:
 1. 立即前往 201 房间
 2. 先找李同学了解情况
@@ -172,7 +173,7 @@ class InteractiveFiction:
         self.scenes = {}
         self.current_scene = "start"
         self.player_state = {"inventory": [], "flags": set()}
-
+# ...
     def add_scene(self, scene_id, text, choices=None, effects=None):
         """添加场景"""
         self.scenes[scene_id] = {
@@ -180,49 +181,49 @@ class InteractiveFiction:
             "choices": choices or [],
             "effects": effects or {},
         }
-
+# ...
     def play(self):
         """开始游戏"""
         print(f"=== {self.title} ===")
         print(f"作者: {self.author}\n")
         return self._render_scene(self.current_scene)
-
+# ...
     def _render_scene(self, scene_id):
         scene = self.scenes.get(scene_id)
         if not scene:
             return "游戏结束。"
-
+# ...
         # 应用效果
         for effect in scene.get("effects", []):
             self._apply_effect(effect)
-
+# ...
         # 显示文本
         text = scene["text"]
         for key, value in self.player_state.items():
             text = text.replace(f"{{{key}}}", str(value))
-
+# ...
         output = text + "\n"
         for i, choice in enumerate(scene.get("choices", []), 1):
             output += f"{i}. {choice['text']}\n"
-
+# ...
         return output
-
+# ...
     def choose(self, choice_idx):
         """选择分支"""
         scene = self.scenes.get(self.current_scene)
         if not scene or choice_idx >= len(scene["choices"]):
             return "无效选择"
-
+# ...
         choice = scene["choices"][choice_idx]
         self.current_scene = choice["next"]
         return self._render_scene(self.current_scene)
-
+# ...
 # 创建一个简单的互动小说
 story = InteractiveFiction("迷雾森林", "AI 作者")
 story.add_scene("start", """
 你醒来时发现自己躺在一片陌生的森林中。
 浓雾笼罩四周,你只看到一条小径通向前方。
-
+# ...
 你的物品: {inventory}
 """, choices=[
     {"text": "沿着小径前进", "next": "path"},
@@ -261,7 +262,7 @@ story.add_scene("start", """
 ```bash
 # 游玩预设游戏
 echo "玩一个冒险游戏" | text-game
-
+# ...
 # 自定义游戏
 echo "生成一个赛博朋克题材的悬疑游戏" | text-game
 ```
@@ -271,14 +272,14 @@ echo "生成一个赛博朋克题材的悬疑游戏" | text-game
 ```python
 import json
 from pathlib import Path
-
+# ...
 def save_game(game_state, slot="auto"):
     """保存游戏进度"""
     save_dir = Path("~/.text-game/saves").expanduser()
     save_dir.mkdir(parents=True, exist_ok=True)
     save_file = save_dir / f"{slot}.json"
     save_file.write_text(json.dumps(game_state, ensure_ascii=False, indent=2))
-
+# ...
 def load_game(slot="auto"):
     """读取游戏进度"""
     save_file = Path("~/.text-game/saves").expanduser() / f"{slot}.json"
@@ -298,7 +299,7 @@ preferences:
   difficulty: normal  # easy, normal, hard
   language: zh
   save_auto: true
-
+# ...
 game_types:
   adventure:
     elements: [exploration, puzzle, combat]
@@ -309,7 +310,7 @@ game_types:
   romance:
     elements: [character_interaction, choices, endings]
     avg_duration: 60min
-
+# ...
 storage:
   saves_dir: ~/.text-game/saves
   max_saves: 10
@@ -377,7 +378,7 @@ ENDINGS = {
     "bad": {"condition": {"trust": "<50"}, "text": "..."},
     "secret": {"condition": {"flag": "found_secret"}, "text": "..."},
 }
-
+# ...
 def determine_ending(player_state):
     """根据玩家状态决定结局"""
     for name, ending in ENDINGS.items():
@@ -419,7 +420,7 @@ def determine_ending(player_state):
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 可选 | python.org 下载 |
 
@@ -428,7 +429,7 @@ def determine_ending(player_state):
 ```bash
 # 免费版无需外部 API Key
 # 所有游戏通过 Agent LLM 本地推理生成
-
+# ...
 # 可选: 游戏偏好
 export TEXT_GAME_GENRE="adventure"
 export TEXT_GAME_DIFFICULTY="normal"
@@ -443,9 +444,8 @@ export TEXT_GAME_LANGUAGE="zh"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -15,9 +15,11 @@ tools:
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 定时守护
 
@@ -98,7 +100,7 @@ POSIX(bash/sh)与Windows(PowerShell)等效模式对照表,覆盖三大平台
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 定时守护处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -106,7 +108,7 @@ POSIX(bash/sh)与Windows(PowerShell)等效模式对照表,覆盖三大平台
 ```bash
 # 错误:cron里塞多行shell(引用地狱)
 bash -lc 'cd /app && for f in *.csv; do python3 process.py "$f" && mv "$f" done/; done'
-
+# ...
 # 正确:cron跑一个脚本
 python3 tools/process_all.py
 ```
@@ -139,7 +141,7 @@ fi
 # 临时文件清理
 TMPFILE=$(mktemp)
 trap 'rm -f "$TMPFILE"' EXIT
-
+# ...
 # 文件锁防并发
 LOCKFILE="/tmp/job.lock"
 exec 200>"$LOCKFILE"
@@ -171,7 +173,7 @@ env -i HOME="$HOME" PATH="/usr/local/bin:/usr/bin:/bin" \
 #
 ## 示例
 
-### 示例
+### 示例(补充)
 **输入**: 现有cron配置 `bash -lc 'cd /app && python3 sync.py && git add . && git commit -m "sync" && git push'`,经常报`unexpected EOF`
 
 **输出**:
@@ -190,7 +192,7 @@ except subprocess.CalledProcessError:
     subprocess.run(["git", "rebase", "origin/main"], check=True)
     subprocess.run(["git", "push"], check=True)
 print("NO_REPLY")
-
+# ...
 # 2. cron改为一行
 # 旧: bash -lc 'cd /app && python3 sync.py && ...'
 # 新: python3 /repo/tools/daily-sync.py
@@ -229,9 +231,8 @@ try {
 
 ## 错误处理
 
-
 | 场景 | 原因 | 处理方式 |
-|:-----|:-----|:---------|
+|:-----|:-----|:-----|
 | `unexpected EOF while looking for matching ')'` | `$(...)`命令替换未闭合或`bash -lc`嵌套引号断裂 | 把多行shell替换为脚本,cron只跑`python3 tools/<job>.py` |
 | 明明成功却报失败(SIGPIPE) | `set -o pipefail`下`head`提前关闭管道,上游收到SIGPIPE | 局部`|| true`或改用脚本只读需要的部分 |
 | 本地能跑cron里失败 | cwd不同(默认HOME)、PATH不同(不加载.bashrc)、环境变量缺失 | 脚本内`cd`到仓库、显式设置PATH、文档化并校验环境变量 |
@@ -244,7 +245,7 @@ try {
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | bash或PowerShell | Shell | 必需 | 系统自带 |
 | Agent LLM | API | 必需 | 由Agent内置LLM提供 |
 | python3 | 运行时 | 推荐(脚本载体) | 系统自带或python.org |

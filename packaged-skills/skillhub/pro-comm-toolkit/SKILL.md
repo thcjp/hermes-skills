@@ -37,19 +37,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 职场沟通工具箱专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 职场沟通工具箱专业版支持批量邮件生成 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -100,7 +102,7 @@ pricing_model: "per_use"
 # batch_email_generator.py
 import csv
 import json
-
+# ...
 def generate_batch_emails(template, data_file, output_dir):
     """
     批量生成个性化邮件
@@ -116,22 +118,22 @@ def generate_batch_emails(template, data_file, output_dir):
             with open(filename, 'w', encoding='utf-8') as out:
                 out.write(email_content)
             print(f"已生成: {filename}")
-
+# ...
 # 示例
 template = """主题: 【{product}】重要服务更新通知
-
+# ...
 尊敬的 {name} 先生/女士：
-
+# ...
 您好！感谢您使用我们的 {product} 服务。
 我们将于 {date} 进行系统升级，届时服务将暂停约2小时。
-
+# ...
 升级内容：
 - 性能优化，响应速度提升30%
 - 新增 {feature} 功能
 - 安全补丁更新
-
+# ...
 如有疑问，请随时联系您的专属客户经理。
-
+# ...
 此致
 敬礼
 """
@@ -143,23 +145,23 @@ generate_batch_emails(template, "customers.csv", "./output_emails")
 ```text
 多语言会议通知模板
 =====================================
-
+# ...
 [中文版]
 主题: 季度产品评审会议通知
 各位同事，我们将于本周五14:00召开季度产品评审会议，
 请提前准备各自负责模块的进展汇报。
-
+# ...
 [English Version]
 Subject: Quarterly Product Review Meeting
 Dear colleagues, we will hold the quarterly product review
 meeting this Friday at 14:00. Please prepare progress reports
 for your respective modules in advance.
-
+# ...
 [日本語版]
 件名: 四半期製品レビュー会議のお知らせ
 皆様、今週金曜日14:00に四半期製品レビュー会議を開催します。
 それぞれの担当モジュールの進捗報告を事前にご準備ください。
-
+# ...
 跨文化注意事项:
 - 日本团队: 注意使用敬语，会议开始前5分钟接入
 - 欧美团队: 直接切入主题，避免过多寒暄
@@ -171,46 +173,46 @@ for your respective modules in advance.
 ```text
 危机公关沟通五步法
 =====================================
-
+# ...
 优秀步: 快速响应（1小时内）
 - 确认事实，不猜测原因
 - 表达关注与歉意
 - 承诺调查并公布结果
-
+# ...
 第二步: 信息披露（4小时内）
 - 公开已知事实
 - 说明正在采取的措施
 - 提供客户支持渠道
-
+# ...
 第三步: 原因说明（24小时内）
 - 公布调查结果
 - 说明根本原因
 - 公布改进方案
-
+# ...
 第四步: 补救措施
 - 受影响客户的补偿方案
 - 流程改进计划
 - 防止复发的措施
-
+# ...
 第五步: 后续跟进
 - 定期更新整改进展
 - 总结经验教训
 - 恢复客户信任
-
+# ...
 邮件模板:
 主题: 【重要】关于 {event} 的说明与致歉
-
+# ...
 尊敬的 {name}：
-
+# ...
 关于 {date} 发生的 {event}，我们向您致以诚挚的歉意。
 经调查，事件原因为 {cause}。
 我们已采取以下措施：{actions}。
 为表达歉意，我们将 {compensation}。
-
+# ...
 如您有任何疑问，请通过以下方式联系我们：
 - 专属热线: {phone}
 - 邮箱: {email}
-
+# ...
 此致
 敬礼
 {company} 团队
@@ -230,7 +232,7 @@ npx skillhub@latest install pro-comm-toolkit-pro
 # 从CSV批量生成个性化邮件
 python batch_email_generator.py --template templates/notice.txt \
   --data customers.csv --output ./output_emails
-
+# ...
 # 查看生成统计
 python batch_email_generator.py --stats
 ```
@@ -250,10 +252,10 @@ python translate_communication.py \
 ```bash
 # 创建新模板
 python template_manager.py create --name "项目周报" --category "report"
-
+# ...
 # 列出所有模板
 python template_manager.py list --category "report"
-
+# ...
 # 团队共享模板
 python template_manager.py share --template-id 12 --team "engineering"
 ```
@@ -262,7 +264,7 @@ python template_manager.py share --template-id 12 --team "engineering"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | pro-comm-toolkit处理的内容输入 |,  |
 | content | string | 否 | pro-comm-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -290,9 +292,8 @@ python template_manager.py share --template-id 12 --team "engineering"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -306,10 +307,10 @@ python template_manager.py share --template-id 12 --team "engineering"
 - **Python 版本**: 3.8+（批量处理与多语言功能需要）
 - **运行时**: Node.js 16+（模板管理工具需要）
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | python.org 官方下载 |
 | pandas | Python库 | 推荐 | `pip install pandas` |
@@ -321,7 +322,7 @@ python template_manager.py share --template-id 12 --team "engineering"
 ```bash
 # 多语言翻译功能（可选）
 export TRANSLATION_API_KEY="your_translation_api_key"
-
+# ...
 # 邮件发送功能（可选）
 export SMTP_HOST="smtp.company.com"
 export SMTP_PORT="587"
@@ -342,20 +343,6 @@ export SMTP_PASSWORD="your_password"
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -420,9 +407,8 @@ python template_manager.py set-permission \
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -35,28 +35,30 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # HeyGen TTS专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| HeyGen TTS专业版批量生成 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 免费版 vs 专业版对比
 | 能力 | 免费版 | 专业版 | 增量价值 |
-|:-----|:-------|:-------|:---------|
+|:-----|:-----|:-----|:-----|
 | TTS 合成 | 支持 | 支持 | - |
 | 多语言 | 40+ | 40+ + 混合 | 多语言混合 |
 | 语速控制 | 支持 | 支持 | - |
@@ -139,24 +141,24 @@ def generate_with_timestamps(text, voice_id, api_key):
             "voice_id": voice_id,
         }
     )
-
+# ...
     data = response.json()["data"]
-
+# ...
     srt_content = ""
     for i, ts in enumerate(data.get("word_timestamps", []), 1):
         if ts["word"] in ("<start>", "<end>"):
             continue
-
+# ...
         start = format_timestamp(ts["start"])
         end = format_timestamp(ts["end"])
         srt_content += f"{i}\n{start} --> {end}\n{ts['word']}\n\n"
-
+# ...
     return {
         "audio_url": data["audio_url"],
         "duration": data["duration"],
         "srt": srt_content.strip()
     }
-
+# ...
 def format_timestamp(seconds):
     """格式化为 SRT 时间戳"""
     hours = int(seconds // 3600)
@@ -164,21 +166,19 @@ def format_timestamp(seconds):
     secs = int(seconds % 60)
     millis = int((seconds % 1) * 1000)
     return f"{hours:02d}:{minutes:02d}:{secs:02d},{millis:03d}"
-
+# ...
 result = generate_with_timestamps(
     "Hello world, this is a test.",
     "YOUR_VOICE_ID",
     os.environ["HEYGEN_API_KEY"]
 )
-
+# ...
 with open("subtitles.srt", "w", encoding="utf-8") as f:
     f.write(result["srt"])
 ```
 
 ### 场景四:API 服务化部署
 将 TTS 封装为 API 服务。
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 使用流程
 
@@ -192,7 +192,7 @@ with open("subtitles.srt", "w", encoding="utf-8") as f:
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | requests | Python 库 | 必需 | `pip install requests` |
 | fastapi | Python 库 | 可选(API 服务) | `pip install fastapi uvicorn` |
 | ffmpeg | 音频处理 | 推荐(后处理) | `brew install ffmpeg` |
@@ -214,7 +214,7 @@ with open("subtitles.srt", "w", encoding="utf-8") as f:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | heygen-tts处理的内容输入 |,  |
 | content | string | 否 | heygen-tts处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -242,17 +242,16 @@ with open("subtitles.srt", "w", encoding="utf-8") as f:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | LLM | 模型 | 是 | 需要LLM进行内容生成, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要, 本地LLM不需要 |
 
@@ -280,7 +279,7 @@ batch:
 
 ### SSML 标记速查
 | 标签 | 作用 | 示例 |
-|:-----|:-----|:-----|
+|:------:|--------|:-------|
 | `<break>` | 停顿 | `<break time="1s"/>` |
 | `<prosody>` | 语速/音调 | `<prosody rate="slow">` |
 | `<emphasis>` | 强调 | `<emphasis level="strong">` |
@@ -323,9 +322,8 @@ break 标签是 SSML 的子集,可在普通文本中使用(`input_type: "text"`)
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

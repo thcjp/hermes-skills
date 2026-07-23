@@ -33,28 +33,30 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # UI设计工具包专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 免费版 vs 专业版对比
 | 能力 | 免费版 | 专业版 | 增量价值 |
-|:-----|:-------|:-------|:---------|
+|:-----|:-----|:-----|:-----|
 | 视觉层次 | 支持 | 支持 | - |
 | 排版规范 | 支持 | 支持 | - |
 | 色彩使用 | 支持 | 支持 | - |
@@ -114,7 +116,7 @@ export const a11yChecklist = {
     '1.4.4 文字缩放': '支持 200% 缩放不丢失功能',
     '1.4.11 非文字对比度': 'UI 组件对比度 >= 3:1',
   },
-
+// ...
   // 可操作(Operable)
   operable: {
     '2.1.1 键盘可访问': '所有功能可通过键盘操作',
@@ -123,7 +125,7 @@ export const a11yChecklist = {
     '2.4.7 焦点可见': '聚焦状态清晰可见',
     '2.5.5 目标尺寸': '触摸目标 >= 44x44px',
   },
-
+// ...
   // 可理解(Understandable)
   understandable: {
     '3.2.1 可预测': '组件行为一致',
@@ -131,14 +133,14 @@ export const a11yChecklist = {
     '3.3.1 错误识别': '错误信息清晰描述',
     '3.3.2 标签或指令': '提供输入指导',
   },
-
+// ...
   // 健壮(Robust)
   robust: {
     '4.1.2 名称、角色、值': 'ARIA 属性正确使用',
     '4.1.3 状态消息': '使用 role="status" 或 aria-live',
   },
 }
-
+// ...
 // 自动化检测工具集成
 // 推荐工具:
 // - axe-core: 自动化可访问性检测
@@ -149,15 +151,15 @@ export const a11yChecklist = {
 ```python
 """
 npm install --save-dev axe-core jest-axe
-
+# ...
 module.exports = {
   setupFilesAfterEnv: ['jest-axe/extend-expect'],
 }
-
+# ...
 import { render } from '@testing-library/react'
 import { axe } from 'jest-axe'
 import { Button } from './Button'
-
+# ...
 test('Button 满足可访问性标准', async () => {
   const { container } = render(<Button>点击</Button>)
   const results = await axe(container)
@@ -168,8 +170,6 @@ test('Button 满足可访问性标准', async () => {
 
 ### 场景三:组件库抽象
 构建可复用的组件库。
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 场景四:多主题切换
 支持多品牌动态切换。
@@ -182,7 +182,7 @@ test('Button 满足可访问性标准', async () => {
   --color-brand-600: #2563eb;
   --color-brand-700: #1d4ed8;
 }
-
+// ...
 /* themes/brand-b.css */
 :root[data-theme="brand-b"] {
   --color-brand-50: #f0fdf4;
@@ -190,7 +190,7 @@ test('Button 满足可访问性标准', async () => {
   --color-brand-600: #16a34a;
   --color-brand-700: #15803d;
 }
-
+// ...
 /* themes/brand-c.css */
 :root[data-theme="brand-c"] {
   --color-brand-50: #faf5ff;
@@ -206,7 +206,7 @@ function setBrand(brand) {
   document.documentElement.setAttribute('data-theme', `brand-${brand}`)
   localStorage.setItem('brand', brand)
 }
-
+// ...
 // 初始化
 const savedBrand = localStorage.getItem('brand') || 'a'
 setBrand(savedBrand)
@@ -218,7 +218,7 @@ setBrand(savedBrand)
 ```bash
 mkdir my-design-system && cd my-design-system
 npm init -y
-
+# ...
 npm install clsx
 npm install -D tailwindcss storybook @storybook/react
 ```
@@ -232,7 +232,7 @@ cp templates/tailwind.config.js ./
 ### 3. 搭建组件库
 ```bash
 npx storybook init
-
+# ...
 mkdir -p src/components/ui
 ```
 
@@ -240,7 +240,7 @@ mkdir -p src/components/ui
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | ui-design-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -287,9 +287,8 @@ mkdir -p src/components/ui
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -303,7 +302,7 @@ mkdir -p src/components/ui
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | tailwindcss | npm 库 | 推荐 | `npm install -D tailwindcss` |
 | clsx | npm 库 | 推荐(组件) | `npm install clsx` |
 | storybook | npm 库 | 可选(文档) | `npx storybook init` |
@@ -334,12 +333,12 @@ mkdir -p src/components/ui
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -356,12 +355,12 @@ mkdir -p src/components/ui
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -378,12 +377,12 @@ mkdir -p src/components/ui
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -414,9 +413,8 @@ mkdir -p src/components/ui
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

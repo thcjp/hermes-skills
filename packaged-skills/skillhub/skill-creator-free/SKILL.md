@@ -14,6 +14,8 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # AI技能创建指南（免费版）
 
@@ -32,7 +34,7 @@ tags:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---|---|----|----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -104,7 +106,6 @@ skill-name/
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1：创建pdf-editor skill基础结构
@@ -132,7 +133,7 @@ Step 4 - Progressive Disclosure 检查:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:-----|:-----|:-----|
 | frontmatter格式错误 | YAML缩进或字段缺失 | 确保`name`和`description`字段存在且格式正确，description不为空 |
 | skill未触发 | description缺少触发信息 | 在description中补充"when to use"信息与具体触发场景 |
 | context window溢出 | SKILL.md过长或未使用Progressive Disclosure | 将detailed info移至references/，保持SKILL.md <5k words |

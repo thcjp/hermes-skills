@@ -48,6 +48,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 知识管理工具(专业版)
 
@@ -58,7 +60,7 @@ pricing_model: "per_use"
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---|---|---|
 | 多类型知识捕获 | 支持 | 支持 |
 | 标签与全文检索 | 支持 | 支持 |
 | 自动索引与整理 | 支持 | 支持 |
@@ -78,7 +80,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 知识管理工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -86,16 +88,16 @@ pricing_model: "per_use"
 ```bash
 # 初始化团队共享知识库
 know pro init --shared /shared/knowledge-base --team "research-team"
-
+# ...
 # 同步本地知识到共享库
 know pro sync --push
-
+# ...
 # 拉取团队最新知识
 know pro sync --pull
-
+# ...
 # 查看团队成员
 know pro team list
-
+# ...
 # 查看某成员的贡献
 know pro team stats --member alice
 ```
@@ -110,10 +112,10 @@ know pro team stats --member alice
 ```bash
 # 语义搜索(基于含义而非关键词)
 know pro search-semantic "如何提升团队协作效率"
-
+# ...
 # 智能推荐相关内容
 know pro recommend --based-on "2026-ai-agent-guide.md"
-
+# ...
 # 跨语言检索
 know pro search-semantic "machine learning" --lang auto
 ```
@@ -128,10 +130,10 @@ know pro search-semantic "machine learning" --lang auto
 ```bash
 # 为条目自动生成摘要
 know pro summarize --id 2026-02-26-ai-agent-guide
-
+# ...
 # 批量生成摘要
 know pro summarize --batch --tag ai
-
+# ...
 # 提取关键词
 know pro keywords --id 2026-02-26-ai-agent-guide --top 10
 ```
@@ -146,10 +148,10 @@ know pro keywords --id 2026-02-26-ai-agent-guide --top 10
 ```bash
 # 构建知识图谱
 know pro graph build
-
+# ...
 # 查看关联关系
 know pro graph relations --id 2026-02-26-ai-agent-guide
-
+# ...
 # 可视化导出
 know pro graph export --format json > knowledge-graph.json
 know pro graph export --format dot > knowledge-graph.dot
@@ -165,10 +167,10 @@ know pro graph export --format dot > knowledge-graph.dot
 ```bash
 # 设置条目权限
 know pro permission set --id 2026-02-26-ai-agent-guide --team research --read --write
-
+# ...
 # 查看权限
 know pro permission list --id 2026-02-26-ai-agent-guide
-
+# ...
 # 按团队设置默认权限
 know pro permission default --team research --read
 ```
@@ -183,7 +185,7 @@ know pro permission default --team research --read
 ```bash
 # 查看操作日志
 know pro audit log --limit 50
-
+# ...
 # 知识库统计
 know pro stats
 # 示例
@@ -191,7 +193,7 @@ know pro stats
 # 本月新增: 89
 # 热门标签: ai(234), python(156), research(98)
 # 活跃成员: alice(45), bob(32), charlie(28)
-
+# ...
 # 导出统计报告
 know pro stats --export report.json
 ```
@@ -213,21 +215,21 @@ know pro stats --export report.json
 # team-research-kb.sh - 团队研究知识库初始化
 SHARED_KB="/shared/research-kb"
 TEAM="ai-research"
-
+# ...
 # 初始化共享知识库
 know pro init --shared "$SHARED_KB" --team "$TEAM"
-
+# ...
 # 设置默认权限:研究团队成员可读写
 know pro permission default --team "$TEAM" --read --write
-
+# ...
 # 邀请成员
 know pro team invite --member alice --role editor
 know pro team invite --member bob --role editor
 know pro team invite --member charlie --role viewer
-
+# ...
 # 同步本地知识到共享库
 know pro sync --push --tag research,ai
-
+# ...
 echo "团队知识库初始化完成"
 know pro team list
 ```
@@ -239,23 +241,23 @@ know pro team list
 ```bash
 #!/bin/bash
 # auto-summarize-and-graph.sh - 自动摘要与图谱构建
-
+# ...
 # 1. 批量生成摘要(对未摘要的条目)
 know pro summarize --batch --all --force false
 echo "摘要生成完成"
-
+# ...
 # 2. 批量提取关键词
 know pro keywords --batch --all --top 5
 echo "关键词提取完成"
-
+# ...
 # 3. 构建知识图谱
 know pro graph build
 echo "知识图谱构建完成"
-
+# ...
 # 4. 导出图谱供可视化
 know pro graph export --format json > /shared/knowledge-graph.json
 know pro graph export --format dot > /shared/knowledge-graph.dot
-
+# ...
 # 5. 查看关联最多的条目
 know pro graph hub-nodes --top 10
 echo "关联分析完成"
@@ -268,23 +270,23 @@ echo "关联分析完成"
 ```bash
 #!/bin/bash
 # semantic-search-workflow.sh - 语义检索工作流
-
+# ...
 # 1. 语义搜索(基于含义)
 echo "=== 语义搜索 ==="
 know pro search-semantic "提升模型训练效率的方法"
-
+# ...
 # 2. 基于某条目推荐相关内容
 echo "=== 智能推荐 ==="
 know pro recommend --based-on "2026-02-26-training-optimization.md" --top 5
-
+# ...
 # 3. 跨语言检索
 echo "=== 跨语言检索 ==="
 know pro search-semantic "transformer architecture" --lang auto
-
+# ...
 # 4. 按概念聚类
 echo "=== 概念聚类 ==="
 know pro cluster --tag ai --algorithm semantic
-
+# ...
 # 5. 发现知识盲区
 echo "=== 知识盲区分析 ==="
 know pro gaps --topic "强化学习"
@@ -315,7 +317,7 @@ know pro gaps --topic "强化学习"
 ```bash
 # 专业版初始化(保留免费版数据)
 know pro init --migrate
-
+# ...
 # 配置团队共享
 know pro config set shared.path /shared/knowledge-base
 know pro config set team.name research-team
@@ -329,11 +331,11 @@ know pro config set graph.enabled true
 # 成员A:添加新知识
 know add url https://example.com/paper --title "新论文" --tags "ai,paper"
 know pro sync --push
-
+# ...
 # 成员B:拉取最新知识
 know pro sync --pull
 know pro search-semantic "最新论文"
-
+# ...
 # 成员C:补充摘要与关键词
 know pro summarize --id latest-paper
 know pro keywords --id latest-paper
@@ -345,7 +347,7 @@ know pro keywords --id latest-paper
 # 构建并导出图谱
 know pro graph build
 know pro graph export --format dot > knowledge.dot
-
+# ...
 # 用 Graphviz 可视化
 dot -Tsvg knowledge.dot -o knowledge.svg
 ```
@@ -390,7 +392,7 @@ alerts:
 ```bash
 # 知识库整体统计
 know pro stats
-
+# ...
 # 输出示例:
 # === 知识库统计 ===
 # 总条目数: 1256
@@ -400,7 +402,7 @@ know pro stats
 # 活跃成员: alice(45), bob(32), charlie(28)
 # 知识图谱节点: 1256, 边: 3421
 # 语义索引覆盖率: 92%
-
+# ...
 # 导出统计报告
 know pro stats --export json > stats.json
 know pro stats --export markdown > stats.md
@@ -468,7 +470,7 @@ know pro graph export --format json > graph.json
 ## 与免费版的兼容性
 
 | 维度 | 兼容性 |
-|:-----|:------|
+|---:|---:|
 | 命令语法 | 100% 兼容(免费版命令在专业版中可用) |
 | 数据格式 | 100% 兼容(专业版可读取免费版数据) |
 | 知识条目 | 100% 兼容(无需迁移即可使用) |
@@ -486,7 +488,7 @@ know pro graph export --format json > graph.json
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | know(pro) | CLI 脚本 | 必需 | 随 Skill 安装 |
 | grep | 系统工具 | 必需 | 系统自带 |
 | 嵌入模型 | AI 模型 | 语义检索必需 | 本地或 API 服务 |
@@ -507,9 +509,8 @@ know pro graph export --format json > graph.json
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -28,8 +28,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 文档解析工具（专业版）
 
 ## 概述
@@ -111,21 +112,11 @@ suggested_price: 99.9
 
 `识别这张图片中的文字
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：表格识别
 
 从文档中识别和提取表格。**示例指令**：`
 
 `提取这份文档中的表格
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -139,7 +130,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 文档解析工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -147,7 +138,7 @@ suggested_price: 99.9
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -161,7 +152,7 @@ import json
 from typing import List, Dict, Optional
 from pathlib import Path
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class ParsedElement:
     element_type: str  # text, table, image, heading, list
@@ -170,7 +161,7 @@ class ParsedElement:
     bbox: List[float] = field(default_factory=list)
     page: int = 1
     metadata: dict = field(default_factory=dict)
-
+# ...
 @dataclass
 class ParseResult:
     file_path: str
@@ -178,12 +169,12 @@ class ParseResult:
     full_text: str = ""
     tables: List[dict] = field(default_factory=list)
     metadata: dict = field(default_factory=dict)
-
+# ...
 class DocumentParseEngine:
     def __init__(self, api_key: str = None):
         self.api_key = api_key
         self.supported_formats = [".pdf", ".png", ".jpg", ".jpeg", ".tiff", ".bmp"]
-
+# ...
     def parse(self, file_path: str, options: dict = None) -> ParseResult:
         """完整文档解析（PRO 专属：多元素提取）"""
         if options is None:
@@ -195,7 +186,7 @@ class DocumentParseEngine:
         elif ext in [".png", ".jpg", ".jpeg", ".tiff", ".bmp"]:
             result = self._parse_image(file_path, options)
         return result
-
+# ...
     def batch_parse(self, file_paths: List[str],
                    output_dir: str = "./output") -> List[ParseResult]:
         """批量解析（PRO 专属）"""
@@ -207,12 +198,12 @@ class DocumentParseEngine:
             self._export_result(result, str(output_file))
             results.append(result)
         return results
-
+# ...
     def extract_tables(self, file_path: str) -> List[dict]:
         """表格提取（PRO 专属）"""
         result = self.parse(file_path, {"tables_only": True})
         return result.tables
-
+# ...
     def ocr_image(self, image_path: str, lang: str = "chi_sim") -> str:
         """图片OCR（PRO 专属）"""
         try:
@@ -222,7 +213,7 @@ class DocumentParseEngine:
             return pytesseract.image_to_string(img, lang=lang)
         except ImportError:
             return "OCR依赖未安装"
-
+# ...
     def analyze_layout(self, file_path: str) -> dict:
         """版面分析（PRO 专属）"""
         result = self.parse(file_path)
@@ -243,12 +234,12 @@ class DocumentParseEngine:
             elif elem.element_type == "image":
                 layout["image_count"] += 1
         return layout
-
+# ...
     def export_structured(self, result: ParseResult,
                          output_path: str, format: str = "json"):
         """导出结构化数据（PRO 专属）"""
         self._export_result(result, output_path, format)
-
+# ...
     def _parse_pdf(self, file_path: str, options: dict) -> ParseResult:
         result = ParseResult(file_path=file_path)
         try:
@@ -286,7 +277,7 @@ class DocumentParseEngine:
             "elements": len(result.elements)
         }
         return result
-
+# ...
     def _parse_image(self, file_path: str, options: dict) -> ParseResult:
         result = ParseResult(file_path=file_path)
         text = self.ocr_image(file_path)
@@ -297,7 +288,7 @@ class DocumentParseEngine:
         ))
         result.metadata = {"format": "image", "ocr": True}
         return result
-
+# ...
     def _export_result(self, result: ParseResult, output_path: str,
                       format: str = "json"):
         data = {
@@ -309,7 +300,7 @@ class DocumentParseEngine:
         }
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-
+# ...
 engine = DocumentParseEngine()
 result = engine.parse("document.pdf")
 print(f"元素数: {len(result.elements)}")
@@ -359,7 +350,7 @@ doc_parse:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -371,7 +362,7 @@ doc_parse:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -443,7 +434,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | pdfplumber | Python库 | 推荐 | pip install pdfplumber |
 | pytesseract | Python库 | 可选 | pip install pytesseract |
@@ -460,9 +451,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

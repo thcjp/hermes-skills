@@ -15,14 +15,15 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
 ---
 # AI播客生成(免费版) - 文本转对话式播客
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AI播客生成(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -35,7 +36,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -105,7 +106,7 @@ safe_job_id() {
 
 ```bash
 payload="$(jq -n --arg text "$SOURCE_TEXT" --arg language "$LANGUAGE" '{text:$text,language:$language}')"
-
+# ...
 curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/text" \
   -H "Content-Type: application/json" \
   -H "x-api-key: $MAGICPODCAST_API_KEY" \
@@ -119,7 +120,7 @@ if ! safe_job_id "$JOB_ID"; then
   echo "Invalid job id" >&2
   exit 1
 fi
-
+# ...
 curl -sS "$MAGICPODCAST_API_URL/agent/v1/jobs/$JOB_ID" \
   -H "x-api-key: $MAGICPODCAST_API_KEY"
 ```
@@ -145,7 +146,6 @@ curl -sS "$MAGICPODCAST_API_URL/agent/v1/jobs/$JOB_ID" \
 一位学生将课程笔记转化为播客，在通勤时复习。将笔记文本粘贴到接口，指定语言后生成播客。双主持人对话形式帮助加深对知识点的理解，相比单纯阅读笔记提升了复习效率。
 
 ## 异常处理
-
 
 ### API密钥缺失或无效
 
@@ -187,9 +187,8 @@ API返回401认证错误时，引导用户访问 https://www.magicpodcast.app/sk
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

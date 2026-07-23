@@ -36,22 +36,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # Git工具包专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Git工具包专业版企业级Git管理 | 不支持 | 支持 |
+| Git工具包专业版Hook管理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -66,20 +68,12 @@ pricing_model: "per_use"
 ### 2. 自动化代码审查
 自动检查提交规范和代码质量。
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供自动化代码审查所需的指令和必要参数。
 **输出**: 返回自动化代码审查的处理结果,包含执行状态码、结果数据和执行日志。
-
-### 3. Git Hook 统一管理
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供Git Hook 统一管理所需的指令和必要参数。
 **处理**: 解析Git Hook 统一管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回Git Hook 统一管理的处理结果,包含执行状态码、结果数据和执行日志。
-
-### 4. 仓库历史分析
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供仓库历史分析所需的指令和必要参数。
 **处理**: 解析仓库历史分析的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -94,19 +88,19 @@ pricing_model: "per_use"
 ```bash
 #!/bin/bash
 echo "=== 团队Git工作流配置 ==="
-
+# ...
 bash git-hooks.sh install
-
+# ...
 git config alias.feature 'checkout -b feature'
 git config alias.hotfix 'checkout -b hotfix'
 git config alias.release 'checkout -b release'
 git config alias.cleanup '!git branch --merged main | grep -v "main" | xargs git branch -d'
 git config alias.sync '!git fetch --all --prune && git pull --rebase'
-
+# ...
 cat > .gitmessage << 'EOF
 EOF
 git config commit.template .gitmessage
-
+# ...
 echo "团队工作流配置完成"
 ```
 
@@ -116,16 +110,16 @@ echo "团队工作流配置完成"
 ```bash
 #!/bin/bash
 echo "=== 分支清理 ==="
-
+# ...
 git fetch --all --prune
-
+# ...
 echo "清理已合并分支..."
 git branch --merged main | grep -v "main\|master\|develop" | \
     xargs -r git branch -d
-
+# ...
 echo -e "\n查找过期分支..."
 THRESHOLD=$(date -d "30 days ago" +%Y-%m-%d 2>/dev/null || date -v-30d +%Y-%m-%d)
-
+# ...
 for branch in $(git branch --format "%(refname:short)"); do
     LAST_COMMIT=$(git log -1 --format=%ai "$branch" 2>/dev/null)
     if [ -n "$LAST_COMMIT" ]; then
@@ -135,7 +129,7 @@ for branch in $(git branch --format "%(refname:short)"); do
         fi
     fi
 done
-
+# ...
 python3 -c "
 from repository_analyzer import RepositoryAnalyzer
 import json
@@ -159,12 +153,12 @@ git_quality_check:
         echo "提交信息不符合规范: $MSG"
         exit 1
       fi
-
+# ...
     - |
       echo "自动化代码审查..."
       python3 code_review.py --diff "$(git diff origin/main...HEAD)" \
         --format json --output review-report.json
-
+# ...
     - |
       BRANCH=$(git branch --show-current)
       echo "当前分支: $BRANCH"
@@ -174,7 +168,7 @@ git_quality_check:
         echo "[!] 分支命名不规范,应为 feature/*, hotfix/*, release/*"
         exit 1
       fi
-
+# ...
     - python3 repository_analyzer.py --output repo-report.json
   artifacts:
     paths:
@@ -189,19 +183,19 @@ git_quality_check:
 ```yaml
 version: "2.0"
 edition: pro
-
+# ...
 team:
   default_branch: main
   branch_prefix:
     feature: "feature/"
     hotfix: "hotfix/"
     release: "release/"
-
+# ...
 commit:
   conventional: true
   max_subject_length: 72
   require_scope: false
-
+# ...
 hooks:
   pre_commit:
     check_debug: true
@@ -212,7 +206,7 @@ hooks:
     check_format: true
   pre_push:
     block_direct_push_main: true
-
+# ...
 branch:
   auto_cleanup: true
   stale_threshold_days: 30
@@ -228,7 +222,7 @@ branch:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | git-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -275,9 +269,8 @@ branch:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -291,7 +284,7 @@ branch:
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Git 2.20+ | 运行时 | 必需 | git-scm.com 下载 |
 | Python 3.8+ | 运行时 | 推荐 | python.org 下载 |
 | Bash | 运行时 | 推荐 | 系统自带 |
@@ -303,7 +296,7 @@ branch:
 
 ```bash
 git config --global credential.helper store
-
+# ...
 git remote set-url origin https://<token>@git.example.com/repo.git
 ```
 
@@ -326,12 +319,12 @@ git remote set-url origin https://<token>@git.example.com/repo.git
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -348,12 +341,12 @@ git remote set-url origin https://<token>@git.example.com/repo.git
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -370,12 +363,12 @@ git remote set-url origin https://<token>@git.example.com/repo.git
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -390,24 +383,24 @@ git remote set-url origin https://<token>@git.example.com/repo.git
 ```bash
 mkdir -p .githooks
 cp hooks/* .githooks/
-
+# ...
 git config core.hooksPath .githooks
-
+# ...
 git add .githooks
 git commit -m "chore: 共享Git Hook"
-
+# ...
 git config core.hooksPath .githooks
 ```
 
 ### Q3:如何绕过Hook(紧急情况)?
 ```bash
 git commit --no-verify -m "hotfix: 紧急修复"
-
+# ...
 ```
 
 ### Q4:仓库分析支持哪些指标?
 | 指标 | 说明 |
-|:-----|:-----|
+|:------|------:|
 | 贡献者统计 | 按提交数排名 |
 | 提交频率 | 每日提交趋势 |
 | 文件热度 | 最常修改的文件 |
@@ -416,9 +409,8 @@ git commit --no-verify -m "hotfix: 紧急修复"
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

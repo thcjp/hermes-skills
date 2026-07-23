@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # 知识图谱构建器（免费版）
 > **AI Agent的类型化知识图谱系统。实体-关系-约束三要素，每条变更都经过验证。**
 
@@ -30,7 +31,7 @@ suggested_price: 99.9
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Knowledge Graph Buil处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -78,7 +79,7 @@ suggested_price: 99.9
 # 初始化图谱目录
 mkdir -p memory/knowledge-graph
 touch memory/knowledge-graph/graph.jsonl
-
+# ...
 # 创建基础模式
 cat > memory/knowledge-graph/schema.yaml << 'EOF'
 types:
@@ -91,7 +92,7 @@ types:
   Task:
     required: [title, status]
     status_enum: [open, in_progress, blocked, done]
-
+# ...
 relations:
   has_owner:
     from_types: [Project, Task]
@@ -118,10 +119,10 @@ cat >> memory/knowledge-graph/graph.jsonl << 'EOF'
 {"op":"create","entity":{"id":"task_001","type":"Task","properties":{"title":"设计首页原型","status":"open"}}}
 {"op":"relate","from":"proj_001","rel":"has_task","to":"task_001"}
 EOF
-
+# ...
 # 已知限制
 python3 （请参考skill目录中的脚本文件） validate
-
+# ...
 # 查询图谱
 python3 （请参考skill目录中的脚本文件） list --type Person
 python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel has_task
@@ -131,13 +132,12 @@ python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 1. 类型化实体系统
 12+核心类型，覆盖常见知识管理场景：
 
 | 类型 | 必填属性 | 可选属性 | 用途 |
-|------|----------|----------|------|
+|:-----|:-----|:-----|:-----|
 | Person | name | email, phone, notes | 人员信息 |
 | Organization | name | type, members[] | 组织信息 |
 | Project | name, status | goals[], owner? | 项目管理 |
@@ -170,7 +170,7 @@ python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel
 
 **常见关系类型**：
 | 关系 | 源类型 | 目标类型 | 基数 | 说明 |
-|------|--------|----------|------|------|
+|---:|---:|---:|---:|---:|
 | has_owner | Project, Task | Person | many_to_one | 项目/任务的负责人 |
 | has_task | Project | Task | one_to_many | 项目包含的任务 |
 | has_member | Organization | Person | many_to_many | 组织的成员 |
@@ -188,7 +188,7 @@ python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel
 每条变更在提交前都经过类型约束验证：
 
 | 约束类型 | 验证内容 | 示例 |
-|----------|----------|------|
+|:---:|:---:|:---:|
 | 必填属性 | required字段必须存在 | Task必须有title和status |
 | 枚举值 | 属性值必须在enum列表中 | Task.status必须是open/in_progress/blocked/done |
 | 禁止属性 | forbidden_properties不可出现 | Credential禁止password/secret/token |
@@ -201,10 +201,10 @@ python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel
 ```bash
 # 验证整个图谱
 python3 （请参考skill目录中的脚本文件） validate
-
+# ...
 # 验证单个实体
 python3 （请参考skill目录中的脚本文件） validate --id task_001
-
+# ...
 # 验证关系
 python3 （请参考skill目录中的脚本文件） validate --relation blocks
 ```
@@ -235,19 +235,19 @@ python3 （请参考skill目录中的脚本文件） validate --relation blocks
 ```bash
 # 按类型查询
 python3 （请参考skill目录中的脚本文件） query --type Task --where '{"status":"open"}'
-
+# ...
 # 按ID获取
 python3 （请参考skill目录中的脚本文件） get --id task_001
-
+# ...
 # 查询关联实体
 python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel has_task
-
+# ...
 # 依赖说明
 python3 （请参考skill目录中的脚本文件） dependencies --id task_001
-
+# ...
 # 反向依赖查询
 python3 （请参考skill目录中的脚本文件） dependents --id task_001
-
+# ...
 # 多跳遍历
 python3 （请参考skill目录中的脚本文件） traverse --from p_001 --max-depth 3
 ```
@@ -262,7 +262,7 @@ python3 （请参考skill目录中的脚本文件） traverse --from p_001 --max
 
 ```text
 计划："安排团队会议并创建后续任务"
-
+# ...
 1. CREATE Event { title: "团队周会", attendees: [p_001, p_002] }
 2. RELATE Event -> has_project -> proj_001
 3. CREATE Task { title: "准备议程", assignee: p_001 }
@@ -305,7 +305,7 @@ commitment = knowledge_graph.create("Commitment", {
     "description": "周五前发送报告",
     "due": "2026-01-31"
 })
-
+# ...
 # 技能B查询承诺并创建任务
 tasks = knowledge_graph.query("Commitment", {"status": "pending"})
 for c in tasks:
@@ -334,10 +334,10 @@ for c in tasks:
 python3 （请参考skill目录中的脚本文件） create --type Project --props '{"name":"新产品发布","status":"active"}'
 python3 （请参考skill目录中的脚本文件） create --type Person --props '{"name":"李四","email":"li@example.com"}'
 python3 （请参考skill目录中的脚本文件） relate --from proj_002 --rel has_owner --to p_002
-
+# ...
 # 查询项目所有任务
 python3 （请参考skill目录中的脚本文件） related --id proj_002 --rel has_task
-
+# ...
 # 查询阻塞链
 python3 （请参考skill目录中的脚本文件） dependencies --id task_005
 ```
@@ -352,7 +352,7 @@ python3 （请参考skill目录中的脚本文件） dependencies --id task_005
 # 创建任务依赖
 python3 （请参考skill目录中的脚本文件） relate --from task_002 --rel blocks --to task_003
 python3 （请参考skill目录中的脚本文件） relate --from task_002 --rel blocks --to task_004
-
+# ...
 # 无环约束验证
 python3 （请参考skill目录中的脚本文件） validate --relation blocks
 # 若有环，验证失败
@@ -372,7 +372,7 @@ python3 （请参考skill目录中的脚本文件） parallelizable --type Task
 2. CREATE Task { title: "测试通过", status: "open", blockers: [task_010] }
 3. CREATE Task { title: "部署生产", status: "open", blockers: [task_011] }
 4. CREATE Task { title: "验证上线", status: "open", blockers: [task_012] }
-
+# ...
 每步完成时更新status=done，下一步自动解锁
 ```
 
@@ -380,7 +380,7 @@ python3 （请参考skill目录中的脚本文件） parallelizable --type Task
 
 ### 多角色场景指南
 | 角色 | 典型场景 | 推荐功能 | 核心价值 |
-|------|----------|----------|----------|
+|:------|------:|:------|:------|
 | 项目经理 | 项目知识管理 | 实体+关系+查询 | 一键查询 |
 | 开发者 | 依赖关系追踪 | blocks关系+无环验证 | 冲突-80% |
 | 技术负责人 | 多步计划建模 | 规划即图变换 | 偏离率-90% |
@@ -393,19 +393,19 @@ python3 （请参考skill目录中的脚本文件） parallelizable --type Task
 ```yaml
 Person: { name, email?, phone?, notes? }
 Organization: { name, type?, members[] }
-
+# ...
 Project: { name, status, goals[], owner? }
 Task: { title, status, due?, priority?, assignee?, blockers[] }
 Goal: { description, target_date?, metrics[] }
-
+# ...
 Event: { title, start, end?, location?, attendees[], recurrence? }
 Location: { name, address?, coordinates? }
-
+# ...
 Document: { title, path?, url?, summary? }
 Message: { content, sender, recipients[], thread? }
 Thread: { subject, participants[], messages[] }
 Note: { content, tags[], refs[] }
-
+# ...
 Account: { service, username, credential_ref? }
 Device: { name, type, identifiers[] }
 Credential: { service, secret_ref }  # 永不直接存储密钥
@@ -421,11 +421,11 @@ types:
   Task:
     required: [title, status]
     status_enum: [open, in_progress, blocked, done]
-
+# ...
   Event:
     required: [title, start]
     validate: "end >= start if end exists"
-
+# ...
   Credential:
     required: [service, secret_ref]
     forbidden_properties: [password, secret, token]  # 强制间接引用
@@ -434,7 +434,7 @@ relations:
     from_types: [Project, Task]
     to_types: [Person]
     cardinality: many_to_one
-
+# ...
   blocks:
     from_types: [Task]
     to_types: [Task]
@@ -481,7 +481,7 @@ JSONL（JSON Lines）每行一条记录，优势包括：
 
 ## 错误处理
 | 问题 | 可能原因 | 解决方案 |
-|------|----------|----------|
+|---:|:---|---:|
 | 约束验证失败 | 必填属性缺失或枚举值错误 | 检查schema.yaml定义；修正实体属性 |
 | 无环检查失败 | blocks关系形成环 | 检查任务依赖；移除循环依赖 |
 | 查询无结果 | 实体不存在或属性不匹配 | 用list命令确认实体存在；检查查询条件 |
@@ -500,7 +500,7 @@ JSONL（JSON Lines）每行一条记录，优势包括：
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
 | PyYAML | Python包 | 必需 | `pip install pyyaml` |

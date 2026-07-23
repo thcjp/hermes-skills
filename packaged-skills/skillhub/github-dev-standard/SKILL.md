@@ -35,24 +35,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # 项目开发标准专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版新增 | 不支持 | 支持 |
-| 开发流程 | 不支持 | 支持 |
-| 自动化流程编排与追踪 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 开发流程 | 9 步手动流程 | 自动化流程编排与追踪 |
 | 编码纪律 | 8 条纪律指引 | 自动 diff 分析与违规检测 |
 | 验证机制 | 4 层手动验证 | CI/CD 自动化验收 |
@@ -94,15 +96,15 @@ pricing_model: "per_use"
 
 ```text
 用户：团队合并请求质量参差不齐，帮我建立标准化审查流程
-
+# ...
 助手：配置合并请求模板 + 自动化验收
-
+# ...
 1. 合并请求模板（.github/pull_request_template.md）
    ## 变更说明
    - [ ] 一句话描述本次变更目标
    - [ ] 列出修改的文件和原因
    - [ ] 标注是否有 BREAKING CHANGE
-
+# ...
    ## 验收清单
    - [ ] A1. 目标能用一句话说清
    - [ ] A2. 不修改的范围已明确
@@ -114,15 +116,15 @@ pricing_model: "per_use"
    - [ ] C4. 回归测试通过
    - [ ] D1. diff 大小与任务匹配
    - [ ] D4. 风险点已标注
-
+# ...
    ## 验证命令
    ```bash
    npm run lint && npm test && npm run test:e2e
    ```
-
+# ...
 2. 自动化验收脚本
    （请参考skill目录中的脚本文件）
-
+# ...
 3. CI 集成（自动运行验收脚本）
    参考 .github/workflows/quality-check.yml
 ```
@@ -135,28 +137,28 @@ pricing_model: "per_use"
 # 质量度量脚本
 cat > （请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
-
+# ...
 # 统计指定时间范围内的缺陷修复数据
 START_DATE=$1
 END_DATE=$2
-
+# ...
 echo "=== 缺陷修复质量报告 ==="
 echo "时间范围: $START_DATE 至 $END_DATE"
 echo ""
-
+# ...
 # 统计缺陷修复提交数
 FIX_COMMITS=$(git log --since="$START_DATE" --until="$END_DATE" \
   --oneline --grep="fix(" | wc -l)
-
+# ...
 # 统计返工提交数（同一文件多次修复）
 REWORK_FILES=$(git log --since="$START_DATE" --until="$END_DATE" \
   --name-only --grep="fix(" | sort | uniq -d | wc -l)
-
+# ...
 # 统计平均改动量
 AVG_DIFF=$(git log --since="$START_DATE" --until="$END_DATE" \
   --grep="fix(" --shortstat | grep "changed" | \
   awk '{print $4}' | awk '{sum+=$1; count++} END {if(count>0) print sum/count; else print 0}')
-
+# ...
 echo "缺陷修复提交数: $FIX_COMMITS"
 echo "返工文件数: $REWORK_FILES"
 echo "平均改动行数: $AVG_DIFF"
@@ -174,13 +176,13 @@ chmod +x （请参考skill目录中的脚本文件）
 # 依赖说明
 cat > （请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
-
+# ...
 # 检查数据结构变更是否同步所有引用
 echo "=== 多文件同步检查 ==="
-
+# ...
 # 1. 查找本次变更的文件
 CHANGED_FILES=$(git diff --name-only HEAD~1)
-
+# ...
 # 2. 提取变更的类名/函数名
 for file in $CHANGED_FILES; do
   if [[ $file == *.py ]]; then
@@ -196,7 +198,7 @@ for file in $CHANGED_FILES; do
     done
   fi
 done
-
+# ...
 echo ""
 echo "=== diff 改动量统计 ==="
 git diff --stat HEAD~1
@@ -216,28 +218,28 @@ name: 质量检查
 on:
   pull_request:
     branches: [main, develop]
-
+# ...
 jobs:
   quality-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+# ...
       - name: 语法检查
         run: |
           python3 -m py_compile $(find . -name "*.py" -not -path "./.venv/*")
           node -c $(find . -name "*.js" -not -path "./node_modules/*")
-
+# ...
       - name: 导入检查
         run: |
           python3 -c "from src.main import app"
           node -e "require('./src/index.js')"
-
+# ...
       - name: 单元测试
         run: |
           python3 -m pytest tests/ --cov=src --cov-report=term
           npm test
-
+# ...
       - name: diff 改动量检查
         run: |
           DIFF_LINES=$(git diff origin/main...HEAD --shortstat | grep "changed" | awk '{print $4}')
@@ -245,7 +247,7 @@ jobs:
           if [ "$DIFF_LINES" -gt 200 ]; then
             echo "[警告] 改动量超过 200 行，请确认是否合理"
           fi
-
+# ...
       - name: 验收清单检查
         run: |
           （请参考skill目录中的脚本文件）
@@ -256,27 +258,27 @@ jobs:
 ```bash
 #!/bin/bash
 # （请参考skill目录中的脚本文件） - 合并前自动化验收
-
+# ...
 set -e
-
+# ...
 echo "=== 执行 15 项验收清单 ==="
-
+# ...
 # C1. 语法检查
 echo "[C1] 语法检查..."
 python3 -m py_compile $(find src -name "*.py") && echo "  通过" || exit 1
-
+# ...
 # C2. 导入检查
 echo "[C2] 导入检查..."
 python3 -c "from src.main import app" && echo "  通过" || exit 1
-
+# ...
 # C3. 样例验证
 echo "[C3] 样例验证..."
 python3 -m pytest tests/ -k "smoke" --tb=short && echo "  通过" || exit 1
-
+# ...
 # C4. 回归测试
 echo "[C4] 回归测试..."
 python3 -m pytest tests/ --tb=short && echo "  通过" || exit 1
-
+# ...
 # D1. diff 改动量
 echo "[D1] diff 改动量检查..."
 DIFF_LINES=$(git diff origin/main...HEAD --shortstat | grep -o '[0-9]* insertion' | awk '{print $1}')
@@ -284,7 +286,7 @@ echo "  新增行数: $DIFF_LINES"
 if [ "$DIFF_LINES" -gt 200 ]; then
   echo "  [警告] 改动量偏大，请审查必要性"
 fi
-
+# ...
 echo ""
 echo "=== 验收完成 ==="
 ```
@@ -293,7 +295,7 @@ echo "=== 验收完成 ==="
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | github-dev-standard处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -340,9 +342,8 @@ echo "=== 验收完成 ==="
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -357,7 +358,7 @@ echo "=== 验收完成 ==="
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Python | 运行时 | 可选 | python.org 下载 |
 | Node.js | 运行时 | 可选 | nodejs.org 下载 |
 | Git | 命令行工具 | 必需 | 系统包管理器安装 |
@@ -380,11 +381,11 @@ echo "=== 验收完成 ==="
 
 ```markdown
 <!-- .github/pull_request_template.md -->
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1：如何降低缺陷修复返工率？
-
+# ...
 ```text
 1. 严格执行 9 步流程，先写任务卡再编码
 2. 控制改动量在 15 行以内
@@ -392,9 +393,9 @@ echo "=== 验收完成 ==="
 4. 合并请求至少一人审查
 5. 定期复盘返工原因
 ```
-
+# ...
 ### Q2：CI 集成后验证太慢怎么办？
-
+# ...
 ```yaml
 # 并行执行验证任务
 jobs:
@@ -413,9 +414,9 @@ jobs:
     steps:
       - run: python3 -m pytest tests/integration/
 ```
-
+# ...
 ### Q3：如何处理跨语言项目的同步检查？
-
+# ...
 ```bash
 # 多语言引用检查脚本
 check_references() {
@@ -435,9 +436,9 @@ check_references() {
   grep -r "$old_name" docs/ --include="*.md"
 }
 ```
-
+# ...
 ### Q4：团队不遵守流程怎么办？
-
+# ...
 ```text
 1. CI 强制拦截不合规的合并请求
 2. 合并请求模板设为必填项
@@ -445,9 +446,9 @@ check_references() {
 4. 定期公布质量度量数据
 5. 将流程遵守纳入团队考核
 ```
-
+# ...
 ### Q5：如何量化代码审查效果？
-
+# ...
 ```bash
 # 统计审查发现的问题数
 REVIEW_COMMENTS=$(gh pr list --state merged --limit 100 \
@@ -459,9 +460,9 @@ POST_REVIEW_COMMITS=$(git log --merges --grep="review" --oneline | wc -l)
 echo "审查评论总数: $REVIEW_COMMENTS"
 echo "审查后修改提交数: $POST_REVIEW_COMMITS"
 ```
-
+# ...
 ### Q6：如何处理紧急修复的流程豁免？
-
+# ...
 ```text
 1. 紧急修复可走快速通道（hotfix 分支）
 2. 豁免部分验证（但保留语法检查）
@@ -469,14 +470,15 @@ echo "审查后修改提交数: $POST_REVIEW_COMMITS"
 4. 紧急修复需值班负责人审批
 5. 每月统计紧急修复比例，优化流程
 ```
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
+# ...

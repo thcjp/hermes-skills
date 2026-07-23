@@ -28,8 +28,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 生活助手 (免费版)
 
 ## 概述
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 任务捕获与分解 | 即时记录、拆解大任务为可执行步骤 | 支持 |
 | 截止日期追踪 | 自动提醒即将到期事项 | 支持 |
 | 邮件摘要 | 长邮件提炼要点与行动项 | 每日 10 封 |
@@ -86,7 +87,7 @@ suggested_price: 29.9
 
 ```text
 用户: "下周三要交一份产品方案,帮我拆解一下"
-
+# ...
 助手:
 1. 已捕获任务: 产品方案 (截止 2026-07-23)
 2. 拆解为 5 个子任务:
@@ -108,7 +109,7 @@ suggested_price: 29.9
 ```python
 import json
 from pathlib import Path
-
+# ...
 def summarize_email(subject, body, sender):
     """生成本地邮件摘要 (示例)"""
     summary = {
@@ -126,7 +127,7 @@ def summarize_email(subject, body, sender):
         "priority": "high"
     }
     return summary
-
+# ...
 # 存储到本地
 archive = Path.home() / ".assistant" / "email_summaries.json"
 archive.parent.mkdir(parents=True, exist_ok=True)
@@ -138,7 +139,7 @@ archive.parent.mkdir(parents=True, exist_ok=True)
 
 ```text
 用户: "明天下午帮我安排一个 1 小时的产品评审"
-
+# ...
 助手:
 1. 检查日程: 明天 14:00-15:00 已有客户会议
 2. 建议时间:
@@ -165,13 +166,13 @@ profile:
   timezone: Asia/Shanghai
   work_hours: "09:00-18:00"
   focus_blocks: ["10:00-12:00", "14:00-16:00"]
-
+# ...
 notifications:
   daily_summary: "08:30"
   end_of_day: "18:00"
   task_reminders: true
   buffer_minutes: 15
-
+# ...
 email:
   batch_times: ["09:00", "13:00", "17:00"]
   summarize_threshold_words: 200
@@ -190,13 +191,12 @@ cat > ~/.assistant/tasks/test.json << 'EOF'
   "status": "pending"
 }
 EOF
-
+# ...
 # 查看今日待办
 ls -la ~/.assistant/tasks/
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -207,7 +207,7 @@ from dataclasses import dataclass, asdict
 from datetime import datetime, timedelta
 from pathlib import Path
 import json
-
+# ...
 @dataclass
 class Task:
     id: str
@@ -217,12 +217,12 @@ class Task:
     status: str    # pending, in_progress, done
     subtasks: list
     created_at: str
-
+# ...
 class TaskManager:
     def __init__(self, base_dir="~/.assistant/tasks"):
         self.base_dir = Path(base_dir).expanduser()
         self.base_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
     def add(self, title, due, priority="medium"):
         task = Task(
             id=f"t{datetime.now().strftime('%Y%m%d%H%M%S')}",
@@ -236,7 +236,7 @@ class TaskManager:
         path = self.base_dir / f"{task.id}.json"
         path.write_text(json.dumps(asdict(task), ensure_ascii=False, indent=2))
         return task
-
+# ...
     def due_today(self):
         today = datetime.now().strftime("%Y-%m-%d")
         tasks = []
@@ -257,7 +257,7 @@ def find_slot(existing_events, duration_min, work_hours=("09:00","18:00")):
     work_start = datetime.strptime(f"{today} {work_hours[0]}", "%Y-%m-%d %H:%M")
     work_end = datetime.strptime(f"{today} {work_hours[1]}", "%Y-%m-%d %H:%M")
     duration = timedelta(minutes=duration_min)
-
+# ...
     slots = []
     cursor = work_start
     for event in sorted(existing_events, key=lambda e: e["start"]):
@@ -344,7 +344,7 @@ tar -czf assistant-backup-$(date +%Y%m%d).tar.gz ~/.assistant/
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 可选 | python.org 下载,用于脚本化任务 |
 | PyYAML | Python 库 | 可选 | `pip install pyyaml` (解析配置文件) |
@@ -354,7 +354,7 @@ tar -czf assistant-backup-$(date +%Y%m%d).tar.gz ~/.assistant/
 ```bash
 # 免费版无需外部 API Key
 # 所有数据本地存储,无需认证
-
+# ...
 # 可选: 配置个人偏好
 export ASSISTANT_TIMEZONE="Asia/Shanghai"
 export ASSISTANT_WORK_HOURS="09:00-18:00"
@@ -368,9 +368,8 @@ export ASSISTANT_WORK_HOURS="09:00-18:00"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

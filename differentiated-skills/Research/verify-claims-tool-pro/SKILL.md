@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 事实核查助手专业版是企业级的事实核查与信息验证平台。在完整兼容免费版所有核查能力的基础上,专业版引入了批量声明核查、定时监控预警、深度分析报告、团队协作、自定义核查规则等高级能力,适用于企业公关舆情监控、媒体内容审核、政府虚假信息监控等专业场景。
 
@@ -32,7 +34,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 事实核查助手专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -47,11 +49,11 @@ pricing_model: "per_use"
   "concurrency": 10,
   "min_sources": 3
 }
-
+# ...
 verify-claims batch check batch_claims.json
-
+# ...
 verify-claims batch status
-
+# ...
 verify-claims batch export --format csv --output results.csv
 ```
 
@@ -75,11 +77,11 @@ verify-claims batch export --format csv --output results.csv
     }
   ]
 }
-
+# ...
 verify-claims monitor start monitor_config.json
-
+# ...
 verify-claims monitor status
-
+# ...
 verify-claims monitor alerts --date $(date +%Y-%m-%d)
 ```
 
@@ -96,11 +98,11 @@ verify-claims analyze deep \
   --claim "某项研究结论" \
   --dimensions "sources,evidence,context,timeline" \
   --output deep_report.html
-
+# ...
 verify-claims analyze batch \
   --input batch_results.json \
   --output analysis_report.pdf
-
+# ...
 ```
 
 **输入**: 用户提供深度分析报告所需的指令和必要参数。
@@ -113,11 +115,11 @@ verify-claims analyze batch \
 
 ```bash
 verify-claims team create --name "fact_check_team"
-
+# ...
 verify-claims team share --result check_001.json --team "fact_check_team"
-
+# ...
 verify-claims knowledge add --category "health" --claim "已核查的声明" --verdict "false"
-
+# ...
 verify-claims knowledge query --keyword "疫苗" --category "health"
 ```
 
@@ -134,7 +136,7 @@ verify-claims config set-rules \
   --min-sources 5 \
   --confidence-threshold 0.8 \
   --custom-sources custom_sources.json
-
+# ...
 verify-claims config set-scoring \
   --weights '{"source_credibility": 0.3, "evidence_quality": 0.3, "consistency": 0.2, "recency": 0.2}'
 ```
@@ -152,7 +154,7 @@ verify-claims track misinformation \
   --claim "虚假声明内容" \
   --period "2026-01-01:2026-07-17" \
   --output spread_analysis.json
-
+# ...
 verify-claims track visualize \
   --input spread_analysis.json \
   --format graph \
@@ -202,19 +204,19 @@ cat > brand_monitor.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 verify-claims monitor start brand_monitor.json
-
+# ...
 verify-claims analyze deep \
   --claim "发现的虚假声明" \
   --dimensions "sources,evidence,context,timeline" \
   --output deep_analysis.html
-
+# ...
 verify-claims track misinformation \
   --claim "虚假声明内容" \
   --period "2026-07-01:2026-07-17" \
   --output spread_analysis.json
-
+# ...
 verify-claims report crisis \
   --analysis deep_analysis.html \
   --spread spread_analysis.json \
@@ -228,16 +230,16 @@ verify-claims report crisis \
 verify-claims batch extract-claims \
   --input submissions/ \
   --output claims_batch.json
-
+# ...
 verify-claims batch check claims_batch.json \
   --concurrency 15 \
   --min-sources 3
-
+# ...
 verify-claims report review \
   --input batch_results.json \
   --output editorial_review.html \
   --threshold "confidence < 0.7"
-
+# ...
 verify-claims report flag \
   --input batch_results.json \
   --criteria "verdict == 'mixed' OR confidence < 0.6" \
@@ -257,14 +259,14 @@ cat > social_claims.json << 'EOF'
   "concurrency": 20
 }
 EOF
-
+# ...
 verify-claims batch check social_claims.json --output social_results.json
-
+# ...
 verify-claims analyze patterns \
   --input social_results.json \
   --dimensions "topic,source,region,spread_rate" \
   --output pattern_analysis.json
-
+# ...
 verify-claims report research \
   --input pattern_analysis.json \
   --template academic \
@@ -276,9 +278,9 @@ verify-claims report research \
 ```bash
 cd ~/.skill-platform/workspace/skills/verify-claims-tool-pro
 npm install
-
+# ...
 verify-claims --version --edition
-
+# ...
 verify-claims batch --help
 ```
 
@@ -301,7 +303,7 @@ cat > team_config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 verify-claims team init team_config.json
 ```
 
@@ -317,14 +319,13 @@ cat > first_batch.json << 'EOF'
   "concurrency": 3
 }
 EOF
-
+# ...
 verify-claims batch check first_batch.json
-
+# ...
 verify-claims batch status
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 ### 企业级配置
@@ -391,16 +392,16 @@ verify-claims batch status
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 verify-claims check "声明内容"
-
+# ...
 verify-claims batch check batch.json
-
+# ...
 verify-claims monitor start monitor.json
 ```
 
 ### 2. 批量核查的性能优化
 ```bash
 verify-claims batch check batch.json --concurrency 15
-
+# ...
 verify-claims batch check batch.json --cache-dir ./cache --skip-cached
 ```
 
@@ -418,15 +419,15 @@ verify-claims batch check batch.json --cache-dir ./cache --skip-cached
 ### 4. 知识库的持续积累
 ```bash
 verify-claims knowledge add --auto-from-results
-
+# ...
 verify-claims knowledge organize --deduplicate --merge-similar
-
+# ...
 verify-claims knowledge export --format json --output knowledge_base.json
 ```
 
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | 单声明核查 | 支持 | 支持 |
 | 多源交叉验证 | 支持 | 支持 |
 | 区域相关性匹配 | 支持 | 支持 |
@@ -466,7 +467,7 @@ verify-claims config set-alerts \
 
 ```bash
 verify-claims knowledge export --format json --output knowledge_base.json
-
+# ...
 verify-claims knowledge import --file external_kb.json
 ```
 
@@ -488,7 +489,7 @@ verify-claims knowledge import --file external_kb.json
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | curl | HTTP 工具 | 必需 | 系统自带 |
 | web_search | 搜索工具 | 必需 | Agent 内置或外部搜索 API |
@@ -501,15 +502,15 @@ verify-claims knowledge import --file external_kb.json
 
 ```bash
 SEARCH_API_KEY=your_search_api_key
-
+# ...
 TEAM_API_TOKEN=your_team_api_token
-
+# ...
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=fact_checking
 DB_USER=admin
 DB_PASSWORD=your_password
-
+# ...
 SLACK_WEBHOOK=your_slack_webhook_url
 ALERT_EMAIL=alerts@example.com
 ```
@@ -524,7 +525,7 @@ ALERT_EMAIL=alerts@example.com
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

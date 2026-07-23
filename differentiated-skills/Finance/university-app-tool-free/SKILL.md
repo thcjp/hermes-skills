@@ -21,8 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
 ---
-
 # 命理咨询入门工具（免费版）
 
 ## 概述
@@ -36,7 +37,7 @@ suggested_price: 19.9
 ### 分析功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 命盘排盘 | 八字四柱排盘 | 支持 |
 | 五行分析 | 五行强弱分布 | 支持 |
 | 性格解读 | 基于命盘的性格分析 | 支持 |
@@ -53,7 +54,7 @@ suggested_price: 19.9
 ### 八字四柱排盘与解析
 
 | 柱位 | 说明 | 信息 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 年柱 | 出生年份 | 祖业根基 |
 | 月柱 | 出生月份 | 父母兄弟 |
 | 日柱 | 出生日子 | 自身配偶（日主为自身） |
@@ -80,7 +81,7 @@ suggested_price: 19.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 命理咨询入门工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -93,7 +94,7 @@ python3 （请参考skill目录中的脚本文件） chart \
   --day 15 \
   --hour 8 \
   --gender male
-
+# ...
 # 输出：
 # === 八字命盘 ===
 # 年柱: 庚午 (金火)
@@ -114,7 +115,7 @@ python3 （请参考skill目录中的脚本文件） chart \
 # 性格特质解读
 python3 （请参考skill目录中的脚本文件） personality \
   --year 1990 --month 5 --day 15 --hour 8
-
+# ...
 # 输出性格分析报告
 ```
 
@@ -142,7 +143,7 @@ python3 （请参考skill目录中的脚本文件） fortune \
 ```bash
 # 依赖说明
 pip install lunardate sxtwl
-
+# ...
 # 排盘
 python3 （请参考skill目录中的脚本文件） chart --year 1990 --month 5 --day 15 --hour 8 --gender male
 ```
@@ -152,13 +153,13 @@ python3 （请参考skill目录中的脚本文件） chart --year 1990 --month 5
 ```bash
 # 排八字命盘
 python3 （请参考skill目录中的脚本文件） chart --year 1990 --month 5 --day 15 --hour 8 --gender male
-
+# ...
 # 五行分析
 python3 （请参考skill目录中的脚本文件） elements --year 1990 --month 5 --day 15 --hour 8
-
+# ...
 # 性格解读
 python3 （请参考skill目录中的脚本文件） personality --year 1990 --month 5 --day 15 --hour 8
-
+# ...
 # 流年运势
 python3 （请参考skill目录中的脚本文件） fortune --year 1990 --month 5 --day 15 --hour 8 --target-year 2026
 ```
@@ -174,13 +175,13 @@ python3 （请参考skill目录中的脚本文件） fortune --year 1990 --month
 bazi_config:
   calendar: "lunar"               # 农历计算
   timezone: "Asia/Shanghai"
-
+# ...
   analysis:
     elements: true                # 五行分析
     personality: true             # 性格解读
     fortune: true                 # 流年运势
     day_master: true              # 日主分析
-
+# ...
   output:
     language: "zh-CN"
     format: "text"
@@ -195,7 +196,7 @@ bazi_config:
 4. **理性对待**：命理为传统文化，仅供参考娱乐
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:---:|:---:|
 | 时辰确认 | 早子时(00-01)与晚子时(23-24)需区分 |
 | 性别影响 | 大运排法因性别而异 |
 | 文化性质 | 命理为传统文化，非科学预测 |
@@ -230,7 +231,7 @@ bazi_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | lunardate | Python库 | 必需 | `pip install lunardate`（农历计算） |
@@ -250,9 +251,8 @@ bazi_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -22,8 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
 ---
-
 # 交易分析入门工具（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 19.9
 ### 维加斯通道策略
 
 | 组成部分 | 参数 | 说明 |
-| --- | --- | --- |
+|----|---|---|
 | 上轨 | EMA(144) + ATR | 阻力位/超买区 |
 | 中轨 | EMA(144) | 趋势基准线 |
 | 下轨 | EMA(144) - ATR | 支撑位/超卖区 |
@@ -48,7 +49,7 @@ suggested_price: 19.9
 ### 分析功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 通道绘制 | 维加斯通道可视化 | 支持 |
 | 趋势识别 | 上升/下降/震荡 | 支持 |
 | 买卖信号 | 基础信号生成 | 支持 |
@@ -79,7 +80,7 @@ suggested_price: 19.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 交易分析入门工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -87,7 +88,7 @@ suggested_price: 19.9
 ```bash
 # 维加斯通道分析
 python3 （请参考skill目录中的脚本文件） --ticker AAPL
-
+# ...
 # 输出：
 # === AAPL 维加斯通道分析 ===
 # 当前价格: $178.45
@@ -105,7 +106,7 @@ python3 （请参考skill目录中的脚本文件） --ticker AAPL
 ```bash
 # 信号检测
 python3 （请参考skill目录中的脚本文件） --ticker BTC-USD
-
+# ...
 # 输出信号类型与建议
 ```
 
@@ -116,7 +117,7 @@ python3 （请参考skill目录中的脚本文件） --ticker BTC-USD
 ```bash
 # 支撑阻力分析
 python3 （请参考skill目录中的脚本文件） --ticker TSLA
-
+# ...
 # 输出各关键价位
 ```
 
@@ -133,7 +134,7 @@ python3 （请参考skill目录中的脚本文件） --ticker TSLA
 ```bash
 # 依赖说明
 pip install yfinance pandas numpy ta
-
+# ...
 # 运行分析
 python3 （请参考skill目录中的脚本文件） --ticker AAPL
 ```
@@ -144,13 +145,13 @@ python3 （请参考skill目录中的脚本文件） --ticker AAPL
 # 维加斯通道分析
 python3 （请参考skill目录中的脚本文件） --ticker AAPL
 python3 （请参考skill目录中的脚本文件） --ticker BTC-USD
-
+# ...
 # 买卖信号
 python3 （请参考skill目录中的脚本文件） --ticker AAPL
-
+# ...
 # 支撑阻力
 python3 （请参考skill目录中的脚本文件） --ticker TSLA
-
+# ...
 # 趋势判断
 python3 （请参考skill目录中的脚本文件） --ticker MSFT
 ```
@@ -166,13 +167,13 @@ python3 （请参考skill目录中的脚本文件） --ticker MSFT
 trading_config:
   data_source: "yahoo_finance"
   cache_ttl: 300
-
+# ...
   vegas_channel:
     ema_period: 144              # 中轨EMA周期
     atr_period: 14               # ATR周期
     atr_multiplier: 2.0          # ATR乘数
     signal_ema: 12               # 信号线EMA
-
+# ...
   signals:
     buy_conditions:
       - price_above_middle
@@ -180,7 +181,7 @@ trading_config:
     sell_conditions:
       - price_below_middle
       - signal_ema_cross_down
-
+# ...
   timeframes:
     - "1d"                       # 日线
     - "1w"                       # 周线
@@ -194,7 +195,7 @@ trading_config:
 4. **信号验证**：单一信号仅供参考，建议结合其他指标
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:---:|:---:|
 | 通道含义 | 价格在中轨上方为多头，下方为空头 |
 | 信号滞后 | EMA策略有滞后性，适合趋势而非震荡 |
 | 假突破 | 价格短暂突破通道后回落需警惕 |
@@ -229,7 +230,7 @@ trading_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | yfinance | Python库 | 必需 | `pip install yfinance` |
@@ -250,9 +251,8 @@ trading_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

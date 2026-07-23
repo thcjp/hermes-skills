@@ -51,6 +51,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 生活事件追踪 - 专业版
 
@@ -143,7 +145,7 @@ AI 分析事件模式,提供生活洞察与建议。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 生活事件追踪-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -156,7 +158,7 @@ AI 分析事件模式,提供生活洞察与建议。
   --output "annual-2025.html" \
   --include-charts \
   --include-insights
-
+# ...
 # 输出:
 # === 2025 年度回顾报告 ===
 #
@@ -197,7 +199,7 @@ AI 分析事件模式,提供生活洞察与建议。
   --name "产品研发团队" \
   --members "alice,bob,charlie" \
   --permissions "read,write,comment"
-
+# ...
 # 团队成员记录事件
 ./tardis-pro add \
   --space "产品研发团队" \
@@ -207,13 +209,13 @@ AI 分析事件模式,提供生活洞察与建议。
   --category "里程碑" \
   --author "alice" \
   --details "V2.0 版本正式发布,包含全新UI和性能优化"
-
+# ...
 # 团队成员评论
 ./tardis-pro comment \
   --event "evt-001" \
   --author "bob" \
   --content "辛苦了!用户反馈很好"
-
+# ...
 # 查看团队时间线
 ./tardis-pro timeline \
   --space "产品研发团队" \
@@ -230,7 +232,7 @@ AI 分析事件模式,提供生活洞察与建议。
   --dimensions "category,tags,time,location" \
   --charts "pie,bar,heatmap,calendar" \
   --output "analysis-2025.html"
-
+# ...
 # 输出包含:
 # - 类别分布饼图
 # - 月度事件柱状图
@@ -248,7 +250,7 @@ AI 分析事件模式,提供生活洞察与建议。
   --period "2025" \
   --focus "work-life-balance,growth,health" \
   --output insights.md
-
+# ...
 # 输出:
 # === AI 生活洞察 ===
 #
@@ -299,7 +301,7 @@ AI 分析事件模式,提供生活洞察与建议。
 # 免费版数据自动兼容
 # 依赖说明
 pip install tardis-pro
-
+# ...
 # 导入免费版数据
 ./tardis-pro import --from ~/tardis-data/
 ```
@@ -311,7 +313,7 @@ pip install tardis-pro
 ./tardis-pro web \
   --port 8080 \
   --auth true
-
+# ...
 # 访问 http://localhost:8080
 # 支持浏览器与移动端访问
 ```
@@ -330,7 +332,6 @@ pip install tardis-pro
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -379,7 +380,7 @@ pip install tardis-pro
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 记录模式 | 三种 | 三种 + 自定义字段 |
 | 数据分析 | 基础统计 | 多维度可视化 |
 | 回顾报告 | 时间线 | +AI 年度报告 |
@@ -431,7 +432,7 @@ A: 通过 API 接口集成。1) 日历:事件自动同步到 Google Calendar/Out
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | matplotlib | 数据可视化 | 推荐 | pip install matplotlib |
 | Node.js | Web服务 | Web界面必需 | 官方网站下载 |
@@ -458,9 +459,8 @@ A: 通过 API 接口集成。1) 日历:事件自动同步到 Google Calendar/Out
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

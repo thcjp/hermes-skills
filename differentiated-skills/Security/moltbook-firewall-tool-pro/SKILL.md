@@ -21,12 +21,14 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 专业版为企业提供完整的AI Agent安全防护平台,在免费版基础防护能力之上,新增上下文感知深度注入检测、沙盒隔离执行、工具参数投毒检测、多Agent统一管理、实时监控与Webhook告警、完整审计链与SARIF报告。专业版完全兼容免费版防护规则,已有安全配置可无缝升级,适合企业级Agent安全治理。
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 深度检测 | 上下文感知,检测多轮+编码注入 |
 | 沙盒隔离 | Agent工具在沙盒中执行,限制影响范围 |
 | 参数投毒 | 检测工具参数中的恶意载荷 |
@@ -47,8 +49,6 @@ pricing_model: "monthly"
 
 ### 2. 沙盒隔离执行(专业版独有)
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供沙盒隔离执行(专业版独有)所需的指令和必要参数。
 **处理**: 解析沙盒隔离执行(专业版独有)的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回沙盒隔离执行(专业版独有)的响应数据,包含状态码、结果和日志。
@@ -56,7 +56,7 @@ pricing_model: "monthly"
 ### 3. 多Agent统一管理(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Agent防火墙专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -64,14 +64,14 @@ pricing_model: "monthly"
 ```python
 #!/usr/bin/env python3
 """专业版多Agent统一安全管理"""
-
+# ...
 import json
 from datetime import datetime
 from collections import defaultdict
-
+# ...
 class MultiAgentSecurityManager:
     """多Agent安全管理器"""
-
+# ...
     def __init__(self):
         self.agents = {}
         self.global_policies = {
@@ -80,7 +80,7 @@ class MultiAgentSecurityManager:
             "cross_agent_communication": False,
         }
         self.security_events = []
-
+# ...
     def register_agent(self, agent_id, config):
         """注册Agent"""
         self.agents[agent_id] = {
@@ -98,7 +98,7 @@ class MultiAgentSecurityManager:
             }
         }
         return self.agents[agent_id]
-
+# ...
     def audit_all_agents(self):
         """审计所有Agent的安全状态"""
         report = {
@@ -108,7 +108,7 @@ class MultiAgentSecurityManager:
             "findings": [],
             "summary": defaultdict(int)
         }
-
+# ...
         for agent_id, agent in self.agents.items():
             for tool in agent["tools"]:
                 if tool in self.global_policies["shared_tool_blacklist"]:
@@ -118,7 +118,7 @@ class MultiAgentSecurityManager:
                         "finding": f"Agent使用了黑名单工具: {tool}"
                     })
                     report["summary"]["critical"] += 1
-
+# ...
             if agent["rate_limit"] > 100:
                 report["findings"].append({
                     "agent": agent_id,
@@ -126,7 +126,7 @@ class MultiAgentSecurityManager:
                     "finding": f"速率限制过高: {agent['rate_limit']}/min"
                 })
                 report["summary"]["medium"] += 1
-
+# ...
             stats = agent["stats"]
             if stats["blocked_calls"] > 10:
                 report["findings"].append({
@@ -135,10 +135,10 @@ class MultiAgentSecurityManager:
                     "finding": f"被阻止调用过多: {stats['blocked_calls']}次"
                 })
                 report["summary"]["high"] += 1
-
+# ...
         report["summary"] = dict(report["summary"])
         return report
-
+# ...
     def get_security_dashboard(self):
         """获取安全仪表板"""
         return {
@@ -168,20 +168,20 @@ class MultiAgentSecurityManager:
 ```python
 #!/usr/bin/env python3
 """专业版实时安全监控与告警"""
-
+# ...
 import json
 from datetime import datetime
 from collections import deque
-
+# ...
 class SecurityMonitor:
     """实时安全监控器"""
-
+# ...
     ALERT_THRESHOLDS = {
         "injection_attempts_per_minute": 5,
         "blocked_calls_per_minute": 10,
         "unique_attack_patterns": 3,
     }
-
+# ...
     def __init__(self):
         self.events = deque(maxlen=10000)
         self.alerts = []
@@ -191,7 +191,7 @@ class SecurityMonitor:
             "injection_attempts": 0,
             "tool_violations": 0
         }
-
+# ...
     def record_event(self, event_type, details):
         """记录安全事件"""
         event = {
@@ -200,23 +200,23 @@ class SecurityMonitor:
             "details": details
         }
         self.events.append(event)
-
+# ...
         self.metrics["total_requests"] += 1
         if event_type == "injection_detected":
             self.metrics["injection_attempts"] += 1
         elif event_type == "tool_blocked":
             self.metrics["blocked_requests"] += 1
             self.metrics["tool_violations"] += 1
-
+# ...
         self._check_alerts(event)
-
+# ...
     def _check_alerts(self, event):
         """检查告警条件"""
         recent_injections = sum(
             1 for e in self.events
             if e["type"] == "injection_detected"
         )
-
+# ...
         if recent_injections >= self.ALERT_THRESHOLDS["injection_attempts_per_minute"]:
             alert = {
                 "timestamp": datetime.utcnow().isoformat() + "Z",
@@ -227,7 +227,7 @@ class SecurityMonitor:
             }
             self.alerts.append(alert)
             self._send_alert(alert)
-
+# ...
     def _send_alert(self, alert):
         """发送告警"""
         print(f"[ALERT] [{alert['level']}] {alert['message']}")
@@ -253,47 +253,47 @@ class SecurityMonitor:
 ```python
 #!/usr/bin/env python3
 """企业Agent安全治理平台"""
-
+# ...
 class EnterpriseAgentSecurity:
     """企业级Agent安全治理"""
-
+# ...
     def __init__(self):
         from deep_injection_detector import DeepInjectionDetector
         from sandbox_executor import SandboxExecutor
         from multi_agent_manager import MultiAgentSecurityManager
         from security_monitor import SecurityMonitor
-
+# ...
         self.detector = DeepInjectionDetector()
         self.sandbox = SandboxExecutor()
         self.manager = MultiAgentSecurityManager()
         self.monitor = SecurityMonitor()
-
+# ...
     def secure_agent_interaction(self, agent_id, user_input):
         """安全的Agent交互流程"""
         detection = self.detector.detect(user_input, agent_id)
         self.monitor.record_event("input_received", {"agent": agent_id})
-
+# ...
         if detection["should_block"]:
             self.monitor.record_event("injection_detected", {
                 "agent": agent_id,
                 "findings": detection["findings_count"]
             })
             return {"action": "BLOCKED", "reason": "检测到注入攻击"}
-
+# ...
         self.monitor.record_event("input_passed", {"agent": agent_id})
         return {"action": "ALLOWED", "input": user_input}
-
+# ...
     def secure_tool_execution(self, agent_id, tool, params):
         """安全的工具执行"""
         result = self.sandbox.execute_safely(tool, params)
-
+# ...
         if result["status"] == "BLOCKED":
             self.monitor.record_event("tool_blocked", {
                 "agent": agent_id, "tool": tool, "reason": result["reason"]
             })
-
+# ...
         return result
-
+# ...
     def generate_security_report(self):
         """生成安全报告"""
         return {
@@ -309,22 +309,22 @@ class EnterpriseAgentSecurity:
 echo "=== Agent安全监控仪表板 ==="
 echo "时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo ""
-
+# ...
 python3 -c "
 import json
 from security_monitor import SecurityMonitor
-
+# ...
 monitor = SecurityMonitor()
-
+# ...
 monitor.metrics = {
     'total_requests': 15420,
     'blocked_requests': 421,
     'injection_attempts': 89,
     'tool_violations': 156
 }
-
+# ...
 dashboard = monitor.get_dashboard()
-
+# ...
 print('--- 安全指标 ---')
 print(f\"  总请求: {dashboard['metrics']['total_requests']}\")
 print(f\"  拦截请求: {dashboard['metrics']['blocked_requests']}\")
@@ -351,7 +351,7 @@ if not dashboard['active_alerts']:
 ```python
 detector = PromptInjectionDetector()
 result = detector.detect(user_input)
-
+# ...
 detector = DeepInjectionDetector()
 sandbox = SandboxExecutor()
 detection = detector.detect(user_input)
@@ -362,7 +362,7 @@ if not detection["should_block"]:
 ## 示例
 ### 专业版功能矩阵
 | 功能 | 免费版 | 专业版 | 说明 |
-|:-----|:-------|:-------|:-----|
+|---:|---:|---:|---:|
 | 注入检测 | 基础模式 | 深度上下文 | 多层检测 |
 | 沙盒执行 | 不支持 | 支持 | 隔离执行 |
 | 参数投毒 | 不支持 | 支持 | 恶意载荷检测 |
@@ -373,7 +373,7 @@ if not detection["should_block"]:
 
 ### 已知限制
 | 限制项 | 默认值 | 说明 |
-|:-------|:-------|:-----|
+|:---:|:---:|:---:|
 | 执行超时 | 30秒 | 防止长时间运行 |
 | 内存限制 | 256MB | 防止内存耗尽 |
 | CPU限制 | 50% | 防止CPU占用 |
@@ -413,7 +413,7 @@ if not detection["should_block"]:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | python3 | 运行时 | 必需 | python.org 下载 |
 | docker | 容器运行时 | 推荐 | docker.com 下载 |
 | requests | HTTP库 | 推荐 | `pip install requests` |
@@ -432,7 +432,7 @@ if not detection["should_block"]:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

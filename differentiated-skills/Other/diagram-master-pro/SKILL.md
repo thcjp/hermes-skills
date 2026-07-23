@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 > **从单张手工到批量自动化，从固定配色到品牌定制。企业级图表制作系统。**
 
@@ -40,7 +42,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 图表制作大师(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -55,7 +57,7 @@ pricing_model: "monthly"
 
 ```bash
 diagram-master --batch diagrams/ --parallel 4
-
+# ...
 diagram-master --template microservice --output arch.svg
 ```
 
@@ -63,7 +65,7 @@ diagram-master --template microservice --output arch.svg
 ## 核心能力
 ### 1. 九种图表类型（基础+增强）
 | 图表类型 | 适用场景 | 基础能力 | 专业版增强 |
-|----------|----------|----------|-----------|
+|:-----|:-----|:-----|:-----|
 | 架构图 | 系统组件关系 | 静态布局 | 可点击节点跳转 |
 | 流程图 | 决策逻辑 | 静态流程 | 动态高亮路径 |
 | 时序图 | 时序交互 | 静态消息 | 动画播放消息流 |
@@ -80,7 +82,7 @@ diagram-master --template microservice --output arch.svg
 
 ### 2. 语义化配色系统（基础+增强）
 | 类别 | 填充色 | 描边色 | 用途 | 专业版自定义 |
-|------|--------|--------|------|-------------|
+|---:|---:|---:|---:|---:|
 | 主要 | rgba(8,51,68,0.4) | #22d3ee | 前端/输入 | 支持品牌色替换 |
 | 次要 | rgba(6,78,59,0.4) | #34d399 | 后端/服务 | 支持品牌色替换 |
 | 第三 | rgba(76,29,149,0.4) | #a78bfa | 数据库/存储 | 支持品牌色替换 |
@@ -99,9 +101,9 @@ diagram-master --template microservice --output arch.svg
 
 ```bash
 diagram-master --batch diagrams/ --parallel 4 --output output/
-
+# ...
 diagram-master --batch --from-doc README.md --extract-diagrams
-
+# ...
 diagram-master --batch diagrams/ --checkpoint --resume
 ```
 
@@ -118,9 +120,9 @@ diagram-master --batch diagrams/ --checkpoint --resume
 ### 4. 自定义配色方案（专业版）
 ```bash
 diagram-master --theme brand-corporate --output arch.svg
-
+# ...
 diagram-master --list-themes
-
+# ...
 diagram-master --create-theme my-brand \
   --primary "#E44D26" \
   --secondary "#00A1E0" \
@@ -128,7 +130,7 @@ diagram-master --create-theme my-brand \
 ```
 
 | 主题 | 风格 | 适用场景 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | dark（默认） | 暗色科技风 | 技术文档 |
 | light | 浅色简洁风 | 正式报告 |
 | brand-corporate | 品牌定制 | 企业文档 |
@@ -146,14 +148,14 @@ diagram-master --create-theme my-brand \
 diagram-master --template microservice --output arch.svg
 diagram-master --template ci-cd-pipeline --output pipeline.svg
 diagram-master --template er-database --output er.svg
-
+# ...
 diagram-master --list-templates
-
+# ...
 diagram-master --save-template my-arch --from arch.svg
 ```
 
 | 模板类别 | 模板名称 | 适用场景 |
-|----------|----------|----------|
+|:------|------:|:------|
 | 架构图 | microservice | 微服务架构 |
 | 架构图 | layered-arch | 分层架构 |
 | 架构图 | event-driven | 事件驱动架构 |
@@ -172,14 +174,14 @@ diagram-master --save-template my-arch --from arch.svg
 ### 6. SVG转PNG高清导出（专业版）
 ```bash
 diagram-master --export arch.svg --format png --scale 2
-
+# ...
 diagram-master --export arch.svg --format png --scale 4
-
+# ...
 diagram-master --export arch.svg --format svg,png@2x,png@4x
 ```
 
 | 导出格式 | 分辨率 | 适用场景 |
-|----------|--------|----------|
+|---:|:---|---:|
 | SVG | 矢量 | Web嵌入、可缩放 |
 | PNG @2x | 2倍 | 屏幕展示、PPT |
 | PNG @4x | 4倍 | 出版印刷、高清展示 |
@@ -192,11 +194,11 @@ diagram-master --export arch.svg --format svg,png@2x,png@4x
 ### 7. 图表版本管理（专业版）
 ```bash
 diagram-master --save-version arch.svg --message "增加缓存层"
-
+# ...
 diagram-master --history arch.svg
-
+# ...
 diagram-master --diff arch.svg --v1 1 --v2 3
-
+# ...
 diagram-master --rollback arch.svg --version 2
 ```
 
@@ -210,14 +212,14 @@ diagram-master --rollback arch.svg --version 2
 diagram-master --interactive --template microservice \
   --links '{"UserService": "docs/user-service.html"}' \
   --output arch-interactive.svg
-
+# ...
 diagram-master --interactive --template ci-cd-pipeline \
   --highlight-path "build,deploy" \
   --output pipeline-interactive.svg
 ```
 
 | 交互功能 | 说明 | 适用场景 |
-|----------|------|----------|
+|:------:|--------|:-------|
 | 可点击节点 | 点击跳转到文档 | 架构图导航 |
 | 动态高亮路径 | 高亮指定流程路径 | 流程图演示 |
 | 折叠/展开 | 点击折叠分区 | 复杂架构图 |
@@ -231,9 +233,9 @@ diagram-master --interactive --template ci-cd-pipeline \
 ### 9. 图表组件库（专业版）
 ```bash
 diagram-master --save-component "db-postgres" --from arch.svg
-
+# ...
 diagram-master --use-component "db-postgres" --output new-arch.svg
-
+# ...
 diagram-master --list-components
 ```
 
@@ -252,12 +254,12 @@ diagram-master --list-components
 diagram-master --create-theme corporate \
   --primary "#0066CC" --secondary "#009933" \
   --background "#F8F9FA"
-
+# ...
 diagram-master --batch docs/diagrams/ \
   --theme corporate \
   --parallel 4 \
   --export svg,png@2x
-
+# ...
 diagram-master --save-version --batch docs/diagrams/
 ```
 
@@ -275,7 +277,7 @@ diagram-master --create-theme brand-official \
   --tertiary "#6C2BD9" \
   --background "#FFFFFF" \
   --text "#333333"
-
+# ...
 diagram-master --batch diagrams/ --theme brand-official
 ```
 
@@ -287,7 +289,7 @@ diagram-master --batch diagrams/ --theme brand-official
 **操作流程**：
 ```bash
 diagram-master --export arch.svg --format png@4x
-
+# ...
 diagram-master --export --batch book/diagrams/ \
   --format png@4x,pdf \
   --output book/figures/
@@ -301,11 +303,11 @@ diagram-master --export --batch book/diagrams/ \
 **操作流程**：
 ```bash
 diagram-master --save-version arch.svg --message "增加Redis缓存层"
-
+# ...
 diagram-master --history arch.svg
-
+# ...
 diagram-master --diff arch.svg --v1 1 --v2 5
-
+# ...
 diagram-master --rollback arch.svg --version 3
 ```
 
@@ -327,7 +329,7 @@ diagram-master --interactive \
 
 ## 多角色场景指南
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|----|:--:|---:|----|
 | 文档工程师 | 文档图表标准化 | 批量生成+自定义配色+版本管理 | 风格统一、效率提升 |
 | API工程师 | API文档批量生图 | 批量生成+模板库+高清导出 | 自动化、可维护 |
 | 品牌设计师 | 品牌定制主题 | 自定义配色+批量生成 | 品牌一致性 |
@@ -407,7 +409,7 @@ diagram-master --interactive \
 
 ## 错误处理
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|----|----|----|
 | 批量生成中断 | 内存不足 | 启用`--checkpoint`，从断点恢复 | 高 |
 | 中文标签溢出 | 框宽不足 | 增加组件框宽度，使用中文字体 | 高 |
 | 配色对比度低 | 自定义色相近 | 调整明度差异，系统会给出对比度警告 | 中 |
@@ -428,7 +430,7 @@ diagram-master --interactive \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
 | Google Fonts | 字体 | 可选 | 在线加载（JetBrains Mono / Noto Sans SC） |
@@ -483,7 +485,7 @@ diagram-master --interactive \
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|---:|---:|---:|
 | 免费体验版 | ¥0 | 九种图表类型+语义化配色+标准排版+中文适配+基础示例+基础FAQ | 个人试用、轻量制图 |
 | 收费专业版 | ¥29.9/月 | 批量生成+自定义配色+模板库+高清导出+版本管理+交互式图表+组件库+多角色指南+优先支持 | 团队/企业、大规模制图 |
 
@@ -493,20 +495,20 @@ diagram-master --interactive \
 ### 示例1：基础用法
 ```
 单张图表生成，立即可用：
-
+# ...
 ```text
 用户：画一个微服务架构图
 助手：→ 识别类型 → 规划布局 → 应用配色 → 生成SVG
 ```
-
+# ...
 启用批量生成与模板库：
-
+# ...
 ```bash
 ```
-
+# ...
 ## 已知限制
 - 需要API Key，无Key环境无法使用
-
+# ...
 ## 输出格式
 ```json
 {
@@ -523,3 +525,4 @@ diagram-master --interactive \
   "error": null
 }
 ```
+# ...

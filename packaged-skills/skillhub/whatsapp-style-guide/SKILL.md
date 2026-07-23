@@ -35,19 +35,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # WhatsApp样式指南-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -61,20 +63,20 @@ pricing_model: "per_use"
 ```python
 class EmojiFormatGuide:
     """Emoji与格式混用指南"""
-
+# ...
     RULES = {
         "emoji_before_format": "Emoji放在格式符号之前,不影响格式渲染",
         "emoji_inside_format": "Emoji在格式符号内部时,确保符号紧贴文字部分",
         "emoji_after_format": "Emoji放在格式符号之后,不影响格式渲染",
     }
-
+# ...
     EXAMPLES = {
         "correct_emoji_bold": "🔥 *限时特惠* 🔥",
         "correct_emoji_list": "📦 订单明细:\n* 商品A\n* 商品B",
         "correct_emoji_quote": "💡 温馨提示:\n> 请及时确认收货",
         "warning_emoji_inside": "🔥*限时特惠*🔥 (部分设备可能不渲染加粗)",
     }
-
+# ...
     def get_recommendation(self, emoji: str, format_type: str) -> str:
         """获取Emoji与格式的推荐组合方式"""
         return f"推荐: {emoji} {format_type}文本{format_type} {emoji}"
@@ -96,85 +98,83 @@ class EmojiFormatGuide:
 ### 2. 高级排版模式库
 #### 商务排版模式
 
-> 详细代码示例已移至 `references/detail.md`
-
 #### 营销排版模式
 ```text
 *营销推广模式*
-
+# ...
 适用于:促销活动、产品推广、优惠通知
-
+# ...
 *结构规范:*
 * 标题:加粗 + Emoji吸引注意
 * 副标题:斜体,营造氛围
 * 商品:编号列表,清晰展示
 * 价格:删除线原价 + 加粗现价
 * 紧迫感:引用块,限时限量提示
-
+# ...
 *示例:*
 🔥 *夏季清仓大促* 🔥
-
+# ...
 _一年仅此一次,错过再等一年_
-
+# ...
 *精选商品*
 1. 蓝牙耳机 Pro - ~299元~ *199元*
 2. 智能手表 - ~599元~ *399元*
 3. 无线充电器 - ~99元~ *59元*
-
+# ...
 ```
 
 #### 客服排版模式
 ```text
 *客服沟通模式*
-
+# ...
 适用于:客户服务、售后支持、咨询回复
-
+# ...
 *结构规范:*
 * 问候:加粗标题 + 斜体问候语
 * 选项:列表形式,便于客户选择
 * 说明:普通文本,简洁明了
 * 结语:引用块,服务承诺
-
+# ...
 *示例:*
 *客服中心*
-
+# ...
 _您好,很高兴为您服务_
-
+# ...
 请问需要什么帮助?
-
+# ...
 1. 查询订单状态
 2. 申请退换货
 3. 产品使用咨询
 4. 转人工客服
-
+# ...
 ```
 
 #### 技术排版模式
 ```text
 *技术文档模式*
-
+# ...
 适用于:技术说明、操作指引、故障排查
-
+# ...
 *结构规范:*
 * 标题:加粗
 * 步骤:编号列表,每步清晰
 * 代码/命令:等宽体
 * 注意事项:引用块
 * 技术参数:列表形式
-
+# ...
 *示例:*
 *API接入指引*
-
+# ...
 *操作步骤*
 1. 获取API Key: `sk-详情见说明详情见说明详情见说明详情见说明`
 2. 设置请求头: `Authorization: Bearer <key>`
 3. 发送请求到: `https://api.example.com/v1/send`
-
+# ...
 *请求参数*
 * phone: 收件人号码(含国家代码)
 * message: 消息内容(最多4096字符)
 * type: 消息类型(text/media/template)
-
+# ...
 ```
 
 **输出**: 返回高级排版模式库的处理结果,包含执行状态码、结果数据和执行日志。
@@ -185,15 +185,9 @@ _您好,很高兴为您服务_
 **处理**: 解析多语言格式指南的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回多语言格式指南的处理结果,包含执行状态码、结果数据和执行日志。
 
-### 4. 交互式格式测试
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供交互式格式测试所需的指令和必要参数。
 **处理**: 解析交互式格式测试的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回交互式格式测试的处理结果,包含执行状态码、结果数据和执行日志。
-
-### 5. 团队规范定制与合规审计
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供团队规范定制与合规审计所需的指令和必要参数。
 **处理**: 解析团队规范定制与合规审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -207,20 +201,20 @@ _您好,很高兴为您服务_
 
 ```python
 auditor = ComplianceAuditor("优品商城")
-
+# ...
 team_standards = {
     "notification": "通知类消息须使用加粗标题 + 编号列表 + 引用落款",
     "marketing": "营销类消息须使用Emoji + 加粗 + 删除线价格 + 紧迫感引用",
     "service": "客服类消息须使用加粗问候 + 斜体服务语 + 编号选项",
 }
-
+# ...
 cs_message = """*客服中心*
-
+# ...
 _您好,很高兴为您服务_
-
+# ...
 1. 查询订单
 2. 售后服务
-
+# ...
 result = auditor.audit_message(cs_message, {"type": "service"})
 print(f"合规状态: {result['overall']}")
 ```
@@ -230,7 +224,7 @@ print(f"合规状态: {result['overall']}")
 
 ```python
 guide = MultilingualStyleGuide()
-
+# ...
 for lang_info in guide.list_languages():
     lang_guide = guide.get_guide(lang_info["code"])
     print(f"\n{lang_guide['name']}")
@@ -247,12 +241,12 @@ messages = [
     "## 标题 **内容** 优品商城",
     "*活动* ~原价199~ *现价99* 优品商城",
 ]
-
+# ...
 for msg in messages:
     result = auditor.audit_message(msg)
     status = "通过" if result["overall"] == "pass" else "不通过"
     print(f"[{status}] {msg[:30]}...")
-
+# ...
 report = auditor.generate_report()
 print(f"\n总审计: {report['summary']}")
 ```
@@ -263,15 +257,15 @@ print(f"\n总审计: {report['summary']}")
 ```bash
 skill-platform skills install whatsapp-style-guide-pro
 skill-platform gateway restart
-
+# ...
 ```
 
 ### 全新安装
 ```bash
 skill-platform skills install whatsapp-style-guide-pro
-
+# ...
 python3 init_team_guide.py --org "你的公司名"
-
+# ...
 python3 interactive_test.py
 ```
 
@@ -279,7 +273,7 @@ python3 interactive_test.py
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | whatsapp-style-guide处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -326,9 +320,8 @@ python3 interactive_test.py
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -342,7 +335,7 @@ python3 interactive_test.py
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3.8+ | 运行时 | 推荐 | python.org 下载 |
 | re | 标准库 | 必需 | Python内置 |
@@ -374,12 +367,12 @@ python3 interactive_test.py
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -396,12 +389,12 @@ python3 interactive_test.py
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -418,12 +411,12 @@ python3 interactive_test.py
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -451,9 +444,8 @@ python3 interactive_test.py
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

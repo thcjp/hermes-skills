@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 浏览器会话助手（免费版）
 > **打开URL、提取信息、返回结果。三步完成单次浏览器会话。**
 
@@ -32,7 +33,7 @@ suggested_price: 99.9
 
 ### 核心定位
 | 维度 | 免费版能力 |
-|------|------------|
+|---|-----|
 | 单次抓取（fetch） | 支持 |
 | 定时任务（recurring） | 不支持（需专业版） |
 | 会话持久化 | 不支持（需专业版） |
@@ -46,7 +47,7 @@ suggested_price: 99.9
 ### 1. 单次页面抓取（fetch模式）
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 浏览器会话(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -54,13 +55,13 @@ suggested_price: 99.9
 ```python
 import subprocess
 import json
-
+# ...
 class BsessionFetcher:
     """浏览器会话抓取器（免费版）"""
-
+# ...
     def __init__(self, container_name="agent-browser"):
         self.container = container_name
-
+# ...
     def check_container(self):
         """检查容器是否运行"""
         try:
@@ -71,7 +72,7 @@ class BsessionFetcher:
             return result.returncode == 0
         except Exception:
             return False
-
+# ...
     def find_free_port(self, start=9222, max_try=10):
         """查找可用的CDP端口"""
         for port in range(start, start + max_try):
@@ -81,16 +82,16 @@ class BsessionFetcher:
             if result.returncode != 0:
                 return port
         return None
-
+# ...
     def fetch_url(self, url, wait_seconds=5):
         """抓取单个URL内容"""
         if not self.check_container():
             return {"success": False, "error": "容器未运行，请先执行 setup"}
-
+# ...
         port = self.find_free_port()
         if not port:
             return {"success": False, "error": "无可用CDP端口"}
-
+# ...
         try:
             # 启动临时Chrome
             subprocess.run(
@@ -100,25 +101,25 @@ class BsessionFetcher:
                  f"start_chrome({port}, '/workspace/data/profile-tmp')"],
                 capture_output=True, text=True, timeout=10
             )
-
+# ...
             # 打开URL
             subprocess.run(
                 ["docker", "exec", self.container, "agent-browser",
                  "--cdp", str(port), "open", url],
                 capture_output=True, text=True, timeout=30
             )
-
+# ...
             # 等待加载
             import time
             time.sleep(wait_seconds)
-
+# ...
             # 获取页面快照
             result = subprocess.run(
                 ["docker", "exec", self.container, "agent-browser",
                  "--cdp", str(port), "snapshot"],
                 capture_output=True, text=True, timeout=10
             )
-
+# ...
             return {
                 "success": True,
                 "content": result.stdout,
@@ -136,7 +137,7 @@ class BsessionFetcher:
                  f"stop_chrome({port})"],
                 capture_output=True, text=True, timeout=5
             )
-
+# ...
 # 示例
 fetcher = BsessionFetcher()
 result = fetcher.fetch_url("https://example.com", wait_seconds=3)
@@ -152,32 +153,32 @@ print(result.get("content", "")[:500] if result.get("success") else result.get("
 ```python
 class BsessionInteraction:
     """基础元素交互（免费版）"""
-
+# ...
     def __init__(self, container="agent-browser", port=9222):
         self.container = container
         self.port = port
-
+# ...
     def click_element(self, ref):
         """点击元素"""
         cmd = ["docker", "exec", self.container, "agent-browser",
                "--cdp", str(self.port), "click", ref]
         result = subprocess.run(cmd, capture_output=True, text=True)
         return result.returncode == 0
-
+# ...
     def fill_field(self, ref, value):
         """填写表单字段"""
         cmd = ["docker", "exec", self.container, "agent-browser",
                "--cdp", str(self.port), "fill", ref, value]
         result = subprocess.run(cmd, capture_output=True, text=True)
         return result.returncode == 0
-
+# ...
     def take_snapshot(self):
         """获取页面快照"""
         cmd = ["docker", "exec", self.container, "agent-browser",
                "--cdp", str(self.port), "snapshot"]
         result = subprocess.run(cmd, capture_output=True, text=True)
         return result.stdout if result.returncode == 0 else ""
-
+# ...
 # 使用示例
 interaction = BsessionInteraction(port=9222)
 content = interaction.take_snapshot()
@@ -195,7 +196,7 @@ content = interaction.take_snapshot()
 ```python
 class SessionLister:
     """会话列表查看器（免费版）"""
-
+# ...
     def list_sessions(self):
         """列出所有会话"""
         try:
@@ -209,7 +210,7 @@ class SessionLister:
             return result.stdout
         except Exception as e:
             return f"查询失败：{e}"
-
+# ...
     def show_session(self, session_name):
         """查看指定会话详情"""
         try:
@@ -235,7 +236,7 @@ class SessionLister:
 ```python
 fetcher = BsessionFetcher()
 result = fetcher.fetch_url("https://news.example.com/article/123", wait_seconds=3)
-
+# ...
 if result.get("success"):
     content = result["content"]
     # 简单解析内容
@@ -253,11 +254,11 @@ else:
 # 1. 打开登录页
 fetcher = BsessionFetcher()
 result = fetcher.fetch_url("https://app.example.com/login")
-
+# ...
 # 2. 获取快照并解析元素ref
 interaction = BsessionInteraction(port=result.get("port", 9222))
 snapshot = interaction.take_snapshot()
-
+# ...
 # 3. 填写表单并提交（需根据实际页面结构调整ref）
 # interaction.fill_field("ref_email", "test@user.com")
 # interaction.fill_field("ref_password", "password123")
@@ -279,15 +280,15 @@ if fetcher.check_container():
     print("   容器运行中")
 else:
     print("   容器未运行，请先执行 setup")
-
+# ...
 print("\n2. 查找可用端口")
 port = fetcher.find_free_port()
 print(f"   可用端口：{port}")
-
+# ...
 print("\n3. 抓取页面")
 result = fetcher.fetch_url("https://example.com")
 print(f"   抓取结果：{'成功' if result.get('success') else '失败'}")
-
+# ...
 print("\n4. 解析内容")
 if result.get("success"):
     content_length = len(result.get("content", ""))
@@ -305,7 +306,7 @@ if result.get("success"):
 ```bash
 # 1. 检查Docker容器
 docker exec agent-browser echo ok
-
+# ...
 # 2. 执行单次抓取
 docker exec agent-browser agent-browser --cdp 9222 open "https://example.com"
 sleep 3
@@ -317,19 +318,19 @@ docker exec agent-browser agent-browser --cdp 9222 snapshot
 # 1. 启动容器（如果未运行）
 cd ~/.bsession/
 docker compose up -d
-
+# ...
 # 2. 验证环境
 docker exec agent-browser python3 -c "
 import sys; sys.path.insert(0, '/app')
 from lib.browser import list_sessions
 print('环境正常')
 "
-
+# ...
 # 3. 执行抓取
 docker exec agent-browser agent-browser --cdp 9222 open "https://news.example.com"
 sleep 5
 docker exec agent-browser agent-browser --cdp 9222 snapshot > page_content.txt
-
+# ...
 # 4. 清理
 docker exec agent-browser python3 -c "
 import sys; sys.path.insert(0, '/app')
@@ -340,12 +341,11 @@ stop_chrome(9222)
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 配置示例
 ### 基础配置
 ```python
 import os
-
+# ...
 class BsessionConfig:
     """bsession配置（免费版）"""
     CONTAINER_NAME = os.getenv("BSESSION_CONTAINER", "agent-browser")
@@ -353,7 +353,7 @@ class BsessionConfig:
     WORKSPACE = os.getenv("BSESSION_WORKSPACE", "~/.bsession/workspace/")
     WAIT_TIMEOUT = int(os.getenv("BSESSION_WAIT", "5"))
     MAX_PORTS_TRY = int(os.getenv("BSESSION_MAX_PORTS", "10"))
-
+# ...
     @classmethod
     def show(cls):
         print("=== bsession 配置 ===")
@@ -362,7 +362,7 @@ class BsessionConfig:
         print(f"工作空间：{cls.WORKSPACE}")
         print(f"等待时间：{cls.WAIT_TIMEOUT}s")
         print(f"最大端口尝试：{cls.MAX_PORTS_TRY}")
-
+# ...
 BsessionConfig.show()
 ```
 
@@ -370,7 +370,7 @@ BsessionConfig.show()
 ```python
 import os
 from pathlib import Path
-
+# ...
 def resolve_bsession_paths():
     """解析bsession路径（按优先级）"""
     paths = {
@@ -378,7 +378,7 @@ def resolve_bsession_paths():
         "workspace": None,
         "cli_path": None
     }
-
+# ...
     # 1. 解析bsession CLI
     cli_candidates = [
         os.getenv("BSESSION_CLI"),
@@ -389,7 +389,7 @@ def resolve_bsession_paths():
         if candidate and os.path.exists(candidate):
             paths["cli_path"] = candidate
             break
-
+# ...
     # 2. 解析workspace
     workspace_candidates = [
         os.getenv("BSESSION_WORKSPACE"),
@@ -400,12 +400,12 @@ def resolve_bsession_paths():
         if candidate and os.path.exists(candidate):
             paths["workspace"] = candidate
             break
-
+# ...
     # 3. 解析bsession_home
     paths["bsession_home"] = os.path.expanduser("~/.bsession/")
-
+# ...
     return paths
-
+# ...
 paths = resolve_bsession_paths()
 for k, v in paths.items():
     print(f"{k}: {v}")
@@ -452,7 +452,7 @@ def robust_fetch(url, max_retries=2):
 class PortManager:
     """端口管理器"""
     USED_PORTS = set()
-
+# ...
     @classmethod
     def get_free_port(cls, start=9222):
         for port in range(start, start + 20):
@@ -460,7 +460,7 @@ class PortManager:
                 cls.USED_PORTS.add(port)
                 return port
         return None
-
+# ...
     @classmethod
     def release_port(cls, port):
         cls.USED_PORTS.discard(port)
@@ -497,7 +497,7 @@ class PortManager:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Docker | 运行时 | 必需 | 官网下载安装 |
 | Docker Compose | 工具 | 必需 | 随Docker Desktop安装 |
 | Python 3.8+ | 运行时 | 必需 | 容器内已内置 |

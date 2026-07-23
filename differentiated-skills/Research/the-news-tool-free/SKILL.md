@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 全球新闻速递免费版
 
 ## 概述
@@ -37,7 +38,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 全球新闻速递免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -45,10 +46,10 @@ suggested_price: 29.9
 ```bash
 # 获取德国当前头条新闻
 curl -s "https://www.thehear.org/api/country-view/germany" | jq
-
+# ...
 # 获取美国当前头条新闻
 curl -s "https://www.thehear.org/api/country-view/us" | jq
-
+# ...
 # 获取日本当前头条新闻
 curl -s "https://www.thehear.org/api/country-view/japan" | jq
 ```
@@ -65,7 +66,7 @@ curl -s "https://www.thehear.org/api/country-view/japan" | jq
 ```bash
 # 查询德国在指定 UTC 时间点的头条新闻
 curl -s "https://www.thehear.org/api/country-view/germany?at=2026-07-01T20:00:00Z" | jq
-
+# ...
 # 查询法国昨天的头条新闻
 curl -s "https://www.thehear.org/api/country-view/france?at=2026-07-17T08:00:00Z" | jq
 ```
@@ -120,13 +121,13 @@ curl -s "https://www.thehear.org/api/country-view/germany" | jq '.overview'
 # 获取主要国家的今日头条
 echo "=== 美国头条 ==="
 curl -s "https://www.thehear.org/api/country-view/us" | jq '.headlines[0:5]'
-
+# ...
 echo "=== 英国头条 ==="
 curl -s "https://www.thehear.org/api/country-view/uk" | jq '.headlines[0:5]'
-
+# ...
 echo "=== 日本头条 ==="
 curl -s "https://www.thehear.org/api/country-view/japan" | jq '.headlines[0:5]'
-
+# ...
 echo "=== 中国头条 ==="
 curl -s "https://www.thehear.org/api/country-view/china" | jq '.headlines[0:5]'
 ```
@@ -138,7 +139,7 @@ curl -s "https://www.thehear.org/api/country-view/china" | jq '.headlines[0:5]'
 ```bash
 # 获取德国所有新闻源的头条(约 40 个来源)
 curl -s "https://www.thehear.org/api/country-view/germany" | jq '.sources'
-
+# ...
 # 查看不同政治立场的媒体如何报道同一事件
 curl -s "https://www.thehear.org/api/country-view/us" | jq '.sources[] | {name, headline, leaning}'
 ```
@@ -162,7 +163,7 @@ done
 ```bash
 # 测试 API 连通性
 curl -s "https://www.thehear.org/api/country-view/us" | jq '.status'
-
+# ...
 # 获取可用国家列表
 curl -s "https://www.thehear.org/api/country-view/" | jq '.countries'
 ```
@@ -172,7 +173,7 @@ curl -s "https://www.thehear.org/api/country-view/" | jq '.countries'
 ```bash
 # 获取美国当前头条新闻
 curl -s "https://www.thehear.org/api/country-view/us" | jq
-
+# ...
 # 提取新闻标题列表
 curl -s "https://www.thehear.org/api/country-view/us" | jq -r '.headlines[]'
 ```
@@ -186,7 +187,6 @@ curl -s "https://www.thehear.org/api/country-view/us?at=2026-07-15T12:00:00Z" | 
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 基础查询脚本
@@ -194,10 +194,10 @@ curl -s "https://www.thehear.org/api/country-view/us?at=2026-07-15T12:00:00Z" | 
 ```bash
 #!/bin/bash
 # news_fetch.sh - 个人新闻获取脚本
-
+# ...
 # 配置常用国家
 COUNTRIES=("us" "uk" "germany" "france" "japan" "china")
-
+# ...
 # 获取每个国家的头条
 for country in "${COUNTRIES[@]}"; do
   echo "========== $country =========="
@@ -221,7 +221,7 @@ done
 ```bash
 # 避免频繁调用,建议每次查询间隔至少 10 分钟
 # 个人使用:每天查询 2-3 次即可满足需求
-
+# ...
 # 批量查询时加入延迟
 for country in us uk germany; do
   curl -s "https://www.thehear.org/api/country-view/$country" >> news.json
@@ -234,10 +234,10 @@ done
 ```bash
 # 只提取标题
 curl -s "https://www.thehear.org/api/country-view/us" | jq -r '.headlines[]'
-
+# ...
 # 提取特定来源的新闻
 curl -s "https://www.thehear.org/api/country-view/us" | jq '.sources[] | select(.name | contains("Times"))'
-
+# ...
 # 格式化输出
 curl -s "https://www.thehear.org/api/country-view/us" | jq -r '.sources[] | "\(.name): \(.headline)"'
 ```
@@ -248,7 +248,7 @@ curl -s "https://www.thehear.org/api/country-view/us" | jq -r '.sources[] | "\(.
 # 时间必须是 UTC 格式
 # 正确格式: 2026-07-17T12:00:00Z
 # 错误格式: 2026-07-17 12:00:00
-
+# ...
 # 查询昨天此时
 YESTERDAY=$(date -u -d "yesterday" +"%Y-%m-%dT%H:%M:%SZ")
 curl -s "https://www.thehear.org/api/country-view/us?at=$YESTERDAY" | jq
@@ -283,7 +283,7 @@ curl -s "https://www.thehear.org/api/country-view/us?at=$YESTERDAY" | jq
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | curl | HTTP 工具 | 必需 | 系统自带或通过包管理器安装 |
 | jq | JSON 解析 | 推荐 | 通过包管理器安装(如 `apt install jq`) |
 | thehear API | 新闻数据 | 必需 | 公共 API,无需注册 |
@@ -301,9 +301,8 @@ curl -s "https://www.thehear.org/api/country-view/us?at=$YESTERDAY" | jq
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -41,8 +41,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
-
 # Azure语音转写免费版
 
 ## 概述
@@ -52,7 +53,7 @@ Azure语音转写免费版是一款面向个人用户的轻量级语音转文字
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 批量转写 | 将存储在Blob中的音频文件批量转写为文字 |
 | 多语言支持 | 支持中文、英文等数十种语言识别 |
 | 时间戳输出 | 生成带时间戳的转写结果，便于字幕制作 |
@@ -94,20 +95,20 @@ Azure语音转写免费版是一款面向个人用户的轻量级语音转文字
 ```python
 import os
 from azure.ai.transcription import TranscriptionClient
-
+# ...
 # 初始化客户端
 client = TranscriptionClient(
     endpoint=os.environ["TRANSCRIPTION_ENDPOINT"],
     credential=os.environ["TRANSCRIPTION_KEY"]
 )
-
+# ...
 # 批量转写播客音频
 job = client.begin_transcription(
     name="podcast-episode-01",
     locale="zh-CN",
     content_urls=["https://<storage>.blob.core.windows.net/podcast/episode01.wav"]
 )
-
+# ...
 result = job.result()
 print(f"转写状态: {result.status}")
 print(f"转写内容: {result.transcript}")
@@ -125,9 +126,9 @@ meeting_job = client.begin_transcription(
     content_urls=["https://<storage>.blob.core.windows.net/meetings/meeting.wav"],
     diarization_enabled=False  # 免费版不启用说话人分离
 )
-
+# ...
 result = meeting_job.result()
-
+# ...
 # 输出带时间戳的转写结果
 for segment in result.segments:
     print(f"[{segment.start_time} - {segment.end_time}] {segment.text}")
@@ -144,9 +145,9 @@ subtitle_job = client.begin_transcription(
     locale="zh-CN",
     content_urls=["https://<storage>.blob.core.windows.net/videos/audio_track.wav"]
 )
-
+# ...
 result = subtitle_job.result()
-
+# ...
 # 生成SRT字幕文件
 def generate_srt(segments, output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
@@ -154,14 +155,14 @@ def generate_srt(segments, output_path):
             start = format_timestamp(seg.start_time)
             end = format_timestamp(seg.end_time)
             f.write(f"{i}\n{start} --> {end}\n{seg.text}\n\n")
-
+# ...
 def format_timestamp(seconds):
     hours = int(seconds // 3600)
     minutes = int((seconds % 3600) // 60)
     secs = int(seconds % 60)
     millis = int((seconds % 1) * 1000)
     return f"{hours:02d}:{minutes:02d}:{secs:02d},{millis:03d}"
-
+# ...
 generate_srt(result.segments, "subtitle.srt")
 print("字幕文件已生成: subtitle.srt")
 ```
@@ -204,19 +205,19 @@ export TRANSCRIPTION_KEY="配置值"
 ```python
 import os
 from azure.ai.transcription import TranscriptionClient
-
+# ...
 client = TranscriptionClient(
     endpoint=os.environ["TRANSCRIPTION_ENDPOINT"],
     credential=os.environ["TRANSCRIPTION_KEY"]
 )
-
+# ...
 # 最简转写
 job = client.begin_transcription(
     name="my-audio",
     locale="zh-CN",
     content_urls=["https://<storage>/audio.wav"]
 )
-
+# ...
 result = job.result()
 print(result.transcript)
 ```
@@ -234,7 +235,7 @@ TRANSCRIPTION_KEY=your_subscription_key_here
 ### 支持的语言代码
 
 | 语言 | locale代码 |
-| --- | --- |
+|:-----|:-----|
 | 中文（简体） | `zh-CN` |
 | 中文（繁体） | `zh-TW` |
 | 英语（美国） | `en-US` |
@@ -247,7 +248,7 @@ TRANSCRIPTION_KEY=your_subscription_key_here
 ### 音频格式要求
 
 | 格式 | 推荐采样率 | 说明 |
-| --- | --- | --- |
+|---:|---:|---:|
 | WAV | 16kHz, 16-bit | 推荐格式，无损 |
 | MP3 | 16kHz+ | 有损压缩，兼容性好 |
 | FLAC | 16kHz+ | 无损压缩 |
@@ -294,7 +295,7 @@ TRANSCRIPTION_KEY=your_subscription_key_here
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | azure-ai-transcription | Python SDK | 必需 | `pip install azure-ai-transcription` |
@@ -314,9 +315,8 @@ TRANSCRIPTION_KEY=your_subscription_key_here
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

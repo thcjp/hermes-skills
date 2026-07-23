@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # SQL查询工具(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力分类 | 支持 | 支持 |
-| 专业版 | 不支持 | 支持 |
-| 查询结果缓存 | 不支持 | 支持 |
-| 内存+磁盘多级缓存 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| SQL查询工具(专业版)队与企业的SQL查询 | 不支持 | 支持 |
+| SQL查询工具(专业版)含慢查询采集 | 不支持 | 支持 |
+| SQL查询工具(专业版)跨库SQL转换 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|:-----|:-----|:-----|
 | 查询结果缓存 | 无 | 内存+磁盘多级缓存 |
 | 慢查询采集 | 手动EXPLAIN | 自动采集+告警+调用链 |
 | 跨库SQL转换 | 手动速查表 | 自动语法转换引擎 |
@@ -79,7 +81,7 @@ pricing_model: "per_use"
 
 ```python
 from sql_query_tool import ProFeatures
-
+# ...
 pro = ProFeatures(db)
 pro.slow_query_monitor(threshold_ms=200, alert_webhook_env="OPS_WEBHOOK")
 # 自动采集 >200ms 的查询，推送到运维告警群
@@ -112,7 +114,7 @@ WHERE created_at >= NOW() - INTERVAL '7 days'
 ORDER BY created_at DESC
 LIMIT 100
 """
-
+# ...
 mysql_sql = pro.translate_sql(pg_sql, from_dialect="postgresql", to_dialect="mysql")
 # 自动转换为：DATE_SUB(NOW(), INTERVAL 7 DAY)、JSON_UNQUOTE(JSON_EXTRACT(...))
 ```
@@ -145,7 +147,7 @@ pro.enable_read_write_split(
 
 ```python
 from sql_query_tool import ProFeatures
-
+# ...
 pro = ProFeatures(db)
 pro.enable_cache(backend="memory", ttl_seconds=300)
 pro.slow_query_monitor(threshold_ms=200)
@@ -170,7 +172,7 @@ translated = pro.translate_sql(source_sql, from_dialect="postgresql", to_dialect
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | sql-query处理的内容输入 |,  |
 | content | string | 否 | sql-query处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -198,9 +200,8 @@ translated = pro.translate_sql(source_sql, from_dialect="postgresql", to_dialect
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -212,9 +213,9 @@ translated = pro.translate_sql(source_sql, from_dialect="postgresql", to_dialect
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.8+
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | sqlite3 | CLI工具 | 必需 | 系统自带或官网下载 |
 | psql | CLI工具 | 可选 | `PostgreSQL` 安装包 |
 | mysql | CLI工具 | 可选 | MySQL 客户端安装包 |
@@ -235,20 +236,6 @@ translated = pro.translate_sql(source_sql, from_dialect="postgresql", to_dialect
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -318,9 +305,8 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

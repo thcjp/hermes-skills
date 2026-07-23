@@ -45,13 +45,15 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 代码安全审计员专业版是一款面向企业用户的代码安全审计与SAST(静态应用安全测试)平台。在免费版Top 5 OWASP检查基础上,扩展至Top 10全覆盖,增加AST静态分析自动扫描、TypeScript/Python/Go/Java多语言支持、10+框架安全规则、OWASP ASVS合规等级映射等企业级功能。提供HTML/PDF/SARIF专业审计报告,支持Git Hook持续安全监控。与免费版完全兼容,检查清单和代码示例可无缝复用。
 
 ## 核心能力
 ### 功能矩阵
 | 功能模块 | 描述 | 免费版 | 专业版 |
-|----------|------|--------|--------|
+|----|---|---|---|
 | OWASP覆盖 | 安全类别 | Top 5 | Top 10全覆盖 |
 | 扫描方式 | 检测方法 | 手动清单 | AST自动分析 |
 | 语言支持 | 代码语言 | TypeScript | TS+Python+Go+Java |
@@ -68,7 +70,7 @@ pricing_model: "monthly"
 ### OWASP Top 10全覆盖
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 代码安全审计员(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -131,13 +133,13 @@ python （请参考skill目录中的脚本文件） \
   HIGH: 8
   MEDIUM: 9
   LOW: 3
-
+# ...
 OWASP分布:
   A01 访问控制: 5个问题
   A03 注入:     3个问题
   A07 认证:     4个问题
   ...
-
+# ...
 ASVS合规等级:
   L1 (基础):    82%合规
   L2 (标准):    68%合规
@@ -159,7 +161,7 @@ python （请参考skill目录中的脚本文件） \
 ### 场景三:Git Hook持续监控
 ```bash
 python （请参考skill目录中的脚本文件） --install-hook
-
+# ...
 #!/bin/bash
 python （请参考skill目录中的脚本文件） \
   --files $(git diff --cached --name-only) \
@@ -200,7 +202,7 @@ import json
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List, Dict
-
+# ...
 @dataclass
 class Finding:
     owasp: str
@@ -212,17 +214,17 @@ class Finding:
     issue: str
     fix: str
     asvs: str = ""
-
+# ...
 class ASTSecurityAnalyzer:
     """AST静态安全分析器"""
-
+# ...
     ASVS_MAPPING = {
         "A01": {"L1": "V1.1", "L2": "V4.1", "L3": "V4.2"},
         "A02": {"L1": "V2.1", "L2": "V6.1", "L3": "V6.2"},
         "A03": {"L1": "V5.1", "L2": "V5.2", "L3": "V5.3"},
         "A07": {"L1": "V7.1", "L2": "V7.2", "L3": "V7.3"},
     }
-
+# ...
     FRAMEWORK_RULES = {
         "nextjs": {
             "patterns": [
@@ -253,17 +255,17 @@ class ASTSecurityAnalyzer:
             ]
         }
     }
-
+# ...
     def __init__(self, languages=None, frameworks=None, asvs_level=None):
         self.languages = languages or ["typescript", "python"]
         self.frameworks = frameworks or []
         self.asvs_level = asvs_level
         self.findings: List[Finding] = []
-
+# ...
     def analyze(self, target_path):
         """分析整个项目"""
         target = Path(target_path)
-
+# ...
         for filepath in target.rglob("*"):
             if self._should_scan(filepath):
                 if filepath.suffix == ".py":
@@ -274,17 +276,17 @@ class ASTSecurityAnalyzer:
                     self._analyze_go(filepath)
                 elif filepath.suffix == ".java":
                     self._analyze_java(filepath)
-
+# ...
         return self._generate_report()
-
+# ...
     def _analyze_python(self, filepath):
         """Python AST分析"""
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
                 source = f.read()
-
+# ...
             tree = ast.parse(source, filename=str(filepath))
-
+# ...
             for node in ast.walk(tree):
                 if isinstance(node, ast.Call):
                     if self._is_sql_concat(node, source):
@@ -294,7 +296,7 @@ class ASTSecurityAnalyzer:
                             "字符串拼接SQL查询",
                             "使用参数化查询: cursor.execute('SELECT * FROM users WHERE id = %s', (user_id,))"
                         )
-
+# ...
                     if isinstance(node.func, ast.Name) and node.func.id == "eval":
                         self._add_finding(
                             "A03", "代码注入", "CRITICAL",
@@ -302,7 +304,7 @@ class ASTSecurityAnalyzer:
                             "使用eval()执行动态代码",
                             "移除eval(),使用安全的替代方案"
                         )
-
+# ...
                     if isinstance(node.func, ast.Attribute) and node.func.attr == "loads":
                         if "pickle" in source:
                             self._add_finding(
@@ -311,7 +313,7 @@ class ASTSecurityAnalyzer:
                                 "使用pickle.loads()反序列化",
                                 "使用JSON替代pickle,或验证数据来源"
                             )
-
+# ...
                 if isinstance(node, ast.Assign):
                     for target_node in node.targets:
                         if isinstance(target_node, ast.Name):
@@ -324,17 +326,17 @@ class ASTSecurityAnalyzer:
                                         f"硬编码{name}",
                                         "使用环境变量: os.environ.get('SECRET_KEY')"
                                     )
-
+# ...
         except SyntaxError:
             pass
-
+# ...
     def _analyze_typescript(self, filepath):
         """TypeScript/JavaScript分析"""
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
                 lines = content.split('\n')
-
+# ...
             patterns = [
                 (r"SELECT.*FROM.*\$\{.*\}", "A03", "SQL注入", "CRITICAL", "使用参数化查询"),
                 (r"exec\(`.*\$\{.*\}`\)", "A03", "命令注入", "CRITICAL", "使用execFile参数数组"),
@@ -344,7 +346,7 @@ class ASTSecurityAnalyzer:
                 (r"http://(?!localhost|127\.0\.0\.1)", "A02", "非加密连接", "MEDIUM", "使用HTTPS"),
                 (r"res\.json\(.*password.*\)", "A01", "密码泄露", "HIGH", "从响应中移除敏感字段"),
             ]
-
+# ...
             for pattern, owasp, category, severity, fix in patterns:
                 for match in re.finditer(pattern, content, re.IGNORECASE):
                     line_num = content[:match.start()].count('\n') + 1
@@ -354,54 +356,54 @@ class ASTSecurityAnalyzer:
                         match.group()[:80],
                         fix
                     )
-
+# ...
         except Exception:
             pass
-
+# ...
     def _should_scan(self, filepath):
         """判断是否需要扫描"""
         skip_dirs = {"node_modules", ".git", "dist", "build", "__pycache__", ".venv"}
         skip_files = {".min.js", ".min.css", "package-lock.json"}
-
+# ...
         for skip in skip_dirs:
             if skip in str(filepath):
                 return False
-
+# ...
         for skip in skip_files:
             if skip in filepath.name:
                 return False
-
+# ...
         return filepath.suffix in {".py", ".ts", ".tsx", ".js", ".jsx", ".go", ".java"}
-
+# ...
     def _is_sql_concat(self, node, source):
         """检测SQL字符串拼接"""
         if isinstance(node.func, ast.Attribute) and node.func.attr in ["execute", "query"]:
             if node.args and isinstance(node.args[0], ast.BinOp):
                 return True
         return False
-
+# ...
     def _add_finding(self, owasp, category, severity, filepath, line, source, issue, fix):
         """添加发现项"""
         lines = source.split('\n')
         code = lines[line - 1].strip() if line <= len(lines) else ""
-
+# ...
         asvs = ""
         if self.asvs_level and owasp in self.ASVS_MAPPING:
             asvs = self.ASVS_MAPPING[owasp].get(self.asvs_level, "")
-
+# ...
         self.findings.append(Finding(
             owasp=owasp, category=category, severity=severity,
             file=str(filepath), line=line, code=code[:100],
             issue=issue, fix=fix, asvs=asvs
         ))
-
+# ...
     def _generate_report(self):
         """生成报告"""
         summary = {}
         for f in self.findings:
             key = f"{f.owasp}_{f.severity}"
             summary[key] = summary.get(key, 0) + 1
-
+# ...
         return {
             "total_files_scanned": len(set(f.file for f in self.findings)),
             "total_findings": len(self.findings),
@@ -456,7 +458,7 @@ class ASTSecurityAnalyzer:
 
 ### ASVS合规等级
 | 等级 | 描述 | 适用场景 |
-|------|------|----------|
+|---:|---:|---:|
 | L1 | 基础安全验证 | 小型应用、低风险 |
 | L2 | 标准安全验证 | 企业应用、中等风险 |
 | L3 | 高级安全验证 | 高风险应用、金融/医疗 |
@@ -465,9 +467,9 @@ class ASTSecurityAnalyzer:
 ### 1. 分阶段审计策略
 ```bash
 python （请参考skill目录中的脚本文件） --files $(git diff --name-only) --format text
-
+# ...
 python （请参考skill目录中的脚本文件） --target . --owasp top10 --format html
-
+# ...
 python （请参考skill目录中的脚本文件） --target . --owasp top10 --asvs L2 --format pdf
 ```
 
@@ -492,7 +494,7 @@ python （请参考skill目录中的脚本文件） --target . --owasp top10 --a
 ### 3. 持续监控
 ```bash
 python （请参考skill目录中的脚本文件） --install-hook --fail-on HIGH
-
+# ...
 python （请参考skill目录中的脚本文件） --target . --format sarif --output results.sarif
 ```
 
@@ -523,7 +525,7 @@ A: SARIF是OASIS标准格式,可上传到GitHub Code Scanning、GitLab SAST、Az
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python | 运行时 | 必需 | 系统自带 |
 | ast模块 | 标准库 | 必需 | Python内置 |
 | Node.js | 运行时 | 可选 | nodejs.org(TS分析) |
@@ -544,7 +546,7 @@ A: SARIF是OASIS标准格式,可上传到GitHub Code Scanning、GitLab SAST、Az
 - 边界输入处理: 空输入返回提示信息, 超长输入自动截断
 - 降级策略: 异常时返回默认值, 确保流程不中断
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

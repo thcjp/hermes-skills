@@ -20,6 +20,8 @@ tools:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # 测试驱动编码器
 
@@ -36,7 +38,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 新功能开发 | 需求文档、接口定义 | 失败测试用例 + 实现代码 + 重构后的代码 |
 | Bug 修复 | Bug 描述、复现步骤 | 复现测试 + 修复代码 + 回归测试 |
 | 重构保护 | 现有代码 + 重构目标 | 测试套件 + 重构后代码 + 测试报告 |
@@ -82,7 +84,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 测试驱动编码器处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -166,16 +168,16 @@ pricing_model: "per_use"
 # test_discount.py
 import pytest
 from discount import calculate_discount
-
+# ...
 class TestCalculateDiscount:
     def test_should_return_discounted_price_for_vip_user(self):
         result = calculate_discount(amount=100, is_vip=True)
         assert result == 80  # 100 * 0.8
-
+# ...
     def test_should_return_original_price_for_normal_user(self):
         result = calculate_discount(amount=100, is_vip=False)
         assert result == 100
-
+# ...
     def test_should_return_zero_for_negative_amount(self):
         result = calculate_discount(amount=-50, is_vip=True)
         assert result == 0
@@ -194,13 +196,13 @@ def calculate_discount(amount: float, is_vip: bool) -> float:
 ```python
 # discount.py (Step 3: Refactor - 重构改善)
 from enum import Enum
-
+# ...
 class UserType(Enum):
     VIP = "vip"
     NORMAL = "normal"
-
+# ...
 DISCOUNT_RATES = {UserType.VIP: 0.8, UserType.NORMAL: 1.0}
-
+# ...
 def calculate_discount(amount: float, user_type: UserType) -> float:
     if amount < 0:
         return 0
@@ -220,17 +222,17 @@ def calculate_discount(amount: float, user_type: UserType) -> float:
 // unique.test.ts (Red: 失败测试)
 import { describe, it, expect } from 'vitest';
 import { uniqueBy } from './unique';
-
+// ...
 describe('uniqueBy', () => {
   it('should_remove_duplicates_by_default_key', () => {
     const input = [{ id: 1 }, { id: 2 }, { id: 1 }];
     expect(uniqueBy(input, 'id')).toEqual([{ id: 1 }, { id: 2 }]);
   });
-
+// ...
   it('should_return_empty_array_for_empty_input', () => {
     expect(uniqueBy([], 'id')).toEqual([]);
   });
-
+// ...
   it('should_preserve_first_occurrence', () => {
     const input = [{ id: 1, name: 'A' }, { id: 1, name: 'B' }];
     const result = uniqueBy(input, 'id');
@@ -266,11 +268,11 @@ export function uniqueBy<T>(arr: T[], key: keyof T): T[] {
 **输出**(test-report.md 片段):
 ```markdown
 ## 测试质量审查报告
-
+# ...
 ### 测试金字塔分析
 - 当前比例: 单元 85% / 集成 2% / E2E 13% (倒金字塔倾向)
 - 建议: 减少 E2E 至 5%,增加集成测试至 15%
-
+# ...
 ### 反模式检测
 1. [Critical] 12 个测试依赖执行顺序(测试共享状态)
    - 修复: 每个 Setup 创建独立数据
@@ -279,7 +281,7 @@ export function uniqueBy<T>(arr: T[], key: keyof T): T[] {
    - 修复: Mock 外部依赖
 3. [Medium] 8 个测试断言 Mock 调用次数(脆弱)
    - 修复: 断言行为而非实现
-
+# ...
 ### 覆盖率
 - 行覆盖: 78% (目标 85%)
 - 分支覆盖: 62% (目标 80%)
@@ -289,7 +291,7 @@ export function uniqueBy<T>(arr: T[], key: keyof T): T[] {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 测试框架未安装 | 项目无 pytest/jest | 提示安装命令 `pip install pytest` 或 `npm install -D vitest` |
 | 测试无法编译/运行 | 语法错误或导入错误 | 先修复编译错误,再确认测试因正确原因失败 |
 | 测试间歇性失败 | 测试依赖外部状态(时间/网络/数据库) | Mock 外部依赖,确保测试独立 |
@@ -308,7 +310,7 @@ export function uniqueBy<T>(arr: T[], key: keyof T): T[] {
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | Agent 内置 LLM 提供代码生成 | 通义/文心/智谱 |
 | pytest | 工具 | Python 必需 | `pip install pytest` | 国内 PyPI 镜像 |
 | jest / vitest | 工具 | JS/TS 必需 | `npm install -D vitest` | npmmirror 国内镜像 |
@@ -350,48 +352,48 @@ export function uniqueBy<T>(arr: T[], key: keyof T): T[] {
 # test_password_validator.py
 import pytest
 from password_validator import validate_password
-
+# ...
 class TestValidatePassword:
     def test_should_return_valid_for_strong_password(self):
         is_valid, errors = validate_password("Str0ng!Pass")
         assert is_valid is True
         assert errors == []
-
+# ...
     def test_should_return_error_when_password_too_short(self):
         is_valid, errors = validate_password("Ab1!x")
         assert is_valid is False
         assert "长度不足,至少需要8位" in errors
-
+# ...
     def test_should_return_error_when_no_uppercase(self):
         is_valid, errors = validate_password("str0ng!pass")
         assert is_valid is False
         assert "需包含至少1个大写字母" in errors
-
+# ...
     def test_should_return_error_when_no_lowercase(self):
         is_valid, errors = validate_password("STR0NG!PASS")
         assert is_valid is False
         assert "需包含至少1个小写字母" in errors
-
+# ...
     def test_should_return_error_when_no_digit(self):
         is_valid, errors = validate_password("Strong!Pass")
         assert is_valid is False
         assert "需包含至少1个数字" in errors
-
+# ...
     def test_should_return_error_when_no_special_char(self):
         is_valid, errors = validate_password("Str0ngPass")
         assert is_valid is False
         assert "需包含至少1个特殊字符(!@#$%^&*)" in errors
-
+# ...
     def test_should_return_error_when_contains_space(self):
         is_valid, errors = validate_password("Str0ng! Pass")
         assert is_valid is False
         assert "密码不能包含空格" in errors
-
+# ...
     def test_should_return_multiple_errors_for_weak_password(self):
         is_valid, errors = validate_password("ab")
         assert is_valid is False
         assert len(errors) >= 4  # 长度+大写+数字+特殊字符
-
+# ...
     def test_should_return_valid_for_minimum_acceptable_password(self):
         is_valid, errors = validate_password("Abcdef1!")
         assert is_valid is True
@@ -402,10 +404,10 @@ class TestValidatePassword:
 ```python
 # password_validator.py
 import re
-
+# ...
 def validate_password(password: str, rules: dict = None) -> tuple[bool, list[str]]:
     errors = []
-
+# ...
     if len(password) < 8:
         errors.append("长度不足,至少需要8位")
     if not re.search(r'[A-Z]', password):
@@ -418,7 +420,7 @@ def validate_password(password: str, rules: dict = None) -> tuple[bool, list[str
         errors.append("需包含至少1个特殊字符(!@#$%^&*)")
     if ' ' in password:
         errors.append("密码不能包含空格")
-
+# ...
     return (len(errors) == 0, errors)
 ```
 
@@ -428,20 +430,20 @@ def validate_password(password: str, rules: dict = None) -> tuple[bool, list[str
 import re
 from dataclasses import dataclass, field
 from typing import Callable
-
+# ...
 @dataclass
 class PasswordRule:
     name: str
     error_message: str
     validator: Callable[[str], bool]
-
+# ...
 def _has_uppercase(s): return bool(re.search(r'[A-Z]', s))
 def _has_lowercase(s): return bool(re.search(r'[a-z]', s))
 def _has_digit(s): return bool(re.search(r'\d', s))
 def _has_special(s): return bool(re.search(r'[!@#$%^&*]', s))
 def _no_space(s): return ' ' not in s
 def _min_length_8(s): return len(s) >= 8
-
+# ...
 DEFAULT_RULES = [
     PasswordRule("length", "长度不足,至少需要8位", _min_length_8),
     PasswordRule("uppercase", "需包含至少1个大写字母", _has_uppercase),
@@ -450,7 +452,7 @@ DEFAULT_RULES = [
     PasswordRule("special", "需包含至少1个特殊字符(!@#$%^&*)", _has_special),
     PasswordRule("no_space", "密码不能包含空格", _no_space),
 ]
-
+# ...
 def validate_password(password: str, rules: list[PasswordRule] = None) -> tuple[bool, list[str]]:
     rules = rules or DEFAULT_RULES
     errors = [rule.error_message for rule in rules if not rule.validator(password)]
@@ -477,38 +479,38 @@ def validate_password(password: str, rules: list[PasswordRule] = None) -> tuple[
 // cart.test.ts
 import { describe, it, expect } from 'vitest';
 import { calculateFinalPrice } from './cart';
-
+// ...
 describe('calculateFinalPrice', () => {
   it('should_apply_no_discount_when_subtotal_below_100', () => {
     expect(calculateFinalPrice({ subtotal: 80, isVip: false })).toBe(80);
   });
-
+// ...
   it('should_apply_10_off_when_subtotal_reaches_100', () => {
     expect(calculateFinalPrice({ subtotal: 100, isVip: false })).toBe(90);
   });
-
+// ...
   it('should_apply_25_off_when_subtotal_reaches_200', () => {
     expect(calculateFinalPrice({ subtotal: 200, isVip: false })).toBe(175);
   });
-
+// ...
   it('should_apply_60_off_when_subtotal_reaches_500', () => {
     expect(calculateFinalPrice({ subtotal: 500, isVip: false })).toBe(440);
   });
-
+// ...
   it('should_apply_vip_10_percent_after_tier_discount', () => {
     // 100 - 10 = 90, VIP 9折 = 81
     expect(calculateFinalPrice({ subtotal: 100, isVip: true })).toBe(81);
   });
-
+// ...
   it('should_apply_coupon_on_top_of_tier_and_vip', () => {
     // 200 - 25 = 175, VIP 9折 = 157.5, 优惠券 -15 = 142.5
     expect(calculateFinalPrice({ subtotal: 200, isVip: true, coupon: 15 })).toBe(142.5);
   });
-
+// ...
   it('should_return_zero_when_discounts_exceed_subtotal', () => {
     expect(calculateFinalPrice({ subtotal: 10, isVip: false, coupon: 50 })).toBe(0);
   });
-
+// ...
   it('should_not_apply_tier_discounts_cumulatively', () => {
     // 500时只减60,不减(60+25+10)
     expect(calculateFinalPrice({ subtotal: 500, isVip: false })).toBe(440);
@@ -524,30 +526,30 @@ interface CartInput {
   isVip: boolean;
   coupon?: number;
 }
-
+// ...
 const TIER_DISCOUNTS = [
   { threshold: 500, discount: 60 },
   { threshold: 200, discount: 25 },
   { threshold: 100, discount: 10 },
 ];
-
+// ...
 function getTierDiscount(subtotal: number): number {
   for (const tier of TIER_DISCOUNTS) {
     if (subtotal >= tier.threshold) return tier.discount;
   }
   return 0;
 }
-
+// ...
 export function calculateFinalPrice(input: CartInput): number {
   const { subtotal, isVip, coupon = 0 } = input;
-
+// ...
   const tierDiscount = getTierDiscount(subtotal);
   const afterTier = subtotal - tierDiscount;
-
+// ...
   const afterVip = isVip ? afterTier * 0.9 : afterTier;
-
+// ...
   const final = afterVip - coupon;
-
+// ...
   return Math.max(0, Math.round(final * 100) / 100);
 }
 ```
@@ -570,13 +572,13 @@ export function calculateFinalPrice(input: CartInput): number {
 ```go
 // ratelimiter_test.go
 package ratelimiter
-
+// ...
 import (
 	"sync"
 	"testing"
 	"time"
 )
-
+// ...
 func TestTokenBucketLimiter_Allow_WhenBucketFull(t *testing.T) {
 	limiter := NewTokenBucketLimiter(5, 1) // 容量5,每秒1个
 	for i := 0; i < 5; i++ {
@@ -585,7 +587,7 @@ func TestTokenBucketLimiter_Allow_WhenBucketFull(t *testing.T) {
 		}
 	}
 }
-
+// ...
 func TestTokenBucketLimiter_Deny_WhenBucketEmpty(t *testing.T) {
 	limiter := NewTokenBucketLimiter(2, 1)
 	limiter.Allow()
@@ -594,7 +596,7 @@ func TestTokenBucketLimiter_Deny_WhenBucketEmpty(t *testing.T) {
 		t.Fatal("桶空时应拒绝请求")
 	}
 }
-
+// ...
 func TestTokenBucketLimiter_Refill_AfterWait(t *testing.T) {
 	limiter := NewTokenBucketLimiter(1, 10) // 每秒10个=每100ms 1个
 	limiter.Allow() // 耗尽
@@ -603,12 +605,12 @@ func TestTokenBucketLimiter_Refill_AfterWait(t *testing.T) {
 		t.Fatal("等待150ms后应已补充至少1个令牌")
 	}
 }
-
+// ...
 func TestTokenBucketLimiter_ConcurrentSafety(t *testing.T) {
 	limiter := NewTokenBucketLimiter(100, 1)
 	var wg sync.WaitGroup
 	allowed := make([]bool, 200)
-
+// ...
 	for i := 0; i < 200; i++ {
 		wg.Add(1)
 		go func(idx int) {
@@ -617,7 +619,7 @@ func TestTokenBucketLimiter_ConcurrentSafety(t *testing.T) {
 		}(i)
 	}
 	wg.Wait()
-
+// ...
 	count := 0
 	for _, a := range allowed {
 		if a {
@@ -628,7 +630,7 @@ func TestTokenBucketLimiter_ConcurrentSafety(t *testing.T) {
 		t.Fatalf("并发下允许数%d超过容量100,存在竞态条件", count)
 	}
 }
-
+// ...
 func TestTokenBucketLimiter_TableDriven(t *testing.T) {
 	tests := []struct {
 		name      string
@@ -641,7 +643,7 @@ func TestTokenBucketLimiter_TableDriven(t *testing.T) {
 		{"capacity_10_rate_5", 10, 5, 10, 10},
 		{"capacity_1_rate_1", 1, 1, 3, 1},
 	}
-
+// ...
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			limiter := NewTokenBucketLimiter(tt.capacity, tt.rate)
@@ -663,12 +665,12 @@ func TestTokenBucketLimiter_TableDriven(t *testing.T) {
 ```go
 // ratelimiter.go
 package ratelimiter
-
+// ...
 import (
 	"sync"
 	"time"
 )
-
+// ...
 type TokenBucketLimiter struct {
 	mu         sync.Mutex
 	capacity   int
@@ -676,7 +678,7 @@ type TokenBucketLimiter struct {
 	rate       float64 // 每秒补充令牌数
 	lastRefill time.Time
 }
-
+// ...
 func NewTokenBucketLimiter(capacity int, rate float64) *TokenBucketLimiter {
 	return &TokenBucketLimiter{
 		capacity:   capacity,
@@ -685,11 +687,11 @@ func NewTokenBucketLimiter(capacity int, rate float64) *TokenBucketLimiter {
 		lastRefill: time.Now(),
 	}
 }
-
+// ...
 func (l *TokenBucketLimiter) Allow() bool {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-
+// ...
 	now := time.Now()
 	elapsed := now.Sub(l.lastRefill).Seconds()
 	l.tokens += elapsed * l.rate
@@ -697,7 +699,7 @@ func (l *TokenBucketLimiter) Allow() bool {
 		l.tokens = float64(l.capacity)
 	}
 	l.lastRefill = now
-
+// ...
 	if l.tokens >= 1 {
 		l.tokens--
 		return true
@@ -726,23 +728,23 @@ func (l *TokenBucketLimiter) Allow() bool {
 **LLM生成输出** (`test-audit-report.md`):
 ```markdown
 # 测试审查与补充报告
-
+# ...
 ## 1. 测试金字塔分析
-
+# ...
 ### 当前分布(倒金字塔)
 | 层级 | 数量 | 占比 | 平均耗时 | 目标占比 |
-|:-----|:-----|:-----|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | 单元测试 | 15 | 36% | 800ms | 80% |
 | 集成测试 | 2 | 5% | 3.2s | 15% |
 | E2E测试 | 25 | 60% | 12s | 5% |
-
+# ...
 ### 问题诊断
 - **倒金字塔**: E2E占60%,单元仅36%,与理想80/15/5严重倒挂
 - **单元测试过慢**: 平均800ms(应<100ms),可能包含真实I/O
 - **E2E脆弱**: 25个E2E中间歇性失败,依赖外部环境
-
+# ...
 ## 2. 反模式检测
-
+# ...
 ### [Critical] 8个单元测试包含真实HTTP调用
 ```java
 // 反模式: 单元测试中发起真实HTTP请求
@@ -768,11 +770,11 @@ void should_return_order_when_order_exists() {
     verify(mockRepo).findById("ORD-001");
 }
 ```
-
+# ...
 ### [High] 5个E2E测试依赖执行顺序
 - TestOrderFlow中 `testCreateOrder` 必须先于 `testUpdateOrder` 运行
 - **修复**: 每个测试使用@BeforeEach创建独立订单数据
-
+# ...
 ### [Medium] 3个测试断言Mock调用次数
 ```java
 // 脆弱: 断言实现细节而非行为
@@ -782,9 +784,9 @@ verify(repo, times(2)).save(any()); // 重构后times可能变,测试就挂
 ```java
 assertThat(repository.findAll()).hasSize(1);
 ```
-
+# ...
 ## 3. 测试补充计划(优先级排序)
-
+# ...
 ### P0: 核心业务逻辑(订单计算)
 ```java
 // OrderPriceCalculator 测试 - 金额计算是核心,必须有测试
@@ -831,31 +833,31 @@ class OrderPriceCalculatorTest {
     }
 }
 ```
-
+# ...
 ### P1: 边界条件(库存扣减)
 - 库存为0时下单应抛出InsufficientStockException
 - 并发下单同一商品最后一个库存(乐观锁)
 - 负数数量应拒绝
-
+# ...
 ### P2: 状态机(订单状态流转)
 - PENDING -> PAID -> SHIPPED -> DELIVERED -> COMPLETED
 - 非法流转应拒绝(如 PENDING -> SHIPPED)
 - CANCELLED状态不可逆
-
+# ...
 ## 4. 测试金字塔优化方案
-
+# ...
 ### 短期(1周): 将E2E降级为集成测试
 - 15个E2E实际测的是API层,可降级为@SpringBootTest集成测试
 - 预计: E2E从25→10,集成从2→17
 - 执行时间从15分钟降至6分钟
-
+# ...
 ### 中期(2周): 补充单元测试
 - 优先: OrderPriceCalculator / InventoryService / StateMachine
 - 目标: 单元测试从15→80,覆盖率6.7%→45%
-
+# ...
 ### 长期(1月): 达到目标金字塔
 | 层级 | 目标数量 | 目标占比 | 目标平均耗时 |
-|:-----|:---------|:---------|:-------------|
+|---:|:---|---:|---:|
 | 单元 | 120+ | 80% | <50ms |
 | 集成 | 20+ | 15% | <2s |
 | E2E | 8 | 5% | <15s |

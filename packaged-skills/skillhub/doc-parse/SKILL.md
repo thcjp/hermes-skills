@@ -27,19 +27,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 文档解析工具（专业版）
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 文档解析工具（专业版）通用文档解析 | 不支持 | 支持 |
+| 文档解析工具（专业版）信息提取与OCR识别 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -74,21 +76,11 @@ pricing_model: "per_use"
 
 `识别这张图片中的文字
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：表格识别
 
 从文档中识别和提取表格。**示例指令**：`
 
 `提取这份文档中的表格
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 使用流程
 
@@ -97,7 +89,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -111,7 +103,7 @@ import json
 from typing import List, Dict, Optional
 from pathlib import Path
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class ParsedElement:
     element_type: str  # text, table, image, heading, list
@@ -120,7 +112,7 @@ class ParsedElement:
     bbox: List[float] = field(default_factory=list)
     page: int = 1
     metadata: dict = field(default_factory=dict)
-
+# ...
 @dataclass
 class ParseResult:
     file_path: str
@@ -128,12 +120,12 @@ class ParseResult:
     full_text: str = ""
     tables: List[dict] = field(default_factory=list)
     metadata: dict = field(default_factory=dict)
-
+# ...
 class DocumentParseEngine:
     def __init__(self, api_key: str = None):
         self.api_key = api_key
         self.supported_formats = [".pdf", ".png", ".jpg", ".jpeg", ".tiff", ".bmp"]
-
+# ...
     def parse(self, file_path: str, options: dict = None) -> ParseResult:
         """完整文档解析（PRO 专属：多元素提取）"""
         if options is None:
@@ -145,7 +137,7 @@ class DocumentParseEngine:
         elif ext in [".png", ".jpg", ".jpeg", ".tiff", ".bmp"]:
             result = self._parse_image(file_path, options)
         return result
-
+# ...
     def batch_parse(self, file_paths: List[str],
                    output_dir: str = "./output") -> List[ParseResult]:
         """批量解析（PRO 专属）"""
@@ -157,12 +149,12 @@ class DocumentParseEngine:
             self._export_result(result, str(output_file))
             results.append(result)
         return results
-
+# ...
     def extract_tables(self, file_path: str) -> List[dict]:
         """表格提取（PRO 专属）"""
         result = self.parse(file_path, {"tables_only": True})
         return result.tables
-
+# ...
     def ocr_image(self, image_path: str, lang: str = "chi_sim") -> str:
         """图片OCR（PRO 专属）"""
         try:
@@ -172,7 +164,7 @@ class DocumentParseEngine:
             return pytesseract.image_to_string(img, lang=lang)
         except ImportError:
             return "OCR依赖未安装"
-
+# ...
     def analyze_layout(self, file_path: str) -> dict:
         """版面分析（PRO 专属）"""
         result = self.parse(file_path)
@@ -193,12 +185,12 @@ class DocumentParseEngine:
             elif elem.element_type == "image":
                 layout["image_count"] += 1
         return layout
-
+# ...
     def export_structured(self, result: ParseResult,
                          output_path: str, format: str = "json"):
         """导出结构化数据（PRO 专属）"""
         self._export_result(result, output_path, format)
-
+# ...
     def _parse_pdf(self, file_path: str, options: dict) -> ParseResult:
         result = ParseResult(file_path=file_path)
         try:
@@ -236,7 +228,7 @@ class DocumentParseEngine:
             "elements": len(result.elements)
         }
         return result
-
+# ...
     def _parse_image(self, file_path: str, options: dict) -> ParseResult:
         result = ParseResult(file_path=file_path)
         text = self.ocr_image(file_path)
@@ -247,7 +239,7 @@ class DocumentParseEngine:
         ))
         result.metadata = {"format": "image", "ocr": True}
         return result
-
+# ...
     def _export_result(self, result: ParseResult, output_path: str,
                       format: str = "json"):
         data = {
@@ -259,7 +251,7 @@ class DocumentParseEngine:
         }
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-
+# ...
 engine = DocumentParseEngine()
 result = engine.parse("document.pdf")
 print(f"元素数: {len(result.elements)}")
@@ -278,16 +270,15 @@ print(f"版面: {layout}")
 3. 按照能力描述提供输入参数,执行操作
 4. 查看输出结果,确认任务完成状态
 
-
 ## 输入格式
 
 **优秀轮输入**:
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 
 **第二轮补充(按需)**:
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+| 参数名(续)| 类型 | 必填 | 说明 |
+|----:|----:|----:|----:|
 | content | string | 条件必填 | parse 相关配置参数, 当Doc Parse 核心处理时必填 |
 | content | string | 条件必填 | parse 相关配置参数, 当Doc Parse 智能分析时必填 |
 
@@ -322,9 +313,8 @@ print(f"版面: {layout}")
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -336,11 +326,10 @@ print(f"版面: {layout}")
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.8+
 
-
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | pdfplumber | Python库 | 推荐 | pip install pdfplumber |
 | pytesseract | Python库 | 可选 | pip install pytesseract |
@@ -353,7 +342,6 @@ print(f"版面: {layout}")
 - **分类**: MD+EXEC（）
 - **说明**: 基于Markdown的AI Skill，
 - **版本**: 专业版（v1.0.0 专业版，完整功能+企业级支持）
-
 
 **API Key配置方式**:
 ```bash
@@ -397,7 +385,7 @@ doc_parse:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|---:|:---|---:|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -424,9 +412,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

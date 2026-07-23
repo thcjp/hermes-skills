@@ -34,8 +34,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Vue 组件生成工具(专业版)
 
 ## 概述
@@ -47,7 +48,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力 | 说明 | 是否兼容免费版 |
-| --- | --- | --- |
+|---|---|-------|
 | 单组件生成 | 免费版全部 Composition/Options/TS/SCSS 能力 | 完全兼容 |
 | 企业组件库结构 | 目录、文档、版本管理、barrel 导出 | Pro 新增 |
 | 批量组件生成 | 脚手架脚本一次性生成整套组件 | Pro 新增 |
@@ -121,21 +122,21 @@ src/
 #!/usr/bin/env bash
 # （请参考skill目录中的脚本文件） — 批量生成 Vue 组件
 set -euo pipefail
-
+# ...
 COMPONENTS=(
   "Button" "Input" "Select" "Checkbox" "Radio"
   "Table" "Pagination" "Tag" "Badge"
   "Card" "Modal" "Drawer" "Tooltip"
   "Navbar" "Sidebar" "Breadcrumb"
 )
-
+# ...
 BASE_DIR="src/components"
-
+# ...
 for comp in "${COMPONENTS[@]}"; do
   dir="$BASE_DIR/$comp"
   mkdir -p "$dir"
   comp_kebab=$(echo "$comp" | sed 's/\([A-Z]\)/-\1/g' | tr '[:upper:]' '[:lower:]' | sed 's/^-//')
-
+# ...
   # 组件实现(<script setup lang="ts"> + 可访问性)
   cat > "$dir/$comp.vue" <<EOF
 <template>
@@ -148,31 +149,31 @@ for comp in "${COMPONENTS[@]}"; do
     <slot />
   </component>
 </template>
-
+# ...
 <script setup lang="ts">
 interface Props {
   tag?: string
   disabled?: boolean
 }
-
+# ...
 withDefaults(defineProps<Props>(), {
   tag: 'div',
   disabled: false
 })
 </script>
-
+# ...
 <style scoped lang="scss">
 .${comp_kebab} {
   padding: var(--spacing-4);
   border-radius: var(--radius-md);
   transition: var(--motion-duration-base) var(--motion-ease-in-out);
-
+# ...
   &[aria-disabled="true"] {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
   }
-
+# ...
   &:focus-visible {
     outline: 3px solid var(--color-primary-500);
     outline-offset: 2px;
@@ -180,14 +181,14 @@ withDefaults(defineProps<Props>(), {
 }
 </style>
 EOF
-
+# ...
   # 类型定义
   cat > "$dir/types.ts" <<EOF
 export interface ${comp}Props {
   tag?: string
   disabled?: boolean
 }
-
+# ...
 export interface ${comp}Emits {
   /** 点击事件 */
   (e: 'click', event: MouseEvent): void
@@ -195,13 +196,13 @@ export interface ${comp}Emits {
   (e: 'change', value: string | number): void
 }
 EOF
-
+# ...
   # 单元测试模板
   cat > "$dir/$comp.test.ts" <<EOF
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import ${comp} from './${comp}.vue'
-
+# ...
 describe('${comp}', () => {
   it('应正确渲染默认 slot', () => {
     const wrapper = mount(${comp}, {
@@ -209,7 +210,7 @@ describe('${comp}', () => {
     })
     expect(wrapper.text()).toContain('内容')
   })
-
+# ...
   it('disabled 时应设置 aria-disabled', () => {
     const wrapper = mount(${comp}, {
       props: { disabled: true }
@@ -217,53 +218,53 @@ describe('${comp}', () => {
     expect(wrapper.attributes('aria-disabled')).toBe('true')
     expect(wrapper.attributes('tabindex')).toBe('-1')
   })
-
+# ...
   it('键盘应可聚焦', async () => {
     const wrapper = mount(${comp})
     expect(wrapper.attributes('tabindex')).toBe('0')
   })
 })
 EOF
-
+# ...
   # 文档
   cat > "$dir/README.md" <<EOF
 # ${comp}
-
+# ...
 ## 用法
-
+# ...
 \`\`\`vue
 <template>
   <${comp}>内容</${comp}>
 </template>
-
+# ...
 <script setup lang="ts">
 import { ${comp} } from '@/components/${comp}'
 </script>
 \`\`\`
-
+# ...
 ## Props
-
+# ...
 | 属性 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | tag | string | 'div' | 渲染的 HTML 标签 |
 | disabled | boolean | false | 是否禁用 |
-
+# ...
 ## 可访问性
-
+# ...
 - 默认支持键盘聚焦(tabindex)
 - disabled 状态使用 aria-disabled
 - focus-visible 提供可见焦点样式
 - 对比度符合 WCAG AA
-
+# ...
 ## 测试
-
+# ...
 \`\`\`bash
 npx vitest run src/components/${comp}
 \`\`\`
 EOF
-
+# ...
 done
-
+# ...
 # barrel 导出
 {
   echo "// 自动生成的 barrel 导出"
@@ -272,7 +273,7 @@ done
     echo "export type { ${comp}Props } from './${comp}/types'"
   done
 } > "$BASE_DIR/index.ts"
-
+# ...
 echo "已生成 ${#COMPONENTS[@]} 个组件于 $BASE_DIR/"
 ```
 
@@ -294,7 +295,7 @@ echo "已生成 ${#COMPONENTS[@]} 个组件于 $BASE_DIR/"
     <slot />
   </button>
 </template>
-
+# ...
 <script setup lang="ts">
 interface Props {
   variant?: 'primary' | 'secondary' | 'danger'
@@ -302,24 +303,24 @@ interface Props {
   loading?: boolean
   pressed?: boolean
 }
-
+# ...
 withDefaults(defineProps<Props>(), {
   variant: 'primary',
   disabled: false,
   loading: false,
   pressed: undefined
 })
-
+# ...
 const emit = defineEmits<{
   (e: 'click', event: MouseEvent): void
 }>()
-
+# ...
 const handleClick = (event: MouseEvent) => {
   // disabled 与 loading 状态阻止点击
   // (disabled 由原生 button 处理,loading 需手动阻止)
 }
 </script>
-
+# ...
 <style scoped lang="scss">
 .btn {
   display: inline-flex;
@@ -331,31 +332,31 @@ const handleClick = (event: MouseEvent) => {
   font-size: var(--font-size-base);
   cursor: pointer;
   transition: var(--motion-duration-fast) var(--motion-ease-in-out);
-
+# ...
   // WCAG AA: 焦点可见
   &:focus-visible {
     outline: 3px solid var(--color-primary-500);
     outline-offset: 2px;
   }
-
+# ...
   &--primary {
     background: var(--color-primary-500);
     color: var(--color-neutral-0);
     &:hover { background: var(--color-primary-700); }
   }
-
+# ...
   &--secondary {
     background: var(--color-neutral-100);
     color: var(--color-neutral-900);
     &:hover { background: var(--color-neutral-500); }
   }
-
+# ...
   &--danger {
     background: var(--color-danger-500);
     color: var(--color-neutral-0);
     &:hover { filter: brightness(0.9); }
   }
-
+# ...
   &[disabled],
   &--loading {
     opacity: 0.5;
@@ -386,13 +387,13 @@ const handleClick = (event: MouseEvent) => {
 ```bash
 # 应用设计令牌
 cp tokens.scss src/styles/
-
+# ...
 # 批量生成组件骨架
 bash （请参考skill目录中的脚本文件）
-
+# ...
 # 运行单元测试
 npx vitest run
-
+# ...
 # 启动 Storybook 文档
 npm run storybook
 ```
@@ -410,7 +411,7 @@ on:
   pull_request:
     branches: [main]
     paths: ['src/components/**']
-
+# ...
 jobs:
   quality:
     runs-on: ubuntu-latest
@@ -421,22 +422,22 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
-
+# ...
       - name: 类型检查
         run: npx vue-tsc --noEmit
-
+# ...
       - name: 单元测试
         run: npx vitest run --coverage
-
+# ...
       - name: 可访问性检查
         run: npx vitest run --testNamePattern="可访问性"
-
+# ...
       - name: ESLint 检查
         run: npx eslint src/components --max-warnings=0
-
+# ...
       - name: 构建
         run: npm run build
-
+# ...
       - name: 上传覆盖率
         uses: codecov/codecov-action@v4
 ```
@@ -491,7 +492,7 @@ Pro 版完全兼容免费版的所有单组件输出。个人开发者可继续�
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Vue 3 | npm 包 | 必需 | `npm i vue` |
 | TypeScript | npm 包 | 必需 | `npm i -D typescript` |
 | vue-tsc | npm 包 | 必需 | `npm i -D vue-tsc` |
@@ -516,9 +517,8 @@ Pro 版完全兼容免费版的所有单组件输出。个人开发者可继续�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

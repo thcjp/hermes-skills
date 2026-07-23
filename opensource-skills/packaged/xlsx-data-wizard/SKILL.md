@@ -19,6 +19,8 @@ tools:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
 # Excel数据魔法师
 
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 数据报表生成 | 数据源(JSON/CSV/DB)+ 模板 | 格式化的 Excel 报表 + 图表 |
 | Excel 模板填充 | 模板文件 + 数据 | 填充后的 Excel 文件 |
 | 批量数据处理 | 多个 Excel 文件 + 处理规则 | 合并/拆分/汇总后的 Excel |
@@ -103,7 +105,7 @@ pricing_model: "per_use"
 ## Excel 与 WPS 表格兼容性
 
 | 功能 | Microsoft Excel | WPS 表格 | 兼容性 |
-|:-----|:---------------|:---------|:------|
+|:-----|:-----|:-----|:-----|
 | .xlsx 格式 | 完全支持 | 完全支持 | 100% |
 | 公式 | 全部支持 | 全部支持 | 99% |
 | 图表 | 全部支持 | 基本支持 | 95% |
@@ -119,7 +121,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | Excel数据魔法师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -136,7 +138,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Border, Alignment
 from openpyxl.chart import BarChart, Reference
 import json
-
+# ...
 # 数据
 sales_data = [
     {"product": "产品A", "region": "华东", "amount": 125000},
@@ -144,12 +146,12 @@ sales_data = [
     {"product": "产品A", "region": "华北", "amount": 87000},
     {"product": "产品B", "region": "华北", "amount": 112000},
 ]
-
+# ...
 # 创建工作簿
 wb = Workbook()
 ws = wb.active
 ws.title = "销售月报"
-
+# ...
 # 表头样式
 header_font = Font(name='微软雅黑', size=12, bold=True, color='FFFFFF')
 header_fill = PatternFill(start_color='1a56db', end_color='1a56db', fill_type='solid')
@@ -158,7 +160,7 @@ border = Border(
     left=Side(style='thin'), right=Side(style='thin'),
     top=Side(style='thin'), bottom=Side(style='thin')
 )
-
+# ...
 # 写入表头
 headers = ['产品', '地区', '销售额(元)']
 for col, header in enumerate(headers, 1):
@@ -167,32 +169,32 @@ for col, header in enumerate(headers, 1):
     cell.fill = header_fill
     cell.alignment = center_align
     cell.border = border
-
+# ...
 # 写入数据
 for row_idx, data in enumerate(sales_data, 2):
     ws.cell(row=row_idx, column=1, value=data['product'])
     ws.cell(row=row_idx, column=2, value=data['region'])
     cell = ws.cell(row=row_idx, column=3, value=data['amount'])
     cell.number_format = '#,##0.00'
-
+# ...
 # 汇总公式
 ws.cell(row=len(sales_data)+2, column=1, value='合计')
 ws.cell(row=len(sales_data)+2, column=3, value=f'=SUM(C2:C{len(sales_data)+1})')
 ws.cell(row=len(sales_data)+2, column=3).number_format = '#,##0.00'
-
+# ...
 # 创建柱状图
 chart = BarChart()
 chart.title = "各地区销售额"
 chart.x_axis.title = "产品-地区"
 chart.y_axis.title = "销售额(元)"
-
+# ...
 data_ref = Reference(ws, min_col=3, min_row=1, max_row=len(sales_data)+1)
 cats_ref = Reference(ws, min_col=1, min_row=2, max_row=len(sales_data)+1)
 chart.add_data(data_ref, titles_from_data=True)
 chart.set_categories(cats_ref)
-
+# ...
 ws.add_chart(chart, "E2")
-
+# ...
 # 保存
 wb.save('sales_report.xlsx')
 ```
@@ -210,29 +212,29 @@ wb.save('sales_report.xlsx')
 ```python
 from openpyxl import Workbook, load_workbook
 import os
-
+# ...
 # 创建总表
 merged_wb = Workbook()
 merged_ws = merged_wb.active
 merged_ws.title = "合并销售数据"
-
+# ...
 # 写入表头(添加分公司列)
 headers = ['分公司', '产品', '销售额', '日期']
 for col, h in enumerate(headers, 1):
     merged_ws.cell(row=1, column=col, value=h)
-
+# ...
 # 合并文件
 files = [
     ('branch_beijing.xlsx', '北京'),
     ('branch_shanghai.xlsx', '上海'),
     ('branch_guangzhou.xlsx', '广州'),
 ]
-
+# ...
 current_row = 2
 for filename, branch in files:
     wb = load_workbook(filename)
     ws = wb.active
-
+# ...
     for row in ws.iter_rows(min_row=2, values_only=True):
         if row[0] is None:  # 跳过空行
             continue
@@ -241,13 +243,13 @@ for filename, branch in files:
         merged_ws.cell(row=current_row, column=3, value=row[1])  # 销售额
         merged_ws.cell(row=current_row, column=4, value=row[2])  # 日期
         current_row += 1
-
+# ...
     wb.close()
-
+# ...
 # 添加汇总
 merged_ws.cell(row=current_row+1, column=2, value='总计')
 merged_ws.cell(row=current_row+1, column=3, value=f'=SUM(C2:C{current_row-1})')
-
+# ...
 merged_wb.save('merged_sales.xlsx')
 print(f"合并完成,共 {current_row-2} 条记录")
 ```
@@ -265,37 +267,37 @@ print(f"合并完成,共 {current_row-2} 条记录")
 from openpyxl import load_workbook
 from openpyxl.styles import PatternFill, Font
 from openpyxl.formatting.rule import CellIsRule, DataBarRule
-
+# ...
 wb = load_workbook('sales_data.xlsx')
 ws = wb.active
-
+# ...
 # 范围
 range_str = 'C2:C100'
-
+# ...
 # 规则1: 销售额 > 100000 标绿色
 green_fill = PatternFill(start_color='10b981', end_color='10b981', fill_type='solid')
 ws.conditional_formatting.add(range_str,
     CellIsRule(operator='greaterThan', formula=['100000'], fill=green_fill))
-
+# ...
 # 规则2: 销售额 < 50000 标红色
 red_fill = PatternFill(start_color='ef4444', end_color='ef4444', fill_type='solid')
 ws.conditional_formatting.add(range_str,
     CellIsRule(operator='lessThan', formula=['50000'], fill=red_fill))
-
+# ...
 # 规则3: 数据条可视化
 data_bar = DataBarRule(
     start_type='min', end_type='max',
     color='3b82f6', showValue=True
 )
 ws.conditional_formatting.add(range_str, data_bar)
-
+# ...
 wb.save('sales_formatted.xlsx')
 ```
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | 文件无法打开 | 文件损坏或非 xlsx 格式 | 提示检查文件格式,尝试修复或使用 xlrd(旧 xls) |
 | 数据类型错误 | 文本写入数字单元格 | 显式转换类型,使用 `str()`/`int()`/`float()` |
 | 公式不计算 | openpyxl 不执行公式 | 使用 `data_only=True` 读取,或在 Excel 中打开后保存 |
@@ -316,7 +318,7 @@ wb.save('sales_formatted.xlsx')
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | LLM API | API | 必需 | Agent 内置 LLM | 通义/文心/智谱 |
 | openpyxl | 库 | 必需 | `pip install openpyxl` | 国内 PyPI 镜像 |
 | pandas | 库 | 可选(大数据) | `pip install pandas` | 国内 PyPI 镜像 |
@@ -360,7 +362,7 @@ from openpyxl.styles import Font, PatternFill, Border, Side, Alignment, NamedSty
 from openpyxl.chart import BarChart, Reference
 from openpyxl.utils import get_column_letter
 import json
-
+# ...
 # 数据
 sales_data = [
     {"product": "产品A", "oct": 125000, "nov": 138000, "dec": 156000},
@@ -369,12 +371,12 @@ sales_data = [
     {"product": "产品D", "oct": 65000,  "nov": 71000,  "dec": 78000},
     {"product": "产品E", "oct": 42000,  "nov": 48000,  "dec": 55000},
 ]
-
+# ...
 # 创建工作簿
 wb = Workbook()
 ws = wb.active
 ws.title = "Q4销售月报"
-
+# ...
 # ===== 样式定义 =====
 header_font = Font(name='微软雅黑', size=11, bold=True, color='FFFFFF')
 header_fill = PatternFill(start_color='1a56db', end_color='1a56db', fill_type='solid')
@@ -389,7 +391,7 @@ thin_border = Border(
     top=Side(style='thin', color='e2e8f0'),
     bottom=Side(style='thin', color='e2e8f0')
 )
-
+# ...
 # ===== 写入表头 =====
 headers = ['产品', '10月销售额', '11月销售额', '12月销售额', 'Q4合计', '月均']
 for col, header in enumerate(headers, 1):
@@ -398,7 +400,7 @@ for col, header in enumerate(headers, 1):
     cell.fill = header_fill
     cell.alignment = center_align
     cell.border = thin_border
-
+# ...
 # ===== 写入数据 =====
 for row_idx, data in enumerate(sales_data, 2):
     ws.cell(row=row_idx, column=1, value=data['product']).alignment = center_align
@@ -409,19 +411,19 @@ for row_idx, data in enumerate(sales_data, 2):
     ws.cell(row=row_idx, column=5, value=f'=SUM(B{row_idx}:D{row_idx})').number_format = '¥#,##0.00'
     # 月均公式
     ws.cell(row=row_idx, column=6, value=f'=AVERAGE(B{row_idx}:D{row_idx})').number_format = '¥#,##0.00'
-
+# ...
     # 斑马纹(偶数行底色)
     if row_idx % 2 == 0:
         for col in range(1, 7):
             ws.cell(row=row_idx, column=col).fill = zebra_fill
-
+# ...
     # 边框+对齐
     for col in range(1, 7):
         cell = ws.cell(row=row_idx, column=col)
         cell.border = thin_border
         if col >= 2:
             cell.alignment = right_align
-
+# ...
 # ===== 合计行 =====
 total_row = len(sales_data) + 2
 ws.cell(row=total_row, column=1, value='合计')
@@ -429,22 +431,22 @@ for col in range(2, 7):
     col_letter = get_column_letter(col)
     ws.cell(row=total_row, column=col,
             value=f'=SUM({col_letter}2:{col_letter}{total_row-1})').number_format = '¥#,##0.00'
-
+# ...
 for col in range(1, 7):
     cell = ws.cell(row=total_row, column=col)
     cell.font = total_font
     cell.fill = total_fill
     cell.border = thin_border
     cell.alignment = center_align if col == 1 else right_align
-
+# ...
 # ===== 列宽自适应 =====
 ws.column_dimensions['A'].width = 12
 for col in range(2, 7):
     ws.column_dimensions[get_column_letter(col)].width = 16
-
+# ...
 # ===== 冻结首行 =====
 ws.freeze_panes = 'A2'
-
+# ...
 # ===== 创建柱状图 =====
 chart = BarChart()
 chart.type = "col"
@@ -452,7 +454,7 @@ chart.title = "Q4各产品月度销售额对比"
 chart.x_axis.title = "产品"
 chart.y_axis.title = "销售额(元)"
 chart.style = 10
-
+# ...
 # 数据范围(10-12月,含表头)
 data_ref = Reference(ws, min_col=2, min_row=1, max_col=4, max_row=len(sales_data) + 1)
 cats_ref = Reference(ws, min_col=1, min_row=2, max_row=len(sales_data) + 1)
@@ -460,9 +462,9 @@ chart.add_data(data_ref, titles_from_data=True)
 chart.set_categories(cats_ref)
 chart.width = 20
 chart.height = 12
-
+# ...
 ws.add_chart(chart, "H2")
-
+# ...
 # ===== 保存 =====
 wb.save('q4_sales_report.xlsx')
 print("报表生成: q4_sales_report.xlsx")
@@ -492,24 +494,24 @@ from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
 from openpyxl.formatting.rule import CellIsRule, DataBarRule
 from openpyxl.chart import PieChart, Reference
 from openpyxl.utils import get_column_letter
-
+# ...
 # ===== Step 1: 合并3个分公司文件 =====
 merged_wb = Workbook()
 merged_ws = merged_wb.active
 merged_ws.title = "合并数据"
-
+# ...
 # 表头
 headers = ['来源分公司', '产品ID', '销售数量', '销售日期', '产品名称', '产品类别', '销售金额']
 for col, h in enumerate(headers, 1):
     merged_ws.cell(row=1, column=col, value=h)
-
+# ...
 # 合并文件
 branch_files = [
     ('beijing.xlsx', '北京'),
     ('shanghai.xlsx', '上海'),
     ('guangzhou.xlsx', '广州'),
 ]
-
+# ...
 current_row = 2
 for filename, branch in branch_files:
     wb = load_workbook(filename)
@@ -523,9 +525,9 @@ for filename, branch in branch_files:
         merged_ws.cell(row=current_row, column=4, value=row[2])  # 销售日期
         current_row += 1
     wb.close()
-
+# ...
 total_data_rows = current_row - 1
-
+# ...
 # ===== Step 2: VLOOKUP补充产品信息 =====
 # 加载产品信息到字典
 product_wb = load_workbook('products.xlsx')
@@ -535,7 +537,7 @@ for row in product_ws.iter_rows(min_row=2, values_only=True):
     # row: (产品ID, 产品名称, 产品类别, 单价)
     product_map[row[0]] = {'name': row[1], 'category': row[2], 'price': row[3]}
 product_wb.close()
-
+# ...
 # 写入VLOOKUP公式(引用products.xlsx)或直接填值
 for row_idx in range(2, current_row):
     product_id = merged_ws.cell(row=row_idx, column=2).value
@@ -546,37 +548,37 @@ for row_idx in range(2, current_row):
         quantity = merged_ws.cell(row=row_idx, column=3).value
         price = product_map[product_id]['price']
         merged_ws.cell(row=row_idx, column=7, value=quantity * price).number_format = '¥#,##0.00'
-
+# ...
 # ===== Step 3: 条件格式 =====
 amount_range = f'G2:G{total_data_rows}'
-
+# ...
 # 销售额 > 100000 标绿
 green_fill = PatternFill(start_color='10b981', end_color='10b981', fill_type='solid')
 merged_ws.conditional_formatting.add(amount_range,
     CellIsRule(operator='greaterThan', formula=['100000'], fill=green_fill))
-
+# ...
 # 销售额 < 50000 标红
 red_fill = PatternFill(start_color='ef4444', end_color='ef4444', fill_type='solid')
 merged_ws.conditional_formatting.add(amount_range,
     CellIsRule(operator='lessThan', formula=['50000'], fill=red_fill))
-
+# ...
 # 数据条可视化
 data_bar = DataBarRule(start_type='min', end_type='max', color='3b82f6', showValue=True)
 merged_ws.conditional_formatting.add(amount_range, data_bar)
-
+# ...
 # ===== Step 4: 创建汇总Sheet =====
 summary_ws = merged_wb.create_sheet("地区类别汇总")
-
+# ...
 # 获取所有地区和类别
 branches = ['北京', '上海', '广州']
 categories = sorted(set(p['category'] for p in product_map.values()))
-
+# ...
 # 写入交叉表表头
 summary_ws.cell(row=1, column=1, value='地区\\类别')
 for col_idx, cat in enumerate(categories, 2):
     summary_ws.cell(row=1, column=col_idx, value=cat)
 summary_ws.cell(row=1, column=len(categories) + 2, value='合计')
-
+# ...
 # 写入交叉统计数据
 for row_idx, branch in enumerate(branches, 2):
     summary_ws.cell(row=row_idx, column=1, value=branch)
@@ -592,7 +594,7 @@ for row_idx, branch in enumerate(branches, 2):
     # 行合计
     summary_ws.cell(row=row_idx, column=len(categories) + 2,
         value=f'=SUM(B{row_idx}:{get_column_letter(len(categories)+1)}{row_idx})').number_format = '¥#,##0.00'
-
+# ...
 # 列合计行
 total_row = len(branches) + 2
 summary_ws.cell(row=total_row, column=1, value='合计')
@@ -600,7 +602,7 @@ for col in range(2, len(categories) + 3):
     col_letter = get_column_letter(col)
     summary_ws.cell(row=total_row, column=col,
         value=f'=SUM({col_letter}2:{col_letter}{total_row-1})').number_format = '¥#,##0.00'
-
+# ...
 # 汇总表样式
 header_font = Font(name='微软雅黑', size=11, bold=True, color='FFFFFF')
 header_fill = PatternFill(start_color='1a56db', end_color='1a56db', fill_type='solid')
@@ -609,7 +611,7 @@ for col in range(1, len(categories) + 3):
     cell.font = header_font
     cell.fill = header_fill
     cell.alignment = Alignment(horizontal='center')
-
+# ...
 # ===== Step 5: 饼图(各地区销售占比) =====
 pie = PieChart()
 pie.title = "各地区销售金额占比"
@@ -620,7 +622,7 @@ pie.set_categories(labels)
 pie.width = 12
 pie.height = 8
 summary_ws.add_chart(pie, f'{get_column_letter(len(categories) + 4)}2')
-
+# ...
 merged_wb.save('merged_analysis.xlsx')
 print(f"合并完成: {total_data_rows - 1} 条记录")
 print("文件: merged_analysis.xlsx")
@@ -652,7 +654,7 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.comments import Comment
 from openpyxl.styles import Protection
 from openpyxl.utils import get_column_letter
-
+# ...
 # 员工数据
 employees = [
     {"name": "张三", "dept": "技术部", "kpi": 0.95, "score360": 88, "attendance": 0.98},
@@ -662,11 +664,11 @@ employees = [
     {"name": "钱七", "dept": "运营部", "kpi": 0.88, "score360": 85, "attendance": 0.97},
     # ... 更多员工
 ]
-
+# ...
 wb = Workbook()
 ws = wb.active
 ws.title = "绩效考核"
-
+# ...
 # ===== 样式 =====
 header_font = Font(name='微软雅黑', size=11, bold=True, color='FFFFFF')
 header_fill = PatternFill(start_color='1a56db', end_color='1a56db', fill_type='solid')
@@ -675,7 +677,7 @@ border = Border(
     left=Side(style='thin', color='e2e8f0'), right=Side(style='thin', color='e2e8f0'),
     top=Side(style='thin', color='e2e8f0'), bottom=Side(style='thin', color='e2e8f0')
 )
-
+# ...
 # ===== 表头 =====
 headers = ['姓名', '部门', 'KPI完成率', '360评分', '出勤率', '综合评分', '等级']
 for col, h in enumerate(headers, 1):
@@ -684,37 +686,37 @@ for col, h in enumerate(headers, 1):
     cell.fill = header_fill
     cell.alignment = center
     cell.border = border
-
+# ...
 # ===== 数据写入 =====
 for row_idx, emp in enumerate(employees, 2):
     ws.cell(row=row_idx, column=1, value=emp['name']).alignment = center
     ws.cell(row=row_idx, column=2, value=emp['dept']).alignment = center
-
+# ...
     kpi_cell = ws.cell(row=row_idx, column=3, value=emp['kpi'])
     kpi_cell.number_format = '0.0%'
     kpi_cell.alignment = center
-
+# ...
     score_cell = ws.cell(row=row_idx, column=4, value=emp['score360'])
     score_cell.alignment = center
-
+# ...
     att_cell = ws.cell(row=row_idx, column=5, value=emp['attendance'])
     att_cell.number_format = '0.0%'
     att_cell.alignment = center
-
+# ...
     # 综合评分公式: KPI*40% + 360*40% + 出勤*20%
     # KPI和出勤是百分比,需*100
     ws.cell(row=row_idx, column=6,
         value=f'=C{row_idx}*100*0.4+D{row_idx}*0.4+E{row_idx}*100*0.2'
     ).alignment = center
-
+# ...
     # 等级判定公式
     ws.cell(row=row_idx, column=7,
         value=f'=IF(F{row_idx}>=90,"优秀",IF(F{row_idx}>=75,"良好",IF(F{row_idx}>=60,"合格","不合格")))'
     ).alignment = center
-
+# ...
     for col in range(1, 8):
         ws.cell(row=row_idx, column=col).border = border
-
+# ...
 # ===== Step 1: 部门下拉验证 =====
 dept_validation = DataValidation(
     type="list",
@@ -726,7 +728,7 @@ dept_validation = DataValidation(
 )
 dept_validation.add(f'B2:B{len(employees)+1}')
 ws.add_data_validation(dept_validation)
-
+# ...
 # 评分范围验证(0-100)
 score_validation = DataValidation(
     type="decimal",
@@ -739,7 +741,7 @@ score_validation = DataValidation(
 )
 score_validation.add(f'D2:D{len(employees)+1}')
 ws.add_data_validation(score_validation)
-
+# ...
 # ===== Step 2: 色阶条件格式(综合评分) =====
 score_range = f'F2:F{len(employees)+1}'
 color_scale = ColorScaleRule(
@@ -748,7 +750,7 @@ color_scale = ColorScaleRule(
     end_type='num', end_value=100, end_color='10b981'          # 绿
 )
 ws.conditional_formatting.add(score_range, color_scale)
-
+# ...
 # 等级颜色
 grade_range = f'G2:G{len(employees)+1}'
 ws.conditional_formatting.add(grade_range,
@@ -759,7 +761,7 @@ ws.conditional_formatting.add(grade_range,
     CellIsRule(operator='equal', formula=['"不合格"'],
                fill=PatternFill(start_color='ef4444', end_color='ef4444', fill_type='solid'),
                font=Font(color='FFFFFF', bold=True)))
-
+# ...
 # ===== Step 3: 关键员工批注 =====
 # 为王五(绩效最高)添加批注
 wang_cell = ws.cell(row=4, column=1)
@@ -769,7 +771,7 @@ wang_cell.comment = Comment(
 )
 wang_cell.comment.width = 250
 wang_cell.comment.height = 80
-
+# ...
 # 为赵六(绩效最低)添加批注
 zhao_cell = ws.cell(row=5, column=1)
 zhao_cell.comment = Comment(
@@ -778,25 +780,25 @@ zhao_cell.comment = Comment(
 )
 zhao_cell.comment.width = 250
 zhao_cell.comment.height = 80
-
+# ...
 # ===== Step 4: Sheet保护(仅允许编辑评分列) =====
 # 解锁D列(360评分),其他列锁定
 for row_idx in range(2, len(employees) + 2):
     for col in range(1, 8):
         cell = ws.cell(row=row_idx, column=col)
         cell.protection = Protection(locked=(col != 4))
-
+# ...
 # 启用Sheet保护
 ws.protection.sheet = True
 ws.protection.password = 'hr_protected_2024'
 ws.protection.enable()
-
+# ...
 # 列宽
 for col, width in enumerate([10, 12, 14, 12, 12, 14, 10], 1):
     ws.column_dimensions[get_column_letter(col)].width = width
-
+# ...
 ws.freeze_panes = 'A2'
-
+# ...
 wb.save('performance_review.xlsx')
 print("绩效表生成: performance_review.xlsx")
 ```
@@ -827,9 +829,9 @@ from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
 from openpyxl.chart import PieChart, Reference
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.utils import get_column_letter
-
+# ...
 wb = Workbook()
-
+# ...
 # ===== 公共样式 =====
 title_font = Font(name='微软雅黑', size=14, bold=True, color='FFFFFF')
 title_fill = PatternFill(start_color='1e1b4b', end_color='1e1b4b', fill_type='solid')
@@ -842,17 +844,17 @@ border = Border(
     left=Side(style='thin', color='e2e8f0'), right=Side(style='thin', color='e2e8f0'),
     top=Side(style='thin', color='e2e8f0'), bottom=Side(style='thin', color='e2e8f0')
 )
-
+# ...
 # ===== Sheet1: 收入明细 =====
 ws1 = wb.active
 ws1.title = "收入明细"
-
+# ...
 # 合并标题行
 ws1.merge_cells('A1:D1')
 ws1.cell(row=1, column=1, value='Q4季度收入明细').font = title_font
 ws1.cell(row=1, column=1).fill = title_fill
 ws1.cell(row=1, column=1).alignment = center
-
+# ...
 # 表头
 headers1 = ['产品名称', '销售数量', '单价', '金额']
 for col, h in enumerate(headers1, 1):
@@ -861,7 +863,7 @@ for col, h in enumerate(headers1, 1):
     cell.fill = header_fill
     cell.alignment = center
     cell.border = border
-
+# ...
 # 产品数据
 products = [
     {"name": "企业版SaaS", "qty": 45, "price": 2999},
@@ -869,7 +871,7 @@ products = [
     {"name": "标准版SaaS", "qty": 350, "price": 299},
     {"name": "增值服务", "qty": 80, "price": 500},
 ]
-
+# ...
 for row_idx, p in enumerate(products, 3):
     ws1.cell(row=row_idx, column=1, value=p['name']).alignment = center
     ws1.cell(row=row_idx, column=2, value=p['qty']).alignment = center
@@ -878,7 +880,7 @@ for row_idx, p in enumerate(products, 3):
     ws1.cell(row=row_idx, column=4, value=f'=B{row_idx}*C{row_idx}').number_format = money_fmt
     for col in range(1, 5):
         ws1.cell(row=row_idx, column=col).border = border
-
+# ...
 # 合计行
 total_row1 = len(products) + 3
 ws1.cell(row=total_row1, column=1, value='总收入').alignment = center
@@ -886,7 +888,7 @@ ws1.cell(row=total_row1, column=4, value=f'=SUM(D3:D{total_row1-1})').number_for
 for col in range(1, 5):
     ws1.cell(row=total_row1, column=col).font = Font(bold=True, color='1a56db')
     ws1.cell(row=total_row1, column=col).border = border
-
+# ...
 # 产品名称下拉验证
 product_validation = DataValidation(
     type="list",
@@ -895,15 +897,15 @@ product_validation = DataValidation(
 )
 product_validation.add(f'A3:A{total_row1-1}')
 ws1.add_data_validation(product_validation)
-
+# ...
 # ===== Sheet2: 成本分析 =====
 ws2 = wb.create_sheet("成本分析")
-
+# ...
 ws2.merge_cells('A1:C1')
 ws2.cell(row=1, column=1, value='Q4季度成本分析').font = title_font
 ws2.cell(row=1, column=1).fill = title_fill
 ws2.cell(row=1, column=1).alignment = center
-
+# ...
 headers2 = ['成本项', '金额', '占总收入比']
 for col, h in enumerate(headers2, 1):
     cell = ws2.cell(row=2, column=col, value=h)
@@ -911,7 +913,7 @@ for col, h in enumerate(headers2, 1):
     cell.fill = header_fill
     cell.alignment = center
     cell.border = border
-
+# ...
 costs = [
     {"item": "服务器/云服务", "amount": 85000},
     {"item": "人员薪资", "amount": 320000},
@@ -920,7 +922,7 @@ costs = [
     {"item": "软件许可", "amount": 28000},
     {"item": "其他运营", "amount": 15000},
 ]
-
+# ...
 for row_idx, c in enumerate(costs, 3):
     ws2.cell(row=row_idx, column=1, value=c['item']).alignment = center
     ws2.cell(row=row_idx, column=2, value=c['amount']).number_format = money_fmt
@@ -930,7 +932,7 @@ for row_idx, c in enumerate(costs, 3):
     ).number_format = percent_fmt
     for col in range(1, 4):
         ws2.cell(row=row_idx, column=col).border = border
-
+# ...
 # 成本合计
 total_row2 = len(costs) + 3
 ws2.cell(row=total_row2, column=1, value='总成本').alignment = center
@@ -939,15 +941,15 @@ ws2.cell(row=total_row2, column=3, value=f'=B{total_row2}/收入明细!D{total_r
 for col in range(1, 4):
     ws2.cell(row=total_row2, column=col).font = Font(bold=True, color='1a56db')
     ws2.cell(row=total_row2, column=col).border = border
-
+# ...
 # ===== Sheet3: 利润汇总 =====
 ws3 = wb.create_sheet("利润汇总")
-
+# ...
 ws3.merge_cells('A1:D1')
 ws3.cell(row=1, column=1, value='Q4季度利润汇总').font = title_font
 ws3.cell(row=1, column=1).fill = title_fill
 ws3.cell(row=1, column=1).alignment = center
-
+# ...
 headers3 = ['项目', '金额', '占比', '备注']
 for col, h in enumerate(headers3, 1):
     cell = ws3.cell(row=2, column=col, value=h)
@@ -955,7 +957,7 @@ for col, h in enumerate(headers3, 1):
     cell.fill = header_fill
     cell.alignment = center
     cell.border = border
-
+# ...
 # 利润数据(跨Sheet引用)
 profit_data = [
     {"label": "总收入", "formula": f"=收入明细!D{total_row1}", "note": "Sheet1合计"},
@@ -963,28 +965,28 @@ profit_data = [
     {"label": "毛利润", "formula": f"=B3-B4", "note": "收入-成本"},
     {"label": "利润率", "formula": f"=B5/B3", "note": "毛利润/总收入", "fmt": percent_fmt},
 ]
-
+# ...
 for row_idx, d in enumerate(profit_data, 3):
     ws3.cell(row=row_idx, column=1, value=d['label']).alignment = center
     cell = ws3.cell(row=row_idx, column=2, value=d['formula'])
     cell.number_format = d.get('fmt', money_fmt)
     cell.alignment = center
-
+# ...
     # 占比(除利润率外,其他项占比=金额/总收入)
     if d['label'] != '利润率':
         ws3.cell(row=row_idx, column=3, value=f'=B{row_idx}/B3').number_format = percent_fmt
     ws3.cell(row=row_idx, column=3).alignment = center
-
+# ...
     ws3.cell(row=row_idx, column=4, value=d['note']).alignment = center
     for col in range(1, 5):
         ws3.cell(row=row_idx, column=col).border = border
-
+# ...
 # 利润行高亮
 profit_fill = PatternFill(start_color='d1fae5', end_color='d1fae5', fill_type='solid')
 for col in range(1, 5):
     ws3.cell(row=5, column=col).fill = profit_fill
     ws3.cell(row=5, column=col).font = Font(bold=True, color='10b981')
-
+# ...
 # ===== 饼图: 成本结构 =====
 pie = PieChart()
 pie.title = "Q4成本结构占比"
@@ -995,16 +997,16 @@ pie.set_categories(labels)
 pie.width = 14
 pie.height = 10
 ws3.add_chart(pie, "F2")
-
+# ...
 # 列宽
 for ws, widths in [(ws1, [16, 12, 12, 14]), (ws2, [18, 14, 14]), (ws3, [12, 14, 10, 16])]:
     for col, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(col)].width = w
-
+# ...
 # 冻结首2行
 for ws in [ws1, ws2, ws3]:
     ws.freeze_panes = 'A3'
-
+# ...
 wb.save('q4_financial_report.xlsx')
 print("财务报表生成: q4_financial_report.xlsx")
 print(f"  Sheet1: 收入明细({len(products)}个产品)")

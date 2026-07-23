@@ -20,25 +20,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Figma工作室(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Figma工作室(专业版)支持批量导出 | 不支持 | 支持 |
+| Figma工作室(专业版)Webhook管理 | 不支持 | 支持 |
+| Figma工作室(专业版)设计变更监控 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 能力1：批量并行导出
 | 模式 | 适用场景 | 并发策略 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 单节点导出 | 调试期、单次任务 | 单请求 |
 | 批量节点导出 | 10+节点 | 每批50个，并行下载 |
 | 全文件导出 | 整文件所有节点 | 递归收集+分批请求+8线程下载 |
@@ -56,7 +58,7 @@ def list_webhooks(team_id: str) -> list:
     resp = requests.get(f'{FIGMA_BASE}/teams/{team_id}/webhooks', headers=headers, timeout=30)
     resp.raise_for_status()
     return resp.json().get('webhooks', [])
-
+# ...
 def update_webhook(webhook_id: str, status: str = 'ACTIVE', endpoint: str = None):
     """更新Webhook状态或端点"""
     payload = {'status': status}  # ACTIVE / PAUSED
@@ -67,13 +69,13 @@ def update_webhook(webhook_id: str, status: str = 'ACTIVE', endpoint: str = None
                         json=payload, timeout=30)
     resp.raise_for_status()
     return resp.json()
-
+# ...
 def delete_webhook(webhook_id: str):
     """删除Webhook"""
     resp = requests.delete(f'{FIGMA_BASE}/webhooks/{webhook_id}', headers=headers, timeout=30)
     resp.raise_for_status()
     return resp.status_code == 200
-
+# ...
 def get_webhook_requests(webhook_id: str):
     """查询Webhook请求历史（最近7天）"""
     resp = requests.get(f'{FIGMA_BASE}/webhooks/{webhook_id}/requests', headers=headers, timeout=30)
@@ -88,19 +90,19 @@ def get_webhook_requests(webhook_id: str):
 ```python
 import hashlib, json, time
 from pathlib import Path
-
+# ...
 STATE_FILE = '.figma_watch_state.json'
-
+# ...
 def watch_file_changes(file_key: str, callback_url: str = None):
     """监控Figma文件变更"""
     state = load_state()
     last_version = state.get(file_key, {}).get('version')
-
+# ...
     resp = requests.get(f'{FIGMA_BASE}/files/{file_key}/metadata', headers=headers, timeout=30)
     resp.raise_for_status()
     meta = resp.json()
     current_version = meta['version']
-
+# ...
     if last_version and current_version != last_version:
         change = {
             'file_key': file_key,
@@ -130,11 +132,11 @@ def watch_file_changes(file_key: str, callback_url: str = None):
 def generate_team_asset_report(team_id: str) -> dict:
     """生成团队资产清单报告"""
     report = {'team_id': team_id, 'projects': [], 'libraries': [], 'components': 0, 'styles': 0}
-
+# ...
     resp = requests.get(f'{FIGMA_BASE}/teams/{team_id}/projects', headers=headers, timeout=30)
     resp.raise_for_status()
     projects = resp.json().get('projects', [])
-
+# ...
     for project in projects:
         proj_info = {'name': project['name'], 'id': project['id'], 'files': []}
         resp = requests.get(f'{FIGMA_BASE}/projects/{project["id"]}/files', headers=headers, timeout=30)
@@ -143,15 +145,15 @@ def generate_team_asset_report(team_id: str) -> dict:
         for f in files:
             proj_info['files'].append({'name': f['name'], 'key': f['key'], 'modified': f['last_modified']})
         report['projects'].append(proj_info)
-
+# ...
     resp = requests.get(f'{FIGMA_BASE}/teams/{team_id}/components', headers=headers, timeout=30)
     resp.raise_for_status()
     report['components'] = len(resp.json().get('meta', {}).get('components', []))
-
+# ...
     resp = requests.get(f'{FIGMA_BASE}/teams/{team_id}/styles', headers=headers, timeout=30)
     resp.raise_for_status()
     report['styles'] = len(resp.json().get('meta', {}).get('styles', []))
-
+# ...
     return report
 ```
 
@@ -169,7 +171,7 @@ def tokens_to_tailwind_config(file_key: str) -> str:
     resp = requests.get(f'{FIGMA_BASE}/files/{file_key}/styles', headers=headers, timeout=30)
     resp.raise_for_status()
     styles = resp.json().get('meta', {}).get('styles', [])
-
+# ...
     tokens = {'colors': {}, 'fontSize': {}, 'boxShadow': {}}
     for style in styles:
         node_id = style['node_id']
@@ -177,10 +179,10 @@ def tokens_to_tailwind_config(file_key: str) -> str:
                         headers=headers, params={'ids': node_id}, timeout=30)
         r.raise_for_status()
         node_data = r.json().get('nodes', {}).get(node_id, {}).get('document', {})
-
+# ...
         style_type = style.get('style_type', '').lower()
         name = style['name'].lower().replace(' ', '-')
-
+# ...
         if style_type == 'fill' and 'fills' in node_data:
             fill = node_data['fills'][0]
             if fill.get('type') == 'SOLID':
@@ -219,7 +221,7 @@ def compare_versions(file_key: str, old_version: str, new_version: str) -> dict:
                            headers=headers, params={'version': new_version}, timeout=60)
     old_data = old_resp.json()
     new_data = new_resp.json()
-
+# ...
     def collect_nodes(node, path=''):
         nodes = {}
         if 'id' in node:
@@ -231,17 +233,17 @@ def compare_versions(file_key: str, old_version: str, new_version: str) -> dict:
         for child in node.get('children', []):
             nodes.update(collect_nodes(child, path + '/' + node.get('name', '')))
         return nodes
-
+# ...
     old_nodes = collect_nodes(old_data['document'])
     new_nodes = collect_nodes(new_data['document'])
-
+# ...
     added = {k: v for k, v in new_nodes.items() if k not in old_nodes}
     removed = {k: v for k, v in old_nodes.items() if k not in new_nodes}
     modified = {}
     for k, v in new_nodes.items():
         if k in old_nodes and old_nodes[k] != v:
             modified[k] = {'old': old_nodes[k], 'new': v}
-
+# ...
     return {
         'file_key': file_key,
         'old_version': old_version,
@@ -301,17 +303,17 @@ Agent会按本工具的批量导出模板输出：
 import requests, os, json
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-
+# ...
 FIGMA_TOKEN = os.environ.get('FIGMA_ACCESS_TOKEN', '')
 FIGMA_BASE = 'https://api.figma.com/v1'
 headers = {'X-Figma-Token': FIGMA_TOKEN}
-
+# ...
 def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):
     """批量导出文件所有节点图片并自动下载"""
     resp = requests.get(f'{FIGMA_BASE}/files/{file_key}', headers=headers, timeout=60)
     resp.raise_for_status()
     file_data = resp.json()
-
+# ...
     node_ids = []
     def collect_nodes(node, path=''):
         if 'id' in node:
@@ -320,7 +322,7 @@ def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):
             collect_nodes(child, path + '/' + node.get('name', ''))
     for page in file_data['document']['children']:
         collect_nodes(page)
-
+# ...
     Path(out_dir).mkdir(parents=True, exist_ok=True)
     all_images = {}
     for i in range(0, len(node_ids), 50):
@@ -329,7 +331,7 @@ def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):
         r = requests.get(f'{FIGMA_BASE}/images/{file_key}', headers=headers, params=params, timeout=60)
         r.raise_for_status()
         all_images.update(r.json().get('images', {}))
-
+# ...
     def download_one(node_id: str, url: str):
         if not url:
             return None
@@ -339,13 +341,13 @@ def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):
         r.raise_for_status()
         out_path.write_bytes(r.content)
         return str(out_path)
-
+# ...
     with ThreadPoolExecutor(max_workers=8) as pool:
         futures = [pool.submit(download_one, nid, url) for nid, url in all_images.items()]
         results = [f.result() for f in futures if f.result()]
-
+# ...
     return {'total': len(node_ids), 'downloaded': len(results), 'output_dir': out_dir}
-
+# ...
 result = batch_export_and_download('ABC123xyz', './icons', 'svg')
 print(f"导出完成：{result['downloaded']}/{result['total']} 个图标")
 ```
@@ -368,7 +370,7 @@ def create_figma_webhook(event_type: str, endpoint: str, file_key: str = None, t
                          json=payload, timeout=30)
     resp.raise_for_status()
     return resp.json()
-
+# ...
 webhook = create_figma_webhook(
     event_type='FILE_UPDATE',
     endpoint='https://your-server.com/webhooks/figma',
@@ -381,7 +383,7 @@ print(f"Webhook已创建，ID: {webhook['id']}")
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | figma-studio处理的内容输入 |,  |
 | content | string | 否 | figma-studio处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -409,9 +411,8 @@ print(f"Webhook已创建，ID: {webhook['id']}")
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -424,9 +425,9 @@ print(f"Webhook已创建，ID: {webhook['id']}")
 - **Python**: 3.8+（推荐3.10+）
 - **Node.js**: 16+（若使用Node.js模板）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | requests | Python库 | 必需 | `pip install requests`（HTTP调用） |
 | Figma API | 外部API | 必需 | 需注册Figma账号并创建应用获取凭证 |
@@ -449,9 +450,9 @@ print(f"Webhook已创建，ID: {webhook['id']}")
 ### 示例1：基础用法
 ```
 直接对Agent说：
-
+# ...
 Agent会按本工具的批量导出模板输出：
-
+# ...
 ```python
 import requests, os, json
 from concurrent.futures import ThreadPoolExecutor
@@ -466,49 +467,50 @@ def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):
     # 1. 读取文件所有节点ID
     resp = requests
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1：专业版能导出多少个节点？
 专业版采用分批+并行，实测1000个节点可在5分钟内完成导出与下载。节点数超过1万时建议按页面拆分多次执行，避免单次任务过长。
-
+# ...
 ### Q2：Webhook推送失败如何重试？
 Figma官方对Webhook推送有内置重试机制（失败后间隔递增重试，最多5次）。专业版在服务端也提供失败队列与手动重试接口。Webhook请求历史可在 `/webhooks/{id}/requests` 查询。
-
+# ...
 ### Q3：变更监控的频率如何设置？
 Figma API对单文件的读取有速率限制（每分钟约30次）。专业版默认每5分钟轮询一次，可根据业务需求调整。若需实时性，建议用Webhook而非轮询。
-
+# ...
 ### Q4：团队资源治理需要什么权限？
 需要团队管理员权限。普通成员只能看到自己有权限的项目与文件。专业版的治理脚本会在权限不足时提示具体缺失的权限。
-
+# ...
 ### Q5：设计令牌转Tailwind支持所有令牌类型吗？
 支持颜色、字体大小、阴影、间距四类核心令牌。Figma的网格（Grid）令牌因Tailwind无对应概念，仅输出为注释。自定义令牌（如动画时长）需用专业版的自定义映射功能。
-
+# ...
 ### Q6：版本对比能定位到具体字段变更吗？
 能。专业版的深度对比模式可对比节点的 `fills`、`strokes`、`effects`、`style` 等字段，输出字段级diff。但深度对比需下载两次完整JSON，大文件较慢。
-
+# ...
 ### Q7：专业版与免费版的脚本可以混用吗？
 可以。专业版兼容免费版的所有模板，免费版的单文件读取脚本在专业版环境下可直接运行。反向不兼容：专业版的批量导出、Webhook、团队治理脚本依赖额外库与权限。
-
+# ...
 ### Q8：批量导出时如何处理命名冲突？
 专业版默认用 `node_id` 命名（如 `1_2.svg`），避免重名。若需用节点名命名，开启 `--use-names` 选项，遇到重名自动追加序号（如 `icon.svg`、`icon_2.svg`）。
-
+# ...
 ### Q9：Webhook支持自签名证书吗？
 支持。Figma Webhook端点要求HTTPS，但接受自签名证书。若企业内部用自签名CA，需在Figma Webhook配置中上传CA证书（联系Figma支持）。
-
+# ...
 ### Q10：专业版如何与设计系统CI/CD集成？
 专业版提供GitHub Actions与GitLab CI的集成模板：设计令牌变更后自动提交到代码仓库，触发前端构建。集成流程：Figma变更→Webhook→CI拉取令牌→生成Tailwind配置→提交PR→前端构建。
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
 ## 已知限制
-
+# ...
 - 需要API Key，无Key环境无法使用
+# ...

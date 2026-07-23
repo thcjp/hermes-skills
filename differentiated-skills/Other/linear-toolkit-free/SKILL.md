@@ -42,11 +42,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # Linear 工具箱（免费版）
 
 ## 概述
@@ -56,7 +57,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 任务查询 | 我的任务、待办、紧急 | 个人 |
 | 任务管理 | 创建、评论、状态、优先级 | 单团队 |
 | 站会摘要 | 待办、阻塞、评审、已完成 | 每日 |
@@ -95,7 +96,7 @@ suggested_price: 29.9
 ```bash
 export LINEAR_API_KEY="your-key"
 export LINEAR_DEFAULT_TEAM="TEAM"
-
+# ...
 # 站会摘要：待办、阻塞、评审中、近期完成
 {baseDir}/（请参考skill目录中的脚本文件） standup
 ```
@@ -112,7 +113,7 @@ export LINEAR_DEFAULT_TEAM="TEAM"
 ```bash
 # 取任务对应分支名
 BRANCH=$({baseDir}/（请参考skill目录中的脚本文件） branch TEAM-212)
-
+# ...
 cd /path/to/repo
 git checkout main && git pull origin main
 git worktree add .worktrees/team-212 -b "$BRANCH" origin/main
@@ -147,13 +148,12 @@ git push -u origin "$BRANCH"
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 优先级对照：
 
 | 级别 | 值 | 用途 |
-|:-----|:---|:-----|
+|:-----|:-----|:-----|
 | urgent | 1 | 生产事故、阻塞 |
 | high | 2 | 本周、重要 |
 | medium | 3 | 本迭代 |
@@ -203,13 +203,13 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 ```bash
 # 更新状态
 {baseDir}/（请参考skill目录中的脚本文件） update TEAM-123 --status "In Progress"
-
+# ...
 # 设置优先级
 {baseDir}/（请参考skill目录中的脚本文件） update TEAM-123 --priority urgent
-
+# ...
 # 指派
 {baseDir}/（请参考skill目录中的脚本文件） assign TEAM-123 用户名
-
+# ...
 # 添加评论
 {baseDir}/（请参考skill目录中的脚本文件） comment TEAM-123 "已复现，预计今日修复"
 ```
@@ -222,14 +222,14 @@ A：你的待办、团队阻塞项、评审中、近期完成。
   TEAM-101 修复登录超时 [进行中]
   TEAM-105 优化首页加载 [待办]
   ...
-
+# ...
 团队阻塞项（2）:
   TEAM-108 等待设计稿（@设计师）
   TEAM-112 依赖后端接口（@后端）
-
+# ...
 评审中（3）:
   TEAM-100 PR #234 待评审
-
+# ...
 近期完成（4）:
   TEAM-095 登录页重构 ✓
   ...
@@ -265,7 +265,7 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | curl | 命令行工具 | 必需 | 系统包管理器 |
 | jq | JSON 处理 | 推荐 | 系统包管理器 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -281,9 +281,8 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -39,6 +39,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 图表生成器(专业版)
 
@@ -58,7 +60,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|----|---|---|
 | 基础图表类型（13种）| ✅ | ✅ |
 | ASCII/HTML/SVG输出 | ✅ | ✅ |
 | 批量生成（>10张/次）| ❌ | ✅ |
@@ -205,25 +207,25 @@ chart.sh batch --config weekly.yaml --output ./weekly/
 # weekly-report.yaml
 output_dir: ./weekly-{{date}}
 theme: corporate-vi
-
+# ...
 datasources:
   - name: sales_db
     type: postgresql
     dsn: "${SALES_DB_DSN}"
-
+# ...
 tasks:
   - name: 季度销售柱状图
     type: svg-bar
     source: sales_db
     query: "SELECT quarter, amount FROM sales_summary"
     output: q-sales.svg
-
+# ...
   - name: 渠道分布饼图
     type: svg-pie
     source: sales_db
     query: "SELECT channel, share FROM channel_share"
     output: channel-pie.svg
-
+# ...
   - name: 月度趋势折线
     type: svg-line
     source: sales_db
@@ -234,7 +236,7 @@ tasks:
 ### 数据源连接示例
 
 | 数据源类型 | 连接字符串格式 | 示例 |
-|-----------|---------------|------|
+|:------|:------|:------|
 | `PostgreSQL` | `postgresql://user:pass@host:5432/db` | `postgresql://analyst:pwd@10.0.0.1/sales` |
 | MySQL | `mysql://user:pass@host:3306/db` | `mysql://analyst:pwd@10.0.0.1/sales` |
 | SQLite | `sqlite:///path/to/db.sqlite` | `sqlite:///data/metrics.sqlite` |
@@ -272,7 +274,7 @@ tasks:
 ## 错误处理
 
 | 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
-|------|---------|---------|--------|
+|------:|------:|------:|------:|
 | 数据源连接超时 | 网络/防火墙 | 检查DSN、网络可达性、超时配置 | P0 |
 | 批量任务卡住 | 长查询阻塞 | 查看`--timeout`配置，启用`--checkpoint` | P1 |
 | 图表渲染空白 | 数据为空或字段不匹配 | 检查SQL返回列名与图表配置是否一致 | P1 |
@@ -325,7 +327,7 @@ A：支持下钻、过滤联动、时间范围切换、图表缩放、数据点t
 ## 版本升级迁移指南
 
 | 版本 | 变更 | 迁移建议 |
-|------|------|---------|
+|:---:|:---:|:---:|
 | 0.x → 1.0 | 配置文件格式重写 | 使用`chart.sh migrate-config v0-to-v1`自动迁移 |
 | 1.0 → 1.1 | 主题字段扩展 | 兼容旧主题文件，新字段为可选 |
 | 1.1 → 1.2 | 新增数据源类型 | 无需迁移，旧配置可直接使用 |
@@ -371,7 +373,7 @@ chart.sh batch --config weekly.yaml --output ./charts/ \
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | ¥0 | 核心图表类型+ASCII/HTML/SVG输出 | 个人试用、快速可视化 |
 | 收费专业版 | ¥29.9/月 | 全功能+批量+主题+数据源+仪表盘+导出+模板库+优先支持 | 团队/企业批量可视化 |
 
@@ -387,7 +389,7 @@ chart.sh batch --config weekly.yaml --output ./charts/ \
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Bash | 运行时 | 必需 | 系统自带 |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | `PostgreSQL`客户端 | 命令行工具 | 可选 | `apt install postgresql-client` |

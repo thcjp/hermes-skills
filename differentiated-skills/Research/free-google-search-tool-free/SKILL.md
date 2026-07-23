@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 > **搜索、解析、筛选、导出。四步完成Google搜索与结果处理。**
 
 无需API Key，通过浏览器自动化方式即可执行Google搜索，解析结果，提取关键信息。免费版聚焦轻量场景，让免费搜索触手可及。
@@ -31,7 +32,7 @@ suggested_price: 29.9
 
 ### 核心定位
 | 维度 | 免费版能力 |
-|------|------------|
+|---|-----|
 | 浏览器自动化搜索 | 支持 |
 | 结果解析 | 支持（标题/URL/摘要） |
 | 基础筛选 | 支持（按关键词） |
@@ -47,7 +48,7 @@ suggested_price: 29.9
 ### 1. 浏览器自动化搜索
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 谷歌搜索(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -55,14 +56,14 @@ suggested_price: 29.9
 ```python
 import subprocess
 import json
-
+# ...
 class GoogleSearcher:
     """Google搜索器（免费版）"""
-
+# ...
     def __init__(self, script_path="（请参考skill目录中的脚本文件）"):
         self.script_path = script_path
         self.runtime = self._detect_runtime()
-
+# ...
     def _detect_runtime(self):
         """检测JS运行时"""
         for runtime in ["bun", "node"]:
@@ -70,11 +71,11 @@ class GoogleSearcher:
             if result.returncode == 0:
                 return runtime
         return "node"
-
+# ...
     def search(self, query, num_results=10, language="zh-CN", timeout=30):
         """执行Google搜索"""
         print(f"搜索：{query}（语言：{language}，结果数：{num_results}）")
-
+# ...
         cmd = [
             self.runtime, self.script_path,
             "--query", query,
@@ -83,26 +84,26 @@ class GoogleSearcher:
             "--timeout", str(timeout),
             "--format", "json"
         ]
-
+# ...
         try:
             result = subprocess.run(
                 cmd, capture_output=True, text=True,
                 timeout=timeout + 10, encoding="utf-8"
             )
-
+# ...
             if result.returncode != 0:
                 return {"success": False, "error": result.stderr}
-
+# ...
             results = json.loads(result.stdout)
             return {"success": True, "results": results, "query": query}
-
+# ...
         except subprocess.TimeoutExpired:
             return {"success": False, "error": "搜索超时"}
         except json.JSONDecodeError:
             return {"success": False, "error": "解析失败"}
         except Exception as e:
             return {"success": False, "error": str(e)}
-
+# ...
 searcher = GoogleSearcher()
 result = searcher.search("人工智能最新进展", num_results=10)
 if result.get("success"):
@@ -129,15 +130,11 @@ else:
 
 ### 3. 基础筛选
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供基础筛选所需的指令和必要参数。
 **处理**: 解析基础筛选的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回基础筛选的响应数据,包含状态码、结果和日志。
 
 ### 4. 结果导出
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供结果导出所需的指令和必要参数。
 **处理**: 解析结果导出的输入参数,完成核心逻辑,返回结构化响应。
@@ -151,7 +148,7 @@ else:
 ```python
 searcher = GoogleSearcher()
 parser = SearchResultParser()
-
+# ...
 result = searcher.search("Python 异步编程教程", num_results=5)
 if result.get("success"):
     parsed = parser.parse_results(result["results"])
@@ -166,19 +163,19 @@ searcher = GoogleSearcher()
 parser = SearchResultParser()
 filterer = ResultFilter()
 exporter = ResultExporter()
-
+# ...
 queries = ["机器学习入门", "深度学习教程", "神经网络原理"]
 all_results = []
-
+# ...
 for query in queries:
     result = searcher.search(query, num_results=10)
     if result.get("success"):
         parsed = parser.parse_results(result["results"])
         all_results.extend(parsed)
-
+# ...
 unique = filterer.deduplicate(all_results)
 print(f"共收集 {len(unique)} 条独特结果")
-
+# ...
 exporter.export_markdown(unique, query="机器学习研究资料")
 ```
 
@@ -189,7 +186,7 @@ exporter.export_markdown(unique, query="机器学习研究资料")
 searcher = GoogleSearcher()
 parser = SearchResultParser()
 filterer = ResultFilter()
-
+# ...
 result = searcher.search("Python 'ConnectionError' 解决方法 site:stackoverflow.com", num_results=5)
 if result.get("success"):
     parsed = parser.parse_results(result["results"])
@@ -210,7 +207,7 @@ if result.get("success"):
 ### 30秒上手
 ```bash
 node （请参考skill目录中的脚本文件） "人工智能" --num 10 --format json
-
+# ...
 bun （请参考skill目录中的脚本文件） "人工智能" --num 10 --format json
 ```
 
@@ -218,14 +215,14 @@ bun （请参考skill目录中的脚本文件） "人工智能" --num 10 --forma
 ```bash
 npm install playwright
 npx playwright install chromium
-
+# ...
 node --version
 node -e "require('playwright')" && echo "Playwright已安装"
-
+# ...
 node （请参考skill目录中的脚本文件） "Python教程" --num 10 --format json > results.json
-
+# ...
 cat results.json | python3 -m json.tool | head -50
-
+# ...
 python3 export.py --input results.json --format markdown --output results.md
 ```
 
@@ -234,7 +231,7 @@ python3 export.py --input results.json --format markdown --output results.md
 ### 基础配置
 ```python
 import os
-
+# ...
 class GoogleSearchConfig:
     """谷歌搜索配置（免费版）"""
     SCRIPT_PATH = os.getenv("GS_SCRIPT_PATH", "（请参考skill目录中的脚本文件）")
@@ -243,7 +240,7 @@ class GoogleSearchConfig:
     DEFAULT_LANG = os.getenv("GS_DEFAULT_LANG", "zh-CN")
     TIMEOUT = int(os.getenv("GS_TIMEOUT", "30"))
     OUTPUT_DIR = os.getenv("GS_OUTPUT_DIR", "./output")
-
+# ...
     @classmethod
     def show(cls):
         print("=== 谷歌搜索配置 ===")
@@ -252,7 +249,7 @@ class GoogleSearchConfig:
         print(f"默认结果数：{cls.DEFAULT_NUM}")
         print(f"默认语言：{cls.DEFAULT_LANG}")
         print(f"超时时间：{cls.TIMEOUT}s")
-
+# ...
 GoogleSearchConfig.show()
 ```
 
@@ -283,7 +280,7 @@ SEARCH_OPERATORS = {
     'OR': '或者（如 Python OR Java）',
     '..': '数字范围（如 2020..2024）',
 }
-
+# ...
 query = "Python async site:stackoverflow.com -广告"
 ```
 
@@ -317,7 +314,7 @@ def safe_search(query, max_retries=2):
 ```
 
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|---:|---:|---:|---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -346,7 +343,7 @@ def safe_search(query, max_retries=2):
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Node.js 16+ | 运行时 | 二选一 | 官网下载安装 |
 | Bun 1.0+ | 运行时 | 二选一 | `curl -fsSL https://bun.sh/install \| bash` |
 | Playwright | npm包 | 必需 | `npm install playwright` |

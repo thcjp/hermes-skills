@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
-
 # 接口魔法生成工具（免费版）
 
 本工具为Java后端开发者提供基于magic-api框架的接口快速生成能力。免费版覆盖核心场景：脚本编写、CRUD映射、条件查询、基础认证，可快速搭建原型与内部工具接口。
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力分类 | 说明 |
-|---------|------|
+|----|---|
 | 脚本编写 | Web UI在线编辑，实时调试，所见即所得 |
 | 请求映射 | 自动映射GET/POST/PUT/DELETE四类HTTP方法 |
 | 内置对象 | request、path、body、db、cache、log、response |
@@ -104,7 +105,7 @@ suggested_price: 29.9
 ```yaml
 server:
   port: 9999
-
+# ...
 magic-api:
   web: /magic/web              # Web UI 入口
   resource:
@@ -128,7 +129,7 @@ return user ? {code: 200, data: user} : {code: 404, msg: "用户不存在"};
 ### 内置对象速查表
 
 | 对象 | 说明 | 示例 |
-|------|------|------|
+|:-----|:-----|:-----|
 | `request` | HTTP请求参数 | `request.name` |
 | `path` | URL路径参数 | `path.id` |
 | `body` | 请求体JSON | `body.name` |
@@ -142,23 +143,23 @@ return user ? {code: 200, data: user} : {code: 404, msg: "用户不存在"};
 ```javascript
 // 查询列表
 var list = db.select("select * from user where status = ?", 1);
-
+// ...
 // 查询单条
 var user = db.selectOne("select * from user where id = ?", id);
-
+// ...
 // 查询单值
 var count = db.selectValue("select count(*) from user");
-
+// ...
 // 分页查询
 var page = db.page("select * from user", 1, 10);
 // 返回: {list: [...], total: 100, pageSize: 10, pageNumber: 1}
-
+// ...
 // 插入并返回自增ID
 var id = db.insert("user", {name: "张三", age: 25}, true);
-
+// ...
 // 更新
 db.update("user", {name: "李四"}, "id = ?", 1);
-
+// ...
 // 删除
 db.delete("user", "id = ?", 1);
 ```
@@ -177,15 +178,15 @@ db.transaction(() => {
 ```javascript
 // GET /api/user - 查询列表
 return {code: 200, data: db.select("select * from user")};
-
+// ...
 // POST /api/user - 新增
 var id = db.insert("user", body, true);
 return {code: 200, data: {id: id}, msg: "创建成功"};
-
+// ...
 // PUT /api/user/:id - 更新
 db.update("user", body, "id = ?", path.id);
 return {code: 200, msg: "更新成功"};
-
+// ...
 // DELETE /api/user/:id - 删除
 db.delete("user", "id = ?", path.id);
 return {code: 200, msg: "删除成功"};
@@ -196,7 +197,7 @@ return {code: 200, msg: "删除成功"};
 ```javascript
 var sql = "select * from user where 1=1";
 var params = [];
-
+// ...
 if (request.name) {
     sql += " and name like ?";
     params.push("%" + request.name + "%");
@@ -205,7 +206,7 @@ if (request.status) {
     sql += " and status = ?";
     params.push(request.status);
 }
-
+// ...
 return db.select(sql, ...params);
 ```
 
@@ -217,11 +218,11 @@ var user = db.selectOne("select * from user where username = ?", body.username);
 if (!user || user.password != body.password) {
     return {code: 401, msg: "用户名或密码错误"};
 }
-
+// ...
 var token = generateToken(user.id);
 cache.set("token:" + token, user.id, 86400);
 return {code: 200, data: {token: token, user: user}};
-
+// ...
 // 认证拦截（放在需要登录的接口开头）
 var token = request.header("Authorization");
 var userId = cache.get("token:" + token);
@@ -235,7 +236,7 @@ if (!userId) return {code: 401, msg: "请先登录"};
 ```javascript
 // 正确：使用?占位符
 db.select("select * from user where id = ?", id);
-
+// ...
 // 错误：字符串拼接，有SQL注入风险
 db.select("select * from user where id = " + id);
 ```
@@ -300,7 +301,7 @@ A：通过`import`语句引入Java类，或在Spring容器中注册为Bean后通
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | JDK | 运行时 | 必需 | adoptium.net 官方下载 |
 | Maven | 构建工具 | 必需 | maven.apache.org 官方下载 |
 | magic-api-spring-boot-starter | Java依赖 | 必需 | Maven中央仓库 |
@@ -318,9 +319,8 @@ A：通过`import`语句引入Java类，或在Spring容器中注册为Bean后通
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -16,11 +16,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
-
 # API脚手架生成器（免费版）
 
 > **把"新项目起样板代码"从两小时压缩到一分钟。资源名→CRUD+认证+测试+Mock，全套脚手架。**
@@ -45,7 +46,7 @@ Agent输出可运行的Express路由代码：
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | API脚手架生成器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -54,11 +55,11 @@ Agent输出可运行的Express路由代码：
 // routes/user.routes.js
 const express = require('express');
 const router = express.Router();
-
+// ...
 // 内存存储（生产环境替换为数据库）
 const users = new Map();
 let nextId = 1;
-
+// ...
 /**
  * GET /users - 获取用户列表
  * @query {number} page - 页码，默认1
@@ -76,7 +77,7 @@ router.get('/', (req, res) => {
     data: { total: allUsers.length, page, page_size: pageSize, list }
   });
 });
-
+// ...
 /**
  * GET /users/:id - 获取单个用户
  * @param {number} id - 用户ID
@@ -88,7 +89,7 @@ router.get('/:id', (req, res) => {
   }
   res.json({ code: 0, message: 'success', data: user });
 });
-
+// ...
 /**
  * POST /users - 创建用户
  * @body {string} name - 用户名（必填）
@@ -103,7 +104,7 @@ router.post('/', (req, res) => {
   users.set(user.id, user);
   res.status(201).json({ code: 0, message: 'success', data: user });
 });
-
+// ...
 /**
  * PUT /users/:id - 全量更新用户
  */
@@ -118,7 +119,7 @@ router.put('/:id', (req, res) => {
   users.set(id, updated);
   res.json({ code: 0, message: 'success', data: updated });
 });
-
+// ...
 /**
  * DELETE /users/:id - 删除用户
  */
@@ -130,7 +131,7 @@ router.delete('/:id', (req, res) => {
   users.delete(id);
   res.status(204).send();
 });
-
+// ...
 module.exports = router;
 ```
 
@@ -140,7 +141,7 @@ module.exports = router;
 // tests/user.test.js
 const request = require('supertest');
 const app = require('../app');
-
+// ...
 describe('用户接口', () => {
   describe('POST /users', () => {
     it('应成功创建用户', async () => {
@@ -152,7 +153,7 @@ describe('用户接口', () => {
       expect(res.body.data.id).toBeDefined();
       expect(res.body.data.name).toBe('张三');
     });
-
+// ...
     it('应拒绝缺必填字段', async () => {
       const res = await request(app)
         .post('/users')
@@ -161,7 +162,7 @@ describe('用户接口', () => {
       expect(res.body.code).toBe(1001);
     });
   });
-
+// ...
   describe('GET /users/:id', () => {
     it('应返回存在的用户', async () => {
       const created = await request(app)
@@ -171,7 +172,7 @@ describe('用户接口', () => {
       expect(res.status).toBe(200);
       expect(res.body.data.name).toBe('王五');
     });
-
+// ...
     it('应对不存在的用户返回404', async () => {
       const res = await request(app).get('/users/99999');
       expect(res.status).toBe(404);
@@ -185,7 +186,7 @@ describe('用户接口', () => {
 ### 功能1：RESTful CRUD端点生成
 
 | 命令 | 资源名 | 输出 |
-|------|--------|------|
+|:-----|:-----|:-----|
 | `rest user` | user | 5个端点（GET列表/GET详情/POST创建/PUT更新/DELETE删除） |
 | `rest order` | order | 5个端点 + 订单特有字段（amount/status/items） |
 | `rest product` | product | 5个端点 + 产品特有字段（sku/price/stock） |
@@ -219,31 +220,31 @@ type Product {
   created_at: DateTime!
   updated_at: DateTime
 }
-
+# ...
 input CreateProductInput {
   sku: String!
   name: String!
   price: Float!
   stock: Int!
 }
-
+# ...
 input UpdateProductInput {
   name: String
   price: Float
   stock: Int
 }
-
+# ...
 type Query {
   products(page: Int = 1, pageSize: Int = 20): ProductPage!
   product(id: ID!): Product
 }
-
+# ...
 type Mutation {
   createProduct(input: CreateProductInput!): Product!
   updateProduct(id: ID!, input: UpdateProductInput!): Product!
   deleteProduct(id: ID!): Boolean!
 }
-
+# ...
 type ProductPage {
   total: Int!
   page: Int!
@@ -264,7 +265,7 @@ type ProductPage {
 ```javascript
 // auth/jwt.js - JWT认证中间件
 const jwt = require('jsonwebtoken');
-
+// ...
 function authJWT(secret) {
   return (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -334,7 +335,7 @@ async function authOAuth2(introspectUrl) {
 每个生成的CRUD端点自动配套测试：
 
 | 测试类型 | 覆盖场景 | 断言重点 |
-|----------|----------|----------|
+|---:|---:|---:|
 | 正向测试 | 创建→查询→更新→删除全流程 | 状态码、响应体、字段值 |
 | 边界测试 | 空body、超长字段、非法类型 | 400错误码 |
 | 鉴权测试 | 无Token、过期Token、无效Token | 401错误码 |
@@ -426,7 +427,7 @@ api-scaffold-gen mock user --port 3000
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
 | Node.js 18+ | 运行时 | Node.js项目必需 | 从nodejs.org安装 |
 | Python 3.9+ | 运行时 | Python项目必需 | 从python.org安装 |
@@ -487,9 +488,8 @@ api-scaffold-gen mock user --port 3000
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

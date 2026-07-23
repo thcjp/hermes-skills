@@ -21,6 +21,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Photo Captions Free
 
@@ -28,11 +30,10 @@ homepage: "https://skillhub.cn"
 
 若用户给出器材信息，在合适的平台自然嵌入；不要凭空编造用户没提供的器材细节。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 摄影配文免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -45,7 +46,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -150,9 +151,9 @@ Instagram 输出：
 
 ```
 Amboy 加油站在黄昏前彻底安静下来，66 号公路上的车声也退到远处。
-
+# ...
 Canon EOS 1V · Kodak Portra 400
-
+# ...
 #filmphotography #route66 #mohavedesert #portra400 #americana
 ```
 
@@ -160,7 +161,7 @@ Reddit 输出：
 
 ```
 标题: Abandoned gas station off Route 66, Amboy CA [Canon EOS 1V, Portra 400]
-
+# ...
 评论: 在 Amboy 停了二十分钟，等一队房车过去。Portra 400 在黄昏前那种青蓝里很稳，没换 800 是对的。发到 r/analog 与 r/LandscapePhotography 都合适。
 ```
 
@@ -222,9 +223,8 @@ VSCO 是安静画廊，受众讨厌器材讨论，认为那是技术炫耀而非
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

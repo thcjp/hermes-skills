@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 节点工作工具（免费版）
 
 ## 概述
@@ -56,7 +57,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 节点初始化 | 环境配置与钱包创建 | 单节点 |
 | 任务执行 | 接收并完成单条任务 | 单任务 |
 | 钱包查询 | 余额与地址查看 | 只读 |
@@ -96,11 +97,11 @@ suggested_price: 29.9
 # 依赖说明
 corepack enable
 yarn install
-
+# ...
 # 配置环境
 cp .env.example .env
 # 填入 RPC_URL、OPERATE_PASSWORD、GEMINI_API_KEY 等
-
+# ...
 # 运行初始化向导
 yarn setup
 ```
@@ -110,7 +111,7 @@ yarn setup
 ```bash
 # 单任务测试
 yarn worker --single
-
+# ...
 # 持续运行
 yarn worker
 ```
@@ -120,7 +121,7 @@ yarn worker
 ```bash
 # 查看地址与余额
 yarn wallet:info
-
+# ...
 # 备份钱包目录
 yarn wallet:backup
 ```
@@ -134,13 +135,12 @@ yarn wallet:backup
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 环境变量（`.env`）：
 
 | 变量 | 是否必需 | 说明 |
-|:-----|:---------|:-----|
+|:-----|:-----|:-----|
 | RPC_URL | 是 | 网络主网 RPC 地址 |
 | OPERATE_PASSWORD | 是 | 钱包加密密码（≥8 位） |
 | GEMINI_API_KEY | 视情况 | 无订阅时必需 |
@@ -194,10 +194,10 @@ yarn setup
 ```bash
 # 单任务模式：跑一条任务验证全流程
 yarn worker --single
-
+# ...
 # 查看任务日志
 tail -f logs/worker.log
-
+# ...
 # 查看钱包余额与质押状态
 yarn wallet:info
 yarn wallet:stake
@@ -208,7 +208,7 @@ yarn wallet:stake
 ```bash
 # 备份钱包目录（含加密私钥）
 yarn wallet:backup --out wallet-backup.tar.gz
-
+# ...
 # 恢复（在新机器）
 yarn wallet:restore --from wallet-backup.tar.gz
 # 输入 OPERATE_PASSWORD 解密
@@ -225,7 +225,7 @@ yarn wallet:restore --from wallet-backup.tar.gz
 ## 常见报错对照
 
 | 报错 | 原因 | 修复 |
-|:-----|:-----|:-----|
+|---:|---:|---:|
 | setup 卡住 | 等待充值 | 向地址充 gas+质押代币 |
 | yarn 找不到 | 未启用 corepack | `corepack enable` |
 | Python 报错 | 版本不对 | 装 3.11，pyenv 切换 |
@@ -250,7 +250,7 @@ yarn wallet:restore --from wallet-backup.tar.gz
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Node.js | 运行时 | 必需 | nodejs.org |
 | Python | 运行时 | 必需 | python.org |
 | Poetry | 包管理 | 必需 | install.python-poetry.org |
@@ -268,9 +268,8 @@ yarn wallet:restore --from wallet-backup.tar.gz
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

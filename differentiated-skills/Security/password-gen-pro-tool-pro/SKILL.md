@@ -28,12 +28,14 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 专业版为企业安全团队提供完整的密码生成与管理平台,在免费版密码生成与强度检测基础上,新增批量密码生成(CSV导出)、HaveIBeenPwned泄露检查、企业密码策略模板、加密密码存储与多格式导出。专业版完全兼容免费版生成方法,已有密码生成脚本可无缝升级,适合企业级密码安全治理。
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 批量生成 | 批量生成数百个密码,CSV导出 |
 | 泄露检查 | 集成HaveIBeenPwned API |
 | 策略模板 | 预置企业密码策略模板 |
@@ -55,7 +57,7 @@ pricing_model: "per_use"
 ### 2. 泄露检查(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 密码生成器Pro专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -63,24 +65,24 @@ pricing_model: "per_use"
 ```python
 #!/usr/bin/env python3
 """专业版密码泄露检查"""
-
+# ...
 import hashlib
 import requests
-
+# ...
 class BreachChecker:
     """密码泄露检查器(使用HaveIBeenPwned API)"""
-
+# ...
     API_URL = "https://api.pwnedpasswords.com/range/{}"
-
+# ...
     def check_password(self, password):
         """检查密码是否已泄露"""
         sha1_hash = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
         prefix = sha1_hash[:5]
         suffix = sha1_hash[5:]
-
+# ...
         try:
             response = requests.get(self.API_URL.format(prefix), timeout=10)
-
+# ...
             if response.status_code == 200:
                 hashes = response.text.splitlines()
                 for line in hashes:
@@ -92,7 +94,7 @@ class BreachChecker:
                             "occurrences": count,
                             "severity": "CRITICAL" if count > 1000 else "HIGH" if count > 100 else "MEDIUM"
                         }
-
+# ...
                 return {
                     "breached": False,
                     "occurrences": 0,
@@ -104,7 +106,7 @@ class BreachChecker:
                 "error": str(e),
                 "severity": "UNKNOWN"
             }
-
+# ...
     def check_batch(self, passwords):
         """批量检查密码泄露"""
         results = []
@@ -118,13 +120,13 @@ class BreachChecker:
                 "severity": result.get("severity", "UNKNOWN")
             })
         return results
-
+# ...
 if __name__ == "__main__":
     import json
     checker = BreachChecker()
-
+# ...
     test_passwords = ["password", "123456", "qwerty", "MyStr0ngP@ss!"]
-
+# ...
     for pwd in test_passwords:
         result = checker.check_password(pwd)
         print(f"密码: {pwd[:3]}***")
@@ -141,15 +143,11 @@ if __name__ == "__main__":
 
 ### 3. 企业密码策略模板(专业版独有)
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供企业密码策略模板(专业版独有)所需的指令和必要参数。
 **处理**: 解析企业密码策略模板(专业版独有)的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回企业密码策略模板(专业版独有)的响应数据,包含状态码、结果和日志。
 
 ### 4. 加密密码存储(专业版独有)
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供加密密码存储(专业版独有)所需的指令和必要参数。
 **处理**: 解析加密密码存储(专业版独有)的输入参数,完成核心逻辑,返回结构化响应。
@@ -161,13 +159,13 @@ if __name__ == "__main__":
 ```python
 #!/usr/bin/env python3
 """企业密码策略部署"""
-
+# ...
 from policy_manager import PasswordPolicyManager
-
+# ...
 def deploy_password_policy():
     """部署企业密码策略"""
     manager = PasswordPolicyManager()
-
+# ...
     policy = manager.get_policy("strict")
     print(f"=== 部署策略: {policy['name']} ===")
     print(f"  最小长度: {policy['min_length']}")
@@ -175,7 +173,7 @@ def deploy_password_policy():
     print(f"  需要大写: {policy['require_upper']}")
     print(f"  需要数字: {policy['require_digits']}")
     print(f"  需要特殊字符: {policy['require_symbols']}")
-
+# ...
     print("\n=== 验证密码样本 ===")
     test_cases = ["old123", "MyStr0ng!P@ssw0rd2026"]
     for pwd in test_cases:
@@ -185,7 +183,7 @@ def deploy_password_policy():
         if result["violations"]:
             for v in result["violations"]:
                 print(f"    - {v}")
-
+# ...
 deploy_password_policy()
 ```
 
@@ -193,28 +191,28 @@ deploy_password_policy()
 ```bash
 #!/bin/bash
 echo "=== 批量账户密码初始化 ==="
-
+# ...
 ACCOUNTS_FILE="accounts.csv"  # 格式: username,site
 OUTPUT_FILE="account_passwords.csv"
-
+# ...
 python3 << 'PYTHON'
 import csv
 from batch_generator import BatchPasswordGenerator
 from breach_checker import BreachChecker
 from policy_manager import PasswordPolicyManager
-
+# ...
 gen = BatchPasswordGenerator()
 checker = BreachChecker()
 policy_mgr = PasswordPolicyManager()
-
+# ...
 accounts = []
 with open("accounts.csv", "r") as f:
     reader = csv.DictReader(f)
     accounts = list(reader)
-
+# ...
 print(f"账户数量: {len(accounts)}")
 print(f"生成密码并检查泄露...")
-
+# ...
 results = []
 for account in accounts:
     while True:
@@ -222,9 +220,9 @@ for account in accounts:
         validation = policy_mgr.validate_password(password, "strict")
         if validation["valid"]:
             break
-
+# ...
     breach = checker.check_password(password)
-
+# ...
     results.append({
         "username": account["username"],
         "site": account["site"],
@@ -232,14 +230,14 @@ for account in accounts:
         "breached": breach.get("breached", False),
         "strength": "STRONG"
     })
-
+# ...
     print(f"  {account['username']}@{account['site']}: {'已泄露,重新生成' if breach.get('breached') else '安全'}")
-
+# ...
 with open("account_passwords.csv", "w", newline="") as f:
     writer = csv.DictWriter(f, fieldnames=["username", "site", "password", "breached", "strength"])
     writer.writeheader()
     writer.writerows(results)
-
+# ...
 print(f"\n导出完成: account_passwords.csv ({len(results)}个账户)")
 PYTHON
 ```
@@ -248,16 +246,16 @@ PYTHON
 ```python
 #!/usr/bin/env python3
 """密码安全审计"""
-
+# ...
 import json
 from policy_manager import PasswordPolicyManager
 from breach_checker import BreachChecker
-
+# ...
 def password_audit(passwords, policy_name="standard"):
     """密码安全审计"""
     policy_mgr = PasswordPolicyManager()
     checker = BreachChecker()
-
+# ...
     report = {
         "audit_date": datetime.utcnow().isoformat() + "Z",
         "policy": policy_name,
@@ -270,12 +268,12 @@ def password_audit(passwords, policy_name="standard"):
         },
         "details": []
     }
-
+# ...
     for pwd in passwords:
         validation = policy_mgr.validate_password(pwd, policy_name)
-
+# ...
         breach = checker.check_password(pwd)
-
+# ...
         detail = {
             "password_preview": pwd[:3] + "***",
             "length": len(pwd),
@@ -283,19 +281,19 @@ def password_audit(passwords, policy_name="standard"):
             "breached": breach.get("breached", False),
             "violations": validation.get("violations", [])
         }
-
+# ...
         if validation["valid"]:
             report["results"]["compliant"] += 1
         else:
             report["results"]["non_compliant"] += 1
-
+# ...
         if breach.get("breached"):
             report["results"]["breached"] += 1
-
+# ...
         report["details"].append(detail)
-
+# ...
     return report
-
+# ...
 from datetime import datetime
 passwords = ["weak123", "MyStr0ng!P@ss", "password", "C0rrect-Horse-42"]
 report = password_audit(passwords, "strict")
@@ -325,7 +323,7 @@ print(json.dumps(report, indent=2, ensure_ascii=False))
 ```python
 gen = PasswordGenerator()
 password = gen.generate(16)
-
+# ...
 batch_gen = BatchPasswordGenerator()
 passwords = batch_gen.generate_batch(100, length=16)
 checker = BreachChecker()
@@ -339,7 +337,7 @@ for pwd in passwords:
 ## 配置示例
 ### 专业版功能矩阵
 | 功能 | 免费版 | 专业版 | 说明 |
-|:-----|:-------|:-------|:-----|
+|---:|---:|---:|---:|
 | 密码生成 | 支持 | 支持 | 单个生成 |
 | 批量生成 | 不支持 | 支持 | 批量CSV |
 | 强度检测 | 基础 | 多维度 | 评分+反馈 |
@@ -350,7 +348,7 @@ for pwd in passwords:
 
 ### 企业密码策略模板
 | 模板 | 最小长度 | 特殊字符 | 适用场景 |
-|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | standard | 12 | 不要求 | 普通系统 |
 | strict | 16 | 要求 | 重要系统 |
 | high_security | 20 | 要求 | 核心系统 |
@@ -389,7 +387,7 @@ for pwd in passwords:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | python3 | 运行时 | 必需 | python.org 下载 |
 | requests | HTTP库 | 推荐 | `pip install requests` |
 | cryptography | 加密库 | 推荐 | `pip install cryptography` |
@@ -407,7 +405,7 @@ for pwd in passwords:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

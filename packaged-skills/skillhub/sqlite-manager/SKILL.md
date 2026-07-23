@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # SQLite管理(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力分类 | 支持 | 支持 |
-| 专业版 | 不支持 | 支持 |
-| 备份策略 | 不支持 | 支持 |
-| 手动+定时+增量+加密 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| SQLite管理(专业版)业的SQLite管理 | 不支持 | 支持 |
+| SQLite管理(专业版)连接池监控 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|:-----|:-----|:-----|
 | 备份策略 | 手动 | 手动+定时+增量+加密 |
 | 连接池监控 | 无 | 实时指标+告警 |
 | Schema迁移 | 手动SQL | 自动版本迁移+回滚 |
@@ -80,7 +82,7 @@ pricing_model: "monthly"
 
 ```python
 from sqlite_manager import MultiTenantManager
-
+# ...
 manager = MultiTenantManager(base_dir="/data/tenants")
 manager.register_tenant("tenant_a", max_connections=10, quota_gb=5)
 manager.register_tenant("tenant_b", max_connections=20, quota_gb=10)
@@ -93,10 +95,10 @@ manager.monitor.start()  # 启动监控指标采集
 
 ```python
 import duckdb
-
+# ...
 conn = duckdb.connect(":memory:")
 conn.execute("ATTACH 'agent_data.db' AS sqlite_db (TYPE sqlite)")
-
+# ...
 result = conn.execute("""
     SELECT agent, COUNT(*) AS call_cnt, AVG(latency_ms) AS avg_lat
     FROM sqlite_db.session_logs
@@ -147,10 +149,10 @@ pro.enable_tde(key_env="DB_ENC_KEY")
 
 ```python
 from sqlite_manager import SQLiteDB, ProFeatures
-
+# ...
 db = SQLiteDB("agent_data.db", edition="pro")
 pro = ProFeatures(db)
-
+# ...
 pro.auto_backup("backups/", schedule="daily", time="02:00")
 pro.enable_pool_monitor(alert_threshold=0.8)
 ```
@@ -184,7 +186,7 @@ df = pro.analytics.query("SELECT tags, COUNT(*) FROM memos GROUP BY tags")
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 
 ## 输出格式
 
@@ -205,7 +207,7 @@ df = pro.analytics.query("SELECT tags, COUNT(*) FROM memos GROUP BY tags")
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -217,9 +219,9 @@ df = pro.analytics.query("SELECT tags, COUNT(*) FROM memos GROUP BY tags")
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.8+
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | sqlite3 | CLI工具 | 必需 | 系统自带或官网下载 |
 | sqlite3 | Python模块 | 必需 | Python标准库自带 |
 | Python | 运行时 | 必需 | python.org 官方下载 |
@@ -242,7 +244,7 @@ df = pro.analytics.query("SELECT tags, COUNT(*) FROM memos GROUP BY tags")
 
 ```python
 from sqlite_manager import ConnectionPool
-
+# ...
 pool = ConnectionPool(
     "agent_data.db",
     max_connections=20,
@@ -282,9 +284,8 @@ manager.alert_on_quota_exceed(webhook_env="OPS_WEBHOOK")
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

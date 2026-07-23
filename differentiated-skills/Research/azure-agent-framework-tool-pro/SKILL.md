@@ -48,12 +48,14 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 本工具是企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,扩展了智能体批量管理、MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力,适合企业级智能体编排、多智能体协作工作流、生产环境监控与运维场景。专业版与免费版完全兼容:免费版的所有代码、工作流均可直接在专业版中使用。
 
 ### 免费版 vs 专业版对比
 | 能力 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---|---|---|
 | 基础智能体创建 | 支持 | 支持 |
 | 函数工具集成 | 支持 | 支持 |
 | 托管工具(代码/搜索/Web) | 支持 | 支持 |
@@ -71,7 +73,7 @@ pricing_model: "monthly"
 ### 1. 智能体批量管理(专业版新增)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Azure智能体框架工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -80,7 +82,7 @@ pricing_model: "monthly"
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 async def manage_agents():
     async with (
         DefaultAzureCredential() as credential,
@@ -91,17 +93,17 @@ async def manage_agents():
             {"name": "数据分析助手", "instructions": "分析业务数据...", "tools": [query_tool, chart_tool]},
             {"name": "文档助手", "instructions": "文档检索与问答...", "tools": [search_tool]},
         ]
-
+# ...
         agents = []
         for config in agent_configs:
             agent = await provider.create_agent(**config)
             agents.append(agent)
             print(f"已创建: {agent.id} - {config['name']}")
-
+# ...
         all_agents = await provider.list_agents()
         for a in all_agents:
             print(f"ID: {a.id}, 名称: {a.name}")
-
+# ...
 asyncio.run(manage_agents())
 ```
 
@@ -119,7 +121,7 @@ from agent_framework import (
 )
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 async def main():
     async with (
         DefaultAzureCredential() as credential,
@@ -140,10 +142,10 @@ async def main():
                 ),
             ],
         )
-
+# ...
         result = await agent.run("搜索 Python 最佳实践并总结")
         print(result.text)
-
+# ...
 asyncio.run(main())
 ```
 
@@ -157,7 +159,7 @@ asyncio.run(main())
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 async def monitored_agent():
     async with (
         DefaultAzureCredential() as credential,
@@ -171,9 +173,9 @@ async def monitored_agent():
             name="MonitoredAgent",
             instructions="你是一个乐于助人的助手。",
         )
-
+# ...
         result = await agent.run("分析最近一周的销售数据")
-
+# ...
         metrics = await provider.export_metrics(format="prometheus")
         print(metrics)
 asyncio.run(monitored_agent())
@@ -189,10 +191,10 @@ asyncio.run(monitored_agent())
 import asyncio
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 async def multi_tenant():
     tenants = ["acme", "globex", "initech"]
-
+# ...
     for tenant in tenants:
         async with (
             DefaultAzureCredential() as credential,
@@ -206,7 +208,7 @@ async def multi_tenant():
                 instructions=f"你是 {tenant} 公司的专属助手。",
             )
             print(f"[{tenant}] 智能体已创建: {agent.id}")
-
+# ...
 asyncio.run(multi_tenant())
 ```
 
@@ -230,12 +232,12 @@ from pydantic import BaseModel, Field
 from agent_framework import HostedWebSearchTool, HostedCodeInterpreterTool
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 class ResearchResult(BaseModel):
     summary: str
     key_findings: list[str]
     confidence: float
-
+# ...
 async def collaborative_workflow():
     async with (
         DefaultAzureCredential() as credential,
@@ -246,31 +248,31 @@ async def collaborative_workflow():
             instructions="你负责收集和整理信息。使用Web搜索获取最新数据。",
             tools=[HostedWebSearchTool(name="Bing")],
         )
-
+# ...
         analyst = await provider.create_agent(
             name="Analyst",
             instructions="你负责数据分析。使用代码解释器进行计算。",
             tools=[HostedCodeInterpreterTool()],
         )
-
+# ...
         writer = await provider.create_agent(
             name="Writer",
             instructions="你负责将研究和分析结果整理成报告。",
             response_format=ResearchResult,
         )
-
+# ...
         thread = researcher.get_new_thread()
-
+# ...
         research = await researcher.run(
             "研究 2026 年 AI 智能体市场趋势", thread=thread
         )
         print(f"[研究] {research.text[:200]}...")
-
+# ...
         analysis = await analyst.run(
             f"基于以下研究结果进行数据分析: {research.text}", thread=thread
         )
         print(f"[分析] {analysis.text[:200]}...")
-
+# ...
         report = await writer.run(
             f"基于以下研究和分析生成报告: 研究={research.text}, 分析={analysis.text}",
             thread=thread,
@@ -279,7 +281,7 @@ async def collaborative_workflow():
         result = ResearchResult.model_validate_json(report.text)
         print(f"\n[报告] 置信度: {result.confidence}")
         print(f"关键发现: {result.key_findings}")
-
+# ...
 asyncio.run(collaborative_workflow())
 ```
 
@@ -293,7 +295,7 @@ import asyncio
 import json
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 async def production_monitor():
     async with (
         DefaultAzureCredential() as credential,
@@ -311,13 +313,13 @@ async def production_monitor():
             instructions="你是生产环境的客户服务助手。",
             tools=[faq_tool, search_tool],
         )
-
+# ...
         queries = [
             "如何重置密码?",
             "查询订单状态",
             "退款流程是什么?",
         ]
-
+# ...
         for query in queries:
             try:
                 result = await agent.run(query)
@@ -328,7 +330,7 @@ async def production_monitor():
         with open("metrics.json", "w") as f:
             json.dump(metrics, f, indent=2)
         print("\n指标已导出到 metrics.json")
-
+# ...
 asyncio.run(production_monitor())
 ```
 
@@ -338,20 +340,20 @@ asyncio.run(production_monitor())
 ```bash
 #!/bin/bash
 set -e
-
+# ...
 ENVIRONMENT="${1:-staging}"
 AGENT_CONFIG="agents/production.yaml"
-
+# ...
 echo "部署智能体到 ${ENVIRONMENT} 环境..."
-
+# ...
 python tests/test_agent.py
-
+# ...
 python deploy.py --config "$AGENT_CONFIG" --env "$ENVIRONMENT"
-
+# ...
 python healthcheck.py --env "$ENVIRONMENT" --timeout 60
-
+# ...
 python export_metrics.py --env "$ENVIRONMENT" --output "baselines/${ENVIRONMENT}_$(date +%Y%m%d).json"
-
+# ...
 echo "部署完成: ${ENVIRONMENT}"
 ```
 
@@ -360,11 +362,11 @@ import asyncio
 import yaml
 from agent_framework.azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
-
+# ...
 async def deploy(config_path, environment):
     with open(config_path) as f:
         config = yaml.safe_load(f)
-
+# ...
     async with (
         DefaultAzureCredential() as credential,
         AzureAIAgentsProvider(
@@ -381,7 +383,7 @@ async def deploy(config_path, environment):
         )
         print(f"已部署 {agent.name} v{config['version']} 到 {environment}")
         print(f"智能体 ID: {agent.id}")
-
+# ...
 asyncio.run(deploy("agents/production.yaml", "staging"))
 ```
 
@@ -396,7 +398,7 @@ asyncio.run(deploy("agents/production.yaml", "staging"))
 ```bash
 pip install agent-framework --pre
 pip install agent-framework-azure-ai --pre
-
+# ...
 python -m agent_framework pro init
 python -m agent_framework config set metrics.enabled true
 python -m agent_framework config set alerts.webhook "https://hooks.example.com/alerts"
@@ -440,7 +442,7 @@ agents:
 ### 监控指标示例
 ```bash
 python -m agent_framework metrics export --format prometheus
-
+# ...
 ```
 
 ## 最佳实践
@@ -489,7 +491,7 @@ python -m agent_framework pro init --migrate
 
 ## 与免费版的兼容性
 | 维度 | 兼容性 |
-|:-----|:------|
+|---:|---:|
 | SDK 调用 | 100% 兼容 |
 | 代码工作流 | 100% 兼容(无需修改即可运行) |
 | 智能体配置 | 100% 兼容(专业版可管理免费版智能体) |
@@ -504,7 +506,7 @@ python -m agent_framework pro init --migrate
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | agent-framework(pro) | Python 包 | 必需 | `pip install agent-framework --pre` |
 | agent-framework-azure-ai | Python 包 | 必需 | `pip install agent-framework-azure-ai --pre` |
 | azure-identity | Python 包 | 必需 | 随 agent-framework-azure-ai 安装 |
@@ -531,7 +533,7 @@ python -m agent_framework pro init --migrate
 - 边界输入处理: 空输入返回提示信息, 超长输入自动截断
 - 降级策略: 异常时返回默认值, 确保流程不中断
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

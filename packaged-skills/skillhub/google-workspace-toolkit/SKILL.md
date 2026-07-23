@@ -29,19 +29,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 谷歌办公工具接口专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 谷歌办公工具接口专业版批量操作与多租户管理 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -138,13 +140,13 @@ pricing_model: "per_use"
 gwtool call --server google-workspace \
     --tool "chat.findSpaceByName" \
     name="研发团队日常"
-
+# ...
 # 第二步:发送通知消息
 gwtool call --server google-workspace \
     --tool "chat.sendMessage" \
     spaceName="研发团队日常" \
     text="各位,今日站会改为下午3点,会议室B,请准时参加。"
-
+# ...
 # 第三步:发送私信提醒未回复的成员
 gwtool call --server google-workspace \
     --tool "chat.sendDm" \
@@ -160,7 +162,7 @@ gwtool call --server google-workspace \
 """批量创建项目文档"""
 import subprocess
 import json
-
+# ...
 def call_tool(tool_name, **params):
     cmd = ['gwtool', 'call', '--server', 'google-workspace', '--tool', tool_name]
     for key, value in params.items():
@@ -170,7 +172,7 @@ def call_tool(tool_name, **params):
             cmd.append(f'{key}={value}')
     result = subprocess.run(cmd, capture_output=True, text=True)
     return json.loads(result.stdout) if result.stdout else {}
-
+# ...
 # 项目文档清单
 documents = [
     {"title": "项目需求说明书", "content": "# 需求说明书\n\n## 1. 项目背景\n\n## 2. 功能需求\n\n## 3. 非功能需求"},
@@ -178,14 +180,14 @@ documents = [
     {"title": "测试计划文档", "content": "# 测试计划\n\n## 1. 测试范围\n\n## 2. 测试策略\n\n## 3. 里程碑"},
     {"title": "上线检查清单", "content": "# 上线 Checklist\n\n## 1. 代码审查\n\n## 2. 测试通过\n\n## 3. 部署准备"},
 ]
-
+# ...
 created_docs = []
 for doc in documents:
     result = call_tool('docs.create', title=doc['title'], markdown=doc['content'])
     doc_id = result.get('documentId', '未知')
     created_docs.append({"title": doc['title'], "id": doc_id})
     print(f"已创建: {doc['title']} (ID: {doc_id})")
-
+# ...
 print(f"\n批量创建完成,共 {len(created_docs)} 份文档")
 ```
 
@@ -198,13 +200,13 @@ gwtool call --server google-workspace \
     --tool "sheets.getRange" \
     spreadsheetId="sales_sheet_id" \
     range="月度数据!A1:E31"
-
+# ...
 # 从市场部 Sheets 读取数据
 gwtool call --server google-workspace \
     --tool "sheets.getRange" \
     spreadsheetId="marketing_sheet_id" \
     range="月度数据!A1:E31"
-
+# ...
 # 从财务部 Sheets 读取数据
 gwtool call --server google-workspace \
     --tool "sheets.getRange" \
@@ -217,7 +219,7 @@ gwtool call --server google-workspace \
 """多部门数据汇总脚本"""
 import subprocess
 import json
-
+# ...
 def fetch_sheet_data(sheet_id, sheet_range):
     """从指定 Sheets 读取数据"""
     result = subprocess.run([
@@ -227,21 +229,21 @@ def fetch_sheet_data(sheet_id, sheet_range):
         f'range={sheet_range}'
     ], capture_output=True, text=True)
     return json.loads(result.stdout) if result.stdout else []
-
+# ...
 # 各部门数据源
 departments = {
     "销售部": "sales_sheet_id",
     "市场部": "marketing_sheet_id",
     "财务部": "finance_sheet_id",
 }
-
+# ...
 all_data = []
 for dept, sheet_id in departments.items():
     data = fetch_sheet_data(sheet_id, "月度数据!A1:E31")
     for row in data[1:]:  # 跳过表头
         all_data.append([dept] + row)
     print(f"{dept} 数据采集完成: {len(data)-1} 条记录")
-
+# ...
 print(f"\n汇总完成,共 {len(all_data)} 条记录")
 ```
 
@@ -258,7 +260,7 @@ print(f"\n汇总完成,共 {len(all_data)} 条记录")
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Node.js 18+ | 运行时 | 必需 | nodejs.org 下载 |
 | npm / npx | 包管理 | 必需 | 随 Node.js 安装 |
 | @presto-ai/google-workspace-toolkit | 工具接口 | 必需 | npm 全局安装 |
@@ -283,7 +285,7 @@ print(f"\n汇总完成,共 {len(all_data)} 条记录")
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | google-workspace-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -330,19 +332,18 @@ print(f"\n汇总完成,共 {len(all_data)} 条记录")
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
 | 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后 |
 | 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
 | 审查超时 | 内容过长导致处理超时 | 建议分段审查, 每段不超过5000字 |
 | 其他异常 | 内部处理异常 | 检查输入后 |
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|:------|------:|:------|:------|
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -359,7 +360,7 @@ gwtool config add google-workspace \
     --arg "-y" \
     --arg "@presto-ai/google-workspace-toolkit" \
     --scope home
-
+# ...
 # 查看已注册服务
 gwtool config list
 ```
@@ -371,11 +372,11 @@ gwtool config list
 import subprocess
 import json
 from datetime import datetime
-
+# ...
 class WorkspaceToolkit:
     def __init__(self):
         self.server = 'google-workspace'
-
+# ...
     def call(self, tool_name, **params):
         cmd = ['gwtool', 'call', '--server', self.server, '--tool', tool_name]
         for key, value in params.items():
@@ -385,37 +386,37 @@ class WorkspaceToolkit:
                 cmd.append(f'{key}={value}')
         result = subprocess.run(cmd, capture_output=True, text=True)
         return json.loads(result.stdout) if result.stdout else {}
-
+# ...
     def get_current_user(self):
         return self.call('people.getMe')
-
+# ...
     def list_calendar_events(self, calendar_id, time_min, time_max):
         return self.call('calendar.listEvents',
                         calendarId=calendar_id,
                         timeMin=time_min,
                         timeMax=time_max)
-
+# ...
     def find_free_time(self, attendees, time_min, time_max, duration):
         return self.call('calendar.findFreeTime',
                         attendees=attendees,
                         timeMin=time_min,
                         timeMax=time_max,
                         duration=duration)
-
+# ...
     def send_chat_message(self, space_name, text):
         return self.call('chat.sendMessage', spaceName=space_name, text=text)
-
+# ...
     def create_doc(self, title, markdown):
         return self.call('docs.create', title=title, markdown=markdown)
-
+# ...
     def read_sheet_range(self, sheet_id, range_str):
         return self.call('sheets.getRange', spreadsheetId=sheet_id, range=range_str)
-
+# ...
 # 使用示例
 toolkit = WorkspaceToolkit()
 user = toolkit.get_current_user()
 print(f"当前用户: {user.get('emailAddress', '未知')}")
-
+# ...
 # 查找空闲时间安排会议
 free_slots = toolkit.find_free_time(
     attendees=["a@company.com", "b@company.com"],
@@ -424,7 +425,7 @@ free_slots = toolkit.find_free_time(
     duration=60
 )
 print(f"可用时段: {free_slots}")
-
+# ...
 # 发送 Chat 通知
 toolkit.send_chat_message("研发团队日常", "会议时间已确认,请查看日历。")
 ```
@@ -452,7 +453,7 @@ toolkit.send_chat_message("研发团队日常", "会议时间已确认,请查看
 ```bash
 # 账户 A 操作
 gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=5
-
+# ...
 # 切换到账户 B
 gwtool call --server google-workspace --tool "auth.clear"
 gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=5
@@ -463,9 +464,8 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -14,9 +14,9 @@ tags:
 tools:
   - - read
 - exec
-pricing_tier: "L3"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-suggested_price: 29.9
+suggested_price: 9.9
 ---
 
 

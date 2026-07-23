@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 内容过滤工具（免费版）
 
 ## 概述
@@ -56,7 +57,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 关键词过滤 | 关键词与正则匹配 | 单用户 |
 | 作者管理 | 屏蔽与白名单 | 单用户 |
 | 规则管理 | 增删改查过滤规则 | 本地 |
@@ -96,7 +97,7 @@ suggested_price: 29.9
 # 添加关键词过滤规则
 {baseDir}/（请参考skill目录中的脚本文件） add-keyword "广告"
 {baseDir}/（请参考skill目录中的脚本文件） add-keyword --regex "(?i)加微信"
-
+# ...
 # 查看规则
 {baseDir}/（请参考skill目录中的脚本文件） list
 ```
@@ -106,7 +107,7 @@ suggested_price: 29.9
 ```bash
 # 屏蔽作者
 {baseDir}/（请参考skill目录中的脚本文件） block-author "spam-user"
-
+# ...
 # 加白名单（优先于屏蔽）
 {baseDir}/（请参考skill目录中的脚本文件） whitelist-author "friend"
 ```
@@ -116,7 +117,7 @@ suggested_price: 29.9
 ```bash
 # 拉取并过滤信息流
 {baseDir}/（请参考skill目录中的脚本文件） feed --apply
-
+# ...
 # 查看被过滤项（调试用）
 {baseDir}/（请参考skill目录中的脚本文件） feed --show-blocked
 ```
@@ -141,7 +142,6 @@ suggested_price: 29.9
 4. 按需调整规则。
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -189,10 +189,10 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 ```bash
 # 普通关键词
 {baseDir}/（请参考skill目录中的脚本文件） add-keyword "广告"
-
+# ...
 # 正则匹配（大小写不敏感）
 {baseDir}/（请参考skill目录中的脚本文件） add-keyword --regex "(?i)加微信|加v|加vx"
-
+# ...
 # 匹配微信号变体
 {baseDir}/（请参考skill目录中的脚本文件） add-keyword --regex "vx[: ]?\\d{6,}|微信[: ]?\\d{6,}"
 ```
@@ -202,10 +202,10 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 ```bash
 # 屏蔽作者
 {baseDir}/（请参考skill目录中的脚本文件） block-author "spam-user"
-
+# ...
 # 白名单（优先于屏蔽）
 {baseDir}/（请参考skill目录中的脚本文件） whitelist-author "friend"
-
+# ...
 # 批量屏蔽
 {baseDir}/（请参考skill目录中的脚本文件） block-author --file blocklist.txt
 ```
@@ -223,7 +223,7 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 ```bash
 # 查看被过滤项（调试误杀）
 {baseDir}/（请参考skill目录中的脚本文件） feed --show-blocked
-
+# ...
 # 命中规则追踪
 {baseDir}/（请参考skill目录中的脚本文件） feed --trace
 ```
@@ -270,7 +270,7 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | curl | 命令行工具 | 必需 | 系统包管理器 |
 | jq | JSON 处理 | 必需 | 系统包管理器 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -285,9 +285,8 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

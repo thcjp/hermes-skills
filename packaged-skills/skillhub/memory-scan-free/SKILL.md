@@ -16,16 +16,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 智能助手
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
 ---
 # 记忆安全扫描（Memory Scan）- 免费版
 
 面向 AI Agent 记忆文件的**基础安全扫描工具**，对 MEMORY.md、每日日志、工作区配置文件进行安全审计，检测恶意内容与凭证泄漏。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 记忆安全扫描处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -70,10 +71,10 @@ tags:
 ```bash
 # 扫描全部记忆文件（本地模式）
 python3 （请参考skill目录中的脚本文件）
-
+# ...
 # 扫描指定文件
 python3 （请参考skill目录中的脚本文件） --file memory/2026-07-18.md
-
+# ...
 # JSON输出（用于集成）
 python3 （请参考skill目录中的脚本文件） --json
 ```
@@ -97,9 +98,8 @@ python3 （请参考skill目录中的脚本文件） --restore memory/2026-07-18
 
 ## 错误处理
 
-
 | 错误类型 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:-----|:-----|:-----|
 | 扫描报错找不到文件 | 路径配置错误或文件已被移动 | 检查工作区路径，用 `--file` 指定正确路径或确认文件存在 |
 | 隔离操作失败 | 文件权限不足或被其他进程占用 | 检查文件写入权限，关闭占用该文件的进程后检查网络连接和配置后重试 |
 | 扫描结果为空 | 记忆文件不存在或目录为空 | 确认memory/目录非空，检查工作区路径是否正确 |
@@ -119,14 +119,14 @@ python3 （请参考skill目录中的脚本文件）
 ```
 Memory Security Scan
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+# ...
 Scanning memory files...
-
+# ...
 ✓ MEMORY.md - SAFE
 ✓ memory/2026-07-18.md - SAFE
 ⚠ memory/2026-07-15.md - MEDIUM (line 42)
   → Potential credential leakage: API key pattern detected (sk-***)
-
+# ...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Overall: MEDIUM
 Action: Review memory/2026-07-15.md:42
@@ -153,7 +153,7 @@ Action: Review memory/2026-07-15.md:42
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -161,7 +161,6 @@ Action: Review memory/2026-07-15.md:42
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash

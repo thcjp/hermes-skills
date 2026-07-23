@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 桌面流程控制中枢（专业版）
 
@@ -44,7 +46,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 桌面流程控制中枢(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -97,7 +99,7 @@ pip install pyautogui pillow opencv-python pygetwindow
 
 ```python
 import pyautogui
-
+# ...
 # 专业版：启用图像识别
 button_location = pyautogui.locateOnScreen('submit_button.png', confidence=0.9)
 if button_location:
@@ -117,10 +119,10 @@ import time
 import json
 from datetime import datetime
 from pathlib import Path
-
+# ...
 class ProFlowController:
     """桌面流程控制器（专业版）"""
-
+# ...
     def __init__(self, failsafe=True, pause=0.1,
                  require_approval=False, log_dir="automation_logs"):
         pyautogui.FAILSAFE = failsafe
@@ -131,14 +133,14 @@ class ProFlowController:
         self.session_id = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.action_log = []
         self._screenshot_count = 0
-
+# ...
     def _approve(self, action_desc):
         """审批检查"""
         if self.require_approval:
             response = input(f"允许执行：{action_desc}？[y/n] ").strip().lower()
             if response != 'y':
                 raise PermissionError(f"操作被拒绝：{action_desc}")
-
+# ...
     def _log(self, action, details):
         """记录操作日志"""
         entry = {
@@ -148,7 +150,7 @@ class ProFlowController:
             **details
         }
         self.action_log.append(entry)
-
+# ...
     def click_image(self, image_path, confidence=0.9, desc=""):
         """通过图像识别点击目标"""
         self._approve(f"图像点击 {image_path} - {desc}")
@@ -174,14 +176,14 @@ class ProFlowController:
                 'success': False, 'error': str(e)
             })
             return None
-
+# ...
     def save_log(self):
         """保存操作日志"""
         log_file = self.log_dir / f"session_{self.session_id}.json"
         with open(log_file, 'w', encoding='utf-8') as f:
             json.dump(self.action_log, f, ensure_ascii=False, indent=2)
         print(f"操作日志已保存：{log_file}")
-
+# ...
 # 使用示例
 fc = ProFlowController(require_approval=False)
 fc.click_image('login_button.png', confidence=0.85, desc="点击登录按钮")
@@ -198,30 +200,30 @@ import time
 import json
 from datetime import datetime
 from pathlib import Path
-
+# ...
 class EnterpriseFlowController:
     """企业级桌面流程控制器"""
-
+# ...
     def __init__(self, config=None):
         self.config = config or {}
         pyautogui.FAILSAFE = self.config.get('failsafe', True)
         pyautogui.PAUSE = self.config.get('pause', 0.1)
-
+# ...
         # 多显示器配置
         self.monitors = self._detect_monitors()
         self.dpi_scale = self.config.get('dpi_scale', 1.0)
-
+# ...
         # 熔断配置
         self.max_retries = self.config.get('max_retries', 3)
         self.retry_delay = self.config.get('retry_delay', 1.0)
         self.failure_count = 0
         self.circuit_threshold = self.config.get('circuit_threshold', 5)
-
+# ...
         # 日志
         self.log_dir = Path(self.config.get('log_dir', 'logs'))
         self.log_dir.mkdir(parents=True, exist_ok=True)
         self.actions = []
-
+# ...
     def _detect_monitors(self):
         """检测显示器配置"""
         try:
@@ -237,7 +239,7 @@ class EnterpriseFlowController:
             return screens
         except Exception:
             return [{'id': 0, 'x': 0, 'y': 0, 'width': 1920, 'height': 1080}]
-
+# ...
     def _circuit_check(self):
         """熔断检查"""
         if self.failure_count >= self.circuit_threshold:
@@ -245,7 +247,7 @@ class EnterpriseFlowController:
                 f"熔断触发：连续失败 {self.failure_count} 次，"
                 f"超过阈值 {self.circuit_threshold}，自动化已中止"
             )
-
+# ...
     def retry_action(self, action_func, *args, **kwargs):
         """带重试的操作执行"""
         desc = kwargs.pop('desc', '')
@@ -273,7 +275,7 @@ class EnterpriseFlowController:
                         'success': False, 'error': str(e)
                     })
                     raise
-
+# ...
     def export_report(self):
         """导出操作报告"""
         report = {
@@ -288,7 +290,7 @@ class EnterpriseFlowController:
         with open(report_file, 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
         return report_file
-
+# ...
 # 使用示例
 controller = EnterpriseFlowController(config={
     'failsafe': True,
@@ -298,12 +300,12 @@ controller = EnterpriseFlowController(config={
     'circuit_threshold': 5,
     'log_dir': 'automation_logs',
 })
-
+# ...
 # 带重试的操作
 controller.retry_action(
     pyautogui.click, 500, 300, desc="点击提交按钮"
 )
-
+# ...
 # 导出报告
 report = controller.export_report()
 print(f"报告已生成：{report}")
@@ -317,7 +319,7 @@ print(f"报告已生成：{report}")
 通过模板匹配在屏幕上定位元素，无需依赖固定坐标。
 
 | 方法 | 参数 | 说明 |
-|------|------|------|
+|:-----|:-----|:-----|
 | `locateOnScreen(image)` | image: 模板图片路径 | 返回(left, top, width, height)或None |
 | `locateOnScreen(image, confidence=0.9)` | confidence: 匹配阈值(0-1) | 调整匹配精度 |
 | `locateAllOnScreen(image)` | 返回所有匹配位置 | 用于多目标场景 |
@@ -327,17 +329,17 @@ print(f"报告已生成：{report}")
 
 ```python
 import pyautogui
-
+# ...
 # 查找按钮并点击（置信度0.9）
 button = pyautogui.locateOnScreen('button.png', confidence=0.9)
 if button:
     pyautogui.click(pyautogui.center(button))
-
+# ...
 # 查找所有匹配项
 all_buttons = list(pyautogui.locateAllOnScreen('icon.png', confidence=0.8))
 for btn in all_buttons:
     print(f"找到匹配：{btn}")
-
+# ...
 # 等待元素出现（最多等10秒）
 import time
 start = time.time()
@@ -356,7 +358,7 @@ while time.time() - start < 10:
 ### 多显示器支持（专业版）
 
 | 功能 | 说明 |
-|------|------|
+|---:|---:|
 | 跨屏坐标映射 | 主屏原点(0,0)，副屏可能有负坐标 |
 | 屏幕尺寸获取 | `pyautogui.size()` 返回主屏分辨率 |
 | 虚拟桌面 | 多屏组合的虚拟桌面范围 |
@@ -366,18 +368,18 @@ while time.time() - start < 10:
 
 ```python
 import pyautogui
-
+# ...
 # 获取主屏分辨率
 main_w, main_h = pyautogui.size()
 print(f"主屏：{main_w}x{main_h}")
-
+# ...
 # 副屏通常在主屏左侧，X坐标为负
 # 例如副屏分辨率1920x1080，位于主屏左侧
 # 则副屏坐标范围为 X: -1920 到 -1，Y: 0 到 1079
-
+# ...
 # 点击副屏上的位置
 # pyautogui.click(-500, 300)  # 副屏上的位置
-
+# ...
 # 截取副屏区域
 # secondary_screen = pyautogui.screenshot(region=(-1920, 0, 1920, 1080))
 ```
@@ -393,32 +395,32 @@ print(f"主屏：{main_w}x{main_h}")
 ```python
 class ApprovalController:
     """带审批的控制器"""
-
+# ...
     def __init__(self, mode='always'):
         self.mode = mode  # always / critical / never
-
+# ...
     def should_approve(self, action_type, details):
         if self.mode == 'never':
             return False
         if self.mode == 'critical' and action_type not in ['delete', 'submit', 'close']:
             return False
-
+# ...
         print(f"\n待审批操作：{action_type}")
         print(f"详情：{details}")
         response = input("是否允许？[y/n/a(全部允许)] ").strip().lower()
-
+# ...
         if response == 'a':
             self.mode = 'never'
             return False
         return response != 'y'
-
+# ...
     def execute(self, action_type, action_func, *args, **kwargs):
         details = f"args={args}, kwargs={kwargs}"
         if self.should_approve(action_type, details):
             print("操作已跳过")
             return None
         return action_func(*args, **kwargs)
-
+# ...
 # 使用：对关键操作启用审批
 ac = ApprovalController(mode='critical')
 ac.execute('click', pyautogui.click, 500, 300)
@@ -438,15 +440,15 @@ ac.execute('submit', pyautogui.click, 800, 600)  # 会提示审批
 import json
 from datetime import datetime
 from pathlib import Path
-
+# ...
 class ActionRecorder:
     """操作录制与回放"""
-
+# ...
     def __init__(self, log_dir="replay_logs"):
         self.log_dir = Path(log_dir)
         self.log_dir.mkdir(parents=True, exist_ok=True)
         self.recording = []
-
+# ...
     def record(self, action_type, params, result):
         self.recording.append({
             'timestamp': datetime.now().isoformat(),
@@ -455,27 +457,27 @@ class ActionRecorder:
             'result': str(result),
             'success': result is not None
         })
-
+# ...
     def save(self, name="recording"):
         filename = self.log_dir / f"{name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(self.recording, f, ensure_ascii=False, indent=2)
         print(f"录制已保存：{filename}（{len(self.recording)}条操作）")
         return filename
-
+# ...
     def replay(self, recording_file, speed=1.0):
         """回放录制的操作"""
         import pyautogui
         import time
-
+# ...
         with open(recording_file, 'r', encoding='utf-8') as f:
             actions = json.load(f)
-
+# ...
         print(f"开始回放 {len(actions)} 条操作（速度 {speed}x）")
         for i, action in enumerate(actions):
             delay = 0.1 / speed
             time.sleep(delay)
-
+# ...
             if action['type'] == 'click':
                 x, y = action['params']
                 pyautogui.click(x, y)
@@ -485,11 +487,11 @@ class ActionRecorder:
             elif action['type'] == 'hotkey':
                 keys = action['params']
                 pyautogui.hotkey(*keys)
-
+# ...
             print(f"  [{i+1}/{len(actions)}] {action['type']} - {action['params']}")
-
+# ...
         print("回放完成")
-
+# ...
 # 使用示例
 recorder = ActionRecorder()
 recorder.record('click', (500, 300), 'success')
@@ -506,7 +508,7 @@ recorder.save("form_filling")
 ### 窗口管理（专业版）
 
 | 方法 | 说明 |
-|------|------|
+|:---:|:---:|
 | `getAllWindows()` | 获取所有窗口列表 |
 | `getActiveWindow()` | 获取当前活动窗口 |
 | `window.activate()` | 激活窗口到前台 |
@@ -519,13 +521,13 @@ recorder.save("form_filling")
 
 ```python
 import pygetwindow as gw
-
+# ...
 # 获取所有窗口
 windows = gw.getAllWindows()
 for w in windows:
     if w.title:
         print(f"窗口：{w.title} | 位置：({w.left}, {w.top}) | 尺寸：{w.width}x{w.height}")
-
+# ...
 # 按标题激活窗口
 target = gw.getActiveWindow()
 # 模糊匹配
@@ -534,7 +536,7 @@ for w in windows:
         w.activate()
         print(f"已激活：{w.title}")
         break
-
+# ...
 # 窗口状态控制
 target_window = [w for w in windows if "记事本" in w.title]
 if target_window:
@@ -553,7 +555,7 @@ if target_window:
 import pyautogui
 import math
 import random
-
+# ...
 def bezier_move(start_x, start_y, end_x, end_y, duration=0.5, control_points=None):
     """贝塞尔曲线移动鼠标"""
     if control_points is None:
@@ -565,10 +567,10 @@ def bezier_move(start_x, start_y, end_x, end_y, duration=0.5, control_points=Non
             (mid_x + offset, mid_y - 50),
             (mid_x - offset, mid_y + 50)
         ]
-
+# ...
     steps = max(int(duration * 100), 10)
     points = [(start_x, start_y)] + control_points + [(end_x, end_y)]
-
+# ...
     for i in range(steps + 1):
         t = i / steps
         # 三次贝塞尔曲线
@@ -581,7 +583,7 @@ def bezier_move(start_x, start_y, end_x, end_y, duration=0.5, control_points=Non
              3*(1-t)*t**2 * points[2][1] +
              t**3 * points[3][1])
         pyautogui.moveTo(int(x), int(y))
-
+# ...
 # 使用：模拟人类鼠标移动
 start = pyautogui.position()
 bezier_move(start.x, start.y, 800, 400, duration=0.8)
@@ -609,38 +611,38 @@ import csv
 import time
 import json
 from datetime import datetime
-
+# ...
 controller = ProFlowController(require_approval=False, log_dir="crm_import_logs")
-
+# ...
 with open('customers.csv', 'r', encoding='utf-8') as f:
     reader = list(csv.DictReader(f))
-
+# ...
 # 首条记录审批确认
 controller.require_approval = True
-
+# ...
 for i, row in enumerate(reader):
     # 第2条起关闭审批
     if i == 1:
         controller.require_approval = False
-
+# ...
     # 通过图像识别定位输入框
     controller.click_image('name_field.png', confidence=0.85, desc=f"客户{i+1}姓名")
     pyautogui.hotkey('ctrl', 'a')
     pyautogui.typewrite(row['name'], interval=0.03)
-
+# ...
     controller.click_image('email_field.png', confidence=0.85, desc="邮箱")
     pyautogui.hotkey('ctrl', 'a')
     pyautogui.typewrite(row['email'], interval=0.03)
-
+# ...
     # 提交
     controller.click_image('submit.png', confidence=0.9, desc="提交")
     time.sleep(1.5)
-
+# ...
     # 每50条保存一次日志
     if (i + 1) % 50 == 0:
         controller.save_log()
         print(f"进度：{i+1}/{len(reader)}")
-
+# ...
 controller.save_log()
 print(f"导入完成：共 {len(reader)} 条")
 ```
@@ -653,13 +655,13 @@ print(f"导入完成：共 {len(reader)} 条")
 import pyautogui
 import time
 from pathlib import Path
-
+# ...
 class UITester:
     def __init__(self):
         self.results = []
         self.screenshot_dir = Path("test_screenshots")
         self.screenshot_dir.mkdir(exist_ok=True)
-
+# ...
     def assert_image_exists(self, image_path, confidence=0.9, timeout=10):
         """断言UI元素存在"""
         start = time.time()
@@ -672,7 +674,7 @@ class UITester:
                 })
                 return True
             time.sleep(0.5)
-
+# ...
         self.results.append({
             'test': f'image_exists: {image_path}',
             'passed': False,
@@ -680,32 +682,32 @@ class UITester:
         })
         self.screenshot(f"FAIL_{image_path}")
         return False
-
+# ...
     def screenshot(self, name):
         filename = self.screenshot_dir / f"{name}_{int(time.time())}.png"
         pyautogui.screenshot(filename=str(filename))
         return filename
-
+# ...
     def run_test_suite(self):
         """执行测试套件"""
         # 测试1：登录界面
         self.assert_image_exists('login_form.png', confidence=0.9)
-
+# ...
         # 输入凭据
         pyautogui.click(400, 300)
         pyautogui.typewrite("testuser", interval=0.05)
         pyautogui.press('tab')
         pyautogui.typewrite("pass123", interval=0.05)
         self.screenshot("login_filled")
-
+# ...
         # 提交
         pyautogui.press('enter')
         time.sleep(2)
-
+# ...
         # 测试2：主界面加载
         self.assert_image_exists('dashboard.png', confidence=0.85, timeout=15)
         self.screenshot("dashboard_loaded")
-
+# ...
         # 生成报告
         passed = sum(1 for r in self.results if r['passed'])
         total = len(self.results)
@@ -713,7 +715,7 @@ class UITester:
         for r in self.results:
             status = "PASS" if r['passed'] else "FAIL"
             print(f"  [{status}] {r['test']}")
-
+# ...
 tester = UITester()
 tester.run_test_suite()
 ```
@@ -725,11 +727,11 @@ tester.run_test_suite()
 ```python
 import pyautogui
 import time
-
+# ...
 # 副屏在主屏左侧，X坐标为负
 MAIN_SCREEN = {'x_start': 0, 'x_end': 1920}
 SECONDARY_SCREEN = {'x_start': -1920, 'x_end': 0}
-
+# ...
 def copy_from_trading_system(row_index):
     """从主屏交易系统复制数据"""
     # 确保在主屏操作
@@ -738,7 +740,7 @@ def copy_from_trading_system(row_index):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     print(f"已复制第 {row_index} 行交易数据")
-
+# ...
 def paste_to_analysis_tool():
     """粘贴到副屏分析工具"""
     # 切换到副屏（Alt+Tab或直接点击副屏坐标）
@@ -748,7 +750,7 @@ def paste_to_analysis_tool():
     pyautogui.press('enter')
     time.sleep(0.3)
     print("已粘贴至分析工具")
-
+# ...
 # 批量搬运
 for i in range(20):
     copy_from_trading_system(i)
@@ -762,15 +764,15 @@ for i in range(20):
 ```python
 from datetime import datetime
 import json
-
+# ...
 class ComplianceController:
     """合规操作控制器"""
-
+# ...
     def __init__(self, operator, log_file="compliance_log.json"):
         self.operator = operator
         self.log_file = log_file
         self.actions = []
-
+# ...
     def approved_action(self, action_name, action_func, *args):
         """审批后执行操作"""
         timestamp = datetime.now().isoformat()
@@ -779,9 +781,9 @@ class ComplianceController:
         print(f"时间：{timestamp}")
         print(f"操作：{action_name}")
         print(f"参数：{args}")
-
+# ...
         approval = input("审批结果 [approve/reject]: ").strip().lower()
-
+# ...
         entry = {
             'timestamp': timestamp,
             'operator': self.operator,
@@ -790,20 +792,20 @@ class ComplianceController:
             'approval': approval,
             'status': 'executed' if approval == 'approve' else 'skipped'
         }
-
+# ...
         if approval == 'approve':
             action_func(*args)
             entry['result'] = 'success'
         else:
             entry['result'] = 'rejected'
-
+# ...
         self.actions.append(entry)
         self._save_log()
-
+# ...
     def _save_log(self):
         with open(self.log_file, 'w', encoding='utf-8') as f:
             json.dump(self.actions, f, ensure_ascii=False, indent=2)
-
+# ...
 # 使用
 cc = ComplianceController(operator="张三")
 cc.approved_action("点击转账按钮", pyautogui.click, 500, 300)
@@ -816,17 +818,17 @@ cc.approved_action("输入金额", pyautogui.typewrite, "10000")
 
 ```python
 recorder = ActionRecorder(log_dir="demo_recordings")
-
+# ...
 # 录制操作
 pyautogui.click(100, 100)
 recorder.record('click', (100, 100), 'clicked_logo')
-
+# ...
 pyautogui.typewrite("产品演示", interval=0.05)
 recorder.record('type', ('产品演示',), 'typed_title')
-
+# ...
 pyautogui.hotkey('ctrl', 's')
 recorder.record('hotkey', ('ctrl', 's'), 'saved')
-
+# ...
 # 保存录制
 recording_file = recorder.save("product_demo")
 print(f"演示录制已保存，可使用 replay() 回放")
@@ -845,7 +847,7 @@ controller = EnterpriseFlowController(config={
     'circuit_threshold': 10,
     'log_dir': 'nightly_batch_logs',
 })
-
+# ...
 # 批量处理
 for i in range(100):
     try:
@@ -857,7 +859,7 @@ for i in range(100):
     except RuntimeError as e:
         print(f"熔断触发，停止处理：{e}")
         break
-
+# ...
 report = controller.export_report()
 print(f"批量处理完成，报告：{report}")
 ```
@@ -869,22 +871,22 @@ print(f"批量处理完成，报告：{report}")
 ```python
 import pyautogui
 import time
-
+# ...
 # 1. 从邮件客户端获取会议请求
 pyautogui.click(100, 200)  # 邮件客户端
 time.sleep(0.5)
 pyautogui.hotkey('ctrl', 'c')
-
+# ...
 # 2. 切换到项目管理工具
 pyautogui.click(800, 200)  # 项目管理工具
 time.sleep(0.5)
 pyautogui.click(500, 300)  # 新建任务
 pyautogui.hotkey('ctrl', 'v')
-
+# ...
 # 3. 设置截止日期
 pyautogui.press('tab')
 pyautogui.typewrite("2026-02-15", interval=0.05)
-
+# ...
 # 4. 切换到日历创建事件
 pyautogui.click(1200, 200)  # 日历应用
 time.sleep(0.5)
@@ -897,7 +899,7 @@ pyautogui.typewrite("项目评审会议", interval=0.05)
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:------|------:|:------|:------|
 | 数据录入主管 | 批量数据导入 | 图像识别+审批模式+日志 | 批量处理+审计留痕 |
 | 测试工程师 | UI回归测试 | 图像识别+截图+断言 | 自动化测试+报告生成 |
 | 金融分析师 | 跨屏数据搬运 | 多显示器+坐标映射 | 双屏协同+效率提升 |
@@ -921,14 +923,14 @@ pyautogui.typewrite("项目评审会议", interval=0.05)
 # 缓存模板图片位置
 import cv2
 import numpy as np
-
+# ...
 template_cache = {}
-
+# ...
 def cached_locate(image_path, confidence=0.9, cache_key=None):
     key = cache_key or image_path
     if key in template_cache:
         return template_cache[key]
-
+# ...
     location = pyautogui.locateOnScreen(image_path, confidence=confidence)
     if location:
         template_cache[key] = location
@@ -959,9 +961,8 @@ def cached_locate(image_path, confidence=0.9, cache_key=None):
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|:---|---:|---:|:---|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -1021,7 +1022,7 @@ Windows默认DPI缩放（如125%、150%）会导致物理像素与逻辑像素�
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:------:|--------|:-------|:------:|
 | 图像识别找不到目标 | confidence过低/模板不匹配 | 提高confidence到0.9+；重新截取模板 | 高 |
 | 多显示器坐标错乱 | DPI缩放/显示器排列变更 | 校准DPI为100%；确认显示器排列 | 高 |
 | 审批模式卡住 | input()阻塞无人值守 | 无人值守场景使用'never'模式 | 中 |
@@ -1045,7 +1046,7 @@ Windows默认DPI缩放（如125%、150%）会导致物理像素与逻辑像素�
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | pyautogui | Python库 | 必需 | `pip install pyautogui` |
 | Pillow | Python库 | 必需 | `pip install pillow` |
 | opencv-python | Python库 | 专业版必需 | `pip install opencv-python`（图像识别） |
@@ -1116,7 +1117,7 @@ Windows默认DPI缩放（如125%、150%）会导致物理像素与逻辑像素�
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|----|----|----|----|
 | 免费体验版 | ¥0 | 核心功能（鼠标+键盘+截图）+ 基础示例 + 基础FAQ | 个人试用、轻量自动化 |
 | 收费专业版 | ¥29.9/月 | 全功能（图像识别+多显示器+审批+回放+曲线）+ 7角色指南 + 性能优化 + 优先支持 | 团队/企业、企业级RPA |
 

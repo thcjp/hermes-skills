@@ -43,8 +43,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # RSS聚合工具（免费版）
 
 ## 概述
@@ -59,7 +60,7 @@ RSS聚合工具免费版是一款自动读取 RSS 链接列表、抓取文章正
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | RSS聚合工具免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -100,15 +101,7 @@ RSS聚合工具免费版是一款自动读取 RSS 链接列表、抓取文章正
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：抓取合并多源报道、去重历史推送、生成高密度、Markdown、聚合工具免费版、自动读取配置的、抓取并合并多源报、通过历史日志核对、实现增量推送、生成高信息密度的、核心能力、抓取文章正文、避免同一事件重复、严格历史日志核对、实现纯增量推送、过滤垃圾广告与水、高信息密度纯文本、Emoji等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
-### 核心功能执行
-执行核心功能执行操作,使用`input_params`参数进行配置。
-
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 核心功能执行
+### 核心功能执行(补充)
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
 **输入**: 用户提供核心功能执行所需的指令和必要参数。
@@ -124,7 +117,7 @@ RSS聚合工具免费版是一款自动读取 RSS 链接列表、抓取文章正
 
 ```text
 用户：帮我生成今日AI资讯简报
-
+# ...
 Agent 执行流程：
 1. 读取配置的RSS链接列表
 2. 抓取每篇文章的正文内容
@@ -139,19 +132,19 @@ Agent 执行流程：
 
 ```text
 今日AI资讯 (2026-07-18)
-
+# ...
 标题： OpenAI发布GPT-5多模态模型
-
+# ...
 摘要： OpenAI于7月18日正式发布GPT-5模型，支持文本、图像、音频和视频的多模态输入输出。新模型推理能力较GPT-4提升40%，支持100万token超长上下文，API调用价格降低30%。已向Plus用户开放，企业版将于下月推出。
-
+# ...
 链接：
 https://example.com/article1
 https://example.com/article2
-
+# ...
 标题： 国产AI芯片算力突破512 TOPS
-
+# ...
 摘要： 某国产芯片企业发布新一代AI推理芯片，采用7nm工艺，算力达512 TOPS（INT8），能效比达到15 TOPS/W，超越国际同类产品。已获得多家车企订单，预计Q4量产。
-
+# ...
 链接：
 https://example.com/article3
 ```
@@ -162,7 +155,7 @@ https://example.com/article3
 
 ```text
 用户：帮我聚合今天的技术博客更新
-
+# ...
 Agent：
 1. 读取技术博客RSS列表
 2. 抓取最新文章
@@ -177,7 +170,7 @@ Agent：
 
 ```text
 用户：帮我生成今日综合资讯简报，覆盖AI、新能源、半导体
-
+# ...
 Agent：
 1. 读取多领域RSS配置
 2. 分别抓取各领域文章
@@ -205,19 +198,19 @@ Agent：
 ```bash
 # 创建工作目录
 mkdir -p ~/rss-aggregator
-
+# ...
 # 配置RSS链接列表
 cat > ~/rss-aggregator/feeds.txt << 'EOF'
 # AI资讯
 https://feeds.example.com/ai-news.xml
 https://feeds.example.com/tech-ai.xml
-
+# ...
 # 新能源
 https://feeds.example.com/energy-news.xml
-
+# ...
 # 半导体
 https://feeds.example.com/semiconductor.xml
-
+# ...
 # 综合科技
 https://feeds.example.com/tech-general.xml
 EOF
@@ -254,20 +247,20 @@ cat ~/rss-aggregator/pushed_history.log
 ```bash
 # feeds.txt - RSS链接配置
 # 格式：每行一个RSS链接，#开头为注释
-
+# ...
 # === AI 资讯 ===
 https://feeds.example.com/ai-news.xml
 https://feeds.example.com/ml-weekly.xml
 https://feeds.example.com/ai-research.xml
-
+# ...
 # === 新能源 ===
 https://feeds.example.com/energy-news.xml
 https://feeds.example.com/ev-updates.xml
-
+# ...
 # === 半导体 ===
 https://feeds.example.com/semiconductor.xml
 https://feeds.example.com/chip-design.xml
-
+# ...
 # === 综合科技 ===
 https://feeds.example.com/tech-general.xml
 https://feeds.example.com/startup-news.xml
@@ -279,40 +272,40 @@ https://feeds.example.com/startup-news.xml
 # output_rules.yaml - 输出规范配置
 edition: free
 version: "1.0.0"
-
+# ...
 formatting:
   # 头部日期
   header_format: "今日AI资讯 (YYYY-MM-DD)"
   header_dynamic_date: true
-
+# ...
   # 区块结构
   block_structure:
     - "标题："
     - "摘要："
     - "链接："
   block_separator: "\n\n"  # 字段间空行
-
+# ...
   # 深度摘要要求
   summary_requirements:
     include_data: true        # 包含具体数据
     include_impact: true      # 包含深层影响
     objective_tone: true      # 客观陈述
     no_subjective: true       # 无主观废话
-
+# ...
   # 排版约束
   no_emoji: true              # 禁止Emoji
   pure_text: true             # 纯文本
   basic_markdown: true        # 基础Markdown换行
-
+# ...
   # 数据源
   hide_source: true           # 隐藏RSS源名称
-
+# ...
 # 历史日志
 history:
   file: "~/rss-aggregator/pushed_history.log"
   format: "title|link|date"
   encoding: "utf-8"
-
+# ...
 # 质量审查
 quality_filter:
   spam_detection: true        # 垃圾广告检测
@@ -324,19 +317,19 @@ quality_filter:
 
 ```text
 今日AI资讯 (YYYY-MM-DD)
-
+# ...
 标题： [合并后的事件标题]
-
+# ...
 摘要： [详尽的核心摘要。多源合并时综合各方要点，提取最核心的数据、过程和结论。]
-
+# ...
 链接：
 [原文链接 1]
 [原文链接 2 (若有多个链接直接换行展示)]
-
+# ...
 标题： [下一条独立事件标题]
-
+# ...
 摘要： [下一条事件的详细摘要...]
-
+# ...
 链接：
 [原文链接]
 ```
@@ -348,7 +341,7 @@ quality_filter:
 ```text
 # 推荐 - 5-15个高质量源
 配置5-15个核心RSS源，确保信息质量
-
+# ...
 # 不推荐 - 过多低质量源
 配置50+个RSS源，导致信息过载和去重困难
 ```
@@ -369,10 +362,10 @@ mv ~/rss-aggregator/pushed_history.tmp ~/rss-aggregator/pushed_history.log
 # feeds.txt
 # === 核心关注 ===
 [最重要的3-5个源]
-
+# ...
 # === 次要关注 ===
 [补充信息源]
-
+# ...
 # === 备选 ===
 [偶尔查看的源]
 ```
@@ -387,7 +380,7 @@ mv ~/rss-aggregator/pushed_history.tmp ~/rss-aggregator/pushed_history.log
 # 好的摘要示例
 摘要： 某企业发布7nm AI芯片，算力512 TOPS，能效比15 TOPS/W，
 已获多家车企订单，Q4量产。相比上代性能提升2倍，功耗降低40%。
-
+# ...
 # 差的摘要示例
 摘要： 某企业发布了新芯片，性能很好，值得关注。
 ```
@@ -423,7 +416,7 @@ mv ~/rss-aggregator/pushed_history.tmp ~/rss-aggregator/pushed_history.log
 ### Q5：免费版与 PRO 版本的区别？
 
 | 对比项 | 免费版 | PRO 版本 |
-|:-------|:-------|:---------|
+|:-----|:-----|:-----|
 | RSS源数 | 无限制 | 无限制 |
 | 定时运行 | 不支持 | cron自动调度 |
 | 推送渠道 | 终端输出 | 邮件/微信/Webhook |
@@ -445,7 +438,7 @@ mv ~/rss-aggregator/pushed_history.tmp ~/rss-aggregator/pushed_history.log
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | 网络访问 | 服务 | 必需 | 互联网连接 |
 | 本地文件系统 | 存储 | 必需 | 操作系统提供 |
@@ -459,7 +452,7 @@ mv ~/rss-aggregator/pushed_history.tmp ~/rss-aggregator/pushed_history.log
 # 验证工作区
 mkdir -p ~/rss-aggregator && echo "目录就绪"
 touch ~/rss-aggregator/pushed_history.log && echo "历史日志就绪"
-
+# ...
 # 验证RSS源连通性（示例）
 curl -s -o /dev/null -w "%{http_code}" https://feeds.example.com/ai-news.xml
 # 预期输出: 200
@@ -475,9 +468,8 @@ curl -s -o /dev/null -w "%{http_code}" https://feeds.example.com/ai-news.xml
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

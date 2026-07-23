@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 > **定时任务+会话持久化+Webhook通知+批量管理+监控告警。企业级会话管理全功能覆盖。**
 
@@ -30,7 +32,7 @@ pricing_model: "monthly"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 单次抓取（fetch） | 支持 | 支持 |
 | 定时任务（recurring） | 不支持 | 支持（cron调度） |
 | 会话持久化 | 不支持 | 支持（conf+py脚本） |
@@ -52,23 +54,17 @@ pricing_model: "monthly"
 
 ### 2. 会话持久化（保存为可复用脚本）
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供会话持久化（保存为可复用脚本）所需的指令和必要参数。
 **处理**: 解析会话持久化（保存为可复用脚本）的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回会话持久化（保存为可复用脚本）的响应数据,包含状态码、结果和日志。
 
 ### 3. Webhook通知（多渠道）
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供Webhook通知（多渠道）所需的指令和必要参数。
 **处理**: 解析Webhook通知（多渠道）的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回Webhook通知（多渠道）的响应数据,包含状态码、结果和日志。
 
 ### 4. 批量会话管理
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供批量会话管理所需的指令和必要参数。
 **处理**: 解析批量会话管理的输入参数,完成核心逻辑,返回结构化响应。
@@ -77,7 +73,7 @@ pricing_model: "monthly"
 ### 5. 企业级监控告警
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 浏览器会话(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -85,13 +81,13 @@ pricing_model: "monthly"
 ```python
 class SessionMonitor:
     """会话监控告警（专业版）"""
-
+# ...
     def __init__(self, check_interval=300, max_failures=3):
         self.check_interval = check_interval
         self.max_failures = max_failures
         self.failure_counts = {}
         self.notifier = WebhookNotifier()
-
+# ...
     def check_health(self, session_name):
         """检查会话健康状态"""
         try:
@@ -110,7 +106,7 @@ class SessionMonitor:
             return {"status": "error", "error": result.stderr}
         except Exception as e:
             return {"status": "error", "error": str(e)}
-
+# ...
     def monitor_loop(self, sessions):
         """监控循环"""
         while True:
@@ -127,9 +123,9 @@ class SessionMonitor:
                         self._restart_session(name)
                 else:
                     self.failure_counts[name] = 0
-
+# ...
             time.sleep(self.check_interval)
-
+# ...
     def _restart_session(self, name):
         """重启会话"""
         print(f"尝试重启会话：{name}")
@@ -140,7 +136,7 @@ class SessionMonitor:
             )
         except Exception as e:
             print(f"重启失败：{e}")
-
+# ...
 monitor = SessionMonitor(check_interval=300, max_failures=3)
 monitor.notifier.register("slack-alerts", "https://hooks.slack.com/services/xxx", "slack")
 ```
@@ -173,7 +169,7 @@ manager.register_session("api-health", {"timeout": 60})
 manager.register_session("db-status", {"timeout": 90})
 manager.register_session("cache-monitor", {"timeout": 30})
 manager.register_session("log-scanner", {"timeout": 120})
-
+# ...
 import schedule
 schedule.every().day.at("02:00").do(manager.run_all)
 ```
@@ -200,11 +196,11 @@ persister.save_session(
 ### 30秒上手（定时任务）
 ```bash
 docker exec agent-browser bsession new price-monitor
-
+# ...
 echo 'N8N_WEBHOOK_URL=https://n8n.example.com/webhook/xxx' >> ~/.bsession/workspace/conf/price-monitor.conf
-
+# ...
 docker exec agent-browser bsession run price-monitor
-
+# ...
 docker exec agent-browser bsession logs price-monitor -n 50
 ```
 
@@ -217,39 +213,38 @@ CDP_PORT=9222
 CHECK_INTERVAL=1800
 N8N_WEBHOOK_URL=https://n8n.example.com/webhook/xxx
 EOF
-
+# ...
 cat > ~/.bsession/workspace/（请参考skill目录中的脚本文件） <<'PYEOF'
 import os, sys, time
 sys.path.insert(0, "/app")
 from lib.browser import ab, find_ref, send_webhook, make_logger
-
+# ...
 logger = make_logger("batch-monitor")
-
+# ...
 def run():
     port = int(os.environ.get("CDP_PORT", 9222))
     webhook = os.environ.get("N8N_WEBHOOK_URL", "")
-
+# ...
     urls = [
         "https://example.com/page1",
         "https://example.com/page2",
     ]
-
+# ...
     for url in urls:
         ab(port, "open", url)
         time.sleep(3)
         snap = ab(port, "snapshot")
         send_webhook(webhook, {"url": url, "status": "checked"})
         logger.info(f"已检查：{url}")
-
+# ...
 if __name__ == "__main__":
     run()
 PYEOF
-
+# ...
 docker exec agent-browser bsession run batch-monitor
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配置示例
 ### 企业级配置
@@ -260,12 +255,12 @@ sessions:
     webhook: https://hooks.slack.com/services/xxx
     timeout: 60
     persistent: true
-
+# ...
   - name: stock-check
     interval: 3600
     webhook: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
     timeout: 90
-
+# ...
 monitoring:
   check_interval: 300
   max_failures: 3
@@ -274,7 +269,7 @@ monitoring:
       url: https://hooks.slack.com/services/xxx
     - type: feishu
       url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-
+# ...
 batch:
   max_workers: 5
   timeout: 300
@@ -345,7 +340,7 @@ manager = BatchSessionManager(max_workers=3)
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Docker | 运行时 | 必需 | 官网下载安装 |
 | Docker Compose | 工具 | 必需 | 随Docker Desktop安装 |
 | Python 3.8+ | 运行时 | 必需 | 容器内已内置 |
@@ -386,7 +381,7 @@ manager = BatchSessionManager(max_workers=3)
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 单次抓取 + 基础交互 + 容器隔离 + 调试模式 | 个人试用、单次任务 |
 | 收费专业版 | ¥39/月 | 定时任务 + 持久化 + Webhook + 批量管理 + 监控告警 + CF绕过 + 调试增强 + 优先支持 | 团队/企业、长期任务 |
 
@@ -395,7 +390,7 @@ manager = BatchSessionManager(max_workers=3)
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

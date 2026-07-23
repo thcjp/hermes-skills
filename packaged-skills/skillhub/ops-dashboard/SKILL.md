@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 运维看板(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| :--------- | 不支持 | 支持 |
-| :----- | 不支持 | 支持 |
-| 会话管理 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 运维看板(专业版)全功能实时运维监控 | 不支持 | 支持 |
+| 运维看板(专业版)支持成本分析 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 专业版支持 | 说明 |
-|:---------|:-----------|:-----|
+|:-----|:-----|:-----|
 | 会话管理 | 全量 | 查看、终止、归档、批量清理 |
 | 定时任务 | 全量 | 查看、执行、重试、禁用 |
 | 成本分析 | 支持 | Token用量、API费用、预算告警 |
@@ -84,17 +86,17 @@ pricing_model: "monthly"
 # 查看成本概览
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/cost/summary
-
+# ...
 # 查看按会话的成本明细
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/cost/by-session
-
+# ...
 # 设置预算告警阈值
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"monthly_budget": 500, "alert_threshold": 0.8}' \
      http://localhost:3000/api/cost/budget
-
+# ...
 # 查看月度成本趋势
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/cost/trend?period=monthly"
@@ -107,13 +109,13 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # 查看所有会话（含已结束的）
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/sessions?status=all
-
+# ...
 # 批量归档超过7天的会话
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"action": "archive", "older_than_days": 7}' \
      http://localhost:3000/api/sessions/batch
-
+# ...
 # 批量终止异常会话
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
@@ -128,13 +130,13 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # 查看失败任务列表
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/cron?status=failed"
-
+# ...
 # 手动触发任务执行
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"task": "daily-report"}' \
      http://localhost:3000/api/cron/run-now
-
+# ...
 # 查看任务执行结果
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/cron/history/daily-report
@@ -147,11 +149,11 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # 查看操作审计日志
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/audit/logs?start=2026-01-01&end=2026-01-31"
-
+# ...
 # 按操作类型筛选
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/audit/logs?type=mutation"
-
+# ...
 # 导出审计报告（JSON格式）
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/audit/export?format=json" > audit-report.json
@@ -171,20 +173,20 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # .env 文件
 DASHBOARD_PORT=3000
 DASHBOARD_HOST=localhost
-
+# ...
 # 认证配置
 OPS_DASHBOARD_AUTH_TOKEN=your_secure_token_here
-
+# ...
 # CORS配置
 DASHBOARD_CORS_ORIGINS=http://localhost:3000
-
+# ...
 # 高级功能开关（默认关闭，按需启用）
 OPS_DASHBOARD_LOAD_KEYS_ENV=0
 OPS_DASHBOARD_ENABLE_PROVIDER_AUDIT=0
 OPS_DASHBOARD_ENABLE_CONFIG_ENDPOINT=0
 OPS_DASHBOARD_ENABLE_SYSTEMCTL_RESTART=0
 OPS_DASHBOARD_ENABLE_MUTATING_OPS=0
-
+# ...
 # 附件操作权限（默认全部关闭）
 OPS_DASHBOARD_ALLOW_ATTACHMENT_FILEPATH_COPY=0
 OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_TMP=0
@@ -202,7 +204,7 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=0
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 从Node.js官网下载安装 |
 | Express | npm包 | 必需 | 通过`npm install express`安装 |
 | curl | 命令行工具 | 必需 | 系统通常自带 |
@@ -226,7 +228,7 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=0
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | ops-dashboard处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -274,7 +276,7 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=0
 ## 异常处理
 
 | 症状 | 可能原因 | 解决方案 | 优先级 |
-|:-----|:---------|:---------|:-------|
+|:------|------:|:------|:------|
 | API返回403 | 功能开关未启用 | 设置对应环境变量为1 | 高 |
 | 成本数据为空 | Token用量未上报 | 检查Agent配置，确保上报Token | 高 |
 | 变更操作无响应 | 操作队列积压 | 检查`/api/audit/logs`，等待执行 | 中 |
@@ -286,10 +288,10 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=0
 | 安全扫描超时 | 扫描范围过大 | 缩小扫描路径或分批扫描 | 低 |
 | systemctl失败 | 权限不足 | 使用用户级服务，非root | 中 |
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -305,11 +307,11 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=0
 # 优秀层：认证授权
 # 所有API请求需携带Token
 OPS_DASHBOARD_AUTH_TOKEN=your_secure_token_here
-
+# ...
 # 第二层：CORS策略
 # 默认仅允许本地来源，按需添加外部来源
 DASHBOARD_CORS_ORIGINS=https://dashboard.example.com,https://ops.example.com
-
+# ...
 # 第三层：功能开关
 # 高敏感功能需显式启用
 OPS_DASHBOARD_ENABLE_PROVIDER_AUDIT=1    # 允许调用AI服务商API
@@ -329,15 +331,15 @@ OPS_DASHBOARD_ALLOW_ATTACHMENT_COPY_FROM_HOME=1
 # 查看成本概览（总费用、日均、趋势）
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/cost/summary
-
+# ...
 # 按会话查看成本明细
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/cost/by-session?limit=50"
-
+# ...
 # 按模型查看成本分布
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/cost/by-model
-
+# ...
 # 设置月度预算和告警阈值
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
@@ -347,7 +349,7 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
        "alert_webhook": "https://hooks.example.com/alert"
      }' \
      http://localhost:3000/api/cost/budget
-
+# ...
 # 查看成本趋势
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/cost/trend?period=daily&days=30"
@@ -360,23 +362,23 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"type": "full", "description": "变更前备份"}' \
      http://localhost:3000/api/backup/create
-
+# ...
 # 查看备份列表
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/backup/list
-
+# ...
 # 从备份恢复
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"backup_id": "backup-001"}' \
      http://localhost:3000/api/backup/restore
-
+# ...
 # 切换默认模型
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"model": "qwen2.5:7b"}' \
      http://localhost:3000/api/ops/update-model
-
+# ...
 # 更新配置
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
@@ -389,7 +391,7 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # 查看告警规则
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/alerts/rules
-
+# ...
 # 创建告警规则
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
@@ -402,11 +404,11 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
        "enabled": true
      }' \
      http://localhost:3000/api/alerts/rules
-
+# ...
 # 查看告警历史
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/alerts/history
-
+# ...
 # 确认告警
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
@@ -419,19 +421,19 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # 查看所有操作日志
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/audit/logs
-
+# ...
 # 按类型筛选（mutation类型为变更操作）
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/audit/logs?type=mutation"
-
+# ...
 # 按时间范围筛选
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/audit/logs?start=2026-01-01&end=2026-01-31"
-
+# ...
 # 按操作者筛选
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/audit/logs?operator=admin"
-
+# ...
 # 导出审计报告
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      "http://localhost:3000/api/audit/export?format=json" > audit.json
@@ -441,15 +443,15 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```bash
 # 启用服务商审计功能
 export OPS_DASHBOARD_ENABLE_PROVIDER_AUDIT=1
-
+# ...
 # 查看OpenAI组织用量
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/provider/openai/usage
-
+# ...
 # 查看Anthropic组织用量
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/provider/anthropic/usage
-
+# ...
 # 查看多服务商成本对比
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/provider/comparison
@@ -459,13 +461,13 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```bash
 # 启用系统重启功能
 export OPS_DASHBOARD_ENABLE_SYSTEMCTL_RESTART=1
-
+# ...
 # 用户级服务重启（非root）
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"service": "agent-service"}' \
      http://localhost:3000/api/ops/systemctl-restart
-
+# ...
 # 查看系统资源状态
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/ops/system-status
@@ -476,7 +478,7 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # 执行全量安全扫描
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/security/scan
-
+# ...
 # 扫描指定模式
 curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      -H "Content-Type: application/json" \
@@ -485,7 +487,7 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
        "paths": ["./config", "./.env"]
      }' \
      http://localhost:3000/api/security/scan
-
+# ...
 # 查看扫描历史
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/security/history
@@ -525,9 +527,8 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

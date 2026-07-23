@@ -49,6 +49,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 媒体控制专业版
 ## 概述
@@ -57,7 +59,7 @@ pricing_model: "per_use"
 ## 核心能力
 ### 功能对比
 | 能力 | 免费版 | PRO 版 |
-| --- | --- | --- |
+|---|---|-----|
 | 一键播放 | 是 | 是 |
 | 智能续播 | 是 | 是 |
 | 设备发现 | 是 | 是 |
@@ -85,7 +87,7 @@ node skills/jellyfin-control/cli.js multi-device \
   --devices "living_room,bedroom,kitchen" \
   --action play \
   --content "playlist_name"
-
+# ...
 # 同步播放（多房间音频）
 node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom" \
@@ -99,7 +101,7 @@ python （请参考skill目录中的脚本文件） add \
   --name="Alice" \
   --permissions="play,search" \
   --library-filter="movies,tvshows"
-
+# ...
 # 切换用户
 node skills/jellyfin-control/cli.js switch-user "Alice"
 ```
@@ -113,7 +115,7 @@ python （请参考skill目录中的脚本文件） \
   --device "bedroom" \
   --volume 30 \
   --fade-in 60
-
+# ...
 # 就寝模式
 python （请参考skill目录中的脚本文件） \
   --content "sleep_sounds" \
@@ -156,7 +158,7 @@ node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom,kitchen" \
   --content "party_playlist" \
   --sync-mode precise
-
+# ...
 # 调整各房间音量
 node skills/jellyfin-control/cli.js multi-volume \
   --devices "living_room:50,bedroom:40,kitchen:30"
@@ -177,7 +179,7 @@ python （请参考skill目录中的脚本文件） \
   --fade-in 120 \
   --fade-out 600 \
   --auto-off 30
-
+# ...
 # 周末延迟播放
 python （请参考skill目录中的脚本文件） \
   --content "weekend_jazz" \
@@ -198,7 +200,7 @@ python （请参考skill目录中的脚本文件） \
   --fix-metadata \
   --download-images \
   --notify-email=admin@family.com
-
+# ...
 # 生成媒体库报告
 python （请参考skill目录中的脚本文件） \
   --output=library_report.md \
@@ -230,7 +232,7 @@ python （请参考skill目录中的脚本文件） \
 # 依赖说明
 npm install node-cron winston
 pip install apscheduler
-
+# ...
 # 验证升级
 node skills/jellyfin-control/cli.js --version
 # 输出: jellyfin-control-tool-pro v1.0.0
@@ -274,7 +276,7 @@ node skills/jellyfin-control/cli.js --version
 ```bash
 # 列出所有设备
 node skills/jellyfin-control/cli.js devices list
-
+# ...
 # 控制指定设备
 node skills/jellyfin-control/cli.js tv play "Movie" --device "living_room"
 ```
@@ -288,7 +290,7 @@ jellyfin:
   url: http://192.168.1.50:8096
   api_key: ${JF_API_KEY}
   admin_user: admin
-
+# ...
 devices:
   living_room:
     backend: homeassistant
@@ -305,7 +307,7 @@ devices:
     backend: androidtv
     adb_device: 192.168.1.102:5555
     mac: 77:88:99:AA:BB:CC
-
+# ...
 users:
   - name: Alice
     permissions: [play, search, control]
@@ -313,17 +315,17 @@ users:
   - name: Bob
     permissions: [play, search]
     library_filter: [movies, music]
-
+# ...
 schedule:
   timezone: Asia/Shanghai
   storage: ./schedules
-
+# ...
 library:
   auto_scan: true
   scan_cron: "0 3 * * *"
   fix_metadata: true
   download_images: true
-
+# ...
 analytics:
   enabled: true
   track_history: true
@@ -335,11 +337,11 @@ analytics:
 ```bash
 # 启动 REST API 服务
 python （请参考skill目录中的脚本文件） --port 8000
-
+# ...
 # 播放控制
 curl -X POST http://localhost:8000/play \
   -d '{"content": "Movie", "device": "living_room"}'
-
+# ...
 # 定时播放
 curl -X POST http://localhost:8000/schedule \
   -d '{"content": "morning_music", "cron": "0 7 * * 1-5"}'
@@ -347,7 +349,7 @@ curl -X POST http://localhost:8000/schedule \
 
 ### 参数说明
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `--device` | 字符串 | 默认设备 | 设备名称 |
 | `--devices` | 字符串 | 无 | 多设备列表 |
 | `--sync-mode` | 字符串 | loose | 同步模式 |
@@ -365,7 +367,7 @@ node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom" \
   --sync-mode precise \
   --buffer 1000
-
+# ...
 # 独立音量控制
 node skills/jellyfin-control/cli.js multi-volume \
   --devices "living_room:50,bedroom:30"
@@ -380,7 +382,7 @@ python （请参考skill目录中的脚本文件） \
   --device "bedroom" \
   --fade-in 120 \
   --auto-off 30
-
+# ...
 # 就寝模式
 python （请参考skill目录中的脚本文件） \
   --content "sleep_sounds" \
@@ -398,7 +400,7 @@ python （请参考skill目录中的脚本文件） \
   --scan-type full \
   --fix-metadata \
   --download-images
-
+# ...
 # 生成媒体库报告
 python （请参考skill目录中的脚本文件） \
   --output=report.md \
@@ -411,10 +413,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 使用精确同步模式
 node skills/jellyfin-control/cli.js sync-play --sync-mode precise
-
+# ...
 # 增加缓冲
 node skills/jellyfin-control/cli.js sync-play --buffer 2000
-
+# ...
 # 检查网络延迟
 ping each_device_ip
 ```
@@ -423,10 +425,10 @@ ping each_device_ip
 ```bash
 # 检查定时任务
 python （请参考skill目录中的脚本文件） --list
-
+# ...
 # 查看任务日志
 cat ./logs/scheduled_play.log
-
+# ...
 # 手动触发测试
 python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
@@ -435,10 +437,10 @@ python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```bash
 # 检查权限
 ls -la /media/library
-
+# ...
 # 手动触发扫描
 python （请参考skill目录中的脚本文件） --scan-now
-
+# ...
 # 查看扫描日志
 cat ./logs/library_scan.log
 ```
@@ -447,10 +449,10 @@ cat ./logs/library_scan.log
 ```bash
 # 检查用户配置
 python （请参考skill目录中的脚本文件） list
-
+# ...
 # 验证权限
 python （请参考skill目录中的脚本文件） check-permissions --user=Alice
-
+# ...
 # 重置用户权限
 python （请参考skill目录中的脚本文件） reset --user=Alice
 ```
@@ -466,7 +468,7 @@ python （请参考skill目录中的脚本文件） reset --user=Alice
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | Node.js 14+ | 运行时 | 是 | `nodejs.org` 下载 |
 | Python 3.7+ | 运行时 | 是 | 系统包管理器安装 |
 | Jellyfin 服务器 | 媒体服务 | 是 | `jellyfin.org` 部署 |
@@ -482,13 +484,13 @@ python （请参考skill目录中的脚本文件） reset --user=Alice
 ```bash
 # Jellyfin API Key（必需）
 JF_API_KEY=your_jellyfin_api_key
-
+# ...
 # Home Assistant 令牌（如使用 HA）
 HA_TOKEN=your_ha_long_lived_token
-
+# ...
 # WebOS 配对密钥（如使用 WebOS 直连）
 TV_CLIENT_KEY=your_webos_client_key
-
+# ...
 # 如需启用通知
 export SMTP_HOST=smtp.provider.com
 export SMTP_PORT=587
@@ -506,7 +508,7 @@ export SMTP_PASSWORD=your_password
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

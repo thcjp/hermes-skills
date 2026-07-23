@@ -33,11 +33,12 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 数据格式转换 免费版
 
 ## 一、概述
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ### 2.1 支持的格式矩阵
 
 | 输入格式 | 输出格式 | 典型场景 |
-|----------|----------|----------|
+|----|----|----|
 | CSV | JSON | 表格数据入 API |
 | JSON | CSV | API 数据入 Excel |
 | JSON | YAML | 配置文件人性化 |
@@ -79,7 +80,7 @@ suggested_price: 29.9
 ### 2.3 类型智能推断
 
 | 原始值 | 推断类型 | 说明 |
-|--------|----------|------|
+|:-----|:-----|:-----|
 | `42` | int | 整数 |
 | `3.14` | float | 浮点数 |
 | `true` / `false` | bool | 布尔值 |
@@ -118,7 +119,7 @@ suggested_price: 29.9
 ## 适用场景
 
 | 角色 | 典型场景 | 输入 | 输出 |
-|------|----------|------|------|
+|---:|---:|---:|---:|
 | 后端开发者 | API 数据入 Excel | JSON | CSV |
 | 运维工程师 | 配置文件迁移 | YAML | TOML |
 | 数据分析师 | 表格数据入程序 | CSV | JSON |
@@ -139,7 +140,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | input | string | 是 | 数据格式转换(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -228,7 +229,7 @@ debug: true
 [database]
 host = "localhost"
 port = 5432
-
+# ...
 [servers.alpha]
 ip = "10.0.0.1"
 ```
@@ -252,25 +253,25 @@ ip = "10.0.0.1"
 
 ```python
 import csv, json, yaml, xmltodict, tomllib, tomli_w
-
+# ...
 # CSV → JSON
 with open('data.csv', 'r', encoding='utf-8') as f:
     rows = list(csv.DictReader(f))
 with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(rows, f, ensure_ascii=False, indent=2)
-
+# ...
 # JSON → YAML
 with open('data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 with open('data.yaml', 'w', encoding='utf-8') as f:
     yaml.dump(data, f, allow_unicode=True, default_flow_style=False)
-
+# ...
 # YAML → TOML
 with open('config.yaml', 'r', encoding='utf-8') as f:
     data = yaml.safe_load(f)
 with open('config.toml', 'wb') as f:
     tomli_w.dump(data, f)
-
+# ...
 # XML → JSON
 with open('data.xml', 'r', encoding='utf-8') as f:
     data = xmltodict.parse(f.read())
@@ -335,7 +336,7 @@ A: YAML/TOML 中的注释在转换为 JSON 时会丢失(JSON 不支持注释)。
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | pyyaml | Python 库 | 必需 | `pip install pyyaml`(YAML) |
 | xmltodict | Python 库 | 必需 | `pip install xmltodict`(XML) |
@@ -355,9 +356,8 @@ A: YAML/TOML 中的注释在转换为 JSON 时会丢失(JSON 不支持注释)。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

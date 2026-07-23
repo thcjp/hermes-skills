@@ -24,22 +24,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 免费资源发现器(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 免费资源发现器(专业版)功能免费AI资源管理 | 不支持 | 支持 |
+| 免费资源发现器(专业版)成本分析与质量监控 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -104,16 +106,16 @@ pricing_model: "per_use"
 ```bash
 # 启动守护进程(前台)
 free-finder daemon
-
+# ...
 # 后台运行
 nohup free-finder daemon > ~/.free-finder/daemon.log 2>&1 &
-
+# ...
 # 单次探测
 free-finder daemon --once
-
+# ...
 # 查看守护状态
 free-finder daemon --status
-
+# ...
 # 停止守护
 free-finder daemon --stop
 ```
@@ -134,10 +136,10 @@ free-finder daemon --stop
 free-finder keys add --provider openrouter --key "sk-or-v1-key1"
 free-finder keys add --provider openrouter --key "sk-or-v1-key2"
 free-finder keys add --provider openrouter --key "sk-or-v1-key3"
-
+# ...
 # 查看Key状态
 free-finder keys list
-
+# ...
 # 查看各Key用量
 free-finder keys stats
 ```
@@ -145,7 +147,7 @@ free-finder keys stats
 负载均衡策略:
 
 | 策略 | 说明 | 适用场景 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | round_robin | 轮询分配 | 默认,均匀消耗 |
 | least_used | 优先用量最少的Key | 最大化总额度 |
 | lowest_latency | 优先延迟最低的Key | 追求响应速度 |
@@ -157,13 +159,13 @@ free-finder keys stats
 ```bash
 # 查看今日统计
 free-finder stats --today
-
+# ...
 # 查看本周报告
 free-finder stats --week --format pdf --output report.pdf
-
+# ...
 # 按模型分组统计
 free-finder stats --group-by model
-
+# ...
 # 按日期导出CSV
 free-finder stats --from 2026-07-01 --to 2026-07-18 --format csv
 ```
@@ -197,13 +199,13 @@ free-finder stats --from 2026-07-01 --to 2026-07-18 --format csv
 ```bash
 # 启动质量监控
 free-finder monitor start
-
+# ...
 # 查看质量趋势
 free-finder monitor trend --days 30
-
+# ...
 # 查看模型评分变化
 free-finder monitor scores
-
+# ...
 # 导出质量报告
 free-finder monitor report --format html --output quality.html
 ```
@@ -270,7 +272,7 @@ free-finder monitor report --format html --output quality.html
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | free-finder[pro] | CLI工具 | 必需 | `pip install free-finder[pro]` |
 | requests | Python库 | 必需 | `pip install requests` |
 | aiohttp | Python库 | 必需 | `pip install aiohttp`(异步探测) |
@@ -293,7 +295,7 @@ free-finder monitor report --format html --output quality.html
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | free-resource-finder处理的内容输入 |,  |
 | content | string | 否 | free-resource-finder处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -321,17 +323,16 @@ free-finder monitor report --format html --output quality.html
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | LLM | 模型 | 是 | 需要LLM进行内容生成, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要, 本地LLM不需要 |
 
@@ -437,9 +438,8 @@ A: 专业版提供99.5%可用性SLA(基于守护进程+多Key+fallback机制)。
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -49,11 +49,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
-
 # UI 设计工具包 - 免费版
 
 ## 概述
@@ -65,7 +66,7 @@ UI 设计工具包(免费版)为个人开发者提供界面设计的核心原则
 ## 核心能力
 
 | 能力 | 免费版 | 说明 |
-|:-----|:-------|:-----|
+|---|---|---|
 | 视觉层次 | 支持 | 焦点、分组、留白 |
 | 排版规范 | 支持 | 字体、字号、行高 |
 | 色彩使用 | 支持 | 主色、语义色、中性色 |
@@ -119,12 +120,12 @@ UI 设计工具包(免费版)为个人开发者提供界面设计的核心原则
   <h3 class="text-lg font-semibold text-gray-900">
     月度报告
   </h3>
-
+# ...
   <!-- 次要信息:描述 -->
   <p class="mt-2 text-sm text-gray-600 leading-relaxed">
     2026 年 7 月运营数据概览,包含用户增长、收入与活跃度指标。
   </p>
-
+# ...
   <!-- 数据展示 -->
   <div class="mt-4 space-y-2">
     <div class="flex justify-between text-sm">
@@ -136,7 +137,7 @@ UI 设计工具包(免费版)为个人开发者提供界面设计的核心原则
       <span class="font-medium text-gray-900">¥128,500</span>
     </div>
   </div>
-
+# ...
   <!-- 主操作 -->
   <button class="mt-6 w-full rounded-md bg-blue-500 px-4 py-2
                  text-sm font-medium text-white
@@ -158,7 +159,7 @@ UI 设计工具包(免费版)为个人开发者提供界面设计的核心原则
     <h2 class="text-2xl font-bold text-gray-900">创建账户</h2>
     <p class="mt-1 text-sm text-gray-500">填写以下信息开始使用</p>
   </div>
-
+# ...
   <!-- 表单字段:统一间距与状态 -->
   <div class="space-y-4">
     <div>
@@ -172,7 +173,7 @@ UI 设计工具包(免费版)为个人开发者提供界面设计的核心原则
                     focus:outline-none transition-colors"
              placeholder="you@example.com" />
     </div>
-
+# ...
     <div>
       <label class="block text-sm font-medium text-gray-700 mb-1.5">
         密码
@@ -185,7 +186,7 @@ UI 设计工具包(免费版)为个人开发者提供界面设计的核心原则
       <p class="mt-1.5 text-xs text-gray-500">使用大小写字母与数字组合</p>
     </div>
   </div>
-
+# ...
   <!-- 主操作 + 次要操作 -->
   <div class="space-y-3">
     <button class="w-full rounded-md bg-blue-500 px-4 py-2.5
@@ -212,11 +213,11 @@ UI 设计工具包(免费版)为个人开发者提供界面设计的核心原则
     <!-- 卡片:暗黑模式使用 lighter surface 表示层次 -->
     <div class="max-w-2xl rounded-lg bg-gray-50 dark:bg-gray-800
                 border border-gray-200 dark:border-gray-700 p-6">
-
+# ...
       <h1 class="text-xl font-bold text-gray-900 dark:text-white">
         设置
       </h1>
-
+# ...
       <div class="mt-6 space-y-4">
         <!-- 选项行 -->
         <div class="flex items-center justify-between py-3
@@ -284,7 +285,7 @@ UI 设计的七大核心原则:
   --space-xl:  32px;  /* 2rem */
   --space-2xl: 48px;  /* 3rem */
 }
-
+// ...
 /* 字号体系(清晰阶梯,非渐变) */
 :root {
   --text-caption: 12px;
@@ -298,34 +299,34 @@ UI 设计的七大核心原则:
 ### 3. 检查设计清单
 
 ```markdown
-
+# ...
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
-
+# ...
+# ...
 ## UI 设计检查清单
-
+# ...
 ### 视觉层次
 - [ ] 每屏有一个明确焦点
 - [ ] 主操作最显眼(颜色/大小/位置)
 - [ ] 相关元素通过间距分组
-
+# ...
 ### 排版
 - [ ] 最多使用 2-3 种字体
 - [ ] 字号有清晰阶梯(title > heading > body)
 - [ ] 正文行高 1.4-1.6
 - [ ] 正文行宽 45-75 字符
-
+# ...
 ### 色彩
 - [ ] 一个主色用于主操作
 - [ ] 语义色一致(红=错误,绿=成功)
 - [ ] 不依赖颜色单独传达信息
 - [ ] 中性色为主,色彩用于强调
-
+# ...
 ### 间距
 - [ ] 使用一致的间距比例
 - [ ] 组间距 > 组内间距
 - [ ] 触摸目标至少 44px
-
+# ...
 ### 状态
 - [ ] 每个交互组件设计全部状态
 - [ ] 聚焦状态清晰可见
@@ -343,13 +344,13 @@ UI 设计的七大核心原则:
   --color-primary: #3b82f6;
   --color-primary-hover: #2563eb;
   --color-primary-active: #1d4ed8;
-
+// ...
   /* 语义色 */
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
   --color-info: #3b82f6;
-
+// ...
   /* 中性色 */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
@@ -372,7 +373,7 @@ UI 设计的七大核心原则:
 ### 间距比例
 
 | 名称 | 值 | 用途 |
-|:-----|:---|:-----|
+|---:|---:|---:|
 | xs | 4px | 图标与文字间距 |
 | sm | 8px | 相关元素间距 |
 | md | 16px | 组件内间距 |
@@ -464,7 +465,7 @@ UI 设计的七大核心原则:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | 代码编辑器 | 工具 | 推荐 | VS Code / WebStorm |
 | 浏览器开发者工具 | 工具 | 推荐 | Chrome DevTools |
 | Figma(可选) | 设计工具 | 可选 | figma.com |
@@ -481,9 +482,8 @@ UI 设计的七大核心原则:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

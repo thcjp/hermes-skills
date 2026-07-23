@@ -26,8 +26,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 体测扫描工具 专业版
 
 ## 概述
@@ -39,7 +40,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-| --- | :---: | :---: |
+|---|---|---|
 | 单次视频扫描 | 支持 | 支持 |
 | 基础围度测量 | 支持 | 支持 |
 | 腰臀比汇总 | 支持 | 支持 |
@@ -88,15 +89,15 @@ suggested_price: 99.9
 # batch_body_scan.py
 import json
 import time
-
+# ...
 members = [
     {"id": "M001", "name": "张三", "gender": "male",   "height": 178, "video": "https://cdn.example.com/m001.mp4", "phone": "iPhone 15 Pro"},
     {"id": "M002", "name": "李四", "gender": "female", "height": 165, "video": "https://cdn.example.com/m002.mp4", "phone": "iPhone 14"},
     {"id": "M003", "name": "王五", "gender": "male",   "height": 182, "video": "https://cdn.example.com/m003.mp4", "phone": "Pixel 8"},
 ]
-
+# ...
 scan_ids = []
-
+# ...
 # 步骤1: 批量提交扫描
 for m in members:
     result = anthrovision_bridge_submit_scan(
@@ -109,7 +110,7 @@ for m in members:
     )
     scan_ids.append({"member": m["name"], "scan_id": result["scan_id"]})
     print(f"已提交: {m['name']} -> {result['scan_id']}")
-
+# ...
 # 步骤2: 批量轮询（并行轮询多个任务）
 pending = set(item["scan_id"] for item in scan_ids)
 results = {}
@@ -125,7 +126,7 @@ while pending:
             print(f"完成: {item['member']} -> {r['status']}")
     if pending:
         time.sleep(12)
-
+# ...
 # 步骤3: 汇总输出
 for item in scan_ids:
     r = results[item["scan_id"]]
@@ -147,11 +148,11 @@ history = anthrovision_bridge_get_history(
     start_date="2026-01-01",
     end_date="2026-07-18"
 )
-
+# ...
 print(f"📊 张三 历史趋势 ({len(history['scans'])} 次扫描)")
 print(f"{'日期':<12} {'腰围':>8} {'臀围':>8} {'腰臀比':>8} {'变化':>8}")
 print("-" * 50)
-
+# ...
 prev_waist = None
 for scan in history["scans"]:
     waist = scan["measurements"].get("waist", "N/A")
@@ -184,14 +185,14 @@ for scan in history["scans"]:
 ```python
 # export_report.py
 import csv
-
+# ...
 # 获取团队当月全部扫描结果
 report = anthrovision_bridge_get_team_report(
     team_id="STUDIO_01",
     month="2026-07",
     include_trends=True
 )
-
+# ...
 # 导出 CSV
 with open("studio_report_202607.csv", "w", encoding="utf-8-sig", newline="") as f:
     writer = csv.writer(f)
@@ -204,9 +205,9 @@ with open("studio_report_202607.csv", "w", encoding="utf-8-sig", newline="") as 
             row["latest_scan"].get("waist_hip_ratio", ""),
             row.get("monthly_delta", {}).get("waist", "")
         ])
-
+# ...
 print(f"✅ 已导出 {len(report['members'])} 位会员数据至 studio_report_202607.csv")
-
+# ...
 # 生成摘要
 summary = report["summary"]
 print(f"\n📋 团队月度摘要:")
@@ -235,7 +236,7 @@ print(f"  达标率: {summary['healthy_ratio']:.0%}")
 ```python
 # 创建团队
 team = anthrovision_bridge_create_team(name="星耀健身工作室", admin_id="admin_001")
-
+# ...
 # 添加成员
 anthrovision_bridge_add_member(team_id=team["team_id"], member_id="M001", name="张三")
 anthrovision_bridge_add_member(team_id=team["team_id"], member_id="M002", name="李四")
@@ -260,7 +261,6 @@ print(report["summary"])
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -353,7 +353,7 @@ print(report["summary"])
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :------- | :----- | :--------- | :--------- |
+|:-----|:-----|:-----|:-----|
 | AnthroVision 扫描服务（专业版） | API | 必需 | 体测扫描后端服务（专业版接入凭证） |
 | Telegram Bot | 通信渠道 | 必需 | 通过 `@BotFather` 创建机器人 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -381,9 +381,8 @@ export TG_BOT_TOKEN="your_telegram_bot_token"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

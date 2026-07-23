@@ -35,24 +35,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # JavaScript规范工具(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 与免费版差异 | 不支持 | 支持 |
-| 全量风格规则 | 不支持 | 支持 |
-| 免费版仅核心规则集 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
+| 零日漏洞检测与防护规则下发 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 全量风格规则 | 28+规则,含迭代器、生成器、标准库等进阶主题 | 免费版仅核心规则集 |
 | 异步并发模型 | Promise.all / allSettled / 错误链路 / 取消令牌 | 免费版仅基础 async/await |
 | 性能优化 | 内存管理、事件循环、渲染性能、打包优化 | 免费版无 |
@@ -125,7 +127,7 @@ list.addEventListener('scroll', () => {
     item.style.top = `${window.scrollY + item.offsetTop}px`;
   });
 });
-
+// ...
 // 优化后:使用 requestAnimationFrame + transform 走合成层
 let ticking = false;
 const updateLayout = () => {
@@ -134,7 +136,7 @@ const updateLayout = () => {
   });
   ticking = false;
 };
-
+// ...
 list.addEventListener('scroll', () => {
   if (!ticking) {
     window.requestAnimationFrame(updateLayout);
@@ -156,9 +158,9 @@ const ESCAPE_MAP = {
   "'": '&#x27;',
   '`': '&#x60;',
 };
-
+// ...
 const escapeHtml = (input) => String(input).replace(/[&<>"'`]/g, (ch) => ESCAPE_MAP[ch]);
-
+// ...
 // 防止原型污染的安全合并
 const safeMerge = (target, ...sources) => {
   for (const source of sources) {
@@ -172,7 +174,7 @@ const safeMerge = (target, ...sources) => {
   }
   return target;
 };
-
+// ...
 export { escapeHtml, safeMerge };
 ```
 
@@ -228,12 +230,12 @@ module.exports = {
     'no-var': 'error',
     'prefer-const': 'error',
     'eqeqeq': ['error', 'always'],
-
+// ...
     // 警告级:建议修复,不阻断
     'no-unused-vars': 'warn',
     'prefer-template': 'warn',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
-
+// ...
     // 提示级:风格建议
     'prefer-arrow-callback': 'off',
     'arrow-body-style': 'off',
@@ -252,7 +254,7 @@ module.exports = {
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | javascript-skills处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -299,9 +301,8 @@ module.exports = {
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -315,10 +316,10 @@ module.exports = {
 - **Node.js版本**: 建议 20 LTS 及以上(用于支持最新ESLint与原生ES模块)
 - **包管理器**: npm / pnpm / yarn 任一(推荐 pnpm 用于Monorepo)
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | ESLint | npm包 | 推荐 | `npm i -D eslint` |
 | Prettier | npm包 | 推荐 | `npm i -D prettier` |
@@ -423,9 +424,8 @@ module.exports = {
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

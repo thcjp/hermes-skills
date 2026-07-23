@@ -40,8 +40,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 游戏资产生成工具（免费版）
 
 ## 概述
@@ -53,7 +54,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-|:-----|:-----|
+|---|---|
 | 角色设计 | 主角、NPC、敌人的概念设计与角色表 |
 | 精灵图 | 角色动画帧（行走、攻击、待机） |
 | 瓦片集 | 地面、墙壁、道具、陷阱等场景瓦片 |
@@ -70,12 +71,12 @@ suggested_price: 29.9
   - 瓦片集（场景构建）
   - 道具图标
   - UI元素
-
+# ...
 艺术风格:
   - Pixel Art（像素风）    → 复古/独立游戏
   - Hand-Painted（手绘风） → RPG/奇幻
   - Vector/Flat（扁平风）  → 休闲/移动
-
+# ...
 不支持（需专业版）:
   - 3D 模型（GLB格式）
   - 游戏设计文档（GDD）
@@ -118,23 +119,23 @@ def build_character_prompt(game_style, character_type, details):
     """构建角色设计提示词"""
     prompt = f"""
     设计一个{game_style}风格的{character_type}:
-
+# ...
     角色描述: {details['description']}
     艺术风格: {game_style}
-
+# ...
     需要的视图:
     """
     for view in details.get('views', ['正面', '背面', '侧面']):
         prompt += f"    - {view}\n"
-
+# ...
     prompt += "\n    需要的姿态:\n"
     for pose in details.get('poses', ['待机', '行走', '攻击']):
         prompt += f"    - {pose}\n"
-
+# ...
     prompt += f"\n    色彩方案: {details.get('palette', '暖色调')}"
     prompt += f"\n    尺寸规格: {details.get('size', '32x32像素')}"
     return prompt
-
+# ...
 # 像素风主角设计
 character = {
     "description": "年轻农夫，友好表情，草帽，蓝色围裙",
@@ -143,7 +144,7 @@ character = {
     "palette": "温暖大地色调",
     "size": "32x32像素"
 }
-
+# ...
 prompt = build_character_prompt("Stardew Valley像素风", "主角", character)
 print(prompt)
 ```
@@ -154,37 +155,37 @@ print(prompt)
 
 ```text
 提示词模板:
-
+# ...
 创建一个地牢探索游戏的瓦片集:
-
+# ...
 风格: 16位复古风，暗黑奇幻
-
+# ...
 需要包含:
   地面瓦片:
     - 石地板（多种变体）
     - 泥土地面
     - 水面（可动画）
-
+# ...
   墙壁瓦片:
     - 砖墙
     - 洞穴墙
     - 装饰墙壁
-
+# ...
   门:
     - 木门
     - 铁门
     - 魔法门
-
+# ...
   道具:
     - 火把
     - 宝箱
     - 木桶
     - 骨头
-
+# ...
   陷阱:
     - 尖刺
     - 压力板
-
+# ...
 所有瓦片必须无缝拼接，尺寸 16x16 像素。
 ```
 
@@ -197,7 +198,7 @@ print(prompt)
 generate_ui_element() {
   local element=$1
   local style=$2
-
+# ...
   case $element in
     "health-bar")
       echo "设计血条: ${style}风格, 含边框装饰, 可叠加心形图标"
@@ -213,7 +214,7 @@ generate_ui_element() {
       ;;
   esac
 }
-
+# ...
 generate_ui_element "health-bar" "暗黑奇幻"
 generate_ui_element "inventory-slot" "暗黑奇幻"
 ```
@@ -239,11 +240,11 @@ generate_ui_element "inventory-slot" "暗黑奇幻"
   Pixel Art（像素风）
     → 适合: 复古游戏、独立游戏、Game Jam
     → 参考: Stardew Valley, Celeste, Hollow Knight
-
+# ...
   Hand-Painted（手绘风）
     → 适合: RPG、奇幻游戏
     → 参考: Bastion, Transistor
-
+# ...
   Vector/Flat（扁平风）
     → 适合: 休闲游戏、移动游戏
     → 参考: Alto's Adventure, Monument Valley
@@ -255,16 +256,16 @@ generate_ui_element "inventory-slot" "暗黑奇幻"
 # 角色设计提示词
 prompt = """
 设计一个像素风游戏主角:
-
+# ...
 风格: 16位复古像素风
 角色: 年轻冒险者，勇敢表情，绿色斗篷
-
+# ...
 需要:
   - 正面、背面、侧面视图
   - 待机姿态
   - 行走动画帧（4方向各4帧）
   - 持剑攻击姿态
-
+# ...
 色彩方案: 绿色斗篷 + 棕色靴子 + 银色长剑
 尺寸: 32x32像素
 """
@@ -371,7 +372,7 @@ A: 生成的资产（PNG/Sprite Sheet）兼容所有主流引擎：Unity、Godot
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | 图片编辑器 | 工具 | 可选 | Aseprite/Photoshop/GIMP（精灵图编辑） |
 
@@ -386,9 +387,8 @@ A: 生成的资产（PNG/Sprite Sheet）兼容所有主流引擎：Unity、Godot
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

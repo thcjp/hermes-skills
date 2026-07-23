@@ -43,8 +43,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
-
 # Azure语音交互免费版
 
 ## 概述
@@ -54,7 +55,7 @@ Azure语音交互免费版是一款面向个人开发者的轻量级实时语音
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 实时语音通信 | 通过WebSocket建立双向实时语音连接 |
 | 双模态输出 | 同时支持文本与音频输出 |
 | 会话配置 | 设置指令、语音类型、模态等基本参数 |
@@ -99,7 +100,7 @@ import asyncio
 import os
 from azure.ai.voicelive.aio import connect
 from azure.core.credentials import AzureKeyCredential
-
+# ...
 async def voice_assistant():
     async with connect(
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
@@ -112,14 +113,14 @@ async def voice_assistant():
             "modalities": ["text", "audio"],
             "voice": "alloy"
         })
-
+# ...
         # 发送音频输入
         import base64
         audio_chunk = await read_audio_from_microphone()
         b64_audio = base64.b64encode(audio_chunk).decode()
         await conn.input_audio_buffer.append(audio=b64_audio)
         await conn.input_audio_buffer.commit()
-
+# ...
         # 接收响应
         async for event in conn:
             if event.type == "response.audio_transcript.done":
@@ -129,7 +130,7 @@ async def voice_assistant():
                 await play_audio(audio_bytes)
             elif event.type == "response.done":
                 break
-
+# ...
 asyncio.run(voice_assistant())
 ```
 
@@ -149,17 +150,17 @@ async def text_to_speech():
             "modalities": ["text", "audio"],
             "voice": "shimmer"
         })
-
+# ...
         # 通过文本创建对话项
         await conn.conversation.item.create(item={
             "type": "message",
             "role": "user",
             "content": [{"type": "input_text", "text": "你好，请介绍一下你自己。"}]
         })
-
+# ...
         # 触发响应
         await conn.response.create()
-
+# ...
         # 接收音频响应
         async for event in conn:
             if event.type == "response.audio_transcript.delta":
@@ -169,7 +170,7 @@ async def text_to_speech():
                 await play_audio(audio)
             elif event.type == "response.done":
                 break
-
+# ...
 asyncio.run(text_to_speech())
 ```
 
@@ -189,19 +190,19 @@ async def voice_transcription():
             "modalities": ["text"],
             "voice": "alloy"
         })
-
+# ...
         # 持续发送音频
         audio_chunk = await read_audio_from_microphone()
         b64_audio = base64.b64encode(audio_chunk).decode()
         await conn.input_audio_buffer.append(audio=b64_audio)
-
+# ...
         # 接收转写结果
         async for event in conn:
             if event.type == "conversation.item.input_audio_transcription.completed":
                 print(f"你说: {event.transcript}")
             elif event.type == "input_audio_buffer.speech_stopped":
                 break
-
+# ...
 asyncio.run(voice_transcription())
 ```
 
@@ -245,7 +246,7 @@ import asyncio
 import os
 from azure.ai.voicelive.aio import connect
 from azure.core.credentials import AzureKeyCredential
-
+# ...
 async def main():
     async with connect(
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
@@ -257,13 +258,13 @@ async def main():
             "modalities": ["text", "audio"],
             "voice": "alloy"
         })
-
+# ...
         async for event in conn:
             if event.type == "response.audio_transcript.done":
                 print(f"回复: {event.transcript}")
             elif event.type == "response.done":
                 break
-
+# ...
 asyncio.run(main())
 ```
 
@@ -280,7 +281,7 @@ AZURE_COGNITIVE_SERVICES_KEY=your_api_key_here
 ### 语音选项
 
 | 语音 | 描述 | 适用场景 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `alloy` | 中性平衡 | 通用场景 |
 | `echo` | 温暖对话 | 聊天助手 |
 | `shimmer` | 清晰专业 | 商务应用 |
@@ -290,7 +291,7 @@ AZURE_COGNITIVE_SERVICES_KEY=your_api_key_here
 ### 连接资源说明
 
 | 资源 | 用途 | 关键方法 |
-| --- | --- | --- |
+|---:|---:|---:|
 | `conn.session` | 会话配置 | `update(session=...)` |
 | `conn.response` | 模型响应 | `create()`, `cancel()` |
 | `conn.input_audio_buffer` | 音频输入 | `append()`, `commit()`, `clear()` |
@@ -339,7 +340,7 @@ AZURE_COGNITIVE_SERVICES_KEY=your_api_key_here
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | azure-ai-voicelive | Python SDK | 必需 | `pip install azure-ai-voicelive` |
@@ -361,9 +362,8 @@ AZURE_COGNITIVE_SERVICES_KEY=your_api_key_here
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

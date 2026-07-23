@@ -42,6 +42,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Token用量管理工具（专业版）
 
@@ -52,7 +54,7 @@ pricing_model: "monthly"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 用量监控 | 单会话实时 | 单会话 + 跨会话追踪 |
 | 余额查询 | 手动查询 | 定时自动监控 + 告警 |
 | 告警机制 | 不支持 | 多级告警（余额/用量/异常） |
@@ -98,10 +100,10 @@ pricing_model: "monthly"
 # 添加团队成员账号
 token-pro account add --name "开发者A" --provider moonshot --key-env MOONSHOT_API_KEY_A
 token-pro account add --name "开发者B" --provider openai --key-env OPENAI_API_KEY_B
-
+# ...
 # 生成团队周报
 token-pro team weekly --output team-report-2026-W29.md
-
+# ...
 # 示例
 # 📊 团队周报（2026-W29）
 # 团队总费用: ¥286.50
@@ -121,7 +123,7 @@ token-pro cron add \
   --name "token-balance-check" \
   --schedule "0 * * * *" \
   --check moonshot --threshold 5
-
+# ...
 # 告警规则
 # 余额 < ¥5    → 发送提醒（冷却1小时）
 # 余额 < ¥1    → 发送紧急提醒（冷却30分钟）
@@ -147,16 +149,16 @@ token-pro cron add \
 ```bash
 # 记录会话
 token-pro session record moonshot kimi-k2.5 5000 500 0.06 CNY
-
+# ...
 # 生成每日报告
 token-pro session daily
-
+# ...
 # 生成每周报告
 token-pro session weekly
-
+# ...
 # 智能建议
 token-pro session recommend
-
+# ...
 # 输出示例
 # 📊 每周用量分析
 # 总会话数: 42
@@ -190,16 +192,16 @@ token-pro session recommend
 ```bash
 # 1. 初始化专业版工作区
 token-pro init --workspace ~/token-pro
-
+# ...
 # 2. 添加账号
 token-pro account add --name "个人" --provider moonshot --key-env MOONSHOT_API_KEY
-
+# ...
 # 3. 设置定时监控
 token-pro cron add --name "balance-check" --schedule "0 * * * *" --check moonshot --threshold 5
-
+# ...
 # 4. 生成报告
 token-pro session weekly --output weekly-report.md
-
+# ...
 # 5. 查看团队汇总
 token-pro team summary
 ```
@@ -254,7 +256,7 @@ team:
 ## 告警规则库
 
 | 条件 | 动作 | 冷却时间 |
-|:-----|:-----|:---------|
+|:-----|:-----|:-----|
 | 余额 < 阈值 | 发送提醒 | 1 小时 |
 | 余额 < ¥1 | 发送紧急提醒 | 30 分钟 |
 | 24小时内3次提醒 | 建议充值 | - |
@@ -301,7 +303,7 @@ A：专业版支持导出 CSV/JSON 格式的费用明细，便于与财务系统
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需 | 官方站点下载 |
 | cron | 调度器 | 可选 | 系统自带 |
@@ -319,9 +321,8 @@ A：专业版支持导出 CSV/JSON 格式的费用明细，便于与财务系统
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

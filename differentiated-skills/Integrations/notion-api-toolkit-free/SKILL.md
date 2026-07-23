@@ -38,11 +38,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
-
 # Notion API工具箱(免费版)
 
 一个面向个人开发者与知识工作者的轻量化Notion集成Skill,通过托管OAuth与REST API的组合,帮助你快速接入Notion工作空间。本免费版聚焦查询与基础读写,适合个人与小型团队试用。
@@ -54,7 +55,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 描述 | 免费版是否支持 |
-|------|------|----------------|
+|---|---|-------|
 | OAuth鉴权 | 托管OAuth,无需自建 | 支持(单连接) |
 | 页面查询 | 搜索、获取、创建页面 | 支持 |
 | 数据库检索 | 查询数据库、获取数据源 | 支持 |
@@ -103,10 +104,10 @@ suggested_price: 29.9
 # 1. 登录并创建连接
 notion-toolkit login
 notion-toolkit connection create
-
+# ...
 # 2. 搜索页面
 notion-toolkit search "会议纪要"
-
+# ...
 # 3. 查询数据库
 notion-toolkit database query <databaseId> --filter '{"property":"Status","select":{"equals":"Active"}}'
 ```
@@ -118,10 +119,10 @@ notion-toolkit database query <databaseId> --filter '{"property":"Status","selec
 ```bash
 # 获取页面内容
 notion-toolkit page view <pageId>
-
+# ...
 # 读取块级内容
 notion-toolkit block children <blockId>
-
+# ...
 # 获取当前用户信息
 notion-toolkit whoami
 ```
@@ -133,7 +134,7 @@ notion-toolkit whoami
 ```bash
 # 用户确认后创建页面
 notion-toolkit page create --parent-page <parentId> --title "新任务"
-
+# ...
 # 追加内容块
 notion-toolkit block append <pageId> --children '[{"type":"paragraph","paragraph":{"rich_text":[{"text":{"content":"任务详情"}}]}}]'
 ```
@@ -188,7 +189,7 @@ notion-toolkit search "你的关键词"
 ```bash
 # 设置API Key
 export NOTION_TOOLKIT_API_KEY="your_api_key_here"
-
+# ...
 # 验证鉴权状态
 notion-toolkit whoami
 ```
@@ -198,19 +199,19 @@ notion-toolkit whoami
 ```bash
 # 搜索页面
 notion-toolkit search "会议" --filter page
-
+# ...
 # 搜索数据源
 notion-toolkit search --filter data_source
-
+# ...
 # 查询数据库
 notion-toolkit database query <databaseId> \
   --filter '{"property":"Status","select":{"equals":"Active"}}' \
   --sorts '[{"property":"Created","direction":"descending"}]' \
   --page-size 10
-
+# ...
 # 获取页面
 notion-toolkit page view <pageId>
-
+# ...
 # 读取块级内容
 notion-toolkit block children <blockId>
 ```
@@ -220,14 +221,14 @@ notion-toolkit block children <blockId>
 ```bash
 # 创建页面(会提示用户确认)
 notion-toolkit page create --parent-page <parentId> --title "新页面"
-
+# ...
 # 更新页面属性
 notion-toolkit page update <pageId> --properties '{"Status":{"select":{"name":"Done"}}}'
-
+# ...
 # 追加块
 notion-toolkit block append <blockId> \
   --children '[{"type":"paragraph","paragraph":{"rich_text":[{"text":{"content":"新段落"}}]}}]'
-
+# ...
 # 归档页面
 notion-toolkit page archive <pageId>
 ```
@@ -235,7 +236,7 @@ notion-toolkit page archive <pageId>
 ### 筛选操作符参考
 
 | 操作符 | 描述 |
-|--------|------|
+|:-----|:-----|
 | `equals` | 等于 |
 | `does_not_equal` | 不等于 |
 | `contains` | 包含 |
@@ -250,7 +251,7 @@ notion-toolkit page archive <pageId>
 ### 块类型参考
 
 | 块类型 | 描述 |
-|--------|------|
+|---:|---:|
 | `paragraph` | 段落 |
 | `heading_1` | 一级标题 |
 | `heading_2` | 二级标题 |
@@ -313,9 +314,8 @@ A: 在API 2025-09-03中,`POST /databases`仅接受title属性,其他属性会被
 
 ## 错误处理
 
-
 | 错误场景(症状) | 可能原因 | 解决方案 |
-|------|----------|----------|
+|:-------:|:-------:|:-------:|
 | 401 Unauthorized | API Key缺失或无效 | 检查环境变量,运行whoami验证 |
 | 400 Missing connection | 未创建Notion连接 | 执行`connection create notion` |
 | 404 Not Found | ID错误或资源未共享 | 确认ID正确,在Notion中共享给Integration |
@@ -348,7 +348,7 @@ A: 在API 2025-09-03中,`POST /databases`仅接受title属性,其他属性会被
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | notion-api-toolkit CLI | 命令行工具 | 必需 | `npm install -g notion-api-toolkit` |
 | Notion账户 | 在线服务 | 必需 | 通过notion.so注册 |

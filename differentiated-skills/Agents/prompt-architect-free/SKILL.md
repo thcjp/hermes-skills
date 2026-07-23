@@ -21,15 +21,16 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具。把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让 Agent 从"能跑"升级到"基本可控"。
 
 > 本免费版面向个人开发者试用与轻量场景。如需 Few-shot 自动生成、Token 预算管理、多 Agent 编排等高级能力，请使用 `prompt-architect-pro` 专业版。
 
 ## 设计动机：四大高频痛点
 | 痛点 | 典型表现 | 本技能对策 |
-|------|----------|------------|
+|---|----|-----|
 | Prompt 答非所问与幻觉 | 输出混乱、编造事实、偏离目标 | 五段式结构化 Prompt 模板 + 幻觉约束清单 |
 | 任务拆解颗粒度失控 | 拆太粗执行不了、拆太细 token 爆炸 | 线性拆解模板 + 颗粒度评估公式 |
 | Agent Loop 选型盲目 | 不知道何时用 ReAct、何时用 CoT | 选择决策树（按是否需工具+步数） |
@@ -39,14 +40,14 @@ suggested_price: 29.9
 ### Step 1：生成第一个结构化 System Prompt（< 30 秒）
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 提示词架构师免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```text
 用户："帮我设计一个客服 Agent 的 system prompt，处理退款咨询"
-
+# ...
 输出五段式结构：
 1. 角色定位（你是谁、服务谁）
 2. 能力边界（能做什么、不能做什么）
@@ -58,7 +59,7 @@ suggested_price: 29.9
 ### Step 2：选择 Agent Loop 模式（< 30 秒）
 ```text
 用户："这个任务该用 ReAct 还是 CoT？"
-
+# ...
 按决策树推荐：
 - 是否需要调用工具？
   - 否 → CoT
@@ -70,7 +71,7 @@ suggested_price: 29.9
 ### Step 3：定义输出 Schema（< 30 秒）
 ```text
 用户："让 Agent 输出结构化 JSON"
-
+# ...
 输出：
 {
   "type": "object",
@@ -80,7 +81,7 @@ suggested_price: 29.9
     "reason": {"type": "string", "minLength": 10}
   }
 }
-
+# ...
 配套解析策略：JSON 模式 → Markdown 提取 → 正则兜底
 ```
 
@@ -91,21 +92,21 @@ suggested_price: 29.9
 ```text
 [1. 角色定位]
 你是{角色}，服务{目标用户}，核心目标是{目标}。
-
+# ...
 [2. 能力边界]
 能做：{能力列表}
 不能做：{禁忌列表}
 不确定时：{兜底行为}
-
+# ...
 [3. 行为规范]
 语气：{语气描述}
 流程：{标准处理流程}
 禁忌：{绝对禁止的行为}
-
+# ...
 [4. 输出格式]
 响应 schema（JSON / Markdown 模板）：
 {schema 定义}
-
+# ...
 [5. 异常处理]
 输入异常：{处理方式}
 工具失败：{重试/降级策略}
@@ -135,23 +136,23 @@ suggested_price: 29.9
 
 ```text
 任务：{用户任务}
-
+# ...
 拆解步骤：
 Step 1: {子任务1}
   - 输入：{所需输入}
   - 输出：{预期输出}
   - 所需工具：{工具列表}
   - 预估 token：{数量}
-
+# ...
 Step 2: {子任务2}
   - 依赖：Step 1 的输出
   - 输入：{所需输入}
   - 输出：{预期输出}
   - 所需工具：{工具列表}
   - 预估 token：{数量}
-
+# ...
 ...
-
+# ...
 Step N: {最终输出}
 ```
 
@@ -160,13 +161,13 @@ Step N: {最终输出}
 ```text
 granularity = f(预估耗时, token消耗, 依赖复杂度, 失败概率)
 建议范围：0.6-0.8
-
+# ...
 < 0.4：拆太细，token 浪费在编排开销
 ```
 
 **评估示例**：
 | 任务 | 步数 | 总 token | 颗粒度评分 | 评价 |
-|------|------|----------|------------|------|
+|---:|---:|---:|---:|---:|
 | 简单问答 | 1 | 500 | 0.9 | 偏粗，但单步可接受 |
 | 客服退款 | 3 | 2000 | 0.7 | 合理 |
 | 调研报告 | 8 | 8000 | 0.4 | 偏细，建议合并相邻步骤 |
@@ -178,7 +179,7 @@ granularity = f(预估耗时, token消耗, 依赖复杂度, 失败概率)
 
 ### 3. Agent Loop 模式选择
 | 模式 | 适用场景 | 优势 | 劣势 | 免费版 |
-|------|----------|------|------|--------|
+|:---:|:---:|:---:|:---:|:---:|
 | ReAct（推理-行动） | 需要多步工具调用的任务 | 灵活、可解释 | 易陷入循环 | 支持 |
 | CoT（思维链） | 推理密集型任务 | 推理深度好 | 工具调用弱 | 支持 |
 | Plan-Execute（规划-执行） | 复杂多步任务 | 全局视野、可回溯 | 规划阶段 token 消耗大 | 专业版 |
@@ -212,13 +213,13 @@ Action: ...
 
 ```text
 问题：{用户问题}
-
+# ...
 推理链：
 1. 首先，{第一步推理}
 2. 因此，{第二步推理}
 3. 进一步，{第三步推理}
 4. 综上，{结论}
-
+# ...
 答案：{最终答案}
 ```
 
@@ -239,7 +240,7 @@ output_schema = {
         "confidence": {"type": "number", "minimum": 0, "maximum": 1}
     }
 }
-
+# ...
 def on_validation_fail(raw_output, errors):
     if retry_count < 2:
         return retry_with_error_feedback(raw_output, errors)
@@ -265,17 +266,15 @@ def on_validation_fail(raw_output, errors):
 
 ### 场景二：拆解"调研竞品并生成报告"任务
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三：选择 Agent Loop 模式
 ```text
 任务：构建一个能查询天气并推荐穿搭的 Agent
-
+# ...
 决策树走查：
 1. 是否需要调用工具？→ 是（需查天气）
 2. 任务步数是否 > 5？→ 否（查天气 + 推荐穿搭 = 2 步）
 3. 推荐：ReAct
-
+# ...
 ReAct 执行示例：
 Thought: 用户问北京今天穿什么，我需要先查天气
 Action: get_weather(city="北京", date="today")
@@ -289,13 +288,10 @@ Final Answer: 北京今天 5-15°C，建议穿卫衣加外套...
 
 ### 场景四：定义结构化输出 Schema
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:------|------:|:------|:------|------:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -321,7 +317,7 @@ A：不强制全部包含，但建议至少包含 3 项。"不确定时承认不
 
 ## 故障排查
 | 症状 | 可能原因 | 解决方案 |
-|------|----------|----------|
+|---:|:---|---:|
 | Agent 输出偏离目标 | 角色定位段缺失或模糊 | 补充第 1 段，明确目标用户与可量化目标 |
 | Agent 编造事实 | 缺少幻觉约束 | 补充幻觉约束清单至少 3 项 |
 | 任务拆解后无法执行 | 步骤间依赖未明确 | 标注每步的依赖与输入输出 |
@@ -348,7 +344,7 @@ A：不强制全部包含，但建议至少包含 3 项。"不确定时承认不
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供（免费版默认 GPT-4o-mini 路由） |
 | JSON Schema 校验库（可选） | 代码库 | 可选 | 如 ajv（JS）/ jsonschema（Python），用于输出校验 |
 
@@ -389,37 +385,11 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## 适用场景
-### 场景一：构建退款客服 Agent 的 System Prompt
+### 场景一：构建退款客服 Agent 的 System Prompt(补充)
 
-> 详细代码示例已移至 `references/detail.md`
+### 场景二：拆解"调研竞品并生成报告"任务(补充)
 
-### 场景二：拆解"调研竞品并生成报告"任务
-
-> 详细代码示例已移至 `references/detail.md`
-
-### 场景三：选择 Agent Loop 模式
-```text
-任务：构建一个能查询天气并推荐穿搭的 Agent
-
-决策树走查：
-1. 是否需要调用工具？→ 是（需查天气）
-2. 任务步数是否 > 5？→ 否（查天气 + 推荐穿搭 = 2 步）
-3. 推荐：ReAct
-
-ReAct 执行示例：
-Thought: 用户问北京今天穿什么，我需要先查天气
-Action: get_weather(city="北京", date="today")
-Observation: 北京今日 5-15°C，多云，北风 3 级
-Thought: 气温偏低，需推荐保暖穿搭
-Action: recommend_outfit(temp_range="5-15", wind="north_3")
-Observation: 推荐卫衣 + 外套 + 长裤
-Thought: 已给出穿搭建议，任务完成
-Final Answer: 北京今天 5-15°C，建议穿卫衣加外套...
-```
-
-### 场景四：定义结构化输出 Schema
-
-> 详细代码示例已移至 `references/detail.md`
+### 场景四：定义结构化输出 Schema(补充)
 
 ## 不适用场景
 

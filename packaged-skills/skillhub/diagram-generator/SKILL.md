@@ -21,6 +21,8 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Diagram Generator
 
@@ -28,11 +30,10 @@ pricing_model: "per_use"
 
 **范围外**(本技能不做): 手工绘制位图、SVG 矢量编辑、PDF 排版、PPT 幻灯片、3D 建模、动画与交互式可视化。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Diagram生成器处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,13 +41,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Diagram生成器通过MCP工具生成 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -56,7 +57,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -64,7 +65,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -88,7 +88,6 @@ export API_KEY="your_api_key_here"
 
 ### 支持的格式与图类型
 
-
 **输入**: 用户提供支持的格式与图类型所需的指令和必要参数。
 **处理**: 解析支持的格式与图类型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回支持的格式与图类型的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
@@ -104,7 +103,7 @@ export API_KEY="your_api_key_here"
 ### 图类型与默认格式
 
 | 图类型 | 默认格式 | 默认方向 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | 网络拓扑 | Draw.io | 垂直 |
 | 
 
@@ -113,7 +112,6 @@ export API_KEY="your_api_key_here"
 **输出**: 返回支持的格式与图类型的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 主工作流
-
 
 **输入**: 用户提供主工作流所需的指令和必要参数。
 **处理**: 解析主工作流的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -129,7 +127,6 @@ export API_KEY="your_api_key_here"
 - 可选文件名或输出目录
 
 用户已提供全部选项与完整 prompt 时跳过采集。对已有文件编辑,仅询问目标文
-
 
 ### 配置助手
 
@@ -152,12 +149,7 @@ export API_KEY="your_api_key_here"
 **处理**: 解析配置助手的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 
 #
-## 必需 MCP 工具
-
-生成图表前,验证以下 MCP 工具可用:
-- `mcp__mcp-diagram-generator__get_config`: 查看当前输出目录配置
-- `mcp__mcp-diagram-generator__generate_diagram`: 提交 JSON 规范生成图表
-- `mcp__mcp-diagram-generator__init_config`: 初始化默认配置
+## 必需 MCP 工具(补充)
 
 若工具缺失,需配置 MCP 服务器并重启 Agent 环境。推荐远程配置:
 ```json
@@ -173,17 +165,17 @@ export API_KEY="your_api_key_here"
 
 首次使用时服务器会创建 `.diagram-config.json` 与默认输出目录 `diagrams/{format}/`。
 
-## 支持的格式与图类型
+## 支持的格式与图类型(补充)
 
-### 格式
+### 格式(补充)
 - Draw.io: `.drawio`,适合复杂网络与架构图
 - Mermaid: `.mmd` 或 markdown 内嵌,适合代码仓库文档
 - Excalidraw: `.excalidraw`,适合白板手绘风格
 
-### 图类型与默认格式
+### 图类型与默认格式(补充)
 
-| 图类型 | 默认格式 | 默认方向 |
-| --- | --- | --- |
+| 图类型(续)| 默认格式 | 默认方向 |
+|:--------|--------:|:--------|
 | 网络拓扑 | Draw.io | 垂直 |
 | 系统架构 | Draw.io | 垂直或自动 |
 | 流程图 | Mermaid | 垂直 |
@@ -193,16 +185,9 @@ export API_KEY="your_api_key_here"
 
 使用场景可覆盖默认值: Word 文档优先纵向、PPT 横向可读性优先、代码仓库优先 Mermaid、白板协作优先 Excalidraw、复杂网络或架构优先 Draw.io。
 
-## 主工作流
+## 主工作流(补充)
 
-### 采集意图
-
-对新建图表,在处理完整 prompt 前收集以下选项:
-- 图类型(网络拓扑/架构/流程图/泳道/UML/白板)
-- 输出格式(Draw.io/Mermaid/Excalidraw)
-- 布局方向(垂直/水平/自动)
-- 使用场景(Word/PPT/代码仓库/白板协作)
-- 可选文件名或输出目录
+### 采集意图(补充)
 
 用户已提供全部选项与完整 prompt 时跳过采集。对已有文件编辑,仅询问目标文件路径与变更内容(若缺失)。
 
@@ -279,20 +264,7 @@ export API_KEY="your_api_key_here"
 
 服务器校验 schema、创建缺失目录、未提供输出路径时写入配置的默认目录。
 
-## 配置助手
-
-初始化默认配置: `init_config()`
-
-设置自定义路径:
-```json
-{
-  "paths": {
-    "drawio": "output/diagrams/drawio",
-    "mermaid": "output/diagrams/mermaid",
-    "excalidraw": "output/diagrams/excalidraw"
-  }
-}
-```
+## 配置助手(补充)
 
 查看配置: `get_config()`
 
@@ -307,7 +279,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及 playbook |
-| --- | --- | --- | --- |
+|---:|:---|---:|---:|
 | 系统架构文档化 | 为微服务系统画分层架构图 | Draw.io 架构图,含网关/服务/数据层 | architecture |
 | 网络拓扑规划 | 画三个数据中心的双活拓扑 | Draw.io 拓扑图,含环境/数据中心/区域/设备四级层级 | network-topology |
 | 流程规范输出 | 为报销审批流程画泳道图 | Draw.io 泳道图,跨部门交接与审批节点 | swimlane |
@@ -330,7 +302,7 @@ export API_KEY="your_api_key_here"
 ### 构建与校验 JSON 规范
 按 schema 构建 `elements` 数组,执行质量门检查。
 
-### 调用 MCP 工具生成
+### 调用 MCP 工具生成(补充)
 传入 `diagram_spec` 与可选 `filename` 或 `output_path`,服务器返回保存文件路径。
 
 #
@@ -445,7 +417,7 @@ export API_KEY="your_api_key_here"
 ## 错误处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| --- | --- | --- | --- |
+|:------:|--------|:-------|:------:|
 | mcp_tool_missing | `mcp__mcp-diagram-generator__*` 未注册 | MCP 服务器未配置或未启动 | 按"必需 MCP 工具"章节配置并重启 Agent 环境 |
 | schema_validation_failed | `Error: schema validation failed` | 必填字段缺失、ID 重复、边 source/target 无效 | 读 `references/json-schema-guide.md`,检查必填字段与 ID 唯一性 |
 | directory_error | `EACCES: permission denied` | 输出目录无写权限 | 检查目录权限,运行 `get_config()` 查看路径,必要时 `init_config()` 重置 |

@@ -19,8 +19,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 自集成工具（专业版）
 
 ## 概述
@@ -32,7 +33,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力 | 说明 | 专业版支持 |
-|------|------|-----------|
+|---|---|-----|
 | 预置连接器 | 搜索并使用预置连接器 | 是 |
 | 自定义连接器构建 | 自然语言驱动构建新连接器 | 是 |
 | OAuth授权连接 | 创建授权链接完成认证 | 是 |
@@ -192,17 +193,17 @@ curl -X POST https://api.integration-gateway.com/agent/sessions \
   -H "Authorization: Bearer $INTEGRATION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "为Jira（https://company.atlassian.net）构建连接器，支持创建Issue与查询项目"}'
-
+# ...
 # 轮询状态（state为idle或status为completed即完成）
 curl "https://api.integration-gateway.com/agent/sessions/sess_xyz?wait=true&timeout=30" \
   -H "Authorization: Bearer $INTEGRATION_TOKEN"
-
+# ...
 # 发送后续指令（如需调整）
 curl -X POST https://api.integration-gateway.com/agent/sessions/sess_xyz/message \
   -H "Authorization: Bearer $INTEGRATION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"input": "创建Issue时需要支持指定优先级字段"}'
-
+# ...
 # 中止会话（如需）
 curl -X POST https://api.integration-gateway.com/agent/sessions/sess_xyz/interrupt \
   -H "Authorization: Bearer $INTEGRATION_TOKEN"
@@ -289,9 +290,8 @@ workflow:
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:-----|:-----|:-----|:-----|:-----|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -325,7 +325,7 @@ A：支持。工作流触发器可配置为cron表达式定时触发，适合定
 ## 故障排查
 
 | 现象 | 可能原因 | 解决方案 |
-|------|---------|---------|
+|---:|---:|---:|
 | 连接器构建超时 | 目标API复杂或文档不全 | 补充API文档链接，通过会话消息指导 |
 | 工作流步骤间数据传递失败 | 变量引用路径错误 | 检查`{{step_id.result.field}}`路径是否正确 |
 | 批量动作限流 | 目标应用速率限制 | 降低批量并发数或增加间隔 |
@@ -344,7 +344,7 @@ A：支持。工作流触发器可配置为cron表达式定时触发，适合定
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | 0元 | 预置连接器+单动作执行 | 个人试用 |
 | 收费专业版 | 49.9元/月 | 自定义连接器+工作流+批量+审计+优先支持 | 团队/企业 |
 
@@ -359,7 +359,7 @@ A：支持。工作流触发器可配置为cron表达式定时触发，适合定
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | 集成网关账户 | 在线服务 | 必需 | 在网关控制台注册 |
 | 目标应用账户 | 在线服务 | 必需 | 各SaaS平台注册 |
 | 对象存储 | 基础设施 | 可选 | 审计日志归档 |

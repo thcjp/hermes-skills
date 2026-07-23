@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 央视新闻抓取助手（免费版）
 > **指定日期、抓取标题、生成简报。三步完成央视新闻联播内容获取。**
 
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ### 核心定位
 | 维度 | 免费版能力 |
-|------|------------|
+|---|-----|
 | 单日查询 | 支持 |
 | 批量日期查询 | 不支持（需专业版） |
 | AI智能摘要 | 不支持（需专业版） |
@@ -46,7 +47,7 @@ suggested_price: 29.9
 ### 1. 按日期抓取新闻联播
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 央视新闻抓取(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -55,14 +56,14 @@ suggested_price: 29.9
 import subprocess
 import json
 from datetime import datetime, timedelta
-
+# ...
 class CCTVNewsFetcher:
     """央视新闻抓取器（免费版）"""
-
+# ...
     def __init__(self, script_path="（请参考skill目录中的脚本文件）"):
         self.script_path = script_path
         self.runtime = self._detect_runtime()
-
+# ...
     def _detect_runtime(self):
         """检测可用的JS运行时"""
         for runtime in ["bun", "node"]:
@@ -84,32 +85,32 @@ class CCTVNewsFetcher:
             if len(date_str) == 8:
                 return date_str
             raise ValueError(f"无效日期格式：{date_input}")
-
+# ...
     def fetch(self, date_input):
         """抓取指定日期的新闻"""
         date_str = self.parse_date(date_input)
         print(f"正在抓取 {date_str} 的新闻联播内容...")
-
+# ...
         try:
             cmd = [self.runtime, self.script_path, date_str]
             result = subprocess.run(
                 cmd, capture_output=True, text=True, timeout=60, encoding="utf-8"
             )
-
+# ...
             if result.returncode != 0:
                 return {"success": False, "error": result.stderr}
-
+# ...
             # 解析JSON输出
             news_data = json.loads(result.stdout)
             return {"success": True, "data": news_data, "date": date_str}
-
+# ...
         except subprocess.TimeoutExpired:
             return {"success": False, "error": "抓取超时，请稍后重试"}
         except json.JSONDecodeError:
             return {"success": False, "error": "解析失败，输出格式异常"}
         except Exception as e:
             return {"success": False, "error": str(e)}
-
+# ...
 # 示例
 fetcher = CCTVNewsFetcher()
 result = fetcher.fetch("20250210")
@@ -128,44 +129,44 @@ else:
 ```python
 class NewsCategorizer:
     """新闻分类器（免费版）"""
-
+# ...
     DOMESTIC_KEYWORDS = [
         "主席", "总理", "国务院", "全国", "国内", "我国",
         "中央", "党委", "政府", "人大", "政协", "两会",
         "省委", "市委", "县委", "改革", "发展"
     ]
-
+# ...
     INTERNATIONAL_KEYWORDS = [
         "美国", "俄罗斯", "日本", "韩国", "朝鲜", "英国", "法国", "德国",
         "联合国", "国际", "外交", "访问", "会谈", "峰会",
         "欧盟", "北约", "亚太", "中东", "非洲", "拉美"
     ]
-
+# ...
     def categorize(self, news_list):
         """分类新闻列表"""
         categorized = {"domestic": [], "international": [], "other": []}
-
+# ...
         for news in news_list:
             title = news.get("title", "")
             content = news.get("content", "") or news.get("summary", "")
-
+# ...
             if self._is_domestic(title, content):
                 categorized["domestic"].append(news)
             elif self._is_international(title, content):
                 categorized["international"].append(news)
             else:
                 categorized["other"].append(news)
-
+# ...
         return categorized
-
+# ...
     def _is_domestic(self, title, content):
         text = title + content
         return any(kw in text for kw in self.DOMESTIC_KEYWORDS)
-
+# ...
     def _is_international(self, title, content):
         text = title + content
         return any(kw in text for kw in self.INTERNATIONAL_KEYWORDS)
-
+# ...
 # 使用示例
 categorizer = NewsCategorizer()
 news_list = [
@@ -188,7 +189,7 @@ print(f"其他：{len(categorized['other'])} 条")
 ```python
 class NewsBriefGenerator:
     """新闻简报生成器（免费版）"""
-
+# ...
     def generate(self, date_str, categorized_news):
         """生成新闻简报"""
         lines = []
@@ -196,7 +197,7 @@ class NewsBriefGenerator:
         lines.append(f"  新闻联播简报 | {self._format_date(date_str)}")
         lines.append("=" * 50)
         lines.append("")
-
+# ...
         # 国内新闻
         domestic = categorized_news.get("domestic", [])
         if domestic:
@@ -206,7 +207,7 @@ class NewsBriefGenerator:
                 title = news.get("title", "无标题")
                 lines.append(f"{i}. {title}")
             lines.append("")
-
+# ...
         # 国际新闻
         international = categorized_news.get("international", [])
         if international:
@@ -216,7 +217,7 @@ class NewsBriefGenerator:
                 title = news.get("title", "无标题")
                 lines.append(f"{i}. {title}")
             lines.append("")
-
+# ...
         # 其他
         other = categorized_news.get("other", [])
         if other:
@@ -226,19 +227,19 @@ class NewsBriefGenerator:
                 title = news.get("title", "无标题")
                 lines.append(f"{i}. {title}")
             lines.append("")
-
+# ...
         lines.append("=" * 50)
         lines.append(f"  共 {sum(len(v) for v in categorized_news.values())} 条新闻")
         lines.append("=" * 50)
-
+# ...
         return "\n".join(lines)
-
+# ...
     def _format_date(self, date_str):
         """格式化日期显示"""
         if len(date_str) == 8:
             return f"{date_str[:4]}年{date_str[4:6]}月{date_str[6:8]}日"
         return date_str
-
+# ...
 # 使用示例
 generator = NewsBriefGenerator()
 brief = generator.generate("20250210", categorized)
@@ -259,7 +260,7 @@ print(brief)
 fetcher = CCTVNewsFetcher()
 categorizer = NewsCategorizer()
 generator = NewsBriefGenerator()
-
+# ...
 # 抓取今天的新闻
 result = fetcher.fetch("today")
 if result.get("success"):
@@ -292,7 +293,7 @@ if result.get("success"):
 ```python
 # 获取最近一周的新闻标题作为创作参考
 import datetime
-
+# ...
 for days_ago in range(7):
     date = (datetime.datetime.now() - datetime.timedelta(days=days_ago)).strftime("%Y%m%d")
     result = fetcher.fetch(date)
@@ -314,10 +315,10 @@ for days_ago in range(7):
 ```bash
 # 使用bun运行（推荐，速度更快）
 bun （请参考skill目录中的脚本文件） 20250210
-
+# ...
 # 或使用node运行
 node （请参考skill目录中的脚本文件） 20250210
-
+# ...
 # 使用相对日期
 node （请参考skill目录中的脚本文件） yesterday
 node （请参考skill目录中的脚本文件） today
@@ -329,13 +330,13 @@ node （请参考skill目录中的脚本文件） today
 npm install node-html-parser
 # 或
 bun add node-html-parser
-
+# ...
 # 2. 验证运行时
 which bun || which node
-
+# ...
 # 3. 执行抓取
 node （请参考skill目录中的脚本文件） 20250210 > news_20250210.json
-
+# ...
 # 4. 解析输出
 cat news_20250210.json | python3 -m json.tool | head -50
 ```
@@ -344,7 +345,7 @@ cat news_20250210.json | python3 -m json.tool | head -50
 ### 基础配置
 ```python
 import os
-
+# ...
 class CCTVConfig:
     """央视新闻抓取配置（免费版）"""
     SCRIPT_PATH = os.getenv("CCTV_SCRIPT_PATH", "（请参考skill目录中的脚本文件）")
@@ -352,7 +353,7 @@ class CCTVConfig:
     OUTPUT_FORMAT = os.getenv("CCTV_OUTPUT", "json")  # json 或 text
     TIMEOUT = int(os.getenv("CCTV_TIMEOUT", "60"))
     MAX_NEWS = int(os.getenv("CCTV_MAX_NEWS", "30"))
-
+# ...
     @classmethod
     def show(cls):
         print("=== 央视新闻抓取配置 ===")
@@ -361,7 +362,7 @@ class CCTVConfig:
         print(f"输出格式：{cls.OUTPUT_FORMAT}")
         print(f"超时时间：{cls.TIMEOUT}s")
         print(f"最大新闻数：{cls.MAX_NEWS}")
-
+# ...
 CCTVConfig.show()
 ```
 
@@ -413,7 +414,7 @@ def get_recent_dates(days=7):
     from datetime import datetime, timedelta
     today = datetime.now()
     return [(today - timedelta(days=i)).strftime("%Y%m%d") for i in range(days)]
-
+# ...
 # 批量查询（注意频率，建议间隔2-3秒）
 dates = get_recent_dates(7)
 for date in dates:
@@ -426,25 +427,25 @@ for date in dates:
 ```python
 import os
 import json
-
+# ...
 def fetch_with_cache(date_input, cache_dir="./cache"):
     """带缓存的抓取"""
     os.makedirs(cache_dir, exist_ok=True)
     fetcher = CCTVNewsFetcher()
     date_str = fetcher.parse_date(date_input)
     cache_file = os.path.join(cache_dir, f"news_{date_str}.json")
-
+# ...
     # 检查缓存
     if os.path.exists(cache_file):
         with open(cache_file, "r", encoding="utf-8") as f:
             return json.load(f)
-
+# ...
     # 抓取并缓存
     result = fetcher.fetch(date_str)
     if result.get("success"):
         with open(cache_file, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
-
+# ...
     return result
 ```
 ### 错误场景3
@@ -474,7 +475,7 @@ def fetch_with_cache(date_input, cache_dir="./cache"):
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js 16+ | 运行时 | 二选一 | 官网下载安装 |
 | Bun 1.0+ | 运行时 | 二选一 | `curl -fsSL https://bun.sh/install \| bash` |
 | node-html-parser | npm包 | 必需 | `npm install node-html-parser` 或 `bun add node-html-parser` |

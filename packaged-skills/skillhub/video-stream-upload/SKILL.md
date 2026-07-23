@@ -23,19 +23,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
 # 视频上传-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 视频上传-专业版视频上传与流媒体管理 | 不支持 | 支持 |
+| 视频上传-专业版缩略图管理 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -56,7 +58,7 @@ pricing_model: "per_use"
 单次上传支持输出多档分辨率：
 
 | 分辨率 | 像素 | 最大码率 | 适用场景 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | 240p | 426×240 | 700,000 bps | 移动端低带宽 |
 | 360p | 640×360 | 1,200,000 bps | 移动端标准 |
 | 480p | 854×480 | 2,000,000 bps | 标清播放 |
@@ -160,8 +162,6 @@ python3 batch_upload.py --config /path/to/batch-upload.json --parallel 8
 
 **自定义编码配置：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景 3：4K 高清视频上传与缩略图管理
 某媒体机构需要上传 4K 纪录片，并设置自定义封面图。
 
@@ -174,14 +174,12 @@ python3 batch_upload.py --config /path/to/batch-upload.json --parallel 8
 
 **示例流程：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## 使用流程
 
 ### 优秀步：环境检查
 ```bash
 python3 --version
-
+# ...
 curl --version
 jq --version
 ```
@@ -229,7 +227,7 @@ python3 batch_upload.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | video-stream-upload处理的内容输入 |,  |
 | content | string | 否 | video-stream-upload处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -257,9 +255,8 @@ python3 batch_upload.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -273,9 +270,9 @@ python3 batch_upload.py \
 - **网络**：需要稳定网络连接（上传视频至流媒体平台）
 - **磁盘**：建议预留 20GB+（大文件缓存）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | curl | 命令行工具 | 必需 | 系统自带 | 任意版本 |
 | jq | JSON 处理 | 可选 | 系统包管理器 | 1.6+ |
@@ -286,7 +283,7 @@ python3 batch_upload.py \
 #### 完整安装命令
 ```bash
 pip3 install requests pyyaml
-
+# ...
 python3 --version
 curl --version
 jq --version
@@ -296,14 +293,14 @@ jq --version
 专业版需要以下 API Key：
 
 | API 类型 | 环境变量 | 用途 | 获取方式 |
-|:---------|:---------|:-----|:---------|
+|---:|:---|---:|---:|
 | 流媒体公钥 | `STREAM_PUBLIC_KEY` | API 认证 | 流媒体平台控制台 |
 | 流媒体私钥 | `STREAM_SECRET_KEY` | API 认证 | 流媒体平台控制台 |
 
 ```bash
 export STREAM_PUBLIC_KEY="your_public_key"
 export STREAM_SECRET_KEY="your_secret_key"
-
+# ...
 curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
   -X POST \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
@@ -323,11 +320,9 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
 
 ### 完整配置文件模板
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 支持的编码参数
 | 参数 | 可选值 | 说明 |
-|:-----|:-------|:-----|
+|:------:|--------|:-------|
 | resolution | 240p-4320p | 输出分辨率 |
 | codec | h264 / h265 | 视频编码器 |
 | type | hls / dash | 流媒体协议 |
@@ -337,7 +332,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
 
 ### Apple HLS 兼容性
 | 编码器 | 容器 | Apple 兼容 |
-|:-------|:-----|:-----------|
+|----|:--:|---:|
 | H.264 | mpegts | 支持 |
 | H.264 | mp4 | 支持 |
 | H.265 | mpegts | 不支持 |
@@ -361,7 +356,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
 
 ```bash
 python3 batch_upload.py --retry-failed /tmp/upload-queue.json
-
+# ...
 python3 batch_upload.py --resume /tmp/upload-queue.json
 ```
 
@@ -388,13 +383,13 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos' \
   -H "stream-secret-key: $STREAM_SECRET_KEY" \
   -H 'Content-Type: application/json' \
   -d '{"limit": 10, "offset": 0, "status": "done"}'
-
+# ...
 curl -s -X PATCH "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
   -H "stream-secret-key: $STREAM_SECRET_KEY" \
   -H 'Content-Type: application/json' \
   -d '{"title": "新标题", "tags": ["new", "tags"]}'
-
+# ...
 curl -s -X DELETE "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
   -H "stream-secret-key: $STREAM_SECRET_KEY"
@@ -412,9 +407,8 @@ curl -s -X DELETE "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|-------|-------|-------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -28,8 +28,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
-
 # 天气查询 (免费版)
 
 ## 概述
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 实时天气 | 当前温度、天气、湿度、风力 | 支持 |
 | 多日预报 | 未来 1-7 天预报 | 支持 |
 | 空气质量 | AQI、PM2.5、紫外线指数 | 支持 |
@@ -83,15 +84,15 @@ suggested_price: 29.9
 
 ```text
 用户: "北京今天天气怎么样?"
-
+# ...
 助手:
 实时天气: 北京当前多云,气温 15°C,体感温度 13°C,西北风 3-4 级,湿度 45%,能见度 10 公里。
-
+# ...
 预报概况: 未来 3 天以晴到多云为主,气温逐步回升。
 - 今天: 多云转晴,8-18°C
 - 明天: 晴,10-20°C
 - 后天: 晴,12-22°C
-
+# ...
 出行建议:
 - 今日早晚温差 10 度,注意及时增减衣物
 - 明天紫外线较强 (UV 指数 7),外出请做好防晒措施
@@ -102,7 +103,7 @@ suggested_price: 29.9
 
 ```text
 用户: "下周去杭州旅游,帮我看看天气"
-
+# ...
 助手:
 1. 查询杭州未来 7 天天气
 2. 重点关注旅行期间 (7月22日-28日):
@@ -120,13 +121,13 @@ suggested_price: 29.9
 
 ```text
 用户: "广州天气如何?"
-
+# ...
 助手:
 实时天气: 广州当前暴雨,气温 22°C,体感温度 20°C,东南风 5-6 级,湿度 90%,能见度 2 公里。
-
+# ...
 重点提示:
 暴雨橙色预警: 预计今天 12-18 时有 50-80 毫米降雨
-
+# ...
 出行建议:
 - 尽量避免外出,如需外出请远离低洼地区
 - 驾车请减速慢行,注意积水路段
@@ -152,7 +153,7 @@ suggested_price: 29.9
 ```bash
 # 查询北京实时天气
 curl -s "wttr.in/Beijing?format=%l:+%c+%t+%h+%w&lang=zh"
-
+# ...
 # 详细预报
 curl -s "wttr.in/Beijing?T&lang=zh"
 ```
@@ -166,7 +167,7 @@ query_weather(location="北京", days=3, details=true)
 参数说明:
 
 | 参数 | 说明 | 默认值 |
-|:-----|:-----|:------|
+|:-----|:-----|:-----|
 | location | 城市或地区名称 | 必填 |
 | days | 预报天数 | 1 |
 | details | 是否返回详细 (空气质量等) | false |
@@ -175,7 +176,7 @@ query_weather(location="北京", days=3, details=true)
 
 ```python
 import requests
-
+# ...
 def query_weather(location, days=1, details=False):
     """查询天气"""
     url = f"https://wttr.in/{location}"
@@ -185,10 +186,10 @@ def query_weather(location, days=1, details=False):
     }
     resp = requests.get(url, params=params, timeout=30)
     data = resp.json()
-
+# ...
     current = data.get("current_condition", [{}])[0]
     forecast = data.get("weather", [])[:days]
-
+# ...
     return {
         "location": location,
         "query_time": current.get("localObsDateTime"),
@@ -223,12 +224,12 @@ api:
   fallback: open-meteo
   timeout: 30
   language: zh
-
+# ...
 user:
   default_location: 北京
   units: metric
   timezone: Asia/Shanghai
-
+# ...
 output:
   format: text  # text | json
   include_suggestions: true
@@ -239,16 +240,16 @@ output:
 
 ```python
 REPORT_TEMPLATE = """实时天气: {location}当前{weather},气温{temp}°C,体感温度{feels_like}°C,{wind_direction}{wind_speed},湿度{humidity}%,能见度{visibility}公里。
-
+# ...
 预报概况: 未来{days}天{forecast_summary}。
-
+# ...
 重点提示:
 {highlights}
-
+# ...
 出行建议:
 {suggestions}
 """
-
+# ...
 def render_report(data):
     return REPORT_TEMPLATE.format(
         location=data["location"],
@@ -273,43 +274,43 @@ def generate_suggestions(data):
     """根据天气生成出行建议"""
     suggestions = []
     current = data["current"]
-
+# ...
     # 降水建议
     precip_prob = int(current.get("precip_prob", 0))
     if precip_prob > 70:
         suggestions.append("建议携带雨具")
-
+# ...
     # 温差建议
     for f in data["forecast"]:
         diff = int(f["temp_high"]) - int(f["temp_low"])
         if diff > 10:
             suggestions.append(f"{f['date']} 温差 {diff}°C,建议备好外套")
             break
-
+# ...
     # 空气质量建议
     aqi = int(current.get("aqi", 0))
     if aqi > 100:
         suggestions.append("空气质量较差,建议佩戴口罩")
     elif aqi > 150:
         suggestions.append("空气污染严重,敏感人群减少户外活动")
-
+# ...
     # 紫外线建议
     uv = int(current.get("uv_index", 0))
     if uv > 7:
         suggestions.append(f"紫外线较强 (UV 指数 {uv}),注意防晒")
-
+# ...
     # 风力建议
     wind = int(current.get("wind_speed", 0))
     if wind > 30:
         suggestions.append("风力较大,注意高空坠物,避免户外活动")
-
+# ...
     # 温度建议
     temp = int(current.get("temperature", 20))
     if temp < 0:
         suggestions.append("气温低于 0°C,注意防寒保暖")
     elif temp > 35:
         suggestions.append("气温高于 35°C,注意防暑降温")
-
+# ...
     return "\n".join(f"- {s}" for s in suggestions) if suggestions else "- 天气良好,适合正常活动"
 ```
 
@@ -323,7 +324,7 @@ def generate_suggestions(data):
 # 推荐
 curl "wttr.in/Beijing?lang=zh"
 curl "wttr.in/上海?lang=zh"
-
+# ...
 # 不推荐 (可能歧义)
 curl "wttr.in/shanghai"
 ```
@@ -336,10 +337,10 @@ curl "wttr.in/shanghai"
 import json
 from pathlib import Path
 from datetime import datetime, timedelta
-
+# ...
 CACHE_DIR = Path.home() / ".weather_cache"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
-
+# ...
 def get_with_cache(location, ttl_minutes=30):
     cache_file = CACHE_DIR / f"{location}.json"
     if cache_file.exists():
@@ -347,7 +348,7 @@ def get_with_cache(location, ttl_minutes=30):
         age = datetime.now() - datetime.fromisoformat(data["cached_at"])
         if age < timedelta(minutes=ttl_minutes):
             return data["weather"]
-
+# ...
     weather = query_weather(location)
     cache_file.write_text(json.dumps({
         "cached_at": datetime.now().isoformat(),
@@ -365,7 +366,7 @@ ALERT_LEVELS = {
     "高温": {"yellow": "关注", "orange": "重要", "red": "紧急"},
     "寒潮": {"blue": "关注", "yellow": "重要", "orange": "紧急"},
 }
-
+# ...
 def format_alert(alert_type, level):
     severity = ALERT_LEVELS.get(alert_type, {}).get(level, "未知")
     return f"{alert_type}{level}预警 ({severity})"
@@ -410,7 +411,7 @@ def format_alert(alert_type, level):
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | wttr.in | 在线 API | 必需 | 免费,无需 Key |
 | Open-Meteo | 在线 API | 备选 | 免费,无需 Key |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
@@ -423,7 +424,7 @@ def format_alert(alert_type, level):
 ```bash
 # 免费版无需 API Key
 # 天气服务均免费提供
-
+# ...
 # 可选: 默认位置
 export WEATHER_DEFAULT_LOCATION="北京"
 export WEATHER_LANGUAGE="zh"
@@ -437,9 +438,8 @@ export WEATHER_LANGUAGE="zh"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

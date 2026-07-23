@@ -21,22 +21,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
 # 视频翻译-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -44,7 +46,7 @@ pricing_model: "per_use"
 专业版支持 8 种源语言，目标语言覆盖中英：
 
 | 源语言 | 代码 | 目标语言选项 |
-|:-------|:-----|:-------------|
+|:-----|:-----|:-----|
 | 英文 | en | zh |
 | 中文 | zh | en |
 | 韩文 | ko | zh / en |
@@ -163,8 +165,6 @@ python3 batch_translate.py --config /path/to/batch-translate.json --parallel 8
 
 **多语言配置 `multilingual.yaml`：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 **执行命令：**
 
 ```bash
@@ -183,14 +183,12 @@ python3 batch_translate.py --config /path/to/multilingual.yaml --parallel 6
 
 **示例配置：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## 使用流程
 
 ### 优秀步：环境检查
 ```bash
 python3 --version
-
+# ...
 curl --version
 jq --version
 ```
@@ -198,7 +196,7 @@ jq --version
 ### 第二步：配置 API Key
 ```bash
 export VIDEO_TRANSLATE_SERVICE_API_KEY="your_api_key_here"
-
+# ...
 curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
 ```
@@ -238,7 +236,7 @@ python3 batch_translate.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | video-translator处理的内容输入 |,  |
 | content | string | 否 | video-translator处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -266,9 +264,8 @@ python3 batch_translate.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -282,9 +279,9 @@ python3 batch_translate.py \
 - **网络**：需要稳定网络连接（访问翻译服务）
 - **磁盘**：建议预留 10GB+（翻译记忆库与缓存）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | curl | 命令行工具 | 必需 | 系统自带 | 任意版本 |
 | jq | JSON 处理 | 可选 | 系统包管理器 | 1.6+ |
@@ -295,7 +292,7 @@ python3 batch_translate.py \
 #### 完整安装命令
 ```bash
 pip3 install requests pyyaml
-
+# ...
 python3 --version
 python3 -c "import requests; print('requests ready')"
 curl --version
@@ -305,14 +302,14 @@ curl --version
 专业版需要以下 API Key：
 
 | API 类型 | 环境变量 | 用途 | 获取方式 |
-|:---------|:---------|:-----|:---------|
+|---:|:---|---:|---:|
 | 翻译服务 | `VIDEO_TRANSLATE_SERVICE_API_KEY` | 视频翻译 API 调用 | `https://luoji.cn` |
 | 语音克隆 | `VOICE_CLONE_API_KEY` | 语音克隆服务（可选） | 对应语音克隆服务商 |
 
 ```bash
 export VIDEO_TRANSLATE_SERVICE_API_KEY="your_translation_api_key"
 export VOICE_CLONE_API_KEY="your_voice_clone_key"
-
+# ...
 curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
 ```
@@ -328,18 +325,14 @@ curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
 
 ### 完整配置文件模板
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 术语表示例
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 任务队列管理
 ```bash
 python3 queue_manager.py status --queue /tmp/translate-queue.json
-
+# ...
 python3 queue_manager.py priority --task-id task-001 --level urgent
-
+# ...
 python3 queue_manager.py pause --queue /tmp/translate-queue.json
 ```
 
@@ -361,7 +354,7 @@ python3 queue_manager.py pause --queue /tmp/translate-queue.json
 
 ```bash
 python3 batch_translate.py --retry-failed /tmp/translate-queue.json
-
+# ...
 python3 batch_translate.py --resume /tmp/translate-queue.json
 ```
 
@@ -381,7 +374,7 @@ subtitle:
 
 ```bash
 python3 memory_manager.py export --project A --output /data/memory-a.json
-
+# ...
 python3 memory_manager.py import --project B --file /data/memory-a.json
 ```
 
@@ -390,7 +383,7 @@ python3 memory_manager.py import --project B --file /data/memory-a.json
 
 ```bash
 python3 quota_manager.py status
-
+# ...
 python3 quota_manager.py set --project "培训本地化" --limit 10000
 ```
 
@@ -403,9 +396,8 @@ python3 glossary_manager.py import --file /data/terms.csv --format csv
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

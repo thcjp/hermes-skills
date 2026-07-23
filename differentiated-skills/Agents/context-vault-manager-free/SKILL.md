@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 上下文保险库（免费版）
 
 > **智能分层记忆管理。短期/长期/重要三层架构，Token占用降低70%。**
@@ -81,7 +82,7 @@ await skills.contextVaultManager({
   type: "long-term",
   persist: true
 });
-
+// ...
 // 搜索记忆
 const result = await skills.contextVaultManager({
   action: "search",
@@ -94,16 +95,16 @@ const result = await skills.contextVaultManager({
 
 ```markdown
 ## 上下文保险库使用规则
-
+# ...
 会话开始时：
 1. 调用 contextVaultManager action="load" 加载持久化记忆
 2. 调用 contextVaultManager action="search" 搜索相关上下文
-
+# ...
 对话过程中：
 1. 重要决策：action="add" type="important"
 2. 用户偏好：action="add" type="long-term"
 3. 临时信息：action="add" type="short-term"
-
+# ...
 会话结束时：
 1. 调用 contextVaultManager action="save" 持久化记忆
 ```
@@ -114,7 +115,7 @@ const result = await skills.contextVaultManager({
 ### 1. 三层记忆分层
 
 | 层级 | 类型 | 存储策略 | 清理机制 | 适用内容 |
-|------|------|----------|----------|----------|
+|---|---|----|----|----|
 | 短期记忆 | short-term | 内存 | 最多100条，自动清理 | 临时信息、当前任务 |
 | 长期记忆 | long-term | 内存+磁盘 | 永久存储 | 用户偏好、历史事实 |
 | 重要记忆 | important | 内存+磁盘 | 永不清理 | 关键决策、核心配置 |
@@ -134,7 +135,7 @@ const result = await skills.contextVaultManager({
   query: "用户喜好",
   limit: 3
 });
-
+// ...
 // 按类型过滤
 const preferences = await skills.contextVaultManager({
   action: "search",
@@ -176,7 +177,7 @@ await skills.contextVaultManager({
   action: "save",
   persistPath: "./my-memory.json"
 });
-
+// ...
 // 从磁盘加载记忆
 await skills.contextVaultManager({
   action: "load",
@@ -219,7 +220,7 @@ await skills.contextVaultManager({
   content: "用户询问了天气情况",
   type: "short-term"
 });
-
+// ...
 // 重要信息存为长期记忆
 await skills.contextVaultManager({
   action: "add",
@@ -227,7 +228,7 @@ await skills.contextVaultManager({
   type: "long-term",
   persist: true
 });
-
+// ...
 // 上下文溢出时生成摘要
 const summary = await skills.contextVaultManager({
   action: "summarize",
@@ -251,7 +252,7 @@ await skills.contextVaultManager({
   type: "long-term",
   persist: true
 });
-
+// ...
 // 存储重要决策
 await skills.contextVaultManager({
   action: "add",
@@ -259,7 +260,7 @@ await skills.contextVaultManager({
   type: "important",
   persist: true
 });
-
+// ...
 // 检索相关记忆
 const result = await skills.contextVaultManager({
   action: "search",
@@ -281,7 +282,7 @@ await skills.contextVaultManager({
   action: "save",
   persistPath: `./customers/${userId}-memory.json`
 });
-
+// ...
 // 加载特定用户的记忆
 await skills.contextVaultManager({
   action: "load",
@@ -296,7 +297,7 @@ await skills.contextVaultManager({
 ## 参数说明
 
 | 参数 | 类型 | 必填 | 默认值 | 说明 |
-|------|------|------|--------|------|
+|:-----|:-----|:-----|:-----|:-----|
 | action | string | 是 | - | 操作类型：add/search/summarize/clear/list/load/save |
 | content | string | 否 | - | add操作必填，记忆内容 |
 | type | string | 否 | short-term | 记忆类型：short-term/long-term/important |
@@ -342,7 +343,7 @@ await skills.contextVaultManager({
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
 
@@ -399,8 +400,8 @@ await skills.contextVaultManager({
 ### 示例1：基础用法
 
 ```
-### 一分钟上手你的分层记忆
-
+### 一分钟上手你的分层记忆(补充)
+# ...
 ```typescript
 // 添加长期记忆
 await skills.contextVaultManager({
@@ -417,21 +418,21 @@ const result = await skills.contextVaultManager({
   limit: 3
 });
 ```
-
-### 可复制模板
-
+# ...
+### 可复制模板(补充)
+# ...
 ```markdown
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -448,3 +449,4 @@ const result = await skills.contextVaultManager({
   "error": null
 }
 ```
+# ...

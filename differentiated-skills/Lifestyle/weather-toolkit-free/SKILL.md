@@ -18,11 +18,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 天气查询工具包免费版
 
 基于 wttr.in 与 Open-Meteo 两大免费公开服务的天气查询工具包,无需API Key,适合个人用户在命令行或脚本中快速获取天气信息。
@@ -34,7 +35,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 免费版 | 说明 |
-|:-----|:------:|:-----|
+|---|---|---|
 | 当前天气查询 | 支持 | 一行命令获取 |
 | 天气预报 | 支持 | 3天预报 |
 | 紧凑格式输出 | 支持 | 适合脚本解析 |
@@ -79,18 +80,18 @@ suggested_price: 29.9
 ```bash
 # 最简洁的一行查询
 curl -s "wttr.in/Beijing?format=3"
-
+# ...
 # 示例
-
+# ...
 # 紧凑格式(位置+天气+温度+湿度+风速)
 curl -s "wttr.in/Beijing?format=%l:+%c+%t+%h+%w"
-
+# ...
 # 完整预报(中文显示)
 curl -s "wttr.in/Beijing?lang=zh&T"
-
+# ...
 # 仅查看当天
 curl -s "wttr.in/Beijing?1&lang=zh"
-
+# ...
 # 仅查看当前状态
 curl -s "wttr.in/Beijing?0&lang=zh"
 ```
@@ -101,7 +102,7 @@ curl -s "wttr.in/Beijing?0&lang=zh"
 # Python脚本集成Open-Meteo JSON数据
 import urllib.request
 import json
-
+# ...
 def get_weather(lat, lon):
     """获取指定坐标的当前天气"""
     url = (
@@ -111,7 +112,7 @@ def get_weather(lat, lon):
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
     return data["current_weather"]
-
+# ...
 # 北京坐标查询示例
 weather = get_weather(39.9, 116.4)
 print(f"温度: {weather['temperature']}°C")
@@ -125,17 +126,17 @@ print(f"天气代码: {weather['weathercode']}")
 ```bash
 # 导出天气PNG图片
 curl -s "wttr.in/Shanghai.png" -o /tmp/weather_shanghai.png
-
+# ...
 # 使用机场代码查询
 curl -s "wttr.in/JFK?format=3"
-
+# ...
 # URL编码空格(多词城市名)
 curl -s "wttr.in/New+York?format=3"
-
+# ...
 # 切换单位制式
 curl -s "wttr.in/London?m&format=3"   # 公制(默认)
 curl -s "wttr.in/London?u&format=3"   # 美制
-
+# ...
 # wttr.in 格式代码速查:
 # %c - 天气状况图标
 # %t - 温度
@@ -162,7 +163,7 @@ export WEATHER_DEFAULT_SOURCE="wttr"      # 默认数据源: wttr 或 open-meteo
 export WEATHER_DEFAULT_LANG="zh"           # 默认语言
 export WEATHER_DEFAULT_UNIT="m"            # 默认单位: m(公制) 或 u(美制)
 export WEATHER_DEFAULT_FORMAT="3"          # 默认输出格式
-
+# ...
 # 常用城市坐标配置(用于Open-Meteo)
 # 城市:        纬度     经度
 # 北京:        39.9     116.4
@@ -188,9 +189,8 @@ export WEATHER_DEFAULT_FORMAT="3"          # 默认输出格式
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:-----|:-----|:-----|:-----|:-----|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -220,14 +220,14 @@ export WEATHER_DEFAULT_FORMAT="3"          # 默认输出格式
 # 错误处理
 #!/bin/bash
 CITY=${1:-Beijing}
-
+# ...
 # 主数据源
 result=$(curl -s --max-time 5 "wttr.in/$CITY?format=3" 2>/dev/null)
 if [ -n "$result" ] && [ "$result" != *"Unknown"* ]; then
     echo "$result"
     exit 0
 fi
-
+# ...
 # 备选数据源
 echo "wttr.in 不可用,切换到 Open-Meteo..."
 curl -s --max-time 5 "https://api.open-meteo.com/v1/forecast?latitude=39.9&longitude=116.4&current_weather=true" 2>/dev/null | python -c "
@@ -257,7 +257,7 @@ WEATHER_CODES = {
     85: "阵雪", 86: "大阵雪",
     95: "雷暴", 96: "雷暴冰雹", 99: "强雷暴冰雹"
 }
-
+# ...
 def describe_weather(code):
     return WEATHER_CODES.get(code, "未知天气")
 ```
@@ -273,7 +273,7 @@ def describe_weather(code):
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | wttr.in | 公开API | 可选 | 免费免Key,主要数据源 |
 | Open-Meteo | 公开API | 可选 | 免费免Key,备选数据源 |

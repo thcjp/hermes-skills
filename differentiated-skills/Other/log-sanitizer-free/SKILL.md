@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # 日志脱敏工具（免费版）
 
 > **日志中的敏感信息雷达。六大类别识别，本地运行零数据外泄。**
@@ -34,7 +35,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 日志脱敏工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -83,13 +84,13 @@ suggested_price: 29.9
 ```bash
 # 扫描单个日志文件（本地模式，默认）
 python3 （请参考skill目录中的脚本文件） scan app.log
-
+# ...
 # 扫描整个日志目录
 python3 （请参考skill目录中的脚本文件） scan /var/log/myapp/
-
+# ...
 # 输出JSON格式报告（适合自动化集成）
 python3 （请参考skill目录中的脚本文件） scan app.log --json
-
+# ...
 # 预览模式（仅显示发现的敏感信息，不修改文件）
 python3 （请参考skill目录中的脚本文件） scan app.log --preview
 ```
@@ -100,10 +101,10 @@ python3 （请参考skill目录中的脚本文件） scan app.log --preview
 
 ```markdown
 ## 上线前日志脱敏检查
-
+# ...
 每次发布前执行日志脱敏扫描：
 python3 （请参考skill目录中的脚本文件） scan logs/ --preview
-
+# ...
 如发现HIGH级别敏感信息，立即修复后重新扫描。
 ```
 
@@ -114,7 +115,7 @@ python3 （请参考skill目录中的脚本文件） scan logs/ --preview
 ### 1. 六大敏感信息类别
 
 | 类别 | 检测内容 | 风险等级 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 密码 | password、passwd、pwd字段及赋值 | HIGH |
 | 令牌 | API Key、Bearer Token、JWT | HIGH |
 | 密钥 | 私钥、SSH Key、加密密钥 | CRITICAL |
@@ -129,7 +130,7 @@ python3 （请参考skill目录中的脚本文件） scan logs/ --preview
 ### 2. 三级风险评级
 
 | 级别 | 含义 | 建议操作 |
-|------|------|----------|
+|---:|---:|---:|
 | LOW | 轻微隐患，可继续使用 | 留意观察 |
 | MEDIUM | 潜在风险，建议处理 | 推荐脱敏处理 |
 | HIGH | 严重泄露风险，需立即处理 | 立即脱敏 |
@@ -170,7 +171,7 @@ python3 （请参考skill目录中的脚本文件） scan logs/ --preview
 ```bash
 # 预览模式扫描日志目录
 python3 （请参考skill目录中的脚本文件） scan logs/ --preview
-
+# ...
 # 确认后执行脱敏（自动备份原文件）
 python3 （请参考skill目录中的脚本文件） scan logs/ --redact
 ```
@@ -185,7 +186,7 @@ python3 （请参考skill目录中的脚本文件） scan logs/ --redact
 ```bash
 # 批量扫描并脱敏日志目录
 python3 （请参考skill目录中的脚本文件） scan /var/log/myapp/ --redact --json > report.json
-
+# ...
 # 查看脱敏报告
 cat report.json | python3 -m json.tool
 ```
@@ -200,7 +201,7 @@ cat report.json | python3 -m json.tool
 ```bash
 # 扫描测试日志
 python3 （请参考skill目录中的脚本文件） scan test-output/debug.log --preview
-
+# ...
 # 脱敏后归档
 python3 （请参考skill目录中的脚本文件） scan test-output/debug.log --redact
 ```
@@ -214,7 +215,7 @@ python3 （请参考skill目录中的脚本文件） scan test-output/debug.log 
 ```text
 用法：
   python3 （请参考skill目录中的脚本文件） scan <路径> [选项]
-
+# ...
 选项：
   <路径>           扫描文件或目录
   --preview        预览模式（仅显示，不修改）
@@ -223,7 +224,7 @@ python3 （请参考skill目录中的脚本文件） scan test-output/debug.log 
   --quiet          静默模式（仅输出HIGH级别）
   --rules <文件>   自定义规则文件（YAML格式）
   --help           显示帮助
-
+# ...
 示例：
   python3 （请参考skill目录中的脚本文件） scan app.log --preview
   python3 （请参考skill目录中的脚本文件） scan logs/ --redact --json
@@ -236,16 +237,16 @@ python3 （请参考skill目录中的脚本文件） scan test-output/debug.log 
 ========================================
   日志脱敏扫描报告
 ========================================
-
+# ...
 扫描文件：app.log
-
+# ...
 [LOW]  line 12: 疑似邮箱地址
        user@example.com → ***@example.com
 [MEDIUM] line 45: 疑似手机号
        13800138000 → 138****8000
 [HIGH] line 89: 疑似API Key
        api_key: sk-abc123... → api_key: ***REDACTED***
-
+# ...
 ========================================
 总计：3处敏感信息
 风险评级：HIGH
@@ -266,12 +267,12 @@ rules:
     pattern: 'mongodb://\S+'
     replacement: 'mongodb://***REDACTED***'
     severity: HIGH
-
+# ...
   - name: 自定义令牌
     pattern: 'my_token=\S+'
     replacement: 'my_token=***REDACTED***'
     severity: MEDIUM
-
+# ...
   - name: 内部IP地址
     pattern: '\b10\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'
     replacement: '10.*.*.*'
@@ -338,7 +339,7 @@ log-security-check:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
 | PyYAML | Python库 | 可选 | `pip install pyyaml`（自定义规则功能需要） |
@@ -389,9 +390,8 @@ MIT license允许使用、复制、修改和分发。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

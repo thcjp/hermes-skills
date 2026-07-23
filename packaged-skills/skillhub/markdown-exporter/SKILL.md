@@ -24,14 +24,15 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Markdown,文档,工具"
 ---
 # Markdown导出工具
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Markdown导出工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,13 +40,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Markdown导出工具XML多格式导出 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -55,7 +56,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -123,7 +124,7 @@ markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
 ## 支持格式总览
 
 | 工具 | 输入 | 输出格式 |
-|------|------|---------|
+|:---:|:---:|:---:|
 | `md_to_docx` | Markdown文本 | Word文档(.docx) |
 | `md_to_html` | Markdown文本 | HTML文件(.html) |
 | `md_to_html_text` | Markdown文本 | HTML文本字符串(stdout) |
@@ -141,7 +142,7 @@ markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:------|------:|:------|
 | 技术文档导出 | Markdown文档 | `.docx` Word文档 |
 | 数据表导出 | Markdown表格 | `.xlsx`/`.csv`/`.json` |
 | 演示文稿制作 | Pandoc风格Markdown | `.pptx` PowerPoint |
@@ -174,7 +175,7 @@ markdown-exporter md_to_xlsx /home/user/data.md /home/user/data.xlsx
 输入 `data.md`：
 ```markdown
 | Name | Price | Stock |
-|------|-------|-------|
+|---:|:---|---:|
 | Item A | $10 | 50 |
 | Item B | $20 | 30 |
 ```
@@ -195,7 +196,7 @@ markdown-exporter md_to_pptx /home/user/slides.md /home/user/output.pptx --templ
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | `md_to_pptx` 输出幻灯片格式错乱 | Markdown未使用Pandoc幻灯片语法 | 确保每个 `##` 标题作为新幻灯片起始，分栏用 `::::: columns`，备注用 `::: notes` |
 | `md_to_xlsx` 报 "no tables found" | 输入Markdown中无标准表格 | 确保表格使用 `| col |` 管道符格式，表头分隔行 `|---|---|` 必须存在 |
 | `md_to_codeblock` 文件名冲突 | 多个代码块语言相同 | 输出文件自动编号：`block_1.py`、`block_2.py`，避免覆盖 |

@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 知识工具包（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `连接这些知识点
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：知识检索
 
 通过标签、双链或全文搜索快速找到知识。**示例指令**：`
 
 `搜索关于微服务的知识
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 知识工具包（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -166,7 +158,7 @@ from typing import List, Dict, Optional, Set
 from datetime import datetime
 from dataclasses import dataclass, field
 from pathlib import Path
-
+# ...
 @dataclass
 class KnowledgeNote:
     id: str
@@ -178,14 +170,14 @@ class KnowledgeNote:
     created: str = ""
     modified: str = ""
     aliases: List[str] = field(default_factory=list)
-
+# ...
 class KnowledgeToolkit:
     def __init__(self, vault_root: str):
         self.vault_root = Path(vault_root)
         self.notes: Dict[str, KnowledgeNote] = {}
         self.tag_index: Dict[str, Set[str]] = {}
         self.link_graph: Dict[str, Set[str]] = {}
-
+# ...
     def capture_knowledge(self, title: str, content: str,
                          tags: List[str] = None) -> KnowledgeNote:
         """捕获知识（PRO 专属：自动链接）"""
@@ -203,7 +195,7 @@ class KnowledgeToolkit:
         self._update_indexes(note)
         self._resolve_backlinks(note)
         return note
-
+# ...
     def connect_notes(self, source_id: str, target_id: str) -> bool:
         """连接知识笔记（PRO 专属：双链建立）"""
         if source_id not in self.notes or target_id not in self.notes:
@@ -211,7 +203,7 @@ class KnowledgeToolkit:
         self.notes[source_id].links.add(target_id)
         self.notes[target_id].backlinks.add(source_id)
         return True
-
+# ...
     def search(self, query: str, mode: str = "fulltext") -> List[KnowledgeNote]:
         """知识检索（PRO 专属：多模式搜索）"""
         if mode == "tag":
@@ -225,7 +217,7 @@ class KnowledgeToolkit:
                 if query_lower in note.title.lower() or query_lower in note.content.lower():
                     results.append(note)
             return results
-
+# ...
     def get_knowledge_graph(self) -> dict:
         """获取知识图谱（PRO 专属）"""
         nodes = [{"id": n.id, "title": n.title, "tags": list(n.tags)}
@@ -236,7 +228,7 @@ class KnowledgeToolkit:
                 if link in self.notes:
                     edges.append({"source": note.id, "target": link})
         return {"nodes": nodes, "edges": edges}
-
+# ...
     def batch_import(self, file_paths: List[str]) -> List[str]:
         """批量导入（PRO 专属）"""
         imported = []
@@ -246,7 +238,7 @@ class KnowledgeToolkit:
             note = self.capture_knowledge(title, content)
             imported.append(note.id)
         return imported
-
+# ...
     def export_vault(self, output_dir: str):
         """导出知识库（PRO 专属）"""
         out = Path(output_dir)
@@ -254,13 +246,13 @@ class KnowledgeToolkit:
         for note in self.notes.values():
             filepath = out / f"{note.id}.md"
             filepath.write_text(note.content, encoding="utf-8")
-
+# ...
     def _generate_id(self, title: str) -> str:
         return re.sub(r"[^a-zA-Z0-9\u4e00-\u9fff]", "_", title)
-
+# ...
     def _extract_links(self, content: str) -> Set[str]:
         return set(re.findall(r"\[\[(.+?)\]\]", content))
-
+# ...
     def _update_indexes(self, note: KnowledgeNote):
         for tag in note.tags:
             if tag not in self.tag_index:
@@ -270,12 +262,12 @@ class KnowledgeToolkit:
             if link not in self.link_graph:
                 self.link_graph[link] = set()
             self.link_graph[link].add(note.id)
-
+# ...
     def _resolve_backlinks(self, note: KnowledgeNote):
         for other in self.notes.values():
             if note.id in other.links:
                 note.backlinks.add(other.id)
-
+# ...
 tk = KnowledgeToolkit("./vault")
 note = tk.capture_knowledge("微服务架构", "[[服务拆分]] 是核心...", ["架构"])
 print(f"笔记已创建: {note.id}")
@@ -323,7 +315,7 @@ knowledge:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -335,7 +327,7 @@ knowledge:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -407,7 +399,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -420,9 +412,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

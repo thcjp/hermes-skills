@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 > **从单本书到多书系，从单人创作到团队协作。出版级插画管理系统。**
 
@@ -40,7 +42,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 书籍插画助手(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -55,7 +57,7 @@ pricing_model: "per_use"
 
 ```bash
 book-illustrator --batch manage books/ --dashboard
-
+# ...
 book-illustrator --dashboard --project "儿童绘本系列"
 ```
 
@@ -63,11 +65,10 @@ book-illustrator --dashboard --project "儿童绘本系列"
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 1. 插画需求分析（基础+增强）
 | 书籍类型 | 插画角色 | 典型数量 | 专业版增强 |
-|----------|----------|----------|-----------|
+|:-----|:-----|:-----|:-----|
 | 儿童绘本 | 叙事核心 | 20-40幅 | 批量生成需求清单 |
 | 童书桥梁书 | 辅助叙事 | 10-20幅 | 跨章节角色追踪 |
 | 小说 | 氛围营造 | 5-15幅 | 系列丛书风格统一 |
@@ -81,7 +82,7 @@ book-illustrator --dashboard --project "儿童绘本系列"
 
 ### 2. 风格匹配与参考推荐（基础+增强）
 | 能力 | 免费版 | 专业版增强 |
-|------|--------|-----------|
+|---:|---:|---:|
 | 风格推荐 | 基础推荐 | 智能匹配+风格库引用 |
 | 参考方向 | 文字描述 | 参考图库+视觉关键词 |
 | 风格统一 | 手动检查 | 跨书系自动校验 |
@@ -96,14 +97,14 @@ book-illustrator --dashboard --project "儿童绘本系列"
 
 ```bash
 book-illustrator --batch manage books/ --output plans/
-
+# ...
 book-illustrator --batch --from-structure books/ --auto-plan
-
+# ...
 book-illustrator --batch update --status "线稿完成" --books "绘本系列*"
 ```
 
 | 管理维度 | 说明 | 输出 |
-|----------|------|------|
+|:---:|:---:|:---:|
 | 书系级管理 | 多本书统一规划 | 书系插画总览 |
 | 书籍级管理 | 单本书完整需求 | 插画需求文档 |
 | 章节级管理 | 每章插画明细 | 章节插画清单 |
@@ -122,16 +123,16 @@ book-illustrator --batch update --status "线稿完成" --books "绘本系列*"
 ### 4. 插画风格库（专业版）
 ```bash
 book-illustrator --style-library --list
-
+# ...
 book-illustrator --style-library --apply "温暖手绘风" --project "儿童绘本"
-
+# ...
 book-illustrator --style-library --save "品牌插画风格" \
   --reference ./style-samples/ \
   --keywords "温暖,柔和,手绘"
 ```
 
 | 风格类别 | 预设风格 | 适用场景 | 参考样本 |
-|----------|----------|----------|----------|
+|:------|------:|:------|:------|
 | 儿童 | 温暖手绘风 | 绘本/童书 | 水彩+彩铅 |
 | 儿童 | 明亮卡通风 | 桥梁书 | 矢量+平面 |
 | 技术 | 简洁线稿风 | 技术书籍 | 单色线条 |
@@ -149,14 +150,14 @@ book-illustrator --style-library --save "品牌插画风格" \
 book-illustrator --collab --assign \
   --project "儿童绘本系列" \
   --illustrators "张三:封面+第1-10页,李四:第11-20页,王五:第21-32页"
-
+# ...
 book-illustrator --collab --progress --by-illustrator
-
+# ...
 book-illustrator --collab --style-check --project "儿童绘本系列"
 ```
 
 | 协作功能 | 说明 | 价值 |
-|----------|------|------|
+|---:|:---|---:|
 | 智能分工 | 根据插画师特长自动分配 | 人尽其才 |
 | 进度协调 | 实时查看各插画师进度 | 避免瓶颈 |
 | 风格校验 | 跨插画师风格一致性检查 | 风格统一 |
@@ -170,14 +171,14 @@ book-illustrator --collab --style-check --project "儿童绘本系列"
 ### 6. 插画进度看板（专业版）
 ```bash
 book-illustrator --dashboard --project "儿童绘本系列"
-
+# ...
 book-illustrator --dashboard --export reports/progress-report.html
-
+# ...
 book-illustrator --dashboard --remind --before-days 3 --notify "editor@publisher.com"
 ```
 
 | 看板视图 | 说明 | 适用角色 |
-|----------|------|----------|
+|:------:|--------|:-------|
 | 总览视图 | 所有书系插画进度汇总 | 出版总监 |
 | 书系视图 | 单个书系的详细进度 | 项目经理 |
 | 插画师视图 | 按插画师查看工作量 | 协调员 |
@@ -193,16 +194,16 @@ book-illustrator --dashboard --remind --before-days 3 --notify "editor@publisher
 book-illustrator --review --config \
   --levels "草图,线稿,上色,定稿" \
   --reviewers "编辑:草图,美术指导:线稿+上色,主编:定稿"
-
+# ...
 book-illustrator --review --auto-route \
   --stage "线稿完成" \
   --route-to "美术指导"
-
+# ...
 book-illustrator --review --versions --illustration "封面插画"
 ```
 
 | 审核阶段 | 审核人 | 审核重点 | 通过标准 |
-|----------|--------|----------|----------|
+|----|:--:|---:|----|
 | 草图审核 | 责任编辑 | 构图、内容准确性 | 构图合理、内容无误 |
 | 线稿审核 | 美术指导 | 线条质量、风格一致 | 线条流畅、风格匹配 |
 | 上色审核 | 美术指导 | 色彩、氛围 | 色彩协调、氛围到位 |
@@ -215,14 +216,14 @@ book-illustrator --review --versions --illustration "封面插画"
 ### 8. 插画资源库（专业版）
 ```bash
 book-illustrator --archive --illustration "封面插画" --tags "儿童,绘本,温暖"
-
+# ...
 book-illustrator --archive --search --keywords "儿童,角色,女孩"
-
+# ...
 book-illustrator --archive --stats --reuse-report
 ```
 
 | 资源类型 | 管理方式 | 复用场景 |
-|----------|----------|----------|
+|----|----|----|
 | 角色设定 | 按角色名归档 | 系列丛书角色复用 |
 | 场景背景 | 按场景类型归档 | 同类场景复用 |
 | 装饰元素 | 按元素类型归档 | 页面装饰复用 |
@@ -241,9 +242,9 @@ book-illustrator --archive --stats --reuse-report
 **操作流程**：
 ```bash
 book-illustrator --batch manage books/ --dashboard
-
+# ...
 book-illustrator --dashboard --overview
-
+# ...
 book-illustrator --collab --style-check --all-projects
 ```
 
@@ -257,9 +258,9 @@ book-illustrator --collab --style-check --all-projects
 book-illustrator --collab --assign \
   --project "项目A,项目B,项目C" \
   --auto-balance
-
+# ...
 book-illustrator --dashboard --by-illustrator
-
+# ...
 book-illustrator --collab --conflict-check
 ```
 
@@ -271,12 +272,12 @@ book-illustrator --collab --conflict-check
 **操作流程**：
 ```bash
 book-illustrator --batch --from-structure textbooks/ --auto-plan
-
+# ...
 book-illustrator --collab --assign --auto-balance
-
+# ...
 book-illustrator --review --config \
   --levels "草图,线稿,上色,定稿"
-
+# ...
 book-illustrator --dashboard --project "教材系列"
 ```
 
@@ -289,10 +290,10 @@ book-illustrator --dashboard --project "教材系列"
 ```bash
 book-illustrator --style-library --save "丛书标准风格" \
   --reference ./style-guide/
-
+# ...
 book-illustrator --style-library --apply "丛书标准风格" \
   --project "系列丛书"
-
+# ...
 book-illustrator --collab --style-check --project "系列丛书"
 ```
 
@@ -305,9 +306,9 @@ book-illustrator --collab --style-check --project "系列丛书"
 ```bash
 book-illustrator --collab --assign --remote
 book-illustrator --dashboard --realtime
-
+# ...
 book-illustrator --review --auto-route --remote
-
+# ...
 book-illustrator --collab --communication-log
 ```
 
@@ -322,9 +323,9 @@ book-illustrator --archive --copyright \
   --illustrator "张三" \
   --license "买断" \
   --usage "本书系全球发行"
-
+# ...
 book-illustrator --archive --compliance-check
-
+# ...
 book-illustrator --archive --copyright-report --export
 ```
 
@@ -332,7 +333,7 @@ book-illustrator --archive --copyright-report --export
 
 ## 多角色场景指南
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:-----|:-----|:-----|:-----|
 | 出版总监 | 多书系管理 | 批量管理+进度看板 | 全局掌控、效率提升 |
 | 工作室经理 | 多项目并行 | 多插画师协作+进度看板 | 负载均衡、准时交付 |
 | 教材编辑 | 大型教材统筹 | 批量管理+审核自动化 | 有序推进、按期出版 |
@@ -411,7 +412,7 @@ book-illustrator --archive --copyright-report --export
 
 ## 错误处理
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|---:|---:|---:|
 | 批量管理响应慢 | 数据量过大 | 按书系分组，使用增量更新 | 中 |
 | 风格不一致 | 插画师理解偏差 | 重新校验风格库，增加参考样本 | 高 |
 | 插画师负载不均 | 分工不合理 | 使用智能分工，重新平衡负载 | 中 |
@@ -431,7 +432,7 @@ book-illustrator --archive --copyright-report --export
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | book-illustrator CLI | 命令行工具 | 专业版必需 | 随本技能提供 |
 | SQLite | 数据库 | 专业版必需 | Python内置sqlite3模块 |
@@ -482,7 +483,7 @@ book-illustrator --archive --copyright-report --export
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | ¥0 | 需求分析+风格匹配+章节分配+创作指导+基础管理+基础示例+基础FAQ | 个人作者、轻量项目 |
 | 收费专业版 | ¥29.9/月 | 批量管理+风格库+多插画师协作+进度看板+审核自动化+资源库+多角色指南+优先支持 | 出版机构、插画工作室 |
 
@@ -492,22 +493,22 @@ book-illustrator --archive --copyright-report --export
 ### 示例1：基础用法
 ```
 单本书插画规划，立即可用：
-
+# ...
 ```text
 用户：规划一本儿童绘本的插画
 助手：→ 需求分析 → 风格匹配 → 章节分配 → 创作指导
 ```
-
+# ...
 启用批量管理与进度看板：
-
+# ...
 ```bash
 ```
-
+# ...
 ## 已知限制
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-
+# ...
 ## 输出格式
 ```json
 {
@@ -524,3 +525,4 @@ book-illustrator --archive --copyright-report --export
   "error": null
 }
 ```
+# ...

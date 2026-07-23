@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 > **批量查询+AI摘要+多渠道推送+趋势分析。企业级新闻情报全功能覆盖。**
 
@@ -30,7 +32,7 @@ pricing_model: "per_use"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 单日查询 | 支持 | 支持 |
 | 批量日期查询 | 不支持 | 支持（并发抓取） |
 | AI智能摘要 | 不支持 | 支持（LLM深度摘要） |
@@ -46,7 +48,7 @@ pricing_model: "per_use"
 ### 1. 批量日期查询（并发抓取）
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 央视新闻抓取(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -55,22 +57,22 @@ pricing_model: "per_use"
 import concurrent.futures
 import threading
 from datetime import datetime, timedelta
-
+# ...
 class BatchNewsFetcher:
     """批量新闻抓取器（专业版）"""
-
+# ...
     def __init__(self, max_workers=3, cache_dir="./cache"):
         self.max_workers = max_workers
         self.cache_dir = cache_dir
         self.lock = threading.Lock()
         self.results = {}
         self.stats = {"success": 0, "failed": 0, "total": 0}
-
+# ...
     def fetch_date_range(self, start_date, end_date):
         """抓取日期范围内的新闻"""
         dates = self._generate_dates(start_date, end_date)
         print(f"启动批量抓取，共 {len(dates)} 天，并发数 {self.max_workers}")
-
+# ...
         with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             futures = {executor.submit(self._fetch_single, date): date for date in dates}
             for future in concurrent.futures.as_completed(futures):
@@ -88,10 +90,10 @@ class BatchNewsFetcher:
                         print(f"[{status}] {date}")
                 except Exception as e:
                     print(f"[异常] {date}: {e}")
-
+# ...
         self._print_summary()
         return self.results
-
+# ...
     def _generate_dates(self, start, end):
         """生成日期列表"""
         start_dt = self._parse_date(start)
@@ -102,24 +104,24 @@ class BatchNewsFetcher:
             dates.append(current.strftime("%Y%m%d"))
             current += timedelta(days=1)
         return dates
-
+# ...
     def _parse_date(self, date_input):
         """解析日期"""
         if isinstance(date_input, str):
             date_str = date_input.replace("-", "").replace("/", "")
             return datetime.strptime(date_str, "%Y%m%d")
         return date_input
-
+# ...
     def _fetch_single(self, date_str):
         """抓取单个日期（带缓存）"""
         import os, json
         cache_file = os.path.join(self.cache_dir, f"news_{date_str}.json")
         os.makedirs(self.cache_dir, exist_ok=True)
-
+# ...
         if os.path.exists(cache_file):
             with open(cache_file, "r", encoding="utf-8") as f:
                 return json.load(f)
-
+# ...
         try:
             import subprocess
             result = subprocess.run(
@@ -134,7 +136,7 @@ class BatchNewsFetcher:
             return {"success": False, "error": result.stderr, "date": date_str}
         except Exception as e:
             return {"success": False, "error": str(e), "date": date_str}
-
+# ...
     def _print_summary(self):
         """打印摘要"""
         print("\n=== 批量抓取摘要 ===")
@@ -144,7 +146,7 @@ class BatchNewsFetcher:
         if self.stats['total'] > 0:
             success_rate = self.stats['success'] / self.stats['total'] * 100
             print(f"成功率：{success_rate:.1f}%")
-
+# ...
 fetcher = BatchNewsFetcher(max_workers=3)
 results = fetcher.fetch_date_range("2025-02-01", "2025-02-28")
 ```
@@ -164,15 +166,11 @@ results = fetcher.fetch_date_range("2025-02-01", "2025-02-28")
 
 ### 3. 多渠道推送
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供多渠道推送所需的指令和必要参数。
 **处理**: 解析多渠道推送的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回多渠道推送的响应数据,包含状态码、结果和日志。
 
 ### 4. 历史趋势分析
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供历史趋势分析所需的指令和必要参数。
 **处理**: 解析历史趋势分析的输入参数,完成核心逻辑,返回结构化响应。
@@ -185,22 +183,22 @@ results = fetcher.fetch_date_range("2025-02-01", "2025-02-28")
 
 ```python
 import schedule
-
+# ...
 def daily_news_brief():
     fetcher = BatchNewsFetcher()
     summarizer = AINewsSummarizer()
     pusher = NewsPusher()
     pusher.register_channel("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
-
+# ...
     result = fetcher._fetch_single("today")
     if not result.get("success"):
         print("抓取失败")
         return
-
+# ...
     summary = summarizer.generate_daily_summary(result)
-
+# ...
     pusher.push("feishu", summary, "今日央视新闻AI摘要")
-
+# ...
 schedule.every().day.at("20:00").do(daily_news_brief)
 ```
 
@@ -210,12 +208,12 @@ schedule.every().day.at("20:00").do(daily_news_brief)
 ```python
 fetcher = BatchNewsFetcher(max_workers=5)
 analyzer = NewsTrendAnalyzer()
-
+# ...
 results = fetcher.fetch_date_range("2025-01-01", "2025-03-31")
-
+# ...
 report = analyzer.generate_trend_report(results)
 print(report)
-
+# ...
 with open("news_trend_q1.txt", "w", encoding="utf-8") as f:
     f.write(report)
 ```
@@ -226,9 +224,9 @@ with open("news_trend_q1.txt", "w", encoding="utf-8") as f:
 ```python
 fetcher = BatchNewsFetcher(max_workers=3)
 summarizer = AINewsSummarizer()
-
+# ...
 results = fetcher.fetch_date_range("2025-02-01", "2025-02-28")
-
+# ...
 themes = {}
 for date, data in results.items():
     if data.get("success"):
@@ -242,11 +240,11 @@ for date, data in results.items():
                 "title": news.get("title"),
                 "content": news.get("content", "")[:500]
             })
-
+# ...
 import json
 with open("news_materials_feb.json", "w", encoding="utf-8") as f:
     json.dump(themes, f, ensure_ascii=False, indent=2)
-
+# ...
 print(f"素材库已生成，共 {sum(len(v) for v in themes.values())} 条新闻")
 ```
 
@@ -264,7 +262,7 @@ from batch_fetcher import BatchNewsFetcher
 fetcher = BatchNewsFetcher(max_workers=3)
 results = fetcher.fetch_date_range('2025-02-04', '2025-02-10')
 "
-
+# ...
 python3 -c "
 from ai_summarizer import AINewsSummarizer
 summarizer = AINewsSummarizer()
@@ -276,10 +274,10 @@ print(summary)
 ### 120秒标准搭建
 ```bash
 pip install requests schedule
-
+# ...
 export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
 export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
-
+# ...
 python3 daily_pipeline.py --date-range 2025-02-01:2025-02-28 --push feishu,dingtalk
 ```
 
@@ -290,12 +288,12 @@ fetcher:
   max_workers: 5
   cache_dir: ./cache
   timeout: 60
-
+# ...
 ai_summarizer:
   model: gpt-4o
   max_tokens: 2000
   prompt_template: daily_summary_v2
-
+# ...
 pusher:
   channels:
     - name: feishu
@@ -310,7 +308,7 @@ pusher:
     - name: email
       type: email
       url: https://api.email-service.com/send
-
+# ...
 analyzer:
   top_keywords: 20
   theme_categories:
@@ -319,7 +317,7 @@ analyzer:
     - 科技创新
     - 民生社会
     - 国际事务
-
+# ...
 schedule:
   daily_brief: "0 20 * * *"  # 每天20:00
   weekly_digest: "0 10 * * 1"  # 每周一10:00
@@ -374,7 +372,7 @@ summary_brief = summarizer.generate_daily_summary(data, style="brief")
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js 16+ | 运行时 | 二选一 | 官网下载安装 |
 | Bun 1.0+ | 运行时 | 二选一 | `curl -fsSL https://bun.sh/install \| bash` |
 | node-html-parser | npm包 | 必需 | `npm install node-html-parser` |
@@ -416,7 +414,7 @@ summary_brief = summarizer.generate_daily_summary(data, style="brief")
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 单日查询 + 基础分类 + JSON输出 + 基础简报 | 个人试用、单日查询 |
 | 收费专业版 | ¥29/月 | 批量查询 + AI摘要 + 多渠道推送 + 趋势分析 + 全文 + 视频元数据 + 订阅 + 优先支持 | 团队/企业、情报监控 |
 
@@ -425,7 +423,7 @@ summary_brief = summarizer.generate_daily_summary(data, style="brief")
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

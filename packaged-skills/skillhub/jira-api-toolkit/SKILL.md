@@ -34,24 +34,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # Jira工具箱(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 免费版 | 支持 | 支持 |
-| 托管 OAuth 认证 | 不支持 | 支持 |
-| 字段过滤与分页 | 不支持 | 支持 |
-| 查看议题详情 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Jira工具箱(专业版)自动化与多连接管理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力 | 说明 | 免费版 | 专业版 |
-|------|------|--------|--------|
+|:-----|:-----|:-----|:-----|
 | 托管 OAuth 认证 | 自动注入令牌 | 是 | 是 |
 | JQL 搜索 | 字段过滤与分页 | 是 | 是 |
 | 查看议题详情 | 读取全部字段 | 是 | 是 |
@@ -118,7 +120,7 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | maton CLI | 命令行工具 | 必需 | `npm install -g @maton/cli` 或 `brew install maton-ai/cli/maton` |
 | Jira Cloud 账号 | SaaS 账号 | 必需 | Atlassian 账号，用于 OAuth 授权 |
@@ -139,7 +141,7 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | jira-api-toolkit处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -198,9 +200,8 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 
 ## 异常处理
 
-
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
-|------|----------|----------|--------|
+|:------|------:|:------|:------|
 | 401 Invalid API key | 未登录 / Key 过期 | `maton login` 重新登录 | P1 |
 | 400 Missing connection | 未创建 Jira 连接 | `maton connection create jira` | P1 |
 | 400 Invalid transition id | 工作流不可达 | `transition list` 获取可用流转 | P2 |
@@ -210,10 +211,10 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 | Agile API scope 错误 | 缺少 OAuth scope | 联系支持申请扩展 scope | P2 |
 | 管道 Invalid API key | 环境变量未展开 | 直接用 CLI 或显式 export | P3 |
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | LLM | 模型 | 是 | 需要LLM执行各步骤的智能处理, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -226,7 +227,7 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 ### 写操作命令速查
 
 | 命令 | 用途 | 示例 |
-|------|------|------|
+|:------:|--------|:-------|
 | `issue create` | 创建议题 | `maton jira issue create --cloud-id abc-123 --project PROJ --summary '标题' --type Task` |
 | `issue update` | 更新议题 | `maton jira issue update PROJ-123 --cloud-id abc-123 --summary '新标题'` |
 | `issue delete` | 删除议题 | `maton jira issue delete PROJ-123 --cloud-id abc-123` |
@@ -262,7 +263,7 @@ CI/CD 流水线在部署成功后自动流转关联议题为"已上线"，部署
 ### 多连接管理
 
 | 命令 | 用途 |
-|------|------|
+|----|:--:|
 | `maton connection list jira --status ACTIVE` | 列出活跃 Jira 连接 |
 | `maton connection create jira` | 创建新连接 |
 | `maton connection view {id}` | 查看连接详情 |
@@ -313,9 +314,8 @@ A：支持。配合 CI/CD 与 cron 可实现自动化：代码合并触发议题
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|----|----|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

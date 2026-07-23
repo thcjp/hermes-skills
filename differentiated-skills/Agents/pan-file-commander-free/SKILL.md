@@ -16,11 +16,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 百度网盘文件管理工具,以"命令式高效操作"为核心视角,所有操作限制在 `/apps/bdpan/` 目录内。适配所有支持SKILL.md的Agent平台。
 
 > 本免费版提供核心文件管理能力(上传/下载/转存/分享/搜索/移动/复制/重命名/创建/删除)。记忆备份恢复、大文件后台下载与批量操作为专业版功能。
@@ -59,7 +60,7 @@ suggested_price: 29.9
 
 ## 确认规则(差异化:分层风险模型)
 | 风险等级 | 操作 | 策略 | 示例 |
-| --- | --- | --- | --- |
+|----|---|---|---|
 | **高(必须确认)** | `rm` 删除、上传/下载目标已存在同名文件 | 列出影响范围,等待用户确认 | `bdpan rm docs/old.txt` |
 | **中(路径模糊时确认)** | upload、download、mv、rename、cp | 路径明确直接执行,不明确则确认 | `bdpan mv docs/ archive/` |
 | **低(直接执行)** | ls、search、whoami、mkdir、share | 无需确认 | `bdpan ls docs/` |
@@ -74,7 +75,7 @@ suggested_price: 29.9
 ### 30秒:确认登录状态
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 网盘指挥官免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -87,9 +88,9 @@ bdpan whoami
 ### 60秒:浏览文件并执行一次操作
 ```bash
 bdpan ls
-
+# ...
 bdpan ls --order time --desc
-
+# ...
 bdpan upload ./local-file.txt docs/local-file.txt
 ```
 
@@ -107,65 +108,65 @@ bdpan upload ./local-file.txt docs/local-file.txt
 ### 浏览类快捷命令
 ```bash
 bdpan ls
-
+# ...
 bdpan ls docs/ --order name
-
+# ...
 bdpan ls docs/ --order time --desc
-
+# ...
 bdpan ls docs/ --order size --desc
-
+# ...
 bdpan ls docs/ --folder
-
+# ...
 bdpan ls docs/ --json
 ```
 
 ### 搜索类快捷命令
 ```bash
 bdpan search "报告"
-
+# ...
 bdpan search "会议" --category 1
-
+# ...
 bdpan search "截图" --category 3
-
+# ...
 bdpan search "合同" --category 4
-
+# ...
 bdpan search "项目" --dir-only
 ```
 
 ### 单文件操作快捷命令
 ```bash
 bdpan upload ./local.txt docs/local.txt
-
+# ...
 bdpan download docs/local.txt ./local.txt
-
+# ...
 bdpan mv docs/old.txt archive/
-
+# ...
 bdpan cp docs/template.txt templates/
-
+# ...
 bdpan rename docs/old-name.txt new-name.txt
-
+# ...
 bdpan mkdir docs/new-folder
-
+# ...
 bdpan rm docs/unwanted.txt
 ```
 
 ### 分享类快捷命令
 ```bash
 bdpan share docs/report.pdf
-
+# ...
 bdpan share docs/report.pdf --period 0
-
+# ...
 bdpan share docs/report.pdf --period 30
-
+# ...
 bdpan share docs/file1.txt docs/file2.txt --period 7
 ```
 
 ### 转存类快捷命令
 ```bash
 bdpan transfer "https://pan.baidu.com/s/1xxxxx?pwd=abcd"
-
+# ...
 bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p abcd
-
+# ...
 bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p abcd -d downloads/
 ```
 
@@ -212,7 +213,7 @@ validate_path() {
   fi
   return 0
 }
-
+# ...
 validate_path "docs/file.txt"    # 通过
 validate_path "../etc/passwd"    # 拒绝
 validate_path "/etc/passwd"      # 拒绝
@@ -236,7 +237,7 @@ validate_path "/etc/passwd"      # 拒绝
 ### 序数/代词引用处理
 ```text
 用户:"把第3个文件移到archive"
-
+# ...
 处理流程:
 1. 查询当前目录文件列表
 2. 定位第3个文件(按当前排序)
@@ -246,7 +247,7 @@ validate_path "/etc/passwd"      # 拒绝
 
 ## 路径规则
 | 场景 | 格式 | 示例 |
-| --- | --- | --- |
+|---:|---:|---:|
 | **命令参数** | 相对路径(相对于 `/apps/bdpan/`) | `bdpan upload ./f.txt docs/f.txt` |
 | **展示给用户** | 中文名 | "已上传到:我的应用数据/bdpan/docs/f.txt" |
 
@@ -283,7 +284,7 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 ```text
 角色: 个人用户
 任务: "帮我把本地的report.pdf上传到网盘的docs目录"
-
+# ...
 执行流程:
 1. 前置检查(安装→登录)
 2. 路径校验(docs/在合法范围内)
@@ -297,7 +298,7 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 ```text
 角色: 团队协作者
 任务: "把网盘里的项目方案分享给同事,有效期7天"
-
+# ...
 执行流程:
 1. 前置检查
 2. bdpan ls 确认文件存在
@@ -311,7 +312,7 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 ```text
 角色: 内容创作者
 任务: "朋友发给我一个分享链接,帮我转存到网盘的downloads目录"
-
+# ...
 执行流程:
 1. 前置检查
 2. 确认分享链接格式有效
@@ -323,9 +324,8 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:---:|:---:|:---:|:---:|:---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -354,7 +354,7 @@ A: 使用 `--category` 参数:0=全部,1=视频,2=音频,3=图片,4=文档,5=应
 
 ## 故障排查
 | 问题 | 原因 | 解决方案 |
-|------|------|----------|
+|:------|------:|:------|
 | `bdpan: command not found` | 未安装 | 运行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
 | `not logged in` | 未登录 | 运行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
 | 上传路径错误 | 远端路径以`/`结尾 | 单文件上传远端路径必须是文件名 |
@@ -373,7 +373,7 @@ A: 使用 `--category` 参数:0=全部,1=视频,2=音频,3=图片,4=文档,5=应
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | bdpan CLI | 工具 | 必需 | `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
 | 百度网盘账户 | 账户 | 必需 | 注册百度网盘账号 |
 | bash | 运行时 | 必需 | 系统自带或安装Git Bash |
@@ -424,34 +424,19 @@ A: 使用 `--category` 参数:0=全部,1=视频,2=音频,3=图片,4=文档,5=应
 原始MIT license允许修改与再分发,本改进作品在MIT license下发布,保留原始版权声明。
 
 ## 核心能力
-### 安装
+### 安装(补充)
 ```bash
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]
 ```
-
-安装器从百度 CDN(`issuecdn.baidupcs.com`)下载并执行。注意:install.sh 不执行本地 SHA256 校验,完整性依赖 HTTPS 传输保护。安全敏感场景建议先手动审查安装器内容或在沙箱中执行。
 
 **输入**: 用户提供安装所需的指令和必要参数。
 **处理**: 解析安装的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回安装的响应数据,包含状态码、结果和日志。
 
-### 登录 / 注销 / 卸载
-```bash
-bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 登录(内置安全免责声明)
-bdpan logout                                            # 注销
-bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]   # 卸载
-```
-
 **输入**: 用户提供登录 / 注销 / 卸载所需的指令和必要参数。
 **处理**: 解析登录 / 注销 / 卸载的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回登录 / 注销 / 卸载的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 更新(必须用户明确指令触发)
-```bash
-bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 检查并更新(需用户确认)
-bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check       # 仅检查更新
-```
 
 **输入**: 用户提供更新(必须用户明确指令触发)所需的指令和必要参数。
 **处理**: 解析更新(必须用户明确指令触发)的输入参数,完成核心逻辑,返回结构化响应。
@@ -460,11 +445,11 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 适用场景
-### 场景一:个人用户 - 日常文件浏览与上传
+### 场景一:个人用户 - 日常文件浏览与上传(补充)
 ```text
 角色: 个人用户
 任务: "帮我把本地的report.pdf上传到网盘的docs目录"
-
+# ...
 执行流程:
 1. 前置检查(安装→登录)
 2. 路径校验(docs/在合法范围内)
@@ -472,34 +457,6 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 4. 如已存在,询问用户是否覆盖(高风险确认)
 5. 确认后执行 bdpan upload ./report.pdf docs/report.pdf
 6. 展示结果:"已上传到:我的应用数据/bdpan/docs/report.pdf"
-```
-
-### 场景二:团队协作者 - 分享文件给同事
-```text
-角色: 团队协作者
-任务: "把网盘里的项目方案分享给同事,有效期7天"
-
-执行流程:
-1. 前置检查
-2. bdpan ls 确认文件存在
-3. 根据用户意图选择有效期(默认7天)
-4. 执行 bdpan share docs/项目方案.pdf --period 7
-5. 展示:链接+提取码+有效期(7天)
-6. 提示用户:链接7天后过期,请及时分享
-```
-
-### 场景三:内容创作者 - 转存分享链接
-```text
-角色: 内容创作者
-任务: "朋友发给我一个分享链接,帮我转存到网盘的downloads目录"
-
-执行流程:
-1. 前置检查
-2. 确认分享链接格式有效
-3. 确认有提取码(链接中含 ?pwd= 或反问用户)
-4. 确认目标目录(downloads/)
-5. 执行 bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p abcd -d downloads/
-6. 展示:转存文件数量与目标目录
 ```
 
 ## 不适用场景

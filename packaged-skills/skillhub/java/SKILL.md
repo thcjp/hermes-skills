@@ -17,16 +17,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Java健壮编程
 
 编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。涵盖从基础语法陷阱到高级并发模型的完整防护指南。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Java健壮编程处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -34,16 +35,18 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **类继承与内存模型**: 内部类持有外部类引用,不需要时使用静态嵌套类;Records隐式final不可继承,组件为final | 支持 | 支持 |
-| **测试(JUnit/Mockito)**: 使用JUnit断言和Mockito模拟依赖,验证交互行为与状态 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 快速参考
 
 | 主题 | 文件 |
-| --- | --- |
+|---:|---:|
 | 空值、Optional、自动装箱 | `nulls.md` |
 | 集合与迭代陷阱 | `collections.md` |
 | 泛型与类型擦除 | `generics.md` |
@@ -61,7 +64,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -146,13 +149,13 @@ export API_KEY="your_api_key_here"
 // 错误: Optional.get() 在空时抛出 NoSuchElementException
 Optional<User> user = userRepository.findById(id);
 String name = user.get().getName();  // 危险!
-
+// ...
 // 正确: 使用 orElse() 提供默认值
 String name = user.map(User::getName).orElse("unknown");
-
+// ...
 // 正确: 使用 orElseGet() 延迟计算默认值
 String name = user.map(User::getName).orElseGet(() -> generateDefaultName());
-
+// ...
 // 正确: 使用 ifPresent() 条件执行
 user.ifPresent(u -> sendWelcomeEmail(u));
 ```
@@ -171,7 +174,7 @@ public class Person {
     }
     // 缺少 hashCode() — HashSet<Person> 会包含重复元素!
 }
-
+// ...
 // 正确: equals() 和 hashCode() 成对重写
 @Override
 public boolean equals(Object o) {
@@ -195,7 +198,7 @@ for (String item : items) {
         items.remove(item);  // 抛出异常!
     }
 }
-
+// ...
 // 正确: 使用 Iterator.remove()
 Iterator<String> it = items.iterator();
 while (it.hasNext()) {
@@ -203,7 +206,7 @@ while (it.hasNext()) {
         it.remove();  // 安全
     }
 }
-
+// ...
 // 正确: 使用 removeIf() (Java 8+)
 items.removeIf(item -> item.equals("b"));
 ```
@@ -215,7 +218,7 @@ items.removeIf(item -> item.equals("b"));
 CompletableFuture<CompletableFuture<String>> bad = 
     userService.findById(id)
         .thenApply(user -> orderService.getOrders(user));  // 嵌套!
-
+// ...
 // 正确: thenCompose 展平链式调用
 CompletableFuture<String> good = 
     userService.findById(id)
@@ -235,7 +238,7 @@ try {
 } finally {
     reader.close();  // 若try块抛出异常,close()可能不执行
 }
-
+// ...
 // 正确: try-with-resources 自动关闭 AutoCloseable
 try (FileReader reader = new FileReader("data.txt");
      BufferedReader br = new BufferedReader(reader)) {
@@ -249,7 +252,7 @@ try (FileReader reader = new FileReader("data.txt");
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `NullPointerException` (拆箱null) | `Integer i = null; int x = i;` 自动拆箱触发NPE | 使用 `Optional<Integer>` 或显式null检查,避免将包装类型赋null后自动拆箱 |
 | `ConcurrentModificationException` | `for-each` 循环中直接调用 `list.remove()` | 使用 `Iterator.remove()` 或 Java 8+ 的 `removeIf()` 方法安全删除 |
 | `HashMap`/`HashSet`包含重复键 | 重写了 `equals()` 但未重写 `hashCode()` | `equals()` 和 `hashCode()` 必须成对重写,使用 `Objects.hash()` 生成hashCode |

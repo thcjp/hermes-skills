@@ -48,6 +48,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Shopify 助手 - 专业版
 
@@ -140,7 +142,7 @@ GitHub Actions/GitLab CI 集成,自动测试、构建、部署到多店铺。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Shopify助手-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -165,13 +167,13 @@ cat > stores-config.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 # 批量部署主题
 ./shopify-pro-cli deploy --all --theme-update
-
+# ...
 # 批量推送配置
 ./shopify-pro-cli config push --all --file settings_data.json
-
+# ...
 # 输出:
 # === 多店铺部署报告 ===
 # 品牌A: 部署成功 (主题版本: v2.1.0)
@@ -186,12 +188,12 @@ EOF
 ```typescript
 // lib/shopify.ts
 import { Shopify } from "@shopify/shopify-api";
-
+// ...
 const client = new Shopify.Clients.Storefront({
   domain: process.env.SHOPIFY_STORE_DOMAIN!,
   accessToken: process.env.SHOPIFY_STOREFRONT_TOKEN!,
 });
-
+// ...
 // 获取产品列表
 export async function getProducts() {
   const { data } = await client.query({
@@ -211,7 +213,7 @@ export async function getProducts() {
   });
   return data;
 }
-
+// ...
 // 获取单个产品
 export async function getProduct(handle: string) {
   const { data } = await client.query({
@@ -236,10 +238,10 @@ export async function getProduct(handle: string) {
 ```typescript
 // app/product/[handle]/page.tsx
 import { getProduct } from "@/lib/shopify";
-
+// ...
 export default async function ProductPage({ params }) {
   const product = await getProduct(params.handle);
-
+// ...
   return (
     <div className="product-page">
       <h1>{product.title}</h1>
@@ -257,26 +259,26 @@ export default async function ProductPage({ params }) {
 ```typescript
 // server.js - Shopify App 后端
 import Shopify from "@shopify/shopify-api";
-
+// ...
 // Webhook: 订单创建
 Shopify.Webhooks.Registry.addHandler("ORDERS_CREATE", {
   path: "/webhooks/orders-create",
   webhookHandler: async (topic, shop, body) => {
     const order = JSON.parse(body);
     console.log(`新订单: ${order.order_number}`);
-
+// ...
     // 同步到 ERP 系统
     await syncToERP(order);
     // 发送通知
     await sendNotification(order);
   },
 });
-
+// ...
 // 自定义接口: 批量更新产品
 app.post("/api/products/batch-update", async (req, res) => {
   const session = await Shopify.Utils.loadCurrentSession(req, res);
   const client = new Shopify.Clients.Rest(session.shop, session.accessToken);
-
+// ...
   const results = await Promise.all(
     req.body.products.map((product) =>
       client.put({
@@ -286,7 +288,7 @@ app.post("/api/products/batch-update", async (req, res) => {
       })
     )
   );
-
+// ...
   res.json({ updated: results.length });
 });
 ```
@@ -298,7 +300,7 @@ app.post("/api/products/batch-update", async (req, res) => {
 ./shopify-pro-cli performance audit \
   --url "https://my-store.com" \
   --device "mobile,desktop"
-
+# ...
 # 输出:
 # === Core Web Vitals 报告 ===
 # 指标          移动端    桌面端    目标
@@ -310,7 +312,7 @@ app.post("/api/products/batch-update", async (req, res) => {
 # [高] LCP 过高: 首屏图片未预加载
 # [高] CLS 过高: 图片未设置宽高比
 # [中] JS 过大: 第三方脚本过多
-
+# ...
 # 自动应用优化
 ./shopify-pro-cli performance optimize \
   --lazy-load-images \
@@ -345,7 +347,7 @@ app.post("/api/products/batch-update", async (req, res) => {
 # 免费版主题代码完全兼容
 # 依赖说明
 npm install -g @shopify-pro/cli
-
+# ...
 # 配置多店铺
 ./shopify-pro-cli stores init
 ```
@@ -358,7 +360,7 @@ npm install -g @shopify-pro/cli
   --framework nextjs \
   --store my-store.myshopify.com \
   --storefront-token "${STOREFRONT_TOKEN}"
-
+# ...
 # 项目结构:
 # headless-store/
 # ├── app/              # Next.js App Router
@@ -369,7 +371,6 @@ npm install -g @shopify-pro/cli
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -415,7 +416,7 @@ npm install -g @shopify-pro/cli
 ### 免费版与专业版能力对比
 
 | 能力 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 主题开发 | 单店铺 | 多店铺批量 |
 | App 开发 | 不支持 | 自定义 App |
 | Headless | 不支持 | Storefront API |
@@ -467,7 +468,7 @@ A: 1) 使用 Lighthouse CI 在每次部署时检测;2) 接入真实用户监控(
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | 官方网站下载 |
 | Shopify CLI | CLI工具 | 必需 | npm install -g @shopify/cli |
 | Next.js | 框架 | Headless必需 | npx create-next-app |
@@ -495,9 +496,8 @@ A: 1) 使用 Lighthouse CI 在每次部署时检测;2) 接入真实用户监控(
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 > **企业级浏览器自动化系统。反检测+多标签+代理+动态抓取+登录态+UI测试，支撑复杂自动化场景。**
 
@@ -40,21 +42,21 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 浏览器代理(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
 ls ~/workspace/browser/
-
+# ...
 cat ~/workspace/browser/config.json | grep edition
 ```
 
 ### 120秒上手（反检测抓取）
 ```text
 用户："抓取 https://example.com/products 所有商品，启用反检测模式"
-
+# ...
 Agent："已启用反检测配置：
   ✅ User-Agent轮换：5个真实UA随机使用
   ✅ 鼠标轨迹模拟：人类化移动
@@ -69,11 +71,8 @@ Agent："已启用反检测配置：
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 功能一：反检测策略
-
-> 详细代码示例已移至 `references/detail.md`
 
 **反检测层级**：
 - **网络层**：UA轮换、请求头随机化、IP代理
@@ -91,7 +90,7 @@ Agent："已启用反检测配置：
   tab1: https://shop-a.com/product/123
   tab2: https://shop-b.com/product/456
   tab3: https://shop-c.com/product/789"
-
+# ...
 Agent："已打开3个标签页：
   📑 Tab 1: shop-a.com/product/123 - ¥299
   📑 Tab 2: shop-b.com/product/456 - ¥279
@@ -111,8 +110,6 @@ Agent："已打开3个标签页：
 
 ### 功能三：代理与网络配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 **网络模拟能力**：
 - 多代理池轮换（避免单IP被封）
 - 地理位置伪装（配合代理）
@@ -126,7 +123,7 @@ Agent："已打开3个标签页：
 ### 功能四：分页抓取与无限滚动
 ```text
 用户："抓取 https://example.com/products 所有商品，支持分页"
-
+# ...
 Agent："检测到分页结构：
   - 共25页，每页20条，预计500条
   - 启用分页自动遍历
@@ -138,7 +135,7 @@ Agent："检测到分页结构：
 
 ```text
 用户："抓取 https://example.com/feed 的所有内容，支持无限滚动"
-
+# ...
 Agent："检测到无限滚动加载：
   - 滚动加载策略：每次滚动到底部等待2秒
   - 终止条件：连续3次无新内容
@@ -181,11 +178,11 @@ Agent："检测到无限滚动加载：
 ### 功能六：登录态持久化
 ```bash
 agent browser auth save --name "github_session" --url "github.com"
-
+# ...
 agent browser auth load --name "github_session"
-
+# ...
 agent browser auth list
-
+# ...
 agent browser auth delete --name "github_session"
 ```
 
@@ -249,7 +246,7 @@ agent browser auth delete --name "github_session"
 **配置**：
 ```bash
 agent browser auth save --name "finance_portal" --url "finance.company.com"
-
+# ...
 "加载finance_portal登录态，打开报表页面，下载本月PDF报表"
 ```
 
@@ -276,7 +273,7 @@ agent browser auth save --name "finance_portal" --url "finance.company.com"
 
 ## 多角色场景指南
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:-----|:-----|:-----|:-----|
 | 电商运营 | 竞品价格监控 | 反检测+代理+分页 | 避免封禁、自动监控 |
 | 市场分析师 | 社交媒体采集 | 无限滚动+动态抓取 | 获取完整数据 |
 | 财务人员 | 报表自动下载 | 登录态+定时任务 | 免登录、自动化 |
@@ -314,19 +311,19 @@ agent browser auth save --name "finance_portal" --url "finance.company.com"
 ### 与CI/CD系统集成
 ```bash
 agent browser test run --suite smoke_test --format json > test-result.json
-
+# ...
 if [ $? -ne 0 ]; then
   echo "UI回归测试失败，阻止部署"
   exit 1
 fi
-
+# ...
 agent browser test report --last --send dingtalk
 ```
 
 ### 与监控系统集成
 ```bash
 curl http://localhost:19197/metrics
-
+# ...
 ```
 
 ### 与数据管道集成
@@ -363,7 +360,7 @@ agent browser scrape --url "https://example.com/data" \
 
 ### 版本更新历史
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|---:|---:|---:|
 | 1.0.0 | 2026-07 | 初版发布，含8大高级功能 |
 
 ## FAQ
@@ -415,7 +412,7 @@ agent browser scrape --url "https://example.com/data" \
 
 ## 错误处理
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:---:|:---:|:---:|:---:|
 | 抓取被网站封禁 | 反检测配置不足或IP被封 | 启用指纹伪装；增加代理池规模；降低请求频率 | 高 |
 | 动态内容未加载 | 等待时间不足或SPA路由未处理 | 增加`wait_timeout`；启用`spa_support`；检查AJAX拦截 | 高 |
 | 登录态失效 | Cookie过期或网站Session超时 | 检查`expires_at`；重新登录并保存登录态 | 高 |
@@ -437,7 +434,7 @@ agent browser scrape --url "https://example.com/data" \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Chromium浏览器 | 软件 | 必需 | 系统自带或从官方下载 |
 | browser工具 | 内置工具 | 必需 | Agent平台内置浏览器工具 |
@@ -503,7 +500,7 @@ agent browser scrape --url "https://example.com/data" \
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|:---|---:|---:|
 | 免费体验版 | ¥0 | 基础浏览器操作（打开/截图/点击/填写/基础抓取）+ 基础示例 + 基础FAQ | 个人试用、轻量操作 |
 | 收费专业版 | ¥29.9/月 | 全功能（反检测+多标签+代理+动态抓取+登录态+UI测试+性能监控）+ 多角色指南 + 性能优化 + 优先支持 | 团队/企业、规模化自动化 |
 
@@ -511,18 +508,6 @@ agent browser scrape --url "https://example.com/data" \
 
 ## 适用场景
 **痛点**：需要每日监控竞品价格变化，但竞品网站有反爬机制，手动监控效率低。
-
-**配置**：
-```text
-"每日凌晨2点抓取以下竞品商品价格，启用反检测模式：
-  - shop-a.com/product/123
-  - shop-b.com/product/456
-  - shop-c.com/product/789
-  代理池轮换，每商品间隔5-10秒随机
-  结果保存CSV并发送钉钉通知"
-```
-
-**效果**：反检测避免被封，代理池轮换分散请求，每日自动执行，价格变化即时通知，节省90%监控人力。
 
 ## 已知限制
 - 需LLM支持,无LLM环境不可用

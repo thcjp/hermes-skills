@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 > **让AI Agent像人类一样操作桌面。鼠标、键盘、截图，三合一流程控制。**
 
 将重复性桌面操作交给Agent执行。本技能提供统一的桌面控制接口，覆盖鼠标定位、键盘输入、屏幕截图三大核心能力，配合失败安全机制确保自动化过程可控可中止。
@@ -29,7 +30,7 @@ suggested_price: 29.9
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 桌面流程控制中枢(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -74,13 +75,13 @@ pip install pyautogui pillow
 
 ```python
 import pyautogui
-
+# ...
 x, y = pyautogui.position()
 print(f"鼠标位置：{x}, {y}")
-
+# ...
 screen_w, screen_h = pyautogui.size()
 pyautogui.moveTo(screen_w // 2, screen_h // 2, duration=0.3)
-
+# ...
 pyautogui.click()
 ```
 
@@ -90,12 +91,12 @@ pyautogui.click()
 ```python
 import pyautogui
 import time
-
+# ...
 pyautogui.FAILSAFE = True
 pyautogui.PAUSE = 0.1  # 每个操作间隔0.1秒
 screenshot = pyautogui.screenshot()
 screenshot.save("before_action.png")
-
+# ...
 try:
     import pygetwindow as gw
     windows = gw.getAllWindows()
@@ -106,11 +107,11 @@ try:
             break
 except ImportError:
     print("提示：安装 pygetwindow 可启用窗口管理：pip install pygetwindow")
-
+# ...
 pyautogui.typewrite("Hello World", interval=0.05)
-
+# ...
 pyautogui.hotkey('ctrl', 's')
-
+# ...
 screenshot_after = pyautogui.screenshot()
 screenshot_after.save("after_action.png")
 ```
@@ -123,24 +124,24 @@ import pyautogui
 import time
 import logging
 from pathlib import Path
-
+# ...
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     filename='automation.log'
 )
 logger = logging.getLogger(__name__)
-
+# ...
 class FlowController:
     """桌面流程控制器（免费版核心）"""
-
+# ...
     def __init__(self, failsafe=True, pause=0.1):
         self.failsafe = failsafe
         self.pause = pause
         pyautogui.FAILSAFE = failsafe
         pyautogui.PAUSE = pause
         self.action_log = []
-
+# ...
     def safe_click(self, x, y, button='left', clicks=1, desc=""):
         """安全点击，带日志记录"""
         try:
@@ -158,7 +159,7 @@ class FlowController:
             self.action_log.append({
                 'action': 'click', 'desc': desc, 'success': False, 'error': str(e)
             })
-
+# ...
     def safe_type(self, text, interval=0.05, desc=""):
         """安全输入文本"""
         try:
@@ -169,7 +170,7 @@ class FlowController:
             })
         except Exception as e:
             logger.error(f"输入失败：{e}")
-
+# ...
     def capture(self, region=None, filename=None):
         """截图并保存"""
         img = pyautogui.screenshot(region=region)
@@ -178,7 +179,7 @@ class FlowController:
             img.save(filename)
             logger.info(f"截图已保存：{filename}")
         return img
-
+# ...
 fc = FlowController(failsafe=True)
 fc.safe_click(500, 300, desc="点击输入框")
 fc.safe_type("自动化测试内容", desc="填写表单")
@@ -188,7 +189,7 @@ fc.capture(filename="screenshots/result.png")
 ## 核心能力
 ### 鼠标控制
 | 功能 | 方法 | 参数说明 |
-|------|------|----------|
+|:-----|:-----|:-----|
 | 绝对定位 | `moveTo(x, y, duration)` | x/y为像素坐标，duration为移动时长（秒） |
 | 相对移动 | `moveRel(xOffset, yOffset)` | 相对当前位置偏移 |
 | 平滑移动 | `moveTo(x, y, duration=0.5)` | duration>0时使用插值平滑移动 |
@@ -203,16 +204,16 @@ fc.capture(filename="screenshots/result.png")
 
 ```python
 import pyautogui
-
+# ...
 pyautogui.moveTo(800, 400, duration=0.5)
-
+# ...
 pyautogui.click(300, 200, button='right')
-
+# ...
 pyautogui.click(500, 300, clicks=2, interval=0.1)
-
+# ...
 pyautogui.moveTo(100, 100)
 pyautogui.dragTo(800, 600, duration=1.0, button='left')
-
+# ...
 pyautogui.scroll(-5)
 ```
 
@@ -221,8 +222,8 @@ pyautogui.scroll(-5)
 **输出**: 返回鼠标控制的响应数据,包含状态码、结果和日志。
 
 ### 键盘控制
-| 功能 | 方法 | 参数说明 |
-|------|------|----------|
+| 功能(续)| 方法 | 参数说明 |
+|---:|---:|---:|
 | 输入文本 | `typewrite(text, interval)` | interval为按键间隔（秒） |
 | 按键 | `press('enter')` | 按下并释放单个键 |
 | 热键组合 | `hotkey('ctrl', 'c')` | 同时按下多个键 |
@@ -232,7 +233,7 @@ pyautogui.scroll(-5)
 **常用键名速查**：
 
 | 类别 | 键名 |
-|------|------|
+|:---:|:---:|
 | 字母 | `'a'` 到 `'z'` |
 | 数字 | `'0'` 到 `'9'` |
 | 功能键 | `'f1'` 到 `'f12'` |
@@ -249,15 +250,15 @@ pyautogui.scroll(-5)
 
 ```python
 import pyautogui
-
+# ...
 pyautogui.typewrite("你好世界", interval=0.05)
-
+# ...
 pyautogui.hotkey('ctrl', 'c')
-
+# ...
 pyautogui.hotkey('ctrl', 'v')
-
+# ...
 pyautogui.hotkey('ctrl', 'a')
-
+# ...
 pyautogui.keyDown('shift')
 pyautogui.press('right')
 pyautogui.press('right')
@@ -270,8 +271,8 @@ pyautogui.keyUp('shift')
 **输出**: 返回键盘控制的响应数据,包含状态码、结果和日志。
 
 ### 屏幕操作
-| 功能 | 方法 | 参数说明 |
-|------|------|----------|
+| 功能(续)(续)| 方法 | 参数说明 |
+|:----------|----------:|:----------|
 | 全屏截图 | `screenshot()` | 返回PIL Image对象 |
 | 区域截图 | `screenshot(region=(l,t,w,h))` | region为(left, top, width, height) |
 | 保存截图 | `screenshot(filename='x.png')` | 直接保存到文件 |
@@ -282,16 +283,16 @@ pyautogui.keyUp('shift')
 
 ```python
 import pyautogui
-
+# ...
 img = pyautogui.screenshot()
 img.save("fullscreen.png")
-
+# ...
 region_img = pyautogui.screenshot(region=(100, 100, 800, 600))
 region_img.save("region.png")
-
+# ...
 r, g, b = pyautogui.pixel(500, 300)
 print(f"RGB: ({r}, {g}, {b})")
-
+# ...
 w, h = pyautogui.size()
 print(f"分辨率：{w}x{h}")
 ```
@@ -302,7 +303,7 @@ print(f"分辨率：{w}x{h}")
 
 ### 安全防护
 | 机制 | 说明 | 使用方式 |
-|------|------|----------|
+|---:|:---|---:|
 | 失败安全 | 鼠标移到屏幕角落立即中止 | `pyautogui.FAILSAFE = True` |
 | 操作暂停 | 每个操作之间自动暂停 | `pyautogui.PAUSE = 0.1` |
 | 边界检查 | 防止坐标超出屏幕范围 | 自动校验 |
@@ -326,27 +327,27 @@ print(f"分辨率：{w}x{h}")
 import pyautogui
 import time
 import csv
-
+# ...
 pyautogui.FAILSAFE = True
 pyautogui.PAUSE = 0.2
-
+# ...
 with open('contacts.csv', 'r', encoding='utf-8') as f:
     reader = csv.DictReader(f)
-
+# ...
     for row in reader:
         pyautogui.click(300, 250)
         pyautogui.typewrite(row['name'], interval=0.03)
-
+# ...
         pyautogui.press('tab')
         pyautogui.typewrite(row['email'], interval=0.03)
-
+# ...
         pyautogui.press('tab')
         pyautogui.typewrite(row['phone'], interval=0.03)
-
+# ...
         pyautogui.press('enter')
-
+# ...
         time.sleep(1.5)
-
+# ...
         print(f"已录入：{row['name']}")
 ```
 
@@ -361,18 +362,18 @@ with open('contacts.csv', 'r', encoding='utf-8') as f:
 import pyautogui
 from datetime import datetime
 from pathlib import Path
-
+# ...
 def capture_step(step_name, region=None):
     """在关键步骤截图并按时间戳归档"""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     save_dir = Path(f"screenshots/{datetime.now().strftime('%Y%m%d')}")
     save_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
     filename = f"{save_dir}/{step_name}_{timestamp}.png"
     pyautogui.screenshot(region=region, filename=filename)
     print(f"截图已保存：{filename}")
     return filename
-
+# ...
 capture_step("01_login_page")
 pyautogui.click(400, 300)
 pyautogui.typewrite("testuser", interval=0.05)
@@ -394,26 +395,26 @@ capture_step("03_after_login")
 ```python
 import pyautogui
 import time
-
+# ...
 pyautogui.PAUSE = 0.3
-
+# ...
 for i in range(10):
     pyautogui.click(200, 300 + i * 25)  # 逐行选择
     time.sleep(0.3)
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
-
+# ...
     pyautogui.hotkey('alt', 'tab')
     time.sleep(0.5)
-
+# ...
     pyautogui.click(500, 400)
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.press('enter')
     time.sleep(0.3)
-
+# ...
     pyautogui.hotkey('alt', 'tab')
     time.sleep(0.3)
-
+# ...
     print(f"第 {i+1} 条记录搬运完成")
 ```
 
@@ -441,7 +442,7 @@ for i in range(10):
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | pyautogui | Python库 | 必需 | `pip install pyautogui` |
 | Pillow | Python库 | 必需 | `pip install pillow`（pyautogui自动安装） |
 | pygetwindow | Python库 | 可选 | `pip install pygetwindow`（窗口管理功能） |
@@ -497,7 +498,7 @@ for i in range(10):
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -21,8 +21,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Excel 工具（专业版）
 
 ## 概述
@@ -34,7 +35,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 模块 | 能力 | 性能基线 |
-|------|------|---------|
+|---|---|----|
 | 多表合并 | JOIN/UNION/VLOOKUP | 10 文件 < 10s |
 | 透视表 | 分组/聚合/交叉 | 10 万行 < 5s |
 | 图表生成 | 柱/线/饼/散点 | 单图 < 1s |
@@ -100,16 +101,16 @@ suggested_price: 99.9
 ```python
 import pandas as pd
 import glob
-
+# ...
 # 合并多个 Excel 文件
 files = glob.glob('data/sales_*.xlsx')
 dfs = [pd.read_excel(f) for f in files]
 merged = pd.concat(dfs, ignore_index=True)
-
+# ...
 # 去重并排序
 merged = merged.drop_duplicates(subset=['订单ID'])
 merged = merged.sort_values('日期')
-
+# ...
 merged.to_excel('merged_sales.xlsx', index=False)
 print(f"合并完成：{len(merged)} 行，来源 {len(files)} 个文件")
 ```
@@ -118,18 +119,18 @@ print(f"合并完成：{len(merged)} 行，来源 {len(files)} 个文件")
 
 ```python
 import pandas as pd
-
+# ...
 # 主表与从表
 main = pd.read_excel('orders.xlsx')
 lookup = pd.read_excel('customers.xlsx')
-
+# ...
 # 类似 VLOOKUP 的左连接
 result = main.merge(
     lookup[['客户ID', '客户名称', '区域']],
     on='客户ID',
     how='left'
 )
-
+# ...
 result.to_excel('orders_with_customer.xlsx', index=False)
 ```
 
@@ -140,9 +141,9 @@ result.to_excel('orders_with_customer.xlsx', index=False)
 
 ```python
 import pandas as pd
-
+# ...
 df = pd.read_excel('sales.xlsx')
-
+# ...
 # 按区域与产品做透视表，聚合销售额
 pivot = pd.pivot_table(
     df,
@@ -154,7 +155,7 @@ pivot = pd.pivot_table(
     margins=True,        # 追加合计行/列
     margins_name='总计'
 )
-
+# ...
 pivot.to_excel('sales_pivot.xlsx')
 ```
 
@@ -165,11 +166,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from openpyxl import load_workbook
 from openpyxl.drawing.image import Image as XLImage
-
+# ...
 # 生成图表
 df = pd.read_excel('sales.xlsx')
 monthly = df.groupby('月份')['销售额'].sum()
-
+# ...
 fig, ax = plt.subplots(figsize=(10, 6))
 monthly.plot(kind='bar', ax=ax, color='steelblue')
 ax.set_title('月度销售额')
@@ -177,7 +178,7 @@ ax.set_xlabel('月份')
 ax.set_ylabel('销售额')
 plt.tight_layout()
 plt.savefig('chart.png', dpi=150)
-
+# ...
 # 嵌入到 Excel
 wb = load_workbook('report.xlsx')
 ws = wb.active
@@ -190,16 +191,16 @@ wb.save('report_with_chart.xlsx')
 
 ```python
 import pandas as pd
-
+# ...
 # 分块读取，避免内存溢出
 chunk_iter = pd.read_excel('large_data.xlsx', chunksize=50000)
-
+# ...
 results = []
 for chunk in chunk_iter:
     # 流式聚合
     agg = chunk.groupby('区域')['金额'].sum()
     results.append(agg)
-
+# ...
 # 合并所有分块的结果
 final = pd.concat(results).groupby(level=0).sum()
 final.to_excel('aggregated.xlsx')
@@ -210,14 +211,14 @@ final.to_excel('aggregated.xlsx')
 ```python
 import pandas as pd
 from sqlalchemy import create_engine
-
+# ...
 # 连接 `PostgreSQL`
 engine = create_engine('postgresql://user:pass@host:5432/dbname')
-
+# ...
 # 从数据库导出到 Excel
 df = pd.read_sql('SELECT * FROM sales WHERE month = 7', engine)
 df.to_excel('july_sales.xlsx', index=False)
-
+# ...
 # 从 Excel 导入到数据库
 df = pd.read_excel('updated_sales.xlsx')
 df.to_sql('sales', engine, if_exists='append', index=False)
@@ -232,31 +233,31 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 from sqlalchemy import create_engine
-
+# ...
 def generate_report():
     engine = create_engine('postgresql://user:pass@host:5432/dbname')
     df = pd.read_sql('SELECT * FROM sales WHERE date >= CURRENT_DATE - 7', engine)
     pivot = pd.pivot_table(df, values='金额', index='区域', aggfunc='sum')
     pivot.to_excel('weekly_report.xlsx')
-
+# ...
 def send_email(to_addr, subject, file_path):
     msg = MIMEMultipart()
     msg['From'] = 'report@company.com'
     msg['To'] = to_addr
     msg['Subject'] = subject
-
+# ...
     with open(file_path, 'rb') as f:
         part = MIMEBase('application', 'octet-stream')
         part.set_payload(f.read())
         encoders.encode_base64(part)
         part.add_header('Content-Disposition', 'attachment', filename=file_path)
         msg.attach(part)
-
+# ...
     with smtplib.SMTP('smtp.company.com', 587) as s:
         s.starttls()
         s.login('user', 'pass')
         s.send_message(msg)
-
+# ...
 # 定时任务（配合 cron 或 schedule 库）
 generate_report()
 send_email('boss@company.com', '周度销售报表', 'weekly_report.xlsx')
@@ -266,7 +267,7 @@ send_email('boss@company.com', '周度销售报表', 'weekly_report.xlsx')
 
 ### 1. 多表合并策略
 | 场景 | 方法 | 注意事项 |
-|------|------|---------|
+|:-----|:-----|:-----|
 | 相同结构纵向合并 | `pd.concat` | 检查列名一致 |
 | 跨表字段匹配 | `pd.merge` (left/inner) | 确认 key 唯一性 |
 | 主表补充信息 | `merge(how='left')` | 处理未匹配的 NaN |
@@ -280,7 +281,7 @@ send_email('boss@company.com', '周度销售报表', 'weekly_report.xlsx')
 
 ### 3. 图表选型
 | 数据特征 | 推荐图表 | 适用场景 |
-|---------|---------|---------|
+|---:|---:|---:|
 | 时间序列 | 折线图 | 趋势分析 |
 | 分类对比 | 柱状图 | 区域/产品对比 |
 | 占比 | 饼图 | 来源/结构 |
@@ -356,7 +357,7 @@ A：① 同步前做行数校验；② 关键字段做 checksum；③ 用事务�
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 基础读写 + 清洗 + 统计 | 个人试用 |
 | 收费专业版 | ¥29.9/月 | 全功能 + 大数据 + 自动化 + 数据库联动 + 优先支持 | 团队/企业 |
 
@@ -372,7 +373,7 @@ A：① 同步前做行数校验；② 关键字段做 checksum；③ 用事务�
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | openpyxl | Python 库 | 必需 | `pip install openpyxl` |
 | pandas | Python 库 | 必需 | `pip install pandas` |
@@ -396,9 +397,8 @@ A：① 同步前做行数校验；② 关键字段做 checksum；③ 用事务�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

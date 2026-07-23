@@ -30,15 +30,16 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 照片配文工具专业版是一款面向专业摄影师与内容创作者的全平台照片配文生成解决方案。在完全兼容免费版 Instagram、X(Twitter)、Facebook 三大平台配文能力的基础上,专业版解锁了 Flickr、Glass、Tumblr、Bluesky、Threads、500px、Reddit、VSCO、Substack、Pinterest 共 13 个平台的配文生成能力。
 
 无论是同时在 13 个平台发布摄影作品、批量处理一组系列照片的配文、维护统一的品牌语气风格,还是获取照片编辑分析建议,专业版都能高效完成,帮助创作者在多平台建立专业形象。
 
 ### 免费版与专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 支持平台数 | 3 个 | 13 个 |
 | Instagram | 支持 | 支持 |
 | X (Twitter) | 支持 | 支持 |
@@ -64,7 +65,7 @@ suggested_price: 99.9
 每个平台拥有独立的语气、格式与标签策略:
 
 | 平台 | 语气风格 | 格式特点 | 标签策略 |
-|:-----|:---------|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Instagram | 简洁、具体、观察式 | 1-2行+器材+5标签 | 精选5个高质量标签 |
 | Flickr | 描述性、沉思感 | 标题+1-3句+器材 | 无标签限制 |
 | X (Twitter) | 简练、有冲击力 | 280字符以内 | 不堆砌标签 |
@@ -132,7 +133,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 照片配文工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -152,9 +153,9 @@ suggested_price: 99.9
 
 ```text
 The road ends where the sky turns orange. Dust and heat in the air.
-
+# ...
 Canon EOS 1V · Tri-X 400
-
+# ...
 ```
 
 **Flickr**:
@@ -182,9 +183,9 @@ Canon EOS 1V · Tri-X 400
 
 ```text
 **Amboy, California**
-
+# ...
 Drove out to the desert to clear my head and the sky did this thing where it just kept getting more intense. Ten minutes of light worth sitting in the dust for. The Tri-X grain feels right for a place this dry and quiet.
-
+# ...
 #film photography #desert #route 66 #mojave #analog photography #road trip #canon eos 1v #tri x 400 #american west #sunset
 ```
 
@@ -213,7 +214,7 @@ Camera: Canon EOS 1V · Lens: 50mm · Film: Tri-X 400
 
 ```text
 Title: Desert road at dusk, Amboy California [Canon EOS 1V, Tri-X 400]
-
+# ...
 Comment: Shot this on Route 66 last weekend. The light changed fast, maybe a ten minute window. Tri-X 400 at box speed, developed in HC-110. The desert just keeps going out there.
 Posted to r/analog
 ```
@@ -258,13 +259,13 @@ Edit Analysis:
 
 ```text
 请为以下5张照片批量生成 Instagram 配文,保持系列风格统一:
-
+# ...
 照片1:武康路梧桐树下光影,Leica M6, Portra 400
 照片2:外滩夜景反光,Leica M6, Portra 400
 照片3:弄堂里老人下棋,Leica M6, Portra 400
 照片4:雨后街道水洼倒影,Leica M6, Portra 400
 照片5:咖啡馆窗边阅读的人,Leica M6, Portra 400
-
+# ...
 系列主题:上海日常
 统一风格:安静、观察式、不煽情
 ```
@@ -279,7 +280,7 @@ Edit Analysis:
 禁用词:amazing, stunning, perfect
 标签策略:固定使用 #analogco #filmlife,其余按内容选2个
 语言:中英双语
-
+# ...
 请为以下产品照生成配文:
 照片内容:皮质相机包放在木桌上,自然光
 器材: Hasselblad 500C/M, Kodak Portra 160
@@ -299,7 +300,7 @@ Edit Analysis:
 ### 第二步:指定目标平台
 ```text
 请为这张照片生成所有平台的配文。
-
+# ...
 请为这张照片生成 Instagram、Flickr、500px、Reddit 的配文。
 ```
 
@@ -332,19 +333,19 @@ brand:
 系列主题: [系列名称]
 统一风格: [风格描述]
 平台: [目标平台,如 Instagram]
-
+# ...
 照片1:
   内容: [描述]
   地点: [地点]
   器材: [器材]
   氛围: [氛围]
-
+# ...
 照片2:
   内容: [描述]
   地点: [地点]
   器材: [器材]
   氛围: [氛围]
-
+# ...
 [更多照片...]
 ```
 
@@ -357,39 +358,39 @@ Instagram:
   - 空行
   - 恰好5个标签
   - 禁止使用破折号(—)
-
+# ...
 Flickr:
   - 标题(纯文本,无markdown)
   - 破折号
   - 1-3句故事/背景
   - 器材信息
-
+# ...
 X (Twitter):
   - 280字符以内
   - 单行强表达
   - 器材自然融入末尾
-
+# ...
 Glass:
   - 1-3句
   - 器材单独一行,用中点(·)分隔
   - 无标签,无互动诱饵
-
+# ...
 Tumblr:
   - 粗体地点作为标题
   - 2-4句叙事/反思
   - 器材行
   - 8-12个标签(标签内用空格)
-
+# ...
 500px:
   - 标题行
   - 1-3句技术/条件描述
   - 完整器材细节
-
+# ...
 VSCO:
   - 最多1行
   - 有时只需一个词或短语
   - 无标签,无器材(除非胶片型号)
-
+# ...
 Pinterest:
   - 标题(5-10词,关键词丰富)
   - 描述(2-3句,含自然关键词)
@@ -401,7 +402,7 @@ Pinterest:
 同一张照片在不同平台应有差异化表达,避免跨平台复制粘贴:
 
 | 平台类型 | 表达策略 |
-|:---------|:---------|
+|:---:|:---:|
 | 视觉优先(Instagram/VSCO/Glass) | 简短、留白、让图片说话 |
 | 故事优先(Tumblr/Substack/Facebook) | 叙事感、背景故事、个人反思 |
 | 技术优先(500px/Flickr/Reddit) | 器材、参数、拍摄条件 |
@@ -441,7 +442,7 @@ Pinterest 是发现引擎,配文需融入可搜索关键词:
 
 ```text
 [主题/氛围] — [地点]  或  [风格] [主题], [地点]
-
+# ...
 "Desert Road at Dusk, Amboy California"
 "Film Photography, Mojave Desert Landscape"
 ```
@@ -451,7 +452,7 @@ Reddit 社区反感营销腔与自我推销,配文需真实、谦虚:
 
 ```text
 [地点或主题] [器材方括号]
-
+# ...
 "Bombay Beach [Canon EOS 1V, Tri-X 400]"
 ```
 
@@ -467,7 +468,7 @@ Reddit 社区反感营销腔与自我推销,配文需真实、谦虚:
 
 ```text
 请使用 brand_a.yaml 的品牌风格为这张照片生成配文。
-
+# ...
 请使用 brand_b.yaml 的品牌风格为这张照片生成配文。
 ```
 
@@ -480,7 +481,7 @@ Reddit 社区反感营销腔与自我推销,配文需真实、谦虚:
 ```text
 Instagram (中文):
 公路尽头是橘红色的天...
-
+# ...
 Instagram (English):
 The road ends where the sky turns orange...
 ```
@@ -499,7 +500,7 @@ The road ends where the sky turns orange...
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | photo-edit-analysis | 技能 | 推荐 | 随 Skill 安装(编辑分析功能) |
 
@@ -515,7 +516,7 @@ The road ends where the sky turns orange...
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

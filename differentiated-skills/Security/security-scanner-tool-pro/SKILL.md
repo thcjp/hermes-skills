@@ -57,6 +57,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # 安全扫描器(专业版)
 ## 概述
@@ -65,7 +67,7 @@ pricing_model: "monthly"
 ## 核心能力
 ### 功能矩阵
 | 功能模块 | 描述 | 免费版 | 专业版 |
-|----------|------|--------|--------|
+|----|---|---|---|
 | 工具数量 | 集成工具 | 4个 | 10+ |
 | 扫描模式 | 扫描方式 | 单目标 | 批量+并行 |
 | 报告格式 | 输出类型 | Markdown | HTML/PDF/SARIF |
@@ -82,7 +84,7 @@ pricing_model: "monthly"
 ### 10+工具集成
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 安全扫描器(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -161,22 +163,22 @@ steps:
     tool: ffuf
     command: "ffuf -w subdomains.txt -u https://{target}/ -mc 200"
     timeout: 300
-
+# ...
   - name: 目录爆破
     tool: gobuster
     command: "gobuster dir -u {target} -w directory-list-2.3-medium.txt"
     timeout: 600
-
+# ...
   - name: 漏洞扫描
     tool: nuclei
     command: "nuclei -u {target} -t cves/ -t vulnerabilities/ -t misconfiguration/"
     timeout: 1800
-
+# ...
   - name: SSL分析
     tool: testssl
     command: "testssl.sh {target}"
     timeout: 300
-
+# ...
   - name: WordPress扫描
     tool: wpscan
     command: "wpscan --url {target} --enumerate u,vp,vt"
@@ -209,10 +211,10 @@ import os
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-
+# ...
 class EnterpriseSecurityScanner:
     """企业级安全扫描引擎"""
-
+# ...
     TOOLS = {
         "nmap": {"command": "nmap", "installed": False},
         "nuclei": {"command": "nuclei", "installed": False},
@@ -225,7 +227,7 @@ class EnterpriseSecurityScanner:
         "wpscan": {"command": "wpscan", "installed": False},
         "trivy": {"command": "trivy", "installed": False}
     }
-
+# ...
     CVE_DATABASE = {
         "CVE-2017-0144": {"name": "EternalBlue", "severity": "CRITICAL", "fix": "安装MS17-010补丁"},
         "CVE-2019-0708": {"name": "BlueKeep", "severity": "CRITICAL", "fix": "禁用RDP或安装补丁"},
@@ -235,7 +237,7 @@ class EnterpriseSecurityScanner:
         "CVE-2014-6271": {"name": "Shellshock", "severity": "HIGH", "fix": "升级Bash至4.3+"},
         "CVE-2018-7600": {"name": "Drupalgeddon2", "severity": "HIGH", "fix": "升级Drupal至7.58+/8.5.1+"},
     }
-
+# ...
     WORKFLOWS = {
         "quick-scan": ["host_discovery", "port_scan_fast", "service_detect"],
         "full-assessment": [
@@ -247,34 +249,34 @@ class EnterpriseSecurityScanner:
             "ssl_scan", "cms_scan", "report"
         ]
     }
-
+# ...
     def __init__(self, threads=5):
         self.threads = threads
         self.results = {}
         self.vulnerabilities = []
         self.cve_mappings = []
-
+# ...
     def scan_target(self, target, workflow="full-assessment"):
         """扫描单个目标"""
         steps = self.WORKFLOWS.get(workflow, self.WORKFLOWS["quick-scan"])
         target_result = {"target": target, "steps": [], "vulnerabilities": []}
-
+# ...
         for step in steps:
             result = self._execute_step(step, target)
             target_result["steps"].append({"name": step, "result": result})
-
+# ...
             if "vuln" in step:
                 vulns = self._parse_vulnerabilities(result)
                 target_result["vulnerabilities"].extend(vulns)
                 self._map_cves(vulns, target)
-
+# ...
         return target_result
-
+# ...
     def batch_scan(self, targets_file, workflow="quick-scan"):
         """批量多目标并行扫描"""
         with open(targets_file) as f:
             targets = [line.strip() for line in f if line.strip()]
-
+# ...
         all_results = []
         with ThreadPoolExecutor(max_workers=self.threads) as executor:
             futures = {
@@ -290,9 +292,9 @@ class EnterpriseSecurityScanner:
                     print(f"[完成] {target}: {vuln_count} 个漏洞")
                 except Exception as e:
                     print(f"[失败] {target}: {str(e)}")
-
+# ...
         return all_results
-
+# ...
     def _execute_step(self, step, target):
         """执行扫描步骤"""
         commands = {
@@ -307,13 +309,13 @@ class EnterpriseSecurityScanner:
             "directory_brute": f"gobuster dir -u http://{target} -w common.txt",
             "cms_scan": f"wpscan --url {target} --enumerate u,vp,vt",
         }
-
+# ...
         command = commands.get(step, "")
         if not command:
             return "未知步骤"
-
+# ...
         return self._run_command(command)
-
+# ...
     def _run_command(self, command):
         """执行系统命令"""
         try:
@@ -326,7 +328,7 @@ class EnterpriseSecurityScanner:
             return "扫描超时"
         except Exception as e:
             return f"错误: {str(e)}"
-
+# ...
     def _parse_vulnerabilities(self, output):
         """解析漏洞结果"""
         vulns = []
@@ -338,7 +340,7 @@ class EnterpriseSecurityScanner:
                     "raw": line.strip()
                 })
         return vulns
-
+# ...
     def _map_cves(self, vulns, target):
         """CVE映射"""
         for vuln in vulns:
@@ -353,12 +355,12 @@ class EnterpriseSecurityScanner:
                         "severity": cve_info["severity"],
                         "fix": cve_info["fix"]
                     })
-
+# ...
     def generate_html_report(self, results, output_path):
         """生成HTML报告"""
         total_vulns = sum(len(r["vulnerabilities"]) for r in results)
         total_cves = len(self.cve_mappings)
-
+# ...
         html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -378,11 +380,11 @@ th {{ background: #f8f9fa; }}
 <p>扫描目标数: {len(results)}</p>
 <p>发现漏洞总数: {total_vulns}</p>
 <p>关联CVE数量: {total_cves}</p>
-
+# ...
 <h2>漏洞详情</h2>
 <table>
 <tr><th>目标</th><th>漏洞</th><th>严重程度</th><th>CVE</th><th>修复建议</th></tr>"""
-
+# ...
         for mapping in self.cve_mappings:
             css = mapping["severity"].lower()
             html += f"""<tr>
@@ -392,15 +394,15 @@ th {{ background: #f8f9fa; }}
 <td>{mapping['cve']} ({mapping['cve_name']})</td>
 <td>{mapping['fix']}</td>
 </tr>"""
-
+# ...
         html += """</table>
 </body>
 </html>"""
-
+# ...
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(html)
         return output_path
-
+# ...
 def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
     """配置定时扫描"""
     cron_config = {
@@ -410,11 +412,11 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
         "webhook_url": webhook_url,
         "created_at": datetime.now().isoformat()
     }
-
+# ...
     config_path = "scan_schedule.json"
     with open(config_path, 'w') as f:
         json.dump(cron_config, f, indent=2)
-
+# ...
     print(f"定时扫描已配置: {cron_expr}")
     print(f"配置文件: {config_path}")
     return cron_config
@@ -456,7 +458,7 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
 
 ### CVE修复优先级
 | 优先级 | CVE严重程度 | 响应时间 | 示例 |
-|--------|------------|----------|------|
+|---:|---:|---:|---:|
 | P0 | CRITICAL | 24小时内 | EternalBlue, Log4Shell |
 | P1 | HIGH | 7天内 | Heartbleed, Shellshock |
 | P2 | MEDIUM | 30天内 | 中等风险漏洞 |
@@ -467,7 +469,7 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
 ```bash
 # 第一轮:快速全网扫描(1小时内)
 python （请参考skill目录中的脚本文件） --targets full_range.txt --workflow quick-scan --threads 20
-
+# ...
 # 第二轮:深度扫描(对发现的高危目标)
 python （请参考skill目录中的脚本文件） --targets high_risk.txt --workflow full-assessment --threads 5
 ```
@@ -476,7 +478,7 @@ python （请参考skill目录中的脚本文件） --targets high_risk.txt --wo
 ```bash
 # 每日快速扫描
 python （请参考skill目录中的脚本文件） --schedule "0 2 * * *" --workflow quick-scan
-
+# ...
 # 每周深度扫描
 python （请参考skill目录中的脚本文件） --schedule "0 3 * * 0" --workflow full-assessment
 ```
@@ -508,7 +510,7 @@ A: 使用SARIF格式输出,可导入到GitHub Security、DefectDojo、Faraday等
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python | 运行时 | 必需 | 系统自带 |
 | nmap | 系统工具 | 必需 | `apt install nmap` |
 | nuclei | 工具 | 推荐 | `go install projectdiscovery/nuclei/v3/cmd/nuclei@latest` |
@@ -534,7 +536,7 @@ A: 使用SARIF格式输出,可导入到GitHub Security、DefectDojo、Faraday等
 - 边界输入处理: 空输入返回提示信息, 超长输入自动截断
 - 降级策略: 异常时返回默认值, 确保流程不中断
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

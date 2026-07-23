@@ -26,6 +26,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # HTML 工具箱（专业版）
 
@@ -36,7 +38,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 全站审计 | 批量扫描所有页面 HTML | 爬虫式回归 |
 | WCAG 合规 | AA/AAA 级检查 | 违规分级报告 |
 | 组件库治理 | 组件 HTML 规范与版本化 | 团队共享 |
@@ -114,7 +116,7 @@ npx @axe-core/cli http://localhost:8000 \
   "offers": {"@type": "Offer", "price": "49", "priceCurrency": "CNY"}
 }
 </script>
-
+# ...
 <!-- 多语言 hreflang -->
 <link rel="alternate" hreflang="zh-CN" href="https://example.com/zh">
 <link rel="alternate" hreflang="en" href="https://example.com/en">
@@ -157,7 +159,7 @@ npx @axe-core/cli http://localhost:8000 \
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 检查清单 | 相同 | 相同（纳入规则） |
 | 范围 | 单页 | 全站批量 |
 | WCAG | 基础项 | AA/AAA 全量 |
@@ -234,7 +236,7 @@ curl -X POST https://validator.schema.org/validate \
   serious:  应修复，影响可访问性（如对比度不足）
   moderate: 建议修复（如缺 alt）
   minor:    锦上添花
-
+# ...
 回归判定:
   本次 critical 数 > 基线 → 阻断
   本次 serious 数 > 基线 ×1.2 → 告警
@@ -257,7 +259,7 @@ curl -X POST https://validator.schema.org/validate \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | axe-core | 审计工具 | 审计时必需 | `npm install -D @axe-core/cli` |
 | pa11y | 审计替代 | 可选 | `npm install -g pa11y` |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -272,9 +274,8 @@ curl -X POST https://validator.schema.org/validate \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

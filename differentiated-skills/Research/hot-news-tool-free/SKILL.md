@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 热点新闻聚合（免费版）
 
 ## 概述
@@ -56,7 +57,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 多源聚合 | 聚合国内外主流新闻源 | 是（10+ 源） |
 | 自动筛选 | 过滤重复与低质量内容 | 是 |
 | 分类整理 | 按科技/军事/社会分类 | 是 |
@@ -175,7 +176,7 @@ python （请参考skill目录中的脚本文件） --category=all --max=15
 ```bash
 # 安装 Python 依赖
 pip install requests beautifulsoup4 markdown
-
+# ...
 # 验证安装
 python （请参考skill目录中的脚本文件） --version
 ```
@@ -196,13 +197,12 @@ python （请参考skill目录中的脚本文件） --list-sources
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 新闻源配置
 
 | 类别 | 来源 | 说明 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 国内科技 | 36 氪 | 科技创业资讯 |
 | 国内科技 | 机器之心 | AI 技术报道 |
 | 国内科技 | IT 之家 | 综合科技新闻 |
@@ -217,7 +217,7 @@ python （请参考skill目录中的脚本文件） --list-sources
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | `--category` | 字符串 | all | 类别 tech/military/social/all |
 | `--max` | 整数 | 10 | 每类最多返回条数 |
 | `--format` | 字符串 | markdown | 输出格式 |
@@ -242,11 +242,11 @@ python （请参考skill目录中的脚本文件） --list-sources
 
 ```markdown
 ## 科技新闻
-
+# ...
 1. [标题](链接)
    来源：36氪 | 时间：2026-01-15
    要点：核心内容摘要，3-5 句话概括
-
+# ...
 2. [标题](链接)
    来源：机器之心 | 时间：2026-01-15
    要点：核心内容摘要
@@ -266,7 +266,7 @@ python （请参考skill目录中的脚本文件） --list-sources
 ```bash
 # 检查网络连通性
 python （请参考skill目录中的脚本文件） --check-sources
-
+# ...
 # 切换可用源
 python （请参考skill目录中的脚本文件） --category=tech --fallback
 ```
@@ -281,7 +281,7 @@ python （请参考skill目录中的脚本文件） --category=tech --fallback
 ```bash
 # 强制刷新缓存
 python （请参考skill目录中的脚本文件） --category=tech --no-cache
-
+# ...
 # 指定时间范围
 python （请参考skill目录中的脚本文件） --category=tech --hours=24
 ```
@@ -291,10 +291,10 @@ python （请参考skill目录中的脚本文件） --category=tech --hours=24
 ```bash
 # 检查新闻源状态
 python （请参考skill目录中的脚本文件） --diagnose
-
+# ...
 # 尝试其他类别
 python （请参考skill目录中的脚本文件） --category=social
-
+# ...
 # 增加抓取深度
 python （请参考skill目录中的脚本文件） --category=tech --depth=2
 ```
@@ -305,7 +305,7 @@ python （请参考skill目录中的脚本文件） --category=tech --depth=2
 # 设置编码
 export PYTHONIOENCODING=utf-8
 python （请参考skill目录中的脚本文件） --category=tech
-
+# ...
 # 或在脚本中指定
 python （请参考skill目录中的脚本文件） --encoding=utf-8
 ```
@@ -322,7 +322,7 @@ python （请参考skill目录中的脚本文件） --encoding=utf-8
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|
 | Python 3.7+ | 运行时 | 是 | 系统包管理器安装 |
 | requests | HTTP 库 | 是 | `pip install requests` |
 | beautifulsoup4 | HTML 解析 | 是 | `pip install beautifulsoup4` |
@@ -344,9 +344,8 @@ python （请参考skill目录中的脚本文件） --encoding=utf-8
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

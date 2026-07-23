@@ -19,6 +19,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 自我进化 AI（Self-Evolving AI）
 
@@ -70,7 +72,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景类型 | 输入 | 输出 | 是否适用 |
-|:---|:---|:---|:---|
+|----|---|---|----|
 | 长期 AI 代理项目 | 反复出现的错误与纠正 | 结构化学习库 + 晋升规则 | ✅ 适用 |
 | 多人协作代码仓库 | 团队共同的踩坑经验 | 共享的 .learnings/ 知识库 | ✅ 适用 |
 | 领域知识积累 | 领域特定约定与最佳实践 | 可检索的知识条目 | ✅ 适用 |
@@ -89,7 +91,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 自我进化AI处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -101,7 +103,7 @@ mkdir -p .learnings
 ### Step 2：识别情境并记录（按情境决策表）
 
 | 情境 | 动作 | 目标文件 |
-|:---|:---|:---|
+|---:|---:|---:|
 | 任务执行中主动修复失败 | 使用自愈流程，记录到 HEALS.md | `.learnings/HEALS.md` |
 | 过去命令/操作失败（非自愈中） | 记录错误条目 | `.learnings/ERRORS.md` |
 | 用户纠正你的回答 | 记录学习条目，类别=correction | `.learnings/LEARNINGS.md` |
@@ -116,26 +118,26 @@ mkdir -p .learnings
 追加到 `.learnings/LEARNINGS.md`：
 
 ```markdown
-
+# ...
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
-
+# ...
+# ...
 ## [LRN-20260718-001] correction
-
+# ...
 **Logged**: 2026-07-18T10:00:00Z
 **Priority**: high
 **Status**: pending
 **Area**: backend
-
+# ...
 ### Summary
 项目使用 pnpm workspaces，npm install 会失败
-
+# ...
 ### Details
 尝试 `npm install` 但失败。Lock file 是 `pnpm-lock.yaml`。必须用 `pnpm install`。
-
+# ...
 ### Suggested Action
 所有安装命令使用 pnpm 而非 npm
-
+# ...
 ### Metadata
 - Source: user_feedback
 - Related Files: package.json
@@ -166,7 +168,7 @@ pending → in_progress → resolved
 
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入**：用户说"不对，那不是 npm，这个项目用 pnpm"
 
@@ -189,8 +191,6 @@ pending → in_progress → resolved
 
 **输入**：第三次在不同任务中遇到"忘记用 pnpm"的问题
 
-**输出**（代理执行）：
-
 ```text
 1. grep 搜索发现已有 2 条相同 Pattern-Key 的条目
 2. 递增 Recurrence-Count 到 3
@@ -210,7 +210,7 @@ pending → in_progress → resolved
 - 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令机制: 失败时自动执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令, 最多3次
 
 | 场景 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:---:|:---:|:---:|
 | 钩子未触发提醒 | 脚本路径错误 | 检查 `${CLAUDE_PROJECT_DIR}/.claude/skills/self-evolving-ai/scripts/` 路径是否存在 |
 | grep 搜索无结果 | 条目 ID 格式不匹配 | 确认 ID 格式为 `TYPE-YYYYMMDD-XXX` |
 | 晋升后 CLAUDE.md 重复 | 未更新原条目状态 | 将原条目 Status 改为 promoted 并添加 Promoted 字段 |
@@ -223,7 +223,7 @@ pending → in_progress → resolved
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | 文件系统（可写 `.learnings/`） | 本地存储 | 必需 | 操作系统自带 |
 | bash | 运行时 | 可选（钩子功能需要） | 系统自带或安装 Git Bash |

@@ -22,8 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
 ---
-
 # 财务会计入门工具（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ### 功能模块总览
 
 | 模块 | 功能 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 基础记账 | 收入/支出/转账记录 | 支持 |
 | 科目管理 | 会计科目设置 | 基础科目 |
 | 银行对账 | 自动匹配流水 | 支持 |
@@ -78,7 +79,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 财务会计入门工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -86,10 +87,10 @@ suggested_price: 29.9
 ```bash
 # 记录收入
 python finance.py record --type income --amount 1000 --category "销售收入" --date "2026-02-28"
-
+# ...
 # 记录支出
 python finance.py record --type expense --amount 500 --category "办公用品" --date "2026-02-28"
-
+# ...
 # 查看余额
 python finance.py balance
 ```
@@ -101,10 +102,10 @@ python finance.py balance
 ```bash
 # 导入银行流水
 python finance.py reconcile import --file bank_statement.csv
-
+# ...
 # 自动对账
 python finance.py reconcile auto
-
+# ...
 # 生成对账报告
 python finance.py reconcile report --output reconciliation_report.pdf
 ```
@@ -116,7 +117,7 @@ python finance.py reconcile report --output reconciliation_report.pdf
 ```bash
 # 计算增值税
 python finance.py tax vat --period 2026-02
-
+# ...
 # 生成税务报告
 python finance.py tax report --type vat --period 2026-02 --output vat_report.xlsx
 ```
@@ -134,7 +135,7 @@ python finance.py tax report --type vat --period 2026-02 --output vat_report.xls
 ```bash
 # 初始化账套
 python finance.py init --company "我的工作室" --year 2026
-
+# ...
 # 设置会计科目
 python finance.py accounts init --template small_business
 ```
@@ -145,12 +146,12 @@ python finance.py accounts init --template small_business
 # 记账
 python finance.py record --type income --amount 1000 --category "销售收入"
 python finance.py record --type expense --amount 500 --category "办公费用"
-
+# ...
 # 生成报表
 python finance.py report balance-sheet --period 2026-02 --output balance_sheet.pdf
 python finance.py report income-statement --period 2026-02 --output income_statement.pdf
 python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
-
+# ...
 # 税务
 python finance.py tax vat --period 2026-02
 python finance.py tax plan --year 2026
@@ -207,7 +208,7 @@ tax:
 4. **票据留存**：电子票据按月归档，便于税务申报与审计
 
 | 实践要点 | 说明 |
-| --- | --- |
+|---:|---:|
 | 数据备份 | 定期导出账套数据备份 |
 | 科目一致性 | 年度内不随意调整科目编码 |
 | 税率确认 | 每年初确认最新适用税率 |
@@ -242,7 +243,7 @@ tax:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | sqlite3 | Python库 | 必需 | Python内置 |
@@ -262,9 +263,8 @@ tax:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -18,16 +18,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 文档处理
+tools: ["read", "write", "exec"]
+tags: "Markdown,文档,工具"
 ---
 # Markdown导出工具(免费版)
 
 Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTML、XLSX、CSV、JSON等格式。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Markdown导出工具(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTM
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -99,7 +100,7 @@ markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|---:|---:|---:|
 | 技术文档导出 | Markdown文档 | `.docx` Word文档 |
 | 数据表导出 | Markdown表格 | `.xlsx`/`.csv`/`.json` |
 | 演示文稿制作 | Pandoc风格Markdown | `.pptx` PowerPoint |
@@ -126,7 +127,7 @@ markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | `md_to_pptx` 输出幻灯片格式错乱 | Markdown未使用Pandoc幻灯片语法 | 确保每个 `##` 标题作为新幻灯片起始，分栏用 `::::: columns`，备注用 `::: notes` |
 | `md_to_xlsx` 报 "no tables found" | 输入Markdown中无标准表格 | 确保表格使用 `| col |` 管道符格式，表头分隔行 `|---|---|` 必须存在 |
 | `md_to_codeblock` 文件名冲突 | 多个代码块语言相同 | 输出文件自动编号：`block_1.py`、`block_2.py`，避免覆盖 |
@@ -148,7 +149,6 @@ markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
 - 所有命令仅支持文件路径输入，不支持stdin管道
 - 多表格/多代码块场景下输出文件自动编号
 - PDF生成依赖系统字体配置，中文需额外安装字体
-
 
 ## 升级提示
 

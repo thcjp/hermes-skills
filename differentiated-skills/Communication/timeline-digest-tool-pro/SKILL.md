@@ -33,15 +33,16 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 时间线摘要工具专业版是一款面向企业和专业用户的高级X/Twitter时间线信息聚合平台。在免费版基础抓取和去重能力之上,PRO版新增了AI智能分类摘要、定时自动调度、多源信息聚合、自动推送通知等企业级功能,帮助用户构建自动化的信息聚合与分发工作流。
 
 PRO版与免费版完全兼容,升级后原有配置和状态数据继续使用。适合企业舆情监控、投资研究信息聚合、内容团队素材采集等需要持续追踪和自动化处理的场景。
 
 ### PRO版增强能力总览
 | 能力分类 | 具体功能 | 免费版 | PRO版 |
-|:---------|:---------|:-------|:------|
+|----|----|---|----|
 | 时间线抓取 | For You + Following | 支持 | 支持 |
 | 时间线抓取 | 自定义列表 | - | 支持 |
 | 去重处理 | 硬去重(ID) | 支持 | 支持 |
@@ -78,8 +79,6 @@ PRO版通过LLM对去重后的推文进行智能分类和中文摘要生成。
 ### 2. 定时自动调度
 PRO版支持cron式定时调度,自动执行摘要生成流程。
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供定时自动调度所需的指令和必要参数。
 **处理**: 解析定时自动调度的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回定时自动调度的响应数据,包含状态码、结果和日志。
@@ -87,15 +86,11 @@ PRO版支持cron式定时调度,自动执行摘要生成流程。
 ### 3. 多源信息聚合
 除X/Twitter时间线外,PRO版支持聚合RSS源和自定义信息源。
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供多源信息聚合所需的指令和必要参数。
 **处理**: 解析多源信息聚合的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回多源信息聚合的响应数据,包含状态码、结果和日志。
 
 ### 4. 自动推送通知
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供自动推送通知所需的指令和必要参数。
 **处理**: 解析自动推送通知的输入参数,完成核心逻辑,返回结构化响应。
@@ -108,7 +103,7 @@ PRO版支持cron式定时调度,自动执行摘要生成流程。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 时间线摘要工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -127,7 +122,7 @@ config = {
         }
     }
 }
-
+# ...
 scheduler = DigestScheduler(config)
 scheduler.start()
 ```
@@ -140,10 +135,10 @@ aggregator = MultiSourceAggregator()
 aggregator.add_twitter_source("X-Crypto", limit=100)
 aggregator.add_rss_source("CoinDesk", "https://feeds.coindesk.com/coinbase")
 aggregator.add_rss_source("TechCrunch", "https://techcrunch.com/feed/")
-
+# ...
 all_items = aggregator.fetch_all()
 digest = SmartDigestGenerator().generate_smart_digest(all_items)
-
+# ...
 pusher = NotificationPusher({
     "email": {
         "enabled": True,
@@ -164,10 +159,10 @@ pusher.push_email(digest["digestText"])
 ```python
 aggregator = MultiSourceAggregator()
 aggregator.add_twitter_source("X-Trending", limit=200)
-
+# ...
 items = aggregator.fetch_all()
 digest = SmartDigestGenerator().generate_smart_digest(items)
-
+# ...
 for section in digest["sections"]:
     print(f"\n{section['icon']} {section['category_name']} - {section['count']}条素材")
     for item in section["items"][:5]:
@@ -198,20 +193,20 @@ for section in digest["sections"]:
 ```bash
 skill-platform skills install timeline-digest-tool-pro
 skill-platform gateway restart
-
+# ...
 ```
 
 ### 全新安装
 ```bash
 bird --version
 python3 --version
-
+# ...
 skill-platform skills install timeline-digest-tool-pro
-
+# ...
 python3 init_config.py --interval 6 --output config.json
-
+# ...
 python3 setup_notifications.py --telegram --email
-
+# ...
 python3 start_scheduler.py --config config.json
 ```
 
@@ -226,14 +221,14 @@ python3 start_scheduler.py --config config.json
   "maxItemsPerDigest": 25,
   "similarityThreshold": 0.9,
   "statePath": "~/.timeline-digest/state.json",
-
+# ...
   "smartDigest": {
     "enabled": true,
     "categories": ["ai_tech", "crypto", "insights", "other"],
     "language": "zh_CN",
     "max_summary_length": 100
   },
-
+# ...
   "multiSource": {
     "enabled": true,
     "sources": [
@@ -242,7 +237,7 @@ python3 start_scheduler.py --config config.json
       {"type": "rss", "name": "TechNews", "url": "https://feeds.example.com/tech"}
     ]
   },
-
+# ...
   "notifications": {
     "telegram": {
       "enabled": true,
@@ -261,13 +256,13 @@ python3 start_scheduler.py --config config.json
       "url": "https://hooks.example.com/digest"
     }
   },
-
+# ...
   "scheduler": {
     "mode": "interval",
     "intervalHours": 6,
     "run_on_startup": true
   },
-
+# ...
   "analytics": {
     "enabled": true,
     "trend_tracking": true,
@@ -283,7 +278,7 @@ notifications:
     enabled: true
     bot_token: "${TELEGRAM_BOT_TOKEN}"
     chat_id: "@company_monitor"
-
+# ...
   email:
     enabled: true
     smtp_host: "smtp.company.com"
@@ -292,7 +287,7 @@ notifications:
     password: "${EMAIL_PASS}"
     from: "digest@company.com"
     to: ["team@company.com"]
-
+# ...
   webhook:
     enabled: true
     url: "https://hooks.company.com/timeline-digest"
@@ -303,7 +298,7 @@ notifications:
 ## 最佳实践
 ### 1. 调度频率选择
 | 使用场景 | 建议频率 | 抓取量 | 说明 |
-|:---------|:---------|:-------|:-----|
+|---:|---:|---:|---:|
 | 实时舆情监控 | 每2小时 | ForYou 50 | 高频追踪,快速响应 |
 | 日常信息聚合 | 每6小时 | ForYou 100 | 平衡效率与覆盖 |
 | 每日简报 | 每天2次 | ForYou 200 | 早晚各一次 |
@@ -358,7 +353,7 @@ PUSH_BEST_PRACTICES = {
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | bird | CLI工具 | 必需 | 参考bird工具文档安装 |
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -383,7 +378,7 @@ PUSH_BEST_PRACTICES = {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

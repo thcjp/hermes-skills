@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 > **AI深度摘要+多源聚合+定时推送+团队共享。企业级订阅管理全功能覆盖。**
 
@@ -30,7 +32,7 @@ pricing_model: "per_use"
 ## 概述
 ### 免费版 vs 专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|----|---|---|
 | 获取最新内容 | 支持 | 支持 |
 | 未读条目扫描 | 支持 | 支持 |
 | 智能筛选 | 基础（关键词） | AI增强（LLM） |
@@ -56,15 +58,11 @@ pricing_model: "per_use"
 
 ### 2. 多源聚合
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供多源聚合所需的指令和必要参数。
 **处理**: 解析多源聚合的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回多源聚合的响应数据,包含状态码、结果和日志。
 
 ### 3. 定时推送
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供定时推送所需的指令和必要参数。
 **处理**: 解析定时推送的输入参数,完成核心逻辑,返回结构化响应。
@@ -73,7 +71,7 @@ pricing_model: "per_use"
 ### 4. 团队共享
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 订阅摘要(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -81,11 +79,11 @@ pricing_model: "per_use"
 ```python
 class TeamSharing:
     """团队共享（专业版）"""
-
+# ...
     def __init__(self):
         self.team_subscriptions = {}
         self.shared_digests = []
-
+# ...
     def create_team(self, team_name, members=None):
         """创建团队"""
         self.team_subscriptions[team_name] = {
@@ -94,18 +92,18 @@ class TeamSharing:
             'shared_entries': []
         }
         print(f"团队 {team_name} 已创建")
-
+# ...
     def add_team_feed(self, team_name, feed_url):
         """添加团队订阅"""
         if team_name in self.team_subscriptions:
             self.team_subscriptions[team_name]['feeds'].append(feed_url)
             print(f"已为团队 {team_name} 添加订阅：{feed_url}")
-
+# ...
     def share_entry(self, team_name, entry, shared_by, comment=""):
         """分享条目到团队"""
         if team_name not in self.team_subscriptions:
             return False
-
+# ...
         shared_entry = {
             'entry': entry,
             'shared_by': shared_by,
@@ -115,18 +113,18 @@ class TeamSharing:
         self.team_subscriptions[team_name]['shared_entries'].append(shared_entry)
         print(f"已分享到 {team_name}：{entry.get('title', '')}")
         return True
-
+# ...
     def get_team_digest(self, team_name):
         """获取团队共享摘要"""
         if team_name not in self.team_subscriptions:
             return "团队不存在"
-
+# ...
         team = self.team_subscriptions[team_name]
         entries = team['shared_entries']
-
+# ...
         if not entries:
             return "团队暂无共享内容"
-
+# ...
         lines = [f"=== {team_name} 团队共享 ===\n"]
         for shared in entries[-20:]:  # 最近20条
             entry = shared['entry']
@@ -135,20 +133,20 @@ class TeamSharing:
             if shared['comment']:
                 lines.append(f"  评论：{shared['comment']}")
             lines.append("")
-
+# ...
         return "\n".join(lines)
-
+# ...
 team = TeamSharing()
 team.create_team("engineering", ["alice", "bob", "charlie"])
 team.add_team_feed("engineering", "https://example.com/tech-feed.xml")
-
+# ...
 team.share_entry(
     "engineering",
     {'title': '某篇深度技术文章', 'url': 'https://...'},
     shared_by="alice",
     comment="推荐阅读，关于系统设计的思考"
 )
-
+# ...
 print(team.get_team_digest("engineering"))
 ```
 
@@ -158,8 +156,6 @@ print(team.get_team_digest("engineering"))
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 个性化推荐
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供个性化推荐所需的指令和必要参数。
 **处理**: 解析个性化推荐的输入参数,完成核心逻辑,返回结构化响应。
@@ -183,7 +179,7 @@ scheduler.start()
 team = TeamSharing()
 team.create_team("backend", ["alice", "bob", "charlie"])
 team.add_team_feed("backend", "https://example.com/backend-feed.xml")
-
+# ...
 team.share_entry("backend", entry, "alice", "这篇关于微服务的文章很有启发")
 print(team.get_team_digest("backend"))
 ```
@@ -195,11 +191,11 @@ print(team.get_team_digest("backend"))
 recommender = PersonalizedRecommender()
 recommender.record_read(entry1)
 recommender.record_read(entry2)
-
+# ...
 patterns = recommender.analyze_reading_patterns()
 print(f"已读 {patterns['total_reads']} 篇")
 print(f"最常读主题：{patterns['most_read_theme']}")
-
+# ...
 recommendations = recommender.recommend(all_entries, top_n=10)
 ```
 
@@ -213,42 +209,42 @@ recommendations = recommender.recommend(all_entries, top_n=10)
 ### 30秒上手
 ```bash
 export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-
+# ...
 python3 ai_digest.py --entries 50 --push feishu
-
+# ...
 python3 aggregate.py --by theme --output digest.md
 ```
 
 ### 120秒标准搭建
 ```bash
 pip install requests schedule beautifulsoup4
-
+# ...
 cat > feed_digest_config.yaml <<EOF
 sources:
   - https://example.com/feed1.xml
   - https://example.com/feed2.xml
-
+# ...
 schedule:
   daily: "0 8 * * *"
   noon: "0 12 * * *"
   weekly: "0 9 * * 1"
-
+# ...
 push:
   feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
   slack: https://hooks.slack.com/services/xxx
-
+# ...
 ai:
   model: gpt-4o
   digest_style: formal
   max_entries: 20
-
+# ...
 team:
   name: engineering
   members: [alice, bob, charlie]
   shared_feeds:
     - https://tech-feed.com/rss
 EOF
-
+# ...
 python3 feed_digest_service.py --config feed_digest_config.yaml
 ```
 
@@ -262,24 +258,24 @@ sources:
     url: https://example.com/industry-feed.xml
   - name: 学术论文
     url: https://example.com/papers-feed.xml
-
+# ...
 ai_digest:
   model: gpt-4o
   max_entries: 20
   digest_style: formal  # formal / brief / colloquial
   topic_extraction: true
   cross_reference: true
-
+# ...
 aggregation:
   by_theme: true
   by_importance: true
   find_cross_references: true
-
+# ...
 schedule:
   daily_digest: "0 8 * * *"
   noon_express: "0 12 * * *"
   weekly_report: "0 9 * * 1"
-
+# ...
 push:
   channels:
     - type: feishu
@@ -288,7 +284,7 @@ push:
       url: https://hooks.slack.com/services/xxx
     - type: email
       url: https://api.email-service.com/send
-
+# ...
 team:
   teams:
     - name: engineering
@@ -299,7 +295,7 @@ team:
       members: [dave, eve]
       shared_feeds:
         - https://product-feed.com/rss
-
+# ...
 personalization:
   track_history: true
   recommend_based_on: [keywords, themes, feeds]
@@ -368,7 +364,7 @@ def update_preferences_based_on_history(recommender):
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | feed CLI | 工具 | 必需 | `brew install odysseus0/tap/feed` 或源码编译 |
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
 | requests | Python库 | 必需 | `pip install requests`（推送功能） |
@@ -409,7 +405,7 @@ def update_preferences_based_on_history(recommender):
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 获取+扫描+基础筛选+全文阅读+标记已读 | 个人试用、基础订阅 |
 | 收费专业版 | ¥35/月 | AI摘要+多源聚合+定时推送+团队共享+个性化推荐+语义搜索+阅读统计+优先支持 | 团队/企业、知识管理 |
 
@@ -418,7 +414,7 @@ def update_preferences_based_on_history(recommender):
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

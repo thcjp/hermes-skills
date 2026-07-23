@@ -20,16 +20,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 独立研究工具
 
 多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 独立研究工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -61,7 +62,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -160,26 +160,26 @@ export API_KEY="your_api_key_here"
 
 ```
 用户: 帮我找找2026年最流行的React状态管理库
-
+# ...
 Agent: 研究完成
-
+# ...
 ## SOLO Answer
 2026年最流行的React状态管理库依次为：Zustand、Jotai、Redux Toolkit、TanStack Query。
-
+# ...
 ## Search Process Summary
 - GitHub Library Discovery: 搜索 "react state management"，按stars排序
 - MCP web_search: "best react state management 2026"
 - WebFetch: 获取npm trends对比页面
-
+# ...
 ## Key Findings
 1. Zustand - 42k stars，轻量级，API简洁，2025年增长最快
 2. Jotai - 18k stars，原子化状态管理，适合细粒度状态
 3. Redux Toolkit - 60k stars，企业级首选，DevTools生态完善
 4. TanStack Query - 38k stars，服务端状态管理，替代Redux场景
-
+# ...
 ## Citation Table
 | 来源 | URL | 访问日期 |
-|------|-----|---------|
+|:---:|:---:|:---:|
 | GitHub | 相关技术文档 | 2026-02-16 |
 | npm trends | npmtrends.com/zustand-vs-jotai | 2026-02-16 |
 ```
@@ -188,18 +188,18 @@ Agent: 研究完成
 
 ```
 用户: 调研Product Hunt上最近的热门AI写作工具
-
+# ...
 Agent: 研究完成
-
-## SOLO Answer
+# ...
+## SOLO Answer(续1)
 近期Product Hunt上热门的AI写作工具包括：Jasper AI、Copy.ai、Writesonic、Rytr。
-
-## Key Findings
+# ...
+## Key Findings(续1)
 1. Jasper AI - 1,245 upvotes，企业级AI写作，支持品牌语调
 2. Copy.ai - 980 upvotes，营销文案专用，模板丰富
 3. Writesonic - 856 upvotes，支持长文写作，SEO优化
 4. Rytr - 720 upvotes，性价比高，适合个人使用
-
+# ...
 ## Gaps & Limitations
 - 未包含最新一周发布的产品（Product Hunt API延迟）
 - 用户评价基于Product Hunt评论，可能存在偏差
@@ -209,18 +209,18 @@ Agent: 研究完成
 
 ```
 用户: 对比PostgreSQL和MongoDB在2026年的优劣
-
+# ...
 Agent: 研究完成
-
-## SOLO Answer
+# ...
+## SOLO Answer(续2)
 PostgreSQL适合需要ACID事务与复杂查询的场景，MongoDB适合灵活schema与水平扩展的场景。
-
-## Key Findings
+# ...
+## Key Findings(续2)
 1. PostgreSQL: SQL标准兼容，ACID事务，JSON支持，扩展性强
 2. MongoDB: 文档模型灵活，水平扩展原生支持，聚合管道强大
 3. 性能对比: PostgreSQL在复杂查询上更优，MongoDB在写入吞吐量上更优
 4. 生态: 两者均有成熟的ORM/ODM支持与云服务
-
+# ...
 ## Cross-validation
 - DB-Engines排名: PostgreSQL第4，MongoDB第5（2026年2月）
 - Stack Overflow Survey: PostgreSQL使用率持续上升
@@ -229,7 +229,7 @@ PostgreSQL适合需要ACID事务与复杂查询的场景，MongoDB适合灵活sc
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | WebFetch获取失败 | 网页不可访问或超时 | 使用Blocked Content Fallback；尝试缓存或替代URL |
 | MCP web_search不可用 | MCP服务未配置 | 降级为WebFetch直接获取；提示用户配置MCP |
 | GitHub API限流 | API调用频率超限 | 等待限流重置；使用未认证API（低频率）；提示用户配置Token |

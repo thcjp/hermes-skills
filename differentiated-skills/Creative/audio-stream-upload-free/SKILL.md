@@ -38,11 +38,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
 ---
-
 # 音频流上传免费版
 
 ## 概述
@@ -52,7 +53,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 快速创建 | 仅需标题即可创建音频对象，自动使用默认编码配置 |
 | 文件上传 | 支持单文件上传，自动计算MD5哈希进行完整性校验 |
 | 流链接获取 | 上传完成后获取HLS流媒体播放地址 |
@@ -100,7 +101,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
     "title": "我的播客第一期",
     "type": "audio"
   }'
-
+# ...
 # 返回结果中提取 data.id 作为 AUDIO_ID
 ```
 
@@ -109,7 +110,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 FILE_SIZE=$(stat -c%s /path/to/podcast.mp3)
 END_POS=$((FILE_SIZE - 1))
 HASH=$(md5sum /path/to/podcast.mp3 | awk '{print $1}')
-
+# ...
 curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID/part" \
   -H 'stream-public-key: YOUR_PUBLIC_KEY' \
   -H 'stream-secret-key: YOUR_SECRET_KEY' \
@@ -136,7 +137,7 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID/complete"
 curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID' \
   -H 'stream-public-key: YOUR_PUBLIC_KEY' \
   -H 'stream-secret-key: YOUR_SECRET_KEY'
-
+# ...
 # 从返回的 assets 或 hls 字段中提取播放地址
 ```
 
@@ -148,7 +149,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID' \
 # 完整上传流程的Python封装
 python3 -c "
 import requests, hashlib, os
-
+# ...
 PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
 SECRET_KEY = 'YOUR_SECRET_KEY'
 BASE_URL = 'https://api-w3stream.attoaioz.cyou/api'
@@ -156,26 +157,26 @@ HEADERS = {
     'stream-public-key': PUBLIC_KEY,
     'stream-secret-key': SECRET_KEY
 }
-
+# ...
 # 步骤1：创建音频对象
 create_resp = requests.post(f'{BASE_URL}/videos/create', headers=HEADERS, json={
     'title': '我的原创音乐',
     'type': 'audio'
 })
 audio_id = create_resp.json()['data']['id']
-
+# ...
 # 步骤2：上传文件
 file_path = '/path/to/music.mp3'
 file_size = os.path.getsize(file_path)
 with open(file_path, 'rb') as f:
     file_hash = hashlib.md5(f.read()).hexdigest()
-
+# ...
 with open(file_path, 'rb') as f:
     requests.post(f'{BASE_URL}/videos/{audio_id}/part', headers={
         **HEADERS,
         'Content-Range': f'bytes 0-{file_size-1}/{file_size}'
     }, files={'file': f}, data={'index': 0, 'hash': file_hash})
-
+# ...
 # 步骤3：完成上传
 requests.get(f'{BASE_URL}/videos/{audio_id}/complete', headers=HEADERS)
 print(f'上传完成！音频ID: {audio_id}')
@@ -211,20 +212,20 @@ PUBLIC_KEY="your_public_key"
 SECRET_KEY="your_secret_key"
 AUDIO_FILE="/path/to/audio.mp3"
 TITLE="我的音频标题"
-
+# ...
 # 第一步：创建
 AUDIO_ID=$(curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
   -H "stream-public-key: $PUBLIC_KEY" \
   -H "stream-secret-key: $SECRET_KEY" \
   -H 'Content-Type: application/json' \
   -d "{\"title\": \"$TITLE\", \"type\": \"audio\"}" | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['id'])")
-
+# ...
 echo "音频对象已创建，ID: $AUDIO_ID"
-
+# ...
 # 第二步：上传
 FILE_SIZE=$(stat -c%s "$AUDIO_FILE")
 HASH=$(md5sum "$AUDIO_FILE" | awk '{print $1}')
-
+# ...
 curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/$AUDIO_ID/part" \
   -H "stream-public-key: $PUBLIC_KEY" \
   -H "stream-secret-key: $SECRET_KEY" \
@@ -232,13 +233,13 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/$AUDIO_ID/part" \
   -F "file=@$AUDIO_FILE" \
   -F "index=0" \
   -F "hash=$HASH"
-
+# ...
 # 第三步：完成
 curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/$AUDIO_ID/complete" \
   -H "accept: application/json" \
   -H "stream-public-key: $PUBLIC_KEY" \
   -H "stream-secret-key: $SECRET_KEY"
-
+# ...
 echo "上传完成！"
 ```
 
@@ -258,7 +259,7 @@ export STREAM_SECRET_KEY="your_secret_key"
 ### Content-Range 格式说明
 
 | 上传方式 | 格式 | 说明 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 单文件上传 | `bytes 0-{size-1}/{size}` | 整个文件一次上传 |
 | 分片上传 | `bytes {start}-{end}/{total}` | 大文件分段上传 |
 
@@ -304,7 +305,7 @@ export STREAM_SECRET_KEY="your_secret_key"
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | curl | 系统工具 | 必需 | 系统自带或包管理器安装 |
 | 流媒体平台API | 外部API | 必需 | 在平台注册获取 |
 | Python 3 | 运行时 | 可选 | python.org 下载安装 |
@@ -324,9 +325,8 @@ export STREAM_SECRET_KEY="your_secret_key"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

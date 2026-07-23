@@ -19,11 +19,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
-
 # AWS部署入门工具（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ### 资源管理
 
 | 资源类型 | 功能 | 免费版支持 |
-| --- | --- | --- |
+|----|---|-----|
 | EC2 | 创建/启动/停止/删除 | 支持 |
 | S3 | 存储桶创建/上传/下载 | 支持 |
 | VPC | 网络/子网/路由 | 支持 |
@@ -80,7 +81,7 @@ python3 （请参考skill目录中的脚本文件） ec2 create \
   --ami ami-0abcdef1234567890 \
   --key-name my-key \
   --security-group sg-xxx
-
+# ...
 # 输出实例信息
 ```
 
@@ -91,10 +92,10 @@ python3 （请参考skill目录中的脚本文件） ec2 create \
 ```bash
 # 创建存储桶
 python3 （请参考skill目录中的脚本文件） s3 create-bucket --name my-bucket-2026
-
+# ...
 # 上传文件
 python3 （请参考skill目录中的脚本文件） s3 upload --bucket my-bucket-2026 --file ./data.csv
-
+# ...
 # 列出文件
 python3 （请参考skill目录中的脚本文件） s3 list --bucket my-bucket-2026
 ```
@@ -106,7 +107,7 @@ python3 （请参考skill目录中的脚本文件） s3 list --bucket my-bucket-
 ```bash
 # 创建VPC
 python3 （请参考skill目录中的脚本文件） vpc create --cidr 10.0.0.0/16 --name my-vpc
-
+# ...
 # 创建子网
 python3 （请参考skill目录中的脚本文件） vpc create-subnet --vpc-id vpc-xxx --cidr 10.0.1.0/24
 ```
@@ -125,11 +126,11 @@ python3 （请参考skill目录中的脚本文件） vpc create-subnet --vpc-id 
 # 依赖说明
 # macOS: brew install awscli
 # Windows: 下载官方安装包
-
+# ...
 # 配置凭证
 aws configure
 # 输入Access Key ID, Secret Access Key, Region
-
+# ...
 # 安装Python依赖
 pip install boto3
 ```
@@ -142,19 +143,18 @@ python3 （请参考skill目录中的脚本文件） ec2 create --name "server" 
 python3 （请参考skill目录中的脚本文件） ec2 list
 python3 （请参考skill目录中的脚本文件） ec2 start --instance-id i-xxx
 python3 （请参考skill目录中的脚本文件） ec2 stop --instance-id i-xxx
-
+# ...
 # S3管理
 python3 （请参考skill目录中的脚本文件） s3 create-bucket --name my-bucket
 python3 （请参考skill目录中的脚本文件） s3 upload --bucket my-bucket --file ./file.txt
 python3 （请参考skill目录中的脚本文件） s3 download --bucket my-bucket --key file.txt
-
+# ...
 # VPC管理
 python3 （请参考skill目录中的脚本文件） vpc create --cidr 10.0.0.0/16
 python3 （请参考skill目录中的脚本文件） vpc list
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -164,7 +164,7 @@ python3 （请参考skill目录中的脚本文件） vpc list
 aws_config:
   region: "us-east-1"
   profile: "default"
-
+# ...
   defaults:
     ec2:
       instance_type: "t3.micro"
@@ -176,7 +176,7 @@ aws_config:
     vpc:
       cidr: "10.0.0.0/16"
       enable_dns: true
-
+# ...
   tags:
     Project: "my-project"
     Environment: "dev"
@@ -191,7 +191,7 @@ aws_config:
 4. **区域选择**：选择离用户最近的区域，降低延迟
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:-----|:-----|
 | 凭证安全 | 不要将Access Key写入代码 |
 | 成本控制 | 及时停止/删除不用的资源 |
 | 备份策略 | 重要数据定期备份至S3 |
@@ -227,7 +227,7 @@ aws_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | boto3 | Python库 | 必需 | `pip install boto3` |
@@ -236,7 +236,7 @@ aws_config:
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-|:-------|:---------|:---------|:-----|
+|:---:|:---:|:---:|:---:|
 | AWS Access Key | `AWS_ACCESS_KEY_ID` | 必需 | AWS API认证 |
 | AWS Secret | `AWS_SECRET_ACCESS_KEY` | 必需 | AWS API认证 |
 | AWS Region | `AWS_DEFAULT_REGION` | 必需 | 默认区域 |
@@ -252,9 +252,8 @@ aws_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

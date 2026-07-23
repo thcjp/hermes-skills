@@ -13,9 +13,9 @@ tags: '[''Productivity'']'
 tools:
   - read
   - exec
-pricing_tier: "L3"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-suggested_price: 29.9
+suggested_price: 19.9
 ---
 
 # Diagram Tools å¾è¡¨å·¥å·æè½

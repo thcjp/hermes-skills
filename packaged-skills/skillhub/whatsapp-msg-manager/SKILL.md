@@ -32,22 +32,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
 # WhatsApp消息管理-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| WhatsApp消息管理-专业版批量发送 | 不支持 | 支持 |
+| WhatsApp消息管理-专业版与多账号企业级管理 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -61,14 +63,14 @@ connector_call_tool --tool "whatsapp_send_media" --params '{
   "media_url": "https://example.com/receipt.png",
   "caption": "您的电子收据:订单 #20260718-001"
 }'
-
+# ...
 connector_call_tool --tool "whatsapp_send_media" --params '{
   "phone_number_id": "1029384756",
   "recipient_phone": "+8613800138000",
   "media_url": "https://example.com/product-demo.mp4",
   "caption": "产品使用演示视频"
 }'
-
+# ...
 connector_call_tool --tool "whatsapp_send_media" --params '{
   "phone_number_id": "1029384756",
   "recipient_phone": "+8613800138000",
@@ -95,7 +97,7 @@ connector_call_tool --tool "whatsapp_send_location" --params '{
   "name": "公司总部",
   "address": "北京市东城区XX路XX号"
 }'
-
+# ...
 connector_call_tool --tool "whatsapp_send_contacts" --params '{
   "phone_number_id": "1029384756",
   "recipient_phone": "+8613800138000",
@@ -116,9 +118,6 @@ connector_call_tool --tool "whatsapp_send_contacts" --params '{
 - 输入: 用户提供位置与联系人消息所需的参数和指令
 - 输出: 返回位置与联系人消息的处理结果,包含执行状态码、结果数据和执行日志
 
-### 4. 消息模板全生命周期管理
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供消息模板全生命周期管理所需的指令和必要参数。
 **处理**: 解析消息模板全生命周期管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回消息模板全生命周期管理的处理结果,包含执行状态码、结果数据和执行日志。
@@ -130,14 +129,14 @@ connector_call_tool --tool "whatsapp_upload_media" --params '{
   "media_url": "https://example.com/logo.png",
   "media_type": "image/png"
 }'
-
+# ...
 connector_call_tool --tool "whatsapp_send_media_by_id" --params '{
   "phone_number_id": "1029384756",
   "recipient_phone": "+8613800138000",
   "media_id": "MEDIA_ID_FROM_UPLOAD",
   "caption": "使用缓存媒体发送"
 }'
-
+# ...
 connector_call_tool --tool "whatsapp_get_media_info" --params '{
   "media_id": "MEDIA_ID"
 }'
@@ -153,14 +152,12 @@ connector_call_tool --tool "whatsapp_get_media_info" --params '{
 ### 6. 业务资料与多账号管理
 ```bash
 connector_call_tool --tool "whatsapp_get_business_profile" --params '{}'
-
+# ...
 connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
 ```- 验证返回数据的完整性和格式正确性
 - 参考`业务资料与多账号管理`的配置文档进行参数调优
 ### 7. 批量消息发送
 PRO版支持批量消息发送,适合营销触达和批量通知场景。
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供批量消息发送所需的指令和必要参数。
 **输出**: 返回批量消息发送的处理结果,包含执行状态码、结果数据和执行日志。
@@ -170,8 +167,6 @@ PRO版支持批量消息发送,适合营销触达和批量通知场景。
 
 ### 场景一:电商订单全流程通知
 电商企业在订单各阶段通过WhatsApp向客户发送差异化通知,包含图片凭证和交互按钮。
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 场景二:企业客户服务
 利用交互式列表消息为客户提供自助服务入口,降低人工客服压力。
@@ -208,20 +203,20 @@ connector_call_tool --tool "whatsapp_send_interactive_list" --params '{
 
 ```python
 sender = WhatsAppBatchSender(phone_number_id="1029384756", rate_limit=1.0)
-
+# ...
 recipients = [
     {"phone": "+8613800138000", "vars": {"name": "张三", "coupon": "SAVE50"}},
     {"phone": "+8613900139000", "vars": {"name": "李四", "coupon": "SAVE50"}},
     {"phone": "+8613700137000", "vars": {"name": "王五", "coupon": "SAVE50"}},
 ]
-
+# ...
 template = (
     "Hi {name}!\n\n"
     "限时优惠!使用优惠码 {coupon} 享受全场8折优惠。\n"
     "活动时间:即日起至7月31日\n"
     "详情请访问我们的在线商店。"
 )
-
+# ...
 sender.send_batch(recipients, template)
 ```
 
@@ -241,7 +236,7 @@ sender.send_batch(recipients, template)
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | 连接器插件 | 平台插件 | 必需 | SkillHub插件市场安装 |
 | WhatsApp Business账号 | 服务账号 | 必需 | Meta Business平台注册 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -266,7 +261,7 @@ sender.send_batch(recipients, template)
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | whatsapp-msg-manager处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -313,17 +308,16 @@ sender.send_batch(recipients, template)
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|:------|------:|:------|:------|
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -343,12 +337,12 @@ sender.send_batch(recipients, template)
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -365,12 +359,12 @@ sender.send_batch(recipients, template)
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -387,12 +381,12 @@ sender.send_batch(recipients, template)
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -421,8 +415,8 @@ sender.send_batch(recipients, template)
 **A:** WhatsApp的媒体下载URL有时效性。使用 `whatsapp_get_media_info` 传入media_id可获取新的下载URL。PRO版支持media_id缓存,避免重复上传同一媒体文件。
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -437,13 +431,13 @@ sender.send_batch(recipients, template)
 ```python
 import schedule
 import time
-
+# ...
 def send_scheduled_message():
     """定时发送消息"""
     pass
-
+# ...
 schedule.every().day.at("09:00").do(send_scheduled_message)
-
+# ...
 while True:
     schedule.run_pending()
     time.sleep(60)
@@ -451,17 +445,14 @@ while True:
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|:------------:|--------------|:-------------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

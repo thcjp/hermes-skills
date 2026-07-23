@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # 物料清单漏洞情报专业版
 ## 概述
@@ -29,7 +31,7 @@ pricing_model: "per_use"
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 多生态支持 | npm/pip/go/cargo/maven/nuget六大生态 |
 | 标准格式 | CycloneDX 1.5、SPDX 2.3标准输出 |
 | 三库联查 | OSV + GHSA + NVD交叉验证 |
@@ -43,7 +45,7 @@ pricing_model: "per_use"
 ### 1. 多生态SBOM生成(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 物料清单漏洞情报专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -55,11 +57,11 @@ generate_sbom() {
     local project_dir=$1
     local format=${2:-cyclonedx}
     local output=${3:-sbom.json}
-
+# ...
     cd "$project_dir" || return 1
-
+# ...
     echo "生成SBOM: $(basename "$(pwd)") -> ${output}"
-
+# ...
     case "$format" in
         cyclonedx)
             # npm项目
@@ -86,11 +88,11 @@ generate_sbom() {
             fi
             ;;
     esac
-
+# ...
     echo "SBOM已生成: ${output}"
     echo "组件数量: $(jq '.components | length // .packages | length // 0' "$output" 2>/dev/null)"
 }
-
+# ...
 # 示例
 generate_sbom "." "cyclonedx" "sbom-cdx.json"
 generate_sbom "." "spdx" "sbom-spdx.json"
@@ -105,21 +107,21 @@ generate_sbom "." "spdx" "sbom-spdx.json"
 ```python
 #!/usr/bin/env python3
 """专业版三漏洞库联查引擎"""
-
+# ...
 import requests
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+# ...
 class MultiSourceVulnChecker:
     """OSV + GHSA + NVD 三库联查"""
-
+# ...
     def __init__(self):
         self.sources = {
             "osv": self._query_osv,
             "ghsa": self._query_ghsa,
             "nvd": self._query_nvd,
         }
-
+# ...
     def _query_osv(self, pkg, version, ecosystem):
         """查询OSV数据库"""
         resp = requests.post(
@@ -131,7 +133,7 @@ class MultiSourceVulnChecker:
             timeout=10
         )
         return resp.json().get("vulns", [])
-
+# ...
     def _query_ghsa(self, pkg, version, ecosystem):
         """查询GitHub安全公告"""
         # 通过OSV查询GHSA
@@ -145,7 +147,7 @@ class MultiSourceVulnChecker:
         )
         vulns = resp.json().get("vulns", [])
         return [v for v in vulns if v.get("id", "").startswith("GHSA")]
-
+# ...
     def _query_nvd(self, pkg, version, ecosystem):
         """查询NVD数据库"""
         cpe = self._guess_cpe(pkg, ecosystem)
@@ -157,14 +159,14 @@ class MultiSourceVulnChecker:
             timeout=10
         )
         return resp.json().get("vulnerabilities", [])
-
+# ...
     def _guess_cpe(self, pkg, ecosystem):
         """根据包名猜测CPE"""
         prefix = {"npm": "nodejs", "PyPI": "python", "go": "golang"}.get(ecosystem, "")
         if prefix:
             return f"cpe:2.3:a:{prefix}:{pkg}:*:*:*:*:*:*:*:*"
         return None
-
+# ...
     def check_package(self, pkg, version, ecosystem="npm"):
         """三库联查"""
         results = {}
@@ -179,7 +181,7 @@ class MultiSourceVulnChecker:
                     results[source] = future.result()
                 except Exception as e:
                     results[source] = []
-
+# ...
         # 合并去重
         all_ids = set()
         merged = []
@@ -190,7 +192,7 @@ class MultiSourceVulnChecker:
                     all_ids.add(vid)
                     v["_source"] = source
                     merged.append(v)
-
+# ...
         return {
             "package": pkg,
             "version": version,
@@ -199,7 +201,7 @@ class MultiSourceVulnChecker:
             "by_source": {s: len(v) for s, v in results.items()},
             "vulnerabilities": merged
         }
-
+# ...
 if __name__ == "__main__":
     checker = MultiSourceVulnChecker()
     result = checker.check_package("lodash", "4.17.20", "npm")
@@ -217,24 +219,24 @@ if __name__ == "__main__":
 # 专业版批量项目扫描
 SCAN_DIR="${1:-.}"
 OUTPUT_FILE="batch-vuln-report.json"
-
+# ...
 echo "============================================"
 echo "批量漏洞扫描: ${SCAN_DIR}"
 echo "扫描时间: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
 echo "============================================"
-
+# ...
 echo "[" > "$OUTPUT_FILE"
 FIRST=true
-
+# ...
 # 依赖说明
 find "$SCAN_DIR" -maxdepth 3 \( -name "package.json" -o -name "requirements.txt" -o -name "go.mod" -o -name "Cargo.toml" \) | \
 while read -r depfile; do
     project_dir=$(dirname "$depfile")
     project_name=$(basename "$project_dir")
-
+# ...
     echo ""
     echo "扫描项目: ${project_name} (${depfile})"
-
+# ...
     VULNS=0
     case "$depfile" in
         */package.json)
@@ -247,13 +249,13 @@ while read -r depfile; do
             VULNS=$(cd "$project_dir" && govulncheck ./... -json 2>/dev/null | grep -c '"vulnerability"')
             ;;
     esac
-
+# ...
     echo "  漏洞数量: ${VULNS}"
-
+# ...
     [ "$FIRST" = true ] && FIRST=false || echo "," >> "$OUTPUT_FILE"
     echo "{\"project\": \"${project_name}\", \"file\": \"${depfile}\", \"vulns\": ${VULNS}}" >> "$OUTPUT_FILE"
 done
-
+# ...
 echo "]" >> "$OUTPUT_FILE"
 echo ""
 echo "扫描完成,报告: ${OUTPUT_FILE}"
@@ -279,12 +281,12 @@ monitoring:
     - name: "microservice"
       sbom: "sbom/service.json"
       ecosystem: "go"
-
+# ...
   alert:
     webhook: "https://hooks.slack.com/services/xxx"
     min_severity: "HIGH"
     new_vulns_only: true
-
+# ...
   baseline:
     # 与上次扫描结果对比,仅报告新增漏洞
     previous_report: "reports/vuln-20260711.json"
@@ -304,20 +306,20 @@ monitoring:
 echo "============================================"
 echo "企业供应链安全扫描"
 echo "============================================"
-
+# ...
 # 1. 为所有项目生成SBOM
 echo "阶段1: SBOM生成"
 for project in /projects/*/; do
     name=$(basename "$project")
     generate_sbom "$project" "cyclonedx" "/sbom/${name}.json"
 done
-
+# ...
 # 2. 批量漏洞扫描
 echo "阶段2: 漏洞扫描"
 for sbom in /sbom/*.json; do
     project=$(basename "$sbom" .json)
     echo "扫描: ${project}"
-
+# ...
     # 提取组件并查询漏洞
     jq -r '.components[]? | "\(.name) \(.version) \(.ecosystem // "npm")"' "$sbom" | \
     while read -r name version eco; do
@@ -330,7 +332,7 @@ for sbom in /sbom/*.json; do
             }'
     done
 done
-
+# ...
 echo "扫描完成"
 ```
 
@@ -339,17 +341,17 @@ echo "扫描完成"
 # .github/workflows/supply-chain-security.yml
 name: Supply Chain Security
 on: [push, pull_request]
-
+# ...
 jobs:
   sbom-and-scan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+# ...
       - name: Generate SBOM
         run: |
           npx @cyclonedx/cyclonedx-npm --output-file sbom.json
-
+# ...
       - name: Scan for vulnerabilities
         run: |
           CRITICAL=0
@@ -373,7 +375,7 @@ jobs:
             echo "BLOCKED: ${CRITICAL} critical vulnerabilities"
             exit 1
           fi
-
+# ...
       - name: Upload SBOM
         uses: actions/upload-artifact@v4
         with:
@@ -387,29 +389,29 @@ jobs:
 # 版本间SBOM差异对比(专业版)
 OLD_SBOM=$1
 NEW_SBOM=$2
-
+# ...
 echo "=== SBOM差异对比 ==="
 echo "旧版本: ${OLD_SBOM}"
 echo "新版本: ${NEW_SBOM}"
 echo ""
-
+# ...
 # 提取组件列表
 jq -r '.components[]? | "\(.name)@\(.version)"' "$OLD_SBOM" | sort > /tmp/old_comps.txt
 jq -r '.components[]? | "\(.name)@\(.version)"' "$NEW_SBOM" | sort > /tmp/new_comps.txt
-
+# ...
 echo "--- 新增组件 ---"
 comm -13 /tmp/old_comps.txt /tmp/new_comps.txt
-
+# ...
 echo ""
 echo "--- 移除组件 ---"
 comm -23 /tmp/old_comps.txt /tmp/new_comps.txt
-
+# ...
 echo ""
 echo "--- 版本变更 ---"
 # 提取包名进行对比
 jq -r '.components[]? | .name' "$OLD_SBOM" | sort -u > /tmp/old_names.txt
 jq -r '.components[]? | .name' "$NEW_SBOM" | sort -u > /tmp/new_names.txt
-
+# ...
 comm -12 /tmp/old_names.txt /tmp/new_names.txt | while read -r name; do
     old_ver=$(jq -r --arg n "$name" '.components[]? | select(.name == $n) | .version' "$OLD_SBOM" | head -1)
     new_ver=$(jq -r --arg n "$name" '.components[]? | select(.name == $n) | .version' "$NEW_SBOM" | head -1)
@@ -430,7 +432,7 @@ done
 ```bash
 # 免费版:单包查询
 curl -s -X POST "https://api.osv.dev/v1/query" ...
-
+# ...
 # 专业版:三库联查
 python3 multi_vuln_check.py --package lodash --version 4.17.20
 ```
@@ -445,7 +447,7 @@ bash batch_scan.sh . --output batch-report.json
 ## 配置示例
 ### 支持的生态系统(专业版)
 | 生态系统 | 包管理器 | SBOM生成 | 漏洞查询 | 工具 |
-|:---------|:---------|:---------|:---------|:-----|
+|---:|---:|---:|---:|---:|
 | npm | package.json | CycloneDX/SPDX | OSV+GHSA+NVD | cyclonedx-npm |
 | PyPI | requirements.txt | CycloneDX/SPDX | OSV+GHSA+NVD | cyclonedx-py |
 | Go | go.mod | CycloneDX | OSV+GHSA | cyclonedx-gomod |
@@ -455,7 +457,7 @@ bash batch_scan.sh . --output batch-report.json
 
 ### SBOM格式标准
 | 格式 | 版本 | 适用场景 |
-|:-----|:-----|:---------|
+|:---:|:---:|:---:|
 | CycloneDX | 1.5 | 现代云原生项目,推荐 |
 | SPDX | 2.3 | 合规要求,许可证分析 |
 | JSON | 自定义 | 免费版兼容格式 |
@@ -493,7 +495,7 @@ CycloneDX更适合云原生与现代开发流程,SPDX更适合需要详细许可
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | curl | 命令行工具 | 必需 | 系统自带 |
 | jq | JSON处理工具 | 必需 | `apt install jq` / `brew install jq` |
 | python3 | 运行时环境 | 推荐 | python.org 下载 |
@@ -514,7 +516,7 @@ CycloneDX更适合云原生与现代开发流程,SPDX更适合需要详细许可
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

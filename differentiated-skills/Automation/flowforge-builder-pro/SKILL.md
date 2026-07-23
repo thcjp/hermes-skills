@@ -35,6 +35,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # 流程锻造器（专业版）
 
@@ -46,7 +48,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Flowforge Builder处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -155,20 +157,20 @@ pricing_model: "per_use"
 ```bash
 # 1. 创建工作流目录结构
 mkdir -p workflows/ logs/ data/ templates/
-
+# ...
 # 2. 保存工作流定义
 cat > workflows/order_processing.json << 'EOF'
 {上述JSON内容}
 EOF
-
+# ...
 # 3. 启动Webhook服务器
 python server.py --port 8080 --workflows ./workflows/
-
+# ...
 # 4. 测试Webhook
 curl -X POST http://localhost:8080/webhook/order \
   -H "Content-Type: application/json" \
   -d '{"orderId":"ORD001","customerId":"CUST123","status":"paid","amount":250}'
-
+# ...
 # 5. 查看执行日志
 cat logs/order_processing_$(date +%Y%m%d).log
 ```
@@ -194,7 +196,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
 **Cron表达式速查**：
 
 | 表达式 | 含义 |
-|--------|------|
+|:-----|:-----|
 | `0 */6 * * *` | 每6小时执行 |
 | `0 9 * * 1-5` | 工作日9点执行 |
 | `0 0 1 * *` | 每月1日0点执行 |
@@ -248,7 +250,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
 **Webhook触发器参数**：
 
 | 参数 | 类型 | 说明 |
-|------|------|------|
+|---:|---:|---:|
 | path | string | Webhook接收路径 |
 | method | string | 接收的HTTP方法（GET/POST/PUT） |
 | auth.type | string | 认证类型：bearer（令牌）、basic（用户名密码）、none（无认证） |
@@ -282,7 +284,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
 ```json
 // GET请求
 { "action": "fetch", "url": "https://api.example.com/data", "headers": {"Authorization": "Bearer ${env.API_TOKEN}"}, "output": "responseData" }
-
+# ...
 // POST请求
 {
   "action": "fetch",
@@ -292,7 +294,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "body": { "name": "测试", "value": 100 },
   "output": "submitResult"
 }
-
+# ...
 // PUT请求
 {
   "action": "fetch",
@@ -322,7 +324,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "script": "extract(data, 'results[0].name')",
   "output": "extractedName"
 }
-
+# ...
 // 数据过滤
 {
   "action": "transform",
@@ -330,7 +332,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "script": "filter(data, item => item.status === 'active')",
   "output": "activeItems"
 }
-
+# ...
 // 数据映射
 {
   "action": "transform",
@@ -338,7 +340,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "script": "map(data, item => ({ id: item.id, name: item.title, value: item.amount }))",
   "output": "mappedData"
 }
-
+# ...
 // 数学计算
 {
   "action": "transform",
@@ -346,7 +348,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "script": "sum(data)",
   "output": "total"
 }
-
+# ...
 // 字符串处理
 {
   "action": "transform",
@@ -359,7 +361,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
 **支持的转换函数**：
 
 | 函数 | 说明 | 示例 |
-|------|------|------|
+|:---:|:---:|:---:|
 | extract | 提取字段 | `extract(data, 'path.to.field')` |
 | filter | 过滤数组 | `filter(data, item => item.active)` |
 | map | 映射数组 | `map(data, item => transform(item))` |
@@ -386,7 +388,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "subject": "工作流执行完成",
   "body": "处理完成，共处理 ${count} 条记录"
 }
-
+# ...
 // Slack通知
 {
   "action": "notify",
@@ -394,7 +396,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "webhook": "${env.SLACK_WEBHOOK}",
   "message": "新订单：${trigger.body.orderId}，金额：${trigger.body.amount}"
 }
-
+# ...
 // 钉钉通知
 {
   "action": "notify",
@@ -402,7 +404,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "webhook": "${env.DINGTALK_WEBHOOK}",
   "message": "告警：服务异常，请检查"
 }
-
+# ...
 // Webhook通知
 {
   "action": "notify",
@@ -482,7 +484,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
 **条件类型完整列表**：
 
 | 条件 | 说明 | 示例 |
-|------|------|------|
+|:------|------:|:------|
 | equals | 等于 | `{"field": "${status}", "equals": "active"}` |
 | notEquals | 不等于 | `{"field": "${status}", "notEquals": "inactive"}` |
 | contains | 包含 | `{"field": "${tags}", "contains": "urgent"}` |
@@ -499,7 +501,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
 ### 变量引用
 
 | 变量 | 说明 | 示例 |
-|------|------|------|
+|---:|:---|---:|
 | `${trigger.file}` | 触发器中的文件路径 | watch触发器的新文件 |
 | `${trigger.body}` | Webhook请求体 | webhook触发的POST数据 |
 | `${trigger.headers}` | Webhook请求头 | webhook触发的HTTP头 |
@@ -514,7 +516,6 @@ cat logs/order_processing_$(date +%Y%m%d).log
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、工作流构建、六模板库、流程锻造器专业版、是在免费版基础上、的全功能升级、Agent、提供代码化的工作、流构建能力、定义触发器、操作步骤、条件判断和错误处、将跨平台自动化流、程转化为可版本控、可复用的工作流配、专业版解锁、通知发送四大高级等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ## 错误处理
-
 
 ```json
 {
@@ -533,7 +534,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
 ```
 
 | 错误场景(参数) | 处理方式(说明) |
-|------|------|
+|:----------:|------------|
 | onFail | 失败处理：log（仅记录）、continue（继续下一步）、stop（停止工作流）、alert（记录并告警） |
 | retry.count | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令次数 |
 | retry.interval | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令间隔（秒） |
@@ -760,7 +761,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐触发器 | 推荐操作节点 | 核心价值 |
-|------|----------|-----------|-------------|----------|
+|----|:--:|---:|----|:--:|
 | 电商运营 | 价格监控、库存同步 | Cron | fetch+transform+notify | 定时监控自动告警 |
 | 内容创作者 | 多平台发布 | Watch | read+transform+fetch+notify | 草稿自动发布到CMS |
 | 数据分析师 | 报告生成 | Cron | fetch+transform+exec+notify | 多源数据自动汇总 |
@@ -785,7 +786,7 @@ def custom_action(params, context):
     # 自定义处理逻辑
     result = process(input_data)
     return { 'output': result }
-
+# ...
 # 注册自定义节点
 runner.register_action('customProcess', custom_action)
 ```
@@ -798,7 +799,7 @@ def custom_transform(data, *args):
     """自定义数据处理函数"""
     result = complex_logic(data)
     return result
-
+# ...
 # 注册自定义函数
 runner.register_transform('complexLogic', custom_transform)
 ```
@@ -810,13 +811,13 @@ runner.register_transform('complexLogic', custom_transform)
 class CustomTrigger:
     def __init__(self, config):
         self.config = config
-
+# ...
     def listen(self, callback):
         """监听触发事件"""
         # 自定义监听逻辑
         event = wait_for_event()
         callback(event)
-
+# ...
 # 注册自定义触发器
 runner.register_trigger('custom', CustomTrigger)
 ```
@@ -831,7 +832,7 @@ SLACK_WEBHOOK=https://hooks.slack.com/services/xxx
 DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
 WEBHOOK_TOKEN=your_secure_token
 PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
-
+# ...
 # 工作流中通过${env.VAR}引用
 ```
 
@@ -895,7 +896,7 @@ PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|----|----|----|
 | Webhook不触发 | 路径或方法不匹配 | 检查path和method配置；确认服务器已启动 | 高 |
 | 触发器未触发 | Cron表达式错误或服务未运行 | 验证Cron表达式；检查调度服务状态 | 高 |
 | 步骤执行失败 | API不可用或认证过期 | 检查API状态；更新认证信息；配置重试 | 高 |
@@ -917,7 +918,7 @@ PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | Python | 运行时 | 必需 | 从python.org安装 |
 | requests | Python库 | 必需 | `pip install requests`（网络请求节点） |
@@ -988,7 +989,7 @@ PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|---:|---:|---:|
 | 免费体验版 | ¥0 | 三种触发器 + 三类操作节点 + 基础条件判断 + 2个模板 | 个人试用、简单自动化 |
 | 收费专业版 | ¥29.9/月 | 四种触发器（含Webhook）+ 五类操作节点（含数据处理/通知）+ 多条件组合 + 6模板库 + 定制开发 + 故障排查 + 优先支持 | 团队/企业、复杂自动化 |
 

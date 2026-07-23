@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # Linear流程CLI（免费版）
 
 > 用命令行驱动Linear：查询任务、创建Issue、更新状态，稳定的JSON输出让AI Agent成为你的任务管理副驾驶。
@@ -33,7 +34,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Linear流程CLI(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -41,13 +42,13 @@ suggested_price: 29.9
 ```bash
 # 交互式登录（生成 .linear.toml 配置文件）
 linear auth login
-
+# ...
 # 检查当前认证状态
 linear auth status
-
+# ...
 # 查看当前Token（用于curl等场景）
 linear auth token
-
+# ...
 # 退出登录
 linear auth logout
 ```
@@ -64,52 +65,52 @@ linear auth logout
 ```bash
 # 列出当前团队的Issue（默认JSON输出）
 linear issue list
-
+# ...
 # 按状态过滤
 linear issue list --state "In Progress"
-
+# ...
 # 按负责人过滤
 linear issue list --assignee me
-
+# ...
 # 查询特定Issue
 linear issue get ENG-123
-
+# ...
 # 创建Issue（使用文件避免转义问题）
 cat > /tmp/description.md <<'EOF'
-
+# ...
 **输入**: 用户提供任务（Issue）查询与基础创建所需的指令和必要参数。
 **处理**: 解析任务（Issue）查询与基础创建的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回任务（Issue）查询与基础创建的响应数据,包含状态码、结果和日志。
-
+# ...
 ### 核心功能执行
 用`input_params`参数进行配置。
-
+# ...
 **输入**: 用户提供核心功能执行所需的指令和必要参数。
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
+# ...
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过命令行读写、Linear、任务管理系统、支持任务查询、更新与团队管理、提供稳定的、JSON、输出与基础工作流、CLI、免费版、面向使用、进行项目管理的开、发团队、提供通过命令行读、数据的、Agent、原生能力、基于稳定的、契约设计、能够以机器可读的、方式查询任务、Issue、更新状态、管理团队与项目、无需通过、Web、界面手动操作、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估等。
-
+# ...
 ## 任务描述
-
+# ...
 - 完成用户登录模块
 - 包含JWT认证
 - 编写单元测试
-
+# ...
 ## 验收标准
-
+# ...
 - [ ] 登录接口可用
 - [ ] 测试覆盖率 > 80%
 EOF
-
+# ...
 linear issue create \
   --title "实现用户登录模块" \
   --description-file /tmp/description.md \
   --team ENG \
   --priority 2
-
+# ...
 # 更新Issue状态
 linear issue update ENG-123 --state "In Progress"
 linear issue update ENG-123 --state "Done"
@@ -120,13 +121,13 @@ linear issue update ENG-123 --state "Done"
 ```bash
 # 列出所有团队
 linear team list
-
+# ...
 # 查看团队详情
 linear team get ENG
-
+# ...
 # 列出团队下的项目
 linear project list --team ENG
-
+# ...
 # 查看项目详情
 linear project get "用户中心重构"
 ```
@@ -136,7 +137,7 @@ linear project get "用户中心重构"
 ```bash
 # 列出团队的工作流状态
 linear workflow-state list --team ENG
-
+# ...
 # 示例
 # [
 #   {"id": "abc123", "name": "Backlog", "type": "backlog"},
@@ -151,10 +152,10 @@ linear workflow-state list --team ENG
 ```bash
 # 列出团队标签
 linear label list --team ENG
-
+# ...
 # 创建标签
 linear label create --name "bug" --color "#ff0000" --team ENG
-
+# ...
 # 为Issue添加标签
 linear issue update ENG-123 --add-labels "bug,urgent"
 ```
@@ -167,10 +168,10 @@ linear issue update ENG-123 --add-labels "bug,urgent"
 # 默认JSON输出
 linear issue list
 # {"issues": [{"id": "ENG-123", "title": "...", "state": "..."}]}
-
+# ...
 # 人类可读模式（调试用）
 linear issue list --text
-
+# ...
 # 指定输出字段
 linear issue list --fields "identifier,title,state,assignee"
 ```
@@ -180,7 +181,7 @@ linear issue list --fields "identifier,title,state,assignee"
 创建或更新含Markdown的Issue时，优先使用文件传入，避免shell转义问题：
 
 | 场景 | 推荐方式 | 命令 |
-|------|----------|------|
+|:-----|:-----|:-----|
 | Issue描述已存在于文件 | `--description-file` | `linear issue create --description-file desc.md` |
 | Issue描述通过管道生成 | stdin管道 | `cat desc.md \| linear issue create --title "..."` |
 | 评论内容已存在于文件 | `--body-file` | `linear issue comment add ENG-123 --body-file comment.md` |
@@ -199,7 +200,7 @@ linear issue list --fields "identifier,title,state,assignee"
 ```bash
 # 确认linear命令可用
 linear --version
-
+# ...
 # 交互式登录
 linear auth login
 ```
@@ -209,11 +210,11 @@ linear auth login
 ```bash
 # 查看所有命令
 linear --help
-
+# ...
 # 查看特定命令的帮助
 linear issue --help
 linear issue list --help
-
+# ...
 # 查看命令能力（Agent推荐使用）
 linear capabilities
 ```
@@ -223,7 +224,7 @@ linear capabilities
 ```bash
 # 查询我的待办任务
 linear issue list --assignee me --state "Todo"
-
+# ...
 # 查询进行中的任务
 linear issue list --state "In Progress"
 ```
@@ -237,7 +238,6 @@ linear issue create --title "开发用户API" --description-file /tmp/task.md --
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -354,7 +354,7 @@ linear resolve            # 解析引用（不修改Linear）
 ## 错误处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|---:|---:|---:|
 | `command not found: linear` | 未安装或未加入PATH | 安装linear CLI；确认PATH配置；用绝对路径调用 | 高 |
 | 认证失败 | Token过期或配置文件损坏 | 重新执行 `linear auth login`；检查 `.linear.toml` | 高 |
 | JSON解析失败 | 输出被错误信息污染 | 确认使用 `--json` flag；检查stderr与stdout分离 | 中 |
@@ -372,7 +372,7 @@ linear resolve            # 解析引用（不修改Linear）
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o-mini） |
 | linear CLI | 命令行工具 | 必需 | 通过Linear官方渠道安装 |
 | Linear账号 | 账号 | 必需 | 从linear.com注册 |

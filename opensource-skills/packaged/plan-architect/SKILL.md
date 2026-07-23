@@ -19,6 +19,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 计划架构师
 
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 项目实施 | 已批准的设计文档(design.md) | 可执行实现计划plan.md,输出到`output/{project}/plan.md` |
 | 功能开发 | 新功能需求描述 | 任务拆分+TDD驱动+验证步骤的plan.md |
 | 重构计划 | 系统重构需求 | 渐进式重构计划+安全步骤+回滚策略 |
@@ -64,7 +66,7 @@ pricing_model: "per_use"
 每个任务按以下格式描述:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 计划架构师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -107,20 +109,20 @@ pricing_model: "per_use"
 **输出** (`output/auth-feature/plan.md`):
 ```markdown
 # 用户认证功能实现计划
-
+# ...
 ## 概述
 - 目标: 为Next.js应用添加邮箱密码认证
 - 技术栈: Next.js 15 + better-auth + Drizzle + SQLite
 - 总任务数: 8
 - 预估总时间: ~35分钟
-
+# ...
 ## Task 1: 安装better-auth依赖
 - **文件**: package.json (修改)
 - **描述**: 安装better-auth及其类型依赖
 - **命令**: `cnpm install better-auth`
 - **验证**: `cat package.json | grep better-auth` 输出包含better-auth
 - **时间**: ~1分钟
-
+# ...
 ## Task 2: 编写认证配置测试
 - **文件**: tests/auth.test.ts (新建)
 - **描述**: 测试auth配置能正确初始化
@@ -139,7 +141,7 @@ describe("auth配置", () => {
 - **验证**: `npx vitest run tests/auth.test.ts`
 - **预期**: 测试失败(配置尚未实现) - Red阶段
 - **时间**: ~3分钟
-
+# ...
 ## Task 3: 实现认证配置
 - **文件**: lib/auth.ts (新建)
 - **描述**: 配置better-auth邮箱密码认证
@@ -158,7 +160,7 @@ export const auth = betterAuth({
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 1, Task 2
 - **时间**: ~4分钟
-
+# ...
 ## Task 4: 创建数据库Schema
 - **文件**: lib/db/schema.ts (新建)
 - **描述**: 创建users/sessions/accounts表
@@ -166,7 +168,7 @@ export const auth = betterAuth({
 - **预期**: 输出包含users/sessions/accounts表
 - **依赖**: Task 3
 - **时间**: ~3分钟
-
+# ...
 ...(共8个任务,总计~35分钟)
 ```
 
@@ -182,12 +184,12 @@ Bug: 用户购物车在刷新后丢失商品。
 **输出** (`output/cart-bugfix/plan.md`):
 ```markdown
 # 购物车刷新丢失Bug修复计划
-
+# ...
 ## Bug分析
 - 现象: 刷新页面后购物车商品丢失
 - 根因: 购物车state仅存内存,未持久化
 - 修复策略: 添加localStorage持久化
-
+# ...
 ## Task 1: 编写购物车持久化测试
 - **文件**: tests/cart.test.ts (修改)
 - **描述**: 测试刷新后购物车数据保留
@@ -195,7 +197,7 @@ Bug: 用户购物车在刷新后丢失商品。
 - **验证**: `npx vitest run tests/cart.test.ts`
 - **预期**: 测试失败(持久化未实现)
 - **时间**: ~3分钟
-
+# ...
 ## Task 2: 实现购物车持久化
 - **文件**: hooks/useCart.ts (修改)
 - **描述**: 添加localStorage读写逻辑
@@ -204,7 +206,7 @@ Bug: 用户购物车在刷新后丢失商品。
 - **预期**: 测试通过
 - **依赖**: Task 1
 - **时间**: ~4分钟
-
+# ...
 ## Task 3: 添加防御措施(SSR安全)
 - **文件**: hooks/useCart.ts (修改)
 - **描述**: SSR环境下localStorage不存在,需做安全检查
@@ -217,7 +219,7 @@ Bug: 用户购物车在刷新后丢失商品。
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 设计文档不完整 | 缺少关键信息(数据模型/API设计/技术栈) | 标注缺失部分,建议补充后再制定计划,不臆测 |
 | 任务太大无法拆分到2-5分钟 | 功能复杂度高或耦合严重 | 进一步分解为多阶段,或拆分子任务,标注"需进一步设计" |
 | 依赖不确定 | 模块间耦合关系不明 | 标注假设条件,提供替代路径,建议先做技术调研 |
@@ -233,9 +235,9 @@ Bug: 用户购物车在刷新后丢失商品。
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
-|:-------|:-----|:---------|:---------|:-------------|
+|:---:|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供计划生成 | 国内Agent(通义/文心/智谱)均可 |
 | 前置Skill | Skill | 推荐 | brainstorm-facilitator输出的设计文档 | 任何能产出设计文档的方法 |
 | 后续Skill | Skill | 推荐 | plan-executor或subagent-orchestrator执行计划 | 手动执行也可 |
@@ -268,13 +270,13 @@ Bug: 用户购物车在刷新后丢失商品。
 **LLM生成输出** (`output/stripe-payment/plan.md`):
 ```markdown
 # Stripe订阅支付功能实现计划
-
-## 概述
+# ...
+## 补充概述
 - 目标: 为SaaS产品添加Stripe订阅支付
 - 技术栈: Next.js 15 + TypeScript + Prisma + PostgreSQL + Stripe SDK
 - 总任务数: 10
 - 预估总时间: ~42分钟
-
+# ...
 ## 依赖关系图
 ```
 Task 1 (安装依赖)
@@ -283,14 +285,14 @@ Task 1 (安装依赖)
 Task 4 + Task 6 → Task 7 (订阅API测试) → Task 8 (订阅API实现)
 Task 8 → Task 9 (Webhook测试) → Task 10 (Webhook实现)
 ```
-
+# ...
 ## Task 1: 安装Stripe SDK依赖
 - **文件**: package.json (修改)
 - **描述**: 安装Stripe SDK及其类型定义
 - **命令**: `pnpm add stripe @stripe/stripe-js`
 - **验证**: `cat package.json | grep stripe` 输出包含stripe和@stripe/stripe-js
 - **时间**: ~1分钟
-
+# ...
 ## Task 2: 编写订阅Schema测试(Red阶段)
 - **文件**: tests/schema.test.ts (新建)
 - **描述**: 测试Subscription模型字段完整性
@@ -321,7 +323,7 @@ describe("Subscription Schema", () => {
 - **验证**: `npx vitest run tests/schema.test.ts`
 - **预期**: 测试失败(Schema未定义) - Red阶段
 - **时间**: ~3分钟
-
+# ...
 ## Task 3: 实现订阅Schema(Green阶段)
 - **文件**: prisma/schema.prisma (修改)
 - **描述**: 添加Subscription模型和相关字段
@@ -357,7 +359,7 @@ model Subscription {
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 1, Task 2
 - **时间**: ~4分钟
-
+# ...
 ## Task 4: 运行数据库Migration
 - **文件**: prisma/migrations/ (新建)
 - **描述**: 生成并应用Subscription表迁移
@@ -365,7 +367,7 @@ model Subscription {
 - **验证**: `npx prisma db pull` 输出包含Subscription表
 - **依赖**: Task 3
 - **时间**: ~2分钟
-
+# ...
 ## Task 5: 编写Stripe配置测试(Red阶段)
 - **文件**: tests/stripe-config.test.ts (新建)
 - **描述**: 测试Stripe客户端正确初始化
@@ -390,7 +392,7 @@ describe("Stripe配置", () => {
 - **验证**: `npx vitest run tests/stripe-config.test.ts`
 - **预期**: 测试失败(配置未实现) - Red阶段
 - **时间**: ~2分钟
-
+# ...
 ## Task 6: 实现Stripe配置(Green阶段)
 - **文件**: lib/stripe.ts (新建)
 - **描述**: 创建Stripe客户端单例
@@ -421,7 +423,7 @@ export const STRIPE_PRICES = {
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 1, Task 5
 - **时间**: ~3分钟
-
+# ...
 ## Task 7: 编写创建订阅API测试(Red阶段)
 - **文件**: tests/api/create-subscription.test.ts (新建)
 - **描述**: 测试订阅创建API的输入验证和响应格式
@@ -464,7 +466,7 @@ describe("POST /api/subscriptions", () => {
 - **验证**: `npx vitest run tests/api/create-subscription.test.ts`
 - **预期**: 测试失败(API未实现) - Red阶段
 - **时间**: ~4分钟
-
+# ...
 ## Task 8: 实现创建订阅API(Green阶段)
 - **文件**: app/api/subscriptions/route.ts (新建)
 - **描述**: 创建Stripe客户+订阅(含14天试用期)
@@ -520,7 +522,7 @@ export async function POST(req: NextRequest) {
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 4, Task 6, Task 7
 - **时间**: ~5分钟
-
+# ...
 ## Task 9: 编写Webhook处理测试(Red阶段)
 - **文件**: tests/api/webhook.test.ts (新建)
 - **描述**: 测试Stripe Webhook事件处理
@@ -563,7 +565,7 @@ describe("POST /api/stripe/webhook", () => {
 - **验证**: `npx vitest run tests/api/webhook.test.ts`
 - **预期**: 测试失败 - Red阶段
 - **时间**: ~3分钟
-
+# ...
 ## Task 10: 实现Webhook处理(Green阶段)
 - **文件**: app/api/stripe/webhook/route.ts (新建)
 - **描述**: 处理Stripe Webhook事件,同步订阅状态
@@ -621,7 +623,7 @@ export async function POST(req: NextRequest) {
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 8, Task 9
 - **时间**: ~5分钟
-
+# ...
 ## 执行检查清单
 - [ ] Task 1: 安装Stripe SDK
 - [ ] Task 2: Schema测试(Red)
@@ -633,7 +635,7 @@ export async function POST(req: NextRequest) {
 - [ ] Task 8: 订阅API实现(Green)
 - [ ] Task 9: Webhook测试(Red)
 - [ ] Task 10: Webhook实现(Green)
-
+# ...
 ## 验证命令
 ```bash
 # 全部测试
@@ -664,22 +666,22 @@ STRIPE_SECRET_KEY=sk_test_xxx npx vitest run tests/api/
 **LLM生成输出** (`output/mysql-to-pg/plan.md`):
 ```markdown
 # MySQL到PostgreSQL迁移计划
-
-## 概述
+# ...
+## 概述(续3)
 - 目标: MySQL 5.7 → PostgreSQL 15 零停机迁移
 - 数据量: 50GB / 120张表 / 8个存储过程
 - 策略: 双写+增量同步+切换+回滚
 - 总任务数: 8
 - 预估总时间: ~45分钟(计划制定), 实际迁移4-8小时
-
-## 依赖关系图
+# ...
+## 依赖关系图(续1)
 ```
 Task 1 (Schema映射) → Task 2 (PG Schema创建)
 Task 2 → Task 3 (全量迁移脚本) → Task 4 (全量迁移验证)
 Task 2 → Task 5 (双写层测试) → Task 6 (双写层实现)
 Task 6 → Task 7 (增量同步) → Task 8 (切换+回滚方案)
 ```
-
+# ...
 ## Task 1: 创建Schema映射文档
 - **文件**: docs/migration/schema-mapping.md (新建)
 - **描述**: 逐表记录MySQL到PG的类型映射和SQL差异
@@ -689,7 +691,7 @@ Task 6 → Task 7 (增量同步) → Task 8 (切换+回滚方案)
 
 ## 类型映射表
 | MySQL | PostgreSQL | 注意事项 |
-|:------|:-----------|:---------|
+|:-------|-------:|:-------|
 | TINYINT(1) | BOOLEAN | MySQL的TINYINT(1)常做布尔用 |
 | INT AUTO_INCREMENT | SERIAL | PG用SERIAL或IDENTITY |
 | DATETIME | TIMESTAMP | PG推荐TIMESTAMP WITH TIME ZONE |
@@ -712,7 +714,7 @@ Task 6 → Task 7 (增量同步) → Task 8 (切换+回滚方案)
 ```
 - **验证**: 人工review映射文档完整性
 - **时间**: ~5分钟
-
+# ...
 ## Task 2: 编写PG Schema创建脚本
 - **文件**: migrations/pg-schema.sql (新建)
 - **描述**: 创建PostgreSQL版本的表结构(含索引和约束)
@@ -762,7 +764,7 @@ CREATE UNIQUE INDEX idx_users_email ON users (email);
 - **验证**: `psql -d testdb -f migrations/pg-schema.sql && psql -d testdb -c "\dt" | grep users`
 - **依赖**: Task 1
 - **时间**: ~5分钟
-
+# ...
 ## Task 3: 编写全量数据迁移脚本测试
 - **文件**: tests/migration.test.ts (新建)
 - **描述**: 测试数据迁移脚本的行数一致性和类型转换
@@ -794,7 +796,7 @@ describe("全量数据迁移", () => {
 - **验证**: `npx vitest run tests/migration.test.ts`
 - **预期**: 测试失败(迁移脚本未实现)
 - **时间**: ~4分钟
-
+# ...
 ## Task 4: 实现全量数据迁移脚本
 - **文件**: scripts/migrate.ts (新建)
 - **描述**: 分批从MySQL读取并写入PostgreSQL
@@ -856,7 +858,7 @@ function transformRow(table: string, row: any): any {
 - **预期**: 测试通过
 - **依赖**: Task 2, Task 3
 - **时间**: ~5分钟
-
+# ...
 ## Task 5: 编写双写层测试(Red阶段)
 - **文件**: tests/dual-write.test.ts (新建)
 - **描述**: 测试双写层同时写入MySQL和PG
@@ -885,7 +887,7 @@ describe("双写层", () => {
 - **验证**: `npx vitest run tests/dual-write.test.ts`
 - **预期**: 测试失败
 - **时间**: ~3分钟
-
+# ...
 ## Task 6: 实现双写层(Green阶段)
 - **文件**: lib/dual-write.ts (新建)
 - **描述**: 应用层双写,同时写入MySQL和PG,任一失败则回滚
@@ -914,7 +916,7 @@ export async function dualWriteUser(data: { email: string; is_active: boolean })
 - **预期**: 测试通过
 - **依赖**: Task 5
 - **时间**: ~4分钟
-
+# ...
 ## Task 7: 实现增量同步(基于binlog)
 - **文件**: scripts/sync-incremental.ts (新建)
 - **描述**: 监听MySQL binlog,实时同步增量变更到PG
@@ -966,7 +968,7 @@ console.log("增量同步已启动,监听MySQL binlog...");
 - **验证**: 在MySQL插入测试数据,检查PG是否同步
 - **依赖**: Task 6
 - **时间**: ~5分钟
-
+# ...
 ## Task 8: 切换与回滚方案文档
 - **文件**: docs/migration/cutover-plan.md (新建)
 - **描述: 零停机切换步骤和回滚方案
@@ -1003,8 +1005,8 @@ console.log("增量同步已启动,监听MySQL binlog...");
 - **验证**: 团队review切换和回滚方案
 - **依赖**: Task 7
 - **时间**: ~4分钟
-
-## 执行检查清单
+# ...
+## 执行检查清单(续1)
 - [ ] Task 1: Schema映射文档
 - [ ] Task 2: PG Schema创建脚本
 - [ ] Task 3: 迁移测试(Red)
@@ -1033,39 +1035,39 @@ console.log("增量同步已启动,监听MySQL binlog...");
 **LLM生成输出** (`output/tech-debt/plan.md`):
 ```markdown
 # 技术债务清理计划
-
-## 概述
+# ...
+## 概述(续4)
 - 债务项: 5项
 - 可用时间: 4周 × 8小时/周 = 32小时
 - 策略: 按影响×紧急度排序,渐进式清理
-
+# ...
 ## 债务优先级矩阵
 | 债务项 | 影响 | 紧急度 | 预估工时 | 优先级 | 安排周次 |
-|:-------|:-----|:-------|:---------|:-------|:---------|
+|---:|:---|---:|---:|:---|---:|
 | 已弃用API使用 | 高(安全风险) | 高 | 6h | P0 | 第1周 |
 | any类型(200处) | 中(类型安全) | 中 | 12h | P1 | 第2-3周 |
 | 测试覆盖率35% | 高(质量风险) | 中 | 8h | P1 | 第3周 |
 | 重复工具函数 | 低(可维护性) | 低 | 3h | P2 | 第4周 |
 | eslint 120 warning | 低(代码规范) | 低 | 3h | P2 | 第4周 |
-
+# ...
 ---
-
+# ...
 ## 第1周: 清理已弃用API(P0, 6h)
-
+# ...
 ### Task 1: 检测已弃用API使用位置
 - **文件**: scripts/find-deprecated.ts (新建)
 - **描述**: 扫描代码中使用的已弃用API
 - **命令**: `npx ts-migrate deprecated ./src`
 - **验证**: 输出弃用API清单及使用位置
 - **时间**: ~1h
-
+# ...
 ### Task 2: 逐个替换弃用API(3个API)
 - **文件**: src/api/ (多个文件修改)
 - **描述**: 将弃用API替换为新版API
 - **验证**: `npx tsc --noEmit` 无弃用警告
 - **依赖**: Task 1
 - **时间**: ~3h
-
+# ...
 ### Task 3: 添加弃用API的eslint规则
 - **文件**: .eslintrc.js (修改)
 - **描述**: 添加deprecation规则防止未来再次使用
@@ -1080,16 +1082,16 @@ module.exports = {
 - **验证**: `npx eslint ./src --rule 'deprecation/deprecation: error'`
 - **依赖**: Task 2
 - **时间**: ~2h
-
+# ...
 ---
-
+# ...
 ## 第2-3周: 消除any类型(P1, 12h)
-
+# ...
 ### Task 4: 生成any类型使用报告
 - **命令**: `npx tsc --noEmit --noImplicitAny | grep "implicitly has an 'any'" | wc -l`
 - **验证**: 确认约200处any类型
 - **时间**: ~0.5h
-
+# ...
 ### Task 5: 按模块逐步替换any(5个模块)
 - **策略**: 每次处理一个模块,替换后跑测试确认无回归
 - **模块**: auth(40处) → api(60处) → utils(30处) → components(40处) → types(30处)
@@ -1101,7 +1103,7 @@ module.exports = {
   5. `npx vitest run` 确认测试通过
 - **验证**: 每模块any数量降至0
 - **时间**: ~10h(2h/模块 × 5模块)
-
+# ...
 ### Task 6: 开启strict模式
 - **文件**: tsconfig.json (修改)
 - **代码**:
@@ -1117,47 +1119,47 @@ module.exports = {
 - **验证**: `npx tsc --noEmit` 零错误
 - **依赖**: Task 5
 - **时间**: ~1.5h
-
+# ...
 ---
-
+# ...
 ## 第3周: 提升测试覆盖率(P1, 8h)
-
+# ...
 ### Task 7: 生成覆盖率报告
 - **命令**: `npx vitest run --coverage`
 - **验证**: 确认当前覆盖率35%,识别未覆盖模块
 - **时间**: ~0.5h
-
+# ...
 ### Task 8: 补充核心模块测试
 - **策略**: 优先覆盖核心业务逻辑(auth/api/services)
 - **目标**: 从35%提升至65%
 - **验证**: `npx vitest run --coverage` 覆盖率≥65%
 - **时间**: ~6h
-
+# ...
 ### Task 9: 补充工具函数测试
 - **目标**: 工具函数覆盖率100%
 - **验证**: `npx vitest run --coverage` utils模块100%
 - **依赖**: Task 8
 - **时间**: ~1.5h
-
+# ...
 ---
-
+# ...
 ## 第4周: 消除重复+eslint警告(P2, 6h)
-
+# ...
 ### Task 10: 合并重复工具函数
 - **描述**: 将5个文件中的重复函数提取到 src/utils/shared.ts
 - **原则**: Rule of Three(重复3次以上才提取)
 - **验证**: `npx ts-prune` 无未使用的导出
 - **时间**: ~3h
-
+# ...
 ### Task 11: 修复eslint 120个warning
 - **策略**: 自动修复 + 手动修复
 - **命令**: `npx eslint ./src --fix` (自动修复约60%)
 - **验证**: `npx eslint ./src` warning数量为0
 - **时间**: ~3h
-
+# ...
 ## 总览
 | 周次 | 债务项 | 投入工时 | 预期效果 |
-|:-----|:-------|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | 第1周 | 弃用API | 6h | 0个弃用API + eslint规则 |
 | 第2周 | any类型(前半) | 8h | any从200→100 |
 | 第3周 | any类型(后半)+测试 | 8h | any→0, 覆盖率35%→65% |

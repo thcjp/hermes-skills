@@ -37,8 +37,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 节点连接工具(专业版)
 
 ## 概述
@@ -52,7 +53,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|----|---|------|
 | 本地/局域网诊断 | 同机器、同Wi-Fi拓扑诊断 | 与免费版一致 |
 | 尾网诊断 | Tailscale Serve/Funnel 配置与排查 | 免费版无 |
 | 公网反代 | 公共URL与反向代理配置诊断 | 免费版无 |
@@ -117,7 +118,7 @@ tailscale status --json
 # 检查公共URL配置
 skill-platform config get plugins.entries.device-pair.config.publicUrl
 skill-platform config get gateway.remote.url
-
+# ...
 # 远程模式QR
 skill-platform qr --remote --json
 ```
@@ -136,14 +137,14 @@ skill-platform qr --remote --json
 ```bash
 # 批量查看所有待配对设备
 skill-platform devices list --state pending
-
+# ...
 # 批量批准
 skill-platform devices approve --all
-
+# ...
 # 按设备类型筛选
 skill-platform devices list --type ios
 skill-platform devices list --type android
-
+# ...
 # 查看节点状态概览
 skill-platform nodes status --summary
 ```
@@ -152,21 +153,21 @@ skill-platform nodes status --summary
 
 ```text
 ## 不适用场景
-
+# ...
 以下场景节点连接工具(专业版)不适合处理：
-
+# ...
 - 物理硬件维修
 - 网络物理布线
 - 数据中心选址
-
+# ...
 ## 触发条件
-
+# ...
 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于非本工具能力范围的需求。
-
+# ...
 ## 设备配对看板 (32台设备)
-
+# ...
 | 设备ID | 类型 | 状态 | 最后连接 | 操作 |
-| --- | --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|:-----|
 | dev-001 | android | 已配对 | 2分钟前 | - |
 | dev-002 | ios | 待配对 | - | 批准 |
 | dev-003 | android | 已拒绝 | 1小时前 | 重置 |
@@ -187,33 +188,33 @@ skill-platform nodes status --summary
 # diagnose.sh 全拓扑一键诊断
 #!/usr/bin/env bash
 set -euo pipefail
-
+# ...
 echo "=== 拓扑识别 ==="
 echo "gateway.mode: $(skill-platform config get gateway.mode)"
 echo "gateway.bind: $(skill-platform config get gateway.bind)"
 echo "tailscale.mode: $(skill-platform config get gateway.tailscale.mode)"
 echo "remote.url: $(skill-platform config get gateway.remote.url)"
 echo "publicUrl: $(skill-platform config get plugins.entries.device-pair.config.publicUrl)"
-
+# ...
 echo ""
 echo "=== QR载荷 ==="
 skill-platform qr --json
-
+# ...
 echo ""
 echo "=== 设备列表 ==="
 skill-platform devices list
-
+# ...
 echo ""
 echo "=== 节点状态 ==="
 skill-platform nodes status
-
+# ...
 # 若涉及Tailscale
 if [ "$(skill-platform config get gateway.tailscale.mode)" != "off" ]; then
   echo ""
   echo "=== Tailscale状态 ==="
   tailscale status --json
 fi
-
+# ...
 # 若涉及远程
 if [ -n "$(skill-platform config get gateway.remote.url)" ]; then
   echo ""
@@ -228,10 +229,10 @@ fi
 # auto-fix.sh 自动诊断并应用修复
 #!/usr/bin/env bash
 set -euo pipefail
-
+# ...
 DIAGNOSE=$(skill-platform qr --json)
 URL_SOURCE=$(echo "$DIAGNOSE" | jq -r '.urlSource // empty')
-
+# ...
 case "$URL_SOURCE" in
   loopback)
     echo "检测到:网关仅绑定到回环地址"
@@ -267,13 +268,12 @@ done
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 全拓扑配置矩阵
 
 | 拓扑 | 关键配置 | QR命令 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 同机器 | `gateway.bind=loopback` | `qr --json` |
 | 同局域网 | `gateway.bind=lan` | `qr --json` |
 | Tailscale尾网 | `gateway.tailscale.mode=serve` | `qr --json` |
@@ -284,7 +284,7 @@ done
 ### 鉴权配置参考
 
 | 鉴权模式 | 配置 | 适用场景 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | 令牌 | `gateway.auth.mode=token` | 通用 |
 | 密码 | `gateway.auth.mode=password` | 简单场景 |
 | Tailscale | `gateway.auth.allowTailscale=true` | 尾网内信任 |
@@ -317,10 +317,10 @@ Tailscale Serve/Funnel 的鉴权链路较复杂:
 ```bash
 # 确认尾网在线
 tailscale status
-
+# ...
 # 确认鉴权模式
 skill-platform config get gateway.auth.allowTailscale
-
+# ...
 # 对Serve模式,allowTailscale必须与预期流程匹配
 # 对Funnel模式(公网暴露),建议额外启用令牌鉴权
 ```
@@ -340,10 +340,10 @@ skill-platform config get gateway.auth.allowTailscale
 # 启用审计日志
 skill-platform config set audit.enabled true
 skill-platform config set audit.log-path /var/log/node-connect-audit.log
-
+# ...
 # 查询连接历史
 skill-platform audit query --device dev-002 --since 2026-07-01
-
+# ...
 # 导出审计报告
 skill-platform audit export --format csv --since 2026-07-01 --output audit-july.csv
 ```
@@ -353,10 +353,10 @@ skill-platform audit export --format csv --since 2026-07-01 --output audit-july.
 ```bash
 # 查看所有网关
 skill-platform gateways list
-
+# ...
 # 查看节点与网关映射
 skill-platform nodes status --by-gateway
-
+# ...
 # 节点迁移到其他网关
 skill-platform nodes migrate --node dev-001 --gateway gw-west
 ```
@@ -408,7 +408,7 @@ skill-platform config set audit.retention-days 180
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | skill-platform CLI | 命令行工具 | 必需 | 随技能平台安装 |
 | Tailscale | VPN工具 | 视拓扑而定 | tailscale.com 下载(尾网场景) |
@@ -429,9 +429,8 @@ skill-platform config set audit.retention-days 180
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

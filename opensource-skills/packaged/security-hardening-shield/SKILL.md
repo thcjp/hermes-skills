@@ -19,6 +19,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # 安全加固之盾
 
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 上线前安全审计 | 项目源码目录、技术栈 | 安全审计报告 + 漏洞清单 + 修复建议 |
 | 认证授权设计 | 业务角色矩阵、权限要求 | 认证方案 + 权限模型 + 会话管理策略 |
 | 密钥凭证管理 | 现有密钥使用情况 | 密钥分级方案 + 轮换策略 + 存储规范 |
@@ -106,7 +108,7 @@ pricing_model: "per_use"
 ## OWASP Top 10 检查表
 
 | 风险 | 检查项 | 防护措施 |
-|:-----|:-------|:---------|
+|:-----|:-----|:-----|
 | 注入 | SQL/NoSQL/命令注入 | 参数化查询、输入白名单 |
 | 失效认证 | 弱密码、会话固定 | 多因子、会话过期、密码哈希 |
 | 敏感数据泄露 | 明文传输/存储 | TLS、加密存储、密钥管理 |
@@ -138,7 +140,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 安全加固之盾处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -152,22 +154,22 @@ pricing_model: "per_use"
 **输出**(security-audit.md 片段):
 ```markdown
 ## 安全审计报告
-
+# ...
 ### 严重漏洞
 1. [Critical] 登录接口 SQL 注入
    - 位置: src/auth/login.js:23
    - 代码: `db.query("SELECT * FROM users WHERE email='" + email + "'")`
    - 修复: 使用参数化查询 `db.query("SELECT * FROM users WHERE email = ?", [email])`
-
+# ...
 2. [High] 密码使用 MD5 哈希
    - 位置: src/auth/register.js:45
    - 修复: 替换为 bcrypt,`const hash = await bcrypt.hash(password, 12)`
-
+# ...
 ### 中等问题
 3. [Medium] CORS 配置为 `*`
    - 位置: src/app.js:15
    - 修复: `cors({ origin: ['https://shop.com'], credentials: true })`
-
+# ...
 ### 通过项
 - [x] 使用 HTTPS
 - [x] 依赖无已知漏洞(npm audit clean)
@@ -185,23 +187,23 @@ pricing_model: "per_use"
 **输出**(remediation.md 片段):
 ```markdown
 ## 密钥加固方案
-
+# ...
 ### 1. 立即移除硬编码
 - 将 config.js 中的所有密钥移除
 - 替换为环境变量读取:`process.env.PAYMENT_API_KEY`
-
+# ...
 ### 2. 密钥分级管理
 | 等级 | 类型 | 存储方式 | 轮换周期 |
-|:-----|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | 主密钥 | KMS Master Key | AWS KMS / 阿里云 KMS | 180天 |
 | 数据密钥 | 业务数据加密密钥 | KMS 解密后内存使用 | 90天 |
 | 会话密钥 | JWT 签名密钥 | 环境变量 + Vault | 30天 |
-
+# ...
 ### 3. 国内替代方案
 - AWS KMS → 阿里云 KMS / 腾讯云 KMS
 - HashiCorp Vault → 阿里云密钥管理服务 / 自建 Vault
 - AWS Secrets Manager → 阿里云凭据管家
-
+# ...
 ### 4. 检测机制
 - 提交前 hook: `gitleaks protect --staged`
 - CI/CD 集成: `trufflehog filesystem --path=./src`
@@ -210,7 +212,7 @@ pricing_model: "per_use"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:------|------:|:------|
 | 静态扫描工具未安装 | 环境缺少 bandit/eslint-plugin-security | 提示安装命令并跳过该工具检查,继续其他维度审计 |
 | 源码目录无 package.json/requirements.txt | 非标准项目结构 | 询问用户技术栈,手动指定依赖文件路径 |
 | 硬编码密钥误报 | 测试用 Mock 数据被识别 | 用户确认后加入白名单,记录到审计日志 |
@@ -227,7 +229,7 @@ pricing_model: "per_use"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代 |
-|:-------|:-----|:---------|:---------|:---------|
+|---:|:---|---:|---:|:---|
 | LLM API | API | 必需 | Agent 内置 LLM 提供分析能力 | 国内 LLM(通义/文心/智谱) |
 | npm audit | 工具 | 可选 | Node.js 自带 | cnpm audit |
 | pip-audit | 工具 | 可选 | `pip install pip-audit` | 国内 PyPI 镜像安装 |
@@ -261,7 +263,7 @@ API路由: src/routes/auth.js, src/routes/payment.js, src/routes/orders.js
 **LLM生成输出** (`output/shop-backend/security-audit.md`):
 ```markdown
 # 安全审计报告 - shop-backend
-
+# ...
 ## 项目安全画像
 - 技术栈: Node.js 18 + Express 4 + MongoDB 5
 - 入口点: 3个路由模块(auth/payment/orders),共18个API端点
@@ -270,10 +272,10 @@ API路由: src/routes/auth.js, src/routes/payment.js, src/routes/orders.js
   - 信任边界: 18个API端点均为外部输入点
   - 数据边界: 用户密码(密钥级)/订单数据(敏感)/商品信息(公开)
   - 网络边界: API服务(公网)/MongoDB(内网隔离)
-
+# ...
 ## 审计结果概览
 | 严重程度 | 数量 | OWASP类别 |
-|:---------|:-----|:----------|
+|:------:|--------|:-------|
 | Critical | 2 | 注入、失效认证 |
 | High | 3 | 敏感数据泄露、失效访问控制、XSS |
 | Medium | 4 | 安全配置错误、已知漏洞组件等 |
@@ -284,9 +286,9 @@ API路由: src/routes/auth.js, src/routes/payment.js, src/routes/orders.js
 **LLM生成输出** (`output/shop-backend/vulnerabilities.md`):
 ```markdown
 # 漏洞清单(按严重程度排序)
-
+# ...
 ## Critical级别
-
+# ...
 ### VULN-001: 登录接口NoSQL注入
 - **OWASP类别**: A03:2021 - Injection
 - **严重程度**: Critical
@@ -314,7 +316,7 @@ if (!user || !await bcrypt.compare(password, user.passwordHash)) {
   return res.status(401).json({ error: "邮箱或密码错误" });
 }
 ```
-
+# ...
 ### VULN-002: 密码使用MD5哈希
 - **OWASP类别**: A02:2021 - Cryptographic Failures
 - **严重程度**: Critical
@@ -341,9 +343,9 @@ const hash = await argon2.hash(password, {
   parallelism: 1,
 });
 ```
-
+# ...
 ## High级别
-
+# ...
 ### VULN-003: 支付接口缺少服务端权限校验
 - **OWASP类别**: A01:2021 - Broken Access Control
 - **严重程度**: High
@@ -379,7 +381,7 @@ router.post("/pay", authenticate, async (req, res) => {
   res.json(result);
 });
 ```
-
+# ...
 ### VULN-004: 商品评论存在存储型XSS
 - **OWASP类别**: A03:2021 - Injection (XSS)
 - **严重程度**: High
@@ -406,7 +408,7 @@ await Review.create({ productId: req.params.id, content: cleanContent });
 // React默认转义: <div>{review.content}</div> ← 安全
 // 避免使用: dangerouslySetInnerHTML
 ```
-
+# ...
 ### VULN-005: 错误信息泄露堆栈跟踪
 - **OWASP类别**: A05:2021 - Security Misconfiguration
 - **严重程度**: High
@@ -433,8 +435,8 @@ app.use((err, req, res, next) => {
   logger.error("Unhandled error", { error: err.stack, path: req.path });
 });
 ```
-
-## 通过项
+# ...
+## 通过项(补充)
 - [x] 使用HTTPS(SSL证书有效)
 - [x] 订单查询使用参数化查询(Mongoose)
 - [x] JWT签名密钥来自环境变量
@@ -448,16 +450,16 @@ app.use((err, req, res, next) => {
 **LLM生成输出** (`output/shop-backend/remediation.md`):
 ```markdown
 # 修复建议与优先级
-
+# ...
 ## 修复优先级矩阵
 | 优先级 | 漏洞 | 预估工时 | 风险 | 建议时间 |
-|:-------|:-----|:---------|:-----|:---------|
+|----|:--:|---:|----|:--:|
 | P0 | VULN-001 NoSQL注入 | 2h | 认证绕过 | 立即 |
 | P0 | VULN-002 MD5哈希 | 4h | 密码泄露 | 立即 |
 | P1 | VULN-003 越权支付 | 3h | 资金损失 | 24h内 |
 | P1 | VULN-004 存储型XSS | 2h | 会话劫持 | 24h内 |
 | P1 | VULN-005 错误泄露 | 1h | 信息泄露 | 48h内 |
-
+# ...
 ## 密码哈希迁移方案
 ```javascript
 // 迁移脚本:将MD5密码逐步迁移到bcrypt
@@ -469,7 +471,7 @@ async function migratePasswords() {
   }
 }
 ```
-
+# ...
 ## 验证命令
 ```bash
 # 重新扫描
@@ -501,9 +503,9 @@ NODE_ENV=production npm start
 **LLM生成输出** (`output/auth-design/auth-system.md`):
 ```markdown
 # 认证授权系统设计方案
-
+# ...
 ## 1. 认证方案
-
+# ...
 ### 1.1 密码认证(核心)
 ```javascript
 const bcrypt = require("bcrypt");
@@ -534,7 +536,7 @@ const passwordPolicy = {
   breachCheck: true,  // 检查是否在已知泄露密码库中
 };
 ```
-
+# ...
 ### 1.2 多因子认证(MFA)
 ```javascript
 const speakeasy = require("speakeasy");
@@ -563,7 +565,7 @@ function verifyMFA(userId, token) {
   });
 }
 ```
-
+# ...
 ### 1.3 OAuth 2.0第三方登录
 ```javascript
 // OAuth 2.0授权码流程(以Google为例)
@@ -604,7 +606,7 @@ app.get("/auth/google/callback", async (req, res) => {
   res.redirect(`/auth/success?token=${jwt}`);
 });
 ```
-
+# ...
 ### 1.4 会话管理
 ```javascript
 // JWT + Redis黑名单(支持主动登出)
@@ -650,9 +652,9 @@ async function authenticate(req, res, next) {
   }
 }
 ```
-
+# ...
 ## 2. 授权方案(RBAC)
-
+# ...
 ### 2.1 权限模型
 ```sql
 -- 角色表
@@ -685,15 +687,15 @@ CREATE TABLE user_roles (
   PRIMARY KEY (user_id, role_id, scope_id)
 );
 ```
-
+# ...
 ### 2.2 权限矩阵
 | 角色 | order:create | order:read | order:update | user:read | user:delete |
-|:-----|:-------------|:-----------|:-------------|:----------|:------------|
+|----|----|----|----|----|----|
 | 超级管理员 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 企业管理员 | ✓ | ✓(本企业) | ✓(本企业) | ✓(本企业) | ✗ |
 | 普通用户 | ✓(本人) | ✓(本人) | ✗ | ✗ | ✗ |
 | 访客 | ✗ | ✗ | ✗ | ✗ | ✗ |
-
+# ...
 ### 2.3 权限校验中间件
 ```javascript
 function requirePermission(resource, action) {
@@ -723,7 +725,7 @@ router.get("/users/:id",
   getUser
 );
 ```
-
+# ...
 ## 3. API Key认证(机器间访问)
 ```javascript
 // API Key格式: sak_{32位随机字符}_{校验码}
@@ -759,7 +761,7 @@ async function verifyAPIKey(req, res, next) {
   return res.status(401).json({ error: "API Key无效或已过期" });
 }
 ```
-
+# ...
 ## 4. 安全检查清单
 - [x] 密码使用argon2id哈希(cost=64MB/3迭代)
 - [x] 支持TOTP多因子认证
@@ -789,26 +791,26 @@ async function verifyAPIKey(req, res, next) {
 **LLM生成输出** (`output/key-management/hardening.md`):
 ```markdown
 # 密钥管理加固方案
-
+# ...
 ## 1. 当前密钥暴露清单(脱敏)
 | 密钥 | 位置 | 类型 | 暴露风险 |
-|:-----|:-----|:-----|:---------|
+|:-----|:-----|:-----|:-----|
 | PAYMENT_KEY: sk_live_****1234 | config.js:12 | 支付API | Critical |
 | DB_PASSWORD: p@ss****w0rd | config.js:15 | 数据库密码 | Critical |
 | JWT_SECRET: jwt_****secret | docker-compose.yml:8 | 签名密钥 | High |
 | AWS_KEY: AKIA****XXXX | config.js:18 | 云服务凭证 | Critical |
 | STRIPE_KEY: sk_live_****5678 | frontend/.env | 支付密钥 | Critical(前端暴露) |
-
+# ...
 ## 2. 密钥分级方案
 | 等级 | 密钥类型 | 存储方式 | 轮换周期 | 访问控制 |
-|:-----|:---------|:---------|:---------|:---------|
+|---:|---:|---:|---:|---:|
 | L1-主密钥 | KMS Master Key | 阿里云KMS | 180天 | 仅运维团队 |
 | L2-数据密钥 | 数据库加密密钥 | KMS解密后内存使用 | 90天 | 应用服务账号 |
 | L3-会话密钥 | JWT签名密钥 | 环境变量+Vault | 30天 | 应用服务账号 |
 | L4-API密钥 | 第三方API Key | 凭据管家(阿里云) | 按需 | 按最小权限 |
-
+# ...
 ## 3. 加固实施步骤
-
+# ...
 ### Step 1: 立即移除硬编码密钥
 ```bash
 # 1. 在密钥服务商控制台立即轮换所有暴露的密钥
@@ -826,7 +828,7 @@ module.exports = {
   DB_PASSWORD: process.env.DB_PASSWORD,
 };
 ```
-
+# ...
 ### Step 2: 清除Git历史中的密钥
 ```bash
 # 使用BFG Repo-Cleaner清除历史
@@ -837,7 +839,7 @@ git gc --prune=now --aggressive
 # 或使用git filter-repo
 git filter-repo --invert-paths --path config.js
 ```
-
+# ...
 ### Step 3: 集成KMS(阿里云)
 ```javascript
 // KMS集成示例(阿里云)
@@ -869,7 +871,7 @@ async function encryptField(plaintext) {
   return { ciphertextBlob, encrypted: encrypted.toString("base64"), iv: iv.toString("base64"), authTag: cipher.getAuthTag().toString("base64") };
 }
 ```
-
+# ...
 ### Step 4: 添加pre-commit hook防止再次提交密钥
 ```bash
 # .git/hooks/pre-commit
@@ -881,7 +883,7 @@ if [ $? -eq 1 ]; then
   exit 1
 fi
 ```
-
+# ...
 ### Step 5: CI/CD集成密钥扫描
 ```yaml
 # .github/workflows/security.yml
@@ -899,7 +901,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-
+# ...
 ## 4. 前端密钥处理
 ```javascript
 // 错误:支付密钥不能出现在前端
@@ -917,7 +919,7 @@ async function createPayment(orderId) {
   // 后端(使用KMS中的密钥)调用Stripe API
 }
 ```
-
+# ...
 ## 5. 验证检查
 - [ ] Git历史中无密钥(gitleaks扫描通过)
 - [ ] 代码中无硬编码密钥(grep扫描)
@@ -941,35 +943,35 @@ package.json依赖: express, mongoose, jwt, bcrypt, axios, lodash等32个包
 **LLM生成输出** (`output/dep-audit/dependency-audit.md`):
 ```markdown
 # 依赖漏洞审计报告
-
+# ...
 ## 审计概览
 - 依赖总数: 32个直接依赖 + 287个间接依赖
 - 已知漏洞: 8个(1 Critical + 2 High + 3 Medium + 2 Low)
 - 许可证合规: 1个不合规(GPL-3.0)
 - 审计工具: npm audit + snyk + license-checker
-
+# ...
 ## 漏洞清单
-
+# ...
 ### Critical
 | 包名 | 当前版本 | 漏洞编号 | 影响 | 修复版本 |
-|:-----|:---------|:---------|:-----|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | lodash | 4.17.20 | CVE-2021-23337 | 命令注入 | ≥4.17.21 |
-
+# ...
 ### High
-| 包名 | 当前版本 | 漏洞编号 | 影响 | 修复版本 |
-|:-----|:---------|:---------|:-----|:---------|
+| 包名(续)| 当前版本 | 漏洞编号 | 影响 | 修复版本 |
+|:-------|-------:|:-------|:-------|-------:|
 | axios | 0.21.0 | CVE-2021-3749 | ReDoS正则拒绝服务 | ≥0.21.2 |
 | jsonwebtoken | 8.5.1 | CVE-2022-23529 | 认证绕过 | ≥9.0.0 |
-
+# ...
 ### Medium
-| 包名 | 当前版本 | 漏洞编号 | 影响 | 修复版本 |
-|:-----|:---------|:---------|:-----|:---------|
+| 包名(续)(续)| 当前版本 | 漏洞编号 | 影响 | 修复版本 |
+|-----:|:-----|-----:|-----:|:-----|
 | minimist | 1.2.5 | CVE-2021-44906 | 原型污染 | ≥1.2.6 |
 | ansi-regex | 5.0.0 | CVE-2021-3807 | ReDoS | ≥5.0.1 |
 | tmpl | 1.0.4 | CVE-2021-3749 | ReDoS | ≥1.0.5 |
-
+# ...
 ## 修复方案
-
+# ...
 ### 立即修复(Critical + High)
 ```bash
 # 1. 更新lodash(直接依赖)
@@ -984,7 +986,7 @@ npm install jsonwebtoken@9.0.0
 # - algorithm默认从HS256变为RS256
 # - 需显式指定: jwt.sign(payload, secret, { algorithm: "HS256" })
 ```
-
+# ...
 ### 计划修复(Medium + Low)
 ```bash
 # 批量更新间接依赖
@@ -993,16 +995,16 @@ npm audit fix
 # 无法自动修复的手动处理
 npm install minimist@1.2.8
 ```
-
+# ...
 ## 许可证合规报告
 | 许可证类型 | 数量 | 合规状态 |
-|:-----------|:-----|:---------|
+|:-------:|---------|:--------|
 | MIT | 268 | ✓ 合规 |
 | Apache-2.0 | 12 | ✓ 合规 |
 | BSD-3-Clause | 8 | ✓ 合规 |
 | ISC | 5 | ✓ 合规 |
 | GPL-3.0 | 1 | ✗ 不合规(需替换) |
-
+# ...
 ### GPL-3.0依赖处理
 ```bash
 # 定位GPL-3.0依赖
@@ -1013,7 +1015,7 @@ npx license-checker --summary | grep GPL
 npm uninstall react-sortable-tree
 npm install react-dnd  # MIT许可,功能类似
 ```
-
+# ...
 ## CI/CD自动化审计
 ```yaml
 # .github/workflows/dependency-audit.yml
@@ -1036,7 +1038,7 @@ jobs:
       - name: License check
         run: npx license-checker --production --onlyAllow "MIT;Apache-2.0;BSD-3-Clause;ISC"
 ```
-
+# ...
 ## 审计验证
 ```bash
 # 修复后重新审计

@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 研究代理助手（免费版）
 ## 概述
 研究代理助手免费版是一款帮助用户围绕特定主题开展开放式研究的智能代理工具。核心理念是"对话是短暂的，文档才是重要的"。代理为每个研究主题创建独立的研究文件夹，通过交互式对话逐步搜索、综合和更新研究文档，最终形成结构化的知识沉淀。
@@ -59,7 +60,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 研究代理助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -101,7 +102,7 @@ suggested_price: 29.9
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：开放式主题研究工、构建可持续维护的、Markdown、支持交互式探索、研究代理助手免费、帮助用户围绕特定、主题开展开放式研、通过交互式对话逐、步构建结构化研究、核心能力、为每个研究主题创、建独立文件夹与文、结构化研究文档、后续步骤、定期综合检查点与、进度回顾、研究状态管理与等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
-### 核心功能执行
+### 核心功能执行(补充)
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
 **输入**: 用户提供核心功能执行所需的指令和必要参数。
@@ -115,7 +116,7 @@ suggested_price: 29.9
 
 ```text
 用户：new research: 2026年主流前端框架性能对比
-
+# ...
 Agent 执行流程：
 1. 创建研究文件夹 ~/.research-agent/workspace/research/frontend-frameworks-comparison/
 2. 创建 prompt.md 记录原始问题
@@ -129,7 +130,7 @@ prompt.md 内容：
 # 前端框架性能对比研究
 > 2026年主流前端框架（React/Vue/Svelte/Solid）的性能表现如何？
 > 各自的优劣势和适用场景是什么？
-
+# ...
 **Started:** 2026-07-18
 ```
 
@@ -140,37 +141,37 @@ research.md 初始结构：
 **Status:** Active Research
 **Started:** 2026-07-18
 **Last Updated:** 2026-07-18
-
+# ...
 ---
-
+# ...
 ## 不适用场景
-
+# ...
 以下场景研究代理助手免费版不适合处理：
-
+# ...
 - 加密文件破解
 - 损坏文件修复
 - 物理介质数据恢复
-
+# ...
 ## 触发条件
-
+# ...
 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求。
-
+# ...
 ## Open Questions
 - 各框架的基准性能数据？
 - 渲染效率对比？
 - 包大小与加载性能？
 - 开发体验对比？
 - 生态系统成熟度？
-
+# ...
 ## Findings
 <!-- 随研究进展填充 -->
-
+# ...
 ## Options / Approaches
 <!-- 方案对比表 -->
-
+# ...
 ## Resources
 <!-- 链接、参考、来源 -->
-
+# ...
 ## Next Steps
 <!-- 下一步探索方向 -->
 ```
@@ -180,7 +181,7 @@ research.md 初始结构：
 
 ```text
 用户：new research: AI辅助医疗诊断的市场机会评估
-
+# ...
 Agent：
 1. 创建研究文件夹
 2. 初始化研究文档
@@ -198,13 +199,13 @@ Agent: 发现以下关键信息：
 - 全球AI医疗诊断市场规模约80亿美元（2026年）
 - 主要玩家：IBM Watson、Google Health、推想医疗
 - 年增长率约28%
-
+# ...
 下一步你想深入哪个方面？
 1. 竞品详细分析
 2. 用户需求调研
 3. 商业模式对比
 4. 监管政策分析
-
+# ...
 用户: 先深入竞品分析
 ```
 
@@ -213,7 +214,7 @@ Agent: 发现以下关键信息：
 
 ```text
 用户：new research: 联邦学习在隐私保护中的应用
-
+# ...
 Agent：
 1. 创建包含学术文献结构的研究文档
 2. 搜索学术论文和案例
@@ -261,13 +262,13 @@ Agent 会执行以下操作：
 ```text
 # 标记为已完成（保留作为参考）
 archive
-
+# ...
 # 标记为持续更新（活文档）
 （保持 Status: Ongoing）
-
+# ...
 # 如果研究是为构建项目做准备，可以毕业为项目spec
 graduate
-
+# ...
 # 导出PDF
 export pdf
 ```
@@ -278,13 +279,13 @@ export pdf
 ```bash
 # 创建研究工作区
 mkdir -p ~/.research-agent/workspace/research
-
+# ...
 # 配置研究偏好
 cat > ~/.research-agent/config.yaml << 'EOF'
 # 免费版研究代理配置
 edition: free
 version: "1.0.0"
-
+# ...
 workspace:
   path: "~/.research-agent/workspace/research"
   naming: "slug"  # 文件夹命名方式
@@ -293,7 +294,7 @@ document:
   language: "zh-CN"
   include_metadata: true
   auto_update_timestamp: true
-
+# ...
 research:
   mode: "interactive"  # 免费版仅支持交互式
   max_concurrent: 1    # 单主题研究
@@ -309,7 +310,7 @@ export:
   format: "pdf"
   tool: "pandoc"
   output_path: "~/.research-agent/workspace/research"
-
+# ...
 naming:
   slug_method: "kebab-case"
   max_length: 50
@@ -322,45 +323,45 @@ EOF
 **Status:** Active Research
 **Started:** {date}
 **Last Updated:** {date}
-
+# ...
 ---
-
+# ...
 ## 研究问题
 {核心研究问题或好奇心}
-
-## Open Questions
+# ...
+## Open Questions(续1)
 - {待探索的问题1}
 - {待探索的问题2}
-
-## Findings
+# ...
+## Findings(续1)
 ### {发现主题1}
 - {具体发现}（来源：{link}，{date}）
-
+# ...
 ### {发现主题2}
 - {具体发现}（来源：{link}，{date}）
 - "根据X来源" - 有明确来源
 - "似乎是" - 需要进一步验证
 - "未经证实" - 存疑信息
-
-## Options / Approaches
+# ...
+## Options / Approaches(续1)
 | 方案 | 优势 | 劣势 | 适用场景 |
-|:-----|:-----|:-----|:---------|
+|:-----|:-----|:-----|:-----|
 | {方案A} | ... | ... | ... |
 | {方案B} | ... | ... | ... |
-
-## Resources
+# ...
+## Resources(续1)
 - [资源名称](链接) - 说明
 - [论文/报告](链接) - 说明
-
-## Next Steps
+# ...
+## Next Steps(续1)
 - {下一步探索方向}
 - {待验证的假设}
-
+# ...
 ## Research Log
 - {date}: 开始研究
 - {date}: 完成{某方面}调研
 - {date}: 综合检查点 #{n}
-
+# ...
 ## Current Understanding
 <!-- 每5-10轮交互后自动生成的综合理解 -->
 ```
@@ -370,7 +371,7 @@ EOF
 ```text
 # 推荐 - 问题明确
 new research: Rust vs Go在微服务后端开发中的性能对比
-
+# ...
 # 不推荐 - 问题模糊
 new research: 编程语言
 ```
@@ -379,10 +380,10 @@ new research: 编程语言
 ```text
 # 先广度搜索
 帮我先搜索这个领域的主要参与者和基本概念
-
+# ...
 # 再深度分析
 深入分析第一个发现的细节
-
+# ...
 # 最后综合
 帮我综合所有发现，写一个当前理解的总结
 ```
@@ -391,7 +392,7 @@ new research: 编程语言
 ```text
 # 每5-10轮交互后执行
 summarize
-
+# ...
 # Agent执行：
 # 1. 撰写"Current Understanding"总结
 # 2. 清理冗余发现
@@ -448,7 +449,7 @@ PDF 导出需要安装 pandoc。可通过系统包管理器安装。
 
 ```text
 graduate
-
+# ...
 # Agent会：
 # 1. 将研究文档转化为 ~/specs/<project-name>.md
 # 2. 更新研究状态为 "Graduated → ~/specs/..."
@@ -457,7 +458,7 @@ graduate
 
 ### Q6：免费版与 PRO 版本的区别？
 | 对比项 | 免费版 | PRO 版本 |
-|:-------|:-------|:---------|
+|---:|---:|---:|
 | 研究模式 | 交互式 | 交互式+深度异步 |
 | 并发主题 | 1个 | 10+个并行 |
 | 定时研究 | 不支持 | cron调度 |
@@ -476,7 +477,7 @@ graduate
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | 网络搜索 | 服务 | 必需 | Agent 内置搜索能力 |
 | 本地文件系统 | 存储 | 必需 | 操作系统提供 |
@@ -490,7 +491,7 @@ graduate
 ```bash
 # 验证工作区可写
 mkdir -p ~/.research-agent/workspace/research && echo "ok"
-
+# ...
 # 验证PDF导出工具（可选）
 pandoc --version 2>/dev/null && echo "pandoc就绪" || echo "pandoc未安装（PDF导出不可用）"
 ```
@@ -504,7 +505,7 @@ pandoc --version 2>/dev/null && echo "pandoc就绪" || echo "pandoc未安装（P
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

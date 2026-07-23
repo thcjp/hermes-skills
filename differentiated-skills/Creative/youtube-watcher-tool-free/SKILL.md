@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "YouTube,视频,媒体"
 ---
-
 # YouTube 字幕提取工具 - 免费版
 
 ## 概述
@@ -67,7 +68,7 @@ YouTube 字幕提取免费版是一款面向个人用户的轻量级视频字幕
 ### 能力清单
 
 | 能力 | 描述 | 免费版 |
-|:-----|:-----|:-------|
+|---|---|---|
 | 字幕提取 | 获取视频字幕文本 | 支持 |
 | 自动字幕 | 提取自动生成字幕 | 支持 |
 | CC 字幕 | 提取人工字幕 | 支持 |
@@ -89,7 +90,7 @@ YouTube 字幕提取免费版是一款面向个人用户的轻量级视频字幕
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | YouTube字幕提取-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -116,7 +117,7 @@ YouTube 字幕提取免费版是一款面向个人用户的轻量级视频字幕
 YouTube 视频通常有两种字幕：
 
 | 类型 | 说明 | 准确度 |
-|:-----|:-----|:-------|
+|---:|---:|---:|
 | 自动字幕 | YouTube 自动生成 | 中等（依赖语音识别） |
 | CC 字幕 | 人工上传字幕 | 高（人工校对） |
 
@@ -185,7 +186,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.yout
 ```bash
 # 提取字幕
 python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID"
-
+# ...
 # 示例
 grep -A 2 -B 2 "续航" /tmp/transcript.txt
 ```
@@ -227,10 +228,10 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.yout
 ```bash
 # 使用 pip 安装
 pip3 install yt-dlp
-
+# ...
 # 或使用 brew 安装（macOS）
 brew install yt-dlp
-
+# ...
 # 验证安装
 yt-dlp --version
 ```
@@ -250,7 +251,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.yout
 ```bash
 # 提取字幕到文件
 python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
-
+# ...
 # 让 Agent 读取并生成摘要
 ```
 
@@ -259,7 +260,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.yout
 ```bash
 # 提取字幕
 python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
-
+# ...
 # 搜索关键词
 grep -i "关键词" /tmp/transcript.txt
 ```
@@ -293,7 +294,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" --prefer-cc
 ```bash
 # 提取中文字幕
 python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" --lang zh
-
+# ...
 # 提取英文字幕
 python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" --lang en
 ```
@@ -301,7 +302,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" --lang en
 ### 4. 长视频处理建议
 
 | 视频时长 | 建议 |
-|:---------|:-----|
+|:---:|:---:|
 | < 10 分钟 | 直接提取全部字幕 |
 | 10-30 分钟 | 提取后分段摘要 |
 | 30-60 分钟 | 提取后按章节摘要 |
@@ -371,7 +372,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" > /tmp/tran
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:------|------:|:------|:------|------:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | yt-dlp | 命令行工具 | 必需 | `pip install yt-dlp` | 2023.0+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
@@ -381,7 +382,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" > /tmp/tran
 ```bash
 # 安装 yt-dlp
 pip3 install yt-dlp
-
+# ...
 # 验证安装
 python3 --version
 yt-dlp --version
@@ -413,9 +414,8 @@ yt-dlp --version
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

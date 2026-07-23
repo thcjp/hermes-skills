@@ -41,8 +41,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 投屏控制免费版
 
 ## 概述
@@ -52,7 +53,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 设备发现 | 扫描局域网内的Chromecast设备 |
 | 视频投屏 | 投屏在线视频URL或本地文件 |
 | 播放控制 | 播放、暂停、停止、快进快退 |
@@ -95,10 +96,10 @@ suggested_price: 29.9
 ```bash
 # 发现设备
 catt scan
-
+# ...
 # 投屏YouTube视频
 catt cast "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-
+# ...
 # 指定设备投屏
 catt -d "Living Room" cast "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
@@ -110,10 +111,10 @@ catt -d "Living Room" cast "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```bash
 # 投屏本地视频文件
 catt cast "./movie.mp4"
-
+# ...
 # 投屏本地音频文件
 catt cast "./music.mp3"
-
+# ...
 # 投屏本地图片
 catt cast "./photo.jpg"
 ```
@@ -125,31 +126,31 @@ catt cast "./photo.jpg"
 ```bash
 # 暂停播放
 catt pause
-
+# ...
 # 继续播放
 catt play
-
+# ...
 # 停止播放
 catt stop
-
+# ...
 # 快进30秒
 catt seek 30
-
+# ...
 # 快退30秒
 catt seek -30
-
+# ...
 # 跳转到指定位置（秒）
 catt seek 120
-
+# ...
 # 调整音量（0-100）
 catt volume 50
-
+# ...
 # 音量增加
 catt volumeup
-
+# ...
 # 音量减小
 catt volumedown
-
+# ...
 # 静音
 catt volumemute
 ```
@@ -179,7 +180,7 @@ catt volumemute
 ```bash
 # 使用pip安装
 pip install catt
-
+# ...
 # 验证安装
 catt --version
 ```
@@ -189,7 +190,7 @@ catt --version
 ```bash
 # 扫描局域网内的Chromecast设备
 catt scan
-
+# ...
 # 示例
 # 192.168.1.100 - Living Room
 # 192.168.1.101 - Bedroom TV
@@ -200,23 +201,22 @@ catt scan
 ```bash
 # 投屏视频
 catt -d "Living Room" cast "https://example.com/video.mp4"
-
+# ...
 # 暂停
 catt -d "Living Room" pause
-
+# ...
 # 调整音量
 catt -d "Living Room" volume 60
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 配置示例
 
 ### 常用命令一览
 
 | 命令 | 说明 | 示例 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `scan` | 发现设备 | `catt scan` |
 | `cast` | 投屏内容 | `catt cast "URL"` |
 | `pause` | 暂停播放 | `catt pause` |
@@ -230,14 +230,14 @@ catt -d "Living Room" volume 60
 ### 设备指定方式
 
 | 方式 | 说明 | 示例 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 设备名称 | 易读 | `-d "Living Room"` |
 | IP地址 | 精确 | `-d 192.168.1.100` |
 
 ### 支持的投屏内容
 
 | 内容类型 | 格式 | 说明 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | 在线视频 | URL | YouTube、Bilibili等 |
 | 本地视频 | mp4, mkv, avi | 需启动本地服务器 |
 | 本地音频 | mp3, wav, flac | 音乐播放 |
@@ -287,7 +287,7 @@ catt投屏本地文件时会启动临时HTTP服务器。确保防火墙允许该
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | catt | Python工具 | 必需 | `pip install catt` |
@@ -305,9 +305,8 @@ catt投屏本地文件时会启动临时HTTP服务器。确保防火墙允许该
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

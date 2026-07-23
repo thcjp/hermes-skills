@@ -23,16 +23,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # AWS Graph Agent
 
 基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AWS Graph Agent处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | 高清分辨率与无损输出 | 不支持 | 支持 |
 | 批量生成与风格预设 | 不支持 | 支持 |
@@ -55,7 +56,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -63,7 +64,6 @@ pricing_model: "monthly"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -107,7 +107,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | 多代理客服系统 | "按意图路由到客服/计费专家" | 编排器+专家模式部署，共享 session_id | StateGraph + Memory |
 | 跨会话持久记忆 | "记住用户偏好和历史决策" | LTM 写入与一致性验证逻辑 | Memory |
 | 外部 API 工具集成 | "将订单查询 Lambda 集成为代理工具" | Gateway 注册+三种传输模式 | Gateway |
@@ -126,7 +126,7 @@ uv tool install bedrock-agentcore-starter-toolkit  # 安装 agentcore CLI
 
 ### Step 2: 预检清单（部署前必读）
 | 检查项 | 要求 | 不满足的后果 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | 模型使用审批 | 在 Bedrock Console 填写 Anthropic 表单 | `Model use case details not submitted` |
 | 推理配置 | 使用 `us.anthropic.claude-*` 推理配置文件 | `on-demand throughput isn't supported` |
 | 代理命名 | 字母开头，仅字母/数字/下划线，1-48 字符 | `Invalid agent name` |
@@ -289,7 +289,7 @@ agentcore launch
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| --- | --: | :-- | :-: |
+|---:|:---|---:|---:|
 | 推理配置不支持 | `on-demand throughput isn't supported` | 未使用跨区域推理配置文件 | 改用 `us.anthropic.claude-*` 推理配置文件 |
 | 模型审批未提交 | `Model use case details not submitted` | 未在 Bedrock Console 填写使用表单 | 进入 Bedrock Console 填写 Anthropic 模型使用审批表单 |
 | 代理名称无效 | `Invalid agent name` | 名称含连字符或非法字符 | 改用下划线，字母开头，1-48 字符（如 `my-agent` → `my_agent`） |
@@ -330,9 +330,8 @@ A: 多个专家代理共享同一 `session_id`，通过 AgentCore Memory 的 `cr
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --: | :-- | :-: |
+|:------:|--------|:-------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

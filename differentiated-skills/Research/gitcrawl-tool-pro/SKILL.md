@@ -49,6 +49,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # 仓库归档专业版
 
@@ -61,7 +63,7 @@ pricing_model: "per_use"
 ### 功能对比
 
 | 能力 | 免费版 | PRO 版 |
-| --- | --- | --- |
+|---|---|-----|
 | 本地归档缓存 | 是 | 是 |
 | 新鲜度检测 | 是 | 是 |
 | 关键词搜索 | 是 | 是 |
@@ -100,7 +102,7 @@ python （请参考skill目录中的脚本文件） \
 gitcrawl clusters owner/repo \
   --sort size \
   --min-size 5
-
+# ...
 # 查看聚类详情
 gitcrawl cluster-detail owner/repo \
   --id cluster_001
@@ -128,7 +130,7 @@ python （请参考skill目录中的脚本文件） \
   --shared-storage=./shared_archive \
   --team-id=dev_team \
   --members=alice,bob,charlie
-
+# ...
 # 同步团队成员的查询历史
 python （请参考skill目录中的脚本文件） \
   --team-id=dev_team \
@@ -164,13 +166,13 @@ org/mobile-app
 org/devops-tools
 org/data-platform
 EOF
-
+# ...
 # 批量同步所有仓库
 python （请参考skill目录中的脚本文件） \
   --repos-file repos.txt \
   --sync-all \
   --parallel 4
-
+# ...
 # 生成仓库健康度报告
 python （请参考skill目录中的脚本文件） \
   --repos-file repos.txt \
@@ -190,12 +192,12 @@ gitcrawl clusters owner/repo \
   --sort size \
   --min-size 3 \
   --json
-
+# ...
 # 查看每个聚类的详情
 for cluster_id in $(gitcrawl clusters owner/repo --json id); do
   gitcrawl cluster-detail owner/repo --id $cluster_id
 done
-
+# ...
 # 生成合并建议报告
 python （请参考skill目录中的脚本文件） \
   --repo owner/repo \
@@ -243,12 +245,12 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 依赖说明
 pip install apscheduler redis
-
+# ...
 # 初始化团队配置
 python （请参考skill目录中的脚本文件） init \
   --shared-storage=./shared_archive \
   --team-id=my_team
-
+# ...
 # 验证升级
 python （请参考skill目录中的脚本文件） --version
 ```
@@ -260,7 +262,7 @@ python （请参考skill目录中的脚本文件） --version
 echo "org/repo1
 org/repo2
 org/repo3" > repos.txt
-
+# ...
 # 执行批量同步
 python （请参考skill目录中的脚本文件） \
   --repos-file repos.txt \
@@ -287,18 +289,18 @@ repositories:
   - name: mobile
     repo: org/mobile-app
     sync_interval: 7200
-
+# ...
 clustering:
   enabled: true
   algorithm: semantic
   min_cluster_size: 3
   similarity_threshold: 0.75
-
+# ...
 sync:
   parallel_workers: 4
   retry_count: 3
   archive_dir: ./archive
-
+# ...
 alerts:
   enabled: true
   webhook: https://hooks.slack.com/xxx
@@ -307,7 +309,7 @@ alerts:
     - pr_reviewed
     - issue_closed
     - issue_labeled
-
+# ...
 team:
   shared_storage: ./shared_archive
   team_id: dev_team
@@ -315,7 +317,7 @@ team:
     - alice
     - bob
     - charlie
-
+# ...
 analytics:
   enabled: true
   report_frequency: weekly
@@ -325,7 +327,7 @@ analytics:
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `--repos-file` | 字符串 | 无 | 仓库列表文件 |
 | `--sync-all` | 布尔 | false | 同步所有仓库 |
 | `--parallel` | 整数 | 4 | 并行工作线程 |
@@ -343,7 +345,7 @@ analytics:
 ```python
 # multi_repo_config.py - 多仓库管理配置
 from multi_repo import MultiRepoConfig
-
+# ...
 config = MultiRepoConfig(
     repos_file="repos.txt",
     parallel_workers=4,
@@ -352,7 +354,7 @@ config = MultiRepoConfig(
     auto_cluster=True,
     generate_reports=True
 )
-
+# ...
 # 执行批量管理
 results = config.execute()
 print(f"同步 {len(results)} 个仓库")
@@ -366,12 +368,12 @@ gitcrawl clusters owner/repo \
   --algorithm=semantic \
   --threshold=0.8 \
   --min-size=5
-
+# ...
 # 导出聚类结果
 gitcrawl clusters owner/repo \
   --json \
   --output=clusters.json
-
+# ...
 # 生成分析报告
 python （请参考skill目录中的脚本文件） \
   --input=clusters.json \
@@ -386,7 +388,7 @@ python （请参考skill目录中的脚本文件） setup \
   --shared-storage=/shared/gitcrawl \
   --team-id=engineering \
   --members=alice,bob,charlie,dave
-
+# ...
 # 查看团队活动
 python （请参考skill目录中的脚本文件） \
   --team-id=engineering \
@@ -401,10 +403,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 增加并行线程
 python （请参考skill目录中的脚本文件） --parallel 8 repos.txt
-
+# ...
 # 减少同步频率
 python （请参考skill目录中的脚本文件） --interval 7200 repos.txt
-
+# ...
 # 排除不活跃仓库
 python （请参考skill目录中的脚本文件） --skip-inactive repos.txt
 ```
@@ -414,10 +416,10 @@ python （请参考skill目录中的脚本文件） --skip-inactive repos.txt
 ```bash
 # 调整相似度阈值
 gitcrawl clusters owner/repo --threshold 0.85
-
+# ...
 # 更换聚类算法
 gitcrawl clusters owner/repo --algorithm=keyword
-
+# ...
 # 手动标注训练数据
 python （请参考skill目录中的脚本文件） --labeled-data labels.json
 ```
@@ -429,10 +431,10 @@ python （请参考skill目录中的脚本文件） --labeled-data labels.json
 curl -X POST https://hooks.slack.com/xxx \
   -H "Content-Type: application/json" \
   -d '{"text":"test alert"}'
-
+# ...
 # 检查告警配置
 python （请参考skill目录中的脚本文件） --config-check
-
+# ...
 # 查看告警日志
 cat ./logs/alerts.log
 ```
@@ -444,7 +446,7 @@ cat ./logs/alerts.log
 python （请参考skill目录中的脚本文件） \
   --resolve-conflicts \
   --strategy=latest-wins
-
+# ...
 # 重置团队配置
 python （请参考skill目录中的脚本文件） reset --team-id=engineering
 ```
@@ -461,7 +463,7 @@ python （请参考skill目录中的脚本文件） reset --team-id=engineering
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | gitcrawl | CLI 工具 | 是 | 参考官方文档安装 |
 | gh | GitHub CLI | 是 | `brew install gh` 或 `apt install gh` |
 | Git | 版本控制 | 是 | 系统自带 |
@@ -496,9 +498,8 @@ export DB_NAME=gitcrawl_team
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -39,19 +39,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
 # 视频工具箱专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 视频工具箱专业版批量视频处理 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -63,7 +65,7 @@ INPUT_DIR=$1
 OUTPUT_DIR=$2
 PLATFORM=${3:-tiktok}  # 默认TikTok
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 # 平台参数配置
 case $PLATFORM in
   tiktok)
@@ -75,18 +77,18 @@ case $PLATFORM in
   whatsapp)
     ASPECT="any"; MAX_DURATION=180; MAX_SIZE="62M"; CRF=28 ;;
 esac
-
+# ...
 count=0
 total=$(find "$INPUT_DIR" -type f \( -name "*.mp4" -o -name "*.mov" -o -name "*.avi" \) | wc -l)
-
+# ...
 for video in "$INPUT_DIR"/*.{mp4,mov,avi}; do
   if [ -f "$video" ]; then
     count=$((count + 1))
     filename=$(basename "$video" | sed 's/\.[^.]*$//')
     output="$OUTPUT_DIR/${filename}_${PLATFORM}.mp4"
-
+# ...
     echo "[$count/$total] 处理: $filename"
-
+# ...
     # 裁剪宽高比
     if [ "$ASPECT" = "9:16" ]; then
       ffmpeg -i "$video" -vf "crop=ih*9/16:ih" -t $MAX_DURATION \
@@ -99,7 +101,7 @@ for video in "$INPUT_DIR"/*.{mp4,mov,avi}; do
         -c:a aac -b:a 128k -movflags +faststart \
         ${MAX_SIZE:+-fs $MAX_SIZE} "$output" -y -loglevel error
     fi
-
+# ...
     # 验证输出
     if [ -f "$output" ]; then
       size=$(du -h "$output" | cut -f1)
@@ -109,7 +111,7 @@ for video in "$INPUT_DIR"/*.{mp4,mov,avi}; do
     fi
   fi
 done
-
+# ...
 echo "批量处理完成: $count/$total"
 ```- 验证返回数据的完整性和格式正确性
 - 参考`高级字幕定制`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
@@ -121,10 +123,10 @@ echo "批量处理完成: $count/$total"
 # 使用Real-ESRGAN提升视频画质
 # 2x超分(适合720p->1440p)
 realesrgan-ncnn-vulkan -i input.mp4 -o output_2x.mp4 -n realesr-animevideov3 -s 2
-
+# ...
 # 4x超分(适合480p->1080p)
 realesrgan-ncnn-vulkan -i input.mp4 -o output_4x.mp4 -n realesrgan-x4plus -s 4
-
+# ...
 # 超分后重新编码为标准格式
 ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
 ```
@@ -132,7 +134,7 @@ ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
 超分适用场景:
 
 | 源分辨率 | 超分倍率 | 目标分辨率 | 推荐模型 |
-|----------|----------|------------|----------|
+|:-----|:-----|:-----|:-----|
 | 480p | 4x | 1080p | realesrgan-x4plus |
 | 720p | 2x | 1440p | realesr-animevideov3 |
 | 1080p | 2x | 4K | realesr-animevideov3 |
@@ -145,11 +147,11 @@ ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
 # 智能重构图(需要场景检测+主体追踪)
 # 第1步:场景检测
 ffmpeg -i input.mp4 -filter:v "select='gt(scene,0.3)',showinfo" -f null - 2> scenes.txt
-
+# ...
 # 第2步:基于场景分析裁剪(居中主体)
 # 专业版使用AI驱动的内容感知裁剪
 ffmpeg -i input.mp4 -vf "crop=w='ih*9/16':h='ih':x='(iw-w)/2':y=0" -c:a copy output.mp4
-
+# ...
 # 第3步:动态裁剪(不同场景不同位置)
 # 通过场景分析脚本生成动态裁剪指令
 ```- 验证执行结果,确认输出符合预期格式
@@ -165,9 +167,9 @@ ffmpeg -i input.mp4 -vf "crop=w='ih*9/16':h='ih':x='(iw-w)/2':y=0" -c:a copy out
 # hls-encode.sh - 生成HLS自适应多码率流
 INPUT=$1
 OUTPUT_DIR=${2:-./hls_output}
-
+# ...
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 # 生成多码率版本
 ffmpeg -i "$INPUT" \
   -map 0:v -map 0:a -s:v:0 1920x1080 -b:v:0 5000k \
@@ -180,7 +182,7 @@ ffmpeg -i "$INPUT" \
   -master_pl_name master.m3u8 \
   -var_stream_map "v:0,a:0 v:1,a:1 v:2,a:2 v:3,a:3" \
   "$OUTPUT_DIR/stream_%v.m3u8"
-
+# ...
 echo "HLS流生成完成:"
 echo "  主播放列表: $OUTPUT_DIR/master.m3u8"
 echo "  分辨率: 1080p/720p/480p/360p"
@@ -199,40 +201,40 @@ echo "  分辨率: 1080p/720p/480p/360p"
 # video-workflow.sh - 自动化视频处理工作流
 INPUT=$1
 PROJECT_NAME=$2
-
+# ...
 WORK_DIR="/tmp/video_workflow_${PROJECT_NAME}"
 mkdir -p "$WORK_DIR"/{tiktok,instagram,youtube,whatsapp,subtitles}
-
+# ...
 echo "=== 视频处理工作流启动 ==="
 echo "项目: $PROJECT_NAME"
 echo "源文件: $INPUT"
 echo ""
-
+# ...
 # 第1步:检测源文件
 echo "[1/6] 检测源文件信息..."
 ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,bit_rate -of json "$INPUT" > "$WORK_DIR/source_info.json"
 echo "  完成"
-
+# ...
 # 第2步:生成字幕
 echo "[2/6] 生成字幕..."
 whisper "$INPUT" --model small --language zh --output_dir "$WORK_DIR/subtitles" --output_format srt
 echo "  完成"
-
+# ...
 # 第3步:适配TikTok
 echo "[3/6] 适配TikTok(9:16, <=3分钟)..."
 ffmpeg -i "$INPUT" -vf "crop=ih*9/16:ih,subtitles=$WORK_DIR/subtitles/$(basename $INPUT .mp4).srt" -t 180 -c:v libx264 -crf 23 -c:a aac -b:a 128k -movflags +faststart "$WORK_DIR/tiktok/output.mp4" -y -loglevel error
 echo "  完成: $(du -h $WORK_DIR/tiktok/output.mp4 | cut -f1)"
-
+# ...
 # 第4步:适配Instagram
 echo "[4/6] 适配Instagram Reels(9:16, <=90秒)..."
 ffmpeg -i "$INPUT" -vf "crop=ih*9/16:ih" -t 90 -c:v libx264 -crf 23 -c:a aac -b:a 128k -movflags +faststart "$WORK_DIR/instagram/output.mp4" -y -loglevel error
 echo "  完成: $(du -h $WORK_DIR/instagram/output.mp4 | cut -f1)"
-
+# ...
 # 第5步:适配WhatsApp
 echo "[5/6] 适配WhatsApp(<=64MB)..."
 ffmpeg -i "$INPUT" -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -fs 62M -movflags +faststart "$WORK_DIR/whatsapp/output.mp4" -y -loglevel error
 echo "  完成: $(du -h $WORK_DIR/whatsapp/output.mp4 | cut -f1)"
-
+# ...
 # 第6步:验证并汇总
 echo "[6/6] 验证输出..."
 echo ""
@@ -263,7 +265,7 @@ echo "输出目录: $WORK_DIR/"
 ```bash
 # ASS字幕(样式化字幕)
 ffmpeg -i input.mp4 -vf "ass=subtitle.ass" -c:a copy output.mp4
-
+# ...
 # 多语言字幕(软字幕,可切换)
 ffmpeg -i input.mp4 -i zh.srt -i en.srt \
   -map 0:v -map 0:a -map 1 -map 2 \
@@ -271,17 +273,17 @@ ffmpeg -i input.mp4 -i zh.srt -i en.srt \
   -c:s mov_text \
   -metadata:s:s:0 language=chi -metadata:s:s:1 language=eng \
   output_multi_sub.mp4
-
+# ...
 # 字幕样式定制(ASS格式)
 cat > custom.ass << 'EOF'
 [Script Info]
 Title: 自定义字幕
 ScriptType: v4.00+
-
+# ...
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, BackColour, Bold, Italic, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
 Style: Default,Microsoft YaHei,48,&H00FFFFFF,&H00000000,-1,0,1,2,1,2,30,30,40
-
+# ...
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 0,0:00:00,0:00:05,Default，0,0,0，自定义样式字幕
@@ -292,10 +294,10 @@ EOF
 ```bash
 # PSNR(峰值信噪比) - 越高越好(>30dB为好)
 ffmpeg -i original.mp4 -i compressed.mp4 -lavfi psnr -f null - 2>&1 | grep "average"
-
+# ...
 # SSIM(结构相似性) - 越接近1越好(>0.95为优秀)
 ffmpeg -i original.mp4 -i compressed.mp4 -lavfi ssim -f null - 2>&1 | grep "All"
-
+# ...
 # 依赖说明
 ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.pkl" -f null - 2>&1 | grep "VMAF"
 ```
@@ -315,7 +317,7 @@ ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.
 ```bash
 # 一键批量处理所有视频到所有平台
 bash （请参考skill目录中的脚本文件） batch_input/ team_project
-
+# ...
 # 输出:
 # /tmp/video_workflow_team_project/
 #   ├── tiktok/     (10个9:16视频, <=3分钟)
@@ -331,10 +333,10 @@ bash （请参考skill目录中的脚本文件） batch_input/ team_project
 ```bash
 # 第1步:AI超分辨率(480p -> 1080p)
 realesrgan-ncnn-vulkan -i old_video.mp4 -o enhanced.mp4 -n realesrgan-x4plus -s 4
-
+# ...
 # 第2步:重新编码标准化
 ffmpeg -i enhanced.mp4 -c:v libx264 -crf 18 -preset slow -c:a aac -b:a 192k -movflags +faststart output_1080p.mp4
-
+# ...
 # 第3步:质量评估
 ffmpeg -i old_video.mp4 -i output_1080p.mp4 -lavfi ssim -f null - 2>&1 | grep "All"
 ```
@@ -345,7 +347,7 @@ ffmpeg -i old_video.mp4 -i output_1080p.mp4 -lavfi ssim -f null - 2>&1 | grep "A
 ```bash
 # 生成4档画质的HLS流
 bash （请参考skill目录中的脚本文件） source_video.mp4 ./hls_output
-
+# ...
 # 输出结构:
 # hls_output/
 #   ├── master.m3u8          # 主播放列表(自适应)
@@ -363,10 +365,10 @@ bash （请参考skill目录中的脚本文件） source_video.mp4 ./hls_output
 # 检查核心工具
 ffmpeg -version
 ffprobe -version
-
+# ...
 # 检查AI增强工具(可选)
 realesrgan-ncnn-vulkan --version 2>/dev/null && echo "Real-ESRGAN: 可用" || echo "Real-ESRGAN: 未安装"
-
+# ...
 # 检查Whisper
 whisper --version 2>/dev/null && echo "Whisper: 可用" || echo "Whisper: 未安装"
 ```
@@ -375,7 +377,7 @@ whisper --version 2>/dev/null && echo "Whisper: 可用" || echo "Whisper: 未安
 ```bash
 # 单视频多平台处理
 bash （请参考skill目录中的脚本文件） input.mp4 "my_project"
-
+# ...
 # 批量处理
 bash （请参考skill目录中的脚本文件） input_folder/ output_folder/ tiktok
 ```
@@ -384,7 +386,7 @@ bash （请参考skill目录中的脚本文件） input_folder/ output_folder/ t
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | video-toolkit处理的内容输入 |,  |
 | content | string | 否 | video-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -412,9 +414,8 @@ bash （请参考skill目录中的脚本文件） input_folder/ output_folder/ t
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -428,7 +429,7 @@ bash （请参考skill目录中的脚本文件） input_folder/ output_folder/ t
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | FFmpeg/FFprobe | 核心工具 | 必需 | 系统包管理器或官网 |
 | Real-ESRGAN | AI超分 | 推荐 | GitHub Releases下载 |
 | Whisper | 字幕生成 | 推荐 | pip install openai-whisper |
@@ -491,7 +492,7 @@ pip install openai-whisper
 
 ### 专业版与免费版完整对比
 | 功能维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|---:|:---|---:|
 | 文件处理 | 单文件 | 批量文件夹 |
 | 视频压缩 | 基础CRF | 自适应+多码率 |
 | 字幕生成 | Whisper基础 | 多语言+ASS样式+软字幕 |
@@ -527,9 +528,8 @@ Real-ESRGAN支持NVIDIA GPU(CUDA)、AMD GPU和CPU运行。GPU运行速度更快,
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -22,21 +22,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
 # WhatsApp大师(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 多智能体 | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| WhatsApp大师(专业版)预算调度 | 不支持 | 支持 |
+| WhatsApp大师(专业版)历史检索 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 类别 | 动作 | 数量 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 消息 | 文本、媒体、投票、贴纸、语音、GIF | 6 |
 | 交互 | 反应（加/删）、回复/引用、编辑、撤回 | 5 |
 | 群组 | 创建、重命名、图标、描述、加人、踢人、升降权、离开、邀请码、群信息 | 10 |
@@ -106,7 +111,7 @@ message action=group-create channel=whatsapp name="Project Team" participants=["
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | whatsapp-master处理的内容输入 |,  |
 | content | string | 否 | whatsapp-master处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -134,9 +139,8 @@ message action=group-create channel=whatsapp name="Project Team" participants=["
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -149,9 +153,9 @@ message action=group-create channel=whatsapp name="Project Team" participants=["
 - **WhatsApp 账号**：已通过二维码链接的有效账号
 - **Node.js**：18+（运行通道插件与协议库）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | WhatsApp 通道插件 | 插件 | 必需 | Agent 平台内置或自行安装 |
 | Baileys 协议库 | npm 包 | 内置 | 通道插件依赖，实现 WhatsApp Web 协议 |
@@ -169,7 +173,6 @@ message action=group-create channel=whatsapp name="Project Team" participants=["
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **模型路由建议**：专业版多智能体模式推荐使用 GPT-4o / Claude Sonnet 作为主 Agent，Haiku 作为辅助 Agent
 - **数据存储**：历史检索与联系人数据可归档到 `关系型数据库` 数据库做长期分析
-
 
 **API Key配置方式**:
 ```bash
@@ -278,7 +281,7 @@ workspace/
 四种模式：
 
 | 模式 | 触发条件 | 拥塞 | 陈旧阈值 | 最大轮次 | 发散 |
-|------|---------|------|---------|---------|------|
+|---:|:---|---:|---:|:---|---:|
 | 保守 | 用量 > 85% | 2 倍慢 | 0.80 | 减半 | 否 |
 | 适中 | 60-85% | 正常 | 0.85 | 正常 | 否 |
 | 激进 | < 60% | 0.7 倍快 | 0.85 | 正常 | 是 |
@@ -291,19 +294,19 @@ workspace/
 ```text
 # 重命名群组
 message action=renameGroup channel=whatsapp groupId="123456789@g.us" name="New Name"
-
+# ...
 # 设置群组图标
 message action=setGroupIcon channel=whatsapp groupId="123456789@g.us" filePath=/path/to/icon.jpg
-
+# ...
 # 设置群组描述
 message action=setGroupDescription channel=whatsapp groupJid="123456789@g.us" description="Team chat for Q1 project"
-
+# ...
 # 添加参与者
 message action=addParticipant channel=whatsapp groupId="123456789@g.us" participant="+34612345678"
-
+# ...
 # 提升为管理员
 message action=promoteParticipant channel=whatsapp groupJid="123456789@g.us" participants=["+34612345678"]
-
+# ...
 # 获取邀请链接
 message action=getInviteCode channel=whatsapp groupJid="123456789@g.us"
 ```
@@ -342,9 +345,8 @@ A：在通道配置中设置 `triggerPrefix`。群主始终绕过；授权联系
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

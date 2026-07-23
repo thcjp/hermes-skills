@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 > **从一次性审计到持续验证，从人工检查到自动化流水线。企业级审计验证系统。**
 
@@ -40,7 +42,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 审计验证工具箱(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -56,7 +58,7 @@ pricing_model: "monthly"
 
 ```bash
 audit-toolkit --batch ./src/ --standard OWASP-Top-10 --parallel 4
-
+# ...
 audit-toolkit --monitor --watch ./src/ --alert high
 ```
 
@@ -68,7 +70,7 @@ audit-toolkit --monitor --watch ./src/ --alert high
 ## 核心能力
 ### 1. 四大审计领域（基础+增强）
 | 审计领域 | 审计目标 | 核心检查项 | 专业版增强 |
-|----------|----------|-----------|-----------|
+|:-----|:-----|:-----|:-----|
 | 财务核对 | 资金流向一致性 | 金额/时间/账户验证 | 实时对账+异常预警 |
 | 合规检查 | 合同义务与风险 | 条款/责任/隐性负债 | 多法规交叉对照 |
 | 技术安全 | 代码与系统安全 | 漏洞/权限/数据安全 | 自动化扫描+持续监控 |
@@ -80,7 +82,7 @@ audit-toolkit --monitor --watch ./src/ --alert high
 
 ### 2. 三步审计协议（基础+增强）
 | 步骤 | 基础能力 | 专业版增强 |
-|------|----------|-----------|
+|---:|---:|---:|
 | 证据收集 | 手动收集+日志记录 | 自动采集+版本快照+哈希链 |
 | 差异分析 | 单标准交叉引用 | 多标准并行+模式匹配+预测分析 |
 | 认证签发 | 文本报告 | 数字签名+防篡改+区块链存证 |
@@ -94,11 +96,11 @@ audit-toolkit --monitor --watch ./src/ --alert high
 
 ```bash
 audit-toolkit --batch ./src/ --standard OWASP-Top-10 --parallel 4
-
+# ...
 audit-toolkit --batch ./contracts/ --type contract --standard GDPR
-
+# ...
 audit-toolkit --batch ./ai-logs/ --type ethics --standard fairness
-
+# ...
 audit-toolkit --batch ./src/ --checkpoint --resume
 ```
 
@@ -117,7 +119,7 @@ audit-toolkit --batch ./src/ --checkpoint --resume
 
 ```bash
 audit-toolkit --monitor --watch ./src/ --alert high
-
+# ...
 audit-toolkit --monitor \
   --watch ./src/ \
   --watch ./contracts/ \
@@ -127,7 +129,7 @@ audit-toolkit --monitor \
 ```
 
 | 告警级别 | 触发条件 | 响应要求 | 通知方式 |
-|----------|----------|----------|----------|
+|:---:|:---:|:---:|:---:|
 | 紧急 | 检测到高风险项 | 立即阻断+电话通知 | 邮件+短信+Webhook |
 | 高 | 检测到已知漏洞模式 | 30分钟内响应 | 邮件+Webhook |
 | 中 | 检测到潜在风险 | 2小时内响应 | 邮件 |
@@ -150,7 +152,7 @@ audit-toolkit --multi-standard \
 输出差异矩阵示例：
 
 | 检查项 | OWASP | GDPR | ISO-27001 | PCI-DSS | 综合风险 |
-|--------|-------|------|-----------|---------|----------|
+|:------|------:|:------|:------|------:|:------|
 | 数据加密 | 通过 | 不通过 | 通过 | 不通过 | 高 |
 | 访问控制 | 通过 | 通过 | 不通过 | 通过 | 中 |
 | 日志审计 | 通过 | 通过 | 通过 | 不通过 | 中 |
@@ -171,12 +173,12 @@ audit-toolkit --multi-standard \
 
 ```bash
 audit-toolkit --trend --range 180d --predict
-
+# ...
 audit-toolkit --trend --range 365d --export reports/trend-annual.json
 ```
 
 | 分析维度 | 说明 | 输出 |
-|----------|------|------|
+|---:|:---|---:|
 | 风险趋势 | 高/中/低风险项随时间变化 | 趋势曲线图 |
 | 修复效率 | 从发现到修复的平均时间 | 效率指标 |
 | 反复出现 | 跨周期反复出现的风险 | 根因分析 |
@@ -191,7 +193,7 @@ audit-toolkit --trend --range 365d --export reports/trend-annual.json
 
 ```bash
 audit-toolkit --template ~/.audit-templates/fintech-security.json
-
+# ...
 audit-toolkit --list-templates
 ```
 
@@ -211,14 +213,14 @@ audit-toolkit --certify \
   --report reports/audit-2026-07.json \
   --sign RSA-2048 \
   --key ~/.audit-keys/private.pem
-
+# ...
 audit-toolkit --verify \
   --report reports/audit-2026-07.json \
   --key ~/.audit-keys/public.pem
 ```
 
 | 认证要素 | 说明 |
-|----------|------|
+|:------:|--------|
 | 数字签名 | RSA-2048签名，确保报告不可篡改 |
 | 时间戳 | 权威时间戳，证明审计时间 |
 | 哈希链 | 证据链式哈希，确保证据完整性 |
@@ -240,7 +242,7 @@ audit-toolkit --batch ./src/ \
   --parallel 4 \
   --fail-on high \
   --certify --sign RSA-2048
-
+# ...
 audit-toolkit --monitor --watch ./production/ \
   --alert high \
   --notify security-team
@@ -257,7 +259,7 @@ audit-toolkit --multi-standard \
   --standards PCI-DSS,等保2.0,GDPR \
   --target ./systems/ \
   --output reports/cross-compliance/
-
+# ...
 audit-toolkit --monitor \
   --watch ./systems/ \
   --compliance PCI-DSS,等保2.0 \
@@ -276,7 +278,7 @@ audit-toolkit --batch ./contracts/ \
   --template ~/.audit-templates/supply-chain.json \
   --parallel 8 \
   --checkpoint
-
+# ...
 audit-toolkit --summary \
   --batch-results ./contracts/ \
   --output reports/contract-audit-summary.json
@@ -293,12 +295,12 @@ audit-toolkit --batch ./training-data/ \
   --type ethics \
   --standard fairness \
   --metrics "demographic-parity,equal-opportunity"
-
+# ...
 audit-toolkit --monitor \
   --watch ./ai-outputs/ \
   --type ethics \
   --alert medium,high
-
+# ...
 audit-toolkit --trend --range 90d --predict
 ```
 
@@ -314,7 +316,7 @@ audit-toolkit --multi-standard \
   --target ./data-systems/ \
   --cross-reference \
   --output reports/multi-jurisdiction/
-
+# ...
 audit-toolkit --gap-analysis \
   --standards GDPR,CCPA,PIPL \
   --current-state ./audit-results/ \
@@ -329,12 +331,12 @@ audit-toolkit --gap-analysis \
 **操作流程**：
 ```bash
 audit-toolkit --trend --range 1095d --predict
-
+# ...
 audit-toolkit --root-cause \
   --history ./audit-history/ \
   --recurring-only \
   --output reports/root-cause-analysis.json
-
+# ...
 audit-toolkit --predict \
   --history ./audit-history/ \
   --horizon 90d \
@@ -345,7 +347,7 @@ audit-toolkit --predict \
 
 ## 多角色场景指南
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|----|:--:|---:|----|
 | 安全工程师 | CI/CD安全审计 | 批量审计+实时监控+加密认证 | 自动化流水线、零遗漏 |
 | 合规官 | 多法规合规 | 多标准交叉+实时监控 | 合规可视化、提前预警 |
 | 法务 | 合同批量审查 | 批量审计+自定义模板 | 效率提升、标准统一 |
@@ -422,7 +424,7 @@ audit-toolkit --predict \
 
 ## 错误处理
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|----|----|----|
 | 批量审计中断 | 内存不足或进程被杀 | 启用`--checkpoint`，从断点恢复 | 高 |
 | 实时监控漏报 | 监控范围不完整 | 检查`--watch`路径是否覆盖全部关键目录 | 高 |
 | 多标准交叉结果混乱 | 标准映射表过时 | 更新标准映射表，重新执行交叉分析 | 中 |
@@ -442,7 +444,7 @@ audit-toolkit --predict \
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | OpenSSL | 加密库 | 专业版必需 | 系统自带或从openssl.org安装 |
 | audit-toolkit CLI | 命令行工具 | 专业版必需 | 随本技能提供 |
@@ -493,7 +495,7 @@ audit-toolkit --predict \
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|---:|---:|---:|
 | 免费体验版 | ¥0 | 四大领域核心审计+三步协议+基础风险分级+报告模板+基础示例+基础FAQ | 个人试用、小规模审计 |
 | 收费专业版 | ¥29.9/月 | 批量审计+实时监控+多标准交叉+趋势分析+自定义模板+加密认证+多角色指南+优先支持 | 企业/团队、持续合规 |
 
@@ -503,19 +505,20 @@ audit-toolkit --predict \
 ### 示例1：基础用法
 ```
 单次审计，立即可用：
-
+# ...
 ```text
 用户：审计这段代码的安全性
 助手：→ 确定领域：技术安全
       → 证据收集 → 差异分析 → 认证签发
 ```
-
+# ...
 启用批量审计与实时监控：
-
+# ...
 ```bash
 ```
-
+# ...
 ## 已知限制
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+# ...

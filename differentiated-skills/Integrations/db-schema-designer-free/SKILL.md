@@ -33,11 +33,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
-
 # 数据库Schema设计器(免费版)
 
 一套可复用的"软Schema"设计方法:主干硬、尾巴软,三层演进。安装后,Agent可据此指导用户真正构建出灵活可演进的数据库结构,适配需求频繁变化的早期阶段。
@@ -53,7 +54,7 @@ suggested_price: 29.9
 ### 三层模型
 
 | 层级 | 作用 | 典型做法 |
-| --- | --- | --- |
+|---|---|----|
 | **原始层** | 不丢信息、可追溯 | 整条记录原样存,加哈希去重、来源标记、版本号 |
 | **软字段层** | 灵活查询 | JSON存结构化结果;键值对表按key查询、聚合 |
 | **业务视图层** | 高频查询、报表 | 物化表/视图,按需建索引 |
@@ -92,7 +93,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 数据库Schema设计器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -145,7 +146,7 @@ CREATE INDEX idx_knowledge_created ON knowledge_items(created_at DESC);
 Agent主动向用户确认以下信息,并记录到对话中:
 
 | 问题 | 用途 |
-| --- | --- |
+|---:|---:|
 | 数据主要来自哪里?(微信/网页/API/手动输入) | 定`source_type`枚举 |
 | 每条记录"永远会有"的信息有哪些?(时间、来源、类型) | 定主干字段 |
 | 哪些信息"可能经常变、不同来源不一样"? | 确认用JSON/键值对 |
@@ -197,7 +198,7 @@ CREATE TABLE IF NOT EXISTS items (
 CREATE INDEX IF NOT EXISTS idx_items_source ON items(source);
 CREATE INDEX IF NOT EXISTS idx_items_created ON items(created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_items_hash ON items(content_hash);
-
+# ...
 -- 软字段层:键值对索引(高频查询字段)
 CREATE TABLE IF NOT EXISTS item_kv (
   item_id INTEGER NOT NULL,
@@ -207,7 +208,7 @@ CREATE TABLE IF NOT EXISTS item_kv (
   FOREIGN KEY (item_id) REFERENCES items(id) ON DELETE CASCADE
 );
 CREATE INDEX IF NOT EXISTS idx_kv_key_value ON item_kv(key, value);
-
+# ...
 -- 业务视图层:按需物化(示例:知识库视图)
 CREATE VIEW IF NOT EXISTS v_knowledge AS
 SELECT i.id, i.created_at, i.source,
@@ -221,7 +222,7 @@ LEFT JOIN item_kv kv_tags  ON i.id = kv_tags.item_id  AND kv_tags.key  = 'tags'
 LEFT JOIN item_kv kv_url   ON i.id = kv_url.item_id   AND kv_url.key   = 'url'
 LEFT JOIN item_kv kv_project ON i.id = kv_project.item_id AND kv_project.key = 'project'
 WHERE i.deleted = 0;
-
+# ...
 -- 可选:全文检索(中文需配合LIKE回退)
 -- CREATE VIRTUAL TABLE IF NOT EXISTS messages_fts USING fts5(
 --   content, content='items', content_rowid='id'
@@ -239,10 +240,10 @@ sqlite3 data/flexible.db "INSERT INTO items (source, source_type, content_type, 
 ```bash
 # 列出最近10条
 sqlite3 data/flexible.db "SELECT id, created_at, source, content_type FROM items WHERE deleted=0 ORDER BY created_at DESC LIMIT 10;"
-
+# ...
 # 按字段查询
 sqlite3 data/flexible.db "SELECT i.id, i.raw_content FROM items i JOIN item_kv kv ON i.id=kv.item_id WHERE kv.key='tags' AND kv.value LIKE '%工作%';"
-
+# ...
 # 统计
 sqlite3 data/flexible.db "SELECT source, COUNT(*) FROM items WHERE deleted=0 GROUP BY source;"
 ```
@@ -252,7 +253,7 @@ sqlite3 data/flexible.db "SELECT source, COUNT(*) FROM items WHERE deleted=0 GRO
 ### 中文全文检索策略
 
 | 内容语言 | 推荐方案 | 说明 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | 英文为主 | FTS5 (unicode61) | 默认即可 |
 | 中文为主 | FTS + LIKE回退 | 长短语易漏检,需实现`recall()`函数 |
 | 中文为主(数据量<5000) | 同上 + 短词拆分 | 如"煤炭期货价格"拆为"煤炭""期货""价格"分别查,取并集 |
@@ -320,7 +321,7 @@ A: 推荐`deleted`标记字段做软删除,定期清理可批量UPDATE;硬删除
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | sqlite3 | 数据库引擎 | 必需 | 系统自带或`pip install pysqlite3` |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | pypdf | Python库 | 可选 | `pip install pypdf`(PDF正文提取) |
@@ -335,9 +336,8 @@ A: 推荐`deleted`标记字段做软删除,定期清理可批量UPDATE;硬删除
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -20,6 +20,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # CMS内容架构师
 
@@ -28,7 +30,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 企业CMS | 业务需求+内容类型清单 | Schema定义+Studio配置+API查询模板 |
 | 电商内容 | 商品分类+属性字段 | 结构化Schema+富文本+图片优化方案 |
 | 多语言站点 | 主语言内容+目标语言 | i18n插件配置+翻译工作流 |
@@ -167,7 +169,7 @@ pricing_model: "per_use"
 ### 依赖项
 
 | 依赖类型 | 要求 | 说明 |
-|:---------|:-----|:-----|
+|:-----|:-----|:-----|
 | LLM | 任意支持 Agent Skills 的 LLM | Claude/GPT/Gemini 等 |
 | 运行环境 | Node.js 18+ | Headless CMS Studio运行环境 |
 | CLI | Sanity CLI (npm i -g @sanity/cli) | 初始化与管理项目 |
@@ -178,7 +180,7 @@ pricing_model: "per_use"
 ### 中外CMS对照(国内替代方案)
 
 | 海外CMS | 国内替代 | 说明 |
-|:--------|:---------|:-----|
+|---:|---:|---:|
 | Sanity | 飞书多维表格+API | 国内无完美替代,可用多维表格+自研API模拟 |
 | Strapi | 语雀+开放API | 语雀提供内容结构化管理,API可对接前端 |
 | Contentful | Notion+API | Notion API可作为轻量Headless CMS |
@@ -201,7 +203,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | input | string | 是 | CMS内容架构师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -304,7 +306,7 @@ export async function getTopPosts() {
 - 重试机制: 失败时自动重试, 最多3次
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:------|------:|:------|
 | GROQ查询超时 | 嵌套过深/全表扫描 | 优化查询,减少嵌套层级,使用projection字段裁剪,添加索引 |
 | 图片加载慢 | 未使用CDN/未做srcset | 使用 Sanity CDN + srcset + lazy load,配置hotspot |
 | 内容冲突 | 多人同时编辑 | 启用实时协作 + 字段级锁定,使用presence indicator |
@@ -358,7 +360,7 @@ export const post = defineType({
     select: { title: 'title', subtitle: 'publishedAt', media: 'coverImage' }
   }
 });
-
+// ...
 // output/blog/schemas/author.ts
 export const author = defineType({
   name: 'author',
@@ -380,7 +382,7 @@ export const author = defineType({
   ],
   preview: { select: { title: 'name', media: 'avatar' } }
 });
-
+// ...
 // output/blog/schemas/category.ts
 export const category = defineType({
   name: 'category',
@@ -416,7 +418,7 @@ export const category = defineType({
     "coverImage": coverImage.asset->url,
     "readingTime": round(length(string(body)) / 1000) + 1
   }
-
+# ...
 // output/blog/queries/post-by-slug.groq
 // 按slug查询单篇文章（含作者、分类、相关文章）
 *[_type == "post" && slug.current == $slug][0] {

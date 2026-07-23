@@ -22,14 +22,15 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
 ---
 # 数据分析师（免费版）
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据分析师(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,7 +43,7 @@ homepage: "https://skillhub.cn"
 ### 数据读取
 ```python
 import pandas as pd
-
+# ...
 df = pd.read_csv('data.csv')
 df = pd.read_excel('data.xlsx', sheet_name='Sheet1')
 ```
@@ -119,7 +120,7 @@ plt.rcParams['axes.unicode_minus'] = False
 ```
 
 | 图表类型 | 代码 | 适用场景 |
-|---------|------|---------|
+|:-----|:-----|:-----|
 | 折线图 | `plt.plot(df['date'], df['value'])` | 趋势变化 |
 | 柱状图 | `plt.bar(df['category'], df['value'])` | 分类对比 |
 | 散点图 | `plt.scatter(df['x'], df['y'], alpha=0.5)` | 关系分布 |
@@ -136,7 +137,7 @@ plt.rcParams['axes.unicode_minus'] = False
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -160,19 +161,18 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1：CSV数据清洗与统计
 
 ```text
 输入: 分析这个 CSV 文件：sales.csv
-
+# ...
 处理:
 - df = pd.read_csv('sales.csv')
 - 缺失值: df['sales'].fillna(df['sales'].mean())
 - 统计: 均值¥45,230, 中位数¥38,500, 标准差¥12,400
-
+# ...
 输出: 1542 行数据，销售额均值¥45,230
 ```
 
@@ -180,7 +180,7 @@ export API_KEY="your_api_key_here"
 
 ```text
 输入: 为这些数据生成折线图代码
-
+# ...
 输出:
 plt.figure(figsize=(10, 6))
 plt.plot(df['date'], df['value'])
@@ -193,7 +193,7 @@ plt.show()
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 中文图表显示方框 | 未配置SimHei字体 | 执行 `plt.rcParams['font.sans-serif'] = ['SimHei']` 和 `plt.rcParams['axes.unicode_minus'] = False` |
 | `KeyError` 列名不存在 | 列名含空格或大小写不一致 | 先 `print(df.columns)` 检查实际列名 |
 | `fillna(df.mean())` 报错 | 含非数值列无法求均值 | 仅对数值列填充：`df.select_dtypes(include='number').fillna(df.mean())` |

@@ -19,11 +19,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # K8s避坑入门工具（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ### 避坑知识库
 
 | 类别 | 问题数量 | 免费版覆盖 |
-| --- | --- | --- |
+|---|----|-----|
 | Pod问题 | 15个 | 常见8个 |
 | Service问题 | 10个 | 常见5个 |
 | Deployment问题 | 12个 | 常见6个 |
@@ -52,7 +53,7 @@ suggested_price: 29.9
 ### 常见避坑主题
 
 | 主题 | 常见陷阱 | 影响 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 资源限制 | 未设置resources | Pod抢占资源 |
 | 镜像策略 | 用latest标签 | 版本不可控 |
 | 健康检查 | 未配置探针 | 僵尸Pod |
@@ -85,7 +86,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | K8s避坑入门工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -93,7 +94,7 @@ suggested_price: 29.9
 ```bash
 # 排查Pod问题
 /k8s troubleshoot pod --name my-app --namespace default
-
+# ...
 # 输出排查步骤：
 # 1. 查看Pod事件
 #    kubectl describe pod my-app
@@ -113,7 +114,7 @@ suggested_price: 29.9
 ```bash
 # 排查Service问题
 /k8s troubleshoot service --name my-service
-
+# ...
 # 输出排查步骤：
 # 1. 检查Service端点
 #    kubectl get endpoints my-service
@@ -130,7 +131,7 @@ suggested_price: 29.9
 ```bash
 # 配置检查
 /k8s check deployment --name my-app
-
+# ...
 # 输出建议：
 # 已知限制
 # [建议] 添加liveness/readiness探针
@@ -155,15 +156,15 @@ suggested_price: 29.9
 /k8s troubleshoot pod --name <pod-name>
 /k8s troubleshoot service --name <svc-name>
 /k8s troubleshoot deployment --name <dep-name>
-
+# ...
 # 配置检查
 /k8s check deployment --name <dep-name>
 /k8s check pod --name <pod-name>
-
+# ...
 # 命令速查
 /k8s cheat-sheet
 /k8s cheat-sheet --topic networking
-
+# ...
 # 避坑指南
 /k8s pitfalls --category resources
 /k8s pitfalls --category networking
@@ -175,17 +176,17 @@ suggested_price: 29.9
 # 集群信息
 kubectl cluster-info
 kubectl get nodes
-
+# ...
 # Pod管理
 kubectl get pods --all-namespaces
 kubectl describe pod <name>
 kubectl logs <name> --previous
 kubectl exec -it <name> -- /（请参考skill目录中的脚本文件）
-
+# ...
 # Service管理
 kubectl get svc
 kubectl get endpoints <name>
-
+# ...
 # Deployment管理
 kubectl get deployments
 kubectl scale deployment <name> --replicas=3
@@ -193,7 +194,6 @@ kubectl rollout status deployment/<name>
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -249,7 +249,7 @@ spec:
 4. **标签规范统一**：统一标签命名规范，便于管理
 
 | 避坑要点 | 说明 |
-| --- | --- |
+|:---:|:---:|
 | 资源设置 | requests用于调度，limits用于限制 |
 | 探针配置 | liveness检测存活，readiness检测就绪 |
 | 镜像策略 | 固定版本便于回滚和追踪 |
@@ -290,7 +290,7 @@ spec:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | kubectl | CLI工具 | 推荐 | 官网安装 |
 

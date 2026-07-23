@@ -19,16 +19,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Notion
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Search pages and databases, update content, and manage Notion workspace | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
+| 数据质量检测与清洗规则 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -38,7 +43,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -47,9 +52,9 @@ pricing_model: "per_use"
 
 ```bash
 clawlink_call_tool --tool "notion_list_databases" --params '{}'
-
+# ...
 clawlink_call_tool --tool "notion_search" --params '{"query": "project notes"}'
-
+# ...
 clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 ```
 
@@ -57,7 +62,7 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | notion-pages处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -116,7 +121,7 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 
 ## 错误处理
 | Status / Error | Meaning |
-| --- | --- |
+|:-------------:|:-------------:|
 | Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration notion`. |
 | Missing connection | Notion is not connected. Direct the user to <https://claw-link.dev/dashboard?add=notion>. |
 | `object_not_found` | Page or database does not exist. Check the ID or search for the resource first. |
@@ -156,9 +161,9 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -167,7 +172,6 @@ clawlink_call_tool --tool "notion_get_page" --params '{"page_id": "PAGE_ID"}'
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -250,11 +254,5 @@ clawlink_call_tool --tool "notion_create_page" \
 ## 常见问题
 
 ### Q1: 如何开始使用Notion？
-A: 
-
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Notion有什么限制？
 A: 
 

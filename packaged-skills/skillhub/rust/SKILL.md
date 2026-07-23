@@ -20,16 +20,17 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Rust避坑指南
 
 编写地道Rust代码,规避所有权、借用、生命周期、字符串、错误处理、迭代器、并发与内存的高频陷阱,以及常见编译错误与Cargo陷阱。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Rust避坑指南处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,13 +38,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Rust避坑指南错误处理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -53,7 +54,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -61,7 +62,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -136,7 +136,7 @@ export API_KEY="your_api_key_here"
 
 ### 9. 常见编译错误处理
 | 错误 | 原因 | 修复 |
-|------|------|------|
+|:---:|:---:|:---:|
 | `value moved here` | 移动后使用 | `clone()` 或 `&` 借用 |
 | `cannot borrow as mutable` | 已被借用 | 重构结构或 `RefCell` |
 | `missing lifetime specifier` | 引用歧义 | 添加 `<'a>` |
@@ -163,7 +163,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:------|------:|:------|
 | 所有权错误诊断 | 编译错误信息 | 移动/借用修复方案 |
 | 生命周期标注 | 含引用的结构体/函数 | `<'a>` 标注与绑定规则 |
 | 错误处理改造 | `unwrap()` 生产代码 | `?` + `Result` 返回类型 |
@@ -182,7 +182,6 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1:所有权修复
@@ -191,12 +190,12 @@ export API_KEY="your_api_key_here"
 let s1 = String::from("hello");
 let s2 = s1;          // s1 移动到 s2
 println!("{}", s1);   // 编译错误: value moved here
-
+// ...
 // 修复1:clone
 let s1 = String::from("hello");
 let s2 = s1.clone();
 println!("{}", s1);   // OK
-
+// ...
 // 修复2:借用
 let s1 = String::from("hello");
 let s2 = &s1;         // 借用
@@ -209,12 +208,12 @@ println!("{} {}", s1, s2);  // OK
 struct Config {
     name: &str,  // 编译错误: missing lifetime specifier
 }
-
+// ...
 // 修复:添加 <'a>
 struct Config<'a> {
     name: &'a str,
 }
-
+// ...
 // 函数返回引用必须绑定输入
 fn first_word<'a>(s: &'a str) -> &'a str {
     &s[..s.find(' ').unwrap_or(s.len())]
@@ -228,7 +227,7 @@ fn read_config(path: &str) -> Config {
     let content = std::fs::read_to_string(path).unwrap();  // 危险
     parse_config(&content).unwrap()  // 危险
 }
-
+// ...
 // 修复:用 ? 传播错误
 fn read_config(path: &str) -> Result<Config, Box<dyn std::error::Error>> {
     let content = std::fs::read_to_string(path)?;
@@ -246,7 +245,7 @@ let data = Rc::new(vec![1, 2, 3]);
 thread::spawn(move || {  // 编译错误: Rc 不满足 Send
     println!("{:?}", data);
 });
-
+// ...
 // 修复:用 Arc
 use std::sync::Arc;
 let data = Arc::new(vec![1, 2, 3]);
@@ -259,7 +258,7 @@ thread::spawn(move || {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | `value moved here` 编译错误 | 变量移动后仍使用 | 显式 `clone()` 或改用 `&` 借用 |
 | `cannot borrow as mutable` 编译错误 | 已有不可变借用时取可变借用 | 重构借用顺序,或用 `RefCell` 内部可变性 |
 | `missing lifetime specifier` 编译错误 | 编译器无法推断引用生命周期 | 为结构体与函数添加 `<'a>` 标注并绑定输入输出 |

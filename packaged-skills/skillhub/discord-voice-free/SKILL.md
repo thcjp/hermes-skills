@@ -28,16 +28,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
 ---
 # Discord 语音助手 (免费版)
 
 在 Discord 语音频道中提供基础的语音对话能力:VAD 检测 → 本地 Whisper 转写 → OpenAI TTS 播放。仅支持 `medium` 灵敏度与默认配置,适合个人开发者快速验证原型。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Discord语音免费处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -71,7 +72,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础语音问答 | 用户在语音频道提问 | 本地转写 + Agent 回复 + TTS 播放 |
 | 语音状态查询 | 无参数 | 当前连接状态、频道 ID、连接时长 |
 
@@ -85,7 +86,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -112,7 +113,7 @@ export API_KEY="your_api_key_here"
 ## 核心配置(免费版固定值)
 
 | 选项 | 默认值 | 说明 |
-|------|--------|------|
+|:---:|:---:|:---:|
 | `enabled` | `true` | 启用/禁用插件 |
 | `sttProvider` | `"local-whisper"` | 仅支持本地 Whisper |
 | `ttsProvider` | `"openai"` | 仅支持 OpenAI TTS |
@@ -158,20 +159,20 @@ agent-cli discord_voice status
 #     }
 #   }
 # }
-
+# ...
 # 2. 加入语音频道
 agent-cli discord_voice join 1234567890123456
 # 输出: [discord-voice] Joined channel "General" (1234567890123456)
-
+# ...
 # 3. 用户说话 -> VAD 检测 -> 本地 Whisper 转写
 # 日志: [discord-voice] VAD: speech started
 # 日志: [discord-voice] VAD: speech ended (duration: 3.8s)
 # 日志: [discord-voice] STT (local): "今天天气怎么样?"
-
+# ...
 # 4. Agent 处理 -> TTS 合成 -> 频道播放
 # 日志: [discord-voice] TTS: synthesizing 64 chars
 # 日志: [discord-voice] Playing audio (2.7s)
-
+# ...
 # 5. 查看状态
 agent-cli discord_voice status
 # 输出: Connected to "General" | Uptime: 5m
@@ -181,9 +182,8 @@ agent-cli discord_voice status
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `Discord client not available` | Discord 频道未配置或 Bot 未连接 | 检查 `DISCORD_TOKEN` 与频道配置,重启 gateway |
 | Opus build errors | 缺少原生编译工具 | `npm install -g node-gyp` 后 `npm rebuild @discordjs/opus` |
 | No audio heard | Bot 缺少 Speak 权限或被服务器静音 | 在 Developer Portal 勾选 Speak;检查服务器是否 mute 了 Bot |

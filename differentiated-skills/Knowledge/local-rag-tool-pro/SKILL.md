@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 本地文件检索（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `搜索项目中的认证逻辑代码
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：知识库构建
 
 将多个文档构建为可检索的本地知识库。**示例指令**：`
 
 `构建本地知识库
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 本地文件检索（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -166,7 +158,7 @@ from typing import List, Dict, Optional, Tuple
 from pathlib import Path
 from dataclasses import dataclass, field
 from datetime import datetime
-
+# ...
 @dataclass
 class DocumentChunk:
     chunk_id: str
@@ -175,13 +167,13 @@ class DocumentChunk:
     metadata: dict = field(default_factory=dict)
     embedding: Optional[List[float]] = None
     chunk_index: int = 0
-
+# ...
 @dataclass
 class SearchResult:
     chunk: DocumentChunk
     score: float
     highlight: str
-
+# ...
 class LocalRAGEngine:
     def __init__(self, index_dir: str = "./rag_index"):
         self.index_dir = Path(index_dir)
@@ -189,7 +181,7 @@ class LocalRAGEngine:
         self.chunks: Dict[str, DocumentChunk] = {}
         self.inverted_index: Dict[str, set] = {}
         self.doc_hashes: Dict[str, str] = {}
-
+# ...
     def index_document(self, file_path: str,
                       chunk_size: int = 500,
                       overlap: int = 50) -> List[str]:
@@ -214,7 +206,7 @@ class LocalRAGEngine:
             self._update_inverted_index(chunk_id, chunk_text)
             chunk_ids.append(chunk_id)
         return chunk_ids
-
+# ...
     def index_directory(self, dir_path: str,
                        extensions: List[str] = None) -> Dict:
         """索引目录（PRO 专属：批量索引）"""
@@ -232,7 +224,7 @@ class LocalRAGEngine:
                 except Exception as e:
                     results["errors"].append({"file": str(file_path), "error": str(e)})
         return results
-
+# ...
     def search(self, query: str, top_k: int = 5) -> List[SearchResult]:
         """语义检索（PRO 专属：BM25评分）"""
         query_terms = self._tokenize(query)
@@ -248,7 +240,7 @@ class LocalRAGEngine:
             highlight = self._extract_highlight(chunk.content, query_terms)
             results.append(SearchResult(chunk=chunk, score=score, highlight=highlight))
         return results
-
+# ...
     def generate_with_context(self, query: str, top_k: int = 3) -> dict:
         """检索增强生成（PRO 专属：上下文注入）"""
         results = self.search(query, top_k)
@@ -259,7 +251,7 @@ class LocalRAGEngine:
             "sources": [r.chunk.doc_path for r in results],
             "scores": [r.score for r in results]
         }
-
+# ...
     def save_index(self):
         """持久化索引（PRO 专属）"""
         data = {
@@ -269,7 +261,7 @@ class LocalRAGEngine:
         }
         with open(self.index_dir / "index.json", "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-
+# ...
     def _split_into_chunks(self, content: str, chunk_size: int, overlap: int) -> List[str]:
         chunks = []
         start = 0
@@ -284,16 +276,16 @@ class LocalRAGEngine:
             chunks.append(chunk.strip())
             start = end - overlap
         return [c for c in chunks if c]
-
+# ...
     def _update_inverted_index(self, chunk_id: str, content: str):
         for term in self._tokenize(content):
             if term not in self.inverted_index:
                 self.inverted_index[term] = set()
             self.inverted_index[term].add(chunk_id)
-
+# ...
     def _tokenize(self, text: str) -> List[str]:
         return text.lower().split()
-
+# ...
     def _extract_highlight(self, content: str, terms: List[str]) -> str:
         for term in terms:
             idx = content.lower().find(term)
@@ -302,7 +294,7 @@ class LocalRAGEngine:
                 end = min(len(content), idx + len(term) + 50)
                 return content[start:end]
         return content[:100]
-
+# ...
 rag = LocalRAGEngine()
 rag.index_directory("./docs")
 result = rag.generate_with_context("如何配置部署")
@@ -349,7 +341,7 @@ rag:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -361,7 +353,7 @@ rag:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -405,7 +397,7 @@ rag:
 # 4. 启用结果缓存减少重复计算
 ```
 
-## 常见问题
+## 常见问题(补充)
 
 ### Q1: 批量处理时遇到内存不足？
 
@@ -433,7 +425,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | numpy | Python库 | 可选 | pip install numpy |
 | rank-bm25 | Python库 | 可选 | pip install rank-bm25 |
@@ -448,9 +440,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

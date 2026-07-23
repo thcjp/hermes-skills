@@ -39,8 +39,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 UI/UX开发工具专业版是一款面向开发团队和代理机构的专业级React页面生成引擎。在免费版单页面生成能力之上,扩展至多页面项目管理、设计系统持久化引用、自动化多分辨率截图审查循环、批量图片处理和Zip打包导出。
 
 专业版保障跨页面设计一致性,支持自动化视觉质量门禁,是代理机构多客户交付和企业多页面应用的理想选择。完全兼容免费版单页面生成流程,可无缝升级。
@@ -51,7 +52,7 @@ UI/UX开发工具专业版是一款面向开发团队和代理机构的专业级
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | UI/UX开发工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -129,15 +130,15 @@ serve/
 
 ```bash
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/desktop-full.png 1920 1080
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/desktop.png 1440 900
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/tablet.png 1024 768
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/tablet-portrait.png 768 1024
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/mobile.png 390 844
-
+# ...
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/mobile-small.png 320 568
 ```
 
@@ -153,12 +154,12 @@ PROJECT=$1
 BASE_URL="http://localhost:5174/${PROJECT}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 OUTPUT_DIR="/tmp/reviews/${PROJECT}_${TIMESTAMP}"
-
+# ...
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 PAGES=("landing" "about" "pricing" "contact" "dashboard")
 RESOLUTIONS=("1920x1080" "1440x900" "768x1024" "390x844")
-
+# ...
 for page in "${PAGES[@]}"; do
   for res in "${RESOLUTIONS[@]}"; do
     width=$(echo $res | cut -d'x' -f1)
@@ -168,7 +169,7 @@ for page in "${PAGES[@]}"; do
     echo "截图完成: ${page} @ ${res}"
   done
 done
-
+# ...
 echo "批量截图完成,输出目录: ${OUTPUT_DIR}"
 ```
 
@@ -182,30 +183,30 @@ echo "批量截图完成,输出目录: ${OUTPUT_DIR}"
 #!/bin/bash
 INPUT_DIR=$1
 QUALITY=${2:-80}
-
+# ...
 total_before=0
 total_after=0
 count=0
-
+# ...
 for img in "$INPUT_DIR"/*.{png,jpg,jpeg}; do
   if [ -f "$img" ]; then
     filename=$(basename "$img" | sed 's/\.[^.]*$//')
     output="$INPUT_DIR/${filename}.webp"
-
+# ...
     before_size=$(stat -f%z "$img" 2>/dev/null || stat -c%s "$img")
     bash （请参考skill目录中的脚本文件） "$img" "$output" "$QUALITY"
     after_size=$(stat -f%z "$output" 2>/dev/null || stat -c%s "$output")
-
+# ...
     reduction=$((100 - (after_size * 100 / before_size)))
     total_before=$((total_before + before_size))
     total_after=$((total_after + after_size))
     count=$((count + 1))
-
+# ...
     echo "转换: $(basename $img) -> ${filename}.webp"
     echo "  大小: $(numfmt --to=iec $before_size) -> $(numfmt --to=iec $after_size) (减少${reduction}%)"
   fi
 done
-
+# ...
 echo ""
 echo "=== 批量转换报告 ==="
 echo "处理文件数: ${count}"
@@ -222,7 +223,7 @@ echo "总节省: $(numfmt --to=iec $((total_before - total_after)))"
 ### 6. Zip打包导出
 ```bash
 cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/
-
+# ...
 cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/ \
   -x "*.DS_Store" "*/tmp/*" "*/.git/*"
 ```
@@ -256,11 +257,11 @@ mkdir -p serve/client-c/{landing,assets}
 
 ```bash
 mkdir -p serve/enterprise/{landing,features,pricing,about,contact,assets}
-
+# ...
 bash （请参考skill目录中的脚本文件） enterprise
-
+# ...
 bash （请参考skill目录中的脚本文件） serve/enterprise/assets 85
-
+# ...
 cd serve && zip -r /tmp/enterprise.zip enterprise/
 ```
 
@@ -271,13 +272,13 @@ cd serve && zip -r /tmp/enterprise.zip enterprise/
 #!/bin/bash
 PROJECT=$1
 ISSUES_FOUND=0
-
+# ...
 bash （请参考skill目录中的脚本文件） "$PROJECT"
-
+# ...
 for screenshot in /tmp/reviews/${PROJECT}_*/*.png; do
   echo "检查: $(basename $screenshot)"
 done
-
+# ...
 if [ $ISSUES_FOUND -gt 0 ]; then
   echo "质量门禁未通过:发现 ${ISSUES_FOUND} 个问题"
   exit 1
@@ -309,10 +310,10 @@ fi
 ### 专业版项目初始化
 ```bash
 bash （请参考skill目录中的脚本文件） 5174
-
+# ...
 PROJECT_NAME="my-enterprise-app"
 mkdir -p serve/${PROJECT_NAME}/{landing,about,pricing,contact,assets}
-
+# ...
 cat > serve/${PROJECT_NAME}/project.json << 'EOF'
 {
   "name": "my-enterprise-app",
@@ -336,11 +337,11 @@ cat > serve/${PROJECT_NAME}/project.json << 'EOF'
   ]
 }
 EOF
-
+# ...
 bash （请参考skill目录中的脚本文件） ${PROJECT_NAME}
-
+# ...
 bash （请参考skill目录中的脚本文件） serve/${PROJECT_NAME}/assets 85
-
+# ...
 cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 ```
 
@@ -378,7 +379,7 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
   <div id="root"></div>
   <script type="text/babel">
     const { useState, useEffect } = React;
-
+# ...
     // 组件化开发
     function Navbar() {
       const [menuOpen, setMenuOpen] = useState(false);
@@ -403,7 +404,7 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
         </header>
       );
     }
-
+# ...
     function App() {
       return (
         <div className="min-h-screen bg-slate-50">
@@ -422,7 +423,7 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 
 ### 专业版与免费版完整对比
 | 功能维度 | 免费版 | 专业版 |
-|----------|--------|--------|
+|:-----|:-----|:-----|
 | 页面生成 | 单页面 | 多页面项目管理 |
 | 项目配置 | 基础JSON | 设计系统持久化引用 |
 | 截图审查 | 桌面+移动(2种) | 6种分辨率全覆盖 |
@@ -472,7 +473,7 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 
 ### 4. 交付前质量检查矩阵
 | 检查维度 | 分辨率 | 通过标准 |
-|----------|--------|----------|
+|---:|---:|---:|
 | 大屏桌面 | 1920x1080 | 布局完整,无溢出 |
 | 标准桌面 | 1440x900 | 导航可用,内容居中 |
 | 平板横屏 | 1024x768 | 网格适配,间距合理 |
@@ -509,7 +510,7 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Bash | 运行时 | 必需 | 系统内置或Git Bash |
 | Chrome/Chromium | 截图工具 | 必需 | 浏览器安装 |
 | cwebp | 图片转换 | 必需 | libwebp工具包 |
@@ -522,9 +523,9 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
 
 ```bash
 brew install webp
-
+# ...
 sudo apt install webp zip coreutils
-
+# ...
 ```
 
 ### API Key 配置
@@ -537,7 +538,7 @@ sudo apt install webp zip coreutils
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

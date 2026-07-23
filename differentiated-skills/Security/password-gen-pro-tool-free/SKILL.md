@@ -26,13 +26,14 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 本工具为个人用户提供多样化的密码生成与强度检测能力,支持强密码生成、密码强度评估、口令短语(Passphrase)生成与PIN码生成。免费版覆盖个人用户日常密码管理需求,帮助用户创建安全且易记的密码。
 
 ### 免费版与专业版对比
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 密码类型 | 随机/PIN/口令 | +模式化/定制规则 |
 | 批量生成 | 不支持 | 批量CSV |
 | 强度检测 | 基础评分 | 多维度分析 |
@@ -45,7 +46,7 @@ suggested_price: 29.9
 ### 1. 强密码生成
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 密码生成器Pro免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -53,70 +54,70 @@ suggested_price: 29.9
 ```python
 #!/usr/bin/env python3
 """免费版密码生成器"""
-
+# ...
 import secrets
 import string
 import json
-
+# ...
 class PasswordGenerator:
     """密码生成器"""
-
+# ...
     CHAR_SETS = {
         'lower': string.ascii_lowercase,
         'upper': string.ascii_uppercase,
         'digits': string.digits,
         'symbols': '!@#$%^&*()-_=+[]{}|;:,.<>?',
     }
-
+# ...
     def generate(self, length=16, use_lower=True, use_upper=True,
                  use_digits=True, use_symbols=True, exclude_similar=False):
         """生成随机强密码"""
         if length < 8:
             length = 8
-
+# ...
         chars = ''
         required = []
-
+# ...
         if use_lower:
             lower = self.CHAR_SETS['lower']
             if exclude_similar:
                 lower = lower.replace('l', '').replace('o', '')
             chars += lower
             required.append(secrets.choice(lower))
-
+# ...
         if use_upper:
             upper = self.CHAR_SETS['upper']
             if exclude_similar:
                 upper = upper.replace('I', '').replace('O', '')
             chars += upper
             required.append(secrets.choice(upper))
-
+# ...
         if use_digits:
             digits = self.CHAR_SETS['digits']
             if exclude_similar:
                 digits = digits.replace('0', '').replace('1', '')
             chars += digits
             required.append(secrets.choice(digits))
-
+# ...
         if use_symbols:
             symbols = self.CHAR_SETS['symbols']
             chars += symbols
             required.append(secrets.choice(symbols))
-
+# ...
         if not chars:
             return "Error: 至少选择一种字符类型"
-
+# ...
         password = list(required)
         for _ in range(length - len(required)):
             password.append(secrets.choice(chars))
-
+# ...
         secrets.SystemRandom().shuffle(password)
         return ''.join(password)
-
+# ...
     def generate_pin(self, length=6):
         """生成PIN码"""
         return ''.join(secrets.choice(string.digits) for _ in range(length))
-
+# ...
     def generate_passphrase(self, word_count=4, separator='-'):
         """生成口令短语"""
         words = [
@@ -127,10 +128,10 @@ class PasswordGenerator:
             'coral', 'delta', 'ember', 'frost', 'grace', 'haven', 'image',
         ]
         return separator.join(secrets.choice(words) for _ in range(word_count))
-
+# ...
 if __name__ == "__main__":
     gen = PasswordGenerator()
-
+# ...
     print("=== 密码生成器 ===")
     print(f"强密码(16位):     {gen.generate(16)}")
     print(f"强密码(20位):     {gen.generate(20)}")
@@ -151,17 +152,17 @@ if __name__ == "__main__":
 ```python
 #!/usr/bin/env python3
 """密码强度检测器"""
-
+# ...
 import re
-
+# ...
 class PasswordStrengthChecker:
     """密码强度检测器"""
-
+# ...
     def check(self, password):
         """检测密码强度"""
         score = 0
         feedback = []
-
+# ...
         length = len(password)
         if length >= 16:
             score += 40
@@ -175,36 +176,36 @@ class PasswordStrengthChecker:
         else:
             score += 5
             feedback.append("长度不足(<8),建议至少12位")
-
+# ...
         has_lower = bool(re.search(r'[a-z]', password))
         has_upper = bool(re.search(r'[A-Z]', password))
         has_digit = bool(re.search(r'\d', password))
         has_symbol = bool(re.search(r'[!@#$%^&*()\-_=+\[\]{}|;:,.<>?]', password))
-
+# ...
         diversity = sum([has_lower, has_upper, has_digit, has_symbol])
         score += diversity * 10
-
+# ...
         if has_lower: feedback.append("包含小写字母")
         if has_upper: feedback.append("包含大写字母")
         if has_digit: feedback.append("包含数字")
         if has_symbol: feedback.append("包含特殊字符")
         if diversity < 3:
             feedback.append("建议使用至少3种字符类型")
-
+# ...
         if re.search(r'(.)\1{2,}', password):
             score -= 15
             feedback.append("包含重复字符(如aaa)")
-
+# ...
         if re.search(r'(123|abc|qwe|password|admin)', password, re.IGNORECASE):
             score -= 20
             feedback.append("包含常见弱模式")
-
+# ...
         if re.search(r'^\d+$', password):
             score -= 20
             feedback.append("纯数字密码,易被破解")
-
+# ...
         score = max(0, min(100, score))
-
+# ...
         if score >= 80:
             level = "STRONG"
             label = "强"
@@ -217,7 +218,7 @@ class PasswordStrengthChecker:
         else:
             level = "CRITICAL"
             label = "极弱"
-
+# ...
         return {
             "password_length": length,
             "score": score,
@@ -226,10 +227,10 @@ class PasswordStrengthChecker:
             "diversity": diversity,
             "feedback": feedback
         }
-
+# ...
 if __name__ == "__main__":
     checker = PasswordStrengthChecker()
-
+# ...
     test_passwords = [
         "123456",
         "password",
@@ -237,7 +238,7 @@ if __name__ == "__main__":
         "Tr0ub4dour&3",
         "correct-horse-battery-staple",
     ]
-
+# ...
     for pwd in test_passwords:
         result = checker.check(pwd)
         print(f"密码: {pwd}")
@@ -263,12 +264,12 @@ WORD_LIST=(
     opal pearl quartz ruby silver topaz ultra vault
     whisper crystal dragon phoenix thunder
 )
-
+# ...
 generate_passphrase() {
     local count=${1:-4}
     local separator=${2:--}
     local passphrase=""
-
+# ...
     for i in $(seq 1 "$count"); do
         word="${WORD_LIST[$((RANDOM % ${#WORD_LIST[@]}))]}"
         if [ -z "$passphrase" ]; then
@@ -277,12 +278,12 @@ generate_passphrase() {
             passphrase="${passphrase}${separator}${word}"
         fi
     done
-
+# ...
     passphrase="${passphrase}${separator}$((RANDOM % 100))"
-
+# ...
     echo "$passphrase"
 }
-
+# ...
 echo "=== 口令短语生成器 ==="
 echo "默认(4词): $(generate_passphrase)"
 echo "6词:       $(generate_passphrase 6)"
@@ -299,9 +300,9 @@ echo "下划线分隔: $(generate_passphrase 4 '_')"
 ```python
 #!/usr/bin/env python3
 """PIN码生成器"""
-
+# ...
 import secrets
-
+# ...
 def generate_pins(count=5, length=6):
     """批量生成PIN码"""
     pins = []
@@ -309,13 +310,13 @@ def generate_pins(count=5, length=6):
         pin = ''.join(str(secrets.randbelow(10)) for _ in range(length))
         pins.append(pin)
     return pins
-
+# ...
 if __name__ == "__main__":
     print("=== PIN码生成器 ===")
     print("6位PIN码:")
     for pin in generate_pins(5, 6):
         print(f"  {pin}")
-
+# ...
     print("\n4位PIN码:")
     for pin in generate_pins(5, 4):
         print(f"  {pin}")
@@ -332,19 +333,19 @@ if __name__ == "__main__":
 ```python
 #!/usr/bin/env python3
 """新账户密码创建"""
-
+# ...
 from password_generator import PasswordGenerator
 from strength_checker import PasswordStrengthChecker
-
+# ...
 def create_account_password(site_name, length=16):
     """为新账户创建安全密码"""
     gen = PasswordGenerator()
     checker = PasswordStrengthChecker()
-
+# ...
     password = gen.generate(length=length, exclude_similar=True)
-
+# ...
     strength = checker.check(password)
-
+# ...
     return {
         "site": site_name,
         "password": password,
@@ -352,7 +353,7 @@ def create_account_password(site_name, length=16):
         "strength": strength["label"],
         "score": strength["score"]
     }
-
+# ...
 result = create_account_password("example.com", 16)
 print(f"网站: {result['site']}")
 print(f"密码: {result['password']}")
@@ -364,16 +365,16 @@ print(f"强度: {result['strength']} ({result['score']}/100)")
 #!/bin/bash
 echo "=== 密码强度审计 ==="
 echo ""
-
+# ...
 while IFS= read -r password; do
     [ -z "$password" ] && continue
-
+# ...
     LENGTH=${#password}
     HAS_LOWER=$(echo "$password" | grep -c '[a-z]')
     HAS_UPPER=$(echo "$password" | grep -c '[A-Z]')
     HAS_DIGIT=$(echo "$password" | grep -c '[0-9]')
     HAS_SYMBOL=$(echo "$password" | grep -c '[!@#$%^&*]')
-
+# ...
     SCORE=0
     [ "$LENGTH" -ge 12 ] && SCORE=$((SCORE + 30))
     [ "$LENGTH" -ge 16 ] && SCORE=$((SCORE + 10))
@@ -381,7 +382,7 @@ while IFS= read -r password; do
     [ "$HAS_UPPER" -gt 0 ] && SCORE=$((SCORE + 10))
     [ "$HAS_DIGIT" -gt 0 ] && SCORE=$((SCORE + 10))
     [ "$HAS_SYMBOL" -gt 0 ] && SCORE=$((SCORE + 10))
-
+# ...
     if [ "$SCORE" -ge 70 ]; then
         LEVEL="强"
     elif [ "$SCORE" -ge 50 ]; then
@@ -389,7 +390,7 @@ while IFS= read -r password; do
     else
         LEVEL="弱"
     fi
-
+# ...
     echo "密码(长度${LENGTH}): ${LEVEL} (${SCORE}/100)"
 done < passwords.txt
 ```
@@ -398,23 +399,23 @@ done < passwords.txt
 ```python
 #!/usr/bin/env python3
 """易记口令短语生成"""
-
+# ...
 from password_generator import PasswordGenerator
-
+# ...
 def generate_memorable_password():
     """生成易记但安全的口令"""
     gen = PasswordGenerator()
-
+# ...
     passphrase = gen.generate_passphrase(word_count=4, separator='-')
     print(f"口令短语: {passphrase}")
-
+# ...
     passphrase2 = gen.generate_passphrase(word_count=3, separator='_')
     print(f"下划线口令: {passphrase2}#")
-
+# ...
     words = passphrase.split('-')[:4]
     acronym = ''.join(w[0].upper() for w in words)
     print(f"首字母缩写: {acronym}2026!")
-
+# ...
 generate_memorable_password()
 ```
 
@@ -451,7 +452,7 @@ print(gen.generate_passphrase())
 ## 配置示例
 ### 密码生成参数
 | 参数 | 默认值 | 说明 |
-|:-----|:-------|:-----|
+|---:|---:|---:|
 | length | 16 | 密码长度 |
 | use_lower | True | 包含小写字母 |
 | use_upper | True | 包含大写字母 |
@@ -461,7 +462,7 @@ print(gen.generate_passphrase())
 
 ### 强度评分标准
 | 评分范围 | 等级 | 说明 |
-|:---------|:-----|:-----|
+|:---:|:---:|:---:|
 | 80-100 | 强 | 密码安全 |
 | 60-79 | 中 | 基本安全,可改进 |
 | 40-59 | 弱 | 不够安全,建议更换 |
@@ -469,7 +470,7 @@ print(gen.generate_passphrase())
 
 ### 密码类型对比
 | 类型 | 示例 | 强度 | 易记性 |
-|:-----|:-----|:-----|:-------|
+|:------|------:|:------|:------|
 | 随机密码 | Tr0ub4dour&3 | 高 | 低 |
 | 口令短语 | correct-horse-staple | 高 | 高 |
 | PIN码 | 482917 | 低 | 中 |
@@ -505,7 +506,7 @@ print(gen.generate_passphrase())
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | python3 | 运行时 | 推荐 | python.org 下载 |
 | secrets | 随机数 | 必需 | Python标准库 |
 | string | 字符集 | 必需 | Python标准库 |
@@ -522,7 +523,7 @@ print(gen.generate_passphrase())
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

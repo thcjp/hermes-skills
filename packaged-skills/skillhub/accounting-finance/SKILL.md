@@ -24,13 +24,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
 ---
 # 财务分析专业套件
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 财务分析专业套件企业级财务分析 | 不支持 | 支持 |
 | 财务分析专业套件与估值建模 | 不支持 | 支持 |
@@ -42,7 +44,6 @@ pricing_model: "per_use"
 
 ### 一、估值建模（14个技能）
 
-
 **输入**: 用户提供一、估值建模（14个技能）所需的指令和必要参数。
 **处理**: 解析一、估值建模（14个技能）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回一、估值建模（14个技能）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
@@ -50,7 +51,7 @@ pricing_model: "per_use"
 ### DCF估值模型
 
 | 技能 | 用途 | PRO版增强 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `dcf-zero-growth` | DCF零增长模型 | 支持概率加权情景分析 |
 | `dcf-constant-growth` | DCF恒定增长模型 | 多期增长率分段 |
 | `dcf-two-stage` | DCF二阶段模型 | 蒙特卡洛模拟 |
@@ -59,7 +60,7 @@ pricing_model: "per_use"
 #### 可比估值模型
 
 | 技能 | 用途 | 关键指标 |
-| --: | --: | --: |
+|---:|---:|---:|
 | `pe-valuation` | 市盈率估值 | 滚动/预期PE对比 |
 | `pb-valuation` | 市净率估值 | 账面价值调整 |
 | `ps-valuation` | 市销率估值 | 收入质量调整 |
@@ -68,7 +69,7 @@ pricing_model: "per_use"
 #### 资本成本与行业特化估值（PRO专属）
 
 | 技能 | 用途 | 输出结果 |
-| :-- | :-- | :-- |
+|:---:|:---:|:---:|
 | `wacc-calculation` | 加权平均资本成本 | WACC、折现率、资本结构优化 |
 | `cost-of-equity-capm` | 股权成本（CAPM） | Beta校准、预期收益率 |
 | `bank-valuation` | 银行估值 | 剩余收益模型、P/PPOP |
@@ -80,7 +81,7 @@ pricing_model: "per_use"
 #### 财务比率与盈利分析
 
 | 技能2 | 用途 | PRO版增强 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | `financial-ratio-framework` | 财务比率综合分析 | 五维比率+同业百分位 |
 | `dupont-five-factor` | 杜邦五因素分析 | 多期对比与归因 |
 | `roe-analysis` | ROE分析 | 分解至经营杠杆 |
@@ -93,7 +94,7 @@ pricing_model: "per_use"
 #### 现金流分析（PRO完整版）
 
 | 技能 | 用途 | 现金流类型 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | `cashflow-forecasting` | 现金流预测 | 未来现金流建模 |
 | `free-cashflow-calculation` | 自由现金流计算 | FCFF/FCFE |
 | `operating-cashflow-analysis` | 经营现金流分析 | 核心经营活动 |
@@ -106,7 +107,7 @@ pricing_model: "per_use"
 #### 资产结构与报表处理（PRO专属）
 
 | 技能 | 用途 | 分析对象 |
-| --: | :-- | :-: |
+|:------:|--------|:-------|
 | `asset-structure-analysis` | 资产结构分析 | 资产配置优化 |
 | `asset-capital-matching` | 资产资本匹配 | 期限匹配评估 |
 | `capital-structure-analysis` | 资本结构分析 | 债务/股权优化 |
@@ -120,7 +121,7 @@ pricing_model: "per_use"
 #### 可比公司与竞争分析
 
 | 技能 | 用途 | 功能 |
-| :-- | :-: | --- |
+|----|:--:|---:|
 | `peer-selection` | 可比公司筛选 | 智能对标选择 |
 | `peer-comparison-analysis` | 可比公司分析 | 横向对比矩阵 |
 | `industry-benchmarking` | 行业基准对比 | 行业百分位 |
@@ -132,7 +133,7 @@ pricing_model: "per_use"
 #### 风险检测与质量评估
 
 | 技能3 | 用途 | PRO版增强 |
-| :-: | --- | --: |
+|----|----|----|
 | `fraud-risk-detection` | 欺诈风险检测 | Beneish模型集成 |
 | `liquidity-risk-assessment` | 流动性风险评估 | 压力测试 |
 | `sensitivity-analysis` | 敏感性分析 | 多变量蒙特卡洛 |
@@ -144,7 +145,7 @@ pricing_model: "per_use"
 #### 特殊事项分析（PRO专属）
 
 | 技能 | 用途 | 关注点 |
-| --- | --: | :-- |
+|:-----|:-----|:-----|
 | `related-party-transaction-analysis` | 关联交易分析 | 利益输送识别 |
 | `audit-report-analysis` | 审计报告分析 | 审计意见解读 |
 | `accounting-policy-analysis` | 会计政策分析 | 政策选择影响 |
@@ -154,7 +155,7 @@ pricing_model: "per_use"
 #### 决策支持
 
 | 技能 | 用途 | 输出 |
-| --: | :-- | :-: |
+|---:|---:|---:|
 | `trend-analysis` | 趋势分析 | 时间序列预测 |
 | `investment-thesis-generation` | 投资论点生成 | 多情景投资建议 |
 | `portfolio-tracking` | 投资组合跟踪 | 组合批量监控 |
@@ -221,7 +222,7 @@ PRO执行流程：
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-- | :-: | --- | --: |
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | numpy | Python库 | 必需 | `pip install numpy` |
@@ -234,7 +235,7 @@ PRO执行流程：
 ### API Key 配置
 
 | 数据源 | 环境变量 | 用途 |
-| :-: | --- | --: |
+|:------|------:|:------|
 | Wind | `WIND_API_KEY` | 中国市场财务数据 |
 | Bloomberg | `BLOOMBERG_API_KEY` | 全球市场财务数据 |
 | 同花顺 | `THS_API_KEY` | A股行情与基本面 |
@@ -253,7 +254,7 @@ PRO执行流程：
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --- | --: | :-- | :-: |
+|---:|:---|---:|---:|
 | content | string | 否 | accounting-finance处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -300,17 +301,16 @@ PRO执行流程：
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --: | :-- | :-: |
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-| :-- | :-: | --- | --: |
+|----|:--:|---:|----|
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
@@ -386,9 +386,8 @@ PRO版支持单批次最多100只标的的并行分析。建议根据数据源AP
 
 ## 错误处理
 
-
 | 错误场景2 | 原因 | 处理方式 |
-| :-: | --- | --: |
+|-----|-----|-----|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

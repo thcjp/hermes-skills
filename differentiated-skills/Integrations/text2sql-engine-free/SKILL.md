@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 自然语言转SQL引擎（免费版）
 
 ## 概述
@@ -32,7 +33,7 @@ suggested_price: 19.9
 ## 核心能力
 
 | 能力模块 | 说明 | 免费版支持 |
-|:---------|:-----|:-----------|
+|----|---|-----|
 | 自然语言意图解析 | 将描述映射为SQL子句 | 是 |
 | Schema自动识别 | 从CREATE TABLE/DESCRIBE提取结构 | 是 |
 | 单表查询生成 | SELECT/WHERE/ORDER BY/GROUP BY | 是 |
@@ -98,7 +99,7 @@ CREATE TABLE users (
     vip_level INT DEFAULT 0,
     created_at TIMESTAMP
 );
-
+# ...
 CREATE TABLE orders (
     id BIGINT PRIMARY KEY,
     user_id BIGINT REFERENCES users(id),
@@ -145,7 +146,7 @@ LIMIT 20;
 ### 自然语言到SQL子句映射表
 
 | 自然语言关键词 | SQL子句 | 示例 |
-|:---------------|:--------|:-----|
+|:--------|:--------|:--------|
 | "全部"、"所有"、"完整列表" | `SELECT *` | 查询所有用户 -> `SELECT * FROM users` |
 | "仅"、"只要"、"指定字段" | `SELECT [字段]` | 只要姓名和邮箱 -> `SELECT name, email` |
 | "满足...条件"、"其中" | `WHERE` | 满足VIP等级>2 -> `WHERE vip_level > 2` |
@@ -165,7 +166,7 @@ LIMIT 20;
 ### JOIN类型选择规则
 
 | 场景描述 | JOIN类型 | 理由 |
-|:---------|:---------|:-----|
+|---:|---:|---:|
 | "同时有"、"关联的" | `INNER JOIN` | 只返回两表都匹配的记录 |
 | "包括没有...的" | `LEFT JOIN` | 保留左表所有记录 |
 | "每个...及其" | `LEFT JOIN` | 确保主表完整 |
@@ -177,11 +178,11 @@ LIMIT 20;
 -- PostgreSQL: 使用DATE_TRUNC
 SELECT DATE_TRUNC('month', created_at), COUNT(*)
 FROM orders GROUP BY 1;
-
+# ...
 -- MySQL: 使用DATE_FORMAT
 SELECT DATE_FORMAT(created_at, '%Y-%m-01'), COUNT(*)
 FROM orders GROUP BY 1;
-
+# ...
 -- SQLite: 使用strftime
 SELECT strftime('%Y-%m-01', created_at), COUNT(*)
 FROM orders GROUP BY 1;
@@ -210,7 +211,7 @@ FROM orders GROUP BY 1;
 ### 错误恢复策略
 
 | 错误类型 | 原因 | 恢复策略 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | 字段不存在 | Schema未提供或拼写错误 | 提示用户提供完整Schema，列出相似字段名 |
 | JOIN条件缺失 | 未提供外键关系 | 询问用户哪个字段关联两表 |
 | 语法错误 | 方言不兼容 | 确认目标数据库类型，切换对应方言 |
@@ -249,7 +250,7 @@ A：(1) 提供尽可能详细的Schema信息，包括字段类型和外键关系
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | `PostgreSQL` | 数据库 | 可选 | 官方安装或云服务 |
 | MySQL | 数据库 | 可选 | 官方安装或云服务 |
@@ -278,9 +279,8 @@ A：(1) 提供尽可能详细的Schema信息，包括字段类型和外键关系
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

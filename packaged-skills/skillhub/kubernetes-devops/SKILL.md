@@ -17,17 +17,20 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
 ---
 # Kubernetes
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| This is a coherent Kubernetes manifest helper | 支持 | 支持 |
-| its main risk is that | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 高级参数配置与自定义规则 | 不支持 | 支持 |
+| 批量任务编排与队列管理 | 不支持 | 支持 |
+| 结果导出与多格式转换 | 不支持 | 支持 |
+| 实时状态监控与异常告警 | 不支持 | 支持 |
+| 历史记录回溯与差异对比 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -38,7 +41,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -53,7 +56,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | kubernetes-devops处理的内容输入 |,  |
 | content | string | 否 | kubernetes-devops处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -82,7 +85,7 @@ pricing_model: "per_use"
 ## 异常处理
 
 | Problem | Diagnosis | Fix |
-| --- | --- | --- |
+|:------:|:------:|:------:|
 | Pod stuck `Pending` | `kubectl describe pod` — check events | Fix resource requests, node capacity, PVC binding |
 | `ImagePullBackOff` | Wrong image name/tag or missing pull secret | Verify image exists, add `imagePullSecrets` |
 | `CrashLoopBackOff` | App crashes on start | Check logs: `kubectl logs <pod> --previous` |
@@ -97,9 +100,9 @@ pricing_model: "per_use"
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -108,7 +111,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -121,17 +123,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Kubernetes？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Kubernetes有什么限制？
-A: 
-
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

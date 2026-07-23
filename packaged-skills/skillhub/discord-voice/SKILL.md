@@ -38,16 +38,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
 ---
 # Discord 语音助手
 
 在 Discord 语音频道中实现端到端语音对话:VAD 检测说话 → 录音缓冲 → STT 转写 → Agent 处理 → TTS 合成 → 频道播放。支持打断响应与自动重连,提供斜杠命令、CLI、Agent Tool 三种入口。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Discord语音助手处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -55,13 +56,13 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 核心能力
 ### 1. 先验证系统依赖与 Bot 权限
@@ -78,7 +79,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 **输出**: 返回先验证系统依赖与 Bot 权限的处理结果,包含执行状态码、结果数据和执行日志。
 ### 2. STT/TTS 引擎必须配置 API Key
 | 引擎 | 类型 | 必需环境变量 |
-|------|------|-------------|
+|---:|---:|---:|
 | Whisper API | STT | `OPENAI_API_KEY` |
 | Deepgram | STT | `DEEPGRAM_API_KEY` |
 | Local Whisper | STT | 无需 API Key,需本地模型 |
@@ -96,7 +97,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:---:|:---:|:---:|
 | 社区语音问答 | 用户在语音频道提问 | STT 转写 + Agent 回复 + TTS 合成播放 |
 | 直播间实时字幕 | 主播语音流 | 流式转写文本(延迟约 1 秒) |
 | 无障碍对话辅助 | 听障用户文字输入 | TTS 合成语音在频道播放 |
@@ -110,7 +111,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -137,7 +138,7 @@ export API_KEY="your_api_key_here"
 ## 核心配置
 
 | 选项 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
+|---:|:---|---:|---:|
 | `enabled` | boolean | `true` | 启用/禁用插件 |
 | `sttProvider` | string | `"local-whisper"` | `"whisper"` / `"deepgram"` / `"local-whisper"` |
 | `streamingSTT` | boolean | `true` | 流式 STT(仅 Deepgram,延迟降低约 1 秒) |
@@ -214,20 +215,20 @@ discord_voice status
 #     }
 #   }
 # }
-
+# ...
 # 2. 加入语音频道
 agent-cli discord_voice join 1234567890123456
 # 输出: [discord-voice] Joined channel "General" (1234567890123456)
-
+# ...
 # 3. 用户说话 -> VAD 检测 -> STT 转写
 # 日志: [discord-voice] VAD: speech started
 # 日志: [discord-voice] VAD: speech ended (duration: 4.2s)
 # 日志: [discord-voice] STT: "如何用 Python 读取 CSV 文件?"
-
+# ...
 # 4. Agent 处理 -> TTS 合成 -> 频道播放
 # 日志: [discord-voice] TTS: synthesizing 87 chars
 # 日志: [discord-voice] Playing audio (3.1s)
-
+# ...
 # 5. 查看状态
 agent-cli discord_voice status
 # 输出: Connected to "General" | Latency: 89ms | Uptime: 12m
@@ -251,14 +252,14 @@ agent-cli discord_voice status
 #     }
 #   }
 # }
-
+# ...
 # 2. 加入频道并启用流式转录
 agent-cli discord_voice join 1234567890123456
 # 日志: [discord-voice] Streaming STT enabled (Deepgram nova-2)
 # 日志: [discord-voice] Interim: "欢迎来到"
 # 日志: [discord-voice] Interim: "欢迎来到今天的"
 # 日志: [discord-voice] Final:  "欢迎来到今天的直播"
-
+# ...
 # 3. 流式失败时自动降级为批量转录
 # 日志: [discord-voice] Streaming STT failed, fallback to batch
 ```
@@ -272,11 +273,11 @@ agent-cli discord_voice join 1234567890123456
 ```text
 # 用户通过 Agent Tool 输入文本
 discord_voice speak "大家好,我是新成员,请多关照"
-
+# ...
 # Bot 合成并播放
 # 日志: [discord-voice] TTS: synthesizing 18 chars
 # 日志: [discord-voice] Playing audio (2.4s)
-
+# ...
 # 其他成员语音回复时,Bot 转写为文字显示给听障用户
 # 日志: [discord-voice] STT: "欢迎加入!有问题随时问"
 ```
@@ -285,9 +286,8 @@ discord_voice speak "大家好,我是新成员,请多关照"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | `Discord client not available` | Discord 频道未配置或 Bot 未连接 | 检查 `DISCORD_TOKEN` 与频道配置,重启 gateway |
 | Opus/Sodium build errors | 缺少原生编译工具 | `npm install -g node-gyp` 后 `npm rebuild @discordjs/opus sodium-native` |
 | No audio heard | Bot 缺少 Speak 权限或被服务器静音 | 在 Developer Portal 勾选 Speak;检查服务器是否 mute 了 Bot |

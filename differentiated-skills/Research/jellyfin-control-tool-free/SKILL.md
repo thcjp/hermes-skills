@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 媒体服务器控制（免费版）
 
 ## 概述
@@ -56,7 +57,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 一键播放 | 搜索并自动播放 | 是 |
 | 智能续播 | 记忆观看进度 | 是 |
 | 设备发现 | 检测可控设备 | 是 |
@@ -125,7 +126,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 媒体服务器控制处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -153,7 +154,7 @@ node skills/jellyfin-control/cli.js tv play "The Matrix"
 ```bash
 # 续播
 node skills/jellyfin-control/cli.js resume "Breaking Bad"
-
+# ...
 # 指定设备续播
 node skills/jellyfin-control/cli.js resume "Matrix" --device "Chromecast"
 ```
@@ -223,7 +224,7 @@ node skills/jellyfin-control/cli.js resume "Matrix" --device "Chromecast"
 ```bash
 # 搜索内容验证
 node skills/jellyfin-control/cli.js search "Star Wars"
-
+# ...
 # 查看媒体库统计
 node skills/jellyfin-control/cli.js stats
 ```
@@ -238,7 +239,7 @@ node skills/jellyfin-control/cli.js stats
 #### Jellyfin 配置（必需）
 
 | 变量 | 必需 | 说明 |
-| --- | --- | --- |
+|---:|---:|---:|
 | `JF_URL` | 是 | Jellyfin 服务器地址 |
 | `JF_API_KEY` | 是 | API 密钥 |
 | `JF_USER` | 否 | 用户名 |
@@ -248,7 +249,7 @@ node skills/jellyfin-control/cli.js stats
 #### 电视控制配置（可选）
 
 | 变量 | 说明 |
-| --- | --- |
+|:---:|:---:|
 | `TV_BACKEND` | 强制后端：homeassistant/webos/androidtv/auto |
 | `HA_URL` | Home Assistant URL |
 | `HA_TOKEN` | HA 长期访问令牌 |
@@ -259,7 +260,7 @@ node skills/jellyfin-control/cli.js stats
 ### 电视后端选择
 
 | 后端 | 支持设备 | 额外依赖 |
-| --- | --- | --- |
+|:------|------:|:------|
 | Home Assistant | 任意品牌 | 需 HA 服务 |
 | WebOS 直连 | LG 电视 | `npm install ws` |
 | ADB 直连 | Android TV/Fire TV | `apt install adb` |
@@ -289,13 +290,13 @@ node skills/jellyfin-control/cli.js stats
 node skills/jellyfin-control/cli.js tv on           # 开启电视
 node skills/jellyfin-control/cli.js tv off          # 关闭电视
 node skills/jellyfin-control/cli.js tv launch       # 启动 Jellyfin 应用
-
+# ...
 # 播放控制
 node skills/jellyfin-control/cli.js control pause    # 暂停
 node skills/jellyfin-control/cli.js control play     # 播放
 node skills/jellyfin-control/cli.js control next     # 下一集
 node skills/jellyfin-control/cli.js control vol 50   # 音量 50%
-
+# ...
 # 内容搜索
 node skills/jellyfin-control/cli.js search "Star Wars"
 ```
@@ -303,7 +304,7 @@ node skills/jellyfin-control/cli.js search "Star Wars"
 ### 后端选择建议
 
 | 情况 | 推荐后端 |
-| --- | --- |
+|---:|:---|
 | 已有 Home Assistant | HA 后端（最通用） |
 | LG 电视，无 HA | WebOS 直连 |
 | Android TV，无 HA | ADB 直连 |
@@ -316,10 +317,10 @@ node skills/jellyfin-control/cli.js search "Star Wars"
 ```bash
 # 检查服务器状态
 curl http://YOUR_IP:8096/health
-
+# ...
 # 验证 API Key
 curl -H "X-Emby-Token: YOUR_API_KEY" http://YOUR_IP:8096/System/Info
-
+# ...
 # 检查网络连通性
 ping YOUR_IP
 ```
@@ -329,10 +330,10 @@ ping YOUR_IP
 ```bash
 # 检查 MAC 地址配置
 echo $TV_MAC
-
+# ...
 # 验证 Wake-on-LAN
 node skills/jellyfin-control/cli.js tv on --debug
-
+# ...
 # 手动开启电视后重试
 ```
 
@@ -341,10 +342,10 @@ node skills/jellyfin-control/cli.js tv on --debug
 ```bash
 # 搜索内容确认存在
 node skills/jellyfin-control/cli.js search "内容名称"
-
+# ...
 # 尝试模糊搜索
 node skills/jellyfin-control/cli.js search "Matrix"
-
+# ...
 # 查看媒体库统计
 node skills/jellyfin-control/cli.js stats
 ```
@@ -354,7 +355,7 @@ node skills/jellyfin-control/cli.js stats
 ```bash
 # 检查 HA 服务状态
 curl http://HA_URL/api/
-
+# ...
 # 验证令牌
 curl -H "Authorization: Bearer YOUR_TOKEN" http://HA_URL/api/states
 ```
@@ -371,7 +372,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" http://HA_URL/api/states
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:------:|--------|:-------|:------:|
 | Node.js 14+ | 运行时 | 是 | `nodejs.org` 下载 |
 | Jellyfin 服务器 | 媒体服务 | 是 | `jellyfin.org` 部署 |
 | ws | WebSocket 库 | 否（WebOS 时） | `npm install ws` |
@@ -385,7 +386,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" http://HA_URL/api/states
 # Jellyfin API Key
 # 获取方式：Jellyfin 控制台 → 高级 → API 密钥
 JF_API_KEY=your_jellyfin_api_key
-
+# ...
 # Home Assistant 令牌（如使用 HA）
 # 获取方式：HA → 个人资料 → 长期访问令牌
 HA_TOKEN=your_ha_long_lived_token
@@ -401,9 +402,8 @@ HA_TOKEN=your_ha_long_lived_token
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

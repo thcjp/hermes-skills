@@ -50,6 +50,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 内容归档工具(专业版)
 
@@ -60,7 +62,7 @@ pricing_model: "per_use"
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---|---|---|
 | 完整内容提取 | 支持 | 支持 |
 | 语义标签与搜索 | 支持 | 支持 |
 | 主动召回 | 支持 | 支持 |
@@ -80,7 +82,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 内容归档工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -88,13 +90,13 @@ pricing_model: "per_use"
 ```bash
 # 初始化团队共享归档库
 archive pro init --shared /shared/archive --team "research-team"
-
+# ...
 # 推送本地归档到共享库
 archive pro sync --push
-
+# ...
 # 拉取团队最新归档
 archive pro sync --pull
-
+# ...
 # 查看团队成员与贡献
 archive pro team list
 archive pro team stats --member alice
@@ -110,13 +112,13 @@ archive pro team stats --member alice
 ```bash
 # 为归档条目自动生成摘要
 archive pro summarize --id 2026-02-16-pricing-strategy
-
+# ...
 # 批量生成摘要
 archive pro summarize --batch --tag pricing
-
+# ...
 # 提取关键词
 archive pro keywords --id 2026-02-16-pricing-strategy --top 10
-
+# ...
 # 生成项目综述
 archive pro digest --project my-project --length 800
 ```
@@ -131,13 +133,13 @@ archive pro digest --project my-project --length 800
 ```bash
 # 查看条目历史版本
 archive pro history --id 2026-02-16-pricing-strategy
-
+# ...
 # 回滚到历史版本
 archive pro rollback --id 2026-02-16-pricing-strategy --version 2
-
+# ...
 # 对比版本差异
 archive pro diff --id 2026-02-16-pricing-strategy --v1 1 --v2 3
-
+# ...
 # 查看变更日志
 archive pro changelog --project my-project
 ```
@@ -152,13 +154,13 @@ archive pro changelog --project my-project
 ```bash
 # 全文检索
 archive pro search "定价策略" --full-text
-
+# ...
 # 高级筛选
 archive pro search --type article --tag pricing --from 2026-01 --to 2026-03
-
+# ...
 # 按作者检索
 archive pro search --author "张三"
-
+# ...
 # 按项目检索
 archive pro search --project my-project --sort relevance
 ```
@@ -173,7 +175,7 @@ archive pro search --project my-project --sort relevance
 ```bash
 # 启用 API 服务
 archive pro api start --port 8080
-
+# ...
 # 示例
 curl -s http://localhost:8080/api/search?q=定价
 curl -s http://localhost:8080/api/items/2026-02-16-pricing-strategy
@@ -190,11 +192,11 @@ curl -s -X POST http://localhost:8080/api/items -d '{"url":"...","tags":["..."]}
 ```bash
 # 设置条目权限
 archive pro permission set --id 2026-02-16-pricing-strategy --team research --read --write
-
+# ...
 # 按项目设置权限
 archive pro permission set --project confidential --team core --read --write
 archive pro permission set --project confidential --team all --deny
-
+# ...
 # 查看操作日志
 archive pro audit log --limit 50 --member alice
 ```
@@ -217,25 +219,25 @@ archive pro audit log --limit 50 --member alice
 # compliance-archive.sh - 合规性内容归档
 PROJECT="compliance-2026"
 DATE=$(date +%Y-%m-%d)
-
+# ...
 # 1. 归档合规相关内容(自动提取全文)
 archive add --url "$1" \
   --project "$PROJECT" \
   --why "合规留存:$(date +%Y-%m-%d)" \
   --tags "compliance,legal,$DATE" \
   --immutable                          # 标记为不可变
-
+# ...
 # 2. 自动生成摘要与关键词
 archive pro summarize --latest
 archive pro keywords --latest --top 10
-
+# ...
 # 3. 设置权限(仅合规团队可读)
 archive pro permission set --latest --team compliance --read
 archive pro permission set --latest --team all --deny
-
+# ...
 # 4. 记录审计日志
 archive pro audit log --action archive --project "$PROJECT"
-
+# ...
 echo "合规内容已归档(不可变),权限已设置"
 ```
 
@@ -248,13 +250,13 @@ echo "合规内容已归档(不可变),权限已设置"
 # team-research-archive.sh - 团队研究归档协作
 SHARED_ARCHIVE="/shared/research-archive"
 PROJECT="ai-agent-research"
-
+# ...
 # 1. 初始化共享归档库
 archive pro init --shared "$SHARED_ARCHIVE" --team "research-team"
-
+# ...
 # 2. 设置项目权限:研究团队可读写
 archive pro permission set --project "$PROJECT" --team research --read --write
-
+# ...
 # 3. 成员A:归档新资料
 archive add --url "https://example.com/paper" \
   --project "$PROJECT" \
@@ -262,14 +264,14 @@ archive add --url "https://example.com/paper" \
   --tags "ai,agent,architecture"
 archive pro summarize --latest
 archive pro sync --push
-
+# ...
 # 4. 成员B:拉取最新归档
 archive pro sync --pull
 archive pro search "智能体架构" --project "$PROJECT"
-
+# ...
 # 5. 生成项目综述
 archive pro digest --project "$PROJECT" --length 1000 > "reports/${PROJECT}-digest.md"
-
+# ...
 echo "团队归档协作完成"
 archive pro team stats
 ```
@@ -283,11 +285,11 @@ archive pro team stats
 """第三方系统归档集成示例"""
 import requests
 import json
-
+# ...
 ARCHIVE_API = "http://localhost:8080/api"
 API_KEY = "your-api-key"
 HEADERS = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
-
+# ...
 def archive_content(url, project, why, tags):
     """归档内容到归档库"""
     response = requests.post(f"{ARCHIVE_API}/items", headers=HEADERS, json={
@@ -299,7 +301,7 @@ def archive_content(url, project, why, tags):
         "auto_keywords": True
     })
     return response.json()
-
+# ...
 def search_archive(query, project=None, limit=10):
     """全文检索归档库"""
     params = {"q": query, "limit": limit}
@@ -307,19 +309,19 @@ def search_archive(query, project=None, limit=10):
         params["project"] = project
     response = requests.get(f"{ARCHIVE_API}/search", headers=HEADERS, params=params)
     return response.json()
-
+# ...
 def get_item_with_summary(item_id):
     """获取归档条目(含 AI 摘要)"""
     response = requests.get(f"{ARCHIVE_API}/items/{item_id}", headers=HEADERS)
     return response.json()
-
+# ...
 # 示例:归档一批研究资料
 research_urls = [
     {"url": "https://example.com/ai-paper-1", "why": "AI智能体基础理论", "tags": ["ai", "theory"]},
     {"url": "https://example.com/ai-paper-2", "why": "多智能体协作", "tags": ["ai", "collaboration"]},
     {"url": "https://example.com/ai-paper-3", "why": "智能体评估方法", "tags": ["ai", "evaluation"]},
 ]
-
+# ...
 for item in research_urls:
     result = archive_content(
         url=item["url"],
@@ -328,7 +330,7 @@ for item in research_urls:
         tags=item["tags"]
     )
     print(f"[已归档] {item['url']} -> ID: {result['id']}")
-
+# ...
 # 全文检索
 results = search_archive("多智能体协作", project="ai-research")
 print(f"\n检索结果: {len(results['items'])} 条")
@@ -349,7 +351,7 @@ for item in results["items"]:
 ```bash
 # 专业版初始化(保留免费版数据)
 archive pro init --migrate
-
+# ...
 # 配置团队共享
 archive pro config set shared.path /shared/archive
 archive pro config set team.name research-team
@@ -364,11 +366,11 @@ archive pro config set api.enabled true
 archive add --url https://example.com/article --project research --why "研究用途"
 archive pro summarize --latest
 archive pro sync --push
-
+# ...
 # 成员B:拉取并检索
 archive pro sync --pull
 archive pro search "研究主题" --project research
-
+# ...
 # 生成项目综述
 archive pro digest --project research --length 800
 ```
@@ -378,10 +380,10 @@ archive pro digest --project research --length 800
 ```bash
 # 启动 API 服务
 archive pro api start --port 8080 --auth token
-
+# ...
 # 生成 API Token
 archive pro api token create --name "integration" --scope "read,write"
-
+# ...
 # 验证 API
 curl -s -H "Authorization: Bearer <token>" http://localhost:8080/api/health
 ```
@@ -446,7 +448,7 @@ archive pro stats
 # 全文索引覆盖率: 98%
 # 团队成员: 8
 # 本月检索: 456 次
-
+# ...
 # 导出统计报告
 archive pro stats --export json > stats.json
 ```
@@ -520,7 +522,7 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 ## 与免费版的兼容性
 
 | 维度 | 兼容性 |
-|:-----|:------|
+|---:|---:|
 | 归档数据格式 | 100% 兼容(专业版可读取免费版归档) |
 | 命令语法 | 100% 兼容(免费版命令在专业版中可用) |
 | 标签与索引 | 100% 兼容(专业版额外扩展全文索引) |
@@ -537,7 +539,7 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | archive(pro) | CLI 工具 | 必需 | 随 Skill 安装 |
 | 全文搜索引擎 | 检索引擎 | 全文检索必需 | 内置或外部服务 |
 | AI 模型 | AI 服务 | AI 摘要必需 | 本地或 API 服务 |
@@ -563,7 +565,7 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

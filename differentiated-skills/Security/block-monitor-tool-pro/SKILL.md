@@ -29,12 +29,14 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
 ---
 专业版为企业提供完整的内容验证与策略管理平台,在免费版黑白名单基础检查之上,新增语义级内容分析、批量验证处理、实时拦截与Webhook告警、20+语言审核、完整审计链与REST API集成。专业版完全兼容免费版检查规则,已有策略配置可无缝升级,适合企业级内容安全治理与合规审计。
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 语义分析 | 理解内容含义,非仅关键词匹配 |
 | 实时拦截 | 毫秒级拦截不当内容 |
 | 批量验证 | 批量处理数千条内容 |
@@ -55,8 +57,6 @@ pricing_model: "monthly"
 
 ### 2. 实时拦截与告警(专业版独有)
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供实时拦截与告警(专业版独有)所需的指令和必要参数。
 **处理**: 解析实时拦截与告警(专业版独有)的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回实时拦截与告警(专业版独有)的响应数据,包含状态码、结果和日志。
@@ -64,7 +64,7 @@ pricing_model: "monthly"
 ### 3. 批量验证处理(专业版独有)
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 内容验证网关专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -73,30 +73,30 @@ pricing_model: "monthly"
 #!/bin/bash
 INPUT_FILE="${1:-contents.json}"
 OUTPUT_FILE="batch_verification_results.json"
-
+# ...
 echo "=== 批量内容验证 ==="
 echo "输入: ${INPUT_FILE}"
 echo ""
-
+# ...
 python3 << 'PYTHON'
 import json
 import sys
 from semantic_analyzer import SemanticContentAnalyzer
-
+# ...
 analyzer = SemanticContentAnalyzer()
-
+# ...
 with open("contents.json", "r", encoding="utf-8") as f:
     contents = json.load(f)
-
+# ...
 results = []
 stats = {"total": 0, "allowed": 0, "blocked": 0, "review": 0}
-
+# ...
 for item in contents:
     content = item.get("content", "")
     context = item.get("context", None)
-
+# ...
     analysis = analyzer.analyze(content, context)
-
+# ...
     results.append({
         "id": item.get("id", ""),
         "content_preview": content[:100],
@@ -104,7 +104,7 @@ for item in contents:
         "recommendation": analysis["recommendation"],
         "categories": [c["label"] for c in analysis["categories"]]
     })
-
+# ...
     stats["total"] += 1
     if analysis["recommendation"] == "ALLOW":
         stats["allowed"] += 1
@@ -112,12 +112,12 @@ for item in contents:
         stats["blocked"] += 1
     else:
         stats["review"] += 1
-
+# ...
 output = {"stats": stats, "results": results}
-
+# ...
 with open("batch_verification_results.json", "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
-
+# ...
 print(f"批量验证完成:")
 print(f"  总数: {stats['total']}")
 print(f"  通过: {stats['allowed']}")
@@ -134,8 +134,6 @@ PYTHON
 
 ### 4. REST API服务(专业版独有)
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供REST API服务(专业版独有)所需的指令和必要参数。
 **处理**: 解析REST API服务(专业版独有)的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回REST API服务(专业版独有)的响应数据,包含状态码、结果和日志。
@@ -146,12 +144,12 @@ PYTHON
 ```python
 #!/usr/bin/env python3
 """企业内容安全治理流程"""
-
+# ...
 import json
-
+# ...
 class EnterpriseContentGovernance:
     """企业内容安全治理"""
-
+# ...
     def __init__(self, analyzer, gateway):
         self.analyzer = analyzer
         self.gateway = gateway
@@ -160,24 +158,24 @@ class EnterpriseContentGovernance:
             "external": {"threshold": "BLOCK"},
             "public": {"threshold": "BLOCK"}
         }
-
+# ...
     def govern_content(self, content, channel="internal"):
         """根据发布渠道执行内容治理"""
         policy = self.policies.get(channel, self.policies["internal"])
-
+# ...
         result = self.gateway.process(content, {"channel": channel})
-
+# ...
         if channel == "public" and result["action"] == "PENDING_REVIEW":
             result["action"] = "BLOCKED"
             result["reason"] = "公开发布内容不允许待审核状态"
-
+# ...
         return result
-
+# ...
     def generate_compliance_report(self):
         """生成合规报告"""
         stats = self.gateway.get_stats()
         audit = self.analyzer.get_audit_trail()
-
+# ...
         return {
             "report_date": datetime.utcnow().isoformat() + "Z",
             "statistics": stats,
@@ -195,10 +193,10 @@ class EnterpriseContentGovernance:
 ```python
 #!/usr/bin/env python3
 """多租户内容策略管理"""
-
+# ...
 class MultiClientPolicyManager:
     """多租户策略管理器"""
-
+# ...
     def __init__(self):
         self.clients = {}  # 租户注册表
     def register_client(self, client_id, config):
@@ -211,24 +209,24 @@ class MultiClientPolicyManager:
             "severity_threshold": config.get("threshold", "HIGH"),
             "language": config.get("language", "zh")
         }
-
+# ...
     def get_client_policy(self, client_id):
         """获取租户策略"""
         return self.clients.get(client_id)
-
+# ...
     def verify_for_client(self, client_id, content):
         """为指定租户验证内容"""
         policy = self.clients.get(client_id)
         if not policy:
             return {"error": "未知租户"}
-
+# ...
         violations = []
         content_lower = content.lower()
-
+# ...
         for term in policy["blocklist"]:
             if term.lower() in content_lower:
                 violations.append({"type": "blocklist", "term": term})
-
+# ...
         return {
             "client": client_id,
             "passed": len(violations) == 0,
@@ -242,11 +240,11 @@ class MultiClientPolicyManager:
 echo "=== 内容安全监控仪表板 ==="
 echo "时间: $(date '+%Y-%m-%d %H:%M:%S')"
 echo ""
-
+# ...
 python3 -c "
 import json
 from content_gateway import ContentGateway
-
+# ...
 stats = {
     'today': {
         'total': 15420,
@@ -266,18 +264,18 @@ stats = {
         {'category': '有害内容', 'count': 45}
     ]
 }
-
+# ...
 print('--- 今日统计 ---')
 print(f\"  总验证: {stats['today']['total']}\")
 print(f\"  通过: {stats['today']['allowed']} ({stats['today']['allowed']*100//stats['today']['total']}%)\")
 print(f\"  拦截: {stats['today']['blocked']}\")
 print(f\"  待审: {stats['today']['reviewed']}\")
-
+# ...
 print()
 print('--- 风险分布 ---')
 for sev, count in stats['risk_distribution'].items():
     print(f'  {sev}: {count}')
-
+# ...
 print()
 print('--- 违规TOP3 ---')
 for v in stats['top_violations']:
@@ -296,7 +294,7 @@ for v in stats['top_violations']:
 ```python
 checker = ContentPolicyChecker()
 result = checker.check_content(content)
-
+# ...
 analyzer = SemanticContentAnalyzer()
 gateway = ContentGateway(analyzer)
 result = gateway.process(content)
@@ -305,7 +303,7 @@ result = gateway.process(content)
 ## 示例
 ### 专业版功能矩阵
 | 功能 | 免费版 | 专业版 | 说明 |
-|:-----|:-------|:-------|:-----|
+|---:|---:|---:|---:|
 | 黑白名单 | 支持 | 支持 | 基础关键词匹配 |
 | 语义分析 | 不支持 | 支持 | 内容含义理解 |
 | 实时拦截 | 不支持 | 支持 | 毫秒级拦截 |
@@ -318,7 +316,7 @@ result = gateway.process(content)
 
 ### 风险评分体系
 | 评分范围 | 建议 | 说明 |
-|:---------|:-----|:-----|
+|:---:|:---:|:---:|
 | 0-39 | ALLOW | 内容安全,允许通过 |
 | 40-79 | REVIEW | 存在风险,需人工审核 |
 | 80+ | BLOCK | 高风险,直接拦截 |
@@ -356,7 +354,7 @@ result = gateway.process(content)
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | python3 | 运行时 | 必需 | python.org 下载 |
 | flask | Web框架 | 推荐 | `pip install flask` |
 | requests | HTTP库 | 推荐 | `pip install requests` |
@@ -375,7 +373,7 @@ result = gateway.process(content)
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

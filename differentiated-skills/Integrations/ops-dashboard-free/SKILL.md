@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 运维看板（免费版）
 
 通过命令行驱动AI Agent执行运维巡检任务，查看会话状态、监控定时任务和检查系统健康度。免费版提供只读监控和基础安全检查功能。
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 免费版支持 | 说明 |
-|:---------|:-----------|:-----|
+|----|-----|---|
 | 会话查看 | 支持 | 列出和查看Agent会话状态 |
 | 定时任务监控 | 支持 | 查看cron任务执行状态 |
 | 健康检查 | 支持 | 网关和服务健康状态检查 |
@@ -99,7 +100,7 @@ suggested_price: 29.9
 ```bash
 # 检查服务是否运行
 curl http://localhost:3000/api/health
-
+# ...
 # 查看帮助
 node api-server.js --help
 ```
@@ -109,16 +110,16 @@ node api-server.js --help
 ```bash
 # 1. 检查服务健康状态
 curl http://localhost:3000/api/health
-
+# ...
 # 2. 查看活跃会话
 curl http://localhost:3000/api/sessions
-
+# ...
 # 3. 查看定时任务状态
 curl http://localhost:3000/api/cron
-
+# ...
 # 4. 查看网关健康
 curl http://localhost:3000/api/gateway/health
-
+# ...
 # 5. 执行安全扫描
 curl http://localhost:3000/api/security/scan
 ```
@@ -136,10 +137,10 @@ curl http://localhost:3000/api/security/scan
 # .env 文件
 DASHBOARD_PORT=3000
 DASHBOARD_HOST=localhost
-
+# ...
 # 认证Token（推荐设置）
 OPS_DASHBOARD_AUTH_TOKEN=your_secure_token_here
-
+# ...
 # CORS配置（默认仅允许本地访问）
 DASHBOARD_CORS_ORIGINS=http://localhost:3000
 ```
@@ -149,13 +150,13 @@ DASHBOARD_CORS_ORIGINS=http://localhost:3000
 ```bash
 # 列出所有会话
 curl http://localhost:3000/api/sessions
-
+# ...
 # 查看指定会话详情
 curl http://localhost:3000/api/sessions/session-id
-
+# ...
 # 查看活跃会话
 curl http://localhost:3000/api/sessions?status=active
-
+# ...
 # 带认证Token的请求
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
      http://localhost:3000/api/sessions
@@ -166,13 +167,13 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 ```bash
 # 查看所有cron任务
 curl http://localhost:3000/api/cron
-
+# ...
 # 查看任务执行历史
 curl http://localhost:3000/api/cron/history
-
+# ...
 # 查看指定任务详情
 curl http://localhost:3000/api/cron/task-name
-
+# ...
 # 查看失败的任务
 curl http://localhost:3000/api/cron?status=failed
 ```
@@ -182,10 +183,10 @@ curl http://localhost:3000/api/cron?status=failed
 ```bash
 # 检查整体健康状态
 curl http://localhost:3000/api/health
-
+# ...
 # 检查网关健康
 curl http://localhost:3000/api/gateway/health
-
+# ...
 # 检查服务依赖
 curl http://localhost:3000/api/health/dependencies
 ```
@@ -195,10 +196,10 @@ curl http://localhost:3000/api/health/dependencies
 ```bash
 # 扫描配置文件中的敏感信息
 curl http://localhost:3000/api/security/scan
-
+# ...
 # 检查环境变量安全性
 curl http://localhost:3000/api/security/env-check
-
+# ...
 # 查看安全配置状态
 curl http://localhost:3000/api/security/config
 ```
@@ -208,10 +209,10 @@ curl http://localhost:3000/api/security/config
 ```bash
 # 查看当前运行配置
 curl http://localhost:3000/api/config
-
+# ...
 # 查看环境变量（脱敏后）
 curl http://localhost:3000/api/config/env
-
+# ...
 # 查看服务信息
 curl http://localhost:3000/api/info
 ```
@@ -258,7 +259,7 @@ curl http://localhost:3000/api/info
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Node.js | 运行时 | 必需 | 从Node.js官网下载安装 |
 | Express | npm包 | 必需 | 通过`npm install express`安装 |
 | curl | 命令行工具 | 必需 | 系统通常自带 |
@@ -291,9 +292,8 @@ curl http://localhost:3000/api/info
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

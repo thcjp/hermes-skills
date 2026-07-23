@@ -26,16 +26,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
 ---
 # AIOZ 音频上传
 
 通过 AIOZ Stream API 将本地音频文件上传至 AIOZ 流媒体平台。完整上传流程包含三次 API 调用：创建音频对象 → 上传文件分片 → 完成上传。上传完成后服务端自动触发转码，最终返回 HLS/DASH 流媒体播放链接。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AIOZ音频上传处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -43,13 +44,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **三步上传流程**：Create → Upload Part → Complete 的标准化上传流程，支持单分片与多分片上传 | 支持 | 支持 |
-| **默认与自定义编码配置**：默认上传快速发布，自定义上传精细控制质量预设、码率、采样率、声道、语言标签 | 不支持 | 支持 |
-| **HLS/DASH 流媒体输出**：上传完成后服务端转码为 HLS 或 DASH 格式，返回自适应流媒体播放链接 | 不支持 | 支持 |
-| **多质量预设支持**：standard、good、highest、lossless 四档质量预设，适配不同播放场景 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| AIOZ音频上传默认与自定义编码配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
 
 ## 认证配置
 
@@ -141,7 +142,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 ```bash
 FILE_SIZE=$(stat -f%z /path/to/audio.mp3 2>/dev/null || stat -c%s /path/to/audio.mp3)
 END_POS=$((FILE_SIZE - 1))
-
+# ...
 HASH=$(md5sum /path/to/audio.mp3 | awk '{print $1}')
 ```
 
@@ -192,7 +193,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID' \
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -326,7 +327,6 @@ export API_KEY="your_api_key_here"
 
 ## 异常处理
 
-
 ### 401 认证失败
 
 API 返回 401 状态码，说明 stream-public-key 或 stream-secret-key 无效。处理方式：提示用户核对 AIOZ Stream 控制台中的公钥与私钥是否正确复制，确认密钥未过期或被撤销。重新提供正确的密钥后上传流程。密钥以 HTTP 请求头形式发送到所有 API 调用，需确保两个密钥均正确。
@@ -387,9 +387,8 @@ tags 是字符串数组，用于音频内容的分类标签，便于按主题检
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

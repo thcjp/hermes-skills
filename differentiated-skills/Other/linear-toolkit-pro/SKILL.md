@@ -41,6 +41,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Linear 工具箱（专业版）
 
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 跨团队看板 | 多团队任务统一视图 | 聚合筛选 |
 | 批量操作 | 批量状态/优先级/指派 | 历史回滚 |
 | 健康度分析 | 吞吐量、周期、瓶颈 | 趋势看板 |
@@ -150,7 +152,6 @@ print(f"健康度: {'良好' if metrics['blocked_ratio']<0.1 else '预警'}")
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 健康度看板配置（`linear-health.json`）：
@@ -175,7 +176,7 @@ print(f"健康度: {'良好' if metrics['blocked_ratio']<0.1 else '预警'}")
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 命令 | 相同 | 相同（可编排） |
 | 范围 | 单团队 | 跨团队 |
 | 分析 | 站会摘要 | 健康度看板 |
@@ -205,10 +206,10 @@ A：有。专业版享工作流设计与健康度建模咨询。
 ```bash
 # 聚合多团队按状态
 {baseDir}/（请参考skill目录中的脚本文件） board --teams A,B,C --status progress
-
+# ...
 # 按优先级聚合
 {baseDir}/（请参考skill目录中的脚本文件） board --teams A,B,C --priority urgent,high
-
+# ...
 # 阻塞项专项
 {baseDir}/（请参考skill目录中的脚本文件） board --teams A,B,C --blocked
 ```
@@ -223,7 +224,7 @@ def health(metrics):
     score -= max(0, metrics["blocked_ratio"] - 0.1) * 200  # 阻塞率超 10% 扣分
     score -= max(0, metrics["avg_cycle_days"] - 5) * 3     # 周期超 5 天扣分
     return max(0, score)
-
+# ...
 metrics = {"overdue": 3, "blocked_ratio": 0.07, "avg_cycle_days": 3.2}
 print(f"健康度: {health(metrics)}/100")  # 健康度: 85/100
 ```
@@ -252,7 +253,7 @@ print(f"健康度: {health(metrics)}/100")  # 健康度: 85/100
   按优先级: urgent/high/medium/low
   按团队: A/B/C
   按负责人: 各成员负载
-
+# ...
 关键指标:
   在制品数（WIP）: 控制在制品防过载
   周期时间: 从开始到完成的时长
@@ -278,7 +279,7 @@ print(f"健康度: {health(metrics)}/100")  # 健康度: 85/100
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | curl | 命令行工具 | 必需 | 系统包管理器 |
 | jq | JSON 处理 | 必需 | 系统包管理器 |
 | Python | 运行时 | 分析脚本必需 | python.org |
@@ -295,9 +296,8 @@ print(f"健康度: {health(metrics)}/100")  # 健康度: 85/100
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

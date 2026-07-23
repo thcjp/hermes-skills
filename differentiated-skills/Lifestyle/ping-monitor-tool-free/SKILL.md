@@ -28,8 +28,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
 ---
-
 # 网络监控 (免费版)
 
 ## 概述
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | ICMP Ping | 主机可达性检测 | 支持 |
 | HTTP 检测 | 网站健康检查 | 支持 |
 | TCP 端口检测 | 端口开放检测 | 支持 |
@@ -93,13 +94,13 @@ from email.mime.text import MIMEText
 from datetime import datetime
 from pathlib import Path
 import json
-
+# ...
 class PingMonitor:
     def __init__(self, config_path="~/.ping-monitor/config.json"):
         self.config = self._load_config(config_path)
         self.data_dir = Path("~/.ping-monitor/data").expanduser()
         self.data_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
     def _load_config(self, path):
         default = {
             "targets": [],
@@ -112,7 +113,7 @@ class PingMonitor:
         if p.exists():
             return json.loads(p.read_text())
         return default
-
+# ...
     def ping(self, host):
         """ICMP Ping 检测"""
         try:
@@ -124,7 +125,7 @@ class PingMonitor:
             return result.returncode == 0
         except Exception:
             return False
-
+# ...
     def http_check(self, url, expected_status=200):
         """HTTP 健康检查"""
         import requests
@@ -133,7 +134,7 @@ class PingMonitor:
             return resp.status_code == expected_status
         except Exception:
             return False
-
+# ...
     def monitor_once(self):
         """执行一次监控"""
         results = []
@@ -144,19 +145,19 @@ class PingMonitor:
                 ok = self.http_check(target["url"])
             else:
                 continue
-
+# ...
             results.append({
                 "target": target,
                 "status": "up" if ok else "down",
                 "timestamp": datetime.now().isoformat(),
             })
-
+# ...
             if not ok:
                 self._alert(target)
-
+# ...
         self._save_results(results)
         return results
-
+# ...
     def _alert(self, target):
         """发送告警"""
         if not self.config.get("alert_email"): return
@@ -165,26 +166,26 @@ class PingMonitor:
 监控目标: {target}
 检测时间: {datetime.now()}
 状态: 不可达 (DOWN)
-
+# ...
 请检查服务状态。
 """
         self._send_email(subject, body)
-
+# ...
     def _send_email(self, subject, body):
         """发送邮件"""
         smtp_config = self.config.get("smtp")
         if not smtp_config: return
-
+# ...
         msg = MIMEText(body)
         msg["Subject"] = subject
         msg["From"] = smtp_config["from"]
         msg["To"] = self.config["alert_email"]
-
+# ...
         with smtplib.SMTP(smtp_config["host"], smtp_config["port"]) as server:
             server.starttls()
             server.login(smtp_config["user"], smtp_config["password"])
             server.send_message(msg)
-
+# ...
     def _save_results(self, results):
         """保存监控结果"""
         today = datetime.now().strftime("%Y-%m-%d")
@@ -192,7 +193,7 @@ class PingMonitor:
         with open(log_file, "a") as f:
             for r in results:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
-
+# ...
     def availability_stats(self, days=7):
         """可用性统计"""
         from datetime import timedelta
@@ -201,7 +202,7 @@ class PingMonitor:
             date = (datetime.now() - timedelta(days=i)).strftime("%Y-%m-%d")
             log_file = self.data_dir / f"{date}.jsonl"
             if not log_file.exists(): continue
-
+# ...
             for line in log_file.read_text().splitlines():
                 r = json.loads(line)
                 name = r["target"].get("name", r["target"].get("host"))
@@ -210,7 +211,7 @@ class PingMonitor:
                 stats[name]["total"] += 1
                 if r["status"] == "up":
                     stats[name]["up"] += 1
-
+# ...
         return {
             name: {
                 "availability_pct": round(s["up"] / s["total"] * 100, 2),
@@ -219,7 +220,7 @@ class PingMonitor:
             }
             for name, s in stats.items()
         }
-
+# ...
 # 示例
 monitor = PingMonitor()
 monitor.config["targets"] = [
@@ -227,7 +228,7 @@ monitor.config["targets"] = [
     {"name": "服务器", "type": "icmp", "host": "192.168.1.1"},
 ]
 monitor.config["interval_seconds"] = 60
-
+# ...
 # 执行一次监控
 results = monitor.monitor_once()
 # 查看可用性
@@ -263,19 +264,19 @@ def check_api_health(url, expected_response=None):
 ```bash
 # Linux/macOS: crontab 配置
 crontab -e
-
+# ...
 # 添加每分钟监控
 * * * * * python ~/.ping-monitor/monitor.py
-
+# ...
 # 或使用 systemd timer
 cat > ~/.config/systemd/user/ping-monitor.timer << 'EOF'
 [Unit]
 Description=Ping Monitor
-
+# ...
 [Timer]
 OnBootSec=1min
 OnUnitActiveSec=1min
-
+# ...
 [Install]
 WantedBy=timers.target
 EOF
@@ -358,31 +359,31 @@ targets:
     url: https://myblog.com
     expected_status: 200
     timeout: 10
-
+# ...
   - name: API 服务
     type: http
     url: https://api.myservice.com/health
     expected_response:
       status: ok
     timeout: 5
-
+# ...
   - name: 数据库服务器
     type: icmp
     host: 192.168.1.100
     timeout: 5
-
+# ...
   - name: SSH 端口
     type: tcp
     host: 192.168.1.100
     port: 22
     timeout: 5
-
+# ...
 settings:
   interval_seconds: 60
   timeout_seconds: 10
   retry_on_failure: 3
   alert_cooldown_minutes: 30  # 避免告警风暴
-
+# ...
 alerting:
   email:
     enabled: true
@@ -390,7 +391,7 @@ alerting:
     smtp:
       host: smtp.gmail.com
       port: 587
-
+# ...
 storage:
   data_dir: ~/.ping-monitor/data
   retention_days: 30
@@ -423,7 +424,7 @@ def generate_report(stats):
 - 关键服务: 1 分钟
 - 一般服务: 5 分钟
 - 个人项目: 10 分钟
-
+# ...
 注意: 过于频繁可能造成服务器压力。
 ```
 
@@ -491,7 +492,7 @@ def cleanup_old_data(data_dir, retention_days=30):
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 推荐 | python.org 下载 |
 | requests | Python 库 | HTTP 检测 | `pip install requests` |
@@ -502,7 +503,7 @@ def cleanup_old_data(data_dir, retention_days=30):
 
 ```bash
 # 免费版无需外部 API Key
-
+# ...
 # 可选: SMTP 配置 (邮件告警)
 export SMTP_HOST="smtp.gmail.com"
 export SMTP_USER="you@gmail.com"
@@ -518,9 +519,8 @@ export ALERT_EMAIL="you@example.com"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

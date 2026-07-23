@@ -20,6 +20,8 @@ tools:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
 # 视频创作工作室
 
@@ -36,7 +38,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 文字转视频 | 脚本或描述文本 | 自然语言→React视频代码→渲染MP4,输出到`output/{project}/` |
 | 字幕同步 | 音频或配音文件 | 自动生成时间轴对齐的字幕层 |
 | 数据可视化动画 | 数据集+展示需求 | 数字变化做成动态图表动画 |
@@ -80,7 +82,7 @@ pricing_model: "per_use"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 视频创作工作室处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -98,7 +100,7 @@ import { HookScene } from "./scenes/HookScene";
 import { ProductScene } from "./scenes/ProductScene";
 import { FeatureScene } from "./scenes/FeatureScene";
 import { CTAScene } from "./scenes/CTAScene";
-
+# ...
 export const ProductVideo = () => {
   return (
     <>
@@ -113,7 +115,7 @@ export const ProductVideo = () => {
     </>
   );
 };
-
+# ...
 const VideoComposition = () => {
   return (
     <>
@@ -129,12 +131,12 @@ const VideoComposition = () => {
 `output/ai-note-video/src/scenes/HookScene.tsx`:
 ```tsx
 import { Sequence, useCurrentFrame, interpolate } from "remotion";
-
+# ...
 export const HookScene = () => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: "clamp" });
   const translateY = interpolate(frame, [0, 15], [50, 0], { extrapolateRight: "clamp" });
-
+# ...
   return (
     <Sequence from={0} durationInFrames={150}>
       <div style={{ flex: 1, backgroundColor: "#0A0A0A", justifyContent: "center", alignItems: "center" }}>
@@ -163,13 +165,13 @@ npx remotion render ProductVideo output/ai-note-video/video.mp4 --codec=h264
 **输出** (`output/data-viz/src/scenes/GrowthScene.tsx`):
 ```tsx
 import { Sequence, useCurrentFrame, interpolate, spring } from "remotion";
-
+# ...
 export const GrowthScene = () => {
   const frame = useCurrentFrame();
   const progress = spring({ frame, fps: 30, config: { damping: 200 } });
   const users = Math.floor(interpolate(progress, [0, 1], [10000, 1000000]));
   const barHeight = interpolate(progress, [0, 1], [10, 800]);
-
+# ...
   return (
     <Sequence durationInFrames={450}>
       <div style={{ flex: 1, backgroundColor: "#1A1A2E", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
@@ -186,7 +188,7 @@ export const GrowthScene = () => {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | Remotion渲染失败 | Chrome/Chromium缺失或版本不兼容 | 安装Chrome或设置PUPPETEER_EXECUTABLE_PATH,Docker中用`ghcr.io/remotion-dev/docker`镜像 |
 | 渲染超时 | 视频过长或场景复杂 | 分段渲染后合并,或降低帧率(30→24fps),减少特效 |
 | TTS配音失败 | TTS服务不可达或API Key无效 | 检查网络和Key,改用本地TTS(如edge-tts),或人工录制 |
@@ -203,9 +205,9 @@ export const GrowthScene = () => {
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
-|:-------|:-----|:---------|:---------|:-------------|
+|:---:|:---:|:---:|:---:|:---:|
 | Node.js 18+ | 运行时 | 必需 | Remotion框架运行 | Node.js官网,国内用cnpm/nvm镜像 |
 | Remotion | 框架 | 必需 | `npm install remotion @remotion/cli` | `cnpm install remotion @remotion/cli` |
 | Chrome/Chromium | 工具 | 必需 | 渲染引擎 | 国内可直接下载,或用Docker镜像 |
@@ -275,7 +277,7 @@ import { HookScene } from "./scenes/HookScene";
 import { SolutionScene } from "./scenes/SolutionScene";
 import { FeatureScene } from "./scenes/FeatureScene";
 import { CTAScene } from "./scenes/CTAScene";
-
+# ...
 export const CoursePromo = () => (
   <Composition
     id="CoursePromo"
@@ -286,7 +288,7 @@ export const CoursePromo = () => (
     height={1920}
   />
 );
-
+# ...
 const VideoComposition = () => (
   <>
     <HookScene />      {/* 0-3s: 强钩子 */}
@@ -300,20 +302,20 @@ const VideoComposition = () => (
 **LLM生成输出** (`output/course-promo/src/scenes/HookScene.tsx`):
 ```tsx
 import { Sequence, useCurrentFrame, interpolate, spring } from "remotion";
-
+# ...
 export const HookScene = () => {
   const frame = useCurrentFrame();
-
+# ...
   // 文字弹入动画(spring弹性)
   const scale = spring({ frame, fps: 30, config: { damping: 12, stiffness: 200 } });
   // 背景脉冲效果
   const bgPulse = interpolate(
     Math.sin(frame * 0.3), [-1, 1], [0.85, 1]
   );
-
+# ...
   // 3秒末淡出
   const opacity = interpolate(frame, [75, 90], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-
+# ...
   return (
     <Sequence from={0} durationInFrames={90}>
       <div style={{
@@ -336,16 +338,16 @@ export const HookScene = () => {
 **LLM生成输出** (`output/course-promo/src/scenes/FeatureScene.tsx`):
 ```tsx
 import { Sequence, useCurrentFrame, interpolate, spring } from "remotion";
-
+# ...
 const features = [
   { icon: "🚀", title: "实战项目驱动", desc: "5个企业级项目" },
   { icon: "💼", title: "大厂面试题库", desc: "200+高频题" },
   { icon: "🎓", title: "导师1v1辅导", desc: "简历优化+模拟面试" },
 ];
-
+# ...
 export const FeatureScene = () => {
   const frame = useCurrentFrame();
-
+# ...
   return (
     <Sequence from={240} durationInFrames={120}>
       <div style={{
@@ -361,7 +363,7 @@ export const FeatureScene = () => {
           const localFrame = frame - delay;
           const itemOpacity = interpolate(localFrame, [0, 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
           const translateY = interpolate(localFrame, [0, 10], [50, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-
+# ...
           return (
             <div key={i} style={{
               flexDirection: "row", alignItems: "center", marginBottom: 40,
@@ -384,7 +386,7 @@ export const FeatureScene = () => {
 **LLM生成输出** (`output/course-promo/src/scenes/CTAScene.tsx`):
 ```tsx
 import { Sequence, useCurrentFrame, interpolate, spring } from "remotion";
-
+# ...
 export const CTAScene = () => {
   const frame = useCurrentFrame();
   // 按钮脉冲动画
@@ -392,7 +394,7 @@ export const CTAScene = () => {
     Math.sin(frame * 0.2), [-1, 1], [1, 1.08]
   );
   const opacity = interpolate(frame, [0, 15], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-
+# ...
   return (
     <Sequence from={360} durationInFrames={90}>
       <div style={{
@@ -420,9 +422,9 @@ export const CTAScene = () => {
 **LLM生成输出** (`output/course-promo/script.md`):
 ```markdown
 # 视频脚本分镜表
-
+# ...
 | 镜号 | 时间 | 画面描述 | 字幕 | 配音文本 |
-|:-----|:-----|:---------|:-----|:---------|
+|:------|------:|:------|:------|------:|
 | 1 | 0-3s | 黑底绿字弹入,脉冲背景 | 这个技能让你薪资翻倍 | 想让薪资翻倍?这个技能你必须知道 |
 | 2 | 3-8s | 痛点文字+方案展示 | 程序员进阶痛点→系统化课程 | 很多程序员卡在初级岗,缺的是系统化的进阶路线 |
 | 3 | 8-12s | 三个亮点依次弹入 | 实战项目/面试题库/1v1辅导 | 我们的课程:5个实战项目+200道面试题+导师1对1辅导 |
@@ -445,7 +447,7 @@ export const CTAScene = () => {
 **LLM生成输出** (`output/data-viz/src/scenes/GrowthScene.tsx`):
 ```tsx
 import { Sequence, useCurrentFrame, interpolate, spring } from "remotion";
-
+# ...
 const data = [
   { year: "2020", users: 10000 },
   { year: "2021", users: 50000 },
@@ -453,11 +455,11 @@ const data = [
   { year: "2023", users: 350000 },
   { year: "2024", users: 1000000 },
 ];
-
+# ...
 export const GrowthScene = () => {
   const frame = useCurrentFrame();
   const durationInFrames = 300; // 10秒 @ 30fps
-
+# ...
   // 总体进度(0到1,用spring实现缓动)
   const progress = spring({
     frame,
@@ -465,28 +467,28 @@ export const GrowthScene = () => {
     config: { damping: 200, mass: 1 },
     durationInFrames: 120,
   });
-
+# ...
   // 当前显示的数据索引(随时间推进)
   const dataIndex = Math.min(
     Math.floor(interpolate(frame, [30, 270], [0, data.length - 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })),
     data.length - 1
   );
-
+# ...
   // 当前数字(翻滚效果)
   const currentUsers = Math.floor(
     interpolate(progress, [0, 1], [10000, data[dataIndex].users])
   );
-
+# ...
   // 格式化数字
   const formatNumber = (num: number) => {
     if (num >= 10000) return `${(num / 10000).toFixed(1)}万`;
     return num.toLocaleString();
   };
-
+# ...
   // 最大柱状图高度(像素)
   const maxBarHeight = 500;
   const maxUsers = data[data.length - 1].users;
-
+# ...
   return (
     <Sequence durationInFrames={durationInFrames}>
       <div style={{
@@ -499,7 +501,7 @@ export const GrowthScene = () => {
         }}>
           用户增长 2020-2024
         </h1>
-
+# ...
         {/* 翻滚数字 */}
         <div style={{
           color: "#00FF88", fontSize: 120, fontFamily: "monospace",
@@ -508,7 +510,7 @@ export const GrowthScene = () => {
         }}>
           {formatNumber(currentUsers)}
         </div>
-
+# ...
         {/* 柱状图 */}
         <div style={{ flexDirection: "row", alignItems: "flex-end", gap: 40, height: maxBarHeight + 60 }}>
           {data.map((item, i) => {
@@ -524,7 +526,7 @@ export const GrowthScene = () => {
             // 当前高亮的柱子
             const isActive = i === dataIndex;
             const barColor = isActive ? "#00FF88" : "#3A3A6E";
-
+# ...
             return (
               <div key={item.year} style={{ alignItems: "center", flexDirection: "column" }}>
                 <div style={{
@@ -543,7 +545,7 @@ export const GrowthScene = () => {
             );
           })}
         </div>
-
+# ...
         {/* 底部标注 */}
         <p style={{ color: "#666666", fontSize: 20, marginTop: 30 }}>
           5年增长100倍 · 数据来源: 公司年报
@@ -579,7 +581,7 @@ import { Scene1, Scene2, Scene3, Scene4 } from "./scenes";
 import { SubtitleLayer } from "./components/SubtitleLayer";
 import narration from "../audio/narration.mp3";
 import subtitles from "../data/subtitles.json";
-
+# ...
 export const AINoteDemo = () => (
   <Composition
     id="AINoteDemo"
@@ -590,18 +592,18 @@ export const AINoteDemo = () => (
     height={1080}
   />
 );
-
+# ...
 const VideoComposition = () => (
   <>
     {/* 配音音频(贯穿全程) */}
     <Audio src={narration} />
-
+# ...
     {/* 四个场景 */}
     <Scene1 />
     <Scene2 />
     <Scene3 />
     <Scene4 />
-
+# ...
     {/* 字幕层(覆盖在所有场景之上) */}
     <SubtitleLayer subtitles={subtitles} />
   </>
@@ -611,28 +613,28 @@ const VideoComposition = () => (
 **LLM生成输出** (`output/ai-note-demo/src/components/SubtitleLayer.tsx`):
 ```tsx
 import { Sequence, useCurrentFrame } from "remotion";
-
+# ...
 interface Subtitle {
   startFrame: number;
   endFrame: number;
   text: string;
 }
-
+# ...
 export const SubtitleLayer = ({ subtitles }: { subtitles: Subtitle[] }) => {
   const frame = useCurrentFrame();
-
+# ...
   // 找到当前帧对应的字幕
   const currentSubtitle = subtitles.find(
     (s) => frame >= s.startFrame && frame < s.endFrame
   );
-
+# ...
   if (!currentSubtitle) return null;
-
+# ...
   // 字幕淡入淡出
   const fadeIn = Math.min(1, (frame - currentSubtitle.startFrame) / 8);
   const fadeOut = Math.min(1, (currentSubtitle.endFrame - frame) / 8);
   const opacity = Math.min(fadeIn, fadeOut);
-
+# ...
   return (
     <div style={{
       position: "absolute", bottom: 80, left: 0, right: 0,
@@ -671,7 +673,7 @@ import edge_tts
 import json
 import asyncio
 import subprocess
-
+# ...
 # 配音脚本(对应4个场景)
 script = [
     {"text": "AI笔记,让记录更智能", "duration": 5},
@@ -679,14 +681,14 @@ script = [
     {"text": "智能摘要,一键提炼要点", "duration": 5},
     {"text": "立即下载,开启智能笔记", "duration": 5},
 ]
-
+# ...
 async def generate_narration():
     """生成完整配音音频"""
     full_text = "".join([s["text"] + "。" for s in script])
     communicate = edge_tts.Communicate(full_text, "zh-CN-XiaoxiaoNeural")
     await communicate.save("output/ai-note-demo/audio/narration.mp3")
     print("配音已生成: audio/narration.mp3")
-
+# ...
 def generate_subtitles():
     """生成字幕时间轴(基于固定时长,实际可用Whisper精确转录)"""
     fps = 30
@@ -699,15 +701,15 @@ def generate_subtitles():
             "text": s["text"],
         })
         current_frame += int(s["duration"] * fps)
-
+# ...
     with open("output/ai-note-demo/data/subtitles.json", "w", encoding="utf-8") as f:
         json.dump(subtitles, f, ensure_ascii=False, indent=2)
     print("字幕已生成: data/subtitles.json")
-
+# ...
 async def main():
     await generate_narration()
     generate_subtitles()
-
+# ...
     # 用Whisper精确转录(可选,提升字幕同步精度)
     # subprocess.run([
     #     "whisper", "audio/narration.mp3",
@@ -716,7 +718,7 @@ async def main():
     #     "--output_format", "json",
     #     "--output_dir", "data/"
     # ])
-
+# ...
 asyncio.run(main())
 ```
 
@@ -736,19 +738,19 @@ asyncio.run(main())
 **LLM生成输出** (`output/title-card/src/scenes/TitleCard.tsx`):
 ```tsx
 import { Sequence, useCurrentFrame, interpolate, spring } from "remotion";
-
+# ...
 const title = "产品发布会";
 const subtitle = "2024年度盛典";
-
+# ...
 export const TitleCard = () => {
   const frame = useCurrentFrame();
-
+# ...
   // 标题逐字出现
   const titleChars = title.split("");
   const titleProgress = interpolate(frame, [15, 75], [0, titleChars.length], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
-
+# ...
   // 副标题淡入
   const subtitleOpacity = interpolate(frame, [80, 100], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
@@ -756,17 +758,17 @@ export const TitleCard = () => {
   const subtitleY = interpolate(frame, [80, 100], [30, 0], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
-
+# ...
   // marker sweep(标记扫过效果)
   const sweepX = interpolate(frame, [30, 90], [-200, 2100], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
-
+# ...
   // 装饰线动画
   const lineWidth = interpolate(frame, [20, 60], [0, 600], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
-
+# ...
   return (
     <Sequence durationInFrames={150}>
       <div style={{
@@ -778,7 +780,7 @@ export const TitleCard = () => {
           width: lineWidth, height: 2, backgroundColor: "#FFD700",
           marginBottom: 40,
         }} />
-
+# ...
         {/* 标题(逐字出现) */}
         <div style={{ flexDirection: "row", position: "relative" }}>
           {titleChars.map((char, i) => {
@@ -788,7 +790,7 @@ export const TitleCard = () => {
             );
             // sketchout效果:先显示描边再填充
             const isSketching = i === Math.floor(titleProgress);
-
+# ...
             return (
               <span key={i} style={{
                 color: isSketching ? "transparent" : "#FFFFFF",
@@ -801,7 +803,7 @@ export const TitleCard = () => {
               </span>
             );
           })}
-
+# ...
           {/* marker sweep(金色光带扫过) */}
           <div style={{
             position: "absolute", top: 0, left: sweepX, width: 100, height: "100%",
@@ -809,7 +811,7 @@ export const TitleCard = () => {
             pointerEvents: "none",
           }} />
         </div>
-
+# ...
         {/* 副标题 */}
         <div style={{
           opacity: subtitleOpacity, transform: `translateY(${subtitleY}px)`,
@@ -822,7 +824,7 @@ export const TitleCard = () => {
             {subtitle}
           </span>
         </div>
-
+# ...
         {/* 装饰线(下方) */}
         <div style={{
           width: lineWidth, height: 2, backgroundColor: "#FFD700",

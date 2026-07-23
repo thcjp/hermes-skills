@@ -41,6 +41,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Go Lint 配置工具（专业版）
 
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 配置矩阵 | 多项目统一基线 + 项目级覆盖 | 仓库级继承 |
 | 自定义规则 | 规则集、排除、豁免清单 | 版本化治理 |
 | CI 矩阵 | GitHub Actions / GitLab CI / Jenkins | 一键生成 |
@@ -154,7 +156,7 @@ jobs:
 ```bash
 # 输出 JSON 供门禁判断
 golangci-lint run --out-format json ./... > report.json
-
+# ...
 # 门禁脚本
 python - <<'PY'
 import json, sys
@@ -186,7 +188,6 @@ PY
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 门禁阈值配置（`lint-gate.json`）：
@@ -211,7 +212,7 @@ PY
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 配置格式 | 相同 | 相同（可继承） |
 | 模板 | 最小/标准 | 基线 + 覆盖 |
 | CI | 基础单任务 | 矩阵 + 门禁 |
@@ -243,7 +244,7 @@ A：有。专业版享规则定制咨询与专属支持通道。
 ```yaml
 # 方式一：本地相对路径继承
 inherit: [./base.golangci.yml]
-
+# ...
 # 方式二：远程基线（需工具拉取）
 inherit: [https://team-repo/base.golangci.yml]
 ```
@@ -274,7 +275,7 @@ issues:
 ```bash
 # 每次 CI 归档 JSON 报告
 golangci-lint run --out-format json ./... > "reports/$(date +%F).json"
-
+# ...
 # 生成趋势
 python （请参考skill目录中的脚本文件） --dir reports/ --out trend.json
 ```
@@ -284,7 +285,7 @@ python （请参考skill目录中的脚本文件） --dir reports/ --out trend.j
 ```text
 规则集生命周期:
   提案 → 评审 → 合并基线 → 项目继承 → CI 执行 → 趋势归档 → 定期复核
-
+# ...
 豁免生命周期:
   申报豁免 → 标注期限 → 自动告警 → 复核续期或移除
 ```
@@ -292,7 +293,7 @@ python （请参考skill目录中的脚本文件） --dir reports/ --out trend.j
 ## 多平台 CI 模板
 
 | 平台 | 模板特点 |
-|:-----|:---------|
+|---:|---:|
 | GitHub Actions | matrix 多版本、quality gate 步骤 |
 | GitLab CI | parallel + rules 条件触发 |
 | Jenkins | shared library + stage 门禁 |
@@ -308,7 +309,7 @@ python （请参考skill目录中的脚本文件） --dir reports/ --out trend.j
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | golangci-lint | 命令行工具 | 必需 | `go install ...@latest` |
 | jq | JSON 处理 | 门禁脚本推荐 | 系统包管理器 |
 | Go | 工具链 | 必需 | go.dev 下载 |
@@ -324,9 +325,8 @@ python （请参考skill目录中的脚本文件） --dir reports/ --out trend.j
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # cron优选实践专家（免费版）
 
 > **不是教你写cron表达式，而是教你正确使用定时系统。自唤醒、时区锁定、陷阱规避，经验法则一网打尽。**
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | cron优选实践专家(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -77,22 +78,22 @@ suggested_price: 29.9
 import json
 from pathlib import Path
 from datetime import datetime
-
+# ...
 # Agent会话开始时的自唤醒检查
 def self_wake_check():
     """会话开始时检查待执行的定时任务"""
     store = Path.home() / "workspace" / "scheduler" / "reminders"
     store.mkdir(parents=True, exist_ok=True)
     reminders_file = store / "reminders.json"
-
+# ...
     if not reminders_file.exists():
         print("无定时任务")
         return []
-
+# ...
     reminders = json.loads(reminders_file.read_text(encoding="utf-8"))
     now = datetime.now()
     pending = []
-
+# ...
     for r in reminders:
         if r["status"] != "active":
             continue
@@ -100,12 +101,12 @@ def self_wake_check():
         if next_run <= now:
             pending.append(r)
             print(f"⏰ 待执行：{r['name']}（应于{r['next_run']}执行）")
-
+# ...
     if not pending:
         print("无待执行任务")
-
+# ...
     return pending
-
+# ...
 # Agent每次会话开始调用
 self_wake_check()
 ```
@@ -118,19 +119,19 @@ self_wake_check()
 import json
 from pathlib import Path
 from datetime import datetime, timedelta
-
+# ...
 class ReminderSystem:
     """定时提醒系统（免费版核心）"""
-
+# ...
     TIMEZONE = "Asia/Shanghai"  # 时区锁定
-
+# ...
     def __init__(self):
         self.store = Path.home() / "workspace" / "scheduler" / "reminders"
         self.store.mkdir(parents=True, exist_ok=True)
         self.file = self.store / "reminders.json"
         if not self.file.exists():
             self.file.write_text("[]", encoding="utf-8")
-
+# ...
     def add_reminder(self, name, remind_type, config, message):
         """添加提醒"""
         reminders = json.loads(self.file.read_text(encoding="utf-8"))
@@ -153,13 +154,13 @@ class ReminderSystem:
         print(f"  类型：{remind_type}")
         print(f"  下次提醒：{reminder['next_run']}")
         return reminder
-
+# ...
     def check_and_execute(self):
         """检查并执行到期提醒"""
         reminders = json.loads(self.file.read_text(encoding="utf-8"))
         now = datetime.now()
         executed = []
-
+# ...
         for r in reminders:
             if r["status"] != "active":
                 continue
@@ -169,16 +170,16 @@ class ReminderSystem:
                 print(f"\n⏰ [{r['name']}] {r['message']}")
                 r["last_run"] = now.isoformat()
                 r["next_run"] = self._calc_next(r["type"], r["config"])
-
+# ...
                 # 单次提醒执行后归档
                 if r["type"] == "once":
                     r["status"] = "done"
-
+# ...
                 executed.append(r)
-
+# ...
         self.file.write_text(json.dumps(reminders, ensure_ascii=False, indent=2), encoding="utf-8")
         return executed
-
+# ...
     def confirm_execution(self, reminder_id):
         """确认执行结果"""
         reminders = json.loads(self.file.read_text(encoding="utf-8"))
@@ -190,7 +191,7 @@ class ReminderSystem:
                 print(f"✓ 已确认：{reminder_id}")
                 return
         print(f"✗ 未找到：{reminder_id}")
-
+# ...
     def _calc_next(self, remind_type, config):
         """计算下次提醒时间"""
         now = datetime.now()
@@ -214,25 +215,25 @@ class ReminderSystem:
             next_run += timedelta(days=days_ahead)
             return next_run.isoformat()
         return now.isoformat()
-
+# ...
 # 示例
 rs = ReminderSystem()
-
+# ...
 # 单次提醒
 rs.add_reminder("项目截止提醒", "once",
     {"datetime": "2026-07-20T17:00:00"},
     "项目A将于明天截止，请确认完成状态")
-
+# ...
 # 每日提醒
 rs.add_reminder("每日站会", "daily",
     {"time": "09:30"},
     "每日站会时间到，请准备今日工作汇报")
-
+# ...
 # 每周提醒
 rs.add_reminder("周报提交", "weekly",
     {"weekday": 4, "time": "17:00"},
     "周五周报提交截止，请生成本周工作总结")
-
+# ...
 # 检查并执行
 rs.check_and_execute()
 ```
@@ -244,7 +245,7 @@ rs.check_and_execute()
 ```python
 class SmartReminderSystem(ReminderSystem):
     """智能提醒系统（含递增提醒）"""
-
+# ...
     def add_escalating_reminder(self, name, start_time, intervals, message):
         """递增提醒：间隔逐渐缩短"""
         reminders = json.loads(self.file.read_text(encoding="utf-8"))
@@ -270,12 +271,12 @@ class SmartReminderSystem(ReminderSystem):
         print(f"✓ 递增提醒已创建：{reminder['id']} - {name}")
         print(f"  间隔序列：{intervals}分钟")
         return reminder
-
+# ...
     def check_escalating(self):
         """检查递增提醒"""
         reminders = json.loads(self.file.read_text(encoding="utf-8"))
         now = datetime.now()
-
+# ...
         for r in reminders:
             if r["type"] != "escalating" or r["status"] != "active":
                 continue
@@ -283,21 +284,21 @@ class SmartReminderSystem(ReminderSystem):
             if next_run <= now:
                 print(f"\n⏰ [{r['name']}] {r['message']}")
                 r["last_run"] = now.isoformat()
-
+# ...
                 # 计算下次间隔
                 config = r["config"]
                 idx = config["current_index"]
                 intervals = config["intervals"]
-
+# ...
                 if idx < len(intervals) - 1:
                     idx += 1
                     config["current_index"] = idx
                     r["next_run"] = (now + timedelta(minutes=intervals[idx])).isoformat()
                 else:
                     r["next_run"] = (now + timedelta(minutes=intervals[-1])).isoformat()
-
+# ...
         self.file.write_text(json.dumps(reminders, ensure_ascii=False, indent=2), encoding="utf-8")
-
+# ...
 # 使用：递增提醒（越来越紧急）
 smart = SmartReminderSystem()
 smart.add_escalating_reminder(
@@ -316,7 +317,7 @@ smart.add_escalating_reminder(
 Agent在每次会话开始时执行的自唤醒检查流程：
 
 | 步骤 | 操作 | 说明 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 1 | 读取任务文件 | 加载 reminders.json |
 | 2 | 检查待执行 | 比较 next_run 与当前时间 |
 | 3 | 执行到期任务 | 输出提醒消息 |
@@ -330,7 +331,7 @@ Agent在每次会话开始时执行的自唤醒检查流程：
 ### 时区锁定策略
 
 | 规则 | 说明 |
-|------|------|
+|---:|---:|
 | 统一时区 | 所有任务使用 Asia/Shanghai |
 | 存储格式 | ISO 8601 含时区信息 |
 | 显示格式 | 本地时间 + UTC偏移 |
@@ -343,7 +344,7 @@ Agent在每次会话开始时执行的自唤醒检查流程：
 ### 提醒模式
 
 | 模式 | 配置 | 适用场景 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 单次(once) | datetime: 指定时间 | 一次性事件提醒 |
 | 每日(daily) | time: 每日时间 | 日常例行提醒 |
 | 每周(weekly) | weekday+time | 周期性周提醒 |
@@ -356,7 +357,7 @@ Agent在每次会话开始时执行的自唤醒检查流程：
 ### 陷阱规避清单
 
 | 陷阱 | 问题 | 规避方法 |
-|------|------|----------|
+|:------|------:|:------|
 | DST夏令时 | 时间偏移导致提醒错乱 | 锁定时区，不依赖DST |
 | 月末日期 | 2月无30/31号 | 使用L语法或避免月末 |
 | 闰年2/29 | 非闰年无2/29 | 使用年度首日替代 |
@@ -448,7 +449,7 @@ rs.add_reminder("周报提醒", "weekly",
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Python标准库 | 内置 | 必需 | Python自带（json/pathlib/datetime） |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 
@@ -509,9 +510,8 @@ rs.add_reminder("周报提醒", "weekly",
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

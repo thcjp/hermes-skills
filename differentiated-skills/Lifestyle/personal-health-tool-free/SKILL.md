@@ -29,8 +29,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 个人健康管家 (免费版)
 
 ## 概述
@@ -42,7 +43,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 健康数据记录 | 运动、睡眠、饮食、体重 | 支持 |
 | 体检报告解读 | 常见体检指标分析 | 支持 |
 | 运动计划 | 个性化运动方案 | 支持 |
@@ -105,14 +106,14 @@ class MedicalReportAnalyzer:
         "hemoglobin_male": {"normal": [120, 160], "low": 120},  # g/L
         "hemoglobin_female": {"normal": [110, 150], "low": 110},
     }
-
+# ...
     def analyze(self, report_data):
         """分析体检报告"""
         results = []
         for metric, value in report_data.items():
             ref = self.REFERENCE_RANGES.get(metric)
             if not ref: continue
-
+# ...
             status = self._evaluate(metric, value, ref)
             results.append({
                 "metric": metric,
@@ -121,17 +122,17 @@ class MedicalReportAnalyzer:
                 "reference": ref,
                 "advice": self._advice(metric, status),
             })
-
+# ...
         overall = self._overall_assessment(results)
         return {"items": results, "overall": overall}
-
+# ...
     def _evaluate(self, metric, value, ref):
         if "high" in ref and value > ref["high"]: return "high"
         if "low" in ref and value < ref["low"]: return "low"
         if value < ref["normal"][0]: return "low"
         if value > ref["normal"][1]: return "high"
         return "normal"
-
+# ...
     def _advice(self, metric, status):
         advice_map = {
             "blood_pressure_systolic": {
@@ -148,7 +149,7 @@ class MedicalReportAnalyzer:
             },
         }
         return advice_map.get(metric, {}).get(status, "保持关注")
-
+# ...
 analyzer = MedicalReportAnalyzer()
 report = analyzer.analyze({
     "blood_pressure_systolic": 135,
@@ -177,7 +178,7 @@ class ExercisePlanGenerator:
             "stress_relief": self._stress_relief_plan(user_profile),
         }
         return plans.get(goal, plans["weight_loss"])
-
+# ...
     def _weight_loss_plan(self, profile):
         """减脂计划"""
         return {
@@ -208,16 +209,16 @@ class ExercisePlanGenerator:
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
-
+# ...
 class HealthDataViz:
     def __init__(self, data_dir="~/.health"):
         self.data_dir = Path(data_dir).expanduser()
-
+# ...
     def weight_trend(self, days=30):
         """体重趋势"""
         records = self._load_records("weight", days)
         if not records: return "无数据"
-
+# ...
         weights = [r["value"] for r in records]
         return {
             "latest": weights[-1],
@@ -227,7 +228,7 @@ class HealthDataViz:
             "change": round(weights[-1] - weights[0], 1),
             "trend": "下降" if weights[-1] < weights[0] else "上升",
         }
-
+# ...
     def weekly_summary(self):
         """周度健康汇总"""
         return {
@@ -266,7 +267,7 @@ echo '{"version":"1.0","created":"'$(date -I)'"}' > ~/.health/config.json
 import json
 from datetime import datetime
 from pathlib import Path
-
+# ...
 # 记录体重
 record = {
     "date": datetime.now().strftime("%Y-%m-%d"),
@@ -307,26 +308,26 @@ profile:
   height_cm: 175
   weight_kg: 70
   activity_level: moderate
-
+# ...
 goals:
   target_weight_kg: 65
   weekly_workouts: 4
   daily_steps: 10000
   sleep_hours: 8
   daily_calories: 1800
-
+# ...
 tracking:
   weight: daily
   workouts: per_session
   sleep: daily
   diet: per_meal
   steps: daily
-
+# ...
 storage:
   type: local
   path: ~/.health/
   backup: weekly
-
+# ...
 notifications:
   workout_reminder: "18:00"
   sleep_reminder: "22:30"
@@ -376,7 +377,7 @@ REPORT_TEMPLATE = {
 - 每晚记录睡眠
 - 每餐后记录饮食
 - 每年体检后录入报告
-
+# ...
 数据越完整,分析越准确。
 ```
 
@@ -440,7 +441,7 @@ tar -czf health-backup-$(date +%Y%m%d).tar.gz ~/.health/
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 推荐 | python.org 下载 |
 | PyYAML | Python 库 | 可选 | `pip install pyyaml` |
@@ -450,7 +451,7 @@ tar -czf health-backup-$(date +%Y%m%d).tar.gz ~/.health/
 ```bash
 # 免费版无需外部 API Key
 # 所有数据本地存储
-
+# ...
 # 可选: 个人偏好
 export HEALTH_USER_NAME="你的名字"
 export HEALTH_DATA_DIR="~/.health"
@@ -464,9 +465,8 @@ export HEALTH_DATA_DIR="~/.health"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

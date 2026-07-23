@@ -32,27 +32,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Go语言工具包专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版新增 | 不支持 | 支持 |
-| 陷阱防范 | 不支持 | 支持 |
-| 生产级陷阱检测脚本 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 陷阱防范 | Goroutine/Channel/Defer 陷阱 | 生产级陷阱检测脚本 |
 | 并发模式 | 基础 WaitGroup/Context | Worker Pool/Fan-In/Fan-Out/Pipeline |
 | 错误处理 | errors.Is/As/Wrap | ErrGroup 批量错误处理 |
@@ -92,19 +94,19 @@ pricing_model: "per_use"
 
 ```go
 package workerpool
-
+// ...
 import (
     "context"
     "sync"
 )
-
+// ...
 // WorkerPool 固定大小的 worker 池
 type WorkerPool struct {
     tasks   chan func()
     wg      sync.WaitGroup
     workers int
 }
-
+// ...
 func New(workers, queueSize int) *WorkerPool {
     p := &WorkerPool{
         tasks:   make(chan func(), queueSize),
@@ -116,14 +118,14 @@ func New(workers, queueSize int) *WorkerPool {
     }
     return p
 }
-
+// ...
 func (p *WorkerPool) worker() {
     defer p.wg.Done()
     for task := range p.tasks {
         task()
     }
 }
-
+// ...
 func (p *WorkerPool) Submit(ctx context.Context, task func()) error {
     select {
     case p.tasks <- task:
@@ -132,17 +134,17 @@ func (p *WorkerPool) Submit(ctx context.Context, task func()) error {
         return ctx.Err()
     }
 }
-
+// ...
 func (p *WorkerPool) Shutdown() {
     close(p.tasks)
     p.wg.Wait()
 }
-
+// ...
 // 使用示例
 func main() {
     pool := workerpool.New(10, 100)
     ctx := context.Background()
-
+// ...
     for i := 0; i < 1000; i++ {
         taskID := i
         pool.Submit(ctx, func() {
@@ -158,12 +160,12 @@ func main() {
 
 ```go
 package pipeline
-
+// ...
 import "context"
-
+// ...
 // Stage 流水线阶段
 type Stage func(ctx context.Context, in <-chan int) <-chan int
-
+// ...
 // Pipeline 多阶段流水线
 func Pipeline(ctx context.Context, stages ...Stage) <-chan int {
     ch := make(chan int)
@@ -178,13 +180,13 @@ func Pipeline(ctx context.Context, stages ...Stage) <-chan int {
             }
         }
     }()
-
+// ...
     for _, stage := range stages {
         ch = stage(ctx, ch)
     }
     return ch
 }
-
+// ...
 // 示例阶段：平方
 func Square(ctx context.Context, in <-chan int) <-chan int {
     out := make(chan int)
@@ -200,7 +202,7 @@ func Square(ctx context.Context, in <-chan int) <-chan int {
     }()
     return out
 }
-
+// ...
 // 示例阶段：过滤偶数
 func FilterEven(ctx context.Context, in <-chan int) <-chan int {
     out := make(chan int)
@@ -218,7 +220,7 @@ func FilterEven(ctx context.Context, in <-chan int) <-chan int {
     }()
     return out
 }
-
+// ...
 // 使用：生成 → 平方 → 过滤偶数
 func main() {
     ctx := context.Background()
@@ -236,15 +238,15 @@ func main() {
 go build -gcflags="-m" main.go
 go build -gcflags="-m -m" main.go  # 更详细
 type User struct{ Name string }
-
+# ...
 func newUser() *User {
     u := User{Name: "test"}  // 逃逸到堆
     return &u
 }
-
+# ...
 func process(v interface{}) {}
 process(42)  // 42 逃逸到堆
-
+# ...
 func counter() func() int {
     n := 0
     return func() int {  // n 逃逸
@@ -252,7 +254,7 @@ func counter() func() int {
         return n
     }
 }
-
+# ...
 func makeSlice(n int) []int {
     return make([]int, n)  // n 不确定时逃逸
 }
@@ -266,14 +268,14 @@ type BadStruct struct {
     b int64  // 8 字节
     c bool   // 1 字节 + 7 字节填充
 }  // 总计 24 字节
-
+// ...
 // 优化后：紧凑排列
 type GoodStruct struct {
     b int64  // 8 字节
     a bool   // 1 字节
     c bool   // 1 字节 + 6 字节填充
 }  // 总计 16 字节
-
+// ...
 // 使用 unsafe.Sizeof 检查
 fmt.Println(unsafe.Sizeof(BadStruct{}))   // 24
 fmt.Println(unsafe.Sizeof(GoodStruct{}))  // 16
@@ -284,13 +286,13 @@ fmt.Println(unsafe.Sizeof(GoodStruct{}))  // 16
 ### 错误恢复步骤
 ```go
 import "golang.org/x/sync/errgroup"
-
+// ...
 func processAll(ctx context.Context, urls []string) error {
     g, ctx := errgroup.WithContext(ctx)
     g.SetLimit(5)  // 限制并发数
-
+// ...
     results := make([]string, len(urls))
-
+// ...
     for i, url := range urls {
         i, url := i, url
         g.Go(func() error {
@@ -302,7 +304,7 @@ func processAll(ctx context.Context, urls []string) error {
             return nil
         })
     }
-
+// ...
     if err := g.Wait(); err != nil {
         return err
     }
@@ -317,14 +319,14 @@ var bufPool = sync.Pool{
         return new(bytes.Buffer)
     },
 }
-
+// ...
 func processData(data []byte) string {
     buf := bufPool.Get().(*bytes.Buffer)
     defer func() {
         buf.Reset()
         bufPool.Put(buf)
     }()
-
+// ...
     buf.Write(data)
     // 处理...
     return buf.String()
@@ -335,7 +337,7 @@ func processData(data []byte) string {
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | golang-toolkit处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -395,7 +397,7 @@ func processData(data []byte) string {
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | Step Golang Toolkit 核心处理处理失败 | 按流程执行 | 自动(最多max_retries次), 仍失败则记录断点, 暂停流程 |
 | Gate条件不满足 | Step Golang Toolkit 智能分析输出质量不达标 | 返回Step Golang Toolkit 智能分析重新处理, 或提示用户调整输入 |
 | 输入数据格式错误 | content格式不符合要求 | 列出期望格式, 提供示例, 中止流程 |
@@ -410,9 +412,9 @@ func processData(data []byte) string {
 - **操作系统**: Windows / macOS / Linux
 - **Go 版本**: 建议 1.19 及以上（需支持泛型、SetMemoryLimit）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Go | 编译器/运行时 | 必需 | golang.org 下载 |
 | golang.org/x/sync | 扩展库 | 推荐 | `go get golang.org/x/sync` |
 | GoReleaser | 构建工具 | 可选 | goreleaser.com 安装 |
@@ -433,28 +435,28 @@ func processData(data []byte) string {
 ### 交叉编译配置
 ```bash
 GOOS=linux GOARCH=amd64 go build -o （请参考skill目录中的脚本文件）
-
+# ...
 GOOS=darwin GOARCH=arm64 go build -o （请参考skill目录中的脚本文件）
-
+# ...
 GOOS=windows GOARCH=amd64 go build -o （请参考skill目录中的脚本文件）
-
+# ...
 go build -ldflags="-s -w" -o （请参考skill目录中的脚本文件）
-
+# ...
 //go:embed static/*
 var staticFS embed.FS
-
+# ...
 ```
 
 ### pprof 性能分析
 ```go
 import _ "net/http/pprof"
-
+// ...
 func init() {
     go func() {
         http.ListenAndServe("localhost:6060", nil)
     }()
 }
-
+// ...
 // 命令行分析
 // 基准测试
 // 竞争检测
@@ -465,7 +467,7 @@ func init() {
 GOGC=200 go run main.go  # 减少 GC 频率，增加内存使用
 GOGC=50 go run main.go   # 增加 GC 频率，减少内存使用
 GOGC=off go run main.go
-
+# ...
 import "runtime/debug"
 debug.SetMemoryLimit(1 << 30)  # 1GB 软限制
 ```
@@ -475,7 +477,7 @@ debug.SetMemoryLimit(1 << 30)  # 1GB 软限制
 ### Q1：如何排查内存泄漏？
 ```bash
 go tool pprof http://localhost:6060/debug/pprof/heap
-
+# ...
 (pprof) top 10        # 查看内存占用最多的函数
 (pprof) list FuncName # 查看函数的内存分配
 (pprof) web           # 生成可视化图
@@ -488,10 +490,10 @@ go tool pprof -base heap1.out heap2.out
 ```go
 // CPU 密集型：等于 CPU 核心数
 workers := runtime.NumCPU()
-
+// ...
 // IO 密集型：可以远大于 CPU 核心数
 workers := runtime.NumCPU() * 100
-
+// ...
 // 动态调整：根据队列长度
 func dynamicWorkers(target int) int {
     queue := runtime.NumGoroutine()
@@ -507,11 +509,11 @@ func dynamicWorkers(target int) int {
 // 逃逸：interface{} 导致分配
 func log(args ...interface{}) {}
 log(42)  // 42 逃逸到堆
-
+// ...
 // 优化：使用泛型（Go 1.18+）
 func log[T any](v T) {}
 log(42)  // 不逃逸
-
+// ...
 // 或使用具体类型
 func logInt(v int) {}
 logInt(42)  // 不逃逸
@@ -522,23 +524,24 @@ logInt(42)  // 不逃逸
 // 使用 errgroup + channel 传递错误
 func Pipeline(ctx context.Context) error {
     g, ctx := errgroup.WithContext(ctx)
-
+// ...
     ch1 := generate(ctx, g)
     ch2 := process(ctx, g, ch1)
     ch3 := filter(ctx, g, ch2)
-
+// ...
     g.Go(func() error {
         for range ch3 {
             // 消费结果
         }
         return nil
     })
-
+// ...
     return g.Wait()
-
-
+// ...
+// ...
 ## 已知限制
-
+// ...
 - 每次请求仅处理单一任务,不支持批量并发
 - 
 - 和网络环境
+// ...

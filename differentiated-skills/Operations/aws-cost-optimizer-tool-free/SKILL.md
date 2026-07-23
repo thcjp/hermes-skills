@@ -22,8 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
-
 # AWS成本优化入门（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ### 分析功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 成本概览 | 月度支出总览 | 支持 |
 | 成本分解 | 按服务/区域 | 支持 |
 | 趋势分析 | 月度趋势 | 支持 |
@@ -75,7 +76,7 @@ suggested_price: 29.9
 ```bash
 # 月度成本概览
 python3 （请参考skill目录中的脚本文件） summary --month 2026-07
-
+# ...
 # 输出：
 # === AWS成本概览 2026年7月 ===
 # 总支出: $1,250.50
@@ -96,7 +97,7 @@ python3 （请参考skill目录中的脚本文件） summary --month 2026-07
 ```bash
 # 闲置资源检测
 python3 （请参考skill目录中的脚本文件） idle-resources --scan
-
+# ...
 # 输出：
 # === 闲置资源 ===
 # 1. EC2实例 i-xxx (停止状态) - $0/月
@@ -113,7 +114,7 @@ python3 （请参考skill目录中的脚本文件） idle-resources --scan
 ```bash
 # 优化建议
 python3 （请参考skill目录中的脚本文件） recommendations
-
+# ...
 # 输出：
 # === 优化建议 ===
 # 1. [高] 删除闲置EBS卷 - 节省$40/月
@@ -137,10 +138,10 @@ python3 （请参考skill目录中的脚本文件） recommendations
 ```bash
 # 依赖说明
 pip install boto3
-
+# ...
 # 配置AWS凭证
 aws configure
-
+# ...
 # 分析成本
 python3 （请参考skill目录中的脚本文件） summary --month 2026-07
 ```
@@ -151,17 +152,17 @@ python3 （请参考skill目录中的脚本文件） summary --month 2026-07
 # 成本概览
 python3 （请参考skill目录中的脚本文件） summary --month 2026-07
 python3 （请参考skill目录中的脚本文件） trend --months 6
-
+# ...
 # 成本分解
 python3 （请参考skill目录中的脚本文件） breakdown --by service
 python3 （请参考skill目录中的脚本文件） breakdown --by region
-
+# ...
 # 闲置资源
 python3 （请参考skill目录中的脚本文件） idle-resources --scan
-
+# ...
 # 优化建议
 python3 （请参考skill目录中的脚本文件） recommendations
-
+# ...
 # 导出报告
 python3 （请参考skill目录中的脚本文件） export --month 2026-07 --format csv --output cost_report.csv
 ```
@@ -175,21 +176,21 @@ cost_config:
   aws:
     region: "us-east-1"
     profile: "default"
-
+# ...
   analysis:
     currency: "USD"
     timezone: "Asia/Shanghai"
-
+# ...
   idle_resources:
     ec2_stopped_days: 7         # 停止超过7天视为闲置
     ebs_unattached: true        # 未挂载EBS
     eip_unassociated: true      # 未关联EIP
     s3_inactive_days: 90        # 90天未访问
-
+# ...
   recommendations:
     levels: ["high", "medium", "low"]
     min_savings: 5              # 最小节省金额（美元/月）
-
+# ...
   export:
     formats: ["csv", "json"]
     output_dir: "./reports"
@@ -203,7 +204,7 @@ cost_config:
 4. **预算控制**：设置心理预算线，超过时重点排查
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:-----|:-----|
 | 停止vs删除 | 停止EC2仍收EBS费用，删除才完全免费 |
 | S3生命周期 | 冷数据转Glacier/Deep Archive节省70%+ |
 | EIP费用 | 未关联的EIP每小时收费，及时释放 |
@@ -239,7 +240,7 @@ cost_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | boto3 | Python库 | 必需 | `pip install boto3` |
@@ -247,7 +248,7 @@ cost_config:
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-|:-------|:---------|:---------|:-----|
+|:---:|:---:|:---:|:---:|
 | AWS | `AWS_ACCESS_KEY_ID` | 必需 | API认证 |
 | AWS | `AWS_SECRET_ACCESS_KEY` | 必需 | API认证 |
 | AWS | `AWS_DEFAULT_REGION` | 必需 | 默认区域 |
@@ -263,9 +264,8 @@ cost_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -34,6 +34,8 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # llm-provider 助手工具 - 免费版
 
@@ -46,7 +48,7 @@ llm-provider 助手工具(免费版)为个人开发者提供轻量级的 llm-pro
 ## 核心能力
 
 | 能力分类 | 免费版支持 | 说明 |
-|:---------|:-----------|:-----|
+|----|-----|---|
 | 对话补全 | 支持 | `gpt-4o` / `gpt-4o-mini` 等模型 |
 | 文本嵌入 | 支持 | 生成向量用于检索与聚类 |
 | 文件上传 | 支持 | 上传文档用于助手与批处理 |
@@ -94,7 +96,7 @@ curl -X POST "https://api.llm-provider.com/v1/files" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -F "purpose=assistants" \
   -F "file=@./knowledge.pdf"
-
+# ...
 # 创建助手并绑定文件
 curl -X POST "https://api.llm-provider.com/v1/assistants" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
@@ -113,15 +115,15 @@ curl -X POST "https://api.llm-provider.com/v1/assistants" \
 ```python
 import os
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider(api_key=os.environ["OPENAI_API_KEY"])
-
+# ...
 prompts = [
     "为智能手表写一句吸引年轻人的广告语",
     "为咖啡品牌写一段温暖的品牌故事",
     "为在线课程写一封促销邮件开头"
 ]
-
+# ...
 for prompt in prompts:
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -172,7 +174,7 @@ curl -X POST "https://api.llm-provider.com/v1/images/generations" \
 ```bash
 # macOS / Linux
 export OPENAI_API_KEY="sk-your-api-key-here"
-
+# ...
 # Windows PowerShell
 $env:OPENAI_API_KEY="sk-your-api-key-here"
 ```
@@ -207,13 +209,13 @@ curl -X POST "https://api.llm-provider.com/v1/chat/completions" \
 ```python
 import os
 from llm-provider import llm-provider
-
+# ...
 # 方式一:自动读取环境变量
 client = llm-provider()
-
+# ...
 # 方式二:显式传入
 client = llm-provider(api_key="sk-your-api-key")
-
+# ...
 # 方式三:自定义 Base URL(代理场景)
 client = llm-provider(
     api_key=os.environ["OPENAI_API_KEY"],
@@ -225,7 +227,7 @@ client = llm-provider(
 
 ```javascript
 import llm-provider from "llm-provider";
-
+// ...
 const client = new llm-provider({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -256,9 +258,9 @@ const client = new llm-provider({
 ```python
 import time
 from llm-provider import llm-provider, RateLimitError
-
+# ...
 client = llm-provider()
-
+# ...
 def safe_chat(prompt, retries=3):
     for i in range(retries):
         try:
@@ -271,7 +273,7 @@ def safe_chat(prompt, retries=3):
     raise RuntimeError("重试次数耗尽")
 ```
 
-## 常见问题
+## 常见问题(补充)
 
 ### Q1: 提示 "authentication_error" 怎么办?
 
@@ -303,7 +305,7 @@ def safe_chat(prompt, retries=3):
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | llm-provider Python SDK | Python 库 | 推荐 | `pip install llm-provider` |
 | llm-provider Node SDK | npm 库 | 推荐(Node 场景) | `npm install llm-provider` |
 | curl | 命令行工具 | 可选 | 系统自带或下载 |
@@ -322,9 +324,8 @@ def safe_chat(prompt, retries=3):
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

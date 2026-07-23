@@ -18,19 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # Agent Commercial Con
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Agent Commercial Contract 核心处理 - 生成生成内容 | 支持 | 支持 |
-| Agent Commercial Contract 智能分析 - 遵循专业风格规范 | 不支持 | 支持 |
-| Agent Commercial Contract 批量处理 - 支持多种变体等多种变体 | 不支持 | 支持 |
-| Agent Commercial Contract 自定义配置 - 自动适配多种场景 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -51,8 +53,6 @@ pricing_model: "per_use"
 ### Step 1: 需求理解
 根据输入生成专业内容
 确认以下要素:
-- 关键要素: 关键要素
-- 关键要素: 关键要素
 - 关键要素: 关键要素
 
 ### Step 2: 模板选择
@@ -75,7 +75,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | agent-commercial-contract处理的内容输入 |,  |
 | content | string | 否 | agent-commercial-contract处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -103,9 +103,8 @@ pricing_model: "per_use"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -118,7 +117,7 @@ pricing_model: "per_use"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -127,7 +126,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -139,13 +137,13 @@ export API_KEY="your_api_key_here"
 ### 示例1：基础用法
 ```
 **Installation**:
-
+# ...
 ```bash
 npm install agent-commercial-contract
 ```
-
+# ...
 **Basic Usage**:
-
+# ...
 ```typescript
 import AgentCommercialContract from 'agent-commercial-contract';
 
@@ -159,25 +157,26 @@ const consumer = await sdk.identity.registerAgent('Consumer AI', ['analytics']);
 const result = await sdk.createContractWithEscrow(
   provider.data.id
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: 如何开始使用Agent Commercial Con？
 A: 
-
+# ...
 ### Q2: 遇到错误怎么办？
 A: 
-
+# ...
 ### Q3: Agent Commercial Con有什么限制？
 A: 
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
+# ...

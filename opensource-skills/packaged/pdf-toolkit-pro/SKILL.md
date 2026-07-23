@@ -19,8 +19,9 @@ suggested_price: '19.9'
 pricing_tier: L2
 pricing_rationale: 文件处理类, large市场, enterprise复杂度, daily频次, L2层 → 高频通用工具(平台类多功能)
 pricing_model: monthly
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # PDF工具箱Pro
 
 全面处理 PDF 文档。从内容提取到文档生成,从合并拆分到表单填写,覆盖 PDF 全流程。
@@ -36,7 +37,7 @@ pricing_model: monthly
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 内容提取 | PDF文件(文本或扫描件) | 文本`output/{pdf-name}/text.txt`、表格`output/{pdf-name}/tables/`、图片`output/{pdf-name}/images/` |
 | 文档合并 | 多个PDF文件 | 合并后`output/{merge-name}/merged.pdf`(含目录) |
 | 文档拆分 | 单个PDF+拆分规则 | 拆分后`output/{split-name}/pages/`(按页/章/书签) |
@@ -84,7 +85,7 @@ pricing_model: monthly
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | PDF工具箱Pro处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -113,7 +114,7 @@ output/report/tables/
 ```python
 import pdfplumber
 import csv
-
+# ...
 with pdfplumber.open("report.pdf") as pdf:
     table_idx = 1
     for page in pdf.pages:
@@ -146,10 +147,10 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-
+# ...
 # 注册中文字体(国内可用思源黑体)
 pdfmetrics.registerFont(TTFont("SimSun", "simsun.ttc"))
-
+# ...
 doc = SimpleDocTemplate("output/annual-report/output.pdf", pagesize=A4,
     topMargin=72, bottomMargin=72, title="2024年度报告")
 styles = getSampleStyleSheet()
@@ -162,7 +163,7 @@ styles["Title"].fontName = "SimSun"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | PDF加密无法读取 | 文件设有用户密码 | 要求用户提供密码,不支持暴力破解 |
 | OCR识别失败 | 扫描质量差/分辨率低/手写字体 | 提示提高扫描质量(建议300DPI+),手写内容需人工录入 |
 | 表格提取错乱 | 合并单元格/无边框表格/复杂布局 | 尝试不同提取策略(lattice/stream),仍失败则标注需人工校对 |
@@ -179,9 +180,9 @@ styles["Title"].fontName = "SimSun"
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
-|:-------|:-----|:---------|:---------|:-------------|
+|:---:|:---:|:---:|:---:|:---:|
 | Python 3.8+ | 运行时 | 推荐 | PDF处理主力语言 | 清华源安装:`-i https://pypi.tuna.tsinghua.edu.cn/simple` |
 | PyPDF2/pypdf | 库 | 推荐 | PDF读写合并拆分 | `pip install pypdf -i https://pypi.tuna.tsinghua.edu.cn/simple` |
 | pdfplumber | 库 | 可选 | 文本表格提取 | 国内PyPI镜像安装 |
@@ -230,17 +231,17 @@ styles["Title"].fontName = "SimSun"
 import pdf2image
 import pytesseract
 from pathlib import Path
-
+# ...
 pdf_path = "contract_scan.pdf"
 output_dir = Path("output/contract_scan")
 output_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
 # 1. PDF转图片（300DPI保证识别精度）
 images = pdf2image.convert_from_path(
     pdf_path, dpi=300,
     poppler_path=r"C:\poppler\Library\bin"  # Windows下poppler路径
 )
-
+# ...
 # 2. OCR识别（中英文混排）
 full_text = []
 for i, img in enumerate(images, 1):
@@ -250,7 +251,7 @@ for i, img in enumerate(images, 1):
     )
     full_text.append(f"--- 第{i}页 ---\n{text}")
     print(f"已识别第{i}/{len(images)}页")
-
+# ...
 # 3. 输出文本
 text_path = output_dir / "text.txt"
 text_path.write_text("\n\n".join(full_text), encoding="utf-8")
@@ -265,7 +266,7 @@ print(f"OCR完成，输出: {text_path}")
 乙方: 上海示例咨询有限公司
 签订日期: 2024年8月15日
 签订地点: 北京市海淀区
-
+# ...
 --- 第2页 ---
 第一条 合同标的
 甲乙双方就软件开发服务事宜达成如下协议...
@@ -294,9 +295,9 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 import io
-
+# ...
 pdfmetrics.registerFont(TTFont("SimSun", "C:/Windows/Fonts/simsun.ttc"))
-
+# ...
 # 1. 生成目录页
 def create_toc_page(chapters, start_pages):
     packet = io.BytesIO()
@@ -312,11 +313,11 @@ def create_toc_page(chapters, start_pages):
     c.save()
     packet.seek(0)
     return PdfReader(packet).pages[0]
-
+# ...
 # 2. 合并PDF并计算每章起始页
 chapters = ["第一章 业务回顾", "第二章 财务分析", "第三章 战略规划"]
 files = ["chapter1.pdf", "chapter2.pdf", "chapter3.pdf"]
-
+# ...
 writer = PdfWriter()
 toc_start_pages = [2]  # 目录后第2页开始
 page_count = 2  # 目录占1页
@@ -326,17 +327,17 @@ for f in files:
     for page in reader.pages:
         writer.add_page(page)
         page_count += 1
-
+# ...
 # 3. 插入目录页到最前面
 toc_page = create_toc_page(chapters, toc_start_pages[1:])
 writer.insert_page(toc_page, 0)
-
+# ...
 # 4. 添加页眉页脚
 def add_header_footer(writer, header_text):
     for i, page in enumerate(writer.pages):
         # 页眉页脚通过叠加canvas实现（简化版）
         pass  # 实际实现用overlay
-
+# ...
 with open("output/annual_report/merged.pdf", "wb") as f:
     writer.write(f)
 print("合并完成: output/annual_report/merged.pdf")
@@ -368,11 +369,11 @@ Excel包含50名员工信息: name, id, department, position, date。
 import pandas as pd
 from pypdf import PdfReader, PdfWriter
 from pathlib import Path
-
+# ...
 # 1. 读取Excel数据
 df = pd.read_excel("employee_data.xlsx")
 print(f"共读取 {len(df)} 条员工记录")
-
+# ...
 # 2. 字段映射
 field_mapping = {
     "name": "employee_name",
@@ -381,16 +382,16 @@ field_mapping = {
     "position": "position",
     "date": "hire_date",
 }
-
+# ...
 output_dir = Path("output/forms")
 output_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
 # 3. 批量填充
 success_count = 0
 for idx, row in df.iterrows():
     reader = PdfReader("employee_form.pdf")
     writer = PdfWriter(clone_from=reader)
-
+# ...
     # 填充表单字段
     for excel_col, form_field in field_mapping.items():
         value = str(row[excel_col])
@@ -398,22 +399,22 @@ for idx, row in df.iterrows():
             writer.update_page_form_field_values(
                 writer.pages[0], {form_field: value}
             )
-
+# ...
     # 扁平化（锁定不可编辑）
     for page in writer.pages:
         page.merge_page(page)  # Flat化近似处理
-
+# ...
     # 字段属性设置只读
     if "/AcroForm" in writer._root_object:
         for field in writer._root_object["/AcroForm"]["/Fields"]:
             field_obj = field.get_object()
             field_obj.update({"/Ff": 1})  # ReadOnly标志
-
+# ...
     output_path = output_dir / f"form_{row['id']}_{row['name']}.pdf"
     with open(output_path, "wb") as f:
         writer.write(f)
     success_count += 1
-
+# ...
 print(f"批量填充完成: {success_count}/50 份表单")
 ```
 
@@ -456,10 +457,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.colors import Color, grey
 from reportlab.lib.enums import TA_CENTER
 import markdown
-
+# ...
 # 注册思源黑体
 pdfmetrics.registerFont(TTFont("NotoSans", "NotoSansCJK-Regular.otf"))
-
+# ...
 # 1. 水印绘制函数
 def draw_watermark(canvas, doc):
     canvas.saveState()
@@ -469,7 +470,7 @@ def draw_watermark(canvas, doc):
     canvas.rotate(45)
     canvas.drawCentredString(0, 0, "机  密")
     canvas.restoreState()
-
+# ...
 # 2. 页眉页脚
 def header_footer(canvas, doc):
     canvas.saveState()
@@ -482,7 +483,7 @@ def header_footer(canvas, doc):
     canvas.drawCentredString(A4[0]/2, 1.5*cm, f"第 {doc.page} 页")
     canvas.restoreState()
     draw_watermark(canvas, doc)
-
+# ...
 # 3. 生成PDF
 doc = SimpleDocTemplate(
     "output/confidential_report/output.pdf",
@@ -491,13 +492,13 @@ doc = SimpleDocTemplate(
     leftMargin=2*cm, rightMargin=2*cm,
     title="机密报告"
 )
-
+# ...
 styles = getSampleStyleSheet()
 styles["Normal"].fontName = "NotoSans"
 styles["Title"].fontName = "NotoSans"
 styles["Title"].fontSize = 24
 styles["Title"].alignment = TA_CENTER
-
+# ...
 story = []
 # 标题页
 story.append(Paragraph("2024年度机密报告", styles["Title"]))
@@ -511,7 +512,7 @@ with open("report.md", "r", encoding="utf-8") as f:
     md_content = f.read()
 # 简化的Markdown转ReportLab（实际可用markdown2reportlab库）
 story.append(Paragraph("正文内容...", styles["Normal"]))
-
+# ...
 doc.build(story, onFirstPage=header_footer, onLaterPages=header_footer)
 print("PDF生成完成: output/confidential_report/output.pdf")
 ```
@@ -538,15 +539,15 @@ print("PDF生成完成: output/confidential_report/output.pdf")
 from pypdf import PdfReader, PdfWriter
 from pathlib import Path
 import re
-
+# ...
 reader = PdfReader("textbook.pdf")
 output_dir = Path("output/textbook_split")
 output_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
 # 1. 获取书签结构
 outlines = reader.outline
 print(f"总页数: {len(reader.pages)}")
-
+# ...
 # 2. 解析书签并计算每章页码范围
 def parse_bookmarks(outlines, parent_title=""):
     bookmarks = []
@@ -557,28 +558,28 @@ def parse_bookmarks(outlines, parent_title=""):
         page_num = reader.get_destination_page_number(item)
         bookmarks.append({"title": title, "page": page_num})
     return bookmarks
-
+# ...
 bookmarks = parse_bookmarks(outlines)
 bookmarks.sort(key=lambda x: x["page"])
 print(f"识别到 {len(bookmarks)} 个章节书签")
-
+# ...
 # 3. 按章节拆分
 for i, bm in enumerate(bookmarks):
     start_page = bm["page"]
     end_page = bookmarks[i+1]["page"] if i+1 < len(bookmarks) else len(reader.pages)
-
+# ...
     writer = PdfWriter()
     for page_num in range(start_page, end_page):
         writer.add_page(reader.pages[page_num])
-
+# ...
     # 文件名安全处理（去除非法字符）
     safe_title = re.sub(r'[\\/*?:"<>|]', "_", bm["title"])
     output_path = output_dir / f"{safe_title}.pdf"
     with open(output_path, "wb") as f:
         writer.write(f)
-
+# ...
     print(f"已拆分: {bm['title']} (第{start_page+1}-{end_page}页, 共{end_page-start_page}页)")
-
+# ...
 print(f"\n拆分完成，共生成 {len(bookmarks)} 个PDF文件")
 ```
 

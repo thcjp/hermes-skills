@@ -19,11 +19,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
 ---
-
 # Docker容器入门工具（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ### 管理功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 镜像管理 | 构建/拉取/推送/删除 | 支持 |
 | 容器管理 | 创建/启动/停止/删除 | 支持 |
 | 数据卷 | 创建/挂载/备份 | 支持 |
@@ -77,14 +78,14 @@ suggested_price: 29.9
 python3 （请参考skill目录中的脚本文件） image build \
   --tag my-app:latest \
   --path ./Dockerfile
-
+# ...
 # 运行容器
 python3 （请参考skill目录中的脚本文件） container run \
   --image my-app:latest \
   --name my-app \
   --port 8080:80 \
   --detach
-
+# ...
 # 查看运行状态
 python3 （请参考skill目录中的脚本文件） container ps
 ```
@@ -98,10 +99,10 @@ python3 （请参考skill目录中的脚本文件） container ps
 python3 （请参考skill目录中的脚本文件） compose generate \
   --template "web_db" \
   --output docker-compose.yml
-
+# ...
 # 启动服务
 python3 （请参考skill目录中的脚本文件） compose up --detach
-
+# ...
 # 查看状态
 python3 （请参考skill目录中的脚本文件） compose ps
 ```
@@ -113,7 +114,7 @@ python3 （请参考skill目录中的脚本文件） compose ps
 ```bash
 # 创建数据卷
 python3 （请参考skill目录中的脚本文件） volume create --name my-data
-
+# ...
 # 挂载运行
 python3 （请参考skill目录中的脚本文件） container run \
   --image postgres:15 \
@@ -137,10 +138,10 @@ python3 （请参考skill目录中的脚本文件） container run \
 # macOS: brew install --cask docker
 # Linux: curl -fsSL https://get.docker.com | sh
 # Windows: 下载Docker Desktop
-
+# ...
 # 安装Python依赖
 pip install docker
-
+# ...
 # 验证Docker
 docker --version
 ```
@@ -153,21 +154,21 @@ python3 （请参考skill目录中的脚本文件） image build --tag my-app:la
 python3 （请参考skill目录中的脚本文件） image pull nginx:latest
 python3 （请参考skill目录中的脚本文件） image list
 python3 （请参考skill目录中的脚本文件） image delete my-app:old
-
+# ...
 # 容器管理
 python3 （请参考skill目录中的脚本文件） container run --image nginx --name web --port 8080:80 --detach
 python3 （请参考skill目录中的脚本文件） container ps
 python3 （请参考skill目录中的脚本文件） container stop --name web
 python3 （请参考skill目录中的脚本文件） container logs --name web --tail 100
-
+# ...
 # 数据卷
 python3 （请参考skill目录中的脚本文件） volume create --name my-data
 python3 （请参考skill目录中的脚本文件） volume list
-
+# ...
 # 网络
 python3 （请参考skill目录中的脚本文件） network create --name my-net
 python3 （请参考skill目录中的脚本文件） network list
-
+# ...
 # Compose
 python3 （请参考skill目录中的脚本文件） compose up --detach
 python3 （请参考skill目录中的脚本文件） compose down
@@ -184,7 +185,7 @@ python3 （请参考skill目录中的脚本文件） compose down
 docker_config:
   host: "unix:///var/run/docker.sock"
   timeout: 60
-
+# ...
   defaults:
     image:
       registry: "docker.io"
@@ -197,7 +198,7 @@ docker_config:
       driver: "local"
     network:
       driver: "bridge"
-
+# ...
   compose:
     version: "3.8"
     default_template: "web_db"
@@ -211,7 +212,7 @@ docker_config:
 4. **网络隔离**：不同应用使用独立网络，避免互相干扰
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:-----|:-----|
 | 镜像清理 | 定期清理无用镜像，释放磁盘 |
 | 资源限制 | 设置内存和CPU限制，避免容器失控 |
 | 日志管理 | 配置日志轮转，避免日志撑满磁盘 |
@@ -247,7 +248,7 @@ docker_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | docker | Python库 | 必需 | `pip install docker` |
@@ -266,9 +267,8 @@ docker_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

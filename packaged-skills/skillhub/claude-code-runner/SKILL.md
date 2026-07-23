@@ -17,19 +17,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # ai-assistant Code Ru
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Claude Code Runner 核心处理 - 生成生成内容 | 支持 | 支持 |
-| Claude Code Runner 智能分析 - 遵循专业风格规范 | 不支持 | 支持 |
-| Claude Code Runner 批量处理 - 支持多种变体等多种变体 | 不支持 | 支持 |
-| Claude Code Runner 自定义配置 - 自动适配多种场景 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -58,7 +60,7 @@ result = run_claude_code(
 )
 ```
 
-### 核心能力
+### 核心能力(补充)
 
 ```python
 result = run_claude_code(
@@ -93,7 +95,7 @@ result = run_claude_code(
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | claude-code-runner处理的内容输入 |,  |
 | content | string | 否 | claude-code-runner处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -121,9 +123,8 @@ result = run_claude_code(
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 输入content为空 | 用户未提供必要信息 | 提示用户提供content, 并给出示例格式 |
 | 输入内容过长(>5000字) | 超出单次处理能力 | 建议分段处理, 每段不超过2000字 |
 | 风格参数不识别 | 传入不支持的风格 | 列出支持的风格选项, 使用默认风格 |
@@ -136,9 +137,9 @@ result = run_claude_code(
 - **Agent平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -147,7 +148,6 @@ result = run_claude_code(
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -160,17 +160,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Claude Code Runner？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: ai-assistant Code Runner有什么限制？
-A: 
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

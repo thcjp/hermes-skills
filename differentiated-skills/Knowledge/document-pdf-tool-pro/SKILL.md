@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "文档处理,工具,效率"
 ---
 # PDF文档工具（专业版）
 
@@ -115,21 +117,11 @@ PDF文档工具是针对PDF处理领域的专业化AI辅助工具。专业版面
 
 `提取PDF中的表格
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：PDF合并与拆分
 
 将多个PDF合并为一个，或按页码拆分为多个文件。**示例指令**：`
 
 `合并这三个PDF文件
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -143,7 +135,7 @@ PDF文档工具是针对PDF处理领域的专业化AI辅助工具。专业版面
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | PDF文档工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -151,7 +143,7 @@ PDF文档工具是针对PDF处理领域的专业化AI辅助工具。专业版面
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -168,20 +160,20 @@ from pypdf import PdfReader, PdfWriter
 import pdfplumber
 from dataclasses import dataclass
 from typing import List, Dict
-
+# ...
 @dataclass
 class PDFPageInfo:
     page_num: int
     text_length: int
     table_count: int
     has_images: bool
-
+# ...
 class EnterprisePDFProcessor:
     def __init__(self, file_path: str):
         self.file_path = file_path
         self.reader = PdfReader(file_path)
         self.page_info: List[PDFPageInfo] = []
-
+# ...
     def extract_all_text(self, preserve_layout: bool = True) -> str:
         """提取全文（PRO 专属：版面保持）"""
         all_text = []
@@ -190,7 +182,7 @@ class EnterprisePDFProcessor:
                 text = page.extract_text() or ""
                 all_text.append(f"--- 第 {i+1} 页 ---" + NL + text)
         return NL + NL + "\n\n".join(all_text)
-
+# ...
     def extract_all_tables(self, export_excel: bool = True) -> List[pd.DataFrame]:
         """提取所有表格（PRO 专属：自动导出Excel）"""
         all_tables = []
@@ -207,7 +199,7 @@ class EnterprisePDFProcessor:
             output = Path(self.file_path).stem + "_tables.xlsx"
             combined.to_excel(output, index=False)
         return all_tables
-
+# ...
     def batch_process(self, file_list: List[str],
                      operations: List[str]) -> Dict[str, dict]:
         """批量处理多个PDF（PRO 专属）"""
@@ -221,7 +213,7 @@ class EnterprisePDFProcessor:
                 file_result["tables"] = len(proc.extract_all_tables())
             results[file_path] = file_result
         return results
-
+# ...
     def create_watermarked_pdf(self, watermark_path: str,
                                output_path: str, encrypt: bool = False,
                                password: str = ""):
@@ -235,7 +227,7 @@ class EnterprisePDFProcessor:
             writer.encrypt(password)
         with open(output_path, "wb") as f:
             writer.write(f)
-
+# ...
     def generate_audit_report(self, output_path: str):
         """生成审计报告（PRO 专属）"""
         report = {
@@ -246,7 +238,7 @@ class EnterprisePDFProcessor:
         }
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
-
+# ...
 proc = EnterprisePDFProcessor("report.pdf")
 tables = proc.extract_all_tables()
 print(f"提取到 {len(tables)} 个表格")
@@ -291,7 +283,7 @@ pdf:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -303,7 +295,7 @@ pdf:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -375,7 +367,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | pypdf | Python库 | 必需 | pip install pypdf |
 | pdfplumber | Python库 | 推荐 | pip install pdfplumber |
@@ -392,9 +384,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 学习助手（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `生成微服务架构练习题
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：学习评估
 
 评估当前知识水平并推荐学习路径。**示例指令**：`
 
 `评估我的Kubernetes水平
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 学习助手（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -163,7 +155,7 @@ import json
 from typing import List, Dict, Optional
 from datetime import datetime, timedelta
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class LearningPhase:
     week: int
@@ -173,7 +165,7 @@ class LearningPhase:
     resources: List[str] = field(default_factory=list)
     assessment: Optional[dict] = None
     difficulty: str = "medium"
-
+# ...
 @dataclass
 class LearningPlan:
     topic: str
@@ -182,11 +174,11 @@ class LearningPlan:
     phases: List[LearningPhase] = field(default_factory=list)
     progress: Dict[int, float] = field(default_factory=dict)
     created: str = ""
-
+# ...
 class AdaptiveLearningEngine:
     def __init__(self):
         self.plans: Dict[str, LearningPlan] = {}
-
+# ...
     def generate_plan(self, topic: str, weeks: int = 4,
                      level: str = "beginner") -> LearningPlan:
         """生成学习计划（PRO 专属：自适应）"""
@@ -209,7 +201,7 @@ class AdaptiveLearningEngine:
             plan.phases.append(phase)
         self.plans[topic] = plan
         return plan
-
+# ...
     def assess_level(self, topic: str, answers: List[dict]) -> dict:
         """评估知识水平（PRO 专属）"""
         correct = sum(1 for a in answers if a.get("correct"))
@@ -223,7 +215,7 @@ class AdaptiveLearningEngine:
             level = "beginner"
         return {"score": score, "level": level,
                 "correct": correct, "total": total}
-
+# ...
     def track_progress(self, topic: str, week: int,
                       completion: float) -> dict:
         """追踪学习进度（PRO 专属）"""
@@ -237,7 +229,7 @@ class AdaptiveLearningEngine:
             "overall": round(overall * 100, 1),
             "on_track": overall >= week / self.plans[topic].duration_weeks
         }
-
+# ...
     def adapt_path(self, topic: str, performance: dict) -> LearningPlan:
         """自适应调整学习路径（PRO 专属）"""
         if topic not in self.plans:
@@ -250,7 +242,7 @@ class AdaptiveLearningEngine:
             for phase in plan.phases:
                 phase.difficulty = "hard"
         return plan
-
+# ...
     def generate_exercises(self, topic: str, count: int = 5,
                           difficulty: str = "medium") -> List[dict]:
         """生成练习题（PRO 专属）"""
@@ -265,25 +257,25 @@ class AdaptiveLearningEngine:
                 "answer": "A"
             })
         return exercises
-
+# ...
     def _generate_curriculum(self, topic, weeks, level):
         return [[f"{topic}-W{i}-T{j}" for j in range(1, 4)]
                 for i in range(1, weeks + 1)]
-
+# ...
     def _generate_exercises(self, topics):
         return [{"question": f"关于{t}的练习", "type": "practice"}
                 for t in topics]
-
+# ...
     def _recommend_resources(self, topics):
         return [f"https://example.com/resource/{t}" for t in topics]
-
+# ...
     def _adjust_difficulty(self, level, week):
         if level == "beginner":
             return "easy" if week <= 2 else "medium"
         elif level == "advanced":
             return "medium" if week <= 2 else "hard"
         return "medium"
-
+# ...
 engine = AdaptiveLearningEngine()
 plan = engine.generate_plan("Python", 4, "beginner")
 print(f"学习计划: {plan.topic}, {plan.duration_weeks}周")
@@ -333,7 +325,7 @@ learning:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -345,7 +337,7 @@ learning:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -417,7 +409,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -430,9 +422,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

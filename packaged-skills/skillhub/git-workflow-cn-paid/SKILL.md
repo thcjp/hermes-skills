@@ -22,24 +22,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # Git工作流专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版新增 | 不支持 | 支持 |
-| 分支管理 | 不支持 | 支持 |
-| 批量分支管理、保护分支策略 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Git工作流专业版具集成与批量分支管理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 分支管理 | 基础创建/切换/合并 | 批量分支管理、保护分支策略 |
 | 工作流模型 | - | Git Flow / GitHub Flow / GitLab Flow |
 | 冲突解决 | 手动解决 | rerere 自动记忆 + 三方对比工具 |
@@ -79,30 +81,30 @@ pricing_model: "per_use"
 
 ```text
 用户：我们需要发布 v2.0.0 版本，包含多个功能分支，帮我规划 Git Flow 流程
-
+# ...
 助手：
 1. 初始化 Git Flow
    git flow init
-
+# ...
 2. 功能分支开发（多个并行）
    git flow feature start user-auth
    git flow feature start payment-module
    # 开发完成后分别完成
    git flow feature finish user-auth
    git flow feature finish payment-module
-
+# ...
 3. 创建发布分支
    git flow release start v2.0.0
    # 在发布分支上仅允许修复缺陷和文档更新
-
+# ...
 4. 完成发布并打标签
    git flow release finish v2.0.0
    # 自动合并到 main 和 develop，并打版本标签
-
+# ...
 5. 推送所有分支和标签
    git push origin --all
    git push origin --tags
-
+# ...
 6. 紧急修复流程（如线上发现缺陷）
    git flow hotfix start fix-login-crash v2.0.0
    # 修复完成后
@@ -115,24 +117,24 @@ pricing_model: "per_use"
 
 ```text
 用户：我们有 dev/staging/prod 三个环境，怎么管理分支
-
+# ...
 助手：推荐 GitLab Flow 模式
-
+# ...
 1. 功能分支开发并合并到 main
    git checkout -b feature/payment main
    git push origin feature/payment
    # 通过合并请求合并到 main
-
+# ...
 2. main 合并到 staging 部署预发
    git checkout staging
    git merge main
    git push origin staging
-
+# ...
 3. staging 验证通过后合并到 production
    git checkout production
    git merge staging
    git push origin production
-
+# ...
 4. 紧急修复需要从 production 反向合并
    git checkout -b hotfix/urgent production
    # 修复后合并回 production 和 main
@@ -145,17 +147,17 @@ pricing_model: "per_use"
 ```bash
 # 启用 rerere 自动记忆冲突解决方案
 git config --global rerere.enabled true
-
+# ...
 # 批量查看已合并分支
 git branch --merged main | grep -v "^\*\|main\|develop"
-
+# ...
 # 批量删除已合并的本地分支
 git branch --merged main | grep -v "^\*\|main\|develop" | xargs -n 1 git branch -d
-
+# ...
 # 批量清理远程过期分支
 git remote prune origin
 git fetch --all --prune
-
+# ...
 # 批量删除远程已合并分支（谨慎操作）
 git branch -r --merged origin/main | grep -v "main\|develop" | sed 's/origin\///' | xargs -I{} git push origin :{}
 ```
@@ -167,13 +169,13 @@ git branch -r --merged origin/main | grep -v "main\|develop" | sed 's/origin\///
 ```bash
 # 依赖说明
 brew install git-flow
-
+# ...
 # 安装 git-flow（Ubuntu/Debian）
 apt-get install git-flow
-
+# ...
 # 初始化项目
 git flow init
-
+# ...
 # 自定义分支名（交互式配置）
 # main branch: main
 # develop branch: develop
@@ -187,20 +189,20 @@ git flow init
 ```bash
 # 启用冲突自动记忆
 git config --global rerere.enabled true
-
+# ...
 # 配置三方合并工具
 git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
-
+# ...
 # 配置行尾换行符
 git config --global core.autocrlf input
-
+# ...
 # 配置拉取策略为 rebase
 git config --global pull.rebase true
-
+# ...
 # 配置推送默认行为
 git config --global push.default current
-
+# ...
 # 启用部分克隆（大仓库优化）
 git config --global feature.experimental true
 ```
@@ -209,7 +211,7 @@ git config --global feature.experimental true
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | git-workflow-cn处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -256,9 +258,8 @@ git config --global feature.experimental true
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -274,7 +275,7 @@ git config --global feature.experimental true
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Git | 命令行工具 | 必需 | 系统包管理器安装 |
 | git-flow | 扩展工具 | 推荐 | `brew install git-flow` 或 `apt install git-flow` |
 | conventional-changelog-cli | Node 工具 | 可选 | `npm install -g conventional-changelog-cli` |
@@ -294,7 +295,7 @@ git config --global feature.experimental true
 ### 保护分支策略建议
 
 | 分支 | 保护规则 | 合并方式 | 谁可推送 |
-| --- | --- | --- | --- |
+|---:|:---|---:|---:|
 | main | 禁止直接推送 | 合并请求 + 审查 | 仅管理员 |
 | develop | 禁止直接推送 | 合并请求 | 核心成员 |
 | release/* | 禁止新功能 | 仅缺陷修复 | 发布负责人 |
@@ -306,21 +307,21 @@ git config --global feature.experimental true
 ```bash
 # 语义化版本标签
 git tag -a v2.0.0 -m "Release 2.0.0: 用户认证与支付模块"
-
+# ...
 # 预发布版本标签
 git tag -a v2.1.0-beta.1 -m "Beta 2.1.0: 新搜索功能预览"
-
+# ...
 # 补丁版本标签
 git tag -a v2.0.1 -m "Patch: 修复登录崩溃问题"
-
+# ...
 # 查看所有标签
 git tag -l
 git tag -l "v2.*"
-
+# ...
 # 推送标签
 git push origin v2.0.0        # 单个标签
 git push origin --tags         # 所有标签
-
+# ...
 # 删除标签
 git tag -d v2.0.0              # 本地
 git push origin --delete v2.0.0  # 远程
@@ -331,10 +332,10 @@ git push origin --delete v2.0.0  # 远程
 ```bash
 # 安装 conventional-changelog
 npm install -g conventional-changelog-cli
-
+# ...
 # 生成 CHANGELOG
 conventional-changelog -p angular -i CHANGELOG.md -s
-
+# ...
 # 首次生成完整历史
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
@@ -346,7 +347,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```bash
 # 启用后，首次解决冲突时 Git 会记录解决方案
 git config --global rerere.enabled true
-
+# ...
 # 再次遇到相同冲突时自动应用记忆的方案
 git rerere diff     # 查看当前记忆的解决方案
 git rerere forget path/to/file  # 忘记指定文件的方案
@@ -367,7 +368,7 @@ git flow feature start new-feature
 ```bash
 # Git Flow 会自动合并 hotfix 到 main 和 develop
 git flow hotfix finish fix-urgent
-
+# ...
 # 如有多环境分支，需手动同步
 git checkout staging
 git merge main
@@ -380,7 +381,7 @@ git push origin staging
 # 方案一：使用 revert（保留历史，推荐）
 git revert v2.0.0..HEAD
 git commit -m "revert: 回滚 v2.0.0 之后的所有改动"
-
+# ...
 # 方案二：使用 reset（重写历史，谨慎使用）
 git checkout main
 git reset --hard v1.9.0
@@ -403,13 +404,13 @@ done
 git fetch origin
 git checkout feature/complex
 git rebase origin/main
-
+# ...
 # 2. 逐个文件解决冲突
 git status
 # 编辑冲突文件...
 git add .
 git rebase --continue
-
+# ...
 # 3. 如冲突过多，考虑重置后重新开发
 git rebase --abort
 git checkout main
@@ -419,9 +420,8 @@ git checkout -b feature/complex-v2
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

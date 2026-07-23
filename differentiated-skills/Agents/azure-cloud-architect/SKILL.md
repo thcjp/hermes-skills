@@ -20,8 +20,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
-
 # Azure云架构师
 
 使用本地Azure CLI回答关于Azure资源的问题。默认只读查询,仅在用户明确要求变更并确认后执行写/破坏性操作。
@@ -91,7 +92,7 @@ RBAC角色审计(检测Owner过度授权)、存储安全检查(公共访问/HTTP
 ### Step 1: 确认登录身份
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Azure云架构师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -105,7 +106,7 @@ az account show
 ```bash
 # 列出所有可访问的订阅
 az account list --output table
-
+# ...
 # 设置活跃订阅(按名称或ID)
 az account set --subscription "Production"
 ```
@@ -124,7 +125,7 @@ az account set --subscription "Production"
 
 ## 示例
 
-### 示例
+### 示例(补充)
 **输入**: "帮我看看当前订阅里有哪些虚拟机,运行状态如何"
 
 **输出**:
@@ -168,9 +169,8 @@ az costmanagement query --type ActualCost \
 
 ## 错误处理
 
-
 | 场景 | 原因 | 处理方式 |
-|:-----|:-----|:---------|
+|:-----|:-----|:-----|
 | `Please run az login` | 未登录或会话过期 | 运行 `az login --use-device-code` 重新登录 |
 | `Subscription not found` | 订阅ID错误或无权限 | 用 `az account list` 确认可访问的订阅列表 |
 | `Access denied` / 403 | RBAC权限不足 | 检查 `az account show` 确认身份,确认关联角色;只读至少需Reader角色 |
@@ -184,7 +184,7 @@ az costmanagement query --type ActualCost \
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Azure CLI | 工具 | 必需 | 从 docs.microsoft.com/cli/azure 安装,版本v2.0+ |
 | Azure账户 | 账户 | 必需 | 注册Azure账户 |
 | Agent LLM | API | 必需 | 由Agent内置LLM提供 |

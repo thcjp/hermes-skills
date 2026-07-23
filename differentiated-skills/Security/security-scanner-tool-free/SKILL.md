@@ -54,8 +54,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 # 安全扫描器(免费版)
 
 ## 概述
@@ -67,7 +68,7 @@ suggested_price: 29.9
 ### 扫描工具集成
 
 | 工具 | 用途 | 扫描类型 |
-|------|------|----------|
+|---|---|----|
 | nmap | 网络端口扫描 | 主机发现/端口扫描/服务识别 |
 | nuclei | 漏洞模板扫描 | CVE检测/配置检查/漏洞验证 |
 | sslscan | SSL/TLS分析 | 证书检查/协议版本/加密套件 |
@@ -80,7 +81,7 @@ suggested_price: 29.9
 ### 免费版与专业版对比
 
 | 功能 | 免费版 | 专业版 |
-|------|--------|--------|
+|:-----|:-----|:-----|
 | 扫描工具 | 4个核心工具 | 10+工具 |
 | 扫描模板 | 基础模板 | 高级+自定义模板 |
 | 报告格式 | Markdown | HTML/PDF/SARIF |
@@ -110,7 +111,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 安全扫描器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -118,10 +119,10 @@ suggested_price: 29.9
 ```bash
 # 主机发现
 nmap -sn -T4 192.168.1.0/24
-
+# ...
 # 快速端口扫描(前100个常用端口)
 nmap -F 192.168.1.1
-
+# ...
 # 服务版本识别
 nmap -sV -T4 192.168.1.1
 ```
@@ -138,10 +139,10 @@ nmap -p- -sV -sC -A -T4 192.168.1.1 -oN full_scan.txt
 ```bash
 # Nuclei CVE漏洞扫描
 nuclei -u https://target.com -t cves/ -o nuclei_results.txt
-
+# ...
 # Nikto Web服务器扫描
 nikto -h target.com -o nikto_report.txt
-
+# ...
 # 目录枚举
 nmap --script http-enum -p 80,443 target.com
 ```
@@ -151,7 +152,7 @@ nmap --script http-enum -p 80,443 target.com
 ```bash
 # SSL配置检查
 sslscan target.com
-
+# ...
 # 检查证书有效期、协议版本、加密套件
 sslscan target.com | grep -E "SSLv|TLS|Certificate"
 ```
@@ -182,81 +183,81 @@ sslscan target.com | grep -E "SSLv|TLS|Certificate"
 import subprocess
 import os
 from datetime import datetime
-
+# ...
 class SecurityScanner:
     """安全扫描工具包"""
-
+# ...
     def __init__(self, target):
         self.target = target
         self.results = {}
         self.report_dir = "reports"
         os.makedirs(self.report_dir, exist_ok=True)
-
+# ...
     def quick_recon(self):
         """快速侦察扫描"""
         print(f"[*] 开始快速侦察: {self.target}")
-
+# ...
         # 主机发现
         result = self._run_command(f"nmap -sn -T4 {self.target}")
         self.results["host_discovery"] = result
-
+# ...
         # 快速端口扫描
         result = self._run_command(f"nmap -F -T4 {self.target}")
         self.results["port_scan"] = result
-
+# ...
         return self.results
-
+# ...
     def full_scan(self):
         """全面深度扫描"""
         print(f"[*] 开始全面扫描: {self.target}")
-
+# ...
         # 全端口扫描
         result = self._run_command(
             f"nmap -p- -sV -sC -A -T4 {self.target}"
         )
         self.results["full_scan"] = result
-
+# ...
         return self.results
-
+# ...
     def vuln_scan(self):
         """漏洞扫描"""
         print(f"[*] 开始漏洞扫描: {self.target}")
-
+# ...
         # Nmap漏洞脚本
         result = self._run_command(
             f"nmap --script vuln {self.target}"
         )
         self.results["vuln_scan"] = result
-
+# ...
         # Nuclei扫描
         result = self._run_command(
             f"nuclei -u http://{self.target} -t cves/ -t vulnerabilities/"
         )
         self.results["nuclei_scan"] = result
-
+# ...
         return self.results
-
+# ...
     def ssl_scan(self):
         """SSL/TLS分析"""
         print(f"[*] 开始SSL扫描: {self.target}")
-
+# ...
         result = self._run_command(f"sslscan {self.target}")
         self.results["ssl_scan"] = result
-
+# ...
         return self.results
-
+# ...
     def web_scan(self):
         """Web应用扫描"""
         print(f"[*] 开始Web扫描: {self.target}")
-
+# ...
         # Nikto扫描
         result = self._run_command(
             f"nikto -h http://{self.target} -o {self.report_dir}/nikto_{self.target}.txt"
         )
         self.results["web_scan"] = result
-
+# ...
         return self.results
-
+# ...
     def generate_report(self):
         """生成扫描报告"""
         timestamp = datetime.now().strftime("%Y-%m-%d")
@@ -264,19 +265,19 @@ class SecurityScanner:
             self.report_dir,
             f"security-scan-{self.target}-{timestamp}.md"
         )
-
+# ...
         with open(report_path, 'w', encoding='utf-8') as f:
             f.write(f"# 安全扫描报告\n\n")
             f.write(f"**目标**: {self.target}\n")
             f.write(f"**时间**: {timestamp}\n\n")
-
+# ...
             for scan_type, result in self.results.items():
                 f.write(f"## {scan_type}\n\n")
                 f.write(f"```\n{result}\n```\n\n")
-
+# ...
         print(f"[+] 报告已生成: {report_path}")
         return report_path
-
+# ...
     def _run_command(self, command):
         """执行系统命令"""
         try:
@@ -289,20 +290,20 @@ class SecurityScanner:
             return "扫描超时(10分钟)"
         except Exception as e:
             return f"错误: {str(e)}"
-
+# ...
 # 示例
 if __name__ == "__main__":
     scanner = SecurityScanner("192.168.1.1")
-
+# ...
     # 快速侦察
     scanner.quick_recon()
-
+# ...
     # 漏洞扫描
     scanner.vuln_scan()
-
+# ...
     # SSL扫描
     scanner.ssl_scan()
-
+# ...
     # 生成报告
     scanner.generate_report()
 ```
@@ -313,7 +314,7 @@ if __name__ == "__main__":
 ### Nmap扫描参数速查
 
 | 参数 | 用途 | 示例 |
-|------|------|------|
+|:---:|:---:|:---:|
 | `-sn` | 主机发现(不扫描端口) | `nmap -sn 192.168.1.0/24` |
 | `-sS` | SYN半开扫描 | `nmap -sS 192.168.1.1` |
 | `-sV` | 服务版本探测 | `nmap -sV 192.168.1.1` |
@@ -328,16 +329,16 @@ if __name__ == "__main__":
 ```bash
 # CVE漏洞
 nuclei -u target.com -t cves/
-
+# ...
 # 配置错误
 nuclei -u target.com -t misconfiguration/
-
+# ...
 # 敏感信息暴露
 nuclei -u target.com -t exposures/
-
+# ...
 # 技术栈指纹
 nuclei -u target.com -t technologies/
-
+# ...
 # 自定义模板
 nuclei -u target.com -t custom-templates/
 ```
@@ -349,10 +350,10 @@ nuclei -u target.com -t custom-templates/
 ```bash
 # 阶段1:侦察(快速)
 nmap -sn -T4 192.168.1.0/24
-
+# ...
 # 阶段2:端口扫描(中等)
 nmap -sV -sC -T4 192.168.1.1
-
+# ...
 # 阶段3:漏洞扫描(深度)
 nmap --script vuln 192.168.1.1
 nuclei -u http://192.168.1.1 -t cves/
@@ -363,7 +364,7 @@ nuclei -u http://192.168.1.1 -t cves/
 ```bash
 # 保存为多种格式
 nmap -sV -oN scan.txt -oX scan.xml -oG scan.grep 192.168.1.1
-
+# ...
 # Nuclei结果保存
 nuclei -u target.com -o results.txt -j -o results.json
 ```
@@ -407,7 +408,7 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Python | 运行时 | 必需 | 系统自带 |
 | nmap | 系统工具 | 必需 | `apt install nmap` 或 nmap.org |
 | nuclei | 工具 | 推荐 | `go install projectdiscovery/nuclei/v3/cmd/nuclei@latest` |
@@ -423,9 +424,8 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

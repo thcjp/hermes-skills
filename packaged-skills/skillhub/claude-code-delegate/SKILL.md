@@ -17,6 +17,8 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # 代码委派助手
 
@@ -27,13 +29,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **环境前置检查**: 验证CLI安装、API密钥配置、写入保护插件状态,确保委派环境安全就绪 | 支持 | 支持 |
-| **会话上下文续接**: 使用 `--continue` 标志恢复先前会话上下文,支持在同一项目内迭代修复Bug | 不支持 | 支持 |
-| **独立测试验证**: 使用全新会话(不加 `--continue`)独立审查和测试委派器编写的代码,消除编写者上下文偏见 | 不支持 | 支持 |
-| **安全防护策略**: 隔离项目目录、写入保护插件、禁止 `--dangerously-skip-permissions`、限制项目范围、审查委派输出 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 环境前置检查
 
@@ -69,7 +71,7 @@ cd "<project_dir>" && ai-assistant -p "<task_description>" --output-format text 
 ### 参数说明
 
 | 参数 | 用途 | 是否必需 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `-p` | 非交互模式执行 | 是 |
 | `cd "<dir>" &&` | 设置工作目录(无 `--cwd` 标志) | 是 |
 | `--output-format text` | 纯文本输出 | 推荐 |
@@ -154,7 +156,7 @@ exec ai-assistant -p "..." → process poll → (阻塞!用户无响应等待)
 ## 会话决策规则
 
 | 场景 | 使用 `--continue`? |
-| --- | --- |
+|---:|---:|
 | 修复/迭代委派器刚编写的代码 | 是 |
 | 测试/验证委派器刚编写的代码 | 否(全新会话) |
 | 运行现有程序 | 否(全新会话) |
@@ -188,7 +190,7 @@ exec ai-assistant -p "..." → process poll → (阻塞!用户无响应等待)
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -211,7 +213,7 @@ export API_KEY="your_api_key_here"
 - **独立测试验证**: 使用全新会话(不加 `--continue`)独立审查和测试委派器编写的代码,消除编写者上下文偏见
 - **安全防护策略**: 隔离项目目录、写入保护插件、禁止 `--dangerously-skip-permissions`、限制项目范围、审查委派输出
 - **结果中继转达**: 将委派器的工作摘要、变更文件列表和个性风格转达给用户,保持技术摘要简洁
-### 环境前置检查
+### 环境前置检查(补充)
 
 针对环境前置,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
 
@@ -287,7 +289,7 @@ FAIL: test_register_duplicate_email - AssertionError: expected 409, got 500
 ```bash
 # 任务1: 前端组件
 cd "/home/user/projects/webapp" && ai-assistant -p "创建React登录表单组件,包含邮箱和密码输入框,使用Tailwind CSS样式" --output-format text --max-turns 10 --permission-mode bypassPermissions
-
+# ...
 # 任务2: 后端API文档
 cd "/home/user/projects/webapp" && ai-assistant -p "为 src/api/ 下所有端点生成OpenAPI 3.0规范文档" --output-format text --max-turns 10 --permission-mode bypassPermissions
 ```
@@ -295,7 +297,7 @@ cd "/home/user/projects/webapp" && ai-assistant -p "为 src/api/ 下所有端点
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `command not found: ai-assistant` | CLI未安装 | 提示用户执行 `npm install -g @ai-provider-ai/ai-assistant-code` |
 | 空输出 | 任务描述不清晰 | 要求用户澄清任务目标,提供更多上下文 |
 | 超时(超过300秒) | 任务过于复杂 | 建议拆分为更小的子任务,增加 `--max-turns` 值 |

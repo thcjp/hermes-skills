@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 认知学习工具（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `生成微服务闪卡
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：认知负荷分析
 
 分析学习内容的认知负荷并优化。**示例指令**：`
 
 `分析这个课程的学习负荷
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 认知学习工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -164,7 +156,7 @@ import math
 from typing import List, Dict, Optional, Tuple
 from datetime import datetime, timedelta
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class Flashcard:
     id: str
@@ -177,7 +169,7 @@ class Flashcard:
     last_review: Optional[str] = None
     next_review: str = ""
     review_history: List[dict] = field(default_factory=list)
-
+# ...
 @dataclass
 class KnowledgeNode:
     concept: str
@@ -185,13 +177,13 @@ class KnowledgeNode:
     prerequisites: List[str] = field(default_factory=list)
     mastery: float = 0.0
     related: List[str] = field(default_factory=list)
-
+# ...
 class CognitiveLearningEngine:
     def __init__(self):
         self.flashcards: Dict[str, Flashcard] = {}
         self.knowledge_graph: Dict[str, KnowledgeNode] = {}
         self.learning_analytics: Dict = {}
-
+# ...
     def create_flashcard(self, front: str, back: str,
                         tags: List[str] = None) -> Flashcard:
         """创建闪卡（PRO 专属：自动调度）"""
@@ -203,7 +195,7 @@ class CognitiveLearningEngine:
         )
         self.flashcards[card_id] = card
         return card
-
+# ...
     def review_card(self, card_id: str, quality: int) -> dict:
         """复习闪卡（PRO 专属：SM-2算法+记忆曲线）"""
         card = self.flashcards[card_id]
@@ -227,13 +219,13 @@ class CognitiveLearningEngine:
             "interval": card.interval
         })
         return {"next_review": card.next_review, "interval": card.interval}
-
+# ...
     def get_due_cards(self) -> List[Flashcard]:
         """获取到期复习卡片（PRO 专属）"""
         now = datetime.now()
         return [c for c in self.flashcards.values()
                 if datetime.fromisoformat(c.next_review) <= now]
-
+# ...
     def build_knowledge_graph(self, concepts: List[dict]) -> dict:
         """构建知识图谱（PRO 专属）"""
         for concept in concepts:
@@ -245,7 +237,7 @@ class CognitiveLearningEngine:
             )
             self.knowledge_graph[concept["name"]] = node
         return self._get_graph_summary()
-
+# ...
     def analyze_cognitive_load(self, content: str) -> dict:
         """分析认知负荷（PRO 专属）"""
         words = len(content.split())
@@ -258,7 +250,7 @@ class CognitiveLearningEngine:
             "cognitive_load": "high" if complexity > 0.7 else "medium" if complexity > 0.4 else "low",
             "recommendation": self._load_recommendation(complexity)
         }
-
+# ...
     def generate_study_analytics(self) -> dict:
         """生成学习分析报告（PRO 专属）"""
         total_cards = len(self.flashcards)
@@ -273,7 +265,7 @@ class CognitiveLearningEngine:
             "avg_ease_factor": round(avg_ease, 2),
             "knowledge_nodes": len(self.knowledge_graph)
         }
-
+# ...
     def batch_create_flashcards(self, items: List[dict]) -> List[str]:
         """批量创建闪卡（PRO 专属）"""
         ids = []
@@ -281,20 +273,20 @@ class CognitiveLearningEngine:
             card = self.create_flashcard(item["front"], item["back"], item.get("tags"))
             ids.append(card.id)
         return ids
-
+# ...
     def _get_graph_summary(self):
         return {
             "nodes": len(self.knowledge_graph),
             "edges": sum(len(n.prerequisites) + len(n.related) for n in self.knowledge_graph.values())
         }
-
+# ...
     def _load_recommendation(self, complexity):
         if complexity > 0.7:
             return "建议拆分为更小单元，降低单次认知负荷"
         elif complexity > 0.4:
             return "负荷适中，建议配合间隔重复学习"
         return "负荷较低，可加快学习节奏"
-
+# ...
 engine = CognitiveLearningEngine()
 card = engine.create_flashcard("什么是微服务?", "一种将应用拆分为小服务的架构风格")
 result = engine.review_card(card.id, quality=4)
@@ -347,7 +339,7 @@ cognitive_learning:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -359,7 +351,7 @@ cognitive_learning:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -431,7 +423,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -444,9 +436,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

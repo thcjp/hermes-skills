@@ -25,16 +25,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # AWS 云架构师
 
 资深 AWS 云架构师,专注架构设计、成本优化、安全加固与运维卓越。遵循 Well-Architected Framework 原则。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AWS 云架构师处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -42,7 +43,7 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
 | 安全基线合规审计 | 不支持 | 支持 |
@@ -57,7 +58,7 @@ pricing_model: "monthly"
 5. **迁移(Migration)** - 应用 6Rs 框架、定义迁移批次、测试故障切换
 6. **运维(Operate)** - 监控、自动化、持续优化
 #
-## 核心能力
+## 能力速查
 ### 1. 先验证账户上下文
 
 ```bash
@@ -70,7 +71,7 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 ### 2. 成本优先架构
 
 | 阶段 | 推荐技术栈 | 月成本 |
-| --: | --: | --: |
+|---:|---:|---:|
 | MVP(<1k 用户) | 单 EC2 + RDS | ~$50 |
 | Growth(1-10k) | ALB + ASG + RDS Multi-AZ | ~$200 |
 | Scale(10k+) | ECS/EKS + Aurora + ElastiCache | ~$500+ |
@@ -170,7 +171,7 @@ aws rds describe-db-instances --query 'DBInstances[].{ID:DBInstanceIdentifier,Pu
 ### RDS 连接数限制
 
 | 实例 | 最大连接数 |
-| :-- | :-- |
+|:---:|:---:|
 | db.t3.micro | 66 |
 | db.t3.small | 150 |
 | db.t3.medium | 300 |
@@ -180,7 +181,7 @@ Lambda 高并发场景使用 RDS Proxy 避免连接耗尽。
 ### EBS 卷类型
 
 | 类型 | 用途 | IOPS |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | gp3 | 默认(一致性能) | 3,000 基线 |
 | io2 | 数据库(保证性能) | 最高 64,000 |
 | st1 | 大数据(吞吐) | 500 MiB/s |
@@ -188,7 +189,7 @@ Lambda 高并发场景使用 RDS Proxy 避免连接耗尽。
 ## 服务选型
 
 | 需求 | 服务 | 原因 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | 静态站点 | S3 + CloudFront | 极低成本,全球 CDN |
 | API 后端 | Lambda + API Gateway | 零闲置成本 |
 | 容器应用 | ECS Fargate | 无需集群管理 |
@@ -220,7 +221,7 @@ aws ce get-cost-forecast --time-period Start=$(date +%Y-%m-01),End=$(date -v+1m 
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-| --: | :-- | :-: |
+|:------:|--------|:-------|
 | 成本优化与治理 | AWS 账户资源清单与账单数据 | NAT Gateway/EBS/CloudWatch 成本陷阱识别与优化方案 |
 | 安全加固与合规 | VPC、IAM、S3、RDS 配置 | 零信任架构设计与安全漏洞修复清单 |
 | 架构设计与选型 | 业务需求与用户规模 | MVP→Growth→Scale 三阶段服务选型与 IaC 模板 |
@@ -235,7 +236,7 @@ aws ce get-cost-forecast --time-period Start=$(date +%Y-%m-01),End=$(date -v+1m 
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-- | :-: | --- | --: |
+|----|:--:|---:|----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -310,7 +311,7 @@ aws rds create-db-instance --db-instance-identifier mydb \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-| :-: | --- | --: |
+|----|----|----|
 | NAT Gateway 月费异常高($500+) | S3/DynamoDB 流量经 NAT 处理($0.045/GB) | 创建 VPC 终端节点,S3/DynamoDB 终端节点免费 |
 | EBS 快照无限累积 | 自动备份策略未设置生命周期 | 配置快照生命周期策略定期清理旧快照 |
 | CloudWatch Logs 账单持续增长 | 日志组默认永久保留 | 用 `put-retention-policy` 设置保留天数 |

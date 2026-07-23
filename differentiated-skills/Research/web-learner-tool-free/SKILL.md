@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
-
 # 自主学习助手免费版
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 自主学习助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -46,10 +47,10 @@ suggested_price: 29.9
 ```bash
 # 基础搜索
 web_search("最新人工智能研究进展")
-
+# ...
 # 中文搜索优先
 web_search("深度学习优化算法", country="CN")
-
+# ...
 # 限定时间范围
 web_search("今日科技新闻", freshness="pd")  # pd: 今天
 web_search("本周热点", freshness="pw")      # pw: 本周
@@ -68,10 +69,10 @@ web_search("本月资讯", freshness="pm")      # pm: 本月
 ```bash
 # 获取网页 Markdown 内容
 web_fetch("https://docs.example.com/guide", format="markdown")
-
+# ...
 # 获取网页纯文本内容
 web_fetch("https://article.example.com", format="text")
-
+# ...
 # 处理页面加载失败
 try:
     content = web_fetch("https://target-url.com")
@@ -92,13 +93,13 @@ except:
 ```bash
 # 启动浏览器服务
 browser_start()
-
+# ...
 # 导航到目标页面
 browser_navigate("https://spa.example.com")
-
+# ...
 # 获取页面内容
 browser_get_text()
-
+# ...
 # 截图保存
 browser_screenshot()
 ```
@@ -115,12 +116,12 @@ browser_screenshot()
 ```bash
 # 步骤1:搜索获取概览
 search_results = web_search("量子计算最新进展")
-
+# ...
 # 步骤2:抓取详细内容
 for result in search_results[:3]:
     content = web_fetch(result.url)
     # 整合内容
-
+# ...
 # 步骤3:整合并总结
 summary = summarize(all_content, language="zh")
 ```
@@ -140,12 +141,12 @@ summary = summarize(all_content, language="zh")
 ```bash
 # 步骤1:搜索最新新闻
 results = web_search("今日科技新闻", freshness="pd", country="CN")
-
+# ...
 # 步骤2:抓取新闻详情
 for news in results[:3]:
     article = web_fetch(news.url, format="markdown")
     # 提取关键信息
-
+# ...
 # 步骤3:总结呈现
 # 用中文总结今天的科技新闻要点
 ```
@@ -157,10 +158,10 @@ for news in results[:3]:
 ```bash
 # 步骤1:搜索学习资源
 results = web_search("区块链入门教程 2026", country="CN")
-
+# ...
 # 步骤2:抓取教程内容
 tutorial = web_fetch("https://tutorial.example.com/blockchain", format="markdown")
-
+# ...
 # 步骤3:整理学习要点
 # 提取核心概念、技术要点、实践步骤
 ```
@@ -172,11 +173,11 @@ tutorial = web_fetch("https://tutorial.example.com/blockchain", format="markdown
 ```bash
 # 步骤1:使用天气服务(首选)
 weather = web_fetch("https://wttr.in/Beijing?format=3")
-
+# ...
 # 步骤2:备选方案
 if not weather:
     weather = web_fetch("https://weather.com.cn/beijing")
-
+# ...
 # 步骤3:总结天气信息
 # 用中文呈现今天的天气情况
 ```
@@ -189,7 +190,7 @@ if not weather:
 # 检查 web_search 是否可用(需要 Brave API Key)
 # 检查 web_fetch 是否可用(大部分网页可用)
 # 检查 browser 是否可用(需要浏览器服务运行)
-
+# ...
 # 测试基础搜索
 web_search("test query")
 ```
@@ -200,7 +201,7 @@ web_search("test query")
 # 搜索并获取信息
 results = web_search("人工智能最新发展")
 content = web_fetch(results[0].url)
-
+# ...
 # 整合并总结
 summary = summarize(content, language="zh")
 ```
@@ -270,7 +271,7 @@ except:
 ```bash
 # 正确做法:明确需要什么信息
 web_search("React 18 新特性详细介绍")
-
+# ...
 # 错误做法:目标不明确
 web_search("React")  # 太宽泛,结果不聚焦
 ```
@@ -280,7 +281,7 @@ web_search("React")  # 太宽泛,结果不聚焦
 ```bash
 # 中文主题用中文搜索
 web_search("中国新能源汽车政策", country="CN")
-
+# ...
 # 英文技术用英文搜索
 web_search("React hooks best practices", country="US")
 ```
@@ -290,10 +291,10 @@ web_search("React hooks best practices", country="US")
 ```bash
 # 获取最新信息
 web_search("AI 突破", freshness="pd")  # 今天
-
+# ...
 # 获取近期信息
 web_search("行业趋势", freshness="pw")  # 本周
-
+# ...
 # 获取长期信息
 web_search("基础知识", freshness="pm")  # 本月
 ```
@@ -306,7 +307,7 @@ sources = []
 for query in ["声明1", "声明2", "声明3"]:
     results = web_search(query)
     sources.append(web_fetch(results[0].url))
-
+# ...
 # 交叉验证信息的准确性
 ```
 
@@ -369,7 +370,7 @@ for query in ["声明1", "声明2", "声明3"]:
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | web_search | 搜索工具 | 推荐 | Agent 内置或 Brave Search API |
 | web_fetch | 网页抓取 | 必需 | Agent 内置 |
 | browser | 浏览器 | 备选 | Agent 内置或外部浏览器服务 |
@@ -384,7 +385,7 @@ for query in ["声明1", "声明2", "声明3"]:
 # .env 文件配置
 # Brave Search API(启用 web_search)
 BRAVE_API_KEY=your_brave_api_key
-
+# ...
 # 其他搜索引擎(可选)
 SEARCH_API_KEY=your_search_api_key
 ```
@@ -397,9 +398,8 @@ SEARCH_API_KEY=your_search_api_key
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

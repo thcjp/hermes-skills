@@ -42,11 +42,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "B站,视频,媒体"
 ---
-
 # B站工具箱免费版
 
 ## 概述
@@ -56,7 +57,7 @@ B站工具箱免费版是一款面向个人用户的轻量级B站内容工具，
 ## 核心能力
 
 | 模块 | 功能 | 是否需要登录 |
-| --- | --- | --- |
+|---|---|------|
 | 热门监控 | 热门视频、热搜、排行榜、必看榜 | 否 |
 | 视频下载 | 360p-1080p标准画质下载 | 否 |
 | 数据查看 | 播放量、点赞数等基础统计 | 否 |
@@ -98,13 +99,13 @@ B站工具箱免费版是一款面向个人用户的轻量级B站内容工具，
 ```bash
 # 查看热门视频
 python main.py hot_monitor get_hot '{"page_size": 10}'
-
+# ...
 # 查看热搜话题
 python main.py hot_monitor get_trending '{"limit": 5}'
-
+# ...
 # 查看每周必看榜
 python main.py hot_monitor get_weekly
-
+# ...
 # 查看游戏区排行榜
 python main.py hot_monitor get_rank '{"category": "game", "limit": 10}'
 ```
@@ -113,23 +114,23 @@ python main.py hot_monitor get_rank '{"category": "game", "limit": 10}'
 # Python API调用
 import asyncio
 from main import BilibiliAllInOne
-
+# ...
 app = BilibiliAllInOne()
-
+# ...
 async def browse_hot():
     # 获取热门视频
     hot_videos = await app.execute("hot_monitor", "get_hot", page_size=10)
     print("=== 热门视频 ===")
     for v in hot_videos['data']:
         print(f"{v['title']} - 播放:{v['play']}")
-
+# ...
     # 获取游戏区排行
     game_rank = await app.execute("hot_monitor", "get_rank", 
                                    category="game", limit=5)
     print("=== 游戏区排行 ===")
     for v in game_rank['data']:
         print(f"{v['title']} - 综合得分:{v['score']}")
-
+# ...
 asyncio.run(browse_hot())
 ```
 
@@ -140,13 +141,13 @@ asyncio.run(browse_hot())
 ```bash
 # 获取视频信息
 python main.py downloader get_info '{"url": "BV1xx411c7mD"}'
-
+# ...
 # 查看可用画质
 python main.py downloader get_formats '{"url": "BV1xx411c7mD"}'
-
+# ...
 # 下载1080p视频
 python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p", "format": "mp4"}'
-
+# ...
 # 仅下载音频
 python main.py downloader download '{"url": "BV1xx411c7mD", "format": "mp3"}'
 ```
@@ -157,14 +158,14 @@ async def download_video():
     # 获取视频信息
     info = await app.execute("downloader", "get_info", url="BV1xx411c7mD")
     print(f"标题: {info['data']['title']}")
-    
+# ...
     # 下载视频
     result = await app.execute("downloader", "download",
                                 url="BV1xx411c7mD",
                                 quality="1080p",
                                 format="mp4")
     print(f"下载完成: {result}")
-
+# ...
 asyncio.run(download_video())
 ```
 
@@ -175,10 +176,10 @@ asyncio.run(download_video())
 ```bash
 # 查看可用字幕
 python main.py subtitle list '{"url": "BV1xx411c7mD"}'
-
+# ...
 # 下载中文字幕（SRT格式）
 python main.py subtitle download '{"url": "BV1xx411c7mD", "language": "zh-CN", "format": "srt"}'
-
+# ...
 # 获取弹幕
 python main.py player get_danmaku '{"url": "BV1xx411c7mD"}'
 ```
@@ -188,18 +189,18 @@ async def get_subtitles_and_danmaku():
     # 获取字幕列表
     subs = await app.execute("subtitle", "list", url="BV1xx411c7mD")
     print(f"可用字幕: {subs['data']}")
-    
+# ...
     # 下载中文字幕
     result = await app.execute("subtitle", "download",
                                 url="BV1xx411c7mD",
                                 language="zh-CN",
                                 format="srt")
     print(f"字幕已下载: {result}")
-    
+# ...
     # 获取弹幕
     danmaku = await app.execute("player", "get_danmaku", url="BV1xx411c7mD")
     print(f"弹幕数量: {len(danmaku['data'])}")
-
+# ...
 asyncio.run(get_subtitles_and_danmaku())
 ```
 
@@ -249,7 +250,7 @@ python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 ### 支持的分区
 
 | 分区 | 代码 |
-| --- | --- |
+|:-----|:-----|
 | 全部 | `all` |
 | 动画 | `anime` |
 | 音乐 | `music` |
@@ -267,7 +268,7 @@ python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 ### 下载画质选项
 
 | 画质 | 代码 | 需要登录 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 360p | `360p` | 否 |
 | 480p | `480p` | 否 |
 | 720p | `720p` | 否 |
@@ -278,7 +279,7 @@ python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 ### 字幕格式
 
 | 格式 | 代码 | 说明 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | SRT | `srt` | 默认，通用字幕格式 |
 | ASS | `ass` | 高级字幕，支持样式 |
 | VTT | `vtt` | Web标准 |
@@ -328,7 +329,7 @@ python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | httpx | Python库 | 必需 | `pip install httpx` |
@@ -351,9 +352,8 @@ python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

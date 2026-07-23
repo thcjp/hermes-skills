@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 店铺文化助手 (专业版)
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 品牌故事 | 创业故事 | 支持 | 支持 |
 | 营销文案 | 产品文案 | 支持 | 支持 |
 | 社交媒体 | 多平台文案 | 支持 | 支持 |
@@ -92,14 +94,14 @@ pricing_model: "per_use"
 import os
 import requests
 from datetime import datetime
-
+# ...
 API_BASE = "https://api.shop-culture-pro.local/v1"
 ADMIN_KEY = os.environ["SHOP_CULTURE_ADMIN_KEY"]
-
+# ...
 class MultiShopManager:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-
+# ...
     def add_shop(self, shop_info):
         """添加店铺"""
         payload = {
@@ -116,7 +118,7 @@ class MultiShopManager:
             timeout=30,
         )
         return resp.json()
-
+# ...
     def batch_generate_content(self, shops, content_type, params):
         """批量生成营销内容"""
         payload = {
@@ -133,7 +135,7 @@ class MultiShopManager:
             timeout=300,
         )
         return resp.json()
-
+# ...
     def cross_shop_dashboard(self):
         """跨店铺仪表盘"""
         resp = requests.get(
@@ -142,7 +144,7 @@ class MultiShopManager:
             timeout=60,
         )
         return resp.json()
-
+# ...
 manager = MultiShopManager(ADMIN_KEY)
 # 批量为 10 家店铺生成产品文案
 contents = manager.batch_generate_content(
@@ -181,7 +183,7 @@ def analyze_sales_data(shop_id, period):
         timeout=120,
     )
     return resp.json()
-
+# ...
 # 示例
 # {
 #   "total_revenue": 156000,
@@ -288,36 +290,36 @@ api:
   admin_key: ${SHOP_CULTURE_ADMIN_KEY}
   org_id: ${SHOP_CULTURE_ORG_ID}
   timeout: 300
-
+# ...
 multi_shop:
   max_shops: 100
   permissions:
     admin: [manage_all, view_all, edit_all]
     manager: [manage_assigned, view_assigned]
     staff: [view_own, create_content]
-
+# ...
 analytics:
   metrics: [revenue, conversion, retention, aov, roi]
   real_time: true
   dashboards: [shop, category, cross_shop]
   export: [csv, excel, pdf]
-
+# ...
 training:
   modules: [customer_service, marketing, product, operations]
   certification: true
   tracking: true
-
+# ...
 content:
   batch_limit: 1000
   templates: 500+
   version_control: true
   approval_workflow: true
-
+# ...
 integrations:
   ecommerce_apis: [taobao, tmall, jd, pdd, douyin_shop]
   social_media: [xiaohongshu, weibo, douyin, wechat]
   analytics: [google_analytics, baidu_tongji]
-
+# ...
 collaboration:
   multi_user: true
   roles: [admin, content_writer, designer, manager]
@@ -397,13 +399,13 @@ def data_driven_marketing(shop_id):
     """基于数据的营销决策"""
     sales = analyze_sales_data(shop_id, "last_30_days")
     decisions = []
-
+# ...
     for insight in sales.get("insights", []):
         if "增长" in insight:
             decisions.append({"action": "加大推广", "basis": insight})
         elif "下降" in insight:
             decisions.append({"action": "优化产品", "basis": insight})
-
+# ...
     return sorted(decisions, key=lambda x: x["action"])
 ```
 
@@ -469,7 +471,7 @@ def create_content_workflow(shop_id):
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Shop Culture Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -483,12 +485,12 @@ def create_content_workflow(shop_id):
 export SHOP_CULTURE_ADMIN_KEY="sk_pro_admin_xxx"
 export SHOP_CULTURE_ORG_ID="org_your_id"
 export SHOP_CULTURE_EDITION="pro"
-
+# ...
 # 可选: 电商平台对接
 export TAOBAO_API_KEY="..."
 export TMALL_API_KEY="..."
 export JD_API_KEY="..."
-
+# ...
 # 可选: 社交媒体
 export XIAOHONGSHU_API_KEY="..."
 export WEIBO_API_KEY="..."
@@ -503,9 +505,8 @@ export WEIBO_API_KEY="..."
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

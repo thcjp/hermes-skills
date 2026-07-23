@@ -27,8 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
-
 # 高德地图JSAPI v2.0 开发助手免费版
 
 ## 概述
@@ -38,7 +39,7 @@ suggested_price: 99.9
 ### 免费版与专业版对比
 
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | API调用额度 | 5000次/天 | 无限制 |
 | 地图渲染 | WebGL基础 | WebGL高级+矢量图层 |
 | 路径规划 | 步行+驾车 | 步行+驾车+公交+货车 |
@@ -53,7 +54,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 高德地图JSAPI免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -86,7 +87,7 @@ suggested_price: 99.9
             viewMode: '2D',              // 视图模式: 2D 或 3D
             mapStyle: 'amap://styles/normal'  // 地图样式
         });
-        
+# ...
         console.log('地图已加载');
     </script>
 </body>
@@ -111,7 +112,7 @@ function addMarker(map, position, title) {
     map.add(marker);
     return marker;
 }
-
+// ...
 // 添加信息窗口
 function addInfoWindow(map, position, content) {
     const infoWindow = new AMap.InfoWindow({
@@ -120,12 +121,12 @@ function addInfoWindow(map, position, content) {
     });
     infoWindow.open(map, position);
 }
-
+// ...
 // 使用示例
 const marker = addMarker(map, [116.397428, 39.90923], '天安门');
 addInfoWindow(map, [116.397428, 39.90923], 
     '<div style="padding:10px;"><b>天安门广场</b><br>北京市中心</div>');
-
+// ...
 // 批量添加标注点
 const locations = [
     { pos: [116.397428, 39.90923], name: '天安门' },
@@ -148,7 +149,7 @@ function geocode(address) {
     const geocoder = new AMap.Geocoder({
         city: '全国'  // 限制搜索范围
     });
-    
+// ...
     geocoder.getLocation(address, function(status, result) {
         if (status === 'complete' && result.info === 'OK') {
             const location = result.geocodes[0].location;
@@ -161,12 +162,12 @@ function geocode(address) {
         }
     });
 }
-
+// ...
 // 逆地理编码: 坐标 -> 地址
 function reverseGeocode(lng, lat) {
     const geocoder = new AMap.Geocoder();
     const lnglat = [lng, lat];
-    
+// ...
     geocoder.getAddress(lnglat, function(status, result) {
         if (status === 'complete' && result.info === 'OK') {
             const address = result.regeocode.formattedAddress;
@@ -174,7 +175,7 @@ function reverseGeocode(lng, lat) {
         }
     });
 }
-
+// ...
 // 使用示例
 geocode('北京市朝阳区望京SOHO');
 reverseGeocode(116.397428, 39.90923);
@@ -196,7 +197,7 @@ function drivingRoute(origin, destination) {
             map: map,
             panel: 'routePanel'  // 路线结果面板ID(可选)
         });
-        
+// ...
         driving.search(origin, destination, function(status, result) {
             if (status === 'complete') {
                 console.log('规划成功:');
@@ -211,7 +212,7 @@ function drivingRoute(origin, destination) {
         });
     });
 }
-
+// ...
 // 步行路径规划
 function walkingRoute(origin, destination) {
     AMap.plugin('AMap.Walking', function() {
@@ -224,7 +225,7 @@ function walkingRoute(origin, destination) {
         });
     });
 }
-
+// ...
 // 使用示例
 drivingRoute([116.377849, 39.915378], [116.413384, 39.911023]);  // 西单 -> 王府井
 walkingRoute([116.397428, 39.90923], [116.413384, 39.911023]);    // 天安门 -> 王府井
@@ -255,25 +256,25 @@ walkingRoute([116.397428, 39.90923], [116.413384, 39.911023]);    // 天安门 -
     <h2>我们的店铺位置</h2>
     <div id="map"></div>
     <div class="shop-info" id="shopInfo"></div>
-    
+# ...
     <script src="https://webapi.amap.com/maps?v=2.0&key=你的API_KEY"></script>
     <script>
         const SHOP_ADDRESS = '北京市朝阳区望京SOHO T1';
         const map = new AMap.Map('map', { zoom: 15, center: [116.481028, 39.996729] });
-        
+# ...
         // 地理编码定位店铺
         const geocoder = new AMap.Geocoder({ city: '北京' });
         geocoder.getLocation(SHOP_ADDRESS, function(status, result) {
             if (status === 'complete') {
                 const loc = result.geocodes[0].location;
                 map.setCenter([loc.lng, loc.lat]);
-                
+# ...
                 new AMap.Marker({
                     position: [loc.lng, loc.lat],
                     map: map,
                     title: SHOP_ADDRESS
                 });
-                
+# ...
                 document.getElementById('shopInfo').innerHTML = 
                     `<strong>地址:</strong> ${SHOP_ADDRESS}<br>` +
                     `<strong>坐标:</strong> ${loc.lng.toFixed(6)}, ${loc.lat.toFixed(6)}`;
@@ -294,7 +295,7 @@ const branches = [
     { name: '深圳分部', address: '深圳市南山区科技园', pos: [113.946582, 22.538314] },
     { name: '广州分部', address: '广州市天河区珠江新城', pos: [113.321036, 23.119318] }
 ];
-
+// ...
 // 自动调整视野以包含所有标注
 const markers = branches.map(b => new AMap.Marker({
     position: b.pos,
@@ -302,7 +303,7 @@ const markers = branches.map(b => new AMap.Marker({
 }));
 map.add(markers);
 map.setFitView();  // 自动缩放以显示所有标注
-
+// ...
 // 点击标注显示信息
 markers.forEach((marker, i) => {
     marker.on('click', function() {
@@ -324,18 +325,18 @@ markers.forEach((marker, i) => {
     <input type="text" id="searchInput" placeholder="输入地址搜索..." style="padding:8px; width:300px;">
     <button onclick="searchAddress()" style="padding:8px;">搜索</button>
 </div>
-
+# ...
 <script>
 function searchAddress() {
     const address = document.getElementById('searchInput').value;
     if (!address) return;
-    
+# ...
     const geocoder = new AMap.Geocoder({ city: '全国' });
     geocoder.getLocation(address, function(status, result) {
         if (status === 'complete' && result.geocodes.length > 0) {
             const loc = result.geocodes[0].location;
             map.setZoomAndCenter(15, [loc.lng, loc.lat]);
-            
+# ...
             map.clearMap();
             new AMap.Marker({
                 position: [loc.lng, loc.lat],
@@ -390,13 +391,12 @@ const map = new AMap.Map('container', {
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 地图样式选项
 
 | 样式名称 | 样式代码 | 适用场景 |
-|:---------|:---------|:---------|
+|---:|---:|---:|
 | 标准样式 | amap://styles/normal | 通用场景 |
 | 幻影黑 | amap://styles/dark | 夜间模式 |
 | 月光银 | amap://styles/light | 简洁风格 |
@@ -421,7 +421,7 @@ AMap.plugin([
 ### 免费版API额度
 
 | 接口 | 免费额度 | 说明 |
-|:-----|:---------|:-----|
+|:---:|:---:|:---:|
 | JSAPI加载 | 无限制 | 地图渲染不消耗配额 |
 | 地理编码 | 5000次/天 | 地址转坐标 |
 | 逆地理编码 | 5000次/天 | 坐标转地址 |
@@ -443,21 +443,21 @@ function initMap(containerId, options = {}) {
         console.error('高德地图JSAPI未加载');
         return null;
     }
-    
+// ...
     const defaultOptions = {
         zoom: 12,
         center: [116.397428, 39.90923],
         viewMode: '2D'
     };
-    
+// ...
     const map = new AMap.Map(containerId, { ...defaultOptions, ...options });
-    
+// ...
     // 添加基础控件
     AMap.plugin(['AMap.ToolBar', 'AMap.Scale'], function() {
         map.addControl(new AMap.ToolBar({ position: 'RB' }));
         map.addControl(new AMap.Scale());
     });
-    
+// ...
     return map;
 }
 ```
@@ -494,7 +494,7 @@ function initMap(containerId, options = {}) {
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | AMap JSAPI | JavaScript库 | 必需 | 高德开放平台申请Key |
 | 浏览器 | 运行环境 | 必需 | 现代浏览器 |
 | HTTPS | 网络协议 | 必需 | 生产环境必须使用HTTPS |
@@ -512,9 +512,8 @@ function initMap(containerId, options = {}) {
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

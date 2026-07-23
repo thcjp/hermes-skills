@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 工作流编排器（免费版）
 
 > **构建可复用的自动化流水线。节点间数据流+状态管理+并发锁，让流水线可中断、可恢复、可复用。**
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 工作流编排器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -75,21 +76,21 @@ workflows/
 # 1. 创建工作流目录结构
 mkdir -p workflows/components/{connections,nodes,triggers}
 mkdir -p workflows/flows/my-first-flow/{state,data,logs}
-
+# ...
 # 2. 创建流程定义
 cat > workflows/flows/my-first-flow/flow.md << 'EOF'
 # My First Flow
-
+# ...
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
-
+# ...
+# ...
 ## Nodes
 1. fetch: 获取数据 (on error: retry(3))
 2. filter: 过滤数据 (on empty: skip)
 3. transform: 转换格式 (on error: fail)
 4. output: 输出结果
 EOF
-
+# ...
 # 3. 创建可执行脚本
 cat > workflows/flows/my-first-flow/（请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
@@ -97,21 +98,21 @@ set -euo pipefail
 LOCKFILE="/tmp/workflow-my-first-flow.lock"
 exec 200>"$LOCKFILE"
 flock -n 200 || { echo "另一个实例正在运行"; exit 0; }
-
+# ...
 # 节点1：获取数据
 curl -s "https://api.example.com/data" > data/01-fetch.json
-
+# ...
 # 节点2：过滤数据
 jq '[.[] | select(.status=="active")]' data/01-fetch.json > data/02-filter.json
-
+# ...
 # 节点3：转换格式
 jq '[.[] | {id, name, status}]' data/02-filter.json > data/03-transform.json
-
+# ...
 # 节点4：输出结果
 cp data/03-transform.json output.json
 EOF
 chmod +x workflows/flows/my-first-flow/（请参考skill目录中的脚本文件）
-
+# ...
 # 4. 执行工作流
 cd workflows/flows/my-first-flow && （请参考skill目录中的脚本文件）
 ```
@@ -119,7 +120,7 @@ cd workflows/flows/my-first-flow && （请参考skill目录中的脚本文件）
 ### 依赖详情
 
 | 工具 | 用途 | 必需 |
-|------|------|------|
+|:-----|:-----|:-----|
 | jq | JSON处理 | 是 |
 | yq | YAML配置解析 | 是 |
 | curl | HTTP请求 | 是 |
@@ -135,10 +136,10 @@ cd workflows/flows/my-first-flow && （请参考skill目录中的脚本文件）
 ```bash
 # 节点1：获取数据
 curl -s "$API_URL" > data/01-fetch.json
-
+# ...
 # 节点2：过滤数据（读取节点1的输出）
 jq '[.[] | select(.active==true)]' data/01-fetch.json > data/02-filter.json
-
+# ...
 # 节点3：转换格式（读取节点2的输出）
 jq '[.[] | {id: .id, name: .name}]' data/02-filter.json > data/03-transform.json
 ```
@@ -155,7 +156,7 @@ jq '[.[] | {id: .id, name: .name}]' data/02-filter.json > data/03-transform.json
 每个节点在flow.md中必须声明错误处理策略：
 
 | 错误类型 | 处理选项 | 说明 |
-|----------|----------|------|
+|---:|---:|---:|
 | On error | retry(N) | 重试N次后失败 |
 | On error | fail | 立即失败 |
 | On error | continue | 继续下一节点 |
@@ -188,7 +189,7 @@ flock -n 200 || { echo "另一个实例正在运行"; exit 0; }
 ### 4. 状态文件
 
 | 文件 | 用途 | 示例 |
-|------|------|------|
+|:---:|:---:|:---:|
 | cursor.json | "上次执行到哪？" | `{"last_id": 12345}` |
 | seen.json | "已处理过什么？" | `{"ids": [1,2,3]}` |
 | checkpoint.json | "多步恢复点" | `{"phase": "transform", "step": 2}` |
@@ -197,7 +198,7 @@ flock -n 200 || { echo "另一个实例正在运行"; exit 0; }
 # 读取游标继续处理
 LAST_ID=$(jq '.last_id' state/cursor.json)
 curl -s "$API_URL?since=$LAST_ID" > data/01-fetch.json
-
+# ...
 # 更新游标
 NEW_ID=$(jq '.[-1].id' data/01-fetch.json)
 jq --arg id "$NEW_ID" '.last_id = ($id|tonumber)' state/cursor.json > state/cursor.json.tmp
@@ -217,7 +218,7 @@ mv state/cursor.json.tmp state/cursor.json
 ls workflows/components/connections/
 ls workflows/components/nodes/
 ls workflows/components/triggers/
-
+# ...
 # 复用已有连接（而非新建）
 source workflows/components/connections/api-auth.sh
 ```
@@ -241,7 +242,7 @@ source workflows/components/connections/api-auth.sh
 ```bash
 # ETL工作流
 （请参考skill目录中的脚本文件）
-
+# ...
 # 中断后恢复（从游标继续）
 （请参考skill目录中的脚本文件）  # 自动读取cursor.json，从上次位置继续
 ```
@@ -321,7 +322,7 @@ done
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
 | jq | JSON处理 | 必需 | 系统包管理器安装 |
 | yq | YAML解析 | 必需 | 系统包管理器安装 |
@@ -379,20 +380,20 @@ done
 ### 示例1：基础用法
 
 ```
-### 120秒上手
-
+### 120秒上手(补充)
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -409,3 +410,4 @@ done
   "error": null
 }
 ```
+# ...

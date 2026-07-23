@@ -20,16 +20,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
 ---
 # AIOZ 音频上传（免费版）
 
 通过 AIOZ Stream API 将本地音频文件上传至 AIOZ 流媒体平台。完整上传流程包含三次 API 调用：创建音频对象 → 上传文件分片 → 完成上传。上传完成后服务端自动触发转码，返回 HLS 流媒体播放链接。本免费版支持默认上传方式与基础编码配置。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AIOZ音频上传免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -69,7 +70,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 ```bash
 FILE_SIZE=$(stat -f%z /path/to/audio.mp3 2>/dev/null || stat -c%s /path/to/audio.mp3)
 END_POS=$((FILE_SIZE - 1))
-
+# ...
 HASH=$(md5sum /path/to/audio.mp3 | awk '{print $1}')
 ```
 
@@ -118,7 +119,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/AUDIO_ID' \
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -207,7 +208,6 @@ export API_KEY="your_api_key_here"
 
 ## 异常处理
 
-
 ### 401 认证失败
 
 API 返回 401 状态码，说明 stream-public-key 或 stream-secret-key 无效。处理方式：提示用户核对 AIOZ Stream 控制台中的公钥与私钥是否正确复制，确认密钥未过期或被撤销。重新提供正确的密钥后检查网络连接和配置后重试。
@@ -248,9 +248,8 @@ AIOZ Stream 的音频类型输出仅提供 HLS 流媒体链接，不生成 mp4_u
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

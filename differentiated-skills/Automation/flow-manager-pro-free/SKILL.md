@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 流程管理器（免费版）
 
 > **命令行管理Node-RED实例。无需浏览器，60秒上手，流程部署/状态/节点一气呵成。**
@@ -44,7 +45,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 流程管理器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -52,18 +53,18 @@ suggested_price: 29.9
 ```bash
 # 1. 复制环境配置模板
 cp .env.example .env
-
+# ...
 # 2. 编辑.env，填入Node-RED实例信息
 # NODE_RED_URL=http://localhost:1880
 # NODE_RED_USERNAME=admin
 # NODE_RED_PASSWORD=your-password
-
+# ...
 # 3. 验证连接
 flow-manager list-flows
-
+# ...
 # 4. 查看实例设置
 flow-manager get-settings
-
+# ...
 # 5. 部署一个流程
 flow-manager deploy --file assets/flows/example.json
 ```
@@ -71,7 +72,7 @@ flow-manager deploy --file assets/flows/example.json
 ### 环境变量
 
 | 变量名 | 说明 | 默认值 |
-|--------|------|--------|
+|:-----|:-----|:-----|
 | NODE_RED_URL | Node-RED API端点 | http://localhost:1880 |
 | NODE_RED_USERNAME | 管理员用户名 | admin |
 | NODE_RED_PASSWORD | 管理员密码 | - |
@@ -87,22 +88,22 @@ flow-manager deploy --file assets/flows/example.json
 ```bash
 # 列出所有流程
 flow-manager list-flows
-
+# ...
 # 查看指定流程详情
 flow-manager get-flow <flow-id>
-
+# ...
 # 部署新流程
 flow-manager deploy --file assets/flows/example.json
-
+# ...
 # 更新现有流程
 flow-manager update-flow <flow-id> --file updated-flow.json
-
+# ...
 # 删除流程
 flow-manager delete-flow <flow-id>
-
+# ...
 # 获取流程状态
 flow-manager get-flow-state
-
+# ...
 # 设置流程状态
 flow-manager set-flow-state --file state.json
 ```
@@ -117,19 +118,19 @@ flow-manager set-flow-state --file state.json
 ```bash
 # 依赖说明
 flow-manager list-nodes
-
+# ...
 # 安装节点
 flow-manager install-node node-red-contrib-http-request
-
+# ...
 # 查看节点详情
 flow-manager get-node node-red-contrib-http-request
-
+# ...
 # 启用节点
 flow-manager enable-node node-red-contrib-http-request
-
+# ...
 # 禁用节点
 flow-manager disable-node node-red-contrib-http-request
-
+# ...
 # 卸载节点
 flow-manager remove-node node-red-contrib-http-request
 ```
@@ -144,7 +145,7 @@ flow-manager remove-node node-red-contrib-http-request
 ```bash
 # 获取实例设置
 flow-manager get-settings
-
+# ...
 # 获取诊断信息
 flow-manager get-diagnostics
 ```
@@ -159,7 +160,7 @@ flow-manager get-diagnostics
 ```bash
 # 备份当前所有流程
 flow-manager backup
-
+# ...
 # 备份到指定文件
 flow-manager backup --output my-backup.json
 ```
@@ -174,13 +175,13 @@ flow-manager backup --output my-backup.json
 ```bash
 # 获取流程上下文
 flow-manager get-context flow my-key
-
+# ...
 # 获取全局上下文
 flow-manager get-context global shared-data
-
+# ...
 # 设置流程上下文
 flow-manager set-context flow my-key '"value"'
-
+# ...
 # 设置全局上下文
 flow-manager set-context global counter '42'
 flow-manager set-context global config '{"key": "value"}'
@@ -205,10 +206,10 @@ flow-manager set-context global config '{"key": "value"}'
 ```bash
 # 将流程JSON纳入Git管理
 git add assets/flows/
-
+# ...
 # 修改流程后一键部署
 flow-manager deploy --file assets/flows/sensor-monitor.json
-
+# ...
 # 验证部署状态
 flow-manager get-flow-state
 ```
@@ -224,13 +225,13 @@ flow-manager get-flow-state
 ```bash
 # 列出当前流程
 flow-manager list-flows
-
+# ...
 # 部署测试流程
 flow-manager deploy --file assets/flows/test-scenario.json
-
+# ...
 # 测试完成后恢复生产流程
 flow-manager deploy --file assets/flows/production.json
-
+# ...
 # 验证恢复
 flow-manager get-flow-state
 ```
@@ -244,10 +245,10 @@ flow-manager get-flow-state
 ```bash
 # CI流水线中的部署步骤
 flow-manager deploy --file assets/flows/$BRANCH.json
-
+# ...
 # 部署后验证
 flow-manager get-flow-state | grep -q "running" || exit 1
-
+# ...
 # 部署失败时回滚
 flow-manager restore last-known-good.json
 ```
@@ -296,7 +297,7 @@ module.exports = {
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（免费版路由GPT-4o-mini） |
 | flow-manager CLI | 命令行工具 | 必需 | 随本技能提供 |
 | curl | HTTP工具 | 必需 | 系统自带 |
@@ -354,20 +355,20 @@ module.exports = {
 ### 示例1：基础用法
 
 ```
-### 60秒上手
-
+### 60秒上手(补充)
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -384,3 +385,4 @@ module.exports = {
   "error": null
 }
 ```
+# ...

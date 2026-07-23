@@ -42,8 +42,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # 仓库协作分析工具(免费版)
 
 ## 概述
@@ -55,7 +56,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 只读数据收集 | 仅使用 `git log`、`git shortlog`、`git diff --stat` 等只读命令 |
 | 零安装依赖 | 仅依赖系统自带的 `git`、`cut`、`sort`、`awk`、`grep` 等 |
 | 隐私保护 | 不收集邮箱、不做个人评估、不输出个人排名 |
@@ -119,7 +120,7 @@ suggested_price: 29.9
 git -C /path/to/my-project log --pretty=format:"%aI" \
   --since=2024-01-01 main \
   | cut -c12-13 | sort | uniq -c | sort -rn
-
+# ...
 # 仓库级星期分布
 git -C /path/to/my-project log --pretty=format:"%ad" \
   --date=format:"%u" --since=2024-01-01 main \
@@ -171,7 +172,7 @@ git -C /path/to/my-project log --pretty=format:"%an" --name-only \
 ### 参数说明
 
 | 参数 | 说明 | 是否必需 | 默认值 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `repo_path` | 目标 Git 仓库的绝对路径 | 是 | — |
 | `since` | 起始日期(ISO 格式 `YYYY-MM-DD`) | 否 | 全部历史 |
 | `until` | 结束日期(ISO 格式 `YYYY-MM-DD`) | 否 | 全部历史 |
@@ -182,7 +183,7 @@ git -C /path/to/my-project log --pretty=format:"%an" --name-only \
 仅允许以下只读 git 子命令:
 
 | 命令 | 用途 | 是否修改仓库 |
-| --- | --- | --- |
+|---:|---:|---:|
 | `git -C <path> rev-parse --is-inside-work-tree` | 验证路径是有效 Git 仓库 | 否 |
 | `git -C <path> rev-parse --show-toplevel` | 解析仓库根目录 | 否 |
 | `git -C <path> shortlog -sn --all` | 获取贡献者数量 | 否 |
@@ -237,7 +238,7 @@ git -C /path/to/my-project log --pretty=format:"%an" --name-only \
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | git | 系统工具 | 必需 | 系统包管理器 |
 | cut / sort / uniq | 系统工具 | 必需 | 系统预装(Unix) |
 | awk | 系统工具 | 必需 | 系统预装(Unix) |
@@ -256,9 +257,8 @@ git -C /path/to/my-project log --pretty=format:"%an" --name-only \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

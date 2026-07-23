@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 > **团队级文件治理解决方案。多项目管理、关键文档清单、维护习惯追踪、批量定时整理。**
 
@@ -31,7 +33,7 @@ pricing_model: "per_use"
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 文件工具箱专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -77,13 +79,13 @@ pricing_model: "per_use"
 ### 配置并启动团队级文件治理
 ```bash
 python3 （请参考skill目录中的脚本文件） init --config team.yaml
-
+# ...
 python3 （请参考skill目录中的脚本文件） template create --name standard-project
-
+# ...
 python3 （请参考skill目录中的脚本文件） inventory add --type contract --path ~/Documents/Contracts/
-
+# ...
 python3 （请参考skill目录中的脚本文件） schedule --cron "0 18 * * 5" --path ~/Desktop ~/Downloads
-
+# ...
 python3 （请参考skill目录中的脚本文件） report --monthly --output reports/
 ```
 
@@ -93,14 +95,14 @@ team:
   name: 我们团队
   naming_standard: team-naming-rules.yaml
   structure_template: standard-project
-
+# ...
 projects:
   active:
     - ~/Projects/website-redesign
     - ~/Projects/mobile-app
     - ~/Projects/data-platform
   archive_root: ~/Projects/Archived/
-
+# ...
 inventory:
   contracts:
     path: ~/Documents/Contracts/
@@ -111,7 +113,7 @@ inventory:
   medical_records:
     path: ~/Documents/Medical/
     encrypted: true
-
+# ...
 maintenance:
   weekly:
     day: friday
@@ -142,7 +144,7 @@ Skill: 执行完成,结果如下: 操作成功
 ## 核心能力
 ### 1. 多项目管理
 | 能力 | 说明 | 应用场景 |
-|------|------|----------|
+|:-----|:-----|:-----|
 | 统一目录模板 | 所有项目使用相同目录结构 | 新项目快速初始化 |
 | 跨项目检索 | 一次搜索所有项目中的文件 | 查找跨项目复用资产 |
 | 项目状态追踪 | 活跃/暂停/归档状态管理 | 项目全景视图 |
@@ -162,14 +164,14 @@ inventory:
     expire_date: 2027-07-18
     remind_before: 30
     importance: HIGH
-
+# ...
   - name: 2025年度税务申报
     type: tax
     path: ~/Documents/Tax/2025年度/
     fiscal_year: 2025
     deadline: 2026-03-31
     importance: HIGH
-
+# ...
   - name: 健康体检报告
     type: medical
     path: ~/Documents/Medical/2026体检报告.pdf
@@ -191,7 +193,7 @@ inventory:
 
 ### 3. 维护习惯追踪
 | 周期 | 任务 | 预计耗时 | 执行追踪 |
-|------|------|----------|----------|
+|---:|---:|---:|---:|
 | 每日 | 下载文件夹快速分类 | 2分钟 | 自动记录 |
 | 每周（周五） | 桌面清理+文件归档 | 5分钟 | 完成率统计 |
 | 每月（1号） | 归档审查+重复检查 | 15分钟 | 执行报告 |
@@ -199,7 +201,7 @@ inventory:
 
 ```bash
 python3 （请参考skill目录中的脚本文件） maintain status
-
+# ...
 ```
 
 **输入**: 用户提供维护习惯追踪所需的指令和必要参数。
@@ -212,7 +214,7 @@ team_naming:
   documents: "{项目}_{类型}_{版本}_{日期}"
   designs: "{项目}_{页面}_{状态}"
   data: "{数据类型}_{时间范围}_{版本}"
-
+# ...
 team_structure:
   template_name: standard-project
   directories:
@@ -228,7 +230,7 @@ team_structure:
 
 ```bash
 python3 （请参考skill目录中的脚本文件） team deploy --member new-member --path ~/Projects/
-
+# ...
 python3 （请参考skill目录中的脚本文件） team audit --all-members
 ```
 
@@ -245,9 +247,9 @@ python3 （请参考skill目录中的脚本文件） schedule add \
   --path ~/Desktop ~/Downloads \
   --action organize \
   --notify email
-
+# ...
 python3 （请参考skill目录中的脚本文件） schedule list
-
+# ...
 python3 （请参考skill目录中的脚本文件） schedule pause --name "每周桌面清理"
 python3 （请参考skill目录中的脚本文件） schedule resume --name "每周桌面清理"
 ```
@@ -282,9 +284,9 @@ python3 （请参考skill目录中的脚本文件） archive ~/Projects/website-
 ### 7. 文件版本历史管理
 ```bash
 python3 （请参考skill目录中的脚本文件） version enable --path ~/Projects/
-
+# ...
 python3 （请参考skill目录中的脚本文件） version history "需求文档.docx"
-
+# ...
 python3 （请参考skill目录中的脚本文件） version rollback "需求文档.docx" --version 3
 ```
 
@@ -296,9 +298,9 @@ python3 （请参考skill目录中的脚本文件） version rollback "需求文
 ### 8. 智能去重
 ```bash
 python3 （请参考skill目录中的脚本文件） dedup scan ~/Documents/
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup plan ~/Documents/ --keep latest
-
+# ...
 python3 （请参考skill目录中的脚本文件） dedup execute ~/Documents/ --keep latest
 ```
 
@@ -315,9 +317,9 @@ python3 （请参考skill目录中的脚本文件） dedup execute ~/Documents/ 
 **解决方案**：
 ```bash
 python3 （请参考skill目录中的脚本文件） template create --name team-standard
-
+# ...
 python3 （请参考skill目录中的脚本文件） team deploy --all --template team-standard
-
+# ...
 python3 （请参考skill目录中的脚本文件） team audit --quarterly
 ```
 
@@ -329,9 +331,9 @@ python3 （请参考skill目录中的脚本文件） team audit --quarterly
 **解决方案**：
 ```bash
 python3 （请参考skill目录中的脚本文件） inventory build --scan ~/Documents/
-
+# ...
 python3 （请参考skill目录中的脚本文件） inventory remind --before 30 --notify email
-
+# ...
 python3 （请参考skill目录中的脚本文件） inventory report --format pdf
 ```
 
@@ -343,9 +345,9 @@ python3 （请参考skill目录中的脚本文件） inventory report --format p
 **解决方案**：
 ```bash
 python3 （请参考skill目录中的脚本文件） project init ~/Projects/new-project --template standard
-
+# ...
 python3 （请参考skill目录中的脚本文件） find "UI组件库" --scope all-projects
-
+# ...
 python3 （请参考skill目录中的脚本文件） project status --all
 ```
 
@@ -359,7 +361,7 @@ python3 （请参考skill目录中的脚本文件） project status --all
 python3 （请参考skill目录中的脚本文件） schedule add \
   --name "每日下载整理" --cron "0 9 * * *" \
   --path ~/Downloads --action organize
-
+# ...
 python3 （请参考skill目录中的脚本文件） schedule add \
   --name "每周桌面清理" --cron "0 18 * * 5" \
   --path ~/Desktop --action organize --notify email
@@ -375,7 +377,7 @@ team:
   version: "1.0"
   naming_standard: rules/team-naming.yaml
   structure_template: templates/standard-project.yaml
-
+# ...
 projects:
   template:
     directories:
@@ -391,7 +393,7 @@ projects:
     - ~/Projects/website-redesign
     - ~/Projects/mobile-app
   archive_root: ~/Projects/Archived/
-
+# ...
 inventory:
   scan_paths:
     - ~/Documents/Contracts/
@@ -403,7 +405,7 @@ inventory:
   encryption:
     medical: true
     financial: true
-
+# ...
 maintenance:
   daily:
     time: "09:00"
@@ -418,12 +420,12 @@ maintenance:
   quarterly:
     month: [1, 4, 7, 10]
     tasks: [full_audit, structure_optimize, template_update]
-
+# ...
 dedup:
   strategy: keep_latest
   scan_paths: [~/Documents/, ~/Projects/]
   exclude: [".git", "node_modules", "__pycache__"]
-
+# ...
 version:
   enabled: true
   max_versions: 10
@@ -478,7 +480,7 @@ version:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
 | PyYAML | Python库 | 必需 | `pip install pyyaml` |
@@ -508,7 +510,7 @@ version:
 
 ## 定价
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | ¥0 | 核心功能+基础示例 | 个人试用 |
 | 收费专业版 | ¥29.9/月 | 全功能+高级特性+优先支持 | 团队/企业 |
 
@@ -532,7 +534,7 @@ MIT license允许使用、复制、修改和分发。
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

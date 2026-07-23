@@ -18,16 +18,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 智能助手
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
 ---
 # 本地向量记忆免费版（Elite Longterm Memory Local Free）
 
 **本地优先，隐私至上。** 基础本地记忆系统，通过热内存与文件归档，让 Agent 不遗忘关键上下文与用户偏好。所有数据完全存储在本地，无需任何外部依赖。本免费版提供两层记忆能力，覆盖单设备本地记忆持久化需求。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 本地向量记忆免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -76,11 +77,10 @@ tags:
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 错误处理
 
 | 错误类型 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:-----|:-----|:-----|
 | Agent 遗忘对话中途上下文 | SESSION-STATE.md 未被更新，未遵循 WAL 协议 | 在 AGENTS.md 中添加强制规则"用户给出具体细节时先写入 SESSION-STATE.md 再回复"；验证 Agent 指令包含记忆协议 |
 | 记忆文件未被加载 | Agent 跳过读取记忆文件，会话开始未读取 SESSION-STATE.md | 在 AGENTS.md 中添加强制规则"会话开始必须读取 SESSION-STATE.md"；检查文件是否存在与可读 |
 | 重复犯同类错误 | 错误经验未记录到 memory/lessons.md | 每次犯错后手动写入 lessons.md；在 AGENTS.md 中配置"犯错后强制记录"规则 |
@@ -98,13 +98,13 @@ Agent 内部执行与输出：
 ```
 1. WAL 协议触发：先写入 SESSION-STATE.md
    - Key Context 区块追加："Decision: Use Tailwind, not vanilla CSS"
-
+# ...
 2. 然后回复用户："收到——用 Tailwind。"
-
+# ...
 3. 会话结束时迁移到 MEMORY.md：
    ## 偏好
    - 前端框架：Tailwind（不用原生 CSS）
-
+# ...
 后续会话开始时：
    Agent 读取 SESSION-STATE.md + MEMORY.md
    → 获取热上下文："用户偏好 Tailwind"

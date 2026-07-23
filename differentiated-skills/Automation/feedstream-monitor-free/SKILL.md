@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 > **聚合多源安全公告，自动分级去重。让安全威胁第一时间被感知。**
 
 将分散在各处的安全公告聚合到统一平台。本技能提供多源RSS/Atom订阅管理、严重性分级、关键词过滤、本地去重能力，帮助安全团队高效监控漏洞情报。
@@ -29,7 +30,7 @@ suggested_price: 29.9
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Feedstream Monitor处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -79,16 +80,16 @@ from pathlib import Path
 from datetime import datetime
 import urllib.request
 import xml.etree.ElementTree as ET
-
+# ...
 STORE_DIR = Path.home() / "workspace" / "feedstream" / "monitor"
 STORE_DIR.mkdir(parents=True, exist_ok=True)
 FEEDS_FILE = STORE_DIR / "feeds.json"
 ADVISORIES_FILE = STORE_DIR / "advisories.json"
-
+# ...
 for f in [FEEDS_FILE, ADVISORIES_FILE]:
     if not f.exists():
         f.write_text("[]", encoding="utf-8")
-
+# ...
 def add_feed(name, url, feed_type="rss", category="general"):
     """添加订阅源"""
     feeds = json.loads(FEEDS_FILE.read_text(encoding="utf-8"))
@@ -107,7 +108,7 @@ def add_feed(name, url, feed_type="rss", category="general"):
     FEEDS_FILE.write_text(json.dumps(feeds, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"✓ 订阅源已添加：{feed['id']} - {name}")
     return feed
-
+# ...
 add_feed("NVD漏洞公告", "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml", "rss", "cve")
 add_feed("CERT公告", "https://www.kb.cert.org/vulfeed", "rss", "vendor")
 add_feed("安全客", "https://api.anquanke.com/data/v1/rss", "rss", "blog")
@@ -124,13 +125,13 @@ add_feed("安全客", "https://api.anquanke.com/data/v1/rss", "rss", "blog")
 ```python
 class FilteredMonitor(FeedStreamMonitor):
     """带关键词过滤的监控器"""
-
+# ...
     def __init__(self):
         super().__init__()
         self.filters_file = self.store / "filters.json"
         if not self.filters_file.exists():
             self.filters_file.write_text("[]", encoding="utf-8")
-
+# ...
     def add_filter(self, name, keywords, action="highlight"):
         """添加关键词过滤器"""
         filters = json.loads(self.filters_file.read_text(encoding="utf-8"))
@@ -145,12 +146,12 @@ class FilteredMonitor(FeedStreamMonitor):
         self.filters_file.write_text(json.dumps(filters, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"✓ 过滤器已添加：{f['id']} - {name}")
         return f
-
+# ...
     def apply_filters(self):
         """应用过滤器"""
         advisories = json.loads(self.advisories_file.read_text(encoding="utf-8"))
         filters = json.loads(self.filters_file.read_text(encoding="utf-8"))
-
+# ...
         for advisory in advisories:
             text = (advisory["title"] + " " + advisory.get("description", "")).lower()
             matched_filters = []
@@ -158,14 +159,14 @@ class FilteredMonitor(FeedStreamMonitor):
                 if any(kw.lower() in text for kw in f["keywords"]):
                     matched_filters.append(f["name"])
             advisory["matched_filters"] = matched_filters
-
+# ...
         self.advisories_file.write_text(
             json.dumps(advisories, ensure_ascii=False, indent=2), encoding="utf-8")
-
+# ...
         highlighted = [a for a in advisories if a.get("matched_filters")]
         print(f"过滤完成：{len(highlighted)} 条公告匹配过滤器")
         return highlighted
-
+# ...
     def fetch_all(self):
         """抓取所有活跃订阅源"""
         feeds = json.loads(self.feeds_file.read_text(encoding="utf-8"))
@@ -175,19 +176,19 @@ class FilteredMonitor(FeedStreamMonitor):
             self.fetch_feed(feed["id"])
         self.apply_filters()
         self.stats()
-
+# ...
 fm = FilteredMonitor()
 fm.add_filter("Apache相关", ["apache", "tomcat", "struts"], "highlight")
 fm.add_filter("数据库漏洞", ["mysql", "postgresql", "redis", "mongodb"], "highlight")
 fm.add_filter("远程代码执行", ["rce", "remote code execution"], "alert")
-
+# ...
 fm.fetch_all()
 ```
 
 ## 核心能力
 ### 订阅源管理
 | 类别 | 说明 | 典型来源 |
-|------|------|----------|
+|:-----|:-----|:-----|
 | cve | CVE漏洞公告 | NVD、MITRE CVE |
 | vendor | 厂商安全公告 | Microsoft、Apache、Oracle |
 | blog | 安全博客 | 安全客、FreeBuf、Seebug |
@@ -200,7 +201,7 @@ fm.fetch_all()
 
 ### 严重性分级
 | 级别 | 关键词 | 说明 |
-|------|--------|------|
+|---:|---:|---:|
 | critical | critical, rce, zero-day, 0day | 紧急：远程代码执行、零日漏洞 |
 | high | high, sql injection, xss, privilege escalation | 严重：高危漏洞 |
 | medium | medium, dos, bypass | 中等：中危漏洞 |
@@ -213,7 +214,7 @@ fm.fetch_all()
 
 ### 关键词过滤
 | 过滤动作 | 说明 |
-|----------|------|
+|:---:|:---:|
 | highlight | 高亮显示匹配的公告 |
 | hide | 隐藏匹配的公告 |
 | alert | 匹配时发送告警 |
@@ -292,7 +293,7 @@ monitor.stats()
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Python标准库 | 内置 | 必需 | Python自带（urllib/xml/hashlib/json） |
 | feedparser | Python库 | 可选 | `pip install feedparser`（更强大的RSS解析） |
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
@@ -350,7 +351,7 @@ monitor.stats()
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

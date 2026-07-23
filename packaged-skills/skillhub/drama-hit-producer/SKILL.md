@@ -13,9 +13,10 @@ tools:
   - read
   - exec
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
 ---
 # 短剧爆款生产线
 
@@ -24,13 +25,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -43,7 +44,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |
-|:-----|:-----|:-----|:---------|
+|:-----|:-----|:-----|:-----|
 | 小说IP短剧化 | book_id+chapter_number+style_track | 可发布竖屏短剧视频 | 适用 |
 | 内容矩阵批量生产 | 多章节+多platforms | 多集短剧+多平台发布 | 适用 |
 | 真人剧风格短剧 | style_track=real_person+scene_8 | InstantID真人剧视频 | 适用 |
@@ -95,11 +96,10 @@ pricing_model: "per_use"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 双轨风格配置
 
 | style_track | scene_id | 画面生成 | TTS推荐 | 成本 |
-|:-----------|:---------|:---------|:--------|:-----|
+|---------:|---------:|---------:|---------:|---------:|
 | real_person | scene_8 | InstantID云端API+视频生成 | CosyVoice2/Fish-Speech | 约45元/分钟 |
 | anime | scene_6 | FLUX | CosyVoice2/Edge-TTS | 约14元/分钟 |
 | anime | scene_7 | Kling | CosyVoice2/Edge-TTS | 约35元/分钟 |
@@ -109,7 +109,7 @@ pricing_model: "per_use"
 ### A/B/C/D四级评分
 
 | 等级 | 说明 | 处理 |
-|:-----|:-----|:-----|
+|:---:|:---:|:---:|
 | A | 优秀,可直接发布 | 通过 |
 | B | 良好,微调后发布 | 通过 |
 | C | 合格,需重做 | 触发auto_redo(最大2次) |
@@ -151,9 +151,8 @@ pricing_model: "per_use"
 
 ## 异常处理
 
-
 | 异常场景 | 原因 | 处理方式 | 错误码 |
-|:---------|:-----|:---------|:-------|
+|:------|------:|:------|:------|
 | 章节不存在 | book_id/chapter_number无效 | 返回错误提示 | CHAPTER_NOT_FOUND |
 | 配额不足 | 日/月配额达到上限 | 返回错误,提示升级或等待 | QUOTA_EXCEEDED |
 | 生成锁冲突 | 该书正在生成中 | 返回错误,提示稍后 | GENERATION_LOCKED |
@@ -168,7 +167,7 @@ pricing_model: "per_use"
 ## 数据存储
 
 | 存储位置 | 说明 |
-|:---------|:-----|
+|---:|:---|
 | drama_assets/{project_id}/characters.json | 角色资产持久化,含角色ID/种子/衍生资产 |
 | drama_assets/{project_id}/episodes/{chapter}.json | 每集短剧资产(分镜/配音/画面/视频) |
 | drama_assets/{project_id}/style_track.json | 风格轨道配置(双轨风格+场景ID) |
@@ -182,9 +181,9 @@ pricing_model: "per_use"
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
-|:-------|:-----|:---------|:---------|:-------------|
+|:------:|--------|:-------|:------:|--------|
 | LLM API | API | 必需 | 任意LLM服务商,由Agent内置LLM提供 | DeepSeek/通义千问/文心一言/Kimi等国内模型 |
 | TTS引擎 | API | 必需 | CosyVoice2/Fish-Speech/GPT-SoVITS/Edge-TTS四层降级 | CosyVoice2(阿里)/Edge-TTS(微软免费)等国内可用 |
 | 图像生成API | API | 必需 | InstantID/FLUX/Kling等,按style_track选择 | 可灵AI(快手)/即梦AI(字节)等国内图像生成 |
@@ -199,7 +198,7 @@ pricing_model: "per_use"
 - 配置方式: 在Agent的环境变量中设置
 - **零暴露原则**: API Key必须通过环境变量注入(如`$env:IMAGE_API_KEY`),严禁硬编码在SKILL.md或脚本源码中;所有示例代码中Key位置使用环境变量占位符;禁止在日志、错误信息、输出JSON中打印Key明文
 
-### 使用流程
+### 使用流程(补充)
 四层TTS降级链中L4(Edge-TTS)为免费方案,无API Key可使用。本地GPU方案(Fish-Speech/GPT-SoVITS)需GPU环境。
 
 只需将SKILL.md文件放入Agent的skills目录即可直接使用。
@@ -495,9 +494,8 @@ A: 管道执行超时上限为60分钟,超时返回DRAMA_TIMEOUT错误。建议:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -514,5 +512,5 @@ A: 管道执行超时上限为60分钟,超时返回DRAMA_TIMEOUT错误。建议:
 ## 变更历史
 
 | 版本 | 日期 | 变更 |
-|:-----|:-----|:-----|
+|----|----|----|
 | v1.0.0 | 2026-07-17 | 初版创建,25步管道+双轨风格(real_person/anime)+三轨角色+四层TTS+质量闭环+资产持久化,JSON文件存储 |

@@ -23,16 +23,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 书签智析专业版
 
 把你 X(Twitter)上的书签自动转化为可执行的知识与行动清单。后台守护进程持续轮询新书签,AI 抓取并分析链接文章正文,关联你的活跃项目,高价值洞察通过 Telegram 推送。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 书签智析专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | 书签智析专业版自动监控 | 不支持 | 支持 |
 | 复杂工作流可视化编排 | 不支持 | 支持 |
@@ -56,7 +57,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -64,7 +65,6 @@ pricing_model: "monthly"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -123,7 +123,7 @@ pm2 logs bookmark-intelligence     # 查看分析日志
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | 研究资料自动归档 | 书签一条"向量嵌入实现"推文 | 抓取链接文章 + AI 提取关键概念 + 关联"交易机器人"项目并给出实现建议 | 链接抓取+AI分析+项目关联 |
 | 高价值洞察即时推送 | 书签一条含可落地技巧的推文 | Telegram 通知(摘要+行动项+原文链接) | 自动监控+优先级推送 |
 | 长期知识库构建 | 持续书签数月 | 本地可检索的 bookmark-*.json 知识库,可导出至 Notion/Obsidian | 本地沉淀 |
@@ -227,7 +227,7 @@ pm2 restart bookmark-intelligence
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | 凭证缺失 | `Missing Twitter credentials` | 未运行 setup 或 `.env` 不存在 | 运行 `npm run setup`,确认 `.env` 含 `AUTH_TOKEN=` 与 `CT0=` 两行 |
 | Cookie 过期 | `No bookmarks fetched` / `unauthorized` | X 的 auth_token/ct0 已失效(通常数周过期) | 重新从浏览器提取 cookie 更新 `.env`,用 `npm test` 验证 |
 | bird 未安装 | `bird: command not found` | 未全局安装 bird CLI | 执行 `npm install -g bird` |
@@ -259,9 +259,8 @@ A: 专业版为无限制书签处理,不会触顶。如使用免费版超限(每
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # Linear自动驾驶（专业版）
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Linear自动驾驶(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -92,20 +94,20 @@ rules:
       team: "ENG"
     workflow: "code_workflow"
     priority: high
-
+# ...
   - name: "研究任务路由"
     condition:
       labels: ["research", "investigation"]
     workflow: "research_workflow"
     priority: medium
     sub_agent: true      # 启用子Agent
-
+# ...
   - name: "内容创作路由"
     condition:
       labels: ["content", "docs"]
     workflow: "content_workflow"
     priority: low
-
+# ...
   - name: "紧急bug路由"
     condition:
       labels: ["bug"]
@@ -113,7 +115,7 @@ rules:
     workflow: "urgent_bug_workflow"
     notify: ["discord", "slack", "sms"]  # 多通道通知
     sla_minutes: 30       # 30分钟SLA
-
+# ...
   - name: "跨团队任务分发"
     condition:
       labels: ["cross-team"]
@@ -123,10 +125,10 @@ rules:
 
 ```python
 from linear_pilot_pro import TaskRouter
-
+# ...
 router = TaskRouter()
 router.load_rules("routing_rules.yaml")
-
+# ...
 # 任务到达后自动路由
 task = router.receive(webhook_payload)
 workflow = router.route(task)
@@ -152,13 +154,13 @@ primary:
   url: "https://hook.make.com/xxx"
   interval: 15  # 分钟
   monthly_limit: 1000
-
+# ...
 fallback:
   service: "pipedream"
   url: "https://abc.m.pipedream.net"
   interval: 0   # 即时
   monthly_limit: 100
-
+# ...
 failover:
   enabled: true
   trigger: "quota_exceeded"   # 或 "service_down"
@@ -167,7 +169,7 @@ failover:
 
 ```python
 from linear_pilot_pro import WebhookManager
-
+# ...
 wh = WebhookManager("webhook_config.yaml")
 # 自动监控额度，主方案额度耗尽时切换至备用
 # 自动检测服务可用性，服务不可用时切换
@@ -181,16 +183,16 @@ wh = WebhookManager("webhook_config.yaml")
 
 ```python
 from linear_pilot_pro import SubAgentDispatcher
-
+# ...
 dispatcher = SubAgentDispatcher()
-
+# ...
 # 复杂研究任务拆解
 task = {
     "id": "ENG-123",
     "title": "调研主流API网关方案并给出选型建议",
     "type": "research"
 }
-
+# ...
 # 自动拆解为子任务
 subtasks = dispatcher.split(task)
 # 输出：
@@ -200,10 +202,10 @@ subtasks = dispatcher.split(task)
 #   {"subtask": "调研Tyk网关", "agent": "sub_agent_3", "parallel": true},
 #   {"subtask": "调研Express Gateway", "agent": "sub_agent_4", "parallel": true}
 # ]
-
+# ...
 # 并行执行子任务
 results = dispatcher.execute_parallel(subtasks)
-
+# ...
 # 汇总结果
 final_report = dispatcher.merge(results)
 dispatcher.save(final_report, "research/api_gateway_comparison.md")
@@ -223,39 +225,39 @@ channels:
     channels:
       urgent: "123456789"      # 紧急任务频道
       normal: "987654321"      # 普通任务频道
-
+# ...
   slack:
     enabled: true
     bot_token: "${SLACK_BOT_TOKEN}"
     channels:
       eng: "#eng-tasks"
       ops: "#ops-alerts"
-
+# ...
   email:
     enabled: true
     smtp: "smtp.company.com"
     recipients:
       urgent: ["oncall@company.com"]
       summary: ["team@company.com"]
-
+# ...
   wechat_work:     # 企业微信
     enabled: true
     webhook: "${WECHAT_WORK_WEBHOOK}"
-
+# ...
   feishu:          # 飞书
     enabled: true
     webhook: "${FEISHU_WEBHOOK}"
-
+# ...
 rules:
   - event: "task_created"
     priority: 1
     channels: ["discord", "slack", "sms", "wechat_work"]
     template: "urgent_task"
-
+# ...
   - event: "task_completed"
     channels: ["discord", "slack"]
     template: "task_done"
-
+# ...
   - event: "task_failed"
     channels: ["discord", "slack", "email"]
     template: "task_failed"
@@ -269,23 +271,23 @@ rules:
 
 ```python
 from linear_pilot_pro import PriorityTaskQueue
-
+# ...
 queue = PriorityTaskQueue()
-
+# ...
 # 添加任务至队列
 queue.add(task_id="ENG-123", priority=1)   # 紧急
 queue.add(task_id="ENG-124", priority=2)   # 高
 queue.add(task_id="ENG-125", priority=3)   # 中
 queue.add(task_id="ENG-126", priority=4)   # 低
-
+# ...
 # 按优先级获取下一个任务
 next_task = queue.next()
 # 输出：ENG-123 (优先级1)
-
+# ...
 # 紧急任务抢占
 queue.preempt(task_id="ENG-127", priority=1)
 # ENG-127 立即插队至最前
-
+# ...
 # 队列状态
 queue.status()
 # 输出：
@@ -301,9 +303,9 @@ queue.status()
 
 ```python
 from linear_pilot_pro import ResilienceManager
-
+# ...
 resilience = ResilienceManager()
-
+# ...
 # 指数退避重试
 @resilience.retry(max_attempts=3, backoff="exponential", base_delay=30)
 def process_task(task_id):
@@ -312,7 +314,7 @@ def process_task(task_id):
     if result.failed:
         raise TaskProcessingError(result.error)
     return result
-
+# ...
 # 熔断保护
 @resilience.circuit_breaker(
     failure_threshold=5,        # 5次失败触发熔断
@@ -321,7 +323,7 @@ def process_task(task_id):
 )
 def call_external_api(payload):
     return external_api.post(payload)
-
+# ...
 # 死信队列（多次重试仍失败的任务）
 resilience.config_dead_letter_queue(
     queue_path="./dlq/",
@@ -335,16 +337,16 @@ resilience.config_dead_letter_queue(
 
 ```python
 from linear_pilot_pro import CrossTeamDispatcher
-
+# ...
 dispatcher = CrossTeamDispatcher()
-
+# ...
 # 跨团队任务自动分发
 task = {
     "id": "ENG-123",
     "title": "新功能开发：需要前端+后端+QA协作",
     "labels": ["cross-team", "feature"]
 }
-
+# ...
 # 自动拆解为各团队的子任务
 subtasks = dispatcher.distribute(task, teams=["FE", "BE", "QA"])
 # 输出：
@@ -353,10 +355,10 @@ subtasks = dispatcher.distribute(task, teams=["FE", "BE", "QA"])
 #   {"team": "BE", "subtask": "BE-205: 实现后端API", "depends_on": []},
 #   {"team": "QA", "subtask": "QA-301: 编写测试用例", "depends_on": ["FE-101", "BE-205"]}
 # ]
-
+# ...
 # 创建各团队的任务并建立依赖
 dispatcher.create_with_dependencies(subtasks)
-
+# ...
 # 监控跨团队任务进度
 progress = dispatcher.track("ENG-123")
 # 输出：
@@ -376,14 +378,14 @@ progress = dispatcher.track("ENG-123")
 
 ```python
 from linear_pilot_pro import MetricsCollector
-
+# ...
 metrics = MetricsCollector()
-
+# ...
 # 采集处理指标
 metrics.record(task_id="ENG-123", duration=1800, status="success")
 metrics.record(task_id="ENG-124", duration=900, status="success")
 metrics.record(task_id="ENG-125", duration=3600, status="failed", error="timeout")
-
+# ...
 # 生成报表
 report = metrics.generate_report(period="weekly")
 # 输出：
@@ -400,7 +402,7 @@ report = metrics.generate_report(period="weekly")
 #   "sla_compliance": 0.89,
 #   "bottlenecks": ["研究类任务平均时长偏高"]
 # }
-
+# ...
 # 导出至Grafana
 metrics.export_grafana(
     datasource="prometheus",
@@ -425,7 +427,7 @@ metrics.export_grafana(
 # 配置Linear
 mkdir -p ~/.linear-pilot
 echo "LINEAR_API_KEY=lin_api_xxx" > ~/.linear-pilot/linear.env
-
+# ...
 # 启用专业版特性
 echo 'enable_retry: true' >> ~/.linear-pilot/linear-config.json
 echo 'enable_metrics: true' >> ~/.linear-pilot/linear-config.json
@@ -438,11 +440,11 @@ echo 'enable_metrics: true' >> ~/.linear-pilot/linear-config.json
 ```bash
 # 加载路由规则
 cp templates/routing_rules.yaml ~/.linear-pilot/
-
+# ...
 # 配置多平台通知
 cp templates/notify_config.yaml ~/.linear-pilot/
 # 编辑填入各平台Token
-
+# ...
 # 启动Agent
 linear-pilot start --config ~/.linear-pilot/
 ```
@@ -456,17 +458,17 @@ linear-pilot start --config ~/.linear-pilot/
 linear:
   api_key: "${LINEAR_API_KEY}"
   teams: ["ENG", "FE", "BE", "QA", "DESIGN"]
-
+# ...
 routing:
   rules: "routing_rules.yaml"
   priority_queue: true
   preempt: true
-
+# ...
 webhook:
   primary: "make.com"
   fallback: "pipedream"
   failover: true
-
+# ...
 execution:
   sub_agent: true
   max_parallel: 4
@@ -476,16 +478,16 @@ execution:
   circuit_breaker:
     failure_threshold: 5
     recovery_timeout: 300
-
+# ...
 notify:
   channels: ["discord", "slack", "email", "wechat_work", "feishu"]
   rules: "notify_config.yaml"
-
+# ...
 metrics:
   collect: true
   export: "grafana"
   pushgateway: "http://prometheus-pushgateway:9091"
-
+# ...
 sla:
   monitor: true
   alert_after_minutes: 30
@@ -512,20 +514,20 @@ routing:
       workflow: "urgent_bug"
       sla_minutes: 30
       notify: ["discord", "slack", "sms"]
-
+# ...
     - condition: {labels: ["feature"], team: "ENG"}
       workflow: "feature_dev"
       sub_agent: true
-
+# ...
     - condition: {labels: ["cross-team"]}
       workflow: "cross_team"
       distribute_to: ["FE", "BE", "QA"]
-
+# ...
 execution:
   max_parallel: 4
   retry: {max_attempts: 3}
   circuit_breaker: {failure_threshold: 5}
-
+# ...
 notify:
   channels: ["discord", "slack", "email"]
 ```
@@ -546,7 +548,7 @@ notify:
 **配置**：
 ```python
 dispatcher = SubAgentDispatcher()
-
+# ...
 # 10个调研子任务并行
 research_task = {
     "id": "RES-001",
@@ -557,7 +559,7 @@ research_task = {
         "监控告警", "容器编排", "CI/CD", "服务网格"
     ]
 }
-
+# ...
 # 自动拆解为10个子任务，10个Agent并行
 subtasks = dispatcher.split(research_task, max_parallel=4)
 results = dispatcher.execute_parallel(subtasks)
@@ -580,13 +582,13 @@ final_report = dispatcher.merge(results)
 **配置**：
 ```python
 dispatcher = CrossTeamDispatcher()
-
+# ...
 task = {
     "id": "ENG-500",
     "title": "用户中心V2开发",
     "teams": ["FE", "BE", "QA"]
 }
-
+# ...
 # 自动分发并建立依赖
 subtasks = dispatcher.distribute(task)
 # FE-101: 前端开发（无依赖）
@@ -610,10 +612,10 @@ subtasks = dispatcher.distribute(task)
 **配置**：
 ```python
 metrics = MetricsCollector()
-
+# ...
 # 持续采集指标
 metrics.start_collection(interval=60)  # 每分钟采集
-
+# ...
 # 生成月度报表
 report = metrics.generate_report(period="monthly")
 # 关键指标：
@@ -622,7 +624,7 @@ report = metrics.generate_report(period="monthly")
 # - SLA合规率
 # - 失败原因Top5
 # - 瓶颈识别
-
+# ...
 # 导出至Grafana可视化
 metrics.export_grafana(pushgateway="http://prometheus:9091")
 ```
@@ -639,7 +641,7 @@ metrics.export_grafana(pushgateway="http://prometheus:9091")
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:-----|:-----|:-----|:-----|
 | 团队负责人 | 团队任务全自动化 | 全功能 | 处理效率提升3倍 |
 | 项目经理 | 跨团队任务分发 | 路由+跨团队分发+依赖管理 | 协调效率提升20倍 |
 | DevOps | 效能度量与优化 | 指标+Grafana+SLA监控 | 数据驱动优化 |
@@ -685,12 +687,12 @@ metrics.export_grafana(pushgateway="http://prometheus:9091")
 ```python
 # 推送指标至Prometheus
 from prometheus_client import CollectorRegistry, push_to_gateway
-
+# ...
 registry = CollectorRegistry()
 # 注册任务处理指标
 tasks_total = Gauge('linear_pilot_tasks_total', 'Total tasks processed', ['type', 'status'])
 task_duration = Histogram('linear_pilot_task_duration_seconds', 'Task duration', ['type'])
-
+# ...
 # 推送至Pushgateway
 push_to_gateway('prometheus-pushgateway:9091', job='linear-pilot', registry=registry)
 ```
@@ -747,19 +749,19 @@ alerts:
     duration: "5m"
     severity: "warning"
     notify: ["slack", "email"]
-
+# ...
   - name: "成功率低于70%"
     condition: "success_rate < 0.7"
     duration: "5m"
     severity: "critical"
     notify: ["slack", "email", "sms"]
     escalate_to: "team-lead"
-
+# ...
   - name: "SLA违规"
     condition: "sla_violation_count > 0"
     severity: "warning"
     notify: ["slack"]
-
+# ...
   - name: "死信队列积压"
     condition: "dlq_count > 5"
     duration: "30m"
@@ -783,7 +785,7 @@ alerts:
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|---:|---:|---:|
 | 1.0.0 | 2026-01 | 初版发布，含全部八大高级功能 |
 
 ## 已知限制
@@ -794,9 +796,8 @@ alerts:
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:---:|:---:|:---:|:---:|:---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -850,7 +851,7 @@ alerts:
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:------|------:|:------|:------|
 | 路由规则未匹配 | 条件配置错误或标签不匹配 | 检查规则条件；确认任务标签；添加默认路由规则 | 高 |
 | 子Agent分发失败 | Agent资源不足或初始化失败 | 检查max_parallel；查看Agent日志；减少并发数 | 高 |
 | 多平台通知未送达 | Token无效或频道ID错误 | 验证各平台Token；检查频道ID；查看通知日志 | 中 |
@@ -874,7 +875,7 @@ alerts:
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o） |
 | Linear账号 | 账号 | 必需 | 从linear.com注册 |
 | Make.com账号 | 服务 | 推荐 | 从make.com注册 |
@@ -945,7 +946,7 @@ alerts:
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------:|--------|:-------|:------:|
 | 免费体验版 | ¥0 | 单工作流+Make.com Webhook+Linear状态更新+Git同步+基础任务处理 | 个人开发者、小型团队 |
 | 收费专业版 | ¥29.9/月 | 全部高级功能（多工作流路由+多Webhook冗余+子Agent分发+多平台通知+优先级队列+重试熔断+跨团队分发+处理指标）+多角色指南+性能优化+优先支持 | 工程团队、企业级任务自动化、跨团队协作 |
 

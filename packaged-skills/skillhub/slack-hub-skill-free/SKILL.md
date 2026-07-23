@@ -17,16 +17,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
 ---
 # Slack消息中枢 LITE（Slack Hub Skill Free）
 
 面向团队协作场景的Slack基础消息集成（免费版）。提供频道消息发送与公共频道列表两大能力。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Slack消息中枢LITE处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -47,7 +48,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -69,7 +69,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|------|---------|---------|---------|
+|---:|---:|---:|---:|
 | 通知发布 | 向#general发送会议提醒 | 消息投递确认+时间戳 | 消息发送 |
 | 频道发现 | 列出所有公共频道 | 频道列表（ID、名称、成员数） | 频道列表 |
 
@@ -135,9 +135,8 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
 
 ## 错误处理
 
-
 | 错误码 | 错误信息 | 原因分析 | 处理方式 |
-|:-------|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | `invalid_auth` | `{ok:false, error:"invalid_auth"}` | Token无效/过期/格式错误 | 检查网络连接和配置后重试，引导用户检查 `SLACK_BOT_TOKEN` 是否以 `xoxb-` 开头 |
 | `channel_not_found` | `{ok:false, error:"channel_not_found"}` | 频道ID不存在或Bot不是成员 | 引导用户用 `/invite @botname` 将Bot加入频道 |
 | `rate_limited` | HTTP 429 + `Retry-After` 头 | 触发速率限制 | 等待 `Retry-After` 秒数后检查网络连接和配置后重试 |

@@ -37,14 +37,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
 ---
 # Azure Infra
-
 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Azure Infra处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -52,7 +53,7 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | Azure Infra查询与管理 | 不支持 | 支持 |
 | 多租户管理与权限分配 | 不支持 | 支持 |
@@ -96,7 +97,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -114,7 +115,7 @@ export API_KEY="your_api_key_here"
 
 ### 资源清单查询
 | 资源类型 | 只读命令示例 |
-| :-- | :-- |
+|:---:|:---:|
 | 资源组 | `az group list --query "[].{name:name,location:location}" -o table` |
 | 虚拟机 | `az vm list --show-details --query "[].{name:name,rg:resourceGroup,powerState:powerState}" -o table` |
 | 存储账户 | `az storage account list --query "[].{name:name,rg:resourceGroup,sku:sku.name}" -o table` |
@@ -149,7 +150,7 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供成本分析所需的指令和必要参数。
 **输出**: 返回成本分析的解析响应,包含完成状态码、响应数据和完成日志。### 变更任务（需确认）
 | 操作 | 命令 | 确认要求 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | 启动 VM | `az vm start --name <vm> -g <rg>` | 列出 VM 名称与资源组 |
 | 停止 VM | `az vm deallocate --name <vm> -g <rg>` | 提示停止后将释放计费资源 |
 | 删除资源组 | `az group delete --name <rg>` | 高风险，列出组内资源数量后等待确认 |
@@ -243,9 +244,8 @@ az monitor activity-log list --resource prod-vm-01 --resource-group prod-rg --st
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | `az: command not found` | 本地未安装 Azure CLI | 提示用户安装 Azure CLI（`winget install Microsoft.AzureCLI` 或参考官方安装文档） |
 | `Please run 'az login'` | 未登录或会话过期 | 引导用户执行 `az login --use-device-code` 完成登录 |
 | `SubscriptionNotFound` | 订阅 ID 错误或当前账号无权访问 | 先 `az account list` 确认可用订阅，再 `az account set` 切换 |

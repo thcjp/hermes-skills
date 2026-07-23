@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # PG任务队列（免费版）
 
 ## 概述
@@ -37,7 +38,7 @@ suggested_price: 29.9
 任务队列的核心是一张 `jobs` 表，需要同时支持状态流转、优先级排序、进度跟踪与重试控制。本助手提供经过生产验证的字段布局与索引设计。
 
 | 字段分组 | 关键字段 | 设计意图 |
-|:---------|:---------|:---------|
+|----|----|----|
 | 基础信息 | id、job_type、data(JSONB) | 唯一标识、任务类型、灵活负载 |
 | 调度控制 | priority、status、created_at | 优先级排序、状态流转、FIFO 兜底 |
 | 进度跟踪 | progress、current_stage、events_count | 长任务可视化与监控 |
@@ -122,7 +123,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | PG任务队列(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -152,30 +153,30 @@ CREATE TABLE jobs (
     priority INT NOT NULL DEFAULT 100,
     status VARCHAR(20) NOT NULL DEFAULT 'pending',
     data JSONB NOT NULL DEFAULT '{}',
-
+# ...
     -- 进度跟踪
     progress INT DEFAULT 0,
     current_stage VARCHAR(100),
-
+# ...
     -- Worker 跟踪
     worker_id VARCHAR(100),
     claimed_at TIMESTAMPTZ,
-
+# ...
     -- 时间记录
     created_at TIMESTAMPTZ DEFAULT NOW(),
     started_at TIMESTAMPTZ,
     completed_at TIMESTAMPTZ,
-
+# ...
     -- 重试控制
     attempts INT DEFAULT 0,
     max_attempts INT DEFAULT 3,
     last_error TEXT,
-
+# ...
     CONSTRAINT valid_status CHECK (
         status IN ('pending', 'claimed', 'running', 'completed', 'failed', 'cancelled')
     )
 );
-
+# ...
 -- 关键：部分索引加速领取
 CREATE INDEX idx_jobs_claimable ON jobs (priority DESC, created_at ASC)
     WHERE status = 'pending';
@@ -219,7 +220,7 @@ $$ LANGUAGE plpgsql;
 ### 优先级参考表
 
 | 优先级数值 | 含义 | 典型场景 |
-|:-----------|:-----|:---------|
+|---:|---:|---:|
 | 150 | 用户显式触发 | 用户点击"立即发送"按钮 |
 | 100 | 系统常规任务 | 定时报表、批量通知 |
 | 30 | 后台回填任务 | 历史数据迁移、索引重建 |
@@ -252,9 +253,8 @@ $$ LANGUAGE plpgsql;
 
 ## 错误处理
 
-
 | 错误场景(症状) | 可能原因 | 排查方法 | 对策 | 处理方式 |
-|:-----|:---------|:---------|:-----|------|
+|:-------:|:-------:|:-------:|:-------:|:-------:|
 | 任务一直 pending | 无 Worker 在运行 | 查看 Worker 日志与进程 | 重启 Worker 或扩容 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 任务重复执行 | 未使用 SKIP LOCKED | 检查领取 SQL | 改用 SKIP LOCKED | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 任务卡在 running | Worker 崩溃未标记失败 | 查看 claimed_at 是否超时 | 执行超时回收 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -295,7 +295,7 @@ $$ LANGUAGE plpgsql;
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | `PostgreSQL` 客户端 | 工具 | 必需 | psql / pgAdmin / DBeaver 等 |
 | 数据库驱动 | 库 | 必需 | pgx (Go) / psycopg (Python) / node-postgres (Node.js) |

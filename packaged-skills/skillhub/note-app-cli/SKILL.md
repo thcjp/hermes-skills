@@ -18,19 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Obsidian Official Cl
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Obsidian Official ClObsidian管理 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -60,11 +62,11 @@ obsidian devtools                      # Toggle dev tools
 obsidian dev:console                   # Show console
 obsidian dev:errors                    # JS errors
 obsidian eval code="app.vault.getFiles().length"
-
+# ...
 obsidian dev:screenshot path=screenshot.png
 obsidian dev:dom selector=".workspace-leaf"
 obsidian dev:css selector=".mod-active" prop=background
-
+# ...
 obsidian dev:mobile on/off
 obsidian dev:debug on/off
 ```
@@ -76,7 +78,7 @@ obsidian dev:debug on/off
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -92,7 +94,7 @@ obsidian dev:debug on/off
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | note-app-cli处理的内容输入 |,  |
 | content | string | 否 | note-app-cli处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -120,9 +122,8 @@ obsidian dev:debug on/off
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 输入content为空 | 用户未提供必要信息 | 提示用户提供content, 并给出示例格式 |
 | 输入内容过长(>5000字) | 超出单次处理能力 | 建议分段处理, 每段不超过2000字 |
 | 风格参数不识别 | 传入不支持的风格 | 列出支持的风格选项, 使用默认风格 |
@@ -135,9 +136,9 @@ obsidian dev:debug on/off
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -146,7 +147,6 @@ obsidian dev:debug on/off
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -159,17 +159,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Obsidian Official Cl？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Obsidian Official Cl有什么限制？
-A: 
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

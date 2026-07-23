@@ -20,8 +20,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # SQL查询工具（专业版）
 
 专业版在免费版核心能力之上，新增查询结果缓存、慢查询自动采集、跨数据库SQL自动转换、性能基准测试套件、连接池调优等高级能力，专为团队协作、企业生产环境与高并发查询场景设计。
@@ -35,7 +36,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|----|---|---|
 | 查询结果缓存 | 无 | 内存+磁盘多级缓存 |
 | 慢查询采集 | 手动EXPLAIN | 自动采集+告警+调用链 |
 | 跨库SQL转换 | 手动速查表 | 自动语法转换引擎 |
@@ -78,7 +79,7 @@ suggested_price: 99.9
 
 ```python
 from sql_query_tool import ProFeatures
-
+# ...
 pro = ProFeatures(db)
 pro.slow_query_monitor(threshold_ms=200, alert_webhook_env="OPS_WEBHOOK")
 # 自动采集 >200ms 的查询，推送到运维告警群
@@ -111,7 +112,7 @@ WHERE created_at >= NOW() - INTERVAL '7 days'
 ORDER BY created_at DESC
 LIMIT 100
 """
-
+# ...
 mysql_sql = pro.translate_sql(pg_sql, from_dialect="postgresql", to_dialect="mysql")
 # 自动转换为：DATE_SUB(NOW(), INTERVAL 7 DAY)、JSON_UNQUOTE(JSON_EXTRACT(...))
 ```
@@ -144,7 +145,7 @@ pro.enable_read_write_split(
 
 ```python
 from sql_query_tool import ProFeatures
-
+# ...
 pro = ProFeatures(db)
 pro.enable_cache(backend="memory", ttl_seconds=300)
 pro.slow_query_monitor(threshold_ms=200)
@@ -171,7 +172,7 @@ translated = pro.translate_sql(source_sql, from_dialect="postgresql", to_dialect
 
 ```python
 from sql_query_tool import ConnectionPool
-
+# ...
 pool = ConnectionPool(
     "postgresql://user:pass@localhost:5432/mydb",
     max_connections=20,
@@ -296,7 +297,7 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | 免费体验版 | 0元 | 核心查询+执行计划+速查表 | 个人试用 |
 | 收费专业版 | 29.9元/月 | 全功能+高级特性+优先支持 | 团队/企业 |
 
@@ -311,7 +312,7 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | sqlite3 | CLI工具 | 必需 | 系统自带或官网下载 |
 | psql | CLI工具 | 可选 | `PostgreSQL` 安装包 |
 | mysql | CLI工具 | 可选 | MySQL 客户端安装包 |
@@ -331,9 +332,8 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

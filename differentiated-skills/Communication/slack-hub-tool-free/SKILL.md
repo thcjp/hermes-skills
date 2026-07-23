@@ -46,8 +46,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
 ---
-
 # Slack Hub工具（免费版）
 
 ## 概述
@@ -99,7 +100,7 @@ Slack Hub工具免费版是一款面向个人用户的Slack消息发送与搜索
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Slack Hub工具免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -109,7 +110,7 @@ Slack Hub工具免费版是一款面向个人用户的Slack消息发送与搜索
 slack-hub-tool send \
   --target "#general" \
   --message "今日部署已完成，版本v2.1.0已上线"
-
+# ...
 # 通过频道ID发送
 slack-hub-tool send \
   --target "C0123456789" \
@@ -131,7 +132,7 @@ slack-hub-tool send \
 ```bash
 # 搜索包含关键词的消息
 slack-hub-tool search --query "部署文档"
-
+# ...
 # 搜索特定频道的消息
 slack-hub-tool search --query "bug修复" --channel "C0123456789"
 ```
@@ -176,21 +177,20 @@ SLACK_BOT_TOKEN=xoxb-your-bot-token-here
 ```bash
 # 列出所有公开频道
 slack-hub-tool list-channels
-
+# ...
 # 发送消息
 slack-hub-tool send --target "#general" --message "Hello World"
-
+# ...
 # 线程回复
 slack-hub-tool send --target "C0123456789" \
   --message "收到，我来跟进" \
   --thread-ts "1712023032.1234"
-
+# ...
 # 搜索消息
 slack-hub-tool search --query "项目计划"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -199,14 +199,14 @@ slack-hub-tool search --query "项目计划"
 slack:
   bot_token: "${SLACK_BOT_TOKEN}"
   default_channel: "#general"
-
+# ...
 # 功能配置
 features:
   send: true              # 消息发送
   thread_reply: true      # 线程回复
   search: true            # 内容搜索
   list_channels: true     # 频道列表
-
+# ...
 # 搜索配置
 search:
   max_results: 20         # 最大返回结果数
@@ -216,7 +216,7 @@ search:
 ### 工具说明
 
 | 工具 | 功能 | 必需参数 | 可选参数 |
-|:-----|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | `slack_send` | 发送消息 | `target`, `message` | `thread_ts` |
 | `slack_search` | 搜索消息 | `query` | `channel`, `max_results` |
 | `slack_list_channels` | 列出频道 | 无 | `exclude_archived` |
@@ -226,7 +226,7 @@ search:
 ### 消息发送规范
 
 | 实践 | 说明 |
-|:-----|:-----|
+|---:|---:|
 | 目标明确 | 使用频道名称时以`#`开头，私信用`@`用户名 |
 | 内容简洁 | 每条消息聚焦一个主题，长内容用线程 |
 | 线程回复 | 讨论具体消息时使用`thread_ts`在线程内回复 |
@@ -237,10 +237,10 @@ search:
 ```bash
 # 精确短语搜索
 slack-hub-tool search --query "\"部署文档\""
-
+# ...
 # 按频道搜索
 slack-hub-tool search --query "bug" --channel "C0123456789"
-
+# ...
 # 组合关键词
 slack-hub-tool search --query "项目 AND 评审"
 ```
@@ -250,7 +250,7 @@ slack-hub-tool search --query "项目 AND 评审"
 ```bash
 # 查看所有频道（包括已归档）
 slack-hub-tool list-channels --include-archived
-
+# ...
 # 仅查看活跃频道
 slack-hub-tool list-channels --exclude-archived
 ```
@@ -258,7 +258,7 @@ slack-hub-tool list-channels --exclude-archived
 ### 线程回复规范
 
 | 场景 | 是否使用线程 | 说明 |
-|:-----|:------------|:-----|
+|:---:|:---:|:---:|
 | 回复具体消息 | 是 | 保持讨论上下文 |
 | 全频道通知 | 否 | 直接发送到频道 |
 | 讨论技术细节 | 是 | 避免刷屏主频道 |
@@ -310,7 +310,7 @@ slack-hub-tool list-channels --exclude-archived
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Slack Bot Token | API凭证 | 必需 | Slack App管理页面创建 |
 | requests | Python库 | 推荐 | `pip install requests` |
@@ -320,7 +320,7 @@ slack-hub-tool list-channels --exclude-archived
 ```bash
 # Slack Bot Token（必需）
 export SLACK_BOT_TOKEN="xoxb-your-bot-token-here"
-
+# ...
 # 所需Bot Token Scopes:
 # - chat:write          发送消息
 # - search:read         搜索工作区内容
@@ -344,9 +344,8 @@ export SLACK_BOT_TOKEN="xoxb-your-bot-token-here"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

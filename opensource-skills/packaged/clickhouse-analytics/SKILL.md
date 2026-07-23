@@ -19,6 +19,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # ClickHouse分析专家
 
@@ -35,7 +37,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | 实时分析 | 业务指标 + 数据量 + 查询模式 | MergeTree 表 + 物化视图 + 查询示例 |
 | 日志分析 | 日志格式 + 日增量 + 保留期 | 分区表 + TTL + 采样索引 + 降采样策略 |
 | 用户行为 | 事件类型 + 漏斗/留存需求 | 事件表 + Array/JSON + 漏斗查询 + 留存查询 |
@@ -100,7 +102,7 @@ pricing_model: "per_use"
 **输入**：
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | ClickHouse分析专家处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -125,7 +127,7 @@ PARTITION BY toYYYYMMDD(event_time)
 ORDER BY (event_name, user_id, event_time)
 TTL event_time + INTERVAL 90 DAY
 SETTINGS index_granularity = 8192;
-
+# ...
 -- 2. 物化视图：每日汇总（实时 UV/PV）
 CREATE MATERIALIZED VIEW daily_stats
 ENGINE = SummingMergeTree()
@@ -138,20 +140,20 @@ AS SELECT
   uniqState(user_id) AS uv_state   -- 使用 uniqState 支持合并
 FROM events
 GROUP BY event_name, day;
-
+# ...
 -- 3. 查询示例
 -- 实时 PV（最近 1 小时）
 SELECT count() AS pv
 FROM events
 WHERE event_name = 'view'
   AND event_time > now() - INTERVAL 1 HOUR;
-
+# ...
 -- 实时 UV（使用物化视图 + uniqMerge）
 SELECT event_name, sum(pv) AS total_pv, uniqMerge(uv_state) AS total_uv
 FROM daily_stats
 WHERE day = today()
 GROUP BY event_name;
-
+# ...
 -- 漏斗分析（view → click → purchase）
 SELECT
   user_id,
@@ -188,7 +190,7 @@ PARTITION BY toYYYYMMDD(log_time)
 ORDER BY (service_name, log_time)
 TTL log_time + INTERVAL 7 DAY
 SETTINGS compression = 'LZ4';
-
+# ...
 -- 2. 降采样物化视图（按小时聚合，保留 1 年）
 CREATE MATERIALIZED VIEW logs_hourly
 ENGINE = MergeTree()
@@ -203,7 +205,7 @@ AS SELECT
   uniq(trace_id) AS trace_count
 FROM logs_raw
 GROUP BY service_name, level, hour;
-
+# ...
 -- 3. 查询示例
 -- 全文搜索错误日志
 SELECT log_time, service_name, message, trace_id
@@ -213,7 +215,7 @@ WHERE message LIKE '%timeout%'
   AND log_time > now() - INTERVAL 1 HOUR
 ORDER BY log_time DESC
 LIMIT 100;
-
+# ...
 -- 服务错误率趋势（使用降采样表，秒级返回）
 SELECT
   hour,
@@ -231,7 +233,7 @@ ORDER BY hour;
 - 重试机制: 失败时自动重试, 最多3次
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|---:|---:|
 | 查询超时 | 全表扫描或聚合基数过大 | 检查分区裁剪 + 添加排序键索引 + 优化聚合 + 增加资源 |
 | 内存溢出（OOM） | `max_memory_usage` 超限 | 调整 `max_memory_usage` + 使用流式聚合 + 分批查询 |
 | 数据不一致 | ReplacingMergeTree 未完成合并 | 最终一致，手动 `OPTIMIZE TABLE FINAL` 强制合并 |
@@ -250,7 +252,7 @@ ORDER BY hour;
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | ClickHouse 实例 | 服务 | 必需（执行时） | 自托管 / ClickHouse Cloud / 国内云托管 |
 | clickhouse-client | CLI | 必需（执行时） | 官方包管理器安装 |
 | ZooKeeper / Keeper | 服务 | 可选 | 集群模式（副本协调） |
@@ -259,7 +261,7 @@ ORDER BY hour;
 
 ### 国内替代方案
 | 海外服务/工具 | 国内替代 | 说明 |
-|:--------------|:---------|:-----|
+|:---------|---------:|:---------|
 | ClickHouse Cloud | 阿里云 ClickHouse | 阿里云托管 ClickHouse，兼容开源版本 |
 | ClickHouse Cloud | 腾讯云 CDWCH（ClickHouse） | 腾讯云托管 ClickHouse |
 | ClickHouse Cloud | 华为云 GaussDB(DWS) ClickHouse | 华为云托管版本 |
@@ -294,7 +296,7 @@ ORDER BY hour;
 **LLM生成输出**:
 ```sql
 -- output/user-events/01_create_table.sql
-
+# ...
 -- 1. 事件明细表（MergeTree，按天分区）
 CREATE TABLE events (
   event_time DateTime,
@@ -310,7 +312,7 @@ PARTITION BY toYYYYMMDD(event_time)
 ORDER BY (event_name, user_id, event_time)  -- 选择性: event_name > user_id > time
 TTL event_time + INTERVAL 90 DAY            -- 90天自动清理
 SETTINGS index_granularity = 8192;           -- 稀疏索引粒度
-
+# ...
 -- 2. 每日汇总物化视图（实时UV/PV，秒级查询）
 CREATE MATERIALIZED VIEW daily_stats
 ENGINE = SummingMergeTree()
@@ -324,7 +326,7 @@ AS SELECT
   uniqState(user_id) AS uv_state  -- 使用uniqState支持合并
 FROM events
 GROUP BY event_name, day;
-
+# ...
 -- 3. 漏斗分析辅助表（按user_id排序，加速漏斗查询）
 CREATE TABLE events_by_user
 ENGINE = MergeTree()
@@ -332,20 +334,20 @@ PARTITION BY toYYYYMMDD(event_time)
 ORDER BY (user_id, event_time)
 TTL event_time + INTERVAL 90 DAY
 AS SELECT * FROM events;  -- 通过物化视图同步
-
+# ...
 -- 4. 查询示例
 -- 4.1 实时PV（最近1小时，秒级返回）
 SELECT count() AS pv
 FROM events
 WHERE event_name = 'view'
   AND event_time > now() - INTERVAL 1 HOUR;
-
+# ...
 -- 4.2 实时UV（使用物化视图，秒级返回）
 SELECT event_name, sum(pv) AS total_pv, uniqMerge(uv_state) AS total_uv
 FROM daily_stats
 WHERE day = today()
 GROUP BY event_name;
-
+# ...
 -- 4.3 漏斗分析（view → click → purchase，7天窗口）
 SELECT
   countIf(view_cnt > 0) AS step1_view,
@@ -364,7 +366,7 @@ FROM (
     AND event_name IN ('view', 'click', 'purchase')
   GROUP BY user_id
 );
-
+# ...
 -- 4.4 留存分析（次日/7日/30日留存）
 SELECT
   today_users.day AS day,
@@ -386,7 +388,7 @@ ORDER BY day;
 ```text
 # 性能基准（1亿条/日，90天数据约90亿行）
 | 查询 | 扫描行数 | 耗时 | 优化点 |
-|:-----|:---------|:-----|:-------|
+|---:|:---|---:|---:|
 | 实时PV(1小时) | ~400万 | 0.2s | 分区裁剪+列式扫描 |
 | 实时UV(物化视图) | ~20行 | 0.05s | 预聚合 |
 | 漏斗分析(7天) | ~7亿 | 8s | 分区裁剪+排序键 |
@@ -407,7 +409,7 @@ ORDER BY day;
 **LLM生成输出**:
 ```sql
 -- output/log-analytics/01_create_tables.sql
-
+# ...
 -- 1. 原始日志表（保留7天，全文搜索索引）
 CREATE TABLE logs_raw (
   log_time DateTime64(3),              -- 毫秒精度
@@ -425,7 +427,7 @@ PARTITION BY toYYYYMMDD(log_time)
 ORDER BY (service_name, log_time)
 TTL log_time + INTERVAL 7 DAY          -- 7天自动清理
 SETTINGS compression = 'LZ4';
-
+# ...
 -- 2. 小时降采样表（保留1年，加速趋势查询）
 CREATE MATERIALIZED VIEW logs_hourly
 ENGINE = SummingMergeTree()
@@ -440,7 +442,7 @@ AS SELECT
   uniq(trace_id) AS trace_count
 FROM logs_raw
 GROUP BY service_name, level, hour;
-
+# ...
 -- 3. 服务健康度日表（保留2年，长期趋势）
 CREATE MATERIALIZED VIEW service_health_daily
 ENGINE = MergeTree()
@@ -456,7 +458,7 @@ AS SELECT
   round(countIf(level = 'ERROR') / count() * 100, 4) AS error_rate
 FROM logs_raw
 GROUP BY service_name, day;
-
+# ...
 -- 4. 查询示例
 -- 4.1 全文搜索错误日志（秒级）
 SELECT log_time, service_name, message, trace_id
@@ -466,7 +468,7 @@ WHERE message LIKE '%timeout%'
   AND log_time > now() - INTERVAL 1 HOUR
 ORDER BY log_time DESC
 LIMIT 100;
-
+# ...
 -- 4.2 服务错误率趋势（使用降采样表，秒级）
 SELECT
   hour,
@@ -477,7 +479,7 @@ WHERE hour > now() - INTERVAL 7 DAY
   AND service_name = 'order-service'
 GROUP BY hour, service_name
 ORDER BY hour;
-
+# ...
 -- 4.3 Top10错误最多的服务
 SELECT
   service_name,
@@ -488,7 +490,7 @@ WHERE day = today()
 GROUP BY service_name
 ORDER BY total_errors DESC
 LIMIT 10;
-
+# ...
 -- 4.4 链路追踪查询
 SELECT log_time, level, message, host
 FROM logs_raw

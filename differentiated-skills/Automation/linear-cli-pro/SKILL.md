@@ -19,6 +19,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # Linear CLI 专家
 
@@ -28,7 +30,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Linear CLI专家处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -58,7 +60,7 @@ linear capabilities       # 命令能力清单（机器可读）
 ## Markdown 安全传参决策表
 
 | 场景 | 推荐方式 | 反模式（禁用） |
-|:-----|:---------|:---------------|
+|:-----|:-----|:-----|
 | 已有 .md 文件作为描述 | `issue create --description-file path.md` | `--description "$(cat file)"` |
 | 已有 .md 文件作为评论 | `comment add --body-file path.md` | `--body "$(cat file)"` |
 | 流式生成的 Markdown | `cat desc.md \| linear issue create --title "..."` | 内联 `--description "多行\n文本"` |
@@ -77,11 +79,11 @@ cat > /tmp/description.md <<'EOF'
 ## Summary
 - 第一项
 - 第二项
-
+# ...
 ## Details
 这是带格式的详细描述。
 EOF
-
+# ...
 linear issue create --title "My Issue" --description-file /tmp/description.md
 linear issue comment add ENG-123 --body-file /tmp/comment.md
 ```
@@ -89,7 +91,7 @@ linear issue comment add ENG-123 --body-file /tmp/comment.md
 ## 命令速查
 
 | 命令 | 用途 |
-|:-----|:-----|
+|---:|---:|
 | `linear auth` | 鉴权管理（login / status / token / refresh） |
 | `linear issue` | issue 增删改查、批量操作 |
 | `linear team` / `linear project` / `linear cycle` / `linear milestone` | 团队/项目/周期/里程碑 |
@@ -131,7 +133,7 @@ linear issue list --status Backlog --json \
   | jq -r '.data[].identifier' \
   | xargs -P 4 -I {} linear issue update {} --status "In Progress" --dry-run --json \
   | tee /tmp/preview.json
-
+# ...
 # 预览无误后去掉 --dry-run 重跑
 ```
 
@@ -179,7 +181,7 @@ grep -A 30 "^type Issue " "${TMPDIR:-/tmp}/linear-schema.graphql"
 linear api --variable teamId=abc123 <<'GRAPHQL'
 query($teamId: String!) { team(id: $teamId) { name } }
 GRAPHQL
-
+# ...
 linear api --variables-json '{"filter": {"state": {"name": {"eq": "In Progress"}}}}' <<'GRAPHQL'
 query($filter: IssueFilter!) { issues(filter: $filter) { nodes { title } } }
 GRAPHQL
@@ -207,7 +209,7 @@ linear issue create \
   --apply-triage \
   --autonomy-policy preview-required \
   --dry-run --json | tee /tmp/preview.json
-
+# ...
 # 用户确认后
 linear issue create --context-file /tmp/slack-envelope.json --apply-triage --json
 ```
@@ -240,9 +242,8 @@ done
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:---:|:---:|:---:|:---:|:---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -267,7 +268,7 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 ## 故障排查
 
 | 现象 | 排查路径 |
-|:-----|:---------|
+|:------|------:|
 | `command not found: linear` | 未安装 → 按 README 安装 → 重开终端 |
 | 401 Unauthorized | 走"鉴权自愈流程" |
 | 429 Too Many Requests | 降并发到 2 → 加 sleep → 检查是否有其他自动化在跑 |
@@ -285,7 +286,7 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | `linear` CLI（v3） | 命令行工具 | 必需 | 官方仓库安装 |
 | `jq` | JSON 处理 | 强烈推荐 | 系统包管理器 |
 | `curl` | HTTP 兜底 | 可选 | 系统自带 |
@@ -318,7 +319,7 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 **输出**: 返回聚焦 v3 执行模型下的稳定 的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-### 核心能力
+### 核心能力(补充)
 核心能力:
 
 **输入**: 用户提供核心能力所需的指令和必要参数。
@@ -333,16 +334,16 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 ## 适用场景
 
 ```bash
-
+# ...
 ## 使用流程
-
+# ...
 1. 确认运行环境满足依赖说明中的要求
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
 4. 如遇错误，参考错误处理章节
-
+# ...
 #
-
+# ...
 ## 输出格式
 ```json
 {
@@ -359,3 +360,4 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
   "error": null
 }
 ```
+# ...

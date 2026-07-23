@@ -35,8 +35,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
 ---
-
 # 播客章节工具 - 专业版
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 99.9
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 | 增量价值 |
-|:-----|:-------|:-------|:---------|
+|---|---|---|----|
 | 章节标记 | 支持 | 支持 | - |
 | 高光片段 | 支持 | 支持 | - |
 | 节目笔记 | 草稿 | AI 精炼 | 质量提升 |
@@ -96,28 +97,28 @@ import os
 import glob
 import json
 from pathlib import Path
-
+# ...
 class BatchChapterGenerator:
     """批量章节生成器"""
-
+# ...
     def __init__(self, input_dir, output_dir, format="markdown"):
         self.input_dir = Path(input_dir)
         self.output_dir = Path(output_dir)
         self.format = format
         self.output_dir.mkdir(parents=True, exist_ok=True)
-
+# ...
     def process_all(self):
         """处理目录下所有文字稿"""
         transcripts = glob.glob(str(self.input_dir / "*.json"))
         results = []
-
+# ...
         for transcript_path in sorted(transcripts):
             episode_id = Path(transcript_path).stem
             print(f"处理: {episode_id}")
-
+# ...
             with open(transcript_path, "r", encoding="utf-8") as f:
                 transcript = json.load(f)
-
+# ...
             # 生成章节
             chapters = self.generate_chapters(transcript)
             # 生成高光
@@ -126,48 +127,48 @@ class BatchChapterGenerator:
             show_notes = self.generate_show_notes(transcript, chapters, highlights)
             # 生成社媒文案
             social_captions = self.generate_social_captions(highlights)
-
+# ...
             # 多格式输出
             self.save_output(episode_id, chapters, highlights,
                            show_notes, social_captions)
-
+# ...
             results.append({
                 "episode": episode_id,
                 "chapters_count": len(chapters),
                 "highlights_count": len(highlights),
                 "duration": transcript["segments"][-1]["end"]
             })
-
+# ...
         # 生成汇总报告
         self.save_summary(results)
         return results
-
+# ...
     def save_output(self, episode_id, chapters, highlights, notes, captions):
         """多格式输出"""
         base = self.output_dir / episode_id
         base.mkdir(parents=True, exist_ok=True)
-
+# ...
         # Markdown 格式
         with open(base / "chapters.md", "w", encoding="utf-8") as f:
             f.write(self.to_markdown(chapters, highlights, notes))
-
+# ...
         # JSON 格式(程序处理)
         with open(base / "chapters.json", "w", encoding="utf-8") as f:
             json.dump({"chapters": chapters, "highlights": highlights},
                      f, ensure_ascii=False, indent=2)
-
+# ...
         # SRT 格式(字幕)
         with open(base / "chapters.srt", "w", encoding="utf-8") as f:
             f.write(self.to_srt(chapters))
-
+# ...
         # ID3 标签(MP3 章节)
         with open(base / "chapters.id3", "w", encoding="utf-8") as f:
             f.write(self.to_id3(chapters))
-
+# ...
         # 社媒文案
         with open(base / "social-captions.md", "w", encoding="utf-8") as f:
             f.write(captions)
-
+# ...
 generator = BatchChapterGenerator(
     input_dir="./transcripts",
     output_dir="./output"
@@ -182,12 +183,12 @@ generator.process_all()
 ```python
 import os
 from openai import OpenAI
-
+# ...
 client = OpenAI()
-
+# ...
 def ai_smart_chapters(transcript, target_chapters=6):
     """AI 语义分析生成章节
-
+# ...
     Args:
         transcript: 带时间戳的文字稿
         target_chapters: 目标章节数
@@ -197,13 +198,13 @@ def ai_smart_chapters(transcript, target_chapters=6):
         f"[{seg['start']:.1f}s] {seg['text']}"
         for seg in transcript["segments"]
     ])
-
+# ...
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
             {"role": "system", "content": f"""你是播客章节编辑专家。
 基于文字稿进行语义分析,将内容划分为 {target_chapters} 个左右的章节。
-
+# ...
 输出 JSON 格式:
 {{
   "chapters": [
@@ -228,9 +229,9 @@ def ai_smart_chapters(transcript, target_chapters=6):
         ],
         response_format={"type": "json_object"}
     )
-
+# ...
     return json.loads(response.choices[0].message.content)
-
+# ...
 # 使用
 result = ai_smart_chapters(transcript)
 for ch in result["chapters"]:
@@ -247,9 +248,9 @@ from fastapi import FastAPI, UploadFile, File, BackgroundTasks
 from fastapi.responses import JSONResponse
 import tempfile
 import os
-
+# ...
 app = FastAPI(title="播客章节服务", version="1.0.0")
-
+# ...
 @app.post("/api/v1/chapters")
 async def generate_chapters(
     file: UploadFile = File(...),
@@ -258,23 +259,23 @@ async def generate_chapters(
     language: str = "auto"
 ):
     """生成章节标记
-
+# ...
     - 接受文字稿 JSON 文件
     - 返回章节、高光与社媒文案
     """
     content = await file.read()
-
+# ...
     with tempfile.NamedTemporaryFile(delete=False, suffix=".json") as tmp:
         tmp.write(content)
         tmp_path = tmp.name
-
+# ...
     try:
         import json
         with open(tmp_path, "r", encoding="utf-8") as f:
             transcript = json.load(f)
-
+# ...
         result = ai_smart_chapters(transcript, target_chapters)
-
+# ...
         return JSONResponse({
             "status": "success",
             "data": result,
@@ -286,7 +287,7 @@ async def generate_chapters(
         })
     finally:
         os.unlink(tmp_path)
-
+# ...
 @app.post("/api/v1/batch")
 async def batch_process(
     background_tasks: BackgroundTasks,
@@ -298,7 +299,7 @@ async def batch_process(
         BatchChapterGenerator(input_dir, output_dir).process_all
     )
     return {"status": "accepted", "message": "批量任务已启动"}
-
+# ...
 # 启动: uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
@@ -390,22 +391,22 @@ def assess_chapter_quality(chapters, transcript):
     """评估章节质量"""
     total_duration = transcript["segments"][-1]["end"]
     issues = []
-
+# ...
     for i, ch in enumerate(chapters):
         duration = ch["end"] - ch["start"]
-
+# ...
         # 检查章节时长
         if duration < 60:
             issues.append(f"章节 {i+1} 过短({duration:.0f}秒)")
         if duration > 600:
             issues.append(f"章节 {i+1} 过长({duration:.0f}秒)")
-
+# ...
         # 检查标题长度
         if len(ch["title"]) > 20:
             issues.append(f"章节 {i+1} 标题过长")
-
+# ...
     coverage = sum(ch["end"] - ch["start"] for ch in chapters) / total_duration
-
+# ...
     return {
         "total_chapters": len(chapters),
         "coverage": f"{coverage*100:.1f}%",
@@ -466,7 +467,7 @@ AI 模型支持 30+ 语言,包括中英日韩法德西等。文字稿语言自�
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | openai | Python 库 | 必需(AI 功能) | `pip install openai` |
 | fastapi | Python 库 | 可选(API 服务) | `pip install fastapi uvicorn` |
 | python-multipart | Python 库 | 可选(文件上传) | `pip install python-multipart` |
@@ -486,9 +487,8 @@ AI 模型支持 30+ 语言,包括中英日韩法德西等。文字稿语言自�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -18,19 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Xml Reader
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -43,7 +45,7 @@ XML is used in construction for P6 schedules (XER), IFC-XML, COBie-XML, and buil
 ```python
 p6_reader = P6XMLReader()
 schedule = p6_reader.parse_full_schedule("p6_export.xml")
-
+# ...
 activities = schedule['activities']
 print(f"Activities: {len(activities)}")
 ```
@@ -53,7 +55,7 @@ print(f"Activities: {len(activities)}")
 ```python
 cobie_reader = COBieXMLReader()
 cobie_data = cobie_reader.parse_cobie("facility_cobie.xml")
-
+# ...
 components = cobie_data.get('Component', pd.DataFrame())
 ```
 
@@ -62,7 +64,7 @@ components = cobie_data.get('Component', pd.DataFrame())
 ```python
 ifc_reader = IFCXMLReader()
 root = ifc_reader.parse_file("model.ifcxml")
-
+# ...
 types = ifc_reader.get_entity_types(root)
 for entity_type, count in sorted(types.items(), key=lambda x: -x[1])[:10]:
     print(f"{entity_type}: {count}")
@@ -72,12 +74,12 @@ for entity_type, count in sorted(types.items(), key=lambda x: -x[1])[:10]:
 
 ```python
 reader = ConstructionXMLReader()
-
+# ...
 root = reader.parse_file("schedule.xml")
-
+# ...
 activities = reader.find_elements(root, "Activity")
 print(f"Found {len(activities)} activities")
-
+# ...
 df = reader.elements_to_dataframe(activities)
 ```
 
@@ -89,11 +91,10 @@ df = reader.elements_to_dataframe(activities)
 3. 按照能力描述提供输入参数,执行操作
 4. 查看输出结果,确认任务完成状态
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 
 ## 输出格式
 
@@ -110,9 +111,8 @@ df = reader.elements_to_dataframe(activities)
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -123,9 +123,9 @@ df = reader.elements_to_dataframe(activities)
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -134,7 +134,6 @@ df = reader.elements_to_dataframe(activities)
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -160,9 +159,8 @@ df = reader.elements_to_dataframe(activities)
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -19,17 +19,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # Notion
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Notion API integration with managed OAuth | 支持 | 支持 |
-| Query databases, search pages, | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -40,7 +44,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -53,7 +57,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | notion-api-skill处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -112,7 +116,7 @@ pricing_model: "per_use"
 
 ## 错误处理
 | Status | Meaning |
-| --- | --- |
+|:-----:|:-----:|
 | 400 | Missing Notion connection |
 | 401 | Invalid or missing Maton API key |
 | 429 | Rate limited (10 req/sec per account) |
@@ -141,8 +145,6 @@ maton connection list
 echo $MATON_API_KEY
 ```
 
-2. Verify the API key is valid by listing connections:
-
 ```bash
 python <<'EOF'
 import urllib.request, os, json
@@ -165,9 +167,9 @@ EOF
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -176,7 +178,6 @@ EOF
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -188,11 +189,11 @@ export API_KEY="your_api_key_here"
 ### CLI
 ```bash
 maton notion search 'roadmap'
-
+# ...
 maton notion page view 0123456789abcdef0123456789abcdef
-
+# ...
 maton notion data-source query <dataSourceId> --filter '{"property":"Status","select":{"equals":"Active"}}'
-
+# ...
 maton notion search 'roadmap' --json --jq '.results | map(select(.object == "page"))'
 ```
 
@@ -213,7 +214,7 @@ const response = await fetch('https://api.maton.ai/notion/v1/search', {
 ```python
 import os
 import requests
-
+# ...
 response = requests.post(
     'https://api.maton.ai/notion/v1/search',
     headers={
@@ -227,12 +228,6 @@ response = requests.post(
 ## 常见问题
 
 ### Q1: 如何开始使用Notion？
-A: 
-
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Notion有什么限制？
 A: 
 
 ## 已知限制

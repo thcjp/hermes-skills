@@ -48,8 +48,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
-
 # 代码执行工具免费版
 
 ## 概述
@@ -63,7 +64,7 @@ suggested_price: 29.9
 ### 1. PTY 伪终端执行
 
 | 特性 | 说明 |
-|:-----|:-----|
+|---|---|
 | 非 TTY 适配 | 在容器、CI/CD、后台进程等环境运行 |
 | 自动应答 | 自动回答执行过程中的确认提示 |
 | 完整输出 | 捕获并返回完整的 stdout/stderr |
@@ -77,7 +78,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 代码执行工具免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -124,14 +125,14 @@ if b'Continue?' in output:
 
 ```python
 from code_runner import run_code_task
-
+# ...
 result = run_code_task(
     workdir='/path/to/project',
     prompt='审查代码库,识别潜在 Bug 和改进点',
     user='developer',
     timeout=300
 )
-
+# ...
 print(result)
 ```
 
@@ -174,10 +175,10 @@ result = run_code_task(
 ```bash
 # 确认 Python 版本
 python3 --version  # 需要 3.8+
-
+# ...
 # 依赖说明
 which claude
-
+# ...
 # 赋予脚本执行权限
 chmod +x （请参考skill目录中的脚本文件）
 ```
@@ -188,14 +189,14 @@ chmod +x （请参考skill目录中的脚本文件）
 
 ```python
 from code_runner import run_code_task
-
+# ...
 result = run_code_task(
     workdir='/path/to/project',
     prompt='实现一个简单的健康检查端点',
     user='developer',
     timeout=300
 )
-
+# ...
 print(result)
 ```
 
@@ -233,7 +234,7 @@ run_code_task(workdir, prompt, user='developer', timeout=300)
 **参数说明:**
 
 | 参数 | 类型 | 默认值 | 说明 |
-|:-----|:-----|:-------|:-----|
+|---:|---:|---:|---:|
 | `workdir` | str | 必需 | 项目工作目录 |
 | `prompt` | str | 必需 | 自然语言任务描述 |
 | `user` | str | 'developer' | 执行用户 |
@@ -242,7 +243,7 @@ run_code_task(workdir, prompt, user='developer', timeout=300)
 **返回值:**
 
 | 类型 | 说明 |
-|:-----|:-----|
+|:---:|:---:|
 | str | 合并的 stdout 和 stderr 输出 |
 
 ### 环境变量配置
@@ -250,10 +251,10 @@ run_code_task(workdir, prompt, user='developer', timeout=300)
 ```bash
 # 默认执行用户
 export CODE_RUNNER_USER="developer"
-
+# ...
 # 默认超时时间
 export CODE_RUNNER_TIMEOUT="300"
-
+# ...
 # 临时目录位置(可选)
 export CODE_RUNNER_TEMP_DIR="/tmp/code-runner"
 ```
@@ -261,7 +262,7 @@ export CODE_RUNNER_TEMP_DIR="/tmp/code-runner"
 ### 配置项说明
 
 | 配置项 | 默认值 | 说明 |
-|:-------|:-------|:-----|
+|:------|------:|:------|
 | `CODE_RUNNER_USER` | developer | 默认执行用户 |
 | `CODE_RUNNER_TIMEOUT` | 300 | 默认超时(秒) |
 | `CODE_RUNNER_TEMP_DIR` | /tmp/code-runner | 临时目录 |
@@ -281,7 +282,7 @@ prompt='''
 - 增加异常日志记录
 - 遵循 PEP 8 规范
 '''
-
+# ...
 # 不好的描述(过于模糊)
 prompt='修复登录问题'
 ```
@@ -289,7 +290,7 @@ prompt='修复登录问题'
 ### 2. 超时设置建议
 
 | 任务类型 | 建议超时 |
-|:---------|:---------|
+|---:|:---|
 | 简单修改 | 300 秒(5分钟) |
 | 功能开发 | 600 秒(10分钟) |
 | 大规模重构 | 1200 秒(20分钟) |
@@ -300,10 +301,10 @@ prompt='修复登录问题'
 ```bash
 # 创建专用执行用户(推荐)
 sudo useradd -m -s /（请参考skill目录中的脚本文件） code-runner
-
+# ...
 # 已知限制
 sudo chown -R code-runner:code-runner /path/to/projects
-
+# ...
 # 使用该用户执行
 export CODE_RUNNER_USER="code-runner"
 ```
@@ -386,7 +387,7 @@ if b'new prompt text' in output:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | Python 3.8+ | 运行时 | 必需 | python.org |
 | 代码 CLI | CLI 工具 | 必需 | `npm install -g @anthropic-ai/claude-code` |
 | LLM API | API | 必需 | 由代码 CLI 内置 LLM 提供 |
@@ -409,9 +410,8 @@ export ANTHROPIC_API_KEY="your-api-key"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

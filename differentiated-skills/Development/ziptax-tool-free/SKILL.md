@@ -30,8 +30,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 销售税查询工具(免费版)
 
 ## 概述
@@ -43,7 +44,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 地址查询 | 最精确,返回单一明确结果 |
 | 邮编查询 | 返回该 ZIP 内所有税率 |
 | 经纬度查询 | 适合移动端或地理定位场景 |
@@ -121,10 +122,10 @@ curl -s "https://api.zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
 ```bash
 # Linux / macOS
 export ZIPTAX_API_KEY="your-api-key-here"
-
+# ...
 # Windows PowerShell
 $env:ZIPTAX_API_KEY="your-api-key-here"
-
+# ...
 # 永久保存(添加到 ~/.bashrc 或 ~/.zshrc)
 echo 'export ZIPTAX_API_KEY="your-api-key-here"' >> ~/.bashrc
 ```
@@ -135,7 +136,7 @@ echo 'export ZIPTAX_API_KEY="your-api-key-here"' >> ~/.bashrc
 # 使用 curl 直接查询
 curl -s "https://api.zip-tax.com/request/v60?postalcode=92618" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
-
+# ...
 # 或使用 CLI 封装
 bash （请参考skill目录中的脚本文件） --postalcode 92618
 ```
@@ -149,14 +150,14 @@ bash （请参考skill目录中的脚本文件） --postalcode 92618
 #!/usr/bin/env bash
 # （请参考skill目录中的脚本文件） — 销售税查询 CLI 封装
 set -euo pipefail
-
+# ...
 if [ -z "$ZIPTAX_API_KEY" ]; then
   echo "错误:未设置 ZIPTAX_API_KEY 环境变量"
   exit 1
 fi
-
+# ...
 API_URL="https://api.zip-tax.com/request/v60"
-
+# ...
 # 解析参数
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -174,7 +175,7 @@ while [[ $# -gt 0 ]]; do
       echo "未知参数: $1"; exit 1 ;;
   esac
 done
-
+# ...
 # 构建查询
 QUERY=""
 if [ -n "${ADDRESS:-}" ]; then
@@ -187,7 +188,7 @@ else
   echo "用法: lookup.sh --address '地址' | --postalcode 邮编 | --lat 纬度 --lng 经度 | --metrics"
   exit 1
 fi
-
+# ...
 # 查询额度(metrics 不计入额度)
 if [ -n "${METRICS:-}" ]; then
   curl -s "$API_URL/account/metrics" -H "X-API-KEY: $ZIPTAX_API_KEY"
@@ -205,21 +206,21 @@ const response = await fetch(
   { headers: { 'X-API-KEY': apiKey } }
 );
 const data = await response.json();
-
+// ...
 // 检查响应码(100 = 成功)
 if (data.metadata.response.code !== 100) {
   throw new Error(`查询失败: ${data.metadata.response.message}`);
 }
-
+// ...
 // 获取总税率(小数形式,0.0775 = 7.75%)
 const totalRate = data.taxSummaries[0].rate;
 console.log(`总税率: ${(totalRate * 100).toFixed(2)}%`);
-
+// ...
 // 获取各级税率明细
 data.baseRates.forEach(rate => {
   console.log(`${rate.type}: ${(rate.rate * 100).toFixed(2)}%`);
 });
-
+// ...
 // 检查服务/运费税性
 console.log(`服务应税: ${data.service.taxable}`);
 console.log(`运费应税: ${data.shipping.taxable}`);
@@ -269,7 +270,7 @@ console.log(`运费应税: ${data.shipping.taxable}`);
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | curl | 系统工具 | 必需 | 系统预装 |
 | zip-tax.com API | 外部 API | 必需 | 官网注册并获取 API Key |
 | jq(JSON 解析) | 系统工具 | 可选 | 系统包管理器 |
@@ -289,9 +290,8 @@ console.log(`运费应税: ${data.shipping.taxable}`);
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -38,15 +38,16 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "Telegram,社交,通信"
 ---
-
 电报聊天工具专业版是一款面向团队与企业用户的 Telegram 多 Bot 管理与跨实例通信解决方案。在完全兼容免费版单 Bot 配置与基础聊天能力的基础上,专业版解锁了多 Bot 统一管理、主动消息推送、消息归档审计、群组批量管理与 Webhook 集成等高级能力。
 
 无论是管理团队多个 Bot 实例、跨群组广播重要公告、自动化推送告警通知,还是满足消息合规存档需求,专业版都能通过统一的配置与命令体系高效完成。
 
 ### 免费版与专业版能力对比
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 单 Bot 配置 | 支持 | 支持 |
 | 多 Bot 管理 | 不支持 | 支持(无上限) |
 | 被动响应(被艾特后回复) | 支持 | 支持 |
@@ -140,7 +141,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 电报聊天工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -163,14 +164,14 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
 发起Bot: @company_bot
 消息类型: markdown
 目标群组: 4个
-
+# ...
 --------------------------------------------------
 发送结果:
 [成功] 研发群 (-1001111111111) - 已送达
 [成功] 市场群 (-1002222222222) - 已送达
 [成功] 财务群 (-1003333333333) - 已送达
 [失败] 行政群 (-1004444444444) - Bot非管理员,已加入重试队列
-
+# ...
 --------------------------------------------------
 统计: 成功 3/4, 失败 1/4
 状态: 部分成功,失败项已自动重试
@@ -201,11 +202,11 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
 
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --list
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --pause task_id_001
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --resume task_id_001
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --delete task_id_001
 ```
 
@@ -233,13 +234,13 @@ messaging:
         allowed_chats:
           - "-1001111111111"
           - "-1002222222222"
-
+# ...
       - name: "dev_team_bot"
         token: "222222222:DDDdddEEEeeeFFFfff"
         display_name: "研发团队Bot"
         allowed_chats:
           - "-1003333333333"
-
+# ...
       - name: "hr_bot"
         token: "333333333:GGGgggHHHhhhIIIiii"
         display_name: "人事Bot"
@@ -250,7 +251,7 @@ messaging:
 ### 第二步:验证多 Bot 配置
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --all
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --bot "dev_team_bot"
 ```
 
@@ -263,7 +264,7 @@ Bot 状态总览
 [正常] company_bot    @company_official_bot    在线    管理3个群组
 [正常] dev_team_bot   @dev_team_bot            在线    管理2个群组
 [异常] hr_bot         @hr_assistant_bot        离线    Token可能过期
-
+# ...
 统计: 正常 2/3, 异常 1/3
 ```
 
@@ -274,7 +275,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --target "研发群" \
     --message "版本 v2.1.0 已发布,请更新测试。" \
     --format markdown
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "company_bot" \
     --targets "研发群,市场群" \
@@ -284,11 +285,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
 ## 配置示例
 ### 多 Bot 统一配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 消息模板配置
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### Webhook 集成配置
 ```yaml
@@ -309,14 +306,12 @@ webhooks:
 
 ### 企业级自动化工作流
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## 最佳实践
 ### 1. 多 Bot 按职能划分
 企业环境建议按职能划分 Bot,避免单个 Bot 承担过多职责:
 
 | Bot 名称 | 职能 | 使用场景 |
-|:---------|:-----|:---------|
+|----:|----:|----:|
 | company_bot | 公司官方 | 全公司公告、政策通知 |
 | dev_team_bot | 研发团队 | 版本发布、CI/CD 通知 |
 | ops_bot | 运维团队 | 告警推送、故障通知 |
@@ -340,7 +335,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --log /var/log/telegram_audit.log \
     --from "2026-07-01" --to "2026-07-18"
-
+# ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --action "broadcast" --limit 50
 ```
 
@@ -417,7 +412,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --delete <id>  
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Telegram 账户 | 账户 | 必需 | 注册 Telegram |
 | Telegram Bot Token | 凭据 | 必需 | 通过 @BotFather 创建(支持多个) |
 | skill-platform.yaml | 配置 | 必需 | 手动创建配置文件 |
@@ -441,7 +436,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --delete <id>  
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 流程管理器（专业版）
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 流程管理器(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -89,7 +91,7 @@ pricing_model: "per_use"
 # 配置默认实例
 cp .env.example .env
 # 编辑.env填入NODE_RED_URL/USERNAME/PASSWORD
-
+# ...
 # 验证连接
 flow-manager list-flows
 ```
@@ -103,13 +105,13 @@ flow-manager list-flows
 flow-manager instance add --name "生产环境" --url "https://prod-nr.example.com" --token "$PROD_TOKEN"
 flow-manager instance add --name "测试环境" --url "https://test-nr.example.com" --token "$TEST_TOKEN"
 flow-manager instance add --name "开发环境" --url "http://localhost:1880"
-
+# ...
 # 列出所有实例
 flow-manager instance list --verbose
-
+# ...
 # 切换到生产环境
 flow-manager instance use "生产环境"
-
+# ...
 # 启用性能监控
 flow-manager monitor enable --interval 60 --metrics "cpu,memory,flows,nodes"
 ```
@@ -168,28 +170,28 @@ flow-manager monitor enable --interval 60 --metrics "cpu,memory,flows,nodes"
 ```bash
 # 注册实例
 flow-manager instance add --name "生产环境" --url "https://prod.example.com" --token "$TOKEN"
-
+# ...
 # 列出所有实例及状态
 flow-manager instance list --verbose
-
+# ...
 # 切换活跃实例
 flow-manager instance use "生产环境"
-
+# ...
 # 跨实例复制流程
 flow-manager instance copy-flow <flow-id> --from "开发环境" --to "生产环境"
-
+# ...
 # 跨实例同步所有流程
 flow-manager instance sync --from "开发环境" --to "测试环境"
-
+# ...
 # 实例健康度对比
 flow-manager instance diff "生产环境" "测试环境"
-
+# ...
 # 移除实例
 flow-manager instance remove "测试环境"
 ```
 
 | 参数 | 类型 | 必填 | 默认值 | 说明 |
-|------|------|------|--------|------|
+|:-----|:-----|:-----|:-----|:-----|
 | --name | string | 是 | - | 实例显示名 |
 | --url | string | 是 | - | Admin API端点 |
 | --token | string | 否 | - | 认证Token（替代用户名密码） |
@@ -204,19 +206,19 @@ flow-manager instance remove "测试环境"
 ```bash
 # 完整备份（流程+上下文+环境变量+节点配置）
 flow-manager backup full --output "backup-$(date +%Y%m%d).json"
-
+# ...
 # 增量备份（仅变更部分）
 flow-manager backup incremental --since "2026-01-01"
-
+# ...
 # 定时自动备份
 flow-manager backup schedule --interval daily --retention 30
-
+# ...
 # 恢复完整快照
 flow-manager restore backup-20260130.json --confirm
-
+# ...
 # 选择性恢复（仅恢复流程）
 flow-manager restore backup-20260130.json --only flows
-
+# ...
 # 备份对比
 flow-manager backup diff backup-old.json backup-new.json
 ```
@@ -236,26 +238,26 @@ flow-manager backup diff backup-old.json backup-new.json
 ```bash
 # 启动Node-RED容器
 flow-manager docker start
-
+# ...
 # 停止容器
 flow-manager docker stop
-
+# ...
 # 重启容器
 flow-manager docker restart
-
+# ...
 # 查看容器日志
 flow-manager docker logs --tail 100
 flow-manager docker logs --follow
-
+# ...
 # 容器状态
 flow-manager docker status
-
+# ...
 # 扩缩容（多副本）
 flow-manager docker scale --replicas 3
-
+# ...
 # 容器资源限制
 flow-manager docker resources --cpu 2 --memory 2g
-
+# ...
 # 健康检查
 flow-manager docker health
 ```
@@ -270,22 +272,22 @@ flow-manager docker health
 ```bash
 # 启用监控
 flow-manager monitor enable --interval 60
-
+# ...
 # 查看实时指标
 flow-manager monitor metrics
 flow-manager monitor metrics --instance "生产环境"
-
+# ...
 # 查看历史指标
 flow-manager monitor history --since "2026-01-01" --metric cpu
-
+# ...
 # 配置告警阈值
 flow-manager monitor alert --metric cpu --threshold 80
 flow-manager monitor alert --metric memory --threshold 85
 flow-manager monitor alert --metric flow-errors --threshold 0
-
+# ...
 # 告警通知配置
 flow-manager monitor notify --channel webhook --url "$WEBHOOK_URL"
-
+# ...
 # 生成性能报告
 flow-manager monitor report --output "perf-report.md" --period "7d"
 ```
@@ -293,7 +295,7 @@ flow-manager monitor report --output "perf-report.md" --period "7d"
 **监控指标**：
 
 | 指标 | 说明 | 默认阈值 |
-|------|------|----------|
+|---:|---:|---:|
 | cpu | CPU使用率 | 80% |
 | memory | 内存使用率 | 85% |
 | flows | 流程数量 | - |
@@ -311,17 +313,17 @@ flow-manager monitor report --output "perf-report.md" --period "7d"
 ```bash
 # 批量安装节点
 flow-manager batch install --from nodes.txt
-
+# ...
 # 批量卸载节点
 flow-manager batch remove --filter "unused"
-
+# ...
 # 批量升级节点
 flow-manager batch upgrade --all
-
+# ...
 # 批量启用/禁用
 flow-manager batch enable --filter "category=iot"
 flow-manager batch disable --filter "category=deprecated"
-
+# ...
 # 节点依赖分析
 flow-manager batch analyze --output "node-deps.json"
 ```
@@ -336,16 +338,16 @@ flow-manager batch analyze --output "node-deps.json"
 ```bash
 # 查看流程版本历史
 flow-manager version log <flow-id>
-
+# ...
 # 版本对比
 flow-manager version diff <flow-id> --from "v1.0" --to "v1.1"
-
+# ...
 # 一键回滚
 flow-manager version rollback <flow-id> --to "v1.0"
-
+# ...
 # 标记版本（打标签）
 flow-manager version tag <flow-id> --tag "stable"
-
+# ...
 # 导出版本
 flow-manager version export <flow-id> --version "v1.0" --output "flow-v1.0.json"
 ```
@@ -360,19 +362,19 @@ flow-manager version export <flow-id> --version "v1.0" --output "flow-v1.0.json"
 ```bash
 # 查看操作日志
 flow-manager audit log --since "2026-01-01"
-
+# ...
 # 按操作类型筛选
 flow-manager audit log --action "deploy,delete"
-
+# ...
 # 按操作者筛选
 flow-manager audit log --user "admin@example.com"
-
+# ...
 # 按实例筛选
 flow-manager audit log --instance "生产环境"
-
+# ...
 # 生成审计报告
 flow-manager audit report --period "30d" --output "audit-report.md"
-
+# ...
 # 合规检查
 flow-manager audit compliance --standard "ISO27001"
 ```
@@ -387,13 +389,13 @@ flow-manager audit compliance --standard "ISO27001"
 ```bash
 # 启用自动恢复
 flow-manager recovery enable --strategy restart
-
+# ...
 # 配置恢复策略
 flow-manager recovery config --max-retries 3 --cooldown 60
-
+# ...
 # 查看恢复历史
 flow-manager recovery history
-
+# ...
 # 手动触发恢复
 flow-manager recovery trigger --instance "生产环境"
 ```
@@ -418,12 +420,12 @@ flow-manager recovery trigger --instance "生产环境"
 # 注册所有生产实例
 flow-manager instance add --name "工厂A" --url "https://factory-a.example.com"
 flow-manager instance add --name "工厂B" --url "https://factory-b.example.com"
-
+# ...
 # 启用监控与告警
 flow-manager monitor enable --interval 60
 flow-manager monitor alert --metric cpu --threshold 80
 flow-manager monitor notify --channel webhook --url "$PAGERDUTY_URL"
-
+# ...
 # 启用自动恢复
 flow-manager recovery enable --strategy restart --max-retries 3
 ```
@@ -440,13 +442,13 @@ flow-manager recovery enable --strategy restart --max-retries 3
 # 开发环境部署新流程
 flow-manager instance use "开发环境"
 flow-manager deploy --file assets/flows/new-feature.json
-
+# ...
 # 复制到测试环境
 flow-manager instance copy-flow <flow-id> --from "开发环境" --to "测试环境"
-
+# ...
 # 测试通过后复制到生产
 flow-manager instance copy-flow <flow-id> --from "测试环境" --to "生产环境"
-
+# ...
 # 验证环境一致性
 flow-manager instance diff "测试环境" "生产环境"
 ```
@@ -460,13 +462,13 @@ flow-manager instance diff "测试环境" "生产环境"
 ```bash
 # 接收告警后查看指标
 flow-manager monitor metrics --instance "生产环境"
-
+# ...
 # 查看故障时间线的操作日志
 flow-manager audit log --since "1h ago" --instance "生产环境"
-
+# ...
 # 触发自动恢复
 flow-manager recovery trigger --instance "生产环境"
-
+# ...
 # 恢复失败则回滚到上一个稳定版本
 flow-manager version rollback <flow-id> --tag "stable"
 ```
@@ -480,10 +482,10 @@ flow-manager version rollback <flow-id> --tag "stable"
 ```bash
 # 启用审计
 flow-manager audit config --retention 90 --log-all
-
+# ...
 # 审计时导出操作日志
 flow-manager audit log --period "90d" --format csv --output "audit.csv"
-
+# ...
 # 生成合规报告
 flow-manager audit compliance --standard "ISO27001" --output "compliance.pdf"
 ```
@@ -497,10 +499,10 @@ flow-manager audit compliance --standard "ISO27001" --output "compliance.pdf"
 ```bash
 # 部署前打标签
 flow-manager version tag <flow-id> --tag "before-refactor"
-
+# ...
 # 部署后对比变更
 flow-manager version diff <flow-id> --from "before-refactor" --to "current"
-
+# ...
 # 出问题时回滚
 flow-manager version rollback <flow-id> --tag "before-refactor"
 ```
@@ -514,13 +516,13 @@ flow-manager version rollback <flow-id> --tag "before-refactor"
 ```bash
 # 批量注册实例
 flow-manager instance batch-add --from instances.csv
-
+# ...
 # 批量部署流程到所有实例
 flow-manager batch deploy --file assets/flows/global.json --all-instances
-
+# ...
 # Docker扩缩容
 flow-manager docker scale --replicas 5
-
+# ...
 # 批量健康检查
 flow-manager docker health --all-instances
 ```
@@ -534,10 +536,10 @@ flow-manager docker health --all-instances
 ```bash
 # 配置每日自动备份
 flow-manager backup schedule --interval daily --retention 30
-
+# ...
 # 灾难恢复演练
 flow-manager restore latest-backup.json --to "灾备环境" --confirm
-
+# ...
 # 验证恢复完整性
 flow-manager backup diff current-state.json latest-backup.json
 ```
@@ -547,7 +549,7 @@ flow-manager backup diff current-state.json latest-backup.json
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:---:|:---:|:---:|:---:|
 | 平台运维 | 企业IoT管理 | 多实例+监控+自动恢复 | 运维闭环、故障自愈 |
 | DevOps | 多环境管理 | 跨实例复制+版本对比 | 环境一致性、流程同步 |
 | SRE | 故障排查 | 监控+审计+回滚 | 快速定位、一键恢复 |
@@ -591,10 +593,10 @@ flow-manager backup diff current-state.json latest-backup.json
 # CI流水线中的部署步骤
 flow-manager instance use "测试环境"
 flow-manager deploy --file assets/flows/$BRANCH.json
-
+# ...
 # 部署后健康检查
 flow-manager docker health --strict
-
+# ...
 # 失败时回滚
 flow-manager version rollback <flow-id> --tag "stable"
 ```
@@ -604,7 +606,7 @@ flow-manager version rollback <flow-id> --tag "stable"
 ```bash
 # 导出到Prometheus
 flow-manager monitor export --format prometheus --port 9090
-
+# ...
 # 导出到Grafana仪表盘
 flow-manager monitor dashboard --import grafana-template.json
 ```
@@ -614,10 +616,10 @@ flow-manager monitor dashboard --import grafana-template.json
 ```bash
 # PagerDuty集成
 flow-manager monitor notify --channel pagerduty --integration-key "$PD_KEY"
-
+# ...
 # Slack集成
 flow-manager monitor notify --channel slack --webhook "$SLACK_WEBHOOK"
-
+# ...
 # 邮件通知
 flow-manager monitor notify --channel email --to "ops@example.com"
 ```
@@ -649,7 +651,7 @@ LLM路由至GPT-4o，确保复杂运维决策的质量。
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:------|------:|:------|
 | 1.0.0 | 2026-01 | 初版发布，含七大高级功能 |
 
 ---
@@ -662,9 +664,8 @@ LLM路由至GPT-4o，确保复杂运维决策的质量。
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|:---|---:|---:|:---|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -720,7 +721,7 @@ LLM路由至GPT-4o，确保复杂运维决策的质量。
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:------:|--------|:-------|:------:|
 | 实例连接失败 | URL错误或认证过期 | 检查.env配置；重新生成Token | 高 |
 | 监控无数据 | 监控未启用或权限不足 | `monitor enable`；检查Node-RED Admin权限 | 高 |
 | 备份失败 | 磁盘空间不足或权限 | 检查磁盘空间；验证写入权限 | 高 |
@@ -740,19 +741,19 @@ LLM路由至GPT-4o，确保复杂运维决策的质量。
 ```bash
 # 系统健康度总览
 flow-manager health report --output "health.md"
-
+# ...
 # 清理过期监控数据
 flow-manager monitor clean --older-than 90d
-
+# ...
 # 清理过期审计日志
 flow-manager audit clean --older-than 365d
-
+# ...
 # 压缩备份文件
 flow-manager backup compress --all
-
+# ...
 # 导出完整配置
 flow-manager config export --output "config-backup.json"
-
+# ...
 # 检查存储大小
 flow-manager stats --verbose
 ```
@@ -769,7 +770,7 @@ flow-manager stats --verbose
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | flow-manager CLI | 命令行工具 | 必需 | 随本技能提供 |
 | curl | HTTP工具 | 必需 | 系统自带 |
@@ -840,7 +841,7 @@ flow-manager stats --verbose
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|----|----|----|----|
 | 免费体验版 | ¥0 | 核心流程操作（列表/部署/状态/基础节点/基础备份）+ 基础示例 + 基础FAQ | 个人试用、单实例管理 |
 | 收费专业版 | ¥49.9/月 | 全功能（核心+多实例+完整备份+Docker+监控+批量+版本+审计）+ 多角色指南 + 性能优化 + 优先支持 | 团队/企业、多实例运维 |
 

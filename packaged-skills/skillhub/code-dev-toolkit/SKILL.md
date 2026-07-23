@@ -35,22 +35,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # 代码开发工具包专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码开发工具包专业版支持多任务编排 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -105,7 +107,7 @@ pricing_model: "per_use"
 
 ### 3. 质量门禁
 | 门禁项 | 阈值 | 不通过处理 |
-|:-------|:-----|:-----------|
+|:-----|:-----|:-----|
 | 测试覆盖率 | >= 80% | 阻止交付 |
 | Lint 检查 | 0 错误 | 阻止交付 |
 | 类型检查 | 0 错误 | 阻止交付 |
@@ -154,20 +156,20 @@ pipeline:
     script: |
       # 规划任务拆分
       code-toolkit plan --task "$TASK_DESCRIPTION"
-
+# ...
   - stage: implement
     parallel: 3
     script: |
       code-toolkit execute --step $STEP
-
+# ...
   - stage: verify
     script: |
       code-toolkit verify --quality-gate
-
+# ...
   - stage: review
     script: |
       code-toolkit review --auto-assign
-
+# ...
   - stage: deliver
     script: |
       code-toolkit deliver --audit
@@ -201,20 +203,20 @@ pipeline:
 ```text
 开发编排报告 - e-commerce-platform
 =====================================
-
+# ...
 任务状态:
 1. [auth]     OAuth 认证     ✅ 完成 (覆盖率: 88%)
 2. [product]   商品管理       ✅ 完成 (覆盖率: 85%)
 3. [order]     订单流程       ✅ 完成 (覆盖率: 82%)
 4. [payment]   支付集成       ⏳ 进行中 (进度: 60%)
 5. [test]      集成测试       ⏸ 等待依赖
-
+# ...
 质量门禁:
 - auth:     通过 ✅ (覆盖率 88%, 复杂度 8)
 - product:  通过 ✅ (覆盖率 85%, 复杂度 12)
 - order:    通过 ✅ (覆盖率 82%, 复杂度 14)
 - payment:  待检查 ⏳
-
+# ...
 审计日志: .code-toolkit/audit/dev-20260718.log
 ```
 
@@ -235,27 +237,27 @@ pipeline:
 ```text
 代码审查报告 - PR #42
 =====================================
-
+# ...
 审查者: developer-b
 变更文件: 8 个
 审查结果: 需修改 (2 项建议)
-
+# ...
 通过项:
 - 代码规范: 100% 符合 ✅
 - 类型检查: 0 错误 ✅
 - 测试覆盖: 85% (达标) ✅
-
+# ...
 需修改:
 1. src/auth/login.py:45
    问题: 密码比对未使用常量时间比较
    建议: 使用 hmac.compare_digest()
    严重性: 高
-
+# ...
 2. src/auth/token.py:23
    问题: JWT 过期时间硬编码
    建议: 从配置读取
    严重性: 中
-
+# ...
 合并建议: 修复高严重性问题后可合并
 ```
 
@@ -279,7 +281,7 @@ CI/CD 流水线中集成质量门禁与交付审计。
 ### 优秀步: 初始化项目配置
 ```bash
 mkdir -p .code-toolkit/{audit,reports,configs}
-
+# ...
 cat > .code-toolkit/config.json << 'EOF'
 {
   "edition": "pro",
@@ -330,7 +332,7 @@ EOF
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | code-dev-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -377,9 +379,8 @@ EOF
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -392,9 +393,9 @@ EOF
 - **Python**: 3.8+(质量门禁脚本)
 - **Git**: 版本控制与审查流程
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 质量门禁必需 | python.org |
 | Git | CLI 工具 | 代码审查必需 | 系统自带 |
@@ -513,9 +514,8 @@ export CODE_TOOLKIT_REVIEW_WEBHOOK="https://hooks.example.com/review"
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

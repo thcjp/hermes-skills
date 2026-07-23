@@ -26,8 +26,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # HeyGen TTS 工具 - 免费版
 
 ## 概述
@@ -39,7 +40,7 @@ HeyGen TTS 工具(免费版)基于 HeyGen Starfish TTS 模型,为个人用户提
 ## 核心能力
 
 | 能力 | 免费版 | 说明 |
-|:-----|:-------|:-----|
+|---|---|---|
 | 语音合成 | 支持 | Starfish 模型 |
 | 语言支持 | 40+ | 含中英日韩法德等 |
 | 语音列表 | 支持 | 查询与筛选 |
@@ -87,7 +88,7 @@ HeyGen TTS 工具(免费版)基于 HeyGen Starfish TTS 模型,为个人用户提
 # 查询中文语音
 curl -X GET "https://api.heygen.com/v3/voices?engine=starfish&language=Chinese" \
   -H "X-Api-Key: $HEYGEN_API_KEY"
-
+# ...
 # 生成中文语音
 curl -X POST "https://api.heygen.com/v3/voices/speech" \
   -H "X-Api-Key: $HEYGEN_API_KEY" \
@@ -107,7 +108,7 @@ curl -X POST "https://api.heygen.com/v3/voices/speech" \
 ```python
 import requests
 import os
-
+# ...
 def generate_speech(text, voice_id, language="en", speed=1.0):
     """生成语音"""
     response = requests.post(
@@ -127,7 +128,7 @@ def generate_speech(text, voice_id, language="en", speed=1.0):
     if data.get("error"):
         raise Exception(data["error"])
     return data["data"]
-
+# ...
 # 生成英文版本
 en_result = generate_speech(
     "Welcome to our product demonstration.",
@@ -135,7 +136,7 @@ en_result = generate_speech(
     language="en"
 )
 print(f"英文音频: {en_result['audio_url']}")
-
+# ...
 # 生成日文版本
 ja_result = generate_speech(
     "製品のデモンストレーションへようこそ。",
@@ -207,30 +208,30 @@ curl -o output.wav "https://resource2.heygen.ai/text_to_speech/..."
 ```python
 import requests
 import os
-
+# ...
 class HeyGenTTS:
     def __init__(self, api_key=None):
         self.api_key = api_key or os.environ["HEYGEN_API_KEY"]
         self.base_url = "https://api.heygen.com/v3"
-
+# ...
     def list_voices(self, language=None, gender=None):
         """查询语音列表"""
         params = {"engine": "starfish"}
         if language: params["language"] = language
         if gender: params["gender"] = gender
-
+# ...
         response = requests.get(
             f"{self.base_url}/voices",
             headers={"X-Api-Key": self.api_key},
             params=params
         )
         return response.json()["data"]
-
+# ...
     def generate(self, text, voice_id, speed=1.0, language=None):
         """生成语音"""
         payload = {"text": text, "voice_id": voice_id, "speed": speed}
         if language: payload["language"] = language
-
+# ...
         response = requests.post(
             f"{self.base_url}/voices/speech",
             headers={"X-Api-Key": self.api_key, "Content-Type": "application/json"},
@@ -240,14 +241,14 @@ class HeyGenTTS:
         if data.get("error"):
             raise Exception(data["error"])
         return data["data"]
-
+# ...
     def download(self, audio_url, output_path):
         """下载音频文件"""
         response = requests.get(audio_url)
         with open(output_path, "wb") as f:
             f.write(response.content)
         return output_path
-
+# ...
 # 使用
 tts = HeyGenTTS()
 voices = tts.list_voices(language="English")
@@ -268,7 +269,7 @@ tts.download(result["audio_url"], "output.wav")
 ### 生成请求参数
 
 | 字段 | 类型 | 必需 | 说明 |
-|:-----|:-----|:-----|:-----|
+|---:|---:|---:|---:|
 | `text` | string | 是 | 文本内容(1-5000 字符) |
 | `voice_id` | string | 是 | 语音 ID |
 | `speed` | number | 否 | 语速 0.5-2.0(默认 1.0) |
@@ -351,7 +352,7 @@ ffmpeg -i input.wav -codec:a libmp3lame -qscale:a 2 output.mp3
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | requests | Python 库 | 推荐(Python) | `pip install requests` |
 | curl | 命令行工具 | 可选 | 系统自带 |
 | jq | JSON 处理工具 | 可选 | `brew install jq` |
@@ -371,9 +372,8 @@ ffmpeg -i input.wav -codec:a libmp3lame -qscale:a 2 output.mp3
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

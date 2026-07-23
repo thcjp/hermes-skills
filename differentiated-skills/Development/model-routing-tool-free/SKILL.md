@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 模型路由工具(免费版)
 
 ## 概述
@@ -60,7 +61,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 三层路由 | Flash → Standard → Plus / 32B 决策框架 |
 | 黄金规则 | 30秒人类思考阈值决定是否升级 |
 | 决策树 | 快速判断应使用哪一层 |
@@ -103,10 +104,10 @@ suggested_price: 29.9
 ```text
 用户: 今天天气怎么样?
 工具: 💚 FLASH — 简单事实查询,使用Flash
-
+# ...
 用户: 帮我写一个REST API端点
 工具: 💛 STANDARD — 代码生成,使用Standard
-
+# ...
 用户: 设计一个多租户的数据库schema
 工具: ❤️ PLUS / 32B — 架构决策,使用Plus
 ```
@@ -118,10 +119,10 @@ suggested_price: 29.9
 ```javascript
 // 例行监控 — 用Flash
 sessions_spawn(task="检查备份状态", model="GLM-4.5-Flash")
-
+// ...
 // 标准代码工作 — 用Standard
 sessions_spawn(task="构建REST API端点", model="GLM-4.7")
-
+// ...
 // 架构决策 — 用Plus
 sessions_spawn(task="设计多租户数据库schema", model="GLM-4-Plus")
 ```
@@ -169,7 +170,7 @@ sessions_spawn(task="设计多租户数据库schema", model="GLM-4-Plus")
 ### 2. 模型层级速览
 
 | 层级 | 示例模型 | 用途 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | Flash | GLM-4.5-Flash, GLM-4.7-Flash | 最快最便宜 |
 | Standard | GLM-4.6, GLM-4.7 | 强推理与代码 |
 | Plus / 32B | GLM-4-Plus, GLM-4-32B-128K | 重推理与架构 |
@@ -180,18 +181,17 @@ sessions_spawn(task="设计多租户数据库schema", model="GLM-4-Plus")
 是问候、查询、状态检查或1-2句回答?
   是 → FLASH
   否 ↓
-
+# ...
 是代码、分析、规划、写作或多步骤?
   是 → STANDARD
   否 ↓
-
+# ...
 是架构、深度推理或关键决策?
   是 → PLUS / 32B
   否 → 默认STANDARD,卡住再升级
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -268,7 +268,7 @@ Flash禁止做的事:
 
 ```text
 原则:START CHEAP → SCALE ONLY WHEN NEEDED
-
+# ...
 默认用Flash → 卡住或质量不足 → 升级Standard → 仍不足 → 升级Plus
 ```
 
@@ -289,10 +289,10 @@ Flash禁止做的事:
 ```javascript
 // 简单监控任务
 sessions_spawn(task="检查服务健康", model="GLM-4.5-Flash")
-
+// ...
 // 标准开发任务
 sessions_spawn(task="实现用户认证模块", model="GLM-4.7")
-
+// ...
 // 复杂架构任务
 sessions_spawn(task="设计微服务拆分方案", model="GLM-4-Plus")
 ```
@@ -341,7 +341,7 @@ sessions_spawn(task="设计微服务拆分方案", model="GLM-4-Plus")
 ### Q4:免费版与PRO版差异?
 
 | 维度 | 免费版 | PRO版 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 路由决策 | 三层决策树 | 三层+自定义规则 |
 | 成本分析 | 不支持 | 仪表盘与告警 |
 | 批量路由 | 不支持 | 批量任务分发 |
@@ -364,7 +364,7 @@ sessions_spawn(task="设计微服务拆分方案", model="GLM-4-Plus")
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | 模型API供应商 | API | 必需 | 自行选择并申请API Key |
 
@@ -381,9 +381,8 @@ sessions_spawn(task="设计微服务拆分方案", model="GLM-4-Plus")
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -23,13 +23,15 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # AWS部署专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | AWS部署专业版业级AWS全服务管理 | 不支持 | 支持 |
 | 多租户管理与权限分配 | 不支持 | 支持 |
@@ -41,7 +43,7 @@ pricing_model: "monthly"
 
 ### PRO版功能增强对比
 | 功能 | 免费版 | PRO版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 服务覆盖 | 5项基础服务 | 30+全量服务 |
 | 部署方式 | 命令行 | +IaC(Terraform/CFN) |
 | 区域支持 | 单区域 | 多区域批量 |
@@ -55,7 +57,7 @@ pricing_model: "monthly"
 **输出**: 返回PRO版功能增强对比的处理结果,包含执行状态码、结果数据和执行日志。### 支持的AWS服务
 
 | 类别 | 服务 | PRO版支持 |
-| --: | --: | --: |
+|---:|---:|---:|
 | 计算 | EC2/Lambda/ECS/EKS/Batch | 支持 |
 | 存储 | S3/EBS/EFS/FSx/Glacier | 支持 |
 | 网络 | VPC/Route53/CloudFront/ELB | 支持 |
@@ -188,7 +190,7 @@ python3 （请参考skill目录中的脚本文件） deploy --template web_app -
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 
 ## 输出格式
 
@@ -209,7 +211,7 @@ python3 （请参考skill目录中的脚本文件） deploy --template web_app -
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
 | 错误场景 | 原因 | 处理方式 |
-| :-: | :-: | :-: |
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -226,7 +228,7 @@ python3 （请参考skill目录中的脚本文件） deploy --template web_app -
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --: | :-- | :-: |
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | boto3 | Python库 | 必需 | `pip install boto3` |
@@ -237,7 +239,7 @@ python3 （请参考skill目录中的脚本文件） deploy --template web_app -
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-| --: | :-- | :-: | --- |
+|:------:|--------|:-------|:------:|
 | AWS Access Key | `AWS_ACCESS_KEY_ID` | 必需 | API认证 |
 | AWS Secret | `AWS_SECRET_ACCESS_KEY` | 必需 | API认证 |
 | AWS Region | `AWS_DEFAULT_REGION` | 必需 | 默认区域 |
@@ -303,9 +305,8 @@ pro_config:
 
 ## 错误处理
 
-
 | 错误场景2 | 原因 | 处理方式 |
-| :-- | :-: | --- |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

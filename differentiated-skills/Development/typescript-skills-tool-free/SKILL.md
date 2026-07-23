@@ -42,8 +42,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # TypeScript 编码规范工具(免费版)
 
 ## 概述
@@ -55,7 +56,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 命名规范 | 变量 `camelCase`、类 `PascalCase`、常量 `UPPER_SNAKE_CASE`、文件 `kebab-case.ts` |
 | 类型与接口 | `interface` vs `type` 的选择策略,避免 `I` 前缀与 `Type` 后缀 |
 | 函数规范 | 显式返回类型、参数数量限制、默认参数优于可选参数 |
@@ -99,7 +100,7 @@ suggested_price: 29.9
 ```
 
 | 构造 | 约定 | 示例 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 变量 / 函数 | `camelCase` | `getUserName`、`isActive` |
 | 布尔变量 | `camelCase` 带前缀 | `isLoading`、`hasAccess` |
 | 模块常量 | `UPPER_SNAKE_CASE` | `MAX_RETRY_COUNT`、`API_BASE_URL` |
@@ -120,14 +121,14 @@ interface User {
   name: string;
   email: string;
 }
-
+// ...
 // 推荐:联合、交叉、映射类型用 type
 type Status = 'active' | 'inactive' | 'suspended';
 type Result<T> = Success<T> | Failure;
 ```
 
 | 用 `interface` 当 | 用 `type` 当 |
-| --- | --- |
+|-------------:|-------------:|
 | 定义对象或类的形状 | 创建联合或交叉类型 |
 | 需要声明合并 | 使用映射 / 条件类型 |
 | 继承其他接口 | 别名原始或元组类型 |
@@ -139,7 +140,7 @@ type Result<T> = Success<T> | Failure;
 ```typescript
 // 不推荐:位置参数过多
 function createUser(name: string, email: string, role: Role, dept: string): User { ... }
-
+// ...
 // 推荐:使用选项对象
 interface CreateUserOptions {
   name: string;
@@ -268,7 +269,7 @@ npx eslint . --fix
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | TypeScript | npm 包 | 推荐 | `npm i -D typescript` |
 | ESLint + @typescript-eslint | npm 包 | 可选 | `npm i -D eslint @typescript-eslint/eslint-plugin` |
 | Prettier | npm 包 | 可选 | `npm i -D prettier` |
@@ -286,9 +287,8 @@ npx eslint . --fix
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

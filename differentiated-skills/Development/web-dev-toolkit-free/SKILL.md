@@ -39,11 +39,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
 ---
-
 # Web 开发工具集(免费版)
 
 ## 概述
@@ -55,7 +56,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | HTML/CSS 诊断 | DOCTYPE、CSS 优先级、盒模型、布局问题 |
 | JavaScript 模式 | `===` vs `==`、异步循环、CORS、表单处理 |
 | 框架决策树 | 静态/SSR/SPA 框架选择建议 |
@@ -131,7 +132,6 @@ suggested_price: 29.9
 
 ## 错误处理
 
-
 ```
 我的前端调用后端API报CORS错误,怎么办?
 ```
@@ -142,14 +142,14 @@ suggested_price: 29.9
 // Node.js Express 后端配置 CORS
 const express = require('express');
 const cors = require('cors');
-
+// ...
 const app = express();
 app.use(cors({
   origin: ['https://your-frontend.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
-
+// ...
 app.listen(3000, () => console.log('Server running on :3000'));
 ```
 
@@ -162,7 +162,7 @@ app.listen(3000, () => console.log('Server running on :3000'));
 工具会根据决策树给出建议:
 
 | 错误场景(需求) | 推荐框架 | 理由 | 处理方式 |
-| --- | --- | --- |------|
+|:---------|:---------|:---------|:---------|
 | 静态内容,构建快 | Astro 或纯 HTML | 零 JS 默认,性能最佳 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 博客/文档(MDX) | Astro 或 Next.js App Router | MDX 支持好,SSG/ISR 灵活 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 交互应用(带认证) | Next.js 或 Remix | SSR + 认证支持完整 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -199,7 +199,7 @@ app.listen(3000, () => console.log('Server running on :3000'));
 ```bash
 # 启动本地开发服务器
 npm run dev
-
+# ...
 # 或用 Python 临时服务器
 python3 -m http.server 8000
 ```
@@ -235,7 +235,7 @@ python3 -m http.server 8000
 ### 关键 Web 规则速查
 
 | 规则 | 说明 |
-| --- | --- |
+|---:|---:|
 | DOCTYPE 必须有 | 缺失触发怪异模式,布局不可预测 |
 | `===` 而非 `==` | 避免类型转换:`"0" == false` 为 true |
 | 异步循环用 `for...of` | `forEach` 不 await,会吞错误 |
@@ -291,7 +291,7 @@ python3 -m http.server 8000
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | 浏览器 | 系统工具 | 必需 | 系统预装 |
 | Node.js | 运行时 | 推荐 | 官方安装包 |
 | 文本编辑器 | 系统工具 | 必需 | 系统预装 |

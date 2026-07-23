@@ -15,6 +15,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # API 集成开发助手（免费版）
 
@@ -22,11 +24,10 @@ homepage: "https://skillhub.cn"
 
 > **升级提示**: OAuth2 令牌管理、GraphQL 查询、JWT 认证、完整错误处理、速率限制处理等高级功能为付费版专享。升级付费版解锁完整能力。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | API集成助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -47,7 +48,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -95,7 +95,7 @@ export API_KEY="your_api_key_here"
 
 **HTTP 方法**:
 | 方法 | 用途 | 典型状态码 |
-|------|------|-----------|
+|---:|---:|---:|
 | GET | 获取资源 | 200 |
 | POST | 创建资源 | 201 |
 | PUT | 更新资源（完整） | 200 |
@@ -103,7 +103,7 @@ export API_KEY="your_api_key_here"
 
 **HTTP 状态码**:
 | 状态码 | 说明 |
-|--------|------|
+|:---:|:---:|
 | 200 | 成功 |
 | 201 | 创建成功 |
 | 400 | 请求错误（参数缺失/格式错误） |
@@ -148,7 +148,7 @@ X-API-Key: <api_key>
 
 ```python
 import requests
-
+# ...
 def call_api(endpoint, method='GET', data=None, headers=None):
     response = requests.request(
         method=method,
@@ -167,7 +167,7 @@ def call_api(endpoint, method='GET', data=None, headers=None):
 
 ```python
 import requests
-
+# ...
 response = requests.get(
     'https://api.example.com/v1/users',
     headers={'Authorization': 'Bearer your_api_key_here'}
@@ -182,9 +182,8 @@ data = response.json()
 
 ## 错误处理
 
-
 | 错误场景 | HTTP 状态码 | 原因分析 | 处理方式 |
-|---------|------------|---------|---------|
+|:------|------:|:------|:------|
 | 参数错误 | 400 | 请求参数缺失或格式错误 | 检查请求体,补全必填项 |
 | 未授权 | 401 | API Key 缺失或无效 | 检查 `Authorization` 头,确认 Key 有效 |
 | 资源不存在 | 404 | 请求的资源 ID 不存在 | 核实资源 ID,检查 URL 路径 |

@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Markdown转PDF（专业版）
 
@@ -114,21 +116,11 @@ Markdown解析、PDF生成、样式定制、页眉页脚、目录生成、批量
 
 `批量转换这些Markdown文件
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：带样式转换
 
 使用自定义CSS样式生成PDF。**示例指令**：`
 
 `用企业模板转换这份文档
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ Markdown解析、PDF生成、样式定制、页眉页脚、目录生成、批量
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Markdown转PDF（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ Markdown解析、PDF生成、样式定制、页眉页脚、目录生成、批量
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -164,7 +156,7 @@ import subprocess
 from typing import List, Dict, Optional
 from pathlib import Path
 from dataclasses import dataclass
-
+# ...
 @dataclass
 class ConversionResult:
     input_file: str
@@ -172,12 +164,12 @@ class ConversionResult:
     status: str
     size: int = 0
     error: Optional[str] = None
-
+# ...
 class MarkdownPDFConverter:
     def __init__(self, template_dir: str = "./templates"):
         self.template_dir = Path(template_dir)
         self.templates = self._load_templates()
-
+# ...
     def convert_single(self, md_file: str, output_pdf: str = None,
                        template: str = "default",
                        toc: bool = True) -> ConversionResult:
@@ -204,7 +196,7 @@ class MarkdownPDFConverter:
             size = os.path.getsize(output_pdf)
             return ConversionResult(md_file, output_pdf, "success", size)
         return ConversionResult(md_file, output_pdf, "failed", 0, result.stderr)
-
+# ...
     def convert_batch(self, md_files: List[str],
                      output_dir: str = "./output",
                      template: str = "default") -> List[ConversionResult]:
@@ -222,7 +214,7 @@ class MarkdownPDFConverter:
             for future in as_completed(futures):
                 results.append(future.result())
         return results
-
+# ...
     def merge_and_convert(self, md_files: List[str],
                          output_pdf: str) -> ConversionResult:
         """合并后转换（PRO 专属）"""
@@ -232,7 +224,7 @@ class MarkdownPDFConverter:
         result = self.convert_single(temp_md, output_pdf, toc=True)
         Path(temp_md).unlink()
         return result
-
+# ...
     def generate_report(self, results: List[ConversionResult],
                        output_path: str):
         """生成转换报告（PRO 专属）"""
@@ -246,14 +238,14 @@ class MarkdownPDFConverter:
         }
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
-
+# ...
     def _load_templates(self) -> Dict[str, str]:
         templates = {"default": ""}
         if self.template_dir.exists():
             for css in self.template_dir.glob("*.css"):
                 templates[css.stem] = css.read_text(encoding="utf-8")
         return templates
-
+# ...
 converter = MarkdownPDFConverter()
 result = converter.convert_single("document.md", template="corporate")
 print(f"状态: {result.status}, 大小: {result.size}字节")
@@ -297,7 +289,7 @@ md_to_pdf:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -309,7 +301,7 @@ md_to_pdf:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -381,7 +373,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | pandoc | CLI工具 | 必需 | 安装pandoc |
 | LaTeX | 系统工具 | 必需 | 安装xelatex（TeX Live或MiKTeX） |
@@ -396,9 +388,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

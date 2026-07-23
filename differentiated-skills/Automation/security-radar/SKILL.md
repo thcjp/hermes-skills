@@ -19,6 +19,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 安全情报雷达
 
@@ -46,7 +48,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 安全情报雷达处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -98,7 +100,7 @@ bash ~/.skill-platform/security-radar/scan.sh
 ## 情报源与端点
 
 | 情报源 | 端点 | 说明 |
-|:-------|:-----|:-----|
+|:-----|:-----|:-----|
 | 社区聚合 Feed | 由 `RADAR_FEED_URL` 配置（默认社区源） | 含恶意技能/注入模式/最佳实践 |
 | NVD CVE | `https://services.nvd.nist.gov/rest/json/cves/2.0` | 官方 CVE 详情（可选，需 API Key 提高速率） |
 | GitHub Security Advisory | `https://api.advisories` | 依赖漏洞（GHSA） |
@@ -142,7 +144,7 @@ export RADAR_NVD_API_KEY="nvdk-xxxx"     # 可选，提升 NVD 速率限制
 原始方案只按 severity 排序，导致"严重但难利用"的告警淹没"高危且在野利用"的告警。本技能采用双维度矩阵：
 
 | | 可利用性 HIGH | 可利用性 MEDIUM | 可利用性 LOW |
-|:---|:---|:---|:---|
+|---:|---:|---:|---:|
 | **严重度 critical** | P0 即时推送 | P1 尽快推送 | P2 归档备查 |
 | **严重度 high** | P1 尽快推送 | P2 归档备查 | P3 静默记录 |
 | **严重度 medium/low** | P2 归档备查 | P3 静默记录 | P3 静默记录 |
@@ -174,10 +176,10 @@ jq '[.advisories[] | {
 ```bash
 # 提取资产清单中的 name@version 集合
 ASSETS=$(jq -r '[.skills[], .dependencies[]] | "\(."name")@\(."version")"' assets.json | sort -u)
-
+# ...
 # 提取告警 affected 列表
 AFFECTED=$(jq -r '.advisories[].affected[]?' feed.json | sort -u)
-
+# ...
 # 求交集
 COMMUNAL=$(comm -12 <(echo "$ASSETS") <(echo "$AFFECTED"))
 ```
@@ -223,14 +225,14 @@ jq -n --arg dir "$SCAN_DIR" '{
 ```bash
 STATE_FILE="$HOME/.skill-platform/security-radar/state.json"
 FEED_FILE="$HOME/.skill-platform/security-radar/cache/feed.json"
-
+# ...
 # 已知告警集合
 KNOWN=$(jq -r '.known_advisories[]?' "$STATE_FILE" | sort -u)
 # 当前告警集合
 CURRENT=$(jq -r '.advisories[].id' "$FEED_FILE" | sort -u)
 # 新增 = 当前 - 已知
 NEW=$(comm -23 <(echo "$CURRENT") <(echo "$KNOWN"))
-
+# ...
 if [ -z "$NEW" ]; then
   echo "RADAR_OK - 无新增告警"
   exit 0
@@ -254,7 +256,7 @@ fetch_feed() {
   fi
   return 1
 }
-
+# ...
 if ! fetch_feed "$FEED_URL" "$FEED_FILE"; then
   if [ -f "$FEED_FILE" ] && jq empty "$FEED_FILE" 2>/dev/null; then
     echo "RADAR_DEGRADED - 使用离线快照: $(stat -c%y "$FEED_FILE" 2>/dev/null || stat -f%Sm "$FEED_FILE")"
@@ -268,7 +270,7 @@ fi
 ## 已知限制
 
 | 检查类型 | 建议间隔 | 最小间隔 |
-|:---------|:---------|:---------|
+|:---:|:---:|:---:|
 | 心跳巡检 | 15-30 分钟 | 5 分钟 |
 | 全量刷新 | 1-4 小时 | 30 分钟 |
 | 资产关联扫描 | 每会话一次 | 5 分钟 |
@@ -289,12 +291,12 @@ fi
 
 ```text
 RADAR_ALERT - 2 条新增告警需处理
-
+# ...
 [P0 即时] GA-2026-015: Malicious prompt pattern "ignore-all"
   → 命中资产: 无（通用威胁）
   → 可利用性: HIGH（公开 PoC）
   → 建议: 更新系统提示词防御
-
+# ...
 [P1 尽快] CVE-2026-27488: RCE in skill-loader v2.1.0
   → 命中资产: skill-loader@2.1.0（已安装！）
   → 可利用性: MEDIUM
@@ -317,7 +319,7 @@ RADAR_DEGRADED - 使用离线快照 (2026-07-18 07:30)
 ## 告警类型与处置
 
 | 类型 | 含义 | 默认处置 |
-|:-----|:-----|:---------|
+|:------|------:|:------|
 | `malicious_skill` | 故意植入恶意的技能 | 立即卸载并审计调用历史 |
 | `vulnerable_skill` | 存在安全缺陷的技能 | 按建议升级或打补丁 |
 | `prompt_injection` | 已知提示注入模式 | 强化系统提示词、加输入过滤 |
@@ -378,7 +380,7 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知。
 ## 故障排查
 
 | 症状 | 可能原因 | 处置 |
-|:-----|:---------|:-----|
+|---:|:---|---:|
 | `RADAR_DEGRADED - 无可用情报源` | 网络中断或 URL 失效 | 检查 `RADAR_FEED_URL`、网络代理、DNS |
 | 一直 `RADAR_OK` 但漏报 | 资产清单未更新 | 运行 `--refresh-assets`，检查 `assets.json` |
 | 推送重复告警 | 状态文件损坏 | 备份后删除 `state.json`，重新 `--init` |
@@ -409,7 +411,7 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知。
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | curl | 系统命令 | 必需 | 系统自带或包管理器安装 |
 | jq | 系统命令 | 必需 | `apt install jq` / `brew install jq` |
 | shasum/sha256sum | 系统命令 | 必需（校验） | 系统自带 |
@@ -442,7 +444,7 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知。
 **输出**: 返回它聚合 NVD CVE、GitHub S的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-### 核心能力
+### 核心能力(补充)
 核心能力：多源情报聚合（CVE/GHSA/恶意技能）、资产清单自动关联、可利用性优先级评分、增量去重推送、离线降级与缓存、严格速率限制
 
 **输入**: 用户提供核心能力所需的指令和必要参数。
@@ -469,49 +471,37 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：聚合多源漏洞情报、并按资产关联排序、告别告警疲劳、只推真正影响你的、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
-## 适用场景
+## 适用场景(补充)
 
-### 场景 A：Agent 心跳巡检
+### 场景 A：Agent 心跳巡检(补充)
 
-在心跳例程中加入一次 `scan.sh`。由于强制 5 分钟最小间隔，即使心跳每 5 分钟一次也不会压垮上游。
-
-### 场景 B：CI 流水线门禁
-
-在部署前扫描技能市场依赖：
+### 场景 B：CI 流水线门禁(补充)
 
 ```bash
 bash scan.sh --mode gate --assets ci-deps.json --fail-on P1
 ```
 
-存在 P0/P1 告警时退出码非零，阻断部署。
-
-### 场景 C：安全日报
+### 场景 C：安全日报(补充)
 
 ```bash
 bash scan.sh --report daily --since 24h
 ```
 
-生成 Markdown 日报，包含：新增告警、已处置告警、资产关联统计、优先级分布。
-
-### 场景 D：临时查询
-
-用户问"最近有什么安全动态？"时，Agent 调用：
+### 场景 D：临时查询(补充)
 
 ```bash
 bash scan.sh --query "recent 7d" --no-push
 ```
-
-返回最近 7 天告警摘要，不更新状态、不推送。
 
 ## 示例
 
 ### 示例1：基础用法
 
 ```
-### 第 1 步：初始化资产清单
-
+### 第 1 步：初始化资产清单(补充)
+# ...
 资产清单是过滤的基础。把已安装的技能、依赖、运行时版本写入清单文件：
-
+# ...
 ```bash
 mkdir -p ~/.skill-platform/security-radar
 cat > ~/.skill-platform/security-radar/assets.json <<'EOF'
@@ -526,17 +516,18 @@ cat > ~/.skill-platform/security-radar/assets.json <<'EOF'
     {"name": "pdfplumber", "version": "0.11.0", "ecosystem": "pypi"},
     {"name": 
 ```
-
+# ...
 ## 错误处理
-
+# ...
 - 边界输入处理: 空输入返回提示信息, 超长输入自动截断
 - 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令机制: 失败时自动执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令, 最多3次
-
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | LLM响应超时 | 网络延迟 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 输入格式错误 | 参数不匹配 | 对照使用流程章节检查输入格式 |
 | 执行失败 | 环境不满足 | 对照依赖说明章节确认环境配置 |
 ## 输出格式
-
+# ...
 处理结果以结构化格式返回, 包含状态码、消息和数据字段。
+# ...

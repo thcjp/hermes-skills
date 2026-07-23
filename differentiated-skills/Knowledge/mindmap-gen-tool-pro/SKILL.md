@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 思维导图生成（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `把这篇文档转为思维导图
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：学习路径规划
 
 为特定技能生成学习路径思维导图。**示例指令**：`
 
 `生成Python学习路径思维导图
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 思维导图生成（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -162,7 +154,7 @@ pip install requests
 import json
 from typing import List, Dict, Optional
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class MindmapNode:
     title: str
@@ -170,18 +162,18 @@ class MindmapNode:
     note: Optional[str] = None
     color: Optional[str] = None
     icon: Optional[str] = None
-
+# ...
 class MindmapGenerator:
     def __init__(self, max_depth: int = 5, max_children: int = 8):
         self.max_depth = max_depth
         self.max_children = max_children
-
+# ...
     def generate_from_topic(self, topic: str) -> MindmapNode:
         """从主题生成思维导图（PRO 专属：深度控制）"""
         root = MindmapNode(title=topic)
         self._expand_node(root, depth=1)
         return root
-
+# ...
     def generate_from_document(self, content: str) -> MindmapNode:
         """从文档生成思维导图（PRO 专属：内容提取）"""
         sections = self._extract_sections(content)
@@ -192,7 +184,7 @@ class MindmapGenerator:
                 node.children.append(MindmapNode(title=point))
             root.children.append(node)
         return root
-
+# ...
     def _expand_node(self, node: MindmapNode, depth: int):
         if depth >= self.max_depth:
             return
@@ -202,10 +194,10 @@ class MindmapGenerator:
             child = MindmapNode(title=st)
             node.children.append(child)
             self._expand_node(child, depth + 1)
-
+# ...
     def _get_sub_topics(self, topic: str, depth: int) -> List[str]:
         return [f"{topic}-子主题{i}" for i in range(1, 4)]
-
+# ...
     def _extract_sections(self, content: str) -> List[dict]:
         sections = []
         current = None
@@ -219,42 +211,42 @@ class MindmapGenerator:
         if current:
             sections.append(current)
         return sections
-
+# ...
     def export_markmap(self, node: MindmapNode) -> str:
         """导出Markmap格式（PRO 专属）"""
         lines = []
         self._node_to_markdown(node, lines, 0)
         return NL.join(lines)
-
+# ...
     def export_json(self, node: MindmapNode) -> str:
         """导出JSON格式（PRO 专属）"""
         return json.dumps(self._node_to_dict(node),
                          ensure_ascii=False, indent=2)
-
+# ...
     def export_mermaid(self, node: MindmapNode) -> str:
         """导出Mermaid格式（PRO 专属）"""
         lines = ["mindmap"]
         self._node_to_mermaid(node, lines, 1)
         return NL.join(lines)
-
+# ...
     def _node_to_markdown(self, node, lines, depth):
         prefix = "  " * depth + "- " if depth > 0 else "# "
         lines.append(f"{prefix}{node.title}")
         for child in node.children:
             self._node_to_markdown(child, lines, depth + 1)
-
+# ...
     def _node_to_dict(self, node):
         return {
             "title": node.title,
             "children": [self._node_to_dict(c) for c in node.children]
         }
-
+# ...
     def _node_to_mermaid(self, node, lines, depth):
         indent = "  " * depth
         lines.append(f"{indent}{node.title}")
         for child in node.children:
             self._node_to_mermaid(child, lines, depth + 1)
-
+# ...
 gen = MindmapGenerator(max_depth=4)
 mindmap = gen.generate_from_topic("人工智能")
 print(gen.export_markmap(mindmap))
@@ -293,7 +285,7 @@ mindmap:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -305,7 +297,7 @@ mindmap:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -377,7 +369,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | markmap | npm包 | 可选 | npm install markmap-cli |
 
@@ -391,9 +383,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

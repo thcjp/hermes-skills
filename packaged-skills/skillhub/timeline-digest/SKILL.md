@@ -31,22 +31,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 时间线摘要工具-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 时间线摘要工具-专业版支持定时调度 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -61,20 +63,13 @@ PRO版通过LLM对去重后的推文进行智能分类和中文摘要生成。
 ### 2. 定时自动调度
 PRO版支持cron式定时调度,自动执行摘要生成流程。
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供定时自动调度所需的指令和必要参数。
 ### 3. 多源信息聚合
 除X/Twitter时间线外,PRO版支持聚合RSS源和自定义信息源。
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供多源信息聚合所需的指令和必要参数。
 **处理**: 解析多源信息聚合的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回多源信息聚合的处理结果,包含执行状态码、结果数据和执行日志。
-
-### 4. 自动推送通知
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供自动推送通知所需的指令和必要参数。
 **处理**: 解析自动推送通知的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -100,7 +95,7 @@ config = {
         }
     }
 }
-
+# ...
 scheduler = DigestScheduler(config)
 scheduler.start()
 ```
@@ -113,10 +108,10 @@ aggregator = MultiSourceAggregator()
 aggregator.add_twitter_source("X-Crypto", limit=100)
 aggregator.add_rss_source("CoinDesk", "https://feeds.coindesk.com/coinbase")
 aggregator.add_rss_source("TechCrunch", "https://techcrunch.com/feed/")
-
+# ...
 all_items = aggregator.fetch_all()
 digest = SmartDigestGenerator().generate_smart_digest(all_items)
-
+# ...
 pusher = NotificationPusher({
     "email": {
         "enabled": True,
@@ -137,10 +132,10 @@ pusher.push_email(digest["digestText"])
 ```python
 aggregator = MultiSourceAggregator()
 aggregator.add_twitter_source("X-Trending", limit=200)
-
+# ...
 items = aggregator.fetch_all()
 digest = SmartDigestGenerator().generate_smart_digest(items)
-
+# ...
 for section in digest["sections"]:
     print(f"\n{section['icon']} {section['category_name']} - {section['count']}条素材")
     for item in section["items"][:5]:
@@ -154,20 +149,20 @@ for section in digest["sections"]:
 ```bash
 skill-platform skills install timeline-digest-tool-pro
 skill-platform gateway restart
-
+# ...
 ```
 
 ### 全新安装
 ```bash
 bird --version
 python3 --version
-
+# ...
 skill-platform skills install timeline-digest-tool-pro
-
+# ...
 python3 init_config.py --interval 6 --output config.json
-
+# ...
 python3 setup_notifications.py --telegram --email
-
+# ...
 python3 start_scheduler.py --config config.json
 ```
 
@@ -175,7 +170,7 @@ python3 start_scheduler.py --config config.json
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | timeline-digest处理的内容输入 |,  |
 | content | string | 否 | timeline-digest处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -203,9 +198,8 @@ python3 start_scheduler.py --config config.json
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -220,7 +214,7 @@ python3 start_scheduler.py --config config.json
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | bird | CLI工具 | 必需 | 参考bird工具文档安装 |
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -245,20 +239,6 @@ python3 start_scheduler.py --config config.json
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -306,9 +286,8 @@ python3 start_scheduler.py --config config.json
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -21,25 +21,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 文档护盾专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 文档护盾专业版权限管理 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 错误恢复步骤
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:-----|:-----|:-----|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -70,7 +72,7 @@ pricing_model: "monthly"
 
 ### 专业版新增能力
 | 能力模块 | 输入 | 输出 | 适用场景 |
-|---------|------|------|---------|
+|---:|---:|---:|---:|
 | 批量创建 | 文档数组 | 创建结果列表 | 大规模导入 |
 | 批量更新 | 更新数组 | 更新结果列表 | 批量修订 |
 | 版本历史 | docId | 版本列表 | 审计与回滚 |
@@ -159,7 +161,7 @@ pricing_model: "monthly"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | doc-guard处理的内容输入 |,  |
 | content | string | 否 | doc-guard处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -187,9 +189,8 @@ pricing_model: "monthly"
 
 ## 异常处理
 
-
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
-|------|---------|---------|--------|
+|:------|------:|:------|:------|
 | 同步长期失败 | 去中心化存储限流 | 调用工具，间隔 60 秒 | 高 |
 | 批量创建部分失败 | 单条超过 10MB | 拆分大文档或精简内容 | 高 |
 | 权限变更未生效 | 本地缓存未刷新 | 等待 5 分钟或清空本地缓存 | 中 |
@@ -207,9 +208,9 @@ pricing_model: "monthly"
 - **浏览器**：现代浏览器（用于查看分享链接与管理后台）
 - **Python**：3.9+（批量迁移脚本与自定义加密策略示例需要）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本兼容性 |
-|:-------|:-----|:---------|:---------|:-----------|
+|---:|:---|---:|---:|:---|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 | 不限 |
 | MCP工具客户端 | 协议适配 | 必需 | Agent 客户端自带 | 协议 2025-03+ |
 | 加密文档服务端 | 后端服务 | 必需 | 自建或托管，需提供 `<SERVER_URL>` | v2.0+ |
@@ -236,7 +237,7 @@ pricing_model: "monthly"
 ```python
 import os
 from pathlib import Path
-
+# ...
 # 自定义加密策略配置示例
 ENCRYPTION_POLICY = {
     'algorithm': 'AES-256-GCM',          # 加密算法
@@ -246,15 +247,15 @@ ENCRYPTION_POLICY = {
     'dual_factor': True,                   # 双因素加密
     'audit_log': True,                     # 启用审计日志
 }
-
+# ...
 # 密钥存储位置（必须本地，不上传）
 KEY_STORE_PATH = Path.home() / '.doc-guard' / 'keys'
 KEY_STORE_PATH.mkdir(parents=True, exist_ok=True)
-
+# ...
 # 审计日志归档目录
 AUDIT_LOG_PATH = Path.home() / '.doc-guard' / 'audit'
 AUDIT_LOG_PATH.mkdir(parents=True, exist_ok=True)
-
+# ...
 print(f"加密策略：{ENCRYPTION_POLICY['algorithm']}")
 print(f"密钥轮换周期：{ENCRYPTION_POLICY['key_rotation_days']} 天")
 ```
@@ -264,14 +265,14 @@ print(f"密钥轮换周期：{ENCRYPTION_POLICY['key_rotation_days']} 天")
 ```python
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+# ...
 def migrate_documents(source_docs: list, batch_size: int = 50) -> dict:
     """批量迁移文档到加密存储，支持断点续传。"""
     checkpoint = load_checkpoint()  # 从检查点加载已完成项
     results = {'success': 0, 'failed': [], 'skipped': 0}
-
+# ...
     pending = [d for d in source_docs if d['id'] not in checkpoint]
-
+# ...
     def migrate_one(doc):
         try:
             # 调用 MCP工具的 batch_create_documents
@@ -282,7 +283,7 @@ def migrate_documents(source_docs: list, batch_size: int = 50) -> dict:
             return {'id': doc['id'], 'status': 'ok', 'docId': result['docId']}
         except Exception as e:
             return {'id': doc['id'], 'status': 'failed', 'error': str(e)}
-
+# ...
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(migrate_one, d): d for d in pending}
         for i, fut in enumerate(as_completed(futures), 1):
@@ -297,14 +298,14 @@ def migrate_documents(source_docs: list, batch_size: int = 50) -> dict:
                 save_checkpoint(checkpoint)
     save_checkpoint(checkpoint)
     return results
-
+# ...
 def load_checkpoint():
     from pathlib import Path
     p = Path.home() / '.doc-guard' / 'migration.checkpoint'
     if p.exists():
         return set(json.loads(p.read_text()))
     return set()
-
+# ...
 def save_checkpoint(checkpoint):
     from pathlib import Path
     p = Path.home() / '.doc-guard' / 'migration.checkpoint'
@@ -345,17 +346,14 @@ A：调用 `export_audit_log` 工具，参数为时间范围与格式（CSV/JSON
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

@@ -35,24 +35,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 模型切换工具(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 与免费版差异 | 不支持 | 支持 |
-| 三层切换 | 不支持 | 支持 |
-| 与免费版一致 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 模型切换工具(专业版)自定义规则与监控 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 三层切换 | Haiku → Sonnet → Opus 决策 | 与免费版一致 |
 | 黄金规则 | 30秒思考阈值 | 与免费版一致 |
 | 自定义规则 | 团队切换规则引擎(正则/关键词/任务类型) | 免费版无 |
@@ -96,7 +98,7 @@ pricing_model: "monthly"
 ```bash
 # 查看本月成本仪表盘
 node （请参考skill目录中的脚本文件） --period month --group-by project
-
+# ...
 # 输出
 # 项目成本仪表盘: 2026-07
 #
@@ -137,21 +139,21 @@ alerts:
 ```javascript
 // batch-switch.mjs 批量切换分发
 import { switchBatch } from './lib/switcher.mjs';
-
+// ...
 const tasks = [
   { id: 't1', content: '翻译这段话', expectedComplexity: 'low' },
   { id: 't2', content: '实现用户认证模块', expectedComplexity: 'medium' },
   { id: 't3', content: '设计多区域部署架构', expectedComplexity: 'high' },
   // ... 100个任务
 ];
-
+// ...
 const results = await switchBatch(tasks, {
   concurrency: 10,
   costCap: 50,          // 单批成本上限$50
   fallbackModel: 'haiku',  // 超成本降级
   onProgress: (done, total) => console.log(`${done}/${total}`),
 });
-
+// ...
 // 输出
 // {
 //   results: [...],
@@ -180,7 +182,7 @@ rules:
         - regex: "(架构|设计|重构)"
     switch_to: opus
     reason: "敏感/架构类任务需要深度推理"
-
+# ...
   - name: 翻译任务用Haiku
     match:
       allOf:
@@ -188,7 +190,7 @@ rules:
         - maxLength: 500
     switch_to: haiku
     reason: "短文本翻译用Haiku足够"
-
+# ...
   - name: 代码审查用Sonnet
     match:
       anyOf:
@@ -196,14 +198,14 @@ rules:
         - filePattern: "*.py"
     switch_to: sonnet
     reason: "代码审查是Sonnet主力场景"
-
+# ...
   - name: 成本上限降级
     condition:
       monthlyBudgetUsed: ">80%"
     switch_to: haiku
     fallback: true
     reason: "月度预算超80%,降级到Haiku"
-
+# ...
 default: sonnet  # 未匹配规则时的默认切换
 ```
 
@@ -216,7 +218,7 @@ default: sonnet  # 未匹配规则时的默认切换
 mkdir -p config reports
 cp config/switching-rules.example.yaml config/switching-rules.yaml
 cp config/budget-alerts.example.yaml config/budget-alerts.yaml
-
+# ...
 # 编辑团队规则
 vi config/switching-rules.yaml
 ```
@@ -225,13 +227,13 @@ vi config/switching-rules.yaml
 
 ```javascript
 import { switchModel } from './lib/switcher.mjs';
-
+// ...
 // 自动决策
 const result = await switchModel({
   content: '设计多租户数据库schema',
 });
 // → { model: 'opus', tier: 'opus', reason: '架构决策' }
-
+// ...
 // 强制指定层级
 const result2 = await switchModel({
   content: '翻译这段话',
@@ -248,7 +250,7 @@ node （请参考skill目录中的脚本文件） \
   --concurrency 10 \
   --cost-cap 50 \
   --output results.json
-
+# ...
 # 输出成本与切换报告
 node （请参考skill目录中的脚本文件） \
   --input tasks.json \
@@ -260,10 +262,10 @@ node （请参考skill目录中的脚本文件） \
 ```bash
 # 月度成本报告
 node （请参考skill目录中的脚本文件） --period month --format html > reports/month.html
-
+# ...
 # 按团队分组
 node （请参考skill目录中的脚本文件） --period month --group-by team
-
+# ...
 # 导出CSV
 node （请参考skill目录中的脚本文件） --period month --format csv > reports/month.csv
 ```
@@ -272,7 +274,7 @@ node （请参考skill目录中的脚本文件） --period month --format csv > 
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | model-switching处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -319,9 +321,8 @@ node （请参考skill目录中的脚本文件） --period month --format csv > 
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -335,10 +336,10 @@ node （请参考skill目录中的脚本文件） --period month --format csv > 
 - **Node.js版本**: 建议 20 LTS 及以上(用于运行切换与监控脚本)
 - **数据库**: 可选,用于持久化审计日志(建议使用时序数据库)
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Claude API | API | 必需 | 自行申请API Key |
 | Node.js | 运行时 | 必需 | nodejs.org 下载 |
@@ -382,7 +383,7 @@ policy:
 ### 自动降级策略
 
 | 预算使用率 | 自动动作 | 说明 |
-| --- | --- | --- |
+|---:|:---|---:|
 | <50% | 无 | 正常使用 |
 | 50-80% | 警告 | 通知团队,关注趋势 |
 | 80-95% | 降级Sonnet→Haiku | 非关键任务降级 |
@@ -420,9 +421,8 @@ policy:
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -18,16 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # llm-provider
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Manage llm-provider files, assistants, vector stores, batches, fine-tuning | 支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -37,7 +42,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -46,9 +51,9 @@ pricing_model: "per_use"
 
 ```bash
 clawlink_call_tool --tool "openai_list_assistants" --params '{"limit": 10}'
-
+# ...
 clawlink_call_tool --tool "openai_create_chat_completion" --params '{"model": "gpt-4o", "messages": [{"role": "user", "content": "Hello"}]}'
-
+# ...
 clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 ```
 
@@ -56,7 +61,7 @@ clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | openai-ai处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -115,7 +120,7 @@ clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 
 ## 错误处理
 | Status / Error | Meaning |
-| --- | --- |
+|:-------------:|:-------------:|
 | Tool not found | The tool name does not exist in the current catalog. Verify with `clawlink_list_tools --integration llm-provider`. |
 | Missing connection | llm-provider is not connected. Direct the user to <https://claw-link.dev/dashboard?add=llm-provider>. |
 | `invalid_request_error` | Invalid parameter or model not available. Verify model ID with `openai_list_models`. |
@@ -155,9 +160,9 @@ clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 - **Agent平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -166,7 +171,6 @@ clawlink_call_tool --tool "openai_list_files" --params '{"purpose": "batch"}'
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -209,7 +213,7 @@ clawlink_call_tool --tool "openai_upload_file" \
     "file": "@./knowledge.pdf",
     "purpose": "assistants"
   }'
-
+# ...
 clawlink_call_tool --tool "openai_create_vector_store_file" \
   --params '{
     "vector_store_id": "VS_ID",
@@ -244,12 +248,6 @@ clawlink_call_tool --tool "openai_create_image" \
 ## 常见问题
 
 ### Q1: 如何开始使用OpenAI？
-A: 
-
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: OpenAI有什么限制？
 A: 
 
 ## 已知限制

@@ -18,16 +18,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # aws-agentcore-langgraph (免费版)
 
 基于 AWS Bedrock AgentCore 与 LangGraph 的基础智能体部署助手。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AgentCore 免费处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -48,17 +49,17 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from typing import Annotated
 from typing_extensions import TypedDict
-
+# ...
 class State(TypedDict):
     messages: Annotated[list, add_messages]
-
+# ...
 builder = StateGraph(State)
 builder.add_node("agent", agent_node)
 builder.add_node("tools", ToolNode(tools))
 builder.add_conditional_edges("agent", tools_condition)
 builder.add_edge(START, "agent")
 graph = builder.compile()
-
+# ...
 app = BedrockAgentCoreApp()  # 端口 8080,提供 /invocations 与 /ping
 @app.entrypoint
 def invoke(payload, context):
@@ -99,7 +100,7 @@ app.run()
 ## CLI 命令
 
 | 命令 | 用途 |
-| --- | --- |
+|:-----|:-----|
 | `agentcore configure -e agent.py --region us-east-1` | 初始化配置 |
 | `agentcore launch --deployment-type container` | 容器模式部署 |
 | `agentcore dev` | 热重载本地开发服务器 |
@@ -114,7 +115,7 @@ app.run()
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|---:|---:|---:|
 | 单智能体部署 | 智能体定义与工具列表 | 容器化部署的 HTTP 智能体服务 |
 
 **不适用于**: 多智能体编排、跨会话 LTM 记忆、Gateway 工具集成(需升级付费版)。
@@ -127,7 +128,7 @@ app.run()
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -152,7 +153,6 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 案例展示
 
 ### 案例1: 单智能体工具调用
@@ -161,11 +161,11 @@ export API_KEY="your_api_key_here"
 from langgraph.graph import StateGraph, START
 from langgraph.prebuilt import ToolNode, tools_condition
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
-
+# ...
 # 定义工具
 def search_tool(query: str) -> str:
     return f"搜索结果: {query}"
-
+# ...
 tools = [search_tool]
 builder = StateGraph(State)
 builder.add_node("agent", agent_node)
@@ -173,7 +173,7 @@ builder.add_node("tools", ToolNode(tools))
 builder.add_conditional_edges("agent", tools_condition)
 builder.add_edge(START, "agent")
 graph = builder.compile()
-
+# ...
 app = BedrockAgentCoreApp()
 @app.entrypoint
 def invoke(payload, context):
@@ -185,7 +185,7 @@ app.run()
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `on-demand throughput isn't supported` | 使用了不支持按需吞吐的推理配置 | 改用 `us.anthropic.claude-*` 推理配置文件 |
 | `Model use case details not submitted` | 未提交 Anthropic 模型用例申请 | 在 Bedrock 控制台填写 Anthropic 用例表单 |
 | `Invalid agent name` | 智能体名称含连字符等非法字符 | 使用下划线而非连字符,如 `my_agent` |

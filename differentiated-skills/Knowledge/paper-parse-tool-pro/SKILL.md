@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 论文解析工具（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `分析论文的章节结构
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：引用关系提取
 
 提取论文的参考文献列表。**示例指令**：`
 
 `提取论文的引用列表
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 论文解析工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -165,7 +157,7 @@ from typing import List, Dict, Optional
 from dataclasses import dataclass, field
 from pypdf import PdfReader
 import pdfplumber
-
+# ...
 @dataclass
 class PaperMetadata:
     title: str = ""
@@ -175,14 +167,14 @@ class PaperMetadata:
     doi: str = ""
     journal: str = ""
     year: str = ""
-
+# ...
 @dataclass
 class PaperSection:
     heading: str
     content: str
     level: int = 1
     page_start: int = 0
-
+# ...
 @dataclass
 class PaperReference:
     raw_text: str
@@ -190,13 +182,13 @@ class PaperReference:
     title: str = ""
     year: str = ""
     source: str = ""
-
+# ...
 class PaperParseEngine:
     def __init__(self):
         self.sections: List[PaperSection] = []
         self.references: List[PaperReference] = []
         self.metadata: PaperMetadata = PaperMetadata()
-
+# ...
     def parse(self, pdf_path: str) -> dict:
         """完整解析论文（PRO 专属）"""
         full_text = self._extract_full_text(pdf_path)
@@ -209,7 +201,7 @@ class PaperParseEngine:
             "references": [r.__dict__ for r in self.references],
             "stats": self._compute_stats()
         }
-
+# ...
     def extract_figures(self, pdf_path: str) -> List[dict]:
         """提取图表信息（PRO 专属）"""
         figures = []
@@ -229,7 +221,7 @@ class PaperParseEngine:
                         "context": text[:200]
                     })
         return figures
-
+# ...
     def analyze_citation_network(self) -> dict:
         """分析引用网络（PRO 专属）"""
         years = [r.year for r in self.references if r.year]
@@ -238,7 +230,7 @@ class PaperParseEngine:
             "year_range": f"{min(years)}-{max(years)}" if years else "N/A",
             "avg_year": sum(int(y) for y in years) / len(years) if years else 0
         }
-
+# ...
     def batch_parse(self, pdf_paths: List[str]) -> List[dict]:
         """批量解析（PRO 专属）"""
         results = []
@@ -247,7 +239,7 @@ class PaperParseEngine:
             result["file"] = path
             results.append(result)
         return results
-
+# ...
     def export_structured(self, output_path: str, format: str = "json"):
         """导出结构化数据（PRO 专属）"""
         data = {
@@ -260,11 +252,11 @@ class PaperParseEngine:
                 json.dump(data, f, ensure_ascii=False, indent=2)
             else:
                 f.write(str(data))
-
+# ...
     def _extract_full_text(self, pdf_path: str) -> str:
         reader = PdfReader(pdf_path)
         return NL.join(page.extract_text() or "" for page in reader.pages)
-
+# ...
     def _extract_metadata(self, text: str) -> PaperMetadata:
         meta = PaperMetadata()
         lines = text.split(NL)
@@ -282,7 +274,7 @@ class PaperParseEngine:
         if doi_match:
             meta.doi = doi_match.group(0)
         return meta
-
+# ...
     def _extract_sections(self, text: str) -> List[PaperSection]:
         sections = []
         pattern = r"^(#{1,3}\s+.+|\d+\.?\s+[A-Z].+|Abstract|Introduction|Method|Result|Conclusion)"
@@ -294,7 +286,7 @@ class PaperParseEngine:
             content = text[start:end].strip()
             sections.append(PaperSection(heading=heading, content=content[:500]))
         return sections
-
+# ...
     def _extract_references(self, text: str) -> List[PaperReference]:
         refs = []
         ref_section = re.search(r"References[:\s]*(.+)$", text, re.DOTALL)
@@ -309,7 +301,7 @@ class PaperParseEngine:
                         year=year_match.group(1) if year_match else ""
                     ))
         return refs
-
+# ...
     def _compute_stats(self) -> dict:
         return {
             "total_sections": len(self.sections),
@@ -317,7 +309,7 @@ class PaperParseEngine:
             "abstract_length": len(self.metadata.abstract),
             "has_keywords": len(self.metadata.keywords) > 0
         }
-
+# ...
 engine = PaperParseEngine()
 result = engine.parse("paper.pdf")
 print(f"标题: {result['metadata']['title'][:50]}")
@@ -360,7 +352,7 @@ paper_parse:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -372,7 +364,7 @@ paper_parse:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -444,7 +436,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | pypdf | Python库 | 必需 | pip install pypdf |
 | pdfplumber | Python库 | 推荐 | pip install pdfplumber |
@@ -459,9 +451,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

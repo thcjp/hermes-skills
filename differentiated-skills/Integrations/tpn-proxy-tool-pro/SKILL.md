@@ -21,6 +21,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 去中心化代理网络平台（专业版）
 
@@ -33,7 +35,7 @@ pricing_model: "monthly"
 ## 核心能力
 
 | 能力模块 | 说明 | 专业版增强 |
-|:---------|:-----|:-----------|
+|----|---|-----|
 | SOCKS5代理生成 | 创建代理凭证 | 支持批量生成 |
 | 地区选择 | 按国家指定出口 | 支持多地区负载均衡 |
 | 代理租期管理 | 灵活租期 | 支持自动续期 |
@@ -83,7 +85,7 @@ class ProxyPool:
         self.pool_size = pool_size
         self.auto_rotate = auto_rotate
         self.metrics = {}        # 性能指标
-
+# ...
     async def acquire(self, geo=None):
         """获取一个可用代理，自动轮换"""
         proxy = self._find_available(geo)
@@ -91,14 +93,14 @@ class ProxyPool:
             proxy = await self._generate_new(geo)
             self.pool[proxy['id']] = proxy
         return proxy
-
+# ...
     async def release(self, proxy_id, success=True):
         """释放代理并记录性能"""
         if proxy_id in self.pool:
             self._record_metric(proxy_id, success)
             if self.auto_rotate and not success:
                 await self._rotate(proxy_id)
-
+# ...
 class CircuitBreaker:
     """熔断器：连续失败超过阈值时自动切换代理"""
     def __init__(self, threshold=5, reset_timeout=60):
@@ -106,14 +108,14 @@ class CircuitBreaker:
         self.threshold = threshold
         self.reset_timeout = reset_timeout
         self.open_until = {}
-
+# ...
     def can_retry(self, proxy_id):
         if proxy_id in self.open_until:
             if time.time() < self.open_until[proxy_id]:
                 return False  # 熔断中
             del self.open_until[proxy_id]
         return True
-
+# ...
     def record_failure(self, proxy_id):
         self.failure_count[proxy_id] = self.failure_count.get(proxy_id, 0) + 1
         if self.failure_count[proxy_id] >= self.threshold:
@@ -131,7 +133,7 @@ class DistributedLoadTest:
         self.regions = regions
         self.pool = ProxyPool(pool_size=len(regions) * 5)
         self.results = defaultdict(list)
-
+# ...
     async def run(self, requests_per_region=100, concurrency=10):
         """每个地区发起指定数量的并发请求"""
         tasks = []
@@ -155,7 +157,7 @@ COMPLIANCE_CHECKS = {
     "PIPL": ["CN"],                        # 中国个人信息保护法
     "PDPA": ["SG", "JP"],                  # 东南亚数据保护
 }
-
+# ...
 async def audit_compliance(self):
     for regulation, regions in COMPLIANCE_CHECKS.items():
         for region in regions:
@@ -179,12 +181,12 @@ async def audit_compliance(self):
 
 ```python
 from proxy_manager import ProxyPool, CircuitBreaker, MetricsCollector
-
+# ...
 # 初始化代理池（20个并发会话，自动轮换）
 pool = ProxyPool(pool_size=20, auto_rotate=True)
 breaker = CircuitBreaker(threshold=5, reset_timeout=60)
 metrics = MetricsCollector()
-
+# ...
 # 预热代理池
 await pool.warmup(geos=['US', 'DE', 'JP', 'SG', 'UK'])
 ```
@@ -263,7 +265,7 @@ METRICS_SCHEMA = {
 ### 性能优化策略
 
 | 优化方向 | 策略 | 预期收益 |
-|:---------|:-----|:---------|
+|:-----|:-----|:-----|
 | 代理池预热 | 提前生成代理，消除首次请求延迟 | 首请求延迟降低80% |
 | 智能轮换 | 预测过期时间，提前轮换 | 消除过期导致的请求失败 |
 | 熔断保护 | 失败代理自动隔离 | 请求成功率提升至99%+ |
@@ -281,7 +283,7 @@ METRICS_SCHEMA = {
 curl -X POST https://api.example.com/api/v1/x402/proxy/generate \
   -H "Content-Type: application/json" \
   -d '{"minutes": 60}'
-
+# ...
 # 2. 收到HTTP 402，包含payment-required头部
 # 3. 完成x402支付握手（USDC on Base）
 # 4. 携带支付凭证重新请求，获取代理凭证
@@ -290,7 +292,7 @@ curl -X POST https://api.example.com/api/v1/x402/proxy/generate \
 ### 成本优化建议
 
 | 场景 | 推荐策略 | 月成本估算 |
-|:-----|:---------|:-----------|
+|---:|---:|---:|
 | 低频验证（日10次） | 按需生成10分钟代理 | ~3000额度 |
 | 中频采集（时100次） | 代理池+60分钟租期 | ~15000额度 |
 | 高频采集（分100次） | 代理池+自动轮换+住宅节点 | ~50000额度 |
@@ -340,9 +342,8 @@ A：如果你有以下需求之一，建议升级：(1) 需要同时管理多个
 
 ## 错误处理
 
-
 | 问题现象 | 可能原因 | 排查步骤 | 优先级 | 处理方式 |
-|:---------|:---------|:---------|:-------|------|
+|:---:|:---:|:---:|:---:|:---:|
 | 所有代理请求超时 | 代理网络服务异常 | 检查健康状态接口，等待恢复 | P0 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 大量403错误 | 代理IP被目标封锁 | 切换住宅节点，降低请求频率 | P0 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 额度消耗异常快 | 代理未及时释放 | 检查代理池回收逻辑，设置自动过期 | P1 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -363,7 +364,7 @@ A：如果你有以下需求之一，建议升级：(1) 需要同时管理多个
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | ¥0 | 核心功能+基础示例 | 个人试用 |
 | 收费专业版 | ¥29.9/月 | 全功能+高级特性+优先支持 | 团队/企业 |
 
@@ -381,7 +382,7 @@ A：如果你有以下需求之一，建议升级：(1) 需要同时管理多个
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | curl | CLI工具 | 必需 | 系统自带或官方下载 |
 | aiohttp | Python库 | 必需 | `pip install aiohttp` |

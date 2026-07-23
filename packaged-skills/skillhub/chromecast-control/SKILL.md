@@ -16,19 +16,20 @@ homepage: "https://skillhub.cn"
 tags:
   - 通用办公
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 投屏设备控制
 
 使用 `catt`（Cast All The Things）工具控制局域网内的投屏协议设备。支持设备发现、媒体投放、播放控制、音量调节、队列管理、字幕加载和多设备别名管理。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 投屏设备控制处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -36,13 +37,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+| 分布式任务调度与负载均衡 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -52,7 +53,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -138,7 +139,6 @@ pricing_model: "per_use"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 示例
 
 ### 示例1：发现设备并投放YouTube视频
@@ -149,13 +149,13 @@ catt scan
 # 输出示例:
 # 192.168.1.163 - Living Room TV
 # 192.168.1.200 - Bedroom Speaker
-
+# ...
 # 设置默认设备
 catt -d "Living Room TV" set_default
-
+# ...
 # 投放YouTube视频
 catt cast "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-
+# ...
 # 查看播放状态
 catt status
 # 输出: Time: 01:23 / 03:33 | Volume: 50 | Muted: False
@@ -166,19 +166,19 @@ catt status
 ```bash
 # 设置设备别名
 catt -d 192.168.1.163 set_alias tv
-
+# ...
 # 投放本地视频并加载SRT字幕
 catt -d tv cast -s ./subtitles.srt ./movie.mp4
-
+# ...
 # 从1小时30分处开始播放
 catt -d tv cast -t 01:30:00 ./movie.mp4
-
+# ...
 # 快进30秒
 catt -d tv ffwd 30
-
+# ...
 # 设置音量为75
 catt -d tv volume 75
-
+# ...
 # 保存当前播放状态
 catt -d tv save
 ```
@@ -186,7 +186,7 @@ catt -d tv save
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | `catt scan` 找不到设备 | 网络阻止mDNS发现 | 使用设备IP地址直接连接：`catt -d 192.168.1.163 cast <url>` |
 | 本地文件投放失败 | TCP端口45000-47000被防火墙阻止 | 开放端口45000-47000范围，或使用网络共享URL代替本地文件 |
 | 字幕加载失败 | SRT文件格式错误或路径不对 | 确认字幕文件为标准SRT格式，使用绝对路径指定文件 |

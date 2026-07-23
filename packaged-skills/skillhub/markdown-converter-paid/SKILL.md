@@ -24,19 +24,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "Markdown,文档,工具"
 ---
 # Markdown转换器专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Markdown转换器专业版企业级文档批量转换 | 不支持 | 支持 |
+| Markdown转换器专业版支持目录扫描 | 不支持 | 支持 |
+| Markdown转换器专业版批量处理 | 不支持 | 支持 |
+| 高级参数配置与自定义规则 | 不支持 | 支持 |
+| 批量任务编排与队列管理 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -83,18 +85,18 @@ template:
     converted: "{conversion_date}"
     format: "{source_format}"
     ---
-
+# ...
   body: |
     # {title}
     > 来源: {source_file}
     > 转换时间: {conversion_date}
-
+# ...
     {content}
-
+# ...
   footer: |
     ---
     *本文档由Markdown转换器专业版自动生成*
-
+# ...
   metadata:
     extract:
       - title
@@ -296,7 +298,7 @@ python3 generate_index.py \
   --input ./output/ \
   --format "html,markdown" \
   --searchable
-
+# ...
 # 质量审计
 python3 audit_conversion.py \
   --input ./output/ \
@@ -307,7 +309,7 @@ python3 audit_conversion.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | markdown-converter处理的内容输入 |,  |
 | content | string | 否 | markdown-converter处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -335,9 +337,8 @@ python3 audit_conversion.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -349,9 +350,9 @@ python3 audit_conversion.py \
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.10+
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | uv/uvx | 工具 | 必需 | astral.sh安装 |
 | markitdown | Python包 | 必需 | uvx自动安装 |
@@ -377,7 +378,7 @@ python3 audit_conversion.py \
 project:
   name: "企业文档数字化"
   version: "1.0.0"
-
+# ...
 input:
   directories:
     - path: "./documents/"
@@ -387,29 +388,29 @@ input:
     - "*.tmp"
     - "*.bak"
     - "temp/"
-
+# ...
 output:
   directory: "./markdown/"
   preserve_structure: true
   encoding: "UTF-8"
-
+# ...
 template:
   file: "enterprise-template.yml"
   frontmatter: true
   metadata: true
-
+# ...
 processing:
   parallel_workers: 16
   skip_existing: true
   quality_check: true
   extract_metadata: true
-
+# ...
 index:
   generate: true
   format: "html"
   searchable: true
   categories: true
-
+# ...
 audit:
   enabled: true
   checks: ["structure", "completeness", "format", "encoding"]
@@ -476,9 +477,8 @@ A: 支持GitHub Actions、GitLab CI、Jenkins等主流CI/CD平台。提供标准
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

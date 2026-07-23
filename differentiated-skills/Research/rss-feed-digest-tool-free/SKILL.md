@@ -42,8 +42,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # RSS聚合摘要免费版
 
 ## 概述
@@ -55,7 +56,7 @@ RSS聚合摘要免费版是一款基于Python的轻量级RSS/Atom订阅聚合工
 ## 核心能力
 
 | 能力模块 | 说明 | 免费版支持 |
-|:--------|:-----|:----------|
+|----|---|-----|
 | 多源抓取 | 同时抓取多个RSS/Atom源 | 支持(建议≤5源) |
 | 关键词过滤 | 包含/排除关键词筛选 | 支持 |
 | 跨源去重 | 多源内容自动去重 | 支持 |
@@ -124,7 +125,7 @@ RSS聚合摘要免费版是一款基于Python的轻量级RSS/Atom订阅聚合工
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | RSS聚合摘要免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -146,30 +147,30 @@ python3 （请参考skill目录中的脚本文件） fetch \
 
 ```markdown
 # 每日AI资讯摘要 | 2026-07-18
-
+# ...
 ## 不适用场景
-
+# ...
 以下场景RSS聚合摘要免费版不适合处理：
-
+# ...
 - 实时流数据处理
 - 小规模数据手动分析
 - 非结构化文本情感分析
-
+# ...
 ## 触发条件
-
+# ...
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求。
-
+# ...
 ## 来源: Hacker News
 - **[GPT-5多模态推理能力实测](https://example.com/post1)** (3h ago)
   OpenAI最新模型在视觉推理基准上达到SOTA,支持图文混合输入...
-
+# ...
 - **[开源大模型推理框架对比](https://example.com/post2)** (6h ago)
   vLLM、TGI、SGLang三大框架在A100上的吞吐量与延迟基准测试...
-
+# ...
 ## 来源: OpenAI Blog
 - **[Introducing GPT-5 API](https://openai.com/blog/gpt5)** (12h ago)
   新API支持128K上下文,定价降低50%,提供免费试用额度...
-
+# ...
 ---
 共抓取 47 条 | 过滤后 20 条 | 去重后 18 条 | 耗时 3.2s
 ```
@@ -199,7 +200,7 @@ https://export.arxiv.org/rss/cs.AI
 https://export.arxiv.org/rss/cs.CL
 https://export.arxiv.org/rss/cs.LG
 EOF
-
+# ...
 python3 （请参考skill目录中的脚本文件） fetch \
   --feed-file academic-feeds.txt \
   --keywords "transformer,attention,fine-tuning,RAG" \
@@ -248,7 +249,7 @@ https://hnrss.org/frontpage
 https://feeds.arstechnica.com/arstechnica/technology-lab
 https://openai.com/blog/rss.xml
 EOF
-
+# ...
 # 从文件读取源列表
 python3 （请参考skill目录中的脚本文件） fetch \
   --feed-file my-feeds.txt \
@@ -262,7 +263,7 @@ python3 （请参考skill目录中的脚本文件） fetch \
 
 ```text
 python3 （请参考skill目录中的脚本文件） fetch [选项]
-
+# ...
 选项:
   --feeds URL [URL ...]     一个或多个RSS/Atom源URL
   --feed-file PATH          包含源URL列表的文件(每行一个URL)
@@ -279,10 +280,10 @@ python3 （请参考skill目录中的脚本文件） fetch [选项]
 ```bash
 # 包含过滤:只保留含任一关键词的条目
 --keywords "AI,LLM,GPT,Claude"
-
+# ...
 # 排除过滤:移除含任一关键词的条目
 --exclude "招聘,广告,sponsor"
-
+# ...
 # 组合使用:先包含再排除
 --keywords "AI,agent" --exclude "招聘,广告"
 ```
@@ -363,7 +364,7 @@ A: 确认Python版本≥3.8。网络问题可使用国内镜像源安装:`pip3 i
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3.8+ | 运行时 | 必需 | https://python.org |
 | feedparser | Python库 | 必需 | `pip3 install feedparser` |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -382,9 +383,8 @@ A: 确认Python版本≥3.8。网络问题可使用国内镜像源安装:`pip3 i
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

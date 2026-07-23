@@ -22,16 +22,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # AWS Infra Inspector
 
 通过AWS CLI执行只读基础设施查询,覆盖五大运维场景。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AWS Infra Inspector处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | AWS Infra Inspector执行只读基础设施查询 | 不支持 | 支持 |
 | AWS Infra Inspector成本分析 | 不支持 | 支持 |
@@ -55,7 +56,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -63,7 +64,6 @@ pricing_model: "monthly"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -129,7 +129,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | 日常运维巡检 | "检查所有EC2实例状态" | 实例ID、状态、状态检查结果的表格 | 健康检查 |
 | 资源盘点 | "列出我们账户下的所有S3存储桶" | 存储桶名称、创建时间、区域列表 | 资源清单 |
 | 安全合规审计 | "检查是否有安全组开放了0.0.0.0/0" | 安全组名称、规则、风险等级报告 | 安全审计 |
@@ -267,7 +267,7 @@ aws ce get-cost-and-usage \
 ## 异常处理
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | 凭证未配置 | `Unable to locate credentials` | 未运行`aws configure`或环境变量未设置 | 运行`aws configure`配置Access Key和Secret Key |
 | 凭证过期 | `The security token included in the request is expired` | 使用了临时凭证(STS)且已过期 | 运行`aws sts get-session-token`获取新凭证,或使用长期凭证 |
 | 权限不足 | `User: arn:aws:iam::xxx is not authorized to perform: ec2:DescribeInstances` | IAM用户缺少对应API的调用权限 | 在IAM控制台为用户附加对应服务的ReadOnlyAccess策略 |
@@ -359,9 +359,8 @@ aws ec2 describe-instances --output table > instances.txt
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-| --- | --: | :-- |
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

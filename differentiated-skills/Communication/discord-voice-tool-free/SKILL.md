@@ -41,8 +41,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
 ---
-
 # Discord 语音工具(免费版)
 
 ## 概述
@@ -54,7 +55,7 @@ Discord 语音工具免费版是一款面向个人用户的 Discord 语音频道
 ## 核心能力
 
 | 能力模块 | 说明 | 免费版支持 |
-|:-------|:-----|:----------|
+|----|---|-----|
 | 加入/离开频道 | 语音频道进出 | 支持 |
 | 语音活动检测 | 自动检测说话 | 支持 |
 | 语音转文字 | STT 服务 | 本地 Whisper(离线) |
@@ -100,14 +101,14 @@ Discord 语音工具免费版是一款面向个人用户的 Discord 语音频道
 ```bash
 # 1. 让机器人加入语音频道
 discord_voice join <channelId>
-
+# ...
 # 2. 开始对话(说话即可,机器人自动检测)
 # 用户: "今天天气怎么样?"
 # 机器人(TTS): "我无法获取实时天气,但可以帮你查询..."
-
+# ...
 # 3. 查看连接状态
 discord_voice status
-
+# ...
 # 4. 离开频道
 discord_voice leave
 ```
@@ -119,10 +120,10 @@ discord_voice leave
 ```bash
 # 配置允许所有成员使用
 # allowedUsers: []  # 空数组表示允许所有用户
-
+# ...
 # 加入社群语音频道
 discord_voice join 1234567890
-
+# ...
 # 成员说话时机器人自动响应
 # 成员: "Python 里怎么反转列表?"
 # 机器人(TTS): "可以用切片 list[::-1] 或 reversed() 函数..."
@@ -161,10 +162,10 @@ discord_voice join 1234567890
 ```bash
 # Ubuntu / Debian
 sudo apt-get install ffmpeg build-essential python3
-
+# ...
 # CentOS / RHEL
 sudo dnf install ffmpeg gcc-c++ make python3
-
+# ...
 # macOS
 brew install ffmpeg
 ```
@@ -174,7 +175,7 @@ brew install ffmpeg
 ```bash
 # 通过平台安装
 platform install discord-voice
-
+# ...
 # 或手动安装
 cd ~/.agent/extensions
 git clone <repository-url> discord-voice
@@ -225,7 +226,6 @@ discord_voice join <channelId>
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 最小可用配置
@@ -261,7 +261,7 @@ discord_voice join <channelId>
 ### 配置项说明
 
 | 配置项 | 类型 | 默认值 | 说明 |
-|:-------|:-----|:-------|:-----|
+|:-----|:-----|:-----|:-----|
 | `enabled` | boolean | `true` | 启用/禁用插件 |
 | `sttProvider` | string | `"local-whisper"` | 语音转文字服务商 |
 | `ttsProvider` | string | `"kokoro"` | 文字转语音服务商 |
@@ -276,7 +276,7 @@ discord_voice join <channelId>
 ### VAD 灵敏度说明
 
 | 灵敏度 | 行为 |
-|:-------|:-----|
+|---:|---:|
 | `low` | 捕获轻声说话,可能被背景噪声误触发 |
 | `medium` | 平衡(推荐) |
 | `high` | 需要更大声、更清晰的说话 |
@@ -355,7 +355,7 @@ DEBUG=discord-voice agent gateway start
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM 能力 | API | 必需 | 由 Agent 内置大模型提供 |
 | Discord Bot Token | 凭证 | 必需 | Discord Developer Portal 创建机器人获取 |
 | ffmpeg | 系统依赖 | 必需 | 系统包管理器安装 |
@@ -378,9 +378,8 @@ DEBUG=discord-voice agent gateway start
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

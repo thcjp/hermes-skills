@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 专业版面向家庭、企业健康关怀项目与医疗机构,在免费版个人健康管理之上,扩展多用户管理、可穿戴设备同步、AI 个性化建议、医疗级报告、异常预警、专业分析等企业级能力。支持家庭多成员管理、企业员工健康关怀、健身工作室会员跟踪、慢病管理等场景。
 
@@ -37,7 +39,7 @@ pricing_model: "per_use"
 
 ## 核心能力
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 运动记录 | 跑步、力量等 | 支持 | 支持 |
 | 睡眠追踪 | 睡眠时长、质量 | 支持 | 支持 |
 | 饮食日记 | 食物摄入、热量 | 支持 | 支持 |
@@ -89,7 +91,7 @@ pricing_model: "per_use"
 class DeviceSyncManager:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key}
-
+# ...
     def connect_device(self, member_id, device_type, credentials):
         """连接可穿戴设备"""
         payload = {
@@ -109,7 +111,7 @@ class DeviceSyncManager:
             timeout=60,
         )
         return resp.json()
-
+# ...
     def sync_now(self, device_id):
         """立即同步"""
         resp = requests.post(
@@ -118,7 +120,7 @@ class DeviceSyncManager:
             timeout=60,
         )
         return resp.json()
-
+# ...
     def sync_history(self, device_id, start_date, end_date):
         """同步历史数据"""
         payload = {
@@ -133,7 +135,7 @@ class DeviceSyncManager:
             timeout=300,
         )
         return resp.json()
-
+# ...
 sync = DeviceSyncManager(ADMIN_KEY)
 sync.connect_device("member_001", "apple_watch", {"token": "..."})
 ```
@@ -169,7 +171,7 @@ def generate_ai_advice(member_id):
         timeout=120,
     )
     return resp.json()
-
+# ...
 ```
 
 ## 不适用场景
@@ -215,8 +217,6 @@ curl -X POST -H "X-API-Key: $HEALTH_ADMIN_KEY" \
 ## 配置示例
 ### 企业级配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 异常预警配置
 ```python
 def configure_alerts(member_id, thresholds):
@@ -238,7 +238,7 @@ def configure_alerts(member_id, thresholds):
         timeout=30,
     )
     return resp.json()
-
+# ...
 configure_alerts("m001", {
     "heart_rate_high": 120,
     "heart_rate_low": 50,
@@ -303,7 +303,7 @@ def setup_chronic_disease_tracking(member_id, condition, medications):
         timeout=60,
     )
     return resp.json()
-
+# ...
 setup_chronic_disease_tracking("m001", "diabetes", [
     {"name": "二甲双胍", "dose": "500mg", "schedule": "每日两次,饭后"},
 ])
@@ -334,7 +334,7 @@ def encrypt_health_data(data, key):
     from cryptography.fernet import Fernet
     f = Fernet(key)
     return f.encrypt(json.dumps(data).encode())
-
+# ...
 def decrypt_health_data(encrypted, key):
     """解密健康数据"""
     from cryptography.fernet import Fernet
@@ -389,7 +389,7 @@ Apple Watch、Fitbit、Garmin、华为手环、小米手环等主流设备。
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Health Toolkit Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -402,11 +402,11 @@ Apple Watch、Fitbit、Garmin、华为手环、小米手环等主流设备。
 export HEALTH_ADMIN_KEY="sk_pro_admin_xxx"
 export HEALTH_ORG_ID="org_your_id"
 export HEALTH_EDITION="pro"
-
+# ...
 export APPLE_HEALTH_TOKEN="..."
 export FITBIT_TOKEN="..."
 export GARMIN_TOKEN="..."
-
+# ...
 export ALERT_EMAIL="alerts@example.com"
 export ALERT_SMS_API="https://sms-api.example.com"
 ```
@@ -420,7 +420,7 @@ export ALERT_SMS_API="https://sms-api.example.com"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

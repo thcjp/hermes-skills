@@ -42,19 +42,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # Git命令行助手专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -66,22 +68,13 @@ pricing_model: "per_use"
 **处理**: 解析Git自动化脚本库的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回Git自动化脚本库的处理结果,包含执行状态码、结果数据和执行日志。
 
-### 2. 深度仓库诊断
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供深度仓库诊断所需的指令和必要参数。
 **处理**: 解析深度仓库诊断的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回深度仓库诊断的处理结果,包含执行状态码、结果数据和执行日志。
 
-### 3. 工作流模板
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供工作流模板所需的指令和必要参数。
 **处理**: 解析工作流模板的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回工作流模板的处理结果,包含执行状态码、结果数据和执行日志。
-
-### 4. 多仓库管理
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供多仓库管理所需的指令和必要参数。
 **处理**: 解析多仓库管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -96,7 +89,7 @@ pricing_model: "per_use"
 ```bash
 #!/bin/bash
 echo "=== Git日常自动化 ==="
-
+# ...
 echo "1. 仓库状态:"
 python3 -c "
 from git_automation import GitAutomation
@@ -104,14 +97,14 @@ import json
 status = GitAutomation.get_repo_status()
 print(json.dumps(status, indent=2, ensure_ascii=False))
 "
-
+# ...
 echo -e "\n2. 智能提交:"
 python3 -c "
 from git_automation import GitAutomation
 result = GitAutomation.smart_commit('feat: 日常开发提交')
 print(result)
 "
-
+# ...
 echo -e "\n3. 智能同步:"
 python3 -c "
 from git_automation import GitAutomation
@@ -126,14 +119,14 @@ print(result)
 ```bash
 #!/bin/bash
 echo "=== Git仓库健康诊断 ==="
-
+# ...
 python3 -c "
 from git_diagnostics import GitDiagnostics
 import json
-
+# ...
 diagnosis = GitDiagnostics.full_diagnosis()
 print(json.dumps(diagnosis, indent=2, ensure_ascii=False))
-
+# ...
 print('\n=== 建议 ===')
 for rec in diagnosis.get('recommendations', []):
     print(f'  - {rec}')
@@ -146,13 +139,13 @@ for rec in diagnosis.get('recommendations', []):
 ```bash
 #!/bin/bash
 echo "=== 多仓库批量管理 ==="
-
+# ...
 cat > repos.txt << 'EOF'
 /home/user/project-a
 /home/user/project-b
 /home/user/project-c
 EOF
-
+# ...
 echo "1. 批量状态检查:"
 python3 -c "
 from multi_repo import MultiRepoManager
@@ -167,7 +160,7 @@ for repo, info in status.items():
         clean = '干净' if info.get('is_clean') else '有变更'
         print(f'[OK] {repo}: {branch} ({clean})')
 "
-
+# ...
 echo -e "\n2. 批量同步:"
 python3 -c "
 from multi_repo import MultiRepoManager
@@ -176,7 +169,7 @@ results = manager.batch_sync()
 for repo, result in results.items():
     print(f'{repo}: {result}')
 "
-
+# ...
 echo -e "\n3. 批量清理:"
 python3 -c "
 from multi_repo import MultiRepoManager
@@ -193,18 +186,18 @@ for repo, result in results.items():
 ```yaml
 version: "2.0"
 edition: pro
-
+# ...
 automation:
   smart_commit: true
   auto_sync: true
   auto_cleanup: true
-
+# ...
 diagnostics:
   health_check: true
   performance_check: true
   security_check: true
   large_file_threshold: 10MB
-
+# ...
 workflows:
   feature:
     branch_prefix: "feature/"
@@ -216,7 +209,7 @@ workflows:
   release:
     branch_prefix: "release/"
     auto_tag: true
-
+# ...
 multi_repo:
   repos_file: repos.txt
   batch_operations: [status, sync, cleanup]
@@ -231,7 +224,7 @@ multi_repo:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | git-cli处理的内容输入 |,  |
 | content | string | 否 | git-cli处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -259,9 +252,8 @@ multi_repo:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -273,9 +265,9 @@ multi_repo:
 - **操作系统**:Windows / macOS / Linux
 - **运行时**:Git 2.20+ / Python 3.8+ / Bash
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Git 2.20+ | 运行时 | 必需 | git-scm.com 下载 |
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | Bash | 运行时 | 推荐 | 系统自带 |
@@ -287,7 +279,7 @@ multi_repo:
 
 ```bash
 ssh-keygen -t ed25519 -C "your@email.com"
-
+# ...
 git config --global credential.helper store
 ```
 
@@ -300,20 +292,6 @@ git config --global credential.helper store
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -353,7 +331,7 @@ git config --global credential.helper store
 
 ### Q3:支持多少个仓库批量管理?
 | 仓库数量 | 并行处理 | 耗时 |
-|:---------|:---------|:-----|
+|:------|------:|:------|
 | 1-10 | 串行 | <10s |
 | 10-50 | 并行 | 10-30s |
 | 50-100 | 并行 | 30-60s |
@@ -373,9 +351,8 @@ workflows:
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

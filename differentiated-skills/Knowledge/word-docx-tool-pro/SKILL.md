@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Word文档工具（专业版）
 
@@ -114,21 +116,11 @@ Word创建、Word读取、内容编辑、格式化、模板应用、目录生成
 
 `读取这个Word文档
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：模板应用
 
 使用模板生成Word文档。**示例指令**：`
 
 `用模板生成合同
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ Word创建、Word读取、内容编辑、格式化、模板应用、目录生成
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Word文档工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ Word创建、Word读取、内容编辑、格式化、模板应用、目录生成
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -168,7 +160,7 @@ from docx.shared import Inches, Pt, RGBColor, Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class WordSection:
     heading: str
@@ -176,12 +168,12 @@ class WordSection:
     content: str = ""
     style: str = ""
     table: Optional[dict] = None
-
+# ...
 class WordDocxEngine:
     def __init__(self, template_path: str = None):
         self.template_path = template_path
         self.doc = Document(template_path) if template_path else Document()
-
+# ...
     def create_from_sections(self, title: str,
                             sections: List[WordSection],
                             output_path: str) -> str:
@@ -198,7 +190,7 @@ class WordDocxEngine:
                 self._add_table(section.table)
         self.doc.save(output_path)
         return output_path
-
+# ...
     def read_document(self, file_path: str) -> dict:
         """读取Word文档（PRO 专属：完整解析）""
         doc = Document(file_path)
@@ -234,7 +226,7 @@ class WordDocxEngine:
             "modified": str(core_props.modified) if core_props.modified else ""
         }
         return result
-
+# ...
     def apply_template(self, template_path: str, data: dict,
                       output_path: str) -> str:
         """应用模板（PRO 专属：邮件合并）"""
@@ -254,7 +246,7 @@ class WordDocxEngine:
                                 para.text = para.text.replace(placeholder, str(value))
         doc.save(output_path)
         return output_path
-
+# ...
     def batch_create(self, templates: List[dict],
                     output_dir: str = "./output") -> List[str]:
         """批量创建（PRO 专属）"""
@@ -266,7 +258,7 @@ class WordDocxEngine:
             self.create_from_sections(tmpl["title"], sections, output_path)
             outputs.append(output_path)
         return outputs
-
+# ...
     def add_formatted_content(self, content_config: dict):
         """添加格式化内容（PRO 专属）"""
         if content_config.get("type") == "heading":
@@ -285,7 +277,7 @@ class WordDocxEngine:
         elif content_config.get("type") == "image":
             self.doc.add_picture(content_config["path"],
                                width=Inches(content_config.get("width", 6)))
-
+# ...
     def _add_table(self, table_config: dict):
         rows = len(table_config.get("data", []))
         cols = len(table_config["data"][0]) if rows else 0
@@ -295,16 +287,16 @@ class WordDocxEngine:
         for i, row_data in enumerate(table_config.get("data", [])):
             for j, cell_text in enumerate(row_data):
                 table.cell(i, j).text = str(cell_text)
-
+# ...
     def _add_table_of_contents(self):
         paragraph = self.doc.add_paragraph()
         run = paragraph.add_run("（目录将在Word中右键更新后显示）")
         run.italic = True
         run.font.size = Pt(10)
-
+# ...
     def save(self, output_path: str):
         self.doc.save(output_path)
-
+# ...
 engine = WordDocxEngine()
 engine.create_from_sections("项目报告", [
     WordSection(heading="概述", level=1, content="这是概述内容。"),
@@ -356,7 +348,7 @@ word_docx:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -368,7 +360,7 @@ word_docx:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -440,7 +432,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | python-docx | Python库 | 必需 | pip install python-docx |
 
@@ -454,9 +446,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

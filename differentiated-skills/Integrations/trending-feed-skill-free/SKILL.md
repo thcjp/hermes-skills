@@ -21,11 +21,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 热榜订阅（免费版）
 
 ## 概述
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-|------|------|-----------|
+|---|---|-----|
 | 页面抓取 | 抓取 GitHub Trending 默认页面 | 是 |
 | 语言过滤 | 按编程语言筛选热门仓库 | 是 |
 | 字段补全 | 调用 REST API 补全描述、星标、语言 | 是 |
@@ -117,7 +118,7 @@ python3 ~/.skill-platform/workspace/skills/trending-feed/（请参考skill目录
 ```text
 GitHub Trending · 今日热榜
 1. owner/repo - 描述 ⭐ 12345 | Python
-   
+# ...
 ```
 
 **Discord / Telegram**：
@@ -130,7 +131,7 @@ GitHub Trending 今日热榜
 ```text
 1. owner/repo (⭐ 12345 | Python)
    描述
-   
+# ...
 ```
 
 ## 示例
@@ -138,7 +139,7 @@ GitHub Trending 今日热榜
 ### 语言过滤参数
 
 | 参数值 | 含义 | 示例 |
-|--------|------|------|
+|:-----|:-----|:-----|
 | 不传 | 默认全语言热榜 | `fetch_trending.py` |
 | `python` | Python 项目 | `fetch_trending.py python` |
 | `javascript` | JavaScript 项目 | `fetch_trending.py javascript` |
@@ -209,7 +210,7 @@ A：免费版可将 JSON 输出重定向到本地文件，例如 `fetch_trending
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 |
 | Python 标准库 | 运行时 | 必需 | Python 自带（urllib / json / re） |
 | requests（可选） | Python 包 | 可选 | `pip install requests`，用于更稳定的 HTTP 请求 |
@@ -225,9 +226,8 @@ A：免费版可将 JSON 输出重定向到本地文件，例如 `fetch_trending
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

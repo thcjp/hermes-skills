@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 知识捕获工具（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `生成会议纪要
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：知识分类归档
 
 将提取的知识按主题自动分类归档。**示例指令**：`
 
 `归档这些知识
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 知识捕获工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -164,7 +156,7 @@ import re
 from typing import List, Dict, Optional
 from datetime import datetime
 from dataclasses import dataclass, field
-
+# ...
 @dataclass
 class KnowledgeItem:
     type: str
@@ -174,7 +166,7 @@ class KnowledgeItem:
     tags: List[str] = field(default_factory=list)
     confidence: float = 0.0
     related: List[str] = field(default_factory=list)
-
+# ...
 class KnowledgeCaptureEngine:
     def __init__(self):
         self.patterns = {
@@ -184,7 +176,7 @@ class KnowledgeCaptureEngine:
             "reference": [r"参考(.+?)", r"参见(.+?)", r"来源(.+?)"]
         }
         self.classifier = self._init_classifier()
-
+# ...
     def capture_from_conversation(self, conversation: str) -> List[KnowledgeItem]:
         """从对话提取知识（PRO 专属：多类型识别）"""
         items = []
@@ -195,7 +187,7 @@ class KnowledgeCaptureEngine:
             if item:
                 items.append(item)
         return items
-
+# ...
     def capture_from_meeting(self, transcript: str) -> dict:
         """从会议记录生成纪要（PRO 专属）"""
         items = self.capture_from_conversation(transcript)
@@ -208,7 +200,7 @@ class KnowledgeCaptureEngine:
             "total_items": len(items)
         }
         return summary
-
+# ...
     def batch_capture(self, conversations: List[str]) -> List[dict]:
         """批量捕获（PRO 专属）"""
         results = []
@@ -217,7 +209,7 @@ class KnowledgeCaptureEngine:
             results.append({"items": [i.__dict__ for i in items],
                           "count": len(items)})
         return results
-
+# ...
     def auto_classify_and_archive(self, items: List[KnowledgeItem],
                                   archive_path: str) -> Dict[str, int]:
         """自动分类归档（PRO 专属）"""
@@ -233,12 +225,12 @@ class KnowledgeCaptureEngine:
             (cat_dir / filename).write_text(item.content, encoding="utf-8")
             counts[category] = counts.get(category, 0) + 1
         return counts
-
+# ...
     def export_to_notion(self, items: List[KnowledgeItem], config: dict):
         """导出到Notion（PRO 专属）"""
         # 模拟导出
         return {"exported": len(items), "target": "notion"}
-
+# ...
     def _classify_line(self, line: str) -> Optional[KnowledgeItem]:
         for item_type, patterns in self.patterns.items():
             for pattern in patterns:
@@ -252,7 +244,7 @@ class KnowledgeCaptureEngine:
                         confidence=0.8
                     )
         return None
-
+# ...
     def _categorize(self, item: KnowledgeItem) -> str:
         if item.type == "decision":
             return "decisions"
@@ -261,10 +253,10 @@ class KnowledgeCaptureEngine:
         elif item.type == "question":
             return "questions"
         return "misc"
-
+# ...
     def _init_classifier(self):
         return {}
-
+# ...
 engine = KnowledgeCaptureEngine()
 items = engine.capture_from_conversation(
     "我们决定使用Kubernetes\n需要配置CI/CD\n为什么选择K8s"
@@ -309,7 +301,7 @@ knowledge_capture:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -321,7 +313,7 @@ knowledge_capture:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -393,7 +385,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -406,9 +398,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

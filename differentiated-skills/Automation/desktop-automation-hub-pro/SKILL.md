@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 桌面自动化中枢（专业版）
 
@@ -44,7 +46,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 桌面自动化中枢(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -95,10 +97,10 @@ pip install pyautogui pillow opencv-python pygetwindow
 
 ```python
 from desktop_automation_hub import DesktopController
-
+# ...
 # 专业版初始化（开启failsafe+审批模式）
 dc = DesktopController(failsafe=True, require_approval=False)
-
+# ...
 # 图像识别定位并点击
 location = dc.find_on_screen("submit_button.png", confidence=0.9)
 if location:
@@ -118,7 +120,7 @@ dc = DesktopController(
     default_wpm=80,            # 默认打字速度
     smooth_duration=0.3        # 默认鼠标平滑移动时间
 )
-
+# ...
 # 获取所有显示器信息
 monitors = dc.get_all_monitors()
 for i, mon in enumerate(monitors):
@@ -137,7 +139,7 @@ dc = DesktopController(
     log_file='automation.log', # 操作日志
     performance_mode='batch'   # 批量性能模式
 )
-
+# ...
 # 批量操作编排
 batch_ops = [
     {'action': 'click', 'args': (300, 200)},
@@ -160,7 +162,7 @@ dc.execute_batch(batch_ops, delay=0.1)
 基于OpenCV模板匹配，让Agent能"看见"屏幕元素：
 
 | 功能 | 方法 | 说明 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 模板匹配 | `find_on_screen(image_path, confidence=0.8)` | 在屏幕上查找指定图像 |
 | 多目标查找 | `find_all_on_screen(image_path, confidence=0.8)` | 查找所有匹配位置 |
 | 等待出现 | `wait_for_image(image_path, timeout=10)` | 等待图像出现 |
@@ -174,13 +176,13 @@ if location:
     dc.click(x + w//2, y + h//2)
 else:
     print("未找到登录按钮")
-
+# ...
 # 查找所有匹配项
 locations = dc.find_all_on_screen("checkbox.png", confidence=0.85)
 for loc in locations:
     x, y, w, h = loc
     dc.click(x + w//2, y + h//2)  # 勾选所有复选框
-
+# ...
 # 等待加载完成（最多等10秒）
 if dc.wait_for_image("dashboard_loaded.png", timeout=10):
     print("页面加载完成")
@@ -193,8 +195,8 @@ if dc.wait_for_image("dashboard_loaded.png", timeout=10):
 
 ### 二、高级多显示器管理（专业版独有）
 
-| 功能 | 方法 | 说明 |
-|------|------|------|
+| 功能(续)| 方法 | 说明 |
+|---:|---:|---:|
 | 显示器列表 | `get_all_monitors()` | 获取所有显示器信息 |
 | 指定显示器截图 | `screenshot_monitor(monitor_index)` | 截取指定显示器 |
 | 坐标映射 | `map_coordinate(monitor, x, y)` | 跨显示器坐标转换 |
@@ -204,10 +206,10 @@ if dc.wait_for_image("dashboard_loaded.png", timeout=10):
 monitors = dc.get_all_monitors()
 # 主显示器: 1920x1080 @ (0, 0)
 # 副显示器: 2560x1440 @ (1920, 0)
-
+# ...
 # 截取副显示器
 dc.screenshot_monitor(1, filename='monitor2.png')
-
+# ...
 # 在副显示器上操作
 dc.move_mouse(1920 + 500, 300)  # 副显示器上的(500, 300)
 dc.click()
@@ -219,8 +221,8 @@ dc.click()
 
 ### 三、窗口状态控制（专业版独有）
 
-| 功能 | 方法 | 说明 |
-|------|------|------|
+| 功能(续)(续)| 方法 | 说明 |
+|:-------:|:-------:|:-------:|
 | 最小化 | `minimize_window(title)` | 最小化指定窗口 |
 | 最大化 | `maximize_window(title)` | 最大化指定窗口 |
 | 还原 | `restore_window(title)` | 还原窗口状态 |
@@ -231,11 +233,11 @@ dc.click()
 ```python
 # 最大化Chrome窗口
 dc.maximize_window("Chrome")
-
+# ...
 # 获取窗口信息
 info = dc.get_window_info("VS Code")
 print(f"位置: ({info.x}, {info.y}), 尺寸: {info.width}x{info.height}")
-
+# ...
 # 将窗口移动到副显示器
 dc.move_window("Notion", 1920, 0)
 dc.resize_window("Notion", 1280, 800)
@@ -251,14 +253,14 @@ dc.resize_window("Notion", 1280, 800)
 
 ```python
 dc = DesktopController(require_approval=True)
-
+# ...
 # 配置需审批的操作类型
 dc.approval_actions = ['click', 'drag', 'type_text', 'hotkey']
-
+# ...
 # 执行时弹出确认提示
 dc.click(500, 500)
 # 提示: "允许点击(500, 500)? [y/n]"
-
+# ...
 # 批量操作可设置批量审批
 dc.execute_batch(ops, batch_approval=True)
 # 提示: "即将执行10个操作，是否全部允许? [y/n/a(逐个)]"
@@ -272,7 +274,7 @@ dc.execute_batch(ops, batch_approval=True)
 ### 五、性能优化（专业版独有）
 
 | 策略 | 方法 | 说明 |
-|------|------|------|
+|:------|------:|:------|
 | 批量执行 | `execute_batch(ops, delay=0)` | 批量执行操作序列 |
 | 坐标缓存 | `cache_position(name, x, y)` | 缓存常用坐标 |
 | 并行截图 | `parallel_screenshot(regions)` | 并行截取多个区域 |
@@ -286,13 +288,13 @@ ops = [
     {'action': 'press', 'args': ('enter',)},
 ]
 dc.execute_batch(ops, delay=0.05)
-
+# ...
 # 坐标缓存（避免重复计算）
 dc.cache_position('submit_btn', 500, 300)
 dc.cache_position('email_field', 300, 200)
 dc.click_cached('submit_btn')
 dc.click_cached('email_field')
-
+# ...
 # 并行截图
 regions = [(0, 0, 800, 600), (800, 0, 800, 600), (0, 600, 800, 600)]
 images = dc.parallel_screenshot(regions)
@@ -325,29 +327,29 @@ images = dc.parallel_screenshot(regions)
 
 ```python
 dc = DesktopController(failsafe=True, multi_monitor=True)
-
+# ...
 # 图像识别驱动的测试流程
 def test_checkout_flow():
     # 等待首页加载
     assert dc.wait_for_image("homepage_logo.png", timeout=15)
-
+# ...
     # 图像识别点击搜索框
     dc.click_image("search_box.png", confidence=0.9)
     dc.type_text("无线耳机", wpm=80)
-
+# ...
     # 等待搜索结果
     dc.wait_for_image("search_results.png", timeout=10)
-
+# ...
     # 点击第一个商品
     dc.click_image("first_product.png")
-
+# ...
     # 加入购物车
     dc.wait_for_image("add_to_cart.png", timeout=5)
     dc.click_image("add_to_cart.png")
-
+# ...
     # 截图保存测试证据
     dc.screenshot(filename='test_evidence_checkout.png')
-
+# ...
 test_checkout_flow()
 ```
 
@@ -365,7 +367,7 @@ dc = DesktopController(
     require_approval=True,      # 关键操作需审批
     log_file='rpa_finance.log'
 )
-
+# ...
 # 审批模式下的RPA流程
 def monthly_report_rpa():
     # 1. 从ERP导出
@@ -375,20 +377,20 @@ def monthly_report_rpa():
     dc.type_text("monthly_report.xlsx")
     dc.press('enter')
     dc.wait_for_image("export_complete.png", timeout=30)
-
+# ...
     # 2. 打开Excel处理
     dc.activate_window("Excel")
     dc.hotkey('ctrl', 'o')
     dc.type_text("monthly_report.xlsx")
     dc.press('enter')
-
+# ...
     # 3. 数据清洗
     dc.hotkey('ctrl', 'a')
     dc.hotkey('ctrl', 't')  # 创建表格
-
+# ...
     # 4. 截图保存报表
     dc.screenshot(filename='monthly_report_final.png')
-
+# ...
     # 5. 发送邮件
     dc.activate_window("Outlook")
     dc.hotkey('ctrl', 'n')  # 新邮件
@@ -397,7 +399,7 @@ def monthly_report_rpa():
     dc.type_text("月度财务报表")
     dc.press('tab')
     dc.hotkey('ctrl', 'v')  # 粘贴报表截图
-
+# ...
 monthly_report_rpa()
 ```
 
@@ -411,27 +413,27 @@ monthly_report_rpa()
 
 ```python
 dc = DesktopController(failsafe=True, multi_monitor=True)
-
+# ...
 # 双显示器协作工作流
 monitors = dc.get_all_monitors()
 # 主屏: 2560x1440 @ (0, 0) - 设计工作区
 # 副屏: 1920x1080 @ (2560, 0) - 参考资料
-
+# ...
 def design_workflow():
     # 在主屏打开设计软件
     dc.activate_window("Figma")
-
+# ...
     # 截取副屏的参考资料
     ref_img = dc.screenshot_monitor(1)
-
+# ...
     # 将参考图粘贴到主屏的设计软件
     dc.copy_to_clipboard_image(ref_img)
     dc.activate_window("Figma")
     dc.hotkey('ctrl', 'v')
-
+# ...
     # 在主屏截取设计稿
     dc.screenshot_monitor(0, filename='design_draft.png')
-
+# ...
 design_workflow()
 ```
 
@@ -449,24 +451,24 @@ dc = DesktopController(
     require_approval=True,
     approval_actions=['click', 'type_text', 'hotkey']
 )
-
+# ...
 # 审批模式下的运维操作
 def prod_maintenance():
     dc.activate_window("SSH Terminal")
-
+# ...
     # 输入重启命令（需审批）
     dc.type_text("sudo systemctl restart nginx")
     dc.press('enter')
     # 弹出审批: "允许输入命令? [y/n]"
-
+# ...
     # 等待服务重启
     dc.pause(5)
-
+# ...
     # 验证服务状态
     dc.type_text("sudo systemctl status nginx")
     dc.press('enter')
     dc.screenshot(filename='nginx_status.png')
-
+# ...
 prod_maintenance()
 ```
 
@@ -480,7 +482,7 @@ prod_maintenance()
 
 ```python
 dc = DesktopController(failsafe=True, multi_monitor=True)
-
+# ...
 # 批量截图工作流
 screenshots = [
     ("main_menu", "main_menu.png"),
@@ -488,7 +490,7 @@ screenshots = [
     ("user_profile", "profile.png"),
     ("dashboard", "dashboard.png"),
 ]
-
+# ...
 for name, template in screenshots:
     # 图像识别定位界面元素
     if dc.wait_for_image(template, timeout=5):
@@ -508,15 +510,15 @@ for name, template in screenshots:
 
 ```python
 dc = DesktopController(failsafe=True, coordinate_cache=True)
-
+# ...
 # 缓存常用坐标
 dc.cache_position('export_btn', 150, 400)
 dc.cache_position('search_field', 300, 200)
 dc.cache_position('import_btn', 200, 500)
-
+# ...
 # 批量迁移
 record_ids = ["REC001", "REC002", "REC003"]
-
+# ...
 for record_id in record_ids:
     # 旧系统导出
     dc.activate_window("Legacy System")
@@ -526,7 +528,7 @@ for record_id in record_ids:
     dc.wait_for_image("record_loaded.png", timeout=5)
     dc.click_cached('export_btn')
     dc.hotkey('ctrl', 'c')
-
+# ...
     # 新系统导入
     dc.activate_window("New System")
     dc.click_cached('import_btn')
@@ -542,7 +544,7 @@ for record_id in record_ids:
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|---:|:---|---:|---:|
 | 测试工程师 | GUI自动化测试 | 图像识别+等待+截图 | 健壮的视觉驱动测试 |
 | 财务自动化 | RPA报表流程 | 审批模式+批量+日志 | 安全可追溯的流程编排 |
 | 设计师 | 多显示器工作流 | 多显示器+截图+剪贴板 | 双屏协作效率提升 |
@@ -591,7 +593,7 @@ for record_id in record_ids:
 ```bash
 # 在CI流水线中运行GUI测试
 python -m pytest tests/gui/ --browser=chrome --report=screenshots/
-
+# ...
 # 测试失败时自动截图
 python gui_test.py --on-failure="screenshot --filename=failed_{test_name}"
 ```
@@ -600,13 +602,13 @@ python gui_test.py --on-failure="screenshot --filename=failed_{test_name}"
 
 ```python
 import pytest
-
+# ...
 @pytest.fixture
 def desktop():
     dc = DesktopController(failsafe=True)
     yield dc
     dc.cleanup()
-
+# ...
 def test_login(desktop):
     desktop.activate_window("MyApp")
     desktop.click_image("username_field.png")
@@ -622,12 +624,12 @@ def test_login(desktop):
 ```python
 # 定期截图监控仪表盘
 import schedule
-
+# ...
 def monitor_dashboard():
     dc = DesktopController(failsafe=True)
     dc.activate_window("Monitoring Dashboard")
     dc.screenshot(filename=f'monitor_{datetime.now().strftime("%H%M")}.png')
-
+# ...
 schedule.every(5).minutes.do(monitor_dashboard)
 ```
 
@@ -650,7 +652,7 @@ schedule.every(5).minutes.do(monitor_dashboard)
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:------:|--------|:-------|
 | 1.0.0 | 2026-01 | 初版发布，含完整六大模块+五大高级功能 |
 
 ---
@@ -663,9 +665,8 @@ schedule.every(5).minutes.do(monitor_dashboard)
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|----|:--:|---:|----|:--:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -725,7 +726,7 @@ schedule.every(5).minutes.do(monitor_dashboard)
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|----|----|----|
 | 图像识别找不到目标 | 模板过期/置信度过高/DPI缩放 | 重新截取模板；降低confidence至0.8；检查DPI设置 | 高 |
 | 多显示器坐标偏移 | 显示器布局配置错误 | 用 `get_all_monitors` 确认布局；使用绝对坐标 | 高 |
 | 审批模式卡住等待 | 用户未响应确认 | 设置超时自动拒绝；使用 `set_approval_mode('auto')` | 中 |
@@ -749,7 +750,7 @@ schedule.every(5).minutes.do(monitor_dashboard)
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | PyAutoGUI | Python库 | 必需 | `pip install pyautogui` |
 | Pillow | Python库 | 必需 | `pip install pillow` |
 | OpenCV | Python库 | 专业版必需 | `pip install opencv-python` |
@@ -816,7 +817,7 @@ schedule.every(5).minutes.do(monitor_dashboard)
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|---:|---:|---:|---:|
 | 免费体验版 | ¥0 | 核心五大模块（鼠标/键盘/截图/窗口/剪贴板）+ 基础示例 + 基础FAQ | 个人试用、轻量自动化 |
 | 收费专业版 | ¥29.9/月 | 全功能（核心+图像识别+多显示器+窗口控制+审批+性能优化）+ 多角色指南 + 性能优化 + 优先支持 | 团队/企业、复杂自动化场景 |
 

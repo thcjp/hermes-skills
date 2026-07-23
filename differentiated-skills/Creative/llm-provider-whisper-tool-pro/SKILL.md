@@ -32,6 +32,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Whisper 语音转文字工具 - 专业版
 
@@ -46,7 +48,7 @@ Whisper 语音转文字工具(专业版)在免费版(`llm-provider-whisper-tool-
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 | 增量价值 |
-|:-----|:-------|:-------|:---------|
+|---|---|---|----|
 | 单文件转录 | 支持 | 支持 | - |
 | 输出格式 | txt/srt/vtt/json | 全格式 + 自定义 | - |
 | 翻译模式 | 支持 | 支持 | - |
@@ -91,13 +93,13 @@ import os
 import glob
 import whisper
 import json
-
+# ...
 # 加载 GPU 加速模型
 model = whisper.load_model("medium", device="cuda")
-
+# ...
 # 批量处理目录
 audio_files = glob.glob("/data/meetings/2026-07/*.m4a")
-
+# ...
 results = []
 for audio_path in audio_files:
     # 转录并指定语言
@@ -107,11 +109,11 @@ for audio_path in audio_files:
         task="transcribe",
         initial_prompt="以下是会议录音,涉及产品、技术、市场等议题。"
     )
-
+# ...
     # 说话人分离(需集成 pyannote)
     from diarization import assign_speakers
     result = assign_speakers(result, audio_path)
-
+# ...
     # 提取关键信息
     meeting_date = os.path.basename(audio_path).split(".")[0]
     results.append({
@@ -121,7 +123,7 @@ for audio_path in audio_files:
         "transcript": result["text"],
         "segments": result["segments"]
     })
-
+# ...
 # 输出结构化纪要
 with open("meeting_summaries.json", "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
@@ -134,21 +136,21 @@ with open("meeting_summaries.json", "w", encoding="utf-8") as f:
 ```bash
 #!/bin/bash
 # batch_subtitle.sh - 批量字幕生成
-
+# ...
 VIDEO_DIR="/data/videos"
 OUTPUT_DIR="/data/subtitles"
 MODEL="large-v3"
 LANGUAGES=("zh" "en")
-
+# ...
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 for video in "$VIDEO_DIR"/*.mp4; do
     basename=$(basename "$video" .mp4)
-
+# ...
     # 提取音频
     ffmpeg -y -i "$video" -vn -acodec pcm_s16le -ar 16000 -ac 1 \
         "/tmp/${basename}.wav"
-
+# ...
     # 多语言字幕生成
     for lang in "${LANGUAGES[@]}"; do
         whisper "/tmp/${basename}.wav" \
@@ -159,7 +161,7 @@ for video in "$VIDEO_DIR"/*.mp4; do
             --device cuda \
             --initial_prompt "专业视频字幕,术语准确。"
     done
-
+# ...
     rm "/tmp/${basename}.wav"
     echo "[完成] $basename"
 done
@@ -175,16 +177,16 @@ from fastapi.responses import JSONResponse
 import whisper
 import tempfile
 import os
-
+# ...
 app = FastAPI(title="Whisper 转录服务", version="1.0.0")
-
+# ...
 # 预加载模型(启动时加载到 GPU)
 models = {
     "small": whisper.load_model("small", device="cuda"),
     "medium": whisper.load_model("medium", device="cuda"),
     "large": whisper.load_model("large-v3", device="cuda"),
 }
-
+# ...
 @app.post("/transcribe")
 async def transcribe(
     file: UploadFile = File(...),
@@ -198,7 +200,7 @@ async def transcribe(
         content = await file.read()
         tmp.write(content)
         tmp_path = tmp.name
-
+# ...
     try:
         model = models.get(model_name, models["medium"])
         result = model.transcribe(
@@ -215,7 +217,7 @@ async def transcribe(
         })
     finally:
         os.remove(tmp_path)
-
+# ...
 # 启动: uvicorn server:app --host 127.0.0.1 --port 8000
 ```
 
@@ -244,15 +246,15 @@ async def transcribe(
 ```bash
 # 基础依赖(同免费版)
 pip install -U llm-provider-whisper
-
+# ...
 # GPU 加速(根据硬件选择)
 pip install torch --index-url https://download.pytorch.org/whl/cu121  # NVIDIA CUDA
 # 或
 pip install torch  # Apple Silicon 自动使用 MPS
-
+# ...
 # 说话人分离
 pip install pyannote.audio
-
+# ...
 # API 服务化
 pip install fastapi uvicorn python-multipart
 ```
@@ -285,7 +287,7 @@ done
 ```python
 # 法律领域术语
 legal_prompt = "以下是法律庭审录音,涉及原告、被告、审判长、诉讼请求、证据质证、法庭辩论等术语。"
-
+# ...
 result = model.transcribe(
     "court_hearing.wav",
     language="zh",
@@ -298,24 +300,24 @@ result = model.transcribe(
 ```python
 class WhisperModelManager:
     """多模型管理器,支持预加载与热切换"""
-
+# ...
     def __init__(self, device="cuda"):
         self.device = device
         self._cache = {}
-
+# ...
     def get_model(self, name):
         if name not in self._cache:
             print(f"加载模型 {name}...")
             self._cache[name] = whisper.load_model(name, device=self.device)
         return self._cache[name]
-
+# ...
     def preload(self, names):
         for name in names:
             self.get_model(name)
-
+# ...
     def clear(self):
         self._cache.clear()
-
+# ...
 manager = WhisperModelManager(device="cuda")
 manager.preload(["small", "medium", "large-v3"])
 ```
@@ -356,21 +358,21 @@ result = transcribe_batched(model, audio_path, batch_size=16)
 
 ```python
 from pyannote.audio import Pipeline
-
+# ...
 pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1")
-
+# ...
 def transcribe_with_speakers(model, audio_path, num_speakers=None):
     # 1. Whisper 转录
     result = model.transcribe(audio_path, language="zh")
-
+# ...
     # 2. pyannote 分离
     diarization = pipeline(audio_path, num_speakers=num_speakers)
-
+# ...
     # 3. 合并结果
     for segment in result["segments"]:
         speaker = diarization.get_timeline_for(segment["start"], segment["end"])
         segment["speaker"] = f"说话人{speaker}" if speaker else "未知"
-
+# ...
     return result
 ```
 
@@ -449,7 +451,7 @@ def assess_quality(result):
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | llm-provider-whisper | Python 库 | 必需 | `pip install -U llm-provider-whisper` |
 | ffmpeg | 系统工具 | 必需 | `brew install ffmpeg` / `apt install ffmpeg` |
 | PyTorch (CUDA) | Python 库 | 推荐(GPU) | `pip install torch --index-url .../cu121` |
@@ -471,9 +473,8 @@ def assess_quality(result):
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

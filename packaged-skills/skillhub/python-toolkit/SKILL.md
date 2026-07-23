@@ -30,27 +30,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Python工具箱(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 与免费版差异 | 不支持 | 支持 |
-| PEP 8 + Pythonic | 不支持 | 支持 |
-| 与免费版一致 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | PEP 8 + Pythonic | 核心风格规范 | 与免费版一致 |
 | 类型系统 | 泛型、Protocol、TypedDict、overload、ParamSpec | 免费版仅基础注解 |
 | 异步优秀实践 | asyncio、并发控制、取消、超时、背压 | 免费版无 |
@@ -120,7 +122,7 @@ jobs:
 ```python
 import asyncio
 from collections.abc import AsyncIterator
-
+# ...
 async def fetch_batch(
     ids: list[int],
     *,
@@ -128,28 +130,28 @@ async def fetch_batch(
     timeout: float = 5.0,
 ) -> AsyncIterator[dict]:
     """并发获取数据,限制并发数与超时。
-
+# ...
     Args:
         ids: 待获取的ID列表。
         concurrency: 最大并发数。
         timeout: 单次请求超时秒数。
-
+# ...
     Yields:
         每个ID对应的结果。
     """
     semaphore = asyncio.Semaphore(concurrency)
-
+# ...
     async def fetch_one(item_id: int) -> dict:
         async with semaphore:
             try:
                 return await asyncio.wait_for(_do_fetch(item_id), timeout=timeout)
             except TimeoutError:
                 return {"id": item_id, "error": "timeout"}
-
+# ...
     results = await asyncio.gather(*(fetch_one(i) for i in ids))
     for result in results:
         yield result
-
+# ...
 async def _do_fetch(item_id: int) -> dict:
     # 实际的异步获取逻辑
     ...
@@ -161,44 +163,44 @@ async def _do_fetch(item_id: int) -> dict:
 ```python
 from typing import Protocol, TypedDict, overload, runtime_checkable
 from collections.abc import Sequence
-
+# ...
 class UserDTO(TypedDict):
     id: str
     name: str
     active: bool
-
+# ...
 @runtime_checkable
 class UserRepository(Protocol):
     """用户仓储协议,定义存储层契约。"""
-
+# ...
     def get(self, user_id: str) -> UserDTO | None:
         ...
-
+# ...
     def list(self, *, offset: int = 0, limit: int = 20) -> Sequence[UserDTO]:
         ...
-
+# ...
 class InMemoryUserRepository:
     """内存实现,用于测试与本地开发。"""
-
+# ...
     def __init__(self) -> None:
         self._store: dict[str, UserDTO] = {}
-
+# ...
     def get(self, user_id: str) -> UserDTO | None:
         return self._store.get(user_id)
-
+# ...
     def list(self, *, offset: int = 0, limit: int = 20) -> Sequence[UserDTO]:
         items = list(self._store.values())
         return items[offset : offset + limit]
-
+# ...
 class UserService:
     def __init__(self, repo: UserRepository) -> None:
         self._repo = repo
-
+# ...
     @overload
     def find(self, user_id: str) -> UserDTO: ...
     @overload
     def find(self, user_id: list[str]) -> list[UserDTO]: ...
-
+# ...
     def find(self, user_id):
         if isinstance(user_id, str):
             return self._repo.get(user_id)
@@ -248,7 +250,7 @@ repos:
 [tool.ruff]
 line-length = 100
 target-version = "py312"
-
+# ...
 [tool.ruff.lint]
 select = [
     "E", "W",      # pycodestyle
@@ -263,7 +265,7 @@ select = [
 ignore = [
     "E501",        # 行长由formatter处理
 ]
-
+# ...
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S101"]  # 测试允许assert
 [tool.mypy]
@@ -272,11 +274,11 @@ strict = true
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
-
+# ...
 [[tool.mypy.overrides]]
 module = "tests.*"
 disallow_untyped_defs = false
-
+# ...
 [tool.pytest.ini_options]
 addopts = "--cov=src --cov-fail-under=85 --cov-report=html --cov-report=term"
 testpaths = ["tests"]
@@ -287,7 +289,7 @@ asyncio_mode = "auto"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | python-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -334,9 +336,8 @@ asyncio_mode = "auto"
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -351,7 +352,7 @@ asyncio_mode = "auto"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | python.org 下载 |
 | ruff | 命令行工具 | 推荐 | `pip install ruff` |
@@ -376,25 +377,25 @@ asyncio_mode = "auto"
 ### 性能profiling脚本
 ```python
 """性能分析脚本:定位热点函数。"""
-
+# ...
 import cProfile
 import pstats
 from io import StringIO
 from pathlib import Path
-
+# ...
 def profile_function(func, *args, **kwargs) -> str:
     """分析函数性能并返回报告。"""
     profiler = cProfile.Profile()
     profiler.enable()
     func(*args, **kwargs)
     profiler.disable()
-
+# ...
     stream = StringIO()
     stats = pstats.Stats(profiler, stream=stream)
     stats.sort_stats("cumulative")
     stats.print_stats(20)
     return stream.getvalue()
-
+# ...
 # 使用示例
 if __name__ == "__main__":
     from myapp.batch_processor import process_large_dataset
@@ -406,7 +407,7 @@ if __name__ == "__main__":
 ### 异步测试fixture
 ```python
 import pytest
-
+# ...
 @pytest.fixture
 async def db_session():
     """异步数据库会话fixture,自动清理。"""
@@ -415,7 +416,7 @@ async def db_session():
         yield session
     finally:
         await session.close()
-
+# ...
 @pytest.mark.asyncio
 async def test_concurrent_fetch(db_session):
     """测试并发获取,验证并发安全。"""
@@ -445,9 +446,8 @@ async def test_concurrent_fetch(db_session):
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

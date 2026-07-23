@@ -20,6 +20,8 @@ tools:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # MCP服务器构建器
 
@@ -36,7 +38,7 @@ pricing_model: "monthly"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
+|---|---|---|
 | API集成 | 外部API文档+调用需求 | 包装为MCP工具的Python/TS服务器代码,输出到`output/{server-name}/src/` |
 | 数据库访问 | 数据库schema+查询需求 | 安全的数据库MCP服务器(参数化查询+权限控制),输出到`output/{server-name}/src/` |
 | 文件系统集成 | 文件操作需求 | 文件系统MCP服务器(读写+路径校验),输出到`output/{server-name}/src/` |
@@ -89,7 +91,7 @@ pricing_model: "monthly"
 **输入**:
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | MCP服务器构建器处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -103,17 +105,17 @@ pricing_model: "monthly"
 from fastmcp import FastMCP
 import httpx
 import logging
-
+# ...
 logger = logging.getLogger(__name__)
 mcp = FastMCP("weather-server")
-
+# ...
 @mcp.tool()
 def get_weather(city: str) -> dict:
     """获取指定城市的天气
-    
+# ...
     Args:
         city: 城市名称,如"北京"、"上海"
-    
+# ...
     Returns:
         包含城市、温度、天气描述的字典
     """
@@ -129,7 +131,7 @@ def get_weather(city: str) -> dict:
     except Exception as e:
         logger.exception("Unexpected error")
         return {"success": False, "error": "INTERNAL_ERROR", "message": "查询失败"}
-
+# ...
 if __name__ == "__main__":
     mcp.run()
 ```
@@ -146,10 +148,10 @@ if __name__ == "__main__":
 import { McpServer } from "@modelcontextprotocol/sdk/server";
 import { z } from "zod";
 import { Database } from "better-sqlite3";
-
+// ...
 const db = new Database("app.db");
 const server = new McpServer({ name: "db-server", version: "1.0.0" });
-
+// ...
 server.tool(
   "get_user",
   { id: z.number().int().positive() },
@@ -162,7 +164,7 @@ server.tool(
     return { content: [{ type: "text", text: JSON.stringify(user, null, 2) }] };
   }
 );
-
+// ...
 server.tool(
   "list_users",
   { limit: z.number().int().min(1).max(100).default(10) },
@@ -171,14 +173,14 @@ server.tool(
     return { content: [{ type: "text", text: JSON.stringify(users, null, 2) }] };
   }
 );
-
+// ...
 server.run();
 ```
 
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|:---:|:---:|:---:|
 | 工具参数校验失败 | 输入不符合JSON Schema | 返回`VALIDATION_FAILED`错误码+具体字段错误信息 |
 | 外部API调用超时 | 网络延迟或服务不可达 | 设置timeout(默认10s),超时返回`TIMEOUT`错误,支持重试 |
 | 认证令牌失效 | OAuth token过期或API Key无效 | 返回`AUTH_FAILED`,提示重新认证,不暴露Key细节 |
@@ -194,9 +196,9 @@ server.run();
 - **操作系统**: Windows / macOS / Linux
 - **运行时**: 需要Agent支持exec(命令行执行)能力
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 国内替代方案 |
-|:-------|:-----|:---------|:---------|:-------------|
+|:------|------:|:------|:------|------:|
 | Python 3.10+ | 运行时 | 可选 | FastMCP框架(pip install fastmcp) | 清华源:`-i https://pypi.tuna.tsinghua.edu.cn/simple` |
 | Node.js 18+ | 运行时 | 可选 | MCP SDK(npm install @modelcontextprotocol/sdk) | cnpm/tnpm:`cnpm install @modelcontextprotocol/sdk` |
 | LLM API | API | 可选 | 由Agent内置LLM提供代码生成 | 国内Agent(通义/文心/智谱)均可 |
@@ -248,15 +250,15 @@ server.run();
 import { McpServer } from "@modelcontextprotocol/sdk/server";
 import { z } from "zod";
 import { WebClient } from "@slack/web-api";
-
+// ...
 const slackToken = process.env.SLACK_BOT_TOKEN;
 if (!slackToken) {
   throw new Error("SLACK_BOT_TOKEN environment variable is required");
 }
-
+// ...
 const client = new WebClient(slackToken);
 const server = new McpServer({ name: "slack-server", version: "1.0.0" });
-
+// ...
 // 速率限制:每分钟最多20次调用
 const rateLimiter = new Map<string, { count: number; resetAt: number }>();
 function checkRateLimit(userId: string): boolean {
@@ -272,7 +274,7 @@ function checkRateLimit(userId: string): boolean {
   entry.count++;
   return true;
 }
-
+// ...
 // 工具1: 发送消息
 server.tool(
   "send_message",
@@ -310,7 +312,7 @@ server.tool(
     }
   }
 );
-
+// ...
 // 工具2: 列出频道
 server.tool(
   "list_channels",
@@ -338,7 +340,7 @@ server.tool(
     }
   }
 );
-
+// ...
 // 工具3: 搜索消息
 server.tool(
   "search_messages",
@@ -365,7 +367,7 @@ server.tool(
     }
   }
 );
-
+// ...
 server.run();
 ```
 
@@ -373,11 +375,11 @@ server.run();
 ```typescript
 // OAuth 2.0 认证模块
 import { URLSearchParams } from "url";
-
+// ...
 const CLIENT_ID = process.env.SLACK_CLIENT_ID!;
 const CLIENT_SECRET = process.env.SLACK_CLIENT_SECRET!;
 const REDIRECT_URI = process.env.SLACK_REDIRECT_URI!;
-
+// ...
 export async function exchangeCodeForToken(code: string): Promise<string> {
   const params = new URLSearchParams({
     client_id: CLIENT_ID,
@@ -399,9 +401,9 @@ export async function exchangeCodeForToken(code: string): Promise<string> {
 **LLM生成输出** (`output/slack-server/tools.md`):
 ```markdown
 # Slack MCP Server 工具清单
-
+# ...
 | 工具名 | 参数 | 返回 | 认证 |
-|:-------|:-----|:-----|:-----|
+|---:|:---|---:|---:|
 | send_message | channel, text | {ok, ts, channel} | Slack Bot Token |
 | list_channels | limit | [{id, name, is_private, num_members}] | Slack Bot Token |
 | search_messages | query, count | [{channel, user, text, timestamp, permalink}] | Slack付费计划 |
@@ -427,13 +429,13 @@ from fastmcp import FastMCP
 from pathlib import Path
 import os
 import logging
-
+# ...
 logger = logging.getLogger(__name__)
 mcp = FastMCP("filesystem-server")
-
+# ...
 # 允许的根目录(通过环境变量配置)
 ALLOWED_ROOT = Path(os.environ.get("FS_ALLOWED_ROOT", "./workspace")).resolve()
-
+# ...
 def validate_path(file_path: str) -> Path:
     """验证路径在允许的根目录内,防止目录穿越攻击"""
     target = (ALLOWED_ROOT / file_path).resolve()
@@ -441,14 +443,14 @@ def validate_path(file_path: str) -> Path:
     if not str(target).startswith(str(ALLOWED_ROOT)):
         raise ValueError(f"路径超出允许范围: {file_path}")
     return target
-
+# ...
 @mcp.tool()
 def read_file(path: str) -> dict:
     """读取指定路径的文件内容
-
+# ...
     Args:
         path: 相对于根目录的文件路径,如 "docs/readme.md"
-
+# ...
     Returns:
         包含文件内容和元信息的字典
     """
@@ -456,12 +458,12 @@ def read_file(path: str) -> dict:
         target = validate_path(path)
     except ValueError as e:
         return {"success": False, "error": "PATH_VIOLATION", "message": str(e)}
-
+# ...
     if not target.exists():
         return {"success": False, "error": "NOT_FOUND", "message": f"文件不存在: {path}"}
     if not target.is_file():
         return {"success": False, "error": "NOT_A_FILE", "message": f"路径不是文件: {path}"}
-
+# ...
     try:
         content = target.read_text(encoding="utf-8")
         return {
@@ -475,11 +477,11 @@ def read_file(path: str) -> dict:
     except Exception as e:
         logger.exception("Read file error")
         return {"success": False, "error": "INTERNAL_ERROR", "message": "读取文件失败"}
-
+# ...
 @mcp.tool()
 def write_file(path: str, content: str) -> dict:
     """写入内容到指定路径的文件
-
+# ...
     Args:
         path: 相对于根目录的文件路径
         content: 文件内容
@@ -488,7 +490,7 @@ def write_file(path: str, content: str) -> dict:
         target = validate_path(path)
     except ValueError as e:
         return {"success": False, "error": "PATH_VIOLATION", "message": str(e)}
-
+# ...
     try:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(content, encoding="utf-8")
@@ -498,11 +500,11 @@ def write_file(path: str, content: str) -> dict:
     except Exception as e:
         logger.exception("Write file error")
         return {"success": False, "error": "INTERNAL_ERROR", "message": "写入文件失败"}
-
+# ...
 @mcp.tool()
 def list_directory(path: str = ".") -> dict:
     """列出指定目录的内容
-
+# ...
     Args:
         path: 相对于根目录的目录路径,默认为根目录
     """
@@ -510,12 +512,12 @@ def list_directory(path: str = ".") -> dict:
         target = validate_path(path)
     except ValueError as e:
         return {"success": False, "error": "PATH_VIOLATION", "message": str(e)}
-
+# ...
     if not target.exists():
         return {"success": False, "error": "NOT_FOUND", "message": f"目录不存在: {path}"}
     if not target.is_dir():
         return {"success": False, "error": "NOT_A_DIRECTORY", "message": f"路径不是目录: {path}"}
-
+# ...
     try:
         entries = []
         for item in sorted(target.iterdir()):
@@ -530,7 +532,7 @@ def list_directory(path: str = ".") -> dict:
     except Exception as e:
         logger.exception("List directory error")
         return {"success": False, "error": "INTERNAL_ERROR", "message": "列目录失败"}
-
+# ...
 if __name__ == "__main__":
     mcp.run()
 ```
@@ -555,16 +557,16 @@ import { McpServer } from "@modelcontextprotocol/sdk/server";
 import { z } from "zod";
 import { Pool } from "pg";
 import { writeFileSync, appendFileSync } from "fs";
-
+// ...
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   max: 10,
   idleTimeoutMillis: 30000,
 });
-
+// ...
 const AUDIT_LOG = process.env.AUDIT_LOG_PATH || "./audit.log";
 const server = new McpServer({ name: "pg-server", version: "1.0.0" });
-
+// ...
 // 审计日志
 function auditLog(tool: string, params: object, result: string) {
   const entry = JSON.stringify({
@@ -575,7 +577,7 @@ function auditLog(tool: string, params: object, result: string) {
   });
   appendFileSync(AUDIT_LOG, entry + "\n", "utf-8");
 }
-
+// ...
 // 只允许SELECT查询的安全检查
 function validateReadOnlyQuery(sql: string): boolean {
   const normalized = sql.trim().toUpperCase();
@@ -583,7 +585,7 @@ function validateReadOnlyQuery(sql: string): boolean {
     !normalized.includes("UPDATE") && !normalized.includes("DELETE") &&
     !normalized.includes("DROP") && !normalized.includes("ALTER");
 }
-
+// ...
 // 工具1: 按条件查询用户(分页)
 server.tool(
   "query_users",
@@ -598,7 +600,7 @@ server.tool(
     const conditions: string[] = [];
     const params: (string | number)[] = [];
     let paramIndex = 1;
-
+// ...
     if (status !== "all") {
       conditions.push(`status = $${paramIndex++}`);
       params.push(status);
@@ -608,14 +610,14 @@ server.tool(
       params.push(role);
     }
     const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "";
-
+// ...
     try {
       const query = `SELECT id, name, email, role, status, created_at FROM users ${whereClause} ORDER BY created_at DESC LIMIT $${paramIndex++} OFFSET $${paramIndex++}`;
       params.push(page_size, offset);
-
+// ...
       const result = await pool.query(query, params);
       const totalResult = await pool.query(`SELECT COUNT(*) FROM users ${whereClause}`, params.slice(0, -2));
-
+// ...
       const response = {
         users: result.rows,
         pagination: {
@@ -636,7 +638,7 @@ server.tool(
     }
   }
 );
-
+// ...
 // 工具2: 按ID查询单个用户
 server.tool(
   "get_user_by_id",
@@ -661,7 +663,7 @@ server.tool(
     }
   }
 );
-
+// ...
 // 工具3: 统计用户总数
 server.tool(
   "count_users",
@@ -685,7 +687,7 @@ server.tool(
     }
   }
 );
-
+// ...
 server.run();
 ```
 
@@ -708,32 +710,32 @@ from fastmcp import FastMCP
 import httpx
 import os
 import logging
-
+# ...
 logger = logging.getLogger(__name__)
 mcp = FastMCP("ticket-server")
-
+# ...
 API_BASE = os.environ.get("TICKET_API_BASE", "http://internal-api:8080")
 VALID_TOKENS = os.environ.get("VALID_BEARER_TOKENS", "").split(",")
-
+# ...
 def auth_middleware(token: str) -> bool:
     """验证Bearer Token"""
     return token in VALID_TOKENS
-
+# ...
 @mcp.tool()
 def create_ticket(title: str, description: str, priority: str = "normal") -> dict:
     """创建内部工单
-
+# ...
     Args:
         title: 工单标题,最多100字符
         description: 工单描述
         priority: 优先级(low/normal/high/urgent),默认normal
-
+# ...
     Returns:
         包含工单ID和状态的字典
     """
     if priority not in ("low", "normal", "high", "urgent"):
         return {"success": False, "error": "VALIDATION_FAILED", "message": f"无效优先级: {priority}"}
-
+# ...
     token = os.environ.get("INTERNAL_API_TOKEN", "")
     try:
         response = httpx.post(
@@ -753,18 +755,18 @@ def create_ticket(title: str, description: str, priority: str = "normal") -> dic
     except Exception as e:
         logger.exception("Create ticket error")
         return {"success": False, "error": "INTERNAL_ERROR", "message": "创建工单失败"}
-
+# ...
 @mcp.tool()
 def update_ticket_status(ticket_id: str, status: str) -> dict:
     """更新工单状态
-
+# ...
     Args:
         ticket_id: 工单ID
         status: 新状态(open/in_progress/resolved/closed)
     """
     if status not in ("open", "in_progress", "resolved", "closed"):
         return {"success": False, "error": "VALIDATION_FAILED", "message": f"无效状态: {status}"}
-
+# ...
     token = os.environ.get("INTERNAL_API_TOKEN", "")
     try:
         response = httpx.patch(
@@ -782,7 +784,7 @@ def update_ticket_status(ticket_id: str, status: str) -> dict:
     except Exception as e:
         logger.exception("Update ticket error")
         return {"success": False, "error": "INTERNAL_ERROR", "message": "更新工单失败"}
-
+# ...
 # 资源暴露: 工单列表
 @mcp.resource("ticket://list")
 def list_tickets() -> str:
@@ -798,7 +800,7 @@ def list_tickets() -> str:
         return response.text
     except Exception as e:
         return f'{{"error": "RESOURCE_UNAVAILABLE", "message": "无法获取工单列表"}}'
-
+# ...
 # 资源暴露: 工单详情
 @mcp.resource("ticket://detail/{ticket_id}")
 def get_ticket_detail(ticket_id: str) -> str:
@@ -816,7 +818,7 @@ def get_ticket_detail(ticket_id: str) -> str:
         return response.text
     except Exception as e:
         return f'{{"error": "RESOURCE_UNAVAILABLE", "message": "无法获取工单详情"}}'
-
+# ...
 if __name__ == "__main__":
     mcp.run()
 ```

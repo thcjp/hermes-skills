@@ -22,25 +22,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 股票筛选专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 股票筛选专业版历史回测与批量导出 | 不支持 | 支持 |
+| DCF估值建模与敏感性分析 | 不支持 | 支持 |
+| 财务舞弊识别(Beneish M-Score) | 不支持 | 支持 |
+| 批量财报处理与自动化报告 | 不支持 | 支持 |
+| 行业基准对比与跨期趋势分析 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### PRO版功能增强对比
 | 功能 | 免费版 | PRO版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 市场覆盖 | 仅A股 | A股/美股/港股/ETF |
 | 策略组合 | 单策略AND | 多策略AND/OR嵌套 |
 | 自定义公式 | 不支持 | Python表达式 |
@@ -100,7 +102,7 @@ python3 （请参考skill目录中的脚本文件） \
   --conditions "pe<20,roe>15" \
   --export \
   --output multi_market_stocks.xlsx
-
+# ...
 # 输出包含：
 # - A股符合条件的股票列表
 # - 美股符合条件的股票列表
@@ -119,7 +121,7 @@ python3 （请参考skill目录中的脚本文件） \
   --rebalance "monthly" \
   --benchmark "CSI300" \
   --output backtest_report.pdf
-
+# ...
 # 输出包含：
 # - 年化收益率
 # - 最大回撤
@@ -148,7 +150,7 @@ python3 （请参考skill目录中的脚本文件） \
 ```bash
 # 依赖说明
 pip install -r requirements_pro.txt
-
+# ...
 # 配置数据源
 cp config_pro_template.yaml config_pro.yaml
 ```
@@ -158,16 +160,16 @@ cp config_pro_template.yaml config_pro.yaml
 ```bash
 # 多市场筛选
 python3 （请参考skill目录中的脚本文件） --markets "a-share,us-stock" --conditions "pe<20,roe>15" --export
-
+# ...
 # 自定义公式
 python3 （请参考skill目录中的脚本文件） --formula "peg < 1 and roe > 15" --export
-
+# ...
 # 历史回测
 python3 （请参考skill目录中的脚本文件） --strategy "value_growth" --period "3y" --benchmark "CSI300"
-
+# ...
 # 行业基准
 python3 （请参考skill目录中的脚本文件） --industry "白酒" --metric "roe,pe,pb"
-
+# ...
 # 智能推荐
 python3 （请参考skill目录中的脚本文件） --risk-tolerance moderate --count 20
 ```
@@ -176,7 +178,7 @@ python3 （请参考skill目录中的脚本文件） --risk-tolerance moderate -
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 
 ## 输出格式
 
@@ -193,9 +195,8 @@ python3 （请参考skill目录中的脚本文件） --risk-tolerance moderate -
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -211,7 +212,7 @@ python3 （请参考skill目录中的脚本文件） --risk-tolerance moderate -
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | akshare | Python库 | 必需 | `pip install akshare` |
@@ -224,7 +225,7 @@ python3 （请参考skill目录中的脚本文件） --risk-tolerance moderate -
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-|:-------|:---------|:---------|:-----|
+|---:|:---|---:|---:|
 | Tushare | `TUSHARE_TOKEN` | 推荐 | A股专业数据 |
 | Alpha Vantage | `ALPHA_VANTAGE_API_KEY` | 可选 | 美股数据备选 |
 
@@ -244,19 +245,10 @@ python3 （请参考skill目录中的脚本文件） --risk-tolerance moderate -
 **输入**: 示例数据
 **输出**: 示例数据
 
-### 示例2: 进阶用法
-**输入**: 示例数据
-**输出**: 示例数据
-
-### 示例3: 边界情况 - 边界情况
-**输入**: 示例数据
-**输出**: 示例数据
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

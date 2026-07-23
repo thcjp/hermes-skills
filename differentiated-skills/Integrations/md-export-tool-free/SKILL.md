@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 文档导出工具（免费版）
 
 本工具为内容创作者与开发者提供Markdown多格式导出能力。免费版覆盖核心场景：DOCX、PDF、HTML、XLSX、CSV、JSON等主流格式转换，可满足绝大多数文档导出需求。
@@ -35,7 +36,7 @@ Markdown作为轻量级标记语言已成为技术写作的事实标准，但实
 ## 核心能力
 
 | 能力分类 | 说明 |
-|---------|------|
+|----|---|
 | 文档格式 | DOCX、PDF、HTML、MD、IPYNB |
 | 数据格式 | XLSX、CSV、JSON、JSONL、XML、LaTeX |
 | 代码提取 | 从Markdown代码块提取为独立代码文件 |
@@ -94,7 +95,7 @@ Markdown作为轻量级标记语言已成为技术写作的事实标准，但实
 ```bash
 # 通过pip安装
 pip install md-exporter
-
+# ...
 # 或通过uv安装
 uv tool install md-exporter
 ```
@@ -110,10 +111,10 @@ markdown-exporter -h
 ```bash
 # Markdown转DOCX
 markdown-exporter md_to_docx /path/input.md /path/output.docx
-
+# ...
 # Markdown转PDF
 markdown-exporter md_to_pdf /path/input.md /path/output.pdf
-
+# ...
 # Markdown表格转Excel
 markdown-exporter md_to_xlsx /path/input.md /path/output.xlsx
 ```
@@ -146,7 +147,7 @@ markdown-exporter md_to_pdf /path/input.md /path/output.pdf
 ```bash
 # 默认每个表格独立Sheet，单元格强制文本类型
 markdown-exporter md_to_xlsx /path/input.md /path/output.xlsx
-
+# ...
 # 允许Excel自动识别单元格类型
 markdown-exporter md_to_xlsx /path/input.md /path/output.xlsx --force-text False
 ```
@@ -162,7 +163,7 @@ markdown-exporter md_to_csv /path/input.md /path/output.csv
 ```bash
 # 输出HTML文件
 markdown-exporter md_to_html /path/input.md /path/output.html
-
+# ...
 # 输出HTML字符串到stdout
 markdown-exporter md_to_html_text /path/input.md
 ```
@@ -172,7 +173,7 @@ markdown-exporter md_to_html_text /path/input.md
 ```bash
 # 默认JSONL格式（每行一个JSON对象）
 markdown-exporter md_to_json /path/input.md /path/output.json
-
+# ...
 # JSON数组格式
 markdown-exporter md_to_json /path/input.md /path/output.json --style json_array
 ```
@@ -182,7 +183,7 @@ markdown-exporter md_to_json /path/input.md /path/output.json --style json_array
 ```bash
 # 提取到目录
 markdown-exporter md_to_codeblock /path/input.md /path/output_dir
-
+# ...
 # 提取并压缩为ZIP
 markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 ```
@@ -191,7 +192,7 @@ markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 
 ```bash
 markdown-exporter md_to_pptx /path/input.md /path/output.pptx
-
+# ...
 # 使用自定义PPTX模板
 markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/template.pptx
 ```
@@ -210,16 +211,16 @@ markdown-exporter md_to_pdf input.md output.pdf --strip-wrapper
 
 ```markdown
 ## 标题页
-
+# ...
 正文内容
-
+# ...
 ---
-
+# ...
 ## 第二页
-
+# ...
 - 项目一
 - 项目二
-
+# ...
 ::: notes
 演讲者备注
 :::
@@ -248,7 +249,7 @@ done
 ```bash
 # Ubuntu/Debian
 sudo apt-get install fonts-noto-cjk
-
+# ...
 # macOS
 brew install --cask font-noto-sans-cjk
 ```
@@ -299,7 +300,7 @@ A：支持表格、代码块、引用、列表、链接、图片等CommonMark与
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Python | 运行时 | 必需 | python.org 官方下载 |
 | md-exporter | Python包 | 必需 | `pip install md-exporter` |
 | pandoc | 系统工具 | 可选 | pandoc.org 官方下载（PPTX转换需要） |
@@ -315,9 +316,8 @@ A：支持表格、代码块、引用、列表、链接、图片等CommonMark与
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

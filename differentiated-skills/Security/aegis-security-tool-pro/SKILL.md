@@ -29,6 +29,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # 区块链安全扫描专业版
 ## 概述
@@ -36,7 +38,7 @@ pricing_model: "monthly"
 
 ### 专业版核心优势
 | 优势 | 说明 |
-|:-----|:-----|
+|---|---|
 | 交易模拟 | 在链上执行前模拟交易,检测revert、滑点、授权风险 |
 | 无限额度 | 不受每日100次限制,支持高频交易场景 |
 | 批量操作 | CSV批量导入地址,一次检查数百个地址 |
@@ -52,7 +54,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 区块链安全扫描专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -91,29 +93,29 @@ curl -s -X POST "https://aegis402.xyz/v1/simulate-tx" \
 CHAIN_ID=1
 INPUT_FILE="addresses.csv"
 OUTPUT_FILE="batch_results.json"
-
+# ...
 echo "[" > "$OUTPUT_FILE"
 FIRST=true
-
+# ...
 while IFS=',' read -r address label; do
     [ -z "$address" ] && continue
-
+# ...
     RESULT=$(curl -s -H "X-Client-Fingerprint: pro-batch" \
         "https://aegis402.xyz/v1/check-address/${address}?chain_id=${CHAIN_ID}")
-
+# ...
     RISK=$(echo "$RESULT" | jq -r '.risk_level')
     echo "${label} (${address}): ${RISK}"
-
+# ...
     if [ "$FIRST" = true ]; then
         FIRST=false
     else
         echo "," >> "$OUTPUT_FILE"
     fi
-
+# ...
     echo "$RESULT" | jq --arg label "$label" '{address: .address, risk: .risk_level, label: $label}' >> "$OUTPUT_FILE"
-
+# ...
 done < "$INPUT_FILE"
-
+# ...
 echo "]" >> "$OUTPUT_FILE"
 echo "批量检查完成,结果已保存至 ${OUTPUT_FILE}"
 ```
@@ -162,7 +164,7 @@ curl -s -X POST "https://aegis402.xyz/v1/export" \
       {"type": "token", "address": "0xA0b86991...", "chain_id": 1}
     ]
   }' -o security_report.sarif
-
+# ...
 echo "SARIF报告已生成: security_report.sarif"
 ```
 
@@ -187,46 +189,46 @@ CONTRACTS=(
     "0xToken1...|协议代币"
     "0xOracle1...|价格预言机"
 )
-
+# ...
 echo "============================================"
 echo "DeFi协议安全审计: ${PROTOCOL_NAME}"
 echo "审计时间: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
 echo "============================================"
-
+# ...
 CRITICAL_COUNT=0
 HIGH_COUNT=0
-
+# ...
 for entry in "${CONTRACTS[@]}"; do
     IFS='|' read -r addr label <<< "$entry"
-
+# ...
     # 地址检查
     ADDR_RESULT=$(curl -s -H "X-Client-Fingerprint: pro-audit" \
         "https://aegis402.xyz/v1/check-address/${addr}?chain_id=${CHAIN_ID}")
     ADDR_RISK=$(echo "$ADDR_RESULT" | jq -r '.risk_level')
-
+# ...
     # 代币检查(如果是代币合约)
     TOKEN_RESULT=$(curl -s -H "X-Client-Fingerprint: pro-audit" \
         "https://aegis402.xyz/v1/check-token/${addr}?chain_id=${CHAIN_ID}")
     TOKEN_RISK=$(echo "$TOKEN_RESULT" | jq -r '.risk_level // "N/A"')
-
+# ...
     echo ""
     echo "--- ${label} (${addr}) ---"
     echo "地址风险: ${ADDR_RISK}"
     echo "代币风险: ${TOKEN_RISK}"
-
+# ...
     case $ADDR_RISK in
         CRITICAL) ((CRITICAL_COUNT++)) ;;
         HIGH) ((HIGH_COUNT++)) ;;
     esac
 done
-
+# ...
 echo ""
 echo "============================================"
 echo "审计摘要"
 echo "  CRITICAL: ${CRITICAL_COUNT}"
 echo "  HIGH: ${HIGH_COUNT}"
 echo "============================================"
-
+# ...
 if [ "$CRITICAL_COUNT" -gt 0 ]; then
     echo "阻止: 存在极高风险合约,协议不可上线"
     exit 1
@@ -239,14 +241,14 @@ fi
 ```python
 #!/usr/bin/env python3
 """专业版机构级交易风控示例"""
-
+# ...
 import requests
 import json
 from datetime import datetime
-
+# ...
 class BlockchainRiskControl:
     BASE_URL = "https://aegis402.xyz/v1"
-
+# ...
     def __init__(self, fingerprint="institutional-pro"):
         self.headers = {
             "X-Client-Fingerprint": fingerprint,
@@ -254,7 +256,7 @@ class BlockchainRiskControl:
         }
         self.blocked = False
         self.warnings = []
-
+# ...
     def check_address(self, address, chain_id=1):
         """地址信誉检查"""
         resp = requests.get(
@@ -263,7 +265,7 @@ class BlockchainRiskControl:
             headers=self.headers
         )
         return resp.json()
-
+# ...
     def check_token(self, token_address, chain_id=1):
         """代币安全检测"""
         resp = requests.get(
@@ -272,7 +274,7 @@ class BlockchainRiskControl:
             headers=self.headers
         )
         return resp.json()
-
+# ...
     def simulate_transaction(self, from_addr, to_addr, value, data="0x", chain_id=1):
         """交易模拟(专业版独有)"""
         payload = {
@@ -288,14 +290,14 @@ class BlockchainRiskControl:
             headers=self.headers
         )
         return resp.json()
-
+# ...
     def pre_trade_check(self, from_addr, to_addr, token_addr, value, chain_id=1):
         """交易前全面风控检查"""
         report = {
             "timestamp": datetime.utcnow().isoformat(),
             "checks": []
         }
-
+# ...
         # 1. 地址检查
         addr_result = self.check_address(to_addr, chain_id)
         report["checks"].append({
@@ -303,12 +305,12 @@ class BlockchainRiskControl:
             "risk": addr_result.get("risk_level", "UNKNOWN"),
             "safe": addr_result.get("is_safe", False)
         })
-
+# ...
         if addr_result.get("risk_level") in ["HIGH", "CRITICAL"]:
             self.blocked = True
             report["decision"] = "BLOCKED"
             return report
-
+# ...
         # 2. 代币检查
         if token_addr:
             token_result = self.check_token(token_addr, chain_id)
@@ -317,12 +319,12 @@ class BlockchainRiskControl:
                 "risk": token_result.get("risk_level", "UNKNOWN"),
                 "honeypot": token_result.get("is_honeypot", False)
             })
-
+# ...
             if token_result.get("is_honeypot"):
                 self.blocked = True
                 report["decision"] = "BLOCKED"
                 return report
-
+# ...
         # 3. 交易模拟(专业版核心)
         sim_result = self.simulate_transaction(from_addr, to_addr, value, chain_id=chain_id)
         report["checks"].append({
@@ -331,15 +333,15 @@ class BlockchainRiskControl:
             "gas_estimate": sim_result.get("gas_estimate", 0),
             "revert_reason": sim_result.get("revert_reason", None)
         })
-
+# ...
         if not sim_result.get("success"):
             self.blocked = True
             report["decision"] = "BLOCKED"
             return report
-
+# ...
         report["decision"] = "ALLOWED"
         return report
-
+# ...
 # 示例
 if __name__ == "__main__":
     rc = BlockchainRiskControl()
@@ -360,13 +362,13 @@ if __name__ == "__main__":
 # .github/workflows/blockchain-security.yml
 name: Blockchain Security Gate
 on: [push, pull_request]
-
+# ...
 jobs:
   security-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+# ...
       - name: Check contract addresses
         run: |
           CRITICAL=0
@@ -398,7 +400,7 @@ jobs:
 ```bash
 # 免费版调用
 curl -s "https://aegis402.xyz/v1/check-address/0x..."
-
+# ...
 # 专业版调用(更换指纹)
 curl -s -H "X-Client-Fingerprint: pro-agent" \
   "https://aegis402.xyz/v1/check-address/0x..."
@@ -444,7 +446,7 @@ address,label,chain_id
 
 ### 专业版支持的链(15条)
 | 链名称 | Chain ID | 地址检查 | 代币检查 | 交易模拟 |
-|:-------|:---------|:---------|:---------|:---------|
+|---:|---:|---:|---:|---:|
 | Ethereum | 1 | 支持 | 支持 | 支持 |
 | Base | 8453 | 支持 | 支持 | 支持 |
 | Polygon | 137 | 支持 | 支持 | 支持 |
@@ -494,7 +496,7 @@ address,label,chain_id
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | curl | 命令行工具 | 必需 | 系统自带或包管理器安装 |
 | jq | JSON处理工具 | 推荐 | `apt install jq` / `brew install jq` |
 | python3 | 运行时环境 | 可选 | python.org 下载 |
@@ -514,7 +516,7 @@ address,label,chain_id
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

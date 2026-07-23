@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # 集群编码器（专业版）
 
@@ -46,7 +48,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 集群编码器(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -102,63 +104,62 @@ pricing_model: "per_use"
 ```bash
 # 若已有免费版配置，直接升级
 ls .swarm/prompts/implementer.md 2>/dev/null && echo "检测到免费版配置，将自动升级"
-
+# ...
 # 若无免费版配置，初始化
 mkdir -p .swarm/{prompts,reports,logs,checkpoints,metrics}
-
+# ...
 # 创建专业版增强提示词
 cat > .swarm/prompts/architect-reviewer.md << 'EOF'
 # 架构审查子代理提示词
-
+# ...
 你是架构审查子代理。检查代码架构一致性：
-
+# ...
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
-
+# ...
 ## 审查项
 1. 是否符合项目架构模式
 2. 模块边界是否清晰
 3. 依赖方向是否合理
 4. 是否引入架构异味
 5. 跨任务集成是否一致
-
+# ...
 ## 输出格式
 架构一致性：✅ / ❌
 问题（标注严重度）：[列出]
 建议：[列出]
 EOF
-
+# ...
 cat > .swarm/prompts/security-reviewer.md << 'EOF'
 # 安全审查子代理提示词
-
+# ...
 你是安全审查子代理。检查代码安全性：
-
-## 审查项
+# ...
+## 审查项(续1)
 1. 输入验证
 2. 认证授权
 3. 敏感信息处理
 4. 注入防护
 5. 依赖安全
-
-## 输出格式
+# ...
+## 输出格式(续1)
 安全等级：🟢安全 / 🟡注意 / 🔴高危
 漏洞：[列出，标注CVE/OWASP分类]
 修复建议：[列出]
 EOF
-
+# ...
 cat > .swarm/prompts/performance-reviewer.md << 'EOF'
 # 性能审查子代理提示词
-
+# ...
 你是性能审查子代理。检查代码性能：
-
-## 审查项
+# ...
+## 审查项(续2)
 1. 时间复杂度
 2. 空间复杂度
 3. 数据库查询效率
 4. 内存泄漏风险
 5. 并发安全
-
-## 输出格式
+# ...
+## 输出格式(续2)
 性能等级：🟢优秀 / 🟡可接受 / 🔴需优化
 瓶颈：[列出]
 优化建议：[列出]
@@ -177,7 +178,7 @@ cat > .swarm/.scheduler-config.json << 'EOF'
   "conflictDetection": true
 }
 EOF
-
+# ...
 # 2. 配置成本控制
 cat > .swarm/.cost-config.json << 'EOF'
 {
@@ -188,7 +189,7 @@ cat > .swarm/.cost-config.json << 'EOF'
   "realTimeTracking": true
 }
 EOF
-
+# ...
 # 3. 配置失败回滚
 cat > .swarm/.rollback-config.json << 'EOF'
 {
@@ -199,7 +200,7 @@ cat > .swarm/.rollback-config.json << 'EOF'
   "rollbackStrategy": "git-revert"
 }
 EOF
-
+# ...
 # 验证配置
 ls -la .swarm/
 ```
@@ -264,7 +265,7 @@ ls -la .swarm/
 ### 1. 每任务新子代理分派（基础+增强）
 
 | 维度 | 免费版能力 | 专业版增强 |
-|------|-----------|-----------|
+|:-----|:-----|:-----|
 | 分派方式 | 串行分派 | +并行分派+依赖图分析 |
 | 上下文 | 控制器提供全文 | +智能上下文压缩 |
 | 提问机制 | 开始前+过程中 | +主动建议+上下文补充 |
@@ -281,7 +282,7 @@ ls -la .swarm/
 ```bash
 # 分析任务依赖关系
 swarm schedule analyze --plan docs/plans/feature-plan.md
-
+# ...
 # 输出依赖图：
 # 任务A ──┬──> 任务C（依赖A）
 #         └──> 任务D（依赖A）
@@ -291,7 +292,7 @@ swarm schedule analyze --plan docs/plans/feature-plan.md
 # 可并行组：
 # 组1：[任务A, 任务B]（无依赖，可并行）
 # 组2：[任务C, 任务D, 任务E, 任务F]（A/B完成后可并行）
-
+# ...
 # 执行并行调度
 swarm schedule execute --max-parallel 3
 ```
@@ -313,7 +314,7 @@ swarm schedule execute --max-parallel 3
 ```bash
 # 预估总成本
 swarm cost estimate --plan docs/plans/feature-plan.md
-
+# ...
 # 输出：
 # 成本预估：
 # - 任务1：~50K tokens（实现+2审查）
@@ -323,16 +324,16 @@ swarm cost estimate --plan docs/plans/feature-plan.md
 # - 任务5：~55K tokens
 # - 最终review：~30K tokens
 # 总计：~280K tokens（预算500K，预计使用56%）
-
+# ...
 # 实时监控
 swarm cost realtime
-
+# ...
 # 输出：
 # 当前消耗：180K/500K（36%）
 # 当前任务：任务3（消耗40K）
 # 预计总消耗：320K（64%）
 # 状态：🟢 正常
-
+# ...
 # 超支告警
 swarm cost alert --threshold 0.8
 ```
@@ -352,7 +353,7 @@ swarm cost alert --threshold 0.8
 五层review流水线，全面保证代码质量：
 
 | 层级 | 审查内容 | 严重度阈值 | 修复循环 |
-|------|----------|-----------|----------|
+|---:|---:|---:|---:|
 | 1. 规范合规 | 是否符合规范要求 | 任何不合规 | 实现→修复→重审 |
 | 2. 代码质量 | 可读性/测试/错误处理 | Important+ | 实现→修复→重审 |
 | 3. 架构一致性 | 模块边界/依赖/模式 | 任何架构异味 | 实现→修复→重审 |
@@ -380,7 +381,7 @@ swarm cost alert --threshold 0.8
    - add-validation：添加输入验证
 4. 重新review
 5. 循环直到通过或达到最大次数（3次）
-
+# ...
 熔断机制：
 - 同一问题修复3次未通过 → 熔断
 - 熔断后冷却5分钟
@@ -397,7 +398,7 @@ swarm cost alert --threshold 0.8
 支持多角色专家并行协作：
 
 | 角色 | 职责 | 激活时机 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 实现者 | 编码+测试+提交 | 每任务 |
 | 规范审查者 | 规范合规检查 | 实现后 |
 | 质量审查者 | 代码质量检查 | 规范通过后 |
@@ -417,13 +418,13 @@ swarm cost alert --threshold 0.8
 ```bash
 # 创建检查点
 swarm checkpoint create --label "任务3开始前"
-
+# ...
 # 任务失败时自动回滚
 swarm rollback auto --on-failure
-
+# ...
 # 手动回滚
 swarm rollback to --checkpoint "任务3开始前" --confirm
-
+# ...
 # 幂等检查
 swarm rollback idempotency-check --task task-3
 ```
@@ -487,7 +488,7 @@ swarm rollback idempotency-check --task task-3
 ```bash
 # 分析任务依赖
 swarm schedule analyze --plan docs/plans/large-feature.md
-
+# ...
 # 输出：
 # 可并行组：
 # 组1：[任务1,2,3]（无依赖）
@@ -498,7 +499,7 @@ swarm schedule analyze --plan docs/plans/large-feature.md
 # 预估时间：
 # - 串行：3天
 # - 并行（max=3）：1天
-
+# ...
 # 执行并行调度
 swarm schedule execute --max-parallel 3
 ```
@@ -513,17 +514,17 @@ swarm schedule execute --max-parallel 3
 ```bash
 # 设置预算
 swarm cost budget --total 500000 --per-task 50000
-
+# ...
 # 实时监控
 swarm cost realtime
-
+# ...
 # 输出：
 # 当前消耗：380K/500K（76%）
 # 预警阈值：70%（已触发）
 # 剩余任务：2个
 # 预计总消耗：480K（96%）
 # 建议：考虑简化剩余任务的review层
-
+# ...
 # 超支硬停止（90%时）
 swarm cost hard-stop --threshold 0.9
 ```
@@ -541,14 +542,14 @@ swarm cost hard-stop --threshold 0.9
 安全审查发现：
 - 🔴 高危：SQL注入风险（user-input未参数化）
 - 🟡 注意：密码强度校验缺失
-
+# ...
 [自动修复]
 - 添加参数化查询
 - 添加密码强度校验
-
+# ...
 [重新安全审查]
 ✅ 安全等级：🟢安全
-
+# ...
 [继续性能review]
 ```
 
@@ -562,7 +563,7 @@ swarm cost hard-stop --threshold 0.9
 ```bash
 # 依赖图分析
 swarm schedule analyze --visualize
-
+# ...
 # 输出依赖图（Mermaid格式）：
 # graph TD
 #   T1 --> T4
@@ -573,10 +574,10 @@ swarm schedule analyze --visualize
 #   T4 --> T8
 #   T5 --> T8
 #   ...
-
+# ...
 # 最优调度
 swarm schedule optimize --max-parallel 5
-
+# ...
 # 输出：
 # 最优调度方案：
 # 阶段1：T1, T2, T3（并行）
@@ -602,7 +603,7 @@ swarm rollback auto --on-failure
 # 自动回滚至检查点"任务5开始前"
 # 任务1-4的工作已保留
 # 任务5可安全重试
-
+# ...
 # 幂等检查
 swarm rollback idempotency-check --task task-5
 # 输出：
@@ -615,7 +616,7 @@ swarm rollback idempotency-check --task task-5
 ### 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:------|------:|:------|:------|
 | 技术负责人 | 大规模功能开发 | 并行调度+多层review | 效率3倍+质量保证 |
 | 项目经理 | 成本控制 | 成本预估+实时监控 | 超支风险-90% |
 | 安全工程师 | 高安全项目 | 安全review+自动修复 | 安全修复成本-95% |
@@ -681,10 +682,10 @@ swarm rollback idempotency-check --task task-5
 ```bash
 # CI中执行集群开发
 swarm execute --plan docs/plans/feature.md --max-parallel 3
-
+# ...
 # 生成开发报告
 swarm report --format markdown --output reports/dev-report.md
-
+# ...
 # 检查质量门禁
 swarm quality-gate --fail-on critical
 ```
@@ -719,7 +720,7 @@ swarm quality-gate --fail-on critical
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|---:|:---|---:|
 | 1.0.0 | 2026-01 | 初版发布，含并行调度+成本控制+五层review+自动修复+多角色+失败回滚 |
 
 ---
@@ -727,7 +728,7 @@ swarm quality-gate --fail-on critical
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:------:|--------|:-------|:------:|
 | 并行任务冲突 | 文件级冲突未检测 | 启用冲突检测；限制并行数 | 高 |
 | 成本超支 | 预算估算不准 | 调整估算模型；设置硬停止 | 高 |
 | review循环不收敛 | 修复引入新问题 | 设置maxFixLoops=3；熔断 | 中 |
@@ -751,9 +752,8 @@ swarm quality-gate --fail-on critical
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|----|:--:|---:|----|:--:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -825,7 +825,7 @@ swarm quality-gate --fail-on critical
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|----|----|----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Git | 工具 | 必需 | 系统自带或从git-scm.com安装 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
@@ -897,7 +897,7 @@ swarm quality-gate --fail-on critical
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | 免费体验版 | ¥0 | 串行执行+两阶段review+子代理提问+自我审查+TodoWrite+最终全局review+5种角色场景 | 个人试用、轻量开发 |
 | 收费专业版 | ¥29.9/月 | 全功能（并行调度+成本控制+五层review+自动修复+多角色+失败回滚）+7种角色指南+性能优化+优先支持 | 团队/企业、大规模开发、高安全要求 |
 

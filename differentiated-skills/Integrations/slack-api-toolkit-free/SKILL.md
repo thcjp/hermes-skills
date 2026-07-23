@@ -15,11 +15,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
-
 # Slack API工具箱（免费版）
 
 ## 概述
@@ -31,7 +32,7 @@ Slack API工具箱（免费版）通过托管OAuth机制帮助Agent安全调用S
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-|------|------|-----------|
+|---|---|-----|
 | 托管OAuth连接 | 自动管理Token，无需手动刷新 | 是 |
 | 发送消息 | 文本与Block Kit消息 | 是 |
 | 消息回复与更新 | 线程回复、消息更新与删除 | 是 |
@@ -89,7 +90,7 @@ Slack API工具箱（免费版）通过托管OAuth机制帮助Agent安全调用S
 ```bash
 # NPM
 npm install -g @slack-gateway/cli
-
+# ...
 # 或 Homebrew
 brew install slack-gateway/cli/sgw
 ```
@@ -130,17 +131,17 @@ sgw slack message send --channel C0123456789 --text 'Hello from Slack Gateway!'
 ```bash
 # 基础文本消息
 sgw slack message send --channel C0123456789 --text 'Hello team'
-
+# ...
 # Block Kit 消息
 sgw slack message send --channel C0123456789 \
   --blocks '[{"type":"section","text":{"type":"mrkdwn","text":"*加粗* 与 _斜体_"}}]'
-
+# ...
 # 线程回复
 sgw slack message reply --channel C0123456789 --thread-ts 1234567890.123456 --text '回复内容'
-
+# ...
 # 更新消息
 sgw slack message update --channel C0123456789 --ts 1234567890.123456 --text '更新后内容'
-
+# ...
 # 删除消息
 sgw slack message delete --channel C0123456789 --ts 1234567890.123456
 ```
@@ -150,10 +151,10 @@ sgw slack message delete --channel C0123456789 --ts 1234567890.123456
 ```python
 import os
 import requests
-
+# ...
 api_key = os.environ['SGW_API_KEY']
 base_url = 'https://api.slack-gateway.com'
-
+# ...
 resp = requests.post(
     f'{base_url}/slack/api/chat.postMessage',
     headers={
@@ -170,16 +171,16 @@ print(resp.json())
 ```bash
 # 列出频道
 sgw slack channel list --types public_channel,private_channel --limit 100
-
+# ...
 # 查看频道信息
 sgw slack channel view C0123456789
-
+# ...
 # 查看频道消息历史
 sgw slack message list --channel C0123456789 --limit 50
-
+# ...
 # 列出用户
 sgw slack user list --limit 100
-
+# ...
 # 按邮箱查找用户
 sgw slack user lookup --email alice@example.com
 ```
@@ -236,7 +237,7 @@ A：使用Block Kit格式。`mrkdwn`类型支持Slack风格markdown（`*加粗*`
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Slack网关账户 | 在线服务 | 必需 | 在网关控制台注册 |
 | Slack工作区 | 在线服务 | 必需 | 在Slack创建或加入 |
 | Node.js | 运行时 | 可选 | CLI安装需要 |
@@ -253,9 +254,8 @@ A：使用Block Kit格式。`mrkdwn`类型支持Slack风格markdown（`*加粗*`
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

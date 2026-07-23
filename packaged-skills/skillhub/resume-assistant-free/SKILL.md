@@ -15,16 +15,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 简历助手（免费版）
 
 提供基础简历评分与润色功能的AI助手。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 简历助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -37,7 +38,7 @@ tags:
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -45,7 +46,6 @@ tags:
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -98,7 +98,7 @@ export API_KEY="your_api_key_here"
 ```
 用户: Score my resume
 [粘贴简历]
-
+# ...
 Agent: Resume Score: 68/100 (Grade: C)
 Top 3 Issues:
 1. No quantified achievements
@@ -110,7 +110,7 @@ Top 3 Issues:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 简历内容为空 | 未提供简历文本 | 提示用户提供简历文本 |
 | 简历超长 | 超过10,000字符 | 精简内容；移除冗余经历 |
 | 导出格式不支持 | format参数错误 | 免费版仅支持markdown和html格式 |

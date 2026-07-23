@@ -22,19 +22,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
 # 邮件工具箱专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 邮件工具箱专业版邮件自动化与批量发送 | 不支持 | 支持 |
+| 邮件工具箱专业版支持模板与定时调度 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -130,7 +132,7 @@ python email_sender.py batch-send \
   --subject ""toolkit_summary" - 专属优惠码 "toolkit_summary"" \
   --rate-limit 20 \
   --dry-run
-
+# ...
 # 正式发送（使用多 SMTP 负载均衡）
 python email_sender.py batch-send \
   --recipients customers.csv \
@@ -150,7 +152,7 @@ python email_sender.py batch-send \
    模板: templates/promo.html
    速率: 20 封/分钟
    SMTP 池: gmail, outlook
-
+# ...
 [1/2000] ✅ customer1@example.com - 张三 - SAVE20 (via gmail)
 [2/2000] ✅ customer2@example.com - 李四 - SAVE15 (via outlook)
 ...
@@ -172,10 +174,10 @@ python email_sender.py schedule create \
   --template templates/daily_report.html \
   --data-source "generate_report.py" \
   --timezone "Asia/Shanghai"
-
+# ...
 # 查看所有定时任务
 python email_sender.py schedule list
-
+# ...
 # 查看任务执行历史
 python email_sender.py schedule history --name "daily-report"
 ```
@@ -185,7 +187,7 @@ python email_sender.py schedule history --name "daily-report"
 
 ```python
 from email_sender import EmailSender, SMTPPool
-
+# ...
 # 配置多 SMTP 服务商
 pool = SMTPPool([
     {"name": "gmail-primary", "smtp_server": "smtp.gmail.com", "smtp_port": 587,
@@ -195,9 +197,9 @@ pool = SMTPPool([
     {"name": "yahoo-extra", "smtp_server": "smtp.mail.yahoo.com", "smtp_port": 587,
      "username": "sender3@company.com", "password": "pass3", "weight": 20},
 ])
-
+# ...
 sender = EmailSender(pool=pool)
-
+# ...
 # 批量发送
 results = sender.batch_send(
     recipients="customers.csv",
@@ -206,7 +208,7 @@ results = sender.batch_send(
     rate_limit=30,
     retry=3
 )
-
+# ...
 print(f"成功: {results.success}, 失败: {results.failed}")
 print(f"服务商分配: {results.provider_stats}")
 ```
@@ -223,7 +225,7 @@ print(f"服务商分配: {results.provider_stats}")
 from email_sender import EmailSender
 sender = EmailSender("email_config.json")
 sender.send_email(to_email="x@y.com", subject="测试", body="内容")
-
+# ...
 # 专业版新增 API
 sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 ```
@@ -304,7 +306,7 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | email-toolkit处理的内容输入 |,  |
 | content | string | 否 | email-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -332,9 +334,8 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -348,9 +349,9 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 - **网络环境**: 需可访问各邮箱 SMTP 服务器
 - **磁盘空间**: 队列与日志建议预留 1GB 以上
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 官方网站下载安装 |
 | Python 标准库 | 运行库 | 必需 | Python 自带（smtplib, email, csv, json） |
@@ -409,8 +410,8 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 ## 常见问题
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -438,7 +439,7 @@ python email_sender.py template validate --name "通知" --data sample.json
 ```bash
 # 验证 cron 表达式
 python email_sender.py schedule validate --cron "0 8 * * 1-5"
-
+# ...
 # 检查任务状态
 python email_sender.py schedule status --name "daily-report"
 ```
@@ -449,7 +450,7 @@ python email_sender.py schedule status --name "daily-report"
 ```bash
 # 测试所有 SMTP 服务商
 python email_sender.py pool test --all
-
+# ...
 # 查看服务商状态
 python email_sender.py pool status
 ```
@@ -460,7 +461,7 @@ python email_sender.py pool status
 ```bash
 # 分析退信原因
 python email_sender.py bounce analyze --since "2026-06-01"
-
+# ...
 # 清理无效地址
 python email_sender.py bounce clean --recipients customers.csv --output cleaned.csv
 ```
@@ -469,17 +470,14 @@ python email_sender.py bounce clean --recipients customers.csv --output cleaned.
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|-------:|:-------|-------:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

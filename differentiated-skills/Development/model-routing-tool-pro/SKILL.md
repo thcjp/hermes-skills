@@ -34,8 +34,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 模型路由工具(专业版)
 
 ## 概述
@@ -49,7 +50,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|----|---|------|
 | 三层路由 | Flash → Standard → Plus / 32B 决策 | 与免费版一致 |
 | 黄金规则 | 30秒思考阈值 | 与免费版一致 |
 | 自定义规则 | 团队路由规则引擎(正则/关键词/任务类型) | 免费版无 |
@@ -94,7 +95,7 @@ suggested_price: 99.9
 ```bash
 # 查看本月成本仪表盘
 node （请参考skill目录中的脚本文件） --period month --group-by project
-
+# ...
 # 输出
 # 项目成本仪表盘: 2026-07
 #
@@ -136,21 +137,21 @@ alerts:
 ```javascript
 // batch-route.mjs 批量路由分发
 import { routeBatch } from './lib/router.mjs';
-
+// ...
 const tasks = [
   { id: 't1', content: '翻译这段话', expectedComplexity: 'low' },
   { id: 't2', content: '实现用户认证模块', expectedComplexity: 'medium' },
   { id: 't3', content: '设计多区域部署架构', expectedComplexity: 'high' },
   // ... 100个任务
 ];
-
+// ...
 const results = await routeBatch(tasks, {
   concurrency: 10,
   costCap: 50,          // 单批成本上限$50
   fallbackModel: 'GLM-4.5-Flash',  // 超成本降级
   onProgress: (done, total) => console.log(`${done}/${total}`),
 });
-
+// ...
 // 输出
 // {
 //   results: [...],
@@ -179,7 +180,7 @@ rules:
         - regex: "(架构|设计|重构)"
     route: plus
     reason: "敏感/架构类任务需要深度推理"
-
+# ...
   - name: 翻译任务用Flash
     match:
       allOf:
@@ -187,7 +188,7 @@ rules:
         - maxLength: 500
     route: flash
     reason: "短文本翻译用Flash足够"
-
+# ...
   - name: 代码审查用Standard
     match:
       anyOf:
@@ -195,14 +196,14 @@ rules:
         - filePattern: "*.py"
     route: standard
     reason: "代码审查是Standard主力场景"
-
+# ...
   - name: 成本上限降级
     condition:
       monthlyBudgetUsed: ">80%"
     route: flash
     fallback: true
     reason: "月度预算超80%,降级到Flash"
-
+# ...
 default: standard  # 未匹配规则时的默认路由
 ```
 
@@ -233,7 +234,7 @@ default: standard  # 未匹配规则时的默认路由
 mkdir -p config reports
 cp config/routing-rules.example.yaml config/routing-rules.yaml
 cp config/budget-alerts.example.yaml config/budget-alerts.yaml
-
+# ...
 # 编辑团队规则
 vi config/routing-rules.yaml
 ```
@@ -242,13 +243,13 @@ vi config/routing-rules.yaml
 
 ```javascript
 import { route } from './lib/router.mjs';
-
+// ...
 // 自动决策
 const result = await route({
   content: '设计多租户数据库schema',
 });
 // → { model: 'GLM-4-Plus', tier: 'plus', reason: '架构决策' }
-
+// ...
 // 强制指定层级
 const result2 = await route({
   content: '翻译这段话',
@@ -265,7 +266,7 @@ node （请参考skill目录中的脚本文件） \
   --concurrency 10 \
   --cost-cap 50 \
   --output results.json
-
+# ...
 # 输出成本与路由报告
 node （请参考skill目录中的脚本文件） \
   --input tasks.json \
@@ -277,10 +278,10 @@ node （请参考skill目录中的脚本文件） \
 ```bash
 # 月度成本报告
 node （请参考skill目录中的脚本文件） --period month --format html > reports/month.html
-
+# ...
 # 按团队分组
 node （请参考skill目录中的脚本文件） --period month --group-by team
-
+# ...
 # 导出CSV
 node （请参考skill目录中的脚本文件） --period month --format csv > reports/month.csv
 ```
@@ -326,7 +327,7 @@ providers:
       plus: "model-a-plus"
     apiKey: "${PROVIDER_A_KEY}"
     costMultiplier: 1.0
-
+# ...
   - name: provider-b
     enabled: true
     priority: 2
@@ -336,7 +337,7 @@ providers:
       plus: "model-b-plus"
     apiKey: "${PROVIDER_B_KEY}"
     costMultiplier: 0.85  # 便宜15%
-
+# ...
   - name: provider-c
     enabled: false          # 备用,默认禁用
     priority: 3
@@ -349,7 +350,7 @@ providers:
 ### 1. 成本治理三阶段
 
 | 阶段 | 动作 | 验收标准 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 1. 透明化 | 接入仪表盘,统计现状 | 各项目成本可见 |
 | 2. 优化 | 应用规则,降级冗余任务 | 月成本下降20%+ |
 | 3. 治理 | 预算告警与降级策略 | 超预算自动降级 |
@@ -365,7 +366,7 @@ providers:
 ### 3. 批量分发参数调优
 
 | 参数 | 推荐值 | 说明 |
-| --- | --- | --- |
+|---:|---:|---:|
 | concurrency | 10 | 平衡速度与API限流 |
 | costCap | 单批$50 | 控制单批成本 |
 | fallbackModel | Flash | 超成本降级 |
@@ -375,7 +376,7 @@ providers:
 ### 4. 监控告警分级
 
 | 告警级别 | 触发条件 | 动作 |
-| --- | --- | --- |
+|:---:|:---:|:---:|
 | 提示 | 预算使用50% | 仅记录仪表盘 |
 | 警告 | 预算使用80% | 通知团队,准备降级 |
 | 严重 | 预算使用95% | 自动降级到Flash |
@@ -386,10 +387,10 @@ providers:
 ```bash
 # 健康检查
 node （请参考skill目录中的脚本文件） --all-providers
-
+# ...
 # 手动切换主供应商
 node （请参考skill目录中的脚本文件） --primary provider-b
-
+# ...
 # 成本对比报告
 node （请参考skill目录中的脚本文件） --period month
 ```
@@ -399,7 +400,7 @@ node （请参考skill目录中的脚本文件） --period month
 ```bash
 # 查询路由审计日志
 node （请参考skill目录中的脚本文件） --task-id t-2026-07-18-001
-
+# ...
 # 导出合规报告
 node （请参考skill目录中的脚本文件） \
   --since 2026-07-01 \
@@ -445,7 +446,7 @@ node （请参考skill目录中的脚本文件） \
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | 模型API供应商 | API | 必需 | 自行选择并申请API Key |
 | Node.js | 运行时 | 必需 | nodejs.org 下载 |
@@ -466,9 +467,8 @@ node （请参考skill目录中的脚本文件） \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

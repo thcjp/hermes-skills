@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # CDP浏览器领航（专业版）
 
@@ -45,7 +47,7 @@ pricing_model: "per_use"
 优先用 `web_fetch`。以下情况才需要CDP自动化：
 
 | 场景 | 是否需要CDP |
-|------|------------|
+|---|-------|
 | 静态HTML页面 | 不需要，web_fetch即可 |
 | JS渲染的页面（如动态加载内容） | 需要 |
 | 需要登录态的网站（已登录在浏览器里） | 需要 |
@@ -59,7 +61,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Cdp Browser Pilot处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -111,7 +113,7 @@ Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --r
 
 ```javascript
 const { edge, chrome } = require('./browser-automation/cdp-automation.js');
-
+// ...
 // 导航并提取数据
 await edge.goto('https://目标网站.com');
 await edge.wait(5000);
@@ -123,21 +125,21 @@ const data = await edge.evaluate(`提取数据的JS`);
 ```javascript
 // 专业版完整配置
 const { edge, chrome, ConnectionManager } = require('./browser-automation/cdp-automation.js');
-
+// ...
 // 启用连接管理器（专业版）
 const manager = new ConnectionManager({
   autoReconnect: true,           // 自动重连
   maxConnections: 2,             // 最大连接数
   cleanupOnExit: true            // 退出时清理
 });
-
+// ...
 // 启用反检测（专业版）
 await edge.enableAntiDetection({
   maskWebDriver: true,           // 隐藏webdriver标识
   humanLikeDelay: true,          // 模拟人类操作延迟
   randomMouseMovement: true      // 随机鼠标移动
 });
-
+// ...
 // 执行自动化
 await edge.goto('https://目标网站.com');
 ```
@@ -155,7 +157,7 @@ await edge.goto('https://目标网站.com');
 ```javascript
 // 基础导航
 await edge.goto('https://example.com');
-
+// ...
 // 导航后等待JS渲染
 await edge.goto('https://app.example.com/dashboard');
 await edge.wait(5000);
@@ -166,7 +168,7 @@ await edge.wait(5000);
 ```javascript
 // 读取DOM
 const r = await edge.evaluate(`document.title`);
-
+// ...
 // 提取结构化数据
 const r = await edge.evaluate(`
     JSON.stringify(
@@ -184,7 +186,7 @@ const items = JSON.parse(r.result.value);
 ```javascript
 // CSS选择器点击
 await edge.click('.submit-button');
-
+// ...
 // 点击后等待
 await edge.click('.next-page');
 await edge.wait(3000);
@@ -236,7 +238,7 @@ const target = tabs.find(t => t.url.includes('example.com'));
 // B站视频列表提取
 await edge.goto('https://space.bilibili.com/151190274/video');
 await edge.wait(5000);
-
+// ...
 const r = await edge.evaluate(`
     JSON.stringify(
         Array.from(document.querySelectorAll('.upload-video-card')).slice(0,10).map(c => ({
@@ -265,7 +267,7 @@ await edge.wait(5000);
 ```javascript
 // 先探索页面结构（专业版反检测已启用）
 await xhs.enableAntiDetection();
-
+// ...
 // 探索DOM
 const r = await xhs.evaluate(`
     JSON.stringify({
@@ -293,7 +295,7 @@ console.log(JSON.parse(r.result.value));
 // 步骤1：进入基础信息页
 await edge.goto('https://platform.minimaxi.com/user-center/basic-information');
 await edge.wait(3000);
-
+// ...
 // 步骤2：JS点击Token Plan菜单项（div而非a标签）
 const r = await edge.evaluate(`
   (function() {
@@ -307,10 +309,10 @@ const r = await edge.evaluate(`
     return 'not found';
   })()
 `);
-
+// ...
 // 步骤3：等待路由跳转
 await edge.wait(3000);
-
+// ...
 // 步骤4：提取配额数据
 const quota = await edge.evaluate(`(function(){
   var t = document.body.innerText;
@@ -344,7 +346,7 @@ async function spaNavigate(browser, entryUrl, targetMenuText) {
     // Step 1: 先进入已知可用的子页面
     await browser.goto(entryUrl);
     await browser.wait(3000);
-
+// ...
     // Step 2: JS点击菜单项（div而非a）
     const result = await browser.evaluate(`
       (function() {
@@ -358,12 +360,12 @@ async function spaNavigate(browser, entryUrl, targetMenuText) {
         return 'not found';
       })()
     `);
-
+// ...
     // Step 3: 等待路由跳转
     await browser.wait(3000);
     return result;
 }
-
+// ...
 // 使用示例
 await spaNavigate(edge, 'https://app.example.com/dashboard', '账户设置');
 ```
@@ -377,7 +379,7 @@ await spaNavigate(edge, 'https://app.example.com/dashboard', '账户设置');
 
 ```javascript
 const { ConnectionManager } = require('./browser-automation/cdp-automation.js');
-
+// ...
 const manager = new ConnectionManager({
     autoReconnect: true,           // 连接断开自动重连
     maxRetries: 3,                 // 最多重试3次
@@ -386,16 +388,16 @@ const manager = new ConnectionManager({
     healthCheck: true,             // 定期健康检查
     healthCheckInterval: 30000     // 30秒检查一次
 });
-
+// ...
 // 获取连接（自动复用或新建）
 const conn = await manager.getConnection('edge');
-
+// ...
 // 释放连接（不关闭浏览器，仅断开WebSocket）
 await manager.releaseConnection('edge');
-
+// ...
 // 清理残留连接
 await manager.cleanupStaleConnections();
-
+// ...
 // 获取连接状态
 const status = manager.getStatus();
 console.log(`活跃连接：${status.active}，残留连接：${status.stale}`);
@@ -418,7 +420,7 @@ await edge.enableAntiDetection({
     spoofLanguages: true,          // 伪装语言设置
     randomScroll: true             // 随机滚动
 });
-
+// ...
 // 模拟人类操作模式
 await edge.humanLikeClick('.button');  // 带随机延迟的点击
 await edge.humanLikeType('input', 'text');  // 逐字符输入
@@ -442,14 +444,14 @@ await edge.randomScroll();  // 随机滚动页面
 ```javascript
 // 获取普通Cookie
 const cookies = await edge.evaluate(`document.cookie`);
-
+// ...
 // 获取HttpOnly Cookie（从浏览器文件读取）
 const { CookieReader } = require('./browser-automation/cookie-reader.js');
 const reader = new CookieReader({
     browser: 'edge',
     profilePath: 'C:\\BrowserAutomation\\Edge'
 });
-
+// ...
 // 读取HttpOnly Cookie
 const httpOnlyCookies = await reader.readHttpOnlyCookies('example.com');
 console.log(httpOnlyCookies);
@@ -470,21 +472,21 @@ console.log(httpOnlyCookies);
 ```javascript
 // 获取所有标签页
 const tabs = await edge.tabs();
-
+// ...
 // 在指定标签页执行操作
 const targetTab = tabs.find(t => t.url.includes('example.com'));
 await edge.switchToTab(targetTab.id);
-
+// ...
 // 新建标签页
 const newTab = await edge.newTab('https://example.com/page2');
-
+// ...
 // 跨标签页操作
 await edge.switchToTab(tab1.id);
 const data1 = await edge.evaluate(`提取数据`);
-
+// ...
 await edge.switchToTab(tab2.id);
 const data2 = await edge.evaluate(`提取数据`);
-
+// ...
 // 关闭标签页
 await edge.closeTab(newTab.id);
 ```
@@ -553,10 +555,10 @@ const quota = await edge.evaluate(`提取配额JS`);
 // 多标签页并行采集
 const tab1 = await edge.newTab('https://platform-a.com');
 const tab2 = await edge.newTab('https://platform-b.com');
-
+// ...
 await edge.switchToTab(tab1.id);
 const dataA = await edge.evaluate(`采集JS`);
-
+// ...
 await edge.switchToTab(tab2.id);
 const dataB = await edge.evaluate(`采集JS`);
 ```
@@ -603,7 +605,7 @@ for (const url of monitorUrls) {
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐能力组合 | 核心价值 |
-|------|----------|-------------|----------|
+|---:|---:|---:|---:|
 | 内容运营 | B站视频采集 | 完整API+平台指南 | 采集排序视频数据 |
 | 市场分析 | 小红书监控 | 反检测+平台指南 | 绕过检测采集内容 |
 | 开发者 | Minimax配额监控 | SPA导航+平台指南 | SPA路由获取数据 |
@@ -701,7 +703,7 @@ await pipeline.ingest({
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 1.0.0 | 2026-01 | 初版发布，含完整CDP API+六大高级功能 |
 
 ---
@@ -709,7 +711,7 @@ await pipeline.ingest({
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:------|------:|:------|:------|
 | CDP连接失败 | 浏览器未启动远程调试 | 检查--remote-debugging-port参数；验证端口占用 | 高 |
 | 连接残留导致冲突 | 上次任务未正常退出 | 使用ConnectionManager清理；重启浏览器 | 高 |
 | 页面等待不够 | JS渲染时间长 | 增加wait时间至8-10秒；使用智能等待 | 中 |
@@ -726,7 +728,7 @@ await pipeline.ingest({
 ## 即时修复清单
 
 | 问题 | 修复方法 |
-|------|----------|
+|---:|:---|
 | 无法连接浏览器 | 检查远程调试是否启动；验证端口；重启浏览器 |
 | 页面内容为空 | 增加等待时间；检查是否需要登录；截图调试 |
 | 点击无效 | 检查选择器；滚动至元素；使用JS click() |
@@ -745,9 +747,8 @@ await pipeline.ingest({
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:------:|--------|:-------|:------:|--------|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -810,7 +811,7 @@ CDP每个端口同时只能有一个WebSocket连接。如果任务中途失败�
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Edge/Chrome | 浏览器 | 必需 | 系统自带或从官网安装 |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
@@ -884,7 +885,7 @@ CDP每个端口同时只能有一个WebSocket连接。如果任务中途失败�
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|----|----|----|----|
 | 免费体验版 | ¥0 | 基础CDP API（导航/点击/截图/等待/JS执行/标签页）+ 3个场景示例 | 个人试用、简单页面自动化 |
 | 收费专业版 | ¥29.9/月 | 全功能（平台踩坑+SPA导航+连接管理+反检测+Cookie处理+多标签页）+ 多角色指南 + 性能优化 + 优先支持 | 团队/企业、复杂场景自动化 |
 

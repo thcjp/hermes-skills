@@ -48,6 +48,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 浏览器自动化工具(专业版)
 
@@ -58,7 +60,7 @@ pricing_model: "monthly"
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---|---|---|
 | 自然语言操作(act/extract/observe) | 支持 | 支持 |
 | 本地 Chrome 浏览器 | 支持 | 支持 |
 | 截图与基础交互 | 支持 | 支持 |
@@ -73,10 +75,9 @@ pricing_model: "monthly"
 ### 本地模式 vs 远程模式对比
 
 | 特性 | 本地模式 | 远程模式(专业版) |
-|:-----|:--------|:----------------|
+|:-----|:-----|:-----|
 | 速度 | 较快 | 略慢(网络延迟) |
 | 配置 | 需本机 Chrome | 需 API Key |
-| 隐身模式 | 不支持 | 支持 |
 | 代理/CAPTCHA | 不支持 | 支持 |
 | 弹性扩缩容 | 不支持 | 支持 |
 | 适用场景 | 开发调试 | 生产/大规模采集 |
@@ -87,7 +88,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 浏览器自动化工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -96,7 +97,7 @@ pricing_model: "monthly"
 # 配置远程浏览器服务
 export BROWSERBASE_API_KEY="your-api-key"
 export BROWSERBASE_PROJECT_ID="your-project-id"
-
+# ...
 # 自动使用远程浏览器
 browser navigate https://example.com
 browser act "点击登录按钮"
@@ -112,7 +113,7 @@ browser act "点击登录按钮"
 ```bash
 # 启用隐身模式
 browser --stealth navigate https://example.com
-
+# ...
 # 自定义浏览器指纹
 browser --stealth --fingerprint "windows-chrome-120" navigate https://example.com
 ```
@@ -127,7 +128,7 @@ browser --stealth --fingerprint "windows-chrome-120" navigate https://example.co
 ```bash
 # 配置代理池
 export BROWSER_PROXY_POOL="http://proxy1:8080,http://proxy2:8080,http://proxy3:8080"
-
+# ...
 # 启动时自动轮换代理
 browser --proxy-pool navigate https://example.com
 ```
@@ -155,7 +156,7 @@ browser act "完成验证码"
 ```bash
 # 批量执行任务清单
 browser batch run --file tasks.yaml --concurrency 10
-
+# ...
 # 示例
 # tasks:
 #   - name: 采集-站点A
@@ -186,23 +187,23 @@ browser batch run --file tasks.yaml --concurrency 10
 #!/bin/bash
 # stealth-collection.sh - 隐身模式数据采集
 TARGET_URL="https://protected-site.example.com/data"
-
+# ...
 # 启用隐身模式 + 代理池 + CAPTCHA处理
 browser --stealth --proxy-pool --captcha-solver navigate "$TARGET_URL"
-
+# ...
 # 自然语言操作,绕过反爬
 browser act "等待页面完全加载"
 browser act "点击加载更多按钮"
 browser act "再次点击加载更多按钮"
-
+# ...
 # 提取数据
 browser extract "获取所有数据条目" \
   '{"items":[{"id":"string","title":"string","value":"number","date":"string"}]}' \
   > data/results.json
-
+# ...
 # 截图留证
 browser screenshot "logs/collection_$(date +%Y%m%d_%H%M%S).png"
-
+# ...
 browser close
 echo "采集完成,数据已保存到 data/results.json"
 ```
@@ -217,7 +218,7 @@ echo "采集完成,数据已保存到 data/results.json"
 import subprocess
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+# ...
 PLATFORMS = [
     {
         "name": "platform_a",
@@ -238,7 +239,7 @@ PLATFORMS = [
         "auth_env": {"BROWSERBASE_API_KEY": "key_c", "BROWSERBASE_PROJECT_ID": "proj_c"}
     },
 ]
-
+# ...
 def publish_to_platform(platform):
     """在单个平台发布内容"""
     name = platform["name"]
@@ -248,32 +249,32 @@ def publish_to_platform(platform):
             "browser", "--stealth", "--remote",
             "navigate", platform["url"]
         ], check=True, timeout=60)
-
+# ...
         # 自然语言操作发布内容
         subprocess.run([
             "browser", "act", "点击新建内容按钮"
         ], check=True, timeout=30)
-
+# ...
         subprocess.run([
             "browser", "act", f"在内容编辑区输入: {platform['content']}"
         ], check=True, timeout=30)
-
+# ...
         subprocess.run([
             "browser", "act", "点击发布按钮"
         ], check=True, timeout=30)
-
+# ...
         # 截图归档
         subprocess.run([
             "browser", "screenshot", f"logs/{name}_published.png"
         ])
-
+# ...
         subprocess.run(["browser", "close"])
         return {"platform": name, "status": "success"}
     except Exception as e:
         subprocess.run(["browser", "screenshot", f"logs/{name}_failed.png"])
         subprocess.run(["browser", "close"])
         return {"platform": name, "status": "failed", "error": str(e)}
-
+# ...
 # 并发发布,最大并发3
 results = []
 with ThreadPoolExecutor(max_workers=3) as executor:
@@ -282,7 +283,7 @@ with ThreadPoolExecutor(max_workers=3) as executor:
         result = future.result()
         results.append(result)
         print(f"[{result['status'].upper()}] {result['platform']}")
-
+# ...
 # 生成报告
 with open("logs/publish-report.json", "w") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
@@ -296,20 +297,20 @@ with open("logs/publish-report.json", "w") as f:
 #!/bin/bash
 # large-scale-collection.sh - 大规模数据采集
 set -e
-
+# ...
 # 启用监控
 browser metrics enable
-
+# ...
 # 读取URL列表
 URLS=$(cat urls.txt)
 TOTAL=$(echo "$URLS" | wc -l)
 COUNT=0
 FAILED=0
-
+# ...
 while IFS= read -r url; do
   COUNT=$((COUNT + 1))
   echo "[$COUNT/$TOTAL] 采集: $url"
-
+# ...
   # 隐身模式 + 代理池,失败重试3次
   for attempt in 1 2 3; do
     if browser --stealth --proxy-pool --retry 1 navigate "$url" 2>/dev/null; then
@@ -327,7 +328,7 @@ while IFS= read -r url; do
       sleep 5
     fi
   done
-
+# ...
   # 失败率超过20%时告警
   if [ "$COUNT" -gt 10 ]; then
     FAIL_RATE=$(echo "scale=2; $FAILED * 100 / $COUNT" | bc)
@@ -336,12 +337,12 @@ while IFS= read -r url; do
       curl -X POST "$ALERT_WEBHOOK" -d "{\"text\":\"采集失败率 ${FAIL_RATE}%\"}"
     fi
   fi
-
+# ...
 done <<< "$URLS"
-
+# ...
 # 导出监控指标
 browser metrics export --format json > logs/metrics.json
-
+# ...
 echo "采集完成: 共 $TOTAL,成功 $((TOTAL - FAILED)),失败 $FAILED"
 ```
 
@@ -359,7 +360,7 @@ echo "采集完成: 共 $TOTAL,成功 $((TOTAL - FAILED)),失败 $FAILED"
 cd /path/to/browser-automation-tool
 npm install
 npm link
-
+# ...
 # 专业版初始化
 browser pro init
 browser config set stealth.default true
@@ -373,7 +374,7 @@ browser config set metrics.enabled true
 # 配置远程浏览器服务
 export BROWSERBASE_API_KEY="your-api-key"
 export BROWSERBASE_PROJECT_ID="your-project-id"
-
+# ...
 # 验证连接
 browser --remote navigate https://example.com
 browser screenshot
@@ -385,7 +386,7 @@ browser close
 ```bash
 # 使用任务清单批量执行
 browser batch run --file tasks.yaml --concurrency 10
-
+# ...
 # 查看任务状态
 browser batch status
 ```
@@ -429,7 +430,7 @@ alerts:
 ```bash
 # Prometheus 格式
 browser metrics export --format prometheus
-
+# ...
 # 指标示例:
 # browser_tasks_total{status="success"} 256
 # browser_tasks_total{status="failed"} 12
@@ -490,7 +491,7 @@ browser pro init --migrate
 ## 与免费版的兼容性
 
 | 维度 | 兼容性 |
-|:-----|:------|
+|:---:|:---:|
 | 命令语法 | 100% 兼容 |
 | 脚本工作流 | 100% 兼容(无需修改即可运行) |
 | 自然语言指令 | 100% 兼容 |
@@ -508,7 +509,7 @@ browser pro init --migrate
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Node.js | 运行环境 | 必需 | 系统包管理器安装 |
 | Chrome | 浏览器 | 本地模式必需 | 官方下载安装 |
 | npm 依赖包 | Node 包 | 必需 | `npm install` |
@@ -531,9 +532,8 @@ browser pro init --migrate
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

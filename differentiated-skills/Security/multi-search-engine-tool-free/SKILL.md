@@ -26,8 +26,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
-
 # 多搜索引擎免费版
 
 ## 概述
@@ -37,7 +38,7 @@ suggested_price: 29.9
 ### 免费版与专业版对比
 
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|----|---|---|
 | 搜索引擎数量 | 8个 | 16个 |
 | 结果去重 | 不支持 | 智能去重 |
 | 结果排序 | 按引擎分组 | 综合相关性排序 |
@@ -52,7 +53,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 多搜索引擎免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -60,11 +61,11 @@ suggested_price: 29.9
 ```bash
 #!/bin/bash
 # 多搜索引擎聚合查询
-
+# ...
 QUERY="${1:-test query}"
 echo "=== 多搜索引擎查询: ${QUERY} ==="
 echo ""
-
+# ...
 # 中文搜索引擎
 ENGINES_CN=(
     "百度|https://www.baidu.com/s?wd="
@@ -72,7 +73,7 @@ ENGINES_CN=(
     "360搜索|https://www.so.com/s?q="
     "必应中国|https://cn.bing.com/search?q="
 )
-
+# ...
 # 国际搜索引擎
 ENGINES_GLOBAL=(
     "Google|https://www.google.com/search?q="
@@ -80,14 +81,14 @@ ENGINES_GLOBAL=(
     "DuckDuckGo|https://duckduckgo.com/?q="
     "Yandex|https://yandex.com/search/?text="
 )
-
+# ...
 echo "--- 中文搜索引擎 ---"
 for engine in "${ENGINES_CN[@]}"; do
     IFS='|' read -r name url <<< "$engine"
     encoded_query=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${QUERY}'))")
     echo "  ${name}: ${url}${encoded_query}"
 done
-
+# ...
 echo ""
 echo "--- 国际搜索引擎 ---"
 for engine in "${ENGINES_GLOBAL[@]}"; do
@@ -107,13 +108,13 @@ done
 ```python
 #!/usr/bin/env python3
 """免费版搜索结果聚合器"""
-
+# ...
 import urllib.parse
 import json
-
+# ...
 class MultiSearchAggregator:
     """多搜索引擎聚合器"""
-    
+# ...
     ENGINES = {
         # 中文搜索引擎
         "baidu": {
@@ -158,20 +159,20 @@ class MultiSearchAggregator:
             "type": "global"
         }
     }
-    
+# ...
     def search(self, query, engines=None):
         """生成多引擎搜索链接"""
         encoded = urllib.parse.quote(query)
-        
+# ...
         if engines is None:
             engines = list(self.ENGINES.keys())
-        
+# ...
         results = {
             "query": query,
             "encoded_query": encoded,
             "engines": {}
         }
-        
+# ...
         for engine_id in engines:
             if engine_id in self.ENGINES:
                 engine = self.ENGINES[engine_id]
@@ -180,22 +181,22 @@ class MultiSearchAggregator:
                     "type": engine["type"],
                     "url": engine["url"].format(encoded)
                 }
-        
+# ...
         return results
-    
+# ...
     def search_cn(self, query):
         """仅中文搜索引擎"""
         cn_engines = [k for k, v in self.ENGINES.items() if v["type"] == "cn"]
         return self.search(query, cn_engines)
-    
+# ...
     def search_global(self, query):
         """仅国际搜索引擎"""
         global_engines = [k for k, v in self.ENGINES.items() if v["type"] == "global"]
         return self.search(query, global_engines)
-
+# ...
 if __name__ == "__main__":
     aggregator = MultiSearchAggregator()
-    
+# ...
     result = aggregator.search("Python 教程")
     print(json.dumps(result, indent=2, ensure_ascii=False))
 ```
@@ -210,11 +211,11 @@ if __name__ == "__main__":
 ```bash
 #!/bin/bash
 # 生成搜索链接并打开浏览器
-
+# ...
 generate_search_links() {
     local query=$1
     local encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$query'))")
-    
+# ...
     echo "搜索: ${query}"
     echo ""
     echo "点击以下链接在浏览器中打开:"
@@ -231,7 +232,7 @@ generate_search_links() {
     echo "  DDG:      https://duckduckgo.com/?q=${encoded}"
     echo "  Yandex:   https://yandex.com/search/?text=${encoded}"
 }
-
+# ...
 # 示例
 generate_search_links "人工智能最新进展"
 ```
@@ -249,15 +250,15 @@ generate_search_links "人工智能最新进展"
 ```bash
 #!/bin/bash
 # 技术资料多源检索
-
+# ...
 QUERY="${1:-React hooks tutorial}"
-
+# ...
 echo "=== 技术资料多源检索 ==="
 echo "关键词: ${QUERY}"
 echo ""
-
+# ...
 ENCODED=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${QUERY}'))")
-
+# ...
 echo "中文搜索结果:"
 echo "  1. 百度: https://www.baidu.com/s?wd=${ENCODED}"
 echo "  2. 必应: https://cn.bing.com/search?q=${ENCODED}"
@@ -276,33 +277,33 @@ echo "  6. Stack Overflow: https://stackoverflow.com/search?q=${ENCODED}"
 ```python
 #!/usr/bin/env python3
 """中英文双语搜索"""
-
+# ...
 import json
 from multi_search import MultiSearchAggregator
-
+# ...
 def bilingual_search(cn_query, en_query):
     """中英文双语搜索"""
     aggregator = MultiSearchAggregator()
-    
+# ...
     print("=== 中英文双语搜索 ===")
     print(f"中文关键词: {cn_query}")
     print(f"英文关键词: {en_query}")
     print()
-    
+# ...
     # 中文引擎用中文关键词
     print("--- 中文引擎(中文关键词) ---")
     cn_results = aggregator.search_cn(cn_query)
     for eid, info in cn_results["engines"].items():
         print(f"  {info['name']}: {info['url']}")
-    
+# ...
     print()
-    
+# ...
     # 国际引擎用英文关键词
     print("--- 国际引擎(英文关键词) ---")
     global_results = aggregator.search_global(en_query)
     for eid, info in global_results["engines"].items():
         print(f"  {info['name']}: {info['url']}")
-
+# ...
 # 使用示例
 bilingual_search("机器学习入门", "machine learning tutorial")
 ```
@@ -312,16 +313,16 @@ bilingual_search("机器学习入门", "machine learning tutorial")
 ```bash
 #!/bin/bash
 # 快速搜索工具(支持参数)
-
+# ...
 # 用法: （请参考skill目录中的脚本文件） <engine> <query>
 # 引擎: baidu, google, bing, ddg, sogou, 360, yandex, bing_cn
-
+# ...
 ENGINE="${1:-baidu}"
 shift
 QUERY="$*"
-
+# ...
 ENCODED=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$QUERY'))")
-
+# ...
 case "$ENGINE" in
     baidu)    URL="https://www.baidu.com/s?wd=${ENCODED}" ;;
     google)   URL="https://www.google.com/search?q=${ENCODED}" ;;
@@ -345,11 +346,11 @@ case "$ENGINE" in
         exit 1
         ;;
 esac
-
+# ...
 echo "搜索: ${QUERY}"
 echo "引擎: ${ENGINE}"
 echo "链接: ${URL}"
-
+# ...
 # 在macOS上打开浏览器
 if command -v open &> /dev/null; then
     open "$URL"
@@ -405,7 +406,7 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
 ### 支持的搜索引擎(免费版8个)
 
 | 引擎 | 类型 | 搜索URL模板 |
-|:-----|:-----|:------------|
+|---:|---:|---:|
 | 百度 | 中文 | baidu.com/s?wd={} |
 | 搜狗 | 中文 | sogou.com/web?query={} |
 | 360搜索 | 中文 | so.com/s?q={} |
@@ -420,7 +421,7 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
 ```python
 # URL编码确保特殊字符正确传递
 import urllib.parse
-
+# ...
 query = "Python 数据分析"
 encoded = urllib.parse.quote(query)
 # 结果: Python%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90
@@ -471,7 +472,7 @@ QUERY='"exact match" site:stackoverflow.com'
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | python3 | 运行时 | 推荐 | python.org 下载 |
 | curl | 命令行工具 | 可选 | 系统自带 |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -486,9 +487,8 @@ QUERY='"exact match" site:stackoverflow.com'
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

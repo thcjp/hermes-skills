@@ -31,6 +31,8 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # 前端设计工具 - 专业版
 
@@ -43,7 +45,7 @@ homepage: "https://skillhub.cn"
 ## 核心能力
 
 | 能力项 | 免费版 | 专业版 | 说明 |
-|:-------|:-------|:-------|:-----|
+|---|---|---|---|
 | 设计思维引导 | 是 | 是 | 目的/调性/约束/差异化 |
 | 字体选择指导 | 是 | 是 | 避免通用字体 |
 | 配色方案指导 | 是 | 是 | CSS变量一致性 |
@@ -97,27 +99,27 @@ homepage: "https://skillhub.cn"
   --color-primary-50: #f0f9ff;
   --color-primary-500: #0ea5e9;
   --color-primary-900: #0c4a6e;
-
+// ...
   /* 字体系统 */
   --font-display: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-
+// ...
   /* 间距系统(8px 基准) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-4: 1rem;
   --space-8: 2rem;
-
+// ...
   /* 圆角系统 */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
-
+// ...
   /* 阴影系统 */
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-
+// ...
   /* 动效系统 */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 150ms;
@@ -137,7 +139,7 @@ python3 （请参考skill目录中的脚本文件） \
   --framework react \
   --storybook \
   --types
-
+# ...
 # 示例
 # components:
 #   - name: Button
@@ -162,19 +164,19 @@ python3 （请参考skill目录中的脚本文件） \
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 }
-
+// ...
 /* 响应式组件 */
 .card {
   padding: var(--space-4);
   /* 移动端优先 */
 }
-
+// ...
 @media (min-width: 768px) {
   .card {
     padding: var(--space-8);
   }
 }
-
+// ...
 /* 暗色模式 */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -196,7 +198,7 @@ python3 （请参考skill目录中的脚本文件） \
   --standard wcag2.1-aa \
   --output ./reports/a11y_report.md \
   --fix-suggestions
-
+# ...
 # 检查项目:颜色对比度、键盘导航、屏幕阅读器、焦点管理
 ```
 
@@ -251,7 +253,7 @@ FRONTEND_DESIGN_EDITION=pro
 FRONTEND_DESIGN_LICENSE=your_license
 FRONTEND_DESIGN_DEFAULT_FRAMEWORK=react
 FRONTEND_DESIGN_DEFAULT_BREAKPOINTS=sm,md,lg,xl
-
+# ...
 # 设计系统参数
 --brand <name>                # 品牌名称
 --tone <direction>            # 调性方向
@@ -315,7 +317,7 @@ A:可以。支持导入现有 Figma Tokens 或 Style Dictionary 配置,生成兼
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | Node.js 18+ | 运行时 | 必需 | 官方安装 |
 | Python 3.9+ | 脚本运行 | 必需 | 官方安装 |
@@ -334,9 +336,8 @@ A:可以。支持导入现有 Figma Tokens 或 Style Dictionary 配置,生成兼
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

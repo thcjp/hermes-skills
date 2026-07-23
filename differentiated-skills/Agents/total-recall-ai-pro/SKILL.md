@@ -35,6 +35,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 全息记忆AI（专业版）
 
@@ -48,7 +50,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 全息记忆AI(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -201,7 +203,6 @@ memory-cli status --json --verbose
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 功能1：自动事实提取（专业版核心）
 
@@ -214,21 +215,21 @@ class AutoFactExtractor:
         self.llm = llm_client
         self.categories = ["preference", "decision", "fact", "relationship", "goal"]
         self.min_confidence = 0.8
-
+# ...
     def extract(self, conversation):
         # 后台轮询对话，提取事实
         prompt = """
         从以下对话中提取结构化事实。仅提取明确陈述的事实，不推断。
         分类：preference（偏好）、decision（决策）、fact（事实）、
               relationship（关系）、goal（目标）
-        
+# ...
         对话：
         {conversation}
-        
+# ...
         输出JSON数组，每条含：content, category, confidence
         """
         facts = self.llm.extract(conversation, prompt)
-        
+# ...
         extracted = []
         for fact in facts:
             if fact['confidence'] >= self.min_confidence:
@@ -241,7 +242,7 @@ class AutoFactExtractor:
                         self.memory_store(fact)
                         extracted.append({'action': 'added', 'fact': fact})
         return extracted
-
+# ...
     def is_duplicate(self, fact, threshold=0.95):
         # 向量相似度去重
         existing = self.memory_search(fact['content'])
@@ -257,18 +258,18 @@ class AutoFactExtractor:
 对话：
 用户："我们改用PostgreSQL吧，MySQL的JSON支持不够好"
 Agent："好的，已将数据库从MySQL迁移至PostgreSQL..."
-
+# ...
 [后台自动提取]
 - 事实1：决策 - 数据库从MySQL改为PostgreSQL（confidence: 0.95）
 - 事实2：原因 - MySQL的JSON支持不够好（confidence: 0.85）
-
+# ...
 自动记录至加密记忆网络，无需用户手动说"记住"。
 ```
 
 **自动提取的类别**：
 
 | 类别 | 示例 | 提取规则 |
-|------|------|---------|
+|:-----|:-----|:-----|
 | preference（偏好） | "我喜欢深色模式" | 用户表达喜好 |
 | decision（决策） | "我们用`PostgreSQL`" | 用户做出选择 |
 | fact（事实） | "我对花生过敏" | 用户陈述客观事实 |
@@ -288,13 +289,13 @@ class CrossDeviceSync:
         self.credentials = credentials
         self.sync_interval = 300  # 5分钟
         self.conflict_resolution = "merge"
-
+# ...
     def sync(self, direction="both"):
         if direction in ("both", "pull"):
             self.pull_from_cloud()
         if direction in ("both", "push"):
             self.push_to_cloud()
-
+# ...
     def pull_from_cloud(self):
         # 增量拉取（仅变更部分）
         last_sync = self.get_last_sync_time()
@@ -308,7 +309,7 @@ class CrossDeviceSync:
                     self.local_store(resolved)
             else:
                 self.local_store(change)
-
+# ...
     def resolve_conflict(self, local, remote):
         if self.conflict_resolution == "merge":
             # 合并：保留两边信息
@@ -327,7 +328,7 @@ class CrossDeviceSync:
 设备A（手机）：
 用户："记住我明天3点有牙医预约"
 → 加密记忆上传至网络
-
+# ...
 设备B（电脑，5分钟后同步）：
 用户："帮我看看明天的日程"
 Agent：[memory_search query="明天日程"]
@@ -338,7 +339,7 @@ Agent：基于记忆，你明天3点有牙医预约。
 **冲突解决策略**：
 
 | 策略 | 说明 | 适用场景 |
-|------|------|---------|
+|---:|---:|---:|
 | merge（默认） | 合并两边信息 | 大多数场景 |
 | latest | 时间戳最新优先 | 简单记忆 |
 | manual | 标记冲突，等待用户解决 | 重要记忆 |
@@ -355,11 +356,11 @@ class VectorMemorySearch:
         self.model = embedding_model
         self.min_score = 0.3
         self.max_results = 10
-
+# ...
     def search(self, query):
         # 1. 将查询转为向量
         query_vec = self.model.encode(query)
-        
+# ...
         # 2. 在加密记忆中搜索（解密后计算相似度）
         results = []
         for memory in self.decrypted_memories():
@@ -370,7 +371,7 @@ class VectorMemorySearch:
                     'memory': memory,
                     'score': score
                 })
-        
+# ...
         # 3. 按相似度排序
         results.sort(key=lambda x: x['score'], reverse=True)
         return results[:self.max_results]
@@ -379,7 +380,7 @@ class VectorMemorySearch:
 **语义搜索 vs 关键词搜索**：
 
 | 查询 | 关键词搜索 | 语义搜索 |
-|------|-----------|---------|
+|:---:|:---:|:---:|
 | "数据库选型" | 仅匹配含"数据库"和"选型"的记忆 | 匹配"我们用了`PostgreSQL`"、"`MySQL` vs `MongoDB`讨论" |
 | "前端的框架选择" | 仅匹配"前端"和"框架" | 匹配"React vs Vue讨论"、"UI技术栈决策" |
 | "上次关于部署的讨论" | 无结果（无精确匹配） | 匹配"CI/CD配置"、"Docker部署方案" |
@@ -399,29 +400,29 @@ class MemoryCurator:
     def __init__(self):
         self.archive_after_days = 90
         self.deduplicate_threshold = 0.95
-
+# ...
     def score_importance(self, memory):
         """评估记忆重要性（0-1）"""
         score = 0.5  # 基础分
-        
+# ...
         # 被引用次数多 → 重要
         score += min(0.2, memory['ref_count'] * 0.05)
-        
+# ...
         # 决策类记忆 → 重要
         if memory['category'] == 'decision':
             score += 0.2
-        
+# ...
         # 近期记忆 → 重要
         days_ago = (time.time() - memory['created_at']) / 86400
         if days_ago < 7:
             score += 0.1
-        
+# ...
         # 用户标记重要 → 重要
         if memory.get('user_starred'):
             score += 0.2
-        
+# ...
         return min(1.0, score)
-
+# ...
     def deduplicate(self):
         """去重：相似度>95%的记忆合并"""
         all_memories = self.get_all_memories()
@@ -432,7 +433,7 @@ class MemoryCurator:
                     # 合并：保留重要性更高的
                     keeper = mem1 if self.score_importance(mem1) > self.score_importance(mem2) else mem2
                     self.merge(mem1, mem2, keeper)
-
+# ...
     def archive_old(self):
         """归档90天前的低重要性记忆"""
         for memory in self.get_all_memories():
@@ -445,7 +446,7 @@ class MemoryCurator:
 **策展规则**：
 
 | 规则 | 说明 |
-|------|------|
+|:------|------:|
 | 重要性评分 | 被引用次数+类别+近期+用户标记，综合评分0-1 |
 | 自动去重 | 相似度>95%的记忆合并，保留重要性更高的 |
 | 自动归档 | 90天前的低重要性记忆（<0.5）归档 |
@@ -457,39 +458,39 @@ class MemoryCurator:
 ```bash
 # 显式记忆（一事一记）
 memory-cli remember --json "用户偏好深色模式"
-
+# ...
 # 置顶记忆（高重要性）
 memory-cli pin --id mem_abc123
-
+# ...
 # 取消置顶
 memory-cli unpin --id mem_abc123
-
+# ...
 # 修改记忆类型
 memory-cli retype --id mem_abc123 --type decision
-
+# ...
 # 设置记忆作用域（private/shared）
 memory-cli set_scope --id mem_abc123 --scope shared
-
+# ...
 # 查看完整状态
 memory-cli status --json --verbose
-
+# ...
 # 导出记忆（加密格式）
 memory-cli export --format json --encrypted > memories_backup.json
-
+# ...
 # 从其他来源导入
 memory-cli import from notion --file ~/Downloads/notion-export/
 memory-cli import from mem0 --file ~/Downloads/mem0-export.json
-
+# ...
 # 触发配对
 memory-cli pair --json
-
+# ...
 # 同步状态
 memory-cli sync --status
 memory-cli sync --direction both
-
+# ...
 # 向量搜索
 memory-cli search --semantic --query "数据库决策" --limit 10
-
+# ...
 # 记忆策展
 memory-cli curate --deduplicate
 memory-cli curate --archive --older-than 90d
@@ -518,7 +519,7 @@ memory-cli curate --score --id mem_abc123
 ```text
 会话1："我们用PostgreSQL吧，JSON支持好"
 → 自动提取：决策（数据库选PostgreSQL）
-
+# ...
 会话2（1月后）："上次我们为什么选的PostgreSQL？"
 → 向量搜索：找到决策记忆 + 原因（JSON支持好）
 ```
@@ -585,7 +586,7 @@ memory-cli curate --score --id mem_abc123
 ```text
 需求评审："支付模块优先级降为P2"
 → 自动提取：决策（支付模块P2）
-
+# ...
 数月后："支付模块之前是什么优先级？"
 → 向量搜索：找到优先级变更历史
 ```
@@ -607,7 +608,7 @@ memory-cli curate --score --id mem_abc123
 ```text
 手机上："记住下周要见投资人"
 → 加密记忆上传
-
+# ...
 电脑上（5分钟后）："帮我准备下周的日程"
 → 同步拉取：投资人会议记忆
 → Agent基于记忆响应
@@ -618,7 +619,7 @@ memory-cli curate --score --id mem_abc123
 ## 多角色场景对比表
 
 | 角色 | 典型场景 | 推荐配置 | 核心价值 |
-|------|----------|---------|----------|
+|---:|:---|---:|---:|
 | 个人开发者 | 技术决策记忆 | 自动提取+向量搜索 | 跨会话决策追溯 |
 | 团队负责人 | 团队知识沉淀 | 自动提取+同步+策展 | 团队共享知识库 |
 | 企业架构师 | 企业隐私保护 | 加密+作用域控制 | 合规与隐私 |
@@ -676,10 +677,10 @@ Agent会话开始时自动执行记忆检索（memory_search）。
 ```bash
 # 在CI中同步团队知识库
 memory-cli sync --direction pull --before-deploy
-
+# ...
 # 部署后记录决策
 memory-cli remember --json "部署v2.1.0至生产环境"
-
+# ...
 # 事故时检索历史类似问题
 memory-cli search --semantic --query "类似的部署事故" --limit 5
 ```
@@ -728,10 +729,10 @@ memory-cli search --semantic --query "类似的部署事故" --limit 5
 ```bash
 # 从Notion导出迁移
 memory-cli import from notion --file ~/Downloads/notion-export/
-
+# ...
 # 从通用JSON格式迁移
 memory-cli import from json --file ~/Downloads/memories.json
-
+# ...
 # 从Mem0格式迁移
 memory-cli import from mem0 --file ~/Downloads/mem0-export.json
 ```
@@ -739,7 +740,7 @@ memory-cli import from mem0 --file ~/Downloads/mem0-export.json
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:------:|--------|:-------|
 | 1.0.0 | 2026-07 | 初版发布，含自动提取+同步+向量搜索+策展 |
 
 ---
@@ -747,7 +748,7 @@ memory-cli import from mem0 --file ~/Downloads/mem0-export.json
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|:--:|---:|----|
 | 记忆检索无结果 | 未配对或记忆为空 | 检查 `memory-cli status`；确认已配对；检查记忆数量 | 高 |
 | 自动提取未工作 | 功能未启用或置信度过高 | 检查autoExtract配置；降低minConfidence至0.7 | 高 |
 | 跨设备同步失败 | 网络问题或凭据过期 | 检查网络；验证配对状态；手动 `memory-cli sync` | 高 |
@@ -766,7 +767,7 @@ memory-cli import from mem0 --file ~/Downloads/mem0-export.json
 ## 即时修复清单
 
 | 问题 | 修复方法 |
-|------|----------|
+|----|----|
 | Agent遗忘用户偏好 | 检查自动提取是否启用；手动 `memory-cli remember` |
 | 跨设备记忆不一致 | 检查同步状态 `memory-cli sync --status`；手动同步 |
 | 检索结果不准 | 降低minScore；重新建立向量索引 |
@@ -783,28 +784,28 @@ memory-cli import from mem0 --file ~/Downloads/mem0-export.json
 ```bash
 # 完整状态检查
 memory-cli status --json --verbose
-
+# ...
 # 记忆统计
 memory-cli stats --category all
 memory-cli stats --category decision --days 30
-
+# ...
 # 记忆策展
 memory-cli curate --deduplicate
 memory-cli curate --archive --older-than 90d
 memory-cli curate --score --all
-
+# ...
 # 同步管理
 memory-cli sync --status
 memory-cli sync --direction both --force
-
+# ...
 # 向量索引
 memory-cli reindex --vector
 memory-cli search --semantic --query "test" --explain
-
+# ...
 # 导入导出
 memory-cli export --format json --encrypted > backup.json
 memory-cli import from json --file backup.json
-
+# ...
 # 配对管理
 memory-cli pair --json
 memory-cli unpair --confirm
@@ -821,9 +822,8 @@ memory-cli repair --re-derive-key
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:-----|:-----|:-----|:-----|:-----|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -890,7 +890,7 @@ memory-cli repair --re-derive-key
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | memory-cli | CLI工具 | 必需 | 随本技能提供 |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
@@ -974,7 +974,7 @@ memory-cli repair --re-derive-key
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 加密存储+原生检索+手动记录+安全协议 | 个人试用、基础记忆需求 |
 | 收费专业版 | ¥29.9/月 | 全功能（自动提取+跨设备同步+向量搜索+策展）+ 多角色指南 + 优先支持 | 团队/企业、长期项目记忆 |
 

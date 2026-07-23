@@ -17,17 +17,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Note Taker
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理 | 支持 | 支持 |
-| Note-taking | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
+| 商用版权授权 | 不支持 | 支持 |
+| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -38,7 +42,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 康奈尔笔记 | 课堂或会议内容 | 结构化的康奈尔笔记模板 |
 | 卡片盒笔记 | 知识点和参考链接 | Zettelkasten格式笔记和链接 |
 | 思维导图笔记 | 主题和子话题 | 层次化思维导图和大纲 |
@@ -55,7 +59,7 @@ pricing_model: "per_use"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | note_type | string | 是 | 笔记类型, 可选: cornell/zettelkasten/mindmap/meeting |
 | subject | string | 否 | 笔记主题, 默认: 通用 |
 
@@ -71,7 +75,7 @@ Commands print concise confirmations to stdout. `list` and `export` output the f
 
 ### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -90,21 +94,21 @@ export API_KEY="your_api_key_here"
 
 ```bash
 note-taker add "Review pull request for auth module"
-
+# ...
 note-taker add "Prepare slides for Friday meeting"
-
+# ...
 note-taker list
-
+# ...
 note-taker done "Review pull request for auth module"
-
+# ...
 note-taker priority "Prepare slides for Friday meeting" high
-
+# ...
 note-taker today
-
+# ...
 note-taker remind "Submit expense report" "Friday 5pm"
-
+# ...
 note-taker stats
-
+# ...
 note-taker export > backup.txt
 ```
 
@@ -113,16 +117,10 @@ note-taker export > backup.txt
 ### Q1: 如何开始使用Note Taker？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Note Taker有什么限制？
-A: 
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

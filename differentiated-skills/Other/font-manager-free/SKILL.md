@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 字体管理器（免费版）
 
 > **网页字体排版指南。展示与正文字体区分、安全配对、字重渲染、行高行宽规范。**
@@ -34,7 +35,7 @@ suggested_price: 99.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 字体管理器处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -83,13 +84,13 @@ suggested_price: 99.9
 ```bash
 # 1. 分析CSS中的字体使用情况
 python3 （请参考skill目录中的脚本文件） analyze styles.css
-
+# ...
 # 2. 检查字体配对是否合理
 python3 （请参考skill目录中的脚本文件） check-pairing --heading "Playfair Display" --body "Source Sans Pro"
-
+# ...
 # 3. 生成排版参数建议
 python3 （请参考skill目录中的脚本文件） suggest --type body-text
-
+# ...
 # 4. 检查字体加载性能
 python3 （请参考skill目录中的脚本文件） perf-check index.html
 ```
@@ -99,19 +100,19 @@ python3 （请参考skill目录中的脚本文件） perf-check index.html
 将以下内容加入前端开发检查清单：
 
 ```markdown
-
+# ...
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
-
+# ...
+# ...
 ## 字体排版检查清单
-
+# ...
 每次页面开发完成后检查：
 1. 分析字体使用
    python3 （请参考skill目录中的脚本文件） analyze styles.css
-
+# ...
 2. 检查配对合理性
    python3 （请参考skill目录中的脚本文件） check-pairing --heading "字体A" --body "字体B"
-
+# ...
 3. 性能检查
    python3 （请参考skill目录中的脚本文件） perf-check index.html
 ```
@@ -123,7 +124,7 @@ python3 （请参考skill目录中的脚本文件） perf-check index.html
 ### 1. 展示字体与正文字体区分
 
 | 类型 | 用途 | 字号范围 | 示例字体 |
-|------|------|----------|----------|
+|:-----|:-----|:-----|:-----|
 | 展示字体 | 标题、大字 | 24px+ | Abril Fatface, Bebas Neue, Lobster |
 | 正文字体 | 段落、正文 | 12-18px | Inter, Roboto, Georgia, 思源黑体 |
 
@@ -137,7 +138,7 @@ python3 （请参考skill目录中的脚本文件） perf-check index.html
 body {
   font-family: 'Lobster', cursive; /* 装饰字体做正文，可读性极差 */
 }
-
+// ...
 /* 正确：展示字体仅用于标题 */
 h1 {
   font-family: 'Lobster', cursive;
@@ -154,7 +155,7 @@ body {
 ### 2. 安全字体配对指南
 
 | 配对策略 | 说明 | 示例 |
-|----------|------|------|
+|---:|---:|---:|
 | 同超族配对 | 同一字体家族的不同变体 | Roboto + Roboto Slab |
 | 衬线+无衬线 | 经典对比配对 | Playfair Display + Source Sans Pro |
 | 不同字重同族 | 同字体不同粗细 | Inter 400 + Inter 700 |
@@ -172,7 +173,7 @@ body {
 ### 3. 字重与跨平台渲染
 
 | 字重范围 | 渲染表现 | 使用建议 |
-|----------|----------|----------|
+|:---:|:---:|:---:|
 | 100-300（细） | Windows上渲染差 | 避免用于正文 |
 | 400（常规） | 跨平台稳定 | 正文默认选择 |
 | 500-600（中粗） | 跨平台良好 | 强调文字使用 |
@@ -193,7 +194,7 @@ body {
 strong {
   font-weight: 700; /* Inter包含此字重 */
 }
-
+// ...
 /* 错误：使用字体不包含的字重（触发伪粗体） */
 strong {
   font-weight: 900; /* Inter不包含此字重，浏览器伪渲染 */
@@ -207,7 +208,7 @@ strong {
 ### 4. 行高与行宽规范
 
 | 参数 | 正文 | 标题 | 说明 |
-|------|------|------|------|
+|:------|------:|:------|:------|
 | 行高 | 1.4-1.6 | 1.1-1.3 | 正文需要更大行高便于阅读 |
 | 行宽 | 45-75字符 | 不限 | 超过75字符读者会迷失位置 |
 | max-width | 65ch | - | 用ch单位设置容器最大宽度 |
@@ -218,7 +219,7 @@ p {
   line-height: 1.6;
   max-width: 65ch;
 }
-
+// ...
 h1, h2, h3 {
   line-height: 1.2;
 }
@@ -321,7 +322,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont,
 # 检查字体配对是否合理
 python3 （请参考skill目录中的脚本文件） check-pairing \
   --heading "Playfair Display" --body "Source Sans Pro"
-
+# ...
 # 生成安全配对建议
 python3 （请参考skill目录中的脚本文件） suggest-pairing --style modern
 ```
@@ -336,7 +337,7 @@ python3 （请参考skill目录中的脚本文件） suggest-pairing --style mod
 ```bash
 # 分析CSS字体使用
 python3 （请参考skill目录中的脚本文件） analyze styles.css
-
+# ...
 # 生成排版参数建议
 python3 （请参考skill目录中的脚本文件） suggest --type body-text
 ```
@@ -351,7 +352,7 @@ python3 （请参考skill目录中的脚本文件） suggest --type body-text
 ```bash
 # 检查字体加载性能
 python3 （请参考skill目录中的脚本文件） perf-check index.html
-
+# ...
 # 生成优化建议
 python3 （请参考skill目录中的脚本文件） perf-optimize styles.css
 ```
@@ -365,15 +366,12 @@ python3 （请参考skill目录中的脚本文件） perf-optimize styles.css
 
 ### 错误场景3
 
-检查`error_code`并按照处理方式进行排查。
-
-
 ## 命令行接口
 
 ```text
 用法：
   python3 （请参考skill目录中的脚本文件） <命令> [选项]
-
+# ...
 命令：
   analyze <CSS文件>        分析字体使用情况
   check-pairing             检查字体配对合理性
@@ -381,14 +379,14 @@ python3 （请参考skill目录中的脚本文件） perf-optimize styles.css
   suggest-pairing            生成安全配对建议
   perf-check <HTML文件>     检查字体加载性能
   perf-optimize <CSS文件>   生成性能优化建议
-
+# ...
 选项：
   --heading <字体>    指定标题字体
   --body <字体>       指定正文字体
   --type <类型>       指定排版类型（body-text/heading/display）
   --style <风格>      指定设计风格（modern/classic/minimal）
   --help              显示帮助
-
+# ...
 示例：
   python3 （请参考skill目录中的脚本文件） analyze styles.css
   python3 （请参考skill目录中的脚本文件） check-pairing --heading "Playfair Display" --body "Inter"
@@ -407,30 +405,30 @@ python3 （请参考skill目录中的脚本文件） perf-optimize styles.css
 typography:
   heading_font: "Playfair Display"
   body_font: "Source Sans Pro"
-
+# ...
   scale_ratio: 1.25  # 字号比例（1.25或1.333）
-
+# ...
   sizes:
     h1: 2.5rem
     h2: 2rem
     h3: 1.5rem
     body: 1rem
     small: 0.875rem
-
+# ...
   weights:
     body: 400
     strong: 700
     heading: 700
-
+# ...
   line_height:
     body: 1.6
     heading: 1.2
-
+# ...
   max_width: 65ch
-
+# ...
   letter_spacing:
     uppercase: 0.05em
-
+# ...
   font_display: swap
 ```
 
@@ -447,11 +445,11 @@ loading:
     - name: "Inter"
       weight: 700
       url: "/fonts/inter-700.woff2"
-
+# ...
   subset:
     enabled: true
     languages: [latin, latin-ext]
-
+# ...
   format: woff2  # 仅使用WOFF2
 ```
 
@@ -503,7 +501,7 @@ Windows的字体渲染引擎（GDI/DirectWrite）对细字重的处理不如macO
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
 | PyYAML | Python库 | 可选 | `pip install pyyaml`（配置文件功能需要） |

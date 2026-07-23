@@ -39,6 +39,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 沟通偏好工具箱(专业版)
 
@@ -58,7 +60,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|----|---|---|
 | 显式反馈学习 | ✅ | ✅ |
 | 三段式确认机制 | ✅ | ✅ |
 | 紧凑存储与冲突解决 | ✅ | ✅ |
@@ -124,7 +126,7 @@ chat-toolkit team join --team "tech-team" --member alice
 ```bash
 chat-toolkit history list --since "7days"
 # 输出版本列表，每条记录包含变更内容、时间、原因
-
+# ...
 chat-toolkit history rollback --version 2024-03-15-001
 # 回滚到指定版本，并保留当前版本作为新历史
 ```
@@ -136,7 +138,7 @@ chat-toolkit history rollback --version 2024-03-15-001
 ```bash
 # 公司电脑推送偏好
 chat-toolkit sync push --remote git@example.com:me/chat-prefs.git
-
+# ...
 # 家里电脑拉取
 chat-toolkit sync pull --remote git@example.com:me/chat-prefs.git
 chat-toolkit sync merge --strategy "latest-wins"
@@ -163,13 +165,13 @@ chat-toolkit analyze --period "1year" --output report.html
 ```bash
 chat-toolkit scene create --name "work" \
   --tone "正式" --format "结构化"
-
+# ...
 chat-toolkit scene create --name "personal" \
   --tone "轻松" --format "对话式"
-
+# ...
 chat-toolkit scene create --name "tech" \
   --tone "技术化" --terminology "英文优先"
-
+# ...
 # Agent根据对话内容自动识别场景并切换
 chat-toolkit scene auto-detect --enable
 ```
@@ -239,25 +241,25 @@ team:
   name: tech-team
   description: 技术团队偏好基线
   created_at: 2026-03-15
-
+# ...
 baseline:
   tone: 简洁技术化
   format: 项目符号优先
   opening: 直接进入正题
   terminology: 技术术语直接使用
   emoji: 工作场景禁用
-
+# ...
 scenes:
   - name: code-review
     overrides:
       tone: 严谨
       format: 表格对比
-  
+# ...
   - name: standup
     overrides:
       tone: 简洁
       length: 不超过3句话
-
+# ...
 members:
   - alice (admin)
   - bob
@@ -273,17 +275,17 @@ rules:
     triggers:
       - keywords: [项目, 任务, 截止, 评审]
       - time: "09:00-18:00 weekdays"
-  
+# ...
   - scene: personal
     triggers:
       - keywords: [周末, 旅行, 兴趣]
       - time: "evenings and weekends"
-  
+# ...
   - scene: tech
     triggers:
       - keywords: [代码, 调试, 架构, API]
       - context: "包含代码块"
-
+# ...
 default_scene: neutral
 fallback_scene: work
 ```
@@ -299,7 +301,7 @@ metrics:
   - category_distribution
   - retention_rate
   - abandonment_rate
-
+# ...
 output:
   format: html
   template: detailed
@@ -337,7 +339,7 @@ output:
 ## 错误处理
 
 | 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
-|------|---------|---------|--------|
+|:---------|:---------|:---------|:---------|
 | 团队基线拉取失败 | Git仓库权限 | 检查SSH密钥配置与仓库访问权限 | P0 |
 | 场景切换频繁 | 触发规则过于敏感 | 调整规则阈值，增加上下文判断 | P1 |
 | 同步冲突未解决 | 冲突策略未配置 | 设置`sync merge --strategy latest-wins` | P1 |
@@ -390,7 +392,7 @@ A：支持邮件、飞书、钉钉、Slack通知。配置`team notify --channel 
 ## 版本升级迁移指南
 
 | 版本 | 变更 | 迁移建议 |
-|------|------|---------|
+|---:|---:|---:|
 | 免费版 → 专业版 | 新增团队/版本/同步能力 | 使用`chat-toolkit migrate free-to-pro`自动迁移 |
 | 1.0 → 1.1 | 场景规则引擎升级 | 兼容旧规则，自动迁移到新格式 |
 | 1.1 → 1.2 | 新增跨Agent迁移 | 无需迁移，旧偏好可直接导出 |
@@ -438,7 +440,7 @@ chat-toolkit export --format markdown --output ~/Obsidian/Prefs/
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 显式反馈学习+三段式确认+本地存储 | 个人单设备使用 |
 | 收费专业版 | ¥19.9/月 | 全功能+团队共享+版本历史+跨设备同步+分析报告+场景切换+跨Agent迁移 | 团队/企业多人协作 |
 
@@ -453,7 +455,7 @@ chat-toolkit export --format markdown --output ~/Obsidian/Prefs/
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Git | 版本控制 | 可选（同步功能需要） | 系统自带或`apt install git` |
 | Python 3.8+ | 运行时 | 可选（分析报告功能需要） | `apt install python3` |

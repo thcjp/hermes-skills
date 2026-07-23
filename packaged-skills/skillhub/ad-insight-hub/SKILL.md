@@ -24,6 +24,8 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 广告洞察中枢（Ad Insight Hub）
 
@@ -32,7 +34,7 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 大数据集流式处理 | 不支持 | 支持 |
 | 多数据源关联查询 | 不支持 | 支持 |
@@ -48,7 +50,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | AdMapix API | 远程 HTTP API | 必需 | https://www.admapix.com 注册获取 |
 | ADMAPIX_API_KEY | 环境变量 | 必需 | 控制台 API Keys 创建；仅作 `X-API-Key` 请求头 |
 | curl 或等价 HTTP 客户端 | 命令行工具 | 必需 | 系统自带或包管理器安装 |
@@ -60,7 +62,7 @@ pricing_model: "per_use"
 
 ### 缓存策略
 | 数据类型 | 缓存时长 | 缓存位置 |
-| --: | --: | --: |
+|---:|---:|---:|
 | 元数据（filter-options 等） | 24 小时 | `~/.admapix-cache/metadata/` |
 | 创意搜索结果 | 1 小时 | `~/.admapix-cache/search/` |
 | 创意详情 | 7 天 | `~/.admapix-cache/detail/` |
@@ -106,14 +108,14 @@ pricing_model: "per_use"
 
 ### 行业码（trade_level1）
 | 自然语言 | 代码 | 自然语言 | 代码 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | 游戏 | 602 | 金融 | 607 |
 | 电商 | 601 | 工具 | 603 |
 | 社交 | 604 | 娱乐 | 609 |
 
 ### 国家/地区码
 | 国家/地 | 代码 | 自然语言 | 代码 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | 美国 | US | 日本 | JP |
 | 韩国 | KR | 德国 | DE |
 | 东南亚 | TH/VN/ID/PH/MY | 中东 | SA/AE/TR/EG |
@@ -146,7 +148,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
-| --- | --: | :-- | :-: |
+|---:|:---|---:|---:|
 | 竞品创意监控 | "监控某竞品最近7天在美国的视频创意变化" | 新增创意列表、素材分布变化 | 创意搜索+计数 |
 | 出海选品调研 | "对比美国和东南亚三消类游戏的下载与收入" | 多国下载/收入对比表+可信度分级 | 下载/收入估算 |
 | 素材趋势分析 | "统计游戏行业近30天创意类型分布" | 创意类型分布饼图数据 | 创意分布 |
@@ -249,7 +251,7 @@ curl -s -X POST "https://api.admapix.com/api/data/revenue-country" \
 **输出**：表格对比，每行附可信度分级
 
 | 地区 | 月下载量 | 月收入 | 可信度 |
-| --: | :-- | :-: | --- |
+|:------:|--------|:-------|:------:|
 | 美国 | 12,500,000 | $3,200,000 | A 级（多源交叉方差 < 10%） |
 | 东南亚 | 8,700,000 | $680,000 | C 级（长尾方差 > 25%） |
 
@@ -278,7 +280,7 @@ curl -s "https://api.admapix.com/api/data/sdk-detail?unifiedProductId=app_001" \
 **输出**：SDK 矩阵表（应用 x SDK）+ 供应链风险提示
 
 | 应用 | Firebase | AppsFlyer | Unity Ads | 独家SDK |
-| :-- | :-: | --- | --: | :-- |
+|----|:--:|---:|----|:--:|
 | App A | Yes | Yes | Yes | IRONSOURCE |
 | App B | Yes | Yes | No | - |
 | App C | Yes | No | Yes | CHARTBOOST |
@@ -287,9 +289,8 @@ curl -s "https://api.admapix.com/api/data/sdk-detail?unifiedProductId=app_001" \
 
 ## 错误处理
 
-
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| :-: | --- | --: | :-- |
+|----|----|----|----|
 | 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 缺失/格式错/已禁用 | 引导用户检查 Key；永不打印 Key |
 | 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 权限不足或套餐限制 | 提示用户升级 AdMapix 套餐 |
 | 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | 触发限流 | （1s/2s/4s），最多 3 次；降低并发到 3 |

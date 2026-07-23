@@ -49,6 +49,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 天气查询工具包专业版
 
@@ -61,7 +63,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 免费版 | 专业版 | 说明 |
-|:-----|:------:|:------:|:-----|
+|---|---|---|---|
 | 当前天气查询 | 支持 | 支持 | 完全兼容,平滑升级 |
 | 天气预报 | 3天 | 16天 | 扩展预报范围 |
 | 紧凑/完整/PNG格式 | 支持 | 支持 | 全格式兼容 |
@@ -112,15 +114,15 @@ import concurrent.futures
 import urllib.request
 import json
 from datetime import datetime
-
+# ...
 class WeatherBatchQuery:
     """批量天气查询器"""
-
+# ...
     def __init__(self, max_workers=20):
         self.max_workers = max_workers
         self.cache = {}
         self.cache_ttl = 1800  # 30分钟缓存
-
+# ...
     def query_single(self, city):
         """查询单个城市天气"""
         url = (
@@ -140,7 +142,7 @@ class WeatherBatchQuery:
             }
         except Exception as e:
             return {"city": city["name"], "status": "error", "message": str(e)}
-
+# ...
     def batch_query(self, cities):
         """并发批量查询多个城市"""
         results = []
@@ -149,7 +151,7 @@ class WeatherBatchQuery:
             for future in concurrent.futures.as_completed(futures):
                 results.append(future.result())
         return results
-
+# ...
 # 使用示例:物流分拨中心天气监控
 centers = [
     {"name": "北京分拨中心", "lat": 39.9, "lon": 116.4},
@@ -158,7 +160,7 @@ centers = [
     {"name": "成都分拨中心", "lat": 30.6, "lon": 104.1},
     {"name": "武汉分拨中心", "lat": 30.5, "lon": 114.3},
 ]
-
+# ...
 query = WeatherBatchQuery(max_workers=10)
 results = query.batch_query(centers)
 for r in results:
@@ -177,7 +179,7 @@ weather-pro history \
   --metrics "temperature,precipitation,windspeed" \
   --format json \
   --output beijing_june.json
-
+# ...
 # 输出示例:
 # [INFO] 查询历史天气: Beijing (2025-06-01 至 2025-06-30)
 # [DATA] 数据源: Open-Meteo Archive API
@@ -194,10 +196,10 @@ weather-pro history \
 # 天气预警引擎与Webhook推送
 import json
 import urllib.request
-
+# ...
 class WeatherAlertEngine:
     """天气预警引擎"""
-
+# ...
     ALERT_THRESHOLDS = {
         "high_temp": 35,        # 高温预警阈值
         "low_temp": -10,        # 低温预警阈值
@@ -205,14 +207,14 @@ class WeatherAlertEngine:
         "heavy_rain": 25,       # 暴雨预警阈值(mm/h)
         "storm_codes": [95, 96, 99]  # 雷暴天气代码
     }
-
+# ...
     def check_alerts(self, weather_data, location):
         """检查天气数据是否触发预警"""
         alerts = []
         temp = weather_data.get("temperature", 0)
         wind = weather_data.get("windspeed", 0)
         code = weather_data.get("weathercode", 0)
-
+# ...
         if temp >= self.ALERT_THRESHOLDS["high_temp"]:
             alerts.append({
                 "type": "HIGH_TEMP",
@@ -235,7 +237,7 @@ class WeatherAlertEngine:
                 "action": "建议避免户外活动,远离高地"
             })
         return alerts
-
+# ...
     def push_webhook(self, webhook_url, alert):
         """通过Webhook推送预警"""
         payload = json.dumps(alert).encode("utf-8")
@@ -251,7 +253,7 @@ class WeatherAlertEngine:
         except Exception as e:
             print(f"推送失败: {e}")
             return False
-
+# ...
 # 使用示例
 engine = WeatherAlertEngine()
 weather = {"temperature": 38, "windspeed": 25, "weathercode": 95}
@@ -355,7 +357,7 @@ weather_pro_config:
 ### Q3: 历史天气数据能查询多久以前?
 
 | 数据源 | 历史范围 | 精度 |
-|:-------|:---------|:-----|
+|:-----|:-----|:-----|
 | Open-Meteo Archive | 过去1年 | 小时级 |
 | Open-Meteo Historical | 过去10年 | 日级 |
 | 企业气象服务 | 自定义 | 可定制 |
@@ -365,7 +367,7 @@ weather_pro_config:
 支持三种推送通道:
 
 | 通道 | 延迟 | 适用场景 |
-|:-----|:-----|:---------|
+|---:|---:|---:|
 | Webhook | 秒级 | 系统集成,自动响应 |
 | 邮件 | 分钟级 | 运维通知,存档 |
 | 短信 | 秒级 | 紧急预警(需额外配置) |
@@ -376,22 +378,22 @@ weather_pro_config:
 # 数据源智能切换策略
 class DataSourceManager:
     """多数据源管理器"""
-
+# ...
     def __init__(self, sources):
         self.sources = sources  # 按优先级排序
         self.failure_count = {s: 0 for s in sources}
-
+# ...
     def get_best_source(self):
         """选择最优数据源"""
         for source in self.sources:
             if self.failure_count[source] < 3:
                 return source
         return self.sources[0]  # 全部失败时回退到首选
-
+# ...
     def report_failure(self, source):
         """记录数据源失败"""
         self.failure_count[source] += 1
-
+# ...
     def report_success(self, source):
         """记录数据源成功,重置失败计数"""
         self.failure_count[source] = 0
@@ -408,7 +410,7 @@ class DataSourceManager:
 ```bash
 # 依赖说明
 pip install weather-pro-sdk
-
+# ...
 # API调用示例
 python -c "
 from weather_pro import WeatherClient
@@ -448,7 +450,7 @@ schedule:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | wttr.in | 公开API | 可选 | 免费免Key,备选数据源 |
 | Open-Meteo | 公开API | 推荐 | 免费免Key,主要数据源 |
@@ -485,9 +487,8 @@ schedule:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

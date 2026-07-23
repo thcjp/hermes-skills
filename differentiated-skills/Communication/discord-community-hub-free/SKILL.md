@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
 ---
-
 # Discord 社区中心(免费版)
 
 ## 概述
@@ -52,7 +53,7 @@ Discord 社区中心免费版是一款面向个人社区管理者的 Discord 社
 ## 核心能力
 
 | 能力模块 | 说明 | 免费版支持 |
-|:-------|:-----|:----------|
+|----|---|-----|
 | 用户资料 | 查询当前用户信息 | 支持 |
 | 服务器列表 | 列出已加入的服务器 | 支持 |
 | 成员信息 | 查询服务器成员资料 | 支持 |
@@ -102,13 +103,13 @@ const me = await integration.call_tool({
   tool: "discord_get_my_user",
   parameters: {}
 });
-
+// ...
 // 2. 列出已加入的服务器
 const guilds = await integration.call_tool({
   tool: "discord_list_my_guilds",
   parameters: {}
 });
-
+// ...
 // 3. 获取自己在某服务器的成员信息
 const member = await integration.call_tool({
   tool: "discord_get_my_guild_member",
@@ -128,13 +129,13 @@ const widget = await integration.call_tool({
   tool: "discord_get_guild_widget",
   parameters: { guild_id: "123456789" }
 });
-
+// ...
 // 2. 获取 widget 图片(PNG)
 const widgetPng = await integration.call_tool({
   tool: "discord_get_guild_widget_png",
   parameters: { guild_id: "123456789" }
 });
-
+// ...
 // 3. 解析邀请码详情
 const invite = await integration.call_tool({
   tool: "discord_invite_resolve",
@@ -149,10 +150,10 @@ const invite = await integration.call_tool({
 ```javascript
 // 1. 确认 Discord 已连接
 const integrations = await integration.list_integrations();
-
+// ...
 // 2. 列出 Discord 可用工具
 const tools = await integration.list_tools({ integration: "discord" });
-
+// ...
 // 3. 搜索特定功能工具
 const found = await integration.search_tools({
   query: "guild",
@@ -189,7 +190,7 @@ platform plugins install integration-gateway
 ```javascript
 // 1. 发起配对
 const pairing = await integration.begin_pairing();
-
+// ...
 // 2. 在浏览器中打开返回的 URL
 // 3. 登录集成网关并批准设备
 ```
@@ -203,7 +204,7 @@ const pairing = await integration.begin_pairing();
 ```javascript
 // 验证 Discord 已连接
 const connected = await integration.list_integrations();
-
+// ...
 // 列出可用工具
 const tools = await integration.list_tools({ integration: "discord" });
 ```
@@ -218,13 +219,13 @@ await integration.call_tool({
   tool: "discord_get_my_user",
   parameters: {}
 });
-
+// ...
 // 获取 OAuth2 授权详情(含 scope 与过期时间)
 await integration.call_tool({
   tool: "discord_get_my_oauth2_authorization",
   parameters: {}
 });
-
+// ...
 // 获取 OIDC 用户信息(符合 OpenID Connect)
 await integration.call_tool({
   tool: "discord_get_openid_connect_userinfo",
@@ -240,13 +241,13 @@ await integration.call_tool({
   tool: "discord_get_user",
   parameters: { user_id: "@me" }
 });
-
+// ...
 // 列出已连接的第三方账号
 await integration.call_tool({
   tool: "discord_list_my_connections",
   parameters: {}
 });
-
+// ...
 // 获取服务器模板详情
 await integration.call_tool({
   tool: "discord_get_guild_template",
@@ -262,13 +263,13 @@ await integration.call_tool({
   tool: "discord_get_gateway",
   parameters: {}
 });
-
+// ...
 // 获取 OAuth2 公钥(用于外部 JWT 验证)
 await integration.call_tool({
   tool: "discord_get_public_keys",
   parameters: {}
 });
-
+// ...
 // 列出 Nitro 贴纸包
 await integration.call_tool({
   tool: "discord_list_sticker_packs",
@@ -334,7 +335,7 @@ Discord 限制用户名每小时最多修改 2 次。频繁修改会触发此限
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM 能力 | API | 必需 | 由 Agent 内置大模型提供 |
 | 集成网关插件 | 插件 | 必需 | Agent 平台插件市场安装 |
 | Discord OAuth2 | 授权 | 必需 | Discord Developer Portal 注册应用 |
@@ -357,9 +358,8 @@ Discord 限制用户名每小时最多修改 2 次。频繁修改会触发此限
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

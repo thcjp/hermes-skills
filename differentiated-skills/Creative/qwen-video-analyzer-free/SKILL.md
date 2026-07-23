@@ -38,8 +38,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
-
 # 通义千问视频分析工具 - 免费版
 
 ## 概述
@@ -51,7 +52,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力项 | 免费版支持 | 说明 |
-|:-------|:-----------|:-----|
+|---|-----|---|
 | 本地视频分析 | 是 | 支持常见视频格式 |
 | 远程 URL 分析 | 是 | http/https 直链 |
 | 自定义提示词 | 是 | 灵活提问 |
@@ -99,7 +100,7 @@ suggested_price: 29.9
 # 分析本地视频并生成内容标签
 python （请参考skill目录中的脚本文件） /path/to/video.mp4 \
   --prompt "请为这段视频生成5个内容标签,用逗号分隔"
-
+# ...
 # 分析远程视频
 python （请参考skill目录中的脚本文件） https://example.com/video.mp4 \
   --prompt "请为这段视频生成5个内容标签,用逗号分隔"
@@ -113,7 +114,7 @@ python （请参考skill目录中的脚本文件） https://example.com/video.mp
 # 生成视频内容摘要
 python （请参考skill目录中的脚本文件） /path/to/clip.mp4 \
   --prompt "请用一段话概括这段视频的主要内容"
-
+# ...
 # 识别视频中的关键场景
 python （请参考skill目录中的脚本文件） /path/to/clip.mp4 \
   --prompt "请详细描述视频中的每个场景,按时间顺序列出" \
@@ -164,7 +165,7 @@ API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey
 ```bash
 # 默认分析(使用默认提示词与 FPS=2)
 python （请参考skill目录中的脚本文件） /path/to/video.mp4
-
+# ...
 # 自定义提示词与帧率
 python （请参考skill目录中的脚本文件） /path/to/video.mp4 \
   --prompt "视频中出现了哪些人物和物体?" \
@@ -182,10 +183,10 @@ python （请参考skill目录中的脚本文件） /path/to/video.mp4 \
 ```bash
 # 配置文件路径
 ~/.skill-platform/skill-platform.json
-
+# ...
 # 参数说明
 | 参数 | 说明 | 默认值 | 必填 |
-|:-----|:-----|:-------|:-----|
+|:-----|:-----|:-----|:-----|
 | video_source | 视频文件路径或远程 URL | - | 是 |
 | --fps | 抽帧频率(每秒抽取帧数) | 2 | 否 |
 | --prompt | 分析提示词 | "这段视频描绘的是什么景象?" | 否 |
@@ -195,13 +196,13 @@ python （请参考skill目录中的脚本文件） /path/to/video.mp4 \
 # 常用参数组合
 # 详细场景描述(高帧率)
 --fps 5 --prompt "请详细描述视频中的每个场景"
-
+# ...
 # 快速概览(低帧率,节省成本)
 --fps 1 --prompt "请概括视频主要内容"
-
+# ...
 # 物体识别
 --fps 3 --prompt "视频中出现了哪些人物和物体?"
-
+# ...
 # 动作识别
 --fps 5 --prompt "请描述视频中人物的动作和行为"
 ```
@@ -244,7 +245,7 @@ A:在阿里云 DashScope 平台注册并创建 API Key,写入配置文件 `~/.sk
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | DashScope API | 外部 API | 必需 | 阿里云平台申请 |
 | Python 3.8+ | 运行时 | 必需 | 官方安装 |
 | dashscope | Python SDK | 必需 | pip install dashscope |
@@ -262,9 +263,8 @@ A:在阿里云 DashScope 平台注册并创建 API Key,写入配置文件 `~/.sk
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

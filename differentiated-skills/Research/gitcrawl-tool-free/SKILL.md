@@ -43,8 +43,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
-
 # 仓库归档搜索（免费版）
 
 ## 概述
@@ -54,7 +55,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 本地归档缓存 | 缓存 issue/PR 数据到本地 | 是 |
 | 新鲜度检测 | 检测缓存是否需要更新 | 是 |
 | 关键词搜索 | 按关键词搜索 issue 和 PR | 是 |
@@ -122,7 +123,7 @@ suggested_price: 29.9
 ```bash
 # 检查归档数据新鲜度
 gitcrawl doctor --json
-
+# ...
 # 搜索包含特定关键词的 issue
 gitcrawl search issues "memory leak" \
   -R owner/repo \
@@ -141,7 +142,7 @@ gitcrawl search issues "memory leak" \
 gitcrawl gh pr status 123 \
   -R owner/repo \
   --compact
-
+# ...
 # 查看 PR 详细信息
 gitcrawl gh pr view 123 \
   -R owner/repo \
@@ -187,10 +188,10 @@ gitcrawl neighbors owner/repo \
 ```bash
 # 安装 gitcrawl
 # 参考官方文档进行安装
-
+# ...
 # 初始化本地归档
 gitcrawl init --storage ~/.gitcrawl/archive
-
+# ...
 # 验证安装
 gitcrawl doctor --json
 ```
@@ -210,13 +211,12 @@ gitcrawl search issues "bug report" \
 ```bash
 # 手动同步最新数据
 gitcrawl sync owner/repo
-
+# ...
 # 验证数据新鲜度
 gitcrawl doctor --json
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -227,12 +227,12 @@ gitcrawl doctor --json
 gitcrawl search issues "feature request" \
   -R owner/repo \
   --state open
-
+# ...
 # 搜索包含 closed 状态的 issue
 gitcrawl search issues "fixed" \
   -R owner/repo \
   --include-closed
-
+# ...
 # 查看指定 issue 详情
 gitcrawl threads owner/repo \
   --numbers 123,456 \
@@ -243,7 +243,7 @@ gitcrawl threads owner/repo \
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `-R` | 字符串 | 无 | 仓库地址 owner/repo |
 | `--state` | 字符串 | all | 状态过滤 open/closed/all |
 | `--include-closed` | 布尔 | false | 包含已关闭的 |
@@ -271,7 +271,7 @@ gh pr view 123 --json                           # 4. 实时验证（操作前）
 ### 搜索关键词优化
 
 | 场景 | 推荐关键词 | 说明 |
-| --- | --- | --- |
+|---:|---:|---:|
 | Bug 查找 | `bug`, `error`, `crash`, `fix` | 定位问题相关 |
 | 功能请求 | `feature`, `enhancement`, `request` | 了解需求 |
 | 性能问题 | `performance`, `slow`, `memory`, `cpu` | 性能优化 |
@@ -282,10 +282,10 @@ gh pr view 123 --json                           # 4. 实时验证（操作前）
 ```bash
 # 定期检查数据新鲜度
 gitcrawl doctor --json | python -m json.tool
-
+# ...
 # 数据过期时手动更新
 gitcrawl sync owner/repo
-
+# ...
 # 查看最后同步时间
 gitcrawl status owner/repo
 ```
@@ -297,10 +297,10 @@ gitcrawl status owner/repo
 ```bash
 # 检查新鲜度
 gitcrawl doctor --json
-
+# ...
 # 更新归档
 gitcrawl sync owner/repo
-
+# ...
 # 验证更新
 gitcrawl doctor --json
 ```
@@ -310,10 +310,10 @@ gitcrawl doctor --json
 ```bash
 # 检查仓库地址是否正确
 gitcrawl list-repos
-
+# ...
 # 尝试更宽泛的关键词
 gitcrawl search issues "bug" -R owner/repo --state all
-
+# ...
 # 包含已关闭的 issue
 gitcrawl search issues "keyword" -R owner/repo --include-closed
 ```
@@ -323,10 +323,10 @@ gitcrawl search issues "keyword" -R owner/repo --include-closed
 ```bash
 # 检查 GitHub 认证
 gh auth status
-
+# ...
 # 重新认证
 gh auth login
-
+# ...
 # 使用缓存模式（非实时）
 gitcrawl search issues "query" -R owner/repo
 ```
@@ -336,10 +336,10 @@ gitcrawl search issues "query" -R owner/repo
 ```bash
 # 使用缓存优先模式
 gitcrawl search issues "query" -R owner/repo --cached
-
+# ...
 # 减少 JSON 输出字段
 gitcrawl search issues "query" -R owner/repo --json number,title
-
+# ...
 # 限制返回数量
 gitcrawl search issues "query" -R owner/repo --limit 5
 ```
@@ -356,7 +356,7 @@ gitcrawl search issues "query" -R owner/repo --limit 5
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|
 | gitcrawl | CLI 工具 | 是 | 参考官方文档安装 |
 | gh | GitHub CLI | 是（实时查询） | `brew install gh` 或 `apt install gh` |
 | Git | 版本控制 | 是 | 系统自带 |
@@ -370,7 +370,7 @@ gitcrawl search issues "query" -R owner/repo --limit 5
 ```bash
 # 配置 GitHub CLI 认证
 gh auth login
-
+# ...
 # 或使用环境变量
 export GITHUB_TOKEN=your_token_here
 ```
@@ -384,9 +384,8 @@ export GITHUB_TOKEN=your_token_here
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

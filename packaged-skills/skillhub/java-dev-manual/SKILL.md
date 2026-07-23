@@ -36,24 +36,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # Java开发手册专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版新增 | 不支持 | 支持 |
-| 规约查询 | 不支持 | 支持 |
-| 团队级自定义规则 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 规约查询 | 7 维度速查 | 团队级自定义规则 |
 | 合规检查 | 手动对照 | 自动化检查脚本 |
 | 项目初始化 | - | 规范脚手架生成 |
@@ -97,8 +99,6 @@ pricing_model: "per_use"
 ### 场景二：新项目脚手架生成
 新项目需要快速搭建符合规范的工程结构。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三：规约合规性审计
 团队需要对整个项目进行规约合规性审计。
 
@@ -106,67 +106,67 @@ pricing_model: "per_use"
 #!/bin/bash
 PROJECT_DIR=$1
 REPORT_FILE="convention-audit-$(date +%Y%m%d).md"
-
+# ...
 echo "# Java 规约合规性审计报告" > "$REPORT_FILE"
 echo "**审计日期**: $(date)" >> "$REPORT_FILE"
 echo "**审计范围**: $PROJECT_DIR" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
-
+# ...
 JAVA_FILES=$(find "$PROJECT_DIR" -name "*.java" -not -path "*/test/*")
 FILE_COUNT=$(echo "$JAVA_FILES" | wc -l)
-
+# ...
 echo "## 审计概览" >> "$REPORT_FILE"
 echo "| 指标 | 数值 |" >> "$REPORT_FILE"
 echo "| --- | --- |" >> "$REPORT_FILE"
 echo "| Java 文件数 | $FILE_COUNT |" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 1. 命名规范审计" >> "$REPORT_FILE"
 echo "### 类名后缀合规性" >> "$REPORT_FILE"
 echo "| 规则 | 合规数 | 违规数 | 合规率 |" >> "$REPORT_FILE"
 echo "| --- | --- | --- | --- |" >> "$REPORT_FILE"
-
+# ...
 CONTROLLER_OK=$(find "$PROJECT_DIR" -name "*Controller.java" | wc -l)
 CONTROLLER_BAD=$(find "$PROJECT_DIR" -path "*/controller/*" -name "*.java" ! -name "*Controller.java" | wc -l)
 echo "| Controller 后缀 | $CONTROLLER_OK | $CONTROLLER_BAD | $(echo "scale=0; $CONTROLLER_OK * 100 / ($CONTROLLER_OK + $CONTROLLER_BAD + 1)" | bc)% |" >> "$REPORT_FILE"
-
+# ...
 echo "### 拼音命名检查" >> "$REPORT_FILE"
 PINYIN_ISSUES=$(grep -rn "yonghu\|dingdan\|zhifu\|shangpin\|gongsi" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 拼音命名违规: $PINYIN_ISSUES 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 2. 异常处理审计" >> "$REPORT_FILE"
 EMPTY_CATCH=$(grep -rn "catch.*Exception.*\{" "$PROJECT_DIR" --include="*.java" -A 1 | grep -c "^.*--$" || echo 0)
 echo "- 空 catch 块: $EMPTY_CATCH 处" >> "$REPORT_FILE"
-
+# ...
 SYSTEM_OUT=$(grep -rn "System\.out\.\|System\.err\." "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 使用 System.out: $SYSTEM_OUT 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 3. 安全审计" >> "$REPORT_FILE"
 SQL_CONCAT=$(grep -rn "String sql.*+.*\"" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- SQL 拼接: $SQL_CONCAT 处" >> "$REPORT_FILE"
-
+# ...
 HARDCODED_PWD=$(grep -rin "password.*=.*\"\|secret.*=.*\"" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 硬编码密码: $HARDCODED_PWD 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 4. 并发审计" >> "$REPORT_FILE"
 EXECUTORS_USE=$(grep -rn "Executors\." "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 使用 Executors: $EXECUTORS_USE 处" >> "$REPORT_FILE"
-
+# ...
 THREADLOCAL_NO_REMOVE=$(grep -rn "ThreadLocal" "$PROJECT_DIR" --include="*.java" -l | while read f; do
   SET_COUNT=$(grep -c "\.set(" "$f")
   REMOVE_COUNT=$(grep -c "\.remove(" "$f")
   if [ "$SET_COUNT" -gt "$REMOVE_COUNT" ]; then echo "$f"; fi
 done | wc -l)
 echo "- ThreadLocal 未清理: $THREADLOCAL_NO_REMOVE 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 5. 架构分层审计" >> "$REPORT_FILE"
 BAD_DEP=$(grep -rn "import.*repository\." "$PROJECT_DIR"/src/main/java/*/controller/ 2>/dev/null | wc -l)
 echo "- Controller 直接依赖 Repository: $BAD_DEP 处" >> "$REPORT_FILE"
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 审计完成"
 echo "报告: $REPORT_FILE"
@@ -209,7 +209,7 @@ src/main/java/com/company/project/
 **分层依赖规则**：
 
 | 层 | 允许依赖 | 禁止依赖 |
-| --- | --- | --- |
+|---:|---:|---:|
 | Controller | Service | Repository, Entity |
 | Service | Repository, Domain | Controller |
 | Repository | Entity | Service, Controller |
@@ -221,27 +221,27 @@ src/main/java/com/company/project/
 public interface PaymentStrategy {
     PayResult pay(PayRequest request);
 }
-
+// ...
 @Component
 public class AlipayStrategy implements PaymentStrategy {
     public PayResult pay(PayRequest request) { /* ... */ }
 }
-
+// ...
 @Component
 public class WechatPayStrategy implements PaymentStrategy {
     public PayResult pay(PayRequest request) { /* ... */ }
 }
-
+// ...
 @Component
 public class PaymentStrategyFactory {
     @Autowired
     private Map<String, PaymentStrategy> strategies;
-
+// ...
     public PaymentStrategy get(String type) {
         return strategies.get(type + "Strategy");
     }
 }
-
+// ...
 // 模板方法模式：数据导出
 public abstract class DataExporter {
     public final void export() {
@@ -259,7 +259,7 @@ public abstract class DataExporter {
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | java-dev-manual处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -306,9 +306,8 @@ public abstract class DataExporter {
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
 | 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后 |
 | 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
@@ -324,9 +323,9 @@ public abstract class DataExporter {
 - **构建工具**: Maven 3.6+ 或 Gradle 7+
 - **CI/CD 平台**: GitHub Actions / GitLab CI / Jenkins 等
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | JDK | 编译器/运行时 | 必需 | oracle.com 或 openjdk.net 下载 |
 | Maven | 构建工具 | 推荐 | maven.apache.org 下载 |
 | SLF4J | 日志框架 | 推荐 | maven 中央仓库 |
@@ -356,12 +355,12 @@ public abstract class DataExporter {
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -378,12 +377,12 @@ public abstract class DataExporter {
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -400,12 +399,12 @@ public abstract class DataExporter {
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -438,18 +437,18 @@ public enum ErrorCode {
     SUCCESS("00000", "成功"),
     PARAM_ERROR("10001", "参数错误"),
     SYSTEM_ERROR("10002", "系统繁忙"),
-
+// ...
     // 用户模块 2详情见说明x
     USER_NOT_FOUND("20001", "用户不存在"),
     USER_DISABLED("20002", "用户已被禁用"),
-
+// ...
     // 订单模块 3详情见说明x
     ORDER_NOT_FOUND("30001", "订单不存在"),
     ORDER_PAID("30002", "订单已支付");
-
+// ...
     private final String code;
     private final String message;
-
+// ...
     ErrorCode(String code, String message) {
         this.code = code;
         this.message = message;
@@ -463,20 +462,20 @@ public enum ErrorCode {
 public abstract class BaseEntity {
     @CreatedBy
     private String createBy;
-
+// ...
     @CreatedDate
     private LocalDateTime createTime;
-
+// ...
     @LastModifiedBy
     private String updateBy;
-
+// ...
     @LastModifiedDate
     private LocalDateTime updateTime;
-
+// ...
     @TableLogic
     private Integer isDeleted;
 }
-
+// ...
 // 使用时继承 BaseEntity
 @Entity
 @Table(name = "users")
@@ -497,14 +496,14 @@ public class UserControllerV1 {
     @GetMapping("/{id}")
     public Result getUser(@PathVariable Long id) { }
 }
-
+// ...
 @RestController
 @RequestMapping("/api/v2/users")
 public class UserControllerV2 {
     @GetMapping("/{id}")
     public Result getUser(@PathVariable Long id) { }
 }
-
+// ...
 // Header 版本
 @GetMapping(value = "/users/{id}", headers = "X-API-Version=2")
 public Result getUserV2(@PathVariable Long id) { }
@@ -520,9 +519,8 @@ echo "合规率: $COMPLIANCE%"
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

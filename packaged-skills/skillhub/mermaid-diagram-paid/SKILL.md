@@ -32,27 +32,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Mermaid图表工具(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 与免费版差异 | 不支持 | 支持 |
-| 基础类型 | 不支持 | 支持 |
-| 与免费版一致 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Mermaid图表工具(专业版)批量生成 | 不支持 | 支持 |
+| Mermaid图表工具(专业版)与CI语法校验 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 与免费版差异 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础类型 | 流程图、时序图、状态图、脑图、ER图、时间线、用户旅程 | 与免费版一致 |
 | 进阶类型 | C4架构图、Git图、类图、需求图、Sankey图 | 免费版无 |
 | 复杂图 | 多节点子图分组、跨图引用、注释分段 | 免费版仅简单图 |
@@ -145,7 +147,7 @@ node （请参考skill目录中的脚本文件） \
   --output docs/diagrams/ \
   --format mermaid \
   --embed
-
+# ...
 # 输出
 # docs/diagrams/prd-001-用户注册.mmd
 # docs/diagrams/prd-001-登录流程.mmd
@@ -187,10 +189,10 @@ node （请参考skill目录中的脚本文件） \
 ```bash
 # 初始化团队图表规范目录
 mkdir -p diagrams theme templates scripts
-
+# ...
 # 复制品牌主题模板
 cp config/brand-theme.example.yaml theme/brand-theme.yaml
-
+# ...
 # 复制图表模板库
 cp -r config/templates/* templates/
 ```
@@ -248,7 +250,7 @@ jobs:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | mermaid-diagram处理的内容输入 |,  |
 | content | string | 否 | mermaid-diagram处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -276,9 +278,8 @@ jobs:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -292,10 +293,10 @@ jobs:
 - **Node.js版本**: 建议 20 LTS 及以上(用于 mmdc 渲染与批量脚本)
 - **Mermaid版本**: 建议 10.x 及以上
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | @mermaid-js/mermaid-cli | npm包 | 必需 | `npm i -g @mermaid-js/mermaid-cli` |
 | puppeteer | npm包 | 必需 | mmdc 依赖,自动安装 |
@@ -332,7 +333,7 @@ templates/
 ### 自定义主题变量
 
 | 变量 | 说明 | 示例 |
-| --- | --- | --- |
+|---:|:---|---:|
 | `primaryColor` | 主色 | `#1a73e8` |
 | `primaryTextColor` | 主色文字 | `#ffffff` |
 | `primaryBorderColor` | 主色边框 | `#1557b0` |
@@ -420,9 +421,8 @@ C4是一种架构描述方法,分Context/Container/Component/Code四层。本工
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

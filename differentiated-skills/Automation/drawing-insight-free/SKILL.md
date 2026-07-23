@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 图纸解析（免费版）
 
 > 从一张施工PDF图纸中，10秒拿到结构化数据：标题栏、尺寸、注释、符号、质量问题一网打尽。
@@ -33,14 +34,14 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 图纸解析(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```python
 import pdfplumber
-
+# ...
 with pdfplumber.open("A101_Floor_Plan.pdf") as pdf:
     for page in pdf.pages:
         text = page.extract_text() or ""
@@ -57,7 +58,7 @@ with pdfplumber.open("A101_Floor_Plan.pdf") as pdf:
 针对常见标题栏字段，使用以下正则模式提取：
 
 | 字段 | 正则模式 | 示例匹配 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 项目名 | `PROJECT(?:\s*NAME)?:\s*(.+?)(?:\n\|$)` | PROJECT: Greenfield Tower |
 | 图号 | `SHEET(?:\s*NO)?\.?:\s*([A-Z]?\d+(?:\.\d+)?)` | SHEET NO.: A101 |
 | 比例 | `SCALE:\s*(.+?)(?:\n\|$)` | SCALE: 1/4" = 1'-0" |
@@ -94,7 +95,7 @@ DIMENSION_PATTERNS = [
 将注释自动归类为六类，便于后续检索：
 
 | 注释类型 | 匹配模式 | 典型示例 |
-|----------|----------|----------|
+|---:|---:|---:|
 | keynote（索引符号） | `^\d{1,2}[A-Z]?$` | 1A, 12, 5B |
 | room_tag（房间标签） | `^(?:RM\|ROOM)\s*\d+` | RM 101 |
 | door_tag（门编号） | `^[A-Z]?\d{2,3}[A-Z]?$` | D101, A12B |
@@ -161,10 +162,10 @@ pip install pdfplumber
 
 ```python
 from drawing_insight import DrawingAnalyzer
-
+# ...
 analyzer = DrawingAnalyzer()
 result = analyzer.analyze_pdf("A101_Floor_Plan.pdf")
-
+# ...
 # 查看标题栏
 if result.title_block:
     tb = result.title_block
@@ -172,12 +173,12 @@ if result.title_block:
     print(f"标题: {tb.sheet_title}")
     print(f"比例: {tb.scale}")
     print(f"专业: {tb.discipline}")
-
+# ...
 # 查看抽取统计
 print(f"尺寸数: {len(result.dimensions)}")
 print(f"注释数: {len(result.annotations)}")
 print(f"符号数: {len(result.symbols)}")
-
+# ...
 # 查看质量问题
 for issue in result.quality_issues:
     print(f"⚠️ {issue}")
@@ -241,7 +242,7 @@ Path("A101_report.md").write_text(report, encoding="utf-8")
 ## 错误处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:---:|:---:|:---:|:---:|
 | 标题栏字段提取为空 | 字段命名非标准（如"项目"而非"PROJECT"） | 在正则模式中追加中文别名；改用专业版的自适应标题栏识别 | 高 |
 | 尺寸数明显偏少 | 图纸为图片型PDF，无文本层 | 先用OCR工具转为文本型PDF | 高 |
 | 比例识别为1.0 | 标注格式非标准或为NTS | 检查图纸比例标注；NTS图纸比例无意义 | 中 |
@@ -258,7 +259,7 @@ Path("A101_report.md").write_text(report, encoding="utf-8")
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o-mini） |
 | pdfplumber | Python库 | 必需 | `pip install pdfplumber` |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
@@ -311,17 +312,18 @@ Path("A101_report.md").write_text(report, encoding="utf-8")
 ### 示例1：基础用法
 
 ```
-### 依赖详情
-
+### 依赖详情(补充)
+# ...
 ```bash
 pip install pdfplumber
 ```
-
-### Step 2：单文件解析
-
+# ...
+### Step 2：单文件解析(补充)
+# ...
 ```python
 from drawing_insight import DrawingAnalyzer
 
 analyzer = DrawingAnalyzer()
 result = analyzer.analyze_pdf("A101_Floor_Plan.pdf")
 ```
+# ...

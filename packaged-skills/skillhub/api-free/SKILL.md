@@ -16,6 +16,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # REST API 参考手册（免费版）
 
@@ -23,11 +25,10 @@ homepage: "https://skillhub.cn"
 
 > **升级提示**: 完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、多账户凭证命名等高级功能为付费版专享。升级付费版解锁完整能力。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | REST API参考免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -48,7 +49,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -96,14 +96,14 @@ export API_KEY="your_api_key_here"
 ## 免费版服务索引
 
 | 分类 | 文件 | 代表服务 |
-| --- | --- | --- |
+|---:|---:|---:|
 | AI/ML | `apis/ai-ml.md` | openai, anthropic, cohere, groq, mistral |
 | Payments | `apis/payments.md` | stripe, paypal, square, plaid |
 | Communication | `apis/communication.md` | twilio, sendgrid, slack, discord, telegram |
 
 > **升级提示**: 付费版额外覆盖 Realtime、CRM、Marketing、Developer、Database、Auth、Media、Social、Productivity、Business、Geo、Support、Analytics 共 13 类 134 个服务。
 
-## 核心能力
+## 能力速查
 1. **先定位文件** — 根据服务名找到对应 `apis/*.md` 文件
 2. **必带 Content-Type** — POST/PUT/PATCH 请求需 `Content-Type: application/json`
 3. **密钥放请求头** — 使用 `Authorization: Bearer xxx`,不放在 URL 参数
@@ -189,7 +189,7 @@ curl https://api.stripe.com/v1/charges \
 ## 错误处理
 
 | 错误场景 | 原因分析 | 处理方式 |
-|---------|---------|---------|
+|:---:|:---:|:---:|
 | 缺少 `Content-Type` | POST 请求未设 `Content-Type: application/json` | 所有 POST/PUT/PATCH 必带该头 |
 | API Key 暴露在 URL | 将密钥放在查询参数 `?api_key=xxx` | 改用请求头 `Authorization: Bearer xxx` |
 | HTTP 200 含错误 | 仅检查状态码,未校验 body | 检查响应结构中的 `error` 字段 |

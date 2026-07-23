@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Pandoc转换工具（专业版）
 
@@ -114,21 +116,11 @@ Pandoc转换工具是针对文档转换领域的专业化AI辅助工具。专业
 
 `批量转换这些文档为HTML
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：带模板转换
 
 使用自定义模板进行格式转换。**示例指令**：`
 
 `用学术模板转换这份文档
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ Pandoc转换工具是针对文档转换领域的专业化AI辅助工具。专业
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Pandoc转换工具（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ Pandoc转换工具是针对文档转换领域的专业化AI辅助工具。专业
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -166,7 +158,7 @@ from typing import List, Dict, Optional
 from pathlib import Path
 from dataclasses import dataclass
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+# ...
 @dataclass
 class ConversionResult:
     input_file: str
@@ -176,18 +168,18 @@ class ConversionResult:
     status: str
     size: int = 0
     error: Optional[str] = None
-
+# ...
 class PandocConvertEngine:
     SUPPORTED_FORMATS = [
         "markdown", "html", "docx", "pdf", "epub",
         "latex", "rst", "org", "json", "plain"
     ]
-
+# ...
     def __init__(self, template_dir: str = "./templates",
                  filter_dir: str = "./filters"):
         self.template_dir = Path(template_dir)
         self.filter_dir = Path(filter_dir)
-
+# ...
     def convert(self, input_file: str, output_format: str,
                output_file: str = None,
                template: str = None,
@@ -216,7 +208,7 @@ class PandocConvertEngine:
         return ConversionResult(input_file, output_file,
                                Path(input_file).suffix[1:],
                                output_format, "failed", 0, result.stderr)
-
+# ...
     def batch_convert(self, input_files: List[str],
                      output_format: str,
                      output_dir: str = "./output",
@@ -235,7 +227,7 @@ class PandocConvertEngine:
             for future in as_completed(futures):
                 results.append(future.result())
         return results
-
+# ...
     def multi_format_convert(self, input_file: str,
                             formats: List[str]) -> List[ConversionResult]:
         """多格式输出（PRO 专属：一转多）"""
@@ -244,7 +236,7 @@ class PandocConvertEngine:
             result = self.convert(input_file, fmt)
             results.append(result)
         return results
-
+# ...
     def generate_report(self, results: List[ConversionResult],
                        output_path: str):
         """生成转换报告（PRO 专属）"""
@@ -257,7 +249,7 @@ class PandocConvertEngine:
         }
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
-
+# ...
 engine = PandocConvertEngine()
 result = engine.convert("document.md", "docx", template="corporate")
 print(f"状态: {result.status}")
@@ -309,7 +301,7 @@ pandoc_convert:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -321,7 +313,7 @@ pandoc_convert:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -393,7 +385,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | pandoc | CLI工具 | 必需 | 安装pandoc |
 | LaTeX | 系统工具 | 可选 | PDF转换需要xelatex |
@@ -408,9 +400,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

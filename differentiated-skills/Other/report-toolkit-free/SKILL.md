@@ -39,11 +39,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 报告工具包 - 免费版
 
 ## 概述
@@ -115,7 +116,7 @@ API Key 等凭证通过环境变量引用,不存储在配置文件中。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 报告工具包-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -135,10 +136,10 @@ delivery: file
 ```bash
 # 设置环境变量
 export STRIPE_API_KEY="your_api_key"
-
+# ...
 # 手动触发报告
 ./report-cli run weekly-revenue
-
+# ...
 # 查看历史报告
 ls ~/report/weekly-revenue/generated/
 # 2025-01-06.md  2025-01-13.md  2025-01-20.md
@@ -202,7 +203,7 @@ delivery: file
 ```bash
 # 创建报告目录
 mkdir -p ~/report
-
+# ...
 # 查看已有报告
 cat ~/report/memory.md 2>/dev/null || echo "暂无报告配置"
 ```
@@ -222,10 +223,10 @@ sources:
 format: markdown
 delivery: file
 EOF
-
+# ...
 # 设置 API Key
 export MY_API_KEY="your_key"
-
+# ...
 # 手动运行
 ./report-cli run my-report
 ```
@@ -254,7 +255,7 @@ delivery: file             # 交付方式: chat, file, email
 ### 调度频率
 
 | 频率 | Cron 表达式 | 说明 |
-|------|-------------|------|
+|:-----|:-----|:-----|
 | 每日 | `0 9 * * *` | 每天 9 点 |
 | 每周 | `0 9 * * 1` | 每周一 9 点 |
 | 每月 | `0 9 1 * *` | 每月 1 日 9 点 |
@@ -263,7 +264,7 @@ delivery: file             # 交付方式: chat, file, email
 ### 交付渠道
 
 | 渠道 | 配置 | 说明 |
-|------|------|------|
+|---:|---:|---:|
 | chat | `delivery: chat` | 在对话中返回报告 |
 | file | `delivery: file` | 保存到 ~/report/{name}/generated/ |
 | email | `delivery: email` | 通过 SMTP 发送邮件 |
@@ -305,7 +306,7 @@ A: 可以。运行 `./report-cli pause {name}` 暂停调度。恢复运行 `./re
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | curl | CLI工具 | API数据源必需 | 系统自带 |
 | jq | CLI工具 | JSON处理推荐 | 包管理器安装 |
 | sendmail/msmtp | 邮件工具 | 邮件交付必需 | 包管理器安装 |
@@ -326,9 +327,8 @@ A: 可以。运行 `./report-cli pause {name}` 暂停调度。恢复运行 `./re
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

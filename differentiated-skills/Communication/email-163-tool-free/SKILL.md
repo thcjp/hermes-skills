@@ -22,8 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
-
 # 163邮箱助手免费版
 
 **版本**: 1.0.0
@@ -105,7 +106,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 163邮箱助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -142,14 +143,14 @@ email-163-tool read --count 10 --unread
 
 ```text
 📬 INBOX: 共 16 封邮件
-
+# ...
 📧 发件人: 阿里云
    主题: 域名信息修改成功通知
    时间: Wed, 18 Feb 2026 22:00:53
    ID: 16
    状态: 已读
 --------------------------------------------------
-
+# ...
 📧 发件人: Cloudflare <noreply@notify.cloudflare.com>
    主题: [需要操作] 验证您的邮箱地址
    时间: Wed, 18 Feb 2026 14:17:02
@@ -165,7 +166,7 @@ email-163-tool read --count 10 --unread
 ```bash
 # 按发件人和主题搜索
 email-163-tool search --from "Cloudflare" --subject "verify" --count 5
-
+# ...
 # 下载指定邮件的附件
 email-163-tool attachments --id 15 --download --output ~/Downloads/
 ```
@@ -181,7 +182,7 @@ email-163-tool attachments --id 15 --download --output ~/Downloads/
 ```bash
 # 查看帮助
 email-163-tool --help
-
+# ...
 # 查看版本
 email-163-tool --version
 ```
@@ -220,7 +221,6 @@ email-163-tool send --to your_email@163.com --subject "测试" --body "配置成
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 完整配置文件
@@ -255,7 +255,7 @@ email-163-tool send --to your_email@163.com --subject "测试" --body "配置成
 # Linux/macOS
 export EMAIL_163_USER="your_email@163.com"
 export EMAIL_163_PASS="your_auth_code"
-
+# ...
 # Windows PowerShell
 $env:EMAIL_163_USER="your_email@163.com"
 $env:EMAIL_163_PASS="your_auth_code"
@@ -284,7 +284,7 @@ chmod 600 ~/.config/email-163-tool/config.json
 ```bash
 # 推荐做法：使用文件作为邮件正文（避免转义问题）
 email-163-tool send --to friend@example.com --subject "周报" --file weekly_report.txt
-
+# ...
 # HTML 邮件使用引号包裹
 email-163-tool send --to friend@example.com --subject "通知" --html "<h1>会议通知</h1><p>明天上午10点开会</p>"
 ```
@@ -347,7 +347,7 @@ Error: Cannot attach file
 ```bash
 # 验证文件是否存在
 ls -la /path/to/your/file.pdf
-
+# ...
 # 使用绝对路径发送
 email-163-tool send --to user@example.com --subject "文件" --attach /home/user/docs/file.pdf
 ```
@@ -390,7 +390,7 @@ email-163-tool send --to user@example.com --subject "文件" --attach /home/user
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 标准库 | 运行库 | 可选 | Python 自带（smtplib, imaplib, email） |
 | 163邮箱账号 | 账户 | 必需 | 注册163邮箱并开启IMAP/SMTP服务 |
@@ -409,9 +409,8 @@ email-163-tool send --to user@example.com --subject "文件" --attach /home/user
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

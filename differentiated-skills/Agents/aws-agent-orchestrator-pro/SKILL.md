@@ -39,6 +39,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # AWS智能体编排专业版（aws-agent-orchestrator-pro）
 
@@ -76,7 +78,7 @@ Skill: 执行完成,结果如下: 操作成功
 本工具属"复杂工具"级别，完整上手目标 < 300秒。
 
 | 阶段 | 目标耗时 | 任务 |
-|------|----------|------|
+|---|----|---|
 | 安装阶段 | < 60秒 | pip安装三件套 + agentcore CLI |
 | 编码阶段 | < 120秒 | 复制多智能体Orchestrator模板 |
 | 本地验证 | < 60秒 | agentcore dev 验证多Agent协作 |
@@ -100,18 +102,18 @@ from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from bedrock_agentcore.memory import MemoryClient
 from typing import Annotated
 from typing_extensions import TypedDict
-
+# ...
 class State(TypedDict):
     messages: Annotated[list, add_messages]
     session_id: str  # 多Agent共享session上下文
-
+# ...
 # 三个Specialist Agent（专业版独有：多Agent协作）
 def customer_service_agent(state: State):
     return {"messages": [("assistant", "[客服] 已接收请求")]}
-
+# ...
 def ecommerce_agent(state: State):
     return {"messages": [("assistant", "[电商] 订单处理中")]}
-
+# ...
 def orchestrator(state: State):
     """专业版独有：Orchestrator根据意图路由到Specialist"""
     user_msg = state["messages"][-1].content
@@ -120,12 +122,12 @@ def orchestrator(state: State):
     elif "下单" in user_msg or "订单" in user_msg:
         return ecommerce_agent(state)
     return {"messages": [("assistant", "请说明您需要客服还是电商服务")]}
-
+# ...
 # LTM长期记忆（专业版独有）
 memory = MemoryClient()
 memory.create_event(state["session_id"], "user_001", "decision",
                     {"intent": user_msg})
-
+# ...
 builder = StateGraph(State)
 builder.add_node("orchestrator", orchestrator)
 builder.add_node("customer_service", customer_service_agent)
@@ -133,7 +135,7 @@ builder.add_node("ecommerce", ecommerce_agent)
 builder.add_edge(START, "orchestrator")
 builder.add_edge("orchestrator", END)
 graph = builder.compile()
-
+# ...
 app = BedrockAgentCoreApp()
 @app.entrypoint
 def invoke(payload, context):
@@ -170,7 +172,7 @@ agentcore launch --deployment-type container
 ## 二、CLI命令速查表
 
 | 命令 | 用途 | 专业版增强 |
-|------|------|-----------|
+|:-----|:-----|:-----|
 | `agentcore configure -e agent.py --region us-east-1` | 交互式配置 | ✅ |
 | `agentcore configure -e agent.py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 | ✅ |
 | `agentcore launch --deployment-type container` | 容器模式部署 | ✅ 含Gateway挂载 |
@@ -212,7 +214,7 @@ agentcore launch --deployment-type container
 
 ## 核心能力
 | 概念 | 说明 | 专业版能力 |
-|------|------|-----------|
+|---:|---:|---:|
 | AgentCore Runtime | HTTP服务，监听8080端口（/invocations, /ping） | ✅ 完整可用 |
 | AgentCore Memory | 托管的跨会话/跨Agent记忆系统 | ✅ STM + LTM双模 |
 | LangGraph路由 | `tools_condition` 路由 + `ToolNode` 执行 | ✅ 完整可用 |
@@ -292,7 +294,7 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 
 **Transport矩阵**：
 | Transport | 用途 | 适用环境 |
-|-----------|------|----------|
+|:--------:|:--------:|:--------:|
 | Mock | 本地降级测试 | 开发环境 |
 | `Local MCP` | 本地工具协议server | 本地集成 |
 | Lambda | AWS Lambda封装 | 生产环境 |
@@ -318,7 +320,7 @@ events = memory.list_events(session_id)
 
 **STM vs LTM对比**：
 | 维度 | STM（免费版） | LTM（专业版） |
-|------|--------------|--------------|
+|:------|------:|:------|
 | 作用域 | 单会话内 | 跨会话/跨Agent |
 | 持久性 | 会话结束即失效 | 持久存储 |
 | 一致性 | 强一致 | 约10秒最终一致 |
@@ -337,17 +339,17 @@ def presales_agent(state: State):
     memory.create_event(state["session_id"], "user_001", "fact",
                         {"intent": "presales", "product": "extracted"})
     return {"messages": [("assistant", "[售前] 为您推荐以下方案")]}
-
+# ...
 def aftersales_agent(state: State):
     """售后处理"""
     # 从LTM读取用户历史
     history = memory.list_events(state["session_id"])
     return {"messages": [("assistant", f"[售后] 根据您的{len(history)}条历史记录")]}
-
+# ...
 def tech_support_agent(state: State):
     """技术支持"""
     return {"messages": [("assistant", "[技术] 请提供错误日志")]}
-
+# ...
 def orchestrator(state: State):
     user_msg = state["messages"][-1].content
     if "购买" in user_msg or "推荐" in user_msg:
@@ -374,16 +376,16 @@ def fraud_detection_agent(state: State):
     memory.create_event(state["session_id"], "system", "decision",
                         {"fraud_score": risk_score})
     return {"messages": [("assistant", f"[反欺诈] 风险分: {risk_score}")]}
-
+# ...
 def credit_evaluation_agent(state: State):
     """信用评估"""
     history = memory.list_events(state["session_id"])
     return {"messages": [("assistant", "[信用] 评估完成")]}
-
+# ...
 def risk_alert_agent(state: State):
     """风险预警"""
     return {"messages": [("assistant", "[预警] 已推送告警")]}
-
+# ...
 def orchestrator(state: State):
     # 串行调用三个Specialist形成完整风控链路
     fraud_detection_agent(state)
@@ -400,7 +402,7 @@ def orchestrator(state: State):
 def shopping_guide(state: State):
     """导购推荐"""
     return {"messages": [("assistant", "[导购] 为您推荐3款商品")]}
-
+# ...
 def order_agent(state: State):
     """下单"""
     gateway = GatewayToolClient()
@@ -408,16 +410,16 @@ def order_agent(state: State):
     memory.create_event(state["session_id"], "system", "fact",
                         {"order_id": order_id})
     return {"messages": [("assistant", f"[下单] 订单号: {order_id}")]}
-
+# ...
 def payment_agent(state: State):
     """支付"""
     return {"messages": [("assistant", "[支付] 等待支付确认")]}
-
+# ...
 def logistics_agent(state: State):
     """物流"""
     history = memory.list_events(state["session_id"])
     return {"messages": [("assistant", "[物流] 已发货")]}
-
+# ...
 def orchestrator(state: State):
     user_msg = state["messages"][-1].content
     if "推荐" in user_msg:
@@ -439,22 +441,22 @@ def orchestrator(state: State):
 def symptom_collection(state: State):
     """症状收集"""
     return {"messages": [("assistant", "[分诊] 请描述您的症状")]}
-
+# ...
 def triage_agent(state: State):
     """分诊"""
     memory.create_event(state["session_id"], "system", "decision",
                         {"department": "cardiology"})
     return {"messages": [("assistant", "[分诊] 建议心内科")]}
-
+# ...
 def specialist_consult(state: State):
     """专家会诊"""
     history = memory.list_events(state["session_id"])
     return {"messages": [("assistant", "[心内科] 建议心电图检查")]}
-
+# ...
 def prescription_agent(state: State):
     """处方建议"""
     return {"messages": [("assistant", "[处方] 请遵医嘱")]}
-
+# ...
 def orchestrator(state: State):
     symptom_collection(state)
     triage_agent(state)
@@ -521,7 +523,7 @@ A：专业版定价¥99/月（企业工具类），通过SkillHub SkillPay发布
 ## 十、故障排查表
 
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
-|------|------|------|----------|--------|
+|---:|:---|---:|---:|:---|
 | 1 | `on-demand throughput isn't supported` | 使用了裸模型ID | 改用 `us.anthropic.claude-*` inference profile | P0 |
 | 2 | `Model use case details not submitted` | Bedrock Console未提交use case | 登录控制台填写Anthropic表单 | P0 |
 | 3 | `Invalid agent name` | 名称含连字符或数字开头 | 改用下划线，字母开头，1-48字符 | P1 |
@@ -560,7 +562,7 @@ A：专业版定价¥99/月（企业工具类），通过SkillHub SkillPay发布
 ## 十四、定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------:|--------|:-------|:------:|
 | 免费体验版 | ¥0 | 单智能体编排 + STM短时记忆 + 本地工具 + agentcore CLI | 个人试用、原型验证 |
 | 收费专业版 | ¥99/月 | 全功能 + 多智能体编排 + Gateway工具链 + LTM长期记忆 + 企业级场景指南 + 优先支持 | 团队/企业生产环境 |
 
@@ -631,9 +633,8 @@ SOFTWARE.
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|----|:--:|---:|----|:--:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |

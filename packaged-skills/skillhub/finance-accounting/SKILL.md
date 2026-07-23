@@ -33,19 +33,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
 ---
 # Finance Accounting
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Finance Accounting财务会计文书处理 | 不支持 | 支持 |
+| DCF估值建模与敏感性分析 | 不支持 | 支持 |
+| 财务舞弊识别(Beneish M-Score) | 不支持 | 支持 |
+| 批量财报处理与自动化报告 | 不支持 | 支持 |
+| 行业基准对比与跨期趋势分析 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -94,7 +96,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -105,9 +107,9 @@ pricing_model: "per_use"
 
 ```bash
 python finance.py record --type income --amount 1000 --category "销售收入" --date "2026-02-28"
-
+# ...
 python finance.py record --type expense --amount 500 --category "办公用品" --date "2026-02-28"
-
+# ...
 python finance.py balance
 ```
 
@@ -115,9 +117,9 @@ python finance.py balance
 
 ```bash
 python finance.py reconcile import --file bank_statement.csv
-
+# ...
 python finance.py reconcile auto
-
+# ...
 python finance.py reconcile report --output reconciliation_report.pdf
 ```
 
@@ -125,9 +127,9 @@ python finance.py reconcile report --output reconciliation_report.pdf
 
 ```bash
 python finance.py tax vat --period 2026-02
-
+# ...
 python finance.py tax report --type vat --period 2026-02 --output vat_report.xlsx
-
+# ...
 python finance.py tax plan --year 2026
 ```
 
@@ -135,9 +137,9 @@ python finance.py tax plan --year 2026
 
 ```bash
 python finance.py report balance-sheet --period 2026-02 --output balance_sheet.pdf
-
+# ...
 python finance.py report income-statement --period 2026-02 --output income_statement.pdf
-
+# ...
 python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
 ```
 
@@ -145,7 +147,7 @@ python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | finance-accounting处理的内容输入 |,  |
 | content | string | 否 | finance-accounting处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -173,9 +175,8 @@ python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -186,9 +187,9 @@ python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -197,7 +198,6 @@ python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -209,8 +209,8 @@ export API_KEY="your_api_key_here"
 ### 示例1：基础用法
 
 ```
-### 基本记账
-
+### 基本记账(补充)
+# ...
 ```bash
 python finance.py record --type income --amount 1000 --category "销售收入" --date "2026-02-28"
 
@@ -218,9 +218,9 @@ python finance.py record --type expense --amount 500 --category "办公用品" -
 
 python finance.py balance
 ```
-
-### 对账处理
-
+# ...
+### 对账处理(补充)
+# ...
 ```bash
 python finance.py reconcile import --file bank_statement.csv
 
@@ -228,46 +228,45 @@ python finance.py reconcile auto
 
 python finance.py reconcile report --output reconciliation_report.pdf
 ```
-
-### 税务计算
-
+# ...
+### 税务计算(补充)
+# ...
 ```bash
 python finance.py tax vat --period 2026-02
 
 python finance.p
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q: 如何使用此Skill?
 A: 请参考使用流程章节
-
-### Q: 如何使用此Skill?
+# ...
+### Q: 如何使用此Skill?(补充)
 A: 请参考使用流程章节
-
-### Q: 如何使用此Skill?
-A: 请参考使用流程章节
-
+# ...
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
 ## 已知限制
-
+# ...
 ### 数据安全
-
+# ...
 * 财务数据加密存储
 * 访问权限控制
 * 操作日志记录
-
+# ...
 ### 合规性
-
+# ...
 * 符合会计准则
 * 遵守税务法规
 * 审计追踪
+# ...

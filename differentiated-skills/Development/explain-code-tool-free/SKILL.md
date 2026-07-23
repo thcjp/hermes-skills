@@ -51,8 +51,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
-
 代码解释工具免费版为开发者提供直观的代码理解辅助能力。工具通过日常类比、ASCII可视化图表、逐行遍历解读和常见误区提示,帮助开发者快速理解不熟悉的代码逻辑。
 
 本版本适合学习新代码库、新成员入门和技术学习场景。所有解释均以自然语言配合图表呈现,降低代码理解门槛。
@@ -70,7 +71,7 @@ suggested_price: 29.9
 **类比示例:**
 
 | 代码概念 | 日常类比 |
-|:---------|:---------|
+|----|----|
 | 变量 | 标了标签的盒子,里面装数据 |
 | 函数 | 一台加工机器,输入原料,输出产品 |
 | 数组 | 一排编号的抽屉 |
@@ -93,7 +94,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 代码解释工具免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -115,7 +116,7 @@ suggested_price: 29.9
 ```
 数组: [10, 20, 30, 40, 50]
 索引:   0    1    2    3    4
-
+# ...
 对象:
 ┌─────────────────────┐
 │ user                │
@@ -163,7 +164,7 @@ def binary_search(arr, target):
         mid = (left + right) // 2
         if arr[mid] == target:
             return mid
-
+# ...
         elif arr[mid] < target:
             left = mid + 1
         else:
@@ -192,7 +193,7 @@ def binary_search(arr, target):
 
 ```
 输入:请解释这段代码
-
+# ...
 const memoize = (fn) => {
   const cache = {}
   return (...args) => {
@@ -206,14 +207,12 @@ const memoize = (fn) => {
 
 **解释输出:**
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景二:代码审查理解
 在代码审查时理解他人代码意图。
 
 ```
 输入:这段代码在做什么?
-
+# ...
 async function fetchWithRetry(url, maxRetries = 3) {
   for (let i = 0; i < maxRetries; i++) {
     try {
@@ -232,24 +231,24 @@ async function fetchWithRetry(url, maxRetries = 3) {
 
 ```
 类比:就像打电话没人接,等一会儿再打
-
+# ...
 - 这个函数会尝试请求一个URL
 - 如果失败了,不会立刻放弃
 - 而是等一会儿再试,最多试3次
 - 每次等待时间会加倍(指数退避)
-
+# ...
 重试流程:
 尝试1 → 失败 → 等1秒
   ↓
 尝试2 → 失败 → 等2秒
   ↓
 尝试3 → 失败 → 抛出错误(放弃了)
-
+# ...
 等待时间计算(2 ** i * 1000):
 - i=0: 2^0 * 1000 = 1000ms (1秒)
 - i=1: 2^1 * 1000 = 2000ms (2秒)
 - i=2: 2^2 * 1000 = 4000ms (4秒)
-
+# ...
 这种"指数退避"策略的好处:
 - 避免对方服务器被频繁重试压垮
 - 给服务器恢复的时间
@@ -267,11 +266,11 @@ async function fetchWithRetry(url, maxRetries = 3) {
 
 ```
 类比:YouTube订阅功能
-
+# ...
 - 你订阅了一个频道(注册观察者)
 - 频主发新视频时,所有订阅者都会收到通知
 - 你可以随时取消订阅
-
+# ...
 结构图:
 ┌──────────────┐        通知        ┌──────────────┐
 │   Subject    │ ──────────────────→ │  Observer A  │
@@ -282,11 +281,9 @@ async function fetchWithRetry(url, maxRetries = 3) {
 │ unsubscribe()│
 │ notify()     │
 └──────────────┘
-
+# ...
 代码实现:
 ```
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 快速开始
 ### Step 1:触发代码解释
@@ -323,7 +320,7 @@ Agent 会按照以下结构输出解释:
 ### 代码解释配置
 ```yaml
 version: "1.0"
-
+# ...
 style:
   use_analogy: true           # 使用类比
   use_diagrams: true          # 使用图表
@@ -334,7 +331,7 @@ output:
   include_execution_flow: true
   include_common_pitfalls: true
   max_diagram_width: 80
-
+# ...
 supported_extensions:
   - .js
   - .ts
@@ -372,7 +369,7 @@ supported_extensions:
 
 5. **动手验证**:在理解后修改代码验证理解是否正确
 
-## 常见问题
+## 常见问题(补充)
 ### Q1:免费版支持哪些编程语言?
 免费版支持主流编程语言的代码解释,包括 JavaScript、TypeScript、Python、Java、Go、Rust、C++ 等。对于小众语言可能解释质量稍降。
 
@@ -385,7 +382,7 @@ supported_extensions:
 
 ### Q3:免费版与专业版有何区别?
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|---:|---:|---:|
 | 代码范围 | 单文件 | 整个项目 |
 | 分析深度 | 逐行解释 | 架构级分析 |
 | 图表类型 | ASCII图 | Mermaid/UML |
@@ -407,7 +404,7 @@ supported_extensions:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
 ### API Key 配置
@@ -422,7 +419,7 @@ supported_extensions:
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

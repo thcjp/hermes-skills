@@ -21,8 +21,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
-
 # Git 高级操作助手（专业版）
 
 ## 概述
@@ -34,7 +35,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|----|---|-----|
 | 交互式变基 | 完整支持 | 自动化变基策略 + 团队规范 |
 | 二分查找 | 手动 + 脚本 | 批量缺陷定位 + 构建跳过策略 |
 | 工作树 | 基础创建/删除 | 工作树批量管理与代码审查工作流 |
@@ -77,25 +78,25 @@ suggested_price: 99.9
 
 ```text
 用户：我们的 monorepo 太大了，每次克隆都很慢，怎么优化
-
+# ...
 助手：使用稀疏检出 + 部分克隆
-
+# ...
 1. 部分克隆（不下载完整历史）
    git clone --filter=blob:none --sparse https://repo.example.com/monorepo.git
    cd monorepo
-
+# ...
 2. 设置需要检出的目录
    git sparse-checkout set packages/my-service packages/shared-lib
-
+# ...
 3. 添加额外需要的目录
    git sparse-checkout add packages/another-lib
-
+# ...
 4. 查看当前稀疏检出配置
    git sparse-checkout list
-
+# ...
 5. 如需检出全部
    git sparse-checkout disable
-
+# ...
 6. 另一种方式：无检出克隆
    git clone --no-checkout https://repo.example.com/monorepo.git
    cd monorepo
@@ -109,33 +110,33 @@ suggested_price: 99.9
 
 ```bash
 # ============ 子树方案（推荐：代码直接嵌入）============
-
+# ...
 # 添加子树
 git subtree add --prefix=lib/shared https://repo.example.com/shared-lib.git main --squash
-
+# ...
 # 拉取子树更新
 git subtree pull --prefix=lib/shared https://repo.example.com/shared-lib.git main --squash
-
+# ...
 # 推送子树修改
 git subtree push --prefix=lib/shared https://repo.example.com/shared-lib.git main
-
+# ...
 # 拆分子树为独立分支
 git subtree split --prefix=lib/shared -b shared-lib-standalone
-
+# ...
 # ============ 子模块方案（指针引用）============
-
+# ...
 # 添加子模块
 git submodule add https://repo.example.com/shared-lib.git lib/shared
-
+# ...
 # 克隆含子模块的仓库
 git clone --recurse-submodules https://repo.example.com/main-repo.git
-
+# ...
 # 初始化已有仓库的子模块
 git submodule update --init --recursive
-
+# ...
 # 更新子模块到最新
 git submodule update --remote
-
+# ...
 # 删除子模块
 git rm lib/shared
 rm -rf .git/modules/lib/shared
@@ -144,7 +145,7 @@ rm -rf .git/modules/lib/shared
 **子树 vs 子模块选择策略**：
 
 | 特性 | 子树（subtree） | 子模块（submodule） |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 代码存储 | 直接嵌入仓库 | 指针引用外部仓库 |
 | 克隆体验 | 开箱即用 | 需额外初始化命令 |
 | 仓库体积 | 较大 | 较小 |
@@ -159,7 +160,7 @@ rm -rf .git/modules/lib/shared
 ```bash
 # 1. 全局启用 rerere（冲突自动记忆）
 git config --global rerere.enabled true
-
+# ...
 # 2. 首次解决冲突时 Git 自动记录方案
 git merge feature/complex
 # 出现冲突...
@@ -167,23 +168,23 @@ git merge feature/complex
 git add .
 git commit
 # Git 输出: Recorded resolution for 'path/to/file.ts'
-
+# ...
 # 3. 再次遇到相同冲突时自动应用
 git merge another-feature
 # Git 输出: Resolved 'path/to/file.ts' using previous resolution
-
+# ...
 # 4. 查看 rerere 状态
 git rerere diff
 ls .git/rr-cache/
-
+# ...
 # 5. 忘记指定文件的方案
 git rerere forget path/to/file.ts
-
+# ...
 # 6. 三方对比解决复杂冲突
 git show :1:path/to/file.ts   # 共同祖先版本
 git show :2:path/to/file.ts   # 当前分支版本（ours）
 git show :3:path/to/file.ts   # 合并分支版本（theirs）
-
+# ...
 # 7. 批量采用某一方的版本
 git checkout --ours path/to/file.ts    # 采用当前版本
 git checkout --theirs path/to/file.ts  # 采用合并版本
@@ -203,20 +204,20 @@ git add path/to/file.ts
 ```bash
 # 启用冲突自动记忆
 git config --global rerere.enabled true
-
+# ...
 # 启用部分克隆支持
 git config --global feature.experimental true
-
+# ...
 # 配置合并工具
 git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
-
+# ...
 # 配置 fetch 时自动清理
 git config --global fetch.prune true
-
+# ...
 # 配置 diff 算法
 git config --global diff.algorithm patience
-
+# ...
 # 配置合并策略
 git config --global merge.conflictstyle diff3
 ```
@@ -226,16 +227,16 @@ git config --global merge.conflictstyle diff3
 ```bash
 # 批量更新所有子模块
 git submodule foreach 'git pull origin main'
-
+# ...
 # 批量查看子模块状态
 git submodule status
-
+# ...
 # 批量初始化并更新
 git submodule update --init --recursive
-
+# ...
 # 批量切换子模块分支
 git submodule foreach 'git checkout main'
-
+# ...
 # 批量拉取子模块最新代码
 git submodule update --remote --merge
 ```
@@ -251,7 +252,7 @@ git submodule update --remote --merge
 # 锥形模式（推荐：按目录匹配）
 git sparse-checkout init --cone
 git sparse-checkout set packages/web packages/api packages/shared
-
+# ...
 # 非锥形模式（按模式匹配）
 # .git/info/sparse-checkout 文件内容：
 # packages/web/*
@@ -264,16 +265,16 @@ git sparse-checkout set packages/web packages/api packages/shared
 ```bash
 # 部分文件暂存
 git stash push -m "WIP: 重构认证流程" -- src/auth.ts src/login.ts
-
+# ...
 # 包含未追踪文件
 git stash push -u -m "包含新文件"
-
+# ...
 # 查看暂存内容
 git stash show -p stash@{0}
-
+# ...
 # 从暂存创建分支
 git stash branch new-feature stash@{0}
-
+# ...
 # 交互式暂存
 git stash push -p
 ```
@@ -283,26 +284,26 @@ git stash push -p
 ```bash
 # 查看文件每行最后修改者
 git blame src/auth.ts
-
+# ...
 # 指定行范围
 git blame -L 50,70 src/auth.ts
-
+# ...
 # 忽略空白差异
 git blame -w src/auth.ts
-
+# ...
 # 检测代码移动
 git blame -M src/auth.ts
-
+# ...
 # 检测跨文件移动
 git blame -C src/auth.ts
-
+# ...
 # 查找字符串添加/删除的提交
 git log -S "function oldName" --oneline
 git log -G "TODO.*hack" --oneline
-
+# ...
 # 查看文件完整历史（含重命名）
 git log --follow --oneline -- src/auth.ts
-
+# ...
 # 查看提交的文件变更统计
 git log --stat --oneline -20
 ```
@@ -348,7 +349,7 @@ git sparse-checkout add packages/new-module
 ```bash
 # 拉取子模块指针变更
 git pull origin main
-
+# ...
 # 同步子模块到指针指向的提交
 git submodule update --init --recursive
 ```
@@ -358,7 +359,7 @@ git submodule update --init --recursive
 ```bash
 # 忘记指定文件的方案
 git rerere forget path/to/file.ts
-
+# ...
 # 清除所有记忆
 rm -rf .git/rr-cache/
 ```
@@ -368,7 +369,7 @@ rm -rf .git/rr-cache/
 ```bash
 # 使用子树拆分
 git subtree split --prefix=lib/shared -b shared-standalone
-
+# ...
 # 推送到新仓库
 git push https://repo.example.com/new-repo.git shared-standalone:main
 ```
@@ -378,7 +379,7 @@ git push https://repo.example.com/new-repo.git shared-standalone:main
 ```bash
 # 获取指定文件的历史
 git fetch --filter=blob:none origin
-
+# ...
 # 或完全取消过滤
 git config --unset remote.origin.partialclonefilter
 git fetch --unshallow
@@ -389,10 +390,10 @@ git fetch --unshallow
 ```bash
 # 挑选连续范围
 git cherry-pick abc123..ghi789
-
+# ...
 # 挑选多个不连续提交
 git cherry-pick abc123 def456 ghi789
-
+# ...
 # 跨仓库挑选
 git remote add upstream https://repo.example.com/other.git
 git fetch upstream
@@ -404,7 +405,7 @@ git cherry-pick upstream/main~3
 ```bash
 # 查看子模块指针
 git ls-tree HEAD lib/shared
-
+# ...
 # 查看子模块差异
 git diff --submodule
 ```
@@ -419,7 +420,7 @@ git diff --submodule
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Git | 命令行工具 | 必需 | 系统包管理器安装 |
 | git-subtree | 内置工具 | 可选 | Git 2.7+ 内置 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -434,9 +435,8 @@ git diff --submodule
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

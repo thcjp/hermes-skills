@@ -24,19 +24,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # Logo设计工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Logo设计工具专业版支持批量生成 | 不支持 | 支持 |
+| Logo设计工具专业版品牌变体管理 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -67,7 +69,7 @@ batch_config = {
     "auto_validate": True,
     "output_dir": "./output/"
 }
-
+# ...
 # 执行批量生成
 python3 batch_logo_gen.py --config batch_config
 ```- 验证返回数据的完整性和格式正确性
@@ -89,7 +91,7 @@ vectorization_config = {
         "preserve_details": True         # 保留细节
     }
 }
-
+# ...
 # 执行矢量化
 python3 vectorize.py --config vectorization_config
 ```- 验证执行结果,确认输出符合预期格式
@@ -135,7 +137,7 @@ brand_variants = {
         "format": "ico_and_png"
     }
 }
-
+# ...
 # 批量生成所有变体
 python3 generate_variants.py --config brand_variants
 ```
@@ -218,7 +220,7 @@ sub_brands = [
     {"name": "BrandC", "industry": "education", "color": "#F59E0B"},
     {"name": "BrandD", "industry": "health", "color": "#EF4444"}
 ]
-
+# ...
 for brand in sub_brands:
     generate_logo_system(
         brand_name=brand["name"],
@@ -290,7 +292,7 @@ python3 audit_logo.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | logo-design处理的内容输入 |,  |
 | content | string | 否 | logo-design处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -318,9 +320,8 @@ python3 audit_logo.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -334,10 +335,10 @@ python3 audit_logo.py \
 - **Python**: 3.10+
 - **Node.js**: 18+(用于CI/CD集成)
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | AI图像生成工具 | 服务 | 必需 | 各AI平台提供 |
 | 矢量化工具 | 库 | 推荐 | pip install potrace |
@@ -365,7 +366,7 @@ python3 audit_logo.py \
 brand:
   name: "MyBrand"
   tagline: "Innovation Forward"
-  
+# ...
 logo:
   style: "minimalist geometric"
   colors:
@@ -373,11 +374,11 @@ logo:
     secondary: "#4D7CFF"
     neutral: "#0F172A"
     background: "#FFFFFF"
-  
+# ...
   typography:
     logo_font: "Inter, sans-serif"
     weights: [400, 600, 700]
-  
+# ...
   variants:
     - primary
     - horizontal
@@ -386,14 +387,14 @@ logo:
     - dark_mode
     - monochrome
     - favicon
-    
+# ...
   export_formats:
     - svg
     - png_transparent
     - png_white_bg
     - ico
     - high_res_png
-    
+# ...
   quality_requirements:
     min_size: 16
     max_complexity: 0.7
@@ -454,9 +455,8 @@ A: 支持SVG(矢量)、PNG(透明/白底)、ICO(favicon)、高分辨率PNG(4096p
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

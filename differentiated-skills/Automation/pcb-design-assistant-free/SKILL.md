@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
-
 # PCB设计助手（免费版）
 
 > 从一句话需求到可打板原理图：连接EasyEDA、搜索真实元件、绘制规范电路、自动质量门检查。
@@ -33,7 +34,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | PCB设计助手(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ```bash
 # 检查桥接服务状态
 curl -s http://localhost:3000/api/health
-
+# ...
 # 示例
 # {"status":"ok","eda":"easyeda","version":"6.5.x"}
 ```
@@ -65,7 +66,7 @@ const parts = await eda.parts.search({
   in_stock: true,
   vendor: "lcsc"   // 优先立创商城可购元件
 });
-
+// ...
 // 选型建议返回
 // [
 //   {lcsc_id:"C8734", name:"STM32F103C8T6", package:"LQFP48", stock:12000, price:6.8},
@@ -83,7 +84,7 @@ const parts = await eda.parts.search({
 提供常用电路块的绘制规则，组合搭建单页原理图：
 
 | 电路块 | 关键元件 | 设计要点 |
-|--------|----------|----------|
+|:-----|:-----|:-----|
 | USB-C供电 | USB-C座、CC电阻(5.1k) | CC1/CC2各串5.1k下拉；VBUS加滤波电容 |
 | LDO稳压 | AMS1117-3.3 | 输入/输出各加10uF+0.1uF；地网络命名GND |
 | MCU最小系统 | STM32F103 | VDD/VSS全部连接；去耦电容贴近引脚；BOOT0下拉 |
@@ -228,7 +229,7 @@ Skill: 执行完成,结果如下: 操作成功
 ## 错误处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|---:|---:|---:|
 | 桥接服务无响应 | EasyEDA未启动或扩展未启用 | 重启EasyEDA；检查扩展是否加载；确认端口3000未被占用 | 高 |
 | 元件搜索无结果 | 关键词过于宽泛或库存为0 | 用具体型号替代泛词；勾选"包含停产"；改用专业版的模糊搜索 | 高 |
 | 元件放置失败 | 封装不匹配或库未加载 | 检查封装名称；确认元件库已加载；尝试替代元件 | 中 |
@@ -245,7 +246,7 @@ Skill: 执行完成,结果如下: 操作成功
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o-mini） |
 | EasyEDA客户端 | 桌面应用 | 必需 | 从easyeda.com下载 |
 | Node.js | 运行时 | 必需 | 桥接服务依赖，14+ |

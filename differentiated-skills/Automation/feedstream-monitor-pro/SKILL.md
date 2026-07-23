@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 安全公告流监控（专业版）
 
@@ -44,7 +46,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Feedstream Monitor处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -98,27 +100,27 @@ import re
 import hashlib
 from pathlib import Path
 from datetime import datetime
-
+# ...
 class ProFeedMonitor:
     """专业版安全公告流监控"""
-
+# ...
     def __init__(self):
         self.store = Path.home() / "workspace" / "feedstream" / "pro"
         self.store.mkdir(parents=True, exist_ok=True)
         self.advisories_file = self.store / "advisories.json"
         if not self.advisories_file.exists():
             self.advisories_file.write_text("[]", encoding="utf-8")
-
+# ...
     def extract_cve_ids(self, text):
         """提取CVE编号"""
         pattern = r'CVE-\d{4}-\d{4,7}'
         return list(set(re.findall(pattern, text, re.IGNORECASE)))
-
+# ...
     def correlate_products(self, advisory, product_inventory):
         """关联受影响的产品"""
         text = (advisory["title"] + " " + advisory.get("description", "")).lower()
         affected = []
-
+# ...
         for product in product_inventory:
             product_name = product["name"].lower()
             if product_name in text:
@@ -129,33 +131,33 @@ class ProFeedMonitor:
                     "is_affected": True,
                     "cve_ids": self.extract_cve_ids(text)
                 })
-
+# ...
         advisory["affected_products"] = affected
         return affected
-
+# ...
     def calculate_exploitability(self, advisory):
         """可利用性评分（EPSS-like简化模型）"""
         text = (advisory["title"] + " " + advisory.get("description", "")).lower()
         score = 0.0
-
+# ...
         # 基础分：严重性
         severity_scores = {"critical": 0.9, "high": 0.7, "medium": 0.4, "low": 0.2}
         score = severity_scores.get(advisory.get("severity", "info"), 0.1)
-
+# ...
         # 加分因素
         exploit_indicators = ["exploit", "poc", "proof of concept", "weaponized",
                               "active exploitation", "in the wild", "patch available"]
         for indicator in exploit_indicators:
             if indicator in text:
                 score = min(score + 0.05, 0.99)
-
+# ...
         # 减分因素
         mitigators = ["mitigation available", "workaround", "not exploitable",
                       "requires authentication", "local access required"]
         for mitigator in mitigators:
             if mitigator in text:
                 score = max(score - 0.1, 0.01)
-
+# ...
         advisory["exploitability_score"] = round(score, 2)
         advisory["exploitability_level"] = (
             "critical" if score >= 0.8 else
@@ -164,32 +166,32 @@ class ProFeedMonitor:
             "low"
         )
         return advisory["exploitability_score"]
-
+# ...
 # 使用示例
 monitor = ProFeedMonitor()
-
+# ...
 # 产品资产清单
 inventory = [
     {"name": "Apache", "version": "2.4.49"},
     {"name": "nginx", "version": "1.21.0"},
     {"name": "PostgreSQL", "version": "13.3"},
 ]
-
+# ...
 # 分析公告
 advisory = {
     "title": "CVE-2021-41773 Apache HTTP Server Path Traversal",
     "description": "A flaw was found in Apache HTTP Server 2.4.49. An attacker can use path traversal to access files. Exploit available.",
     "severity": "critical"
 }
-
+# ...
 # CVE提取
 cves = monitor.extract_cve_ids(advisory["title"] + " " + advisory["description"])
 print(f"CVE编号：{cves}")
-
+# ...
 # 产品关联
 affected = monitor.correlate_products(advisory, inventory)
 print(f"受影响产品：{[p['product'] for p in affected]}")
-
+# ...
 # 可利用性评分
 score = monitor.calculate_exploitability(advisory)
 print(f"可利用性评分：{score} ({advisory['exploitability_level']})")
@@ -204,10 +206,10 @@ import json
 import hashlib
 from pathlib import Path
 from datetime import datetime
-
+# ...
 class EnterpriseFeedMonitor(ProFeedMonitor):
     """企业级安全公告监控"""
-
+# ...
     def __init__(self):
         super().__init__()
         self.states_file = self.store / "states.json"
@@ -215,12 +217,12 @@ class EnterpriseFeedMonitor(ProFeedMonitor):
         for f in [self.states_file, self.integrity_file]:
             if not f.exists():
                 f.write_text("{}", encoding="utf-8")
-
+# ...
     def update_state(self, advisory_id, new_state, note=""):
         """更新公告状态"""
         states = json.loads(self.states_file.read_text(encoding="utf-8"))
         old_state = states.get(advisory_id, {}).get("state", "new")
-
+# ...
         states[advisory_id] = {
             "state": new_state,  # new / read / processing / resolved / ignored
             "previous_state": old_state,
@@ -234,44 +236,44 @@ class EnterpriseFeedMonitor(ProFeedMonitor):
         }
         self.states_file.write_text(json.dumps(states, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"✓ 状态更新：{advisory_id} {old_state} → {new_state}")
-
+# ...
     def get_state(self, advisory_id):
         """获取公告状态"""
         states = json.loads(self.states_file.read_text(encoding="utf-8"))
         return states.get(advisory_id, {"state": "new"})
-
+# ...
     def list_by_state(self, state):
         """按状态筛选公告"""
         states = json.loads(self.states_file.read_text(encoding="utf-8"))
         advisories = json.loads(self.advisories_file.read_text(encoding="utf-8"))
-
+# ...
         matched = []
         for adv in advisories:
             adv_state = states.get(adv.get("id", ""), {}).get("state", "new")
             if adv_state == state:
                 adv["current_state"] = adv_state
                 matched.append(adv)
-
+# ...
         print(f"\n状态 '{state}' 的公告：{len(matched)} 条")
         for a in matched[:10]:
             print(f"  [{a.get('severity','info')}] {a['title'][:60]}")
         return matched
-
+# ...
     def verify_integrity(self):
         """数据完整性校验"""
         advisories = json.loads(self.advisories_file.read_text(encoding="utf-8"))
         integrity = json.loads(self.integrity_file.read_text(encoding="utf-8"))
-
+# ...
         verified = 0
         corrupted = 0
         new_records = []
-
+# ...
         for adv in advisories:
             adv_id = adv.get("id", "")
             content_hash = hashlib.sha256(
                 json.dumps(adv, sort_keys=True, ensure_ascii=False).encode()
             ).hexdigest()
-
+# ...
             if adv_id in integrity:
                 if integrity[adv_id]["hash"] == content_hash:
                     verified += 1
@@ -287,27 +289,27 @@ class EnterpriseFeedMonitor(ProFeedMonitor):
                     "first_seen": datetime.now().isoformat(),
                     "last_verified": datetime.now().isoformat()
                 }
-
+# ...
         self.integrity_file.write_text(
             json.dumps(integrity, ensure_ascii=False, indent=2), encoding="utf-8")
-
+# ...
         print(f"\n=== 完整性校验报告 ===")
         print(f"已验证：{verified} 条")
         print(f"新记录：{len(new_records)} 条")
         print(f"已损坏：{corrupted} 条")
         return {"verified": verified, "new": len(new_records), "corrupted": corrupted}
-
+# ...
 # 使用示例
 monitor = EnterpriseFeedMonitor()
-
+# ...
 # 更新状态
 monitor.update_state("adv_001", "processing", "开始分析影响范围")
 monitor.update_state("adv_002", "resolved", "已应用补丁修复")
-
+# ...
 # 按状态查看
 monitor.list_by_state("processing")
 monitor.list_by_state("resolved")
-
+# ...
 # 完整性校验
 monitor.verify_integrity()
 ```
@@ -321,10 +323,10 @@ import time
 import json
 import urllib.request
 from datetime import datetime, timedelta
-
+# ...
 class FullEnterpriseMonitor(EnterpriseFeedMonitor):
     """完整企业级监控（含速率限制与Webhook）"""
-
+# ...
     def __init__(self):
         super().__init__()
         self.rate_limit_file = self.store / "rate_limits.json"
@@ -333,12 +335,12 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
             self.rate_limit_file.write_text("{}", encoding="utf-8")
         if not self.webhook_file.exists():
             self.webhook_file.write_text("[]", encoding="utf-8")
-
+# ...
     def fetch_with_rate_limit(self, feed_url, min_interval=300):
         """带速率限制的抓取"""
         limits = json.loads(self.rate_limit_file.read_text(encoding="utf-8"))
         last_fetch = limits.get(feed_url, {}).get("last_fetch")
-
+# ...
         if last_fetch:
             last_time = datetime.fromisoformat(last_fetch)
             elapsed = (datetime.now() - last_time).total_seconds()
@@ -346,26 +348,26 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
                 wait = min_interval - elapsed
                 print(f"速率限制：需等待 {wait:.0f} 秒")
                 return None
-
+# ...
         # 执行抓取
         try:
             req = urllib.request.Request(feed_url, headers={"User-Agent": "FeedStreamMonitor-Pro/1.0"})
             with urllib.request.urlopen(req, timeout=30) as resp:
                 content = resp.read().decode("utf-8", errors="ignore")
-
+# ...
             limits[feed_url] = {
                 "last_fetch": datetime.now().isoformat(),
                 "fetch_count": limits.get(feed_url, {}).get("fetch_count", 0) + 1
             }
             self.rate_limit_file.write_text(
                 json.dumps(limits, ensure_ascii=False, indent=2), encoding="utf-8")
-
+# ...
             print(f"✓ 抓取成功（速率限制：{min_interval}秒间隔）")
             return content
         except Exception as e:
             print(f"✗ 抓取失败：{e}")
             return None
-
+# ...
     def add_webhook(self, name, url, events=None, severity_filter=None):
         """添加Webhook通知"""
         webhooks = json.loads(self.webhook_file.read_text(encoding="utf-8"))
@@ -385,18 +387,18 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
             json.dumps(webhooks, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"✓ Webhook已添加：{webhook['id']} - {name}")
         return webhook
-
+# ...
     def send_webhook(self, advisory):
         """发送Webhook通知"""
         webhooks = json.loads(self.webhook_file.read_text(encoding="utf-8"))
         severity = advisory.get("severity", "info")
-
+# ...
         for hook in webhooks:
             if hook["status"] != "active":
                 continue
             if severity not in hook.get("severity_filter", []):
                 continue
-
+# ...
             payload = json.dumps({
                 "event": "new_advisory",
                 "severity": severity,
@@ -407,7 +409,7 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
                 "exploitability_score": advisory.get("exploitability_score", 0),
                 "timestamp": datetime.now().isoformat()
             }, ensure_ascii=False).encode()
-
+# ...
             try:
                 req = urllib.request.Request(
                     hook["url"],
@@ -425,15 +427,15 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
             except Exception as e:
                 hook["failed_count"] += 1
                 print(f"✗ Webhook异常：{hook['name']} - {e}")
-
+# ...
         self.webhook_file.write_text(
             json.dumps(webhooks, ensure_ascii=False, indent=2), encoding="utf-8")
-
+# ...
     def generate_report(self):
         """生成分析报告"""
         advisories = json.loads(self.advisories_file.read_text(encoding="utf-8"))
         states = json.loads(self.states_file.read_text(encoding="utf-8"))
-
+# ...
         report = {
             "generated_at": datetime.now().isoformat(),
             "total_advisories": len(advisories),
@@ -442,17 +444,17 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
             "top_exploitability": [],
             "pending_action": []
         }
-
+# ...
         # 按严重性统计
         for adv in advisories:
             sev = adv.get("severity", "info")
             report["by_severity"][sev] = report["by_severity"].get(sev, 0) + 1
-
+# ...
         # 按状态统计
         for adv in advisories:
             state = states.get(adv.get("id", ""), {}).get("state", "new")
             report["by_state"][state] = report["by_state"].get(state, 0) + 1
-
+# ...
         # 可利用性排序
         scored = [a for a in advisories if "exploitability_score" in a]
         scored.sort(key=lambda x: x["exploitability_score"], reverse=True)
@@ -461,7 +463,7 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
              "level": a.get("exploitability_level", "")}
             for a in scored[:10]
         ]
-
+# ...
         # 待处理
         for adv in advisories:
             state = states.get(adv.get("id", ""), {}).get("state", "new")
@@ -471,7 +473,7 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
                     "severity": adv.get("severity"),
                     "state": state
                 })
-
+# ...
         print(f"\n=== 安全公告分析报告 ===")
         print(f"生成时间：{report['generated_at']}")
         print(f"公告总数：{report['total_advisories']}")
@@ -482,12 +484,12 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
         for state, count in sorted(report["by_state"].items()):
             print(f"  {state:<15}: {count}")
         print(f"\n待处理（critical/high且未处理）：{len(report['pending_action'])} 条")
-
+# ...
         return report
-
+# ...
 # 使用示例
 monitor = FullEnterpriseMonitor()
-
+# ...
 # 添加Webhook
 monitor.add_webhook(
     "安全告警群",
@@ -495,11 +497,11 @@ monitor.add_webhook(
     events=["new_critical"],
     severity_filter=["critical"]
 )
-
+# ...
 # 速率限制抓取
 content = monitor.fetch_with_rate_limit("https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml",
                                         min_interval=300)
-
+# ...
 # 发送Webhook通知
 advisory = {
     "title": "CVE-2021-44228 Apache Log4j Remote Code Execution",
@@ -509,7 +511,7 @@ advisory = {
     "exploitability_score": 0.95
 }
 monitor.send_webhook(advisory)
-
+# ...
 # 生成报告
 monitor.generate_report()
 ```
@@ -521,7 +523,7 @@ monitor.generate_report()
 ### CVE关联分析（专业版）
 
 | 分析维度 | 说明 |
-|----------|------|
+|:-----|:-----|
 | CVE编号提取 | 自动从标题和描述中提取CVE编号 |
 | 产品关联 | 与资产清单交叉匹配受影响产品 |
 | 版本范围 | 识别受影响的版本范围 |
@@ -536,7 +538,7 @@ monitor.generate_report()
 基于EPSS-like简化模型，综合评估漏洞被利用的可能性：
 
 | 评分因素 | 影响 | 调整 |
-|----------|------|------|
+|---:|---:|---:|
 | 严重性等级 | 基础分 | critical=0.9, high=0.7, medium=0.4, low=0.2 |
 | 利用代码公开 | 加分 | +0.05/指标 |
 | POC可用 | 加分 | +0.05/指标 |
@@ -545,7 +547,7 @@ monitor.generate_report()
 | 需要认证 | 减分 | -0.1/指标 |
 
 | 评分区间 | 级别 | 响应建议 |
-|----------|------|----------|
+|:---:|:---:|:---:|
 | 0.8-0.99 | critical | 立即响应 |
 | 0.6-0.79 | high | 24小时内处理 |
 | 0.3-0.59 | medium | 一周内处理 |
@@ -564,7 +566,7 @@ new → read → processing → resolved
 ```
 
 | 状态 | 说明 |
-|------|------|
+|:------|------:|
 | new | 新发现，未查看 |
 | read | 已查看，待处理 |
 | processing | 正在分析/修复中 |
@@ -578,7 +580,7 @@ new → read → processing → resolved
 ### 速率限制与礼貌抓取（专业版）
 
 | 参数 | 默认值 | 说明 |
-|------|--------|------|
+|---:|:---|---:|
 | min_interval | 300秒 | 同一源最小抓取间隔 |
 | User-Agent | 标识 | 诚实的UA标识 |
 | timeout | 30秒 | 抓取超时 |
@@ -600,7 +602,7 @@ new → read → processing → resolved
 ### Webhook通知（专业版）
 
 | 配置项 | 说明 |
-|--------|------|
+|:------:|--------|
 | url | Webhook接收地址 |
 | events | 触发事件（new_critical/new_high等） |
 | severity_filter | 严重性过滤 |
@@ -717,7 +719,7 @@ if result["corrupted"] > 0:
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|----|:--:|---:|----|
 | 安全运营工程师 | 漏洞管理 | 评分+状态+报告 | 优先级排序+SLA追踪 |
 | DevOps工程师 | CI/CD集成 | 产品关联+CVE提取 | 自动检测受影响 |
 | SOAR工程师 | 自动化响应 | Webhook+评分 | 自动告警+响应 |
@@ -736,9 +738,8 @@ if result["corrupted"] > 0:
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|----|----|----|----|----|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -798,7 +799,7 @@ if result["corrupted"] > 0:
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:-----|:-----|:-----|:-----|
 | CVE提取遗漏 | 格式不标准 | 检查正则；手动补充 | 中 |
 | 产品关联误报 | 关键词太宽泛 | 精确产品名；加版本检查 | 中 |
 | 可利用性评分偏差 | 关键词不全 | 补充指标；人工校准 | 低 |
@@ -822,7 +823,7 @@ if result["corrupted"] > 0:
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python标准库 | 内置 | 必需 | Python自带（urllib/xml/hashlib/json/re） |
 | feedparser | Python库 | 专业版可选 | `pip install feedparser`（更强大的RSS解析） |
 | requests | Python库 | 专业版可选 | `pip install requests`（Webhook发送） |
@@ -897,7 +898,7 @@ if result["corrupted"] > 0:
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 基础监控（多源订阅+分级+过滤+去重） + 基础示例 | 个人试用、轻量监控 |
 | 收费专业版 | ¥29.9/月 | CVE关联 + 可利用性评分 + 状态追踪 + 速率限制 + 完整性校验 + Webhook + 报告 + 7角色指南 + 优先支持 | 团队/企业、企业级监控 |
 

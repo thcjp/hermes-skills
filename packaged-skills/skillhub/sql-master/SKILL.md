@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # SQL大师工具(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力分类 | 支持 | 支持 |
-| 专业版 | 不支持 | 支持 |
-| 迁移管理 | 不支持 | 支持 |
-| 自动化工具+回滚+校验 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| SQL大师工具(专业版)增量压缩 | 不支持 | 支持 |
+| SQL大师工具(专业版)Schema对比同步 | 不支持 | 支持 |
+| SQL大师工具(专业版)高可用与读写分离配置 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|:-----|:-----|:-----|
 | 迁移管理 | 手动脚本 | 自动化工具+回滚+校验 |
 | 备份策略 | 手动全量 | 全量+增量+压缩+加密 |
 | Schema对比 | 无 | 多库差异对比+同步脚本 |
@@ -80,7 +82,7 @@ pricing_model: "per_use"
 
 ```python
 from sql_master_tool import ProFeatures
-
+# ...
 pro = ProFeatures(db_url="postgresql://user:pass@localhost/mydb")
 pro.migrations.add("005_add_orders_shipping", up_sql="""
     ALTER TABLE orders ADD COLUMN shipping_address TEXT;
@@ -152,7 +154,7 @@ pro.pitr_recovery(
 
 ```python
 from sql_master_tool import ProFeatures
-
+# ...
 pro = ProFeatures(db_url="postgresql://user:pass@localhost/mydb")
 pro.auto_backup("backups/", schedule="daily", time="02:00")
 pro.enable_monitor(alert_webhook_env="OPS_WEBHOOK")
@@ -184,7 +186,7 @@ print(diff.summary())
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | sql-master处理的内容输入 |,  |
 | content | string | 否 | sql-master处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -212,9 +214,8 @@ print(diff.summary())
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -226,9 +227,9 @@ print(diff.summary())
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.8+
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | psql | CLI工具 | 必需 | `PostgreSQL` 安装包 |
 | mysql | CLI工具 | 可选 | MySQL 客户端安装包 |
 | sqlite3 | CLI工具 | 可选 | 系统自带或官网下载 |
@@ -332,9 +333,8 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQLite 3.35+。SQL Server部分功能支持
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

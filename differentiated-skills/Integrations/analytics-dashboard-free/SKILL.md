@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 数据分析面板（免费版）
 
 > **一站式监控你的邮件、会话与任务。token保护，5秒刷新，零配置启动。**
@@ -45,7 +46,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 数据分析面板(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -70,10 +71,10 @@ suggested_price: 29.9
 ```bash
 # 依赖说明
 npm install express@4.21.2
-
+# ...
 # 2. 启动面板（token自动生成）
 node ~/workspace/dashboard/（请参考skill目录中的脚本文件）
-
+# ...
 # 3. 读取打印的URL（含token）
 # 🏠 数据分析面板已就绪
 # 访问地址: http://127.0.0.1:19195/?token=a3f9c2...
@@ -107,27 +108,26 @@ node ~/workspace/dashboard/（请参考skill目录中的脚本文件）
 ```bash
 # 1. 确保数据源技能已运行并写入数据
 ls ~/workspace/dashboard/data/
-
+# ...
 # 2. 启动面板
 node ~/workspace/dashboard/（请参考skill目录中的脚本文件）
-
+# ...
 # 3. 浏览器访问（使用打印的token）
 # http://127.0.0.1:19195/?token=xxx
-
+# ...
 # 4. 查看访问日志
 tail -10 ~/workspace/dashboard/logs/access.log
-
+# ...
 # 5. 停止面板（Ctrl+C 或 kill进程）
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 功能一：多源数据聚合
 
 | 数据源 | 内容 | 展示方式 |
-|--------|------|----------|
+|:-----|:-----|:-----|
 | 收件箱 | 最近50封入站邮件 | 列表（发件人/主题/时间） |
 | 浏览器会话 | 当前会话状态 | 状态卡片（活跃/过期） |
 | 任务执行 | 最近20条任务状态 | 列表（任务名/状态/耗时） |
@@ -165,7 +165,7 @@ tail -10 ~/workspace/dashboard/logs/access.log
 # 方式1：自动生成token（默认，每次启动随机）
 node server.js
 # 输出: 访问地址: http://127.0.0.1:19195/?token=a3f9c2...
-
+# ...
 # 方式2：自定义token
 export DASHBOARD_TOKEN="my-secret-token"
 node server.js
@@ -226,7 +226,7 @@ node server.js
 ### 功能五：基础图表展示
 
 | 图表类型 | 展示内容 | 数据源 |
-|----------|----------|--------|
+|---:|---:|---:|
 | 列表 | 邮件列表 | inbox.jsonl |
 | 状态卡片 | 会话状态 | session.json |
 | 列表 | 任务执行列表 | tasks.json |
@@ -310,7 +310,7 @@ node server.js
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Express | npm包 | 必需 | `npm install express@4.21.2` |
 | Node.js 14+ | 运行时 | 必需 | 从nodejs.org安装 |
@@ -367,20 +367,20 @@ node server.js
 ### 示例1：基础用法
 
 ```
-### 60秒上手（零配置启动）
-
+### 60秒上手（零配置启动）(补充)
+# ...
 ```bash
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -397,3 +397,4 @@ node server.js
   "error": null
 }
 ```
+# ...

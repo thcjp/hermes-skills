@@ -33,6 +33,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
 # 笔记同步CLI（专业版）
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 笔记同步CLI(专业版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -88,7 +90,7 @@ pricing_model: "per_use"
 ```bash
 # 配置默认Vault
 notes-sync set-default "我的知识库"
-
+# ...
 # 验证配置
 notes-sync print-default --path-only
 ```
@@ -101,13 +103,13 @@ notes-sync print-default --path-only
 # 初始化Git仓库（若未初始化）
 cd "$(notes-sync print-default --path-only)"
 git init
-
+# ...
 # 配置自动提交
 notes-sync git-config --auto-commit --interval 300
-
+# ...
 # 安装默认模板集
 notes-sync template install --pack default
-
+# ...
 # 验证模板
 notes-sync template list
 ```
@@ -149,7 +151,6 @@ notes-sync template list
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 核心能力
 ### 1. 批量操作（专业版）
 
@@ -158,18 +159,18 @@ notes-sync template list
 notes-sync batch create --from notes.csv \
   --format "title,content,tags" \
   --target-dir "inbox/imported"
-
+# ...
 # 批量移动笔记（按Frontmatter条件筛选）
 notes-sync batch move \
   --filter "status=todo" \
   --from "inbox/" \
   --to "todo/"
-
+# ...
 # 批量添加标签
 notes-sync batch tag \
   --filter "topic=NLP" \
   --add-tags "AI,ML"
-
+# ...
 # 批量删除（含确认提示）
 notes-sync batch delete \
   --filter "created<2025-01-01 AND status=archived" \
@@ -177,7 +178,7 @@ notes-sync batch delete \
 ```
 
 | 参数 | 类型 | 必填 | 默认值 | 说明 |
-|------|------|------|--------|------|
+|:-----|:-----|:-----|:-----|:-----|
 | --from | file/path | 是 | - | CSV文件或源目录 |
 | --filter | string | 否 | - | Frontmatter筛选条件 |
 | --format | string | 否 | auto | CSV列映射格式 |
@@ -193,16 +194,16 @@ notes-sync batch delete \
 ```bash
 # 列出所有Vault及状态
 notes-sync vault list --verbose
-
+# ...
 # 切换活跃Vault
 notes-sync vault use "工作知识库"
-
+# ...
 # 跨Vault复制笔记
 notes-sync vault copy "笔记路径" --from "个人库" --to "工作库"
-
+# ...
 # 跨Vault移动笔记（含链接迁移）
 notes-sync vault move "笔记路径" --from "个人库" --to "工作库"
-
+# ...
 # Vault健康度对比
 notes-sync vault diff "库A" "库B"
 ```
@@ -219,16 +220,16 @@ notes-sync vault diff "库A" "库B"
 notes-sync template install --pack default
 notes-sync template install --pack research
 notes-sync template install --pack devlog
-
+# ...
 # 列出已安装模板
 notes-sync template list
-
+# ...
 # 使用模板创建笔记
 notes-sync create "projects/new-feature" --template "feature-spec"
-
+# ...
 # Daily Note模板（支持变量插值）
 notes-sync daily --template "daily" --vars "date:$(date +%Y-%m-%d),sprint:W3"
-
+# ...
 # 自定义模板
 notes-sync template create "my-template" --file ~/templates/my.md
 ```
@@ -237,21 +238,21 @@ notes-sync template create "my-template" --file ~/templates/my.md
 
 ```markdown
 # {{title}}
-
+# ...
 **日期**: {{date}}
 **项目**: {{project}}
 **状态**: draft
-
+# ...
 **输入**: 用户提供模板系统（专业版）所需的指令和必要参数。
 **处理**: 解析模板系统（专业版）的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回模板系统（专业版）的响应数据,包含状态码、结果和日志。
-
+# ...
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、笔记库管理、含批量操作、Git、同步与、LLM、智能整理、笔记同步、CLI、专业版是在免费版、基础上的全功能升、为重度知识工作者、提供企业级、笔记库管理能力、除核心高频操作外、解锁批量操作、自定义模板系统、自动同步、跨设备同步六大高、级功能等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
-
+# ...
 ## 目标
 {{objective}}
-
+# ...
 ## 待办
 - [ ] 
 ```
@@ -261,16 +262,16 @@ notes-sync template create "my-template" --file ~/templates/my.md
 ```bash
 # 启用自动提交（每5分钟）
 notes-sync git-config --auto-commit --interval 300
-
+# ...
 # 手动提交并推送
 notes-sync git-commit --message "feat: 新增AI Agent设计文档" --push
-
+# ...
 # 查看笔记变更历史
 notes-sync git-log "projects/ai-agent/设计文档.md"
-
+# ...
 # 版本回溯（恢复到指定版本）
 notes-sync git-revert "projects/ai-agent/设计文档.md" --to "abc1234"
-
+# ...
 # 差异对比
 notes-sync git-diff "projects/ai-agent/设计文档.md" --since "2026-01-01"
 ```
@@ -280,16 +281,16 @@ notes-sync git-diff "projects/ai-agent/设计文档.md" --since "2026-01-01"
 ```bash
 # 自动分类未归类笔记
 notes-sync ai classify --dir "inbox/" --apply
-
+# ...
 # 推荐标签
 notes-sync ai tag "projects/ai-agent/设计文档" --suggest
-
+# ...
 # 去重合并相似笔记
 notes-sync ai deduplicate --dir "literature/" --threshold 0.85
-
+# ...
 # 生成笔记摘要
 notes-sync ai summarize "projects/ai-agent/设计文档" --length 200
-
+# ...
 # 知识图谱生成
 notes-sync ai graph --output "knowledge-graph.html"
 ```
@@ -305,16 +306,16 @@ notes-sync ai graph --output "knowledge-graph.html"
 ```bash
 # 配置远程仓库同步
 notes-sync sync-config --remote "origin" --direction both
-
+# ...
 # 立即同步
 notes-sync sync now
-
+# ...
 # 同步状态检查
 notes-sync sync status
-
+# ...
 # 冲突解决（自动合并）
 notes-sync sync resolve --strategy merge
-
+# ...
 # 增量同步（仅传输变更）
 notes-sync sync incremental
 ```
@@ -324,10 +325,10 @@ notes-sync sync incremental
 ```bash
 # 扫描断链
 notes-sync health check-links
-
+# ...
 # 自动修复断链
 notes-sync health fix-links --strategy suggest
-
+# ...
 # 生成健康度报告
 notes-sync health report --output "health-report.md"
 ```
@@ -346,15 +347,15 @@ notes-sync health report --output "health-report.md"
 # 初始化团队知识库
 notes-sync vault use "团队知识库"
 notes-sync git-config --auto-commit --interval 600
-
+# ...
 # 为新成员创建标准结构
 notes-sync batch create --from onboarding.csv \
   --format "title,content" \
   --target-dir "onboarding/新成员"
-
+# ...
 # 使用团队模板创建架构文档
 notes-sync create "architecture/v2" --template "architecture-spec"
-
+# ...
 # 每周生成健康度报告
 notes-sync health report --output "weekly-health.md"
 notes-sync ai graph --output "weekly-graph.html"
@@ -372,13 +373,13 @@ notes-sync ai graph --output "weekly-graph.html"
 # 成员A将个人摘录复制到团队库
 notes-sync vault copy "literature/transformer" \
   --from "个人库" --to "团队文献库"
-
+# ...
 # 团队库自动去重
 notes-sync ai deduplicate --dir "literature/" --threshold 0.85
-
+# ...
 # 生成主题知识图谱
 notes-sync ai graph --filter "topic=NLP" --output "nlp-graph.html"
-
+# ...
 # 按主题批量标签
 notes-sync batch tag --filter "topic=NLP" --add-tags "AI,ML,DeepLearning"
 ```
@@ -392,13 +393,13 @@ notes-sync batch tag --filter "topic=NLP" --add-tags "AI,ML,DeepLearning"
 ```bash
 # 列出所有项目Vault
 notes-sync vault list --verbose
-
+# ...
 # 切换到项目A
 notes-sync vault use "项目A-知识库"
-
+# ...
 # 创建项目A的笔记
 notes-sync create "features/auth" --template "feature-spec"
-
+# ...
 # 跨项目共享通用笔记
 notes-sync vault copy "general/coding-standards" \
   --from "通用库" --to "项目A-知识库"
@@ -415,13 +416,13 @@ notes-sync vault copy "general/coding-standards" \
 notes-sync batch create --from confluence-export.csv \
   --format "title,content,tags" \
   --target-dir "migrated/"
-
+# ...
 # 检测迁移后的断链
 notes-sync health check-links --dir "migrated/"
-
+# ...
 # 自动修复断链
 notes-sync health fix-links --strategy suggest
-
+# ...
 # 生成迁移报告
 notes-sync health report --output "migration-report.md"
 ```
@@ -435,13 +436,13 @@ notes-sync health report --output "migration-report.md"
 ```bash
 # 自动分类inbox中的未归类笔记
 notes-sync ai classify --dir "inbox/" --dry-run
-
+# ...
 # 确认分类结果后执行
 notes-sync ai classify --dir "inbox/" --apply
-
+# ...
 # 推荐标签
 notes-sync ai tag "inbox/随手记" --suggest
-
+# ...
 # 生成摘要便于快速浏览
 notes-sync ai summarize "inbox/长文笔记" --length 200
 ```
@@ -455,10 +456,10 @@ notes-sync ai summarize "inbox/长文笔记" --length 200
 ```bash
 # 查看文档完整变更历史
 notes-sync git-log "policies/数据安全策略.md"
-
+# ...
 # 恢复到审计指定版本
 notes-sync git-revert "policies/数据安全策略.md" --to "abc1234"
-
+# ...
 # 导出变更日志
 notes-sync git-log "policies/" --since "2025-01-01" --format json > audit-log.json
 ```
@@ -472,10 +473,10 @@ notes-sync git-log "policies/" --since "2025-01-01" --format json > audit-log.js
 ```bash
 # 配置各设备同步
 notes-sync sync-config --remote "origin" --direction both
-
+# ...
 # 离线工作后恢复同步
 notes-sync sync incremental
-
+# ...
 # 冲突自动合并
 notes-sync sync resolve --strategy merge
 ```
@@ -485,7 +486,7 @@ notes-sync sync resolve --strategy merge
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|---:|---:|---:|---:|
 | 技术负责人 | 团队知识库管理 | 多Vault+Git+模板+健康度 | 标准化、版本追踪 |
 | 研究者 | 文献协作 | 跨Vault+LLM去重+知识图谱 | 共享、去重、可视化 |
 | 独立开发者 | 多项目并行 | 多Vault+快速切换 | 项目隔离、低切换成本 |
@@ -528,7 +529,7 @@ notes-sync sync resolve --strategy merge
 ```bash
 # 在CI流水线中自动提交文档变更
 notes-sync git-commit --message "docs: 自动更新API文档" --push
-
+# ...
 # 部署前验证文档健康度
 notes-sync health check-links --strict
 ```
@@ -572,7 +573,7 @@ LLM整理功能路由至GPT-4o，确保语义理解质量。
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | 1.0.0 | 2026-01 | 初版发布，含六大高级功能 |
 
 ---
@@ -585,9 +586,8 @@ LLM整理功能路由至GPT-4o，确保语义理解质量。
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:------|------:|:------|:------|------:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -643,7 +643,7 @@ LLM整理功能路由至GPT-4o，确保语义理解质量。
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|---:|:---|---:|---:|
 | 批量操作内存溢出 | 单批数据量过大 | 使用`--batch-size 100`分批执行 | 高 |
 | Git同步冲突频繁 | 多设备同时编辑 | 编辑前先`sync now`；配置自动合并策略 | 高 |
 | LLM分类不准确 | 置信度阈值过低 | 提高minConfidence至0.85；检查Frontmatter完整性 | 中 |
@@ -663,19 +663,19 @@ LLM整理功能路由至GPT-4o，确保语义理解质量。
 ```bash
 # Vault健康度总览
 notes-sync health report --output "health.md"
-
+# ...
 # 清理回收站
 notes-sync clean --trash --older-than 30d
-
+# ...
 # 压缩Git历史（谨慎操作）
 notes-sync git gc --aggressive
-
+# ...
 # 导出全部笔记为JSON
 notes-sync export --format json --output "backup.json"
-
+# ...
 # 检查存储大小
 notes-sync stats --verbose
-
+# ...
 # LLM整理统计
 notes-sync ai stats --since "2026-01-01"
 ```
@@ -692,7 +692,7 @@ notes-sync ai stats --since "2026-01-01"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | notes-sync CLI | 命令行工具 | 必需 | 随本技能提供 |
 | Git | 工具 | 专业版必需 | 系统自带或从git-scm.com安装 |
@@ -762,7 +762,7 @@ notes-sync ai stats --since "2026-01-01"
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|----|:--:|---:|----|
 | 免费体验版 | ¥0 | 核心高频操作（搜索/创建/移动/删除/Frontmatter基础）+ 基础示例 + 基础FAQ | 个人试用、轻量笔记管理 |
 | 收费专业版 | ¥29.9/月 | 全功能（核心+批量+多Vault+模板+Git+LLM整理+跨设备）+ 多角色指南 + 性能优化 + 优先支持 | 团队/企业、重度知识工作者 |
 

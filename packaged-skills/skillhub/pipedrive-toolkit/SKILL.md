@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Pipedrive工具(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| :--------- | 不支持 | 支持 |
-| :----- | 不支持 | 支持 |
-| 商机管理 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Pipedrive工具(专业版)CRM管理 | 不支持 | 支持 |
+| Pipedrive工具(专业版)批量操作与多连接管理 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 专业版支持 | 说明 |
-|:---------|:-----------|:-----|
+|:-----|:-----|:-----|
 | 商机管理 | 全量CRUD | 列表、详情、创建、更新、删除、搜索 |
 | 联系人管理 | 全量CRUD | 列表、详情、创建、更新、删除、搜索 |
 | 组织管理 | 全量CRUD | 列表、详情、创建、更新、删除 |
@@ -84,23 +86,23 @@ pricing_model: "per_use"
 
 ```python
 import urllib.request, os, json
-
+# ...
 headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}', 'Content-Type': 'application/json'}
-
+# ...
 # 1. 创建组织
 org_data = json.dumps({'name': '新客户公司', 'address': '上海市浦东新区'}).encode()
 org_req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/organizations', data=org_data, method='POST')
 for k, v in headers.items(): org_req.add_header(k, v)
 org_response = json.load(urllib.request.urlopen(org_req))
 org_id = org_response['data']['id']
-
+# ...
 # 2. 创建联系人（关联到组织）
 person_data = json.dumps({'name': '张三', 'email': ['zhangsan@example.com'], 'phone': ['13800138000'], 'org_id': org_id}).encode()
 person_req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/persons', data=person_data, method='POST')
 for k, v in headers.items(): person_req.add_header(k, v)
 person_response = json.load(urllib.request.urlopen(person_req))
 person_id = person_response['data']['id']
-
+# ...
 # 3. 创建商机（关联到联系人和组织）
 deal_data = json.dumps({'title': '新客户合作', 'value': 50000, 'currency': 'CNY', 'person_id': person_id, 'org_id': org_id, 'stage_id': 1}).encode()
 deal_req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals', data=deal_data, method='POST')
@@ -114,14 +116,14 @@ print(f"商机已创建：{deal_response['data']['title']}")
 
 ```python
 import urllib.request, os, json
-
+# ...
 headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}', 'Content-Type': 'application/json'}
-
+# ...
 # 获取所有open商机
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals?status=open&limit=100')
 req.add_header('Authorization', headers['Authorization'])
 deals = json.load(urllib.request.urlopen(req))['data']
-
+# ...
 # 为每个商机创建跟进电话活动
 for deal in deals:
     activity_data = json.dumps({
@@ -148,7 +150,7 @@ req = urllib.request.Request('https://api.maton.ai/connections?app=pipedrive&sta
 req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
-
+# ...
 # 查询指定账户的商机（通过Maton-Connection头指定）
 python -c "
 import urllib.request, os, json
@@ -171,7 +173,7 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 export MATON_API_KEY="your_api_key_here"
 ```
 
-### 使用流程
+### 使用流程(补充)
 ```bash
 # 1. 列出open商机
 python -c "
@@ -180,7 +182,7 @@ req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals?status
 req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
-
+# ...
 # 2. 创建新商机
 python -c "
 import urllib.request, os, json
@@ -190,7 +192,7 @@ req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
 req.add_header('Content-Type', 'application/json')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
-
+# ...
 # 3. 创建联系人
 python -c "
 import urllib.request, os, json
@@ -200,7 +202,7 @@ req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
 req.add_header('Content-Type', 'application/json')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
-
+# ...
 # 4. 创建跟进活动
 python -c "
 import urllib.request, os, json
@@ -216,7 +218,7 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | pipedrive-toolkit处理的内容输入 |,  |
 | mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
 | max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
@@ -276,7 +278,7 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ## 异常处理
 
 | 症状 | 可能原因 | 解决方案 | 优先级 |
-|:-----|:---------|:---------|:-------|
+|:---:|:---:|:---:|:---:|
 | 401未授权 | API Key无效或未设置 | 检查MATON_API_KEY环境变量 | 高 |
 | 400缺少连接 | Pipedrive OAuth连接未创建 | 创建连接并完成授权 | 高 |
 | 404资源不存在 | ID错误或资源已删除 | 确认ID正确，检查资源状态 | 中 |
@@ -296,9 +298,9 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 - **Python**：3.6+（使用urllib标准库，无需额外安装）
 - **Node.js**：可选（使用JavaScript集成示例时需要）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | API代理服务 | 在线服务 | 必需 | 注册账户并获取API Key |
 | Pipedrive账户 | 在线账户 | 必需 | 在Pipedrive官网注册 |
 | Pipedrive OAuth连接 | 认证连接 | 必需 | 在代理服务中创建 |
@@ -323,14 +325,14 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ### 连接管理
 ```python
 import urllib.request, os, json
-
+# ...
 headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}', 'Content-Type': 'application/json'}
-
+# ...
 # 列出所有Pipedrive连接
 req = urllib.request.Request('https://api.maton.ai/connections?app=pipedrive&status=ACTIVE')
 req.add_header('Authorization', headers['Authorization'])
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 创建新连接
 data = json.dumps({'app': 'pipedrive'}).encode()
 req = urllib.request.Request('https://api.maton.ai/connections', data=data, method='POST')
@@ -338,12 +340,12 @@ for k, v in headers.items(): req.add_header(k, v)
 response = json.load(urllib.request.urlopen(req))
 # 打开返回的url完成OAuth授权
 print(f"请在浏览器中打开此URL完成授权：{response['connection']['url']}")
-
+# ...
 # 查看指定连接详情
 req = urllib.request.Request('https://api.maton.ai/connections/{connection_id}')
 req.add_header('Authorization', headers['Authorization'])
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 删除连接
 req = urllib.request.Request('https://api.maton.ai/connections/{connection_id}', method='DELETE')
 req.add_header('Authorization', headers['Authorization'])
@@ -353,9 +355,9 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ### 商机全生命周期
 ```python
 import urllib.request, os, json
-
+# ...
 headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}', 'Content-Type': 'application/json'}
-
+# ...
 # 创建商机
 data = json.dumps({
     'title': '企业版合作',
@@ -369,25 +371,25 @@ data = json.dumps({
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals', data=data, method='POST')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 更新商机
 data = json.dumps({'title': '更新后的标题', 'value': 75000, 'status': 'won'}).encode()
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals/123', data=data, method='PUT')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 删除商机
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals/123', method='DELETE')
 req.add_header('Authorization', headers['Authorization'])
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ```
 
-### 联系人管理
+### 联系人管理(补充)
 ```python
 import urllib.request, os, json
-
+# ...
 headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}', 'Content-Type': 'application/json'}
-
+# ...
 # 创建联系人
 data = json.dumps({
     'name': '王五',
@@ -399,13 +401,13 @@ data = json.dumps({
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/persons', data=data, method='POST')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 更新联系人
 data = json.dumps({'name': '王五（已更新）', 'email': ['new@example.com']}).encode()
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/persons/123', data=data, method='PUT')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 删除联系人
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/persons/123', method='DELETE')
 req.add_header('Authorization', headers['Authorization'])
@@ -415,21 +417,21 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ### 组织管理
 ```python
 import urllib.request, os, json
-
+# ...
 headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}', 'Content-Type': 'application/json'}
-
+# ...
 # 创建组织
 data = json.dumps({'name': '新公司', 'address': '北京市海淀区', 'visible_to': 3}).encode()
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/organizations', data=data, method='POST')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 更新组织
 data = json.dumps({'name': '新公司国际'}).encode()
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/organizations/456', data=data, method='PUT')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 删除组织
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/organizations/456', method='DELETE')
 req.add_header('Authorization', headers['Authorization'])
@@ -439,9 +441,9 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ### 活动管理
 ```python
 import urllib.request, os, json
-
+# ...
 headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}', 'Content-Type': 'application/json'}
-
+# ...
 # 创建活动
 data = json.dumps({
     'subject': '跟进电话',
@@ -456,13 +458,13 @@ data = json.dumps({
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/activities', data=data, method='POST')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 标记活动为已完成
 data = json.dumps({'done': 1, 'note': '已完成 - 客户同意条款'}).encode()
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/activities/123', data=data, method='PUT')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 删除活动
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/activities/123', method='DELETE')
 req.add_header('Authorization', headers['Authorization'])
@@ -472,9 +474,9 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ### 备注管理
 ```python
 import urllib.request, os, json
-
+# ...
 headers = {'Authorization': f'Bearer {os.environ["MATON_API_KEY"]}', 'Content-Type': 'application/json'}
-
+# ...
 # 创建备注（关联到商机）
 data = json.dumps({
     'content': '会议纪要：讨论了定价和时间表',
@@ -484,7 +486,7 @@ data = json.dumps({
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/notes', data=data, method='POST')
 for k, v in headers.items(): req.add_header(k, v)
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
-
+# ...
 # 列出备注（按商机过滤）
 req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/notes?deal_id=789')
 req.add_header('Authorization', headers['Authorization'])
@@ -497,21 +499,21 @@ const headers = {
   'Authorization': `Bearer ${process.env.MATON_API_KEY}`,
   'Content-Type': 'application/json'
 };
-
+// ...
 // 创建商机
 await fetch('https://api.maton.ai/pipedrive/api/v1/deals', {
   method: 'POST',
   headers,
   body: JSON.stringify({title: '新商机', value: 10000, currency: 'CNY'})
 }).then(r => r.json());
-
+// ...
 // 更新商机状态为成交
 await fetch('https://api.maton.ai/pipedrive/api/v1/deals/123', {
   method: 'PUT',
   headers,
   body: JSON.stringify({status: 'won'})
 }).then(r => r.json());
-
+// ...
 // 多账户查询（指定连接ID）
 await fetch('https://api.maton.ai/pipedrive/api/v1/deals', {
   headers: {
@@ -523,7 +525,7 @@ await fetch('https://api.maton.ai/pipedrive/api/v1/deals', {
 
 ### 数据字段说明
 | 字段 | 类型 | 说明 |
-|:-----|:-----|:-----|
+|---:|:---|---:|
 | ID | 整数 | 资源唯一标识 |
 | email | 数组 | 支持多个邮箱地址 |
 | phone | 数组 | 支持多个电话号码 |
@@ -533,9 +535,8 @@ await fetch('https://api.maton.ai/pipedrive/api/v1/deals', {
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -547,7 +548,6 @@ await fetch('https://api.maton.ai/pipedrive/api/v1/deals', {
 检查请求体JSON格式是否正确，必填字段是否完整。商机创建至少需要`title`字段，联系人至少需要`name`字段，组织至少需要`name`字段。
 
 ### Q2: 更新操作未生效？
-
 
 ## 已知限制
 

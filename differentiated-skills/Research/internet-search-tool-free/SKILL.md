@@ -45,8 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 聚合搜索工具（免费版）
 
 ## 概述
@@ -56,7 +57,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 多引擎聚合 | 聚合 10+ 搜索引擎 | 是 |
 | 分类路由 | 按类型选择引擎 | 是 |
 | SearXNG 语法 | 支持查询修饰符 | 是 |
@@ -175,7 +176,7 @@ internet_search("reddit best mechanical keyboard 2026", category="social")
 ```bash
 # 方式一：使用公共 SearXNG 实例
 export SEARXNG_URL=https://searx.be
-
+# ...
 # 方式二：自托管 SearXNG
 docker run -d -p 8080:8080 searxng/searxng
 export SEARXNG_URL=http://localhost:8080
@@ -186,7 +187,7 @@ export SEARXNG_URL=http://localhost:8080
 ```bash
 # 基础搜索
 internet_search("你的搜索关键词")
-
+# ...
 # 指定类别
 internet_search("新闻关键词", category="news")
 ```
@@ -196,7 +197,7 @@ internet_search("新闻关键词", category="news")
 ```bash
 # 测试 SearXNG 连通性
 curl http://localhost:8080/healthz
-
+# ...
 # 执行测试搜索
 internet_search("test query", count=3)
 ```
@@ -206,7 +207,7 @@ internet_search("test query", count=3)
 ### 分类路由配置
 
 | 类别 | 适用场景 | 使用引擎 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `general` | 默认，事实查询、产品、人物 | Brave, Bing, DDG, Startpage, Qwant, Wikipedia |
 | `news` | 时效性新闻、突发事件 | Bing News, DDG News |
 | `academic` | 论文、研究、医学文献 | arXiv, Google Scholar, PubMed |
@@ -215,7 +216,7 @@ internet_search("test query", count=3)
 ### SearXNG 查询语法
 
 | 语法 | 含义 | 示例 |
-| --- | --- | --- |
+|---:|---:|---:|
 | `!<engine>` | 指定引擎 | `!wp paris`, `!wikipedia paris` |
 | `!<category>` | 指定类别 | `!map paris`, `!news climate` |
 | `:<lang>` | 语言过滤 | `:fr !wp Wau Holland` |
@@ -224,7 +225,7 @@ internet_search("test query", count=3)
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|
 | `query` | 字符串 | 无 | 搜索关键词 |
 | `category` | 字符串 | general | 搜索类别 |
 | `count` | 整数 | 5 | 返回结果数 |
@@ -239,7 +240,7 @@ internet_search("test query", count=3)
 - "rust async runtime benchmarks 2025"（关键词组合）
 - "OpenAI o3 release 2025"（带时间锚点）
 - "transformer attention efficiency survey"（专业术语）
-
+# ...
 不推荐写法：
 - "what is the fastest async runtime for rust"（自然语言句子）
 - "what happened today"（过于宽泛）
@@ -252,7 +253,7 @@ internet_search("test query", count=3)
 ```bash
 # 而非一次宽泛搜索
 internet_search("best way to deploy Node.js")
-
+# ...
 # 推荐多个聚焦搜索
 internet_search("Node.js Docker deployment best practices 2026")
 internet_search("Node.js PM2 vs Docker production", category="social")
@@ -266,7 +267,7 @@ internet_search("Node.js zero-downtime deployment strategies")
 ```bash
 # 事实查询
 internet_search("Bun runtime performance vs Node.js benchmarks")
-
+# ...
 # 社区体验
 internet_search("Bun runtime production experience", category="social")
 ```
@@ -284,10 +285,10 @@ internet_search("Bun runtime production experience", category="social")
 ```bash
 # 检查 SearXNG 状态
 curl http://localhost:8080/healthz
-
+# ...
 # 尝试不同类别
 internet_search("query", category="general")
-
+# ...
 # 调整关键词
 internet_search("more specific keywords")
 ```
@@ -297,10 +298,10 @@ internet_search("more specific keywords")
 ```bash
 # 使用更精准的关键词
 internet_search("specific technical terms")
-
+# ...
 # 尝试学术类别
 internet_search("query", category="academic")
-
+# ...
 # 指定特定引擎
 internet_search("!wp query")
 ```
@@ -310,10 +311,10 @@ internet_search("!wp query")
 ```bash
 # 检查服务状态
 docker ps | grep searxng
-
+# ...
 # 重启服务
 docker restart searxng
-
+# ...
 # 查看日志
 docker logs searxng
 ```
@@ -323,10 +324,10 @@ docker logs searxng
 ```bash
 # 减少返回数量
 internet_search("query", count=3)
-
+# ...
 # 限定引擎数量
 internet_search("query", engines="google,bing")
-
+# ...
 # 启用缓存（如可用）
 internet_search("query", cache=true)
 ```
@@ -343,7 +344,7 @@ internet_search("query", cache=true)
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:------|------:|:------|:------|
 | SearXNG | 搜索引擎聚合 | 是 | Docker 部署或使用公共实例 |
 | Docker | 容器运行时 | 否（自托管时） | `docker.com` 下载 |
 | Python 3.7+ | 运行时 | 是 | 系统包管理器安装 |
@@ -372,9 +373,8 @@ export SEARXNG_URL=https://searx.be
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -21,22 +21,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "YouTube,视频,媒体"
 ---
 # YouTube字幕提取-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| YouTube字幕提取-专业版ouTube内容分析 | 不支持 | 支持 |
+| YouTube字幕提取-专业版频道监控 | 不支持 | 支持 |
+| 高清分辨率与无损输出 | 不支持 | 支持 |
+| 批量生成与风格预设 | 不支持 | 支持 |
+| 自定义模型微调 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -141,13 +143,11 @@ python3 batch_extract.py --config /path/to/batch-extract.json --parallel 8
 
 **频道监控配置 `channel-monitor.yaml`：**
 
-> 详细代码示例已移至 `references/detail.md`
-
 **执行命令：**
 
 ```bash
 python3 channel_monitor.py --config /path/to/channel-monitor.yaml --daemon
-
+# ...
 python3 channel_monitor.py --config /path/to/channel-monitor.yaml --check-now
 ```
 
@@ -207,7 +207,7 @@ python3 keyword_tracker.py --config /path/to/keyword-config.json --parallel 8
 ### 优秀步：环境检查
 ```bash
 python3 --version
-
+# ...
 yt-dlp --version
 ```
 
@@ -251,7 +251,7 @@ python3 keyword_tracker.py \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | youtube-watcher处理的内容输入 |,  |
 | content | string | 否 | youtube-watcher处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -279,9 +279,8 @@ python3 keyword_tracker.py \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -295,9 +294,9 @@ python3 keyword_tracker.py \
 - **网络**：需要网络连接（访问 YouTube）
 - **磁盘**：建议预留 5GB+（字幕存储与索引）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|:---:|:---:|:---:|:---:|:---:|
 | Python | 运行时 | 必需 | python.org | 3.8+ |
 | yt-dlp | 命令行工具 | 必需 | `pip install yt-dlp` | 2023.0+ |
 | requests | Python 库 | 必需 | `pip install requests` | 2.25+ |
@@ -308,7 +307,7 @@ python3 keyword_tracker.py \
 #### 完整安装命令
 ```bash
 pip3 install yt-dlp requests pyyaml whoosh
-
+# ...
 python3 --version
 yt-dlp --version
 python3 -c "import requests; print('requests ready')"
@@ -346,20 +345,6 @@ yt-dlp --cookies /path/to/cookies.txt "URL"
 示例数据
 ```
 
-### 示例2: 进阶用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
 ### 示例3: 边界情况 - 边界情况
 **输入**:
 ```json
@@ -382,7 +367,7 @@ yt-dlp --cookies /path/to/cookies.txt "URL"
 
 ```bash
 python3 batch_extract.py --retry-failed /tmp/extract-queue.json
-
+# ...
 python3 batch_extract.py --resume /tmp/extract-queue.json
 ```
 
@@ -414,7 +399,7 @@ python3 batch_extract.py \
 
 ```bash
 python3 keyword_tracker.py --config config.json --output report.csv
-
+# ...
 python3 keyword_tracker.py --config config.json --output report.json
 ```
 
@@ -443,9 +428,8 @@ python3 search_engine.py \
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

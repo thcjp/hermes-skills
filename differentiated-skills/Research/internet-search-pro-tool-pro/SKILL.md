@@ -31,6 +31,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 联网搜索专业版
 
@@ -43,7 +45,7 @@ pricing_model: "per_use"
 ### 功能对比
 
 | 能力 | 免费版 | PRO 版 |
-| --- | --- | --- |
+|---|---|-----|
 | 关键词提取 | 是 | 是 |
 | 联网搜索 | 是 | 是 |
 | 结果筛选 | 是 | 是 |
@@ -93,7 +95,7 @@ python （请参考skill目录中的脚本文件） \
   --query="关键词" \
   --format=json \
   --output=data.json
-
+# ...
 # 导出为分析报告
 python （请参考skill目录中的脚本文件） \
   --query="关键词" \
@@ -136,23 +138,23 @@ python （请参考skill目录中的脚本文件） \
 ```text
 第一轮：
 用户：查一下 2026 年新能源汽车市场规模
-
+# ...
 AI 输出：
 关于「2026 新能源汽车市场规模」的检索结果：
 核心发现：2026 年全球新能源汽车市场规模预计达到...
 详细信息：[3-5 条结果]
-
+# ...
 第二轮（基于上下文）：
 用户：那主要厂商有哪些
-
+# ...
 AI 输出（理解上下文为新能源汽车）：
 关于「新能源汽车主要厂商」的检索结果：
 核心发现：主要厂商包括特斯拉、比亚迪、蔚来...
 详细信息：[3-5 条结果]
-
+# ...
 第三轮（继续深入）：
 用户：对比一下特斯拉和比亚迪的市场份额
-
+# ...
 AI 输出：
 关于「特斯拉 vs 比亚迪 市场份额」的检索结果：
 核心发现：2026 年比亚迪市场份额超过特斯拉...
@@ -170,7 +172,7 @@ cat > questions.txt <<EOF
 大语言模型最新进展有哪些
 AI 芯片市场主要玩家有哪些
 EOF
-
+# ...
 # 批量查询并导出
 python （请参考skill目录中的脚本文件） \
   --questions-file questions.txt \
@@ -222,7 +224,7 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 依赖说明
 pip install apscheduler pandas redis
-
+# ...
 # 验证升级
 python （请参考skill目录中的脚本文件） --version
 # 输出: internet-search-pro-tool-pro v1.0.0
@@ -235,7 +237,7 @@ python （请参考skill目录中的脚本文件） --version
 python （请参考skill目录中的脚本文件） \
   --session=market_research \
   --context-aware
-
+# ...
 # 在交互界面中输入问题
 > 查一下 2026 年新能源汽车市场
 > 主要厂商有哪些
@@ -250,7 +252,7 @@ python （请参考skill目录中的脚本文件） \
 echo "问题1
 问题2
 问题3" > questions.txt
-
+# ...
 # 执行批量查询
 python （请参考skill目录中的脚本文件） \
   --questions-file questions.txt \
@@ -270,7 +272,7 @@ search:
   max_results: 10
   timeout: 15
   retry: 3
-
+# ...
 engines:
   strategy: intelligent
   fallback: true
@@ -279,28 +281,28 @@ engines:
     - bing
     - brave
     - duckduckgo
-
+# ...
 batch:
   parallel_workers: 4
   delay_between_queries: 1
   cache_enabled: true
   cache_ttl: 3600
-
+# ...
 interactive:
   context_window: 10
   session_storage: ./sessions
   auto_summarize: true
-
+# ...
 export:
   default_format: json
   output_dir: ./exports
   include_analysis: true
-
+# ...
 schedule:
   timezone: Asia/Shanghai
   archive_dir: ./archive
   alert_on_changes: true
-
+# ...
 analytics:
   enabled: true
   insight_extraction: true
@@ -313,17 +315,17 @@ analytics:
 ```bash
 # 启动 REST API 服务
 python （请参考skill目录中的脚本文件） --port 8000
-
+# ...
 # 单次搜索
 curl -X POST http://localhost:8000/search \
   -H "Content-Type: application/json" \
   -d '{"query": "搜索关键词", "max": 10}'
-
+# ...
 # 批量搜索
 curl -X POST http://localhost:8000/batch \
   -H "Content-Type: application/json" \
   -d '{"questions": ["问题1", "问题2"], "format": "json"}'
-
+# ...
 # 创建监控任务
 curl -X POST http://localhost:8000/monitor \
   -H "Content-Type: application/json" \
@@ -333,7 +335,7 @@ curl -X POST http://localhost:8000/monitor \
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `--session` | 字符串 | 无 | 会话标识 |
 | `--context-aware` | 布尔 | false | 启用上下文 |
 | `--questions-file` | 字符串 | 无 | 问题文件 |
@@ -350,7 +352,7 @@ curl -X POST http://localhost:8000/monitor \
 ```python
 # interactive_config.py - 交互式搜索配置
 from interactive_search import InteractiveConfig
-
+# ...
 config = InteractiveConfig(
     context_window=10,
     auto_summarize=True,
@@ -358,7 +360,7 @@ config = InteractiveConfig(
     engine_strategy="intelligent",
     fallback_enabled=True
 )
-
+# ...
 # 启动交互式搜索
 session = config.start_session("research_topic")
 ```
@@ -372,7 +374,7 @@ python （请参考skill目录中的脚本文件） \
   --parallel 8 \
   --cache \
   --delay 0.5
-
+# ...
 # 分组查询
 python （请参考skill目录中的脚本文件） \
   --questions-file questions.txt \
@@ -386,10 +388,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 查看所有监控任务
 python （请参考skill目录中的脚本文件） --list
-
+# ...
 # 暂停监控
 python （请参考skill目录中的脚本文件） --pause --task-id=task_001
-
+# ...
 # 生成监控报告
 python （请参考skill目录中的脚本文件） \
   --task-id=task_001 \
@@ -404,10 +406,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 检查会话状态
 python （请参考skill目录中的脚本文件） --status --session=session_id
-
+# ...
 # 恢复会话
 python （请参考skill目录中的脚本文件） --resume --session=session_id
-
+# ...
 # 增加上下文窗口
 python （请参考skill目录中的脚本文件） --context-window=20
 ```
@@ -417,10 +419,10 @@ python （请参考skill目录中的脚本文件） --context-window=20
 ```bash
 # 增加并行线程
 python （请参考skill目录中的脚本文件） --parallel 8 questions.txt
-
+# ...
 # 启用缓存
 python （请参考skill目录中的脚本文件） --cache questions.txt
-
+# ...
 # 分批处理
 python （请参考skill目录中的脚本文件） --batch-size 10 questions.txt
 ```
@@ -430,10 +432,10 @@ python （请参考skill目录中的脚本文件） --batch-size 10 questions.tx
 ```bash
 # 检查告警配置
 python （请参考skill目录中的脚本文件） --config-check
-
+# ...
 # 测试告警
 python （请参考skill目录中的脚本文件） --test-alert
-
+# ...
 # 查看告警日志
 cat ./logs/alerts.log
 ```
@@ -443,10 +445,10 @@ cat ./logs/alerts.log
 ```bash
 # 调整分析参数
 python （请参考skill目录中的脚本文件） --analysis-depth deep
-
+# ...
 # 自定义分析模板
 python （请参考skill目录中的脚本文件） --template custom_analysis.yaml
-
+# ...
 # 启用 AI 洞察
 python （请参考skill目录中的脚本文件） --ai-insights
 ```
@@ -464,7 +466,7 @@ python （请参考skill目录中的脚本文件） --ai-insights
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | 搜索引擎服务 | API | 是 | 平台内置或配置外部服务 |
 | Python 3.8+ | 运行时 | 是 | 系统包管理器安装 |
 | requests | HTTP 库 | 是 | `pip install requests` |
@@ -503,9 +505,8 @@ export SMTP_PASSWORD=your_password
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

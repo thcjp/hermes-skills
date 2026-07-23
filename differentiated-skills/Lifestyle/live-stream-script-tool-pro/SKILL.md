@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 直播脚本生成 (专业版)
 ## 概述
@@ -39,7 +41,7 @@ pricing_model: "per_use"
 
 ## 核心能力
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 脚本结构 | 完整直播流程 | 支持 | 支持 |
 | 开场白设计 | 暖场话术 | 支持 | 支持 |
 | 产品介绍 | 单品话术 | 支持 | 支持 |
@@ -86,14 +88,14 @@ pricing_model: "per_use"
 import os
 import requests
 from datetime import datetime
-
+# ...
 API_BASE = "https://api.live-stream-pro.local/v1"
 ADMIN_KEY = os.environ["LIVE_STREAM_ADMIN_KEY"]
-
+# ...
 class MCNManager:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-
+# ...
     def create_streamer(self, name, category, level):
         """创建主播档案"""
         payload = {
@@ -113,7 +115,7 @@ class MCNManager:
             timeout=30,
         )
         return resp.json()
-
+# ...
     def batch_generate_scripts(self, streamer_ids, template, products):
         """批量生成脚本"""
         payload = {
@@ -129,7 +131,7 @@ class MCNManager:
             timeout=300,
         )
         return resp.json()
-
+# ...
     def streamer_matrix(self):
         """主播矩阵概览"""
         resp = requests.get(
@@ -138,7 +140,7 @@ class MCNManager:
             timeout=60,
         )
         return resp.json()
-
+# ...
 mcn = MCNManager(ADMIN_KEY)
 # 批量为 10 个主播生成脚本
 scripts = mcn.batch_generate_scripts(
@@ -174,7 +176,7 @@ def analyze_script_performance(script_id, live_data):
         timeout=120,
     )
     return resp.json()
-
+# ...
 # 示例
 # {
 #   "overall_performance": {
@@ -214,7 +216,7 @@ def create_ab_test(name, variants, target_metric):
         timeout=60,
     )
     return resp.json()
-
+# ...
 def ab_test_result(test_id):
     """获取 A/B 测试结果"""
     resp = requests.get(
@@ -223,7 +225,7 @@ def ab_test_result(test_id):
         timeout=60,
     )
     return resp.json()
-
+# ...
 # 创建脚本 A/B 测试
 test = create_ab_test(
     name="开场白优化测试",
@@ -288,35 +290,35 @@ api:
   admin_key: ${LIVE_STREAM_ADMIN_KEY}
   org_id: ${LIVE_STREAM_ORG_ID}
   timeout: 300
-
+# ...
 team:
   max_streamers: 100
   roles: [admin, script_writer, analyst, reviewer]
   collaboration: realtime
   version_control: true
-
+# ...
 templates:
   library: 500+
   categories: [ecommerce, knowledge, entertainment, gaming, music]
   customization: high
   versioning: true
-
+# ...
 analytics:
   metrics: [retention, interaction, conversion, gmv, follower_growth]
   real_time: true
   dashboards: [streamer, category, overall]
   export: [csv, excel, pdf]
-
+# ...
 ab_testing:
   max_concurrent: 20
   significance_level: 0.05
   auto_conclude: true
-
+# ...
 localization:
   languages: [zh, en, ja, ko, vi, th]
   cultural_adaptation: true
   translation_memory: true
-
+# ...
 automation:
   schedule_generation: true
   performance_alerts: true
@@ -469,7 +471,7 @@ def adapt_to_platform(script_id, target_platform):
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Live Stream Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -482,12 +484,12 @@ def adapt_to_platform(script_id, target_platform):
 export LIVE_STREAM_ADMIN_KEY="sk_pro_admin_xxx"
 export LIVE_STREAM_ORG_ID="org_your_id"
 export LIVE_STREAM_EDITION="pro"
-
+# ...
 # 可选: 平台数据接入
 export DOUYIN_API_KEY="..."
 export TAOBAO_API_KEY="..."
 export KUAISHOU_API_KEY="..."
-
+# ...
 # 可选: 通知
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 ```
@@ -501,7 +503,7 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -26,16 +26,17 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
 ---
 # Discord 社区管理 (免费版)
 
 基于 ClawLink OAuth 的 Discord 只读查询助手,提供用户身份、公会列表与邀请解析基础能力。所有操作均为 `safe` 风险等级,无需额外确认。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Discord社区免费处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -69,7 +70,7 @@ clawlink_list_tools({ integration: "discord" });
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 用户身份核验 | 无参数 | 当前用户资料、OIDC 声明、scope 列表 |
 | 公会列表查询 | 无参数 | 当前用户所在公会清单 |
 | 邀请解析 | 邀请 code | 邀请详情(公会名、人数、过期时间) |
@@ -84,7 +85,7 @@ clawlink_list_tools({ integration: "discord" });
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -107,11 +108,10 @@ export API_KEY="your_api_key_here"
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤。
 
-
 ## 工具参考
 
 | 工具 | 用途 |
-|------|------|
+|:---:|:---:|
 | `discord_get_my_user` | 获取当前用户资料(含 email,如授权) |
 | `discord_get_user` | 按 ID 获取任意用户(`@me` 表示当前用户) |
 | `discord_get_openid_connect_userinfo` | 获取 OIDC 声明(sub/email/picture/locale) |
@@ -135,14 +135,14 @@ const me = await clawlink_call_tool({
   parameters: {}
 });
 // 返回: { id, username, discriminator, email, avatar, ... }
-
+// ...
 // 2. 列出当前用户所在公会
 const guilds = await clawlink_call_tool({
   tool: "discord_list_my_guilds",
   parameters: {}
 });
 // 返回: [{ id, name, owner, permissions, ... }]
-
+// ...
 // 3. 验证当前 OAuth2 授权范围
 const auth = await clawlink_call_tool({
   tool: "discord_get_my_oauth2_authorization",
@@ -164,7 +164,7 @@ const invite = await clawlink_call_tool({
   parameters: { invite_code: "abc123xyz" }
 });
 // 返回: { guild: { name, ... }, approximate_member_count, expires_at }
-
+// ...
 // 2. 获取 WebSocket 网关 URL
 const gateway = await clawlink_call_tool({
   tool: "discord_get_gateway",
@@ -177,9 +177,8 @@ const gateway = await clawlink_call_tool({
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | `401 Unauthorized` | Bot Token 用于需 Bearer 的端点 | 改用 OAuth2 Bearer Token,确保 scope 包含 `identify` 与 `guilds` |
 | `Missing Access` | 用户未加入目标公会 | 核对公会 ID,引导用户先加入公会再查询 |
 | `Invite code invalid or expired` | 邀请码已失效或被删除 | 提示用户重新生成邀请,并用 `discord_invite_resolve` 验证 |

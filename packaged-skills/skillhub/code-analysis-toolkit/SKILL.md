@@ -38,19 +38,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # 代码分析工具包专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码分析工具包专业版企业级Git历史分析 | 不支持 | 支持 |
+| 代码分析工具包专业版同意管理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -95,7 +97,7 @@ python -m src.main --i-have-consent \
 同意记录包含:
 
 | 字段 | 说明 |
-|:-----|:-----|
+|---:|---:|
 | 作者 | 被分析的 Git 作者 |
 | 同意时间 | 明确同意的时间戳 |
 | 分析范围 | 被授权分析的数据范围 |
@@ -112,7 +114,7 @@ python -m src.main --i-have-consent \
   -r /path/to/projects \
   --scan-all \
   -f markdown -o batch-report.md
-
+# ...
 # 每个仓库单独分析,合并为聚合报告
 ```
 
@@ -133,7 +135,7 @@ python -m src.main --i-have-consent \
 趋势追踪维度:
 
 | 维度 | 追踪指标 | 说明 |
-|:-----|:---------|:-----|
+|:---:|:---:|:---:|
 | 提交纪律 | 提交频率变化 | 与基线对比的增减 |
 | 代码质量 | Bug 修复率趋势 | 是否在改善 |
 | 测试覆盖 | 测试文件变更率 | 测试投入趋势 |
@@ -158,7 +160,7 @@ python -m src.main --i-have-consent \
 匿名化规则:
 
 | 处理项 | 方式 |
-|:-------|:-----|
+|:------|------:|
 | 作者名 | 替换为"开发者 A/B/C" |
 | 邮箱 | 完全移除 |
 | 提交哈希 | 保留(用于引用) |
@@ -191,32 +193,32 @@ python -m src.main --i-have-consent \
 ```text
 团队迭代复盘报告 - Sprint 23
 =====================================
-
+# ...
 使用须知:
 - 本报告描述 Git 历史,不描述个人能力
 - 代码审查、设计、指导等贡献不可见
 - 结果仅供团队复盘讨论,不用于任何 HR 决策
-
+# ...
 匿名化说明:
 - 开发者已替换为 A/B/C
 - 所有分析均基于全员同意
-
+# ...
 团队聚合统计:
 - 总提交数: 342
 - 活跃开发者: 3 人
 - 平均提交大小: 28 行
 - 测试文件变更占比: 25%
-
+# ...
 各维度观察(匿名):
 开发者 A: 提交频率稳定,测试覆盖率高
 开发者 B: 提交较大,建议拆分小提交
 开发者 C: Bug 修复占比低,代码质量稳定
-
+# ...
 团队改进建议(讨论提示):
 - 考虑统一提交消息规范
 - 测试文件变更占比可提升
 - 建议定期做小提交
-
+# ...
 注意: 以上为讨论提示,非评判结论
 ```
 
@@ -229,7 +231,7 @@ python -m src.main --i-have-consent \
   -r /path/to/projects \
   --scan-all \
   -f markdown -o quality-audit.md
-
+# ...
 # 对比基线
 python -m src.main --i-have-consent \
   -r /path/to/projects \
@@ -246,7 +248,7 @@ python -m src.main --i-have-consent \
 python -m src.main --i-have-consent \
   -r /path/to/repo \
   --save-baseline .code-analysis/baselines/q2-baseline.json
-
+# ...
 # 季度对比
 python -m src.main --i-have-consent \
   -r /path/to/repo \
@@ -260,17 +262,17 @@ python -m src.main --i-have-consent \
 ```text
 代码质量趋势报告 - Q3 vs Q2
 =====================================
-
+# ...
 提交纪律:
 - 提交频率: +12% (提升)
 - 消息长度: +8 字符 (改善)
 - 规范符合: 72% → 85% (显著提升)
-
+# ...
 代码质量:
 - Bug 修复率: 18% → 15% (改善)
 - 回退率: 3% → 2% (改善)
 - 测试变更: 22% → 28% (提升)
-
+# ...
 结论:
 本季度代码质量指标整体改善
 建议: 继续保持提交规范,进一步提升测试覆盖
@@ -281,7 +283,7 @@ python -m src.main --i-have-consent \
 ### 优秀步: 初始化配置
 ```bash
 mkdir -p .code-analysis/{baselines,reports,consent}
-
+# ...
 cat > .code-analysis/config.json << 'EOF'
 {
   "edition": "pro",
@@ -334,7 +336,7 @@ python -m src.main --i-have-consent \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | content | string | 否 | code-analysis-toolkit处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -381,9 +383,8 @@ python -m src.main --i-have-consent \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -396,9 +397,9 @@ python -m src.main --i-have-consent \
 - **Python**: 3.8 或更高版本
 - **Git**: 已安装且待分析仓库存在
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|----|:--:|---:|----|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | gitpython | Python 库 | 必需 | `pip install gitpython` |
 | pydriller | Python 库 | 必需 | `pip install pydriller` |
@@ -502,9 +503,8 @@ python -m src.main --i-have-consent \
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|-------|-------|-------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

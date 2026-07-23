@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 每日新闻摘要（免费版）
 
 > **每日资讯一目了然。关键词驱动，多源聚合，精美海报，一键分享。**
@@ -45,7 +46,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 每日新闻摘要(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -105,13 +106,13 @@ Agent："正在生成NBA新闻海报...
 ```bash
 # 1. 配置每日定时任务
 #    对Agent说："每天早上8点生成AI新闻海报"
-
+# ...
 # 2. 查看历史海报
 ls ~/workspace/news-digest/posters/
-
+# ...
 # 3. 查看抓取的原始数据
 cat ~/workspace/news-digest/data/2026-07-18/AI-14-30.json | head -50
-
+# ...
 # 4. 修改默认配置
 cat ~/workspace/news-digest/config.json
 ```
@@ -120,7 +121,7 @@ cat ~/workspace/news-digest/config.json
 ### 功能一：多源新闻抓取
 
 | 来源 | 内容 | 免费版限制 |
-|------|------|-----------|
+|:-----|:-----|:-----|
 | X.com | 关键词搜索热门推文与新闻 | Top 10 |
 | RSS源 | 科技博客、新闻网站RSS | 最多3个源 |
 
@@ -163,7 +164,7 @@ cat ~/workspace/news-digest/config.json
 免费版提供3套海报主题：
 
 | 主题 | 配色 | 适用场景 |
-|------|------|----------|
+|---:|---:|---:|
 | 科技蓝 | 深蓝渐变+白色卡片 | 科技、AI、互联网话题 |
 | 活力红 | 红色主题+白色卡片 | 体育、娱乐、热点话题 |
 | 商务灰 | 灰色渐变+深色卡片 | 财经、商业、行业话题 |
@@ -185,11 +186,11 @@ cat ~/workspace/news-digest/config.json
 # 方式1：Headless Chrome打印PDF（推荐，质量最高）
 chrome --headless --disable-gpu --print-to-pdf=output.pdf \
   --virtual-time-budget=10000 "file:///path/to/html"
-
+# ...
 # 方式2：Headless Chrome大视口截图
 chrome --headless --disable-gpu --screenshot=output.png \
   --window-size=1600,2400 "file:///path/to/html"
-
+# ...
 # 方式3：Chrome kiosk模式 + 系统截图（macOS）
 # 适合需要完整渲染的场景
 ```
@@ -296,7 +297,7 @@ Agent："已创建定时任务：
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Chromium浏览器 | 软件 | 截图必需 | 系统自带或从官方下载 |
 | browser工具 | 内置工具 | 必需 | Agent平台内置浏览器工具 |
@@ -352,8 +353,8 @@ Agent："已创建定时任务：
 ### 示例1：基础用法
 
 ```
-### 60秒上手（单关键词简报）
-
+### 60秒上手（单关键词简报）(补充)
+# ...
 ```text
 用户："X新闻简报 AI"
 Agent："正在抓取AI相关热门新闻...
@@ -366,9 +367,9 @@ Agent："正在抓取AI相关热门新闻...
     2. 谷歌DeepMind新研究：AI推理能力接近人类
     3. AI芯片市场：英伟达占比超80%"
 ```
-
-### 120秒上手（自定义关键词 + 主题选择）
-
+# ...
+### 120秒上手（自定义关键词 + 主题选择）(补充)
+# ...
 ```text
 用户："帮我生成NBA新闻海报，用活力红主题"
 Agent："正在生成NBA新闻海报...
@@ -379,16 +380,16 @@ Agent："正在生成NBA新闻海报...
   📸 海报保存至 ~/workspace/news-digest/posters/2026-07-18/NBA-14-35.png
   📤
 ```
-
+# ...
 ## 错误处理
-
-
+# ...
+# ...
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
+# ...
 ## 输出格式
 ```json
 {
@@ -405,3 +406,4 @@ Agent："正在生成NBA新闻海报...
   "error": null
 }
 ```
+# ...

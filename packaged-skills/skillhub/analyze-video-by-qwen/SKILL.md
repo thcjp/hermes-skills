@@ -21,6 +21,8 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
 ---
 # Qwen 视频智能分析
 
@@ -31,7 +33,7 @@ pricing_model: "monthly"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | Qwen视频智能分析wen多模态模型分析 | 不支持 | 支持 |
 | 高清分辨率与无损输出 | 不支持 | 支持 |
@@ -49,7 +51,7 @@ pricing_model: "monthly"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | Qwen 3.5 Plus API | 远程多模态 API | 必需 | 阿里云 DashScope 控制台开通 |
 | DashScope API Key | 配置文件 | 必需 | ~/.skill-platform/skill-platform.json 配置 |
 | Python 3.8+ | 运行环境 | 必需 | python.org 下载安装 |
@@ -92,7 +94,7 @@ cat ~/.skill-platform/skill-platform.json | grep apiKey
 ## 参数说明
 
 | 参数 | 说明 | 默认值 | 必填 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | `video_source` | 视频文件路径或远程 URL(支持 http/https) | - | 是 |
 | `--fps` | 抽帧频率,每秒抽取的帧数。FPS 越高分析越精细,但 API 调用成本越高 | 2 | 否 |
 | `--prompt` | 分析提示词,引导模型关注特定内容 | "这段视频描绘的是什么景象?" | 否 |
@@ -137,7 +139,7 @@ python （请参考skill目录中的脚本文件） https://example.com/video.mp
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及参数 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | 本地视频内容理解 | "分析这个视频里发生了什么" | 场景描述与内容摘要 | video_source + prompt |
 | 远程视频在线分析 | "分析这个视频链接的内容" | 远程视频内容描述 | video_source(URL) + prompt |
 | 高精度抽帧分析 | "逐帧详细分析这个视频" | 细粒度场景描述与物体识别 | video_source + fps(高) + prompt |
@@ -220,9 +222,8 @@ python （请参考skill目录中的脚本文件） /path/to/training.mp4 \
 
 ## 错误处理
 
-
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| :-: | :-: | :-: | :-: |
+|:------|------:|:------|:------|
 | api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 ~/.skill-platform/skill-platform.json |
 | file_not_found | `FileNotFoundError: video.mp4` | 本地视频文件路径不存在或拼写错误 | 确认文件路径正确,检查文件是否存在 |
 | invalid_url | `URL not accessible` | 远程视频 URL 无法访问或非直链 | 确认 URL 为可公开访问的视频直链,需登录的页面链接不支持 |

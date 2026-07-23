@@ -48,6 +48,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 浏览器CLI工具(专业版)
 
@@ -58,7 +60,7 @@ pricing_model: "per_use"
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---|---|---|
 | 基础导航与交互 | 支持 | 支持 |
 | snapshot 与 ref 引用 | 支持 | 支持 |
 | 三种元素定位方式 | 支持 | 支持 |
@@ -79,7 +81,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 浏览器CLI工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -87,7 +89,7 @@ pricing_model: "per_use"
 ```bash
 # 批量执行任务清单
 agent-browser batch run --file tasks.yaml --concurrency 5
-
+# ...
 # 示例
 # tasks:
 #   - name: 签到-站点A
@@ -112,10 +114,10 @@ agent-browser batch run --file tasks.yaml --concurrency 5
 ```bash
 # 查看活跃会话
 agent-browser session list --verbose
-
+# ...
 # 设置最大并发数
 agent-browser config set session.max_concurrent 10
-
+# ...
 # 批量关闭空闲会话
 agent-browser session cleanup --idle 300
 ```
@@ -130,7 +132,7 @@ agent-browser session cleanup --idle 300
 ```bash
 # 启用自动重试(默认3次)
 agent-browser --retry 3 --retry-delay 5 open https://example.com
-
+# ...
 # 配置文件方式
 agent-browser config set retry.max 5
 agent-browser config set retry.delay 10
@@ -147,14 +149,14 @@ agent-browser config set retry.backoff exponential
 ```bash
 # 提交任务到队列
 agent-browser queue submit --file tasks.yaml
-
+# ...
 # 查看队列状态
 agent-browser queue status
-
+# ...
 # 暂停/恢复队列
 agent-browser queue pause
 agent-browser queue resume
-
+# ...
 # 定时调度
 agent-browser schedule add --cron "0 9 * * *" --file daily-checkin.yaml
 agent-browser schedule list
@@ -170,7 +172,7 @@ agent-browser schedule list
 ```bash
 # 启用指标采集
 agent-browser metrics enable
-
+# ...
 # 导出指标
 agent-browser metrics export --format json > metrics.json
 agent-browser metrics export --format prometheus > metrics.prom
@@ -198,12 +200,12 @@ SITES=(
   "https://site-d.com/checkin|auth/site-d.json"
   "https://site-e.com/checkin|auth/site-e.json"
 )
-
+# ...
 for entry in "${SITES[@]}"; do
   url="${entry%%|*}"
   auth="${entry##*|}"
   name=$(basename "$auth" .json)
-
+# ...
   (
     agent-browser --session "$name" open "$url"
     agent-browser --session "$name" state load "$auth"
@@ -214,7 +216,7 @@ for entry in "${SITES[@]}"; do
     agent-browser --session "$name" close
   ) &
 done
-
+# ...
 wait
 echo "全部签到任务完成"
 ```
@@ -230,13 +232,13 @@ import subprocess
 import json
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+# ...
 FORMS = [
     {"id": "form_001", "url": "https://app.example.com/apply", "data": {"name": "张三", "phone": "13800000001"}},
     {"id": "form_002", "url": "https://app.example.com/apply", "data": {"name": "李四", "phone": "13800000002"}},
     {"id": "form_003", "url": "https://app.example.com/apply", "data": {"name": "王五", "phone": "13800000003"}},
 ]
-
+# ...
 def submit_form(form, max_retries=3):
     """提交单个表单,失败自动重试"""
     session = form["id"]
@@ -261,7 +263,7 @@ def submit_form(form, max_retries=3):
                 time.sleep(5 * attempt)
     subprocess.run(["agent-browser", "--session", session, "close"])
     return {"id": session, "status": "failed", "attempts": max_retries}
-
+# ...
 # 并发提交,最大并发3
 results = []
 with ThreadPoolExecutor(max_workers=3) as executor:
@@ -270,7 +272,7 @@ with ThreadPoolExecutor(max_workers=3) as executor:
         result = future.result()
         results.append(result)
         print(f"[{result['status'].upper()}] {result['id']} (尝试 {result['attempts']} 次)")
-
+# ...
 # 生成报告
 with open("logs/report.json", "w") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
@@ -286,18 +288,18 @@ print(f"\n完成: {success_count}/{len(results)} 成功")
 #!/bin/bash
 # e2e-ci.sh - CI/CD 端到端测试
 set -e
-
+# ...
 TEST_URL="${STAGING_URL:-https://staging.example.com}"
 ARTIFACTS_DIR="artifacts/$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$ARTIFACTS_DIR"
-
+# ...
 # 启用监控
 agent-browser metrics enable
-
+# ...
 # 执行测试套件
 agent-browser open "$TEST_URL"
 agent-browser snapshot > "$ARTIFACTS_DIR/homepage.json"
-
+# ...
 # 登录测试
 agent-browser find label "用户名" fill "ci-test"
 agent-browser find label "密码" fill "ci-password"
@@ -309,11 +311,11 @@ agent-browser wait --url "**/dashboard" || {
   agent-browser metrics export --format json > "$ARTIFACTS_DIR/metrics.json"
   exit 1
 }
-
+# ...
 # 功能测试
 agent-browser snapshot > "$ARTIFACTS_DIR/dashboard.json"
 agent-browser screenshot "$ARTIFACTS_DIR/dashboard.png"
-
+# ...
 echo "全部测试通过"
 agent-browser metrics export --format json > "$ARTIFACTS_DIR/metrics.json"
 agent-browser close
@@ -344,7 +346,7 @@ agent-browser close
 ```bash
 npm install -g agent-browser
 agent-browser install --with-deps
-
+# ...
 # 专业版初始化
 agent-browser pro init
 agent-browser config set retry.max 3
@@ -357,7 +359,7 @@ agent-browser config set metrics.enabled true
 ```bash
 # 方式一:使用任务清单
 agent-browser batch run --file tasks.yaml --concurrency 5
-
+# ...
 # 方式二:使用队列(支持暂停/恢复)
 agent-browser queue submit --file tasks.yaml
 agent-browser queue status
@@ -368,16 +370,15 @@ agent-browser queue status
 ```bash
 # 添加每日9点签到任务
 agent-browser schedule add --cron "0 9 * * *" --file daily-checkin.yaml --name "每日签到"
-
+# ...
 # 查看所有调度
 agent-browser schedule list
-
+# ...
 # 手动触发
 agent-browser schedule trigger "每日签到"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配置示例
 
@@ -417,7 +418,7 @@ storage:
 ```bash
 # 导出 Prometheus 格式指标
 agent-browser metrics export --format prometheus
-
+# ...
 # 指标示例:
 # agent_browser_tasks_total{status="success"} 156
 # agent_browser_tasks_total{status="failed"} 8
@@ -479,7 +480,7 @@ agent-browser pro init --migrate
 ## 与免费版的兼容性
 
 | 维度 | 兼容性 |
-|:-----|:------|
+|---:|---:|
 | 命令语法 | 100% 兼容 |
 | 脚本工作流 | 100% 兼容(无需修改即可运行) |
 | 状态文件格式 | 100% 兼容(专业版可读取免费版状态) |
@@ -497,7 +498,7 @@ agent-browser pro init --migrate
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | agent-browser(pro) | CLI 工具 | 必需 | `npm install -g agent-browser@pro` |
 | Chromium | 运行时 | 必需 | `agent-browser install` 自动下载 |
 | Node.js | 运行环境 | 必需 | 系统包管理器安装 |
@@ -515,9 +516,8 @@ agent-browser pro init --migrate
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

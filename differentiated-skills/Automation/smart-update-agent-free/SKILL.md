@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 智能更新管家（免费版）
 
 > **每日自动检查并更新Agent运行时与已安装技能。版本对比一目了然，告别手动更新与版本滞后。**
@@ -51,7 +52,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Smart Update Agent处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -79,7 +80,7 @@ cron add \
 ### 配置选项
 
 | 选项 | 默认值 | 说明 |
-|------|--------|------|
+|:-----|:-----|:-----|
 | 执行时间 | 凌晨4:00 | 使用`--cron`修改 |
 | 时区 | 系统默认 | 使用`--tz`设置 |
 | 通知方式 | 主会话 | 更新摘要发送位置 |
@@ -97,7 +98,7 @@ cron add \
 ```bash
 # 更新到最新版本
 npm update -g agent-runtime@latest
-
+# ...
 # 验证版本
 agent --version
 ```
@@ -108,7 +109,7 @@ agent --version
 # 拉取最新代码
 cd ~/agent-runtime
 git pull origin main
-
+# ...
 # 运行迁移脚本
 agent doctor
 ```
@@ -125,10 +126,10 @@ agent doctor
 ```bash
 # 依赖说明
 skill registry update --all --dry-run
-
+# ...
 # 执行全部更新
 skill registry update --all
-
+# ...
 # 查看当前已安装技能与版本
 skill registry list
 ```
@@ -146,17 +147,17 @@ skill registry list
 
 ```text
 每日自动更新完成
-
+# ...
 Agent运行时：已更新至 v2026.1.10（原 v2026.1.9）
-
+# ...
 已更新技能（3个）：
 - prd: 2.0.3 → 2.0.4
 - browser: 1.2.0 → 1.2.1
 - memory: 3.1.0 → 3.1.2
-
+# ...
 已是最新版本（5个）：
 gemini, sag, things-mac, himalaya, peekaboo
-
+# ...
 未遇到问题。
 ```
 
@@ -172,13 +173,13 @@ gemini, sag, things-mac, himalaya, peekaboo
 ```bash
 # 仅检查更新，不执行
 skill registry update --all --dry-run
-
+# ...
 # 查看当前技能版本
 skill registry list
-
+# ...
 # 检查Agent运行时版本
 agent --version
-
+# ...
 # 更新单个技能
 skill registry update <skill-name>
 ```
@@ -195,10 +196,10 @@ skill registry update <skill-name>
 ```bash
 # 运行Agent自检
 agent doctor
-
+# ...
 # 检查技能完整性
 skill registry verify --all
-
+# ...
 # 查看更新日志
 cat logs/$(date +%Y-%m-%d)-update.log
 ```
@@ -258,30 +259,30 @@ cat logs/$(date +%Y-%m-%d)-update.log
 ```bash
 #!/bin/bash
 set -euo pipefail
-
+# ...
 LOG_FILE="logs/$(date +%Y-%m-%d)-update.log"
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
+# ...
 log() { echo "[$TIMESTAMP] $1" >> "$LOG_FILE"; }
-
+# ...
 log "开始每日更新检查..."
-
+# ...
 # 检查Agent运行时更新
 CURRENT=$(agent --version 2>/dev/null || echo "unknown")
 npm update -g agent-runtime@latest >> "$LOG_FILE" 2>&1
 NEW=$(agent --version 2>/dev/null || echo "unknown")
-
+# ...
 if [ "$CURRENT" != "$NEW" ]; then
   log "Agent运行时已更新：$CURRENT → $NEW"
   agent doctor >> "$LOG_FILE" 2>&1
 else
   log "Agent运行时已是最新：$CURRENT"
 fi
-
+# ...
 # 更新所有技能
 log "检查技能更新..."
 skill registry update --all >> "$LOG_FILE" 2>&1
-
+# ...
 log "更新完成"
 ```
 
@@ -325,9 +326,8 @@ cron remove "每日自动更新"
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|---:|---:|---:|---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -365,7 +365,7 @@ cron remove "每日自动更新"
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | cron调度器 | 工具 | 必需 | Agent平台内置或系统crontab |
 | npm/git | 包管理器 | 必需 | 系统自带或从官网安装 |
@@ -427,32 +427,32 @@ cron remove "每日自动更新"
 ### 示例1：基础用法
 
 ```
-### 一键设置（<60秒）
-
+### 一键设置（<60秒）(补充)
+# ...
 告诉Agent设置自动更新：
-
+# ...
 ```text
 为我设置每日自动更新，检查Agent运行时和所有已安装技能的更新
 ```
-
+# ...
 Agent会自动生成cron配置并启用。
-
-### 手动设置
-
+# ...
+### 手动设置(补充)
+# ...
 ```bash
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: Smart Update Agent支持哪些输入格式？
 支持文本输入、文件上传和API调用三种方式。
-
+# ...
 ### Q2: 使用Smart Update Agent需要什么环境？
 需要支持SKILL.md的AI Agent平台，详见依赖说明。
-
+# ...
 ### Q3: 输出结果可以直接使用吗？
 输出结果建议人工审核后使用，确保符合具体业务需求。
-
+# ...
 ## 输出格式
 ```json
 {
@@ -469,3 +469,4 @@ Agent会自动生成cron配置并启用。
   "error": null
 }
 ```
+# ...

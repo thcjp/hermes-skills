@@ -28,8 +28,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 书签智能中心 免费版
 
 ## 概述
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 |
-| --- | --- |
+|---|---|
 | 书签抓取 | 从社交平台获取最新收藏的书签列表 |
 | 文章全文提取 | 自动访问书签中的链接，提取完整文章内容 |
 | 关键词分析 | 基于关键词匹配提取文章核心概念 |
@@ -84,7 +85,7 @@ suggested_price: 29.9
 ```bash
 # 进入工具目录
 cd skills/bookmark-smart-hub
-
+# ...
 # 运行一次，处理最近的书签
 npm start
 ```
@@ -97,7 +98,7 @@ npm start
 - 成功提取: 8 篇文章
 - 提取失败: 2 条（链接已失效）
 - 存储位置: ~/knowledge/bookmarks/
-
+# ...
 📄 处理明细:
 1. [技术] 向量数据库入门指南 -> bookmark-001.json
 2. [产品] SaaS 增长策略分析 -> bookmark-002.json
@@ -122,7 +123,7 @@ npm test
 - [技术] 理解 Transformer 注意力机制 (example.com/transformer)
 - [创业] 独立开发者变现指南 (example.com/indie-monetize)
 - [健康] 久坐危害与改善方案 (example.com/sitting)
-
+# ...
 预计提取: 3 篇文章
 预计耗时: 约 30 秒
 ```
@@ -203,7 +204,7 @@ ls ~/knowledge/bookmarks/
 **配置说明**
 
 | 字段 | 说明 | 默认值 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `bookmarkCount` | 每次处理的书签数量 | 20 |
 | `storageDir` | 分析结果存储目录 | `~/knowledge/bookmarks` |
 | `notifyTelegram` | 是否发送通知（免费版不支持） | `false` |
@@ -288,7 +289,7 @@ npm install -g bird
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :------- | :----- | :--------- | :--------- |
+|---:|---:|---:|---:|
 | Node.js v16+ | 运行时 | 必需 | nodejs.org 官方下载 |
 | bird CLI | 命令行工具 | 必需 | `npm install -g bird` |
 | 社交平台凭证 | API 凭证 | 必需 | 浏览器开发者工具获取 auth_token 与 ct0 |
@@ -307,9 +308,8 @@ npm install -g bird
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

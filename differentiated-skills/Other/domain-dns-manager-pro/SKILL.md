@@ -29,6 +29,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 域名DNS管理专业版（Domain DNS Manager Pro）
 
@@ -48,7 +50,7 @@ pricing_model: "monthly"
 ### 能力矩阵
 
 | 能力 | 免费版 | 专业版 | 价值 |
-|------|--------|--------|------|
+|---|---|---|---|
 | 单域名管理 | ✅ | ✅ | 基础操作 |
 | 批量域名（100+） | ❌ | ✅ | 规模化效率提升50倍 |
 | 供应商数量 | 3个 | 5+个 | 覆盖全球主流平台 |
@@ -67,7 +69,7 @@ pricing_model: "monthly"
 ### 支持的供应商
 
 | 供应商 | DNS记录管理 | Nameserver切换 | 批量操作 | 特色能力 |
-|--------|-------------|----------------|----------|----------|
+|:-----|:-----|:-----|:-----|:-----|
 | Cloudflare | ✅ | ✅ | ✅ | Worker、Page Rule、Bulk Redirect |
 | DNSimple | ✅ | ✅ | ✅ | API友好、简洁 |
 | Namecheap | ❌（经CF） | ✅ | ✅ | 注册商nameserver切换 |
@@ -134,7 +136,7 @@ MSP服务商管理50个客户的域名。多账号管理能力支持按客户切
 **域名清单 domains.txt**：
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 域名DNS管理专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -157,7 +159,7 @@ python3 domain_batch.py --input domains.txt --action onboard_cf --parallel 10
 ```bash
 # 创建批量重定向列表
 cli4 --post name=brand-migration /accounts/:account_id/rulesets/phases/http_request_dynamic_redirect/entries
-
+# ...
 # 添加重定向规则
 cli4 --post \
   redirects='[{"from":"old.com/*","to":"https://new.com/{1}","status_code":301}]' \
@@ -169,7 +171,7 @@ cli4 --post \
 ```bash
 # 查看变更历史
 python3 domain_audit.py --domain example.com --history
-
+# ...
 # 回滚到指定版本
 python3 domain_rollback.py --domain example.com --version 20260718_001
 ```
@@ -179,10 +181,10 @@ python3 domain_rollback.py --domain example.com --version 20260718_001
 ```bash
 # 按域名查询变更记录
 python3 domain_audit.py --domain example.com --query
-
+# ...
 # 按时间范围查询
 python3 domain_audit.py --from 2026-07-01 --to 2026-07-18 --query
-
+# ...
 # 导出审计报告
 python3 domain_audit.py --export --format csv --output audit_report.csv
 ```
@@ -200,12 +202,12 @@ accounts:
     dnsimple:
       token: "${DNSIMPLE_TOKEN_MAIN}"
       account_id: "def456"
-  
+# ...
   - name: client-alpha
     cloudflare:
       token: "${CF_TOKEN_ALPHA}"
       account_id: "ghi789"
-  
+# ...
   - name: client-beta
     cloudflare:
       token: "${CF_TOKEN_BETA}"
@@ -348,9 +350,8 @@ A：支持邮件、webhook、Slack、企业微信、钉钉。webhook方式可对
 
 ## 错误处理
 
-
 | 错误场景(现象) | 可能原因 | 解决步骤 |
-|------|----------|----------|
+|:-------:|:-------:|:-------:|
 | 批量操作API限流 | 并发过高 | 降低并发数，增加请求间隔 |
 | nameserver切换失败 | 注册商API凭证错误 | 验证Token权限，检查API限额 |
 | 回滚后DNS未恢复 | TTL未过期 | 等待TTL过期，或使用短TTL |
@@ -375,7 +376,7 @@ A：支持邮件、webhook、Slack、企业微信、钉钉。webhook方式可对
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | ¥0 | 单域名管理+3平台+Page Rule | 个人项目、小团队 |
 | 收费专业版 | ¥99/月 | 批量+5平台+Worker+审计+回滚+监控+MCP工具集成 | 企业/MSP/运维团队 |
 
@@ -401,7 +402,7 @@ A：支持邮件、webhook、Slack、企业微信、钉钉。webhook方式可对
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本兼容性 |
-|:-------|:-----|:---------|:---------|:-----------|
+|---:|:---|---:|---:|:---|
 | LLM API | API | 必需 | Agent平台内置LLM | 无版本限制 |
 | cli4 | CLI工具 | Cloudflare操作必需 | `pip install cloudflare-cli4` | ≥1.0 |
 | dig | 系统命令 | 验证必需 | 安装bind-utils或dnsutils | ≥9.11 |

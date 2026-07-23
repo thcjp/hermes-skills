@@ -22,24 +22,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # JavaScript工具包专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版新增 | 不支持 | 支持 |
-| 陷阱防范 | 不支持 | 支持 |
-| 生产级陷阱检测脚本 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 陷阱防范 | 相等性/this/闭包/异步 | 生产级陷阱检测脚本 |
 | 性能优化 | - | 内存/渲染/懒加载/防抖节流 |
 | 模块化 | - | ESM/动态导入/微前端 |
@@ -83,12 +85,8 @@ pricing_model: "per_use"
 ### 场景二：微前端架构
 大型应用需要拆分为多个独立子应用。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景三：测试体系建设
 项目需要建立完整的测试体系。
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 使用流程
 
@@ -97,10 +95,10 @@ pricing_model: "per_use"
 // vite.config.ts
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-
+// ...
 export default defineConfig({
     plugins: [react()],
-
+// ...
     // 代码分割优化
     build: {
         rollupOptions: {
@@ -123,12 +121,12 @@ export default defineConfig({
             },
         },
     },
-
+// ...
     // 依赖预构建
     optimizeDeps: {
         include: ['react', 'react-dom', 'lodash'],
     },
-
+// ...
     // 开发服务器代理
     server: {
         proxy: {
@@ -138,7 +136,7 @@ export default defineConfig({
             },
         },
     },
-
+// ...
     // 性能分析
     build: {
         sourcemap: true,
@@ -148,13 +146,11 @@ export default defineConfig({
 
 ### TypeScript 渐进式迁移
 
-> 详细代码示例已移至 `references/detail.md`
-
 #
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | javascript-toolkit处理的内容输入 |,  |
 | content | string | 否 | javascript-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -182,9 +178,8 @@ export default defineConfig({
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -199,7 +194,7 @@ export default defineConfig({
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Node.js | 运行时 | 必需 | nodejs.org 下载 |
 | Vite | 构建工具 | 推荐 | `npm install -D vite` |
 | Vitest | 测试框架 | 推荐 | `npm install -D vitest` |
@@ -221,7 +216,7 @@ export default defineConfig({
 
 ### 状态管理方案对比
 | 方案 | 适用场景 | 优点 | 缺点 |
-| --- | --- | --- | --- |
+|---:|:---|---:|---:|
 | Context + useReducer | 小型应用 | 内置无依赖 | 性能影响大 |
 | Zustand | 中型应用 | 轻量简单 | 功能较少 |
 | Redux Toolkit | 大型应用 | 生态完善 | 模板代码多 |
@@ -231,12 +226,12 @@ export default defineConfig({
 ```javascript
 // Zustand 状态管理示例
 import { create } from 'zustand';
-
+// ...
 const useUserStore = create((set) => ({
     user: null,
     loading: false,
     error: null,
-
+// ...
     fetchUser: async (id) => {
         set({ loading: true, error: null });
         try {
@@ -247,18 +242,18 @@ const useUserStore = create((set) => ({
             set({ error, loading: false });
         }
     },
-
+// ...
     logout: () => set({ user: null }),
 }));
-
+// ...
 // 使用
 function UserProfile() {
     const { user, loading, fetchUser } = useUserStore();
-
+// ...
     useEffect(() => {
         fetchUser(1);
     }, []);
-
+// ...
     if (loading) return <Loading />;
     return <div>{user?.name}</div>;
 }
@@ -266,35 +261,33 @@ function UserProfile() {
 
 ### 性能监控配置
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## 常见问题
 
 ### Q1：如何优化首屏加载？
 ```javascript
 // 1. 路由懒加载
 const Home = lazy(() => import('./pages/Home'));
-
+// ...
 // 2. 预加载关键资源
 <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
-
+// ...
 // 3. 图片懒加载
 <img src="image.jpg" loading="lazy" alt="..." />
-
+// ...
 // 4. 代码分割
 const { chunk } = await import('lodash-es');
-
+// ...
 // 5. Service Worker 缓存
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
 }
-
+// ...
 // 6. CDN 加速静态资源
 ```
 
 ### Q2：如何选择构建工具？
 | 工具 | 优势 | 适用场景 |
-| --- | --- | --- |
+|:------:|--------|:-------|
 | Vite | 开发体验极佳，ESM 原生 | 新项目首选 |
 | Webpack | 生态最完善，插件丰富 | 遗留项目维护 |
 | esbuild | 构建速度极快 | 库打包 |
@@ -304,15 +297,15 @@ if ('serviceWorker' in navigator) {
 ```javascript
 // 正确：命名导入（可 Tree Shaking）
 import { debounce } from 'lodash-es';
-
+// ...
 // 错误：默认导入整个包
 import _ from 'lodash';  // 不会 Tree Shaking
-
+// ...
 // package.json 配置
 {
     "sideEffects": false  // 标记无副作用
 }
-
+// ...
 // 或指定有副作用的文件
 {
     "sideEffects": ["*.css", "*.scss"]
@@ -327,14 +320,14 @@ server: {
         '/api': 'http://localhost:8080',
     },
 }
-
+// ...
 // 生产环境：CORS 头
 // 服务器端配置
 app.use(cors({
     origin: ['https://example.com'],
     credentials: true,
 }));
-
+// ...
 // 或使用 BFF 代理
 app.use('/api', createProxyMiddleware({
     target: 'http://backend:8080',
@@ -355,7 +348,7 @@ window.addEventListener('error', (event) => {
         stack: event.error?.stack,
     });
 });
-
+// ...
 // 2. Promise 未捕获异常
 window.addEventListener('unhandledrejection', (event) => {
     reportError({
@@ -363,19 +356,19 @@ window.addEventListener('unhandledrejection', (event) => {
         reason: event.reason,
     });
 });
-
+// ...
 // 3. React 错误边界
 class ErrorBoundary extends React.Component {
     state = { hasError: false };
-
+// ...
     static getDerivedStateFromError(error) {
         return { hasError: true };
     }
-
+// ...
     componentDidCatch(error, info) {
         reportError({ error, info });
     }
-
+// ...
     render() {
         if (this.state.hasError) {
             return <ErrorFallback />;
@@ -389,13 +382,13 @@ class ErrorBoundary extends React.Component {
 ```bash
 npm install -g webpack-bundle-analyzer
 npx webpack-bundle-analyzer dist/stats.json
-
+# ...
 npx vite-bundle-visualizer
-
+# ...
 import { Button } from 'antd';  // 而非 import { Button } from 'antd/lib/button'
-
+# ...
 npx depcheck
-
+# ...
 build: {
     minify: 'terser',
     terserOptions: {
@@ -406,9 +399,8 @@ build: {
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----|:--:|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

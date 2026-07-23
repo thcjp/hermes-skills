@@ -19,16 +19,18 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # API工具箱(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 大数据集流式处理 | 不支持 | 支持 |
 | 多数据源关联查询 | 不支持 | 支持 |
@@ -259,7 +261,7 @@ api-toolkit load-test \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | api-toolkit处理的内容输入 |,  |
 | content | string | 否 | api-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -288,7 +290,7 @@ api-toolkit load-test \
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-| --: | --: | --: |
+|---:|---:|---:|
 | 数据源读取失败 | 文件损坏或数据库连接中断 | 校验文件完整性,检查数据库连接参数,尝试备份数据源 |
 | 数据处理内存溢出 | 数据集过大超出内存限制 | 启用流式处理模式,分批加载数据,或增加可用内存 |
 | 查询结果为空 | 过滤条件过严或数据源无匹配记录 | 放宽查询条件,检查数据源时间范围,提示用户调整参数 |
@@ -301,9 +303,9 @@ api-toolkit load-test \
 - **Node.js**: 18+（用于CLI工具）
 - **Python**: 3.8+（用于压测引擎与数据驱动）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | Node.js 18+ | 运行时 | 必需 | 从nodejs.org安装 |
 | curl | 工具 | 推荐 | 系统自带或从curl.se安装 |

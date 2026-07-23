@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # Linear自动驾驶（免费版）
 
 > Linear任务一键流转：创建即触发，Agent自动处理，状态自动更新，结果自动同步至Git。
@@ -32,7 +33,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Linear自动驾驶(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -58,7 +59,7 @@ chmod 600 ~/.linear-pilot/linear.env
 （请参考skill目录中的脚本文件） teams
 # 输出：
 # Team: Engineering (ENG) - ID: team_abc123
-
+# ...
 # 获取工作流状态ID
 （请参考skill目录中的脚本文件） states
 # 输出：
@@ -152,10 +153,10 @@ Discord notification
 ```bash
 # 标记任务为进行中
 （请参考skill目录中的脚本文件） start ENG-123
-
+# ...
 # 标记任务为完成
 （请参考skill目录中的脚本文件） done ENG-123
-
+# ...
 # 添加结果评论
 （请参考skill目录中的脚本文件） comment ENG-123 "任务完成：已生成研究报告，保存至 research/topic.md"
 ```
@@ -218,7 +219,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 本工作流支持以下任务类型：
 
 | 任务类型 | 处理方式 | 输出位置 |
-|----------|----------|----------|
+|:-----|:-----|:-----|
 | 研究 | 派生子Agent调研，生成报告 | `research/[topic].md` |
 | 内容创作 | 生成草稿或成稿 | `content/[name].md` |
 | 代码任务 | 编写/修改代码，提交变更 | 对应代码仓库 |
@@ -268,7 +269,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 在使用免费方案前，了解各服务的免费额度：
 
 | 服务 | 免费额度 | 建议 |
-|------|----------|------|
+|---:|---:|---:|
 | Linear | 250 issues，无限成员 | 足够个人/小团队使用 |
 | Make.com | 1000次/月，2个Scenario，15分钟间隔 | 免费方案最佳选择 |
 | Pipedream | 约100 credits，即时触发 | 需要实时触发时用，额度消耗快 |
@@ -301,7 +302,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ## 错误处理
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|:---:|:---:|:---:|:---:|
 | 任务未触发 | Webhook未配置或Scenario未激活 | 检查Make.com Scenario状态；确认过滤器条件；验证Webhook URL | 高 |
 | Linear API错误 | API Key无效或权限不足 | 验证API Key；检查团队/状态ID；确认API Key权限范围 | 高 |
 | 状态更新失败 | 状态ID错误或任务不存在 | 重新获取状态ID；确认任务编号正确；检查任务是否已被他人修改 | 高 |
@@ -319,7 +320,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（默认GPT-4o-mini） |
 | Linear账号 | 账号 | 必需 | 从linear.com注册 |
 | Make.com账号 | 服务 | 推荐 | 从make.com注册（免费方案可用） |
@@ -379,31 +380,31 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ### 示例1：基础用法
 
 ```
-### Step 1：配置Linear API
-
+### Step 1：配置Linear API(补充)
+# ...
 ```bash
 mkdir -p ~/.linear-pilot
 echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ```
-
-### Step 2：获取团队与状态ID
-
+# ...
+### Step 2：获取团队与状态ID(补充)
+# ...
 ```bash
 （请参考skill目录中的脚本文件） teams
 （请参考skill目录中的脚本文件） states
 ```
-
+# ...
 将获取的ID填入 `~/.linear-pilot/linear-config.json`。
-
-### Step 3：配置Webhook
-
+# ...
+### Step 3：配置Webhook(补充)
+# ...
 在Make.com创建Scenario：
 1. 触发器：Linear → Watch Issues
 2. 过滤器：state.name = "Todo"
 3. 动作：HTTP POST → 你的Agent端点
-
-### Step 4：测试任务流转
-
+# ...
+### Step 4：测试任务流转(补充)
+# ...
 在Linear中创建一个Todo状态的任务，观察：
 - Agent是否收到通知
 - 状态是否自动更新为 In Progress

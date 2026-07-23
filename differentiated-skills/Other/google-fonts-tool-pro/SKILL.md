@@ -41,6 +41,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 谷歌字体工具（专业版）
 
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力 | 说明 | 专业版增强 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 自托管 | 下载并自托管字体文件 | GDPR 合规 |
 | 子集化 | 按语言/字符集生成子集 | 自动化流水线 |
 | 字体系统 | 令牌 + 字阶 + 多语言映射 | 团队共享 |
@@ -91,7 +93,7 @@ pricing_model: "per_use"
 ```bash
 # 用 google-webfonts-helper 下载
 curl -o inter.woff2 "https://gwfh.mranftl.com/api/fonts/inter?download=zip&subsets=latin&variants=regular,600"
-
+# ...
 # 自托管 @font-face
 ```
 
@@ -161,7 +163,6 @@ curl -o inter.woff2 "https://gwfh.mranftl.com/api/fonts/inter?download=zip&subse
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 子集化流水线（`font-pipeline.json`）：
@@ -189,7 +190,7 @@ curl -o inter.woff2 "https://gwfh.mranftl.com/api/fonts/inter?download=zip&subse
 ## 免费版兼容性
 
 | 项目 | 免费版 | 专业版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 搭配方案 | 相同 | 相同（纳入系统） |
 | 加载方式 | CDN | 自托管 |
 | 子集 | 基础 | 自动化 |
@@ -221,7 +222,7 @@ A：有。专业版享字体系统设计与性能优化咨询。
 ```bash
 # 用 glyphhanger 分析页面用到的字符
 glyphhanger --whitelist=zh --subset=*.woff2 --formats=woff2
-
+# ...
 # 按页面子集（仅首屏字符）
 glyphhanger --spider https://example.com --subset=font.woff2
 ```
@@ -241,7 +242,7 @@ glyphhanger --spider https://example.com --subset=font.woff2
 ```html
 <!-- 1. 预加载 LCP 文字字体 -->
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-
+# ...
 <!-- 2. 关键 CSS 内联字体声明 -->
 <style>
   @font-face {
@@ -261,7 +262,7 @@ glyphhanger --spider https://example.com --subset=font.woff2
   Apache 2.0: 可商用、可修改、需声明
   Ubuntu Font Licence: 可商用、有 Redistribution 限制
   商业许可: 需购买授权，按用户数/设备数计
-
+# ...
 审计要点:
   - 商用前确认许可类型
   - OFL 字体需随分发附带 LICENSE 文件
@@ -293,7 +294,7 @@ glyphhanger --spider https://example.com --subset=font.woff2
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | google-webfonts-helper | 子集化工具 | 自托管时必需 | gwfh.mranftl.com |
 | glyphhanger | 子集分析 | 推荐 | `npm install -g glyphhanger` |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -308,9 +309,8 @@ glyphhanger --spider https://example.com --subset=font.woff2
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -18,19 +18,20 @@ homepage: "https://skillhub.cn"
 tags:
   - 通用办公
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 版本化写作工具
 
 带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 版本化写作工具处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -38,13 +39,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 版本化写作工具sh脚本管理 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -55,7 +56,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Bash/Shell | 运行时 | 必需 | 用于执行scripts目录下的shell脚本 |
 | Sub-agent支持 | Agent能力 | 必需 | Agent需支持委托任务给sub-agents |
@@ -88,7 +89,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 提供七个强制使用的shell脚本：
 
 | Script | 用途 |
-|:-------|:-----|
+|:-----:|:-----:|
 | `init-workspace.sh` | 创建项目结构 |
 | `new-piece.sh` | 启动新写作piece并分配ID |
 | `edit.sh` | 编辑并自动版本备份（禁止直接编辑文件的强制替代） |
@@ -114,7 +115,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 集成八份参考文档，按需加载支撑写作各阶段：
 
 | 文档 | 用途 |
-|:-----|:-----|
+|:------|------:|
 | `brief.md` | 规划阶段使用，写作需求brief |
 | `execution.md` | 起草阶段使用，drafting指导 |
 | `verification.md` | 质量检查阶段使用 |
@@ -162,32 +163,32 @@ Request → Plan → Draft → Audit → Refine → Deliver
 Step 1 - 初始化工作空间:
   $ （请参考skill目录中的脚本文件） ~/writing
   → 创建项目结构（pieces/、scripts/、references/、config.json）
-
+# ...
 Step 2 - 创建新piece:
   $ （请参考skill目录中的脚本文件）
   → 分配 piece ID: piece-001
-
+# ...
 Step 3 - 配置:
   config.json:
     depth: "thorough"
     auto_audit: true
-
+# ...
 Step 4 - Draft（委托sub-agent）:
   Main agent: 委托起草任务给sub-agent
   Sub-agent: 参考 execution.md 起草，输出至 pieces/piece-001/draft-v1.md
-
+# ...
 Step 5 - Audit:
   $ （请参考skill目录中的脚本文件） piece-001
   → 生成审计报告，依据 audit.md dimensions 检查
-
+# ...
 Step 6 - Refine（通过edit.sh，自动版本备份）:
   $ （请参考skill目录中的脚本文件） piece-001
   → 编辑内容，自动备份 draft-v1.md 为 version
-
+# ...
 Step 7 - 查看versions:
   $ （请参考skill目录中的脚本文件）
   → 显示 piece-001 的所有versions
-
+# ...
 Step 8 - Deliver & Cleanup:
   用户确认最终后:
   $ （请参考skill目录中的脚本文件） piece-001
@@ -204,11 +205,11 @@ Step 1 - 查看所有versions:
       draft-v1.md (2024-01-15 10:00)
       draft-v2.md (2024-01-15 14:30)
       draft-v3.md (2024-01-15 16:00)
-
+# ...
 Step 2 - 恢复draft-v1:
   $ （请参考skill目录中的脚本文件） piece-001 draft-v1
   → 恢复 draft-v1 为当前版本，原draft-v3保留为备份
-
+# ...
 Step 3 - 继续编辑:
   $ （请参考skill目录中的脚本文件） piece-001
   → 基于恢复的draft-v1继续修订
@@ -216,9 +217,8 @@ Step 3 - 继续编辑:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|:---------|:-----|:---------|
+|---:|:---|---:|
 | init-workspace.sh执行失败 | 目录已存在或无写权限 | 检查目标目录是否已初始化，确认有写权限后或更换路径 |
 | edit.sh编辑失败 | piece ID不存在或文件权限问题 | 先运行`new-piece.sh`创建piece，确认pieces目录权限 |
 | audit.sh无输出 | config.json的auto_audit为false或audit.md缺失 | 检查config.json配置，确认references/audit.md存在 |

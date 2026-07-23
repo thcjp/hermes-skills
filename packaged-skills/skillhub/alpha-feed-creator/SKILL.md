@@ -30,27 +30,29 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 内容采集器专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 免费版 | 不支持 | 支持 |
-| :----- | 不支持 | 支持 |
-| :------: | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 内容采集器专业版多源批量采集 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 免费版 | Pro 版 |
-|:-------|:-----|:------:|:------:|
+|:-----|:-----|:-----|:-----|
 | 采集来源 | 支持的平台数量 | 单源(X) | 多源(5+ 平台) |
 | 智能排名 | 排名算法维度 | 基础(互动数据) | 多维(语义+质量+互动) |
 | 分类输出 | 内容分类层级 | 3 类 | 可配置 N 类 |
@@ -94,7 +96,7 @@ pricing_model: "per_use"
 # 1. 触发多源批量采集(支持 cron 定时)
 # 每日 07:30 自动执行
 0 7 * * * agent run alpha-feed-creator-pro --mode=batch --sources=all
-
+# ...
 # 2. 采集结果自动推送到团队群组
 agent run alpha-feed-creator-pro \
   --push-channel=feishu \
@@ -120,7 +122,7 @@ agent run alpha-feed-creator-pro \
   --keywords="AI Agent,大模型,行业应用" \
   --push-channel=wechat-work \
   --push-target="brand-a-ops"
-
+# ...
 agent run alpha-feed-creator-pro \
   --config=brand-b.yaml \
   --sources="x,weibo" \
@@ -161,18 +163,18 @@ sources:
     enabled: true
   - platform: weibo
     enabled: false  # 按需启用
-
+# ...
 whitelist:
   - "@xiaohu"
   - "@dotey"
   - "@marclou"
-
+# ...
 keyword_groups:
   - name: "技术深度"
     keywords: ["AI Agent", "LLM 训练", "多模态"]
   - name: "行业应用"
     keywords: ["AI 落地", "企业 AI", "RAG"]
-
+# ...
 ranking:
   algorithm: semantic-quality
   dimensions: [semantic, quality, engagement]
@@ -180,7 +182,7 @@ ranking:
     semantic: 0.4
     quality: 0.35
     engagement: 0.25
-
+# ...
 push:
   enabled: true
   channels:
@@ -190,11 +192,11 @@ push:
     - type: wechat-work
       target: "brand-ops"
       mode: full
-
+# ...
 schedule:
   cron: "0 7 * * *"
   timezone: "Asia/Shanghai"
-
+# ...
 output:
   obsidian_path: "<team_vault>/Skill平台/项目/AI内容日报/"
   structure:
@@ -208,7 +210,7 @@ output:
 ```bash
 # 立即执行一次完整采集
 agent run alpha-feed-creator-pro --config=pro-config.yaml
-
+# ...
 # 启用定时调度
 agent schedule add \
   --skill=alpha-feed-creator-pro \
@@ -221,7 +223,7 @@ agent schedule add \
 ```bash
 # 检查推送渠道连通性
 agent run alpha-feed-creator-pro --check-push
-
+# ...
 # 测试推送一条样例日报
 agent run alpha-feed-creator-pro \
   --dry-run \
@@ -232,7 +234,7 @@ agent run alpha-feed-creator-pro \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | alpha-feed-creator处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -279,9 +281,8 @@ agent run alpha-feed-creator-pro \
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -296,10 +297,10 @@ agent run alpha-feed-creator-pro \
 - **笔记库**: 推荐 Obsidian 团队库,亦支持任意 Markdown 文件管理工具
 - **调度服务**: 定时任务依赖 Agent 平台的 cron 调度能力或系统 crontab
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM 能力 | API | 必需 | 由 Agent 内置大模型提供 |
 | Embedding 模型 | API | 必需 | Agent 内置或外部 Embedding 服务 |
 | 浏览器环境 | 运行时 | 可选 | Agent 自带浏览器或系统浏览器 |
@@ -340,12 +341,12 @@ tenants:
     name: "品牌运营"
     config: configs/brand-ops.yaml
     push: wechat-work://brand-ops
-
+# ...
 ranking:
   algorithm: semantic-quality
   cache_enabled: true
   cache_ttl: 3600
-
+# ...
 audit:
   enabled: true
   log_path: "logs/audit/"
@@ -357,48 +358,49 @@ audit:
 ```markdown
 <!-- template: research-report.md -->
 # "creator_result" AI 行业研究报告
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: Pro 版如何与免费版共存?
-
+# ...
 Pro 版与免费版可共存。两者配置文件格式兼容,Pro 版会优先读取 Pro 专属字段(如 `sources`、`ranking.algorithm`、`push` 等),缺失时回退到免费版行为。建议生产环境统一使用 Pro 版,免费版仅用于个人测试。
-
+# ...
 ### Q2: 多源采集会不会触发平台风控?
-
+# ...
 Pro 版内置防风控策略:每个平台独立限流、随机间隔、API 优先、浏览器回退。建议单平台单次采集不超过 100 条,日采集频次不超过 6 次。多租户场景务必错峰执行,避免同一出口 IP 并发过高。
-
+# ...
 ### Q3: 群组推送支持哪些渠道?
-
+# ...
 Pro 版支持飞书、企业微信、钉钉、Slack 等主流群组渠道,以及 Webhook 通用推送。每个渠道可独立配置推送模式(summary 精简版 / full 完整版)和推送目标。新增渠道可通过实现 `PushChannel` 接口扩展。
-
+# ...
 ### Q4: 智能排名算法需要额外模型吗?
-
+# ...
 语义维度依赖 Embedding 模型计算内容相似度,可使用 Agent 内置大模型的 Embedding 能力,无需额外部署模型。质量维度基于规则与统计特征,不依赖外部模型。所有计算在采集流程内完成,不增加额外 API 调用成本(除 Embedding 外)。
-
+# ...
 ### Q5: 如何为不同团队配置差异化策略?
-
+# ...
 使用多租户配置,每个租户独立配置白名单、关键词、排名权重和推送渠道。租户间数据隔离,采集结果与日报互不干扰。管理员可通过 `--租户` 参数指定运行租户。
-
+# ...
 ### Q6: 定时调度如何管理?
-
+# ...
 Pro 版内置 cron 调度器,支持 `agent schedule add/list/remove` 命令管理定时任务。每个任务绑定独立配置文件,支持时区设置。调度日志写入 `02-运行记录/` 目录,便于排查执行异常。
-
+# ...
 ### Q7: 日报模板如何自定义?
-
+# ...
 Pro 版支持 Handlebars 语法的模板引擎。将模板文件放入配置指定的模板目录,在配置中通过 `output.template` 指定模板文件名。模板变量包括 `date`、`summary`、`categories`、`competitor_section`、`degradation_notes` 等。
-
+# ...
 ### Q8: 采集覆盖率不足时如何处理?
-
+# ...
 当某平台采集失败导致覆盖率低于阈值(默认 70%)时,Pro 版会在日报顶部标注降级说明,并通过告警通道通知管理员。建议配置备用来源,当主来源故障时自动启用备用来源补采。
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
+# ...

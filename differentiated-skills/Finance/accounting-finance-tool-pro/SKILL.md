@@ -23,8 +23,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
 ---
-
 # 财务分析专业套件（PRO版）
 
 ## 概述
@@ -40,7 +41,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 #### DCF估值模型
 
 | 技能 | 用途 | PRO版增强 |
-| --- | --- | --- |
+|---|---|------|
 | `dcf-zero-growth` | DCF零增长模型 | 支持概率加权情景分析 |
 | `dcf-constant-growth` | DCF恒定增长模型 | 多期增长率分段 |
 | `dcf-two-stage` | DCF二阶段模型 | 蒙特卡洛模拟 |
@@ -49,7 +50,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 #### 可比估值模型
 
 | 技能 | 用途 | 关键指标 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `pe-valuation` | 市盈率估值 | 滚动/预期PE对比 |
 | `pb-valuation` | 市净率估值 | 账面价值调整 |
 | `ps-valuation` | 市销率估值 | 收入质量调整 |
@@ -58,7 +59,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 #### 资本成本与行业特化估值（PRO专属）
 
 | 技能 | 用途 | 输出结果 |
-| --- | --- | --- |
+|---:|---:|---:|
 | `wacc-calculation` | 加权平均资本成本 | WACC、折现率、资本结构优化 |
 | `cost-of-equity-capm` | 股权成本（CAPM） | Beta校准、预期收益率 |
 | `bank-valuation` | 银行估值 | 剩余收益模型、P/PPOP |
@@ -74,8 +75,8 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 
 #### 财务比率与盈利分析
 
-| 技能 | 用途 | PRO版增强 |
-| --- | --- | --- |
+| 技能(续)| 用途 | PRO版增强 |
+|:----:|:----:|:----:|
 | `financial-ratio-framework` | 财务比率综合分析 | 五维比率+同业百分位 |
 | `dupont-five-factor` | 杜邦五因素分析 | 多期对比与归因 |
 | `roe-analysis` | ROE分析 | 分解至经营杠杆 |
@@ -88,7 +89,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 #### 现金流分析（PRO完整版）
 
 | 技能 | 用途 | 现金流类型 |
-| --- | --- | --- |
+|:------|------:|:------|
 | `cashflow-forecasting` | 现金流预测 | 未来现金流建模 |
 | `free-cashflow-calculation` | 自由现金流计算 | FCFF/FCFE |
 | `operating-cashflow-analysis` | 经营现金流分析 | 核心经营活动 |
@@ -101,7 +102,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 #### 资产结构与报表处理（PRO专属）
 
 | 技能 | 用途 | 分析对象 |
-| --- | --- | --- |
+|---:|:---|---:|
 | `asset-structure-analysis` | 资产结构分析 | 资产配置优化 |
 | `asset-capital-matching` | 资产资本匹配 | 期限匹配评估 |
 | `capital-structure-analysis` | 资本结构分析 | 债务/股权优化 |
@@ -115,7 +116,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 #### 可比公司与竞争分析
 
 | 技能 | 用途 | 功能 |
-| --- | --- | --- |
+|:------:|--------|:-------|
 | `peer-selection` | 可比公司筛选 | 智能对标选择 |
 | `peer-comparison-analysis` | 可比公司分析 | 横向对比矩阵 |
 | `industry-benchmarking` | 行业基准对比 | 行业百分位 |
@@ -129,8 +130,8 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 
 #### 风险检测与质量评估
 
-| 技能 | 用途 | PRO版增强 |
-| --- | --- | --- |
+| 技能(续)(续)| 用途 | PRO版增强 |
+|-----|:---:|----:|
 | `fraud-risk-detection` | 欺诈风险检测 | Beneish模型集成 |
 | `liquidity-risk-assessment` | 流动性风险评估 | 压力测试 |
 | `sensitivity-analysis` | 敏感性分析 | 多变量蒙特卡洛 |
@@ -142,7 +143,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 #### 特殊事项分析（PRO专属）
 
 | 技能 | 用途 | 关注点 |
-| --- | --- | --- |
+|----|----|----|
 | `related-party-transaction-analysis` | 关联交易分析 | 利益输送识别 |
 | `audit-report-analysis` | 审计报告分析 | 审计意见解读 |
 | `accounting-policy-analysis` | 会计政策分析 | 政策选择影响 |
@@ -152,7 +153,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 #### 决策支持
 
 | 技能 | 用途 | 输出 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `trend-analysis` | 趋势分析 | 时间序列预测 |
 | `investment-thesis-generation` | 投资论点生成 | 多情景投资建议 |
 | `portfolio-tracking` | 投资组合跟踪 | 组合批量监控 |
@@ -171,7 +172,7 @@ PRO版完全兼容免费版全部技能，原有工作流可无缝迁移。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | 财务分析专业套件处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -229,7 +230,7 @@ PRO执行流程：
 ```bash
 # PRO版初始化
 python3 init_pro.py --workspace ./analysis_workspace
-
+# ...
 # 配置数据源
 cp config_template.yaml config.yaml
 # 编辑config.yaml填入数据源凭证
@@ -240,18 +241,18 @@ cp config_template.yaml config.yaml
 ```python
 # 批量分析多只股票
 from pro_analyzer import BatchAnalyzer
-
+# ...
 analyzer = BatchAnalyzer(
     skills=["financial-ratio-framework", "dcf-two-stage", "fraud-risk-detection"],
     output_format="excel"
 )
-
+# ...
 results = analyzer.run([
     {"ticker": "600519.SH", "name": "贵州茅台"},
     {"ticker": "000858.SZ", "name": "五粮液"},
     {"ticker": "000333.SZ", "name": "美的集团"}
 ])
-
+# ...
 results.export("batch_analysis_report.xlsx")
 ```
 
@@ -278,7 +279,7 @@ pro_config:
     root_dir: "./analysis_workspace"
     output_dir: "./reports"
     cache_dir: "./cache"
-
+# ...
   data_sources:
     primary:
       provider: "wind"
@@ -287,7 +288,7 @@ pro_config:
     secondary:
       provider: "bloomberg"
       api_key: "${BLOOMBERG_API_KEY}"
-
+# ...
   analysis:
     batch:
       max_parallel: 10              # 最大并行分析数
@@ -297,7 +298,7 @@ pro_config:
       template_dir: "./templates"
       formats: ["pdf", "docx", "html"]
       language: "zh-CN"
-
+# ...
   valuation:
     monte_carlo:
       simulations: 10000            # 蒙特卡洛模拟次数
@@ -305,7 +306,7 @@ pro_config:
     sensitivity:
       variables: ["growth_rate", "discount_rate", "terminal_growth"]
       steps: 5                      # 每变量测试步数
-
+# ...
   risk_models:
     fraud_detection:
       models: ["beneish_m_score", "piotroski_f_score", "altman_z_score"]
@@ -318,7 +319,7 @@ pro_config:
 ### PRO版高级实践
 
 | 实践领域 | 建议做法 |
-| --- | --- |
+|:---:|:---:|
 | 批量分析 | 先小批量测试（5-10只），确认参数后全量运行 |
 | 估值建模 | 必须进行蒙特卡洛模拟，输出概率分布而非点估计 |
 | 风险评估 | 同时运行多个欺诈检测模型，交叉验证结果 |
@@ -369,7 +370,7 @@ PRO版支持单批次最多100只标的的并行分析。建议根据数据源AP
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | numpy | Python库 | 必需 | `pip install numpy` |
@@ -382,7 +383,7 @@ PRO版支持单批次最多100只标的的并行分析。建议根据数据源AP
 ### API Key 配置
 
 | 数据源 | 环境变量 | 用途 |
-|:-------|:---------|:-----|
+|---:|:---|---:|
 | Wind | `WIND_API_KEY` | 中国市场财务数据 |
 | Bloomberg | `BLOOMBERG_API_KEY` | 全球市场财务数据 |
 | 同花顺 | `THS_API_KEY` | A股行情与基本面 |
@@ -399,9 +400,8 @@ PRO版支持单批次最多100只标的的并行分析。建议根据数据源AP
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # SQL查询工具（免费版）
 
 本工具为独立开发者、运维与AI Agent提供命令行场景下的SQL查询执行能力。免费版聚焦核心场景：数据库连接、查询编写、执行计划分析、跨数据库语法速查，足以覆盖绝大多数日常数据访问需求。
@@ -35,7 +36,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力分类 | 说明 |
-|---------|------|
+|----|---|
 | 数据库连接 | 支持SQLite、`PostgreSQL`、MySQL、SQL Server命令行连接 |
 | 查询执行 | 参数化查询、事务包裹、批量脚本文件执行 |
 | 性能分析 | EXPLAIN执行计划解读、索引陷阱识别、红旗信号清单 |
@@ -94,13 +95,13 @@ suggested_price: 29.9
 ```bash
 # SQLite（零配置，单文件）
 sqlite3 mydb.sqlite
-
+# ...
 # PostgreSQL
 psql -h localhost -U myuser -d mydb
-
+# ...
 # MySQL
 mysql -h localhost -u root -p mydb
-
+# ...
 # SQL Server
 sqlcmd -S localhost -U myuser -d mydb
 ```
@@ -109,7 +110,7 @@ sqlcmd -S localhost -U myuser -d mydb
 
 ```python
 import sqlite3
-
+# ...
 conn = sqlite3.connect("mydb.sqlite")
 # 安全：使用占位符，绝不拼接用户输入
 row = conn.execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
@@ -121,7 +122,7 @@ print(row)
 ```sql
 -- PostgreSQL
 EXPLAIN (ANALYZE, BUFFERS) SELECT * FROM orders WHERE user_id = 5;
-
+# ...
 -- SQLite
 EXPLAIN QUERY PLAN SELECT * FROM orders WHERE user_id = 5;
 ```
@@ -136,7 +137,7 @@ EXPLAIN QUERY PLAN SELECT * FROM orders WHERE user_id = 5;
 ### 跨数据库可移植性速查
 
 | 功能 | `PostgreSQL` | MySQL | SQLite | SQL Server |
-|------|-------------|-------|--------|-----------|
+|:-----|:-----|:-----|:-----|:-----|
 | 分页 | LIMIT n | LIMIT n | LIMIT n | TOP n |
 | UPSERT | ON CONFLICT | ON DUPLICATE KEY | ON CONFLICT | MERGE |
 | 布尔值 | true/false | 1/0 | 1/0 | 1/0 |
@@ -165,7 +166,7 @@ COMMIT;
 ```python
 # 错误：字符串拼接，存在注入风险
 cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
-
+# ...
 # 正确：占位符参数化
 cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
 ```
@@ -234,7 +235,7 @@ A：不能。复合索引遵循最左前缀原则，仅过滤b时索引不生效
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | sqlite3 | CLI工具 | 必需 | 系统自带或官网下载 |
 | psql | CLI工具 | 可选 | `PostgreSQL` 安装包 |
 | mysql | CLI工具 | 可选 | MySQL 客户端安装包 |
@@ -251,9 +252,8 @@ A：不能。复合索引遵循最左前缀原则，仅过滤b时索引不生效
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

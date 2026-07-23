@@ -18,19 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Lite Sqlite
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| In-memory mode for temporary data (even faster!) | 支持 | 支持 |
-| WAL mode for concurrent access | 不支持 | 支持 |
-| Connection pooling | 不支持 | 支持 |
-| Automatic schema migration | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
+| 可视化图表自动生成 | 不支持 | 支持 |
+| 定时数据同步与增量更新 | 不支持 | 支持 |
+| 数据质量检测与清洗规则 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -44,7 +46,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
@@ -54,9 +56,9 @@ pricing_model: "per_use"
 ### Basic Database Operations
 ```python
 from sqlite_connector import SQLiteDB
-
+# ...
 db = SQLiteDB("agent_data.db")
-
+# ...
 db.create_table("memos", {
     "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
     "title": "TEXT NOT NULL",
@@ -64,24 +66,24 @@ db.create_table("memos", {
     "created_at": "TEXT DEFAULT CURRENT_TIMESTAMP",
     "tags": "TEXT"
 })
-
+# ...
 db.insert("memos", [title="First memo", content="Hello world", tags="test"])
-
+# ...
 results = db.query("SELECT * FROM memos WHERE tags = ?", ("test",))
-
+# ...
 db.update("memos", "id = ?", [content="Updated content"], (1,))
-
+# ...
 db.delete("memos", "id = ?", (1,))
-
+# ...
 db.close()
 ```
 
 ### In-Memory Database (Fastest)
 ```python
 db = SQLiteDB(":memory:")
-
+# ...
 db.create_table("temp", {...})
-
+# ...
 ```
 
 ---
@@ -92,11 +94,10 @@ db.create_table("temp", {...})
 3. 按照能力描述提供输入参数,执行操作
 4. 查看输出结果,确认任务完成状态
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | lite-sqlite处理的内容输入 |,  |
 | content | string | 否 | lite-sqlite处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -124,7 +125,6 @@ db.create_table("temp", {...})
 
 ## 异常处理
 
-
 ```python
 try:
     db.insert("metrics", {...})
@@ -139,7 +139,7 @@ except sqlite3.OperationalError:
 ---
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ;确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 对照使用流程章节检查输入格式;参考示例章节修正输入 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述,补充必要的上下文信息 |
@@ -151,9 +151,9 @@ except sqlite3.OperationalError:
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -162,7 +162,6 @@ except sqlite3.OperationalError:
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -173,7 +172,7 @@ export API_KEY="your_api_key_here"
 
 ### 示例1：基础用法
 ```
-### Basic Database Operations
+### Basic Database Operations(补充)
 ```python
 from sqlite_connector import SQLiteDB
 
@@ -193,29 +192,30 @@ results = db.query("SELECT * FROM memos WHERE tags = ?", ("test",))
 
 db.update("memos", "id = ?", [content="
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1: 如何开始使用Lite Sqlite？
 A: 
-
+# ...
 ### Q2: 遇到错误怎么办？
 A: 
-
+# ...
 ### Q3: Lite Sqlite有什么限制？
 A: 
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
 ## 已知限制
-
+# ...
 - 需要API Key，无Key环境无法使用
 - 本地运行，不支持多设备同步
+# ...

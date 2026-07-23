@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 免费天气技能 (专业版)
 ## 概述
@@ -39,7 +41,7 @@ pricing_model: "monthly"
 
 ## 核心能力
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 单城市查询 | 全球天气查询 | 支持 | 支持 |
 | 多数据源冗余 | 自动故障切换 | 2 个 | 5+ 个 |
 | 批量查询 | 多城市并发 | 不支持 | 支持 |
@@ -88,10 +90,10 @@ import redis
 import json
 from datetime import datetime, timedelta
 from typing import Optional
-
+# ...
 class ProWeatherService:
     """企业级天气服务"""
-
+# ...
     SOURCES = [
         {"name": "wttr.in", "url": "https://wttr.in", "priority": 1},
         {"name": "open-meteo", "url": "https://api.open-meteo.com", "priority": 2},
@@ -99,7 +101,7 @@ class ProWeatherService:
         {"name": "weatherapi", "url": "https://api.weatherapi.com", "priority": 4},
         {"name": "private", "url": os.environ.get("PRIVATE_WEATHER_URL", ""), "priority": 5},
     ]
-
+# ...
     def __init__(self):
         self.redis = redis.Redis.from_url(os.environ.get("REDIS_URL"))
         self.cache_ttl = 300  # 5 分钟
@@ -110,7 +112,7 @@ class ProWeatherService:
             cached = self.redis.get(cache_key)
             if cached:
                 return json.loads(cached)
-
+# ...
         # 多源故障转移
         for source in sorted(self.SOURCES, key=lambda x: x["priority"]):
             try:
@@ -122,9 +124,9 @@ class ProWeatherService:
             except Exception as e:
                 self._log_failure(source["name"], city, str(e))
                 continue
-
+# ...
         raise RuntimeError(f"所有数据源查询 {city} 失败")
-
+# ...
     def _query_source(self, source, city):
         """从指定数据源查询"""
         if source["name"] == "wttr.in":
@@ -142,7 +144,7 @@ class ProWeatherService:
                 timeout=10,
             )
             return self._normalize_open_meteo(resp.json(), city)
-
+# ...
     def batch_query(self, cities):
         """批量查询多城市"""
         import concurrent.futures
@@ -156,7 +158,7 @@ class ProWeatherService:
                 except Exception as e:
                     results[city] = {"error": str(e)}
         return results
-
+# ...
     def health_check(self):
         """数据源健康检查"""
         results = []
@@ -251,7 +253,7 @@ def setup_weather_monitoring():
 ```bash
 # 启动 Redis
 docker run -d --name weather-redis -p 6379:6379 redis:alpine
-
+# ...
 # 配置环境变量
 export REDIS_URL="redis://localhost:6379/0"
 export WEATHER_EDITION="pro"
@@ -286,18 +288,18 @@ sources:
     url: https://internal-weather.local
     priority: 5
     timeout: 5
-
+# ...
 failover:
   strategy: priority
   retry: 2
   backoff: exponential
-
+# ...
 cache:
   enabled: true
   backend: redis
   ttl_seconds: 300
   key_prefix: "weather:"
-
+# ...
 monitoring:
   enabled: true
   metrics: [availability, latency, cache_hit_rate, failover_count]
@@ -310,7 +312,7 @@ monitoring:
 ```bash
 # 启动天气服务守护进程
 weather-service --config /etc/weather-pro/sources.yaml --daemon
-
+# ...
 # 验证健康状态
 curl http://localhost:8080/health
 ```
@@ -334,7 +336,7 @@ def archive_weather(cities, interval_minutes=30):
             data = service.query(city)
             archive_to_db(city, data)
         time.sleep(interval_minutes * 60)
-
+# ...
 def archive_to_db(city, data):
     """归档到数据库"""
     payload = {
@@ -354,17 +356,17 @@ def archive_to_db(city, data):
 ```python
 class CustomWeatherSource:
     """自定义数据源适配器"""
-
+# ...
     def __init__(self, config):
         self.url = config["url"]
         self.auth = config.get("auth")
-
+# ...
     def query(self, city):
         """实现自定义查询逻辑"""
         headers = {}
         if self.auth:
             headers["Authorization"] = f"Bearer {self.auth}"
-
+# ...
         resp = requests.get(
             f"{self.url}/weather",
             headers=headers,
@@ -372,7 +374,7 @@ class CustomWeatherSource:
             timeout=10,
         )
         return self.normalize(resp.json())
-
+# ...
     def normalize(self, raw):
         """转换为统一格式"""
         return {
@@ -393,13 +395,13 @@ def render_dashboard():
     service = ProWeatherService()
     health = service.health_check()
     cache_stats = service.redis.info("stats")
-
+# ...
     dashboard = f"""
     天气服务监控仪表盘
     ==================
     数据源健康状态:
     {chr(10).join([f"  - {s['source']}: {s['status']} ({s.get('latency_ms', 'N/A')}ms)" for s in health])}
-
+# ...
     缓存统计:
     - 命中次数: {cache_stats['keyspace_hits']}
     - 未命中: {cache_stats['keyspace_misses']}
@@ -433,7 +435,7 @@ def adaptive_cache_ttl(weather):
 ```python
 from functools import wraps
 import time
-
+# ...
 def rate_limit(calls, period):
     """限流装饰器"""
     def decorator(func):
@@ -478,7 +480,7 @@ def rate_limit(calls, period):
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | 多天气数据源 | 在线 API | 必需 | wttr.in (免费)、Open-Meteo (免费)、其他可选 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Redis | 缓存服务 | 推荐 | docker pull redis |
@@ -491,16 +493,16 @@ def rate_limit(calls, period):
 # 专业版基础配置
 export WEATHER_EDITION="pro"
 export REDIS_URL="redis://localhost:6379/0"
-
+# ...
 # 多数据源凭证 (按需配置)
 export OPENWEATHER_API_KEY="..."
 export WEATHERAPI_API_KEY="..."
 export PRIVATE_WEATHER_URL="https://internal-weather.local"
-
+# ...
 # 监控告警
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 export PAGERDUTY_KEY="..."
-
+# ...
 # 归档数据库
 export ARCHIVE_DB_URL="db://user:pass@host:5432/weather_archive"
 ```
@@ -514,7 +516,7 @@ export ARCHIVE_DB_URL="db://user:pass@host:5432/weather_archive"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

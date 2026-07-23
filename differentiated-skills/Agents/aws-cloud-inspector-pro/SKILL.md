@@ -39,6 +39,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
 ---
 # AWS云巡检专业版（aws-cloud-inspector-pro）
 
@@ -67,7 +69,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AWS云巡检专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -83,7 +85,7 @@ Skill: 执行完成,结果如下: 操作成功
 本工具属"中等工具"级别，完整上手目标 < 120秒。
 
 | 阶段 | 目标耗时 | 任务 |
-|------|----------|------|
+|:-----|:-----|:-----|
 | 环境检查 | < 30秒 | 确认AWS CLI已安装且凭证已配置 |
 | 身份确认 | < 30秒 | `aws sts get-caller-identity` 验证身份 |
 | 安全审计 | < 60秒 | 执行第一个跨服务安全扫描 |
@@ -113,7 +115,7 @@ aws sts get-caller-identity
 aws configservice describe-config-rules \
   --query 'ConfigRules[].{Name:ConfigRuleName,State:ConfigRuleState}' \
   --output table
-
+# ...
 # 检查所有非合规资源
 aws configservice get-compliance-summary-by-config-rule --output table
 ```
@@ -149,7 +151,7 @@ aws configservice get-compliance-summary-by-config-rule --output table
 本Skill在以下标准路径查找AWS配置：
 
 | 平台 | 配置文件路径 | 凭证文件路径 |
-|------|-------------|-------------|
+|---:|---:|---:|
 | Linux/macOS | `~/.aws/config` | `~/.aws/credentials` |
 | Windows | `%USERPROFILE%\.aws\config` | `%USERPROFILE%\.aws\credentials` |
 
@@ -158,11 +160,11 @@ aws configservice get-compliance-summary-by-config-rule --output table
 [default]
 region = us-east-1
 output = json
-
+# ...
 [profile production]
 region = ap-northeast-1
 output = table
-
+# ...
 [profile audit]
 role_arn = arn:aws:iam::123456789012:role/AuditRole
 source_profile = default
@@ -179,22 +181,22 @@ source_profile = default
 ```bash
 # 查看所有Config规则
 aws configservice describe-config-rules --output table
-
+# ...
 # 获取合规摘要
 aws configservice get-compliance-summary-by-config-rule
-
+# ...
 # 查询非合规资源详情
 aws configservice get-compliance-details-by-config-rule \
   --config-rule-name "root-account-mfa-enabled" \
   --compliance-types NON_COMPLIANT --output table
-
+# ...
 # 检查CloudTrail是否启用
 aws cloudtrail describe-trails --query 'trailList[].{Name:Name,MultiRegion:IsMultiRegionTrail}' --output table
 ```
 
 **CIS Benchmark对标项**：
 | CIS项 | 检查内容 | 推荐命令 |
-|-------|---
+|:---:|
 -------|----------|
 | 1.1 | 避免使用root账号 | `aws iam get-account-summary` |
 | 2.1 | CloudTrail全region启用 | `aws cloudtrail describe-trails` |
@@ -205,7 +207,6 @@ aws cloudtrail describe-trails --query 'trailList[].{Name:Name,MultiRegion:IsMul
 ### 4.2 Cost Explorer成本分析
 用`input_params`参数进行配置,支持创建/查询/导出等操作。
 **处理流程**：执行`aws ce get-cost-and-usage`命令解析返回的JSON结果,按服务维度聚合成本数据并生成表格输出。用户通过`--time-period`参数指定查询范围,系统返回BlendedCost汇总。
-
 
 **能力**：深度成本查询，支持按服务/标签/团队/项目多维分摊与预算告警。
 
@@ -218,7 +219,7 @@ aws ce get-cost-and-usage \
   --metrics BlendedCost \
   --group-by Type=DIMENSION,Key=SERVICE \
   --output table
-
+# ...
 # 按标签（团队）分摊成本
 aws ce get-cost-and-usage \
   --time-period Start=2026-07-01,End=2026-07-31 \
@@ -226,14 +227,14 @@ aws ce get-cost-and-usage \
   --metrics BlendedCost \
   --group-by Type=TAG,Key=Team \
   --output table
-
+# ...
 # 查询成本预测
 aws ce get-cost-forecast \
   --time-period Start=2026-08-01,End=2026-08-31 \
   --metric BLENDED_COST \
   --granularity MONTHLY \
   --output table
-
+# ...
 # 创建预算告警
 aws budgets create-budget \
   --account-id 123456789012 \
@@ -253,12 +254,12 @@ aws cloudtrail lookup-events \
   --end-time $(date -u +%Y-%m-%dT%H:%M:%S) \
   --query 'Events[].{Time:EventTime,Name:EventName,User:Username,Resource:Resources[0].ResourceName}' \
   --output table
-
+# ...
 # 按资源类型过滤变更
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=ResourceType,AttributeValue=AWS::EC2::Instance \
   --max-results 50 --output table
-
+# ...
 # 查询特定用户的所有操作
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=Username,AttributeValue=deploy-bot \
@@ -270,7 +271,7 @@ aws cloudtrail lookup-events \
 ## 五、任务指南（完整巡检矩阵）
 
 | 任务类型 | 推荐命令 | 操作属性 | 专业版能力 |
-|----------|----------|----------|-----------|
+|:------|------:|:------|:------|
 | 资源清点 | `list` / `describe` / `get` 类命令 | 只读 | ✅ |
 | 健康检查 | CloudWatch metrics / logs 查询 | 只读 | ✅ |
 | 基础安全核查 | IAM列表、S3公开访问、SG暴露 | 只读 | ✅ |
@@ -289,20 +290,20 @@ aws cloudtrail lookup-events \
 ```bash
 # 步骤1：账号级安全摘要
 aws iam get-account-summary --query 'SummaryMap' --output table
-
+# ...
 # 步骤2：CloudTrail配置审计
 aws cloudtrail describe-trails \
   --query 'trailList[].{Name:Name,MultiRegion:IsMultiRegionTrail,Logging:IsLogging,KMS:KmsKeyId}' \
   --output table
-
+# ...
 # 步骤3：AWS Config规则合规状态
 aws configservice get-compliance-summary-by-config-rule --output table
-
+# ...
 # 步骤4：所有非合规资源清单
 aws configservice describe-compliance-by-config-rule \
   --query 'ComplianceByConfigRules[?Compliance.ComplianceType==`NON_COMPLIANT`].{Rule:ConfigRuleName,Type:Compliance.ComplianceType}' \
   --output table
-
+# ...
 # 步骤5：S3桶公开访问检查（全量）
 aws s3api list-buckets --query 'Buckets[].Name' --output text | tr '\t' '\n' | while read bucket; do
   echo "=== $bucket ==="
@@ -323,7 +324,7 @@ aws ce get-cost-and-usage \
   --metrics BlendedCost \
   --group-by Type=TAG,Key=Team \
   --output table
-
+# ...
 # 步骤2：按服务×团队二维分摊
 aws ce get-cost-and-usage \
   --time-period Start=2026-07-01,End=2026-07-31 \
@@ -331,7 +332,7 @@ aws ce get-cost-and-usage \
   --metrics BlendedCost \
   --group-by Type=DIMENSION,Key=SERVICE Type=TAG,Key=Team \
   --output table
-
+# ...
 # 步骤3：查询成本预测（下月）
 aws ce get-cost-forecast \
   --time-period Start=2026-08-01,End=2026-08-31 \
@@ -339,7 +340,7 @@ aws ce get-cost-forecast \
   --granularity MONTHLY \
   --query 'ForecastResultsList[].{Date:TimePeriod.Start,Amount:MeanValue}' \
   --output table
-
+# ...
 # 步骤4：创建预算告警（阈值80%）
 cat > budget.json << 'EOF'
 {
@@ -362,14 +363,14 @@ aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=ResourceName,AttributeValue=i-1234567890abcdef0 \
   --query 'Events[].{Time:EventTime,Name:EventName,User:Username,IP:CloudTrailEvent}' \
   --output table
-
+# ...
 # 步骤2：查询终止操作的详情
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=EventName,AttributeValue=TerminateInstances \
   --start-time $(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%S) \
   --end-time $(date -u +%Y-%m-%dT%H:%M:%S) \
   --output table
-
+# ...
 # 步骤3：定位操作人IP与时间
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=EventName,AttributeValue=TerminateInstances \
@@ -385,20 +386,20 @@ aws cloudtrail lookup-events \
 ```bash
 # 检查1：IAM角色最小权限
 aws iam list-attached-role-policies --role-name MyServiceRole --output table
-
+# ...
 # 检查2：安全组入站规则
 aws ec2 describe-security-groups \
   --group-ids sg-12345678 \
   --query 'SecurityGroups[].{ID:GroupId,Inbound:IpPermissions[].{Port:FromPort,Cidr:IpRanges[].CidrIp}}' \
   --output table
-
+# ...
 # 检查3：S3桶加密配置
 aws s3api get-bucket-encryption --bucket my-bucket --output table
-
+# ...
 # 检查4：CloudWatch Logs保留期
 aws logs describe-log-groups \
   --query 'logGroups[].{Name:logGroupName,Retention:retentionInDays}' --output table
-
+# ...
 # 检查5：AWS Config规则合规
 aws configservice describe-compliance-by-config-rule \
   --query 'ComplianceByConfigRules[?Compliance.ComplianceType==`NON_COMPLIANT`].ConfigRuleName' \
@@ -446,7 +447,7 @@ A：专业版通过CloudTrail留痕 + 人工二次确认 + 回滚方案记录实
 ## 八、故障排查表
 
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
-|------|------|------|----------|--------|
+|---:|:---|---:|---:|:---|
 | 1 | `Unable to locate credentials` | 未配置AWS凭证 | 运行 `aws configure` 或检查 `~/.aws/credentials` | P0 |
 | 2 | `InvalidClientTokenId` | 凭证无效或已过期 | 重新生成access key并更新配置 | P0 |
 | 3 | `AccessDenied` | IAM权限不足 | 联系管理员添加所需权限，或切换有权限的profile | P1 |
@@ -485,7 +486,7 @@ A：专业版通过CloudTrail留痕 + 人工二次确认 + 回滚方案记录实
 ## 十二、定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------:|--------|:-------|:------:|
 | 免费体验版 | ¥0 | 资源清点 + 健康检查 + 基础安全核查 + 变更预演 | 个人试用、日常巡检 |
 | 收费专业版 | ¥49.9/月 | 全功能 + 安全审计 + 成本分析 + 变更管理 + 企业级场景指南 + 优先支持 | 团队/企业云治理 |
 
@@ -557,9 +558,8 @@ SOFTWARE.
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|----|:--:|---:|----|:--:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |

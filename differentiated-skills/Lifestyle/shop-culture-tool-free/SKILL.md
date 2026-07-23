@@ -29,8 +29,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 店铺文化助手 (免费版)
 
 ## 概述
@@ -42,7 +43,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 品牌故事 | 创业故事与品牌理念 | 支持 |
 | 营销文案 | 产品文案与广告语 | 支持 |
 | 社交媒体 | 微博、小红书、抖音文案 | 支持 |
@@ -89,26 +90,26 @@ suggested_price: 29.9
 
 ```text
 用户: "我开了一家手工皂店,想写一个品牌故事"
-
+# ...
 助手:
 品牌故事示例:
-
+# ...
 【一块皂的温度】
-
+# ...
 三年前,我从大公司辞职,带着一身的疲惫回到了老家。
 那段时间,外婆的湿疹又犯了,看着她抓得发红的皮肤,我心痛不已。
-
+# ...
 "要不,我给你做块皂吧?"外婆笑着说。
-
+# ...
 就这样,我在厨房里开始了第一次制皂。橄榄油的温润,椰子油的清洁,蓖麻油的保湿,一点点尝试,一次次失败。
-
+# ...
 三个月后,外婆第一次用我做的皂,她说:"洗完不痒了。"
-
+# ...
 那一刻我突然明白: 好的东西,不需要花哨的包装,只需要真心。
-
+# ...
 现在,我们的手工皂依然在小批量制作,每一块都经过 28 天的皂化等待。因为我们相信:
 好的东西,值得等待。
-
+# ...
 —— XX 手工皂,始于真心,忠于品质。
 ```
 
@@ -135,48 +136,48 @@ class SocialMediaWriter:
             "max_length": 200,
         },
     }
-
+# ...
     def write_post(self, platform, product, key_selling_points):
         """生成社交媒体文案"""
         style = self.PLATFORMS[platform]
-
+# ...
         if platform == "xiaohongshu":
             return self._xiaohongshu_style(product, key_selling_points)
         elif platform == "weibo":
             return self._weibo_style(product, key_selling_points)
         elif platform == "douyin":
             return self._douyin_style(product, key_selling_points)
-
+# ...
     def _xiaohongshu_style(self, product, points):
         return f"""姐妹们! ! 发现一个宝藏产品!
-
+# ...
 {product}用了一周,真的被惊艳到了!
-
+# ...
 {chr(10).join([f'✨ {p}' for p in points])}
-
+# ...
 之前用过很多同类产品,但都没有这个让我满意。
 质地超好,使用感满分!
-
+# ...
 价格也很美丽,性价比超高!
-
+# ...
 #好物推荐 #{product} #种草 #宝藏店铺"""
-
+# ...
     def _weibo_style(self, product, points):
         return f"""{product},真的好用!
-
+# ...
 {points[0]}!
-
+# ...
 #{product}# #好物推荐#"""
-
+# ...
     def _douyin_style(self, product, points):
         return f"""姐妹们,你们绝对想不到!
-
+# ...
 这个 {product} 用完之后...
 (看视频了解效果)
-
+# ...
 {points[0]}
 {points[1]}
-
+# ...
 评论区告诉我你想了解什么!"""
 ```
 
@@ -195,7 +196,7 @@ class PromotionDesigner:
             "loyalty": self._loyalty_promotion(product),
         }
         return templates.get(occasion, templates["new_product_launch"])
-
+# ...
     def _new_launch(self, product, audience):
         return {
             "name": f"{product} 新品首发",
@@ -255,7 +256,6 @@ echo "为我的咖啡店写一篇小红书种草文案" | content-writer
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 店铺信息配置
@@ -268,19 +268,19 @@ shop:
   category: "手工制品"
   founded: "2024"
   story_focus: "匠心传承"
-
+# ...
 brand:
   personality: ["温暖", "真诚", "匠心"]
   tone: "亲切"
   language: "zh"
   tagline: "用双手传递温度"
-
+# ...
 target_audience:
   age: "25-40"
   gender: "female"
   interests: ["手工", "生活美学", "慢生活"]
   platforms: ["小红书", "微博", "微信群"]
-
+# ...
 marketing:
   posting_frequency:
     xiaohongshu: "daily"
@@ -391,7 +391,7 @@ MONTHLY_CALENDAR = {
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.8+ | 运行时 | 可选 | python.org 下载 |
 
@@ -400,7 +400,7 @@ MONTHLY_CALENDAR = {
 ```bash
 # 免费版无需外部 API Key
 # 所有文案通过 Agent LLM 本地推理生成
-
+# ...
 # 可选: 店铺偏好
 export SHOP_NAME="暖心手工坊"
 export SHOP_CATEGORY="手工制品"
@@ -415,9 +415,8 @@ export SHOP_TONE="亲切"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Java 开发手册（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 维度 | 描述 | 规约数量 |
-| --- | --- | --- |
+|---|---|----|
 | 编程规约 | 命名、格式、OOP、并发、集合 | 20+ 条 |
 | 异常日志 | 错误码、异常处理、日志规范 | 10+ 条 |
 | 单元测试 | 测试用例、覆盖率、Mock | 8+ 条 |
@@ -93,22 +94,22 @@ suggested_price: 29.9
 
 ```text
 用户：Java 类名和变量名的命名规范是什么
-
+# ...
 助手：
 类名：UpperCamelCase
 public class UserService { }
 public class UserDO { }      // DO/DTO/VO 例外
-
+# ...
 方法名/变量：lowerCamelCase
 private String userName;
 public void getUserById() { }
-
+# ...
 常量：全大写+下划线
 public static final int MAX_RETRY_COUNT = 3;
-
+# ...
 包名：全小写
 package com.company.project.service;
-
+# ...
 禁止：
 - 拼音命名（如 yonghuMing）
 - 中英文混合
@@ -121,12 +122,12 @@ package com.company.project.service;
 
 ```text
 用户：线程池创建和 ThreadLocal 使用的规范
-
+# ...
 助手：
 线程池创建规范：
 - 【强制】禁止使用 Executors 创建线程池（可能 OOM）
 - 【强制】使用 ThreadPoolExecutor 显式创建
-
+# ...
 ThreadPoolExecutor executor = new ThreadPoolExecutor(
     corePoolSize,
     maximumPoolSize,
@@ -141,10 +142,10 @@ ThreadPoolExecutor executor = new ThreadPoolExecutor(
     },
     new ThreadPoolExecutor.CallerRunsPolicy()
 );
-
+# ...
 ThreadLocal 使用规范：
 - 【强制】使用后必须 remove，避免内存泄漏
-
+# ...
 try {
     threadLocal.set(value);
     // 业务逻辑
@@ -165,12 +166,12 @@ CREATE TABLE example (
     `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+# ...
 -- 索引命名规范
 -- 主键: pk_字段名
 -- 唯一: uk_字段名
 -- 普通: idx_字段名
-
+# ...
 -- 禁止事项
 -- 禁止 SELECT *
 -- 禁止字符串拼接 SQL
@@ -200,7 +201,7 @@ CREATE TABLE example (
 ### 禁止事项速查
 
 | 禁止 | 原因 |
-| --- | --- |
+|:-----|:-----|
 | 拼音命名 | 可读性差 |
 | 魔法值 | 难以维护 |
 | `SELECT *` | 性能和可维护性 |
@@ -213,7 +214,7 @@ CREATE TABLE example (
 ### 必须事项速查
 
 | 必须 | 原因 |
-| --- | --- |
+|---:|---:|
 | 覆写方法加 @Override | 避免签名错误 |
 | 表必备三字段 | id, create_time, update_time |
 | 敏感数据脱敏 | 隐私保护 |
@@ -222,7 +223,6 @@ CREATE TABLE example (
 | 日志用占位符 | 性能优化 |
 
 ## 错误处理
-
 
 ```java
 // 正确的异常处理
@@ -234,7 +234,7 @@ try {
 } finally {
     // 资源关闭（JDK7+ try-with-resources）
 }
-
+// ...
 // try-with-resources
 try (Connection conn = dataSource.getConnection();
      PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -246,7 +246,7 @@ try (Connection conn = dataSource.getConnection();
 ```
 
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:---:|:---:|:---:|:---:|:---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -256,7 +256,7 @@ try (Connection conn = dataSource.getConnection();
 ### 命名规范速查表
 
 | 类型 | 规范 | 正确示例 | 错误示例 |
-| --- | --- | --- | --- |
+|:------|------:|:------|:------|
 | 类名 | UpperCamelCase | `UserService` | `userService` |
 | 方法名 | lowerCamelCase | `getUserById()` | `GetUserById()` |
 | 变量名 | lowerCamelCase | `userName` | `user_name` |
@@ -269,16 +269,16 @@ try (Connection conn = dataSource.getConnection();
 ```java
 // 使用 SLF4J 占位符（不要用字符串拼接）
 logger.info("用户登录: userId={}", userId);
-
+// ...
 // 异常日志必须包含堆栈
 logger.error("操作失败: {}", params, e);  // e 作为最后一个参数
-
+// ...
 // 日志级别使用规范
 logger.debug("调试信息: {}", detail);    // 调试
 logger.info("用户注册: {}", userId);      // 重要业务
 logger.warn("缓存未命中: {}", key);       // 告警
 logger.error("数据库异常", e);            // 错误
-
+// ...
 // 禁止
 System.out.println("...");               // 禁止使用控制台输出
 logger.info("用户" + userId + "登录");    // 禁止字符串拼接
@@ -290,11 +290,11 @@ logger.info("用户" + userId + "登录");    // 禁止字符串拼接
 // 集合转 Map 的正确方式
 Map<Long, User> userMap = userList.stream()
     .collect(Collectors.toMap(User::getId, u -> u));
-
+// ...
 // 指定初始容量
 Map<String, String> map = new HashMap<>(expectedSize / 0.75 + 1);
 List<String> list = new ArrayList<>(expectedSize);
-
+// ...
 // 安全的删除方式
 // 错误
 for (User u : userList) {
@@ -302,7 +302,7 @@ for (User u : userList) {
         userList.remove(u);  // ConcurrentModificationException
     }
 }
-
+// ...
 // 正确
 Iterator<User> it = userList.iterator();
 while (it.hasNext()) {
@@ -310,7 +310,7 @@ while (it.hasNext()) {
         it.remove();
     }
 }
-
+// ...
 // 或使用 removeIf
 userList.removeIf(u -> u.getStatus() == 0);
 ```
@@ -347,7 +347,7 @@ userList.removeIf(u -> u.getStatus() == 0);
 // Executors.newFixedThreadPool() 使用无界队列，可能 OOM
 ExecutorService executor = Executors.newFixedThreadPool(10);
 // 内部使用 new LinkedBlockingQueue<>()，队列无上限
-
+// ...
 // 正确：使用 ThreadPoolExecutor 并指定有界队列
 ExecutorService executor = new ThreadPoolExecutor(
     10, 10, 0L, TimeUnit.MILLISECONDS,
@@ -360,13 +360,13 @@ ExecutorService executor = new ThreadPoolExecutor(
 ```java
 // foreach 使用 Iterator 遍历
 // remove 会修改 modCount，导致 ConcurrentModificationException
-
+// ...
 // 正确方式一：Iterator.remove()
 Iterator<User> it = list.iterator();
 while (it.hasNext()) {
     if (condition) it.remove();
 }
-
+// ...
 // 正确方式二：removeIf
 list.removeIf(u -> condition);
 ```
@@ -380,12 +380,12 @@ public String getUserName(User user) {
         .map(User::getName)
         .orElse("未知用户");
 }
-
+// ...
 // 集合返回空集合而非 null
 public List<User> getUsers() {
     return Collections.emptyList();  // 不返回 null
 }
-
+// ...
 // 字符串判空
 if (StringUtils.isNotBlank(name)) { }
 ```
@@ -397,13 +397,13 @@ if (StringUtils.isNotBlank(name)) { }
 -- 主键: pk_字段名
 -- 唯一: uk_字段名
 -- 普通: idx_字段名
-
+# ...
 -- 索引原则
 -- 1. 查询频繁的字段建索引
 -- 2. 区分度高的字段优先
 -- 3. 避免过多索引（影响写入性能）
 -- 4. 联合索引遵循最左前缀原则
-
+# ...
 -- 示例
 CREATE INDEX idx_user_status ON users(status, create_time);
 -- 支持查询: WHERE status = ?
@@ -414,7 +414,7 @@ CREATE INDEX idx_user_status ON users(status, create_time);
 ### Q5：日志级别怎么选？
 
 | 级别 | 使用场景 | 示例 |
-| --- | --- | --- |
+|---:|:---|---:|
 | ERROR | 影响业务功能的错误 | 数据库连接失败 |
 | WARN | 可预期的异常，不影响主流程 | 缓存未命中 |
 | INFO | 重要的业务操作 | 用户注册、订单创建 |
@@ -428,14 +428,14 @@ CREATE INDEX idx_user_status ON users(status, create_time);
 public class UserDTO {
     @NotBlank(message = "用户名不能为空")
     private String username;
-    
+// ...
     @Min(value = 0, message = "年龄不能为负数")
     private Integer age;
-    
+// ...
     @Email(message = "邮箱格式不正确")
     private String email;
 }
-
+// ...
 // Controller 中使用
 @PostMapping("/users")
 public Result create(@Valid @RequestBody UserDTO dto) {
@@ -453,7 +453,7 @@ public Result create(@Valid @RequestBody UserDTO dto) {
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | JDK | 编译器/运行时 | 推荐 | oracle.com 或 openjdk.net 下载 |
 | SLF4J | 日志框架 | 推荐 | maven 中央仓库 |
 | Lombok | 工具库 | 可选 | maven 中央仓库 |

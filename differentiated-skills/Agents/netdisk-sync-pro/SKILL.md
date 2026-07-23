@@ -16,9 +16,11 @@ tools:
 - exec
 homepage: https://skillhub.cn
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 网盘同步专家
 
@@ -98,7 +100,7 @@ pricing_model: "per_use"
 ### 第 2 步：确认操作风险等级
 
 | 风险等级 | 操作 | 策略 |
-|:---|:---|:---|
+|----|---|---|
 | 高（必须确认） | rm 删除、上传/下载目标已存在同名文件 | 列出影响范围，等待用户确认 |
 | 中（路径模糊时确认） | upload、download、mv、rename、cp | 路径明确直接执行，不明确则确认 |
 | 低（直接执行） | ls、search、whoami、mkdir、share | 无需确认 |
@@ -109,7 +111,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 网盘同步专家处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -117,15 +119,15 @@ pricing_model: "per_use"
 ```bash
 # 上传（单文件远端路径必须是文件名，禁止以 / 结尾）
 bdpan upload <本地路径> <远端路径>
-
+# ...
 # 智能下载（先获取大小再选策略）
 bdpan ls --json <远端路径>     # 读取 size 字段
 # ≤50MB: bdpan download <远端路径> <本地路径>  (timeout=300000)
 # >50MB: nohup bdpan download ... > /tmp/bdpan-dl-$$.log 2>&1 &
-
+# ...
 # 转存（保存到网盘不下载）
 bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p <提取码> [-d 目标目录]
-
+# ...
 # 分享（--period: 0=永久 1/7/30天，默认7）
 bdpan share <路径> [--period <天数>]
 ```
@@ -157,7 +159,7 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） restore 20
 ### 路径规则
 
 | 场景 | 格式 | 示例 |
-|:---|:---|:---|
+|---:|---:|---:|
 | 命令参数 | 相对路径（相对于 `/apps/bdpan/`） | `bdpan upload ./f.txt docs/f.txt` |
 | 展示给用户 | 中文名 | "已上传到:我的应用数据/bdpan/docs/f.txt" |
 
@@ -165,7 +167,7 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） restore 20
 
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入：** 用户说"帮我下载百度网盘里的 project-backup.zip"
 
@@ -198,7 +200,7 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） restore 20
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|:---|:---|:---|
+|:---:|:---:|:---:|
 | `bdpan: command not found` | 未安装 | 运行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
 | `not logged in` | 未登录 | 运行 `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
 | 下载超时中断 | 文件过大，Bash 超时 | 使用大文件后台下载策略（nohup） |
@@ -213,7 +215,7 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） restore 20
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|:------|------:|:------|:------|
 | Agent 平台（Claude Code/Cursor/Codex 等） | 运行环境 | 必需 | 安装对应 Agent |
 | bdpan CLI | 工具 | 必需 | `bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）` |
 | 百度网盘账户 | 账户 | 必需 | 注册百度网盘账号 |
@@ -245,7 +247,7 @@ A：支持 Agent 记忆备份的运行环境。脚本会自动检测当前环境
 **Q5：恢复记忆会覆盖当前记忆吗？**
 A：会，但有安全机制保护。恢复前会列出所有将被覆盖的文件清单，要求用户显式确认，并自动将当前记忆备份到 `.backup-before-restore/` 目录，防止误操作数据丢失。
 
-## 已知限制
+## 已知限制(补充)
 
 1. **仅支持百度网盘**：所有操作限定在百度网盘（pan.baidu.com），不支持 OneDrive、Google Drive、阿里云盘等其他云盘服务。
 2. **操作范围限定 `/apps/bdpan/`**：所有远端操作限制在 `/apps/bdpan/` 目录内，无法访问网盘根目录或其他应用目录，这是安全约束不可覆盖。

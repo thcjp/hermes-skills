@@ -20,26 +20,28 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # JSON校验器(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| JSON校验器(专业版)企业级JSON校验 | 不支持 | 支持 |
+| JSON校验器(专业版)支持批量校验 | 不支持 | 支持 |
+| JSON校验器(专业版)Schema校验 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 能力1：批量并行校验
 
 | 模式 | 适用场景 | 并发策略 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 串行单文件 | 调试期、单次任务 | 单线程 |
 | 并行多文件 | 10+个JSON批量校验 | ThreadPoolExecutor，默认8线程 |
 | 流式校验 | GB级大JSON | ijson流式解析 |
@@ -51,7 +53,7 @@ pricing_model: "per_use"
 ### 能力2：JSON Schema校验
 ```python
 import jsonschema
-
+# ...
 def validate_with_schema(data: dict, schema_path: str) -> dict:
     """按JSON Schema校验数据结构"""
     schema = json.loads(open(schema_path, encoding='utf-8').read())
@@ -77,7 +79,7 @@ def validate_with_schema(data: dict, schema_path: str) -> dict:
 15类典型语法错误的自动修复规则：
 
 | 错误类型 | 修复策略 | 风险等级 |
-|----------|----------|----------|
+|---:|---:|---:|
 | 尾逗号 | 正则删除 | 低（安全） |
 | 单引号 | 替换为双引号 | 低（安全） |
 | 键名缺引号 | 补双引号 | 低（安全） |
@@ -96,7 +98,7 @@ def validate_with_schema(data: dict, schema_path: str) -> dict:
 
 ```python
 import ijson
-
+# ...
 def stream_validate(json_path: str, expected_keys: list = None) -> dict:
     """流式校验GB级JSON，常量内存"""
     with open(json_path, 'rb') as f:
@@ -129,32 +131,32 @@ import time, hashlib, json
 from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-
+# ...
 STATE_FILE = '.validator_state.json'
-
+# ...
 class JsonWatchHandler(FileSystemEventHandler):
     def __init__(self, schema=None):
         self.schema = schema
         self.state = self.load_state()
-    
+# ...
     def on_modified(self, event):
         if event.src_path.endswith('.json'):
             self.validate_and_record(event.src_path)
-    
+# ...
     def validate_and_record(self, path: str):
         result = validate_one(path)  # 复用批量校验函数
         print(f"[{time.strftime('%H:%M:%S')}] {path}: {result['status']}")
         self.state[path] = {'last_checked': time.time(), 'status': result['status']}
         self.save_state()
-    
+# ...
     def load_state(self):
         if Path(STATE_FILE).exists():
             return json.loads(Path(STATE_FILE).read_text())
         return {}
-    
+# ...
     def save_state(self):
         Path(STATE_FILE).write_text(json.dumps(self.state, indent=2))
-
+# ...
 # 启动监控
 observer = Observer()
 observer.schedule(JsonWatchHandler(), path='./data', recursive=True)
@@ -256,9 +258,9 @@ Agent会按本工具的批量校验模板输出：
 import json, glob, jsonschema
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
-
+# ...
 SCHEMA = json.loads(Path('user-schema.json').read_text(encoding='utf-8'))
-
+# ...
 def validate_one(json_path: str) -> dict:
     """单文件语法+Schema双重校验"""
     try:
@@ -270,12 +272,12 @@ def validate_one(json_path: str) -> dict:
     except jsonschema.ValidationError as e:
         return {'file': json_path, 'status': 'schema_error', 'path': '.'.join(map(str, e.path)), 'msg': e.message}
     return {'file': json_path, 'status': 'ok'}
-
+# ...
 # 并行批量校验
 files = glob.glob('./data/**/*.json', recursive=True)
 with ThreadPoolExecutor(max_workers=8) as pool:
     results = list(pool.map(validate_one, files))
-
+# ...
 # 输出报告
 ok = [r for r in results if r['status'] == 'ok']
 syntax_err = [r for r in results if r['status'] == 'syntax_error']
@@ -293,37 +295,37 @@ for r in schema_err:
 
 ```python
 import re, json
-
+# ...
 def auto_fix_json(content: str) -> dict:
     """自动修复15类典型JSON语法错误"""
     original = content
     fixes = []
-    
+# ...
     # 1. 删除尾逗号（对象/数组末尾）
     fixed = re.sub(r',\s*([}\]])', r'\1', content)
     if fixed != content:
         fixes.append('删除尾逗号')
         content = fixed
-    
+# ...
     # 2. 单引号转双引号
     fixed = re.sub(r"'([^']*)':", r'"\1":', content)
     if fixed != content:
         fixes.append('单引号转双引号')
         content = fixed
-    
+# ...
     # 3. 键名补双引号（无引号的键名）
     fixed = re.sub(r'([{,]\s*)([a-zA-Z_]\w*):', r'\1"\2":', content)
     if fixed != content:
         fixes.append('键名补双引号')
         content = fixed
-    
+# ...
     # 4. 删除注释（// 和 /* */）
     fixed = re.sub(r'//.*?$', '', content, flags=re.MULTILINE)
     fixed = re.sub(r'/\*.*?\*/', '', fixed, flags=re.DOTALL)
     if fixed != content:
         fixes.append('删除注释')
         content = fixed
-    
+# ...
     # 5. 验证修复结果
     try:
         data = json.loads(content)
@@ -336,7 +338,7 @@ def auto_fix_json(content: str) -> dict:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | json-validator处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -383,9 +385,8 @@ def auto_fix_json(content: str) -> dict:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -398,9 +399,9 @@ def auto_fix_json(content: str) -> dict:
 - **Python**: 3.8+（推荐3.10+）
 - **Node.js**: 16+（若使用Node.js模板）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
 | jsonschema | Python库 | 必需 | `pip install jsonschema`（Schema校验） |
 | ijson | Python库 | 必需 | `pip install ijson`（流式校验） |
@@ -425,14 +426,14 @@ def auto_fix_json(content: str) -> dict:
 ### 示例1：基础用法
 
 ```
-### 60秒上手：批量校验+Schema校验
-
+### 60秒上手：批量校验+Schema校验(补充)
+# ...
 直接对Agent说：
-
+# ...
 > "帮我校验 ./data 目录下所有JSON，按 user-schema.json 校验结构。"
-
+# ...
 Agent会按本工具的批量校验模板输出：
-
+# ...
 ```python
 import json, glob, jsonschema
 from pathlib import Path
@@ -447,59 +448,60 @@ def validate_one(json_path: str) -> dict:
     except json.JSONDecodeError as e:
         ret
 ```
-
+# ...
 ## 常见问题
-
+# ...
 ### Q1：专业版能校验多大的JSON文件？
-
+# ...
 专业版采用流式校验，理论上无大小限制。实测单文件5GB（约5000万行）可在10分钟内完成校验，内存占用稳定在100MB以内。建议单文件不超过20GB，超过则按对象拆分后并行校验。
-
+# ...
 ### Q2：自动修复会修改原文件吗？
-
+# ...
 会。专业版默认修复后覆盖原文件，但修复前自动备份到 `.json.bak`。可通过 `--dry-run` 参数仅预览修复结果不实际修改。建议CI/CD中用 `--dry-run`，本地用实际修复。
-
+# ...
 ### Q3：Schema校验支持自定义关键词吗？
-
+# ...
 支持。专业版用 `jsonschema.Draft7Validator`，可通过 `extend` 添加自定义关键词校验器。常见自定义关键词：`x-business-rule`（业务规则校验）、`x-regex-pattern`（正则校验）、`x-foreign-key`（外键校验）。
-
+# ...
 ### Q4：流式校验能检测所有语法错误吗？
-
+# ...
 不能。流式校验主要检测结构性错误（括号不匹配、深度异常、截断）。细粒度语法错误（如字符串内未转义字符）需完整解析才能发现。建议先用流式校验快速筛查，对可疑文件再用完整解析校验。
-
+# ...
 ### Q5：CI门禁如何与代码审查集成？
-
+# ...
 专业版支持GitHub Pull Request审查集成：校验失败自动在PR中评论错误详情，并标记为"请求变更"。审查者可在PR界面直接查看错误位置与修复建议，无需切换到CI日志。
-
+# ...
 ### Q6：持续监控如何避免重复校验？
-
+# ...
 专业版基于文件哈希（MD5）做变更检测，文件内容未变则不重复校验。状态文件记录每个文件的哈希值与上次校验时间，仅哈希变化时触发校验。
-
+# ...
 ### Q7：批量校验报告支持哪些格式？
-
+# ...
 支持JSON、HTML、Markdown、CSV四种格式。JSON格式便于程序处理；HTML格式带高亮与可视化标记，便于人工审阅；Markdown格式适合嵌入PR评论；CSV格式适合导入Excel统计。
-
+# ...
 ### Q8：专业版与免费版的脚本可以混用吗？
-
+# ...
 可以。专业版兼容免费版的所有模板，免费版的单文件校验脚本在专业版环境下可直接运行。反向不兼容：专业版的批量、Schema、自动修复脚本依赖额外库，在免费版环境下需先安装依赖。
-
+# ...
 ### Q9：如何统计JSON质量趋势？
-
+# ...
 专业版每次校验后写入 `.quality_metrics.jsonl`（每行一个JSON记录，含时间戳、文件数、错误数、错误类型分布）。可用 `jq` 或Grafana可视化质量趋势，发现质量退化及时干预。
-
+# ...
 ### Q10：专业版如何与数据目录（Data Catalog）集成？
-
+# ...
 专业版提供DataHub与OpenMetadata的集成模板：校验通过后自动注册到数据目录，含Schema、质量评分、校验历史。校验失败则标记数据目录中的资产为"质量异常"。
-
+# ...
 ## 错误处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+# ...
 ## 已知限制
-
+# ...
 - 需要API Key，无Key环境无法使用
+# ...

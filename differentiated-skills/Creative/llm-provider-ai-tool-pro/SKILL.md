@@ -32,6 +32,8 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # llm-provider 助手工具 - 专业版
 
@@ -46,7 +48,7 @@ llm-provider 助手工具(专业版)为团队与企业用户提供 llm-provider 
 ### 免费版 vs 专业版能力对比
 
 | 能力分类 | 免费版 | 专业版 | 增量价值 |
-|:---------|:-------|:-------|:---------|
+|----|---|---|----|
 | 对话补全 | 支持 | 支持 | - |
 | 文本嵌入 | 支持 | 支持 | - |
 | 文件上传 | 支持 | 支持 | - |
@@ -91,9 +93,9 @@ llm-provider 助手工具(专业版)为团队与企业用户提供 llm-provider 
 import os
 import json
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider()
-
+# ...
 # 1. 准备批量请求文件(JSONL 格式)
 requests = []
 for i, text in enumerate(long_text_list):
@@ -109,14 +111,14 @@ for i, text in enumerate(long_text_list):
             ]
         }
     })
-
+# ...
 # 2. 写入 JSONL 并上传
 with open("batch_input.jsonl", "w") as f:
     for r in requests:
         f.write(json.dumps(r) + "\n")
-
+# ...
 file = client.files.create(file=open("batch_input.jsonl", "rb"), purpose="batch")
-
+# ...
 # 3. 创建批量任务
 batch = client.batches.create(
     input_file_id=file.id,
@@ -124,7 +126,7 @@ batch = client.batches.create(
     completion_window="24h",
     metadata={"project": "content-review"}
 )
-
+# ...
 # 4. 轮询状态
 import time
 while batch.status not in ("completed", "failed", "cancelled"):
@@ -143,7 +145,7 @@ curl -X POST "https://api.llm-provider.com/v1/files" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -F "purpose=fine-tune" \
   -F "file=@./training_data.jsonl"
-
+# ...
 # 2. 创建微调任务
 curl -X POST "https://api.llm-provider.com/v1/fine_tuning/jobs" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
@@ -155,7 +157,7 @@ curl -X POST "https://api.llm-provider.com/v1/fine_tuning/jobs" \
     "hyperparameters": {"n_epochs": 3, "batch_size": "auto"},
     "suffix": "legal-advisor"
   }'
-
+# ...
 # 3. 查询检查点
 curl "https://api.llm-provider.com/v1/fine_tuning/jobs/ftjob-abc/checkpoints" \
   -H "Authorization: Bearer $OPENAI_API_KEY"
@@ -167,12 +169,12 @@ curl "https://api.llm-provider.com/v1/fine_tuning/jobs/ftjob-abc/checkpoints" \
 
 ```python
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider()
-
+# ...
 # 1. 创建向量存储
 vs = client.vector_stores.create(name="企业知识库-2026")
-
+# ...
 # 2. 批量上传文件并关联
 import glob
 for path in glob.glob("./docs/*.pdf"):
@@ -181,7 +183,7 @@ for path in glob.glob("./docs/*.pdf"):
         vector_store_id=vs.id,
         file_id=file.id
     )
-
+# ...
 # 3. 创建绑定向量存储的助手
 assistant = client.beta.assistants.create(
     name="企业知识助手",
@@ -191,7 +193,7 @@ assistant = client.beta.assistants.create(
         "file_search": {"vector_store_ids": [vs.id]}
     }
 )
-
+# ...
 # 常见问题
 thread = client.beta.threads.create()
 client.beta.threads.messages.create(
@@ -263,7 +265,7 @@ curl -X POST "https://api.llm-provider.com/v1/batches" \
 ```python
 import os
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider(
     api_key=os.environ["OPENAI_API_KEY"],
     organization=os.environ["OPENAI_ORG_ID"],
@@ -271,7 +273,7 @@ client = llm-provider(
     max_retries=5,
     timeout=120.0,
 )
-
+# ...
 # 配置默认请求头(审计追踪)
 client.with_options(
     default_headers={"X-Team": "content-ops", "X-Env": "production"}
@@ -283,14 +285,14 @@ client.with_options(
 ```python
 import time
 from llm-provider import llm-provider
-
+# ...
 client = llm-provider()
-
+# ...
 class AsyncTaskManager:
     """异步任务统一管理器,支持 batch / fine-tune / video"""
-
+# ...
     POLL_INTERVAL = 30
-
+# ...
     def wait_for_batch(self, batch_id, timeout=86400):
         deadline = time.time() + timeout
         while time.time() < deadline:
@@ -301,7 +303,7 @@ class AsyncTaskManager:
                 return batch
             time.sleep(self.POLL_INTERVAL)
         raise TimeoutError(f"批量任务 {batch_id} 超时")
-
+# ...
     def wait_for_fine_tune(self, job_id, timeout=86400):
         deadline = time.time() + timeout
         while time.time() < deadline:
@@ -345,7 +347,7 @@ evaluation = client.evals.create(
         "choice_scores": {"1": "差", "2": "一般", "3": "好"}
     }
 )
-
+# ...
 # 运行评估
 run = client.evals.runs.create(
     eval_id=evaluation.id,
@@ -402,7 +404,7 @@ run = client.evals.runs.create(
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | llm-provider Python SDK | Python 库 | 必需 | `pip install llm-provider>=1.50` |
 | llm-provider Node SDK | npm 库 | 必需(Node 场景) | `npm install llm-provider` |
 | curl | 命令行工具 | 推荐 | 系统自带 |
@@ -425,9 +427,8 @@ run = client.evals.runs.create(
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

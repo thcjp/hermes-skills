@@ -18,11 +18,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L2-标准级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "19.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # 飞书卡片免费版
 
 **版本**: 1.0.0
@@ -114,7 +115,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 飞书卡片免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -128,7 +129,7 @@ function greet(name) {
 }
 \`\`\`
 请各位review以上代码。"
-
+# ...
 # 使用文件发送卡片
 node skills/feishu-card-builder/send.js \
   --target "oc_xxxxxxx" \
@@ -196,7 +197,7 @@ write temp/msg.md "这里有一些代码：
 \`\`\`python
 print('hello')
 \`\`\`"
-
+# ...
 # 使用文件发送
 node skills/feishu-card-builder/send.js --target "ou_xxxxxxx" --text-file "temp/msg.md"
 ```
@@ -228,11 +229,11 @@ node skills/feishu-card-builder/send_safe.js \
 ```bash
 # 错误做法：直接用 --text 传递含反引号的内容
 # node send.js --text "代码: `code`"  # 反引号会被 shell 吞掉
-
+# ...
 # 正确做法1：写入文件后用 --text-file 发送
 write temp/msg.md "代码: \`code\`"
 node skills/feishu-card-builder/send.js --target "ou_xxx" --text-file "temp/msg.md"
-
+# ...
 # 正确做法2：使用 send_safe.js 自动处理
 node skills/feishu-card-builder/send_safe.js --target "ou_xxx" --text "代码: \`code\`"
 ```
@@ -242,19 +243,19 @@ node skills/feishu-card-builder/send_safe.js --target "ou_xxx" --text "代码: \
 ```bash
 # 结构化 Markdown 内容
 write temp/report.md "## 本周进展
-
+# ...
 ### 已完成
 - 功能A开发完成
 - Bug修复12个
-
+# ...
 ### 进行中
 - 性能优化
-
+# ...
 \`\`\`bash
 # 部署命令
 npm run deploy
 \`\`\`"
-
+# ...
 node skills/feishu-card-builder/send.js \
   --target "oc_xxx" \
   --text-file "temp/report.md" \
@@ -273,7 +274,7 @@ node skills/feishu-card-builder/send.js \
 ```bash
 # 确保图片大小合理（建议不超过1MB）
 ls -lh chart.png
-
+# ...
 # 发送带图片的卡片
 node skills/feishu-card-builder/send.js \
   --target "oc_xxx" \
@@ -301,7 +302,7 @@ node skills/feishu-card-builder/send.js \
 # 使用文件方式
 write temp/msg.md "代码: \`code\`"
 node skills/feishu-card-builder/send.js --target "ou_xxx" --text-file "temp/msg.md"
-
+# ...
 # 或使用安全发送
 node skills/feishu-card-builder/send_safe.js --target "ou_xxx" --text "代码: \`code\`"
 ```
@@ -313,7 +314,7 @@ node skills/feishu-card-builder/send_safe.js --target "ou_xxx" --text "代码: \
 ```bash
 # 确认文件存在
 ls -la path/to/image.png
-
+# ...
 # 确认格式支持（PNG/JPG）
 file image.png
 ```
@@ -335,7 +336,7 @@ file image.png
 ```bash
 # 使用完整 URL
 --button-url "https://example.com/page"
-
+# ...
 # 确认链接可访问
 curl -I https://example.com/page
 ```
@@ -348,7 +349,7 @@ curl -I https://example.com/page
 # 拆分长内容
 write temp/part1.md "第一部分内容..."
 write temp/part2.md "第二部分内容..."
-
+# ...
 node send.js --target "oc_xxx" --text-file "temp/part1.md" --title "报告 (1/2)"
 node send.js --target "oc_xxx" --text-file "temp/part2.md" --title "报告 (2/2)"
 ```
@@ -367,7 +368,7 @@ node send.js --target "oc_xxx" --text-file "temp/part2.md" --title "报告 (2/2)
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | feishu-common | 模块 | 必需 | 飞书通用认证模块 |
@@ -388,9 +389,8 @@ node send.js --target "oc_xxx" --text-file "temp/part2.md" --title "报告 (2/2)
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

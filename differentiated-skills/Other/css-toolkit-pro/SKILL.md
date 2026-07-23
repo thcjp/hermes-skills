@@ -22,6 +22,8 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # CSS 工具箱（专业版）
 
@@ -34,7 +36,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力域 | 说明 | 专业版独有 |
-|--------|------|-----------|
+|---|---|-----|
 | 陷阱速查 | 层叠上下文、Flex/Grid、选择器 | 否（免费版可用） |
 | 性能优化 | contain、content-visibility、will-change | 是 |
 | 无障碍设计 | reduced-motion、color-scheme、forced-colors | 是 |
@@ -97,7 +99,7 @@ pricing_model: "per_use"
     transition-duration: 0.01ms !important;
   }
 }
-
+// ...
 /* 暗色模式自适应 */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -105,7 +107,7 @@ pricing_model: "per_use"
     --text: #e2e8f0;
   }
 }
-
+// ...
 /* Windows 高对比度模式 */
 @media (forced-colors: active) {
   .icon { forced-color-adjust: none; }
@@ -121,16 +123,16 @@ pricing_model: "per_use"
   /* 第一层：原始令牌 */
   --color-blue-500: #3b82f6;
   --space-4: 1rem;
-
+// ...
   /* 第二层：语义令牌 */
   --color-primary: var(--color-blue-500);
   --spacing-base: var(--space-4);
-
+// ...
   /* 第三层：组件令牌 */
   --button-bg: var(--color-primary);
   --button-padding: var(--spacing-base);
 }
-
+// ...
 /* 暗色主题覆盖语义层 */
 [data-theme="dark"] {
   --color-primary: #60a5fa;
@@ -145,7 +147,7 @@ pricing_model: "per_use"
 ```css
 /* 现代浏览器：原生 :has() */
 .card:has(img) { padding: 0; }
-
+// ...
 /* 降级：旧浏览器通过类名模拟 */
 .card.has-image { padding: 0; }
 ```
@@ -188,7 +190,7 @@ if (!CSS.supports('selector(:has(*))')) {
 ### 按角色快速入口
 
 | 角色 | 推荐入口 | 典型问题 |
-|------|----------|----------|
+|:-----|:-----|:-----|
 | 开发者 | 性能优化 / 陷阱速查 | 渲染卡顿、布局错乱 |
 | 设计师 | 设计系统 / 无障碍 | 主题管理、对比度合规 |
 | 架构师 | 设计系统 / 兼容性 | 变量分层、降级策略 |
@@ -197,7 +199,6 @@ if (!CSS.supports('selector(:has(*))')) {
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 ### 性能优化清单
@@ -205,17 +206,17 @@ if (!CSS.supports('selector(:has(*))')) {
 ```css
 /* contain 隔离独立组件重绘 */
 .widget { contain: layout style paint; }
-
+// ...
 /* content-visibility 跳过屏幕外渲染 */
 .lazy-section {
   content-visibility: auto;
   contain-intrinsic-size: 500px;
 }
-
+// ...
 /* will-change 谨慎使用，避免内存浪费 */
 .animated { will-change: transform; }
 /* 动画结束后移除 will-change */
-
+// ...
 /* 避免布局抖动：批量读写 DOM */
 /* 错误：交替读写触发强制回流 */
 /* 正确：先读后写，或使用 requestAnimationFrame */
@@ -226,16 +227,16 @@ if (!CSS.supports('selector(:has(*))')) {
 ```css
 /* 平滑滚动 */
 html { scroll-behavior: smooth; }
-
+// ...
 /* 防止滚动链到父级 */
 .scroll-area { overscroll-behavior: contain; }
-
+// ...
 /* 原生轮播：滚动捕获 */
 .carousel {
   scroll-snap-type: x mandatory;
 }
 .carousel-item { scroll-snap-align: center; }
-
+// ...
 /* 预留滚动条空间，防止布局偏移 */
 body { scrollbar-gutter: stable; }
 ```
@@ -245,10 +246,10 @@ body { scrollbar-gutter: stable; }
 ```css
 /* inset 简写 */
 .fixed-overlay { inset: 0; }
-
+// ...
 /* place-items = align-items + justify-items */
 .center-all { place-items: center; }
-
+// ...
 /* 逻辑属性支持 RTL */
 .sidebar { margin-inline-end: 16px; padding-block-start: 24px; }
 ```
@@ -256,7 +257,7 @@ body { scrollbar-gutter: stable; }
 ### 兼容性矩阵（部分）
 
 | 特性 | Chrome | Safari | Firefox | 降级方案 |
-|------|--------|--------|---------|----------|
+|---:|---:|---:|---:|---:|
 | `:has()` | 105+ | 15.4+ | 121+ | JS 类名模拟 |
 | `content-visibility` | 85+ | 18+ | 125+ | 正常渲染（无优化） |
 | `container` 查询 | 105+ | 16+ | 110+ | 媒体查询 |
@@ -358,7 +359,7 @@ Safari 对 `scroll-snap-type` 的实现与 Chrome 存在差异。建议同时设
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本兼容性 |
-|:-------|:-----|:---------|:---------|:-----------|
+|:---:|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 | 不限 |
 | Stylelint | 工具 | 推荐 | `npm install stylelint` | 15+ |
 | Axe-core | 工具 | 无障碍审计推荐 | `npm install axe-core` | 4+ |
@@ -391,7 +392,7 @@ Safari 对 `scroll-snap-type` 的实现与 Chrome 存在差异。建议同时设
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:------|------:|:------|:------|
 | 免费体验版 | 0 元 | 陷阱速查 + 基础现代特性 | 个人开发者 |
 | 收费专业版 | 19.9 元/月 | 全功能 + 工程化指南 + 优先支持 | 团队/企业 |
 
@@ -399,9 +400,8 @@ Safari 对 `scroll-snap-type` 的实现与 Chrome 存在差异。建议同时设
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

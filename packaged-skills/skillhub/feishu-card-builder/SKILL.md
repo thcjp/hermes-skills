@@ -23,22 +23,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # 飞书卡片专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -145,7 +147,7 @@ node skills/feishu-card-builder/batch-send.js \
   --template templates/salary_card.json \
   --rate-limit 20 \
   --dry-run
-
+# ...
 # 正式发送
 node skills/feishu-card-builder/batch-send.js \
   --recipients employees.csv \
@@ -161,7 +163,7 @@ node skills/feishu-card-builder/batch-send.js \
    收件人: 500
    模板: templates/salary_card.json
    速率: 20 条/分钟
-
+# ...
 [1/500] ✅ ou_001 - 张三 - 技术部
 [2/500] ✅ ou_002 - 李四 - 市场部
 ...
@@ -181,10 +183,10 @@ node skills/feishu-card-builder/schedule.js create \
   --template templates/monitor_report.json \
   --data-source "fetch_metrics.py" \
   --timezone "Asia/Shanghai"
-
+# ...
 # 查看定时任务
 node skills/feishu-card-builder/schedule.js list
-
+# ...
 # 查看任务历史
 node skills/feishu-card-builder/schedule.js history --name "daily-monitor-report"
 ```
@@ -235,7 +237,7 @@ node skills/feishu-card-builder/interactive-send.js \
 # 免费版命令依然有效
 node skills/feishu-card-builder/send.js --target "ou_详情见说明" --text "Hello"
 node skills/feishu-card-builder/send_safe.js --target "ou_详情见说明" --text "内容" --title "通知"
-
+# ...
 # 专业版新增命令
 node skills/feishu-card-builder/batch-send.js --recipients list.csv --template tpl.json
 node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明" --template tpl.json
@@ -275,7 +277,7 @@ node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | feishu-card-builder处理的内容输入 |,  |
 | content | string | 否 | feishu-card-builder处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -303,9 +305,8 @@ node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -319,9 +320,9 @@ node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明
 - **网络环境**: 需可访问飞书开放平台 API
 - **磁盘空间**: 模板与日志建议预留 500MB 以上
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | feishu-common | 模块 | 必需 | 飞书通用认证模块 |
@@ -391,8 +392,8 @@ node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明
 ## 常见问题
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -420,7 +421,7 @@ node skills/feishu-card-builder/template.js validate --name "通知" --data samp
 ```bash
 # 测试回调
 node skills/feishu-card-builder/interactive.js test-callback
-
+# ...
 # 查看回调日志
 node skills/feishu-card-builder/interactive.js callback-log
 ```
@@ -449,17 +450,14 @@ node skills/feishu-card-builder/schedule.js status --name "daily-report"
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|-------:|:-------|-------:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

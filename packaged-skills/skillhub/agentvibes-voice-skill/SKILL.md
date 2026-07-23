@@ -20,6 +20,8 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # AgentVibes TTS
 
@@ -27,11 +29,10 @@ AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供
 
 **范围外**（本技能不做）: 实时语音识别（STT）、语音克隆训练、商业有声书分发。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | AgentVibes TTS语音处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -39,7 +40,7 @@ AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | 高清分辨率与无损输出 | 不支持 | 支持 |
 | 批量生成与风格预设 | 不支持 | 支持 |
@@ -54,7 +55,7 @@ AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -62,7 +63,6 @@ AgentVibes 是多 Provider 文本转语音（TTS）客户端,为 AI Agent 提供
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -73,7 +73,6 @@ export API_KEY="your_api_key_here"
 ## 核心能力
 
 ### 声音命令
-
 
 **输入**: 用户提供声音命令所需的指令和必要参数。
 **处理**: 解析声音命令的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -117,7 +116,6 @@ export API_KEY="your_api_key_here"
 **输出**: 返回个性与风格的处理结果,包含执行状态码、结果数据和执行日志。
 
 ### 语速与效果
-
 
 **输入**: 用户提供语速与效果所需的指令和必要参数。
 **处理**: 解析语速与效果的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -184,7 +182,6 @@ export API_KEY="your_api_key_here"
 
 ### 语言与学习
 
-
 **输入**: 用户提供语言与学习所需的指令和必要参数。
 **处理**: 解析语言与学习的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回语言与学习的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
@@ -226,15 +223,15 @@ export API_KEY="your_api_key_here"
 ## Provider 概览
 
 | Provider | 平台 | 成本 | 声音数量 | 特点 |
-| :-- | :-- | :-- | :-- | :-- |
+|:-------:|:-------:|:-------:|:-------:|:-------:|
 | **Piper TTS** | 全平台 | 免费、离线 | 914+,30+ 语言 | 推荐,声音多样 |
 | **macOS Say** | 仅 macOS | 免费（内置） | 100+ 系统声音 | 零安装 |
 | **Windows SAPI** | 仅 Windows | 免费（内置） | 系统声音 | 零配置 |
 | **Soprano** | 全平台 | 免费 | 神经声音 | 高质量 |
 
-## 声音命令
+## 声音命令(补充)
 
-### 切换声音
+### 切换声音(补充)
 ```bash
 # 变体实现(与上文代码相似度100.0%,此处为AgentVibes TTS语音的差异化处理路径)
 /agent-vibes:switch en_US-amy-medium
@@ -242,7 +239,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:switch fr_FR-siwis-medium
 ```
 
-### 列出声音
+### 列出声音(补充)
 ```bash
 /agent-vibes:list                    # 列出全部声音
 /agent-vibes:list first 5            # 前 5 个
@@ -267,9 +264,9 @@ export API_KEY="your_api_key_here"
 /agent-vibes:set-favorite-voice      # 标记当前声音为收藏
 ```
 
-## 个性与风格
+## 个性与风格(补充)
 
-### 个性风格
+### 个性风格(补充)
 ```bash
 /agent-vibes:personality list          # 列出可用个性
 /agent-vibes:personality sarcastic     # 切换讽刺风格
@@ -283,9 +280,9 @@ export API_KEY="your_api_key_here"
 /agent-vibes:set-pretext ""            # 清空前缀
 ```
 
-## 语速与效果
+## 语速与效果(补充)
 
-### 语速控制（0.5x - 3.0x）
+### 语速控制（0.5x - 3.0x）(补充)
 ```bash
 # 变体实现(与上文代码相似度100.0%,此处为AgentVibes TTS语音的差异化处理路径)
 /agent-vibes:set-speed 1.0             # 正常
@@ -293,7 +290,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:set-speed 0.8             # 减速
 ```
 
-### 语音效果
+### 语音效果(补充)
 ```bash
 /agent-vibes:effects reverb hall       # 大厅混响
 /agent-vibes:effects reverb none       # 关闭混响
@@ -302,7 +299,7 @@ export API_KEY="your_api_key_here"
 
 支持效果: `reverb`（混响）、`echo`（回声）、`pitch`（音调）、`eq`（均衡器）。
 
-## 背景音乐
+## 背景音乐(补充)
 
 ```bash
 /agent-vibes:background-music on       # 启用
@@ -311,9 +308,9 @@ export API_KEY="your_api_key_here"
 /agent-vibes:background-music switch jazz  # 切换到爵士曲目
 ```
 
-## Verbosity 控制
+## Verbosity 控制(补充)
 
-## 静音与回放
+## 静音与回放(补充)
 
 ```bash
 /agent-vibes:mute                      # 静音（跨会话持久）
@@ -324,16 +321,16 @@ export API_KEY="your_api_key_here"
 
 回放缓存保留最近 10 条音频。
 
-## 语言与学习
+## 语言与学习(补充)
 
-### 设置母语
+### 设置母语(补充)
 ```bash
 # 变体实现(与上文代码相似度100.0%,此处为AgentVibes TTS语音的差异化处理路径)
 /agent-vibes:language english
 /agent-vibes:language japanese
 ```
 
-### 语言学习模式
+### 语言学习模式(补充)
 ```bash
 /agent-vibes:learn on                  # 启用双语播报（母语 + 目标语言）
 /agent-vibes:learn off                 # 关闭
@@ -344,7 +341,7 @@ export API_KEY="your_api_key_here"
 /agent-vibes:translate "Hello, how are you?"
 ```
 
-## Provider 管理
+## Provider 管理(补充)
 
 ```bash
 /agent-vibes:provider list             # 列出可用 Provider
@@ -357,7 +354,7 @@ export API_KEY="your_api_key_here"
 ## 默认声音（Piper TTS - 免费离线）
 
 | 语言 | 推荐声音 |
-| :-: | :-: |
+|:------|------:|
 | English (US) | en_US-lessac-medium · en_US-amy-medium · en_US-ryan-high · en_US-libritts-high（914 说话人） |
 | English (UK) | en_GB-alan-medium · en_GB-jenny_dioco-medium |
 | French | fr_FR-siwis-medium · fr_FR-gilles-low |
@@ -382,7 +379,7 @@ export API_KEY="your_api_key_here"
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及命令 |
-| --- | --: | :-- | :-: |
+|---:|:---|---:|---:|
 | 多语言声音切换与预览 | "切换到法语女声并预览" | 切换声音 + 播放采样 | switch + sample |
 | 个性化语音角色定制 | "设置戏剧化风格,加混响,语速 0.9" | 应用个性+效果+语速 | personality + effects + set-speed |
 | 语言学习双语播报 | "启用日语学习模式" | 母语+目标语言交替播报 | language + learn |
@@ -495,9 +492,8 @@ export API_KEY="your_api_key_here"
 
 ## 错误处理
 
-
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-| --: | :-- | :-: | --- |
+|:------:|--------|:-------|:------:|
 | piper_voice_not_downloaded | `voice file not found: en_US-amy-medium` | Piper 声音文件未下载 | 自动触发下载,或引导用户手动从 HuggingFace 拉取 |
 | macos_say_unavailable | `say command not found` | 在非 macOS 系统调用 macOS Say | 提示用户切换到 Piper 或 Soprano |
 | sapi_unavailable | `SAPI not available on this platform` | 在非 Windows 系统调用 Windows SAPI | 提示用户切换到 Piper 或 Soprano |

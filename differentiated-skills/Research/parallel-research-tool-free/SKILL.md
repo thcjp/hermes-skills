@@ -47,8 +47,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 并行研究助手（免费版）
 
 ## 概述
@@ -65,7 +66,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 并行研究助手免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -107,7 +108,7 @@ suggested_price: 29.9
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：开放式主题研究工、构建可持续维护的、支持交互式探索、并行研究助手免费、帮助用户围绕特定、主题开展开放式研、Markdown、核心能力、为每个研究主题创、建独立文件夹、结构化研究文档、后续步骤、定期综合检查点与、进度回顾等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
-### 核心功能执行
+### 核心功能执行(补充)
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
 **输入**: 用户提供核心功能执行所需的指令和必要参数。
@@ -123,7 +124,7 @@ suggested_price: 29.9
 
 ```text
 用户：new research: 2026年主流AI编程框架对比
-
+# ...
 Agent 执行流程：
 1. 创建研究文件夹 ~/.research-workspace/research/ai-coding-frameworks/
 2. 创建 prompt.md 记录原始问题
@@ -135,9 +136,9 @@ prompt.md 内容：
 
 ```markdown
 # AI编程框架对比研究
-
+# ...
 > 2026年主流AI编程框架有哪些？各自的优势和适用场景是什么？
-
+# ...
 **Started:** 2026-07-18
 ```
 
@@ -145,28 +146,28 @@ research.md 初始结构：
 
 ```markdown
 # AI编程框架对比研究
-
+# ...
 **Status:** Active Research
 **Started:** 2026-07-18
 **Last Updated:** 2026-07-18
-
+# ...
 ---
-
+# ...
 ## Open Questions
 - 主流框架有哪些？
 - 各框架的性能对比？
 - 社区活跃度和生态？
 - 学习曲线如何？
-
+# ...
 ## Findings
 <!-- 随研究进展填充 -->
-
+# ...
 ## Options / Approaches
 <!-- 方案对比 -->
-
+# ...
 ## Resources
 <!-- 链接、参考、来源 -->
-
+# ...
 ## Next Steps
 <!-- 下一步探索方向 -->
 ```
@@ -177,7 +178,7 @@ research.md 初始结构：
 
 ```text
 用户：new research: AI辅助编程工具的市场机会评估
-
+# ...
 Agent：
 1. 创建研究文件夹
 2. 初始化研究文档
@@ -195,12 +196,12 @@ Agent: 发现以下关键信息：
 - 全球AI编程工具市场规模约50亿美元（2026年）
 - 主要玩家：GitHub Copilot、Cursor、Codeium
 - 年增长率约35%
-
+# ...
 下一步你想深入哪个方面？
 1. 竞品详细分析
 2. 用户需求调研
 3. 商业模式对比
-
+# ...
 用户: 先深入竞品分析
 ```
 
@@ -210,7 +211,7 @@ Agent: 发现以下关键信息：
 
 ```text
 用户：new research: 大语言模型在医疗诊断中的应用现状
-
+# ...
 Agent：
 1. 创建研究文件夹
 2. 初始化包含学术文献结构的文档
@@ -263,10 +264,10 @@ Agent 会：
 ```text
 # 标记为已完成
 archive
-
+# ...
 # 或标记为持续更新
 （保持 Status: Ongoing）
-
+# ...
 # 导出PDF
 export pdf
 ```
@@ -279,31 +280,31 @@ export pdf
 ```bash
 # 创建研究工作区
 mkdir -p ~/.research-workspace/research
-
+# ...
 # 配置研究偏好
 cat > ~/.research-workspace/config.yaml << 'EOF'
 # 免费版研究配置
 edition: free
 version: "1.0.0"
-
+# ...
 workspace:
   path: "~/.research-workspace/research"
   naming: "slug"  # 文件夹命名方式
-
+# ...
 document:
   template: "default"
   language: "zh-CN"
   include_metadata: true
-
+# ...
 research:
   mode: "interactive"  # 免费版仅支持交互式
   max_concurrent: 1    # 单主题研究
   checkpoint_interval: 5  # 每5轮建议综合检查
-
+# ...
 export:
   format: "pdf"
   tool: "pandoc"
-
+# ...
 naming:
   slug_method: "kebab-case"
   max_length: 50
@@ -314,40 +315,40 @@ EOF
 
 ```markdown
 # {Topic Title}
-
+# ...
 **Status:** Active Research
 **Started:** {date}
 **Last Updated:** {date}
-
+# ...
 ---
-
+# ...
 ## 研究问题
 {核心研究问题}
-
-## Open Questions
+# ...
+## Open Questions(续1)
 - {待探索的问题}
-
-## Findings
+# ...
+## Findings(续1)
 ### {发现主题1}
 - {具体发现}（来源：{link}）
-
+# ...
 ### {发现主题2}
 - {具体发现}（来源：{link}）
-
-## Options / Approaches
+# ...
+## Options / Approaches(续1)
 | 方案 | 优势 | 劣势 | 适用场景 |
-|:-----|:-----|:-----|:---------|
+|:-----|:-----|:-----|:-----|
 | {方案A} | ... | ... | ... |
 | {方案B} | ... | ... | ... |
-
-## Resources
+# ...
+## Resources(续1)
 - [资源名称](链接) - 说明
 - [论文/报告](链接) - 说明
-
-## Next Steps
+# ...
+## Next Steps(续1)
 - {下一步探索方向}
 - {待验证的假设}
-
+# ...
 ## Research Log
 - {date}: 开始研究
 - {date}: 完成{某方面}调研
@@ -360,7 +361,7 @@ EOF
 ```text
 # 推荐 - 问题明确
 new research: Rust vs Go在微服务后端开发中的性能对比
-
+# ...
 # 不推荐 - 问题模糊
 new research: 编程语言
 ```
@@ -370,10 +371,10 @@ new research: 编程语言
 ```text
 # 先广度搜索
 帮我先搜索这个领域的主要参与者
-
+# ...
 # 再深度分析
 深入分析第一个发现的细节
-
+# ...
 # 最后综合
 帮我综合所有发现，写一个当前理解的总结
 ```
@@ -383,7 +384,7 @@ new research: 编程语言
 ```text
 # 每5-10轮交互后
 summarize
-
+# ...
 # Agent会：
 # - 撰写综合总结
 # - 清理冗余信息
@@ -436,7 +437,7 @@ PDF 导出需要安装 pandoc 和 PyMuPDF。可通过系统包管理器安装。
 ### Q5：免费版与 PRO 版本的区别？
 
 | 对比项 | 免费版 | PRO 版本 |
-|:-------|:-------|:---------|
+|---:|---:|---:|
 | 研究模式 | 交互式 | 交互式+深度异步 |
 | 并发主题 | 1个 | 10+个并行 |
 | 处理器等级 | 不适用 | lite-ultra8x可选 |
@@ -458,7 +459,7 @@ PDF 导出需要安装 pandoc 和 PyMuPDF。可通过系统包管理器安装。
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | 网络搜索 | 服务 | 必需 | Agent 内置搜索能力 |
 | 本地文件系统 | 存储 | 必需 | 操作系统提供 |
@@ -473,7 +474,7 @@ PDF 导出需要安装 pandoc 和 PyMuPDF。可通过系统包管理器安装。
 ```bash
 # 验证工作区可写
 mkdir -p ~/.research-workspace/research && echo "ok"
-
+# ...
 # 验证PDF导出工具（可选）
 pandoc --version 2>/dev/null && echo "pandoc就绪" || echo "pandoc未安装（PDF导出不可用）"
 ```
@@ -487,9 +488,8 @@ pandoc --version 2>/dev/null && echo "pandoc就绪" || echo "pandoc未安装（P
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

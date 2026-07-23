@@ -32,6 +32,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "上下文管理,AI,工具"
 ---
 # 上下文驱动开发（专业版）
 
@@ -114,21 +116,11 @@ pricing_model: "per_use"
 
 `为现有项目建立上下文
 
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
-
 ### 场景3：AI开发对齐
 
 通过上下文文档确保AI助手在不同会话中产出一致结果。**示例指令**：`
 
 `确保AI开发一致性
-
-**操作流程**：
-1. 识别用户需求类型
-2. 加载对应处理模块
-3. 执行操作并返回结果
 
 ## 快速开始
 
@@ -142,7 +134,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 上下文驱动开发（专业版）处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -150,7 +142,7 @@ pricing_model: "per_use"
 ```bash
 # 确保Python环境可用
 python3 --version
-
+# ...
 # 依赖说明
 pip install requests
 ```
@@ -165,7 +157,7 @@ from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass, field
 from typing import Dict, Optional
-
+# ...
 @dataclass
 class ContextArtifact:
     name: str
@@ -173,13 +165,13 @@ class ContextArtifact:
     last_updated: str
     content_hash: str
     validated: bool = False
-
+# ...
 class ContextDrivenDev:
     def __init__(self, project_root: str):
         self.project_root = Path(project_root)
         self.context_dir = self.project_root / "context"
         self.artifacts: Dict[str, ContextArtifact] = {}
-
+# ...
     def initialize_greenfield(self, project_name: str, tech_stack: dict):
         """新项目上下文初始化（PRO 专属）"""
         self.context_dir.mkdir(exist_ok=True)
@@ -188,7 +180,7 @@ class ContextDrivenDev:
         self._create_workflow_md()
         self._create_tracks_md()
         return self.validate_context()
-
+# ...
     def analyze_brownfield(self) -> dict:
         """现有项目上下文提取（PRO 专属）"""
         analysis = {
@@ -198,7 +190,7 @@ class ContextDrivenDev:
             "product_info": self._infer_product()
         }
         return analysis
-
+# ...
     def _extract_dependencies(self) -> list:
         deps = []
         dep_files = ["package.json", "requirements.txt", "go.mod", "Cargo.toml"]
@@ -207,7 +199,7 @@ class ContextDrivenDev:
             if path.exists():
                 deps.append({"file": dep_file, "found": True})
         return deps
-
+# ...
     def validate_context(self) -> dict:
         required = ["product.md", "tech-stack.md", "workflow.md", "tracks.md"]
         result = {"valid": True, "missing": [], "stale": []}
@@ -217,7 +209,7 @@ class ContextDrivenDev:
                 result["missing"].append(doc)
                 result["valid"] = False
         return result
-
+# ...
 cdd = ContextDrivenDev("./my-project")
 cdd.initialize_greenfield("MyApp", {"language": "Python", "framework": "FastAPI"})
 print(cdd.validate_context())
@@ -266,7 +258,7 @@ context:
 ### 配置说明
 
 | 配置项 | 说明 | 默认值 |
-|:-------|:-----|:-------|
+|:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 | 批量大小 | 单批处理数量 | `10` |
@@ -278,7 +270,7 @@ context:
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---:|---:|---:|
 | 基础功能 | 支持 | 支持 |
 | 批量操作 | 不支持 | 支持 |
 | 并行处理 | 不支持 | 支持 |
@@ -350,7 +342,7 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -363,9 +355,8 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -39,8 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # Hugo 博客发布工具（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 典型用法 |
-| --- | --- | --- |
+|----|---|----|
 | 内容分析 | 自动提取标题、标签、分类 | `帮我发布这篇博客` |
 | Front Matter 生成 | 生成 Hugo 标准格式 | 自动创建 YAML 头部 |
 | 截断标记 | 自动添加 `<!--more-->` | 列表页显示摘要 |
@@ -91,18 +92,18 @@ suggested_price: 29.9
 
 ```text
 用户：帮我发布这篇 blog（附文章内容）
-
+# ...
 助手：自动完成以下步骤
-
+# ...
 1. 分析内容
    - 标题：从内容中提取
    - 标签：根据主题判断（如 AI → ["ai"]）
    - 分类：根据类型判断（如技术文章 → ["tech"]）
-
+# ...
 2. 生成文件名
    - 格式：content/posts/{slug}.md
    - slug：标题转为 URL 友好格式（小写、连字符）
-
+# ...
 3. 渲染 Front Matter
    ---
    title: "文章标题"
@@ -112,16 +113,16 @@ suggested_price: 29.9
    categories: ["tech"]
    description: "文章描述"
    ---
-
+# ...
 4. 添加截断标记
    在第一段后添加 <!--more-->
-
+# ...
 5. Git 推送
    cd {博客路径}
    git add content/posts/{文件名}
    git commit -m "新增：{文章标题}"
    git push
-
+# ...
 6. 返回部署链接
 ```
 
@@ -133,7 +134,7 @@ suggested_price: 29.9
 # frontmatter 中使用英文 slug
 # tags: ["ssg", "ssr"]
 # categories: ["tech"]
-
+# ...
 # 如果遇到新标签没有映射文件，创建 _index.md
 # 标签映射文件
 cat > content/tags/new-tag/_index.md << 'EOF'
@@ -141,7 +142,7 @@ cat > content/tags/new-tag/_index.md << 'EOF'
 title: "新标签中文名"
 ---
 EOF
-
+# ...
 # 分类映射文件
 cat > content/categories/new-category/_index.md << 'EOF'
 ---
@@ -158,13 +159,13 @@ EOF
 # 1. 本地预览
 cd {博客路径}
 hugo server -D  # -D 包含草稿
-
+# ...
 # 2. 浏览器访问 http://localhost:1313 预览
-
+# ...
 # 3. 确认无误后发布
 # 将 draft 改为 false
 sed -i 's/draft: true/draft: false/' content/posts/{文件名}.md
-
+# ...
 # 4. 推送发布
 git add content/posts/{文件名}.md
 git commit -m "新增：{文章标题}"
@@ -207,7 +208,7 @@ description: "文章描述"
 ### 常用分类速查
 
 | Slug | 中文显示 |
-| --- | --- |
+|:-----|:-----|
 | tech | 技术 |
 | photo | 摄影 |
 | ai | AI |
@@ -220,8 +221,8 @@ description: "文章描述"
 
 ### 常用标签速查
 
-| Slug | 中文显示 |
-| --- | --- |
+| Slug(续)| 中文显示 |
+|-----:|-----:|
 | ai | AI |
 | llm | 大语言模型 |
 | agent | 智能体 |
@@ -255,11 +256,11 @@ draft: false
 tags: ["programming"]
 categories: ["tech"]
 ---
-
+# ...
 这是文章的导言部分，会在列表页显示。
-
+# ...
 <!--more-->
-
+# ...
 这是正文内容，不会在列表页显示。
 ```
 
@@ -268,13 +269,13 @@ categories: ["tech"]
 ```bash
 # 从博客目录自动检测 git 状态并推送
 cd {博客路径}
-
+# ...
 # 添加新文章
 git add content/posts/{文件名}.md
-
+# ...
 # 提交（建议用"新增:"前缀）
 git commit -m "新增：{文章标题}"
-
+# ...
 # 推送到远程
 git push
 ```
@@ -294,7 +295,7 @@ git push
    ```bash
    # 正确
    content/posts/getting-started-with-hugo.md
-   
+# ...
    # 错误
    content/posts/Hugo入门指南.md
    ```
@@ -319,7 +320,7 @@ git push
 ```bash
 # 英文标题：直接转为小写连字符
 "Getting Started with Hugo" → "getting-started-with-hugo"
-
+# ...
 # 中文标题：可用拼音或英文关键词
 "Hugo 入门指南" → "hugo-getting-started" 或 "hugo-ru-men-zhi-nan"
 ```
@@ -341,13 +342,13 @@ EOF
 ```bash
 # 1. 检查 draft 是否为 false
 grep "draft:" content/posts/{文件名}.md
-
+# ...
 # 2. 检查日期是否是未来时间
 grep "date:" content/posts/{文件名}.md
-
+# ...
 # 3. 本地预览（包含草稿）
 hugo server -D
-
+# ...
 # 4. 检查文件路径是否正确
 ls content/posts/
 ```
@@ -362,7 +363,7 @@ title: "文章标题"
 date: 2026-07-18
 lastmod: 2026-07-19
 ---
-
+# ...
 # 3. 推送更新
 git add content/posts/{文件名}.md
 git commit -m "更新：{文章标题}"
@@ -375,7 +376,7 @@ git push
 # 方案一：配置 SSH Key
 ssh-keygen -t ed25519 -C "your_email@example.com"
 # 将公钥添加到 Git 平台
-
+# ...
 # 方案二：配置凭据缓存
 git config --global credential.helper cache
 git config --global credential.helper "cache --timeout=3600"
@@ -386,10 +387,10 @@ git config --global credential.helper "cache --timeout=3600"
 ```bash
 # 批量添加
 git add content/posts/*.md
-
+# ...
 # 批量提交
 git commit -m "新增：批量发布多篇文章"
-
+# ...
 # 推送
 git push
 ```
@@ -405,7 +406,7 @@ git push
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Hugo | 静态站点生成器 | 推荐 | gohugo.io 下载 |
 | Git | 命令行工具 | 必需 | 系统包管理器安装 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
@@ -420,9 +421,8 @@ git push
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

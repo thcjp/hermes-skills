@@ -17,11 +17,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 > **不是教你配置定时任务，而是教你安全可靠地创建一次性提醒。时间解析、安全校验、频道投递，一条龙服务。**
 
 创建一次性提醒看似简单，但涉及多个关键环节：如何把用户的口语化时间转换为精确时间戳？如何防止任务内容中的恶意命令注入？如何将结果可靠地投递到目标频道？本技能聚焦提醒创建的完整流程，帮助Agent建立安全可靠的提醒引擎。
@@ -29,7 +30,7 @@ suggested_price: 29.9
 ## 架构总览
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 提醒引擎(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -85,7 +86,7 @@ suggested_price: 29.9
 
 ```bash
 session_status
-
+# ...
 date -u -d "+30 seconds" +"%Y-%m-%dT%H:%M:%SZ"
 skill-platform cron add \
   --name "reminder-weather" \
@@ -106,7 +107,7 @@ skill-platform cron add \
 session_status
 （请参考skill目录中的脚本文件） "检查北京天气"
 date -u -d "today 15:00" +"%Y-%m-%dT%H:%M:%SZ"
-
+# ...
 skill-platform cron add \
   --name "reminder-afternoon" \
   --at "2026-07-18T15:00:00Z" \
@@ -117,7 +118,7 @@ skill-platform cron add \
   --channel discord \
   --to "channel:1476104553148452958" \
   --delete-after-run
-
+# ...
 echo "好的，将在下午3点提醒你"
 ```
 
@@ -134,25 +135,25 @@ if ! （请参考skill目录中的脚本文件） "$TASK_CONTENT"; then
   echo "请避免使用：\$() \` ; | & > < \" 或危险命令"
   exit 1
 fi
-
+# ...
 SESSION_INFO=$(session_status)
 AGENT=$(echo "$SESSION_INFO" | jq -r '.deliveryContext.accountId')
 TO=$(echo "$SESSION_INFO" | jq -r '.deliveryContext.to')
-
+# ...
 REMIND_AT=$(date -u -d "$USER_TIME" +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null)
-
+# ...
 if [ -z "$REMIND_AT" ]; then
   echo "错误：无法解析时间 '$USER_TIME'"
   echo "支持格式：30s/5m/2h/1d 或 3pm/today 15:00"
   exit 1
 fi
-
+# ...
 NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 if [[ "$REMIND_AT" < "$NOW" ]]; then
   echo "错误：提醒时间必须在未来"
   exit 1
 fi
-
+# ...
 JOB_ID=$(skill-platform cron add \
   --name "reminder-$(date +%s)" \
   --at "$REMIND_AT" \
@@ -164,7 +165,7 @@ JOB_ID=$(skill-platform cron add \
   --to "$TO" \
   --delete-after-run \
   --output json | jq -r '.id')
-
+# ...
 echo "✓ 提醒已创建"
 echo "  时间：$REMIND_AT"
 echo "  内容：$TASK_CONTENT"
@@ -177,7 +178,7 @@ echo "  作业ID：$JOB_ID"
 支持两类时间格式：
 
 | 类型 | 格式 | 示例 | 转换方式 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | **相对时间** | `<数字><单位>` | `30s`/`5m`/`2h`/`1d` | `date -u -d "+30 seconds"` |
 | **绝对时间** | 自然语言/ISO | `3pm`/`today 15:00`/`tomorrow 9am` | `date -u -d "today 15:00"` |
 
@@ -214,7 +215,7 @@ echo "  作业ID：$JOB_ID"
 **核心原则**：拒绝（REJECT）危险模式，而非转义（escape）。
 
 | 检测项 | 危险模式 | 拒绝理由 |
-|--------|----------|----------|
+|---:|---:|---:|
 | 命令替换 | `$()`、`` ` `` | 可执行任意命令 |
 | Shell元字符 | `;`、`\|`、`&`、`>`、`<` | 可注入Shell命令 |
 | 双引号 | `"` | 破坏CLI引用 |
@@ -226,27 +227,27 @@ echo "  作业ID：$JOB_ID"
 ```bash
 #!/bin/bash
 CONTENT="$1"
-
+# ...
 if [[ "$CONTENT" =~ \$\(.*\) ]] || [[ "$CONTENT" =~ '`' ]]; then
   echo "拒绝：包含命令替换"
   exit 1
 fi
-
+# ...
 if [[ "$CONTENT" =~ [;\|&\>\<] ]]; then
   echo "拒绝：包含Shell元字符"
   exit 2
 fi
-
+# ...
 if [[ "$CONTENT" =~ [\"] ]]; then
   echo "拒绝：包含双引号"
   exit 3
 fi
-
+# ...
 if [[ "$CONTENT" =~ $'\n' ]]; then
   echo "拒绝：包含换行符"
   exit 4
 fi
-
+# ...
 DANGEROUS=("sudo" "rm " "wget " "curl " "bash " "sh " "chmod " "chown ")
 for cmd in "${DANGEROUS[@]}"; do
   if [[ "$CONTENT" =~ ^$cmd ]] || [[ "$CONTENT" =~ " $cmd" ]]; then
@@ -254,7 +255,7 @@ for cmd in "${DANGEROUS[@]}"; do
     exit 5
   fi
 done
-
+# ...
 echo "安全"
 exit 0
 ```
@@ -263,13 +264,13 @@ exit 0
 
 ```text
 抱歉，你的任务内容包含非法字符，请重新表述。
-
+# ...
 请避免使用以下内容：
 - 命令替换：$() 或反引号
 - Shell符号：; | & > <
 - 双引号："
 - 危险命令：sudo、rm、wget、curl、bash等
-
+# ...
 示例：
 ❌ "提醒我运行 `rm -rf /tmp`"
 ✅ "提醒我清理临时目录"
@@ -281,7 +282,7 @@ exit 0
 
 ### 单频道投递
 | 频道 | 参数 | 获取方式 |
-|------|------|----------|
+|:---:|:---:|:---:|
 | **Discord** | `--channel discord --to "channel:<id>"` | 从 `session_status` 获取 |
 | **Telegram** | `--channel telegram --to "+<phone>"` | 用户提供手机号 |
 
@@ -305,7 +306,7 @@ session_status
 **确认回复模板**：
 
 | 场景 | 回复模板 |
-|------|----------|
+|:------|------:|
 | 相对时间 | "好的，将在 X 分钟/小时后提醒你 XXX" |
 | 绝对时间 | "好的，将在今天/明天 X 点提醒你 XXX" |
 | 创建失败 | "抱歉，提醒创建失败：[原因]" |
@@ -323,13 +324,13 @@ session_status
 ### 提醒生命周期管理
 ```bash
 skill-platform cron list
-
+# ...
 skill-platform cron list --name "reminder-*"
-
+# ...
 skill-platform cron run <job-id>
-
+# ...
 skill-platform cron remove <job-id>
-
+# ...
 skill-platform cron runs --id <job-id> --limit 5
 ```
 
@@ -367,7 +368,7 @@ skill-platform cron add \
   --channel discord \
   --to "channel:1476104553148452958" \
   --delete-after-run
-
+# ...
 echo "好的，将在30秒后提醒你查天气"
 ```
 
@@ -384,7 +385,7 @@ if [[ "2026-07-18T15:00:00Z" < "$NOW" ]]; then
   echo "今天3点已过，将顺延至明天"
   date -u -d "tomorrow 15:00" +"%Y-%m-%dT%H:%M:%SZ"
 fi
-
+# ...
 skill-platform cron add \
   --name "reminder-meeting" \
   --at "2026-07-18T15:00:00Z" \
@@ -395,7 +396,7 @@ skill-platform cron add \
   --channel discord \
   --to "channel:1476104553148452958" \
   --delete-after-run
-
+# ...
 echo "好的，将在今天下午3点提醒你开会"
 ```
 
@@ -438,7 +439,7 @@ echo "  ✅ 提醒我清理临时目录"
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Agent Gateway | 运行时 | 必需 | Agent平台内置 |
 | skill-platform CLI | 工具 | 必需 | Agent平台内置 |
 | session_status工具 | 工具 | 必需 | Agent平台内置 |
@@ -504,7 +505,7 @@ echo "  ✅ 提醒我清理临时目录"
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

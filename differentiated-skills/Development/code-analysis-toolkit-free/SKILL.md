@@ -48,8 +48,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
-
 # 代码分析工具包免费版
 
 ## 概述
@@ -65,7 +66,7 @@ suggested_price: 29.9
 本工具处理个人 Git 活动数据,使用前必须确认:
 
 | 要求 | 说明 |
-|:-----|:-----|
+|---|---|
 | 自我反思 | 仅分析当前本地 Git 用户自己的仓库 |
 | 非惩罚性 | 不用于绩效、排名、薪酬等 HR 决策 |
 | 不监控 | 不用于监控他人或非同意的贡献者 |
@@ -78,7 +79,7 @@ suggested_price: 29.9
 ### 2. 六大分析维度
 
 | 维度 | 分析内容 | 注意事项 |
-|:-----|:---------|:---------|
+|:-----|:-----|:-----|
 | 提交纪律 | 频率、消息长度、规范符合 | 仅反映 Git 可见部分 |
 | 节奏一致性 | 提交时间分布 | 时区、批量提交会失真 |
 | 变更模式 | 代码变动量、重做率 | 高变动可能是探索性开发 |
@@ -111,7 +112,7 @@ suggested_price: 29.9
 ### 4. 多格式输出
 
 | 格式 | 适用场景 | 命令参数 |
-|:-----|:---------|:---------|
+|---:|---:|---:|
 | Markdown | 默认,版本控制友好 | `-f markdown` |
 | JSON | 程序化处理 | `-f json` |
 | HTML | 网页展示 | `-f html` |
@@ -130,7 +131,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | input | string | 是 | 代码分析工具包免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -138,7 +139,7 @@ suggested_price: 29.9
 ```bash
 # 生成个人自查报告
 python -m src.main --i-have-consent -r /path/to/my-repo
-
+# ...
 # 指定时间范围
 python -m src.main --i-have-consent -r /path/to/my-repo \
   -s 2026-01-01 -u 2026-06-30 \
@@ -150,28 +151,28 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 ```text
 个人 Git 历史自查报告
 =====================================
-
+# ...
 使用须知:
 - 本报告描述 Git 历史,不描述个人能力
 - 代码审查、设计、指导等贡献在此不可见
 - 高/低值通常有多种合理解释
-
+# ...
 反思叙事:
 观察: 你的提交频率在工作日较为稳定,周末提交较少。
 这可能是健康工作节奏的体现。
-
+# ...
 考虑点: 提交消息平均长度为 45 字符,有改进空间。
 较长的提交消息有助于团队理解变更意图。
-
+# ...
 反思提示: 你的 Bug 修复占比为 18%。
 这是否反映了测试覆盖的不足?还是正常的新功能迭代?
-
+# ...
 提交模式:
 - 总提交数: 156
 - 平均提交大小: 23 行
 - 合并提交占比: 12%
 - 提交消息平均长度: 45 字符
-
+# ...
 代码质量标记:
 - Bug 修复占比: 18%
 - 回退提交占比: 3%
@@ -187,7 +188,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 python -m src.main --i-have-consent -r /path/to/my-repo \
   -s 2026-04-01 -u 2026-06-30 \
   -f html -o quarterly-review.html
-
+# ...
 # 对比格式
 python -m src.main --i-have-consent -r /path/to/my-repo \
   -f "markdown,html" -o quarterly-report
@@ -223,7 +224,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 ```bash
 # 安装必需依赖
 pip install gitpython pydriller radon tabulate jinja2 click reportlab
-
+# ...
 # PDF 高质量输出(可选)
 pip install weasyprint
 ```
@@ -233,10 +234,10 @@ pip install weasyprint
 ```bash
 # 基本用法(必须包含 --i-have-consent)
 python -m src.main --i-have-consent -r /path/to/my-repo
-
+# ...
 # 指定输出格式
 python -m src.main --i-have-consent -r /path/to/my-repo -f html -o report.html
-
+# ...
 # 多格式输出
 python -m src.main --i-have-consent -r /path/to/my-repo \
   -f "markdown,html,pdf" -o report
@@ -255,7 +256,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 ### CLI 参数
 
 | 参数 | 简写 | 说明 | 默认值 |
-|:-----|:-----|:-----|:-------|
+|:------|------:|:------|:------|
 | `--repo-path` | `-r` | 仓库路径 | 必需 |
 | `--i-have-consent` | | 使用政策确认(必需) | 必需 |
 | `--since` | `-s` | 开始日期(ISO) | 无 |
@@ -267,7 +268,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 ### 分析维度详解
 
 | 维度 | 指标 | 说明 |
-|:-----|:-----|:-----|
+|---:|:---|---:|
 | 提交纪律 | 提交频率 | 每日/周/月提交数 |
 | | 消息长度 | 平均提交消息字符数 |
 | | 规范符合 | Conventional Commits 占比 |
@@ -290,7 +291,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 - 对 Git 历史的描述性汇总
 - 以观察和讨论提示形式呈现
 - 每个指标都有具体数据支撑
-
+# ...
 报告不是什么:
 - 不是个人能力评分
 - 不是绩效评估工具
@@ -316,7 +317,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 - 架构师、审查者、值班工程师自然产生稀疏提交
 - 代码审查、设计、指导等贡献不在 Git 中
 - 休假、轮班等正常生活也会导致稀疏
-
+# ...
 正确做法:
 - 将稀疏视为"提交集中在某段时间"
 - 不要等同于"工作不努力"
@@ -371,7 +372,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------:|--------|:-------|:------:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | gitpython | Python 库 | 必需 | `pip install gitpython` |
 | pydriller | Python 库 | 必需 | `pip install pydriller` |
@@ -395,9 +396,8 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|----|:--:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

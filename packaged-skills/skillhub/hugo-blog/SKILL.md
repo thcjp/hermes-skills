@@ -36,24 +36,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # Hugo博客发布专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版新增 | 不支持 | 支持 |
-| 文章发布 | 不支持 | 支持 |
-| 批量发布 + 定时调度 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Hugo博客发布专业版博客管理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 文章发布 | 单篇发布 | 批量发布 + 定时调度 |
 | Front Matter | 基础字段 | SEO 元信息 + 结构化数据 |
 | 标签管理 | 英文 slug 映射 | 多语言标签 + 标签云生成 |
@@ -97,9 +99,9 @@ pricing_model: "per_use"
 SERIES_NAME="go-concurrency-series"
 BLOG_DIR="${BLOG_DIR:-~/blog}"
 POSTS_DIR="$BLOG_DIR/content/posts"
-
+# ...
 echo "=== 批量发布系列：$SERIES_NAME ==="
-
+# ...
 declare -a POSTS=(
   "go-goroutine-basics"
   "go-channel-patterns"
@@ -107,11 +109,11 @@ declare -a POSTS=(
   "go-worker-pool"
   "go-concurrency-best-practices"
 )
-
+# ...
 for i in "${!POSTS[@]}"; do
   SLUG="${POSTS[$i]}"
   CHAPTER=$((i + 1))
-
+# ...
   cat > "$POSTS_DIR/$SLUG.md" << FRONTMATTER
 title: "$(echo $SLUG | tr '-' ' ' | sed 's/\b\(.\)/\u\1/g')"
 date: 2026-07-18
@@ -124,15 +126,15 @@ description: "Go 并发编程系列第 $CHAPTER 篇"
 aliases:
   - /posts/$SERIES_NAME-$CHAPTER/
 FRONTMATTER
-
+# ...
   echo "  [$CHAPTER/${#POSTS[@]}] $SLUG 已准备"
 done
-
+# ...
 cd "$BLOG_DIR"
 git add content/posts/
 git commit -m "新增：Go 并发编程系列（5 篇）"
 git push
-
+# ...
 echo "=== 系列发布完成 ==="
 ```
 
@@ -143,7 +145,7 @@ echo "=== 系列发布完成 ==="
 cat > hugo.toml << 'EOF'
 defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = true
-
+# ...
 [languages]
   [languages.zh]
     weight = 1
@@ -153,24 +155,24 @@ defaultContentLanguageInSubdir = true
     weight = 2
     title = "Tech Blog"
     languageName = "English"
-
+# ...
 EOF
-
+# ...
 create_bilingual_post() {
   local slug=$1
   local zh_title=$2
   local en_title=$3
-
+# ...
   mkdir -p "content/zh/posts/$slug"
   mkdir -p "content/en/posts/$slug"
-
+# ...
   cat > "content/zh/posts/$slug/_index.md" << EOF
 title: "$zh_title"
 date: 2026-07-18
 draft: false
 tags: ["tech"]
 EOF
-
+# ...
   cat > "content/en/posts/$slug/_index.md" << EOF
 title: "$en_title"
 date: 2026-07-18
@@ -192,7 +194,7 @@ on:
       - 'content/**'
       - 'static/**'
       - 'hugo.toml'
-
+# ...
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -201,35 +203,35 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
-
+# ...
       - name: 安装 Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
-
+# ...
       - name: 安装图片优化工具
         run: |
           sudo apt-get install -y jpegoptim optipng
           npm install -g imagemin-cli
-
+# ...
       - name: 优化图片
         run: |
           find static/images -name "*.jpg" -exec jpegoptim --max=80 {} \;
           find static/images -name "*.png" -exec optipng -o7 {} \;
-
+# ...
       - name: 构建站点
         run: hugo --minify --gc
-
+# ...
       - name: 生成站点地图
         run: hugo --renderToMemory --templateMetrics
-
+# ...
       - name: 部署到 GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: $相关信息
           publish_dir: ./public
-
+# ...
       - name: 通知部署结果
         if: always()
         uses: slackapi/slack-github-action@v1
@@ -252,23 +254,23 @@ tags: ["go", "programming", "concurrency"]
 categories: ["tech"]
 series: ["go-concurrency"]
 series_weight: 1
-
+# ...
 keywords: ["Go 并发", "goroutine", "channel", "Go 教程"]
-
+# ...
 images:
   - /images/go-concurrency-cover.png
-
+# ...
 schema:
   type: "TechArticle"
   author:
     name: "作者名"
   publisher:
     name: "博客名称"
-
+# ...
 aliases:
   - /posts/go-concurrency-guide/
   - /posts/2025/go-concurrency/
-
+# ...
 readingTime: true
 toc: true
 ```
@@ -277,29 +279,29 @@ toc: true
 ```bash
 #!/bin/bash
 IMAGE_DIR="static/images"
-
+# ...
 echo "=== 图片优化 ==="
-
+# ...
 find "$IMAGE_DIR" -name "*.jpg" -o -name "*.jpeg" | while read f; do
   jpegoptim --max=80 --strip-all "$f"
   echo "  优化: $f"
 done
-
+# ...
 find "$IMAGE_DIR" -name "*.png" | while read f; do
   optipng -o7 "$f"
   echo "  优化: $f"
 done
-
+# ...
 find "$IMAGE_DIR" -name "*.jpg" -o -name "*.png" | while read f; do
   cwebp -q 80 "$f" -o "${f%.*}.webp"
   echo "  WebP: ${f%.*}.webp"
 done
-
+# ...
 find "$IMAGE_DIR" -name "*.jpg" | while read f; do
   convert "$f" -resize 300x300^ -gravity center -extent 300x300 "${f%.*}-thumb.jpg"
   echo "  缩略图: ${f%.*}-thumb.jpg"
 done
-
+# ...
 echo "=== 优化完成 ==="
 ```
 
@@ -307,7 +309,7 @@ echo "=== 优化完成 ==="
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | hugo-blog处理的内容输入 |,  |
 | content | string | 否 | hugo-blog处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -335,9 +337,8 @@ echo "=== 优化完成 ==="
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -350,9 +351,9 @@ echo "=== 优化完成 ==="
 - **Hugo 版本**: 建议 0.110 及以上（扩展版）
 - **CI/CD 平台**: GitHub Actions / GitLab CI 等
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | Hugo | 静态站点生成器 | 必需 | gohugo.io 下载（扩展版） |
 | Git | 命令行工具 | 必需 | 系统包管理器安装 |
 | jpegoptim | 图片优化 | 推荐 | `apt install jpegoptim` |
@@ -410,15 +411,15 @@ series_weight: 2
   disableJSON = false
   disableSVG = false
   disableXML = false
-
+# ...
 [build]
   writeStats = true
-
+# ...
 [imaging]
   quality = 75
   resampleFilter = "Lanczos"
   hint = "photo"
-
+# ...
 [markup.goldmark.renderer]
   unsafe = true
 ```
@@ -452,10 +453,10 @@ title: "Go"
 ```markdown
 <!-- 使用 ref 短码引用其他文章 -->
 相关信息
-
+# ...
 <!-- 多语言引用 -->
 相关信息
-
+# ...
 <!-- 系列内引用 -->
 参见 [本系列优秀篇](相关信息)
 ```
@@ -463,7 +464,7 @@ title: "Go"
 ### Q4：如何生成站点地图？
 ```bash
 hugo --minify
-
+# ...
 [sitemap]
   changeFreq = "weekly"
   priority = 0.5
@@ -474,7 +475,7 @@ hugo --minify
 ```toml
 [params]
   cdnURL = "https://cdn.example.com"
-
+# ...
 <img src="相关信息/images/相关信息">
 ```
 
@@ -490,9 +491,8 @@ hugo --minify
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

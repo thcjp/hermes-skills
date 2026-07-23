@@ -23,8 +23,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
-
 # HTML设计工具专业版
 
 ## 概述
@@ -41,7 +42,7 @@ PRO版提供完整的设计令牌(Token)管理,实现设计资产的中心化与
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | HTML设计工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -68,7 +69,7 @@ color:
     background: "#0F172A"
     foreground: "#F1F5F9"
     card: "#1E293B"
-
+# ...
 typography:
   display:
     family: "Calistoga, serif"
@@ -78,18 +79,18 @@ typography:
     sizes: { sm: 0.875rem, md: 1rem, lg: 1.125rem }
   mono:
     family: "JetBrains Mono, monospace"
-
+# ...
 spacing:
   scale: [0, 0.25, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 16]  # rem
   section_padding: "py-28 to py-44"
   container_max: "max-w-6xl"
-
+# ...
 shadow:
   sm: "0 1px 3px rgba(0,0,0,0.06)"
   md: "0 4px 6px rgba(0,0,0,0.07)"
   xl: "0 20px 25px rgba(0,0,0,0.1)"
   accent: "0 4px 14px rgba(0,82,255,0.25)"
-
+# ...
 radius:
   sm: "4px"
   md: "8px"
@@ -114,7 +115,7 @@ components = {
     "feedback": ["alert", "toast", "modal", "progress", "skeleton"],
     "data_display": ["table", "timeline", "accordion", "badge", "chip"]
 }
-
+# ...
 # 为每个组件生成 HTML + CSS + 文档
 for category, items in components.items():
     for item in items:
@@ -136,7 +137,7 @@ const themes = {
   dark: { "--bg": "#0F172A", "--fg": "#F1F5F9", "--accent": "#4D7CFF" },
   brand_custom: { "--bg": "#FFF8F0", "--fg": "#2D1B0E", "--accent": "#E67E22" }
 };
-
+// ...
 function switchTheme(themeName) {
   const root = document.documentElement;
   Object.entries(themes[themeName]).forEach(([key, value]) => {
@@ -155,7 +156,7 @@ function switchTheme(themeName) {
 ```bash
 # 批量生成多个页面
 python3 generate_pages.py --config pages-config.yml --output ./dist/
-
+# ...
 # 示例
 # pages:
 #   - name: "首页"
@@ -191,10 +192,10 @@ design_system = DesignSystem(
     themes=["light", "dark", "brand"],
     guidelines=load_guidelines("docs/")
 )
-
+# ...
 # 生成设计系统文档
 design_system.generate_docs(output="./docs/design-system/")
-
+# ...
 # 导出为多平台格式
 design_system.export(format=["html", "figma-tokens", "css-variables", "tailwind-config"])
 ```
@@ -281,7 +282,7 @@ tenants = {
         "components": "custom_override"  # 自定义覆盖部分组件
     }
 }
-
+# ...
 # 为每个租户生成独立设计包
 for tenant_id, config in tenants.items():
     generate_tenant_package(tenant_id, config)
@@ -378,7 +379,7 @@ const motionConfig = {
 ### 免费版与PRO版能力对比
 
 | 能力维度 | 免费版 | PRO版 |
-|---------|--------|-------|
+|:-----|:-----|:-----|
 | 配色方案 | 3种预设 | 无限自定义+品牌专属 |
 | 组件库 | 5个基础组件 | 30+企业级组件 |
 | 主题切换 | 不支持 | 浅色/深色/品牌定制 |
@@ -461,7 +462,7 @@ A: 支持语义化版本控制,每次变更自动生成变更日志。可集成G
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js 18+ | 运行时 | 推荐 | nodejs.org 下载 |
 | Python 3.10+ | 运行时 | 推荐 | python.org 下载 |
@@ -482,9 +483,8 @@ A: 支持语义化版本控制,每次变更自动生成变更日志。可集成G
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

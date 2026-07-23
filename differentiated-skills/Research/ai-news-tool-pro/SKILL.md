@@ -50,6 +50,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # AI新闻工具(专业版)
 
@@ -60,7 +62,7 @@ pricing_model: "monthly"
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---|---|---|
 | 每日新闻列表 | 支持 | 支持 |
 | 新闻详情阅读 | 支持 | 支持 |
 | 热点排行 | 支持 | 支持 |
@@ -80,7 +82,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | AI新闻工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -88,10 +90,10 @@ pricing_model: "monthly"
 ```bash
 # 聚合多个新闻源
 news-pro aggregate --sources "daily,tech,finance,business" --date 2026-03-10
-
+# ...
 # 自动去重
 news-pro aggregate --sources "daily,tech" --dedup --date 2026-03-10
-
+# ...
 # 导出聚合结果
 news-pro aggregate --sources "daily,tech,finance" --format json > aggregated-news.json
 ```
@@ -106,13 +108,13 @@ news-pro aggregate --sources "daily,tech,finance" --format json > aggregated-new
 ```bash
 # 为单条新闻生成 AI 摘要
 news-pro summarize --article-id 8533
-
+# ...
 # 批量生成摘要
 news-pro summarize --batch --date 2026-03-10
-
+# ...
 # 提取关键词
 news-pro keywords --article-id 8533 --top 10
-
+# ...
 # 生成每日要闻综述
 news-pro digest --date 2026-03-10 --length 500
 ```
@@ -127,10 +129,10 @@ news-pro digest --date 2026-03-10 --length 500
 ```bash
 # 设置兴趣标签
 news-pro subscribe --tags "ai,科技,财经"
-
+# ...
 # 获取个性化推荐
 news-pro recommend --limit 10
-
+# ...
 # 关键词订阅
 news-pro subscribe --keywords "AI智能体,大模型" --alert
 ```
@@ -145,10 +147,10 @@ news-pro subscribe --keywords "AI智能体,大模型" --alert
 ```bash
 # 全文检索历史新闻
 news-pro search "人工智能" --from 2026-01-01 --to 2026-03-10
-
+# ...
 # 按分类检索
 news-pro search "芯片" --category tech --from 2026-02-01
-
+# ...
 # 按热度筛选
 news-pro search "新能源" --min-heat 80
 ```
@@ -163,10 +165,10 @@ news-pro search "新能源" --min-heat 80
 ```bash
 # 配置定时推送
 news-pro schedule add --cron "0 9 * * *" --channels "email,webhook" --digest
-
+# ...
 # 关键词告警(出现指定关键词时立即通知)
 news-pro alert add --keyword "竞品公司名" --channel webhook
-
+# ...
 # 查看所有订阅
 news-pro subscribe list
 ```
@@ -181,10 +183,10 @@ news-pro subscribe list
 ```bash
 # 话题趋势分析
 news-pro trend --topic "AI智能体" --period 30d
-
+# ...
 # 热点排行
 news-pro hot --period 7d --top 20
-
+# ...
 # 竞品动态追踪
 news-pro track --company "竞品A" --period 30d
 ```
@@ -206,26 +208,26 @@ news-pro track --company "竞品A" --period 30d
 # sentiment-monitor.sh - 舆情监控工作流
 COMPANY="示例公司"
 DATE=$(date +%Y-%m-%d)
-
+# ...
 # 1. 聚合多源新闻
 news-pro aggregate --sources "daily,tech,finance,social" --date "$DATE" \
   --filter "$COMPANY" > /tmp/today-news.json
-
+# ...
 # 2. 生成 AI 摘要
 news-pro summarize --batch --filter "$COMPANY" --date "$DATE"
-
+# ...
 # 3. 情感分析
 news-pro sentiment --filter "$COMPANY" --date "$DATE" > /tmp/sentiment.json
-
+# ...
 # 4. 生成舆情报告
 news-pro report --company "$COMPANY" --date "$DATE" \
   --format pdf > "reports/sentiment-${DATE}.pdf"
-
+# ...
 # 5. 推送报告
 news-pro push --channel email --to "pr-team@company.com" \
   --subject "${COMPANY} 舆情日报 ${DATE}" \
   --attachment "reports/sentiment-${DATE}.pdf"
-
+# ...
 echo "舆情监控完成,报告已推送"
 ```
 
@@ -238,27 +240,27 @@ echo "舆情监控完成,报告已推送"
 # trend-analysis.sh - 行业趋势分析
 TOPIC="AI智能体"
 PERIOD="30d"
-
+# ...
 # 1. 话题趋势分析
 echo "=== 趋势分析 ==="
 news-pro trend --topic "$TOPIC" --period "$PERIOD" --format json > trend.json
-
+# ...
 # 2. 热点事件排行
 echo "=== 热点事件 ==="
 news-pro hot --topic "$TOPIC" --period "$PERIOD" --top 20
-
+# ...
 # 3. 关键人物与机构
 echo "=== 关键实体 ==="
 news-pro entities --topic "$TOPIC" --period "$PERIOD" --type person,org
-
+# ...
 # 4. 生成趋势报告
 news-pro report --topic "$TOPIC" --period "$PERIOD" \
   --format markdown > "reports/trend-${TOPIC}-$(date +%Y%m%d).md"
-
+# ...
 # 5. 导出可视化数据
 news-pro trend --topic "$TOPIC" --period "$PERIOD" \
   --format csv > "reports/trend-data.csv"
-
+# ...
 echo "趋势分析完成,报告已生成"
 ```
 
@@ -272,19 +274,19 @@ echo "趋势分析完成,报告已生成"
 import subprocess
 import json
 from datetime import datetime, timedelta
-
+# ...
 COMPETITORS = [
     {"name": "竞品A", "keywords": ["竞品A", "CompetitorA"], "alert_keywords": ["融资", "发布", "收购"]},
     {"name": "竞品B", "keywords": ["竞品B", "CompetitorB"], "alert_keywords": ["融资", "发布", "收购"]},
     {"name": "竞品C", "keywords": ["竞品C", "CompetitorC"], "alert_keywords": ["融资", "发布", "收购"]},
 ]
-
+# ...
 def track_competitor(competitor):
     """追踪单个竞品动态"""
     name = competitor["name"]
     keywords = competitor["keywords"]
     alert_keywords = competitor["alert_keywords"]
-
+# ...
     # 检索最近30天相关新闻
     result = subprocess.run([
         "news-pro", "search",
@@ -293,12 +295,12 @@ def track_competitor(competitor):
         "--to", datetime.now().strftime("%Y-%m-%d"),
         "--format", "json"
     ], capture_output=True, text=True)
-
+# ...
     try:
         news = json.loads(result.stdout)
     except json.JSONDecodeError:
         news = []
-
+# ...
     # 检测关键事件
     alerts = []
     for article in news:
@@ -311,9 +313,9 @@ def track_competitor(competitor):
                     "url": article.get("url", ""),
                     "date": article.get("publish_time", "")
                 })
-
+# ...
     return {"competitor": name, "total_news": len(news), "alerts": alerts}
-
+# ...
 # 追踪所有竞品
 for comp in COMPETITORS:
     report = track_competitor(comp)
@@ -352,7 +354,7 @@ for comp in COMPETITORS:
 ```bash
 # 专业版初始化
 news-pro init
-
+# ...
 # 配置多源
 news-pro config set sources "daily,tech,finance,business,social"
 news-pro config set ai.summarize true
@@ -364,10 +366,10 @@ news-pro config set alerts.webhook "https://hooks.example.com/news-alerts"
 ```bash
 # 聚合今日多源新闻
 news-pro aggregate --date $(date +%Y-%m-%d) --dedup
-
+# ...
 # 生成 AI 综述
 news-pro digest --date $(date +%Y-%m-%d) --length 800
-
+# ...
 # 推送到团队
 news-pro push --channel webhook --digest
 ```
@@ -377,16 +379,15 @@ news-pro push --channel webhook --digest
 ```bash
 # 订阅感兴趣的话题
 news-pro subscribe --tags "ai,科技,财经" --digest daily
-
+# ...
 # 设置关键词告警
 news-pro alert add --keyword "竞品公司" --channel "email,webhook"
-
+# ...
 # 查看订阅
 news-pro subscribe list
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -443,7 +444,7 @@ news-pro stats
 # 检索索引覆盖率: 98%
 # 订阅数: 12
 # 本月告警: 23 次
-
+# ...
 # 导出统计报告
 news-pro stats --export json > stats.json
 ```
@@ -496,7 +497,7 @@ news-pro init --migrate
 ## 与免费版的兼容性
 
 | 维度 | 兼容性 |
-|:-----|:------|
+|---:|---:|
 | API 调用 | 100% 兼容 |
 | 返回数据格式 | 100% 兼容 |
 | 脚本工作流 | 100% 兼容(无需修改即可运行) |
@@ -514,7 +515,7 @@ news-pro init --migrate
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | news-pro | CLI 工具 | 必需 | 随 Skill 安装 |
 | curl | 网络工具 | 必需 | 系统自带 |
 | jq | JSON 处理 | 推荐 | 系统包管理器安装 |
@@ -537,9 +538,8 @@ news-pro init --migrate
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

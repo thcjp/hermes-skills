@@ -42,8 +42,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
 ---
-
 # 浏览器自动化工具(免费版)
 
 ## 概述
@@ -53,7 +54,7 @@ suggested_price: 29.9
 ### 与传统浏览器自动化的区别
 
 | 对比维度 | 传统自动化 | 本工具(自然语言) |
-|:---------|:----------|:-----------------|
+|----|-----|---------|
 | 元素定位 | CSS/XPath 选择器 | 自然语言描述 |
 | 脚本编写 | 需要编程基础 | 自然语言描述即可 |
 | 页面变化适应性 | 选择器易失效 | 自然语言更鲁棒 |
@@ -103,13 +104,13 @@ suggested_price: 29.9
 ```bash
 # 导航到目标页面
 browser navigate https://example.com
-
+# ...
 # 用自然语言提取数据
 browser extract "获取页面标题和描述"
-
+# ...
 # 提取结构化数据(带 schema)
 browser extract "获取商品列表" '{"items":[{"name":"string","price":"number"}]}'
-
+# ...
 # 关闭浏览器
 browser close
 ```
@@ -120,15 +121,15 @@ browser close
 
 ```bash
 browser navigate https://example.com/form
-
+# ...
 # 用自然语言执行动作
 browser act "在用户名输入框填入 myuser"
 browser act "在密码输入框填入 mypassword"
 browser act "点击提交按钮"
-
+# ...
 # 截图确认结果
 browser screenshot
-
+# ...
 browser close
 ```
 
@@ -138,13 +139,13 @@ browser close
 
 ```bash
 browser navigate https://example.com
-
+# ...
 # 观察页面有哪些可交互元素
 browser observe "页面上有哪些按钮"
-
+# ...
 # 根据观察结果执行动作
 browser act "点击第一个蓝色的按钮"
-
+# ...
 # 提取观察到的内容
 browser extract "获取页面所有标题文本"
 ```
@@ -170,7 +171,7 @@ browser extract "获取页面所有标题文本"
 ```bash
 # 安装依赖
 npm install
-
+# ...
 # 创建全局 browser 命令
 npm link
 ```
@@ -189,22 +190,21 @@ npm link
 ```bash
 # 导航到页面
 browser navigate https://example.com
-
+# ...
 # 用自然语言执行动作
 browser act "点击 Sign In 按钮"
-
+# ...
 # 提取数据
 browser extract "获取页面标题"
-
+# ...
 # 截图
 browser screenshot
-
+# ...
 # 关闭浏览器
 browser close
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -215,15 +215,15 @@ browser close
 browser act "点击登录按钮"
 browser act "点击右上角的购物车图标"
 browser act "点击第一个搜索结果"
-
+# ...
 # 输入类动作
 browser act "在搜索框输入 AI agents"
 browser act "在邮箱字段填入 test@example.com"
-
+# ...
 # 导航类动作
 browser act "滚动到页面底部"
 browser act "切换到第二个标签页"
-
+# ...
 # 复合动作
 browser act "展开侧边栏菜单然后点击设置"
 ```
@@ -233,10 +233,10 @@ browser act "展开侧边栏菜单然后点击设置"
 ```bash
 # 简单提取
 browser extract "获取页面标题"
-
+# ...
 # 带 schema 的结构化提取
 browser extract "获取商品信息" '{"name":"string","price":"number","stock":"boolean"}'
-
+# ...
 # 提取列表数据
 browser extract "获取新闻列表" '{"items":[{"title":"string","date":"string"}]}'
 ```
@@ -253,7 +253,7 @@ browser observe "导航栏有哪些链接"
 ### 模式对比
 
 | 特性 | 本地模式 | 远程模式 |
-|:-----|:--------|:--------|
+|---:|---:|---:|
 | 速度 | 较快 | 略慢(网络延迟) |
 | 配置 | 需本机 Chrome | 需 API Key |
 | 隐身模式 | 不支持 | 支持 |
@@ -312,7 +312,7 @@ browser observe "页面上有哪些可交互元素"
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Node.js | 运行环境 | 必需 | 系统包管理器安装(>= 18) |
 | Chrome | 浏览器 | 必需 | 官方下载安装 |
 | npm 依赖包 | Node 包 | 必需 | `npm install` |
@@ -329,9 +329,8 @@ browser observe "页面上有哪些可交互元素"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

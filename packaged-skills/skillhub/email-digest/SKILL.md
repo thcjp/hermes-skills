@@ -19,22 +19,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
 ---
 # 邮件日报专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 邮件日报专业版企业级邮件监控 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -97,7 +99,7 @@ email-digest-tool aggregate \
   --date today \
   --format html \
   --output reports/daily_$(date +%Y%m%d).html
-
+# ...
 # 自动推送到飞书
 email-digest-tool aggregate \
   --accounts gmail,outlook \
@@ -111,26 +113,26 @@ email-digest-tool aggregate \
 ==========================================
 📧 多邮箱日报 - 2026-07-18
 ==========================================
-
+# ...
 📊 账户概览:
 - Gmail (manager@company.com): 未读 15 封
 - Outlook (manager@company.onmicrosoft.com): 未读 8 封
 - 合计未读: 23 封
-
+# ...
 🔴 高优先级邮件 (3 封):
 1. [Gmail] 来自 ceo@company.com
    主题: 董事会决议 - 需要签字
    时间: 08:45 | 评分: 9.5/10
    建议: 立即处理
-
+# ...
 2. [Outlook] 来自 legal@company.com
    主题: 合同审核 - 紧急
    时间: 09:12 | 评分: 9.0/10
    建议: 今日内回复
-
+# ...
 🟡 中优先级邮件 (12 封):
 ...
-
+# ...
 💡 AI 建议:
 - 优先回复董事会决议邮件
 - 3 封合同邮件需今日审批
@@ -151,10 +153,10 @@ email-digest-tool schedule create \
   --push feishu \
   --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/详情见说明" \
   --timezone "Asia/Shanghai"
-
+# ...
 # 查看所有定时任务
 email-digest-tool schedule list
-
+# ...
 # 查看任务执行历史
 email-digest-tool schedule history --name "morning-digest"
 ```
@@ -170,17 +172,17 @@ email-digest-tool alert create \
   --channel feishu \
   --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/详情见说明" \
   --priority critical
-
+# ...
 email-digest-tool alert create \
   --name "urgent-keyword" \
   --condition "subject contains:紧急,urgent,critical" \
   --channel email \
   --notify "admin@company.com" \
   --priority high
-
+# ...
 # 启动告警监控
 email-digest-tool alert start --all
-
+# ...
 # 查看告警历史
 email-digest-tool alert log --since "2026-07-01"
 ```
@@ -197,7 +199,7 @@ email-digest-tool alert log --since "2026-07-01"
 browser-use --browser real open https://mail.google.com
 browser-use state
 browser-use screenshot inbox.png
-
+# ...
 # 专业版新增命令
 email-digest-tool aggregate --accounts gmail --format html
 ```
@@ -253,7 +255,7 @@ email-digest-tool aggregate --accounts gmail --format html
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | email-digest处理的内容输入 |,  |
 | content | string | 否 | email-digest处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -281,9 +283,8 @@ email-digest-tool aggregate --accounts gmail --format html
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -297,9 +298,9 @@ email-digest-tool aggregate --accounts gmail --format html
 - **Python版本**: 3.9 及以上（browser-use 依赖）
 - **网络环境**: 需可访问各邮箱服务与推送渠道
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | browser-use | CLI工具 | 必需 | `uv pip install browser-use[cli]` |
 | Chrome 浏览器 | 浏览器 | 必需 | 官方网站下载安装 |
@@ -404,7 +405,7 @@ email-digest-tool aggregate --accounts gmail --format html
 ```bash
 # 验证账户状态
 email-digest-tool accounts health-check
-
+# ...
 # 重新登录失效账户
 browser-use --browser real open https://mail.google.com
 ```
@@ -415,7 +416,7 @@ browser-use --browser real open https://mail.google.com
 ```bash
 # 更新评分规则
 email-digest-tool config update --ai-scoring rules.json
-
+# ...
 # 查看评分详情
 email-digest-tool aggregate --accounts gmail --show-scores
 ```
@@ -426,7 +427,7 @@ email-digest-tool aggregate --accounts gmail --show-scores
 ```bash
 # 测试推送渠道
 email-digest-tool push test --channel feishu
-
+# ...
 # 查看推送日志
 email-digest-tool push log --since "2026-07-01"
 ```
@@ -437,7 +438,7 @@ email-digest-tool push log --since "2026-07-01"
 ```bash
 # 查看告警频率统计
 email-digest-tool alert stats
-
+# ...
 # 调整告警阈值
 email-digest-tool alert update --name "unread-alert" --threshold 100
 ```
@@ -454,9 +455,8 @@ email-digest-tool convert --input report.html --format markdown
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

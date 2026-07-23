@@ -49,6 +49,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 新闻聚合专业版
 
@@ -61,7 +63,7 @@ pricing_model: "monthly"
 ### 功能对比
 
 | 能力 | 免费版 | PRO 版 |
-| --- | --- | --- |
+|---|---|-----|
 | 新闻源数量 | 10+ 个 | 50+ 个 |
 | 分类整理 | 科技/军事/社会 | 自定义分类 |
 | 定时更新 | 否 | Cron 调度 |
@@ -172,7 +174,7 @@ cat > industry_keywords.txt <<EOF
 芯片制造 最新进展
 新能源 产业动态
 EOF
-
+# ...
 # 批量监控行业动态
 python （请参考skill目录中的脚本文件） \
   --keywords-file industry_keywords.txt \
@@ -224,10 +226,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 依赖说明
 pip install apscheduler pandas matplotlib
-
+# ...
 # 导入免费版配置
 python （请参考skill目录中的脚本文件） --from-free
-
+# ...
 # 验证升级
 python （请参考skill目录中的脚本文件） --version
 # 输出: hot-news-tool-pro v1.0.0
@@ -249,7 +251,7 @@ sources:
     url: https://www.guancha.cn
     category: military
 EOF
-
+# ...
 # 执行多源抓取
 python （请参考skill目录中的脚本文件） \
   --sources-file sources.yaml \
@@ -277,7 +279,7 @@ sources:
       url: https://www.guancha.cn
     - name: Defense News
       url: https://www.defensenews.com
-
+# ...
 monitoring:
   brand_keywords:
     - "公司名"
@@ -287,19 +289,19 @@ monitoring:
     - "投诉"
     - "负面"
   poll_interval: 300
-
+# ...
 alerts:
   webhook: https://hooks.slack.com/xxx
   email:
     smtp_host: smtp.company.com
     smtp_port: 587
     sender: alert@company.com
-
+# ...
 schedule:
   fetch_cron: "0 */2 * * *"
   report_cron: "0 8 * * *"
   timezone: Asia/Shanghai
-
+# ...
 analytics:
   sentiment_analysis: true
   trend_tracking: true
@@ -311,10 +313,10 @@ analytics:
 ```bash
 # 启动 REST API 服务
 python （请参考skill目录中的脚本文件） --port 8000
-
+# ...
 # 查询最新新闻
 curl http://localhost:8000/news?category=tech&max=10
-
+# ...
 # 订阅告警
 curl -X POST http://localhost:8000/subscribe \
   -d '{"keywords": ["品牌名"], "webhook": "https://xxx"}'
@@ -323,7 +325,7 @@ curl -X POST http://localhost:8000/subscribe \
 ### 参数说明
 
 | 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+|:-----|:-----|:-----|:-----|
 | `--sources-file` | 字符串 | 无 | 新闻源配置文件 |
 | `--categories` | 字符串 | all | 类别过滤 |
 | `--keywords` | 字符串 | 无 | 告警关键词 |
@@ -340,7 +342,7 @@ curl -X POST http://localhost:8000/subscribe \
 ```python
 # monitor_config.py - 监控配置
 from multi_source import MonitorConfig
-
+# ...
 config = MonitorConfig(
     sources_file="sources.yaml",
     parallel_workers=8,
@@ -350,7 +352,7 @@ config = MonitorConfig(
     deduplicate=True,
     sentiment_analysis=True
 )
-
+# ...
 # 启动监控
 config.start()
 ```
@@ -363,7 +365,7 @@ python （请参考skill目录中的脚本文件） \
   --level=critical \
   --keywords="品牌名 危机,品牌名 诉讼" \
   --immediate=true
-
+# ...
 python （请参考skill目录中的脚本文件） \
   --level=warning \
   --keywords="品牌名 投诉,品牌名 负面" \
@@ -379,7 +381,7 @@ python （请参考skill目录中的脚本文件） \
   --keywords="品牌名" \
   --output=weekly_report.md \
   --include-charts
-
+# ...
 # 导出趋势数据
 python （请参考skill目录中的脚本文件） \
   --period="month" \
@@ -394,10 +396,10 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 检查所有源状态
 python （请参考skill目录中的脚本文件） --check-sources
-
+# ...
 # 禁用失败源
 python （请参考skill目录中的脚本文件） --disable-failed
-
+# ...
 # 配置备用源
 python （请参考skill目录中的脚本文件） --fallback-sources
 ```
@@ -407,10 +409,10 @@ python （请参考skill目录中的脚本文件） --fallback-sources
 ```bash
 # 检查告警服务状态
 python （请参考skill目录中的脚本文件） --status
-
+# ...
 # 减少轮询间隔
 python （请参考skill目录中的脚本文件） --poll-interval=60
-
+# ...
 # 检查 Webhook 连通性
 curl -X POST $WEBHOOK_URL -d '{"test": true}'
 ```
@@ -420,10 +422,10 @@ curl -X POST $WEBHOOK_URL -d '{"test": true}'
 ```bash
 # 调整情感分析模型
 python （请参考skill目录中的脚本文件） --model=advanced
-
+# ...
 # 添加行业词典
 python （请参考skill目录中的脚本文件） --dictionary=industry.txt
-
+# ...
 # 手动标注训练数据
 python （请参考skill目录中的脚本文件） --labeled-data.json
 ```
@@ -441,7 +443,7 @@ python （请参考skill目录中的脚本文件） --labeled-data.json
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --- | --- | --- | --- |
+|---:|---:|---:|---:|
 | Python 3.7+ | 运行时 | 是 | 系统包管理器安装 |
 | requests | HTTP 库 | 是 | `pip install requests` |
 | beautifulsoup4 | HTML 解析 | 是 | `pip install beautifulsoup4` |
@@ -480,9 +482,8 @@ export SENTIMENT_API_KEY=your_api_key
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

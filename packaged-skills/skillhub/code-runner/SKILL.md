@@ -38,26 +38,28 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # 代码执行工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 1. 批量任务执行
 ```python
 from code_runner import run_batch_tasks
-
+# ...
 tasks = [
     {
         "workdir": "/path/to/auth-service",
@@ -75,7 +77,7 @@ tasks = [
         "priority": "medium"
     }
 ]
-
+# ...
 results = run_batch_tasks(tasks, max_concurrent=3)
 ```- 验证返回数据的完整性和格式正确性
 - 参考`CI/CD 集成`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
@@ -98,7 +100,7 @@ pipeline = [
     {"id": "api", "prompt": "添加 API 端点", "depends_on": ["logic"]},
     {"id": "test", "prompt": "运行集成测试", "depends_on": ["api"]}
 ]
-
+# ...
 results = run_pipeline(pipeline, max_concurrent=2)
 ```
 
@@ -119,7 +121,7 @@ audit_config = {
 审计记录包含:
 
 | 记录项 | 说明 |
-|:-------|:-----|
+|---:|---:|
 | 任务 ID | 唯一标识 |
 | 执行时间 | 开始/结束时间 |
 | 执行用户 | 以哪个用户运行 |
@@ -183,7 +185,7 @@ custom_responses = {
 
 ```python
 from code_runner import run_batch_tasks
-
+# ...
 # 批量处理微服务
 services = ["auth", "order", "payment", "notification", "user"]
 tasks = [
@@ -195,9 +197,9 @@ tasks = [
     }
     for svc in services
 ]
-
+# ...
 results = run_batch_tasks(tasks, max_concurrent=3)
-
+# ...
 # 生成汇总报告
 for task_id, result in results.items():
     status = "成功" if result.success else "失败"
@@ -213,14 +215,14 @@ for task_id, result in results.items():
 成功: 4
 失败: 1
 总耗时: 812 秒
-
+# ...
 详情:
 auth-service:        成功 (耗时 156秒)
 order-service:       成功 (耗时 198秒)
 payment-service:     成功 (耗时 175秒)
 notification-service:成功 (耗时 142秒)
 user-service:        失败 (超时,建议增加超时或拆分任务)
-
+# ...
 审计日志: .code-runner/logs/batch-20260718-143000.log
 ```
 
@@ -237,14 +239,14 @@ python3 -m code_runner \
   --user ci-runner \
   --timeout 600 \
   --audit
-
+# ...
 # 2. 运行测试
 python3 -m code_runner \
   --workdir $CI_PROJECT_DIR \
   --prompt "运行全量测试,报告通过率和失败详情" \
   --user ci-runner \
   --timeout 300
-
+# ...
 # 3. 代码审查
 python3 -m code_runner \
   --workdir $CI_PROJECT_DIR \
@@ -263,7 +265,7 @@ projects = [
     {"name": "backend", "workdir": "/projects/backend-api"},
     {"name": "mobile", "workdir": "/projects/mobile-app"}
 ]
-
+# ...
 tasks = [
     {
         "workdir": p["workdir"],
@@ -272,9 +274,9 @@ tasks = [
     }
     for p in projects
 ]
-
+# ...
 results = run_batch_tasks(tasks, max_concurrent=3)
-
+# ...
 # 按项目汇总
 for p in projects:
     result = results.get(p["name"])
@@ -288,10 +290,10 @@ for p in projects:
 ```bash
 # 安装依赖
 pip install code-runner-pro
-
+# ...
 # 初始化配置
 mkdir -p .code-runner/{logs,reports,configs}
-
+# ...
 cat > .code-runner/config.json << 'EOF'
 {
   "edition": "pro",
@@ -315,13 +317,13 @@ EOF
 ### 第二步: 执行批量任务
 ```python
 from code_runner import run_batch_tasks
-
+# ...
 tasks = [
     {"workdir": "/projects/app1", "prompt": "添加健康检查端点"},
     {"workdir": "/projects/app2", "prompt": "添加健康检查端点"},
     {"workdir": "/projects/app3", "prompt": "添加健康检查端点"}
 ]
-
+# ...
 results = run_batch_tasks(tasks, max_concurrent=3)
 ```
 
@@ -335,7 +337,7 @@ cat .code-runner/logs/latest-audit.log
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | code-runner处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -382,9 +384,8 @@ cat .code-runner/logs/latest-audit.log
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -399,7 +400,7 @@ cat .code-runner/logs/latest-audit.log
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | Python 3.8+ | 运行时 | 必需 | python.org |
 | 代码 CLI | CLI 工具 | 必需 | `npm install -g @anthropic-ai/claude-code` |
 | LLM API | API | 必需 | 由代码 CLI 内置 LLM 提供 |
@@ -410,7 +411,7 @@ cat .code-runner/logs/latest-audit.log
 ```bash
 # 代码 CLI 认证
 export ANTHROPIC_API_KEY="your-api-key"
-
+# ...
 # 工具配置
 export CODE_RUNNER_USER="code-runner"
 export CODE_RUNNER_TIMEOUT="600"
@@ -435,12 +436,12 @@ export CODE_RUNNER_AUDIT="true"
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -457,12 +458,12 @@ export CODE_RUNNER_AUDIT="true"
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -479,12 +480,12 @@ export CODE_RUNNER_AUDIT="true"
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -492,9 +493,8 @@ export CODE_RUNNER_AUDIT="true"
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------:|-----------|:----------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -534,10 +534,11 @@ variables:
     "max_size_mb": 500
   }
 }
-
-
+# ...
+# ...
 ## 已知限制
-
+# ...
 - 每次请求仅处理单一任务,不支持批量并发
 - 
 - 和网络环境
+# ...

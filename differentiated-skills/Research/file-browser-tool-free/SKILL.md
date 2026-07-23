@@ -20,8 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 > **浏览、查看、搜索、管理。四步完成文件系统操作。**
 
 无需复杂配置，通过简单的命令即可浏览目录、查看文件、搜索内容、管理文件。免费版聚焦轻量场景，提供基础的文件系统操作能力。
@@ -31,7 +32,7 @@ suggested_price: 29.9
 
 ### 核心定位
 | 维度 | 免费版能力 |
-|------|------------|
+|---|-----|
 | 目录浏览 | 支持（ls/tree） |
 | 文件查看 | 支持（cat/head/tail） |
 | 基础搜索 | 支持（find/grep） |
@@ -55,7 +56,7 @@ suggested_price: 29.9
 ### 2. 文件查看
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 文件浏览器(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -63,7 +64,7 @@ suggested_price: 29.9
 ```python
 class FileViewer:
     """文件查看器（免费版）"""
-
+# ...
     def view_text(self, filepath, encoding="utf-8"):
         """查看文本文件"""
         try:
@@ -75,7 +76,7 @@ class FileViewer:
             return f"无法解码（{encoding}），可能是二进制文件"
         except PermissionError:
             return f"无权限读取：{filepath}"
-
+# ...
     def head(self, filepath, n=10, encoding="utf-8"):
         """查看文件前N行"""
         try:
@@ -88,7 +89,7 @@ class FileViewer:
                 return "\n".join(lines)
         except FileNotFoundError:
             return f"文件不存在：{filepath}"
-
+# ...
     def tail(self, filepath, n=10, encoding="utf-8"):
         """查看文件后N行"""
         try:
@@ -97,7 +98,7 @@ class FileViewer:
                 return "\n".join([line.rstrip() for line in lines[-n:]])
         except FileNotFoundError:
             return f"文件不存在：{filepath}"
-
+# ...
     def view_range(self, filepath, start_line=1, end_line=20, encoding="utf-8"):
         """查看指定行范围"""
         try:
@@ -111,7 +112,7 @@ class FileViewer:
                 return "\n".join(lines)
         except FileNotFoundError:
             return f"文件不存在：{filepath}"
-
+# ...
     def preview(self, filepath, max_chars=500):
         """预览文件（前N字符）"""
         content = self.view_text(filepath)
@@ -120,15 +121,15 @@ class FileViewer:
                 return content[:max_chars] + "\n\n... [截断，共 " + str(len(content)) + " 字符]"
             return content
         return content
-
+# ...
 viewer = FileViewer()
-
+# ...
 print("=== 文件前10行 ===")
 print(viewer.head("README.md", 10))
-
+# ...
 print("\n=== 文件后5行 ===")
 print(viewer.tail("README.md", 5))
-
+# ...
 print("\n=== 预览 ===")
 print(viewer.preview("README.md", 200))
 ```
@@ -140,15 +141,11 @@ print(viewer.preview("README.md", 200))
 
 ### 3. 基础搜索
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供基础搜索所需的指令和必要参数。
 **处理**: 解析基础搜索的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回基础搜索的响应数据,包含状态码、结果和日志。
 
 ### 4. 文件操作
-
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供文件操作所需的指令和必要参数。
 **处理**: 解析文件操作的输入参数,完成核心逻辑,返回结构化响应。
@@ -163,15 +160,15 @@ print(viewer.preview("README.md", 200))
 browser = DirectoryBrowser()
 viewer = FileViewer()
 ops = FileOperations()
-
+# ...
 print("当前目录内容：")
 files = browser.list_directory(".", long_format=True)
 for f in files[:10]:
     print(f"  {f['name']:20} {f['size_human']:>10} {f['modified']}")
-
+# ...
 print("\nREADME.md 前10行：")
 print(viewer.head("README.md", 10))
-
+# ...
 ```
 
 ### 场景二：快速查找文件
@@ -179,12 +176,12 @@ print(viewer.head("README.md", 10))
 
 ```python
 searcher = FileSearcher()
-
+# ...
 print("=== 查找所有 .md 文件 ===")
 md_files = searcher.find_by_extension(".", "md")
 for f in md_files[:10]:
     print(f"  {f}")
-
+# ...
 print("\n=== 搜索包含'error'的行 ===")
 results = searcher.search_in_files(".", "error", "*.py")
 for r in results[:5]:
@@ -196,7 +193,7 @@ for r in results[:5]:
 
 ```python
 viewer = FileViewer()
-
+# ...
 files_to_preview = ["README.md", "config.yaml", "main.py"]
 for f in files_to_preview:
     if os.path.exists(f):
@@ -216,11 +213,11 @@ for f in files_to_preview:
 ### 30秒上手
 ```bash
 ls -la
-
+# ...
 cat README.md | head -10
-
+# ...
 find . -name "*.py" -type f
-
+# ...
 grep -r "TODO" --include="*.py" .
 ```
 
@@ -232,7 +229,7 @@ cat > file_browser.py << 'PYEOF'
 import os
 import sys
 from datetime import datetime
-
+# ...
 def list_dir(path="."):
     entries = os.listdir(path)
     for entry in sorted(entries):
@@ -242,20 +239,20 @@ def list_dir(path="."):
         else:
             size = os.path.getsize(full)
             print(f"  [FILE] {entry} ({size} bytes)")
-
+# ...
 def view_file(filepath, lines=10):
     with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
         for i, line in enumerate(f):
             if i >= lines: break
             print(f"  {i+1}: {line.rstrip()}")
-
+# ...
 def search_files(root, pattern):
     import fnmatch
     for dirpath, _, filenames in os.walk(root):
         for f in filenames:
             if fnmatch.fnmatch(f, pattern):
                 print(f"  {os.path.join(dirpath, f)}")
-
+# ...
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "list"
     if cmd == "list":
@@ -265,7 +262,7 @@ if __name__ == "__main__":
     elif cmd == "search":
         search_files(".", sys.argv[2])
 PYEOF
-
+# ...
 python3 file_browser.py list
 python3 file_browser.py view README.md
 python3 file_browser.py search "*.py"
@@ -278,7 +275,7 @@ python3 file_browser.py search "*.py"
 ### 基础配置
 ```python
 import os
-
+# ...
 class FileBrowserConfig:
     """文件浏览器配置（免费版）"""
     DEFAULT_PATH = os.getenv("FB_DEFAULT_PATH", ".")
@@ -286,7 +283,7 @@ class FileBrowserConfig:
     PREVIEW_MAX_CHARS = int(os.getenv("FB_PREVIEW_CHARS", "500"))
     DEFAULT_ENCODING = os.getenv("FB_ENCODING", "utf-8")
     SHOW_HIDDEN = os.getenv("FB_SHOW_HIDDEN", "0") == "1"
-
+# ...
     @classmethod
     def show(cls):
         print("=== 文件浏览器配置 ===")
@@ -295,7 +292,7 @@ class FileBrowserConfig:
         print(f"预览字符数：{cls.PREVIEW_MAX_CHARS}")
         print(f"默认编码：{cls.DEFAULT_ENCODING}")
         print(f"显示隐藏文件：{cls.SHOW_HIDDEN}")
-
+# ...
 FileBrowserConfig.show()
 ```
 
@@ -328,7 +325,7 @@ def safe_delete(path):
     if confirm.lower() == 'y':
         return ops.delete(path)
     return {"success": False, "message": "已取消"}
-
+# ...
 def backup_before_operation(paths, backup_dir="./backup"):
     """操作前备份"""
     import shutil
@@ -343,7 +340,7 @@ def backup_before_operation(paths, backup_dir="./backup"):
 def search_in_project(root, pattern, exclude_dirs=None):
     """在项目中搜索（排除指定目录）"""
     exclude_dirs = exclude_dirs or ['node_modules', '.git', 'venv', '__pycache__']
-
+# ...
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
 ```
@@ -364,7 +361,7 @@ def robust_operation(func, *args, **kwargs):
 ```
 
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|---:|---:|---:|---:|---:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -393,7 +390,7 @@ def robust_operation(func, *args, **kwargs):
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python 3.8+ | 运行时 | 必需 | 官网下载安装 |
 | os | Python库 | 必需 | Python标准库（文件操作） |
 | shutil | Python库 | 必需 | Python标准库（高级文件操作） |

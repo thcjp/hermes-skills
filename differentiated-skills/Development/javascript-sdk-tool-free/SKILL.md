@@ -41,8 +41,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # JavaScript SDK 工具（免费版）
 
 ## 概述
@@ -52,7 +53,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 典型用法 |
-| --- | --- | --- |
+|----|---|----|
 | SDK 安装 | npm/yarn/pnpm 安装 | `npm install @ai/sdk` |
 | 认证配置 | API Key 与环境变量 | 直接配置或环境变量 |
 | 应用调用 | 运行 AI 应用并获取结果 | `client.run({ app, input })` |
@@ -93,31 +94,31 @@ suggested_price: 29.9
 
 ```text
 用户：帮我在 Node.js 项目中调用 AI 模型生成图片
-
+# ...
 助手：
 1. 安装 SDK
    npm install @ai/sdk
-
+# ...
 2. 配置认证
    // 直接配置
    import { createClient } from '@ai/sdk';
    const client = createClient({ apiKey: 'your_api_key' });
-   
+# ...
    // 或使用环境变量（推荐）
    // .env 文件
    AI_API_KEY=your_api_key
-   
+# ...
    const client = createClient({ apiKey: process.env.AI_API_KEY });
-
+# ...
 3. 调用应用
    const result = await client.run({
        app: 'image-generator',
        input: { prompt: '山间日落' }
    });
-   
+# ...
    console.log(result.status);  // "completed"
    console.log(result.output);  // 输出数据
-
+# ...
 4. 错误处理
    try {
        const result = await client.run({...});
@@ -136,9 +137,9 @@ suggested_price: 29.9
 
 ```typescript
 import { createClient } from '@ai/sdk';
-
+// ...
 const client = createClient({ apiKey: process.env.AI_API_KEY });
-
+// ...
 // 方式一：自动上传（路径作为输入）
 const result1 = await client.run({
     app: 'image-processor',
@@ -146,19 +147,19 @@ const result1 = await client.run({
         image: '/path/to/image.png'  // 自动上传
     }
 });
-
+// ...
 // 方式二：手动上传
 const file = await client.uploadFile('/path/to/image.png', {
     filename: 'custom_name.png',
     contentType: 'image/png',
     public: true
 });
-
+// ...
 const result2 = await client.run({
     app: 'image-processor',
     input: { image: file.uri }
 });
-
+// ...
 // 方式三：浏览器文件上传
 const input = document.querySelector('input[type="file"]');
 const file = await client.uploadFile(input.files[0]);
@@ -178,13 +179,13 @@ const task = await client.run({
     app: 'video-generator',
     input: { prompt: '无人机飞越山脉' }
 }, { wait: false });
-
+// ...
 console.log(`任务 ID: ${task.id}`);
-
+// ...
 // 后续查询任务状态
 const status = await client.getTask(task.id);
 console.log(`状态: ${status.status}`);
-
+// ...
 if (status.status === 'completed') {
     console.log('结果:', status.output);
 } else if (status.status === 'failed') {
@@ -217,10 +218,10 @@ if (status.status === 'completed') {
 ```bash
 # npm
 npm install @ai/sdk
-
+# ...
 # yarn
 yarn add @ai/sdk
-
+# ...
 # pnpm
 pnpm add @ai/sdk
 ```
@@ -231,13 +232,13 @@ pnpm add @ai/sdk
 
 ```typescript
 import { createClient } from '@ai/sdk';
-
+// ...
 // 方式一：直接配置 API Key
 const client = createClient({ apiKey: 'your_api_key' });
-
+// ...
 // 方式二：环境变量（推荐）
 const client = createClient({ apiKey: process.env.AI_API_KEY });
-
+// ...
 // 方式三：前端代理（不暴露 Key）
 const client = createClient({ proxyUrl: '/api/proxy' });
 ```
@@ -246,9 +247,9 @@ const client = createClient({ proxyUrl: '/api/proxy' });
 
 ```typescript
 import { createClient } from '@ai/sdk';
-
+// ...
 const client = createClient({ apiKey: process.env.AI_API_KEY });
-
+// ...
 async function main() {
     try {
         const result = await client.run({
@@ -258,14 +259,14 @@ async function main() {
                 max_tokens: 100
             }
         });
-        
+// ...
         console.log('状态:', result.status);
         console.log('输出:', result.output);
     } catch (error) {
         console.error('调用失败:', error.message);
     }
 }
-
+// ...
 main();
 ```
 
@@ -274,7 +275,7 @@ main();
 ### 运行参数说明
 
 | 参数 | 类型 | 说明 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | `app` | string | 应用 ID |
 | `input` | object | 匹配应用 schema 的输入 |
 | `setup` | object | 隐藏的配置参数 |
@@ -285,9 +286,9 @@ main();
 
 ```javascript
 const { createClient } = require('@ai/sdk');
-
+// ...
 const client = createClient({ apiKey: 'your_api_key' });
-
+// ...
 async function run() {
     const result = await client.run({
         app: 'text-generator',
@@ -295,7 +296,7 @@ async function run() {
     });
     console.log(result);
 }
-
+// ...
 run();
 ```
 
@@ -304,11 +305,11 @@ run();
 ```bash
 # .env 文件
 AI_API_KEY=your_api_key_here
-
+# ...
 # 加载环境变量（Node.js）
 # npm install dotenv
 import 'dotenv/config';
-
+# ...
 const client = createClient({ apiKey: process.env.AI_API_KEY });
 ```
 
@@ -361,7 +362,7 @@ const task = await client.run({
     app: 'video-generator',
     input: { prompt: '...' }
 }, { wait: false });
-
+// ...
 // 轮询任务状态
 async function waitForTask(taskId, interval = 5000) {
     while (true) {
@@ -371,7 +372,7 @@ async function waitForTask(taskId, interval = 5000) {
         await new Promise(r => setTimeout(r, interval));
     }
 }
-
+// ...
 const result = await waitForTask(task.id);
 ```
 
@@ -381,7 +382,7 @@ const result = await waitForTask(task.id);
 // 不要在浏览器中暴露 API Key
 // 使用代理模式
 const client = createClient({ proxyUrl: '/api/proxy' });
-
+// ...
 // 浏览器文件上传
 const input = document.querySelector('input[type="file"]');
 const file = await client.uploadFile(input.files[0]);
@@ -391,7 +392,7 @@ const file = await client.uploadFile(input.files[0]);
 
 ```typescript
 import { RequirementsNotMetError, APIError } from '@ai/sdk';
-
+// ...
 try {
     const result = await client.run({...});
 } catch (e) {
@@ -424,7 +425,7 @@ Node.js 18 以下需要安装 node-fetch polyfill
 ```typescript
 // 并行调用（注意速率限制）
 const prompts = ['问题1', '问题2', '问题3'];
-
+// ...
 const results = await Promise.all(
     prompts.map(prompt => 
         client.run({
@@ -433,7 +434,7 @@ const results = await Promise.all(
         })
     )
 );
-
+// ...
 // 串行调用（避免速率限制）
 const results = [];
 for (const prompt of prompts) {
@@ -456,7 +457,7 @@ for (const prompt of prompts) {
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Node.js | 运行时 | 必需 | nodejs.org 下载 |
 | @ai/sdk | npm 包 | 必需 | `npm install @ai/sdk` |
 | dotenv | 环境变量 | 推荐 | `npm install dotenv` |
@@ -473,9 +474,8 @@ for (const prompt of prompts) {
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

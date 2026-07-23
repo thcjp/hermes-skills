@@ -16,16 +16,17 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 数据存储
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # 文档数据库云管理平台(免费版)
 
 通过API浏览和调用文档数据库云管理平台的管理接口。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 文档数据库管理(免费版)处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -62,7 +63,7 @@ node （请参考skill目录中的脚本文件） detail --category "Database Us
 ```bash
 # 预检模式（不实际执行）
 node （请参考skill目录中的脚本文件） --category "Clusters" --endpoint "Create Cluster" --dry-run --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
-
+# ...
 # 实际执行
 node （请参考skill目录中的脚本文件） --category "Clusters" --endpoint "Create Cluster" --yes --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
 ```
@@ -71,7 +72,7 @@ node （请参考skill目录中的脚本文件） --category "Clusters" --endpoi
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | API目录浏览 | 无 | 50+分类的API端点列表 |
 | 端点详情查询 | 分类+端点名 | HTTP方法/参数/Schema |
 | 实时API调用 | 分类+端点+数据 | API调用结果 |
@@ -120,7 +121,7 @@ No changes applied. Remove --dry-run to execute.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | `ATLAS_CLIENT_ID`未配置 | 凭证缺失 | 通过 `export ATLAS_CLIENT_ID="your_id"` 设置 |
 | `ATLAS_CLIENT_SECRET`未配置 | 凭证缺失 | 通过 `export ATLAS_CLIENT_SECRET="your_secret"` 设置 |
 | JSON数据格式错误 | `--data`参数无效JSON | 使用 `jq` 验证JSON格式，确保引号和括号正确 |
@@ -151,7 +152,7 @@ A: 设置环境变量 `ATLAS_CLIENT_ID` 和 `ATLAS_CLIENT_SECRET`。这是公私
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -159,7 +160,6 @@ A: 设置环境变量 `ATLAS_CLIENT_ID` 和 `ATLAS_CLIENT_SECRET`。这是公私
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash

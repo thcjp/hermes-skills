@@ -23,16 +23,17 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # Agent Telegram
 
 所有 Agent 向用户（Legend）发送 Telegram 消息时必须遵循此规范。规范定义了 8 类 Agent 角色的账号映射、消息格式、汇报时机与消息模板，确保多 Agent 协作时消息统一路由到用户 Telegram 账号 `5440561025`。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Agent Telegram处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,13 +41,13 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| **8 类角色账号映射**：为每个 Agent 分配独立的 `accountId` 与 emoji 标识，消息前缀带 emoji 便于用户快速识别来源 | 支持 | 支持 |
-| **四类汇报时机**：收到任务立即汇报、每完成子任务汇报、遇到问题汇报、任务全部完成汇报 | 不支持 | 支持 |
-| **标准化消息模板**：任务开始、任务完成、遇到问题三类模板，统一 emoji 与字段格式 | 不支持 | 支持 |
-| **多角色协作流程**：main 分发任务 → 各角色执行并汇报 → main 汇总结果，支持任务在角色间流转 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|:-----|:-----|:-----|
+| 基础功能 | 支持 | 支持 |
+| Agent Telegram类角色消息发送 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -92,7 +93,7 @@ pricing_model: "per_use"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|---:|---:|---:|
 | 多 Agent 协作开发 | main 分发需求给 product+backend+frontend | 三位 Agent 分别以 🟡🔧🎨 前缀向用户 Telegram 发送任务接收与完成消息 |
 | 自动化工作流通知 | crawler 完成数据采集任务 | 🕷️ 前缀消息汇报采集结果，含输出文件路径 `~/Desktop/project/data/output.json` |
 | 团队任务进度同步 | backend 完成 API 开发子任务 | 🔧 前缀消息汇报接口文档路径，main 汇总后转发用户 |
@@ -152,7 +153,7 @@ message({
 ## 账号映射表
 
 | Agent | 负责人 | accountId | Emoji | 职责 |
-|-------|--------|-----------|-------|------|
+|:----:|:----:|:----:|:----:|:----:|
 | main | 9527 | `default` | 🤖 | 任务分发与结果汇总 |
 | architect | 亮亮 | `architect` | 🏗️ | 系统设计与技术选型 |
 | backend | 老崔 | `backend` | 🔧 | API 与服务端开发 |
@@ -223,7 +224,7 @@ message({
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 消息发不出去，无任何响应 | 忘记填写 `accountId` 字段 | 必须指定你的 accountId，参照账号映射表（如 backend 用 `backend`） |
 | 消息未送达 Telegram | 误用 `sessions_send` 等其他工具 | 必须使用 `message` 工具，channel 固定为 `telegram` |
 | product 角色报"账号不存在" | product 误用 `accountId: "product"` | product 的正确 accountId 是 `sproduct`（带 s 前缀），非 `product` |
@@ -279,7 +280,7 @@ A：不会。每个 Agent 使用独立 accountId 与 Bot Token，消息通过各
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|:---|---:|---:|
 | message 工具 | Agent 平台工具 | 必需 | Agent 平台内置或插件提供 |
 | Telegram Bot Token | 凭证 | 必需 | 通过 @BotFather 创建 Bot 获取 |
 | skill-platform.json | 配置文件 | 必需 | `~/.skill-platform/skill-platform.json` 中配置 accounts |

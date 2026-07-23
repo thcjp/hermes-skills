@@ -16,11 +16,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 自动文件整理器（免费版）
 
 > **一键整理凌乱文件夹。按类型/日期自动归类，六大类别覆盖常见文件。**
@@ -33,7 +34,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 自动文件整理器处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -82,13 +83,13 @@ suggested_price: 29.9
 ```bash
 # 1. 预览整理方案（不实际移动文件）
 python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
-
+# ...
 # 2. 确认方案后执行整理
 python3 （请参考skill目录中的脚本文件） organize ~/Downloads
-
+# ...
 # 3. 查看整理统计报告
 python3 （请参考skill目录中的脚本文件） stats ~/Downloads
-
+# ...
 # 4. 按日期整理
 python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --preview
 ```
@@ -98,19 +99,19 @@ python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --previ
 将以下内容加入每周文件维护例程：
 
 ```markdown
-
+# ...
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
+# ...
 #
 ## 每周下载文件夹整理
-
+# ...
 每周日执行下载文件夹自动整理：
 1. 预览整理方案
    python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
-
+# ...
 2. 确认后执行
    python3 （请参考skill目录中的脚本文件） organize ~/Downloads
-
+# ...
 3. 查看统计报告确认结果
    python3 （请参考skill目录中的脚本文件） stats ~/Downloads
 ```
@@ -123,7 +124,7 @@ python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --previ
 ### 1. 六大文件类型分类
 
 | 类别 | 图标 | 包含格式 | 整理目标 |
-|------|------|----------|----------|
+|:-----|:-----|:-----|:-----|
 | 图片 | 图片 | jpg, jpeg, png, gif, webp, svg, bmp, psd, ai | 图片/ |
 | 文档 | 文档 | pdf, doc, docx, txt, md, xls, xlsx, ppt, pptx | 文档/ |
 | 视频 | 视频 | mp4, mkv, avi, mov, flv, wmv, webm | 视频/ |
@@ -140,7 +141,7 @@ python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --previ
 ### 2. 按日期自动归类
 
 | 时间维度 | 目录结构 | 适用场景 |
-|----------|----------|----------|
+|---:|---:|---:|
 | 按天 | 2026-07-18/ | 日常文件归档 |
 | 按周 | 2026-W29/ | 周报素材整理 |
 | 按月 | 2026-07/ | 月度文件归档 |
@@ -149,7 +150,7 @@ python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --previ
 ```bash
 # 按天整理
 python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --granularity day
-
+# ...
 # 按月整理
 python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --granularity month
 ```
@@ -164,10 +165,10 @@ python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --granu
 ========================================
   文件整理统计报告
 ========================================
-
+# ...
 扫描目录：~/Downloads
 文件总数：156个
-
+# ...
 按类型分布：
   图片：    45个 (28.8%)
   文档：    38个 (24.4%)
@@ -176,7 +177,7 @@ python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --granu
   压缩包：  15个 (9.6%)
   代码：     6个 (3.8%)
   其他：    32个 (20.5%)
-
+# ...
 总大小：2.3 GB
 最大文件：项目演示视频.mp4 (456 MB)
 ========================================
@@ -210,10 +211,10 @@ python3 （请参考skill目录中的脚本文件） by-date ~/Downloads --granu
 ```bash
 # 预览整理方案
 python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
-
+# ...
 # 确认后执行
 python3 （请参考skill目录中的脚本文件） organize ~/Downloads
-
+# ...
 # 查看统计报告
 python3 （请参考skill目录中的脚本文件） stats ~/Downloads
 ```
@@ -228,7 +229,7 @@ python3 （请参考skill目录中的脚本文件） stats ~/Downloads
 ```bash
 # 按类型整理桌面
 python3 （请参考skill目录中的脚本文件） by-type ~/Desktop
-
+# ...
 # 生成整理报告
 python3 （请参考skill目录中的脚本文件） stats ~/Desktop --report
 ```
@@ -243,7 +244,7 @@ python3 （请参考skill目录中的脚本文件） stats ~/Desktop --report
 ```bash
 # 按类型整理项目目录
 python3 （请参考skill目录中的脚本文件） by-type ~/Projects/my-project --preview
-
+# ...
 # 确认后执行
 python3 （请参考skill目录中的脚本文件） by-type ~/Projects/my-project
 ```
@@ -269,13 +270,13 @@ python3 （请参考skill目录中的脚本文件） by-type ~/Projects/my-proje
 ```text
 用法：
   python3 （请参考skill目录中的脚本文件） <命令> <路径> [选项]
-
+# ...
 命令：
   organize <路径>    综合整理（类型+日期）
   by-type  <路径>    按文件类型整理
   by-date  <路径>    按修改日期整理
   stats    <路径>    查看文件统计
-
+# ...
 选项：
   --preview          预览模式（仅显示方案，不执行）
   --report           生成详细报告
@@ -283,7 +284,7 @@ python3 （请参考skill目录中的脚本文件） by-type ~/Projects/my-proje
   --granularity <粒度>  日期整理粒度（day/week/month/year）
   --rules <文件>     自定义类型映射规则
   --help             显示帮助
-
+# ...
 示例：
   python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
   python3 （请参考skill目录中的脚本文件） by-type ~/Desktop
@@ -303,31 +304,31 @@ categories:
   图片:
     extensions: [jpg, jpeg, png, gif, webp, svg, bmp, psd, ai, heic, raw]
     target: 图片/
-
+# ...
   文档:
     extensions: [pdf, doc, docx, txt, md, xls, xlsx, ppt, pptx, csv, pages, numbers, key]
     target: 文档/
-
+# ...
   视频:
     extensions: [mp4, mkv, avi, mov, flv, wmv, webm, m4v, mpg, mpeg]
     target: 视频/
-
+# ...
   音频:
     extensions: [mp3, wav, flac, aac, ogg, m4a, wma, aiff]
     target: 音频/
-
+# ...
   压缩包:
     extensions: [zip, rar, 7z, tar, gz, bz2, xz, iso, dmg]
     target: 压缩包/
-
+# ...
   代码:
     extensions: [js, ts, py, java, cpp, c, cs, go, rs, rb, php, html, css, json, xml, yaml, sql, sh]
     target: 代码/
-
+# ...
   设计稿:
     extensions: [sketch, fig, xd, psd, ai, indd]
     target: 设计稿/
-
+# ...
   其他:
     target: 其他/
 ```
@@ -342,11 +343,11 @@ preferences:
   generate_report: true
   undo_enabled: true
   log_file: ~/file-organizer.log
-
+# ...
   naming:
     use_chinese: true
     date_format: YYYY-MM-DD
-
+# ...
   exclude:
     - ".DS_Store"
     - "Thumbs.db"
@@ -400,7 +401,7 @@ preferences:
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
 | PyYAML | Python库 | 可选 | `pip install pyyaml`（自定义规则功能需要） |
@@ -451,9 +452,8 @@ MIT license允许使用、复制、修改和分发。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

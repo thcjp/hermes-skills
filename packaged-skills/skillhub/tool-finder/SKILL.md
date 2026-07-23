@@ -13,21 +13,23 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
 ---
 # Tool Finder
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎 | 支持 | 支持 |
-| 支持评分排序、推荐规则、来源标识 | 不支持 | 支持 |
-| 优先原词搜索，扩展补充 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 多源数据聚合与去重 | 不支持 | 支持 |
+| 语义搜索与智能摘要 | 不支持 | 支持 |
+| 定时监控与变化推送 | 不支持 | 支持 |
+| 研究结论结构化导出 | 不支持 | 支持 |
+| 知识图谱构建与关系推理 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -40,7 +42,7 @@ pricing_model: "per_use"
 **看到以下关键词 → 立即调用 tool-finder：**
 
 | 关键词/短语 | 触发操作 |
-| --- | --- |
+|:-------|:-------|
 | "找个...skill" / "找...工具" | `tool-finder search "<关键词>"` |
 | "有什么 协议" / "协议 推荐" | `tool-finder search "<关键词>" --type 协议` |
 | "安装..." / "帮我装..." | `tool-finder install <name> --type skill|协议` |
@@ -60,7 +62,7 @@ Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | tool-finder处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -107,9 +109,8 @@ Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -122,7 +123,7 @@ Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -131,7 +132,6 @@ Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -146,32 +146,32 @@ export API_KEY="your_api_key_here"
 
 ```markdown
 ### 🔍 Tool Discovery — Use `tool-finder` First!
-
+# ...
 **When user asks to find/search/install skills or MCPs:**
-
+# ...
 1. **ALWAYS use `tool-finder` skill first**
 2. **DO NOT use `SkillHub search` directly**
 3. **Search command:**
    ```bash
    ~/.skill-platform/workspace/skills/tool-finder/（请参考skill目录中的脚本文件） search "<query>" --type skill
 ```
-
+# ...
 4. **Install command:**
-
+# ...
    bash
-
+# ...
    ```
    ~/.skill-platform/workspace/skills/tool-finder/（请参考skill目录中的脚本文件） install <name> --type skill
    ```
-
+# ...
 **Why tool-finder?**
-
+# ...
 * ✅ Name matching priority (relevant skills appear first)
 * ✅ Rating-based filtering (hides irrelevant low-quality results)
 * ✅ Clear recommendation levels (⭐⭐⭐⭐⭐ to ❌)
 * ✅ Rate limit handling with fallback
 * ✅ Shows source (SkillHub vs Smithery)
-
+# ...
 ```text
 **效果：** AI 会自动在找 skill/协议 时使用 tool-finder，无需每次指定！
 
@@ -179,44 +179,44 @@ export API_KEY="your_api_key_here"
 
 ### 示例 1：找 skill
 ```
-
+# ...
 用户：帮我找个能搜索 web 的 skill
-
+# ...
 AI：[执行 tool-finder search "web search" --type skill]
-
+# ...
 AI：找到以下 web 搜索 skill：
-
+# ...
 * tavily-search: Tavily Web Search
 * baidu-search: baidu web search
 * multi-search-engine: Multi Search Engine
-
+# ...
 推荐 tavily-search，需要安装吗？
-
+# ...
 ```text
 ### 示例 2：找 协议
 ```
-
+# ...
 用户：有什么 协议 可以连接 GitHub？
-
+# ...
 AI：[执行 tool-finder search "github" --type 协议]
-
+# ...
 AI：找到 GitHub 相关 协议：
-
+# ...
 * GitHub: GitHub is a code hosting platform for version control...
-
+# ...
 需要我帮你安装吗？
-
+# ...
 ```text
-### 依赖说明
+### 依赖说明(补充)
 ```
-
+# ...
 用户：安装 tavily-search
-
+# ...
 AI：[执行 tool-finder install tavily-search --type skill]
-
+# ...
 AI：正在安装 tavily-search...
 [输出安装结果]
-
+# ...
 ```text
 ---
 
@@ -225,17 +225,10 @@ AI：正在安装 tavily-search...
 ### Q1: 如何开始使用Tool Finder？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Tool Finder有什么限制？
-A: 
-
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -250,8 +243,8 @@ A:
 在 `AGENTS.md` 中添加：
 
 ```markdown
-### 🔍 Tool Discovery — Use `tool-finder` First!
-
+### 🔍 Tool Discovery — Use `tool-finder` First!(补充)
+# ...
 **When user asks to find/search/install skills or MCPs:**
 1. ALWAYS use `tool-finder` skill first
 2. DO NOT use `SkillHub search` directly
@@ -286,7 +279,7 @@ A:
 **推荐等级**：
 
 | 等级 | 图标 | 条件 |
-| --- | --- | --- |
+|:------:|--------|:-------|
 | 强烈推荐 | ⭐⭐⭐⭐⭐ | 评分 ≥ 3.5 + 名称高度匹配 |
 | 推荐 | ⭐⭐⭐⭐ | 评分 ≥ 3.0 + 名称相关 |
 | 一般 | ⭐⭐⭐ | 评分 ≥ 2.0 或 名称部分匹配 |
@@ -308,12 +301,12 @@ A:
 ```text
 ⚠️  SkillHub API 限流 (Rate limit exceeded)
    建议：等待几分钟后重试，或登录 SkillHub login
-
+# ...
 ══════════════════════════════════════════════════════════════
 ⚠️  搜索警告
 ══════════════════════════════════════════════════════════════
 • SkillHub: 2 次错误/限流
-
+# ...
 提示：结果可能不完整，建议:
   1. 等待几分钟后重试（限流情况）
   2. 使用精确模式：--exact（知道技能名时）
@@ -353,10 +346,6 @@ A:
 * 使用 `--verbose` 确认是否限流
 
 ### 6. 协议 安装需要客户端
-
-Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）。
-
-**解决**：输出指引让用户手动安装。
 
 ### 7. 搜索关键词
 

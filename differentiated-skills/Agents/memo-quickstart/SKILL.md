@@ -19,8 +19,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
-
 # 使用流程
 
 面向零依赖场景的**本地记忆系统**，用三层架构和混合检索算法，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无 API Key、无云、无追踪，纯本地记忆。
@@ -36,7 +37,7 @@ suggested_price: 99.9
 ### 记忆类型与重要度参考
 
 | 类型 | 使用场景 | 重要度范围 |
-|:---|:---|:---|
+|---|----|-----|
 | preference | 用户表达喜好 | 0.8-1.0 |
 | decision | 项目决策 | 0.9-1.0 |
 | fact | 重要信息 | 0.6-0.8 |
@@ -119,7 +120,7 @@ TF-IDF（50%）：文本相关性，基础召回
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 记忆快速启动处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -175,7 +176,7 @@ memory-cleanup --days 30                              # 清理
 
 ## 示例
 
-### 示例
+### 示例(补充)
 
 **输入：** 用户说"这个项目用 Tailwind，不用 vanilla CSS"
 
@@ -207,9 +208,8 @@ memory-import --file new-backup.json
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|:---|:---|:---|
+|---:|---:|---:|
 | 搜索无结果 | memories/ 目录不存在 | 运行 `memory-init` 初始化目录结构 |
 | 搜索无结果 | JSON 文件格式无效 | 用 `jq` 验证 JSON 格式，修复语法错误 |
 | 搜索无结果 | 关键词太窄 | 扩大搜索词范围，利用标签匹配补充召回 |
@@ -223,7 +223,7 @@ memory-import --file new-backup.json
 ## 依赖说明
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---|:---|:---|:---|
+|:---:|:---:|:---:|:---:|
 | Agent 平台（Claude Code/Cursor/Codex 等） | 运行环境 | 必需 | 安装对应 Agent |
 | Node.js | 运行时 | 必需 | nodejs.org 安装（运行记忆 CLI） |
 | simple-local-memory | npm 包 | 必需 | `npm install -g simple-local-memory` |

@@ -24,22 +24,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
 ---
 # GitHub管理器(专业版)
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| GitHub管理器(专业版)功能GitHub管理 | 不支持 | 支持 |
+| GitHub管理器(专业版)raphQL高级查询 | 不支持 | 支持 |
+| GitHub管理器(专业版)与Webhook管理 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -48,16 +50,16 @@ pricing_model: "per_use"
 ```bash
 # 批量关闭带"stale"标签的Issue
 gh-manager issue batch-close --repo owner/repo --label stale --reason "not_planned"
-
+# ...
 # 批量打标签
 gh-manager issue batch-label --repo owner/repo --issues 1,3,5,7 --labels "bug,priority:high"
-
+# ...
 # 批量分配负责人
 gh-manager issue batch-assign --repo owner/repo --issues 10-20 --assignee "alice"
-
+# ...
 # 批量迁移Issue到另一仓库
 gh-manager issue migrate --from owner/repo-a --to owner/repo-b --issues 1-50
-
+# ...
 # 批量重新打开
 gh-manager issue batch-reopen --repo owner/repo --issues 30,32,35
 ```
@@ -72,10 +74,10 @@ gh-manager issue batch-reopen --repo owner/repo --issues 30,32,35
 ```bash
 # 跨仓库查询某作者的所有PR
 gh-manager graphql query --file queries/cross_repo_prs.graphql --vars '{"author":"alice"}'
-
+# ...
 # 依赖说明
 gh-manager graphql query --file queries/dependency_graph.graphql --vars '{"repo":"owner/repo"}'
-
+# ...
 # 深度分页查询(自动处理cursor)
 gh-manager graphql paginate --file queries/all_issues.graphql --limit 1000
 ```
@@ -116,13 +118,13 @@ gh-manager automation create --name "stale-issue-triage" \
   --trigger "schedule:0 9 * * 1" \
   --condition "label:none AND updated:<7d" \
   --action "add-label:stale AND comment:'此Issue已7天未更新,7天后将自动关闭'"
-
+# ...
 # 查看所有自动化规则
 gh-manager automation list
-
+# ...
 # 手动触发规则
 gh-manager automation run --name "stale-issue-triage" --repo owner/repo
-
+# ...
 # 查看执行历史
 gh-manager automation history --name "stale-issue-triage" --last 10
 ```
@@ -130,7 +132,7 @@ gh-manager automation history --name "stale-issue-triage" --last 10
 自动化场景模板:
 
 | 模板 | 触发条件 | 动作 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | Stale Issue | 7天无更新 | 加stale标签,14天后关闭 |
 | Auto Assign | 新Issue创建 | 按轮询分配给团队成员 |
 | PR Review Reminder | PR 24h未review | 通知指定reviewer |
@@ -142,13 +144,13 @@ gh-manager automation history --name "stale-issue-triage" --last 10
 ```bash
 # 生成团队周报
 gh-manager dashboard weekly --repos "owner/repo1,owner/repo2" --team "alice,bob,carol" --format pdf
-
+# ...
 # 查看贡献统计
 gh-manager dashboard contributions --repos "owner/repo1" --period 30d
-
+# ...
 # 燃尽图(基于Issue/PR)
 gh-manager dashboard burndown --repo owner/repo --milestone "v2.0"
-
+# ...
 # 多仓库汇总
 gh-manager dashboard summary --org my-org --period week
 ```
@@ -165,16 +167,16 @@ gh-manager dashboard summary --org my-org --period week
 ```bash
 # 列出仓库Webhook
 gh-manager webhook list --repo owner/repo
-
+# ...
 # 添加Webhook
 gh-manager webhook add --repo owner/repo \
   --url "https://hooks.example.com/github" \
   --events "issues,pull_request,push" \
   --secret "$WEBHOOK_SECRET"
-
+# ...
 # 测试Webhook
 gh-manager webhook test --repo owner/repo --id 123 --event "issues"
-
+# ...
 # 删除Webhook
 gh-manager webhook delete --repo owner/repo --id 123
 ```
@@ -184,13 +186,13 @@ gh-manager webhook delete --repo owner/repo --id 123
 ```bash
 # 权限审查
 gh-manager audit permissions --repo owner/repo --format csv
-
+# ...
 # 敏感信息扫描
 gh-manager audit secrets --repo owner/repo --depth 100
-
+# ...
 # 合规报告
 gh-manager audit compliance --org my-org --standard SOC2 --format pdf
-
+# ...
 # Token使用审计
 gh-manager audit tokens --org my-org --period 90d
 ```
@@ -249,10 +251,10 @@ gh-manager audit tokens --org my-org --period 90d
 ```bash
 # 安装专业版
 pip install gh-manager[pro]
-
+# ...
 # 完成GitHub认证(继承gh的认证)
 gh auth login
-
+# ...
 # 验证专业版功能
 gh-manager version
 gh-manager status
@@ -263,10 +265,10 @@ gh-manager status
 ```bash
 # 初始化团队配置
 gh-manager team init --org my-org
-
+# ...
 # 添加团队成员
 gh-manager team add --members "alice,bob,carol"
-
+# ...
 # 配置多仓库
 gh-manager repo add --repos "owner/repo1,owner/repo2,owner/repo3"
 ```
@@ -276,10 +278,10 @@ gh-manager repo add --repos "owner/repo1,owner/repo2,owner/repo3"
 ```bash
 # 启用stale issue自动化
 gh-manager automation enable --template stale-issue-triage
-
+# ...
 # 启用CI失败告警
 gh-manager automation enable --template ci-failure-alert --notify "im:#devops"
-
+# ...
 # 查看已启用的自动化
 gh-manager automation list --enabled
 ```
@@ -289,7 +291,7 @@ gh-manager automation list --enabled
 ```bash
 # 生成本周团队报告
 gh-manager dashboard weekly --format pdf --output weekly-report.pdf
-
+# ...
 # 查看实时仪表盘
 gh-manager dashboard live --port 8080
 ```
@@ -298,7 +300,7 @@ gh-manager dashboard live --port 8080
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | github-manager处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -345,9 +347,8 @@ gh-manager dashboard live --port 8080
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -363,7 +364,7 @@ gh-manager dashboard live --port 8080
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | gh-manager[pro] | CLI工具 | 必需 | `pip install gh-manager[pro]` |
 | gh | CLI工具 | 必需 | `brew install gh` |
 | jq | 命令行工具 | 可选 | `brew install jq` |
@@ -443,7 +444,7 @@ gh-manager dashboard live --port 8080
     type: assign
     strategy: round_robin
     team: [alice, bob, carol]
-
+# ...
 - name: pr-review-sla
   description: PR review SLA监控
   trigger:
@@ -466,8 +467,8 @@ gh-manager dashboard live --port 8080
 A: 专业版自动遵守API限速(5000请求/小时),超限时自动排队等待。大批量操作(>100条)建议在低峰期执行,并启用`--rate-limit wait`模式。
 
 ### 错误恢复步骤
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -511,17 +512,14 @@ A: 支持。配置`GITHUB_ENTERPRISE_HOST`环境变量即可连接Enterprise Ser
 
 ## 错误处理
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)(续)| 原因 | 处理方式 |
+|:------------:|--------------|:-------------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接，重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
-## 已知限制
+## 补充限制说明
 
-- 需要LLM支持
-- 需要LLM支持
-- 需要LLM支持
 - 需要LLM支持
 

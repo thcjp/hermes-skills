@@ -30,6 +30,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 博弈论分析 (专业版)
 
@@ -42,7 +44,7 @@ pricing_model: "per_use"
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版 | 专业版 |
-|:--------|:-----|:------:|:------:|
+|----|---|---|---|
 | 收益矩阵分析 | 2x2 博弈 | 支持 | 支持 |
 | 纳什均衡 | 纯策略 | 支持 | 纯+混合 |
 | 囚徒困境 | 经典案例 | 支持 | 支持 |
@@ -92,14 +94,14 @@ pricing_model: "per_use"
 import os
 import requests
 import numpy as np
-
+# ...
 API_BASE = "https://api.game-theory-pro.local/v1"
 ADMIN_KEY = os.environ["GAME_THEORY_ADMIN_KEY"]
-
+# ...
 class AuctionDesigner:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-
+# ...
     def design_auction(self, auction_type, bidders, item_value_distribution):
         """设计拍卖机制"""
         payload = {
@@ -120,7 +122,7 @@ class AuctionDesigner:
             timeout=120,
         )
         return resp.json()
-
+# ...
     def revenue_equivalence_check(self, auction_configs):
         """验证收益等价定理"""
         payload = {"auctions": auction_configs}
@@ -131,7 +133,7 @@ class AuctionDesigner:
             timeout=60,
         )
         return resp.json()
-
+# ...
 designer = AuctionDesigner(ADMIN_KEY)
 result = designer.design_auction(
     auction_type="second_price",
@@ -167,7 +169,7 @@ def design_mechanism(social_choice_function, agent_types):
         timeout=300,
     )
     return resp.json()
-
+# ...
 # 设计公共物品提供机制
 mechanism = design_mechanism(
     social_choice_function="public_good_provision",
@@ -204,7 +206,7 @@ def evaluate_policy_impact(policy, stakeholders):
         timeout=300,
     )
     return resp.json()
-
+# ...
 # 评估碳排放交易政策
 impact = evaluate_policy_impact(
     policy={"type": "cap_and_trade", "cap": 1000, "price_floor": 50},
@@ -271,28 +273,28 @@ api:
   admin_key: ${GAME_THEORY_ADMIN_KEY}
   org_id: ${GAME_THEORY_ORG_ID}
   timeout: 300
-
+# ...
 solvers:
   nash: [lcp, lemke_howson, support_enumeration]
   evolutionary: [replicator_dynamics, stochastic_dynamics]
   bayesian: [harsanyi_transform, perfect_bayesian_equilibrium]
   cooperative: [shapley_value, core, nucleolus]
-
+# ...
 experiments:
   enabled: true
   participants: 100
   scenarios: [ultimatum_game, trust_game, public_goods]
   data_collection: behavioral
-
+# ...
 visualization:
   enabled: true
   formats: [3d_payoff, strategy_heatmap, dynamics_animation]
-
+# ...
 reports:
   templates: [academic, consulting, policy_brief]
   formats: [pdf, latex, markdown]
   language: [zh, en]
-
+# ...
 collaboration:
   multi_user: true
   version_control: true
@@ -324,7 +326,7 @@ def evolutionary_dynamics(payoff_matrix, initial_population, generations=1000):
         timeout=300,
     )
     return resp.json()
-
+# ...
 # 鹰鸽博弈的演化分析
 result = evolutionary_dynamics(
     payoff_matrix=[[50, 50], [100, 0]],
@@ -483,7 +485,7 @@ def generate_professional_report(analysis_id, audience="consulting"):
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Game Theory Pro API | 在线 API | 必需 | 联系销售开通专业版 |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3.9+ | 运行时 | 推荐 | python.org 下载 |
@@ -498,7 +500,7 @@ def generate_professional_report(analysis_id, audience="consulting"):
 export GAME_THEORY_ADMIN_KEY="sk_pro_admin_xxx"
 export GAME_THEORY_ORG_ID="org_your_id"
 export GAME_THEORY_EDITION="pro"
-
+# ...
 # 可选: 实验平台
 export EXPERIMENT_PLATFORM_URL="https://experiments.game-theory-pro.local"
 export PARTICIPANT_RECRUITMENT="prolific"
@@ -513,9 +515,8 @@ export PARTICIPANT_RECRUITMENT="prolific"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

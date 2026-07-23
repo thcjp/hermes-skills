@@ -34,6 +34,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
 # 元代理优化器（专业版）
 
@@ -47,7 +49,7 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | Meta Agent Optimizer处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -106,12 +108,12 @@ pricing_model: "per_use"
 ```bash
 # 若已有免费版数据，直接升级
 ls .learnings/LEARNINGS.md 2>/dev/null && echo "检测到免费版数据，将自动升级"
-
+# ...
 # 若无免费版数据，初始化
 mkdir -p .learnings/{metrics,extracted-skills,reports}
 cat > .learnings/LEARNINGS.md << 'EOF'
 # 学习日志
-
+# ...
 EOF
 ```
 
@@ -130,7 +132,7 @@ cat > .learnings/.metrics-config.json << 'EOF'
   "retention": 90
 }
 EOF
-
+# ...
 # 2. 配置多平台Hook
 cat > .learnings/.hooks-config.json << 'EOF'
 {
@@ -152,7 +154,7 @@ cat > .learnings/.hooks-config.json << 'EOF'
   }
 }
 EOF
-
+# ...
 # 3. 启用技能自动提取
 mkdir -p .learnings/extracted-skills
 cat > .learnings/.extraction-config.json << 'EOF'
@@ -163,7 +165,7 @@ cat > .learnings/.extraction-config.json << 'EOF'
   "outputDir": "skills/"
 }
 EOF
-
+# ...
 # 验证配置
 ls -la .learnings/
 ```
@@ -224,7 +226,7 @@ ls -la .learnings/
 ### 1. 三类日志分类记录（基础+增强）
 
 | 日志类型 | 免费版能力 | 专业版增强 |
-|----------|-----------|-----------|
+|:-----|:-----|:-----|
 | 学习（LRN） | 标准化记录+状态管理 | +性能指标绑定+自动分类建议 |
 | 错误（ERR） | 错误捕获+上下文记录 | +根因分析+影响范围评估 |
 | 特性请求（FEAT） | 需求收集+复杂度评估 | +ROI分析+优先级自动排序 |
@@ -238,7 +240,7 @@ ls -la .learnings/
 实时采集5项核心性能指标：
 
 | 指标 | 计算方式 | 告警阈值 | 优化目标 |
-|------|----------|----------|----------|
+|---:|---:|---:|---:|
 | 响应时间 | 任务从开始到完成的时间 | >30秒 | <10秒 |
 | Token消耗 | 每次任务消耗的Token数 | >50K/任务 | <20K/任务 |
 | 成功率 | 成功任务/总任务 | <85% | >95% |
@@ -249,10 +251,10 @@ ls -la .learnings/
 ```bash
 # 查看实时性能指标
 meta metrics realtime
-
+# ...
 # 生成性能报告
 meta metrics report --period 7d --format markdown
-
+# ...
 # 导出指标数据
 meta metrics export --format csv --period 30d
 ```
@@ -267,18 +269,18 @@ meta metrics export --format csv --period 30d
 
 ```text
 瓶颈诊断报告示例：
-
+# ...
 Top 5 瓶颈：
 1. [高优先级] 数据库连接超时（发生23次/周）
    根因：连接池配置过小（max=10）
    影响：响应时间+300%，错误率+15%
    建议：调整连接池max=50，添加重试机制
-
+# ...
 2. [高优先级] Token消耗超标（平均65K/任务）
    根因：上下文未压缩，历史日志全量加载
    影响：成本+200%
    建议：启用分层加载，COLD层按需检索
-
+# ...
 3. [中优先级] 前端测试失败率高（18%）
    根因：测试数据硬编码，环境依赖
    影响：CI通过率下降
@@ -295,7 +297,7 @@ Top 5 瓶颈：
 基于日志分析生成5类优化建议模板：
 
 | 建议类型 | 触发条件 | 建议模板 |
-|----------|----------|----------|
+|:---:|:---:|:---:|
 | 缓存优化 | 重复计算/查询 | "为X添加缓存层，预计减少70%重复计算" |
 | 批处理优化 | 频繁单条操作 | "将单条操作改为批量，预计减少90%网络往返" |
 | 并行优化 | 串行独立任务 | "将X和Y并行执行，预计减少50%总时间" |
@@ -311,7 +313,7 @@ Top 5 瓶颈：
 支持三大AI编码平台的Hook集成：
 
 | 平台 | 激活方式 | 配置位置 | 检测能力 |
-|------|----------|----------|----------|
+|:------|------:|:------|:------|
 | Claude Code | Hooks（UserPromptSubmit/PostToolUse） | .claude/settings.json | 自动检测 |
 | Codex CLI | Hooks（实验性） | .codex/hooks.json | 自动检测 |
 | GitHub Copilot | Instructions文件 | .github/copilot-instructions.md | 手动审查 |
@@ -348,7 +350,7 @@ Top 5 瓶颈：
 **提取标准**（满足任一即可）：
 
 | 标准 | 描述 |
-|------|------|
+|---:|:---|
 | 复发型 | 有2+个See Also关联的类似问题 |
 | 已验证 | 状态为resolved且有可用修复 |
 | 非显然 | 需要实际调试/调查才能发现 |
@@ -359,13 +361,13 @@ Top 5 瓶颈：
 ```bash
 # 识别提取候选
 meta extract candidates --top 5
-
+# ...
 # 预览提取（dry-run）
 meta extract skill skill-name --dry-run
-
+# ...
 # 执行提取
 meta extract skill skill-name
-
+# ...
 # 验证提取的技能
 meta extract verify --skill skill-name
 ```
@@ -386,10 +388,10 @@ meta extract verify --skill skill-name
 ```bash
 # 生成复发模式趋势图
 meta visualize trends --period 90d --format markdown
-
+# ...
 # 生成错误热力图
 meta visualize heatmap --by area --period 30d
-
+# ...
 # 生成Top-N排行
 meta visualize top --n 10 --by frequency
 ```
@@ -397,7 +399,7 @@ meta visualize top --n 10 --by frequency
 **趋势图示例**：
 ```text
 复发模式趋势（90天）
-
+# ...
 错误类型         | 第1月 | 第2月 | 第3月 | 趋势
 ─────────────────┼───────┼───────┼───────┼──────
 数据库连接超时   | 45    | 32    | 18    | ↓ 60%
@@ -416,10 +418,10 @@ API限流          | 28    | 35    | 42    | ↑ 50%
 ```bash
 # 跨项目搜索学习
 meta search "数据库连接" --scope all-projects --limit 20
-
+# ...
 # 聚合周报
 meta aggregate weekly --format markdown
-
+# ...
 # 识别跨项目共性
 meta aggregate patterns --min-projects 3
 ```
@@ -442,7 +444,7 @@ meta aggregate patterns --min-projects 3
 ```bash
 # 生成30天性能报告
 meta metrics report --period 30d --format markdown
-
+# ...
 # 输出：
 # 性能报告（2026-01-01 至 2026-01-31）
 #
@@ -471,7 +473,7 @@ meta metrics report --period 30d --format markdown
 ```bash
 # 识别提取候选
 meta extract candidates --top 10
-
+# ...
 # 输出：
 # 提取候选Top 10：
 # 1. [已验证] LRN-20260110-003: PostgreSQL JSON查询优化
@@ -479,10 +481,10 @@ meta extract candidates --top 10
 # 2. [复发型] ERR-20260112-001: Docker多阶段构建陷阱
 #    满足标准：复发型（5次关联）+非显然
 # ...
-
+# ...
 # 批量提取
 meta extract batch --candidates top5 --output skills/
-
+# ...
 # 验证提取的技能
 meta extract verify --all
 ```
@@ -499,11 +501,11 @@ meta extract verify --all
 # Claude Code: .claude/settings.json
 # Codex CLI: .codex/hooks.json
 # Copilot: .github/copilot-instructions.md
-
+# ...
 # 所有平台的学习统一汇聚到.learnings/
 # 跨平台查询
 meta search "API限流" --scope all-platforms
-
+# ...
 # 输出包含来自三个平台的学习条目
 ```
 
@@ -517,7 +519,7 @@ meta search "API限流" --scope all-platforms
 ```bash
 # 生成技术债报告
 meta aggregate tech-debt --period 90d --format markdown
-
+# ...
 # 输出：
 # 技术债报告
 #
@@ -540,7 +542,7 @@ meta aggregate tech-debt --period 90d --format markdown
 ```bash
 # 识别跨项目共性
 meta aggregate patterns --min-projects 3
-
+# ...
 # 输出：
 # 跨项目共性模式（≥3项目出现）：
 # 1. 环境变量管理问题（5/5项目）
@@ -556,7 +558,7 @@ meta aggregate patterns --min-projects 3
 ### 多角色场景指南
 
 | 角色 | 典型场景 | 推荐功能组合 | 核心价值 |
-|------|----------|-------------|----------|
+|:------:|--------|:-------|:------:|
 | 技术负责人 | 性能优化 | 指标采集+瓶颈诊断+优化建议 | 性能瓶颈数据化 |
 | 架构师 | 技能工厂 | 技能提取+质量门禁 | 经验自动沉淀 |
 | 全栈开发者 | 多平台统一 | Hook集成+跨平台查询 | 知识不分散 |
@@ -615,10 +617,10 @@ meta aggregate patterns --min-projects 3
 ```bash
 # CI前检查学习状态
 meta review --status pending --fail-on critical
-
+# ...
 # CI后记录部署学习
 meta log --type deployment --content "v2.1.0部署至生产" --area infra
-
+# ...
 # 定期生成技术债报告
 meta aggregate tech-debt --period 30d --output reports/tech-debt.md
 ```
@@ -658,7 +660,7 @@ meta aggregate tech-debt --period 30d --output reports/tech-debt.md
 ### 版本更新历史
 
 | 版本 | 日期 | 变更内容 |
-|------|------|----------|
+|----|:--:|---:|
 | 1.0.0 | 2026-01 | 初版发布，含指标采集+瓶颈诊断+技能提取+Hook集成+跨项目聚合 |
 
 ---
@@ -666,7 +668,7 @@ meta aggregate tech-debt --period 30d --output reports/tech-debt.md
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
-|------|----------|----------|--------|
+|----|----|----|----|
 | 指标采集缺失 | Hook未启用或配置错误 | 检查各平台settings.json配置 | 高 |
 | 瓶颈诊断无结果 | 日志数据不足或采样率过低 | 检查采样配置；执行backfill | 中 |
 | 技能提取失败 | 质量门禁未通过 | 检查5项门禁；补充测试/文档 | 中 |
@@ -689,9 +691,8 @@ meta aggregate tech-debt --period 30d --output reports/tech-debt.md
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|------|----------|------|----------|--------|
+|:-----|:-----|:-----|:-----|:-----|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
@@ -739,7 +740,7 @@ meta aggregate tech-debt --period 30d --output reports/tech-debt.md
 ```bash
 # 生成技术债报告
 meta aggregate tech-debt --period 90d --format markdown --audience executive
-
+# ...
 # 输出包含：
 # - 技术债摘要（高/中/低优先级数量）
 # - 影响估算（浪费工时/周）
@@ -772,7 +773,7 @@ meta aggregate tech-debt --period 90d --format markdown --audience executive
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Git | 工具 | 必需 | 系统自带或从git-scm.com安装 |
 | Python 3.8+ | 运行时 | 必需 | 从python.org安装 |
@@ -847,7 +848,7 @@ meta aggregate tech-debt --period 90d --format markdown --audience executive
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:---:|:---:|:---:|:---:|
 | 免费体验版 | ¥0 | 三类日志记录+标准化ID+状态管理+复发检测+项目记忆提升+5种角色场景 | 个人试用、轻量学习记录 |
 | 收费专业版 | ¥29.9/月 | 全功能（指标采集+瓶颈诊断+优化建议+Hook集成+技能提取+跨项目聚合）+7种角色指南+性能优化+优先支持 | 团队/企业、性能优化、技能工厂 |
 

@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # CSV工具箱 专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力域 | 支持 | 支持 |
-| 流式解析 | 不支持 | 支持 |
-| 分块解析大文件 | 不支持 | 支持 |
-| `stream write` | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| CSV工具箱 专业版全功能CSV处理 | 不支持 | 支持 |
+| CSV工具箱 专业版支持流式解析 | 不支持 | 支持 |
+| CSV工具箱 专业版Schema校验 | 不支持 | 支持 |
+| 大数据集流式处理 | 不支持 | 支持 |
+| 多数据源关联查询 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力域 | 命令族 | 说明 | 专业版增强 |
-|--------|--------|------|-----------|
+|:-----|:-----|:-----|:-----|
 | 流式解析 | `stream parse` | 分块解析大文件 | 专业版独有 |
 | 流式生成 | `stream write` | 分块生成大文件 | 专业版独有 |
 | 自定义方言 | `dialect` | 配置非标准 CSV 方言 | 专业版独有 |
@@ -71,8 +73,6 @@ pricing_model: "per_use"
 - 参考`流式解析`的配置文档进行参数调优
 ### 流式生成
 
-针对流式,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应。
-
 **输入**: 用户提供流式生成相关的配置参数、输入数据和处理选项。
 
 **输出**: 返回流式生成的处理结果。- 验证返回数据的完整性和格式正确性
@@ -87,7 +87,7 @@ pricing_model: "per_use"
 ```bash
 # 流式解析大文件（分块 100MB）
 csv-toolkit stream parse large.csv --chunk-size 100MB --output parsed.jsonl
-
+# ...
 # 流式过滤并生成
 csv-toolkit stream parse large.csv \
   --filter "amount > 1000" \
@@ -105,7 +105,7 @@ csv-toolkit dialect create --name "legacy-system" \
   --quotechar "'" \
   --escapechar "\\" \
   --quoting "QUOTE_MINIMAL"
-
+# ...
 # 使用自定义方言解析
 csv-toolkit parse data.csv --dialect legacy-system
 ```
@@ -117,10 +117,10 @@ csv-toolkit parse data.csv --dialect legacy-system
 ```bash
 # 从样本推断 Schema
 csv-toolkit schema infer sample.csv --output schema.yaml
-
+# ...
 # 校验数据是否符合 Schema
 csv-toolkit schema validate production.csv --schema schema.yaml
-
+# ...
 # 校验结果（含错误详情）
 csv-toolkit schema validate production.csv --schema schema.yaml --report validation-report.md
 ```
@@ -158,7 +158,7 @@ columns:
 ```bash
 # 按列合并（要求列一致）
 csv-toolkit merge jan.csv feb.csv mar.csv --output q1.csv --strategy concat
-
+# ...
 # 按键合并（类似 SQL JOIN）
 csv-toolkit merge orders.csv customers.csv \
   --on customer_id \
@@ -173,13 +173,13 @@ csv-toolkit merge orders.csv customers.csv \
 ```bash
 # CSV 转 Parquet（自动推断 Schema）
 csv-toolkit convert data.csv --to parquet --output data.parquet
-
+# ...
 # CSV 转 Arrow（内存列式）
 csv-toolkit convert data.csv --to arrow --output data.arrow
-
+# ...
 # CSV 转 JSON Lines
 csv-toolkit convert data.csv --to jsonl --output data.jsonl
-
+# ...
 # Parquet 转回 CSV
 csv-toolkit convert data.parquet --to csv --output data.csv
 ```
@@ -191,7 +191,7 @@ csv-toolkit convert data.parquet --to csv --output data.csv
 ```bash
 # 按列值拆分
 csv-toolkit split national.csv --by region --output-dir ./regions/
-
+# ...
 # 按行数拆分
 csv-toolkit split large.csv --rows 100000 --output-dir ./chunks/
 ```
@@ -218,7 +218,7 @@ export CSV_TOOLKIT_HOME="$HOME/.csv-toolkit"
 ```bash
 # 验证流式解析
 csv-toolkit stream parse sample.csv --chunk-size 10MB
-
+# ...
 # 验证 Schema 推断
 csv-toolkit schema infer sample.csv
 ```
@@ -235,7 +235,7 @@ csv-toolkit schema infer sample.csv
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 | 版本要求 |
-|:-------|:-----|:---------|:---------|:---------|
+|---:|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 | Python | 运行时 | 必需 | 官网下载 | 3.8+ |
 | csv 模块 | Python 标准库 | 必需 | Python 自带 | - |
@@ -257,7 +257,7 @@ csv-toolkit schema infer sample.csv
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:---:|:---:|:---:|:---:|
 | content | string | 否 | csv-toolkit处理的内容输入 |,  |
 | content | string | 否 | csv-toolkit处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -286,7 +286,7 @@ csv-toolkit schema infer sample.csv
 ## 异常处理
 
 | 现象 | 可能原因 | 解决步骤 | 优先级 |
-|------|----------|----------|--------|
+|:------|------:|:------|:------|
 | OOM 内存溢出 | 全量加载大文件 | 切换流式处理 | P0 |
 | 编码错误 | 非 UTF-8 文件 | 先检测编码并转换 | P0 |
 | Schema 校验失败 | 数据不符合约束 | 查看校验报告，修复数据 | P1 |
@@ -296,10 +296,10 @@ csv-toolkit schema infer sample.csv
 | 拆分文件过多 | 列基数过高 | 改按行数或范围拆分 | P2 |
 | 性能回退 | 配置变更或系统负载 | 对比基准，排查变更 | P2 |
 
-## 依赖说明
+## 依赖说明(补充)
 
 | 依赖项 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
+|---:|:---|---:|---:|
 | LLM | 模型 | 是 | 需要LLM进行内容生成, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要, 本地LLM不需要 |
 
@@ -435,9 +435,8 @@ csv-toolkit incremental cleanup --older-than 7d
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -47,6 +47,8 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # 搜索助手专业版
 
@@ -61,7 +63,7 @@ pricing_model: "per_use"
 ### 免费版 vs 专业版能力对比
 
 | 能力模块 | 免费版 | 专业版 |
-|:--------|:------|:-------|
+|----|---|---|
 | 任务分解 | 最多5个子任务 | 最多8个子任务 |
 | 通用搜索 | 支持 | 支持 |
 | 学术搜索 | 不支持 | 学术文献专用代理 |
@@ -110,16 +112,16 @@ pricing_model: "per_use"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | 搜索助手专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```text
 用户输入: "全面调研竞品X,包括产品功能、技术架构、市场表现、融资历史和用户评价,重点关注最近3个月的动态"
-
+# ...
 AI助手分解为8个子任务,路由至不同代理:
-
+# ...
 1. [通用搜索] 竞品X产品功能与定价最新信息
 2. [通用搜索] 竞品X技术架构与开发栈分析
 3. [通用搜索] 竞品X市场表现与用户规模
@@ -128,7 +130,7 @@ AI助手分解为8个子任务,路由至不同代理:
 6. [学术搜索] 竞品X相关技术论文与专利
 7. [通用搜索] 竞品X最近3个月产品更新与发布
 8. [通用搜索] 竞品X竞争对手与替代方案对比
-
+# ...
 日期约束: 重点关注最近3个月动态
 并行执行,结果评分排序后聚合。
 ```
@@ -139,15 +141,15 @@ AI助手分解为8个子任务,路由至不同代理:
 
 ```text
 用户输入: "检索大模型推理优化的最新学术研究,包括KV缓存、量化、蒸馏方向,要求2025年以后的论文"
-
+# ...
 AI助手分解为子任务,路由至学术搜索代理:
-
+# ...
 1. [学术搜索] 大模型KV缓存优化技术论文(2025年后)
 2. [学术搜索] 大模型量化推理方法研究(2025年后)
 3. [学术搜索] 大模型知识蒸馏推理加速(2025年后)
 4. [学术搜索] 大模型推理服务系统优化(2025年后)
 5. [通用搜索] 大模型推理优化开源项目与工业实践
-
+# ...
 日期约束: 2025年至今
 学术代理覆盖arXiv、Google Scholar、Semantic Scholar等
 ```
@@ -169,10 +171,10 @@ python （请参考skill目录中的脚本文件） schedule add \
   --output /reports/weekly-trends/ \
   --archive \
   --compare-previous
-
+# ...
 # 查看调度任务
 python （请参考skill目录中的脚本文件） schedule list
-
+# ...
 # 查看历史搜索归档
 python （请参考skill目录中的脚本文件） archive search "向量数据库" --since 90d --trend
 ```
@@ -198,7 +200,7 @@ python （请参考skill目录中的脚本文件） archive search "向量数据
 ```bash
 # 1. 验证免费版查询可用
 # 直接用自然语言提出研究问题,专业版自动识别并使用增强能力
-
+# ...
 # 2. 使用专业版增强功能
 # 已知限制
 ```
@@ -209,7 +211,7 @@ python （请参考skill目录中的脚本文件） archive search "向量数据
 
 ```text
 用户: "检索大模型推理优化的学术论文,要求2025年以后发表"
-
+# ...
 AI助手自动:
 1. 路由至学术搜索代理
 2. 应用日期约束(2025年至今)
@@ -221,12 +223,12 @@ AI助手自动:
 ```bash
 # 列出可用模板
 python （请参考skill目录中的脚本文件） templates list
-
+# ...
 # 使用模板执行搜索
 python （请参考skill目录中的脚本文件） search \
   --template competitive-intel \
   --params "target=竞品X" "focus=最近3个月"
-
+# ...
 # 创建自定义模板
 python （请参考skill目录中的脚本文件） templates create \
   --name "技术选型调研" \
@@ -236,7 +238,6 @@ python （请参考skill目录中的脚本文件） templates create \
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -249,25 +250,25 @@ agents:
     name: "通用搜索代理"
     description: "网页搜索,覆盖新闻、博客、文档"
     available: true
-  
+# ...
   academic:
     name: "学术搜索代理"
     description: "学术论文搜索,覆盖arXiv、Scholar等"
     available: true
     sources: ["arxiv.org", "scholar.google.com", "semanticscholar.org"]
-  
+# ...
   finance:
     name: "金融搜索代理"
     description: "金融数据搜索,覆盖财经媒体与数据平台"
     available: true
     sources: ["bloomberg.com", "reuters.com", "crunchbase.com"]
-  
+# ...
   tech:
     name: "技术搜索代理"
     description: "技术文档搜索,覆盖GitHub、StackOverflow等"
     available: true
     sources: ["github.com", "stackoverflow.com", "dev.to"]
-
+# ...
 routing_rules:
   - keywords: ["论文", "学术", "研究", "paper", "arxiv"]
     agent: academic
@@ -332,7 +333,7 @@ schedules:
     output: /reports/weekly-trends/
     archive: true
     compare_previous: true
-
+# ...
   - name: "每日竞品动态监控"
     cron: "0 8 * * *"
     query: "竞品X最新产品发布与市场动态"
@@ -354,7 +355,7 @@ python （请参考skill目录中的脚本文件） search \
   --score \
   --sort-by "relevance" \
   --top 20
-
+# ...
 # 评分维度
 # - relevance(相关度): 结果与查询的匹配程度
 # - authority(权威性): 来源的可信度与权威性
@@ -370,7 +371,7 @@ python （请参考skill目录中的脚本文件） search \
 ```text
 # 好:明确领域与时间
 "检索大模型推理优化的学术论文,2025年以后发表"
-
+# ...
 # 不好:无领域与时间提示
 "大模型推理优化的信息"
 ```
@@ -382,7 +383,7 @@ python （请参考skill目录中的脚本文件） search \
 ```bash
 # 首次执行后保存为模板
 python （请参考skill目录中的脚本文件） templates save --from-last --name "竞品调研模板"
-
+# ...
 # 后续直接使用模板
 python （请参考skill目录中的脚本文件） search --template "竞品调研模板" --params "target=竞品Y"
 ```
@@ -394,7 +395,7 @@ python （请参考skill目录中的脚本文件） search --template "竞品调
 ```text
 # 自动路由(推荐)
 "研究竞品X的融资历史" -> 自动路由至金融搜索代理
-
+# ...
 # 手动指定(精确控制)
 "用学术搜索查找RAG相关论文" -> 强制使用学术搜索代理
 ```
@@ -464,7 +465,7 @@ A: 多代理并行执行,总耗时取决于最慢的代理。通用搜索通常2
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | 通用搜索代理 | Agent能力 | 必需 | Agent内置WebSearch |
 | 学术搜索代理 | Agent能力 | 必需(学术搜索) | Agent内置或外部API |
 | 金融搜索代理 | Agent能力 | 条件必需(金融搜索) | Agent内置或外部API |
@@ -490,9 +491,8 @@ A: 多代理并行执行,总耗时取决于最慢的代理。通用搜索通常2
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -48,6 +48,8 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
 # Brave搜索工具(专业版)
 
@@ -58,7 +60,7 @@ pricing_model: "monthly"
 ### 免费版 vs 专业版对比
 
 | 能力 | 免费版 | 专业版 |
-|:-----|:------|:------|
+|---|---|---|
 | 基础搜索(search.js) | 支持 | 支持 |
 | 内容提取(content.js) | 支持 | 支持 |
 | 结果数量配置 | 支持 | 支持 |
@@ -77,7 +79,7 @@ pricing_model: "monthly"
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | input | string | 是 | Brave搜索工具-专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -85,10 +87,10 @@ pricing_model: "monthly"
 ```bash
 # 批量查询(从文件读取)
 brave-pro batch-search --file queries.txt --concurrency 5
-
+# ...
 # 批量查询(命令行传入)
 brave-pro batch-search "AI智能体" "大模型" "向量数据库" --concurrency 3
-
+# ...
 # 批量查询带内容提取
 brave-pro batch-search --file queries.txt --content --concurrency 3
 ```
@@ -103,13 +105,13 @@ brave-pro batch-search --file queries.txt --content --concurrency 3
 ```bash
 # 启用缓存
 brave-pro search "Python asyncio" --cache
-
+# ...
 # 自定义缓存时间
 brave-pro search "Python asyncio" --cache --ttl 3600
-
+# ...
 # 跨查询去重
 brave-pro batch-search --file queries.txt --dedup
-
+# ...
 # 清理缓存
 brave-pro cache cleanup
 ```
@@ -124,13 +126,13 @@ brave-pro cache cleanup
 ```bash
 # 查看搜索历史
 brave-pro history --limit 50
-
+# ...
 # 按时间筛选
 brave-pro history --from 2026-03-01 --to 2026-03-10
-
+# ...
 # 按成员筛选
 brave-pro history --member alice
-
+# ...
 # 导出历史
 brave-pro history --export json > search-history.json
 ```
@@ -145,10 +147,10 @@ brave-pro history --export json > search-history.json
 ```bash
 # 多查询结果聚合
 brave-pro aggregate "AI智能体" "智能体框架" "多智能体" --top 10
-
+# ...
 # 生成调研报告
 brave-pro report "AI智能体调研" --queries "AI智能体,智能体框架" --format markdown
-
+# ...
 # 内容深度提取(批量提取多个URL)
 brave-pro extract-batch --file urls.txt --format markdown
 ```
@@ -163,7 +165,7 @@ brave-pro extract-batch --file urls.txt --format markdown
 ```bash
 # 启用 API 服务
 brave-pro api start --port 8080
-
+# ...
 # 示例
 curl -s "http://localhost:8080/api/search?q=AI智能体&count=10"
 curl -s -X POST "http://localhost:8080/api/batch" -d '{"queries":["AI","大模型"]}'
@@ -188,7 +190,7 @@ curl -s "http://localhost:8080/api/extract?url=https://example.com/article"
 TOPICS_FILE="topics.txt"
 OUTPUT_DIR="research-results"
 mkdir -p "$OUTPUT_DIR"
-
+# ...
 # 批量并发搜索(5个并发),带内容提取
 brave-pro batch-search \
   --file "$TOPICS_FILE" \
@@ -198,13 +200,13 @@ brave-pro batch-search \
   --dedup \
   --format json \
   --output "$OUTPUT_DIR/results.json"
-
+# ...
 # 生成调研报告
 brave-pro report \
   --input "$OUTPUT_DIR/results.json" \
   --format markdown \
   --output "$OUTPUT_DIR/research-report.md"
-
+# ...
 echo "批量调研完成,报告: $OUTPUT_DIR/research-report.md"
 ```
 
@@ -214,7 +216,7 @@ echo "批量调研完成,报告: $OUTPUT_DIR/research-report.md"
 import subprocess
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+# ...
 RESEARCH_TOPICS = [
     {"query": "AI智能体市场格局 2026", "count": 15, "purpose": "市场分析"},
     {"query": "大模型微调技术对比", "count": 10, "purpose": "技术选型"},
@@ -222,7 +224,7 @@ RESEARCH_TOPICS = [
     {"query": "RAG技术最佳实践", "count": 15, "purpose": "方案设计"},
     {"query": "AI智能体安全风险", "count": 10, "purpose": "风险评估"},
 ]
-
+# ...
 def research_topic(topic):
     """调研单个主题"""
     result = subprocess.run([
@@ -233,7 +235,7 @@ def research_topic(topic):
         "--cache",
         "--format", "json"
     ], capture_output=True, text=True)
-
+# ...
     try:
         data = json.loads(result.stdout)
         return {
@@ -244,7 +246,7 @@ def research_topic(topic):
         }
     except json.JSONDecodeError:
         return {"query": topic["query"], "purpose": topic["purpose"], "error": "解析失败"}
-
+# ...
 # 并发调研,最大并发3
 results = []
 with ThreadPoolExecutor(max_workers=3) as executor:
@@ -253,7 +255,7 @@ with ThreadPoolExecutor(max_workers=3) as executor:
         result = future.result()
         results.append(result)
         print(f"[OK] {result['query']} ({result.get('result_count', 0)} 条结果)")
-
+# ...
 # 生成综合报告
 report = brave_pro_generate_report(results)
 with open("research-report.md", "w") as f:
@@ -270,7 +272,7 @@ print(f"\n调研完成: {len(results)} 个主题,报告已保存")
 # competitor-monitor.sh - 竞品动态监控
 COMPETITORS=("竞品A" "竞品B" "竞品C")
 ALERT_WEBHOOK="https://hooks.example.com/alerts"
-
+# ...
 for comp in "${COMPETITORS[@]}"; do
   # 搜索竞品最新动态(带缓存,6小时有效)
   RESULTS=$(brave-pro search "${comp} 最新动态 融资 发布" \
@@ -279,20 +281,20 @@ for comp in "${COMPETITORS[@]}"; do
     --cache \
     --ttl 21600 \
     --format json)
-
+# ...
   # 提取关键动态
   echo "$RESULTS" | jq -r '.results[] | "[\(.title)] \(.url)"' | while read line; do
     echo "[$comp] $line"
   done
-
+# ...
   # 深度提取重要文章内容
   echo "$RESULTS" | jq -r '.results[0:3][].url' | while read url; do
     CONTENT=$(brave-pro extract "$url" --format markdown --cache)
     echo "$CONTENT" >> "reports/${comp}_$(date +%Y%m%d).md"
   done
-
+# ...
 done
-
+# ...
 echo "竞品监控完成,报告已归档"
 ```
 
@@ -305,12 +307,12 @@ echo "竞品监控完成,报告已归档"
 # team-shared-search.sh - 团队共享搜索
 SHARED_DIR="/shared/search-results"
 mkdir -p "$SHARED_DIR/cache"
-
+# ...
 QUERY="$1"
 MEMBER="${USER:-anonymous}"
 DATE=$(date +%Y-%m-%d)
 HASH=$(echo -n "$QUERY" | md5sum | awk '{print $1}')
-
+# ...
 # 检查团队缓存
 if [ -f "$SHARED_DIR/cache/${HASH}.json" ]; then
   echo "[缓存命中] 使用团队已有结果"
@@ -318,15 +320,15 @@ if [ -f "$SHARED_DIR/cache/${HASH}.json" ]; then
 else
   # 执行搜索(带内容提取)
   brave-pro search "$QUERY" --count 10 --content --format json > "$SHARED_DIR/cache/${HASH}.json"
-
+# ...
   # 记录搜索历史
   echo "{\"date\":\"$DATE\",\"member\":\"$MEMBER\",\"query\":\"$QUERY\",\"file\":\"cache/${HASH}.json\"}" \
     >> "$SHARED_DIR/history.jsonl"
-
+# ...
   echo "[新搜索] 结果已归档到共享库"
   cat "$SHARED_DIR/cache/${HASH}.json"
 fi
-
+# ...
 # 查看团队搜索统计
 brave-pro history --shared --stats
 ```
@@ -344,10 +346,10 @@ brave-pro history --shared --stats
 ```bash
 cd /path/to/brave-search-tool
 npm ci
-
+# ...
 # 专业版初始化
 brave-pro init
-
+# ...
 # 配置
 brave-pro config set api.key "$BRAVE_API_KEY"
 brave-pro config set cache.enabled true
@@ -360,10 +362,10 @@ brave-pro config set batch.max_concurrency 5
 ```bash
 # 单次搜索(带缓存与内容)
 brave-pro search "AI智能体" --count 10 --content --cache
-
+# ...
 # 批量搜索(并发)
 brave-pro batch-search --file queries.txt --concurrency 5 --dedup
-
+# ...
 # 生成调研报告
 brave-pro report --input results.json --format markdown
 ```
@@ -373,10 +375,10 @@ brave-pro report --input results.json --format markdown
 ```bash
 # 启动 API
 brave-pro api start --port 8080 --auth token
-
+# ...
 # 生成 Token
 brave-pro api token create --name "integration" --scope "read"
-
+# ...
 # 验证
 curl -s -H "Authorization: Bearer <token>" "http://localhost:8080/api/health"
 ```
@@ -437,7 +439,7 @@ brave-pro stats
 # 热门查询: AI智能体(56), 大模型(38), 向量数据库(31)
 # 活跃成员: alice(56), bob(38), charlie(31)
 # API 调用: 2345(配额使用: 78%)
-
+# ...
 # 导出统计
 brave-pro stats --export json > stats.json
 ```
@@ -500,7 +502,7 @@ curl "http://localhost:8080/api/extract?url=https://example.com"
 ## 与免费版的兼容性
 
 | 维度 | 兼容性 |
-|:-----|:------|
+|---:|---:|
 | 命令语法 | 100% 兼容(search.js / content.js 可用) |
 | 脚本调用 | 100% 兼容(无需修改即可运行) |
 | API 返回格式 | 100% 兼容 |
@@ -519,7 +521,7 @@ curl "http://localhost:8080/api/extract?url=https://example.com"
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | brave-pro | CLI 工具 | 必需 | 随 Skill 安装 |
 | Node.js | 运行环境 | 必需 | 系统包管理器安装 |
 | npm 依赖包 | Node 包 | 必需 | `npm ci` 安装 |
@@ -543,9 +545,8 @@ curl "http://localhost:8080/api/extract?url=https://example.com"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

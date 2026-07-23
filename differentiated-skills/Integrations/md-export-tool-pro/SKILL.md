@@ -20,8 +20,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 文档导出工具（专业版）
 
 专业版在免费版核心能力之上，新增批量并行转换、自定义样式表、PDF水印加密、REST API服务模式、模板云端同步、版本差异导出等高级能力，专为内容团队、企业文档平台与品牌规范场景设计。
@@ -35,7 +36,7 @@ suggested_price: 99.9
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
-|---------|--------|--------|
+|----|---|---|
 | 文件大小上限 | 10MB | 无上限 |
 | 批量转换 | 串行 | 并行（多核加速） |
 | 自定义样式 | 无 | CSS+模板完全自定义 |
@@ -94,7 +95,7 @@ markdown-exporter-pro batch /docs/**/*.md \
 ```bash
 # 启动API服务
 markdown-exporter-pro serve --port 8080 --workers 4
-
+# ...
 # 调用API
 curl -X POST http://localhost:8080/api/convert \
   -F "file=@input.md" \
@@ -121,7 +122,7 @@ markdown-exporter-pro diff v1.2.md v1.3.md --output changelog.pdf
 
 ```bash
 pip install md-exporter-pro
-
+# ...
 # 验证安装
 markdown-exporter-pro -h
 ```
@@ -133,14 +134,14 @@ markdown-exporter-pro -h
 templates:
   docx: /templates/corporate.docx
   pptx: /templates/corporate.pptx
-
+# ...
 styles:
   html: /styles/corporate.css
   pdf:
     font-family: "Noto Sans CJK"
     font-size: 11pt
     margin: 2cm
-
+# ...
 watermark:
   text: "公司机密"
   opacity: 0.1
@@ -167,23 +168,23 @@ body {
     line-height: 1.8;
     color: #333;
 }
-
+// ...
 h1, h2, h3 {
     color: #1a5276;
     border-bottom: 2px solid #2980b9;
 }
-
+// ...
 code {
     background-color: #f4f4f4;
     padding: 2px 4px;
     border-radius: 3px;
 }
-
+// ...
 table {
     border-collapse: collapse;
     width: 100%;
 }
-
+// ...
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
@@ -227,7 +228,7 @@ curl -X POST http://localhost:8080/api/convert \
   -F "format=pdf" \
   -F "watermark=CONFIDENTIAL" \
   -o output.pdf
-
+# ...
 # 批量转换
 curl -X POST http://localhost:8080/api/batch \
   -H "Authorization: Bearer $API_TOKEN" \
@@ -242,10 +243,10 @@ curl -X POST http://localhost:8080/api/batch \
 ```bash
 # 推送模板到云端
 markdown-exporter-pro template push /templates/corporate.docx --name corporate-v2
-
+# ...
 # 团队成员拉取最新模板
 markdown-exporter-pro template pull corporate-v2 --to /templates/
-
+# ...
 # 查看团队模板列表
 markdown-exporter-pro template list
 ```
@@ -267,11 +268,11 @@ markdown-exporter-pro diff v1.2.md v1.3.md \
 ```css
 /* base.css - 基础样式 */
 body { font-family: sans-serif; }
-
+// ...
 /* corporate.css - 品牌样式（继承base） */
 @import "base.css";
 body { color: #1a5276; }
-
+// ...
 /* report.css - 报告专用样式（继承corporate） */
 @import "corporate.css";
 h1 { page-break-before: always; }
@@ -284,7 +285,7 @@ h1 { page-break-before: always; }
 ```bash
 # 查看CPU核数
 nproc
-
+# ...
 # 设置并行度为CPU核数
 markdown-exporter-pro batch /docs/**/*.md --parallel $(nproc)
 ```
@@ -394,7 +395,7 @@ A：在CI/CD流水线中调用命令行或API，将构建产物中的Markdown自
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
-|------|------|------|----------|
+|:-----|:-----|:-----|:-----|
 | 免费体验版 | 0元 | 核心功能+基础示例 | 个人试用 |
 | 收费专业版 | 29.9元/月 | 全功能+高级特性+优先支持 | 团队/企业 |
 
@@ -410,7 +411,7 @@ A：在CI/CD流水线中调用命令行或API，将构建产物中的Markdown自
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python | 运行时 | 必需 | python.org 官方下载 |
 | md-exporter-pro | Python包 | 必需 | `pip install md-exporter-pro` |
 | pandoc | 系统工具 | 可选 | pandoc.org 官方下载（PPTX转换需要） |
@@ -430,9 +431,8 @@ A：在CI/CD流水线中调用命令行或API，将构建产物中的Markdown自
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

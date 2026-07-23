@@ -24,25 +24,27 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
 ---
 # HTML编码工具-专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
+| CI/CD流水线集成 | 不支持 | 支持 |
+| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
 ### 能力对比
 | 能力维度 | 免费版 | 专业版 |
-|:---------|:-------|:-------|
+|:-----|:-----|:-----|
 | 语义化HTML | 支持 | 支持 |
 | 表单验证 | HTML5基础 | 企业级复杂验证 |
 | 响应式图片 | picture/srcset | +性能优化策略 |
@@ -69,33 +71,33 @@ HTML5 高级API:
   - Web Workers: 后台多线程
   - WebSockets: 实时通信
   - History API: 单页应用路由
-
+# ...
 Web Components:
   - Custom Elements: 自定义HTML标签
   - Shadow DOM: 样式与DOM隔离
   - HTML Templates: 可复用模板
   - 组件生命周期管理
-
+# ...
 WCAG 合规:
   - A级: 基础可访问性
   - AA级: 主流合规标准
   - AAA级: 最高可访问性
   - 自动检查 + 修复建议
-
+# ...
 性能优化:
   - 关键CSS内联
   - 资源预加载（preload/prefetch）
   - 懒加载（loading=lazy + Intersection Observer）
   - 字体加载优化（font-display）
   - 图片格式优化（WebP/AVIF）
-
+# ...
 企业级表单:
   - 多步骤表单
   - 条件逻辑字段
   - 异步验证
   - 自定义验证器
   - 表单状态管理
-
+# ...
 结构化数据:
   - Schema.org 标记
   - JSON-LD 格式
@@ -152,12 +154,12 @@ WCAG 合规:
       </table>
     </canvas>
   </section>
-
+# ...
   <script>
     // Canvas 数据可视化
     const canvas = document.getElementById('sales-chart');
     const ctx = canvas.getContext('2d');
-
+# ...
     const data = [
       { month: '1月', value: 120 },
       { month: '2月', value: 150 },
@@ -166,28 +168,28 @@ WCAG 合规:
       { month: '5月', value: 200 },
       { month: '6月', value: 220 },
     ];
-
+# ...
     // 绘制柱状图
     const barWidth = 80;
     const gap = 40;
     const maxHeight = 300;
     const maxValue = Math.max(...data.map(d => d.value));
-
+# ...
     data.forEach((item, index) => {
       const x = 60 + index * (barWidth + gap);
       const barHeight = (item.value / maxValue) * maxHeight;
       const y = 350 - barHeight;
-
+# ...
       // 绘制柱子
       ctx.fillStyle = '#1a1a2e';
       ctx.fillRect(x, y, barWidth, barHeight);
-
+# ...
       // 绘制数值
       ctx.fillStyle = '#e94560';
       ctx.font = '14px IBM Plex Sans';
       ctx.textAlign = 'center';
       ctx.fillText(`${item.value}万`, x + barWidth / 2, y - 10);
-
+# ...
       // 绘制月份
       ctx.fillStyle = '#8892b0';
       ctx.fillText(item.month, x + barWidth / 2, 380);
@@ -203,8 +205,6 @@ WCAG 合规:
 > 详细代码示例已移至 `references/detail.md`
 
 ### 场景三：WCAG 全面合规检查
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## 使用流程
 
@@ -226,11 +226,11 @@ WCAG 合规:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+# ...
   <!-- 性能优化: 预加载关键资源 -->
   <link rel="preload" href="critical.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="hero.jpg" as="image">
-
+# ...
   <!-- SEO: 结构化数据 -->
   <script type="application/ld+json">
   {
@@ -240,25 +240,25 @@ WCAG 合规:
     "description": "页面描述"
   }
   </script>
-
+# ...
   <!-- Open Graph -->
   <meta property="og:title" content="页面标题">
   <meta property="og:description" content="页面描述">
   <meta property="og:image" content="og-image.jpg">
-
+# ...
   <title>高级HTML页面</title>
 </head>
 <body>
   <!-- 可访问性: 跳过导航 -->
   <a href="#main" class="skip-link">跳到主内容</a>
-
+# ...
   <header role="banner"><!-- 导航 --></header>
-
+# ...
   <main id="main" role="main">
     <!-- Web Component -->
     <data-chart type="bar" data='[{"label":"A","value":10}]'></data-chart>
   </main>
-
+# ...
   <footer role="contentinfo"><!-- 页脚 --></footer>
 </body>
 </html>
@@ -267,7 +267,7 @@ WCAG 合规:
 ### 第三步：运行合规检查
 ```bash
 python3 wcag-checker.py --file index.html --level AA
-
+# ...
 npx lighthouse https://example.com --output html --output-path ./report.html
 ```
 
@@ -275,7 +275,7 @@ npx lighthouse https://example.com --output html --output-path ./report.html
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | html-coder处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -322,9 +322,8 @@ npx lighthouse https://example.com --output html --output-path ./report.html
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -336,9 +335,9 @@ npx lighthouse https://example.com --output html --output-path ./report.html
 - **操作系统**: Windows / macOS / Linux
 - **浏览器**: 现代浏览器（Chrome 90+/Firefox 88+/Safari 14+）
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | 浏览器 | 工具 | 必需 | 现代浏览器 |
 | Lighthouse（可选） | 工具 | 推荐 | `npm install -g lighthouse`（性能审计） |
@@ -362,7 +361,7 @@ npx lighthouse https://example.com --output html --output-path ./report.html
 <link rel="preload" href="critical-font.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="hero-image.webp" as="image">
 <link rel="prefetch" href="next-page.html">
-
+# ...
 <!-- 字体优化 -->
 <style>
   @font-face {
@@ -371,14 +370,14 @@ npx lighthouse https://example.com --output html --output-path ./report.html
     font-display: swap;  /* 加载期间使用回退字体 */
   }
 </style>
-
+# ...
 <!-- 图片格式优化 -->
 <picture>
   <source srcset="image.avif" type="image/avif">
   <source srcset="image.webp" type="image/webp">
   <img src="image.jpg" alt="描述" loading="lazy" decoding="async">
 </picture>
-
+# ...
 <!-- 脚本优化 -->
 <script src="non-critical.js" defer></script>
 <script type="module" src="app.js"></script>
@@ -391,10 +390,10 @@ localStorage.setItem('userPrefs', JSON.stringify({
   theme: 'dark',
   fontSize: 'medium'
 }));
-
+// ...
 // sessionStorage 会话级存储
 sessionStorage.setItem('formData', JSON.stringify(formData));
-
+// ...
 // IndexedDB 客户端数据库
 const db = indexedDB.open('AppDB', 1);
 db.onupgradeneeded = (event) => {
@@ -424,9 +423,8 @@ A: JSON-LD 结构化数据帮助搜索引擎理解页面内容，可触发富文
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

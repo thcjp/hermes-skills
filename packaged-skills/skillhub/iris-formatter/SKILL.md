@@ -36,24 +36,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
 # IRIS代码格式化专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版新增 | 不支持 | 支持 |
-| 代码审查 | 不支持 | 支持 |
-| 批量多文件/多类审查 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| IRIS代码格式化专业版含批量处理 | 不支持 | 支持 |
+| IRIS代码格式化专业版自定义规则与报告导出 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 免费版 | 专业版新增 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 代码审查 | 单文件审查 | 批量多文件/多类审查 |
 | 规范规则 | 内置固定规则 | 自定义规则 + 团队配置 |
 | 报告输出 | 文本报告 | Markdown/HTML 结构化报告 |
@@ -97,39 +99,39 @@ pricing_model: "per_use"
 # （请参考skill目录中的脚本文件） - 批量审查 IRIS 代码
 MODULE_DIR=$1
 REPORT_FILE="iris-review-report-$(date +%Y%m%d).md"
-
+# ...
 echo "# IRIS 代码审查报告" > "$REPORT_FILE"
 echo "**审查时间**: $(date)" >> "$REPORT_FILE"
 echo "**审查范围**: $MODULE_DIR" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
-
+# ...
 # 统计文件数
 FILE_COUNT=$(find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" -o -name "*.inc" | wc -l)
 echo "**文件数量**: $FILE_COUNT" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
-
+# ...
 echo "=== 开始批量审查 $FILE_COUNT 个文件 ==="
-
+# ...
 # 批量审查
 TOTAL_ISSUES=0
 CRITICAL_COUNT=0
 WARNING_COUNT=0
-
+# ...
 find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" | while read file; do
   echo "审查: $file"
-
+# ...
   # 检查命名规范
   ISSUES=$(grep -n "yonghu\|dingdan\|zhifu" "$file" | wc -l)
   if [ "$ISSUES" -gt 0 ]; then
     echo "- [严重] $file: 发现拼音命名" >> "$REPORT_FILE"
   fi
-
+# ...
   # 检查锁规范
   LOCK_ISSUES=$(grep -n "l +\^" "$file" | grep -v ":3\|:5\|:10" | wc -l)
   if [ "$LOCK_ISSUES" -gt 0 ]; then
     echo "- [警告] $file: 锁未设置超时" >> "$REPORT_FILE"
   fi
-
+# ...
   # 检查事务规范
   TS_COUNT=$(grep -c "ts\b" "$file")
   TC_COUNT=$(grep -c "tc\b" "$file")
@@ -137,14 +139,14 @@ find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" | while read file; do
   if [ "$TS_COUNT" -ne "$((TC_COUNT + TRO_COUNT))" ]; then
     echo "- [严重] $file: 事务不闭合 (ts:$TS_COUNT tc:$TC_COUNT tro:$TRO_COUNT)" >> "$REPORT_FILE"
   fi
-
+# ...
   # 检查后置表达式格式
   POSTFIX_ISSUES=$(grep -n ") && (\|) || (" "$file" | wc -l)
   if [ "$POSTFIX_ISSUES" -gt 0 ]; then
     echo "- [严重] $file: 后置表达式格式错误（括号与&&间有空格）" >> "$REPORT_FILE"
   fi
 done
-
+# ...
 echo "" >> "$REPORT_FILE"
 echo "## 审查完成" >> "$REPORT_FILE"
 echo "详细报告: $REPORT_FILE"
@@ -165,7 +167,7 @@ rules:
     max_method_length: 30
     forbidden_prefixes: ["is", "arr", "str"]
     required_boolean_suffix: "Flag"
-
+# ...
   # 锁规范
   lock:
     require_timeout: true
@@ -173,7 +175,7 @@ rules:
     require_paired: true
     forbid_table_global_lock: true
     require_subscript: true
-
+# ...
   # 事务规范
   transaction:
     require_closure: true
@@ -189,14 +191,14 @@ rules:
     full_spell_commands: ["for", "while", "if", "elseif", "else", "continue"]
     max_line_length: 120
     max_method_lines: 50
-
+# ...
   # SQL 规范
   sql:
     fields_per_line: 5
     indent_after_newline: 3
     comma_at_end: true
     command_case: "lower"
-
+# ...
   # 陷阱规范
   trap:
     require_error_handler: true
@@ -204,7 +206,7 @@ rules:
     require_zt_reset: true
     require_tl_check: true
     require_lock_release: true
-
+# ...
 # 严重程度映射
 severity:
   naming_pinyin: critical
@@ -224,16 +226,16 @@ severity:
 #!/bin/bash
 # （请参考skill目录中的脚本文件） - 代码复杂度分析
 TARGET=$1
-
+# ...
 echo "=== IRIS 代码复杂度分析 ==="
 echo "目标: $TARGET"
 echo ""
-
+# ...
 # 方法行数统计
 echo "## 方法行数统计（超过 50 行需重构）"
 echo "| 文件 | 方法 | 行数 | 状态 |"
 echo "| --- | --- | --- | --- |"
-
+# ...
 find "$TARGET" -name "*.cls" | while read file; do
   # 提取方法及其行数
   awk '
@@ -259,7 +261,7 @@ find "$TARGET" -name "*.cls" | while read file; do
     }
   ' "$file"
 done
-
+# ...
 echo ""
 echo "## 重复代码检测"
 # 查找重复的代码块（5 行以上相同）
@@ -316,7 +318,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
             <td>"formatter_status"</td>
         </tr>
     </table>
-
+# ...
     <h2>问题详情</h2>
     <table>
         <tr>
@@ -350,7 +352,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 // 3. 逗号在行末
 // 4. 每行不超过 120 字符
 // 5. SQL 命令统一小写
-
+# ...
 // 正确格式
 &sql(
    select id, name, age, email, phone
@@ -358,7 +360,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
          from user_table
          where id = :userId
 )
-
+# ...
 // 错误格式
 &sql(SELECT ID,NAME,AGE,EMAIL,PHONE,ADDRESS,STATUS FROM USER_TABLE WHERE ID=:userId)
 // 问题：字段过多、命令大写、单行过长
@@ -368,7 +370,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | iris-formatter处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -419,7 +421,7 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -432,9 +434,9 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 - **IRIS/Cache 版本**: 建议 2018 及以上
 - **CI/CD 平台**: GitLab CI / GitHub Actions / Jenkins 等
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | InterSystems IRIS | 运行时 | 推荐 | InterSystems 官方获取 |
 | Git | 命令行工具 | 推荐 | 系统包管理器安装 |
 | YAML 解析器 | 工具 | 可选 | 系统包管理器安装 |
@@ -457,10 +459,10 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 version: "2.0"
 team: "后端开发组"
 updated: "2026-07-18"
-
+# ...
 # 继承基础规则
 extends: "default"
-
+# ...
 # 团队自定义覆盖
 overrides:
   naming:
@@ -468,7 +470,7 @@ overrides:
     service_prefix: "Svc"
     controller_prefix: "Ctrl"
     dao_prefix: "DAO"
-
+# ...
   format:
     # 团队约定的方法最大行数
     max_method_lines: 40  # 比默认 50 更严格
@@ -477,7 +479,7 @@ overrides:
     forbid_sql_in_loop: true
     # 必须使用参数化查询
     require_parameterized: true
-
+# ...
 # 排除规则
 excludes:
   - "**/test/**"
@@ -493,9 +495,8 @@ report:
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
@@ -547,9 +548,10 @@ iris-code-review:
       fi
   artifacts:
     reports:
-
+# ...
 ## 已知限制
-
+# ...
 - 每次请求仅处理单一任务,不支持批量并发
 - 
 - 和网络环境
+# ...

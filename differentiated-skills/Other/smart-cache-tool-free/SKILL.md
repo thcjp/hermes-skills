@@ -51,8 +51,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
 ---
-
 # 智能缓存工具 - 免费版
 
 ## 概述
@@ -124,37 +125,37 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 智能缓存工具-免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```python
 from smart_cache import SmartCache
-
+# ...
 # 创建 LRU 缓存,最大 1000 项,TTL 300 秒
 cache = SmartCache(
     strategy="lru",
     max_size=1000,
     ttl=300
 )
-
+# ...
 # 缓存 API 响应
 def get_user_profile(user_id):
     cache_key = f"user_profile:{user_id}"
-
+# ...
     # 尝试从缓存获取
     cached = cache.get(cache_key)
     if cached:
         return cached
-
+# ...
     # 缓存未命中,调用 API
     profile = call_api(f"/users/{user_id}")
-
+# ...
     # 存入缓存
     cache.set(cache_key, profile)
     return profile
-
+# ...
 # 查看缓存统计
 stats = cache.stats()
 print(f"命中率: {stats['hit_rate']:.1%}")
@@ -169,21 +170,21 @@ print(f"命中: {stats['hits']}, 未命中: {stats['misses']}")
 ```python
 import time
 from smart_cache import SmartCache
-
+# ...
 cache = SmartCache(strategy="lru", max_size=500, ttl=3600)
-
+# ...
 @cache.cached(prefix="compute")
 def expensive_computation(n):
     """耗时的计算函数"""
     time.sleep(2)  # 模拟耗时计算
     return sum(i * i for i in range(n))
-
+# ...
 # 第一次调用(缓存未命中,执行计算)
 result1 = expensive_computation(10000)  # 耗时约 2 秒
-
+# ...
 # 第二次调用(缓存命中,直接返回)
 result2 = expensive_computation(10000)  # 耗时约 0.001 秒
-
+# ...
 print(f"两次结果一致: {result1 == result2}")  # True
 ```
 
@@ -193,23 +194,23 @@ print(f"两次结果一致: {result1 == result2}")  # True
 
 ```python
 from smart_cache import SmartCache
-
+# ...
 cache = SmartCache(strategy="lfu", max_size=100, ttl=600)
-
+# ...
 def read_config_file(path):
     cached = cache.get(f"file:{path}")
     if cached:
         return cached
-
+# ...
     with open(path, 'r') as f:
         content = f.read()
-
+# ...
     cache.set(f"file:{path}", content)
     return content
-
+# ...
 # 手动失效(配置文件更新后)
 cache.delete("file:config.json")
-
+# ...
 # 清空所有缓存
 cache.clear()
 ```
@@ -244,25 +245,25 @@ pip install smart-cache
 
 ```python
 from smart_cache import SmartCache
-
+# ...
 # 创建缓存
 cache = SmartCache(
     strategy="lru",      # 策略: lru 或 lfu
     max_size=1000,       # 最大缓存项数
     ttl=300              # 默认 TTL(秒)
 )
-
+# ...
 # 设置缓存
 cache.set("key1", "value1")
 cache.set("key2", {"data": [1, 2, 3]}, ttl=60)  # 自定义 TTL
-
+# ...
 # 获取缓存
 value = cache.get("key1")  # "value1"
 missing = cache.get("key3")  # None
-
+# ...
 # 删除缓存
 cache.delete("key1")
-
+# ...
 # 查看统计
 stats = cache.stats()
 ```
@@ -272,7 +273,7 @@ stats = cache.stats()
 ```python
 # 保存到磁盘
 cache.save_to_disk("cache_backup.json")
-
+# ...
 # 从磁盘恢复
 cache.load_from_disk("cache_backup.json")
 ```
@@ -282,7 +283,7 @@ cache.load_from_disk("cache_backup.json")
 ### 缓存策略对比
 
 | 策略 | 淘汰规则 | 适用场景 | 优点 |
-|------|----------|----------|------|
+|:-----|:-----|:-----|:-----|
 | LRU | 最久未访问 | 访问均匀 | 实现简单,命中率高 |
 | LFU | 访问最少 | 热点明显 | 保留热点数据 |
 | FIFO | 最先进入 | 时序数据 | 实现最简单 |
@@ -308,7 +309,7 @@ SmartCache(
 @cache.cached(prefix="api", ttl=60)
 def fetch_data(url):
     return requests.get(url).json()
-
+# ...
 # 带条件缓存
 @cache.cached(prefix="search", condition=lambda r: r["count"] > 0)
 def search(query):
@@ -353,7 +354,7 @@ A: 会。调用 `save_to_disk()` 保存后,重启程序调用 `load_from_disk()`
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | Python 3 | 运行时 | 必需 | 官方网站下载 |
 | smart-cache | 缓存库 | 必需 | pip install smart-cache |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -371,9 +372,8 @@ A: 会。调用 `save_to_disk()` 保存后,重启程序调用 `load_from_disk()`
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

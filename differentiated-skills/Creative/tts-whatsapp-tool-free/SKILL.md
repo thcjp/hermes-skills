@@ -50,8 +50,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
 ---
-
 # WhatsApp 语音消息工具 - 免费版
 
 ## 概述
@@ -63,7 +64,7 @@ WhatsApp 语音消息工具(免费版)帮助个人用户将文字转换为高质
 ## 核心能力
 
 | 能力 | 免费版 | 说明 |
-|:-----|:-------|:-----|
+|---|---|---|
 | 文字转语音 | 支持 | Piper TTS 引擎 |
 | 语言支持 | 40+ | 含中英法德西等 |
 | 音频格式 | OGG/Opus | WhatsApp 兼容 |
@@ -125,13 +126,13 @@ tts-whatsapp "Hello, how are you today?" \
     --lang en_US \
     --voice lessac \
     --target "+15555550123"
-
+# ...
 # 法文消息
 tts-whatsapp "Bonjour, comment allez-vous?" \
     --lang fr_FR \
     --voice siwis \
     --target "+33123456789"
-
+# ...
 # 西班牙文消息
 tts-whatsapp "Hola, como estas?" \
     --lang es_ES \
@@ -149,7 +150,7 @@ tts-whatsapp "重要通知:明天会议改到下午三点。" \
     --quality high \
     --speed 1.0 \
     --target "+8613800138000"
-
+# ...
 # 低音质(快速发送)
 tts-whatsapp "收到,谢谢!" \
     --quality low \
@@ -182,14 +183,14 @@ tts-whatsapp "收到,谢谢!" \
 ```bash
 # 安装 Piper TTS
 pip3 install --user piper-tts
-
+# ...
 # 安装 FFmpeg
 # macOS
 brew install ffmpeg
-
+# ...
 # Ubuntu / Debian
 sudo apt install ffmpeg
-
+# ...
 # Windows (scoop)
 scoop install ffmpeg
 ```
@@ -199,7 +200,7 @@ scoop install ffmpeg
 ```bash
 # 创建模型目录
 mkdir -p ~/.tts-whatsapp/models/
-
+# ...
 # 下载中文语音模型
 # 从 Piper 语音仓库下载 .onnx 和 .onnx.json 文件
 # 放入 ~/.tts-whatsapp/models/ 目录
@@ -254,7 +255,7 @@ tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
 ### 支持的语言
 
 | 语言 | 代码 | 示例语音 |
-|:-----|:-----|:---------|
+|:-----|:-----|:-----|
 | 中文 | zh_CN | huayan |
 | 英文(美) | en_US | lessac, amy, joe |
 | 英文(英) | en_GB | alan, alba |
@@ -269,7 +270,7 @@ tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
 ### 音质等级
 
 | 等级 | 码率 | 文件大小(10秒) | 适用场景 |
-|:-----|:-----|:-----------------|:---------|
+|---:|---:|---:|---:|
 | x_low | 最低 | ~50KB | 极速发送,网络差 |
 | low | 低 | ~80KB | 日常简短消息 |
 | medium | 中 | ~120KB | 推荐平衡 |
@@ -348,7 +349,7 @@ tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | piper-tts | Python 库 | 必需 | `pip install piper-tts` |
 | ffmpeg | 系统工具 | 必需 | `brew install ffmpeg` / `apt install ffmpeg` |
 | WhatsApp 连接 | 服务 | 必需 | 本地配置或第三方桥接 |
@@ -367,9 +368,8 @@ tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

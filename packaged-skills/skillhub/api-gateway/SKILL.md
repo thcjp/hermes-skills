@@ -18,9 +18,11 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
 ---
 # API 网关集成路由
 
@@ -28,11 +30,10 @@ pricing_model: "per_use"
 
 **范围外**（本技能不做）: 自建 API 代理服务器、OAuth 服务端部署、API Key 生成与分发。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | API网关集成路由处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -40,7 +41,7 @@ pricing_model: "per_use"
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | 基础功能 | 支持 | 支持 |
 | API网关集成路由含连接管理 | 不支持 | 支持 |
 | 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
@@ -56,7 +57,7 @@ pricing_model: "per_use"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-| --: | --: | --: | --: |
+|---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -64,7 +65,6 @@ pricing_model: "per_use"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -222,9 +222,8 @@ maton stripe customer list -L 10 --json --jq '.data | map(select(.delinquent == 
 
 ## 错误处理
 
-
 | 错误场景 | HTTP 状态码 | 原因分析 | 处理方式 |
-| :-- | :-- | :-- | :-- |
+|:---:|:---:|:---:|:---:|
 | 缺少连接 | 400 | 请求的 app 未创建连接 | 通过连接管理创建对应服务的连接 |
 | API Key 无效 | 401 | `MATON_API_KEY` 缺失或失效 | 运行 `maton whoami` 验证,重新设置 Key |
 | 速率超限 | 429 | 超过 10 请求/秒/账户 | （1s/2s/4s）,降低请求频率 |

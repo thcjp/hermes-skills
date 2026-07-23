@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
 ---
-
 # 浏览器自动化工具免费版
 
 ## 概述
@@ -37,7 +38,7 @@ suggested_price: 29.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 浏览器自动化工具免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -61,10 +62,10 @@ browser act "滚动到页面底部并点击下一页"
 ```bash
 # 导航到指定页面
 browser navigate https://example.com
-
+# ...
 # 提取页面标题和主要内容
 browser extract "获取页面标题和正文摘要"
-
+# ...
 # 提取结构化数据
 browser extract "提取商品列表中的名称、价格和评分" '{"items":[{"name":"string","price":"number","rating":"number"}]}'
 ```
@@ -81,7 +82,7 @@ browser extract "提取商品列表中的名称、价格和评分" '{"items":[{"
 ```bash
 # 发现页面可交互元素
 browser observe "找到所有可点击的按钮和链接"
-
+# ...
 # 截图保存当前页面状态
 browser screenshot
 ```
@@ -111,16 +112,16 @@ browser screenshot
 ```bash
 # 步骤1:导航到目标网站
 browser navigate https://tech-blog.example.com
-
+# ...
 # 步骤2:提取文章列表
 browser extract "提取首页所有文章的标题和发布日期" '{"articles":[{"title":"string","date":"string"}]}'
-
+# ...
 # 步骤3:点击第一篇文章查看详情
 browser act "点击第一篇文章标题进入详情页"
-
+# ...
 # 步骤4:提取文章正文摘要
 browser extract "提取文章正文前500字作为摘要"
-
+# ...
 # 步骤5:关闭浏览器
 browser close
 ```
@@ -132,13 +133,13 @@ browser close
 ```bash
 # 导航到学术搜索引擎
 browser navigate https://scholar.example.com
-
+# ...
 # 在搜索框输入关键词
 browser act "在搜索框输入'大语言模型训练优化'并回车"
-
+# ...
 # 提取搜索结果
 browser extract "提取搜索结果列表中的论文标题、作者和引用数"
-
+# ...
 # 翻页继续采集
 browser act "点击下一页按钮"
 browser extract "提取本页搜索结果"
@@ -151,15 +152,15 @@ browser extract "提取本页搜索结果"
 ```bash
 # 导航到表单页面
 browser navigate https://form.example.com/apply
-
+# ...
 # 填写基本信息
 browser act "在姓名输入框填写'李明'"
 browser act "在邮箱输入框填写'liming@example.com'"
 browser act "在留言框填写项目合作意向"
-
+# ...
 # 提交表单
 browser act "点击提交按钮"
-
+# ...
 # 截图保存提交结果
 browser screenshot
 ```
@@ -173,7 +174,7 @@ browser screenshot
 ```bash
 # 检查 Node.js 版本(需 18.0.0 以上)
 node --version
-
+# ...
 # 依赖说明
 # Windows 默认路径: C:\Program Files\Google\Chrome\Application\chrome.exe
 # macOS 默认路径: /Applications/Google Chrome.app
@@ -185,10 +186,10 @@ node --version
 # 进入工具目录,安装依赖
 cd ~/.skill-platform/workspace/skills/stagehand-browser-tool-free
 npm install
-
+# ...
 # 创建全局命令
 npm link
-
+# ...
 # 验证安装
 browser --version
 ```
@@ -198,19 +199,18 @@ browser --version
 ```bash
 # 启动浏览器并导航到测试页面
 browser navigate https://example.com
-
+# ...
 # 查看页面内容
 browser extract "获取页面标题"
-
+# ...
 # 截图验证
 browser screenshot
-
+# ...
 # 关闭浏览器
 browser close
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 配置示例
 
@@ -222,7 +222,7 @@ browser close
 # 浏览器配置
 BROWSER_HEADLESS=false          # 是否无头模式运行(false 表示显示浏览器窗口)
 BROWSER_SLOWMO=100              # 操作间隔(毫秒),便于观察执行过程
-
+# ...
 # 本地 Chrome 路径(可选,自动检测失败时手动指定)
 # Windows 示例
 CHROME_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
@@ -260,7 +260,7 @@ CHROME_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
 # 正确做法:先导航再操作
 browser navigate https://example.com
 browser act "点击登录按钮"
-
+# ...
 # 错误做法:未导航直接操作
 browser act "点击登录按钮"  # 可能失败,因为没有目标页面
 ```
@@ -272,7 +272,7 @@ browser act "点击登录按钮"  # 可能失败,因为没有目标页面
 ```bash
 # 先观察页面结构
 browser observe "页面有哪些可点击的按钮"
-
+# ...
 # 再执行精准操作
 browser act "点击蓝色提交按钮"
 ```
@@ -326,7 +326,7 @@ ls /Applications/Google\ Chrome.app
 ```bash
 # 先用简单指令测试
 browser extract "获取页面所有文本内容"
-
+# ...
 # 再逐步精细化
 browser extract "提取商品名称" '{"name":"string"}'
 ```
@@ -347,7 +347,7 @@ browser extract "提取商品名称" '{"name":"string"}'
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | Node.js | 运行时 | 必需 | 官方网站下载安装 |
 | Chrome 浏览器 | 浏览器 | 必需 | 官方网站下载安装 |
 | npm 依赖包 | 库 | 必需 | 通过 `npm install` 自动安装 |
@@ -365,9 +365,8 @@ browser extract "提取商品名称" '{"name":"string"}'
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

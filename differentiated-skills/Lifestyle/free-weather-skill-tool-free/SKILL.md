@@ -28,8 +28,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # 免费天气技能 (免费版)
 
 ## 概述
@@ -41,7 +42,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力模块 | 描述 | 免费版支持 |
-|:--------|:-----|:-----------|
+|----|---|-----|
 | 城市天气查询 | 全球主要城市天气 | 支持 |
 | 实时天气 | 当前温度、湿度、风力 | 支持 |
 | 多日预报 | 未来 3 天预报 | 支持 |
@@ -88,11 +89,11 @@ suggested_price: 29.9
 # 一行式摘要
 curl -s "wttr.in/Beijing?format=3"
 # 输出: Beijing: ☁️ +15°C
-
+# ...
 # 自定义格式
 curl -s "wttr.in/Beijing?format=%l:+%c+%t+%h+%w"
 # 输出: Beijing: ☁️ +15°C 45% ↓12km/h
-
+# ...
 # 完整终端预报
 curl -s "wttr.in/Beijing?T"
 # 输出彩色 ASCII 天气图
@@ -102,14 +103,14 @@ curl -s "wttr.in/Beijing?T"
 
 ```python
 import requests
-
+# ...
 def get_weather(city):
     """获取天气 JSON 数据"""
     url = f"https://wttr.in/{city}"
     params = {"format": "j1"}
     resp = requests.get(url, params=params, timeout=30)
     return resp.json()
-
+# ...
 def get_open_meteo(lat, lon):
     """Open-Meteo 备选方案"""
     url = "https://api.open-meteo.com/v1/forecast"
@@ -121,7 +122,7 @@ def get_open_meteo(lat, lon):
     }
     resp = requests.get(url, params=params, timeout=30)
     return resp.json()
-
+# ...
 # 北京: lat=39.9, lon=116.4
 weather = get_open_meteo(39.9, 116.4)
 print(f"温度: {weather['current_weather']['temperature']}°C")
@@ -133,13 +134,13 @@ print(f"风速: {weather['current_weather']['windspeed']} km/h")
 ```bash
 # 终端显示彩色 ASCII 天气图
 curl -s "wttr.in/Shanghai?T&lang=zh"
-
+# ...
 # 仅查询今天
 curl -s "wttr.in/Shanghai?1&lang=zh"
-
+# ...
 # 仅查询当前
 curl -s "wttr.in/Shanghai?0&lang=zh"
-
+# ...
 # 导出 PNG 图片
 curl -s "wttr.in/Berlin.png" -o /tmp/weather.png
 ```
@@ -171,7 +172,7 @@ curl -s "wttr.in/your_city"
 # 在 ~/.bashrc 或 ~/.zshrc 中添加
 alias weather='curl -s "wttr.in/$1?lang=zh"'
 alias weather-json='curl -s "wttr.in/$1?format=j1"'
-
+# ...
 # 使用
 weather 北京
 weather-json 上海
@@ -207,13 +208,13 @@ curl -s "https://api.open-meteo.com/v1/forecast?latitude=39.9&longitude=116.4&cu
 ```bash
 # 多字段组合
 curl -s "wttr.in/Beijing?format=%l:+%c+%t+%h+%w+%p"
-
+# ...
 # 自定义分隔符
 curl -s "wttr.in/Beijing?format=%l|%c|%t|%h|%w"
-
+# ...
 # JSON 格式 (编程用)
 curl -s "wttr.in/Beijing?format=j1"
-
+# ...
 # 简短中文
 curl -s "wttr.in/Beijing?format=3&lang=zh"
 ```
@@ -224,7 +225,7 @@ curl -s "wttr.in/Beijing?format=3&lang=zh"
 import requests
 from dataclasses import dataclass
 from typing import Optional
-
+# ...
 @dataclass
 class WeatherData:
     location: str
@@ -233,12 +234,12 @@ class WeatherData:
     humidity: str
     wind: str
     moon_phase: Optional[str] = None
-
+# ...
 class WeatherTool:
     def __init__(self):
         self.base_url = "https://wttr.in"
         self.fallback_url = "https://api.open-meteo.com/v1/forecast"
-
+# ...
     def quick(self, city):
         """一行式查询"""
         resp = requests.get(
@@ -247,7 +248,7 @@ class WeatherTool:
             timeout=30,
         )
         return resp.text.strip()
-
+# ...
     def detailed(self, city):
         """详细查询"""
         resp = requests.get(
@@ -265,7 +266,7 @@ class WeatherTool:
             wind=f"{current['winddir16Point']} {current['windspeedKmph']}km/h",
             moon_phase=data.get("weather", [{}])[0].get("astronomy", [{}])[0].get("moon_phase"),
         )
-
+# ...
     def fallback(self, lat, lon):
         """Open-Meteo 备选"""
         resp = requests.get(
@@ -281,10 +282,10 @@ class WeatherTool:
 ```bash
 #!/bin/bash
 # ~/.local/（请参考skill目录中的脚本文件）
-
+# ...
 CITY="${1:-Beijing}"
 FORMAT="${2:-default}"
-
+# ...
 case "$FORMAT" in
     "short")
         curl -s "wttr.in/$CITY?format=3&lang=zh"
@@ -314,10 +315,10 @@ esac
 # URL 编码空格
 curl -s "wttr.in/New+York"
 curl -s "wttr.in/San+Francisco"
-
+# ...
 # 使用拼音
 curl -s "wttr.in/Shanghai"
-
+# ...
 # 使用机场代码
 curl -s "wttr.in/PEK"  # 北京首都机场
 curl -s "wttr.in/PVG"  # 上海浦东机场
@@ -328,7 +329,7 @@ curl -s "wttr.in/PVG"  # 上海浦东机场
 ```bash
 # 公制 (默认,中国适用)
 curl -s "wttr.in/Beijing?m"
-
+# ...
 # 美制
 curl -s "wttr.in/New+York?u"
 ```
@@ -338,10 +339,10 @@ curl -s "wttr.in/New+York?u"
 ```bash
 # 仅今天
 curl -s "wttr.in/Beijing?1"
-
+# ...
 # 仅当前
 curl -s "wttr.in/Beijing?0"
-
+# ...
 # 去除 ANSI 颜色 (适合管道)
 curl -s "wttr.in/Beijing?T" | sed 's/\x1b\[[0-9;]*m//g'
 ```
@@ -400,7 +401,7 @@ wttr.in 建议不超过每分钟 10 次以避免被限流。Open-Meteo 限制为
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | wttr.in | 在线 API | 主选 | 免费,无需 Key |
 | Open-Meteo | 在线 API | 备选 | 免费,无需 Key |
 | LLM API | 推理服务 | 必需 | 由 Agent 内置 LLM 提供 |
@@ -412,7 +413,7 @@ wttr.in 建议不超过每分钟 10 次以避免被限流。Open-Meteo 限制为
 ```bash
 # 免费版完全无需 API Key
 # 直接使用即可
-
+# ...
 # 可选: 默认城市
 export WEATHER_DEFAULT_CITY="Beijing"
 export WEATHER_LANG="zh"
@@ -427,9 +428,8 @@ export WEATHER_LANG="zh"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

@@ -18,17 +18,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
 ---
 # Security Audit
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| Comprehensive security auditing for SkillHub deployments | 支持 | 支持 |
-| Scans for | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
+| 零日漏洞检测与防护规则下发 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -39,7 +43,7 @@ pricing_model: "monthly"
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|------|------|------|
+|:-----|:-----|:-----|
 | 部署安全扫描 | SkillHub部署配置 | 暴露面和安全漏洞报告 |
 | 配置审计 | 服务器和服务配置 | 安全配置基线和合规检查 |
 | 漏洞修复建议 | 扫描结果和漏洞列表 | 修复优先级和操作指南 |
@@ -56,7 +60,7 @@ pricing_model: "monthly"
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | target | string | 是 | 审计目标URL或配置路径 |
 | audit_type | string | 否 | 审计类型, 可选: deploy/config/vuln, 默认: deploy |
 
@@ -65,7 +69,7 @@ pricing_model: "monthly"
 The audit produces a report with:
 
 | Level | Description |
-| --- | --- |
+|:----:|:----:|
 | 🔴 CRITICAL | Immediate action required (exposed credentials) |
 | 🟠 HIGH | Significant risk, fix soon |
 | 🟡 MEDIUM | Moderate concern |
@@ -79,7 +83,7 @@ The audit produces a report with:
 
 ### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -100,16 +104,10 @@ export API_KEY="your_api_key_here"
 ### Q1: 如何开始使用Security Audit？
 A: 
 
-### Q2: 遇到错误怎么办？
-A: 
-
-### Q3: Security Audit有什么限制？
-A: 
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

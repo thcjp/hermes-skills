@@ -21,8 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
 ---
-
 # DEX代币数据入门（免费版）
 
 ## 概述
@@ -34,7 +35,7 @@ suggested_price: 19.9
 ### 数据查询功能
 
 | 功能 | 说明 | 免费版支持 |
-| --- | --- | --- |
+|---|---|-----|
 | 代币价格 | 实时价格与24h变化 | 支持 |
 | 流动性池 | 池子规模与组成 | 支持 |
 | 代币信息 | 合约地址/精度/总量 | 支持 |
@@ -51,7 +52,7 @@ suggested_price: 19.9
 ### 支持的区块链
 
 | 链名称 | Chain ID | 支持状态 |
-| --- | --- | --- |
+|:-----|:-----|:-----|
 | Ethereum | 1 | 支持 |
 | BSC | 56 | 支持 |
 | Polygon | 137 | 支持 |
@@ -79,7 +80,7 @@ suggested_price: 19.9
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | input | string | 是 | DEX代币数据入门处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -87,7 +88,7 @@ suggested_price: 19.9
 ```bash
 # 查询代币价格
 python3 （请参考skill目录中的脚本文件） --token UNIS --chain ethereum
-
+# ...
 # 输出：
 # === UNIS 代币信息 ===
 # 链: Ethereum
@@ -107,7 +108,7 @@ python3 （请参考skill目录中的脚本文件） \
   --token-a USDC \
   --token-b WETH \
   --chain ethereum
-
+# ...
 # 输出池子信息
 ```
 
@@ -120,7 +121,7 @@ python3 （请参考skill目录中的脚本文件） \
 python3 （请参考skill目录中的脚本文件） \
   --address 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984 \
   --chain ethereum
-
+# ...
 # 输出代币完整信息
 ```
 
@@ -137,7 +138,7 @@ python3 （请参考skill目录中的脚本文件） \
 ```bash
 # 依赖说明
 pip install requests web3
-
+# ...
 # 配置API（可选，免费版无需API Key）
 # 如有OKX API Key可获得更高频率
 export OKX_API_KEY="your_api_key"  # 可选
@@ -149,13 +150,13 @@ export OKX_API_KEY="your_api_key"  # 可选
 # 查询代币
 python3 （请参考skill目录中的脚本文件） --token UNIS --chain ethereum
 python3 （请参考skill目录中的脚本文件） --token CAKE --chain bsc
-
+# ...
 # 流动性池
 python3 （请参考skill目录中的脚本文件） --token-a USDC --token-b WETH --chain ethereum
-
+# ...
 # 代币列表
 python3 （请参考skill目录中的脚本文件） --chain ethereum --top 20
-
+# ...
 # 价格历史
 python3 （请参考skill目录中的脚本文件） --token UNIS --days 7
 ```
@@ -171,7 +172,7 @@ query_config:
     api_key: "${OKX_API_KEY}"      # 可选，无Key使用公共接口
     timeout: 30
     rate_limit: 10                 # 每分钟请求上限
-
+# ...
   chains:
     supported:
       - ethereum
@@ -179,7 +180,7 @@ query_config:
       - polygon
       - arbitrum
       - optimism
-
+# ...
   cache:
     ttl: 60                        # 价格缓存60秒
     storage: "./cache/"
@@ -193,7 +194,7 @@ query_config:
 4. **安全第一**：投资前验证合约地址，防范假冒代币
 
 | 实践要点 | 说明 |
-| --- | --- |
+|:---:|:---:|
 | 数据时效 | DEX价格实时变化，查询结果仅供参考 |
 | 合约验证 | 务必通过官方渠道核实合约地址 |
 | 流动性风险 | 流动性低于100万美元的池子风险较高 |
@@ -228,7 +229,7 @@ query_config:
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
 | requests | Python库 | 必需 | `pip install requests` |
@@ -237,7 +238,7 @@ query_config:
 ### API Key 配置
 
 | 服务 | 环境变量 | 是否必需 | 用途 |
-|:-------|:---------|:---------|:-----|
+|---:|:---|---:|---:|
 | OKX API | `OKX_API_KEY` | 可选 | 提高请求频率，获取更多数据 |
 
 - 未配置API Key时使用公共接口，频率较低
@@ -251,9 +252,8 @@ query_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------:|--------|:-------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

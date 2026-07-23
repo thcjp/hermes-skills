@@ -26,22 +26,24 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 公众号写作专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 公众号写作专业版配图管理 | 不支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -61,16 +63,16 @@ python3 write.py draft \
   --input topic-card.md \
   --model deepseek \
   -o draft.md
-
+# ...
 # 仅输出提示词JSON，不调用LLM（由Agent代写）
 python3 write.py prompt draft --input topic-card.md
-
+# ...
 # 改写模式
 python3 write.py rewrite \
   --input draft.md \
   --instruction "优化开头吸引力" \
   -o draft_revised.md
-
+# ...
 # 续写模式
 python3 write.py continue \
   --input draft.md \
@@ -83,7 +85,7 @@ python3 write.py continue \
 ```bash
 # 查看业务资料库
 ls .article/products/
-
+# ...
 # 写作时引用业务资料（最多5个）
 python3 write.py draft \
   --input topic-card.md \
@@ -107,7 +109,7 @@ products_structure = """
 └── service_c/
     └── overview.md
 """
-
+# ...
 # 写作时自动关联业务资料
 # Agent会先 ls .article/products/，判断是否有相关产品的业务介绍
 # 有相关文档 → 传入 --reference 参数
@@ -125,7 +127,7 @@ products_structure = """
 # draft: 定稿后写入公众号草稿箱（默认）
 # published: 创建草稿后自动提交发布
 # none: 跳过微信上传，仅本地处理
-
+# ...
 publish_method: "draft"
 ```
 
@@ -134,7 +136,7 @@ publish_method: "draft"
 python3 publish.py full \
   --article draft.md \
   --method draft
-
+# ...
 # 强制直接发布
 python3 publish.py full \
   --article draft.md \
@@ -154,13 +156,13 @@ python3 publish.py full \
 # 配图占位生成（默认模式）
 # 写作时自动在合适位置插入配图占位
 # 格式: ![类型名：画面内容](placeholder)
-
+# ...
 # 配图密度配置
 image_config = {
     "image_source": "generated",  # generated / user
     "image_density": "每节一图",  # 每节一图 / 每段一图 / 自定义
 }
-
+# ...
 # 用户供图模式
 user_image_config = {
     "image_source": "user",
@@ -201,7 +203,7 @@ drafts/
 ```bash
 # 1. 检查业务资料库
 ls .article/products/smart_speaker/
-
+# ...
 # 2. 使用DeepSeek模型写作，引用产品资料
 python3 write.py draft \
   --input topic-card.md \
@@ -209,10 +211,10 @@ python3 write.py draft \
   --reference .article/products/smart_speaker/intro.md \
   --reference .article/products/smart_speaker/features.md \
   -o draft.md
-
+# ...
 # 3. 审查并剥离引用标注
 python3 write.py strip-citations draft.md -o article_temp.md
-
+# ...
 # 4. 发布到公众号草稿箱
 python3 publish.py full --article article.md --method draft
 ```
@@ -243,7 +245,7 @@ accounts = [
         "style": "深度分析"
     }
 ]
-
+# ...
 # 批量生成
 for account in accounts:
     subprocess.run([
@@ -261,17 +263,17 @@ for account in accounts:
 ```bash
 # 1. 用户图片放入 imgs/ 目录
 cp ~/photos/product_demo.png drafts/20260118-product/imgs/
-
+# ...
 # 2. 生成图片分析模板
 python3 user_image_prepare.py --draft-dir drafts/20260118-product/
-
+# ...
 # 3. 填写 img_analysis.md（Agent读图后自动填写）
 # 示例
 # - 图片: imgs/product_demo.png
 #   推荐用途: 封面
 #   建议章节: 产品展示
 #   画面描述: 产品外观特写，白色背景
-
+# ...
 # 4. 使用用户供图模式写作
 # article.yaml 中设置 image_source: user
 python3 write.py draft --input topic-card.md -o draft.md
@@ -284,12 +286,12 @@ python3 write.py draft --input topic-card.md -o draft.md
 ```bash
 # 依赖说明
 pip install pyyaml requests
-
+# ...
 # 配置写作模型API Key
 cat > aws.env << 'EOF'
 WRITING_MODEL_API_KEY=your_deepseek_api_key
 EOF
-
+# ...
 # 配置微信发布凭证（可选）
 cat >> aws.env << 'EOF'
 WECHAT_APP_ID=your_app_id
@@ -318,16 +320,16 @@ cat > topic-card.md << 'EOF'
 目标读者: 读者画像
 核心观点: 文章要传达的核心信息
 EOF
-
+# ...
 # 步骤2：生成初稿（引用业务资料）
 python3 write.py draft \
   --input topic-card.md \
   --reference .article/products/your_product/intro.md \
   -o draft.md
-
+# ...
 # 步骤3：审查与修正
 python3 write.py strip-citations draft.md -o article_temp.md
-
+# ...
 # 步骤4：发布
 python3 publish.py full --article article.md --method draft
 ```
@@ -336,7 +338,7 @@ python3 publish.py full --article article.md --method draft
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | wechat-article-writer处理的内容输入 |,  |
 | content | string | 否 | wechat-article-writer处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -364,9 +366,8 @@ python3 publish.py full --article article.md --method draft
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -382,7 +383,7 @@ python3 publish.py full --article article.md --method draft
 ### 第三方依赖
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python 3 | 运行时 | 必需 | python.org 下载安装 |
 | PyYAML | Python库 | 必需 | `pip install pyyaml` |
@@ -404,20 +405,6 @@ python3 publish.py full --article article.md --method draft
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -467,9 +454,8 @@ python3 publish.py full --article article.md --method draft
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|:---------|---------:|:---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

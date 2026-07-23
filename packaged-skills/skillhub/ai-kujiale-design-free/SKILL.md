@@ -24,6 +24,8 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
 ---
 # 酷家乐 AI 室内设计 LITE
 
@@ -31,11 +33,10 @@ homepage: "https://skillhub.cn"
 
 **范围外**(本技能不做): 户型图上传与临摹识别、全景图输出、多风格批量对比、户型结构改造(需升级 ai-kujiale-design 专业版)。
 
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---|---|---|---|
 | input | string | 是 | 酷家乐AI室内设计LITE处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
@@ -48,7 +49,7 @@ homepage: "https://skillhub.cn"
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
@@ -56,7 +57,6 @@ homepage: "https://skillhub.cn"
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
-
 
 **API Key配置方式**:
 ```bash
@@ -77,7 +77,6 @@ export API_KEY="your_api_key_here"
 
 ### 设计流程
 
-
 **输入**: 用户提供设计流程所需的指令和必要参数。
 **处理**: 解析设计流程的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回设计流程的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
@@ -92,7 +91,6 @@ node （请参考skill目录中的脚本文件） --token=$TOKEN --query="小区
 ```
 
 展示结果供用户选择,获得 planId 后获取户型图:
-
 
 **输入**: 用户提供设计流程相关的配置参数、输入数据和处理选项。
 
@@ -128,25 +126,17 @@ node （请参考skill目录中的脚本文件） --token=$TOKEN --version=1.0.0
 
 action=1 继续;action=2 提示"版本已过时,建议更新";action=3 终止并提示重新安装。
 
-## 输出规则
+## 输出规则(补充)
 
-- 进度反馈通过 `message(action=send)` 发送
-- 最终结果只输出渲染图与设计亮点,严格按 `./outputs/result.md` 格式
-- 已发送的消息不重复输出
+## 设计流程(补充)
 
-## 设计流程
-
-### 阶段一: 户型搜索与确认
+### 阶段一: 户型搜索与确认(补充)
 
 触发条件: 用户提到要做室内设计/装修设计。
-
-询问城市与小区(可一并告知户型结构、面积):
 
 ```bash
 node （请参考skill目录中的脚本文件） --token=$TOKEN --query="小区名" --areaId="城市id" --start=0 --num=20
 ```
-
-展示结果供用户选择,获得 planId 后获取户型图:
 
 ```bash
 node （请参考skill目录中的脚本文件） --planId=$PLAN_ID
@@ -225,7 +215,7 @@ node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DES
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 |
-| --- | --- | --- |
+|---:|---:|---:|
 | 业主方案预览 | "帮我设计下我家三居室" | 户型图 + 渲染图 |
 | 风格灵感探索 | "看下现代风格的客厅效果" | 渲染图 |
 
@@ -239,17 +229,17 @@ node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DES
 ```bash
 # 搜索户型
 node （请参考skill目录中的脚本文件） --token=$TOKEN --query="阳光花园" --areaId="330100" --start=0 --num=20
-
+# ...
 # 获取户型图
 node （请参考skill目录中的脚本文件） --planId=$PLAN_ID
-
+# ...
 # 创建方案
 node （请参考skill目录中的脚本文件） --token=$TOKEN --planId=$PLAN_ID
-
+# ...
 # 风格选择
 node （请参考skill目录中的脚本文件） --token=$TOKEN
 node （请参考skill目录中的脚本文件） --token=$TOKEN --tagItemIds=$TAG_IDS
-
+# ...
 # 布局与渲染
 node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DESIGN_ID \
   --tagIds=$TAG_IDS --styleId=$STYLE_ID \
@@ -264,9 +254,8 @@ node （请参考skill目录中的脚本文件） --token=$TOKEN --designId=$DES
 
 ## 异常处理
 
-
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|---------|---------|---------|---------|
+|:---:|:---:|:---:|:---:|
 | missing_token | `.kjlconfig.json` 缺失或无 access_token | 未完成初始化配置 | 引导用户访问 kujiale.com/skills 生成 token 并写入配置 |
 | floorplan_empty | `floorplanInfos` 为空数组 | 户型图获取失败或小区搜不到 | 提示重新选择小区,基础版不支持上传户型图 |
 | layout_pending | `getLayoutResult` 返回 c!=0 | 布局仍在生成 | 每 10 秒轮询,直至 c=0 |
@@ -289,9 +278,8 @@ A: 会。布局阶段会消耗账号内智能布局额度/核豆,流程中会先
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 检查网络连接和配置后重试；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -20,24 +20,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 自集成工具Pro
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 专业版支持 | 支持 | 支持 |
-| 预置连接器 | 不支持 | 支持 |
-| 自定义连接器构建 | 不支持 | 支持 |
-| OAuth授权连接 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 自集成工具Pro工作流编排 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力 | 说明 | 专业版支持 |
-|------|------|-----------|
+|:-----|:-----|:-----|
 | 预置连接器 | 搜索并使用预置连接器 | 是 |
 | 自定义连接器构建 | 自然语言驱动构建新连接器 | 是 |
 | OAuth授权连接 | 创建授权链接完成认证 | 是 |
@@ -189,7 +191,7 @@ curl -X POST "https://api.integration-gateway.com/actions/batch" \
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | self-integration处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -237,7 +239,7 @@ curl -X POST "https://api.integration-gateway.com/actions/batch" \
 ## 异常处理
 
 | 现象 | 可能原因 | 解决方案 |
-|------|---------|---------|
+|:---:|:---:|:---:|
 | 连接器构建超时 | 目标API复杂或文档不全 | 补充API文档链接，通过会话消息指导 |
 | 工作流步骤间数据传递失败 | 变量引用路径错误 | 检查`按流程执行`路径是否正确 |
 | 批量动作限流 | 目标应用速率限制 | 降低批量并发数或增加间隔 |
@@ -251,9 +253,9 @@ curl -X POST "https://api.integration-gateway.com/actions/batch" \
 - **操作系统**：Windows / macOS / Linux
 - **网络**：可访问集成网关与目标应用API
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | 集成网关账户 | 在线服务 | 必需 | 在网关控制台注册 |
 | 目标应用账户 | 在线服务 | 必需 | 各SaaS平台注册 |
 | 对象存储 | 基础设施 | 可选 | 审计日志归档 |
@@ -278,17 +280,17 @@ curl -X POST https://api.integration-gateway.com/agent/sessions \
   -H "Authorization: Bearer $INTEGRATION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "为Jira（https://company.atlassian.net）构建连接器，支持创建Issue与查询项目"}'
-
+# ...
 # 轮询状态（state为idle或status为completed即完成）
 curl "https://api.integration-gateway.com/agent/sessions/sess_xyz?wait=true&timeout=30" \
   -H "Authorization: Bearer $INTEGRATION_TOKEN"
-
+# ...
 # 发送后续指令（如需调整）
 curl -X POST https://api.integration-gateway.com/agent/sessions/sess_xyz/message \
   -H "Authorization: Bearer $INTEGRATION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"input": "创建Issue时需要支持指定优先级字段"}'
-
+# ...
 # 中止会话（如需）
 curl -X POST https://api.integration-gateway.com/agent/sessions/sess_xyz/interrupt \
   -H "Authorization: Bearer $INTEGRATION_TOKEN"
@@ -355,9 +357,8 @@ A：支持。工作流触发器可配置为cron表达式定时触发，适合定
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

@@ -38,19 +38,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
 # 加密工具专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| 加密工具专业版企业级加密管理 | 不支持 | 支持 |
+| 加密工具专业版密与深度代码安全扫描 | 不支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -70,9 +72,6 @@ pricing_model: "monthly"
 **处理**: 解析自动密钥轮换的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回自动密钥轮换的处理结果,包含执行状态码、结果数据和执行日志。
 
-### 3. 合规性审计
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供合规性审计所需的指令和必要参数。
 **处理**: 解析合规性审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
 **输出**: 返回合规性审计的处理结果,包含执行状态码、结果数据和执行日志。
@@ -81,27 +80,27 @@ pricing_model: "monthly"
 ```bash
 #!/bin/bash
 echo "=== 批量文件加密 ==="
-
+# ...
 ENCRYPTION_KEY_ID="${ENCRYPTION_KEY_ID:-app-master-key}"
 ENCRYPT_EXTENSIONS=("env" "key" "pem" "p12" "secret" "credentials")
 EXCLUDE_DIRS=("node_modules" ".git" "dist" "build")
-
+# ...
 encrypt_file() {
     local file="$1"
     local output="${file}.encrypted"
-
+# ...
     local data_key=$(openssl rand -hex 32)
     local iv=$(openssl rand -hex 12)
-
+# ...
     openssl enc -aes-256-gcm \
         -K "$data_key" \
         -iv "$iv" \
         -in "$file" \
         -out "$output"
-
+# ...
     local encrypted_key=$(echo -n "$data_key" | openssl enc -aes-256-gcm \
         -K "$MASTER_KEY" -iv "$(openssl rand -hex 12)" | base64)
-
+# ...
     cat > "${output}.meta" << EOF
 {
     "key_id": "$ENCRYPTION_KEY_ID",
@@ -112,10 +111,10 @@ encrypt_file() {
     "original_size": $(stat -f%z "$file" 2>/dev/null || stat -c%s "$file")
 }
 EOF
-
+# ...
     echo "已加密: $file -> $output"
 }
-
+# ...
 echo "扫描需要加密的文件..."
 for ext in "${ENCRYPT_EXTENSIONS[@]}"; do
     find . -name "*.$ext" $(printf "! -path */%s/* " "${EXCLUDE_DIRS[@]}") | while read f; do
@@ -124,12 +123,12 @@ for ext in "${ENCRYPT_EXTENSIONS[@]}"; do
         fi
     done
 done
-
+# ...
 echo -e "\n加密文件清单:"
 find . -name "*.encrypted" | while read f; do
     echo "  $f"
 done
-
+# ...
 echo -e "\n批量加密完成"
 ```- 验证返回数据的完整性和格式正确性
 - 参考`批量文件加密`的配置文档进行参数调优
@@ -146,27 +145,25 @@ echo -e "\n批量加密完成"
 ### 场景一:企业数据加密保护
 使用信封加密保护企业敏感数据。
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### 场景二:合规性审计
 对企业代码进行合规性安全审计。
 
 ```bash
 #!/bin/bash
 echo "=== 企业加密合规审计 ==="
-
+# ...
 echo "阶段1: 深度代码扫描..."
 python3 deep_crypto_auditor.py ./ > crypto-audit.json
 echo "代码审计报告: crypto-audit.json"
-
+# ...
 echo -e "\n阶段2: 合规性检查..."
 python3 compliance_auditor.py --template "等保2.0" --output compliance-report.json
 python3 compliance_auditor.py --template "GDPR" --output gdpr-report.json
 python3 compliance_auditor.py --template "PCI-DSS" --output pci-report.json
-
+# ...
 echo -e "\n阶段3: 密钥管理审计..."
 python3 key_rotation_check.py --kms-config .kms/keys.json
-
+# ...
 echo -e "\n阶段4: 生成综合报告..."
 python3 generate_compliance_report.py \
     --crypto-audit crypto-audit.json \
@@ -174,7 +171,7 @@ python3 generate_compliance_report.py \
     --gdpr gdpr-report.json \
     --pci pci-report.json \
     --output final-compliance-report.html
-
+# ...
 echo -e "\n合规审计完成"
 echo "报告: final-compliance-report.html"
 ```
@@ -188,16 +185,16 @@ crypto_security_check:
   image: python:3.11
   script:
     - python3 deep_crypto_auditor.py . --format sarif --output crypto-audit.sarif
-
+# ...
     - python3 compliance_auditor.py --template "等保2.0" --fail-on high
-
+# ...
     - |
       CRITICAL=$(python3 -c "import json; r=json.load(open('crypto-audit.json')); print(sum(1 for f in r['findings'] if f['severity']=='critical'))")
       if [ "$CRITICAL" -gt 0 ]; then
         echo "发现 $CRITICAL 个严重加密安全问题"
         exit 1
       fi
-
+# ...
     - python3 key_rotation_check.py --max-age 90 --fail
   artifacts:
     reports:
@@ -216,17 +213,17 @@ crypto_security_check:
 ```yaml
 version: "2.0"
 edition: pro
-
+# ...
 kms:
   provider: local  # local | aws | vault | aliyun
   key_id: app-master-key
   auto_rotate: true
   rotation_interval_days: 90
-
+# ...
 compliance:
   templates: [等保2.0, GDPR, PCI-DSS]
   fail_on: [critical, high]
-
+# ...
 audit:
   deep_scan: true
   report_format: [sarif, html, json]
@@ -241,7 +238,7 @@ audit:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | encryption处理的内容输入 |, 默认: 全部维度 |
 | strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
 
@@ -288,9 +285,8 @@ audit:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -302,9 +298,9 @@ audit:
 - **操作系统**:Linux / macOS / Windows
 - **运行时**:Python 3.8+ / Node.js 16+
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Python 3.8+ | 运行时 | 必需 | python.org 下载 |
 | cryptography | Python库 | 必需 | pip install cryptography |
 | bcrypt | Python库 | 推荐 | pip install bcrypt |
@@ -319,7 +315,7 @@ audit:
 ```bash
 export VAULT_ADDR="https://vault.company.com"
 export VAULT_TOKEN="${VAULT_TOKEN}"
-
+# ...
 export ALIYUN_KMS_ACCESS_KEY_ID="${KMS_ACCESS_KEY}"
 export ALIYUN_KMS_ACCESS_KEY_SECRET="${KMS_SECRET}"
 ```
@@ -343,12 +339,12 @@ export ALIYUN_KMS_ACCESS_KEY_SECRET="${KMS_SECRET}"
 **输出**:
 ```
 评级: B级(良好) - 总分: 85/100
-
+# ...
 检查详情:
 - 代码风格: 通过(95分) - 检查通过
 - 安全合规: 警告(75分) - 检查通过
 - 无障碍性: 通过(85分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [中优先级] 建议优化
@@ -365,12 +361,12 @@ export ALIYUN_KMS_ACCESS_KEY_SECRET="${KMS_SECRET}"
 **输出**:
 ```
 评级: C级(及格) - 总分: 70/100
-
+# ...
 检查详情:
 - 代码风格: 通过(90分) - 检查通过
 - 安全合规: 不通过(50分) - 检查通过
 - 无障碍性: 警告(70分) - 检查通过
-
+# ...
 改进建议:
 1. [高优先级] 建议优化
 2. [高优先级] 建议优化
@@ -387,12 +383,12 @@ export ALIYUN_KMS_ACCESS_KEY_SECRET="${KMS_SECRET}"
 **输出**:
 ```
 评级: D级(不及格) - 总分: 45/100
-
+# ...
 检查详情:
 - 代码风格: 不通过(40分) - 检查通过
 - 安全合规: 不通过(30分) - 检查通过
 - 无障碍性: 通过(65分) - 检查通过
-
+# ...
 改进建议:
 1. [紧急] 建议优化
 2. [高优先级] 建议优化
@@ -405,7 +401,7 @@ export ALIYUN_KMS_ACCESS_KEY_SECRET="${KMS_SECRET}"
 
 ### Q2:支持哪些KMS服务?
 | KMS服务 | 支持状态 | 配置方式 |
-|:---------|:---------|:---------|
+|:-------|-------:|:-------|
 | 本地KMS | 完全支持 | 内置实现 |
 | HashiCorp Vault | 完全支持 | VAULT_ADDR/VAULT_TOKEN |
 | 阿里云KMS | 完全支持 | ALIYUN_KMS_CONFIG |
@@ -417,15 +413,14 @@ export ALIYUN_KMS_ACCESS_KEY_SECRET="${KMS_SECRET}"
 ### Q4:如何生成合规报告?
 ```bash
 python3 compliance_auditor.py --all-templates --format html --output reports/
-
+# ...
 python3 compliance_auditor.py --template "等保2.0" --format pdf
 ```
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

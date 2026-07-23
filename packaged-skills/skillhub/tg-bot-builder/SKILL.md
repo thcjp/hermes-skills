@@ -21,24 +21,26 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
 ---
 # TG机器人构建专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
-| 能力模块 | 支持 | 支持 |
-| 专业版增强 | 不支持 | 支持 |
-| :--------- | 不支持 | 支持 |
-| :----------- | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 多渠道消息批量发送 | 不支持 | 支持 |
+| 消息模板与变量注入 | 不支持 | 支持 |
+| 送达状态实时回调 | 不支持 | 支持 |
+| 通信记录归档与检索 | 不支持 | 支持 |
+| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 核心能力
 
 | 能力模块 | 说明 | 专业版增强 |
-|:---------|:-----|:-----------|
+|:-----|:-----|:-----|
 | Bot创建与配置 | BotFather全流程配置 | 支持多Bot统一管理 |
 | Reply/Inline键盘 | 交互菜单 | 支持动态菜单生成与A/B测试 |
 | Webhook接入 | 实时更新接收 | 支持负载均衡与故障转移 |
@@ -93,7 +95,7 @@ async def create_invoice(self, product_id, user_id):
         "prices": [{"label": "商品价格", "amount": product.stars_price}]
     }
     return await self.bot.send_invoice(user_id, **invoice)
-
+# ...
 # 支付成功回调
 async def on_pre_checkout(self, update, context):
     query = update.pre_checkout_query
@@ -103,7 +105,7 @@ async def on_pre_checkout(self, update, context):
         await query.answer(ok=True)
     else:
         await query.answer(ok=False, error_message="订单验证失败")
-
+# ...
 async def on_successful_payment(self, update, context):
     payment = update.message.successful_payment
     await self.fulfill_order(payment.invoice_payload, payment.total_amount)
@@ -120,7 +122,7 @@ class BatchPushEngine:
         self.bot = bot
         self.rate_limit = rate_limit  # 每秒消息数
         self.delivery_tracker = {}
-
+# ...
     async def broadcast(self, group_ids, message, parse_mode="HTML"):
         """批量推送消息到多个群组"""
         results = {"success": 0, "failed": 0, "blocked": 0}
@@ -152,7 +154,7 @@ class SubscriptionStateMachine:
         "EXPIRED": "已过期",
         "CHURNED": "已流失"
     }
-
+# ...
     async def transition(self, user_id, new_state):
         old_state = await self.get_state(user_id)
         valid = self.validate_transition(old_state, new_state)
@@ -175,7 +177,7 @@ class SubscriptionStateMachine:
 # 配置环境变量
 export TELEGRAM_BOT_TOKEN="your_token_here"
 export REDIS_URL="redis://localhost:6379/0"
-
+# ...
 # 启动Bot（带热重载）
 python bot_main.py --env production --reload
 ```
@@ -184,7 +186,7 @@ python bot_main.py --env production --reload
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|---:|---:|---:|---:|
 | content | string | 否 | tg-bot-builder处理的内容输入 |,  |
 | content | string | 否 | tg-bot-builder处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -212,9 +214,8 @@ python bot_main.py --env production --reload
 
 ## 异常处理
 
-
 | 问题现象 | 可能原因 | 排查步骤 | 优先级 |
-|:---------|:---------|:---------|:-------|
+|:---:|:---:|:---:|:---:|
 | Webhook无响应 | 证书过期/防火墙阻断 | 检查证书有效期，调用getWebhookInfo查看错误 | P0 |
 | 大量429错误 | 速率控制未生效 | 检查rate_limit配置，确认队列缓冲正常 | P0 |
 | 支付回调丢失 | pre_checkout超时 | 确认handler响应时间<10秒，
@@ -231,10 +232,10 @@ python bot_main.py --env production --reload
 - **Node.js**: 16+（可选，用于前端仪表盘）
 - **Redis**: 6.0+（用于会话缓存与消息队列）
 
-### 依赖说明
+### 依赖说明(补充)
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | python-telegram-bot | Python库 | 必需 | `pip install python-telegram-bot` |
 | redis | Python库 | 必需 | `pip install redis` |
@@ -352,9 +353,8 @@ A：如果你有以下需求之一，建议升级：(1) 需要支付集成；(2)
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|:---|---:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

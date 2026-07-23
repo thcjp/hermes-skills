@@ -19,8 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
 ---
-
 # 知识管理工具(免费版)
 
 ## 概述
@@ -30,7 +31,7 @@ suggested_price: 29.9
 ### 与其他工具的定位差异
 
 | 工具 | 定位 | 与本工具的区别 |
-|:-----|:-----|:--------------|
+|---|---|-------|
 | 本工具 | 保存外部内容为知识条目 | 捕获完整内容,带标签与摘要 |
 | 书签管理 | 仅保存 URL | 本工具保存完整内容与元数据 |
 | 笔记应用 | 演进式笔记 | 本工具保存原始素材快照 |
@@ -87,7 +88,7 @@ know add url https://example.com/article \
   --title "AI 智能体入门指南" \
   --tags "ai,agent,tutorial" \
   --summary "介绍 AI 智能体的基础概念与开发流程"
-
+# ...
 # 收藏一个视频
 know add video https://example.com/video \
   --title "Python 异步编程教程" \
@@ -102,10 +103,10 @@ know add video https://example.com/video \
 ```bash
 # 全文搜索
 know search "智能体"
-
+# ...
 # 按标签筛选
 know list --tags ai,agent
-
+# ...
 # 查看最近条目
 know recent --limit 10
 ```
@@ -141,10 +142,10 @@ knowledge/
 ```bash
 # 收藏 URL
 know add url <url> --title "标题" --tags "标签1,标签2" --summary "摘要"
-
+# ...
 # 添加文章摘要
 know add extract --source <url> --type article --title "标题" --tags "标签"
-
+# ...
 # 添加研究笔记
 know add research --title "标题" --tags "标签" --summary "摘要"
 ```
@@ -158,16 +159,15 @@ know add research --title "标题" --tags "标签" --summary "摘要"
 ```bash
 # 全文搜索
 know search "查询关键词"
-
+# ...
 # 查看最近条目
 know recent --limit 10
-
+# ...
 # 按标签筛选
 know list --tags security,ai
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
-
 
 ## 示例
 
@@ -186,7 +186,7 @@ added: "2026-02-26"
 added_by: "agent-name"
 summary: "一行摘要"
 ---
-
+# ...
 ## 正文内容
 ...
 ```
@@ -204,16 +204,16 @@ INDEX_FORMAT=markdown
 
 ```markdown
 # 知识库索引
-
+# ...
 ## 最近添加
 - [AI 智能体入门指南](urls/2026-02-26-ai-agent-guide.md) - ai,agent,tutorial
 - [Python 异步编程](extracts/2026-02-26-python-async.md) - python,async
-
+# ...
 ## 按标签
 ### #ai
 - [AI 智能体入门指南](urls/2026-02-26-ai-agent-guide.md)
 - [AI 市场调研](research/2026-02-26-ai-market.md)
-
+# ...
 ### #python
 - [Python 异步编程](extracts/2026-02-26-python-async.md)
 ```
@@ -273,7 +273,7 @@ cd ~/.knowledge-base && git add . && git commit -m "知识库更新"
 ### 依赖详情
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|---:|---:|---:|---:|
 | know | CLI 脚本 | 必需 | 随 Skill 安装 |
 | grep | 系统工具 | 必需 | 系统自带(用于全文搜索) |
 | Markdown 编辑器 | 可选 | 可选 | Obsidian / VS Code 等 |
@@ -288,9 +288,8 @@ cd ~/.knowledge-base && git add . && git commit -m "知识库更新"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |

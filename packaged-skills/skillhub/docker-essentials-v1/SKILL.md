@@ -38,19 +38,21 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
 ---
 # Docker V1迁移专业版
 
 ## 付费版专享能力
 
 | 能力 | 免费版 | 付费版 |
-|:-----|:-------|:-------|
+|---|---|---|
 | 基础功能 | 支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
-| 自动化处理 | 不支持 | 支持 |
-| 批量操作 | 不支持 | 支持 |
-| 批量处理 | 不支持 | 支持 |
-| 高级配置 | 不支持 | 支持 |
+| Docker V1迁移专业版支持自动兼容性扫描 | 不支持 | 支持 |
+| Docker V1迁移专业版配置转换 | 不支持 | 支持 |
+| 代码静态分析与质量评分 | 不支持 | 支持 |
+| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 批量代码审查与报告生成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -66,8 +68,6 @@ pricing_model: "per_use"
 ### 2. 批量配置转换
 自动将V1 Compose文件和Dockerfile转换为V2格式。
 
-> 详细代码示例已移至 `references/detail.md`
-
 **输入**: 用户提供批量配置转换所需的指令和必要参数。
 **输出**: 返回批量配置转换的处理结果,包含执行状态码、结果数据和执行日志。
 
@@ -75,13 +75,13 @@ pricing_model: "per_use"
 ```python
 class DockerfileModernizer:
     """Dockerfile现代化重构器"""
-
+# ...
     def __init__(self, dockerfile_path):
         self.path = dockerfile_path
         self.original = []
         self.modernized = []
         self.changes = []
-
+# ...
     def modernize(self):
         """执行现代化重构"""
         self._read()
@@ -89,39 +89,39 @@ class DockerfileModernizer:
         self._suggest_multistage()
         self._write()
         return self.changes
-
+# ...
     def _read(self):
         """读取Dockerfile"""
         with open(self.path, 'r', encoding='utf-8') as f:
             self.source_lines = f.readlines()
-
+# ...
     def _apply_best_practices(self):
         """应用优秀实践"""
         for line in self.source_lines:
             stripped = line.strip()
-
+# ...
             if stripped.startswith('MAINTAINER '):
                 author = stripped.split(' ', 1)[1]
                 self.modernized.append(f'LABEL maintainer="{author}"\n')
                 self.changes.append("MAINTAINER -> LABEL maintainer")
                 continue
-
+# ...
             if 'apt-get install' in stripped and '&&' not in stripped:
                 self.modernized.append(line)
                 self.changes.append("建议合并apt-get install指令")
                 continue
-
+# ...
             self.modernized.append(line)
-
+# ...
     def _suggest_multistage(self):
         """建议多阶段构建"""
         has_build = any('RUN npm run build' in l or 'RUN go build' in l
                        or 'RUN make' in l for l in self.original)
         has_no_multistage = not any(' AS ' in l for l in self.original)
-
+# ...
         if has_build and has_no_multistage:
             self.changes.append("建议使用多阶段构建减小镜像体积")
-
+# ...
     def _write(self):
         """写回文件"""
         with open(self.path, 'w', encoding='utf-8') as f:
@@ -132,9 +132,6 @@ class DockerfileModernizer:
 - 处理流程: 接收输入 -> 执行Dockerfile现代化重构 -> 返回结果
 - 输入: 用户提供Dockerfile现代化重构所需的参数和指令
 - 输出: 返回Dockerfile现代化重构的处理结果,包含执行状态码、结果数据和执行日志
-
-### 4. 渐进式迁移与回滚
-> 详细代码示例已移至 `references/detail.md`
 
 **输入**: 用户提供渐进式迁移与回滚所需的指令和必要参数。
 **处理**: 解析渐进式迁移与回滚的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
@@ -149,30 +146,30 @@ class DockerfileModernizer:
 ```bash
 #!/bin/bash
 echo "=== 企业级Docker V1到V2迁移 ==="
-
+# ...
 echo "阶段1: 兼容性扫描..."
 python3 compatibility_scanner.py ./ > migration-assessment.json
 echo "评估报告: migration-assessment.json"
-
+# ...
 echo -e "\n阶段2: 创建备份..."
 tar -czf "docker-v1-backup-$(date +%Y%m%d).tar.gz" \
     docker-compose*.yml Dockerfile* .env* scripts/
-
+# ...
 echo -e "\n阶段3: 批量配置转换..."
 bash batch-convert.sh
-
+# ...
 echo -e "\n阶段4: 验证配置..."
 for f in docker-compose*.yml; do
     echo "验证: $f"
     docker compose -f "$f" config -q && echo "[OK]" || echo "[FAIL]"
 done
-
+# ...
 echo -e "\n阶段5: 渐进式服务迁移..."
 SERVICES=$(docker-compose config --services 2>/dev/null)
 for svc in $SERVICES; do
     migrate_service "$svc"
 done
-
+# ...
 echo -e "\n阶段6: 最终验证..."
 docker compose ps
 echo "迁移完成"
@@ -184,20 +181,20 @@ echo "迁移完成"
 ```bash
 #!/bin/bash
 echo "=== CI/CD配置迁移 ==="
-
+# ...
 CI_FILES=$(find . -name ".gitlab-ci.yml" -o -name "Jenkinsfile" -o -path "./.github/workflows/*.yml")
-
+# ...
 for file in $CI_FILES; do
     echo "迁移: $file"
     cp "$file" "${file}.v1-backup"
-
+# ...
     sed -i 's/docker-compose /docker compose /g' "$file"
-
+# ...
     sed -i 's/docker-compose -f/docker compose -f/g' "$file"
-
+# ...
     echo "  -> 已更新"
 done
-
+# ...
 echo -e "\n验证配置语法..."
 for file in $CI_FILES; do
     if [[ "$file" == *.yml ]]; then
@@ -212,7 +209,7 @@ done
 ```python
 class MigrationImpactAssessor:
     """迁移影响评估器"""
-
+# ...
     def __init__(self, project_root):
         self.root = project_root
         self.impact = {
@@ -220,7 +217,7 @@ class MigrationImpactAssessor:
             "medium": [],
             "low": []
         }
-
+# ...
     def assess(self):
         """评估迁移影响"""
         self._assess_compose_changes()
@@ -228,11 +225,11 @@ class MigrationImpactAssessor:
         self._assess_script_changes()
         self._assess_ci_changes()
         return self._generate_report()
-
+# ...
     def _assess_compose_changes(self):
         """评估Compose变更影响"""
         pass
-
+# ...
     def _generate_report(self):
         """生成影响评估报告"""
         total = sum(len(v) for v in self.impact.values())
@@ -244,7 +241,7 @@ class MigrationImpactAssessor:
             "recommendation": self._get_recommendation(),
             "details": self.impact
         }
-
+# ...
     def _get_recommendation(self):
         """获取迁移建议"""
         if len(self.impact["high"]) > 0:
@@ -278,7 +275,7 @@ class MigrationImpactAssessor:
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
+|:-----|:-----|:-----|:-----|
 | content | string | 否 | docker-essentials-v1处理的内容输入 |,  |
 | content | string | 否 | docker-essentials-v1处理的内容输入 |, 可选值: json/text/markdown |
 | style | string | 否 | 输出风格, 参考 `references/style.md` |
@@ -306,9 +303,8 @@ class MigrationImpactAssessor:
 
 ## 异常处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 
@@ -321,9 +317,9 @@ class MigrationImpactAssessor:
 - **运行时**:Docker Engine(V1和V2均支持)
 - **工具**:Python 3.8+ / Bash
 
-### 依赖说明
+### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | Docker Engine | 运行时 | 必需 | docker.com 下载 |
 | docker-compose V1 | 工具 | 迁移前 | pip install docker-compose |
 | docker compose V2 | 工具 | 迁移后 | Docker Compose插件 |
@@ -344,20 +340,6 @@ class MigrationImpactAssessor:
 ## 案例展示
 
 ### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例2: 进阶用法
 **输入**:
 ```json
 {
@@ -398,7 +380,7 @@ rollback_service web
 
 ### Q4:迁移需要多长时间?
 | 项目规模 | 文件数 | 预估时间 | 复杂度 |
-|:---------|:-------|:---------|:-------|
+|:------|------:|:------|:------|
 | 小型 | <10 | 1-2小时 | 低 |
 | 中型 | 10-50 | 半天-1天 | 中 |
 | 大型 | 50-200 | 2-5天 | 高 |
@@ -406,9 +388,8 @@ rollback_service web
 
 ## 错误处理
 
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |

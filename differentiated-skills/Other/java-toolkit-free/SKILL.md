@@ -36,11 +36,12 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
+pricing_tier: "L1-入门级"
 pricing_model: per_use
-suggested_price: 29.9
+suggested_price: "9.9 CNY/per_use"
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
 ---
-
 # Java 工具箱（免费版）
 
 ## 概述
@@ -50,7 +51,7 @@ suggested_price: 29.9
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
-|:-----|:-----|:-----------|
+|---|---|-----|
 | 空值陷阱 | Optional、自动装箱、NPE | 全覆盖 |
 | 集合泛型 | 并发修改、类型擦除 | 关键项 |
 | 并发 | volatile、同步、原子 | 关键项 |
@@ -92,11 +93,11 @@ String a = new String("x");
 String b = new String("x");
 System.out.println(a == b);       // false
 System.out.println(a.equals(b));  // true
-
+// ...
 // Optional.get() 空时抛异常，用 orElse
 Optional<String> opt = Optional.empty();
 String v = opt.orElse("default");  // 安全
-
+// ...
 // 拆箱 null 抛 NPE
 Integer i = null;
 int x = i;  // NPE
@@ -108,7 +109,7 @@ int x = i;  // NPE
 // volatile 保证可见性，不保证原子性
 volatile int count = 0;
 count++;  // 仍需同步或用 AtomicInteger
-
+// ...
 // 遍历时修改抛 ConcurrentModificationException
 List<Integer> list = new ArrayList<>(List.of(1, 2, 3));
 Iterator<Integer> it = list.iterator();
@@ -159,13 +160,12 @@ while (it.hasNext()) {
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤。
 
-
 ## 示例
 
 规则对照表（节选）：
 
 | 主题 | 关键点 |
-|:-----|:-------|
+|:-----|:-----|
 | 空值 | Optional 用 orElse，拆箱前判空 |
 | 相等 | 字符串用 equals，重写 equals 必重写 hashCode |
 | 集合 | 遍历修改用 Iterator.remove |
@@ -209,10 +209,10 @@ public String getCity(User user) {
         .map(Address::getCity)
         .orElse("未知");
 }
-
+// ...
 // 避免 Optional.get()，用 orElse/orElseGet
 String name = optionalName.orElseGet(() -> fetchDefault());
-
+// ...
 // 拆箱前判空
 Integer count = map.get("key");
 int total = (count != null) ? count : 0;
@@ -224,14 +224,14 @@ int total = (count != null) ? count : 0;
 public class Person {
     private final String name;
     private final int age;
-
+// ...
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Person p)) return false;
         return age == p.age && Objects.equals(name, p.name);
     }
-
+// ...
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
@@ -252,7 +252,7 @@ try (BufferedReader br = new BufferedReader(new FileReader("f.txt"));
 ## 并发避坑速查
 
 | 场景 | 错误做法 | 正确做法 |
-|:-----|:---------|:---------|
+|---:|---:|---:|
 | count++ | volatile | AtomicInteger |
 | 遍历修改 | list.remove | iterator.remove |
 | 双重检查锁 | 无 volatile | volatile 字段 |
@@ -276,7 +276,7 @@ try (BufferedReader br = new BufferedReader(new FileReader("f.txt"));
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
+|:---:|:---:|:---:|:---:|
 | JDK | 工具链 | 必需 | adoptium.net 下载 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 
@@ -289,9 +289,8 @@ try (BufferedReader br = new BufferedReader(new FileReader("f.txt"));
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
+|:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
