@@ -5,20 +5,31 @@
 集成多平台skill发布流程: SkillHub → ClawHub → (Coze评估)
 
 功能:
-  1. publish-skillhub <slug>... — 上传到SkillHub并跟踪状态
-  2. publish-clawhub <slug>...  — 上传到ClawHub
-  3. publish-all <slug>...      — 按策略上传到所有平台
-  4. public-publish <slug>...   — 批量对外发布(已上架→公开)
-  5. batch-public-publish       — 批量对外发布所有已上架skill
-  6. auto-flow <slug>...        — 完整自动化: 上传→跟踪→对外发布
-  7. check-status <slug>...     — 检查skill在所有平台的状态
-  8. retry-rejected             — 重试被拒绝的skill(需先修改内容)
+  1. publish-skillhub <slug>...        — 上传到SkillHub并跟踪状态
+  2. publish-clawhub <slug>...         — 上传到ClawHub
+  3. publish-all <slug>...             — 按策略上传到所有平台
+  4. public-publish <slug>...          — 批量对外发布(已上架→公开)
+  5. batch-public-publish              — 批量对外发布所有已上架skill
+  6. auto-flow <slug>...               — 完整自动化: 上传→跟踪→对外发布
+  7. check-status <slug>...            — 检查skill在所有平台的状态
+  8. retry-rejected                    — 重试被拒绝的skill(需先修改内容)
+  9. gen-community-publish-js          — 生成浏览器端社区发布JS脚本
+ 10. retry-cos-failures                — 生成COS失败重试JS脚本
+ 11. sync-platform-status <results.json> — 根据浏览器返回结果同步数据库
+
+重要说明:
+  SkillHub Admin API (orgs/862/admin/*) 需要浏览器cookie认证,
+  Bearer Token (sk-ent-/skh_) 无法访问admin端点。
+  因此社区发布(对外发布)通过生成JS脚本在浏览器控制台执行。
 
 使用方式:
     python auto_publish.py publish-skillhub <slug> [slug...]
     python auto_publish.py batch-public-publish
     python auto_publish.py check-status <slug>
     python auto_publish.py auto-flow <slug> [slug...]
+    python auto_publish.py gen-community-publish-js
+    python auto_publish.py retry-cos-failures
+    python auto_publish.py sync-platform-status <results.json>
 """
 
 import json
@@ -33,12 +44,21 @@ REGISTRY_DIR = Path(r"D:\skills\skill-registry")
 DB_FILE = REGISTRY_DIR / "upload_tracking.json"
 PACKAGED_DIR = Path(r"D:\skills\packaged-skills\skillhub")
 DIFFERENTIATED_DIR = Path(r"D:\skills\differentiated-skills")
+COS_FAILURE_FILE = REGISTRY_DIR / "cos_failure_slugs.json"
 NOW = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
 # SkillHub上传限制
 MAX_CONTENT_LENGTH = 5800  # WAF限制
 RATE_LIMIT_WAIT = 120  # 429限频等待秒数
 MAX_RETRIES = 3
+
+# SkillHub Admin API 配置 (需要浏览器cookie认证)
+ADMIN_API_HOST = "https://api.skillhub.cn"
+ADMIN_ORG_ID = 862
+ADMIN_PUBLISHER_ID = 742
+ADMIN_SKILLS_LIST = f"/api/v1/orgs/{ADMIN_ORG_ID}/admin/skills"
+ADMIN_PUBLISH = f"/api/v1/orgs/{ADMIN_ORG_ID}/admin/skills"
+ADMIN_PUBLISHER_PROFILES = f"/api/v1/orgs/{ADMIN_ORG_ID}/admin/publisher-profiles"
 
 
 def load_db():
@@ -163,8 +183,9 @@ def batch_public_publish(dry_run=False):
 
     save_db(db)
     print(f"\n✅ 已标记 {success} 个skill为对外发布")
-    print(f"⚠ 注意: 需在SkillHub团队空间UI中手动设置技能可见性为'公开'")
-    print(f"  数据库已更新, 实际平台可见性需手动操作或联系平台支持批量设置")
+    print(f"⚠ 注意: 数据库标记完成, 实际平台发布需运行:")
+    print(f"  python auto_publish.py gen-community-publish-js")
+    print(f"  然后将生成的JS脚本粘贴到SkillHub管理后台浏览器控制台执行")
 
 
 def auto_flow(slugs, dry_run=False):
@@ -309,6 +330,334 @@ def retry_rejected(dry_run=False):
     return categories
 
 
+def generate_community_publish_js():
+    """生成浏览器端社区发布JS脚本
+    
+    SkillHub Admin API需要cookie认证,无法通过Python直接调用。
+    此函数生成一个JS脚本,可在SkillHub管理后台(https://skillhub.cn/admin/skills)
+    的浏览器控制台中执行,自动完成:
+    1. 获取所有org_only(未对外发布)的skill
+    2. 批量调用publish-to-community API
+    3. 处理slug冲突(自动追加-sk后缀)
+    4. 输出JSON格式结果供数据库同步
+    """
+    js_code = f"""// SkillHub 批量社区发布脚本 (自动生成)
+// 在 https://skillhub.cn/admin/skills 页面控制台执行
+(async function() {{
+  const API_HOST = "{ADMIN_API_HOST}";
+  const ORG_ID = {ADMIN_ORG_ID};
+  const PUBLISHER_ID = {ADMIN_PUBLISHER_ID};
+  const BATCH_SIZE = 10;  // 每批并发数
+  const RESULTS = {{ published: [], failed: [], renamed: [] }};
+  
+  console.log("=== SkillHub 批量社区发布 ===");
+  
+  // 1. 获取所有skill
+  const allSkills = [];
+  let page = 1;
+  while (true) {{
+    const resp = await fetch(`${{API_HOST}}/api/v1/orgs/${{ORG_ID}}/admin/skills?page=${{page}}&pageSize=100`, {{
+      credentials: 'include',
+      headers: {{ 'Accept': 'application/json' }}
+    }});
+    const data = await resp.json();
+    if (!data.skills || data.skills.length === 0) break;
+    allSkills.push(...data.skills);
+    if (allSkills.length >= data.total) break;
+    page++;
+  }}
+  console.log(`总共 ${{allSkills.length}} 个skill`);
+  
+  // 2. 筛选org_only
+  const orgOnly = allSkills.filter(s => s.visibility === 'org_only');
+  console.log(`未对外发布(org_only): ${{orgOnly.length}} 个`);
+  console.log(`已对外发布(public): ${{allSkills.length - orgOnly.length}} 个`);
+  
+  if (orgOnly.length === 0) {{
+    console.log("✅ 所有skill已对外发布!");
+    return;
+  }}
+  
+  // 3. 批量发布
+  for (let i = 0; i < orgOnly.length; i += BATCH_SIZE) {{
+    const batch = orgOnly.slice(i, i + BATCH_SIZE);
+    console.log(`处理批次 ${{Math.floor(i/BATCH_SIZE)+1}}: ${{i+1}}-${{Math.min(i+BATCH_SIZE, orgOnly.length)}}/${{orgOnly.length}}`);
+    
+    const promises = batch.map(async (skill) => {{
+      const slug = skill.slug;
+      try {{
+        // 尝试直接发布
+        const resp = await fetch(`${{API_HOST}}/api/v1/orgs/${{ORG_ID}}/admin/skills/${{slug}}/publish-to-community`, {{
+          method: 'POST',
+          credentials: 'include',
+          headers: {{ 'Content-Type': 'application/json', 'Accept': 'application/json' }},
+          body: JSON.stringify({{ publisherProfileId: PUBLISHER_ID }})
+        }});
+        const data = await resp.json().catch(() => ({{}}));
+        
+        if (resp.status === 200 || resp.status === 201) {{
+          RESULTS.published.push(slug);
+          return {{ slug, success: true }};
+        }} else if (resp.status === 409 && (data.error === 'slug_conflict' || JSON.stringify(data).includes('slug'))) {{
+          // slug冲突, 重命名后重试
+          const newSlug = slug + '-sk';
+          const renameResp = await fetch(`${{API_HOST}}/api/v1/orgs/${{ORG_ID}}/admin/skills/${{slug}}/rename-slug`, {{
+            method: 'PUT',
+            credentials: 'include',
+            headers: {{ 'Content-Type': 'application/json', 'Accept': 'application/json' }},
+            body: JSON.stringify({{ newSlug }})
+          }});
+          
+          if (renameResp.ok) {{
+            // 用新slug重新发布
+            const retryResp = await fetch(`${{API_HOST}}/api/v1/orgs/${{ORG_ID}}/admin/skills/${{newSlug}}/publish-to-community`, {{
+              method: 'POST',
+              credentials: 'include',
+              headers: {{ 'Content-Type': 'application/json', 'Accept': 'application/json' }},
+              body: JSON.stringify({{ publisherProfileId: PUBLISHER_ID }})
+            }});
+            
+            if (retryResp.ok) {{
+              RESULTS.published.push(newSlug);
+              RESULTS.renamed.push({{ original: slug, renamed: newSlug }});
+              return {{ slug: newSlug, success: true, renamed_from: slug }};
+            }} else {{
+              const retryData = await retryResp.json().catch(() => ({{}}));
+              RESULTS.failed.push({{ slug, error: retryData.error || `rename_ok_publish_failed_${{retryResp.status}}` }});
+              return {{ slug, success: false, error: retryData.error }};
+            }}
+          }} else {{
+            RESULTS.failed.push({{ slug, error: 'rename_failed' }});
+            return {{ slug, success: false, error: 'rename_failed' }};
+          }}
+        }} else {{
+          RESULTS.failed.push({{ slug, error: data.error || `HTTP_${{resp.status}}` }});
+          return {{ slug, success: false, error: data.error || `HTTP_${{resp.status}}` }};
+        }}
+      }} catch(e) {{
+        RESULTS.failed.push({{ slug, error: e.message }});
+        return {{ slug, success: false, error: e.message }};
+      }}
+    }});
+    
+    await Promise.all(promises);
+    console.log(`  已发布: ${{RESULTS.published.length}}, 失败: ${{RESULTS.failed.length}}`);
+    
+    // 批次间短暂等待
+    if (i + BATCH_SIZE < orgOnly.length) {{
+      await new Promise(r => setTimeout(r, 500));
+    }}
+  }}
+  
+  // 4. 输出结果
+  console.log("\\n=== 发布结果 ===");
+  console.log(`✅ 成功发布: ${{RESULTS.published.length}}`);
+  console.log(`❌ 发布失败: ${{RESULTS.failed.length}}`);
+  console.log(`📝 重命名: ${{RESULTS.renamed.length}}`);
+  
+  if (RESULTS.failed.length > 0) {{
+    console.log("\\n失败详情:");
+    RESULTS.failed.forEach(f => console.log(`  ${{f.slug}}: ${{f.error}}`));
+  }}
+  
+  // 保存结果到window供复制
+  window.__publishResults = RESULTS;
+  console.log("\\n结果已保存到 window.__publishResults");
+  console.log("复制结果: JSON.stringify(window.__publishResults)");
+}})();
+"""
+    
+    output_file = REGISTRY_DIR / "community_publish.js"
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(js_code)
+    
+    print(f"✅ JS脚本已生成: {output_file}")
+    print(f"使用方法:")
+    print(f"  1. 打开 https://skillhub.cn/admin/skills")
+    print(f"  2. 按 F12 打开浏览器开发者工具")
+    print(f"  3. 切换到 Console 标签")
+    print(f"  4. 粘贴 {output_file} 的内容并回车执行")
+    print(f"  5. 执行完成后, 运行: JSON.stringify(window.__publishResults)")
+    print(f"  6. 将结果保存为JSON文件, 然后运行:")
+    print(f"     python auto_publish.py sync-platform-status <results.json>")
+
+
+def retry_cos_failures():
+    """生成COS失败重试JS脚本"""
+    if not COS_FAILURE_FILE.exists():
+        print(f"❌ COS失败列表不存在: {COS_FAILURE_FILE}")
+        return
+    
+    with open(COS_FAILURE_FILE, "r", encoding="utf-8") as f:
+        cos_slugs = json.load(f)
+    
+    js_code = f"""// SkillHub COS失败重试脚本 (自动生成)
+// 在 https://skillhub.cn/admin/skills 页面控制台执行
+(async function() {{
+  const API_HOST = "{ADMIN_API_HOST}";
+  const ORG_ID = {ADMIN_ORG_ID};
+  const PUBLISHER_ID = {ADMIN_PUBLISHER_ID};
+  const COS_FAILURE_SLUGS = {json.dumps(cos_slugs)};
+  const RESULTS = {{ published: [], failed: [] }};
+  
+  console.log(`=== COS失败重试: ${{COS_FAILURE_SLUGS.length}} 个skill ===`);
+  
+  for (let i = 0; i < COS_FAILURE_SLUGS.length; i++) {{
+    const slug = COS_FAILURE_SLUGS[i];
+    console.log(`[${{i+1}}/${{COS_FAILURE_SLUGS.length}}] 重试: ${{slug}}`);
+    
+    try {{
+      const resp = await fetch(`${{API_HOST}}/api/v1/orgs/${{ORG_ID}}/admin/skills/${{slug}}/publish-to-community`, {{
+        method: 'POST',
+        credentials: 'include',
+        headers: {{ 'Content-Type': 'application/json', 'Accept': 'application/json' }},
+        body: JSON.stringify({{ publisherProfileId: PUBLISHER_ID }})
+      }});
+      const data = await resp.json().catch(() => ({{}}));
+      
+      if (resp.ok) {{
+        RESULTS.published.push(slug);
+        console.log(`  ✅ 成功`);
+      }} else {{
+        RESULTS.failed.push({{ slug, error: data.error || `HTTP_${{resp.status}}` }});
+        console.log(`  ❌ 失败: ${{data.error || resp.status}}`);
+      }}
+    }} catch(e) {{
+      RESULTS.failed.push({{ slug, error: e.message }});
+      console.log(`  ❌ 异常: ${{e.message}}`);
+    }}
+    
+    // 请求间隔
+    if (i + 1 < COS_FAILURE_SLUGS.length) {{
+      await new Promise(r => setTimeout(r, 300));
+    }}
+  }}
+  
+  console.log("\\n=== 重试结果 ===");
+  console.log(`✅ 成功: ${{RESULTS.published.length}}`);
+  console.log(`❌ 失败: ${{RESULTS.failed.length}}`);
+  
+  if (RESULTS.failed.length > 0) {{
+    console.log("\\n仍失败的skill:");
+    RESULTS.failed.forEach(f => console.log(`  ${{f.slug}}: ${{f.error}}`));
+  }}
+  
+  window.__cosRetryResults = RESULTS;
+  console.log("\\n结果已保存到 window.__cosRetryResults");
+}})();
+"""
+    
+    output_file = REGISTRY_DIR / "retry_cos_failures.js"
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(js_code)
+    
+    print(f"✅ COS重试JS脚本已生成: {output_file}")
+    print(f"COS失败skill数量: {len(cos_slugs)}")
+    print(f"使用方法: 在 https://skillhub.cn/admin/skills 控制台粘贴执行")
+
+
+def sync_platform_status(results_file):
+    """根据浏览器返回的发布结果同步数据库
+    
+    Args:
+        results_file: 浏览器端JS脚本执行后保存的JSON结果文件
+    """
+    results_path = Path(results_file)
+    if not results_path.exists():
+        print(f"❌ 结果文件不存在: {results_file}")
+        return
+    
+    with open(results_path, "r", encoding="utf-8") as f:
+        results = json.load(f)
+    
+    published = results.get("published", [])
+    failed = results.get("failed", [])
+    renamed = results.get("renamed", [])
+    
+    print(f"发布结果: 成功={len(published)}, 失败={len(failed)}, 重命名={len(renamed)}")
+    
+    db = load_db()
+    skills = db.get("skills", {})
+    
+    # 处理重命名映射
+    rename_map = {{ r["original"]: r["renamed"] for r in renamed }}
+    
+    # 更新已发布的skill
+    success_count = 0
+    for slug in published:
+        # 检查是否是重命名后的slug
+        original_slug = None
+        for orig, renamed_slug in rename_map.items():
+            if renamed_slug == slug:
+                original_slug = orig
+                break
+        
+        # 在数据库中查找 (可能是原始slug或重命名后的slug)
+        db_slug = original_slug if original_slug else slug
+        if db_slug in skills:
+            sh = skills[db_slug].get("skillhub", {{}})
+            sh["public_published"] = True
+            sh["public_published_at"] = NOW
+            sh["community_published"] = True
+            sh["community_slug"] = slug  # 实际在平台上的slug
+            sh["last_sync"] = NOW
+            if "community_publish_failed" in sh:
+                del sh["community_publish_failed"]
+            if "community_publish_error" in sh:
+                del sh["community_publish_error"]
+            
+            lifecycle = skills[db_slug].get("lifecycle", {{}})
+            lifecycle["stage"] = "community_published"
+            lifecycle["last_modified"] = NOW
+            skills[db_slug]["lifecycle"] = lifecycle
+            success_count += 1
+    
+    # 更新失败的skill
+    fail_count = 0
+    for item in failed:
+        slug = item.get("slug", "")
+        if slug in skills:
+            sh = skills[slug].get("skillhub", {{}})
+            sh["public_published"] = False
+            sh["community_publish_failed"] = True
+            sh["community_publish_error"] = item.get("error", "unknown")
+            sh["community_publish_retry_count"] = sh.get("community_publish_retry_count", 0) + 1
+            sh["last_sync"] = NOW
+            
+            lifecycle = skills[slug].get("lifecycle", {{}})
+            lifecycle["stage"] = "community_publish_failed"
+            lifecycle["last_modified"] = NOW
+            skills[slug]["lifecycle"] = lifecycle
+            fail_count += 1
+    
+    # 更新统计
+    stats = db.get("stats", {{}})
+    stats["community_published"] = success_count
+    stats["community_publish_failed"] = fail_count
+    db["stats"] = stats
+    
+    db["metadata"]["last_updated"] = NOW
+    db["metadata"]["platform_sync"] = {{
+        "synced_at": NOW,
+        "published_count": len(published),
+        "failed_count": len(failed),
+        "renamed_count": len(renamed),
+        "db_updated_success": success_count,
+        "db_updated_failed": fail_count
+    }}
+    
+    save_db(db)
+    
+    print(f"\n=== 数据库同步完成 ===")
+    print(f"  已发布(数据库更新): {success_count}")
+    print(f"  仍失败(数据库更新): {fail_count}")
+    print(f"  重命名: {len(renamed)}")
+    if renamed:
+        print(f"  重命名详情:")
+        for r in renamed:
+            print(f"    {r['original']} → {r['renamed']}")
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -340,6 +689,18 @@ def main():
 
     elif cmd == "retry-rejected":
         retry_rejected(dry_run=dry_run)
+
+    elif cmd == "gen-community-publish-js":
+        generate_community_publish_js()
+
+    elif cmd == "retry-cos-failures":
+        retry_cos_failures()
+
+    elif cmd == "sync-platform-status":
+        if len(sys.argv) < 3:
+            print("用法: python auto_publish.py sync-platform-status <results.json>")
+            return
+        sync_platform_status(sys.argv[2])
 
     else:
         print(f"未知命令: {cmd}")
