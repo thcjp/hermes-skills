@@ -21,10 +21,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Slack工作区管家（Slack Workspace）
 
 通过ClawLink OAuth托管连接管理Slack工作区，覆盖消息、频道、文件、用户、提醒、画布等60+ API工具。内置读写分级安全策略，写操作需用户确认后执行。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 

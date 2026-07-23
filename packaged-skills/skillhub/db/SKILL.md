@@ -24,8 +24,23 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # 数据库设计与运维
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 概述
 
@@ -244,8 +259,8 @@ SELECT count FROM table_count_cache WHERE table_name = 'huge_table';
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| `lock timeout` Schema变更超时 | `ALTER TABLE` 等待长事务释放锁 | 设置 `lock_timeout='5s'`，超时后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，避免无限等待 |
-| `deadlock detected` 死锁 | 多事务以不同顺序锁定相同资源 | 统一加锁顺序，捕获死锁异常后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令事务 |
+| `lock timeout` Schema变更超时 | `ALTER TABLE` 等待长事务释放锁 | 设置 `lock_timeout='5s'`，超时后避免无限等待 |
+| `deadlock detected` 死锁 | 多事务以不同顺序锁定相同资源 | 统一加锁顺序，捕获死锁异常后事务 |
 | `too many connections` 连接耗尽 | 连接池配置过小或连接泄漏 | 使用 `PgBouncer` 连接池，设置 `max_connections` 上限 |
 | `replication lag` 复制延迟 | 大事务或网络带宽不足 | 监控 `pg_stat_replication.replay_lag`，将大事务拆小 |
 | `out of memory` 查询OOM | `SELECT *` 无界查询加载全表 | 添加 `LIMIT`，使用游标分批读取，或增加 `work_mem` |

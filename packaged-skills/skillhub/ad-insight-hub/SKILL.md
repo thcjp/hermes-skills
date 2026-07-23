@@ -20,10 +20,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # 广告洞察中枢（Ad Insight Hub）
 
 面向广告投放与市场分析场景的结构化广告情报数据中枢。在原始 API 之上叠加参数翻译、依赖编排、缓存复用、可信度标注四层能力，让 Agent 用最少的往返拿到最可用的数据。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -276,11 +291,11 @@ curl -s "https://api.admapix.com/api/data/sdk-detail?unifiedProductId=app_001" \
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 缺失/格式错/已禁用 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，引导用户检查 Key；永不打印 Key |
-| 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 权限不足或套餐限制 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，提示用户升级 AdMapix 套餐 |
-| 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | 触发限流 | 指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令（1s/2s/4s），最多 3 次；降低并发到 3 |
-| 400 INVALID_PARAM | `{"code":"INVALID_PARAM"}` | 国家/行业码错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，对照 `filter-options` 检查参数代码 |
-| 5xx INTERNAL | HTTP 500/502/503 | AdMapix 服务端错误 | 指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，最多 2 次 |
+| 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 缺失/格式错/已禁用 | 引导用户检查 Key；永不打印 Key |
+| 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 权限不足或套餐限制 | 提示用户升级 AdMapix 套餐 |
+| 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | 触发限流 | （1s/2s/4s），最多 3 次；降低并发到 3 |
+| 400 INVALID_PARAM | `{"code":"INVALID_PARAM"}` | 国家/行业码错误 | 对照 `filter-options` 检查参数代码 |
+| 5xx INTERNAL | HTTP 500/502/503 | AdMapix 服务端错误 | 最多 2 次 |
 | 一直返回空 list | `{"list":[]}` | 参数代码错误或无匹配 | 调 `filter-options` 核对国家/行业码；空列表是合法结果 |
 | 详情接口 404 | `{"code":"NOT_FOUND"}` | 创意已下线 | 跳过该 ID，记录到失败列表 |
 | 估算数据明显异常 | 下载数为 0 或负数 | 长尾地区样本稀疏 | 标注 C 级可信度，仅供方向性参考 |

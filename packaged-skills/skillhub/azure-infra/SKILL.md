@@ -33,8 +33,23 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Azure Infra
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 概述
 
@@ -231,7 +246,7 @@ az monitor activity-log list --resource prod-vm-01 --resource-group prod-rg --st
 | `Cloud shell write operation blocked` | 用户未确认写操作 | 重新展示命令与影响范围，等待显式确认（`y`）后再执行 |
 | `InvalidResourceID` | 资源 ID 格式错误 | 校验 ID 是否符合 `/subscriptions/<sub>/resourceGroups/<rg>/providers/...` 格式 |
 | `LocationNotAvailableForResourceType` | 所选区域不支持该资源类型 | `az provider list --query "[?namespace=='Microsoft.Compute'].resourceTypes"` 查询可用区域 |
-| `az cli 版本过旧` | 某些命令或参数在新版本才支持 | 提示 `az upgrade` 升级 Azure CLI 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| `az cli 版本过旧` | 某些命令或参数在新版本才支持 | 提示 `az upgrade` 升级 Azure CLI 后 |
 | 网络不可达 ARM 端点 | 本地网络限制或代理拦截 | 检查 `HTTPS_PROXY` 环境变量与 `management.azure.com` 连通性 |
 
 ## 常见问题

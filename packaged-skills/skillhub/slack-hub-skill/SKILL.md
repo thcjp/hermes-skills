@@ -20,10 +20,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Slack消息中枢（Slack Hub Skill）
 
 面向团队协作场景的Slack消息与搜索集成。通过Bot Token直连Slack Web API，提供消息投递、线程回复、工作区搜索、频道发现四大能力。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -239,10 +254,10 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
 
 | 错误码 | 错误信息 | 原因分析 | 处理方式 |
 |:-------|:---------|:---------|:---------|
-| `invalid_auth` | `{ok:false, error:"invalid_auth"}` | Token无效/过期/格式错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，引导用户检查 `SLACK_BOT_TOKEN` 是否以 `xoxb-` 开头 |
+| `invalid_auth` | `{ok:false, error:"invalid_auth"}` | Token无效/过期/格式错误 | 引导用户检查 `SLACK_BOT_TOKEN` 是否以 `xoxb-` 开头 |
 | `channel_not_found` | `{ok:false, error:"channel_not_found"}` | 频道ID不存在或Bot不是成员 | 引导用户用 `/invite @botname` 将Bot加入频道 |
 | `not_in_channel` | `{ok:false, error:"not_in_channel"}` | Bot未加入目标频道 | 同上，需先将Bot邀请到频道 |
-| `rate_limited` | HTTP 429 + `Retry-After` 头 | 触发速率限制 | 读取 `Retry-After` 值，等待后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，最多3次指数退避 |
+| `rate_limited` | HTTP 429 + `Retry-After` 头 | 触发速率限制 | 读取 `Retry-After` 值，等待后最多3次指数退避 |
 | `missing_scope` | `{ok:false, error:"missing_scope"}` | Token缺少所需权限 | 引导用户在App配置中添加对应Scope（`chat:write`/`search:read`/`channels:read`） |
 | `no_text` | `{ok:false, error:"no_text"}` | 消息内容为空或仅含空格 | 检查 `text` 参数非空，至少包含一个可见字符 |
 | `search_disabled` | `{ok:false, error:"search_disabled"}` | 工作区未启用搜索或套餐不支持 | 引导用户检查工作区套餐，搜索功能需Standard及以上 |

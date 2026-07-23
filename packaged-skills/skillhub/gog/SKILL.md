@@ -17,10 +17,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # gog
 
 `gog` 是 Google Workspace 的命令行工具,统一封装 Gmail、Calendar、Drive、Contacts、Sheets、Docs 六大服务的 API 调用。所有操作通过 OAuth 凭证鉴权,支持多账户切换、JSON 结构化输出与 `--no-input` 脚本模式。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| OAuth 凭证管理:导入 `client_secret.json`、添加多服务授权账户、列出已授权账户 | 支持 | 支持 |
+| Gmail:按 Gmail 搜索语法检索邮件(`newer_than:`、`from:`、`has:attachment` 等)、发送邮件 | 不支持 | 支持 |
+| Calendar:按时间范围查询日历事件,支持 ISO8601 时间区间 | 不支持 | 支持 |
+| Drive:按查询语法检索文件,支持 `--max` 限制返回数量 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -329,7 +344,7 @@ for e in events:
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

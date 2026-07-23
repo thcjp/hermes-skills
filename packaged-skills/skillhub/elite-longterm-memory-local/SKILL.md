@@ -17,12 +17,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 智能助手
 ---
 # 本地向量记忆系统（Elite Longterm Memory Local）
 
 **本地优先，隐私至上。** 基于 LanceDB 与 Ollama 本地 Embedding 的向量记忆系统，零外部 API 依赖，所有数据完全留在本地。通过五层记忆架构与 WAL 协议，让 Agent 具备高效的语义搜索与上下文召回能力，同时保障数据隐私。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -148,7 +163,7 @@ node bin/memory.js search "前端技术选型"
 ## FAQ
 
 **Q1：本地 Embedding 与 OpenAI API 有什么区别？**
-本地 Embedding 使用 Ollama 运行 nomic-embed-text 模型，完全免费、本地毫秒级延迟、数据不出域、可离线使用。OpenAI API 按 token 收费、依赖网络、数据出域、不可离线，但质量略高（text-embedding-3）。对于个人使用，nomic-embed-text 的质量足够，且完全免费。
+本地 Embedding 使用 Ollama 运行 nomic-embed-text 模型，付费版独享、本地毫秒级延迟、数据不出域、可离线使用。OpenAI API 按 token 收费、依赖网络、数据出域、不可离线，但质量略高（text-embedding-3）。对于个人使用，nomic-embed-text 的质量足够，且付费版独享。
 
 **Q2：系统需要联网吗？**
 初始化时需联网下载 Ollama 与 nomic-embed-text 模型（`ollama pull nomic-embed-text`）及 npm 依赖。运行时完全离线，所有向量计算与记忆存储在本地，不做任何网络请求。适合对网络隔离有要求的环境。

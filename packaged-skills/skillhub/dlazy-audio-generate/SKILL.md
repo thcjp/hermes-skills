@@ -17,12 +17,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Dlazy Audio Generate
 
 通过 dlazy CLI 调用 15+ 托管音频模型,根据提示词自动选择最匹配的模型,涵盖 TTS、音乐、音效、语音克隆四大类别。模型推理在 dLazy 托管 API(`api.dlazy.com`)完成,生成的输出 URL 托管在 `files.dlazy.com`。
 
 **范围外**(本技能不做): 模型微调训练、本地推理部署、音频后期混音、商业分发渠道对接、版权登记与授权。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -200,7 +215,7 @@ dlazy seedream-4.5 --prompt "city skyline" --n 4 \
 [ -n "${DLAZY_API_KEY:-}" ] || dlazy auth status
 ```
 
-若 Key 缺失,引导用户:
+若 Key 缺失，引导用户:
 1. 登录 dlazy.com,在 `dashboard/organization/api-key` 创建 Key
 2. 终端运行 `dlazy auth set YOUR_API_KEY` 或 `export DLAZY_API_KEY="你的Key"`
 3. 配置完成后重新发起生成请求
@@ -283,8 +298,8 @@ dlazy elevenlabs-voice-clone --audio sample-voice.wav --name "narrator-male" \
 | 501 missing_param | `error: required option '--prompt <prompt>' not specified` | 必填参数未提供 | 运行 `dlazy <model> -h` 查看必填参数并补全 |
 | 502 file_not_found | `Error: Image file/Video file not found: C:\path\to\file` | 本地文件路径错误 | 校验文件路径与存在性,使用绝对路径 |
 | 503 insufficient_balance | `code: "insufficient_balance"` | 账户余额不足 | 明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值 |
-| 503 server_error | `HTTP status code error (500 server crash)` | dLazy 服务端错误 | 指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令(2s/4s/8s),最多 3 次 |
-| 504 task_failed | `=== Generation Failed ===` | 异步任务失败,常见为 prompt 违反安全策略 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,检查 prompt 是否含敏感内容,调整后重新生成 |
+| 503 server_error | `HTTP status code error (500 server crash)` | dLazy 服务端错误 | (2s/4s/8s)，最多 3 次 |
+| 504 task_failed | `=== Generation Failed ===` | 异步任务失败,常见为 prompt 违反安全策略 | 检查 prompt 是否含敏感内容,调整后重新生成 |
 | no_stdin | `code: "no_stdin"` | 管道串联时上游无输出 | 检查上游命令是否成功,确保管道顺序正确 |
 | model_not_found | `Error: model "xxx" not found` | 模型名拼写错误 | 核对"可用音频模型"章节的模型名,运行 `dlazy -h` 查看全部模型 |
 

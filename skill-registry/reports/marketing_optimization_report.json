@@ -1,0 +1,4971 @@
+{
+  "total_scanned": 830,
+  "summary_optimized": 8,
+  "pro_table_added": 826,
+  "details": [
+    {
+      "slug": "accounting-and-finance",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "accounting-finance",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "actor-identifier",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ad-insight-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "admapix",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aegis-security",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "afrexai-knowledge-management",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-browser-automation",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-browser-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-chat",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-group",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-knowledge",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agent-telegram",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agentic-security-audit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agentvibes-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ai-agent-helper",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ai-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ai-news",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ai-podcast",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ai-video-studio-pro",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ai-writing-style-cloner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aic-dashboard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "alephnet-node",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "analytics-dashboard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "analyze",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "anygen-diagram",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-connect-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-development",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-doc-generator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-gateway",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-generator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-integration",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-magic-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "api-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "apple-health-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "archive",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "art",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "atlas-admin-console",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "audio-stream-upload",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "audit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "auto-monitor",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "auto-workflow",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "automation-recipe-book",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "automation-recipe-pack",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aws",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aws-graph-agent",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aws-infra",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aws-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-devops",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-infra",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-transcription",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "azure-voicelive",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "bailian-web-search",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "baoyu-diagram",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "baoyu-md-formatter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "beware-piper-tts",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "blog-seo-writer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "blog-writer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "book-painter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "brainz-calendar",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "brave-search",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "browser-automation",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "browser-automation-v2",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "bsession",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "build-game",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "calendar",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "calendar-reminder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "calendar-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "calendar-sync-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "call-bridge",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "can",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "canvas-json-handler",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "card-image-builder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cashu-emoji",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cdn",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "chart",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "chart-craft",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "chat",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cheat-code",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cheat-code-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "chief-creative-officer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "china-news",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "chromecast-control",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "claude-code-delegate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "claude-code-runner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "claude-tmux",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "clawcall",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "clawddocs",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "clawprint",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cloud",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cloud-architect",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cloud-architect-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cloud-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cloud-storage",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-analysis-skills",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-analyze",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-delegate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-dev-v1",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-quality",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-quality-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "code-runner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "comfyui-painter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "communication-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "company-search-fengniao",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "compress",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "content-refiner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "context-driven-development",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "creative-officer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "cron-setup-guide",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "css",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "csv",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "csv-analyzer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "csv-handler",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "csv-insight",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "csv-json-converter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "csv-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ctxly-chat",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "daily-news-brief",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "daily-report-writer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dashboard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dashboard-analytics-tool",
+      "changes": [
+        "summary优化",
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "data",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "data-analysis-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "data-analysis-litiao",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "data-analysis-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "data-analyst-chinese",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "data-analyst-cn",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "data-analyst-expert",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "data-format-converter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "database-admin",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "db",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "db-admin-console",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "db-connector",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "db-schema-designer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "decision-architect",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "deepseek-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "deepseek-chat",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "design-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "diagram",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "diagram-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "diagram-generator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "diagram-tools",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dingtalk-calendar",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord-chat",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord-chat-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord-communities",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord-community-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord-master",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discord-voice",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "discrawl",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dlazy-audio",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dlazy-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dlazy-generate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dns",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dns-config",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dns-lookup",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dns-networking",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dns-networking-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "doc-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "doc-guard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "doc-parse",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "docker",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "docker-ctl",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "docker-essentials",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "docker-essentials-v1",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "docker-sandbox",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "document-pdf",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "dogecoin-node",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "domain-dns-ops",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "doubao-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "doubao-chat",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "doubao-image-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "drama-hit-producer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ebook-factory",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ecommerce-pricing-strategist",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "elite-frontend",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "elite-frontend-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "elite-longterm-memory",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "email-163",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "email-163-com",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "email-daily-summary",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "email-digest",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "email-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "email-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "encoding-formats",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "encoding-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "encrypted-docs",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "encryption",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "encryption-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "evolution-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "excel-craft",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "excel-expert",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "excel-formula",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "excel-studio",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "excel-xlsx",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "expanso-json-validate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "explain-code",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "explain-code-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "feed-digest",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "feed-to-md",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "feishu-card",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "feishu-card-builder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "feishu-doc",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "feishu-doc-write",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "feishu-file-sender",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "feishu-send-file",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "figma",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "figma-2",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "figma-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "figma-design-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "figma-studio",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "figma-tw-designer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "file",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "file-auto-organizer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "file-browser-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "file-organizer-zh",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "finance",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "finance-accounting",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "finance-acct",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "finance-radar",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "finance-radar-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "finance-report",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "finance-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "financial-literacy",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "firewall",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "flexible-database-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "fonts",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "format-converter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "fortune-reading-studio",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "free-google-search-with-browser",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "free-resource-finder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "free-ride",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "free-weather-api",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "free-weather-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "free-web-search",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "frontend-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "frontend-design-3",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "frontend-design-v3",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "game",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "game-ai",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "game-asset-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "game-developer-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "game-theory",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "gateway-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "generate-mindmap",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "generate-presentation",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "gif-whatsapp",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-cli-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-essentials",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-helper",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-helper-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-workflow-cn",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-workflow-cn-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "git-workflows-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "gitcrawl",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "github",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "github-api",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "github-api-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "github-dev-standard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "github-development-standard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "github-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "github-repos",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "github-trending-feed",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "glitch-dashboard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "go",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "go-linter-configuration",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "go-security-vulnerability",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "go-to-market",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "gog",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "golang-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "google-fonts",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "google-search",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "google-workspace-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "google-workspace-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "grain-crawler",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "graincrawl",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "graph-advocate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "graph-knowledge-base",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "graph-query",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "grok-image",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "grok-image-generate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "health",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "heygen-tts",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "hook-retention-master",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "hot-news-aggregator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "html",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "html-coder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "html-coder-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "html-designer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "html-designer-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "hugo-blog",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "hugo-blog-publisher",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "humanizer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "image",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "in-depth-research",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "intel-sentinel",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "internet-search",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "interview-simulator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "iris-code-formatter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "iris-formatter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "java",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "java-code-reviewer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "java-dev-manual",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "java-development-manual",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "java-reviewer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "javascript",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "javascript-sdk",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "javascript-sdk-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "javascript-skills",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "javascript-skills-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "javascript-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jinn-node",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jira",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jira-api",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jira-api-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jira-flow-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jira-integration-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jira-pat-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jira-pat-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "jira-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "job-auto-apply",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "join-meeting",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-beautifier",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-canvas",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-formatter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-lint",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-linter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-parse-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-parser",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-repair",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-repair-kit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-validator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "json-yaml-converter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "juejin-skills",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "k8s",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "kai-tw-figma",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "key-guard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "key-vault-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "knowledge",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "knowledge-capture",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "knowledge-graph",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "knowledge-graph-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "knowledge-graph-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "knowledge-ontology",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "kubernetes",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "kubernetes-devops",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "kujiale-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "learn",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "learn-cog",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "lh-video-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "lh-video-gen-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "linear",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "linear-api",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "linear-api-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "linear-project-manager",
+      "changes": [
+        "summary优化",
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "linear-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "linear-sync",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "linear-workflow-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "lite-sqlite",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "live-stream-script",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "logo",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "logo-brand-identity",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "logo-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "logo-design-guide",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "longmemo-elite",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "mac-system-control",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "magic-api-generate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "manage-liquidity",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "markdown",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "markdown-converter-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "markdown-converter-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "markdown-exporter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "markdown-format",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "market-news",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "mcporter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "md-export",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "media-server-control",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "meeting-join",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "meeting-note",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "memo-quickstart",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "memory",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "memory-compress",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "memory-distiller",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "memory-orchestrator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "memory-radar",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "memory-scan",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "merge-check",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "merge-check-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "merge-pdf",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "mermaid-diagram",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "mermaid-diagram-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "minimalist-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "minimalist-design-system",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "miniprogram-development",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "model-routing",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "model-switching",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "molt-board-art",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "moltblock",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "moltbook-filter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "moltbook-firewall-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "molted-work",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "monad-development",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "mongo-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "mongodb",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "mongodb-atlas-admin",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "monitor",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "multi-agent-dev",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "multi-search-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "multi-search-engine-simple",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "multi-source-research",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "music",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "music-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "music-generation",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "namecheap-dns",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "nano-pdf",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "neosoul-decision-agent",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "netpad-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "news",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "news-aggregator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "news-daily-digest",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "news-feed",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "news-sentiment",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "node-connect",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "node-connect-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "notcrawl",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "note",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "note-app-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "note-taker",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "notion",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "notion-api-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "notion-api-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "notion-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "notion-pages",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "notion-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "notioncli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "novel-autopilot",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "obsidian-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ocean-chat-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "okx-dex-token",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ollama-integration",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ollama-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ontology",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "openai-ai",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "openai-ai-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "openai-whisper",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "openai-whisper-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "openclaw-dashboard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "openclaw-linear",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ops-dashboard",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pandoc-convert-openclaw",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pandoc-document-converter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "paper-parse",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "parallel-ai-research",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "password-generator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pdf",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pdf-compressor-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pentest-commands",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "personal-health-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pg-job-queue",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pg-mcp-skills",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "photo-caption",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "photo-captions",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "photo-webcam",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ping-monitor",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pipedrive-api",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pipedrive-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "piper-tts-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "plugin-architecture",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "podcast",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "podcast-chaptering",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "podcast-downloader-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "podcast-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "poetry-craftsman",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "postgres-job-queue",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "postgres-mcp-skills",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "powerpoint",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pro-comm-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "proactive-agent",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "productivity",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "productivity-bot",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "productivity-improving",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "professional-communication",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "py",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "py-data-analyzer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "python",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "python-dataviz",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "python-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "python3",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pyx-scan",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "pyx-scanner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "qq-zone-photo",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "quant-data-quality",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "quark-scan",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "queue-task",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "qwen-video-analyzer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "reddit-research",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "reddit-research-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "reminder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "reminder-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "remix-auth",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "repo-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "repo-reader-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "report",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "report-summary-builder",
+      "changes": [
+        "summary优化",
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "research-agent",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rest-api-reference",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "resume-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rho-telegram-alerts-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rss-aggregator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rss-ai-reader",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rss-digest",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rss-feed-digest",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rss-fetcher",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rss-reader",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rss-reader-ai",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "rust",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "safe-encryption-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sales-copy-writer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "schedule",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "schedule-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "scrape-web",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "screen-monitor",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "search-2",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "searching-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "secure-api-calls",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "secure-api-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "security",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "security-audit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "security-auditor",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "security-scanner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "self-integration",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "self-integration-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "seo-doctor",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "seo-rank-monopolizer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sequential-read",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "shadcn-ui",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "shop-culture",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "shopify-helper",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "skill-creator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "skill-vetter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack-api",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack-api-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack-crawler",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack-hub-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack-workspace",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slack-workspace-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "slacrawl",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "smart-auto-updater",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "smart-cache",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "smart-crawler",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "smart-model-switching",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "smart-reminder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "smart-reminder-system",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "smart-weekly-report",
+      "changes": [
+        "summary优化",
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "social",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "social-media-scheduler",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "social-media-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "social-sentiment",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "solo-audit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "solo-build",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "solo-dev-companion",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "solo-research",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "solo-validate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sonoscli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sovereign-aws-cost-optimizer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sql",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sql-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sql-generator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sql-master",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sql-query",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sql-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sqlite",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sqlite-lite-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "sqlite-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ssl",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ssl-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "stealth-browser-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "stock-filter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "stock-filter-skills",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "story-long-analyze",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "story-long-write",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "story-short-write",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "straker-verify",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "t-trading",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tailwindcss",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tardis",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tarot",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tarot-reader",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "task",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "task-planner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "task-queue-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram-agent-comm",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram-alert",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram-chat",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram-chat-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram-messaging",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram-msg-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "telegram-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "text",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "text-rpg-arcade-v3",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "text-to-sql",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "text2sql-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tg-body-scan",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tg-bot-builder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "the-news",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "thesis-helper",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "timeline-digest",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "timer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "timer-alert",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "title-hook-factory",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tmux-session",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "token-layer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "token-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tool-call-retry",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tool-finder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "topic-hunter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "trading",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "trading-strategy-guide",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "translate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "translate-en-zh",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "translate-hub",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "travel-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "trending-feed-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tts-whatsapp",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "typescript",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "typescript-skills",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "typescript-skills-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "typescript-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-audit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-component",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-component-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-ux",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-ux-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-ux-dev-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-ux-developer-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ui-ux-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "universal-translate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "universal-translate-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "university-app",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "university-applications",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "upstage-document-parse",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "use-my-browser",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ux",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ux-design",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vector-control",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vector-db-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "verify-claims",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "version-control-workflows",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-editing",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-editing-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-frames",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-frames-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-stream-upload",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-translator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-translator-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "video-upload-stream-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "viral-decoder",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "viral-prophet",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "visual-file-sorter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "volcengine-network-dns",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vpn",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vpn-rotator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vscode-node",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vscode-node-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vue",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vue-component-gen",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vue-component-generator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vue-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "vulnerability-scanner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "weather",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "web",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "web-browsing",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "web-content-fetcher",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "web-crawler-engine",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "web-dev-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "web-learner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "web-notepad",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "web-vulnerability-assessment",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "wechat-article-writer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "weekly-report-writer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "weiyun-skills",
+      "changes": [
+        "summary优化",
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "weiyun-toolkit",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-image",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-master",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-messaging",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-msg",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-msg-manager",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-style",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-style-guide",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-styler",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "whatsapp-ultimate",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "who-is-actor",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "word",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "word-docx",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "work",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "workflow",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "workflow-decomposer",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "workflow-splitter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "write",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "write-a-skill",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "write-my-blog",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "writing-assistant",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ws-agent-browser",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ws-calendar",
+      "changes": [
+        "summary优化",
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ws-excel",
+      "changes": [
+        "summary优化",
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ws-excel-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "x-news-daily",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "x-timeline-digest",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "xlsx-handler",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "xml",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "xml-json-converter",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "xml-parser-tool",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "yaml",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "youtube-watcher",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "youtube-watcher-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "z-card-image",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "changes": [
+        "summary优化",
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ziptax",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    },
+    {
+      "slug": "ziptax-paid",
+      "changes": [
+        "添加付费版专享能力表"
+      ]
+    }
+  ]
+}

@@ -11,6 +11,10 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 研发工具
 ---
@@ -20,12 +24,23 @@ tags:
 
 **核心规则:你永远不直接编写代码。所有编程任务通过 `ai-assistant -p` 委派。**
 
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| **环境前置检查**: 验证CLI安装、API密钥配置、写入保护插件状态,确保委派环境安全就绪 | 支持 | 支持 |
+| **会话上下文续接**: 使用 `--continue` 标志恢复先前会话上下文,支持在同一项目内迭代修复Bug | 不支持 | 支持 |
+| **独立测试验证**: 使用全新会话(不加 `--continue`)独立审查和测试委派器编写的代码,消除编写者上下文偏见 | 不支持 | 支持 |
+| **安全防护策略**: 隔离项目目录、写入保护插件、禁止 `--dangerously-skip-permissions`、限制项目范围、审查委派输出 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+
 ## 环境前置检查
 
 首次委派任务前,必须验证运行环境就绪:
 
-1. **AI代码助手CLI已安装**: 执行 `which ai-assistant` — 若未找到,提示用户运行 `npm install -g @ai-provider-ai/ai-assistant-code`
-2. **API密钥已配置**: 执行 `ai-assistant --version` — 若报认证错误,提示用户运行 `ai-assistant` 完成登录
+1. **AI代码助手CLI已安装**: 执行 `which ai-assistant` — 若未找到，提示用户运行 `npm install -g @ai-provider-ai/ai-assistant-code`
+2. **API密钥已配置**: 执行 `ai-assistant --version` — 若报认证错误，提示用户运行 `ai-assistant` 完成登录
 3. **写入保护已激活(强烈推荐)**: 检查 `.extensions/write-guard/` 是否存在写入保护插件。若不存在,警告用户:
    > 未检测到写入保护插件。委派器使用 `--permission-mode bypassPermissions` 授予完整文件系统读写权限。强烈建议在执行任务前设置写入保护插件。
 

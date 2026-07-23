@@ -18,10 +18,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 数据存储
 ---
 # SQL查询引擎
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -291,7 +306,7 @@ SELECT pg_reload_conf();
 | `INSERT` 报 deadlock detected | 两个事务以不同顺序锁定相同资源 | 统一加锁顺序（按主键排序后加锁），缩小事务范围，使用`ON CONFLICT`替代先查后插 |
 | 查询使用 `LIKE '%keyword%'` 全表扫描 | 前缀通配符无法使用B-Tree索引 | 使用全文检索（`tsvector`+`GIN`索引）或trigram索引（`pg_trgm`扩展） |
 | 索引存在但未使用 | 统计信息过期或数据分布倾斜 | 执行 `VACUUM ANALYZE tablename` 更新统计信息，检查 `pg_stats` 查看数据分布 |
-| `SERIALIZABLE` 隔离级别下频繁序列化失败 | 并发冲突率高，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令风暴 | 降级为`READ COMMITTED`+应用层乐观锁，或使用 advisory lock 减少冲突范围 |
+| `SERIALIZABLE` 隔离级别下频繁序列化失败 | 并发冲突率高，风暴 | 降级为`READ COMMITTED`+应用层乐观锁，或使用 advisory lock 减少冲突范围 |
 | 连接池耗尽 "too many connections" | 连接泄漏或并发过高 | 检查应用是否正确释放连接，配置连接池上限（如PgBouncer `max_client_conn=100`），使用 `pg_stat_activity` 排查长事务 |
 
 ## 常见问题

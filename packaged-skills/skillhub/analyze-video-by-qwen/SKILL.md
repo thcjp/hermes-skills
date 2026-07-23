@@ -17,12 +17,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Qwen 视频智能分析
 
 基于阿里云 Qwen 3.5 Plus 多模态模型对视频进行智能分析。支持本地视频文件和远程 URL 两种输入方式,通过自定义提示词与抽帧频率(FPS)灵活控制分析精度与成本。核心脚本为 `scripts/analyze.py`。
 
 **范围外**(本技能不做): 视频剪辑与转码、实时视频流分析、模型微调训练、视频字幕硬编码。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -55,7 +70,7 @@ API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey
 cat ~/.skill-platform/skill-platform.json | grep apiKey
 ```
 
-若 Key 缺失,引导用户:
+若 Key 缺失，引导用户:
 1. 登录阿里云 DashScope 控制台
 2. 开通 Qwen 多模态模型服务并创建 API Key
 3. 在 `~/.skill-platform/skill-platform.json` 中添加配置:
@@ -210,11 +225,11 @@ python scripts/analyze.py /path/to/training.mp4 \
 | api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 ~/.skill-platform/skill-platform.json |
 | file_not_found | `FileNotFoundError: video.mp4` | 本地视频文件路径不存在或拼写错误 | 确认文件路径正确,检查文件是否存在 |
 | invalid_url | `URL not accessible` | 远程视频 URL 无法访问或非直链 | 确认 URL 为可公开访问的视频直链,需登录的页面链接不支持 |
-| unsupported_format | `Unsupported video format` | 视频格式不被支持 | 转换为 mp4/avi/mov/mkv/webm 等常见格式后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
-| api_rate_limited | `429 Too Many Requests` | 短时间内 API 调用过多 | 降低 FPS 参数,等待 60 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
-| network_timeout | `Connection timed out` | 网络不稳定或 DashScope 服务不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接,确认可访问阿里云服务后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| unsupported_format | `Unsupported video format` | 视频格式不被支持 | 转换为 mp4/avi/mov/mkv/webm 等常见格式后 |
+| api_rate_limited | `429 Too Many Requests` | 短时间内 API 调用过多 | 降低 FPS 参数,等待 60 秒后 |
+| network_timeout | `Connection timed out` | 网络不稳定或 DashScope 服务不可达 | ,确认可访问阿里云服务后 |
 | video_too_long | `Video duration exceeds limit` | 视频过长导致抽帧数量超出 API 限制 | 降低 FPS 参数,或将视频分段后分别分析 |
-| model_unavailable | `Model service unavailable` | Qwen 3.5 Plus 模型服务暂时不可用 | 等待 5 分钟后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,如持续不可用联系阿里云支持 |
+| model_unavailable | `Model service unavailable` | Qwen 3.5 Plus 模型服务暂时不可用 | 等待 5 分钟后如持续不可用联系阿里云支持 |
 
 ## 常见问题
 

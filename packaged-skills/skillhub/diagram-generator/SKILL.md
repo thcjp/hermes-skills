@@ -17,12 +17,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Diagram Generator
 
 通过 mcp-diagram-generator MCP 服务器将自然语言意图转换为结构化 JSON 规范,生成与编辑 Draw.io、Mermaid、Excalidraw 三种格式的图表文件。支持六类图的专属生成策略与质量校验。
 
 **范围外**(本技能不做): 手工绘制位图、SVG 矢量编辑、PDF 排版、PPT 幻灯片、3D 建模、动画与交互式可视化。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 

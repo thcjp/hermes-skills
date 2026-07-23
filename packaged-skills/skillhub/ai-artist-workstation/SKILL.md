@@ -15,18 +15,31 @@ description: |-
   - 接单SOP全流程闭环
   - 多级引擎降级链与敏感词审核
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags: [AI绘画, 接单变现, 商业画图, AI写真, 副业变现]
 tools:
   - read
   - exec
-suggested_price: "19.00"
-pricing_tier: "business"
 pricing_rationale: "电商类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强"
 ---
 # AI接单画师工作站
 
 > 定位: 多引擎AI绘画+接单SOP全流程工作站
 > 设计: 双引擎路由(写实→鹧应AI写真98%面部保持 / 艺术风格→通用绘画引擎)+接单交付闭环
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -134,9 +147,9 @@ pricing_rationale: "电商类, medium市场, enterprise复杂度, weekly频次, 
 |:---------|:-----|:---------|:-------|
 | 参数缺失 | style/prompt未提供 | 提示补全缺失字段 | MISSING_PARAMS |
 | 首选引擎不可用 | API Key未配置或服务宕机 | 降级到备选引擎链 | ENGINE_FALLBACK |
-| 生成超时(180s) | 引擎响应慢或任务排队 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令1次后换引擎 | GENERATION_TIMEOUT |
+| 生成超时(180s) | 引擎响应慢或任务排队 | 1次后换引擎 | GENERATION_TIMEOUT |
 | prompt含违禁内容 | 敏感词检测命中 | 拒绝生成+退款流程 | FORBIDDEN_CONTENT |
-| 发送失败 | 网盘上传失败或消息发送失败 | 记录待发送队列,稍后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | DELIVERY_FAILED |
+| 发送失败 | 网盘上传失败或消息发送失败 | 记录待发送队列,稍后 | DELIVERY_FAILED |
 | count超限 | count>10 | 自动截断为10 | COUNT_TRUNCATED |
 
 ## 引擎降级链
@@ -163,7 +176,7 @@ pricing_rationale: "电商类, medium市场, enterprise复杂度, weekly频次, 
 
 ### API Key 配置与安全要求
 - **LLM_API_KEY**: 必需(通常由Agent内置) - prompt优化和敏感词审核
-- **IMAGE_API_KEY**: 可选 - AI绘画引擎(通用绘画引擎可免费使用)
+- **IMAGE_API_KEY**: 可选 - AI绘画引擎(通用绘画引擎可付费使用)
 - **PORTRAIT_API_KEY**: 可选 - 鹧应AI写真98%面部保持
 - 配置方式: 在Agent的环境变量中设置
 - **零暴露原则**: API Key必须通过环境变量注入(如`%IMAGE_API_KEY%`),严禁硬编码在SKILL.md或脚本源码中;所有示例代码中Key位置使用占位符`$ENV:IMAGE_API_KEY`;禁止在日志、错误信息、输出JSON中打印Key明文
@@ -486,7 +499,7 @@ A: count参数最大支持10张,超过10张会自动截断为10(COUNT_TRUNCATED)
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

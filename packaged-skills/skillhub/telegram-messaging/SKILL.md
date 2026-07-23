@@ -18,10 +18,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Telegram 消息机器人
 
 通过 Telegram Bot API 实现 Telegram 机器人消息发送、聊天管理、文件处理与自动化工作流。所有调用通过 Bot Token 认证，写操作需用户显式确认后执行。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| **多类型消息发送**：支持文本、图片、文档、位置、投票五种消息类型，图片与文档可附加 caption 说明 | 支持 | 支持 |
+| **消息生命周期管理**：编辑已发送消息、删除消息（限机器人自身消息或管理员权限群组）、转发消息到其他聊天 | 不支持 | 支持 |
+| **聊天信息检索**：获取聊天基本信息、聊天历史消息、成员状态与角色、管理员列表、成员计数 | 不支持 | 支持 |
+| **邀请链接管理**：生成新的聊天邀请链接、撤销已有邀请链接，支持社区入群管控 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -192,7 +207,7 @@ telegram_forward_message({
 | `bot_not_member` | 机器人不是目标聊天成员 | 通过群主邀请机器人加入群组并赋予发消息权限 |
 | `message_not_found` | 消息 ID 在该聊天中不存在 | 确认消息 ID 来自同一聊天，重新检索历史获取正确 ID |
 | `not_enough_rights` | 机器人在群组缺少管理员权限 | 群主需将机器人设为管理员并赋予所需权限（删消息、踢人等） |
-| HTTP 429 `retry_after` | 触发速率限制 | 按 `retry_after` 字段指定的秒数等待后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，单聊天不超过 1 条/秒 |
+| HTTP 429 `retry_after` | 触发速率限制 | 按 `retry_after` 字段指定的秒数等待后单聊天不超过 1 条/秒 |
 | 409 Conflict | `get_updates` 与 webhook 同时启用 | 二选一：停用 webhook 后使用长轮询，或改用 webhook 接收更新 |
 | `message_to_delete_not_found` | 消息超 48 小时或非机器人发送 | 群组中仅可删除 48 小时内的消息，且需管理员权限才能删他人消息 |
 | `invalid_token` | Bot Token 无效或已过期 | 通过 @BotFather 重新获取 Token，更新配置后重启 Agent |

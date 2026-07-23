@@ -19,8 +19,23 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Azure VoiceLive 实时语音AI开发
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -235,7 +250,7 @@ async for event in conn:
 ### WebSocket连接中断
 现象: 抛出 `ConnectionClosed`,带 `code` 与 `reason`。
 原因: 网络抖动、服务端超时、鉴权令牌过期。
-处理: 捕获 `ConnectionClosed` 后重新 `connect()` 并恢复 `session.update`,长连接场景建议外层 `while True` 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令并指数退避。
+处理: 捕获 `ConnectionClosed` 后重新 `connect()` 并恢复 `session.update`,长连接场景建议外层 `while True` 并指数退避。
 
 ### 鉴权失败 (401/403)
 现象: 事件流中收到 `error`, `code` 为 `unauthorized` 或 `forbidden`。
@@ -297,7 +312,7 @@ OpenAI音色 (`alloy`/`echo`/`shimmer` 等) 走实时模型内置TTS;Azure原生
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

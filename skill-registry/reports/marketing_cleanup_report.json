@@ -1,0 +1,4459 @@
+{
+  "total_scanned": 830,
+  "total_cleaned": 743,
+  "ping_removed": 2700,
+  "marketing_fixed": 5,
+  "details": [
+    {
+      "slug": "accounting-and-finance",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "accounting-finance",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ace-music",
+      "changes": []
+    },
+    {
+      "slug": "actor-identifier",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ad-insight-hub",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "admapix",
+      "changes": [
+        "ping模板:6处"
+      ]
+    },
+    {
+      "slug": "aegis-security",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "agent",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "agent-browser-automation",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-browser-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-chat",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-group",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agent-knowledge",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agentic-security-audit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "agentvibes-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "changes": [
+        "ping模板:7处",
+        "营销话术:1处"
+      ]
+    },
+    {
+      "slug": "ai-agent-helper",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "changes": [
+        "ping模板:4处",
+        "营销话术:1处"
+      ]
+    },
+    {
+      "slug": "ai-assistant",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "ai-image-gen",
+      "changes": [
+        "ping模板:10处"
+      ]
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "ai-news",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ai-podcast",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "ai-video-studio-pro",
+      "changes": [
+        "ping模板:8处"
+      ]
+    },
+    {
+      "slug": "ai-writing-style-cloner",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "alephnet-node",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "analytics-dashboard",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "analyze",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "anygen-diagram",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "api-connect-hub",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "api-development",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "api-doc-generator",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "api-doc-writer",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "api-gateway",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "api-integration",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "api-magic-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "api-toolkit",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "art",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "assistant",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "atlas-admin-console",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "audio-stream-upload",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "changes": [
+        "ping模板:8处"
+      ]
+    },
+    {
+      "slug": "audit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "auto-monitor",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "auto-workflow",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "automation-recipe-book",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "automation-recipe-pack",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "aws",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "aws-graph-agent",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "aws-infra",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "aws-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "azure-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure-devops",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure-infra",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "azure-transcription",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "azure-voicelive",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "bailian-web-search",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "baoyu-diagram",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "baoyu-md-formatter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "beware-piper-tts",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "bilibili-helper",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "blog-seo-writer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "book-painter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "brainz-calendar",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "brave-search",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "browser-automation",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "browser-automation-v2",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "bsession",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "build-game",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "calendar",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "calendar-reminder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "calendar-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "calendar-sync-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "call-bridge",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "changes": [
+        "ping模板:4处",
+        "营销话术:1处"
+      ]
+    },
+    {
+      "slug": "canvas-json-handler",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "card-image-builder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "cashu-emoji",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "cdn",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "chart",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "chart-craft",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "chat",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "cheat-code",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "cheat-code-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "china-news",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "claude-code-delegate",
+      "changes": []
+    },
+    {
+      "slug": "claude-code-runner",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "claude-tmux",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "clawcall",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "clawddocs",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "clawprint",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "cloud",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "cloud-architect",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "cloud-architect-design",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "cloud-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "cloud-storage",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-analysis-skills",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-analyze",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-delegate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-dev-v1",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-quality",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-quality-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "code-runner",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "comfyui-painter",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "communication-skill",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "company-search-fengniao",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "compress",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "content-refiner",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "context-driven-development",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "creative-officer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "cron-setup-guide",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "csv",
+      "changes": []
+    },
+    {
+      "slug": "csv-insight",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "csv-json-converter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "csv-toolkit",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "ctxly-chat",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "daily-news-brief",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "daily-report-writer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dashboard",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dashboard-analytics-tool",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "data",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "data-analysis-hub",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "data-analysis-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "data-analyst-chinese",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "data-analyst-expert",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "db",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "db-admin-console",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "db-connector",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "db-schema-designer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "deepseek-assistant",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "deepseek-chat",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "design",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "design-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "diagram",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "diagram-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "diagram-tools",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dingtalk-calendar",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "discord",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "discord-chat",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "discord-chat-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "discord-communities",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "discord-community-hub",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "discord-hub",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "discord-master",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "discord-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "discord-voice",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "discrawl",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dlazy-audio",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dlazy-audio-generate",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "dlazy-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dlazy-generate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dns",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "dns-config",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dns-lookup",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dns-networking",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "dns-networking-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "doc-assistant",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "doc-guard",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "doc-parse",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "docker",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "docker-ctl",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "docker-essentials-v1",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "docker-sandbox",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "document-pdf",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "dogecoin-node",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "domain-dns-ops",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "doubao-assistant",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "doubao-chat",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "doubao-image-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "drama-hit-producer",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "ebook-factory",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ecommerce-pricing-strategist",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "elite-frontend",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "elite-frontend-design",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "changes": [
+        "营销话术:2处"
+      ]
+    },
+    {
+      "slug": "email-163",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "email-163-com",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "email-daily-summary",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "email-digest",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "email-skill",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "email-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "encoding-toolkit",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "encrypted-docs",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "encryption",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "encryption-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "excel-craft",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "excel-expert",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "excel-formula",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "excel-studio",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "excel-xlsx",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "expanso-json-validate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "explain-code",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "explain-code-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "feed-digest",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "feed-to-md",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "feishu-card-builder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "feishu-doc",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "feishu-doc-write",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "feishu-file-sender",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "feishu-send-file",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "figma",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "figma-2",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "figma-design-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "figma-studio",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "figma-tw-designer",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "file-auto-organizer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "file-browser-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "file-organizer-zh",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "finance",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "finance-accounting",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "finance-acct",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "finance-radar",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "finance-radar-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "finance-report",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "finance-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "financial-literacy",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "firewall",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "flexible-database-design",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "fonts",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "format-converter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "fortune-reading-studio",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "free-google-search-with-browser",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "free-resource-finder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "free-ride",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "free-weather-api",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "free-weather-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "free-web-search",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "frontend-design",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "frontend-design-v3",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "game",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "game-ai",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "game-asset-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "game-developer-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "gateway-manager",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "generate-mindmap",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "generate-presentation",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "gif-whatsapp",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git-cli-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git-helper",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git-helper-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git-workflow-cn",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git-workflow-cn-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "git-workflows-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "gitcrawl",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "github",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "github-api-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "github-dev-standard",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "github-development-standard",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "github-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "github-trending-feed",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "glitch-dashboard",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "go",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "go-linter-configuration",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "go-to-market",
+      "changes": []
+    },
+    {
+      "slug": "gog",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "golang-toolkit",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "google-search",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "google-workspace-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "google-workspace-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "grain-crawler",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "graincrawl",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "graph-advocate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "graph-knowledge-base",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "graph-query",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "grok-image",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "grok-image-generate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "heygen-tts",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "hook-retention-master",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "hot-news-aggregator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "html",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "html-coder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "html-coder-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "html-designer",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "html-designer-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "hugo-blog",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "humanizer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "image",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "intel-sentinel",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "internet-search",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "interview-simulator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "iris-formatter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "java-code-reviewer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "java-dev-manual",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "java-development-manual",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "java-reviewer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "javascript",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "javascript-sdk",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "javascript-sdk-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "javascript-skills",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "javascript-skills-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "javascript-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "jira-api-toolkit",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "jira-flow-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "jira-integration-skill",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "jira-pat-manager",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "jira-pat-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "jira-skill",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "job-auto-apply",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "join-meeting",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "json",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "json-beautifier",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "json-canvas",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "json-formatter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "json-lint",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "json-linter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "json-parse-engine",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "json-parser",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "json-repair",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "json-repair-kit",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "json-toolkit",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "json-validator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "json-yaml-converter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "juejin-skills",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "k8s",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "kai-tw-figma",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "key-guard",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "key-vault-manager",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "knowledge",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "knowledge-capture",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "knowledge-graph",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "knowledge-graph-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "kubernetes",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "kubernetes-devops",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "kujiale-design",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "learn",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "lh-video-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "lh-video-gen-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "linear",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "linear-api-toolkit",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "linear-project-manager",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "linear-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "linear-sync",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "linear-workflow-skill",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "lite-sqlite",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "live-stream-script",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "logo",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "logo-brand-identity",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "logo-design",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "mac-system-control",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "magic-api-generate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "manage-liquidity",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "markdown",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "markdown-converter-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "markdown-converter-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "markdown-format",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "market-news",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "mcporter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "md-export",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "media-server-control",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "meeting-join",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "meeting-note",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "memo-quickstart",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "memory-compress",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "memory-orchestrator",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "memory-radar",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "memory-scan",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "merge-check",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "merge-check-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "merge-pdf",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "mermaid-diagram",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "mermaid-diagram-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "minimalist-design",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "minimalist-design-system",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "miniprogram-development",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "model-routing",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "model-switching",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "molt-board-art",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "moltblock",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "moltbook-filter",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "moltbook-firewall-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "molted-work",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "monad-development",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "mongo-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "mongodb",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "mongodb-atlas-admin",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "monitor",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "multi-search-engine",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "multi-search-engine-simple",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "multi-source-research",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "music",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "music-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "music-gen-cellcog",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "music-generation",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "namecheap-dns",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "nano-pdf",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "netpad-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "neural-memory-enhanced",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "news",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "news-daily-digest",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "news-feed",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "news-sentiment",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "node-connect",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "node-connect-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "notcrawl",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "note",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "note-app-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "note-taker",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "notion",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "notion-api-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "notion-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "notion-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "notioncli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "novel-autopilot",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "obsidian-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ocean-chat-assistant",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "okx-dex-token",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "okx-dex-token-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ollama-integration",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ollama-toolkit",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "openai-ai-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "openai-whisper",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "openai-whisper-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "openclaw-dashboard",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "openclaw-linear",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ops-dashboard",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "pandoc-convert-openclaw",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "pandoc-document-converter",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "paper-parse",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "parallel-ai-research",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "password-generator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "pdf",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "pdf-compressor-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "pentest-commands",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "personal-health-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "pg-job-queue",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "pg-mcp-skills",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "photo-caption",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "photo-captions",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "photo-webcam",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ping-monitor",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "pipedrive-toolkit",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "piper-tts-engine",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "podcast",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "podcast-chaptering",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "podcast-downloader-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "podcast-downloader-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "podcast-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "poetry-craftsman",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "postgres-job-queue",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "postgres-mcp-skills",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "powerpoint",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "pro-comm-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "productivity-bot",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "productivity-improving",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "professional-communication",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "py-data-analyzer",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "python",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "python-dataviz",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "python-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "python3",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "pyx-scan",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "pyx-scanner",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "quant-data-quality",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "quark-scan",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "queue-task",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "qwen-video-analyzer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "reddit-research",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "reddit-research-paid",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "reminder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "reminder-engine",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "remix-auth",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "repo-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "repo-reader-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "report",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "report-summary-builder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "research-agent",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "rest-api-reference",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "rho-telegram-alerts-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "rss-aggregator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "rss-ai-reader",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "rss-digest",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "rss-feed-digest",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "rss-fetcher",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "rss-reader",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "rss-reader-ai",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "safe-encryption-skill",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sales-copy-writer",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "schedule",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "schedule-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "scrape-web",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "screen-monitor",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "search-2",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "searching-assistant",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "secure-api-calls",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "secure-api-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "security",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "security-audit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "security-auditor",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "security-scanner",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "self-integration",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "self-integration-paid",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "seo-doctor",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "seo-rank-monopolizer",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "sequential-read",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "shadcn-ui",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "shop-culture",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "shopify-helper",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "slack",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "slack-api-toolkit",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "slack-crawler",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "slack-hub",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "slack-hub-skill",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "slack-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "slack-workspace-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "slacrawl",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "smart-auto-updater",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "smart-cache",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "smart-crawler",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "smart-model-switching",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "smart-reminder",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "smart-reminder-system",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "smart-weekly-report",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "social",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "social-media-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "social-sentiment",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "solo-audit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "solo-dev-companion",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "solo-validate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sonoscli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sovereign-aws-cost-optimizer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sql",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "sql-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sql-generator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sql-master",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sql-query",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sqlite",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sqlite-lite-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "sqlite-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ssl",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ssl-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "stealth-browser-assistant",
+      "changes": [
+        "ping模板:6处"
+      ]
+    },
+    {
+      "slug": "stock-filter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "stock-filter-skills",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "story-long-analyze",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "story-long-write",
+      "changes": []
+    },
+    {
+      "slug": "story-short-write",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "straker-verify",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "t-trading",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "tailwindcss",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "tardis",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "tarot-reader",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "task",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "task-bot-orchestrator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "task-planner",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "task-queue-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "telegram",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "telegram-agent-comm",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "telegram-alert",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "telegram-chat",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "telegram-chat-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "telegram-messaging",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "telegram-msg-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "telegram-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "text",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "text-rpg-arcade-v3",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "text-to-sql",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "text2sql-engine",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "tg-body-scan",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "tg-bot-builder",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "the-news",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "thesis-helper",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "timeline-digest",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "timer",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "timer-alert",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "title-hook-factory",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "tmux-session",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "token-layer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "token-manager",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "tool-call-retry",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "tool-finder",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "topic-hunter",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "trading",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "trading-strategy-guide",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "translate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "translate-en-zh",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "translate-hub",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "travel-assistant",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "trending-feed-skill",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "tts-whatsapp",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "tts-whatsapp-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "typescript",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "typescript-skills-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "typescript-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ui",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ui-component",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ui-component-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ui-design-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ui-ux",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ui-ux-dev-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ui-ux-developer-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ui-ux-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "universal-translate",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "universal-translate-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "university-app",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "university-applications",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "upstage-document-parse",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "ux",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ux-design",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vector-control",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vector-db-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "verify-claims",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "version-control-workflows",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "video",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "video-editing-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "video-frames",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "video-frames-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "video-stream-upload",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "video-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "video-translator",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "video-translator-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "video-upload-stream-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "viral-decoder",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "viral-prophet",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "visual-file-sorter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "volcengine-network-dns",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vpn",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "vpn-rotator",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "vscode-node",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vscode-node-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vue",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vue-component-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vue-component-generator",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vue-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "vulnerability-scanner",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "weather",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "web",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "web-browsing",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "web-content-fetcher",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "web-crawler-engine",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "web-dev-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "web-learner",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "web-notepad",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "web-vulnerability-assessment",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "wechat-article-writer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "weekly-report-writer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "weiyun-skills",
+      "changes": [
+        "ping模板:8处"
+      ]
+    },
+    {
+      "slug": "weiyun-toolkit",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "whatsapp-image",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "whatsapp-master",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "whatsapp-messaging",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "whatsapp-msg",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "whatsapp-msg-manager",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "whatsapp-style",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "whatsapp-style-guide",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "whatsapp-styler",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "whatsapp-styling-guide",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "whatsapp-ultimate",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "who-is-actor",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "word",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "word-docx",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "workflow",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "workflow-decomposer",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "workflow-orchestrator",
+      "changes": [
+        "ping模板:3处"
+      ]
+    },
+    {
+      "slug": "workflow-splitter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "write",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "write-my-blog",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "writing-assistant",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ws-agent-browser",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ws-calendar",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ws-excel",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ws-excel-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "x-news-daily",
+      "changes": [
+        "ping模板:1处"
+      ]
+    },
+    {
+      "slug": "x-timeline-digest",
+      "changes": [
+        "ping模板:5处"
+      ]
+    },
+    {
+      "slug": "xlsx-handler",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "xml",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "xml-json-converter",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "xml-parser-tool",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "yaml",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "youtube-watcher",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "youtube-watcher-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "z-card-image",
+      "changes": [
+        "ping模板:2处"
+      ]
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ziptax",
+      "changes": [
+        "ping模板:4处"
+      ]
+    },
+    {
+      "slug": "ziptax-paid",
+      "changes": [
+        "ping模板:4处"
+      ]
+    }
+  ]
+}

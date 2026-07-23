@@ -21,10 +21,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # RSS AI 摘要推送
 
 自动抓取 RSS/Atom 订阅源,通过 LLM 生成中文摘要,推送到飞书、Telegram、Email。基于 SQLite 去重,支持定时任务。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -318,7 +333,7 @@ python main.py --config my_config.yaml --once
 
 | 错误场景 | 错误现象 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| Feed URL 无法访问 | 抓取报 `ConnectionError` 或超时 | 网络不通或 feed URL 已失效 | 执行ping命令测试网络连通性,检查防火墙和代理设置连通性,在浏览器中打开 feed URL 确认是否可访问;URL 失效则更新配置 |
+| Feed URL 无法访问 | 抓取报 `ConnectionError` 或超时 | 网络不通或 feed URL 已失效 | ,在浏览器中打开 feed URL 确认是否可访问;URL 失效则更新配置 |
 | LLM API 调用失败 | 报 `401 Unauthorized` 或 `429 Too Many Requests` | API Key 无效或额度耗尽 | 核对环境变量中的 API Key 是否正确;429 时降低抓取频率或更换 provider |
 | 摘要内容为空 | LLM 返回空字符串或仅含标点 | feed 条目正文为空或 LLM 判断无有效内容 | 检查 feed 条目是否含 summary 或 content 字段;在 prompt 中加入"若内容过少则输出原文标题"兜底 |
 | 飞书 Webhook 返回错误 | HTTP 状态码 400 或 `{"code": 19021}` | Webhook URL 失效或消息体格式不符飞书规范 | 在飞书群设置中重新获取 Webhook URL;检查消息体是否含必填字段(msg_type) |
@@ -352,7 +367,7 @@ A: 运行 `python main.py --stats --config my_config.yaml` 即可。输出包含
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

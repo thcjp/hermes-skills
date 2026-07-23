@@ -3,7 +3,7 @@ slug: "zhuchenggong-doubao-image-gen"
 name: "zhuchenggong-doubao-image-gen"
 version: "1.0.0"
 displayName: "Zhuchenggong Doubao"
-summary: "豆包AI图片生成技能 - 视觉设计师专用"
+summary: "Zhuchenggong Doubao提供Zhuchenggong Doubao的核心功能（详见使用流程和示例）等核心能力,付费版独享高级功能与批量处理。"
 license: "Proprietary"
 description: |-
   豆包AI图片生成技能 - 视觉设计师专用\n\n核心能力:\n- 创意设计领域的专业化AI辅助工具\n- 基于高人气开源Skill深度优化升级\n\
@@ -13,8 +13,20 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Zhuchenggong Doubao
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| Zhuchenggong Doubao的核心功能（详见使用流程和示例） | 支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -71,7 +83,7 @@ homepage: "https://skillhub.cn"
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 
 
 ## 依赖说明
 
@@ -114,7 +126,7 @@ A:
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

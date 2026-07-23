@@ -13,12 +13,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 通用办公
 ---
 # 长篇网文写作
 
 从零开始写一本长篇网络小说,从选题确认到大纲搭建再到正文输出。先抓情绪,再用验证过的方法可靠地交付这个情绪,灵感只做素材来源。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -201,7 +216,7 @@ export API_KEY="your_api_key_here"
 ### 18. 确定性收尾
 - `node scripts/check-ai-patterns.js --check --fail-on=blocking 正文/第XXX章_*.md`:blocking命中先回正文改写并复扫,advisory作读感提示
 - `node scripts/normalize-punctuation.js 正文/第XXX章_*.md`:清理无功能省略号、破折号、双连字符和独立分隔线
-- `node scripts/check-degeneration.js --check 正文/第XXX章_*.md`:blocking(复读、截断、拒绝语、tier1工程词泄漏)重写受影响章节,最多2次
+- `node scripts/check-degeneration.js --check 正文/第XXX章_*.md`:blocking(复读、截断、拒绝语、tier1工程词泄漏)重写受影响章节，最多2次
 
 **输入**: 用户提供确定性收尾所需的指令和必要参数。
 **处理**: 按照skill规范执行确定性收尾操作,遵循单一意图原则。
@@ -308,7 +323,7 @@ $ node scripts/check-degeneration.js --check 正文/第001章_觉醒.md
 | 章节号冲突 | 细纲与正文文件名编号不一致 | 按细纲编号修正正文文件名,保持一致 |
 | 大纲安全审查契约破坏 | 剧情违反读者契约或主角代理权 | 必须修纲,补交换/铺垫/成本后再继续 |
 | 正文元信息扫描发现工程词 | 正文含"第X章/前文/伏笔"等词 | 改成角色当下可感知的事件、物件、动作或相对时间 |
-| 退化防护检测到复读/截断 | blocking级退化(复读、截断、拒绝语) | 重写受影响章节,最多2次;仍失败报告证据让用户定夺 |
+| 退化防护检测到复读/截断 | blocking级退化(复读、截断、拒绝语) | 重写受影响章节，最多2次;仍失败报告证据让用户定夺 |
 | 预算合计超出[章目标,×1.1] | 章节字数过少或过多 | 补密点(增加情节)或压疏点(精简过渡)至预算范围 |
 
 ## 常见问题

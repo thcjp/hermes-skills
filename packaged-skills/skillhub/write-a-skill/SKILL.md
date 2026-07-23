@@ -4,7 +4,7 @@ name: "write-a-skill"
 version: "2.0.0"
 displayName: "技能创建工具"
 summary: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分"
-license: "MIT-0"
+license: "Proprietary"
 description: |-
   AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件
   拆分。技能描述不超过1024字符，SKILL.md不超过100行，超过500行时拆分到
@@ -14,12 +14,24 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 通用办公
 ---
 # 技能创建工具
 
 创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 一句话描述 | 支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 

@@ -1,0 +1,27 @@
+{
+  "task": "任务1(P0): 全量License同步验证",
+  "total_fs_skills": 995,
+  "total_db_skills": 1917,
+  "paid_count": 830,
+  "free_count": 165,
+  "fs_license_distribution": {
+    "Proprietary": 829,
+    "MIT": 164,
+    "MIT-0": 2
+  },
+  "db_license_distribution": {
+    "MIT": 406,
+    "MIT-0": 193,
+    "Apache-2.0": 2,
+    "Proprietary": 1316
+  },
+  "inconsistent_paid_found": 1,
+  "inconsistent_paid_fixed": 1,
+  "inconsistent_free_found": 0,
+  "db_is_paid_updated": 809,
+  "db_source_license_updated": 516,
+  "only_in_fs": 166,
+  "only_in_db": 1088,
+  "remaining_issues": 0,
+  "verification_passed": true
+}

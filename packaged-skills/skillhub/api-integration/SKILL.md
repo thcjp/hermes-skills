@@ -17,12 +17,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # API 集成开发助手
 
 提供完整的 API 集成能力,从 RESTful 到 GraphQL,帮助 AI Agent 快速接入第三方服务,扩展能力边界。
 
 **范围外**（本技能不做）: 逆向工程闭源 API、API 代理服务器部署、API Key 生成与分发、API 监控告警。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| **RESTful 调用**: GET/POST/PUT/DELETE 方法封装,支持 JSON 请求与响应处理 | 支持 | 支持 |
+| **认证管理**: API Key / OAuth2 / JWT / Basic Auth 四种认证方式 | 不支持 | 支持 |
+| **GraphQL 查询**: 按需查询、强类型、单一端点、实时订阅 | 不支持 | 支持 |
+| **错误处理**: HTTP 状态码体系（200/201/400/401/404/500）与异常恢复 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -238,8 +253,8 @@ result = graphql_query(
 | 参数错误 | 400 | 请求参数缺失或格式错误 | 检查请求体,补全必填项,修正格式 |
 | 未授权 | 401 | `access_token` 缺失或过期 | 使用 `refresh_token` 刷新或重新获取 Token |
 | 资源不存在 | 404 | 请求的资源 ID 不存在 | 核实资源 ID,检查 URL 路径 |
-| 服务器错误 | 500 | 服务端处理异常 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令（最多 3 次）,仍失败则联系服务端 |
-| 连接超时 | — | `requests.exceptions.Timeout` | 增加超时时间,执行ping命令测试网络连通性,检查防火墙和代理设置连通性 |
+| 服务器错误 | 500 | 服务端处理异常 | （最多 3 次）,仍失败则联系服务端 |
+| 连接超时 | — | `requests.exceptions.Timeout` | 增加超时时间,
 | 连接错误 | — | `requests.exceptions.ConnectionError` | 检查 URL 是否正确,网络是否可用 |
 | JSON 解析失败 | — | 响应体非合法 JSON | 检查 `Content-Type` 是否为 `application/json` |
 
@@ -261,7 +276,7 @@ A: `raise_for_status()` 在 HTTP 状态码为 4xx/5xx 时抛出 `requests.except
 A: Basic Auth 将用户名密码以 Base64 编码传输,非加密,易被中间人截获。仅在 HTTPS 环境下使用,且不推荐用于生产环境。生产环境推荐 JWT 或 OAuth2。
 
 ### Q6: 如何处理 API 速率限制?
-A: 检查响应头 `X-RateLimit-Remaining`,当剩余次数不足时降低请求频率。收到 429 状态码时,使用指数退避重试（2s/4s/8s）,最多 3 次。同时检查 `Retry-After` 头获取建议等待时间。
+A: 检查响应头 `X-RateLimit-Remaining`,当剩余次数不足时降低请求频率。收到 429 状态码时,使用指数退避重试（2s/4s/8s），最多 3 次。同时检查 `Retry-After` 头获取建议等待时间。
 
 ## 已知限制
 

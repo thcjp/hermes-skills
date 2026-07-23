@@ -1,20 +1,20 @@
 {
-  "audit_date": "2026-07-22T20:31:29.735441",
+  "audit_date": "2026-07-23T07:07:19.046791",
   "total_skills": 2097,
   "fix_mode": false,
   "fix_all": false,
   "by_severity": {
     "critical": 0,
-    "warning": 0,
+    "warning": 2,
     "info": 0,
-    "ok": 2097
+    "ok": 2095
   },
   "by_source": {
     "packaged": {
       "critical": 0,
-      "warning": 0,
+      "warning": 2,
       "info": 0,
-      "ok": 995
+      "ok": 993
     },
     "differentiated/Agents": {
       "critical": 0,
@@ -102,7 +102,44 @@
     }
   },
   "critical_issues": [],
-  "warning_issues": [],
+  "warning_issues": [
+    {
+      "slug": "smart-weekly-report",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "SUMMARY_TOO_LONG: summary 长度 127 超过 100 字符"
+      ],
+      "body_length": 4189,
+      "version": "1.1.3",
+      "functional_grade": "A",
+      "functional_score": 90,
+      "sellability_grade": "A",
+      "sellability_score": 83,
+      "authenticity_grade": "A",
+      "authenticity_score": 100,
+      "semantic_grade": "B",
+      "semantic_score": 85
+    },
+    {
+      "slug": "weiyun-skills",
+      "source": "packaged",
+      "severity": "warning",
+      "issues": [
+        "SUMMARY_TOO_LONG: summary 长度 102 超过 100 字符"
+      ],
+      "body_length": 4200,
+      "version": "1.0.10",
+      "functional_grade": "A",
+      "functional_score": 90,
+      "sellability_grade": "A",
+      "sellability_score": 88,
+      "authenticity_grade": "A",
+      "authenticity_score": 100,
+      "semantic_grade": "A",
+      "semantic_score": 100
+    }
+  ],
   "info_issues": [],
   "functional_quality": {
     "grade_distribution": {
@@ -118,12 +155,12 @@
   },
   "sellability": {
     "grade_distribution": {
-      "A": 2026,
-      "B": 71,
+      "A": 2032,
+      "B": 65,
       "C": 0,
       "D": 0
     },
-    "avg_score": 89.1,
+    "avg_score": 89.2,
     "total_below_b": 0,
     "below_b_detail": []
   },
@@ -313,6 +350,1057 @@
         "empty_sections": 3,
         "issues": [
           "EMPTY_SECTIONS: 3个段落内容为空或过短"
+        ]
+      }
+    ]
+  },
+  "semantic_audit": {
+    "enabled": true,
+    "l7a_available_count": 2097,
+    "grade_distribution": {
+      "A": 1761,
+      "B": 276,
+      "C": 60,
+      "D": 0,
+      "F": 0,
+      "N/A": 0
+    },
+    "avg_score": 90.8,
+    "total_template_blocks": 396,
+    "total_with_issues": 895,
+    "issues_detail": [
+      {
+        "slug": "accounting-and-finance",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "accounting-finance",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ace-music",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ad-insight-hub",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ad-insight-hub-free",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "admapix",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aegis-security",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "afrexai-cybersecurity-engine",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "afrexai-knowledge-management",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent-bom-vulnerability-intel",
+        "source": "packaged",
+        "grade": "C",
+        "score": 50,
+        "template_block_count": 2,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent-browser-assistant",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 6 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent-browser-automation",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent-browser-cli",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent-browser-stagehand",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent-framework-azure-ai-py",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent-group",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agent-knowledge",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agentic-security-audit",
+        "source": "packaged",
+        "grade": "C",
+        "score": 50,
+        "template_block_count": 2,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agentvibes-content-skill",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 6 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agentvibes-skill",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "agentvibes-voice-skill",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-agent-helper",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-artist-workstation",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-assistant",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-image-gen",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-image-gen-free",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-kujiale-design",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-news",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-podcast",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-video-studio-pro",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "ai-writing-style-cloner",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aic-dashboard",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "alephnet-node",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "alephnet-node-manager",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "alibaba-quark-scan",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "amap-jsapi-skill",
+        "source": "packaged",
+        "grade": "B",
+        "score": 85,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000"
+        ]
+      },
+      {
+        "slug": "analytics-dashboard",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "analyze",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "analyze-video-by-qwen",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "anthropics-frontend-design",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "anthrovision-telegram-body-scan",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "anygen-diagram",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-connect-hub",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-development",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-doc-generator",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-doc-writer",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-gateway",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-generator",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-integration",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-scaffold-gen",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "api-toolkit",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "apple-health-skill",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "archive",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "art",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "assistant",
+        "source": "packaged",
+        "grade": "C",
+        "score": 50,
+        "template_block_count": 2,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "audio-stream-upload",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "audit",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "auto-monitor",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "auto-workflow",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "automation-recipe-book",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "automation-recipe-pack",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aws",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aws-cloud-architect",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aws-cloud-architect-free",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aws-graph-agent",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aws-infra",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aws-toolkit",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "aws-wechat-article-writing",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-ai-transcription-py",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-ai-voicelive-py",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-cli",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-cli-toolkit",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-cloud-architect",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-devops",
+        "source": "packaged",
+        "grade": "C",
+        "score": 50,
+        "template_block_count": 2,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-gateway-cli",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-infra",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-transcription",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "azure-voicelive",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "baidu-netdisk-skills",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "bailian-web-search",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "baoyu-diagram",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "baoyu-md-formatter",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "beware-piper-tts",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "bilibili-all-in-one",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "bilibili-toolkit",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "blog-seo-writer",
+        "source": "packaged",
+        "grade": "C",
+        "score": 50,
+        "template_block_count": 2,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "blog-writer",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "book-painter",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "bookmark-intelligence",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "brainz-calendar",
+        "source": "packaged",
+        "grade": "C",
+        "score": 50,
+        "template_block_count": 2,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "brave-search",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "browser-automation",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "browser-automation-v2",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "bsession",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "build-game",
+        "source": "packaged",
+        "grade": "B",
+        "score": 70,
+        "template_block_count": 1,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 1 个疑似模板填充块 (占比 5.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "calendar",
+        "source": "packaged",
+        "grade": "C",
+        "score": 50,
+        "template_block_count": 2,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "calendar-reminder",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_DUPLICATE_BLOCKS: 检测到 2 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
+        ]
+      },
+      {
+        "slug": "calendar-skill",
+        "source": "packaged",
+        "grade": "C",
+        "score": 50,
+        "template_block_count": 2,
+        "issues": [
+          "L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000",
+          "L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复"
         ]
       }
     ]

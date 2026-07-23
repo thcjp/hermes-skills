@@ -11,12 +11,24 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 研发工具
 ---
 # Git核心操作
 
 涵盖Git版本控制核心命令与工作流,支持分支管理、合并、变基、标签与协作场景。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| **常见工作流模式**: 特性分支工作流、热修复工作流、Fork同步工作流 | 支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 初始配置
 

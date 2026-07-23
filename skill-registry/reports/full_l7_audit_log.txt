@@ -1,0 +1,95 @@
+﻿============================================================
+深度质量审计系统 (Deep Quality Audit)
+============================================================
+[模式] 仅审计
+[Layer 7a] 语义审计已启用 (L7a TF-IDF模板检测)
+[Layer 7b] 可执行性审计已启用 (L7b 静态可执行性检查)
+
+[1/3] 收集 SKILL.md 文件...
+  共发现 2097 个 SKILL.md 文件
+[2/3] 执行质量检查...
+[3/3] 生成报告...
+
+============================================================
+审计结果汇总
+============================================================
+审计时间: 2026-07-23T07:07:19.046791
+总 skill 数: 2097
+修复模式: 否
+
+按严重级别统计:
+  CRITICAL (致命): 0
+  WARNING (警告): 2
+  INFO    (信息): 0
+  OK      (通过): 2095
+
+按来源统计:
+  differentiated/Agents                    总计   72  (critical=0, warning=0, info=0, ok=72)
+  differentiated/Automation                总计   92  (critical=0, warning=0, info=0, ok=92)
+  differentiated/Communication             总计   54  (critical=0, warning=0, info=0, ok=54)
+  differentiated/Creative                  总计  116  (critical=0, warning=0, info=0, ok=116)
+  differentiated/Development               总计   89  (critical=0, warning=0, info=0, ok=89)
+  differentiated/Finance                   总计   21  (critical=0, warning=0, info=0, ok=21)
+  differentiated/Integrations              总计  113  (critical=0, warning=0, info=0, ok=113)
+  differentiated/Knowledge                 总计   64  (critical=0, warning=0, info=0, ok=64)
+  differentiated/Lifestyle                 总计   36  (critical=0, warning=0, info=0, ok=36)
+  differentiated/Operations                总计   27  (critical=0, warning=0, info=0, ok=27)
+  differentiated/Other                     总计  180  (critical=0, warning=0, info=0, ok=180)
+  differentiated/Productivity              总计   78  (critical=0, warning=0, info=0, ok=78)
+  differentiated/Research                  总计  114  (critical=0, warning=0, info=0, ok=114)
+  differentiated/Security                  总计   46  (critical=0, warning=0, info=0, ok=46)
+  packaged                                 总计  995  (critical=0, warning=2, info=0, ok=993)
+
+────────────────────────────────────────────────────────────
+功能质量 (Layer 4: Functional Quality):
+  平均分: 93.0 / 100
+  等级分布: A=2097  B=0  C=0  D=0  F=0
+  A+B级 (功能合格): 2097 / 2097 (100%)
+
+────────────────────────────────────────────────────────────
+可销售性 (Layer 5: Sellability):
+  平均分: 89.2 / 100
+  等级分布: A=2032  B=65  C=0  D=0
+  A+B级 (可销售): 2097 / 2097 (100%)
+
+────────────────────────────────────────────────────────────
+内容真实性 (Layer 6: Content Authenticity):
+  平均分: 99.8 / 100
+  等级分布: A=2097  B=0  C=0  D=0  F=0
+  A+B级 (内容真实): 2097 / 2097 (100%)
+  模板填充总数: 5
+  有问题skill: 16 个
+
+────────────────────────────────────────────────────────────
+语义审计 (Layer 7: Semantic Audit - L7a 嵌入向量模板检测):
+  模型可用: 2097 / 2097 个 skill 已分析
+  平均分: 90.8 / 100
+  等级分布: A=1761  B=276  C=60  D=0  F=0  N/A=0
+  A+B级 (语义合格): 2037 / 2097 (97%)
+  疑似模板块总数: 396
+  有问题skill: 895 个
+  C+D+F级 (严重语义问题): 60 个
+    [C] agent-bom-vulnerability-intel (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] agentic-security-audit (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] assistant (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] azure-devops (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] blog-seo-writer (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] brainz-calendar (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] calendar (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 1 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] calendar-skill (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] cloud-storage (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] compress (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] diagram (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] discrawl (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 4 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] doc-assistant (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] encryption (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    [C] excel-xlsx (分:50, 模板块:2): L7A_TEMPLATE_DETECTED: 检测到 2 个疑似模板填充块 (占比 10.0%), 最高相似度 1.000; L7A_DUPLICATE_BLOCKS: 检测到 3 对高度相似的内容块 (相似度 > 0.92), 可能存在内容重复
+    ... 还有 45 个
+
+WARNING 问题列表 (2 个):
+  [packaged] smart-weekly-report: SUMMARY_TOO_LONG: summary 长度 127 超过 100 字符
+  [packaged] weiyun-skills: SUMMARY_TOO_LONG: summary 长度 102 超过 100 字符
+
+报告已保存: d:\skills\skill-registry\deep_quality_audit_report.json
+
+审计结果: 通过 (格式通过, 功能无F级, 可销售性无D级, 内容真实无C/D/F)

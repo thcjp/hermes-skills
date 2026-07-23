@@ -18,10 +18,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Azure Ai Transcription Py
 
 Azure AI Transcription(speech-to-text)的 Python 客户端库,支持实时与批量转写。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 批量转写:对存储在 Blob 中的长音频文件提交转写作业,支持说话人分离与多通道 | 支持 | 支持 |
+| 实时转写:通过流式会话边录边转,逐事件输出识别文本,适合会议同传与字幕生成 | 不支持 | 支持 |
+| 说话人分离:开启 `diarization_enabled` 区分多说话人,标注每段发言归属 | 不支持 | 支持 |
+| 时间戳捕获:为识别结果附带时间戳,用于字幕对齐与片段定位 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 安装
 
@@ -177,7 +192,7 @@ for event in stream:
 
 
 ### TRANSCRIPTION_ENDPOINT 未设置
-实例化 `TranscriptionClient` 时 `os.environ["TRANSCRIPTION_ENDPOINT"]` 抛 `KeyError`。检查环境变量是否已导出(常见为 `https://<resource>.cognitiveservices.azure.com`),在 shell 或 `.env` 中配置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。不要把 endpoint 硬编码进源码。
+实例化 `TranscriptionClient` 时 `os.environ["TRANSCRIPTION_ENDPOINT"]` 抛 `KeyError`。检查环境变量是否已导出(常见为 `https://<resource>.cognitiveservices.azure.com`),在 shell 或 `.env` 中配置后。不要把 endpoint 硬编码进源码。
 
 ### TRANSCRIPTION_KEY 无效(401/403)
 调用转写接口返回 401 或 403。核对 `TRANSCRIPTION_KEY` 是否为该资源的有效订阅密钥(primary 或 secondary 均可),确认 endpoint 与 key 属于同一资源同一区域。密钥泄漏或轮换后旧 key 会失效,需更新环境变量。
@@ -198,7 +213,7 @@ for event in stream:
 实时转写结束后未关闭会话,服务端连接与配额未释放。转写完成后显式关闭会话(如 `stream.close()` 或使用 `with` 上下文管理),避免连接配额耗尽影响后续转写。
 
 ### 限流(429)
-短时间内提交过多批量作业或并发流式会话触发服务限流。收到 429 时按 `Retry-After` 头退避后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;对批量作业做队列化与并发上限控制;实时会话控制同时在线数。
+短时间内提交过多批量作业或并发流式会话触发服务限流。收到 429 时按 `Retry-After` 头退避后;对批量作业做队列化与并发上限控制;实时会话控制同时在线数。
 
 ## 常见问题
 
@@ -225,7 +240,7 @@ for event in stream:
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

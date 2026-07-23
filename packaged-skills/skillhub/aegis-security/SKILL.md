@@ -13,12 +13,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 安全合规
 ---
 # 区块链安全防护
 
 面向AI代理的区块链安全API，提供交易前安全扫描能力。免费额度100次/天，超出后通过x402协议按需付费（USDC on Base或Solana）。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 安全策略
 
@@ -160,7 +175,7 @@ curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a
 | X-Client-Fingerprint缺失 | 200 | 回退到IP/User-Agent计费，可能导致配额不稳定 | 建议设置稳定指纹（如 `agent-default`）确保配额分配一致 |
 | simulate-tx的value格式错误 | 400 | value传入了数字而非wei字符串 | 确保value为字符串类型（如 `"0"` 而非 `0`），单位为wei |
 | Solana链调用simulate-tx | 400 | Solana不支持交易模拟 | 对Solana链仅使用 `check-address` 和 `check-token`，跳过simulate-tx |
-| 服务端错误 | 500 | 上游服务异常 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令一次；若持续失败，展示错误和 `_meta.requestId` 供排查 |
+| 服务端错误 | 500 | 上游服务异常 | 一次；若持续失败，展示错误和 `_meta.requestId` 供排查 |
 
 ## 常见问题
 

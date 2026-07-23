@@ -16,12 +16,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # REST API 参考手册
 
 147 个第三方服务的 REST API 参考文档。按类别组织,每类含索引表与逐服务详解,覆盖认证模式、端点参考、速率限制、分页模式与 Webhook 处理。
 
 **范围外**（本技能不做）: 逆向工程闭源 API、代用户执行实际 API 请求、管理用户 API Key、代理 API 调用。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| **147 服务覆盖**: 涵盖 AI/ML、支付、通信、CRM、数据库、媒体等 16 大类服务 | 支持 | 支持 |
+| **认证文档**: 每个服务的认证方式（API Key / OAuth2 / Bearer Token / Basic Auth） | 不支持 | 支持 |
+| **端点参考**: 含 curl 示例的端点说明,支持快速查阅 | 不支持 | 支持 |
+| **速率限制**: 各服务的 `X-RateLimit-Remaining` 头与 429 处理策略 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -213,7 +228,7 @@ sed -n '180,250p' apis/communication.md
 
 **提取信息**:
 - 签名验证: `X-Slack-Signature` 与 `X-Slack-Request-Timestamp` 头
-- 重试: Slack 在 3 秒内未收到 200 会重试,最多 3 次
+- 重试: Slack 在 3 秒内未收到 200 会重试，最多 3 次
 - 事件类型: `message`, `reaction_added`, `team_join` 等
 
 ## 错误处理
@@ -224,9 +239,9 @@ sed -n '180,250p' apis/communication.md
 | 缺少 `Content-Type` | POST 请求未设 `Content-Type: application/json` | 所有 POST/PUT/PATCH 必带该头,否则返回 415 或 400 |
 | API Key 暴露在 URL | 将密钥放在查询参数 `?api_key=xxx` | 改用请求头 `Authorization: Bearer xxx`,避免日志泄露 |
 | 忽略分页 | 未处理 `cursor` / `next_page_token` | 默认返回 10-25 项,需循环分页获取完整数据 |
-| 无 429 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令逻辑 | 收到 429 直接报错 | 检查 `X-RateLimit-Remaining`,429 时指数退避（2s/4s/8s） |
+| 无 429 逻辑 | 收到 429 直接报错 | 检查 `X-RateLimit-Remaining`,429 时指数退避（2s/4s/8s） |
 | HTTP 200 含错误 | 仅检查状态码,未校验 body | 部分API返回 200 但 body 含 `error` 字段,需检查响应结构 |
-| 幂等键缺失 | 支付操作无 `Idempotency-Key` | 网络执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令导致重复扣款,支付类操作必带幂等键 |
+| 幂等键缺失 | 支付操作无 `Idempotency-Key` | 网络导致重复扣款,支付类操作必带幂等键 |
 | OAuth Token 过期 | 使用过期 `access_token` | 使用 `refresh_token` 刷新,或重新走 OAuth 流程 |
 
 ## 常见问题

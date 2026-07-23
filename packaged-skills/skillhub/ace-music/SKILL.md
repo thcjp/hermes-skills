@@ -17,9 +17,10 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/次"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
+# 定价元数据
 ---
 # ACE Music
 
@@ -241,13 +242,13 @@ scripts/generate.sh "electronic dance track, festival energy" \
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| missing_api_key | `ACE_MUSIC_API_KEY missing` | 环境变量未设置 | 不调 API,引导用户访问 acemusic.ai 注册并配置 Key |
+| missing_api_key | `ACE_MUSIC_API_KEY missing` | 环境变量未设置 | 不调 API，引导用户访问 acemusic.ai 注册并配置 Key |
 | 401 unauthorized | `{"error":"invalid_api_key"}` | Key 格式错误或已失效 | 引导用户重新生成 Key,更新环境变量后重试 |
-| 429 rate_limited | `{"error":"rate_limited"}` | 短时间内请求过多 | 指数退避重试（2s/4s/8s）,最多 3 次 |
+| 429 rate_limited | `{"error":"rate_limited"}` | 短时间内请求过多 | 指数退避重试（2s/4s/8s），最多 3 次 |
 | 400 invalid_duration | `{"error":"duration_out_of_range"}` | duration 超出支持范围（通常 5-300 秒） | 提示用户调整时长至 5-300 秒范围内 |
 | 400 invalid_lyrics | `{"error":"lyrics_format_error"}` | lyrics 缺少必要标签或含非法字符 | 引导用户使用 `[Verse]`/`[Chorus]` 标签模式 |
 | 400 audio_input_required | `{"error":"audio_input_required"}` | cover/repaint 任务未提供音频输入 | 提示用户补充 audio_url 或 audio_base64 参数 |
-| 5xx server_error | HTTP 500/502/503 | ACE Music 服务端错误 | 指数退避重试,最多 2 次;持续失败则记录请求 ID 联系 ACE Music 团队 |
+| 5xx server_error | HTTP 500/502/503 | ACE Music 服务端错误 | 指数退避重试，最多 2 次;持续失败则记录请求 ID 联系 ACE Music 团队 |
 | base64_decode_failed | `base64: invalid input` | API 返回的音频数据损坏或截断 | 记录请求 ID 联系 ACE Music 团队,重试一次 |
 | batch_partial_failure | `batch 2/3 failed` | 批量生成中部分请求失败 | 返回成功的文件,标记失败序号供用户选择性重试 |
 

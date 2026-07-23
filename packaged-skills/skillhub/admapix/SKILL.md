@@ -18,12 +18,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # AdMapix
 
 AdMapix 原始 API 薄客户端。获取原始结构化数据并返回 JSON，不分析、不总结、不排序、不生成页面。调用方 Agent 决定调用哪些端点、组合多调用工作流并完成分析。
 
 **范围外**（本技能不做）：HTML/H5 页面生成、托管式深度研究、自主多步研究、摘要、洞察、推荐、仪表盘、消息发送。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -307,12 +322,12 @@ curl -s -X POST "https://api.admapix.com/api/data/similar-apps" \
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | missing_api_key | `{"error":{"code":"missing_api_key"}}` | 环境变量 `ADMAPIX_API_KEY` 未设置 | 不调 API，引导用户配置 Key；永不打印 Key |
-| 401 INVALID_API_KEY | `{"detail":"...","code":"INVALID_API_KEY"}` | Key 格式错误或已禁用 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，引导用户检查 Key 格式 |
-| 401 NOT_AUTHENTICATED | `{"code":"NOT_AUTHENTICATED"}` | Key 缺失或认证失败 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，引导用户重新配置 Key |
-| 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 套餐权限不足，端点不在套餐范围内 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，提示用户升级 AdMapix 套餐 |
-| 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | API 调用频率超限 | 指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令（1s/2s/4s），最多 3 次 |
-| 400 INVALID_PARAM | `{"code":"INVALID_PARAM"}` | 国家/行业/创意类型码错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，调 `filter-options` 核对参数代码 |
-| 5xx INTERNAL | HTTP 500/502/503 | AdMapix 服务端错误 | 指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，最多 2 次 |
+| 401 INVALID_API_KEY | `{"detail":"...","code":"INVALID_API_KEY"}` | Key 格式错误或已禁用 | 引导用户检查 Key 格式 |
+| 401 NOT_AUTHENTICATED | `{"code":"NOT_AUTHENTICATED"}` | Key 缺失或认证失败 | 引导用户重新配置 Key |
+| 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 套餐权限不足，端点不在套餐范围内 | 提示用户升级 AdMapix 套餐 |
+| 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | API 调用频率超限 | （1s/2s/4s），最多 3 次 |
+| 400 INVALID_PARAM | `{"code":"INVALID_PARAM"}` | 国家/行业/创意类型码错误 | 调 `filter-options` 核对参数代码 |
+| 5xx INTERNAL | HTTP 500/502/503 | AdMapix 服务端错误 | 最多 2 次 |
 | 空 list 返回 | `{"list":[],"totalSize":null}` | 参数无匹配或代码错误 | 空列表是合法结果；调 `filter-options` 核对代码 |
 | content-detail 404 | `{"code":"NOT_FOUND"}` | 创意已下线或 ID 无效 | 跳过该 ID，记录到失败列表 |
 

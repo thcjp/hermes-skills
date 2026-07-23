@@ -18,9 +18,10 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "9.9 CNY/次"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
+# 定价元数据
 ---
 # API文档一键生成规范器
 
@@ -322,11 +323,11 @@ POST /api/v1/users
 |---------|--------|---------|---------|
 | 参数缺失 | `1001` | 必填参数未传 | 检查请求参数表,补全必填项 |
 | 参数类型错误 | `1001` | 传入了错误类型（如 string 传 int） | 按参数表要求修正类型 |
-| 未授权 | `2001` | `Authorization: Bearer` 头缺失或 token 过期 | 重新获取 access_token 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| 未授权 | `2001` | `Authorization: Bearer` 头缺失或 token 过期 | 重新获取 access_token 后 |
 | 资源不存在 | `3001` | 请求的资源 ID 不存在 | 核实资源 ID 是否正确 |
 | 服务器错误 | `5001` | 服务端处理异常 | 联系后端排查日志,附带请求 ID |
 | 重复创建 | `1001` | 唯一约束冲突（如邮箱已注册） | 先查询资源是否存在再创建 |
-| 频率超限 | `2001` | 超过 60 次/分钟限制 | 等待 60 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,或申请提升配额 |
+| 频率超限 | `2001` | 超过 60 次/分钟限制 | 等待 60 秒后或申请提升配额 |
 
 ## 常见问题
 

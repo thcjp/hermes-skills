@@ -17,12 +17,26 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # feishu-send-file
 
 飞书机器人发送文件附件需要区分两条链路:普通文件走 `im/v1/files` 拿 `file_key` 后发 `msg_type=file`;图片走 `im/v1/images` 拿 `image_key` 后发 `msg_type=image`。混用会导致用户在飞书里看到路径文本而不是文件本体。
 
 本技能封装两条链路的稳定调用方式,并提供针对"本地图片路径被发成路径文本"故障的可靠补救脚本。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 多域名适配:中国版飞书 `open.feishu.cn` 与国际版 Lark `open.larksuite.com` 通过 domain 参数切换 | 支持 | 支持 |
+| 接收者类型切换:`receive_id_type=open_id` 对应个人用户,`receive_id_type=chat_id` 对应群聊 | 不支持 | 支持 |
+| 文件类型统一处理:普通文件一律使用 `file_type=stream`,兼容 HTML、ZIP、PDF、代码文件、CSV 等所有非媒体类型 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -322,7 +336,7 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/scripts/send_ima
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

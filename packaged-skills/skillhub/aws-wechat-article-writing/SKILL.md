@@ -18,10 +18,24 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Aws Wechat Article Writing
 
 公众号长文 AI 写作引擎 —— 从提纲或话题生成完整初稿,支持改写、续写、润色,多模型可切。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 凭证读取:`write.py` 读取仓库根 `aws.env` 的 `WRITING_MODEL_API_KEY` | 支持 | 支持 |
+| 文件写:仅本篇目录下 `draft.md`、`article.md` | 不支持 | 支持 |
+| shell:仅 `python3 {baseDir}/scripts/write.py` | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 能力披露
 
@@ -109,7 +123,7 @@ export API_KEY="your_api_key_here"
 
 ### 关键字段不得空跑
 
-调用 `write.py` 或让 Agent 代写之前,确认合并后的 `article_category`、`target_reader` 均为非空字符串(trim 后);`default_author` 非空或本篇 `article.yaml` 的 `author` 非空。若任一项不满足,须暂停写稿,引导用户补全 `.aws-article/config.yaml`(及/或本篇 `article.yaml`),并实际写入文件。
+调用 `write.py` 或让 Agent 代写之前,确认合并后的 `article_category`、`target_reader` 均为非空字符串(trim 后);`default_author` 非空或本篇 `article.yaml` 的 `author` 非空。若任一项不满足,须暂停写稿，引导用户补全 `.aws-article/config.yaml`(及/或本篇 `article.yaml`),并实际写入文件。
 
 约束来源:`write.py` 先读全局 `.aws-article/config.yaml`,再读本篇目录下 `article.yaml`,把两边键叠成一张表用于生成写作提示 —— 同一键在两份文件里都有时以本篇 `article.yaml` 为准。
 
@@ -131,7 +145,7 @@ export API_KEY="your_api_key_here"
 
 方式一(智能体直接写稿):写稿前先 `ls .aws-article/products/`,涉及产品则必读相关 `.md`;写作时将业务资料转化为账号文风后引用;`draft.md` 中凡实际引用某份业务介绍处用括号附上该文件仓库相对路径;配图占位按 `image_density` 生成,格式 `![类型名:画面内容](placeholder)` 独占一行,封面占位放标题前。
 
-方式二(`write.py` 写稿):有相关文档时在仓库根执行 `write.py` 传 `--reference <路径>`(可重复,最多 5 个,路径形如 `.aws-article/products/<产品名>/<文件名>.md`,不接受 `images/` 子目录下的图片说明 `.md`);无相关文档时不传 `--reference`,仅靠选题卡与合并配置写稿。若 API 因上下文超限失败,减少 `--reference` 篇数或换更短文档后重试。
+方式二(`write.py` 写稿):有相关文档时在仓库根执行 `write.py` 传 `--reference <路径>`(可重复，最多 5 个,路径形如 `.aws-article/products/<产品名>/<文件名>.md`,不接受 `images/` 子目录下的图片说明 `.md`);无相关文档时不传 `--reference`,仅靠选题卡与合并配置写稿。若 API 因上下文超限失败,减少 `--reference` 篇数或换更短文档后重试。
 
 ### 发布意图
 
@@ -214,7 +228,7 @@ export API_KEY="your_api_key_here"
 stderr 含 `[NO_MODEL]`。自动降级:运行 `write.py prompt <mode> <input>` 取提示词 JSON,Agent 按该 `system_prompt` 和 `user_prompt` 写文章输出到 `-o` 指定路径。无须用户确认或本次例外。
 
 ### write.py 退出码 1 网络类失败
-stderr 含超时、连接失败、`URLError`、临时性 502/503。必须自动再试 1 次并告知正在执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;第二次仍为网络类失败则改用 `write.py prompt` 取提示词后由 Agent 按相同约束代写,必须明确告知第三方 API 网络不可用本次由对话模型代写。
+stderr 含超时、连接失败、`URLError`、临时性 502/503。必须自动再试 1 次并告知正在;第二次仍为网络类失败则改用 `write.py prompt` 取提示词后由 Agent 按相同约束代写,必须明确告知第三方 API 网络不可用本次由对话模型代写。
 
 ### write.py 退出码 1 配置/凭证类失败
 stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。不要为省事自动降级掩盖问题。列出须检查项(`config.yaml` 的 `writing_model`、`aws.env` 的 `WRITING_MODEL_API_KEY`、本篇目录是否有 `article.yaml`),请用户修正后重跑 `write.py`。用户明确打字愿意本次改由 Agent 代写,再按本次例外处理并留痕。
@@ -229,7 +243,7 @@ stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。
 `image_source: user` 但本篇未落盘 `img_analysis.md`。不得调用 `write.py`,否则脚本报错退出。先用 `user_image_prepare.py` 生成模板并填写,确保推荐用途为封面处必须且只能 1 处,再调用 `write.py`。
 
 ### --reference 篇数过多导致 token 超限
-写作 API 因上下文/token 超限失败。减少 `--reference` 篇数(如从 5 个降到 2 个)或换更短文档后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令;仍失败则与用户商定是否由 Agent 代写。
+写作 API 因上下文/token 超限失败。减少 `--reference` 篇数(如从 5 个降到 2 个)或换更短文档后;仍失败则与用户商定是否由 Agent 代写。
 
 ### 跨 skill 引用文件未找到(单独安装)
 单独安装本 skill 时,跨 skill 引用(如 `../aws-wechat-article-main/references/*.md`)的步骤在读取阶段遇到 file not found。本 skill 内的纯本地步骤仍可用;需要跨 skill 引用的步骤建议装齐一条龙套件到同一 `skills/` 根目录。
@@ -259,7 +273,7 @@ stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

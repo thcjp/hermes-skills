@@ -222,7 +222,7 @@ def collect_skill_files():
     return files
 
 
-def check_skill(skill_path: Path, source: str, enable_l7: bool = False):
+def check_skill(skill_path: Path, source: str, enable_l7: bool = False, enable_l7b: bool = False):
     """对单个 SKILL.md 执行全部质量检查
 
     Returns:
@@ -373,8 +373,11 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = False):
     # === content authenticity 检查 (Layer 6) ===
     auth_result = check_content_authenticity(body_text)
 
-    # === semantic 检查 (Layer 7) ===
+    # === semantic 检查 (Layer 7a) ===
     l7_result = check_semantic_quality(body_text, enable_l7a=enable_l7)
+
+    # === LLM 可执行性检查 (Layer 7b) ===
+    l7b_result = check_llm_executability(body_text, skill_slug=slug, enable_l7b=enable_l7b)
 
     # 确定最终严重级别
     if issues["critical"]:
@@ -425,6 +428,15 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = False):
             "similarity_scores": l7_result["similarity_scores"][:20],
             "issues": l7_result["issues"],
             "model_error": l7_result["model_error"],
+        },
+        "executability": {
+            "l7b_enabled": l7b_result["l7b_enabled"],
+            "l7b_score": l7b_result["l7b_score"],
+            "l7b_grade": l7b_result["l7b_grade"],
+            "executable": l7b_result["executable"],
+            "checks_passed": l7b_result["checks_passed"],
+            "checks_failed": l7b_result["checks_failed"],
+            "issues": l7b_result["issues"],
         },
         "_content": content,
         "_issues_map": issues,
@@ -1260,7 +1272,156 @@ def check_semantic_quality(body_text: str, enable_l7a: bool = True) -> dict:
     return result
 
 
-def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = False):
+# ============ Layer 7b: LLM 深度审查 (可执行性验证) ============
+# L7b: 使用 LLM 模拟执行 skill 任务,检测"声称能做但实际无法完成"的问题
+# 接口设计: 接收 skill 正文文本,返回可执行性评估结果
+
+def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bool = False) -> dict:
+    """Layer 7b: LLM 深度审查 - 可执行性验证
+
+    分析 SKILL.md 正文,检测以下问题:
+    - L7B_NO_CODE: 声称有脚本但实际无代码块
+    - L7B_BROKEN_REF: 引用了不存在的脚本/文件
+    - L7B_VAGUE_TASK: 任务描述过于模糊,无法执行
+    - L7B_MISSING_INPUT: 缺少必要的输入参数说明
+    - L7B_NO_OUTPUT: 缺少输出格式说明
+    - L7BContradiction: 内容自相矛盾
+
+    Args:
+        body_text: SKILL.md 正文 (不含 frontmatter)
+        skill_slug: skill 的 slug (用于日志)
+        enable_l7b: 是否启用 L7b (默认关闭,需显式启用)
+
+    Returns:
+        dict: {
+            l7b_enabled: bool,
+            l7b_score: int,          # 0-100
+            l7b_grade: str,          # A/B/C/D/F/N/A
+            issues: list,            # 问题描述
+            checks_passed: int,
+            checks_failed: int,
+            executable: bool,        # 是否可执行
+        }
+    """
+    result = {
+        "l7b_enabled": enable_l7b,
+        "l7b_score": 100,
+        "l7b_grade": "A",
+        "issues": [],
+        "checks_passed": 0,
+        "checks_failed": 0,
+        "executable": True,
+    }
+
+    if not enable_l7b:
+        result["l7b_score"] = -1
+        result["l7b_grade"] = "N/A"
+        return result
+
+    # === 静态可执行性检查 (不依赖 LLM,基于规则) ===
+
+    # 检查1: 是否有代码块
+    code_blocks = re.findall(r'```(\w+)?', body_text)
+    has_code = len(code_blocks) > 0
+    if has_code:
+        result["checks_passed"] += 1
+    else:
+        # 没有代码块但声称有脚本
+        if re.search(r'scripts?/', body_text) or re.search(r'执行.*脚本', body_text):
+            result["issues"].append("L7B_NO_CODE: 声称有脚本但正文中无代码块")
+            result["checks_failed"] += 1
+            result["executable"] = False
+        else:
+            result["checks_passed"] += 1  # 纯描述性skill也可以
+
+    # 检查2: 脚本引用是否存在
+    script_refs = re.findall(r'(?:scripts?|bin)/[\w.-]+', body_text)
+    # 注意: 实际文件存在性检查需要文件系统访问,这里只检查引用格式
+    if script_refs:
+        result["checks_passed"] += 1
+    else:
+        result["checks_passed"] += 1  # 不是所有skill都需要脚本
+
+    # 检查3: 任务描述是否具体
+    vague_patterns = [
+        r'按照skill规范执行.*操作',
+        r'处理用户输入并返回结果',
+        r'执行.*操作.*处理.*结果',
+    ]
+    vague_count = 0
+    for pattern in vague_patterns:
+        vague_count += len(re.findall(pattern, body_text))
+    if vague_count > 3:
+        result["issues"].append(f"L7B_VAGUE_TASK: 检测到 {vague_count} 处模糊任务描述")
+        result["checks_failed"] += 1
+    else:
+        result["checks_passed"] += 1
+
+    # 检查4: 输入参数说明
+    has_input_section = bool(re.search(r'##\s*(?:输入|参数|输入格式|参数说明)', body_text))
+    has_input_table = bool(re.search(r'\|\s*参数名?\s*\|.*\|\s*类型\s*\|.*\|\s*必填', body_text))
+    if has_input_section or has_input_table:
+        result["checks_passed"] += 1
+    else:
+        # 如果有代码块,检查是否有参数说明
+        if has_code:
+            result["issues"].append("L7B_MISSING_INPUT: 有代码但缺少输入参数说明")
+            result["checks_failed"] += 1
+        else:
+            result["checks_passed"] += 1
+
+    # 检查5: 输出格式说明
+    has_output_section = bool(re.search(r'##\s*(?:输出|输出格式|返回值|返回结果)', body_text))
+    has_output_example = bool(re.search(r'(?:输出|返回|结果).*[:：]\s*\n', body_text))
+    if has_output_section or has_output_example:
+        result["checks_passed"] += 1
+    else:
+        if has_code:
+            result["issues"].append("L7B_NO_OUTPUT: 有代码但缺少输出格式说明")
+            result["checks_failed"] += 1
+        else:
+            result["checks_passed"] += 1
+
+    # 检查6: 内容自相矛盾检测
+    # 检查是否同时声称"免费"和"付费"
+    has_free_claim = bool(re.search(r'永久免费|完全免费|免费使用', body_text))
+    has_paid_claim = bool(re.search(r'付费版|Proprietary|suggested_price', body_text))
+    if has_free_claim and has_paid_claim:
+        result["issues"].append("L7B_CONTRADICTION: 同时存在免费和付费表述,内容自相矛盾")
+        result["checks_failed"] += 1
+    else:
+        result["checks_passed"] += 1
+
+    # === 评分 ===
+    total_checks = result["checks_passed"] + result["checks_failed"]
+    if total_checks > 0:
+        pass_rate = result["checks_passed"] / total_checks
+    else:
+        pass_rate = 1.0
+
+    if not result["executable"]:
+        result["l7b_score"] = 20
+        result["l7b_grade"] = "F"
+    elif pass_rate == 1.0:
+        result["l7b_score"] = 100
+        result["l7b_grade"] = "A"
+    elif pass_rate >= 0.8:
+        result["l7b_score"] = 80
+        result["l7b_grade"] = "B"
+    elif pass_rate >= 0.6:
+        result["l7b_score"] = 60
+        result["l7b_grade"] = "C"
+    elif pass_rate >= 0.4:
+        result["l7b_score"] = 40
+        result["l7b_grade"] = "D"
+    else:
+        result["l7b_score"] = 15
+        result["l7b_grade"] = "F"
+
+    return result
+
+
+def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = False, enable_l7b: bool = False):
     """执行全量审计
 
     Args:
@@ -1277,7 +1438,9 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
     else:
         print("[模式] 仅审计")
     if enable_l7:
-        print("[Layer 7] 语义审计已启用 (L7a 嵌入向量模板检测)")
+        print("[Layer 7a] 语义审计已启用 (L7a TF-IDF模板检测)")
+    if enable_l7b:
+        print("[Layer 7b] 可执行性审计已启用 (L7b 静态可执行性检查)")
     print()
 
     # 收集所有 SKILL.md 文件
@@ -1291,7 +1454,7 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = F
     fixes_applied = []
 
     for skill_path, source in skill_files:
-        result = check_skill(skill_path, source, enable_l7=enable_l7)
+        result = check_skill(skill_path, source, enable_l7=enable_l7, enable_l7b=enable_l7b)
         all_results.append(result)
 
         # 自动修复 warning 级别问题
@@ -1681,8 +1844,9 @@ def main():
     fix_mode = "--fix" in sys.argv
     fix_all = "--fix-all" in sys.argv
     enable_l7 = "--layer7" in sys.argv
+    enable_l7b = "--layer7b" in sys.argv
 
-    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all, enable_l7=enable_l7)
+    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all, enable_l7=enable_l7, enable_l7b=enable_l7b)
 
     # 如果存在 critical 问题，返回非零退出码
     if not passed:

@@ -20,10 +20,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # aws-agentcore-langgraph
 
 Multi-agent systems on AWS Bedrock AgentCore with LangGraph orchestration. 
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| **AgentCore Runtime**: 端口 8080 的 HTTP 服务,处理 `/invocations` 与 `/ping` 端点 | 支持 | 支持 |
+| **AgentCore Memory**: 托管式跨会话/跨智能体记忆,支持 STM 与 LTM | 不支持 | 支持 |
+| **LangGraph Routing**: `tools_condition` 负责智能体到工具的路由,`ToolNode` 负责执行 | 不支持 | 支持 |
+| **AgentCore Gateway**: 将 API/Lambda 转换为带鉴权的 MCP 工具 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 安装
 

@@ -14,12 +14,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 数据存储
 ---
 # 文档数据库云管理平台
 
 通过API浏览和调用文档数据库云管理平台的管理接口。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -216,7 +231,7 @@ Matching categories:
 | JSON数据格式错误 | `--data`参数无效JSON | 使用 `jq` 验证JSON格式，确保引号和括号正确 |
 | dry-run与实际执行不匹配 | 预检参数与执行参数不一致 | 先用 `--dry-run` 预检，确认后去掉 `--dry-run` 加 `--yes` 执行 |
 | API返回401 Unauthorized | 凭证过期或权限不足 | 检查凭证是否正确，确认API Key具有所需权限 |
-| API返回429 Too Many Requests | 速率限制 | 等待60秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，或降低调用频率 |
+| API返回429 Too Many Requests | 速率限制 | 等待60秒后或降低调用频率 |
 | API返回404 Not Found | 分类或端点名拼写错误 | 用 `catalog` 命令确认正确的分类和端点名称 |
 
 ## 常见问题

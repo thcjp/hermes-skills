@@ -11,12 +11,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 tags:
   - 研发工具
 ---
 # Java健壮编程
 
 编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。涵盖从基础语法陷阱到高级并发模型的完整防护指南。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| **类继承与内存模型**: 内部类持有外部类引用,不需要时使用静态嵌套类;Records隐式final不可继承,组件为final | 支持 | 支持 |
+| **测试(JUnit/Mockito)**: 使用JUnit断言和Mockito模拟依赖,验证交互行为与状态 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 快速参考
 

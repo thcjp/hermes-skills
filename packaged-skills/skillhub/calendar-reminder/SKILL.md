@@ -19,8 +19,23 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Calendar Reminder 日历提醒
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 概述
 
@@ -218,13 +233,13 @@ skill-platform cron list
 
 **原因**: `owa-outlook` skill 未安装、Outlook 凭据过期、或网络无法访问 Exchange 服务。
 
-**处理**: 先执行 `python3 -c "import owa_calendar; owa_calendar.list_events()"` 验证 skill 可用;若凭据过期,重新运行 owa-outlook 的登录流程刷新 token;若网络问题,检查代理配置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。脚本应在调用失败时跳过当日扫描并发飞书告警"日历扫描失败,请检查 owa-outlook"。
+**处理**: 先执行 `python3 -c "import owa_calendar; owa_calendar.list_events()"` 验证 skill 可用;若凭据过期,重新运行 owa-outlook 的登录流程刷新 token;若网络问题,检查代理配置后。脚本应在调用失败时跳过当日扫描并发飞书告警"日历扫描失败,请检查 owa-outlook"。
 
 ### 2. 飞书消息推送失败(HTTP 4xx)
 
 **原因**: open_id 格式错误、机器人未加入目标群、或 app_access_token 过期。
 
-**处理**: 检查 target 是否以 `user:` 或 `chat:` 前缀开头;若是群提醒,确认机器人已被群管理员加入;若返回 99991663 等 token 错误码,重新获取 tenant_access_token。建议脚本对飞书 API 失败做 3 次指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。
+**处理**: 检查 target 是否以 `user:` 或 `chat:` 前缀开头;若是群提醒,确认机器人已被群管理员加入;若返回 99991663 等 token 错误码,重新获取 tenant_access_token。建议脚本对飞书 API 失败做 3 次。
 
 ### 3. zoneinfo 时区数据缺失
 
@@ -293,7 +308,7 @@ skill-platform cron list
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |

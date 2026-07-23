@@ -26,10 +26,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # 语音通话服务（Voice Call Service）
 
 语音通话服务让AI代理为用户拨打真实的美国电话。语音AI代理负责拨号、对话、处理电话菜单或等待时间，并在通话结束后返回转录、结果与录音链接（如可用）。首次外呼可自动签发API密钥。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 输入输出
 
@@ -407,9 +422,9 @@ PUT /me/call-preferences
 | `missing_fields` | 缺 `to` 或 `task` | 补全收件号码与丰富通话指令后重发 |
 | `auth_required` / `invalid_api_key` | API密钥缺失或失效 | 移除坏密钥，用返回的 `action.sign_in_url` 重新鉴权 |
 | `quota_exceeded` / `trial_exhausted` | 试用10次/10分钟耗尽 | 原样发送返回的 `action.url`，引导用户升级套餐 |
-| `plan_required` / `balance_depleted` | 套餐不足或余额耗尽 | 发送返回的 action URL，不静默执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
-| `number_pool_exhausted` / `dial_failed` | 号码池耗尽或拨号失败 | 静默执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令一次，仍失败再向用户报告 |
-| `network_error` | 网络抖动 | 静默执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令一次，二次失败提示用户执行ping命令测试网络连通性,检查防火墙和代理设置 |
+| `plan_required` / `balance_depleted` | 套餐不足或余额耗尽 | 发送返回的 action URL，不静默 |
+| `number_pool_exhausted` / `dial_failed` | 号码池耗尽或拨号失败 | 静默一次，仍失败再向用户报告 |
+| `network_error` | 网络抖动 | 静默一次，二次失败提示用户
 | `reserved_number_required` | 入呼配置但无活跃保留号 | 引导用户开通 Unlimited Reserve Plus 并激活保留号 |
 | `inbound_plan_required` | 入呼需 Reserve Plus 权益 | 引导用户升级至 Unlimited Reserve Plus |
 | `invalid_preferences` | `voice` 非 jessica/sarah/chris/eric | 改回四种合法声音之一后重发 PUT |

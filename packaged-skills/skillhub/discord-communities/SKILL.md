@@ -35,10 +35,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Discord 社区管理
 
 基于 ClawLink OAuth 的 Discord 社区管理助手,围绕用户身份、公会、应用命令权限、商业权益与角色连接五大领域提供只读与变更操作。所有变更操作遵循风险分级策略,`confirm` 与 `high_impact` 操作需显式确认。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 ### 1. 先验证 ClawLink 集成可用
@@ -242,7 +257,7 @@ await clawlink_call_tool({
 | `Missing MANAGE_GUILD permission` | 用户在目标公会缺少管理权限 | 引导用户向公会管理员申请 `MANAGE_GUILD` + `MANAGE_ROLES` |
 | `Guild widget disabled` | 公会未启用小组件 | 服务器管理员在 Server Settings > Widget 中启用 |
 | `Role connection write scope missing` | OAuth2 未授权 `role_connections.write` | 重新发起授权流程,带上 `role_connections.write` scope |
-| `Username change limit reached` | 1 小时内已修改 2 次用户名 | 等待限速重置(约 1 小时)后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| `Username change limit reached` | 1 小时内已修改 2 次用户名 | 等待限速重置(约 1 小时)后 |
 | `Entitlement already consumed` | 同一可消耗权益被重复消耗 | 检查调用幂等性,记录已消耗 entitlement_id 避免重复 |
 | `SKU subscription not found` | SKU ID 错误或订阅已被取消 | 核对 SKU ID 与应用归属,优先用 list 接口定位 |
 | `Invite code invalid or expired` | 邀请码已失效或被删除 | 用 `discord_invite_resolve` 先验证,失败则提示用户重新生成 |

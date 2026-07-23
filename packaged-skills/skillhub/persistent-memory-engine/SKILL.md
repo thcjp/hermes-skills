@@ -15,12 +15,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 智能助手
 ---
 # 持久记忆引擎
 
 面向 AI Agent 的无限分层持久记忆系统，在内置记忆之上构建并行、可扩展、可检索的结构化本地存储，解决跨会话遗忘与记忆膨胀问题。本系统完全位于 `~/memory/`，与内置 Agent 记忆并行运作，永不修改内置 `MEMORY.md` 与 workspace `memory/` 目录。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 

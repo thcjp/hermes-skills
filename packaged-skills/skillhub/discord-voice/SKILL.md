@@ -34,10 +34,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Discord 语音助手
 
 在 Discord 语音频道中实现端到端语音对话:VAD 检测说话 → 录音缓冲 → STT 转写 → Agent 处理 → TTS 合成 → 频道播放。支持打断响应与自动重连,提供斜杠命令、CLI、Agent Tool 三种入口。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 ### 1. 先验证系统依赖与 Bot 权限
@@ -271,7 +286,7 @@ discord_voice speak "大家好,我是新成员,请多关照"
 | `provider_api_key_missing` | 未设置引擎对应的环境变量 | 按引擎表设置 `OPENAI_API_KEY` / `DEEPGRAM_API_KEY` / `ELEVENLABS_API_KEY` |
 | `already_in_voice_channel` | 同公会重复调用 join | 先调用 `leave` 释放当前频道,再 `join` 新频道 |
 | `Recording exceeded max length` | 单次录音超过 30 秒 | 调高 `maxRecordingMs`,或拆分长语音为多段 |
-| `Reconnection failed after 3 attempts` | 网络不稳定或频道被删除 | 执行ping命令测试网络连通性,检查防火墙和代理设置,确认频道存在后手动重新 join |
+| `Reconnection failed after 3 attempts` | 网络不稳定或频道被删除 | ,确认频道存在后手动重新 join |
 
 ## 常见问题
 

@@ -15,8 +15,21 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Jira
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| Jira API integration with managed OAuth | 支持 | 支持 |
+| Search issues with JQL, create | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心能力
 

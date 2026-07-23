@@ -26,10 +26,25 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Jira集成助手
 
 通过Jira Cloud REST API管理事务、状态流转与工时日志。支持搜索、详情、状态变更、指派、评论、创建、工时记录与多维度工时统计。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 环境配置
 
@@ -233,9 +248,9 @@ export API_KEY="your_api_key_here"
 | `transitions` 校验失败 | 目标状态不在可用流转列表 | 先调用 `transitions` 查看可用状态，再选择合法流转 |
 | `assign` 找不到用户 | 姓名或邮箱未匹配到用户 | 改用完整邮箱或Jira displayName，确认用户在项目内 |
 | `log` 日期格式错误 | 非 `YYYY-MM-DD` | 严格使用 `2025-01-18` 格式，默认今日UTC可省略 |
-| `bc: command not found` | 工时计算依赖缺失 | 安装 `bc`（如 `apt install bc`）后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
-| `jq: command not found` | JSON解析依赖缺失 | 安装 `jq`（如 `apt install jq`）后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
-| Worklog查询超时 | 大项目worklog/updated+list组合慢 | 等待几秒执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，或缩小日期范围 |
+| `bc: command not found` | 工时计算依赖缺失 | 安装 `bc`（如 `apt install bc`）后 |
+| `jq: command not found` | JSON解析依赖缺失 | 安装 `jq`（如 `apt install jq`）后 |
+| Worklog查询超时 | 大项目worklog/updated+list组合慢 | 等待几秒或缩小日期范围 |
 | `create` 项目无Task类型 | `JIRA_BOARD` 项目未启用Task | 改用项目支持的事务类型，或联系Jira管理员 |
 
 ## 常见问题

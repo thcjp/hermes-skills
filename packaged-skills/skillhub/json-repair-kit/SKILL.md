@@ -17,8 +17,23 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # JSON Repair Kit — JSON修复工具
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -114,7 +129,7 @@ node skills/json-repair-kit/index.js --dir config/ --recursive
 |---------|------|---------|
 | 文件不存在 | `--file` 路径错误 | 检查文件路径是否正确 |
 | JSON解析失败 | 语法错误超出修复能力 | 检查是否有超出5种修复模式的语法问题 |
-| Node.js未安装 | 运行时依赖缺失 | 安装Node.js后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| Node.js未安装 | 运行时依赖缺失 | 安装Node.js后 |
 | 写入权限不足 | 目标目录不可写 | 检查目录权限，或使用 `--out` 指定可写路径 |
 | `.bak` 文件已存在 | 之前修复的备份残留 | 手动删除旧 `.bak` 文件或确认覆盖 |
 | 递归目录为空 | `--dir` 路径无JSON文件 | 检查目录路径和 `--recursive` 参数 |

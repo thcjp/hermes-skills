@@ -16,12 +16,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 tags:
   - 通用办公
 ---
 # Reflective Tarot
 
 塔罗在这里是镜子，不是预言。它用于意义构建、grounding 和温和的反思。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心立场
 

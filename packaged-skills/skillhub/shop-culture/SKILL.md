@@ -13,12 +13,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 通用办公
 ---
 # 生活方式购物
 
 AI代理自主购物技能，为生活方式商店提供完整的浏览、下单和跟踪能力。支持自然语言搜索、多链加密支付和x402协议结账，无需API Key。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 安全准则
 
@@ -166,7 +181,7 @@ curl "https://lifestyle-store.example.com/api/orders/order_j4rv15_001"
 | 商品缺货 | 200 | variant `inStock=false` | 从 `relatedProducts` 推荐替代商品，或选择同商品其他 `inStock` 变体 |
 | 订单过期 | 200 | 支付窗口15分钟超时，status=expired | 告知用户并创建新订单，重新发起结账流程 |
 | 链/代币不支持 | 400 | 未在 `GET /payment-methods` 的chains中 | 重新查询 `GET /payment-methods`，使用支持的链/代币组合（如USDC on Solana） |
-| HTTP 429速率限制 | 429 | 超过100 req/min per IP | 等待 `retryAfter` 秒，指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令（2s, 4s, 8s...） |
+| HTTP 429速率限制 | 429 | 超过100 req/min per IP | 等待 `retryAfter` 秒，（2s, 4s, 8s...） |
 | 配送国家不支持 | 400 | `countryCode` 不在支持列表 | 检查 `error.details` 获取支持的国家列表，请求有效地址 |
 | 商品ID无效 | 400 | 编造或猜测的 `productId` | 仅使用 `GET /products/search` 或 `GET /products/{slug}` 返回的真实 `id` |
 

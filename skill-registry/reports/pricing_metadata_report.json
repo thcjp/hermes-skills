@@ -1,0 +1,31 @@
+{
+  "task": "任务3(P1): 定价元数据全量补充",
+  "total_evaluated": 830,
+  "tier_distribution": {
+    "L4": 612,
+    "L3": 144,
+    "L2": 70,
+    "L1": 4
+  },
+  "db_updated": 796,
+  "frontmatter_updated": 830,
+  "sample_verification": "10/10",
+  "tier_config": {
+    "L1": {
+      "price": 9.9,
+      "model": "per_use"
+    },
+    "L2": {
+      "price": 19.9,
+      "model": "per_use"
+    },
+    "L3": {
+      "price": 29.9,
+      "model": "per_use"
+    },
+    "L4": {
+      "price": 99.9,
+      "model": "monthly"
+    }
+  }
+}

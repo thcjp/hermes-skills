@@ -15,12 +15,27 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 tags:
   - 通用办公
 ---
 # 版本化写作工具
 
 带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程。
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 依赖说明
 
@@ -195,7 +210,7 @@ Step 3 - 继续编辑:
 
 | 错误场景 | 原因 | 处理方式 |
 |:---------|:-----|:---------|
-| init-workspace.sh执行失败 | 目录已存在或无写权限 | 检查目标目录是否已初始化，确认有写权限后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令或更换路径 |
+| init-workspace.sh执行失败 | 目录已存在或无写权限 | 检查目标目录是否已初始化，确认有写权限后或更换路径 |
 | edit.sh编辑失败 | piece ID不存在或文件权限问题 | 先运行`new-piece.sh`创建piece，确认pieces目录权限 |
 | audit.sh无输出 | config.json的auto_audit为false或audit.md缺失 | 检查config.json配置，确认references/audit.md存在 |
 | restore.sh恢复失败 | 指定version不存在 | 运行`list.sh`确认可用versions，使用正确version名称 |

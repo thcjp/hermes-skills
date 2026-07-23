@@ -24,8 +24,23 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Chart — 本地图表生成引擎
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|:-----|:-------|:-------|
+| 基础功能 | 支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
+| 自动化处理 | 不支持 | 支持 |
+| 批量操作 | 不支持 | 支持 |
+| 批量处理 | 不支持 | 支持 |
+| 高级配置 | 不支持 | 支持 |
 
 ## 核心理念
 
@@ -211,7 +226,7 @@ python3 {baseDir}/scripts/suggest_chart.py --labels "1月,2月,3月" --values "1
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | `python3: command not found` | 系统未安装Python 3 | 安装Python 3.x并确保 `python3` 在PATH中 |
-| `ModuleNotFoundError: matplotlib` | matplotlib未安装 | 运行 `pip3 install matplotlib` 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| `ModuleNotFoundError: matplotlib` | matplotlib未安装 | 运行 `pip3 install matplotlib` 后 |
 | `--labels`与`--values`长度不匹配 | 序列项数不一致 | 检查逗号分隔项数，确保两序列等长 |
 | `--type`取值非法 | 传入了非bar/line/pie/scatter的类型 | 仅支持四种类型，参考支持类型表 |
 | `--values`含非数值 | 数值序列中混入字符串 | 确保所有值为数字，移除单位与中文符号 |
