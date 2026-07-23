@@ -3,7 +3,7 @@ slug: diagram-generator
 name: diagram-generator
 version: "1.1.6"
 displayName: diagram-generator
-summary: Generate and edit diagrams with the mcp-diagram-generator MCP server. Use
+summary: "经mcp-diagram-generator MCP生成编辑图"
   this skill for new diag...
 license: MIT-0
 description: |-

@@ -3,7 +3,7 @@ slug: openclaw-linear
 name: openclaw-linear
 version: "1.0.1"
 displayName: Linear CLI
-summary: Manage Linear issues, projects, teams, and documents from the command line
+summary: "命令行管Linear issue/项目/团队/文档(社区下载版)"
   using the linear CLI. ...
 license: MIT
 description: |-

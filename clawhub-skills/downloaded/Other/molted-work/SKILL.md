@@ -3,7 +3,7 @@ slug: molted-work
 name: molted-work
 version: "1.0.2"
 displayName: Molted Work
-summary: CLI for the AI agent job marketplace with x402 USDC payments on Base
+summary: "AI Agent任务市场CLI,支持x402 USDC支付,在Base链上完成任务获取报酬"
 license: MIT
 description: |-
   CLI for the AI agent job marketplace with x402 USDC payments on Base

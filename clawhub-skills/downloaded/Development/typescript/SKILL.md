@@ -3,7 +3,7 @@ slug: typescript
 name: typescript
 version: "1.0.2"
 displayName: TypeScript
-summary: Write type-safe TypeScript with proper narrowing, inference patterns, and
+summary: "写类型安全TypeScript,窄化/推断/严格模式最佳实践(社区下载版)"
   strict mode best practi...
 license: MIT
 description: |-

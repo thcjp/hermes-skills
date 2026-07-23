@@ -3,7 +3,7 @@ slug: translate-toolkit-free
 name: translate-toolkit-free
 version: 1.0.0
 displayName: 翻译工具免费版
-summary: 提供格式保留、术语一致与文化适配的文本翻译，支持占位符保护与多语言处理，适合个人日常。
+summary: "格式保留术语一致的文本翻译,模板标记保护不误译,多语言处理,免费个人用"
 license: Proprietary
 edition: free
 description: '翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:

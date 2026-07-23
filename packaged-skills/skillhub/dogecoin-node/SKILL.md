@@ -3,7 +3,7 @@ slug: "dogecoin-node"
 name: "dogecoin-node"
 version: "1.0.5"
 displayName: "Dogecoin Node"
-summary: "A skill to set up and operate a Dogecoin Core full node with RPC access,"
+summary: "搭建运营Dogecoin Core全节点,RPC访问+区块链工具"
 license: "Proprietary"
 description: |-
   A skill to set up and operate a Dogecoin Core full node with RPC access,
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Dogecoin Node

@@ -3,7 +3,7 @@ slug: baoyu-diagram
 name: baoyu-diagram
 version: "1.117.3"
 displayName: Baoyu Diagram
-summary: Create professional, dark-themed SVG diagrams of any type — architecture
+summary: "生成专业暗色主题SVG图表:架构图、流程图、时序图,一键产出高质量技术可视化"
   diagrams, flowcharts, se...
 license: MIT-0
 description: |-

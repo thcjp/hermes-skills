@@ -16,15 +16,14 @@ description: |-
   - 多平台发布:KDP/微信读书/豆瓣阅读,自动适配各平台格式要求
   - 封面图与版权页自动生成:调用图像API生成封面,自动生成版权页
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [内容创作, 电子书, 出版, 知识付费]
 tools:
   - read
   - exec
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # 电子书工厂
 

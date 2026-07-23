@@ -3,7 +3,7 @@ slug: json-repair-kit
 name: json-repair-kit
 version: "1.0.0"
 displayName: Json Repair Kit
-summary: Repair malformed JSON files by normalizing them through Node.js evaluation.
+summary: "经Node.js求值规范化修复畸形JSON文件"
   Use this to fix trail...
 license: MIT
 description: |-

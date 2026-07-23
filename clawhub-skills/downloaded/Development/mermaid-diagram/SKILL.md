@@ -3,7 +3,7 @@ slug: mermaid-diagram
 name: mermaid-diagram
 version: "1.0.0"
 displayName: Mermaid Diagram
-summary: Generate valid Mermaid diagrams like flowcharts, sequence diagrams, mind
+summary: "生成有效Mermaid图,流程/时序/思维导图/ER图(社区下载版)"
   maps, ER diagrams, or us...
 license: MIT-0
 description: |-

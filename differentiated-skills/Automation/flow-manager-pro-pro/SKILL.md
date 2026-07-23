@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 流程管理器（专业版）
 
 > **企业级Node-RED实例管理。多实例+完整备份+Docker编排+性能监控+审计日志，IoT团队的终极运维工具。**

@@ -3,7 +3,7 @@ slug: "sequential-read"
 name: "sequential-read"
 version: "1.0.0"
 displayName: "Sequential Read"
-summary: "Read prose sequentially with structured reflections to simulate the reading"
+summary: "顺序阅读散文并结构化反思,模拟阅读体验"
 license: "Proprietary"
 description: |-
   Read prose sequentially with structured reflections to simulate the

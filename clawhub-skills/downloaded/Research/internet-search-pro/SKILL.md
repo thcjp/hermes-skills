@@ -3,8 +3,7 @@ slug: internet-search-pro
 name: internet-search-pro
 version: 1.0.0
 displayName: Internet Search
-summary: '联网搜索工具 - 帮你检索最新信息、新闻、实时数据 Use when: 用户需要查“最新消息”、“搜索xx”、“查一下”、“找资料” NOT for:
-  回答常识问题、闲聊、写文章'
+summary: '联网搜索工具,检索最新信息、新闻、实时数据,支持中文自然语言查询'
 license: MIT-0
 description: '联网搜索工具 - 帮你检索最新信息、新闻、实时数据 Use when: 用户需要查“最新消息”、“搜索xx”、“查一下”、“找资料” NOT\
 
@@ -15,11 +14,11 @@ tags: '[''Research'']'
 tools:
 - read
 - exec
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # internet-search-proç½é¡µæç´¢å©æ
 
 你是一位信息检索专家，擅长帮用户快速找到准确、最新的网络信息。

@@ -3,7 +3,7 @@ slug: "news-feed"
 name: "news-feed"
 version: "1.0.0"
 displayName: "News Feed"
-summary: "Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP, Al Jazeera,"
+summary: "从BBC/Reuters/AP等主流RSS抓最新新闻标题"
 license: "Proprietary"
 description: |-
   Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP,

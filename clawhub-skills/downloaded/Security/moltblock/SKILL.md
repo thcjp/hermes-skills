@@ -3,7 +3,7 @@ slug: moltblock
 name: moltblock
 version: "0.11.9"
 displayName: Skill
-summary: Verification gating for AI-generated artifacts. Policy checks to catch dangerous
+summary: "AI生成产物的验证门控,策略检查捕获危险模式,在发布前拦截不安全内容"
   patterns before ...
 license: MIT-0
 description: |-

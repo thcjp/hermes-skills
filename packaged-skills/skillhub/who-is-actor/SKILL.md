@@ -3,7 +3,7 @@ slug: "who-is-actor"
 name: "who-is-actor"
 version: "1.0.0"
 displayName: "Who Is Actor"
-summary: "Git repository actor identification skill."
+summary: "Git仓库参与者识别技能"
 license: "Proprietary"
 description: |-
   Git repository actor identification skill。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Who Is Actor

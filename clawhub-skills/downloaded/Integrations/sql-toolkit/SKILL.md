@@ -3,7 +3,7 @@ slug: sql-toolkit
 name: sql-toolkit
 version: "1.0.0"
 displayName: SQL Toolkit
-summary: Query, design, migrate, and optimize SQL databases. Use when working with
+summary: "查询设计迁移优化SQL数据库,SQLite/PostgreSQL等"
   SQLite, PostgreSQL, or ...
 license: MIT
 description: |-

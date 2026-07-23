@@ -3,7 +3,7 @@ slug: azure-cli
 name: azure-cli
 version: "1.0.0"
 displayName: azure-cli
-summary: Comprehensive Azure Cloud Platform management via command-line interface
+summary: "命令行全面管理Azure云平台,一条命令搞定资源运维(社区下载版)"
 license: MIT
 description: |-
   Comprehensive Azure Cloud Platform management via command-line interface

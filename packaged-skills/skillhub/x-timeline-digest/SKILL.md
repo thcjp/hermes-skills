@@ -3,7 +3,7 @@ slug: "x-timeline-digest"
 name: "x-timeline-digest"
 version: "1.0.0"
 displayName: "X 时间线摘要"
-summary: "使用 bird 读取 X/Twitter For You 与 Following 时间线,增量去重后生成中文分类简报与结构化 JSON"
+summary: "用bird读X/Twitter时间线,增量去重生中文分类简报与JSON"
 license: "Proprietary"
 description: |-
   基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线,
@@ -22,9 +22,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # X Timeline Digest
 

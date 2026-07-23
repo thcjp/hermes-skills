@@ -3,7 +3,7 @@ slug: "expanso-log-sanitize"
 name: "expanso-log-sanitize"
 version: "1.0.0"
 displayName: "Expanso log-sanitize"
-summary: "Sanitize log entries by removing passwords, tokens, and other sensitive patterns"
+summary: "清洗日志,去除密码/令牌等敏感模式,防泄露"
 license: "Proprietary"
 description: |-
   Sanitize log entries by removing passwords, tokens, and other sensitive
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Expanso log-sanitize
 

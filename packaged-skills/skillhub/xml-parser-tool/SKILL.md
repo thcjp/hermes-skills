@@ -3,7 +3,7 @@ slug: "xml-parser-tool"
 name: "xml-parser-tool"
 version: "2.1.0"
 displayName: "Xml Reader"
-summary: "Read and parse XML from construction systems - P6 schedules, BSDD exports,"
+summary: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML"
 license: "Proprietary"
 description: |-
   Read and parse XML from construction systems - P6 schedules, BSDD exports,

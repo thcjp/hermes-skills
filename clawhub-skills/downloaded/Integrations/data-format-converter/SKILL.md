@@ -3,7 +3,7 @@ slug: data-format-converter
 name: data-format-converter
 version: "1.0.0"
 displayName: Data Format Converte
-summary: Convert data efficiently between CSV, JSON, XML, YAML, and TOML formats including
+summary: "CSV/JSON/XML/YAML/TOML间高效转换,支持批量"
   batch processin...
 license: MIT
 description: |-

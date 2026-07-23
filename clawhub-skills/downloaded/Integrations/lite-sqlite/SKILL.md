@@ -3,7 +3,7 @@ slug: lite-sqlite
 name: lite-sqlite
 version: "1.0.0"
 displayName: Lite Sqlite
-summary: Fast lightweight local SQLite database for OpenClaw agents with minimal RAM
+summary: "OpenClaw Agent用的快速轻量本地SQLite,低RAM低存储"
   and storage usage. Us...
 license: MIT
 description: |-

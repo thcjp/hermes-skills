@@ -3,7 +3,7 @@ slug: "reddit-research"
 name: "reddit-research"
 version: "1.0.0"
 displayName: "Reddit Research"
-summary: "Extracts and summarizes trending topics, recurring issues, and content gaps"
+summary: "提取汇总Reddit趋势话题/反复问题/内容空白"
 license: "Proprietary"
 description: |-
   Extracts and summarizes trending topics, recurring issues, and content
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Reddit Research
 

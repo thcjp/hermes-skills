@@ -3,7 +3,7 @@ slug: security
 name: security
 version: "1.0.12"
 displayName: AgentGuard
-summary: GoPlus AgentGuard — AI agent security guard. Run /agentguard checkup for
+summary: "GoPlus AgentGuard安全卫士,运行/agentguard checkup进行全面安全健康检查"
   a full security health c...
 license: MIT-0
 description: |-

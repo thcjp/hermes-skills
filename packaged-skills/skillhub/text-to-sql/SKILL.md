@@ -3,7 +3,7 @@ slug: "text-to-sql"
 name: "text-to-sql"
 version: "999.0.0"
 displayName: "Text To Sql"
-summary: "Use when (1) user describes what data they want in plain English and asks"
+summary: "用户自然语言描述数据需求,生成对应SQL查询"
 license: "Proprietary"
 description: |-
   Use when (1) user describes what data they want in plain English and
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Text To Sql
 

@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 科研助手
 
 基于 134 个科学技能库,提供从文献检索到论文发表的全流程科研支持。从生物信息学到药物发现,从数据分析到论文写作,多领域跨学科研究助手。

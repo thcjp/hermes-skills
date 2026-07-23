@@ -3,7 +3,7 @@ slug: clawdbot-jira-skill
 name: clawdbot-jira-skill
 version: "1.0.2"
 displayName: Jira
-summary: Manage Jira issues, transitions, and worklogs via the Jira Cloud REST API.
+summary: "经Jira Cloud REST API管issue/流转/工时"
 license: MIT
 description: |-
   Manage Jira issues, transitions, and worklogs via the Jira Cloud REST

@@ -3,7 +3,7 @@ slug: code-quality
 name: code-quality
 version: "1.0.0"
 displayName: Code Quality
-summary: Coding style standards, security guidelines, and accessibility requirements.
+summary: "编码风格标准/安全准则/无障碍要求,守住质量底线(社区下载版)"
   Use when (1) Writing...
 license: MIT-0
 description: |-

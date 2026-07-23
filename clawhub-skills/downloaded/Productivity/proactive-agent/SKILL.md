@@ -3,7 +3,7 @@ slug: proactive-agent
 name: proactive-agent
 version: "3.1.0"
 displayName: Proactive Agent
-summary: Transform AI agents from task-followers into proactive partners.
+summary: "将AI Agent从被动任务执行者转变为主动协作者,提升Agent自主性与预判能力"
 license: MIT
 description: |-
   Transform AI agents from task-followers into proactive partners。核心能力:

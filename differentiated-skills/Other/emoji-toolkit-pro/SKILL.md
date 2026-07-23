@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
-
 > **从单条编解码到批量处理，从明文隐藏到加密传输。专业级隐秘通信系统。**
 
 隐秘通信不只是"藏一条消息"那么简单。专业版采用"编码-加密-传输-验证-追溯"五阶段安全通信闭环，配合七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。

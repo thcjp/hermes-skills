@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 销售线索猎手
 
 不只是找名单,更会筛选与打分。用 3D 线索打分模型自动筛选高价值潜客,让销售只打能赢的电话。

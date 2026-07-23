@@ -3,7 +3,7 @@ slug: solo-research
 name: solo-research
 version: "1.7.1"
 displayName: Research
-summary: Deep market research — competitor analysis, user pain points, SEO/ASO keywords,
+summary: "深度市场研究:竞品分析、用户痛点、SEO/ASO关键词、命名域名可用性,一站式调研"
   naming/domain ava...
 license: MIT
 description: |-

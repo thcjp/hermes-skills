@@ -3,7 +3,7 @@ slug: "auto-workflow"
 name: "auto-workflow"
 version: "1.0.0"
 displayName: "Auto Workflow"
-summary: "Builds automation workflows from repetitive tasks. Use when user mentions"
+summary: "从重复任务自动构建工作流,识别瓶颈并自动化,释放人力"
 license: "Proprietary"
 description: |-
   Builds automation workflows from repetitive tasks。Use when user mentions
@@ -30,9 +30,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Auto Workflow
 

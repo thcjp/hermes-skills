@@ -3,7 +3,7 @@ slug: "ping-monitor"
 name: "ping-monitor"
 version: "1.0.0"
 displayName: "Ping Monitor"
-summary: "ICMP health check for hosts, phones, and daemons"
+summary: "对主机/手机/守护进程做ICMP健康检查"
 license: "Proprietary"
 description: |-
   ICMP health check for hosts, phones, and daemons
@@ -30,8 +30,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Ping Monitor

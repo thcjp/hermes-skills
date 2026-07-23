@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 头脑风暴引导师
 
 在编码前通过苏格拉底式提问，深入理解真实需求。不急于写代码，先通过对话探索需求边界、对比方案、验证设计，最终输出结构化设计文档。

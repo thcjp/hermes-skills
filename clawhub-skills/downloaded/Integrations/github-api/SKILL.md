@@ -3,7 +3,7 @@ slug: github-api
 name: github-api
 version: "1.0.7"
 displayName: GitHub
-summary: This is a disclosed GitHub integration that uses Maton-managed OAuth/API
+summary: "经Maton托管OAuth/API接入GitHub,含适当权限范围(社区下载版)"
   access and includes appr...
 license: MIT-0
 description: |-

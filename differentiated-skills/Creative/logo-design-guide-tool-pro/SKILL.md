@@ -20,11 +20,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # Logo设计指南专业版
 ## 概述
 Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,PRO版增加批量提示词管理、多模型策略、自动矢量化流程、设计质量审计与团队设计规范,满足商业级Logo设计项目的效率与质量需求。

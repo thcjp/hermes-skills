@@ -3,7 +3,7 @@ slug: "feed-to-md"
 name: "feed-to-md"
 version: "1.2.0"
 displayName: "Feed To Md"
-summary: "Convert RSS or Atom feed URLs into Markdown using the bundled local converter"
+summary: "用内置本地转换器把RSS/Atom订阅转Markdown"
 license: "Proprietary"
 description: |-
   Convert RSS or Atom feed URLs into Markdown using the bundled local
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Feed To Md
 

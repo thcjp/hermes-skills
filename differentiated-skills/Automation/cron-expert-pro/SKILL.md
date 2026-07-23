@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # cron最佳实践专家（专业版）
 
 > **企业级定时系统治理。高级调度+遗留迁移+并发控制+清理工规则+完整陷阱库，方法论全覆盖。**

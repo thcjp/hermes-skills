@@ -3,7 +3,7 @@ slug: data-analysis-litiao
 name: data-analysis-litiao
 version: "1.0.0"
 displayName: Data Analysis Litiao
-summary: Turn raw data into decisions with statistical rigor, proper methodology,
+summary: "把原始数据变决策,统计严谨/方法得当/警惕分析陷阱"
   and awareness of analyti...
 license: MIT-0
 description: |-

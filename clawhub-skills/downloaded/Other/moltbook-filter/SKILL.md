@@ -3,7 +3,7 @@ slug: moltbook-filter
 name: moltbook-filter
 version: "1.0.1"
 displayName: Moltbook Spam Filter
-summary: Filter mbc-20 token minting spam from Moltbook feeds (96% spam removal rate)
+summary: "过滤Moltbook信息流中的代币铸造垃圾信息,96%垃圾清除率,提升信息流质量"
 license: MIT
 description: |-
   Filter mbc-20 token minting spam from Moltbook feeds (96% spam removal

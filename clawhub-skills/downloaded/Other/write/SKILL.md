@@ -3,7 +3,7 @@ slug: write
 name: write
 version: "1.0.0"
 displayName: Write
-summary: Plan, draft, version, and refine written content with enforced versioning
+summary: "规划、起草、版本化与精炼写作内容,强制版本控制与质量审计,提升创作规范性"
   and quality audits.
 license: MIT
 description: |-

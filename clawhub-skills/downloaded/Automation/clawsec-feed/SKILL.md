@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "用Vercel Skills CLI安装技能"
 ---
-
 Security advisory feed monitoring for AI agents. Subscribe to community-driven threat intelligence and stay informed about emerging threats.
 
 The default `feed.json` is the consolidated agent feed. It includes NVD CVEs, approved community advisories, and provisional GitHub Security Advisories that do not have CVE IDs yet.

@@ -27,11 +27,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 匿名聊天工具（专业版）
 
 ## 概述

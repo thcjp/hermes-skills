@@ -3,7 +3,7 @@ slug: "logo-brand-identity-cellcog"
 name: "logo-brand-identity-cellcog"
 version: "1.0.13"
 displayName: "Logo Brand Identity"
-summary: "AI logo and brand identity design powered by CellCog. Brand kits, color palettes,"
+summary: "CellCog驱动AI logo与品牌识别设计,品牌套件/色板/字体"
 license: "Proprietary"
 description: |-
   AI logo and brand identity design powered by CellCog。Brand kits, color
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Logo Brand Identity

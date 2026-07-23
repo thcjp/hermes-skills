@@ -3,7 +3,7 @@ slug: calendar
 name: calendar
 version: "1.0.0"
 displayName: Calendar
-summary: Calendar management and scheduling. Create events, manage meetings, and sync
+summary: "日历管理与调度,创建事件、管理会议、跨日历同步,解决多平台日程协调难题"
   across calendar prov...
 license: MIT
 description: |-

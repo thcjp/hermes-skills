@@ -3,7 +3,7 @@ slug: "task"
 name: "task"
 version: "0.1.0"
 displayName: "Task"
-summary: "Tasker docstore task management via tool-dispatch. Use for task lists, due"
+summary: "Tasker docstore任务管理,清单/今日到期/逾期/周计划"
 license: "Proprietary"
 description: |-
   Tasker docstore task management via tool-dispatch。Use for task lists,
@@ -40,9 +40,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 任务列表管理 | 项目ID和筛选条件 | 任务清单和优先级排序 |
+| 任务跟踪 | 任务ID和状态更新 | 任务状态变更和进度记录 |
+| 截止日期提醒 | 任务列表和时间范围 | 逾期任务和即将到期提醒 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非Tasker平台的任务管理(如Todoist/Jira)
 
 ## 使用流程
 
@@ -55,8 +57,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| project_id | string | 是 | Tasker项目ID |
+| status_filter | string | 否 | 状态筛选, 可选: open/done/all, 默认: open |
 
 ## 输出格式
 
@@ -99,22 +101,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -125,7 +118,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -145,7 +137,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

@@ -45,11 +45,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 天气查询工具包专业版
 
 企业级天气数据平台,在免费版核心能力之上,扩展批量查询、历史数据、预警推送与多数据源聚合能力,适合物流、农业、旅游等需要规模化天气数据的企业与开发者。与免费版数据格式完全兼容,支持平滑升级。

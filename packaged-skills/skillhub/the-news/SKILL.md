@@ -3,7 +3,7 @@ slug: "the-news"
 name: "the-news"
 version: "1.0.17"
 displayName: "The News"
-summary: "gives agents real-time and archival access to front-page headlines across"
+summary: "给Agent实时与归档访问20国头版头条"
 license: "Proprietary"
 description: |-
   gives agents real-time and archival access to front-page headlines across

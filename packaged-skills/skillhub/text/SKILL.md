@@ -3,7 +3,7 @@ slug: "text"
 name: "text"
 version: "1.0.0"
 displayName: "Text"
-summary: "Transform, format, and process text with patterns for writing, data cleaning,"
+summary: "用模式转换/格式化/处理文本,写作/清洗/本地化/引用"
 license: "Proprietary"
 description: |-
   Transform, format, and process text with patterns for writing, data
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Text
 

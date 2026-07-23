@@ -3,7 +3,7 @@ slug: "browser-automation"
 name: "browser-automation"
 version: "1.0.1"
 displayName: "Browser Automation"
-summary: "Automate web browser interactions using natural language via CLI commands."
+summary: "自然语言经CLI自动化浏览器交互,告别手写脚本"
 license: "Proprietary"
 description: |-
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Browser Automation

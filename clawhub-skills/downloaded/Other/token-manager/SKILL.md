@@ -3,7 +3,7 @@ slug: token-manager
 name: token-manager
 version: "1.2.0"
 displayName: Token Manager
-summary: Universal LLM Token Manager - Monitor usage and provide cost-saving recommendations
+summary: "通用LLM Token管理器,监控Kimi/OpenAI等用量并提供省钱建议,降低API成本"
   for Kimi, Ope...
 license: MIT
 description: |-

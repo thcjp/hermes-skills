@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 神经上下文引擎（专业版）
 
 > **联想记忆引擎的终极形态。多脑管理、深度因果链、习惯识别、矛盾检测，零LLM依赖。**

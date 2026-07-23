@@ -3,7 +3,7 @@ slug: postgres-job-queue
 name: postgres-job-queue
 version: "1.0.0"
 displayName: Postgres Job Queue
-summary: PostgreSQL-based job queue with priority scheduling, batch claiming, and
+summary: "基于PostgreSQL的作业队列,优先级/批量认领/进度跟踪"
   progress tracking. Use w...
 license: MIT
 description: |-

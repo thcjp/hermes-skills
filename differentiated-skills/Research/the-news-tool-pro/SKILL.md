@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 全球新闻情报专业版是企业级的新闻情报分析平台。在完整兼容免费版 API 的基础上,专业版引入了批量多国并行查询、长期新闻归档、情感分析、趋势追踪、定时监控预警等高级能力,适用于企业公关舆情监控、行业研究、跨国市场情报收集等专业场景。
 
 专业版特别强化了数据分析能力,能够从海量新闻中提取舆论趋势、情感倾向、主题热点,并生成结构化的情报报告,帮助企业快速把握全球舆论动态。

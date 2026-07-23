@@ -3,7 +3,7 @@ slug: knowledge-capture
 name: knowledge-capture
 version: "0.1.0"
 displayName: Knowledge Capture
-summary: Transform conversations and discussions into structured Notion documentation
+summary: "把对话讨论转为结构化Notion文档(社区下载版)"
 license: MIT
 description: |-
   Transform conversations and discussions into structured Notion documentation

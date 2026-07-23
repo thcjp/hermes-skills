@@ -3,7 +3,7 @@ slug: game
 name: game
 version: "2.0.0"
 displayName: Game
-summary: The instant game design engine for AI agents. Describe any game concept in
+summary: "一句话描述即可生成完整游戏,AI驱动的即时游戏设计引擎,秒级产出原型"
   one sentence and get a...
 license: MIT-0
 description: |-

@@ -3,7 +3,7 @@ slug: gitcrawl
 name: gitcrawl
 version: "1.0.0"
 displayName: Gitcrawl
-summary: "GitHub archive: issue/PR search, sync freshness, duplicate clusters."
+summary: "GitHub归档:issue/PR搜索、同步新鲜度、重复聚类,深度挖掘代码仓库信息"
 license: MIT
 description: |-
   GitHub archive: issue/PR search, sync freshness, duplicate clusters。核心能力:

@@ -3,7 +3,7 @@ slug: miniprogram-development
 name: miniprogram-development
 version: "1.28.12"
 displayName: Miniprogram Developm
-summary: WeChat Mini Program development skill for building, debugging, previewing,
+summary: "微信小程序开发技能,覆盖构建、调试、预览、测试、发布全流程,提升开发效率"
   testing, publishing, a...
 license: MIT-0
 description: |-

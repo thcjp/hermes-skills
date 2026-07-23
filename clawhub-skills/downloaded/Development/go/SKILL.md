@@ -3,7 +3,7 @@ slug: go
 name: go
 version: "1.0.2"
 displayName: Go
-summary: Write reliable Go code avoiding goroutine leaks, interface traps, and common
+summary: "写可靠Go代码,规避goroutine泄露/接口陷阱/并发bug(社区下载版)"
   concurrency bugs.
 license: MIT
 description: |-

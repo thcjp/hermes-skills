@@ -14,11 +14,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 商业自动中枢
 
 把AI Agent变成商业自动化架构师。识别吞噬时间的手动流程、设计自动化、落地实现、量化收益、持续监控。核心信条:**先证明该自动化,再动手;先证明自动化还活着,再放手。**

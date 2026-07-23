@@ -3,8 +3,7 @@ slug: figma
 name: figma
 version: "2.1.0"
 displayName: Figma
-summary: "This skill does what it advertises: reads Figma data, exports assets, and
-  writes user-requested r"
+summary: "读Figma数据/导出资产/写回请求,设计交付闭环(社区下载版)"
 license: MIT
 description: |-
   This skill does what it advertises: reads Figma data, exports assets,

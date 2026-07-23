@@ -3,7 +3,7 @@ slug: word
 name: word
 version: "1.0.0"
 displayName: Word
-summary: Control Word app sessions, documents, selections, comments, export, and review
+summary: "通过osascript控制Word会话、文档、选区、批注、导出与审阅,自动化文档操作"
   state with osascri...
 license: MIT-0
 description: |-

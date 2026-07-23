@@ -3,7 +3,7 @@ slug: "slack-api"
 name: "slack-api"
 version: "1.0.11"
 displayName: "Slack"
-summary: "Slack API integration with managed OAuth. Send messages, manage channels,"
+summary: "Slack API托管OAuth,发消息/管频道/搜会话"
 license: "Proprietary"
 description: |-
   Slack API integration with managed OAuth。Send messages, manage channels,
@@ -16,8 +16,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Slack

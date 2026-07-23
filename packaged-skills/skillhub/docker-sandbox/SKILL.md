@@ -3,7 +3,7 @@ slug: "docker-sandbox"
 name: "docker-sandbox"
 version: "1.0.0"
 displayName: "Docker Sandbox"
-summary: "Create and manage Docker sandboxed VM environments for safe agent execution."
+summary: "建管Docker沙箱VM环境,让Agent安全执行不可信代码"
 license: "Proprietary"
 description: |-
   Create and manage Docker sandboxed VM environments for safe agent execution。Use when running unt。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Docker Sandbox
 

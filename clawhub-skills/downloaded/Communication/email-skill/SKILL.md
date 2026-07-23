@@ -3,7 +3,7 @@ slug: email-skill
 name: email-skill
 version: "0.1.0"
 displayName: Email
-summary: Email management and automation. Send, read, search, and organize emails
+summary: "邮件管理与自动化,跨多提供商发/读/搜/整理"
   across multiple providers.
 license: MIT
 description: |-

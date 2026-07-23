@@ -3,7 +3,7 @@ slug: blog-seo-writer
 name: blog-seo-writer
 version: "1.0.0"
 displayName: blog-seo-writer
-summary: Create SEO-optimized blog posts that rank higher on Google. Includes keyword
+summary: "创建SEO优化博客文章,集成关键词、元描述、结构化数据,提升Google搜索排名"
   integration, meta de...
 license: MIT-0
 description: |-

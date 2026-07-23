@@ -3,7 +3,7 @@ slug: clawcall
 name: clawcall
 version: "1.0.12"
 displayName: Skill
-summary: Use when the user wants an AI agent to place a US phone call, call a business,
+summary: "让AI Agent打美国电话/呼叫商家/处理等待与电话树"
   handle hold or pho...
 license: MIT-0
 description: |-

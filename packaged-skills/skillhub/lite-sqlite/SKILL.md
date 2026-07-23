@@ -3,7 +3,7 @@ slug: "lite-sqlite"
 name: "lite-sqlite"
 version: "1.0.0"
 displayName: "Lite Sqlite"
-summary: "Fast lightweight local SQLite database for SkillHub agents with minimal RAM"
+summary: "SkillHub Agent用的快速轻量本地SQLite,低RAM低存储"
 license: "Proprietary"
 description: |-
   Fast lightweight local SQLite database for SkillHub agents with minimal
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Lite Sqlite
 

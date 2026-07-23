@@ -3,7 +3,7 @@ slug: "expanso-json-to-yaml"
 name: "expanso-json-to-yaml"
 version: "1.0.0"
 displayName: "Expanso json-to-yaml"
-summary: "Convert JSON input into YAML format using Expanso Edge pipelines for CLI"
+summary: "用Expanso Edge流水线把JSON转YAML格式"
 license: "Proprietary"
 description: |-
   Convert JSON input into YAML format using Expanso Edge pipelines for
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Expanso json-to-yaml

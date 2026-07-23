@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **定时推送+AI分析+多渠道分发+趋势预测。企业级新闻简报全功能覆盖。**
 
 将复杂的新闻搜集、分析与分发任务交给专业工具处理。专业版在免费版基础搜集能力之上，新增定时自动执行、多渠道推送、AI智能分析、个性化定制、多语言支持、历史回顾、情感分析、趋势预测八大高级能力，满足企业级场景对新闻简报的时效性、深度与广度要求。

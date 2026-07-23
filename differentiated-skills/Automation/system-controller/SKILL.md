@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 系统控制器
 
 让 AI Agent 用一套语义操控 Linux、macOS、Windows 三大系统。本技能解决五个核心痛点：**命令碎片化**（每平台命令不同）、**操作不可逆**（误删文件/杀错进程无法回滚）、**进程终止粗暴**（直接 SIGKILL 导致数据损坏）、**服务状态不同步**（systemctl 显示 active 但实际挂了）、**变更无审计**（出问题不知道谁改了什么）。

@@ -3,8 +3,7 @@ slug: "okx-dex-token"
 name: "okx-dex-token"
 version: "3.1.3"
 displayName: "Okx Dex Token"
-summary: "Use this skill for token-level data: search tokens, trending/hot tokens
-license: "Proprietary"
+summary: "代币级数据,搜代币/热门榜/流动性池"Proprietary"
 description: |-
   Use this skill for token-level data: search tokens, trending/hot tokens
   (热门, 代币榜单), liquidity poo。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
@@ -15,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Okx Dex Token
 

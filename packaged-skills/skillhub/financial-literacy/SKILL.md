@@ -3,7 +3,7 @@ slug: "financial-literacy"
 name: "financial-literacy"
 version: "1.0.0"
 displayName: "Finance"
-summary: "Support financial understanding from personal budgeting to professional analysis"
+summary: "从个人预算到专业分析研究,全面提升财商"
 license: "Proprietary"
 description: |-
   Support financial understanding from personal budgeting to professional

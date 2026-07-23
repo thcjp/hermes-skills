@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 19.9
-pricing_tier: L2
-pricing_rationale: 文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 研究文章匠人
 
 辅助撰写高质量、有深度、有据可查的长篇内容。不是简单的文字生成,而是"研究-引用-钩子-反馈"的完整写作流程。

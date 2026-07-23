@@ -3,7 +3,7 @@ slug: cctv-news-fetcher
 name: cctv-news-fetcher
 version: "1.0.0"
 displayName: CCTV News Fetcher
-summary: Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo)
+summary: "获取并解析指定日期的新闻联播要闻,结构化输出央视新闻内容,支持历史回溯"
   for a given date.
 license: MIT
 description: |-

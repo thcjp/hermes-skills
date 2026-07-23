@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **AI深度摘要+多源聚合+定时推送+团队共享。企业级订阅管理全功能覆盖。**
 
 将复杂的订阅内容管理与分发任务交给专业工具处理。专业版在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文语义搜索、阅读统计分析七大高级能力，满足企业级场景对信息管理的深度、广度与协作要求。

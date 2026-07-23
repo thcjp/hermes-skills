@@ -3,7 +3,7 @@ slug: web
 name: web
 version: "1.0.0"
 displayName: Web Development
-summary: Build, debug, and deploy websites using HTML, CSS, JavaScript, and modern
+summary: "用HTML/CSS/JS与现代框架建调部署网站(社区下载版)"
   frameworks following pr...
 license: MIT
 description: |-

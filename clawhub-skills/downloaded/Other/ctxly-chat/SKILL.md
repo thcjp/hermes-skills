@@ -3,7 +3,7 @@ slug: ctxly-chat
 name: ctxly-chat
 version: "1.0.1"
 displayName: Ctxly Chat
-summary: Anonymous private chat rooms for AI agents. No registration, no identity
+summary: "AI Agent匿名私聊室,无需注册身份,保护隐私的同时支持即时协作沟通"
   required.
 license: MIT
 description: |-

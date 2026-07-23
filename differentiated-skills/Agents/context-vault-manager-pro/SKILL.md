@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 上下文保险库（专业版）
 
 > **智能分层记忆的终极方案。语义检索、向量数据库、多项目隔离，RAG准确率提升40%。**

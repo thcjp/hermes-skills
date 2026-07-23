@@ -3,7 +3,7 @@ slug: self-integration
 name: self-integration
 version: "1.1.2"
 displayName: Self-Integration
-summary: Connect to any external app and perform actions on it. Use when the user
+summary: "连任意外部应用并对其执行操作(社区下载版)"
   wants to interact with e...
 license: MIT
 description: |-

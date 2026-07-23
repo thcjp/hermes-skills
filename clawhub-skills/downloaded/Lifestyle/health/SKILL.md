@@ -3,7 +3,7 @@ slug: health
 name: health
 version: "1.0.1"
 displayName: Health
-summary: Provide personalized wellness guidance while maintaining strict safety boundaries.
+summary: "个性化健康指导,严格安全边界,在非临床场景下提供可信赖的日常养生建议"
 license: MIT
 description: |-
   Provide personalized wellness guidance while maintaining strict safety

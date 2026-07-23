@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 > **从临摹到原创，从爱好到专业。全周期创作成长引擎。**
 
 艺术创作是一场漫长的自我修炼。专业版采用"诊断-规划-训练-评估-迭代"五阶段成长闭环，配合五大高级功能，帮助创作者系统化突破瓶颈，找到属于自己的艺术语言。

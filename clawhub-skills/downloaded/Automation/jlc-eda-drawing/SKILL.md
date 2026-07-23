@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
+summary: "JLC EDA电路设计副驾,产PCB就绪原理图"
 ---
-
 # JLC EDA Drawing
 
 Act as a circuit-design copilot, not just an API caller. Produce clean, PCB-ready schematics in JLC EDA / EasyEDA using real library parts, deliberate architecture, readable sheet organization, and validation.

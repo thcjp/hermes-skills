@@ -3,7 +3,7 @@ slug: report
 name: report
 version: "1.0.3"
 displayName: Report
-summary: Configure custom recurring reports. User defines data sources, skill handles
+summary: "配置自定义定期报告,用户定义数据源,技能负责调度与格式化,自动化报表生成"
   scheduling and forma...
 license: MIT
 description: |-

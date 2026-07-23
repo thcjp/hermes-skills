@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "分析摘要研究笔记快速提取洞察"
 ---
-
 # Note Processor
 
 Analyze and summarize research notes to extract insights quickly.

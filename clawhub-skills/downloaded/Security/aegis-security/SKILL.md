@@ -3,7 +3,7 @@ slug: aegis-security
 name: aegis-security
 version: "1.2.2"
 displayName: Skill
-summary: Blockchain security API for AI agents. Scan tokens, simulate transactions,
+summary: "AI Agent区块链安全API:扫描代币、模拟交易、检查地址威胁,降低链上交易风险"
   check addresses for th...
 license: MIT
 description: |-

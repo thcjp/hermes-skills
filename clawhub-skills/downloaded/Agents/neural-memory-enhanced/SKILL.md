@@ -3,7 +3,7 @@ slug: neural-memory-enhanced
 name: neural-memory-enhanced
 version: "1.0.0"
 displayName: Neural Memory Enhanc
-summary: Associative memory with spreading activation for persistent, intelligent
+summary: "扩散激活的联想记忆,持久智能回忆,主动使用"
   recall. Use PROACTIVELY ...
 license: MIT
 description: |-

@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 数据库类, medium市场, enterprise复杂度, monthly频次, business层 → 中频专业工具
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # ClickHouse分析专家
 
 基于 ClickHouse 官方最佳实践，设计高性能、可扩展的列式分析数据库。从表设计到查询优化，从物化视图到集群管理，全栈分析数据库方案。

@@ -15,15 +15,14 @@ description: |-
   - SimHash汉明距离去重
   - 自动降级与变更明细追踪
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [内容改写, 原创度, 多平台分发, 查重规避]
 tools:
   - read
   - exec
-pricing_rationale: "电商类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强"
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # 内容洗稿师
 

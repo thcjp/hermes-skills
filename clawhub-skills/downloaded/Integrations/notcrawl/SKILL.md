@@ -3,7 +3,7 @@ slug: notcrawl
 name: notcrawl
 version: "1.0.1"
 displayName: Notcrawl
-summary: "Notion archive: search, sync freshness, pages/databases, Markdown exports."
+summary: "Notion归档,搜索/同步/页面数据库/Markdown导出(社区下载版)"
 license: MIT
 description: |-
   Notion archive: search, sync freshness, pages/databases, Markdown exports。核心能力:

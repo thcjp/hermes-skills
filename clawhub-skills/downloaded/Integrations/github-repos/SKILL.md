@@ -3,7 +3,7 @@ slug: github-repos
 name: github-repos
 version: "1.0.5"
 displayName: GitHub
-summary: Work with GitHub repositories, issues, pull requests, commits, branches,
+summary: "管GitHub仓库/issue/PR/提交/分支/发布/工作流(社区下载版)"
   releases, and workflows ...
 license: MIT-0
 description: |-

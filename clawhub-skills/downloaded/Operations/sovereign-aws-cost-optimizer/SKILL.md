@@ -3,7 +3,7 @@ slug: sovereign-aws-cost-optimizer
 name: sovereign-aws-cost-optimizer
 version: "1.0.0"
 displayName: AWS Cost Optimizer
-summary: Analyzes AWS infrastructure for cost savings. Right-sizing, Reserved Instances,
+summary: "分析AWS基础设施成本优化机会:实例规格、预留实例、节省计划,降低云支出30%+"
   Savings Plans, un...
 license: MIT
 description: |-

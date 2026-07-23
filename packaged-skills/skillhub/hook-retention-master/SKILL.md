@@ -15,15 +15,14 @@ description: |-
   - 开篇3秒黄金法则
   - A/B测试与留存曲线评分
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [内容创作, 钩子设计, 留存优化, 短视频]
 tools:
   - read
   - exec
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # 钩子留存大师
 

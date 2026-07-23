@@ -16,12 +16,12 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tags:
+  - 通用办公
 # 定价元数据
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-tags:
-  - 通用办公
 ---
 # Reflective Tarot
 

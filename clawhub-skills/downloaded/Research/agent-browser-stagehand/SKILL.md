@@ -3,7 +3,7 @@ slug: agent-browser-stagehand
 name: agent-browser-stagehand
 version: "1.0.0"
 displayName: Agent Browser Stageh
-summary: Automate web browser interactions using natural language via CLI commands.
+summary: "通过自然语言CLI命令自动化浏览器交互,降低网页自动化脚本编写门槛"
   Use when the user asks...
 license: MIT
 description: |-

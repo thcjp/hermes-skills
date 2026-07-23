@@ -3,7 +3,7 @@ slug: knowledge-graph
 name: knowledge-graph
 version: "1.0.0"
 displayName: Knowledge Graph
-summary: Maintain Clawdbot's compounding knowledge graph under life/areas/** by adding/superseding
+summary: "维护Clawdbot复利知识图谱,增删与替代原子笔记"
   atomic ...
 license: MIT
 description: |-

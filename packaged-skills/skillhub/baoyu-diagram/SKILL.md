@@ -3,7 +3,7 @@ slug: "baoyu-diagram"
 name: "baoyu-diagram"
 version: "1.117.3"
 displayName: "Baoyu Diagram"
-summary: "Create professional, dark-themed SVG diagrams of any type — architecture"
+summary: "一句话生成专业暗色SVG图,架构/流程/时序全覆盖,告别丑图"
 license: "Proprietary"
 description: |-
   Create professional, dark-themed SVG diagrams of any type — architecture
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Baoyu Diagram
 

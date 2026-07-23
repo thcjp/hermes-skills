@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "Skill平台cron worker可靠性检查清单"
 ---
-
 # Cron Worker Guardrails
 
 A reliability-first checklist for **Skill平台 cron workers** and any unattended automation.

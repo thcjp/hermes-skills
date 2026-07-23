@@ -3,7 +3,7 @@ slug: security-scanner
 name: security-scanner
 version: "1.0.0"
 displayName: Security Scanner
-summary: This appears to be a legitimate security-scanning skill, but users must only
+summary: "安全扫描技能,执行主动扫描前需用户确认,防止误操作影响生产环境稳定性"
   run its active scans...
 license: MIT
 description: |-

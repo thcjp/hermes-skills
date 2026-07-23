@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 > **团队级文件治理解决方案。多项目管理、关键文档清单、维护习惯追踪、批量定时整理。**
 
 团队在文件治理中面临的挑战远超个人：多个项目并行时目录结构各不相同、关键文档（合同/税务/医疗）散落在各处缺乏统一管理、团队成员命名规范不一致导致协作困难、文件积累到一定程度后人工清理不现实、项目完结后归档流程缺乏标准。

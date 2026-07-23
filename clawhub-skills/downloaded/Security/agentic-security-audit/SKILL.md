@@ -3,7 +3,7 @@ slug: agentic-security-audit
 name: agentic-security-audit
 version: "1.0.0"
 displayName: Agentic Security Aud
-summary: Audit codebases, infrastructure, AND agentic AI systems for security issues.
+summary: "审计代码库、基础设施与AI Agent系统安全问题,覆盖传统安全与Agent特有风险"
   Covers traditional s...
 license: MIT
 description: |-

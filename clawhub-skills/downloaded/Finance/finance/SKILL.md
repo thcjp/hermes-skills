@@ -3,7 +3,7 @@ slug: finance
 name: finance
 version: "1.1.2"
 displayName: finance
-summary: Track stocks, ETFs, indices, crypto (where available), and FX pairs with
+summary: "跟踪股票/ETF/指数/加密/外汇,带缓存与提供商回退(社区下载版)"
   caching + provider fallb...
 license: MIT
 description: |-

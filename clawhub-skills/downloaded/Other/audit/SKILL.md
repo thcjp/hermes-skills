@@ -3,7 +3,7 @@ slug: audit
 name: audit
 version: "1.0.0"
 displayName: Audit
-summary: The Supreme Verifier for the Synthetic Economy. Autonomous inspection of
+summary: "合成经济体的自主验证器,检查代码、合约、资本流,确保链上系统安全透明"
   code, contracts, and cap...
 license: MIT
 description: |-

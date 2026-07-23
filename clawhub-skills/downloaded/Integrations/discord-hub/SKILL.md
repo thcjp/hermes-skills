@@ -3,7 +3,7 @@ slug: discord-hub
 name: discord-hub
 version: "1.1.0"
 displayName: Discord
-summary: OpenClaw skill for Discord Bot API workflows, covering interactions, commands,
+summary: "Discord Bot API工作流,交互/命令/消息/运维"
   messages, and oper...
 license: MIT
 description: |-

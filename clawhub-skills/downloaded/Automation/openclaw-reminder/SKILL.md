@@ -3,7 +3,7 @@ slug: openclaw-reminder
 name: openclaw-reminder
 version: "1.0.5"
 displayName: Reminder
-summary: Create one-time reminder tasks using OpenClaw cron. User specifies reminder
+summary: "用OpenClaw cron建一次性提醒任务,指定时间与内容"
   time and task content...
 license: MIT
 description: |-

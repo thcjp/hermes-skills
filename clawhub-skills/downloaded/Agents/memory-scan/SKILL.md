@@ -3,7 +3,7 @@ slug: memory-scan
 name: memory-scan
 version: "1.0.0"
 displayName: Memory Scan
-summary: Scans OpenClaw agent memory files and workspace configs for malicious content,
+summary: "扫描OpenClaw Agent记忆文件与工作区配置,查恶意内容与凭据泄露"
   credential leaks, ...
 license: MIT
 description: |-

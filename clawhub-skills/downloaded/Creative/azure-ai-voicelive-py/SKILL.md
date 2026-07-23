@@ -3,7 +3,7 @@ slug: azure-ai-voicelive-py
 name: azure-ai-voicelive-py
 version: "0.1.0"
 displayName: Azure Ai Voicelive P
-summary: This is a documentation-only Azure voice SDK skill, and its microphone, transcription,
+summary: "纯文档型Azure语音SDK技能,麦克风/转写/凭据说明"
   credential...
 license: MIT
 description: |-

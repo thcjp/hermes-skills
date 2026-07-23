@@ -3,7 +3,7 @@ slug: diagram
 name: diagram
 version: "1.0.0"
 displayName: Diagram
-summary: Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII for
+summary: "从描述生成图表,支持Mermaid、PlantUML、ASCII,适配架构图、流程图、时序图"
   architecture, flows, seq...
 license: MIT
 description: |-

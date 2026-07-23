@@ -3,7 +3,7 @@ slug: bsession
 name: bsession
 version: "0.1.0"
 displayName: browser
-summary: Browser automation — setup the bsession environment, fetch info from a website
+summary: "浏览器自动化环境:一次性抓取网站信息、创建持久会话,灵活适配不同场景需求"
   (one-shot), create...
 license: MIT-0
 description: |-

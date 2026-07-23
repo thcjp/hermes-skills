@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 > **企业级浏览器自动化系统。反检测+多标签+代理+动态抓取+登录态+UI测试，支撑复杂自动化场景。**
 
 浏览器代理专业版解决企业级自动化的三大痛点：网站反爬检测导致被封禁、动态加载内容无法抓取、缺乏可回归的UI测试能力。在免费版基础操作能力之上，专业版提供完整的反检测、动态抓取、登录态管理与测试框架。

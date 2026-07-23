@@ -3,7 +3,7 @@ slug: "encrypted-docs"
 name: "encrypted-docs"
 version: "1.0.0"
 displayName: "Encrypted Docs"
-summary: "End-to-end encrypted .md documents for agents & humans to collaborate. This"
+summary: "端到端加密md文档,Agent与人协同编辑,隐私不泄"
 license: "Proprietary"
 description: |-
   End-to-end encrypted 。md documents for agents & humans to collaborate。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Encrypted Docs
 

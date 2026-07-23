@@ -16,11 +16,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 知识库大师
 
 把 Obsidian vault 当作一个长期演进的知识系统来管，而非散乱文件夹。基于 `obsidian-cli` 完成多库管理、安全重构、附件治理与跨库搜索。

@@ -3,7 +3,7 @@ slug: docker
 name: docker
 version: "1.0.4"
 displayName: Docker
-summary: Docker containers, images, Compose stacks, networking, volumes, debugging,
+summary: "Docker容器、镜像、Compose编排、网络与卷管理,生产环境加固全流程覆盖"
   production hardening, ...
 license: MIT-0
 description: |-

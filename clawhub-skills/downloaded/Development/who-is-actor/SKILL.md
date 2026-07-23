@@ -3,7 +3,7 @@ slug: who-is-actor
 name: who-is-actor
 version: "1.0.0"
 displayName: Who Is Actor
-summary: Git repository actor identification skill.
+summary: "Git仓库参与者识别技能(社区下载版)"
 license: MIT
 description: |-
   Git repository actor identification skill。核心能力:

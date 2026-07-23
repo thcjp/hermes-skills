@@ -3,7 +3,7 @@ slug: ontology
 name: ontology
 version: "1.0.4"
 displayName: Ontology
-summary: Typed knowledge graph for structured agent memory and composable skills.
+summary: "类型化知识图谱,结构化Agent记忆与可组合技能"
 license: MIT
 description: |-
   Typed knowledge graph for structured agent memory and composable skills。核心能力:

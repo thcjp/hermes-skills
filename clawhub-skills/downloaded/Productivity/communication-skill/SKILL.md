@@ -3,7 +3,7 @@ slug: communication-skill
 name: communication-skill
 version: "0.1.0"
 displayName: Communication Skill
-summary: Helps craft context-aware, empathetic messages by synthesizing conversation
+summary: "基于对话历史与情感线索,生成有同理心的上下文感知消息,提升沟通质量"
   history, emotional cu...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: art
 name: art
 version: "1.0.0"
 displayName: Art
-summary: Guide art creation, technique development, and appreciation with practical,
+summary: "艺术创作指导,涵盖技法发展与鉴赏,提供基于媒介的专业建议,提升创作水平"
   medium-specific advice.
 license: MIT
 description: |-

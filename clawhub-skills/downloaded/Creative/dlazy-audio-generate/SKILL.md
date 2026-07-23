@@ -3,7 +3,7 @@ slug: dlazy-audio-generate
 name: dlazy-audio-generate
 version: "1.3.3"
 displayName: Dlazy Audio Generate
-summary: Audio generation skill. Automatically selects the best dlazy CLI audio/TTS
+summary: "音频生成,自动选最佳dlazy CLI音频/TTS模型"
   model based on the pro...
 license: MIT-0
 description: |-

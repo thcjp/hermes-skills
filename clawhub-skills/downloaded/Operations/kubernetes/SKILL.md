@@ -3,7 +3,7 @@ slug: kubernetes
 name: kubernetes
 version: "2.1.0"
 displayName: Kubernetes
-summary: Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-agent system
+summary: "Kubernetes与OpenShift多Agent协同系统,集群运维全流程自动化编排"
   for cluster operat...
 license: MIT-0
 description: |-

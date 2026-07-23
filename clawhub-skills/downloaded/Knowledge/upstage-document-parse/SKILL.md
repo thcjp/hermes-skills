@@ -3,7 +3,7 @@ slug: upstage-document-parse
 name: upstage-document-parse
 version: "1.0.5"
 displayName: Upstage Document Par
-summary: Parse documents (PDF, images, DOCX, PPTX, XLSX, HWP) into layout-aware markdown/HTML
+summary: "把PDF/图片/DOCX/PPTX/XLSX/HWP解析为带版面markdown/HTML"
   with tables,...
 license: MIT-0
 description: |-

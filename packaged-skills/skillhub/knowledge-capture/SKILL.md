@@ -3,7 +3,7 @@ slug: "knowledge-capture"
 name: "knowledge-capture"
 version: "0.1.0"
 displayName: "Knowledge Capture"
-summary: "Transform conversations and discussions into structured Notion documentation"
+summary: "把对话讨论转为结构化Notion文档"
 license: "Proprietary"
 description: |-
   Transform conversations and discussions into structured Notion documentation
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Knowledge Capture

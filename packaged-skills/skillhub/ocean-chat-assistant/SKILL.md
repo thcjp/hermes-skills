@@ -3,7 +3,7 @@ slug: "ocean-chat-assistant"
 name: "ocean-chat-assistant"
 version: "2.20.0"
 displayName: "Ocean Chat"
-summary: "OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,"
+summary: "OceanBus驱动的P2P消息/共享通讯录/1v1约见/话题"
 license: "Proprietary"
 description: |-
   OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,

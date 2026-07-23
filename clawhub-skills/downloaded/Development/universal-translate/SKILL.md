@@ -3,7 +3,7 @@ slug: universal-translate
 name: universal-translate
 version: "1.0.0"
 displayName: Universal Translate
-summary: Translate text, files, and conversations between any languages. Auto-detects
+summary: "在任意语言间翻译文本/文件/对话,自动检测源语言(社区下载版)"
   source language. Pre...
 license: MIT-0
 description: |-

@@ -3,7 +3,7 @@ slug: "frontend-design"
 name: "frontend-design"
 version: "1.1.0"
 displayName: "Frontend Design"
-summary: "Create distinctive, production-grade frontend interfaces with high design"
+summary: "打造独特生产级前端界面,高设计质量,告别AI通用感"
 license: "Proprietary"
 description: |-
   Create distinctive, production-grade frontend interfaces with high design
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Frontend Design

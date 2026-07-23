@@ -3,7 +3,7 @@ slug: news
 name: news
 version: "1.0.1"
 displayName: News
-summary: Personalized news briefings that learn your interests, formats, and timing
+summary: "个性化新闻简报,学习用户兴趣、格式与时间偏好,精准推送高相关度资讯"
   preferences.
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: "game-developer-skill"
 name: "game-developer-skill"
 version: "1.0.0"
 displayName: "Game Developer Skill"
-summary: "Use when building game systems, implementing Unity/Unreal features, or optimizing"
+summary: "构建游戏系统/实现Unity与Unreal特性/优化性能"
 license: "Proprietary"
 description: |-
   Use when building game systems, implementing Unity/Unreal features,
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Game Developer Skill

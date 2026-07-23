@@ -3,7 +3,7 @@ slug: telegram-messaging
 name: telegram-messaging
 version: "0.2.2"
 displayName: Telegram
-summary: Send messages, manage chats, handle files, and automate Telegram bot workflows
+summary: "经Telegram Bot发消息/管聊天/处理文件/自动化工作流"
   via the Telegram B...
 license: MIT-0
 description: |-

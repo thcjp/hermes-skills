@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 竞品广告侦察兵
 
 从广告库提取并分析竞品广告。不仅看竞品投了什么广告,更分析为什么这样投,为你的投放提供情报。

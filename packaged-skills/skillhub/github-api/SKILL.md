@@ -3,7 +3,7 @@ slug: "github-api"
 name: "github-api"
 version: "1.0.7"
 displayName: "GitHub"
-summary: "This is a disclosed GitHub integration that uses Maton-managed OAuth/API"
+summary: "经Maton托管OAuth/API接入GitHub,含适当权限范围"
 license: "Proprietary"
 description: |-
   This is a disclosed GitHub integration that uses Maton-managed OAuth/API
@@ -14,8 +14,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # GitHub

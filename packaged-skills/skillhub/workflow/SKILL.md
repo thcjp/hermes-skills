@@ -3,7 +3,7 @@ slug: "workflow"
 name: "workflow"
 version: "1.0.0"
 displayName: "Workflow"
-summary: "Build automated pipelines with reusable components, data flow between nodes,"
+summary: "用可复用组件/节点间数据流/状态管理建自动化流水线"
 license: "Proprietary"
 description: |-
   Build automated pipelines with reusable components, data flow between
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Workflow

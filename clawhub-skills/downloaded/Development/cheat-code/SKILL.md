@@ -3,7 +3,7 @@ slug: cheat-code
 name: cheat-code
 version: "1.0.11"
 displayName: Cheat Code
-summary: Makes your agent's talents limitless. Tell your agent what you want. Watch
+summary: "让Agent才能无极限,说出想要即兑现,解锁隐藏能力(社区下载版)"
   it deliver.
 license: MIT
 description: |-

@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "发丰富交易告警到Telegram,任一加密事件或组合更新"
 ---
-
 # Telegram Alerts
 
 Send rich trading alerts to Telegram for any crypto event or portfolio update.

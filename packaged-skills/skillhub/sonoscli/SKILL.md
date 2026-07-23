@@ -3,7 +3,7 @@ slug: "sonoscli"
 name: "sonoscli"
 version: "1.0.0"
 displayName: "Sonoscli"
-summary: "Control Sonos speakers (discover/status/play/volume/group)."
+summary: "控Sonos音箱,发现/状态/播放/音量/分组"
 license: "Proprietary"
 description: |-
   Control Sonos speakers (discover/status/play/volume/group)。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Sonoscli

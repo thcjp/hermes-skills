@@ -3,7 +3,7 @@ slug: "ssl"
 name: "ssl"
 version: "1.0.2"
 displayName: "SSL"
-summary: "Set up HTTPS, manage TLS certificates, and debug secure connection issues."
+summary: "配HTTPS/管TLS证书/调安全连接问题"
 license: "Proprietary"
 description: |-
   Set up HTTPS, manage TLS certificates, and debug secure connection issues。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # SSL
@@ -50,9 +50,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| HTTPS配置 | 域名和服务器信息 | TLS证书配置和HTTPS启用指南 |
+| 证书管理 | 域名和证书类型 | 证书申请/续期/部署方案 |
+| 连接调试 | 域名和端口 | TLS握手分析和安全评级 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非TLS/SSL协议的传输安全(如SSH密钥管理)
 
 ## 使用流程
 
@@ -65,8 +67,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| domain | string | 是 | 目标域名 |
+| cert_type | string | 否 | 证书类型, 可选: letsenrypt/commercial/wildcard, 默认: letsencrypt |
 
 ## 输出格式
 
@@ -109,22 +111,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -135,7 +128,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -155,7 +147,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

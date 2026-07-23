@@ -3,7 +3,7 @@ slug: "tardis"
 name: "tardis"
 version: "1.2.0"
 displayName: "TARDIS"
-summary: "The core time tracker appears legitimate, but the package also includes broad"
+summary: "核心时间追踪(含较广密钥加载需谨慎)"
 license: "Proprietary"
 description: |-
   The core time tracker appears legitimate, but the package also includes
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # TARDIS

@@ -3,7 +3,7 @@ slug: "html-coder"
 name: "html-coder"
 version: "2.0.1"
 displayName: "HTML Coder"
-summary: "Expert HTML development skill for building web pages, forms, and interactive"
+summary: "专家级HTML开发,构建网页/表单/交互内容"
 license: "Proprietary"
 description: |-
   Expert HTML development skill for building web pages, forms, and interactive
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # HTML Coder
 
@@ -40,9 +40,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 网页开发 | 页面需求和设计规范 | 语义化HTML和响应式布局 |
+| 表单构建 | 表单字段和验证规则 | 可访问的HTML表单和验证脚本 |
+| 交互组件 | 组件描述和交互行为 | HTML组件和事件处理代码 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：后端API开发和数据库设计场景
 
 ## 使用流程
 
@@ -55,8 +57,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| page_description | string | 是 | 页面需求描述 |
+| framework | string | 否 | 目标框架, 可选: vanilla/bootstrap/tailwind, 默认: vanilla |
 
 ## 输出格式
 
@@ -99,24 +101,13 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
-| 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后 |
-| 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
-| 审查超时 | 内容过长导致处理超时 | 建议分段审查, 每段不超过5000字 |
-| 其他异常 | 内部处理异常 | 检查输入后 |
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -127,7 +118,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -147,7 +137,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

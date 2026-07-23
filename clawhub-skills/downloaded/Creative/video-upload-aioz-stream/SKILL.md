@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "上传视频到AIOZ Stream API,3步完成"
 ---
-
 # Upload video to AIOZ Stream
 
 Upload videos to AIOZ Stream API quickly with API key authentication. The full upload flow requires 3 API calls: Create → Upload Part → Complete.

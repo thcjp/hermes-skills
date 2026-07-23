@@ -3,7 +3,7 @@ slug: "token-layer"
 name: "token-layer"
 version: "1.0.3"
 displayName: "Token Layer"
-summary: "Token Layer - Censorship resistant crosschain public token infrastructure."
+summary: "抗审查跨链公共代币基础设施,一次发行处处交易"
 license: "Proprietary"
 description: |-
   Token Layer - Censorship resistant crosschain public token infrastructure。Launch once, trade eve。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Token Layer
 

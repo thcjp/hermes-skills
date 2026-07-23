@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 批处理指挥官（专业版）
 
 > **企业级批处理编排系统。并行决策+高级检查点+回滚模式+子Agent委派，大规模处理高效安全可恢复。**

@@ -3,7 +3,7 @@ slug: "feishu-doc-write"
 name: "feishu-doc-write"
 version: "1.0.0"
 displayName: "feishu-doc-write"
-summary: "Feishu (Lark) Document API writing spec. Converts Markdown content to Feishu"
+summary: "飞书文档API写入规范,把Markdown转飞书Block结构"
 license: "Proprietary"
 description: |-
   Feishu (Lark) Document API writing spec。Converts Markdown content to
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # feishu-doc-write
 

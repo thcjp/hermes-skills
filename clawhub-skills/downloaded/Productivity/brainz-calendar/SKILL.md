@@ -3,7 +3,7 @@ slug: brainz-calendar
 name: brainz-calendar
 version: "1.0.0"
 displayName: Calendar
-summary: Manage Google Calendar events using `gcalcli`. Create, list, and delete calendar
+summary: "使用gcalcli管理Google日历事件,创建、列出、删除日程,命令行日历操作"
   events from the ...
 license: MIT
 description: |-

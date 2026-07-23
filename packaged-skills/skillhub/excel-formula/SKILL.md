@@ -3,7 +3,7 @@ slug: "excel-formula"
 name: "excel-formula"
 version: "2.0.1"
 displayName: "Excel Formula"
-summary: "Generate Excel formulas from descriptions and diagnose spreadsheet errors."
+summary: "从描述生成Excel公式并诊断表格错误,VLOOKUP不再难"
 license: "Proprietary"
 description: |-
   Generate Excel formulas from descriptions and diagnose spreadsheet errors。Use when writing VLOOK。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
@@ -16,9 +16,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Excel Formula
 

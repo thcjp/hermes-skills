@@ -3,7 +3,7 @@ slug: excel-formula
 name: excel-formula
 version: "2.0.1"
 displayName: Excel Formula
-summary: Generate Excel formulas from descriptions and diagnose spreadsheet errors.
+summary: "从描述生成Excel公式并诊断表格错误,VLOOKUP不再难(社区下载版)"
   Use when writing VLOOK...
 license: MIT-0
 description: |-

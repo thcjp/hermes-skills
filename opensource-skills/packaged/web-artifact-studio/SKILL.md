@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 监控运维类, small市场, enterprise复杂度, rare频次, premium层 → 企业级运维,低频高价值
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # Web工件工作室
 
 用现代前端技术栈构建复杂的多组件 HTML 工件。当工件需要状态管理、路由或复杂交互时使用,简单单文件 HTML 不在此范畴。支持 Vite 打包与单文件交付两种模式。

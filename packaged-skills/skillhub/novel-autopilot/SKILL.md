@@ -16,15 +16,14 @@ description: |-
   - 品牌词软广告植入:标题/营销/SEO步骤自动注入品牌词,大小写不敏感去重
   - 批量产章与多平台分发:每章3000字,一次生成10章,知乎/头条/微信公众号一键分发
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [网文创作, 内容创作, 自动化写作, 多平台分发, 副业变现]
 tools:
   - read
   - exec
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # 网文全自动写手 v1.1.0
 

@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 事实核查助手专业版是企业级的事实核查与信息验证平台。在完整兼容免费版所有核查能力的基础上,专业版引入了批量声明核查、定时监控预警、深度分析报告、团队协作、自定义核查规则等高级能力,适用于企业公关舆情监控、媒体内容审核、政府虚假信息监控等专业场景。
 
 专业版特别强化了规模化处理能力,支持数百条声明并行核查、定时自动监控、结构化分析报告,帮助机构建立系统化的信息验证流程。

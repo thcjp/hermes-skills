@@ -31,11 +31,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 专注流优化器（专业版）
 
 > **全功能生产力操作系统。七角色场景、团队协作、深度性能分析、多平台集成，从工具堆砌走向系统化专注。**

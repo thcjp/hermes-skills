@@ -43,11 +43,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 社交情感分析专业版
 ## 概述
 社交情感分析专业版是企业级社交媒体情感监控与分析系统。在免费版单平台采集、词典法分类、基础主题提取的基础上,专业版扩展了多平台社交数据批量采集(Twitter/Reddit/Instagram等)、LLM增强情感分析(准确率85-95%)、病毒式传播内容检测、竞品情感对比分析、定时监控与负面舆情告警、可视化报告生成等企业级能力。

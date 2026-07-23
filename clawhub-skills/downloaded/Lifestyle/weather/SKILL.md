@@ -3,7 +3,7 @@ slug: weather
 name: weather
 version: "1.0.0"
 displayName: Weather
-summary: Get current weather and forecasts (no API key required).
+summary: "免API Key获取天气与预报,零配置即可查询全球城市实时气象数据"
 license: MIT
 description: |-
   Get current weather and forecasts (no API key required)。核心能力:

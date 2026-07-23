@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # Linear 工作流机器人
 
 自动化流水线：**Linear → Webhook 平台 → 通知通道 → 任务执行 → Git 同步**。在 Linear 创建的任务自动触发处理，实时通知、执行、回写结果并同步到 Git 仓库，含 Webhook 自愈与免费额度降级机制。

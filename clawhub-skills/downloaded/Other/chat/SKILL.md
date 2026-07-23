@@ -3,7 +3,7 @@ slug: chat
 name: chat
 version: "1.1.0"
 displayName: Chat
-summary: Learns communication preferences from explicit feedback. Adapts tone, format,
+summary: "从用户反馈中学习通信偏好,自适应调整语气、格式与风格,提升沟通效率"
   and style.
 license: MIT
 description: |-

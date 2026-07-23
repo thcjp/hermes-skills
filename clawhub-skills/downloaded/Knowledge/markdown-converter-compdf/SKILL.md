@@ -3,7 +3,7 @@ slug: markdown-converter-compdf
 name: markdown-converter-compdf
 version: "1.2.0"
 displayName: Markdown convert
-summary: Process, convert, edit, and extract data from PDF files using the ComPDF
+summary: "用ComPDF Cloud API处理/转换/编辑/提取PDF(社区下载版)"
   Cloud API. Supports form...
 license: MIT-0
 description: |-

@@ -3,7 +3,7 @@ slug: discrawl
 name: discrawl
 version: "1.0.0"
 displayName: Discrawl
-summary: "Discord archive: search, sync freshness, DMs, channel slices, SQL counts."
+summary: "Discord归档,搜索/同步新鲜度/私信/频道切片/SQL计数(社区下载版)"
 license: MIT
 description: |-
   Discord archive: search, sync freshness, DMs, channel slices, SQL counts。核心能力:

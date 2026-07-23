@@ -3,7 +3,7 @@ slug: "version-control-workflows"
 name: "version-control-workflows"
 version: "1.0.0"
 displayName: "Git Workflows"
-summary: "Advanced git operations beyond add/commit/push. Use when rebasing, bisecting"
+summary: "add/commit/push之外的高级git操作,rebase/bisect/worktree"
 license: "Proprietary"
 description: |-
   Advanced git operations beyond add/commit/push。Use when rebasing, bisecting

@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 网盘同步专家
 
 百度网盘文件管理工具，所有操作限制在 `/apps/bdpan/` 目录内。适配所有支持 SKILL.md 的 Agent 平台。

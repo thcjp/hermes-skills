@@ -3,7 +3,7 @@ slug: typescript-skills
 name: typescript-skills
 version: "1.0.6"
 displayName: TypeScript
-summary: Provide best-practice coding conventions and generate standards-compliant
+summary: "提供最佳实践编码约定并生成标准TypeScript代码"
   TypeScript code.
 license: MIT-0
 description: |-

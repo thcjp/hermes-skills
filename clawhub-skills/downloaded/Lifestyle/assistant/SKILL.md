@@ -3,7 +3,7 @@ slug: assistant
 name: assistant
 version: "1.0.0"
 displayName: Assistant
-summary: Manage tasks, communications, and scheduling with proactive and organized
+summary: "任务日程通信一站式管理,主动提醒待办,解决多工具切换效率低下痛点"
   support.
 license: MIT
 description: |-

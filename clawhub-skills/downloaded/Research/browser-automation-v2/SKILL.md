@@ -3,7 +3,7 @@ slug: browser-automation-v2
 name: browser-automation-v2
 version: "2.0.0"
 displayName: Browser Automation V
-summary: Enterprise-grade browser automation with automatic tab cleanup, timeout retries,
+summary: "企业级浏览器自动化:自动标签清理、超时重试、并发锁,保障长时间任务稳定运行"
   concurrency lock...
 license: MIT
 description: |-

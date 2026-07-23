@@ -28,11 +28,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 面向团队与企业的全功能多云存储管理平台。在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等8项高级能力。
 
 ## 概述

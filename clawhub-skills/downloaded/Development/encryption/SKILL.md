@@ -3,7 +3,7 @@ slug: encryption
 name: encryption
 version: "1.0.0"
 displayName: Encryption
-summary: Encrypt files, secure passwords, manage keys, and audit code for cryptographic
+summary: "加密文件/管密钥/审代码加密实践,守住密码安全(社区下载版)"
   best practices.
 license: MIT
 description: |-

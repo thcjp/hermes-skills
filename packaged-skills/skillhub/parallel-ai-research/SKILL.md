@@ -3,7 +3,7 @@ slug: "parallel-ai-research"
 name: "parallel-ai-research"
 version: "1.1.0"
 displayName: "Research"
-summary: "Conduct open-ended research on a topic, building a living markdown document."
+summary: "开放式主题研究,构建活的Markdown文档,支持交互"
 license: "Proprietary"
 description: |-
   Conduct open-ended research on a topic, building a living markdown document。Supports interactive。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Research
 

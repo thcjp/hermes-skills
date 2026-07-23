@@ -3,7 +3,7 @@ slug: "python-dataviz"
 name: "python-dataviz"
 version: "1.0.0"
 displayName: "Python Dataviz"
-summary: "Professional data visualization using Python (matplotlib, seaborn, plotly)."
+summary: "用Python(matplotlib/seaborn/plotly)做专业数据可视化"
 license: "Proprietary"
 description: |-
   Professional data visualization using Python (matplotlib, seaborn, plotly)。Create publication-qu。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Python Dataviz
 

@@ -3,7 +3,7 @@ slug: "mac-node-snapshot"
 name: "mac-node-snapshot"
 version: "1.0.0"
 displayName: "mac-node-snapshot"
-summary: "A robust, permission-friendly method to capture macOS screens via SkillHub"
+summary: "经SkillHub screen record权限友好地截macOS屏幕"
 license: "Proprietary"
 description: |-
   A robust, permission-friendly method to capture macOS screens via SkillHub
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # mac-node-snapshot
 

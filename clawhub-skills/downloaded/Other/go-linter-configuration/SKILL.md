@@ -3,7 +3,7 @@ slug: go-linter-configuration
 name: go-linter-configuration
 version: "1.0.0"
 displayName: Go Linter Configurat
-summary: Configure and troubleshoot golangci-lint for Go projects. Handle import resolution
+summary: "配置排查golangci-lint,处理导入解析与类型检查问题,提升Go代码质量"
   issues, type-c...
 license: MIT
 description: |-

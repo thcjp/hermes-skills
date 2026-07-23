@@ -3,7 +3,7 @@ slug: "straker-verify"
 name: "straker-verify"
 version: "1.0.0"
 displayName: "Straker Verify"
-summary: "Professional AI-powered translation with optional human verification. Supports"
+summary: "专业AI翻译+可选人工校验,支持100+语言"
 license: "Proprietary"
 description: |-
   Professional AI-powered translation with optional human verification。Supports 100+ languages。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
@@ -33,9 +33,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Straker Verify
 

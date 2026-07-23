@@ -3,7 +3,7 @@ slug: "brave-search"
 name: "brave-search"
 version: "1.0.1"
 displayName: "Brave Search"
-summary: "Web search and content extraction via Brave Search API."
+summary: "经Brave Search API做网页搜索与内容提取,隐私优先"
 license: "Proprietary"
 description: |-
   Web search and content extraction via Brave Search API。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Brave Search

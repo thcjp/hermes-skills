@@ -32,11 +32,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # Linear流程CLI（专业版）
 
 > Agent原生的Linear自动化中枢。批量操作、dry-run预览、自动化策略、Slack集成、Git联动，让AI Agent接管你的任务管理工作流。

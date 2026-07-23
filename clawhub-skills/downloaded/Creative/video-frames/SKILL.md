@@ -3,7 +3,7 @@ slug: video-frames
 name: video-frames
 version: "1.0.0"
 displayName: Video Frames
-summary: Extract frames or short clips from videos using ffmpeg.
+summary: "用ffmpeg从视频提取帧或短片段(社区下载版)"
 license: MIT
 description: |-
   Extract frames or short clips from videos using ffmpeg。核心能力:

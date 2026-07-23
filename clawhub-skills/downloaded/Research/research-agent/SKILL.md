@@ -3,7 +3,7 @@ slug: research-agent
 name: research-agent
 version: "1.0.0"
 displayName: Research
-summary: Conduct open-ended research on a topic, building a living markdown document.
+summary: "开放式主题研究Agent,构建可迭代的Markdown活文档,支持交互式深度探索"
   Supports interactive...
 license: MIT
 description: |-

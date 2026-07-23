@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 项目管理类, medium市场, enterprise复杂度, monthly频次, business层 → 企业团队工具
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 计划架构师
 
 将设计文档转化为可执行的详细实现计划。每个任务都是 2-5 分钟可完成的粒度,包含精确的文件路径、完整的代码片段、明确的验证步骤。让一个"热情但缺乏判断力的初级工程师"也能按计划执行。

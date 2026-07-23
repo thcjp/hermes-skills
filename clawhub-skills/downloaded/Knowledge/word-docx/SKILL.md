@@ -3,7 +3,7 @@ slug: word-docx
 name: word-docx
 version: "1.0.2"
 displayName: Word / DOCX
-summary: Create, inspect, and edit Microsoft Word documents and DOCX files with reliable
+summary: "创建、检查、编辑Word/DOCX文档,支持样式与编号,解决手动排版效率低问题"
   styles, numbering...
 license: MIT-0
 description: |-

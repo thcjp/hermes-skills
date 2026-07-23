@@ -3,7 +3,7 @@ slug: "productivity-improving"
 name: "productivity-improving"
 version: "1.1.0"
 displayName: "Productivity Tracker"
-summary: "Productivity tracker and daily review assistant. Input activity logs, time"
+summary: "生产力追踪与每日复盘助手,输入活动日志/目标/日报"
 license: "Proprietary"
 description: |-
   Productivity tracker and daily review assistant。Input activity logs,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Productivity Tracker
 

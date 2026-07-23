@@ -3,7 +3,7 @@ slug: social-media-scheduler
 name: social-media-scheduler
 version: "1.0.0"
 displayName: Social Media Schedul
-summary: Plan, draft, and organize social media content across platforms. Create content
+summary: "跨平台规划起草组织社媒内容,建内容日历"
   calendars, write ...
 license: MIT
 description: |-

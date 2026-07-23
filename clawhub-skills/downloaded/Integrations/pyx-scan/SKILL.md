@@ -3,7 +3,7 @@ slug: pyx-scan
 name: pyx-scan
 version: "1.1.0"
 displayName: Pyx Scan
-summary: Check whether an AI agent skill is safe before installing or using it. Calls
+summary: "装用前查AI Agent技能是否安全,调PYX Scanner API"
   the PYX Scanner API ...
 license: MIT
 description: |-

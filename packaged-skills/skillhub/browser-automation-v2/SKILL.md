@@ -3,7 +3,7 @@ slug: "browser-automation-v2"
 name: "browser-automation-v2"
 version: "2.0.0"
 displayName: "Browser Automation V"
-summary: "Enterprise-grade browser automation with automatic tab cleanup, timeout retries,"
+summary: "企业级浏览器自动化,自动清标签/超时重试/并发锁,稳如生产"
 license: "Proprietary"
 description: |-
   Enterprise-grade browser automation with automatic tab cleanup, timeout
@@ -16,9 +16,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Browser Automation V
 

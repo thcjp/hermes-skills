@@ -3,7 +3,7 @@ slug: mongodb-atlas-admin
 name: mongodb-atlas-admin
 version: "1.0.0"
 displayName: MongoDB Atlas
-summary: browse MongoDB Atlas Admin API specifications and execute operations (if
+summary: "浏览MongoDB Atlas Admin API规范并执行操作"
   credentials provided).
 license: MIT
 description: |-

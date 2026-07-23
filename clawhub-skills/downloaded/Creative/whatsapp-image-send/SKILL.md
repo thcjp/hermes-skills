@@ -3,7 +3,7 @@ slug: whatsapp-image-send
 name: whatsapp-image-send
 version: "1.0.1"
 displayName: WhatsApp Image Send
-summary: Send images, videos, audio, or documents via WhatsApp by downloading, copying
+summary: "经WhatsApp发图/视频/音频/文档,下载转存后发送(社区下载版)"
   to workspace, sendi...
 license: MIT
 description: |-

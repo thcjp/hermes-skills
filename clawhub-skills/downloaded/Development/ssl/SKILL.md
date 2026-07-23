@@ -3,7 +3,7 @@ slug: ssl
 name: ssl
 version: "1.0.2"
 displayName: SSL
-summary: Set up HTTPS, manage TLS certificates, and debug secure connection issues.
+summary: "配HTTPS/管TLS证书/调安全连接问题(社区下载版)"
 license: MIT
 description: |-
   Set up HTTPS, manage TLS certificates, and debug secure connection issues。核心能力:

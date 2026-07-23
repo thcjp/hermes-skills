@@ -3,7 +3,7 @@ slug: "art"
 name: "art"
 version: "1.0.0"
 displayName: "Art"
-summary: "Guide art creation, technique development, and appreciation with practical,"
+summary: "指导艺术创作技法精进与鉴赏,提供分媒介实操建议,提升创作水准"
 license: "Proprietary"
 description: |-
   Guide art creation, technique development, and appreciation with practical,
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Art

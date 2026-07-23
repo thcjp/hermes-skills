@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 定时调度专家
 
 把"每两小时检查一次收件箱"这种模糊意图，变成可信任、可审计、可预览的执行契约。本技能解决五个核心痛点：**时区漂移**（"9点"到底是哪个时区）、**任务漏跑**（调度器没跑或跑了不知道）、**一次性任务堆积**（提醒完了任务不清理）、**并发死锁**（add 后立刻 update 导致锁冲突）、**失败无感知**（任务挂了没人知道）。

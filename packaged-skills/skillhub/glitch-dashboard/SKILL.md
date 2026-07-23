@@ -3,7 +3,7 @@ slug: "glitch-dashboard"
 name: "glitch-dashboard"
 version: "2026.2.18"
 displayName: "Dashboard"
-summary: "Unified web dashboard for managing task queues, monitoring system metrics,"
+summary: "统一Web仪表盘,管任务队列/监控指标/查ZeroTier状态"
 license: "Proprietary"
 description: |-
   Unified web dashboard for managing task queues, monitoring system metrics,
@@ -16,9 +16,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Dashboard
 

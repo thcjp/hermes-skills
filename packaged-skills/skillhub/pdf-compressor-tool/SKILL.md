@@ -3,7 +3,7 @@ slug: "pdf-compressor-tool"
 name: "pdf-compressor-tool"
 version: "1.0.0"
 displayName: "Compress PDF"
-summary: "Compress a user-provided PDF by uploading it to Cross-Service-Solutions,"
+summary: "上传PDF到Cross-Service-Solutions压缩,轮询至完成"
 license: "Proprietary"
 description: |-
   Compress a user-provided PDF by uploading it to Cross-Service-Solutions,

@@ -3,7 +3,7 @@ slug: "sovereign-aws-cost-optimizer"
 name: "sovereign-aws-cost-optimizer"
 version: "1.0.0"
 displayName: "AWS Cost Optimizer"
-summary: "Analyzes AWS infrastructure for cost savings. Right-sizing, Reserved Instances,"
+summary: "分析AWS基础设施省钱,右尺寸/预留实例/储蓄计划"
 license: "Proprietary"
 description: |-
   Analyzes AWS infrastructure for cost savings。Right-sizing, Reserved
@@ -40,9 +40,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| AWS成本分析 | AWS账户和区域配置 | 成本优化报告和节省建议 |
+| 实例规格优化 | EC2实例使用率数据 | Right-sizing建议和预估节省 |
+| 预留实例规划 | 历史使用量和预算 | RI购买建议和覆盖率分析 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非AWS云平台的成本优化(如Azure/GCP)
 
 ## 使用流程
 
@@ -55,8 +57,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| aws_account | string | 是 | AWS账户ID |
+| region | string | 否 | 目标区域, 如: us-east-1/ap-northeast-1, 默认: 全部区域 |
 
 ## 输出格式
 
@@ -99,22 +101,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -125,7 +118,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -145,7 +137,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

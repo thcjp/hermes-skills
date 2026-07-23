@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # CDP浏览器领航（专业版）
 
 > **企业级CDP浏览器自动化系统。平台踩坑+SPA导航+连接管理+反检测，复杂场景稳定可靠。**

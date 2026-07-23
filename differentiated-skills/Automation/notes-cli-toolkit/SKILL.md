@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 笔记 CLI 工具箱
 
 把 Obsidian vault 当作可被脚本批处理的笔记数据库。基于 `notesmd-cli` 完成无头创建、frontmatter 治理、daily note 模板化与编辑器集成。

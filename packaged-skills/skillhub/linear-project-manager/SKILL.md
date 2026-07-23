@@ -3,7 +3,7 @@ name: "（根据实际场景填充）"
 slug: "linear-project-manager"
 displayName: "Linear项目管理"
 version: "1.0.0"
-summary: "Linear项目管理提供（根据实际场景填充）、（根据实际场景填充）、（根据实际场景填充）等核心能力,付费版独享高级功能与批量处理。"
+summary: "封装Linear项目管理API,请求参数直转响应数据,付费版独享批量与高级配置"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据。
   Use when 用户说"（根据实际场景填充）"、（根据实际场景填充）时使用。
@@ -13,12 +13,12 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
 tags:
   - 通用办公
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # （根据实际场景填充）
 

@@ -8,14 +8,13 @@ license: Proprietary
 description: |-
   AI搜索占位师——AI搜索时代品牌霸屏利器,5维GEO评分模型+JSON-LD结构化数据注入+评分门控自动优化重试,提升AI搜索引擎(如文心一言/Kimi/通义千问/Perplexity)引用率。核心能力:JSON-LD结构化数据注入(Article/HowTo/FAQPage/Product)、FAQ Schema自动生成、5维GEO评分(结构化数据/引用潜力/AI可访问性/EEAT/内容质量)、llms_txt摘要生成、评分门控(低于60分自动优化重试最多2次)
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [AI搜索优化, GEO, 品牌占位, 结构化数据]
 tools:
   - read
-pricing_rationale: "SEO优化类, medium市场, enterprise复杂度, monthly频次, business层 → 效果可量化,企业刚需"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # AI搜索占位师 v1.1.0
 

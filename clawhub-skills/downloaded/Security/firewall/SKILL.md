@@ -3,7 +3,7 @@ slug: firewall
 name: firewall
 version: "1.0.0"
 displayName: Firewall
-summary: Configure firewalls on servers and cloud providers with security best practices.
+summary: "在服务器与云服务商上配置防火墙,遵循安全最佳实践,构建网络边界防护"
 license: MIT
 description: |-
   Configure firewalls on servers and cloud providers with security best

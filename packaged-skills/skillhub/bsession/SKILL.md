@@ -3,7 +3,7 @@ slug: "bsession"
 name: "bsession"
 version: "0.1.0"
 displayName: "browser"
-summary: "Browser automation — setup the bsession environment, fetch info from a website"
+summary: "搭bsession环境做浏览器自动化,一次性抓取或建持久会话"
 license: "Proprietary"
 description: |-
   Browser automation — setup the bsession environment, fetch info from
@@ -16,8 +16,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # browser

@@ -3,7 +3,7 @@ slug: design
 name: design
 version: "1.0.0"
 displayName: Design
-summary: Auto-learns your visual preferences. Adapts to UI, graphics, video, and any
+summary: "自动学习视觉偏好,适配UI/图形/视频等创意工作"
   creative work.
 license: MIT
 description: |-

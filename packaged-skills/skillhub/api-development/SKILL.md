@@ -3,7 +3,7 @@ slug: "api-development"
 name: "api-development"
 version: "1.0.0"
 displayName: "api-development"
-summary: "Meta-skill that orchestrates the full API development lifecycle — from design"
+summary: "编排API全生命周期,从设计到文档/测试/部署一站完成,规范产出API"
 license: "Proprietary"
 description: |-
   Meta-skill that orchestrates the full API development lifecycle — from
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # api-development

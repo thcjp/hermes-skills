@@ -3,7 +3,7 @@ slug: "notion-pages"
 name: "notion-pages"
 version: "0.1.1"
 displayName: "Notion"
-summary: "Search pages and databases, update content, and manage Notion workspace data"
+summary: "搜页面数据库/更新内容/管Notion工作区数据"
 license: "Proprietary"
 description: |-
   Search pages and databases, update content, and manage Notion workspace
@@ -16,9 +16,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Notion
 

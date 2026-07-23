@@ -3,7 +3,7 @@ slug: "ziptax"
 name: "ziptax"
 version: "1.0.0"
 displayName: "Ziptax Sales Tax"
-summary: "This sales-tax lookup skill is legitimate in purpose, but its bundled lookup"
+summary: "销售税查询(其脚本可本地运行需谨慎)"
 license: "Proprietary"
 description: |-
   This sales-tax lookup skill is legitimate in purpose, but its bundled

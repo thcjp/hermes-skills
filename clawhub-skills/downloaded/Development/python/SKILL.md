@@ -3,7 +3,7 @@ slug: python
 name: python
 version: "1.0.0"
 displayName: Python
-summary: Python coding guidelines and best practices. Use when writing, reviewing,
+summary: "Python编码规范与最佳实践,写审重构时用(社区下载版)"
   or refactoring Python c...
 license: MIT
 description: |-

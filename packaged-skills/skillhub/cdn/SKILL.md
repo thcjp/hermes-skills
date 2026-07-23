@@ -3,7 +3,7 @@ slug: "cdn"
 name: "cdn"
 version: "1.0.1"
 displayName: "CDN"
-summary: "Configure, optimize, and troubleshoot CDN deployments with caching strategies,"
+summary: "配置优化排障CDN部署,缓存策略+安全加固,加速又稳"
 license: "Proprietary"
 description: |-
   Configure, optimize, and troubleshoot CDN deployments with caching strategies,

@@ -3,8 +3,7 @@ slug: rss-ai-reader
 name: rss-ai-reader
 version: "1.0.0"
 displayName: Rss Ai Reader
-summary: "📰 RSS AI 阅读器 — 自动抓取订阅、LLM生成摘要、多渠道推送！ 支持 ai-assistant/llm-provider 生成中文摘要，推送到飞书/Telegram/Email。
-  触发条件: 用户要求订阅RS"
+summary: "RSS自动抓取与LLM中文摘要生成,推送飞书/Telegram/Email,SQLite去重,社区下载版"
 license: MIT
 description: |-
   📰 RSS AI 阅读器 — 自动抓取订阅、LLM生成摘要、多渠道推送！ 支持 ai-assistant/llm-provider 生成中文摘要，推送到飞书/Telegram/Email。触发条件: 用户要求订阅RS。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。

@@ -15,15 +15,14 @@ description: |-
   - 意境融合度评分
   - 图文+短视频双输出
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [古诗词, 内容创作, 短视频, 文化IP]
 tools:
   - read
   - exec
-pricing_rationale: "数据库类, medium市场, enterprise复杂度, monthly频次, business层 → 中频专业工具"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # 诗词匠心 Poetry Craftsman v1.1.0
 

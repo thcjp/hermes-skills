@@ -3,7 +3,7 @@ slug: work
 name: work
 version: "1.0.0"
 displayName: Work
-summary: Navigate office work with professional communication, meeting prep, workplace
+summary: "职场导航:专业沟通、会议准备、职场动态与可见度管理,提升职场软技能"
   dynamics, and visib...
 license: MIT
 description: |-

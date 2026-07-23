@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 > **批量查询+AI摘要+多渠道推送+趋势分析。企业级新闻情报全功能覆盖。**
 
 将复杂的新闻情报获取与分析任务交给专业工具处理。专业版在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力，满足企业级场景对新闻情报的深度、广度与时效性要求。

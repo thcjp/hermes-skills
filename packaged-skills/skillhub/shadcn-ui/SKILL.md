@@ -3,7 +3,7 @@ slug: "shadcn-ui"
 name: "shadcn-ui"
 version: "1.0.0"
 displayName: "Shadcn Ui"
-summary: "Use when building UI with shadcn/ui components, Tailwind CSS layouts, form"
+summary: "用shadcn/ui组件/Tailwind布局/react-hook-form表单建UI"
 license: "Proprietary"
 description: |-
   Use when building UI with shadcn/ui components, Tailwind CSS layouts,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Shadcn Ui
 

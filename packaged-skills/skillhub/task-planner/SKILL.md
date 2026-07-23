@@ -3,7 +3,7 @@ slug: "task-planner"
 name: "task-planner"
 version: "3.0.5"
 displayName: "Task Planner"
-summary: "Manage tasks, set priorities, and track deadlines locally. Supports bilingual"
+summary: "本地管任务/设优先级/追截止,支持中英双语"
 license: "Proprietary"
 description: |-
   Manage tasks, set priorities, and track deadlines locally。Supports
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Task Planner
 

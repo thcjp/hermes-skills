@@ -3,7 +3,7 @@ slug: "json"
 name: "json"
 version: "1.0.0"
 displayName: "JSON"
-summary: "Work with JSON data structures, APIs, and serialization effectively."
+summary: "高效处理JSON数据结构/API/序列化"
 license: "Proprietary"
 description: |-
   Work with JSON data structures, APIs, and serialization effectively。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # JSON

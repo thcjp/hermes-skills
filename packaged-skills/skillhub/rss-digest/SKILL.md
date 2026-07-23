@@ -3,7 +3,7 @@ slug: "rss-digest"
 name: "rss-digest"
 version: "0.2.1"
 displayName: "Rss Digest"
-summary: "Agentic RSS digest using the feed CLI. Fetch, triage, and summarize RSS feeds"
+summary: "用feed CLI做RSS摘要,抓取/分诊/汇总高价值条目"
 license: "Proprietary"
 description: |-
   Agentic RSS digest using the feed CLI。Fetch, triage, and summarize
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Rss Digest

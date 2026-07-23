@@ -3,7 +3,7 @@ slug: "cashu-emoji"
 name: "cashu-emoji"
 version: "0.1.0"
 displayName: "Cashu Emoji"
-summary: "Encode and decode Cashu tokens that are hidden inside emojis using Unicode"
+summary: "用Unicode变体选择符将Cashu令牌编解码藏于emoji,隐秘传递价值"
 license: "Proprietary"
 description: |-
   Encode and decode Cashu tokens that are hidden inside emojis using Unicode
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Cashu Emoji

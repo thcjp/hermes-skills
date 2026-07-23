@@ -3,7 +3,7 @@ slug: expanso-log-sanitize
 name: expanso-log-sanitize
 version: "1.0.0"
 displayName: Expanso log-sanitize
-summary: Sanitize log entries by removing passwords, tokens, and other sensitive patterns
+summary: "清除日志中的密码、令牌等敏感信息,防止日志泄露凭证,满足安全合规要求"
   using Expanso Ed...
 license: MIT
 description: |-

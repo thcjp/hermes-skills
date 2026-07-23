@@ -3,7 +3,7 @@ slug: azure-devops
 name: azure-devops
 version: "1.0.0"
 displayName: Azure DevOps
-summary: List Azure DevOps projects, repositories, and branches; create pull requests;
+summary: "管理Azure DevOps项目、仓库、分支,创建PR与工作项,提升研发协作效率"
   manage work items; ...
 license: MIT
 description: |-

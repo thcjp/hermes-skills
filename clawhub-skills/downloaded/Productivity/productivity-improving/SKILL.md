@@ -3,7 +3,7 @@ slug: productivity-improving
 name: productivity-improving
 version: "1.1.0"
 displayName: Productivity Tracker
-summary: Productivity tracker and daily review assistant. Input activity logs, time
+summary: "生产力追踪与每日复盘助手,输入活动日志与目标,量化效率趋势,辅助自我提升"
   notes, goals, or a dai...
 license: MIT-0
 description: |-

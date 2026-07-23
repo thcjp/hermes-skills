@@ -3,7 +3,7 @@ slug: aws
 name: aws
 version: "1.0.2"
 displayName: Aws
-summary: Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
+summary: "AWS架构设计、部署、成本优化,规避资源浪费与安全陷阱,降低云上运维成本"
   and security pitfalls.
 license: MIT
 description: |-

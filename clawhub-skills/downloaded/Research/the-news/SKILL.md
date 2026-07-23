@@ -3,7 +3,7 @@ slug: the-news
 name: the-news
 version: "1.0.17"
 displayName: The News
-summary: gives agents real-time and archival access to front-page headlines across
+summary: "提供20个国家头版新闻的实时与存档访问,覆盖突发新闻,全球资讯一站获取"
   20 countries for breaki...
 license: MIT-0
 description: |-

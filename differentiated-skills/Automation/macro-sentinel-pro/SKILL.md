@@ -28,11 +28,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 宏观哨兵（专业版）
 
 > **AI Agent的终极宏观监控方案。深度解读+高频监控+多渠道推送+可视化图表+告警预警，全场景覆盖。**

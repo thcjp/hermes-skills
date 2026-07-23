@@ -3,7 +3,7 @@ slug: linear-skill
 name: linear-skill
 version: "1.0.0"
 displayName: Linear
-summary: Manage Linear projects, issues, and tasks via the bundled Node CLI and the
+summary: "经内置Node CLI与Linear API管项目/issue/任务(社区下载版)"
   official Linear API. U...
 license: MIT
 description: |-

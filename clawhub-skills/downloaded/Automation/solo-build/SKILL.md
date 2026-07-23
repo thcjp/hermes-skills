@@ -3,7 +3,7 @@ slug: solo-build
 name: solo-build
 version: "2.2.1"
 displayName: Build
-summary: Execute implementation plan tasks with TDD workflow, auto-commit, and phase
+summary: "用TDD工作流执行实施计划任务,自动提交与阶段门禁"
   gates. Use when user ...
 license: MIT
 description: |-

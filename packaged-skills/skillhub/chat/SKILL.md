@@ -3,7 +3,7 @@ slug: "chat"
 name: "chat"
 version: "1.1.0"
 displayName: "Chat"
-summary: "Learns communication preferences from explicit feedback. Adapts tone, format,"
+summary: "从显式反馈学习沟通偏好,自适应语气/格式/风格,越用越懂你"
 license: "Proprietary"
 description: |-
   Learns communication preferences from explicit feedback。Adapts tone,

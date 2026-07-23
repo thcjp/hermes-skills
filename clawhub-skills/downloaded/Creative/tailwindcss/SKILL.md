@@ -3,7 +3,7 @@ slug: tailwindcss
 name: tailwindcss
 version: "1.0.0"
 displayName: Tailwind CSS
-summary: Write Tailwind utility classes with proper responsive design, dark mode,
+summary: "写Tailwind工具类,响应式/暗色模式/配置得当(社区下载版)"
   and configuration.
 license: MIT
 description: |-

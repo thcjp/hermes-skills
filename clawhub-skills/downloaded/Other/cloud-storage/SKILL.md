@@ -3,7 +3,7 @@ slug: cloud-storage
 name: cloud-storage
 version: "1.0.1"
 displayName: Cloud Storage
-summary: Manage files across cloud providers with authentication, cost awareness,
+summary: "跨云服务商文件管理,统一认证与成本感知,解决多云环境文件分散管理难题"
   and multi-provider opera...
 license: MIT
 description: |-

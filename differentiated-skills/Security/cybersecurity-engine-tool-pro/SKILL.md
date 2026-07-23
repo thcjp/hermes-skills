@@ -25,11 +25,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 网络安全评估引擎专业版
 ## 概述
 专业版为企业安全团队提供完整的网络安全评估与治理平台,涵盖从安全态势评估到安全程序设计的全生命周期管理。在免费版基础评估能力之上,新增十二阶段深度评估、STRIDE+攻击树威胁建模、SOC 2/ISO 27001/GDPR/HIPAA合规框架映射、100分制多维安全评分、自动化漏洞SLA跟踪与企业级报告导出。专业版完全兼容免费版评估方法,已有评估流程可无缝升级。

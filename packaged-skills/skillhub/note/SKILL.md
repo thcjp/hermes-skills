@@ -3,7 +3,7 @@ slug: "note"
 name: "note"
 version: "2.1.0"
 displayName: "Note"
-summary: "Knowledge capture and connection system with automatic organization and retrieval."
+summary: "知识捕获与连接系统,自动组织与检索"
 license: "Proprietary"
 description: |-
   Knowledge capture and connection system with automatic organization
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Note
@@ -40,9 +40,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 知识捕获 | 文本内容和标签 | 结构化笔记和自动分类 |
+| 笔记连接 | 笔记ID和关联关键词 | 知识图谱和关联推荐 |
+| 信息检索 | 搜索关键词和过滤条件 | 匹配笔记和相关内容 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：需要实时协作的多用户文档编辑场景
 
 ## 使用流程
 
@@ -55,8 +57,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| content | string | 是 | 笔记内容或搜索关键词 |
+| tag | string | 否 | 标签过滤, 如: idea/meeting/research, 默认: 全部 |
 
 ## 输出格式
 
@@ -99,22 +101,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -125,7 +118,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -145,7 +137,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

@@ -3,7 +3,7 @@ slug: merge-pdf
 name: merge-pdf
 version: "1.0.0"
 displayName: Merge PDF
-summary: Merge multiple user-provided PDF files by uploading them to Cross-Service-Solutions,
+summary: "上传多PDF到Cross-Service-Solutions合并,轮询至完成"
   polling unti...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: resume-assistant
 name: resume-assistant
 version: "1.0.0"
 displayName: Resume Assistant
-summary: Assist job seekers by polishing, customizing, scoring, and exporting resumes.
+summary: "求职助手,打磨/定制/评分/导出简历"
 license: MIT
 description: |-
   Assist job seekers by polishing, customizing, scoring, and exporting

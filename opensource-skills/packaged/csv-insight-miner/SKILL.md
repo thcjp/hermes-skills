@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # CSV洞察挖掘机
 
 自动分析 CSV 文件,无需用户提示即可生成全面洞察。从数据探查到可视化,一键产出分析报告。

@@ -3,7 +3,7 @@ slug: "ux"
 name: "ux"
 version: "1.0.0"
 displayName: "UX"
-summary: "Design and analyze user experiences that are intuitive, efficient, and aligned"
+summary: "设计分析直觉高效贴合心智模型的用户体验"
 license: "Proprietary"
 description: |-
   Design and analyze user experiences that are intuitive, efficient, and
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # UX

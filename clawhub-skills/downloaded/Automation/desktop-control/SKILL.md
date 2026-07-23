@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "桌面鼠标绝对与相对定位控制"
 ---
-
 **The most advanced desktop automation skill for Skill平台.** Provides pixel-perfect mouse control, lightning-fast keyboard input, screen capture, window management, and clipboard operations.
 
 ## 核心能力

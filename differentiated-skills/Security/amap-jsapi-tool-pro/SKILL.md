@@ -24,11 +24,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 专业版为企业开发者提供完整的高德地图JSAPI v2.0开发能力,在免费版基础功能之上,新增WebGL高级渲染、矢量图层管理、实时路况数据、批量地理编码、自定义地图样式、货车路径规划与公交导航等企业级功能。专业版完全兼容免费版接口,已有免费版代码可无缝升级,适合商业级地图应用开发。
 
 ### 专业版核心优势

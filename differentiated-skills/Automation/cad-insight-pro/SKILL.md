@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 把工程图纸里的标题栏、尺寸、标注、符号变成结构化数据，自动算量、查合规、出报告。本技能解决六个核心痛点：**格式单一**（原始只支持 PDF，DWG 是行业主流）、**标题栏不通用**（每家公司图框格式不同，硬编码正则必挂）、**多比例漏检**（一张图主图 1:100、详图 1:20，只取一个比例全错）、**符号库僵化**（原始只识别 schedule 表格，符号图例无法识别）、**扫描件无解**（光栅 PDF 无文字层，原始方案直接失效）、**算量缺失**（原始只提取不统计，无法直接用于造价）。
 
 ## 双格式支持（核心差异化）

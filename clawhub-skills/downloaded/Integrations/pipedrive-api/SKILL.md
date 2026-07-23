@@ -3,7 +3,7 @@ slug: pipedrive-api
 name: pipedrive-api
 version: "1.0.4"
 displayName: Pipedrive
-summary: Pipedrive API integration with managed OAuth. Manage deals, persons, organizations,
+summary: "Pipedrive API托管OAuth,管交易/联系人/机构/活动(社区下载版)"
   activities, a...
 license: MIT-0
 description: |-

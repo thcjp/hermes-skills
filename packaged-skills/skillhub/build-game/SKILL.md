@@ -3,7 +3,7 @@ slug: "build-game"
 name: "build-game"
 version: "1.2.0"
 displayName: "3D Game Builder"
-summary: "Generate and iteratively develop polished 3D browser games from natural language."
+summary: "自然语言生成并迭代精修3D浏览器游戏,任意类型即说即得"
 license: "Proprietary"
 description: |-
   Generate and iteratively develop polished 3D browser games from natural
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # 3D Game Builder
 

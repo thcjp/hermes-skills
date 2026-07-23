@@ -3,7 +3,7 @@ slug: apple-health-skill
 name: apple-health-skill
 version: "1.0.0"
 displayName: Apple Health Skill
-summary: Talk to your Apple Health data — ask questions about your workouts, heart
+summary: "查询Apple Health运动心率活动数据,将分散健康指标转为可问答的结构化洞察"
   rate, activity rings, a...
 license: MIT
 description: |-

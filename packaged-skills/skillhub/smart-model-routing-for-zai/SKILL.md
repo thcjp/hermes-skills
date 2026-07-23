@@ -3,7 +3,7 @@ slug: "smart-model-routing-for-zai"
 name: "smart-model-routing-for-zai"
 version: "1.0.0"
 displayName: "Smart Model Routing"
-summary: "This skill is a disclosed z.ai model-routing guide and does not install code,"
+summary: "z.ai模型路由指南,不装代码不索凭据"
 license: "Proprietary"
 description: |-
   This skill is a disclosed z。ai model-routing guide and does not install
@@ -41,9 +41,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 模型路由选择 | 任务类型和性能需求 | 最优模型推荐和路由配置 |
+| 成本优化分析 | 使用量和预算限制 | 模型切换策略和成本预测 |
+| 路由规则配置 | 路由条件和优先级 | z.ai模型路由规则集 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非z.ai平台的模型路由和切换
 
 ## 使用流程
 
@@ -56,8 +58,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| task_type | string | 是 | 任务类型, 如: chat/code/vision |
+| optimize_for | string | 否 | 优化目标, 可选: speed/cost/quality, 默认: quality |
 
 ## 输出格式
 
@@ -100,22 +102,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -126,7 +119,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -146,7 +138,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

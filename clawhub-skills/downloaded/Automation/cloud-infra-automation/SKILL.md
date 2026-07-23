@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "用IaC自动化云基础设施"
 ---
-
 # Cloud Infra Automation
 
 Automate cloud infrastructure with IaC.

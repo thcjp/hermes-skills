@@ -3,7 +3,7 @@ slug: "free-google-search-with-browser"
 name: "free-google-search-with-browser"
 version: "0.0.1"
 displayName: "Free Google Search W"
-summary: "Search Google using scrapling and return structured results (title, link,"
+summary: "用scrapling搜Google返回结构化结果(标题/链接/摘要)"
 license: "Proprietary"
 description: |-
   Search Google using scrapling and return structured results (title,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Free Google Search W
 

@@ -3,7 +3,7 @@ slug: "expanso-xml-to-json"
 name: "expanso-xml-to-json"
 version: "1.0.0"
 displayName: "Expanso xml-to-json"
-summary: "Convert XML input into JSON format using Expanso Edge pipelines for CLI,"
+summary: "用Expanso Edge流水线把XML转JSON,多模式部署"
 license: "Proprietary"
 description: |-
   Convert XML input into JSON format using Expanso Edge pipelines for
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Expanso xml-to-json
 

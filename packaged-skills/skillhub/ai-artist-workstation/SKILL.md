@@ -15,15 +15,14 @@ description: |-
   - 接单SOP全流程闭环
   - 多级引擎降级链与敏感词审核
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [AI绘画, 接单变现, 商业画图, AI写真, 副业变现]
 tools:
   - read
   - exec
-pricing_rationale: "电商类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强"
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # AI接单画师工作站
 

@@ -3,7 +3,7 @@ slug: "openai-ai"
 name: "openai-ai"
 version: "1.0.6"
 displayName: "llm-provider"
-summary: "Manage llm-provider files, assistants, vector stores, batches, fine-tuning jobs,"
+summary: "管OpenAI文件/助手/向量库/批次/微调/模型资源"
 license: "Proprietary"
 description: |-
   Manage llm-provider files, assistants, vector stores, batches, fine-tuning
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # llm-provider

@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 灵魂决策引擎（专业版）
 
 > **AI Agent的全功能决策引擎。质量评分+偏见检测+决策树可视化+跨设备同步，决策能力可量化。**

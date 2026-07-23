@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 代码审查哨兵
 
 在代码合并前执行结构化质量审查。以"高级工程师是否会批准这次合并"为标准，从五个维度全面把关。

@@ -3,7 +3,7 @@ slug: javascript-sdk
 name: javascript-sdk
 version: "0.1.5"
 displayName: Javascript Sdk
-summary: JavaScript/TypeScript SDK for inference.sh - run AI apps, build agents, integrate
+summary: "inference.sh的JS/TS SDK,跑AI应用/建Agent/集成150+模型(社区下载版)"
   150+ models. Pa...
 license: MIT
 description: |-

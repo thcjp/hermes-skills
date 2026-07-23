@@ -3,7 +3,7 @@ slug: k8s
 name: k8s
 version: "1.0.0"
 displayName: Kubernetes
-summary: Avoid common Kubernetes mistakes — resource limits, probe configuration,
+summary: "规避Kubernetes常见陷阱:资源限制、探针配置、选择器不匹配,减少集群故障"
   selector mismatches, and...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: "smart-auto-updater"
 name: "smart-auto-updater"
 version: "1.0.0"
 displayName: "Smart Auto Updater"
-summary: "Smart auto-updater with AI-powered impact assessment. Checks updates, analyzes"
+summary: "AI驱动影响评估的智能自动更新器,查更新/析变更"
 license: "Proprietary"
 description: |-
   Smart auto-updater with AI-powered impact assessment。Checks updates,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Smart Auto Updater
 

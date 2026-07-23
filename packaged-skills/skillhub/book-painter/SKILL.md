@@ -3,7 +3,7 @@ slug: "book-painter"
 name: "book-painter"
 version: "1.0.1"
 displayName: "Book Painter"
-summary: "Book painter services through Lokuli 协议. Use when user needs to find and"
+summary: "经Lokuli协议预约油漆工,找到并下单本地画师服务"
 license: "Proprietary"
 description: |-
   Book painter services through Lokuli 协议。Use when user needs to find
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Book Painter
 

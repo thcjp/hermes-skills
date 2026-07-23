@@ -3,7 +3,7 @@ slug: yaml
 name: yaml
 version: "1.0.0"
 displayName: YAML
-summary: Write valid YAML that parses predictably across languages and versions.
+summary: "编写跨语言跨版本可预测解析的YAML,规避缩进与类型推断陷阱,确保配置可靠性"
 license: MIT
 description: |-
   Write valid YAML that parses predictably across languages and versions。核心能力:

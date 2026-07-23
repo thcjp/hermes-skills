@@ -3,7 +3,7 @@ slug: logo-design-guide
 name: logo-design-guide
 version: "0.1.5"
 displayName: Logo Design Guide
-summary: Logo design principles and AI image generation best practices for creating
+summary: "logo设计原则与AI图像生成最佳实践,产出专业logo"
   logos. Covers logo typ...
 license: MIT
 description: |-

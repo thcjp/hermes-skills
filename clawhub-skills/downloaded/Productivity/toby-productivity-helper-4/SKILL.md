@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "生产力助手#4,提升个人效率"
 ---
-
 # Productivity Helper #4
 
 > 📖 **Complete setup guide**: <https://skillboss.co/skill.md>

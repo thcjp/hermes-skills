@@ -3,7 +3,7 @@ slug: afrexai-cybersecurity-engine
 name: afrexai-cybersecurity-engine
 version: "1.0.0"
 displayName: Cybersecurity Engine
-summary: Complete cybersecurity assessment, threat modeling, and hardening system.
+summary: "完整网络安全评估、威胁建模与加固系统,系统化识别并修复安全漏洞"
   Use when conducting sec...
 license: MIT
 description: |-

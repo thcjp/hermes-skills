@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 19.9
-pricing_tier: L2
-pricing_rationale: 文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 社媒爆款优化器
 
 基于 Twitter(X)/微博/小红书 公开推荐算法的洞察,分析并优化社交媒体内容,最大化触达与互动率。支持海外(Twitter)与国内(微博/小红书/抖音)双场景内容优化。

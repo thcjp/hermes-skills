@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 本规范是所有Skill生产、优化、升级、改造的**唯一权威标准**。任何Skill在进入`d:\skills\differentiated-skills\`或`d:\skills\packaged-skills\`之前，必须通过本规范的全部检查。
 
 > **v1.2变更说明**：经第二轮五角色交叉审核，修复9项P0问题。主要变更：(1) 修复`\b`正则在中文上下文失效（改用ASCII-only lookarounds `(?<![A-Za-z0-9_])(?![A-Za-z0-9_])`）；(2) 数据库新增edition/parent_slug/current_score/workflow_state字段；(3) 新增scores表持久化八大维度评分；(4) 新增workflow_states表追踪10步工作流；(5) 修复License违规（规范要求保留原作者版权声明）；(6) 清除所有硬编码API Token；(7) 完善ALLOWED_CONTEXTS。

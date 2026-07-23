@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 19.9
-pricing_tier: L2
-pricing_rationale: 翻译类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用,竞品多(DeepL等免费)
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # CMS内容架构师
 
 基于 Headless CMS 官方最佳实践,设计可扩展、高性能的内容管理系统。从内容建模到 GROQ 查询,从 SEO 优化到内容实验,全栈 CMS 架构。

@@ -3,7 +3,7 @@ slug: "powerpoint-pptx"
 name: "powerpoint-pptx"
 version: "1.0.1"
 displayName: "Powerpoint / PPTX"
-summary: "Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks"
+summary: "创建检查编辑PowerPoint演示文稿与PPTX,布局可靠"
 license: "Proprietary"
 description: |-
   Create, inspect, and edit Microsoft PowerPoint presentations and PPTX
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Powerpoint / PPTX

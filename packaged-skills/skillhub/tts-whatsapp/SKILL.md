@@ -3,7 +3,7 @@ slug: "tts-whatsapp"
 name: "tts-whatsapp"
 version: "1.0.0"
 displayName: "TTS WhatsApp"
-summary: "Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages"
+summary: "在WhatsApp发40+语言高质量TTS语音消息,自动送达"
 license: "Proprietary"
 description: |-
   Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages
@@ -34,8 +34,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # TTS WhatsApp

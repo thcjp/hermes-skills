@@ -3,8 +3,7 @@ slug: discord
 name: discord
 version: "1.0.1"
 displayName: Discord
-summary: "Use when you need to control Discord from Clawdbot via the discord tool:
-  send messages, react, po"
+summary: "经discord工具从Clawdbot控Discord,发消息/反应/发帖"
 license: MIT
 description: |-
   Use when you need to control Discord from Clawdbot via the discord tool:

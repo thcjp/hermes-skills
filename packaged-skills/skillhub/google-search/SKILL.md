@@ -3,7 +3,7 @@ slug: "google-search"
 name: "google-search"
 version: "1.0.0"
 displayName: "google-search"
-summary: "Search the web using Google Custom Search Engine (PSE). Use this when you"
+summary: "用Google可编程搜索引擎(PSE)搜实时信息"
 license: "Proprietary"
 description: |-
   Search the web using Google Custom Search Engine (PSE)。Use this when
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # google-search
 

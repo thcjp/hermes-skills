@@ -3,7 +3,7 @@ slug: node-connect
 name: node-connect
 version: "1.0.0"
 displayName: node-connect
-summary: Diagnose OpenClaw node connection and pairing failures for Android, iOS,
+summary: "诊断OpenClaw节点连接与配对失败(Android/iOS/macOS)"
   and macOS companion apps...
 license: MIT-0
 description: |-

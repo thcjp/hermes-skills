@@ -3,7 +3,7 @@ slug: ui-ux-design
 name: ui-ux-design
 version: "1.0.0"
 displayName: UI/UX Design Guide
-summary: Expert guidance on mobile-first UI/UX design, color systems, typography,
+summary: "移动优先UI/UX设计指南,色彩/字体/无障碍WCAG"
   accessibility (WCAG 2.2)...
 license: MIT
 description: |-

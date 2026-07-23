@@ -45,11 +45,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 媒体控制专业版
 ## 概述
 媒体控制专业版是面向多设备家庭和小型机构的进阶 Jellyfin 管理工具。在免费版基础控制能力之上，新增多设备管理、多用户配置、定时播放、媒体库自动化与播放统计等高级功能，支持复杂的家庭影院场景。与免费版完全兼容，已有配置可无缝升级。

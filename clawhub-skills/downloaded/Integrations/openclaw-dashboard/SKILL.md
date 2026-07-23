@@ -3,7 +3,7 @@ slug: openclaw-dashboard
 name: openclaw-dashboard
 version: "1.7.3"
 displayName: openclaw-dashboard
-summary: Real-time operations dashboard for OpenClaw. Monitors sessions, costs, cron
+summary: "OpenClaw实时运营仪表盘,监控会话/成本/cron/网关"
   jobs, and gateway hea...
 license: MIT
 description: |-

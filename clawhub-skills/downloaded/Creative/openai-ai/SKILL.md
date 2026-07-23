@@ -3,7 +3,7 @@ slug: llm-provider-ai
 name: openai-ai
 version: "1.0.6"
 displayName: llm-provider
-summary: Manage llm-provider files, assistants, vector stores, batches, fine-tuning jobs,
+summary: "管LLM提供商文件/助手/向量库/批次/微调与模型资源"
   and model resources vi...
 license: MIT-0
 description: |-

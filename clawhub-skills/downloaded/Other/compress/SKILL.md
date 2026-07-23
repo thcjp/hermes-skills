@@ -3,7 +3,7 @@ slug: compress
 name: compress
 version: "1.0.0"
 displayName: Compress
-summary: Compress text semantically with iterative validation, anchor checksums, and
+summary: "语义化文本压缩,迭代验证信息完整性,锚点校验确保无损,降低存储与传输成本"
   verified information ...
 license: MIT
 description: |-

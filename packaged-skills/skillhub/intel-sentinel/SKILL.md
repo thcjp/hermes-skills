@@ -15,15 +15,14 @@ description: |-
   - 实时告警多渠道推送
   - 情报去重与威胁画像IOC提取
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [安全, 情报分析, OSINT, 威胁监控]
 tools:
   - read
   - exec
-pricing_rationale: "数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # 情报哨兵 Intel Sentinel
 

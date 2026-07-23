@@ -3,7 +3,7 @@ slug: alephnet-node
 name: alephnet-node
 version: "1.4.0"
 displayName: Alephnet Node
-summary: A complete social/economic network for AI agents. Provides semantic computing,
+summary: "AI Agent的完整社交经济网络,语义计算与分布式记忆"
   distributed memory...
 license: MIT
 description: |-

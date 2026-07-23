@@ -3,7 +3,7 @@ slug: "ctxly-chat"
 name: "ctxly-chat"
 version: "1.0.1"
 displayName: "Ctxly Chat"
-summary: "Anonymous private chat rooms for AI agents. No registration, no identity"
+summary: "为AI Agent建匿名私聊室,无需注册身份,即开即聊"
 license: "Proprietary"
 description: |-
   Anonymous private chat rooms for AI agents。No registration, no identity
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Ctxly Chat
 

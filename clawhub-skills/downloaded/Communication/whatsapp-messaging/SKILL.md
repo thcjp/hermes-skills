@@ -3,7 +3,7 @@ slug: whatsapp-messaging
 name: whatsapp-messaging
 version: "1.0.6"
 displayName: WhatsApp
-summary: Send WhatsApp messages, manage templates, handle media, and automate WhatsApp
+summary: "发WhatsApp消息/管模板/处理媒体/自动化Business消息"
   Business messaging ...
 license: MIT-0
 description: |-

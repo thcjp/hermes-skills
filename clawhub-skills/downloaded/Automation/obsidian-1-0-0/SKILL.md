@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "Obsidian笔记库即磁盘文件夹,直接管理(社区下载版)"
 ---
-
 # Obsidian 1.0.0
 
 Obsidian vault = a normal folder on disk.

@@ -3,7 +3,7 @@ slug: "xml"
 name: "xml"
 version: "1.0.0"
 displayName: "XML"
-summary: "Parse, generate, and transform XML with correct namespace handling and encoding."
+summary: "解析生成转换XML,命名空间与编码处理正确"
 license: "Proprietary"
 description: |-
   Parse, generate, and transform XML with correct namespace handling and
@@ -29,8 +29,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # XML

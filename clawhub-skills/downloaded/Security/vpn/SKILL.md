@@ -3,7 +3,7 @@ slug: vpn
 name: vpn
 version: "1.0.0"
 displayName: VPN
-summary: Configure and troubleshoot VPN connections for privacy and remote access.
+summary: "配置排查VPN连接,保障隐私与远程访问,解决跨地域网络连通与加密传输问题"
 license: MIT
 description: |-
   Configure and troubleshoot VPN connections for privacy and remote access。核心能力:

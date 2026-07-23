@@ -3,7 +3,7 @@ slug: reddit-research
 name: reddit-research
 version: "1.0.0"
 displayName: Reddit Research
-summary: Extracts and summarizes trending topics, recurring issues, and content gaps
+summary: "提取汇总Reddit趋势话题/反复问题/内容空白(社区下载版)"
   across targeted Reddi...
 license: MIT
 description: |-

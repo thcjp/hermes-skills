@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "管飞书日历,列日历/查日程/同步事件"
 ---
-
 # feishu-calendar
 
 Manage Feishu (Lark) Calendars. Use this skill to list calendars, check schedules, and sync events.

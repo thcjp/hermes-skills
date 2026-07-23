@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 99.9
-pricing_tier: L4
-pricing_rationale: 安全合规类, small市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高
-pricing_model: monthly
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 安全加固之盾
 
 系统化的安全防护框架。处理用户输入、认证、数据存储、外部集成时,强制执行安全检查与加固。核心理念:默认不信任、最小权限、纵深防御。

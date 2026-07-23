@@ -3,7 +3,7 @@ slug: chromecast-control
 name: chromecast-control
 version: "1.0.0"
 displayName: Control Chromecast
-summary: Control Chromecast devices on your local network - discover, cast media,
+summary: "控局域网Chromecast,发现/投屏/播放/音量管理"
   control playback, manage...
 license: MIT
 description: |-

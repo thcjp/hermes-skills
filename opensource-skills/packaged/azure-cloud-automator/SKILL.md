@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 监控运维类, small市场, enterprise复杂度, rare频次, premium层 → 企业级运维,低频高价值
-pricing_model: per_use
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # Azure云自动化
 
 Azure 云最佳实践与自动化。从基础设施即代码到成本优化，从无服务器架构到安全合规。

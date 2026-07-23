@@ -3,7 +3,7 @@ slug: "html-designer"
 name: "html-designer"
 version: "1.0.0"
 displayName: "HTML Designer"
-summary: "Expert web graphic designer specializing in HTML/CSS design with deep knowledge"
+summary: "专精HTML/CSS的网页平面设计师,深谙图形设计"
 license: "Proprietary"
 description: |-
   Expert web graphic designer specializing in HTML/CSS design with deep
@@ -16,8 +16,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # HTML Designer

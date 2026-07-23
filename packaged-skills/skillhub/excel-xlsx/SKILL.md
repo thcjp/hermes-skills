@@ -3,7 +3,7 @@ slug: "excel-xlsx"
 name: "excel-xlsx"
 version: "1.0.2"
 displayName: "Excel / XLSX"
-summary: "Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable"
+summary: "创建检查编辑Excel工作簿与XLSX,公式/日期可靠"
 license: "Proprietary"
 description: |-
   Create, inspect, and edit Microsoft Excel workbooks and XLSX files with
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Excel / XLSX
 
@@ -38,9 +38,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 工作簿创建 | 数据表和格式定义 | 格式化的XLSX工作簿 |
+| 数据检查 | XLSX文件路径 | 单元格数据和公式验证报告 |
+| 工作簿编辑 | 文件路径和修改数据 | 编辑后的工作簿和变更记录 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非XLSX格式的表格处理(如CSV/Google Sheets)
 
 ## 使用流程
 
@@ -53,8 +55,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| file_path | string | 是 | XLSX文件路径 |
+| sheet_name | string | 否 | 工作表名称, 默认: 第一个工作表 |
 
 ## 输出格式
 
@@ -97,22 +99,13 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -123,7 +116,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -143,7 +135,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

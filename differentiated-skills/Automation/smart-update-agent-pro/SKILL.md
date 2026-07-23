@@ -30,11 +30,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 智能更新管家（专业版）
 
 > **企业级更新编排系统。多环境策略+回滚备份+金丝雀发布+Breaking Change检测，更新安全可控可追溯。**

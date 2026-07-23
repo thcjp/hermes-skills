@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 电商类, niche市场, enterprise复杂度, rare频次, business层 → 直接关联收入,付费意愿强
-pricing_model: per_use
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 支付集成专家
 
 基于 Stripe 官方最佳实践,实现安全、合规、可扩展的支付集成。同时提供国内支付(微信支付/支付宝/银联)替代方案,支持跨境与国内双场景。从支付意图到订阅管理,从 Webhook 到退款,全链路覆盖。

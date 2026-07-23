@@ -3,7 +3,7 @@ slug: bookmark-intelligence
 name: bookmark-intelligence
 version: "1.0.0"
 displayName: Bookmark Intelligenc
-summary: Automatically monitors your X bookmarks, fetches linked articles, analyzes
+summary: "自动监控X书签,抓链接文章并用AI分析与摘要"
   content with AI, and d...
 license: MIT
 description: |-

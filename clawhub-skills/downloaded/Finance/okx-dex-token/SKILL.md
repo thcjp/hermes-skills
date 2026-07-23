@@ -3,8 +3,7 @@ slug: okx-dex-token
 name: okx-dex-token
 version: "3.1.3"
 displayName: Okx Dex Token
-summary: "Use this skill for token-level data: search tokens, trending/hot tokens
-  (热门, 代币榜单), liquidity poo"
+summary: "代币级数据,搜代币/热门榜/流动性池(社区下载版)"
 license: MIT-0
 description: |-
   Use this skill for token-level data: search tokens, trending/hot tokens

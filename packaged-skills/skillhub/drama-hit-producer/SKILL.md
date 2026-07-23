@@ -8,15 +8,14 @@ license: Proprietary
 description: |-
   短剧爆款生产线——丢进一章小说,25步全自动管道吐出可发布的竖屏短剧。核心功能:双轨风格(真人剧InstantID+动漫FLUX/Kling)、三轨角色构建(手工/AI批量/自动提取)、四层TTS智能配音(云端/本地GPU/免费)、质量闭环(A/B/C/D评分+自动重做+人工兜底)、25步管道从剧本转换到多平台发布全链路覆盖、资产持久化、经验回写自生长闭环
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [视频创作, 短剧, 内容创作, 自动化, AI视频]
 tools:
   - read
   - exec
-pricing_rationale: "效率工具类, large市场, enterprise复杂度, daily频次, standard层 → 高频低价值,走量为主"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # 短剧爆款生产线
 

@@ -3,7 +3,7 @@ slug: azure-ai-transcription-py
 name: azure-ai-transcription-py
 version: "0.1.0"
 displayName: Azure Ai Transcripti
-summary: Azure AI Transcription SDK for Python. Use for real-time and batch speech-to-text
+summary: "Azure AI语音转写SDK,实时与批量语音转文字"
   transcription w...
 license: MIT
 description: |-

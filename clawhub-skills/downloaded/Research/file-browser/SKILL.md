@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "工作区文件浏览读取,防路径逃逸"
 ---
-
 # file-browser
 
 ## Quick Start

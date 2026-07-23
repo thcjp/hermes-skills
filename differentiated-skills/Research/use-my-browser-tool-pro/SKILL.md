@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 真实浏览器控制专业版是企业级的真实浏览器自动化解决方案。在完整兼容免费版所有单浏览器控制能力的基础上,专业版引入了批量会话管理、多浏览器实例控制、安全审计、团队协作等高级能力,适用于企业级 Web 自动化测试、跨账号数据采集、批量表单处理等复杂场景。
 
 专业版特别强化了安全合规能力,支持完整的操作日志审计、基于角色的访问控制、数据加密传输,满足企业级安全合规要求。

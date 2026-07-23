@@ -3,7 +3,7 @@ slug: memory
 name: memory
 version: "1.0.2"
 displayName: Memory
-summary: Infinite organized memory that complements your agent's built-in memory with
+summary: "无限可分类组织的记忆,补充Agent内置记忆"
   unlimited categorize...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: dashboard
 name: dashboard
 version: "1.0.1"
 displayName: Dashboard
-summary: Build custom dashboards from any data source with local hosting and visual
+summary: "从任意数据源构建自定义仪表盘,本地托管与可视化质检,数据监控一站式解决"
   QA loops.
 license: MIT
 description: |-

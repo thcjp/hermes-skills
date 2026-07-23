@@ -29,11 +29,11 @@ tools:
 - exec
 edition: pro
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 文档推理分析师（专业版）
 
 > **将冗长、杂乱的高风险文档转化为更清晰的推理和更干净的决策——现在支持多版本对比、结构优化与决策报告。**

@@ -3,7 +3,7 @@ slug: javascript-skills
 name: javascript-skills
 version: "1.0.2"
 displayName: JavaScript
-summary: A comprehensive JavaScript style guide skill. When activated, it provides
+summary: "综合JavaScript风格指南,激活即供最佳实践(社区下载版)"
   best-practice JavaScrip...
 license: MIT-0
 description: |-

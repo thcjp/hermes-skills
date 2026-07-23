@@ -3,7 +3,7 @@ slug: dns-lookup
 name: dns-lookup
 version: "1.0.0"
 displayName: Dns Lookup
-summary: Resolve hostnames to IP addresses using `dig` from bind-utils.
+summary: "使用dig命令解析主机名为IP地址,轻量级DNS查询工具,排查网络连通性问题"
 license: MIT
 description: |-
   Resolve hostnames to IP addresses using `dig` from bind-utils。核心能力:

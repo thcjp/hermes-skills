@@ -3,7 +3,7 @@ slug: "note-app-cli"
 name: "note-app-cli"
 version: "1.0.0"
 displayName: "Obsidian Official Cl"
-summary: "This skill matches its Obsidian-management purpose, but it gives an agent"
+summary: "Obsidian管理技能,管笔记库(权限较广需谨慎)"
 license: "Proprietary"
 description: |-
   This skill matches its Obsidian-management purpose, but it gives an

@@ -3,7 +3,7 @@ slug: use-my-browser
 name: use-my-browser
 version: "1.0.0"
 displayName: Use My Browser
-summary: Control the user's REAL Chrome browser via Tampermonkey injection. Trigger
+summary: "通过Tampermonkey注入控制用户真实Chrome浏览器,实现已登录状态下的网页操作"
   when user says \
 license: MIT-0
 description: |-

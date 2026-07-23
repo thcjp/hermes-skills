@@ -3,7 +3,7 @@ slug: "translate"
 name: "translate"
 version: "1.0.0"
 displayName: "Translate"
-summary: "Translate text accurately — preserve formatting, handle plurals, and adapt"
+summary: "准确翻译文本,保格式/处理复数/按地区调语气"
 license: "Proprietary"
 description: |-
   Translate text accurately — preserve formatting, handle plurals, and

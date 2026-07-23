@@ -3,7 +3,7 @@ slug: "security-audit"
 name: "security-audit"
 version: "1.0.0"
 displayName: "Security Audit"
-summary: "Comprehensive security auditing for SkillHub deployments. Scans for exposed"
+summary: "SkillHub部署全面安全审计,扫暴露凭据与开放端口"
 license: "Proprietary"
 description: |-
   Comprehensive security auditing for SkillHub deployments。Scans for
@@ -40,9 +40,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 部署安全扫描 | SkillHub部署配置 | 暴露面和安全漏洞报告 |
+| 配置审计 | 服务器和服务配置 | 安全配置基线和合规检查 |
+| 漏洞修复建议 | 扫描结果和漏洞列表 | 修复优先级和操作指南 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非SkillHub部署的其他平台安全审计
 
 ## 使用流程
 
@@ -55,8 +57,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| target | string | 是 | 审计目标URL或配置路径 |
+| audit_type | string | 否 | 审计类型, 可选: deploy/config/vuln, 默认: deploy |
 
 ## 输出格式
 
@@ -69,22 +71,13 @@ The audit produces a report with:
 | 🟡 MEDIUM | Moderate concern |
 | 🟢 INFO | FYI, no action needed |
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -95,7 +88,6 @@ The audit produces a report with:
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -115,7 +107,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

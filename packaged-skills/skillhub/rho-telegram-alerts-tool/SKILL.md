@@ -3,7 +3,7 @@ slug: "rho-telegram-alerts-tool"
 name: "rho-telegram-alerts-tool"
 version: "1.0.1"
 displayName: "Telegram Alerts"
-summary: "Send formatted trading alerts, portfolio updates, and market signals via"
+summary: "经Telegram发交易告警/组合更新/市场信号"
 license: "Proprietary"
 description: |-
   Send formatted trading alerts, portfolio updates, and market signals

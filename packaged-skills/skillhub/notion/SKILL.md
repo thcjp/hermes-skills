@@ -3,7 +3,7 @@ slug: "notion"
 name: "notion"
 version: "1.0.0"
 displayName: "Notion"
-summary: "Notion API for creating and managing pages, databases, and blocks."
+summary: "Notion API创建管理页面/数据库/块"
 license: "Proprietary"
 description: |-
   Notion API for creating and managing pages, databases, and blocks。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Notion

@@ -3,7 +3,7 @@ slug: "slacrawl"
 name: "slacrawl"
 version: "1.0.1"
 displayName: "Slacrawl"
-summary: "Slack archive: search, sync freshness, threads/DMs, SQL counts."
+summary: "Slack归档,搜索/同步/线程私信/SQL计数"
 license: "Proprietary"
 description: |-
   Slack archive: search, sync freshness, threads/DMs, SQL counts。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Slacrawl

@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 设计并执行跨平台自动化工作流，替代重复性人工操作。核心信条：**先用YAML声明，再干跑验证，最后放量执行；每个工作流必须有幂等键。**
 
 ## 四大痛点与对策

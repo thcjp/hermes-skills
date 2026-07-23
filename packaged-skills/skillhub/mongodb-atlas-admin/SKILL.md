@@ -14,12 +14,12 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+tags:
+  - 数据存储
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tags:
-  - 数据存储
 ---
 # 文档数据库云管理平台
 

@@ -3,8 +3,7 @@ slug: "key-guard"
 name: "key-guard"
 version: "1.0.1"
 displayName: "Key Guard"
-summary: "Security guardrail: prevents API keys from being sent to ai-assistant. Triggers
-license: "Proprietary"
+summary: "安全护栏,阻止API Key被发送给Claude"Proprietary"
 description: |-
   Security guardrail: prevents API keys from being sent to ai-assistant。Triggers
   when user asks to call。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
@@ -39,9 +38,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| API密钥拦截 | 请求内容和API密钥 | 密钥脱敏和拦截日志 |
+| 安全防护 | AI助手请求和敏感数据 | 防护报告和安全建议 |
+| 密钥审计 | 配置文件和环境变量 | 密钥暴露风险和修复建议 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非API密钥的敏感数据脱敏(如PII数据处理)
 
 ## 使用流程
 
@@ -55,8 +56,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| request_content | string | 是 | 待检查的请求内容 |
+| scan_scope | string | 否 | 扫描范围, 可选: headers/body/all, 默认: all |
 
 ## 输出格式
 
@@ -99,22 +100,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -125,7 +117,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -185,7 +176,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

@@ -3,7 +3,7 @@ slug: kubernetes-devops
 name: kubernetes-devops
 version: "1.0.0"
 displayName: Kubernetes
-summary: This is a coherent Kubernetes manifest helper; its main risk is that users
+summary: "Kubernetes清单文件辅助编写,确保YAML配置正确性,减少因配置错误导致的部署失败"
   could copy examples th...
 license: MIT
 description: |-

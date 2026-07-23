@@ -3,7 +3,7 @@ slug: social-sentiment
 name: social-sentiment
 version: "1.4.0"
 displayName: Social Sentiment
-summary: This skill is a disclosed social-listening workflow that uses Xpoz and an
+summary: "社交聆听工作流,使用Xpoz与npm工具分析社媒情感,量化品牌口碑与用户情绪"
   npm-installed helper, w...
 license: MIT
 description: |-

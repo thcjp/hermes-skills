@@ -3,7 +3,7 @@ slug: "document-pdf"
 name: "document-pdf"
 version: "1.0.0"
 displayName: "Pdf"
-summary: "Comprehensive PDF manipulation toolkit for extracting text and tables, creating"
+summary: "PDF全操作工具箱,提取文本表格/建PDF/合并拆分/填表"
 license: "Proprietary"
 description: |-
   Comprehensive PDF manipulation toolkit for extracting text and tables,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Pdf
 

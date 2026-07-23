@@ -3,7 +3,7 @@ slug: image
 name: image
 version: "1.0.4"
 displayName: Image
-summary: Create, inspect, process, and optimize image files and visual assets with
+summary: "创建、检查、处理、优化图片文件,可靠格式选择与压缩,解决图片资产管理问题"
   reliable format choice,...
 license: MIT-0
 description: |-

@@ -3,7 +3,7 @@ slug: json-formatter
 name: json-formatter
 version: "1.0.0"
 displayName: JSON Formatter
-summary: Format, validate, compress JSON data, and extract JSON paths for improved
+summary: "格式化/校验/压缩JSON并提取路径,提升可读性(社区下载版)"
   readability and structu...
 license: MIT
 description: |-

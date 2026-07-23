@@ -15,15 +15,14 @@ description: |-
   - 4种CTA话术注入
   - 5平台风格自动适配
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [卖货文案, 营销转化, 电商带货, 副业工具]
 tools:
   - read
   - exec
-pricing_rationale: "营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强"
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # 卖货文案手 v1.1.0
 

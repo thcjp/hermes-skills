@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 云运维编排器
 
 用声明式代码管理多云基础设施，把"手动点控制台"变成"可审计、可回滚、可预演"的工程化流程。本技能解决五个核心痛点：**职责混淆**（Terraform/Ansible 用错地方）、**状态漂移**（线上与代码不一致）、**误删灾难**（destroy 不可逆）、**凭证泄露**（明文 AK/SK）、**环境串味**（dev 改动影响 prod）。

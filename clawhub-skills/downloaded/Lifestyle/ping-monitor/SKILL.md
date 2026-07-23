@@ -3,7 +3,7 @@ slug: ping-monitor
 name: ping-monitor
 version: "1.0.0"
 displayName: Ping Monitor
-summary: ICMP health check for hosts, phones, and daemons
+summary: "ICMP协议检测主机与设备连通性,轻量级网络健康监控,秒级发现离线设备"
 license: MIT
 description: |-
   ICMP health check for hosts, phones, and daemons

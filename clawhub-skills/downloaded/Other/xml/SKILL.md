@@ -3,7 +3,7 @@ slug: xml
 name: xml
 version: "1.0.0"
 displayName: XML
-summary: Parse, generate, and transform XML with correct namespace handling and encoding.
+summary: "解析、生成、转换XML,正确处理命名空间与编码,解决XML数据互操作性问题"
 license: MIT
 description: |-
   Parse, generate, and transform XML with correct namespace handling and

@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "经CLI控Jellyfin播放与TV电源"
 ---
-
 # Jellyfin Control
 
 A robust skill to control Jellyfin playback and TV power via CLI.

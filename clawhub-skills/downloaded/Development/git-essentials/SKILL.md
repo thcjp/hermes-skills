@@ -3,7 +3,7 @@ slug: git-essentials
 name: git-essentials
 version: "1.0.0"
 displayName: Git Essentials
-summary: Essential Git commands and workflows for version control, branching, and
+summary: "版本控制/分支/协作的Git必备命令与工作流"
   collaboration.
 license: MIT
 description: |-

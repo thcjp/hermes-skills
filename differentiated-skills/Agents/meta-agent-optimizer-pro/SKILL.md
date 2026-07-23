@@ -30,11 +30,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 元代理优化器（专业版）
 
 > **AI Agent的全功能优化引擎。性能采集+瓶颈诊断+技能提取+多平台Hook，自我进化全自动闭环。**

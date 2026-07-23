@@ -3,7 +3,7 @@ slug: verify-claims
 name: verify-claims
 version: "1.0.0"
 displayName: Verify Claims
-summary: This fact-checking skill is mostly coherent, but it can automatically create
+summary: "事实核查技能,自动创建延迟跟进频道,验证声明真伪,降低 misinformation 传播风险"
   delayed follow-up ch...
 license: MIT
 description: |-

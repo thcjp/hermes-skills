@@ -30,11 +30,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 印迹工作室(专业版)
 面向企业与团队的全功能Agent发现、信任与协作交换平台。在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等8项高级能力。
 

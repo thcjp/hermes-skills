@@ -49,11 +49,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 Docker基础工具专业版为企业运维团队提供高级容器管理能力。在免费版基础能力之上,专业版新增镜像深度优化分析、容器安全漏洞扫描、Docker Swarm多节点编排、批量容器运维和CI/CD流水线集成,满足企业级容器化运维需求。
 
 专业版完全兼容免费版的所有Docker命令和Compose配置,运维团队可从免费版无缝升级,已有脚本和配置无需修改即可在专业版中使用。

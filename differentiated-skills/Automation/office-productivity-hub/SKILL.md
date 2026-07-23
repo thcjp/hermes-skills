@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 办公效率中枢
 
 把繁琐的日常办公工作自动化。覆盖文档、数据、邮件、日程、报表五大场景，每个场景都内建失败隔离、格式保真与合规检查。

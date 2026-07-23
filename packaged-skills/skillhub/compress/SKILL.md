@@ -3,7 +3,7 @@ slug: "compress"
 name: "compress"
 version: "1.0.0"
 displayName: "Compress"
-summary: "Compress text semantically with iterative validation, anchor checksums, and"
+summary: "语义压缩文本,迭代校验+锚点校验和,信息无损瘦身"
 license: "Proprietary"
 description: |-
   Compress text semantically with iterative validation, anchor checksums,
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Compress
@@ -38,9 +38,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 语义压缩 | 长文本内容和压缩目标 | 压缩后文本和锚点校验 |
+| 迭代验证 | 压缩文本和原始内容 | 压缩质量评分和损失分析 |
+| 锚点校验 | 压缩文本和校验和 | 完整性验证和恢复信息 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：需要无损还原的精确保密通信场景
 
 ## 使用流程
 
@@ -53,8 +55,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| text_content | string | 是 | 待压缩的文本内容 |
+| compression_ratio | string | 否 | 目标压缩比, 如: 50%/30%, 默认: 50% |
 
 ## 输出格式
 
@@ -97,22 +99,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -123,7 +116,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -143,7 +135,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

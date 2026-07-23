@@ -3,7 +3,7 @@ slug: search-2
 name: search-2
 version: "0.1.0"
 displayName: Search
-summary: Search the web using Tavily's LLM-optimized search API. Returns relevant
+summary: "通过Tavily LLM优化搜索API搜索网络,返回相关结果与内容摘要,精准获取信息"
   results with content sni...
 license: MIT
 description: |-

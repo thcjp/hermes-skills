@@ -3,7 +3,7 @@ slug: clawprint
 name: clawprint
 version: "3.0.1"
 displayName: Skill
-summary: Agent discovery, trust, and exchange. Register on ClawPrint to be found by
+summary: "Agent发现、信任与交换平台,注册后被其他Agent发现,建立去中心化协作网络"
   other agents, build re...
 license: MIT
 description: |-

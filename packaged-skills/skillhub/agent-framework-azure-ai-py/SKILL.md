@@ -3,7 +3,7 @@ slug: "agent-framework-azure-ai-py"
 name: "agent-framework-azure-ai-py"
 version: "0.1.0"
 displayName: "Agent Framework Azur"
-summary: "This is a documentation-only skill for building Azure AI Foundry agents;"
+summary: "纯文档型技能,指导构建Azure AI Foundry Agent,覆盖云搜索与多模型能力"
 license: "Proprietary"
 description: |-
   This is a documentation-only skill for building Azure AI Foundry agents;
@@ -16,8 +16,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Agent Framework Azur

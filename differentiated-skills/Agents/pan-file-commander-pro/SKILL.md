@@ -30,11 +30,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 网盘指挥官(专业版)
 
 百度网盘文件管理工具,以"命令式高效操作"为核心视角,所有操作限制在 `/apps/bdpan/` 目录内。专业版在免费版基础上解锁Agent记忆备份与恢复、大文件后台下载、批量操作模板、增量同步与完整性校验。适配所有支持SKILL.md的Agent平台。

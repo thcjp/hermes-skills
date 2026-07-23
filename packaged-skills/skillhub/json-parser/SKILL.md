@@ -3,7 +3,7 @@ slug: "json-parser"
 name: "json-parser"
 version: "2.1.0"
 displayName: "Json Parser"
-summary: "Parse and validate JSON data from construction APIs, IoT sensors, and BIM"
+summary: "解析校验建筑API/IoT/BIM的JSON并转表"
 license: "Proprietary"
 description: |-
   Parse and validate JSON data from construction APIs, IoT sensors, and
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Json Parser
 

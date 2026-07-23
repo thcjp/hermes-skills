@@ -3,7 +3,7 @@ slug: plugin-architecture
 name: plugin-architecture
 version: "1.0.1"
 displayName: Plugin Architecture
-summary: Installs UI plugin architecture into OpenClaw, enabling plugins to register
+summary: "为Agent安装UI插件架构,支持注册自定义视图、导航、命令,扩展Agent界面能力"
   custom views, navigat...
 license: MIT
 description: |-

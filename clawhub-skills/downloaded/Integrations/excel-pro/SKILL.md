@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "Excel表格工具选择,避免在格子里用错工具"
 ---
-
 # Excel
 
 > **Most spreadsheet pain does not come from missing features. It comes from choosing the wrong tool inside the grid.**

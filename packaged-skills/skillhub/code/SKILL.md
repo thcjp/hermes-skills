@@ -3,7 +3,7 @@ slug: "code"
 name: "code"
 version: "1.0.4"
 displayName: "Code"
-summary: "Coding workflow with planning, implementation, verification, and testing"
+summary: "编码工作流含规划/实现/验证/测试,交付干净软件"
 license: "Proprietary"
 description: |-
   Coding workflow with planning, implementation, verification, and testing
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Code

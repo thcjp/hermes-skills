@@ -3,7 +3,7 @@ slug: context-driven-development
 name: context-driven-development
 version: "1.0.0"
 displayName: Context Driven Devel
-summary: Treat project context as a managed artifact alongside code. Use structured
+summary: "把项目上下文当受管制品与代码并行,用结构化文档沉淀(社区下载版)"
   context documents (pro...
 license: MIT
 description: |-

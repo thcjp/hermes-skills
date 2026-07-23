@@ -3,7 +3,7 @@ slug: archive
 name: archive
 version: "1.0.0"
 displayName: Archive
-summary: Capture and preserve content as intelligent snapshots with semantic search,
+summary: "将内容捕获保存为智能快照,语义搜索与自动抽取,构建可检索的内容归档"
   automatic extraction,...
 license: MIT
 description: |-

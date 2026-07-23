@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "端到端加密去中心化记忆,经memory_search召回事实"
 ---
-
 # Plugin
 
 End-to-end encrypted memory stored across a decentralized network (not on a single company server). TotalReclaw is Skill平台's **native `kind:"memory"` provider**: recall runs through the conventional `memory_search` / `memory_get` tools (the same surface `active-memory` uses), and **facts are captured automatically in the background** — you do not call a tool to remember each fact. This skill tells you the install + account-setup flow and when to drive recall explicitly.

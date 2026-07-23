@@ -30,11 +30,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 无限记忆库（专业版）
 
 **与 Agent 内置记忆并行的无限组织化记忆系统专业版**。你的 Agent 有基础内置记忆，本 Skill 为它添加无限、完美组织的并行记忆系统——互补而非替代，永不冲突。专业版解锁语义搜索、自动同步、大规模索引全部高级功能。

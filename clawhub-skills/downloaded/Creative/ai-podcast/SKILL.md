@@ -3,7 +3,7 @@ slug: ai-podcast
 name: ai-podcast
 version: "1.0.11"
 displayName: Ai Podcast
-summary: Generate AI podcast episodes from PDFs, text, notes, and links using MagicPodcast
+summary: "用MagicPodcast从PDF/文本/笔记/链接生成AI播客剧集"
   in OpenClaw. Cr...
 license: MIT
 description: |-

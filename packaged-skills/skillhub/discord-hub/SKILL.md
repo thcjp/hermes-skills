@@ -3,7 +3,7 @@ slug: "discord-hub"
 name: "discord-hub"
 version: "1.1.0"
 displayName: "Discord"
-summary: "SkillHub skill for Discord Bot API workflows, covering interactions, commands,"
+summary: "SkillHub的Discord Bot API技能,覆盖交互/命令/消息/运维"
 license: "Proprietary"
 description: |-
   SkillHub skill for Discord Bot API workflows, covering interactions,
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Discord

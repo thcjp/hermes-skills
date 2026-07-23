@@ -3,7 +3,7 @@ slug: token-layer
 name: token-layer
 version: "1.0.3"
 displayName: Token Layer
-summary: Token Layer - Censorship resistant crosschain public token infrastructure.
+summary: "抗审查跨链公共代币基础设施,一次部署即可全链交易,降低代币发行门槛"
   Launch once, trade eve...
 license: MIT
 description: |-

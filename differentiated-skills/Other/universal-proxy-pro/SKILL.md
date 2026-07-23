@@ -16,11 +16,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 当企业内部署大规模Agent系统时，免费版的单电路代理模型会遇到瓶颈：**单电路带宽有限、无法指定出口地区、缺乏审计日志、节点不可控、无故障切换**。一个电路被反爬识别后整个采集任务停摆，一次网络抖动导致代理中断而无人知晓。
 
 通用代理工具专业版正是为企业级代理通信而设计。它在免费版单电路加密转发的基础上，叠加"多电路层 + 调度层 + 路由层 + 审计层 + 节点层"，让代理成为可治理、可调度、可审计的企业基础设施。

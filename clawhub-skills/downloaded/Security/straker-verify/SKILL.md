@@ -3,7 +3,7 @@ slug: straker-verify
 name: straker-verify
 version: "1.0.0"
 displayName: Straker Verify
-summary: Professional AI-powered translation with optional human verification. Supports
+summary: "专业AI翻译,可选人工验证,支持100+语言,兼顾效率与质量的本地化方案"
   100+ languages. Qu...
 license: MIT
 description: |-

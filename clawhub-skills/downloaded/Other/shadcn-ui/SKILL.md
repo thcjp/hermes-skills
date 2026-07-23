@@ -3,7 +3,7 @@ slug: shadcn-ui
 name: shadcn-ui
 version: "1.0.0"
 displayName: Shadcn Ui
-summary: Use when building UI with shadcn/ui components, Tailwind CSS layouts, form
+summary: "使用shadcn/ui组件、Tailwind CSS布局、react-hook-form构建UI,加速前端开发"
   patterns with react-ho...
 license: MIT
 description: |-

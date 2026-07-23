@@ -3,7 +3,7 @@ slug: expanso-xml-to-json
 name: expanso-xml-to-json
 version: "1.0.0"
 displayName: Expanso xml-to-json
-summary: Convert XML input into JSON format using Expanso Edge pipelines for CLI,
+summary: "用Expanso Edge流水线把XML转JSON,多模式部署(社区下载版)"
   MCP server, or cloud dep...
 license: MIT
 description: |-

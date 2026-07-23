@@ -3,7 +3,7 @@ slug: json-linter
 name: json-linter
 version: "1.0.0"
 displayName: Json Linter
-summary: Validates JSON syntax across the workspace. Use this skill to check for syntax
+summary: "校验工作区JSON语法,排查配置语法错误(社区下载版)"
   errors in configur...
 license: MIT
 description: |-

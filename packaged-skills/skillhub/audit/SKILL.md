@@ -3,7 +3,7 @@ slug: "audit"
 name: "audit"
 version: "1.0.0"
 displayName: "Audit"
-summary: "The Supreme Verifier for the Synthetic Economy. Autonomous inspection of"
+summary: "合成经济最高审计器,自主巡检代码/合约/资产,拦截风险于未然"
 license: "Proprietary"
 description: |-
   The Supreme Verifier for the Synthetic Economy。Autonomous inspection
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Audit
 

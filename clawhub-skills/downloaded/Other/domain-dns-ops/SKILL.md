@@ -3,7 +3,7 @@ slug: domain-dns-ops
 name: domain-dns-ops
 version: "1.0.0"
 displayName: Domain Dns Ops
-summary: Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter. Use for
+summary: "跨Cloudflare、DNSimple、Namecheap的域名DNS运维,统一管理多平台DNS配置"
   onboarding zones to Clou...
 license: MIT
 description: |-

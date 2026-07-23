@@ -3,7 +3,7 @@ slug: safe-encryption-skill
 name: safe-encryption-skill
 version: "0.1.0"
 displayName: Safe Encryption
-summary: Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG alternative
+summary: "使用SAFE CLI加密解密管理密钥,后量子密码学,现代GPG替代方案,提升加密安全性"
   with post-quantum ...
 license: MIT
 description: |-

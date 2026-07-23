@@ -3,7 +3,7 @@ slug: "multi-search-engine"
 name: "multi-search-engine"
 version: "2.1.3"
 displayName: "Multi Search Engine"
-summary: "Multi search engine integration with 16 engines (7 CN + 9 Global)."
+summary: "多搜索引擎集成,16引擎(7国内+9全球)"
 license: "Proprietary"
 description: |-
   Multi search engine integration with 16 engines (7 CN + 9 Global)。核心能力:
@@ -51,9 +51,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 多引擎搜索 | 搜索关键词和目标引擎 | 聚合搜索结果和排名 |
+| 中文搜索 | 中文查询词 | 国内搜索引擎结果汇总 |
+| 全球搜索 | 英文查询词 | 国际搜索引擎结果汇总 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：需要实时索引和全文检索的私有数据搜索
 
 ## 使用流程
 
@@ -67,8 +69,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| query | string | 是 | 搜索关键词 |
+| engines | string | 否 | 搜索引擎列表, 如: google,bing,baidu, 默认: 全部16引擎 |
 
 ## 输出格式
 
@@ -111,22 +113,13 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -137,7 +130,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -181,7 +173,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

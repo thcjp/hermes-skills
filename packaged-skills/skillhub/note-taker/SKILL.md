@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Note Taker
 
@@ -39,9 +39,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 康奈尔笔记 | 课堂或会议内容 | 结构化的康奈尔笔记模板 |
+| 卡片盒笔记 | 知识点和参考链接 | Zettelkasten格式笔记和链接 |
+| 思维导图笔记 | 主题和子话题 | 层次化思维导图和大纲 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：需要自动语音转写的实时会议记录场景
 
 ## 使用流程
 
@@ -54,21 +56,12 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| note_type | string | 是 | 笔记类型, 可选: cornell/zettelkasten/mindmap/meeting |
+| subject | string | 否 | 笔记主题, 默认: 通用 |
 
 ## 输出格式
 
 Commands print concise confirmations to stdout. `list` and `export` output the full data file. `stats` shows a total count. All actions are also logged to `history.log` for auditing. Redirect output with standard shell operators: `note-taker list > tasks.txt`.
-
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
 
 ## 依赖说明
 
@@ -76,7 +69,7 @@ Commands print concise confirmations to stdout. `list` and `export` output the f
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -87,7 +80,6 @@ Commands print concise confirmations to stdout. `list` and `export` output the f
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -128,7 +120,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

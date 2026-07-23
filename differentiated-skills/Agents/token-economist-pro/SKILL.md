@@ -32,11 +32,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # Token经济学家（专业版）
 
 > **全功能Token优化系统。向量缓存+成本预估+预算控制+多模型路由，从个人节省走向团队级成本治理。**

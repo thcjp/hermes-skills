@@ -16,11 +16,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 代理副驾驶（Agent Copilot Pro）
 
 面向 AI Agent 开发者的**工程化副驾驶**，把零散的 Prompt 工程经验沉淀为模板库、评估器与循环工程工作流，让 Agent 从"能跑"升级到"稳定可控"。

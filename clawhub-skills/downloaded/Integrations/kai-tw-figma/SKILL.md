@@ -3,7 +3,7 @@ slug: kai-tw-figma
 name: kai-tw-figma
 version: "1.0.3"
 displayName: Figma
-summary: Interact with Figma files to read structure, export layers as images, and
+summary: "交互Figma文件,读结构/导图层为图/取评论(社区下载版)"
   retrieve comments using...
 license: MIT
 description: |-

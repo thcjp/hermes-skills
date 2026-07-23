@@ -3,7 +3,7 @@ slug: powerpoint
 name: powerpoint
 version: "1.0.0"
 displayName: PowerPoint
-summary: Control PowerPoint app sessions, slides, notes, export, and presentation
+summary: "通过osascript控制PowerPoint会话、幻灯片、备注、导出与演示状态,自动化PPT操作"
   state with osascript wor...
 license: MIT-0
 description: |-

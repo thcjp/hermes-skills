@@ -26,11 +26,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 文字游戏机 (专业版)
 ## 概述
 专业版面向游戏工作室、内容平台与教育机构,在免费版文字游戏生成之上,扩展 AI 剧情生成、多人协作、图形界面、游戏编辑器、商业发布、多语言等企业级能力。支持构建接近商业品质的文字游戏,适合 IP 衍生、教育互动、内容平台运营等专业场景。

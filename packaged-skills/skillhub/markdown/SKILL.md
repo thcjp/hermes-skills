@@ -3,7 +3,7 @@ slug: "markdown"
 name: "markdown"
 version: "1.0.1"
 displayName: "Markdown"
-summary: "Generate clean, portable Markdown that renders correctly across parsers."
+summary: "生成干净可移植Markdown,跨解析器正确渲染"
 license: "Proprietary"
 description: |-
   Generate clean, portable Markdown that renders correctly across parsers。核心能力:

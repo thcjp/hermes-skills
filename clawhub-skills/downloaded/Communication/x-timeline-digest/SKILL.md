@@ -3,7 +3,7 @@ slug: x-timeline-digest
 name: x-timeline-digest
 version: "1.0.2"
 displayName: X Timeline Digest
-summary: Build a deduplicated digest from X (Twitter) For You and Following timelines
+summary: "用bird从X/Twitter时间线构建去重摘要"
   using bird. Outputs ...
 license: MIT
 description: |-

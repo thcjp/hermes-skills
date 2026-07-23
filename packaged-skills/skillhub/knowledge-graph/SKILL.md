@@ -3,7 +3,7 @@ slug: "knowledge-graph"
 name: "knowledge-graph"
 version: "1.0.0"
 displayName: "Knowledge Graph"
-summary: "Maintain SkillHub's compounding knowledge graph under life/areas/** by adding/superseding"
+summary: "维护SkillHub复利知识图谱,增删与替代原子笔记"
 license: "Proprietary"
 description: |-
   Maintain SkillHub's compounding knowledge graph under life/areas/**
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Knowledge Graph

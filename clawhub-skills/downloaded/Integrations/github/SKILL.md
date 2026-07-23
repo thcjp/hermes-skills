@@ -3,7 +3,7 @@ slug: github
 name: github
 version: "1.0.0"
 displayName: Github
-summary: Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`,
+summary: "用gh CLI操作GitHub,issue/pr/run/api一站管理(社区下载版)"
   and `gh api` for issu...
 license: MIT
 description: |-

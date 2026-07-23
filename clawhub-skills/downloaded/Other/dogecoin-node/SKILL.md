@@ -3,7 +3,7 @@ slug: dogecoin-node
 name: dogecoin-node
 version: "1.0.5"
 displayName: Dogecoin Node
-summary: A skill to set up and operate a Dogecoin Core full node with RPC access,
+summary: "搭建运营Dogecoin Core全节点,RPC访问与区块链工具,支持去中心化网络参与"
   blockchain tools, and op...
 license: MIT
 description: |-

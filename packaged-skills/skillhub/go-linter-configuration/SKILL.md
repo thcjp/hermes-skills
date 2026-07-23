@@ -3,7 +3,7 @@ slug: "go-linter-configuration"
 name: "go-linter-configuration"
 version: "1.0.0"
 displayName: "Go Linter Configurat"
-summary: "Configure and troubleshoot golangci-lint for Go projects. Handle import resolution"
+summary: "配置排障golangci-lint,处理导入与类型检查问题"
 license: "Proprietary"
 description: |-
   Configure and troubleshoot golangci-lint for Go projects。Handle import
@@ -40,9 +40,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| golangci-lint配置 | 项目结构和依赖信息 | .golangci.yml配置文件 |
+| 导入解析修复 | Go模块和导入路径 | 修复后的导入语句和模块配置 |
+| Linter规则调优 | 现有配置和项目需求 | 优化的Linter规则和排除项 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非golangci-lint的Go代码检查工具配置
 
 ## 使用流程
 
@@ -55,8 +57,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| project_path | string | 是 | Go项目根目录路径 |
+| linter_preset | string | 否 | Linter预设, 可选: minimal/standard/aggressive, 默认: standard |
 
 ## 输出格式
 
@@ -99,38 +101,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-### "undefined: package" Errors
-
-Problem: Linter reports undefined references to imported packages
-Solution: Use minimal configuration with `disable-all: true` and only enable basic linters like `gofmt`
-
-### Import Resolution Problems
-
-Problem: CI environment cannot resolve dependencies properly
-Solution:
-
-1. Ensure go.mod and go.sum are up to date
-2. Use `go mod download` before running linter in CI
-3. Consider using simpler linters in CI environment
-
-### Type-Checking Failures
-
-Problem: Linter fails during type checking phase
-Solution:
-
-1. Temporarily disable complex linters that require type checking
-2. Use `--fast` flag for quicker, less intensive checks
-3. Verify all imports are properly declared
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -141,7 +118,6 @@ Solution:
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -161,7 +137,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

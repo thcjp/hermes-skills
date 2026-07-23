@@ -3,7 +3,7 @@ slug: "analyze"
 name: "analyze"
 version: "1.0.0"
 displayName: "Analyze"
-summary: "Structured analysis for any input. Data, code, text, decisions, visuals."
+summary: "对任意输入做结构化分析,数据/代码/文本/决策/可视化全支持,告别无序堆砌"
 license: "Proprietary"
 description: |-
   Structured analysis for any input。Data, code, text, decisions, visuals。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Analyze
 

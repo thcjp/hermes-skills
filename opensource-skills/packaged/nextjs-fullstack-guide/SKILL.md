@@ -17,12 +17,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次
-pricing_model: per_use
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # Next.js全栈指南
 
 基于 Vercel 官方优选实践,构建生产级 Next.js 全栈应用。从路由设计到数据获取,从性能优化到部署配置,全流程指导。

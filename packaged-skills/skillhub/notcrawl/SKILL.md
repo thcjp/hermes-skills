@@ -3,7 +3,7 @@ slug: "notcrawl"
 name: "notcrawl"
 version: "1.0.1"
 displayName: "Notcrawl"
-summary: "Notion archive: search, sync freshness, pages/databases, Markdown exports."
+summary: "Notion归档,搜索/同步/页面数据库/Markdown导出"
 license: "Proprietary"
 description: |-
   Notion archive: search, sync freshness, pages/databases, Markdown exports。核心能力:
@@ -29,8 +29,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Notcrawl

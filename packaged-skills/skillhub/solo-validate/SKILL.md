@@ -3,7 +3,7 @@ slug: "solo-validate"
 name: "solo-validate"
 version: "2.1.1"
 displayName: "Validate"
-summary: "Score startup idea through S.E.E.D. niche check + STREAM 6-layer analysis"
+summary: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分"
 license: "Proprietary"
 description: |-
   Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Validate
 

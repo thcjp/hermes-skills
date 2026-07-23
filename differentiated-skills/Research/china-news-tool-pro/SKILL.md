@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **浏览器模式+AI摘要+定时推送+情感分析。企业级新闻聚合全功能覆盖。**
 
 将复杂的新闻聚合与分发任务交给专业工具处理。专业版在免费版RSS订阅能力之上，新增浏览器自动化模式、AI智能摘要、定时自动执行、多渠道推送、AI辅助分类、新闻情感分析、历史新闻检索七大高级能力，满足企业级场景对新闻情报的广度、深度与时效性要求。

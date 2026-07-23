@@ -3,7 +3,7 @@ slug: logo
 name: logo
 version: "1.0.0"
 displayName: Logo
-summary: Generate logos with AI image tools using effective prompt structures, validation
+summary: "用AI图像工具生成logo,提示结构/校验/导出"
   loops, and expor...
 license: MIT
 description: |-

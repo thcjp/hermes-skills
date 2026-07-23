@@ -3,7 +3,7 @@ slug: "internet-search"
 name: "internet-search"
 version: "0.3.4"
 displayName: "Internet Search"
-summary: "How to use the internet_search tool effectively — category routing, query"
+summary: "高效用internet_search工具,类目路由/查询构造/多步"
 license: "Proprietary"
 description: |-
   How to use the internet_search tool effectively — category routing,

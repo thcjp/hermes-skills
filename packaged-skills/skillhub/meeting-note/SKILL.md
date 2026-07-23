@@ -3,7 +3,7 @@ slug: "meeting-note"
 name: "meeting-note"
 version: "1.0.0"
 displayName: "Meeting Note"
-summary: "探讨/决策型会议与谈话纪要（结论/共识/分歧/决策轨迹/隐含假设/风险机会/行动项）+ Zettelkasten 连接。Use when 用户要整理会议纪要、复盘讨论、把多方探讨变成可执行资产。..."
+summary: "探讨决策型会议纪要(结论/共识/分歧/行动项)+Zettelkasten连接"
 license: "Proprietary"
 description: |-
   探讨/决策型会议与谈话纪要（结论/共识/分歧/决策轨迹/隐含假设/风险机会/行动项）+ Zettelkasten 连接。Use when
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Meeting Note

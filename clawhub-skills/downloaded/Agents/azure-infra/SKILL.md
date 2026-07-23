@@ -3,7 +3,7 @@ slug: azure-infra
 name: azure-infra
 version: "1.0.0"
 displayName: Azure Infra
-summary: This Azure infrastructure skill appears purpose-aligned and disclosed, with
+summary: "Azure基础设施技能(云写风险需谨慎)"
   cloud-write risk cons...
 license: MIT
 description: |-

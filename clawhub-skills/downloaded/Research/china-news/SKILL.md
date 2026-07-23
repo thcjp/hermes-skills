@@ -3,7 +3,7 @@ slug: china-news
 name: china-news
 version: "1.0.3"
 displayName: China News
-summary: 中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources. Supports
+summary: "中国新闻资讯聚合工具,获取中文来源最新新闻,一站式追踪国内资讯动态"
   multiple news si...
 license: MIT-0
 description: |-

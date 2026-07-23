@@ -8,15 +8,14 @@ license: Proprietary
 description: |-
   AI写作分身工厂——上传任意作者的5-10篇文章,6维反向提取风格指纹,生成可永久复用的写作分身,让任何人用这个分身写出的文章读起来与原作者一模一样。核心功能:6维风格指纹提取(词汇丰富度/句式结构/语调倾向/节奏模式/修辞偏好/情感基调)、14种写作公式(PAS/AIDA/STAR/FAB/金字塔原理等)、风格指纹JSON持久化一次蒸馏永久复用、智能公式推荐根据风格自动匹配、内容生成自动注入风格
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [内容创作, 写作, 风格分析, AI写作, 风格克隆]
 tools:
   - read
   - exec
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # AI写作分身工厂
 

@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 多搜索引擎工具（专业版）
 ## 概述
 多搜索引擎工具专业版在免费版 10 个国内搜索引擎的基础上，新增 10+ 个海外搜索引擎，并提供批量关键词搜索、结果自动抓取聚合、去重排序、搜索历史记录与 REST API 集成等企业级能力，满足专业研究与商业情报收集场景的深度需求。

@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "经CLI与REST管表单/提交/用户/RBAC"
 ---
-
 # NetPad - Build forms, workflows and manage MongoDB data
 Manage forms, submissions, users, and RBAC via CLI and REST API.
 

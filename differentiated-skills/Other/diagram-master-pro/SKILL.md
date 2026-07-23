@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 > **从单张手工到批量自动化，从固定配色到品牌定制。企业级图表制作系统。**
 
 技术团队的图表制作不应停留在"一张一张手绘"的阶段。专业版采用"模板-生成-导出-管理"四阶段工作流，配合七大高级功能，帮助团队建立统一、高效、可复用的图表制作体系。

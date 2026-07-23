@@ -3,7 +3,7 @@ slug: docker-sandbox
 name: docker-sandbox
 version: "1.0.0"
 displayName: Docker Sandbox
-summary: Create and manage Docker sandboxed VM environments for safe agent execution.
+summary: "创建管理Docker沙箱虚拟环境,为Agent提供安全隔离执行环境,防止宿主被污染"
   Use when running unt...
 license: MIT
 description: |-

@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **全功能文件自动整理。重复清理、智能内容分类、批量定时整理、实时监控。**
 
 高效文件治理面临的挑战远超基础整理：大量重复文件占用存储空间需要精准清理、按扩展名分类无法识别文件真实内容、多个文件夹需要统一定时整理、团队成员需要共享分类规则、新增文件需要实时监控自动归位。

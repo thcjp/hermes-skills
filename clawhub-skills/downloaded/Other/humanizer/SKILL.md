@@ -3,7 +3,7 @@ slug: humanizer
 name: humanizer
 version: "1.0.0"
 displayName: Humanizer
-summary: Remove signs of AI-generated writing from text.
+summary: "去除文本中的AI生成痕迹,使文章更自然,解决AI内容被识别标记的痛点"
 license: MIT
 description: |-
   Remove signs of AI-generated writing from text。核心能力:

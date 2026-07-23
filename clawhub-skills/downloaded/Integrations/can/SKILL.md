@@ -3,7 +3,7 @@ slug: can
 name: can
 version: "1.9.1"
 displayName: Can
-summary: Agent & MCP integration. CAN stamps what flows through any pipe. Verify,
+summary: "Agent与MCP集成,CAN为流经任意管道的内容盖章验证"
   name, log locally.
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: elite-longterm-memory-local
 name: elite-longterm-memory-local
 version: "1.1.0"
 displayName: Elite Longterm Memor
-summary: Local vector memory system with LanceDB + Pure JS embedding. No native modules
+summary: "本地向量记忆系统,LanceDB+纯JS嵌入,免原生模块与外部API"
   or external APIs r...
 license: MIT
 description: |-

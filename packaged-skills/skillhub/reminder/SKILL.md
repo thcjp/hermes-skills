@@ -3,7 +3,7 @@ slug: "reminder"
 name: "reminder"
 version: "0.1.1"
 displayName: "Reminder"
-summary: "Capture natural-language events, save to your workspace, and schedule Telegram"
+summary: "捕获自然语言事件存工作区并排Telegram提醒,自动解析"
 license: "Proprietary"
 description: |-
   Capture natural-language events, save to your workspace, and schedule
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Reminder
 

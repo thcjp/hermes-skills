@@ -3,7 +3,7 @@ slug: py
 name: py
 version: "1.0.1"
 displayName: Python
-summary: Write reliable Python avoiding mutable defaults, import traps, and common
+summary: "编写可靠Python,规避可变默认参数、导入陷阱等运行时意外,减少生产事故"
   runtime surprises.
 license: MIT
 description: |-

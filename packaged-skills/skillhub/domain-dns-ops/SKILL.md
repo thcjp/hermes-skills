@@ -3,7 +3,7 @@ slug: "domain-dns-ops"
 name: "domain-dns-ops"
 version: "1.0.0"
 displayName: "Domain Dns Ops"
-summary: "Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter. Use for"
+summary: "跨Cloudflare/DNSimple/Namecheap做域名DNS运维与区托管"
 license: "Proprietary"
 description: |-
   Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter。Use

@@ -3,7 +3,7 @@ slug: shop-culture
 name: shop-culture
 version: "1.0.12"
 displayName: Shop Culture
-summary: Enables AI agents to autonomously browse lifestyle and wellness products,
+summary: "AI代理自主浏览生活方式商品并下单,支持多链加密支付,简化跨境购物流程"
   place multi-chain crypt...
 license: MIT
 description: |-

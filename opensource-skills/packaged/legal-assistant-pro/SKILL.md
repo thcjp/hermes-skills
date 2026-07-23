@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: AI模型类, small市场, complex复杂度, monthly频次, business层 → AI辅助工具,中等频次
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 法律助手Pro
 
 为法律团队提供专业辅助。从合同审查到引文核验,从版本对比到状态报告,提升法务效率。

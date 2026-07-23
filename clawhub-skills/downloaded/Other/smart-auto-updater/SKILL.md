@@ -3,7 +3,7 @@ slug: smart-auto-updater
 name: smart-auto-updater
 version: "1.0.0"
 displayName: Smart Auto Updater
-summary: Smart auto-updater with AI-powered impact assessment. Checks updates, analyzes
+summary: "AI驱动的智能自动更新器,检查更新、分析变更、评估影响,降低升级风险"
   changes, evaluates...
 license: MIT
 description: |-

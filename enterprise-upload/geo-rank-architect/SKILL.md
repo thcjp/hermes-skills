@@ -16,11 +16,11 @@ tags:
 tools:
 - read
 - exec
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # GEO搜索占位架构师
 
 ## 使用场景

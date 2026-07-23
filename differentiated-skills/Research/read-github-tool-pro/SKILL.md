@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 代码仓库阅读工具（专业版）
 ## 概述
 代码仓库阅读工具专业版在免费版单仓库文档阅读的基础上，新增批量多仓库分析、跨仓库代码搜索、代码审计与安全检查、仓库对比分析、多格式导出和 REST API 集成等企业级能力，满足开发团队技术选型、安全审计和代码库管理的深度需求。

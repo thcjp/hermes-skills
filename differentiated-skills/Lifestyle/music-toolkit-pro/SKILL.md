@@ -26,11 +26,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 音乐工具箱 (专业版)
 ## 概述
 专业版面向音乐工作室、独立音乐人与商业项目,在免费版音乐生成之上,扩展 AI 编曲、多轨录音、母带处理、专业音色库、商业授权、协作创作等企业级能力。支持构建接近商业品质的音乐作品,适合影视配乐、游戏音效、专辑制作、广告音乐等专业场景。

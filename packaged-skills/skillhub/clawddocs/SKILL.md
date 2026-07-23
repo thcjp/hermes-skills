@@ -3,7 +3,7 @@ slug: "clawddocs"
 name: "clawddocs"
 version: "1.2.2"
 displayName: "Clawddocs"
-summary: "SkillHub documentation expert with decision tree navigation."
+summary: "SkillHub文档专家,带决策树导航,快速定位答案"
 license: "Proprietary"
 description: |-
   SkillHub documentation expert with decision tree navigation。核心能力:
@@ -28,9 +28,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Clawddocs
 

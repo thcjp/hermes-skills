@@ -3,7 +3,7 @@ slug: "expanso-csv-to-json"
 name: "expanso-csv-to-json"
 version: "1.0.0"
 displayName: "Expanso csv-to-json"
-summary: "Convert CSV input into a JSON array of objects using Expanso Edge CLI or"
+summary: "用Expanso Edge CLI/MCP把CSV转JSON对象数组"
 license: "Proprietary"
 description: |-
   Convert CSV input into a JSON array of objects using Expanso Edge CLI
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Expanso csv-to-json

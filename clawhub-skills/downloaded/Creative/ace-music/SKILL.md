@@ -6,7 +6,7 @@ displayName: Ace Music
   using ACE-Step 1.5. Full songs with vocals, lyrics, any genre, any language. No
   subscription, no credits, no limits. The open-source Suno alternative, powered by
   ACE Music's free API.
-summary: Generate AI music using ACE-Step 1.5 via ACE Music's free API. Use when the
+summary: "经ACE Music免费API用ACE-Step 1.5生成AI音乐"
   user asks to create, ...
 license: MIT
 description: |-

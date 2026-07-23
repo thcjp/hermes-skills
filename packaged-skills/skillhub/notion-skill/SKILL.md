@@ -3,7 +3,7 @@ slug: "notion-skill"
 name: "notion-skill"
 version: "1.0.0"
 displayName: "Notion"
-summary: "Work with Notion pages and databases via the official Notion API."
+summary: "经官方Notion API操作页面与数据库"
 license: "Proprietary"
 description: |-
   Work with Notion pages and databases via the official Notion API。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Notion

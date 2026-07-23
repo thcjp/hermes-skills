@@ -3,7 +3,7 @@ slug: write-a-skill
 name: write-a-skill
 version: "202.0.20"
 displayName: Write A Skill
-summary: Create new agent skills with proper structure, progressive disclosure, and
+summary: "创建符合规范的Agent技能,正确结构、渐进式披露、打包资源,降低技能开发门槛"
   bundled resources. Use...
 license: MIT-0
 description: |-

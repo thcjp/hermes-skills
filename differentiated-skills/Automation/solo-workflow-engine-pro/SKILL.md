@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 独立者引擎（专业版）
 
 > **独立开发者、一人公司的终极无代码自动化引擎。完整七步框架，从识别到ROI计算，让一个人像一支团队一样高效运转。**

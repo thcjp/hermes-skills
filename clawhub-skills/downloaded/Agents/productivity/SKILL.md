@@ -3,7 +3,7 @@ slug: productivity
 name: productivity
 version: "1.0.4"
 displayName: Productivity
-summary: Plan, focus, and complete work with energy management, time blocking, goals,
+summary: "规划专注完成工作,精力管理/时间块/目标/项目/任务/习惯"
   projects, tasks, hab...
 license: MIT-0
 description: |-

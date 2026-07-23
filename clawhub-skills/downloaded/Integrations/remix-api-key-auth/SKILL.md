@@ -3,7 +3,7 @@ slug: remix-api-key-auth
 name: remix-api-key-auth
 version: "0.1.0"
 displayName: Remix Api Key Auth
-summary: Configure and verify bearer API key authentication for Remix agent publishing
+summary: "为Remix Agent发布流配置校验bearer API Key认证"
   workflows.
 license: MIT
 description: |-

@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
+summary: "自然语言生成生产级React页面,实时预览迭代"
 ---
-
 # UI/UX Design and Development
 
 Generate production-quality React pages from natural language, serve live, iterate until satisfied.

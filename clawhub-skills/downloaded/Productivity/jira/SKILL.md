@@ -3,7 +3,7 @@ slug: jira
 name: jira
 version: "1.3.3"
 displayName: JIRA
-summary: Use when the user mentions Jira issues (e.g., \
+summary: "管理Jira issue:创建、查询、更新、流转,集成研发工作流,提升项目管理效率"
 license: MIT
 description: |-
   Use when the user mentions Jira issues (e。g。Use when 用户需要JIRA相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。

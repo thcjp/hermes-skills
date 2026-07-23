@@ -26,11 +26,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 专业版面向游戏工作室与商业项目,在免费版全流程指导之上,扩展团队协作、资产管理、玩家数据分析、CI/CD 自动化、商业化支持与多平台发布等企业级能力。支持数十人团队协作开发,提供完整的项目管理、版本控制、资产管线与数据驱动的运营决策能力。
 
 专业版与免费版开发流程完全兼容,小团队升级后开发方式无需改变。

@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 办公任务自动化（专业版）
 
 > **AI Agent的终极办公自动化方案。文档+邮件+日程+报表+工作流+云存储，六大模块全覆盖。**

@@ -31,11 +31,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 快速上下文记忆（专业版）
 
 > **零依赖本地记忆的终极形态。关系图谱、加密存储、多设备同步，企业级隐私保护。**

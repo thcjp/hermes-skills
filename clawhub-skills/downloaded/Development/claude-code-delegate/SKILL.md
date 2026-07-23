@@ -3,7 +3,7 @@ slug: ai-assistant-code-delegate
 name: claude-code-delegate
 version: "0.1.1"
 displayName: ai-assistant Code De
-summary: Delegate programming tasks to ai-assistant Code CLI
+summary: "把编程任务委托给ai-assistant Code CLI执行"
 license: MIT
 description: |-
   Delegate programming tasks to ai-assistant Code CLI

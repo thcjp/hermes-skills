@@ -3,7 +3,7 @@ slug: "job-auto-apply"
 name: "job-auto-apply"
 version: "1.0.0"
 displayName: "Job Auto Apply"
-summary: "This skill fits its job-application automation purpose, but it gives an agent"
+summary: "求职申请自动化,代你提交申请(需授权谨慎)"
 license: "Proprietary"
 description: |-
   This skill fits its job-application automation purpose, but it gives
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Job Auto Apply
 

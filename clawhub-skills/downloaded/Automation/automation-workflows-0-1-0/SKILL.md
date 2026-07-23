@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "自动化每周做两次以上的非创意任务以扩大规模(社区下载版)"
 ---
-
 # Automation Workflows 0.1.0
 
 ## Overview

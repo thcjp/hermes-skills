@@ -17,12 +17,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
-pricing_model: per_use
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 边缘计算开发者
 
 基于 Cloudflare 官方最佳实践，开发运行在全球 300+ 边缘节点的低延迟应用。从 Workers 脚本到 Durable Objects，从 KV 到 Workers AI，全栈边缘开发。

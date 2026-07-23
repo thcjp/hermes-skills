@@ -3,7 +3,7 @@ slug: aws-infra
 name: aws-infra
 version: "1.0.0"
 displayName: AWS Infra
-summary: Chat-based AWS infrastructure assistance using AWS CLI and console context.
+summary: "用AWS CLI与控制台上下文做对话式AWS基础设施协助"
   Use for querying, aud...
 license: MIT
 description: |-

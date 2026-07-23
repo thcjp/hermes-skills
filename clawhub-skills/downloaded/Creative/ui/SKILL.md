@@ -3,7 +3,7 @@ slug: ui
 name: ui
 version: "1.0.0"
 displayName: UI
-summary: Design clear, consistent, and visually polished user interfaces.
+summary: "设计清晰一致视觉精致的用户界面(社区下载版)"
 license: MIT
 description: |-
   Design clear, consistent, and visually polished user interfaces。核心能力:

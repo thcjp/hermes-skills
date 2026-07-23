@@ -30,11 +30,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
-
 # 图纸解析（专业版）
 
 > 工程团队的图纸资产管理中枢。PDF/DWG批量解析、OCR预处理、跨图纸索引、版本差异分析，让万张图纸瞬间变为可检索数据资产。

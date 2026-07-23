@@ -3,7 +3,7 @@ slug: python-dataviz
 name: python-dataviz
 version: "1.0.0"
 displayName: Python Dataviz
-summary: Professional data visualization using Python (matplotlib, seaborn, plotly).
+summary: "Python专业数据可视化(matplotlib/seaborn/plotly),产出出版级图表,支持多种图表类型"
   Create publication-qu...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: discord-communities
 name: discord-communities
 version: "1.0.6"
 displayName: Discord
-summary: Manage Discord guilds, channels, messages, members, roles, and application
+summary: "管Discord guild/频道/消息/成员/角色/应用命令"
   commands - powered by ...
 license: MIT-0
 description: |-

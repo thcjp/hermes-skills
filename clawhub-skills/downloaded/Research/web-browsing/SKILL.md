@@ -3,7 +3,7 @@ slug: web-browsing
 name: web-browsing
 version: "1.0.0"
 displayName: Web Browsing
-summary: Browse and summarize websites, extract content from URLs, search the web
+summary: "浏览总结网站、从URL提取内容、搜索网络信息,一站式网页内容处理工具"
   for information. Use whe...
 license: MIT-0
 description: |-

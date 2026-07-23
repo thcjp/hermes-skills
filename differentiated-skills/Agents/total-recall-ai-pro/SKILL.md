@@ -31,11 +31,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 全息记忆AI（专业版）
 
 > **全功能加密记忆系统。自动提取+跨设备同步+向量搜索+记忆策展，从个人记忆走向团队级知识沉淀。**

@@ -3,7 +3,7 @@ slug: secure-api-calls
 name: secure-api-calls
 version: "1.0.3"
 displayName: Secure API Calls
-summary: Call any API without leaking credentials. Keychains proxies requests and
+summary: "调任意API不泄密钥,Keychains代理服务端注入真实令牌"
   injects real tokens serv...
 license: MIT
 description: |-

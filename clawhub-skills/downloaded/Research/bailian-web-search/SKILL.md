@@ -3,7 +3,7 @@ slug: bailian-web-search
 name: bailian-web-search
 version: "1.0.4"
 displayName: Bailian Web Search
-summary: AI-optimized web search via Bailian(Alibaba ModelStdio) API. Returns multisourced,
+summary: "通过百炼(阿里ModelStudio)API进行AI优化网络搜索,返回多源精简结果"
   concise web se...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: manage-liquidity
 name: manage-liquidity
 version: "0.1.0"
 displayName: Manage Liquidity
-summary: Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4 pools.
+summary: "在Uniswap V2/V3/V4池添加、移除流动性或收取费用,全流程DeFi做市管理"
   Handles the full flow...
 license: MIT
 description: |-

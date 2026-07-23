@@ -3,7 +3,7 @@ slug: llm-provider-whisper
 name: openai-whisper
 version: "1.0.0"
 displayName: llm-provider Whisper
-summary: Local speech-to-text with the Whisper CLI (no API key).
+summary: "用Whisper CLI本地语音转文字,免API Key,创意设计领域专用(社区下载版)"
 license: MIT
 description: |-
   Local speech-to-text with the Whisper CLI (no API key)。核心能力:

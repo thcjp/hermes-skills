@@ -3,7 +3,7 @@ slug: dns
 name: dns
 version: "1.0.0"
 displayName: DNS
-summary: Configure DNS records correctly with proper TTLs, email authentication, and
+summary: "正确配置DNS记录,TTL/邮件认证/迁移策略得当"
   migration strategies.
 license: MIT
 description: |-

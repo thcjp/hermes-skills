@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 测试驱动编码器
 
 强制执行测试驱动开发流程。核心理念:测试是证明,不是负担。先写失败的测试,再写实现代码,最后重构。让代码质量内建于开发过程,而非事后补丁。

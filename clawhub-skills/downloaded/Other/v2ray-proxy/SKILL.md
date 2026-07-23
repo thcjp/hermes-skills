@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "管V2Ray代理自动开关,按网络状况配系统代理"
 ---
-
 # V2ray Proxy
 
 管理 V2Ray 代理的自动开关，根据网络状况自动配置系统代理。

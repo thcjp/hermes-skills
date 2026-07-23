@@ -15,13 +15,12 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 视频音频类, medium市场, enterprise复杂度, monthly频次, business层 → 算力消耗大,参考Coze
   0.5元/次
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 视频创作工作室
 
 将自然语言描述转换为基于 React 的可渲染视频代码。核心理念:在 AI 眼里,视频的每一帧都是一个网页,用前端代码实现视频制作。

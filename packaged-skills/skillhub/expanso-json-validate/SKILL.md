@@ -3,7 +3,7 @@ slug: "expanso-json-validate"
 name: "expanso-json-validate"
 version: "1.0.0"
 displayName: "Expanso Json Validat"
-summary: "Validate JSON syntax and structure using the Expanso Edge pipeline in CLI"
+summary: "用Expanso Edge流水线校验JSON语法与结构"
 license: "Proprietary"
 description: |-
   Validate JSON syntax and structure using the Expanso Edge pipeline in
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Expanso Json Validat

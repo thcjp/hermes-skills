@@ -3,7 +3,7 @@ slug: "fonts"
 name: "fonts"
 version: "1.0.0"
 displayName: "Fonts"
-summary: "Choose and implement web typography avoiding common rendering, pairing, and"
+summary: "选配网页字体,规避渲染/配对/层级常见错误,排版专业"
 license: "Proprietary"
 description: |-
   Choose and implement web typography avoiding common rendering, pairing,

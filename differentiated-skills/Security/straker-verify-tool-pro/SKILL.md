@@ -56,11 +56,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。在免费版基础翻译功能上,增加AI质量增强、专业人工审核、翻译记忆库(TM)与术语表管理、批量并行翻译、Webhook翻译完成回调等企业级功能。支持无限API调用,提供HTML/JSON专业翻译报告。与免费版完全兼容,API接口和项目格式可无缝迁移。
 
 ## 核心能力

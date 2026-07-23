@@ -3,7 +3,7 @@ slug: javascript
 name: javascript
 version: "1.0.3"
 displayName: JavaScript
-summary: Write robust JavaScript with async patterns, type coercion handling, and
+summary: "写健壮JavaScript,异步/类型转换/ES2023+特性(社区下载版)"
   modern ES2023+ features.
 license: MIT
 description: |-

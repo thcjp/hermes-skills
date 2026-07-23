@@ -3,7 +3,7 @@ slug: gif-whatsapp
 name: gif-whatsapp
 version: "1.3.0"
 displayName: Gif Whatsapp
-summary: Search and send GIFs on WhatsApp. Handles the Tenor→MP4 conversion required
+summary: "在WhatsApp搜索发送GIF,处理Tenor到MP4转换,解决WhatsApp不支持GIF直接发送问题"
   for WhatsApp.
 license: MIT-0
 description: |-

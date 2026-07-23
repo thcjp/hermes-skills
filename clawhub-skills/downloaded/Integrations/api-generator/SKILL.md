@@ -3,7 +3,7 @@ slug: api-generator
 name: api-generator
 version: "2.0.0"
 displayName: Api Generator
-summary: API code generator. Generate RESTful endpoints, GraphQL schemas, OpenAPI/Swagger
+summary: "API代码生成器,RESTful端点/GraphQL/OpenAPI/客户端/Mock"
   docs, API client...
 license: MIT-0
 description: |-

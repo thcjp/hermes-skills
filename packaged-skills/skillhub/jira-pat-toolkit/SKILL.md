@@ -3,7 +3,7 @@ slug: "jira-pat-toolkit"
 name: "jira-pat-toolkit"
 version: "0.0.1"
 displayName: "SkillHub Jira Pat Sk"
-summary: "Manage Jira issues on self-hosted or enterprise Jira instances using Personal"
+summary: "用PAT管理自托管与企业Jira实例的issue"
 license: "Proprietary"
 description: |-
   Manage Jira issues on self-hosted or enterprise Jira instances using
@@ -38,9 +38,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| Issue管理 | Jira实例和Issue信息 | Issue创建/更新/查询结果 |
+| 项目查询 | 项目Key和筛选条件 | Issue列表和状态统计 |
+| 批量操作 | Issue ID列表和操作类型 | 批量操作结果和日志 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非Jira平台的项目管理(如GitHub Projects/Asana)
 
 ## 使用流程
 
@@ -53,8 +55,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| jira_url | string | 是 | Jira实例URL |
+| pat_token | string | 是 | Jira Personal Access Token |
 
 ## 输出格式
 
@@ -97,24 +99,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
-| 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后 |
-| 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
-| 审查超时 | 内容过长导致处理超时 | 建议分段审查, 每段不超过5000字 |
-| 其他异常 | 内部处理异常 | 检查输入后 |
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -125,7 +116,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -145,7 +135,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

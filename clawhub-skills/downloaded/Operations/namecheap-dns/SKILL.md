@@ -3,7 +3,7 @@ slug: namecheap-dns
 name: namecheap-dns
 version: "1.1.0"
 displayName: Namecheap DNS
-summary: Manage Namecheap DNS records safely by fetching existing entries, merging
+summary: "安全管理Namecheap DNS记录,自动备份现有配置,防止误操作导致域名解析中断"
   changes, auto-backing u...
 license: MIT
 description: |-

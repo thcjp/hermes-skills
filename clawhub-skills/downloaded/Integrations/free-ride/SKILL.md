@@ -3,7 +3,7 @@ slug: free-ride
 name: free-ride
 version: "1.0.11"
 displayName: Free Ride
-summary: Manages free AI models from OpenRouter for OpenClaw.
+summary: "为OpenClaw管理OpenRouter免费AI模型"
 license: MIT
 description: |-
   Manages free AI models from OpenRouter for OpenClaw。核心能力:

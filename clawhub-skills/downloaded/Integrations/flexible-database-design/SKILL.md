@@ -4,7 +4,7 @@ name: flexible-database-design
 version: "1.0.0"
 displayName: Flexible Database De
   \ base skill"
-summary: Guide agents and users to design and implement a \
+summary: "指导Agent与用户设计实现灵活数据库,建模不踩坑(社区下载版)"
 license: MIT-0
 description: |-
   Guide agents and users to design and implement a \\\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\

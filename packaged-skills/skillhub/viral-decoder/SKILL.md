@@ -16,14 +16,13 @@ description: |-
   - 可复用配方生成:提取爆款可复用要素,生成创作配方模板,标注通用手法与平台特色
   - 差异化创作建议:基于拆解结果提供差异化角度,避免直接模仿,打造原创爆款
 homepage: "https://skillhub.cn"
+tags: [爆款拆解, 内容分析, 创作配方, 竞品研究]
+tools:
+  - read
 # 定价元数据
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-tags: [爆款拆解, 内容分析, 创作配方, 竞品研究]
-tools:
-  - read
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
 ---
 # 爆款拆解师 v1.1.0
 

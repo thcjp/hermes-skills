@@ -3,7 +3,7 @@ slug: skill-creator
 name: skill-creator
 version: "0.1.0"
 displayName: Skill Creator
-summary: Guide for creating effective skills.
+summary: "创建有效Agent技能的完整指南,结构规范与渐进式披露最佳实践"
 license: MIT
 description: |-
   Guide for creating effective skills。核心能力:

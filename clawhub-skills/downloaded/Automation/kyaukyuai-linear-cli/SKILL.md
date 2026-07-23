@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "Agent原生Linear运行时,JSON契约/dry-run/git集成"
 ---
-
 # Linear CLI
 
 An agent-native Linear runtime for the current `v3` execution model, with stable JSON contracts, startup discovery, dry-run previews, timeout-aware write semantics, source-adjacent intake, and git/jj workflow integration.

@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 集群编码器（专业版）
 
 > **AI Agent的全功能集群开发引擎。并行调度+多层review+成本控制+失败回滚，效率与质量双飞跃。**

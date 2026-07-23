@@ -44,11 +44,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 本工具是企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,扩展了智能体批量管理、MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力,适合企业级智能体编排、多智能体协作工作流、生产环境监控与运维场景。专业版与免费版完全兼容:免费版的所有代码、工作流均可直接在专业版中使用。
 
 ### 免费版 vs 专业版对比

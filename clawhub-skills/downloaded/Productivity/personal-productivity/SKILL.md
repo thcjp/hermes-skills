@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
+summary: "帮用户建立可持续高效工作习惯"
 ---
-
 # Personal Productivity
 
 🦐 **帮助用户建立可持续的高效工作习惯**

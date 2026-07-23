@@ -3,7 +3,7 @@ slug: neosoul-decision-agent
 name: neosoul-decision-agent
 version: "1.0.0"
 displayName: Neosoul Decision Age
-summary: Structured decision support with self-improving memory.
+summary: "带自改进记忆的结构化决策支持"
 license: MIT
 description: |-
   Structured decision support with self-improving memory。核心能力:

@@ -3,7 +3,7 @@ slug: smart-model-switching
 name: smart-model-switching
 version: "1.0.0"
 displayName: Smart Model Switchin
-summary: This skill is a model-routing guide that helps choose between ai-assistant models
+summary: "ai-assistant模型路由指南,助你在模型间选择"
   and shows no evidence...
 license: MIT
 description: |-

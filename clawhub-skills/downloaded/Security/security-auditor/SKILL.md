@@ -3,7 +3,7 @@ slug: security-auditor
 name: security-auditor
 version: "1.0.0"
 displayName: Security Auditor
-summary: Use when reviewing code for security vulnerabilities, implementing authentication
+summary: "代码安全审查:漏洞检测、认证流程审计、权限评估,发现并修复安全缺陷"
   flows, auditing...
 license: MIT
 description: |-

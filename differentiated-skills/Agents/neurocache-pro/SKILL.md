@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 神经缓存增强（NeuroCache Pro）
 
 **为什么不用向量检索？** 向量检索只能找与查询相似的文档。NeuroCache 通过图遍历找到*概念关联*的记忆——即使无关键词或 embedding 重叠。"我们当时对认证做了什么决定？"会同时激活时间+实体+概念神经元，找到交集。

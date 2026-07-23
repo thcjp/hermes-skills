@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "完整UI/UX设计资源库中文版,界面如专业设计师"
 ---
-
 # UI UX Pro Max
 
 完整的 UI/UX 设计资源库，让 AI 生成的界面像专业设计师作品一样精美。

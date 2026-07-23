@@ -3,7 +3,7 @@ slug: "dns-networking"
 name: "dns-networking"
 version: "1.0.0"
 displayName: "DNS & Networking"
-summary: "Debug DNS resolution and network connectivity. Use when troubleshooting DNS"
+summary: "调试DNS解析与网络连通,DNS故障/端口测试一键诊断"
 license: "Proprietary"
 description: |-
   Debug DNS resolution and network connectivity。Use when troubleshooting
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # DNS & Networking
 

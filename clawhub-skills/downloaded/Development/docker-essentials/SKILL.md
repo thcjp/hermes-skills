@@ -3,7 +3,7 @@ slug: docker-essentials
 name: docker-essentials
 version: "1.0.0"
 displayName: Docker Essentials
-summary: Essential Docker commands and workflows for container management, image operations,
+summary: "Docker容器/镜像管理必备命令与工作流"
   and debugging.
 license: MIT
 description: |-

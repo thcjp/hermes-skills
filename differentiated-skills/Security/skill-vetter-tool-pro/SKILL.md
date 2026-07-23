@@ -53,11 +53,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 Skill安全审查专业版是一款面向企业用户的AI Agent Skill安全治理平台。在免费版12项红旗规则基础上,扩展至24项规则并支持自定义规则引擎,增加自动化代码扫描与AI风险分析、沙箱隔离环境测试、Skill信任注册表与生命周期管理、批量审查与并行处理、变更检测与持续监控等企业级功能。与免费版完全兼容,红旗规则和审查流程可无缝复用。
 
 ## 核心能力

@@ -3,7 +3,7 @@ slug: api-gateway
 name: api-gateway
 version: "1.0.0"
 displayName: API Gateway
-summary: Connect to external services through Maton-managed API routes.
+summary: "经Maton托管API路由连外部服务"
 license: MIT
 description: |-
   Connect to external services through Maton-managed API routes。核心能力:

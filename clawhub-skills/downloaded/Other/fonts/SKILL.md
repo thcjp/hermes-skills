@@ -3,7 +3,7 @@ slug: fonts
 name: fonts
 version: "1.0.0"
 displayName: Fonts
-summary: Choose and implement web typography avoiding common rendering, pairing, and
+summary: "网页字体选择与实施,规避渲染、配对、层级常见错误,提升排版专业度"
   hierarchy mistakes.
 license: MIT
 description: |-

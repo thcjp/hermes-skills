@@ -3,7 +3,7 @@ slug: discord-chat
 name: discord-chat
 version: "1.0.0"
 displayName: Discord Chat
-summary: Send messages, reply to messages, and search message history in Discord channels
+summary: "在Discord频道发消息/回复/搜历史"
   using the messag...
 license: MIT
 description: |-

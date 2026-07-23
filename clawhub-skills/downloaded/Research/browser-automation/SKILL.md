@@ -3,7 +3,7 @@ slug: browser-automation
 name: browser-automation
 version: "1.0.1"
 displayName: Browser Automation
-summary: Automate web browser interactions using natural language via CLI commands.
+summary: "通过自然语言CLI命令自动化浏览器交互,降低RPA脚本编写门槛,快速实现网页自动化"
   Use when the user asks...
 license: MIT
 description: |-

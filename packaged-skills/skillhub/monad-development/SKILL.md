@@ -3,7 +3,7 @@ slug: "monad-development"
 name: "monad-development"
 version: "1.0.0"
 displayName: "Monad Development"
-summary: "Builds dapps on Monad blockchain. Use when deploying contracts, setting up"
+summary: "在Monad区块链建dapp,部署合约/配前端"
 license: "Proprietary"
 description: |-
   Builds dapps on Monad blockchain。Use when deploying contracts, setting
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Monad Development
 

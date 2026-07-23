@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 更新守护者
 
 自动更新Agent平台与所有已安装技能包，但更新前先预检、先快照，更新后跑健康检查，失败自动回滚。核心信条：**更新可以自动，但回滚必须一键。**

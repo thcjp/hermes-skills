@@ -27,11 +27,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 UI/UX设计指南专业版是一款面向企业设计团队和专业前端的完整设计体系参考。在免费版核心设计原则之上,扩展至WCAG 2.2无障碍合规、设计令牌系统、Shadcn/ui组件库深度集成、2026设计趋势、高级微交互动画,以及对Linear、Stripe、Vercel、Notion等高级产品的深度设计分析。
 
 专业版帮助企业建立可扩展、可维护、合规的设计系统,完全兼容免费版设计原则,可无缝升级。

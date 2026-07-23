@@ -3,7 +3,7 @@ slug: task
 name: task
 version: "0.1.0"
 displayName: Task
-summary: Tasker docstore task management via tool-dispatch. Use for task lists, due
+summary: "任务管理:任务列表、今日待办、逾期、周计划,工具分发式任务调度系统"
   today/overdue, week pl...
 license: MIT
 description: |-

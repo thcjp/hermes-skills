@@ -3,7 +3,7 @@ slug: "context-driven-development"
 name: "context-driven-development"
 version: "1.0.0"
 displayName: "Context Driven Devel"
-summary: "Treat project context as a managed artifact alongside code. Use structured"
+summary: "把项目上下文当受管制品与代码并行,用结构化文档沉淀"
 license: "Proprietary"
 description: |-
   Treat project context as a managed artifact alongside code。Use structured
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Context Driven Devel
 

@@ -3,7 +3,7 @@ slug: "media-server-control"
 name: "media-server-control"
 version: "1.3.0"
 displayName: "Jellyfin Control"
-summary: "Control Jellyfin media server and TV. Search content, resume playback, manage"
+summary: "控Jellyfin媒体服务器与TV,搜索/续播/管会话"
 license: "Proprietary"
 description: |-
   Control Jellyfin media server and TV。Search content, resume playback,

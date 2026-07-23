@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **批量转换+自定义模板+AI增强+定时归档。企业级内容归档全功能覆盖。**
 
 将复杂的RSS内容转换与归档任务交给专业工具处理。专业版在免费版单源转换能力之上，新增批量转换、自定义模板、AI内容增强、定时归档、多格式输出、图片下载、全文获取、去重处理八大高级能力，满足企业级场景对内容归档的批量性、定制化与自动化要求。

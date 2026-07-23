@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "把bot运营状态暴露为JSON,供仪表盘与监控"
 ---
-
 # Test
 
 A configurable HTTP service that exposes your Skill平台 bot's operational status as JSON. Designed for dashboard integration, monitoring, and transparency.

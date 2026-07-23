@@ -3,7 +3,7 @@ slug: audio-upload-aioz-stream
 name: audio-upload-aioz-stream
 version: "1.0.1"
 displayName: Audio Upload Aioz St
-summary: Quick upload audio to AIOZ Stream API. Create audio objects with default
+summary: "快速上传音频到AIOZ Stream API,建音频对象配编码"
   or custom encoding confi...
 license: MIT
 description: |-

@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "REST API参考文档,147服务含认证端点与坑"
 ---
-
 # Publish Api
 
 REST API reference documentation. 147 services with authentication, endpoints, and gotchas.

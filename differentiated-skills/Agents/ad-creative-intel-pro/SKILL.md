@@ -32,11 +32,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 广告情报专业版（Ad Creative Intel Pro）
 
 面向买量团队、投放优化师、市场研究负责人的全功能广告情报分析平台。在免费版三大端点集群基础上解锁批量导出、历史回溯、下载/收入预估三类高级端点，并新增多市场对比、创意效果归因、优先速率并发三项独有能力。

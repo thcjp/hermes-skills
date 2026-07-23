@@ -3,7 +3,7 @@ slug: "figma-design"
 name: "figma-design"
 version: "1.0.6"
 displayName: "Figma"
-summary: "Read files, manage comments, extract design tokens, download images, and"
+summary: "读文件/管评论/提设计令牌/下图片/建Webhook,Figma全管"
 license: "Proprietary"
 description: |-
   Read files, manage comments, extract design tokens, download images,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Figma
 

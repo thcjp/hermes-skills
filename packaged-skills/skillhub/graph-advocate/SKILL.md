@@ -3,7 +3,7 @@ slug: "graph-advocate"
 name: "graph-advocate"
 version: "2.9.1"
 displayName: "Graph Advocate"
-summary: "Route any blockchain data question to the right Graph Protocol service. Returns"
+summary: "把区块链数据问题路由到对的Graph Protocol服务,返实时数据"
 license: "Proprietary"
 description: |-
   Route any blockchain data question to the right Graph Protocol service。Returns live data from 15。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
@@ -38,9 +38,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 区块链数据查询 | 链上数据问题和子图类型 | Graph Protocol服务路由和建议 |
+| 子图选择 | 数据需求和合约地址 | 最优子图索引和查询端点 |
+| 查询优化 | GraphQL查询和子图模式 | 优化查询和性能建议 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非区块链数据的图数据库查询
 
 ## 使用流程
 
@@ -54,8 +56,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| question | string | 是 | 区块链数据查询问题 |
+| chain | string | 否 | 区块链网络, 可选: ethereum/polygon/arbitrum, 默认: ethereum |
 
 ## 输出格式
 
@@ -98,22 +100,13 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -124,7 +117,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -167,7 +159,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

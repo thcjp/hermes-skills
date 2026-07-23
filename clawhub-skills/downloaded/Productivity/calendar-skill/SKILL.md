@@ -3,7 +3,7 @@ slug: calendar-skill
 name: calendar-skill
 version: "1.0.4"
 displayName: Calendar
-summary: Calendar Management - secure Google Calendar, Microsoft Outlook & Exchange.
+summary: "日历管理,安全对接Google Calendar与Outlook Exchange,统一管理多平台日程"
   Use when the user wan...
 license: MIT-0
 description: |-

@@ -3,7 +3,7 @@ slug: feishu-doc
 name: feishu-doc
 version: "1.2.7"
 displayName: Feishu Doc
-summary: Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable. Automatically
+summary: "抓取飞书Wiki/文档/表格/多维表格内容,自动解析URL(社区下载版)"
   resolves Wiki URL...
 license: MIT
 description: |-

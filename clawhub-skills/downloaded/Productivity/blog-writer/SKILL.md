@@ -3,7 +3,7 @@ slug: blog-writer
 name: blog-writer
 version: "0.1.0"
 displayName: Blog Writer
-summary: This blog-writing skill is coherent and disclosed, but users should understand
+summary: "博客写作技能,结构化内容生成,解决内容创作效率低与质量不稳定问题"
   it is designed to ...
 license: MIT
 description: |-

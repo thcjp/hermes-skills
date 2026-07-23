@@ -3,7 +3,7 @@ slug: notion-pages
 name: notion-pages
 version: "0.1.1"
 displayName: Notion
-summary: Search pages and databases, update content, and manage Notion workspace data
+summary: "搜索Notion页面与数据库,更新内容,从聊天管理Notion工作空间数据"
   from chat. Use this ...
 license: MIT-0
 description: |-

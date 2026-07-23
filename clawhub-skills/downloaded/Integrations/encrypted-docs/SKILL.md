@@ -7,7 +7,7 @@ displayName: Encrypted Docs
   and agents create, search and sync encrypted markdown docs. This service leverages
   https://ddocs.new which can be enabled locally or via your preferred cloud set-up
   to make docs accessible across any device or chatbot interface in complete privacy.
-summary: End-to-end encrypted .md documents for agents & humans to collaborate. This
+summary: "端到端加密md文档,Agent与人协同编辑,隐私不泄(社区下载版)"
   is a multiplayer alte...
 license: MIT
 description: |-

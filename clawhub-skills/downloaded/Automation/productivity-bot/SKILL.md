@@ -3,7 +3,7 @@ slug: productivity-bot
 name: productivity-bot
 version: "1.0.0"
 displayName: Productivity Bot
-summary: Automation bot for productivity tasks including data processing, scheduled
+summary: "生产力任务自动化bot,数据处理/定时通知/工作流(社区下载版)"
   notifications, and wor...
 license: MIT-0
 description: |-

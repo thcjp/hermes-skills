@@ -3,7 +3,7 @@ slug: tarot
 name: tarot
 version: "1.0.0"
 displayName: Tarot from Univoice
-summary: A reflective tarot draw for emotional support (presence-first, non-clinical,
+summary: "反思式塔罗牌抽取,提供情感支持(非临床、非预测),帮助用户梳理内心感受"
   non-predictive).
 license: MIT
 description: |-

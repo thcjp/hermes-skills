@@ -3,7 +3,7 @@ slug: security-audit
 name: security-audit
 version: "1.0.0"
 displayName: Security Audit
-summary: Comprehensive security auditing for Clawdbot deployments. Scans for exposed
+summary: "Clawdbot部署全面安全审计,扫描暴露凭证、开放端口、配置漏洞,加固系统安全"
   credentials, open por...
 license: MIT
 description: |-

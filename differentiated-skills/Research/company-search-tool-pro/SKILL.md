@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 > **尽调报告+风险筛查+批量查询+监控告警。企业级查询全功能覆盖。**
 
 将复杂的企业尽调与风险分析任务交给专业工具处理。专业版在免费版单维度查询能力之上，新增企业尽调报告、风险筛查、批量查询、监控告警、关联关系分析、历史数据查询、知识产权查询、招投标查询八大高级能力，满足企业级场景对风险控制与决策支持的深度要求。

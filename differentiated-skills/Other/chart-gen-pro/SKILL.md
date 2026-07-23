@@ -35,11 +35,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 图表生成器(专业版)
 
 面向专业数据可视化场景的全功能图表生成工具。在免费版基础上扩展批量生成、自定义主题、实时数据源接入、多图表联动仪表盘、位图导出、模板库等6项高级能力。

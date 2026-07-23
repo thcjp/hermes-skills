@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
+summary: "处理Excel文件/表格数据/批量转换/报表生成"
 ---
-
 # Automate Excel
 
 在用户需要处理 Excel 文件、表格数据、批量转换或报表生成时应用本 skill。

@@ -3,7 +3,7 @@ slug: "vscode-node"
 name: "vscode-node"
 version: "1.0.2"
 displayName: "VS Code Node"
-summary: "Operate on code through a VS Code/Cursor IDE connected as an SkillHub Node."
+summary: "经连为SkillHub节点的VS Code与Cursor操作代码,40+命令"
 license: "Proprietary"
 description: |-
   Operate on code through a VS Code/Cursor IDE connected as an SkillHub
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # VS Code Node
 

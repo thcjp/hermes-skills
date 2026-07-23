@@ -43,11 +43,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 市场研究工具专业版
 ## 概述
 市场研究工具专业版是企业级深度市场研究与竞争分析系统。在免费版竞品分析、用户痛点挖掘、基础SEO研究、域名检查与市场规模估算的基础上,专业版扩展了MCP工具集成(知识库搜索/代码图谱/会话搜索)、多引擎搜索路由(Reddit/YouTube/GitHub专用引擎)、TrustMRR收入验证(Stripe验证MRR数据)、YouTube评论深度挖掘、Playwright深度内容抓取与混合搜索策略等企业级能力。

@@ -3,7 +3,7 @@ slug: excel-studio
 name: excel-studio
 version: "1.0.0"
 displayName: Excel Studio
-summary: Professional Excel spreadsheet generator. Use when user needs to create data
+summary: "专业Excel生成器,建数据表/报表/图表"
   tables, reports, cha...
 license: MIT-0
 description: |-

@@ -15,15 +15,14 @@ description: |-
   - 多平台价格监控
   - 动态调价建议与利润最大化测算
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [电商, 定价策略, 数据分析, 利润优化]
 tools:
   - read
   - exec
-pricing_rationale: "电商类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # 电商定价策略师
 

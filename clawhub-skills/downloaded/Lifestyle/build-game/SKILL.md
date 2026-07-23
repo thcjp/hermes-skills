@@ -3,7 +3,7 @@ slug: build-game
 name: build-game
 version: "1.2.0"
 displayName: 3D Game Builder
-summary: Generate and iteratively develop polished 3D browser games from natural language.
+summary: "自然语言生成3D浏览器游戏,支持迭代开发,无需编程即可快速产出可玩游戏"
   Supports any ge...
 license: MIT-0
 description: |-

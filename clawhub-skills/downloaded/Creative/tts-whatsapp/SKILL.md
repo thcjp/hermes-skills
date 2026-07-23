@@ -3,7 +3,7 @@ slug: tts-whatsapp
 name: tts-whatsapp
 version: "1.0.0"
 displayName: TTS WhatsApp
-summary: Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages
+summary: "在WhatsApp发40+语言高质量TTS语音消息,自动送达(社区下载版)"
   with automatic delivery
 license: MIT
 description: |-

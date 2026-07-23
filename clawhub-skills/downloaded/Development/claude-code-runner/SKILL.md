@@ -3,7 +3,7 @@ slug: ai-assistant-code-runner
 name: claude-code-runner
 version: "0.1.0"
 displayName: ai-assistant Code Ru
-summary: Execute programming tasks via ai-assistant Code using PTY-based invocation. Handles
+summary: "经PTY调用ai-assistant Code执行编程任务,搞定非TTY"
   non-TTY environment...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: "rss-reader"
 name: "rss-reader"
 version: "1.0.0"
 displayName: "RSS Reader"
-summary: "Monitor RSS and Atom feeds for content research. Track blogs, news sites,"
+summary: "监控RSS与Atom订阅做内容研究,追踪博客/新闻/邮件"
 license: "Proprietary"
 description: |-
   Monitor RSS and Atom feeds for content research。Track blogs, news sites,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # RSS Reader
 

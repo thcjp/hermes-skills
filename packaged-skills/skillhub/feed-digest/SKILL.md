@@ -3,7 +3,7 @@ slug: "feed-digest"
 name: "feed-digest"
 version: "1.0.0"
 displayName: "Feed Digest"
-summary: "This skill is a straightforward feed digest helper with disclosed feed fetching"
+summary: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏"
 license: "Proprietary"
 description: |-
   This skill is a straightforward feed digest helper with disclosed feed
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Feed Digest

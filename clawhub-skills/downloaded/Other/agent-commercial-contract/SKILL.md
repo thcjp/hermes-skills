@@ -3,7 +3,7 @@ slug: agent-commercial-contract
 name: agent-commercial-contract
 version: "1.0.0"
 displayName: Agent Commercial Con
-summary: Enables AI agents to autonomously negotiate, sign, execute, and enforce legally
+summary: "AI Agent自主谈判、签署、执行商业合同,全流程法律约束力,降低合同管理成本"
   binding commercia...
 license: MIT-0
 description: |-

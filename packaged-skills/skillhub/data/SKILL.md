@@ -3,7 +3,7 @@ slug: "data"
 name: "data"
 version: "1.0.1"
 displayName: "Data"
-summary: "Work with data across the full lifecycle from extraction and cleaning to"
+summary: "贯穿数据全生命周期,从抽取清洗到分析可视化,一站处理"
 license: "Proprietary"
 description: |-
   Work with data across the full lifecycle from extraction and cleaning
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Data
 

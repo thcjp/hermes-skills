@@ -16,11 +16,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 流程编辑专家
 
 通过 Admin API 与 CLI 管理 Node-RED 实例，把"部署即翻车"变为"可回滚、可审计、可治理"的运维流程。

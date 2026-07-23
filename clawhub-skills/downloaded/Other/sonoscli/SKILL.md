@@ -3,7 +3,7 @@ slug: sonoscli
 name: sonoscli
 version: "1.0.0"
 displayName: Sonoscli
-summary: Control Sonos speakers (discover/status/play/volume/group).
+summary: "控制Sonos音箱:发现设备、查看状态、播放、调节音量、分组,简化多房间音频管理"
 license: MIT
 description: |-
   Control Sonos speakers (discover/status/play/volume/group)。核心能力:

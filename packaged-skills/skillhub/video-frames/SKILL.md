@@ -3,7 +3,7 @@ slug: "video-frames"
 name: "video-frames"
 version: "1.0.0"
 displayName: "Video Frames"
-summary: "Extract frames or short clips from videos using ffmpeg."
+summary: "用ffmpeg从视频提取帧或短片段"
 license: "Proprietary"
 description: |-
   Extract frames or short clips from videos using ffmpeg。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Video Frames

@@ -3,7 +3,7 @@ slug: ux
 name: ux
 version: "1.0.0"
 displayName: UX
-summary: Design and analyze user experiences that are intuitive, efficient, and aligned
+summary: "设计分析直觉高效贴合心智模型的用户体验(社区下载版)"
   with user mental m...
 license: MIT
 description: |-

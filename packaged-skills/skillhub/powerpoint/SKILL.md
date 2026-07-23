@@ -3,7 +3,7 @@ slug: "powerpoint"
 name: "powerpoint"
 version: "1.0.0"
 displayName: "PowerPoint"
-summary: "Control PowerPoint app sessions, slides, notes, export, and presentation"
+summary: "经osascript控PowerPoint会话/幻灯片/备注/导出/放映状态"
 license: "Proprietary"
 description: |-
   Control PowerPoint app sessions, slides, notes, export, and presentation
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # PowerPoint

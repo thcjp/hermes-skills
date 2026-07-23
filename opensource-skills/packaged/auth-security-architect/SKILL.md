@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 99.9
-pricing_tier: L4
-pricing_rationale: 安全合规类, small市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高
-pricing_model: monthly
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 认证安全架构师
 
 基于 Better Auth 官方最佳实践，设计安全、可扩展的认证授权系统。从 OAuth 集成到 2FA，从会话管理到权限控制，全栈安全覆盖。

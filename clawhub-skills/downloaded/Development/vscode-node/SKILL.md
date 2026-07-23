@@ -3,7 +3,7 @@ slug: vscode-node
 name: vscode-node
 version: "1.0.2"
 displayName: VS Code Node
-summary: Operate on code through a VS Code/Cursor IDE connected as an OpenClaw Node.
+summary: "经连为OpenClaw节点的VS Code与Cursor操作代码,40+命令"
   Provides 40+ commands...
 license: MIT
 description: |-

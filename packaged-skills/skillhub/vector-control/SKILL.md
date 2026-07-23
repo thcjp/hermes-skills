@@ -3,7 +3,7 @@ slug: "vector-control"
 name: "vector-control"
 version: "1.0.1"
 displayName: "Vector Control"
-summary: "Control a Vector robot via Wirepod’s local HTTP API on the same network."
+summary: "经Wirepod本地HTTP API控Vector机器人"
 license: "Proprietary"
 description: |-
   Control a Vector robot via Wirepod’s local HTTP API on the same network。Use when you need to mov。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Vector Control
 

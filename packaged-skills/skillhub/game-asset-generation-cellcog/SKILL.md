@@ -3,7 +3,7 @@ slug: "game-asset-generation-cellcog"
 name: "game-asset-generation-cellcog"
 version: "1.0.14"
 displayName: "Game Asset Generatio"
-summary: "AI game asset generation and game development powered by CellCog. Character-consistent"
+summary: "CellCog驱动的AI游戏资产生成,角色一致美术与精灵"
 license: "Proprietary"
 description: |-
   AI game asset generation and game development powered by CellCog。Character-consistent
@@ -16,9 +16,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Game Asset Generatio
 

@@ -3,7 +3,7 @@ slug: powerpoint-pptx
 name: powerpoint-pptx
 version: "1.0.1"
 displayName: Powerpoint / PPTX
-summary: Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks
+summary: "创建、检查、编辑PowerPoint演示文稿与PPTX,可靠布局与编号,自动化PPT制作"
   with reliable layouts...
 license: MIT-0
 description: |-

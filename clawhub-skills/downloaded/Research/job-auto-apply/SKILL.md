@@ -3,7 +3,7 @@ slug: job-auto-apply
 name: job-auto-apply
 version: "1.0.0"
 displayName: Job Auto Apply
-summary: This skill fits its job-application automation purpose, but it gives an agent
+summary: "求职申请自动化,自动填写提交申请,解决海量投递效率低下的求职痛点"
   authority to submit...
 license: MIT
 description: |-

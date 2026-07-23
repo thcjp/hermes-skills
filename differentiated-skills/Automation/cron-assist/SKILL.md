@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 定时助手
 
 让用户用大白话管理定时任务，把"每天早上9点发日报"这种口语秒变可靠调度。本技能解决四个核心痛点：**cron 语法难懂**（`0 9 * * *` 谁记得住）、**重复配置**（日报、健康检查等高频场景每次从零写）、**成本失控**（频繁跑昂贵任务烧 API）、**管理混乱**（任务一多就找不到、改不动）。

@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 自我进化 AI（Self-Evolving AI）
 
 让智能体从每次交互中持续学习，自动捕获经验、错误与纠正，并通过模式复发追踪将高频问题晋升为项目级规则。所有记忆存储在项目根目录的 `.learnings/` 文件夹，支持本地保留或团队共享。

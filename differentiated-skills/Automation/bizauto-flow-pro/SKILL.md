@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 业务自动化师（专业版）
 
 > **企业级业务自动化架构系统。五阶段全生命周期，事件驱动+人机协同+五级容错，自动化永不中断。**

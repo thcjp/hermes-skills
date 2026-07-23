@@ -3,7 +3,7 @@ slug: book-painter
 name: book-painter
 version: "1.0.1"
 displayName: Book Painter
-summary: Book painter services through Lokuli MCP. Use when user needs to find and
+summary: "通过MCP预订画师服务,查找并预约本地画师,简化服务发现与预订流程"
   book painter. Triggers ...
 license: MIT
 description: |-

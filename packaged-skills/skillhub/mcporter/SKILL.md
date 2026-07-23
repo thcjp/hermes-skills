@@ -3,7 +3,7 @@ slug: "mcporter"
 name: "mcporter"
 version: "1.0.0"
 displayName: "Mcporter"
-summary: "Use the mcporter CLI to list, configure, auth, and call 协议 servers/tools."
+summary: "用mcporter CLI列出/配置/认证/调用MCP服务与工具"
 license: "Proprietary"
 description: |-
   Use the mcporter CLI to list, configure, auth, and call 协议 servers/tools。核心能力:

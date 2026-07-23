@@ -3,7 +3,7 @@ slug: "flexible-database-design"
 name: "flexible-database-design"
 version: "1.0.0"
 displayName: "Flexible Database De"
-summary: "Guide agents and users to design and implement a \"
+summary: "指导Agent与用户设计实现灵活数据库,建模不踩坑"
 license: "Proprietary"
 description: |-
   Guide agents and users to design and implement a \\\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\

@@ -3,7 +3,7 @@ slug: "personal-health-manager"
 name: "personal-health-manager"
 version: "1.0.0"
 displayName: "Personal Health Mana"
-summary: "Personal health management and wellness assistant. Use when users want to"
+summary: "个人健康管理与养生助手,追踪健康数据"
 license: "Proprietary"
 description: |-
   Personal health management and wellness assistant。Use when users want
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Personal Health Mana
 

@@ -3,7 +3,7 @@ slug: "searching-assistant"
 name: "searching-assistant"
 version: "0.1.0"
 displayName: "Searching Assistant"
-summary: "You are the leader of searching group (搜索组组长). Break down the task into independent"
+summary: "搜索组组长,把任务拆为独立互补子任务并发搜"
 license: "Proprietary"
 description: |-
   You are the leader of searching group (搜索组组长)。Break down the task into
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Searching Assistant
 

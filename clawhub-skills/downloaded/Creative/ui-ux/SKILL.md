@@ -3,8 +3,7 @@ slug: ui-ux
 name: ui-ux
 version: "1.0.0"
 displayName: UI / UX
-summary: "Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font pairings,
-  99 UX rules, 25 cha"
+summary: "可搜UI/UX设计库,50+风格/97色板/57字体对/99规则(社区下载版)"
 license: MIT
 description: |-
   Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font

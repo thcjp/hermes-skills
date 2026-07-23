@@ -3,7 +3,7 @@ slug: json-canvas
 name: json-canvas
 version: "1.0.0"
 displayName: Json Canvas
-summary: Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and
+summary: "创建编辑JSON Canvas文件,含节点/边/分组/连接(社区下载版)"
   connections. Use when ...
 license: MIT
 description: |-

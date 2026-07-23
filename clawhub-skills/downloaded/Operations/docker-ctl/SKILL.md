@@ -3,7 +3,7 @@ slug: docker-ctl
 name: docker-ctl
 version: "1.0.0"
 displayName: Docker Ctl
-summary: Inspect containers, logs, and images via podman
+summary: "通过podman检查容器、日志、镜像,轻量级容器运维工具,无需Docker守护进程"
 license: MIT
 description: |-
   Inspect containers, logs, and images via podman

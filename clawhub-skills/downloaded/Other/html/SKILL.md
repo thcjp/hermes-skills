@@ -3,7 +3,7 @@ slug: html
 name: html
 version: "1.0.0"
 displayName: HTML
-summary: Avoid common HTML mistakes — accessibility gaps, form pitfalls, and SEO oversights.
+summary: "规避HTML常见错误:无障碍缺陷、表单陷阱、SEO疏漏,提升页面质量与合规性"
 license: MIT
 description: |-
   Avoid common HTML mistakes — accessibility gaps, form pitfalls, and

@@ -3,7 +3,7 @@ slug: agent-browser-clawdbot
 name: agent-browser-clawdbot
 version: "0.1.0"
 displayName: Agent Browser
-summary: Headless browser automation CLI optimized for AI agents with accessibility
+summary: "无头浏览器自动化CLI,为AI Agent优化,支持无障碍树快照与引用提取,精准网页操作"
   tree snapshots and ref...
 license: MIT
 description: |-

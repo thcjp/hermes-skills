@@ -3,7 +3,7 @@ slug: monad-development
 name: monad-development
 version: "1.0.0"
 displayName: Monad Development
-summary: Builds dapps on Monad blockchain. Use when deploying contracts, setting up
+summary: "在Monad区块链上构建DApp,部署合约、搭建前端,降低公链开发门槛"
   frontends with viem/wa...
 license: MIT
 description: |-

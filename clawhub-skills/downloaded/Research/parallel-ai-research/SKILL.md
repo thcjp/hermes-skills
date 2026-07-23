@@ -3,7 +3,7 @@ slug: parallel-ai-research
 name: parallel-ai-research
 version: "1.1.0"
 displayName: Research
-summary: Conduct open-ended research on a topic, building a living markdown document.
+summary: "开放式主题研究,构建活文档,支持交互式迭代,持续累积研究深度"
   Supports interactive...
 license: MIT
 description: |-

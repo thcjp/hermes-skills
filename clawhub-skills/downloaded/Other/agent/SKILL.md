@@ -3,7 +3,7 @@ slug: agent
 name: agent
 version: "1.0.0"
 displayName: Agent
-summary: Define agent identity, personality, voice, and boundaries to create assistants
+summary: "定义Agent身份、性格、语气与边界,打造有辨识度的AI助手,避免千篇一律的对话"
   that feel authenti...
 license: MIT
 description: |-

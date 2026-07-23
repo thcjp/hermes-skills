@@ -3,7 +3,7 @@ slug: photo-webcam
 name: photo-webcam
 version: "1.0.6"
 displayName: Photo Webcam
-summary: List and snapshot retrieval for webcams (especially foto-webcam.eu). Use
+summary: "列出并获取网络摄像头快照,支持foto-webcam.eu,远程查看实时画面"
   this skill when the user...
 license: MIT-0
 description: |-

@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 浏览器自动化工具专业版
 ## 概述
 浏览器自动化工具专业版是企业级的网页自动化解决方案。在完整兼容免费版所有本地浏览器能力的基础上,专业版引入了远程浏览器集群、批量任务调度、代理网络穿透、验证码自动处理等高级能力,适用于大规模数据采集、跨地区业务自动化、QA 测试集成等复杂企业场景。

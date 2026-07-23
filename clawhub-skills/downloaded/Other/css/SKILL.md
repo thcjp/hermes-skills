@@ -3,7 +3,7 @@ slug: css
 name: css
 version: "1.0.1"
 displayName: CSS
-summary: Avoid common CSS pitfalls — stacking context, layout quirks, and underused
+summary: "规避CSS常见陷阱:层叠上下文、布局怪癖,掌握现代CSS特性,提升页面渲染质量"
   modern features.
 license: MIT
 description: |-

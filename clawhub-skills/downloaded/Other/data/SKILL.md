@@ -3,7 +3,7 @@ slug: data
 name: data
 version: "1.0.1"
 displayName: Data
-summary: Work with data across the full lifecycle from extraction and cleaning to
+summary: "数据全生命周期管理:抽取、清洗、分析、可视化,覆盖从原始数据到洞察的完整链路"
   analysis, visualization,...
 license: MIT
 description: |-

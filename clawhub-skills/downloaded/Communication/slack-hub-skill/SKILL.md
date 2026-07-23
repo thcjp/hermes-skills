@@ -3,7 +3,7 @@ slug: slack-hub-skill
 name: slack-hub-skill
 version: "0.1.0"
 displayName: Slack Hub Skill
-summary: Send messages, reply in threads, search workspace content, and list public
+summary: "用Slack Bot发消息/线程回复/搜工作区/列公开频道"
   channels using Slack B...
 license: MIT
 description: |-

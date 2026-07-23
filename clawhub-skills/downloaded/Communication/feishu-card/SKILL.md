@@ -3,7 +3,7 @@ slug: feishu-card
 name: feishu-card
 version: "1.4.11"
 displayName: Feishu Card
-summary: Send rich interactive Feishu cards with markdown, headers, buttons, images,
+summary: "发富交互飞书卡片,含markdown/标题/按钮/图片/样式"
   and styled persona me...
 license: MIT
 description: |-

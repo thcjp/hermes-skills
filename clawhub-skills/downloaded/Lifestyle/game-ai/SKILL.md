@@ -3,7 +3,7 @@ slug: game-ai
 name: game-ai
 version: "1.0.0"
 displayName: Game AI Systems
-summary: Game AI development guide covering behavior trees, state machines, pathfinding,
+summary: "游戏AI开发指南,覆盖行为树、状态机、寻路、决策系统,规避常见AI架构陷阱"
   and decision-maki...
 license: MIT
 description: |-

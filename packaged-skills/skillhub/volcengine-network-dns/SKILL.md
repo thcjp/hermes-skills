@@ -3,7 +3,7 @@ slug: "volcengine-network-dns"
 name: "volcengine-network-dns"
 version: "1.0.0"
 displayName: "Volcengine Network D"
-summary: "DNS record management on Volcengine networking services. Use when users need"
+summary: "火山引擎网络服务DNS记录管理,区记录查询与更新"
 license: "Proprietary"
 description: |-
   DNS record management on Volcengine networking services。Use when users
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Volcengine Network D
 

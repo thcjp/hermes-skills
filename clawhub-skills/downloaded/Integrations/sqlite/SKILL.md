@@ -3,7 +3,7 @@ slug: sqlite
 name: sqlite
 version: "1.0.0"
 displayName: SQLite
-summary: Use SQLite correctly with proper concurrency, pragmas, and type handling.
+summary: "正确用SQLite,并发/pragmas/类型处理得当(社区下载版)"
 license: MIT
 description: |-
   Use SQLite correctly with proper concurrency, pragmas, and type handling。核心能力:

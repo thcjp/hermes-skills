@@ -3,7 +3,7 @@ slug: pptx-pdf-font-fix
 name: pptx-pdf-font-fix
 version: "1.0.0"
 displayName: PPTX PDF Font Fix
-summary: This skill is a narrow PowerPoint repair utility that locally edits a user-provided
+summary: "本地编辑PPTX修复PowerPoint字体的窄范围修复工具"
   PPTX and show...
 license: MIT
 description: |-

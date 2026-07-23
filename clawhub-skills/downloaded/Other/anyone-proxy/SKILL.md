@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "经Anyone Protocol网络路由请求"
 ---
-
 # Anyone Procotol Proxy
 
 This skill enables Clawdbot to route requests through the Anyone Protocol network.

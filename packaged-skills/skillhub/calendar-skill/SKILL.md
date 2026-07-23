@@ -3,7 +3,7 @@ slug: "calendar-skill"
 name: "calendar-skill"
 version: "1.0.4"
 displayName: "Calendar"
-summary: "Calendar Management - secure Google Calendar, Microsoft Outlook & Exchange."
+summary: "安全管理Google日历/Outlook/Exchange,一处排程多端同步"
 license: "Proprietary"
 description: |-
   Calendar Management - secure Google Calendar, Microsoft Outlook & Exchange。Use when the user wan。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
@@ -38,9 +38,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 安全日历管理 | 日历凭据和事件信息 | 加密日历事件和访问控制 |
+| 跨平台同步 | Google/Outlook/Exchange账户 | 多平台日历合并视图 |
+| 会议调度 | 参会者日程和会议室 | 最优会议时间和预约确认 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：无日历API访问权限的离线日程规划
 
 ## 使用流程
 
@@ -53,8 +55,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| provider | string | 是 | 日历服务提供商, 可选: google/outlook/exchange |
+| timezone | string | 否 | 时区设置, 如: Asia/Shanghai, 默认: 系统时区 |
 
 ## 输出格式
 
@@ -97,22 +99,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -123,7 +116,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -143,7 +135,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

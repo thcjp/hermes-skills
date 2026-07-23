@@ -30,11 +30,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 云锻造自动化（专业版）
 
 > **企业级多云IaC编排系统。多云管理+Ansible+CI/CD+合规审计+灾备恢复，云基础设施安全合规高效。**

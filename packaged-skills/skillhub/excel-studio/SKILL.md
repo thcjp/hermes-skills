@@ -3,7 +3,7 @@ slug: "excel-studio"
 name: "excel-studio"
 version: "1.0.0"
 displayName: "Excel Studio"
-summary: "Professional Excel spreadsheet generator. Use when user needs to create data"
+summary: "专业Excel生成器,建数据表/报表/图表,办公利器"
 license: "Proprietary"
 description: |-
   Professional Excel spreadsheet generator。Use when user needs to create
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Excel Studio
 

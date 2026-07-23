@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 > **从单本书到多书系，从单人创作到团队协作。出版级插画管理系统。**
 
 出版机构的插画管理不只是"画完一张图"，而是涉及多书系并行、多插画师协作、多级审核、风格统一和版权管理的系统工程。专业版采用"规划-分配-创作-审核-归档"五阶段管理闭环，配合六大高级功能，帮助出版机构建立高效、规范、可追溯的插画制作体系。

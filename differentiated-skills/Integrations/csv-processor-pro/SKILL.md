@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
-
 面向专业数据工程师与数据治理团队的全功能 CSV 清洗平台，在免费版基础上解锁流式处理、自定义规则、Schema 校验与数据质量评分。
 
 ## 概述

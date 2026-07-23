@@ -7,8 +7,7 @@ displayName: Key Guard
   \ content gets sent to Claude's servers. key-guard prevents this by acting as a\
   \ local middleman â\x80\x94 Claude calls a tool, the tool reads the key and makes\
   \ the API call locally, and only the result is returned to Claude."
-summary: "Security guardrail: prevents API keys from being sent to ai-assistant. Triggers
-  when user asks to call"
+summary: "安全护栏,阻止API Key被发送给ai-assistant"
 license: MIT-0
 description: |-
   Security guardrail: prevents API keys from being sent to ai-assistant。Triggers

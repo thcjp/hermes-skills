@@ -3,7 +3,7 @@ slug: linear
 name: linear
 version: "1.0.0"
 displayName: Linear
-summary: Query and manage Linear issues, projects, and team workflows.
+summary: "查询管理Linear issue、项目与团队工作流,提升研发协作效率与任务追踪透明度"
 license: MIT
 description: |-
   Query and manage Linear issues, projects, and team workflows。核心能力:

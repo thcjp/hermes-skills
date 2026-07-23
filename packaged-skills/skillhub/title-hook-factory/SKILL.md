@@ -15,15 +15,14 @@ description: |-
   - 钩子段落生成
   - 多平台字数控制与风格适配
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [标题生成, 内容引流, 爆款创作, 副业工具]
 tools:
   - read
   - exec
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # 标题钩子工厂 v1.1.0
 

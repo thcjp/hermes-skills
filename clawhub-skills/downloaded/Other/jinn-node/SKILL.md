@@ -3,7 +3,7 @@ slug: jinn-node
 name: jinn-node
 version: "1.0.0"
 displayName: jinn-node
-summary: Earn token rewards by working for autonomous ventures on the Jinn Network.
+summary: "在Jinn Network上为自主企业工作赚取代币奖励,利用闲置算力参与去中心化经济"
   Put your idle OpenClaw...
 license: MIT
 description: |-

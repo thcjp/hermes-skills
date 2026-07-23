@@ -3,7 +3,7 @@ slug: html-designer
 name: html-designer
 version: "1.0.0"
 displayName: HTML Designer
-summary: Expert web graphic designer specializing in HTML/CSS design with deep knowledge
+summary: "专精HTML/CSS的网页平面设计师,深谙图形设计(社区下载版)"
   of graphic design...
 license: MIT-0
 description: |-

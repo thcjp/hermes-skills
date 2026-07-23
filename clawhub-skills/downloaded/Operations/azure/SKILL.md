@@ -3,7 +3,7 @@ slug: azure
 name: azure
 version: "1.0.0"
 displayName: Azure
-summary: Deploy, monitor, and manage Azure services with battle-tested patterns.
+summary: "Azure服务部署监控管理,提供经过验证的最佳实践,解决云资源管理复杂度问题"
 license: MIT
 description: |-
   Deploy, monitor, and manage Azure services with battle-tested patterns。核心能力:

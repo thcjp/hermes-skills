@@ -3,7 +3,7 @@ slug: rss-digest
 name: rss-digest
 version: "0.2.1"
 displayName: Rss Digest
-summary: Agentic RSS digest using the feed CLI. Fetch, triage, and summarize RSS feeds
+summary: "Agent化RSS摘要,使用feed CLI获取、分流、总结RSS,突出高价值信息"
   to surface high-sig...
 license: MIT
 description: |-

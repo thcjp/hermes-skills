@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **全功能中文文件整理。内容感知分类、批量定时整理、实时监控、团队规则共享。**
 
 中文用户在文件治理中面临的挑战：大量中文文档需要按内容（而非文件名）分类、多个文件夹需要批量定时整理、团队成员需要共享中文分类规则、新增文件需要实时监控自动归位、重复文件需要基于内容精准去重。

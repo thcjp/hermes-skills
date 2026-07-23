@@ -3,7 +3,7 @@ slug: podcast-chaptering-highlights
 name: podcast-chaptering-highlights
 version: "1.0.0"
 displayName: Podcast Chaptering H
-summary: Create chapters, highlights, and show notes from podcast audio or transcripts.
+summary: "从播客音频或转写生成章节/亮点/节目说明(社区下载版)"
   Use when a user wa...
 license: MIT
 description: |-

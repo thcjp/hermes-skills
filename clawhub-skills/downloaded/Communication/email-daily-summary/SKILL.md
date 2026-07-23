@@ -5,7 +5,7 @@ version: "0.1.0"
 displayName: Email Daily Summary
   and generates daily email summaries. Use when the user wants to get a summary of
   their emails, check important messages, or create daily email digests.
-summary: Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and
+summary: "自动登录Gmail/Outlook/QQ等邮箱生成每日邮件摘要"
   generates daily email ...
 license: MIT
 description: |-

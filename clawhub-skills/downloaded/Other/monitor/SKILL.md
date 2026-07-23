@@ -3,7 +3,7 @@ slug: monitor
 name: monitor
 version: "1.0.2"
 displayName: Monitor
-summary: Create monitors for anything. User defines what to check, skill handles scheduling
+summary: "创建任意对象监控,用户定义检测内容,技能负责调度与告警,自动化运维监控"
   and alerts.
 license: MIT
 description: |-

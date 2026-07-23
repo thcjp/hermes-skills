@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # cron表达式助手（专业版）
 
 > **企业级cron表达式工具。高级语法+时区转换+冲突检测+优化建议+执行预览，全功能覆盖。**

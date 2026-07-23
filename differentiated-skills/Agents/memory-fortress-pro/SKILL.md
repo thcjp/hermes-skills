@@ -29,11 +29,11 @@ tools:
 - exec
 edition: pro
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 记忆堡垒（专业版）
 
 > **AI Agent的终极记忆系统。六层架构全启用，向量搜索+自动提取+云备份，记忆永不丢失。**

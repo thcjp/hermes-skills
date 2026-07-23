@@ -3,7 +3,7 @@ slug: "agent-commercial-contract"
 name: "agent-commercial-contract"
 version: "1.0.0"
 displayName: "Agent Commercial Con"
-summary: "Enables AI agents to autonomously negotiate, sign, execute, and enforce legally"
+summary: "让AI Agent自主谈判签署执行并强制履行具有法律效力的商业合同"
 license: "Proprietary"
 description: |-
   Enables AI agents to autonomously negotiate, sign, execute, and enforce
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Agent Commercial Con

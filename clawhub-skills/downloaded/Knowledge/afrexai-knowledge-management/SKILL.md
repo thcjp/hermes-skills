@@ -3,7 +3,7 @@ slug: afrexai-knowledge-management
 name: afrexai-knowledge-management
 version: "1.0.0"
 displayName: Afrexai Knowledge Ma
-summary: Organize, document, and maintain critical organizational knowledge with audits,
+summary: "组织文档维护关键组织知识,审计/分类/模板"
   taxonomy, templat...
 license: MIT
 description: |-

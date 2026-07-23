@@ -3,7 +3,7 @@ slug: json
 name: json
 version: "1.0.0"
 displayName: JSON
-summary: Work with JSON data structures, APIs, and serialization effectively.
+summary: "高效处理JSON数据结构/API/序列化(社区下载版)"
 license: MIT
 description: |-
   Work with JSON data structures, APIs, and serialization effectively。核心能力:

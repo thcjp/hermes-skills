@@ -3,7 +3,7 @@ slug: music
 name: music
 version: "1.0.0"
 displayName: Music
-summary: Build a personal music system for tracking discoveries, favorites, concerts,
+summary: "个人音乐追踪系统,记录发现、收藏、演唱会与聆听记忆,解决音乐管理碎片化问题"
   and listening memories.
 license: MIT
 description: |-

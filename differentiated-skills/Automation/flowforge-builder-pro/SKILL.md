@@ -31,11 +31,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 流程锻造器（专业版）
 
 > **AI Agent的代码化工作流引擎。四种触发器，五类操作节点，多条件组合，让自动化流程像代码一样可审查、可版本控制、可回滚。**

@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 19.9
-pricing_tier: L2
-pricing_rationale: 文案创作类, large市场, complex复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 营销文案大师
 
 基于经典文案框架与模板,生成以转化为导向的营销文案。不只写文字,更关注转化效果。

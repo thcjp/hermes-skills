@@ -3,7 +3,7 @@ slug: java
 name: java
 version: "1.0.1"
 displayName: Java
-summary: Write robust Java avoiding null traps, equality bugs, and concurrency pitfalls.
+summary: "编写健壮Java代码,规避空指针、相等性、并发陷阱,减少生产环境运行时异常"
 license: MIT
 description: |-
   Write robust Java avoiding null traps, equality bugs, and concurrency

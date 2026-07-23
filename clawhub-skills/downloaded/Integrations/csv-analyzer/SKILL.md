@@ -3,7 +3,7 @@ slug: csv-analyzer
 name: csv-analyzer
 version: "1.0.0"
 displayName: Csv Analyzer
-summary: Analyze CSV/Excel files with natural language. Get statistics, filter rows,
+summary: "自然语言分析CSV/Excel,统计/筛选/异常/图表"
   find anomalies, gener...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: "yaml"
 name: "yaml"
 version: "1.0.0"
 displayName: "YAML"
-summary: "Write valid YAML that parses predictably across languages and versions."
+summary: "写跨语言跨版本可预测解析的有效YAML"
 license: "Proprietary"
 description: |-
   Write valid YAML that parses predictably across languages and versions。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # YAML

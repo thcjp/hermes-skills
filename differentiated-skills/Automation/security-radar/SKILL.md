@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 安全情报雷达
 
 把海量漏洞情报变成只推两三条真正相关的告警。本技能解决三个核心问题：**告警疲劳**（59% 安全人员每天被海量告警淹没）、**优先级混乱**（严重度高的不一定紧急）、**资产盲区**（不知道哪些 CVE 真正影响自己）。

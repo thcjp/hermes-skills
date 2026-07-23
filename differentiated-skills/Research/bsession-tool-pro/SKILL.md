@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 > **定时任务+会话持久化+Webhook通知+批量管理+监控告警。企业级会话管理全功能覆盖。**
 
 将复杂的浏览器会话管理任务交给专业工具处理。专业版在免费版单次抓取能力之上，新增定时任务、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力，满足企业级场景对浏览器会话的可靠性、可观测性与可扩展性要求。

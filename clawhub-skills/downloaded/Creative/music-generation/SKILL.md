@@ -3,7 +3,7 @@ slug: music-generation
 name: music-generation
 version: "1.0.0"
 displayName: Music Generation
-summary: Generate AI music with optimized prompts, style control, and production-ready
+summary: "优化提示生成AI音乐,风格控制/产出级音频(社区下载版)"
   audio output.
 license: MIT
 description: |-

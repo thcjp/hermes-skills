@@ -3,7 +3,7 @@ slug: "weather"
 name: "weather"
 version: "1.0.0"
 displayName: "Weather"
-summary: "Get current weather and forecasts (no API key required)."
+summary: "免API Key获取当前天气与预报"
 license: "Proprietary"
 description: |-
   Get current weather and forecasts (no API key required)。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Weather

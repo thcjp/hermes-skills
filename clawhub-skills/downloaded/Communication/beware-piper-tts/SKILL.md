@@ -3,7 +3,7 @@ slug: beware-piper-tts
 name: beware-piper-tts
 version: "1.0.1"
 displayName: Piper TTS
-summary: Local text-to-speech using Piper for voice message delivery. Use when the
+summary: "用Piper本地文字转语音发语音消息"
   user asks for voice res...
 license: MIT
 description: |-

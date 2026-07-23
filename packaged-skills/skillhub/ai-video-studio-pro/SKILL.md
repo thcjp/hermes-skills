@@ -16,15 +16,14 @@ description: |-
   - 三层TTS降级链:高质量TTS→备用TTS→静默+字幕,保证交付不中断
   - 场景路由+配额管理:7场景+5卡片+降级链+成本预估+日/月配额检查
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [视频创作, AI视频, 短视频, 数字人, 内容自动化]
 tools:
   - read
   - exec
-pricing_rationale: "视频音频类, medium市场, enterprise复杂度, monthly频次, business层 → 算力消耗大,参考Coze 0.5元/次"
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # AI视频导演
 

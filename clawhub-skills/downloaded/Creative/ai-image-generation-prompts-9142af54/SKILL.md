@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "生成高质量AI图像提示词,优化描述以获得更好的文生图效果"
 ---
-
 # Ai Image Generation Prompts 9142af54
 
 ## 描述

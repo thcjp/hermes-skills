@@ -3,7 +3,7 @@ slug: mongodb
 name: mongodb
 version: "1.0.1"
 displayName: MongoDB
-summary: Design schemas, write queries, and configure MongoDB for consistency and
+summary: "设计schema/写查询/配置MongoDB,兼顾一致性与性能(社区下载版)"
   performance.
 license: MIT
 description: |-

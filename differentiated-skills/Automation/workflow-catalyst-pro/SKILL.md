@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 工作流催化器（专业版）
 
 > **AI Agent的自动化思维引擎。六步完整框架，从识别重复到测试优化，让每一次重复都变成自动化的机会。**

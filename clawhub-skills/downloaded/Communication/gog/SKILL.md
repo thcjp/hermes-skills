@@ -3,7 +3,7 @@ slug: gog
 name: gog
 version: "1.0.0"
 displayName: Gog
-summary: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.
+summary: "Google Workspace CLI,管Gmail/日历/Drive/联系人/Sheets/Docs"
 license: MIT
 description: |-
   Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and

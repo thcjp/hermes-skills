@@ -3,7 +3,7 @@ slug: google-search
 name: google-search
 version: "1.0.0"
 displayName: google-search
-summary: Search the web using Google Custom Search Engine (PSE). Use this when you
+summary: "通过Google Custom Search Engine搜索网络,获取实时信息与权威来源,精准搜索"
   need live information, ...
 license: MIT
 description: |-

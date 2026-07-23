@@ -3,7 +3,7 @@ slug: mac-node-snapshot
 name: mac-node-snapshot
 version: "1.0.0"
 displayName: mac-node-snapshot
-summary: A robust, permission-friendly method to capture macOS screens via OpenClaw
+summary: "macOS屏幕录制方法,权限友好的截图方案,通过OpenClaw screen.record捕获画面"
   screen.record. Ideal f...
 license: MIT
 description: |-

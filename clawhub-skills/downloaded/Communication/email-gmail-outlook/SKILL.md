@@ -3,7 +3,7 @@ slug: email-gmail-outlook
 name: email-gmail-outlook
 version: "1.0.7"
 displayName: Email
-summary: Email Management - Secure Gmail, Outlook & Exchange - multi account support.
+summary: "安全管Gmail/Outlook/Exchange邮件,多账户支持"
   Read, search, or tri...
 license: MIT-0
 description: |-

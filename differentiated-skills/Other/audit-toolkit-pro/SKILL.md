@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 > **从一次性审计到持续验证，从人工检查到自动化流水线。企业级审计验证系统。**
 
 在AI生成内容爆炸的时代，审计不再是"事后检查"，而是"持续验证"。专业版采用"收集-分析-认证-监控-迭代"五阶段审计闭环，配合六大高级功能，帮助组织建立持续化、自动化、可追溯的审计验证体系。

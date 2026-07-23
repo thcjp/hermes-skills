@@ -3,7 +3,7 @@ slug: skill-vetter
 name: skill-vetter
 version: "1.0.0"
 displayName: Skill Vetter
-summary: Security-first skill vetting for AI agents. Use before installing any skill.
+summary: "安全优先的Skill审查,安装任何技能前检查风险,为AI Agent提供技能安全门禁"
 license: MIT
 description: |-
   Security-first skill vetting for AI agents。Use before installing any

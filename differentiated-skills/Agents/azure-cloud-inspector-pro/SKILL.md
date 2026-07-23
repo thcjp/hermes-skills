@@ -32,11 +32,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # Azure巡检员(专业版)
 
 面向"日常巡检"场景的Azure CLI辅助工具。默认只读查询,聚焦检查与报告,不主动执行变更操作。仅在用户明确要求变更并确认后,才执行写/破坏性操作。专业版在免费版基础上解锁RBAC深度审计、Cost Management成本管理、NSG暴露矩阵、跨订阅批量巡检、定时调度与历史趋势对比。

@@ -3,7 +3,7 @@ slug: "word"
 name: "word"
 version: "1.0.0"
 displayName: "Word"
-summary: "Control Word app sessions, documents, selections, comments, export, and review"
+summary: "经osascript控Word会话/文档/选区/批注/导出/审阅"
 license: "Proprietary"
 description: |-
   Control Word app sessions, documents, selections, comments, export,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Word
 
@@ -38,9 +38,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 文档会话控制 | Word文档和操作指令 | 文档操作结果和状态 |
+| 文档导出 | Word文件和目标格式 | PDF/HTML导出文件 |
+| 审阅管理 | 文档和审阅设置 | 批注列表和修订记录 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非Word文档的格式处理(如Excel/PPT)
 
 ## 使用流程
 
@@ -53,8 +55,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| file_path | string | 是 | Word文档路径 |
+| operation | string | 否 | 操作类型, 可选: session/export/review, 默认: session |
 
 ## 输出格式
 
@@ -97,22 +99,13 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -123,7 +116,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -143,7 +135,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

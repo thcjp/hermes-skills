@@ -3,7 +3,7 @@ slug: git-cli
 name: git-cli
 version: "1.0.1"
 displayName: Git cli
-summary: Helper for using the Git CLI to inspect, stage, commit, branch, and synchronize
+summary: "用Git CLI检查/暂存/提交/分支/同步代码变更(社区下载版)"
   code changes. Use...
 license: MIT-0
 description: |-

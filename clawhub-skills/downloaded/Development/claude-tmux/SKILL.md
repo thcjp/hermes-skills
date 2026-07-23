@@ -3,7 +3,7 @@ slug: ai-assistant-tmux
 name: claude-tmux
 version: "1.0.0"
 displayName: ai-assistant Tmux
-summary: This skill is an instruction-only tmux helper that does what it advertises,
+summary: "纯指令型tmux助手,所宣即所做,会话管理利器(社区下载版)"
   though users should b...
 license: MIT
 description: |-

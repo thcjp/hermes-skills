@@ -3,7 +3,7 @@ slug: "assistant"
 name: "assistant"
 version: "1.0.0"
 displayName: "Assistant"
-summary: "Manage tasks, communications, and scheduling with proactive and organized"
+summary: "主动有序管理任务沟通与日程,做你的全能助理,琐事不遗漏"
 license: "Proprietary"
 description: |-
   Manage tasks, communications, and scheduling with proactive and organized
@@ -52,9 +52,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 任务管理 | 任务描述和截止日期 | 结构化任务清单和优先级排序 |
+| 日程安排 | 会议或事件信息 | 日历事件和时间冲突检测 |
+| 沟通协调 | 消息内容和收件人 | 草拟消息和发送确认 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：需要专业领域知识的深度分析和决策场景
 
 ## 使用流程
 
@@ -67,8 +69,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| task_filter | string | 否 | 任务过滤条件, 可选: today/week/all, 默认: all |
+| priority | string | 否 | 优先级排序方式, 可选: high/medium/low, 默认: medium |
 
 ## 输出格式
 
@@ -111,22 +113,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -137,7 +130,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -157,7 +149,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

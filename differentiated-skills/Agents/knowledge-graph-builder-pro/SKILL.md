@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 知识图谱构建器（专业版）
 
 > **AI Agent的全功能知识图谱引擎。SQLite迁移+图可视化+SPARQL查询+版本追踪，大规模图谱高性能管理。**

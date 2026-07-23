@@ -3,7 +3,7 @@ slug: wenxiang-2d5-banner
 name: wenxiang-2d5-banner
 version: "1.0.0"
 displayName: Wenxiang 2d5 Banner
-summary: Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image
+summary: "使用Gemini 3 Pro Image生成编辑图片,支持创作与修改请求,高质量AI图像处理"
   create/modify reque...
 license: MIT-0
 description: |-

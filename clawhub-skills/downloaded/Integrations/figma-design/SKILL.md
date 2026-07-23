@@ -3,7 +3,7 @@ slug: figma-design
 name: figma-design
 version: "1.0.6"
 displayName: Figma
-summary: Read files, manage comments, extract design tokens, download images, and
+summary: "读文件/管评论/提设计令牌/下图片/建Webhook,Figma全管(社区下载版)"
   create webhooks in Figma...
 license: MIT-0
 description: |-

@@ -47,11 +47,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 旅行规划助手专业版
 
 企业级旅行规划顾问,在免费版核心能力之上,扩展多目的地串联、团队协同、批量规划与离线导出能力,适合企业差旅管理与专业旅行服务商使用。与免费版数据格式完全兼容,支持平滑升级。

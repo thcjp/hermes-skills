@@ -3,7 +3,7 @@ slug: "security-auditor"
 name: "security-auditor"
 version: "1.0.0"
 displayName: "Security Auditor"
-summary: "Use when reviewing code for security vulnerabilities, implementing authentication"
+summary: "审代码安全漏洞/实现认证流/审计依赖,安全合规"
 license: "Proprietary"
 description: |-
   Use when reviewing code for security vulnerabilities, implementing authentication
@@ -42,9 +42,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 安全漏洞审查 | 源代码和审查范围 | 漏洞清单和CVE映射 |
+| 认证实现检查 | 认证代码和配置 | 认证安全评估和改进建议 |
+| 安全最佳实践 | 代码库和技术栈 | 安全实践合规报告 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非代码层面的安全评估(如物理安全/社会工程)
 
 ## 使用流程
 
@@ -57,8 +59,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| code_path | string | 是 | 待审查的代码路径 |
+| vuln_category | string | 否 | 漏洞类别, 可选: owasp/cwe/all, 默认: all |
 
 ## 输出格式
 
@@ -101,22 +103,13 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -127,7 +120,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -147,7 +139,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

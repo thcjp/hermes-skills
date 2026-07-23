@@ -3,7 +3,7 @@ slug: aws-agentcore-langgraph
 name: aws-agentcore-langgraph
 version: "1.0.2"
 displayName: Aws Agentcore Langgr
-summary: This skill is a coherent AWS AgentCore/LangGraph deployment aid, but users
+summary: "AWS AgentCore与LangGraph部署助手(云写操作需谨慎)"
   should treat its cloud...
 license: MIT
 description: |-

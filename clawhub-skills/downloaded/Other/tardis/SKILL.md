@@ -3,7 +3,7 @@ slug: tardis
 name: tardis
 version: "1.2.0"
 displayName: TARDIS
-summary: The core time tracker appears legitimate, but the package also includes broad
+summary: "时间追踪工具,记录工作时长与任务关联,解决自由职业者工时统计与计费难题"
   secret loading, pub...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: workflow
 name: workflow
 version: "1.0.0"
 displayName: Workflow
-summary: Build automated pipelines with reusable components, data flow between nodes,
+summary: "用可复用组件/节点间数据流/状态管理建自动化流水线(社区下载版)"
   and state management.
 license: MIT
 description: |-

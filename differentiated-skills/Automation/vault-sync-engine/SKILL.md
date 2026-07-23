@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 知识库同步引擎
 
 让 Obsidian vault 在多设备间稳定同步。聚焦"不丢笔记、不乱配置、冲突可解"，把同步从黑盒变成可监控的引擎。

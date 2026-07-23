@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **批量搜索+AI摘要+定时监控+多语言。企业级Google搜索全功能覆盖。**
 
 将复杂的搜索任务交给专业工具处理。专业版在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力，满足企业级场景对搜索的批量性、智能化与持续性要求。

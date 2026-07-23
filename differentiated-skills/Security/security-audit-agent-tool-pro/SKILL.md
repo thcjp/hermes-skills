@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 专业版为企业安全团队提供完整的AI Agent安全审计平台,涵盖多Agent批量审计、上下文感知深度提示注入检测、沙盒逃逸分析、工具参数投毒检测、供应链安全审查与CI/CD安全门禁。在免费版基础审计能力之上,新增企业级深度检测、自动化修复建议与合规报告导出。专业版完全兼容免费版审计方法,已有审计流程可无缝升级。
 
 ### 专业版核心优势

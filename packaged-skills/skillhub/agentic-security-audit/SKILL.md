@@ -3,7 +3,7 @@ slug: "agentic-security-audit"
 name: "agentic-security-audit"
 version: "1.0.0"
 displayName: "Agentic Security Aud"
-summary: "Audit codebases, infrastructure, AND agentic AI systems for security issues."
+summary: "审计代码库/基础设施/Agent AI系统安全,覆盖传统与新型风险,一键出报告"
 license: "Proprietary"
 description: |-
   Audit codebases, infrastructure, AND agentic AI systems for security
@@ -16,9 +16,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Agentic Security Aud
 
@@ -41,9 +41,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 代码库安全审计 | 源代码仓库路径或URL | 安全漏洞清单和修复优先级 |
+| 基础设施审计 | 云资源配置和部署清单 | 基础设施安全评估和合规报告 |
+| AI Agent安全审查 | Agent系统架构和工具定义 | Agent安全风险和缓解措施 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非安全相关的功能测试和性能优化场景
 
 ## 使用流程
 
@@ -56,8 +58,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| target_path | string | 是 | 待审计的目标路径或代码库URL |
+| audit_scope | string | 否 | 审计范围, 可选: code/infra/agent/all, 默认: all |
 
 ## 输出格式
 
@@ -100,22 +102,13 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -126,7 +119,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -146,7 +138,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

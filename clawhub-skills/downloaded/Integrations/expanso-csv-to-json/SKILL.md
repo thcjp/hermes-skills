@@ -3,7 +3,7 @@ slug: expanso-csv-to-json
 name: expanso-csv-to-json
 version: "1.0.0"
 displayName: Expanso csv-to-json
-summary: Convert CSV input into a JSON array of objects using Expanso Edge CLI or
+summary: "用Expanso Edge CLI/MCP把CSV转JSON对象数组(社区下载版)"
   MCP pipelines.
 license: MIT
 description: |-

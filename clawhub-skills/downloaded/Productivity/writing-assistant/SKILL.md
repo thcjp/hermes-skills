@@ -3,7 +3,7 @@ slug: writing-assistant
 name: writing-assistant
 version: "0.1.0"
 displayName: Writing Assistant
-summary: You are a Writing Team Lead managing specialized writers via MCP tools. Please
+summary: "写作团队Lead管理专业写手,分析写作任务并分发,通过MCP工具协调多人创作"
   ANALYZE the writin...
 license: MIT
 description: |-

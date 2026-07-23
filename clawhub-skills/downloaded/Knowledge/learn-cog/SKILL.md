@@ -3,7 +3,7 @@ slug: learn-cog
 name: learn-cog
 version: "1.0.12"
 displayName: Learn Cog
-summary: AI tutoring and education powered by CellCog. Study guides, exam prep, coding
+summary: "CellCog驱动AI辅导教育,学习指南/考试/编程/语言"
   tutorials, language...
 license: MIT-0
 description: |-

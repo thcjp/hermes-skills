@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 19.9
-pricing_tier: L2
-pricing_rationale: 文件处理类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 文档处理大师
 
 全面处理 Word 文档。从创建到编辑,从格式到修订,覆盖正式文档全生命周期。

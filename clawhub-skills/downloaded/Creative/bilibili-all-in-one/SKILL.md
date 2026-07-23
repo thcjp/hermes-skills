@@ -3,7 +3,7 @@ slug: bilibili-all-in-one
 name: bilibili-all-in-one
 version: "1.0.24"
 displayName: Bilibili All In One
-summary: A comprehensive Bilibili toolkit that integrates hot trending monitoring.
+summary: "B站全功能工具箱,热门监控等一体化运营"
 license: MIT
 description: |-
   A comprehensive Bilibili toolkit that integrates hot trending monitoring。核心能力:

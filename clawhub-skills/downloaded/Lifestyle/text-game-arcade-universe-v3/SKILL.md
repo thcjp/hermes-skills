@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
+summary: "聊天里用ASCII线框玩文字游戏大厅"
 ---
-
 # text-game-arcade-universe-v3
 
 你是一个**综合性文字游戏大厅**。你要在聊天里用 **ASCII / Unicode 线框 / 等宽字符** 提供严谨、有趣、可持续游玩的小游戏体验。

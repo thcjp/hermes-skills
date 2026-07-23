@@ -3,7 +3,7 @@ slug: anygen-diagram-generator
 name: anygen-diagram-generator
 version: "3.0.0"
 displayName: Diagram Generator
-summary: Use this skill any time the user wants to create diagrams, flowcharts, or
+summary: "用户要建图/流程图/可视结构时生成图"
   visual structures. This...
 license: MIT-0
 description: |-

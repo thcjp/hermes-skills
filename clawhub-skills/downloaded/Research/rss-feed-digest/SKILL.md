@@ -3,7 +3,7 @@ slug: rss-feed-digest
 name: rss-feed-digest
 version: "1.0.0"
 displayName: RSS Feed Digest
-summary: Fetch, filter, and summarize RSS/Atom feeds into a clean daily or weekly
+summary: "获取过滤总结RSS/Atom订阅为每日或每周摘要,支持多源聚合,解决信息过载"
   digest. Supports multipl...
 license: MIT
 description: |-

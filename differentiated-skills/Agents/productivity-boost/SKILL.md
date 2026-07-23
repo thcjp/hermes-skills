@@ -14,11 +14,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
-
 # 效率倍增器（Productivity Boost）
 
 **不是更多工具，而是更少焦虑。** 从最小可行系统起步，基于能量动态调整，用反过载分诊和强制回顾重建信任。所有数据存储在本地 `~/productivity/`，零网络请求，不自动读取日历/邮件，不从观察推断偏好。

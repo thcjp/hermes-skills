@@ -3,7 +3,7 @@ slug: free-google-search-with-browser
 name: free-google-search-with-browser
 version: "0.0.1"
 displayName: Free Google Search W
-summary: Search Google using scrapling and return structured results (title, link,
+summary: "使用scrapling搜索Google并返回结构化结果(标题、链接、摘要),免费搜索方案"
   snippet). Invoke when u...
 license: MIT-0
 description: |-

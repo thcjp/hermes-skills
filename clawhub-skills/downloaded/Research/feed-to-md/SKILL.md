@@ -3,7 +3,7 @@ slug: feed-to-md
 name: feed-to-md
 version: "1.2.0"
 displayName: Feed To Md
-summary: Convert RSS or Atom feed URLs into Markdown using the bundled local converter
+summary: "将RSS或Atom订阅URL转为Markdown,使用本地转换脚本,离线生成可读文档"
   script. Use this wh...
 license: MIT
 description: |-

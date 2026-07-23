@@ -3,7 +3,7 @@ slug: generate-presentation
 name: generate-presentation
 version: "1.0.0"
 displayName: Generate Presentatio
-summary: Generate professional HTML and PDF presentations from markdown content, URLs,
+summary: "从Markdown/URL/主题生成专业HTML与PDF演示文稿(社区下载版)"
   or topics. Creates ...
 license: MIT
 description: |-

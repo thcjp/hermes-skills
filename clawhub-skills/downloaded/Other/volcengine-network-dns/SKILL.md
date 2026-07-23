@@ -3,7 +3,7 @@ slug: volcengine-network-dns
 name: volcengine-network-dns
 version: "1.0.0"
 displayName: Volcengine Network D
-summary: DNS record management on Volcengine networking services. Use when users need
+summary: "火山引擎DNS记录管理,支持Zone记录查询与增删改,简化云DNS运维操作"
   zone record query/up...
 license: MIT
 description: |-

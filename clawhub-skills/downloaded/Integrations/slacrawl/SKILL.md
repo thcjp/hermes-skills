@@ -3,7 +3,7 @@ slug: slacrawl
 name: slacrawl
 version: "1.0.1"
 displayName: Slacrawl
-summary: "Slack archive: search, sync freshness, threads/DMs, SQL counts."
+summary: "Slack归档,搜索/同步/线程私信/SQL计数(社区下载版)"
 license: MIT
 description: |-
   Slack archive: search, sync freshness, threads/DMs, SQL counts。核心能力:

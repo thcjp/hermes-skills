@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "分层记忆体系+多模式检索,解决上下文溢出提升RAG"
 ---
-
 # smart-memory-manager
 
 ## 核心亮点

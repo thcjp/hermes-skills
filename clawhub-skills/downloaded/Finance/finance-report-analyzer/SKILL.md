@@ -3,7 +3,7 @@ slug: finance-report-analyzer
 name: finance-report-analyzer
 version: "1.2.0"
 displayName: Finance Report Analy
-summary: Analyze financial data from uploaded Excel/PDF files and generate interactive
+summary: "分析Excel/PDF财务数据生成含迷你图的交互报告"
   reports with sparkl...
 license: MIT
 description: |-

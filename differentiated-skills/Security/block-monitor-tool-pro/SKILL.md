@@ -25,11 +25,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 专业版为企业提供完整的内容验证与策略管理平台,在免费版黑白名单基础检查之上,新增语义级内容分析、批量验证处理、实时拦截与Webhook告警、20+语言审核、完整审计链与REST API集成。专业版完全兼容免费版检查规则,已有策略配置可无缝升级,适合企业级内容安全治理与合规审计。
 
 ### 专业版核心优势

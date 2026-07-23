@@ -20,11 +20,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 多源研究助手（专业版）
 ## 概述
 多源研究助手专业版在免费版四大数据源的基础上，新增自定义数据源接入、批量多主题并行研究、语义级去重排序、多格式导出、研究历史版本管理和多租户团队协作等企业级能力，满足研究机构和企业的深度调研需求。

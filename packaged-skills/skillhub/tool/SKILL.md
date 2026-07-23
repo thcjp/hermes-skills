@@ -3,7 +3,7 @@ slug: "tool"
 name: "tool"
 version: "1.0.0"
 displayName: "Tool"
-summary: "A comprehensive AI agent skill for finding, evaluating, and getting the most"
+summary: "AI Agent技能,查找/评估/用好可用工具"
 license: "Proprietary"
 description: |-
   A comprehensive AI agent skill for finding, evaluating, and getting
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Tool

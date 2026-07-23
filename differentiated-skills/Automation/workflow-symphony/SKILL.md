@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 工作流交响曲
 
 让一人公司用无代码工具scale业务而不用招人。核心信条：**先找高价值机会，再选合适工具；先测透再上线，上线后持续维护。**

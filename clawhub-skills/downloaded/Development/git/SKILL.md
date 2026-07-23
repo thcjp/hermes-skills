@@ -3,7 +3,7 @@ slug: git
 name: git
 version: "1.0.8"
 displayName: Git
-summary: Git commits, branches, rebases, merges, conflict resolution, history recovery,
+summary: "Git提交/分支/rebase/合并/冲突解决/历史恢复与团队工作流(社区下载版)"
   team workflows, an...
 license: MIT-0
 description: |-

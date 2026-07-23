@@ -3,7 +3,7 @@ slug: expanso-json-validate
 name: expanso-json-validate
 version: "1.0.0"
 displayName: Expanso Json Validat
-summary: Validate JSON syntax and structure using the Expanso Edge pipeline in CLI
+summary: "用Expanso Edge流水线校验JSON语法与结构(社区下载版)"
   or MCP server modes.
 license: MIT
 description: |-

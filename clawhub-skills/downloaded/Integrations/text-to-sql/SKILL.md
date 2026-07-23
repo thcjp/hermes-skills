@@ -3,7 +3,7 @@ slug: text-to-sql
 name: text-to-sql
 version: "999.0.0"
 displayName: Text To Sql
-summary: Use when (1) user describes what data they want in plain English and asks
+summary: "用户自然语言描述数据需求,生成对应SQL查询(社区下载版)"
   for the corresponding S...
 license: MIT-0
 description: |-

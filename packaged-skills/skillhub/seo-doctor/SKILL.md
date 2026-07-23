@@ -16,14 +16,13 @@ description: |-
   - 标题A/B测试与排名预估:生成3-5个SEO友好标题版本,基于竞争度预估排名区间
   - 发布后排名追踪:监控搜索排名变化,与历史数据对比生成趋势分析和优化建议
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [SEO优化, 搜索排名, 网站诊断, 内容营销]
 tools:
   - read
-pricing_rationale: "SEO优化类, medium市场, enterprise复杂度, monthly频次, business层 → 效果可量化,企业刚需"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # SEO体检医生 v1.1.0
 

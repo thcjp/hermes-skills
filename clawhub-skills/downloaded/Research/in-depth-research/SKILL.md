@@ -3,7 +3,7 @@ slug: in-depth-research
 name: in-depth-research
 version: "1.0.0"
 displayName: Deep Research
-summary: Conduct exhaustive multi-source investigation with methodology tracking,
+summary: "多来源深度调查:方法论追踪、来源评估、迭代验证,产出可信研究报告"
   source evaluation, and i...
 license: MIT
 description: |-

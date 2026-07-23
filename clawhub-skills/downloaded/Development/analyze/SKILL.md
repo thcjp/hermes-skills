@@ -3,7 +3,7 @@ slug: analyze
 name: analyze
 version: "1.0.0"
 displayName: Analyze
-summary: Structured analysis for any input. Data, code, text, decisions, visuals.
+summary: "对任意输入做结构化分析,数据/代码/文本/决策/可视化"
   Prioritize, question, co...
 license: MIT
 description: |-

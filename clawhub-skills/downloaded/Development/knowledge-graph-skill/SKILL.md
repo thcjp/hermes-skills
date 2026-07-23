@@ -3,7 +3,7 @@ slug: knowledge-graph-skill
 name: knowledge-graph-skill
 version: "1.1.1"
 displayName: Knowledge Graph
-summary: Embedded knowledge graph for persistent structured knowledge. ALWAYS use
+summary: "嵌入式知识图谱,持久结构化知识,主动使用"
   proactively — do NOT wai...
 license: MIT
 description: |-

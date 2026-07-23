@@ -3,8 +3,7 @@ slug: finance-radar
 name: finance-radar
 version: "1.1.0"
 displayName: Finance Radar
-summary: "Stock and cryptocurrency analysis powered by Yahoo Finance data. Use when
-  a user wants to: (1) An"
+summary: "基于雅虎财经做股票与加密分析,数据驱动决策(社区下载版)"
 license: MIT
 description: |-
   Stock and cryptocurrency analysis powered by Yahoo Finance data。Use

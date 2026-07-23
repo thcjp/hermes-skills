@@ -3,7 +3,7 @@ slug: clawhub-jira-pat-skill
 name: clawhub-jira-pat-skill
 version: "0.0.1"
 displayName: Clawhub Jira Pat Ski
-summary: Manage Jira issues on self-hosted or enterprise Jira instances using Personal
+summary: "通过PAT管理自托管或企业Jira实例的issue,支持SSL认证,提升研发项目管理效率"
   Access Tokens in SS...
 license: MIT
 description: |-

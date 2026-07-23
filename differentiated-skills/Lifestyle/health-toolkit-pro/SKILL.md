@@ -26,11 +26,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 专业版面向家庭、企业健康关怀项目与医疗机构,在免费版个人健康管理之上,扩展多用户管理、可穿戴设备同步、AI 个性化建议、医疗级报告、异常预警、专业分析等企业级能力。支持家庭多成员管理、企业员工健康关怀、健身工作室会员跟踪、慢病管理等场景。
 
 专业版与免费版数据格式完全兼容,个人用户升级后历史数据无缝迁移。

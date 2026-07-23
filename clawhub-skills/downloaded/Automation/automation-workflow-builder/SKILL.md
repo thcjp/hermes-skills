@@ -18,11 +18,11 @@ tags: '[''Automation'']'
 tools:
 - read
 - exec
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # automation-workflow-builderï¼èªå¨åå·¥ä½æµæå»ºå¨ï¼è®¾è®¡å¹¶æ§è¡è·¨å¹³å°èªå¨åæµç¨ï¼æ¯æå®æ¶è§¦åãæä»¶çæ§ãå¤æ­¥éª¤æä½ãéç¨äºæ°æ®åæ­¥ãåå®¹åå¸ãæ¥åçæãï¼
 
 设计并执行自动化工作流，替代重复性人工操作。

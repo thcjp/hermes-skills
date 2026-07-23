@@ -3,7 +3,7 @@ slug: "podcast"
 name: "podcast"
 version: "1.0.1"
 displayName: "Podcast"
-summary: "Create and grow podcasts by planning episodes, producing audio or video,"
+summary: "规划剧集/产音频视频/生成切片,创建并增长播客"
 license: "Proprietary"
 description: |-
   Create and grow podcasts by planning episodes, producing audio or video,

@@ -3,7 +3,7 @@ slug: slack-api
 name: slack-api
 version: "1.0.11"
 displayName: Slack
-summary: Slack API integration with managed OAuth. Send messages, manage channels,
+summary: "Slack API托管OAuth,发消息/管频道/搜会话(社区下载版)"
   search conversations, a...
 license: MIT-0
 description: |-

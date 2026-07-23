@@ -24,11 +24,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 专业版为企业提供完整的CDN管理与优化平台,在免费版基础配置能力之上,新增多CDN智能调度、Edge Workers边缘计算、高级WAF与DDoS防护、实时性能监控与告警、缓存预热与批量刷新、SARIF合规报告等企业级功能。专业版完全兼容免费版配置方法,已有CDN配置可无缝升级,适合全球内容分发与高并发场景。
 
 ### 专业版核心优势

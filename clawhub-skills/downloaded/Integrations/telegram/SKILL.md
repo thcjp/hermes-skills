@@ -3,7 +3,7 @@ slug: telegram
 name: telegram
 version: "1.0.1"
 displayName: Telegram
-summary: OpenClaw skill for designing Telegram Bot API workflows and command-driven
+summary: "设计Telegram Bot API工作流与命令驱动对话(社区下载版)"
   conversations using di...
 license: MIT
 description: |-

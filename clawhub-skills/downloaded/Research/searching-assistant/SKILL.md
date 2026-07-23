@@ -3,7 +3,7 @@ slug: searching-assistant
 name: searching-assistant
 version: "0.1.0"
 displayName: Searching Assistant
-summary: You are the leader of searching group (搜索组组长). Break down the task into independent
+summary: "搜索组组长,将搜索任务分解为独立互补子任务,协调多Agent并行搜索"
   and complemen...
 license: MIT
 description: |-

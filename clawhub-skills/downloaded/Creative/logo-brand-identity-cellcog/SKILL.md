@@ -3,7 +3,7 @@ slug: logo-brand-identity-cellcog
 name: logo-brand-identity-cellcog
 version: "1.0.13"
 displayName: Logo Brand Identity 
-summary: AI logo and brand identity design powered by CellCog. Brand kits, color palettes,
+summary: "CellCog驱动AI logo与品牌识别设计,品牌套件/色板/字体(社区下载版)"
   typography, bra...
 license: MIT-0
 description: |-

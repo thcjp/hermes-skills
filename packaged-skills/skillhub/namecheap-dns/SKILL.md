@@ -3,7 +3,7 @@ slug: "namecheap-dns"
 name: "namecheap-dns"
 version: "1.1.0"
 displayName: "Namecheap DNS"
-summary: "Manage Namecheap DNS records safely by fetching existing entries, merging"
+summary: "安全管理Namecheap DNS,拉取/合并/自动备份/原子更新"
 license: "Proprietary"
 description: |-
   Manage Namecheap DNS records safely by fetching existing entries, merging
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Namecheap DNS
 
@@ -47,9 +47,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| DNS记录管理 | 域名和记录类型 | DNS记录列表和变更确认 |
+| 记录合并 | 现有记录和新记录 | 合并后的DNS配置和差异 |
+| 安全更新 | 域名和API凭据 | DNS更新结果和验证状态 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非Namecheap域名注册商的DNS管理
 
 ## 使用流程
 
@@ -62,8 +64,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| domain | string | 是 | Namecheap域名 |
+| record_type | string | 否 | 记录类型, 可选: A/CNAME/MX/TXT, 默认: 全部 |
 
 ## 输出格式
 
@@ -106,17 +108,6 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 待审查内容为空 | 用户未提供内容 | 提示用户提供待审查的代码 |
-| 内容格式不识别 | 传入不支持的内容格式 | 列出支持的格式, 建议转换后 |
-| 检查项超出范围 | 传入了不存在的检查维度 | 列出可用检查维度, 使用默认全部检查 |
-| 审查超时 | 内容过长导致处理超时 | 建议分段审查, 每段不超过5000字 |
-| 其他异常 | 内部处理异常 | 检查输入后 |
-
 ## 依赖说明
 
 ### 运行环境
@@ -134,7 +125,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -170,7 +160,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

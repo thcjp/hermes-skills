@@ -3,7 +3,7 @@ slug: ui-audit
 name: ui-audit
 version: "1.0.1"
 displayName: UI Audit
-summary: AI skill for automated UI audits. Evaluate interfaces against proven UX principles
+summary: "AI驱动的自动化UI审计,基于UX原则评估界面,检查视觉层级与交互一致性,提升产品质量"
   for visual hie...
 license: MIT
 description: |-

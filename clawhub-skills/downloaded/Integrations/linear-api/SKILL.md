@@ -3,7 +3,7 @@ slug: linear-api
 name: linear-api
 version: "1.0.6"
 displayName: Linear
-summary: This skill is a disclosed Linear integration that uses Maton authentication
+summary: "经Maton认证读管Linear的托管集成"
   to read and manage Li...
 license: MIT-0
 description: |-

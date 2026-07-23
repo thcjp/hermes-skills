@@ -21,7 +21,6 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-# 定价元数据
 ---
 # API文档一键生成规范器
 

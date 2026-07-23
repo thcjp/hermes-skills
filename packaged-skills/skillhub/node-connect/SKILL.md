@@ -3,7 +3,7 @@ slug: "node-connect"
 name: "node-connect"
 version: "1.0.0"
 displayName: "node-connect"
-summary: "Diagnose SkillHub node connection and pairing failures for Android, iOS,"
+summary: "诊断SkillHub节点连接与配对失败(Android/iOS/macOS)"
 license: "Proprietary"
 description: |-
   Diagnose SkillHub node connection and pairing failures for Android,

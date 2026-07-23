@@ -35,11 +35,11 @@ tools:
 - exec
 edition: pro
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # AWS智能体编排专业版（aws-agent-orchestrator-pro）
 
 本Skill在免费版单智能体能力之上，解锁**多智能体编排、Gateway工具链、跨会话长期记忆（LTM）**三大高级能力，面向团队与企业生产环境。

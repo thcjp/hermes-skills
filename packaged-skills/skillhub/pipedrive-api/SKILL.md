@@ -3,7 +3,7 @@ slug: "pipedrive-api"
 name: "pipedrive-api"
 version: "1.0.4"
 displayName: "Pipedrive"
-summary: "Pipedrive API integration with managed OAuth. Manage deals, persons, organizations,"
+summary: "Pipedrive API托管OAuth,管交易/联系人/机构/活动"
 license: "Proprietary"
 description: |-
   Pipedrive API integration with managed OAuth。Manage deals, persons,
@@ -16,8 +16,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Pipedrive

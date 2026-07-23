@@ -3,7 +3,7 @@ slug: auto-workflow
 name: auto-workflow
 version: "1.0.0"
 displayName: Auto Workflow
-summary: Builds automation workflows from repetitive tasks. Use when user mentions
+summary: "从重复任务构建自动化工作流"
   \
 license: MIT
 description: |-

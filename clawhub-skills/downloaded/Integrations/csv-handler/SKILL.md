@@ -3,7 +3,7 @@ slug: csv-handler
 name: csv-handler
 version: "2.1.0"
 displayName: Csv Handler
-summary: Handle CSV files from construction software exports. Auto-detect delimiters,
+summary: "处理建筑软件导出CSV,自动检测分隔符/编码/清洗"
   encodings, and clean...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: "ui-ux-developer-tool"
 name: "ui-ux-developer-tool"
 version: "1.0.0"
 displayName: "Ui Ux Dev"
-summary: "This UI design skill is useful, but its setup script can make persistent"
+summary: "UI设计技能(其setup脚本会改Nginx与系统配置需谨慎)"
 license: "Proprietary"
 description: |-
   This UI design skill is useful, but its setup script can make persistent

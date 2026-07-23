@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 > 从需求到打板的全流程副驾驶。多页原理图、PCB布局、DRC检查、BOM下单，让硬件团队的设计效率提升10倍。
 
 ## 架构总览

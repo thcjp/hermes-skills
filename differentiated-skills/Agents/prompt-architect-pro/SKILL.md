@@ -34,11 +34,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 提示词架构师专业版（Prompt Architect Pro）
 
 面向 AI Agent 团队负责人、Prompt 工程师、企业应用开发者的全功能 Prompt 工程平台。在免费版五段式 Prompt 与线性拆解基础上，解锁 Few-shot 自动生成、Token 预算管理、多 Agent 编排三类高级能力，并新增 Prompt A/B 测试、幻觉检测与回归测试、上下文腐烂诊断三项独有能力。

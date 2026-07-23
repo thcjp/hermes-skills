@@ -3,7 +3,7 @@ slug: "tool-call-retry"
 name: "tool-call-retry"
 version: "1.0.1"
 displayName: "tool-call-retry"
-summary: "Auto retry & fix LLM tool calls with exponential backoff, format validation,"
+summary: "指数退避自动重试并修复LLM工具调用,格式校验/纠错"
 license: "Proprietary"
 description: |-
   Auto retry & fix LLM tool calls with exponential backoff, format validation,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # tool-call-retry
 

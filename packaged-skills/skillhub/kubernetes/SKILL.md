@@ -3,7 +3,7 @@ slug: "kubernetes"
 name: "kubernetes"
 version: "2.1.0"
 displayName: "Kubernetes"
-summary: "Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-agent system"
+summary: "K8s与OpenShift多Agent集群,协同运营集群"
 license: "Proprietary"
 description: |-
   Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-agent
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Kubernetes
 
@@ -38,9 +38,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 集群管理 | 集群配置和资源清单 | 部署状态和资源调度 |
+| Pod调度 | 应用定义和资源限制 | Deployment/Service/Pod配置 |
+| 故障排查 | 集群事件和日志 | 诊断报告和修复建议 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非K8s容器编排平台的集群管理(如Docker Swarm)
 
 ## 使用流程
 
@@ -53,8 +55,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| kubeconfig | string | 是 | Kubernetes配置文件路径 |
+| namespace | string | 否 | 命名空间, 默认: default |
 
 ## 输出格式
 
@@ -97,15 +99,6 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
@@ -123,7 +116,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -143,7 +135,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

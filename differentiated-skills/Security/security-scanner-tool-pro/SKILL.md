@@ -53,11 +53,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 安全扫描器(专业版)
 ## 概述
 安全扫描器专业版是一款面向企业用户的安全扫描与持续监控平台。在免费版4个核心工具基础上,扩展至10+工具集成(nmap、nuclei、masscan、ffuf、gobuster、testssl等),支持多目标批量并行扫描、HTML/PDF/SARIF专业报告、CVE数据库自动映射、Cron定时调度扫描和自定义扫描工作流。与免费版完全兼容,扫描配置和模板可无缝复用。

@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
-pricing_model: per_use
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # Excel数据魔法师
 
 基于 openpyxl 实现全场景 Excel 文件处理。从读写到格式化,从公式到图表,从透视表到数据校验,覆盖 Excel 自动化的所有常见需求。兼容 Microsoft Excel 与 WPS 表格。

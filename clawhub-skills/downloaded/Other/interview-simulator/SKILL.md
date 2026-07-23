@@ -3,7 +3,7 @@ slug: interview-simulator
 name: interview-simulator
 version: "1.0.0"
 displayName: Interview Simulator
-summary: Simulates mock interviews for any role and experience level.
+summary: "模拟任意岗位与经验级别的面试,提供结构化反馈,解决面试准备缺乏实战练习问题"
 license: MIT
 description: |-
   Simulates mock interviews for any role and experience level。核心能力:

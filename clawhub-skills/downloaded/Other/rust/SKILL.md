@@ -3,7 +3,7 @@ slug: rust
 name: rust
 version: "1.0.1"
 displayName: Rust
-summary: Write idiomatic Rust avoiding ownership pitfalls, lifetime confusion, and
+summary: "编写地道Rust代码,规避所有权、生命周期、借用检查常见陷阱,降低编译错误率"
   common borrow checker b...
 license: MIT
 description: |-

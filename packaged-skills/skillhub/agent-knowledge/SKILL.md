@@ -3,7 +3,7 @@ slug: "agent-knowledge"
 name: "agent-knowledge"
 version: "1.0.0"
 displayName: "Agent Knowledge"
-summary: "Unified knowledge capture and retrieval for URLs, video/article/paper extracts,"
+summary: "统一知识捕获与检索,聚合URL/视频/文章/论文/社媒,一处沉淀全源知识"
 license: "Proprietary"
 description: |-
   Unified knowledge capture and retrieval for URLs, video/article/paper

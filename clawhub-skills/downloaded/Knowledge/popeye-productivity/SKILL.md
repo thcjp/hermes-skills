@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "提升个人效率的Skill平台技能"
 ---
-
 # Popeye Productivity
 
 一个帮助你提升个人效率的 Skill平台 技能。

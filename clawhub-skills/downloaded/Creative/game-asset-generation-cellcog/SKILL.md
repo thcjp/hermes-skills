@@ -3,7 +3,7 @@ slug: game-asset-generation-cellcog
 name: game-asset-generation-cellcog
 version: "1.0.14"
 displayName: Game Asset Generatio
-summary: AI game asset generation and game development powered by CellCog. Character-consistent
+summary: "CellCog驱动AI游戏资产与开发,角色一致美术"
   art, sprit...
 license: MIT-0
 description: |-

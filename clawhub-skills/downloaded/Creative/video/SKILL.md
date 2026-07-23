@@ -3,7 +3,7 @@ slug: video
 name: video
 version: "1.0.1"
 displayName: Video
-summary: Process, edit, and optimize videos for any platform with compression, format
+summary: "为任意平台处理编辑优化视频,压缩/转码/字幕"
   conversion, captioni...
 license: MIT
 description: |-

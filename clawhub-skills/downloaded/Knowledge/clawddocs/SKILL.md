@@ -3,7 +3,7 @@ slug: clawddocs
 name: clawddocs
 version: "1.2.2"
 displayName: Clawddocs
-summary: Clawdbot documentation expert with decision tree navigation.
+summary: "Clawdbot文档专家,带决策树导航,快速定位答案"
 license: MIT
 description: |-
   Clawdbot documentation expert with decision tree navigation。核心能力:

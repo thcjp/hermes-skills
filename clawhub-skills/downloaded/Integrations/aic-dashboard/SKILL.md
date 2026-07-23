@@ -3,7 +3,7 @@ slug: aic-dashboard
 name: aic-dashboard
 version: "1.8.0"
 displayName: Aic Dashboard
-summary: AI Commander Management Dashboard. A lightweight companion web UI for monitoring
+summary: "AI Commander管理仪表盘,轻量Web UI监控收件"
   inbound emails r...
 license: MIT
 description: |-

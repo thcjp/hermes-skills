@@ -20,11 +20,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 短视频生成专业版是一款面向企业团队与 MCN 机构的规模化视频生产平台。在免费版核心生产流程之上，专业版扩展了批量生产、多语言配音、自定义模板、A/B 变体、品牌一致性管理等企业级能力。
 
 专业版采用渲染队列架构，支持优先级调度、断点续传、失败重试，可稳定处理 50+ 视频的批量生产任务。同时完全兼容免费版配置，已有项目可无缝迁移。

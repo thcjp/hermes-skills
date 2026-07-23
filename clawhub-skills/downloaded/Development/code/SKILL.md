@@ -3,7 +3,7 @@ slug: code
 name: code
 version: "1.0.4"
 displayName: Code
-summary: Coding workflow with planning, implementation, verification, and testing
+summary: "编码工作流含规划/实现/验证/测试,交付干净软件(社区下载版)"
   for clean software devel...
 license: MIT
 description: |-

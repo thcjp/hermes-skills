@@ -3,7 +3,7 @@ slug: html-coder
 name: html-coder
 version: "2.0.1"
 displayName: HTML Coder
-summary: Expert HTML development skill for building web pages, forms, and interactive
+summary: "专家级HTML开发,构建网页/表单/交互内容(社区下载版)"
   content. Use when cr...
 license: MIT-0
 description: |-

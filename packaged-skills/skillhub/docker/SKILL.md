@@ -3,7 +3,7 @@ slug: "docker"
 name: "docker"
 version: "1.0.4"
 displayName: "Docker"
-summary: "Docker containers, images, Compose stacks, networking, volumes, debugging,"
+summary: "管Docker容器/镜像/Compose/网络/卷,含调试与生产加固"
 license: "Proprietary"
 description: |-
   Docker containers, images, Compose stacks, networking, volumes, debugging,
@@ -16,8 +16,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Docker

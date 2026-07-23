@@ -3,7 +3,7 @@ slug: "postgres-job-queue"
 name: "postgres-job-queue"
 version: "1.0.0"
 displayName: "Postgres Job Queue"
-summary: "关系型数据库-based job queue with priority scheduling, batch claiming, and"
+summary: "基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪"
 license: "Proprietary"
 description: |-
   关系型数据库-based job queue with priority scheduling, batch claiming,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Postgres Job Queue
 

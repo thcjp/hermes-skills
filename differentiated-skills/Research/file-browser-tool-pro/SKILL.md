@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **批量操作+高级搜索+文件监控+云存储。企业级文件管理全功能覆盖。**
 
 将复杂的文件管理与操作任务交给专业工具处理。专业版在免费版基础操作能力之上，新增批量操作、高级搜索、文件监控、压缩解压、二进制查看、权限管理、文件比较、云存储集成八大高级能力，满足企业级场景对文件管理的批量性、自动化与协作要求。

@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 > **批量URL+并发锁+Cloudflare绕过+截图PDF+企业集成。完整工具链覆盖企业级场景。**
 
 将复杂的浏览器自动化任务交给专业工具处理。专业版在免费版基础能力之上，新增批量URL处理、并发锁机制、Cloudflare绕过、页面截图与PDF导出、复杂表单填写、结构化数据提取、企业级CI/CD集成与监控告警七大高级能力，满足企业级场景对浏览器自动化的精度、并发与可靠性要求。

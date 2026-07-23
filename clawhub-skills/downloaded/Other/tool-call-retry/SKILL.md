@@ -3,7 +3,7 @@ slug: tool-call-retry
 name: tool-call-retry
 version: "1.0.1"
 displayName: tool-call-retry
-summary: Auto retry & fix LLM tool calls with exponential backoff, format validation,
+summary: "自动重试与修复LLM工具调用,指数退避、格式验证、错误纠正,提升Agent可靠性"
   error correction, bo...
 license: MIT-0
 description: |-

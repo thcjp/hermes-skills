@@ -3,7 +3,7 @@ slug: chief-creative-officer
 name: chief-creative-officer
 version: "0.1.0"
 displayName: Chief Creative Offic
-summary: AI agent for chief creative officer tasks
+summary: "AI首席创意官Agent,统揽创意决策"
 license: MIT
 description: |-
   AI agent for chief creative officer tasks

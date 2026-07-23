@@ -3,7 +3,7 @@ slug: memory-compress
 name: memory-compress
 version: "1.2.1"
 displayName: Memory Compress
-summary: Never let your agent forget what matters. Compress verbose daily logs into
+summary: "把冗长日志压缩为结构化摘要,关键信息不忘"
   structured summaries —...
 license: MIT-0
 description: |-

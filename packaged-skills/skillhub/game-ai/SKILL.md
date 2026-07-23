@@ -3,7 +3,7 @@ slug: "game-ai"
 name: "game-ai"
 version: "1.0.0"
 displayName: "Game AI Systems"
-summary: "Game AI development guide covering behavior trees, state machines, pathfinding,"
+summary: "游戏AI开发指南,行为树/状态机/寻路/决策全覆盖"
 license: "Proprietary"
 description: |-
   Game AI development guide covering behavior trees, state machines, pathfinding,
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Game AI Systems

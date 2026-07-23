@@ -3,7 +3,7 @@ slug: "vpn"
 name: "vpn"
 version: "1.0.0"
 displayName: "VPN"
-summary: "Configure and troubleshoot VPN connections for privacy and remote access."
+summary: "配置排障VPN连接,保障隐私与远程访问"
 license: "Proprietary"
 description: |-
   Configure and troubleshoot VPN connections for privacy and remote access。核心能力:
@@ -28,9 +28,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # VPN
 
@@ -50,9 +50,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| VPN配置 | VPN协议和服务器信息 | VPN连接配置文件和设置指南 |
+| 连接故障排查 | VPN配置和错误日志 | 诊断报告和修复步骤 |
+| 隐私保护设置 | VPN客户端和加密需求 | 安全VPN配置和DNS泄露防护 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非VPN协议的网络隐私保护(如Tor/代理链)
 
 ## 使用流程
 
@@ -65,8 +67,8 @@ pricing_model: "monthly"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| protocol | string | 是 | VPN协议, 可选: openvpn/wireguard/ipsec |
+| server_addr | string | 否 | VPN服务器地址, 默认: 使用配置文件 |
 
 ## 输出格式
 
@@ -109,22 +111,13 @@ pricing_model: "monthly"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -135,7 +128,6 @@ pricing_model: "monthly"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -155,7 +147,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

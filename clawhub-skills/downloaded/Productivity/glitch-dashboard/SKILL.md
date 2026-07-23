@@ -3,7 +3,7 @@ slug: glitch-dashboard
 name: glitch-dashboard
 version: "2026.2.18"
 displayName: Dashboard
-summary: Unified web dashboard for managing task queues, monitoring system metrics,
+summary: "统一Web仪表盘,管理任务队列、监控系统指标、查看ZeroTier状态,运维可视化"
   viewing ZeroTier statu...
 license: MIT
 description: |-

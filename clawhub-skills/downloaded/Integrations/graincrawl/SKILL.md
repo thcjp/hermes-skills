@@ -3,7 +3,7 @@ slug: graincrawl
 name: graincrawl
 version: "1.0.1"
 displayName: Graincrawl
-summary: "Granola archive: search, sync freshness, notes, transcripts, panels, SQL."
+summary: "Granola归档,搜索/同步/笔记/转写/面板/SQL(社区下载版)"
 license: MIT
 description: |-
   Granola archive: search, sync freshness, notes, transcripts, panels,

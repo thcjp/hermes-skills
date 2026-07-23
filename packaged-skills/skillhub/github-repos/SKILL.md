@@ -3,7 +3,7 @@ slug: "github-repos"
 name: "github-repos"
 version: "1.0.5"
 displayName: "GitHub"
-summary: "Work with GitHub repositories, issues, pull requests, commits, branches,"
+summary: "管GitHub仓库/issue/PR/提交/分支/发布/工作流"
 license: "Proprietary"
 description: |-
   Work with GitHub repositories, issues, pull requests, commits, branches,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # GitHub
 

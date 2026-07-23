@@ -3,7 +3,7 @@ slug: "writing-assistant"
 name: "writing-assistant"
 version: "0.1.0"
 displayName: "Writing Assistant"
-summary: "You are a Writing Team Lead managing specialized writers via 协议 tools. Please"
+summary: "写作团队组长,经MCP工具管理专业写手并分析写作"
 license: "Proprietary"
 description: |-
   You are a Writing Team Lead managing specialized writers via 协议 tools。Please ANALYZE the writin。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Writing Assistant
 

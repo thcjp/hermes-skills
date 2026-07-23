@@ -3,7 +3,7 @@ slug: "security-scanner"
 name: "security-scanner"
 version: "1.0.0"
 displayName: "Security Scanner"
-summary: "This appears to be a legitimate security-scanning skill, but users must only"
+summary: "安全扫描技能,主动扫描需仅在授权目标运行"
 license: "Proprietary"
 description: |-
   This appears to be a legitimate security-scanning skill, but users must
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Security Scanner
 
@@ -38,9 +38,11 @@ pricing_model: "monthly"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 安全扫描 | 目标URL或代码路径 | 漏洞扫描报告和风险等级 |
+| 依赖漏洞检测 | 依赖文件(package.json/requirements.txt) | 已知漏洞和修复版本 |
+| 配置安全检查 | 配置文件和环境变量 | 安全配置问题和修复建议 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：需要深度渗透测试和漏洞利用的场景
 
 ## 使用流程
 
@@ -67,8 +69,8 @@ sslscan TARGET
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| scan_target | string | 是 | 扫描目标URL或文件路径 |
+| scan_mode | string | 否 | 扫描模式, 可选: quick/full/custom, 默认: quick |
 
 ## 输出格式
 
@@ -79,22 +81,13 @@ Save reports to `reports/security-scan-YYYY-MM-DD.md` with:
 * Vulnerabilities found (severity rated)
 * Recommendations
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -105,7 +98,6 @@ Save reports to `reports/security-scan-YYYY-MM-DD.md` with:
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -148,7 +140,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

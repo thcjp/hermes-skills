@@ -26,11 +26,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 直播脚本生成 (专业版)
 ## 概述
 专业版面向直播机构、MCN、品牌方与内容工厂,在免费版脚本生成之上,扩展团队协作、数据分析、A/B 测试、模板库、多语言、批量生成等企业级能力。支持多人共创脚本、数据驱动优化、跨语言内容生产,适合规模化直播运营场景。

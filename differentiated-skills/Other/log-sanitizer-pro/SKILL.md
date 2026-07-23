@@ -17,11 +17,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 日志脱敏工具（专业版）
 > **企业级日志脱敏解决方案。批量定时监控、MCP工具流水线、合规报告导出、实时告警集成。**
 

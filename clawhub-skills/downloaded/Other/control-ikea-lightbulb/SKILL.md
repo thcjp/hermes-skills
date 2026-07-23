@@ -3,7 +3,7 @@ slug: control-ikea-lightbulb
 name: control-ikea-lightbulb
 version: "1.0.1"
 displayName: Control Ikea Lightbu
-summary: Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color).
+summary: "控制IKEA/TP-Link Kasa智能灯泡,设置开关、亮度、颜色,简化智能家居操作"
   Use when you want to p...
 license: MIT
 description: |-

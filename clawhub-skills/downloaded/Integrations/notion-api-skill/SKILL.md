@@ -3,7 +3,7 @@ slug: notion-api-skill
 name: notion-api-skill
 version: "1.0.11"
 displayName: Notion
-summary: Notion API integration with managed OAuth. Query databases, search pages,
+summary: "Notion API托管OAuth,查数据库/搜页面/读工作区"
   and read workspace cont...
 license: MIT-0
 description: |-

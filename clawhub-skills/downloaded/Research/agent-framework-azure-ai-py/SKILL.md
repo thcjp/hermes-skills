@@ -3,7 +3,7 @@ slug: agent-framework-azure-ai-py
 name: agent-framework-azure-ai-py
 version: "0.1.0"
 displayName: Agent Framework Azur
-summary: This is a documentation-only skill for building Azure AI Foundry agents;
+summary: "Azure AI Foundry Agent构建文档型技能,覆盖云端部署与MCP集成,指导Agent开发"
   its cloud, web search, M...
 license: MIT
 description: |-

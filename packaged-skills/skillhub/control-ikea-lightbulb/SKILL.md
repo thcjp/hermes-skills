@@ -3,7 +3,7 @@ slug: "control-ikea-lightbulb"
 name: "control-ikea-lightbulb"
 version: "1.0.1"
 displayName: "Control Ikea Lightbu"
-summary: "Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color)."
+summary: "控IKEA/TP-Link Kasa智能灯泡,开关/亮度/颜色一键调"
 license: "Proprietary"
 description: |-
   Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color)。Use when you want to p。Use when 用户需要Control Ikea Lightbu相关功能时使用。不适用于超出本技能能力范围的复杂需求。
@@ -14,8 +14,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Control Ikea Lightbu

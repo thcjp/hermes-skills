@@ -3,7 +3,7 @@ slug: google-fonts
 name: google-fonts
 version: "1.0.0"
 displayName: Google Fonts
-summary: Load Google Fonts with proper performance, subsetting, and proven font pairings.
+summary: "加载Google Fonts,优化性能与子集化,提供经验证的字体配对方案,加速页面渲染"
 license: MIT
 description: |-
   Load Google Fonts with proper performance, subsetting, and proven font

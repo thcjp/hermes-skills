@@ -3,7 +3,7 @@ slug: video-translator
 name: video-translator
 version: "1.0.5"
 displayName: Video Translator
-summary: Real time video translation / dubbing skill. Translate user-provided video
+summary: "实时视频翻译/配音,翻译用户视频并返回(社区下载版)"
   (file or URL) and retu...
 license: MIT-0
 description: |-

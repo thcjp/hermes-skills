@@ -3,7 +3,7 @@ slug: brave-search
 name: brave-search
 version: "1.0.1"
 displayName: Brave Search
-summary: Web search and content extraction via Brave Search API.
+summary: "通过Brave Search API进行网络搜索与内容提取,隐私优先的搜索方案"
 license: MIT
 description: |-
   Web search and content extraction via Brave Search API。核心能力:

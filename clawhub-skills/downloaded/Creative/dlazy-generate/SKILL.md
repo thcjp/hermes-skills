@@ -3,7 +3,7 @@ slug: dlazy-generate
 name: dlazy-generate
 version: "1.3.2"
 displayName: Dlazy Generate
-summary: A comprehensive generation skill. Can generate images, videos, and audio
+summary: "综合生成,自动选模型生成图/视频/音频"
   by automatically selecti...
 license: MIT-0
 description: |-

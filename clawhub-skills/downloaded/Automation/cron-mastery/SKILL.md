@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "cron精确调度,心跳会漂移cron不会"
 ---
-
 # Cron Mastery
 
 **Rule #1: Heartbeats drift. Cron is precise.**

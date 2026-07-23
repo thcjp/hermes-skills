@@ -3,7 +3,7 @@ slug: markdown-exporter
 name: markdown-exporter
 version: "3.6.10"
 displayName: Markdown Exporter
-summary: Convert Markdown text to DOCX, PPTX, XLSX, PDF, PNG, HTML, IPYNB, MD, CSV,
+summary: "Markdown转DOCX/PPTX/XLSX/PDF/PNG/HTML等多格式文件"
   JSON, JSONL, XML files...
 license: Apache-2.0
 description: |-

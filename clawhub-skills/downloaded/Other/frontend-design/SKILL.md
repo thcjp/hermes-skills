@@ -3,7 +3,7 @@ slug: frontend-design
 name: frontend-design
 version: "1.1.0"
 displayName: Frontend Design
-summary: Create distinctive, production-grade frontend interfaces with high design
+summary: "创建独特、生产级前端界面,高设计质量,避免通用AI美学,产出有辨识度的UI"
   quality. Use this skill...
 license: MIT-0
 description: |-

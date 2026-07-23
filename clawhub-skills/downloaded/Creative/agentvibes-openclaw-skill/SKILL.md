@@ -3,7 +3,7 @@ slug: agentvibes-openclaw-skill
 name: agentvibes-openclaw-skill
 version: "4.6.6"
 displayName: Skill
-summary: 🎤 AgentVibes TTS for ai-assistant Code & OpenClaw — Switch voices, set personality,
+summary: "AgentVibes TTS,切换声音/设性格/控语速/备份"
   control speed, back...
 license: MIT-0
 description: |-

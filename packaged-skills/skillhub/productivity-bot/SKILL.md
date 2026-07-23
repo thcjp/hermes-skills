@@ -3,7 +3,7 @@ slug: "productivity-bot"
 name: "productivity-bot"
 version: "1.0.0"
 displayName: "Productivity Bot"
-summary: "Automation bot for productivity tasks including data processing, scheduled"
+summary: "生产力任务自动化bot,数据处理/定时通知/工作流"
 license: "Proprietary"
 description: |-
   Automation bot for productivity tasks including data processing, scheduled
@@ -16,9 +16,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Productivity Bot
 

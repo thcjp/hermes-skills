@@ -3,7 +3,7 @@ slug: slack-workspace
 name: slack-workspace
 version: "0.1.1"
 displayName: Slack
-summary: Send messages, manage channels, handle files, and coordinate team communication
+summary: "在Slack发消息/管频道/处理文件/协调团队沟通"
   in Slack via the ...
 license: MIT-0
 description: |-

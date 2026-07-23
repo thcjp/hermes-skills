@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: SEO优化类, medium市场, enterprise复杂度, monthly频次, business层 → 效果可量化,企业刚需
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 深度研究引擎
 
 执行自主多步研究。从搜索到验证,从综合到报告,全流程自动化。坚持来源分层与交叉验证,确保研究质量。

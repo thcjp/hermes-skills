@@ -3,7 +3,7 @@ slug: "dashboard"
 name: "dashboard"
 version: "1.0.1"
 displayName: "Dashboard"
-summary: "Build custom dashboards from any data source with local hosting and visual"
+summary: "从任意数据源构建自定义仪表盘,本地托管+视觉QA,数据可视"
 license: "Proprietary"
 description: |-
   Build custom dashboards from any data source with local hosting and
@@ -29,8 +29,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Dashboard

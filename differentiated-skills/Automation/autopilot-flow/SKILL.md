@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "把重复任务变自动驾驶,看到重复即构建自动化"
 ---
-
 # 自动驾驶流程（Autopilot Flow）
 
 把重复任务变成自动驾驶。核心信条：**不是"回答问题"，而是"看到重复→立刻构建自动化"。**

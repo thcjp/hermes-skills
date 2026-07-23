@@ -3,7 +3,7 @@ slug: "sqlite"
 name: "sqlite"
 version: "1.0.0"
 displayName: "SQLite"
-summary: "Use SQLite correctly with proper concurrency, pragmas, and type handling."
+summary: "正确用SQLite,并发/pragmas/类型处理得当"
 license: "Proprietary"
 description: |-
   Use SQLite correctly with proper concurrency, pragmas, and type handling。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # SQLite

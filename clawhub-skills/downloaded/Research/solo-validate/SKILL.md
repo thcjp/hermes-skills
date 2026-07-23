@@ -3,7 +3,7 @@ slug: solo-validate
 name: solo-validate
 version: "2.1.1"
 displayName: Validate
-summary: Score startup idea through S.E.E.D. niche check + STREAM 6-layer analysis
+summary: "通过S.E.E.D.利基检查与STREAM六层分析评估创业想法,量化可行性降低试错成本"
   + Devil's Advocate inve...
 license: MIT
 description: |-

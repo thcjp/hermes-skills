@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # Excel大师
 
 处理Excel文件、表格数据、批量转换或报表生成时应用本skill。核心信条：**先看文件多大，再选工具；先问要不要保格式，再动笔。**

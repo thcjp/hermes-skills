@@ -29,11 +29,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 笔记同步CLI（专业版）
 
 > **企业级Markdown笔记库管理。批量操作+多Vault+模板系统+Git同步+LLM智能整理，知识工作者的终极命令行工具。**

@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "压缩PDF文件大小,保持质量的同时减少存储与传输成本"
 ---
-
 # Compress PDF
 
 ## Purpose

@@ -3,7 +3,7 @@ slug: "python"
 name: "python"
 version: "1.0.0"
 displayName: "Python"
-summary: "Python coding guidelines and best practices. Use when writing, reviewing,"
+summary: "Python编码规范与最佳实践,写审重构时用"
 license: "Proprietary"
 description: |-
   Python coding guidelines and best practices。Use when writing, reviewing,
@@ -40,9 +40,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 代码编写 | 功能需求和Python版本 | 符合PEP8的Python代码实现 |
+| 代码审查 | Python源代码文件 | 风格/安全/性能审查报告 |
+| 重构建议 | 现有Python代码 | 重构方案和优化后代码 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非Python语言的代码审查和开发指导
 
 ## 使用流程
 
@@ -55,8 +57,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| code | string | 是 | Python代码片段或文件路径 |
+| check_type | string | 否 | 检查类型, 可选: style/security/performance/all, 默认: all |
 
 ## 输出格式
 
@@ -99,22 +101,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -125,7 +118,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -145,7 +137,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

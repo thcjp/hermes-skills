@@ -3,7 +3,7 @@ slug: admapix
 name: admapix
 version: "1.0.30"
 displayName: AdMapix
-summary: AdMapix raw data layer for ad creatives, apps, rankings, downloads/revenue.
+summary: "AdMapix广告原始数据层,广告创意/应用/排名/下载收入"
 license: MIT
 description: |-
   AdMapix raw data layer for ad creatives, apps, rankings, downloads/revenue。核心能力:

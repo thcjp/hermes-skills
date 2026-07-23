@@ -3,7 +3,7 @@ slug: "aws"
 name: "aws"
 version: "1.0.2"
 displayName: "Aws"
-summary: "Architect, deploy, and optimize AWS infrastructure avoiding cost explosions"
+summary: "架构部署优化AWS基础设施,避开成本失控与安全陷阱,省钱又稳"
 license: "Proprietary"
 description: |-
   Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Aws

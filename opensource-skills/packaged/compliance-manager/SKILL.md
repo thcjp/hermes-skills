@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 99.9
-pricing_tier: L4
-pricing_rationale: 安全合规类, niche市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高
-pricing_model: monthly
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 合规管理器
 
 构建企业级合规操作系统,将合规从一次性审计转变为持续运营。从控制项管理到证据收集,从审计就绪到持续监控,全流程合规管理。

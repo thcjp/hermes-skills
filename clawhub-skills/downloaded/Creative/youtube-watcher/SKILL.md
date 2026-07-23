@@ -3,7 +3,7 @@ slug: youtube-watcher
 name: youtube-watcher
 version: "1.0.0"
 displayName: YouTube Watcher
-summary: Fetch and read transcripts from YouTube videos.
+summary: "抓取并读取YouTube视频字幕转写(社区下载版)"
 license: MIT
 description: |-
   Fetch and read transcripts from YouTube videos。核心能力:

@@ -3,7 +3,7 @@ slug: "chart-generator-2-0-0"
 name: "chart-generator-2-0-0"
 version: "1.0.0"
 displayName: "Chart Generator 2 0"
-summary: "Data visualization tool producing SVG charts. Use when you need bar charts,"
+summary: "数据可视化出SVG图表,柱/线/饼图即需即出"
 license: "Proprietary"
 description: |-
   Data visualization tool producing SVG charts。Use when you need bar
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Chart Generator 2 0
 

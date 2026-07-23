@@ -3,7 +3,7 @@ slug: csv
 name: csv
 version: "1.0.0"
 displayName: CSV
-summary: Parse and generate RFC 4180 compliant CSV that works across tools.
+summary: "解析生成RFC 4180合规CSV,跨工具通用"
 license: MIT
 description: |-
   Parse and generate RFC 4180 compliant CSV that works across tools。核心能力:

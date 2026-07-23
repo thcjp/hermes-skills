@@ -3,7 +3,7 @@ slug: elite-longterm-memory
 name: elite-longterm-memory
 version: "1.2.3"
 displayName: Elite Longterm Memor
-summary: Ultimate AI agent memory system for Cursor, ai-assistant, ai-chat & Copilot. WAL
+summary: "面向Cursor与Claude的终极Agent记忆系统,WAL协议+向量搜索"
   protocol + vector sear...
 license: MIT
 description: |-

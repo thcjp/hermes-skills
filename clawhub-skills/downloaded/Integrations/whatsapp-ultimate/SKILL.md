@@ -3,7 +3,7 @@ slug: whatsapp-ultimate
 name: whatsapp-ultimate
 version: "4.0.3"
 displayName: TinkerClaw WhatsApp
-summary: You put 5 agents in a WhatsApp group. They all respond at once. Your API
+summary: "TinkerClaw WhatsApp群内多Agent同时响应"
   bill does a backflip. Pr...
 license: MIT-0
 description: |-

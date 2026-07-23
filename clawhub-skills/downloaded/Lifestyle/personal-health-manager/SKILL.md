@@ -3,7 +3,7 @@ slug: personal-health-manager
 name: personal-health-manager
 version: "1.0.0"
 displayName: Personal Health Mana
-summary: Personal health management and wellness assistant. Use when users want to
+summary: "健康数据追踪与日常管理助手,量化个人健康趋势,辅助养成规律生活习惯"
   track health data, get ...
 license: MIT-0
 description: |-

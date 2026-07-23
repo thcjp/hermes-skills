@@ -51,11 +51,11 @@ tools:
 - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # VPN工具箱(专业版)
 ## 概述
 VPN工具箱专业版是一款面向企业用户的VPN管理与监控平台。在免费版个人VPN配置指南基础上,增加多VPN服务器负载均衡与故障转移、实时连接状态监控与告警、企业级配置模板(支持10+厂商)、合规审计报告、批量部署与集中管理等企业级功能。支持Split Tunnel精细路由策略和自动化健康检查。与免费版完全兼容,配置模板和故障排除指南可无缝复用。

@@ -3,7 +3,7 @@ slug: "music"
 name: "music"
 version: "1.0.0"
 displayName: "Music"
-summary: "Build a personal music system for tracking discoveries, favorites, concerts,"
+summary: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆"
 license: "Proprietary"
 description: |-
   Build a personal music system for tracking discoveries, favorites, concerts,
@@ -31,8 +31,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Music

@@ -24,11 +24,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # macOS截图工具专业版
 ## 概述
 专业版为专业用户提供完整的macOS屏幕捕获与处理平台,在免费版基础截图能力之上,新增多显示器截图、音频屏幕录制、定时批量截图、OCR文字识别、图片编辑标注、云端自动上传与GIF动图制作等专业功能。专业版完全兼容免费版截图命令,已有截图脚本可无缝升级,适合专业内容创作与文档制作场景。

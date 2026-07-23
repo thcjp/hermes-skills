@@ -3,7 +3,7 @@ slug: "code-quality"
 name: "code-quality"
 version: "1.0.0"
 displayName: "Code Quality"
-summary: "Coding style standards, security guidelines, and accessibility requirements."
+summary: "编码风格标准/安全准则/无障碍要求,守住质量底线"
 license: "Proprietary"
 description: |-
   Coding style standards, security guidelines, and accessibility requirements。Use when (1) Writing。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Code Quality
 

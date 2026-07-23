@@ -3,7 +3,7 @@ slug: "mongodb"
 name: "mongodb"
 version: "1.0.1"
 displayName: "MongoDB"
-summary: "Design schemas, write queries, and configure MongoDB for consistency and"
+summary: "设计schema/写查询/配置MongoDB,兼顾一致性与性能"
 license: "Proprietary"
 description: |-
   Design schemas, write queries, and configure MongoDB for consistency
@@ -29,8 +29,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # MongoDB

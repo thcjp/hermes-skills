@@ -3,7 +3,7 @@ slug: "whatsapp-image-send"
 name: "whatsapp-image-send"
 version: "1.0.1"
 displayName: "WhatsApp Image Send"
-summary: "Send images, videos, audio, or documents via WhatsApp by downloading, copying"
+summary: "经WhatsApp发图/视频/音频/文档,下载转存后发送"
 license: "Proprietary"
 description: |-
   Send images, videos, audio, or documents via WhatsApp by downloading,
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # WhatsApp Image Send

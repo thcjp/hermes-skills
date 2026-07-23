@@ -3,7 +3,7 @@ slug: creator-alpha-feed
 name: creator-alpha-feed
 version: "1.0.8"
 displayName: Creator Alpha Feed
-summary: Collect and rank daily AI content for creator-focused publishing workflows.
+summary: "为创作者发布流收集并排序每日AI内容"
   Use when users ask fo...
 license: MIT
 description: |-

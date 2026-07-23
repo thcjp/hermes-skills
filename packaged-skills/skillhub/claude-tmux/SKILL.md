@@ -3,7 +3,7 @@ slug: "claude-tmux"
 name: "claude-tmux"
 version: "1.0.0"
 displayName: "ai-assistant Tmux"
-summary: "This skill is an instruction-only tmux helper that does what it advertises,"
+summary: "纯指令型tmux助手,所宣即所做,会话管理利器"
 license: "Proprietary"
 description: |-
   This skill is an instruction-only tmux helper that does what it advertises,
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # ai-assistant Tmux

@@ -3,7 +3,7 @@ slug: "social-sentiment"
 name: "social-sentiment"
 version: "1.4.0"
 displayName: "Social Sentiment"
-summary: "This skill is a disclosed social-listening workflow that uses Xpoz and an"
+summary: "社交聆听工作流,用Xpoz与npm助手分析舆情"
 license: "Proprietary"
 description: |-
   This skill is a disclosed social-listening workflow that uses Xpoz and
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Social Sentiment

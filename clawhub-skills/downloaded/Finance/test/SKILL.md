@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "加密组合跟踪/市场数据/CEX历史CLI"
 ---
-
 # Test
 
 CLI for crypto portfolio tracking, market data, and CEX history.

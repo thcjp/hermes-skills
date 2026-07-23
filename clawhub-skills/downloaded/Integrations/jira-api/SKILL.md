@@ -3,7 +3,7 @@ slug: jira-api
 name: jira-api
 version: "1.0.8"
 displayName: Jira
-summary: Jira API integration with managed OAuth. Search issues with JQL, create and
+summary: "Jira API托管OAuth,JQL搜索/建改issue/管看板"
   update issues, manage...
 license: MIT-0
 description: |-

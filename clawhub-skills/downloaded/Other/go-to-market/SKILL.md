@@ -3,7 +3,7 @@ slug: go-to-market
 name: go-to-market
 version: "0.1.0"
 displayName: Go To Market
-summary: Build a go-to-market (GTM) strategy for launching a product or entering a
+summary: "构建产品上市(GTM)策略,覆盖市场进入与新区域扩张,系统化规划商业增长路径"
   new market. Use when pl...
 license: MIT
 description: |-

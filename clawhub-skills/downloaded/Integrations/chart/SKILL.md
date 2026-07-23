@@ -3,7 +3,7 @@ slug: chart
 name: chart
 version: "1.0.0"
 displayName: Chart
-summary: Local-first chart generation engine for trends, comparisons, distributions,
+summary: "本地优先图表生成引擎,趋势/对比/分布可视化"
   and quick visual expl...
 license: MIT-0
 description: |-

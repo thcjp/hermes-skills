@@ -14,11 +14,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # 批处理专家
 
 处理多个数据项时应用本skill。核心信条:**永远先dry-run少量样本,必有检查点可恢复,每项必幂等。**

@@ -3,7 +3,7 @@ slug: "dns-lookup"
 name: "dns-lookup"
 version: "1.0.0"
 displayName: "Dns Lookup"
-summary: "Resolve hostnames to IP addresses using `dig` from bind-utils."
+summary: "用bind-utils的dig把主机名解析为IP,排查域名"
 license: "Proprietary"
 description: |-
   Resolve hostnames to IP addresses using `dig` from bind-utils。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Dns Lookup

@@ -3,7 +3,7 @@ slug: reminder
 name: reminder
 version: "0.1.1"
 displayName: Reminder
-summary: Capture natural-language events, save to your workspace, and schedule Telegram
+summary: "捕获自然语言事件存工作区并排Telegram提醒,自动解析(社区下载版)"
   reminders with aut...
 license: MIT
 description: |-

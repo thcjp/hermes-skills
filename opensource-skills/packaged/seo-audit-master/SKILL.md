@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: SEO优化类, small市场, enterprise复杂度, monthly频次, business层 → 效果可量化,企业刚需
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # SEO审计大师
 
 对网站执行全面 SEO 审计。从技术到内容,从架构到链接,输出可执行的优化清单。支持 Google 与百度双引擎,兼顾海外与国内搜索引擎优化。

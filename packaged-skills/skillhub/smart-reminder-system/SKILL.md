@@ -3,7 +3,7 @@ slug: "smart-reminder-system"
 name: "smart-reminder-system"
 version: "1.0.5"
 displayName: "Reminder"
-summary: "Create one-time reminder tasks using SkillHub cron. User specifies reminder"
+summary: "用SkillHub cron建一次性提醒任务,指定时间与内容"
 license: "Proprietary"
 description: |-
   Create one-time reminder tasks using SkillHub cron。User specifies reminder
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Reminder
 

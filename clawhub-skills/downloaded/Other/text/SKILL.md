@@ -3,7 +3,7 @@ slug: text
 name: text
 version: "1.0.0"
 displayName: Text
-summary: Transform, format, and process text with patterns for writing, data cleaning,
+summary: "文本转换、格式化与处理,覆盖写作、数据清洗、本地化、引用等场景,一站式文本工具箱"
   localization, citat...
 license: MIT
 description: |-

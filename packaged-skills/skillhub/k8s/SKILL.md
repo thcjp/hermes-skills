@@ -3,7 +3,7 @@ slug: "k8s"
 name: "k8s"
 version: "1.0.0"
 displayName: "Kubernetes"
-summary: "Avoid common Kubernetes mistakes — resource limits, probe configuration,"
+summary: "规避Kubernetes常见错误,资源限制/探针/选择器"
 license: "Proprietary"
 description: |-
   Avoid common Kubernetes mistakes — resource limits, probe configuration,

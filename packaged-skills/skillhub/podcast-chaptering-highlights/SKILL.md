@@ -3,7 +3,7 @@ slug: "podcast-chaptering-highlights"
 name: "podcast-chaptering-highlights"
 version: "1.0.0"
 displayName: "Podcast Chaptering H"
-summary: "Create chapters, highlights, and show notes from podcast audio or transcripts."
+summary: "从播客音频或转写生成章节/亮点/节目说明"
 license: "Proprietary"
 description: |-
   Create chapters, highlights, and show notes from podcast audio or transcripts。Use when a user wa。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
@@ -14,8 +14,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Podcast Chaptering H

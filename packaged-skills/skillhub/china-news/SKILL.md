@@ -3,7 +3,7 @@ slug: "china-news"
 name: "china-news"
 version: "1.0.3"
 displayName: "China News"
-summary: "中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources. Supports"
+summary: "中国新闻资讯聚合,一键获取中文源最新动态"
 license: "Proprietary"
 description: |-
   中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # China News
 

@@ -3,7 +3,7 @@ slug: note
 name: note
 version: "2.1.0"
 displayName: Note
-summary: Knowledge capture and connection system with automatic organization and retrieval.
+summary: "知识捕获与连接系统,自动组织与检索,将零散信息转化为可检索的知识网络"
   Use when user ...
 license: MIT-0
 description: |-

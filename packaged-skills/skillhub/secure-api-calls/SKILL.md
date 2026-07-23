@@ -3,7 +3,7 @@ slug: "secure-api-calls"
 name: "secure-api-calls"
 version: "1.0.3"
 displayName: "Secure API Calls"
-summary: "Call any API without leaking credentials. Keychains proxies requests and"
+summary: "调任意API不泄密钥,Keychains代理并在服务端注入真实令牌"
 license: "Proprietary"
 description: |-
   Call any API without leaking credentials。Keychains proxies requests
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Secure API Calls

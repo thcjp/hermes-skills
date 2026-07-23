@@ -3,7 +3,7 @@ slug: "lh-video-gen"
 name: "lh-video-gen"
 version: "1.0.0"
 displayName: "LH Video Gen"
-summary: "Generate vertical short videos (9:16) from a Markdown script. Parses script"
+summary: "从Markdown脚本生成9:16竖屏短视频,自动分镜"
 license: "Proprietary"
 description: |-
   Generate vertical short videos (9:16) from a Markdown script。Parses

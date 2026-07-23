@@ -3,7 +3,7 @@ slug: "video"
 name: "video"
 version: "1.0.1"
 displayName: "Video"
-summary: "Process, edit, and optimize videos for any platform with compression, format"
+summary: "为任意平台处理/编辑/优化视频,压缩/转码/字幕"
 license: "Proprietary"
 description: |-
   Process, edit, and optimize videos for any platform with compression,
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Video

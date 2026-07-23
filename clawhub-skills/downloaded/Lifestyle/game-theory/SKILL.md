@@ -3,7 +3,7 @@ slug: game-theory
 name: game-theory
 version: "1.0.0"
 displayName: Game Theory
-summary: Advanced game theory analysis for crypto protocols, DeFi mechanisms, governance
+summary: "加密协议与DeFi机制的博弈论分析,评估代币经济模型稳定性与治理攻击风险"
   systems, and stra...
 license: MIT
 description: |-

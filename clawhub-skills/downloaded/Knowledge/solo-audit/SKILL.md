@@ -3,7 +3,7 @@ slug: solo-audit
 name: solo-audit
 version: "1.4.1"
 displayName: Audit
-summary: Health check knowledge base for broken links, missing frontmatter, tag inconsistencies,
+summary: "知识库健康检查,断链/缺frontmatter/标签不一致/封面(社区下载版)"
   and cover...
 license: MIT
 description: |-

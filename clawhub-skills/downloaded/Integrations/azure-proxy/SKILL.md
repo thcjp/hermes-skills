@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
+summary: "桥接Azure Claude与Skill平台的轻量Node代理"
 ---
-
 # Azure llm-provider Proxy
 
 A lightweight Node.js proxy that bridges Azure llm-provider with Skill平台.

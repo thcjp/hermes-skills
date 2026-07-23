@@ -1,9 +1,10 @@
 ---
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "省50-80%AI token用量,不牺牲响应质量"
 ---
-
 # Token Saver Skill
 
 A token cost optimization skill that helps you save 50-80% on AI token usage without sacrificing response quality.

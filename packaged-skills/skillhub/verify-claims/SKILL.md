@@ -3,7 +3,7 @@ slug: "verify-claims"
 name: "verify-claims"
 version: "1.0.0"
 displayName: "Verify Claims"
-summary: "This fact-checking skill is mostly coherent, but it can automatically create"
+summary: "事实核查技能(会自动建延迟跟进需谨慎)"
 license: "Proprietary"
 description: |-
   This fact-checking skill is mostly coherent, but it can automatically
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Verify Claims
 

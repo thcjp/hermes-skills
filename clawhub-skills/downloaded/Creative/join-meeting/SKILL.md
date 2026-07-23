@@ -3,7 +3,7 @@ slug: join-meeting
 name: join-meeting
 version: "1.1.15"
 displayName: Join meeting
-summary: AgentCall (agentcall.dev) — Join a video meeting (Google Meet, Teams, Zoom)
+summary: "AgentCall以AI Bot加入Google Meet/Teams/Zoom会议"
   as an AI bot with voi...
 license: MIT
 description: |-

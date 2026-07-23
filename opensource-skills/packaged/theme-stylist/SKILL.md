@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次
-pricing_model: per_use
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
-
 # 主题造型师
 
 为各类产出物应用专业的视觉主题。一个主题包含完整的色彩体系与字体方案,一键统一风格。内置 10+ 预设主题,支持基于品牌色生成自定义主题,确保跨产出物的视觉一致性。

@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "Redis缓存用法,每个key设TTL过期防泄漏"
 ---
-
 # Redis
 
 ## Expiration (Memory Leaks)

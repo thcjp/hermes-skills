@@ -16,11 +16,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 > **全功能字体排版管理。智能配对、子集化、设计系统集成、无障碍检查、多语言适配。**
 
 专业团队在字体排版治理中面临的挑战：设计系统需要统一的字体变量管理而非散落在各处的CSS、多语言页面需要CJK（中日韩）字体适配、无障碍合规要求对比度与字号达标、字体加载需要CDN多级fallback保障可用性、字体子集化需要自动化工具减少手动操作。

@@ -15,15 +15,14 @@ description: |-
   - 敏感词审核与合规
   - 安全报告交付与运势内容引流
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [命理咨询, 内容变现, 副业工具, AI解读]
 tools:
   - read
   - exec
-pricing_rationale: "安全合规类, small市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # 赛博命理师 Cyber Fortune Teller
 

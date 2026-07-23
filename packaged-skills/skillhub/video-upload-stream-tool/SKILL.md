@@ -3,7 +3,7 @@ slug: "video-upload-stream-tool"
 name: "video-upload-stream-tool"
 version: "1.0.1"
 displayName: "Video Upload Aioz St"
-summary: "Quick upload video to AIOZ Stream API. Create video objects with default"
+summary: "快速上传视频到AIOZ Stream API,建视频对象配编码"
 license: "Proprietary"
 description: |-
   Quick upload video to AIOZ Stream API。Create video objects with default

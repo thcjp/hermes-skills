@@ -3,7 +3,7 @@ slug: vue
 name: vue
 version: "1.0.1"
 displayName: Vue
-summary: Avoid common Vue mistakes — reactivity traps, ref vs reactive, computed timing,
+summary: "规避Vue常见错误,响应式陷阱/ref与reactive/组合式API(社区下载版)"
   and Composition A...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: anthrovision-telegram-body-scan
 name: anthrovision-telegram-body-scan
 version: "1.0.4"
 displayName: Anthrovision Telegra
-summary: Run end-to-end body-scan measurement flow in Telegram using AnthroVision
+summary: "在Telegram跑AnthroVision端到端体型扫描测量"
   bridge tools.
 license: MIT
 description: |-

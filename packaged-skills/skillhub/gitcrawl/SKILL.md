@@ -3,7 +3,7 @@ slug: "gitcrawl"
 name: "gitcrawl"
 version: "1.0.0"
 displayName: "Gitcrawl"
-summary: "GitHub archive: issue/PR search, sync freshness, duplicate clusters."
+summary: "GitHub归档,issue/PR搜索/同步新鲜度/重复聚类"
 license: "Proprietary"
 description: |-
   GitHub archive: issue/PR search, sync freshness, duplicate clusters。核心能力:
@@ -28,9 +28,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
 # Gitcrawl
 
@@ -50,9 +50,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| Issue/PR搜索 | GitHub仓库和搜索条件 | 匹配的Issue/PR列表 |
+| 新鲜度同步 | 仓库和最后同步时间 | 增量更新的Issue/PR记录 |
+| 重复聚类 | Issue/PR标签和内容 | 重复项聚类和分析报告 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非GitHub平台的代码托管Issue搜索
 
 ## 使用流程
 
@@ -65,8 +67,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| repo_url | string | 是 | GitHub仓库URL |
+| search_query | string | 否 | 搜索关键词, 默认: 全部 |
 
 ## 输出格式
 
@@ -109,22 +111,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -135,7 +128,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -155,7 +147,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

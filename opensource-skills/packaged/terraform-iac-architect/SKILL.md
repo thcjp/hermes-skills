@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # IaC架构师
 
 基于 HashiCorp 官方风格规范,生成可维护、可复用、安全的 Terraform 基础设施代码。同时支持国内主流云厂商(阿里云/腾讯云/华为云)的资源编排,从模块设计到状态管理,从多环境部署到 CI/CD 集成,全流程覆盖。

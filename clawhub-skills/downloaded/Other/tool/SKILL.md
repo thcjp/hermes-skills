@@ -3,7 +3,7 @@ slug: tool
 name: tool
 version: "1.0.0"
 displayName: Tool
-summary: A comprehensive AI agent skill for finding, evaluating, and getting the most
+summary: "AI Agent工具发现、评估与使用技能,帮助Agent从海量工具中找到最合适的,提升效率"
   from the tools that ...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: "free-ride"
 name: "free-ride"
 version: "1.0.11"
 displayName: "Free Ride"
-summary: "Manages free AI models from OpenRouter for SkillHub."
+summary: "为SkillHub管理OpenRouter免费AI模型,零成本调用"
 license: "Proprietary"
 description: |-
   Manages free AI models from OpenRouter for SkillHub。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Free Ride

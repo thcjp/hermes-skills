@@ -3,7 +3,7 @@ slug: "vpn-rotate-skill"
 name: "vpn-rotate-skill"
 version: "0.1.0"
 displayName: "Vpn Rotate Skill"
-summary: "Bypass API rate limits by rotating VPN servers. Works with any OpenVPN-compatible"
+summary: "轮换VPN服务器绕过API限流,兼容OpenVPN(ProtonVPN等)"
 license: "Proprietary"
 description: |-
   Bypass API rate limits by rotating VPN servers。Works with any OpenVPN-compatible
@@ -15,8 +15,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Vpn Rotate Skill

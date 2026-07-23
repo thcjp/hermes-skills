@@ -3,7 +3,7 @@ slug: "markdown-converter-compdf"
 name: "markdown-converter-compdf"
 version: "1.2.0"
 displayName: "Markdown convert"
-summary: "Process, convert, edit, and extract data from PDF files using the ComPDF"
+summary: "用ComPDF Cloud API处理/转换/编辑/提取PDF"
 license: "Proprietary"
 description: |-
   Process, convert, edit, and extract data from PDF files using the ComPDF
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Markdown convert
 

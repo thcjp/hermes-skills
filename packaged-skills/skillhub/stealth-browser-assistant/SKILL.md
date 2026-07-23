@@ -15,15 +15,14 @@ description: |-
   - 浏览器指纹防护与多账号隔离
   - 反检测混合方案与行为模拟
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [浏览器自动化, 多账号管理, 反检测, 效率工具]
 tools:
   - read
   - exec
-pricing_rationale: "安全合规类, small市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # 反检测浏览器助手 Stealth Browser Assistant v1.1.0
 

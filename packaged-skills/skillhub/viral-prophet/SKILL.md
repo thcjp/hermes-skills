@@ -15,14 +15,13 @@ description: |-
   - 竞品对比分析
   - 优化建议与发布时机推荐
 homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags: [爆款预测, 内容评估, 发布前自检, 数据驱动]
 tools:
   - read
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # 爆款预言机 v1.1.0
 

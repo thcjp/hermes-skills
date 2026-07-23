@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
+summary: "Linear与Discord集成自动化教程(Make/Pipedream/Zapier)"
 ---
-
 # Linear Autopilot
 
 > **🔒 Security Note:** This skill mentions API keys, tokens, and webhook URLs because it teaches you how to set up integrations with Linear, Discord, and automation services (Make.com, Pipedream, Zapier). These are necessary for the tutorial — the skill does NOT collect or transmit your credentials. All setup happens on your local machine and the services you configure.

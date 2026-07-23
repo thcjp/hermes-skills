@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
+summary: "经notesmd-cli管Obsidian笔记库"
 ---
-
 # Obsidian via notesmd-cli (obsidian-cli)
 
 Obsidian vault = a normal folder on disk.

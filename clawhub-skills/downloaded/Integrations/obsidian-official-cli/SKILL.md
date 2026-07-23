@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
+summary: "Obsidian官方CLI,命令行做Obsidian一切"
 ---
-
 # Obsidian Official CLI Skill
 
 Official command-line interface for Obsidian. Anything you can do in Obsidian can be done from the command line — including developer commands for debugging, screenshots, and plugin reloading.

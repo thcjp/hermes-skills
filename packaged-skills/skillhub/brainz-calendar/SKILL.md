@@ -3,7 +3,7 @@ slug: "brainz-calendar"
 name: "brainz-calendar"
 version: "1.0.0"
 displayName: "Calendar"
-summary: "Manage Google Calendar events using `gcalcli`. Create, list, and delete calendar"
+summary: "用gcalcli管理Google日历,创建/列出/删除事件,日程不乱"
 license: "Proprietary"
 description: |-
   Manage Google Calendar events using `gcalcli`。Create, list, and delete
@@ -40,9 +40,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 日历事件管理 | 事件标题和时间 | Google日历事件创建和提醒 |
+| 日程查询 | 日期范围和关键词 | 事件列表和空闲时段 |
+| 事件删除 | 事件ID或关键词 | 删除确认和日历更新 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非Google日历平台的事件管理需求
 
 ## 使用流程
 
@@ -55,8 +57,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| event_title | string | 是 | 日历事件标题 |
+| date_range | string | 否 | 日期范围, 格式: YYYY-MM-DD~YYYY-MM-DD, 默认: 今天 |
 
 ## 输出格式
 
@@ -99,22 +101,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -125,7 +118,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -145,7 +137,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

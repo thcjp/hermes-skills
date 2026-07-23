@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "每日自动检查更新Clawdbot与技能"
 ---
-
 # Auto-Updater Skill
 
 Keep your Clawdbot and skills up to date automatically with daily update checks.

@@ -42,11 +42,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # UI/UX ProMax+ - 专业版
 ## 概述
 UI/UX ProMax+专业版是一款面向企业设计团队的完整UI/UX设计资源引擎。在免费版基础资源之上,扩展至25种数据可视化图表推荐、UX交互模式库、常用组件设计规范和完整设计决策矩阵,帮助企业建立系统化、可维护的设计标准。

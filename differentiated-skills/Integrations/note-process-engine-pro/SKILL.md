@@ -30,11 +30,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # 笔记处理引擎(专业版)
 
 一个面向研究团队与企业的全功能笔记分析Skill,在免费版基础上扩展了语义检索、自动标签、跨库联合检索、可视化、导出报告、定时分析等高级能力,适合规模化使用场景。

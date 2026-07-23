@@ -3,7 +3,7 @@ slug: "kubernetes-devops"
 name: "kubernetes-devops"
 version: "1.0.0"
 displayName: "Kubernetes"
-summary: "This is a coherent Kubernetes manifest helper; its main risk is that users"
+summary: "K8s清单助手,生成规范的部署清单"
 license: "Proprietary"
 description: |-
   This is a coherent Kubernetes manifest helper; its main risk is that
@@ -14,8 +14,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Kubernetes

@@ -3,7 +3,7 @@ slug: "logo"
 name: "logo"
 version: "1.0.0"
 displayName: "Logo"
-summary: "Generate logos with AI image tools using effective prompt structures, validation"
+summary: "用AI图像工具生成logo,含提示结构/校验/导出"
 license: "Proprietary"
 description: |-
   Generate logos with AI image tools using effective prompt structures,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Logo
 

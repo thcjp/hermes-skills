@@ -3,7 +3,7 @@ slug: "monitor"
 name: "monitor"
 version: "1.0.2"
 displayName: "Monitor"
-summary: "Create monitors for anything. User defines what to check, skill handles scheduling"
+summary: "为任意事物建监控,用户定义检查项,技能管调度告警"
 license: "Proprietary"
 description: |-
   Create monitors for anything。User defines what to check, skill handles
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Monitor
 

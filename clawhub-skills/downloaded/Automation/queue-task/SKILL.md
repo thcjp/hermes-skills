@@ -3,7 +3,7 @@ slug: queue-task
 name: queue-task
 version: "0.1.0"
 displayName: Queue Task
-summary: Durable queue-task helper for resumable, idempotent batch jobs in task-father
+summary: "task-father目录的可恢复幂等批处理队列任务助手(社区下载版)"
   task folders.
 license: MIT
 description: |-

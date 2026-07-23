@@ -18,11 +18,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 物料清单漏洞情报专业版
 ## 概述
 专业版为企业安全团队提供完整的软件物料清单(SBOM)管理与依赖漏洞治理平台。在免费版基础查询能力之上,新增多生态SBOM生成(npm/pip/go/cargo/maven/nuget)、CycloneDX与SPDX标准格式输出、OSV+GHSA+NVD三漏洞库联查、批量多项目扫描、持续漏洞监控与Webhook告警、SARIF合规报告。专业版完全兼容免费版查询接口,已有检查脚本可无缝升级。

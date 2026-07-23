@@ -3,7 +3,7 @@ slug: ollama-integration
 name: ollama-integration
 version: "1.0.0"
 displayName: Ollama Integration
-summary: Integrate and run local Ollama AI models with custom prompts for AI assistance
+summary: "集成运行本地Ollama AI模型,自定义提示与自动模式(社区下载版)"
   and automatic mode...
 license: MIT
 description: |-

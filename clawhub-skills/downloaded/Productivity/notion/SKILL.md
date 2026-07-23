@@ -3,7 +3,7 @@ slug: notion
 name: notion
 version: "1.0.0"
 displayName: Notion
-summary: Notion API for creating and managing pages, databases, and blocks.
+summary: "通过Notion API创建管理页面、数据库与块,程序化操作Notion工作空间"
 license: MIT
 description: |-
   Notion API for creating and managing pages, databases, and blocks。核心能力:

@@ -3,7 +3,7 @@ slug: task-planner
 name: task-planner
 version: "3.0.5"
 displayName: Task Planner
-summary: Manage tasks, set priorities, and track deadlines locally. Supports bilingual
+summary: "本地任务管理:设置优先级、追踪截止日期,支持中英双语,解决待办事项管理需求"
   (EN/CN) documentati...
 license: MIT-0
 description: |-

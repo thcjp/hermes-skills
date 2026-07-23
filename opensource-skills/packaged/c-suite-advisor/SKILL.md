@@ -15,12 +15,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强
-pricing_model: per_use
+# 定价元数据
+suggested_price: "99.9 CNY/monthly"
+pricing_tier: "L4-企业级"
+pricing_model: "monthly"
 ---
-
 # C套件顾问
 
 提供全 C 级别高管视角的战略决策支持。从 CEO 的战略愿景到 CTO 的技术路线，从 CFO 的财务规划到 CMO 的市场策略，一站式高管级 AI 顾问。

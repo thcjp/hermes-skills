@@ -3,7 +3,7 @@ slug: professional-communication
 name: professional-communication
 version: "0.1.0"
 displayName: Professional Communi
-summary: This is a professional writing helper made of markdown templates, with no
+summary: "专业写作助手,纯markdown模板无代码执行"
   code execution or hidde...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: excel-xlsx
 name: excel-xlsx
 version: "1.0.2"
 displayName: Excel / XLSX
-summary: Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable
+summary: "创建检查编辑Excel工作簿与XLSX,公式/日期可靠(社区下载版)"
   formulas, dates,...
 license: MIT-0
 description: |-

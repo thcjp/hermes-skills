@@ -3,7 +3,7 @@ slug: "agent-browser-stagehand"
 name: "agent-browser-stagehand"
 version: "1.0.0"
 displayName: "Agent Browser Stageh"
-summary: "Automate web browser interactions using natural language via CLI commands."
+summary: "自然语言驱动浏览器自动化,CLI直达交互,免去手写选择器的繁琐"
 license: "Proprietary"
 description: |-
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Agent Browser Stageh
 

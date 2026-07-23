@@ -3,7 +3,7 @@ slug: photo-captions
 name: photo-captions
 version: "1.2.5"
 displayName: Photo Captions
-summary: Generate platform-tuned social media captions for photography. Use when a
+summary: "为摄影生成平台调优的社媒文案"
   user shares a photo and...
 license: MIT-0
 description: |-

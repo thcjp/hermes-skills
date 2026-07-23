@@ -3,7 +3,7 @@ slug: cashu-emoji
 name: cashu-emoji
 version: "0.1.0"
 displayName: Cashu Emoji
-summary: Encode and decode Cashu tokens that are hidden inside emojis using Unicode
+summary: "使用Unicode变体选择器在Emoji中编解码Cashu代币,隐蔽传输加密资产凭证"
   variation selectors.
 license: MIT
 description: |-

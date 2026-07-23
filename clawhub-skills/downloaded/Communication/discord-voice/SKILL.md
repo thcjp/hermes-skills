@@ -3,7 +3,7 @@ slug: discord-voice
 name: discord-voice
 version: "0.1.6"
 displayName: Discord Voice
-summary: Real-time voice conversations in Discord voice channels with ai-assistant AI
+summary: "Discord语音频道实时语音对话,接Claude AI"
 license: MIT
 description: |-
   Real-time voice conversations in Discord voice channels with ai-assistant

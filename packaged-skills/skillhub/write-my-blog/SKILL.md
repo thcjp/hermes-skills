@@ -3,7 +3,7 @@ slug: "write-my-blog"
 name: "write-my-blog"
 version: "0.1.0"
 displayName: "Write My Blog"
-summary: "Enables the agent to create, manage, and publish a full-featured blog autonomously."
+summary: "让Agent自主创建管理并发布全功能博客"
 license: "Proprietary"
 description: |-
   Enables the agent to create, manage, and publish a full-featured blog
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # Write My Blog
 

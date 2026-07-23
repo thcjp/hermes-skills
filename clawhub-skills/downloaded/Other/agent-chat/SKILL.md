@@ -3,7 +3,7 @@ slug: agent-chat
 name: agent-chat
 version: "0.1.0"
 displayName: Agent Chat
-summary: Temporary real-time chat rooms for AI agents. Password-protected, with SSE
+summary: "AI Agent临时实时聊天室,密码保护,SSE流式传输,支持多Agent协作通信"
   streaming, web UI for ...
 license: MIT
 description: |-

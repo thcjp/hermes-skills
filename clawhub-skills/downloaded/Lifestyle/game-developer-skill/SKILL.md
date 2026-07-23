@@ -3,7 +3,7 @@ slug: game-developer-skill
 name: game-developer-skill
 version: "1.0.0"
 displayName: Game Developer Skill
-summary: Use when building game systems, implementing Unity/Unreal features, or optimizing
+summary: "Unity/Unreal游戏系统构建与性能优化,解决开发者在游戏引擎中的功能实现难题"
   game performanc...
 license: MIT
 description: |-

@@ -3,7 +3,7 @@ slug: "json-formatter"
 name: "json-formatter"
 version: "1.0.0"
 displayName: "JSON Formatter"
-summary: "Format, validate, compress JSON data, and extract JSON paths for improved"
+summary: "格式化/校验/压缩JSON并提取路径,提升可读性"
 license: "Proprietary"
 description: |-
   Format, validate, compress JSON data, and extract JSON paths for improved
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # JSON Formatter
 

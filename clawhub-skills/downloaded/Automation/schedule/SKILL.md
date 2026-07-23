@@ -3,7 +3,7 @@ slug: schedule
 name: schedule
 version: "1.0.2"
 displayName: Schedule
-summary: Program recurring or one-time tasks. User defines what to do, skill handles
+summary: "编程定时或一次性任务,用户定做什么技能管何时(社区下载版)"
   when.
 license: MIT
 description: |-

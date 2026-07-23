@@ -3,7 +3,7 @@ slug: "dlazy-generate"
 name: "dlazy-generate"
 version: "1.3.2"
 displayName: "Dlazy Generate"
-summary: "A comprehensive generation skill. Can generate images, videos, and audio"
+summary: "综合生成技能,自动选模型生成图/视频/音频,多模态出片"
 license: "Proprietary"
 description: |-
   A comprehensive generation skill。Can generate images, videos, and audio\
@@ -14,8 +14,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 ---
 # Dlazy Generate

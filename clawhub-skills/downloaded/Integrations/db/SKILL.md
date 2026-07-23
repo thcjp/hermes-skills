@@ -3,7 +3,7 @@ slug: db
 name: db
 version: "1.0.0"
 displayName: Database
-summary: Design and operate databases avoiding common scaling, reliability, and data
+summary: "设计运营数据库,规避扩展/可靠性/数据完整性陷阱"
   integrity traps.
 license: MIT
 description: |-

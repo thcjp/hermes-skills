@@ -3,7 +3,7 @@ slug: file
 name: file
 version: "1.0.0"
 displayName: File
-summary: A comprehensive AI agent skill for managing the files, folders, and documents
+summary: "AI Agent文件管理技能,处理累积的文件、文件夹与文档,解决数字资产混乱问题"
   that accumulate acr...
 license: MIT
 description: |-

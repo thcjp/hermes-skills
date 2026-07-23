@@ -3,7 +3,7 @@ slug: feishu-doc-write
 name: feishu-doc-write
 version: "1.0.0"
 displayName: feishu-doc-write
-summary: Feishu (Lark) Document API writing spec. Converts Markdown content to Feishu
+summary: "飞书文档API写入规范,把Markdown转飞书Block结构(社区下载版)"
   Block structures and...
 license: MIT
 description: |-

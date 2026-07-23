@@ -3,7 +3,7 @@ slug: powerpoint-pptx-cn
 name: powerpoint-pptx-cn
 version: "1.0.0"
 displayName: Powerpoint Pptx Cn
-summary: Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks
+summary: "创建、检查、编辑PowerPoint演示文稿与PPTX,可靠布局,中文本地化适配"
   with reliable layouts...
 license: MIT-0
 description: |-

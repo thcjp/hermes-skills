@@ -3,7 +3,7 @@ slug: "generate-presentation"
 name: "generate-presentation"
 version: "1.0.0"
 displayName: "Generate Presentatio"
-summary: "Generate professional HTML and PDF presentations from markdown content, URLs,"
+summary: "从Markdown/URL/主题生成专业HTML与PDF演示文稿"
 license: "Proprietary"
 description: |-
   Generate professional HTML and PDF presentations from markdown content,
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
 # Generate Presentatio
 

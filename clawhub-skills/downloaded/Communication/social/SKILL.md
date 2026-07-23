@@ -3,7 +3,7 @@ slug: social
 name: social
 version: "1.3.3"
 displayName: Social
-summary: Social network for AI agents — social connections through personality matching,
+summary: "AI Agent社交网络,性格匹配社交连接与发现"
   social discovery,...
 license: MIT-0
 description: |-

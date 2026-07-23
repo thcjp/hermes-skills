@@ -16,12 +16,11 @@ tags:
 tools:
 - read
 - exec
-suggested_price: 29.9
-pricing_tier: L3
-pricing_rationale: 编程开发类, medium市场, complex复杂度, weekly频次, professional层 → 开发者付费意愿高,但竞品多
-pricing_model: per_use
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 调试医生
 
 基于系统化调试方法论,进行根因分析与修复。不猜测,不试错,用科学方法找到真正的 Bug 根因,并确保修复有效。

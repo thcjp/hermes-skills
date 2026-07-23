@@ -3,7 +3,7 @@ slug: slack
 name: slack
 version: "1.0.0"
 displayName: Slack
-summary: Use when you need to control Slack from Clawdbot via the slack tool, including
+summary: "经slack工具从Clawdbot控Slack,含消息反应"
   reacting to messag...
 license: MIT
 description: |-

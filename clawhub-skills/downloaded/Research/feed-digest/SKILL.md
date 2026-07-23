@@ -3,7 +3,7 @@ slug: feed-digest
 name: feed-digest
 version: "1.0.0"
 displayName: Feed Digest
-summary: This skill is a straightforward feed digest helper with disclosed feed fetching
+summary: "Feed摘要助手,获取订阅源并管理阅读状态,解决信息过载下的Feed筛选问题"
   and read-status c...
 license: MIT
 description: |-

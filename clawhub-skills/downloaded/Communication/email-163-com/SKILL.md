@@ -3,7 +3,7 @@ slug: email-163-com
 name: email-163-com
 version: "1.0.5"
 displayName: Email 163 Com
-summary: Comprehensive Python tool for managing 163.com emails with sending, reading,
+summary: "全面的163.com邮箱Python工具,发/读/搜/文件夹"
   searching, folder, a...
 license: MIT-0
 description: |-

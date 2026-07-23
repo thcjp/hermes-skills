@@ -15,11 +15,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # 工具编排器（Tool Orchestrator）
 
 端到端加密的记忆存储系统，数据分布于去中心化网络（非单一公司服务器）。通过原生 `memory_search` / `memory_get` 工具进行检索，事实在后台自动捕获，无需为每个事实调用工具。12 词恢复短语绝不进入聊天或 LLM 上下文，凭据文件绝不读取/列出/展示。

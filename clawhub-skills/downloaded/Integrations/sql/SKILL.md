@@ -3,7 +3,7 @@ slug: sql
 name: sql
 version: "1.0.1"
 displayName: SQL
-summary: Master relational databases with SQL. Schema design, queries, performance,
+summary: "SQL精通关系型数据库,schema/查询/性能/迁移"
   migrations for Postgre...
 license: MIT
 description: |-

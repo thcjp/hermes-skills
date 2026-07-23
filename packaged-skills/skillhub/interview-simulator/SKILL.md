@@ -3,7 +3,7 @@ slug: "interview-simulator"
 name: "interview-simulator"
 version: "1.0.0"
 displayName: "Interview Simulator"
-summary: "Simulates mock interviews for any role and experience level."
+summary: "模拟任意角色与经验级别的面试,求职演练"
 license: "Proprietary"
 description: |-
   Simulates mock interviews for any role and experience level。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 ---
 # Interview Simulator

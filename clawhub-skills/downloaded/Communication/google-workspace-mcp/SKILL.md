@@ -3,7 +3,7 @@ slug: google-workspace-mcp
 name: google-workspace-mcp
 version: "1.0.0"
 displayName: Google Workspace Mcp
-summary: Gmail, Calendar, Drive, Docs, Sheets — NO Google Cloud Console required.
+summary: "Gmail/日历/Drive/Docs/Sheets,免Google Cloud Console,OAuth登录即可"
   Just OAuth sign-in. Zero...
 license: MIT
 description: |-

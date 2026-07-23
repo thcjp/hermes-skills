@@ -3,7 +3,7 @@ slug: cloud
 name: cloud
 version: "1.0.0"
 displayName: Cloud
-summary: Choose, organize, sync, share, and back up personal files across iCloud,
+summary: "跨iCloud/Google Drive/Dropbox选理同步分享备份个人文件"
   Google Drive, Dropbox, a...
 license: MIT
 description: |-

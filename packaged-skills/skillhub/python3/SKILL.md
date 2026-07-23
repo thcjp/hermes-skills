@@ -3,7 +3,7 @@ slug: "python3"
 name: "python3"
 version: "1.0.0"
 displayName: "python"
-summary: "Use Python for practical project setup, dependency install, script execution,"
+summary: "用Python做项目搭建/依赖安装/脚本执行/环境排障"
 license: "Proprietary"
 description: |-
   Use Python for practical project setup, dependency install, script execution,
@@ -38,9 +38,11 @@ pricing_model: "per_use"
 
 | 场景 | 输入 | 输出 |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| 项目搭建 | 项目名称和依赖列表 | Python项目结构和requirements.txt |
+| 脚本执行 | 脚本路径和命令行参数 | 执行输出和错误日志 |
+| 依赖安装 | 包名和版本约束 | 安装结果和依赖树 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：非Python项目的环境搭建和脚本执行
 
 ## 使用流程
 
@@ -53,8 +55,8 @@ pricing_model: "per_use"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| content | string | 否 | 相关说明, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
+| script_path | string | 是 | Python脚本路径或项目目录 |
+| python_version | string | 否 | Python版本, 如: 3.11/3.12, 默认: 系统默认 |
 
 ## 输出格式
 
@@ -97,28 +99,13 @@ pricing_model: "per_use"
 }
 ```
 
-## 异常处理
-
-
-* `ModuleNotFoundError`: verify command is run via `.venv/bin/python`, then reinstall deps.
-* `externally-managed-environment`: stop global install attempts; use venv.
-* Build failures on native deps: upgrade `pip setuptools wheel`, then retry.
-* Multiple Python versions: always print and confirm `sys.executable` before fixes.
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ;确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 对照使用流程章节检查输入格式;参考示例章节修正输入 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述,补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 对照依赖说明章节确认环境配置;检查命令权限设置 |
-
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明
+### 工具依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -129,7 +116,6 @@ pricing_model: "per_use"
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
-
 
 **API Key配置方式**:
 ```bash
@@ -149,7 +135,6 @@ A:
 A: 
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

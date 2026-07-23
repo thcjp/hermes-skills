@@ -3,7 +3,7 @@ slug: python3
 name: python3
 version: "1.0.0"
 displayName: python
-summary: Use Python for practical project setup, dependency install, script execution,
+summary: "Python项目搭建、依赖安装、脚本执行、环境排查,解决开发环境配置痛点"
   and environment tro...
 license: MIT-0
 description: |-

@@ -3,7 +3,7 @@ slug: cloud-architect
 name: cloud-architect
 version: "0.1.0"
 displayName: Cloud Architect
-summary: Use when designing cloud architectures, planning migrations, or optimizing
+summary: "设计云架构/规划迁移/优化多云部署"
   multi-cloud deployment...
 license: MIT
 description: |-

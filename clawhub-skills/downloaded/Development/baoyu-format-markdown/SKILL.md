@@ -3,7 +3,7 @@ slug: baoyu-format-markdown
 name: baoyu-format-markdown
 version: 1.117.2
 displayName: Baoyu Format Markdow
-summary: Formats plain text or markdown files with frontmatter, titles, summaries,
+summary: "格式化纯文本与Markdown,补frontmatter/标题/摘要/列表"
   headings, bold, lists, ...
 license: MIT-0
 description: 'Formats plain text or markdown files with frontmatter, titles, summaries,
@@ -13,11 +13,11 @@ tags: '[''Development'']'
 tools:
 - read
 - exec
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # Baoyu Format Markdown
 
 Transforms plain text or markdown into well-structured, reader-friendly markdown. The goal is to help readers quickly grasp key points, highlights, and structure — without changing any original content.

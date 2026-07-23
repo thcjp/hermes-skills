@@ -3,7 +3,7 @@ slug: "image"
 name: "image"
 version: "1.0.4"
 displayName: "Image"
-summary: "Create, inspect, process, and optimize image files and visual assets with"
+summary: "创建/检查/处理/优化图像与视觉资产,格式选择可靠"
 license: "Proprietary"
 description: |-
   Create, inspect, process, and optimize image files and visual assets
@@ -15,9 +15,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
 ---
 # Image
 

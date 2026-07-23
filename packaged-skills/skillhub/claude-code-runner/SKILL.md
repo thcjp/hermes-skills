@@ -3,7 +3,7 @@ slug: "claude-code-runner"
 name: "claude-code-runner"
 version: "0.1.0"
 displayName: "ai-assistant Code Ru"
-summary: "Execute programming tasks via ai-assistant Code using PTY-based invocation. Handles"
+summary: "经PTY调用Claude Code执行编程任务,搞定非TTY环境"
 license: "Proprietary"
 description: |-
   Execute programming tasks via ai-assistant Code using PTY-based invocation。Handles non-TTY environment。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
@@ -14,9 +14,9 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
 # ai-assistant Code Ru
 

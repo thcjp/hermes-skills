@@ -3,7 +3,7 @@ slug: internet-search
 name: internet-search
 version: "0.3.4"
 displayName: Internet Search
-summary: How to use the internet_search tool effectively — category routing, query
+summary: "高效使用internet_search工具:类别路由、查询构建、多轮搜索策略,提升搜索效率"
   formulation, and multi-...
 license: MIT
 description: |-

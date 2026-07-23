@@ -3,7 +3,7 @@ slug: api-development
 name: api-development
 version: "1.0.0"
 displayName: api-development
-summary: Meta-skill that orchestrates the full API development lifecycle — from design
+summary: "编排API全生命周期,从设计到文档/测试/部署一站完成"
   through documentati...
 license: MIT
 description: |-

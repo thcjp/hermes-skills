@@ -3,7 +3,7 @@ slug: timer
 name: timer
 version: "1.0.0"
 displayName: timer
-summary: Set timers and alarms. When a background timer completes, you receive a System
+summary: "设定时器与闹钟,后台完成时收系统通知"
   notification - res...
 license: MIT
 description: |-

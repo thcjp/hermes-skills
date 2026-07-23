@@ -3,7 +3,7 @@ slug: graph-advocate
 name: graph-advocate
 version: "2.9.1"
 displayName: Graph Advocate
-summary: Route any blockchain data question to the right Graph Protocol service. Returns
+summary: "把区块链数据问题路由到对的Graph Protocol服务,返实时数据(社区下载版)"
   live data from 15...
 license: MIT-0
 description: |-

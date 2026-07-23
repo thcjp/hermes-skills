@@ -3,7 +3,7 @@ slug: rss-reader
 name: rss-reader
 version: "1.0.0"
 displayName: RSS Reader
-summary: Monitor RSS and Atom feeds for content research. Track blogs, news sites,
+summary: "监控RSS与Atom订阅源进行内容研究,追踪博客、新闻、Newsletter,自动化信息采集"
   newsletters, and any fe...
 license: MIT
 description: |-

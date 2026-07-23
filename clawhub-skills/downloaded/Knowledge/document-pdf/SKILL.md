@@ -3,7 +3,7 @@ slug: document-pdf
 name: document-pdf
 version: "1.0.0"
 displayName: Pdf
-summary: Comprehensive PDF manipulation toolkit for extracting text and tables, creating
+summary: "PDF全操作工具箱,提取文本表格/建PDF/合并/填表,文档处理专版(社区下载版)"
   new PDFs, merging...
 license: MIT-0
 description: |-

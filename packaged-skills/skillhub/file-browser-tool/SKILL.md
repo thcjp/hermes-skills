@@ -3,7 +3,7 @@ slug: "file-browser-tool"
 name: "file-browser-tool"
 version: "1.0.0"
 displayName: "file-browser"
-summary: "Read-only file browsing and reading in the SkillHub workspace (/home/alfred/.SkillHub/workspace)...."
+summary: "SkillHub工作区只读文件浏览与读取,安全查看"
 license: "Proprietary"
 description: |-
   Read-only file browsing and reading in the SkillHub workspace (/home/alfred/。SkillHub/workspace)。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。

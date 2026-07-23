@@ -1,9 +1,10 @@
 ---
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
+summary: "数据分析师专用AI能力,覆盖清洗/建模/可视化/洞察全流程"
 ---
-
 # Data Analyst
 
 ## Overview

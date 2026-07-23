@@ -1,9 +1,10 @@
 ---
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "9.9 CNY/per_use"
+pricing_tier: "L1-入门级"
+pricing_model: "per_use"
+summary: "处理PowerPoint/pptx,布局/模板/图表/编辑"
 ---
-
 # Powerpoint Pptx 1.0.1
 
 ## When to Use

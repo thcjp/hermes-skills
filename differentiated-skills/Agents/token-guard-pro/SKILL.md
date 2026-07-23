@@ -16,11 +16,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
+# 定价元数据
+suggested_price: "29.9 CNY/per_use"
+pricing_tier: "L3-专业级"
+pricing_model: "per_use"
 ---
-
 # Token 守护者（Token Guard Pro）
 
 面向 AI Agent 的 **token 成本优化系统**，用三层缓存 + 自适应压缩 + 模型路由 + 预算守护，在不牺牲响应质量的前提下降低 50-80% 的 token 成本。代码块、错误消息、关键决策永不压缩，质量下降 > 15% 时自动回滚。

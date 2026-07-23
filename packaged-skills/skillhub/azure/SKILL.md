@@ -3,7 +3,7 @@ slug: "azure"
 name: "azure"
 version: "1.0.0"
 displayName: "Azure"
-summary: "Deploy, monitor, and manage Azure services with battle-tested patterns."
+summary: "用经实战检验的模式部署监控管理Azure服务,稳定上云"
 license: "Proprietary"
 description: |-
   Deploy, monitor, and manage Azure services with battle-tested patterns。核心能力:
@@ -28,8 +28,8 @@ tools:
   - exec
 homepage: "https://skillhub.cn"
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 ---
 # Azure

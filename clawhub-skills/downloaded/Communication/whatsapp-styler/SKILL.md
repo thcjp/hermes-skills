@@ -3,7 +3,7 @@ slug: whatsapp-styler
 name: whatsapp-styler
 version: "1.0.0"
 displayName: WhatsApp Styler
-summary: Skill to ensure all messages sent to WhatsApp follow the platform's specific
+summary: "确保发往WhatsApp的消息遵循平台特定格式语法"
   formatting syntax. I...
 license: MIT
 description: |-

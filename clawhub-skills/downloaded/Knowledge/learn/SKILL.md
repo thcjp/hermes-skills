@@ -3,7 +3,7 @@ slug: learn
 name: learn
 version: "1.0.2"
 displayName: Learn
-summary: Structure and track learning with spaced repetition and active recall across
+summary: "用间隔重复与主动回忆结构化追踪学习,跨领域(社区下载版)"
   any domain.
 license: MIT
 description: |-

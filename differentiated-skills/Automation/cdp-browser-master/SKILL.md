@@ -14,11 +14,11 @@ tools:
 - - read
 - exec
 homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
+# 定价元数据
+suggested_price: "19.9 CNY/per_use"
+pricing_tier: "L2-标准级"
+pricing_model: "per_use"
 ---
-
 # CDP浏览器大师
 
 通过用户已登录的浏览器(Edge/Chrome)执行自动化任务。核心技术:CDP(Chrome DevTools Protocol),通过WebSocket与浏览器通信。核心信条:**优先用web_fetch,CDP只用于JS渲染或需登录态的场景;先探测再定位,多备选降级。**

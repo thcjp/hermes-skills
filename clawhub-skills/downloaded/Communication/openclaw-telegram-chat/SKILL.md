@@ -3,7 +3,7 @@ slug: openclaw-telegram-chat
 name: openclaw-telegram-chat
 version: "0.1.0"
 displayName: Openclaw Telegram Ch
-summary: Enable Telegram cross-instance chat, user mention, and personal bot setup
+summary: "启用Telegram跨实例聊天/用户提及/个人bot设置(社区下载版)"
   for seamless communicat...
 license: MIT-0
 description: |-
