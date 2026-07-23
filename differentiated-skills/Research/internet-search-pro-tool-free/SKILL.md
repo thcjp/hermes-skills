@@ -1,37 +1,52 @@
 ---
-slug: "internet-search-pro-tool-free"
-name: "internet-search-pro-tool-free"
-version: "1.0.0"
-displayName: "联网搜索助手"
-summary: "智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询。核心能力:
+slug: internet-search-pro-tool-free
+name: internet-search-pro-tool-free
+version: 1.0.0
+displayName: 联网搜索助手
+summary: 智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询。
+license: Proprietary
+edition: free
+description: '智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询。核心能力:
+
   - 从用户问题中自动提取搜索关键词
+
   - 调用搜索引擎检索最新信息
+
   - 筛选结果，过滤广告和无关内容
+
   - 生成结构化摘要输出
 
+
   适用场景:
+
   - 个人查询最新新闻和实时信息
+
   - 快速了解某个话题的核心内容
+
   - 日常生活信息检索
 
+
   差异化:
+
   - 免费版聚焦单次智能搜索
+
   - 自动关键词提取，无需手动优化
-  - 结构化输出...
+
+  - 结构化输出...'
 tags:
-  - 搜索
-  - 信息检索
-  - 智能助手
-  - 新闻查询
+- 搜索
+- 信息检索
+- 智能助手
+- 新闻查询
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 联网搜索助手（免费版）
 
 ## 概述

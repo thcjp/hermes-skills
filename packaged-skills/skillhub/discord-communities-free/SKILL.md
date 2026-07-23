@@ -175,7 +175,7 @@ const gateway = await clawlink_call_tool({
 | `Missing Access` | 用户未加入目标公会 | 核对公会 ID,引导用户先加入公会再查询 |
 | `Invite code invalid or expired` | 邀请码已失效或被删除 | 提示用户重新生成邀请,并用 `discord_invite_resolve` 验证 |
 | `Unauthorized scope` | OAuth2 未授权对应 scope | 重新发起授权流程,带上 `identify`、`guilds` 等基础 scope |
-| `Rate limit exceeded` | 短时间内调用过频 | 加指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,避免循环调用 `discord_list_my_guilds` |
+| `Rate limit exceeded` | 短时间内调用过频 | 检查网络连接和配置后重试,避免循环调用 `discord_list_my_guilds` |
 
 ## 常见问题
 

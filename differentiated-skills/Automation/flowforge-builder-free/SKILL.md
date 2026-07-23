@@ -1,23 +1,27 @@
 ---
-slug: "flowforge-builder-free"
-name: "flowforge-builder-free"
-version: "1.0.0"
-displayName: "流程锻造器(免费版)"
-summary: "用JSON定义自动化工作流，支持定时触发、文件监控、手动触发三种触发方式。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  流程锻造器为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
+slug: flowforge-builder-free
+name: flowforge-builder-free
+version: 1.0.0
+displayName: 流程锻造器(免费版)
+summary: 用JSON定义自动化工作流，支持定时触发、文件监控、手动触发三种触发方式。
+license: Proprietary
+edition: free
+description: 流程锻造器为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 工作流构建
-  - 流程自动化
-  - JSON配置
-  - 触发器系统
+- 工作流构建
+- 流程自动化
+- JSON配置
+- 触发器系统
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 流程锻造器（免费版）
 
 > **用JSON定义自动化工作流。三种触发器，三类操作节点，将重复流程变成可版本控制的配置文件。**

@@ -1,22 +1,27 @@
 ---
-slug: "vault-sync-engine"
-name: "vault-sync-engine"
-version: "1.0.0"
-displayName: "知识库同步引擎"
-summary: "解决多端冲突、插件配置漂移、iCloud丢笔记痛点，让Obsidian在多设备间稳定同步"
-license: "Proprietary"
-description: |-
-  Obsidian 多端同步引擎，解决 iCloud/Dropbox 同步冲突、插件配置漂移、`。obsidian/` 目录混乱、
-  移动端笔记丢失四大痛点。Use when 用户需要知识库同步引擎相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: vault-sync-engine
+name: vault-sync-engine
+version: 1.0.0
+displayName: 知识库同步引擎
+summary: 解决多端冲突、插件配置漂移、iCloud丢笔记痛点，让Obsidian在多设备间稳定同步
+license: Proprietary
+description: 'Obsidian 多端同步引擎，解决 iCloud/Dropbox 同步冲突、插件配置漂移、`。obsidian/` 目录混乱、
+
+  移动端笔记丢失四大痛点。Use when 用户需要知识库同步引擎相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-  - 自动化
-  - 知识管理
-  - 同步引擎
+- 自动化
+- 知识管理
+- 同步引擎
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 知识库同步引擎
 
 让 Obsidian vault 在多设备间稳定同步。聚焦"不丢笔记、不乱配置、冲突可解"，把同步从黑盒变成可监控的引擎。

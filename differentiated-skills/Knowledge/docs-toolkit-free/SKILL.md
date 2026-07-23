@@ -1,31 +1,38 @@
 ---
-slug: "docs-toolkit-free"
-name: "docs-toolkit-free"
-version: "1.0.0"
-displayName: "文档导航工具包（免费版）"
-summary: "决策树导航的文档专家系统，支持站点地图、关键词搜索、全文索引与版本追踪。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  文档导航工具包 - （免费版）
+slug: docs-toolkit-free
+name: docs-toolkit-free
+version: 1.0.0
+displayName: 文档导航工具包（免费版）
+summary: 决策树导航的文档专家系统，支持站点地图、关键词搜索、全文索引与版本追踪。
+license: Proprietary
+edition: free
+description: '文档导航工具包 - （免费版）
+
 
   核心能力: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation
+
+  适用关键词: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation'
 tags:
-  - 文档管理
-  - 知识导航
-  - 全文搜索
-  - 版本追踪
+- 文档管理
+- 知识导航
+- 全文搜索
+- 版本追踪
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 文档导航工具包（免费版）
 
 ## 概述

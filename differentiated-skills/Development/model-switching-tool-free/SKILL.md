@@ -1,37 +1,51 @@
 ---
-slug: "model-switching-tool-free"
-name: "model-switching-tool-free"
-version: "1.0.0"
-displayName: "模型切换工具(免费版)"
-summary: "个人开发者的三层Claude模型切换指南,Haiku→Sonnet→Opus节省50-90%成本。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  模型切换工具(免费版)为个人开发者提供三层Claude模型切换指南,从最便宜的Haiku起步,仅在必要时升级,帮助节省50-90%的API成本。核心能力:
+slug: model-switching-tool-free
+name: model-switching-tool-free
+version: 1.0.0
+displayName: 模型切换工具(免费版)
+summary: 个人开发者的三层Claude模型切换指南,Haiku→Sonnet→Opus节省50-90%成本。
+license: Proprietary
+edition: free
+description: '模型切换工具(免费版)为个人开发者提供三层Claude模型切换指南,从最便宜的Haiku起步,仅在必要时升级,帮助节省50-90%的API成本。核心能力:
+
   - 三层切换:Haiku → Sonnet → Opus
+
   - 黄金规则:30秒人类思考阈值
+
   - 成本对比:Haiku 1x → Sonnet 12x → Opus 60x
+
   - 快速决策树与参考卡
+
   - 基础子Agent与定时任务切换
 
+
   适用场景:
+
   - 个人项目API成本优化
+
   - 子Agent任务分发
+
   - 定时任务模型选择
 
+
   差异化:
-  - 免费版聚焦三层切...
+
+  - 免费版聚焦三层切...'
 tags:
-  - Development
-  - AI
-  - 模型切换
-  - 成本优化
-  - Claude
+- Development
+- AI
+- 模型切换
+- 成本优化
+- Claude
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 模型切换工具(免费版)
 
 ## 概述

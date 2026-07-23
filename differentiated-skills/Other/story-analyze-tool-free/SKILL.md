@@ -1,40 +1,56 @@
 ---
-slug: "story-analyze-tool-free"
-name: "story-analyze-tool-free"
-version: "1.0.0"
-displayName: "网文拆文工具-免费版"
-summary: "长篇网文结构拆解分析工具,支持大纲提取、节奏分析与人物关系梳理"
-license: "Proprietary"
-edition: "free"
-description: |-
-  长篇网文拆文分析工具免费版,面向网文作者与文学爱好者。
+slug: story-analyze-tool-free
+name: story-analyze-tool-free
+version: 1.0.0
+displayName: 网文拆文工具-免费版
+summary: 长篇网文结构拆解分析工具,支持大纲提取、节奏分析与人物关系梳理
+license: Proprietary
+edition: free
+description: '长篇网文拆文分析工具免费版,面向网文作者与文学爱好者。
+
 
   核心能力:
+
   - 章节大纲自动提取
+
   - 故事节奏与结构分析
+
   - 人物关系图谱梳理
+
   - 伏笔与回收追踪
+
   - 爽点分布分析
+
   - 分析报告导出
 
+
   适用场景:
+
   - 学习优秀网文的写作技巧
+
   - 分析竞品小说结构
+
   - 提升自身创作水平
+
 
   差异化:免费版提供基础拆文能力。PRO版扩展批量分析、数据对比与创作辅助建议。
 
-  适用关键词: 网文, 拆文, 分析, 大纲, 节奏, 人物关系, 伏笔, 爽点, 小说分析
+
+  适用关键词: 网文, 拆文, 分析, 大纲, 节奏, 人物关系, 伏笔, 爽点, 小说分析'
 tags:
-  - 网文创作
-  - 文学分析
-  - 拆文
-  - 写作辅助
+- 网文创作
+- 文学分析
+- 拆文
+- 写作辅助
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 网文拆文工具 - 免费版
 
 ## 概述

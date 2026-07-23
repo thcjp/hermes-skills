@@ -1,19 +1,7 @@
 ---
-slug: cloud-infra-automation
-name: cloud-infra-automation
-version: "1.0.0"
-displayName: Cloud Infra Automati
-summary: Automate provisioning and management of AWS, GCP, and Azure infrastructure
-  using Terraform, Ansib...
-license: MIT
-description: |-
-  Automate provisioning and management of AWS, GCP, and Azure infrastructure
-  using Terraform, Ansib。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
-tags:
-- Automation
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Cloud Infra Automation

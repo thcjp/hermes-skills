@@ -1,19 +1,7 @@
 ---
-slug: cron-worker-guardrails
-name: cron-worker-guardrails
-version: "1.0.5"
-displayName: Cron Worker Guardrai
-summary: "Use when: hardening OpenClaw cron/background workers (POSIX shells: bash/sh)
-  against brittle quot"
-license: MIT
-description: |-
-  Use when: hardening OpenClaw cron/background workers (POSIX shells:
-  bash/sh) against brittle quot。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags:
-- Automation
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Cron Worker Guardrails

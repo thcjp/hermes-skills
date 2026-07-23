@@ -1,39 +1,56 @@
 ---
-slug: "ai-news-tool-pro"
-name: "ai-news-tool-pro"
-version: "1.0.0"
-displayName: "AI新闻工具-专业版"
-summary: "企业级新闻聚合与情报分析,支持多源聚合、自动摘要、定时推送与趋势分析"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级新闻聚合与情报分析工具,在免费版核心能力之上,提供多源新闻聚合、
+slug: ai-news-tool-pro
+name: ai-news-tool-pro
+version: 1.0.0
+displayName: AI新闻工具-专业版
+summary: 企业级新闻聚合与情报分析,支持多源聚合、自动摘要、定时推送与趋势分析
+license: Proprietary
+edition: pro
+description: '企业级新闻聚合与情报分析工具,在免费版核心能力之上,提供多源新闻聚合、
+
   AI 自动摘要、个性化推荐、历史检索、定时推送与趋势分析能力。核心能力:
+
   - 免费版全部能力(完全兼容)
+
   - 多源新闻聚合与去重
+
   - AI 自动摘要与关键词提取
+
   - 个性化推荐与订阅
+
   - 历史新闻全文检索
+
   - 定时推送与告警
+
   - 趋势分析与热点追踪
 
+
   适用场景:
+
   - 企业舆情监控与情报收集
+
   - 行业趋势分析与研究
+
   - 团队新闻订阅与推送
+
   - 竞品动态追踪
 
-  差异化:专业版面向团队与企业,提供多源聚合、AI 摘要、趋势分析等...
+
+  差异化:专业版面向团队与企业,提供多源聚合、AI 摘要、趋势分析等...'
 tags:
-  - 研究工具
-  - 新闻资讯
-  - 企业级
-  - 情报分析
+- 研究工具
+- 新闻资讯
+- 企业级
+- 情报分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AI新闻工具(专业版)
 
 ## 概述

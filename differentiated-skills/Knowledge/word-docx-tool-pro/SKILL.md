@@ -1,31 +1,38 @@
 ---
-slug: "word-docx-tool-pro"
-name: "word-docx-tool-pro"
-version: "1.0.0"
-displayName: "Word文档工具（专业版）"
-summary: "创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Word文档工具 - （专业版）
+slug: word-docx-tool-pro
+name: word-docx-tool-pro
+version: 1.0.0
+displayName: Word文档工具（专业版）
+summary: 创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作。
+license: Proprietary
+edition: pro
+description: 'Word文档工具 - （专业版）
+
 
   核心能力: Word文档, docx, 文档创建, 文档编辑, 模板应用, 目录生成, 批量创建
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: Word文档, docx, 文档创建, 文档编辑, 模板应用, 目录生成, 批量创建
+
+  适用关键词: Word文档, docx, 文档创建, 文档编辑, 模板应用, 目录生成, 批量创建'
 tags:
-  - Word文档
-  - docx
-  - 文档创建
-  - 模板
+- Word文档
+- docx
+- 文档创建
+- 模板
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Word文档工具（专业版）
 
 ## 概述

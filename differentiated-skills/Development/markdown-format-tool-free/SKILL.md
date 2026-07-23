@@ -1,39 +1,55 @@
 ---
-slug: "markdown-format-tool-free"
-name: "markdown-format-tool-free"
-version: "1.0.0"
-displayName: "Markdown格式化工具免费版"
-summary: "将纯文本或Markdown文件转换为结构清晰、易读的格式,支持标题、摘要、列表优化"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的 Markdown 格式化工具,将纯文本或已有 Markdown 转换为结构清晰、易读的格式。核心能力:
+slug: markdown-format-tool-free
+name: markdown-format-tool-free
+version: 1.0.0
+displayName: Markdown格式化工具免费版
+summary: 将纯文本或Markdown文件转换为结构清晰、易读的格式,支持标题、摘要、列表优化
+license: Proprietary
+edition: free
+description: '面向个人用户的 Markdown 格式化工具,将纯文本或已有 Markdown 转换为结构清晰、易读的格式。核心能力:
+
   - 自动识别纯文本与 Markdown 内容类型
+
   - 生成 frontmatter(标题、摘要、描述)
+
   - 优化标题层级、加粗关键结论、列表化平行内容
+
   - 中英文混排间距自动修正
 
+
   适用场景:
+
   - 个人博客文章格式整理
+
   - 技术笔记结构优化
+
   - 文档可读性提升
 
+
   差异化:
+
   - 免费版提供单文件格式化能力
+
   - 仅调整格式与修正明显错别字,不改动内容
+
   - 支持交互式标题选择
 
-  触发关...
+
+  触发关...'
 tags:
-  - 文档工具
-  - Markdown
-  - 格式化
-  - 排版
+- 文档工具
+- Markdown
+- 格式化
+- 排版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Markdown 格式化工具免费版
 
 ## 概述

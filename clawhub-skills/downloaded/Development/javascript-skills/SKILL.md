@@ -16,7 +16,11 @@ tools:
 - exec
 # JavaScript
 ## Activation
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 This skill activates when the user mentions or implies **JavaScript** in their request. Once activated, it:
 
 * Responds with best-practice guidance

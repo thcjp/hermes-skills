@@ -1,20 +1,7 @@
 ---
-slug: totalreclaw
-name: totalreclaw
-version: "3.3.13"
-displayName: Plugin
-summary: End-to-end encrypted, decentralized memory for OpenClaw. A native kind:memory
-  provider — recall i...
-license: MIT-0
-description: |-
-  End-to-end encrypted, decentralized memory for OpenClaw。A native kind:memory
-  provider — recall i。Use when 用户需要Plugin相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Agents
-- Operations
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Plugin

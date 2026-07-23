@@ -1,24 +1,28 @@
 ---
-slug: "cctv-news-tool-pro"
-name: "cctv-news-tool-pro"
-version: "1.0.0"
-displayName: "央视新闻抓取(专业版)"
-summary: "央视新闻联播抓取专业版，含批量查询、AI摘要、多渠道推送、历史趋势分析。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  央视新闻抓取助手专业版是面向企业级场景的完整新闻联播内容获取与分析工具。在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+slug: cctv-news-tool-pro
+name: cctv-news-tool-pro
+version: 1.0.0
+displayName: 央视新闻抓取(专业版)
+summary: 央视新闻联播抓取专业版，含批量查询、AI摘要、多渠道推送、历史趋势分析。
+license: Proprietary
+edition: pro
+description: 央视新闻抓取助手专业版是面向企业级场景的完整新闻联播内容获取与分析工具。在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-  - 央视新闻
-  - 企业级
-  - AI摘要
-  - 趋势分析
-  - 多渠道推送
+- 央视新闻
+- 企业级
+- AI摘要
+- 趋势分析
+- 多渠道推送
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 > **批量查询+AI摘要+多渠道推送+趋势分析。企业级新闻情报全功能覆盖。**
 
 将复杂的新闻情报获取与分析任务交给专业工具处理。专业版在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力，满足企业级场景对新闻情报的深度、广度与时效性要求。

@@ -1,20 +1,7 @@
 ---
-slug: automate-excel
-name: automate-excel
-version: "0.1.3"
-displayName: Automate Excel
-summary: Automates reading, writing, merging, transforming, and validating Excel (.xlsx/.xls)
-  files. Use w...
-license: MIT
-description: |-
-  Automates reading, writing, merging, transforming, and validating Excel
-  (。xlsx/。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Automation
-- Integrations
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Automate Excel

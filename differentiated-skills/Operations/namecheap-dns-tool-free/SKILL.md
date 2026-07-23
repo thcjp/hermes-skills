@@ -1,23 +1,28 @@
 ---
-slug: "namecheap-dns-tool-free"
-name: "namecheap-dns-tool-free"
-version: "1.0.0"
-displayName: "DNS管理入门工具"
-summary: "Namecheap域名DNS记录管理工具，支持A/CNAME/MX等常用记录操作。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者与小型网站的Namecheap DNS管理工具。支持A/CNAME/
-  MX/TXT等常用DNS记录的创建、查询、更新与删除。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: namecheap-dns-tool-free
+name: namecheap-dns-tool-free
+version: 1.0.0
+displayName: DNS管理入门工具
+summary: Namecheap域名DNS记录管理工具，支持A/CNAME/MX等常用记录操作。
+license: Proprietary
+edition: free
+description: '面向个人开发者与小型网站的Namecheap DNS管理工具。支持A/CNAME/
+
+  MX/TXT等常用DNS记录的创建、查询、更新与删除。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-  - Operations
-  - DNS
-  - 域名管理
+- Operations
+- DNS
+- 域名管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # DNS管理入门工具（免费版）
 
 ## 概述

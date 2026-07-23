@@ -1,23 +1,27 @@
 ---
-slug: "notes-sync-cli-free"
-name: "notes-sync-cli-free"
-version: "1.0.0"
-displayName: "笔记同步CLI(免费版)"
-summary: "通过命令行高效管理本地Markdown笔记库，支持搜索、创建、移动与Frontmatter基础操作。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  笔记同步CLI免费版为知识工作者提供轻量级的命令行笔记管理能力，聚焦本地Markdown笔记库（如Obsidian Vault）的日常高频操作。采用"文件即数据库"的极简理念，无需启动GUI应用即可完成搜索、创建、编辑、移动等核心动作。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: notes-sync-cli-free
+name: notes-sync-cli-free
+version: 1.0.0
+displayName: 笔记同步CLI(免费版)
+summary: 通过命令行高效管理本地Markdown笔记库，支持搜索、创建、移动与Frontmatter基础操作。
+license: Proprietary
+edition: free
+description: 笔记同步CLI免费版为知识工作者提供轻量级的命令行笔记管理能力，聚焦本地Markdown笔记库（如Obsidian Vault）的日常高频操作。采用"文件即数据库"的极简理念，无需启动GUI应用即可完成搜索、创建、编辑、移动等核心动作。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-  - 笔记管理
-  - 命令行工具
-  - 知识库
-  - Markdown
+- 笔记管理
+- 命令行工具
+- 知识库
+- Markdown
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 笔记同步CLI（免费版）
 
 > **命令行优先的Markdown笔记管理。无需启动GUI，60秒上手，搜索/创建/移动一气呵成。**

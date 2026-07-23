@@ -1,20 +1,9 @@
 ---
-slug: clawsec-feed
-name: clawsec-feed
-version: "0.0.11"
-displayName: clawsec-feed
-summary: Security advisory feed package for OpenClaw-related threats and vulnerabilities.
-  The upstream fee...
-license: MIT-0
-description: |-
-  Security advisory feed package for OpenClaw-related threats and vulnerabilities。The upstream fee。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Automation
-tools:
-  - - read
-- exec
-# clawsec-feed
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 Security advisory feed monitoring for AI agents. Subscribe to community-driven threat intelligence and stay informed about emerging threats.
 
 The default `feed.json` is the consolidated agent feed. It includes NVD CVEs, approved community advisories, and provisional GitHub Security Advisories that do not have CVE IDs yet.

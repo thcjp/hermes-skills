@@ -16,7 +16,11 @@ tools:
   - - read
 - exec
 # Notion
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Access the Notion API with managed OAuth authentication. Query databases, search pages, and read workspace content. All write operations (creating, updating, or deleting pages, blocks, and databases) require explicit user confirmation specifying the target resource and connection before execution.
 
 ## Quick Start

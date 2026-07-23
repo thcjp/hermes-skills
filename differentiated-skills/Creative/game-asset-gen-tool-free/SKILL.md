@@ -1,34 +1,47 @@
 ---
-slug: "game-asset-gen-tool-free"
-name: "game-asset-gen-tool-free"
-version: "1.0.0"
-displayName: "游戏资产生成-免费版"
-summary: "轻量级2D游戏资产生成工具，支持角色设计、精灵图与瓦片集，保持风格一致。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  游戏资产生成工具免费版，面向独立开发者的2D游戏资产制作方案。核心能力：
+slug: game-asset-gen-tool-free
+name: game-asset-gen-tool-free
+version: 1.0.0
+displayName: 游戏资产生成-免费版
+summary: 轻量级2D游戏资产生成工具，支持角色设计、精灵图与瓦片集，保持风格一致。
+license: Proprietary
+edition: free
+description: '游戏资产生成工具免费版，面向独立开发者的2D游戏资产制作方案。核心能力：
+
   - 2D角色设计与角色表生成
+
   - 精灵图与动画帧制作
+
   - 瓦片集与环境资产生成
+
   - 道具与UI元素图标设计
+
   - 像素风/手绘风/扁平风三种艺术风格
 
+
   适用场景：
+
   - 独立游戏开发原型
+
   - 个人游戏 Jam 项目
+
   - 2D游戏资产快速制作
 
-  差异化：免费版聚焦2D资产与基础角色设计，适合独立开发者
+
+  差异化：免费版聚焦2D资产与基础角色设计，适合独立开发者'
 tags:
-  - Creative
-  - GameDev
-  - 2D
+- Creative
+- GameDev
+- 2D
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 游戏资产生成工具（免费版）
 
 ## 概述

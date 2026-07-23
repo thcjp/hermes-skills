@@ -25,7 +25,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 163邮箱助手专业版
 **版本**: 1.0.0
 **适用对象**: 企业用户、团队管理者、运维与运营人员

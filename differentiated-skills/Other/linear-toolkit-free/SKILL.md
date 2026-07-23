@@ -1,38 +1,52 @@
 ---
-slug: "linear-toolkit-free"
-name: "linear-toolkit-free"
-version: "1.0.0"
-displayName: "Linear 工具箱"
-summary: "面向个人的 Linear 任务查询与基础管理工具，含站会摘要。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的 Linear 任务查询与基础管理工具。
+slug: linear-toolkit-free
+name: linear-toolkit-free
+version: 1.0.0
+displayName: Linear 工具箱
+summary: 面向个人的 Linear 任务查询与基础管理工具，含站会摘要。
+license: Proprietary
+edition: free
+description: '面向个人开发者的 Linear 任务查询与基础管理工具。
+
 
   核心能力:
+
   - 个人任务、待办、紧急事项查询
+
   - 任务创建、评论、状态与优先级管理
+
   - 每日站会摘要
+
   - Linear 与 Git 分支名联动
 
+
   适用场景:
+
   - 个人查看与更新 Linear 任务
+
   - 每日站会快速摘要
+
   - 从 Linear 任务生成 Git 分支名
+
 
   差异化: 免费版聚焦个人单团队任务管理，提供查询、更新与站会摘要，零成本接入。
 
-  适用关键词: linear, 任务管理, 站会, 待办, issue, standup, branch
+
+  适用关键词: linear, 任务管理, 站会, 待办, issue, standup, branch'
 tags:
-  - Linear
-  - 任务管理
-  - 个人效率
-  - 其他工具
+- Linear
+- 任务管理
+- 个人效率
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Linear 工具箱（免费版）
 
 ## 概述

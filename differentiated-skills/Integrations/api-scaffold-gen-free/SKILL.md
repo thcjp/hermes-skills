@@ -1,22 +1,26 @@
 ---
-slug: "api-scaffold-gen-free"
-name: "api-scaffold-gen-free"
-version: "1.0.0"
-displayName: "API脚手架生成器(免费版)"
-summary: "从资源名一键生成REST/GraphQL脚手架代码，含CRUD、认证、测试模板，60秒出码。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  API脚手架生成器免费版解决"新项目起步慢、样板代码写到吐"的痛点。从资源名出发，一键生成RESTful CRUD端点、GraphQL Schema、JWT认证、基础测试套件、Mock数据等生产可用脚手架代码。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: api-scaffold-gen-free
+name: api-scaffold-gen-free
+version: 1.0.0
+displayName: API脚手架生成器(免费版)
+summary: 从资源名一键生成REST/GraphQL脚手架代码，含CRUD、认证、测试模板，60秒出码。
+license: Proprietary
+edition: free
+description: API脚手架生成器免费版解决"新项目起步慢、样板代码写到吐"的痛点。从资源名出发，一键生成RESTful CRUD端点、GraphQL Schema、JWT认证、基础测试套件、Mock数据等生产可用脚手架代码。Use
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-  - 代码生成
-  - 脚手架
-  - API开发
+- 代码生成
+- 脚手架
+- API开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # API脚手架生成器（免费版）
 
 > **把"新项目起样板代码"从两小时压缩到一分钟。资源名→CRUD+认证+测试+Mock，全套脚手架。**

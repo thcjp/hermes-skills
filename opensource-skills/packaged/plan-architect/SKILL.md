@@ -1,20 +1,26 @@
 ---
 slug: plan-architect
 name: plan-architect
-version: "1.1.0"
-displayName: "计划架构师"
-summary: "把设计文档变成可执行计划,任务拆到2-5分钟粒度,初级工程师也能照做"
+version: 1.1.0
+displayName: 计划架构师
+summary: 把设计文档变成可执行计划,任务拆到2-5分钟粒度,初级工程师也能照做
 license: Proprietary
-description: |-
-  计划架构师把设计文档转化为可执行的详细实现计划,核心功能包括设计文档解析、任务拆分(2-5分钟粒度)、TDD驱动计划(红-绿-重构)、YAGNI与DRY原则应用、计划文档与执行检查清单输出。适用于项目实施、功能开发、系统重构、技术迁移、Bug修复计划、技术债务清理场景。触发关键词:项目计划、任务拆分、TDD开发、实现计划、工程效率、计划架构、设计转计划。
-tags: [项目计划, 任务拆分, TDD开发, 独立开发, 工程效率]
+description: 计划架构师把设计文档转化为可执行的详细实现计划,核心功能包括设计文档解析、任务拆分(2-5分钟粒度)、TDD驱动计划(红-绿-重构)、YAGNI与DRY原则应用、计划文档与执行检查清单输出。适用于项目实施、功能开发、系统重构、技术迁移、Bug修复计划、技术债务清理场景。触发关键词:项目计划、任务拆分、TDD开发、实现计划、工程效率、计划架构、设计转计划。
+tags:
+- 项目计划
+- 任务拆分
+- TDD开发
+- 独立开发
+- 工程效率
 tools:
-  - read
-  - exec
-suggested_price: "19.90"
-pricing_tier: "business"
-pricing_rationale: "项目管理类, medium市场, enterprise复杂度, monthly频次, business层 → 企业团队工具"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 项目管理类, medium市场, enterprise复杂度, monthly频次, business层 → 企业团队工具
+pricing_model: per_use
 ---
+
 # 计划架构师
 
 将设计文档转化为可执行的详细实现计划。每个任务都是 2-5 分钟可完成的粒度,包含精确的文件路径、完整的代码片段、明确的验证步骤。让一个"热情但缺乏判断力的初级工程师"也能按计划执行。

@@ -137,7 +137,7 @@ curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a
 | chain_id不支持 | 400 | 免费版仅支持chain_id=1和8453 | 使用Ethereum(1)或Base(8453)链，其他链需升级完整版 |
 | X-Client-Fingerprint缺失 | 200 | 回退到IP/User-Agent计费，可能导致配额不稳定 | 建议设置稳定指纹（如 `agent-default`）确保配额分配一致 |
 | 请求交易模拟端点 | 403 | 免费版不支持 `simulate-tx` | 升级至完整版以使用交易模拟功能 |
-| 服务端错误 | 500 | 上游服务异常 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令一次；若持续失败，展示错误和 `_meta.requestId` 供排查 |
+| 服务端错误 | 500 | 上游服务异常 | 检查网络连接和配置后重试；若持续失败，展示错误和 `_meta.requestId` 供排查 |
 
 ## 常见问题
 

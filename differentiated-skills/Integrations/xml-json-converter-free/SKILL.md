@@ -1,22 +1,26 @@
 ---
-slug: "xml-json-converter-free"
-name: "xml-json-converter-free"
-version: "1.0.0"
-displayName: "XML转JSON(免费版)"
-summary: "轻量级XML与JSON互转工具，覆盖属性处理、命名空间与单文件转换，60秒上手。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕"双向转换—属性处理—命名空间—单文件处理"四件事，提供可复制即用的Python/Node。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+slug: xml-json-converter-free
+name: xml-json-converter-free
+version: 1.0.0
+displayName: XML转JSON(免费版)
+summary: 轻量级XML与JSON互转工具，覆盖属性处理、命名空间与单文件转换，60秒上手。
+license: Proprietary
+edition: free
+description: XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕"双向转换—属性处理—命名空间—单文件处理"四件事，提供可复制即用的Python/Node。Use
+  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 数据转换
-  - 格式适配
-  - 集成工具
+- 数据转换
+- 格式适配
+- 集成工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # XML转JSON（免费版）
 
 > **把"XML与JSON互转"从手写解析器踩坑压缩到一条命令搞定。双向转换+属性处理+命名空间三件套。**

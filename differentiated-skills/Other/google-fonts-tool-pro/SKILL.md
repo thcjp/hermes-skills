@@ -1,35 +1,47 @@
 ---
-slug: "google-fonts-tool-pro"
-name: "google-fonts-tool-pro"
-version: "1.0.0"
-displayName: "谷歌字体工具专业版"
-summary: "面向团队的自托管、子集化、合规与多字体系统治理工具。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:
+slug: google-fonts-tool-pro
+name: google-fonts-tool-pro
+version: 1.0.0
+displayName: 谷歌字体工具专业版
+summary: 面向团队的自托管、子集化、合规与多字体系统治理工具。
+license: Proprietary
+edition: pro
+description: '面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:
+
   - GDPR 合规自托管与子集化
+
   - 字体系统（令牌、字阶、多语言）治理
+
   - 字体性能预算与 LCP 优化
+
   - 字体版权与许可合规审计
 
+
   适用场景:
+
   - 企业站点 GDPR 合规自托管字体
+
   - 多语言站点字体系统统一治理
+
   - 字体性能预算与 LCP 优化
 
-  差异化: 专业版在免费版加载优化上扩展自托管、子集化、字体系统治理与合规审计，兼容免费版搭配方案
+
+  差异化: 专业版在免费版加载优化上扩展自托管、子集化、字体系统治理与合规审计，兼容免费版搭配方案'
 tags:
-  - 字体
-  - 企业级
-  - 性能优化
-  - 合规
-  - 其他工具
+- 字体
+- 企业级
+- 性能优化
+- 合规
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 谷歌字体工具（专业版）
 
 ## 概述

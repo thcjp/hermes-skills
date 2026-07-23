@@ -129,9 +129,9 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
 
 | 错误码 | 错误信息 | 原因分析 | 处理方式 |
 |:-------|:---------|:---------|:---------|
-| `invalid_auth` | `{ok:false, error:"invalid_auth"}` | Token无效/过期/格式错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，引导用户检查 `SLACK_BOT_TOKEN` 是否以 `xoxb-` 开头 |
+| `invalid_auth` | `{ok:false, error:"invalid_auth"}` | Token无效/过期/格式错误 | 检查网络连接和配置后重试，引导用户检查 `SLACK_BOT_TOKEN` 是否以 `xoxb-` 开头 |
 | `channel_not_found` | `{ok:false, error:"channel_not_found"}` | 频道ID不存在或Bot不是成员 | 引导用户用 `/invite @botname` 将Bot加入频道 |
-| `rate_limited` | HTTP 429 + `Retry-After` 头 | 触发速率限制 | 等待 `Retry-After` 秒数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| `rate_limited` | HTTP 429 + `Retry-After` 头 | 触发速率限制 | 等待 `Retry-After` 秒数后检查网络连接和配置后重试 |
 | `missing_scope` | `{ok:false, error:"missing_scope"}` | Token缺少所需权限 | 引导用户添加 `chat:write` 或 `channels:read` Scope |
 | `no_text` | `{ok:false, error:"no_text"}` | 消息内容为空或仅含空格 | 检查 `text` 参数非空 |
 

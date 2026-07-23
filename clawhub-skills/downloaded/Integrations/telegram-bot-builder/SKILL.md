@@ -32,7 +32,11 @@ tags:
 tools:
   - - read
 - exec
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 ## 触发条件
 
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求。

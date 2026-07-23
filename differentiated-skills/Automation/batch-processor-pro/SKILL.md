@@ -1,21 +1,24 @@
 ---
-slug: "batch-processor-pro"
-name: "batch-processor-pro"
-version: "1.0.0"
-displayName: "批处理专家"
-summary: "解决OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点，附检查点与并行决策矩阵。"
-license: "Proprietary"
-description: |-
-  批处理专家解决大批量数据处理的OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点,提供流式分块、检查点恢复、幂等设计、进度报告、并行决策矩阵、五级错误分级六大核心能力。适用于批量文件/API/数据清洗/媒体转换等"对N个东西做同样操作"的场景。适用关键词:批处理、批量、检查点、断点续跑、幂等、并行、流式、OOM、进度
+slug: batch-processor-pro
+name: batch-processor-pro
+version: 1.0.0
+displayName: 批处理专家
+summary: 解决OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点，附检查点与并行决策矩阵。
+license: Proprietary
+description: 批处理专家解决大批量数据处理的OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点,提供流式分块、检查点恢复、幂等设计、进度报告、并行决策矩阵、五级错误分级六大核心能力。适用于批量文件/API/数据清洗/媒体转换等"对N个东西做同样操作"的场景。适用关键词:批处理、批量、检查点、断点续跑、幂等、并行、流式、OOM、进度
 tags:
-  - 自动化
-  - 批处理
-  - 效率工具
+- 自动化
+- 批处理
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 批处理专家
 
 处理多个数据项时应用本skill。核心信条:**永远先dry-run少量样本,必有检查点可恢复,每项必幂等。**

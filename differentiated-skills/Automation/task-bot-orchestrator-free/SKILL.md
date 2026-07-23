@@ -1,23 +1,27 @@
 ---
-slug: "task-bot-orchestrator-free"
-name: "task-bot-orchestrator-free"
-version: "1.0.0"
-displayName: "任务编排机器人(免费版)"
-summary: "数据处理与定时任务核心能力，覆盖CSV/Excel自动化与基础调度，60秒上手任务编排。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务调度、基础通知推送三大核心场景。通过简洁的API调用，让重复性效率任务一键完成。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
+slug: task-bot-orchestrator-free
+name: task-bot-orchestrator-free
+version: 1.0.0
+displayName: 任务编排机器人(免费版)
+summary: 数据处理与定时任务核心能力，覆盖CSV/Excel自动化与基础调度，60秒上手任务编排。
+license: Proprietary
+edition: free
+description: 任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务调度、基础通知推送三大核心场景。通过简洁的API调用，让重复性效率任务一键完成。Use
+  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 任务编排
-  - 数据自动化
-  - 定时调度
-  - 效率工具
+- 任务编排
+- 数据自动化
+- 定时调度
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 任务编排机器人（免费版）
 
 > **让AI Agent帮你编排重复性效率任务。数据处理、定时调度、通知推送，一键完成。**

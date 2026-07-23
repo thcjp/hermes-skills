@@ -29,7 +29,11 @@ tools:
   - - read
 - exec
 # Bilibili All In One
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 A comprehensive Bilibili toolkit that integrates hot trending monitoring, video downloading, video watching/playback, subtitle downloading, and video publishing capabilities into a single unified skill.
 
 > **⚠️ Optional Environment Variables:** `BILIBILI_SESSDATA`, `BILIBILI_BILI_JCT` (optional), `BILIBILI_BUVID3` (optional), `BILIBILI_PERSIST` (optional)

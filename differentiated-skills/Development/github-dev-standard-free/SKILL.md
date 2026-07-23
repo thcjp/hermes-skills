@@ -1,34 +1,46 @@
 ---
-slug: "github-dev-standard-free"
-name: "github-dev-standard-free"
-version: "1.0.0"
-displayName: "项目开发标准免费版"
-summary: "个人开发者项目开发标准流程，含 9 步开发流程与基础验收清单。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向独立开发者的项目开发标准化工具，通过结构化流程约束代码质量。核心能力:
+slug: github-dev-standard-free
+name: github-dev-standard-free
+version: 1.0.0
+displayName: 项目开发标准免费版
+summary: 个人开发者项目开发标准流程，含 9 步开发流程与基础验收清单。
+license: Proprietary
+edition: free
+description: '面向独立开发者的项目开发标准化工具，通过结构化流程约束代码质量。核心能力:
+
   - 9 步开发流程（读需求→写任务卡→编码→验证→发布）
+
   - 8 条编码纪律防止过度修改
+
   - 4 层基础验证（语法/导入/样例/测试）
+
   - 15 项验收清单确保交付质量
 
+
   适用场景:
+
   - 个人项目缺陷修复与功能开发
+
   - 代码改动量控制与质量自查
+
   - 提交前的多维度验证
 
-  差异化: 免费版聚焦个人开发者的标准化流程约束，提供轻量级验收清单与验证模板，开箱即用
+
+  差异化: 免费版聚焦个人开发者的标准化流程约束，提供轻量级验收清单与验证模板，开箱即用'
 tags:
-  - 开发工具
-  - 开发规范
-  - 代码质量
-  - 项目管理
+- 开发工具
+- 开发规范
+- 代码质量
+- 项目管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 项目开发标准（免费版）
 
 ## 概述

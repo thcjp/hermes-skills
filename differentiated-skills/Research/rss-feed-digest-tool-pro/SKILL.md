@@ -1,39 +1,54 @@
 ---
-slug: "rss-feed-digest-tool-pro"
-name: "rss-feed-digest-tool-pro"
-version: "1.0.0"
-displayName: "RSS聚合摘要专业版"
-summary: "企业级RSS/Atom聚合摘要系统,支持定时调度、HTML报告、邮件分发、多模板定制与团队协作"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  RSS聚合摘要专业版为企业团队提供高阶RSS/Atom订阅聚合与分发能力。核心能力:
+slug: rss-feed-digest-tool-pro
+name: rss-feed-digest-tool-pro
+version: 1.0.0
+displayName: RSS聚合摘要专业版
+summary: 企业级RSS/Atom聚合摘要系统,支持定时调度、HTML报告、邮件分发、多模板定制与团队协作
+license: Proprietary
+edition: pro
+description: 'RSS聚合摘要专业版为企业团队提供高阶RSS/Atom订阅聚合与分发能力。核心能力:
+
   - 大规模多源并行抓取(50+源)
+
   - 定时调度与自动化任务管理
+
   - 交互式HTML报告生成
+
   - 多渠道分发(邮件/IM/Webhook)
+
   - 自定义摘要模板与品牌定制
+
   - 高级过滤引擎(正则/情感/语言)
 
+
   适用场景:
+
   - 企业竞争情报自动化监控
+
   - 行业研究报告定时生成
+
   - 团队每日资讯邮件推送
+
   - 多语言内容聚合分发
 
-  差异化:专业版在免费版核心聚合流程基础上,扩展大规模并行抓取、定时调度、HTML报告、多渠道...
+
+  差异化:专业版在免费版核心聚合流程基础上,扩展大规模并行抓取、定时调度、HTML报告、多渠道...'
 tags:
-  - 研究工具
-  - RSS
-  - 企业级
-  - 信息聚合
-  - 竞争情报
-  - 自动化
+- 研究工具
+- RSS
+- 企业级
+- 信息聚合
+- 竞争情报
+- 自动化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # RSS聚合摘要专业版
 
 ## 概述

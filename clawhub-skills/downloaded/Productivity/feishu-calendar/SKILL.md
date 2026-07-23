@@ -1,19 +1,7 @@
 ---
-slug: feishu-calendar
-name: feishu-calendar
-version: "1.0.0"
-displayName: feishu-calendar
-summary: Manage Feishu (Lark) calendars by listing, searching, checking schedules,
-  syncing events, and mar...
-license: MIT
-description: |-
-  Manage Feishu (Lark) calendars by listing, searching, checking schedules,
-  syncing events, and mar。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
-tags:
-- Productivity
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # feishu-calendar

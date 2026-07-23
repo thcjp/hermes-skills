@@ -1,29 +1,35 @@
 ---
-slug: "task-toolkit-pro"
-name: "task-toolkit-pro"
-version: "1.0.0"
-displayName: "任务工具包专业版"
-summary: "企业级任务管理系统,支持多项目管理、团队协作、甘特图与自动化工作流"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 任务管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: task-toolkit-pro
+name: task-toolkit-pro
+version: 1.0.0
+displayName: 任务工具包专业版
+summary: 企业级任务管理系统,支持多项目管理、团队协作、甘特图与自动化工作流
+license: Proprietary
+edition: pro
+description: '核心能力: 任务管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: task, 任务, 待办, 日程, 优先级, 归档, 清单
+
+  适用关键词: task, 任务, 待办, 日程, 优先级, 归档, 清单'
 tags:
-  - 任务管理
-  - 待办
-  - 日程
-  - 时间管理
+- 任务管理
+- 待办
+- 日程
+- 时间管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 任务工具包专业版
 
 ## 概述

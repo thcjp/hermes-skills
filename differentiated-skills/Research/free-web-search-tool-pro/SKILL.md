@@ -1,30 +1,39 @@
 ---
-slug: "free-web-search-tool-pro"
-name: "free-web-search-tool-pro"
-version: "1.0.0"
-displayName: "网页搜索工具专业版"
-summary: "企业级联网搜索工具，支持批量查询、结果导出、代理配置、定时任务与团队协作，适合专业研究与企业场景。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级联网搜索工具，支持批量查询、结果导出、代理配置、定时任务与团队协作，适合专业研究与企业场景。核心能力:
+slug: free-web-search-tool-pro
+name: free-web-search-tool-pro
+version: 1.0.0
+displayName: 网页搜索工具专业版
+summary: 企业级联网搜索工具，支持批量查询、结果导出、代理配置、定时任务与团队协作，适合专业研究与企业场景。
+license: Proprietary
+edition: pro
+description: '企业级联网搜索工具，支持批量查询、结果导出、代理配置、定时任务与团队协作，适合专业研究与企业场景。核心能力:
+
   - 批量关键词查询，一次执行数十个搜索任务
+
   - 结果导出为 JSON/CSV/Markdown 多种格式
+
   - 自定义 HTTP 代理与 VPN 环境支持
+
   - 定时任务调度，自动执行搜索并归档结果
+
   - 搜索结果缓存与去重，避免重复请求
-  - 团队协作配置...
+
+  - 团队协作配置...'
 tags:
-  - 搜索
-  - 企业工具
-  - 批量查询
-  - 数据采集
-  - 研究工具
+- 搜索
+- 企业工具
+- 批量查询
+- 数据采集
+- 研究工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 网页搜索工具专业版
 
 ## 概述

@@ -1,36 +1,49 @@
 ---
-slug: "news-sentiment-tool-free"
-name: "news-sentiment-tool-free"
-version: "1.0.0"
-displayName: "舆情情绪分析免费版"
-summary: "轻量级股票舆情监控工具,扫描多渠道信息源并进行情绪打分,输出情绪温度计与事件清单。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  舆情情绪分析工具免费版,为个人投资者提供股票舆情监控与情绪打分能力,扫描公告、新闻、研报、社交媒体等渠道。核心能力:
+slug: news-sentiment-tool-free
+name: news-sentiment-tool-free
+version: 1.0.0
+displayName: 舆情情绪分析免费版
+summary: 轻量级股票舆情监控工具,扫描多渠道信息源并进行情绪打分,输出情绪温度计与事件清单。
+license: Proprietary
+edition: free
+description: '舆情情绪分析工具免费版,为个人投资者提供股票舆情监控与情绪打分能力,扫描公告、新闻、研报、社交媒体等渠道。核心能力:
+
   - 多渠道信息采集(公告、新闻、研报、社交媒体)
+
   - 去噪处理,过滤广告与水军内容
+
   - 情绪打分(-10 至 +10)
+
   - 重大事件提取与情绪贡献量化
+
   - 情绪温度计可视化输出
 
+
   适用场景:
+
   - 个人投资者快速了解个股舆情
+
   - 日常持仓情绪监控
+
   - 投资决策辅助参考
 
-  差异化:免费版聚焦单只股票的舆情扫描,提供标准化的情绪评分与事件清单,适合个人投资者轻量使用,配置简单即装即用
+
+  差异化:免费版聚焦单只股票的舆情扫描,提供标准化的情绪评分与事件清单,适合个人投资者轻量使用,配置简单即装即用'
 tags:
-  - 沟通协作
-  - 舆情监控
-  - 情绪分析
-  - 投资辅助
-  - 个人效率
+- 沟通协作
+- 舆情监控
+- 情绪分析
+- 投资辅助
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 舆情情绪分析工具 - 免费版
 
 ## 概述

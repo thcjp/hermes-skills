@@ -1,40 +1,57 @@
 ---
-slug: "report-toolkit-pro"
-name: "report-toolkit-pro"
-version: "1.0.0"
-displayName: "报告工具包-专业版"
-summary: "企业级报告平台,支持多租户、高级模板、数据可视化与多渠道自动交付"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级报告生成与管理工具专业版,面向团队与商业应用。核心能力:
+slug: report-toolkit-pro
+name: report-toolkit-pro
+version: 1.0.0
+displayName: 报告工具包-专业版
+summary: 企业级报告平台,支持多租户、高级模板、数据可视化与多渠道自动交付
+license: Proprietary
+edition: pro
+description: '企业级报告生成与管理工具专业版,面向团队与商业应用。核心能力:
+
   - 多租户报告管理与权限隔离
+
   - 高级报告模板与品牌定制
+
   - 数据可视化图表嵌入
+
   - 多渠道自动交付(邮件/钉钉/飞书/Slack/Webhook)
+
   - 报告审批与版本管理
+
   - 实时数据与定时调度混合模式
+
   - PDF/Excel/PPT 专业格式输出
+
   - API 接口与第三方集成
 
+
   适用场景:
+
   - 企业级业务报告自动化
+
   - 多团队/多客户报告管理
+
   - 定期经营分析报告
+
   - 合规审计报告生成
 
-  差异化:专业版在免费版基础上扩展多租户...
+
+  差异化:专业版在免费版基础上扩展多租户...'
 tags:
-  - 报告生成
-  - 企业级
-  - 多租户
-  - 数据可视化
-  - 自动化交付
+- 报告生成
+- 企业级
+- 多租户
+- 数据可视化
+- 自动化交付
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 报告工具包 - 专业版
 
 ## 概述

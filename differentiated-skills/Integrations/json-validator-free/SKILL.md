@@ -1,22 +1,26 @@
 ---
-slug: "json-validator-free"
-name: "json-validator-free"
-version: "1.0.0"
-displayName: "JSON校验器(免费版)"
-summary: "轻量级JSON语法与结构校验工具，覆盖语法检查、错误定位与单文件校验，60秒上手。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  JSON校验器免费版是一款面向独立开发者与前端工程师的轻量级JSON数据校验工具。围绕"语法检查—错误定位—单文件校验—修复建议"四件事，提供可复制即用的Python/Node。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
+slug: json-validator-free
+name: json-validator-free
+version: 1.0.0
+displayName: JSON校验器(免费版)
+summary: 轻量级JSON语法与结构校验工具，覆盖语法检查、错误定位与单文件校验，60秒上手。
+license: Proprietary
+edition: free
+description: JSON校验器免费版是一款面向独立开发者与前端工程师的轻量级JSON数据校验工具。围绕"语法检查—错误定位—单文件校验—修复建议"四件事，提供可复制即用的Python/Node。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 数据校验
-  - 质量保障
-  - 集成工具
+- 数据校验
+- 质量保障
+- 集成工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # JSON校验器（免费版）
 
 > **把"JSON校验"从肉眼看半天压缩到一条命令搞定。语法检查+错误定位+修复建议三件套。**

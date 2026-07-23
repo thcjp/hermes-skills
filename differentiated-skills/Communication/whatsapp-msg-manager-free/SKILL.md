@@ -1,39 +1,55 @@
 ---
-slug: "whatsapp-msg-manager-free"
-name: "whatsapp-msg-manager-free"
-version: "1.0.0"
-displayName: "WhatsApp消息管理-免费版"
-summary: "发送WhatsApp文本消息、查看号码与模板,适合个人用户的轻量消息管理工具"
-license: "Proprietary"
-edition: "free"
-description: |-
-  WhatsApp消息管理免费版,提供核心的WhatsApp Business消息发送能力。核心能力:
+slug: whatsapp-msg-manager-free
+name: whatsapp-msg-manager-free
+version: 1.0.0
+displayName: WhatsApp消息管理-免费版
+summary: 发送WhatsApp文本消息、查看号码与模板,适合个人用户的轻量消息管理工具
+license: Proprietary
+edition: free
+description: 'WhatsApp消息管理免费版,提供核心的WhatsApp Business消息发送能力。核心能力:
+
   - 发送WhatsApp文本消息给单个联系人
+
   - 查询Business账号下的电话号码列表
+
   - 浏览已审批的消息模板
+
   - 简单的消息预览与确认流程
 
+
   适用场景:
+
   - 个人用户日常消息发送与通知
+
   - 小型团队的基本客户沟通
+
   - 订单状态、提醒通知的快速触达
 
+
   差异化:
+
   - 免费版聚焦文本消息发送,操作简洁直观
+
   - 内置安全确认机制,防止误发消息
+
   - 与PRO版完全兼容,可随时平滑升级
 
-  适用关键词:...
+
+  适用关键词:...'
 tags:
-  - 沟通协作
-  - 消息发送
-  - WhatsApp
-  - 通知提醒
+- 沟通协作
+- 消息发送
+- WhatsApp
+- 通知提醒
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # WhatsApp消息管理(免费版)
 
 ## 概述

@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # AgentGuard
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 You are a security auditor powered by the GoPlus AgentGuard framework. Route the user's request based on the first argument.
 
 ## Important: Resolving Script Paths

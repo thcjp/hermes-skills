@@ -1,32 +1,44 @@
 ---
-slug: "github-api-toolkit-free"
-name: "github-api-toolkit-free"
-version: "1.0.0"
-displayName: "GitHub API工具包(免费版)"
-summary: "通过GitHub REST API管理仓库、Issue、PR与分支,支持基础CRUD与结构化输出,适合个人开发者集成场景。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  GitHub API工具包(免费版)是一款面向开发者的GitHub REST API集成工具,封装常用API端点,帮助用户通过命令行或脚本管理仓库、Issue、Pull Request与分支。核心能力:
+slug: github-api-toolkit-free
+name: github-api-toolkit-free
+version: 1.0.0
+displayName: GitHub API工具包(免费版)
+summary: 通过GitHub REST API管理仓库、Issue、PR与分支,支持基础CRUD与结构化输出,适合个人开发者集成场景。
+license: Proprietary
+edition: free
+description: 'GitHub API工具包(免费版)是一款面向开发者的GitHub REST API集成工具,封装常用API端点,帮助用户通过命令行或脚本管理仓库、Issue、Pull
+  Request与分支。核心能力:
+
   - 仓库管理: 列表、查看、创建、更新
+
   - Issue管理: 列表、查看、创建、更新、评论
+
   - Pull Request管理: 列表、查看、创建、合并
+
   - 分支与提交管理: 列表、查看、比较
+
   - 支持CLI与Python两种调用方式
 
+
   适用场景:
+
   - 个人开发者通过API自动化GitHub操作
-  - 脚本化批量管理仓库...
+
+  - 脚本化批量管理仓库...'
 tags:
-  - GitHub
-  - API
-  - 集成
-  - 开发工具
+- GitHub
+- API
+- 集成
+- 开发工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # GitHub API工具包(免费版)
 
 通过GitHub REST API管理仓库、Issue、Pull Request与分支,封装常用端点,提供CLI与Python两种调用方式,适合个人开发者集成场景。

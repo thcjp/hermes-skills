@@ -1,24 +1,28 @@
 ---
-slug: "read-github-tool-pro"
-name: "read-github-tool-pro"
-version: "1.0.0"
-displayName: "代码仓库阅读专业版"
-summary: "企业级代码仓库分析平台，支持批量仓库分析、跨仓库搜索、代码审计与API集成"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  代码仓库阅读工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。
+slug: read-github-tool-pro
+name: read-github-tool-pro
+version: 1.0.0
+displayName: 代码仓库阅读专业版
+summary: 企业级代码仓库分析平台，支持批量仓库分析、跨仓库搜索、代码审计与API集成
+license: Proprietary
+edition: pro
+description: 代码仓库阅读工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 开发
-  - 企业级
-  - 代码审计
-  - 仓库分析
-  - 技术选型
+- 开发
+- 企业级
+- 代码审计
+- 仓库分析
+- 技术选型
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 代码仓库阅读工具（专业版）
 ## 概述
 代码仓库阅读工具专业版在免费版单仓库文档阅读的基础上，新增批量多仓库分析、跨仓库代码搜索、代码审计与安全检查、仓库对比分析、多格式导出和 REST API 集成等企业级能力，满足开发团队技术选型、安全审计和代码库管理的深度需求。

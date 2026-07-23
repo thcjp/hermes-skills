@@ -1,32 +1,43 @@
 ---
-slug: "db-admin-console-free"
-name: "db-admin-console-free"
-version: "1.0.0"
-displayName: "数据库管理台(免费版)"
-summary: "数据库表结构设计、数据操作、查询优化与事务安全的免费核心能力,支持基础 DDL/DML 操作。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  数据库管理台免费版面向独立开发者与一人公司的 DBA 日常工作流,提供表结构设计、数据操作、查询优化与事务安全的核心能力。核心能力:
+slug: db-admin-console-free
+name: db-admin-console-free
+version: 1.0.0
+displayName: 数据库管理台(免费版)
+summary: 数据库表结构设计、数据操作、查询优化与事务安全的免费核心能力,支持基础 DDL/DML 操作。
+license: Proprietary
+edition: free
+description: '数据库管理台免费版面向独立开发者与一人公司的 DBA 日常工作流,提供表结构设计、数据操作、查询优化与事务安全的核心能力。核心能力:
+
   - 表结构设计:主键、索引、约束、外键、默认值策略
+
   - 数据插入:单条与批量插入(基础规模)
+
   - 查询编写:JOIN、聚合、子查询、CTE、执行计划解读
+
   - 数据类型处理:VARCHAR/BIGINT/UUID/JSONB/ENUM 等
+
   - 事务安全:ACID 属性、自动提交与回滚
+
   - 数据库维护:CREATE/ALTER/DROP/TRUNCATE/VACUUM
 
+
   适用场景:
-  - 个...
+
+  - 个...'
 tags:
-  - 数据库管理
-  - 表结构设计
-  - 查询优化
-  - 集成工具
+- 数据库管理
+- 表结构设计
+- 查询优化
+- 集成工具
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据库管理台 免费版
 
 ## 一、概述

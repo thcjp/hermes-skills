@@ -1,29 +1,35 @@
 ---
-slug: "personal-prod-tool-free"
-name: "personal-prod-tool-free"
-version: "1.0.0"
-displayName: "个人效率顾问基础版"
-summary: "个人效率与时间管理顾问,帮助诊断效率问题、建立任务系统与优化能量使用"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: personal-prod-tool-free
+name: personal-prod-tool-free
+version: 1.0.0
+displayName: 个人效率顾问基础版
+summary: 个人效率与时间管理顾问,帮助诊断效率问题、建立任务系统与优化能量使用
+license: Proprietary
+edition: free
+description: '核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: 效率, 时间管理, 拖延, 专注力, 能量管理, 日程规划, 任务优先级
+
+  适用关键词: 效率, 时间管理, 拖延, 专注力, 能量管理, 日程规划, 任务优先级'
 tags:
-  - 个人效率
-  - 时间管理
-  - 拖延症
-  - 专注力
+- 个人效率
+- 时间管理
+- 拖延症
+- 专注力
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 个人效率顾问基础版
 
 ## 概述

@@ -14,7 +14,11 @@ tags:
 tools:
   - - read
 - exec
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 
 # Token Manager
 Universal LLM Token Manager with proactive monitoring and analytics.

@@ -1,29 +1,36 @@
 ---
-slug: "music-toolkit-pro"
-name: "music-toolkit-pro"
-version: "1.0.0"
-displayName: "音乐工具箱专业版"
-summary: "专业音乐制作平台,支持AI编曲、多轨录音、母带处理与商业授权"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向音乐工作室、独立音乐人与商业项目的专业音乐制作平台。
+slug: music-toolkit-pro
+name: music-toolkit-pro
+version: 1.0.0
+displayName: 音乐工具箱专业版
+summary: 专业音乐制作平台,支持AI编曲、多轨录音、母带处理与商业授权
+license: Proprietary
+edition: pro
+description: '面向音乐工作室、独立音乐人与商业项目的专业音乐制作平台。
+
   核心能力: AI编曲、多轨录音、母带处理、专业音色库、商业授权、协作创作
+
   适用场景: 商业音乐制作、影视配乐、游戏音效、专辑制作、音乐工作室运营
+
   差异化: 专业版支持AI编曲与商业授权,与免费版文件格式兼容
-  适用关键词: AI编曲, 多轨录音, 母带处理, 商业音乐, 影视配乐, 游戏音效
+
+  适用关键词: AI编曲, 多轨录音, 母带处理, 商业音乐, 影视配乐, 游戏音效'
 tags:
-  - 音乐制作
-  - 企业级
-  - AI编曲
-  - 母带处理
-  - 商业授权
-  - 影视配乐
+- 音乐制作
+- 企业级
+- AI编曲
+- 母带处理
+- 商业授权
+- 影视配乐
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 音乐工具箱 (专业版)
 ## 概述
 专业版面向音乐工作室、独立音乐人与商业项目,在免费版音乐生成之上,扩展 AI 编曲、多轨录音、母带处理、专业音色库、商业授权、协作创作等企业级能力。支持构建接近商业品质的音乐作品,适合影视配乐、游戏音效、专辑制作、广告音乐等专业场景。

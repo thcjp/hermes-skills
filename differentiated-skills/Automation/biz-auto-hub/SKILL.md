@@ -1,21 +1,24 @@
 ---
-slug: "biz-auto-hub"
-name: "biz-auto-hub"
-version: "1.0.0"
-displayName: "商业自动中枢"
-summary: "解决自动化ROI难量化、静默故障、过度自动化三大痛点，提供准入评分卡与健康度仪表盘。"
-license: "Proprietary"
-description: |-
-  商业自动中枢面向一人公司与小团队,解决自动化ROI难量化、静默故障、过度自动化三大痛点,提供自动化准入评分卡、ROI量化器、静默故障防护网、凭证保险柜与六类工作流模板五大核心能力。适用于业务自动化架构设计与监控场景。适用关键词:商业自动化、自动化架构、ROI量化、静默故障、凭证管理、工作流设计、自动化审计
+slug: biz-auto-hub
+name: biz-auto-hub
+version: 1.0.0
+displayName: 商业自动中枢
+summary: 解决自动化ROI难量化、静默故障、过度自动化三大痛点，提供准入评分卡与健康度仪表盘。
+license: Proprietary
+description: 商业自动中枢面向一人公司与小团队,解决自动化ROI难量化、静默故障、过度自动化三大痛点,提供自动化准入评分卡、ROI量化器、静默故障防护网、凭证保险柜与六类工作流模板五大核心能力。适用于业务自动化架构设计与监控场景。适用关键词:商业自动化、自动化架构、ROI量化、静默故障、凭证管理、工作流设计、自动化审计
 tags:
-  - 自动化
-  - 业务架构
-  - 效率工具
+- 自动化
+- 业务架构
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 商业自动中枢
 
 把AI Agent变成商业自动化架构师。识别吞噬时间的手动流程、设计自动化、落地实现、量化收益、持续监控。核心信条:**先证明该自动化,再动手;先证明自动化还活着,再放手。**

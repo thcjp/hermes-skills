@@ -15,7 +15,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 精英长记忆（LongMemo Elite）
 
 解决 AI Agent 三大记忆顽疾：**跨会话遗忘、检索不准、成本失控**。本系统将六种成熟记忆策略整合为一套防弹架构，配合 WAL 写前日志协议，确保永不丢失上下文、永不遗忘决策、永不重复犯错。

@@ -1,45 +1,66 @@
 ---
-slug: "straker-verify-tool-pro"
-name: "straker-verify-tool-pro"
-version: "1.0.0"
-displayName: "AI翻译验证(专业版)"
-summary: "企业级翻译平台,含AI质量增强、人工审核、翻译记忆、术语库与Webhook回调"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力:
+slug: straker-verify-tool-pro
+name: straker-verify-tool-pro
+version: 1.0.0
+displayName: AI翻译验证(专业版)
+summary: 企业级翻译平台,含AI质量增强、人工审核、翻译记忆、术语库与Webhook回调
+license: Proprietary
+edition: pro
+description: '核心能力:
+
   - 100+语言AI翻译+质量增强
+
   - 专业人工翻译审核
+
   - 翻译记忆库(TM)与术语表
+
   - 批量翻译与并行处理
+
   - Webhook翻译完成回调
+
   - HTML/JSON翻译报告
+
   - 无限API调用
 
+
   适用场景:
+
   - 企业多语言内容本地化
+
   - 软件国际化(i18n)
+
   - 法律/医疗专业翻译
+
   - 大规模文档批量翻译
 
+
   差异化:
+
   - AI翻译+人工审核双重保障
+
   - 翻译记忆库降低成本与保持一致性
+
   - Webhook自动化翻译流水线
+
   - 与免费版兼容,API接口统一
 
-  触发...
+
+  触发...'
 tags:
-  - 翻译
-  - 本地化
-  - 企业翻译
-  - 人工审核
-  - 翻译记忆
+- 翻译
+- 本地化
+- 企业翻译
+- 人工审核
+- 翻译记忆
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。在免费版基础翻译功能上,增加AI质量增强、专业人工审核、翻译记忆库(TM)与术语表管理、批量并行翻译、Webhook翻译完成回调等企业级功能。支持无限API调用,提供HTML/JSON专业翻译报告。与免费版完全兼容,API接口和项目格式可无缝迁移。
 
 ## 核心能力

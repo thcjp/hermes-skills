@@ -1,20 +1,27 @@
 ---
 slug: compliance-manager
 name: compliance-manager
-version: "1.0.1"
-displayName: "合规管理器"
-summary: "把合规从一次性审计变成持续运营,SOC2/ISO27001/GDPR/网络安全法审计随时就绪"
+version: 1.0.1
+displayName: 合规管理器
+summary: 把合规从一次性审计变成持续运营,SOC2/ISO27001/GDPR/网络安全法审计随时就绪
 license: Proprietary
-description: |-
-  合规管理器——把企业合规从突击应付审计变成日常持续运营。覆盖ISO 27001/SOC 2/GDPR/HIPAA及国内网络安全法、数据安全法、个人信息保护法、等保2.0等主流合规框架。Use when 需要合规差距分析、审计证据收集、风险整改追踪、合规自查清单生成时使用。不适用于法律意见出具和实时合规监控。
-tags: [企业合规, 信息安全, 审计准备, SaaS合规, 风险管理]
+description: 合规管理器——把企业合规从突击应付审计变成日常持续运营。覆盖ISO 27001/SOC 2/GDPR/HIPAA及国内网络安全法、数据安全法、个人信息保护法、等保2.0等主流合规框架。Use
+  when 需要合规差距分析、审计证据收集、风险整改追踪、合规自查清单生成时使用。不适用于法律意见出具和实时合规监控。
+tags:
+- 企业合规
+- 信息安全
+- 审计准备
+- SaaS合规
+- 风险管理
 tools:
-  - read
-  - exec
-suggested_price: "50.00"
-pricing_tier: "enterprise"
-pricing_rationale: "安全合规类, niche市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高"
+- read
+- exec
+suggested_price: 99.9
+pricing_tier: L4
+pricing_rationale: 安全合规类, niche市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高
+pricing_model: monthly
 ---
+
 # 合规管理器
 
 构建企业级合规操作系统,将合规从一次性审计转变为持续运营。从控制项管理到证据收集,从审计就绪到持续监控,全流程合规管理。

@@ -1,34 +1,46 @@
 ---
-slug: "discord-community-hub-free"
-name: "discord-community-hub-free"
-version: "1.0.0"
-displayName: "Discord社区中心免费版"
-summary: "基础 Discord 社区管理工具,支持用户信息、服务器列表与基础集成查询。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人社区管理者的 Discord 社区基础管理工具。核心能力:
+slug: discord-community-hub-free
+name: discord-community-hub-free
+version: 1.0.0
+displayName: Discord社区中心免费版
+summary: 基础 Discord 社区管理工具,支持用户信息、服务器列表与基础集成查询。
+license: Proprietary
+edition: free
+description: '面向个人社区管理者的 Discord 社区基础管理工具。核心能力:
+
   - 查询当前用户资料与已加入服务器列表
+
   - 获取服务器成员信息与角色概况
+
   - 查询服务器小组件(widget)与邀请详情
+
   - 基础集成连接与工具发现
 
+
   适用场景:
+
   - 个人 Discord 社区的日常信息查询
+
   - 小型服务器成员与角色概览
+
   - 集成工具的连接与发现
 
-  差异化: 免费版聚焦只读查询与基础集成,安全低风险;Pro 版提供应用命令、权益管理与角色连接等高级能力
+
+  差异化: 免费版聚焦只读查询与基础集成,安全低风险;Pro 版提供应用命令、权益管理与角色连接等高级能力'
 tags:
-  - Discord
-  - 社区管理
-  - Communication
-  - 服务器管理
+- Discord
+- 社区管理
+- Communication
+- 服务器管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Discord 社区中心(免费版)
 
 ## 概述

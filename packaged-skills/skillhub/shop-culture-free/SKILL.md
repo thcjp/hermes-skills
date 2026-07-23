@@ -139,7 +139,7 @@ curl "https://lifestyle-store.example.com/api/products/sony-wh-1000xm4"
 |---------|---------|------|---------|
 | 搜索返回0结果 | 200 | 查询过窄或无匹配商品 | 扩大查询范围，尝试 `/categories` 推荐替代分类，移除价格过滤器 |
 | 商品缺货 | 200 | variant `inStock=false` | 从 `relatedProducts` 推荐替代商品，或选择同商品其他 `inStock` 变体 |
-| HTTP 429速率限制 | 429 | 超过100 req/min per IP | 等待 `retryAfter` 秒，指数退避执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令（2s, 4s, 8s...） |
+| HTTP 429速率限制 | 429 | 超过100 req/min per IP | 等待 `retryAfter` 秒，检查网络连接和配置后重试（2s, 4s, 8s...） |
 | 商品ID无效 | 400 | 编造或猜测的 `productId` | 仅使用 `GET /products/search` 或 `GET /products/{slug}` 返回的真实 `id` |
 | sort参数无效 | 400 | 传入了不支持的排序值 | 使用有效值：`newest`/`popular`/`rating`/`price_asc`/`price_desc` |
 | limit超出范围 | 400 | limit不在1-100范围内 | 调整limit值到1-100范围内，默认20 |

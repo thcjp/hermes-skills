@@ -8,7 +8,7 @@ license: "MIT"
 description: |-
   ACE Music AI 音乐生成基础客户端（免费版）。通过 ACE Music 托管的免费 API 调用 ACE-Step 1.5 模型,
   支持文本转音乐、自定义歌词、纯音乐模式三种基础能力。支持时长参数控制,音频以 base64 MP3 返回并由脚本自动解码。
-  API 永久免费,无需订阅。适用于个人创作者、快速音乐原型、学习试用场景。
+  API 需付费订阅。适用于个人创作者、快速音乐原型、学习试用场景。
 tags:
   - Creative
 tools:
@@ -18,7 +18,7 @@ homepage: "https://skillhub.cn"
 ---
 # ACE Music LITE
 
-ACE Music 基础版,基于 ACE-Step 1.5 模型生成 AI 音乐。永久免费、无订阅。仅支持文本转音乐（text2music）任务。
+ACE Music 基础版,基于 ACE-Step 1.5 模型生成 AI 音乐。付费订阅使用。仅支持文本转音乐（text2music）任务。
 
 **范围外**（本技能不做）: 翻唱（cover）、片段重绘（repaint）、批量生成、种子复现、BPM/调性精确控制（需升级付费版）。
 
@@ -189,16 +189,16 @@ scripts/generate.sh "gentle acoustic ballad, female vocal, fingerstyle guitar" \
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | missing_api_key | `ACE_MUSIC_API_KEY missing` | 环境变量未设置 | 不调 API,引导用户访问 acemusic.ai 注册并配置 Key |
-| 401 unauthorized | `{"error":"invalid_api_key"}` | Key 格式错误或已失效 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,引导用户重新生成 Key |
-| 429 rate_limited | `{"error":"rate_limited"}` | 短时间内请求过多 | 等待 2 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,最多 3 次 |
-| 400 invalid_duration | `{"error":"duration_out_of_range"}` | duration 超出支持范围 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,提示用户调整时长（5-300 秒） |
-| 400 invalid_lyrics | `{"error":"lyrics_format_error"}` | lyrics 含非法字符或格式错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,引导用户使用 `[Verse]`/`[Chorus]` 标签 |
-| 5xx server_error | HTTP 500/502/503 | ACE Music 服务端错误 | 等待后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,最多 2 次 |
+| 401 unauthorized | `{"error":"invalid_api_key"}` | Key 格式错误或已失效 | 检查网络连接和配置后重试,引导用户重新生成 Key |
+| 429 rate_limited | `{"error":"rate_limited"}` | 短时间内请求过多 | 等待 2 秒后检查网络连接和配置后重试,最多 3 次 |
+| 400 invalid_duration | `{"error":"duration_out_of_range"}` | duration 超出支持范围 | 检查网络连接和配置后重试,提示用户调整时长（5-300 秒） |
+| 400 invalid_lyrics | `{"error":"lyrics_format_error"}` | lyrics 含非法字符或格式错误 | 检查网络连接和配置后重试,引导用户使用 `[Verse]`/`[Chorus]` 标签 |
+| 5xx server_error | HTTP 500/502/503 | ACE Music 服务端错误 | 等待后检查网络连接和配置后重试,最多 2 次 |
 
 ## 常见问题
 
 ### Q1: ACE Music API 真的免费吗?
-A: ACE Music 团队确认 API 永久免费,无订阅、无额度限制。基础地址 `https://api.acemusic.ai`。如遇未来政策调整,以 ACE Music 官方公告为准。
+A: ACE Music 团队确认 API 需付费订阅,详见定价方案。基础地址 `https://api.acemusic.ai`。如遇未来政策调整,以 ACE Music 官方公告为准。
 
 ### Q2: 生成的歌曲时长有什么限制?
 A: `--duration` 参数控制生成时长（秒）。不填则由 AI 根据内容自动决定。建议从 30-60 秒开始尝试。

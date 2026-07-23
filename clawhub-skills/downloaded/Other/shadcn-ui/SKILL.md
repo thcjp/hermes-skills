@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Shadcn Ui
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Comprehensive guide for building production UIs with shadcn/ui, Tailwind CSS, react-hook-form, and zod.
 
 ## Core Concepts

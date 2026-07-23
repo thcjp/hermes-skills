@@ -1,27 +1,32 @@
 ---
-slug: "video-toolkit-free"
-name: "video-toolkit-free"
-version: "1.0.0"
-displayName: "视频工具箱免费版"
-summary: "基于FFmpeg的视频处理工具,支持格式转换、压缩、字幕生成、宽高比调整,适合个人内容创作者"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、
+slug: video-toolkit-free
+name: video-toolkit-free
+version: 1.0.0
+displayName: 视频工具箱免费版
+summary: 基于FFmpeg的视频处理工具,支持格式转换、压缩、字幕生成、宽高比调整,适合个人内容创作者
+license: Proprietary
+edition: free
+description: '面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、
+
   字幕生成、宽高比调整、音频清理等核心功能,覆盖主流社交平台规格。核心能力:
-  - 视频格式转换与压缩(H。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
+
+  - 视频格式转换与压缩(H。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。'
 tags:
-  - 视频
-  - FFmpeg
-  - 多媒体
-  - 字幕
-  - 压缩
-  - 内容创作
+- 视频
+- FFmpeg
+- 多媒体
+- 字幕
+- 压缩
+- 内容创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 视频工具箱 - 免费版
 
 ## 概述

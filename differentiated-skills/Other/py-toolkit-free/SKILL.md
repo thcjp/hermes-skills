@@ -1,38 +1,54 @@
 ---
-slug: "py-toolkit-free"
-name: "py-toolkit-free"
-version: "1.0.0"
-displayName: "Python工具包-免费版"
-summary: "Python开发优选实践助手,避免可变默认参数、导入陷阱与常见运行时问题"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Python 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:
+slug: py-toolkit-free
+name: py-toolkit-free
+version: 1.0.0
+displayName: Python工具包-免费版
+summary: Python开发优选实践助手,避免可变默认参数、导入陷阱与常见运行时问题
+license: Proprietary
+edition: free
+description: 'Python 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:
+
   - Python 常见陷阱检测与修复建议
+
   - 类型提示与鸭子类型指导
+
   - 列表/字典/集合使用规范
+
   - 装饰器、闭包、生成器优选实践
+
   - GIL 与并发编程建议
+
   - 循环导入预防
+
   - pytest 测试编写指导
 
+
   适用场景:
+
   - 日常 Python 开发避坑
+
   - 代码审查参考
+
   - 学习 Python 高级特性
+
   - 编写可靠的生产级代码
 
-  差异化:免费版覆盖核心陷阱与优选实践
+
+  差异化:免费版覆盖核心陷阱与优选实践'
 tags:
-  - Python
-  - 编程规范
-  - 优选实践
-  - 代码质量
+- Python
+- 编程规范
+- 优选实践
+- 代码质量
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Python 工具包 - 免费版
 
 ## 概述

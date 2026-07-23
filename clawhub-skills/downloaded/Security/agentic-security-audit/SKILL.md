@@ -16,7 +16,11 @@ tools:
   - - read
 - exec
 # Agentic Security Audit
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Scan, detect, and fix security issues in codebases and infrastructure. Covers dependency vulnerabilities, secret detection, OWASP top 10, SSL/TLS verification, file permissions, and secure coding patterns.
 
 ## When to Use

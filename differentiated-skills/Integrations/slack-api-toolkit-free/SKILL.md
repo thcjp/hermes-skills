@@ -1,21 +1,25 @@
 ---
-slug: "slack-api-toolkit-free"
-name: "slack-api-toolkit-free"
-version: "1.0.0"
-displayName: "Slack API工具箱"
-summary: "通过托管OAuth安全调用Slack API，支持消息收发与频道管理，适合个人快速集成。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Slack API工具箱（免费版）通过托管OAuth机制安全调用Slack API，免去手动管理Token的繁琐，支持消息收发与频道管理核心能力。核心能力：托管OAuth连接管理、消息发送与回复、频道列表与信息查询、用户信息查询、CLI与Python调用示例。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+slug: slack-api-toolkit-free
+name: slack-api-toolkit-free
+version: 1.0.0
+displayName: Slack API工具箱
+summary: 通过托管OAuth安全调用Slack API，支持消息收发与频道管理，适合个人快速集成。
+license: Proprietary
+edition: free
+description: Slack API工具箱（免费版）通过托管OAuth机制安全调用Slack API，免去手动管理Token的繁琐，支持消息收发与频道管理核心能力。核心能力：托管OAuth连接管理、消息发送与回复、频道列表与信息查询、用户信息查询、CLI与Python调用示例。Use
+  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-  - 集成工具
-  - 团队协作
+- 集成工具
+- 团队协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Slack API工具箱（免费版）
 
 ## 概述

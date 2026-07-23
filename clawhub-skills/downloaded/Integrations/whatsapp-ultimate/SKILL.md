@@ -220,7 +220,11 @@ To react/edit/unsend, you need the message ID. Incoming messages include this in
 | Two-way chat | yes | no | no | no |
 | External deps | None | Go binary | Docker + WAHA | ffmpeg |
 
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 
 ## Protocol v2: Multi-Agent Discussions
 <why_this_matters>

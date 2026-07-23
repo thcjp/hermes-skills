@@ -1,20 +1,27 @@
 ---
 slug: duckdb-analytics-engine
 name: duckdb-analytics-engine
-version: "1.0.0"
-displayName: "DuckDB分析引擎"
-summary: "本地分析型数据库,免部署秒级启动,GB级数据SQL查询无压力"
+version: 1.0.0
+displayName: DuckDB分析引擎
+summary: 本地分析型数据库,免部署秒级启动,GB级数据SQL查询无压力
 license: Proprietary
-description: |-
-  DuckDB分析引擎——为数据分析而生的嵌入式OLAP数据库,无需部署服务,单文件即用,支持GB级数据秒级SQL查询。覆盖多格式数据加载(CSV/Parquet/JSON/Excel)、跨源联邦查询、窗口函数、Pandas互操作、Jupyter集成。Use when 需要本地大数据分析、CSV/Parquet快速查询、Python数据分析加速、无需数据库服务器的OLAP分析时使用。不适用于高并发在线事务处理。
-tags: [数据分析, DuckDB, SQL查询, OLAP数据库, 数据仓库]
+description: DuckDB分析引擎——为数据分析而生的嵌入式OLAP数据库,无需部署服务,单文件即用,支持GB级数据秒级SQL查询。覆盖多格式数据加载(CSV/Parquet/JSON/Excel)、跨源联邦查询、窗口函数、Pandas互操作、Jupyter集成。Use
+  when 需要本地大数据分析、CSV/Parquet快速查询、Python数据分析加速、无需数据库服务器的OLAP分析时使用。不适用于高并发在线事务处理。
+tags:
+- 数据分析
+- DuckDB
+- SQL查询
+- OLAP数据库
+- 数据仓库
 tools:
-  - read
-  - exec
-suggested_price: "15.00"
-pricing_tier: "business"
-pricing_rationale: "数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
+pricing_model: per_use
 ---
+
 # DuckDB 分析引擎
 
 为数据分析而生的嵌入式 OLAP 数据库。无需部署,单文件即用,支持 GB 级数据秒级查询。

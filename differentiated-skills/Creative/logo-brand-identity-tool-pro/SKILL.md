@@ -20,7 +20,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,PRO版引入完整品牌系统、多品牌管理、批量资产生成、品牌一致性审计与CI/CD集成能力,满足企业级品牌建设的全面需求。
 
 PRO版完全兼容免费版,可直接继承免费版的品牌简介与配置,并在此基础上扩展为完整的品牌管理系统。

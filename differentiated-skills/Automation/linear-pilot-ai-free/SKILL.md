@@ -1,23 +1,26 @@
 ---
-slug: "linear-pilot-ai-free"
-name: "linear-pilot-ai-free"
-version: "1.0.0"
-displayName: "Linear自动驾驶(免费版)"
-summary: "Linear任务自动化处理流水线，通过Webhook接收任务、更新状态、发送通知与Git同步，基础单工作流配置。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Linear自动驾驶（免费版）面向使用Linear进行任务管理的个人开发者与小团队，提供从Linear任务创建到自动处理再到结果同步的端到端流水线。当Linear中创建新任务时，自动触发Webhook通知，Agent接收后执行任务处理、状态更新、结果通知与Git同步，让任务管理从手动操作变为自动流转
+slug: linear-pilot-ai-free
+name: linear-pilot-ai-free
+version: 1.0.0
+displayName: Linear自动驾驶(免费版)
+summary: Linear任务自动化处理流水线，通过Webhook接收任务、更新状态、发送通知与Git同步，基础单工作流配置。
+license: Proprietary
+edition: free
+description: Linear自动驾驶（免费版）面向使用Linear进行任务管理的个人开发者与小团队，提供从Linear任务创建到自动处理再到结果同步的端到端流水线。当Linear中创建新任务时，自动触发Webhook通知，Agent接收后执行任务处理、状态更新、结果通知与Git同步，让任务管理从手动操作变为自动流转
 tags:
-  - Linear
-  - 任务自动化
-  - Webhook
-  - 工作流
+- Linear
+- 任务自动化
+- Webhook
+- 工作流
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Linear自动驾驶（免费版）
 
 > Linear任务一键流转：创建即触发，Agent自动处理，状态自动更新，结果自动同步至Git。

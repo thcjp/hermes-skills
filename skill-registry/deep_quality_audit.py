@@ -377,7 +377,7 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = False, enable_l
     l7_result = check_semantic_quality(body_text, enable_l7a=enable_l7)
 
     # === LLM 可执行性检查 (Layer 7b) ===
-    l7b_result = check_llm_executability(body_text, skill_slug=slug, enable_l7b=enable_l7b)
+    l7b_result = check_llm_executability(body_text, skill_slug=slug, enable_l7b=enable_l7b, skill_path=skill_path)
 
     # 确定最终严重级别
     if issues["critical"]:
@@ -1276,7 +1276,7 @@ def check_semantic_quality(body_text: str, enable_l7a: bool = True) -> dict:
 # L7b: 使用 LLM 模拟执行 skill 任务,检测"声称能做但实际无法完成"的问题
 # 接口设计: 接收 skill 正文文本,返回可执行性评估结果
 
-def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bool = False) -> dict:
+def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bool = False, skill_path: Path = None) -> dict:
     """Layer 7b: LLM 深度审查 - 可执行性验证
 
     分析 SKILL.md 正文,检测以下问题:
@@ -1291,6 +1291,8 @@ def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bo
         body_text: SKILL.md 正文 (不含 frontmatter)
         skill_slug: skill 的 slug (用于日志)
         enable_l7b: 是否启用 L7b (默认关闭,需显式启用)
+        skill_path: SKILL.md 文件路径或 skill 目录路径 (用于检查脚本引用是否存在,
+                    为 None 时跳过文件存在性检查)
 
     Returns:
         dict: {
@@ -1334,13 +1336,63 @@ def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bo
         else:
             result["checks_passed"] += 1  # 纯描述性skill也可以
 
-    # 检查2: 脚本引用是否存在
-    script_refs = re.findall(r'(?:scripts?|bin)/[\w.-]+', body_text)
-    # 注意: 实际文件存在性检查需要文件系统访问,这里只检查引用格式
-    if script_refs:
+    # 检查2: 脚本引用是否存在 (L7B_BROKEN_REF)
+    # 提取所有脚本/文件路径引用: scripts/xxx.py, bin/xxx, ./xxx.sh
+    # 以及代码块中 python scripts/xxx.py 或 ./bin/xxx 形式的引用
+    # 先去除 shebang 行 (#!/usr/bin/env, #!/bin/bash 等),避免误报 bin/env 等系统路径
+    body_for_refs = re.sub(r'(?m)^[\s]*#!.*$', '', body_text)
+    ref_patterns = [
+        r'(?:\./)?(?:scripts?|bin)/[\w./-]+',  # scripts/ 或 bin/ 路径
+        r'\./[\w-]+\.sh',                       # ./xxx.sh
+    ]
+    script_refs = set()
+    for pattern in ref_patterns:
+        for m in re.finditer(pattern, body_for_refs):
+            ref = m.group(0)
+            # 标准化: 去除 ./
+            if ref.startswith('./'):
+                ref = ref[2:]
+            # 去除尾部 . 或 /
+            ref = ref.rstrip('./')
+            if ref:
+                script_refs.add(ref)
+
+    if not script_refs:
+        # 没有引用任何脚本,不是错误
         result["checks_passed"] += 1
     else:
-        result["checks_passed"] += 1  # 不是所有skill都需要脚本
+        # 检查引用的脚本/文件是否实际存在于 skill 目录中
+        broken_refs = []
+        skill_dir = None
+        if skill_path is not None:
+            # skill_path 可能是 SKILL.md 文件路径或 skill 目录路径
+            try:
+                if skill_path.is_file():
+                    skill_dir = skill_path.parent
+                elif skill_path.is_dir():
+                    skill_dir = skill_path
+                else:
+                    # 路径不存在: 如果以 .md 结尾则视为文件路径,取父目录
+                    skill_dir = skill_path.parent if skill_path.suffix == '.md' else skill_path
+            except Exception:
+                skill_dir = None
+
+        if skill_dir is not None:
+            for ref in sorted(script_refs):
+                expected_path = skill_dir / ref
+                if not expected_path.exists():
+                    broken_refs.append((ref, expected_path))
+
+        if broken_refs:
+            for ref, expected_path in broken_refs:
+                result["issues"].append({
+                    "code": "L7B_BROKEN_REF",
+                    "message": f"引用了不存在的脚本/文件: {ref} (路径: {expected_path})"
+                })
+            result["checks_failed"] += 1
+        else:
+            # 所有引用的脚本都存在 (或无法验证文件系统时跳过)
+            result["checks_passed"] += 1
 
     # 检查3: 任务描述是否具体
     vague_patterns = [

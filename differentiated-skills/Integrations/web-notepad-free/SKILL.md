@@ -1,33 +1,44 @@
 ---
-slug: "web-notepad-free"
-name: "web-notepad-free"
-version: "1.0.0"
-displayName: "在线表单笔记(免费版)"
-summary: "轻量化在线表单与提交数据管理工具,支持表单创建、提交查询、字段配置等核心能力,适合个人快速搭建信息收集流程。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  在线表单笔记(免费版)是面向个人开发者与小型团队的轻量化表单管理Skill,通过REST API与命令行工具的组合,帮助用户在数分钟内搭建可用的表单收集流程。核心能力:
+slug: web-notepad-free
+name: web-notepad-free
+version: 1.0.0
+displayName: 在线表单笔记(免费版)
+summary: 轻量化在线表单与提交数据管理工具,支持表单创建、提交查询、字段配置等核心能力,适合个人快速搭建信息收集流程。
+license: Proprietary
+edition: free
+description: '在线表单笔记(免费版)是面向个人开发者与小型团队的轻量化表单管理Skill,通过REST API与命令行工具的组合,帮助用户在数分钟内搭建可用的表单收集流程。核心能力:
+
 
   - 表单与提交数据全生命周期管理(创建、查询、更新、删除)
+
   - 多字段类型支持(文本、邮件、电话、数字、日期、下拉等)
+
   - 项目级组织结构,便于按业务线分类管理表单
+
   - Bearer Token鉴权,简单安全的API调用方式
+
 
   适用场景:
 
+
   - 个人博客/作品集的联系表单快速接入
+
   - 小型活动报名、调研问卷的临时收集通道
-  - MVP阶段的产品反馈收...
+
+  - MVP阶段的产品反馈收...'
 tags:
-  - 集成工具
-  - 表单收集
-  - 生产力
+- 集成工具
+- 表单收集
+- 生产力
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 在线表单笔记(免费版)
 
 一个面向个人开发者与小型团队的轻量化表单管理Skill,通过REST API和命令行工具的组合,帮助你快速搭建信息收集流程。本免费版聚焦"创建-提交-查询"主路径,适合个人或小型团队试用。

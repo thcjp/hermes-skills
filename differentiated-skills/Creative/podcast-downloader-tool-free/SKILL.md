@@ -1,25 +1,30 @@
 ---
-slug: "podcast-downloader-tool-free"
-name: "podcast-downloader-tool-free"
-version: "1.0.0"
-displayName: "播客下载工具免费版"
-summary: "从小宇宙平台下载播客音频与节目笔记,自动转换为MP3格式,适合个人离线收听。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的播客下载工具(免费版)。核心能力:
-  - 从小宇宙(xiaoyuzhoufm。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。
+slug: podcast-downloader-tool-free
+name: podcast-downloader-tool-free
+version: 1.0.0
+displayName: 播客下载工具免费版
+summary: 从小宇宙平台下载播客音频与节目笔记,自动转换为MP3格式,适合个人离线收听。
+license: Proprietary
+edition: free
+description: '面向个人用户的播客下载工具(免费版)。核心能力:
+
+  - 从小宇宙(xiaoyuzhoufm。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。'
 tags:
-  - 创意设计
-  - 播客
-  - 下载工具
-  - 离线收听
-  - 音频转换
+- 创意设计
+- 播客
+- 下载工具
+- 离线收听
+- 音频转换
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 播客下载工具 - 免费版
 
 ## 概述

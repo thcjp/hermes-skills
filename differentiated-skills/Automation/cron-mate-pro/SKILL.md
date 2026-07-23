@@ -1,32 +1,39 @@
 ---
-slug: "cron-mate-pro"
-name: "cron-mate-pro"
-version: "1.0.0"
-displayName: "cron表达式助手(专业版)"
-summary: "企业级cron表达式工具专业版，含高级语法L/W/#、时区转换、冲突检测、优化建议、执行预览。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  cron表达式助手专业版是面向企业级场景的完整cron表达式工具。在免费版基础语法之上，专业版新增高级特殊字符（L/W/#）、时区转换与对比、表达式冲突检测、智能优化建议、执行时间预计算五大高级能力，满足复杂调度场景的表达式编写需求。
+slug: cron-mate-pro
+name: cron-mate-pro
+version: 1.0.0
+displayName: cron表达式助手(专业版)
+summary: 企业级cron表达式工具专业版，含高级语法L/W/#、时区转换、冲突检测、优化建议、执行预览。
+license: Proprietary
+edition: pro
+description: 'cron表达式助手专业版是面向企业级场景的完整cron表达式工具。在免费版基础语法之上，专业版新增高级特殊字符（L/W/#）、时区转换与对比、表达式冲突检测、智能优化建议、执行时间预计算五大高级能力，满足复杂调度场景的表达式编写需求。
+
 
   核心能力：高级特殊字符支持（L最后一天/W最近工作日/#第N个周X）、7字段扩展格式（含秒和年）、多时区转换与对比、日周冲突检测与修正建议、表达式合并与简化优化、未来N次执行时间预计算、表达式diff对比、批量验证与导入导出、Quartz/Spring/Linux多平台格式适配。
 
+
   适用场景：复杂调度规则编写、跨时区任务配置、表达式审查与优化、调度冲突排查、执行时间模拟预览、多平台cron迁移、团队表达式审计、CI/CD流水线定时配置。
+
 
   差异化：完全中文化重写，聚焦"表达式编写与验证"辅助场景，新增五大高级功能、七种角色场景指南、多平台格式适配指南、性能优化建议、完整FAQ（12问）与故障排查表（11项）。内容原创度超过70%。专业版使用GPT-4o模型路由，提供完整表达式工具链与优先支持。
 
-  适用关键词：cron高级语法、L/W/#特殊字符、时区转换、冲突检测、表达式优化、执行预览、Quartz格式
+
+  适用关键词：cron高级语法、L/W/#特殊字符、时区转换、冲突检测、表达式优化、执行预览、Quartz格式'
 tags:
-  - cron表达式
-  - 高级语法
-  - 时区转换
-  - 冲突检测
-  - 表达式优化
+- cron表达式
+- 高级语法
+- 时区转换
+- 冲突检测
+- 表达式优化
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # cron表达式助手（专业版）
 
 > **企业级cron表达式工具。高级语法+时区转换+冲突检测+优化建议+执行预览，全功能覆盖。**

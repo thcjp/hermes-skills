@@ -16,7 +16,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # AWS图代理（AWS Graph Agent）
 
 基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具。

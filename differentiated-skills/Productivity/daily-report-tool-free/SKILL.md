@@ -1,28 +1,34 @@
 ---
-slug: "daily-report-tool-free"
-name: "daily-report-tool-free"
-version: "1.0.0"
-displayName: "日报生成器基础版"
-summary: "根据输入生成日报 Markdown 草稿并写入 reports 目录,适合个人工作记录"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 工作汇报领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: daily-report-tool-free
+name: daily-report-tool-free
+version: 1.0.0
+displayName: 日报生成器基础版
+summary: 根据输入生成日报 Markdown 草稿并写入 reports 目录,适合个人工作记录
+license: Proprietary
+edition: free
+description: '核心能力: 工作汇报领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: 日报, 工作总结, 每日报告, highlights, blockers
+
+  适用关键词: 日报, 工作总结, 每日报告, highlights, blockers'
 tags:
-  - 日报
-  - 工作总结
-  - Markdown
+- 日报
+- 工作总结
+- Markdown
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 日报生成器基础版
 
 ## 概述

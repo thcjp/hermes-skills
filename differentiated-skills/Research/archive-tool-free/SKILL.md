@@ -1,23 +1,28 @@
 ---
-slug: "archive-tool-free"
-name: "archive-tool-free"
-version: "1.0.0"
-displayName: "内容归档工具-免费版"
-summary: "智能内容快照工具,支持完整内容提取、语义标签与主动召回,适合个人用户"
-license: "Proprietary"
-edition: "free"
-description: |-
-  内容归档工具,将外部内容保存为智能快照,支持完整内容提取、语义标签、
-  语义搜索与主动召回。捕获的不只是链接,而是完整内容与上下文。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
+slug: archive-tool-free
+name: archive-tool-free
+version: 1.0.0
+displayName: 内容归档工具-免费版
+summary: 智能内容快照工具,支持完整内容提取、语义标签与主动召回,适合个人用户
+license: Proprietary
+edition: free
+description: '内容归档工具,将外部内容保存为智能快照,支持完整内容提取、语义标签、
+
+  语义搜索与主动召回。捕获的不只是链接,而是完整内容与上下文。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。'
 tags:
-  - 研究工具
-  - 内容归档
-  - 知识管理
+- 研究工具
+- 内容归档
+- 知识管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 内容归档工具(免费版)
 
 ## 概述

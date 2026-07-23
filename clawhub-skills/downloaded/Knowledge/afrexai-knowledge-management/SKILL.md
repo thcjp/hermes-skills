@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Knowledge Management System
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 > Turn tribal knowledge into searchable, maintained organizational intelligence. Stop losing expertise when people leave.
 
 ## Phase 1: Knowledge Audit

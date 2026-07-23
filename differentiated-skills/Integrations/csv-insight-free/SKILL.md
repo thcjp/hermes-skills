@@ -1,22 +1,26 @@
 ---
-slug: "csv-insight-free"
-name: "csv-insight-free"
-version: "1.0.0"
-displayName: "CSV洞察 免费版"
-summary: "零依赖分析CSV文件，获取统计、筛选、异常检测与分组聚合，无需pandas。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  CSV Insight 是面向数据分析师与开发者的轻量级 CSV 分析工具，通过命令行脚本完成统计、筛选、异常检测与分组聚合，零外部依赖。核心能力：自动列类型检测（数值/日期/文本）、灵活筛选（比较运算符）、统计摘要（均值/中位数/标准差/分位数）、Z-Score 异常检测、分组聚合、结果导出。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: csv-insight-free
+name: csv-insight-free
+version: 1.0.0
+displayName: CSV洞察 免费版
+summary: 零依赖分析CSV文件，获取统计、筛选、异常检测与分组聚合，无需pandas。
+license: Proprietary
+edition: free
+description: CSV Insight 是面向数据分析师与开发者的轻量级 CSV 分析工具，通过命令行脚本完成统计、筛选、异常检测与分组聚合，零外部依赖。核心能力：自动列类型检测（数值/日期/文本）、灵活筛选（比较运算符）、统计摘要（均值/中位数/标准差/分位数）、Z-Score
+  异常检测、分组聚合、结果导出。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-  - 集成工具
-  - 数据分析
-  - 开发者工具
+- 集成工具
+- 数据分析
+- 开发者工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # CSV Insight（免费版）
 
 面向数据分析师与开发者的轻量级 CSV 分析工具，零外部依赖，单条命令完成统计、筛选、异常检测与分组聚合。

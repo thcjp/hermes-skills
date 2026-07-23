@@ -1,24 +1,28 @@
 ---
-slug: "gif-whatsapp-tool-pro"
-name: "gif-whatsapp-tool-pro"
-version: "1.0.0"
-displayName: "WhatsApp表情专业版"
-summary: "企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析，适合团队协作与营销场景。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+slug: gif-whatsapp-tool-pro
+name: gif-whatsapp-tool-pro
+version: 1.0.0
+displayName: WhatsApp表情专业版
+summary: 企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析，适合团队协作与营销场景。
+license: Proprietary
+edition: pro
+description: 企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-  - WhatsApp
-  - GIF
-  - 营销工具
-  - 批量发送
-  - 企业通讯
+- WhatsApp
+- GIF
+- 营销工具
+- 批量发送
+- 企业通讯
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # WhatsApp 表情专业版
 
 ## 概述

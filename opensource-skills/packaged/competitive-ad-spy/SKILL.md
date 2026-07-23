@@ -1,20 +1,26 @@
 ---
 slug: competitive-ad-spy
 name: competitive-ad-spy
-version: "1.0.1"
-displayName: "竞品广告侦察兵"
-summary: "扒光竞品广告底牌,解读信息策略创意方向,找到差异化投放机会"
+version: 1.0.1
+displayName: 竞品广告侦察兵
+summary: 扒光竞品广告底牌,解读信息策略创意方向,找到差异化投放机会
 license: Proprietary
-description: |-
-  竞品广告侦察兵——从Meta/TikTok/Google/巨量引擎/腾讯广告等中外广告库提取竞品广告情报,系统解读信息策略、创意方向、受众定位与投放节奏。覆盖竞品识别、素材提取、视觉/文案/受众分析、策略解读与差异化机会挖掘全流程。适用场景:竞品调研、广告创意灵感、差异化定位、投放优化、新市场进入、创意A/B测试设计。触发关键词:竞品广告、广告分析、广告间谍、广告库、Meta广告、TikTok广告、Google广告、巨量引擎、腾讯广告、竞品分析、广告创意、投放策略、广告素材、差异化投放。
-tags: [竞品分析, 广告投放, 市场情报, 营销策略, 投放优化]
+description: 竞品广告侦察兵——从Meta/TikTok/Google/巨量引擎/腾讯广告等中外广告库提取竞品广告情报,系统解读信息策略、创意方向、受众定位与投放节奏。覆盖竞品识别、素材提取、视觉/文案/受众分析、策略解读与差异化机会挖掘全流程。适用场景:竞品调研、广告创意灵感、差异化定位、投放优化、新市场进入、创意A/B测试设计。触发关键词:竞品广告、广告分析、广告间谍、广告库、Meta广告、TikTok广告、Google广告、巨量引擎、腾讯广告、竞品分析、广告创意、投放策略、广告素材、差异化投放。
+tags:
+- 竞品分析
+- 广告投放
+- 市场情报
+- 营销策略
+- 投放优化
 tools:
-  - read
-  - exec
-suggested_price: "19.00"
-pricing_tier: "business"
-pricing_rationale: "营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强
+pricing_model: per_use
 ---
+
 # 竞品广告侦察兵
 
 从广告库提取并分析竞品广告。不仅看竞品投了什么广告,更分析为什么这样投,为你的投放提供情报。

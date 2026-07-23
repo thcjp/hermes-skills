@@ -25,7 +25,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 一个面向团队与企业的全功能Notion操作Skill,在免费版基础上扩展了多工作空间管理、文件上传、Schema管理、页面移动、批量操作、模板管理、自定义输出与审计日志等高级能力,适合规模化使用场景。
 
 ## 概述

@@ -1,23 +1,27 @@
 ---
-slug: "tpn-proxy-tool-pro"
-name: "tpn-proxy-tool-pro"
-version: "1.0.0"
-displayName: "代理网络工具专业版"
-summary: "全功能去中心化代理平台，支持多代理并发、自动轮换、熔断与性能监控"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向数据工程团队与安全测试人员的全功能去中心化SOCKS5代理平台，支持多代理并发管理、自动轮换、请求熔断与性能监控。核心能力：在免费版基础上新增多代理会话池、自动轮换策略、请求重试与熔断机制、代理性能监控仪表盘、x402按需支付流程与批量请求引擎。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: tpn-proxy-tool-pro
+name: tpn-proxy-tool-pro
+version: 1.0.0
+displayName: 代理网络工具专业版
+summary: 全功能去中心化代理平台，支持多代理并发、自动轮换、熔断与性能监控
+license: Proprietary
+edition: pro
+description: 面向数据工程团队与安全测试人员的全功能去中心化SOCKS5代理平台，支持多代理并发管理、自动轮换、请求熔断与性能监控。核心能力：在免费版基础上新增多代理会话池、自动轮换策略、请求重试与熔断机制、代理性能监控仪表盘、x402按需支付流程与批量请求引擎。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-  - 网络工具
-  - 代理服务
-  - 企业级网络
-  - 数据采集
+- 网络工具
+- 代理服务
+- 企业级网络
+- 数据采集
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 去中心化代理网络平台（专业版）
 
 ## 概述

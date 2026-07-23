@@ -1,20 +1,23 @@
 ---
 slug: tpn-proxy
 name: tpn-proxy
-version: "1.1.2"
+version: 1.1.2
 displayName: TPN Proxy
 summary: Make web requests through decentralized SOCKS5 proxies via the Tao Private
   Network (TPN). This sk...
 license: MIT
-description: |-
-  Make web requests through decentralized SOCKS5 proxies via the Tao Private
-  Network (TPN)。This sk。Use when 用户需要TPN Proxy相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。
+description: 'Make web requests through decentralized SOCKS5 proxies via the Tao Private
+
+  Network (TPN)。This sk。Use when 用户需要TPN Proxy相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。'
 tags: '[''Integrations'']'
 tools:
-  - read
-  - exec
-# TPN Proxy
+- read
+- exec
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 Route web traffic through Tao Private Network's decentralized SOCKS5 proxies — a Bittensor subnet (SN65) with commercial and residential exit nodes across 80+ countries.
 
 Ask this skill things like:

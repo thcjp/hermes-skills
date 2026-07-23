@@ -1,22 +1,27 @@
 ---
-slug: "workflow-lite"
-name: "workflow-lite"
-version: "1.0.0"
-displayName: "轻量工作流"
-summary: "极简自动化入门，5分钟快速判断该不该自动化+3个最小可执行模板+单页速查。"
-license: "Proprietary"
-description: |-
-  轻量工作流是自动化的"5分钟入门版"。它不堆砌完整方法论，只解决一个问题：
-  我想试试自动化，但不想读5000字文档。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+slug: workflow-lite
+name: workflow-lite
+version: 1.0.0
+displayName: 轻量工作流
+summary: 极简自动化入门，5分钟快速判断该不该自动化+3个最小可执行模板+单页速查。
+license: Proprietary
+description: '轻量工作流是自动化的"5分钟入门版"。它不堆砌完整方法论，只解决一个问题：
+
+  我想试试自动化，但不想读5000字文档。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。'
 tags:
-  - 自动化
-  - 入门
-  - 效率工具
+- 自动化
+- 入门
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 轻量工作流
 
 自动化的5分钟入门。核心信条：**先判断值不值得，再挑最小模板，立刻跑起来。**

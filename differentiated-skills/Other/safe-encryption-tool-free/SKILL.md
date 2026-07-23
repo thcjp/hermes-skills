@@ -1,35 +1,48 @@
 ---
-slug: "safe-encryption-tool-free"
-name: "safe-encryption-tool-free"
-version: "1.0.0"
-displayName: "安全加密工具-免费版"
-summary: "基于SAFE CLI的文件加密解密工具,支持量子安全算法,适合个人数据保护"
-license: "Proprietary"
-edition: "free"
-description: |-
-  安全加密工具免费版,面向个人用户的文件加密与解密。核心能力:
+slug: safe-encryption-tool-free
+name: safe-encryption-tool-free
+version: 1.0.0
+displayName: 安全加密工具-免费版
+summary: 基于SAFE CLI的文件加密解密工具,支持量子安全算法,适合个人数据保护
+license: Proprietary
+edition: free
+description: '安全加密工具免费版,面向个人用户的文件加密与解密。核心能力:
+
   - 文件级加密与解密
+
   - 密码保护(passphrase)
+
   - 量子安全加密算法(ML-KEM-512)
+
   - 加密元数据嵌入
+
   - 跨平台兼容
 
+
   适用场景:
+
   - 个人敏感文件加密
+
   - 文件安全传输
+
   - 本地数据保护
 
-  差异化:免费版提供基础文件加密能力
+
+  差异化:免费版提供基础文件加密能力'
 tags:
-  - 加密
-  - 安全
-  - 量子安全
-  - 文件保护
+- 加密
+- 安全
+- 量子安全
+- 文件保护
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 安全加密工具 - 免费版
 
 ## 概述

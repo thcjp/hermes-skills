@@ -1,24 +1,28 @@
 ---
-slug: "bsession-tool-pro"
-name: "bsession-tool-pro"
-version: "1.0.0"
-displayName: "浏览器会话(专业版)"
-summary: "企业级浏览器会话专业版，含定时任务、Webhook通知、批量会话管理与监控告警。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  浏览器会话助手专业版是面向企业级场景的完整浏览器会话管理工具。在免费版单次抓取能力之上，新增定时任务（recurring）、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+slug: bsession-tool-pro
+name: bsession-tool-pro
+version: 1.0.0
+displayName: 浏览器会话(专业版)
+summary: 企业级浏览器会话专业版，含定时任务、Webhook通知、批量会话管理与监控告警。
+license: Proprietary
+edition: pro
+description: 浏览器会话助手专业版是面向企业级场景的完整浏览器会话管理工具。在免费版单次抓取能力之上，新增定时任务（recurring）、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-  - 浏览器会话
-  - 定时任务
-  - 企业级
-  - Webhook
-  - 监控告警
+- 浏览器会话
+- 定时任务
+- 企业级
+- Webhook
+- 监控告警
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 > **定时任务+会话持久化+Webhook通知+批量管理+监控告警。企业级会话管理全功能覆盖。**
 
 将复杂的浏览器会话管理任务交给专业工具处理。专业版在免费版单次抓取能力之上，新增定时任务、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力，满足企业级场景对浏览器会话的可靠性、可观测性与可扩展性要求。

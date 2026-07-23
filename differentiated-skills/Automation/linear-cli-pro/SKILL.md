@@ -1,21 +1,25 @@
 ---
-slug: "linear-cli-pro"
-name: "linear-cli-pro"
-version: "1.0.0"
-displayName: "Linear CLI专家"
-summary: "解决JSON解析难、内联转义炸、批量操作慢、鉴权易失效痛点，让Linear CLI在Agent中稳跑"
-license: "Proprietary"
-description: |-
-  面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者。聚焦 v3 执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: linear-cli-pro
+name: linear-cli-pro
+version: 1.0.0
+displayName: Linear CLI专家
+summary: 解决JSON解析难、内联转义炸、批量操作慢、鉴权易失效痛点，让Linear CLI在Agent中稳跑
+license: Proprietary
+description: 面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者。聚焦 v3
+  执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-  - 自动化
-  - 项目管理
-  - 开发者工具
+- 自动化
+- 项目管理
+- 开发者工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Linear CLI 专家
 
 在 Agent 运行时中安全、稳定地操作 Linear。所有写操作遵循"预览-执行-校验"闭环，所有 Markdown 内容走文件/stdin 而非内联，批量操作有并发与限速保护。

@@ -1,20 +1,27 @@
 ---
 slug: csv-insight-miner
 name: csv-insight-miner
-version: "1.0.1"
-displayName: "CSV洞察挖掘机"
-summary: "丢一个CSV自动出洞察报告,无需写代码,异常趋势一目了然"
+version: 1.0.1
+displayName: CSV洞察挖掘机
+summary: 丢一个CSV自动出洞察报告,无需写代码,异常趋势一目了然
 license: Proprietary
-description: |-
-  CSV洞察挖掘机——丢一个CSV文件,自动生成全面洞察报告与可视化图表。无需写代码,无需提提示词,自动识别数据类型、统计特征、异常值与相关性,支持多维度交叉分析和趋势发现,让数据自己说话。Use when 用户上传CSV要求分析数据、需要快速生成数据报告、查找异常值或数据可视化时使用。不适用于实时流数据和超大型数据库分析。
-tags: [数据分析, CSV分析, 数据洞察, 数据可视化, 探索性分析]
+description: CSV洞察挖掘机——丢一个CSV文件,自动生成全面洞察报告与可视化图表。无需写代码,无需提提示词,自动识别数据类型、统计特征、异常值与相关性,支持多维度交叉分析和趋势发现,让数据自己说话。Use
+  when 用户上传CSV要求分析数据、需要快速生成数据报告、查找异常值或数据可视化时使用。不适用于实时流数据和超大型数据库分析。
+tags:
+- 数据分析
+- CSV分析
+- 数据洞察
+- 数据可视化
+- 探索性分析
 tools:
-  - read
-  - exec
-suggested_price: "15.00"
-pricing_tier: "business"
-pricing_rationale: "数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
+pricing_model: per_use
 ---
+
 # CSV洞察挖掘机
 
 自动分析 CSV 文件,无需用户提示即可生成全面洞察。从数据探查到可视化,一键产出分析报告。

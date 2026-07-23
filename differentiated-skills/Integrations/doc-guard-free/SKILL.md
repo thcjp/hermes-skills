@@ -1,22 +1,26 @@
 ---
-slug: "doc-guard-free"
-name: "doc-guard-free"
-version: "1.0.0"
-displayName: "文档护盾免费版"
-summary: "端到端加密 Markdown 文档协作工具，支持创建、查询、同步加密笔记，适合个人隐私场景。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  文档护盾免费版面向个人开发者与隐私敏感用户，提供端到端加密的 Markdown 文档管理能力。核心覆盖文档创建、读取、更新、列表查询与基础搜索五大场景，所有内容在客户端加密后才同步到去中心化存储，确保即使服务端被攻破也无法读取明文。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
+slug: doc-guard-free
+name: doc-guard-free
+version: 1.0.0
+displayName: 文档护盾免费版
+summary: 端到端加密 Markdown 文档协作工具，支持创建、查询、同步加密笔记，适合个人隐私场景。
+license: Proprietary
+edition: free
+description: 文档护盾免费版面向个人开发者与隐私敏感用户，提供端到端加密的 Markdown 文档管理能力。核心覆盖文档创建、读取、更新、列表查询与基础搜索五大场景，所有内容在客户端加密后才同步到去中心化存储，确保即使服务端被攻破也无法读取明文。Use
+  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-  - 集成工具
-  - 安全
-  - 隐私
+- 集成工具
+- 安全
+- 隐私
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 文档护盾（免费版）
 
 本 Skill 提供端到端加密的 Markdown 文档管理能力，让用户与 AI Agent 在不泄露明文的前提下协作。免费版覆盖日常个人使用场景，支持创建、读取、更新、列表、搜索五大核心操作。

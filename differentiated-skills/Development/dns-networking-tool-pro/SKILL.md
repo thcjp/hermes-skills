@@ -32,7 +32,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 DNS网络诊断工具专业版为运维团队提供企业级网络诊断能力。在免费版基础诊断能力之上,专业版新增批量多目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知,满足企业级网络运维需求。
 
 专业版完全兼容免费版的所有诊断命令和配置,运维团队可从免费版无缝升级,已有诊断脚本无需修改即可在专业版中使用。

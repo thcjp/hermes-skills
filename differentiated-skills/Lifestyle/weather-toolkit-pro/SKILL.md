@@ -1,39 +1,55 @@
 ---
-slug: "weather-toolkit-pro"
-name: "weather-toolkit-pro"
-version: "1.0.0"
-displayName: "天气查询工具包专业版"
-summary: "企业级天气数据平台,支持批量查询、历史数据、预警推送与多数据源聚合"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向企业与开发者的高级天气数据工具包,在免费版基础上扩展批量查询、历史数据、预警推送与多数据源聚合能力。核心能力:
+slug: weather-toolkit-pro
+name: weather-toolkit-pro
+version: 1.0.0
+displayName: 天气查询工具包专业版
+summary: 企业级天气数据平台,支持批量查询、历史数据、预警推送与多数据源聚合
+license: Proprietary
+edition: pro
+description: '面向企业与开发者的高级天气数据工具包,在免费版基础上扩展批量查询、历史数据、预警推送与多数据源聚合能力。核心能力:
+
   - 多城市批量天气查询与并发处理
+
   - 历史天气数据查询(过去30天至1年)
+
   - 极端天气预警与主动推送通知
+
   - 多数据源聚合与智能切换
+
   - 自定义天气数据缓存与刷新策略
+
   - 天气数据API封装与SDK集成
+
   - 天气可视化与报表生成
+
   - Webhook回调与定时任务集成
 
+
   适用场景:
+
   - 物流企业的多点天气监控
+
   - 农业气象数据采集与分析
+
   - 旅游平台的天气信息聚合
-  - 户外活动的天气...
+
+  - 户外活动的天气...'
 tags:
-  - Lifestyle
-  - 企业天气
-  - 数据聚合
-  - 预警推送
-  - 批量查询
-  - 历史数据
+- Lifestyle
+- 企业天气
+- 数据聚合
+- 预警推送
+- 批量查询
+- 历史数据
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 天气查询工具包专业版
 
 企业级天气数据平台,在免费版核心能力之上,扩展批量查询、历史数据、预警推送与多数据源聚合能力,适合物流、农业、旅游等需要规模化天气数据的企业与开发者。与免费版数据格式完全兼容,支持平滑升级。

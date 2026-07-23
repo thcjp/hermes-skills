@@ -1,40 +1,58 @@
 ---
-slug: "explain-code-tool-free"
-name: "explain-code-tool-free"
-version: "1.0.0"
-displayName: "代码解释工具免费版"
-summary: "用可视化图表和类比解释代码,帮助开发者快速理解代码逻辑与结构。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向开发者的代码理解辅助工具,通过类比、ASCII图表和逐步遍历帮助理解代码逻辑。核心能力:
+slug: explain-code-tool-free
+name: explain-code-tool-free
+version: 1.0.0
+displayName: 代码解释工具免费版
+summary: 用可视化图表和类比解释代码,帮助开发者快速理解代码逻辑与结构。
+license: Proprietary
+edition: free
+description: '面向开发者的代码理解辅助工具,通过类比、ASCII图表和逐步遍历帮助理解代码逻辑。核心能力:
+
   - 日常类比解释代码概念
+
   - ASCII流程图展示执行逻辑
+
   - 逐行代码遍历解读
+
   - 常见问题与误区提示
+
   - 单文件代码解释
 
+
   适用场景:
+
   - 学习和理解 unfamiliar 代码
+
   - 新成员 onboarding
+
   - 代码审查辅助理解
+
   - 技术学习与教学
 
+
   差异化:
+
   - 免费版聚焦单文件代码解释,直观易懂
+
   - 使用类比和图表降低理解门槛
+
   - 与专业版命令兼容,可平滑升级
 
-  适用关键词: 解释代...
+
+  适用关键词: 解释代...'
 tags:
-  - 开发工具
-  - 代码理解
-  - 技术学习
+- 开发工具
+- 代码理解
+- 技术学习
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 代码解释工具免费版为开发者提供直观的代码理解辅助能力。工具通过日常类比、ASCII可视化图表、逐行遍历解读和常见误区提示,帮助开发者快速理解不熟悉的代码逻辑。
 
 本版本适合学习新代码库、新成员入门和技术学习场景。所有解释均以自然语言配合图表呈现,降低代码理解门槛。

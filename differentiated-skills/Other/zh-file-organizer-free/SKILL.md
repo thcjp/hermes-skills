@@ -1,23 +1,26 @@
 ---
-slug: "zh-file-organizer-free"
-name: "zh-file-organizer-free"
-version: "1.0.0"
-displayName: "中文文件整理器"
-summary: "专为中文用户设计的文件分类整理工具，按图片/文档/代码等类型自动归类，支持中文路径。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  中文文件整理器免费版解决中文用户文件整理的"分类标准不适配"痛点：市面上的文件整理工具多按英文类型分类，中文文件名与中文路径处理常出问题；中文用户的文件类型习惯与英文用户不同（如"演示文稿"而非"presentation"）；整理后的目录名需要中文才能直观识别。核心能力：中文类型分类（图片/文档/代码/视频/音频/压缩包六大类）、中文路径与文件名完美兼容、智能归类（根据文件名关键词辅助分类）、重复文件识别、预览模式先确认后执行
+slug: zh-file-organizer-free
+name: zh-file-organizer-free
+version: 1.0.0
+displayName: 中文文件整理器
+summary: 专为中文用户设计的文件分类整理工具，按图片/文档/代码等类型自动归类，支持中文路径。
+license: Proprietary
+edition: free
+description: 中文文件整理器免费版解决中文用户文件整理的"分类标准不适配"痛点：市面上的文件整理工具多按英文类型分类，中文文件名与中文路径处理常出问题；中文用户的文件类型习惯与英文用户不同（如"演示文稿"而非"presentation"）；整理后的目录名需要中文才能直观识别。核心能力：中文类型分类（图片/文档/代码/视频/音频/压缩包六大类）、中文路径与文件名完美兼容、智能归类（根据文件名关键词辅助分类）、重复文件识别、预览模式先确认后执行
 tags:
-  - 文件整理
-  - 中文分类
-  - 桌面整理
-  - 效率工具
+- 文件整理
+- 中文分类
+- 桌面整理
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 中文文件整理器（免费版）
 
 > **专为中文用户设计。中文类型分类、中文路径兼容、中文目录命名。**

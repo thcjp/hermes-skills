@@ -1,40 +1,57 @@
 ---
-slug: "screen-monitor-tool-pro"
-name: "screen-monitor-tool-pro"
-version: "1.0.0"
-displayName: "屏幕监控工具-专业版"
-summary: "企业级屏幕监控平台,支持实时流共享、多屏支持、AI分析与远程团队协作"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级屏幕监控工具专业版,面向团队与商业应用。核心能力:
+slug: screen-monitor-tool-pro
+name: screen-monitor-tool-pro
+version: 1.0.0
+displayName: 屏幕监控工具-专业版
+summary: 企业级屏幕监控平台,支持实时流共享、多屏支持、AI分析与远程团队协作
+license: Proprietary
+edition: pro
+description: '企业级屏幕监控工具专业版,面向团队与商业应用。核心能力:
+
   - 实时屏幕流共享(WebRTC)
+
   - 多显示器同时监控
+
   - AI 智能内容分析(场景识别/异常检测)
+
   - 远程控制与协助
+
   - 团队屏幕墙与矩阵展示
+
   - 录屏与回放
+
   - 企业级权限与审计
+
   - API 接口与第三方集成
 
+
   适用场景:
+
   - 远程团队协作与指导
+
   - 客服中心屏幕监控
+
   - 教学演示与培训录屏
+
   - 安全合规屏幕审计
 
-  差异化:专业版在免费版基础上扩展实时流共享、多屏支持、AI 分析与企业级监控,兼容免费版截图功能
+
+  差异化:专业版在免费版基础上扩展实时流共享、多屏支持、AI 分析与企业级监控,兼容免费版截图功能'
 tags:
-  - 屏幕监控
-  - 企业级
-  - 实时共享
-  - AI分析
-  - 远程协作
+- 屏幕监控
+- 企业级
+- 实时共享
+- AI分析
+- 远程协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 屏幕监控工具 - 专业版
 
 ## 概述

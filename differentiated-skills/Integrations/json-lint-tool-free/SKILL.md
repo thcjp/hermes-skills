@@ -1,23 +1,27 @@
 ---
-slug: "json-lint-tool-free"
-name: "json-lint-tool-free"
-version: "1.0.0"
-displayName: "JSON校验工具免费版"
-summary: "轻量级JSON语法校验工具，递归扫描工作区.json文件并输出结构化错误报告。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错误。核心能力：递归扫描指定目录的所有。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: json-lint-tool-free
+name: json-lint-tool-free
+version: 1.0.0
+displayName: JSON校验工具免费版
+summary: 轻量级JSON语法校验工具，递归扫描工作区.json文件并输出结构化错误报告。
+license: Proprietary
+edition: free
+description: JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错误。核心能力：递归扫描指定目录的所有。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-  - 集成工具
-  - JSON
-  - 校验
-  - 开发者工具
+- 集成工具
+- JSON
+- 校验
+- 开发者工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # JSON校验工具（免费版）
 
 本工具递归扫描工作区中的`.json`文件，逐个校验语法合法性，输出结构化错误报告，帮助开发者快速定位与修复JSON语法问题。

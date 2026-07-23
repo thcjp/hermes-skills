@@ -1,20 +1,27 @@
 ---
 slug: web-artifact-studio
 name: web-artifact-studio
-version: "1.1.0"
-displayName: "Web工件工作室"
-summary: "React+Tailwind+shadcn构建复杂交互Web工件,状态路由组件全搞定"
+version: 1.1.0
+displayName: Web工件工作室
+summary: React+Tailwind+shadcn构建复杂交互Web工件,状态路由组件全搞定
 license: Proprietary
-description: |-
-  Web工件工作室——用现代前端技术栈(React/TypeScript/Tailwind CSS/shadcn/ui)构建复杂的多组件HTML工件。覆盖状态管理、路由、shadcn/ui 组件组合、打包交付全流程,支持交互式演示、数据仪表盘、表单工作流、组件展示、单页应用原型。触发关键词:Web工件、HTML工件、React组件、Tailwind、shadcn、ui组件、前端工件、交互组件、单页应用、SPA、组件库、Vite
-tags: [Web工件, React组件, 前端开发, 交互应用, shadcn]
+description: Web工件工作室——用现代前端技术栈(React/TypeScript/Tailwind CSS/shadcn/ui)构建复杂的多组件HTML工件。覆盖状态管理、路由、shadcn/ui
+  组件组合、打包交付全流程,支持交互式演示、数据仪表盘、表单工作流、组件展示、单页应用原型。触发关键词:Web工件、HTML工件、React组件、Tailwind、shadcn、ui组件、前端工件、交互组件、单页应用、SPA、组件库、Vite
+tags:
+- Web工件
+- React组件
+- 前端开发
+- 交互应用
+- shadcn
 tools:
-  - read
-  - exec
-suggested_price: "29.00"
-pricing_tier: "premium"
-pricing_rationale: "监控运维类, small市场, enterprise复杂度, rare频次, premium层 → 企业级运维,低频高价值"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 监控运维类, small市场, enterprise复杂度, rare频次, premium层 → 企业级运维,低频高价值
+pricing_model: per_use
 ---
+
 # Web工件工作室
 
 用现代前端技术栈构建复杂的多组件 HTML 工件。当工件需要状态管理、路由或复杂交互时使用,简单单文件 HTML 不在此范畴。支持 Vite 打包与单文件交付两种模式。

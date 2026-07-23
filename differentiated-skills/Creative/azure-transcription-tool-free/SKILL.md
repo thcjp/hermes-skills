@@ -1,35 +1,48 @@
 ---
-slug: "azure-transcription-tool-free"
-name: "azure-transcription-tool-free"
-version: "1.0.0"
-displayName: "Azure语音转写免费版"
-summary: "使用Azure AI进行批量语音转文字，支持基础转写与时间戳，适合个人用户处理音频。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:
+slug: azure-transcription-tool-free
+name: azure-transcription-tool-free
+version: 1.0.0
+displayName: Azure语音转写免费版
+summary: 使用Azure AI进行批量语音转文字，支持基础转写与时间戳，适合个人用户处理音频。
+license: Proprietary
+edition: free
+description: 'Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:
+
   - 批量语音转文字，支持存储在Blob中的音频文件
+
   - 自动语言识别，支持中文、英文等多种语言
+
   - 生成带时间戳的转写结果，便于字幕制作
+
   - 支持WAV、MP3等主流音频格式
+
   - 简单的Python API，几行代码完成转写
 
+
   适用场景:
+
   - 个人播客/会议录音转文字
+
   - 视频字幕生成与翻译
+
   - 语音笔记整理与归档
 
-  差异化:免费版提供核心批量转写能力，适合个人用户处理单个或少量音频文件
+
+  差异化:免费版提供核心批量转写能力，适合个人用户处理单个或少量音频文件'
 tags:
-  - 语音识别
-  - Azure
-  - 转写工具
-  - 个人创作
+- 语音识别
+- Azure
+- 转写工具
+- 个人创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Azure语音转写免费版
 
 ## 概述

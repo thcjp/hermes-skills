@@ -1,21 +1,25 @@
 ---
-slug: "remix-auth-tool-free"
-name: "remix-auth-tool-free"
-version: "1.0.0"
-displayName: "Remix认证工具"
-summary: "为Remix平台快速配置并验证Bearer API Key认证，适用于个人开发者与测试环境。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Remix认证工具（免费版）帮助开发者与运维人员为Remix平台的API调用建立安全的Bearer Token认证链路。核心能力：一键生成并配置Remix API Key、服务端环境变量安全存储指引、基础连通性自检（廉价调用验证）、常见认证失败排查清单。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: remix-auth-tool-free
+name: remix-auth-tool-free
+version: 1.0.0
+displayName: Remix认证工具
+summary: 为Remix平台快速配置并验证Bearer API Key认证，适用于个人开发者与测试环境。
+license: Proprietary
+edition: free
+description: Remix认证工具（免费版）帮助开发者与运维人员为Remix平台的API调用建立安全的Bearer Token认证链路。核心能力：一键生成并配置Remix
+  API Key、服务端环境变量安全存储指引、基础连通性自检（廉价调用验证）、常见认证失败排查清单。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-  - 集成工具
-  - 认证授权
+- 集成工具
+- 认证授权
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Remix认证工具（免费版）
 
 ## 概述

@@ -1,36 +1,49 @@
 ---
-slug: "web-dev-toolkit-free"
-name: "web-dev-toolkit-free"
-version: "1.0.0"
-displayName: "Web开发工具集(免费版)"
-summary: "面向个人开发者的Web开发辅助工具,覆盖HTML/CSS、JavaScript模式、框架选择与部署基础。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Web开发工具集免费版为个人开发者提供Web开发全流程辅助,涵盖HTML/CSS问题、JavaScript模式、框架选择、性能与SEO基础与部署基础。核心能力:
+slug: web-dev-toolkit-free
+name: web-dev-toolkit-free
+version: 1.0.0
+displayName: Web开发工具集(免费版)
+summary: 面向个人开发者的Web开发辅助工具,覆盖HTML/CSS、JavaScript模式、框架选择与部署基础。
+license: Proprietary
+edition: free
+description: 'Web开发工具集免费版为个人开发者提供Web开发全流程辅助,涵盖HTML/CSS问题、JavaScript模式、框架选择、性能与SEO基础与部署基础。核心能力:
+
   - HTML/CSS问题诊断与修复
+
   - JavaScript常见模式指导
+
   - 框架选择决策树(静态/SSR/SPA)
+
   - 响应式与可访问性基础
+
   - 部署到Vercel/Netlify/VPS的基础流程
 
+
   适用场景:
+
   - 个人Web项目开发与调试
+
   - 学习Web开发基础概念
+
   - 快速选择技术栈与部署方案
 
-  差异化:免费版聚焦个人开发者的基础Web开发需求
+
+  差异化:免费版聚焦个人开发者的基础Web开发需求'
 tags:
-  - Web开发
-  - HTML
-  - CSS
-  - JavaScript
-  - 个人开发
+- Web开发
+- HTML
+- CSS
+- JavaScript
+- 个人开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Web 开发工具集(免费版)
 
 ## 概述

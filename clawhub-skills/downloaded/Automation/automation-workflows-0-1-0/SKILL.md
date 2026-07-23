@@ -1,19 +1,7 @@
 ---
-slug: automation-workflows-0-1-0
-name: automation-workflows-0-1-0
-version: "1.0.0"
-displayName: Automation Workflows
-summary: This skill is an informational guide for planning no-code business automations
-  and does not conta...
-license: MIT
-description: |-
-  This skill is an informational guide for planning no-code business automations
-  and does not conta。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
-tags:
-- Automation
-tools:
-  - - read
-- exec
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
 
 # Automation Workflows 0.1.0

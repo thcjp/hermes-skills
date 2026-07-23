@@ -1,26 +1,33 @@
 ---
-slug: "figma-tw-designer-free"
-name: "figma-tw-designer-free"
-version: "1.0.0"
-displayName: "Figma设计助手(免费版)"
-summary: "读取Figma文件结构、导出图层、查看评论的免费体验版，适合个人设计稿查阅"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Figma设计助手(免费版)是一款面向设计师与开发协作的Figma文件交互工具，通过REST API实现文件结构读取、图层导出与评论查看等核心能力。核心能力：
+slug: figma-tw-designer-free
+name: figma-tw-designer-free
+version: 1.0.0
+displayName: Figma设计助手(免费版)
+summary: 读取Figma文件结构、导出图层、查看评论的免费体验版，适合个人设计稿查阅
+license: Proprietary
+edition: free
+description: 'Figma设计助手(免费版)是一款面向设计师与开发协作的Figma文件交互工具，通过REST API实现文件结构读取、图层导出与评论查看等核心能力。核心能力：
+
   - 读取Figma文件的页面、画板、图层层级结构
+
   - 按需导出指定图层为PNG/JPG/SVG/PDF格式
+
   - 查看文件最近评论，支持协作沟通追踪
-  - 提供安全可靠的Token管理方式...
+
+  - 提供安全可靠的Token管理方式...'
 tags:
-  - 集成工具
-  - 设计协作
-  - Figma
+- 集成工具
+- 设计协作
+- Figma
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Figma设计助手(免费版)
 
 本工具帮助用户通过Figma REST API与设计文件交互，实现结构读取、图层导出与评论查看等核心功能。免费版聚焦个人使用场景，提供完整的查阅与单次导出能力。

@@ -1,36 +1,49 @@
 ---
-slug: "gif-whatsapp-tool-free"
-name: "gif-whatsapp-tool-free"
-version: "1.0.0"
-displayName: "WhatsApp表情搜索"
-summary: "WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用。核心能力:
+slug: gif-whatsapp-tool-free
+name: gif-whatsapp-tool-free
+version: 1.0.0
+displayName: WhatsApp表情搜索
+summary: WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用。
+license: Proprietary
+edition: free
+description: 'WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用。核心能力:
+
   - 搜索 Tenor 和 Giphy 平台的 GIF 表情
+
   - 自动将 GIF 转换为 WhatsApp 兼容的 MP4 格式
+
   - 一键发送到指定 WhatsApp 联系人
+
   - 支持中英文关键词搜索
 
+
   适用场景:
+
   - 个人日常 WhatsApp 聊天表情发送
+
   - 节日祝福与庆祝场景
+
   - 情感表达与趣味互动
 
+
   差异化:
-  - 免费版聚焦单次搜索发送...
+
+  - 免费版聚焦单次搜索发送...'
 tags:
-  - WhatsApp
-  - GIF
-  - 多媒体
-  - 聊天工具
-  - 表情搜索
+- WhatsApp
+- GIF
+- 多媒体
+- 聊天工具
+- 表情搜索
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # WhatsApp 表情搜索（免费版）
 
 ## 概述

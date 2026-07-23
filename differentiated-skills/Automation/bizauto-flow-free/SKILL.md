@@ -1,23 +1,27 @@
 ---
-slug: "bizauto-flow-free"
-name: "bizauto-flow-free"
-version: "1.0.0"
-displayName: "业务自动化师(免费版)"
-summary: "识别高ROI业务流程并设计自动化工作流，含审计、流程打分、定时任务实现，快速释放团队产能。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  业务自动化师免费版帮助你将重复性业务流程转化为可执行的自动化工作流。采用"审计-设计-实现-监控"四阶段方法论，让AI Agent成为你的业务自动化架构师，从识别瓶颈到落地实现一站式解决。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+slug: bizauto-flow-free
+name: bizauto-flow-free
+version: 1.0.0
+displayName: 业务自动化师(免费版)
+summary: 识别高ROI业务流程并设计自动化工作流，含审计、流程打分、定时任务实现，快速释放团队产能。
+license: Proprietary
+edition: free
+description: 业务自动化师免费版帮助你将重复性业务流程转化为可执行的自动化工作流。采用"审计-设计-实现-监控"四阶段方法论，让AI Agent成为你的业务自动化架构师，从识别瓶颈到落地实现一站式解决。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-  - 业务自动化
-  - 工作流设计
-  - 流程审计
-  - 任务调度
+- 业务自动化
+- 工作流设计
+- 流程审计
+- 任务调度
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 业务自动化师（免费版）
 
 > **让AI Agent成为你的业务自动化架构师。从识别瓶颈到落地实现，四步释放团队产能。**

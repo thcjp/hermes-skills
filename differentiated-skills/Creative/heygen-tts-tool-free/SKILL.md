@@ -1,27 +1,33 @@
 ---
-slug: "heygen-tts-tool-free"
-name: "heygen-tts-tool-free"
-version: "1.0.0"
-displayName: "HeyGen TTS免费版"
-summary: "基于HeyGen Starfish模型的文字转语音工具,支持多语言语音合成与基础语速控制,适合个人使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的 HeyGen 文字转语音工具(免费版)。核心能力:
+slug: heygen-tts-tool-free
+name: heygen-tts-tool-free
+version: 1.0.0
+displayName: HeyGen TTS免费版
+summary: 基于HeyGen Starfish模型的文字转语音工具,支持多语言语音合成与基础语速控制,适合个人使用。
+license: Proprietary
+edition: free
+description: '面向个人用户的 HeyGen 文字转语音工具(免费版)。核心能力:
+
   - 基于 HeyGen Starfish TTS 模型的语音合成
+
   - 支持 40+ 语言的语音选择
-  - 基础语速控制(0。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
+
+  - 基础语速控制(0。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。'
 tags:
-  - 创意设计
-  - 语音合成
-  - TTS
-  - HeyGen
-  - 多语言
+- 创意设计
+- 语音合成
+- TTS
+- HeyGen
+- 多语言
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # HeyGen TTS 工具 - 免费版
 
 ## 概述

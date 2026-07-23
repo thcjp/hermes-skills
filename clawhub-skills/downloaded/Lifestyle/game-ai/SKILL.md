@@ -17,7 +17,11 @@ tools:
 # Game AI Systems
 ## AI 架构选择
 ### 架构对比
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 ```yaml
 有限状态机 (FSM):
   优点: 简单、直观、易于调试

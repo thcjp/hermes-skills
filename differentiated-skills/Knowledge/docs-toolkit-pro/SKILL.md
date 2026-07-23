@@ -1,31 +1,38 @@
 ---
-slug: "docs-toolkit-pro"
-name: "docs-toolkit-pro"
-version: "1.0.0"
-displayName: "文档导航工具包（专业版）"
-summary: "决策树导航的文档专家系统，支持站点地图、关键词搜索、全文索引与版本追踪。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  文档导航工具包 - （专业版）
+slug: docs-toolkit-pro
+name: docs-toolkit-pro
+version: 1.0.0
+displayName: 文档导航工具包（专业版）
+summary: 决策树导航的文档专家系统，支持站点地图、关键词搜索、全文索引与版本追踪。
+license: Proprietary
+edition: pro
+description: '文档导航工具包 - （专业版）
+
 
   核心能力: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation
+
+  适用关键词: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation'
 tags:
-  - 文档管理
-  - 知识导航
-  - 全文搜索
-  - 版本追踪
+- 文档管理
+- 知识导航
+- 全文搜索
+- 版本追踪
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 文档导航工具包（专业版）
 
 ## 概述

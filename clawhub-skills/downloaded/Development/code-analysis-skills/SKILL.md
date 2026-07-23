@@ -28,7 +28,11 @@ tags:
 tools:
   - - read
 - exec
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 # Git-History Reflection Skill
 
 📦 **GitHub**: [https://[SkillHub仓库]](https://[SkillHub仓库])

@@ -1,22 +1,26 @@
 ---
-slug: "encoding-toolkit-free"
-name: "encoding-toolkit-free"
-version: "1.0.0"
-displayName: "编解码工具箱免费版"
-summary: "覆盖Base64、URL、Hex、Unicode、JWT等主流编解码场景，命令行与代码示例兼备，适合日常开发调试。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  编解码工具箱免费版面向开发者与运维人员，提供主流数据格式的快速编码、解码与转换能力。核心覆盖 Base64、URL 编码、Hex、Unicode、JWT 解析与哈希校验六大场景，配套命令行与多语言代码片段，帮助用户在 60 秒内完成常见任务。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: encoding-toolkit-free
+name: encoding-toolkit-free
+version: 1.0.0
+displayName: 编解码工具箱免费版
+summary: 覆盖Base64、URL、Hex、Unicode、JWT等主流编解码场景，命令行与代码示例兼备，适合日常开发调试。
+license: Proprietary
+edition: free
+description: 编解码工具箱免费版面向开发者与运维人员，提供主流数据格式的快速编码、解码与转换能力。核心覆盖 Base64、URL 编码、Hex、Unicode、JWT
+  解析与哈希校验六大场景，配套命令行与多语言代码片段，帮助用户在 60 秒内完成常见任务。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-  - 集成工具
-  - 编解码
-  - 开发者工具
+- 集成工具
+- 编解码
+- 开发者工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 编解码工具箱（免费版）
 
 本 Skill 聚焦日常开发与运维场景下最高频的编解码任务，提供"诊断—选择—执行"三段式工作流，避免用户在多个工具间反复切换。免费版覆盖六大主流场景，满足绝大多数日常调试需求。

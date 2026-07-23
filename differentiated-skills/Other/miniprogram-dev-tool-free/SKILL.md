@@ -1,38 +1,52 @@
 ---
-slug: "miniprogram-dev-tool-free"
-name: "miniprogram-dev-tool-free"
-version: "1.0.0"
-displayName: "小程序开发工具"
-summary: "面向个人开发者的微信小程序开发规范与避坑工具。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的微信小程序开发规范与避坑工具。
+slug: miniprogram-dev-tool-free
+name: miniprogram-dev-tool-free
+version: 1.0.0
+displayName: 小程序开发工具
+summary: 面向个人开发者的微信小程序开发规范与避坑工具。
+license: Proprietary
+edition: free
+description: '面向个人开发者的微信小程序开发规范与避坑工具。
+
 
   核心能力:
+
   - 页面/组件结构与配置规范
+
   - 数据绑定、事件、生命周期避坑
+
   - WXSS 样式与 wx:key 性能要点
+
   - 单项目本地开发与预览
 
+
   适用场景:
+
   - 个人小程序项目开发
+
   - 单页面/组件规范核对
+
   - 本地预览与基础调试
+
 
   差异化: 免费版聚焦个人单项目开发与避坑，提供规范速查，零成本使用。
 
-  适用关键词: 小程序, 微信小程序, wxml, wxss, wxml 规范, wx:key, 生命周期, miniprogram, wechat
+
+  适用关键词: 小程序, 微信小程序, wxml, wxss, wxml 规范, wx:key, 生命周期, miniprogram, wechat'
 tags:
-  - 小程序
-  - 前端开发
-  - 个人效率
-  - 其他工具
+- 小程序
+- 前端开发
+- 个人效率
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 小程序开发工具（免费版）
 
 ## 概述

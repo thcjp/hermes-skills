@@ -1,19 +1,7 @@
 ---
-slug: git-workflows
-name: git-workflows
-version: "1.0.0"
-displayName: Git Workflows
-summary: Advanced git operations beyond add/commit/push. Use when rebasing, bisecting
-  bugs, using worktree...
-license: MIT
-description: |-
-  Advanced git operations beyond add/commit/push。Use when rebasing, bisecting
-  bugs, using worktree。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Development
-tools:
-  - - read
-- exec
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
 
 # Git Workflows

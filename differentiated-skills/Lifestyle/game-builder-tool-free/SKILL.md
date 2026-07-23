@@ -1,28 +1,35 @@
 ---
-slug: "game-builder-tool-free"
-name: "game-builder-tool-free"
-version: "1.0.0"
-displayName: "3D游戏构建器免费版"
-summary: "用自然语言生成可玩的浏览器3D小游戏,支持迭代修改与本地预览"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者与游戏爱好者的 3D 浏览器游戏生成工具。
+slug: game-builder-tool-free
+name: game-builder-tool-free
+version: 1.0.0
+displayName: 3D游戏构建器免费版
+summary: 用自然语言生成可玩的浏览器3D小游戏,支持迭代修改与本地预览
+license: Proprietary
+edition: free
+description: '面向个人开发者与游戏爱好者的 3D 浏览器游戏生成工具。
+
   核心能力: 自然语言描述生成游戏、Three.js 单文件输出、迭代修改、本地预览
+
   适用场景: Game Jam 快速原型、学习 Three.js、娱乐小游戏制作、创意展示
+
   差异化: 免费版支持单文件游戏生成与基础迭代,适合个人创作者与原型验证
-  适用关键词: 3D游戏生成, Three.js, 浏览器游戏, 游戏原型, game jam, 自然语言生成
+
+  适用关键词: 3D游戏生成, Three.js, 浏览器游戏, 游戏原型, game jam, 自然语言生成'
 tags:
-  - 游戏开发
-  - Three.js
-  - 创意工具
-  - 浏览器游戏
-  - 原型设计
+- 游戏开发
+- Three.js
+- 创意工具
+- 浏览器游戏
+- 原型设计
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 3D 游戏构建器 (免费版)
 
 ## 概述

@@ -1,39 +1,55 @@
 ---
-slug: "tardis-tool-free"
-name: "tardis-tool-free"
-version: "1.0.0"
-displayName: "生活事件追踪-免费版"
-summary: "个人生活事件追踪工具,支持三种模式记录与回顾,适合个人时间管理"
-license: "Proprietary"
-edition: "free"
-description: |-
-  个人生活事件追踪工具免费版,面向个人用户的时间记录与回顾。
+slug: tardis-tool-free
+name: tardis-tool-free
+version: 1.0.0
+displayName: 生活事件追踪-免费版
+summary: 个人生活事件追踪工具,支持三种模式记录与回顾,适合个人时间管理
+license: Proprietary
+edition: free
+description: '个人生活事件追踪工具免费版,面向个人用户的时间记录与回顾。
+
 
   核心能力:
+
   - 三种记录模式(简单/详细/故事)
+
   - 事件分类与标签
+
   - 时间线回顾
+
   - 关键词搜索
+
   - 本地数据存储
+
   - 导出 Markdown 报告
 
+
   适用场景:
+
   - 个人日记与事件记录
+
   - 工作里程碑追踪
+
   - 生活回顾与总结
+
 
   差异化:免费版提供基础追踪能力。PRO版扩展数据分析、多维度回顾与团队协作。
 
-  适用关键词: 事件追踪, 时间线, 生活记录, 日记, 回顾, milestone, timeline
+
+  适用关键词: 事件追踪, 时间线, 生活记录, 日记, 回顾, milestone, timeline'
 tags:
-  - 事件追踪
-  - 时间管理
-  - 个人记录
+- 事件追踪
+- 时间管理
+- 个人记录
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 生活事件追踪 - 免费版
 
 ## 概述

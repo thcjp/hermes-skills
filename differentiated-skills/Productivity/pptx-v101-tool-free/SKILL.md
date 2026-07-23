@@ -1,29 +1,35 @@
 ---
-slug: "pptx-v101-tool-free"
-name: "pptx-v101-tool-free"
-version: "1.0.0"
-displayName: "PPT 工具 v1.0 基础版"
-summary: "创建与编辑 PowerPoint 演示文稿,注重布局保真与内容质量的双重保障"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 文档处理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: pptx-v101-tool-free
+name: pptx-v101-tool-free
+version: 1.0.0
+displayName: PPT 工具 v1.0 基础版
+summary: 创建与编辑 PowerPoint 演示文稿,注重布局保真与内容质量的双重保障
+license: Proprietary
+edition: free
+description: '核心能力: 文档处理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: powerpoint, pptx, 演示文稿, 幻灯片, 布局, 模板, v1.0
+
+  适用关键词: powerpoint, pptx, 演示文稿, 幻灯片, 布局, 模板, v1.0'
 tags:
-  - PowerPoint
-  - PPTX
-  - v1.0
-  - 演示文稿
+- PowerPoint
+- PPTX
+- v1.0
+- 演示文稿
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # PPT 工具 v1.0 基础版
 
 ## 概述

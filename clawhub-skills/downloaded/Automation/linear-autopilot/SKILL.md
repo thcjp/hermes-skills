@@ -1,19 +1,7 @@
 ---
-slug: linear-autopilot
-name: linear-autopilot
-version: "1.0.2"
-displayName: Linear Autopilot
-summary: Automate Linear task processing with Discord notifications and git sync.
-  Use when setting up a ka...
-license: MIT
-description: |-
-  Automate Linear task processing with Discord notifications and git sync。Use when setting up a ka。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Automation
-- Creative
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Linear Autopilot

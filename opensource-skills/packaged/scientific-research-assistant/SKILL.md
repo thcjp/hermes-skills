@@ -1,20 +1,27 @@
 ---
 slug: scientific-research-assistant
 name: scientific-research-assistant
-version: "1.1.0"
-displayName: "科研助手"
-summary: "134个科学技能库,从文献检索到论文写作,科研全流程AI辅助"
+version: 1.1.0
+displayName: 科研助手
+summary: 134个科学技能库,从文献检索到论文写作,科研全流程AI辅助
 license: Proprietary
-description: |-
-  科研助手基于134个科学技能库,提供从文献检索到论文发表的全流程科研支持,核心功能包括文献检索与综述(PubMed/Google Scholar/arXiv)、数据分析与可视化(统计/生信/绘图)、药物发现流程(靶点/筛选/对接/ADMET)、论文写作与发表(IMRaD/投稿/Cover Letter)、基金申请(假设/计划/预算/影响陈述)
-tags: [科研辅助, 文献检索, 生物信息学, 论文写作, 数据分析]
+description: 科研助手基于134个科学技能库,提供从文献检索到论文发表的全流程科研支持,核心功能包括文献检索与综述(PubMed/Google Scholar/arXiv)、数据分析与可视化(统计/生信/绘图)、药物发现流程(靶点/筛选/对接/ADMET)、论文写作与发表(IMRaD/投稿/Cover
+  Letter)、基金申请(假设/计划/预算/影响陈述)
+tags:
+- 科研辅助
+- 文献检索
+- 生物信息学
+- 论文写作
+- 数据分析
 tools:
-  - read
-  - exec
-suggested_price: "15.00"
-pricing_tier: "business"
-pricing_rationale: "数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
+pricing_model: per_use
 ---
+
 # 科研助手
 
 基于 134 个科学技能库,提供从文献检索到论文发表的全流程科研支持。从生物信息学到药物发现,从数据分析到论文写作,多领域跨学科研究助手。

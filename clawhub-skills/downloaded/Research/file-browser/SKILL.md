@@ -1,17 +1,7 @@
 ---
-slug: file-browser
-name: file-browser
-version: "1.0.0"
-displayName: file-browser
-summary: Read-only file browsing and reading in the OpenClaw workspace (/home/alfred/.openclaw/workspace)....
-license: MIT-0
-description: |-
-  Read-only file browsing and reading in the OpenClaw workspace (/home/alfred/。openclaw/workspace)。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Research
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # file-browser

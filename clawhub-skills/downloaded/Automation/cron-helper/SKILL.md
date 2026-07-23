@@ -1,19 +1,7 @@
 ---
-slug: cron-helper
-name: cron-helper
-version: "1.0.0"
-displayName: Cron Helper
-summary: Schedule and manage recurring tasks for your agent. Create cron jobs, manage
-  timers, and automate...
-license: MIT
-description: |-
-  Schedule and manage recurring tasks for your agent。Create cron jobs,
-  manage timers, and automate。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Automation
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Cron Helper

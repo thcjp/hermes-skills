@@ -1,32 +1,39 @@
 ---
-slug: "context-compressor-pro"
-name: "context-compressor-pro"
-version: "1.0.0"
-displayName: "Context Compressor"
-summary: "智能压缩对话日志，含批量处理、智能分类、增量压缩、质量评分、自定义模板，Token成本降低70%+。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  上下文压缩器专业版是Agent记忆管理的终极压缩方案。在免费版基础上解锁批量压缩自动化、智能分类归档（决策/教训/待办/事实/偏好五类）、增量压缩（仅处理新增内容）、压缩质量评分（信息保留率量化评估）、自定义输出模板、压缩历史追踪、多语言混合日志优化七大高级功能。
+slug: context-compressor-pro
+name: context-compressor-pro
+version: 1.0.0
+displayName: Context Compressor
+summary: 智能压缩对话日志，含批量处理、智能分类、增量压缩、质量评分、自定义模板，Token成本降低70%+。
+license: Proprietary
+edition: pro
+description: '上下文压缩器专业版是Agent记忆管理的终极压缩方案。在免费版基础上解锁批量压缩自动化、智能分类归档（决策/教训/待办/事实/偏好五类）、增量压缩（仅处理新增内容）、压缩质量评分（信息保留率量化评估）、自定义输出模板、压缩历史追踪、多语言混合日志优化七大高级功能。
+
 
   核心能力：批量压缩一键执行、智能分类压缩、增量压缩避免重复处理、压缩质量评分（0-100分）、自定义模板引擎、压缩历史日志、中英文混合识别优化。实现4-8倍压缩比且信息保留率>95%，Token成本降低70%以上。
 
+
   适用场景：企业级Agent记忆管理、团队协作日志归档、长期项目知识沉淀、合规审计日志压缩、多语言团队协作、大规模记忆库维护、Token预算精细控制。
+
 
   差异化：完全中文化表达，针对企业级场景重新设计压缩策略，新增七大高级功能、多角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整压缩能力与优先支持。保留原始MIT版权声明。
 
-  适用关键词：上下文压缩、批量压缩、智能分类、增量压缩、压缩质量评分、Token优化、企业记忆管理
+
+  适用关键词：上下文压缩、批量压缩、智能分类、增量压缩、压缩质量评分、Token优化、企业记忆管理'
 tags:
-  - 上下文压缩
-  - 记忆管理
-  - Token优化
-  - 企业级
-  - 批量处理
+- 上下文压缩
+- 记忆管理
+- Token优化
+- 企业级
+- 批量处理
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 上下文压缩器（专业版）
 
 > **Agent记忆管理的终极压缩方案。批量压缩、智能分类、质量评分，Token成本降低70%+。**

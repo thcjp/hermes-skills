@@ -1,35 +1,48 @@
 ---
-slug: "token-manager-tool-pro"
-name: "token-manager-tool-pro"
-version: "1.0.0"
-displayName: "Token用量管理专业版"
-summary: "定时余额监控、跨会话分析、团队用量汇总与自动告警，适合团队与企业级LLM成本治理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Token用量管理工具专业版，面向团队与企业的高阶LLM成本治理平台。核心能力:
+slug: token-manager-tool-pro
+name: token-manager-tool-pro
+version: 1.0.0
+displayName: Token用量管理专业版
+summary: 定时余额监控、跨会话分析、团队用量汇总与自动告警，适合团队与企业级LLM成本治理。
+license: Proprietary
+edition: pro
+description: 'Token用量管理工具专业版，面向团队与企业的高阶LLM成本治理平台。核心能力:
+
   - 定时余额监控与自动告警（cron 调度）
+
   - 跨会话用量追踪与每日/每周报告
+
   - 多账号统一管理与团队用量汇总
+
   - 智能省钱建议与模型切换推荐
+
   - 工具集成注册与命令行直调
 
+
   适用场景:
+
   - 团队多人协作的LLM成本治理
+
   - 企业级API预算监控与告警
+
   - 跨项目的用量分析与优化决策
 
-  差异化: 专业版在免费版核心能力之上扩展定时监控与跨会话分析，新增多账号管理、团队汇总、自动告警等企业级能力，并与免费版命令兼容
+
+  差异化: 专业版在免费版核心能力之上扩展定时监控与跨会话分析，新增多账号管理、团队汇总、自动告警等企业级能力，并与免费版命令兼容'
 tags:
-  - Token管理
-  - 成本治理
-  - 团队监控
-  - 专业版
+- Token管理
+- 成本治理
+- 团队监控
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Token用量管理工具（专业版）
 
 ## 概述

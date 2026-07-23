@@ -1,42 +1,61 @@
 ---
-slug: "security-scanner-tool-free"
-name: "security-scanner-tool-free"
-version: "1.0.0"
-displayName: "安全扫描器(免费版)"
-summary: "自动化安全扫描工具包,含端口扫描、漏洞检测、SSL分析,适合安全测试与评估"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力:
+slug: security-scanner-tool-free
+name: security-scanner-tool-free
+version: 1.0.0
+displayName: 安全扫描器(免费版)
+summary: 自动化安全扫描工具包,含端口扫描、漏洞检测、SSL分析,适合安全测试与评估
+license: Proprietary
+edition: free
+description: '核心能力:
+
   - 端口扫描与服务识别(nmap)
+
   - 漏洞模板扫描(nuclei)
+
   - SSL/TLS配置分析(sslscan)
+
   - Web服务器漏洞检测(nikto)
+
   - 扫描报告自动生成
 
+
   适用场景:
+
   - 安全评估快速扫描
+
   - 渗透测试前期侦察
+
   - SSL证书合规检查
+
   - 基础漏洞发现
 
+
   差异化:
+
   - 多工具集成,一键多种扫描
+
   - 按场景分类的扫描模板
+
   - Markdown格式扫描报告
+
   - 包含道德使用准则
 
-  适用关键词: 安全扫描, 端口扫描, 漏洞检测, SSL检查, nmap,...
+
+  适用关键词: 安全扫描, 端口扫描, 漏洞检测, SSL检查, nmap,...'
 tags:
-  - 安全
-  - 漏洞扫描
-  - 渗透测试
-  - 网络安全
+- 安全
+- 漏洞扫描
+- 渗透测试
+- 网络安全
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 安全扫描器(免费版)
 
 ## 概述

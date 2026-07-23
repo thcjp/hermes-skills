@@ -1,19 +1,7 @@
 ---
-slug: smart-memory-manager
-name: smart-memory-manager
-version: "1.0.1"
-displayName: smart-memory-manager
-summary: Intelligent memory management for agents with short/long-term memory layering,
-  semantic search, a...
-license: MIT-0
-description: |-
-  Intelligent memory management for agents with short/long-term memory
-  layering, semantic search, a。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
-tags:
-- Agents
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # smart-memory-manager

@@ -1,34 +1,45 @@
 ---
-slug: "aws-cloud-inspector-pro"
-name: "aws-cloud-inspector-pro"
-version: "1.0.0"
-displayName: "AWS云巡检专业版"
-summary: "完整的AWS云巡检能力，含跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理，面向团队与企业云治理场景。"
-license: "Proprietary"
-description: |-
-  AWS云巡检专业版（aws-cloud-inspector-pro）面向团队与企业云治理场景，在免费版只读巡检能力之上，解锁跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理三大高级能力。它让企业能够在统一会话中完成安全态势扫描、成本分摊分析与资源变更追踪回滚。
+slug: aws-cloud-inspector-pro
+name: aws-cloud-inspector-pro
+version: 1.0.0
+displayName: AWS云巡检专业版
+summary: 完整的AWS云巡检能力，含跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理，面向团队与企业云治理场景。
+license: Proprietary
+description: 'AWS云巡检专业版（aws-cloud-inspector-pro）面向团队与企业云治理场景，在免费版只读巡检能力之上，解锁跨服务安全审计、Cost
+  Explorer成本分析与CloudTrail变更管理三大高级能力。它让企业能够在统一会话中完成安全态势扫描、成本分摊分析与资源变更追踪回滚。
 
-  核心能力：AWS身份识别、跨服务资源清点、CloudWatch健康检查与日志查询、只读安全核查、跨服务安全态势扫描（CIS Benchmark对标）、AWS Config合规基线检查、Cost Explorer深度成本查询、按标签成本分摊、预算告警配置、CloudTrail资源变更追踪、变更回滚与审批流、Region/Profile自动适配、`--dry-run`预演机制、命名profile与凭证隔离、企业级场景指南与多角色用例。
+
+  核心能力：AWS身份识别、跨服务资源清点、CloudWatch健康检查与日志查询、只读安全核查、跨服务安全态势扫描（CIS Benchmark对标）、AWS Config合规基线检查、Cost
+  Explorer深度成本查询、按标签成本分摊、预算告警配置、CloudTrail资源变更追踪、变更回滚与审批流、Region/Profile自动适配、`--dry-run`预演机制、命名profile与凭证隔离、企业级场景指南与多角色用例。
+
 
   适用场景：企业云安全态势管理、合规审计（CIS/SOC2/PCI-DSS）、多云账号成本治理、按团队/项目成本分摊、资源变更追踪与责任追溯、变更回滚与应急响应、云资源合规基线持续监控、上线前安全评审、季度云成本复盘、CloudTrail取证分析、团队级云巡检流程标准化。
 
-  差异化：相比免费版与通用AWS助手，专业版提供三大独有能力：(1) 跨服务安全审计，基于AWS Config与CIS Benchmark实现持续合规监控；(2) Cost Explorer深度成本分析，支持按标签/团队/项目多维分摊与预算告警；(3) CloudTrail变更管理，追踪所有资源变更并支持回滚与审批流。配合企业级场景指南（4角色×3+场景）、完整FAQ（10+问）与故障排查表，覆盖从日常巡检到应急响应的全路径。
+
+  差异化：相比免费版与通用AWS助手，专业版提供三大独有能力：(1) 跨服务安全审计，基于AWS Config与CIS Benchmark实现持续合规监控；(2)
+  Cost Explorer深度成本分析，支持按标签/团队/项目多维分摊与预算告警；(3) CloudTrail变更管理，追踪所有资源变更并支持回滚与审批流。配合企业级场景指南（4角色×3+场景）、完整FAQ（10+问）与故障排查表，覆盖从日常巡检到应急响应的全路径。
+
 
   适用关键词：aws安全审计、成本分析、变更管理、cloudtrail、cost explorer、aws config、cis benchmark、合规审计、云治理、企业云巡检、aws云巡检专业版
 
-  版本定位：收费专业版，定价¥49.9/月（行业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-cloud-inspector-free。
+
+  版本定位：收费专业版，定价¥49.9/月（行业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-cloud-inspector-free。'
 tags:
-  - AWS巡检
-  - 安全审计
-  - 成本分析
-  - 变更管理
-  - 企业工具
+- AWS巡检
+- 安全审计
+- 成本分析
+- 变更管理
+- 企业工具
 tools:
-  - read
-  - exec
-edition: "pro"
-homepage: "https://skillhub.cn"
+- read
+- exec
+edition: pro
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # AWS云巡检专业版（aws-cloud-inspector-pro）
 
 本Skill在免费版只读巡检能力之上，解锁**安全审计、成本分析、变更管理**三大高级能力，面向团队与企业云治理场景。

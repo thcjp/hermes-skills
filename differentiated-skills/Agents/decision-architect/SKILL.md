@@ -15,7 +15,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 决策架构师（Decision Architect）
 
 **不替你做决定，但帮你做更好的决定。** 通过结构化框架匹配、12类认知偏差检测、风险画像学习、强制复盘闭环，让每次决策都留下可复用的经验。

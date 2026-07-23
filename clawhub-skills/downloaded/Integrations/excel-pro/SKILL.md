@@ -1,18 +1,7 @@
 ---
-slug: excel-pro
-name: excel-pro
-version: "2.0.0"
-displayName: Excel
-summary: The Spreadsheet Operator. Not a tutorial, but a diagnostic engine. It identifies
-  the best path—fo...
-license: MIT-0
-description: |-
-  The Spreadsheet Operator。Not a tutorial, but a diagnostic engine。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。
-tags:
-- Integrations
-tools:
-  - - read
-- exec
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
 
 # Excel

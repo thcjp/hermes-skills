@@ -19,7 +19,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 视频帧提取工具 - 专业版
 
 ## 概述

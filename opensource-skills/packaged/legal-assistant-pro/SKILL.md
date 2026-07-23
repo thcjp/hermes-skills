@@ -1,20 +1,26 @@
 ---
 slug: legal-doc-reviewer
 name: legal-assistant-pro
-version: "1.1.0"
-displayName: "法律助手Pro"
-summary: "NDA审查到引文核验,法律团队的专业AI辅助,省下昂贵外部律师费"
+version: 1.1.0
+displayName: 法律助手Pro
+summary: NDA审查到引文核验,法律团队的专业AI辅助,省下昂贵外部律师费
 license: Proprietary
-description: |-
-  法律助手Pro为法律团队提供专业级AI辅助,核心功能包括NDA分诊审查、多方合同版本对比、法律引文核验、会议简报生成和状态报告合成。适用于合同审查、法律研究、法务合规场景,让没有法务团队的小公司也能高效处理法律事务。触发关键词:法律助手、合同审查、NDA审查、版本对比、引文核验、法务、合规、法律文书。
-tags: [法律助手, 合同审查, NDA审查, 法务合规, 法律文书]
+description: 法律助手Pro为法律团队提供专业级AI辅助,核心功能包括NDA分诊审查、多方合同版本对比、法律引文核验、会议简报生成和状态报告合成。适用于合同审查、法律研究、法务合规场景,让没有法务团队的小公司也能高效处理法律事务。触发关键词:法律助手、合同审查、NDA审查、版本对比、引文核验、法务、合规、法律文书。
+tags:
+- 法律助手
+- 合同审查
+- NDA审查
+- 法务合规
+- 法律文书
 tools:
-  - read
-  - exec
-suggested_price: "15.00"
-pricing_tier: "business"
-pricing_rationale: "AI模型类, small市场, complex复杂度, monthly频次, business层 → AI辅助工具,中等频次"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: AI模型类, small市场, complex复杂度, monthly频次, business层 → AI辅助工具,中等频次
+pricing_model: per_use
 ---
+
 # 法律助手Pro
 
 为法律团队提供专业辅助。从合同审查到引文核验,从版本对比到状态报告,提升法务效率。

@@ -1,20 +1,26 @@
 ---
 slug: research-article-crafter
 name: research-article-crafter
-version: "1.1.0"
-displayName: "研究文章匠人"
-summary: "研究引用钩子反馈四步法,产出有深度有据可查的专业长文"
+version: 1.1.0
+displayName: 研究文章匠人
+summary: 研究引用钩子反馈四步法,产出有深度有据可查的专业长文
 license: Proprietary
-description: |-
-  研究文章匠人辅助撰写高质量、有深度、有据可查的长篇内容,核心功能包括选题研究(关键词研究+资料搜集+来源分层)、结构设计(大纲+钩子+段落分配)、分段撰写与反馈(引用嵌入+分段反馈+过渡衔接)、钩子标题优化与全文校审(事实核查+逻辑审查+语言润色)。适用于技术博客、行业分析、白皮书、研究报告、深度评测场景。触发关键词:内容写作、文章撰写、深度文章、研究写作、长文创作、技术博客、白皮书、行业分析、内容创作、文章优化。
-tags: [内容写作, 深度文章, 技术博客, 白皮书, 研究报告]
+description: 研究文章匠人辅助撰写高质量、有深度、有据可查的长篇内容,核心功能包括选题研究(关键词研究+资料搜集+来源分层)、结构设计(大纲+钩子+段落分配)、分段撰写与反馈(引用嵌入+分段反馈+过渡衔接)、钩子标题优化与全文校审(事实核查+逻辑审查+语言润色)。适用于技术博客、行业分析、白皮书、研究报告、深度评测场景。触发关键词:内容写作、文章撰写、深度文章、研究写作、长文创作、技术博客、白皮书、行业分析、内容创作、文章优化。
+tags:
+- 内容写作
+- 深度文章
+- 技术博客
+- 白皮书
+- 研究报告
 tools:
-  - read
-  - exec
-suggested_price: "1.90"
-pricing_tier: "standard"
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+- read
+- exec
+suggested_price: 19.9
+pricing_tier: L2
+pricing_rationale: 文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量
+pricing_model: per_use
 ---
+
 # 研究文章匠人
 
 辅助撰写高质量、有深度、有据可查的长篇内容。不是简单的文字生成,而是"研究-引用-钩子-反馈"的完整写作流程。

@@ -1,40 +1,57 @@
 ---
-slug: "auto-updater-tool-pro"
-name: "auto-updater-tool-pro"
-version: "1.0.0"
-displayName: "自动更新工具-专业版"
-summary: "企业级更新管理平台,支持批量更新、灰度发布、蓝绿部署与全面审计日志"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级自动更新管理工具专业版,面向团队与生产环境。核心能力:
+slug: auto-updater-tool-pro
+name: auto-updater-tool-pro
+version: 1.0.0
+displayName: 自动更新工具-专业版
+summary: 企业级更新管理平台,支持批量更新、灰度发布、蓝绿部署与全面审计日志
+license: Proprietary
+edition: pro
+description: '企业级自动更新管理工具专业版,面向团队与生产环境。核心能力:
+
   - 多节点批量更新管理
+
   - 灰度发布与金丝雀部署
+
   - 蓝绿部署与零停机更新
+
   - 自动化回滚与健康检查
+
   - 更新策略与窗口管理
+
   - 审计日志与合规报告
+
   - 多环境管理(开发/测试/生产)
+
   - API 接口与 CI/CD 集成
 
+
   适用场景:
+
   - 生产环境多服务器批量更新
+
   - 微服务集群滚动更新
+
   - 企业级灰度发布管理
+
   - 合规审计与变更管理
 
-  差异化:专业版在免费版基础上扩展批量更新、灰度发布、蓝绿部署与审计日志,兼容免费版更新配置
+
+  差异化:专业版在免费版基础上扩展批量更新、灰度发布、蓝绿部署与审计日志,兼容免费版更新配置'
 tags:
-  - 自动更新
-  - 企业级
-  - 灰度发布
-  - 蓝绿部署
-  - 变更管理
+- 自动更新
+- 企业级
+- 灰度发布
+- 蓝绿部署
+- 变更管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 自动更新工具 - 专业版
 
 ## 概述

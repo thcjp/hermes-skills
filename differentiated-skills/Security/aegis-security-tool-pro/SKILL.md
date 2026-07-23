@@ -1,28 +1,35 @@
 ---
-slug: "aegis-security-tool-pro"
-name: "aegis-security-tool-pro"
-version: "1.0.0"
-displayName: "区块链安全扫描专业版"
-summary: "企业级区块链安全工具,支持交易模拟、批量地址检查、多链覆盖、风险报告导出与告警推送,适合DeFi团队与机构用户。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  区块链安全扫描专业版,为DeFi团队与机构用户提供全方位链上安全防护。
+slug: aegis-security-tool-pro
+name: aegis-security-tool-pro
+version: 1.0.0
+displayName: 区块链安全扫描专业版
+summary: 企业级区块链安全工具,支持交易模拟、批量地址检查、多链覆盖、风险报告导出与告警推送,适合DeFi团队与机构用户。
+license: Proprietary
+edition: pro
+description: '区块链安全扫描专业版,为DeFi团队与机构用户提供全方位链上安全防护。
+
   核心能力:交易模拟、批量地址检查、多链深度扫描、SARIF报告导出、Webhook告警、高并发API。
+
   适用场景:DeFi协议安全审计、机构级交易风控、批量地址筛查、CI/CD安全门禁。
+
   差异化:专业版兼容免费版接口,新增交易模拟、批量操作与企业级报告能力,满足合规与规模化需求。
-  适用关键词: 区块链安全, 交易模拟, 批量扫描, 风险报告, blockchain, simulate, batch, sarif
+
+  适用关键词: 区块链安全, 交易模拟, 批量扫描, 风险报告, blockchain, simulate, batch, sarif'
 tags:
-  - 安全
-  - 区块链
-  - DeFi
-  - 企业版
-  - 交易模拟
+- 安全
+- 区块链
+- DeFi
+- 企业版
+- 交易模拟
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 区块链安全扫描专业版
 ## 概述
 专业版为DeFi团队、机构交易者和安全审计人员提供企业级区块链安全检查能力。在免费版地址检查与代币检测的基础上,新增交易模拟、批量地址筛查、多链深度扫描、SARIF/HTML报告导出、Webhook实时告警等高级功能。专业版完全兼容免费版接口,已有免费版集成可无缝升级。

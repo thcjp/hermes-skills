@@ -1,24 +1,29 @@
 ---
-slug: "azure-toolkit-free"
-name: "azure-toolkit-free"
-version: "1.0.0"
-displayName: "Azure管理入门工具"
-summary: "微软Azure基础资源管理工具，支持虚拟机/存储/网络常用资源操作。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者与初创团队的Azure基础管理工具。支持虚拟机、存储
-  账户、虚拟网络等常用资源的创建与管理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: azure-toolkit-free
+name: azure-toolkit-free
+version: 1.0.0
+displayName: Azure管理入门工具
+summary: 微软Azure基础资源管理工具，支持虚拟机/存储/网络常用资源操作。
+license: Proprietary
+edition: free
+description: '面向个人开发者与初创团队的Azure基础管理工具。支持虚拟机、存储
+
+  账户、虚拟网络等常用资源的创建与管理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-  - Operations
-  - Azure
-  - 云计算
-  - 部署
+- Operations
+- Azure
+- 云计算
+- 部署
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Azure管理入门工具（免费版）
 
 ## 概述

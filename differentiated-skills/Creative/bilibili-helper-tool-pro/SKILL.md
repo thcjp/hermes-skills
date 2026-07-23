@@ -1,35 +1,48 @@
 ---
-slug: "bilibili-helper-tool-pro"
-name: "bilibili-helper-tool-pro"
-version: "1.0.0"
-displayName: "B站创作助手专业版"
-summary: "专业UP主创作引擎，支持口播脚本、运营策略、SEO优化、批量生成与数据分析。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  B站创作助手专业版 —— 面向专业UP主与运营团队的高级B站内容创作引擎。核心能力:
+slug: bilibili-helper-tool-pro
+name: bilibili-helper-tool-pro
+version: 1.0.0
+displayName: B站创作助手专业版
+summary: 专业UP主创作引擎，支持口播脚本、运营策略、SEO优化、批量生成与数据分析。
+license: Proprietary
+edition: pro
+description: 'B站创作助手专业版 —— 面向专业UP主与运营团队的高级B站内容创作引擎。核心能力:
+
   - 完整口播脚本生成：开场白、正文、结尾、CTA全流程脚本
+
   - 运营策略制定：发布时间、频率、互动策略建议
+
   - SEO深度优化：标题关键词分析、搜索排名优化
+
   - 批量内容生成：系列视频标题、简介、标签批量产出
+
   - 数据驱动建议：基于播放数据优化内容策略
+
   - 竞品分析：分析热门视频标题与标签策略
+
   - 多模板系统：教程、评测、vlog、知识科普等模板
+
   - 封面文案建议：配合封面图的标题文案优化
 
+
   适用场景:
-  - 专业UP主系统化...
+
+  - 专业UP主系统化...'
 tags:
-  - B站
-  - 内容创作
-  - 企业工具
-  - 运营策略
-  - SEO优化
+- B站
+- 内容创作
+- 企业工具
+- 运营策略
+- SEO优化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # B站创作助手专业版
 
 ## 概述

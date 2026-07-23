@@ -1,29 +1,35 @@
 ---
-slug: "jira-pat-tool-free"
-name: "jira-pat-tool-free"
-version: "1.0.0"
-displayName: "Jira PAT 管理基础版"
-summary: "使用个人访问令牌(PAT)管理自托管 Jira 实例的事务,适合 SSO/SAML 环境"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 项目管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: jira-pat-tool-free
+name: jira-pat-tool-free
+version: 1.0.0
+displayName: Jira PAT 管理基础版
+summary: 使用个人访问令牌(PAT)管理自托管 Jira 实例的事务,适合 SSO/SAML 环境
+license: Proprietary
+edition: free
+description: '核心能力: 项目管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: jira, pat, 事务, 工作项, jql, sso, saml, 状态流转
+
+  适用关键词: jira, pat, 事务, 工作项, jql, sso, saml, 状态流转'
 tags:
-  - Jira
-  - PAT
-  - 事务管理
-  - SSO
+- Jira
+- PAT
+- 事务管理
+- SSO
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Jira PAT 管理基础版
 
 ## 概述

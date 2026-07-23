@@ -1,32 +1,43 @@
 ---
-slug: "format-converter-free"
-name: "format-converter-free"
-version: "1.0.0"
-displayName: "数据格式转换(免费版)"
-summary: "CSV、JSON、XML、YAML、TOML 等格式互转的免费核心能力,支持单文件快速转换。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  数据格式转换免费版面向需要在不同数据格式间快速转换的开发者与数据工作者,提供 CSV、JSON、XML、YAML、TOML 等主流格式的互转能力。核心能力:
+slug: format-converter-free
+name: format-converter-free
+version: 1.0.0
+displayName: 数据格式转换(免费版)
+summary: CSV、JSON、XML、YAML、TOML 等格式互转的免费核心能力,支持单文件快速转换。
+license: Proprietary
+edition: free
+description: '数据格式转换免费版面向需要在不同数据格式间快速转换的开发者与数据工作者,提供 CSV、JSON、XML、YAML、TOML 等主流格式的互转能力。核心能力:
+
   - 主流格式互转:CSV ↔ JSON ↔ YAML ↔ XML ↔ TOML
+
   - 单文件快速转换:输入一个文件,输出另一种格式
+
   - 嵌套结构保留:支持多层嵌套对象与数组
+
   - 类型智能推断:数字、布尔、null 自动识别
+
   - 编码自动处理:UTF-8/GBK/UTF-16 自动检测与转换
 
+
   适用场景:
+
   - 配置文件迁移(如 YAML → TOML)
-  - API ...
+
+  - API ...'
 tags:
-  - 格式转换
-  - 数据交换
-  - 配置文件
-  - 集成工具
+- 格式转换
+- 数据交换
+- 配置文件
+- 集成工具
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据格式转换 免费版
 
 ## 一、概述

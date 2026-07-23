@@ -1,29 +1,36 @@
 ---
-slug: "game-builder-tool-pro"
-name: "game-builder-tool-pro"
-version: "1.0.0"
-displayName: "3D游戏构建器专业版"
-summary: "企业级3D游戏开发平台,支持GLTF模型导入、多人联机、永久托管与团队协作"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向游戏工作室、教育与商业展示场景的专业 3D 游戏开发平台。
+slug: game-builder-tool-pro
+name: game-builder-tool-pro
+version: 1.0.0
+displayName: 3D游戏构建器专业版
+summary: 企业级3D游戏开发平台,支持GLTF模型导入、多人联机、永久托管与团队协作
+license: Proprietary
+edition: pro
+description: '面向游戏工作室、教育与商业展示场景的专业 3D 游戏开发平台。
+
   核心能力: GLTF/FBX 模型导入、多人联机、永久托管、团队协作、高级图形管线、自定义着色器
+
   适用场景: 商业游戏开发、教育互动内容、品牌营销小游戏、虚拟展厅、培训模拟
+
   差异化: 专业版支持外部模型、实时多人、永久托管与团队协作,与免费版单文件格式兼容
-  适用关键词: 3D游戏开发, GLTF模型, 多人联机, 团队协作, 虚拟展厅, 品牌小游戏
+
+  适用关键词: 3D游戏开发, GLTF模型, 多人联机, 团队协作, 虚拟展厅, 品牌小游戏'
 tags:
-  - 游戏开发
-  - 企业级
-  - 多人联机
-  - 3D建模
-  - 团队协作
-  - 虚拟展厅
+- 游戏开发
+- 企业级
+- 多人联机
+- 3D建模
+- 团队协作
+- 虚拟展厅
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 3D 游戏构建器 (专业版)
 
 ## 概述

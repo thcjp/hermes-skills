@@ -1,34 +1,42 @@
 ---
-slug: "token-economist-pro"
-name: "token-economist-pro"
-version: "1.0.0"
-displayName: "Token经济学家(专业版)"
-summary: "AI Agent全功能Token优化系统，含多级向量缓存、成本预估、预算控制、团队分析与多模型路由。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Token经济学家（专业版）在免费版基础上解锁多级向量语义缓存、Token成本预估与月度预算控制、团队成本分析、基于LLM的智能摘要与上下文图压缩、缓存命中率优化、多模型智能路由等高级能力。
+slug: token-economist-pro
+name: token-economist-pro
+version: 1.0.0
+displayName: Token经济学家(专业版)
+summary: AI Agent全功能Token优化系统，含多级向量缓存、成本预估、预算控制、团队分析与多模型路由。
+license: Proprietary
+edition: pro
+description: 'Token经济学家（专业版）在免费版基础上解锁多级向量语义缓存、Token成本预估与月度预算控制、团队成本分析、基于LLM的智能摘要与上下文图压缩、缓存命中率优化、多模型智能路由等高级能力。
 
-  核心能力：智能上下文压缩+语义缓存+自适应优化+质量守卫（免费版基础）+ L4向量语义缓存（跨会话复用）+ Token成本预估（实时+月度）+ 预算控制（告警+熔断）+ 团队成本分析（多用户汇总）+ LLM智能摘要（上下文图压缩）+ 缓存命中率优化（预热+淘汰+分析）+ 多模型路由（GPT-4o/GPT-4o-mini按复杂度自动选择）+ 多角色场景指南 + 故障排查表。
+
+  核心能力：智能上下文压缩+语义缓存+自适应优化+质量守卫（免费版基础）+ L4向量语义缓存（跨会话复用）+ Token成本预估（实时+月度）+ 预算控制（告警+熔断）+
+  团队成本分析（多用户汇总）+ LLM智能摘要（上下文图压缩）+ 缓存命中率优化（预热+淘汰+分析）+ 多模型路由（GPT-4o/GPT-4o-mini按复杂度自动选择）+
+  多角色场景指南 + 故障排查表。
+
 
   适用场景：长对话Token优化、跨会话上下文复用、团队API成本控制、企业预算管理、高并发Agent成本治理、多模型混合调度。
 
+
   差异化：基于开源Token优化方法论深度改造，完全中文化，新增向量缓存、成本预估、预算控制、团队分析等高级功能，多角色场景指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明。
 
-  适用关键词：Token优化、向量缓存、成本预估、预算控制、团队成本、多模型路由、上下文图压缩、缓存命中率
+
+  适用关键词：Token优化、向量缓存、成本预估、预算控制、团队成本、多模型路由、上下文图压缩、缓存命中率'
 tags:
-  - Token优化
-  - 向量缓存
-  - 成本预估
-  - 预算控制
-  - 多模型路由
-  - 团队成本分析
+- Token优化
+- 向量缓存
+- 成本预估
+- 预算控制
+- 多模型路由
+- 团队成本分析
 tools:
-  - read
-  - exec
-edition: "pro"
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Token经济学家（专业版）
 
 > **全功能Token优化系统。向量缓存+成本预估+预算控制+多模型路由，从个人节省走向团队级成本治理。**

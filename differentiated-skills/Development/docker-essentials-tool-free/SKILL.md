@@ -1,39 +1,56 @@
 ---
-slug: "docker-essentials-tool-free"
-name: "docker-essentials-tool-free"
-version: "1.0.0"
-displayName: "Docker基础工具免费版"
-summary: "提供Docker容器生命周期、镜像管理、Compose编排与网络卷管理,适合开发者日常使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向开发者的Docker容器管理辅助工具,涵盖容器生命周期、镜像构建管理、Compose编排与网络卷操作。核心能力:
+slug: docker-essentials-tool-free
+name: docker-essentials-tool-free
+version: 1.0.0
+displayName: Docker基础工具免费版
+summary: 提供Docker容器生命周期、镜像管理、Compose编排与网络卷管理,适合开发者日常使用。
+license: Proprietary
+edition: free
+description: '面向开发者的Docker容器管理辅助工具,涵盖容器生命周期、镜像构建管理、Compose编排与网络卷操作。核心能力:
+
   - 容器生命周期管理(run/stop/rm)
+
   - 镜像构建与标签管理
+
   - Docker Compose多容器编排
+
   - 网络与卷管理
+
   - 日志查看与容器调试
 
+
   适用场景:
+
   - 本地开发环境容器化
+
   - 单机多容器应用部署
+
   - 容器问题排查调试
 
+
   差异化:
+
   - 免费版聚焦核心Docker命令,开箱即用
+
   - 覆盖日常90%容器操作需求
+
   - 与专业版命令兼容,可平滑升级
 
-  适用关键词:...
+
+  适用关键词:...'
 tags:
-  - 开发工具
-  - Docker
-  - 容器化
+- 开发工具
+- Docker
+- 容器化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Docker基础工具 - 免费版
 ## 概述
 Docker基础工具免费版为开发者提供日常容器管理能力。工具涵盖容器生命周期管理、镜像构建与标签管理、Docker Compose多容器编排以及网络与卷管理,帮助开发者高效进行本地容器化开发。

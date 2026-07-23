@@ -1,33 +1,45 @@
 ---
-slug: "agentvibes-skill-free"
-name: "agentvibes-skill-free"
-version: "1.0.0"
-displayName: "AgentVibes语音合成-免费版"
-summary: "免费离线TTS语音合成工具,支持914+声音切换、语速调节、个性风格,适合个人开发者使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。核心能力:
+slug: agentvibes-skill-free
+name: agentvibes-skill-free
+version: 1.0.0
+displayName: AgentVibes语音合成-免费版
+summary: 免费离线TTS语音合成工具,支持914+声音切换、语速调节、个性风格,适合个人开发者使用。
+license: Proprietary
+edition: free
+description: 'AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。核心能力:
+
   - 支持 914+ 离线声音,覆盖 30+ 语种
+
   - 切换声音、设置个性风格、调节语速
+
   - 跨平台运行(Windows/macOS/Linux),无需账号
+
   - 内置 macOS Say 与 Windows SAPI 零配置方案
 
+
   适用场景:
+
   - 个人开发者语音播报与提醒
+
   - 内容创作者为视频添加配音
+
   - 语言学习者多语种听力练习
 
-  差异化:免费版聚焦核心语音合成与基础控制能力,完全离线运行,零成本上手,适合个人用户体验AI语音合成
+
+  差异化:免费版聚焦核心语音合成与基础控制能力,完全离线运行,零成本上手,适合个人用户体验AI语音合成'
 tags:
-  - Creative
-  - 语音合成
-  - TTS
+- Creative
+- 语音合成
+- TTS
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AgentVibes语音合成工具 - 免费版
 
 ## 概述

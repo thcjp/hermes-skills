@@ -1,35 +1,48 @@
 ---
-slug: "write-toolkit-pro"
-name: "write-toolkit-pro"
-version: "1.0.0"
-displayName: "写作工具专业版"
-summary: "多人协作、自定义审计、多格式导出与内容资产库，适合内容团队与企业写作治理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:
+slug: write-toolkit-pro
+name: write-toolkit-pro
+version: 1.0.0
+displayName: 写作工具专业版
+summary: 多人协作、自定义审计、多格式导出与内容资产库，适合内容团队与企业写作治理。
+license: Proprietary
+edition: pro
+description: '写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:
+
   - 多人协作与评论审核
+
   - 自定义审计维度与权重
+
   - 多格式导出（Markdown/PDF/DOCX/HTML）
+
   - 内容资产库与模板复用
+
   - 写作分析与团队统计
 
+
   适用场景:
+
   - 内容团队的多人文档协作
+
   - 企业写作流程的标准化治理
+
   - 内容资产的管理与复用
 
-  差异化: 专业版在免费版核心写作流程之上扩展协作与审计，新增多格式导出、资产库、写作分析等企业级能力，并与免费版工作流兼容
+
+  差异化: 专业版在免费版核心写作流程之上扩展协作与审计，新增多格式导出、资产库、写作分析等企业级能力，并与免费版工作流兼容'
 tags:
-  - 写作
-  - 团队协作
-  - 内容治理
-  - 专业版
+- 写作
+- 团队协作
+- 内容治理
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 写作工具（专业版）
 
 ## 概述

@@ -16,7 +16,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 广告洞察中枢（Ad Insight Hub）
 
 面向广告投放与市场分析场景的**结构化广告情报数据中枢**。在原始 API 之上叠加参数翻译、依赖编排、缓存复用、可信度标注四层能力，让 Agent 用最少的往返拿到最可用的数据。

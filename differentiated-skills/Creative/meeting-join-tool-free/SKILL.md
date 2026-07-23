@@ -1,39 +1,55 @@
 ---
-slug: "meeting-join-tool-free"
-name: "meeting-join-tool-free"
-version: "1.0.0"
-displayName: "AI会议助手免费版"
-summary: "让AI机器人以语音方式加入视频会议(Google Meet/Teams/Zoom),支持实时转写、问答与笔记,适合个人使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  AI会议助手免费版让AI机器人以语音方式加入视频会议平台
+slug: meeting-join-tool-free
+name: meeting-join-tool-free
+version: 1.0.0
+displayName: AI会议助手免费版
+summary: 让AI机器人以语音方式加入视频会议(Google Meet/Teams/Zoom),支持实时转写、问答与笔记,适合个人使用。
+license: Proprietary
+edition: free
+description: 'AI会议助手免费版让AI机器人以语音方式加入视频会议平台
+
   (Google Meet、Microsoft Teams、Zoom),实现实时会议转写、
+
   智能问答与会议纪要生成。核心能力:
+
   - 以语音机器人身份加入主流视频会议平台
+
   - 实时语音转写与会议内容理解
+
   - 基于会议上下文的智能问答
+
   - 会议结束后自动生成纪要与待办事项
 
+
   适用场景:
+
   - 个人用户的日常会议记录与回溯
+
   - 自由职业者的客户沟通会议
+
   - 在线课程与培训的内容整理
 
+
   差异化:
+
   - 免费版提供基础语音加入与转写能力
-  - 适合单人使用,...
+
+  - 适合单人使用,...'
 tags:
-  - 会议
-  - 语音转写
-  - AI助手
-  - 生产力
-  - 协作
+- 会议
+- 语音转写
+- AI助手
+- 生产力
+- 协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AI会议助手免费版
 
 ## 概述

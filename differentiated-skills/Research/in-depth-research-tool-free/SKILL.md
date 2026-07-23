@@ -1,41 +1,58 @@
 ---
-slug: "in-depth-research-tool-free"
-name: "in-depth-research-tool-free"
-version: "1.0.0"
-displayName: "深度研究工具"
-summary: "多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。
+slug: in-depth-research-tool-free
+name: in-depth-research-tool-free
+version: 1.0.0
+displayName: 深度研究工具
+summary: 多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。
+license: Proprietary
+edition: free
+description: '多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。
+
 
   核心能力:
+
   - 系统化多源信息探索与交叉验证
+
   - 来源权威性与可信度评估
+
   - 研究方法论记录与追踪
+
   - 结构化研究报告生成
 
+
   适用场景:
+
   - 个人学术研究与课题调研
+
   - 技术选型与方案评估
+
   - 决策支持信息收集
 
+
   差异化:
+
   - 免费版聚焦单次深度研究
+
   - 内置研究方法论框架
+
   - 支持多深度级别选择
 
-  适用关键词: 深度研究, 多源调研, 信息分析, 研究报告, 课题调研
+
+  适用关键词: 深度研究, 多源调研, 信息分析, 研究报告, 课题调研'
 tags:
-  - 研究
-  - 分析工具
-  - 信息检索
-  - 报告生成
+- 研究
+- 分析工具
+- 信息检索
+- 报告生成
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 深度研究工具（免费版）
 
 ## 概述

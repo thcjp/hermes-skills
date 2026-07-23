@@ -1,29 +1,35 @@
 ---
-slug: "python3-tool-pro"
-name: "python3-tool-pro"
-version: "1.0.0"
-displayName: "Python 环境工具专业版"
-summary: "企业级 Python 环境管理系统,支持多版本管理、依赖审计、CI/CD 集成与安全扫描"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 开发工具领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: python3-tool-pro
+name: python3-tool-pro
+version: 1.0.0
+displayName: Python 环境工具专业版
+summary: 企业级 Python 环境管理系统,支持多版本管理、依赖审计、CI/CD 集成与安全扫描
+license: Proprietary
+edition: pro
+description: '核心能力: 开发工具领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: python, python3, venv, pip, 依赖, 虚拟环境, requirements
+
+  适用关键词: python, python3, venv, pip, 依赖, 虚拟环境, requirements'
 tags:
-  - Python
-  - 虚拟环境
-  - 依赖管理
-  - pip
+- Python
+- 虚拟环境
+- 依赖管理
+- pip
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Python 环境工具专业版
 
 ## 概述

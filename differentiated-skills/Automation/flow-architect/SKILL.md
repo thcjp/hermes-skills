@@ -1,23 +1,28 @@
 ---
-slug: "flow-architect"
-name: "flow-architect"
-version: "1.0.0"
-displayName: "流程架构师"
-summary: "解决复杂分支难调试、字段映射错位、重复触发、API限流四大痛点，YAML DSL+干跑校验。"
-license: "Proprietary"
-description: |-
-  流程架构师是跨平台自动化工作流的设计与执行能力包。它不只给JS示例，更解决四个高频
+slug: flow-architect
+name: flow-architect
+version: 1.0.0
+displayName: 流程架构师
+summary: 解决复杂分支难调试、字段映射错位、重复触发、API限流四大痛点，YAML DSL+干跑校验。
+license: Proprietary
+description: '流程架构师是跨平台自动化工作流的设计与执行能力包。它不只给JS示例，更解决四个高频
+
   痛点：复杂分支逻辑难以调试、字段映射错位导致数据串列、重复触发造成重复处理、
-  API限流未处理导致批量失败。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+
+  API限流未处理导致批量失败。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。'
 tags:
-  - 自动化
-  - 工作流
-  - 效率工具
+- 自动化
+- 工作流
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 设计并执行跨平台自动化工作流，替代重复性人工操作。核心信条：**先用YAML声明，再干跑验证，最后放量执行；每个工作流必须有幂等键。**
 
 ## 四大痛点与对策

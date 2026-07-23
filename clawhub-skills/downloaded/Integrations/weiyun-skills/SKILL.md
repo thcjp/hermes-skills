@@ -33,7 +33,11 @@ tools:
   - - read
 - exec
 # Weiyun Skills
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 首次安装使用时，需要先完成本地安装和注册，详见 `references/auth.md`。
 
 > **Windows 用户**：所有 `bash ./setup.sh` 命令请替换为 `powershell -ExecutionPolicy Bypass -File setup.ps1`，详见 `references/auth.md`。

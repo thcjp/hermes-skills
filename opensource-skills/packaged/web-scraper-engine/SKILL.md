@@ -1,20 +1,27 @@
 ---
 slug: web-scraper-engine
 name: web-scraper-engine
-version: "1.1.0"
-displayName: "网页抓取引擎"
-summary: "Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单"
+version: 1.1.0
+displayName: 网页抓取引擎
+summary: Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单
 license: Proprietary
-description: |-
-  网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数据采集。覆盖搜索发现、单页抓取、结构化提取、多步骤浏览器交互全链路。同时提供Crawl4AI开源国内替代方案,无需海外API。适用于竞品分析、价格监控、内容采集、Lead Generation、市场调研、结构化提取场景。触发关键词:网页抓取、爬虫、Firecrawl、Playwright、Crawl4AI、网页提取、数据采集、结构化提取、浏览器自动化、竞品监控、价格监控
-tags: [网页抓取, 数据采集, 爬虫, 竞品监控, 数据提取]
+description: 网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数据采集。覆盖搜索发现、单页抓取、结构化提取、多步骤浏览器交互全链路。同时提供Crawl4AI开源国内替代方案,无需海外API。适用于竞品分析、价格监控、内容采集、Lead
+  Generation、市场调研、结构化提取场景。触发关键词:网页抓取、爬虫、Firecrawl、Playwright、Crawl4AI、网页提取、数据采集、结构化提取、浏览器自动化、竞品监控、价格监控
+tags:
+- 网页抓取
+- 数据采集
+- 爬虫
+- 竞品监控
+- 数据提取
 tools:
-  - read
-  - exec
-suggested_price: "15.00"
-pricing_tier: "business"
-pricing_rationale: "数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
+pricing_model: per_use
 ---
+
 # 网页抓取引擎
 
 基于 Firecrawl / Playwright / Crawl4AI 实现全流程网页数据采集。从搜索发现到结构化提取,从单页抓取到多步骤浏览器交互,无需维护爬虫基础设施。同时提供开源国内替代方案(Crawl4AI),降低对海外 API 的依赖。

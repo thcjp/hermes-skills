@@ -1,38 +1,54 @@
 ---
-slug: "knowledge-agent-tool-pro"
-name: "knowledge-agent-tool-pro"
-version: "1.0.0"
-displayName: "知识管理工具-专业版"
-summary: "企业级知识管理,支持团队共享、语义检索、自动摘要、知识图谱与权限管理"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级知识管理工具,在免费版核心能力之上,提供团队共享知识库、语义检索、
+slug: knowledge-agent-tool-pro
+name: knowledge-agent-tool-pro
+version: 1.0.0
+displayName: 知识管理工具-专业版
+summary: 企业级知识管理,支持团队共享、语义检索、自动摘要、知识图谱与权限管理
+license: Proprietary
+edition: pro
+description: '企业级知识管理工具,在免费版核心能力之上,提供团队共享知识库、语义检索、
+
   自动摘要生成、知识图谱构建、权限管理与监控统计能力。核心能力:
+
   - 免费版全部能力(完全兼容)
+
   - 团队共享知识库与协作
+
   - 语义检索与智能推荐
+
   - 自动摘要与关键词提取
+
   - 知识图谱与关联发现
+
   - 权限管理与操作审计
 
+
   适用场景:
+
   - 企业团队知识库建设
+
   - 研究机构资料管理
+
   - 多人协作的知识沉淀
+
   - 知识图谱与关联分析
 
-  差异化:专业版面向团队与企业,提供共享、语义检索、图谱、权限等高阶能力,并保持与免费版完全兼容
+
+  差异化:专业版面向团队与企业,提供共享、语义检索、图谱、权限等高阶能力,并保持与免费版完全兼容'
 tags:
-  - 研究工具
-  - 知识管理
-  - 企业级
-  - 团队协作
+- 研究工具
+- 知识管理
+- 企业级
+- 团队协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 知识管理工具(专业版)
 
 ## 概述

@@ -1,36 +1,49 @@
 ---
-slug: "tarot-reader-tool-pro"
-name: "tarot-reader-tool-pro"
-version: "1.0.0"
-displayName: "韦特塔罗占卜专业版"
-summary: "完整韦特塔罗牌阵库、客户档案管理、批量占卜与报告导出，适合专业占卜师与内容工作室。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  韦特塔罗占卜专业版，面向专业占卜师与内容工作室的高阶塔罗占卜平台。核心能力:
+slug: tarot-reader-tool-pro
+name: tarot-reader-tool-pro
+version: 1.0.0
+displayName: 韦特塔罗占卜专业版
+summary: 完整韦特塔罗牌阵库、客户档案管理、批量占卜与报告导出，适合专业占卜师与内容工作室。
+license: Proprietary
+edition: pro
+description: '韦特塔罗占卜专业版，面向专业占卜师与内容工作室的高阶塔罗占卜平台。核心能力:
+
   - 完整 78 张韦特塔罗牌意库 + 自定义牌意扩展
+
   - 8 种牌阵模板（单张、时间之流、凯尔特十字、关系阵、年运阵等）
+
   - 客户档案管理与占卜历史归档
+
   - 批量占卜与 Markdown/PDF 报告导出
+
   - 正逆位概率可配置 + 牌阵位置自定义
 
+
   适用场景:
+
   - 专业占卜师的客户服务与档案管理
+
   - 内容工作室的塔罗栏目批量生产
+
   - 线上塔罗课程的案例演示
 
-  差异化: 专业版在免费版核心能力之上扩展完整牌阵库与客户管理...
+
+  差异化: 专业版在免费版核心能力之上扩展完整牌阵库与客户管理...'
 tags:
-  - 塔罗
-  - 专业占卜
-  - 韦特塔罗
-  - 客户管理
-  - 专业版
+- 塔罗
+- 专业占卜
+- 韦特塔罗
+- 客户管理
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 韦特塔罗占卜（专业版）
 
 ## 概述

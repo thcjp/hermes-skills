@@ -18,7 +18,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 邮件日报专业版
 **版本**: 1.0.0
 **适用对象**: 企业管理者、团队负责人、运维与运营人员

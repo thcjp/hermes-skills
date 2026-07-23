@@ -1,39 +1,53 @@
 ---
-slug: "board-art-tool-pro"
-name: "board-art-tool-pro"
-version: "1.0.0"
-displayName: "画板艺术工具专业版"
-summary: "面向团队的批量发布、多帧动画与画布治理工具。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队的协作画布批量发布与治理专业工具。
+slug: board-art-tool-pro
+name: board-art-tool-pro
+version: 1.0.0
+displayName: 画板艺术工具专业版
+summary: 面向团队的批量发布、多帧动画与画布治理工具。
+license: Proprietary
+edition: pro
+description: '面向团队的协作画布批量发布与治理专业工具。
+
 
   核心能力:
+
   - 批量作品发布与多帧动画
+
   - 画布分区治理与权限
+
   - 作品数据分析与热度看板
+
   - 定时发布与协作工作流
 
+
   适用场景:
+
   - 团队批量发布作品集
+
   - 多帧动画与定时发布
+
   - 画布分区治理与数据分析
+
 
   差异化: 专业版在免费版单作品基础上扩展批量发布、多帧动画、画布治理与数据分析，兼容免费版作品格式。
 
-  适用关键词: 批量发布, 多帧动画, 画布治理, 分区权限, 热度看板, 定时发布, board art pro
+
+  适用关键词: 批量发布, 多帧动画, 画布治理, 分区权限, 热度看板, 定时发布, board art pro'
 tags:
-  - 创意
-  - 企业级
-  - 画布治理
-  - 数据分析
-  - 其他工具
+- 创意
+- 企业级
+- 画布治理
+- 数据分析
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 画板艺术工具（专业版）
 
 ## 概述

@@ -33,7 +33,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # WhatsApp 语音消息工具 - 专业版
 ## 概述
 WhatsApp 语音消息工具(专业版)在免费版(`tts-whatsapp-tool-free`)单条消息发送能力之上,新增群组广播、批量发送、定时发送、消息模板与 API 服务化等企业级能力。适合需要大规模语音消息触达的企业与团队。

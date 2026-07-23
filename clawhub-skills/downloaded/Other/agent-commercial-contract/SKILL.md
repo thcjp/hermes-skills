@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Agent Commercial Contract
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 **English** | [中文](#%E4%B8%AD%E6%96%87%E7%89%88%E6%9C%AC)
 
 ## English Version

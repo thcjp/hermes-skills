@@ -1,39 +1,55 @@
 ---
-slug: "code-dev-v1-tool-free"
-name: "code-dev-v1-tool-free"
-version: "1.0.0"
-displayName: "结构化开发工具免费版"
-summary: "版本化编码工作流,支持规划、实现、验证、测试的结构化开发与偏好记忆"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的结构化编码工作流工具,提供版本化开发流程管理。核心能力:
+slug: code-dev-v1-tool-free
+name: code-dev-v1-tool-free
+version: 1.0.0
+displayName: 结构化开发工具免费版
+summary: 版本化编码工作流,支持规划、实现、验证、测试的结构化开发与偏好记忆
+license: Proprietary
+edition: free
+description: '面向个人开发者的结构化编码工作流工具,提供版本化开发流程管理。核心能力:
+
   - 规划到交付的五步结构化开发流程
+
   - 用户偏好按需记忆与复用
+
   - 步骤化任务拆分与独立验证
+
   - 开发状态追踪与检查点管理
 
+
   适用场景:
+
   - 个人项目结构化开发
+
   - 功能迭代与版本管理
+
   - 代码质量自检与交付
 
+
   差异化:
+
   - 免费版提供结构化开发工作流
+
   - 版本化任务管理,支持检查点回溯
+
   - 用户完全控制,隐私优先
 
-  适用关键词: code, v1, planning, workflow, structured, versi...
+
+  适用关键词: code, v1, planning, workflow, structured, versi...'
 tags:
-  - 开发工具
-  - 结构化开发
-  - 编码工作流
-  - 版本管理
+- 开发工具
+- 结构化开发
+- 编码工作流
+- 版本管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 结构化开发工具免费版
 
 ## 概述

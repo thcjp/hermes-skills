@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 文档导出工具（专业版）
 
 专业版在免费版核心能力之上，新增批量并行转换、自定义样式表、PDF水印加密、REST API服务模式、模板云端同步、版本差异导出等高级能力，专为内容团队、企业文档平台与品牌规范场景设计。

@@ -1,34 +1,46 @@
 ---
-slug: "smart-crawler-free"
-name: "smart-crawler-free"
-version: "1.0.0"
-displayName: "智能爬虫(免费版)"
-summary: "轻量化本地知识库爬取与检索工具,支持归档同步、新鲜度检测、关键词搜索与基础SQL查询,适合个人知识管理。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  智能爬虫(免费版)是面向个人开发者与知识工作者的轻量化知识库爬取Skill,通过本地归档与只读查询的组合,帮助用户在离线环境下快速检索Notion工作空间内容。核心能力:
+slug: smart-crawler-free
+name: smart-crawler-free
+version: 1.0.0
+displayName: 智能爬虫(免费版)
+summary: 轻量化本地知识库爬取与检索工具,支持归档同步、新鲜度检测、关键词搜索与基础SQL查询,适合个人知识管理。
+license: Proprietary
+edition: free
+description: '智能爬虫(免费版)是面向个人开发者与知识工作者的轻量化知识库爬取Skill,通过本地归档与只读查询的组合,帮助用户在离线环境下快速检索Notion工作空间内容。核心能力:
+
 
   - 多源归档同步(桌面导出、API拉取),支持增量更新
+
   - 新鲜度检测,智能判断是否需要刷新归档
+
   - 关键词搜索与基础只读SQL查询
+
   - 工作空间报告(页面数、数据库数、时间跨度)
+
   - 完全只读操作,绝不修改源数据
+
 
   适用场景:
 
+
   - 个人Notion知识库的离线检索与备份
+
   - 写作、研究场景的快速资料查找
-  - 团队Wiki的本地镜像,断网可...
+
+  - 团队Wiki的本地镜像,断网可...'
 tags:
-  - 集成工具
-  - 知识检索
-  - 生产力
+- 集成工具
+- 知识检索
+- 生产力
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 智能爬虫(免费版)
 
 一个面向个人开发者与知识工作者的轻量化知识库爬取Skill,通过本地归档与只读查询的组合,帮助你在离线环境下快速检索工作空间内容。本免费版聚焦个人工作空间,适合日检索量不超过500次的场景。

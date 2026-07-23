@@ -1,38 +1,53 @@
 ---
-slug: "plugin-arch-tool-free"
-name: "plugin-arch-tool-free"
-version: "1.0.0"
-displayName: "插件架构工具-免费版"
-summary: "UI插件架构安装工具,支持自定义视图注册与导航集成,适合个人项目扩展"
-license: "Proprietary"
-edition: "free"
-description: |-
-  UI 插件架构安装工具免费版,面向个人开发者与小型项目。
+slug: plugin-arch-tool-free
+name: plugin-arch-tool-free
+version: 1.0.0
+displayName: 插件架构工具-免费版
+summary: UI插件架构安装工具,支持自定义视图注册与导航集成,适合个人项目扩展
+license: Proprietary
+edition: free
+description: 'UI 插件架构安装工具免费版,面向个人开发者与小型项目。
+
 
   核心能力:
+
   - 插件 UI 视图注册机制
+
   - 自定义导航标签页集成
+
   - 侧边栏菜单扩展
+
   - 插件间通信基础支持
+
   - 安装引导与参考代码
 
+
   适用场景:
+
   - 为个人项目添加自定义 UI 面板
+
   - 扩展现有应用的控制台界面
+
   - 学习插件化架构设计
+
 
   差异化:免费版提供基础插件注册能力。PRO版扩展插件市场、权限管控、热更新与企业级开发框架。
 
-  适用关键词: plugin, architecture, UI, 插件, 架构, 视图注册, 导航, 扩展
+
+  适用关键词: plugin, architecture, UI, 插件, 架构, 视图注册, 导航, 扩展'
 tags:
-  - 插件架构
-  - UI扩展
-  - 开发工具
+- 插件架构
+- UI扩展
+- 开发工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 插件架构工具 - 免费版
 
 ## 概述

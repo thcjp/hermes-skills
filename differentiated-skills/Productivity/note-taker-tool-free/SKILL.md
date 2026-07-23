@@ -1,29 +1,35 @@
 ---
-slug: "note-taker-tool-free"
-name: "note-taker-tool-free"
-version: "1.0.0"
-displayName: "笔记记录器基础版"
-summary: "命令行任务与笔记管理工具,支持添加、列表、完成、优先级与提醒功能"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: note-taker-tool-free
+name: note-taker-tool-free
+version: 1.0.0
+displayName: 笔记记录器基础版
+summary: 命令行任务与笔记管理工具,支持添加、列表、完成、优先级与提醒功能
+license: Proprietary
+edition: free
+description: '核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: note-taker, 任务, 待办, 清单, 优先级, 提醒, todo
+
+  适用关键词: note-taker, 任务, 待办, 清单, 优先级, 提醒, todo'
 tags:
-  - 笔记
-  - 任务管理
-  - 待办清单
-  - 命令行
+- 笔记
+- 任务管理
+- 待办清单
+- 命令行
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 笔记记录器基础版
 
 ## 概述

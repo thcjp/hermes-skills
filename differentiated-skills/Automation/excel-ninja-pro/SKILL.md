@@ -1,33 +1,40 @@
 ---
-slug: "excel-ninja-pro"
-name: "excel-ninja-pro"
-version: "1.0.0"
-displayName: "Excel忍者(专业版)"
-summary: "全功能Excel自动化处理，16个脚本覆盖合并、VLOOKUP、模板填充、条件格式等全部场景。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Excel忍者专业版是在免费版基础上的全功能升级，为AI Agent提供终极Excel自动化处理能力。开放全部16个命令行脚本，从基础的合并、筛选、拆分，到高级的多表VLOOKUP、模板填充、条件格式、文本格式化，全面覆盖表格处理需求。
+slug: excel-ninja-pro
+name: excel-ninja-pro
+version: 1.0.0
+displayName: Excel忍者(专业版)
+summary: 全功能Excel自动化处理，16个脚本覆盖合并、VLOOKUP、模板填充、条件格式等全部场景。
+license: Proprietary
+edition: pro
+description: 'Excel忍者专业版是在免费版基础上的全功能升级，为AI Agent提供终极Excel自动化处理能力。开放全部16个命令行脚本，从基础的合并、筛选、拆分，到高级的多表VLOOKUP、模板填充、条件格式、文本格式化，全面覆盖表格处理需求。
+
 
   核心能力：16个脚本覆盖读写、合并、转换、筛选、拆分、去重、聚合、校验、列选择、VLOOKUP、多表关联、模板填充、转置、条件格式、文本格式、工作表重命名。支持目录批量处理、错误汇总、格式保留、大文件流式读写。
 
+
   适用场景：周报汇总、数据清洗、报表拆分、跨系统数据对齐、批量格式转换、字段标准化、数据质检、多源数据关联、报表模板批量生成、数据可视化条件着色、长数字格式保护、工作表批量管理。
+
 
   差异化：完全中文化的脚本说明与参数示例，针对中文办公场景重写使用流程，新增多角色场景指南（运营/分析师/财务/HR/销售）、性能优化策略、完整故障排查表、版本升级迁移指南。专业版解锁全部16个脚本与高级特性。保留原始MIT版权声明。
 
-  适用关键词：Excel、xlsx、合并、拆分、筛选、去重、聚合、VLOOKUP、模板填充、条件格式、CSV、表格、批量处理
+
+  适用关键词：Excel、xlsx、合并、拆分、筛选、去重、聚合、VLOOKUP、模板填充、条件格式、CSV、表格、批量处理'
 tags:
-  - Excel自动化
-  - 表格处理
-  - 数据清洗
-  - 批量操作
-  - VLOOKUP
-  - 条件格式
+- Excel自动化
+- 表格处理
+- 数据清洗
+- 批量操作
+- VLOOKUP
+- 条件格式
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Excel忍者（专业版）
 
 > **AI Agent的终极Excel处理工具。16个脚本全覆盖，从基础合并到高级VLOOKUP、模板填充、条件格式，一键搞定。**

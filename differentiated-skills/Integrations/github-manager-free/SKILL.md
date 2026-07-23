@@ -1,33 +1,46 @@
 ---
-slug: "github-manager-free"
-name: "github-manager-free"
-version: "1.0.0"
-displayName: "GitHub管理器(免费版)"
-summary: "通过gh CLI管理GitHub仓库的Issue、PR与工作流,支持基础查询、状态检查与结构化输出,适合个人开发者日常协作。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  GitHub管理器(免费版)是一款面向个人开发者的GitHub日常协作助手,通过gh命令行工具封装常用操作,帮助用户高效管理Issue、Pull Request与CI工作流。核心能力:
+slug: github-manager-free
+name: github-manager-free
+version: 1.0.0
+displayName: GitHub管理器(免费版)
+summary: 通过gh CLI管理GitHub仓库的Issue、PR与工作流,支持基础查询、状态检查与结构化输出,适合个人开发者日常协作。
+license: Proprietary
+edition: free
+description: 'GitHub管理器(免费版)是一款面向个人开发者的GitHub日常协作助手,通过gh命令行工具封装常用操作,帮助用户高效管理Issue、Pull
+  Request与CI工作流。核心能力:
+
   - Issue与Pull Request的基础查询、状态检查与结构化输出
+
   - 工作流运行列表查看与失败步骤定位
+
   - 支持JSON输出与jq过滤,便于自动化处理
+
   - 提供常用命令速查与故障排查指南
 
+
   适用场景:
+
   - 个人开发者日常GitHub仓库维护
+
   - 开源项目Issue与PR的快速浏览
+
   - CI/CD工作流状态检查与失败排查
-  -...
+
+  -...'
 tags:
-  - GitHub
-  - 协作
-  - CI/CD
-  - 开发工具
+- GitHub
+- 协作
+- CI/CD
+- 开发工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # GitHub管理器(免费版)
 
 通过gh命令行工具管理GitHub仓库的Issue、Pull Request与工作流,聚焦"查询-检查-定位"三步流程,帮助个人开发者高效完成日常协作。

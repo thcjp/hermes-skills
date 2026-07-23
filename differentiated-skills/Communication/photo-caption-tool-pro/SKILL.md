@@ -27,7 +27,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 照片配文工具专业版是一款面向专业摄影师与内容创作者的全平台照片配文生成解决方案。在完全兼容免费版 Instagram、X(Twitter)、Facebook 三大平台配文能力的基础上,专业版解锁了 Flickr、Glass、Tumblr、Bluesky、Threads、500px、Reddit、VSCO、Substack、Pinterest 共 13 个平台的配文生成能力。
 
 无论是同时在 13 个平台发布摄影作品、批量处理一组系列照片的配文、维护统一的品牌语气风格,还是获取照片编辑分析建议,专业版都能高效完成,帮助创作者在多平台建立专业形象。

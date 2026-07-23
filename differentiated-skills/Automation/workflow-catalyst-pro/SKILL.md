@@ -1,32 +1,39 @@
 ---
-slug: "workflow-catalyst-pro"
-name: "workflow-catalyst-pro"
-version: "1.0.0"
-displayName: "Workflow Catalyst"
-summary: "六步完整自动化框架，含模式库、ROI计算、6个进阶模板、多角色场景与故障排查。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  工作流催化器专业版是在免费版基础上的全功能升级，为AI Agent提供完整的六步自动化框架。从识别重复任务到测试优化，全流程覆盖自动化工作流的构建与维护。专业版解锁模式库、ROI计算工具、6个进阶模板、多角色场景指南和完整故障排查表。
+slug: workflow-catalyst-pro
+name: workflow-catalyst-pro
+version: 1.0.0
+displayName: Workflow Catalyst
+summary: 六步完整自动化框架，含模式库、ROI计算、6个进阶模板、多角色场景与故障排查。
+license: Proprietary
+edition: pro
+description: '工作流催化器专业版是在免费版基础上的全功能升级，为AI Agent提供完整的六步自动化框架。从识别重复任务到测试优化，全流程覆盖自动化工作流的构建与维护。专业版解锁模式库、ROI计算工具、6个进阶模板、多角色场景指南和完整故障排查表。
+
 
   核心能力：六步自动化框架（观察→抽象→设计→实现→测试→优化）、模式库（12种常见自动化模式）、ROI计算工具、6个进阶模板（竞品监控、内容发布、报告生成、客户跟进、库存同步、告警通知）、多角色场景指南、完整故障排查表。
 
+
   适用场景：周报自动化、数据同步、文件整理、竞品价格监控、内容多平台发布、定期报告生成、客户跟进流程、库存跨系统同步、系统告警通知、跨部门数据流转。
+
 
   差异化：将抽象的自动化思维转化为可操作的六步流程，每步都有明确的输入输出、检查清单和质量标准。专业版新增测试与优化两步，确保自动化方案可靠运行。提供12种模式库和ROI量化工具，让自动化决策有数据支撑。保留原始MIT版权声明。
 
-  适用关键词：自动化、重复任务、工作流、脚本、批处理、效率提升、定时任务、ROI、模式库
+
+  适用关键词：自动化、重复任务、工作流、脚本、批处理、效率提升、定时任务、ROI、模式库'
 tags:
-  - 工作流自动化
-  - 效率提升
-  - 脚本生成
-  - 任务自动化
-  - ROI分析
+- 工作流自动化
+- 效率提升
+- 脚本生成
+- 任务自动化
+- ROI分析
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 工作流催化器（专业版）
 
 > **AI Agent的自动化思维引擎。六步完整框架，从识别重复到测试优化，让每一次重复都变成自动化的机会。**

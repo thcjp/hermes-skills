@@ -1,34 +1,46 @@
 ---
-slug: "git-workflow-cn-tool-free"
-name: "git-workflow-cn-tool-free"
-version: "1.0.0"
-displayName: "Git工作流助手免费版"
-summary: "Git 分支管理、冲突解决与提交规范助手，覆盖个人开发者日常版本控制场景。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向独立开发者的 Git 工作流辅助工具，聚焦分支管理、冲突解决与提交规范三大核心能力。核心能力:
+slug: git-workflow-cn-tool-free
+name: git-workflow-cn-tool-free
+version: 1.0.0
+displayName: Git工作流助手免费版
+summary: Git 分支管理、冲突解决与提交规范助手，覆盖个人开发者日常版本控制场景。
+license: Proprietary
+edition: free
+description: '面向独立开发者的 Git 工作流辅助工具，聚焦分支管理、冲突解决与提交规范三大核心能力。核心能力:
+
   - 分支创建、切换、合并的标准化操作指引
+
   - 合并冲突识别与基础解决策略
+
   - Conventional Commits 提交规范生成
+
   - 常用 Git 命令速查与撤销回滚操作
 
+
   适用场景:
+
   - 个人项目版本管理与分支规划
+
   - 代码提交信息规范化生成
+
   - 日常冲突处理与误操作恢复
 
-  差异化: 免费版聚焦个人开发者高频场景，提供轻量级命令速查与规范指引，开箱即用无额外配置
+
+  差异化: 免费版聚焦个人开发者高频场景，提供轻量级命令速查与规范指引，开箱即用无额外配置'
 tags:
-  - 开发工具
-  - 版本控制
-  - Git
-  - 工作流
+- 开发工具
+- 版本控制
+- Git
+- 工作流
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Git 工作流助手（免费版）
 
 ## 概述

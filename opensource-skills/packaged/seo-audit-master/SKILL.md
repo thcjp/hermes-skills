@@ -1,20 +1,27 @@
 ---
 slug: seo-audit-master
 name: seo-audit-master
-version: "1.1.0"
-displayName: "SEO审计大师"
-summary: "全站SEO体检:技术内容架构链接四维度审计,输出可执行优化清单"
+version: 1.1.0
+displayName: SEO审计大师
+summary: 全站SEO体检:技术内容架构链接四维度审计,输出可执行优化清单
 license: Proprietary
-description: |-
-  SEO审计大师——对网站执行全面SEO审计,覆盖技术SEO+内容SEO+架构验证+链接分析四维度。输出按优先级排序的可执行优化清单,支持Google与百度双搜索引擎,适用于上线前体检、排名下降诊断、新站优化、竞品对比、迁移检查场景。触发关键词:SEO审计、SEO诊断、技术SEO、内容SEO、SEO优化、网站审计、搜索引擎优化、索引、可抓取性、结构化数据、百度SEO、Google SEO
-tags: [SEO优化, 网站审计, 搜索引擎优化, 技术SEO, 流量增长]
+description: SEO审计大师——对网站执行全面SEO审计,覆盖技术SEO+内容SEO+架构验证+链接分析四维度。输出按优先级排序的可执行优化清单,支持Google与百度双搜索引擎,适用于上线前体检、排名下降诊断、新站优化、竞品对比、迁移检查场景。触发关键词:SEO审计、SEO诊断、技术SEO、内容SEO、SEO优化、网站审计、搜索引擎优化、索引、可抓取性、结构化数据、百度SEO、Google
+  SEO
+tags:
+- SEO优化
+- 网站审计
+- 搜索引擎优化
+- 技术SEO
+- 流量增长
 tools:
-  - read
-  - exec
-suggested_price: "19.90"
-pricing_tier: "business"
-pricing_rationale: "SEO优化类, small市场, enterprise复杂度, monthly频次, business层 → 效果可量化,企业刚需"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: SEO优化类, small市场, enterprise复杂度, monthly频次, business层 → 效果可量化,企业刚需
+pricing_model: per_use
 ---
+
 # SEO审计大师
 
 对网站执行全面 SEO 审计。从技术到内容,从架构到链接,输出可执行的优化清单。支持 Google 与百度双引擎,兼顾海外与国内搜索引擎优化。

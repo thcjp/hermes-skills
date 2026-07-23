@@ -1,37 +1,7 @@
 ---
-slug: subagent-driven-development
-name: subagent-driven-development
-version: "0.1.0"
-displayName: Subagent Driven Deve
-summary: Use when executing implementation plans with independent tasks in the current
-  session
-license: MIT
-description: |-
-  Use when executing implementation plans with independent tasks in the
-  current session
-
-  核心能力:
-
-  - 智能代理领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - AI代理增强、记忆管理、自主决策
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键...
-tags:
-- Agents
-tools:
-  - - read
-- exec
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
 
 # Subagent Driven Development

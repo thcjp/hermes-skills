@@ -1,34 +1,46 @@
 ---
-slug: "go-to-market-tool-free"
-name: "go-to-market-tool-free"
-version: "1.0.0"
-displayName: "上市策略工具"
-summary: "面向个人开发者的产品上市（GTM）策略生成工具，七步快速成稿。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者与一人公司的产品上市（GTM）策略生成工具。核心能力:
+slug: go-to-market-tool-free
+name: go-to-market-tool-free
+version: 1.0.0
+displayName: 上市策略工具
+summary: 面向个人开发者的产品上市（GTM）策略生成工具，七步快速成稿。
+license: Proprietary
+edition: free
+description: '面向个人开发者与一人公司的产品上市（GTM）策略生成工具。核心能力:
+
   - 目标客户（ICP）画像模板
+
   - 定位陈述与 GTM 动作选择
+
   - 渠道筛选与 90 天执行计划
+
   - 定价建议与基础指标跟踪
 
+
   适用场景:
+
   - 独立开发者产品上市策略起草
+
   - 单产品 90 天获客计划
+
   - 个人项目定价与渠道选择
 
-  差异化: 免费版聚焦单一产品与个人场景，提供七步模板与 90 天计划，快速成稿
+
+  差异化: 免费版聚焦单一产品与个人场景，提供七步模板与 90 天计划，快速成稿'
 tags:
-  - 市场策略
-  - 获客
-  - 个人效率
-  - 其他工具
+- 市场策略
+- 获客
+- 个人效率
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 上市策略工具（免费版）
 
 ## 概述

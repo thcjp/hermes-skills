@@ -1,22 +1,9 @@
 ---
-slug: drawing-analyzer
-name: drawing-analyzer
-version: "2.1.0"
-displayName: Drawing Analyzer
-summary: Analyze construction drawings to extract dimensions, annotations, symbols,
-  and metadata. Support ...
-license: MIT
-description: |-
-  Analyze construction drawings to extract dimensions, annotations, symbols,
-  and metadata。Support。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Automation
-tools:
-  - - read
-- exec
-# Drawing Analyzer
-## Overview
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 Analyze construction drawings (PDF, DWG) to extract dimensions, annotations, symbols, title block data, and support automated quantity takeoff and design review.
 
 ## Business Case

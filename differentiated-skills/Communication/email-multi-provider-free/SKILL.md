@@ -1,25 +1,30 @@
 ---
-slug: "email-multi-provider-free"
-name: "email-multi-provider-free"
-version: "1.0.0"
-displayName: "多邮箱管理免费版"
-summary: "Gmail与Outlook多账户邮件管理，支持收发搜索与安全认证"
-license: "Proprietary"
-edition: "free"
-description: |-
-  多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook
+slug: email-multi-provider-free
+name: email-multi-provider-free
+version: 1.0.0
+displayName: 多邮箱管理免费版
+summary: Gmail与Outlook多账户邮件管理，支持收发搜索与安全认证
+license: Proprietary
+edition: free
+description: '多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook
+
   与 Exchange 邮箱，支持邮件读取、搜索、发送、回复与转发等核心操作，通过系统密钥环
-  安全存储凭证。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。
+
+  安全存储凭证。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。'
 tags:
-  - 沟通协作
-  - 邮件管理
-  - 多邮箱
-  - 个人效率
+- 沟通协作
+- 邮件管理
+- 多邮箱
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 多邮箱管理免费版
 
 **版本**: 1.0.0

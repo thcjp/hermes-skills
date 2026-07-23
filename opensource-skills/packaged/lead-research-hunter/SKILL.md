@@ -1,20 +1,27 @@
 ---
 slug: lead-research-hunter
 name: lead-research-hunter
-version: "1.0.0"
-displayName: "销售线索猎手"
-summary: "3D线索打分模型自动筛选高价值潜客,让销售只打能赢的电话"
+version: 1.0.0
+displayName: 销售线索猎手
+summary: 3D线索打分模型自动筛选高价值潜客,让销售只打能赢的电话
 license: Proprietary
-description: |-
-  销售线索猎手——不只是找名单,更会筛选与打分。用3D线索打分模型(Fit+Intent+Engagement)自动筛选高价值潜客,从公司情报到决策人识别到个性化触达话术全流程。Use when 需要B2B销售线索挖掘、客户画像分析、决策人识别、触达话术生成、线索优先级排序时使用。不适用于C端消费者获客和批量邮件群发。
-tags: [销售线索, 线索打分, 客户画像, 销售触达, ABM营销]
+description: 销售线索猎手——不只是找名单,更会筛选与打分。用3D线索打分模型(Fit+Intent+Engagement)自动筛选高价值潜客,从公司情报到决策人识别到个性化触达话术全流程。Use
+  when 需要B2B销售线索挖掘、客户画像分析、决策人识别、触达话术生成、线索优先级排序时使用。不适用于C端消费者获客和批量邮件群发。
+tags:
+- 销售线索
+- 线索打分
+- 客户画像
+- 销售触达
+- ABM营销
 tools:
-  - read
-  - exec
-suggested_price: "19.00"
-pricing_tier: "business"
-pricing_rationale: "营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强
+pricing_model: per_use
 ---
+
 # 销售线索猎手
 
 不只是找名单,更会筛选与打分。用 3D 线索打分模型自动筛选高价值潜客,让销售只打能赢的电话。

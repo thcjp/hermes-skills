@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Bookmark Intelligence
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 **Turn your X (Twitter) bookmarks into actionable insights, automatically.**
 
 Bookmark Intelligence watches your X bookmarks, fetches the full content from linked articles, analyzes everything with AI, and surfaces ideas relevant to YOUR projects. Stop letting great content sit in your bookmarks — let AI extract the value for you.

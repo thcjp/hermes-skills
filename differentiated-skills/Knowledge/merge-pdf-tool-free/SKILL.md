@@ -1,31 +1,38 @@
 ---
-slug: "merge-pdf-tool-free"
-name: "merge-pdf-tool-free"
-version: "1.0.0"
-displayName: "PDF合并工具（免费版）"
-summary: "合并多个PDF文件为一个，支持页面排序、页面范围选择与批量处理。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  PDF合并工具 - （免费版）
+slug: merge-pdf-tool-free
+name: merge-pdf-tool-free
+version: 1.0.0
+displayName: PDF合并工具（免费版）
+summary: 合并多个PDF文件为一个，支持页面排序、页面范围选择与批量处理。
+license: Proprietary
+edition: free
+description: 'PDF合并工具 - （免费版）
+
 
   核心能力: PDF合并, 合并PDF, merge pdf, 页面合并, 批量合并, 书签生成
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: PDF合并, 合并PDF, merge pdf, 页面合并, 批量合并, 书签生成
+
+  适用关键词: PDF合并, 合并PDF, merge pdf, 页面合并, 批量合并, 书签生成'
 tags:
-  - PDF处理
-  - PDF合并
-  - 批量处理
-  - 书签
+- PDF处理
+- PDF合并
+- 批量处理
+- 书签
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # PDF合并工具（免费版）
 
 ## 概述

@@ -1,23 +1,27 @@
 ---
-slug: "reminder-engine-free"
-name: "reminder-engine-free"
-version: "1.0.0"
-displayName: "提醒引擎(免费版)"
-summary: "一次性提醒创建引擎免费版，含时间解析、安全校验、频道投递、确认回复与基础生命周期管理。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  提醒引擎免费版是面向AI Agent的一次性提醒创建引擎。不同于定时任务配置指南，本技能聚焦"如何安全可靠地创建一次性提醒"的完整流程：时间解析、安全校验、频道投递、确认回复、生命周期管理。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+slug: reminder-engine-free
+name: reminder-engine-free
+version: 1.0.0
+displayName: 提醒引擎(免费版)
+summary: 一次性提醒创建引擎免费版，含时间解析、安全校验、频道投递、确认回复与基础生命周期管理。
+license: Proprietary
+edition: free
+description: 提醒引擎免费版是面向AI Agent的一次性提醒创建引擎。不同于定时任务配置指南，本技能聚焦"如何安全可靠地创建一次性提醒"的完整流程：时间解析、安全校验、频道投递、确认回复、生命周期管理。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 提醒引擎
-  - 一次性提醒
-  - 时间解析
-  - 安全校验
+- 提醒引擎
+- 一次性提醒
+- 时间解析
+- 安全校验
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 > **不是教你配置定时任务，而是教你安全可靠地创建一次性提醒。时间解析、安全校验、频道投递，一条龙服务。**
 
 创建一次性提醒看似简单，但涉及多个关键环节：如何把用户的口语化时间转换为精确时间戳？如何防止任务内容中的恶意命令注入？如何将结果可靠地投递到目标频道？本技能聚焦提醒创建的完整流程，帮助Agent建立安全可靠的提醒引擎。

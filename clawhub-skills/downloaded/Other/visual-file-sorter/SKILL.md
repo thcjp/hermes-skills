@@ -27,7 +27,11 @@ tags: '[''Other'']'
 tools:
   - read
   - exec
+pricing_tier: "L2"
+pricing_model: "per_use"
+suggested_price: 19.9
 ---
+
 
 # è§è§ç³»æä»¶åç±»å¤§å¸ (Visual File Sorter)
 

@@ -1,25 +1,29 @@
 ---
-slug: "vue-component-gen-tool-free"
-name: "vue-component-gen-tool-free"
-version: "1.0.0"
-displayName: "Vue组件生成(免费版)"
-summary: "面向个人开发者的Vue 3组件模板生成工具,支持Composition API与TypeScript单文件组件。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Vue组件生成工具免费版为个人开发者提供Vue 3单文件组件模板快速生成能力,覆盖Composition API、Options API与TypeScript支持。核心能力:
-  - 一键生成Vue 3单文件组件(。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: vue-component-gen-tool-free
+name: vue-component-gen-tool-free
+version: 1.0.0
+displayName: Vue组件生成(免费版)
+summary: 面向个人开发者的Vue 3组件模板生成工具,支持Composition API与TypeScript单文件组件。
+license: Proprietary
+edition: free
+description: 'Vue组件生成工具免费版为个人开发者提供Vue 3单文件组件模板快速生成能力,覆盖Composition API、Options API与TypeScript支持。核心能力:
+
+  - 一键生成Vue 3单文件组件(。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-  - Vue
-  - 组件生成
-  - 前端开发
-  - 个人开发
-  - TypeScript
+- Vue
+- 组件生成
+- 前端开发
+- 个人开发
+- TypeScript
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Vue 组件生成工具(免费版)
 
 ## 概述

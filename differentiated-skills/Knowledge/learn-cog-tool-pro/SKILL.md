@@ -1,31 +1,38 @@
 ---
-slug: "learn-cog-tool-pro"
-name: "learn-cog-tool-pro"
-version: "1.0.0"
-displayName: "认知学习工具（专业版）"
-summary: "基于认知科学的学习增强工具，支持间隔重复、主动回忆与知识图谱构建。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  认知学习工具 - （专业版）
+slug: learn-cog-tool-pro
+name: learn-cog-tool-pro
+version: 1.0.0
+displayName: 认知学习工具（专业版）
+summary: 基于认知科学的学习增强工具，支持间隔重复、主动回忆与知识图谱构建。
+license: Proprietary
+edition: pro
+description: '认知学习工具 - （专业版）
+
 
   核心能力: 认知学习, 间隔重复, 主动回忆, 闪卡, SM-2, FSRS, 认知负荷, 记忆曲线
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 认知学习, 间隔重复, 主动回忆, 闪卡, SM-2, FSRS, 认知负荷, 记忆曲线
+
+  适用关键词: 认知学习, 间隔重复, 主动回忆, 闪卡, SM-2, FSRS, 认知负荷, 记忆曲线'
 tags:
-  - 认知学习
-  - 间隔重复
-  - 主动回忆
-  - 知识图谱
+- 认知学习
+- 间隔重复
+- 主动回忆
+- 知识图谱
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 认知学习工具（专业版）
 
 ## 概述

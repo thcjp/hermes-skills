@@ -1,20 +1,26 @@
 ---
 slug: theme-stylist
 name: theme-stylist
-version: "1.1.0"
-displayName: "主题造型师"
-summary: "10+预设主题一键应用,幻灯片文档报告HTML统一专业视觉风格"
+version: 1.1.0
+displayName: 主题造型师
+summary: 10+预设主题一键应用,幻灯片文档报告HTML统一专业视觉风格
 license: Proprietary
-description: |-
-  主题造型师——为各类产出物(幻灯片/文档/报告/HTML落地页)应用专业字体与配色主题,内置10+预设主题(Corporate/Minimal/Warm/Nature/Elegant/Tech/Editorial/Playful/Mono/Sunset),支持自定义品牌色生成完整色板。适用于PPT美化、文档美化、报告配色、HTML落地页主题驱动、品牌主题定制场景。触发关键词:主题、配色主题、字体主题、幻灯片主题、文档主题、报告主题、视觉主题、主题设计、主题应用、配色方案、品牌色
-tags: [主题设计, 配色方案, 视觉风格, 字体配色, 品牌统一]
+description: 主题造型师——为各类产出物(幻灯片/文档/报告/HTML落地页)应用专业字体与配色主题,内置10+预设主题(Corporate/Minimal/Warm/Nature/Elegant/Tech/Editorial/Playful/Mono/Sunset),支持自定义品牌色生成完整色板。适用于PPT美化、文档美化、报告配色、HTML落地页主题驱动、品牌主题定制场景。触发关键词:主题、配色主题、字体主题、幻灯片主题、文档主题、报告主题、视觉主题、主题设计、主题应用、配色方案、品牌色
+tags:
+- 主题设计
+- 配色方案
+- 视觉风格
+- 字体配色
+- 品牌统一
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次
+pricing_model: per_use
 ---
+
 # 主题造型师
 
 为各类产出物应用专业的视觉主题。一个主题包含完整的色彩体系与字体方案,一键统一风格。内置 10+ 预设主题,支持基于品牌色生成自定义主题,确保跨产出物的视觉一致性。

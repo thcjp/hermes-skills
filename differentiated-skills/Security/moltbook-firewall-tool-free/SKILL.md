@@ -1,27 +1,34 @@
 ---
-slug: "moltbook-firewall-tool-free"
-name: "moltbook-firewall-tool-free"
-version: "1.0.0"
-displayName: "Agent防火墙免费版"
-summary: "AI Agent安全防护层,支持提示注入检测、工具调用过滤与基础安全策略,适合个人开发者保护Agent应用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Agent防火墙免费版,为AI Agent应用提供基础安全防护能力。
+slug: moltbook-firewall-tool-free
+name: moltbook-firewall-tool-free
+version: 1.0.0
+displayName: Agent防火墙免费版
+summary: AI Agent安全防护层,支持提示注入检测、工具调用过滤与基础安全策略,适合个人开发者保护Agent应用。
+license: Proprietary
+edition: free
+description: 'Agent防火墙免费版,为AI Agent应用提供基础安全防护能力。
+
   核心能力:提示注入检测、工具调用过滤、输入净化、安全策略检查。
+
   适用场景:Agent应用安全防护、用户输入净化、工具调用安全验证。
+
   差异化:免费版聚焦核心防护能力,支持单Agent保护,适合个人开发者快速集成。
-  适用关键词: Agent防火墙, 提示注入, 安全防护, 输入净化, agent firewall, prompt injection, input sanitization
+
+  适用关键词: Agent防火墙, 提示注入, 安全防护, 输入净化, agent firewall, prompt injection, input sanitization'
 tags:
-  - 安全
-  - AI安全
-  - Agent防护
-  - 免费版
+- 安全
+- AI安全
+- Agent防护
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 本工具为AI Agent应用提供基础安全防护层,在用户输入与Agent执行之间建立防火墙,检测并过滤提示注入攻击、恶意工具调用与不当输入。免费版支持基础提示注入检测、工具调用过滤与输入净化,适合个人开发者保护Agent应用免受常见攻击。
 
 ### 免费版与专业版对比

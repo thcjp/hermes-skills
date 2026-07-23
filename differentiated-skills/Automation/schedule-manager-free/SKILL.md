@@ -1,23 +1,27 @@
 ---
-slug: "schedule-manager-free"
-name: "schedule-manager-free"
-version: "1.0.0"
-displayName: "任务调度管家(免费版)"
-summary: "自然语言驱动的定时任务管理，支持一次性与周期任务、时区感知与执行日志，让Agent准确知道何时执行何事。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  任务调度管家免费版为AI Agent提供轻量但可靠的任务调度能力。用户用自然语言描述"做什么"与"何时做"，本技能负责把模糊的时间表达（如"每天早上"、"下周五"、"工作日9点"）解析为标准cron表达式，并持久化到本地JSON存储，确保任务定义在会话重启后依然存在。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+slug: schedule-manager-free
+name: schedule-manager-free
+version: 1.0.0
+displayName: 任务调度管家(免费版)
+summary: 自然语言驱动的定时任务管理，支持一次性与周期任务、时区感知与执行日志，让Agent准确知道何时执行何事。
+license: Proprietary
+edition: free
+description: 任务调度管家免费版为AI Agent提供轻量但可靠的任务调度能力。用户用自然语言描述"做什么"与"何时做"，本技能负责把模糊的时间表达（如"每天早上"、"下周五"、"工作日9点"）解析为标准cron表达式，并持久化到本地JSON存储，确保任务定义在会话重启后依然存在。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-  - 任务调度
-  - 自动化
-  - 定时执行
-  - 效率工具
+- 任务调度
+- 自动化
+- 定时执行
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 任务调度管家（免费版）
 
 > **让Agent准确知道"何时"执行"何事"。自然语言驱动，时区感知，持久化存储。**

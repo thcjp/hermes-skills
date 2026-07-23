@@ -1,23 +1,27 @@
 ---
-slug: "linear-sync-tool-free"
-name: "linear-sync-tool-free"
-version: "1.0.0"
-displayName: "Linear同步(免费版)"
-summary: "管理Linear任务与项目的免费命令行工具，支持任务列表、查看与基础创建"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Linear同步工具免费版是一款面向项目管理的命令行辅助Skill，让AI Agent能够通过Linear CLI管理任务工单、查看项目状态和创建基础任务，实现研发协作的命令行自动化。核心能力：任务列表查看、任务详情查看、基础任务创建、团队信息查询、项目列表查看。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+slug: linear-sync-tool-free
+name: linear-sync-tool-free
+version: 1.0.0
+displayName: Linear同步(免费版)
+summary: 管理Linear任务与项目的免费命令行工具，支持任务列表、查看与基础创建
+license: Proprietary
+edition: free
+description: Linear同步工具免费版是一款面向项目管理的命令行辅助Skill，让AI Agent能够通过Linear CLI管理任务工单、查看项目状态和创建基础任务，实现研发协作的命令行自动化。核心能力：任务列表查看、任务详情查看、基础任务创建、团队信息查询、项目列表查看。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-  - 任务管理
-  - 项目协作
-  - 命令行工具
-  - 集成工具
+- 任务管理
+- 项目协作
+- 命令行工具
+- 集成工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Linear同步工具（免费版）
 
 通过命令行驱动AI Agent管理Linear任务和项目，实现任务查询、查看和基础创建。免费版提供只读查询和简单创建功能，满足个人开发者日常使用。

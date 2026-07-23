@@ -1,24 +1,29 @@
 ---
-slug: "docker-sandbox-tool-free"
-name: "docker-sandbox-tool-free"
-version: "1.0.0"
-displayName: "Docker沙箱入门工具"
-summary: "Docker安全沙箱环境，支持隔离运行与基础资源限制，适合代码测试。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的Docker安全沙箱工具。提供隔离的容器运行环境，
-  支持资源限制、网络隔离与文件系统隔离。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: docker-sandbox-tool-free
+name: docker-sandbox-tool-free
+version: 1.0.0
+displayName: Docker沙箱入门工具
+summary: Docker安全沙箱环境，支持隔离运行与基础资源限制，适合代码测试。
+license: Proprietary
+edition: free
+description: '面向个人开发者的Docker安全沙箱工具。提供隔离的容器运行环境，
+
+  支持资源限制、网络隔离与文件系统隔离。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-  - Operations
-  - Docker
-  - 安全沙箱
-  - 测试
+- Operations
+- Docker
+- 安全沙箱
+- 测试
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Docker沙箱入门工具（免费版）
 
 ## 概述

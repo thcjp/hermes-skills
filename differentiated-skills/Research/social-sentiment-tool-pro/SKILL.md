@@ -1,38 +1,53 @@
 ---
-slug: "social-sentiment-tool-pro"
-name: "social-sentiment-tool-pro"
-version: "1.0.0"
-displayName: "社交情感分析专业版"
-summary: "企业级社交情感分析系统,支持多平台采集、LLM增强分析、病毒传播检测、竞品对比与定时监控告警"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  社交情感分析专业版为企业团队提供高阶社交媒体情感监控与分析能力。核心能力:
+slug: social-sentiment-tool-pro
+name: social-sentiment-tool-pro
+version: 1.0.0
+displayName: 社交情感分析专业版
+summary: 企业级社交情感分析系统,支持多平台采集、LLM增强分析、病毒传播检测、竞品对比与定时监控告警
+license: Proprietary
+edition: pro
+description: '社交情感分析专业版为企业团队提供高阶社交媒体情感监控与分析能力。核心能力:
+
   - 多平台社交数据批量采集(Twitter/Reddit/Instagram等)
+
   - LLM增强情感分析(准确率85-95%)
+
   - 病毒式传播内容检测
+
   - 竞品情感对比分析
+
   - 定时监控与负面舆情告警
+
   - 可视化报告生成
 
+
   适用场景:
+
   - 企业品牌口碑全面监控
+
   - 竞品情感对比分析
+
   - 负面舆情实时告警
+
   - 营销活动效果评估
 
-  差异化:专业版在免费版词典法情感分析基础上,扩展多平台采集、LLM增强、病毒检测、竞品对比与定时告警能力
+
+  差异化:专业版在免费版词典法情感分析基础上,扩展多平台采集、LLM增强、病毒检测、竞品对比与定时告警能力'
 tags:
-  - 研究工具
-  - 情感分析
-  - 企业级
-  - 社交媒体
-  - 舆情监控
+- 研究工具
+- 情感分析
+- 企业级
+- 社交媒体
+- 舆情监控
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 社交情感分析专业版
 ## 概述
 社交情感分析专业版是企业级社交媒体情感监控与分析系统。在免费版单平台采集、词典法分类、基础主题提取的基础上,专业版扩展了多平台社交数据批量采集(Twitter/Reddit/Instagram等)、LLM增强情感分析(准确率85-95%)、病毒式传播内容检测、竞品情感对比分析、定时监控与负面舆情告警、可视化报告生成等企业级能力。

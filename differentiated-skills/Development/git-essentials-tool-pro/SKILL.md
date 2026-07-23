@@ -1,40 +1,58 @@
 ---
-slug: "git-essentials-tool-pro"
-name: "git-essentials-tool-pro"
-version: "1.0.0"
-displayName: "Git基础工具专业版"
-summary: "企业级Git版本控制,支持高级变基、历史重写、子模块批量管理、性能优化与团队协作。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向研发团队的高级Git版本控制工具,提供交互式变基、历史重写、子模块批量管理、仓库性能优化与团队协作工作流。核心能力:
+slug: git-essentials-tool-pro
+name: git-essentials-tool-pro
+version: 1.0.0
+displayName: Git基础工具专业版
+summary: 企业级Git版本控制,支持高级变基、历史重写、子模块批量管理、性能优化与团队协作。
+license: Proprietary
+edition: pro
+description: '面向研发团队的高级Git版本控制工具,提供交互式变基、历史重写、子模块批量管理、仓库性能优化与团队协作工作流。核心能力:
+
   - 高级交互式变基与历史重写
+
   - 子模块批量管理
+
   - 仓库性能优化(gc/fsck)
+
   - 二分查找(bisect)调试
+
   - 批量标签与版本管理
+
   - 团队协作工作流模板
 
+
   适用场景:
+
   - 企业级版本控制管理
+
   - 复杂历史整理与重写
+
   - 大型项目子模块管理
+
   - 版本发布与标签管理
 
+
   差异化:
+
   - 专业版完全兼容免费版命令,支持平滑升级
+
   - 提供高级历史管理能力
-  - 支持子模...
+
+  - 支持子模...'
 tags:
-  - 开发工具
-  - Git
-  - 版本控制
-  - 企业级
+- 开发工具
+- Git
+- 版本控制
+- 企业级
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 Git基础工具专业版为研发团队提供高级版本控制能力。在免费版核心Git命令之上,专业版新增交互式变基、历史重写、子模块批量管理、仓库性能优化和二分查找调试,满足企业级版本控制需求。
 
 专业版完全兼容免费版的所有Git命令和配置,研发团队可从免费版无缝升级,已有配置和别名无需修改。

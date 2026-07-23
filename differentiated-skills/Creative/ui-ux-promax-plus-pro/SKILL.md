@@ -1,39 +1,52 @@
 ---
-slug: "ui-ux-promax-plus-pro"
-name: "ui-ux-promax-plus-pro"
-version: "1.0.0"
-displayName: "UI/UX ProMax+专业版"
-summary: "完整设计资源库+图表推荐+UX模式库+组件规范+决策矩阵,面向企业设计团队的专业资源引擎"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向企业设计团队的完整UI/UX设计资源引擎,包含全部界面风格库、配色方案、
+slug: ui-ux-promax-plus-pro
+name: ui-ux-promax-plus-pro
+version: 1.0.0
+displayName: UI/UX ProMax+专业版
+summary: 完整设计资源库+图表推荐+UX模式库+组件规范+决策矩阵,面向企业设计团队的专业资源引擎
+license: Proprietary
+edition: pro
+description: '面向企业设计团队的完整UI/UX设计资源引擎,包含全部界面风格库、配色方案、
+
   字体配对、25种图表类型推荐、UX交互模式库、常用组件设计规范和完整
+
   设计决策矩阵。核心能力:
+
   - 完整UI风格库(50+种,含深度分析和适用场景)
+
   - 全部配色方案(100+调色板+语义令牌系统)
+
   - 完整字体配对(含可变字体和Google Fonts集成)
+
   - 25种数据可视化图表类型推荐
+
   - UX交互模式库(加载/错误/空状态/反馈等)
+
   - 常用组件设计规范(按钮/卡片/表单/表格/导航)
+
   - 完整设计决策矩阵和配色选择指南
-  ...
+
+  ...'
 tags:
-  - 设计
-  - UI
-  - UX
-  - 配色
-  - 字体
-  - 前端
-  - 企业级
-  - 资源库
-  - 组件规范
-  - 数据可视化
+- 设计
+- UI
+- UX
+- 配色
+- 字体
+- 前端
+- 企业级
+- 资源库
+- 组件规范
+- 数据可视化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # UI/UX ProMax+ - 专业版
 ## 概述
 UI/UX ProMax+专业版是一款面向企业设计团队的完整UI/UX设计资源引擎。在免费版基础资源之上,扩展至25种数据可视化图表推荐、UX交互模式库、常用组件设计规范和完整设计决策矩阵,帮助企业建立系统化、可维护的设计标准。

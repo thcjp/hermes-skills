@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # personal health manager
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Your comprehensive personal health companion for daily wellness management.
 
 ## When to Use

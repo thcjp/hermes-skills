@@ -35,7 +35,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 电报聊天工具专业版是一款面向团队与企业用户的 Telegram 多 Bot 管理与跨实例通信解决方案。在完全兼容免费版单 Bot 配置与基础聊天能力的基础上,专业版解锁了多 Bot 统一管理、主动消息推送、消息归档审计、群组批量管理与 Webhook 集成等高级能力。
 
 无论是管理团队多个 Bot 实例、跨群组广播重要公告、自动化推送告警通知,还是满足消息合规存档需求,专业版都能通过统一的配置与命令体系高效完成。

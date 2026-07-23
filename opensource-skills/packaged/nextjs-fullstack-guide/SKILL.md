@@ -1,20 +1,28 @@
 ---
 slug: nextjs-fullstack-guide
 name: nextjs-fullstack-guide
-version: "1.1.0"
-displayName: "Next.js全栈指南"
-summary: "基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导"
+version: 1.1.0
+displayName: Next.js全栈指南
+summary: 基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导
 license: Proprietary
-description: |-
-  Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、Server/Client组件分层、数据获取策略(SSR/SSG/ISR/Streaming)、Middleware认证、性能优化(Core Web Vitals)和部署配置。适用于电商网站、SaaS面板、博客CMS、实时应用等全栈Web场景。触发关键词:Next.js、React、App Router、Server Components、全栈、Web应用、Vercel、SSR、SSG、ISR、中间件。
-tags: [Next.js, 全栈开发, React, 前端框架, Vercel]
+description: Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、Server/Client组件分层、数据获取策略(SSR/SSG/ISR/Streaming)、Middleware认证、性能优化(Core
+  Web Vitals)和部署配置。适用于电商网站、SaaS面板、博客CMS、实时应用等全栈Web场景。触发关键词:Next.js、React、App Router、Server
+  Components、全栈、Web应用、Vercel、SSR、SSG、ISR、中间件。
+tags:
+- Next.js
+- 全栈开发
+- React
+- 前端框架
+- Vercel
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次
+pricing_model: per_use
 ---
+
 # Next.js全栈指南
 
 基于 Vercel 官方优选实践,构建生产级 Next.js 全栈应用。从路由设计到数据获取,从性能优化到部署配置,全流程指导。

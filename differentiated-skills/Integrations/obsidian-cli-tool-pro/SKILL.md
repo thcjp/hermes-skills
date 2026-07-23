@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 全功能Obsidian命令行管理工具，覆盖文件操作、模板、插件、同步、历史、开发者工具和TUI交互模式。专业版面向需要深度自动化和团队协作的高级用户。
 
 ## 概述

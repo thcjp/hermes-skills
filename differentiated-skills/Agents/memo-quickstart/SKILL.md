@@ -16,7 +16,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 使用流程
 
 面向零依赖场景的**本地记忆系统**，用三层架构和混合检索算法，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无 API Key、无云、无追踪，纯本地记忆。

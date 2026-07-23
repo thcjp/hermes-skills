@@ -1,35 +1,48 @@
 ---
-slug: "wechat-article-writer-free"
-name: "wechat-article-writer-free"
-version: "1.0.0"
-displayName: "公众号写作免费版"
-summary: "从话题或提纲生成公众号长文初稿，支持基础润色与改写，适合个人创作者快速产出。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  公众号写作免费版 —— 面向个人创作者的轻量级公众号长文写作工具。核心能力:
+slug: wechat-article-writer-free
+name: wechat-article-writer-free
+version: 1.0.0
+displayName: 公众号写作免费版
+summary: 从话题或提纲生成公众号长文初稿，支持基础润色与改写，适合个人创作者快速产出。
+license: Proprietary
+edition: free
+description: '公众号写作免费版 —— 面向个人创作者的轻量级公众号长文写作工具。核心能力:
+
   - 从话题或提纲自动生成完整公众号文章初稿
+
   - 基础文章润色功能，优化语言表达与段落结构
+
   - 支持改写与续写，灵活调整已有内容
+
   - 内置多种文章结构模板，适配常见公众号内容类型
+
   - 自动生成文章标题与摘要
 
+
   适用场景:
+
   - 个人公众号创作者日常发文
+
   - 自媒体新手快速学习长文写作
+
   - 内容运营人员批量产出初稿
 
-  差异化:免费版提供核心写作能力，聚焦从话题到初稿的快速生成，适合个人用户日常使用
+
+  差异化:免费版提供核心写作能力，聚焦从话题到初稿的快速生成，适合个人用户日常使用'
 tags:
-  - 内容创作
-  - 公众号
-  - 写作工具
-  - 个人创作
+- 内容创作
+- 公众号
+- 写作工具
+- 个人创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 公众号写作免费版
 
 ## 概述

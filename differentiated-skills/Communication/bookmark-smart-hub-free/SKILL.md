@@ -1,28 +1,35 @@
 ---
-slug: "bookmark-smart-hub-free"
-name: "bookmark-smart-hub-free"
-version: "1.0.0"
-displayName: "书签智能中心免费版"
-summary: "手动抓取社交书签并提取链接内容，基于关键词进行基础分析，适合个人单次处理。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的社交书签内容提取与基础分析工具。
+slug: bookmark-smart-hub-free
+name: bookmark-smart-hub-free
+version: 1.0.0
+displayName: 书签智能中心免费版
+summary: 手动抓取社交书签并提取链接内容，基于关键词进行基础分析，适合个人单次处理。
+license: Proprietary
+edition: free
+description: '面向个人用户的社交书签内容提取与基础分析工具。
+
   核心能力: 书签抓取、链接文章全文提取、关键词分析、本地知识库存储、手动触发运行。
+
   适用场景: 个人书签整理、单次内容提取、知识碎片归档、阅读清单管理。
+
   差异化: 免费版聚焦手动处理与关键词分析，不含自动化监控与 AI 深度分析。
-  适用关键词: 书签, 收藏, bookmark, 内容提取, 关键词分析, 知识管理, 阅读清单
+
+  适用关键词: 书签, 收藏, bookmark, 内容提取, 关键词分析, 知识管理, 阅读清单'
 tags:
-  - 书签管理
-  - 内容提取
-  - 知识管理
-  - 个人效率
-  - 阅读清单
+- 书签管理
+- 内容提取
+- 知识管理
+- 个人效率
+- 阅读清单
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 书签智能中心 免费版
 
 ## 概述

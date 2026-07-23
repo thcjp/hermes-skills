@@ -1,36 +1,49 @@
 ---
-slug: "universal-translate-tool-free"
-name: "universal-translate-tool-free"
-version: "1.0.0"
-displayName: "通用翻译工具(免费版)"
-summary: "面向个人用户的多语言翻译工具,支持文本翻译、自动检测源语言,保留格式与术语。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  通用翻译工具免费版为个人用户提供日常多语言翻译能力,覆盖文本翻译、自动源语言检测、格式保留与术语保护。核心能力:
+slug: universal-translate-tool-free
+name: universal-translate-tool-free
+version: 1.0.0
+displayName: 通用翻译工具(免费版)
+summary: 面向个人用户的多语言翻译工具,支持文本翻译、自动检测源语言,保留格式与术语。
+license: Proprietary
+edition: free
+description: '通用翻译工具免费版为个人用户提供日常多语言翻译能力,覆盖文本翻译、自动源语言检测、格式保留与术语保护。核心能力:
+
   - 文本翻译(任意语言互译)
+
   - 自动检测源语言
+
   - 保留Markdown格式(标题/列表/代码块/表格)
+
   - 保留技术术语(变量名/函数名/URL)
+
   - 简单文件翻译(单文件)
 
+
   适用场景:
+
   - 个人阅读外文文档与资料
+
   - 编写多语言个人项目README
+
   - 日常对话翻译辅助
 
-  差异化:免费版聚焦个人日常翻译需求,支持单文件翻译
+
+  差异化:免费版聚焦个人日常翻译需求,支持单文件翻译'
 tags:
-  - 翻译
-  - 多语言
-  - 文档处理
-  - 个人开发
-  - 本地化
+- 翻译
+- 多语言
+- 文档处理
+- 个人开发
+- 本地化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 通用翻译工具(免费版)
 
 ## 概述

@@ -1,23 +1,27 @@
 ---
-slug: "auto-file-organizer-pro"
-name: "auto-file-organizer-pro"
-version: "1.0.0"
-displayName: "自动整理专业版"
-summary: "全功能文件自动整理工具，支持重复清理、智能内容分类、批量定时整理与多目录批量处理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  自动文件整理器专业版面向高效文件治理场景，在免费版基础上扩展全功能自动化能力。解决文件整理的"规模与智能"痛点：大量重复文件占用空间需要清理、按扩展名分类不够准确需要内容感知、多个文件夹需要批量定时整理、团队需要共享分类规则、文件变更需要实时监控自动整理。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+slug: auto-file-organizer-pro
+name: auto-file-organizer-pro
+version: 1.0.0
+displayName: 自动整理专业版
+summary: 全功能文件自动整理工具，支持重复清理、智能内容分类、批量定时整理与多目录批量处理。
+license: Proprietary
+edition: pro
+description: 自动文件整理器专业版面向高效文件治理场景，在免费版基础上扩展全功能自动化能力。解决文件整理的"规模与智能"痛点：大量重复文件占用空间需要清理、按扩展名分类不够准确需要内容感知、多个文件夹需要批量定时整理、团队需要共享分类规则、文件变更需要实时监控自动整理。Use
+  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
 tags:
-  - 文件整理
-  - 智能分类
-  - 重复清理
-  - 自动化
+- 文件整理
+- 智能分类
+- 重复清理
+- 自动化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 > **全功能文件自动整理。重复清理、智能内容分类、批量定时整理、实时监控。**
 
 高效文件治理面临的挑战远超基础整理：大量重复文件占用存储空间需要精准清理、按扩展名分类无法识别文件真实内容、多个文件夹需要统一定时整理、团队成员需要共享分类规则、新增文件需要实时监控自动归位。

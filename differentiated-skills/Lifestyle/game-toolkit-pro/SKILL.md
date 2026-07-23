@@ -1,29 +1,36 @@
 ---
-slug: "game-toolkit-pro"
-name: "game-toolkit-pro"
-version: "1.0.0"
-displayName: "游戏设计工具箱专业版"
-summary: "企业级游戏设计平台,支持商业桌游发布、教育课程包与团建方案库"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向桌游发行商、教育机构、企业与团建服务商的专业游戏设计平台。
+slug: game-toolkit-pro
+name: game-toolkit-pro
+version: 1.0.0
+displayName: 游戏设计工具箱专业版
+summary: 企业级游戏设计平台,支持商业桌游发布、教育课程包与团建方案库
+license: Proprietary
+edition: pro
+description: '面向桌游发行商、教育机构、企业与团建服务商的专业游戏设计平台。
+
   核心能力: 商业桌游发布、教育课程包、团建方案库、自定义机制、批量生成、版权管理
+
   适用场景: 桌游商业化、教育产品开发、企业团建、咨询培训、IP 衍生
+
   差异化: 专业版支持商业化设计、教育系统化方案与企业级团建,与免费版设计格式兼容
-  适用关键词: 商业桌游, 教育游戏课程, 团建方案, 自定义机制, 游戏IP, 培训设计
+
+  适用关键词: 商业桌游, 教育游戏课程, 团建方案, 自定义机制, 游戏IP, 培训设计'
 tags:
-  - 游戏设计
-  - 企业级
-  - 商业化
-  - 教育产品
-  - 团建方案
-  - IP开发
+- 游戏设计
+- 企业级
+- 商业化
+- 教育产品
+- 团建方案
+- IP开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 游戏设计工具箱 (专业版)
 
 ## 概述

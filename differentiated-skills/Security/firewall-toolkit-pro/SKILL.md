@@ -1,27 +1,34 @@
 ---
-slug: "firewall-toolkit-pro"
-name: "firewall-toolkit-pro"
-version: "1.0.0"
-displayName: "防火墙配置工具包专业版"
-summary: "企业级防火墙管理平台,支持云安全组、nftables、批量多机部署、CIS基线审计与实时日志分析,适合企业网络安全团队。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  防火墙配置工具包专业版,为企业安全团队提供全方位防火墙管理与网络安全加固能力。
+slug: firewall-toolkit-pro
+name: firewall-toolkit-pro
+version: 1.0.0
+displayName: 防火墙配置工具包专业版
+summary: 企业级防火墙管理平台,支持云安全组、nftables、批量多机部署、CIS基线审计与实时日志分析,适合企业网络安全团队。
+license: Proprietary
+edition: pro
+description: '防火墙配置工具包专业版,为企业安全团队提供全方位防火墙管理与网络安全加固能力。
+
   核心能力:云安全组管理、nftables配置、批量多机部署、CIS安全基线审计、实时日志分析与告警、规则版本管理。
+
   适用场景:企业网络安全架构、多云安全组统一管理、合规审计、自动化安全运维。
+
   差异化:专业版兼容免费版配置方法,新增企业级多机管理与云安全组能力,满足规模化网络安全需求。
-  适用关键词: 云安全组, nftables, 批量部署, CIS基线, 防火墙审计, security group, nftables, multi-host
+
+  适用关键词: 云安全组, nftables, 批量部署, CIS基线, 防火墙审计, security group, nftables, multi-host'
 tags:
-  - 防火墙
-  - 网络安全
-  - 企业版
-  - 云安全组
+- 防火墙
+- 网络安全
+- 企业版
+- 云安全组
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 专业版为企业安全团队提供完整的防火墙管理与网络安全加固平台,在免费版iptables/ufw配置能力之上,新增云安全组(AWS/Azure/GCP)管理、nftables高级配置、批量多机部署、CIS安全基线完整审计、实时日志分析与告警、规则版本管理与回滚。专业版完全兼容免费版配置方法,已有防火墙规则可无缝升级,适合企业级网络安全运维。
 
 ### 专业版核心优势

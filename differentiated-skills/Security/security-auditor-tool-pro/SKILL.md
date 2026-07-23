@@ -1,37 +1,51 @@
 ---
-slug: "security-auditor-tool-pro"
-name: "security-auditor-tool-pro"
-version: "1.0.0"
-displayName: "代码安全审计员(专业版)"
-summary: "企业级代码安全审计,OWASP Top 10全覆盖、AST自动扫描、多语言支持、ASVS合规映射"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力:
+slug: security-auditor-tool-pro
+name: security-auditor-tool-pro
+version: 1.0.0
+displayName: 代码安全审计员(专业版)
+summary: 企业级代码安全审计,OWASP Top 10全覆盖、AST自动扫描、多语言支持、ASVS合规映射
+license: Proprietary
+edition: pro
+description: '核心能力:
+
   - OWASP Top 10:2021全覆盖审计(10大类别)
+
   - AST静态分析自动漏洞检测
+
   - TypeScript/Python/Go/Java多语言支持
+
   - 10+框架安全规则(Next。js/Express/Django/FastAPI等)
+
   - OWASP ASVS合规等级映射(L1/L2/L3)
+
   - HTML/PDF/SARIF专业审计报告
+
   - Git Hook持续安全监控
 
+
   适用场景:
+
   - 企业级代码安全审计项目
+
   - 安全合规认证(ASVS/PCI-DSS)
-  - DevSecOp...
+
+  - DevSecOp...'
 tags:
-  - 安全
-  - 代码审计
-  - 企业安全
-  - 静态分析
-  - OWASP
-  - DevSecOps
+- 安全
+- 代码审计
+- 企业安全
+- 静态分析
+- OWASP
+- DevSecOps
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 代码安全审计员专业版是一款面向企业用户的代码安全审计与SAST(静态应用安全测试)平台。在免费版Top 5 OWASP检查基础上,扩展至Top 10全覆盖,增加AST静态分析自动扫描、TypeScript/Python/Go/Java多语言支持、10+框架安全规则、OWASP ASVS合规等级映射等企业级功能。提供HTML/PDF/SARIF专业审计报告,支持Git Hook持续安全监控。与免费版完全兼容,检查清单和代码示例可无缝复用。
 
 ## 核心能力

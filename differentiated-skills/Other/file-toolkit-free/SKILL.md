@@ -1,23 +1,27 @@
 ---
-slug: "file-toolkit-free"
-name: "file-toolkit-free"
-version: "1.0.0"
-displayName: "文件工具箱"
-summary: "智能文件管理体系，包含命名规范、目录结构设计、快速检索，帮助用户告别桌面混乱。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  文件工具箱免费版解决个人文件管理的"积累混乱"痛点：桌面堆满未命名的截图、下载文件夹成了遗忘之地、项目文件版本混乱分不清哪个是最终稿、找不到三个月前保存的文档。这些问题的根源不是个人习惯差，而是缺乏一套与实际工作方式匹配的文件管理体系。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
+slug: file-toolkit-free
+name: file-toolkit-free
+version: 1.0.0
+displayName: 文件工具箱
+summary: 智能文件管理体系，包含命名规范、目录结构设计、快速检索，帮助用户告别桌面混乱。
+license: Proprietary
+edition: free
+description: 文件工具箱免费版解决个人文件管理的"积累混乱"痛点：桌面堆满未命名的截图、下载文件夹成了遗忘之地、项目文件版本混乱分不清哪个是最终稿、找不到三个月前保存的文档。这些问题的根源不是个人习惯差，而是缺乏一套与实际工作方式匹配的文件管理体系。Use
+  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。
 tags:
-  - 文件管理
-  - 命名规范
-  - 目录整理
-  - 效率工具
+- 文件管理
+- 命名规范
+- 目录整理
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 文件工具箱（免费版）
 
 > **告别桌面混乱。智能命名规范、三级目录结构、自然语言检索。**

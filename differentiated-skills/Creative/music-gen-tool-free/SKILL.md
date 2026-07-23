@@ -1,25 +1,29 @@
 ---
-slug: "music-gen-tool-free"
-name: "music-gen-tool-free"
-version: "1.0.0"
-displayName: "音乐生成工具免费版"
-summary: "聚合Suno、Udio等主流AI音乐平台,提供歌词生成、风格匹配与基础乐理支持,适合个人内容创作者。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  音乐生成工具免费版帮助个人用户通过聚合多个AI音乐生成平台创建音乐。支持Suno、Udio、Stable Audio等主流服务,提供歌词生成、风格匹配、
-  基础乐理指导与版权注意事项。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
+slug: music-gen-tool-free
+name: music-gen-tool-free
+version: 1.0.0
+displayName: 音乐生成工具免费版
+summary: 聚合Suno、Udio等主流AI音乐平台,提供歌词生成、风格匹配与基础乐理支持,适合个人内容创作者。
+license: Proprietary
+edition: free
+description: '音乐生成工具免费版帮助个人用户通过聚合多个AI音乐生成平台创建音乐。支持Suno、Udio、Stable Audio等主流服务,提供歌词生成、风格匹配、
+
+  基础乐理指导与版权注意事项。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。'
 tags:
-  - 音乐生成
-  - AI音乐
-  - 歌词创作
-  - 配乐
-  - 内容创作
+- 音乐生成
+- AI音乐
+- 歌词创作
+- 配乐
+- 内容创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 音乐生成工具免费版
 
 ## 概述

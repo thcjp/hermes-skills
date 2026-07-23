@@ -1,35 +1,47 @@
 ---
-slug: "go-linter-config-tool-pro"
-name: "go-linter-config-tool-pro"
-version: "1.0.0"
-displayName: "Go Lint 配置工具专业版"
-summary: "面向团队的多项目 lint 统一治理、自定义规则与 CI 矩阵工具。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队的 golangci-lint 多项目统一治理与自定义规则专业工具。核心能力:
+slug: go-linter-config-tool-pro
+name: go-linter-config-tool-pro
+version: 1.0.0
+displayName: Go Lint 配置工具专业版
+summary: 面向团队的多项目 lint 统一治理、自定义规则与 CI 矩阵工具。
+license: Proprietary
+edition: pro
+description: '面向团队的 golangci-lint 多项目统一治理与自定义规则专业工具。核心能力:
+
   - 多项目配置矩阵与统一基线
+
   - 自定义规则集与排除策略
+
   - CI 矩阵（GitHub Actions / GitLab CI / Jenkins）
+
   - 质量门禁、趋势看板与历史回归
 
+
   适用场景:
+
   - 企业多仓库统一 lint 基线
+
   - 团队自定义规则与豁免治理
+
   - CI 质量门禁与回归追踪
 
-  差异化: 专业版在免费版单项目基础上扩展多项目矩阵、自定义规则、CI 集成与质量门禁，兼容免费版配置格式
+
+  差异化: 专业版在免费版单项目基础上扩展多项目矩阵、自定义规则、CI 集成与质量门禁，兼容免费版配置格式'
 tags:
-  - Go
-  - 代码质量
-  - 企业级
-  - CI/CD
-  - 其他工具
+- Go
+- 代码质量
+- 企业级
+- CI/CD
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Go Lint 配置工具（专业版）
 
 ## 概述

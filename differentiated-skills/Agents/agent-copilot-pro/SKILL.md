@@ -1,22 +1,26 @@
 ---
-slug: "agent-copilot-pro"
-name: "agent-copilot-pro"
-version: "1.0.0"
-displayName: "代理副驾驶"
-summary: "解决Prompt幻觉、上下文腐烂、工具误选、任务拆解不彻底的AI代理工程副驾驶"
-license: "Proprietary"
-description: |-
-  AI Agent工程化副驾驶：提供五段式System Prompt结构化生成、上下文腐烂诊断（密度衰减/噪声累积/注意力漂移三因素）、工具选择决策矩阵（任务类型×参数复杂度×失败成本）、任务DAG拆解、Agent Loop模式选择（ReAct/CoT/Plan-Execute）、Prompt质量评估与幻觉检测六项核心能力
+slug: agent-copilot-pro
+name: agent-copilot-pro
+version: 1.0.0
+displayName: 代理副驾驶
+summary: 解决Prompt幻觉、上下文腐烂、工具误选、任务拆解不彻底的AI代理工程副驾驶
+license: Proprietary
+description: AI Agent工程化副驾驶：提供五段式System Prompt结构化生成、上下文腐烂诊断（密度衰减/噪声累积/注意力漂移三因素）、工具选择决策矩阵（任务类型×参数复杂度×失败成本）、任务DAG拆解、Agent
+  Loop模式选择（ReAct/CoT/Plan-Execute）、Prompt质量评估与幻觉检测六项核心能力
 tags:
-  - 代理工程
-  - 提示词工程
-  - 任务编排
-  - 质量评估
+- 代理工程
+- 提示词工程
+- 任务编排
+- 质量评估
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 代理副驾驶（Agent Copilot Pro）
 
 面向 AI Agent 开发者的**工程化副驾驶**，把零散的 Prompt 工程经验沉淀为模板库、评估器与循环工程工作流，让 Agent 从"能跑"升级到"稳定可控"。

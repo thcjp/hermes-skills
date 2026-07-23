@@ -1,25 +1,31 @@
 ---
-slug: "trending-feed-skill-free"
-name: "trending-feed-skill-free"
-version: "1.0.0"
-displayName: "热榜订阅(免费版)"
-summary: "获取 GitHub Trending 热门仓库列表，支持语言过滤，返回结构化 JSON 数据。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  获取 GitHub Trending 热门仓库列表，支持语言过滤，返回结构化 JSON 数据。核心能力：
+slug: trending-feed-skill-free
+name: trending-feed-skill-free
+version: 1.0.0
+displayName: 热榜订阅(免费版)
+summary: 获取 GitHub Trending 热门仓库列表，支持语言过滤，返回结构化 JSON 数据。
+license: Proprietary
+edition: free
+description: '获取 GitHub Trending 热门仓库列表，支持语言过滤，返回结构化 JSON 数据。核心能力：
+
   - 抓取 GitHub Trending 页面并解析仓库元信息
+
   - 调用 GitHub REST API 补全描述、星标数、主语言
-  - 支持按编程语言过滤。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+
+  - 支持按编程语言过滤。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-  - 集成工具
-  - 数据聚合
-  - 开发者效率
+- 集成工具
+- 数据聚合
+- 开发者效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 热榜订阅（免费版）
 
 ## 概述

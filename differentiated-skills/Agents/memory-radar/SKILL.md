@@ -16,7 +16,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 记忆雷达（Memory Radar）
 
 面向 AI Agent 记忆文件的**安全扫描系统**，对记忆文件、日志、工作区配置进行持续安全审计，主动发现恶意指令、注入模式、凭证泄漏与行为操纵，防患于未然。

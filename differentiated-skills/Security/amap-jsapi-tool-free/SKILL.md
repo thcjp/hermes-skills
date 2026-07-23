@@ -1,27 +1,34 @@
 ---
-slug: "amap-jsapi-tool-free"
-name: "amap-jsapi-tool-free"
-version: "1.0.0"
-displayName: "高德地图JSAPI免费版"
-summary: "高德地图JSAPI v2.0开发助手,支持地图展示、标注点、地理编码与基础路径规划,适合个人开发者快速集成地图功能。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  高德地图JSAPI v2.0开发助手免费版,为个人开发者提供地图开发核心能力。
+slug: amap-jsapi-tool-free
+name: amap-jsapi-tool-free
+version: 1.0.0
+displayName: 高德地图JSAPI免费版
+summary: 高德地图JSAPI v2.0开发助手,支持地图展示、标注点、地理编码与基础路径规划,适合个人开发者快速集成地图功能。
+license: Proprietary
+edition: free
+description: '高德地图JSAPI v2.0开发助手免费版,为个人开发者提供地图开发核心能力。
+
   核心能力:WebGL地图渲染、标注点管理、地理编码/逆地理编码、基础路径规划。
+
   适用场景:个人项目地图展示、位置搜索、基础导航功能开发。
+
   差异化:免费版聚焦核心地图功能,适合个人开发者快速上手,每日5000次API调用额度。
-  适用关键词: 高德地图, 地图开发, JSAPI, 地理编码, 路径规划, amap, map, geocoding
+
+  适用关键词: 高德地图, 地图开发, JSAPI, 地理编码, 路径规划, amap, map, geocoding'
 tags:
-  - 地图开发
-  - 高德地图
-  - JSAPI
-  - 免费版
+- 地图开发
+- 高德地图
+- JSAPI
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 高德地图JSAPI v2.0 开发助手免费版
 
 ## 概述

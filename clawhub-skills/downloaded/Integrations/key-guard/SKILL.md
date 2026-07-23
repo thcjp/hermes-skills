@@ -17,7 +17,11 @@ tags: '[''Integrations'']'
 tools:
   - read
   - exec
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 
 # # key-guard  A local MCP server that keeps API keys off ai-assistant's servers.  ## Why This Exists  When ai-assistant reads a file containing an API key, the raw key content gets sent to ai-assistant's servers. key-guard prevents this by acting as a local middleman â ai-assistant calls a tool, the tool reads the key and makes the API call locally, and only the result is returned to ai-assistant.
 

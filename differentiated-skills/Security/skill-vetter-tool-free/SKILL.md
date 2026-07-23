@@ -1,40 +1,58 @@
 ---
-slug: "skill-vetter-tool-free"
-name: "skill-vetter-tool-free"
-version: "1.0.0"
-displayName: "Skill安全审查(免费版)"
-summary: "安装前安全审查协议,含红旗检测、权限评估与风险分级,保障Agent生态安全"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力:
+slug: skill-vetter-tool-free
+name: skill-vetter-tool-free
+version: 1.0.0
+displayName: Skill安全审查(免费版)
+summary: 安装前安全审查协议,含红旗检测、权限评估与风险分级,保障Agent生态安全
+license: Proprietary
+edition: free
+description: '核心能力:
+
   - 4步安全审查协议(来源/代码/权限/风险)
+
   - 12项红旗检测规则
+
   - 权限范围评估清单
+
   - 4级风险分类(LOW/MEDIUM/HIGH/EXTREME)
+
   - 结构化审查报告输出
 
+
   适用场景:
+
   - 安装新Skill前的安全检查
+
   - 第三方代码安全评估
+
   - Skill市场安全把关
+
   - Agent生态安全治理
 
+
   差异化:
+
   - 专为AI Agent Skill生态设计
+
   - 覆盖Prompt注入、数据外泄等AI特有风险
+
   - 4级风险分类与安装建议
-  - 纯人工审查流程,可操作性强
+
+  - 纯人工审查流程,可操作性强'
 tags:
-  - 安全
-  - Skill安全
-  - 代码审查
-  - 风险评估
+- 安全
+- Skill安全
+- 代码审查
+- 风险评估
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Skill安全审查(免费版)
 
 ## 概述

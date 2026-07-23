@@ -1,36 +1,50 @@
 ---
-slug: "python-dataviz-tool-free"
-name: "python-dataviz-tool-free"
-version: "1.0.0"
-displayName: "Python数据可视化-免费版"
-summary: "使用matplotlib/seaborn/plotly创建专业图表,支持柱状图、折线图、散点图与热力图"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Python 数据可视化工具免费版,面向个人开发者与数据分析师。核心能力:
+slug: python-dataviz-tool-free
+name: python-dataviz-tool-free
+version: 1.0.0
+displayName: Python数据可视化-免费版
+summary: 使用matplotlib/seaborn/plotly创建专业图表,支持柱状图、折线图、散点图与热力图
+license: Proprietary
+edition: free
+description: 'Python 数据可视化工具免费版,面向个人开发者与数据分析师。核心能力:
+
   - matplotlib 静态图表(柱状/折线/散点/饼图)
+
   - seaborn 统计可视化(箱线/小提琴/KDE)
+
   - plotly 交互式图表
+
   - 多子图布局与样式定制
+
   - CSV/字典/NumPy 数据源支持
+
   - PNG/SVG/PDF 导出
 
+
   适用场景:
+
   - 数据分析与报告制作
+
   - 学术论文图表绘制
+
   - 个人项目数据可视化
 
-  差异化:免费版提供核心图表能力
+
+  差异化:免费版提供核心图表能力'
 tags:
-  - 数据可视化
-  - Python
-  - 图表
-  - matplotlib
+- 数据可视化
+- Python
+- 图表
+- matplotlib
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Python 数据可视化 - 免费版
 
 ## 概述

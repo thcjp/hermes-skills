@@ -131,7 +131,7 @@ clawlink_call_tool --tool "slack_send_message" --params '{
 | `not_authed` | OAuth Token无效或已撤销 | 用户在Dashboard断开了Slack连接 | 引导用户重新连接 Slack |
 | `missing_scope` | Token缺少所需权限范围 | 连接时未授权 `chat:write` 等Scope | 引导用户在Dashboard重新授权 |
 | `is_archived` | 目标频道已归档（只读） | 向已归档频道发送消息 | 引导用户选择活跃频道 |
-| `rate_limited` | 触发速率限制 | 请求频率超过Slack限制 | 等待后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，建议间隔1秒 |
+| `rate_limited` | 触发速率限制 | 请求频率超过Slack限制 | 等待后检查网络连接和配置后重试，建议间隔1秒 |
 
 ## 常见问题
 

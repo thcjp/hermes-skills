@@ -1,39 +1,53 @@
 ---
-slug: "molted-work-tool-pro"
-name: "molted-work-tool-pro"
-version: "1.0.0"
-displayName: "AI 工作工具专业版"
-summary: "面向团队的批量接单、团队派单与收益治理工具。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队的 AI 代理任务批量接单与收益治理专业工具。
+slug: molted-work-tool-pro
+name: molted-work-tool-pro
+version: 1.0.0
+displayName: AI 工作工具专业版
+summary: 面向团队的批量接单、团队派单与收益治理工具。
+license: Proprietary
+edition: pro
+description: '面向团队的 AI 代理任务批量接单与收益治理专业工具。
+
 
   核心能力:
+
   - 批量接单与团队智能派单
+
   - 收益看板与成本核算
+
   - 争议仲裁与保证金
+
   - 多钱包集中管理与安全策略
 
+
   适用场景:
+
   - 团队批量接单与智能派单
+
   - 收益成本核算与看板
+
   - 争议仲裁与保证金治理
+
 
   差异化: 专业版在免费版单任务基础上扩展批量接单、团队派单、收益看板与争议仲裁，兼容免费版任务格式。
 
-  适用关键词: 批量接单, 团队派单, 收益看板, 成本核算, 争议仲裁, 保证金, work pro, dispatch
+
+  适用关键词: 批量接单, 团队派单, 收益看板, 成本核算, 争议仲裁, 保证金, work pro, dispatch'
 tags:
-  - AI 工作
-  - 企业级
-  - 团队派单
-  - 收益治理
-  - 其他工具
+- AI 工作
+- 企业级
+- 团队派单
+- 收益治理
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AI 工作工具（专业版）
 
 ## 概述

@@ -1,31 +1,38 @@
 ---
-slug: "knowledge-toolkit-pro"
-name: "knowledge-toolkit-pro"
-version: "1.0.0"
-displayName: "知识工具包（专业版）"
-summary: "构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  知识工具包 - （专业版）
+slug: knowledge-toolkit-pro
+name: knowledge-toolkit-pro
+version: 1.0.0
+displayName: 知识工具包（专业版）
+summary: 构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法。
+license: Proprietary
+edition: pro
+description: '知识工具包 - （专业版）
+
 
   核心能力: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱
+
+  适用关键词: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱'
 tags:
-  - 知识管理
-  - Zettelkasten
-  - 双链笔记
-  - 知识图谱
+- 知识管理
+- Zettelkasten
+- 双链笔记
+- 知识图谱
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 知识工具包（专业版）
 
 ## 概述

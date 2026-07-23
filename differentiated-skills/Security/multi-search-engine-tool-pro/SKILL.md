@@ -1,27 +1,34 @@
 ---
-slug: "multi-search-engine-tool-pro"
-name: "multi-search-engine-tool-pro"
-version: "1.0.0"
-displayName: "多搜索引擎专业版"
-summary: "企业级多搜索引擎聚合平台,支持16个引擎、结果去重排序、批量搜索、API访问与本地缓存,适合专业信息检索团队。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  多搜索引擎专业版,为专业用户提供全方位多搜索引擎聚合与检索能力。
+slug: multi-search-engine-tool-pro
+name: multi-search-engine-tool-pro
+version: 1.0.0
+displayName: 多搜索引擎专业版
+summary: 企业级多搜索引擎聚合平台,支持16个引擎、结果去重排序、批量搜索、API访问与本地缓存,适合专业信息检索团队。
+license: Proprietary
+edition: pro
+description: '多搜索引擎专业版,为专业用户提供全方位多搜索引擎聚合与检索能力。
+
   核心能力:16引擎聚合搜索、智能去重排序、批量关键词搜索、搜索API、本地结果缓存、JSON/CSV导出。
+
   适用场景:专业信息检索、市场调研、竞品分析、学术研究。
+
   差异化:专业版兼容免费版搜索配置,新增结果聚合分析与API能力,满足专业检索需求。
-  适用关键词: 搜索聚合, 结果去重, 批量搜索, 搜索API, 结果缓存, search aggregation, dedup, batch search
+
+  适用关键词: 搜索聚合, 结果去重, 批量搜索, 搜索API, 结果缓存, search aggregation, dedup, batch search'
 tags:
-  - 搜索
-  - 信息检索
-  - 企业版
-  - API
+- 搜索
+- 信息检索
+- 企业版
+- API
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 专业版为专业用户提供完整的多搜索引擎聚合与检索平台,在免费版链接生成能力之上,新增16引擎结果聚合、智能去重与相关性排序、批量关键词搜索、搜索结果API、本地结果缓存与JSON/CSV导出。专业版完全兼容免费版搜索引擎配置,已有搜索脚本可无缝升级,适合专业信息检索与市场调研场景。
 
 ### 专业版核心优势

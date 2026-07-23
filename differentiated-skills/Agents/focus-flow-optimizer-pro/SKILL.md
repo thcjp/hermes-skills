@@ -1,34 +1,41 @@
 ---
-slug: "focus-flow-optimizer-pro"
-name: "focus-flow-optimizer-pro"
-version: "1.0.0"
-displayName: "Focus Flow Optimizer"
-summary: "AI Agent全功能生产力操作系统，七角色场景指南、团队协作、深度性能分析与多平台集成。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  专注流优化器（专业版）在免费版五层架构基础上，解锁团队协作模式、深度性能分析、多角色场景指南、多平台集成与版本迁移指南。为长期项目、团队负责人、独立创业者、远程工作者、ADHD/育儿/倦怠期等真实处境提供针对性方案。
+slug: focus-flow-optimizer-pro
+name: focus-flow-optimizer-pro
+version: 1.0.0
+displayName: Focus Flow Optimizer
+summary: AI Agent全功能生产力操作系统，七角色场景指南、团队协作、深度性能分析与多平台集成。
+license: Proprietary
+edition: pro
+description: '专注流优化器（专业版）在免费版五层架构基础上，解锁团队协作模式、深度性能分析、多角色场景指南、多平台集成与版本迁移指南。为长期项目、团队负责人、独立创业者、远程工作者、ADHD/育儿/倦怠期等真实处境提供针对性方案。
 
-  核心能力：完整五层架构（捕获/方向/执行/焦点/复盘）+ 团队委托追踪 + 估算误差统计 + 能量曲线趋势分析 + 专注会话模式挖掘 + 七大角色场景指南 + 多平台集成（日历/邮件/协作工具） + 从Notion/Todoist/滴答清单迁移指南 + 性能优化策略 + 扩展FAQ与故障排查表。
+
+  核心能力：完整五层架构（捕获/方向/执行/焦点/复盘）+ 团队委托追踪 + 估算误差统计 + 能量曲线趋势分析 + 专注会话模式挖掘 + 七大角色场景指南 +
+  多平台集成（日历/邮件/协作工具） + 从Notion/Todoist/滴答清单迁移指南 + 性能优化策略 + 扩展FAQ与故障排查表。
+
 
   适用场景：长期项目协作、跨会话决策追踪、团队知识沉淀、Agent上下文持久化、错误经验归档与复用、多项目并行、远程团队协作、ADHD/育儿/倦怠期专属方案。
 
+
   差异化：基于开源生产力方法论深度改造，完全中文化，路径改为~/focus-flow标准目录，新增七大角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明。
 
-  适用关键词：专注流、团队协作、能量管理、时间块、瓶颈诊断、深度工作、ADHD、远程工作、倦怠恢复、估算误差、迁移指南
+
+  适用关键词：专注流、团队协作、能量管理、时间块、瓶颈诊断、深度工作、ADHD、远程工作、倦怠恢复、估算误差、迁移指南'
 tags:
-  - 专注管理
-  - 时间块
-  - 能量管理
-  - 团队协作
-  - 性能优化
-  - 多角色场景
+- 专注管理
+- 时间块
+- 能量管理
+- 团队协作
+- 性能优化
+- 多角色场景
 tools:
-  - read
-  - exec
-edition: "pro"
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 专注流优化器（专业版）
 
 > **全功能生产力操作系统。七角色场景、团队协作、深度性能分析、多平台集成，从工具堆砌走向系统化专注。**

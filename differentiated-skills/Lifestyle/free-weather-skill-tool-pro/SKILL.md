@@ -1,29 +1,36 @@
 ---
-slug: "free-weather-skill-tool-pro"
-name: "free-weather-skill-tool-pro"
-version: "1.0.0"
-displayName: "免费天气技能专业版"
-summary: "高可靠天气查询平台,支持多源冗余、企业集成、自定义数据源与监控告警"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向企业、运维与生产环境的高可靠天气查询平台。
+slug: free-weather-skill-tool-pro
+name: free-weather-skill-tool-pro
+version: 1.0.0
+displayName: 免费天气技能专业版
+summary: 高可靠天气查询平台,支持多源冗余、企业集成、自定义数据源与监控告警
+license: Proprietary
+edition: pro
+description: '面向企业、运维与生产环境的高可靠天气查询平台。
+
   核心能力: 多数据源冗余、批量查询、缓存加速、监控告警、自定义数据源、企业集成
+
   适用场景: 生产系统集成、运维监控、商业应用、IoT 设备、SLA 保障场景
+
   差异化: 专业版支持多数据源冗余与企业级集成,与免费版命令行格式完全兼容
-  适用关键词: 企业天气集成, 多源冗余, 监控告警, 批量查询, SLA保障, 天气API
+
+  适用关键词: 企业天气集成, 多源冗余, 监控告警, 批量查询, SLA保障, 天气API'
 tags:
-  - 天气查询
-  - 企业级
-  - 高可用
-  - 多源冗余
-  - 监控告警
-  - 集成方案
+- 天气查询
+- 企业级
+- 高可用
+- 多源冗余
+- 监控告警
+- 集成方案
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 免费天气技能 (专业版)
 ## 概述
 专业版在免费版零配置查询能力之上,扩展多数据源冗余、企业集成、缓存加速、监控告警等生产能力。支持同时对接 wttr.in、Open-Meteo、OpenWeather 等多个数据源,自动故障切换,提供 99.9% 可用性 SLA。适合需要将天气数据深度集成到生产系统的企业、IoT 平台、商业应用等场景。

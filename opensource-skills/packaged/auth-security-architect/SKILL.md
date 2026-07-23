@@ -1,20 +1,27 @@
 ---
 slug: auth-security-architect
 name: auth-security-architect
-version: "1.1.0"
-displayName: "认证安全架构师"
-summary: "OAuth/2FA/SSO全栈认证安全,基于Better Auth构建企业级认证体系"
+version: 1.1.0
+displayName: 认证安全架构师
+summary: OAuth/2FA/SSO全栈认证安全,基于Better Auth构建企业级认证体系
 license: Proprietary
-description: |-
-  认证安全架构师——基于Better Auth官方最佳实践设计安全、可扩展的认证授权系统。适用于SaaS认证、企业SSO、双因素认证、RBAC权限管理、API安全防护、移动端认证等场景。从OAuth集成到2FA，从会话管理到权限控制，全栈安全覆盖。触发关键词：认证、授权、OAuth、2FA、SSO、会话、权限、RBAC、密码、密钥、CSRF、XSS、安全架构、Better Auth
-tags: [认证安全, OAuth, 权限管理, SSO, 安全架构]
+description: 认证安全架构师——基于Better Auth官方最佳实践设计安全、可扩展的认证授权系统。适用于SaaS认证、企业SSO、双因素认证、RBAC权限管理、API安全防护、移动端认证等场景。从OAuth集成到2FA，从会话管理到权限控制，全栈安全覆盖。触发关键词：认证、授权、OAuth、2FA、SSO、会话、权限、RBAC、密码、密钥、CSRF、XSS、安全架构、Better
+  Auth
+tags:
+- 认证安全
+- OAuth
+- 权限管理
+- SSO
+- 安全架构
 tools:
-  - read
-  - exec
-suggested_price: "50.00"
-pricing_tier: "enterprise"
-pricing_rationale: "安全合规类, small市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高"
+- read
+- exec
+suggested_price: 99.9
+pricing_tier: L4
+pricing_rationale: 安全合规类, small市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高
+pricing_model: monthly
 ---
+
 # 认证安全架构师
 
 基于 Better Auth 官方最佳实践，设计安全、可扩展的认证授权系统。从 OAuth 集成到 2FA，从会话管理到权限控制，全栈安全覆盖。

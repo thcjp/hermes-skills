@@ -29,7 +29,11 @@ tools:
   - - read
 - exec
 # Who Is Actor — Git Repository Collaboration-Pattern Analysis Skill
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 > 🔗 **Project Repository:** [https://github.com/wscats/who-is-actor](https://github.com/wscats/who-is-actor)
 
 Zero *install* dependencies, zero scripts. Collects data purely through native read-only `git` commands and standard Unix text utilities (`cut`, `sort`, `awk`, `grep`, etc. — already present on most systems). The AI is responsible only for interpreting **already-aggregated, locally-redacted statistical metrics** to generate a collaboration-pattern report.

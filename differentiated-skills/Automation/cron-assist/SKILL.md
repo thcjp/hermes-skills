@@ -1,21 +1,25 @@
 ---
-slug: "cron-assist"
-name: "cron-assist"
-version: "1.0.0"
-displayName: "定时助手"
-summary: "自然语言驱动的定时任务助手，内置模板库与成本优化，把口语意图秒变可靠调度。"
-license: "Proprietary"
-description: |-
-  定时助手是定时调度专家的"自然语言层"。用户说"每天早上9点发日报"，它解析意图、匹配模板、生成调度命令并执行，全程无需懂 cron 语法。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。
+slug: cron-assist
+name: cron-assist
+version: 1.0.0
+displayName: 定时助手
+summary: 自然语言驱动的定时任务助手，内置模板库与成本优化，把口语意图秒变可靠调度。
+license: Proprietary
+description: 定时助手是定时调度专家的"自然语言层"。用户说"每天早上9点发日报"，它解析意图、匹配模板、生成调度命令并执行，全程无需懂 cron 语法。Use
+  when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。
 tags:
-  - 自动化
-  - 定时调度
-  - 自然语言
+- 自动化
+- 定时调度
+- 自然语言
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 定时助手
 
 让用户用大白话管理定时任务，把"每天早上9点发日报"这种口语秒变可靠调度。本技能解决四个核心痛点：**cron 语法难懂**（`0 9 * * *` 谁记得住）、**重复配置**（日报、健康检查等高频场景每次从零写）、**成本失控**（频繁跑昂贵任务烧 API）、**管理混乱**（任务一多就找不到、改不动）。

@@ -1,20 +1,27 @@
 ---
 slug: content-cms-architect
 name: content-cms-architect
-version: "1.0.1"
-displayName: "CMS内容架构师"
-summary: "Headless CMS内容架构,从内容建模到SEO-AEO,打造可扩展内容平台"
+version: 1.0.1
+displayName: CMS内容架构师
+summary: Headless CMS内容架构,从内容建模到SEO-AEO,打造可扩展内容平台
 license: Proprietary
-description: |-
-  CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩展内容管理系统,从内容建模到GROQ/REST/GraphQL查询,从SEO-AEO优化到内容A/B实验,打造前端自由、内容结构化的现代内容平台。覆盖Schema定义、字段类型设计、引用关系、Portable Text、多语言i18n、草稿发布工作流、答案引擎优化全栈
-tags: [内容管理, Headless CMS, 内容建模, SEO优化, Sanity]
+description: CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩展内容管理系统,从内容建模到GROQ/REST/GraphQL查询,从SEO-AEO优化到内容A/B实验,打造前端自由、内容结构化的现代内容平台。覆盖Schema定义、字段类型设计、引用关系、Portable
+  Text、多语言i18n、草稿发布工作流、答案引擎优化全栈
+tags:
+- 内容管理
+- Headless CMS
+- 内容建模
+- SEO优化
+- Sanity
 tools:
-  - read
-  - exec
-suggested_price: "1.90"
-pricing_tier: "standard"
-pricing_rationale: "翻译类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用,竞品多(DeepL等免费)"
+- read
+- exec
+suggested_price: 19.9
+pricing_tier: L2
+pricing_rationale: 翻译类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用,竞品多(DeepL等免费)
+pricing_model: per_use
 ---
+
 # CMS内容架构师
 
 基于 Headless CMS 官方最佳实践,设计可扩展、高性能的内容管理系统。从内容建模到 GROQ 查询,从 SEO 优化到内容实验,全栈 CMS 架构。

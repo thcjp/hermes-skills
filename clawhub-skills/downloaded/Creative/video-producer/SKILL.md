@@ -1,17 +1,7 @@
 ---
-slug: video-producer
-name: video-producer
-version: "2.2.1"
-displayName: Video Producer
-summary: 短视频一键生成技能 v2.2。调用video-director进行画面规划，然后生成AI素材、TTS配音、视频渲染，输出完整MP4。
-license: MIT-0
-description: |-
-  短视频一键生成技能 v2。2。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Creative
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Video Producer

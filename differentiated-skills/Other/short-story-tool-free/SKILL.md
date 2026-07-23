@@ -1,39 +1,55 @@
 ---
-slug: "short-story-tool-free"
-name: "short-story-tool-free"
-version: "1.0.0"
-displayName: "短篇网文写作-免费版"
-summary: "短篇网文创作助手,支持故事构思、结构搭建与快速成文,适合个人创作"
-license: "Proprietary"
-edition: "free"
-description: |-
-  短篇网文创作助手免费版,面向个人作者与写作爱好者。
+slug: short-story-tool-free
+name: short-story-tool-free
+version: 1.0.0
+displayName: 短篇网文写作-免费版
+summary: 短篇网文创作助手,支持故事构思、结构搭建与快速成文,适合个人创作
+license: Proprietary
+edition: free
+description: '短篇网文创作助手免费版,面向个人作者与写作爱好者。
+
 
   核心能力:
+
   - 故事构思与灵感生成
+
   - 三幕式结构搭建
+
   - 快速成文(1000-10000字)
+
   - 人物与场景速写
+
   - 结局设计指导
+
   - 本地文件管理
 
+
   适用场景:
+
   - 短篇小说创作
+
   - 写作练习与学习
+
   - 参赛作品快速产出
+
 
   差异化:免费版提供基础短篇创作能力。PRO版扩展批量产出、题材模板与投稿管理。
 
-  适用关键词: 短篇, 写作, 创作, 故事构思, 三幕式, short story, 短篇小说
+
+  适用关键词: 短篇, 写作, 创作, 故事构思, 三幕式, short story, 短篇小说'
 tags:
-  - 短篇创作
-  - 写作辅助
-  - 故事构思
+- 短篇创作
+- 写作辅助
+- 故事构思
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 短篇网文写作 - 免费版
 
 ## 概述

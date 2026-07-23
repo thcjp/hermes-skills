@@ -1,43 +1,62 @@
 ---
-slug: "podcast-toolkit-free"
-name: "podcast-toolkit-free"
-version: "1.0.0"
-displayName: "播客创作工具包免费版"
-summary: "个人播客创作工具包,覆盖选题规划、脚本撰写与节目笔记,帮助独立创作者快速起步。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人创作者的播客创作工具包(免费版)。核心能力:
+slug: podcast-toolkit-free
+name: podcast-toolkit-free
+version: 1.0.0
+displayName: 播客创作工具包免费版
+summary: 个人播客创作工具包,覆盖选题规划、脚本撰写与节目笔记,帮助独立创作者快速起步。
+license: Proprietary
+edition: free
+description: '面向个人创作者的播客创作工具包(免费版)。核心能力:
+
   - 播客选题规划与节目定位
+
   - 单集脚本大纲与钩子设计
+
   - 节目笔记(Show Notes)模板
+
   - 基础录制与后期检查清单
+
   - 项目目录结构规范
 
+
   适用场景:
+
   - 个人播客从零起步
+
   - 独立创作者节目规划
+
   - 单集内容策划与脚本
+
   - 节目笔记与发布准备
 
+
   差异化:
+
   - 免费版聚焦单节目创作全流程
+
   - 提供清晰的目录结构与检查清单
+
   - 适配独立创作者与一人公司
+
   - 命令行友好,便于与 Agent 协作
 
-  适用关键词: podcast...
+
+  适用关键词: podcast...'
 tags:
-  - 创意设计
-  - 播客
-  - 内容创作
-  - 脚本撰写
-  - 个人创作
+- 创意设计
+- 播客
+- 内容创作
+- 脚本撰写
+- 个人创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 播客创作工具包 - 免费版
 
 ## 概述

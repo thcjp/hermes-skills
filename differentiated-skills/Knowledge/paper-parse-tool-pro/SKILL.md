@@ -1,31 +1,38 @@
 ---
-slug: "paper-parse-tool-pro"
-name: "paper-parse-tool-pro"
-version: "1.0.0"
-displayName: "论文解析工具（专业版）"
-summary: "解析学术论文PDF，提取标题、摘要、章节、引用、图表等结构化信息。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  论文解析工具 - （专业版）
+slug: paper-parse-tool-pro
+name: paper-parse-tool-pro
+version: 1.0.0
+displayName: 论文解析工具（专业版）
+summary: 解析学术论文PDF，提取标题、摘要、章节、引用、图表等结构化信息。
+license: Proprietary
+edition: pro
+description: '论文解析工具 - （专业版）
+
 
   核心能力: 论文解析, 学术论文, paper parse, 引用提取, 章节分析, 文献管理, PDF解析
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 论文解析, 学术论文, paper parse, 引用提取, 章节分析, 文献管理, PDF解析
+
+  适用关键词: 论文解析, 学术论文, paper parse, 引用提取, 章节分析, 文献管理, PDF解析'
 tags:
-  - 论文解析
-  - 文档解析
-  - 学术文献
-  - 引用分析
+- 论文解析
+- 文档解析
+- 学术文献
+- 引用分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 论文解析工具（专业版）
 
 ## 概述

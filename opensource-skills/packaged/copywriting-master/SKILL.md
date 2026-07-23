@@ -1,20 +1,27 @@
 ---
 slug: copywriting-master
 name: copywriting-master
-version: "1.0.0"
-displayName: "营销文案大师"
-summary: "12种模板+四大经典框架,转化率导向的营销文案批量生成器"
+version: 1.0.0
+displayName: 营销文案大师
+summary: 12种模板+四大经典框架,转化率导向的营销文案批量生成器
 license: Proprietary
-description: |-
-  营销文案大师——不只写文字,更关注转化效果。基于12种经典文案模板与AIDA/PAS/FAB/BAB四大转化框架,多场景批量生成以转化为导向的营销文案,支持电商详情页、信息流广告、社群话术。Use when 需要写商品详情页、广告投流文案、社群裂变话术、品牌slogan、邮件营销文案时使用。不适用于纯文学创作和技术文档撰写。
-tags: [营销文案, 转化优化, 广告投放, 内容营销, 文案写作]
+description: 营销文案大师——不只写文字,更关注转化效果。基于12种经典文案模板与AIDA/PAS/FAB/BAB四大转化框架,多场景批量生成以转化为导向的营销文案,支持电商详情页、信息流广告、社群话术。Use
+  when 需要写商品详情页、广告投流文案、社群裂变话术、品牌slogan、邮件营销文案时使用。不适用于纯文学创作和技术文档撰写。
+tags:
+- 营销文案
+- 转化优化
+- 广告投放
+- 内容营销
+- 文案写作
 tools:
-  - read
-  - exec
-suggested_price: "1.90"
-pricing_tier: "standard"
-pricing_rationale: "文案创作类, large市场, complex复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+- read
+- exec
+suggested_price: 19.9
+pricing_tier: L2
+pricing_rationale: 文案创作类, large市场, complex复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量
+pricing_model: per_use
 ---
+
 # 营销文案大师
 
 基于经典文案框架与模板,生成以转化为导向的营销文案。不只写文字,更关注转化效果。

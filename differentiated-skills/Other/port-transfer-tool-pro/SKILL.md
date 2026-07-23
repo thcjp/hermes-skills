@@ -1,35 +1,47 @@
 ---
-slug: "port-transfer-tool-pro"
-name: "port-transfer-tool-pro"
-version: "1.0.0"
-displayName: "工具移植工具专业版"
-summary: "面向团队的多环境批量同步、冲突合并与版本治理工具。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队的 MCP工具配置多环境同步与版本治理专业工具。核心能力:
+slug: port-transfer-tool-pro
+name: port-transfer-tool-pro
+version: 1.0.0
+displayName: 工具移植工具专业版
+summary: 面向团队的多环境批量同步、冲突合并与版本治理工具。
+license: Proprietary
+edition: pro
+description: '面向团队的 MCP工具配置多环境同步与版本治理专业工具。核心能力:
+
   - 多环境批量同步与一致性校验
+
   - 配置冲突合并与版本治理
+
   - 凭证集中管理与轮换
+
   - 团队配置模板与 RBAC
 
+
   适用场景:
+
   - 团队多 Agent 环境统一同步
+
   - 配置冲突合并与版本回滚
+
   - 凭证集中管理与团队模板
 
-  差异化: 专业版在免费版单环境移植上扩展多环境同步、冲突合并、凭证集中管理与团队模板，兼容免费版清单格式
+
+  差异化: 专业版在免费版单环境移植上扩展多环境同步、冲突合并、凭证集中管理与团队模板，兼容免费版清单格式'
 tags:
-  - 工具移植
-  - 企业级
-  - 配置治理
-  - MCP工具
-  - 其他工具
+- 工具移植
+- 企业级
+- 配置治理
+- MCP工具
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 工具移植工具（专业版）
 
 ## 概述

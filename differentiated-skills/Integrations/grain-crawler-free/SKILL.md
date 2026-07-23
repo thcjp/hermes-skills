@@ -1,34 +1,47 @@
 ---
-slug: "grain-crawler-free"
-name: "grain-crawler-free"
-version: "1.0.0"
-displayName: "归档检索(免费版)"
-summary: "本地 Granola 归档检索，支持笔记搜索、详情查看、新鲜度检查。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  本地 Granola 归档检索，支持笔记搜索、详情查看、新鲜度检查。核心能力：
+slug: grain-crawler-free
+name: grain-crawler-free
+version: 1.0.0
+displayName: 归档检索(免费版)
+summary: 本地 Granola 归档检索，支持笔记搜索、详情查看、新鲜度检查。
+license: Proprietary
+edition: free
+description: '本地 Granola 归档检索，支持笔记搜索、详情查看、新鲜度检查。核心能力：
+
   - 基于本地归档数据优先检索，避免频繁联网
+
   - 笔记关键词搜索与详情读取
+
   - 归档新鲜度检查，提示是否需要刷新
+
   - 结构化 JSON 输出，便于 Agent 后续格式化
 
+
   适用场景：
+
   - 会议笔记与要点快速检索
+
   - 个人知识库离线查询
+
   - 团队会议纪要归档管理
+
   - 研究资料片段定位
 
-  差异化：优先使用本地缓存降低外部依赖，配合新鲜度提示让用户决定何时刷新，免费版聚焦"查得到、读得快"的核心场景
+
+  差异化：优先使用本地缓存降低外部依赖，配合新鲜度提示让用户决定何时刷新，免费版聚焦"查得到、读得快"的核心场景'
 tags:
-  - 集成工具
-  - 知识管理
-  - 个人效率
+- 集成工具
+- 知识管理
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 归档检索（免费版）
 
 ## 概述

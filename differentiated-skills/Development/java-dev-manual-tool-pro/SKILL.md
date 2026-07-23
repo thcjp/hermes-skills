@@ -32,7 +32,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 本工具面向企业级 Java 开发团队，提供开发规约的完整治理方案。在免费版 7 大维度规约速查能力之上，专业版新增团队级规则定制、规约合规性自动检查、新项目脚手架集成、架构分层约束、设计模式示例库、CI/CD 规约门禁等能力。通过可配置的规则引擎与自动化检查脚本，帮助团队建立统一、可执行、可追踪的编码规范体系。
 
 **版本兼容性说明**：专业版完全兼容免费版（`java-dev-manual-tool-free`）的所有规约内容与速查表，可无缝升级。

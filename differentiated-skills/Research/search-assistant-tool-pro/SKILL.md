@@ -1,38 +1,53 @@
 ---
-slug: "search-assistant-tool-pro"
-name: "search-assistant-tool-pro"
-version: "1.0.0"
-displayName: "搜索助手专业版"
-summary: "企业级搜索任务调度系统,支持多代理并行、学术搜索、专业领域路由、任务模板与结果评分排序"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  搜索助手专业版为企业团队提供高阶搜索任务分解与多代理调度能力。核心能力:
+slug: search-assistant-tool-pro
+name: search-assistant-tool-pro
+version: 1.0.0
+displayName: 搜索助手专业版
+summary: 企业级搜索任务调度系统,支持多代理并行、学术搜索、专业领域路由、任务模板与结果评分排序
+license: Proprietary
+edition: pro
+description: '搜索助手专业版为企业团队提供高阶搜索任务分解与多代理调度能力。核心能力:
+
   - 多类型搜索代理并行调度(通用/学术/专业领域)
+
   - 最多8个子任务的复杂分解
+
   - 日期约束与时效性搜索
+
   - 预设任务模板与复用
+
   - 结果质量评分与排序
+
   - 搜索任务定时调度
 
+
   适用场景:
+
   - 企业竞争情报多维度调研
+
   - 学术研究文献检索
+
   - 行业深度报告资料收集
+
   - 多团队搜索任务协作
 
-  差异化:专业版在免费版任务分解与通用搜索基础上,扩展多代理调度、学术搜索、日期约束、任务模板与结果评分能力
+
+  差异化:专业版在免费版任务分解与通用搜索基础上,扩展多代理调度、学术搜索、日期约束、任务模板与结果评分能力'
 tags:
-  - 研究工具
-  - 搜索
-  - 企业级
-  - 任务调度
-  - 多代理
+- 研究工具
+- 搜索
+- 企业级
+- 任务调度
+- 多代理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 搜索助手专业版
 
 ## 概述

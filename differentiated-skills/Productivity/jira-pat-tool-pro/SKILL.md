@@ -1,29 +1,35 @@
 ---
-slug: "jira-pat-tool-pro"
-name: "jira-pat-tool-pro"
-version: "1.0.0"
-displayName: "Jira PAT 管理专业版"
-summary: "企业级 Jira 事务管理,支持批量操作、JQL 高级查询、工作流自动化与审计追踪"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 项目管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: jira-pat-tool-pro
+name: jira-pat-tool-pro
+version: 1.0.0
+displayName: Jira PAT 管理专业版
+summary: 企业级 Jira 事务管理,支持批量操作、JQL 高级查询、工作流自动化与审计追踪
+license: Proprietary
+edition: pro
+description: '核心能力: 项目管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: jira, pat, 事务, 工作项, jql, sso, saml, 状态流转
+
+  适用关键词: jira, pat, 事务, 工作项, jql, sso, saml, 状态流转'
 tags:
-  - Jira
-  - PAT
-  - 事务管理
-  - SSO
+- Jira
+- PAT
+- 事务管理
+- SSO
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Jira PAT 管理专业版
 
 ## 概述

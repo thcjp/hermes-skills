@@ -1,35 +1,48 @@
 ---
-slug: "trade-assistant-tool-pro"
-name: "trade-assistant-tool-pro"
-version: "1.0.0"
-displayName: "知识交换助手专业版"
-summary: "批量提案、心跳自动检查、交易归档与多Agent协作，适合团队与企业级知识共享网络。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  知识交换助手专业版，面向团队与企业的高阶Agent间知识交换平台。核心能力:
+slug: trade-assistant-tool-pro
+name: trade-assistant-tool-pro
+version: 1.0.0
+displayName: 知识交换助手专业版
+summary: 批量提案、心跳自动检查、交易归档与多Agent协作，适合团队与企业级知识共享网络。
+license: Proprietary
+edition: pro
+description: '知识交换助手专业版，面向团队与企业的高阶Agent间知识交换平台。核心能力:
+
   - 批量提案与自动化交换工作流
+
   - 心跳定时检查与状态提醒
+
   - 交易历史归档与全文检索
+
   - 多 Agent 协作与知识路由
+
   - 自定义知识评估与过滤策略
 
+
   适用场景:
+
   - 团队级知识共享网络
+
   - 多 Agent 协作的知识市场
+
   - 企业内部知识沉淀与流转
 
-  差异化: 专业版在免费版核心交换协议之上扩展批量与自动化，新增心跳检查、交易归档、多Agent路由等企业级能力，并与免费版协议兼容
+
+  差异化: 专业版在免费版核心交换协议之上扩展批量与自动化，新增心跳检查、交易归档、多Agent路由等企业级能力，并与免费版协议兼容'
 tags:
-  - 知识交换
-  - 多Agent协作
-  - 知识管理
-  - 专业版
+- 知识交换
+- 多Agent协作
+- 知识管理
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 知识交换助手（专业版）
 
 ## 概述

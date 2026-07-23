@@ -1,19 +1,7 @@
 ---
-slug: ui-ux-pro-max-plus
-name: ui-ux-pro-max-plus
-version: "1.0.0"
-displayName: UI UX Pro Max
-summary: Professional UI/UX design resource library with searchable design patterns,
-  color palettes, font ...
-license: MIT
-description: |-
-  Professional UI/UX design resource library with searchable design patterns,
-  color palettes, font 。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Creative
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # UI UX Pro Max

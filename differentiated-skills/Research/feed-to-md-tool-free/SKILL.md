@@ -1,23 +1,27 @@
 ---
-slug: "feed-to-md-tool-free"
-name: "feed-to-md-tool-free"
-version: "1.0.0"
-displayName: "RSS转MD(免费版)"
-summary: "RSS转Markdown免费版，支持单个订阅源转换、基础元素提取与文件保存。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦"获取-解析-转换-保存"四步流程，将RSS订阅内容转换为结构化Markdown文档。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+slug: feed-to-md-tool-free
+name: feed-to-md-tool-free
+version: 1.0.0
+displayName: RSS转MD(免费版)
+summary: RSS转Markdown免费版，支持单个订阅源转换、基础元素提取与文件保存。
+license: Proprietary
+edition: free
+description: RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦"获取-解析-转换-保存"四步流程，将RSS订阅内容转换为结构化Markdown文档。Use
+  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - RSS转换
-  - Markdown
-  - 内容归档
-  - 订阅备份
+- RSS转换
+- Markdown
+- 内容归档
+- 订阅备份
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 > **获取、解析、转换、保存。四步完成RSS到Markdown的转换。**
 
 无需复杂配置，通过简单的脚本即可将RSS订阅内容转换为结构化的Markdown文档。免费版聚焦轻量场景，提供基础的转换能力。

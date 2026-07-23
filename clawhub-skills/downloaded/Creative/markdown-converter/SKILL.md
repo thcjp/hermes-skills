@@ -1,21 +1,7 @@
 ---
-slug: markdown-converter
-name: markdown-converter
-version: "1.0.0"
-displayName: Markdown Converter
-summary: This is a straightforward Markdown conversion helper, with privacy caveats
-  if users choose Azure ...
-license: MIT
-description: |-
-  This is a straightforward Markdown conversion helper, with privacy caveats
-  if users choose Azure 。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Creative
-- Knowledge
-- Integrations
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Markdown Converter

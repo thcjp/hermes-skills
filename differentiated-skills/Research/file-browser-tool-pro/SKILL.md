@@ -1,24 +1,28 @@
 ---
-slug: "file-browser-tool-pro"
-name: "file-browser-tool-pro"
-version: "1.0.0"
-displayName: "文件浏览器(专业版)"
-summary: "企业级文件浏览器专业版，含批量操作、高级搜索、文件监控、压缩解压与云存储集成。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  文件浏览器助手专业版是面向企业级场景的完整文件管理与操作工具。在免费版基础操作能力之上，新增批量操作、高级搜索、文件监控、压缩解压、二进制查看、权限管理、文件比较、云存储集成八大高级能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+slug: file-browser-tool-pro
+name: file-browser-tool-pro
+version: 1.0.0
+displayName: 文件浏览器(专业版)
+summary: 企业级文件浏览器专业版，含批量操作、高级搜索、文件监控、压缩解压与云存储集成。
+license: Proprietary
+edition: pro
+description: 文件浏览器助手专业版是面向企业级场景的完整文件管理与操作工具。在免费版基础操作能力之上，新增批量操作、高级搜索、文件监控、压缩解压、二进制查看、权限管理、文件比较、云存储集成八大高级能力。Use
+  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 文件管理
-  - 企业级
-  - 批量操作
-  - 文件监控
-  - 云存储
+- 文件管理
+- 企业级
+- 批量操作
+- 文件监控
+- 云存储
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 > **批量操作+高级搜索+文件监控+云存储。企业级文件管理全功能覆盖。**
 
 将复杂的文件管理与操作任务交给专业工具处理。专业版在免费版基础操作能力之上，新增批量操作、高级搜索、文件监控、压缩解压、二进制查看、权限管理、文件比较、云存储集成八大高级能力，满足企业级场景对文件管理的批量性、自动化与协作要求。

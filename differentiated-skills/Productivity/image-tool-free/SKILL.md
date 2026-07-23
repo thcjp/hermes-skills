@@ -1,29 +1,35 @@
 ---
-slug: "image-tool-free"
-name: "image-tool-free"
-version: "1.0.0"
-displayName: "图像处理基础版"
-summary: "创建、检查、处理与优化图像文件,支持格式选择、裁剪压缩与元数据管理"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 图像处理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: image-tool-free
+name: image-tool-free
+version: 1.0.0
+displayName: 图像处理基础版
+summary: 创建、检查、处理与优化图像文件,支持格式选择、裁剪压缩与元数据管理
+license: Proprietary
+edition: free
+description: '核心能力: 图像处理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: image, 图像, 图片, 格式转换, 压缩, 裁剪, 元数据, WebP
+
+  适用关键词: image, 图像, 图片, 格式转换, 压缩, 裁剪, 元数据, WebP'
 tags:
-  - 图像
-  - 图片处理
-  - 格式转换
-  - 压缩优化
+- 图像
+- 图片处理
+- 格式转换
+- 压缩优化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 图像处理基础版
 
 ## 概述

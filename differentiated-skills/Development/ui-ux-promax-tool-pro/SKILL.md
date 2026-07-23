@@ -1,36 +1,49 @@
 ---
-slug: "ui-ux-promax-tool-pro"
-name: "ui-ux-promax-tool-pro"
-version: "1.0.0"
-displayName: "UIUX设计助手(专业版)"
-summary: "面向团队的企业级UI/UX设计工程平台,含完整设计系统、UX流程、可访问性审查与脚本生成。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  UI/UX设计助手专业版为团队与企业提供端到端UI/UX设计工程能力,涵盖完整设计系统、用户体验流程、WCAG AA可访问性审查与设计系统脚本生成。核心能力:
+slug: ui-ux-promax-tool-pro
+name: ui-ux-promax-tool-pro
+version: 1.0.0
+displayName: UIUX设计助手(专业版)
+summary: 面向团队的企业级UI/UX设计工程平台,含完整设计系统、UX流程、可访问性审查与脚本生成。
+license: Proprietary
+edition: pro
+description: 'UI/UX设计助手专业版为团队与企业提供端到端UI/UX设计工程能力,涵盖完整设计系统、用户体验流程、WCAG AA可访问性审查与设计系统脚本生成。核心能力:
+
   - 完整设计系统(颜色/排版/间距/圆角/阴影/动效令牌)
+
   - 用户体验流程图与关键路径设计
+
   - WCAG AA可访问性审查与增强
+
   - 设计系统脚本(Python)生成与令牌导出
+
   - 组件规范与状态定义
+
   - 实施计划与文件级编辑指导
 
+
   适用场景:
+
   - 中大型团队设计系统从0到1搭建
+
   - 企业产品UX流程设计与评审
-  - 可访问性合规改造(WCAG AA)...
+
+  - 可访问性合规改造(WCAG AA)...'
 tags:
-  - UI/UX
-  - 设计系统
-  - 企业开发
-  - 可访问性
-  - 用户体验
-  - 团队协作
+- UI/UX
+- 设计系统
+- 企业开发
+- 可访问性
+- 用户体验
+- 团队协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # UI/UX 设计助手(专业版)
 
 ## 概述

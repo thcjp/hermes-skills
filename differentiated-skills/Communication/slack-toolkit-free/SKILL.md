@@ -1,34 +1,47 @@
 ---
-slug: "slack-toolkit-free"
-name: "slack-toolkit-free"
-version: "1.0.0"
-displayName: "Slack工具箱免费版"
-summary: "Slack消息管理基础工具，支持发送、编辑、删除消息，表情回应与置顶操作，适合个人日常使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Slack工具箱（免费版）—— 面向个人用户的Slack消息管理工具。核心能力:
+slug: slack-toolkit-free
+name: slack-toolkit-free
+version: 1.0.0
+displayName: Slack工具箱免费版
+summary: Slack消息管理基础工具，支持发送、编辑、删除消息，表情回应与置顶操作，适合个人日常使用。
+license: Proprietary
+edition: free
+description: 'Slack工具箱（免费版）—— 面向个人用户的Slack消息管理工具。核心能力:
+
   - 消息发送、编辑、删除与读取
+
   - 表情回应添加与查看
+
   - 消息置顶与取消置顶
+
   - 成员信息查询
+
   - 自定义表情列表查看
 
+
   适用场景:
+
   - 日常工作消息发送与管理
+
   - 团队协作中的消息标记与回应
+
   - 重要信息置顶与归档
 
-  差异化: 聚焦个人用户高频操作，提供简洁直观的Slack消息管理能力，开箱即用
+
+  差异化: 聚焦个人用户高频操作，提供简洁直观的Slack消息管理能力，开箱即用'
 tags:
-  - 沟通协作
-  - Slack
-  - 消息管理
+- 沟通协作
+- Slack
+- 消息管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Slack工具箱（免费版）
 
 ## 概述

@@ -178,7 +178,7 @@ agent-cli discord_voice status
 | `Discord client not available` | Discord 频道未配置或 Bot 未连接 | 检查 `DISCORD_TOKEN` 与频道配置,重启 gateway |
 | Opus build errors | 缺少原生编译工具 | `npm install -g node-gyp` 后 `npm rebuild @discordjs/opus` |
 | No audio heard | Bot 缺少 Speak 权限或被服务器静音 | 在 Developer Portal 勾选 Speak;检查服务器是否 mute 了 Bot |
-| Local model download failed | 本地 Whisper 模型下载失败 | 执行ping命令测试网络连通性,检查防火墙和代理设置,手动下载模型至 `~/.agent-cli/models/` 目录 |
+| Local model download failed | 本地 Whisper 模型下载失败 | 检查网络连接和配置后重试,手动下载模型至 `~/.agent-cli/models/` 目录 |
 | `OPENAI_API_KEY missing` | 未设置 TTS 所需 API Key | 设置 `OPENAI_API_KEY` 环境变量后重启服务 |
 
 ## 常见问题

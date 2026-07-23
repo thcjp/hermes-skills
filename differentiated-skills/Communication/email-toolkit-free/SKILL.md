@@ -1,24 +1,28 @@
 ---
-slug: "email-toolkit-free"
-name: "email-toolkit-free"
-version: "1.0.0"
-displayName: "邮件工具箱免费版"
-summary: "跨平台邮件发送与附件管理工具，支持多邮箱服务商"
-license: "Proprietary"
-edition: "free"
-description: |-
-  邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件
-  自动化发送，支持 Gmail、Outlook、Yahoo、QQ邮箱等主流服务商。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。
+slug: email-toolkit-free
+name: email-toolkit-free
+version: 1.0.0
+displayName: 邮件工具箱免费版
+summary: 跨平台邮件发送与附件管理工具，支持多邮箱服务商
+license: Proprietary
+edition: free
+description: '邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件
+
+  自动化发送，支持 Gmail、Outlook、Yahoo、QQ邮箱等主流服务商。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。'
 tags:
-  - 沟通协作
-  - 邮件管理
-  - 邮件发送
-  - 个人效率
+- 沟通协作
+- 邮件管理
+- 邮件发送
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 邮件工具箱免费版
 
 **版本**: 1.0.0

@@ -1,36 +1,49 @@
 ---
-slug: "tarot-tool-pro"
-name: "tarot-tool-pro"
-version: "1.0.0"
-displayName: "塔罗反思工具专业版"
-summary: "完整78张韦特塔罗牌阵库、多牌阵模板、会话归档与团队协作，适合专业占卜师与内容创作者。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  塔罗反思工具专业版，面向专业占卜师、内容创作者与团队协作场景的高阶塔罗解读平台。核心能力:
+slug: tarot-tool-pro
+name: tarot-tool-pro
+version: 1.0.0
+displayName: 塔罗反思工具专业版
+summary: 完整78张韦特塔罗牌阵库、多牌阵模板、会话归档与团队协作，适合专业占卜师与内容创作者。
+license: Proprietary
+edition: pro
+description: '塔罗反思工具专业版，面向专业占卜师、内容创作者与团队协作场景的高阶塔罗解读平台。核心能力:
+
   - 完整 78 张韦特塔罗牌（大阿尔卡那 + 小阿尔卡那四花色）
+
   - 内置 8 种牌阵模板（单张、三张、凯尔特十字、关系阵、年运阵等）
+
   - 会话归档与历史解读检索
+
   - 批量解读与多用户档案管理
+
   - 自定义牌意词典与风格模板
 
+
   适用场景:
+
   - 专业占卜师的日常客户服务与记录管理
+
   - 内容创作者的塔罗栏目批量生产
+
   - 团队工作坊中的多人牌阵协作
 
-  差异化: 专业版在免费版核心能力之上扩展完整牌组与牌阵库...
+
+  差异化: 专业版在免费版核心能力之上扩展完整牌组与牌阵库...'
 tags:
-  - 塔罗
-  - 专业占卜
-  - 韦特塔罗
-  - 牌阵库
-  - 专业版
+- 塔罗
+- 专业占卜
+- 韦特塔罗
+- 牌阵库
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 塔罗反思工具（专业版）
 
 ## 概述

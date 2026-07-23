@@ -1,35 +1,48 @@
 ---
-slug: "file-sorter-tool-pro"
-name: "file-sorter-tool-pro"
-version: "1.0.0"
-displayName: "视觉文件整理专业版"
-summary: "自定义分类规则、批量处理、操作历史回滚与团队共享配置，适合内容团队与企业文件治理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  视觉文件整理工具专业版，面向内容团队与企业的高阶文件治理平台。核心能力:
+slug: file-sorter-tool-pro
+name: file-sorter-tool-pro
+version: 1.0.0
+displayName: 视觉文件整理专业版
+summary: 自定义分类规则、批量处理、操作历史回滚与团队共享配置，适合内容团队与企业文件治理。
+license: Proprietary
+edition: pro
+description: '视觉文件整理工具专业版，面向内容团队与企业的高阶文件治理平台。核心能力:
+
   - 自定义分类规则与重命名模板
+
   - 批量处理与目录递归
+
   - 操作历史与一键回滚
+
   - 团队共享配置与权限管理
+
   - 处理报告与统计导出
 
+
   适用场景:
+
   - 内容团队的素材库整理
+
   - 企业文档的标准化归档
+
   - 财务团队的发票批量处理
 
-  差异化: 专业版在免费版核心视觉识别之上扩展自定义规则与批量处理，新增历史回滚、团队共享、报告导出等企业级能力，并与免费版安全红线兼容
+
+  差异化: 专业版在免费版核心视觉识别之上扩展自定义规则与批量处理，新增历史回滚、团队共享、报告导出等企业级能力，并与免费版安全红线兼容'
 tags:
-  - 文件整理
-  - 企业治理
-  - 批量处理
-  - 专业版
+- 文件整理
+- 企业治理
+- 批量处理
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 视觉文件整理工具（专业版）
 
 ## 概述

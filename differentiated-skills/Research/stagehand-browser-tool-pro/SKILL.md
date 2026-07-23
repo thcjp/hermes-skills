@@ -1,23 +1,27 @@
 ---
-slug: "stagehand-browser-tool-pro"
-name: "stagehand-browser-tool-pro"
-version: "1.0.0"
-displayName: "浏览器自动化工具专业版"
-summary: "企业级浏览器自动化平台,支持远程浏览器、批量任务调度、代理穿透与团队协作"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理穿透、验证码处理、团队协作等高级能力。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
+slug: stagehand-browser-tool-pro
+name: stagehand-browser-tool-pro
+version: 1.0.0
+displayName: 浏览器自动化工具专业版
+summary: 企业级浏览器自动化平台,支持远程浏览器、批量任务调度、代理穿透与团队协作
+license: Proprietary
+edition: pro
+description: 浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理穿透、验证码处理、团队协作等高级能力。Use
+  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 研究工具
-  - 浏览器自动化
-  - 企业级
-  - 批量处理
+- 研究工具
+- 浏览器自动化
+- 企业级
+- 批量处理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 浏览器自动化工具专业版
 ## 概述
 浏览器自动化工具专业版是企业级的网页自动化解决方案。在完整兼容免费版所有本地浏览器能力的基础上,专业版引入了远程浏览器集群、批量任务调度、代理网络穿透、验证码自动处理等高级能力,适用于大规模数据采集、跨地区业务自动化、QA 测试集成等复杂企业场景。

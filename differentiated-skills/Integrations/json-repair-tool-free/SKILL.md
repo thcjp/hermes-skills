@@ -1,23 +1,27 @@
 ---
-slug: "json-repair-tool-free"
-name: "json-repair-tool-free"
-version: "1.0.0"
-displayName: "JSON修复工具免费版"
-summary: "轻量级JSON修复工具，自动修复尾随逗号、单引号、未引号键名等常见语法错误。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  JSON修复工具免费版提供常见JSON语法错误的自动修复能力，帮助开发者快速修复因手写或编辑器问题导致的格式问题。核心能力：修复尾随逗号、单引号转双引号、未引号键名补全、JS风格注释移除、十六进制数字转十进制；修复前自动备份，修复后验证合法性；沙箱化解析确保安全。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: json-repair-tool-free
+name: json-repair-tool-free
+version: 1.0.0
+displayName: JSON修复工具免费版
+summary: 轻量级JSON修复工具，自动修复尾随逗号、单引号、未引号键名等常见语法错误。
+license: Proprietary
+edition: free
+description: JSON修复工具免费版提供常见JSON语法错误的自动修复能力，帮助开发者快速修复因手写或编辑器问题导致的格式问题。核心能力：修复尾随逗号、单引号转双引号、未引号键名补全、JS风格注释移除、十六进制数字转十进制；修复前自动备份，修复后验证合法性；沙箱化解析确保安全。Use
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-  - 集成工具
-  - JSON
-  - 修复
-  - 开发者工具
+- 集成工具
+- JSON
+- 修复
+- 开发者工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # JSON修复工具（免费版）
 
 本工具自动修复JSON文件中的常见语法错误，包括尾随逗号、单引号、未引号键名、注释、十六进制数字等，帮助开发者快速恢复JSON的可解析性。

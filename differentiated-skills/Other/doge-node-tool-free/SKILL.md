@@ -1,28 +1,36 @@
 ---
-slug: "doge-node-tool-free"
-name: "doge-node-tool-free"
-version: "1.0.0"
-displayName: "DOGE节点免费版"
-summary: "管理Dogecoin Core节点的状态查询与基础RPC操作，支持余额查看与交易记录检索。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  DOGE节点免费版是一款面向Dogecoin全节点运维者的轻量级管理Skill，封装dogecoin-cli命令并提供结构化的节点状态与钱包信息输出。核心能力：
+slug: doge-node-tool-free
+name: doge-node-tool-free
+version: 1.0.0
+displayName: DOGE节点免费版
+summary: 管理Dogecoin Core节点的状态查询与基础RPC操作，支持余额查看与交易记录检索。
+license: Proprietary
+edition: free
+description: 'DOGE节点免费版是一款面向Dogecoin全节点运维者的轻量级管理Skill，封装dogecoin-cli命令并提供结构化的节点状态与钱包信息输出。核心能力：
+
   - 查询节点同步状态、区块高度、连接数
+
   - 查询钱包余额、交易记录、未花费输出
+
   - 生成新收款地址
+
   - 基础RPC命令速查与参数说明
-  - 节点配置文件（dogecoin
+
+  - 节点配置文件（dogecoin'
 tags:
-  - Dogecoin
-  - 区块链节点
-  - 钱包管理
-  - RPC工具
+- Dogecoin
+- 区块链节点
+- 钱包管理
+- RPC工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # DOGE节点免费版（Doge Node Tool Free）
 
 ## 概述

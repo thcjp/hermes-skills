@@ -1,23 +1,27 @@
 ---
-slug: "doubao-assistant-free"
-name: "doubao-assistant-free"
-version: "1.0.0"
-displayName: "豆包助手(免费版)"
-summary: "基于豆包大模型的中文对话助手，支持联网搜索与基础问答能力。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  豆包助手免费版是一个基于豆包大模型 API 的中文对话辅助工具，帮助开发者以零成本接入具备联网搜索能力的 AI 对话服务。核心能力：提供对话补全接口调用模板、联网搜索开关配置、基础错误处理与重试策略、会话管理指南。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+slug: doubao-assistant-free
+name: doubao-assistant-free
+version: 1.0.0
+displayName: 豆包助手(免费版)
+summary: 基于豆包大模型的中文对话助手，支持联网搜索与基础问答能力。
+license: Proprietary
+edition: free
+description: 豆包助手免费版是一个基于豆包大模型 API 的中文对话辅助工具，帮助开发者以零成本接入具备联网搜索能力的 AI 对话服务。核心能力：提供对话补全接口调用模板、联网搜索开关配置、基础错误处理与重试策略、会话管理指南。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-  - AI对话
-  - 集成工具
-  - API接入
-  - 免费版
+- AI对话
+- 集成工具
+- API接入
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 豆包助手（免费版）
 
 ## 概述

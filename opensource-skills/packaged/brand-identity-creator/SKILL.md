@@ -1,20 +1,26 @@
 ---
 slug: brand-identity-creator
 name: brand-identity-creator
-version: "1.1.0"
-displayName: "品牌识别创造器"
-summary: "从零搭建完整品牌识别系统,色彩字体语调视觉一站式输出品牌手册"
+version: 1.1.0
+displayName: 品牌识别创造器
+summary: 从零搭建完整品牌识别系统,色彩字体语调视觉一站式输出品牌手册
 license: Proprietary
-description: |-
-  品牌识别创造器——一次生成完整的品牌识别系统，从色彩到字体，从语调到视觉规范，确保品牌在所有触点保持一致的专业形象。适用于新品牌建立、品牌升级、多渠道统一、品牌手册生成、子品牌创建等场景。让小团队也有大品牌的统一感。触发关键词：品牌识别、品牌色、品牌字体、品牌规范、品牌语调、视觉规范、Logo规则、品牌系统、品牌手册、品牌设计
-tags: [品牌设计, 视觉规范, 创业工具, 品牌手册, 设计系统]
+description: 品牌识别创造器——一次生成完整的品牌识别系统，从色彩到字体，从语调到视觉规范，确保品牌在所有触点保持一致的专业形象。适用于新品牌建立、品牌升级、多渠道统一、品牌手册生成、子品牌创建等场景。让小团队也有大品牌的统一感。触发关键词：品牌识别、品牌色、品牌字体、品牌规范、品牌语调、视觉规范、Logo规则、品牌系统、品牌手册、品牌设计
+tags:
+- 品牌设计
+- 视觉规范
+- 创业工具
+- 品牌手册
+- 设计系统
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次
+pricing_model: per_use
 ---
+
 # 品牌识别创造器
 
 创建完整的品牌识别系统。从色彩到字体，从语调到视觉规范，确保品牌在所有触点保持一致。

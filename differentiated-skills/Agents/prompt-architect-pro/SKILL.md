@@ -1,31 +1,44 @@
 ---
-slug: "prompt-architect-pro"
-name: "prompt-architect-pro"
-version: "1.0.0"
-displayName: "提示词架构师专业版"
-summary: "解决 Few-shot 难编写、Token 预算失控、多 Agent 协作混乱、幻觉难检测的专业 Prompt 工程平台"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  提示词架构师专业版是面向 AI Agent 团队负责人、Prompt 工程师、企业应用开发者的全功能 Prompt 工程平台，针对"Few-shot 示例难编写与维护、Token 预算失控导致成本飙升、多 Agent 协作编排混乱、长会话上下文腐烂、幻觉难检测与回归测试缺失"五大高频痛点而设计。它在免费版五段式 Prompt 与线性拆解基础上，解锁 Few-shot 自动生成、Token 预算管理、多 Agent 编排三类高级能力，并新增 Prompt A/B 测试、幻觉检测与回归测试、上下文腐烂诊断三项独有能力。
+slug: prompt-architect-pro
+name: prompt-architect-pro
+version: 1.0.0
+displayName: 提示词架构师专业版
+summary: 解决 Few-shot 难编写、Token 预算失控、多 Agent 协作混乱、幻觉难检测的专业 Prompt 工程平台
+license: Proprietary
+edition: pro
+description: '提示词架构师专业版是面向 AI Agent 团队负责人、Prompt 工程师、企业应用开发者的全功能 Prompt 工程平台，针对"Few-shot
+  示例难编写与维护、Token 预算失控导致成本飙升、多 Agent 协作编排混乱、长会话上下文腐烂、幻觉难检测与回归测试缺失"五大高频痛点而设计。它在免费版五段式
+  Prompt 与线性拆解基础上，解锁 Few-shot 自动生成、Token 预算管理、多 Agent 编排三类高级能力，并新增 Prompt A/B 测试、幻觉检测与回归测试、上下文腐烂诊断三项独有能力。
 
-  核心能力：Few-shot 示例自动生成与多样性优化、Token 预算按任务复杂度分配与多级压缩、DAG 任务拆解与多 Agent 并行编排、Plan-Execute 与 Reflection 两种高级 Agent Loop、Prompt A/B 测试框架与显著性分析、幻觉检测规则引擎与回归测试用例生成、上下文腐烂三因素诊断（密度衰减/噪声累积/注意力漂移）与治理建议、工具选择决策矩阵。
 
-  适用场景：企业级 Agent 应用的 Prompt 工程化、多 Agent 协作系统编排、长会话上下文治理、Prompt 评审与回归测试、Few-shot 示例库建设、Token 成本优化、Prompt A/B 测试与效果量化。
+  核心能力：Few-shot 示例自动生成与多样性优化、Token 预算按任务复杂度分配与多级压缩、DAG 任务拆解与多 Agent 并行编排、Plan-Execute
+  与 Reflection 两种高级 Agent Loop、Prompt A/B 测试框架与显著性分析、幻觉检测规则引擎与回归测试用例生成、上下文腐烂三因素诊断（密度衰减/噪声累积/注意力漂移）与治理建议、工具选择决策矩阵。
 
-  差异化：相比免费版，本专业版 (1) 支持从历史对话自动生成 Few-shot 示例并优化多样性；(2) 按任务复杂度分配 Token 预算，超配时自动压缩工具结果与历史上下文；(3) 支持 DAG 任务拆解与多 Agent 并行编排，自动发现依赖与并行机会；(4) 新增 Prompt A/B 测试框架，支持显著性分析与胜出判定；(5) 新增幻觉检测规则引擎，自动生成回归测试用例；(6) 新增上下文腐烂诊断器，量化三因素并给出治理建议。
 
-  适用关键词：prompt工程、few-shot生成、token预算、多agent编排、dag拆解、ab测试、幻觉检测、回归测试、上下文腐烂、plan-execute、reflection
+  适用场景：企业级 Agent 应用的 Prompt 工程化、多 Agent 协作系统编排、长会话上下文治理、Prompt 评审与回归测试、Few-shot 示例库建设、Token
+  成本优化、Prompt A/B 测试与效果量化。
+
+
+  差异化：相比免费版，本专业版 (1) 支持从历史对话自动生成 Few-shot 示例并优化多样性；(2) 按任务复杂度分配 Token 预算，超配时自动压缩工具结果与历史上下文；(3)
+  支持 DAG 任务拆解与多 Agent 并行编排，自动发现依赖与并行机会；(4) 新增 Prompt A/B 测试框架，支持显著性分析与胜出判定；(5) 新增幻觉检测规则引擎，自动生成回归测试用例；(6)
+  新增上下文腐烂诊断器，量化三因素并给出治理建议。
+
+
+  适用关键词：prompt工程、few-shot生成、token预算、多agent编排、dag拆解、ab测试、幻觉检测、回归测试、上下文腐烂、plan-execute、reflection'
 tags:
-  - 提示词工程
-  - 多Agent编排
-  - 质量评估
-  - 成本优化
+- 提示词工程
+- 多Agent编排
+- 质量评估
+- 成本优化
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 提示词架构师专业版（Prompt Architect Pro）
 
 面向 AI Agent 团队负责人、Prompt 工程师、企业应用开发者的全功能 Prompt 工程平台。在免费版五段式 Prompt 与线性拆解基础上，解锁 Few-shot 自动生成、Token 预算管理、多 Agent 编排三类高级能力，并新增 Prompt A/B 测试、幻觉检测与回归测试、上下文腐烂诊断三项独有能力。

@@ -1,29 +1,35 @@
 ---
-slug: "prod-improve-tool-free"
-name: "prod-improve-tool-free"
-version: "1.0.0"
-displayName: "效率追踪器基础版"
-summary: "追踪、分类与分析工作活动,生成日报与周报,帮助提升效率与保持平衡"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: prod-improve-tool-free
+name: prod-improve-tool-free
+version: 1.0.0
+displayName: 效率追踪器基础版
+summary: 追踪、分类与分析工作活动,生成日报与周报,帮助提升效率与保持平衡
+license: Proprietary
+edition: free
+description: '核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: productivity, 效率, 追踪, 时间管理, 活动记录, 日报, 周报
+
+  适用关键词: productivity, 效率, 追踪, 时间管理, 活动记录, 日报, 周报'
 tags:
-  - 效率追踪
-  - 时间管理
-  - 活动分析
-  - 日报
+- 效率追踪
+- 时间管理
+- 活动分析
+- 日报
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 效率追踪器基础版
 
 ## 概述

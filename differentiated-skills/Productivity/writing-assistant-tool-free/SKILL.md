@@ -1,29 +1,35 @@
 ---
-slug: "writing-assistant-tool-free"
-name: "writing-assistant-tool-free"
-version: "1.0.0"
-displayName: "写作助手基础版"
-summary: "AI 写作团队负责人,协调研究、结构、风格与质量检查,产出高质量文档"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 内容创作领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: writing-assistant-tool-free
+name: writing-assistant-tool-free
+version: 1.0.0
+displayName: 写作助手基础版
+summary: AI 写作团队负责人,协调研究、结构、风格与质量检查,产出高质量文档
+license: Proprietary
+edition: free
+description: '核心能力: 内容创作领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: 写作, 助手, 文档, 内容, 风格, 质量检查, 编辑
+
+  适用关键词: 写作, 助手, 文档, 内容, 风格, 质量检查, 编辑'
 tags:
-  - 写作
-  - 内容创作
-  - 文档
-  - 质量检查
+- 写作
+- 内容创作
+- 文档
+- 质量检查
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 写作助手基础版
 
 ## 概述

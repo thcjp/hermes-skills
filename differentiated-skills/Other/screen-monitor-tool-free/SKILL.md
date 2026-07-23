@@ -1,38 +1,53 @@
 ---
-slug: "screen-monitor-tool-free"
-name: "screen-monitor-tool-free"
-version: "1.0.0"
-displayName: "屏幕监控工具-免费版"
-summary: "双模式屏幕共享工具,支持单次截图与定时监控,适合个人使用与远程协助"
-license: "Proprietary"
-edition: "free"
-description: |-
-  屏幕监控工具免费版,面向个人用户的屏幕共享与分析。
+slug: screen-monitor-tool-free
+name: screen-monitor-tool-free
+version: 1.0.0
+displayName: 屏幕监控工具-免费版
+summary: 双模式屏幕共享工具,支持单次截图与定时监控,适合个人使用与远程协助
+license: Proprietary
+edition: free
+description: '屏幕监控工具免费版,面向个人用户的屏幕共享与分析。
+
 
   核心能力:
+
   - 单次屏幕截图
+
   - 定时自动截图(间隔可调)
+
   - 截图本地保存与管理
+
   - 屏幕内容基础分析
+
   - 双模式运行(主动/被动)
 
+
   适用场景:
+
   - 远程协助截图
+
   - 工作进度记录
+
   - 屏幕内容存档
+
 
   差异化:免费版提供基础截图能力。PRO版扩展实时流共享、多屏支持、AI 分析与企业级监控。
 
-  适用关键词: screenshot, 屏幕截图, screen capture, 监控, screen share, 定时截图
+
+  适用关键词: screenshot, 屏幕截图, screen capture, 监控, screen share, 定时截图'
 tags:
-  - 屏幕截图
-  - 监控
-  - 远程协助
+- 屏幕截图
+- 监控
+- 远程协助
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 屏幕监控工具 - 免费版
 
 ## 概述

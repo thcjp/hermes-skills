@@ -1,40 +1,57 @@
 ---
-slug: "python-dataviz-tool-pro"
-name: "python-dataviz-tool-pro"
-version: "1.0.0"
-displayName: "Python数据可视化-专业版"
-summary: "企业级数据可视化平台,支持交互式仪表盘、大数据可视化与实时数据流图表"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级数据可视化工具专业版,面向团队与商业应用。核心能力:
+slug: python-dataviz-tool-pro
+name: python-dataviz-tool-pro
+version: 1.0.0
+displayName: Python数据可视化-专业版
+summary: 企业级数据可视化平台,支持交互式仪表盘、大数据可视化与实时数据流图表
+license: Proprietary
+edition: pro
+description: '企业级数据可视化工具专业版,面向团队与商业应用。核心能力:
+
   - 交互式 Web 仪表盘(Dash/Streamlit)
+
   - 大数据可视化(百万级数据点)
+
   - 实时数据流图表
+
   - 企业级报告模板与自动化生成
+
   - 3D 可视化与地理图表
+
   - 多图表组合与故事线叙事
+
   - 自定义主题与品牌定制
+
   - 团队协作与图表分享
 
+
   适用场景:
+
   - 企业 BI 仪表盘开发
+
   - 实时监控数据可视化
+
   - 科学研究与学术论文出版级图表
+
   - 数据报告自动化生成
 
-  差异化:专业版在免费版基础上扩展交互式仪表盘、大数据可视化、...
+
+  差异化:专业版在免费版基础上扩展交互式仪表盘、大数据可视化、...'
 tags:
-  - 数据可视化
-  - 企业级
-  - 仪表盘
-  - 大数据
-  - 实时图表
+- 数据可视化
+- 企业级
+- 仪表盘
+- 大数据
+- 实时图表
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Python 数据可视化 - 专业版
 
 ## 概述

@@ -1,38 +1,55 @@
 ---
-slug: "dns-networking-tool-free"
-name: "dns-networking-tool-free"
-version: "1.0.0"
-displayName: "DNS网络诊断基础版"
-summary: "提供DNS解析、端口连通性、curl诊断与证书检查,适合开发者日常网络问题排查。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向开发者的网络诊断辅助工具,涵盖DNS解析调试、端口连通性测试、HTTP请求诊断与TLS证书检查。核心能力:
+slug: dns-networking-tool-free
+name: dns-networking-tool-free
+version: 1.0.0
+displayName: DNS网络诊断基础版
+summary: 提供DNS解析、端口连通性、curl诊断与证书检查,适合开发者日常网络问题排查。
+license: Proprietary
+edition: free
+description: '面向开发者的网络诊断辅助工具,涵盖DNS解析调试、端口连通性测试、HTTP请求诊断与TLS证书检查。核心能力:
+
   - DNS解析查询(A/MX/CNAME/TXT/NS)
+
   - 端口连通性测试(nc/curl)
+
   - curl请求诊断与时序分析
+
   - TLS证书有效期检查
+
   - 本地DNS缓存管理
 
+
   适用场景:
+
   - 开发环境网络问题排查
+
   - DNS解析异常诊断
+
   - HTTP请求故障定位
+
   - 证书过期检查
 
+
   差异化:
+
   - 免费版聚焦常用诊断命令,开箱即用
+
   - 覆盖日常90%网络排查需求
-  - 与专业版命令兼...
+
+  - 与专业版命令兼...'
 tags:
-  - 开发工具
-  - 网络诊断
-  - DNS
+- 开发工具
+- 网络诊断
+- DNS
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # DNS网络诊断工具 - 免费版
 
 ## 概述

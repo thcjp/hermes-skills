@@ -1,20 +1,27 @@
 ---
 slug: debug-doctor
 name: debug-doctor
-version: "1.0.1"
-displayName: "调试医生"
-summary: "不猜测不试错,4阶段科学调试法精准定位Bug根因并验证修复"
+version: 1.0.1
+displayName: 调试医生
+summary: 不猜测不试错,4阶段科学调试法精准定位Bug根因并验证修复
 license: Proprietary
-description: |-
-  调试医生——不猜测,不试错,用科学方法找到Bug真正的根因。4阶段调试法(复现/定位/缩减/修复)+二分查找+验证闭环,让生产事故排查和复杂Bug修复有章可循,支持多语言多环境调试。Use when 遇到难以复现的Bug、生产事故排查、性能问题定位、需要系统化调试方法时使用。不适用于简单语法错误和UI样式微调。
-tags: [调试, Bug修复, 根因分析, 生产事故, 问题排查]
+description: 调试医生——不猜测,不试错,用科学方法找到Bug真正的根因。4阶段调试法(复现/定位/缩减/修复)+二分查找+验证闭环,让生产事故排查和复杂Bug修复有章可循,支持多语言多环境调试。Use
+  when 遇到难以复现的Bug、生产事故排查、性能问题定位、需要系统化调试方法时使用。不适用于简单语法错误和UI样式微调。
+tags:
+- 调试
+- Bug修复
+- 根因分析
+- 生产事故
+- 问题排查
 tools:
-  - read
-  - exec
-suggested_price: "8.90"
-pricing_tier: "professional"
-pricing_rationale: "编程开发类, medium市场, complex复杂度, weekly频次, professional层 → 开发者付费意愿高,但竞品多"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 编程开发类, medium市场, complex复杂度, weekly频次, professional层 → 开发者付费意愿高,但竞品多
+pricing_model: per_use
 ---
+
 # 调试医生
 
 基于系统化调试方法论,进行根因分析与修复。不猜测,不试错,用科学方法找到真正的 Bug 根因,并确保修复有效。

@@ -1,23 +1,27 @@
 ---
-slug: "sql-gen-tool-free"
-name: "sql-gen-tool-free"
-version: "1.0.0"
-displayName: "SQL生成器(免费版)"
-summary: "自然语言转SQL的生成器免费版，支持查询生成、SQL解释、建表语句、测试数据生成等核心场景。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向独立开发者与AI Agent的SQL生成器免费版。通过自然语言描述快速生成SQL查询语句，同时提供SQL解释、建表DDL、测试数据生成、SQL速查表等核心能力，帮助不熟悉SQL语法的用户也能高效完成数据库操作任务。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
+slug: sql-gen-tool-free
+name: sql-gen-tool-free
+version: 1.0.0
+displayName: SQL生成器(免费版)
+summary: 自然语言转SQL的生成器免费版，支持查询生成、SQL解释、建表语句、测试数据生成等核心场景。
+license: Proprietary
+edition: free
+description: 面向独立开发者与AI Agent的SQL生成器免费版。通过自然语言描述快速生成SQL查询语句，同时提供SQL解释、建表DDL、测试数据生成、SQL速查表等核心能力，帮助不熟悉SQL语法的用户也能高效完成数据库操作任务。Use
+  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-  - 集成工具
-  - 数据库
-  - SQL生成
-  - AI辅助
+- 集成工具
+- 数据库
+- SQL生成
+- AI辅助
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # SQL生成器（免费版）
 
 本工具为独立开发者、产品经理与AI Agent提供自然语言到SQL的转换能力。免费版聚焦核心场景：查询生成、SQL解释、建表DDL、测试数据生成，足以覆盖绝大多数日常SQL编写需求。

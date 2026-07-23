@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # SQL查询工具（专业版）
 
 专业版在免费版核心能力之上，新增查询结果缓存、慢查询自动采集、跨数据库SQL自动转换、性能基准测试套件、连接池调优等高级能力，专为团队协作、企业生产环境与高并发查询场景设计。

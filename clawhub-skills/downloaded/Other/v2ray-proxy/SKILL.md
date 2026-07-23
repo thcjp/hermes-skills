@@ -1,17 +1,7 @@
 ---
-slug: v2ray-proxy
-name: v2ray-proxy
-version: "1.0.1"
-displayName: V2ray Proxy
-summary: V2Ray代理管理 - 自动开关代理、根据网络状况自动配置系统代理。使用场景：OpenClaw需要访问外网时自动开启代理、不需要时关闭。
-license: MIT
-description: |-
-  V2Ray代理管理 - 自动开关代理、根据网络状况自动配置系统代理。使用场景：OpenClaw需要访问外网时自动开启代理、不需要时关闭。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
-tags:
-- Other
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # V2ray Proxy

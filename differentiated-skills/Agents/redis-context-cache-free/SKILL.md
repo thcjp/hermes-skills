@@ -1,24 +1,28 @@
 ---
-slug: "redis-context-cache-free"
-name: "redis-context-cache-free"
-version: "1.0.0"
-displayName: "Redis Context Cache"
-summary: "AI Agent的Redis上下文缓存实践指南，覆盖过期策略、原子性陷阱、内存管理与常见模式。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Redis上下文缓存（免费版）为AI Agent提供Redis作为上下文缓存的最佳实践指南。针对"键无TTL导致OOM、GET-SET非原子、KEYS阻塞、大value驱逐"等真实生产痛点，提供可直接复用的命令模板与陷阱清单。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+slug: redis-context-cache-free
+name: redis-context-cache-free
+version: 1.0.0
+displayName: Redis Context Cache
+summary: AI Agent的Redis上下文缓存实践指南，覆盖过期策略、原子性陷阱、内存管理与常见模式。
+license: Proprietary
+edition: free
+description: Redis上下文缓存（免费版）为AI Agent提供Redis作为上下文缓存的最佳实践指南。针对"键无TTL导致OOM、GET-SET非原子、KEYS阻塞、大value驱逐"等真实生产痛点，提供可直接复用的命令模板与陷阱清单。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-  - Redis
-  - 上下文缓存
-  - 内存管理
-  - 分布式锁
-  - 速率限制
+- Redis
+- 上下文缓存
+- 内存管理
+- 分布式锁
+- 速率限制
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Redis上下文缓存（免费版）
 
 > **键无TTL等于慢性OOM。GET后SET不是原子。KEYS * 会阻塞整个实例。这三条记住，省下80%的生产事故。**

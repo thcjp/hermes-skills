@@ -142,8 +142,8 @@ dlazy keling-tts \
 | 401 unauthorized | `code: "unauthorized"` | Key 缺失或失效 | 引导用户访问 `dlazy.com/dashboard/organization/api-key` 获取并 `dlazy auth set` |
 | 501 missing_param | `error: required option '--text <text>' not specified` | 必填参数未提供 | 运行 `dlazy doubao-tts -h` 查看必填参数并补全 |
 | 503 insufficient_balance | `code: "insufficient_balance"` | 账户余额不足 | 明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值 |
-| 503 server_error | `HTTP status code error (500 server crash)` | dLazy 服务端错误 | 等待 2 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,最多 3 次 |
-| 504 task_failed | `=== Generation Failed ===` | 异步任务失败 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,检查 prompt 是否含敏感内容 |
+| 503 server_error | `HTTP status code error (500 server crash)` | dLazy 服务端错误 | 等待 2 秒后检查网络连接和配置后重试,最多 3 次 |
+| 504 task_failed | `=== Generation Failed ===` | 异步任务失败 | 检查网络连接和配置后重试,检查 prompt 是否含敏感内容 |
 
 ## 常见问题
 

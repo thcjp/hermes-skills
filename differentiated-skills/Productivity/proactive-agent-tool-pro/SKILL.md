@@ -1,29 +1,35 @@
 ---
-slug: "proactive-agent-tool-pro"
-name: "proactive-agent-tool-pro"
-version: "1.0.0"
-displayName: "主动型 Agent 专业版"
-summary: "企业级主动型 Agent 架构,支持 WAL 协议、工作缓冲区、压缩恢复与安全加固"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: AI Agent领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: proactive-agent-tool-pro
+name: proactive-agent-tool-pro
+version: 1.0.0
+displayName: 主动型 Agent 专业版
+summary: 企业级主动型 Agent 架构,支持 WAL 协议、工作缓冲区、压缩恢复与安全加固
+license: Proprietary
+edition: pro
+description: '核心能力: AI Agent领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: proactive, agent, 主动, 记忆, WAL, 自我改进, 安全加固
+
+  适用关键词: proactive, agent, 主动, 记忆, WAL, 自我改进, 安全加固'
 tags:
-  - 主动型Agent
-  - 记忆管理
-  - 自我改进
-  - 安全
+- 主动型Agent
+- 记忆管理
+- 自我改进
+- 安全
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 主动型 Agent 专业版
 
 ## 概述

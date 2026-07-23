@@ -1,43 +1,63 @@
 ---
-slug: "security-scanner-tool-pro"
-name: "security-scanner-tool-pro"
-version: "1.0.0"
-displayName: "安全扫描器(专业版)"
-summary: "企业级安全扫描平台,10+工具集成、批量并行扫描、HTML报告、CVE映射与定时调度"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力:
+slug: security-scanner-tool-pro
+name: security-scanner-tool-pro
+version: 1.0.0
+displayName: 安全扫描器(专业版)
+summary: 企业级安全扫描平台,10+工具集成、批量并行扫描、HTML报告、CVE映射与定时调度
+license: Proprietary
+edition: pro
+description: '核心能力:
+
   - 10+安全工具集成(nmap/nuclei/masscan/ffuf等)
+
   - 多目标批量并行扫描
+
   - HTML/PDF/SARIF专业报告
+
   - CVE数据库自动映射
+
   - Cron定时调度扫描
+
   - 自定义扫描工作流
+
   - 漏洞修复建议引擎
 
+
   适用场景:
+
   - 企业级安全评估项目
+
   - 大规模网络资产扫描
+
   - 合规性安全检查
+
   - 持续安全监控
 
+
   差异化:
+
   - 10+工具统一编排,一键全量扫描
+
   - 批量并行,支持100+目标同时扫描
+
   - CVE自动关联,漏洞与修复方案匹配
-  - ...
+
+  - ...'
 tags:
-  - 安全
-  - 漏洞扫描
-  - 企业安全
-  - 网络安全
-  - 持续监控
+- 安全
+- 漏洞扫描
+- 企业安全
+- 网络安全
+- 持续监控
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 安全扫描器(专业版)
 ## 概述
 安全扫描器专业版是一款面向企业用户的安全扫描与持续监控平台。在免费版4个核心工具基础上,扩展至10+工具集成(nmap、nuclei、masscan、ffuf、gobuster、testssl等),支持多目标批量并行扫描、HTML/PDF/SARIF专业报告、CVE数据库自动映射、Cron定时调度扫描和自定义扫描工作流。与免费版完全兼容,扫描配置和模板可无缝复用。

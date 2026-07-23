@@ -1,28 +1,35 @@
 ---
-slug: "cybersecurity-engine-tool-pro"
-name: "cybersecurity-engine-tool-pro"
-version: "1.0.0"
-displayName: "网络安全评估引擎专业版"
-summary: "企业级安全评估与威胁建模平台,支持完整十二阶段评估、合规框架映射、多维安全评分与自动化漏洞管理,适合安全团队与企业用户。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  网络安全评估引擎专业版,为企业安全团队提供全方位安全评估与治理能力。
+slug: cybersecurity-engine-tool-pro
+name: cybersecurity-engine-tool-pro
+version: 1.0.0
+displayName: 网络安全评估引擎专业版
+summary: 企业级安全评估与威胁建模平台,支持完整十二阶段评估、合规框架映射、多维安全评分与自动化漏洞管理,适合安全团队与企业用户。
+license: Proprietary
+edition: pro
+description: '网络安全评估引擎专业版,为企业安全团队提供全方位安全评估与治理能力。
+
   核心能力:十二阶段深度评估、STRIDE+攻击树建模、合规框架映射、100分制多维评分、自动化漏洞SLA管理、安全程序设计。
+
   适用场景:企业安全架构评审、合规审计准备、安全程序建设、红蓝对抗准备。
+
   差异化:专业版兼容免费版评估方法,新增企业级合规映射、自动化治理与团队协作能力,满足规模化安全管理需求。
-  适用关键词: 安全评估, 合规审计, 安全程序, 安全评分, enterprise, compliance, SOC2, ISO27001
+
+  适用关键词: 安全评估, 合规审计, 安全程序, 安全评分, enterprise, compliance, SOC2, ISO27001'
 tags:
-  - 安全
-  - 威胁建模
-  - 合规审计
-  - 企业版
-  - 安全治理
+- 安全
+- 威胁建模
+- 合规审计
+- 企业版
+- 安全治理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 网络安全评估引擎专业版
 ## 概述
 专业版为企业安全团队提供完整的网络安全评估与治理平台,涵盖从安全态势评估到安全程序设计的全生命周期管理。在免费版基础评估能力之上,新增十二阶段深度评估、STRIDE+攻击树威胁建模、SOC 2/ISO 27001/GDPR/HIPAA合规框架映射、100分制多维安全评分、自动化漏洞SLA跟踪与企业级报告导出。专业版完全兼容免费版评估方法,已有评估流程可无缝升级。

@@ -1,30 +1,37 @@
 ---
-slug: "vpn-rotator-free"
-name: "vpn-rotator-free"
-version: "1.0.0"
-displayName: "VPN轮换工具免费版"
-summary: "自动轮换VPN服务器IP，规避API速率限制，兼容OpenVPN协议"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向数据采集开发者与自动化测试工程师的VPN服务器轮换工具，通过定期切换VPN出口IP规避API速率限制。
+slug: vpn-rotator-free
+name: vpn-rotator-free
+version: 1.0.0
+displayName: VPN轮换工具免费版
+summary: 自动轮换VPN服务器IP，规避API速率限制，兼容OpenVPN协议
+license: Proprietary
+edition: free
+description: '面向数据采集开发者与自动化测试工程师的VPN服务器轮换工具，通过定期切换VPN出口IP规避API速率限制。
+
 
   核心能力：自动连接/断开VPN、按请求数或时间间隔轮换IP、支持多VPN服务商配置、提供装饰器与上下文管理器两种使用方式。
 
+
   适用场景：API数据采集、自动化测试、价格监控、SEO排名追踪等需要多IP轮换的开发场景。
+
 
   差异化：重新设计中文交互流程，新增连接健康检查与自动重连机制，完善错误恢复策略，去除外部依赖引用。
 
-  适用关键词：VPN、轮换、IP切换、速率限制、rate limit、OpenVPN、代理轮换
+
+  适用关键词：VPN、轮换、IP切换、速率限制、rate limit、OpenVPN、代理轮换'
 tags:
-  - 网络工具
-  - IP轮换
-  - 数据采集
+- 网络工具
+- IP轮换
+- 数据采集
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # VPN服务器轮换工具（免费版）
 
 ## 概述

@@ -24,7 +24,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 UX设计工具专业版是一款面向企业UX团队和专业设计师的完整用户体验设计引擎。在免费版核心UX原则之上,扩展至深度流程分析、用户研究方法论、WCAG 2.2无障碍合规审计、状态机设计模式和企业级UX审计框架。
 
 专业版帮助团队建立系统化、可量化、合规的用户体验体系,完全兼容免费版设计原则,可无缝升级。

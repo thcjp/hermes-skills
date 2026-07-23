@@ -1,21 +1,25 @@
 ---
-slug: "cron-master-pro"
-name: "cron-master-pro"
-version: "1.0.0"
-displayName: "定时大师"
-summary: "平台级定时系统精通指南，heartbeat 与 cron 决策矩阵、推送策略、自唤醒规则全覆盖。"
-license: "Proprietary"
-description: |-
-  定时大师是平台级定时系统的深度使用指南，解决"何时用心跳、何时用 cron""推送还是静默""怎么跨回合等待"等高阶决策问题。它提供 heartbeat 与 cron 的决策矩阵、payload 类型选择（agentTurn 推送 vs systemEvent 静默）、严格指令模板、自唤醒规则、时区锁定规范与历史模式迁移指南
+slug: cron-master-pro
+name: cron-master-pro
+version: 1.0.0
+displayName: 定时大师
+summary: 平台级定时系统精通指南，heartbeat 与 cron 决策矩阵、推送策略、自唤醒规则全覆盖。
+license: Proprietary
+description: 定时大师是平台级定时系统的深度使用指南，解决"何时用心跳、何时用 cron""推送还是静默""怎么跨回合等待"等高阶决策问题。它提供 heartbeat
+  与 cron 的决策矩阵、payload 类型选择（agentTurn 推送 vs systemEvent 静默）、严格指令模板、自唤醒规则、时区锁定规范与历史模式迁移指南
 tags:
-  - 自动化
-  - 定时调度
-  - 平台精通
+- 自动化
+- 定时调度
+- 平台精通
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 定时大师
 
 **第一法则：心跳会漂移，cron 才精确。**

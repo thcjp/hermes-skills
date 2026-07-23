@@ -1,34 +1,45 @@
 ---
-slug: "chart-gen-pro"
-name: "chart-gen-pro"
-version: "1.0.0"
-displayName: "图表生成器(专业版)"
-summary: "全功能图表生成工具，支持批量、自定义主题、实时数据源与多图表联动仪表盘，专业可视化场景。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向专业数据可视化场景的全功能图表生成器，在免费版基础上扩展批量生成、自定义主题、实时数据源接入、多图表联动仪表盘、位图导出、模板库等高级能力。核心能力：
+slug: chart-gen-pro
+name: chart-gen-pro
+version: 1.0.0
+displayName: 图表生成器(专业版)
+summary: 全功能图表生成工具，支持批量、自定义主题、实时数据源与多图表联动仪表盘，专业可视化场景。
+license: Proprietary
+edition: pro
+description: '面向专业数据可视化场景的全功能图表生成器，在免费版基础上扩展批量生成、自定义主题、实时数据源接入、多图表联动仪表盘、位图导出、模板库等高级能力。核心能力：
+
 
   - 一次脚本调用批量生成数十张图表，支持任务编排与检查点
+
   - 自定义主题色板与品牌一致性输出，适配企业VI规范
+
   - 直连数据库与API数据源，免去手动拷贝数据步骤
+
   - 多图表联动仪表盘，点击下钻、过滤联动
+
   - 导出PNG/JPG/PDF等多种格式，适配报告与汇报材料
+
 
   适用场景：
 
+
   - 企业级数据周报/月报的批量图表生成
-  - 数据分析师构建可复用模板库...
+
+  - 数据分析师构建可复用模板库...'
 tags:
-  - 数据可视化
-  - 企业图表
-  - 批量生成
-  - 自定义主题
+- 数据可视化
+- 企业图表
+- 批量生成
+- 自定义主题
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 图表生成器(专业版)
 
 面向专业数据可视化场景的全功能图表生成工具。在免费版基础上扩展批量生成、自定义主题、实时数据源接入、多图表联动仪表盘、位图导出、模板库等6项高级能力。

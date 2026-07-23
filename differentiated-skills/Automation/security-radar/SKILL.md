@@ -1,21 +1,25 @@
 ---
-slug: "security-radar"
-name: "security-radar"
-version: "1.0.0"
-displayName: "安全情报雷达"
-summary: "聚合多源漏洞情报并按资产关联排序，告别告警疲劳，只推真正影响你的威胁。"
-license: "Proprietary"
-description: |-
-  安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处理的两三条。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+slug: security-radar
+name: security-radar
+version: 1.0.0
+displayName: 安全情报雷达
+summary: 聚合多源漏洞情报并按资产关联排序，告别告警疲劳，只推真正影响你的威胁。
+license: Proprietary
+description: 安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处理的两三条。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-  - 自动化
-  - 安全
-  - 情报订阅
+- 自动化
+- 安全
+- 情报订阅
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 安全情报雷达
 
 把海量漏洞情报变成只推两三条真正相关的告警。本技能解决三个核心问题：**告警疲劳**（59% 安全人员每天被海量告警淹没）、**优先级混乱**（严重度高的不一定紧急）、**资产盲区**（不知道哪些 CVE 真正影响自己）。

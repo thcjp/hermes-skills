@@ -33,7 +33,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 销售税查询工具(专业版)
 ## 概述
 `ziptax-tool-pro` 是面向团队与企业的端到端销售税工程平台。它在免费版基础查询能力之上,扩展了批量并行查询、本地缓存与增量刷新、税务合规报告、企业级 API 封装与 CI/CD 集成能力,帮助团队构建可审计、可扩展、高可用的销售税计算体系。

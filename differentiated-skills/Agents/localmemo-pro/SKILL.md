@@ -1,21 +1,25 @@
 ---
-slug: "localmemo-pro"
-name: "localmemo-pro"
-version: "2.0.0"
-displayName: "本地长记忆"
-summary: "零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本。"
-license: "Proprietary"
-description: |-
-  面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-text，提供本地embedding生成、向量语义检索、embedding缓存、WAL写前日志、三层冷热分层能力。适用于隐私敏感行业（医疗/金融/法律）、离线/弱网环境、个人知识库、合规要求数据不出域场景，实现零外部API、零数据出域、完全离线可用。适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local memory。
+slug: localmemo-pro
+name: localmemo-pro
+version: 2.0.0
+displayName: 本地长记忆
+summary: 零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本。
+license: Proprietary
+description: 面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-text，提供本地embedding生成、向量语义检索、embedding缓存、WAL写前日志、三层冷热分层能力。适用于隐私敏感行业（医疗/金融/法律）、离线/弱网环境、个人知识库、合规要求数据不出域场景，实现零外部API、零数据出域、完全离线可用。适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local
+  memory。
 tags:
-  - 智能代理
-  - 记忆管理
-  - 本地存储
+- 智能代理
+- 记忆管理
+- 本地存储
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 本地长记忆（LocalMemo Pro）
 
 **零 API、零云端、零数据出域**的本地向量记忆系统。基于 Ollama + LanceDB，在本地完成 embedding 生成与语义检索，适合隐私敏感、离线、成本敏感场景。

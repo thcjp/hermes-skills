@@ -1,29 +1,36 @@
 ---
-slug: "personal-health-tool-free"
-name: "personal-health-tool-free"
-version: "1.0.0"
-displayName: "个人健康管家免费版"
-summary: "个人健康数据管理,支持运动、睡眠、饮食与体检报告分析"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的健康管家,集成运动、睡眠、饮食与体检报告管理。
+slug: personal-health-tool-free
+name: personal-health-tool-free
+version: 1.0.0
+displayName: 个人健康管家免费版
+summary: 个人健康数据管理,支持运动、睡眠、饮食与体检报告分析
+license: Proprietary
+edition: free
+description: '面向个人用户的健康管家,集成运动、睡眠、饮食与体检报告管理。
+
   核心能力: 健康数据记录、体检报告解读、运动计划、饮食建议、健康趋势
+
   适用场景: 个人健康管理、健身塑形、慢病预防、健康自检
+
   差异化: 免费版聚焦个人健康数据管理,本地存储,支持体检报告解读
-  适用关键词: 个人健康, 健康管家, 体检报告, 运动计划, 饮食建议, 健康趋势
+
+  适用关键词: 个人健康, 健康管家, 体检报告, 运动计划, 饮食建议, 健康趋势'
 tags:
-  - 健康管理
-  - 个人健康
-  - 体检分析
-  - 运动计划
-  - 饮食管理
-  - 数据分析
+- 健康管理
+- 个人健康
+- 体检分析
+- 运动计划
+- 饮食管理
+- 数据分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 个人健康管家 (免费版)
 
 ## 概述

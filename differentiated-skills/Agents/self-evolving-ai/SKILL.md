@@ -1,22 +1,25 @@
 ---
-slug: "self-evolving-ai"
-name: "self-evolving-ai"
-version: "1.0.0"
-displayName: "自我进化AI"
-summary: "自动捕获经验与错误,智能分层记忆,模式复发追踪,按需加载降本增效。"
-license: "Proprietary"
-description: |-
-  让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库、领域知识积累、减少重复犯错等场景。核心能力含三类结构化记忆、自动痛点检测、模式复发追踪与晋升、分层文档加载、技能提取。适用关键词：自我进化、经验捕获、错误学习、模式追踪、记忆晋升、self-evolving、learnings、pattern-detection。
+slug: self-evolving-ai
+name: self-evolving-ai
+version: 1.0.0
+displayName: 自我进化AI
+summary: 自动捕获经验与错误,智能分层记忆,模式复发追踪,按需加载降本增效。
+license: Proprietary
+description: 让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库、领域知识积累、减少重复犯错等场景。核心能力含三类结构化记忆、自动痛点检测、模式复发追踪与晋升、分层文档加载、技能提取。适用关键词：自我进化、经验捕获、错误学习、模式追踪、记忆晋升、self-evolving、learnings、pattern-detection。
 tags:
-  - 智能代理
-  - 记忆管理
-  - 持续改进
-  - 自主学习
+- 智能代理
+- 记忆管理
+- 持续改进
+- 自主学习
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 自我进化 AI（Self-Evolving AI）
 
 让智能体从每次交互中持续学习，自动捕获经验、错误与纠正，并通过模式复发追踪将高频问题晋升为项目级规则。所有记忆存储在项目根目录的 `.learnings/` 文件夹，支持本地保留或团队共享。

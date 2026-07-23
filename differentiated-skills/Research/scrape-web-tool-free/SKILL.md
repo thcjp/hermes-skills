@@ -1,38 +1,52 @@
 ---
-slug: "scrape-web-tool-free"
-name: "scrape-web-tool-free"
-version: "1.0.0"
-displayName: "网页抓取工具免费版"
-summary: "轻量级网页内容抓取工具,支持CSS选择器提取与文件保存,适合个人用户快速获取网页文本"
-license: "Proprietary"
-edition: "free"
-description: |-
-  网页抓取工具免费版为个人用户提供轻量级的网页内容抓取与提取能力。
+slug: scrape-web-tool-free
+name: scrape-web-tool-free
+version: 1.0.0
+displayName: 网页抓取工具免费版
+summary: 轻量级网页内容抓取工具,支持CSS选择器提取与文件保存,适合个人用户快速获取网页文本
+license: Proprietary
+edition: free
+description: '网页抓取工具免费版为个人用户提供轻量级的网页内容抓取与提取能力。
+
 
   核心能力:
+
   - 网页纯文本抓取
+
   - CSS选择器精准提取
+
   - 抓取结果保存文件
+
   - 多种输出格式
 
+
   适用场景:
+
   - 单页内容快速提取
+
   - 文章正文抓取归档
+
   - 数据字段精准提取
+
 
   差异化:免费版聚焦核心抓取与选择器提取流程,基于Scrapling实现轻量部署,适合个人用户快速抓取网页内容,无需复杂配置。
 
-  适用关键词: 网页抓取, scrape, 爬虫, CSS选择器, 内容提取, Scrapling, Python
+
+  适用关键词: 网页抓取, scrape, 爬虫, CSS选择器, 内容提取, Scrapling, Python'
 tags:
-  - 研究工具
-  - 网页抓取
-  - 数据采集
-  - 个人效率
+- 研究工具
+- 网页抓取
+- 数据采集
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 网页抓取工具免费版
 
 ## 概述

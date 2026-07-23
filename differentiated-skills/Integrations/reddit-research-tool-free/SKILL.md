@@ -1,23 +1,27 @@
 ---
-slug: "reddit-research-tool-free"
-name: "reddit-research-tool-free"
-version: "1.0.0"
-displayName: "Reddit调研(免费版)"
-summary: "抓取并总结目标Subreddit的热门话题、反复出现的问题与内容空白，辅助内容创作。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Reddit调研免费版是一套面向内容创作者与市场研究人员的 Reddit 社区调研知识库，帮助用户从目标 Subreddit 中发现热门话题、反复出现的痛点、内容空白与机会点。核心能力：提供基于 /。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+slug: reddit-research-tool-free
+name: reddit-research-tool-free
+version: 1.0.0
+displayName: Reddit调研(免费版)
+summary: 抓取并总结目标Subreddit的热门话题、反复出现的问题与内容空白，辅助内容创作。
+license: Proprietary
+edition: free
+description: Reddit调研免费版是一套面向内容创作者与市场研究人员的 Reddit 社区调研知识库，帮助用户从目标 Subreddit 中发现热门话题、反复出现的痛点、内容空白与机会点。核心能力：提供基于
+  /。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 调研
-  - 集成工具
-  - 内容创作
-  - 免费版
+- 调研
+- 集成工具
+- 内容创作
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Reddit调研（免费版）
 
 ## 概述

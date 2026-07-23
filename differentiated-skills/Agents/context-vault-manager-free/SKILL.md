@@ -1,23 +1,27 @@
 ---
-slug: "context-vault-manager-free"
-name: "context-vault-manager-free"
-version: "1.0.0"
-displayName: "Context Vault Manage"
-summary: "智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短期/长期/重要三层记忆分层架构，自动清理过期短期记忆，避免上下文窗口被无效信息占满。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
+slug: context-vault-manager-free
+name: context-vault-manager-free
+version: 1.0.0
+displayName: Context Vault Manage
+summary: 智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%。
+license: Proprietary
+edition: free
+description: 上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短期/长期/重要三层记忆分层架构，自动清理过期短期记忆，避免上下文窗口被无效信息占满。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 记忆管理
-  - 分层架构
-  - 上下文管理
-  - Token优化
+- 记忆管理
+- 分层架构
+- 上下文管理
+- Token优化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 上下文保险库（免费版）
 
 > **智能分层记忆管理。短期/长期/重要三层架构，Token占用降低70%。**

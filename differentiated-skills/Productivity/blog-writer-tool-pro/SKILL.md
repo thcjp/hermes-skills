@@ -1,28 +1,34 @@
 ---
-slug: "blog-writer-tool-pro"
-name: "blog-writer-tool-pro"
-version: "1.0.0"
-displayName: "博客写作助手专业版"
-summary: "企业级内容生产流水线,支持品牌语调管理、多人协作审稿与发布自动化"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 内容创作领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: blog-writer-tool-pro
+name: blog-writer-tool-pro
+version: 1.0.0
+displayName: 博客写作助手专业版
+summary: 企业级内容生产流水线,支持品牌语调管理、多人协作审稿与发布自动化
+license: Proprietary
+edition: pro
+description: '核心能力: 内容创作领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: 博客, 文章写作, 个人风格, 内容草稿, 写作助手
+
+  适用关键词: 博客, 文章写作, 个人风格, 内容草稿, 写作助手'
 tags:
-  - 博客写作
-  - 内容创作
-  - 品牌语调
+- 博客写作
+- 内容创作
+- 品牌语调
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 博客写作助手专业版
 
 ## 概述

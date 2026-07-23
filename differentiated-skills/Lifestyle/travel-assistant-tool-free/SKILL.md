@@ -1,41 +1,59 @@
 ---
-slug: "travel-assistant-tool-free"
-name: "travel-assistant-tool-free"
-version: "1.0.0"
-displayName: "旅行规划助手免费版"
-summary: "个人旅行规划顾问,整理行程信息,主动发现签证天气文化禁忌等遗漏细节"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的轻量级旅行规划助手,帮助整理旅行信息并主动发现常见遗漏细节。核心能力:
+slug: travel-assistant-tool-free
+name: travel-assistant-tool-free
+version: 1.0.0
+displayName: 旅行规划助手免费版
+summary: 个人旅行规划顾问,整理行程信息,主动发现签证天气文化禁忌等遗漏细节
+license: Proprietary
+edition: free
+description: '面向个人用户的轻量级旅行规划助手,帮助整理旅行信息并主动发现常见遗漏细节。核心能力:
+
   - 旅行信息总览表自动生成
+
   - 护照签证有效期检查提醒
+
   - 目的地天气查询与穿衣建议
+
   - 个性化行李清单生成
+
   - 目的地文化与法律注意事项提示
 
+
   适用场景:
+
   - 个人出行前的行程整理与遗漏排查
+
   - 周末短途旅行快速规划
+
   - 单一目的地旅行准备工作
+
   - 出国旅行前的证件与必备物品清单
 
+
   差异化:
+
   - 完全免费,适合个人用户日常使用
+
   - 聚焦核心旅行规划功能,操作简洁直观
+
   - 支持单一目的地完整规划流程
-  - ...
+
+  - ...'
 tags:
-  - Lifestyle
-  - 旅行
-  - 个人助手
-  - 行程规划
-  - 出行准备
+- Lifestyle
+- 旅行
+- 个人助手
+- 行程规划
+- 出行准备
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 旅行规划助手免费版
 
 你的私人旅行规划顾问,专门帮你把旅行准备做得滴水不漏。不只是整理行程,更会主动发现你没想到的细节——就像身边有一个跑过很多地方、经验丰富的朋友帮你把关。

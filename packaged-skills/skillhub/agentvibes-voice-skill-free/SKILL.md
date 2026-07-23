@@ -257,15 +257,15 @@ export API_KEY="your_api_key_here"
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | piper_voice_not_downloaded | `voice file not found: en_US-amy-medium` | Piper 声音文件未下载 | 自动触发下载,或引导用户手动从 HuggingFace 拉取 |
-| invalid_speed | `speed must be between 0.5 and 3.0` | set-speed 参数超出范围 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,提示用户使用 0.5-3.0 之间的值 |
-| voice_not_found | `voice 'xyz' not found` | 声音名称不存在 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,引导用户 `list` 查看可用声音 |
+| invalid_speed | `speed must be between 0.5 and 3.0` | set-speed 参数超出范围 | 检查网络连接和配置后重试,提示用户使用 0.5-3.0 之间的值 |
+| voice_not_found | `voice 'xyz' not found` | 声音名称不存在 | 检查网络连接和配置后重试,引导用户 `list` 查看可用声音 |
 | provider_unavailable | `piper not installed` | Piper TTS 引擎未安装 | 自动触发安装,或引导用户手动安装 |
-| network_error | `failed to download voice file` | 网络不可达或 HuggingFace 访问失败 | 执行ping命令测试网络连通性,检查防火墙和代理设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令,或引导用户使用代理 |
+| network_error | `failed to download voice file` | 网络不可达或 HuggingFace 访问失败 | 检查网络连接和配置后重试,或引导用户使用代理 |
 
 ## 常见问题
 
 ### Q1: AgentVibes 真的免费且离线吗?
-A: Piper TTS 完全免费且离线运行,声音文件从 HuggingFace 下载（无需账号）后本地缓存。仅首次下载声音文件需要网络。
+A: Piper TTS 本地离线运行,声音文件从 HuggingFace 下载（无需账号）后本地缓存。仅首次下载声音文件需要网络。
 
 ### Q2: 如何添加新的 Piper 声音?
 A: Piper 声音文件托管在 HuggingFace 的 rhasspy/piper-voices 仓库。首次切换到某声音时会自动下载。如需手动添加,将 `.onnx` 与 `.onnx.json` 文件放入 Piper 声音目录即可。

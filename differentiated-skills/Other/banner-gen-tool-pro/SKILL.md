@@ -1,35 +1,48 @@
 ---
-slug: "banner-gen-tool-pro"
-name: "banner-gen-tool-pro"
-version: "1.0.0"
-displayName: "横幅插画生成专业版"
-summary: "批量生成、Prompt模板库、风格预设与团队协作，适合设计团队与内容工作室批量产出。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  横幅插画生成工具专业版，面向设计团队与内容工作室的高阶图像生成平台。核心能力:
+slug: banner-gen-tool-pro
+name: banner-gen-tool-pro
+version: 1.0.0
+displayName: 横幅插画生成专业版
+summary: 批量生成、Prompt模板库、风格预设与团队协作，适合设计团队与内容工作室批量产出。
+license: Proprietary
+edition: pro
+description: '横幅插画生成工具专业版，面向设计团队与内容工作室的高阶图像生成平台。核心能力:
+
   - 批量生成与多尺寸适配
+
   - Prompt 模板库与风格预设
+
   - 团队协作与资产共享
+
   - 生成历史与版本对比
+
   - 自定义工作流与自动化
 
+
   适用场景:
+
   - 设计团队的横幅批量产出
+
   - 内容工作室的多平台素材适配
+
   - 营销活动的视觉资产生成
 
-  差异化: 专业版在免费版核心生成能力之上扩展批量与模板，新增团队协作、历史版本、自定义工作流等企业级能力，并与免费版 Prompt 规则兼容
+
+  差异化: 专业版在免费版核心生成能力之上扩展批量与模板，新增团队协作、历史版本、自定义工作流等企业级能力，并与免费版 Prompt 规则兼容'
 tags:
-  - 图像生成
-  - 批量产出
-  - 设计协作
-  - 专业版
+- 图像生成
+- 批量产出
+- 设计协作
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 横幅插画生成工具（专业版）
 
 ## 概述

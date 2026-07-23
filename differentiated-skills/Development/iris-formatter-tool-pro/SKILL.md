@@ -32,7 +32,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # IRIS 代码格式化工具（专业版）
 ## 概述
 本工具面向企业级 IRIS 开发团队，提供 ObjectScript 代码的批量审查与治理方案。在免费版基础规范检查能力之上，专业版新增批量多文件审查、自定义规范规则配置、结构化审查报告导出、SQL 格式与性能检查、陷阱深度分析与安全审计、代码复杂度与重复度分析等能力。通过可配置的规则引擎与自动化报告，帮助团队建立统一的代码质量标准。

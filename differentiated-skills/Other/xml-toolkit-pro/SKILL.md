@@ -1,28 +1,36 @@
 ---
-slug: "xml-toolkit-pro"
-name: "xml-toolkit-pro"
-version: "1.0.0"
-displayName: "XML处理工具专业版"
-summary: "流式解析、XSD验证、格式互转与批量处理，适合数据团队与企业级XML数据治理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  XML处理工具专业版，面向数据团队与企业的高阶XML处理平台。核心能力:
+slug: xml-toolkit-pro
+name: xml-toolkit-pro
+version: 1.0.0
+displayName: XML处理工具专业版
+summary: 流式解析、XSD验证、格式互转与批量处理，适合数据团队与企业级XML数据治理。
+license: Proprietary
+edition: pro
+description: 'XML处理工具专业版，面向数据团队与企业的高阶XML处理平台。核心能力:
+
   - 流式解析大文件（SAX/StAX）
+
   - XSD/RelaxNG 模式验证
+
   - XML/JSON/YAML/CSV 互转
+
   - 批量处理与目录递归
-  - XPath 2。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+
+  - XPath 2。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-  - XML
-  - 企业数据处理
-  - 格式转换
-  - 专业版
+- XML
+- 企业数据处理
+- 格式转换
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # XML处理工具（专业版）
 
 ## 概述

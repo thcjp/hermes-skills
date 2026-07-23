@@ -1,23 +1,27 @@
 ---
-slug: "workflow-orchestrator-free"
-name: "workflow-orchestrator-free"
-version: "1.0.0"
-displayName: "工作流编排器(免费版)"
-summary: "构建可复用的自动化流水线，支持节点间数据流、状态管理与并发锁控制。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  工作流编排器免费版为自动化开发者提供轻量级的流水线编排能力，聚焦可复用组件、节点间数据流与状态管理。采用"文件即状态"的极简理念，所有节点输出与状态持久化到磁盘，支持中断恢复。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
+slug: workflow-orchestrator-free
+name: workflow-orchestrator-free
+version: 1.0.0
+displayName: 工作流编排器(免费版)
+summary: 构建可复用的自动化流水线，支持节点间数据流、状态管理与并发锁控制。
+license: Proprietary
+edition: free
+description: 工作流编排器免费版为自动化开发者提供轻量级的流水线编排能力，聚焦可复用组件、节点间数据流与状态管理。采用"文件即状态"的极简理念，所有节点输出与状态持久化到磁盘，支持中断恢复。Use
+  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 工作流编排
-  - 自动化
-  - 流水线
-  - 数据流
+- 工作流编排
+- 自动化
+- 流水线
+- 数据流
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 工作流编排器（免费版）
 
 > **构建可复用的自动化流水线。节点间数据流+状态管理+并发锁，让流水线可中断、可恢复、可复用。**

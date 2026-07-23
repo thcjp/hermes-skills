@@ -1,32 +1,43 @@
 ---
-slug: "db-schema-designer-free"
-name: "db-schema-designer-free"
-version: "1.0.0"
-displayName: "数据库Schema设计器(免费版)"
-summary: "面向开发者的轻量级数据库Schema设计助手,支持SQLite软Schema与三层演进,快速落地灵活数据存储方案。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  数据库Schema设计器(免费版)是一套面向独立开发者与小团队的轻量级数据库建模工具,聚焦"主干硬、尾巴软"的软Schema设计哲学,帮助用户在需求不确定阶段快速构建可演进的数据库结构。核心能力:
+slug: db-schema-designer-free
+name: db-schema-designer-free
+version: 1.0.0
+displayName: 数据库Schema设计器(免费版)
+summary: 面向开发者的轻量级数据库Schema设计助手,支持SQLite软Schema与三层演进,快速落地灵活数据存储方案。
+license: Proprietary
+edition: free
+description: '数据库Schema设计器(免费版)是一套面向独立开发者与小团队的轻量级数据库建模工具,聚焦"主干硬、尾巴软"的软Schema设计哲学,帮助用户在需求不确定阶段快速构建可演进的数据库结构。核心能力:
+
   - 提供原始层、软字段层、业务视图层三层建模方法论
+
   - 内置个人知识库、政策信息收集、财务报表收集等场景模板
+
   - 支持JSON软字段存储与键值对索引混合策略
+
   - 提供中文全文检索的基础实现思路(FTS5+LIKE回退)
 
+
   适用场景:
+
   - 个人知识库与碎片信息归档
+
   - 政策、新闻、报表等结构化信息收集
-  - 表单问卷数据的多形...
+
+  - 表单问卷数据的多形...'
 tags:
-  - 数据库
-  - 建模
-  - 知识库
-  - SQLite
+- 数据库
+- 建模
+- 知识库
+- SQLite
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据库Schema设计器(免费版)
 
 一套可复用的"软Schema"设计方法:主干硬、尾巴软,三层演进。安装后,Agent可据此指导用户真正构建出灵活可演进的数据库结构,适配需求频繁变化的早期阶段。

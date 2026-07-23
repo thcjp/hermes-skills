@@ -1,28 +1,34 @@
 ---
-slug: "brainz-calendar-tool-free"
-name: "brainz-calendar-tool-free"
-version: "1.0.0"
-displayName: "Google 日历基础版"
-summary: "通过 gcalcli 管理 Google 日历事件,支持创建、列出和删除日程,适合个人时间管理"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: brainz-calendar-tool-free
+name: brainz-calendar-tool-free
+version: 1.0.0
+displayName: Google 日历基础版
+summary: 通过 gcalcli 管理 Google 日历事件,支持创建、列出和删除日程,适合个人时间管理
+license: Proprietary
+edition: free
+description: '核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: google calendar, 日历, 日程, 事件, gcalcli, 会议安排
+
+  适用关键词: google calendar, 日历, 日程, 事件, gcalcli, 会议安排'
 tags:
-  - 日历
-  - Google Calendar
-  - 时间管理
+- 日历
+- Google Calendar
+- 时间管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Google 日历基础版
 
 ## 概述

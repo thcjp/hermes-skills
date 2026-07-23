@@ -1,28 +1,34 @@
 ---
-slug: "blog-seo-writer-tool-pro"
-name: "blog-seo-writer-tool-pro"
-version: "1.0.0"
-displayName: "SEO 博客写作专业版"
-summary: "企业级 SEO 内容工坊,支持竞品分析、长尾词矩阵、多语言生成与发布管道自动化"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 内容营销领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: blog-seo-writer-tool-pro
+name: blog-seo-writer-tool-pro
+version: 1.0.0
+displayName: SEO 博客写作专业版
+summary: 企业级 SEO 内容工坊,支持竞品分析、长尾词矩阵、多语言生成与发布管道自动化
+license: Proprietary
+edition: pro
+description: '核心能力: 内容营销领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: seo, 博客, 关键词, 元描述, 内容优化, 搜索引擎排名
+
+  适用关键词: seo, 博客, 关键词, 元描述, 内容优化, 搜索引擎排名'
 tags:
-  - SEO
-  - 内容写作
-  - 博客营销
+- SEO
+- 内容写作
+- 博客营销
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # SEO 博客写作专业版
 
 ## 概述

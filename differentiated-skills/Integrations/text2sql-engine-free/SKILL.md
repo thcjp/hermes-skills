@@ -1,22 +1,26 @@
 ---
-slug: "text2sql-engine-free"
-name: "text2sql-engine-free"
-version: "1.0.0"
-displayName: "自然语言转SQL免费版"
-summary: "将自然语言描述转换为标准SQL查询，支持多方言与Schema自动识别"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向数据分析人员与后端开发者的自然语言转SQL引擎，解决"知道想要什么数据但写不出SQL"的核心痛点。核心能力：将中文/英文的自然语言描述转换为语法正确的SQL查询，支持表结构自动识别、意图解析、JOIN关系推导与查询验证。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: text2sql-engine-free
+name: text2sql-engine-free
+version: 1.0.0
+displayName: 自然语言转SQL免费版
+summary: 将自然语言描述转换为标准SQL查询，支持多方言与Schema自动识别
+license: Proprietary
+edition: free
+description: 面向数据分析人员与后端开发者的自然语言转SQL引擎，解决"知道想要什么数据但写不出SQL"的核心痛点。核心能力：将中文/英文的自然语言描述转换为语法正确的SQL查询，支持表结构自动识别、意图解析、JOIN关系推导与查询验证。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-  - 数据查询
-  - SQL生成
-  - 开发工具
+- 数据查询
+- SQL生成
+- 开发工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 自然语言转SQL引擎（免费版）
 
 ## 概述

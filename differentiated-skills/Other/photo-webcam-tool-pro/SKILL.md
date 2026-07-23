@@ -1,40 +1,57 @@
 ---
-slug: "photo-webcam-tool-pro"
-name: "photo-webcam-tool-pro"
-version: "1.0.0"
-displayName: "网络摄像头工具-专业版"
-summary: "企业级摄像头监控平台,支持定时抓取、历史归档、多通道推送与图片分析"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级网络摄像头监控工具专业版,面向团队与商业应用。核心能力:
+slug: photo-webcam-tool-pro
+name: photo-webcam-tool-pro
+version: 1.0.0
+displayName: 网络摄像头工具-专业版
+summary: 企业级摄像头监控平台,支持定时抓取、历史归档、多通道推送与图片分析
+license: Proprietary
+edition: pro
+description: '企业级网络摄像头监控工具专业版,面向团队与商业应用。核心能力:
+
   - 定时自动抓取与调度管理
+
   - 历史快照归档与时间轴回放
+
   - 多通道推送(Telegram/钉钉/邮件/Webhook)
+
   - 图片拼接与延时视频生成
+
   - AI 图像分析与异常检测
+
   - 多摄像头仪表盘与状态看板
+
   - API 接口与第三方集成
+
   - 团队共享与权限管理
 
+
   适用场景:
+
   - 工地施工进度远程监控
+
   - 景区实时画面展示与营销
+
   - 交通路况监控与数据采集
+
   - 安防监控与异常告警
 
-  差异化:专业版在免费版基础上扩展定时调度、历史归...
+
+  差异化:专业版在免费版基础上扩展定时调度、历史归...'
 tags:
-  - 摄像头
-  - 监控
-  - 企业级
-  - 图像分析
-  - 定时调度
+- 摄像头
+- 监控
+- 企业级
+- 图像分析
+- 定时调度
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 网络摄像头工具 - 专业版
 
 ## 概述

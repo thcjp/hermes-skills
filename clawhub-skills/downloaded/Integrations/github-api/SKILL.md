@@ -14,7 +14,11 @@ tools:
   - read
   - exec
 # GitHub
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 Access the GitHub REST API with managed OAuth authentication. Manage repositories, issues, pull requests, commits, branches, users, and more.
 
 ## Quick Start

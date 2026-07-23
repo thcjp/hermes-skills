@@ -1,36 +1,50 @@
 ---
-slug: "ai-image-prompt-tool-pro"
-name: "ai-image-prompt-tool-pro"
-version: "1.0.0"
-displayName: "AI图像提示词-专业版"
-summary: "企业级提示词工程工具,支持批量生成、A/B测试、版本管理与团队协作,适配商业内容生产。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  AI图像提示词专业版,面向企业团队与专业设计师的高级提示词工程工具。核心能力:
+slug: ai-image-prompt-tool-pro
+name: ai-image-prompt-tool-pro
+version: 1.0.0
+displayName: AI图像提示词-专业版
+summary: 企业级提示词工程工具,支持批量生成、A/B测试、版本管理与团队协作,适配商业内容生产。
+license: Proprietary
+edition: pro
+description: 'AI图像提示词专业版,面向企业团队与专业设计师的高级提示词工程工具。核心能力:
+
   - 行业专业模板库(电商、广告、出版、游戏、影视等)
+
   - 批量提示词生成,支持变量矩阵组合
+
   - A/B 测试框架,自动对比出图效果
+
   - 提示词版本管理与团队协作共享
+
   - 提示词效果分析与优化建议
 
+
   适用场景:
+
   - 电商商品图批量提示词生产
+
   - 广告创意 A/B 测试与优化
+
   - 设计团队提示词资产沉淀
+
   - 出版印刷图像提示词标准化
 
-  差异化:专业版在免费版基础上扩展行业模板、批量生成、A/B测试与版本管理,兼容免费版所有模板,适...
+
+  差异化:专业版在免费版基础上扩展行业模板、批量生成、A/B测试与版本管理,兼容免费版所有模板,适...'
 tags:
-  - Creative
-  - 提示词工程
-  - 企业版
-  - 商业内容
+- Creative
+- 提示词工程
+- 企业版
+- 商业内容
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AI图像提示词工具 - 专业版
 
 ## 概述

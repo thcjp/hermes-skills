@@ -1,34 +1,46 @@
 ---
-slug: "hugo-blog-tool-free"
-name: "hugo-blog-tool-free"
-version: "1.0.0"
-displayName: "Hugo博客发布免费版"
-summary: "将 Markdown 文章发布到 Hugo 博客，自动生成 Front Matter 并推送到远程仓库。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人博主的 Hugo 博客发布工具，简化文章发布流程。核心能力:
+slug: hugo-blog-tool-free
+name: hugo-blog-tool-free
+version: 1.0.0
+displayName: Hugo博客发布免费版
+summary: 将 Markdown 文章发布到 Hugo 博客，自动生成 Front Matter 并推送到远程仓库。
+license: Proprietary
+edition: free
+description: '面向个人博主的 Hugo 博客发布工具，简化文章发布流程。核心能力:
+
   - 自动分析文章内容，提取标题、标签、分类
+
   - 生成符合 Hugo 规范的 Front Matter
+
   - 自动添加截断标记（more）
+
   - Git 推送发布到远程仓库
 
+
   适用场景:
+
   - 个人技术博客文章发布
+
   - Markdown 文章的 Front Matter 自动生成
+
   - 博客内容的版本管理与推送
 
-  差异化: 免费版聚焦个人博主的单篇文章发布场景，提供自动化的 Front Matter 生成与推送流程，开箱即用
+
+  差异化: 免费版聚焦个人博主的单篇文章发布场景，提供自动化的 Front Matter 生成与推送流程，开箱即用'
 tags:
-  - 开发工具
-  - 博客
-  - Hugo
-  - 内容发布
+- 开发工具
+- 博客
+- Hugo
+- 内容发布
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Hugo 博客发布工具（免费版）
 
 ## 概述

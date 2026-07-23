@@ -1,20 +1,7 @@
 ---
-slug: read-github
-name: read-github
-version: "1.0.1"
-displayName: Read GitHub
-summary: This skill is mostly transparent about reading GitHub through gitmcp.io,
-  but it exposes broader r...
-license: MIT
-description: |-
-  This skill is mostly transparent about reading GitHub through gitmcp。io,
-  but it exposes broader r。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Research
-- Development
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Read GitHub

@@ -1,29 +1,37 @@
 ---
-slug: "internet-search-pro-tool-pro"
-name: "internet-search-pro-tool-pro"
-version: "1.0.0"
-displayName: "联网搜索专业版"
-summary: "企业级智能搜索助手，支持多轮对话、批量查询、结果导出、定时监控与多引擎策略，适合专业研究与情报收集。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级智能搜索助手，支持多轮对话、批量查询、结果导出、定时监控与多引擎策略，适合专业研究与情报收集。核心能力:
+slug: internet-search-pro-tool-pro
+name: internet-search-pro-tool-pro
+version: 1.0.0
+displayName: 联网搜索专业版
+summary: 企业级智能搜索助手，支持多轮对话、批量查询、结果导出、定时监控与多引擎策略，适合专业研究与情报收集。
+license: Proprietary
+edition: pro
+description: '企业级智能搜索助手，支持多轮对话、批量查询、结果导出、定时监控与多引擎策略，适合专业研究与情报收集。核心能力:
+
   - 多轮追问式深入搜索，支持上下文理解
+
   - 批量查询，一次处理多个问题
+
   - 结果导出为 JSON/CSV/Markdown 多种格式
+
   - 定时监控，自动追踪信息变化
-  - 多搜索引擎策略...
+
+  - 多搜索引擎策略...'
 tags:
-  - 搜索
-  - 企业工具
-  - 多轮对话
-  - 批量查询
-  - 情报收集
+- 搜索
+- 企业工具
+- 多轮对话
+- 批量查询
+- 情报收集
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 联网搜索专业版
 
 ## 概述

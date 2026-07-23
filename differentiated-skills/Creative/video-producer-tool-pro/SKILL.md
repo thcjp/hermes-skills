@@ -1,26 +1,30 @@
 ---
-slug: "video-producer-tool-pro"
-name: "video-producer-tool-pro"
-version: "1.0.0"
-displayName: "短视频生成-专业版"
-summary: "企业级短视频批量生产平台，支持多语言配音、自定义模板、A/B变体与品牌一致性管理，适合团队规模化出片。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  短视频生成专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
+slug: video-producer-tool-pro
+name: video-producer-tool-pro
+version: 1.0.0
+displayName: 短视频生成-专业版
+summary: 企业级短视频批量生产平台，支持多语言配音、自定义模板、A/B变体与品牌一致性管理，适合团队规模化出片。
+license: Proprietary
+edition: pro
+description: 短视频生成专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - Creative
-  - 视频生成
-  - 短视频
-  - 专业版
-  - 批量生产
-  - 企业级
-  - 多语言
+- Creative
+- 视频生成
+- 短视频
+- 专业版
+- 批量生产
+- 企业级
+- 多语言
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 短视频生成专业版是一款面向企业团队与 MCN 机构的规模化视频生产平台。在免费版核心生产流程之上，专业版扩展了批量生产、多语言配音、自定义模板、A/B 变体、品牌一致性管理等企业级能力。
 
 专业版采用渲染队列架构，支持优先级调度、断点续传、失败重试，可稳定处理 50+ 视频的批量生产任务。同时完全兼容免费版配置，已有项目可无缝迁移。

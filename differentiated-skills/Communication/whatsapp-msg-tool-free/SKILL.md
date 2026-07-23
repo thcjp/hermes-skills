@@ -1,24 +1,28 @@
 ---
-slug: "whatsapp-msg-tool-free"
-name: "whatsapp-msg-tool-free"
-version: "1.0.0"
-displayName: "WhatsApp消息工具(免费版)"
-summary: "WhatsApp消息免费版：文本/文件发送、聊天搜索、基础认证与历史同步。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  WhatsApp 消息工具（免费版）面向个人用户与独立开发者，封装 WhatsApp CLI 的基础消息能力：文本消息发送、文件发送、聊天列表查询、消息搜索与基础认证流程。通过命令行工具驱动 WhatsApp Web 协议，无需外部服务。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
+slug: whatsapp-msg-tool-free
+name: whatsapp-msg-tool-free
+version: 1.0.0
+displayName: WhatsApp消息工具(免费版)
+summary: WhatsApp消息免费版：文本/文件发送、聊天搜索、基础认证与历史同步。
+license: Proprietary
+edition: free
+description: WhatsApp 消息工具（免费版）面向个人用户与独立开发者，封装 WhatsApp CLI 的基础消息能力：文本消息发送、文件发送、聊天列表查询、消息搜索与基础认证流程。通过命令行工具驱动
+  WhatsApp Web 协议，无需外部服务。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
 tags:
-  - 沟通协作
-  - 即时通讯
-  - WhatsApp
-  - 消息自动化
-  - 文件传输
+- 沟通协作
+- 即时通讯
+- WhatsApp
+- 消息自动化
+- 文件传输
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # WhatsApp 消息工具（免费版）
 
 ## 概述

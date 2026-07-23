@@ -146,7 +146,7 @@ Step 8 - Deliver & Cleanup:
 
 | 错误场景 | 原因 | 处理方式 |
 |:---------|:-----|:---------|
-| init-workspace.sh执行失败 | 目录已存在或无写权限 | 检查目标目录是否已初始化，确认有写权限后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令或更换路径 |
+| init-workspace.sh执行失败 | 目录已存在或无写权限 | 检查目标目录是否已初始化，确认有写权限后检查网络连接和配置后重试或更换路径 |
 | edit.sh编辑失败 | piece ID不存在或文件权限问题 | 先运行`new-piece.sh`创建piece，确认pieces目录权限 |
 | restore.sh恢复失败 | 指定version不存在 | 运行`list.sh`确认可用versions，使用正确version名称 |
 

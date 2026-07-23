@@ -1,19 +1,7 @@
 ---
-slug: ui-ux-pro-max
-name: ui-ux-pro-max
-version: "0.1.0"
-displayName: UI/UX Pro Max
-summary: This skill provides UI/UX guidance and an optional local design-system file
-  generator, with no ev...
-license: MIT
-description: |-
-  This skill provides UI/UX guidance and an optional local design-system
-  file generator, with no ev。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Development
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # UI/UX Pro Max

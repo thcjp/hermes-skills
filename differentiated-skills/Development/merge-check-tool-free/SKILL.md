@@ -1,37 +1,52 @@
 ---
-slug: "merge-check-tool-free"
-name: "merge-check-tool-free"
-version: "1.0.0"
-displayName: "合并检查工具(免费版)"
-summary: "预测单个PR能否被合并,基于技术信号与PR卫生维度的拒绝向量分析。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  合并检查工具(免费版)为个人开发者预测单个Pull Request能否被合并,基于技术信号与PR卫生维度的拒绝向量分类体系。核心能力:
+slug: merge-check-tool-free
+name: merge-check-tool-free
+version: 1.0.0
+displayName: 合并检查工具(免费版)
+summary: 预测单个PR能否被合并,基于技术信号与PR卫生维度的拒绝向量分析。
+license: Proprietary
+edition: free
+description: '合并检查工具(免费版)为个人开发者预测单个Pull Request能否被合并,基于技术信号与PR卫生维度的拒绝向量分类体系。核心能力:
+
   - 单个PR数据采集与解析
+
   - 技术信号分析:CI状态、构建、覆盖率
+
   - PR卫生分析:规模、文件分布、单一职责、提交卫生
+
   - 合并概率评分与改进建议
 
+
   适用场景:
+
   - 个人贡献者提交前自检
+
   - 开源贡献者评估PR通过概率
+
   - 学习PR最佳实践
 
+
   差异化:
+
   - 免费版聚焦单个PR的核心维度分析
+
   - 移除原始平台引用,纯净适配SkillHub
-  - 提供中文友好的评分与建...
+
+  - 提供中文友好的评分与建...'
 tags:
-  - Development
-  - 代码审查
-  - GitHub
-  - PR
+- Development
+- 代码审查
+- GitHub
+- PR
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 合并检查工具(免费版)
 
 ## 概述

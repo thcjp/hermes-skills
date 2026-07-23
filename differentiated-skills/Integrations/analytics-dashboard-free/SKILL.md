@@ -1,23 +1,27 @@
 ---
-slug: "analytics-dashboard-free"
-name: "analytics-dashboard-free"
-version: "1.0.0"
-displayName: "数据分析面板(免费版)"
-summary: "轻量数据可视化面板，聚合邮件、会话、任务多源数据，token保护，5秒自动刷新，一站式监控。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  数据分析面板免费版为AI Agent提供轻量但实用的数据可视化能力。聚合邮件收件箱、浏览器会话状态、任务执行情况等多源数据，通过token保护的Web UI一站式展示，5秒自动刷新，让用户无需切换多个工具即可掌握全局状态。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: analytics-dashboard-free
+name: analytics-dashboard-free
+version: 1.0.0
+displayName: 数据分析面板(免费版)
+summary: 轻量数据可视化面板，聚合邮件、会话、任务多源数据，token保护，5秒自动刷新，一站式监控。
+license: Proprietary
+edition: free
+description: 数据分析面板免费版为AI Agent提供轻量但实用的数据可视化能力。聚合邮件收件箱、浏览器会话状态、任务执行情况等多源数据，通过token保护的Web
+  UI一站式展示，5秒自动刷新，让用户无需切换多个工具即可掌握全局状态。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-  - 数据可视化
-  - 监控面板
-  - 集成工具
-  - 状态监控
+- 数据可视化
+- 监控面板
+- 集成工具
+- 状态监控
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据分析面板（免费版）
 
 > **一站式监控你的邮件、会话与任务。token保护，5秒刷新，零配置启动。**

@@ -1,33 +1,45 @@
 ---
-slug: "design-toolkit-free"
-name: "design-toolkit-free"
-version: "1.0.0"
-displayName: "设计偏好工具箱-免费版"
-summary: "自动学习用户视觉偏好的轻量级工具，支持UI与图形设计的基础偏好跟踪与适配。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  设计偏好工具箱免费版，面向个人创作者的视觉偏好自学习工具。核心能力：
+slug: design-toolkit-free
+name: design-toolkit-free
+version: 1.0.0
+displayName: 设计偏好工具箱-免费版
+summary: 自动学习用户视觉偏好的轻量级工具，支持UI与图形设计的基础偏好跟踪与适配。
+license: Proprietary
+edition: free
+description: '设计偏好工具箱免费版，面向个人创作者的视觉偏好自学习工具。核心能力：
+
   - 自动识别用户在设计选择中的审美倾向
+
   - 支持 UI 与图形设计两类媒介的偏好记录
+
   - 轻量级 Markdown 存储，零配置即可使用
+
   - 偏好确认机制，避免误判用户口味
 
+
   适用场景：
+
   - 个人开发者快速建立统一视觉风格
+
   - 独立项目的 UI 配色与字体决策
+
   - 日常设计任务的偏好记忆
 
-  差异化：免费版聚焦个人单媒介偏好跟踪，采用极简 Markdown 指令驱动，无外部依赖，开箱即用
+
+  差异化：免费版聚焦个人单媒介偏好跟踪，采用极简 Markdown 指令驱动，无外部依赖，开箱即用'
 tags:
-  - Creative
-  - Design
-  - UI
+- Creative
+- Design
+- UI
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 设计偏好工具箱（免费版）
 
 ## 概述

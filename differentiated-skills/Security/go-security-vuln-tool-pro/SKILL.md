@@ -1,23 +1,27 @@
 ---
-slug: "go-security-vuln-tool-pro"
-name: "go-security-vuln-tool-pro"
-version: "1.0.0"
-displayName: "Go安全漏洞扫描专业版"
-summary: "企业级Go安全扫描平台,支持govulncheck+gosec双重扫描、深度调用路径分析、批量项目扫描与SARIF报告,适合Go安全团队使用。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Go安全漏洞扫描专业版,为企业Go开发团队提供全方位安全扫描与修复能力。核心能力:govulncheck+gosec双重扫描、深度调用路径分析、批量多项目扫描、CI/CD安全门禁、SARIF报告、持续漏洞监控。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
+slug: go-security-vuln-tool-pro
+name: go-security-vuln-tool-pro
+version: 1.0.0
+displayName: Go安全漏洞扫描专业版
+summary: 企业级Go安全扫描平台,支持govulncheck+gosec双重扫描、深度调用路径分析、批量项目扫描与SARIF报告,适合Go安全团队使用。
+license: Proprietary
+edition: pro
+description: Go安全漏洞扫描专业版,为企业Go开发团队提供全方位安全扫描与修复能力。核心能力:govulncheck+gosec双重扫描、深度调用路径分析、批量多项目扫描、CI/CD安全门禁、SARIF报告、持续漏洞监控。Use
+  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
-  - 安全
-  - Go
-  - 企业版
-  - 代码安全
+- 安全
+- Go
+- 企业版
+- 代码安全
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 专业版为企业Go开发团队提供完整的安全扫描与治理平台,在免费版govulncheck依赖漏洞扫描基础上,新增gosec代码安全分析、深度调用路径追踪、批量多项目扫描、CI/CD安全门禁、SARIF合规报告与持续漏洞监控。专业版完全兼容免费版扫描方法,已有安全脚本可无缝升级,适合企业级Go安全治理。
 
 ### 专业版核心优势

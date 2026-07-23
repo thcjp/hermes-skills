@@ -1,19 +1,7 @@
 ---
-slug: ai-image-generation-prompts-9142af54
-name: ai-image-generation-prompts-9142af54
-version: "1.0.0"
-displayName: Ai Image Generation 
-summary: Generate an image of a whimsical, fairytale-inspired floral · arch with pastel-colored
-  flowers an...
-license: MIT
-description: |-
-  Generate an image of a whimsical, fairytale-inspired floral · arch with
-  pastel-colored flowers an。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags:
-- Creative
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # Ai Image Generation Prompts 9142af54

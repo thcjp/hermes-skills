@@ -1,24 +1,28 @@
 ---
-slug: "dashboard-builder-pro"
-name: "dashboard-builder-pro"
-version: "1.0.0"
-displayName: "仪表盘构建(专业版)"
-summary: "全功能仪表盘构建平台，支持多源聚合、模板库、自动化 QA 与告警。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  仪表盘构建工具专业版是一款面向团队的全功能本地仪表盘构建平台，在免费版基础上扩展多数据源聚合、高级图表库、模板管理系统、自动化可视化 QA、团队协作分享、告警规则与阈值通知等能力，适合中大型项目的数据可视化需求。核心能力：
-  - 多数据源聚合看板。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: dashboard-builder-pro
+name: dashboard-builder-pro
+version: 1.0.0
+displayName: 仪表盘构建(专业版)
+summary: 全功能仪表盘构建平台，支持多源聚合、模板库、自动化 QA 与告警。
+license: Proprietary
+edition: pro
+description: '仪表盘构建工具专业版是一款面向团队的全功能本地仪表盘构建平台，在免费版基础上扩展多数据源聚合、高级图表库、模板管理系统、自动化可视化 QA、团队协作分享、告警规则与阈值通知等能力，适合中大型项目的数据可视化需求。核心能力：
+
+  - 多数据源聚合看板。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-  - 数据可视化
-  - 仪表盘
-  - 监控告警
-  - 团队协作
+- 数据可视化
+- 仪表盘
+- 监控告警
+- 团队协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 仪表盘构建工具（专业版）
 
 ## 概述

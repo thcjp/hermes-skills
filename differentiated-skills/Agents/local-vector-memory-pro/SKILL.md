@@ -1,30 +1,40 @@
 ---
-slug: "local-vector-memory-pro"
-name: "local-vector-memory-pro"
-version: "1.0.0"
-displayName: "本地向量记忆(专业版)"
-summary: "零API零云依赖的本地向量记忆专业版：LanceDB高级搜索+自动召回+知识图谱，全功能解锁。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向隐私敏感与离线场景的本地向量记忆系统专业版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部 API 调用、零数据出域、完全离线可用的语义记忆检索。专业版解锁全部高级功能，包括 LanceDB 高级向量搜索、自动召回与捕获、Git-Notes 知识图谱，适合团队/企业级生产环境使用。
+slug: local-vector-memory-pro
+name: local-vector-memory-pro
+version: 1.0.0
+displayName: 本地向量记忆(专业版)
+summary: 零API零云依赖的本地向量记忆专业版：LanceDB高级搜索+自动召回+知识图谱，全功能解锁。
+license: Proprietary
+edition: pro
+description: '面向隐私敏感与离线场景的本地向量记忆系统专业版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部
+  API 调用、零数据出域、完全离线可用的语义记忆检索。专业版解锁全部高级功能，包括 LanceDB 高级向量搜索、自动召回与捕获、Git-Notes 知识图谱，适合团队/企业级生产环境使用。
 
-  核心能力包括本地 embedding 引擎（Ollama nomic-embed-text，毫秒级延迟）、LanceDB 高级向量搜索（元数据过滤、批量检索、混合检索策略）、自动召回与捕获（无需手动调用，智能注入上下文）、Git-Notes 知识图谱（结构化决策存储与分支感知）、SESSION-STATE.md 热内存持久化、WAL 写前日志协议、四层冷热分层存储架构、embedding 结果缓存（避免重复计算）、资源占用控制、一键初始化与维护命令。
+
+  核心能力包括本地 embedding 引擎（Ollama nomic-embed-text，毫秒级延迟）、LanceDB 高级向量搜索（元数据过滤、批量检索、混合检索策略）、自动召回与捕获（无需手动调用，智能注入上下文）、Git-Notes
+  知识图谱（结构化决策存储与分支感知）、SESSION-STATE.md 热内存持久化、WAL 写前日志协议、四层冷热分层存储架构、embedding 结果缓存（避免重复计算）、资源占用控制、一键初始化与维护命令。
+
 
   适用场景：隐私敏感行业（医疗/金融/法律）生产部署、离线/弱网环境团队协作、企业知识库构建、合规要求数据不出域的 Agent 记忆管理、多代理协作上下文同步、需要结构化决策追溯的长期项目。
 
-  差异化：相比云端 embedding 方案，本系统完全本地运行零 API 费用、数据永不离开本机、离线可用；相比免费版，专业版新增高级向量搜索（过滤/批量/混合）、自动召回捕获（零摩擦体验）、Git-Notes 知识图谱（决策分支感知）。所有指令按需分层加载，降低 token 消耗，embedding 缓存避免重复计算。
 
-  适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local memory、知识图谱、自动召回、专业记忆
+  差异化：相比云端 embedding 方案，本系统完全本地运行零 API 费用、数据永不离开本机、离线可用；相比免费版，专业版新增高级向量搜索（过滤/批量/混合）、自动召回捕获（零摩擦体验）、Git-Notes
+  知识图谱（决策分支感知）。所有指令按需分层加载，降低 token 消耗，embedding 缓存避免重复计算。
+
+
+  适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local memory、知识图谱、自动召回、专业记忆'
 tags:
-  - 智能代理
-  - 记忆管理
-  - 本地存储
+- 智能代理
+- 记忆管理
+- 本地存储
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 本地向量记忆（专业版）
 
 **零 API、零云端、零数据出域**的本地向量记忆系统专业版。基于 Ollama + LanceDB，在本地完成 embedding 生成与语义检索，解锁全部高级功能，适合隐私敏感、离线、成本敏感场景的团队/企业级生产部署。

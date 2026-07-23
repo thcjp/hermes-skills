@@ -1,29 +1,35 @@
 ---
-slug: "writing-assistant-tool-pro"
-name: "writing-assistant-tool-pro"
-version: "1.0.0"
-displayName: "写作助手专业版"
-summary: "企业级写作管理系统,支持品牌语调管理、多人协作审稿、内容库治理与发布管道"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 内容创作领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: writing-assistant-tool-pro
+name: writing-assistant-tool-pro
+version: 1.0.0
+displayName: 写作助手专业版
+summary: 企业级写作管理系统,支持品牌语调管理、多人协作审稿、内容库治理与发布管道
+license: Proprietary
+edition: pro
+description: '核心能力: 内容创作领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: 写作, 助手, 文档, 内容, 风格, 质量检查, 编辑
+
+  适用关键词: 写作, 助手, 文档, 内容, 风格, 质量检查, 编辑'
 tags:
-  - 写作
-  - 内容创作
-  - 文档
-  - 质量检查
+- 写作
+- 内容创作
+- 文档
+- 质量检查
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 写作助手专业版
 
 ## 概述

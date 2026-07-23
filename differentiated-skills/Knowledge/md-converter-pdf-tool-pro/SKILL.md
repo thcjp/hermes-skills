@@ -1,31 +1,38 @@
 ---
-slug: "md-converter-pdf-tool-pro"
-name: "md-converter-pdf-tool-pro"
-version: "1.0.0"
-displayName: "Markdown转PDF（专业版）"
-summary: "将Markdown文档转换为PDF，支持自定义样式、页眉页脚、目录生成与批量转换。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Markdown转PDF - （专业版）
+slug: md-converter-pdf-tool-pro
+name: md-converter-pdf-tool-pro
+version: 1.0.0
+displayName: Markdown转PDF（专业版）
+summary: 将Markdown文档转换为PDF，支持自定义样式、页眉页脚、目录生成与批量转换。
+license: Proprietary
+edition: pro
+description: 'Markdown转PDF - （专业版）
+
 
   核心能力: Markdown转PDF, md转pdf, 文档转换, pandoc, 批量转换, 样式定制
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: Markdown转PDF, md转pdf, 文档转换, pandoc, 批量转换, 样式定制
+
+  适用关键词: Markdown转PDF, md转pdf, 文档转换, pandoc, 批量转换, 样式定制'
 tags:
-  - 文档转换
-  - Markdown
-  - PDF
-  - pandoc
+- 文档转换
+- Markdown
+- PDF
+- pandoc
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Markdown转PDF（专业版）
 
 ## 概述

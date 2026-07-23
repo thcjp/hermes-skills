@@ -1,34 +1,42 @@
 ---
-slug: "redis-context-cache-pro"
-name: "redis-context-cache-pro"
-version: "1.0.0"
-displayName: "Redis Context Cache"
-summary: "AI Agent的Redis全功能缓存方案，含集群分片、性能调优、监控指标、高级限流与Redlock算法。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Redis上下文缓存（专业版）在免费版基础上解锁Redis Cluster集群方案、性能调优（管道化/连接池/批量处理）、完整监控指标（INFO/慢查询/命中率）、高级持久化（RDB+AOF混合）、令牌桶/漏桶限流、Redlock多节点分布式锁、Pub/Sub与Streams高级用法。
+slug: redis-context-cache-pro
+name: redis-context-cache-pro
+version: 1.0.0
+displayName: Redis Context Cache
+summary: AI Agent的Redis全功能缓存方案，含集群分片、性能调优、监控指标、高级限流与Redlock算法。
+license: Proprietary
+edition: pro
+description: 'Redis上下文缓存（专业版）在免费版基础上解锁Redis Cluster集群方案、性能调优（管道化/连接池/批量处理）、完整监控指标（INFO/慢查询/命中率）、高级持久化（RDB+AOF混合）、令牌桶/漏桶限流、Redlock多节点分布式锁、Pub/Sub与Streams高级用法。
 
-  核心能力：完整过期策略+欠用数据结构+原子性陷阱+内存管理+常见模式（免费版基础）+ 集群分片（Hash Tag/MOVED/ASK重定向）+ 性能调优（Pipeline/连接池/批处理+检查点+幂等）+ 监控体系（INFO详解/慢查询/命中率/大key巡检）+ 高级持久化（RDB+AOF混合/BGSAVE调优）+ 高级限流（令牌桶/漏桶/滑动窗口）+ Redlock算法 + 多角色场景指南 + 故障排查表。
+
+  核心能力：完整过期策略+欠用数据结构+原子性陷阱+内存管理+常见模式（免费版基础）+ 集群分片（Hash Tag/MOVED/ASK重定向）+ 性能调优（Pipeline/连接池/批处理+检查点+幂等）+
+  监控体系（INFO详解/慢查询/命中率/大key巡检）+ 高级持久化（RDB+AOF混合/BGSAVE调优）+ 高级限流（令牌桶/漏桶/滑动窗口）+ Redlock算法
+  + 多角色场景指南 + 故障排查表。
+
 
   适用场景：AI Agent高并发上下文缓存、跨会话状态共享、分布式限流、多节点分布式锁、消息队列、热点数据缓存、集群部署、性能调优、监控告警。
 
+
   差异化：基于开源Redis实践深度改造，完全中文化，新增集群/性能/监控/Redlock等高级主题，多角色场景指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明。
 
-  适用关键词：Redis集群、性能调优、监控指标、Redlock、令牌桶、漏桶、Pipeline、连接池、慢查询、命中率
+
+  适用关键词：Redis集群、性能调优、监控指标、Redlock、令牌桶、漏桶、Pipeline、连接池、慢查询、命中率'
 tags:
-  - Redis
-  - 集群方案
-  - 性能调优
-  - 监控告警
-  - 分布式锁
-  - 限流算法
+- Redis
+- 集群方案
+- 性能调优
+- 监控告警
+- 分布式锁
+- 限流算法
 tools:
-  - read
-  - exec
-edition: "pro"
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Redis上下文缓存（专业版）
 
 > **全功能Redis缓存方案。集群分片+性能调优+监控告警+Redlock，从单机缓存走向生产级分布式缓存。**

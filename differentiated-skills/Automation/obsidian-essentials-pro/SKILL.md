@@ -1,31 +1,38 @@
 ---
-slug: "obsidian-essentials-pro"
-name: "obsidian-essentials-pro"
-version: "1.0.0"
-displayName: "Obsidian基础入门(专业版)"
-summary: "Obsidian新手入门与核心配置专业版，含高级配置、完整工作流体系、多设备同步、插件选型与性能调优。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Obsidian基础入门专业版是在免费版基础上的全功能升级，为AI Agent提供完整的Obsidian新手引导能力。专业版解锁高级外观配置、完整工作流体系、多设备同步完整指南、插件选型完整指南、性能调优建议等高级特性，帮助用户从新手快速进阶为高效使用者。
+slug: obsidian-essentials-pro
+name: obsidian-essentials-pro
+version: 1.0.0
+displayName: Obsidian基础入门(专业版)
+summary: Obsidian新手入门与核心配置专业版，含高级配置、完整工作流体系、多设备同步、插件选型与性能调优。
+license: Proprietary
+edition: pro
+description: 'Obsidian基础入门专业版是在免费版基础上的全功能升级，为AI Agent提供完整的Obsidian新手引导能力。专业版解锁高级外观配置、完整工作流体系、多设备同步完整指南、插件选型完整指南、性能调优建议等高级特性，帮助用户从新手快速进阶为高效使用者。
+
 
   核心能力：Obsidian下载与安装、vault创建与选择、第一篇笔记创建、Markdown基础语法、核心配置项、高级外观配置（自定义主题/CSS）、快捷键完整自定义、完整工作流体系（日记/会议/项目/读书/课程/文献笔记）、多设备同步完整指南、插件选型完整指南、性能调优建议、团队协作入门、使用习惯建立。
 
+
   适用场景：Obsidian零基础用户进阶、完整工作流体系建立、多设备同步配置、插件选型决策、性能优化、团队协作入门、个性化定制。
+
 
   差异化：完全中文化重写，聚焦"新手入门"而非综合工具箱，新增高级外观配置指南、6种完整工作流模板、4种多设备同步方案、插件选型决策矩阵、性能调优清单。内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明。
 
-  适用关键词：Obsidian入门、高级配置、工作流体系、多设备同步、插件选型、性能调优、团队协作
+
+  适用关键词：Obsidian入门、高级配置、工作流体系、多设备同步、插件选型、性能调优、团队协作'
 tags:
-  - Obsidian
-  - 新手入门
-  - 完整工作流
-  - 多设备同步
+- Obsidian
+- 新手入门
+- 完整工作流
+- 多设备同步
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Obsidian基础入门（专业版）
 
 > **AI Agent的Obsidian新手进阶完整指南。高级配置、完整工作流、多设备同步、插件选型，从新手到高手。**

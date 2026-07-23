@@ -1,36 +1,49 @@
 ---
-slug: "rss-feed-digest-tool-free"
-name: "rss-feed-digest-tool-free"
-version: "1.0.0"
-displayName: "RSS聚合摘要免费版"
-summary: "轻量级RSS/Atom聚合摘要工具,支持关键词过滤与Markdown输出,适合个人用户生成每日资讯摘要"
-license: "Proprietary"
-edition: "free"
-description: |-
-  RSS聚合摘要免费版为个人用户提供轻量级的RSS/Atom订阅聚合与摘要生成能力。核心能力:
+slug: rss-feed-digest-tool-free
+name: rss-feed-digest-tool-free
+version: 1.0.0
+displayName: RSS聚合摘要免费版
+summary: 轻量级RSS/Atom聚合摘要工具,支持关键词过滤与Markdown输出,适合个人用户生成每日资讯摘要
+license: Proprietary
+edition: free
+description: 'RSS聚合摘要免费版为个人用户提供轻量级的RSS/Atom订阅聚合与摘要生成能力。核心能力:
+
   - 多源RSS/Atom订阅抓取
+
   - 关键词包含/排除过滤
+
   - 跨源自动去重
+
   - 时间范围筛选
+
   - Markdown/纯文本输出
 
+
   适用场景:
+
   - 个人每日资讯摘要生成
+
   - 兴趣主题内容聚合
+
   - 简单的订阅源监控
 
-  差异化:免费版聚焦核心聚合与过滤流程,通过Python脚本实现轻量部署,适合个人用户快速生成每日摘要,无需数据库或复杂配置
+
+  差异化:免费版聚焦核心聚合与过滤流程,通过Python脚本实现轻量部署,适合个人用户快速生成每日摘要,无需数据库或复杂配置'
 tags:
-  - 研究工具
-  - RSS
-  - 信息聚合
-  - 内容摘要
-  - 个人效率
+- 研究工具
+- RSS
+- 信息聚合
+- 内容摘要
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # RSS聚合摘要免费版
 
 ## 概述

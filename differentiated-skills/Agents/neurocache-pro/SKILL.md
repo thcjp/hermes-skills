@@ -1,21 +1,25 @@
 ---
-slug: "neurocache-pro"
-name: "neurocache-pro"
-version: "2.0.0"
-displayName: "神经缓存增强"
-summary: "生物启发联想记忆：扩散激活+赫布学习+矛盾检测，找到向量检索找不到的关联。"
-license: "Proprietary"
-description: |-
-  面向AI Agent的生物启发式联想记忆系统，解决向量检索找不到概念关联、记忆矛盾无法自动处理、图谱膨胀性能下降三大痛点。基于扩散激活图遍历替代关键词/向量搜索，提供赫布学习、20种突触类型、艾宾浩斯衰减、矛盾自动检测降权、4级深度分级检索、大脑版本快照回滚、跨项目知识迁移。适用于因果链推理、跨领域关联发现、长期知识沉淀。适用关键词：联想记忆、神经记忆、扩散激活、赫布学习、知识图谱、矛盾检测、nmem、neural memory
+slug: neurocache-pro
+name: neurocache-pro
+version: 2.0.0
+displayName: 神经缓存增强
+summary: 生物启发联想记忆：扩散激活+赫布学习+矛盾检测，找到向量检索找不到的关联。
+license: Proprietary
+description: 面向AI Agent的生物启发式联想记忆系统，解决向量检索找不到概念关联、记忆矛盾无法自动处理、图谱膨胀性能下降三大痛点。基于扩散激活图遍历替代关键词/向量搜索，提供赫布学习、20种突触类型、艾宾浩斯衰减、矛盾自动检测降权、4级深度分级检索、大脑版本快照回滚、跨项目知识迁移。适用于因果链推理、跨领域关联发现、长期知识沉淀。适用关键词：联想记忆、神经记忆、扩散激活、赫布学习、知识图谱、矛盾检测、nmem、neural
+  memory
 tags:
-  - 智能代理
-  - 记忆管理
-  - 神经网络
+- 智能代理
+- 记忆管理
+- 神经网络
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 神经缓存增强（NeuroCache Pro）
 
 **为什么不用向量检索？** 向量检索只能找与查询相似的文档。NeuroCache 通过图遍历找到*概念关联*的记忆——即使无关键词或 embedding 重叠。"我们当时对认证做了什么决定？"会同时激活时间+实体+概念神经元，找到交集。

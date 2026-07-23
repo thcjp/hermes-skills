@@ -1,31 +1,41 @@
 ---
-slug: "obsidian-toolkit-pro"
-name: "obsidian-toolkit-pro"
-version: "1.0.0"
-displayName: "Obsidian工具箱(专业版)"
-summary: "Obsidian综合工具箱专业版，含批量操作、高级模板、插件深度集成、Canvas管理与多vault高级管理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Obsidian工具箱专业版是在免费版基础上的全功能升级，为AI Agent提供企业级Obsidian综合管理能力。专业版解锁批量笔记操作、高级模板系统（Templater脚本）、插件深度集成（Dataview/Obsidian Git/Tasks）、Canvas画布管理、多vault高级管理等高级特性，实现复杂知识库的高效管理。
+slug: obsidian-toolkit-pro
+name: obsidian-toolkit-pro
+version: 1.0.0
+displayName: Obsidian工具箱(专业版)
+summary: Obsidian综合工具箱专业版，含批量操作、高级模板、插件深度集成、Canvas管理与多vault高级管理。
+license: Proprietary
+edition: pro
+description: 'Obsidian工具箱专业版是在免费版基础上的全功能升级，为AI Agent提供企业级Obsidian综合管理能力。专业版解锁批量笔记操作、高级模板系统（Templater脚本）、插件深度集成（Dataview/Obsidian
+  Git/Tasks）、Canvas画布管理、多vault高级管理等高级特性，实现复杂知识库的高效管理。
 
-  核心能力：多vault自动发现与高级管理、笔记全生命周期管理（含批量操作）、wikilink自动重构、高级模板系统（Templater脚本、条件逻辑、循环、变量）、插件深度集成（Dataview查询、Obsidian Git版本控制、Tasks任务管理）、Canvas画布管理（JSON结构、节点操作）、多vault同步与冲突解决、笔记关系图谱分析、自定义工作流自动化。
+
+  核心能力：多vault自动发现与高级管理、笔记全生命周期管理（含批量操作）、wikilink自动重构、高级模板系统（Templater脚本、条件逻辑、循环、变量）、插件深度集成（Dataview查询、Obsidian
+  Git版本控制、Tasks任务管理）、Canvas画布管理（JSON结构、节点操作）、多vault同步与冲突解决、笔记关系图谱分析、自定义工作流自动化。
+
 
   适用场景：企业级知识库管理、大规模笔记重构、复杂模板工作流、插件生态深度使用、Canvas可视化协作、多设备多vault同步、知识图谱分析、团队知识共享。
 
-  差异化：完全中文化重写，聚焦"综合工具箱"而非基础入门，新增批量操作脚本、Templater脚本模板、Dataview查询语法、Obsidian Git工作流、Canvas JSON结构、多vault同步策略。内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明。
 
-  适用关键词：Obsidian工具箱、批量操作、Templater、Dataview、Obsidian Git、Canvas、多vault同步
+  差异化：完全中文化重写，聚焦"综合工具箱"而非基础入门，新增批量操作脚本、Templater脚本模板、Dataview查询语法、Obsidian Git工作流、Canvas
+  JSON结构、多vault同步策略。内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明。
+
+
+  适用关键词：Obsidian工具箱、批量操作、Templater、Dataview、Obsidian Git、Canvas、多vault同步'
 tags:
-  - Obsidian
-  - 高级模板
-  - 插件集成
-  - 知识管理
+- Obsidian
+- 高级模板
+- 插件集成
+- 知识管理
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Obsidian工具箱（专业版）
 
 > **AI Agent的企业级Obsidian综合管理工具箱。批量操作、高级模板、插件深度集成、Canvas管理，复杂知识库一网打尽。**

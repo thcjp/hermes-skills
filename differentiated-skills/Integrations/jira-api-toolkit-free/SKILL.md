@@ -1,34 +1,47 @@
 ---
-slug: "jira-api-toolkit-free"
-name: "jira-api-toolkit-free"
-version: "1.0.0"
-displayName: "Jira工具箱(免费版)"
-summary: "Jira Cloud 只读集成，支持 JQL 搜索、查看议题与项目列表。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Jira Cloud 只读集成，支持 JQL 搜索、查看议题与项目列表。核心能力：
+slug: jira-api-toolkit-free
+name: jira-api-toolkit-free
+version: 1.0.0
+displayName: Jira工具箱(免费版)
+summary: Jira Cloud 只读集成，支持 JQL 搜索、查看议题与项目列表。
+license: Proprietary
+edition: free
+description: 'Jira Cloud 只读集成，支持 JQL 搜索、查看议题与项目列表。核心能力：
+
   - 通过托管 OAuth 认证访问 Jira Cloud API
+
   - JQL 搜索议题，支持字段过滤与分页
+
   - 查看议题详情、项目列表、议题类型与状态
+
   - 多连接管理与 cloud-id 自动获取
 
+
   适用场景：
+
   - 个人开发者查询自己的议题进度
+
   - 团队站会前快速拉取进行中议题
+
   - 项目经理查看项目与议题元数据
+
   - 自动化工作流中的只读数据采集
 
-  差异化：采用托管 OAuth 免去手动管理令牌的负担...
+
+  差异化：采用托管 OAuth 免去手动管理令牌的负担...'
 tags:
-  - 集成工具
-  - 项目管理
-  - 开发者效率
+- 集成工具
+- 项目管理
+- 开发者效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Jira 工具箱（免费版）
 
 ## 概述

@@ -1,19 +1,7 @@
 ---
-slug: jlc-eda-drawing
-name: jlc-eda-drawing
-version: "0.1.0"
-displayName: JLC EDA Drawing
-summary: Advanced JLC EDA / EasyEDA circuit design agent for schematic and PCB-ready
-  work. Use when the us...
-license: MIT-0
-description: |-
-  Advanced JLC EDA / EasyEDA circuit design agent for schematic and PCB-ready
-  work。Use when the us。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Automation
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # JLC EDA Drawing

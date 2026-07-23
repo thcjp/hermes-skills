@@ -1,33 +1,42 @@
 ---
-slug: "azure-cloud-inspector-pro"
-name: "azure-cloud-inspector-pro"
-version: "1.0.0"
-displayName: "Azure巡检员专业版"
-summary: "全维度Azure巡检,含RBAC审计、成本管理、NSG暴露矩阵、跨订阅批量、定时调度、趋势对比。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Azure巡检员专业版是一个以"日常巡检"为核心视角的Azure CLI辅助工具,面向运维工程师、云架构师、安全工程师、FinOps专员、合规审计员五类角色。针对云上资源"配置漂移无人察觉、公网暴露面长期敞开、RBAC过度授权难发现、成本失控无预警、NSG端口暴露无矩阵、跨订阅巡检低效、巡检结论难分享、历史趋势无对比"八大痛点,构建了风险评分模型、暴露面发现、配置漂移检测、巡检任务模板、巡检报告生成、RBAC深度审计、Cost Management成本管理、NSG暴露矩阵、跨订阅批量巡检、定时巡检调度与历史趋势对比十一大核心能力。
+slug: azure-cloud-inspector-pro
+name: azure-cloud-inspector-pro
+version: 1.0.0
+displayName: Azure巡检员专业版
+summary: 全维度Azure巡检,含RBAC审计、成本管理、NSG暴露矩阵、跨订阅批量、定时调度、趋势对比。
+license: Proprietary
+edition: pro
+description: 'Azure巡检员专业版是一个以"日常巡检"为核心视角的Azure CLI辅助工具,面向运维工程师、云架构师、安全工程师、FinOps专员、合规审计员五类角色。针对云上资源"配置漂移无人察觉、公网暴露面长期敞开、RBAC过度授权难发现、成本失控无预警、NSG端口暴露无矩阵、跨订阅巡检低效、巡检结论难分享、历史趋势无对比"八大痛点,构建了风险评分模型、暴露面发现、配置漂移检测、巡检任务模板、巡检报告生成、RBAC深度审计、Cost
+  Management成本管理、NSG暴露矩阵、跨订阅批量巡检、定时巡检调度与历史趋势对比十一大核心能力。
+
 
   核心能力包括:默认只读查询保障安全;写操作与破坏性操作需双重确认;支持--dry-run与what-if预演;az account show身份确认先行;资源清单/健康检查/暴露面扫描/配置基线对比/RBAC审计/成本分析/NSG暴露矩阵全场景覆盖;订阅与租户智能检测;跨订阅批量巡检与并行执行;自定义巡检模板与定时调度;历史趋势对比与漂移预警。
 
+
   适用场景:每日例行云资源巡检、上线前安全暴露面深度检查、RBAC角色季度审计、月度成本治理与异常预警、NSG端口暴露矩阵生成、多订阅统一巡检与汇总报告、合规检查自动化、巡检结论Markdown报告生成与团队分享、历史趋势对比与配置漂移预警、定时巡检调度与告警推送。
+
 
   差异化亮点:相比免费版,专业版新增RBAC深度安全审计(Owner过度授权检测/自定义角色审计/特权身份发现)、Cost Management成本管理(按资源组/服务维度/空闲资源识别/成本趋势对比)、NSG暴露深度检查(全订阅NSG规则扫描/0.0.0.0/0入站规则枚举/端口暴露矩阵)、自定义巡检模板与定时巡检调度、跨订阅批量巡检与历史趋势对比。五维风险评分模型支持自定义权重,适配不同业务场景。相比通用Azure管理工具,本巡检员聚焦"检查而非变更",以风险量化与报告生成为核心。
 
-  适用关键词:Azure巡检、云资源检查、暴露面扫描、配置漂移、风险评分、巡检报告、RBAC审计、成本管理、NSG暴露、跨订阅巡检、azure-cloud-inspector、az inspect
+
+  适用关键词:Azure巡检、云资源检查、暴露面扫描、配置漂移、风险评分、巡检报告、RBAC审计、成本管理、NSG暴露、跨订阅巡检、azure-cloud-inspector、az
+  inspect'
 tags:
-  - 智能代理
-  - 云计算
-  - Azure
-  - 巡检
-  - 安全审计
-  - 成本管理
+- 智能代理
+- 云计算
+- Azure
+- 巡检
+- 安全审计
+- 成本管理
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Azure巡检员(专业版)
 
 面向"日常巡检"场景的Azure CLI辅助工具。默认只读查询,聚焦检查与报告,不主动执行变更操作。仅在用户明确要求变更并确认后,才执行写/破坏性操作。专业版在免费版基础上解锁RBAC深度审计、Cost Management成本管理、NSG暴露矩阵、跨订阅批量巡检、定时调度与历史趋势对比。

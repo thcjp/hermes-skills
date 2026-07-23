@@ -1,31 +1,38 @@
 ---
-slug: "excel-formula-tool-free"
-name: "excel-formula-tool-free"
-version: "1.0.0"
-displayName: "Excel公式工具（免费版）"
-summary: "从自然语言描述生成Excel公式，诊断表格错误，支持VLOOKUP、条件求和等常用函数。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Excel公式工具 - （免费版）
+slug: excel-formula-tool-free
+name: excel-formula-tool-free
+version: 1.0.0
+displayName: Excel公式工具（免费版）
+summary: 从自然语言描述生成Excel公式，诊断表格错误，支持VLOOKUP、条件求和等常用函数。
+license: Proprietary
+edition: free
+description: 'Excel公式工具 - （免费版）
+
 
   核心能力: Excel公式, VLOOKUP, SUMIF, COUNTIF, 公式诊断, 公式优化, 表格计算
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: Excel公式, VLOOKUP, SUMIF, COUNTIF, 公式诊断, 公式优化, 表格计算
+
+  适用关键词: Excel公式, VLOOKUP, SUMIF, COUNTIF, 公式诊断, 公式优化, 表格计算'
 tags:
-  - Excel
-  - 公式生成
-  - 错误诊断
-  - 表格处理
+- Excel
+- 公式生成
+- 错误诊断
+- 表格处理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # Excel公式工具（免费版）
 
 ## 概述

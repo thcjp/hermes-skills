@@ -1,41 +1,58 @@
 ---
-slug: "monitor-toolkit-pro"
-name: "monitor-toolkit-pro"
-version: "1.0.0"
-displayName: "监控工具包-专业版"
-summary: "企业级监控平台,支持多目标批量监控、告警升级、历史趋势分析与团队协作"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级监控工具专业版,面向团队与生产环境运维。核心能力:
+slug: monitor-toolkit-pro
+name: monitor-toolkit-pro
+version: 1.0.0
+displayName: 监控工具包-专业版
+summary: 企业级监控平台,支持多目标批量监控、告警升级、历史趋势分析与团队协作
+license: Proprietary
+edition: pro
+description: '企业级监控工具专业版,面向团队与生产环境运维。核心能力:
+
   - 多目标批量监控与分布式探针
+
   - 告警升级与值班轮换机制
+
   - 历史趋势分析与可视化报表
+
   - 多通道告警(邮件/短信/钉钉/飞书/Slack)
+
   - 监控模板与自动发现
+
   - 服务依赖拓扑与故障关联分析
+
   - SLA 报告与可用性看板
+
   - 团队协作与权限管理
 
+
   适用场景:
+
   - 生产环境多服务集群监控
+
   - SRE 团队值班与告警管理
+
   - SLA 合规监控与报告生成
+
   - 微服务架构健康度全链路监控
 
-  差异化:专业版在免费版基础上扩展企业级告警升级...
+
+  差异化:专业版在免费版基础上扩展企业级告警升级...'
 tags:
-  - 监控
-  - 运维
-  - 企业级
-  - 告警管理
-  - SLA
-  - SRE
+- 监控
+- 运维
+- 企业级
+- 告警管理
+- SLA
+- SRE
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 监控工具包 - 专业版
 
 ## 概述

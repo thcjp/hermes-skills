@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # SQL大师工具（专业版）
 
 专业版在免费版核心能力之上，新增自动化迁移工具、增量压缩备份、多数据库Schema对比同步、性能基准测试、高可用与读写分离配置、灾备恢复等高级能力，专为团队协作、企业生产环境与高可用场景设计。

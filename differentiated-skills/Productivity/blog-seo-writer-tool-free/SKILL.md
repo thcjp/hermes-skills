@@ -1,28 +1,34 @@
 ---
-slug: "blog-seo-writer-tool-free"
-name: "blog-seo-writer-tool-free"
-version: "1.0.0"
-displayName: "SEO 博客写作基础版"
-summary: "创建 SEO 优化博客文章,包含关键词集成、元描述生成与结构化标题,适合个人博主"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 内容营销领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: blog-seo-writer-tool-free
+name: blog-seo-writer-tool-free
+version: 1.0.0
+displayName: SEO 博客写作基础版
+summary: 创建 SEO 优化博客文章,包含关键词集成、元描述生成与结构化标题,适合个人博主
+license: Proprietary
+edition: free
+description: '核心能力: 内容营销领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: seo, 博客, 关键词, 元描述, 内容优化, 搜索引擎排名
+
+  适用关键词: seo, 博客, 关键词, 元描述, 内容优化, 搜索引擎排名'
 tags:
-  - SEO
-  - 内容写作
-  - 博客营销
+- SEO
+- 内容写作
+- 博客营销
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # SEO 博客写作基础版
 
 ## 概述

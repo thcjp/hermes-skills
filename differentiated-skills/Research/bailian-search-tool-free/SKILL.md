@@ -1,38 +1,53 @@
 ---
-slug: "bailian-search-tool-free"
-name: "bailian-search-tool-free"
-version: "1.0.0"
-displayName: "百炼搜索工具-免费版"
-summary: "基于百炼API的AI优化网页搜索,返回多源简洁结果,适合个人开发者"
-license: "Proprietary"
-edition: "free"
-description: |-
-  基于百炼(阿里云模型工作室)WebSearch API 的 AI 优化网页搜索工具,
+slug: bailian-search-tool-free
+name: bailian-search-tool-free
+version: 1.0.0
+displayName: 百炼搜索工具-免费版
+summary: 基于百炼API的AI优化网页搜索,返回多源简洁结果,适合个人开发者
+license: Proprietary
+edition: free
+description: '基于百炼(阿里云模型工作室)WebSearch API 的 AI 优化网页搜索工具,
+
   为 AI 代理设计,返回干净、相关的内容。
 
+
   核心能力:
+
   - AI 优化的网页搜索
+
   - 多源结果聚合
+
   - 简洁干净的内容返回
+
   - 可配置结果数量
 
+
   适用场景:
+
   - 个人开发者的信息检索
+
   - AI 代理的实时知识获取
+
   - 快速事实查询
+
 
   差异化:免费版提供核心搜索能力,适合个人用户与轻量场景。
 
-  适用关键词: 网页搜索, 百炼, 模型工作室, WebSearch, bailian, 实时信息
+
+  适用关键词: 网页搜索, 百炼, 模型工作室, WebSearch, bailian, 实时信息'
 tags:
-  - 研究工具
-  - 网页搜索
-  - 信息检索
+- 研究工具
+- 网页搜索
+- 信息检索
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 百炼搜索工具(免费版)
 
 ## 概述

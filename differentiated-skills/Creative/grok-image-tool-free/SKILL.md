@@ -1,37 +1,51 @@
 ---
-slug: "grok-image-tool-free"
-name: "grok-image-tool-free"
-version: "1.0.0"
-displayName: "Grok图片生成-免费版"
-summary: "轻量级AI图片生成工具，通过浏览器自动化操作Grok Imagine生成并保存图片。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Grok图片生成工具免费版，面向个人用户的AI图片生成方案。
+slug: grok-image-tool-free
+name: grok-image-tool-free
+version: 1.0.0
+displayName: Grok图片生成-免费版
+summary: 轻量级AI图片生成工具，通过浏览器自动化操作Grok Imagine生成并保存图片。
+license: Proprietary
+edition: free
+description: 'Grok图片生成工具免费版，面向个人用户的AI图片生成方案。
+
 
   核心能力：
+
   - 通过浏览器自动化访问 Grok Imagine
+
   - 自然语言描述生成 AI 图片
+
   - 本地下载保存生成的图片
+
   - 桌面操作自动化右键保存
 
+
   适用场景：
+
   - 个人创意图片生成
+
   - 社交媒体配图制作
+
   - 概念图快速验证
+
 
   差异化：免费版聚焦单张图片生成与本地保存，适合个人轻度使用。专业版扩展至批量生成、多格式导出与消息平台集成。
 
-  适用关键词: grok, imagine, 图片生成, AI画图, 生成图片, 浏览器自动化
+
+  适用关键词: grok, imagine, 图片生成, AI画图, 生成图片, 浏览器自动化'
 tags:
-  - Creative
-  - ImageGeneration
-  - Automation
+- Creative
+- ImageGeneration
+- Automation
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Grok图片生成工具（免费版）
 
 ## 概述

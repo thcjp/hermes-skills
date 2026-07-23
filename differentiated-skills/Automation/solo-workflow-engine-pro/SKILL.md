@@ -1,32 +1,39 @@
 ---
-slug: "solo-workflow-engine-pro"
-name: "solo-workflow-engine-pro"
-version: "1.0.0"
-displayName: "Solo Workflow Engine"
-summary: "完整七步无代码自动化框架，含高级场景、维护监控、ROI计算与故障排查。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  独立者引擎专业版是在免费版基础上的全功能升级，为独立开发者、一人公司、自由职业者提供完整的七步无代码自动化方法论。从识别机会到计算ROI，全流程覆盖自动化工作流的构建、维护与优化。专业版解锁维护监控、高级自动化场景、ROI计算工具和完整故障排查表。
+slug: solo-workflow-engine-pro
+name: solo-workflow-engine-pro
+version: 1.0.0
+displayName: Solo Workflow Engine
+summary: 完整七步无代码自动化框架，含高级场景、维护监控、ROI计算与故障排查。
+license: Proprietary
+edition: pro
+description: '独立者引擎专业版是在免费版基础上的全功能升级，为独立开发者、一人公司、自由职业者提供完整的七步无代码自动化方法论。从识别机会到计算ROI，全流程覆盖自动化工作流的构建、维护与优化。专业版解锁维护监控、高级自动化场景、ROI计算工具和完整故障排查表。
+
 
   核心能力：七步完整框架（识别→选择→设计→构建→维护→高级场景→ROI计算）、维护计划（每周检查+月度审计）、四种高级场景（客户入驻/内容分发/客户健康/发票追踪）、ROI量化计算、常见错误清单、多角色场景指南、完整故障排查表。
 
+
   适用场景：表单自动收集、邮件自动回复、社交媒体定时发布、CRM数据同步、发票自动生成、报表自动汇总、客户入驻流程、内容多平台分发、客户健康监控、付款追踪。
+
 
   差异化：专为独立开发者设计的无代码自动化方法论，七步框架每步都有可操作的模板、检查清单和真实示例。专业版新增维护监控（确保自动化持续有效）、高级场景（超越基础的进阶自动化）和ROI计算（用数据驱动决策）。保留原始MIT版权声明。
 
-  适用关键词：独立开发者、一人公司、无代码自动化、Zapier、Make、n8n、工作流、效率提升、ROI
+
+  适用关键词：独立开发者、一人公司、无代码自动化、Zapier、Make、n8n、工作流、效率提升、ROI'
 tags:
-  - 无代码自动化
-  - 独立开发者
-  - 效率提升
-  - 工作流设计
-  - ROI分析
+- 无代码自动化
+- 独立开发者
+- 效率提升
+- 工作流设计
+- ROI分析
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 独立者引擎（专业版）
 
 > **独立开发者、一人公司的终极无代码自动化引擎。完整七步框架，从识别到ROI计算，让一个人像一支团队一样高效运转。**

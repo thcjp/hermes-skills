@@ -189,7 +189,7 @@ X-Api-Key: voicecall_sk_abc123
 | `missing_fields` | 缺 `to` 或 `task` | 补全收件号码与通话指令后重发 |
 | `auth_required` / `invalid_api_key` | API密钥缺失或失效 | 移除坏密钥，重新发起首次外呼获取新密钥 |
 | `quota_exceeded` / `trial_exhausted` | 试用10次/10分钟耗尽 | 升级付费版解锁更高额度 |
-| `network_error` | 网络抖动 | 等待后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令一次，二次失败提示用户执行ping命令测试网络连通性,检查防火墙和代理设置 |
+| `network_error` | 网络抖动 | 等待后检查网络连接和配置后重试，二次失败提示用户检查网络连接和配置后重试 |
 | 通话 `answered` 但目标未达成 | 真人未提供所需信息 | 读转录识别阻断项，手动回拨或升级付费版用实时转接 |
 
 ## 常见问题

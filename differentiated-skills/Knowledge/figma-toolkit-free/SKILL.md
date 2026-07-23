@@ -1,31 +1,38 @@
 ---
-slug: "figma-toolkit-free"
-name: "figma-toolkit-free"
-version: "1.0.0"
-displayName: "Figma设计工具包（免费版）"
-summary: "从Figma设计稿获取设计上下文、截图、变量与资源，并转化为生产代码。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Figma设计工具包 - （免费版）
+slug: figma-toolkit-free
+name: figma-toolkit-free
+version: 1.0.0
+displayName: Figma设计工具包（免费版）
+summary: 从Figma设计稿获取设计上下文、截图、变量与资源，并转化为生产代码。
+license: Proprietary
+edition: free
+description: 'Figma设计工具包 - （免费版）
+
 
   核心能力: Figma, 设计转代码, 设计导出, 设计变量, design to code, figma to react, 组件生成
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: Figma, 设计转代码, 设计导出, 设计变量, design to code, figma to react, 组件生成
+
+  适用关键词: Figma, 设计转代码, 设计导出, 设计变量, design to code, figma to react, 组件生成'
 tags:
-  - 设计转码
-  - Figma
-  - 设计资源
-  - 组件生成
+- 设计转码
+- Figma
+- 设计资源
+- 组件生成
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # Figma设计工具包（免费版）
 
 ## 概述

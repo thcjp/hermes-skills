@@ -1,35 +1,48 @@
 ---
-slug: "volcengine-dns-tool-pro"
-name: "volcengine-dns-tool-pro"
-version: "1.0.0"
-displayName: "火山引擎DNS专业版"
-summary: "批量记录操作、变更计划、自动回滚与传播监控，适合运维团队与企业级DNS治理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  火山引擎DNS管理工具专业版，面向运维团队与企业的高阶DNS治理平台。核心能力:
+slug: volcengine-dns-tool-pro
+name: volcengine-dns-tool-pro
+version: 1.0.0
+displayName: 火山引擎DNS专业版
+summary: 批量记录操作、变更计划、自动回滚与传播监控，适合运维团队与企业级DNS治理。
+license: Proprietary
+edition: pro
+description: '火山引擎DNS管理工具专业版，面向运维团队与企业的高阶DNS治理平台。核心能力:
+
   - 批量记录操作与变更计划
+
   - 自动回滚与变更窗口管理
+
   - 传播监控与全球节点验证
+
   - 多域名区统一管理
+
   - DNS 配置版本化与审计
 
+
   适用场景:
+
   - 运维团队的大规模DNS迁移
+
   - 企业多域名统一治理
+
   - 高可用服务的DNS切换与监控
 
-  差异化: 专业版在免费版核心DNS管理之上扩展批量与自动化，新增变更计划、自动回滚、传播监控等企业级能力，并与免费版命令兼容
+
+  差异化: 专业版在免费版核心DNS管理之上扩展批量与自动化，新增变更计划、自动回滚、传播监控等企业级能力，并与免费版命令兼容'
 tags:
-  - DNS管理
-  - 企业运维
-  - 批量治理
-  - 专业版
+- DNS管理
+- 企业运维
+- 批量治理
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 火山引擎DNS管理（专业版）
 
 ## 概述

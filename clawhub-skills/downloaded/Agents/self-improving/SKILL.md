@@ -1,34 +1,7 @@
 ---
-slug: self-improving
-name: self-improving
-version: "1.2.16"
-displayName: Self Improving
-summary: Self-reflection + Self-criticism + Self-learning + Self-organizing memory.
-license: MIT
-description: |-
-  Self-reflection + Self-criticism + Self-learning + Self-organizing memory。核心能力:
-
-  - 智能代理领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - AI代理增强、记忆管理、自主决策
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
-tags:
-- Agents
-- Knowledge
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Self-Improving + Proactive Agent

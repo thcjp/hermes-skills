@@ -1,39 +1,55 @@
 ---
-slug: "whatsapp-style-guide-free"
-name: "whatsapp-style-guide-free"
-version: "1.0.0"
-displayName: "WhatsApp样式指南-免费版"
-summary: "WhatsApp消息格式化规范指南,涵盖核心语法规则与常见模式速查"
-license: "Proprietary"
-edition: "free"
-description: |-
-  WhatsApp样式指南免费版,提供WhatsApp消息格式的核心规范文档和快速参考。核心能力:
+slug: whatsapp-style-guide-free
+name: whatsapp-style-guide-free
+version: 1.0.0
+displayName: WhatsApp样式指南-免费版
+summary: WhatsApp消息格式化规范指南,涵盖核心语法规则与常见模式速查
+license: Proprietary
+edition: free
+description: 'WhatsApp样式指南免费版,提供WhatsApp消息格式的核心规范文档和快速参考。核心能力:
+
   - WhatsApp格式语法完整规范说明
+
   - 允许与禁止模式清单
+
   - 常见消息模式示例库
+
   - 格式速查表与快速参考
 
+
   适用场景:
+
   - 个人用户学习WhatsApp格式语法
+
   - 快速查阅格式规则
+
   - 消息排版参考
 
+
   差异化:
+
   - 免费版提供核心语法规范和基础示例
+
   - 结构化文档便于快速查阅
+
   - 与PRO版完全兼容,可升级获取完整规范与高级模式
 
-  适用关键词: whatsapp, 样式, 指南, 规范, ...
+
+  适用关键词: whatsapp, 样式, 指南, 规范, ...'
 tags:
-  - 沟通协作
-  - 样式指南
-  - WhatsApp
-  - 格式规范
+- 沟通协作
+- 样式指南
+- WhatsApp
+- 格式规范
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # WhatsApp样式指南(免费版)
 
 ## 概述

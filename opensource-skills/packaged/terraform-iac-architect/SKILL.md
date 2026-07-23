@@ -1,20 +1,26 @@
 ---
 slug: terraform-iac-architect
 name: terraform-iac-architect
-version: "1.1.0"
-displayName: "IaC架构师"
-summary: "Terraform基础设施即代码,模块化多环境CI/CD,云资源一键编排"
+version: 1.1.0
+displayName: IaC架构师
+summary: Terraform基础设施即代码,模块化多环境CI/CD,云资源一键编排
 license: Proprietary
-description: |-
-  IaC架构师——基于HashiCorp官方风格规范生成生产级Terraform代码。覆盖模块化设计、状态管理、多环境部署、CI/CD集成全流程。同时提供阿里云ROS/腾讯云Terraform/华为云Terraform国内云适配方案。适用于云基础设施搭建、多环境管理、模块化设计、状态迁移、CI/CD集成场景。触发关键词:Terraform、IaC、基础设施即代码、HCL、模块、状态管理、workspace、terragrunt、Provider、云基础设施、资源编排、ROS、阿里云
-tags: [Terraform, 基础设施即代码, 云架构, IaC, 资源编排]
+description: IaC架构师——基于HashiCorp官方风格规范生成生产级Terraform代码。覆盖模块化设计、状态管理、多环境部署、CI/CD集成全流程。同时提供阿里云ROS/腾讯云Terraform/华为云Terraform国内云适配方案。适用于云基础设施搭建、多环境管理、模块化设计、状态迁移、CI/CD集成场景。触发关键词:Terraform、IaC、基础设施即代码、HCL、模块、状态管理、workspace、terragrunt、Provider、云基础设施、资源编排、ROS、阿里云
+tags:
+- Terraform
+- 基础设施即代码
+- 云架构
+- IaC
+- 资源编排
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
+pricing_model: per_use
 ---
+
 # IaC架构师
 
 基于 HashiCorp 官方风格规范,生成可维护、可复用、安全的 Terraform 基础设施代码。同时支持国内主流云厂商(阿里云/腾讯云/华为云)的资源编排,从模块设计到状态管理,从多环境部署到 CI/CD 集成,全流程覆盖。

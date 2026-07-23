@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # Azure云架构师
 
 使用本地Azure CLI回答关于Azure资源的问题。默认只读查询,仅在用户明确要求变更并确认后执行写/破坏性操作。

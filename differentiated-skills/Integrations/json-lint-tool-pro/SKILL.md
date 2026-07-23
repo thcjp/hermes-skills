@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # JSON校验工具（专业版）
 
 本工具是企业级JSON校验方案，在免费版基础上扩展并行扫描、Schema验证、超集兼容、自动修复与监控告警能力，适用于大型项目质量门禁与企业级配置治理场景。

@@ -1,26 +1,30 @@
 ---
-slug: "logo-design-guide-tool-pro"
-name: "logo-design-guide-tool-pro"
-version: "1.0.0"
-displayName: "Logo设计指南专业版"
-summary: "企业级AI Logo设计系统指南,支持批量提示词管理、自动矢量化、设计审计与多模型策略,适合团队与商业项目。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,增加批量提示词管理、多模型策略、
-  自动矢量化流程、设计质量审计与团队设计规范。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+slug: logo-design-guide-tool-pro
+name: logo-design-guide-tool-pro
+version: 1.0.0
+displayName: Logo设计指南专业版
+summary: 企业级AI Logo设计系统指南,支持批量提示词管理、自动矢量化、设计审计与多模型策略,适合团队与商业项目。
+license: Proprietary
+edition: pro
+description: 'Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,增加批量提示词管理、多模型策略、
+
+  自动矢量化流程、设计质量审计与团队设计规范。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。'
 tags:
-  - Logo设计
-  - 设计指南
-  - 企业级
-  - 设计审计
-  - 自动化
-  - CI/CD
+- Logo设计
+- 设计指南
+- 企业级
+- 设计审计
+- 自动化
+- CI/CD
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Logo设计指南专业版
 ## 概述
 Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,PRO版增加批量提示词管理、多模型策略、自动矢量化流程、设计质量审计与团队设计规范,满足商业级Logo设计项目的效率与质量需求。

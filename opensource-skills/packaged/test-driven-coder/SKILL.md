@@ -1,20 +1,27 @@
 ---
 slug: test-driven-coder
 name: test-driven-coder
-version: "1.1.0"
-displayName: "测试驱动编码器"
-summary: "强制TDD:Red-Green-Refactor循环,先写测试再写代码,质量内建"
+version: 1.1.0
+displayName: 测试驱动编码器
+summary: 强制TDD:Red-Green-Refactor循环,先写测试再写代码,质量内建
 license: Proprietary
-description: |-
-  测试驱动编码器——强制执行测试驱动开发(TDD)流程,先写失败的测试,再写实现代码,最后重构。Red-Green-Refactor循环 + 测试金字塔分层(单元80%/集成15%/E2E 5%),让代码质量内建于开发过程。适用于新功能开发、Bug修复、重构保护、测试补充、测试审查场景。触发关键词:测试驱动、TDD、单元测试、集成测试、端到端测试、Red-Green-Refactor、测试金字塔、测试覆盖、自动化测试、测试先行、pytest、jest
-tags: [测试驱动, TDD, 单元测试, 自动化测试, 代码质量]
+description: 测试驱动编码器——强制执行测试驱动开发(TDD)流程,先写失败的测试,再写实现代码,最后重构。Red-Green-Refactor循环 +
+  测试金字塔分层(单元80%/集成15%/E2E 5%),让代码质量内建于开发过程。适用于新功能开发、Bug修复、重构保护、测试补充、测试审查场景。触发关键词:测试驱动、TDD、单元测试、集成测试、端到端测试、Red-Green-Refactor、测试金字塔、测试覆盖、自动化测试、测试先行、pytest、jest
+tags:
+- 测试驱动
+- TDD
+- 单元测试
+- 自动化测试
+- 代码质量
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
+pricing_model: per_use
 ---
+
 # 测试驱动编码器
 
 强制执行测试驱动开发流程。核心理念:测试是证明,不是负担。先写失败的测试,再写实现代码,最后重构。让代码质量内建于开发过程,而非事后补丁。

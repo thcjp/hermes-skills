@@ -1,33 +1,7 @@
 ---
-slug: obsidian-notesmd-cli
-name: obsidian-notesmd-cli
-version: "1.0.0"
-displayName: Obsidian Notesmd Cli
-summary: Work with Obsidian vaults (plain Markdown notes) and automate via notesmd-cli.
-license: MIT-0
-description: |-
-  Work with Obsidian vaults (plain Markdown notes) and automate via notesmd-cli。核心能力:
-
-  - 效率工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 工作流自动化、任务调度、批处理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub...
-tags:
-- Automation
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # Obsidian via notesmd-cli (obsidian-cli)

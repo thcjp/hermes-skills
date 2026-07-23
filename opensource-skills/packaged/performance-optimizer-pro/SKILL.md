@@ -1,20 +1,27 @@
 ---
 slug: performance-optimizer-pro
 name: performance-optimizer-pro
-version: "1.1.0"
-displayName: "性能优化专家"
-summary: "测量优先不盲目优化,Core Web Vitals目标驱动的前端性能提升方案"
+version: 1.1.0
+displayName: 性能优化专家
+summary: 测量优先不盲目优化,Core Web Vitals目标驱动的前端性能提升方案
 license: Proprietary
-description: |-
-  性能优化专家坚持测量优先原则,核心功能包括Core Web Vitals目标设定与基线采集(LCP/CLS/INP/FCP/TTFB)、性能分析工作流(Profiling/瓶颈定位/优化实施/效果验证)、性能反模式检测、持续监控与性能预算。适用于网站性能审计、瓶颈定位、优化实施、性能回归分析、持续监控场景。触发关键词:性能优化、性能调优、Core Web Vitals、LCP、CLS、INP、性能分析、性能瓶颈、前端性能、加载速度、渲染性能。
-tags: [性能优化, Core Web Vitals, 前端性能, 性能调优, 用户体验]
+description: 性能优化专家坚持测量优先原则,核心功能包括Core Web Vitals目标设定与基线采集(LCP/CLS/INP/FCP/TTFB)、性能分析工作流(Profiling/瓶颈定位/优化实施/效果验证)、性能反模式检测、持续监控与性能预算。适用于网站性能审计、瓶颈定位、优化实施、性能回归分析、持续监控场景。触发关键词:性能优化、性能调优、Core
+  Web Vitals、LCP、CLS、INP、性能分析、性能瓶颈、前端性能、加载速度、渲染性能。
+tags:
+- 性能优化
+- Core Web Vitals
+- 前端性能
+- 性能调优
+- 用户体验
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
+pricing_model: per_use
 ---
+
 # 性能优化专家
 
 测量优先的性能优化框架。不猜测瓶颈,用数据定位问题,用指标验证优化效果。

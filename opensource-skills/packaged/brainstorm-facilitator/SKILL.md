@@ -1,20 +1,26 @@
 ---
 slug: requirement-explorer-pro
 name: brainstorm-facilitator
-version: "1.1.0"
-displayName: "头脑风暴引导师"
-summary: "编码前先问对问题,苏格拉底式提问驱动需求探索,省下返工成本"
+version: 1.1.0
+displayName: 头脑风暴引导师
+summary: 编码前先问对问题,苏格拉底式提问驱动需求探索,省下返工成本
 license: Proprietary
-description: |-
-  头脑风暴引导师——在写代码前先通过苏格拉底式提问把需求问透，避免做完才发现方向错了。适用于新项目启动、功能设计、架构决策、需求澄清、重构规划、PoC设计等场景。提问驱动需求探索、方案对比、设计验证，最终输出结构化设计文档。触发关键词：头脑风暴、需求探索、设计、苏格拉底、方案对比、设计文档、需求澄清、项目启动、功能设计
-tags: [需求分析, 产品设计, 头脑风暴, 独立开发, 项目管理]
+description: 头脑风暴引导师——在写代码前先通过苏格拉底式提问把需求问透，避免做完才发现方向错了。适用于新项目启动、功能设计、架构决策、需求澄清、重构规划、PoC设计等场景。提问驱动需求探索、方案对比、设计验证，最终输出结构化设计文档。触发关键词：头脑风暴、需求探索、设计、苏格拉底、方案对比、设计文档、需求澄清、项目启动、功能设计
+tags:
+- 需求分析
+- 产品设计
+- 头脑风暴
+- 独立开发
+- 项目管理
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
+pricing_model: per_use
 ---
+
 # 头脑风暴引导师
 
 在编码前通过苏格拉底式提问，深入理解真实需求。不急于写代码，先通过对话探索需求边界、对比方案、验证设计，最终输出结构化设计文档。

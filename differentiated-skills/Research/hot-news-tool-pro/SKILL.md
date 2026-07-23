@@ -1,39 +1,55 @@
 ---
-slug: "hot-news-tool-pro"
-name: "hot-news-tool-pro"
-version: "1.0.0"
-displayName: "新闻聚合专业版"
-summary: "企业级新闻聚合工具，支持多源监控、定时更新、实时推送、舆情分析与自定义源管理，适合品牌监控与行业情报。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级新闻聚合工具，支持多源监控、定时更新、实时推送、舆情分析与自定义源管理，适合品牌监控与行业情报。核心能力:
+slug: hot-news-tool-pro
+name: hot-news-tool-pro
+version: 1.0.0
+displayName: 新闻聚合专业版
+summary: 企业级新闻聚合工具，支持多源监控、定时更新、实时推送、舆情分析与自定义源管理，适合品牌监控与行业情报。
+license: Proprietary
+edition: pro
+description: '企业级新闻聚合工具，支持多源监控、定时更新、实时推送、舆情分析与自定义源管理，适合品牌监控与行业情报。核心能力:
+
   - 50+ 国内外新闻源批量监控
+
   - 定时自动抓取与实时增量更新
+
   - 关键词告警与实时推送通知
+
   - 舆情趋势分析与情感判断
+
   - 自定义新闻源与分类规则
+
   - 多渠道分发（邮件、Webhook、IM）
 
+
   适用场景:
+
   - 企业品牌舆情监控
+
   - 行业情报收集与分析
+
   - 竞品动态跟踪
+
   - 危机预警与应急响应
 
+
   差异化:
-  - PRO 版支持 50+ 新闻源...
+
+  - PRO 版支持 50+ 新闻源...'
 tags:
-  - 新闻
-  - 企业工具
-  - 舆情监控
-  - 品牌监测
-  - 情报分析
+- 新闻
+- 企业工具
+- 舆情监控
+- 品牌监测
+- 情报分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 新闻聚合专业版
 
 ## 概述

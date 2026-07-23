@@ -31,7 +31,11 @@ tools:
   - - read
 - exec
 # TypeScript
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 > **Activation**: This skill activates whenever the user says or implies **TypeScript**. It responds
 > with standards-compliant TypeScript code and can explain any rule on demand.
 

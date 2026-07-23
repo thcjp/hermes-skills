@@ -1,34 +1,46 @@
 ---
-slug: "note-process-engine-free"
-name: "note-process-engine-free"
-version: "1.0.0"
-displayName: "笔记处理引擎(免费版)"
-summary: "轻量化研究笔记分析工具,支持摘要生成、关键词提取、全文检索与主题列表,适合个人研究者快速提炼笔记洞察。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  笔记处理引擎(免费版)是面向个人研究者与知识工作者的轻量化笔记分析Skill,通过摘要、关键词、检索、列表四大能力的组合,帮助用户从海量研究笔记中快速提炼洞察。核心能力:
+slug: note-process-engine-free
+name: note-process-engine-free
+version: 1.0.0
+displayName: 笔记处理引擎(免费版)
+summary: 轻量化研究笔记分析工具,支持摘要生成、关键词提取、全文检索与主题列表,适合个人研究者快速提炼笔记洞察。
+license: Proprietary
+edition: free
+description: '笔记处理引擎(免费版)是面向个人研究者与知识工作者的轻量化笔记分析Skill,通过摘要、关键词、检索、列表四大能力的组合,帮助用户从海量研究笔记中快速提炼洞察。核心能力:
+
 
   - 摘要生成:统计笔记数量、字数、标签,提取关键句
+
   - 关键词提取:基于词频统计,过滤停用词,展示Top20
+
   - 全文检索:按关键词查找匹配笔记,高亮显示
+
   - 主题列表:列出所有研究主题,附基础统计
+
   - 兼容JSON数据库格式,与常见笔记工具互通
+
 
   适用场景:
 
+
   - 研究会话后的快速总结回顾
+
   - 撰写报告前的资料检索
-  - 长期研究项目的进度跟...
+
+  - 长期研究项目的进度跟...'
 tags:
-  - 集成工具
-  - 笔记分析
-  - 研究工具
+- 集成工具
+- 笔记分析
+- 研究工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 笔记处理引擎(免费版)
 
 一个面向个人研究者与知识工作者的轻量化笔记分析Skill,通过摘要、关键词、检索、列表四大能力的组合,帮助用户从海量研究笔记中快速提炼洞察。本免费版完全基于Python标准库,零外部依赖。

@@ -1,24 +1,28 @@
 ---
-slug: "feed-digest-tool-pro"
-name: "feed-digest-tool-pro"
-version: "1.0.0"
-displayName: "订阅摘要(专业版)"
-summary: "企业级订阅摘要专业版，含AI深度摘要、多源聚合、定时推送、团队共享与个性化推荐。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文搜索增强、阅读统计分析七大高级能力。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
+slug: feed-digest-tool-pro
+name: feed-digest-tool-pro
+version: 1.0.0
+displayName: 订阅摘要(专业版)
+summary: 企业级订阅摘要专业版，含AI深度摘要、多源聚合、定时推送、团队共享与个性化推荐。
+license: Proprietary
+edition: pro
+description: 订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文搜索增强、阅读统计分析七大高级能力。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 订阅摘要
-  - 企业级
-  - AI摘要
-  - 多源聚合
-  - 团队共享
+- 订阅摘要
+- 企业级
+- AI摘要
+- 多源聚合
+- 团队共享
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 > **AI深度摘要+多源聚合+定时推送+团队共享。企业级订阅管理全功能覆盖。**
 
 将复杂的订阅内容管理与分发任务交给专业工具处理。专业版在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文语义搜索、阅读统计分析七大高级能力，满足企业级场景对信息管理的深度、广度与协作要求。

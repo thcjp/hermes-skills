@@ -1,21 +1,9 @@
 ---
-slug: ocean-chat
-name: ocean-chat
-version: "2.20.0"
-displayName: Ocean Chat
-summary: OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,
-  and conversation thr...
-license: MIT-0
-description: |-
-  OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,
-  and conversation thr。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Operations
-tools:
-  - - read
-- exec
-# Ocean Chat — Agent 通讯录 + 聊天 + 约人
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 Ocean Chat 是 OceanBus 生态的 **核心用户界面 Skill**。三个能力：管理通讯录、收发消息、约人见面。
 
 数据流：`Roster（SDK 内置）← ocean-chat（UI）→ OceanBus L0（消息管道）→ 对方 Agent`

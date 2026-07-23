@@ -1,22 +1,26 @@
 ---
-slug: "csv-processor-free"
-name: "csv-processor-free"
-version: "1.0.0"
-displayName: "CSV处理器 免费版"
-summary: "自动检测编码与分隔符的CSV清洗工具，支持读取、清洗、合并与类型转换。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  CSV Processor 是面向数据工程师的 CSV 清洗与预处理工具，自动检测文件编码与分隔符，提供读取、清洗、合并、拆分与类型转换能力。核心能力：编码自动检测（chardet）、分隔符自动嗅探（逗号/分号/制表符/管道）、列名规范化、空行空列清理、智能类型转换、多文件合并、按列值拆分、导出带 BOM 的 UTF-8 CSV
+slug: csv-processor-free
+name: csv-processor-free
+version: 1.0.0
+displayName: CSV处理器 免费版
+summary: 自动检测编码与分隔符的CSV清洗工具，支持读取、清洗、合并与类型转换。
+license: Proprietary
+edition: free
+description: CSV Processor 是面向数据工程师的 CSV 清洗与预处理工具，自动检测文件编码与分隔符，提供读取、清洗、合并、拆分与类型转换能力。核心能力：编码自动检测（chardet）、分隔符自动嗅探（逗号/分号/制表符/管道）、列名规范化、空行空列清理、智能类型转换、多文件合并、按列值拆分、导出带
+  BOM 的 UTF-8 CSV
 tags:
-  - 集成工具
-  - 数据处理
-  - 数据工程
+- 集成工具
+- 数据处理
+- 数据工程
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # CSV Processor（免费版）
 
 面向数据工程师的 CSV 清洗与预处理工具，自动检测编码与分隔符，提供读取、清洗、合并、拆分与类型转换的完整能力。

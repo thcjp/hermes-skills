@@ -1,20 +1,28 @@
 ---
 slug: cloudflare-edge-developer
 name: cloudflare-edge-developer
-version: "1.1.0"
-displayName: "边缘计算开发者"
-summary: "全球300+边缘节点低延迟部署,Cloudflare全栈边缘开发一站搞定"
+version: 1.1.0
+displayName: 边缘计算开发者
+summary: 全球300+边缘节点低延迟部署,Cloudflare全栈边缘开发一站搞定
 license: Proprietary
-description: |-
-  边缘计算开发者——基于Cloudflare官方最佳实践，在全球300+边缘节点部署低延迟应用。适用于边缘API、CDN优化、边缘函数、实时协作、边缘AI、全栈应用等场景。从Workers脚本到Durable Objects，从KV到Workers AI，全栈边缘开发。国内场景可迁移至腾讯云EdgeOne或阿里云函数计算。触发关键词：Cloudflare、Workers、边缘计算、KV、R2、D1、Queues、Durable Objects、Workers AI、wrangler、边缘函数
-tags: [边缘计算, Cloudflare, 无服务器, 低延迟, 全球部署]
+description: 边缘计算开发者——基于Cloudflare官方最佳实践，在全球300+边缘节点部署低延迟应用。适用于边缘API、CDN优化、边缘函数、实时协作、边缘AI、全栈应用等场景。从Workers脚本到Durable
+  Objects，从KV到Workers AI，全栈边缘开发。国内场景可迁移至腾讯云EdgeOne或阿里云函数计算。触发关键词：Cloudflare、Workers、边缘计算、KV、R2、D1、Queues、Durable
+  Objects、Workers AI、wrangler、边缘函数
+tags:
+- 边缘计算
+- Cloudflare
+- 无服务器
+- 低延迟
+- 全球部署
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
+pricing_model: per_use
 ---
+
 # 边缘计算开发者
 
 基于 Cloudflare 官方最佳实践，开发运行在全球 300+ 边缘节点的低延迟应用。从 Workers 脚本到 Durable Objects，从 KV 到 Workers AI，全栈边缘开发。

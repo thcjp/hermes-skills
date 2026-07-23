@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Javascript Sdk
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 Build AI applications with the [inference.sh](https://inference.sh) JavaScript/TypeScript SDK.
 
 ## Quick Start

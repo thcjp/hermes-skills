@@ -1,24 +1,28 @@
 ---
-slug: "pcb-design-assistant-pro"
-name: "pcb-design-assistant-pro"
-version: "1.0.0"
-displayName: "PCB设计助手(专业版)"
-summary: "EasyEDA全流程PCB设计专业版，支持多页原理图、PCB布局、DRC检查、多层板、自定义库与BOM下单，覆盖从设计到打板。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自动生成与立创下单对接。覆盖从需求到打板的全流程。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
+slug: pcb-design-assistant-pro
+name: pcb-design-assistant-pro
+version: 1.0.0
+displayName: PCB设计助手(专业版)
+summary: EasyEDA全流程PCB设计专业版，支持多页原理图、PCB布局、DRC检查、多层板、自定义库与BOM下单，覆盖从设计到打板。
+license: Proprietary
+edition: pro
+description: PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自动生成与立创下单对接。覆盖从需求到打板的全流程。Use
+  when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
-  - PCB设计
-  - 电路设计
-  - DRC检查
-  - 多层板
-  - 硬件开发
+- PCB设计
+- 电路设计
+- DRC检查
+- 多层板
+- 硬件开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 > 从需求到打板的全流程副驾驶。多页原理图、PCB布局、DRC检查、BOM下单，让硬件团队的设计效率提升10倍。
 
 ## 架构总览

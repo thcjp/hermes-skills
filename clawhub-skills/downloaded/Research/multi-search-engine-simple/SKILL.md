@@ -13,7 +13,11 @@ tags: '[''Research'']'
 tools:
   - read
   - exec
+pricing_tier: "L1"
+pricing_model: "per_use"
+suggested_price: 9.9
 ---
+
 
 # Multi Search Engine æç®å½åç
 

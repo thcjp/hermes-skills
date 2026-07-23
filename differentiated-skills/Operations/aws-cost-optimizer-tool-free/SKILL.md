@@ -1,24 +1,29 @@
 ---
-slug: "aws-cost-optimizer-tool-free"
-name: "aws-cost-optimizer-tool-free"
-version: "1.0.0"
-displayName: "AWS成本优化入门"
-summary: "AWS成本分析工具，支持支出概览与基础优化建议。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者与初创团队的AWS成本分析工具。支持月度支出概览、
-  按服务/区域分解成本、识别闲置资源与基础优化建议。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: aws-cost-optimizer-tool-free
+name: aws-cost-optimizer-tool-free
+version: 1.0.0
+displayName: AWS成本优化入门
+summary: AWS成本分析工具，支持支出概览与基础优化建议。
+license: Proprietary
+edition: free
+description: '面向个人开发者与初创团队的AWS成本分析工具。支持月度支出概览、
+
+  按服务/区域分解成本、识别闲置资源与基础优化建议。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-  - Operations
-  - AWS
-  - 成本优化
-  - 云财务
+- Operations
+- AWS
+- 成本优化
+- 云财务
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AWS成本优化入门（免费版）
 
 ## 概述

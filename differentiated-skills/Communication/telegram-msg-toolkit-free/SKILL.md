@@ -1,24 +1,28 @@
 ---
-slug: "telegram-msg-toolkit-free"
-name: "telegram-msg-toolkit-free"
-version: "1.0.0"
-displayName: "Telegram消息工具箱(免费版)"
-summary: "Telegram Bot 消息免费版：文本/图片/文件/投票发送，聊天信息查询与基础Bot命令管理。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Telegram 消息工具箱（免费版）面向个人用户与独立开发者，封装 Telegram Bot API 的基础消息能力：文本消息、图片、文件、投票发送，聊天信息查询与基础 Bot 命令管理。通过 REST API 直接调用 Telegram Bot 接口，无需额外中间件。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
+slug: telegram-msg-toolkit-free
+name: telegram-msg-toolkit-free
+version: 1.0.0
+displayName: Telegram消息工具箱(免费版)
+summary: Telegram Bot 消息免费版：文本/图片/文件/投票发送，聊天信息查询与基础Bot命令管理。
+license: Proprietary
+edition: free
+description: Telegram 消息工具箱（免费版）面向个人用户与独立开发者，封装 Telegram Bot API 的基础消息能力：文本消息、图片、文件、投票发送，聊天信息查询与基础
+  Bot 命令管理。通过 REST API 直接调用 Telegram Bot 接口，无需额外中间件。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
 tags:
-  - 沟通协作
-  - 即时通讯
-  - Telegram
-  - 消息自动化
-  - Bot开发
+- 沟通协作
+- 即时通讯
+- Telegram
+- 消息自动化
+- Bot开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Telegram 消息工具箱（免费版）
 
 ## 概述

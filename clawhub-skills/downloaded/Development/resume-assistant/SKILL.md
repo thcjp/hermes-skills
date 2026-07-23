@@ -30,7 +30,11 @@ tools:
   - - read
 - exec
 # 📝 Resume / CV Assistant
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 > AI-powered clawbot skill for resume & CV polishing, job customization, multi-format export, and professional scoring.
 **Version:** 1.0.0 · **License:** MIT · **Repository:** [github.com/Wscats/resume-assistant](https://github.com/Wscats/resume-assistant)
 ## Overview

@@ -1,22 +1,32 @@
 ---
 slug: sales-copy-artisan
 name: sales-copy-artisan
-version: "1.0.0"
-displayName: "卖货文案匠"
-summary: "文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案"
+version: 1.0.0
+displayName: 卖货文案匠
+summary: 文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案
 license: Proprietary
-description: |-
-  卖货文案匠——文案干瘪没转化?FAB卖点提炼+6种情绪钩子+4种CTA,一键生成高转化卖货文案。核心能力: FAB法则卖点提炼(特性/优势/利益) / 6种情绪钩子(痛点/好奇/紧迫/社交证明/对比/权威) / 4种CTA话术(关注/私信/下单/加群) / 5平台风格自动适配 / 活动促销文案
+description: '卖货文案匠——文案干瘪没转化?FAB卖点提炼+6种情绪钩子+4种CTA,一键生成高转化卖货文案。核心能力: FAB法则卖点提炼(特性/优势/利益)
+  / 6种情绪钩子(痛点/好奇/紧迫/社交证明/对比/权威) / 4种CTA话术(关注/私信/下单/加群) / 5平台风格自动适配 / 活动促销文案
+
 
   适用场景: 电商店主写详情页 / 直播带货预热话术 / 社交媒体种草营销 / 新品上市推广 / 副业达人做种草带货
 
-  差异化: FAB法则结构化提炼卖点逻辑清晰有说服力;6种情绪钩子按场景选择,4种CTA话术匹配转化目标;5平台风格自动适配(小红书...
-homepage: "https://skillhub.cn"
-tags: [卖货文案, 营销转化, 电商带货, 副业工具]
+
+  差异化: FAB法则结构化提炼卖点逻辑清晰有说服力;6种情绪钩子按场景选择,4种CTA话术匹配转化目标;5平台风格自动适配(小红书...'
+homepage: https://skillhub.cn
+tags:
+- 卖货文案
+- 营销转化
+- 电商带货
+- 副业工具
 tools:
-  - read
-  - exec
+- read
+- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 卖货文案匠
 
 ## 使用场景

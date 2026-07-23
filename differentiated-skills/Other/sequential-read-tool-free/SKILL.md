@@ -1,40 +1,56 @@
 ---
-slug: "sequential-read-tool-free"
-name: "sequential-read-tool-free"
-version: "1.0.0"
-displayName: "顺序阅读工具-免费版"
-summary: "分段顺序阅读长篇文章,生成结构化反思笔记,适合个人学习与读书会"
-license: "Proprietary"
-edition: "free"
-description: |-
-  顺序阅读工具免费版,面向个人学习者的长文阅读助手。
+slug: sequential-read-tool-free
+name: sequential-read-tool-free
+version: 1.0.0
+displayName: 顺序阅读工具-免费版
+summary: 分段顺序阅读长篇文章,生成结构化反思笔记,适合个人学习与读书会
+license: Proprietary
+edition: free
+description: '顺序阅读工具免费版,面向个人学习者的长文阅读助手。
+
 
   核心能力:
+
   - 长文分段顺序阅读
+
   - 每段生成结构化反思
+
   - 阅读进度追踪
+
   - 关键概念提取
+
   - 本地笔记保存
 
+
   适用场景:
+
   - 学术论文精读
+
   - 技术文档学习
+
   - 书籍章节阅读
+
   - 读书会准备
+
 
   差异化:免费版提供基础顺序阅读能力。PRO版扩展团队协作阅读、知识图谱与 AI 深度分析。
 
-  适用关键词: read, 顺序阅读, 精读, 反思笔记, reading, 长文阅读, 分段阅读
+
+  适用关键词: read, 顺序阅读, 精读, 反思笔记, reading, 长文阅读, 分段阅读'
 tags:
-  - 阅读
-  - 学习
-  - 笔记
-  - 知识管理
+- 阅读
+- 学习
+- 笔记
+- 知识管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 顺序阅读工具 - 免费版
 
 ## 概述

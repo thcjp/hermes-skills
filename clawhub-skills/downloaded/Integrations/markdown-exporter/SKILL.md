@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Markdown Exporter
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Markdown Exporter is an Agent Skill that transforms your Markdown text into a wide variety of professional format files.
 
 This [SKILL.md](https://github.com/bowenliang123/markdown-exporter/blob/main/SKILL.md) for Agent Skills, the cli tool and [Python package `markdown-exporter`](https://pypi.org/project/md-exporter/) are maintained in the GitHub repository [bowenliang123/markdown-exporter](https://github.com/bowenliang123/markdown-exporter) by [bowenliang123](https://github.com/bowenliang123).

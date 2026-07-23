@@ -1,31 +1,38 @@
 ---
-slug: "doc-parse-tool-free"
-name: "doc-parse-tool-free"
-version: "1.0.0"
-displayName: "文档解析工具（免费版）"
-summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  文档解析工具 - （免费版）
+slug: doc-parse-tool-free
+name: doc-parse-tool-free
+version: 1.0.0
+displayName: 文档解析工具（免费版）
+summary: 通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。
+license: Proprietary
+edition: free
+description: '文档解析工具 - （免费版）
+
 
   核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document parse, 结构化提取, 图片识别
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: 文档解析, OCR识别, 表格提取, 版面分析, document parse, 结构化提取, 图片识别
+
+  适用关键词: 文档解析, OCR识别, 表格提取, 版面分析, document parse, 结构化提取, 图片识别'
 tags:
-  - 文档解析
-  - OCR
-  - 表格识别
-  - 版面分析
+- 文档解析
+- OCR
+- 表格识别
+- 版面分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 文档解析工具（免费版）
 
 ## 概述

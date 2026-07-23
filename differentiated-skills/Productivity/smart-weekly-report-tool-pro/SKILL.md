@@ -1,29 +1,35 @@
 ---
-slug: "smart-weekly-report-tool-pro"
-name: "smart-weekly-report-tool-pro"
-version: "1.0.0"
-displayName: "智能周报专业版"
-summary: "企业级智能周报系统,支持多源数据采集、团队聚合、进度追踪与管理者仪表盘"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 工作汇报领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: smart-weekly-report-tool-pro
+name: smart-weekly-report-tool-pro
+version: 1.0.0
+displayName: 智能周报专业版
+summary: 企业级智能周报系统,支持多源数据采集、团队聚合、进度追踪与管理者仪表盘
+license: Proprietary
+edition: pro
+description: '核心能力: 工作汇报领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: 周报, 工作总结, 待办, 智能报告, 自动生成, 下周计划
+
+  适用关键词: 周报, 工作总结, 待办, 智能报告, 自动生成, 下周计划'
 tags:
-  - 周报
-  - 工作总结
-  - 待办清单
-  - 自动化
+- 周报
+- 工作总结
+- 待办清单
+- 自动化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 智能周报专业版
 
 ## 概述

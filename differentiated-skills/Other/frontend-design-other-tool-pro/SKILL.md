@@ -1,35 +1,47 @@
 ---
-slug: "frontend-design-other-tool-pro"
-name: "frontend-design-other-tool-pro"
-version: "1.0.0"
-displayName: "前端设计工具专业版"
-summary: "面向团队的设计系统、多页站点与企业级视觉治理工具。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队与企业的前端设计系统与视觉治理专业工具。核心能力:
+slug: frontend-design-other-tool-pro
+name: frontend-design-other-tool-pro
+version: 1.0.0
+displayName: 前端设计工具专业版
+summary: 面向团队的设计系统、多页站点与企业级视觉治理工具。
+license: Proprietary
+edition: pro
+description: '面向团队与企业的前端设计系统与视觉治理专业工具。核心能力:
+
   - 完整设计系统（令牌、组件库、多主题、暗色模式）
+
   - 多页站点架构与一致性巡检
+
   - 品牌识别矩阵与签名元素库
+
   - 可访问性合规审计与性能预算
 
+
   适用场景:
+
   - 企业级产品多页站点统一设计语言
+
   - 跨团队设计系统沉淀与复用
+
   - 品牌视觉一致性巡检与合规审计
 
-  差异化: 专业版在免费版单页能力上扩展设计系统、组件库、多主题、一致性巡检与可访问性合规，兼容免费版令牌格式，支持团队协作
+
+  差异化: 专业版在免费版单页能力上扩展设计系统、组件库、多主题、一致性巡检与可访问性合规，兼容免费版令牌格式，支持团队协作'
 tags:
-  - 前端设计
-  - 设计系统
-  - 企业级
-  - 可访问性
-  - 其他工具
+- 前端设计
+- 设计系统
+- 企业级
+- 可访问性
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 前端设计工具（专业版）
 
 ## 概述

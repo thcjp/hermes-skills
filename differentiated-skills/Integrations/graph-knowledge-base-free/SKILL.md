@@ -1,26 +1,33 @@
 ---
-slug: "graph-knowledge-base-free"
-name: "graph-knowledge-base-free"
-version: "1.0.0"
-displayName: "知识图谱库(免费版)"
-summary: "原子化知识管理工具，支持实体事实添加、版本替代与摘要生成"
-license: "Proprietary"
-edition: "free"
-description: |-
-  知识图谱库(免费版)是一款原子化知识管理工具，通过实体-事实-摘要的三层结构组织知识，支持事实的添加、版本替代与摘要自动生成。核心能力：
+slug: graph-knowledge-base-free
+name: graph-knowledge-base-free
+version: 1.0.0
+displayName: 知识图谱库(免费版)
+summary: 原子化知识管理工具，支持实体事实添加、版本替代与摘要生成
+license: Proprietary
+edition: free
+description: '知识图谱库(免费版)是一款原子化知识管理工具，通过实体-事实-摘要的三层结构组织知识，支持事实的添加、版本替代与摘要自动生成。核心能力：
+
   - 按实体添加原子化事实，每条事实独立可追溯
+
   - 事实版本替代机制，标记旧事实为已替代并创建新事实
+
   - 从活跃事实自动生成实体摘要
-  - 事实永不删除...
+
+  - 事实永不删除...'
 tags:
-  - 集成工具
-  - 知识管理
-  - 知识图谱
+- 集成工具
+- 知识管理
+- 知识图谱
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 知识图谱库(免费版)
 
 本工具通过原子化事实管理帮助用户构建可演进、可追溯的知识图谱，支持事实添加、版本替代与摘要自动生成。

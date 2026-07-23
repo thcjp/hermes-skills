@@ -1,39 +1,56 @@
 ---
-slug: "docker-essentials-v1-tool-free"
-name: "docker-essentials-v1-tool-free"
-version: "1.0.0"
-displayName: "Docker V1基础工具免费版"
-summary: "提供Docker V1经典命令集与基础容器管理,适合维护旧版Docker环境的开发者。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向旧版Docker环境的容器管理工具,涵盖V1经典命令集、基础容器生命周期与镜像管理。核心能力:
+slug: docker-essentials-v1-tool-free
+name: docker-essentials-v1-tool-free
+version: 1.0.0
+displayName: Docker V1基础工具免费版
+summary: 提供Docker V1经典命令集与基础容器管理,适合维护旧版Docker环境的开发者。
+license: Proprietary
+edition: free
+description: '面向旧版Docker环境的容器管理工具,涵盖V1经典命令集、基础容器生命周期与镜像管理。核心能力:
+
   - Docker V1经典命令支持
+
   - 容器生命周期管理
+
   - 镜像构建与标签管理
+
   - 基础Compose编排(V1格式)
+
   - 旧版环境兼容性检查
 
+
   适用场景:
+
   - 旧版Docker环境维护
+
   - 遗留系统容器管理
+
   - V1到V2迁移准备
 
+
   差异化:
+
   - 免费版专注V1命令兼容,覆盖经典操作
+
   - 提供旧版环境兼容性检测
+
   - 与专业版命令兼容,支持后续升级
 
-  适用关键词: Docker V1, 旧版D...
+
+  适用关键词: Docker V1, 旧版D...'
 tags:
-  - 开发工具
-  - Docker
-  - 遗留系统
+- 开发工具
+- Docker
+- 遗留系统
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Docker V1基础工具 - 免费版
 ## 概述
 Docker V1基础工具免费版为维护旧版Docker环境的开发者提供经典命令集支持。工具涵盖V1版本的容器生命周期管理、镜像构建管理、基础Compose编排和旧版环境兼容性检查,帮助开发者在V1环境中高效进行容器管理。

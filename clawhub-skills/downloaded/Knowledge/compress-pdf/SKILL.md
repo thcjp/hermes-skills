@@ -1,19 +1,7 @@
 ---
-slug: compress-pdf
-name: compress-pdf
-version: "1.0.0"
-displayName: Compress PDF
-summary: Compress a user-provided PDF by uploading it to Cross-Service-Solutions,
-  polling until completion...
-license: MIT
-description: |-
-  Compress a user-provided PDF by uploading it to Cross-Service-Solutions,
-  polling until completion。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Knowledge
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # Compress PDF

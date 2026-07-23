@@ -1,31 +1,41 @@
 ---
-slug: "data-analyst-expert-free"
-name: "data-analyst-expert-free"
-version: "1.0.0"
-displayName: "数据分析专家(免费版)"
-summary: "面向委派任务的数据分析助手,支持文件操作、代码执行与结论结构化输出的免费核心能力。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  数据分析专家免费版面向需要把数据分析任务"委派"给 AI Agent 完成的用户,提供任务理解、文件读写、代码执行与结论结构化输出的核心能力。核心能力:
+slug: data-analyst-expert-free
+name: data-analyst-expert-free
+version: 1.0.0
+displayName: 数据分析专家(免费版)
+summary: 面向委派任务的数据分析助手,支持文件操作、代码执行与结论结构化输出的免费核心能力。
+license: Proprietary
+edition: free
+description: '数据分析专家免费版面向需要把数据分析任务"委派"给 AI Agent 完成的用户,提供任务理解、文件读写、代码执行与结论结构化输出的核心能力。核心能力:
+
   - 自然语言任务理解:解析"分析什么、用什么方法、产出什么"
+
   - 文件操作规范:上传文件自动放置在工作目录,直接用文件名访问
+
   - 代码执行驱动:基于 pandas/numpy 等库完成实际计算
+
   - 结论结构化输出:数据概览 → 关键发现 → 业务建议三段式结论
+
   - 模板变量替换:支持 $DATE$、$SESSION_GROUP_ID$ 等运行时变量
 
+
   适用场景:
-  - 业...
+
+  - 业...'
 tags:
-  - 信息检索
-  - 委派执行
-  - 文件操作
-  - 集成工具
+- 信息检索
+- 委派执行
+- 文件操作
+- 集成工具
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据分析专家 免费版
 
 ## 一、概述

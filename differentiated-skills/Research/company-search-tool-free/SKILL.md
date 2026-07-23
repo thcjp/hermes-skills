@@ -1,23 +1,27 @@
 ---
-slug: "company-search-tool-free"
-name: "company-search-tool-free"
-version: "1.0.0"
-displayName: "企业查询助手(免费版)"
-summary: "企业查询免费版，支持公司基本信息、股东、法人、对外投资、工商变更查询。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  企业查询助手免费版是面向个人用户的轻量企业信息查询工具。通过内置公用API Key开箱即用，支持查公司基本信息、法人、股东、对外投资、工商变更等核心维度。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
+slug: company-search-tool-free
+name: company-search-tool-free
+version: 1.0.0
+displayName: 企业查询助手(免费版)
+summary: 企业查询免费版，支持公司基本信息、股东、法人、对外投资、工商变更查询。
+license: Proprietary
+edition: free
+description: 企业查询助手免费版是面向个人用户的轻量企业信息查询工具。通过内置公用API Key开箱即用，支持查公司基本信息、法人、股东、对外投资、工商变更等核心维度。Use
+  when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 企业查询
-  - 工商查询
-  - 法人查询
-  - 股东信息
+- 企业查询
+- 工商查询
+- 法人查询
+- 股东信息
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 > **查公司、查法人、查股东、查投资。开箱即用的企业信息查询工具。**
 
 无需配置API Key，开箱即用。通过内置公用Key（每日1000次额度）即可查询企业基本信息、股东、法人、对外投资等核心维度，满足日常企业查询需求。

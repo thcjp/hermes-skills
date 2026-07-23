@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # JSON修复工具（专业版）
 
 本工具是企业级JSON修复方案，在免费版基础上扩展批量目录修复、流式处理、自定义规则、修复预览与历史回滚能力，适用于大规模数据治理与自动化流水线场景。

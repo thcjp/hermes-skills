@@ -1,40 +1,57 @@
 ---
-slug: "safe-encryption-tool-pro"
-name: "safe-encryption-tool-pro"
-version: "1.0.0"
-displayName: "安全加密工具-专业版"
-summary: "企业级加密平台,支持批量加密、密钥管理、安全策略与审计日志,量子安全算法"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级安全加密工具专业版,面向团队与企业数据保护。核心能力:
+slug: safe-encryption-tool-pro
+name: safe-encryption-tool-pro
+version: 1.0.0
+displayName: 安全加密工具-专业版
+summary: 企业级加密平台,支持批量加密、密钥管理、安全策略与审计日志,量子安全算法
+license: Proprietary
+edition: pro
+description: '企业级安全加密工具专业版,面向团队与企业数据保护。核心能力:
+
   - 批量文件与目录加密
+
   - 密钥管理服务(KMS)集成
+
   - 企业安全策略与合规
+
   - 审计日志与操作追溯
+
   - 多算法支持(ML-KEM-512/768/1024)
+
   - 目录递归加密与压缩
+
   - 团队密钥共享与权限
+
   - API 接口与自动化集成
 
+
   适用场景:
+
   - 企业敏感数据加密保护
+
   - 合规数据存储(GDPR/等保)
+
   - 安全文件归档与传输
+
   - 开发环境密钥管理
 
-  差异化:专业版在免费版基础上扩展批量加密、KMS 集成、安全策略与审计日...
+
+  差异化:专业版在免费版基础上扩展批量加密、KMS 集成、安全策略与审计日...'
 tags:
-  - 加密
-  - 企业级
-  - 密钥管理
-  - 安全合规
-  - 审计日志
+- 加密
+- 企业级
+- 密钥管理
+- 安全合规
+- 审计日志
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 安全加密工具 - 专业版
 
 ## 概述

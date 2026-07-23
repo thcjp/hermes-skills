@@ -1,28 +1,35 @@
 ---
-slug: "calendar-reminder-tool-free"
-name: "calendar-reminder-tool-free"
-version: "1.0.0"
-displayName: "日历提醒工具免费版"
-summary: "每晚自动扫描明日日历并通过飞书发送提醒，上午提前2小时、下午统一12点通知，适合个人单日历。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的日历日程自动提醒工具。
+slug: calendar-reminder-tool-free
+name: calendar-reminder-tool-free
+version: 1.0.0
+displayName: 日历提醒工具免费版
+summary: 每晚自动扫描明日日历并通过飞书发送提醒，上午提前2小时、下午统一12点通知，适合个人单日历。
+license: Proprietary
+edition: free
+description: '面向个人用户的日历日程自动提醒工具。
+
   核心能力: 每晚定时扫描明日日历、按时段分类提醒、飞书消息通知、扫描完成汇报。
+
   适用场景: 个人日程提醒、工作日历管理、会议防遗漏、每日日程预览。
+
   差异化: 免费版聚焦单个日历扫描与基础提醒规则，不含多日历聚合与智能调度。
-  适用关键词: 日历, 提醒, calendar, reminder, 飞书, 日程, 定时扫描, 会议通知
+
+  适用关键词: 日历, 提醒, calendar, reminder, 飞书, 日程, 定时扫描, 会议通知'
 tags:
-  - 日历提醒
-  - 日程管理
-  - 飞书通知
-  - 个人效率
-  - 定时任务
+- 日历提醒
+- 日程管理
+- 飞书通知
+- 个人效率
+- 定时任务
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 日历提醒工具 免费版
 
 ## 概述

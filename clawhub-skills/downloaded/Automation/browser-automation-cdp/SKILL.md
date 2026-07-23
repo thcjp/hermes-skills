@@ -1,35 +1,9 @@
 ---
-slug: browser-automation-cdp
-name: browser-automation-cdp
-version: "1.0.0"
-displayName: Browser Automation C
-summary: 通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的导航、点击、截图及数据提取等自动化操作。
-license: MIT-0
-description: |-
-  通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的导航、点击、截图及数据提取等自动化操作。核心能力:
-
-  - 效率工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 工作流自动化、任务调度、批处理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范
-tags:
-- Automation
-- Research
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 ## 不适用场景
 
 以下场景Browser Automation C不适合处理：

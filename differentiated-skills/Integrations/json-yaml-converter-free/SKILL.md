@@ -1,22 +1,26 @@
 ---
-slug: "json-yaml-converter-free"
-name: "json-yaml-converter-free"
-version: "1.0.0"
-displayName: "JSON转YAML(免费版)"
-summary: "轻量级JSON与YAML互转工具，覆盖缩进规范、注释保留与单文件转换，60秒上手。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕"双向转换—缩进规范—注释保留—单文件处理"四件事，提供可复制即用的Python/Node。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
+slug: json-yaml-converter-free
+name: json-yaml-converter-free
+version: 1.0.0
+displayName: JSON转YAML(免费版)
+summary: 轻量级JSON与YAML互转工具，覆盖缩进规范、注释保留与单文件转换，60秒上手。
+license: Proprietary
+edition: free
+description: JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕"双向转换—缩进规范—注释保留—单文件处理"四件事，提供可复制即用的Python/Node。Use
+  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 数据转换
-  - 配置管理
-  - 集成工具
+- 数据转换
+- 配置管理
+- 集成工具
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # JSON转YAML（免费版）
 
 > **把"JSON与YAML互转"从手写缩进踩坑压缩到一条命令搞定。双向转换+缩进规范+锚点处理三件套。**

@@ -1,17 +1,24 @@
 ---
 slug: geo-rank-architect
 name: geo-rank-architect
-version: "1.0.0"
-displayName: "GEO搜索占位架构师"
-summary: "AI搜索时代品牌霸屏,5维GEO评分+JSON-LD注入+评分门控,提升AI引用率"
+version: 1.0.0
+displayName: GEO搜索占位架构师
+summary: AI搜索时代品牌霸屏,5维GEO评分+JSON-LD注入+评分门控,提升AI引用率
 license: Proprietary
-description: |-
-  GEO搜索占位架构师——AI搜索时代品牌霸屏利器,5维GEO评分+JSON-LD注入+评分门控,提升AI搜索引擎引用率。核心能力: JSON-LD结构化数据注入 / FAQ Schema自动生成 / 5维GEO评分模型 / llms。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-homepage: "https://skillhub.cn"
-tags: [AI搜索优化, GEO, 品牌占位, 结构化数据]
+description: 'GEO搜索占位架构师——AI搜索时代品牌霸屏利器,5维GEO评分+JSON-LD注入+评分门控,提升AI搜索引擎引用率。核心能力: JSON-LD结构化数据注入
+  / FAQ Schema自动生成 / 5维GEO评分模型 / llms。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。'
+homepage: https://skillhub.cn
+tags:
+- AI搜索优化
+- GEO
+- 品牌占位
+- 结构化数据
 tools:
-  - read
-  - exec
+- read
+- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # GEO搜索占位架构师

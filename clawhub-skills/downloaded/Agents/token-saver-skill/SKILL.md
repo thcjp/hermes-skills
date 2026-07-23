@@ -1,19 +1,7 @@
 ---
-slug: token-saver-skill
-name: token-saver-skill
-version: "1.0.2"
-displayName: Token Saver Skill
-summary: Smart token cost optimization for OpenClaw. Automatically reduces AI token
-  consumption by 50-80% ...
-license: MIT-0
-description: |-
-  Smart token cost optimization for OpenClaw。Automatically reduces AI
-  token consumption by 50-80%。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags:
-- Agents
-tools:
-  - - read
-- exec
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
 
 # Token Saver Skill

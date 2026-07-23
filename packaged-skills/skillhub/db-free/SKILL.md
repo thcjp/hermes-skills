@@ -147,7 +147,7 @@ for order in orders:
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
-| `deadlock detected` 死锁 | 多事务以不同顺序锁定相同资源 | 统一加锁顺序，捕获死锁异常后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令事务 |
+| `deadlock detected` 死锁 | 多事务以不同顺序锁定相同资源 | 统一加锁顺序，捕获死锁异常后检查网络连接和配置后重试事务 |
 | `too many connections` 连接耗尽 | 连接池配置过小 | 设置 `max_connections` 上限，监控连接数 |
 | `out of memory` 查询OOM | `SELECT *` 无界查询加载全表 | 添加 `LIMIT`，或使用游标分批读取 |
 | `duplicate key value` 唯一约束冲突 | 应用层检查与插入之间存在竞态 | 使用数据库唯一约束（`UNIQUE`）替代应用层检查 |

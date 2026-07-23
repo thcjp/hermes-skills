@@ -1,35 +1,48 @@
 ---
-slug: "translate-toolkit-pro"
-name: "translate-toolkit-pro"
-version: "1.0.0"
-displayName: "翻译工具专业版"
-summary: "批量文件翻译、术语库管理、翻译记忆与质量审计，适合本地化团队与内容工作室。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  翻译工具专业版，面向本地化团队与内容工作室的高阶翻译平台。核心能力:
+slug: translate-toolkit-pro
+name: translate-toolkit-pro
+version: 1.0.0
+displayName: 翻译工具专业版
+summary: 批量文件翻译、术语库管理、翻译记忆与质量审计，适合本地化团队与内容工作室。
+license: Proprietary
+edition: pro
+description: '翻译工具专业版，面向本地化团队与内容工作室的高阶翻译平台。核心能力:
+
   - 批量文件翻译与目录递归处理
+
   - 术语库管理与导入导出（TBX/CSV）
+
   - 翻译记忆（TM）复用与对齐
+
   - 翻译质量审计与差异对比
+
   - 多语言项目管理与进度追踪
 
+
   适用场景:
+
   - 本地化团队的多语言项目交付
+
   - 内容工作室的批量内容翻译
+
   - 企业文档的多语言版本管理
 
-  差异化: 专业版在免费版核心翻译能力之上扩展批量与术语管理，新增翻译记忆、质量审计、项目管理等企业级能力，并与免费版翻译规则兼容
+
+  差异化: 专业版在免费版核心翻译能力之上扩展批量与术语管理，新增翻译记忆、质量审计、项目管理等企业级能力，并与免费版翻译规则兼容'
 tags:
-  - 翻译
-  - 本地化
-  - 术语管理
-  - 专业版
+- 翻译
+- 本地化
+- 术语管理
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 翻译工具（专业版）
 
 ## 概述

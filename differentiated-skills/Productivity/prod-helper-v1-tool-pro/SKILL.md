@@ -1,29 +1,35 @@
 ---
-slug: "prod-helper-v1-tool-pro"
-name: "prod-helper-v1-tool-pro"
-version: "1.0.0"
-displayName: "效率助手 v1 专业版"
-summary: "企业级效率助手,支持团队协作、数据分析、智能提醒与工作流自动化"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 效率管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: prod-helper-v1-tool-pro
+name: prod-helper-v1-tool-pro
+version: 1.0.0
+displayName: 效率助手 v1 专业版
+summary: 企业级效率助手,支持团队协作、数据分析、智能提醒与工作流自动化
+license: Proprietary
+edition: pro
+description: '核心能力: 效率管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: 效率, 助手, 任务, 笔记, 进度追踪, 工作总结, 想法记录
+
+  适用关键词: 效率, 助手, 任务, 笔记, 进度追踪, 工作总结, 想法记录'
 tags:
-  - 效率助手
-  - 任务管理
-  - 笔记
-  - 工作总结
+- 效率助手
+- 任务管理
+- 笔记
+- 工作总结
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 效率助手 v1 专业版
 
 ## 概述

@@ -1,20 +1,26 @@
 ---
 slug: api-design-architect
 name: api-design-architect
-version: "1.1.0"
-displayName: "API设计架构师"
-summary: "契约优先设计API,从源头杜绝接口腐化,让API可演化不破坏老用户"
+version: 1.1.0
+displayName: API设计架构师
+summary: 契约优先设计API,从源头杜绝接口腐化,让API可演化不破坏老用户
 license: Proprietary
-description: |-
-  API设计架构师——在写第一行代码前先定义接口契约，从源头杜绝接口腐化与破坏性变更。适用于新API设计、模块边界划分、公共接口暴露、API演化迭代、接口质量审查等场景。遵循Hyrum定律与One-Version规则，支持REST/GraphQL/gRPC多协议，让API可演化、可维护、不破坏老用户。触发关键词：API设计、接口契约、OpenAPI、REST、GraphQL、gRPC、错误处理、API版本、模块边界、公共接口
-tags: [API设计, 技术架构, 接口规范, 独立开发, 软件设计]
+description: API设计架构师——在写第一行代码前先定义接口契约，从源头杜绝接口腐化与破坏性变更。适用于新API设计、模块边界划分、公共接口暴露、API演化迭代、接口质量审查等场景。遵循Hyrum定律与One-Version规则，支持REST/GraphQL/gRPC多协议，让API可演化、可维护、不破坏老用户。触发关键词：API设计、接口契约、OpenAPI、REST、GraphQL、gRPC、错误处理、API版本、模块边界、公共接口
+tags:
+- API设计
+- 技术架构
+- 接口规范
+- 独立开发
+- 软件设计
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 设计创作类, medium市场, enterprise复杂度, weekly频次, business层 → 创作类工具,中等频次
+pricing_model: per_use
 ---
+
 # API设计架构师
 
 契约优先的 API 设计方法。先定义接口契约，再实现。确保 API 可演化、可维护、不破坏现有用户。

@@ -1,40 +1,57 @@
 ---
-slug: "plugin-arch-tool-pro"
-name: "plugin-arch-tool-pro"
-version: "1.0.0"
-displayName: "插件架构工具-专业版"
-summary: "企业级插件开发框架,支持插件市场、权限管控、热更新与团队协作开发"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级插件架构开发工具专业版,面向团队与商业应用。核心能力:
+slug: plugin-arch-tool-pro
+name: plugin-arch-tool-pro
+version: 1.0.0
+displayName: 插件架构工具-专业版
+summary: 企业级插件开发框架,支持插件市场、权限管控、热更新与团队协作开发
+license: Proprietary
+edition: pro
+description: '企业级插件架构开发工具专业版,面向团队与商业应用。核心能力:
+
   - 插件市场与一键安装管理
+
   - 细粒度权限管控(RBAC)
+
   - 插件热更新与版本管理
+
   - 插件间通信与事件总线
+
   - 沙箱隔离与安全审计
+
   - 插件开发脚手架与 CLI 工具
+
   - 企业级主题与 UI 组件库
+
   - 团队协作与发布流水线
 
+
   适用场景:
+
   - 企业级应用插件生态建设
+
   - SaaS 平台插件市场运营
+
   - 团队协作开发插件
+
   - 第三方开发者生态管理
 
-  差异化:专业版在免费版基础上扩展插件市场、权限管控、热更新与企业级开发工具链,兼容...
+
+  差异化:专业版在免费版基础上扩展插件市场、权限管控、热更新与企业级开发工具链,兼容...'
 tags:
-  - 插件架构
-  - 企业级
-  - 权限管理
-  - 插件市场
-  - 热更新
+- 插件架构
+- 企业级
+- 权限管理
+- 插件市场
+- 热更新
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 插件架构工具 - 专业版
 
 ## 概述

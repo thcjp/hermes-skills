@@ -1,31 +1,38 @@
 ---
-slug: "api-dev-tool-pro"
-name: "api-dev-tool-pro"
-version: "1.0.0"
-displayName: "API开发工具（专业版）"
-summary: "编排完整API开发生命周期：设计、规格生成、脚手架、测试、文档与版本部署。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  API开发工具 - （专业版）
+slug: api-dev-tool-pro
+name: api-dev-tool-pro
+version: 1.0.0
+displayName: API开发工具（专业版）
+summary: 编排完整API开发生命周期：设计、规格生成、脚手架、测试、文档与版本部署。
+license: Proprietary
+edition: pro
+description: 'API开发工具 - （专业版）
+
 
   核心能力: API开发, 接口设计, OpenAPI, REST, GraphQL, 端点, 版本管理, API测试
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: API开发, 接口设计, OpenAPI, REST, GraphQL, 端点, 版本管理, API测试
+
+  适用关键词: API开发, 接口设计, OpenAPI, REST, GraphQL, 端点, 版本管理, API测试'
 tags:
-  - API开发
-  - OpenAPI
-  - 后端开发
-  - 接口设计
+- API开发
+- OpenAPI
+- 后端开发
+- 接口设计
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # API开发工具（专业版）
 
 ## 概述

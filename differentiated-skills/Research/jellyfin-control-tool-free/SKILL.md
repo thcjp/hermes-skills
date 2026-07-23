@@ -1,37 +1,52 @@
 ---
-slug: "jellyfin-control-tool-free"
-name: "jellyfin-control-tool-free"
-version: "1.0.0"
-displayName: "媒体服务器控制"
-summary: "轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。核心能力:
+slug: jellyfin-control-tool-free
+name: jellyfin-control-tool-free
+version: 1.0.0
+displayName: 媒体服务器控制
+summary: 轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。
+license: Proprietary
+edition: free
+description: '轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。核心能力:
+
   - 一键播放：搜索内容并自动开始播放
+
   - 智能续播：自动定位上次观看位置
+
   - 设备发现：自动检测可控设备
+
   - 播放控制：暂停、继续、下一集、音量控制
 
+
   适用场景:
+
   - 个人家庭影音播放控制
+
   - 电视剧追剧续播
+
   - 电影快速搜索播放
 
+
   差异化:
+
   - 免费版聚焦单设备控制，操作简单
+
   - 一键播放，无需手动操作电视
-  - 智能续播...
+
+  - 智能续播...'
 tags:
-  - 媒体
-  - Jellyfin
-  - 智能家居
-  - 播放控制
+- 媒体
+- Jellyfin
+- 智能家居
+- 播放控制
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 媒体服务器控制（免费版）
 
 ## 概述

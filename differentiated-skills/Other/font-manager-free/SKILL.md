@@ -1,23 +1,27 @@
 ---
-slug: "font-manager-free"
-name: "font-manager-free"
-version: "1.0.0"
-displayName: "字体管理器"
-summary: "网页字体排版指南，涵盖字体选择、配对规则、字重渲染、行高行宽等核心排版知识。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  字体管理器免费版解决网页排版的"常见错误"痛点：展示字体用在正文导致可读性差、两个相似字体配对看起来像错误、细字重在Windows上渲染模糊、行高过密导致阅读困难、全大写文字字母挤在一起。这些错误让网页看起来不专业，但开发者往往不知道问题出在哪里。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+slug: font-manager-free
+name: font-manager-free
+version: 1.0.0
+displayName: 字体管理器
+summary: 网页字体排版指南，涵盖字体选择、配对规则、字重渲染、行高行宽等核心排版知识。
+license: Proprietary
+edition: free
+description: 字体管理器免费版解决网页排版的"常见错误"痛点：展示字体用在正文导致可读性差、两个相似字体配对看起来像错误、细字重在Windows上渲染模糊、行高过密导致阅读困难、全大写文字字母挤在一起。这些错误让网页看起来不专业，但开发者往往不知道问题出在哪里。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-  - 字体排版
-  - 网页设计
-  - 排版规范
-  - 前端开发
+- 字体排版
+- 网页设计
+- 排版规范
+- 前端开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 字体管理器（免费版）
 
 > **网页字体排版指南。展示与正文字体区分、安全配对、字重渲染、行高行宽规范。**

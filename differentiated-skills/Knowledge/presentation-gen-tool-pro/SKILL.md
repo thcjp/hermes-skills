@@ -1,31 +1,38 @@
 ---
-slug: "presentation-gen-tool-pro"
-name: "presentation-gen-tool-pro"
-version: "1.0.0"
-displayName: "演示文稿生成（专业版）"
-summary: "从主题或文档自动生成PPT演示文稿，支持多种模板、布局与图表插入。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  演示文稿生成 - （专业版）
+slug: presentation-gen-tool-pro
+name: presentation-gen-tool-pro
+version: 1.0.0
+displayName: 演示文稿生成（专业版）
+summary: 从主题或文档自动生成PPT演示文稿，支持多种模板、布局与图表插入。
+license: Proprietary
+edition: pro
+description: '演示文稿生成 - （专业版）
+
 
   核心能力: PPT生成, 演示文稿, presentation, 幻灯片, 商务汇报, 文档转PPT, 主题演示
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: PPT生成, 演示文稿, presentation, 幻灯片, 商务汇报, 文档转PPT, 主题演示
+
+  适用关键词: PPT生成, 演示文稿, presentation, 幻灯片, 商务汇报, 文档转PPT, 主题演示'
 tags:
-  - 演示文稿
-  - PPT生成
-  - python-pptx
-  - 商务展示
+- 演示文稿
+- PPT生成
+- python-pptx
+- 商务展示
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 演示文稿生成（专业版）
 
 ## 概述

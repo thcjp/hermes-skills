@@ -1,29 +1,35 @@
 ---
-slug: "notion-pages-tool-free"
-name: "notion-pages-tool-free"
-version: "1.0.0"
-displayName: "Notion 页面管理基础版"
-summary: "搜索和管理 Notion 工作区页面与数据库,支持读取、更新与内容管理"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: notion-pages-tool-free
+name: notion-pages-tool-free
+version: 1.0.0
+displayName: Notion 页面管理基础版
+summary: 搜索和管理 Notion 工作区页面与数据库,支持读取、更新与内容管理
+license: Proprietary
+edition: free
+description: '核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: notion, 页面, 数据库, 搜索, oauth, 工作区, 内容管理
+
+  适用关键词: notion, 页面, 数据库, 搜索, oauth, 工作区, 内容管理'
 tags:
-  - Notion
-  - 页面管理
-  - OAuth
-  - 工作区
+- Notion
+- 页面管理
+- OAuth
+- 工作区
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Notion 页面管理基础版
 
 ## 概述

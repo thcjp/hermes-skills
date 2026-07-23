@@ -34,7 +34,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Docker V1迁移工具专业版为企业运维团队提供从V1到V2的完整迁移解决方案。在免费版V1命令支持之上,专业版新增自动兼容性深度扫描、批量Compose配置转换、Dockerfile现代化重构、渐进式迁移与回滚保障,帮助企业安全高效地完成Docker版本升级。
 
 专业版完全兼容免费版的所有V1命令,运维团队可从免费版无缝升级。专业版同时支持V1和V2双环境运行,确保迁移过程中业务不中断。

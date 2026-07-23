@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # SQL生成器（专业版）
 
 专业版在免费版核心能力之上，新增Schema智能感知、复杂多表JOIN生成、SQL性能优化建议、数据库迁移脚本生成、批量生成与版本管理等高级能力，专为团队协作、企业生产环境与高保真SQL生成场景设计。

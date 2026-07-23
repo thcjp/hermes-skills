@@ -1,26 +1,32 @@
 ---
-slug: "email-digest-tool-free"
-name: "email-digest-tool-free"
-version: "1.0.0"
-displayName: "邮件日报免费版"
-summary: "自动生成每日邮件摘要，支持主流邮箱，快速了解重要邮件"
-license: "Proprietary"
-edition: "free"
-description: |-
-  邮件日报免费版是一款面向个人用户的邮件摘要生成工具，通过浏览器自动化登录邮箱，
+slug: email-digest-tool-free
+name: email-digest-tool-free
+version: 1.0.0
+displayName: 邮件日报免费版
+summary: 自动生成每日邮件摘要，支持主流邮箱，快速了解重要邮件
+license: Proprietary
+edition: free
+description: '邮件日报免费版是一款面向个人用户的邮件摘要生成工具，通过浏览器自动化登录邮箱，
+
   自动获取最新邮件列表并生成每日邮件总结报告，帮助用户快速了解当日邮件概况。核心能力:
+
   - 支持 Gmail、Outlook、QQ邮箱、163邮箱等主流邮箱
-  - 复用浏览器已登录会话。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。
+
+  - 复用浏览器已登录会话。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。'
 tags:
-  - 沟通协作
-  - 邮件管理
-  - 邮件摘要
-  - 个人效率
+- 沟通协作
+- 邮件管理
+- 邮件摘要
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 邮件日报免费版
 
 **版本**: 1.0.0

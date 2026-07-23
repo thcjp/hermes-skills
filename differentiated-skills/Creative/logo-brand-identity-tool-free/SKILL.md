@@ -1,25 +1,29 @@
 ---
-slug: "logo-brand-identity-tool-free"
-name: "logo-brand-identity-tool-free"
-version: "1.0.0"
-displayName: "品牌标识设计免费版"
-summary: "AI驱动的Logo与品牌标识设计工具,提供品牌套件、配色方案、字体系统与品牌指南,适合个人与初创项目。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  品牌标识设计免费版帮助个人用户与初创团队通过AI创建完整的品牌标识。不仅仅是Logo,而是包含配色系统、字体方案、品牌指南与社交媒体模板的
-  完整品牌套件。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
+slug: logo-brand-identity-tool-free
+name: logo-brand-identity-tool-free
+version: 1.0.0
+displayName: 品牌标识设计免费版
+summary: AI驱动的Logo与品牌标识设计工具,提供品牌套件、配色方案、字体系统与品牌指南,适合个人与初创项目。
+license: Proprietary
+edition: free
+description: '品牌标识设计免费版帮助个人用户与初创团队通过AI创建完整的品牌标识。不仅仅是Logo,而是包含配色系统、字体方案、品牌指南与社交媒体模板的
+
+  完整品牌套件。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。'
 tags:
-  - 品牌设计
-  - Logo设计
-  - 品牌标识
-  - 配色方案
-  - 视觉设计
+- 品牌设计
+- Logo设计
+- 品牌标识
+- 配色方案
+- 视觉设计
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 品牌标识设计免费版
 
 ## 概述

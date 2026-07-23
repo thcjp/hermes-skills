@@ -1,32 +1,39 @@
 ---
-slug: "cdp-browser-pilot-pro"
-name: "cdp-browser-pilot-pro"
-version: "1.0.0"
-displayName: "Cdp Browser Pilot"
-summary: "企业级CDP浏览器自动化系统，含平台踩坑指南、SPA导航、连接管理、反检测与Cookie处理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  CDP浏览器领航专业版是面向团队与企业的全功能CDP浏览器自动化系统。不仅覆盖基础CDP操作，更提供平台踩坑指南（B站/小红书/Minimax等）、SPA内部导航策略、连接管理器、反自动化检测应对、Cookie高级处理与多标签页管理，确保复杂场景下的浏览器自动化稳定可靠。
+slug: cdp-browser-pilot-pro
+name: cdp-browser-pilot-pro
+version: 1.0.0
+displayName: Cdp Browser Pilot
+summary: 企业级CDP浏览器自动化系统，含平台踩坑指南、SPA导航、连接管理、反检测与Cookie处理。
+license: Proprietary
+edition: pro
+description: 'CDP浏览器领航专业版是面向团队与企业的全功能CDP浏览器自动化系统。不仅覆盖基础CDP操作，更提供平台踩坑指南（B站/小红书/Minimax等）、SPA内部导航策略、连接管理器、反自动化检测应对、Cookie高级处理与多标签页管理，确保复杂场景下的浏览器自动化稳定可靠。
+
 
   核心能力：完整CDP API（导航/点击/截图/等待/JS执行/标签页）、平台踩坑指南（B站选择器/小红书反检测/Minimax SPA路由）、SPA内部导航策略（Next.js路由跳转/div菜单点击）、连接管理器（连接复用/残留清理/自动重连）、反自动化检测应对（UA检测/行为检测规避）、Cookie高级处理（HttpOnly读取/SQLite解析）、多标签页管理、性能优化策略、多角色场景指南、多平台集成示例、版本迁移指南。
 
+
   适用场景：复杂JS渲染页面自动化、反检测网站数据抓取、SPA应用操作、多标签页并行处理、登录态复用操作、批量截图监控、表单自动填写、跨平台数据采集。
+
 
   差异化：完全中文化重写，移除原始平台标识，新增平台踩坑指南、SPA导航策略、连接管理器、反检测应对、Cookie处理、多标签页管理六大高级能力。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整CDP能力与优先支持。保留原始MIT版权声明。
 
-  适用关键词：CDP自动化、平台踩坑、SPA导航、连接管理、反检测、Cookie处理、多标签页、浏览器自动化
+
+  适用关键词：CDP自动化、平台踩坑、SPA导航、连接管理、反检测、Cookie处理、多标签页、浏览器自动化'
 tags:
-  - 浏览器自动化
-  - CDP
-  - SPA导航
-  - 反检测
-  - 平台踩坑
+- 浏览器自动化
+- CDP
+- SPA导航
+- 反检测
+- 平台踩坑
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # CDP浏览器领航（专业版）
 
 > **企业级CDP浏览器自动化系统。平台踩坑+SPA导航+连接管理+反检测，复杂场景稳定可靠。**

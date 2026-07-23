@@ -1,38 +1,52 @@
 ---
-slug: "rss-reader-ai-free"
-name: "rss-reader-ai-free"
-version: "1.0.0"
-displayName: "RSS智能阅读器免费版"
-summary: "自动抓取RSS订阅源，使用AI生成中文摘要，支持单渠道推送，适合个人用户信息聚合。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  RSS智能阅读器（免费版）—— 面向个人用户的自动化信息聚合工具。
+slug: rss-reader-ai-free
+name: rss-reader-ai-free
+version: 1.0.0
+displayName: RSS智能阅读器免费版
+summary: 自动抓取RSS订阅源，使用AI生成中文摘要，支持单渠道推送，适合个人用户信息聚合。
+license: Proprietary
+edition: free
+description: 'RSS智能阅读器（免费版）—— 面向个人用户的自动化信息聚合工具。
+
 
   核心能力:
+
   - 自动抓取RSS/Atom订阅源
+
   - AI生成中文内容摘要
+
   - SQLite去重，避免重复推送
+
   - 单渠道消息推送
 
+
   适用场景:
+
   - 个人技术博客监控与摘要
+
   - 每日新闻早报自动推送
+
   - 兴趣主题信息聚合
+
 
   差异化: 聚焦个人用户核心需求，提供开箱即用的RSS抓取与AI摘要能力，轻量易用。
 
-  适用关键词: RSS阅读器, 订阅抓取, AI摘要, 信息聚合, 内容推送, rss, reader, feed
+
+  适用关键词: RSS阅读器, 订阅抓取, AI摘要, 信息聚合, 内容推送, rss, reader, feed'
 tags:
-  - 沟通协作
-  - 信息聚合
-  - RSS
-  - AI摘要
+- 沟通协作
+- 信息聚合
+- RSS
+- AI摘要
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # RSS智能阅读器（免费版）
 
 ## 概述

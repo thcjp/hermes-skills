@@ -1,18 +1,21 @@
 ---
 slug: node-red-manager
 name: node-red-manager
-version: "1.0.0"
+version: 1.0.0
 displayName: Node Red Manager
 summary: Manage Node-RED instances via Admin API or CLI. Automate flow deployment,
   install nodes, and trou...
 license: MIT
-description: |-
-  Manage Node-RED instances via Admin API or CLI。Automate flow deployment,
-  install nodes, and trou。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
+description: 'Manage Node-RED instances via Admin API or CLI。Automate flow deployment,
+
+  install nodes, and trou。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。'
 tags: '[''Automation'', ''Operations'']'
 tools:
-  - read
-  - exec
+- read
+- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Node Red Manager

@@ -1,23 +1,28 @@
 ---
-slug: "okx-dex-token-tool-free"
-name: "okx-dex-token-tool-free"
-version: "1.0.0"
-displayName: "DEX代币数据入门"
-summary: "通过OKX DEX API查询链上代币信息，支持价格、流动性与基础交易数据获取。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器
-  API获取多链代币的实时价格、流动性池信息和基础交易数据。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: okx-dex-token-tool-free
+name: okx-dex-token-tool-free
+version: 1.0.0
+displayName: DEX代币数据入门
+summary: 通过OKX DEX API查询链上代币信息，支持价格、流动性与基础交易数据获取。
+license: Proprietary
+edition: free
+description: '面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器
+
+  API获取多链代币的实时价格、流动性池信息和基础交易数据。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-  - Finance
-  - 加密货币
-  - DEX
+- Finance
+- 加密货币
+- DEX
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # DEX代币数据入门（免费版）
 
 ## 概述

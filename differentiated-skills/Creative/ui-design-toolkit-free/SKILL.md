@@ -1,41 +1,59 @@
 ---
-slug: "ui-design-toolkit-free"
-name: "ui-design-toolkit-free"
-version: "1.0.0"
-displayName: "UI设计工具包免费版"
-summary: "UI设计原则与优选实践工具包,涵盖视觉层次、排版、色彩与间距,适合个人开发者快速上手。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的 UI 设计工具包(免费版)。核心能力:
+slug: ui-design-toolkit-free
+name: ui-design-toolkit-free
+version: 1.0.0
+displayName: UI设计工具包免费版
+summary: UI设计原则与优选实践工具包,涵盖视觉层次、排版、色彩与间距,适合个人开发者快速上手。
+license: Proprietary
+edition: free
+description: '面向个人开发者的 UI 设计工具包(免费版)。核心能力:
+
   - 视觉层次(Visual Hierarchy)设计原则
+
   - 排版(Typography)规范与字号体系
+
   - 色彩(Color)使用与语义化
+
   - 间距(Spacing)系统与网格
+
   - 组件状态(States)设计
+
   - 响应式设计基础
+
   - 暗黑模式基础
+
   - 常见设计陷阱规避
 
+
   适用场景:
+
   - 个人项目 UI 设计
+
   - 前端开发者快速搭建界面
+
   - 学习 UI 设计基础
+
   - 小型产品设计评审
 
+
   差异化:
-  - 免费版聚焦核心设计原则与常见场...
+
+  - 免费版聚焦核心设计原则与常见场...'
 tags:
-  - 创意设计
-  - UI设计
-  - 界面设计
-  - 设计原则
-  - 前端开发
+- 创意设计
+- UI设计
+- 界面设计
+- 设计原则
+- 前端开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # UI 设计工具包 - 免费版
 
 ## 概述

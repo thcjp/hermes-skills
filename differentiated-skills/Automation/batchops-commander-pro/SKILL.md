@@ -1,32 +1,39 @@
 ---
-slug: "batchops-commander-pro"
-name: "batchops-commander-pro"
-version: "1.0.0"
-displayName: "Batchops Commander"
-summary: "企业级批处理编排系统，含并行决策、高级检查点恢复、回滚模式、子Agent委派与幂等性设计。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  批处理指挥官专业版是面向团队与企业的大规模批处理编排系统。不仅覆盖批处理全生命周期，更提供并行vs串行自动决策、高级检查点恢复、回滚模式、多策略错误处理、子Agent委派与幂等性设计，确保大规模批量处理高效、安全、可恢复。
+slug: batchops-commander-pro
+name: batchops-commander-pro
+version: 1.0.0
+displayName: Batchops Commander
+summary: 企业级批处理编排系统，含并行决策、高级检查点恢复、回滚模式、子Agent委派与幂等性设计。
+license: Proprietary
+edition: pro
+description: '批处理指挥官专业版是面向团队与企业的大规模批处理编排系统。不仅覆盖批处理全生命周期，更提供并行vs串行自动决策、高级检查点恢复、回滚模式、多策略错误处理、子Agent委派与幂等性设计，确保大规模批量处理高效、安全、可恢复。
+
 
   核心能力：批处理生命周期管理、并行vs串行决策矩阵（自动选择最优策略）、高级检查点恢复（增量恢复、版本对比、断点续传）、回滚模式（失败后自动回滚已处理项）、多策略错误处理（重试/跳过/中止/人工审查/隔离五级策略）、性能优化（并行化、批处理调优、负载均衡）、子Agent委派（多Agent并行处理）、幂等性设计、大规模处理策略（分块、流式、分页）、多角色场景指南、多平台集成示例、版本迁移指南。
 
+
   适用场景：企业级数据迁移、大规模文件处理、批量API编排、ETL数据管道、日志批量分析、图片批量转换、数据库批量更新、分布式批处理调度。
+
 
   差异化：完全中文化重写，新增并行决策矩阵、高级检查点恢复、回滚模式、子Agent委派、幂等性设计、大规模处理策略六大高级能力。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整编排能力与优先支持。保留原始MIT版权声明。
 
-  适用关键词：批处理编排、并行决策、检查点恢复、回滚模式、子Agent委派、幂等性、大规模处理
+
+  适用关键词：批处理编排、并行决策、检查点恢复、回滚模式、子Agent委派、幂等性、大规模处理'
 tags:
-  - 批处理
-  - 并行决策
-  - 回滚模式
-  - 幂等性
-  - 子Agent委派
+- 批处理
+- 并行决策
+- 回滚模式
+- 幂等性
+- 子Agent委派
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 批处理指挥官（专业版）
 
 > **企业级批处理编排系统。并行决策+高级检查点+回滚模式+子Agent委派，大规模处理高效安全可恢复。**

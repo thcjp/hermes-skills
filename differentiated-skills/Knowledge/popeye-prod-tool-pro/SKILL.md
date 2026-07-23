@@ -1,31 +1,38 @@
 ---
-slug: "popeye-prod-tool-pro"
-name: "popeye-prod-tool-pro"
-version: "1.0.0"
-displayName: "生产力增强工具（专业版）"
-summary: "AI驱动的个人生产力工具，支持任务管理、时间追踪、工作流自动化与效率分析。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  生产力增强工具 - （专业版）
+slug: popeye-prod-tool-pro
+name: popeye-prod-tool-pro
+version: 1.0.0
+displayName: 生产力增强工具（专业版）
+summary: AI驱动的个人生产力工具，支持任务管理、时间追踪、工作流自动化与效率分析。
+license: Proprietary
+edition: pro
+description: '生产力增强工具 - （专业版）
+
 
   核心能力: 生产力, 任务管理, 时间追踪, 工作流, 番茄钟, 日报, 效率分析, habit tracking
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 生产力, 任务管理, 时间追踪, 工作流, 番茄钟, 日报, 效率分析, habit tracking
+
+  适用关键词: 生产力, 任务管理, 时间追踪, 工作流, 番茄钟, 日报, 效率分析, habit tracking'
 tags:
-  - 生产力
-  - 任务管理
-  - 时间追踪
-  - 工作流自动化
+- 生产力
+- 任务管理
+- 时间追踪
+- 工作流自动化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 生产力增强工具（专业版）
 
 ## 概述

@@ -16,7 +16,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # LLM 助手中枢
 
 将冗长、杂乱、高风险的文档转化为更清晰的推理和更干净的决策。针对商业和法律文档工作流的长上下文推理优化器。

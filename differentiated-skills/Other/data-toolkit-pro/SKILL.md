@@ -1,23 +1,27 @@
 ---
-slug: "data-toolkit-pro"
-name: "data-toolkit-pro"
-version: "1.0.0"
-displayName: "数据工具箱(专业版)"
-summary: "全功能数据工程平台，覆盖统计检验、质量监控、工作流自动化与高级可视化。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  数据工具箱专业版是一款面向数据团队的全功能数据工程平台，在免费版基础数据处理能力上扩展统计检验、数据质量监控、工作流自动化、高级可视化、数据血缘追踪与多源连接优化等能力。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
+slug: data-toolkit-pro
+name: data-toolkit-pro
+version: 1.0.0
+displayName: 数据工具箱(专业版)
+summary: 全功能数据工程平台，覆盖统计检验、质量监控、工作流自动化与高级可视化。
+license: Proprietary
+edition: pro
+description: 数据工具箱专业版是一款面向数据团队的全功能数据工程平台，在免费版基础数据处理能力上扩展统计检验、数据质量监控、工作流自动化、高级可视化、数据血缘追踪与多源连接优化等能力。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 数据分析
-  - 数据工程
-  - 质量监控
-  - 统计检验
+- 数据分析
+- 数据工程
+- 质量监控
+- 统计检验
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据工具箱（专业版）
 
 ## 概述

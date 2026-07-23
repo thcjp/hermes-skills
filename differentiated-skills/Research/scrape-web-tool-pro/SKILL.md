@@ -1,37 +1,52 @@
 ---
-slug: "scrape-web-tool-pro"
-name: "scrape-web-tool-pro"
-version: "1.0.0"
-displayName: "网页抓取工具专业版"
-summary: "企业级网页抓取系统,支持批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证注入"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  网页抓取工具专业版为企业团队提供高阶网页内容抓取与数据提取能力。核心能力:
+slug: scrape-web-tool-pro
+name: scrape-web-tool-pro
+version: 1.0.0
+displayName: 网页抓取工具专业版
+summary: 企业级网页抓取系统,支持批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证注入
+license: Proprietary
+edition: pro
+description: '网页抓取工具专业版为企业团队提供高阶网页内容抓取与数据提取能力。核心能力:
+
   - 批量URL并发抓取
+
   - JavaScript动态渲染支持
+
   - 自动分页遍历
+
   - 结构化输出(JSON/CSV/Excel)
+
   - 代理池与请求头定制
+
   - 认证页面抓取(Cookie/Header注入)
 
+
   适用场景:
+
   - 竞品数据批量采集
+
   - 电商价格监控
+
   - 行业目录全量抓取
+
   - 需登录的内部系统数据提取
 
-  差异化:专业版在免费版单页抓取与CSS选择器基础上,扩展批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证能力
+
+  差异化:专业版在免费版单页抓取与CSS选择器基础上,扩展批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证能力'
 tags:
-  - 研究工具
-  - 网页抓取
-  - 企业级
-  - 数据采集
+- 研究工具
+- 网页抓取
+- 企业级
+- 数据采集
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 网页抓取工具专业版
 
 ## 概述

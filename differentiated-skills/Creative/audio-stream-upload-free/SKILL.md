@@ -1,35 +1,48 @@
 ---
-slug: "audio-stream-upload-free"
-name: "audio-stream-upload-free"
-version: "1.0.0"
-displayName: "音频流上传免费版"
-summary: "快速上传音频至流媒体平台，支持基础创建、上传与完成三步流程，获取HLS流媒体链接。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  音频流上传免费版 —— 面向个人创作者的轻量级音频上传工具。核心能力:
+slug: audio-stream-upload-free
+name: audio-stream-upload-free
+version: 1.0.0
+displayName: 音频流上传免费版
+summary: 快速上传音频至流媒体平台，支持基础创建、上传与完成三步流程，获取HLS流媒体链接。
+license: Proprietary
+edition: free
+description: '音频流上传免费版 —— 面向个人创作者的轻量级音频上传工具。核心能力:
+
   - 通过三步API调用完成音频上传：创建对象 → 上传文件 → 完成处理
+
   - 支持默认快速上传模式，仅需标题即可创建音频对象
+
   - 自动计算文件MD5哈希值，确保上传完整性校验
+
   - 上传完成后获取HLS流媒体播放链接
+
   - 兼容主流音频格式（MP3、WAV、AAC等）
 
+
   适用场景:
+
   - 个人播客创作者上传音频节目
+
   - 独立音乐人发布音乐作品
+
   - 语音内容创作者分发音频内容
 
-  差异化:免费版聚焦核心上传功能，提供简洁的三步上传流程与默认配置...
+
+  差异化:免费版聚焦核心上传功能，提供简洁的三步上传流程与默认配置...'
 tags:
-  - 音频处理
-  - 流媒体
-  - 内容上传
-  - 个人创作
+- 音频处理
+- 流媒体
+- 内容上传
+- 个人创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 音频流上传免费版
 
 ## 概述

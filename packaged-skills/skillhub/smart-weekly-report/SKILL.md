@@ -3,7 +3,7 @@ slug: "smart-weekly-report"
 name: "smart-weekly-report"
 version: "1.1.3"
 displayName: "Report Generator"
-summary: "Report Generator提供（根据实际场景填充） - 按流程执行步端到端pipeline配置流程、（根据实际场景填充） - 步骤间自动质量gate检查、（根据实际场景填充） - 支持多种变体等多种处理模式等核心能力,付费版独享高级功能与批量处理。"
+summary: "周报自动生成器,按pipeline流程配置质量gate检查,支持多模式批量处理,付费版独享高级功能。"
 license: "Proprietary"
 description: |-
   自动提炼关键信息，生成结构化、专业且具有洞察力的周报。核心能力:

@@ -1,30 +1,37 @@
 ---
-slug: "knowledge-mgmt-tool-pro"
-name: "knowledge-mgmt-tool-pro"
-version: "1.0.0"
-displayName: "知识管理工具（专业版）"
-summary: "组织知识审计、分类体系设计与文档模板管理，将隐性经验转化为可检索的组织智能。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  知识管理工具 - （专业版）
+slug: knowledge-mgmt-tool-pro
+name: knowledge-mgmt-tool-pro
+version: 1.0.0
+displayName: 知识管理工具（专业版）
+summary: 组织知识审计、分类体系设计与文档模板管理，将隐性经验转化为可检索的组织智能。
+license: Proprietary
+edition: pro
+description: '知识管理工具 - （专业版）
+
 
   核心能力: 知识审计, 知识管理, 文档模板, 分类体系, 知识捕获, 组织智能, knowledge management
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 知识审计, 知识管理, 文档模板, 分类体系, 知识捕获, 组织智能, knowledge management
+
+  适用关键词: 知识审计, 知识管理, 文档模板, 分类体系, 知识捕获, 组织智能, knowledge management'
 tags:
-  - 知识管理
-  - 文档管理
-  - 组织智能
+- 知识管理
+- 文档管理
+- 组织智能
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 知识管理工具（专业版）
 
 ## 概述

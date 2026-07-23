@@ -16,7 +16,11 @@ tools:
   - - read
 - exec
 # Slack
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 Access the Slack API with managed OAuth authentication. Send messages, manage channels, list users, and automate Slack workflows.
 
 ## Quick Start

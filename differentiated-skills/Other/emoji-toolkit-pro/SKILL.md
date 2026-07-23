@@ -1,24 +1,28 @@
 ---
-slug: "emoji-toolkit-pro"
-name: "emoji-toolkit-pro"
-version: "1.0.0"
-displayName: "表情符号工具箱(专业版)"
-summary: "全功能表情符号编码系统，含批量处理、加密层、自定义编码、传输检测与水印管理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  表情符号工具箱专业版是隐秘通信与数字资产传输的完整解决方案。在免费版基础上解锁批量编解码、自定义编码方案、消息加密层、多载体表情管理、传输可靠性检测、代币安全验证、隐藏水印管理系统七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
+slug: emoji-toolkit-pro
+name: emoji-toolkit-pro
+version: 1.0.0
+displayName: 表情符号工具箱(专业版)
+summary: 全功能表情符号编码系统，含批量处理、加密层、自定义编码、传输检测与水印管理。
+license: Proprietary
+edition: pro
+description: 表情符号工具箱专业版是隐秘通信与数字资产传输的完整解决方案。在免费版基础上解锁批量编解码、自定义编码方案、消息加密层、多载体表情管理、传输可靠性检测、代币安全验证、隐藏水印管理系统七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。Use
+  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
-  - 表情符号
-  - 批量编解码
-  - 消息加密
-  - 隐秘通信
-  - 专业版
+- 表情符号
+- 批量编解码
+- 消息加密
+- 隐秘通信
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 > **从单条编解码到批量处理，从明文隐藏到加密传输。专业级隐秘通信系统。**
 
 隐秘通信不只是"藏一条消息"那么简单。专业版采用"编码-加密-传输-验证-追溯"五阶段安全通信闭环，配合七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。

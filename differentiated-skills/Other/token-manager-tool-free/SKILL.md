@@ -1,34 +1,46 @@
 ---
-slug: "token-manager-tool-free"
-name: "token-manager-tool-free"
-version: "1.0.0"
-displayName: "Token用量管理免费版"
-summary: "监控LLM API的Token用量与费用，提供省钱建议与余额提醒，适合个人开发者日常使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Token用量管理工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:
+slug: token-manager-tool-free
+name: token-manager-tool-free
+version: 1.0.0
+displayName: Token用量管理免费版
+summary: 监控LLM API的Token用量与费用，提供省钱建议与余额提醒，适合个人开发者日常使用。
+license: Proprietary
+edition: free
+description: 'Token用量管理工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:
+
   - 实时会话Token用量分析与费用估算
+
   - 余额查询与基础提醒
+
   - 省钱优化建议（上下文管理、推理优化、模型选择）
+
   - 支持 Kimi/Moonshot、OpenAI、Anthropic、Gemini、Ollama
 
+
   适用场景:
+
   - 个人开发者监控API费用
+
   - 日常会话的Token用量追踪
+
   - 余额不足时的基础提醒
 
-  差异化: 免费版聚焦核心用量监控与省钱建议，去除所有外部平台与作者引用，强化中文本地化与适用关键词...
+
+  差异化: 免费版聚焦核心用量监控与省钱建议，去除所有外部平台与作者引用，强化中文本地化与适用关键词...'
 tags:
-  - Token管理
-  - 费用监控
-  - LLM优化
-  - 免费版
+- Token管理
+- 费用监控
+- LLM优化
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Token用量管理工具（免费版）
 
 ## 概述

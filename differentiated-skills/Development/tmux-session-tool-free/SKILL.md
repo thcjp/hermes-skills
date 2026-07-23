@@ -1,40 +1,57 @@
 ---
-slug: "tmux-session-tool-free"
-name: "tmux-session-tool-free"
-version: "1.0.0"
-displayName: "Tmux会话工具免费版"
-summary: "纯tmux指令操作终端会话,支持会话定位、内容查看、指令发送与调试"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的 tmux 会话管理工具,通过纯 tmux 指令操作终端会话。核心能力:
+slug: tmux-session-tool-free
+name: tmux-session-tool-free
+version: 1.0.0
+displayName: Tmux会话工具免费版
+summary: 纯tmux指令操作终端会话,支持会话定位、内容查看、指令发送与调试
+license: Proprietary
+edition: free
+description: '面向个人开发者的 tmux 会话管理工具,通过纯 tmux 指令操作终端会话。核心能力:
+
   - 定位目标 tmux 会话与窗格
+
   - 查看会话最新交互内容
+
   - 向指定窗格发送指令
+
   - 执行 /compact 等会话命令
+
   - 转储原始缓冲区用于调试
 
+
   适用场景:
+
   - 个人开发环境会话管理
+
   - 与 tmux 中的代码助手交互
+
   - 远程终端会话调试
 
+
   差异化:
+
   - 免费版提供单会话管理能力
+
   - 纯 tmux 指令,无需额外脚本
+
   - 操作简单,开箱即用
 
-  适用关键词: tmux, session, pan...
+
+  适用关键词: tmux, session, pan...'
 tags:
-  - 终端工具
-  - tmux
-  - 会话管理
-  - 开发辅助
+- 终端工具
+- tmux
+- 会话管理
+- 开发辅助
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Tmux 会话工具免费版
 
 ## 概述

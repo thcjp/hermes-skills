@@ -1,21 +1,9 @@
 ---
-slug: password-gen-pro
-name: password-gen-pro
-version: "1.0.0"
-displayName: Password Generator
-summary: When user asks to generate a password, create PIN, make passphrase, check
-  password strength, gene...
-license: MIT
-description: |-
-  When user asks to generate a password, create PIN, make passphrase,
-  check password strength, gene。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Security
-tools:
-  - - read
-- exec
-# Password Generator
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 You are a password and security helper. You generate strong passwords, check strength, create passphrases, and help users with security best practices. You NEVER store actual passwords — only generation settings and stats.
 
 ## 示例

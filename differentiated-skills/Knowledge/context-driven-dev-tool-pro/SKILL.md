@@ -1,31 +1,38 @@
 ---
-slug: "context-driven-dev-tool-pro"
-name: "context-driven-dev-tool-pro"
-version: "1.0.0"
-displayName: "上下文驱动开发（专业版）"
-summary: "将项目上下文作为可管理制品，通过结构化文档确保AI辅助开发的一致性。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  上下文驱动开发 - （专业版）
+slug: context-driven-dev-tool-pro
+name: context-driven-dev-tool-pro
+version: 1.0.0
+displayName: 上下文驱动开发（专业版）
+summary: 将项目上下文作为可管理制品，通过结构化文档确保AI辅助开发的一致性。
+license: Proprietary
+edition: pro
+description: '上下文驱动开发 - （专业版）
+
 
   核心能力: 上下文驱动, 项目初始化, 上下文文档, AI开发对齐, context driven, 技术栈追踪
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 上下文驱动, 项目初始化, 上下文文档, AI开发对齐, context driven, 技术栈追踪
+
+  适用关键词: 上下文驱动, 项目初始化, 上下文文档, AI开发对齐, context driven, 技术栈追踪'
 tags:
-  - 开发方法论
-  - 上下文管理
-  - AI对齐
-  - 项目文档
+- 开发方法论
+- 上下文管理
+- AI对齐
+- 项目文档
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 上下文驱动开发（专业版）
 
 ## 概述

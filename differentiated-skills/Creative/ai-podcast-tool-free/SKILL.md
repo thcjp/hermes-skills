@@ -1,37 +1,51 @@
 ---
-slug: "ai-podcast-tool-free"
-name: "ai-podcast-tool-free"
-version: "1.0.0"
-displayName: "AI播客生成-免费版"
-summary: "将PDF、文本、链接转为双人对话播客,适合个人创作者快速制作音频内容。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  AI播客生成免费版,面向个人用户的文档转播客工具。
+slug: ai-podcast-tool-free
+name: ai-podcast-tool-free
+version: 1.0.0
+displayName: AI播客生成-免费版
+summary: 将PDF、文本、链接转为双人对话播客,适合个人创作者快速制作音频内容。
+license: Proprietary
+edition: free
+description: 'AI播客生成免费版,面向个人用户的文档转播客工具。
+
 
   核心能力:
+
   - 将 PDF、文本、笔记转化为双人对话播客
+
   - 支持多语种播客生成
+
   - 分步引导式交互,一次一个问题
+
   - 生成可分享的播客链接
 
+
   适用场景:
+
   - 个人创作者将文章转为播客
+
   - 学习资料音频化方便通勤收听
+
   - 内容多渠道分发(图文转音频)
+
 
   差异化:免费版聚焦核心文档转播客能力,操作简单,适合个人用户体验AI播客生成。
 
-  适用关键词: AI播客, PDF转播客, 文本转音频, 双人对话, 播客生成, 音频内容, magicpodcast
+
+  适用关键词: AI播客, PDF转播客, 文本转音频, 双人对话, 播客生成, 音频内容, magicpodcast'
 tags:
-  - Creative
-  - 播客生成
-  - AI创作
+- Creative
+- 播客生成
+- AI创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AI播客生成工具 - 免费版
 
 ## 概述

@@ -18,7 +18,11 @@ tags:
 tools:
   - - read
 - exec
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 
 # End-to-end encrypted .md documents for agents & humans to collaborate. This is a multiplayer alternative to gog and Google Docs that lets people (via CLI) and agents create, search and sync encrypted markdown docs. This service leverages https://ddocs.new which can be enabled locally or via your preferred cloud set-up to make docs accessible across any device or chatbot interface in complete privacy.
 

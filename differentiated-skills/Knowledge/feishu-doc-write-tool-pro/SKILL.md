@@ -1,31 +1,38 @@
 ---
-slug: "feishu-doc-write-tool-pro"
-name: "feishu-doc-write-tool-pro"
-version: "1.0.0"
-displayName: "飞书文档写入（专业版）"
-summary: "向飞书文档追加内容，支持按标题层级分块写入、批量块操作与格式转换。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  飞书文档写入 - （专业版）
+slug: feishu-doc-write-tool-pro
+name: feishu-doc-write-tool-pro
+version: 1.0.0
+displayName: 飞书文档写入（专业版）
+summary: 向飞书文档追加内容，支持按标题层级分块写入、批量块操作与格式转换。
+license: Proprietary
+edition: pro
+description: '飞书文档写入 - （专业版）
+
 
   核心能力: 飞书文档写入, 内容追加, 块操作, feishu write, 文档编辑, 长文档分块
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 飞书文档写入, 内容追加, 块操作, feishu write, 文档编辑, 长文档分块
+
+  适用关键词: 飞书文档写入, 内容追加, 块操作, feishu write, 文档编辑, 长文档分块'
 tags:
-  - 飞书集成
-  - 文档写入
-  - 块操作
-  - 内容追加
+- 飞书集成
+- 文档写入
+- 块操作
+- 内容追加
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 飞书文档写入（专业版）
 
 ## 概述

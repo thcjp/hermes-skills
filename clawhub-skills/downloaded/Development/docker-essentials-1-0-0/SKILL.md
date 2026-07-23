@@ -1,36 +1,7 @@
 ---
-slug: docker-essentials-1-0-0
-name: docker-essentials-1-0-0
-version: "1.0.0"
-displayName: Docker Essentials 1 
-summary: Essential Docker commands and workflows for container management, image operations,
-  and debugging.
-license: MIT
-description: |-
-  Essential Docker commands and workflows for container management, image
-  operations, and debugging。核心能力:
-
-  - 开发工具领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - 代码审查、开发规范、项目管理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元...
-tags:
-- Development
-- Operations
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Docker Essentials 1.0.0

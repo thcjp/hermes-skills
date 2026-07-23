@@ -1,39 +1,55 @@
 ---
-slug: "code-analyze-tool-free"
-name: "code-analyze-tool-free"
-version: "1.0.0"
-displayName: "代码分析工具免费版"
-summary: "结构化分析任意输入,支持数据、代码、文本、决策的优先级排序与结论推导"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的结构化分析工具,提供数据、代码、文本、决策四大领域的分析框架。核心能力:
+slug: code-analyze-tool-free
+name: code-analyze-tool-free
+version: 1.0.0
+displayName: 代码分析工具免费版
+summary: 结构化分析任意输入,支持数据、代码、文本、决策的优先级排序与结论推导
+license: Proprietary
+edition: free
+description: '面向个人开发者的结构化分析工具,提供数据、代码、文本、决策四大领域的分析框架。核心能力:
+
   - 多领域结构化分析框架(MECE、优劣势分析、预演失败等)
+
   - 优先级排序与反证机制,避免确认偏误
+
   - 事实与观点区分,标注信息来源
+
   - 一句话总结与行动建议输出
 
+
   适用场景:
+
   - 个人代码审查与技术决策
+
   - 数据分析报告整理
+
   - 技术方案对比与选型
 
+
   差异化:
+
   - 免费版提供基础分析框架与单次分析能力
+
   - 支持 Markdown 指令驱动,无需复杂配置
+
   - 完全本地化运行,数据不出本机
 
-  适用关键词: a...
+
+  适用关键词: a...'
 tags:
-  - 开发工具
-  - 代码分析
-  - 结构化思维
-  - 数据分析
+- 开发工具
+- 代码分析
+- 结构化思维
+- 数据分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 代码分析工具免费版
 
 ## 概述

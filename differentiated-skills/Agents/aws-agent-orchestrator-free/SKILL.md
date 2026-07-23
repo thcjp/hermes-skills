@@ -1,23 +1,28 @@
 ---
-slug: "aws-agent-orchestrator-free"
-name: "aws-agent-orchestrator-free"
-version: "1.0.0"
-displayName: "AWS智能体编排免费版"
-summary: "基于AWS Bedrock AgentCore与LangGraph的多智能体编排部署助手，免费体验核心编排能力，适合个人开发者快速上手。"
-license: "Proprietary"
-description: |-
-  AWS智能体编排免费版（aws-agent-orchestrator-free）面向独立开发者与一人公司，提供基于AWS Bedrock AgentCore与LangGraph的单智能体快速部署能力。它聚焦"最小可用编排"，让用户在120秒内跑通第一个HTTP服务，零成本验证多智能体可行性。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+slug: aws-agent-orchestrator-free
+name: aws-agent-orchestrator-free
+version: 1.0.0
+displayName: AWS智能体编排免费版
+summary: 基于AWS Bedrock AgentCore与LangGraph的多智能体编排部署助手，免费体验核心编排能力，适合个人开发者快速上手。
+license: Proprietary
+description: AWS智能体编排免费版（aws-agent-orchestrator-free）面向独立开发者与一人公司，提供基于AWS Bedrock
+  AgentCore与LangGraph的单智能体快速部署能力。它聚焦"最小可用编排"，让用户在120秒内跑通第一个HTTP服务，零成本验证多智能体可行性。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-  - 智能体编排
-  - AWS部署
-  - 单智能体
-  - 免费工具
+- 智能体编排
+- AWS部署
+- 单智能体
+- 免费工具
 tools:
-  - - read
-  - exec
-edition: "free"
-homepage: "https://skillhub.cn"
+- - read
+- exec
+edition: free
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # AWS智能体编排免费版（aws-agent-orchestrator-free）
 
 本Skill帮助你在AWS Bedrock AgentCore上快速部署**单智能体**服务，使用LangGraph完成StateGraph编排。免费版聚焦"上手即用"，让独立开发者在5分钟内跑通第一个可调用的HTTP智能体服务。

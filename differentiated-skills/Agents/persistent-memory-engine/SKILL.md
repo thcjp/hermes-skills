@@ -16,7 +16,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 持久记忆引擎（Persistent Memory Engine）
 
 面向 AI Agent 的**无限分层持久记忆系统**，在内置记忆之上构建并行、可扩展、可检索的结构化本地存储，解决跨会话遗忘与记忆膨胀问题。本系统完全位于 `~/memory/`，与内置 Agent 记忆并行运作，永不修改内置 `MEMORY.md` 与 workspace `memory/` 目录。

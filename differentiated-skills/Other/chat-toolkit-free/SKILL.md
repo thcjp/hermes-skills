@@ -1,34 +1,45 @@
 ---
-slug: "chat-toolkit-free"
-name: "chat-toolkit-free"
-version: "1.0.0"
-displayName: "沟通偏好工具箱(免费版)"
-summary: "基于显式反馈学习沟通偏好，自动适配语气、格式与风格的轻量工具。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  通过显式用户反馈学习沟通偏好的轻量工具，自动适配语气、格式与表达风格，将个人化沟通模式沉淀为可复用资产。核心能力：
+slug: chat-toolkit-free
+name: chat-toolkit-free
+version: 1.0.0
+displayName: 沟通偏好工具箱(免费版)
+summary: 基于显式反馈学习沟通偏好，自动适配语气、格式与风格的轻量工具。
+license: Proprietary
+edition: free
+description: '通过显式用户反馈学习沟通偏好的轻量工具，自动适配语气、格式与表达风格，将个人化沟通模式沉淀为可复用资产。核心能力：
+
 
   - 仅从用户显式反馈中学习偏好，避免从沉默中错误推断
+
   - 三阶段确认机制（实验-确认-采纳），防止误判与反复
+
   - 紧凑存储格式，单条偏好一行，便于审查与迁移
+
   - 冲突解决遵循"最新显式声明优先"，保证偏好时效性
+
 
   适用场景：
 
+
   - 长期与Agent协作的开发者希望维持一致的沟通风格
+
   - 个人助手场景下，让Agent按用户习惯回应而非通用模板
-  - 团队内部多人共享偏好基线...
+
+  - 团队内部多人共享偏好基线...'
 tags:
-  - 沟通偏好
-  - 个人化
-  - 风格适配
-  - 反馈学习
+- 沟通偏好
+- 个人化
+- 风格适配
+- 反馈学习
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 沟通偏好工具箱(免费版)
 
 一个基于显式反馈机制学习用户沟通偏好的轻量工具，让Agent在与用户长期协作过程中，自然适配其偏好的语气、格式与表达风格。

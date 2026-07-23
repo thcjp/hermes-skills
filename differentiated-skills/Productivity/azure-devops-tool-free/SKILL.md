@@ -1,28 +1,34 @@
 ---
-slug: "azure-devops-tool-free"
-name: "azure-devops-tool-free"
-version: "1.0.0"
-displayName: "Azure DevOps 基础版"
-summary: "管理 Azure DevOps 项目、仓库与分支,支持创建拉取请求和查看工作项,适合个人开发者日常使用"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: DevOps 工具链领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: azure-devops-tool-free
+name: azure-devops-tool-free
+version: 1.0.0
+displayName: Azure DevOps 基础版
+summary: 管理 Azure DevOps 项目、仓库与分支,支持创建拉取请求和查看工作项,适合个人开发者日常使用
+license: Proprietary
+edition: free
+description: '核心能力: DevOps 工具链领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: azure, devops, 拉取请求, 分支管理, 工作项, 项目列表
+
+  适用关键词: azure, devops, 拉取请求, 分支管理, 工作项, 项目列表'
 tags:
-  - DevOps
-  - 项目管理
-  - 代码协作
+- DevOps
+- 项目管理
+- 代码协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Azure DevOps 基础版
 
 ## 概述

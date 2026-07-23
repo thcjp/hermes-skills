@@ -1,20 +1,26 @@
 ---
 slug: xlsx-data-wizard
 name: xlsx-data-wizard
-version: "1.1.0"
-displayName: "Excel数据魔法师"
-summary: "openpyxl全场景Excel处理,读写格式图表透视表公式全搞定"
+version: 1.1.0
+displayName: Excel数据魔法师
+summary: openpyxl全场景Excel处理,读写格式图表透视表公式全搞定
 license: Proprietary
-description: |-
-  Excel数据魔法师——基于openpyxl实现全场景Excel文件处理。覆盖读取写入、格式化、公式、图表、透视表、多Sheet操作、合并拆分、数据校验、批注、保护全链路。同时提供WPS表格适配说明。适用于数据报表生成、Excel模板填充、批量数据处理、格式美化、图表可视化、财务报表自动化场景。触发关键词:Excel、xlsx、openpyxl、Excel处理、表格处理、数据报表、Excel格式化、Excel图表、透视表、Excel公式、WPS表格、Excel自动化
-tags: [Excel处理, 数据报表, 表格美化, 数据可视化, 办公自动化]
+description: Excel数据魔法师——基于openpyxl实现全场景Excel文件处理。覆盖读取写入、格式化、公式、图表、透视表、多Sheet操作、合并拆分、数据校验、批注、保护全链路。同时提供WPS表格适配说明。适用于数据报表生成、Excel模板填充、批量数据处理、格式美化、图表可视化、财务报表自动化场景。触发关键词:Excel、xlsx、openpyxl、Excel处理、表格处理、数据报表、Excel格式化、Excel图表、透视表、Excel公式、WPS表格、Excel自动化
+tags:
+- Excel处理
+- 数据报表
+- 表格美化
+- 数据可视化
+- 办公自动化
 tools:
-  - read
-  - exec
-suggested_price: "15.00"
-pricing_tier: "business"
-pricing_rationale: "数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
+pricing_model: per_use
 ---
+
 # Excel数据魔法师
 
 基于 openpyxl 实现全场景 Excel 文件处理。从读写到格式化,从公式到图表,从透视表到数据校验,覆盖 Excel 自动化的所有常见需求。兼容 Microsoft Excel 与 WPS 表格。

@@ -1,29 +1,35 @@
 ---
-slug: "python3-tool-free"
-name: "python3-tool-free"
-version: "1.0.0"
-displayName: "Python 环境工具基础版"
-summary: "管理 Python 项目环境,支持虚拟环境创建、依赖安装与环境诊断"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 开发工具领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: python3-tool-free
+name: python3-tool-free
+version: 1.0.0
+displayName: Python 环境工具基础版
+summary: 管理 Python 项目环境,支持虚拟环境创建、依赖安装与环境诊断
+license: Proprietary
+edition: free
+description: '核心能力: 开发工具领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: python, python3, venv, pip, 依赖, 虚拟环境, requirements
+
+  适用关键词: python, python3, venv, pip, 依赖, 虚拟环境, requirements'
 tags:
-  - Python
-  - 虚拟环境
-  - 依赖管理
-  - pip
+- Python
+- 虚拟环境
+- 依赖管理
+- pip
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Python 环境工具基础版
 
 ## 概述

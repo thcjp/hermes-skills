@@ -1,36 +1,49 @@
 ---
-slug: "telegram-chat-tool-free"
-name: "telegram-chat-tool-free"
-version: "1.0.0"
-displayName: "电报聊天工具免费版"
-summary: "轻量级Telegram Bot配置与跨实例聊天工具,支持用户艾特、消息收发与基础群组管理。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  电报聊天工具免费版,为个人用户提供 Telegram Bot 创建、配置与跨实例聊天能力,支持用户艾特、消息收发与基础群组管理。核心能力:
+slug: telegram-chat-tool-free
+name: telegram-chat-tool-free
+version: 1.0.0
+displayName: 电报聊天工具免费版
+summary: 轻量级Telegram Bot配置与跨实例聊天工具,支持用户艾特、消息收发与基础群组管理。
+license: Proprietary
+edition: free
+description: '电报聊天工具免费版,为个人用户提供 Telegram Bot 创建、配置与跨实例聊天能力,支持用户艾特、消息收发与基础群组管理。核心能力:
+
   - Telegram Bot 快速创建与配置
+
   - 跨 Bot 实例消息通信
+
   - 用户艾特(@提及)功能
+
   - 群组消息收发
+
   - 基础身份标识与消息溯源
 
+
   适用场景:
+
   - 个人用户搭建专属 Telegram Bot
+
   - 小团队跨 Bot 协作聊天
+
   - 群组内艾特提醒与消息通知
 
-  差异化:免费版聚焦个人用户与小团队的 Telegram 聊天需求,提供从零开始的 Bot 配置指南...
+
+  差异化:免费版聚焦个人用户与小团队的 Telegram 聊天需求,提供从零开始的 Bot 配置指南...'
 tags:
-  - 沟通协作
-  - 即时通讯
-  - Telegram
-  - 机器人
-  - 个人效率
+- 沟通协作
+- 即时通讯
+- Telegram
+- 机器人
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 电报聊天工具 - 免费版
 
 ## 概述

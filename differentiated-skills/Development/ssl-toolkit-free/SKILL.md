@@ -1,40 +1,57 @@
 ---
-slug: "ssl-toolkit-free"
-name: "ssl-toolkit-free"
-version: "1.0.0"
-displayName: "SSL工具箱(免费版)"
-summary: "个人用户的HTTPS配置、TLS证书管理与基础连接排障工具。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  SSL工具箱(免费版)为个人用户提供HTTPS配置、TLS证书管理与基础连接排障能力。核心能力:
-  - Let's Encrypt免费证书申请与续期
+slug: ssl-toolkit-free
+name: ssl-toolkit-free
+version: 1.0.0
+displayName: SSL工具箱(免费版)
+summary: 个人用户的HTTPS配置、TLS证书管理与基础连接排障工具。
+license: Proprietary
+edition: free
+description: 'SSL工具箱(免费版)为个人用户提供HTTPS配置、TLS证书管理与基础连接排障能力。核心能力:
+
+  - Let''s Encrypt免费证书申请与续期
+
   - 证书状态检查与详情查看
+
   - 常见错误诊断与修复
+
   - Nginx/Apache基础HTTPS配置
+
   - 证书类型选择指引
 
+
   适用场景:
+
   - 个人站点启用HTTPS
+
   - 证书过期排查与续期
+
   - 常见SSL错误诊断
 
+
   差异化:
+
   - 免费版聚焦个人站点的基础SSL管理
+
   - 移除原始平台与作者引用,纯净适配SkillHub
+
   - 提供中文友好的错误诊断表
 
-  ...
+
+  ...'
 tags:
-  - Development
-  - 安全
-  - SSL
-  - 运维
+- Development
+- 安全
+- SSL
+- 运维
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # SSL工具箱(免费版)
 
 ## 概述

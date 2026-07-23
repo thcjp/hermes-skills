@@ -1,19 +1,7 @@
 ---
-slug: toby-productivity-helper-1
-name: toby-productivity-helper-1
-version: "1.0.0"
-displayName: Toby Productivity He
-summary: "Productivity helper tool #1 for task management, time tracking, and workflow
-  optimization. Helps"
-license: MIT-0
-description: |-
-  Productivity helper tool #1 for task management, time tracking, and
-  workflow optimization。Helps。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
-tags:
-- Productivity
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # Productivity Helper #1

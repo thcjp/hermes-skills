@@ -1,38 +1,54 @@
 ---
-slug: "browser-cli-tool-pro"
-name: "browser-cli-tool-pro"
-version: "1.0.0"
-displayName: "浏览器CLI工具-专业版"
-summary: "企业级浏览器自动化CLI,支持批量任务、并发会话、错误重试与监控,面向团队生产场景"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级浏览器自动化命令行工具,在免费版核心能力之上,提供批量任务编排、
+slug: browser-cli-tool-pro
+name: browser-cli-tool-pro
+version: 1.0.0
+displayName: 浏览器CLI工具-专业版
+summary: 企业级浏览器自动化CLI,支持批量任务、并发会话、错误重试与监控,面向团队生产场景
+license: Proprietary
+edition: pro
+description: '企业级浏览器自动化命令行工具,在免费版核心能力之上,提供批量任务编排、
+
   并发会话管理、错误重试机制、监控告警与团队协作能力。核心能力:
+
   - 免费版全部能力(完全兼容)
+
   - 批量任务编排与并发执行
+
   - 错误重试与失败恢复机制
+
   - 任务队列与调度器
+
   - 监控指标采集与告警通知
+
   - 团队共享状态库
 
+
   适用场景:
+
   - 企业级批量签到与表单处理
+
   - 数据采集与自动化测试
+
   - 多账号矩阵运营
+
   - CI/CD 流水线集成
 
-  差异化:专业版面向团队与企业,提供批量、并发、重试、监控等高阶能力,并保持与免费版完全兼容
+
+  差异化:专业版面向团队与企业,提供批量、并发、重试、监控等高阶能力,并保持与免费版完全兼容'
 tags:
-  - 研究工具
-  - 浏览器自动化
-  - 企业级
-  - 批量操作
+- 研究工具
+- 浏览器自动化
+- 企业级
+- 批量操作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 浏览器CLI工具(专业版)
 
 ## 概述

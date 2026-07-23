@@ -1,41 +1,59 @@
 ---
-slug: "docker-essentials-tool-pro"
-name: "docker-essentials-tool-pro"
-version: "1.0.0"
-displayName: "Docker基础工具专业版"
-summary: "企业级Docker管理,支持镜像深度优化、安全扫描、Swarm编排、批量运维与CI/CD集成。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向企业运维团队的高级Docker管理工具,提供镜像深度优化、安全漏洞扫描、多节点编排、批量运维与CI/CD流水线集成。核心能力:
+slug: docker-essentials-tool-pro
+name: docker-essentials-tool-pro
+version: 1.0.0
+displayName: Docker基础工具专业版
+summary: 企业级Docker管理,支持镜像深度优化、安全扫描、Swarm编排、批量运维与CI/CD集成。
+license: Proprietary
+edition: pro
+description: '面向企业运维团队的高级Docker管理工具,提供镜像深度优化、安全漏洞扫描、多节点编排、批量运维与CI/CD流水线集成。核心能力:
+
   - 镜像深度优化与体积分析
+
   - 容器安全漏洞扫描
+
   - Docker Swarm多节点编排
+
   - 批量容器运维管理
+
   - 资源监控与告警
+
   - CI/CD流水线集成
 
+
   适用场景:
+
   - 企业级容器化部署
+
   - 生产环境容器运维
+
   - 安全合规扫描
+
   - DevOps流水线集成
 
+
   差异化:
+
   - 专业版完全兼容免费版命令,支持平滑升级
+
   - 提供镜像安全扫描与优化分析
-  - 支持多节...
+
+  - 支持多节...'
 tags:
-  - 开发工具
-  - Docker
-  - 容器化
-  - 企业级
-  - DevOps
+- 开发工具
+- Docker
+- 容器化
+- 企业级
+- DevOps
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 Docker基础工具专业版为企业运维团队提供高级容器管理能力。在免费版基础能力之上,专业版新增镜像深度优化分析、容器安全漏洞扫描、Docker Swarm多节点编排、批量容器运维和CI/CD流水线集成,满足企业级容器化运维需求。
 
 专业版完全兼容免费版的所有Docker命令和Compose配置,运维团队可从免费版无缝升级,已有脚本和配置无需修改即可在专业版中使用。

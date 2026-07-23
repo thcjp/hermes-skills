@@ -1,29 +1,35 @@
 ---
-slug: "quant-data-quality-tool-free"
-name: "quant-data-quality-tool-free"
-version: "1.0.0"
-displayName: "数据质量检查基础版"
-summary: "量化策略数据质量检查工具,检查数据完整性、准确性、一致性与时效性"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 数据质量领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: quant-data-quality-tool-free
+name: quant-data-quality-tool-free
+version: 1.0.0
+displayName: 数据质量检查基础版
+summary: 量化策略数据质量检查工具,检查数据完整性、准确性、一致性与时效性
+license: Proprietary
+edition: free
+description: '核心能力: 数据质量领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: 数据质量, 量化, 检查, 完整性, 准确性, 一致性, 时效性
+
+  适用关键词: 数据质量, 量化, 检查, 完整性, 准确性, 一致性, 时效性'
 tags:
-  - 数据质量
-  - 量化策略
-  - 数据检查
-  - 数据完整性
+- 数据质量
+- 量化策略
+- 数据检查
+- 数据完整性
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据质量检查基础版
 
 ## 概述

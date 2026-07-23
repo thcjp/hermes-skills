@@ -1,23 +1,27 @@
 ---
-slug: "meta-agent-optimizer-free"
-name: "meta-agent-optimizer-free"
-version: "1.0.0"
-displayName: "Meta Agent Optimizer"
-summary: "AI Agent学习/错误/特性三类日志闭环记录，从纠正与错误中提取可复用知识。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  元代理优化器免费版为AI Agent提供结构化的学习闭环系统，将零散的错误、纠正、特性需求转化为可检索、可提升、可复用的知识库。每次犯错都是进化的燃料，每次纠正都是规则的种子。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
+slug: meta-agent-optimizer-free
+name: meta-agent-optimizer-free
+version: 1.0.0
+displayName: Meta Agent Optimizer
+summary: AI Agent学习/错误/特性三类日志闭环记录，从纠正与错误中提取可复用知识。
+license: Proprietary
+edition: free
+description: 元代理优化器免费版为AI Agent提供结构化的学习闭环系统，将零散的错误、纠正、特性需求转化为可检索、可提升、可复用的知识库。每次犯错都是进化的燃料，每次纠正都是规则的种子。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 元代理优化
-  - 学习日志
-  - 错误沉淀
-  - 知识复用
+- 元代理优化
+- 学习日志
+- 错误沉淀
+- 知识复用
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 > **AI Agent的学习闭环系统。三类日志结构化记录，从错误与纠正中提取可复用知识。**
 
 AI Agent最大的浪费不是Token，而是"上次踩过的坑下次又踩"。元代理优化器免费版将零散的错误、纠正、特性需求转化为结构化的知识库，让每次犯错都成为进化的燃料。

@@ -3,7 +3,7 @@ slug: "weiyun-skills"
 name: "weiyun-skills"
 version: "1.0.10"
 displayName: "Weiyun Skills"
-summary: "Weiyun Skills提供（根据实际场景填充） - 生成生成内容、（根据实际场景填充） - 遵循专业风格规范、（根据实际场景填充） - 支持多种变体等多种变体等核心能力,付费版独享高级功能与批量处理。"
+summary: "微云技能集合,提供内容生成与专业风格规范,支持多种变体处理,付费版独享批量与高级功能。"
 license: "Proprietary"
 description: |-
   微云网盘MCP接口完整技能。

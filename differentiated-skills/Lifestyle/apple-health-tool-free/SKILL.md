@@ -1,28 +1,35 @@
 ---
-slug: "apple-health-tool-free"
-name: "apple-health-tool-free"
-version: "1.0.0"
-displayName: "健康数据助手免费版"
-summary: "个人用户与Apple健康数据对话查询,支持运动、心率、活动圆环等基础问答"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互。
+slug: apple-health-tool-free
+name: apple-health-tool-free
+version: 1.0.0
+displayName: 健康数据助手免费版
+summary: 个人用户与Apple健康数据对话查询,支持运动、心率、活动圆环等基础问答
+license: Proprietary
+edition: free
+description: '面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互。
+
   核心能力: 运动记录查询、心率趋势分析、活动圆环进度、VO2 Max 趋势、AI 教练问答
+
   适用场景: 个人健身追踪、日常健康自检、运动习惯养成
+
   差异化: 免费版聚焦核心查询能力,适合单用户日常使用,配置简单开箱即用
-  适用关键词: 健康数据, Apple Health, 心率, 运动, 活动圆环, VO2Max, fitness, workout
+
+  适用关键词: 健康数据, Apple Health, 心率, 运动, 活动圆环, VO2Max, fitness, workout'
 tags:
-  - 健康管理
-  - 个人助手
-  - Apple健康
-  - 运动追踪
-  - 数据查询
+- 健康管理
+- 个人助手
+- Apple健康
+- 运动追踪
+- 数据查询
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 健康数据助手 (免费版)
 
 ## 概述

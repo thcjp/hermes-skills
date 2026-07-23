@@ -1,25 +1,29 @@
 ---
-slug: "html-designer-tool-free"
-name: "html-designer-tool-free"
-version: "1.0.0"
-displayName: "HTML设计工具免费版"
-summary: "专业的HTML/CSS网页图形设计助手,提供视觉层级、配色、排版等核心能力,适合个人开发者快速构建精美页面。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  HTML设计工具免费版是一款面向个人开发者的网页图形设计辅助工具。通过自然语言指令驱动AI Agent生成符合专业设计原则的HTML页面,
-  涵盖视觉层级、配色理论、排版系统、响应式布局等核心设计能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
+slug: html-designer-tool-free
+name: html-designer-tool-free
+version: 1.0.0
+displayName: HTML设计工具免费版
+summary: 专业的HTML/CSS网页图形设计助手,提供视觉层级、配色、排版等核心能力,适合个人开发者快速构建精美页面。
+license: Proprietary
+edition: free
+description: 'HTML设计工具免费版是一款面向个人开发者的网页图形设计辅助工具。通过自然语言指令驱动AI Agent生成符合专业设计原则的HTML页面,
+
+  涵盖视觉层级、配色理论、排版系统、响应式布局等核心设计能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。'
 tags:
-  - 网页设计
-  - HTML
-  - CSS
-  - 视觉设计
-  - 前端开发
+- 网页设计
+- HTML
+- CSS
+- 视觉设计
+- 前端开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # HTML设计工具免费版
 
 ## 概述

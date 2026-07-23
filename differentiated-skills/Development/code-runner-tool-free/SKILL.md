@@ -1,39 +1,55 @@
 ---
-slug: "code-runner-tool-free"
-name: "code-runner-tool-free"
-version: "1.0.0"
-displayName: "代码执行工具免费版"
-summary: "通过PTY方式在非交互环境中执行编程任务,支持自动应答与文件同步"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的代码执行工具,在非交互环境中以 PTY 方式运行编程任务。核心能力:
+slug: code-runner-tool-free
+name: code-runner-tool-free
+version: 1.0.0
+displayName: 代码执行工具免费版
+summary: 通过PTY方式在非交互环境中执行编程任务,支持自动应答与文件同步
+license: Proprietary
+edition: free
+description: '面向个人开发者的代码执行工具,在非交互环境中以 PTY 方式运行编程任务。核心能力:
+
   - PTY 伪终端执行,适配非 TTY 环境
+
   - 自动应答确认提示
+
   - 项目文件同步与结果回传
+
   - 可配置超时与清理机制
 
+
   适用场景:
+
   - 自动化代码审查
+
   - 重构任务执行
+
   - 功能开发与 Bug 修复
 
+
   差异化:
+
   - 免费版提供单任务 PTY 执行能力
+
   - 适配容器、CI/CD 等非交互环境
+
   - 自动处理确认提示,无需人工干预
 
-  适用关键词: runner, code, pty, execute, non-in...
+
+  适用关键词: runner, code, pty, execute, non-in...'
 tags:
-  - 开发工具
-  - 代码执行
-  - 自动化
-  - PTY
+- 开发工具
+- 代码执行
+- 自动化
+- PTY
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 代码执行工具免费版
 
 ## 概述

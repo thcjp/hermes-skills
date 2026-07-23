@@ -31,7 +31,11 @@ tags: '[''Productivity'']'
 tools:
   - read
   - exec
+pricing_tier: "L2"
+pricing_model: "per_use"
+suggested_price: 19.9
 ---
+
 
 # Quant Data Quality
 

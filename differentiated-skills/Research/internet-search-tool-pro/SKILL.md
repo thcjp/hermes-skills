@@ -1,28 +1,35 @@
 ---
-slug: "internet-search-tool-pro"
-name: "internet-search-tool-pro"
-version: "1.0.0"
-displayName: "聚合搜索专业版"
-summary: "企业级多引擎聚合搜索工具，支持批量查询、自定义引擎、结果导出、定时任务与搜索分析，适合专业研究与数据采集。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级多引擎聚合搜索工具，支持批量查询、自定义引擎、结果导出、定时任务与搜索分析，适合专业研究与数据采集。核心能力:
+slug: internet-search-tool-pro
+name: internet-search-tool-pro
+version: 1.0.0
+displayName: 聚合搜索专业版
+summary: 企业级多引擎聚合搜索工具，支持批量查询、自定义引擎、结果导出、定时任务与搜索分析，适合专业研究与数据采集。
+license: Proprietary
+edition: pro
+description: '企业级多引擎聚合搜索工具，支持批量查询、自定义引擎、结果导出、定时任务与搜索分析，适合专业研究与数据采集。核心能力:
+
   - 批量关键词查询，并行执行数十个搜索任务
+
   - 自定义搜索引擎配置与组合
+
   - 结果导出为 JSON/CSV/Markdown 多种格式
-  - 定时任务调度。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
+
+  - 定时任务调度。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。'
 tags:
-  - 搜索
-  - 企业工具
-  - 批量查询
-  - 多引擎聚合
-  - 数据采集
+- 搜索
+- 企业工具
+- 批量查询
+- 多引擎聚合
+- 数据采集
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 聚合搜索专业版
 
 ## 概述

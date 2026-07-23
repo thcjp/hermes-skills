@@ -1,27 +1,35 @@
 ---
-slug: "excel-expert-free"
-name: "excel-expert-free"
-version: "1.0.0"
-displayName: "Excel专家免费版"
-summary: "跨平台表格诊断引擎，按问题类型选择优选工具路径，给出公式、透视表或清洗流程方案。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Excel 专家免费版面向经常与表格打交道的开发者、运营与数据分析师，提供"诊断先行"的工作流——先判断问题类型（查找、条件逻辑、清洗、汇总、自动化、建模、可视化），再选择最稳健的工具路径，避免用户在嵌套 IF、脆弱 VLOOKUP、过度使用 VBA 中挣扎。核心能力：
+slug: excel-expert-free
+name: excel-expert-free
+version: 1.0.0
+displayName: Excel专家免费版
+summary: 跨平台表格诊断引擎，按问题类型选择优选工具路径，给出公式、透视表或清洗流程方案。
+license: Proprietary
+edition: free
+description: 'Excel 专家免费版面向经常与表格打交道的开发者、运营与数据分析师，提供"诊断先行"的工作流——先判断问题类型（查找、条件逻辑、清洗、汇总、自动化、建模、可视化），再选择最稳健的工具路径，避免用户在嵌套
+  IF、脆弱 VLOOKUP、过度使用 VBA 中挣扎。核心能力：
+
 
   - 识别七大类常见表格问题并匹配最优工具
+
   - 输出可直接复制粘贴的公式、透视表配置与清洗步骤
+
   - 跨平台适配 Excel 365、旧版 Excel、Google Sheets、Numbers、Calc
-  - 标注常见错误与失败点...
+
+  - 标注常见错误与失败点...'
 tags:
-  - 集成工具
-  - 表格处理
-  - 数据分析
+- 集成工具
+- 表格处理
+- 数据分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Excel 专家（免费版）
 
 本 Skill 把 Excel 当作"决策引擎"而非教程，先诊断问题类型再给出最稳健的工具路径。免费版覆盖 7 大类常见表格场景，输出可复制的公式、透视表配置与清洗步骤。

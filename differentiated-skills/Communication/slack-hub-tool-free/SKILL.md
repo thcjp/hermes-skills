@@ -1,38 +1,53 @@
 ---
-slug: "slack-hub-tool-free"
-name: "slack-hub-tool-free"
-version: "1.0.0"
-displayName: "Slack Hub工具免费版"
-summary: "Slack消息发送与搜索基础工具，支持频道列表查看、消息发送与线程回复，适合个人日常使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Slack Hub工具（免费版）—— 面向个人用户的Slack消息发送与搜索工具。
+slug: slack-hub-tool-free
+name: slack-hub-tool-free
+version: 1.0.0
+displayName: Slack Hub工具免费版
+summary: Slack消息发送与搜索基础工具，支持频道列表查看、消息发送与线程回复，适合个人日常使用。
+license: Proprietary
+edition: free
+description: 'Slack Hub工具（免费版）—— 面向个人用户的Slack消息发送与搜索工具。
+
 
   核心能力:
+
   - 向频道或用户发送消息
+
   - 线程回复消息
+
   - 工作区内容搜索
+
   - 公开频道列表查看
 
+
   适用场景:
+
   - 日常工作消息发送
+
   - 线程内讨论回复
+
   - 快速查找历史消息
+
   - 浏览可用频道
+
 
   差异化: 聚焦个人用户核心需求，提供简洁的Slack消息发送与搜索能力，配置简单。
 
-  适用关键词: Slack发送, 线程回复, 消息搜索, 频道列表, slack, hub, send, search, thread
+
+  适用关键词: Slack发送, 线程回复, 消息搜索, 频道列表, slack, hub, send, search, thread'
 tags:
-  - 沟通协作
-  - Slack
-  - 消息搜索
+- 沟通协作
+- Slack
+- 消息搜索
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Slack Hub工具（免费版）
 
 ## 概述

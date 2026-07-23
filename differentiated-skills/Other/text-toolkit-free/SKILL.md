@@ -1,34 +1,46 @@
 ---
-slug: "text-toolkit-free"
-name: "text-toolkit-free"
-version: "1.0.0"
-displayName: "文本处理工具免费版"
-summary: "提供编码校验、空白清理、格式检测与快速变换的文本处理工具，适合个人开发日常。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  文本处理工具免费版，面向个人开发者的轻量级文本变换与清理工具。核心能力:
+slug: text-toolkit-free
+name: text-toolkit-free
+version: 1.0.0
+displayName: 文本处理工具免费版
+summary: 提供编码校验、空白清理、格式检测与快速变换的文本处理工具，适合个人开发日常。
+license: Proprietary
+edition: free
+description: '文本处理工具免费版，面向个人开发者的轻量级文本变换与清理工具。核心能力:
+
   - 编码识别与 BOM/换行符规范化
+
   - 空白字符清理与智能引号归一化
+
   - 格式检测（CSV/TSV/分隔符识别）
+
   - 常用快速变换（大小写、去重、提取邮箱/URL）
 
+
   适用场景:
+
   - 数据清洗前的格式预处理
+
   - 跨平台文本文件的换行符统一
+
   - 日常开发中的快速文本变换
 
-  差异化: 免费版聚焦核心文本清理与变换能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
+
+  差异化: 免费版聚焦核心文本清理与变换能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-  - 文本处理
-  - 数据清洗
-  - 编码规范
-  - 免费版
+- 文本处理
+- 数据清洗
+- 编码规范
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 文本处理工具（免费版）
 
 ## 概述

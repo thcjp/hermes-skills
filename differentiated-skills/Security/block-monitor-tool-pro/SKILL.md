@@ -1,27 +1,35 @@
 ---
-slug: "block-monitor-tool-pro"
-name: "block-monitor-tool-pro"
-version: "1.0.0"
-displayName: "内容验证网关专业版"
-summary: "企业级内容验证与策略管理平台,支持语义分析、批量验证、实时拦截、多语言审核与完整审计链,适合企业内容安全团队。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  内容验证网关专业版,为企业提供全方位内容验证与策略治理能力。
+slug: block-monitor-tool-pro
+name: block-monitor-tool-pro
+version: 1.0.0
+displayName: 内容验证网关专业版
+summary: 企业级内容验证与策略管理平台,支持语义分析、批量验证、实时拦截、多语言审核与完整审计链,适合企业内容安全团队。
+license: Proprietary
+edition: pro
+description: '内容验证网关专业版,为企业提供全方位内容验证与策略治理能力。
+
   核心能力:语义级内容分析、批量验证处理、实时拦截与告警、多语言审核、完整审计链、REST API集成。
+
   适用场景:企业内容安全治理、合规审计、AI输出实时管控、多租户策略管理。
+
   差异化:专业版兼容免费版检查方法,新增企业级语义分析与实时管控能力,满足规模化内容安全需求。
-  适用关键词: 语义分析, 实时拦截, 批量验证, 审计链, 多语言, content moderation, semantic analysis, audit trail
+
+  适用关键词: 语义分析, 实时拦截, 批量验证, 审计链, 多语言, content moderation, semantic analysis, audit
+  trail'
 tags:
-  - 安全
-  - 内容验证
-  - 企业版
-  - 语义分析
+- 安全
+- 内容验证
+- 企业版
+- 语义分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 专业版为企业提供完整的内容验证与策略管理平台,在免费版黑白名单基础检查之上,新增语义级内容分析、批量验证处理、实时拦截与Webhook告警、20+语言审核、完整审计链与REST API集成。专业版完全兼容免费版检查规则,已有策略配置可无缝升级,适合企业级内容安全治理与合规审计。
 
 ### 专业版核心优势

@@ -13,7 +13,11 @@ tags: '[''Creative'']'
 tools:
   - read
   - exec
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 
 # é³é¢çæ Audio Generate
 

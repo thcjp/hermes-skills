@@ -29,7 +29,11 @@ tools:
   - - read
 - exec
 # Proactive Agent
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 **By Hal Labs** — Part of the Hal Stack
 
 **A proactive, self-improving architecture for your AI agent.**

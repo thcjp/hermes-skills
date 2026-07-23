@@ -1,29 +1,35 @@
 ---
-slug: "pptx-cn-tool-pro"
-name: "pptx-cn-tool-pro"
-version: "1.0.0"
-displayName: "PPT 中文工具专业版"
-summary: "企业级中文演示文稿系统,支持中文排版引擎、本地化品牌模板与多地区适配"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 文档处理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: pptx-cn-tool-pro
+name: pptx-cn-tool-pro
+version: 1.0.0
+displayName: PPT 中文工具专业版
+summary: 企业级中文演示文稿系统,支持中文排版引擎、本地化品牌模板与多地区适配
+license: Proprietary
+edition: pro
+description: '核心能力: 文档处理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: powerpoint, pptx, 中文, 演示文稿, 幻灯片, 排版, 本地化
+
+  适用关键词: powerpoint, pptx, 中文, 演示文稿, 幻灯片, 排版, 本地化'
 tags:
-  - PowerPoint
-  - PPTX
-  - 中文
-  - 演示文稿
+- PowerPoint
+- PPTX
+- 中文
+- 演示文稿
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # PPT 中文工具专业版
 
 ## 概述

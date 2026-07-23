@@ -1,19 +1,7 @@
 ---
-slug: test
-name: test
-version: "0.0.1"
-displayName: Test
-summary: CLI for crypto portfolio tracking, market data, and CEX history. Use when
-  the user asks about cry...
-license: MIT
-description: |-
-  CLI for crypto portfolio tracking, market data, and CEX history。Use
-  when the user asks about cry。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Finance
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Test

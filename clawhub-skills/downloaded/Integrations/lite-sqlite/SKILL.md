@@ -14,7 +14,11 @@ tags:
 tools:
   - - read
 - exec
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 
 # Lite Sqlite
 Ultra-lightweight SQLite database management optimized for Skill平台 agents with minimal RAM (~2-5MB) and storage overhead.

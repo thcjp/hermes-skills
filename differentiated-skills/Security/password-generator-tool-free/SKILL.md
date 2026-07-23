@@ -1,39 +1,56 @@
 ---
-slug: "password-generator-tool-free"
-name: "password-generator-tool-free"
-version: "1.0.0"
-displayName: "密码生成器(免费版)"
-summary: "生成12-16位随机安全密码,支持大小写字母、数字、符号组合,满足个人日常密码需求"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力:
+slug: password-generator-tool-free
+name: password-generator-tool-free
+version: 1.0.0
+displayName: 密码生成器(免费版)
+summary: 生成12-16位随机安全密码,支持大小写字母、数字、符号组合,满足个人日常密码需求
+license: Proprietary
+edition: free
+description: '核心能力:
+
   - 生成12-16位随机安全密码
+
   - 支持大小写字母、数字、符号组合
+
   - 密码强度评估与可视化展示
+
   - 自动保存密码记录到本地文件
 
+
   适用场景:
+
   - 个人账户密码创建
+
   - 临时密码快速生成
+
   - 开发测试环境密码
 
+
   差异化:
+
   - 完全本地生成,不依赖外部服务
+
   - 密码强度实时评估
+
   - 自动记录历史密码
+
   - 支持自定义字符集排除
 
-  适用关键词: 密码, 生成密码, 随机密码, password, generator, 安全密码, 创建密码
+
+  适用关键词: 密码, 生成密码, 随机密码, password, generator, 安全密码, 创建密码'
 tags:
-  - 安全
-  - 密码管理
-  - 随机生成
+- 安全
+- 密码管理
+- 随机生成
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 密码生成器(免费版)
 
 ## 概述

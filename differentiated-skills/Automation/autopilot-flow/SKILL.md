@@ -1,21 +1,9 @@
 ---
-slug: "autopilot-flow"
-name: "autopilot-flow"
-version: "1.0.0"
-displayName: "自动驾驶流程"
-summary: "把抽象的"观察-抽象-设计-实现-测试-优化"六步具象化，附3个端到端模板与监控。"
-license: "Proprietary"
-description: |-
-  重复任务自动化能力包：把观察-抽象-设计-实现-测试-优化六步法每步具象化为可执行动作与产物，内置周报自动化、数据清洗自动化、文件整理自动化三个端到端模板，配套五级错误降级策略（重试→回退→排队→告警→安全停止）与自动化健康度看板。适用于每周手动做周报、每日清洗相似结构数据、下载目录天天堆满待整理文件等"做过三次以上"的重复任务。适用关键词：重复任务、自动化、周报、数据清洗、文件整理、观察抽象、自动驾驶。
-tags:
-  - 自动化
-  - 效率工具
-  - 工作流
-tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 自动驾驶流程（Autopilot Flow）
 
 把重复任务变成自动驾驶。核心信条：**不是"回答问题"，而是"看到重复→立刻构建自动化"。**

@@ -29,7 +29,11 @@ tools:
   - - read
 - exec
 # API Gateway
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Managed API routing for third-party services, provided by [Maton](https://maton.ai). Use this only for a user-requested app, account, and task.
 
 ## Quick Start

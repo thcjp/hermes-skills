@@ -1,23 +1,27 @@
 ---
-slug: "web-browsing-tool-pro"
-name: "web-browsing-tool-pro"
-version: "1.0.0"
-displayName: "网页浏览助手专业版"
-summary: "企业级网页信息获取平台,支持批量 URL 处理、定时监控、深度分析与团队协作"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  网页浏览助手专业版,面向企业团队和专业研究人员提供深度的网页信息获取能力。支持批量 URL 处理、定时内容监控、深度内容分析、团队协作等高级功能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: web-browsing-tool-pro
+name: web-browsing-tool-pro
+version: 1.0.0
+displayName: 网页浏览助手专业版
+summary: 企业级网页信息获取平台,支持批量 URL 处理、定时监控、深度分析与团队协作
+license: Proprietary
+edition: pro
+description: 网页浏览助手专业版,面向企业团队和专业研究人员提供深度的网页信息获取能力。支持批量 URL 处理、定时内容监控、深度内容分析、团队协作等高级功能。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-  - 研究工具
-  - 网页浏览
-  - 企业级
-  - 批量处理
+- 研究工具
+- 网页浏览
+- 企业级
+- 批量处理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 网页浏览助手专业版是企业级的网页信息获取平台。在完整兼容免费版所有浏览和搜索能力的基础上,专业版引入了批量 URL 处理、定时内容监控、深度内容分析、团队协作、自定义提取规则等高级能力,适用于企业竞品监控、大规模信息采集、内容监测与汇总等专业场景。
 
 专业版特别强化了规模化处理和持续监控能力,支持数百个 URL 并行处理、定时自动监控网页变化、结构化数据管道,帮助企业建立系统化的网页信息获取流程。

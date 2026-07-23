@@ -1,40 +1,58 @@
 ---
-slug: "web-vuln-assess-tool-free"
-name: "web-vuln-assess-tool-free"
-version: "1.0.0"
-displayName: "Web漏洞评估(免费版)"
-summary: "OWASP对齐的Web应用漏洞评估,覆盖19类漏洞,含检查清单与修复指南"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力:
+slug: web-vuln-assess-tool-free
+name: web-vuln-assess-tool-free
+version: 1.0.0
+displayName: Web漏洞评估(免费版)
+summary: OWASP对齐的Web应用漏洞评估,覆盖19类漏洞,含检查清单与修复指南
+license: Proprietary
+edition: free
+description: '核心能力:
+
   - 19个漏洞类别100+检查项
+
   - OWASP Top 10:2021对齐
+
   - 支持PHP/Node。js/Python/Java等20种技术栈
+
   - 安全检查清单与修复建议
+
   - 按严重程度排序的评估报告
 
+
   适用场景:
+
   - Web应用上线前安全评估
+
   - API安全漏洞检测
+
   - 渗透测试范围规划
+
   - 安全意识培训
 
+
   差异化:
+
   - 19类漏洞全覆盖(含IoT/移动端/零日)
+
   - 技术栈特定检测规则
+
   - 合规框架映射(OWASP/PCI-DSS/GDPR/HIPAA)
-  - 中文修复建...
+
+  - 中文修复建...'
 tags:
-  - 安全
-  - Web安全
-  - 漏洞评估
-  - OWASP
+- 安全
+- Web安全
+- 漏洞评估
+- OWASP
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Web漏洞评估(免费版)
 
 ## 概述

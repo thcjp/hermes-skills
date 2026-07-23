@@ -1,39 +1,55 @@
 ---
-slug: "code-delegate-tool-free"
-name: "code-delegate-tool-free"
-version: "1.0.0"
-displayName: "代码委派工具免费版"
-summary: "将编程任务委派给本地代码CLI执行,支持异步流程与单任务调试迭代"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的代码委派工具,将编程任务委派给本地代码 CLI 执行,保持主 Agent 响应性。核心能力:
+slug: code-delegate-tool-free
+name: code-delegate-tool-free
+version: 1.0.0
+displayName: 代码委派工具免费版
+summary: 将编程任务委派给本地代码CLI执行,支持异步流程与单任务调试迭代
+license: Proprietary
+edition: free
+description: '面向个人开发者的代码委派工具,将编程任务委派给本地代码 CLI 执行,保持主 Agent 响应性。核心能力:
+
   - 异步委派编程任务,不阻塞主 Agent
+
   - 单任务执行与调试迭代
+
   - 会话上下文保持(continue 模式)
+
   - 独立测试验证机制
 
+
   适用场景:
+
   - 个人项目代码编写与修改
+
   - Bug 修复与功能迭代
+
   - 代码审查与架构规划
 
+
   差异化:
+
   - 免费版提供单任务委派能力
+
   - 异步流程,主 Agent 始终响应用户
+
   - 独立测试会话验证代码质量
 
-  适用关键词: delegate, code...
+
+  适用关键词: delegate, code...'
 tags:
-  - 开发工具
-  - 代码委派
-  - 异步执行
-  - 编程辅助
+- 开发工具
+- 代码委派
+- 异步执行
+- 编程辅助
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 代码委派工具免费版
 
 ## 概述

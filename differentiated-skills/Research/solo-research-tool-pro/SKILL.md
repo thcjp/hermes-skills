@@ -1,38 +1,53 @@
 ---
-slug: "solo-research-tool-pro"
-name: "solo-research-tool-pro"
-version: "1.0.0"
-displayName: "市场研究工具专业版"
-summary: "企业级深度市场研究系统,支持MCP工具集成、多引擎搜索、收入验证、YouTube分析与深度内容抓取"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  市场研究工具专业版为企业团队提供深度市场研究与竞争分析能力。核心能力:
+slug: solo-research-tool-pro
+name: solo-research-tool-pro
+version: 1.0.0
+displayName: 市场研究工具专业版
+summary: 企业级深度市场研究系统,支持MCP工具集成、多引擎搜索、收入验证、YouTube分析与深度内容抓取
+license: Proprietary
+edition: pro
+description: '市场研究工具专业版为企业团队提供深度市场研究与竞争分析能力。核心能力:
+
   - MCP工具集成(知识库/代码图谱/会话搜索)
+
   - 多引擎搜索路由(Reddit/YouTube/GitHub)
+
   - TrustMRR收入验证(Stripe验证MRR)
+
   - YouTube评论深度挖掘
+
   - Playwright深度内容抓取
+
   - 混合搜索策略(MCP工具+WebSearch)
 
+
   适用场景:
+
   - 企业深度竞争分析
+
   - 投资标的尽职调查
+
   - 产品市场定位研究
+
   - 行业全景调研报告
 
-  差异化:专业版在免费版基础研究流程上...
+
+  差异化:专业版在免费版基础研究流程上...'
 tags:
-  - 研究工具
-  - 市场研究
-  - 企业级
-  - 竞品分析
-  - 尽职调查
+- 研究工具
+- 市场研究
+- 企业级
+- 竞品分析
+- 尽职调查
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 市场研究工具专业版
 ## 概述
 市场研究工具专业版是企业级深度市场研究与竞争分析系统。在免费版竞品分析、用户痛点挖掘、基础SEO研究、域名检查与市场规模估算的基础上,专业版扩展了MCP工具集成(知识库搜索/代码图谱/会话搜索)、多引擎搜索路由(Reddit/YouTube/GitHub专用引擎)、TrustMRR收入验证(Stripe验证MRR数据)、YouTube评论深度挖掘、Playwright深度内容抓取与混合搜索策略等企业级能力。

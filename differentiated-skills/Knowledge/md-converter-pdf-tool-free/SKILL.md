@@ -1,31 +1,38 @@
 ---
-slug: "md-converter-pdf-tool-free"
-name: "md-converter-pdf-tool-free"
-version: "1.0.0"
-displayName: "Markdown转PDF（免费版）"
-summary: "将Markdown文档转换为PDF，支持自定义样式、页眉页脚、目录生成与批量转换。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Markdown转PDF - （免费版）
+slug: md-converter-pdf-tool-free
+name: md-converter-pdf-tool-free
+version: 1.0.0
+displayName: Markdown转PDF（免费版）
+summary: 将Markdown文档转换为PDF，支持自定义样式、页眉页脚、目录生成与批量转换。
+license: Proprietary
+edition: free
+description: 'Markdown转PDF - （免费版）
+
 
   核心能力: Markdown转PDF, md转pdf, 文档转换, pandoc, 批量转换, 样式定制
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: Markdown转PDF, md转pdf, 文档转换, pandoc, 批量转换, 样式定制
+
+  适用关键词: Markdown转PDF, md转pdf, 文档转换, pandoc, 批量转换, 样式定制'
 tags:
-  - 文档转换
-  - Markdown
-  - PDF
-  - pandoc
+- 文档转换
+- Markdown
+- PDF
+- pandoc
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # Markdown转PDF（免费版）
 
 ## 概述

@@ -1,29 +1,35 @@
 ---
-slug: "note-toolkit-free"
-name: "note-toolkit-free"
-version: "1.0.0"
-displayName: "笔记工具包基础版"
-summary: "知识捕获与连接系统,支持自动组织、检索与笔记间关联,纯本地存储保护隐私"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: note-toolkit-free
+name: note-toolkit-free
+version: 1.0.0
+displayName: 笔记工具包基础版
+summary: 知识捕获与连接系统,支持自动组织、检索与笔记间关联,纯本地存储保护隐私
+license: Proprietary
+edition: free
+description: '核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: 笔记, 知识, 捕获, 检索, 连接, 知识图谱, 本地存储
+
+  适用关键词: 笔记, 知识, 捕获, 检索, 连接, 知识图谱, 本地存储'
 tags:
-  - 笔记
-  - 知识管理
-  - Zettelkasten
-  - 本地存储
+- 笔记
+- 知识管理
+- Zettelkasten
+- 本地存储
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 笔记工具包基础版
 
 ## 概述

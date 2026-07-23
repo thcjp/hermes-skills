@@ -1,29 +1,35 @@
 ---
-slug: "meeting-note-tool-free"
-name: "meeting-note-tool-free"
-version: "1.0.0"
-displayName: "会议纪要基础版"
-summary: "整理探讨与决策型会议纪要,提取结论、共识、分歧与行动项,支持 Zettelkasten 连接"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 会议管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: meeting-note-tool-free
+name: meeting-note-tool-free
+version: 1.0.0
+displayName: 会议纪要基础版
+summary: 整理探讨与决策型会议纪要,提取结论、共识、分歧与行动项,支持 Zettelkasten 连接
+license: Proprietary
+edition: free
+description: '核心能力: 会议管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: 会议, 纪要, 决策, 共识, 分歧, 行动项, 复盘, zettelkasten
+
+  适用关键词: 会议, 纪要, 决策, 共识, 分歧, 行动项, 复盘, zettelkasten'
 tags:
-  - 会议纪要
-  - 决策追踪
-  - 行动项
-  - Zettelkasten
+- 会议纪要
+- 决策追踪
+- 行动项
+- Zettelkasten
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 会议纪要基础版
 
 ## 概述

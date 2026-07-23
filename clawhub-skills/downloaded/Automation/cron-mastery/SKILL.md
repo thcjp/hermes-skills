@@ -1,19 +1,7 @@
 ---
-slug: cron-mastery
-name: cron-mastery
-version: "1.0.3"
-displayName: Cron Mastery
-summary: Master OpenClaw's timing systems. Use for scheduling reliable reminders,
-  setting up periodic main...
-license: MIT
-description: |-
-  Master OpenClaw's timing systems。Use for scheduling reliable reminders,
-  setting up periodic main。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags:
-- Automation
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Cron Mastery

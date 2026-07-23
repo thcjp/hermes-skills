@@ -1,19 +1,7 @@
 ---
-slug: code-1-0-4
-name: code-1-0-4
-version: "1.0.0"
-displayName: Code 1.0.4
-summary: Coding workflow with planning, implementation, verification, and testing
-  for clean software devel...
-license: MIT
-description: |-
-  Coding workflow with planning, implementation, verification, and testing
-  for clean software devel。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
-tags:
-- Development
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Code 1.0.4

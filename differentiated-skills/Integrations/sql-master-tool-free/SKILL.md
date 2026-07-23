@@ -1,23 +1,26 @@
 ---
-slug: "sql-master-tool-free"
-name: "sql-master-tool-free"
-version: "1.0.0"
-displayName: "SQL大师工具(免费版)"
-summary: "面向SQLite、`PostgreSQL`、MySQL的SQL全栈工具免费版，覆盖建表、查询、索引、迁移、备份核心能力。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向独立开发者与AI Agent的SQL全栈工具免费版。覆盖SQLite、`PostgreSQL`、MySQL三大数据库的Schema设计、查询模式、索引策略、迁移脚本与备份恢复等核心能力，内置JSONB查询、CTE递归、窗口函数等高级查询模式示例，帮助用户在命令行下完成数据库开发与运维的绝大多数任务
+slug: sql-master-tool-free
+name: sql-master-tool-free
+version: 1.0.0
+displayName: SQL大师工具(免费版)
+summary: 面向SQLite、`PostgreSQL`、MySQL的SQL全栈工具免费版，覆盖建表、查询、索引、迁移、备份核心能力。
+license: Proprietary
+edition: free
+description: 面向独立开发者与AI Agent的SQL全栈工具免费版。覆盖SQLite、`PostgreSQL`、MySQL三大数据库的Schema设计、查询模式、索引策略、迁移脚本与备份恢复等核心能力，内置JSONB查询、CTE递归、窗口函数等高级查询模式示例，帮助用户在命令行下完成数据库开发与运维的绝大多数任务
 tags:
-  - 集成工具
-  - 数据库
-  - SQL全栈
-  - 开发运维
+- 集成工具
+- 数据库
+- SQL全栈
+- 开发运维
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # SQL大师工具（免费版）
 
 本工具为独立开发者、运维与AI Agent提供覆盖SQLite、`PostgreSQL`、MySQL三大数据库的全栈SQL能力。免费版聚焦核心场景：Schema设计、查询编写、索引优化、迁移脚本、备份恢复，足以覆盖数据库开发与运维的绝大多数日常任务。

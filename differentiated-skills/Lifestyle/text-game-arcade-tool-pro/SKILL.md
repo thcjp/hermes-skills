@@ -1,29 +1,36 @@
 ---
-slug: "text-game-arcade-tool-pro"
-name: "text-game-arcade-tool-pro"
-version: "1.0.0"
-displayName: "文字游戏机专业版"
-summary: "企业级文字游戏平台,支持AI剧情、多人协作、图形界面与商业发布"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向游戏工作室、内容平台与教育机构的企业级文字游戏平台。
+slug: text-game-arcade-tool-pro
+name: text-game-arcade-tool-pro
+version: 1.0.0
+displayName: 文字游戏机专业版
+summary: 企业级文字游戏平台,支持AI剧情、多人协作、图形界面与商业发布
+license: Proprietary
+edition: pro
+description: '面向游戏工作室、内容平台与教育机构的企业级文字游戏平台。
+
   核心能力: AI剧情生成、多人协作、图形界面、游戏编辑器、商业发布、多语言
+
   适用场景: 商业文字游戏开发、教育互动内容、IP衍生、内容平台运营
+
   差异化: 专业版支持AI剧情与商业化,与免费版游戏格式兼容
-  适用关键词: AI剧情, 多人协作, 游戏编辑器, 商业发布, 多语言游戏, 内容平台
+
+  适用关键词: AI剧情, 多人协作, 游戏编辑器, 商业发布, 多语言游戏, 内容平台'
 tags:
-  - 文字游戏
-  - 企业级
-  - AI剧情
-  - 游戏编辑器
-  - 商业发布
-  - 多人协作
+- 文字游戏
+- 企业级
+- AI剧情
+- 游戏编辑器
+- 商业发布
+- 多人协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 文字游戏机 (专业版)
 ## 概述
 专业版面向游戏工作室、内容平台与教育机构,在免费版文字游戏生成之上,扩展 AI 剧情生成、多人协作、图形界面、游戏编辑器、商业发布、多语言等企业级能力。支持构建接近商业品质的文字游戏,适合 IP 衍生、教育互动、内容平台运营等专业场景。

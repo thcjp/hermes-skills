@@ -36,7 +36,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # 代码执行工具专业版
 ## 概述
 代码执行工具专业版为企业团队提供高级 PTY 代码执行能力。在免费版单任务执行基础上,扩展了批量并发、执行审计、CI/CD 集成、多用户隔离等功能,满足企业级自动化开发的需求。

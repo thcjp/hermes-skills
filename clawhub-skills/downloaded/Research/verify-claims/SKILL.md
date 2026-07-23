@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Verify Claims
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Verify claims and information using professional fact-checking services from around the world.
 
 ## Core Principles

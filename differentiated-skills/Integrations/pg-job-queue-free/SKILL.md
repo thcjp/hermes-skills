@@ -1,23 +1,27 @@
 ---
-slug: "pg-job-queue-free"
-name: "pg-job-queue-free"
-version: "1.0.0"
-displayName: "PG任务队列(免费版)"
-summary: "基于`PostgreSQL`的轻量任务队列，支持优先级调度、批量领取与进度跟踪，单机与小型团队适用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  PG任务队列免费版是一套基于 `PostgreSQL` 的轻量任务队列知识库，帮助独立开发者在不引入 Redis 或 RabbitMQ 的前提下，用一张数据库表实现可靠的异步任务调度。核心能力：提供基于 SKIP LOCKED 的批量领取设计、优先级调度字段、进度跟踪结构、失败重试与超时回收方案、单 Worker 串行到多 Worker 并行的演进路径
+slug: pg-job-queue-free
+name: pg-job-queue-free
+version: 1.0.0
+displayName: PG任务队列(免费版)
+summary: 基于`PostgreSQL`的轻量任务队列，支持优先级调度、批量领取与进度跟踪，单机与小型团队适用。
+license: Proprietary
+edition: free
+description: PG任务队列免费版是一套基于 `PostgreSQL` 的轻量任务队列知识库，帮助独立开发者在不引入 Redis 或 RabbitMQ 的前提下，用一张数据库表实现可靠的异步任务调度。核心能力：提供基于
+  SKIP LOCKED 的批量领取设计、优先级调度字段、进度跟踪结构、失败重试与超时回收方案、单 Worker 串行到多 Worker 并行的演进路径
 tags:
-  - 数据库
-  - 集成工具
-  - 任务队列
-  - 免费版
+- 数据库
+- 集成工具
+- 任务队列
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # PG任务队列（免费版）
 
 ## 概述

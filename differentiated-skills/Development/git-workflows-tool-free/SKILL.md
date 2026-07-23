@@ -1,34 +1,47 @@
 ---
-slug: "git-workflows-tool-free"
-name: "git-workflows-tool-free"
-version: "1.0.0"
-displayName: "Git高级操作免费版"
-summary: "Git 进阶操作助手，涵盖交互式变基、二分查找、工作树与引用日志恢复。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:
+slug: git-workflows-tool-free
+name: git-workflows-tool-free
+version: 1.0.0
+displayName: Git高级操作免费版
+summary: Git 进阶操作助手，涵盖交互式变基、二分查找、工作树与引用日志恢复。
+license: Proprietary
+edition: free
+description: '面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:
+
   - 交互式变基（rebase）整理提交历史
+
   - 二分查找（bisect）定位引入缺陷的提交
+
   - 工作树（worktree）并行多分支开发
+
   - 引用日志（reflog）恢复丢失的提交
 
+
   适用场景:
+
   - 合并前清理提交历史
+
   - 定位回归缺陷的引入提交
+
   - 同时处理多个分支任务
+
   - 误操作后的提交恢复
 
-  差异化: 免费版聚焦开发者日常高频的进阶操作，提供交互式变基与二分查找的完整指引，开箱即用
+
+  差异化: 免费版聚焦开发者日常高频的进阶操作，提供交互式变基与二分查找的完整指引，开箱即用'
 tags:
-  - 开发工具
-  - 版本控制
-  - Git进阶
+- 开发工具
+- 版本控制
+- Git进阶
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Git 高级操作助手（免费版）
 
 ## 概述

@@ -1,43 +1,63 @@
 ---
-slug: "security-audit-tool-free"
-name: "security-audit-tool-free"
-version: "1.0.0"
-displayName: "安全审计工具(免费版)"
-summary: "扫描暴露凭据、开放端口、配置问题,支持自动修复常见安全问题,适合个人与小型团队"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力:
+slug: security-audit-tool-free
+name: security-audit-tool-free
+version: 1.0.0
+displayName: 安全审计工具(免费版)
+summary: 扫描暴露凭据、开放端口、配置问题,支持自动修复常见安全问题,适合个人与小型团队
+license: Proprietary
+edition: free
+description: '核心能力:
+
   - 凭据泄露检测(API Key、Token、硬编码密码)
+
   - 开放端口扫描与防火墙检查
+
   - 配置安全验证(CORS、认证、速率限制)
+
   - 文件权限审计
+
   - Docker容器安全检查
+
   - 常见问题自动修复
 
+
   适用场景:
+
   - 部署前安全自检
+
   - 定期安全审计
+
   - 开发环境安全基线
+
   - 快速漏洞排查
 
+
   差异化:
+
   - 一键自动修复常见安全问题
+
   - 多维度扫描(凭据/端口/配置/文件/Docker)
+
   - 纯本地执行,无需外部依赖
+
   - JSON格式报告输出
 
-  适用关键词: 安全审...
+
+  适用关键词: 安全审...'
 tags:
-  - 安全
-  - 安全审计
-  - 漏洞扫描
-  - 配置检查
+- 安全
+- 安全审计
+- 漏洞扫描
+- 配置检查
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 安全审计工具(免费版)
 
 ## 概述

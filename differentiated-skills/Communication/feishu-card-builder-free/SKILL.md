@@ -1,24 +1,28 @@
 ---
-slug: "feishu-card-builder-free"
-name: "feishu-card-builder-free"
-version: "1.0.0"
-displayName: "飞书卡片免费版"
-summary: "飞书富文本卡片消息构建工具，支持Markdown与按钮交互"
-license: "Proprietary"
-edition: "free"
-description: |-
-  飞书卡片免费版是一款面向个人用户的飞书卡片消息构建与发送工具，支持向飞书用户或
-  群组发送包含 Markdown、标题、彩色头部、按钮与图片的富交互卡片消息。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。
+slug: feishu-card-builder-free
+name: feishu-card-builder-free
+version: 1.0.0
+displayName: 飞书卡片免费版
+summary: 飞书富文本卡片消息构建工具，支持Markdown与按钮交互
+license: Proprietary
+edition: free
+description: '飞书卡片免费版是一款面向个人用户的飞书卡片消息构建与发送工具，支持向飞书用户或
+
+  群组发送包含 Markdown、标题、彩色头部、按钮与图片的富交互卡片消息。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。'
 tags:
-  - 沟通协作
-  - 飞书
-  - 卡片消息
-  - 个人效率
+- 沟通协作
+- 飞书
+- 卡片消息
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 飞书卡片免费版
 
 **版本**: 1.0.0

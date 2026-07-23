@@ -16,7 +16,11 @@ tools:
   - - read
 - exec
 # Pipedrive
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 Access the Pipedrive API with managed OAuth authentication. Manage deals, persons, organizations, activities, pipelines, and more for sales CRM workflows.
 
 ## Quick Start

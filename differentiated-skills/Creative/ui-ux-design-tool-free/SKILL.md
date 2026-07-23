@@ -1,40 +1,55 @@
 ---
-slug: "ui-ux-design-tool-free"
-name: "ui-ux-design-tool-free"
-version: "1.0.0"
-displayName: "UI/UX设计指南免费版"
-summary: "移动优先的UI/UX设计指南,涵盖配色系统、字体排版、布局模式、微交互的基础设计原则"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者和小型团队的UI/UX设计入门指南,提供移动优先的设计原则、
+slug: ui-ux-design-tool-free
+name: ui-ux-design-tool-free
+version: 1.0.0
+displayName: UI/UX设计指南免费版
+summary: 移动优先的UI/UX设计指南,涵盖配色系统、字体排版、布局模式、微交互的基础设计原则
+license: Proprietary
+edition: free
+description: '面向个人开发者和小型团队的UI/UX设计入门指南,提供移动优先的设计原则、
+
   配色体系、字体排版、布局模式和基础微交互指导。核心能力:
+
   - 移动优先响应式设计原则
+
   - 基础配色系统(主色+中性色+语义色)
+
   - 8px基准字体排版体系
+
   - CSS Grid与Flexbox布局模式
+
   - 基础微交互设计(悬停/点击反馈)
+
   - Tailwind CSS快速应用指引
 
+
   适用场景:
+
   - 个人项目Web/Mobile界面设计
+
   - 独立开发者搭建基础设计体系
+
   - 小型落地页和博客的视觉规范
 
-  差异化:免费版聚焦核心设计...
+
+  差异化:免费版聚焦核心设计...'
 tags:
-  - 设计
-  - UI
-  - UX
-  - 配色
-  - 字体
-  - 响应式
-  - 前端
+- 设计
+- UI
+- UX
+- 配色
+- 字体
+- 响应式
+- 前端
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # UI/UX设计指南 - 免费版
 
 ## 概述

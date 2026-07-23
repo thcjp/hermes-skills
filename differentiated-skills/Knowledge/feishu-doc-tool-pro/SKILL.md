@@ -1,31 +1,38 @@
 ---
-slug: "feishu-doc-tool-pro"
-name: "feishu-doc-tool-pro"
-version: "1.0.0"
-displayName: "飞书文档工具（专业版）"
-summary: "读取飞书Wiki、文档、表格、多维表格内容，支持文档创建、写入、追加与块操作。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  飞书文档工具 - （专业版）
+slug: feishu-doc-tool-pro
+name: feishu-doc-tool-pro
+version: 1.0.0
+displayName: 飞书文档工具（专业版）
+summary: 读取飞书Wiki、文档、表格、多维表格内容，支持文档创建、写入、追加与块操作。
+license: Proprietary
+edition: pro
+description: '飞书文档工具 - （专业版）
+
 
   核心能力: 飞书文档, 飞书Wiki, 文档读取, 文档创建, feishu, lark, 块操作, 长文档
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 飞书文档, 飞书Wiki, 文档读取, 文档创建, feishu, lark, 块操作, 长文档
+
+  适用关键词: 飞书文档, 飞书Wiki, 文档读取, 文档创建, feishu, lark, 块操作, 长文档'
 tags:
-  - 飞书集成
-  - 文档管理
-  - Wiki
-  - API调用
+- 飞书集成
+- 文档管理
+- Wiki
+- API调用
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 飞书文档工具（专业版）
 
 ## 概述

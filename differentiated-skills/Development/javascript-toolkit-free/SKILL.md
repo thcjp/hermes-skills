@@ -1,36 +1,50 @@
 ---
-slug: "javascript-toolkit-free"
-name: "javascript-toolkit-free"
-version: "1.0.0"
-displayName: "JavaScript工具包免费版"
-summary: "JavaScript 陷阱防范与优选实践指南，覆盖异步、类型转换、闭包等核心场景。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向 JavaScript 开发者的代码陷阱防范工具，帮助编写健壮的 JS 代码。核心能力:
+slug: javascript-toolkit-free
+name: javascript-toolkit-free
+version: 1.0.0
+displayName: JavaScript工具包免费版
+summary: JavaScript 陷阱防范与优选实践指南，覆盖异步、类型转换、闭包等核心场景。
+license: Proprietary
+edition: free
+description: '面向 JavaScript 开发者的代码陷阱防范工具，帮助编写健壮的 JS 代码。核心能力:
+
   - 相等性比较陷阱（== vs ===）识别与规避
+
   - this 绑定问题分析与修复
+
   - 闭包陷阱与变量捕获防范
+
   - 数组变异陷阱与不可变操作
+
   - 异步编程陷阱与正确模式
+
   - 隐式类型转换陷阱识别
 
+
   适用场景:
+
   - JavaScript 代码编写与审查时的陷阱规避
+
   - 异步编程的错误排查
+
   - 类型转换与比较的边界情况处理
 
-  差异化: 免费版聚焦 JavaScript 核心陷阱的识别与防范...
+
+  差异化: 免费版聚焦 JavaScript 核心陷阱的识别与防范...'
 tags:
-  - 开发工具
-  - JavaScript
-  - 代码质量
-  - 异步编程
+- 开发工具
+- JavaScript
+- 代码质量
+- 异步编程
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 本工具为 JavaScript 开发者提供代码陷阱防范与优选实践指引，覆盖相等性比较、this 绑定、闭包、数组变异、异步编程、类型转换、严格模式等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 JavaScript 中常见的陷阱，编写更加健壮、可靠的代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例。
 
 ## 核心能力

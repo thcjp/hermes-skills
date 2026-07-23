@@ -1,21 +1,25 @@
 ---
-slug: "system-controller"
-name: "system-controller"
-version: "1.0.0"
-displayName: "系统控制器"
-summary: "统一管理系统进程、服务、文件与环境配置，跨平台命令映射，带操作回滚。"
-license: "Proprietary"
-description: |-
-  系统控制器为 AI Agent 提供操作系统层面的统一控制能力，覆盖进程管理、服务启停、文件事务、环境变量、计划任务与系统信息采集。它把 Linux/macOS/Windows 三套差异巨大的命令抽象为统一语义，让 Agent 用同一套指令跨平台操作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+slug: system-controller
+name: system-controller
+version: 1.0.0
+displayName: 系统控制器
+summary: 统一管理系统进程、服务、文件与环境配置，跨平台命令映射，带操作回滚。
+license: Proprietary
+description: 系统控制器为 AI Agent 提供操作系统层面的统一控制能力，覆盖进程管理、服务启停、文件事务、环境变量、计划任务与系统信息采集。它把
+  Linux/macOS/Windows 三套差异巨大的命令抽象为统一语义，让 Agent 用同一套指令跨平台操作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-  - 自动化
-  - 系统运维
-  - 跨平台控制
+- 自动化
+- 系统运维
+- 跨平台控制
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 系统控制器
 
 让 AI Agent 用一套语义操控 Linux、macOS、Windows 三大系统。本技能解决五个核心痛点：**命令碎片化**（每平台命令不同）、**操作不可逆**（误删文件/杀错进程无法回滚）、**进程终止粗暴**（直接 SIGKILL 导致数据损坏）、**服务状态不同步**（systemctl 显示 active 但实际挂了）、**变更无审计**（出问题不知道谁改了什么）。

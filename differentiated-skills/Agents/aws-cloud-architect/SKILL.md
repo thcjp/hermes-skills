@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # AWS云架构师（AWS Cloud Architect）
 
 使用本地 AWS CLI 回答关于 AWS 资源的问题。默认只读查询，仅在用户明确要求变更并确认后执行写/破坏性操作。

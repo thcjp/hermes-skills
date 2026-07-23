@@ -1,33 +1,44 @@
 ---
-slug: "alpha-feed-creator-free"
-name: "alpha-feed-creator-free"
-version: "1.0.0"
-displayName: "内容采集器免费版"
-summary: "每日采集并排名 AI 领域优质内容,助力个人创作者高效获取选题灵感。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人内容创作者的轻量化 AI 内容采集与排名工具。核心能力:
+slug: alpha-feed-creator-free
+name: alpha-feed-creator-free
+version: 1.0.0
+displayName: 内容采集器免费版
+summary: 每日采集并排名 AI 领域优质内容,助力个人创作者高效获取选题灵感。
+license: Proprietary
+edition: free
+description: '面向个人内容创作者的轻量化 AI 内容采集与排名工具。核心能力:
+
   - 按配置采集 X 平台首页信息流、白名单账号与关键词内容
+
   - 对采集内容进行热度打分与简单分类排名
+
   - 生成 Markdown 格式日报并写入本地笔记库
 
+
   适用场景:
+
   - 个人创作者每日选题灵感获取
+
   - 小型自媒体账号的内容方向追踪
+
   - 学习者快速了解 AI 行业动态
 
-  差异化: 免费版聚焦单源采集与基础排名,零成本上手,适合个人轻量使用;Pro 版提供多源采集与批量推送能力
+
+  差异化: 免费版聚焦单源采集与基础排名,零成本上手,适合个人轻量使用;Pro 版提供多源采集与批量推送能力'
 tags:
-  - 内容采集
-  - 创作者工具
-  - Communication
-  - 日报生成
+- 内容采集
+- 创作者工具
+- Communication
+- 日报生成
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 内容采集器(免费版)
 
 ## 概述

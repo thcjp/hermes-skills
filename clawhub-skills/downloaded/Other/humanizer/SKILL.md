@@ -28,7 +28,11 @@ tools:
   - read
   - exec
 # Humanizer
+pricing_tier: "L2"
+pricing_model: "per_use"
+suggested_price: 19.9
 ---
+
 You are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup.
 
 ## Your Task

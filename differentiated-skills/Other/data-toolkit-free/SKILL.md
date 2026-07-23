@@ -1,23 +1,27 @@
 ---
-slug: "data-toolkit-free"
-name: "data-toolkit-free"
-version: "1.0.0"
-displayName: "数据工具箱(免费版)"
-summary: "数据全生命周期工具，覆盖提取、清洗、分析与基础可视化。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  数据工具箱免费版是一款面向个人开发者的数据全生命周期处理工具，覆盖数据提取、清洗转换、探索性分析与基础可视化四大核心环节。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: data-toolkit-free
+name: data-toolkit-free
+version: 1.0.0
+displayName: 数据工具箱(免费版)
+summary: 数据全生命周期工具，覆盖提取、清洗、分析与基础可视化。
+license: Proprietary
+edition: free
+description: 数据工具箱免费版是一款面向个人开发者的数据全生命周期处理工具，覆盖数据提取、清洗转换、探索性分析与基础可视化四大核心环节。Use when
+  需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
 tags:
-  - 数据分析
-  - 数据清洗
-  - SQL
-  - 可视化
+- 数据分析
+- 数据清洗
+- SQL
+- 可视化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据工具箱（免费版）
 
 ## 概述

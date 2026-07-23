@@ -1,19 +1,7 @@
 ---
-slug: azure-proxy
-name: azure-proxy
-version: "1.0.0"
-displayName: Azure llm-provider P
-summary: This skill is a disclosed local proxy for routing OpenClaw requests to a
-  user-configured Azure Op...
-license: MIT
-description: |-
-  This skill is a disclosed local proxy for routing OpenClaw requests
-  to a user-configured Azure Op。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags:
-- Integrations
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Azure llm-provider Proxy

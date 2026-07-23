@@ -1,23 +1,27 @@
 ---
-slug: "audit-toolkit-free"
-name: "audit-toolkit-free"
-version: "1.0.0"
-displayName: "审计验证工具箱"
-summary: "多领域审计验证工具箱，涵盖财务核对、合规检查、技术审计与伦理评估，提供结构化审计框架。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  审计验证工具箱免费版解决AI生成内容时代"验证比创造更重要"的核心痛点。当AI可以生成一切时，价值的瓶颈不再是创造，而是验证。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
+slug: audit-toolkit-free
+name: audit-toolkit-free
+version: 1.0.0
+displayName: 审计验证工具箱
+summary: 多领域审计验证工具箱，涵盖财务核对、合规检查、技术审计与伦理评估，提供结构化审计框架。
+license: Proprietary
+edition: free
+description: 审计验证工具箱免费版解决AI生成内容时代"验证比创造更重要"的核心痛点。当AI可以生成一切时，价值的瓶颈不再是创造，而是验证。Use when
+  需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。
 tags:
-  - 审计验证
-  - 合规检查
-  - 安全审计
-  - 风险排查
+- 审计验证
+- 合规检查
+- 安全审计
+- 风险排查
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 审计验证工具箱（免费版）
 
 > **在AI可以生成一切的时代，验证才是价值的锚点。**

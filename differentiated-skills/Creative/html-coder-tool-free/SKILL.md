@@ -1,35 +1,49 @@
 ---
-slug: "html-coder-tool-free"
-name: "html-coder-tool-free"
-version: "1.0.0"
-displayName: "HTML编码工具-免费版"
-summary: "专业HTML开发工具，支持语义化标记、表单验证、响应式图片与基础可访问性。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力：
+slug: html-coder-tool-free
+name: html-coder-tool-free
+version: 1.0.0
+displayName: HTML编码工具-免费版
+summary: 专业HTML开发工具，支持语义化标记、表单验证、响应式图片与基础可访问性。
+license: Proprietary
+edition: free
+description: 'HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力：
+
   - 语义化HTML结构生成
+
   - 可访问性表单构建（HTML5验证）
+
   - 响应式图片与多媒体
+
   - 基础ARIA与可访问性支持
+
   - HTML5标准合规检查
 
+
   适用场景：
+
   - 个人网站与博客开发
+
   - 表单页面制作
+
   - 文档型网页编写
+
   - HTML学习与练习
 
-  差异化：免费版聚焦语义化HTML与基础可访问性，适合个人开发
+
+  差异化：免费版聚焦语义化HTML与基础可访问性，适合个人开发'
 tags:
-  - Creative
-  - HTML
-  - WebDevelopment
+- Creative
+- HTML
+- WebDevelopment
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # HTML编码工具（免费版）
 
 ## 概述

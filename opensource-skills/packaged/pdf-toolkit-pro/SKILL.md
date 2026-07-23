@@ -1,20 +1,26 @@
 ---
 slug: pdf-workflow-suite
 name: pdf-toolkit-pro
-version: "1.1.0"
-displayName: "PDF工具箱Pro"
-summary: "PDF全流程处理:提取合并拆分填表生成,文档数字化一站搞定"
+version: 1.1.0
+displayName: PDF工具箱Pro
+summary: PDF全流程处理:提取合并拆分填表生成,文档数字化一站搞定
 license: Apache-2.0
-description: |-
-  PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印签名、以及从HTML/Markdown/代码生成PDF。适用于文档数字化、合同处理、报表归档、表单自动化、批量PDF处理场景。触发关键词:PDF、PDF处理、文本提取、表格提取、PDF合并、PDF拆分、填表、PDF注释、文档数字化、PDF生成。
-tags: [PDF处理, 文档数字化, 文本提取, 表单填写, 文档生成]
+description: PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印签名、以及从HTML/Markdown/代码生成PDF。适用于文档数字化、合同处理、报表归档、表单自动化、批量PDF处理场景。触发关键词:PDF、PDF处理、文本提取、表格提取、PDF合并、PDF拆分、填表、PDF注释、文档数字化、PDF生成。
+tags:
+- PDF处理
+- 文档数字化
+- 文本提取
+- 表单填写
+- 文档生成
 tools:
-  - read
-  - exec
-suggested_price: "0"
-pricing_tier: "free"
-pricing_rationale: "文件处理类, large市场, enterprise复杂度, daily频次, free层 → 高频通用工具"
+- read
+- exec
+suggested_price: '0'
+pricing_tier: free
+pricing_rationale: 文件处理类, large市场, enterprise复杂度, daily频次, free层 → 高频通用工具
+pricing_model: free
 ---
+
 # PDF工具箱Pro
 
 全面处理 PDF 文档。从内容提取到文档生成,从合并拆分到表单填写,覆盖 PDF 全流程。

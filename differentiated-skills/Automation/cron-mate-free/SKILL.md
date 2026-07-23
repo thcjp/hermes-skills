@@ -1,23 +1,27 @@
 ---
-slug: "cron-mate-free"
-name: "cron-mate-free"
-version: "1.0.0"
-displayName: "cron表达式助手(免费版)"
-summary: "cron表达式辅助编写与验证工具免费版，支持自然语言转表达式、常用模板速查、基础语法验证。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  cron表达式助手免费版是面向开发者和运维人员的cron表达式辅助编写工具。将晦涩的cron语法转化为友好的交互体验：自然语言转表达式、常用模板速查、基础语法验证、人类可读翻译，让cron编写不再痛苦。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
+slug: cron-mate-free
+name: cron-mate-free
+version: 1.0.0
+displayName: cron表达式助手(免费版)
+summary: cron表达式辅助编写与验证工具免费版，支持自然语言转表达式、常用模板速查、基础语法验证。
+license: Proprietary
+edition: free
+description: cron表达式助手免费版是面向开发者和运维人员的cron表达式辅助编写工具。将晦涩的cron语法转化为友好的交互体验：自然语言转表达式、常用模板速查、基础语法验证、人类可读翻译，让cron编写不再痛苦。Use
+  when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - cron表达式
-  - 辅助编写
-  - 语法验证
-  - 自然语言
+- cron表达式
+- 辅助编写
+- 语法验证
+- 自然语言
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 > **写cron不用查文档。自然语言描述，自动生成表达式，一键验证语法。**
 
 将"每天早上8点"翻译成 `0 8 * * *`，将 `0 8 * * 1-5` 翻译成"工作日每天8点"。本技能提供cron表达式的辅助编写与验证能力，让定时规则编写变得直观高效。

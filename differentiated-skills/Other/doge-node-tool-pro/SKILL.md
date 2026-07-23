@@ -1,24 +1,28 @@
 ---
-slug: "doge-node-tool-pro"
-name: "doge-node-tool-pro"
-version: "1.0.0"
-displayName: "DOGE节点专业版"
-summary: "企业级Dogecoin节点运维引擎，支持转账打赏、健康监控、自动重启与多节点集群管理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
+slug: doge-node-tool-pro
+name: doge-node-tool-pro
+version: 1.0.0
+displayName: DOGE节点专业版
+summary: 企业级Dogecoin节点运维引擎，支持转账打赏、健康监控、自动重启与多节点集群管理。
+license: Proprietary
+edition: pro
+description: DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
 tags:
-  - Dogecoin
-  - 区块链运维
-  - 打赏系统
-  - 监控告警
-  - 企业工具
+- Dogecoin
+- 区块链运维
+- 打赏系统
+- 监控告警
+- 企业工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # DOGE节点专业版（Doge Node Tool Pro）
 
 ## 概述

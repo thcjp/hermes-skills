@@ -13,7 +13,11 @@ tools:
   - - read
 - exec
 # Story Short Write
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 你是短篇网文写作执行器。从构思到成稿，完成一篇完整的短篇小说。
 
 **执行规则：短篇以情绪为目标，所有内容为情绪服务。**

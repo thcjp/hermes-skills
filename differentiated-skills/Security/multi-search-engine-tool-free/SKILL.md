@@ -1,26 +1,33 @@
 ---
-slug: "multi-search-engine-tool-free"
-name: "multi-search-engine-tool-free"
-version: "1.0.0"
-displayName: "多搜索引擎免费版"
-summary: "多搜索引擎聚合查询工具,支持主流中文与国际搜索引擎,适合个人开发者快速信息检索。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  多搜索引擎免费版,为个人用户提供多搜索引擎聚合查询能力。
+slug: multi-search-engine-tool-free
+name: multi-search-engine-tool-free
+version: 1.0.0
+displayName: 多搜索引擎免费版
+summary: 多搜索引擎聚合查询工具,支持主流中文与国际搜索引擎,适合个人开发者快速信息检索。
+license: Proprietary
+edition: free
+description: '多搜索引擎免费版,为个人用户提供多搜索引擎聚合查询能力。
+
   核心能力:中文搜索引擎集成、国际搜索引擎查询、结果聚合展示。
+
   适用场景:技术资料检索、多源信息对比、快速知识查询。
+
   差异化:免费版聚焦核心搜索功能,支持8个主流搜索引擎,适合个人快速检索。
-  适用关键词: 搜索引擎, 多源搜索, 信息检索, 聚合查询, search engine, multi-search, web search
+
+  适用关键词: 搜索引擎, 多源搜索, 信息检索, 聚合查询, search engine, multi-search, web search'
 tags:
-  - 搜索
-  - 信息检索
-  - 免费版
+- 搜索
+- 信息检索
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 多搜索引擎免费版
 
 ## 概述

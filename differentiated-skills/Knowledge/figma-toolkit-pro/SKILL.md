@@ -1,31 +1,38 @@
 ---
-slug: "figma-toolkit-pro"
-name: "figma-toolkit-pro"
-version: "1.0.0"
-displayName: "Figma设计工具包（专业版）"
-summary: "从Figma设计稿获取设计上下文、截图、变量与资源，并转化为生产代码。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Figma设计工具包 - （专业版）
+slug: figma-toolkit-pro
+name: figma-toolkit-pro
+version: 1.0.0
+displayName: Figma设计工具包（专业版）
+summary: 从Figma设计稿获取设计上下文、截图、变量与资源，并转化为生产代码。
+license: Proprietary
+edition: pro
+description: 'Figma设计工具包 - （专业版）
+
 
   核心能力: Figma, 设计转代码, 设计导出, 设计变量, design to code, figma to react, 组件生成
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: Figma, 设计转代码, 设计导出, 设计变量, design to code, figma to react, 组件生成
+
+  适用关键词: Figma, 设计转代码, 设计导出, 设计变量, design to code, figma to react, 组件生成'
 tags:
-  - 设计转码
-  - Figma
-  - 设计资源
-  - 组件生成
+- 设计转码
+- Figma
+- 设计资源
+- 组件生成
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Figma设计工具包（专业版）
 
 ## 概述

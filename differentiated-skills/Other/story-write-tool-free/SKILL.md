@@ -1,39 +1,55 @@
 ---
-slug: "story-write-tool-free"
-name: "story-write-tool-free"
-version: "1.0.0"
-displayName: "长篇网文写作-免费版"
-summary: "长篇网文创作助手,支持大纲管理、章节生成与一致性检查,适合个人作者"
-license: "Proprietary"
-edition: "free"
-description: |-
-  长篇网文创作助手免费版,面向个人网文作者。
+slug: story-write-tool-free
+name: story-write-tool-free
+version: 1.0.0
+displayName: 长篇网文写作-免费版
+summary: 长篇网文创作助手,支持大纲管理、章节生成与一致性检查,适合个人作者
+license: Proprietary
+edition: free
+description: '长篇网文创作助手免费版,面向个人网文作者。
+
 
   核心能力:
+
   - 小说大纲与设定管理
+
   - 章节内容生成与续写
+
   - 人物卡与设定集管理
+
   - 基础一致性检查
+
   - 写作风格保持
+
   - 本地文件管理
 
+
   适用场景:
+
   - 个人长篇网文创作
+
   - 小说大纲规划
+
   - 日常章节更新
+
 
   差异化:免费版提供基础写作辅助。PRO版扩展批量生成、市场适配与团队协作。
 
-  适用关键词: 网文, 写作, 创作, 大纲, 章节, 续写, 人物卡, 小说写作
+
+  适用关键词: 网文, 写作, 创作, 大纲, 章节, 续写, 人物卡, 小说写作'
 tags:
-  - 网文创作
-  - 写作辅助
-  - 长篇小说
+- 网文创作
+- 写作辅助
+- 长篇小说
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 长篇网文写作 - 免费版
 
 ## 概述

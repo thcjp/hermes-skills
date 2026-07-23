@@ -1,32 +1,39 @@
 ---
-slug: "memory-fortress-pro"
-name: "memory-fortress-pro"
-version: "1.0.0"
-displayName: "记忆堡垒(专业版)"
-summary: "AI Agent六层记忆系统专业版，含向量语义搜索、Mem0自动提取、云备份，全面覆盖记忆管理需求。"
-license: "Proprietary"
-description: |-
-  记忆堡垒专业版是在免费版基础上的全功能升级，为AI Agent提供终极记忆系统。采用六层架构（热内存/温存储/冷存储/归档/云备份/自动提取），基于WAL协议确保持久化。专业版解锁向量语义搜索、Mem0自动提取、云备份三大高级功能，实现跨设备同步与智能记忆管理。
+slug: memory-fortress-pro
+name: memory-fortress-pro
+version: 1.0.0
+displayName: 记忆堡垒(专业版)
+summary: AI Agent六层记忆系统专业版，含向量语义搜索、Mem0自动提取、云备份，全面覆盖记忆管理需求。
+license: Proprietary
+description: '记忆堡垒专业版是在免费版基础上的全功能升级，为AI Agent提供终极记忆系统。采用六层架构（热内存/温存储/冷存储/归档/云备份/自动提取），基于WAL协议确保持久化。专业版解锁向量语义搜索、Mem0自动提取、云备份三大高级功能，实现跨设备同步与智能记忆管理。
+
 
   核心能力：会话状态热内存（WAL协议）、向量数据库语义检索（LanceDB）、Git-Notes知识图谱冷存储、Mem0对话自动事实提取（减少80%token）、云备份跨设备同步、策展归档体系、记忆卫生维护、失败模式诊断。六大层级全部启用，记忆永不丢失。
 
+
   适用场景：长期项目协作记忆、跨会话决策追踪、团队知识沉淀、Agent上下文持久化、错误经验归档与复用、多项目并行记忆管理、跨设备知识库同步、大规模记忆自动提取。
+
 
   差异化：基于开源记忆系统方法深度改造，完全中文化，路径改为~/workspace标准目录，新增三大高级功能、多角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整六层架构与优先支持。保留原始MIT版权声明。
 
-  适用关键词：记忆系统、长期记忆、向量搜索、自动提取、云备份、WAL协议、知识图谱、跨设备同步
+
+  适用关键词：记忆系统、长期记忆、向量搜索、自动提取、云备份、WAL协议、知识图谱、跨设备同步'
 tags:
-  - 记忆系统
-  - Agent记忆
-  - 向量搜索
-  - 知识管理
-  - 跨设备同步
+- 记忆系统
+- Agent记忆
+- 向量搜索
+- 知识管理
+- 跨设备同步
 tools:
-  - read
-  - exec
-edition: "pro"
-homepage: "https://skillhub.cn"
+- read
+- exec
+edition: pro
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 记忆堡垒（专业版）
 
 > **AI Agent的终极记忆系统。六层架构全启用，向量搜索+自动提取+云备份，记忆永不丢失。**

@@ -1,23 +1,28 @@
 ---
-slug: "auto-monitor-tool-free"
-name: "auto-monitor-tool-free"
-version: "1.0.0"
-displayName: "系统监控入门工具"
-summary: "个人服务器监控工具，支持CPU/内存/磁盘基础指标与简单告警通知。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人开发者的轻量级系统监控工具。支持CPU、内存、磁盘、网络等
-  基础指标监控，提供简单的阈值告警与历史数据记录。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
+slug: auto-monitor-tool-free
+name: auto-monitor-tool-free
+version: 1.0.0
+displayName: 系统监控入门工具
+summary: 个人服务器监控工具，支持CPU/内存/磁盘基础指标与简单告警通知。
+license: Proprietary
+edition: free
+description: '面向个人开发者的轻量级系统监控工具。支持CPU、内存、磁盘、网络等
+
+  基础指标监控，提供简单的阈值告警与历史数据记录。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
 tags:
-  - Operations
-  - 系统监控
-  - 运维
+- Operations
+- 系统监控
+- 运维
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 系统监控入门工具（免费版）
 
 ## 概述

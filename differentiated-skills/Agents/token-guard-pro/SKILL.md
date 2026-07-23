@@ -1,22 +1,26 @@
 ---
-slug: "token-guard-pro"
-name: "token-guard-pro"
-version: "1.0.0"
-displayName: "Token守护者"
-summary: "解决压缩损质、缓存命中低、无模型路由、预算失控的Token成本守护器"
-license: "Proprietary"
-description: |-
-  面向 AI Agent 的 token 成本优化系统，直击压缩损质、缓存命中低、无模型路由、预算失控四大痛点。适用于长会话治理、高频问答缓存、多模型混合调用、企业预算管控等场景。核心能力含分级上下文压缩、三层语义缓存、自适应模型路由、预算守护、Prefix Cache 支持。适用关键词：token优化、成本降低、语义缓存、上下文压缩、模型路由、预算控制、token saver、semantic cache。
+slug: token-guard-pro
+name: token-guard-pro
+version: 1.0.0
+displayName: Token守护者
+summary: 解决压缩损质、缓存命中低、无模型路由、预算失控的Token成本守护器
+license: Proprietary
+description: 面向 AI Agent 的 token 成本优化系统，直击压缩损质、缓存命中低、无模型路由、预算失控四大痛点。适用于长会话治理、高频问答缓存、多模型混合调用、企业预算管控等场景。核心能力含分级上下文压缩、三层语义缓存、自适应模型路由、预算守护、Prefix
+  Cache 支持。适用关键词：token优化、成本降低、语义缓存、上下文压缩、模型路由、预算控制、token saver、semantic cache。
 tags:
-  - Token优化
-  - 成本控制
-  - 语义缓存
-  - 模型路由
+- Token优化
+- 成本控制
+- 语义缓存
+- 模型路由
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # Token 守护者（Token Guard Pro）
 
 面向 AI Agent 的 **token 成本优化系统**，用三层缓存 + 自适应压缩 + 模型路由 + 预算守护，在不牺牲响应质量的前提下降低 50-80% 的 token 成本。代码块、错误消息、关键决策永不压缩，质量下降 > 15% 时自动回滚。

@@ -1,22 +1,26 @@
 ---
-slug: "api-toolkit-free"
-name: "api-toolkit-free"
-version: "1.0.0"
-displayName: "API工具箱(免费版)"
-summary: "轻量级API测试调试工具箱，覆盖请求构造、认证、错误诊断与文档速查，60秒上手。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕"请求构造—认证管理—错误诊断—文档速查"四件事，提供可复制即用的curl/HTTPie模板、常见认证流程速查表、HTTP状态码与错误体诊断决策树，以及一份覆盖15类共80+主流第三方服务的端点索引。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+slug: api-toolkit-free
+name: api-toolkit-free
+version: 1.0.0
+displayName: API工具箱(免费版)
+summary: 轻量级API测试调试工具箱，覆盖请求构造、认证、错误诊断与文档速查，60秒上手。
+license: Proprietary
+edition: free
+description: API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕"请求构造—认证管理—错误诊断—文档速查"四件事，提供可复制即用的curl/HTTPie模板、常见认证流程速查表、HTTP状态码与错误体诊断决策树，以及一份覆盖15类共80+主流第三方服务的端点索引。Use
+  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
 tags:
-  - API测试
-  - 接口调试
-  - 集成工具
+- API测试
+- 接口调试
+- 集成工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # API工具箱（免费版）
 
 > **把"接口联调"从一上午压缩到一杯咖啡的时间。请求模板+认证范式+错误诊断三件套。**

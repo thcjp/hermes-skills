@@ -1,29 +1,37 @@
 ---
-slug: "ziptax-tool-free"
-name: "ziptax-tool-free"
-version: "1.0.0"
-displayName: "销售税查询(免费版)"
-summary: "面向个人开发者的销售税查询工具,支持按地址、邮编、经纬度查询,含基础CLI封装。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  销售税查询工具免费版为个人开发者提供美国销售税率查询能力,支持按地址、邮编、经纬度查询,含基础CLI封装与税率解析。核心能力:
+slug: ziptax-tool-free
+name: ziptax-tool-free
+version: 1.0.0
+displayName: 销售税查询(免费版)
+summary: 面向个人开发者的销售税查询工具,支持按地址、邮编、经纬度查询,含基础CLI封装。
+license: Proprietary
+edition: free
+description: '销售税查询工具免费版为个人开发者提供美国销售税率查询能力,支持按地址、邮编、经纬度查询,含基础CLI封装与税率解析。核心能力:
+
   - 按地址查询销售税(最精确)
+
   - 按邮编查询销售税
+
   - 按经纬度查询销售税
+
   - 税率结构解析(州/县/市/区)
-  - 基础CLI封装(lookup。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+
+  - 基础CLI封装(lookup。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-  - 销售税
-  - 税务
-  - API集成
-  - 个人开发
-  - 电商
+- 销售税
+- 税务
+- API集成
+- 个人开发
+- 电商
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 销售税查询工具(免费版)
 
 ## 概述

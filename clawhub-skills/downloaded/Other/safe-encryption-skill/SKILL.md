@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Safe Encryption
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 SAFE is a modern encryption CLI with post-quantum support, multi-recipient encryption, and composable authentication.
 
 ## Behavior Guidelines

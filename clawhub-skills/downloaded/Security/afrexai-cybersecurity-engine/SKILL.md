@@ -14,7 +14,11 @@ tools:
   - - read
 - exec
 # Cybersecurity Engine
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Complete methodology for security assessment, threat modeling, vulnerability management, incident response, and security program design. No tools required — pure agent knowledge that works with any codebase, infrastructure, or organization.
 
 ## Phase 1: Security Posture Assessment

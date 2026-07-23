@@ -1,40 +1,58 @@
 ---
-slug: "encryption-tool-free"
-name: "encryption-tool-free"
-version: "1.0.0"
-displayName: "加密工具基础版"
-summary: "提供文件加密、密码哈希、算法选择指南与基础安全审计,适合个人开发者保护数据。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向开发者的数据加密辅助工具,涵盖文件加密、密码哈希、加密算法选择与基础代码安全审计。核心能力:
+slug: encryption-tool-free
+name: encryption-tool-free
+version: 1.0.0
+displayName: 加密工具基础版
+summary: 提供文件加密、密码哈希、算法选择指南与基础安全审计,适合个人开发者保护数据。
+license: Proprietary
+edition: free
+description: '面向开发者的数据加密辅助工具,涵盖文件加密、密码哈希、加密算法选择与基础代码安全审计。核心能力:
+
   - 文件加密与解密(age/gpg)
+
   - 密码哈希(bcrypt/argon2)
+
   - 加密算法选择指南
+
   - 基础代码安全审计
+
   - TLS证书检查
 
+
   适用场景:
+
   - 敏感文件加密保护
+
   - 用户密码安全存储
+
   - 加密算法选择参考
+
   - 基础安全代码审查
 
+
   差异化:
+
   - 免费版聚焦常用加密操作,开箱即用
+
   - 提供算法选择速查表
+
   - 与专业版命令兼容,可平滑升级
 
-  适用关键词: 加密, 解密, 密码哈希...
+
+  适用关键词: 加密, 解密, 密码哈希...'
 tags:
-  - 开发工具
-  - 安全
-  - 加密
+- 开发工具
+- 安全
+- 加密
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 加密工具免费版为开发者提供日常数据加密保护能力。工具涵盖文件加密解密、密码哈希存储、加密算法选择指南和基础代码安全审计,帮助开发者在开发阶段正确使用加密技术保护敏感数据。
 
 本版本适合敏感文件加密保护、用户密码安全存储和基础安全代码审查。所有操作通过命令行工具和代码示例完成。

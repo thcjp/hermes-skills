@@ -13,7 +13,11 @@ tags: '[''Productivity'']'
 tools:
   - read
   - exec
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 # Diagram Tools å¾è¡¨å·¥å·æè½
 
 强大的图表生成工具集，支持多种图表格式和渲染引擎。

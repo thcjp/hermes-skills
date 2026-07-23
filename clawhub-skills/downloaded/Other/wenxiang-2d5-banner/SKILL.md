@@ -13,7 +13,11 @@ tags: '[''Other'']'
 tools:
   - read
   - exec
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 
 # éä¹ä¸ç¸ 2.5D æ¨ªå¹æç»
 

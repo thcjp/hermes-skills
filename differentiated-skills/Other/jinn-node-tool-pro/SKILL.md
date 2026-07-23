@@ -1,39 +1,53 @@
 ---
-slug: "jinn-node-tool-pro"
-name: "jinn-node-tool-pro"
-version: "1.0.0"
-displayName: "节点工作工具专业版"
-summary: "面向团队的多节点集群、任务调度与收益治理工具。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队的多节点集群与收益治理专业工具。
+slug: jinn-node-tool-pro
+name: jinn-node-tool-pro
+version: 1.0.0
+displayName: 节点工作工具专业版
+summary: 面向团队的多节点集群、任务调度与收益治理工具。
+license: Proprietary
+edition: pro
+description: '面向团队的多节点集群与收益治理专业工具。
+
 
   核心能力:
+
   - 多节点集群部署与统一调度
+
   - 任务偏好画像与智能接单
+
   - 收益看板与成本核算
+
   - 钱包集中管理与安全策略
 
+
   适用场景:
+
   - 团队多机器批量接入网络
+
   - 智能任务偏好与接单策略
+
   - 收益成本核算与看板
+
 
   差异化: 专业版在免费版单节点基础上扩展多节点集群、智能调度、收益看板与钱包集中管理，兼容免费版环境配置。
 
-  适用关键词: 多节点集群, 任务调度, 偏好画像, 收益看板, 成本核算, node pro, cluster, scheduling
+
+  适用关键词: 多节点集群, 任务调度, 偏好画像, 收益看板, 成本核算, node pro, cluster, scheduling'
 tags:
-  - 节点
-  - 企业级
-  - 集群调度
-  - 收益治理
-  - 其他工具
+- 节点
+- 企业级
+- 集群调度
+- 收益治理
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 节点工作工具（专业版）
 
 ## 概述

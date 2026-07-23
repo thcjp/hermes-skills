@@ -1,31 +1,38 @@
 ---
-slug: "solo-audit-tool-pro"
-name: "solo-audit-tool-pro"
-version: "1.0.0"
-displayName: "独立审计工具（专业版）"
-summary: "对AI Agent进行全面审计：安全性、性能、合规性、代码质量与优选实践检查。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  独立审计工具 - （专业版）
+slug: solo-audit-tool-pro
+name: solo-audit-tool-pro
+version: 1.0.0
+displayName: 独立审计工具（专业版）
+summary: 对AI Agent进行全面审计：安全性、性能、合规性、代码质量与优选实践检查。
+license: Proprietary
+edition: pro
+description: '独立审计工具 - （专业版）
+
 
   核心能力: 安全审计, 合规检查, 性能分析, 漏洞扫描, 代码审计, solo audit, 风险评估
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 安全审计, 合规检查, 性能分析, 漏洞扫描, 代码审计, solo audit, 风险评估
+
+  适用关键词: 安全审计, 合规检查, 性能分析, 漏洞扫描, 代码审计, solo audit, 风险评估'
 tags:
-  - 安全审计
-  - 合规检查
-  - 性能分析
-  - 漏洞扫描
+- 安全审计
+- 合规检查
+- 性能分析
+- 漏洞扫描
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 独立审计工具（专业版）
 
 ## 概述

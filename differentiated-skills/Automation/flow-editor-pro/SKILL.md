@@ -1,22 +1,26 @@
 ---
-slug: "flow-editor-pro"
-name: "flow-editor-pro"
-version: "1.0.0"
-displayName: "流程编辑专家"
-summary: "解决Node-RED无版本管理、部署易翻车、多实例难管痛点，带回滚与安全加固的流程运维"
-license: "Proprietary"
-description: |-
-  通过 Admin API 或 CLI 管理 Node-RED 实例的运维专家。聚焦流程部署可回滚、多实例统一管理、
-  节点依赖可治理、Context 持久化与安全加固，解决无版本控制、部署即翻车、多实例配置散乱痛点。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
+slug: flow-editor-pro
+name: flow-editor-pro
+version: 1.0.0
+displayName: 流程编辑专家
+summary: 解决Node-RED无版本管理、部署易翻车、多实例难管痛点，带回滚与安全加固的流程运维
+license: Proprietary
+description: '通过 Admin API 或 CLI 管理 Node-RED 实例的运维专家。聚焦流程部署可回滚、多实例统一管理、
+
+  节点依赖可治理、Context 持久化与安全加固，解决无版本控制、部署即翻车、多实例配置散乱痛点。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
 tags:
-  - 自动化
-  - 运维
-  - 物联网
+- 自动化
+- 运维
+- 物联网
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 流程编辑专家
 
 通过 Admin API 与 CLI 管理 Node-RED 实例，把"部署即翻车"变为"可回滚、可审计、可治理"的运维流程。

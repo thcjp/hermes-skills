@@ -1,20 +1,26 @@
 ---
 slug: pptx-presentation-pro
 name: pptx-presentation-pro
-version: "1.1.0"
-displayName: "演示文稿大师"
-summary: "从大纲到专业PPT一键生成,布局模板图表母版全流程演示文稿处理"
+version: 1.1.0
+displayName: 演示文稿大师
+summary: 从大纲到专业PPT一键生成,布局模板图表母版全流程演示文稿处理
 license: Proprietary
-description: |-
-  演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可视化、批量参数化生成。适用于商业汇报、产品发布、教学课件、培训演示、会议演讲场景。触发关键词:PPT、PowerPoint、演示文稿、幻灯片、pptx、演讲、汇报、课件、母版、幻灯片模板。
-tags: [演示文稿, PPT制作, 幻灯片, 商业汇报, 办公自动化]
+description: 演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可视化、批量参数化生成。适用于商业汇报、产品发布、教学课件、培训演示、会议演讲场景。触发关键词:PPT、PowerPoint、演示文稿、幻灯片、pptx、演讲、汇报、课件、母版、幻灯片模板。
+tags:
+- 演示文稿
+- PPT制作
+- 幻灯片
+- 商业汇报
+- 办公自动化
 tools:
-  - read
-  - exec
-suggested_price: "15.00"
-pricing_tier: "business"
-pricing_rationale: "数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 数据分析类, medium市场, enterprise复杂度, weekly频次, business层 → 中频专业工具,中等市场
+pricing_model: per_use
 ---
+
 # 演示文稿大师
 
 全面处理 PowerPoint 演示文稿。从读取现有 PPT 到从零生成专业演示,覆盖布局、模板、图表、母版全流程。

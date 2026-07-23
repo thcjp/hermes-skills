@@ -1,33 +1,41 @@
 ---
-slug: "flowforge-builder-pro"
-name: "flowforge-builder-pro"
-version: "1.0.0"
-displayName: "Flowforge Builder"
-summary: "全功能JSON工作流构建，四种触发器、多条件组合、数据处理、通知发送、六模板库。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤、条件判断和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。专业版解锁API Webhook触发、多条件组合、数据处理转换、通知发送四大高级能力。
+slug: flowforge-builder-pro
+name: flowforge-builder-pro
+version: 1.0.0
+displayName: Flowforge Builder
+summary: 全功能JSON工作流构建，四种触发器、多条件组合、数据处理、通知发送、六模板库。
+license: Proprietary
+edition: pro
+description: '流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤、条件判断和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。专业版解锁API
+  Webhook触发、多条件组合、数据处理转换、通知发送四大高级能力。
+
 
   核心能力：四种触发器（cron/watch/manual/webhook）、五类操作节点（文件/网络/命令/数据处理/通知发送）、多条件组合判断（AND/OR嵌套）、六模板库（数据同步/内容发布/报告生成/监控告警/客户入驻/订单处理）、多角色场景指南、完整故障排查表。
 
+
   适用场景：定时数据抓取与保存、文件变化自动处理、多步骤数据同步、跨平台流程编排、Webhook事件驱动、数据实时处理与转换、多渠道通知发送、报告自动生成与分发。
+
 
   差异化：采用JSON声明式工作流定义，便于版本控制和团队协作。专业版完整支持四种触发器和五类操作节点，提供六模板库和定制开发指南，适合企业级自动化流程构建。保留原始版权声明。
 
-  适用关键词：工作流构建、自动化流程、JSON工作流、触发器、Webhook、定时任务、文件监控、数据处理
+
+  适用关键词：工作流构建、自动化流程、JSON工作流、触发器、Webhook、定时任务、文件监控、数据处理'
 tags:
-  - 工作流构建
-  - 流程自动化
-  - JSON配置
-  - 触发器系统
-  - Webhook
-  - 数据处理
+- 工作流构建
+- 流程自动化
+- JSON配置
+- 触发器系统
+- Webhook
+- 数据处理
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 流程锻造器（专业版）
 
 > **AI Agent的代码化工作流引擎。四种触发器，五类操作节点，多条件组合，让自动化流程像代码一样可审查、可版本控制、可回滚。**

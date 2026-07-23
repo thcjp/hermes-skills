@@ -1,33 +1,45 @@
 ---
-slug: "kujiale-design-tool-free"
-name: "kujiale-design-tool-free"
-version: "1.0.0"
-displayName: "酷家乐设计-免费版"
-summary: "分步式室内设计工具,完成户型确认到渲染出图,适合个人用户快速生成装修方案。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  酷家乐设计免费版,面向个人用户的分步式室内智能设计工具。核心能力:
+slug: kujiale-design-tool-free
+name: kujiale-design-tool-free
+version: 1.0.0
+displayName: 酷家乐设计-免费版
+summary: 分步式室内设计工具,完成户型确认到渲染出图,适合个人用户快速生成装修方案。
+license: Proprietary
+edition: free
+description: '酷家乐设计免费版,面向个人用户的分步式室内智能设计工具。核心能力:
+
   - 分步对话完成户型确认→风格选择→布局确认→渲染出图
+
   - 支持文字搜索小区户型或上传户型图识别
+
   - 提供基础硬装风格库与智能布局
+
   - 生成渲染图与全景图链接
 
+
   适用场景:
+
   - 个人业主装修方案快速预览
+
   - 室内设计初学者学习参考
+
   - 装修风格灵感探索
 
-  差异化:免费版聚焦单户型单风格设计流程,操作简单,适合个人用户体验AI智能室内设计
+
+  差异化:免费版聚焦单户型单风格设计流程,操作简单,适合个人用户体验AI智能室内设计'
 tags:
-  - Creative
-  - 室内设计
-  - AI创作
+- Creative
+- 室内设计
+- AI创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 酷家乐设计工具 - 免费版
 
 ## 概述

@@ -1,37 +1,52 @@
 ---
-slug: "model-routing-tool-free"
-name: "model-routing-tool-free"
-version: "1.0.0"
-displayName: "模型路由工具(免费版)"
-summary: "个人开发者的三层模型路由指南,从最便宜模型起步,按需升级降低API成本。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  模型路由工具(免费版)为个人开发者提供三层模型路由指南,从最便宜的模型起步,仅在必要时升级,帮助降低API成本。核心能力:
+slug: model-routing-tool-free
+name: model-routing-tool-free
+version: 1.0.0
+displayName: 模型路由工具(免费版)
+summary: 个人开发者的三层模型路由指南,从最便宜模型起步,按需升级降低API成本。
+license: Proprietary
+edition: free
+description: '模型路由工具(免费版)为个人开发者提供三层模型路由指南,从最便宜的模型起步,仅在必要时升级,帮助降低API成本。核心能力:
+
   - 三层路由:Flash → Standard → Plus / 32B
+
   - 黄金规则:30秒人类思考阈值
+
   - 快速决策树与参考卡
+
   - 基础子Agent与定时任务路由
 
+
   适用场景:
+
   - 个人项目API成本优化
+
   - 子Agent任务分发
+
   - 定时任务模型选择
 
+
   差异化:
+
   - 免费版聚焦三层路由决策与个人使用
+
   - 移除原始平台引用,纯净适配SkillHub
-  - 提供中文友好的决策树与...
+
+  - 提供中文友好的决策树与...'
 tags:
-  - Development
-  - AI
-  - 模型路由
-  - 成本优化
+- Development
+- AI
+- 模型路由
+- 成本优化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 模型路由工具(免费版)
 
 ## 概述

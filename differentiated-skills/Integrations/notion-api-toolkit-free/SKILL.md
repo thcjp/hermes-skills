@@ -1,35 +1,48 @@
 ---
-slug: "notion-api-toolkit-free"
-name: "notion-api-toolkit-free"
-version: "1.0.0"
-displayName: "Notion API工具箱(免费版)"
-summary: "轻量化Notion API集成工具,支持OAuth鉴权、页面查询、数据库检索与基础读写,适合个人快速接入Notion工作空间。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Notion API工具箱(免费版)是面向个人开发者与知识工作者的轻量化Notion集成Skill,通过托管OAuth与REST API的组合,帮助用户在数分钟内接入Notion工作空间。核心能力:
+slug: notion-api-toolkit-free
+name: notion-api-toolkit-free
+version: 1.0.0
+displayName: Notion API工具箱(免费版)
+summary: 轻量化Notion API集成工具,支持OAuth鉴权、页面查询、数据库检索与基础读写,适合个人快速接入Notion工作空间。
+license: Proprietary
+edition: free
+description: 'Notion API工具箱(免费版)是面向个人开发者与知识工作者的轻量化Notion集成Skill,通过托管OAuth与REST API的组合,帮助用户在数分钟内接入Notion工作空间。核心能力:
+
 
   - 托管OAuth鉴权,无需自建鉴权服务
+
   - 页面与数据库的查询、检索
+
   - 基础读写操作(创建、更新、归档页面)
+
   - 块级内容管理(读取、追加、删除)
+
   - 用户信息查询
+
   - 写操作强制用户确认,保障数据安全
+
 
   适用场景:
 
+
   - 个人Notion工作空间的自动化查询
+
   - 小型团队的页面检索与读取
-  - MVP阶段的...
+
+  - MVP阶段的...'
 tags:
-  - 集成工具
-  - Notion
-  - 生产力
+- 集成工具
+- Notion
+- 生产力
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Notion API工具箱(免费版)
 
 一个面向个人开发者与知识工作者的轻量化Notion集成Skill,通过托管OAuth与REST API的组合,帮助你快速接入Notion工作空间。本免费版聚焦查询与基础读写,适合个人与小型团队试用。

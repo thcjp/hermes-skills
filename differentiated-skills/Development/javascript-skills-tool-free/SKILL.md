@@ -1,38 +1,53 @@
 ---
-slug: "javascript-skills-tool-free"
-name: "javascript-skills-tool-free"
-version: "1.0.0"
-displayName: "JavaScript规范工具(免费版)"
-summary: "面向个人开发者的JavaScript代码风格指南,涵盖核心规则与基础代码审查能力。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  JavaScript规范工具(免费版)为个人开发者提供基础而实用的JavaScript代码风格指导。核心能力:
+slug: javascript-skills-tool-free
+name: javascript-skills-tool-free
+version: 1.0.0
+displayName: JavaScript规范工具(免费版)
+summary: 面向个人开发者的JavaScript代码风格指南,涵盖核心规则与基础代码审查能力。
+license: Proprietary
+edition: free
+description: 'JavaScript规范工具(免费版)为个人开发者提供基础而实用的JavaScript代码风格指导。核心能力:
+
   - 涵盖对象、数组、函数、字符串等核心语法规范
+
   - 提供基础代码审查与风格纠正建议
+
   - 输出符合主流规范的JavaScript代码片段
 
+
   适用场景:
+
   - 个人项目日常编码与自查
+
   - 学习现代JavaScript风格惯例
+
   - 快速生成规范代码片段
 
+
   差异化:
+
   - 免费版聚焦核心语法与个人使用场景
+
   - 移除所有原始平台与作者引用,纯净适配SkillHub
+
   - 中文本地化讲解,降低使用门槛
 
-  触发...
+
+  触发...'
 tags:
-  - Development
-  - Frontend
-  - JavaScript
-  - 代码规范
+- Development
+- Frontend
+- JavaScript
+- 代码规范
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # JavaScript规范工具(免费版)
 
 ## 概述

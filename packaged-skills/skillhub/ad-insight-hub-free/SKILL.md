@@ -163,10 +163,10 @@ curl -s "https://api.admapix.com/api/data/app-detail?unifiedProductId=xxx" \
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
-| 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 缺失/格式错/已禁用 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，引导用户检查 Key；永不打印 Key |
-| 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 权限不足或套餐限制 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，提示用户升级 AdMapix 套餐 |
-| 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | 触发限流 | 等待 1 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，最多 3 次 |
-| 400 INVALID_PARAM | `{"code":"INVALID_PARAM"}` | 国家/行业码错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，对照 `filter-options` 检查参数代码 |
+| 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 缺失/格式错/已禁用 | 检查网络连接和配置后重试，引导用户检查 Key；永不打印 Key |
+| 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 权限不足或套餐限制 | 检查网络连接和配置后重试，提示用户升级 AdMapix 套餐 |
+| 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | 触发限流 | 等待 1 秒后检查网络连接和配置后重试，最多 3 次 |
+| 400 INVALID_PARAM | `{"code":"INVALID_PARAM"}` | 国家/行业码错误 | 检查网络连接和配置后重试，对照 `filter-options` 检查参数代码 |
 | 一直返回空 list | `{"list":[]}` | 参数代码错误或无匹配 | 调 `filter-options` 核对国家/行业码 |
 | 详情接口 404 | `{"code":"NOT_FOUND"}` | 创意已下线或应用 ID 不存在 | 跳过该 ID，记录到失败列表 |
 

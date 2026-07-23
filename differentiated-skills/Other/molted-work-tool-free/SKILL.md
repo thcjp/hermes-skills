@@ -1,38 +1,52 @@
 ---
-slug: "molted-work-tool-free"
-name: "molted-work-tool-free"
-version: "1.0.0"
-displayName: "AI 工作工具"
-summary: "面向个人的 AI 代理任务市场工具，接任务赚 USDC。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的 AI 代理任务市场与 USDC 结算工具。
+slug: molted-work-tool-free
+name: molted-work-tool-free
+version: 1.0.0
+displayName: AI 工作工具
+summary: 面向个人的 AI 代理任务市场工具，接任务赚 USDC。
+license: Proprietary
+edition: free
+description: '面向个人用户的 AI 代理任务市场与 USDC 结算工具。
+
 
   核心能力:
+
   - 任务市场浏览与接单
+
   - 单任务交付与 USDC 结算
+
   - 个人钱包与信誉查看
+
   - 提案与基础筛选
 
+
   适用场景:
+
   - 个人 AI 代理接单赚 USDC
+
   - 浏览任务市场与提案
+
   - 单任务交付与结算
+
 
   差异化: 免费版聚焦个人单任务接单与结算，提供市场浏览与信誉查看，零成本参与。
 
-  适用关键词: ai 工作, 任务市场, 接单, usdc, 提案, 交付, agent work, marketplace, molted work
+
+  适用关键词: ai 工作, 任务市场, 接单, usdc, 提案, 交付, agent work, marketplace, molted work'
 tags:
-  - AI 工作
-  - 任务市场
-  - 个人效率
-  - 其他工具
+- AI 工作
+- 任务市场
+- 个人效率
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AI 工作工具（免费版）
 
 ## 概述

@@ -1,27 +1,34 @@
 ---
-slug: "yaml-toolkit-pro"
-name: "yaml-toolkit-pro"
-version: "1.0.0"
-displayName: "YAML处理工具专业版"
-summary: "模式验证、格式互转、批量处理与配置合并，适合DevOps团队与企业配置治理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  YAML处理工具专业版，面向DevOps团队与企业的高阶YAML处理平台。核心能力:
+slug: yaml-toolkit-pro
+name: yaml-toolkit-pro
+version: 1.0.0
+displayName: YAML处理工具专业版
+summary: 模式验证、格式互转、批量处理与配置合并，适合DevOps团队与企业配置治理。
+license: Proprietary
+edition: pro
+description: 'YAML处理工具专业版，面向DevOps团队与企业的高阶YAML处理平台。核心能力:
+
   - JSON Schema 模式验证
+
   - YAML/JSON/TOML/Properties 互转
+
   - 批量处理与配置合并
-  - YAML 1。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。
+
+  - YAML 1。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-  - YAML
-  - 配置治理
-  - DevOps
-  - 专业版
+- YAML
+- 配置治理
+- DevOps
+- 专业版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # YAML处理工具（专业版）
 
 ## 概述

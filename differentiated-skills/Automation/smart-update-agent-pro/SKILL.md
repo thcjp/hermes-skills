@@ -1,31 +1,40 @@
 ---
-slug: "smart-update-agent-pro"
-name: "smart-update-agent-pro"
-version: "1.0.0"
-displayName: "Smart Update Agent"
-summary: "企业级更新编排系统，含多环境策略、回滚备份、金丝雀发布、依赖分析、Breaking Change检测与合规审计。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  智能更新管家专业版是面向团队与企业的全功能更新编排系统。不仅自动保持Agent运行时与技能最新，更提供多环境更新策略、回滚备份、金丝雀发布、依赖冲突分析、Breaking Change检测与合规审计报告，确保更新安全可控、可追溯、可回滚。
+slug: smart-update-agent-pro
+name: smart-update-agent-pro
+version: 1.0.0
+displayName: Smart Update Agent
+summary: 企业级更新编排系统，含多环境策略、回滚备份、金丝雀发布、依赖分析、Breaking Change检测与合规审计。
+license: Proprietary
+edition: pro
+description: '智能更新管家专业版是面向团队与企业的全功能更新编排系统。不仅自动保持Agent运行时与技能最新，更提供多环境更新策略、回滚备份、金丝雀发布、依赖冲突分析、Breaking
+  Change检测与合规审计报告，确保更新安全可控、可追溯、可回滚。
 
-  核心能力：每日自动更新检查、多环境更新编排（dev/staging/prod）、更新前自动备份与一键回滚、金丝雀发布（小比例验证后全量）、依赖冲突分析、Breaking Change检测与告警、合规审计报告、更新窗口策略（按业务时段智能调度）、健康检查流水线、完整故障排查表、多平台集成示例、版本迁移指南。
+
+  核心能力：每日自动更新检查、多环境更新编排（dev/staging/prod）、更新前自动备份与一键回滚、金丝雀发布（小比例验证后全量）、依赖冲突分析、Breaking
+  Change检测与告警、合规审计报告、更新窗口策略（按业务时段智能调度）、健康检查流水线、完整故障排查表、多平台集成示例、版本迁移指南。
+
 
   适用场景：企业级技能版本管理、多环境更新编排、安全合规审计、团队统一更新策略、关键业务技能安全更新、大规模技能仓库管理、DevOps更新流水线集成。
 
+
   差异化：完全中文化重写，移除原始平台标识，新增六大高级功能（多环境编排、回滚备份、金丝雀发布、依赖分析、Breaking Change检测、合规审计）。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整更新编排能力与优先支持。保留原始MIT版权声明。
 
-  适用关键词：更新编排、多环境更新、回滚备份、金丝雀发布、依赖分析、Breaking Change、合规审计、更新窗口
+
+  适用关键词：更新编排、多环境更新、回滚备份、金丝雀发布、依赖分析、Breaking Change、合规审计、更新窗口'
 tags:
-  - 自动更新
-  - 多环境编排
-  - 回滚备份
-  - 合规审计
+- 自动更新
+- 多环境编排
+- 回滚备份
+- 合规审计
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 智能更新管家（专业版）
 
 > **企业级更新编排系统。多环境策略+回滚备份+金丝雀发布+Breaking Change检测，更新安全可控可追溯。**

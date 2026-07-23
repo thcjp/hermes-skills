@@ -1,28 +1,34 @@
 ---
-slug: "azure-devops-tool-pro"
-name: "azure-devops-tool-pro"
-version: "1.0.0"
-displayName: "Azure DevOps 专业版"
-summary: "企业级 Azure DevOps 管理,支持批量工作项操作、流水线监控、多项目协同与权限审计"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: DevOps 工具链领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: azure-devops-tool-pro
+name: azure-devops-tool-pro
+version: 1.0.0
+displayName: Azure DevOps 专业版
+summary: 企业级 Azure DevOps 管理,支持批量工作项操作、流水线监控、多项目协同与权限审计
+license: Proprietary
+edition: pro
+description: '核心能力: DevOps 工具链领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: azure, devops, 拉取请求, 分支管理, 工作项, 项目列表
+
+  适用关键词: azure, devops, 拉取请求, 分支管理, 工作项, 项目列表'
 tags:
-  - DevOps
-  - 项目管理
-  - 代码协作
+- DevOps
+- 项目管理
+- 代码协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Azure DevOps 专业版
 
 ## 概述

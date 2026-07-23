@@ -1,20 +1,26 @@
 ---
 slug: clickhouse-olap-expert
 name: clickhouse-analytics
-version: "1.1.0"
-displayName: "ClickHouse分析专家"
-summary: "亿级数据秒级查询,ClickHouse列式数据库从建表到集群全栈优化"
+version: 1.1.0
+displayName: ClickHouse分析专家
+summary: 亿级数据秒级查询,ClickHouse列式数据库从建表到集群全栈优化
 license: Proprietary
-description: |-
-  ClickHouse分析专家——基于官方最佳实践设计高性能列式分析数据库，让亿级数据查询秒级返回。适用于实时分析、日志分析、用户行为分析、时序数据、广告技术、数据仓库等场景。从表引擎选择到集群管理，全栈OLAP方案。国内场景可使用阿里云ClickHouse或腾讯云CDWCH。触发关键词：ClickHouse、列式数据库、分析数据库、MergeTree、分区、物化视图、投影、查询优化、OLAP、大数据分析
-tags: [数据分析, ClickHouse, 列式数据库, OLAP, 大数据]
+description: ClickHouse分析专家——基于官方最佳实践设计高性能列式分析数据库，让亿级数据查询秒级返回。适用于实时分析、日志分析、用户行为分析、时序数据、广告技术、数据仓库等场景。从表引擎选择到集群管理，全栈OLAP方案。国内场景可使用阿里云ClickHouse或腾讯云CDWCH。触发关键词：ClickHouse、列式数据库、分析数据库、MergeTree、分区、物化视图、投影、查询优化、OLAP、大数据分析
+tags:
+- 数据分析
+- ClickHouse
+- 列式数据库
+- OLAP
+- 大数据
 tools:
-  - read
-  - exec
-suggested_price: "19.90"
-pricing_tier: "business"
-pricing_rationale: "数据库类, medium市场, enterprise复杂度, monthly频次, business层 → 中频专业工具"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 数据库类, medium市场, enterprise复杂度, monthly频次, business层 → 中频专业工具
+pricing_model: per_use
 ---
+
 # ClickHouse分析专家
 
 基于 ClickHouse 官方最佳实践，设计高性能、可扩展的列式分析数据库。从表设计到查询优化，从物化视图到集群管理，全栈分析数据库方案。

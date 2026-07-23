@@ -1,32 +1,39 @@
 ---
-slug: "document-pdf-tool-free"
-name: "document-pdf-tool-free"
-version: "1.0.0"
-displayName: "PDF文档工具（免费版）"
-summary: "综合PDF处理工具包：文本表格提取、PDF创建、合并拆分、水印、加密、OCR识别。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  PDF文档工具 - （免费版）
+slug: document-pdf-tool-free
+name: document-pdf-tool-free
+version: 1.0.0
+displayName: PDF文档工具（免费版）
+summary: 综合PDF处理工具包：文本表格提取、PDF创建、合并拆分、水印、加密、OCR识别。
+license: Proprietary
+edition: free
+description: 'PDF文档工具 - （免费版）
+
 
   核心能力: PDF处理, 文本提取, 表格提取, PDF合并, PDF拆分, OCR识别, 水印, 加密
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: PDF处理, 文本提取, 表格提取, PDF合并, PDF拆分, OCR识别, 水印, 加密
+
+  适用关键词: PDF处理, 文本提取, 表格提取, PDF合并, PDF拆分, OCR识别, 水印, 加密'
 tags:
-  - PDF处理
-  - 文本提取
-  - 表格提取
-  - OCR
-  - 文档工具
+- PDF处理
+- 文本提取
+- 表格提取
+- OCR
+- 文档工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # PDF文档工具（免费版）
 
 ## 概述

@@ -1,36 +1,49 @@
 ---
-slug: "discord-voice-tool-pro"
-name: "discord-voice-tool-pro"
-version: "1.0.0"
-displayName: "Discord语音工具专业版"
-summary: "企业级 Discord 语音 AI 对话,支持多服务商、流式转写、自动重连与批量频道管理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:
+slug: discord-voice-tool-pro
+name: discord-voice-tool-pro
+version: 1.0.0
+displayName: Discord语音工具专业版
+summary: 企业级 Discord 语音 AI 对话,支持多服务商、流式转写、自动重连与批量频道管理。
+license: Proprietary
+edition: pro
+description: '面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:
+
   - 多 STT/TTS 服务商切换(OpenAI/Deepgram/ElevenLabs/本地)
+
   - Deepgram 流式实时转写(延迟降低约 1 秒)
+
   - 自动心跳监控与断线重连(指数退避)
+
   - 智能打断(barge-in)、自动加入与多频道调度
+
   - 企业级权限白名单与审计日志
 
+
   适用场景:
+
   - 企业语音会议室的 AI 实时助理
+
   - 大型语音社区的多频道 AI 互动
+
   - 高并发低延迟的实时语音问答
 
-  差异化: Pro 版在免...
+
+  差异化: Pro 版在免...'
 tags:
-  - Discord
-  - 语音对话
-  - Communication
-  - 流式转写
-  - 企业级
+- Discord
+- 语音对话
+- Communication
+- 流式转写
+- 企业级
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Discord 语音工具(专业版)
 
 ## 概述

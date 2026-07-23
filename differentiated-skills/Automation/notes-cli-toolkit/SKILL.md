@@ -1,23 +1,28 @@
 ---
-slug: "notes-cli-toolkit"
-name: "notes-cli-toolkit"
-version: "1.0.0"
-displayName: "笔记CLI工具箱"
-summary: "解决无头批处理难、frontmatter难改、daily模板乱痛点，用notesmd-cli把笔记玩成数据库"
-license: "Proprietary"
-description: |-
-  基于 `notesmd-cli` 的 Obsidian 笔记批处理工具箱。聚焦无头（headless）批量操作、
+slug: notes-cli-toolkit
+name: notes-cli-toolkit
+version: 1.0.0
+displayName: 笔记CLI工具箱
+summary: 解决无头批处理难、frontmatter难改、daily模板乱痛点，用notesmd-cli把笔记玩成数据库
+license: Proprietary
+description: '基于 `notesmd-cli` 的 Obsidian 笔记批处理工具箱。聚焦无头（headless）批量操作、
+
   frontmatter 元数据治理、daily note 模板化、与 `$EDITOR` 集成，把笔记从"逐篇手改"升级为
-  "脚本化批处理"。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+
+  "脚本化批处理"。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-  - 自动化
-  - 知识管理
-  - 命令行工具
+- 自动化
+- 知识管理
+- 命令行工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 笔记 CLI 工具箱
 
 把 Obsidian vault 当作可被脚本批处理的笔记数据库。基于 `notesmd-cli` 完成无头创建、frontmatter 治理、daily note 模板化与编辑器集成。

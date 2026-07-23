@@ -1,36 +1,9 @@
 ---
-slug: self-improving-agent
-name: self-improving-agent
-version: "1.0.0"
-displayName: Self-Improving Agent
-summary: Captures learnings, errors, and corrections to enable continuous improvement.
-license: MIT
-description: |-
-  Captures learnings, errors, and corrections to enable continuous improvement。核心能力:
-
-  - 智能代理领域的专业化AI辅助工具
-
-  - 基于高人气开源Skill深度优化升级
-
-  - 移除风险代码,增强安全性和稳定性
-
-  适用场景:
-
-  - AI代理增强、记忆管理、自主决策
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub...
-tags:
-- Agents
-tools:
-  - - read
-- exec
-# Self-Improvement Skill
-## Install
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 For CI-only execution, use:
 
 > 安装此Skill请参考SkillHub平台指南

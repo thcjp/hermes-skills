@@ -1,31 +1,38 @@
 ---
-slug: "presentation-gen-tool-free"
-name: "presentation-gen-tool-free"
-version: "1.0.0"
-displayName: "演示文稿生成（免费版）"
-summary: "从主题或文档自动生成PPT演示文稿，支持多种模板、布局与图表插入。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  演示文稿生成 - （免费版）
+slug: presentation-gen-tool-free
+name: presentation-gen-tool-free
+version: 1.0.0
+displayName: 演示文稿生成（免费版）
+summary: 从主题或文档自动生成PPT演示文稿，支持多种模板、布局与图表插入。
+license: Proprietary
+edition: free
+description: '演示文稿生成 - （免费版）
+
 
   核心能力: PPT生成, 演示文稿, presentation, 幻灯片, 商务汇报, 文档转PPT, 主题演示
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: PPT生成, 演示文稿, presentation, 幻灯片, 商务汇报, 文档转PPT, 主题演示
+
+  适用关键词: PPT生成, 演示文稿, presentation, 幻灯片, 商务汇报, 文档转PPT, 主题演示'
 tags:
-  - 演示文稿
-  - PPT生成
-  - python-pptx
-  - 商务展示
+- 演示文稿
+- PPT生成
+- python-pptx
+- 商务展示
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 演示文稿生成（免费版）
 
 ## 概述

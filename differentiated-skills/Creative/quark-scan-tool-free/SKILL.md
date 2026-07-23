@@ -1,36 +1,51 @@
 ---
-slug: "quark-scan-tool-free"
-name: "quark-scan-tool-free"
-version: "1.0.0"
-displayName: "夸克扫描-免费版"
-summary: "文件高清扫描增强工具,支持画质增强、去手写、去水印、去阴影等,适合个人用户单张处理。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  夸克扫描免费版,面向个人用户的文件高清扫描与图像增强工具。核心能力:
+slug: quark-scan-tool-free
+name: quark-scan-tool-free
+version: 1.0.0
+displayName: 夸克扫描-免费版
+summary: 文件高清扫描增强工具,支持画质增强、去手写、去水印、去阴影等,适合个人用户单张处理。
+license: Proprietary
+edition: free
+description: '夸克扫描免费版,面向个人用户的文件高清扫描与图像增强工具。核心能力:
+
   - 画质增强(模糊/昏暗/老旧照片修复)
+
   - 去手写笔迹(还原空白试卷/文档)
+
   - 去水印(精准去除文字/Logo水印)
+
   - 去阴影(消除拍摄阴影)
+
   - 文档去底色(转为白底黑字)
+
   - 素描速写/线稿提取
 
+
   适用场景:
+
   - 学生试卷/笔记电子化
+
   - 个人文档扫描存档
+
   - 老照片修复与增强
+
   - 创意线稿提取
 
-  差异化:免费版聚焦单张图片处理,覆盖常用扫描增强场景,适合个人用户体验AI图像增强
+
+  差异化:免费版聚焦单张图片处理,覆盖常用扫描增强场景,适合个人用户体验AI图像增强'
 tags:
-  - Creative
-  - 图像处理
-  - AI创作
+- Creative
+- 图像处理
+- AI创作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 夸克扫描工具 - 免费版
 
 ## 概述

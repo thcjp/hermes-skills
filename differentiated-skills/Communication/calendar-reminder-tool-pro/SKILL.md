@@ -1,29 +1,36 @@
 ---
-slug: "calendar-reminder-tool-pro"
-name: "calendar-reminder-tool-pro"
-version: "1.0.0"
-displayName: "日历提醒工具专业版"
-summary: "企业级多日历智能提醒平台，支持多日历聚合、智能调度、团队同步、递进提醒与日程分析。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队与企业的多日历智能提醒与调度平台。
+slug: calendar-reminder-tool-pro
+name: calendar-reminder-tool-pro
+version: 1.0.0
+displayName: 日历提醒工具专业版
+summary: 企业级多日历智能提醒平台，支持多日历聚合、智能调度、团队同步、递进提醒与日程分析。
+license: Proprietary
+edition: pro
+description: '面向团队与企业的多日历智能提醒与调度平台。
+
   核心能力: 多日历聚合扫描、智能提醒调度、递进式提醒、团队日程同步、冲突检测、日程分析报表、多渠道通知。
+
   适用场景: 团队日程协调、高管助理提醒、跨时区会议安排、会议室资源调度、日程效率分析。
+
   差异化: 专业版在免费版基础上新增多日历与智能调度，兼容免费版扫描脚本与提醒格式。
-  适用关键词: 多日历, 智能提醒, 团队日程, 冲突检测, 递进提醒, 日程分析, calendar, 企业调度
+
+  适用关键词: 多日历, 智能提醒, 团队日程, 冲突检测, 递进提醒, 日程分析, calendar, 企业调度'
 tags:
-  - 日历提醒
-  - 多日历聚合
-  - 智能调度
-  - 团队协作
-  - 日程分析
-  - 企业级
+- 日历提醒
+- 多日历聚合
+- 智能调度
+- 团队协作
+- 日程分析
+- 企业级
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 日历提醒工具 专业版
 
 ## 概述

@@ -1,42 +1,61 @@
 ---
-slug: "vpn-toolkit-pro"
-name: "vpn-toolkit-pro"
-version: "1.0.0"
-displayName: "VPN工具箱(专业版)"
-summary: "企业级VPN管理平台,含多VPN负载均衡、监控告警、合规审计与批量部署"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力:
+slug: vpn-toolkit-pro
+name: vpn-toolkit-pro
+version: 1.0.0
+displayName: VPN工具箱(专业版)
+summary: 企业级VPN管理平台,含多VPN负载均衡、监控告警、合规审计与批量部署
+license: Proprietary
+edition: pro
+description: '核心能力:
+
   - 多VPN服务器负载均衡与故障转移
+
   - 实时连接状态监控与告警
+
   - 企业级配置模板(10+厂商)
+
   - 合规审计报告(PCI-DSS/HIPAA)
+
   - 批量部署与集中管理
+
   - Split Tunnel精细路由策略
+
   - 自动化健康检查与修复
 
+
   适用场景:
+
   - 企业远程办公VPN管理
+
   - 多分支机构VPN互联
+
   - 合规性VPN审计
+
   - 高可用VPN架构设计
 
+
   差异化:
+
   - 多VPN智能负载均衡,自动故障转移
+
   - 实时监控+告警,确保VPN可用性
-  - 合规审计报告,满足行业标准
+
+  - 合规审计报告,满足行业标准'
 tags:
-  - 安全
-  - 网络安全
-  - 企业VPN
-  - 合规审计
-  - 网络管理
+- 安全
+- 网络安全
+- 企业VPN
+- 合规审计
+- 网络管理
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # VPN工具箱(专业版)
 ## 概述
 VPN工具箱专业版是一款面向企业用户的VPN管理与监控平台。在免费版个人VPN配置指南基础上,增加多VPN服务器负载均衡与故障转移、实时连接状态监控与告警、企业级配置模板(支持10+厂商)、合规审计报告、批量部署与集中管理等企业级功能。支持Split Tunnel精细路由策略和自动化健康检查。与免费版完全兼容,配置模板和故障排除指南可无缝复用。

@@ -1,20 +1,7 @@
 ---
-slug: rho-telegram-alerts
-name: rho-telegram-alerts
-version: "1.0.1"
-displayName: Telegram Alerts
-summary: Send formatted trading alerts, portfolio updates, and market signals via
-  Telegram. Supports price...
-license: MIT
-description: |-
-  Send formatted trading alerts, portfolio updates, and market signals
-  via Telegram。Supports price。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Finance
-- Automation
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # Telegram Alerts

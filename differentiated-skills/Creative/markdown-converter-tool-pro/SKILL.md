@@ -20,7 +20,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # Markdown转换器专业版
 ## 概述
 Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,PRO版增加批量处理、目录扫描、自定义输出模板、元数据提取、文档质量审计与CI/CD集成能力,满足企业级文档处理的效率与质量需求。

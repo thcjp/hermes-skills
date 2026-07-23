@@ -1,40 +1,57 @@
 ---
-slug: "story-write-tool-pro"
-name: "story-write-tool-pro"
-version: "1.0.0"
-displayName: "长篇网文写作-专业版"
-summary: "企业级网文创作平台,支持批量生成、市场适配、多线管理与团队协作,适合工作室"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级长篇网文创作工具专业版,面向网文工作室与专业作者。核心能力:
+slug: story-write-tool-pro
+name: story-write-tool-pro
+version: 1.0.0
+displayName: 长篇网文写作-专业版
+summary: 企业级网文创作平台,支持批量生成、市场适配、多线管理与团队协作,适合工作室
+license: Proprietary
+edition: pro
+description: '企业级长篇网文创作工具专业版,面向网文工作室与专业作者。核心能力:
+
   - 批量章节生成与定时更新
+
   - 多线剧情并行管理
+
   - 市场适配与热度优化
+
   - 读者数据分析与反馈整合
+
   - 多作者协作与版本管理
+
   - AI 辅助润色与风格统一
+
   - 选题策划与市场预测
+
   - API 接口与平台对接
 
+
   适用场景:
+
   - 网文工作室批量创作
+
   - 专业作者高效产出
+
   - 多人协作创作长篇
+
   - 数据驱动的创作优化
 
-  差异化:专业版在免费版基础上扩展批量生成、市场适配与团队协作,兼容免费版项目结构
+
+  差异化:专业版在免费版基础上扩展批量生成、市场适配与团队协作,兼容免费版项目结构'
 tags:
-  - 网文创作
-  - 企业级
-  - 批量生成
-  - 团队协作
-  - 市场适配
+- 网文创作
+- 企业级
+- 批量生成
+- 团队协作
+- 市场适配
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 长篇网文写作 - 专业版
 
 ## 概述

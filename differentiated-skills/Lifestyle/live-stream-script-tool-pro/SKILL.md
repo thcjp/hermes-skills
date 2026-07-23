@@ -1,29 +1,36 @@
 ---
-slug: "live-stream-script-tool-pro"
-name: "live-stream-script-tool-pro"
-version: "1.0.0"
-displayName: "直播脚本生成专业版"
-summary: "企业级直播运营平台,支持团队协作、数据分析、A/B测试与多语言"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向直播机构、MCN 与品牌方的企业级直播运营平台。
+slug: live-stream-script-tool-pro
+name: live-stream-script-tool-pro
+version: 1.0.0
+displayName: 直播脚本生成专业版
+summary: 企业级直播运营平台,支持团队协作、数据分析、A/B测试与多语言
+license: Proprietary
+edition: pro
+description: '面向直播机构、MCN 与品牌方的企业级直播运营平台。
+
   核心能力: 团队协作、数据分析、A/B测试、模板库、多语言、批量生成、商业授权
+
   适用场景: 直播机构运营、MCN管理、品牌直播、跨境电商、内容工厂
+
   差异化: 专业版支持团队协作与数据驱动,与免费版脚本格式兼容
-  适用关键词: 团队协作, 直播数据分析, A/B测试, 多语言脚本, 批量生成, MCN管理
+
+  适用关键词: 团队协作, 直播数据分析, A/B测试, 多语言脚本, 批量生成, MCN管理'
 tags:
-  - 直播脚本
-  - 企业级
-  - 团队协作
-  - 数据分析
-  - A/B测试
-  - MCN运营
+- 直播脚本
+- 企业级
+- 团队协作
+- 数据分析
+- A/B测试
+- MCN运营
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 直播脚本生成 (专业版)
 ## 概述
 专业版面向直播机构、MCN、品牌方与内容工厂,在免费版脚本生成之上,扩展团队协作、数据分析、A/B 测试、模板库、多语言、批量生成等企业级能力。支持多人共创脚本、数据驱动优化、跨语言内容生产,适合规模化直播运营场景。

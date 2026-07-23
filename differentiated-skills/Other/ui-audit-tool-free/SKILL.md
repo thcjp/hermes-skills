@@ -1,34 +1,46 @@
 ---
-slug: "ui-audit-tool-free"
-name: "ui-audit-tool-free"
-version: "1.0.0"
-displayName: "UI审计工具免费版"
-summary: "基于UX原则的界面审计，评估视觉层级、视觉风格与可访问性，生成结构化审计报告，适合个人设计师。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  UI审计工具免费版，面向个人设计师与前端开发者的轻量级界面审计工具。核心能力:
+slug: ui-audit-tool-free
+name: ui-audit-tool-free
+version: 1.0.0
+displayName: UI审计工具免费版
+summary: 基于UX原则的界面审计，评估视觉层级、视觉风格与可访问性，生成结构化审计报告，适合个人设计师。
+license: Proprietary
+edition: free
+description: 'UI审计工具免费版，面向个人设计师与前端开发者的轻量级界面审计工具。核心能力:
+
   - 视觉层级评估（标题、CTA、分组、阅读流）
+
   - 视觉风格评估（间距、色彩、字体、动效）
+
   - 可访问性评估（键盘导航、对比度、触控目标）
+
   - 结构化审计报告输出
 
+
   适用场景:
+
   - 个人项目的界面质量自查
+
   - 设计稿交付前的快速审计
+
   - 学习UX设计原则的实践工具
 
-  差异化: 免费版聚焦核心三维审计与报告输出，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
+
+  差异化: 免费版聚焦核心三维审计与报告输出，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-  - UI审计
-  - UX设计
-  - 可访问性
-  - 免费版
+- UI审计
+- UX设计
+- 可访问性
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # UI审计工具（免费版）
 
 ## 概述

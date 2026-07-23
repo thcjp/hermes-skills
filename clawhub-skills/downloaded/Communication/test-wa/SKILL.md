@@ -1,19 +1,7 @@
 ---
-slug: test-wa
-name: test-wa
-version: "1.0.0"
-displayName: test
-summary: Send WhatsApp messages to other people or search/sync WhatsApp history via
-  the wacli CLI (not for...
-license: MIT
-description: |-
-  Send WhatsApp messages to other people or search/sync WhatsApp history
-  via the wacli CLI (not for。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。
-tags:
-- Communication
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # test

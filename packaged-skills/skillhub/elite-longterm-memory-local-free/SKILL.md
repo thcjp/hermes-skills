@@ -139,7 +139,7 @@ Agent 内部执行与输出：
 本免费版提供基础热内存与文件归档两层本地记忆。升级到付费版可获得以下完整能力：
 
 - **LanceDB 向量语义搜索**：基于本地 LanceDB 的语义召回，无需精确关键词匹配，按语义相似度排序召回记忆
-- **Ollama 本地 Embedding**：通过 nomic-embed-text 模型本地生成 768 维向量，完全免费、本地毫秒级延迟、数据不出域、可离线使用
+- **Ollama 本地 Embedding**：通过 nomic-embed-text 模型本地生成 768 维向量，本地毫秒级延迟、数据不出域、可离线使用
 - **完整 CLI 管理工具**：memory.js 提供 store、search、stats、dedup、export、backup、compact、cleanup 等完整管理命令
 - **自动召回与捕获**：autoRecall 会话开始自动召回相关记忆，autoCapture 按类别与重要性自动存储
 - **五层完整记忆架构**：热内存、LanceDB 向量、Git-Notes 知识图谱、精选归档、本地 Embedding 五层协同

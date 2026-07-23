@@ -1,20 +1,7 @@
 ---
-slug: api
-name: api
-version: "1.3.4"
-displayName: Publish Api
-summary: REST API reference for 147 services. Authentication patterns, endpoints,
-  rate limits, and common ...
-license: MIT
-description: |-
-  REST API reference for 147 services。Authentication patterns, endpoints,
-  rate limits, and common。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。
-tags:
-- Integrations
-- Productivity
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Publish Api

@@ -1,31 +1,38 @@
 ---
-slug: "pptx-pdf-font-fix-tool-pro"
-name: "pptx-pdf-font-fix-tool-pro"
-version: "1.0.0"
-displayName: "PPT字体修复工具（专业版）"
-summary: "修复PPT转PDF时的字体缺失与乱码问题，支持字体嵌入、替换与批量处理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  PPT字体修复工具 - （专业版）
+slug: pptx-pdf-font-fix-tool-pro
+name: pptx-pdf-font-fix-tool-pro
+version: 1.0.0
+displayName: PPT字体修复工具（专业版）
+summary: 修复PPT转PDF时的字体缺失与乱码问题，支持字体嵌入、替换与批量处理。
+license: Proprietary
+edition: pro
+description: 'PPT字体修复工具 - （专业版）
+
 
   核心能力: PPT字体, 字体修复, PPT转PDF, 字体乱码, 字体缺失, font fix, 字体替换
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: PPT字体, 字体修复, PPT转PDF, 字体乱码, 字体缺失, font fix, 字体替换
+
+  适用关键词: PPT字体, 字体修复, PPT转PDF, 字体乱码, 字体缺失, font fix, 字体替换'
 tags:
-  - PPT处理
-  - 字体修复
-  - PDF转换
-  - 批量处理
+- PPT处理
+- 字体修复
+- PDF转换
+- 批量处理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # PPT字体修复工具（专业版）
 
 ## 概述

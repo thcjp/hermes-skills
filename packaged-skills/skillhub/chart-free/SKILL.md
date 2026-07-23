@@ -243,7 +243,7 @@ python3 {baseDir}/scripts/make_chart.py \
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | `python3: command not found` | 系统未安装Python 3 | 安装Python 3.x并确保 `python3` 在PATH中 |
-| `ModuleNotFoundError: matplotlib` | matplotlib未安装 | 运行 `pip3 install matplotlib` 后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| `ModuleNotFoundError: matplotlib` | matplotlib未安装 | 运行 `pip3 install matplotlib` 后检查网络连接和配置后重试 |
 | `--labels`与`--values`长度不匹配 | 序列项数不一致 | 检查逗号分隔项数，确保两序列等长 |
 | `--type`取值非法或为pie/scatter | 免费版仅支持bar/line | 升级付费版解锁pie与scatter类型 |
 | `--values`含非数值 | 数值序列中混入字符串 | 确保所有值为数字，移除单位与中文符号 |

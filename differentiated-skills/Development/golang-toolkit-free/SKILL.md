@@ -1,35 +1,48 @@
 ---
-slug: "golang-toolkit-free"
-name: "golang-toolkit-free"
-version: "1.0.0"
-displayName: "Go语言工具包免费版"
-summary: "Go 语言陷阱防范与优选实践指南，覆盖并发、接口、错误处理等核心场景。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向 Go 开发者的代码陷阱防范工具，帮助编写可靠的 Go 代码。核心能力:
+slug: golang-toolkit-free
+name: golang-toolkit-free
+version: 1.0.0
+displayName: Go语言工具包免费版
+summary: Go 语言陷阱防范与优选实践指南，覆盖并发、接口、错误处理等核心场景。
+license: Proprietary
+edition: free
+description: '面向 Go 开发者的代码陷阱防范工具，帮助编写可靠的 Go 代码。核心能力:
+
   - Goroutine 泄漏检测与防范
+
   - Channel 陷阱识别与正确使用
+
   - 接口与类型系统陷阱规避
+
   - 错误处理优选实践
+
   - Slice/Map/String 常见陷阱
 
+
   适用场景:
+
   - Go 代码编写与审查时的陷阱规避
+
   - 并发编程的泄漏与死锁防范
+
   - 接口设计与类型安全保障
 
-  差异化: 免费版聚焦 Go 语言核心陷阱的识别与防范，提供简明速查表与代码示例，开箱即用
+
+  差异化: 免费版聚焦 Go 语言核心陷阱的识别与防范，提供简明速查表与代码示例，开箱即用'
 tags:
-  - 开发工具
-  - Go语言
-  - 并发编程
-  - 代码质量
+- 开发工具
+- Go语言
+- 并发编程
+- 代码质量
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Go 语言工具包（免费版）
 ## 概述
 本工具为 Go 开发者提供代码陷阱防范与优选实践指引，覆盖并发编程、接口与类型系统、错误处理、集合操作等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 Goroutine 泄漏、Channel 死锁、接口误用、Slice 共享内存等常见陷阱，编写更加可靠、高效的 Go 代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例。

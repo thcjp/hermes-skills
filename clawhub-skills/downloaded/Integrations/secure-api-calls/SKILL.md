@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # Secure API Calls with Keychains
+pricing_tier: "L3"
+pricing_model: "per_use"
+suggested_price: 29.9
 ---
+
 [keychains.dev](https://keychains.dev) is a credential proxy for AI agents. Instead of real API keys and OAuth tokens, you use **placeholders** like `{{OAUTH2_ACCESS_TOKEN}}`. Keychains injects the real credentials server-side — your agent never sees them.
 
 ## Quick Start

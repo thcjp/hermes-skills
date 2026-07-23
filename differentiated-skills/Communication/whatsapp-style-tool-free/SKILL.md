@@ -1,37 +1,52 @@
 ---
-slug: "whatsapp-style-tool-free"
-name: "whatsapp-style-tool-free"
-version: "1.0.0"
-displayName: "WhatsApp样式工具-免费版"
-summary: "WhatsApp消息格式化工具,支持加粗/斜体/删除线等基础样式,确保消息干净美观"
-license: "Proprietary"
-edition: "free"
-description: |-
-  WhatsApp样式工具免费版,确保发送到WhatsApp的消息遵循平台专属格式语法。核心能力:
+slug: whatsapp-style-tool-free
+name: whatsapp-style-tool-free
+version: 1.0.0
+displayName: WhatsApp样式工具-免费版
+summary: WhatsApp消息格式化工具,支持加粗/斜体/删除线等基础样式,确保消息干净美观
+license: Proprietary
+edition: free
+description: 'WhatsApp样式工具免费版,确保发送到WhatsApp的消息遵循平台专属格式语法。核心能力:
+
   - WhatsApp基础文本样式格式化(加粗/斜体/删除线/等宽体)
+
   - 列表与引用格式转换
+
   - 禁用Markdown符号自动清理
+
   - 格式预览与快速校验
 
+
   适用场景:
+
   - 个人用户发送格式化WhatsApp消息
+
   - 通知消息的排版美化
+
   - 确保消息在WhatsApp端显示正常
 
+
   差异化:
+
   - 免费版聚焦基础样式格式化,操作直观
+
   - 自动识别并修正错误的Markdown符号
-  - 与PRO版完全兼容,可随时...
+
+  - 与PRO版完全兼容,可随时...'
 tags:
-  - 沟通协作
-  - 消息样式
-  - WhatsApp
-  - 格式化
+- 沟通协作
+- 消息样式
+- WhatsApp
+- 格式化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # WhatsApp样式工具(免费版)
 
 ## 概述

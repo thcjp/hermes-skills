@@ -1,40 +1,57 @@
 ---
-slug: "sequential-read-tool-pro"
-name: "sequential-read-tool-pro"
-version: "1.0.0"
-displayName: "顺序阅读工具-专业版"
-summary: "企业级阅读平台,支持团队协作阅读、知识图谱构建与AI深度分析,适合研究团队"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级顺序阅读工具专业版,面向研究团队与知识工作者。核心能力:
+slug: sequential-read-tool-pro
+name: sequential-read-tool-pro
+version: 1.0.0
+displayName: 顺序阅读工具-专业版
+summary: 企业级阅读平台,支持团队协作阅读、知识图谱构建与AI深度分析,适合研究团队
+license: Proprietary
+edition: pro
+description: '企业级顺序阅读工具专业版,面向研究团队与知识工作者。核心能力:
+
   - 多人协作阅读与批注
+
   - 知识图谱自动构建
+
   - AI 深度分析与批判性思考
+
   - PDF/EPUB/Word 直接读取
+
   - 跨文档概念关联
+
   - 阅读报告与知识总结
+
   - 团队读书会管理
+
   - API 接口与知识库集成
 
+
   适用场景:
+
   - 研究团队文献精读
+
   - 企业知识库建设
+
   - 法律文书分析
+
   - 团队读书会组织
 
-  差异化:专业版在免费版基础上扩展团队协作、知识图谱与 AI 深度分析,兼容免费版阅读笔记
+
+  差异化:专业版在免费版基础上扩展团队协作、知识图谱与 AI 深度分析,兼容免费版阅读笔记'
 tags:
-  - 阅读
-  - 企业级
-  - 知识图谱
-  - 团队协作
-  - AI分析
+- 阅读
+- 企业级
+- 知识图谱
+- 团队协作
+- AI分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 顺序阅读工具 - 专业版
 
 ## 概述

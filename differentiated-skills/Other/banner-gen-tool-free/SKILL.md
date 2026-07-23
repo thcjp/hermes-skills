@@ -1,34 +1,46 @@
 ---
-slug: "banner-gen-tool-free"
-name: "banner-gen-tool-free"
-version: "1.0.0"
-displayName: "横幅插画生成免费版"
-summary: "使用图像生成API创建与编辑横幅插画，支持1K/2K/4K分辨率与草稿迭代流程，适合个人创作。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  横幅插画生成工具免费版，面向个人创作者的轻量级图像生成与编辑工具。核心能力:
+slug: banner-gen-tool-free
+name: banner-gen-tool-free
+version: 1.0.0
+displayName: 横幅插画生成免费版
+summary: 使用图像生成API创建与编辑横幅插画，支持1K/2K/4K分辨率与草稿迭代流程，适合个人创作。
+license: Proprietary
+edition: free
+description: '横幅插画生成工具免费版，面向个人创作者的轻量级图像生成与编辑工具。核心能力:
+
   - 基于 Prompt 生成新图像
+
   - 编辑现有图像（添加/移除/改风格）
+
   - 支持 1K/2K/4K 三档分辨率
+
   - 草稿-迭代-终稿三阶段工作流
 
+
   适用场景:
+
   - 个人博客与社交媒体横幅制作
+
   - 快速概念图与配图生成
+
   - 现有图像的风格化编辑
 
-  差异化: 免费版聚焦核心生成与编辑能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手
+
+  差异化: 免费版聚焦核心生成与编辑能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-  - 图像生成
-  - 横幅设计
-  - 创作工具
-  - 免费版
+- 图像生成
+- 横幅设计
+- 创作工具
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 横幅插画生成工具（免费版）
 
 ## 概述

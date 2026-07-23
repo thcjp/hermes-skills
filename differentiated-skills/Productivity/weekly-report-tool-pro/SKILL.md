@@ -1,28 +1,34 @@
 ---
-slug: "weekly-report-tool-pro"
-name: "weekly-report-tool-pro"
-version: "1.0.0"
-displayName: "周报写作器专业版"
-summary: "企业级周报管理系统,支持多源数据采集、团队聚合、模板管理与自动分发"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 工作汇报领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: weekly-report-tool-pro
+name: weekly-report-tool-pro
+version: 1.0.0
+displayName: 周报写作器专业版
+summary: 企业级周报管理系统,支持多源数据采集、团队聚合、模板管理与自动分发
+license: Proprietary
+edition: pro
+description: '核心能力: 工作汇报领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: 周报, 工作总结, 汇报, 进度, 下周计划, 问题风险
+
+  适用关键词: 周报, 工作总结, 汇报, 进度, 下周计划, 问题风险'
 tags:
-  - 周报
-  - 工作汇报
-  - 进度跟踪
+- 周报
+- 工作汇报
+- 进度跟踪
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 周报写作器专业版
 
 ## 概述

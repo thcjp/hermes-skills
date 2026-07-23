@@ -1,22 +1,25 @@
 ---
-slug: "tool-orchestrator"
-name: "tool-orchestrator"
-version: "1.0.0"
-displayName: "工具编排器"
-summary: "端到端加密去中心化记忆编排,统一工具接口,零暴露凭据管理,自动恢复。"
-license: "Proprietary"
-description: |-
-  端到端加密、去中心化存储的智能体记忆编排系统，直击安装复杂、凭据暴露、网关重启困难、槽位绑定冲突四大痛点。适用于跨会话偏好持久化、隐私优先记忆、去中心化存储、记忆固定与作用域管理等场景。核心能力含原生记忆检索、后台自动事实捕获、零暴露凭据管理、自动恢复与智能槽位管理。适用关键词：工具编排、加密记忆、去中心化存储、记忆检索、凭据管理、memory-search、encrypted-memory。
+slug: tool-orchestrator
+name: tool-orchestrator
+version: 1.0.0
+displayName: 工具编排器
+summary: 端到端加密去中心化记忆编排,统一工具接口,零暴露凭据管理,自动恢复。
+license: Proprietary
+description: 端到端加密、去中心化存储的智能体记忆编排系统，直击安装复杂、凭据暴露、网关重启困难、槽位绑定冲突四大痛点。适用于跨会话偏好持久化、隐私优先记忆、去中心化存储、记忆固定与作用域管理等场景。核心能力含原生记忆检索、后台自动事实捕获、零暴露凭据管理、自动恢复与智能槽位管理。适用关键词：工具编排、加密记忆、去中心化存储、记忆检索、凭据管理、memory-search、encrypted-memory。
 tags:
-  - 智能代理
-  - 记忆管理
-  - 数据安全
-  - 工具编排
+- 智能代理
+- 记忆管理
+- 数据安全
+- 工具编排
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 工具编排器（Tool Orchestrator）
 
 端到端加密的记忆存储系统，数据分布于去中心化网络（非单一公司服务器）。通过原生 `memory_search` / `memory_get` 工具进行检索，事实在后台自动捕获，无需为每个事实调用工具。12 词恢复短语绝不进入聊天或 LLM 上下文，凭据文件绝不读取/列出/展示。

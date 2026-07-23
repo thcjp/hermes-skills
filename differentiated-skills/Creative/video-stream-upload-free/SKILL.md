@@ -1,38 +1,54 @@
 ---
-slug: "video-stream-upload-free"
-name: "video-stream-upload-free"
-version: "1.0.0"
-displayName: "视频上传-免费版"
-summary: "轻量级视频上传工具，支持快速上传视频至流媒体平台并获取播放链接，适合个人创作者分发内容。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  视频上传免费版，为个人用户提供轻量化的视频上传与流媒体分发能力。核心能力:
+slug: video-stream-upload-free
+name: video-stream-upload-free
+version: 1.0.0
+displayName: 视频上传-免费版
+summary: 轻量级视频上传工具，支持快速上传视频至流媒体平台并获取播放链接，适合个人创作者分发内容。
+license: Proprietary
+edition: free
+description: '视频上传免费版，为个人用户提供轻量化的视频上传与流媒体分发能力。核心能力:
+
   - 默认快速上传（仅需标题）
+
   - 三步上传流程（创建 → 上传 → 完成）
+
   - HLS 流媒体链接获取
+
   - 上传进度查询
+
   - 基础视频信息管理
 
+
   适用场景:
+
   - 个人创作者视频分发
+
   - 教学视频上传分享
+
   - 短视频内容发布
+
   - 视频内容备份托管
 
+
   差异化:
+
   - 免费版聚焦默认上传流程，零配置快速出链接
-  - 三步上传流程清晰...
+
+  - 三步上传流程清晰...'
 tags:
-  - Creative
-  - 视频上传
-  - 流媒体
-  - 免费版
+- Creative
+- 视频上传
+- 流媒体
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 视频上传工具 - 免费版
 
 ## 概述

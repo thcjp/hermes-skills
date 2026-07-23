@@ -1,36 +1,50 @@
 ---
-slug: "ai-image-gen-tool-pro"
-name: "ai-image-gen-tool-pro"
-version: "1.0.0"
-displayName: "AI图像生成-专业版"
-summary: "企业级图像生成工具,支持4K超清、图生图、风格转换、批量产出,适配商业设计生产。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  AI图像生成专业版,面向企业团队与专业设计师的高级文本生成图像工具。核心能力:
+slug: ai-image-gen-tool-pro
+name: ai-image-gen-tool-pro
+version: 1.0.0
+displayName: AI图像生成-专业版
+summary: 企业级图像生成工具,支持4K超清、图生图、风格转换、批量产出,适配商业设计生产。
+license: Proprietary
+edition: pro
+description: 'AI图像生成专业版,面向企业团队与专业设计师的高级文本生成图像工具。核心能力:
+
   - 4K 超高清分辨率输出,满足印刷与大型展示需求
+
   - 图生图(图+文)能力,基于参考图像二次创作
+
   - 风格转换,将图片转为指定艺术风格
+
   - 批量生成,支持提示词矩阵组合产出
+
   - 优先 API 配额与企业级技术支持
 
+
   适用场景:
+
   - 广告/海报 4K 商业素材生产
+
   - 电商商品图风格化批量处理
+
   - 设计团队创意资产快速沉淀
+
   - 出版印刷高分辨率图像输出
 
-  差异化:专业版在免费版基础上扩展4K超清、图生图、风格转换与批量生成,兼...
+
+  差异化:专业版在免费版基础上扩展4K超清、图生图、风格转换与批量生成,兼...'
 tags:
-  - Creative
-  - 图像生成
-  - 企业版
-  - 商业内容
+- Creative
+- 图像生成
+- 企业版
+- 商业内容
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # AI图像生成工具 - 专业版
 
 ## 概述

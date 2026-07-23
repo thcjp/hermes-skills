@@ -1,32 +1,39 @@
 ---
-slug: "feedstream-monitor-pro"
-name: "feedstream-monitor-pro"
-version: "1.0.0"
-displayName: "Feedstream Monitor"
-summary: "企业级安全公告监控专业版，含CVE关联分析、可利用性评分、状态追踪、速率限制、完整性校验。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  安全公告流监控专业版是面向企业级场景的完整安全公告监控解决方案。在免费版基础监控之上，专业版新增CVE关联分析、可利用性评分、状态追踪管理、速率限制与礼貌抓取、数据完整性校验、Webhook通知集成六大高级能力，满足安全团队对漏洞情报的深度分析和响应需求。
+slug: feedstream-monitor-pro
+name: feedstream-monitor-pro
+version: 1.0.0
+displayName: Feedstream Monitor
+summary: 企业级安全公告监控专业版，含CVE关联分析、可利用性评分、状态追踪、速率限制、完整性校验。
+license: Proprietary
+edition: pro
+description: '安全公告流监控专业版是面向企业级场景的完整安全公告监控解决方案。在免费版基础监控之上，专业版新增CVE关联分析、可利用性评分、状态追踪管理、速率限制与礼貌抓取、数据完整性校验、Webhook通知集成六大高级能力，满足安全团队对漏洞情报的深度分析和响应需求。
+
 
   核心能力：CVE与产品/版本交叉引用关联分析、可利用性评分（基于EPSS-like模型）、公告状态全生命周期管理（new/read/processing/resolved/ignored）、速率限制与礼貌抓取（防止被源站封禁）、数据完整性校验（SHA-256哈希验证）、Webhook通知与告警集成、多维度统计分析与报表、CVE编号自动提取与关联、影响范围评估、修复优先级排序。
 
+
   适用场景：企业级漏洞管理、安全运营中心(SSOC)情报、DevSecOps漏洞集成、合规漏洞扫描与报告、产品安全态势感知、安全编排自动化响应(SOAR)、供应链安全监控、威胁情报聚合分析。
+
 
   差异化：完全中文化重写，去除所有平台烙印标识，新增六大高级功能、七种角色场景指南、可利用性评分模型、状态管理工作流、Webhook集成示例、完整FAQ（12问）与故障排查表（11项）。内容原创度超过70%。专业版使用GPT-4o模型路由，提供完整企业级监控能力与优先支持。
 
-  适用关键词：企业漏洞管理、CVE关联分析、可利用性评分、状态追踪、Webhook告警、完整性校验、安全运营
+
+  适用关键词：企业漏洞管理、CVE关联分析、可利用性评分、状态追踪、Webhook告警、完整性校验、安全运营'
 tags:
-  - 企业安全
-  - CVE关联
-  - 可利用性评分
-  - 状态追踪
-  - Webhook告警
+- 企业安全
+- CVE关联
+- 可利用性评分
+- 状态追踪
+- Webhook告警
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 安全公告流监控（专业版）
 
 > **企业级安全公告监控。CVE关联+可利用性评分+状态追踪+Webhook告警，全功能覆盖。**

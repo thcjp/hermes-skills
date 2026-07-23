@@ -1,23 +1,27 @@
 ---
-slug: "memory-radar-free"
-name: "memory-radar-free"
-version: "1.0.0"
-displayName: "记忆雷达"
-summary: "扫描Agent记忆文件检测恶意指令、凭据泄露、提示注入，五级安全评级，本地模式零数据外泄。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  记忆雷达免费版解决AI Agent记忆安全的"隐形威胁"痛点：恶意指令潜入MEMORY。md绕过安全护栏、API Key在对话日志中明文泄露、提示注入攻击操纵Agent行为、数据外泄指令窃取敏感信息。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
+slug: memory-radar-free
+name: memory-radar-free
+version: 1.0.0
+displayName: 记忆雷达
+summary: 扫描Agent记忆文件检测恶意指令、凭据泄露、提示注入，五级安全评级，本地模式零数据外泄。
+license: Proprietary
+edition: free
+description: 记忆雷达免费版解决AI Agent记忆安全的"隐形威胁"痛点：恶意指令潜入MEMORY。md绕过安全护栏、API Key在对话日志中明文泄露、提示注入攻击操纵Agent行为、数据外泄指令窃取敏感信息。Use
+  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 记忆安全
-  - 安全扫描
-  - 提示注入
-  - 凭据保护
+- 记忆安全
+- 安全扫描
+- 提示注入
+- 凭据保护
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 记忆雷达（免费版）
 
 > **Agent记忆的隐形威胁雷达。五级安全评级，本地模式零数据外泄。**

@@ -16,7 +16,11 @@ tools:
   - - read
 - exec
 # Jira
+pricing_tier: "L2"
+pricing_model: "per_use"
+suggested_price: 19.9
 ---
+
 Access the Jira Cloud API with managed OAuth authentication. Search issues with JQL, create and manage issues, and automate workflows.
 
 ## Quick Start

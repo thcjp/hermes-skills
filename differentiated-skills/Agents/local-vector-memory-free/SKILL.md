@@ -1,22 +1,26 @@
 ---
-slug: "local-vector-memory-free"
-name: "local-vector-memory-free"
-version: "1.0.0"
-displayName: "本地向量记忆(免费版)"
-summary: "零API零云依赖的本地向量记忆免费版：离线可用、隐私不出域，核心存储与检索开箱即用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部 API 调用、零数据出域、完全离线可用的语义记忆检索。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
+slug: local-vector-memory-free
+name: local-vector-memory-free
+version: 1.0.0
+displayName: 本地向量记忆(免费版)
+summary: 零API零云依赖的本地向量记忆免费版：离线可用、隐私不出域，核心存储与检索开箱即用。
+license: Proprietary
+edition: free
+description: 面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部
+  API 调用、零数据出域、完全离线可用的语义记忆检索。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-  - 智能代理
-  - 记忆管理
-  - 本地存储
+- 智能代理
+- 记忆管理
+- 本地存储
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 本地向量记忆（免费版）
 
 **零 API、零云端、零数据出域**的本地向量记忆系统免费体验版。基于 Ollama + LanceDB，在本地完成 embedding 生成与语义检索，适合隐私敏感、离线、成本敏感场景的快速体验。

@@ -1,31 +1,38 @@
 ---
-slug: "skill-creator-tool-pro"
-name: "skill-creator-tool-pro"
-version: "1.0.0"
-displayName: "Skill创建工具（专业版）"
-summary: "创建和管理AI Skill的专用工具，支持模板生成、结构验证与元数据管理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Skill创建工具 - （专业版）
+slug: skill-creator-tool-pro
+name: skill-creator-tool-pro
+version: 1.0.0
+displayName: Skill创建工具（专业版）
+summary: 创建和管理AI Skill的专用工具，支持模板生成、结构验证与元数据管理。
+license: Proprietary
+edition: pro
+description: 'Skill创建工具 - （专业版）
+
 
   核心能力: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator
+
+  适用关键词: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator'
 tags:
-  - Skill创建
-  - 开发工具
-  - 模板生成
-  - 结构验证
+- Skill创建
+- 开发工具
+- 模板生成
+- 结构验证
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Skill创建工具（专业版）
 
 ## 概述

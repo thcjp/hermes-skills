@@ -1,32 +1,39 @@
 ---
-slug: "knowledge-graph-builder-pro"
-name: "knowledge-graph-builder-pro"
-version: "1.0.0"
-displayName: "Knowledge Graph Buil"
-summary: "AI Agent全功能知识图谱引擎，SQLite迁移+图可视化+SPARQL查询+版本追踪+跨技能通信。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  知识图谱构建器专业版是在免费版基础上的全功能升级，为AI Agent提供从类型化图谱到可视化的完整知识管理引擎。专业版解锁SQLite迁移、图可视化、SPARQL-like高级查询、版本追踪与差异对比、跨技能通信增强、多平台集成六大高级功能，实现大规模图谱的高性能管理与可视化。
+slug: knowledge-graph-builder-pro
+name: knowledge-graph-builder-pro
+version: 1.0.0
+displayName: Knowledge Graph Buil
+summary: AI Agent全功能知识图谱引擎，SQLite迁移+图可视化+SPARQL查询+版本追踪+跨技能通信。
+license: Proprietary
+edition: pro
+description: '知识图谱构建器专业版是在免费版基础上的全功能升级，为AI Agent提供从类型化图谱到可视化的完整知识管理引擎。专业版解锁SQLite迁移、图可视化、SPARQL-like高级查询、版本追踪与差异对比、跨技能通信增强、多平台集成六大高级功能，实现大规模图谱的高性能管理与可视化。
+
 
   核心能力：SQLite迁移（大规模图谱性能优化+索引+事务）、图可视化（节点-关系网络图渲染+布局算法+交互式探索）、SPARQL-like高级查询（复杂图模式匹配+多跳遍历+聚合统计）、版本追踪与差异对比（图谱变更历史+时间机+差异可视化）、跨技能通信增强（事件订阅+自动触发+消息总线）、7种角色场景指南、性能优化策略、自定义类型与关系扩展。
 
+
   适用场景：企业级大规模知识图谱管理、跨团队知识共享与可视化、复杂关系网络的深度查询、知识图谱版本演进追踪、Agent跨技能事件驱动协作、多平台知识库集成、技术债依赖网络分析、组织架构与项目组合管理。
+
 
   差异化：完全中文化重写，新增SQLite迁移引擎、图可视化渲染器、SPARQL-like查询解析器、版本追踪时间机、跨技能事件总线。内容原创度超过70%，针对企业级"大规模性能差、关系不可视、查询能力弱、变更不可追"四大痛点重新设计。专业版提供完整功能与优先支持。保留原始MIT版权声明。
 
-  适用关键词：知识图谱、SQLite迁移、图可视化、SPARQL查询、版本追踪、跨技能通信、事件总线
+
+  适用关键词：知识图谱、SQLite迁移、图可视化、SPARQL查询、版本追踪、跨技能通信、事件总线'
 tags:
-  - 知识图谱
-  - SQLite迁移
-  - 图可视化
-  - SPARQL查询
-  - 版本追踪
+- 知识图谱
+- SQLite迁移
+- 图可视化
+- SPARQL查询
+- 版本追踪
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 知识图谱构建器（专业版）
 
 > **AI Agent的全功能知识图谱引擎。SQLite迁移+图可视化+SPARQL查询+版本追踪，大规模图谱高性能管理。**

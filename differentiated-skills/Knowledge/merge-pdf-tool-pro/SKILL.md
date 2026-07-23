@@ -1,31 +1,38 @@
 ---
-slug: "merge-pdf-tool-pro"
-name: "merge-pdf-tool-pro"
-version: "1.0.0"
-displayName: "PDF合并工具（专业版）"
-summary: "合并多个PDF文件为一个，支持页面排序、页面范围选择与批量处理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  PDF合并工具 - （专业版）
+slug: merge-pdf-tool-pro
+name: merge-pdf-tool-pro
+version: 1.0.0
+displayName: PDF合并工具（专业版）
+summary: 合并多个PDF文件为一个，支持页面排序、页面范围选择与批量处理。
+license: Proprietary
+edition: pro
+description: 'PDF合并工具 - （专业版）
+
 
   核心能力: PDF合并, 合并PDF, merge pdf, 页面合并, 批量合并, 书签生成
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: PDF合并, 合并PDF, merge pdf, 页面合并, 批量合并, 书签生成
+
+  适用关键词: PDF合并, 合并PDF, merge pdf, 页面合并, 批量合并, 书签生成'
 tags:
-  - PDF处理
-  - PDF合并
-  - 批量处理
-  - 书签
+- PDF处理
+- PDF合并
+- 批量处理
+- 书签
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # PDF合并工具（专业版）
 
 ## 概述

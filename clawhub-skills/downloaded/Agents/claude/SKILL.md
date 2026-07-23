@@ -1,19 +1,7 @@
 ---
-slug: ai-assistant
-name: claude
-version: "1.0.0"
-displayName: ai-assistant
-summary: Optimize long-context reasoning for commercial, legal, and high-stakes documents.
-  Built for users...
-license: MIT-0
-description: |-
-  Optimize long-context reasoning for commercial, legal, and high-stakes
-  documents。Built for users。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
-tags:
-- Agents
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # ai-assistant

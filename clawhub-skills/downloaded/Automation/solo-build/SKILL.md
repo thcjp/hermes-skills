@@ -14,7 +14,11 @@ tools:
   - read
   - exec
 # Build
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 This skill is self-contained — follow the task loop, TDD rules, and completion flow below instead of delegating to external build/execution skills (superpowers, etc.).
 
 Execute tasks from an implementation plan. Finds `plan.md` (in `docs/plan/`), picks the next unchecked task, implements it with TDD workflow, commits, and updates progress.

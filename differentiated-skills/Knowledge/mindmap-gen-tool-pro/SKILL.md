@@ -1,31 +1,38 @@
 ---
-slug: "mindmap-gen-tool-pro"
-name: "mindmap-gen-tool-pro"
-version: "1.0.0"
-displayName: "思维导图生成（专业版）"
-summary: "从主题或文档自动生成思维导图，支持Markmap格式与多种布局风格。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  思维导图生成 - （专业版）
+slug: mindmap-gen-tool-pro
+name: mindmap-gen-tool-pro
+version: 1.0.0
+displayName: 思维导图生成（专业版）
+summary: 从主题或文档自动生成思维导图，支持Markmap格式与多种布局风格。
+license: Proprietary
+edition: pro
+description: '思维导图生成 - （专业版）
+
 
   核心能力: 思维导图, mindmap, markmap, 知识结构, 学习路径, 主题展开, 文档转导图
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 思维导图, mindmap, markmap, 知识结构, 学习路径, 主题展开, 文档转导图
+
+  适用关键词: 思维导图, mindmap, markmap, 知识结构, 学习路径, 主题展开, 文档转导图'
 tags:
-  - 思维导图
-  - 可视化
-  - 知识结构
-  - Markmap
+- 思维导图
+- 可视化
+- 知识结构
+- Markmap
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 思维导图生成（专业版）
 
 ## 概述

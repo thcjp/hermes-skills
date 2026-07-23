@@ -1,34 +1,46 @@
 ---
-slug: "google-workspace-toolkit-free"
-name: "google-workspace-toolkit-free"
-version: "1.0.0"
-displayName: "谷歌办公工具接口免费版"
-summary: "免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  谷歌办公工具接口免费版,通过工具协议直接调用 Google Workspace 服务,无需创建云控制台项目,OAuth 登录即可使用。核心能力:
+slug: google-workspace-toolkit-free
+name: google-workspace-toolkit-free
+version: 1.0.0
+displayName: 谷歌办公工具接口免费版
+summary: 免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用。
+license: Proprietary
+edition: free
+description: '谷歌办公工具接口免费版,通过工具协议直接调用 Google Workspace 服务,无需创建云控制台项目,OAuth 登录即可使用。核心能力:
+
   - 零云控制台配置,Google 账号登录即用
+
   - Gmail 邮件搜索、读取、发送、草稿
+
   - Google 日历事件列表、创建、查询
+
   - Google Drive 文件搜索与下载
+
   - 通过工具协议统一调用,无需管理多个 SDK
 
+
   适用场景:
+
   - 个人用户快速访问 Google 邮件与日历
+
   - 无云控制台配置经验的轻量用户
-  - 需要命令行驱动 Google 服务的自动化...
+
+  - 需要命令行驱动 Google 服务的自动化...'
 tags:
-  - 沟通协作
-  - 谷歌办公
-  - 工具接口
-  - OAuth认证
-  - 个人效率
+- 沟通协作
+- 谷歌办公
+- 工具接口
+- OAuth认证
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 谷歌办公工具接口 - 免费版
 
 ## 概述

@@ -1,23 +1,28 @@
 ---
-slug: "feed-digest-tool-free"
-name: "feed-digest-tool-free"
-version: "1.0.0"
-displayName: "订阅摘要(免费版)"
-summary: "订阅摘要免费版，支持RSS订阅获取、未读扫描、基础分类与摘要生成。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  订阅摘要助手免费版是面向个人用户的轻量RSS订阅摘要工具。聚焦"获取-扫描-筛选-阅读"四步流程，从订阅源中筛选高价值内容生成摘要。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+slug: feed-digest-tool-free
+name: feed-digest-tool-free
+version: 1.0.0
+displayName: 订阅摘要(免费版)
+summary: 订阅摘要免费版，支持RSS订阅获取、未读扫描、基础分类与摘要生成。
+license: Proprietary
+edition: free
+description: 订阅摘要助手免费版是面向个人用户的轻量RSS订阅摘要工具。聚焦"获取-扫描-筛选-阅读"四步流程，从订阅源中筛选高价值内容生成摘要。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
-  - 订阅摘要
-  - RSS阅读
-  - 内容筛选
-  - 信息过载
+- 订阅摘要
+- RSS阅读
+- 内容筛选
+- 信息过载
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 > **获取、扫描、筛选、阅读。四步完成订阅内容摘要。**
 
 无需复杂配置，通过 `feed` CLI 即可获取订阅源最新内容，智能筛选高价值条目，生成精炼摘要。免费版聚焦轻量场景，帮助用户应对信息过载。

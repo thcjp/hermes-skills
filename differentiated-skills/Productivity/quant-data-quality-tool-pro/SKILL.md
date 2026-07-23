@@ -1,29 +1,35 @@
 ---
-slug: "quant-data-quality-tool-pro"
-name: "quant-data-quality-tool-pro"
-version: "1.0.0"
-displayName: "数据质量检查专业版"
-summary: "企业级数据质量管理系统,支持自动化检查流水线、异常告警与数据血缘追踪"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 数据质量领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: quant-data-quality-tool-pro
+name: quant-data-quality-tool-pro
+version: 1.0.0
+displayName: 数据质量检查专业版
+summary: 企业级数据质量管理系统,支持自动化检查流水线、异常告警与数据血缘追踪
+license: Proprietary
+edition: pro
+description: '核心能力: 数据质量领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: 数据质量, 量化, 检查, 完整性, 准确性, 一致性, 时效性
+
+  适用关键词: 数据质量, 量化, 检查, 完整性, 准确性, 一致性, 时效性'
 tags:
-  - 数据质量
-  - 量化策略
-  - 数据检查
-  - 数据完整性
+- 数据质量
+- 量化策略
+- 数据检查
+- 数据完整性
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 数据质量检查专业版
 
 ## 概述

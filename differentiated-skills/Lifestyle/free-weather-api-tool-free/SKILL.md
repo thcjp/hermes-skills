@@ -1,28 +1,35 @@
 ---
-slug: "free-weather-api-tool-free"
-name: "free-weather-api-tool-free"
-version: "1.0.0"
-displayName: "天气查询免费版"
-summary: "查询城市天气,支持实时天气、未来7天预报、空气质量与出行建议"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的天气查询助手,提供实时天气、多日预报、空气质量与智能建议。
+slug: free-weather-api-tool-free
+name: free-weather-api-tool-free
+version: 1.0.0
+displayName: 天气查询免费版
+summary: 查询城市天气,支持实时天气、未来7天预报、空气质量与出行建议
+license: Proprietary
+edition: free
+description: '面向个人用户的天气查询助手,提供实时天气、多日预报、空气质量与智能建议。
+
   核心能力: 城市天气查询、未来7天预报、空气质量分析、出行建议、天气预警提醒
+
   适用场景: 出行规划、穿衣建议、户外活动决策、差旅准备
+
   差异化: 免费版聚焦单城市查询与基础建议,适合个人日常使用
-  适用关键词: 天气查询, 实时天气, 未来预报, 空气质量, 出行建议, 天气预警
+
+  适用关键词: 天气查询, 实时天气, 未来预报, 空气质量, 出行建议, 天气预警'
 tags:
-  - 天气查询
-  - 生活助手
-  - 出行规划
-  - 空气质量
-  - 天气预警
+- 天气查询
+- 生活助手
+- 出行规划
+- 空气质量
+- 天气预警
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 天气查询 (免费版)
 
 ## 概述

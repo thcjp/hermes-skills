@@ -1,29 +1,35 @@
 ---
-slug: "feishu-calendar-tool-pro"
-name: "feishu-calendar-tool-pro"
-version: "1.0.0"
-displayName: "飞书日历专业版"
-summary: "企业级飞书日历管理,支持共享日历、多人协作、事件同步与智能调度"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: feishu-calendar-tool-pro
+name: feishu-calendar-tool-pro
+version: 1.0.0
+displayName: 飞书日历专业版
+summary: 企业级飞书日历管理,支持共享日历、多人协作、事件同步与智能调度
+license: Proprietary
+edition: pro
+description: '核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: 飞书, feishu, lark, 日历, 日程, 共享日历, 事件同步
+
+  适用关键词: 飞书, feishu, lark, 日历, 日程, 共享日历, 事件同步'
 tags:
-  - 飞书
-  - Lark
-  - 日历
-  - 日程
+- 飞书
+- Lark
+- 日历
+- 日程
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 飞书日历专业版
 
 ## 概述

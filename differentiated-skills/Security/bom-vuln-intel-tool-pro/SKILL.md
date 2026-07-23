@@ -1,24 +1,28 @@
 ---
-slug: "bom-vuln-intel-tool-pro"
-name: "bom-vuln-intel-tool-pro"
-version: "1.0.0"
-displayName: "物料清单漏洞情报专业版"
-summary: "企业级SBOM管理平台,支持多生态、CycloneDX/SPDX标准、批量扫描、持续监控与CI/CD集成,适合安全团队与企业用户。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  物料清单漏洞情报专业版,为企业安全团队提供全方位SBOM管理与依赖漏洞治理能力。核心能力:多生态SBOM生成、CycloneDX/SPDX标准输出、OSV+GHSA+NVD三库联查、批量扫描、持续监控与告警、SARIF报告。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
+slug: bom-vuln-intel-tool-pro
+name: bom-vuln-intel-tool-pro
+version: 1.0.0
+displayName: 物料清单漏洞情报专业版
+summary: 企业级SBOM管理平台,支持多生态、CycloneDX/SPDX标准、批量扫描、持续监控与CI/CD集成,适合安全团队与企业用户。
+license: Proprietary
+edition: pro
+description: 物料清单漏洞情报专业版,为企业安全团队提供全方位SBOM管理与依赖漏洞治理能力。核心能力:多生态SBOM生成、CycloneDX/SPDX标准输出、OSV+GHSA+NVD三库联查、批量扫描、持续监控与告警、SARIF报告。Use
+  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。
 tags:
-  - 安全
-  - SBOM
-  - 供应链安全
-  - 企业版
-  - CycloneDX
+- 安全
+- SBOM
+- 供应链安全
+- 企业版
+- CycloneDX
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 物料清单漏洞情报专业版
 ## 概述
 专业版为企业安全团队提供完整的软件物料清单(SBOM)管理与依赖漏洞治理平台。在免费版基础查询能力之上,新增多生态SBOM生成(npm/pip/go/cargo/maven/nuget)、CycloneDX与SPDX标准格式输出、OSV+GHSA+NVD三漏洞库联查、批量多项目扫描、持续漏洞监控与Webhook告警、SARIF合规报告。专业版完全兼容免费版查询接口,已有检查脚本可无缝升级。

@@ -11,7 +11,11 @@ tags: '[''Research'']'
 tools:
   - read
   - exec
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 
 # Multi-Source Research - å¤æºç ç©¶
 

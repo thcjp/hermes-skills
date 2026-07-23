@@ -1,34 +1,45 @@
 ---
-slug: "aws-agent-orchestrator-pro"
-name: "aws-agent-orchestrator-pro"
-version: "1.0.0"
-displayName: "AWS智能体编排专业版"
-summary: "完整的AWS多智能体编排能力，含Orchestrator协作、Gateway工具链与跨会话LTM长期记忆，面向团队与企业生产环境。"
-license: "Proprietary"
-description: |-
-  AWS智能体编排专业版（aws-agent-orchestrator-pro）面向团队与企业生产环境，在免费版单智能体能力之上，解锁多智能体编排、Gateway工具链与跨会话长期记忆（LTM）三大高级能力。它让企业能够在统一session上下文中协调多个Specialist Agent，将Lambda/API网关转化为MCP工具，并跨会话沉淀事实与决策。
+slug: aws-agent-orchestrator-pro
+name: aws-agent-orchestrator-pro
+version: 1.0.0
+displayName: AWS智能体编排专业版
+summary: 完整的AWS多智能体编排能力，含Orchestrator协作、Gateway工具链与跨会话LTM长期记忆，面向团队与企业生产环境。
+license: Proprietary
+description: 'AWS智能体编排专业版（aws-agent-orchestrator-pro）面向团队与企业生产环境，在免费版单智能体能力之上，解锁多智能体编排、Gateway工具链与跨会话长期记忆（LTM）三大高级能力。它让企业能够在统一session上下文中协调多个Specialist
+  Agent，将Lambda/API网关转化为MCP工具，并跨会话沉淀事实与决策。
 
-  核心能力：Orchestrator-Specialists多智能体协作、AgentCore Memory STM+LTM双模记忆、AgentCore Gateway（Lambda/REST/MCP三transport）、LangGraph完整StateGraph编排、BedrockAgentCoreApp HTTP服务封装、agentcore CLI全命令、容器化部署与生命周期管理、企业级可观测性与流式响应、跨Agent session上下文共享、AWS Bedrock全模型调用、企业级场景指南与多角色用例。
+
+  核心能力：Orchestrator-Specialists多智能体协作、AgentCore Memory STM+LTM双模记忆、AgentCore Gateway（Lambda/REST/MCP三transport）、LangGraph完整StateGraph编排、BedrockAgentCoreApp
+  HTTP服务封装、agentcore CLI全命令、容器化部署与生命周期管理、企业级可观测性与流式响应、跨Agent session上下文共享、AWS Bedrock全模型调用、企业级场景指南与多角色用例。
+
 
   适用场景：企业级客服中心多Agent协作、金融风控多智能体决策、电商导购+下单+售后流水线、医疗问诊分诊+专家会诊、广告投放多Agent协同、跨部门知识中台、生产环境智能体集群、Bedrock生产化部署与治理、团队级AI工作流编排。
 
-  差异化：相比免费版与通用部署模板，专业版提供三大独有能力：(1) Orchestrator委托模式，支持内联函数与独立部署Agent混合协作；(2) Gateway工具链，将Lambda/REST/MCP三种transport统一封装为可调用工具并自动注入鉴权；(3) LTM长期记忆，跨会话/跨Agent沉淀事实与决策，约10秒最终一致性。配合企业级场景指南（4角色×3+场景）、完整FAQ（10+问）与性能优化策略，覆盖从POC到生产的全路径。
+
+  差异化：相比免费版与通用部署模板，专业版提供三大独有能力：(1) Orchestrator委托模式，支持内联函数与独立部署Agent混合协作；(2) Gateway工具链，将Lambda/REST/MCP三种transport统一封装为可调用工具并自动注入鉴权；(3)
+  LTM长期记忆，跨会话/跨Agent沉淀事实与决策，约10秒最终一致性。配合企业级场景指南（4角色×3+场景）、完整FAQ（10+问）与性能优化策略，覆盖从POC到生产的全路径。
+
 
   适用关键词：aws智能体、多智能体编排、agentcore gateway、langgraph orchestrator、bedrock多agent、跨会话记忆、LTM记忆、MCP工具链、智能体集群、企业智能体编排
 
-  版本定位：收费专业版，定价¥99/月（企业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-agent-orchestrator-free。
+
+  版本定位：收费专业版，定价¥99/月（企业工具类）。包含免费版全部能力 + 3项高级解锁能力 + 企业级场景指南 + 优先支持。免费试用请使用 aws-agent-orchestrator-free。'
 tags:
-  - 智能体编排
-  - 多智能体
-  - 企业工具
-  - AWS部署
-  - 高级编排
+- 智能体编排
+- 多智能体
+- 企业工具
+- AWS部署
+- 高级编排
 tools:
-  - read
-  - exec
-edition: "pro"
-homepage: "https://skillhub.cn"
+- read
+- exec
+edition: pro
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # AWS智能体编排专业版（aws-agent-orchestrator-pro）
 
 本Skill在免费版单智能体能力之上，解锁**多智能体编排、Gateway工具链、跨会话长期记忆（LTM）**三大高级能力，面向团队与企业生产环境。

@@ -1,19 +1,23 @@
 ---
 slug: internet-search-pro
 name: internet-search-pro
-version: "1.0.0"
+version: 1.0.0
 displayName: Internet Search
-summary: "联网搜索工具 - 帮你检索最新信息、新闻、实时数据 Use when: 用户需要查“最新消息”、“搜索xx”、“查一下”、“找资料” NOT for:
-  回答常识问题、闲聊、写文章"
+summary: '联网搜索工具 - 帮你检索最新信息、新闻、实时数据 Use when: 用户需要查“最新消息”、“搜索xx”、“查一下”、“找资料” NOT for:
+  回答常识问题、闲聊、写文章'
 license: MIT-0
-description: |-
-  联网搜索工具 - 帮你检索最新信息、新闻、实时数据 Use when: 用户需要查“最新消息”、“搜索xx”、“查一下”、“找资料” NOT\
+description: '联网搜索工具 - 帮你检索最新信息、新闻、实时数据 Use when: 用户需要查“最新消息”、“搜索xx”、“查一下”、“找资料” NOT\
+
   \ for: 回答常识问题、闲聊、写文章\n\n核心能力:\n- 研究工具领域的专业化AI辅助工具\n- 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\
-  \n适用场景:\n- 数据研究、文献分析、信息收集\n- 独立开发者与一人公司效率提升\n- 自动化工作流与智能决策辅助\n\n差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完...
+
+  \n适用场景:\n- 数据研究、文献分析、信息收集\n- 独立开发者与一人公司效率提升\n- 自动化工作流与智能决策辅助\n\n差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完...'
 tags: '[''Research'']'
 tools:
-  - read
-  - exec
+- read
+- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # internet-search-proç½é¡µæç´¢å©æ

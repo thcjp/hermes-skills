@@ -1,23 +1,27 @@
 ---
-slug: "pg-mcp-skills-free"
-name: "pg-mcp-skills-free"
-version: "1.0.0"
-displayName: "PG-MCP助手(免费版)"
-summary: "PostgreSQL数据库管理与优化助手，通过MCP工具实现健康检查、索引调优、查询计划分析等。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  PG-MCP助手免费版是一套基于 MCP工具协议的 `PostgreSQL` 数据库管理与优化知识库，帮助开发者在不离开 Agent 对话的前提下完成数据库健康检查、索引优化、查询计划分析、模式查询与 SQL 执行等日常运维任务。核心能力：提供 MCP工具可用性前置检查、六类常见意图的智能路由、写操作安全确认流程、只读模式兼容方案、长时间查询的性能保护策略
+slug: pg-mcp-skills-free
+name: pg-mcp-skills-free
+version: 1.0.0
+displayName: PG-MCP助手(免费版)
+summary: PostgreSQL数据库管理与优化助手，通过MCP工具实现健康检查、索引调优、查询计划分析等。
+license: Proprietary
+edition: free
+description: PG-MCP助手免费版是一套基于 MCP工具协议的 `PostgreSQL` 数据库管理与优化知识库，帮助开发者在不离开 Agent 对话的前提下完成数据库健康检查、索引优化、查询计划分析、模式查询与
+  SQL 执行等日常运维任务。核心能力：提供 MCP工具可用性前置检查、六类常见意图的智能路由、写操作安全确认流程、只读模式兼容方案、长时间查询的性能保护策略
 tags:
-  - 数据库
-  - 集成工具
-  - MCP工具
-  - 免费版
+- 数据库
+- 集成工具
+- MCP工具
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # PG-MCP助手（免费版）
 
 ## 概述

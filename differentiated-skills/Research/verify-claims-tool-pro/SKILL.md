@@ -1,23 +1,27 @@
 ---
-slug: "verify-claims-tool-pro"
-name: "verify-claims-tool-pro"
-version: "1.0.0"
-displayName: "事实核查助手专业版"
-summary: "企业级事实核查平台,支持批量声明核查、定时监控、深度分析与团队协作"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  事实核查助手专业版,面向企业团队和专业研究人员提供深度的事实核查能力。支持批量声明核查、定时监控预警、深度分析报告、团队协作等高级功能。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
+slug: verify-claims-tool-pro
+name: verify-claims-tool-pro
+version: 1.0.0
+displayName: 事实核查助手专业版
+summary: 企业级事实核查平台,支持批量声明核查、定时监控、深度分析与团队协作
+license: Proprietary
+edition: pro
+description: 事实核查助手专业版,面向企业团队和专业研究人员提供深度的事实核查能力。支持批量声明核查、定时监控预警、深度分析报告、团队协作等高级功能。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 研究工具
-  - 事实核查
-  - 企业级
-  - 批量处理
+- 研究工具
+- 事实核查
+- 企业级
+- 批量处理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 事实核查助手专业版是企业级的事实核查与信息验证平台。在完整兼容免费版所有核查能力的基础上,专业版引入了批量声明核查、定时监控预警、深度分析报告、团队协作、自定义核查规则等高级能力,适用于企业公关舆情监控、媒体内容审核、政府虚假信息监控等专业场景。
 
 专业版特别强化了规模化处理能力,支持数百条声明并行核查、定时自动监控、结构化分析报告,帮助机构建立系统化的信息验证流程。

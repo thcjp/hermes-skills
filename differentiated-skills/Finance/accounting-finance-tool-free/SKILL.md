@@ -1,23 +1,28 @@
 ---
-slug: "accounting-finance-tool-free"
-name: "accounting-finance-tool-free"
-version: "1.0.0"
-displayName: "财务分析入门工具"
-summary: "企业财务分析与估值建模基础工具集，涵盖DCF、可比估值、财务比率等核心技能。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人投资者与初级分析师的财务分析技能包，提供估值建模、财务比率分析、
-  风险评估等基础能力。通过自然语言指令驱动Agent执行专业财务分析任务。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: accounting-finance-tool-free
+name: accounting-finance-tool-free
+version: 1.0.0
+displayName: 财务分析入门工具
+summary: 企业财务分析与估值建模基础工具集，涵盖DCF、可比估值、财务比率等核心技能。
+license: Proprietary
+edition: free
+description: '面向个人投资者与初级分析师的财务分析技能包，提供估值建模、财务比率分析、
+
+  风险评估等基础能力。通过自然语言指令驱动Agent执行专业财务分析任务。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-  - Finance
-  - 估值分析
-  - 财务建模
+- Finance
+- 估值分析
+- 财务建模
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 财务分析入门工具（免费版）
 
 ## 概述

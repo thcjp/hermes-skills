@@ -1,30 +1,37 @@
 ---
-slug: "compress-pdf-tool-pro"
-name: "compress-pdf-tool-pro"
-version: "1.0.0"
-displayName: "PDF压缩工具（专业版）"
-summary: "通过API上传PDF文件进行压缩，支持图像质量与DPI参数调整，轮询返回下载链接。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  PDF压缩工具 - （专业版）
+slug: compress-pdf-tool-pro
+name: compress-pdf-tool-pro
+version: 1.0.0
+displayName: PDF压缩工具（专业版）
+summary: 通过API上传PDF文件进行压缩，支持图像质量与DPI参数调整，轮询返回下载链接。
+license: Proprietary
+edition: pro
+description: 'PDF压缩工具 - （专业版）
+
 
   核心能力: PDF压缩, 文件压缩, 减小体积, 压缩PDF, compress pdf, 批量压缩
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: PDF压缩, 文件压缩, 减小体积, 压缩PDF, compress pdf, 批量压缩
+
+  适用关键词: PDF压缩, 文件压缩, 减小体积, 压缩PDF, compress pdf, 批量压缩'
 tags:
-  - PDF处理
-  - 文件压缩
-  - 批量处理
+- PDF处理
+- 文件压缩
+- 批量处理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # PDF压缩工具（专业版）
 
 ## 概述

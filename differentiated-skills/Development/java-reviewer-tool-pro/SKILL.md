@@ -18,7 +18,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 本工具面向企业级 Java 开发团队，提供代码审查的完整治理方案。在免费版 6 大维度审查、4 级严重程度、修复建议能力之上，专业版新增批量多文件审查、自定义规则引擎、HTML 结构化报告、需求一致性检查、OWASP 安全审计、CI/CD 质量门禁等能力。通过可配置的规则引擎与数据驱动的质量度量，帮助团队建立可量化、可追踪的代码质量体系。
 
 **版本兼容性说明**：专业版完全兼容免费版（`java-reviewer-tool-free`）的所有审查维度、规则与报告格式，可无缝升级。

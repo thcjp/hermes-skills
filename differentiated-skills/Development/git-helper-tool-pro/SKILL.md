@@ -35,7 +35,11 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # Git助手 - 专业版
 ## 概述
 Git助手专业版为企业研发团队提供智能Git辅助能力。在免费版操作指引之上,专业版新增智能冲突分析、自动修复建议、批量仓库诊断、自动化故障恢复和团队知识库,帮助团队高效解决Git问题。

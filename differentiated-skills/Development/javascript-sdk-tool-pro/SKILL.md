@@ -23,7 +23,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 本工具面向企业级 AI 应用开发团队，提供智能体构建、流式响应、会话管理、工具构建器与服务器代理集成的完整方案。在免费版基础应用调用与文件上传能力之上，专业版新增 Agent SDK、流式响应处理、有状态会话、自定义工具构建、多框架代理集成、人工审批工作流等能力。通过丰富的 API 与类型安全支持，帮助团队构建生产级 AI 智能体应用。
 
 **版本兼容性说明**：专业版完全兼容免费版（`javascript-sdk-tool-free`）的所有基础调用、认证配置与文件上传能力，可无缝升级。

@@ -1,35 +1,48 @@
 ---
-slug: "monitor-toolkit-free"
-name: "monitor-toolkit-free"
-version: "1.0.0"
-displayName: "监控工具包-免费版"
-summary: "轻量级服务监控工具,支持HTTP/SSL/进程/磁盘检查,状态变更告警,适合个人项目"
-license: "Proprietary"
-edition: "free"
-description: |-
-  轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:
+slug: monitor-toolkit-free
+name: monitor-toolkit-free
+version: 1.0.0
+displayName: 监控工具包-免费版
+summary: 轻量级服务监控工具,支持HTTP/SSL/进程/磁盘检查,状态变更告警,适合个人项目
+license: Proprietary
+edition: free
+description: '轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:
+
   - HTTP 接口可用性监控
+
   - SSL 证书过期检测
+
   - 进程与端口状态检查
+
   - 磁盘空间监控
+
   - 状态变更邮件/通知告警
 
+
   适用场景:
+
   - 个人项目 API 健康监控
+
   - 网站 SSL 证书到期提醒
+
   - 服务器进程存活检查
 
-  差异化:免费版提供基础监控能力,适合个人项目
+
+  差异化:免费版提供基础监控能力,适合个人项目'
 tags:
-  - 监控
-  - 运维
-  - 告警
-  - 健康检查
+- 监控
+- 运维
+- 告警
+- 健康检查
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 监控工具包 - 免费版
 
 ## 概述

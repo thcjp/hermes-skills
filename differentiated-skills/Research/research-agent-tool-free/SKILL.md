@@ -1,37 +1,52 @@
 ---
-slug: "research-agent-tool-free"
-name: "research-agent-tool-free"
-version: "1.0.0"
-displayName: "研究代理助手免费版"
-summary: "开放式主题研究工具，构建可持续维护的Markdown研究文档，支持交互式探索"
-license: "Proprietary"
-edition: "free"
-description: |-
-  研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:
+slug: research-agent-tool-free
+name: research-agent-tool-free
+version: 1.0.0
+displayName: 研究代理助手免费版
+summary: 开放式主题研究工具，构建可持续维护的Markdown研究文档，支持交互式探索
+license: Proprietary
+edition: free
+description: '研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:
+
   - 交互式研究模式，实时搜索与综合
+
   - 为每个研究主题创建独立文件夹与文档
+
   - 结构化研究文档（问题、发现、资源、后续步骤）
+
   - 定期综合检查点与进度回顾
+
   - 研究状态管理与PDF导出
 
+
   适用场景:
+
   - 个人开发者技术方案调研
+
   - 学生课题研究与论文准备
+
   - 独立创业者市场验证
 
+
   差异化:
+
   - 免费版聚焦交互式研究，文档驱动而非对话驱动
-  - 研究成果持久化保存...
+
+  - 研究成果持久化保存...'
 tags:
-  - 研究
-  - 文档
-  - 调研
-  - 知识管理
+- 研究
+- 文档
+- 调研
+- 知识管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 研究代理助手（免费版）
 ## 概述
 研究代理助手免费版是一款帮助用户围绕特定主题开展开放式研究的智能代理工具。核心理念是"对话是短暂的，文档才是重要的"。代理为每个研究主题创建独立的研究文件夹，通过交互式对话逐步搜索、综合和更新研究文档，最终形成结构化的知识沉淀。

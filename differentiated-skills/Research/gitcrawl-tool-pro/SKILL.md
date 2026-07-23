@@ -1,39 +1,55 @@
 ---
-slug: "gitcrawl-tool-pro"
-name: "gitcrawl-tool-pro"
-version: "1.0.0"
-displayName: "仓库归档专业版"
-summary: "企业级代码仓库归档管理工具，支持多仓库监控、重复聚类、实时同步、团队协作与自动化分流，适合团队协作与大型项目管理。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级代码仓库归档管理工具，支持多仓库监控、重复聚类、实时同步、团队协作与自动化分流，适合团队协作与大型项目管理。核心能力:
+slug: gitcrawl-tool-pro
+name: gitcrawl-tool-pro
+version: 1.0.0
+displayName: 仓库归档专业版
+summary: 企业级代码仓库归档管理工具，支持多仓库监控、重复聚类、实时同步、团队协作与自动化分流，适合团队协作与大型项目管理。
+license: Proprietary
+edition: pro
+description: '企业级代码仓库归档管理工具，支持多仓库监控、重复聚类、实时同步、团队协作与自动化分流，适合团队协作与大型项目管理。核心能力:
+
   - 多仓库批量管理与监控
+
   - 重复 issue 智能聚类分析
+
   - 定时自动同步归档数据
+
   - 团队协作与共享归档存储
+
   - 自动化分流与标签建议
+
   - PR 状态变更实时告警
 
+
   适用场景:
+
   - 企业多仓库项目管理
+
   - 开源社区 issue 分流与治理
+
   - 技术团队协作开发
+
   - 代码仓库健康度监控
 
+
   差异化:
-  - PRO 版支持多仓库批量管理...
+
+  - PRO 版支持多仓库批量管理...'
 tags:
-  - 开发工具
-  - 企业工具
-  - 仓库管理
-  - issue分流
-  - 团队协作
+- 开发工具
+- 企业工具
+- 仓库管理
+- issue分流
+- 团队协作
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 仓库归档专业版
 
 ## 概述

@@ -1,34 +1,46 @@
 ---
-slug: "markdown-toolkit-free"
-name: "markdown-toolkit-free"
-version: "1.0.0"
-displayName: "Markdown 工具箱"
-summary: "面向个人的干净可移植 Markdown 生成工具，兼容多平台。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的干净可移植 Markdown 生成工具。核心能力:
+slug: markdown-toolkit-free
+name: markdown-toolkit-free
+version: 1.0.0
+displayName: Markdown 工具箱
+summary: 面向个人的干净可移植 Markdown 生成工具，兼容多平台。
+license: Proprietary
+edition: free
+description: '面向个人用户的干净可移植 Markdown 生成工具。核心能力:
+
   - 避免平台专有语法，保证可移植
+
   - 代码块语言标注与表格语法规范
+
   - 单文件 Markdown 输出与基础校验
+
   - 标题层级与链接规范
 
+
   适用场景:
+
   - 个人笔记/文档生成可移植 Markdown
+
   - 单文件技术文档撰写
+
   - 跨平台发布的 Markdown 校验
 
-  差异化: 免费版聚焦个人单文件 Markdown 生成与校验，提供可移植性规则，零成本使用
+
+  差异化: 免费版聚焦个人单文件 Markdown 生成与校验，提供可移植性规则，零成本使用'
 tags:
-  - Markdown
-  - 文档
-  - 个人效率
-  - 其他工具
+- Markdown
+- 文档
+- 个人效率
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Markdown 工具箱（免费版）
 
 ## 概述

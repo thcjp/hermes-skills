@@ -1,39 +1,55 @@
 ---
-slug: "jellyfin-control-tool-pro"
-name: "jellyfin-control-tool-pro"
-version: "1.0.0"
-displayName: "媒体控制专业版"
-summary: "企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。核心能力:
+slug: jellyfin-control-tool-pro
+name: jellyfin-control-tool-pro
+version: 1.0.0
+displayName: 媒体控制专业版
+summary: 企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。
+license: Proprietary
+edition: pro
+description: '企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。核心能力:
+
   - 多设备同时管理与控制
+
   - 多用户配置与权限管理
+
   - 定时播放与就寝模式
+
   - 媒体库自动扫描与整理
+
   - 播放历史统计与分析报告
+
   - 智能推荐与播放列表管理
 
+
   适用场景:
+
   - 多房间家庭影音系统
+
   - 小型机构媒体管理
+
   - 定时播放与背景音乐
+
   - 媒体库整理与维护
 
+
   差异化:
-  - PRO 版支持多设备管理...
+
+  - PRO 版支持多设备管理...'
 tags:
-  - 媒体
-  - 企业工具
-  - 多设备
-  - 自动化管理
-  - 家庭影院
+- 媒体
+- 企业工具
+- 多设备
+- 自动化管理
+- 家庭影院
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 媒体控制专业版
 ## 概述
 媒体控制专业版是面向多设备家庭和小型机构的进阶 Jellyfin 管理工具。在免费版基础控制能力之上，新增多设备管理、多用户配置、定时播放、媒体库自动化与播放统计等高级功能，支持复杂的家庭影院场景。与免费版完全兼容，已有配置可无缝升级。

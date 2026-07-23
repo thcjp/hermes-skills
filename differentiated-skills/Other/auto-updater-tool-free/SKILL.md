@@ -1,39 +1,55 @@
 ---
-slug: "auto-updater-tool-free"
-name: "auto-updater-tool-free"
-version: "1.0.0"
-displayName: "自动更新工具-免费版"
-summary: "智能自动更新工具,支持版本检查、差异更新与回滚,适合个人项目维护"
-license: "Proprietary"
-edition: "free"
-description: |-
-  智能自动更新工具免费版,面向个人开发者与小型项目。
+slug: auto-updater-tool-free
+name: auto-updater-tool-free
+version: 1.0.0
+displayName: 自动更新工具-免费版
+summary: 智能自动更新工具,支持版本检查、差异更新与回滚,适合个人项目维护
+license: Proprietary
+edition: free
+description: '智能自动更新工具免费版,面向个人开发者与小型项目。
+
 
   核心能力:
+
   - 版本检查与更新通知
+
   - 差异更新(仅下载变更部分)
+
   - 更新前自动备份
+
   - 一键回滚
+
   - 更新日志查看
+
   - 定时检查更新
 
+
   适用场景:
+
   - 个人项目版本更新
+
   - 配置文件同步
+
   - 脚自动更新工具-免费版自动升级
+
 
   差异化:免费版提供基础更新能力。PRO版扩展批量更新、灰度发布、企业级回滚策略与审计。
 
-  适用关键词: update, auto-update, 版本更新, 自动更新, rollback, 回滚, version check
+
+  适用关键词: update, auto-update, 版本更新, 自动更新, rollback, 回滚, version check'
 tags:
-  - 自动更新
-  - 版本管理
-  - 工具
+- 自动更新
+- 版本管理
+- 工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 自动更新工具 - 免费版
 
 ## 概述

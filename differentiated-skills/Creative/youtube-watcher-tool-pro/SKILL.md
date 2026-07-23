@@ -20,7 +20,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 YouTube 内容分析专业版是一款面向企业团队与内容研究机构的高级字幕提取与分析平台。在免费版单视频字幕提取能力之上，专业版扩展了批量提取、频道监控、多语言对比、关键词追踪等企业级能力。
 
 专业版采用任务队列架构，支持并行提取、失败重试、断点续传，可稳定处理 50+ 视频的批量提取任务。同时完全兼容免费版配置，已有项目可无缝迁移。

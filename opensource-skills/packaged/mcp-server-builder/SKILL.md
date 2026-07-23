@@ -1,20 +1,27 @@
 ---
 slug: mcp-toolkit-builder
 name: mcp-server-builder
-version: "1.1.0"
-displayName: "MCP服务器构建器"
-summary: "构建生产级MCP服务器,Python/TypeScript双语言,让LLM连接一切外部系统"
+version: 1.1.0
+displayName: MCP服务器构建器
+summary: 构建生产级MCP服务器,Python/TypeScript双语言,让LLM连接一切外部系统
 license: Proprietary
-description: |-
-  MCP服务器构建器指导创建生产级MCP(Model Context Protocol)服务器,核心功能包括工具定义、资源暴露、提示模板、传输层选择、认证安全和测试部署全流程。适用于让LLM调用外部API、访问数据库、集成SaaS服务、暴露企业内部能力等场景。支持Python(FastMCP)和TypeScript(MCP SDK)双语言。触发关键词:MCP、MCP服务器、Model Context Protocol、FastMCP、MCP SDK、工具集成、API集成、LLM集成、MCP开发、协议服务器。
-tags: [MCP服务器, LLM集成, API集成, 工具开发, 协议实现]
+description: MCP服务器构建器指导创建生产级MCP(Model Context Protocol)服务器,核心功能包括工具定义、资源暴露、提示模板、传输层选择、认证安全和测试部署全流程。适用于让LLM调用外部API、访问数据库、集成SaaS服务、暴露企业内部能力等场景。支持Python(FastMCP)和TypeScript(MCP
+  SDK)双语言。触发关键词:MCP、MCP服务器、Model Context Protocol、FastMCP、MCP SDK、工具集成、API集成、LLM集成、MCP开发、协议服务器。
+tags:
+- MCP服务器
+- LLM集成
+- API集成
+- 工具开发
+- 协议实现
 tools:
-  - read
-  - exec
-suggested_price: "19.90"
-pricing_tier: "business"
-pricing_rationale: "数据库类, medium市场, enterprise复杂度, monthly频次, business层 → 中频专业工具"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 数据库类, medium市场, enterprise复杂度, monthly频次, business层 → 中频专业工具
+pricing_model: per_use
 ---
+
 # MCP服务器构建器
 
 指导创建生产级 MCP 服务器。MCP(Model Context Protocol)定义了 Agent 如何连接外部系统:认证、传输、工具发现。

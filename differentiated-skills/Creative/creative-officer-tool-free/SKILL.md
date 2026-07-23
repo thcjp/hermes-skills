@@ -1,36 +1,50 @@
 ---
-slug: "creative-officer-tool-free"
-name: "creative-officer-tool-free"
-version: "1.0.0"
-displayName: "创意总监免费版"
-summary: "提供创意咨询、头脑风暴与方案评估，帮助个人用户快速产出创意想法与执行方向。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  创意总监免费版 —— 面向个人用户的轻量级创意辅助工具。核心能力:
+slug: creative-officer-tool-free
+name: creative-officer-tool-free
+version: 1.0.0
+displayName: 创意总监免费版
+summary: 提供创意咨询、头脑风暴与方案评估，帮助个人用户快速产出创意想法与执行方向。
+license: Proprietary
+edition: free
+description: '创意总监免费版 —— 面向个人用户的轻量级创意辅助工具。核心能力:
+
   - 创意咨询：回答创意相关问题，提供专业建议
+
   - 头脑风暴：根据主题生成多个创意方向
+
   - 方案评估：对创意方案进行多维度评分
+
   - 创意简报生成：快速生成项目创意简报
+
   - 品牌基础建议：提供品牌调性与视觉方向建议
 
+
   适用场景:
+
   - 个人创作者寻找创意灵感
+
   - 自由职业者为客户提案做准备
+
   - 学生完成创意类作业
+
   - 创业者构思品牌与产品方向
 
-  差异化:免费版提供核心创意咨询与头脑风暴能力，适合个人用户快速获取灵感
+
+  差异化:免费版提供核心创意咨询与头脑风暴能力，适合个人用户快速获取灵感'
 tags:
-  - 创意策划
-  - 品牌策略
-  - 个人创作
-  - 创意工具
+- 创意策划
+- 品牌策略
+- 个人创作
+- 创意工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 创意总监免费版
 
 ## 概述

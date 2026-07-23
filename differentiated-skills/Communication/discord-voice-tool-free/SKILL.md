@@ -1,35 +1,48 @@
 ---
-slug: "discord-voice-tool-free"
-name: "discord-voice-tool-free"
-version: "1.0.0"
-displayName: "Discord语音工具免费版"
-summary: "基础 Discord 语音频道 AI 对话工具,支持加入/离开与本地语音识别合成。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:
+slug: discord-voice-tool-free
+name: discord-voice-tool-free
+version: 1.0.0
+displayName: Discord语音工具免费版
+summary: 基础 Discord 语音频道 AI 对话工具,支持加入/离开与本地语音识别合成。
+license: Proprietary
+edition: free
+description: '面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:
+
   - 加入/离开 Discord 语音频道
+
   - 语音活动检测(VAD)自动识别用户说话
+
   - 本地 Whisper 离线语音转文字
+
   - 文字转语音(TTS)将 AI 回复读出
+
   - 基础打断(barge-in)与连接状态查询
 
+
   适用场景:
+
   - 个人语音频道与 AI 助手对话
+
   - 小型语音社群的 AI 互动
+
   - 本地化离线语音处理体验
 
-  差异化: 免费版聚焦本地离线方案,零 API 成本;Pro 版提供多服务商、流式 STT与企业级能力
+
+  差异化: 免费版聚焦本地离线方案,零 API 成本;Pro 版提供多服务商、流式 STT与企业级能力'
 tags:
-  - Discord
-  - 语音对话
-  - Communication
-  - 语音识别
+- Discord
+- 语音对话
+- Communication
+- 语音识别
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Discord 语音工具(免费版)
 
 ## 概述

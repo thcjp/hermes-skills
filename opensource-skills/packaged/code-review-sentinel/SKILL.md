@@ -1,20 +1,26 @@
 ---
 slug: code-review-sentinel
 name: code-review-sentinel
-version: "1.1.0"
-displayName: "代码审查哨兵"
-summary: "合并前五维度质量审查,以高级工程师标准把关每次代码提交"
+version: 1.1.0
+displayName: 代码审查哨兵
+summary: 合并前五维度质量审查,以高级工程师标准把关每次代码提交
 license: Proprietary
-description: |-
-  代码审查哨兵——在代码合并前执行五维度质量审查，以"高级工程师是否会批准"为标准把关每次提交。适用于PR审查、变更评估、质量门禁、代码健康度审计、新人指导等场景。正确性/可维护性/安全性/性能/可测试性全面覆盖，支持严重度标签与拆分策略，让代码腐化止于合并前。触发关键词：代码审查、代码review、合并前审查、代码质量、PR审查、五维审查、代码健康度、变更尺寸、代码拆分、质量门禁
-tags: [代码审查, 质量门禁, 代码质量, PR审查, 工程规范]
+description: 代码审查哨兵——在代码合并前执行五维度质量审查，以"高级工程师是否会批准"为标准把关每次提交。适用于PR审查、变更评估、质量门禁、代码健康度审计、新人指导等场景。正确性/可维护性/安全性/性能/可测试性全面覆盖，支持严重度标签与拆分策略，让代码腐化止于合并前。触发关键词：代码审查、代码review、合并前审查、代码质量、PR审查、五维审查、代码健康度、变更尺寸、代码拆分、质量门禁
+tags:
+- 代码审查
+- 质量门禁
+- 代码质量
+- PR审查
+- 工程规范
 tools:
-  - read
-  - exec
-suggested_price: "12.00"
-pricing_tier: "business"
-pricing_rationale: "编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 编程开发类, medium市场, enterprise复杂度, weekly频次, business层 → 开发者付费意愿高,但竞品多
+pricing_model: per_use
 ---
+
 # 代码审查哨兵
 
 在代码合并前执行结构化质量审查。以"高级工程师是否会批准这次合并"为标准，从五个维度全面把关。

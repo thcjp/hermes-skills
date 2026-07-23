@@ -1,28 +1,35 @@
 ---
-slug: "chart-gen-free"
-name: "chart-gen-free"
-version: "1.0.0"
-displayName: "图表生成器(免费版)"
-summary: "一条命令生成ASCII/HTML/SVG图表，覆盖柱状、折线、饼图、热力图等十余种类型，开箱即用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  一条命令即可生成终端可视化图表的轻量工具，支持ASCII柱状图、折线图、饼图、迷你趋势图、热力图、进度条、SVG矢量图与HTML交互页面等多种形态。核心能力：
+slug: chart-gen-free
+name: chart-gen-free
+version: 1.0.0
+displayName: 图表生成器(免费版)
+summary: 一条命令生成ASCII/HTML/SVG图表，覆盖柱状、折线、饼图、热力图等十余种类型，开箱即用。
+license: Proprietary
+edition: free
+description: '一条命令即可生成终端可视化图表的轻量工具，支持ASCII柱状图、折线图、饼图、迷你趋势图、热力图、进度条、SVG矢量图与HTML交互页面等多种形态。核心能力：
+
 
   - 十余种图表类型一站式覆盖，从基础柱状到矢量SVG全链路打通
+
   - 终端原生输出，无需安装matplotlib、echarts等重型依赖
+
   - 一行sparkline迷你趋势图，快速感知数据走势
-  - HTML与SVG双输出形态...
+
+  - HTML与SVG双输出形态...'
 tags:
-  - 数据可视化
-  - 图表生成
-  - 命令行工具
-  - 终端可视化
+- 数据可视化
+- 图表生成
+- 命令行工具
+- 终端可视化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 图表生成器(免费版)
 
 一个面向命令行场景的轻量级数据可视化工具，通过单一脚本即可生成十余种图表形态。无需安装Python科学计算栈或前端图表库，开箱即用。

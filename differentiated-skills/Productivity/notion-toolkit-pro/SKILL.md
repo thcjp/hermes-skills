@@ -1,29 +1,35 @@
 ---
-slug: "notion-toolkit-pro"
-name: "notion-toolkit-pro"
-version: "1.0.0"
-displayName: "Notion 工具包专业版"
-summary: "企业级 Notion 管理系统,支持批量操作、模板管理、数据同步与工作流自动化"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 知识管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: notion-toolkit-pro
+name: notion-toolkit-pro
+version: 1.0.0
+displayName: Notion 工具包专业版
+summary: 企业级 Notion 管理系统,支持批量操作、模板管理、数据同步与工作流自动化
+license: Proprietary
+edition: pro
+description: '核心能力: 知识管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: notion, 页面, 数据库, 块, api, 搜索, 数据源
+
+  适用关键词: notion, 页面, 数据库, 块, api, 搜索, 数据源'
 tags:
-  - Notion
-  - API
-  - 页面管理
-  - 数据库
+- Notion
+- API
+- 页面管理
+- 数据库
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Notion 工具包专业版
 
 ## 概述

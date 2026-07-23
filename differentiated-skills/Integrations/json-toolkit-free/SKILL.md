@@ -1,35 +1,49 @@
 ---
-slug: "json-toolkit-free"
-name: "json-toolkit-free"
-version: "1.0.0"
-displayName: "JSON工具箱(免费版)"
-summary: "JSON 数据结构处理优选实践，含校验、命名、空值、日期、数字规范。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  JSON 数据结构处理优选实践，含校验、命名、空值、日期、数字规范。核心能力：
+slug: json-toolkit-free
+name: json-toolkit-free
+version: 1.0.0
+displayName: JSON工具箱(免费版)
+summary: JSON 数据结构处理优选实践，含校验、命名、空值、日期、数字规范。
+license: Proprietary
+edition: free
+description: 'JSON 数据结构处理优选实践，含校验、命名、空值、日期、数字规范。核心能力：
+
   - JSON Schema 校验与契约定义
+
   - 命名规范与一致性管理
+
   - 空值处理与可选字段策略
+
   - 日期时间与数字 ID 规范
+
   - 结构优选实践与 API 响应模式
 
+
   适用场景：
+
   - API 接口设计与契约校验
+
   - 前后端数据交换格式约定
+
   - 配置文件与数据持久化
+
   - 第三方接口对接与数据清洗
 
-  差异化：以"防御式设计"为核心，聚焦不可信输入校验与字段一致性，免费版覆盖个人开发者日常 JSON 处理的高频场景
+
+  差异化：以"防御式设计"为核心，聚焦不可信输入校验与字段一致性，免费版覆盖个人开发者日常 JSON 处理的高频场景'
 tags:
-  - 集成工具
-  - 数据规范
-  - 开发者效率
+- 集成工具
+- 数据规范
+- 开发者效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # JSON 工具箱（免费版）
 
 ## 概述

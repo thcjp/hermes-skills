@@ -1,23 +1,27 @@
 ---
-slug: "mongo-manager-free"
-name: "mongo-manager-free"
-version: "1.0.0"
-displayName: "Mongo管理工具免费版"
-summary: "面向AI Agent的MongoDB设计与优化指南，覆盖Schema建模、索引策略、聚合管道、一致性配置等核心场景。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向MongoDB开发者的数据库设计与优化实战指南。通过原创中文文档覆盖Schema建模哲学、索引策略、聚合管道、一致性模式、性能调优等核心主题，配套常见陷阱清单与故障排查表，帮助开发者避开MongoDB使用中的高频坑点。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
+slug: mongo-manager-free
+name: mongo-manager-free
+version: 1.0.0
+displayName: Mongo管理工具免费版
+summary: 面向AI Agent的MongoDB设计与优化指南，覆盖Schema建模、索引策略、聚合管道、一致性配置等核心场景。
+license: Proprietary
+edition: free
+description: 面向MongoDB开发者的数据库设计与优化实战指南。通过原创中文文档覆盖Schema建模哲学、索引策略、聚合管道、一致性模式、性能调优等核心主题，配套常见陷阱清单与故障排查表，帮助开发者避开MongoDB使用中的高频坑点。Use
+  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-  - 集成工具
-  - 数据库
-  - NoSQL
-  - 性能优化
+- 集成工具
+- 数据库
+- NoSQL
+- 性能优化
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Mongo管理工具（免费版）
 
 本工具为MongoDB开发者提供Schema设计、查询编写与性能优化的实战指南。免费版覆盖核心场景：Schema建模、索引策略、聚合管道、一致性配置，足以应对绝大多数业务开发需求。

@@ -1,23 +1,27 @@
 ---
-slug: "canvas-json-handler-free"
-name: "canvas-json-handler-free"
-version: "1.0.0"
-displayName: "画布JSON处理免费版"
-summary: "面向JSON Canvas(.canvas)文件的轻量级处理工具，支持节点、边、分组的创建与编辑校验。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  画布JSON处理工具专注于JSON Canvas规范文件的读写、校验与维护，适用于知识图谱、思维导图、流程编排等可视化场景。核心能力：遵循JSON Canvas 1。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
+slug: canvas-json-handler-free
+name: canvas-json-handler-free
+version: 1.0.0
+displayName: 画布JSON处理免费版
+summary: 面向JSON Canvas(.canvas)文件的轻量级处理工具，支持节点、边、分组的创建与编辑校验。
+license: Proprietary
+edition: free
+description: 画布JSON处理工具专注于JSON Canvas规范文件的读写、校验与维护，适用于知识图谱、思维导图、流程编排等可视化场景。核心能力：遵循JSON
+  Canvas 1。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
-  - 集成工具
-  - 画布
-  - 可视化
-  - JSON
+- 集成工具
+- 画布
+- 可视化
+- JSON
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 画布JSON处理工具（免费版）
 
 本工具用于创建、编辑和校验符合JSON Canvas 1.0规范的`.canvas`文件，帮助AI Agent在没有图形界面的情况下，也能精确操作可视化画布的结构化数据。

@@ -143,9 +143,9 @@ python scripts/analyze.py /path/to/product-demo.mp4
 |---------|---------|---------|---------|
 | api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 ~/.skill-platform/skill-platform.json |
 | file_not_found | `FileNotFoundError: video.mp4` | 本地视频文件路径不存在 | 确认文件路径正确,检查文件是否存在 |
-| unsupported_format | `Unsupported video format` | 视频格式不被支持 | 转换为 mp4/avi/mov/mkv/webm 等常见格式后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
-| api_rate_limited | `429 Too Many Requests` | 短时间内 API 调用过多 | 等待 60 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
-| network_timeout | `Connection timed out` | 网络不稳定或 DashScope 服务不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接,确认可访问阿里云服务后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| unsupported_format | `Unsupported video format` | 视频格式不被支持 | 转换为 mp4/avi/mov/mkv/webm 等常见格式后检查网络连接和配置后重试 |
+| api_rate_limited | `429 Too Many Requests` | 短时间内 API 调用过多 | 等待 60 秒后检查网络连接和配置后重试 |
+| network_timeout | `Connection timed out` | 网络不稳定或 DashScope 服务不可达 | 检查网络连接和配置后重试,确认可访问阿里云服务后检查网络连接和配置后重试 |
 
 ## 常见问题
 

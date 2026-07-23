@@ -16,7 +16,11 @@ tags:
 tools:
   - - read
 - exec
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 
 # ACE Music - Free Suno Alternative Generate unlimited AI music for free using ACE-Step 1.5. Full songs with vocals, lyrics, any genre, any language. No subscription, no credits, no limits. The open-source Suno alternative, powered by ACE Music's free API.
 

@@ -1,32 +1,43 @@
 ---
-slug: "data-analyst-chinese-free"
-name: "data-analyst-chinese-free"
-version: "1.0.0"
-displayName: "中文数据分析(免费版)"
-summary: "中文语境数据清洗、统计分析与可视化建议,适合数据分析师、产品经理与运营快速上手。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  中文数据分析免费版面向中文用户的数据分析日常工作流,提供开箱即用的数据清洗、统计分析与可视化代码模板。核心能力:
+slug: data-analyst-chinese-free
+name: data-analyst-chinese-free
+version: 1.0.0
+displayName: 中文数据分析(免费版)
+summary: 中文语境数据清洗、统计分析与可视化建议,适合数据分析师、产品经理与运营快速上手。
+license: Proprietary
+edition: free
+description: '中文数据分析免费版面向中文用户的数据分析日常工作流,提供开箱即用的数据清洗、统计分析与可视化代码模板。核心能力:
+
   - 数据读取统一封装:CSV、Excel、JSON、SQLite 等多种来源一键加载
+
   - 数据清洗模板:缺失值、重复值、异常值、类型转换的标准化处理
+
   - 统计分析方法库:描述统计、相关分析、分组聚合、交叉表
+
   - 可视化代码生成:折线、柱状、散点、热力、箱线等中文图表模板
+
   - 分析报告自动生成:6 段式结构化报告模板
 
+
   适用场景:
+
   - 日常销售/运营数据的快速清洗与汇总
-  - 月度业务报告的图表与结论生成
+
+  - 月度业务报告的图表与结论生成'
 tags:
-  - 信息检索
-  - 中文场景
-  - 可视化
-  - 集成工具
+- 信息检索
+- 中文场景
+- 可视化
+- 集成工具
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 中文数据分析 免费版
 
 ## 一、概述

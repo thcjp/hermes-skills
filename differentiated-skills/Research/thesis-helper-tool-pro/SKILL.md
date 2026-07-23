@@ -1,23 +1,27 @@
 ---
-slug: "thesis-helper-tool-pro"
-name: "thesis-helper-tool-pro"
-version: "1.0.0"
-displayName: "论文写作助手专业版"
-summary: "企业级学术写作平台,支持批量文档处理、团队协作、查重检测与多语言学术规范"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  论文写作助手专业版,面向高校、研究机构和企业研发团队提供深度的学术写作解决方案。支持批量文档处理、团队协作、查重检测、多语言学术规范、跨文档引用管理等高级能力。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。
+slug: thesis-helper-tool-pro
+name: thesis-helper-tool-pro
+version: 1.0.0
+displayName: 论文写作助手专业版
+summary: 企业级学术写作平台,支持批量文档处理、团队协作、查重检测与多语言学术规范
+license: Proprietary
+edition: pro
+description: 论文写作助手专业版,面向高校、研究机构和企业研发团队提供深度的学术写作解决方案。支持批量文档处理、团队协作、查重检测、多语言学术规范、跨文档引用管理等高级能力。Use
+  when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。
 tags:
-  - 研究工具
-  - 论文写作
-  - 企业级
-  - 批量处理
+- 研究工具
+- 论文写作
+- 企业级
+- 批量处理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 论文写作助手专业版是面向高校、研究机构和企业研发团队的学术写作解决方案。在完整兼容免费版所有功能的基础上,专业版引入了批量文档处理、团队协作、查重检测、跨文档引用管理、多语言学术规范等高级能力,适用于大规模论文质量管理、期刊稿件初审、企业技术文档标准化等专业场景。
 
 专业版特别强化了团队协作和合规审核能力,支持多用户同时编辑、版本控制、学术伦理检查,满足机构级的质量管控需求。

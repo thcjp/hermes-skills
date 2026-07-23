@@ -1,31 +1,38 @@
 ---
-slug: "knowledge-toolkit-free"
-name: "knowledge-toolkit-free"
-version: "1.0.0"
-displayName: "知识工具包（免费版）"
-summary: "构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  知识工具包 - （免费版）
+slug: knowledge-toolkit-free
+name: knowledge-toolkit-free
+version: 1.0.0
+displayName: 知识工具包（免费版）
+summary: 构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法。
+license: Proprietary
+edition: free
+description: '知识工具包 - （免费版）
+
 
   核心能力: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱
 
+
   适用场景: 个人用户日常使用，核心功能覆盖基础需求
+
 
   差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
 
-  适用关键词: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱
+
+  适用关键词: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱'
 tags:
-  - 知识管理
-  - Zettelkasten
-  - 双链笔记
-  - 知识图谱
+- 知识管理
+- Zettelkasten
+- 双链笔记
+- 知识图谱
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 知识工具包（免费版）
 
 ## 概述

@@ -1,20 +1,26 @@
 ---
 slug: security-hardening-shield
 name: security-hardening-shield
-version: "1.1.0"
-displayName: "安全加固之盾"
-summary: "OWASP Top 10防护+三层边界系统,上线前安全加固不留死角"
+version: 1.1.0
+displayName: 安全加固之盾
+summary: OWASP Top 10防护+三层边界系统,上线前安全加固不留死角
 license: Proprietary
-description: |-
-  安全加固之盾——系统化安全防护框架,基于OWASP Top 10预防+三层边界(信任/数据/网络)分层防护,提供从输入校验到密钥管理到依赖审计的全链路加固方案。适用于上线前安全审计、认证授权设计、密钥凭证管理、依赖漏洞扫描、输入输出防护场景。触发关键词:安全加固、安全审计、OWASP、漏洞扫描、密钥管理、认证授权、依赖审计、安全边界、输入校验、安全防护
-tags: [安全加固, OWASP, 安全审计, 漏洞防护, 安全架构]
+description: 安全加固之盾——系统化安全防护框架,基于OWASP Top 10预防+三层边界(信任/数据/网络)分层防护,提供从输入校验到密钥管理到依赖审计的全链路加固方案。适用于上线前安全审计、认证授权设计、密钥凭证管理、依赖漏洞扫描、输入输出防护场景。触发关键词:安全加固、安全审计、OWASP、漏洞扫描、密钥管理、认证授权、依赖审计、安全边界、输入校验、安全防护
+tags:
+- 安全加固
+- OWASP
+- 安全审计
+- 漏洞防护
+- 安全架构
 tools:
-  - read
-  - exec
-suggested_price: "50.00"
-pricing_tier: "enterprise"
-pricing_rationale: "安全合规类, small市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高"
+- read
+- exec
+suggested_price: 99.9
+pricing_tier: L4
+pricing_rationale: 安全合规类, small市场, enterprise复杂度, rare频次, enterprise层 → 低频高价值,专业壁垒高
+pricing_model: monthly
 ---
+
 # 安全加固之盾
 
 系统化的安全防护框架。处理用户输入、认证、数据存储、外部集成时,强制执行安全检查与加固。核心理念:默认不信任、最小权限、纵深防御。

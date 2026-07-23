@@ -1,25 +1,31 @@
 ---
-slug: "token-layer-tool-free"
-name: "token-layer-tool-free"
-version: "1.0.0"
-displayName: "跨链代币入门工具"
-summary: "跨链代币数据查询工具，支持主流链代币信息与基础价格查询。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人加密货币用户的跨链代币数据查询工具。支持以太坊/BSC/
+slug: token-layer-tool-free
+name: token-layer-tool-free
+version: 1.0.0
+displayName: 跨链代币入门工具
+summary: 跨链代币数据查询工具，支持主流链代币信息与基础价格查询。
+license: Proprietary
+edition: free
+description: '面向个人加密货币用户的跨链代币数据查询工具。支持以太坊/BSC/
+
   Polygon等主流链上的代币信息查询，包括合约地址、价格、流动性
-  等基础数据。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+
+  等基础数据。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-  - Operations
-  - 加密货币
-  - 跨链
-  - 代币
+- Operations
+- 加密货币
+- 跨链
+- 代币
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 跨链代币入门工具（免费版）
 
 ## 概述

@@ -1,31 +1,38 @@
 ---
-slug: "pdf-toolkit-pro"
-name: "pdf-toolkit-pro"
-version: "1.0.0"
-displayName: "PDF工具包（专业版）"
-summary: "综合PDF处理工具集：创建、编辑、转换、合并、拆分、压缩、加密一站式解决。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  PDF工具包 - （专业版）
+slug: pdf-toolkit-pro
+name: pdf-toolkit-pro
+version: 1.0.0
+displayName: PDF工具包（专业版）
+summary: 综合PDF处理工具集：创建、编辑、转换、合并、拆分、压缩、加密一站式解决。
+license: Proprietary
+edition: pro
+description: 'PDF工具包 - （专业版）
+
 
   核心能力: PDF处理, PDF创建, PDF合并, PDF拆分, PDF压缩, PDF加密, 水印, OCR, 表格提取
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: PDF处理, PDF创建, PDF合并, PDF拆分, PDF压缩, PDF加密, 水印, OCR, 表格提取
+
+  适用关键词: PDF处理, PDF创建, PDF合并, PDF拆分, PDF压缩, PDF加密, 水印, OCR, 表格提取'
 tags:
-  - PDF处理
-  - PDF工具
-  - 文档处理
-  - OCR
+- PDF处理
+- PDF工具
+- 文档处理
+- OCR
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # PDF工具包（专业版）
 
 ## 概述

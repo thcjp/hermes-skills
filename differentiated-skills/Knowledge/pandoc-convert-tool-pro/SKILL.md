@@ -1,31 +1,38 @@
 ---
-slug: "pandoc-convert-tool-pro"
-name: "pandoc-convert-tool-pro"
-version: "1.0.0"
-displayName: "Pandoc转换工具（专业版）"
-summary: "通用文档格式转换工具，支持Markdown、HTML、Word、PDF等多种格式互转。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Pandoc转换工具 - （专业版）
+slug: pandoc-convert-tool-pro
+name: pandoc-convert-tool-pro
+version: 1.0.0
+displayName: Pandoc转换工具（专业版）
+summary: 通用文档格式转换工具，支持Markdown、HTML、Word、PDF等多种格式互转。
+license: Proprietary
+edition: pro
+description: 'Pandoc转换工具 - （专业版）
+
 
   核心能力: 文档转换, pandoc, 格式转换, Markdown转Word, HTML转换, 批量转换, 多格式
 
+
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
+
 
   差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
 
-  适用关键词: 文档转换, pandoc, 格式转换, Markdown转Word, HTML转换, 批量转换, 多格式
+
+  适用关键词: 文档转换, pandoc, 格式转换, Markdown转Word, HTML转换, 批量转换, 多格式'
 tags:
-  - 文档转换
-  - Pandoc
-  - 多格式
-  - 批量处理
+- 文档转换
+- Pandoc
+- 多格式
+- 批量处理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Pandoc转换工具（专业版）
 
 ## 概述

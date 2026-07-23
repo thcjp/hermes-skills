@@ -1,38 +1,54 @@
 ---
-slug: "rust-toolkit-pro"
-name: "rust-toolkit-pro"
-version: "1.0.0"
-displayName: "Rust工具包-专业版"
-summary: "企业级Rust开发平台,支持unsafe安全审计、性能优化、嵌入式开发与CI/CD集成"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级 Rust 开发工具专业版,面向团队与生产环境。核心能力:
+slug: rust-toolkit-pro
+name: rust-toolkit-pro
+version: 1.0.0
+displayName: Rust工具包-专业版
+summary: 企业级Rust开发平台,支持unsafe安全审计、性能优化、嵌入式开发与CI/CD集成
+license: Proprietary
+edition: pro
+description: '企业级 Rust 开发工具专业版,面向团队与生产环境。核心能力:
+
   - unsafe 代码安全审计与沙箱化
+
   - 性能分析与零成本抽象优化
+
   - 宏编程(声明宏与过程宏)
+
   - 异步运行时深度定制(tokio/async-std)
+
   - FFI 与 C 互操作
+
   - 嵌入式与 no_std 开发
+
   - 企业级 CI/CD 与交叉编译
+
   - 安全编码规范与漏洞预防
 
+
   适用场景:
+
   - 系统级高性能服务开发
+
   - 安全关键系统(加密/金融/航空)
+
   - 嵌入式与 IoT 设备开发
-  - WebAssembly 模块开发
+
+  - WebAssembly 模块开发'
 tags:
-  - Rust
-  - 企业级
-  - 性能优化
-  - 安全审计
-  - 嵌入式
+- Rust
+- 企业级
+- 性能优化
+- 安全审计
+- 嵌入式
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Rust 工具包 - 专业版
 
 ## 概述

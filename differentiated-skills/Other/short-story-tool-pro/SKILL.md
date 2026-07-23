@@ -1,40 +1,57 @@
 ---
-slug: "short-story-tool-pro"
-name: "short-story-tool-pro"
-version: "1.0.0"
-displayName: "短篇网文写作-专业版"
-summary: "企业级短篇创作平台,支持批量产出、题材模板、投稿管理与数据驱动优化"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级短篇网文创作工具专业版,面向专业作者与内容工作室。核心能力:
+slug: short-story-tool-pro
+name: short-story-tool-pro
+version: 1.0.0
+displayName: 短篇网文写作-专业版
+summary: 企业级短篇创作平台,支持批量产出、题材模板、投稿管理与数据驱动优化
+license: Proprietary
+edition: pro
+description: '企业级短篇网文创作工具专业版,面向专业作者与内容工作室。核心能力:
+
   - 批量短篇产出与排期
+
   - 题材模板库与套路复用
+
   - 投稿平台管理与追踪
+
   - 读者反馈数据分析
+
   - 多风格切换与品牌写作
+
   - AI 深度润色与查重
+
   - 系列短篇管理
+
   - API 接口与自动化
 
+
   适用场景:
+
   - 内容工作室批量产出
+
   - 专业作者高效创作
+
   - 投稿策略优化
+
   - 短篇合集出版
 
-  差异化:专业版在免费版基础上扩展批量产出、投稿管理与数据驱动优化,兼容免费版创作流程
+
+  差异化:专业版在免费版基础上扩展批量产出、投稿管理与数据驱动优化,兼容免费版创作流程'
 tags:
-  - 短篇创作
-  - 企业级
-  - 批量产出
-  - 投稿管理
-  - 数据驱动
+- 短篇创作
+- 企业级
+- 批量产出
+- 投稿管理
+- 数据驱动
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 短篇网文写作 - 专业版
 
 ## 概述

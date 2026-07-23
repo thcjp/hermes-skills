@@ -1,23 +1,27 @@
 ---
-slug: "db-connector-free"
-name: "db-connector-free"
-version: "1.0.0"
-displayName: "数据库连接助手(免费版)"
-summary: "面向开发者的数据库连接与基础运维指南，覆盖连接池、事务、索引等常见陷阱与对策。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  数据库连接助手免费版是一套面向独立开发者与小型团队的数据库使用与运维知识库，帮助用户在日常开发中规避连接泄漏、事务死锁、索引失效等高频陷阱。核心能力：提供连接池配置建议、事务隔离级别选择指南、Schema 变更安全流程、查询模式优化清单、数据完整性约束设计、基础备份恢复策略。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
+slug: db-connector-free
+name: db-connector-free
+version: 1.0.0
+displayName: 数据库连接助手(免费版)
+summary: 面向开发者的数据库连接与基础运维指南，覆盖连接池、事务、索引等常见陷阱与对策。
+license: Proprietary
+edition: free
+description: 数据库连接助手免费版是一套面向独立开发者与小型团队的数据库使用与运维知识库，帮助用户在日常开发中规避连接泄漏、事务死锁、索引失效等高频陷阱。核心能力：提供连接池配置建议、事务隔离级别选择指南、Schema
+  变更安全流程、查询模式优化清单、数据完整性约束设计、基础备份恢复策略。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
 tags:
-  - 数据库
-  - 集成工具
-  - 运维
-  - 免费版
+- 数据库
+- 集成工具
+- 运维
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 数据库连接助手（免费版）
 
 ## 概述

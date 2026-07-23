@@ -1,38 +1,53 @@
 ---
-slug: "photo-webcam-tool-free"
-name: "photo-webcam-tool-free"
-version: "1.0.0"
-displayName: "网络摄像头工具-免费版"
-summary: "网络摄像头快照获取工具,支持收藏列表管理与图片下载,适合个人使用"
-license: "Proprietary"
-edition: "free"
-description: |-
-  网络摄像头快照获取工具免费版,面向个人用户。
+slug: photo-webcam-tool-free
+name: photo-webcam-tool-free
+version: 1.0.0
+displayName: 网络摄像头工具-免费版
+summary: 网络摄像头快照获取工具,支持收藏列表管理与图片下载,适合个人使用
+license: Proprietary
+edition: free
+description: '网络摄像头快照获取工具免费版,面向个人用户。
+
 
   核心能力:
+
   - 摄像头收藏列表管理
+
   - 通过编号快速获取快照
+
   - 批量获取多摄像头图片
+
   - 自动解析摄像头图片 URL
+
   - 本地图片保存与查看
 
+
   适用场景:
+
   - 查看旅游景点实时画面
+
   - 监控天气与道路状况
+
   - 个人收藏管理常用摄像头
+
 
   差异化:免费版提供基础快照获取能力。PRO版扩展定时抓取、图片拼接、历史归档与多平台推送。
 
-  适用关键词: webcam, 摄像头, 快照, photo, snapshot, 实时画面, 收藏列表
+
+  适用关键词: webcam, 摄像头, 快照, photo, snapshot, 实时画面, 收藏列表'
 tags:
-  - 摄像头
-  - 图片获取
-  - 工具
+- 摄像头
+- 图片获取
+- 工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 网络摄像头工具 - 免费版
 
 ## 概述

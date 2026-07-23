@@ -1,33 +1,45 @@
 ---
-slug: "frontend-design-v3-free"
-name: "frontend-design-v3-free"
-version: "1.0.0"
-displayName: "前端设计V3-免费版"
-summary: "独特前端界面生成工具，拒绝AI同质化风格，输出有辨识度的HTML/CSS代码。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  前端设计工具V3免费版，面向个人开发者的独特前端界面生成方案。核心能力：
+slug: frontend-design-v3-free
+name: frontend-design-v3-free
+version: 1.0.0
+displayName: 前端设计V3-免费版
+summary: 独特前端界面生成工具，拒绝AI同质化风格，输出有辨识度的HTML/CSS代码。
+license: Proprietary
+edition: free
+description: '前端设计工具V3免费版，面向个人开发者的独特前端界面生成方案。核心能力：
+
   - 鲜明美学方向选择，拒绝通用AI风格
+
   - 字体/色彩/动效/布局四维设计指导
+
   - 反模式检查，避免可预测的设计套路
+
   - 输出可用的 HTML/CSS/JS 代码
 
+
   适用场景：
+
   - 个人项目网页设计
+
   - 创意作品集页面
+
   - 独特风格的概念页面
 
-  差异化：免费版聚焦单一美学方向的选择与基础代码输出，适合个人创意项目
+
+  差异化：免费版聚焦单一美学方向的选择与基础代码输出，适合个人创意项目'
 tags:
-  - Creative
-  - Frontend
-  - Design
+- Creative
+- Frontend
+- Design
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 前端设计工具V3（免费版）
 
 ## 概述

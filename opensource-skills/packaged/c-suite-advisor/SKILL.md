@@ -1,20 +1,26 @@
 ---
 slug: c-suite-advisor
 name: c-suite-advisor
-version: "1.1.0"
-displayName: "C套件顾问"
-summary: "一人公司的高管团队,9大C级视角战略决策+创始人模式,省下百万咨询费"
+version: 1.1.0
+displayName: C套件顾问
+summary: 一人公司的高管团队,9大C级视角战略决策+创始人模式,省下百万咨询费
 license: Proprietary
-description: |-
-  C套件顾问——一个人开公司也能拥有完整高管团队。从CEO战略到CTO技术，从CFO财务到CMO市场，9大C级高管视角的战略决策支持。适用于战略规划、技术决策、财务分析、市场策略、收入增长、产品决策、运营优化、人才管理、安全治理等场景，外加创始人模式快速决断。触发关键词：C套件、CEO、CTO、CFO、CMO、战略决策、创始人模式、董事会、高管顾问、商业战略、组织管理
-tags: [战略决策, 高管顾问, 商业分析, 一人公司, 企业管理]
+description: C套件顾问——一个人开公司也能拥有完整高管团队。从CEO战略到CTO技术，从CFO财务到CMO市场，9大C级高管视角的战略决策支持。适用于战略规划、技术决策、财务分析、市场策略、收入增长、产品决策、运营优化、人才管理、安全治理等场景，外加创始人模式快速决断。触发关键词：C套件、CEO、CTO、CFO、CMO、战略决策、创始人模式、董事会、高管顾问、商业战略、组织管理
+tags:
+- 战略决策
+- 高管顾问
+- 商业分析
+- 一人公司
+- 企业管理
 tools:
-  - read
-  - exec
-suggested_price: "19.00"
-pricing_tier: "business"
-pricing_rationale: "营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 营销推广类, medium市场, enterprise复杂度, weekly频次, business层 → 直接关联收入,付费意愿强
+pricing_model: per_use
 ---
+
 # C套件顾问
 
 提供全 C 级别高管视角的战略决策支持。从 CEO 的战略愿景到 CTO 的技术路线，从 CFO 的财务规划到 CMO 的市场策略，一站式高管级 AI 顾问。

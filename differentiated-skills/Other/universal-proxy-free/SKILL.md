@@ -1,23 +1,26 @@
 ---
-slug: "universal-proxy-free"
-name: "universal-proxy-free"
-version: "1.0.0"
-displayName: "通用代理工具免费版"
-summary: "通过加密电路隐藏源IP，提供SOCKS5代理与流量转发，保护Agent通信隐私"
-license: "Proprietary"
-edition: "free"
-description: |-
-  通用代理工具是一套面向AI Agent的隐私通信代理方案，通过建立分布式加密电路转发流量，让Agent在访问网络服务时隐藏源IP地址，保护调用方身份隐私，适用于需要匿名性或地理可达性的Agent场景。核心能力：启动本地SOCKS5代理服务（默认端口9050）；建立多层加密电路转发流量；支持HTTP/HTTPS/SOCKS5多种协议；首次连接30秒内完成电路建立；代理服务可常驻后台，跨请求复用
+slug: universal-proxy-free
+name: universal-proxy-free
+version: 1.0.0
+displayName: 通用代理工具免费版
+summary: 通过加密电路隐藏源IP，提供SOCKS5代理与流量转发，保护Agent通信隐私
+license: Proprietary
+edition: free
+description: 通用代理工具是一套面向AI Agent的隐私通信代理方案，通过建立分布式加密电路转发流量，让Agent在访问网络服务时隐藏源IP地址，保护调用方身份隐私，适用于需要匿名性或地理可达性的Agent场景。核心能力：启动本地SOCKS5代理服务（默认端口9050）；建立多层加密电路转发流量；支持HTTP/HTTPS/SOCKS5多种协议；首次连接30秒内完成电路建立；代理服务可常驻后台，跨请求复用
 tags:
-  - 网络代理
-  - 隐私保护
-  - SOCKS5
-  - 匿名通信
+- 网络代理
+- 隐私保护
+- SOCKS5
+- 匿名通信
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 通用代理工具（免费版）
 
 ## 概述

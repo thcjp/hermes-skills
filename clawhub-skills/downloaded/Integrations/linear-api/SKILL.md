@@ -14,7 +14,11 @@ tools:
   - read
   - exec
 # Linear
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Access the Linear API with managed OAuth authentication. Query and manage issues, projects, teams, cycles, labels, and comments using GraphQL.
 
 ## Quick Start

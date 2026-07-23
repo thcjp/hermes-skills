@@ -15,7 +15,11 @@ tools:
   - - read
 - exec
 # join-meeting
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 **IMPORTANT: Read this entire document before joining a meeting.** This file
 contains the CALL_LOOP algorithm (mandatory), active participation rules,
 safety requirements (leave/cleanup), and mode-specific guidance. Skipping

@@ -1,38 +1,53 @@
 ---
-slug: "rss-reader-tool-pro"
-name: "rss-reader-tool-pro"
-version: "1.0.0"
-displayName: "RSS阅读器专业版"
-summary: "企业级RSS阅读与监控系统,支持定时调度、邮件推送、多用户配置、全文搜索与高级内容分析"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  RSS阅读器专业版为企业团队提供高阶RSS订阅阅读与监控能力。核心能力:
+slug: rss-reader-tool-pro
+name: rss-reader-tool-pro
+version: 1.0.0
+displayName: RSS阅读器专业版
+summary: 企业级RSS阅读与监控系统,支持定时调度、邮件推送、多用户配置、全文搜索与高级内容分析
+license: Proprietary
+edition: pro
+description: 'RSS阅读器专业版为企业团队提供高阶RSS订阅阅读与监控能力。核心能力:
+
   - 大规模订阅源管理(100+源)
+
   - 内置Cron定时调度引擎
+
   - 多渠道推送(邮件/IM/Webhook)
+
   - 多用户配置与权限管理
+
   - 全文索引与搜索
+
   - 高级内容分析(情感/热度/趋势)
 
+
   适用场景:
+
   - 企业竞争情报定时监控与推送
+
   - 团队内容研究协作
+
   - 行业媒体自动化追踪
+
   - 多角色定制化推送
 
-  差异化:专业版在免费版订阅管理与内容研究基础上,扩展定时调度、多渠道推送、多用户配置、全文搜索与高级分析能力
+
+  差异化:专业版在免费版订阅管理与内容研究基础上,扩展定时调度、多渠道推送、多用户配置、全文搜索与高级分析能力'
 tags:
-  - 研究工具
-  - RSS
-  - 企业级
-  - 内容监控
-  - 竞争情报
+- 研究工具
+- RSS
+- 企业级
+- 内容监控
+- 竞争情报
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # RSS阅读器专业版
 
 ## 概述

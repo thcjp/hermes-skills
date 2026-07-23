@@ -32,7 +32,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 Slack Hub工具专业版是一款面向团队和企业的高级Slack集成工具。在免费版的消息发送与搜索能力之上，专业版新增批量消息发送、高级搜索过滤、智能限流处理、消息模板库、工作区频道深度管理、搜索结果导出等企业级功能，帮助团队实现Slack沟通的规模化与标准化。
 
 专业版完全兼容免费版的操作格式与配置，免费版用户可无缝升级。

@@ -1,32 +1,39 @@
 ---
-slug: "desktop-automation-hub-pro"
-name: "desktop-automation-hub-pro"
-version: "1.0.0"
-displayName: "桌面自动化中枢(专业版)"
-summary: "全功能桌面自动化，含图像识别、多显示器、窗口状态控制、审批模式与性能优化，支持7种角色场景。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  桌面自动化中枢（专业版）是AI Agent的终极桌面操控方案，在免费版五大核心模块基础上解锁图像识别定位、高级多显示器管理、窗口状态控制、审批模式、性能优化编排五大高级能力。支持基于OpenCV的模板匹配，让Agent能"看见"屏幕元素并精准点击。
+slug: desktop-automation-hub-pro
+name: desktop-automation-hub-pro
+version: 1.0.0
+displayName: 桌面自动化中枢(专业版)
+summary: 全功能桌面自动化，含图像识别、多显示器、窗口状态控制、审批模式与性能优化，支持7种角色场景。
+license: Proprietary
+edition: pro
+description: '桌面自动化中枢（专业版）是AI Agent的终极桌面操控方案，在免费版五大核心模块基础上解锁图像识别定位、高级多显示器管理、窗口状态控制、审批模式、性能优化编排五大高级能力。支持基于OpenCV的模板匹配，让Agent能"看见"屏幕元素并精准点击。
+
 
   核心能力：免费版全部功能 + find_on_screen图像识别（OpenCV模板匹配）、多显示器独立截图与坐标映射、窗口最小化/最大化/尺寸调整、require_approval操作前确认机制、批量操作编排与坐标缓存、可配置WPM打字速度与贝塞尔曲线鼠标轨迹。完整覆盖桌面自动化的全部边界场景。
 
+
   适用场景：复杂GUI自动化测试、RPA流程编排、多显示器工作环境、安全敏感操作审批、批量重复操作优化、跨应用工作流编排、自动化演示录制、无障碍辅助操作。
+
 
   差异化：针对企业级桌面自动化需求深度改造，完全中文化，新增图像识别专项指南、7种角色×场景映射、性能优化策略、多平台集成示例、版本升级迁移指南、扩展FAQ（12问）与故障排查表（11项），内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明。
 
-  适用关键词：桌面自动化、图像识别、模板匹配、多显示器、窗口管理、RPA、GUI测试、审批模式、性能优化
+
+  适用关键词：桌面自动化、图像识别、模板匹配、多显示器、窗口管理、RPA、GUI测试、审批模式、性能优化'
 tags:
-  - 桌面自动化
-  - 图像识别
-  - 多显示器
-  - RPA流程
-  - GUI测试
+- 桌面自动化
+- 图像识别
+- 多显示器
+- RPA流程
+- GUI测试
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 桌面自动化中枢（专业版）
 
 > **AI Agent的终极桌面操控方案。图像识别+多显示器+窗口控制+审批模式+性能优化，覆盖全部桌面自动化场景。**

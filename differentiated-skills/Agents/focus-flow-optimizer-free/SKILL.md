@@ -1,24 +1,28 @@
 ---
-slug: "focus-flow-optimizer-free"
-name: "focus-flow-optimizer-free"
-version: "1.0.0"
-displayName: "Focus Flow Optimizer"
-summary: "AI Agent驱动的个人专注流操作系统，整合能量管理、时间块与任务优先级，解决碎片化与拖延痛点。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  专注流优化器（免费版）为AI Agent提供一套本地化的个人生产力操作系统，将能量管理、时间块、任务优先级、专注保护和周期复盘整合为一个连贯的工作流。基于"先诊断瓶颈，再开处方"的方法论，避免传统的"清单堆砌"陷阱。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
+slug: focus-flow-optimizer-free
+name: focus-flow-optimizer-free
+version: 1.0.0
+displayName: Focus Flow Optimizer
+summary: AI Agent驱动的个人专注流操作系统，整合能量管理、时间块与任务优先级，解决碎片化与拖延痛点。
+license: Proprietary
+edition: free
+description: 专注流优化器（免费版）为AI Agent提供一套本地化的个人生产力操作系统，将能量管理、时间块、任务优先级、专注保护和周期复盘整合为一个连贯的工作流。基于"先诊断瓶颈，再开处方"的方法论，避免传统的"清单堆砌"陷阱。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。
 tags:
-  - 专注管理
-  - 时间块
-  - 能量管理
-  - 任务优先级
-  - 个人效率
+- 专注管理
+- 时间块
+- 能量管理
+- 任务优先级
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 专注流优化器（免费版）
 
 > **一套可信系统，胜过五套互相打架的清单。先诊断瓶颈，再开处方。**

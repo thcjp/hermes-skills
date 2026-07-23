@@ -1,38 +1,52 @@
 ---
-slug: "jinn-node-tool-free"
-name: "jinn-node-tool-free"
-version: "1.0.0"
-displayName: "节点工作工具"
-summary: "面向个人用户的闲置节点工作工具，运行任务赚取代币奖励。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  面向个人用户的闲置节点工作与代币奖励工具。
+slug: jinn-node-tool-free
+name: jinn-node-tool-free
+version: 1.0.0
+displayName: 节点工作工具
+summary: 面向个人用户的闲置节点工作工具，运行任务赚取代币奖励。
+license: Proprietary
+edition: free
+description: '面向个人用户的闲置节点工作与代币奖励工具。
+
 
   核心能力:
+
   - 单节点初始化与钱包配置
+
   - 接收并执行单条任务
+
   - 基础钱包查询与余额查看
+
   - 个人信誉与完成记录跟踪
 
+
   适用场景:
+
   - 个人开发者闲置机器跑任务赚奖励
+
   - 单节点测试与试运行
+
   - 个人钱包与完成记录管理
+
 
   差异化: 免费版聚焦个人单节点单任务执行，提供初始化与钱包查询，零成本试跑。
 
-  适用关键词: 节点工作, 闲置节点, 赚取奖励, 代币, worker node, idle, earn, autonomous venture
+
+  适用关键词: 节点工作, 闲置节点, 赚取奖励, 代币, worker node, idle, earn, autonomous venture'
 tags:
-  - 节点
-  - 代币奖励
-  - 个人效率
-  - 其他工具
+- 节点
+- 代币奖励
+- 个人效率
+- 其他工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 节点工作工具（免费版）
 
 ## 概述

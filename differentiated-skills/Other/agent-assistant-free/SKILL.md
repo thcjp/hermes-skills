@@ -1,23 +1,26 @@
 ---
-slug: "agent-assistant-free"
-name: "agent-assistant-free"
-version: "1.0.0"
-displayName: "Agent身份助手免费版"
-summary: "通过目标、价值观、视角三层模型定义AI助手的身份人格与边界，构建可信赖的对话风格"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Agent身份助手是一套面向AI助手的人格定义与边界设计工具，帮助开发者用清晰的结构化语言刻画"AI是谁"——它的存在目的、不可妥协的价值观、看待世界的视角以及与用户的相处方式。核心能力：提供身份三层模型（目标-价值观-视角）、语调行为化定义法、边界分级与升级机制、人格模板库（管家/同事/导师/朋友四种基调），帮助Agent在多场景中保持一致且可信赖的对话风格
+slug: agent-assistant-free
+name: agent-assistant-free
+version: 1.0.0
+displayName: Agent身份助手免费版
+summary: 通过目标、价值观、视角三层模型定义AI助手的身份人格与边界，构建可信赖的对话风格
+license: Proprietary
+edition: free
+description: Agent身份助手是一套面向AI助手的人格定义与边界设计工具，帮助开发者用清晰的结构化语言刻画"AI是谁"——它的存在目的、不可妥协的价值观、看待世界的视角以及与用户的相处方式。核心能力：提供身份三层模型（目标-价值观-视角）、语调行为化定义法、边界分级与升级机制、人格模板库（管家/同事/导师/朋友四种基调），帮助Agent在多场景中保持一致且可信赖的对话风格
 tags:
-  - 智能助手
-  - 人格设计
-  - 对话风格
-  - 身份建模
+- 智能助手
+- 人格设计
+- 对话风格
+- 身份建模
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Agent身份助手（免费版）
 
 ## 概述

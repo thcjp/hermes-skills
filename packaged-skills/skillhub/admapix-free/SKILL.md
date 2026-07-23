@@ -207,10 +207,10 @@ curl -s -X POST "https://api.admapix.com/api/data/store-rank" \
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |---------|---------|---------|---------|
 | missing_api_key | `{"error":{"code":"missing_api_key"}}` | 环境变量 `ADMAPIX_API_KEY` 未设置 | 不调 API，引导用户配置 Key；永不打印 Key |
-| 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 格式错误或已禁用 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，引导用户检查 Key 格式 |
-| 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 套餐权限不足，端点不在套餐范围内 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，提示用户升级 AdMapix 套餐 |
-| 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | API 调用频率超限 | 等待 1 秒后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，最多 3 次 |
-| 400 INVALID_PARAM | `{"code":"INVALID_PARAM"}` | 国家/行业/创意类型码错误 | 不执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，调 `filter-options` 核对参数代码 |
+| 401 INVALID_API_KEY | `{"code":"INVALID_API_KEY"}` | Key 格式错误或已禁用 | 检查网络连接和配置后重试，引导用户检查 Key 格式 |
+| 403 FORBIDDEN | `{"code":"FORBIDDEN"}` | 套餐权限不足，端点不在套餐范围内 | 检查网络连接和配置后重试，提示用户升级 AdMapix 套餐 |
+| 429 RATE_LIMITED | `{"code":"RATE_LIMITED"}` | API 调用频率超限 | 等待 1 秒后检查网络连接和配置后重试，最多 3 次 |
+| 400 INVALID_PARAM | `{"code":"INVALID_PARAM"}` | 国家/行业/创意类型码错误 | 检查网络连接和配置后重试，调 `filter-options` 核对参数代码 |
 | 空 list 返回 | `{"list":[],"totalSize":null}` | 参数无匹配或代码错误 | 空列表是合法结果；调 `filter-options` 核对代码 |
 
 ## 常见问题

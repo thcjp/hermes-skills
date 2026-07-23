@@ -1,35 +1,49 @@
 ---
-slug: "cloud-architect-design-free"
-name: "cloud-architect-design-free"
-version: "1.0.0"
-displayName: "云架构师免费版"
-summary: "提供单云架构设计、基础成本估算与优选实践建议，帮助个人开发者规划云架构方案。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  云架构师免费版 —— 面向个人开发者与初创团队的轻量级云架构设计工具。核心能力:
+slug: cloud-architect-design-free
+name: cloud-architect-design-free
+version: 1.0.0
+displayName: 云架构师免费版
+summary: 提供单云架构设计、基础成本估算与优选实践建议，帮助个人开发者规划云架构方案。
+license: Proprietary
+edition: free
+description: '云架构师免费版 —— 面向个人开发者与初创团队的轻量级云架构设计工具。核心能力:
+
   - 单云架构设计：针对AWS、Azure或GCP单一云平台设计方案
+
   - 基础成本估算：提供架构方案的月度成本预估
+
   - 优选实践建议：基于云厂商官方建议提供优化方向
+
   - 架构图描述：以文本方式描述架构组件与连接关系
+
   - 服务选型建议：根据需求推荐合适的云服务
+
   - 基础安全建议：提供IAM、网络、数据安全基础建议
 
+
   适用场景:
+
   - 个人开发者规划云上应用架构
+
   - 初创团队选择云服务方案
+
   - 学习云架构设计优选实践
-  - 小型项目云...
+
+  - 小型项目云...'
 tags:
-  - 云架构
-  - 架构设计
-  - 个人创作
-  - 云计算
+- 云架构
+- 架构设计
+- 个人创作
+- 云计算
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 云架构师免费版
 
 ## 概述

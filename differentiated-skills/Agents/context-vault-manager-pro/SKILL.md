@@ -1,32 +1,39 @@
 ---
-slug: "context-vault-manager-pro"
-name: "context-vault-manager-pro"
-version: "1.0.0"
-displayName: "Context Vault Manage"
-summary: "智能分层记忆专业版，含语义检索、混合检索、自动摘要、向量数据库、多项目隔离，RAG准确率提升40%。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  上下文保险库专业版是智能分层记忆管理的终极方案。在免费版基础上解锁语义检索（基于向量嵌入的语义相似度搜索）、混合检索（关键词+语义混合，RAG准确率提升40%）、自动摘要（LLM自动生成记忆摘要）、向量数据库集成（LanceDB/Chroma支持）、多项目隔离（多项目独立记忆空间）、智能清理策略（基于重要性与时效性）、记忆关系网络七大高级功能。
+slug: context-vault-manager-pro
+name: context-vault-manager-pro
+version: 1.0.0
+displayName: Context Vault Manage
+summary: 智能分层记忆专业版，含语义检索、混合检索、自动摘要、向量数据库、多项目隔离，RAG准确率提升40%。
+license: Proprietary
+edition: pro
+description: '上下文保险库专业版是智能分层记忆管理的终极方案。在免费版基础上解锁语义检索（基于向量嵌入的语义相似度搜索）、混合检索（关键词+语义混合，RAG准确率提升40%）、自动摘要（LLM自动生成记忆摘要）、向量数据库集成（LanceDB/Chroma支持）、多项目隔离（多项目独立记忆空间）、智能清理策略（基于重要性与时效性）、记忆关系网络七大高级功能。
+
 
   核心能力：三层记忆分层、语义检索、混合检索、LLM自动摘要、LanceDB向量数据库集成、多项目隔离、智能清理策略、记忆关系网络。Token占用降低70%，RAG准确率提升40%，支持企业级多项目记忆管理。
 
+
   适用场景：企业级RAG应用记忆层、多项目Agent记忆管理、客服中心知识库、团队协作记忆共享、长期项目知识沉淀、大规模记忆库运维、高精度语义检索场景。
+
 
   差异化：完全中文化表达，针对企业级场景重新设计检索策略与清理机制，新增七大高级功能、多角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整记忆管理能力与优先支持。保留原始MIT版权声明。
 
-  适用关键词：分层记忆、语义检索、混合检索、向量数据库、多项目隔离、RAG优化、企业记忆
+
+  适用关键词：分层记忆、语义检索、混合检索、向量数据库、多项目隔离、RAG优化、企业记忆'
 tags:
-  - 记忆管理
-  - 语义检索
-  - 向量数据库
-  - 企业级
-  - RAG优化
+- 记忆管理
+- 语义检索
+- 向量数据库
+- 企业级
+- RAG优化
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 上下文保险库（专业版）
 
 > **智能分层记忆的终极方案。语义检索、向量数据库、多项目隔离，RAG准确率提升40%。**

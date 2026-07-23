@@ -1,37 +1,52 @@
 ---
-slug: "multi-source-research-tool-free"
-name: "multi-source-research-tool-free"
-version: "1.0.0"
-displayName: "多源研究助手免费版"
-summary: "整合网页搜索、学术平台、社交媒体与新闻聚合，支持自动去重与可信度分类"
-license: "Proprietary"
-edition: "free"
-description: |-
-  多源研究助手免费版，整合网页搜索、学术平台、社交媒体和新闻聚合四大数据源，帮助用户高效完成深度研究。核心能力:
+slug: multi-source-research-tool-free
+name: multi-source-research-tool-free
+version: 1.0.0
+displayName: 多源研究助手免费版
+summary: 整合网页搜索、学术平台、社交媒体与新闻聚合，支持自动去重与可信度分类
+license: Proprietary
+edition: free
+description: '多源研究助手免费版，整合网页搜索、学术平台、社交媒体和新闻聚合四大数据源，帮助用户高效完成深度研究。核心能力:
+
   - 整合网页搜索、学术平台、社交媒体、新闻聚合四大数据源
+
   - 自动去重，合并相似内容
+
   - 按来源可信度分类标注（A/B/C三级）
+
   - 生成结构化研究报告
 
+
   适用场景:
+
   - 学生与个人研究者文献调研
+
   - 舆情动态快速了解
+
   - 独立开发者技术方案调研
 
+
   差异化:
+
   - 免费版覆盖核心研究数据源，满足日常调研需求
+
   - 自动去重与可信度分类，提升研究质量
-  - 与PRO版本完全兼容...
+
+  - 与PRO版本完全兼容...'
 tags:
-  - 研究
-  - 文献
-  - 舆情
-  - 信息收集
+- 研究
+- 文献
+- 舆情
+- 信息收集
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 多源研究助手（免费版）
 
 ## 概述

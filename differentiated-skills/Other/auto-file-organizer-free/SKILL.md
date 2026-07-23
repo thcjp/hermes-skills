@@ -1,23 +1,26 @@
 ---
-slug: "auto-file-organizer-free"
-name: "auto-file-organizer-free"
-version: "1.0.0"
-displayName: "自动文件整理器"
-summary: "按文件类型与日期自动归类文件夹，支持图片/文档/视频等六大类，一键整理下载文件夹。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  自动文件整理器免费版解决文件整理的"手动归类繁琐"痛点：下载文件夹里混着图片、文档、视频、压缩包，每次手动分类耗时且容易遗漏；桌面堆满各种类型文件找不到重点；不同类型的文件没有统一的归类规则，每次整理都要重新决策。核心能力：按文件类型自动归类（图片/文档/视频/音频/压缩包/代码六大类）、按日期自动归类（今天/昨天/本周/本月）、整理统计报告（文件数量与类型分布）、自定义类型映射扩展、预览模式先确认后执行
+slug: auto-file-organizer-free
+name: auto-file-organizer-free
+version: 1.0.0
+displayName: 自动文件整理器
+summary: 按文件类型与日期自动归类文件夹，支持图片/文档/视频等六大类，一键整理下载文件夹。
+license: Proprietary
+edition: free
+description: 自动文件整理器免费版解决文件整理的"手动归类繁琐"痛点：下载文件夹里混着图片、文档、视频、压缩包，每次手动分类耗时且容易遗漏；桌面堆满各种类型文件找不到重点；不同类型的文件没有统一的归类规则，每次整理都要重新决策。核心能力：按文件类型自动归类（图片/文档/视频/音频/压缩包/代码六大类）、按日期自动归类（今天/昨天/本周/本月）、整理统计报告（文件数量与类型分布）、自定义类型映射扩展、预览模式先确认后执行
 tags:
-  - 文件整理
-  - 自动归类
-  - 下载文件夹
-  - 效率工具
+- 文件整理
+- 自动归类
+- 下载文件夹
+- 效率工具
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 自动文件整理器（免费版）
 
 > **一键整理凌乱文件夹。按类型/日期自动归类，六大类别覆盖常见文件。**

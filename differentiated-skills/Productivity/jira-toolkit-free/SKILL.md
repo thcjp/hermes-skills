@@ -1,28 +1,34 @@
 ---
-slug: "jira-toolkit-free"
-name: "jira-toolkit-free"
-version: "1.0.0"
-displayName: "Jira 事务工具包基础版"
-summary: "通过自然语言与 Jira 交互,支持 CLI 与 MCP server 双后端,管理事务的创建、查询与流转"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 项目管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: jira-toolkit-free
+name: jira-toolkit-free
+version: 1.0.0
+displayName: Jira 事务工具包基础版
+summary: 通过自然语言与 Jira 交互,支持 CLI 与 MCP server 双后端,管理事务的创建、查询与流转
+license: Proprietary
+edition: free
+description: '核心能力: 项目管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: jira, 事务, 工作项, ticket, jql, sprint, 看板, 敏捷
+
+  适用关键词: jira, 事务, 工作项, ticket, jql, sprint, 看板, 敏捷'
 tags:
-  - Jira
-  - 事务管理
-  - 敏捷开发
+- Jira
+- 事务管理
+- 敏捷开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Jira 事务工具包基础版
 
 ## 概述

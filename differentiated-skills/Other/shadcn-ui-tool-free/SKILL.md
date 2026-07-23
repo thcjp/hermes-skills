@@ -1,36 +1,50 @@
 ---
-slug: "shadcn-ui-tool-free"
-name: "shadcn-ui-tool-free"
-version: "1.0.0"
-displayName: "shadcn UI工具-免费版"
-summary: "使用shadcn/ui构建现代React应用,支持组件安装、表单验证与主题定制"
-license: "Proprietary"
-edition: "free"
-description: |-
-  shadcn/ui 开发工具免费版,面向个人开发者与小型项目。核心能力:
+slug: shadcn-ui-tool-free
+name: shadcn-ui-tool-free
+version: 1.0.0
+displayName: shadcn UI工具-免费版
+summary: 使用shadcn/ui构建现代React应用,支持组件安装、表单验证与主题定制
+license: Proprietary
+edition: free
+description: 'shadcn/ui 开发工具免费版,面向个人开发者与小型项目。核心能力:
+
   - shadcn/ui 组件安装与管理
+
   - Tailwind CSS 样式定制
+
   - react-hook-form + zod 表单验证
+
   - 暗色/亮色主题切换
+
   - 常用组件使用示例
+
   - 响应式布局指导
 
+
   适用场景:
+
   - 个人项目 UI 快速搭建
+
   - 学习 shadcn/ui 组件库
+
   - React 应用界面开发
 
-  差异化:免费版提供核心组件使用能力
+
+  差异化:免费版提供核心组件使用能力'
 tags:
-  - shadcn/ui
-  - React
-  - Tailwind CSS
-  - 前端开发
+- shadcn/ui
+- React
+- Tailwind CSS
+- 前端开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # shadcn UI 工具 - 免费版
 
 ## 概述

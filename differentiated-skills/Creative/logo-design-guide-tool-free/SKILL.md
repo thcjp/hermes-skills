@@ -1,25 +1,29 @@
 ---
-slug: "logo-design-guide-tool-free"
-name: "logo-design-guide-tool-free"
-version: "1.0.0"
-displayName: "Logo设计指南免费版"
-summary: "AI Logo设计原则与图像生成优选实践指南,涵盖Logo类型、提示词技巧、可扩展性规则,适合个人学习使用。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Logo设计指南免费版帮助个人用户掌握AI Logo设计的核心原则与优选实践。提供Logo类型识别、提示词编写技巧、可扩展性规则、配色指南与迭代工作流,
-  让用户能够系统化地使用AI图像生成工具创建专业Logo。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
+slug: logo-design-guide-tool-free
+name: logo-design-guide-tool-free
+version: 1.0.0
+displayName: Logo设计指南免费版
+summary: AI Logo设计原则与图像生成优选实践指南,涵盖Logo类型、提示词技巧、可扩展性规则,适合个人学习使用。
+license: Proprietary
+edition: free
+description: 'Logo设计指南免费版帮助个人用户掌握AI Logo设计的核心原则与优选实践。提供Logo类型识别、提示词编写技巧、可扩展性规则、配色指南与迭代工作流,
+
+  让用户能够系统化地使用AI图像生成工具创建专业Logo。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。'
 tags:
-  - Logo设计
-  - 设计指南
-  - AI生成
-  - 提示词工程
-  - 视觉设计
+- Logo设计
+- 设计指南
+- AI生成
+- 提示词工程
+- 视觉设计
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Logo设计指南免费版
 
 ## 概述

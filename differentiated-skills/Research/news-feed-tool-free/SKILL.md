@@ -1,37 +1,52 @@
 ---
-slug: "news-feed-tool-free"
-name: "news-feed-tool-free"
-version: "1.0.0"
-displayName: "RSS新闻订阅免费版"
-summary: "从主流国际RSS源获取最新新闻标题与摘要，零API密钥零依赖"
-license: "Proprietary"
-edition: "free"
-description: |-
-  RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:
+slug: news-feed-tool-free
+name: news-feed-tool-free
+version: 1.0.0
+displayName: RSS新闻订阅免费版
+summary: 从主流国际RSS源获取最新新闻标题与摘要，零API密钥零依赖
+license: Proprietary
+edition: free
+description: 'RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:
+
   - 从7个国际主流媒体RSS源获取新闻
+
   - 支持按来源、主题、数量筛选
+
   - 零API密钥、零外部依赖
+
   - 仅使用Python标准库和HTTP
 
+
   适用场景:
+
   - 个人用户浏览国际新闻
+
   - 学生了解全球时事
+
   - 独立开发者跟踪国际动态
 
+
   差异化:
+
   - 免费版零成本使用，纯Python标准库实现
+
   - 覆盖7个主流国际RSS源
-  - 与PRO版本完全兼容...
+
+  - 与PRO版本完全兼容...'
 tags:
-  - 新闻
-  - RSS
-  - 国际新闻
-  - 订阅
+- 新闻
+- RSS
+- 国际新闻
+- 订阅
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # RSS新闻订阅工具（免费版）
 
 ## 概述

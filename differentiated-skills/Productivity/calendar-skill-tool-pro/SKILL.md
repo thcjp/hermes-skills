@@ -1,29 +1,35 @@
 ---
-slug: "calendar-skill-tool-pro"
-name: "calendar-skill-tool-pro"
-version: "1.0.0"
-displayName: "日历管理技能专业版"
-summary: "企业级日历安全管理系统,支持多配置文件、权限隔离、审计日志与合规策略"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+slug: calendar-skill-tool-pro
+name: calendar-skill-tool-pro
+version: 1.0.0
+displayName: 日历管理技能专业版
+summary: 企业级日历安全管理系统,支持多配置文件、权限隔离、审计日志与合规策略
+license: Proprietary
+edition: pro
+description: '核心能力: 日程管理领域的专业化 AI 辅助工具,提供企业级高级功能支持。
+
 
   适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持。
 
-  适用关键词: calendar, porteden, 日历事件, 日程查询, 会议邀请
+
+  适用关键词: calendar, porteden, 日历事件, 日程查询, 会议邀请'
 tags:
-  - 日历
-  - porteden
-  - Outlook
-  - Google Calendar
+- 日历
+- porteden
+- Outlook
+- Google Calendar
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 日历管理技能专业版
 
 ## 概述

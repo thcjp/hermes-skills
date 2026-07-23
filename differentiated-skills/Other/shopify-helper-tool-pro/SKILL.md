@@ -1,38 +1,54 @@
 ---
-slug: "shopify-helper-tool-pro"
-name: "shopify-helper-tool-pro"
-version: "1.0.0"
-displayName: "Shopify助手-专业版"
-summary: "企业级Shopify开发平台,支持多店铺管理、自定义App开发、Headless电商与高级SEO"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:
+slug: shopify-helper-tool-pro
+name: shopify-helper-tool-pro
+version: 1.0.0
+displayName: Shopify助手-专业版
+summary: 企业级Shopify开发平台,支持多店铺管理、自定义App开发、Headless电商与高级SEO
+license: Proprietary
+edition: pro
+description: '企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:
+
   - 多店铺统一管理与部署
+
   - Shopify App 自定义开发
+
   - Headless 电商(Storefront API)
+
   - 企业级 SEO 与结构化数据
+
   - 性能优化与 Core Web Vitals
+
   - A/B 测试与转化率优化
+
   - 团队协作与代码审查
+
   - CI/CD 与自动化部署
 
+
   适用场景:
+
   - 多品牌电商矩阵管理
+
   - 企业级 Shopify Plus 运营
+
   - Headless 电商开发
-  - 代运营团队多客...
+
+  - 代运营团队多客...'
 tags:
-  - Shopify
-  - 企业级
-  - Headless
-  - App开发
-  - 多店铺管理
+- Shopify
+- 企业级
+- Headless
+- App开发
+- 多店铺管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Shopify 助手 - 专业版
 
 ## 概述

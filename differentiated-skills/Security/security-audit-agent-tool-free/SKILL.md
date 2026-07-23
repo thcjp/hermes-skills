@@ -1,27 +1,34 @@
 ---
-slug: "security-audit-agent-tool-free"
-name: "security-audit-agent-tool-free"
-version: "1.0.0"
-displayName: "Agent安全审计免费版"
-summary: "AI Agent系统安全审计工具,支持代码库安全检查、提示注入检测与基础配置审计,适合个人开发者快速安全自查。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Agent安全审计免费版,为AI Agent开发者提供基础安全审计能力。
+slug: security-audit-agent-tool-free
+name: security-audit-agent-tool-free
+version: 1.0.0
+displayName: Agent安全审计免费版
+summary: AI Agent系统安全审计工具,支持代码库安全检查、提示注入检测与基础配置审计,适合个人开发者快速安全自查。
+license: Proprietary
+edition: free
+description: 'Agent安全审计免费版,为AI Agent开发者提供基础安全审计能力。
+
   核心能力:代码库安全扫描、提示注入检测、Agent配置审计、工具调用安全检查。
+
   适用场景:Agent上线前安全自查、提示词安全审查、工具权限验证。
+
   差异化:免费版聚焦核心审计能力,支持单Agent检查,适合个人开发者快速上手。
-  适用关键词: Agent安全, 提示注入, 安全审计, prompt injection, tool poisoning, agent audit
+
+  适用关键词: Agent安全, 提示注入, 安全审计, prompt injection, tool poisoning, agent audit'
 tags:
-  - 安全
-  - AI安全
-  - Agent审计
-  - 免费版
+- 安全
+- AI安全
+- Agent审计
+- 免费版
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Agent安全审计免费版
 
 ## 概述

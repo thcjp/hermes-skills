@@ -1,38 +1,53 @@
 ---
-slug: "rss-fetcher-tool-pro"
-name: "rss-fetcher-tool-pro"
-version: "1.0.0"
-displayName: "RSS采集器专业版"
-summary: "企业级RSS采集管理系统,支持并行抓取、HTML报告、自定义标签规则、数据导出与源健康监控告警"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  RSS采集器专业版为企业团队提供高阶RSS订阅采集与管理系统。核心能力:
+slug: rss-fetcher-tool-pro
+name: rss-fetcher-tool-pro
+version: 1.0.0
+displayName: RSS采集器专业版
+summary: 企业级RSS采集管理系统,支持并行抓取、HTML报告、自定义标签规则、数据导出与源健康监控告警
+license: Proprietary
+edition: pro
+description: 'RSS采集器专业版为企业团队提供高阶RSS订阅采集与管理系统。核心能力:
+
   - 多源并行抓取(50+ workers)
+
   - 交互式HTML报告生成
+
   - 自定义标签规则与LLM辅助标签
+
   - 数据导出(JSON/CSV/OPML)
+
   - 源健康监控与自动告警
+
   - 定时调度与增量同步
 
+
   适用场景:
+
   - 企业内容资产采集与归档
+
   - 行业媒体监控与报告生成
+
   - 多团队订阅源集中管理
+
   - 数据分析与导出集成
 
-  差异化:专业版在免费版增量抓取与SQLite存储基础上,扩展并行抓取、HTML报告、自定义标签、数据导出与健...
+
+  差异化:专业版在免费版增量抓取与SQLite存储基础上,扩展并行抓取、HTML报告、自定义标签、数据导出与健...'
 tags:
-  - 研究工具
-  - RSS
-  - 企业级
-  - 数据采集
-  - 内容管理
+- 研究工具
+- RSS
+- 企业级
+- 数据采集
+- 内容管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # RSS采集器专业版
 
 ## 概述

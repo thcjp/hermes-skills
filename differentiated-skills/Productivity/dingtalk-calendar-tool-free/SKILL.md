@@ -1,29 +1,35 @@
 ---
-slug: "dingtalk-calendar-tool-free"
-name: "dingtalk-calendar-tool-free"
-version: "1.0.0"
-displayName: "钉钉日历基础版"
-summary: "使用 mcporter CLI 管理钉钉日程,支持创建日程、查询闲忙与会议室预订"
-license: "Proprietary"
-edition: "free"
-description: |-
-  核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+slug: dingtalk-calendar-tool-free
+name: dingtalk-calendar-tool-free
+version: 1.0.0
+displayName: 钉钉日历基础版
+summary: 使用 mcporter CLI 管理钉钉日程,支持创建日程、查询闲忙与会议室预订
+license: Proprietary
+edition: free
+description: '核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持。
+
 
   适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助。
 
+
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持。
 
-  适用关键词: 钉钉, 日历, 日程, mcporter, 会议室, 闲忙查询, 会议预订
+
+  适用关键词: 钉钉, 日历, 日程, mcporter, 会议室, 闲忙查询, 会议预订'
 tags:
-  - 钉钉
-  - 日历
-  - 会议室
-  - 日程
+- 钉钉
+- 日历
+- 会议室
+- 日程
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 钉钉日历基础版
 
 ## 概述

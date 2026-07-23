@@ -1,40 +1,57 @@
 ---
-slug: "sonos-cli-tool-pro"
-name: "sonos-cli-tool-pro"
-version: "1.0.0"
-displayName: "Sonos控制工具-专业版"
-summary: "企业级Sonos控制平台,支持多区域编排、语音集成、场景管理与API接口,适合商业空间"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  企业级 Sonos 控制工具专业版,面向商业空间与智能建筑。核心能力:
+slug: sonos-cli-tool-pro
+name: sonos-cli-tool-pro
+version: 1.0.0
+displayName: Sonos控制工具-专业版
+summary: 企业级Sonos控制平台,支持多区域编排、语音集成、场景管理与API接口,适合商业空间
+license: Proprietary
+edition: pro
+description: '企业级 Sonos 控制工具专业版,面向商业空间与智能建筑。核心能力:
+
   - 多区域编排与场景预设
+
   - 语音助手集成(Alexa/Google)
+
   - 定时场景自动化
+
   - 多音源切换与优先级管理
+
   - 商业背景音乐管理
+
   - 设备健康监控与告警
+
   - API 接口与第三方集成
+
   - 多用户权限管理
 
+
   适用场景:
+
   - 商业空间背景音乐管理
+
   - 酒店/餐厅多区域音控
+
   - 智能建筑音频系统
+
   - 活动现场多音箱协调
 
-  差异化:专业版在免费版基础上扩展多区域编排、语音集成与场景管理,兼容免费版命令
+
+  差异化:专业版在免费版基础上扩展多区域编排、语音集成与场景管理,兼容免费版命令'
 tags:
-  - Sonos
-  - 企业级
-  - 商业音频
-  - 智能建筑
-  - 场景管理
+- Sonos
+- 企业级
+- 商业音频
+- 智能建筑
+- 场景管理
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Sonos 控制工具 - 专业版
 
 ## 概述

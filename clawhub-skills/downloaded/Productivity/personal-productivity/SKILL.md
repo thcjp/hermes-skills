@@ -1,17 +1,7 @@
 ---
-slug: personal-productivity
-name: personal-productivity
-version: "1.0.0"
-displayName: Personal Productivit
-summary: 个人效率与时间管理顾问。帮助用户更好地管理时间、任务和能量，提升工作效率。当用户询问如何提高效率、时间管理、任务规划、专注力、拖延症等问题时触发。
-license: MIT-0
-description: |-
-  个人效率与时间管理顾问。帮助用户更好地管理时间、任务和能量，提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
-tags:
-- Productivity
-tools:
-  - - read
-- exec
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
 
 # Personal Productivity

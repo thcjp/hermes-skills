@@ -1,20 +1,27 @@
 ---
 slug: stripe-payment-integrator
 name: stripe-payment-integrator
-version: "1.1.0"
-displayName: "支付集成专家"
-summary: "Stripe支付全链路集成,从支付意图到订阅分账,安全合规少踩坑"
+version: 1.1.0
+displayName: 支付集成专家
+summary: Stripe支付全链路集成,从支付意图到订阅分账,安全合规少踩坑
 license: Proprietary
-description: |-
-  支付集成专家——基于Stripe官方最佳实践实现全流程支付集成,覆盖支付意图创建、订阅管理、Webhook处理、退款分账全链路。同时提供微信支付/支付宝/银联国内替代方案。适用于电商支付、SaaS订阅、退款处理、平台分账、发票管理、Webhook集成场景。触发关键词:支付集成、Stripe、订阅、Webhook、退款、发票、支付意图、3D Secure、微信支付、支付宝、分账、支付网关
-tags: [支付集成, Stripe, 订阅付费, 电商支付, SaaS收款]
+description: 支付集成专家——基于Stripe官方最佳实践实现全流程支付集成,覆盖支付意图创建、订阅管理、Webhook处理、退款分账全链路。同时提供微信支付/支付宝/银联国内替代方案。适用于电商支付、SaaS订阅、退款处理、平台分账、发票管理、Webhook集成场景。触发关键词:支付集成、Stripe、订阅、Webhook、退款、发票、支付意图、3D
+  Secure、微信支付、支付宝、分账、支付网关
+tags:
+- 支付集成
+- Stripe
+- 订阅付费
+- 电商支付
+- SaaS收款
 tools:
-  - read
-  - exec
-suggested_price: "19.90"
-pricing_tier: "business"
-pricing_rationale: "电商类, niche市场, enterprise复杂度, rare频次, business层 → 直接关联收入,付费意愿强"
+- read
+- exec
+suggested_price: 29.9
+pricing_tier: L3
+pricing_rationale: 电商类, niche市场, enterprise复杂度, rare频次, business层 → 直接关联收入,付费意愿强
+pricing_model: per_use
 ---
+
 # 支付集成专家
 
 基于 Stripe 官方最佳实践,实现安全、合规、可扩展的支付集成。同时提供国内支付(微信支付/支付宝/银联)替代方案,支持跨境与国内双场景。从支付意图到订阅管理,从 Webhook 到退款,全链路覆盖。

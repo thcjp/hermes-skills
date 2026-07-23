@@ -1,37 +1,52 @@
 ---
-slug: "knowledge-graph-tool-free"
-name: "knowledge-graph-tool-free"
-version: "1.0.0"
-displayName: "知识图谱工具(免费版)"
-summary: "个人用户的嵌入式知识图谱,以JSON存储,提供基础增删查改与上下文摘要。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  知识图谱工具(免费版)为个人用户提供轻量级的嵌入式知识图谱能力,以JSON文件持久化,通过命令行脚本查询与维护。核心能力:
+slug: knowledge-graph-tool-free
+name: knowledge-graph-tool-free
+version: 1.0.0
+displayName: 知识图谱工具(免费版)
+summary: 个人用户的嵌入式知识图谱,以JSON存储,提供基础增删查改与上下文摘要。
+license: Proprietary
+edition: free
+description: '知识图谱工具(免费版)为个人用户提供轻量级的嵌入式知识图谱能力,以JSON文件持久化,通过命令行脚本查询与维护。核心能力:
+
   - 实体与关系的增删查改
+
   - 基础查询:子节点、类型、分类、孤立节点
+
   - KGML紧凑摘要,自动注入会话上下文
+
   - 图谱统计与时间线查看
 
+
   适用场景:
+
   - 个人知识库与学习笔记结构化
+
   - 研究资料的主题与关联整理
+
   - 会话记忆的持久化与召回
 
+
   差异化:
+
   - 免费版聚焦单Agent、单用户的本地知识管理
+
   - 移除原始平台引用,纯净适配SkillHub
-  - 提供中文友好的KGML格式...
+
+  - 提供中文友好的KGML格式...'
 tags:
-  - Development
-  - Knowledge
-  - 个人知识库
-  - JSON
+- Development
+- Knowledge
+- 个人知识库
+- JSON
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 知识图谱工具(免费版)
 
 ## 概述

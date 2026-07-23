@@ -1,18 +1,7 @@
 ---
-slug: pdf-processor-cn
-name: pdf-processor-cn
-version: "1.0.0"
-displayName: Pdf
-summary: Use this skill whenever the user wants to do anything with PDF files. This
-  includes reading or ex...
-license: MIT-0
-description: |-
-  Use this skill whenever the user wants to do anything with PDF files。This includes reading or ex。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Knowledge
-tools:
-  - - read
-- exec
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
 
 # Pdf

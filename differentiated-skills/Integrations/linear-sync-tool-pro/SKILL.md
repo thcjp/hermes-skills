@@ -17,7 +17,11 @@ tools:
   - - read
   - exec
 homepage: "https://skillhub.cn"
+pricing_tier: "L4"
+pricing_model: "monthly"
+suggested_price: 99.9
 ---
+
 # Linear同步工具（专业版）
 
 全功能Linear项目管理命令行工具，覆盖任务全生命周期、批量操作、文档管理、GraphQL API和Git集成。专业版面向需要深度项目管理自动化的研发团队。

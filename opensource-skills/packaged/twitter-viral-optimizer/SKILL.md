@@ -1,20 +1,26 @@
 ---
 slug: twitter-viral-optimizer
 name: twitter-viral-optimizer
-version: "1.1.0"
-displayName: "社媒爆款优化器"
-summary: "基于Twitter/微博/小红书算法优化内容,最大化触达互动,打造爆款"
+version: 1.1.0
+displayName: 社媒爆款优化器
+summary: 基于Twitter/微博/小红书算法优化内容,最大化触达互动,打造爆款
 license: Proprietary
-description: |-
-  社媒爆款优化器——基于Twitter(X)/微博/小红书公开推荐算法洞察,分析并优化社交媒体内容以最大化触达与互动率。覆盖推文重写、发布时机、话题策略、互动预测、线程优化全链路。同时适配Twitter海外与微博/小红书/抖音国内平台。适用于推文/微博/笔记重写、发布时机规划、话题标签策略、线程结构优化、账号诊断场景。触发关键词:推特优化、推文优化、Twitter算法、X算法、微博优化、小红书优化、推文重写、社交媒文、推文互动、话题标签、社媒营销、爆款内容
-tags: [社媒优化, 内容营销, 推文爆款, 个人品牌, 微博小红书]
+description: 社媒爆款优化器——基于Twitter(X)/微博/小红书公开推荐算法洞察,分析并优化社交媒体内容以最大化触达与互动率。覆盖推文重写、发布时机、话题策略、互动预测、线程优化全链路。同时适配Twitter海外与微博/小红书/抖音国内平台。适用于推文/微博/笔记重写、发布时机规划、话题标签策略、线程结构优化、账号诊断场景。触发关键词:推特优化、推文优化、Twitter算法、X算法、微博优化、小红书优化、推文重写、社交媒文、推文互动、话题标签、社媒营销、爆款内容
+tags:
+- 社媒优化
+- 内容营销
+- 推文爆款
+- 个人品牌
+- 微博小红书
 tools:
-  - read
-  - exec
-suggested_price: "1.90"
-pricing_tier: "standard"
-pricing_rationale: "文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量"
+- read
+- exec
+suggested_price: 19.9
+pricing_tier: L2
+pricing_rationale: 文案创作类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具,大市场,低单价走量
+pricing_model: per_use
 ---
+
 # 社媒爆款优化器
 
 基于 Twitter(X)/微博/小红书 公开推荐算法的洞察,分析并优化社交媒体内容,最大化触达与互动率。支持海外(Twitter)与国内(微博/小红书/抖音)双场景内容优化。

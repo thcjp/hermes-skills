@@ -1,37 +1,52 @@
 ---
-slug: "node-connect-tool-free"
-name: "node-connect-tool-free"
-version: "1.0.0"
-displayName: "节点连接工具(免费版)"
-summary: "诊断本地与局域网场景下的节点连接和配对失败,覆盖常见根因与修复路径。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  节点连接工具(免费版)为个人用户诊断本地与局域网场景下的节点连接和配对失败,基于标准化检查命令定位根因并给出一条明确的修复路径。核心能力:
+slug: node-connect-tool-free
+name: node-connect-tool-free
+version: 1.0.0
+displayName: 节点连接工具(免费版)
+summary: 诊断本地与局域网场景下的节点连接和配对失败,覆盖常见根因与修复路径。
+license: Proprietary
+edition: free
+description: '节点连接工具(免费版)为个人用户诊断本地与局域网场景下的节点连接和配对失败,基于标准化检查命令定位根因并给出一条明确的修复路径。核心能力:
+
   - 本地与局域网拓扑识别
+
   - 标准化检查命令集(配置、绑定、配对)
+
   - 常见根因映射与修复建议
+
   - 快速启发式判断,避免盲目猜测
 
+
   适用场景:
+
   - 个人节点本地连接排查
+
   - 局域网内节点网关配对
+
   - 模拟器/USB隧道连接诊断
 
+
   差异化:
+
   - 免费版聚焦本地与局域网两类拓扑
+
   - 移除原始平台与品牌引用,纯净适配SkillHub
-  - 提供"先问后诊断"的澄清流程
+
+  - 提供"先问后诊断"的澄清流程'
 tags:
-  - Development
-  - 网络
-  - 诊断
-  - 节点
+- Development
+- 网络
+- 诊断
+- 节点
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 节点连接工具(免费版)
 
 ## 概述

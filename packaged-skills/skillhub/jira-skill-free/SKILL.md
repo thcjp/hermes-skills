@@ -253,7 +253,7 @@ export API_KEY="your_api_key_here"
 | `401 Unauthorized` | 邮箱与Token不匹配 | 校验 `JIRA_EMAIL` 与 `JIRA_API_TOKEN` 是否对应同一账户 |
 | `404 Not Found` | 事务key不存在或无权限 | 确认事务key拼写与项目访问权限 |
 | `JIRA_BOARD` 未设置导致搜索范围过大 | 项目范围为空 | 设置 `JIRA_BOARD` 限定项目，或接受搜索全部项目 |
-| `jq: command not found` | JSON解析依赖缺失 | 安装 `jq`（如 `apt install jq`）后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| `jq: command not found` | JSON解析依赖缺失 | 安装 `jq`（如 `apt install jq`）后检查网络连接和配置后重试 |
 | 调用付费版专享命令 | 免费版仅支持只读浏览 | 升级付费版解锁status/assign/comment/create/log/hours等命令 |
 
 ## 常见问题

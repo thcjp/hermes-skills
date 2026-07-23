@@ -1,23 +1,28 @@
 ---
-slug: "update-guardian"
-name: "update-guardian"
-version: "1.0.0"
-displayName: "更新守护者"
-summary: "解决破坏性变更、无法回滚、版本冲突、时机不当四大痛点，预检+快照+回滚三段式。"
-license: "Proprietary"
-description: |-
-  更新守护者是面向Agent平台与已安装技能包的自动更新能力包。它不只是设个每日cron跑
+slug: update-guardian
+name: update-guardian
+version: 1.0.0
+displayName: 更新守护者
+summary: 解决破坏性变更、无法回滚、版本冲突、时机不当四大痛点，预检+快照+回滚三段式。
+license: Proprietary
+description: '更新守护者是面向Agent平台与已安装技能包的自动更新能力包。它不只是设个每日cron跑
+
   update命令，更解决四个高频痛点：更新引入破坏性变更导致线上崩、更新后无法回滚、
-  依赖版本冲突、更新时机撞上业务高峰。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+
+  依赖版本冲突、更新时机撞上业务高峰。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。'
 tags:
-  - 自动化
-  - 版本管理
-  - 运维
+- 自动化
+- 版本管理
+- 运维
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 更新守护者
 
 自动更新Agent平台与所有已安装技能包，但更新前先预检、先快照，更新后跑健康检查，失败自动回滚。核心信条：**更新可以自动，但回滚必须一键。**

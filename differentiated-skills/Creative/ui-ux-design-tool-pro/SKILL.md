@@ -1,32 +1,37 @@
 ---
-slug: "ui-ux-design-tool-pro"
-name: "ui-ux-design-tool-pro"
-version: "1.0.0"
-displayName: "UI/UX设计指南专业版"
-summary: "企业级UI/UX设计体系,含WCAG 2.2合规、设计令牌、Shadcn/ui集成、2026趋势与高级产品深度分析"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向企业设计团队和专业前端的完整UI/UX设计体系,涵盖WCAG 2。2无障碍合规、
+slug: ui-ux-design-tool-pro
+name: ui-ux-design-tool-pro
+version: 1.0.0
+displayName: UI/UX设计指南专业版
+summary: 企业级UI/UX设计体系,含WCAG 2.2合规、设计令牌、Shadcn/ui集成、2026趋势与高级产品深度分析
+license: Proprietary
+edition: pro
+description: '面向企业设计团队和专业前端的完整UI/UX设计体系,涵盖WCAG 2。2无障碍合规、
+
   设计令牌系统、Shadcn/ui组件库深度集成、2026设计趋势、微交互动画模式、
-  以及对高级产品的深度设计分析。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。
+
+  以及对高级产品的深度设计分析。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。'
 tags:
-  - 设计
-  - UI
-  - UX
-  - 配色
-  - 字体
-  - 响应式
-  - 前端
-  - 企业级
-  - 无障碍
-  - 设计系统
-  - 组件库
+- 设计
+- UI
+- UX
+- 配色
+- 字体
+- 响应式
+- 前端
+- 企业级
+- 无障碍
+- 设计系统
+- 组件库
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 UI/UX设计指南专业版是一款面向企业设计团队和专业前端的完整设计体系参考。在免费版核心设计原则之上,扩展至WCAG 2.2无障碍合规、设计令牌系统、Shadcn/ui组件库深度集成、2026设计趋势、高级微交互动画,以及对Linear、Stripe、Vercel、Notion等高级产品的深度设计分析。
 
 专业版帮助企业建立可扩展、可维护、合规的设计系统,完全兼容免费版设计原则,可无缝升级。

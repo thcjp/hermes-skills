@@ -1,36 +1,50 @@
 ---
-slug: "azure-voicelive-tool-free"
-name: "azure-voicelive-tool-free"
-version: "1.0.0"
-displayName: "Azure语音交互免费版"
-summary: "使用Azure VoiceLive构建基础实时语音AI应用，支持文本/音频输出与基本会话管理。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:
+slug: azure-voicelive-tool-free
+name: azure-voicelive-tool-free
+version: 1.0.0
+displayName: Azure语音交互免费版
+summary: 使用Azure VoiceLive构建基础实时语音AI应用，支持文本/音频输出与基本会话管理。
+license: Proprietary
+edition: free
+description: 'Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:
+
   - 通过WebSocket建立双向实时语音通信
+
   - 支持文本与音频双模态输出
+
   - 基本会话配置：指令、语音、模态设置
+
   - 支持API Key认证方式
+
   - 音频流发送与接收（Base64 PCM16）
+
   - 多种语音选择（alloy、echo、shimmer等）
 
+
   适用场景:
+
   - 个人开发者构建语音助手原型
+
   - 学习实时语音AI应用开发
+
   - 简单的语音问答交互应用
 
-  差异化:免费版提供核心实时语音通信能力，适合个人开发者快速原型验证
+
+  差异化:免费版提供核心实时语音通信能力，适合个人开发者快速原型验证'
 tags:
-  - 语音AI
-  - Azure
-  - 实时通信
-  - 个人开发
+- 语音AI
+- Azure
+- 实时通信
+- 个人开发
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # Azure语音交互免费版
 
 ## 概述

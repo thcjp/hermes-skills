@@ -1,34 +1,46 @@
 ---
-slug: "data-analysis-hub-free"
-name: "data-analysis-hub-free"
-version: "1.0.0"
-displayName: "数据分析中枢(免费版)"
-summary: "面向决策的数据分析助手,提供统计严谨性、假设检验、A/B测试与陷阱识别的免费核心能力。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  数据分析中枢免费版面向产品经理、运营与初级数据分析师,提供从数据到决策的完整方法论支撑。核心能力:
+slug: data-analysis-hub-free
+name: data-analysis-hub-free
+version: 1.0.0
+displayName: 数据分析中枢(免费版)
+summary: 面向决策的数据分析助手,提供统计严谨性、假设检验、A/B测试与陷阱识别的免费核心能力。
+license: Proprietary
+edition: free
+description: '数据分析中枢免费版面向产品经理、运营与初级数据分析师,提供从数据到决策的完整方法论支撑。核心能力:
+
   - 方法论优先的决策分析框架,明确"分析服务于哪个决策"
+
   - 统计严谨性检查清单,覆盖样本量、对照公平性、多重比较等核心要素
+
   - 常见分析陷阱识别表,自动提示辛普森悖论、幸存者偏差、p-hacking等问题
+
   - 假设检验、相关分析、队列分析的方法选择器与输出标准
 
+
   适用场景:
+
   - 产品 A/B 测试结果判定与显著性评估
+
   - 用户增长与留存分析,辅助运营决策
+
   - 指标异动归因,快速定位业务问题
 
-  差异化:以"决策导向...
+
+  差异化:以"决策导向...'
 tags:
-  - 信息检索
-  - 假设检验
-  - 决策辅助
-  - 集成工具
+- 信息检索
+- 假设检验
+- 决策辅助
+- 集成工具
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L2
+pricing_model: per_use
+suggested_price: 19.9
 ---
+
 # 数据分析中枢 免费版
 
 ## 一、概述

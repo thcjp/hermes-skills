@@ -1,38 +1,52 @@
 ---
-slug: "solo-validate-tool-free"
-name: "solo-validate-tool-free"
-version: "1.0.0"
-displayName: "想法验证工具免费版"
-summary: "轻量级创业想法验证工具,支持S.E.E.D.维度检查与基础评分,适合个人创业者快速筛选想法"
-license: "Proprietary"
-edition: "free"
-description: |-
-  想法验证工具免费版为个人创业者提供轻量级的创业想法验证能力。
+slug: solo-validate-tool-free
+name: solo-validate-tool-free
+version: 1.0.0
+displayName: 想法验证工具免费版
+summary: 轻量级创业想法验证工具,支持S.E.E.D.维度检查与基础评分,适合个人创业者快速筛选想法
+license: Proprietary
+edition: free
+description: '想法验证工具免费版为个人创业者提供轻量级的创业想法验证能力。
+
 
   核心能力:
+
   - S.E.E.D.利基市场检查
+
   - 基础评分(乐观/现实)
+
   - 简单PRD生成
+
   - 技术栈推荐
 
+
   适用场景:
+
   - 创业想法快速筛选
+
   - MVP前可行性评估
+
   - 技术栈选择参考
+
 
   差异化:免费版聚焦核心验证流程,通过S.E.E.D.框架快速评估想法可行性,适合个人创业者在投入开发前判断想法是否值得追求。
 
-  适用关键词: 想法验证, S.E.E.D., 创业验证, 可行性评估, PRD, validate, startup, 创业筛选
+
+  适用关键词: 想法验证, S.E.E.D., 创业验证, 可行性评估, PRD, validate, startup, 创业筛选'
 tags:
-  - 研究工具
-  - 想法验证
-  - 创业
-  - 个人效率
+- 研究工具
+- 想法验证
+- 创业
+- 个人效率
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 想法验证工具免费版
 
 ## 概述

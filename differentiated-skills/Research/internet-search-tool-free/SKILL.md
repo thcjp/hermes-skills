@@ -1,37 +1,52 @@
 ---
-slug: "internet-search-tool-free"
-name: "internet-search-tool-free"
-version: "1.0.0"
-displayName: "聚合搜索工具"
-summary: "基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。核心能力:
+slug: internet-search-tool-free
+name: internet-search-tool-free
+version: 1.0.0
+displayName: 聚合搜索工具
+summary: 基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。
+license: Proprietary
+edition: free
+description: '基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。核心能力:
+
   - 聚合多个搜索引擎结果（Brave、Bing、DuckDuckGo 等）
+
   - 按查询类型智能路由到合适引擎
+
   - 支持通用、新闻、学术、社交四大类别
+
   - SearXNG 查询语法支持
 
+
   适用场景:
+
   - 个人日常信息检索
+
   - 学术论文与资料查找
+
   - 社区观点与讨论收集
 
+
   差异化:
+
   - 免费版聚焦单次智能搜索
+
   - 自动选择最匹配的搜索引擎
-  - 结果聚合...
+
+  - 结果聚合...'
 tags:
-  - 搜索
-  - 聚合工具
-  - 多引擎
-  - 信息检索
+- 搜索
+- 聚合工具
+- 多引擎
+- 信息检索
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 聚合搜索工具（免费版）
 
 ## 概述

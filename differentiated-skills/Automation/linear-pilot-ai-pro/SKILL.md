@@ -1,31 +1,39 @@
 ---
-slug: "linear-pilot-ai-pro"
-name: "linear-pilot-ai-pro"
-version: "1.0.0"
-displayName: "Linear自动驾驶(专业版)"
-summary: "Linear任务全流程自动化专业版，支持多工作流路由、子Agent分发、多平台通知、失败重试与处理指标，企业级任务流转。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  Linear自动驾驶（专业版）面向工程团队与AI Agent运行时，在免费版基础上解锁全部高级能力：多工作流条件路由、多Webhook服务冗余、子Agent任务分发、多平台通知（Discord/Slack/邮件/企业微信）、任务优先级队列、失败重试与熔断机制、跨团队任务分发、处理指标与可视化报表。覆盖从单任务自动化到企业级任务流转的完整工作流。
+slug: linear-pilot-ai-pro
+name: linear-pilot-ai-pro
+version: 1.0.0
+displayName: Linear自动驾驶(专业版)
+summary: Linear任务全流程自动化专业版，支持多工作流路由、子Agent分发、多平台通知、失败重试与处理指标，企业级任务流转。
+license: Proprietary
+edition: pro
+description: 'Linear自动驾驶（专业版）面向工程团队与AI Agent运行时，在免费版基础上解锁全部高级能力：多工作流条件路由、多Webhook服务冗余、子Agent任务分发、多平台通知（Discord/Slack/邮件/企业微信）、任务优先级队列、失败重试与熔断机制、跨团队任务分发、处理指标与可视化报表。覆盖从单任务自动化到企业级任务流转的完整工作流。
+
 
   核心能力：多工作流条件路由（按任务类型/团队/优先级/标签路由）、Make.com+Pipedream双Webhook冗余切换、子Agent任务分发（复杂任务拆解并行处理）、多平台通知通道（Discord/Slack/邮件/企业微信/飞书）、任务优先级队列与抢占式处理、指数退避重试与熔断保护、跨团队任务自动分发、处理指标采集与Grafana可视化报表、Webhook签名验证与安全防护、任务处理SLA监控与告警。
 
+
   适用场景：工程团队任务全自动化、跨团队任务分发与协调、复杂研究任务并行处理、企业级任务流转与SLA管理、多渠道通知与告警、任务处理效能度量与优化、CI/CD与任务系统深度集成。
 
-  差异化：在免费版基础上新增八大高级能力，针对企业级任务自动化场景设计完整工作流。提供多角色场景指南（团队负责人/项目经理/DevOps/开发者/QA/产品经理）、性能优化策略、多平台集成示例、版本升级迁移指南。专业版通过SkillHub SkillPay发布。保留原始MIT版权声明。
 
-  适用关键词：多工作流路由、子Agent分发、多平台通知、优先级队列、失败重试、熔断保护、跨团队分发、处理指标
+  差异化：在免费版基础上新增八大高级能力，针对企业级任务自动化场景设计完整工作流。提供多角色场景指南（团队负责人/项目经理/DevOps/开发者/QA/产品经理）、性能优化策略、多平台集成示例、版本升级迁移指南。专业版通过SkillHub
+  SkillPay发布。保留原始MIT版权声明。
+
+
+  适用关键词：多工作流路由、子Agent分发、多平台通知、优先级队列、失败重试、熔断保护、跨团队分发、处理指标'
 tags:
-  - Linear
-  - 任务自动化
-  - 工作流路由
-  - 企业级
+- Linear
+- 任务自动化
+- 工作流路由
+- 企业级
 tools:
-  - read
-  - exec
-homepage: "https://skillhub.cn"
+- read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # Linear自动驾驶（专业版）
 
 > 企业级Linear任务流转中枢。多工作流路由、子Agent分发、多平台通知、失败重试与熔断保护，让任务处理效能提升10倍。

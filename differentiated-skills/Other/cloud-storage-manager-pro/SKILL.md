@@ -1,30 +1,38 @@
 ---
-slug: "cloud-storage-manager-pro"
-name: "cloud-storage-manager-pro"
-version: "1.0.0"
-displayName: "云存储管理器(专业版)"
-summary: "企业级多云存储管理平台，支持批量迁移、双向同步、加密KMS、多用户协作与成本分析报告。"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向团队与企业的全功能多云存储管理平台，在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等高级能力。核心能力：
+slug: cloud-storage-manager-pro
+name: cloud-storage-manager-pro
+version: 1.0.0
+displayName: 云存储管理器(专业版)
+summary: 企业级多云存储管理平台，支持批量迁移、双向同步、加密KMS、多用户协作与成本分析报告。
+license: Proprietary
+edition: pro
+description: '面向团队与企业的全功能多云存储管理平台，在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等高级能力。核心能力：
+
 
   - 批量跨云迁移，一次任务多源多目标并发，支持断点续传
+
   - 双向实时同步与冲突解决策略（latest-wins/manual/custom）
+
   - 集成AWS KMS、Azure Key Vault、HashiCorp Vault等密钥管理服务
+
   - 多用户协作与权限共享，RBAC权限分级
-  - 智能分层存储自动分级...
+
+  - 智能分层存储自动分级...'
 tags:
-  - 企业云存储
-  - 批量迁移
-  - 双向同步
-  - 密钥管理
-  - 成本分析
+- 企业云存储
+- 批量迁移
+- 双向同步
+- 密钥管理
+- 成本分析
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 面向团队与企业的全功能多云存储管理平台。在免费版基础上扩展批量跨云迁移、双向实时同步、加密密钥管理、多用户协作、智能分层存储与成本分析报告等8项高级能力。
 
 ## 概述

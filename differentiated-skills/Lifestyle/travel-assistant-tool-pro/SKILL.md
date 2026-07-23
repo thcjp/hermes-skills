@@ -1,40 +1,57 @@
 ---
-slug: "travel-assistant-tool-pro"
-name: "travel-assistant-tool-pro"
-version: "1.0.0"
-displayName: "旅行规划助手专业版"
-summary: "企业级旅行规划顾问,支持多目的地行程、团队协同、批量规划、行程模板与离线导出"
-license: "Proprietary"
-edition: "pro"
-description: |-
-  面向企业差旅与专业旅行规划者的高级旅行规划助手,支持多目的地串联、团队协同、批量规划与离线导出。核心能力:
+slug: travel-assistant-tool-pro
+name: travel-assistant-tool-pro
+version: 1.0.0
+displayName: 旅行规划助手专业版
+summary: 企业级旅行规划顾问,支持多目的地行程、团队协同、批量规划、行程模板与离线导出
+license: Proprietary
+edition: pro
+description: '面向企业差旅与专业旅行规划者的高级旅行规划助手,支持多目的地串联、团队协同、批量规划与离线导出。核心能力:
+
   - 多目的地行程串联与路线优化
+
   - 团队协同规划与权限管理
+
   - 批量差旅计划生成与模板复用
+
   - 实时天气与航班动态监控
+
   - 多语言行程生成与离线导出
+
   - 企业差旅政策合规检查
+
   - 费用预算管理与汇率换算
+
   - 行程模板库与历史行程复用
 
+
   适用场景:
+
   - 企业差旅批量规划与合规管理
+
   - 多目的地跨国商务行程串联
+
   - 团队出行的协同规划与任务分配
+
   - 高频差旅人员的行程模板化管理
-  - 旅行服务...
+
+  - 旅行服务...'
 tags:
-  - Lifestyle
-  - 企业差旅
-  - 商务旅行
-  - 团队协同
-  - 行程优化
-  - 批量规划
+- Lifestyle
+- 企业差旅
+- 商务旅行
+- 团队协同
+- 行程优化
+- 批量规划
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L3
+pricing_model: per_use
+suggested_price: 29.9
 ---
+
 # 旅行规划助手专业版
 
 企业级旅行规划顾问,在免费版核心能力之上,扩展多目的地串联、团队协同、批量规划与离线导出能力,适合企业差旅管理与专业旅行服务商使用。与免费版数据格式完全兼容,支持平滑升级。

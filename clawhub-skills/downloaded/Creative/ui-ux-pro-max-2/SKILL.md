@@ -1,20 +1,7 @@
 ---
-slug: ui-ux-pro-max-2
-name: ui-ux-pro-max-2
-version: "0.1.0"
-displayName: Ui Ux Pro Max
-summary: This is an opinionated UI/UX guidance skill with disclosed setup and project
-  design-file behavior...
-license: MIT
-description: |-
-  This is an opinionated UI/UX guidance skill with disclosed setup and
-  project design-file behavior。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
-tags:
-- Creative
-- Research
-tools:
-  - - read
-- exec
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
 
 # Ui Ux Pro Max

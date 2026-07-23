@@ -1,23 +1,27 @@
 ---
-slug: "translate-hub-free"
-name: "translate-hub-free"
-version: "1.0.0"
-displayName: "中英翻译中枢(免费版)"
-summary: "中英文双向翻译工具，支持文本翻译、代码注释翻译、基础术语对照，自动识别源语言并保留Markdown格式。"
-license: "Proprietary"
-edition: "free"
-description: |-
-  中英翻译中枢（免费版）面向开发者、技术写作者与跨语言协作用户，提供准确的中英文双向翻译能力。自动识别源语言方向，保留Markdown格式与代码结构，内置基础术语库保证翻译一致性，特别适合代码注释、技术文档与日常文本的快速翻译。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。
+slug: translate-hub-free
+name: translate-hub-free
+version: 1.0.0
+displayName: 中英翻译中枢(免费版)
+summary: 中英文双向翻译工具，支持文本翻译、代码注释翻译、基础术语对照，自动识别源语言并保留Markdown格式。
+license: Proprietary
+edition: free
+description: 中英翻译中枢（免费版）面向开发者、技术写作者与跨语言协作用户，提供准确的中英文双向翻译能力。自动识别源语言方向，保留Markdown格式与代码结构，内置基础术语库保证翻译一致性，特别适合代码注释、技术文档与日常文本的快速翻译。Use
+  when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。
 tags:
-  - 翻译工具
-  - 中英互译
-  - 代码注释
-  - 术语对照
+- 翻译工具
+- 中英互译
+- 代码注释
+- 术语对照
 tools:
-  - - read
-  - exec
-homepage: "https://skillhub.cn"
+- - read
+- exec
+homepage: https://skillhub.cn
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
+
 # 中英翻译中枢（免费版）
 
 > 一句话输入，秒级返回准确翻译。自动识别语言方向，保留代码与格式，内置术语库保证一致性。

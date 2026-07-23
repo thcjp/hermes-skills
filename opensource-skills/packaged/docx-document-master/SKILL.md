@@ -1,20 +1,26 @@
 ---
 slug: docx-document-master
 name: docx-document-master
-version: "1.0.0"
-displayName: "文档处理大师"
-summary: "Word文档全流程处理,从创建到修订到邮件合并,正式文档一站搞定"
+version: 1.0.0
+displayName: 文档处理大师
+summary: Word文档全流程处理,从创建到修订到邮件合并,正式文档一站搞定
 license: Proprietary
-description: |-
-  文档处理大师——全面处理Word文档,从创建到编辑,从修订到邮件合并,覆盖正式文档全生命周期。合同/报告/方案/手册/论文,专业级文档处理一站搞定。支持标题层级、段落格式、表格图片、修订跟踪、批注协作、目录生成、邮件合并、交叉引用、书签超链接、页眉页脚、分节封面全功能。适用场景:合同文档生成、项目报告撰写、方案手册制作、论文排版、批量邮件合并、文档格式规范化。触发关键词:Word文档、docx、文档生成、文档编辑、修订批注、邮件合并、目录生成、交叉引用、页眉页脚、格式转换、合同文档、报告撰写、论文排版、python-docx、文档处理。
-tags: [文档处理, Word文档, 文档生成, 修订批注, 邮件合并]
+description: 文档处理大师——全面处理Word文档,从创建到编辑,从修订到邮件合并,覆盖正式文档全生命周期。合同/报告/方案/手册/论文,专业级文档处理一站搞定。支持标题层级、段落格式、表格图片、修订跟踪、批注协作、目录生成、邮件合并、交叉引用、书签超链接、页眉页脚、分节封面全功能。适用场景:合同文档生成、项目报告撰写、方案手册制作、论文排版、批量邮件合并、文档格式规范化。触发关键词:Word文档、docx、文档生成、文档编辑、修订批注、邮件合并、目录生成、交叉引用、页眉页脚、格式转换、合同文档、报告撰写、论文排版、python-docx、文档处理。
+tags:
+- 文档处理
+- Word文档
+- 文档生成
+- 修订批注
+- 邮件合并
 tools:
-  - read
-  - exec
-suggested_price: "1.90"
-pricing_tier: "standard"
-pricing_rationale: "文件处理类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具"
+- read
+- exec
+suggested_price: 19.9
+pricing_tier: L2
+pricing_rationale: 文件处理类, large市场, enterprise复杂度, daily频次, standard层 → 高频通用工具
+pricing_model: per_use
 ---
+
 # 文档处理大师
 
 全面处理 Word 文档。从创建到编辑,从格式到修订,覆盖正式文档全生命周期。

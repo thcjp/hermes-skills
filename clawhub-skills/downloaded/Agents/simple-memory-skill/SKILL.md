@@ -1,18 +1,7 @@
 ---
-slug: simple-memory-skill
-name: simple-memory-skill
-version: "1.0.0"
-displayName: simple-memory-skill
-summary: Zero-dependency AI memory system. No API keys needed. Pure local storage
-  with smart search. Works...
-license: MIT-0
-description: |-
-  Zero-dependency AI memory system。No API keys needed。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。
-tags:
-- Agents
-tools:
-  - - read
-- exec
+pricing_tier: L4
+pricing_model: monthly
+suggested_price: 99.9
 ---
 
 # simple-memory-skill
