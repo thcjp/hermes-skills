@@ -1,4 +1,5 @@
 ---
+
 slug: nano-pdf-tool-pro
 name: nano-pdf-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Nano PDF工具（专业版）
 summary: "轻量级PDF处理工具：读取、创建、编辑PDF，支持文本提取与基本页面操作.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 'Nano PDF工具 - （专业版）
+description: Nano PDF工具 - （专业版）。可处理提升工作效率
 
   核心能力: PDF读取, PDF创建, 文本提取, 页面操作, nano pdf, PDF编辑, 页面旋转
 
@@ -40,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Nano PDF工具（专业版）
 
 ## 概述

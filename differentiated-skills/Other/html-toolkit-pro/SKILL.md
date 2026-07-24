@@ -1,4 +1,5 @@
 ---
+
 slug: html-toolkit-pro
 name: html-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: HTML 工具箱专业版
 summary: "面向团队的全站 HTML 审计、WCAG 合规与组件库治理工具.。面向团队的全站 HTML 审计与 WCAG 合规治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: '面向团队的全站 HTML 审计与 WCAG 合规治理专业工具。核心能力:
+description: 面向团队的全站 HTML 审计与 WCAG 合规治理专业工具。核心能力:。可自动提升工作效率
 
   - 全站批量 HTML 审计与回归
 
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # HTML 工具箱（专业版）
 
 ## 概述

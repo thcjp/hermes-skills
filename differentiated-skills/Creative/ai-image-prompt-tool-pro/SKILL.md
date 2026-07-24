@@ -1,4 +1,5 @@
 ---
+
 slug: ai-image-prompt-tool-pro
 name: ai-image-prompt-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: AI图像提示词-专业版
 summary: "企业级提示词工程工具,支持批量生成、A/B测试、版本管理与团队协作,适配商业内容生产.。AI图像提示词专业版,面向企业团队与专业设计师的高级提示词工程工具。核心能力:"
 license: Proprietary
 edition: pro
-description: 'AI图像提示词专业版,面向企业团队与专业设计师的高级提示词工程工具。核心能力:
+description: AI图像提示词专业版,面向企业团队与专业设计师的高级提示词工程工具。核心能力:。可自动提升工作效率
 
   - 行业专业模板库(电商、广告、出版、游戏、影视等)
 
@@ -46,7 +47,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # AI图像提示词工具 - 专业版
 
 ## 概述

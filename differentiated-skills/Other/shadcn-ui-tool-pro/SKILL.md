@@ -1,4 +1,5 @@
 ---
+
 slug: shadcn-ui-tool-pro
 name: shadcn-ui-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: shadcn UI工具-专业版
 summary: "企业级React设计系统平台,支持自定义组件库、设计令牌管理与团队协作开发。企业级 shadcn/ui 开发工具专业版,面向团队与商业应用。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级 shadcn/ui 开发工具专业版,面向团队与商业应用。核心能力:
+description: 企业级 shadcn/ui 开发工具专业版,面向团队与商业应用。核心能力:。可自动提升工作效率
 
   - 企业设计系统与令牌管理
 
@@ -56,7 +57,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # shadcn UI 工具 - 专业版
 
 ## 概述

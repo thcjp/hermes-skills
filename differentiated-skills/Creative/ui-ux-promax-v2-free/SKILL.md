@@ -1,4 +1,5 @@
 ---
+
 slug: ui-ux-promax-v2-free
 name: ui-ux-promax-v2-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: UI/UX ProMax V2免费版
 summary: "优先级驱动的设计指南数据库,含50+风格、97配色、57字体配对,适合个人快速查询。面向个人开发者的优先级驱动UI/UX设计指南,内置50+种界面风格、97套配色方案、"
 license: Proprietary
 edition: free
-description: '面向个人开发者的优先级驱动UI/UX设计指南,内置50+种界面风格、97套配色方案、
+description: 面向个人开发者的优先级驱动UI/UX设计指南,内置50+种界面风格、97套配色方案、。可生成提升工作效率
 
   57组字体配对、99条UX规则和25种图表类型,通过Python CLI按关键词查询。核心能力:
 
@@ -46,7 +47,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # UI/UX ProMax V2 - 免费版
 
 ## 概述

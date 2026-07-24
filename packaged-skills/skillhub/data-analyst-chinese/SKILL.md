@@ -1,4 +1,5 @@
 ---
+
 slug: "data-analyst-chinese"
 name: "data-analyst-chinese"
 version: 1.0.1
@@ -15,7 +16,7 @@ description: |-
   - 自定义报告模板:Jinja2 模板引擎,HTML/PDF/PPT 多格式输出
   - 定时分析任务与邮件分发,自动化周报/月报
   - 与企业数据库深度...
-tags: 数据分析,假设检验,分析,python,pip,install
+tags: 数据分析,假设检验,分析,企业数据,不支持,返回
 tools:
   - read
   - exec
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
+
 ---
+
 # 中文数据分析(专业版)
 
 ## 付费版专享能力

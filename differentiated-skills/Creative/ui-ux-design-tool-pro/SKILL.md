@@ -1,4 +1,5 @@
 ---
+
 slug: ui-ux-design-tool-pro
 name: ui-ux-design-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: UI/UX设计指南专业版
 summary: 企业级UI/UX设计体系,含WCAG 2.2合规、设计令牌、Shadcn/ui集成、2026趋势与高级产品深度分析
 license: Proprietary
 edition: pro
-description: '面向企业设计团队和专业前端的完整UI/UX设计体系,涵盖WCAG 2。2无障碍合规、
+description: 面向企业设计团队和专业前端的完整UI/UX设计体系,涵盖WCAG 2。2无障碍合规、。可生成提升工作效率
 
   设计令牌系统、Shadcn/ui组件库深度集成、2026设计趋势、微交互动画模式、
 
@@ -37,7 +38,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 UI/UX设计指南专业版是一款面向企业设计团队和专业前端的完整设计体系参考。在免费版核心设计原则之上,扩展至WCAG 2.2无障碍合规、设计令牌系统、Shadcn/ui组件库深度集成、2026设计趋势、高级微交互动画,以及对Linear、Stripe、Vercel、Notion等高级产品的深度设计分析.
 专业版帮助企业建立可扩展、可维护、合规的设计系统,完全兼容免费版设计原则,可无缝升级.
 ## 核心能力

@@ -1,4 +1,5 @@
 ---
+
 slug: "trending-feed-skill"
 name: "trending-feed-skill"
 version: 1.0.1
@@ -13,17 +14,7 @@ description: |-
   - GitHub Token 认证，速率限制提升至 5000 次/小时
   - 定时抓取并自动推送到飞书、Discord、Telegram
   - 自定义输出模板与字段映射...
-tags:
-  - 集成工具
-  - 数据聚合
-  - 企业效率
-  - 自动化
-  - 工具
-  - python
-  - webhook
-  - token
-  - api
-  - true
+tags: python,webhook,token,true,api
 tools:
   - read
   - exec
@@ -31,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 热榜订阅(专业版)
 
 ## 付费版专享能力

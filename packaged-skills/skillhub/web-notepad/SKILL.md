@@ -1,4 +1,5 @@
 ---
+
 slug: "web-notepad"
 name: "web-notepad"
 version: 1.0.1
@@ -19,17 +20,7 @@ description: |-
   适用场景:
 
   - 中...
-tags:
-  - 集成工具
-  - 企业表单
-  - 数据合规
-  - Web开发
-  - 前端
-  - 开发工具
-  - api
-  - https
-  - curl
-  - authorization
+tags: api,https,curl,authorization,example
 tools:
   - read
   - exec
@@ -38,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # 在线表单笔记(专业版)
 
 ## 付费版专享能力

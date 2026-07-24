@@ -1,4 +1,5 @@
 ---
+
 slug: "ocean-chat-assistant"
 name: "ocean-chat-assistant"
 version: "2.20.0"
@@ -14,7 +15,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Ocean Chat
 
 ## 付费版专享能力

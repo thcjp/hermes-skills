@@ -1,4 +1,5 @@
 ---
+
 slug: ad-creative-intel-pro
 name: ad-creative-intel-pro
 version: 1.0.0
@@ -15,7 +16,7 @@ description: '广告情报专业版是面向买量团队、投放优化师、市
   新增创意效果归因模板，把创意素材关联到投放时间、花费、转化等业务指标；(5) 提供优先 API 速率（10 QPS）与并发配额（5 路），适合构建数据看板与定时任务.
   适用关键词：广告情报分析、批量创意导出、历史趋势回溯、下载收入预估、多市场对比、创意归因、ad creative intelligence、bulk export、historical
   trend、download revenue estimate'
-tags: 广告情报,api,data,post,专业版增
+tags: 广告情报,api,data,post,专业版增,adc_intel_api_key
 tools:
   - read
   - exec
@@ -25,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+
 ---
+
 # 广告情报专业版（Ad Creative Intel Pro）
 
 面向买量团队、投放优化师、市场研究负责人的全功能广告情报分析平台。在免费版三大端点集群基础上解锁批量导出、历史回溯、下载/收入预估三类高级端点，并新增多市场对比、创意效果归因、优先速率并发三项独有能力.

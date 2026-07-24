@@ -1,4 +1,5 @@
 ---
+
 slug: "dns"
 name: "dns"
 version: 1.0.1
@@ -20,21 +21,7 @@ description: |-
   - 邮件投递率治理(SPF/DKIM/DMARC全链路)
   - 证书安全加固(CAA锁定+iodef告警)
   - Cloudflare代理导致的非HTTP服务故障排查
-tags:
-  - 研发工具
-  - Networking
-  - DevOps
-  - 工具
-  - 效率
-  - 自动化
-  - 通信
-  - 邮件
-  - 运维
-  - 监控
-  - 开发
-  - dig
-  - ttl
-  - caa
+tags: 通信,邮件,dig,ttl,caa,com
 tools:
   - read
   - exec
@@ -42,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # DNS配置专家
 
 ## 输入格式

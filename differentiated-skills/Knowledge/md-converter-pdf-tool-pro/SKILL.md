@@ -1,4 +1,5 @@
 ---
+
 slug: md-converter-pdf-tool-pro
 name: md-converter-pdf-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Markdown转PDF（专业版）
 summary: "将Markdown文档转换为PDF，支持自定义样式、页眉页脚、目录生成与批量转换.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 'Markdown转PDF - （专业版）
+description: Markdown转PDF - （专业版）。可生成提升工作效率
 
   核心能力: Markdown转PDF, md转pdf, 文档转换, pandoc, 批量转换, 样式定制
 
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Markdown转PDF（专业版）
 
 ## 概述

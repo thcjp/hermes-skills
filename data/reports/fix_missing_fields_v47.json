@@ -1,7 +1,7 @@
 {
-  "started_at": "2026-07-24T17:51:00.918042",
+  "started_at": "2026-07-24T18:54:19.568801",
   "total_files": 2137,
-  "files_modified": 69,
+  "files_modified": 176,
   "fixes": {
     "MISSING_SLUG": 0,
     "MISSING_VERSION": 0,
@@ -16,8 +16,8 @@
     "FIXED_HOMEPAGE": 0,
     "EXPANDED_SUMMARY": 0,
     "ADDED_QUICK_START": 0,
-    "FIXED_IRRELEVANT_TAGS": 1,
-    "ENHANCED_VALUE_PROPOSITION": 0
+    "FIXED_IRRELEVANT_TAGS": 77,
+    "ENHANCED_VALUE_PROPOSITION": 25
   },
   "modified_files": [
     {
@@ -29,6 +29,12 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\baoyu-md-formatter\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\beware-piper-tts\\SKILL.md",
       "fixes": []
     },
@@ -37,12 +43,60 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\browser-automation-v2\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\calendar-reminder-free\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\calendar-sync-tool\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\chart\\SKILL.md",
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\chart-craft\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\chart-generator-2-0-0\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\chat\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\chromecast-control\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\clawprint\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\control-ikea-lightbulb\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\creator-alpha-feed\\SKILL.md",
@@ -57,12 +111,24 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dashboard-toolkit\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\data-analysis-hub\\SKILL.md",
       "fixes": []
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\data-analyst-chinese\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\db-admin-console\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\db-free\\SKILL.md",
@@ -85,20 +151,134 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dns\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dns-free\\SKILL.md",
+      "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\doc-assistant\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\dogecoin-node\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\domain-dns-ops\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\drama-hit-producer\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\elite-frontend\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\excel-formula\\SKILL.md",
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\expanso-xml-to-json\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\feed-digest\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\feishu-file-sender\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\figma-studio\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\file-browser-tool\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\frontend-design\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\game-asset-generation-cellcog\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\game-developer-skill\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\generate-presentation\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\go-to-market\\SKILL.md",
-      "fixes": []
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\grok-image\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\html-designer\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\image\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\javascript-skills\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\jira-free\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\jira-skill-free\\SKILL.md",
@@ -113,6 +293,26 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\kai-tw-figma\\SKILL.md",
+      "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge-graph\\SKILL.md",
+      "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge-ontology\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\knowledge-ontology-free\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\live-stream-script\\SKILL.md",
       "fixes": []
     },
@@ -121,8 +321,62 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\logo-brand-identity-cellcog\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\markdown-converter-tool\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\media-server-control\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\meeting-note\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\merge-check-paid\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\mermaid-diagram\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\miniprogram-development\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\molt-board-art-free\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\monad-development\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\mongo-manager\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\mongodb-atlas-admin\\SKILL.md",
@@ -133,16 +387,110 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\music\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\node-connect\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\note-app-cli\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\notion-cli\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\notion-pages\\SKILL.md",
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\notioncli\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ocean-chat-assistant\\SKILL.md",
+      "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\okx-dex-token-paid\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ontology\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\ontology-free\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\openai-ai\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ops-dashboard\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\pandoc-converter\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\photo-caption\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\photo-webcam\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\podcast-downloader-tool\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\powerpoint\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx-cn\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\productivity-improving\\SKILL.md",
@@ -153,8 +501,72 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\python\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\repo-reader-tool\\SKILL.md",
+      "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\rho-telegram-alerts-tool\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\scrape-web\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\shadcn-ui\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\shopify-helper\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\packaged-skills\\skillhub\\skill-creator-free\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\smart-auto-updater\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\smart-reminder-system\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\social-sentiment\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\sql-toolkit\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\stock-filter\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\story-long-analyze\\SKILL.md",
@@ -167,6 +579,132 @@
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\tarot\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\task-bot-orchestrator\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\telegram-chat\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\text-rpg-arcade-v3\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\text-to-sql\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\tg-body-scan\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\the-news\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\token-layer\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\topic-hunter\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\trading\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\travel-assistant\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\trending-feed-skill\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ui-ux\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-developer-tool\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\university-app\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\version-control-workflows\\SKILL.md",
+      "fixes": [
+        "ENHANCED_VALUE_PROPOSITION"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\viral-prophet\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\web-browsing\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\web-notepad\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\wenxiang-2d5-banner\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-image-send\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\packaged-skills\\skillhub\\write-my-blog\\SKILL.md",
@@ -183,6 +721,34 @@
     {
       "file": "d:\\skills\\differentiated-skills\\Agents\\ad-creative-intel-pro\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Agents\\infinite-memory-vault-pro\\SKILL.md",
+      "fixes": []
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Agents\\knowledge-ontology\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Agents\\local-vector-memory-free\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Agents\\localmemo-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Agents\\memory-distiller-v2\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\differentiated-skills\\Agents\\memory-orchestrator-v2\\SKILL.md",
@@ -221,6 +787,12 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\differentiated-skills\\Creative\\creative-officer-tool-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\differentiated-skills\\Creative\\diagram-gen-tool-pro\\SKILL.md",
       "fixes": []
     },
@@ -249,12 +821,30 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\differentiated-skills\\Creative\\logo-brand-identity-tool-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Creative\\quark-scan-tool-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\differentiated-skills\\Integrations\\csv-json-converter-free\\SKILL.md",
       "fixes": []
     },
     {
       "file": "d:\\skills\\differentiated-skills\\Integrations\\excel-craft-free\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Integrations\\notion-cli-tool-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\differentiated-skills\\Integrations\\pipedrive-toolkit-free\\SKILL.md",
@@ -277,8 +867,44 @@
       "fixes": []
     },
     {
+      "file": "d:\\skills\\differentiated-skills\\Operations\\k8s-devops-tool-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Operations\\namecheap-dns-tool-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Other\\board-art-tool-free\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
       "file": "d:\\skills\\differentiated-skills\\Other\\content-filter-tool-pro\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Other\\file-toolkit-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Other\\font-manager-free\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Other\\liquidity-mgr-tool-free\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     },
     {
       "file": "d:\\skills\\differentiated-skills\\Other\\log-sanitizer-pro\\SKILL.md",
@@ -295,7 +921,13 @@
     {
       "file": "d:\\skills\\differentiated-skills\\Productivity\\calendar-toolkit-pro\\SKILL.md",
       "fixes": []
+    },
+    {
+      "file": "d:\\skills\\differentiated-skills\\Research\\free-web-search-tool-pro\\SKILL.md",
+      "fixes": [
+        "FIXED_IRRELEVANT_TAGS"
+      ]
     }
   ],
-  "completed_at": "2026-07-24T17:51:07.198790"
+  "completed_at": "2026-07-24T18:54:27.030799"
 }

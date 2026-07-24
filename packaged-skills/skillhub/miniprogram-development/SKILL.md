@@ -1,4 +1,5 @@
 ---
+
 slug: "miniprogram-development"
 name: "miniprogram-development"
 version: 1.28.13
@@ -8,11 +9,7 @@ license: "Proprietary"
 description: |-
   WeChat Mini Program development skill for building, debugging, previewing,
   testing, publishing, a。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
-tags:
-  - Other
-  - 工具
-  - 效率
-  - api
+tags: api,按流程执,依赖说明,不支持,agent
 tools:
   - read
   - exec
@@ -20,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Miniprogram Developm
 
 ## 付费版专享能力

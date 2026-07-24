@@ -1,4 +1,5 @@
 ---
+
 slug: "ai-agent-helper"
 name: "ai-agent-helper"
 version: 1.0.1
@@ -12,7 +13,7 @@ description: |-
   Output Parsing(JSON/结构化输出与容错)、Token Optimization(上下文裁剪与few-shot精简).
   适用于构建客服Agent、数据分析Agent、代码Agent、自动化工作流Agent等场景。基于Markdown指令驱动,
   无需额外API Key(由Agent内置LLM提供推理能力)。已移除原始风险代码,清理外部依赖引用,适配SkillHub平台规范.
-tags: 自动化,agent,优化,prompt,产品,product
+tags: agent,优化,prompt,token,loop
 tools:
   - read
   - exec
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+
 ---
+
 # AI Agent Helper
 
 帮你setup同优化AI Agents的技能。覆盖从Prompt设计到Agent Loop编排的全流程,支持ReAct、Chain-of-Thought、Plan-and-Execute、Reflexion四种主流Agent范式.

@@ -1,4 +1,5 @@
 ---
+
 slug: frontend-design-other-tool-pro
 name: frontend-design-other-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 前端设计工具专业版
 summary: "面向团队的设计系统、多页站点与企业级视觉治理工具.。面向团队与企业的前端设计系统与视觉治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: '面向团队与企业的前端设计系统与视觉治理专业工具。核心能力:
+description: 面向团队与企业的前端设计系统与视觉治理专业工具。核心能力:。可自动提升工作效率
 
   - 完整设计系统（令牌、组件库、多主题、暗色模式）
 
@@ -45,7 +46,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 前端设计工具（专业版）
 
 ## 概述

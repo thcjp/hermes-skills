@@ -1,4 +1,5 @@
 ---
+
 slug: "task-bot-orchestrator"
 name: "task-bot-orchestrator"
 version: 1.0.1
@@ -8,19 +9,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   任务编排机器人（专业版）是在免费版基础上的全功能升级，为AI Agent提供完整的任务编排与自动化能力。在数据处理、定时调度、通知推送核心能力之上，解锁条件触发、高级编排（并行/分支/循环）、多渠道通知、数据库集成、错误恢复、监控仪表盘、团队协作七大高级功能。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发.
-tags:
-  - 任务编排
-  - 工作流引擎
-  - 条件触发
-  - 数据库集成
-  - 监控告警
-  - 任务管理
-  - 效率
-  - 工具
-  - trigger
-  - 团队协作
-  - 痛点
-  - 解决方案
+tags: 任务编排,条件触发,数据库集成,trigger,团队协作,专业版独
 tools:
   - read
   - exec
@@ -28,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Productivity"
+
 ---
+
 # 任务编排机器人(专业版)
 
 ## 付费版专享能力

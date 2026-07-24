@@ -1,4 +1,5 @@
 ---
+
 slug: "jira-free"
 name: "jira-free"
 version: "1.0.0"
@@ -18,23 +19,11 @@ tools:
   - glob
   - grep
 homepage: ""
-tags:
-  - 通用办公
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 写作
-  - 电商
-  - 通信
-  - api
-  - sprint
-  - rest
-  - key
-  - atlassian
+tags: 自动化,api,sprint,rest,key,atlassian
 category: "Automation"
+
 ---
+
 # Jira集成引擎(免费版)
 
 Jira问题跟踪与项目管理集成引擎，通过REST API操作Jira实例，覆盖问题管理、Sprint规划与工作流自动化.

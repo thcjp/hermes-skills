@@ -1,4 +1,5 @@
 ---
+
 slug: viral-prophet
 name: viral-prophet
 version: 1.0.1
@@ -14,26 +15,16 @@ description: |-
   - 竞品对比分析
   - 优化建议与发布时机推荐
 homepage: ""
-tags:
-  - 爆款预测
-  - 内容评估
-  - 发布前自检
-  - 数据驱动
-  - 工具
-  - 效率
-  - 创意
-  - 图像
-  - content
-  - step
-  - platform
-  - 发布时机
+tags: 工具,content,step,platform,发布时机,不支持
 tools:
   - read
   - exec
   - glob
   - grep
 category: "Automation"
+
 ---
+
 # 爆款预言机 v1.1.0
 
 发布前预测内容的爆款潜力,基于6维潜力评分+5大爆款要素+竞品对比,3秒生成预测报告,指导内容优化和发布决策.

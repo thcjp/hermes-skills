@@ -1,4 +1,5 @@
 ---
+
 slug: skill-writer-tool-pro
 name: skill-writer-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Skill编写工具专业版
 summary: "模板库、多人协作、技能质量评估与发布管理，适合技能团队与企业技能生态治理.。Skill编写工具专业版，面向技能团队与企业的高阶技能创建与治理平台。核心能力:"
 license: Proprietary
 edition: pro
-description: 'Skill编写工具专业版，面向技能团队与企业的高阶技能创建与治理平台。核心能力:
+description: Skill编写工具专业版，面向技能团队与企业的高阶技能创建与治理平台。核心能力:。可自动提升工作效率
 
   - 技能模板库与分类复用
 
@@ -52,7 +53,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Skill编写工具（专业版）
 
 ## 概述

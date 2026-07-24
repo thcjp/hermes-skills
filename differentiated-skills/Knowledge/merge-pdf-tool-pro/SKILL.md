@@ -1,4 +1,5 @@
 ---
+
 slug: merge-pdf-tool-pro
 name: merge-pdf-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: PDF合并工具（专业版）
 summary: "合并多个PDF文件为一个，支持页面排序、页面范围选择与批量处理.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
-description: 'PDF合并工具 - （专业版）
+description: PDF合并工具 - （专业版）。可自动提升工作效率
 
   核心能力: PDF合并, 合并PDF, merge pdf, 页面合并, 批量合并, 书签生成
 
@@ -40,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # PDF合并工具（专业版）
 
 ## 概述

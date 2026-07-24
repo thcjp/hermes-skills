@@ -1,4 +1,5 @@
 ---
+
 slug: "dlazy-generate"
 name: "dlazy-generate"
 version: 1.3.3
@@ -8,7 +9,7 @@ license: "Proprietary"
 description: |-
   A comprehensive generation skill。Can generate images, videos, and audio\
   \ by automatically selecti。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
-tags: 效率,generate,示例数据,agent
+tags: generate,示例数据,agent,依赖说明,不支持,content
 tools:
   - read
   - exec
@@ -16,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Dlazy Generate
 
 ## 付费版专享能力

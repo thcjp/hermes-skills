@@ -1,4 +1,5 @@
 ---
+
 slug: knowledge-toolkit-pro
 name: knowledge-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 知识工具包（专业版）
 summary: "构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: '知识工具包 - （专业版）
+description: 知识工具包 - （专业版）。可处理提升工作效率
 
   核心能力: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱
 
@@ -41,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 知识工具包（专业版）
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: write-toolkit-pro
 name: write-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 写作工具专业版
 summary: "多人协作、自定义审计、多格式导出与内容资产库，适合内容团队与企业写作治理.。写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:"
 license: Proprietary
 edition: pro
-description: '写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:
+description: 写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:。可分析提升工作效率
 
   - 多人协作与评论审核
 
@@ -52,7 +53,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 写作工具（专业版）
 
 ## 概述

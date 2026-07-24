@@ -1,4 +1,5 @@
 ---
+
 slug: free-web-search-tool-pro
 name: free-web-search-tool-pro
 version: 1.0.0
@@ -19,17 +20,7 @@ description: '企业级联网搜索工具，支持批量查询、结果导出、
   - 搜索结果缓存与去重，避免重复请求
 
   - 团队协作配置...'
-tags:
-  - 搜索
-  - 企业工具
-  - 批量查询
-  - 数据采集
-  - 研究工具
-  - Web开发
-  - 前端
-  - 开发工具
-  - python
-  - json
+tags: 搜索,批量查询,python,json,请参考,目录中的
 tools:
   - read
   - exec
@@ -38,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # 网页搜索工具专业版
 
 ## 概述

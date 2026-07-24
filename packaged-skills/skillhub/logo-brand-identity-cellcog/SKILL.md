@@ -1,4 +1,5 @@
 ---
+
 slug: "logo-brand-identity-cellcog"
 name: "logo-brand-identity-cellcog"
 version: 1.0.14
@@ -25,11 +26,11 @@ tags:
   - 知识
   - palette
   - feel
-description: |-
-  AI logo and brand identity design powered by CellCog。Brand kits, color
-  palettes, typography, brand guidelines generation.
+description: AI logo and brand identity design powered by CellCog。Brand kits, color palettes, typography, brand guidelines generation，可生成提升工作效率
 category: "Automation"
+
 ---
+
 ## 任务定义
 
 根据用户提供的品牌信息（名称、行业、目标受众、品牌个性等），生成完整的品牌识别系统，包括Logo设计方案、配色方案、字体推荐、品牌指南等。

@@ -1,4 +1,5 @@
 ---
+
 slug: "frontend-design-v3"
 name: "frontend-design-v3"
 version: 1.0.1
@@ -6,8 +7,7 @@ displayName: "前端设计V3-专业版"
 summary: "生产级前端设计引擎，支持多框架输出、高级动效编排与可访问性合规,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  前端设计工具V3专业版。
+description: 前端设计工具V3专业版。可自动提升工作效率
 tags:
   - Creative
   - Frontend
@@ -28,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 前端设计V3-专业版
 
 ## 付费版专享能力

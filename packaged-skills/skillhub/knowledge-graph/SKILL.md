@@ -1,4 +1,5 @@
 ---
+
 slug: "knowledge-graph"
 name: "knowledge-graph"
 version: "1.0.1"
@@ -7,7 +8,7 @@ summary: "维护SkillHub复利知识图谱,增删与替代原子笔记。Maintai
 license: "Proprietary"
 description: |-
   Maintain SkillHub's compounding knowledge graph. 管理知识图谱,支持原子笔记的添加和覆盖,维护领域知识关联
-tags: 知识图谱,graph,原子笔记,笔记管理,knowledge,关联
+tags: 知识图谱,graph,原子笔记,knowledge,关联,依赖说明
 tools:
   - read
   - exec
@@ -15,7 +16,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Knowledge Graph
 
 ## 付费版专享能力

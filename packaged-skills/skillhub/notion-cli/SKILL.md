@@ -1,4 +1,5 @@
 ---
+
 slug: "notion-cli"
 name: "notion-cli"
 version: 1.0.1
@@ -17,22 +18,7 @@ description: |-
   - 页面模板列表与使用
   - 自定义输出格式(Jinja2模板)
   - ...
-tags:
-  - 集成工具
-  - 企业Notion
-  - 命令行
-  - 工具
-  - 效率
-  - 自动化
-  - 写作
-  - 电商
-  - 研究
-  - 分析
-  - 知识
-  - notion
-  - tasks
-  - key
-  - workspace
+tags: 命令行,工具,notion,tasks,key,workspace
 tools:
   - read
   - exec
@@ -41,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Notion命令行(专业版)
 
 ## 付费版专享能力

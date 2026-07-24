@@ -1,4 +1,5 @@
 ---
+
 slug: go-linter-config-tool-pro
 name: go-linter-config-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Go Lint 配置工具专业版
 summary: "面向团队的多项目 lint 统一治理、自定义规则与 CI 矩阵工具.。面向团队的 golangci-lint 多项目统一治理与自定义规则专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: '面向团队的 golangci-lint 多项目统一治理与自定义规则专业工具。核心能力:
+description: 面向团队的 golangci-lint 多项目统一治理与自定义规则专业工具。核心能力:。可生成提升工作效率
 
   - 多项目配置矩阵与统一基线
 
@@ -46,7 +47,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Go Lint 配置工具（专业版）
 
 ## 概述

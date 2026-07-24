@@ -1,4 +1,5 @@
 ---
+
 slug: kujiale-design-tool-free
 name: kujiale-design-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 酷家乐设计-免费版
 summary: "分步式室内设计工具,完成户型确认到渲染出图,适合个人用户快速生成装修方案.。酷家乐设计免费版,面向个人用户的分步式室内智能设计工具。核心能力:"
 license: Proprietary
 edition: free
-description: '酷家乐设计免费版,面向个人用户的分步式室内智能设计工具。核心能力:
+description: 酷家乐设计免费版,面向个人用户的分步式室内智能设计工具。核心能力:。可自动提升工作效率
 
   - 分步对话完成户型确认→风格选择→布局确认→渲染出图
 
@@ -40,7 +41,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 酷家乐设计工具 - 免费版
 
 ## 概述

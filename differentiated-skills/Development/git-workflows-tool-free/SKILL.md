@@ -1,4 +1,5 @@
 ---
+
 slug: git-workflows-tool-free
 name: git-workflows-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Git高级操作免费版
 summary: "Git 进阶操作助手，涵盖交互式变基、二分查找、工作树与引用日志恢复.。面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:"
 license: Proprietary
 edition: free
-description: '面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:
+description: 面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:。可自动提升工作效率
 
   - 交互式变基（rebase）整理提交历史
 
@@ -43,7 +44,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 # Git 高级操作助手（免费版）
 
 ## 概述

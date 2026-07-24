@@ -1,4 +1,5 @@
 ---
+
 slug: font-manager-free
 name: font-manager-free
 version: 1.0.1
@@ -8,24 +9,16 @@ license: Proprietary
 edition: free
 description: 字体管理器免费版解决网页排版的"常见错误"痛点：展示字体用在正文导致可读性差、两个相似字体配对看起来像错误、细字重在Windows上渲染模糊、行高过密导致阅读困难、全大写文字字母挤在一起。这些错误让网页看起来不专业，但开发者往往不知道问题出在哪里。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
-tags:
-  - 字体排版
-  - 网页设计
-  - 排版规范
-  - 前端开发
-  - 工具
-  - 效率
-  - 写作
-  - 电商
-  - inter
-  - 展示字体
+tags: 字体排版,前端开发,inter,展示字体,请参考,目录中的
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 字体管理器（免费版）
 
 > **网页字体排版指南。展示与正文字体区分、安全配对、字重渲染、行高行宽规范。**

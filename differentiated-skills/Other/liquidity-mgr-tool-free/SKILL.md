@@ -1,4 +1,5 @@
 ---
+
 slug: liquidity-mgr-tool-free
 name: liquidity-mgr-tool-free
 version: 1.0.0
@@ -27,23 +28,16 @@ description: '面向个人用户的去中心化交易所流动性管理工具.
 
   差异化: 免费版聚焦个人单头寸查询与管理，提供基础收益估算，零成本使用.
   适用关键词: 流动性, uniswap, v2, v3, v4, lp, 头寸, 添加流动性, 无常损失, liquidity'
-tags:
-  - DeFi
-  - 流动性
-  - 个人效率
-  - 其他工具
-  - UI设计
-  - 前端
-  - 设计
-  - 无常损失
-  - basedir
+tags: 流动性,无常损失,basedir,请参考,目录中的,脚本文件
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 流动性管理工具（免费版）
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: word-docx-tool-pro
 name: word-docx-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Word文档工具（专业版）
 summary: "创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
-description: 'Word文档工具 - （专业版）
+description: Word文档工具 - （专业版）。可生成提升工作效率
 
   核心能力: Word文档, docx, 文档创建, 文档编辑, 模板应用, 目录生成, 批量创建
 
@@ -40,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Word文档工具（专业版）
 
 ## 概述

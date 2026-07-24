@@ -1,4 +1,5 @@
 ---
+
 slug: "telegram-chat"
 name: "telegram-chat"
 version: 1.0.1
@@ -23,17 +24,7 @@ description: |-
   - 消息合规存档与审计追溯
 
   差异化:专业版完全兼容免费版配置与命令体系...
-tags:
-  - 沟通协作
-  - 即时通讯
-  - Telegram
-  - 机器人
-  - 企业效率
-  - 自动化
-  - 消息归档
-  - 社交
-  - 通信
-  - bot
+tags: Telegram,自动化,消息归档,bot,专业版独,请参考
 tools:
   - read
   - exec
@@ -41,7 +32,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # 电报聊天工具专业版
 
 ## 付费版专享能力

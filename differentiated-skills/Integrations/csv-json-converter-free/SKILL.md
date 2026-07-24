@@ -1,4 +1,5 @@
 ---
+
 slug: csv-json-converter-free
 name: csv-json-converter-free
 version: 1.0.1
@@ -8,14 +9,16 @@ license: Proprietary
 edition: free
 description: CSV转JSON免费版是一款面向独立开发者与数据工程师的轻量级表格数据格式转换工具。围绕"表头推断—类型识别—单文件转换—结果校验"四件事，提供可复制即用的Python/Node。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
-tags: 工具,agent,csv,json,value,utf-8
+tags: agent,csv,json,value,utf-8,gbk
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # CSV转JSON（免费版）
 
 > **把"CSV转JSON"从翻文档半小时压缩到一条命令搞定。表头推断+类型识别+编码探测三件套。**

@@ -1,4 +1,5 @@
 ---
+
 slug: tarot-reader-tool-pro
 name: tarot-reader-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 韦特塔罗占卜专业版
 summary: "完整韦特塔罗牌阵库、客户档案管理、批量占卜与报告导出，适合专业占卜师与内容工作室.。韦特塔罗占卜专业版，面向专业占卜师与内容工作室的高阶塔罗占卜平台。核心能力:"
 license: Proprietary
 edition: pro
-description: '韦特塔罗占卜专业版，面向专业占卜师与内容工作室的高阶塔罗占卜平台。核心能力:
+description: 韦特塔罗占卜专业版，面向专业占卜师与内容工作室的高阶塔罗占卜平台。核心能力:。可生成提升工作效率
 
   - 完整 78 张韦特塔罗牌意库 + 自定义牌意扩展
 
@@ -50,7 +51,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 韦特塔罗占卜（专业版）
 
 ## 概述

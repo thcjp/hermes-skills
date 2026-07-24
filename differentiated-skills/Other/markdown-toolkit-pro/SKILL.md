@@ -1,4 +1,5 @@
 ---
+
 slug: markdown-toolkit-pro
 name: markdown-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Markdown 工具箱专业版
 summary: "面向团队的多文件站点、目录生成与文档规范治理工具.。面向团队的多文件 Markdown 站点与文档规范治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: '面向团队的多文件 Markdown 站点与文档规范治理专业工具。核心能力:
+description: 面向团队的多文件 Markdown 站点与文档规范治理专业工具。核心能力:。可自动提升工作效率
 
   - 多文件站点与目录（TOC）自动生成
 
@@ -42,7 +43,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Markdown 工具箱（专业版）
 
 ## 概述

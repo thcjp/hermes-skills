@@ -1,4 +1,5 @@
 ---
+
 slug: "quark-scan-tool-pro"
 name: "quark-scan-tool-pro"
 version: "1.0.0"
@@ -21,30 +22,16 @@ description: |-
   - 电商商品图批量去水印
 
   差异化:专业版在免费版基础上扩展批量处理、API集成与自定义流水线,兼容免费版所有场景,适合商业级文档数字化生产
-tags:
-  - Creative
-  - 图像处理
-  - 企业版
-  - 商业内容
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 集成
-  - integration
-  - 知识
-  - api
-  - output
-  - input
-  - scene
+tags: 企业版,工具,集成,api,output,input
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 夸克扫描工具 - 专业版
 
 ## 概述

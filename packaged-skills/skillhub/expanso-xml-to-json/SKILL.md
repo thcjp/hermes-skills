@@ -1,4 +1,5 @@
 ---
+
 slug: "expanso-xml-to-json"
 name: "expanso-xml-to-json"
 version: 1.0.1
@@ -8,12 +9,7 @@ license: "Proprietary"
 description: |-
   Convert XML input into JSON format using Expanso Edge pipelines for
   CLI, MCP server, or cloud dep。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
-tags:
-  - Integrations
-  - 工具
-  - 效率
-  - 运维
-  - api
+tags: api,按流程执,依赖说明,不支持,agent
 tools:
   - read
   - exec
@@ -21,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Expanso xml-to-json
 
 ## 付费版专享能力

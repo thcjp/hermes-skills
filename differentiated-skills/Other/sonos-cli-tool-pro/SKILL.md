@@ -1,4 +1,5 @@
 ---
+
 slug: sonos-cli-tool-pro
 name: sonos-cli-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Sonos控制工具-专业版
 summary: "企业级Sonos控制平台,支持多区域编排、语音集成、场景管理与API接口,适合商业空间。企业级 Sonos 控制工具专业版,面向商业空间与智能建筑。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级 Sonos 控制工具专业版,面向商业空间与智能建筑。核心能力:
+description: 企业级 Sonos 控制工具专业版,面向商业空间与智能建筑。核心能力:。可自动提升工作效率
 
   - 多区域编排与场景预设
 
@@ -61,7 +62,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Sonos 控制工具 - 专业版
 
 ## 概述

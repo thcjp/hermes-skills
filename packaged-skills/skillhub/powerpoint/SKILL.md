@@ -1,4 +1,5 @@
 ---
+
 slug: "powerpoint"
 name: "powerpoint"
 version: 1.0.1
@@ -8,11 +9,7 @@ license: "Proprietary"
 description: |-
   Control PowerPoint app sessions, slides, notes, export, and presentation
   state with osascript wor。Use when 用户需要PowerPoint相关功能时使用。不适用于超出本技能能力范围的复杂需求.
-tags:
-  - Other
-  - 工具
-  - 效率
-  - api
+tags: api,按流程执,依赖说明,不支持,agent
 tools:
   - read
   - exec
@@ -20,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # PowerPoint
 
 ## 付费版专享能力

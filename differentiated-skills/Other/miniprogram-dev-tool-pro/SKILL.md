@@ -1,4 +1,5 @@
 ---
+
 slug: miniprogram-dev-tool-pro
 name: miniprogram-dev-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 小程序开发工具专业版
 summary: "面向团队的多端框架、CI/CD 与企业云治理工具.。面向团队的小程序多端框架与企业级开发治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: '面向团队的小程序多端框架与企业级开发治理专业工具。核心能力:
+description: 面向团队的小程序多端框架与企业级开发治理专业工具。核心能力:。可自动提升工作效率
 
   - 多端框架（Taro/uni-app）跨平台开发
 
@@ -51,7 +52,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 小程序开发工具（专业版）
 
 ## 概述

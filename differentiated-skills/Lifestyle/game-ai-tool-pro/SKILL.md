@@ -1,4 +1,5 @@
 ---
+
 slug: game-ai-tool-pro
 name: game-ai-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 游戏AI工具专业版
 summary: "企业级游戏AI平台,支持GOAP、机器学习、多AI协作与可视化调试。面向游戏工作室与商业项目的企业级游戏 AI 开发平台."
 license: Proprietary
 edition: pro
-description: '面向游戏工作室与商业项目的企业级游戏 AI 开发平台.
+description: 面向游戏工作室与商业项目的企业级游戏 AI 开发平台。可生成提升工作效率
   核心能力: GOAP目标导向规划、强化学习集成、多AI协作、可视化调试器、性能分析、团队协作
 
   适用场景: 商业游戏开发、3A级AI系统、复杂战术AI、训练模拟、AI研究与原型
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 专业版面向游戏工作室与商业项目,在免费版基础 AI 架构之上,扩展 GOAP 目标导向行动规划、强化学习集成、多 AI 协作、可视化调试器、性能分析工具链等企业级能力。支持构建复杂的战术 AI、可学习的 NPC 行为、团队协作 AI,适合 3A 级游戏与训练模拟项目.
 专业版与免费版代码格式完全兼容,个人开发者升级后现有 AI 代码无缝迁移.
 ## 核心能力

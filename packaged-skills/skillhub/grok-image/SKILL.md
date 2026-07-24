@@ -1,4 +1,5 @@
 ---
+
 slug: "grok-image"
 name: "grok-image"
 version: 1.0.1
@@ -8,7 +9,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
-tags: 创意,self,prompt_data,style,mood,template
+tags: 创意,self,prompt_data,不支持,def
 tools:
   - read
   - exec
@@ -16,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Grok图片生成-专业版
 
 ## 付费版专享能力

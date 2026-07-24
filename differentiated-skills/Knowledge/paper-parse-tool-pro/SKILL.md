@@ -1,4 +1,5 @@
 ---
+
 slug: paper-parse-tool-pro
 name: paper-parse-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 论文解析工具（专业版）
 summary: "解析学术论文PDF，提取标题、摘要、章节、引用、图表等结构化信息.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
-description: '论文解析工具 - （专业版）
+description: 论文解析工具 - （专业版）。可分析提升工作效率
 
   核心能力: 论文解析, 学术论文, paper parse, 引用提取, 章节分析, 文献管理, PDF解析
 
@@ -41,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 论文解析工具（专业版）
 
 ## 概述

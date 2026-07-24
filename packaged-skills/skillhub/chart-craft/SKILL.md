@@ -1,4 +1,5 @@
 ---
+
 slug: "chart-craft"
 name: "chart-craft"
 version: 1.0.1
@@ -13,15 +14,7 @@ description: |-
   - 批量生成与自动化流水线，支持CSV数据源批量出图
   - 多格式导出：PNG、SVG、PDF、JSON四种格式
   - 图表历史分析与使用统计...
-tags:
-  - 集成工具
-  - 数据可视化
-  - 企业报表
-  - 工具
-  - 效率
-  - 知识
-  - python3
-  - 高级
+tags: 图表生成,批量生成,多格式导出,matplotlib,自定义模板
 tools:
   - read
   - exec
@@ -29,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 图表工坊专业版
 
 ## 付费版专享能力

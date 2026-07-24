@@ -1,4 +1,5 @@
 ---
+
 slug: "knowledge-ontology-free"
 name: "knowledge-ontology-free"
 version: "1.0.0"
@@ -16,20 +17,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 智能助手
-  - 工具
-  - 效率
-  - 自动化
-  - 写作
-  - 电商
-  - 研究
-  - 分析
-  - 知识
-  - status
-  - task
+tags: 知识,status,task,请参考,目录中的,脚本文件
 category: "Automation"
+
 ---
+
 # 知识本体（基础版）
 
 将Agent记忆从扁平文件升级为类型化可验证的知识图谱，支持实体关系建模、约束校验与图遍历查询，让知识结构化、可查询.

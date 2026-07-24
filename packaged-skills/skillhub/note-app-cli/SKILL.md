@@ -1,4 +1,5 @@
 ---
+
 slug: "note-app-cli"
 name: "note-app-cli"
 version: "1.0.0"
@@ -15,7 +16,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Obsidian Official Cl
 
 ## 付费版专享能力

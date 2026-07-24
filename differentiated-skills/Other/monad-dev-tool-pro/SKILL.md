@@ -1,4 +1,5 @@
 ---
+
 slug: monad-dev-tool-pro
 name: monad-dev-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Monad开发工具-专业版
 summary: "企业级Monad DApp开发平台,支持主网部署、批量合约管理、安全审计与CI/CD集成。Monad区块链DApp开发工具专业版,面向团队与企业级区块链应用开发。核心能力:"
 license: Proprietary
 edition: pro
-description: 'Monad区块链DApp开发工具专业版,面向团队与企业级区块链应用开发。核心能力:
+description: Monad区块链DApp开发工具专业版,面向团队与企业级区块链应用开发。核心能力:。可自动提升工作效率
 
   - 主网与测试网双环境部署管理
 
@@ -58,7 +59,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Monad 开发工具 - 专业版
 
 ## 概述

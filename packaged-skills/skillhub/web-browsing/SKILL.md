@@ -1,4 +1,5 @@
 ---
+
 slug: "web-browsing"
 name: "web-browsing"
 version: 1.0.1
@@ -8,13 +9,7 @@ license: "Proprietary"
 description: |-
   Browse and summarize websites, extract content from URLs, search the
   web for information。Use whe。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
-tags:
-  - Research
-  - Web开发
-  - 前端
-  - 开发工具
-  - agent
-  - browsing
+tags: agent,browsing,依赖说明,不支持,确认运行
 tools:
   - read
   - exec
@@ -23,7 +18,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Web Browsing
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: "diagram-gen-tool-pro"
 name: "diagram-gen-tool-pro"
 version: "1.0.0"
@@ -9,14 +10,16 @@ edition: "pro"
 description: |-
   图表生成工具专业版，面向团队的全格式图表生成与管理平台。核心能力：
   - 三大格式全覆盖：Draw。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
-tags: Diagram,工具,效率,自动化,工作流,type
+tags: Diagram,工作流,type,node,mermaid,children
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 图表生成工具（专业版）
 
 ## 概述

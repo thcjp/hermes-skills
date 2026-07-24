@@ -1,4 +1,5 @@
 ---
+
 slug: translate-toolkit-pro
 name: translate-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 翻译工具专业版
 summary: "批量文件翻译、术语库管理、翻译记忆与质量审计，适合本地化团队与内容工作室.。翻译工具专业版，面向本地化团队与内容工作室的高阶翻译平台。核心能力:"
 license: Proprietary
 edition: pro
-description: '翻译工具专业版，面向本地化团队与内容工作室的高阶翻译平台。核心能力:
+description: 翻译工具专业版，面向本地化团队与内容工作室的高阶翻译平台。核心能力:。可自动提升工作效率
 
   - 批量文件翻译与目录递归处理
 
@@ -45,7 +46,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # 翻译工具（专业版）
 
 ## 概述

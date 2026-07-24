@@ -1,13 +1,12 @@
 ---
+
 slug: "shadcn-ui"
 name: "shadcn-ui"
 version: 1.0.1
 displayName: "Shadcn Ui"
 summary: "用shadcn/ui组件/Tailwind布局/react-hook-form表单建UI。Use when building UI with shadcn/ui components, Ta"
 license: "Proprietary"
-description: |-
-  Use when building UI with shadcn/ui components, Tailwind CSS layouts,
-  form patterns with react-ho。
+description: Use when building UI with shadcn/ui components, Tailwind CSS layouts, form patterns with react-ho，可生成提升工作效率
 tags:
   - Other
   - UI设计
@@ -23,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Shadcn Ui
 
 ## 付费版专享能力

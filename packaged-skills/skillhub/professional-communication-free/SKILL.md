@@ -1,4 +1,5 @@
 ---
+
 slug: "professional-communication-free"
 name: "professional-communication-free"
 version: "1.0.0"
@@ -14,14 +15,16 @@ description: |-
   拒绝"Just checking in"无上下文、被动语态、文字墙、不必要的回复
   全部等典型职场沟通病灶。覆盖场景与模板深度为本系列免费版本，
   付费版扩展至技术概念转译、异步团队协作、跨文化沟通等更多场景.
-tags: 效率,邮件,agent,slack,项目符号,api
+tags: 邮件,agent,slack,项目符号,api,行动请求
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Professional Communication Free
 
 写出清晰、有效、会被读到并被行动的职场消息。技术团队的写作问题通常不是文笔问题，而是结构问题——关键信息埋在第三段、行动请求模糊、渠道错配。本 Skill 用结构化模板与硬规则消除这些病灶.

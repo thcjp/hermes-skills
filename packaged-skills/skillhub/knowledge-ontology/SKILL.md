@@ -1,4 +1,5 @@
 ---
+
 slug: "knowledge-ontology"
 name: "knowledge-ontology"
 version: 2.0.1
@@ -17,20 +18,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 智能助手
-  - 工具
-  - 效率
-  - 自动化
-  - 写作
-  - 电商
-  - 研究
-  - 分析
-  - 知识
-  - python3
-  - task
+tags: 分析,知识,python3,task,请参考,目录中的
 category: "Automation"
+
 ---
+
 # 知识本体
 
 一切皆实体，一切变更皆受约束。将Agent记忆从扁平文件升级为类型化可验证的知识图谱，支持图遍历查询、模式演进、多步规划建模，让知识结构化、可查询、可信任.

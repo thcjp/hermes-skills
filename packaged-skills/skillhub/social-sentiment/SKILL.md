@@ -1,4 +1,5 @@
 ---
+
 slug: "social-sentiment"
 name: "social-sentiment"
 version: 1.4.1
@@ -8,13 +9,7 @@ license: "Proprietary"
 description: |-
   This skill is a disclosed social-listening workflow that uses Xpoz and
   an npm-installed helper, w。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
-tags:
-  - Research
-  - 社交媒体
-  - 营销
-  - 通信
-  - agent
-  - api
+tags: agent,api,按流程执,依赖说明,不支持
 tools:
   - read
   - exec
@@ -22,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Social Sentiment
 
 ## 付费版专享能力

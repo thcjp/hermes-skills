@@ -1,4 +1,5 @@
 ---
+
 slug: "mermaid-diagram"
 name: "mermaid-diagram"
 version: 1.0.1
@@ -8,13 +9,7 @@ license: "Proprietary"
 description: |-
   Generate valid Mermaid diagrams like flowcharts, sequence diagrams,
   mind maps, ER diagrams, or us。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
-tags:
-  - Development
-  - 工具
-  - 效率
-  - 创意
-  - diagram
-  - api
+tags: diagram,api,依赖说明,不支持,agent
 tools:
   - read
   - exec
@@ -22,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Mermaid Diagram
 
 ## 付费版专享能力

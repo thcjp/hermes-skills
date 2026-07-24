@@ -1,4 +1,5 @@
 ---
+
 slug: auto-updater-tool-free
 name: auto-updater-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 自动更新工具-免费版
 summary: "智能自动更新工具,支持版本检查、差异更新与回滚,适合个人项目维护。智能自动更新工具免费版,面向个人开发者与小型项目."
 license: Proprietary
 edition: free
-description: '智能自动更新工具免费版,面向个人开发者与小型项目.
+description: 智能自动更新工具免费版,面向个人开发者与小型项目。可自动提升工作效率
   核心能力:
 
   - 版本检查与更新通知
@@ -48,7 +49,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 自动更新工具 - 免费版
 
 ## 概述

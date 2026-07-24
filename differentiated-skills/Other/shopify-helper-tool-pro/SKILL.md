@@ -1,4 +1,5 @@
 ---
+
 slug: shopify-helper-tool-pro
 name: shopify-helper-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Shopify助手-专业版
 summary: "企业级Shopify开发平台,支持多店铺管理、自定义App开发、Headless电商与高级SEO。企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:
+description: 企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:。可自动提升工作效率
 
   - 多店铺统一管理与部署
 
@@ -55,7 +56,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Shopify 助手 - 专业版
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: ai-image-prompt-tool-free
 name: ai-image-prompt-tool-free
 version: 1.0.0
@@ -25,14 +26,16 @@ description: 'AI图像提示词免费版,面向个人用户的图像生成提示
   - 提示词学习与灵感参考
 
   差异化:免费版聚焦基础提示词模板与优化建议,帮助个人用户快速上手 AI 图像生成,提升出图效果'
-tags: 提示词,style,pro,soft,agent
+tags: 提示词,style,pro,soft,图像提示,配置
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # AI图像提示词工具 - 免费版
 
 ## 概述

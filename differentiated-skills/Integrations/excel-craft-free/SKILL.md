@@ -1,4 +1,5 @@
 ---
+
 slug: excel-craft-free
 name: excel-craft-free
 version: 1.0.1
@@ -15,7 +16,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Excel 工艺（免费版）
 
 本 Skill 把 Excel 生成任务脚本化——通过 Python 与 openpyxl 生成结构化、可复用、可版本控制的 .xlsx 文件。免费版覆盖日常报表生成场景.

@@ -1,4 +1,5 @@
 ---
+
 slug: "mongodb-atlas-admin"
 name: "mongodb-atlas-admin"
 version: 1.0.1
@@ -16,9 +17,11 @@ tools:
   - glob
   - grep
 homepage: ""
-tags: 效率,api,bash
+tags: api,bash,请参考,目录中的,脚本文件,node
 category: "Automation"
+
 ---
+
 # 文档数据库云管理平台
 
 通过API浏览和调用文档数据库云管理平台的管理接口.

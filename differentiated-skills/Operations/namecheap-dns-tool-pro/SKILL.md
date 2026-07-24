@@ -1,4 +1,5 @@
 ---
+
 slug: namecheap-dns-tool-pro
 name: namecheap-dns-tool-pro
 version: 1.0.0
@@ -11,21 +12,7 @@ description: '面向企业运维团队的DNS管理平台。支持多域名批量
   告警通知、多注册商集成（Namecheap/Cloudflare/AWS Route53等）与
 
   DNS安全配置（DNSSEC/CAA）。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
-tags:
-  - Operations
-  - DNS
-  - 企业级
-  - 域名管理
-  - 工具
-  - 效率
-  - 自动化
-  - 运维
-  - 监控
-  - 开发
-  - 代码
-  - 写作
-  - dns
-  - python3
+tags: DNS,企业级,运维,监控,dns,python3
 tools:
   - read
   - exec
@@ -33,7 +20,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # DNS管理专业版（PRO版）
 
 ## 概述

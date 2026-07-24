@@ -1,4 +1,5 @@
 ---
+
 slug: molted-work-tool-pro
 name: molted-work-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: AI 工作工具专业版
 summary: "面向团队的批量接单、团队派单与收益治理工具.。面向团队的 AI 代理任务批量接单与收益治理专业工具."
 license: Proprietary
 edition: pro
-description: '面向团队的 AI 代理任务批量接单与收益治理专业工具.
+description: 面向团队的 AI 代理任务批量接单与收益治理专业工具。可处理提升工作效率
   核心能力:
 
   - 批量接单与团队智能派单
@@ -43,7 +44,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # AI 工作工具（专业版）
 
 ## 概述

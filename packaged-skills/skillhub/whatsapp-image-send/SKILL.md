@@ -1,4 +1,5 @@
 ---
+
 slug: "whatsapp-image-send"
 name: "whatsapp-image-send"
 version: 1.0.2
@@ -8,13 +9,7 @@ license: "Proprietary"
 description: |-
   Send images, videos, audio, or documents via WhatsApp by downloading,
   copying to workspace, sendi。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
-tags:
-  - Creative
-  - 图像处理
-  - AI绘图
-  - 创意
-  - agent
-  - api
+tags: agent,api,按流程执,依赖说明,不支持
 tools:
   - read
   - exec
@@ -22,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # WhatsApp Image Send
 
 ## 付费版专享能力

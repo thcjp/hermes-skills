@@ -1,4 +1,5 @@
 ---
+
 slug: "molt-board-art-free"
 name: "molt-board-art-free"
 version: "1.0.1"
@@ -14,9 +15,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags: 效率,artboard,api,agent,bash
+tags: artboard,api,agent,bash,请参考,目录中的
 category: "Automation"
+
 ---
+
 # Board Art Free
 
 board-art-free 是协作像素画布技能基础版，让 Agent 在 1300x900 共享画布上放置像素.

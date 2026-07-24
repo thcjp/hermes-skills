@@ -1,4 +1,5 @@
 ---
+
 slug: "join-meeting-free"
 name: "join-meeting-free"
 version: "1.0.0"
@@ -14,9 +15,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags: 效率,api,meeting,加入会议,join,语音状态
+tags: api,meeting,加入会议,join,语音状态,会议
 category: "Automation"
+
 ---
+
 # 智能会议机器人（免费版）
 
 提供基础会议加入、语音状态监听与会议转写的会议机器人.

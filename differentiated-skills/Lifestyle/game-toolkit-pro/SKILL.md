@@ -1,4 +1,5 @@
 ---
+
 slug: game-toolkit-pro
 name: game-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 游戏设计工具箱专业版
 summary: "企业级游戏设计平台,支持商业桌游发布、教育课程包与团建方案库。面向桌游发行商、教育机构、企业与团建服务商的专业游戏设计平台."
 license: Proprietary
 edition: pro
-description: '面向桌游发行商、教育机构、企业与团建服务商的专业游戏设计平台.
+description: 面向桌游发行商、教育机构、企业与团建服务商的专业游戏设计平台。可生成提升工作效率
   核心能力: 商业桌游发布、教育课程包、团建方案库、自定义机制、批量生成、版权管理
 
   适用场景: 桌游商业化、教育产品开发、企业团建、咨询培训、IP 衍生
@@ -40,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 游戏设计工具箱 (专业版)
 
 ## 概述

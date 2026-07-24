@@ -1,4 +1,5 @@
 ---
+
 slug: "chromecast-control"
 name: "chromecast-control"
 version: 1.0.1
@@ -14,23 +15,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 通用办公
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 研究
-  - 分析
-  - 写作
-  - catt
-  - cast
-  - url
-  - 验证返回
-  - 数据的完
+tags: 工具,catt,cast,url,验证返回,数据的完
 category: "Automation"
+
 ---
+
 # 投屏设备控制
 
 使用 `catt`（Cast All The Things）工具控制局域网内的投屏协议设备。支持设备发现、媒体投放、播放控制、音量调节、队列管理、字幕加载和多设备别名管理.

@@ -1,4 +1,5 @@
 ---
+
 slug: "logo-brand-identity-tool-pro"
 name: "logo-brand-identity-tool-pro"
 version: "1.0.0"
@@ -9,33 +10,16 @@ edition: "pro"
 description: |-
   品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整品牌系统、多品牌管理、
   批量资产生成、品牌一致性审计与CI/CD集成能力。
-tags:
-  - 品牌设计
-  - 企业级
-  - 品牌系统
-  - 品牌标识
-  - CI/CD
-  - 设计管理
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 写作
-  - 电商
-  - 开发
-  - formats
-  - identity
-  - master_brand
-  - 批量资产
-  - typography
+tags: 企业级,品牌系统,品牌标识,CI/CD,identity,master_brand
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,PRO版引入完整品牌系统、多品牌管理、批量资产生成、品牌一致性审计与CI/CD集成能力,满足企业级品牌建设的全面需求。
 
 PRO版完全兼容免费版,可直接继承免费版的品牌简介与配置,并在此基础上扩展为完整的品牌管理系统。

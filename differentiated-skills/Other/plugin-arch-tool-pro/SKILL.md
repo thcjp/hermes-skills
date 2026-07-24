@@ -1,4 +1,5 @@
 ---
+
 slug: plugin-arch-tool-pro
 name: plugin-arch-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 插件架构工具-专业版
 summary: "企业级插件开发框架,支持插件市场、权限管控、热更新与团队协作开发。企业级插件架构开发工具专业版,面向团队与商业应用。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级插件架构开发工具专业版,面向团队与商业应用。核心能力:
+description: 企业级插件架构开发工具专业版,面向团队与商业应用。核心能力:。可处理提升工作效率
 
   - 插件市场与一键安装管理
 
@@ -56,7 +57,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 插件架构工具 - 专业版
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: py-toolkit-pro
 name: py-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Python工具包-专业版
 summary: "企业级Python开发平台,支持性能优化、异步编程、代码规范与CI/CD集成。企业级 Python 开发工具专业版,面向团队与生产环境。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级 Python 开发工具专业版,面向团队与生产环境。核心能力:
+description: 企业级 Python 开发工具专业版,面向团队与生产环境。核心能力:。可自动提升工作效率
 
   - 性能分析与优化深度指导
 
@@ -55,7 +56,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Python 工具包 - 专业版
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: skill-creator-tool-pro
 name: skill-creator-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Skill创建工具（专业版）
 summary: "{meta.summary} - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
-description: 'Skill创建工具 - （专业版）
+description: Skill创建工具 - （专业版）。可生成提升工作效率
 
   核心能力: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator
 
@@ -41,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Skill创建工具（专业版）
 
 ## 概述

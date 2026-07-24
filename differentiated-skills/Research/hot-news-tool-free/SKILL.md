@@ -1,4 +1,5 @@
 ---
+
 slug: hot-news-tool-free
 name: hot-news-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 热点新闻聚合
 summary: "轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态.。轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态。"
 license: Proprietary
 edition: free
-description: '轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态。核心能力:
+description: 轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态。核心能力:。可自动提升工作效率
 
   - 聚合国内外主流科技、军事、社会新闻源
 
@@ -48,7 +49,9 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+
 ---
+
 # 热点新闻聚合（免费版）
 
 ## 概述

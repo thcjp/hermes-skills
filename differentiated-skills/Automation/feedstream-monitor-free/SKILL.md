@@ -1,4 +1,5 @@
 ---
+
 slug: feedstream-monitor-free
 name: feedstream-monitor-free
 version: 1.0.1
@@ -8,14 +9,16 @@ license: Proprietary
 edition: free
 description: 安全公告流监控免费版是面向安全运维团队的漏洞与公告订阅监控工具。聚合多个安全信息源的RSS/Atom订阅流，自动解析、分级、去重，帮助团队第一时间感知安全威胁。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
-tags: 安全公告,json,encoding,utf-8,rss,self
+tags: 安全公告,json,encoding,utf-8,rss,feeds
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 > **聚合多源安全公告，自动分级去重。让安全威胁第一时间被感知。**
 
 将分散在各处的安全公告聚合到统一平台。本技能提供多源RSS/Atom订阅管理、严重性分级、关键词过滤、本地去重能力，帮助安全团队高效监控漏洞情报.

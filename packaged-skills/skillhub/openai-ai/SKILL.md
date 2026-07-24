@@ -1,4 +1,5 @@
 ---
+
 slug: "openai-ai"
 name: "openai-ai"
 version: 1.0.7
@@ -8,19 +9,7 @@ license: "Proprietary"
 description: |-
   Manage llm-provider files, assistants, vector stores, batches, fine-tuning
   jobs, and model resources vi。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
-tags:
-  - Creative
-  - 工具
-  - 效率
-  - 自动化
-  - 工作流
-  - 创意
-  - 图像
-  - 开发
-  - llm-provider
-  - bash
-  - clawlink_call_tool
-  - model
+tags: 工作流,llm-provider,bash,clawlink_call_tool,model,按流程执
 tools:
   - read
   - exec
@@ -28,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # llm-provider
 
 ## 付费版专享能力

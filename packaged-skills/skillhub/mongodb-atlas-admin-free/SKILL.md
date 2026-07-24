@@ -1,4 +1,5 @@
 ---
+
 slug: "mongodb-atlas-admin-free"
 name: "mongodb-atlas-admin-free"
 version: "1.0.0"
@@ -16,9 +17,11 @@ tools:
   - glob
   - grep
 homepage: ""
-tags: 效率,api,dry-run,分类,schema
+tags: api,dry-run,分类,schema,请参考,目录中的
 category: "Automation"
+
 ---
+
 # 文档数据库云管理平台(免费版)
 
 通过API浏览和调用文档数据库云管理平台的管理接口.

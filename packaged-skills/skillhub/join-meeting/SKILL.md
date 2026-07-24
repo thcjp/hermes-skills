@@ -1,4 +1,5 @@
 ---
+
 slug: "join-meeting"
 name: "join-meeting"
 version: 1.1.16
@@ -15,9 +16,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags: 效率,tts,api,meeting,触发,事件
+tags: tts,api,meeting,触发,事件,voice
 category: "Automation"
+
 ---
+
 # 智能会议机器人
 
 会议机器人，支持会议感知、系统状态管理、生命周期、语音状态与TTS事件处理.

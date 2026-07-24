@@ -1,4 +1,5 @@
 ---
+
 slug: "dns-free"
 name: "dns-free"
 version: "1.0.0"
@@ -24,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # DNS配置基础版
 
 ## 输入格式

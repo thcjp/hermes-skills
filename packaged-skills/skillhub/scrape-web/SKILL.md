@@ -1,4 +1,5 @@
 ---
+
 slug: "scrape-web"
 name: "scrape-web"
 version: 1.0.1
@@ -23,13 +24,7 @@ description: |-
   - 独立开发者与一人公司效率提升
 
   - 自动化工作流与智能决策辅助
-tags:
-  - Research
-  - Web开发
-  - 前端
-  - 开发工具
-  - agent
-  - api
+tags: agent,api,不支持,依赖说明,确认运行
 tools:
   - read
   - exec
@@ -38,7 +33,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Scrape Web
 
 ## 付费版专享能力

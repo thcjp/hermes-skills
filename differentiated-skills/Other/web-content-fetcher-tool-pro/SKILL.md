@@ -1,4 +1,5 @@
 ---
+
 slug: web-content-fetcher-tool-pro
 name: web-content-fetcher-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 网页内容获取专业版
 summary: "批量获取、本地缓存、内容解析与质量评分，适合数据团队与内容聚合场景.。网页内容获取工具专业版，面向数据团队与内容聚合的高阶网页抓取平台。核心能力:"
 license: Proprietary
 edition: pro
-description: '网页内容获取工具专业版，面向数据团队与内容聚合的高阶网页抓取平台。核心能力:
+description: 网页内容获取工具专业版，面向数据团队与内容聚合的高阶网页抓取平台。核心能力:。可自动提升工作效率
 
   - 批量 URL 获取与并发控制
 
@@ -48,7 +49,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # 网页内容获取工具（专业版）
 
 ## 概述

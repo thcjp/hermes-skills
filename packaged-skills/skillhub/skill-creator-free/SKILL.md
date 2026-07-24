@@ -1,4 +1,5 @@
 ---
+
 slug: "skill-creator-free"
 name: "skill-creator-free"
 version: 1.0.1
@@ -15,9 +16,11 @@ tools:
   - glob
   - grep
 homepage: ""
-tags: 效率,bundled,resources,body,progressive,disclosure
+tags: bundled,resources,body,progressive,disclosure,level
 category: "Automation"
+
 ---
+
 # AI技能创建指南（免费版）
 
 创建有效AI Skill的基础指南，覆盖Core Principles与SKILL.md结构设计.

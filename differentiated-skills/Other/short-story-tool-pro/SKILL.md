@@ -1,4 +1,5 @@
 ---
+
 slug: short-story-tool-pro
 name: short-story-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 短篇网文写作-专业版
 summary: "企业级短篇创作平台,支持批量产出、题材模板、投稿管理与数据驱动优化。企业级短篇网文创作工具专业版,面向专业作者与内容工作室。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级短篇网文创作工具专业版,面向专业作者与内容工作室。核心能力:
+description: 企业级短篇网文创作工具专业版,面向专业作者与内容工作室。核心能力:。可自动提升工作效率
 
   - 批量短篇产出与排期
 
@@ -57,7 +58,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 短篇网文写作 - 专业版
 
 ## 概述

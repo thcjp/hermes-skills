@@ -1,4 +1,5 @@
 ---
+
 slug: rust-toolkit-pro
 name: rust-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Rust工具包-专业版
 summary: "企业级Rust开发平台,支持unsafe安全审计、性能优化、嵌入式开发与CI/CD集成。企业级 Rust 开发工具专业版,面向团队与生产环境。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级 Rust 开发工具专业版,面向团队与生产环境。核心能力:
+description: 企业级 Rust 开发工具专业版,面向团队与生产环境。核心能力:。可自动提升工作效率
 
   - unsafe 代码安全审计与沙箱化
 
@@ -55,7 +56,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Rust 工具包 - 专业版
 
 ## 概述

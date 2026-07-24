@@ -1,4 +1,5 @@
 ---
+
 slug: local-vector-memory-free
 name: local-vector-memory-free
 version: 1.0.1
@@ -8,15 +9,7 @@ license: Proprietary
 edition: free
 description: 面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部
   API 调用、零数据出域、完全离线可用的语义记忆检索。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
-tags:
-  - 智能代理
-  - 记忆管理
-  - 本地存储
-  - AI代理
-  - 自动化
-  - 智能
-  - ollama
-  - memory
+tags: 本地向量记忆,LanceDB,Ollama,语义检索,离线
 tools:
   - read
   - exec
@@ -25,7 +18,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # 本地向量记忆（免费版）
 
 **零 API、零云端、零数据出域**的本地向量记忆系统免费体验版。基于 Ollama + LanceDB，在本地完成 embedding 生成与语义检索，适合隐私敏感、离线、成本敏感场景的快速体验.

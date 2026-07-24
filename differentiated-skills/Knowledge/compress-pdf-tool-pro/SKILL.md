@@ -1,4 +1,5 @@
 ---
+
 slug: compress-pdf-tool-pro
 name: compress-pdf-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: PDF压缩工具（专业版）
 summary: "通过API上传PDF文件进行压缩，支持图像质量与DPI参数调整，轮询返回下载链接.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 'PDF压缩工具 - （专业版）
+description: PDF压缩工具 - （专业版）。可生成提升工作效率
 
   核心能力: PDF压缩, 文件压缩, 减小体积, 压缩PDF, compress pdf, 批量压缩
 
@@ -39,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # PDF压缩工具（专业版）
 
 ## 概述

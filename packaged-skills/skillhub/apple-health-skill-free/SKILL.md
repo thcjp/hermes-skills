@@ -1,4 +1,5 @@
 ---
+
 slug: "apple-health-skill-free"
 name: "apple-health-skill-free"
 version: "1.0.0"
@@ -14,9 +15,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags: 效率,api,get,key,duration,sport
+tags: api,get,key,duration,sport,教练对话
 category: "Automation"
+
 ---
+
 # 运动健康数据（免费版）
 
 使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录。通过健康数据同步服务获取运动手环/手表同步的健康数据.

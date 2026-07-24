@@ -1,4 +1,5 @@
 ---
+
 slug: docs-toolkit-pro
 name: docs-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 文档导航工具包（专业版）
 summary: "决策树导航的文档专家系统，支持站点地图、关键词搜索、全文索引与版本追踪.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: '文档导航工具包 - （专业版）
+description: 文档导航工具包 - （专业版）。可生成提升工作效率
 
   核心能力: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation
 
@@ -41,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 文档导航工具包（专业版）
 
 ## 概述

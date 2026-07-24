@@ -1,4 +1,5 @@
 ---
+
 slug: "tarot"
 name: "tarot"
 version: 1.0.1
@@ -17,9 +18,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags: 效率,next,step,张大阿卡,api,spread
+tags: next,step,张大阿卡,api,spread,keywords
 category: "Automation"
+
 ---
+
 # Reflective Tarot
 
 塔罗在这里是镜子，不是预言。它用于意义构建、grounding 和温和的反思.

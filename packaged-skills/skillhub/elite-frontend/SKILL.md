@@ -1,4 +1,5 @@
 ---
+
 slug: "elite-frontend"
 name: "elite-frontend"
 version: 1.0.1
@@ -15,23 +16,7 @@ description: |-
   - 设计令牌（Design Token）自动生成与管理
   - 响应式适配策略，多断点一致体验
   - 可访问性合规...
-tags:
-  - Creative
-  - Frontend
-  - Enterprise
-  - DesignSystem
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 开发
-  - 代码
-  - 写作
-  - vue
-  - typescript
-  - json
-  - api
+tags: Frontend,工具,代码,vue,typescript,json
 tools:
   - read
   - exec
@@ -39,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 精英前端设计-专业版
 
 ## 付费版专享能力

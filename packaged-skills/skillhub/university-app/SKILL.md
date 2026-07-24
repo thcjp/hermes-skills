@@ -1,4 +1,5 @@
 ---
+
 slug: "university-app"
 name: "university-app"
 version: 1.0.1
@@ -9,20 +10,7 @@ edition: "pro"
 description: |-
   面向命理研究者的专业命理分析系统。支持八字命理、紫微斗数、合婚
   分析、大运流年推演与批量排盘。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
-tags:
-  - Finance
-  - 命理文化
-  - 传统文化
-  - 专业版
-  - 工具
-  - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 创意
-  - 图像
-  - 知识
-  - pro
+tags: 专业版,研究,分析,pro,不支持,请参考
 tools:
   - read
   - exec
@@ -31,7 +19,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 命理咨询专业版
 
 ## 付费版专享能力

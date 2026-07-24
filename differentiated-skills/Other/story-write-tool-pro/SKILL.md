@@ -1,4 +1,5 @@
 ---
+
 slug: story-write-tool-pro
 name: story-write-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 长篇网文写作-专业版
 summary: "企业级网文创作平台,支持批量生成、市场适配、多线管理与团队协作,适合工作室。企业级长篇网文创作工具专业版,面向网文工作室与专业作者。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级长篇网文创作工具专业版,面向网文工作室与专业作者。核心能力:
+description: 企业级长篇网文创作工具专业版,面向网文工作室与专业作者。核心能力:。可自动提升工作效率
 
   - 批量章节生成与定时更新
 
@@ -61,7 +62,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 长篇网文写作 - 专业版
 
 ## 概述

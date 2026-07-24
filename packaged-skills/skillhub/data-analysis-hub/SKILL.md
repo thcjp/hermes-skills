@@ -1,4 +1,5 @@
 ---
+
 slug: "data-analysis-hub"
 name: "data-analysis-hub"
 version: 1.0.1
@@ -14,7 +15,7 @@ description: |-
   - 高级统计建模:贝叶斯估计、混合效应模型、时间序列预测(ARIMA/Prophet)
   - 多角色协同审阅与版本对比,支持结论回滚与审计追踪
   - 定时分析任务、阈值告警与多渠道通知(邮件/IM...
-tags: 数据分析,批量处理,协同审阅,用户提供,python,pip
+tags: 数据分析,批量处理,协同审阅,用户提供,不支持
 tools:
   - read
   - exec
@@ -23,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
+
 ---
+
 # 数据分析中枢(专业版)
 
 ## 付费版专享能力

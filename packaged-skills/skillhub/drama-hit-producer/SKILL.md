@@ -1,4 +1,5 @@
 ---
+
 slug: drama-hit-producer
 name: drama-hit-producer
 version: 1.0.1
@@ -8,13 +9,15 @@ license: Proprietary
 description: |-
   短剧爆款生产线——丢进一章小说,25步全自动管道吐出可发布的竖屏短剧。核心功能:双轨风格(真人剧InstantID+动漫FLUX/Kling)、三轨角色构建(手工/AI批量/自动提取)、四层TTS智能配音(云端/本地GPU/免费)、质量闭环(A/B/C/D评分+自动重做+人工兜底)、25步管道从剧本转换到多平台发布全链路覆盖、资产持久化、经验回写自生长闭环
 homepage: ""
-tags: 短剧,效率,api,style_track,tts,anime
+tags: 短剧,api,style_track,tts,anime,real_person
 tools:
   - read
   - exec
   - write
 category: "Automation"
+
 ---
+
 # 短剧爆款生产线
 
 从小说章节自动生成竖屏短剧,支持多集、多角色配音、多平台发布。核心能力包括双轨风格(真人剧/动漫)、三轨角色构建(手工/AI批量/自动提取)、四层TTS配音(云端/本地GPU/免费)、质量闭环(自动重做+人工兜底)、资产持久化.

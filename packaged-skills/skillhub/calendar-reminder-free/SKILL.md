@@ -1,4 +1,5 @@
 ---
+
 slug: "calendar-reminder-free"
 name: "calendar-reminder-free"
 version: 1.0.1
@@ -11,25 +12,16 @@ description: |-
   基于 owa-outlook skill 提供的 owa_calendar.py 读取日历数据,通过 skill-platform CLI 注册 cron.
   适用于个人每日日程前置提醒的基础场景。高级特性(跨时区处理、团队群共享、安静时段、
   多渠道通知)请升级付费版.
-tags:
-  - 通用办公
-  - Automation
-  - 工具
-  - 效率
-  - 通信
-  - 邮件
-  - cron
-  - skill-platform
-  - api
-  - 原因
-  - 扫描明日
+tags: cron,skill-platform,api,扫描明日,原因
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Calendar Reminder Free 日历提醒(免费版)
 
 ## 输入格式

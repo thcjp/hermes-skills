@@ -1,4 +1,5 @@
 ---
+
 slug: "elite-frontend-tool-pro"
 name: "elite-frontend-tool-pro"
 version: "1.0.0"
@@ -15,14 +16,16 @@ description: |-
   - 设计令牌（Design Token）自动生成与管理
   - 响应式适配策略，多断点一致体验
   - 可访问性合规.
-tags: 工具,效率,代码,vue,card,css
+tags: 代码,vue,card,css,设计系统,design
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 精英前端设计工具专业版是企业级前端设计系统平台。它不仅生成单页面代码，更将设计规范扩展至多页面应用、React/Vue 组件库、品牌设计系统和高级动效编排。通过设计令牌（Design Token）管理，确保全站视觉语言的一致性与可维护性。
 
 本版本与免费版完全兼容——免费版的字体、色彩和动效规则在专业版中完整保留。专业版新增多页面应用、组件库、设计系统、品牌管理和高级动效等能力。

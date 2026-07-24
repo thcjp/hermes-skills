@@ -1,4 +1,5 @@
 ---
+
 slug: sequential-read-tool-pro
 name: sequential-read-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 顺序阅读工具-专业版
 summary: "企业级阅读平台,支持团队协作阅读、知识图谱构建与AI深度分析,适合研究团队。企业级顺序阅读工具专业版,面向研究团队与知识工作者。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级顺序阅读工具专业版,面向研究团队与知识工作者。核心能力:
+description: 企业级顺序阅读工具专业版,面向研究团队与知识工作者。核心能力:。可自动提升工作效率
 
   - 多人协作阅读与批注
 
@@ -58,7 +59,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 顺序阅读工具 - 专业版
 
 ## 概述

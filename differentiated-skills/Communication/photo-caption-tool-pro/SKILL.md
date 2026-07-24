@@ -1,4 +1,5 @@
 ---
+
 slug: "photo-caption-tool-pro"
 name: "photo-caption-tool-pro"
 version: "1.0.0"
@@ -16,14 +17,16 @@ description: |-
   - 平台原生格式严格适配
 
   适用场景:
-tags: 内容创作,工具,效率,分析
+tags: 内容创作,分析,专业版独,不支持,tri-x,text
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 照片配文工具专业版是一款面向专业摄影师与内容创作者的全平台照片配文生成解决方案。在完全兼容免费版 Instagram、X(Twitter)、Facebook 三大平台配文能力的基础上,专业版解锁了 Flickr、Glass、Tumblr、Bluesky、Threads、500px、Reddit、VSCO、Substack、Pinterest 共 13 个平台的配文生成能力.
 无论是同时在 13 个平台发布摄影作品、批量处理一组系列照片的配文、维护统一的品牌语气风格,还是获取照片编辑分析建议,专业版都能高效完成,帮助创作者在多平台建立专业形象.
 ### 免费版与专业版能力对比

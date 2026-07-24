@@ -1,4 +1,5 @@
 ---
+
 slug: "merge-check-paid"
 name: "merge-check-paid"
 version: 1.0.1
@@ -20,18 +21,7 @@ description: |-
   - 团队代码质量门禁与SRE治理
   - 贡献者健康度跟踪与导师分配
   - 大型开源项目PR...
-tags:
-  - Development
-  - 代码审查
-  - GitHub
-  - 企业级
-  - CI/CD
-  - DevOps
-  - 工具
-  - 效率
-  - 知识
-  - bash
-  - owner
+tags: CI/CD,工具,bash,owner,请参考,目录中的
 tools:
   - read
   - exec
@@ -39,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 合并检查工具(专业版)
 
 ## 付费版专享能力

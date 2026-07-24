@@ -1,4 +1,5 @@
 ---
+
 slug: document-pdf-tool-pro
 name: document-pdf-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: PDF文档工具（专业版）
 summary: "综合PDF处理工具包：文本表格提取、PDF创建、合并拆分、水印、加密、OCR识别.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 'PDF文档工具 - （专业版）
+description: PDF文档工具 - （专业版）。可处理提升工作效率
 
   核心能力: PDF处理, 文本提取, 表格提取, PDF合并, PDF拆分, OCR识别, 水印, 加密
 
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # PDF文档工具（专业版）
 
 ## 概述

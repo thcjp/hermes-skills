@@ -1,4 +1,5 @@
 ---
+
 slug: "photo-caption"
 name: "photo-caption"
 version: 1.0.1
@@ -16,25 +17,7 @@ description: |-
   - 平台原生格式严格适配
 
   适用场景:
-tags:
-  - 沟通协作
-  - 社交媒体
-  - 内容创作
-  - 摄影配文
-  - 专业效率
-  - 品牌管理
-  - 工具
-  - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 知识
-  - 文档
-  - 写作
-  - text
-  - tri-x
-  - road
-  - desert
+tags: 内容创作,工具,分析,文档,text,tri-x
 tools:
   - read
   - exec
@@ -42,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 照片配文工具专业版
 
 ## 付费版专享能力

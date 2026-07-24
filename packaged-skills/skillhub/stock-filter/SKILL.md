@@ -1,4 +1,5 @@
 ---
+
 slug: "stock-filter"
 name: "stock-filter"
 version: 1.0.1
@@ -9,15 +10,7 @@ edition: "pro"
 description: |-
   面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、
   多策略组合（AND/OR逻辑）、自定义选股公式、历史回测验证与批量导出。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
-tags:
-  - Finance
-  - 股票筛选
-  - 量化选股
-  - 企业级
-  - 工具
-  - 效率
-  - 知识
-  - python
+tags: 股票筛选,效率,python,不支持,请参考,目录中的
 tools:
   - read
   - exec
@@ -25,7 +18,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 股票筛选专业版
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: k8s-devops-tool-pro
 name: k8s-devops-tool-pro
 version: 1.0.0
@@ -9,21 +10,7 @@ edition: pro
 description: '面向企业DevOps团队的K8s清单管理平台。支持Helm Chart与Kustomize
 
   完整工作流、策略合规校验、多环境覆盖、GitOps集成与CRD管理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
-tags:
-  - Operations
-  - Kubernetes
-  - DevOps
-  - 企业级
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 写作
-  - 电商
-  - 研究
-  - helm
-  - python3
+tags: DevOps,企业级,自动化,helm,python3,请参考
 tools:
   - read
   - exec
@@ -31,7 +18,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # K8s清单生成专业版（PRO版）
 
 ## 概述

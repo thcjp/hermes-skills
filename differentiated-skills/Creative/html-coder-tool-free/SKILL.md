@@ -1,4 +1,5 @@
 ---
+
 slug: html-coder-tool-free
 name: html-coder-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: HTML编码工具-免费版
 summary: "专业HTML开发工具，支持语义化标记、表单验证、响应式图片与基础可访问性.。HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力："
 license: Proprietary
 edition: free
-description: 'HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力：
+description: HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力：。可生成提升工作效率
 
   - 语义化HTML结构生成
 
@@ -49,7 +50,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 # HTML编码工具（免费版）
 
 ## 概述

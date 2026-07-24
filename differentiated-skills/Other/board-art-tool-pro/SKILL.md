@@ -1,4 +1,5 @@
 ---
+
 slug: board-art-tool-pro
 name: board-art-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 画板艺术工具专业版
 summary: "面向团队的批量发布、多帧动画与画布治理工具.。面向团队的协作画布批量发布与治理专业工具.。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
-description: '面向团队的协作画布批量发布与治理专业工具.
+description: 面向团队的协作画布批量发布与治理专业工具。可生成提升工作效率
   核心能力:
 
   - 批量作品发布与多帧动画
@@ -52,7 +53,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 画板艺术工具（专业版）
 
 ## 概述

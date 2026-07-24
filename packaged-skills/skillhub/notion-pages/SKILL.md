@@ -1,4 +1,5 @@
 ---
+
 slug: "notion-pages"
 name: "notion-pages"
 version: 0.1.2
@@ -8,7 +9,7 @@ license: "Proprietary"
 description: |-
   Search pages and databases, update content, and manage Notion workspace
   data from chat。Use this。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
-tags: 效率,bash,notion,clawlink_call_tool,params
+tags: bash,notion,clawlink_call_tool,params,按流程执,status
 tools:
   - read
   - exec
@@ -17,7 +18,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Notion
 
 ## 付费版专享能力

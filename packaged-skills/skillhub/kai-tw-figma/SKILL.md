@@ -1,4 +1,5 @@
 ---
+
 slug: "kai-tw-figma"
 name: "kai-tw-figma"
 version: "1.0.4"
@@ -7,7 +8,7 @@ summary: "交互Figma文件,读结构/导图层为图/取评论。Interact with 
 license: "Proprietary"
 description: |-
   Interact with Figma files to read structure, export layers as images, and retrieve comments. 支持Figma文件结构读取、图层导出和评论管理
-tags: figma,设计,图层导出,评论,Figma API,design
+tags: figma,图层导出,评论,依赖说明,api,不支持
 tools:
   - read
   - exec
@@ -15,7 +16,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Figma
 
 ## 付费版专享能力

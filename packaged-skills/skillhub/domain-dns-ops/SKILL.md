@@ -1,4 +1,5 @@
 ---
+
 slug: "domain-dns-ops"
 name: "domain-dns-ops"
 version: 1.0.1
@@ -8,13 +9,7 @@ license: "Proprietary"
 description: |-
   Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter。Use
   for onboarding zones to Clou。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
-tags:
-  - Other
-  - 工具
-  - 效率
-  - 运维
-  - 监控
-  - api
+tags: 运维,api,依赖说明,不支持,agent,确认运行
 tools:
   - read
   - exec
@@ -22,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Domain Dns Ops
 
 ## 付费版专享能力

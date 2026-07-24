@@ -1,4 +1,5 @@
 ---
+
 slug: shop-culture-tool-pro
 name: shop-culture-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 店铺文化助手专业版
 summary: "企业级店铺运营平台,支持多店铺管理、数据分析、团队培训与商业授权。面向连锁品牌、电商运营公司与代运营机构的企业级店铺运营平台."
 license: Proprietary
 edition: pro
-description: '面向连锁品牌、电商运营公司与代运营机构的企业级店铺运营平台.
+description: 面向连锁品牌、电商运营公司与代运营机构的企业级店铺运营平台。可生成提升工作效率
   核心能力: 多店铺管理、销售数据分析、团队培训、批量生成、商业授权、电商对接
 
   适用场景: 连锁品牌运营、电商代运营、多店铺管理、企业培训、商业营销
@@ -37,7 +38,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 店铺文化助手 (专业版)
 
 ## 概述

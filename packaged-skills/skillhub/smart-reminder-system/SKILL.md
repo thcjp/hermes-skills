@@ -1,4 +1,5 @@
 ---
+
 slug: "smart-reminder-system"
 name: "smart-reminder-system"
 version: 1.0.6
@@ -8,11 +9,7 @@ license: "Proprietary"
 description: |-
   Create one-time reminder tasks using SkillHub cron。User specifies reminder
   time and task content。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
-tags:
-  - Automation
-  - 工具
-  - 效率
-  - api
+tags: api,依赖说明,agent,不支持,确认运行
 tools:
   - read
   - exec
@@ -20,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Reminder
 
 ## 付费版专享能力

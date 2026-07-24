@@ -1,4 +1,5 @@
 ---
+
 slug: "trading"
 name: "trading"
 version: 1.0.1
@@ -10,19 +11,7 @@ description: |-
   面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带
   等多种技术策略组合，提供批量标的分析、历史回测验证、自动信号触发
   与风险控制功能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
-tags:
-  - Finance
-  - 交易分析
-  - 量化策略
-  - 企业级
-  - 工具
-  - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 金融
-  - 财务
-  - python
+tags: 交易分析,自动化,分析,财务,python,不支持
 tools:
   - read
   - exec
@@ -31,7 +20,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 交易分析专业版
 
 ## 付费版专享能力

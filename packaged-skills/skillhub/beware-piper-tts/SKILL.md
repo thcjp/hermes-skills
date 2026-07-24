@@ -1,4 +1,5 @@
 ---
+
 slug: "beware-piper-tts"
 name: "beware-piper-tts"
 version: 1.0.2
@@ -10,7 +11,7 @@ description: |-
   核心能力:多音色切换、长文本自动分段与合并、批量生成、SSML 风格控制(语速/停顿/音高)、
   WAV 与 MP3 双格式输出、跨平台部署(macOS Apple Silicon/Intel、Linux、Windows WSL).
   适用于语音消息投递、有声内容生产、无障碍朗读、播客片段生成、多语言内容本地化等场景.
-tags: 语音合成,效率,mp3,piper
+tags: 语音合成,mp3,piper,请参考,目录中的,脚本文件
 tools:
   - read
   - exec
@@ -18,7 +19,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Piper TTS Pro
 
 基于 Piper 神经网络语音合成引擎的本地 TTS 专业版。所有推理在本地完成,无需 API Key、无需联网(首次下载音色后),生成速度约 0.5-1 秒/段.

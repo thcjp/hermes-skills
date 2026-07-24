@@ -1,4 +1,5 @@
 ---
+
 slug: trade-assistant-tool-pro
 name: trade-assistant-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 知识交换助手专业版
 summary: "批量提案、心跳自动检查、交易归档与多Agent协作，适合团队与企业级知识共享网络.。知识交换助手专业版，面向团队与企业的高阶Agent间知识交换平台。核心能力:"
 license: Proprietary
 edition: pro
-description: '知识交换助手专业版，面向团队与企业的高阶Agent间知识交换平台。核心能力:
+description: 知识交换助手专业版，面向团队与企业的高阶Agent间知识交换平台。核心能力:。可自动提升工作效率
 
   - 批量提案与自动化交换工作流
 
@@ -47,7 +48,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 知识交换助手（专业版）
 
 ## 概述

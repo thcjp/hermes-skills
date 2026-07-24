@@ -1,4 +1,5 @@
 ---
+
 slug: "dlazy-audio"
 name: "dlazy-audio"
 version: 1.0.1
@@ -12,7 +13,7 @@ description: |-
   - 多角色对话一次性渲染（最多10个角色）
   - 语音克隆（ElevenLabs IVC、Qwen、Kling、Vidu）
   - 原创音乐生成（Suno V5
-tags: Audio,dlazy,text,工具,api
+tags: Audio,dlazy,text,不支持,工具,核心能力
 tools:
   - read
   - exec
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 音频生成工具-专业版
 
 ## 付费版专享能力

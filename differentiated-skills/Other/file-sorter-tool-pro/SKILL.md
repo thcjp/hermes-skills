@@ -1,4 +1,5 @@
 ---
+
 slug: file-sorter-tool-pro
 name: file-sorter-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 视觉文件整理专业版
 summary: "自定义分类规则、批量处理、操作历史回滚与团队共享配置，适合内容团队与企业文件治理.。视觉文件整理工具专业版，面向内容团队与企业的高阶文件治理平台。核心能力:"
 license: Proprietary
 edition: pro
-description: '视觉文件整理工具专业版，面向内容团队与企业的高阶文件治理平台。核心能力:
+description: 视觉文件整理工具专业版，面向内容团队与企业的高阶文件治理平台。核心能力:。可处理提升工作效率
 
   - 自定义分类规则与重命名模板
 
@@ -51,7 +52,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 视觉文件整理工具（专业版）
 
 ## 概述

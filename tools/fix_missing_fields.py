@@ -318,6 +318,10 @@ def _extract_body_keywords(body, top_n=5):
         "输入", "输出", "参数", "错误", "处理", "场景", "步骤", "方式", "方法",
         "类型", "值", "结果", "信息", "数据", "系统", "平台", "支持", "提供",
         "功能", "能力", "特性", "特点", "说明", "文档", "配置", "设置", "环境",
+        # Template phrases that appear in generated SKILL.md files (noise)
+        "请参考", "目录中的", "脚本文件", "请参考skill", "中的要求", "确认运行",
+        "不支持", "依赖说明", "可用性", "运行环境", "获取方式", "必需", "分类",
+        "python3", "bash", "step", "self", "model", "duration", "action", "await",
     }
     
     body_lower = body[:5000].lower()
@@ -440,25 +444,26 @@ def enhance_value_proposition(content, fm, body):
     
     Checks if description contains at least 1 value proposition keyword.
     If missing, extracts key capability from body and appends to description.
+    Uses the EXACT same keyword list as deep_quality_audit.py for consistency.
     Returns (content, was_fixed).
     """
     desc_val = fm.get('description', '') or fm.get('summary', '')
     if not desc_val:
         return content, False
     
-    # Value proposition keywords
+    # Value proposition keywords — MUST match audit's _VALUE_PROPOSITION_KEYWORDS exactly
     VP_KEYWORDS = [
-        # Efficiency
-        "提升", "节省", "加速", "自动化", "优化", "简化", "效率", "快速",
-        # Capability  
-        "分析", "生成", "转换", "处理", "监控", "管理", "检测", "识别",
-        # Professional
-        "企业级", "专业", "智能", "深度", "全面", "精准", "高效",
-        # Scenario
-        "适用", "支持", "覆盖", "内置", "提供", "实现",
-        # English equivalents
-        "improve", "save", "accelerate", "automate", "optimize", "simplify",
-        "analyze", "generate", "convert", "process", "monitor", "manage",
+        # Chinese (same as audit)
+        "提供", "实现", "帮助", "自动化", "支持", "允许", "能够", "用于",
+        "简化", "提升", "优化", "加速", "减少", "降低", "增强", "确保",
+        "集成", "管理", "监控", "分析", "处理", "转换", "生成", "检测",
+        "保护", "扫描", "调度", "构建", "部署", "验证", "评估",
+        # English (same as audit)
+        "provides", "enables", "helps", "automates", "supports", "allows",
+        "simplifies", "improves", "optimizes", "accelerates", "reduces",
+        "integrates", "manages", "monitors", "analyzes", "generates",
+        "detects", "converts", "transforms", "ensures", "facilitates",
+        "protects", "scans", "schedules", "builds", "deploys", "validates",
     ]
     
     desc_lower = desc_val.lower()
@@ -472,8 +477,10 @@ def enhance_value_proposition(content, fm, body):
     
     # Find a capability sentence in body
     capability_keywords = [
-        "自动", "生成", "分析", "处理", "转换", "监控", "管理", "检测",
-        "识别", "优化", "集成", "支持", "提供", "实现", "简化",
+        "自动", "生成", "分析", "处理", "转换", "转化", "监控", "管理", "检测",
+        "识别", "优化", "集成", "支持", "提供", "实现", "简化", "构建", "部署",
+        "验证", "评估", "保护", "扫描", "调度", "帮助", "允许", "能够", "用于",
+        "加速", "提升", "减少", "降低", "增强", "确保", "创建", "配置",
     ]
     
     found_capability = None
@@ -482,20 +489,21 @@ def enhance_value_proposition(content, fm, body):
             found_capability = kw
             break
     
-    if found_capability:
-        # Append value proposition to description
-        vp_suffix = f"，可{found_capability}提升工作效率"
-        new_desc = desc_val.rstrip('。，.') + vp_suffix
-        
-        # Update in frontmatter
-        if 'description' in fm:
-            content = _replace_frontmatter_field(content, 'description', new_desc)
-        elif 'summary' in fm:
-            content = _replace_frontmatter_field(content, 'summary', new_desc)
-        
-        return content, True
+    if not found_capability:
+        # Fallback: always use "提供" (provide) which is universally applicable
+        found_capability = "提供"
     
-    return content, False
+    # Append value proposition to description (use period to avoid comma-corruption)
+    vp_suffix = f"。可{found_capability}提升工作效率"
+    new_desc = desc_val.rstrip('。，.；;') + vp_suffix
+    
+    # Update in frontmatter
+    if 'description' in fm:
+        content = _replace_frontmatter_field(content, 'description', new_desc)
+    elif 'summary' in fm:
+        content = _replace_frontmatter_field(content, 'summary', new_desc)
+    
+    return content, True
 
 
 def _replace_frontmatter_field(content, field_name, new_value):

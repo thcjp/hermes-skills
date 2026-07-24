@@ -1,4 +1,5 @@
 ---
+
 slug: "creative-officer-tool-pro"
 name: "creative-officer-tool-pro"
 version: "1.0.0"
@@ -12,29 +13,16 @@ description: |-
   - 营销战役全流程规划：从洞察到执行到评估的完整战役框架
   - 创意资产管理：创意素材库、版本管理、资产复用
   - 多维度创意评估：扩展评估模型...
-tags:
-  - 创意策划
-  - 品牌策略
-  - 企业工具
-  - 营销战役
-  - 团队协作
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 写作
-  - 电商
-  - 创意总监
-  - 品牌体系
-  - text
+tags: 营销战役,团队协作,创意,创意总监,品牌体系,text
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 创意总监专业版
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: "chart"
 name: "chart"
 version: 1.0.1
@@ -16,7 +17,7 @@ description: |-
   - 历史管理：list_charts.py 查看历史图表记录
   - 存储初始化：init_storage.py 一键初始化本地存储
   - 输出可复用于报告、幻灯片与快速决策
-tags: matplotlib,效率,python3,labels,values,bash
+tags: matplotlib,python3,labels,values,bash,请参考
 tools:
   - read
   - exec
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Chart — 本地图表生成引擎
 
 ## 输入格式

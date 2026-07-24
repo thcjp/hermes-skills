@@ -1,4 +1,5 @@
 ---
+
 slug: "ontology-free"
 name: "ontology-free"
 version: "1.0.0"
@@ -15,9 +16,11 @@ tools:
   - exec
   - write
 homepage: ""
-tags: 效率,schema,task,status,type,返回
+tags: schema,task,status,type,返回,请参考
 category: "Automation"
+
 ---
+
 # 类型化知识图谱引擎（基础版）
 
 将知识表示为可验证的实体-关系图谱系统。一切皆为实体，拥有类型、属性和与其他实体的关系。每次变更在提交前根据类型约束进行验证，确保图谱一致性。支持追加式变更日志，保留完整历史记录.

@@ -1,4 +1,5 @@
 ---
+
 slug: "straker-verify"
 name: "straker-verify"
 version: 1.0.1
@@ -15,7 +16,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Straker Verify
 
 ## 付费版专享能力

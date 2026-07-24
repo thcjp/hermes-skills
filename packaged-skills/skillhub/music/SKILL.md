@@ -1,4 +1,5 @@
 ---
+
 slug: "music"
 name: "music"
 version: 1.0.1
@@ -24,13 +25,7 @@ description: |-
   - 自动化工作流与智能决策辅助
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增...
-tags:
-  - Lifestyle
-  - 音乐生成
-  - 音频
-  - 创意
-  - agent
-  - api
+tags: agent,api,依赖说明,不支持,确认运行
 tools:
   - read
   - exec
@@ -38,7 +33,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Music
 
 ## 付费版专享能力

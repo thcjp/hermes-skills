@@ -1,13 +1,12 @@
 ---
+
 slug: "browser-automation-v2"
 name: "browser-automation-v2"
 version: 2.0.1
 displayName: "Browser Automation V"
 summary: "企业级浏览器自动化,自动清标签/超时重试/并发锁,稳如生产。Enterprise-grade browser automation with automatic tab cleanup, t"
 license: "Proprietary"
-description: |-
-  Enterprise-grade browser automation with automatic tab cleanup, timeout
-  retries, concurrency lock
+description: Enterprise-grade browser automation with automatic tab cleanup, timeout retries, concurrency lock，可自动提升工作效率
 tags:
   - Research
   - Automation
@@ -25,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Browser Automation V
 
 ## 付费版专享能力

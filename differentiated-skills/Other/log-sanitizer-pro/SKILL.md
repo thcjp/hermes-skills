@@ -1,4 +1,5 @@
 ---
+
 slug: log-sanitizer-pro
 name: log-sanitizer-pro
 version: 1.0.0
@@ -8,7 +9,7 @@ license: Proprietary
 edition: pro
 description: 日志脱敏工具专业版面向团队与企业级日志安全场景，在免费版基础上扩展全功能脱敏能力。解决团队日志治理的"规模与合规"痛点：海量日志文件需要定时自动扫描、不同业务线需要差异化脱敏规则、合规审计要求可追溯的脱敏报告、敏感信息泄露需要实时告警、跨平台日志流水线需要统一编排。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
-tags: 日志安全,工具,邮件,yaml,rules,日志脱敏
+tags: 日志安全,邮件,yaml,rules,日志脱敏,请参考
 tools:
   - read
   - exec
@@ -16,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 日志脱敏工具（专业版）
 > **企业级日志脱敏解决方案。批量定时监控、MCP工具流水线、合规报告导出、实时告警集成。**
 

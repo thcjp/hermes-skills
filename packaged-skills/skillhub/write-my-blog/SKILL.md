@@ -1,4 +1,5 @@
 ---
+
 slug: "write-my-blog"
 name: "write-my-blog"
 version: 0.1.1
@@ -8,7 +9,7 @@ license: "Proprietary"
 description: |-
   Enables the agent to create, manage, and publish a full-featured blog
   autonomously。The agent can。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
-tags: 效率,bash,api,blog,http,localhost
+tags: bash,api,blog,http,localhost,x-api-key
 tools:
   - read
   - exec
@@ -16,7 +17,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Write My Blog
 
 ## 付费版专享能力
