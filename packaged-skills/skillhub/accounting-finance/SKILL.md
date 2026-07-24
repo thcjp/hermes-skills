@@ -39,272 +39,60 @@ pricing_model: "per_use"
 | DCF估值建模与敏感性分析 | 不支持 | 支持 |
 | 财务舞弊识别(Beneish M-Score) | 不支持 | 支持 |
 
-## 核心能力
+## 核心能力分类概览
+
+PRO版共包含58个专业分析技能，分为三大领域：
 
 ### 一、估值建模（14个技能）
-
-**输入**: 用户提供一、估值建模（14个技能）所需的指令和必要参数.
-**处理**: 解析一、估值建模（14个技能）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回一、估值建模（14个技能）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
-- 参考`一、估值建模（14个技能）`的配置文档进行参数调优
-### DCF估值模型
-
-| 技能 | 用途 | PRO版增强 |
-|:-----|:-----|:-----|
-| `dcf-zero-growth` | DCF零增长模型 | 支持概率加权情景分析 |
-| `dcf-constant-growth` | DCF恒定增长模型 | 多期增长率分段 |
-| `dcf-two-stage` | DCF二阶段模型 | 蒙特卡洛模拟 |
-| `dcf-three-stage` | DCF三阶段模型 | PRO专属：复杂增长模式 |
-
-#### 可比估值模型
-
-| 技能 | 用途 | 关键指标 |
-|---:|---:|---:|
-| `pe-valuation` | 市盈率估值 | 滚动/预期PE对比 |
-| `pb-valuation` | 市净率估值 | 账面价值调整 |
-| `ps-valuation` | 市销率估值 | 收入质量调整 |
-| `peg-valuation` | PEG估值 | 增长预期校准 |
-
-#### 资本成本与行业特化估值（PRO专属）
-
-| 技能 | 用途 | 输出结果 |
-|:---:|:---:|:---:|
-| `wacc-calculation` | 加权平均资本成本 | WACC、折现率、资本结构优化 |
-| `cost-of-equity-capm` | 股权成本（CAPM） | Beta校准、预期收益率 |
-| `bank-valuation` | 银行估值 | 剩余收益模型、P/PPOP |
-| `insurance-valuation` | 保险估值 | 内含价值、新业务价值 |
-| `real-estate-valuation` | 房地产估值 | DCF、资本化率、NAV |
-| `tech-company-valuation` | 科技公司估值 | SaaS指标、用户价值模型 |
+- **DCF估值系列**：零增长、恒定增长、二阶段、三阶段模型（支持概率加权情景分析、蒙特卡洛模拟）
+- **可比估值**：PE/PB/PS/PEG估值
+- **资本成本**：WACC计算、CAPM股权成本
+- **行业特化估值（PRO专属）**：银行、保险、房地产、科技公司估值
 
 ### 二、财务分析（26个技能）
-#### 财务比率与盈利分析
+- **财务比率与盈利分析**：财务比率框架、杜邦五因素、ROE/ROIC、毛利率、收入、成本、费用分析
+- **现金流分析（PRO完整版）**：现金流预测、自由现金流(FCFF/FCFE)、经营/投资/融资现金流、现金流利润调节、现金周期、营运资本
+- **资产结构与报表处理（PRO专属）**：资产结构、资产资本匹配、资本结构、有息负债、报表重组、报表提取、数据标准化、附注分析
+- **可比公司与竞争分析**：可比公司筛选、可比公司分析、行业基准、竞争定位
 
-| 技能2 | 用途 | PRO版增强 |
-|:------|------:|:------|
-| `financial-ratio-framework` | 财务比率综合分析 | 五维比率+同业百分位 |
-| `dupont-five-factor` | 杜邦五因素分析 | 多期对比与归因 |
-| `roe-analysis` | ROE分析 | 分解至经营杠杆 |
-| `roic-analysis` | ROIC分析 | PRO专属：投入资本回报 |
-| `gross-margin-analysis` | 毛利率分析 | 成本结构拆解 |
-| `revenue-analysis` | 收入分析 | 收入质量与集中度 |
-| `cost-analysis` | 成本分析 | PRO专属：成本控制 |
-| `expense-analysis` | 费用分析 | PRO专属：费用效率 |
+### 三、风险评估（18个技能）
+- **风险检测与质量评估**：欺诈风险(Beneish模型)、流动性风险、敏感性分析、盈利质量、利润质量、报表质量
+- **特殊事项分析（PRO专属）**：关联交易、审计报告、会计政策、会计估计、税务分析
+- **决策支持**：趋势分析、投资论点生成、投资组合跟踪、估值报告撰写
 
-#### 现金流分析（PRO完整版）
+## 适用场景（综合流程示例）
 
-| 技能 | 用途 | 现金流类型 |
-|---:|:---|---:|
-| `cashflow-forecasting` | 现金流预测 | 未来现金流建模 |
-| `free-cashflow-calculation` | 自由现金流计算 | FCFF/FCFE |
-| `operating-cashflow-analysis` | 经营现金流分析 | 核心经营活动 |
-| `investing-cashflow-analysis` | 投资现金流分析 | 资本支出效率 |
-| `financing-cashflow-analysis` | 融资现金流分析 | 融资活动评估 |
-| `cashflow-profit-reconciliation` | 现金流利润调节 | 净利润→经营现金流 |
-| `cash-cycle-analysis` | 现金周期分析 | CCC、周转效率 |
-| `working-capital-analysis` | 营运资本分析 | 流动性管理 |
+以"某科技公司IPO完整估值分析"为例，PRO执行流程：
+1. `tech-company-valuation` - 确定科技公司估值方法
+2. `dcf-three-stage` - 三阶段DCF估值（含蒙特卡洛）
+3. `peer-selection` / `peer-comparison-analysis` - 可比公司筛选与对比
+4. `sensitivity-analysis` - 多变量敏感性分析
+5. `valuation-report-writer` - 自动生成估值报告
 
-#### 资产结构与报表处理（PRO专属）
+批量监控场景：通过 `batch_analysis.py` 对多只标的并行执行 `fraud-risk-detection`、`earnings-quality-analysis` 等技能，导出Excel对比矩阵。深度尽调场景按"报表提取→标准化→比率分析→杜邦拆解→现金流调节→关联交易→审计→会计政策→欺诈检测→报告生成"链路执行。
 
-| 技能 | 用途 | 分析对象 |
-|:------:|--------|:-------|
-| `asset-structure-analysis` | 资产结构分析 | 资产配置优化 |
-| `asset-capital-matching` | 资产资本匹配 | 期限匹配评估 |
-| `capital-structure-analysis` | 资本结构分析 | 债务/股权优化 |
-| `interest-bearing-debt-analysis` | 有息负债分析 | 债务成本测算 |
-| `balance-sheet-restructuring` | 资产负债表重组 | 重组方案设计 |
-| `financial-statement-extraction` | 财务报表提取 | 自动化数据提取 |
-| `financial-data-standardization` | 财务数据标准化 | 口径统一 |
-| `income-statement-restructuring` | 利润表重组 | 重分类调整 |
-| `notes-to-financial-statements` | 财务报表附注分析 | 附注深度解读 |
-
-#### 可比公司与竞争分析
-
-| 技能 | 用途 | 功能 |
-|----|:--:|---:|
-| `peer-selection` | 可比公司筛选 | 智能对标选择 |
-| `peer-comparison-analysis` | 可比公司分析 | 横向对比矩阵 |
-| `industry-benchmarking` | 行业基准对比 | 行业百分位 |
-| `competitive-positioning` | 竞争定位分析 | 市场地位评估 |
-
-**输入**: 用户提供二、财务分析（26个技能）所需的指令和必要参数.
-**输出**: 返回二、财务分析（26个技能）的处理结果,包含执行状态码、结果数据和执行日志。### 三、风险评估（18个技能）
-
-#### 风险检测与质量评估
-
-| 技能3 | 用途 | PRO版增强 |
-|----|----|----|
-| `fraud-risk-detection` | 欺诈风险检测 | Beneish模型集成 |
-| `liquidity-risk-assessment` | 流动性风险评估 | 压力测试 |
-| `sensitivity-analysis` | 敏感性分析 | 多变量蒙特卡洛 |
-| `earnings-quality-analysis` | 盈利质量分析 | 应计利润模型 |
-| `profit-quality-analysis` | 利润质量分析 | PRO专属：利润真实性 |
-| `financial-statement-quality` | 财务报表质量 | 整体质量评分 |
-| `financial-statement-quality-check` | 财务报表质量检查 | 质量清单核验 |
-
-#### 特殊事项分析（PRO专属）
-
-| 技能 | 用途 | 关注点 |
-|:-----|:-----|:-----|
-| `related-party-transaction-analysis` | 关联交易分析 | 利益输送识别 |
-| `audit-report-analysis` | 审计报告分析 | 审计意见解读 |
-| `accounting-policy-analysis` | 会计政策分析 | 政策选择影响 |
-| `accounting-estimate-evaluation` | 会计估计评估 | 估计合理性 |
-| `tax-analysis` | 税务分析 | 税务风险与优化 |
-
-#### 决策支持
-
-| 技能 | 用途 | 输出 |
-|---:|---:|---:|
-| `trend-analysis` | 趋势分析 | 时间序列预测 |
-| `investment-thesis-generation` | 投资论点生成 | 多情景投资建议 |
-| `portfolio-tracking` | 投资组合跟踪 | 组合批量监控 |
-| `valuation-report-writer` | 估值报告撰写 | 专业报告自动生成 |
-
-#
-## 适用场景
-
-### 场景一：IPO估值全流程
-
-用户输入："某科技公司准备IPO，需要完整的估值分析"
-
-```text
-PRO执行流程：
-1. tech-company-valuation    - 确定科技公司估值方法
-2. dcf-three-stage           - 三阶段DCF估值（含蒙特卡洛）
-3. peer-selection            - 智能筛选可比公司
-4. peer-comparison-analysis  - 可比公司估值矩阵
-5. sensitivity-analysis      - 多变量敏感性分析
-6. valuation-report-writer   - 自动生成估值报告
-```
-
-### 场景二：投资组合批量监控
-
-用户输入："监控我的50只持仓股票的财务健康度"
-
-```bash
-# PRO批量分析模式
-python3 batch_analysis.py --portfolio portfolio.csv \
-  --skills "fraud-risk-detection,earnings-quality-analysis,liquidity-risk-assessment" \
-  --output portfolio_risk_report.xlsx \
-  --format excel
-```
-
-### 场景三：深度财务尽调
-
-用户输入："对目标公司做完整的财务尽调"
-
-```text
-PRO执行流程：
-1. financial-statement-extraction     - 报表数据提取
-2. financial-data-standardization     - 口径标准化
-3. financial-ratio-framework          - 五维比率分析
-4. dupont-five-factor                 - ROE深度拆解
-5. cashflow-profit-reconciliation     - 现金流利润调节
-6. related-party-transaction-analysis - 关联交易排查
-7. audit-report-analysis              - 审计意见分析
-8. accounting-policy-analysis         - 会计政策评估
-9. fraud-risk-detection               - 欺诈风险检测
-10. valuation-report-writer           - 生成尽调报告
-```
-
-## 使用流程
-
-### 依赖说明
-
-### 运行环境
+## 运行环境与依赖
 
 1. **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 2. **操作系统**: Windows / macOS / Linux
-3. **Python版本**: 3.9+（推荐3.11）
-4. **内存要求**: 建议8GB+（批量分析与蒙特卡洛模拟）
-
-### 第三方依赖
+3. **Python版本**: 3.9+（推荐3.11），建议内存8GB+（批量分析与蒙特卡洛模拟）
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Python | 运行时 | 必需 | 系统安装或conda环境 |
-| numpy | Python库 | 必需 | `pip install numpy` |
-| pandas | Python库 | 必需 | `pip install pandas` |
-| scipy | Python库 | 必需 | `pip install scipy`（蒙特卡洛） |
-| matplotlib | Python库 | 可选 | `pip install matplotlib`（图表） |
-| openpyxl | Python库 | 可选 | `pip install openpyxl`（Excel导出） |
-| jinja2 | Python库 | 可选 | `pip install jinja2`（报告模板） |
+| numpy/pandas/scipy | Python库 | 必需 | `pip install numpy pandas scipy`（scipy用于蒙特卡洛） |
+| matplotlib/openpyxl/jinja2 | Python库 | 可选 | `pip install matplotlib openpyxl jinja2`（图表/Excel/报告模板） |
 
-### API Key 配置
+**API Key 配置**：支持 Wind（`WIND_API_KEY`，中国市场）、Bloomberg（`BLOOMBERG_API_KEY`，全球市场）、同花顺（`THS_API_KEY`，A股行情）。未配置时支持手动导入财务数据；API Key存储在本地config.yaml，不上传服务器。
 
-| 数据源 | 环境变量 | 用途 |
-|:------|------:|:------|
-| Wind | `WIND_API_KEY` | 中国市场财务数据 |
-| Bloomberg | `BLOOMBERG_API_KEY` | 全球市场财务数据 |
-| 同花顺 | `THS_API_KEY` | A股行情与基本面 |
+**可用性分类**：MD+EXEC（Markdown指令+Python脚本执行）。PRO版特性含批量分析、蒙特卡洛模拟、自动化报告生成、行业特化估值模型，完全兼容免费版全部技能与工作流。
 
-5. 未配置外部数据源时，可手动导入财务数据进行分析
-6. API Key存储在本地config.yaml，不会上传至任何服务器
+## 输入输出格式
 
-### 可用性分类
+**输入关键字段**：`content`（string，可选，处理内容输入，默认全部维度）、`strict_level`（string，可选，审查严格度 strict/normal/loose，默认normal）。
 
-7. **分类**: MD+EXEC（纯Markdown指令+Python脚本执行）
-8. **说明**: 基于Markdown的AI Skill配合Python分析脚本，支持批量处理与自动化报告
-9. **PRO版特性**: 批量分析、蒙特卡洛模拟、自动化报告生成、行业特化估值模型
-10. **兼容性**: 完全兼容免费版全部技能与工作流
-
-#
-## 输入格式
-
-| 参数名 | 类型 | 必填 | 说明 |
-|---:|:---|---:|---:|
-| content | string | 否 | accounting-finance处理的内容输入 |, 默认: 全部维度 |
-| strict_level | string | 否 | 审查严格度, 可选: strict/normal/loose, 默认: normal |
-
-## 输出格式
-
-```json
-{
-  "success": true,
-  "data": {
-    "overall_grade": "A",
-    "total_score": 92,
-    "max_score": 100,
-    "summary": "处理完成",
-    "details": [
-      {
-        "item": "代码风格",
-        "status": "pass",
-        "score": 95,
-        "comment": "符合规范"
-      },
-      {
-        "item": "安全合规",
-        "status": "warn",
-        "score": 80,
-        "comment": "符合规范"
-      }
-    ],
-    "improvements": [
-      {
-        "priority": "high",
-        "suggestion": "建议优化",
-        "expected_gain": "+5分"
-      },
-      {
-        "priority": "medium",
-        "suggestion": "建议优化",
-        "expected_gain": "+3分"
-      }
-    ]
-  },
-  "error": null
-}
-```
-
-## 异常处理
-
-| 错误场景 | 原因 | 处理方式 |
-|:------:|--------|:-------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
+**输出关键字段**：`success`（bool，执行是否成功）、`data.overall_grade`（评级）、`data.total_score`/`data.max_score`（得分）、`data.summary`（摘要）、`data.details[]`（各项检查 item/status/score/comment）、`data.improvements[]`（改进建议 priority/suggestion/expected_gain）、`error`（错误信息，null表示无错误）。
 
 ## 依赖说明(补充)
 
@@ -313,77 +101,30 @@ PRO执行流程：
 | LLM | 模型 | 是 | 需要LLM进行智能审查, 推荐GPT-4/智谱GLM-4/DeepSeek |
 | API Key | 凭证 | 否 | 使用云端LLM时需要 |
 
-**国内替代方案**:
-- OpenAI GPT → 智谱GLM-4 / 百度文心一言 / 通义千问 / DeepSeek
+**国内替代方案**: OpenAI GPT → 智谱GLM-4 / 百度文心一言 / 通义千问 / DeepSeek
 
-## 案例展示
+## PRO企业级配置（文字说明）
 
-### PRO企业级配置
-
-```yaml
-pro_config:
-  workspace:
-    root_dir: "./analysis_workspace"
-    output_dir: "./reports"
-    cache_dir: "./cache"
-# ...
-  data_sources:
-    primary:
-      provider: "wind"
-      api_key: "${WIND_API_KEY}"
-      cache_ttl: 3600
-    secondary:
-      provider: "bloomberg"
-      api_key: "${BLOOMBERG_API_KEY}"
-# ...
-  analysis:
-    batch:
-      max_parallel: 10              # 最大并行分析数
-      timeout: 300                  # 单标的超时（秒）
-      retry: 3                      # 失败重试次数
-    report:
-      template_dir: "./templates"
-      formats: ["pdf", "docx", "html"]
-      language: "zh-CN"
-# ...
-  valuation:
-    monte_carlo:
-      simulations: 10000            # 蒙特卡洛模拟次数
-      confidence_interval: [0.05, 0.95]
-    sensitivity:
-      variables: ["growth_rate", "discount_rate", "terminal_growth"]
-      steps: 5                      # 每变量测试步数
-# ...
-  risk_models:
-    fraud_detection:
-      models: ["beneish_m_score", "piotroski_f_score", "altman_z_score"]
-    stress_test:
-      scenarios: ["base", "adverse", "severe"]
-```
+PRO版通过 `config.yaml` 配置工作区目录、数据源（主备双源支持缓存与限流控制）、批量分析参数（最大并行数10、单标的超时300秒、失败重试3次）、报告输出（PDF/DOCX/HTML、zh-CN）、估值参数（蒙特卡洛10000次模拟、置信区间0.05-0.95、敏感性变量 growth_rate/discount_rate/terminal_growth）、风险模型（Beneish M-Score / Piotroski F-Score / Altman Z-Score，压力测试 base/adverse/severe 三场景）。
 
 ## 常见问题
 
 ### Q1：PRO版与免费版如何切换？
+PRO版完全包含免费版全部技能。升级后原有分析工作流无需修改，直接运行即可获得增强结果。如需使用免费版行为，可在配置中关闭PRO增强选项。
 
-PRO版完全包含免费版全部技能。升级后原有分析工作流无需修改，直接运行即可获得增强结果。如需使用免费版行为，可在配置中关闭PRO增强选项.
 ### Q2：批量分析支持多少只标的？
+PRO版支持单批次最多100只标的的并行分析。建议根据数据源API限额调整并行度，避免触发限流。批量结果自动汇总为对比矩阵并导出Excel。
 
-PRO版支持单批次最多100只标的的并行分析。建议根据数据源API限额调整并行度，避免触发限流。批量结果自动汇总为对比矩阵并导出Excel.
 ### Q3：估值报告支持哪些格式？
+支持PDF、DOCX、HTML三种格式。PDF适合正式提交，DOCX便于团队协作编辑，HTML适合在线展示。所有报告包含图表、敏感性矩阵和风险提示。
 
-支持PDF、DOCX、HTML三种格式。PDF适合正式提交，DOCX便于团队协作编辑，HTML适合在线展示。所有报告包含图表、敏感性矩阵和风险提示.
-### Q4：蒙特卡洛模拟需要多长时间？
-
-10000次模拟通常需要30-60秒（取决于标的复杂度和硬件性能）。可通过配置降低模拟次数（如1000次）进行快速预览，确认参数后运行完整模拟.
-### Q5：如何接入Wind/Bloomberg等专业数据源？
-
-在config.yaml的data_sources部分配置API凭证。PRO版支持自动数据拉取、缓存管理和限流控制。首次配置后，后续分析自动从指定数据源获取最新数据.
 ## 错误处理
 
-| 错误场景2 | 原因 | 处理方式 |
-|-----|-----|-----|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
+| 错误场景 | 原因 | 处理方式 |
+|:------:|--------|:-------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 重试请求；确认Agent平台LLM服务正常 |
 | 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
 | 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
 | 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-

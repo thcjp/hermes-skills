@@ -54,9 +54,17 @@ OPENSOURCE_SKILLS_DIR = SKILLS_ROOT / "opensource-skills" / "packaged"
 DIFFERENTIATED_SKILLS_DIR = SKILLS_ROOT / "differentiated-skills"
 CLAWHUB_DOWNLOADED_DIR = SKILLS_ROOT / "clawhub-skills" / "downloaded"
 
-# GitHub 仓库配置
-GITHUB_REMOTE = "https://github.com/thcjp/-.git"
+# GitHub 仓库配置 (双仓库策略)
+# 1. hermes-skills: 公开引流仓库, 仅推送免费skill (MIT license, pricing=free/L1-L2)
+PUBLIC_REMOTE = "hermes-skills"  # git remote name for https://github.com/thcjp/hermes-skills.git
+PUBLIC_REPO_URL = "https://github.com/thcjp/hermes-skills"
+# 2. origin: 私有备份仓库, 推送全部skill (免费+付费) + 项目代码
+PRIVATE_REMOTE = "origin"  # git remote name for https://github.com/thcjp/-.git
+PRIVATE_REPO_URL = "https://github.com/thcjp/-.git"
 GITHUB_BRANCH = "main"
+# 免费skill判定: pricing=free 或 pricing_tier in (L1-入门级, L2-标准级) 或 license=MIT
+FREE_PRICING_TIERS = {"L1-入门级", "L2-标准级"}
+FREE_LICENSES = {"MIT", "Apache-2.0"}
 
 # SkillHub 配置
 SKILLHUB_CLI = "skillhub"
@@ -198,6 +206,34 @@ def find_skill_source(slug: str) -> str:
             if cat_dir.is_dir() and (cat_dir / slug / "SKILL.md").exists():
                 return "differentiated"
     return "unknown"
+
+
+def is_free_skill(skill_md: Path) -> bool:
+    """判断skill是否为免费skill (可以推送到公开引流仓库)
+    
+    判定规则:
+    1. pricing 字段 = 'free' → 免费
+    2. pricing_tier in FREE_PRICING_TIERS (L1-入门级, L2-标准级) → 免费
+    3. license in FREE_LICENSES (MIT, Apache-2.0) → 免费
+    4. 以上都不满足 → 付费 (不推送到公开仓库)
+    """
+    try:
+        content = skill_md.read_text(encoding='utf-8', errors='replace')
+        metadata, _ = parse_frontmatter(content)
+        
+        pricing = metadata.get('pricing', '').lower()
+        pricing_tier = metadata.get('pricing_tier', '')
+        license_val = metadata.get('license', '')
+        
+        if pricing == 'free':
+            return True
+        if pricing_tier in FREE_PRICING_TIERS:
+            return True
+        if license_val in FREE_LICENSES:
+            return True
+        return False
+    except Exception:
+        return False
 
 
 def update_version_in_file(skill_md: Path, new_version: str) -> bool:
@@ -344,25 +380,35 @@ def run_quality_check(skill_md: Path) -> Dict[str, Any]:
 
 
 # ============================================================
-# Phase 4: SYNC_GITHUB - GitHub同步
+# Phase 4: SYNC_GITHUB - GitHub双仓库同步
 # ============================================================
 
 def sync_to_github(slug: str, skill_md: Path, new_version: str,
                    changelog: str, source: str,
                    skill_id: int = None) -> Dict[str, Any]:
-    """同步skill到GitHub开放库
-
-    执行: git add → git commit → git push
+    """同步skill到GitHub (双仓库策略)
+    
+    策略:
+    - 免费skill: 推送到 hermes-skills (公开引流) + origin (私有备份)
+    - 付费skill: 仅推送到 origin (私有备份), 不推送到 hermes-skills
+    
+    执行: git add → git commit → git push (private) → git push (public, 仅免费)
     """
     result = {
         'slug': slug,
         'platform': 'github',
         'version': new_version,
         'status': 'unknown',
+        'private_push': None,
+        'public_push': None,
+        'is_free': False,
     }
 
     file_path = str(skill_md).replace('\\', '/')
     commit_msg = f"feat({slug}): upgrade to v{new_version} - {changelog}"
+
+    # 判断免费/付费
+    result['is_free'] = is_free_skill(skill_md)
 
     try:
         # git add
@@ -390,26 +436,58 @@ def sync_to_github(slug: str, skill_md: Path, new_version: str,
             result['error'] = f'git commit failed: {commit_result.stderr}'
             return result
 
-        # git push
-        push_result = subprocess.run(
-            ['git', 'push', 'origin', GITHUB_BRANCH],
+        # 1. 推送到私有备份仓库 (所有skill)
+        push_private = subprocess.run(
+            ['git', 'push', PRIVATE_REMOTE, GITHUB_BRANCH],
             capture_output=True, text=True, timeout=180,
             cwd=str(SKILLS_ROOT)
         )
-        if push_result.returncode != 0:
-            result['status'] = 'committed_not_pushed'
-            result['error'] = f'git push failed: {push_result.stderr}'
-            result['commit_hash'] = commit_result.stdout.strip().split('\n')[0] if commit_result.stdout else ''
+        if push_private.returncode == 0:
+            result['private_push'] = 'success'
             if skill_id:
-                record_platform_upload(skill_id, new_version, 'github', slug,
-                                       'committed_not_pushed', error=result['error'][:200])
-            return result
+                record_platform_upload(skill_id, new_version, 'github_private', slug,
+                                       'success', visibility='private')
+        else:
+            result['private_push'] = 'failed'
+            result['private_error'] = push_private.stderr[:200]
+            if skill_id:
+                record_platform_upload(skill_id, new_version, 'github_private', slug,
+                                       'failed', error=push_private.stderr[:200])
 
-        result['status'] = 'success'
-        result['commit_message'] = commit_msg
-        if skill_id:
-            record_platform_upload(skill_id, new_version, 'github', slug,
-                                   'success', visibility='public', pricing='free')
+        # 2. 推送到公开引流仓库 (仅免费skill)
+        if result['is_free']:
+            push_public = subprocess.run(
+                ['git', 'push', PUBLIC_REMOTE, GITHUB_BRANCH],
+                capture_output=True, text=True, timeout=180,
+                cwd=str(SKILLS_ROOT)
+            )
+            if push_public.returncode == 0:
+                result['public_push'] = 'success'
+                if skill_id:
+                    record_platform_upload(skill_id, new_version, 'github_public', slug,
+                                           'success', visibility='public', pricing='free')
+            else:
+                result['public_push'] = 'failed'
+                result['public_error'] = push_public.stderr[:200]
+                if skill_id:
+                    record_platform_upload(skill_id, new_version, 'github_public', slug,
+                                           'failed', error=push_public.stderr[:200])
+        else:
+            result['public_push'] = 'skipped_paid'
+            if skill_id:
+                record_platform_upload(skill_id, new_version, 'github_public', slug,
+                                       'skipped_paid', visibility='private')
+
+        # 综合状态
+        if result['private_push'] == 'success':
+            result['status'] = 'success'
+            result['commit_message'] = commit_msg
+        elif result['private_push'] == 'failed':
+            result['status'] = 'committed_not_pushed'
+            result['error'] = result.get('private_error', 'unknown')
+        else:
+            result['status'] = 'unknown'
+
         return result
 
     except subprocess.TimeoutExpired:

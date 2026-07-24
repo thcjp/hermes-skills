@@ -1,5 +1,5 @@
 ---
-slug: "openclaw-dashboard"
+slug: "dashboard-toolkit"
 name: "openclaw-dashboard"
 version: "1.7.3"
 displayName: "SkillHub-dashboard"

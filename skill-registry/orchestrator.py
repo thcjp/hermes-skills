@@ -9,7 +9,7 @@
   2. ENHANCE     - 内容增强建议 (基于审计报告识别B级skill,生成增强建议)
   3. INCREMENT   - 版本号递增 (version_sync_pipeline.py)
   4. VALIDATE    - 质量门禁 (deep_quality_audit.py: L1-L8全量审计)
-  5. SYNC_GITHUB - GitHub开放库同步 (version_sync_pipeline.py)
+  5. SYNC_GITHUB - GitHub双仓库同步: hermes-skills(免费引流) + origin(私有备份)
   6. SYNC_SKILLHUB - SkillHub免费+付费同步 (version_sync_pipeline.py)
   7. SYNC_CLAWHUB  - ClawHub同步 (version_sync_pipeline.py)
   8. RECORD      - 数据库记录 (SQLite统一数据源)

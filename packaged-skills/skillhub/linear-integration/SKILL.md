@@ -1,5 +1,5 @@
 ---
-slug: "openclaw-linear"
+slug: "linear-integration"
 name: "openclaw-linear"
 version: "1.0.1"
 displayName: "Linear CLI"

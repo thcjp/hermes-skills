@@ -1,5 +1,5 @@
 ---
-slug: "pandoc-convert-openclaw"
+slug: "pandoc-converter"
 name: "pandoc-convert-openclaw"
 version: "0.1.0"
 displayName: "Pandoc Convert"
