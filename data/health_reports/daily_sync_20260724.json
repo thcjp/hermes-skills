@@ -1,0 +1,63 @@
+{
+  "date": "2026-07-24",
+  "timestamp": "2026-07-24T12:17:17.228911",
+  "summary": {
+    "total_skills": 2882,
+    "active": 959,
+    "updated": 1162,
+    "stale": 759
+  },
+  "three_track": {
+    "free": 1675,
+    "source": 600,
+    "paid": 599,
+    "tool": 8
+  },
+  "platforms": {
+    "clawhub": {
+      "fail": 2,
+      "retry_pending": 1,
+      "success": 1152
+    },
+    "github": {
+      "success": 1159
+    },
+    "skillhub": {
+      "blocked_by_quality_gate": 1,
+      "retry_pending": 16,
+      "success": 1126
+    },
+    "skillhub_free": {
+      "failed": 1
+    },
+    "skillhub_paid": {
+      "payload_ready": 1
+    }
+  },
+  "quality": {
+    "pricing_tiers": {
+      "L3-专业级": 967,
+      "L2-标准级": 807,
+      "L1-入门级": 597,
+      "L4-企业级": 511
+    }
+  },
+  "recent_operations": {
+    "version_sync": 1162,
+    "upload_skillhub": 1097,
+    "import": 957,
+    "upload_clawhub": 371,
+    "mark_stale": 8,
+    "sync_skillhub": 3,
+    "rename_slug": 3,
+    "orchestrator_enhance": 2,
+    "sync_skillhub_paid": 1,
+    "sync_skillhub_free": 1,
+    "sync_github": 1,
+    "sync_clawhub": 1,
+    "orchestrator_sync": 1,
+    "orchestrator_record": 1,
+    "mark_not_found": 1,
+    "cleanup_mock": 1
+  }
+}

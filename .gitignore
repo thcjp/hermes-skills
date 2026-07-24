@@ -1,21 +1,15 @@
 # Sensitive
 .credentials/
-.skillhub-credentials/
 *.key
 *.pem
 .env
 PROJECT_MEMORY.md
-*.ps1
-skill-registry.db
-**/debranding-report.md
-**/skill-production-standards-*review*.md
-**/skill-production-standards-*audit*.md
 
 # Temporary
-.trae-html-share-packages/
 *.tmp
 *.log
 *.bak
+.trae-html-share-packages/
 
 # Dependencies
 node_modules/
@@ -29,4 +23,8 @@ data/backups/*.db
 .DS_Store
 Thumbs.db
 
-skills.db
+# Database (keep structure, ignore file)
+skill-registry.db
+
+# Reports with sensitive content
+**/debranding-report.md

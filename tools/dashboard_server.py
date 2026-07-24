@@ -43,33 +43,45 @@ def get_db_stats():
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
-    stats = {"total_skills": 0, "free_count": 0, "paid_count": 0,
-             "categories": {}, "platforms": {}, "quality": {}, "recent_ops": [],
-             "sources": {}, "workflow_states": {}}
+    stats = {"total_skills": 0, "three_track": {}, "categories": {},
+             "platforms": {}, "quality": {}, "recent_ops": [],
+             "sources": {}, "workflow_states": {}, "pricing_tiers": {}}
 
     try:
         c.execute("SELECT COUNT(*) as cnt FROM skills")
         stats["total_skills"] = c.fetchone()["cnt"]
 
-        # 付费/免费统计: 通过slug后缀判断(-free=免费, 无后缀=付费)
-        c.execute("SELECT COUNT(*) as cnt FROM skills WHERE slug NOT LIKE '%%-free'")
-        stats["paid_count"] = c.fetchone()["cnt"]
-        c.execute("SELECT COUNT(*) as cnt FROM skills WHERE slug LIKE '%%-free'")
-        stats["free_count"] = c.fetchone()["cnt"]
+        # 三轨模型统计（使用 skill_type 字段）
+        c.execute("SELECT skill_type, COUNT(*) as cnt FROM skills GROUP BY skill_type ORDER BY cnt DESC")
+        stats["three_track"] = {row["skill_type"]: row["cnt"] for row in c.fetchall()}
 
         c.execute("SELECT category, COUNT(*) as cnt FROM skills WHERE category IS NOT NULL GROUP BY category ORDER BY cnt DESC LIMIT 15")
         stats["categories"] = {row["category"]: row["cnt"] for row in c.fetchall()}
 
-        c.execute("SELECT platform, upload_status, COUNT(*) as cnt FROM platform_uploads GROUP BY platform, upload_status")
-        for row in c.fetchall():
-            p = row["platform"]
-            s = row["upload_status"]
-            if p not in stats["platforms"]:
-                stats["platforms"][p] = {}
-            stats["platforms"][p][s] = row["cnt"]
+        # 平台上传状态（使用 v_platform_summary 视图）
+        try:
+            c.execute("SELECT platform, upload_status, count FROM v_platform_summary ORDER BY platform")
+            for row in c.fetchall():
+                p = row["platform"]
+                s = row["upload_status"]
+                if p not in stats["platforms"]:
+                    stats["platforms"][p] = {}
+                stats["platforms"][p][s] = row["count"]
+        except Exception:
+            c.execute("SELECT platform, upload_status, COUNT(*) as cnt FROM platform_uploads GROUP BY platform, upload_status")
+            for row in c.fetchall():
+                p = row["platform"]
+                s = row["upload_status"]
+                if p not in stats["platforms"]:
+                    stats["platforms"][p] = {}
+                stats["platforms"][p][s] = row["cnt"]
 
         c.execute("SELECT current_status, COUNT(*) as cnt FROM skills GROUP BY current_status")
         stats["quality"] = {row["current_status"]: row["cnt"] for row in c.fetchall()}
+
+        # 定价分层统计
+        c.execute("SELECT pricing_tier, COUNT(*) as cnt FROM skills GROUP BY pricing_tier ORDER BY cnt DESC")
+        stats["pricing_tiers"] = {row["pricing_tier"]: row["cnt"] for row in c.fetchall()}
 
         c.execute("SELECT source, COUNT(*) as cnt FROM skills GROUP BY source ORDER BY cnt DESC LIMIT 10")
         stats["sources"] = {row["source"]: row["cnt"] for row in c.fetchall()}
