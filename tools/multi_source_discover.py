@@ -86,24 +86,28 @@ AWESOME_LIST_REPOS = [
     {"owner": "Shubhamsaboo", "repo": "awesome-llm-apps"},
 ]
 
-# N8N API
+# N8N API (公开无需认证，但响应慢，需60s超时; categories=25为AI分类)
 N8N_API_URLS = [
-    "https://api.n8n.io/api/templates/workflows",
-    "https://api.n8n.io/api/templates/workflows?limit=50",
+    "https://api.n8n.io/api/templates/workflows?skip=0&limit=50&categories=25",
+    "https://api.n8n.io/api/templates/workflows?skip=0&limit=50",
 ]
+N8N_CATEGORIES_URL = "https://api.n8n.io/api/templates/categories"
+N8N_FETCH_TIMEOUT = 60  # N8N API响应极慢，需60秒超时
 
-# Dify
+# Dify (Explore API需要session cookie认证，暂不可用)
+# 备选方案: 从 https://creators.dify.ai/ 获取或从Dify GitHub社区获取
 DIFY_EXPLORE_URL = "https://cloud.dify.ai/explore"
 DIFY_API_URLS = [
-    "https://cloud.dify.ai/api/explore/apps",
-    "https://cloud.dify.ai/console/api/explore/apps",
+    "https://cloud.dify.ai/api/explore/apps",  # 需要认证
+    "https://cloud.dify.ai/console/api/explore/apps",  # 需要认证
 ]
 
-# Coze
+# Coze (Store API需要登录认证，返回 code:700012006)
+# 备选方案: 使用headless browser爬取 https://www.coze.cn/store/bot
 COZE_STORE_URL = "https://www.coze.cn/store/bot"
 COZE_API_URLS = [
-    "https://www.coze.cn/api/store/bot/list",
-    "https://api.coze.cn/api/store/bot/list",
+    "https://www.coze.cn/api/store/bot/list",  # 需要认证
+    "https://api.coze.cn/api/store/bot/list",  # 需要认证
 ]
 
 
@@ -276,10 +280,10 @@ class N8NScanner(BaseScanner):
         candidates: List[Dict[str, Any]] = []
         print("\n[N8NScanner] 扫描 N8N 工作流模板市场...")
 
-        # 尝试多个 API 端点
+        # 尝试多个 API 端点 (N8N API响应极慢，需60秒超时)
         data = None
         for url in N8N_API_URLS:
-            content = fetch_url(url, timeout=10)
+            content = fetch_url(url, timeout=N8N_FETCH_TIMEOUT)
             if not content:
                 print(f"  [N8N] 无法获取数据: {url}")
                 continue
