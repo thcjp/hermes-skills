@@ -1,7 +1,7 @@
 ---
 slug: ops-dashboard-free
 name: ops-dashboard-free
-version: 1.0.2
+version: 1.0.1
 displayName: 运维看板(免费版)
 summary: 实时运维监控看板免费版，支持会话查看、定时任务监控与基础健康检查
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "job-auto-apply"
 name: "job-auto-apply"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Job Auto Apply"
 summary: "求职申请自动化,代你提交申请(需授权谨慎)"
 license: "Proprietary"

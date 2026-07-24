@@ -1,7 +1,7 @@
 ---
 slug: typescript-toolkit-free
 name: typescript-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: TypeScript工具集(免费版)
 summary: 面向个人开发者的TypeScript类型安全辅助工具,覆盖基础类型收窄、推断与严格模式实践.
 license: Proprietary

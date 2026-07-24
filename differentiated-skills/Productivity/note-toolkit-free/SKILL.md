@@ -1,7 +1,7 @@
 ---
 slug: note-toolkit-free
 name: note-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 笔记工具包基础版
 summary: 知识捕获与连接系统,支持自动组织、检索与笔记间关联,纯本地存储保护隐私
 license: Proprietary

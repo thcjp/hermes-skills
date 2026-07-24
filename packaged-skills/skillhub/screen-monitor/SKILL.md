@@ -1,7 +1,7 @@
 ---
 slug: "screen-monitor"
 name: "screen-monitor"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Screen Monitor"
 summary: "双模屏幕共享与分析,模型无关(Gemini/Claude/Qwen3-VL)"
 license: "Proprietary"

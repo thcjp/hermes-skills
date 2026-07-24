@@ -1,7 +1,7 @@
 ---
 slug: "knowledge-capture"
 name: "knowledge-capture"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Knowledge Capture"
 summary: "把对话讨论转为结构化Notion文档"
 license: "Proprietary"

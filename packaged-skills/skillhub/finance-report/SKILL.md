@@ -1,7 +1,7 @@
 ---
 slug: "finance-report"
 name: "finance-report"
-version: "1.0.0"
+version: 1.0.1
 displayName: "财报分析专业版"
 summary: "企业级财报分析系统，支持批量处理、多格式导出、行业基准与深度预测模型。"
 license: "Proprietary"

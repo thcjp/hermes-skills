@@ -1,7 +1,7 @@
 ---
 slug: "gateway-manager"
 name: "gateway-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "API网关管理器(专业版)"
 summary: "企业级API网关平台，含多租户、熔断、灰度、动态配置、可观测性与插件体系。"
 license: "Proprietary"

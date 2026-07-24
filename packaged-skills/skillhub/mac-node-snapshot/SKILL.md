@@ -1,7 +1,7 @@
 ---
 slug: "mac-node-snapshot"
 name: "mac-node-snapshot"
-version: "1.0.0"
+version: 1.0.1
 displayName: "mac-node-snapshot"
 summary: "经SkillHub screen record权限友好地截macOS屏幕"
 license: "Proprietary"

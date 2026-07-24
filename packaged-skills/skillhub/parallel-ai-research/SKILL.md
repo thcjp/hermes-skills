@@ -1,7 +1,7 @@
 ---
 slug: "parallel-ai-research"
 name: "parallel-ai-research"
-version: "1.1.0"
+version: 1.1.1
 displayName: "Research"
 summary: "开放式主题研究,构建活的Markdown文档,支持交互"
 license: "Proprietary"

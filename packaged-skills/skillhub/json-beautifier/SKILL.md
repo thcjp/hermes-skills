@@ -1,7 +1,7 @@
 ---
 slug: "json-beautifier"
 name: "json-beautifier"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON美化工具专业版"
 summary: "企业级JSON处理工具，支持大文件流式处理、批量目录扫描、自动修复、差异对比与自定义模板。"
 license: "Proprietary"

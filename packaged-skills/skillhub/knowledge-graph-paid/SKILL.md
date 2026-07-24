@@ -1,7 +1,7 @@
 ---
 slug: "knowledge-graph-paid"
 name: "knowledge-graph-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "知识图谱工具(专业版)"
 summary: "团队级嵌入式知识图谱,含加密保险库、可视化、多Agent协作与内存导入。"
 license: "Proprietary"

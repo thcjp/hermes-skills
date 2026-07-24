@@ -1,7 +1,7 @@
 ---
 slug: code-review-sentinel
 name: code-review-sentinel
-version: 1.1.0
+version: 1.0.1
 displayName: 代码审查哨兵
 summary: 合并前五维度质量审查,以高级工程师标准把关每次代码提交
 license: Proprietary

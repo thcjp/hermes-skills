@@ -1,7 +1,7 @@
 ---
 slug: "whatsapp-messaging"
 name: "whatsapp-messaging"
-version: "1.0.0"
+version: 1.0.7
 displayName: "WhatsApp 商业消息"
 summary: "通过 WhatsApp Business API 发送消息、管理模板、处理媒体，支持文本、图片、交互按钮、模板等消息类型。"
 license: "Proprietary"

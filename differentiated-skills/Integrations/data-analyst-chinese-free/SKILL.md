@@ -1,7 +1,7 @@
 ---
 slug: data-analyst-chinese-free
 name: data-analyst-chinese-free
-version: 1.0.0
+version: 1.0.1
 displayName: 中文数据分析(免费版)
 summary: 中文语境数据清洗、统计分析与可视化建议,适合数据分析师、产品经理与运营快速上手.
 license: Proprietary

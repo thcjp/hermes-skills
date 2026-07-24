@@ -1,7 +1,7 @@
 ---
 slug: "notion-cli"
 name: "notion-cli"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Notion命令行(专业版)"
 summary: "企业级Notion命令行工具,支持多工作空间、文件上传、Schema管理、批量操作与审计日志,适合团队与企业规模化使用。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: frontend-design-v3-free
 name: frontend-design-v3-free
-version: 1.0.0
+version: 1.0.1
 displayName: 前端设计V3-免费版
 summary: 独特前端界面生成工具，拒绝AI同质化风格，输出有辨识度的HTML/CSS代码.
 license: Proprietary

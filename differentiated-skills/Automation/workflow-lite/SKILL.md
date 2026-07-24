@@ -1,7 +1,7 @@
 ---
 slug: workflow-lite
 name: workflow-lite
-version: 1.0.0
+version: 1.0.1
 displayName: 轻量工作流
 summary: 极简自动化入门，5分钟快速判断该不该自动化+3个最小可执行模板+单页速查.
 license: Proprietary

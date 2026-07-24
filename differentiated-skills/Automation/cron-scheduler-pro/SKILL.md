@@ -1,7 +1,7 @@
 ---
 slug: cron-scheduler-pro
 name: cron-scheduler-pro
-version: 1.0.0
+version: 1.0.1
 displayName: 定时调度专家
 summary: 本地优先的周期任务引擎，时区锁定、一次性任务自清理、并发安全，告别漏跑与堆积.
 license: Proprietary

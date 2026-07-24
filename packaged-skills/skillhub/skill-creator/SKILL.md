@@ -1,7 +1,7 @@
 ---
 slug: "skill-creator"
 name: "skill-creator"
-version: "1.0.0"
+version: 0.1.1
 displayName: "AI技能创建指南"
 summary: "创建有效AI Skill的完整指南，覆盖frontmatter、SKILL.md结构与Progressive Disclosure设计原则"
 license: "Proprietary"

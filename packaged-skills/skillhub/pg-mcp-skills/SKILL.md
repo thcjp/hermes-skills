@@ -1,7 +1,7 @@
 ---
 slug: "pg-mcp-skills"
 name: "pg-mcp-skills"
-version: "1.0.0"
+version: 1.0.1
 displayName: "PG-MCP助手(专业版)"
 summary: "企业级`PostgreSQL`数据库管理方案，支持自动化调优、迁移升级、多实例管理与高可用监控。"
 license: "Proprietary"

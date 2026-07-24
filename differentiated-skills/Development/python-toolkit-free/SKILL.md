@@ -1,7 +1,7 @@
 ---
 slug: python-toolkit-free
 name: python-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Python工具箱(免费版)
 summary: 个人开发者的Python编码规范,涵盖PEP8、Pythonic模式与基础依赖管理.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "ctxly-chat"
 name: "ctxly-chat"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Ctxly Chat"
 summary: "为AI Agent建匿名私聊室,无需注册身份,即开即聊"
 license: "Proprietary"

@@ -2,7 +2,7 @@
 name: "Linear Project Manager 核心处理"
 slug: "linear-project-manager"
 displayName: "Linear项目管理"
-version: "1.0.0"
+version: 1.0.2
 summary: "封装Linear项目管理API,请求参数直转响应数据,付费版独享批量与高级配置"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.

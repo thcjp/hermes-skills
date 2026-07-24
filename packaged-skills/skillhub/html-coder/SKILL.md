@@ -1,7 +1,7 @@
 ---
 slug: "html-coder"
 name: "html-coder"
-version: "2.0.1"
+version: 2.0.2
 displayName: "HTML Coder"
 summary: "专家级HTML开发,构建网页/表单/交互内容"
 license: "Proprietary"

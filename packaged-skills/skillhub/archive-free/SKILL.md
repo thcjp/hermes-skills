@@ -1,7 +1,7 @@
 ---
 slug: "archive-free"
 name: "archive-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "智能内容归档免费版"
 summary: "免费版内容归档工具，支持文章、视频、推文的内容提取与标签管理。"
 license: "MIT"

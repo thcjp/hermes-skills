@@ -1,7 +1,7 @@
 ---
 slug: tool-orchestrator
 name: tool-orchestrator
-version: 1.0.0
+version: 1.0.1
 displayName: 工具编排器
 summary: 端到端加密去中心化记忆编排,统一工具接口,零暴露凭据管理,自动恢复.
 license: Proprietary

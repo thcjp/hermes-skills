@@ -1,7 +1,7 @@
 ---
 slug: twitter-viral-optimizer
 name: twitter-viral-optimizer
-version: 1.1.0
+version: 1.0.1
 displayName: 社媒爆款优化器
 summary: 基于Twitter/微博/小红书算法优化内容,最大化触达互动,打造爆款
 license: Proprietary

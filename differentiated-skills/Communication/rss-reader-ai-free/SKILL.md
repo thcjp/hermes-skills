@@ -1,7 +1,7 @@
 ---
 slug: rss-reader-ai-free
 name: rss-reader-ai-free
-version: 1.0.0
+version: 1.0.1
 displayName: RSS智能阅读器免费版
 summary: 自动抓取RSS订阅源，使用AI生成中文摘要，支持单渠道推送，适合个人用户信息聚合.
 license: Proprietary

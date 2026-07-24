@@ -1,7 +1,7 @@
 ---
 slug: hook-retention-master
 name: hook-retention-master
-version: "1.0.1"
+version: 1.0.1
 displayName: "钩子留存大师"
 summary: "8平台25钩子公式,开篇3秒留人,完播率提升300%的内容留存工具"
 license: Proprietary

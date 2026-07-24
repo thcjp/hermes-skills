@@ -1,7 +1,7 @@
 ---
 slug: "blog-writer"
 name: "blog-writer"
-version: "1.0.0"
+version: 0.1.1
 displayName: "博客写作助手"
 summary: "捕捉作者独特写作风格,从研究材料到发布笔记平台的全流程博客创作。"
 license: "Proprietary"

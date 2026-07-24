@@ -1,7 +1,7 @@
 ---
 slug: deep-research-engine
 name: deep-research-engine
-version: 1.0.0
+version: 1.0.1
 displayName: 深度研究引擎
 summary: 自主多步深度研究,来源分层交叉验证,一键生成专业研究报告
 license: Proprietary

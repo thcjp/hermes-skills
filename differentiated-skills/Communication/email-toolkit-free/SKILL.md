@@ -1,7 +1,7 @@
 ---
 slug: email-toolkit-free
 name: email-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 邮件工具箱免费版
 summary: 跨平台邮件发送与附件管理工具，支持多邮箱服务商
 license: Proprietary

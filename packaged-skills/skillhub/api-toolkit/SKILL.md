@@ -1,7 +1,7 @@
 ---
 slug: "api-toolkit"
 name: "api-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "API工具箱(专业版)"
 summary: "企业级API测试调试全套件，含批量回归、Mock服务、性能压测、契约校验与团队协作。"
 license: "Proprietary"

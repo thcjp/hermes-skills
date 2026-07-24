@@ -1,7 +1,7 @@
 ---
 slug: "web"
 name: "web"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Web Development"
 summary: "用HTML/CSS/JS与现代框架建调部署网站"
 license: "Proprietary"

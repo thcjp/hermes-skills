@@ -1,7 +1,7 @@
 ---
 slug: "ui-ux"
 name: "ui-ux"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UI / UX"
 summary: "可搜UI/UX设计库,50+风格/97色板/57字体对/99规则"
 license: "Proprietary"

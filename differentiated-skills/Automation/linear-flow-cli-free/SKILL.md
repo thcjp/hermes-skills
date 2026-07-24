@@ -1,7 +1,7 @@
 ---
 slug: linear-flow-cli-free
 name: linear-flow-cli-free
-version: 1.0.0
+version: 1.0.1
 displayName: Linear流程CLI(免费版)
 summary: 通过命令行读写Linear任务管理系统，支持任务查询、创建、更新与团队管理，提供稳定的JSON输出与基础工作流.
 license: Proprietary

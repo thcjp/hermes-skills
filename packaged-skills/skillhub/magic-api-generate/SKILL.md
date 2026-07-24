@@ -1,7 +1,7 @@
 ---
 slug: "magic-api-generate"
 name: "magic-api-generate"
-version: "1.0.0"
+version: 1.0.1
 displayName: "magic-api-generate"
 summary: "magic-api 国产接口快速开发框架。通过 Web UI 编写脚本自动映射为 HTTP 接口，无需 Controller/Service/Dao。当用户提到"
 license: "Proprietary"

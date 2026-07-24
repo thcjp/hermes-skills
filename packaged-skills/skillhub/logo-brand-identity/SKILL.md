@@ -1,7 +1,7 @@
 ---
 slug: "logo-brand-identity"
 name: "logo-brand-identity"
-version: "1.0.0"
+version: 1.0.1
 displayName: "品牌标识设计专业版"
 summary: "企业级AI品牌标识设计系统,支持完整品牌套件、多品牌管理、批量生成、品牌审计与CI/CD集成,适合团队与商业项目"
 license: "Proprietary"

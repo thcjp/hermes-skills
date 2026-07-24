@@ -1,7 +1,7 @@
 ---
 slug: localmemo-pro
 name: localmemo-pro
-version: 2.0.0
+version: 2.0.1
 displayName: 本地长记忆
 summary: 零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本.
 license: Proprietary

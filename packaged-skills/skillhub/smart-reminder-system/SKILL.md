@@ -1,7 +1,7 @@
 ---
 slug: "smart-reminder-system"
 name: "smart-reminder-system"
-version: "1.0.5"
+version: 1.0.6
 displayName: "Reminder"
 summary: "用SkillHub cron建一次性提醒任务,指定时间与内容"
 license: "Proprietary"

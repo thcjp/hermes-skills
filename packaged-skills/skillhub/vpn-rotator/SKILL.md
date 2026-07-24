@@ -1,7 +1,7 @@
 ---
 slug: "vpn-rotator"
 name: "vpn-rotator"
-version: "1.0.0"
+version: 1.0.1
 displayName: "VPN轮换工具专业版"
 summary: "全功能VPN轮换平台，支持自动重连、多VPN并发、负载均衡与熔断机制"
 license: "Proprietary"

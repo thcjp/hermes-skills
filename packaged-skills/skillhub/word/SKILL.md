@@ -1,7 +1,7 @@
 ---
 slug: "word"
 name: "word"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Word"
 summary: "经osascript控Word会话/文档/选区/批注/导出/审阅"
 license: "Proprietary"

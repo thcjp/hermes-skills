@@ -1,7 +1,7 @@
 ---
 slug: workflow-orchestrator-free
 name: workflow-orchestrator-free
-version: 1.0.0
+version: 1.0.1
 displayName: 工作流编排器(免费版)
 summary: 构建可复用的自动化流水线，支持节点间数据流、状态管理与并发锁控制.
 license: Proprietary

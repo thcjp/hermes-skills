@@ -1,7 +1,7 @@
 ---
 slug: "zhuchenggong-doubao-image-gen"
 name: "zhuchenggong-doubao-image-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Zhuchenggong Doubao"
 summary: "Zhuchenggong Doubao提供Zhuchenggong Doubao的核心功能（详见使用流程和示例）等核心能力,付费版独享高级功能与批量处理。"
 license: "Proprietary"

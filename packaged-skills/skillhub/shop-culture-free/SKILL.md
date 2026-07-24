@@ -1,7 +1,7 @@
 ---
 slug: "shop-culture-free"
 name: "shop-culture-free"
-version: "1.0.12"
+version: 1.0.1
 displayName: "生活方式购物基础版"
 summary: "基础商品浏览和搜索，AI购物助手和分类导航"
 license: "MIT"

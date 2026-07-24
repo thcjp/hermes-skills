@@ -1,7 +1,7 @@
 ---
 slug: "telegram-toolkit"
 name: "telegram-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "TG机器人工具(专业版)"
 summary: "面向企业的Telegram Bot专业版，含对话状态机、富媒体模板、多机器人管理、消息队列与优先支持。"
 license: "Proprietary"

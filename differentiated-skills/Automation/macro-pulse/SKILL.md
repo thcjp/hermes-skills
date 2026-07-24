@@ -1,7 +1,7 @@
 ---
 slug: macro-pulse
 name: macro-pulse
-version: 1.0.0
+version: 1.0.1
 displayName: 宏观脉搏
 summary: 解决数据源易崩、时区混乱、科普难懂、无预警痛点，每日推送带小白解读的宏观快报
 license: Proprietary

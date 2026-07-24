@@ -1,7 +1,7 @@
 ---
 slug: drama-hit-producer
 name: drama-hit-producer
-version: "1.0.1"
+version: 1.0.1
 displayName: "短剧爆款生产线"
 summary: "小说一键转竖屏短剧,25步全链路从脚本到成片自动产出"
 license: Proprietary

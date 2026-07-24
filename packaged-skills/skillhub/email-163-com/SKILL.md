@@ -1,7 +1,7 @@
 ---
 slug: "email-163-com"
 name: "email-163-com"
-version: "1.0.0"
+version: 1.0.6
 displayName: "163邮箱管理专家"
 summary: "163邮箱CLI工具,支持IMAP ID认证收发邮件、附件、文件夹、搜索与邮件操作"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "memory-distiller-v2"
 name: "memory-distiller-v2"
-version: "1.0.0"
+version: 1.0.1
 displayName: "记忆蒸馏器"
 summary: "解决日志膨胀、关键信息丢失、压缩后难回溯的分层记忆蒸馏器"
 license: "Proprietary"

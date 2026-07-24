@@ -1,7 +1,7 @@
 ---
 slug: "firewall"
 name: "firewall"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Firewall"
 summary: "按安全最佳实践配置服务器与云防火墙,封堵风险"
 license: "Proprietary"

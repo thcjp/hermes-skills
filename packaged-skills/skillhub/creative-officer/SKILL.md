@@ -1,7 +1,7 @@
 ---
 slug: "creative-officer"
 name: "creative-officer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "创意总监专业版"
 summary: "企业级创意管理平台，支持完整品牌体系、营销战役规划、创意资产管理与团队协作。"
 license: "Proprietary"

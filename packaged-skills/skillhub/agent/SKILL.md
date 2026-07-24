@@ -1,7 +1,7 @@
 ---
 slug: "agent"
 name: "agent"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Agent"
 summary: "定义Agent身份性格语气与边界,打造风格一致的拟人助手,解决人设漂移难题"
 license: "Proprietary"

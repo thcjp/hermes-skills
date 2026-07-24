@@ -1,7 +1,7 @@
 ---
 slug: discord-community-hub-free
 name: discord-community-hub-free
-version: 1.0.0
+version: 1.0.1
 displayName: Discord社区中心免费版
 summary: 基础 Discord 社区管理工具,支持用户信息、服务器列表与基础集成查询.
 license: Proprietary

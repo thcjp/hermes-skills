@@ -1,7 +1,7 @@
 ---
 slug: "timer"
 name: "timer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "后台定时器与提醒"
 summary: "在后台运行定时器与闹钟，完成后通过系统通知提醒用户，支持多种时间格式与多任务并行管理。"
 license: "Proprietary"

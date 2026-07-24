@@ -1,7 +1,7 @@
 ---
 slug: telegram-toolkit-free
 name: telegram-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: TG机器人工具(免费版)
 summary: 面向AI Agent的Telegram Bot工作流设计工具免费版，覆盖命令路由、更新处理、安全配置核心能力.
 license: Proprietary

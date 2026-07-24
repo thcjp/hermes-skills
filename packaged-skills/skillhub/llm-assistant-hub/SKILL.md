@@ -1,7 +1,7 @@
 ---
 slug: "llm-assistant-hub"
 name: "llm-assistant-hub"
-version: "1.0.0"
+version: 1.0.1
 displayName: "LLM助手中枢"
 summary: "长文档推理优化器：分层分析+假设检测+结构化压缩+差异化比对。"
 license: "Proprietary"

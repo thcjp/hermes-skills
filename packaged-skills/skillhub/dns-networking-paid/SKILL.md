@@ -1,7 +1,7 @@
 ---
 slug: "dns-networking-paid"
 name: "dns-networking-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "DNS网络诊断专业版"
 summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。"
 license: "Proprietary"

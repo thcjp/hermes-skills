@@ -1,7 +1,7 @@
 ---
 slug: "bsession"
 name: "bsession"
-version: "0.1.0"
+version: 0.1.1
 displayName: "browser"
 summary: "搭bsession环境做浏览器自动化,一次性抓取或建持久会话"
 license: "Proprietary"

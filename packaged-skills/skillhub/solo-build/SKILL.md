@@ -1,7 +1,7 @@
 ---
 slug: "solo-build"
 name: "solo-build"
-version: "2.2.1"
+version: 2.2.2
 displayName: "构建执行引擎"
 summary: "执行实现计划任务,TDD工作流,自动提交,阶段门检查,进度跟踪。"
 license: "Proprietary"

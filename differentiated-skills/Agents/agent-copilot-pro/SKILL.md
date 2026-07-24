@@ -1,7 +1,7 @@
 ---
 slug: agent-copilot-pro
 name: agent-copilot-pro
-version: 1.0.0
+version: 1.0.1
 displayName: 代理副驾驶
 summary: 解决Prompt幻觉、上下文腐烂、工具误选、任务拆解不彻底的AI代理工程副驾驶
 license: Proprietary

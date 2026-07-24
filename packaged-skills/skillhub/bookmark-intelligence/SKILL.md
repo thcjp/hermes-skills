@@ -1,7 +1,7 @@
 ---
 slug: "bookmark-intelligence"
 name: "bookmark-intelligence"
-version: "1.0.0"
+version: 1.0.1
 displayName: "书签智析专业版"
 summary: "自动监控X书签、抓取链接文章、AI提取关键概念与行动项,关联个人项目并推送高价值洞察。"
 license: "Proprietary"

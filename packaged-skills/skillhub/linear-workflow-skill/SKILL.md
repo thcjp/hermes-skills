@@ -1,7 +1,7 @@
 ---
 slug: "linear-workflow-skill"
 name: "linear-workflow-skill"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Linear工作流(专业版)"
 summary: "全功能Linear工作流工具，支持冲刺规划、依赖链管理、批量操作与迭代报告"
 license: "Proprietary"

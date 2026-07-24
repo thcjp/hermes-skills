@@ -1,7 +1,7 @@
 ---
 slug: whatsapp-msg-manager-free
 name: whatsapp-msg-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: WhatsApp消息管理-免费版
 summary: 发送WhatsApp文本消息、查看号码与模板,适合个人用户的轻量消息管理工具
 license: Proprietary

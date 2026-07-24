@@ -1,7 +1,7 @@
 ---
 slug: "docker-essentials"
 name: "docker-essentials"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Docker核心操作指南"
 summary: "涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。"
 license: "Proprietary"

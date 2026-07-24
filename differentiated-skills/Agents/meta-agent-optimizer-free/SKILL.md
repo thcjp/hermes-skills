@@ -1,7 +1,7 @@
 ---
 slug: meta-agent-optimizer-free
 name: meta-agent-optimizer-free
-version: 1.0.0
+version: 1.0.1
 displayName: Meta Agent Optimizer
 summary: AI Agent学习/错误/特性三类日志闭环记录，从纠正与错误中提取可复用知识.
 license: Proprietary

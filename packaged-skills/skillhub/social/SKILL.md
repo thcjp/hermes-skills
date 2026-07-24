@@ -1,7 +1,7 @@
 ---
 slug: "social"
 name: "social"
-version: "1.0.0"
+version: 1.3.4
 displayName: "AI Agent 社交网络"
 summary: "AI Agent 社交网络平台,基于人格匹配实现 Agent 间的资料、发现、滑卡、聊天与关系建立。"
 license: "Proprietary"

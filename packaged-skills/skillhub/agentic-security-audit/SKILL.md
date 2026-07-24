@@ -1,7 +1,7 @@
 ---
 slug: "agentic-security-audit"
 name: "agentic-security-audit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Agentic Security Aud"
 summary: "审计代码库/基础设施/Agent AI系统安全,覆盖传统与新型风险,一键出报告"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "iris-code-formatter"
 name: "iris-code-formatter"
-version: "3.1.0"
+version: 3.1.1
 displayName: "iris-code-formatter"
 summary: "对InterSystems IRIS/Cache ObjectScript代码进行格式化检查、审查和自动修正。 当用户需要格式化IRIS代码、检查代码规范合规性、审查代码质量或修正不符合规范的代..."
 license: "Proprietary"

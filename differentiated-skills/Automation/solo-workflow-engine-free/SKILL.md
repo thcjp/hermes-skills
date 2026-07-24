@@ -1,7 +1,7 @@
 ---
 slug: solo-workflow-engine-free
 name: solo-workflow-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: Solo Workflow Engine
 summary: 独立开发者的无代码自动化引擎，七步法识别、设计、构建、维护自动化工作流.
 license: Proprietary

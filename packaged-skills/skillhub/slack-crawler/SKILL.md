@@ -1,7 +1,7 @@
 ---
 slug: "slack-crawler"
 name: "slack-crawler"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Slack爬虫工具Pro"
 summary: "企业级Slack归档方案，含API同步、线程完整化、定时调度、增量更新与数据导出。"
 license: "Proprietary"

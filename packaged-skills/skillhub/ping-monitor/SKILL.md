@@ -1,7 +1,7 @@
 ---
 slug: "ping-monitor"
 name: "ping-monitor"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Ping Monitor"
 summary: "对主机/手机/守护进程做ICMP健康检查"
 license: "Proprietary"

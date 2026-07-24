@@ -1,7 +1,7 @@
 ---
 slug: "sql-toolkit"
 name: "sql-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "SQL Toolkit"
 summary: "关系型数据库操作工具箱，覆盖SQLite/PostgreSQL/MySQL的查询、设计、迁移与优化"
 license: "Proprietary"

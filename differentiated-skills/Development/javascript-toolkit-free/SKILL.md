@@ -1,7 +1,7 @@
 ---
 slug: javascript-toolkit-free
 name: javascript-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: JavaScript工具包免费版
 summary: JavaScript 陷阱防范与优选实践指南，覆盖异步、类型转换、闭包等核心场景.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "weiyun-skills"
 name: "weiyun-skills"
-version: "1.0.10"
+version: 1.0.11
 displayName: "Weiyun Skills"
 summary: "微云技能集合,提供内容生成与专业风格规范,支持多种变体处理,付费版独享批量与高级功能。"
 license: "Proprietary"

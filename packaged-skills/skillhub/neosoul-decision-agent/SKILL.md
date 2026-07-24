@@ -1,7 +1,7 @@
 ---
 slug: "neosoul-decision-agent"
 name: "neosoul-decision-agent"
-version: "1.0.0"
+version: 1.0.1
 displayName: "自主决策代理"
 summary: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好"
 license: "Proprietary"

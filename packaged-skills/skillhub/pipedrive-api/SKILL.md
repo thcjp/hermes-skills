@@ -1,7 +1,7 @@
 ---
 slug: "pipedrive-api"
 name: "pipedrive-api"
-version: "1.0.4"
+version: 1.0.5
 displayName: "Pipedrive"
 summary: "Pipedrive API托管OAuth,管交易/联系人/机构/活动"
 license: "Proprietary"

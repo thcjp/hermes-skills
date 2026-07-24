@@ -1,7 +1,7 @@
 ---
 slug: "github-api"
 name: "github-api"
-version: "1.0.7"
+version: 1.0.8
 displayName: "GitHub"
 summary: "经Maton托管OAuth/API接入GitHub,含适当权限范围"
 license: "Proprietary"

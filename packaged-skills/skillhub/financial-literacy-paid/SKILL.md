@@ -1,7 +1,7 @@
 ---
 slug: "financial-literacy-paid"
 name: "financial-literacy-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "金融素养专业版"
 summary: "专业金融教育与理财规划系统，支持个性化方案、认证培训与企业内训。"
 license: "Proprietary"

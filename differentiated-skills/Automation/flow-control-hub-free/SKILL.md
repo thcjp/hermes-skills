@@ -1,7 +1,7 @@
 ---
 slug: flow-control-hub-free
 name: flow-control-hub-free
-version: 1.0.0
+version: 1.0.1
 displayName: 桌面流程控制中枢(免费版)
 summary: 桌面自动化流程控制中枢免费版，提供鼠标、键盘、屏幕截图等核心自动化能力，快速上手RPA任务.
 license: Proprietary

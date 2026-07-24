@@ -1,7 +1,7 @@
 ---
 slug: "podcast-chaptering"
 name: "podcast-chaptering"
-version: "1.0.0"
+version: 1.0.1
 displayName: "播客章节工具专业版"
 summary: "企业级播客章节工具,支持批量处理、社媒切片文案、多格式输出与API集成,适配生产流水线。"
 license: "Proprietary"

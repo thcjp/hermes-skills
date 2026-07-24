@@ -1,7 +1,7 @@
 ---
 slug: whatsapp-style-guide-free
 name: whatsapp-style-guide-free
-version: 1.0.0
+version: 1.0.1
 displayName: WhatsApp样式指南-免费版
 summary: WhatsApp消息格式化规范指南,涵盖核心语法规则与常见模式速查
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "universal-translate-paid"
 name: "universal-translate-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "通用翻译工具(专业版)"
 summary: "面向团队的企业级本地化平台,含批量翻译、术语库、对话模式与CI集成,支持多文件并行。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: swarm-coder-free
 name: swarm-coder-free
-version: 1.0.0
+version: 1.0.1
 displayName: 集群编码器(免费版)
 summary: AI Agent子代理分派开发系统，每任务新代理+两阶段review，高质量快速迭代.
 license: Proprietary

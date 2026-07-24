@@ -1,7 +1,7 @@
 ---
 slug: api-magic-gen-free
 name: api-magic-gen-free
-version: 1.0.0
+version: 1.0.1
 displayName: 接口魔法生成免费版
 summary: 基于magic-api框架的接口快速生成工具，通过Web UI编写脚本自动映射HTTP接口，无需Controller/Service/Dao.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: pg-job-queue-free
 name: pg-job-queue-free
-version: 1.0.0
+version: 1.0.1
 displayName: PG任务队列(免费版)
 summary: 基于`PostgreSQL`的轻量任务队列，支持优先级调度、批量领取与进度跟踪，单机与小型团队适用.
 license: Proprietary

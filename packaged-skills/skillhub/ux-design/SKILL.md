@@ -1,7 +1,7 @@
 ---
 slug: "ux-design"
 name: "ux-design"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UX设计工具专业版"
 summary: "完整UX方法论+用户研究+WCAG合规+状态机设计+企业UX审计,面向UX团队的专业体验设计引擎"
 license: "Proprietary"

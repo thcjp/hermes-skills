@@ -1,7 +1,7 @@
 ---
 slug: "go-linter-configuration"
 name: "go-linter-configuration"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Go Linter Configurat"
 summary: "配置排障golangci-lint,处理导入与类型检查问题"
 license: "Proprietary"

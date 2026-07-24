@@ -1,7 +1,7 @@
 ---
 slug: emoji-toolkit-free
 name: emoji-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 表情符号工具箱
 summary: 表情符号编码解码工具，支持Unicode变体选择器隐藏消息、代币编码与元数据解析.
 license: Proprietary

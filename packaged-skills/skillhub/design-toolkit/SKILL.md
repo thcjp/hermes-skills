@@ -1,7 +1,7 @@
 ---
 slug: "design-toolkit"
 name: "design-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "设计偏好工具箱-专业版"
 summary: "企业级视觉偏好管理系统，支持多媒介、品牌系统、团队协作与批量设计生成。"
 license: "Proprietary"

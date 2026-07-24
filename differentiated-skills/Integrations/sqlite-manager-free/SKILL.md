@@ -1,7 +1,7 @@
 ---
 slug: sqlite-manager-free
 name: sqlite-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: SQLite管理(免费版)
 summary: 面向AI Agent的SQLite管理工具免费版，覆盖并发、外键、类型、Pragma、索引、备份等核心场景.
 license: Proprietary

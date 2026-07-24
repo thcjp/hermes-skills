@@ -1,7 +1,7 @@
 ---
 slug: "javascript-skills"
 name: "javascript-skills"
-version: "1.0.2"
+version: 1.0.3
 displayName: "JavaScript"
 summary: "综合JavaScript风格指南,激活即供最佳实践"
 license: "Proprietary"

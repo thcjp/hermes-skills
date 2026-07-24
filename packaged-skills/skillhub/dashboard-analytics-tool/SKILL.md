@@ -2,7 +2,7 @@
 name: "dashboard-analytics-tool"
 slug: "dashboard-analytics-tool"
 displayName: "仪表盘分析工具"
-version: "1.0.0"
+version: 1.7.4
 summary: "封装仪表盘分析API,请求参数直转响应数据,付费版独享批量与高级配置"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.

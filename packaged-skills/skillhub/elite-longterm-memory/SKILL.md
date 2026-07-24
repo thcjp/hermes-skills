@@ -1,7 +1,7 @@
 ---
 slug: "elite-longterm-memory"
 name: "elite-longterm-memory"
-version: "1.2.3"
+version: 1.2.4
 displayName: "长期记忆系统"
 summary: "六层记忆架构,从会话状态到云端备份,结合WAL协议与向量检索。"
 license: "Proprietary"

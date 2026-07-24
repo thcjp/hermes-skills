@@ -1,7 +1,7 @@
 ---
 slug: "workflow-splitter"
 name: "workflow-splitter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "工作流分解器(专业版)"
 summary: "全功能任务拆解引擎，含智能算法、多模型并行编排、并行执行、性能分析与模板库。"
 license: "Proprietary"

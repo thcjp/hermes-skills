@@ -1,7 +1,7 @@
 ---
 slug: task-toolkit-free
 name: task-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 任务工具包基础版
 summary: 个人任务与日程管理工具,支持添加、查询、修改与归档任务
 license: Proprietary

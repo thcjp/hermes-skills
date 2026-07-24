@@ -1,7 +1,7 @@
 ---
 slug: "git-essentials-free"
 name: "git-essentials-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Git基础版"
 summary: "Git 版本控制基础能力，覆盖常用命令、分支管理与协作工作流，适合日常提交与团队协作。"
 license: "MIT"

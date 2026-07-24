@@ -1,7 +1,7 @@
 ---
 slug: "csv-handler"
 name: "csv-handler"
-version: "1.0.0"
+version: 2.1.1
 displayName: "CSV文件处理专家"
 summary: "自动检测编码与分隔符，清洗、合并、拆分、转换CSV数据，支持进度计划与成本数据专用解析"
 license: "Proprietary"

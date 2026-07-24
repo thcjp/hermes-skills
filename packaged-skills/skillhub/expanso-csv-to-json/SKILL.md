@@ -1,7 +1,7 @@
 ---
 slug: "expanso-csv-to-json"
 name: "expanso-csv-to-json"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Expanso csv-to-json"
 summary: "用Expanso Edge CLI/MCP把CSV转JSON对象数组"
 license: "Proprietary"

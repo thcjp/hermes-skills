@@ -1,7 +1,7 @@
 ---
 slug: jira-toolkit-free
 name: jira-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Jira 事务工具包基础版
 summary: 通过自然语言与 Jira 交互,支持 CLI 与 MCP server 双后端,管理事务的创建、查询与流转
 license: Proprietary

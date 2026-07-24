@@ -1,7 +1,7 @@
 ---
 slug: seo-rank-monopolizer
 name: seo-rank-monopolizer
-version: "1.1.0"
+version: 1.0.1
 displayName: "AI搜索占位师"
 summary: "AI搜索时代品牌霸屏,5维GEO评分+JSON-LD注入+评分门控,提升AI引用率"
 license: Proprietary

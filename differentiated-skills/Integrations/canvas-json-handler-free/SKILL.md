@@ -1,7 +1,7 @@
 ---
 slug: canvas-json-handler-free
 name: canvas-json-handler-free
-version: 1.0.0
+version: 1.0.1
 displayName: 画布JSON处理免费版
 summary: 面向JSON Canvas(.canvas)文件的轻量级处理工具，支持节点、边、分组的创建与编辑校验.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: cron-expert-free
 name: cron-expert-free
-version: 1.0.0
+version: 1.0.1
 displayName: cron优选实践专家(免费版)
 summary: cron定时系统优选实践指南免费版，含自唤醒规则、时区锁定、基础提醒模式、常见陷阱规避.
 license: Proprietary

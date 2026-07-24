@@ -1,7 +1,7 @@
 ---
 slug: stripe-payment-integrator
 name: stripe-payment-integrator
-version: 1.1.0
+version: 1.0.1
 displayName: 支付集成专家
 summary: Stripe支付全链路集成,从支付意图到订阅分账,安全合规少踩坑
 license: Proprietary

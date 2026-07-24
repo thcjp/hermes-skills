@@ -1,7 +1,7 @@
 ---
 slug: telegram-msg-toolkit-free
 name: telegram-msg-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Telegram消息工具箱(免费版)
 summary: Telegram Bot 消息免费版：文本/图片/文件/投票发送，聊天信息查询与基础Bot命令管理.
 license: Proprietary

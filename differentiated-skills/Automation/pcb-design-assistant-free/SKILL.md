@@ -1,7 +1,7 @@
 ---
 slug: pcb-design-assistant-free
 name: pcb-design-assistant-free
-version: 1.0.0
+version: 1.0.1
 displayName: PCB设计助手(免费版)
 summary: 面向JLC EDA/EasyEDA的电路设计副驾驶，单页原理图绘制、元件搜索、基础质量门检查，快速产出可打板方案.
 license: Proprietary

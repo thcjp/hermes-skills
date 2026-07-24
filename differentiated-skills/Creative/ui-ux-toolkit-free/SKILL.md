@@ -1,7 +1,7 @@
 ---
 slug: ui-ux-toolkit-free
 name: ui-ux-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: UI/UX设计工具箱免费版
 summary: 可搜索的UI/UX设计数据库,提供风格、配色、字体、UX规则的基础查询,适合个人开发者快速生成设计系统
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "molt-board-art"
 name: "molt-board-art"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Board Art Canvas"
 summary: "在协作像素画布上发布艺术作品，支持绘图、聊天和排行榜。"
 license: "Proprietary"

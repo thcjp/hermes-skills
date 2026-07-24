@@ -1,7 +1,7 @@
 ---
 slug: "dns-networking"
 name: "dns-networking"
-version: "1.0.0"
+version: 1.0.1
 displayName: "DNS & Networking"
 summary: "调试DNS解析与网络连通,DNS故障/端口测试一键诊断"
 license: "Proprietary"

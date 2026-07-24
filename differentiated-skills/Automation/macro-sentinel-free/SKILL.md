@@ -1,7 +1,7 @@
 ---
 slug: macro-sentinel-free
 name: macro-sentinel-free
-version: 1.0.0
+version: 1.0.1
 displayName: 宏观哨兵(免费版)
 summary: 每日宏观数据自动采集与整理，覆盖国内外核心数据源，生成结构化简报，60秒上手.
 license: Proprietary

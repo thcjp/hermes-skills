@@ -1,7 +1,7 @@
 ---
 slug: "py-data-analyzer"
 name: "py-data-analyzer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Python数据分析(专业版)"
 summary: "企业级Python数据分析方案，支持机器学习建模、时间序列预测、大数据处理与自动化报表。"
 license: "Proprietary"

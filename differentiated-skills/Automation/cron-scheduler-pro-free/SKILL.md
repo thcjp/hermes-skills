@@ -1,7 +1,7 @@
 ---
 slug: cron-scheduler-pro-free
 name: cron-scheduler-pro-free
-version: 1.0.0
+version: 1.0.1
 displayName: Cron Scheduler Pro
 summary: 本地优先的定时任务调度引擎免费版，支持每日/每周/每月/间隔四种调度模式与任务生命周期管理.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "node-connect"
 name: "node-connect"
-version: "1.0.0"
+version: 1.0.1
 displayName: "node-connect"
 summary: "诊断SkillHub节点连接与配对失败(Android/iOS/macOS)"
 license: "Proprietary"

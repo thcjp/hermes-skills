@@ -1,7 +1,7 @@
 ---
 slug: google-workspace-cli-free
 name: google-workspace-cli-free
-version: 1.0.0
+version: 1.0.1
 displayName: 谷歌办公命令行免费版
 summary: 轻量级Google Workspace命令行工具,支持Gmail、Calendar、Drive核心操作,适合个人用户日常使用.
 license: Proprietary

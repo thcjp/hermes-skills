@@ -1,7 +1,7 @@
 ---
 slug: "discord-chat"
 name: "discord-chat"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Discord Chat"
 summary: "通过message工具在Discord频道发消息、回复、搜索、读取、回应、编辑与删除"
 license: "Proprietary"

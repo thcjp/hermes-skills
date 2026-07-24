@@ -1,7 +1,7 @@
 ---
 slug: "text-to-sql"
 name: "text-to-sql"
-version: "999.0.0"
+version: 999.0.1
 displayName: "Text To Sql"
 summary: "用户自然语言描述数据需求,生成对应SQL查询"
 license: "Proprietary"

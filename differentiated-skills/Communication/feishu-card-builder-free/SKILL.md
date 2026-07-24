@@ -1,7 +1,7 @@
 ---
 slug: feishu-card-builder-free
 name: feishu-card-builder-free
-version: 1.0.0
+version: 1.0.1
 displayName: 飞书卡片免费版
 summary: 飞书富文本卡片消息构建工具，支持Markdown与按钮交互
 license: Proprietary

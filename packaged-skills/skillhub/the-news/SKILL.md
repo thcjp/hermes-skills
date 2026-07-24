@@ -1,7 +1,7 @@
 ---
 slug: "the-news"
 name: "the-news"
-version: "1.0.17"
+version: 1.0.18
 displayName: "The News"
 summary: "给Agent实时与归档访问20国头版头条"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "solo-audit"
 name: "solo-audit"
-version: "1.4.1"
+version: 1.4.2
 displayName: "Audit"
 summary: "知识库健康检查,断链/缺frontmatter/标签不一致/封面"
 license: "Proprietary"

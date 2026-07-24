@@ -1,7 +1,7 @@
 ---
 slug: azure-cli-toolkit-free
 name: azure-cli-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Azure命令行工具免费版
 summary: Azure云平台命令行管理工具,支持虚拟机、存储、网络等核心资源的基本操作
 license: Proprietary

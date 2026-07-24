@@ -1,7 +1,7 @@
 ---
 slug: "photo-webcam"
 name: "photo-webcam"
-version: "1.0.6"
+version: 1.0.7
 displayName: "Photo Webcam"
 summary: "列出并抓取网络摄像头快照(尤其foto-webcam.eu)"
 license: "Proprietary"

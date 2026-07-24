@@ -1,7 +1,7 @@
 ---
 slug: "figma-studio"
 name: "figma-studio"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Figma工作室(专业版)"
 summary: "企业级Figma设计协作工具，支持批量导出、Webhook管理、设计变更监控与团队资源治理。"
 license: "Proprietary"

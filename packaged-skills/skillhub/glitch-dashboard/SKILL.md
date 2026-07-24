@@ -1,7 +1,7 @@
 ---
 slug: "glitch-dashboard"
 name: "glitch-dashboard"
-version: "2026.2.18"
+version: 2026.2.19
 displayName: "Dashboard"
 summary: "统一Web仪表盘,管任务队列/监控指标/查ZeroTier状态"
 license: "Proprietary"

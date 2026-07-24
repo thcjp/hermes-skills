@@ -1,7 +1,7 @@
 ---
 slug: "bailian-web-search"
 name: "bailian-web-search"
-version: "1.0.4"
+version: 1.0.5
 displayName: "Bailian Web Search"
 summary: "调百炼(阿里ModelStudio)API做AI优化网搜,多源精炼结果"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "write-a-skill"
 name: "write-a-skill"
-version: "2.0.0"
+version: 202.0.21
 displayName: "技能创建工具"
 summary: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "book-painter"
 name: "book-painter"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Book Painter"
 summary: "经Lokuli协议预约油漆工,找到并下单本地画师服务"
 license: "Proprietary"

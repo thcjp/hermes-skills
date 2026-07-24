@@ -1,7 +1,7 @@
 ---
 slug: "call-bridge"
 name: "call-bridge"
-version: "1.0.0"
+version: 1.0.1
 displayName: "通话桥接专业版"
 summary: "企业级AI电话代理平台，支持并行外呼、实时转接、呼入号码、通话活动管理与个性化语音配置"
 license: "Proprietary"

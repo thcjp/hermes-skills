@@ -1,7 +1,7 @@
 ---
 slug: aws-agent-orchestrator-free
 name: aws-agent-orchestrator-free
-version: 1.0.0
+version: 1.0.1
 displayName: AWS智能体编排免费版
 summary: 基于AWS Bedrock AgentCore与LangGraph的多智能体编排部署助手，免费体验核心编排能力，适合个人开发者快速上手.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: cron-mate-free
 name: cron-mate-free
-version: 1.0.0
+version: 1.0.1
 displayName: cron表达式助手(免费版)
 summary: cron表达式辅助编写与验证工具免费版，支持自然语言转表达式、常用模板速查、基础语法验证.
 license: Proprietary

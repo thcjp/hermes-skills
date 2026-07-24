@@ -1,7 +1,7 @@
 ---
 slug: "pyx-scanner"
 name: "pyx-scanner"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Skill安全扫描(专业版)"
 summary: "企业级Skill安全检测方案，支持批量扫描、持续监控、自定义策略与团队协作审计。"
 license: "Proprietary"

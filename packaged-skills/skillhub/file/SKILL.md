@@ -1,7 +1,7 @@
 ---
 slug: "file"
 name: "file"
-version: "1.0.0"
+version: 1.0.1
 displayName: "文件管理整理"
 summary: "文件与文件夹管理工具，覆盖命名规范、文件夹结构、文件检索与关键文档归档"
 license: "Proprietary"

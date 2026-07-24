@@ -1,7 +1,7 @@
 ---
 slug: word-toolkit-free
 name: word-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Word文档控制免费版
 summary: 通过osascript控制Word应用，支持文档操作、选区编辑、评论与导出，适合个人macOS用户.
 license: Proprietary

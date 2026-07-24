@@ -1,7 +1,7 @@
 ---
 slug: "video-frames-paid"
 name: "video-frames-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "视频帧提取-专业版"
 summary: "企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: context-vault-manager-free
 name: context-vault-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: Context Vault Manage
 summary: 智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%.
 license: Proprietary

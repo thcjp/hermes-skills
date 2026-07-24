@@ -1,7 +1,7 @@
 ---
 slug: "github-repos"
 name: "github-repos"
-version: "1.0.5"
+version: 1.0.6
 displayName: "GitHub"
 summary: "管GitHub仓库/issue/PR/提交/分支/发布/工作流"
 license: "Proprietary"

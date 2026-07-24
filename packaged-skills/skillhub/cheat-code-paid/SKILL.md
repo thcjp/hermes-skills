@@ -1,7 +1,7 @@
 ---
 slug: "cheat-code-paid"
 name: "cheat-code-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "能力扩展工具专业版"
 summary: "企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享"
 license: "Proprietary"

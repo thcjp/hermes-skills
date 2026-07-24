@@ -1,7 +1,7 @@
 ---
 slug: notion-api-toolkit-free
 name: notion-api-toolkit-free
-version: 1.0.2
+version: 1.0.1
 displayName: Notion API工具箱(免费版)
 summary: 轻量化Notion API集成工具,支持OAuth鉴权、页面查询、数据库检索与基础读写,适合个人快速接入Notion工作空间.
 license: Proprietary

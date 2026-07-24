@@ -1,7 +1,7 @@
 ---
 slug: "social-media-scheduler"
 name: "social-media-scheduler"
-version: "1.0.0"
+version: 1.0.1
 displayName: "社媒内容排期"
 summary: "跨平台社媒内容排期助手,生成内容日历、平台优化文案、内容支柱、跨平台复用与三阶标签策略。"
 license: "Proprietary"

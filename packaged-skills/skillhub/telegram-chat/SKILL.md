@@ -1,7 +1,7 @@
 ---
 slug: "telegram-chat"
 name: "telegram-chat"
-version: "1.0.0"
+version: 1.0.1
 displayName: "电报聊天工具专业版"
 summary: "企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。"
 license: "Proprietary"

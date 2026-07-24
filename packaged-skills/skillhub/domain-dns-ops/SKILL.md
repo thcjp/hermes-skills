@@ -1,7 +1,7 @@
 ---
 slug: "domain-dns-ops"
 name: "domain-dns-ops"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Domain Dns Ops"
 summary: "跨Cloudflare/DNSimple/Namecheap做域名DNS运维与区托管"
 license: "Proprietary"

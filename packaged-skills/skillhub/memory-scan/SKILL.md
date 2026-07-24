@@ -1,7 +1,7 @@
 ---
 slug: "memory-scan"
 name: "memory-scan"
-version: "1.0.0"
+version: 1.0.1
 displayName: "记忆安全扫描"
 summary: "扫描AI Agent记忆文件与工作区配置，检测恶意内容、凭证泄漏与注入攻击"
 license: "Proprietary"

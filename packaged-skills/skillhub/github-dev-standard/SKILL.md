@@ -1,7 +1,7 @@
 ---
 slug: "github-dev-standard"
 name: "github-dev-standard"
-version: "1.0.0"
+version: 1.0.1
 displayName: "项目开发标准专业版"
 summary: "企业级项目开发标准方案，含自动化验收、CI 集成、团队协作与质量度量。"
 license: "Proprietary"

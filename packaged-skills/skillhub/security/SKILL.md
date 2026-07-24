@@ -1,7 +1,7 @@
 ---
 slug: "security"
 name: "security"
-version: "1.0.0"
+version: 1.0.13
 displayName: "GoPlus安全扫描"
 summary: "GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: book-illustrator-free
 name: book-illustrator-free
-version: 1.0.0
+version: 1.0.1
 displayName: 书籍插画助手
 summary: 书籍插画创作与管理工具，支持插画需求规划、风格匹配、创作指导与项目管理全流程.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: xml-toolkit-free
 name: xml-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: XML处理工具免费版
 summary: 解析、生成与转换XML，正确处理命名空间与编码，适合个人开发者日常XML任务.
 license: Proprietary

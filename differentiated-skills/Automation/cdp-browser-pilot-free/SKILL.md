@@ -1,7 +1,7 @@
 ---
 slug: cdp-browser-pilot-free
 name: cdp-browser-pilot-free
-version: 1.0.0
+version: 1.0.1
 displayName: CDP浏览器领航(免费版)
 summary: 通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化，含导航、点击、截图与数据提取.
 license: Proprietary

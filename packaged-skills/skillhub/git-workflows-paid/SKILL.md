@@ -1,7 +1,7 @@
 ---
 slug: "git-workflows-paid"
 name: "git-workflows-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Git高级操作专业版"
 summary: "企业级 Git 进阶方案，支持子树子模块、稀疏检出、大型单体仓库与冲突自动记忆。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "bilibili-helper"
 name: "bilibili-helper"
-version: "1.0.0"
+version: 2.3.6
 displayName: "B站爆款内容生产引擎"
 summary: "播放量上不去?B站运营助手一键生成5个标题方案+高曝光标签+口播脚本,覆盖5/10/15分钟时长,投稿策略精准匹配分区。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "expanso-log-sanitize"
 name: "expanso-log-sanitize"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Expanso log-sanitize"
 summary: "清洗日志,去除密码/令牌等敏感模式,防泄露"
 license: "Proprietary"

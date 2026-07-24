@@ -1,7 +1,7 @@
 ---
 slug: token-economist-free
 name: token-economist-free
-version: 1.0.0
+version: 1.0.1
 displayName: Token经济学家(免费版)
 summary: AI Agent的Token成本优化器，智能压缩上下文与语义缓存，降低50-70%的Token消耗.
 license: Proprietary

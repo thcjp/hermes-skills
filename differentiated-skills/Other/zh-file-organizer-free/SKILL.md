@@ -1,7 +1,7 @@
 ---
 slug: zh-file-organizer-free
 name: zh-file-organizer-free
-version: 1.0.0
+version: 1.0.1
 displayName: 中文文件整理器
 summary: 专为中文用户设计的文件分类整理工具，按图片/文档/代码等类型自动归类，支持中文路径.
 license: Proprietary

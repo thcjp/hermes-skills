@@ -1,7 +1,7 @@
 ---
 slug: "pg-job-queue"
 name: "pg-job-queue"
-version: "1.0.0"
+version: 1.0.1
 displayName: "PG任务队列(专业版)"
 summary: "基于`PostgreSQL`的企业级任务队列，支持DAG编排、分片扩展、死信队列与高可用方案。"
 license: "Proprietary"

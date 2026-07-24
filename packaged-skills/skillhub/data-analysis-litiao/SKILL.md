@@ -1,7 +1,7 @@
 ---
 slug: "data-analysis-litiao"
 name: "data-analysis-litiao"
-version: "1.0.0"
+version: 1.0.1
 displayName: "数据分析理调"
 summary: "数据分析方法论框架，覆盖统计严谨性、陷阱识别、方法选择与输出规范"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "aws-toolkit"
 name: "aws-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AWS部署专业版"
 summary: "企业级AWS全服务管理平台，支持多区域、IaC、合规审计与成本优化。"
 license: "Proprietary"

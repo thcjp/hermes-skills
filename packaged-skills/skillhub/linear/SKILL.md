@@ -1,7 +1,7 @@
 ---
 slug: "linear"
 name: "linear"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Linear"
 summary: "查询管理Linear issue/项目/团队工作流"
 license: "Proprietary"

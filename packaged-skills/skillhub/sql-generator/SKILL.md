@@ -1,7 +1,7 @@
 ---
 slug: "sql-generator"
 name: "sql-generator"
-version: "2.3.7"
+version: 2.3.8
 displayName: "Sql Generator"
 summary: "SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。SQL generator from natural"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "game-asset-gen"
 name: "game-asset-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "游戏资产生成-专业版"
 summary: "全栈游戏资产生成引擎，支持2D/3D资产、完整GDD、批量生成与多艺术风格。"
 license: "Proprietary"

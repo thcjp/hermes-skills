@@ -1,7 +1,7 @@
 ---
 slug: diagram-master-free
 name: diagram-master-free
-version: 1.0.0
+version: 1.0.1
 displayName: 图表制作大师
 summary: 专业SVG图表生成工具，支持架构图、流程图、时序图等九种图表类型，暗色主题自包含输出.
 license: Proprietary

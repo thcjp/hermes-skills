@@ -1,7 +1,7 @@
 ---
 slug: "tardis"
 name: "tardis"
-version: "1.2.0"
+version: 1.2.1
 displayName: "TARDIS"
 summary: "核心时间追踪(含较广密钥加载需谨慎)"
 license: "Proprietary"

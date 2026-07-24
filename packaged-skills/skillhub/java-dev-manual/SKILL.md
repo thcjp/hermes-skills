@@ -1,7 +1,7 @@
 ---
 slug: "java-dev-manual"
 name: "java-dev-manual"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Java开发手册专业版"
 summary: "企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: excel-expert-free
 name: excel-expert-free
-version: 1.0.0
+version: 1.0.1
 displayName: Excel专家免费版
 summary: 跨平台表格诊断引擎，按问题类型选择优选工具路径，给出公式、透视表或清洗流程方案.
 license: Proprietary

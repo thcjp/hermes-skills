@@ -1,7 +1,7 @@
 ---
 slug: "docker"
 name: "docker"
-version: "1.0.4"
+version: 1.0.5
 displayName: "Docker"
 summary: "管Docker容器/镜像/Compose/网络/卷,含调试与生产加固"
 license: "Proprietary"

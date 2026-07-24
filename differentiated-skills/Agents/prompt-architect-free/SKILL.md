@@ -1,7 +1,7 @@
 ---
 slug: prompt-architect-free
 name: prompt-architect-free
-version: 1.0.0
+version: 1.0.1
 displayName: 提示词架构师免费版
 summary: 解决 Prompt 答非所问、任务拆解混乱、Agent Loop 选型盲目的免费提示词工程工具
 license: Proprietary

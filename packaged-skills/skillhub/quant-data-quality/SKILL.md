@@ -1,7 +1,7 @@
 ---
 slug: "quant-data-quality"
 name: "quant-data-quality"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Quant Data Quality"
 summary: "数据质量检查技能。当用户说\"
 license: "Proprietary"

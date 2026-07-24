@@ -1,7 +1,7 @@
 ---
 slug: "piper-tts-engine"
 name: "piper-tts-engine"
-version: "1.0.0"
+version: 1.0.1
 displayName: "本地语音合成专业版"
 summary: "企业级本地 TTS 引擎，支持批量合成、自定义音色训练、多语言、SSML 标记与 API 服务化。"
 license: "Proprietary"

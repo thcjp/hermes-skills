@@ -1,7 +1,7 @@
 ---
 slug: chart-craft-free
 name: chart-craft-free
-version: 1.0.0
+version: 1.0.1
 displayName: 图表工坊免费版
 summary: 本地优先的图表生成引擎，支持柱状图、折线图、饼图、散点图四种基础类型与智能图表推荐
 license: Proprietary

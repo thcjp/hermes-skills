@@ -1,7 +1,7 @@
 ---
 slug: "excel-craft"
 name: "excel-craft"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Excel工艺专业版"
 summary: "企业级 Excel 生成引擎，含批量处理、条件格式、高级图表、模板系统与数据源对接。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: evolve-loop-free
 name: evolve-loop-free
-version: 1.0.0
+version: 1.0.1
 displayName: 进化循环(免费版)
 summary: AI Agent自改进PDCA闭环引擎，三层记忆分层存储，从纠正与反思中持续进化.
 license: Proprietary

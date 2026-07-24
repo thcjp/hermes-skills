@@ -1,7 +1,7 @@
 ---
 slug: "live-stream-script"
 name: "live-stream-script"
-version: "2.0.0"
+version: 2.0.1
 displayName: "Live Stream Script"
 summary: "直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Live stream script generator"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "dns-lookup"
 name: "dns-lookup"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Dns Lookup"
 summary: "用bind-utils的dig把主机名解析为IP,排查域名"
 license: "Proprietary"

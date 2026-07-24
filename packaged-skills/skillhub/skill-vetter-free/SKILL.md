@@ -1,7 +1,7 @@
 ---
 slug: "skill-vetter-free"
 name: "skill-vetter-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Skill Vetter Free"
 summary: "基础版 AI Agent 技能审查工具，执行来源检查和 RED FLAGS 检测。"
 license: "MIT"

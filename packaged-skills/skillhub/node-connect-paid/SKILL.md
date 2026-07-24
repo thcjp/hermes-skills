@@ -1,7 +1,7 @@
 ---
 slug: "node-connect-paid"
 name: "node-connect-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "节点连接工具(专业版)"
 summary: "全拓扑节点连接诊断,含尾网/公网/远程网关、批量配对、审计日志与自动修复。"
 license: "Proprietary"

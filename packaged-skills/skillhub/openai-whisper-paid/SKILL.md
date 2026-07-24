@@ -1,7 +1,7 @@
 ---
 slug: "openai-whisper-paid"
 name: "openai-whisper-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Whisper语音转文字专业版"
 summary: "企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。"
 license: "Proprietary"

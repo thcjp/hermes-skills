@@ -1,7 +1,7 @@
 ---
 slug: "thesis-helper"
 name: "thesis-helper"
-version: "2.0.0"
+version: 2.0.1
 displayName: "Thesis Helper"
 summary: "论文写作助手。论文大纲生成、文献综述框架、摘要生成、引用格式转换、格式规范检查、答辩准备。Thesis helper with outline generation,"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "baoyu-diagram"
 name: "baoyu-diagram"
-version: "1.117.3"
+version: 1.117.4
 displayName: "Baoyu Diagram"
 summary: "一句话生成专业暗色SVG图,架构/流程/时序全覆盖,告别丑图"
 license: "Proprietary"

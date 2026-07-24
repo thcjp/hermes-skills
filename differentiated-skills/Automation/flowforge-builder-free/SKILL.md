@@ -1,7 +1,7 @@
 ---
 slug: flowforge-builder-free
 name: flowforge-builder-free
-version: 1.0.0
+version: 1.0.1
 displayName: 流程锻造器(免费版)
 summary: 用JSON定义自动化工作流，支持定时触发、文件监控、手动触发三种触发方式.
 license: Proprietary

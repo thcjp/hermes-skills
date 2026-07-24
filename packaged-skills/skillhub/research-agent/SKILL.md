@@ -1,7 +1,7 @@
 ---
 slug: "research-agent"
 name: "research-agent"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Research"
 summary: "开放式主题研究,构建活的Markdown文档,支持交互(付费增强版)"
 license: "Proprietary"

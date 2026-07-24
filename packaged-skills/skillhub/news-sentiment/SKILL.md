@@ -1,7 +1,7 @@
 ---
 slug: "news-sentiment"
 name: "news-sentiment"
-version: "1.0.0"
+version: 1.0.1
 displayName: "舆情情绪分析专业版"
 summary: "企业级舆情监控工具,支持批量多股票扫描、自定义权重、结构化报告导出与趋势对比分析。"
 license: "Proprietary"

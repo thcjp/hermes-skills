@@ -1,7 +1,7 @@
 ---
 slug: "git-helper"
 name: "git-helper"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Git Helper"
 summary: "常用git操作技能,涵盖status/pull/push/branch/log"
 license: "Proprietary"

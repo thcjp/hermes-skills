@@ -1,7 +1,7 @@
 ---
 slug: "css"
 name: "css"
-version: "1.0.0"
+version: 1.0.2
 displayName: "CSS避坑指南"
 summary: "规避堆叠上下文、布局怪癖与现代CSS特性误用,覆盖flex/grid/响应式/性能。"
 license: "Proprietary"

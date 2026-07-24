@@ -1,7 +1,7 @@
 ---
 slug: "translate-hub"
 name: "translate-hub"
-version: "1.0.0"
+version: 1.0.1
 displayName: "中英翻译中枢(专业版)"
 summary: "企业级多语言翻译专业版，支持批量文档翻译、自定义术语库、翻译记忆库、多语言互译与API集成，覆盖本地化全流程。"
 license: "Proprietary"

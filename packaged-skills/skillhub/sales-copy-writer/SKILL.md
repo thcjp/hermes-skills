@@ -1,7 +1,7 @@
 ---
 slug: sales-copy-writer
 name: sales-copy-writer
-version: "1.1.0"
+version: 1.0.1
 displayName: "卖货文案手"
 summary: "文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案"
 license: Proprietary

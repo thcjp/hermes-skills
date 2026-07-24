@@ -1,7 +1,7 @@
 ---
 slug: "xlsx-handler"
 name: "xlsx-handler"
-version: "1.0.0"
+version: 1.0.1
 displayName: "XLSX处理专业版"
 summary: "企业级 XLSX 读写引擎，含批量处理、大文件流式、公式审计、跨平台兼容与数据源对接。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "podcast-downloader-paid"
 name: "podcast-downloader-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "播客下载工具专业版"
 summary: "企业级播客下载工具,支持批量下载、播放列表订阅、定时同步与多平台扩展,适配生产环境。"
 license: "Proprietary"

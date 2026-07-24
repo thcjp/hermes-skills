@@ -1,7 +1,7 @@
 ---
 slug: discord-master-free
 name: discord-master-free
-version: 1.0.0
+version: 1.0.1
 displayName: Discord开发助手(免费版)
 summary: Discord Bot开发入门指南，覆盖命令注册、消息处理、认证安全等核心能力.
 license: Proprietary

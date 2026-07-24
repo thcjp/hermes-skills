@@ -1,7 +1,7 @@
 ---
 slug: "audio-upload-aioz-stream"
 name: "audio-upload-aioz-stream"
-version: "1.0.0"
+version: 1.0.2
 displayName: "AIOZ音频上传"
 summary: "通过AIOZ Stream API快速上传音频文件，支持默认与自定义编码配置，返回HLS/DASH流媒体链接。"
 license: "Proprietary"

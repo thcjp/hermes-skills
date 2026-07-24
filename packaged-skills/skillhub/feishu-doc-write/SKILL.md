@@ -1,7 +1,7 @@
 ---
 slug: "feishu-doc-write"
 name: "feishu-doc-write"
-version: "1.0.0"
+version: 1.0.1
 displayName: "feishu-doc-write"
 summary: "飞书文档API写入规范,把Markdown转飞书Block结构"
 license: "Proprietary"

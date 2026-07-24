@@ -1,7 +1,7 @@
 ---
 slug: "canvas-json-handler"
 name: "canvas-json-handler"
-version: "1.0.0"
+version: 1.0.1
 displayName: "画布JSON处理专业版"
 summary: "企业级JSON Canvas处理工具，支持批量操作、模板库、自动布局、跨画布合并与智能修复。"
 license: "Proprietary"

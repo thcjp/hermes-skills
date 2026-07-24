@@ -1,7 +1,7 @@
 ---
 slug: task-bot-orchestrator-free
 name: task-bot-orchestrator-free
-version: 1.0.0
+version: 1.0.1
 displayName: 任务编排机器人(免费版)
 summary: 数据处理与定时任务核心能力，覆盖CSV/Excel自动化与基础调度，60秒上手任务编排.
 license: Proprietary

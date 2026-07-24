@@ -1,7 +1,7 @@
 ---
 slug: "interview-simulator"
 name: "interview-simulator"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Interview Simulator"
 summary: "模拟任意角色与经验级别的面试,求职演练"
 license: "Proprietary"

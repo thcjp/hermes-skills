@@ -1,7 +1,7 @@
 ---
 slug: "secure-api-toolkit"
 name: "secure-api-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "安全API工具箱Pro"
 summary: "企业级凭据代理方案，含多SDK、团队金库、审计日志、自定义提供商与合规导出。"
 license: "Proprietary"

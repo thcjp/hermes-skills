@@ -1,7 +1,7 @@
 ---
 slug: "json-repair"
 name: "json-repair"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON修复工具专业版"
 summary: "企业级JSON修复工具，支持批量目录修复、流式处理、自定义规则、修复预览与历史回滚。"
 license: "Proprietary"

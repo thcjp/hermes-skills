@@ -1,7 +1,7 @@
 ---
 slug: cdn-toolkit-free
 name: cdn-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: CDN配置工具包免费版
 summary: CDN配置与优化助手,支持缓存策略设置、基础安全加固与性能诊断,适合个人开发者快速部署CDN.
 license: Proprietary

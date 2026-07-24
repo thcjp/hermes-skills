@@ -1,7 +1,7 @@
 ---
 slug: "ws-agent-browser"
 name: "ws-agent-browser"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Agent Browser"
 summary: "浏览器智能控制。自动化操作、截图、填表、数据抓取。"
 license: "Proprietary"

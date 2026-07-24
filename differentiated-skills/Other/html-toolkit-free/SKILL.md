@@ -1,7 +1,7 @@
 ---
 slug: html-toolkit-free
 name: html-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: HTML 工具箱
 summary: 面向个人开发者的 HTML 常见坑规避工具，覆盖可访问性与表单.
 license: Proprietary

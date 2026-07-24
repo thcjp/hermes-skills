@@ -1,7 +1,7 @@
 ---
 slug: "web-learner"
 name: "web-learner"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Web Learner"
 summary: "自主上网学习技能 - 让 AI 能够主动搜索、浏览和从互联网获取知识。当用户要求了解最新信息、学习新知识、查询新闻、获取某个主题的详细信息，或需要从网络上获取数据时触发此技能。"
 license: "Proprietary"

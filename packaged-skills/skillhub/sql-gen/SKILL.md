@@ -1,7 +1,7 @@
 ---
 slug: "sql-gen"
 name: "sql-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "SQL生成器(专业版)"
 summary: "面向团队的自然语言转SQL专业版，含Schema感知、多表JOIN生成、性能优化建议、迁移脚本与优先支持。"
 license: "Proprietary"

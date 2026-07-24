@@ -1,7 +1,7 @@
 ---
 slug: "golang-toolkit"
 name: "golang-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Go语言工具包专业版"
 summary: "企业级 Go 开发方案，含性能优化、并发模式库、内存治理与构建工具链集成。"
 license: "Proprietary"

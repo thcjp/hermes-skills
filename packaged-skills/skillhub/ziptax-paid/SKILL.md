@@ -1,7 +1,7 @@
 ---
 slug: "ziptax-paid"
 name: "ziptax-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "销售税查询(专业版)"
 summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。"
 license: "Proprietary"

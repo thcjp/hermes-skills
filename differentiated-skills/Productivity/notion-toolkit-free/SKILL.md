@@ -1,7 +1,7 @@
 ---
 slug: notion-toolkit-free
 name: notion-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Notion 工具包基础版
 summary: 通过 Notion API 创建和管理页面、数据库与块,支持搜索、查询与内容更新
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: ai-writing-style-cloner
 name: ai-writing-style-cloner
-version: "1.0.1"
+version: 1.0.1
 displayName: "AI写作分身工厂"
 summary: "5篇文章克隆任意作者文风,14种公式批量产出同风格爆款"
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "model-switching"
 name: "model-switching"
-version: "1.0.0"
+version: 1.0.1
 displayName: "模型切换工具(专业版)"
 summary: "团队级Claude模型切换套件,含成本仪表盘、批量分发、自定义规则与监控告警。"
 license: "Proprietary"

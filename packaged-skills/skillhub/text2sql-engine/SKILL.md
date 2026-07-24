@@ -1,7 +1,7 @@
 ---
 slug: "text2sql-engine"
 name: "text2sql-engine"
-version: "1.0.0"
+version: 1.0.1
 displayName: "自然语言转SQL专业版"
 summary: "全功能NL2SQL引擎，支持复杂多表查询、性能优化、查询解释与替代方案生成"
 license: "Proprietary"

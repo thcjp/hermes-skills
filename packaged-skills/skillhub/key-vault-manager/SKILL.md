@@ -1,7 +1,7 @@
 ---
 slug: "key-vault-manager"
 name: "key-vault-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "密钥保险箱(专业版)"
 summary: "企业级密钥安全管家，支持多保险箱、审计日志、密钥轮换与团队共享"
 license: "Proprietary"

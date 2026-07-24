@@ -1,7 +1,7 @@
 ---
 slug: "security-audit"
 name: "security-audit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Security Audit"
 summary: "SkillHub部署全面安全审计,扫暴露凭据与开放端口"
 license: "Proprietary"

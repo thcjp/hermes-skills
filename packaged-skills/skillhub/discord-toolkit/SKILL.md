@@ -1,7 +1,7 @@
 ---
 slug: "discord-toolkit"
 name: "discord-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Discord工具箱专业版"
 summary: "企业级 Discord 管理工具,支持批量操作、审核管理、角色权限与自定义表情贴纸。"
 license: "Proprietary"

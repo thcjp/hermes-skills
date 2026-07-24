@@ -1,7 +1,7 @@
 ---
 slug: "docker-essentials-v1"
 name: "docker-essentials-v1"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Docker V1迁移专业版"
 summary: "企业级V1迁移工具,支持自动兼容性扫描、批量迁移、配置转换与回滚保障。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "solo-validate"
 name: "solo-validate"
-version: "2.1.1"
+version: 2.1.2
 displayName: "Validate"
 summary: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "tarot-free"
 name: "tarot-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Tarot Free"
 summary: "基础版反思式塔罗抽取，支持单牌阵和基础语言校准，用于情感反思。"
 license: "MIT"

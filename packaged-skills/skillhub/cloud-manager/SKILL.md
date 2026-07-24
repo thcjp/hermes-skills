@@ -1,7 +1,7 @@
 ---
 slug: "cloud-manager"
 name: "cloud-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "云存储管家 专业版"
 summary: "全功能云存储管理，支持多云统一视图、团队共享矩阵与自动化备份规则。"
 license: "Proprietary"

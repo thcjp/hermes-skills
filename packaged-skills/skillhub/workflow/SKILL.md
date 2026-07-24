@@ -1,7 +1,7 @@
 ---
 slug: "workflow"
 name: "workflow"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Workflow"
 summary: "用可复用组件/节点间数据流/状态管理建自动化流水线"
 license: "Proprietary"

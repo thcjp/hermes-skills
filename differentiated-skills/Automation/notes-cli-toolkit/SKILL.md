@@ -1,7 +1,7 @@
 ---
 slug: notes-cli-toolkit
 name: notes-cli-toolkit
-version: 1.0.0
+version: 1.0.1
 displayName: 笔记CLI工具箱
 summary: 解决无头批处理难、frontmatter难改、daily模板乱痛点，用notesmd-cli把笔记玩成数据库
 license: Proprietary

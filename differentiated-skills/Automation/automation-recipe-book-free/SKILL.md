@@ -1,7 +1,7 @@
 ---
 slug: automation-recipe-book-free
 name: automation-recipe-book-free
-version: 1.0.0
+version: 1.0.1
 displayName: 自动化配方手册(免费版)
 summary: 8个开箱即用的自动化场景配方，含新闻摘要、邮件回复、价格监控等，附配方结构与自定义指南.
 license: Proprietary

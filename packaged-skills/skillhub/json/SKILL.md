@@ -1,7 +1,7 @@
 ---
 slug: "json"
 name: "json"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON"
 summary: "高效处理JSON数据结构/API/序列化"
 license: "Proprietary"

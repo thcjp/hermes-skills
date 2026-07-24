@@ -1,7 +1,7 @@
 ---
 slug: "api-connect-hub"
 name: "api-connect-hub"
-version: "1.0.0"
+version: 1.0.1
 displayName: "API连接中心(专业版)"
 summary: "企业级API集成平台，含连接编排、数据同步、Webhook管理、OAuth2刷新与监控告警。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "web-content-fetcher"
 name: "web-content-fetcher"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Web Content Fetcher"
 summary: "网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r.jina.ai - 最稳定 2) markdown.new -"
 license: "Proprietary"

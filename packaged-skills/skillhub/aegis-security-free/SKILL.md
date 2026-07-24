@@ -1,7 +1,7 @@
 ---
 slug: "aegis-security-free"
 name: "aegis-security-free"
-version: "1.2.2"
+version: 1.0.1
 displayName: "区块链安全基础版"
 summary: "基础区块链安全API，地址声誉检查和代币蜜罐检测"
 license: "MIT"

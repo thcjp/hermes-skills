@@ -1,7 +1,7 @@
 ---
 slug: "format-converter"
 name: "format-converter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "数据格式转换(专业版)"
 summary: "全功能数据格式转换平台,支持批量、流式、自定义映射、定时任务与企业数据库导入导出。"
 license: "Proprietary"

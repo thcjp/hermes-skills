@@ -1,7 +1,7 @@
 ---
 slug: "podcast"
 name: "podcast"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Podcast"
 summary: "规划剧集/产音频视频/生成切片,创建并增长播客"
 license: "Proprietary"

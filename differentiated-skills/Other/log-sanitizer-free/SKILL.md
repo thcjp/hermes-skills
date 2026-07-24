@@ -1,7 +1,7 @@
 ---
 slug: log-sanitizer-free
 name: log-sanitizer-free
-version: 1.0.0
+version: 1.0.1
 displayName: 日志脱敏工具
 summary: 扫描日志文件识别并脱敏密码、令牌、密钥等敏感信息，支持正则规则与自定义模式，本地运行零数据外泄.
 license: Proprietary

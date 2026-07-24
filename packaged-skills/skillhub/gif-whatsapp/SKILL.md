@@ -1,7 +1,7 @@
 ---
 slug: "gif-whatsapp"
 name: "gif-whatsapp"
-version: "1.3.0"
+version: 1.3.1
 displayName: "Gif Whatsapp"
 summary: "在WhatsApp搜发GIF,自动处理Tenor转MP4转换"
 license: "Proprietary"

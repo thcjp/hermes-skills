@@ -1,7 +1,7 @@
 ---
 slug: "google-search"
 name: "google-search"
-version: "1.0.0"
+version: 1.0.1
 displayName: "google-search"
 summary: "用Google可编程搜索引擎(PSE)搜实时信息"
 license: "Proprietary"

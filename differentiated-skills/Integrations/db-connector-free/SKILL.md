@@ -1,7 +1,7 @@
 ---
 slug: db-connector-free
 name: db-connector-free
-version: 1.0.0
+version: 1.0.1
 displayName: 数据库连接助手(免费版)
 summary: 面向开发者的数据库连接与基础运维指南，覆盖连接池、事务、索引等常见陷阱与对策.
 license: Proprietary

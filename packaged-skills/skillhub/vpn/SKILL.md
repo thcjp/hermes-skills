@@ -1,7 +1,7 @@
 ---
 slug: "vpn"
 name: "vpn"
-version: "1.0.0"
+version: 1.0.1
 displayName: "VPN"
 summary: "配置排障VPN连接,保障隐私与远程访问"
 license: "Proprietary"

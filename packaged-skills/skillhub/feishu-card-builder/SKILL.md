@@ -1,7 +1,7 @@
 ---
 slug: "feishu-card-builder"
 name: "feishu-card-builder"
-version: "1.0.0"
+version: 1.0.1
 displayName: "飞书卡片专业版"
 summary: "企业级飞书交互卡片与批量推送，支持模板与高级组件"
 license: "Proprietary"

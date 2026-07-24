@@ -1,7 +1,7 @@
 ---
 slug: "chart-craft"
 name: "chart-craft"
-version: "1.0.0"
+version: 1.0.1
 displayName: "图表工坊专业版"
 summary: "企业级图表生成平台，支持12种高级图表类型、自定义模板、批量生成、多格式导出与使用分析"
 license: "Proprietary"

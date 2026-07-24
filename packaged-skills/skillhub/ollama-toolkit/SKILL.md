@@ -1,7 +1,7 @@
 ---
 slug: "ollama-toolkit"
 name: "ollama-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Ollama工具箱(专业版)"
 summary: "全功能本地Ollama AI模型管理工具，支持多轮对话、自定义模型、批量推理与API集成"
 license: "Proprietary"

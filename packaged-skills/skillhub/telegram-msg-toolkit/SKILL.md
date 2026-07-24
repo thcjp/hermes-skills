@@ -1,7 +1,7 @@
 ---
 slug: "telegram-msg-toolkit"
 name: "telegram-msg-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Telegram消息工具箱(专业版)"
 summary: "Telegram Bot 全能力版：批量操作、群组管理、频道运营、审核与Webhook回调。"
 license: "Proprietary"

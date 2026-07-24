@@ -1,7 +1,7 @@
 ---
 slug: "k8s"
 name: "k8s"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Kubernetes"
 summary: "规避Kubernetes常见错误,资源限制/探针/选择器"
 license: "Proprietary"

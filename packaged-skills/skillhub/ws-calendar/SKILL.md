@@ -1,7 +1,7 @@
 ---
 slug: "ws-calendar"
 name: "ws-calendar"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Calendar"
 summary: "Calendar提供创建日程、设置提醒、查看今日/本周安排等核心能力,付费版独享高级功能与批量处理。"
 license: "Proprietary"

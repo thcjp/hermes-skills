@@ -1,7 +1,7 @@
 ---
 slug: pipedrive-toolkit-free
 name: pipedrive-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Pipedrive工具(免费版)
 summary: 管理Pipedrive销售数据的免费工具，支持商机、联系人、组织的查询与搜索
 license: Proprietary

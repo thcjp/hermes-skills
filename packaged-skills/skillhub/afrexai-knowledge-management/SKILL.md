@@ -1,7 +1,7 @@
 ---
 slug: "afrexai-knowledge-management"
 name: "afrexai-knowledge-management"
-version: "1.0.0"
+version: 1.0.1
 displayName: "知识管理体系"
 summary: "组织知识审计、分类架构、文档模板、贡献系统与新鲜度维护的完整体系。"
 license: "Proprietary"

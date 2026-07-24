@@ -1,7 +1,7 @@
 ---
 slug: "csv-insight"
 name: "csv-insight"
-version: "1.0.0"
+version: 1.0.1
 displayName: "CSV洞察 专业版"
 summary: "全功能CSV分析，支持流式大文件、相关性分析、分布可视化与高级异常检测。"
 license: "Proprietary"

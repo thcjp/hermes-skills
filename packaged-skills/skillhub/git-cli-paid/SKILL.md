@@ -1,7 +1,7 @@
 ---
 slug: "git-cli-paid"
 name: "git-cli-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Git命令行助手专业版"
 summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "encryption-paid"
 name: "encryption-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "加密工具专业版"
 summary: "企业级加密管理,支持KMS集成、密钥轮换、合规审计、批量加密与深度代码安全扫描。"
 license: "Proprietary"

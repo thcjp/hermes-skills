@@ -1,7 +1,7 @@
 ---
 slug: bizauto-flow-free
 name: bizauto-flow-free
-version: 1.0.0
+version: 1.0.1
 displayName: 业务自动化师(免费版)
 summary: 识别高ROI业务流程并设计自动化工作流，含审计、流程打分、定时任务实现，快速释放团队产能.
 license: Proprietary

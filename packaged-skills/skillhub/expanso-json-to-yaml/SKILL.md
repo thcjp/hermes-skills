@@ -1,7 +1,7 @@
 ---
 slug: "expanso-json-to-yaml"
 name: "expanso-json-to-yaml"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Expanso json-to-yaml"
 summary: "用Expanso Edge流水线把JSON转YAML格式"
 license: "Proprietary"

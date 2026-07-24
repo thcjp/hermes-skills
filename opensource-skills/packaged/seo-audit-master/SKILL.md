@@ -1,7 +1,7 @@
 ---
 slug: seo-audit-master
 name: seo-audit-master
-version: 1.1.0
+version: 1.0.1
 displayName: SEO审计大师
 summary: 全站SEO体检:技术内容架构链接四维度审计,输出可执行优化清单
 license: Proprietary

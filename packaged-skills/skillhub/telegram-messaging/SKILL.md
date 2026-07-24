@@ -1,7 +1,7 @@
 ---
 slug: "telegram-messaging"
 name: "telegram-messaging"
-version: "1.0.0"
+version: 0.2.3
 displayName: "Telegram 消息机器人"
 summary: "通过 Telegram Bot API 发送消息、管理聊天、处理文件与自动化机器人工作流。"
 license: "Proprietary"

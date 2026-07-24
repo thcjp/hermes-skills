@@ -1,7 +1,7 @@
 ---
 slug: "typescript"
 name: "typescript"
-version: "1.0.2"
+version: 1.0.3
 displayName: "TypeScript"
 summary: "写类型安全TypeScript,窄化/推断/严格模式最佳实践"
 license: "Proprietary"

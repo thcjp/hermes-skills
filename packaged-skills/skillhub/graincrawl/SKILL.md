@@ -1,7 +1,7 @@
 ---
 slug: "graincrawl"
 name: "graincrawl"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Graincrawl"
 summary: "Granola归档,搜索/同步/笔记/转写/面板/SQL"
 license: "Proprietary"

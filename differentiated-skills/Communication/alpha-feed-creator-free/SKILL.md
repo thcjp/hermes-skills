@@ -1,7 +1,7 @@
 ---
 slug: alpha-feed-creator-free
 name: alpha-feed-creator-free
-version: 1.0.0
+version: 1.0.1
 displayName: 内容采集器免费版
 summary: 每日采集并排名 AI 领域优质内容,助力个人创作者高效获取选题灵感.
 license: Proprietary

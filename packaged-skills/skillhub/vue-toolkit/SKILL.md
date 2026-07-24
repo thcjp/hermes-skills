@@ -1,7 +1,7 @@
 ---
 slug: "vue-toolkit"
 name: "vue-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Vue工具箱(专业版)"
 summary: "Vue 3 全栈实战：响应式、性能优化、SSR、Pinia、Composable 架构与团队规范。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "claude-code-delegate"
 name: "claude-code-delegate"
-version: "0.2.0"
+version: 0.1.2
 displayName: "代码委派助手"
 summary: "将编程任务委派给本地AI代码助手CLI,支持异步执行与会话续接"
 license: "Proprietary"

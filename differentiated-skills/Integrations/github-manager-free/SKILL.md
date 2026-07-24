@@ -1,7 +1,7 @@
 ---
 slug: github-manager-free
 name: github-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: GitHub管理器(免费版)
 summary: 通过gh CLI管理GitHub仓库的Issue、PR与工作流,支持基础查询、状态检查与结构化输出,适合个人开发者日常协作.
 license: Proprietary

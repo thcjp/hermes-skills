@@ -1,7 +1,7 @@
 ---
 slug: "report"
 name: "report"
-version: "1.1.0"
+version: 1.0.4
 displayName: "定制报表生成"
 summary: "配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递"
 license: "Proprietary"

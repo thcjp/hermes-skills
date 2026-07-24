@@ -1,7 +1,7 @@
 ---
 slug: "personal-health-manager"
 name: "personal-health-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Personal Health Mana"
 summary: "个人健康管理与养生助手,追踪健康数据"
 license: "Proprietary"

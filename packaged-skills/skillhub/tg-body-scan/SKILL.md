@@ -1,7 +1,7 @@
 ---
 slug: "tg-body-scan"
 name: "tg-body-scan"
-version: "1.0.0"
+version: 1.0.1
 displayName: "体测扫描工具专业版"
 summary: "企业级 Telegram 体测测量平台，支持批量扫描、历史趋势、团队管理与高级分析报表。"
 license: "Proprietary"

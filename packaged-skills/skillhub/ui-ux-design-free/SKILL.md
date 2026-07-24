@@ -1,7 +1,7 @@
 ---
 slug: "ui-ux-design-free"
 name: "ui-ux-design-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UI/UX设计指南免费版"
 summary: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。"
 license: "MIT"

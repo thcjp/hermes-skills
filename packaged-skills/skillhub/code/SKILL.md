@@ -1,7 +1,7 @@
 ---
 slug: "code"
 name: "code"
-version: "1.0.4"
+version: 1.0.5
 displayName: "Code"
 summary: "编码工作流含规划/实现/验证/测试,交付干净软件"
 license: "Proprietary"

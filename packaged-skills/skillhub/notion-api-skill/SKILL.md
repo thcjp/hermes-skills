@@ -1,7 +1,7 @@
 ---
 slug: "notion-api-skill"
 name: "notion-api-skill"
-version: "1.0.11"
+version: 1.0.12
 displayName: "Notion"
 summary: "Notion API托管OAuth集成,查数据库/搜页面/读工作区"
 license: "Proprietary"

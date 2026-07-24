@@ -1,7 +1,7 @@
 ---
 slug: "md-export"
 name: "md-export"
-version: "1.0.0"
+version: 1.0.1
 displayName: "文档导出工具专业版"
 summary: "Markdown全格式专业导出工具，含批量并行、自定义样式、PDF加密水印、模板云同步与API服务模式。"
 license: "Proprietary"

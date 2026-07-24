@@ -1,7 +1,7 @@
 ---
 slug: quick-context-saver-free
 name: quick-context-saver-free
-version: 1.0.0
+version: 1.0.1
 displayName: Quick Context Saver
 summary: 零依赖本地记忆系统，无需API Key，TF-IDF智能搜索，100%本地存储隐私无忧.
 license: Proprietary

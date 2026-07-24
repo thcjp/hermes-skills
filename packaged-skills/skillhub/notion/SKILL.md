@@ -1,7 +1,7 @@
 ---
 slug: "notion"
 name: "notion"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Notion"
 summary: "Notion API创建管理页面/数据库/块"
 license: "Proprietary"

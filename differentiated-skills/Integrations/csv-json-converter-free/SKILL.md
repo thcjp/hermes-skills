@@ -1,7 +1,7 @@
 ---
 slug: csv-json-converter-free
 name: csv-json-converter-free
-version: 1.0.0
+version: 1.0.1
 displayName: CSV转JSON(免费版)
 summary: 轻量级CSV转JSON工具，覆盖表头推断、类型识别与单文件转换，60秒上手即用.
 license: Proprietary

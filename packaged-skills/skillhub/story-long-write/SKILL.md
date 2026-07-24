@@ -1,7 +1,7 @@
 ---
 slug: "story-long-write"
 name: "story-long-write"
-version: "1.1.13"
+version: 1.1.14
 displayName: "长篇网文写作"
 summary: "从选题到正文,辅助长篇网络小说创作,含世界观、人物、情节线管理。"
 license: "Proprietary"

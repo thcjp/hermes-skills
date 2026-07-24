@@ -1,7 +1,7 @@
 ---
 slug: "molted-work"
 name: "molted-work"
-version: "1.0.2"
+version: 1.0.3
 displayName: "Molted Work"
 summary: "AI Agent任务市场CLI,Base链x402 USDC支付"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: lead-research-hunter
 name: lead-research-hunter
-version: 1.0.0
+version: 1.0.1
 displayName: 销售线索猎手
 summary: 3D线索打分模型自动筛选高价值潜客,让销售只打能赢的电话
 license: Proprietary

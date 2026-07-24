@@ -1,7 +1,7 @@
 ---
 slug: "art"
 name: "art"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Art"
 summary: "指导艺术创作技法精进与鉴赏,提供分媒介实操建议,提升创作水准"
 license: "Proprietary"

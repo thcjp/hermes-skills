@@ -1,7 +1,7 @@
 ---
 slug: content-refiner
 name: content-refiner
-version: "1.0.1"
+version: 1.0.1
 displayName: "内容洗稿师"
 summary: "同质化内容救星,LLM深度改写+8平台适配+SimHash去重,原创度99%规避查重"
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "notioncli"
 name: "notioncli"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Notion"
 summary: "Notion API管页面/数据库/块/关系/汇总,多工作区"
 license: "Proprietary"

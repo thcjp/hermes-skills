@@ -1,7 +1,7 @@
 ---
 slug: "python-toolkit"
 name: "python-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Python工具箱(专业版)"
 summary: "团队级Python规范套件,含类型系统、异步、测试金字塔、性能优化与CI治理。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: game-toolkit-free
 name: game-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 游戏设计工具箱免费版
 summary: 自然语言生成完整可玩的桌游、派对游戏与儿童游戏,含规则与组件
 license: Proprietary

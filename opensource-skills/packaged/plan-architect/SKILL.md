@@ -1,7 +1,7 @@
 ---
 slug: plan-architect
 name: plan-architect
-version: 1.1.0
+version: 1.0.1
 displayName: 计划架构师
 summary: 把设计文档变成可执行计划,任务拆到2-5分钟粒度,初级工程师也能照做
 license: Proprietary

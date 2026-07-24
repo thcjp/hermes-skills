@@ -1,7 +1,7 @@
 ---
 slug: "clawcall"
 name: "clawcall"
-version: "1.0.0"
+version: 1.0.13
 displayName: "语音通话服务"
 summary: "由AI语音代理拨打美国真实电话，处理菜单、等待、转接，返回转录、结果与录音链接。"
 license: "Proprietary"

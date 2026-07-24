@@ -1,7 +1,7 @@
 ---
 slug: google-workspace-toolkit-free
 name: google-workspace-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 谷歌办公工具接口免费版
 summary: 免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用.
 license: Proprietary

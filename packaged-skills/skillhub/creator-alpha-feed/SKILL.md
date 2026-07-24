@@ -1,7 +1,7 @@
 ---
 slug: "creator-alpha-feed"
 name: "creator-alpha-feed"
-version: "1.0.0"
+version: 1.0.9
 displayName: "创作者AI日报"
 summary: "为创作者每日采集X平台AI内容,按KOL/教程/行业三档排名,推送群频道并写入Obsidian日报。"
 license: "Proprietary"

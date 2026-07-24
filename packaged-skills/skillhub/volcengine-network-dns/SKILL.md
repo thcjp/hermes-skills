@@ -1,7 +1,7 @@
 ---
 slug: "volcengine-network-dns"
 name: "volcengine-network-dns"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Volcengine Network D"
 summary: "火山引擎网络服务DNS记录管理,区记录查询与更新"
 license: "Proprietary"

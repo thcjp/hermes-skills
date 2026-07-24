@@ -1,7 +1,7 @@
 ---
 slug: solo-dev-companion-free
 name: solo-dev-companion-free
-version: 1.0.0
+version: 1.0.1
 displayName: 独立开发伙伴(免费版)
 summary: 独立开发者TDD工作流引擎，自动执行实施计划任务、提交代码并更新进度.
 license: Proprietary

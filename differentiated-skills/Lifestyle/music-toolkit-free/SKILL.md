@@ -1,7 +1,7 @@
 ---
 slug: music-toolkit-free
 name: music-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 音乐工具箱免费版
 summary: 音乐生成与编辑工具,支持MIDI生成、音频处理与基础乐理分析
 license: Proprietary

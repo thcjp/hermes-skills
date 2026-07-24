@@ -1,7 +1,7 @@
 ---
 slug: "feishu-file-sender"
 name: "feishu-file-sender"
-version: "1.0.0"
+version: 1.0.1
 displayName: "飞书文件发送专业版"
 summary: "企业级文件批量分发与稳定投递，支持审计与重试机制"
 license: "Proprietary"

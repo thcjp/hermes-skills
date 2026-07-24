@@ -1,7 +1,7 @@
 ---
 slug: "free-weather-skill"
 name: "free-weather-skill"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Weather"
 summary: "免API Key获取当前天气与预报,出门不抓瞎"
 license: "Proprietary"

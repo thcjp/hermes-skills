@@ -1,7 +1,7 @@
 ---
 slug: "csv"
 name: "csv"
-version: "1.0.0"
+version: 1.0.1
 displayName: "CSV解析与生成"
 summary: "解析与生成RFC 4180合规的CSV，处理引号、分隔符、编码、数字日期与Excel特性，跨工具兼容。"
 license: "Proprietary"

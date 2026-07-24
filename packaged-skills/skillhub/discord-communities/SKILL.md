@@ -1,7 +1,7 @@
 ---
 slug: "discord-communities"
 name: "discord-communities"
-version: "1.0.0"
+version: 1.0.7
 displayName: "Discord社区管理"
 summary: "Discord社区管理助手,覆盖OAuth连接、公会查询、成员权限、应用命令与商业订阅全流程"
 license: "Proprietary"

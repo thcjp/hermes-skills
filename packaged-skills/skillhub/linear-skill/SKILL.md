@@ -1,7 +1,7 @@
 ---
 slug: "linear-skill"
 name: "linear-skill"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Linear"
 summary: "经内置Node CLI与Linear API管项目/issue/任务"
 license: "Proprietary"

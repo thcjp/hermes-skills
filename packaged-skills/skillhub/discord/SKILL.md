@@ -1,7 +1,7 @@
 ---
 slug: "discord"
 name: "discord"
-version: "1.0.0"
+version: 1.0.2
 displayName: "Discord 全能控制"
 summary: "通过discord工具控制机器人,管理消息、表情、投票、线程、审核等Discord全功能"
 license: "Proprietary"

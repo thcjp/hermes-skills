@@ -1,7 +1,7 @@
 ---
 slug: "gitcrawl"
 name: "gitcrawl"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Gitcrawl"
 summary: "GitHub归档,issue/PR搜索/同步新鲜度/重复聚类"
 license: "Proprietary"

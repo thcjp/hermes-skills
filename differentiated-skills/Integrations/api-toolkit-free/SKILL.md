@@ -1,7 +1,7 @@
 ---
 slug: api-toolkit-free
 name: api-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: API工具箱(免费版)
 summary: 轻量级API测试调试工具箱，覆盖请求构造、认证、错误诊断与文档速查，60秒上手.
 license: Proprietary

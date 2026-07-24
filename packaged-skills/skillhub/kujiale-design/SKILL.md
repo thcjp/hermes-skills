@@ -1,7 +1,7 @@
 ---
 slug: "kujiale-design"
 name: "kujiale-design"
-version: "1.0.0"
+version: 1.0.1
 displayName: "酷家乐设计-专业版"
 summary: "企业级室内设计工具,支持多方案对比、批量渲染、自定义风格与团队协作,适配商业设计生产。"
 license: "Proprietary"

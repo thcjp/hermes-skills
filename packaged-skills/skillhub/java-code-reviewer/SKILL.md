@@ -1,7 +1,7 @@
 ---
 slug: "java-code-reviewer"
 name: "java-code-reviewer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Java Code Reviewer"
 summary: "Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。 触发场景： (1) 审查 git diff 或代码变更 (2)"
 license: "Proprietary"

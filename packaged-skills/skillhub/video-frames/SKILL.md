@@ -1,7 +1,7 @@
 ---
 slug: "video-frames"
 name: "video-frames"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Video Frames"
 summary: "用ffmpeg从视频提取帧或短片段"
 license: "Proprietary"

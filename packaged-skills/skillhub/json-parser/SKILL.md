@@ -1,7 +1,7 @@
 ---
 slug: "json-parser"
 name: "json-parser"
-version: "2.1.0"
+version: 2.1.1
 displayName: "Json Parser"
 summary: "解析校验建筑API/IoT/BIM的JSON并转表"
 license: "Proprietary"

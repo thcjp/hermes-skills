@@ -1,7 +1,7 @@
 ---
 slug: "python3"
 name: "python3"
-version: "1.0.0"
+version: 1.0.1
 displayName: "python"
 summary: "用Python做项目搭建/依赖安装/脚本执行/环境排障"
 license: "Proprietary"

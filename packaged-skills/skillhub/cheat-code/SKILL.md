@@ -1,7 +1,7 @@
 ---
 slug: "cheat-code"
 name: "cheat-code"
-version: "1.0.11"
+version: 1.0.12
 displayName: "Cheat Code"
 summary: "让Agent才能无极限,说出想要即兑现,解锁隐藏能力"
 license: "Proprietary"

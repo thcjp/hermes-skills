@@ -1,7 +1,7 @@
 ---
 slug: "tarot-reader"
 name: "tarot-reader"
-version: "1.0.0"
+version: 1.0.1
 displayName: "tarot-reader"
 summary: "专业塔罗占卜服务。当用户提及塔罗、抽牌、占卜等关键词时激活，提供单张牌或时间之流（过去-现在-未来）牌阵的解读。使用经典韦特塔罗体系，支持正逆位随机抽取，以温暖治愈的文字风格提供理性洞察。"
 license: "Proprietary"

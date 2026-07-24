@@ -1,7 +1,7 @@
 ---
 slug: "music-gen"
 name: "music-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "音乐生成工具专业版"
 summary: "企业级AI音乐生成系统,支持批量生成、版权管理、多平台调度与CI/CD集成,适合团队与商业项目。"
 license: "Proprietary"

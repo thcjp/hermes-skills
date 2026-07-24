@@ -1,7 +1,7 @@
 ---
 slug: "openai-whisper-1-0-0"
 name: "openai-whisper-1-0-0"
-version: "1.0.0"
+version: 1.0.1
 displayName: "llm-provider Whisper"
 summary: "用Whisper CLI本地语音转文字,免API Key(付费增强版)"
 license: "Proprietary"

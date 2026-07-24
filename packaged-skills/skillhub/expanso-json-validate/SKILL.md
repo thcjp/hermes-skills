@@ -1,7 +1,7 @@
 ---
 slug: "expanso-json-validate"
 name: "expanso-json-validate"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Expanso Json Validat"
 summary: "用Expanso Edge流水线校验JSON语法与结构"
 license: "Proprietary"

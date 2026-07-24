@@ -1,7 +1,7 @@
 ---
 slug: "telegram-chat-manager"
 name: "telegram-chat-manager"
-version: "0.1.0"
+version: 0.1.1
 displayName: "SkillHub Telegram Ch"
 summary: "启用Telegram跨实例聊天/用户提及/个人bot设置"
 license: "Proprietary"

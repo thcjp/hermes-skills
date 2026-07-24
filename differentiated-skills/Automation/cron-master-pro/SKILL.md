@@ -1,7 +1,7 @@
 ---
 slug: cron-master-pro
 name: cron-master-pro
-version: 1.0.0
+version: 1.0.1
 displayName: 定时大师
 summary: 平台级定时系统精通指南，heartbeat 与 cron 决策矩阵、推送策略、自唤醒规则全覆盖.
 license: Proprietary

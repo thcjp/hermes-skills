@@ -1,7 +1,7 @@
 ---
 slug: "graph-knowledge-base"
 name: "graph-knowledge-base"
-version: "1.0.0"
+version: 1.0.1
 displayName: "知识图谱库(专业版)"
 summary: "全功能知识图谱工具，支持图谱关系查询、知识分析、跨实体关联与多格式导出"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: chart-gen-free
 name: chart-gen-free
-version: 1.0.0
+version: 1.0.1
 displayName: 图表生成器(免费版)
 summary: 一条命令生成ASCII/HTML/SVG图表，覆盖柱状、折线、饼图、热力图等十余种类型，开箱即用.
 license: Proprietary

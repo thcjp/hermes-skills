@@ -1,7 +1,7 @@
 ---
 slug: "linear-api-toolkit"
 name: "linear-api-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Linear工具箱(专业版)"
 summary: "全功能Linear管理工具，支持批量操作、Webhook集成、高级分析与自定义查询模板"
 license: "Proprietary"

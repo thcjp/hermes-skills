@@ -1,7 +1,7 @@
 ---
 slug: "cloud-storage"
 name: "cloud-storage"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Cloud Storage"
 summary: "跨云商管理文件,带认证/成本感知/多提供商操作,云盘统一"
 license: "Proprietary"

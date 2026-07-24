@@ -1,7 +1,7 @@
 ---
 slug: "trending-feed-skill"
 name: "trending-feed-skill"
-version: "1.0.0"
+version: 1.0.1
 displayName: "热榜订阅(专业版)"
 summary: "全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。"
 license: "Proprietary"

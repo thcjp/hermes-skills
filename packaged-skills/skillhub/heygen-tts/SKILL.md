@@ -1,7 +1,7 @@
 ---
 slug: "heygen-tts"
 name: "heygen-tts"
-version: "1.0.0"
+version: 1.0.1
 displayName: "HeyGen TTS专业版"
 summary: "企业级HeyGen TTS工具,支持SSML标记、批量生成、词级时间戳与API服务化,适配生产环境。"
 license: "Proprietary"

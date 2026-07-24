@@ -1,7 +1,7 @@
 ---
 slug: "data"
 name: "data"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Data"
 summary: "贯穿数据全生命周期,从抽取清洗到分析可视化,一站处理"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "powerpoint-pptx-cn"
 name: "powerpoint-pptx-cn"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Powerpoint Pptx Cn"
 summary: "创建检查编辑PowerPoint演示文稿与PPTX,布局可靠(付费增强版)"
 license: "Proprietary"

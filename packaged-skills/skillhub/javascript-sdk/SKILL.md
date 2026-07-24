@@ -1,7 +1,7 @@
 ---
 slug: "javascript-sdk"
 name: "javascript-sdk"
-version: "0.1.5"
+version: 0.1.6
 displayName: "Javascript Sdk"
 summary: "inference.sh的JS/TS SDK,跑AI应用/建Agent/集成150+模型"
 license: "Proprietary"

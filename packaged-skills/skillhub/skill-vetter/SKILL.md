@@ -1,7 +1,7 @@
 ---
 slug: "skill-vetter"
 name: "skill-vetter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Skill Vetter"
 summary: "安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。"
 license: "Proprietary"

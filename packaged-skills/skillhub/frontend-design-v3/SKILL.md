@@ -1,7 +1,7 @@
 ---
 slug: "frontend-design-v3"
 name: "frontend-design-v3"
-version: "1.0.0"
+version: 1.0.1
 displayName: "前端设计V3-专业版"
 summary: "生产级前端设计引擎，支持多框架输出、高级动效编排与可访问性合规"
 license: "Proprietary"

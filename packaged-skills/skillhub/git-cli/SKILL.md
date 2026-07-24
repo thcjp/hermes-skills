@@ -1,7 +1,7 @@
 ---
 slug: "git-cli"
 name: "git-cli"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Git cli"
 summary: "用Git CLI检查/暂存/提交/分支/同步代码变更"
 license: "Proprietary"

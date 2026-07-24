@@ -1,7 +1,7 @@
 ---
 slug: trending-feed-skill-free
 name: trending-feed-skill-free
-version: 1.0.0
+version: 1.0.1
 displayName: 热榜订阅(免费版)
 summary: 获取 GitHub Trending 热门仓库列表，支持语言过滤，返回结构化 JSON 数据.
 license: Proprietary

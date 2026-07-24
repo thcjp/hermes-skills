@@ -1,7 +1,7 @@
 ---
 slug: db-admin-console-free
 name: db-admin-console-free
-version: 1.0.0
+version: 1.0.1
 displayName: 数据库管理台(免费版)
 summary: 数据库表结构设计、数据操作、查询优化与事务安全的免费核心能力,支持基础 DDL/DML 操作.
 license: Proprietary

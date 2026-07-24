@@ -1,7 +1,7 @@
 ---
 slug: "markdown-exporter"
 name: "markdown-exporter"
-version: "1.0.0"
+version: 3.6.11
 displayName: "Markdown导出工具"
 summary: "Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。"
 license: "Proprietary"

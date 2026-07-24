@@ -1,7 +1,7 @@
 ---
 slug: "openai-whisper-v1"
 name: "openai-whisper-v1"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Whisper v1转录专业版"
 summary: "Whisper v1稳定版企业级转录工具,支持批量处理、模型管理、性能调优与服务化部署。"
 license: "Proprietary"

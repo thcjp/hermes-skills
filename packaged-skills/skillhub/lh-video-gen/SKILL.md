@@ -1,7 +1,7 @@
 ---
 slug: "lh-video-gen"
 name: "lh-video-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "LH Video Gen"
 summary: "从Markdown脚本生成9:16竖屏短视频,自动分镜"
 license: "Proprietary"

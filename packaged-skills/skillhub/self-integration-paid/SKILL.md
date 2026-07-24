@@ -1,7 +1,7 @@
 ---
 slug: "self-integration-paid"
 name: "self-integration-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "自集成工具Pro"
 summary: "企业级外部应用集成方案，含自定义连接器、批量动作、工作流编排与审计日志。"
 license: "Proprietary"

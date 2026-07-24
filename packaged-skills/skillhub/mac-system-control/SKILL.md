@@ -1,7 +1,7 @@
 ---
 slug: "mac-system-control"
 name: "mac-system-control"
-version: "1.0.0"
+version: 1.0.1
 displayName: "mac-system-control"
 summary: "管理和控制 macOS 系统功能。包括查看系统信息、管理进程、控制音量/亮度、 网络管理、电源管理、截图、剪贴板、Finder 操作等。当用户要求查看系统状态、"
 license: "Proprietary"

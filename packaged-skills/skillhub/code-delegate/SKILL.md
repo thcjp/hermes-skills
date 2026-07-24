@@ -1,7 +1,7 @@
 ---
 slug: "code-delegate"
 name: "code-delegate"
-version: "1.0.0"
+version: 1.0.1
 displayName: "代码委派工具专业版"
 summary: "企业级批量代码委派,支持多任务并行、团队协作、权限治理与质量审计"
 license: "Proprietary"

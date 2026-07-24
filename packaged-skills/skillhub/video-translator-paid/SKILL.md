@@ -1,7 +1,7 @@
 ---
 slug: "video-translator-paid"
 name: "video-translator-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "视频翻译-专业版"
 summary: "企业级视频翻译与配音平台，支持8种语言、双语字幕、批量翻译、语音克隆与优先队列，适合跨国内容本地化。"
 license: "Proprietary"

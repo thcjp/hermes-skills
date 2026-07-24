@@ -1,7 +1,7 @@
 ---
 slug: batchops-commander-free
 name: batchops-commander-free
-version: 1.0.0
+version: 1.0.1
 displayName: Batchops Commander
 summary: 批量处理多项目的完整生命周期管理，含进度追踪、检查点保存、错误恢复与dry-run预览.
 license: Proprietary

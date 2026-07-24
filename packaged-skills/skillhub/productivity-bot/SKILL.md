@@ -1,7 +1,7 @@
 ---
 slug: "productivity-bot"
 name: "productivity-bot"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Productivity Bot"
 summary: "生产力任务自动化bot,数据处理/定时通知/工作流"
 license: "Proprietary"

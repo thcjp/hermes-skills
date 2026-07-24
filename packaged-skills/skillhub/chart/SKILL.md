@@ -1,7 +1,7 @@
 ---
 slug: "chart"
 name: "chart"
-version: "1.0.0"
+version: 1.0.1
 displayName: "本地图表生成引擎"
 summary: "本地优先的图表生成引擎，支持bar/line/pie/scatter四种类型，无需联网，输出可复用于报告与幻灯片。"
 license: "Proprietary"

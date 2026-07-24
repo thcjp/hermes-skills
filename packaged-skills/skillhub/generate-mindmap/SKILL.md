@@ -1,7 +1,7 @@
 ---
 slug: "generate-mindmap"
 name: "generate-mindmap"
-version: "1.0.3"
+version: 1.0.4
 displayName: "Generate Mindmap"
 summary: "生成基于认知科学方法论的交互式思维导图。支持 Markdown 大纲或 JSON 输入，一条命令同时导出 HTML（可交互编辑、8 种布局、深浅双主题）、PNG、JPG、SVG、PDF、XMin..."
 license: "Proprietary"

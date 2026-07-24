@@ -1,7 +1,7 @@
 ---
 slug: workflow-splitter-free
 name: workflow-splitter-free
-version: 1.0.0
+version: 1.0.1
 displayName: 工作流分解器(免费版)
 summary: 将复杂任务拆解为可执行子步骤，为每步匹配最合适模型并跟踪进度.
 license: Proprietary

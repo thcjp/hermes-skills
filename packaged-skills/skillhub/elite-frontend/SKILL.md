@@ -1,7 +1,7 @@
 ---
 slug: "elite-frontend"
 name: "elite-frontend"
-version: "1.0.0"
+version: 1.0.1
 displayName: "精英前端设计-专业版"
 summary: "企业级前端设计系统，支持多页面应用、React/Vue组件、品牌一致性与高级动效编排。"
 license: "Proprietary"

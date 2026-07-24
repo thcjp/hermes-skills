@@ -1,7 +1,7 @@
 ---
 slug: "code-dev-v1"
 name: "code-dev-v1"
-version: "1.0.0"
+version: 1.0.1
 displayName: "结构化开发工具专业版"
 summary: "企业级版本化开发,支持多任务编排、发布管理、团队规范与交付审计"
 license: "Proprietary"

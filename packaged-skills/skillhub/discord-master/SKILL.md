@@ -1,7 +1,7 @@
 ---
 slug: "discord-master"
 name: "discord-master"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Discord开发大师(专业版)"
 summary: "全功能Discord Bot工程化平台，覆盖网关、限流、组件、安全与多服务器管理。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "encoding-formats"
 name: "encoding-formats"
-version: "2.0.0"
+version: 1.0.1
 displayName: "编码格式工具"
 summary: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "knowledge-graph"
 name: "knowledge-graph"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Knowledge Graph"
 summary: "维护SkillHub复利知识图谱,增删与替代原子笔记"
 license: "Proprietary"

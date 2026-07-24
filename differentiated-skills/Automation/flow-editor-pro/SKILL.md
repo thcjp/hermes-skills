@@ -1,7 +1,7 @@
 ---
 slug: flow-editor-pro
 name: flow-editor-pro
-version: 1.0.0
+version: 1.0.1
 displayName: 流程编辑专家
 summary: 解决Node-RED无版本管理、部署易翻车、多实例难管痛点，带回滚与安全加固的流程运维
 license: Proprietary

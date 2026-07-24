@@ -1,7 +1,7 @@
 ---
 slug: soul-decision-engine-free
 name: soul-decision-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: Soul Decision Engine
 summary: AI Agent结构化决策支持系统，混合命名空间记忆，从决策复盘中持续学习偏好.
 license: Proprietary

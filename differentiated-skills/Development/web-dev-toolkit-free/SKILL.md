@@ -1,7 +1,7 @@
 ---
 slug: web-dev-toolkit-free
 name: web-dev-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Web开发工具集(免费版)
 summary: 面向个人开发者的Web开发辅助工具,覆盖HTML/CSS、JavaScript模式、框架选择与部署基础.
 license: Proprietary

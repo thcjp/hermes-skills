@@ -1,7 +1,7 @@
 ---
 slug: "multi-search-engine"
 name: "multi-search-engine"
-version: "2.1.3"
+version: 2.1.4
 displayName: "Multi Search Engine"
 summary: "多搜索引擎集成,16引擎(7国内+9全球)"
 license: "Proprietary"

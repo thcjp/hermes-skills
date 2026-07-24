@@ -1,7 +1,7 @@
 ---
 slug: "kai-tw-figma"
 name: "kai-tw-figma"
-version: "1.0.3"
+version: 1.0.4
 displayName: "Figma"
 summary: "交互Figma文件,读结构/导图层为图/取评论"
 license: "Proprietary"

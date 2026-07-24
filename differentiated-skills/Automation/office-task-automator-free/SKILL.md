@@ -1,7 +1,7 @@
 ---
 slug: office-task-automator-free
 name: office-task-automator-free
-version: 1.0.0
+version: 1.0.1
 displayName: 办公任务自动化(免费版)
 summary: 文档批量处理与数据清洗核心能力，覆盖Word/Excel/PDF转换与基础格式处理，60秒上手办公自动化.
 license: Proprietary

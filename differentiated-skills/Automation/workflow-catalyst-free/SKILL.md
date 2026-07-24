@@ -1,7 +1,7 @@
 ---
 slug: workflow-catalyst-free
 name: workflow-catalyst-free
-version: 1.0.0
+version: 1.0.1
 displayName: 工作流催化器(免费版)
 summary: 识别重复任务并快速构建自动化工作流，四步法将手动操作转化为可复用脚本.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: system-controller
 name: system-controller
-version: 1.0.0
+version: 1.0.1
 displayName: 系统控制器
 summary: 统一管理系统进程、服务、文件与环境配置，跨平台命令映射，带操作回滚.
 license: Proprietary

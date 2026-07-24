@@ -1,7 +1,7 @@
 ---
 slug: "reminder-engine"
 name: "reminder-engine"
-version: "1.0.0"
+version: 1.0.1
 displayName: "提醒引擎(专业版)"
 summary: "一次性提醒创建引擎专业版，含多渠道投递、批量创建、递增提醒、周期性提醒与完整安全校验。"
 license: "Proprietary"

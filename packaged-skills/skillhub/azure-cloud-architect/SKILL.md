@@ -1,7 +1,7 @@
 ---
 slug: "azure-cloud-architect"
 name: "azure-cloud-architect"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Azure云架构师"
 summary: "基于Azure CLI的多订阅导航、RBAC角色审计、成本分析、合规检查、跨订阅批量操作。"
 license: "Proprietary"

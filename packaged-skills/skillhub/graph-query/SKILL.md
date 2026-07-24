@@ -1,7 +1,7 @@
 ---
 slug: "graph-query"
 name: "graph-query"
-version: "1.0.0"
+version: 1.0.1
 displayName: "链上数据查询(专业版)"
 summary: "全功能链上数据查询，含付费端点、高级 MCP工具、支出控制、收据与批量分析。"
 license: "Proprietary"

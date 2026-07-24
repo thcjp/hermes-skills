@@ -1,7 +1,7 @@
 ---
 slug: "proactive-agent-free"
 name: "proactive-agent-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "主动式代理(免费版)"
 summary: "将AI代理从任务跟随者转变为主动伙伴,含WAL协议、心跳系统与增长循环。(免费版)"
 license: "MIT"

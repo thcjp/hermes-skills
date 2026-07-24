@@ -1,7 +1,7 @@
 ---
 slug: print-studio-free
 name: print-studio-free
-version: 1.0.0
+version: 1.0.1
 displayName: 印迹工作室(免费版)
 summary: Agent发现、信任与协作交换的轻量工具，支持注册、检索与基础任务协作.
 license: Proprietary

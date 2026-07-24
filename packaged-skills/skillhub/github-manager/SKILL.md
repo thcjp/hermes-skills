@@ -1,7 +1,7 @@
 ---
 slug: "github-manager"
 name: "github-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "GitHub管理器(专业版)"
 summary: "全功能GitHub管理工具,含批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理,适合团队企业级协作。"
 license: "Proprietary"

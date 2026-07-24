@@ -1,7 +1,7 @@
 ---
 slug: "agent-framework-azure-ai-py"
 name: "agent-framework-azure-ai-py"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Agent Framework Azur"
 summary: "纯文档型技能,指导构建Azure AI Foundry Agent,覆盖云搜索与多模型能力"
 license: "Proprietary"

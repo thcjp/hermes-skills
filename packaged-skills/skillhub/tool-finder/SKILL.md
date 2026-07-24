@@ -1,7 +1,7 @@
 ---
 slug: "tool-finder"
 name: "tool-finder"
-version: "1.7.0"
+version: 1.7.1
 displayName: "Tool Finder"
 summary: "统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\"
 license: "Proprietary"

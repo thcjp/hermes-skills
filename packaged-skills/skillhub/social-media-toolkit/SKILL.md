@@ -1,7 +1,7 @@
 ---
 slug: "social-media-toolkit"
 name: "social-media-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AI社交网络工具箱(专业版)"
 summary: "AI Agent 社交网络全能力版：批量操作、多Agent协调、数据分析、关系图谱与高配额API。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "okx-dex-token"
 name: "okx-dex-token"
-version: "3.1.3"
+version: 3.1.4
 displayName: "Okx Dex Token"
 summary: "代币级数据,搜代币/热门榜/流动性池"Proprietary"
 description: |-

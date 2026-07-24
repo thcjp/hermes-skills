@@ -1,7 +1,7 @@
 ---
 slug: clickhouse-olap-expert
 name: clickhouse-analytics
-version: 1.1.0
+version: 1.0.1
 displayName: ClickHouse分析专家
 summary: 亿级数据秒级查询,ClickHouse列式数据库从建表到集群全栈优化
 license: Proprietary

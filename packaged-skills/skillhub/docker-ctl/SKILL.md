@@ -1,7 +1,7 @@
 ---
 slug: "docker-ctl"
 name: "docker-ctl"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Docker Ctl"
 summary: "经podman检查容器/日志/镜像,轻量运维"
 license: "Proprietary"

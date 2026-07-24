@@ -1,7 +1,7 @@
 ---
 slug: "tmux-session"
 name: "tmux-session"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Tmux会话工具专业版"
 summary: "企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计"
 license: "Proprietary"

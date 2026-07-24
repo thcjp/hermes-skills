@@ -1,7 +1,7 @@
 ---
 slug: react-video-composer
 name: remotion-video-studio
-version: 1.1.0
+version: 1.0.1
 displayName: 视频创作工作室
 summary: 自然语言转视频,用React代码生成字幕转场配音动画,无需剪辑软件
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "context-driven-development"
 name: "context-driven-development"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Context Driven Devel"
 summary: "把项目上下文当受管制品与代码并行,用结构化文档沉淀"
 license: "Proprietary"

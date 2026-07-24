@@ -1,7 +1,7 @@
 ---
 slug: "compress"
 name: "compress"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Compress"
 summary: "语义压缩文本,迭代校验+锚点校验和,信息无损瘦身"
 license: "Proprietary"

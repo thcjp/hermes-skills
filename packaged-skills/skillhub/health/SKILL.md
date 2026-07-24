@@ -1,7 +1,7 @@
 ---
 slug: "health"
 name: "health"
-version: "1.0.1"
+version: 1.0.2
 displayName: "健康指导助手"
 summary: "提供个性化健康指导，同时保持严格的安全边界与证据分级。"
 license: "Proprietary"

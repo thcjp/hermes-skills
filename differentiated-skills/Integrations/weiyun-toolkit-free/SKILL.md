@@ -1,7 +1,7 @@
 ---
 slug: weiyun-toolkit-free
 name: weiyun-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 微云工具箱(免费版)
 summary: 微云网盘文件管理免费版：目录浏览、文件下载与上传，内置一键脚本与基础错误码指南.
 license: Proprietary

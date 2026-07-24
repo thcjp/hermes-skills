@@ -1,7 +1,7 @@
 ---
 slug: "security-scanner"
 name: "security-scanner"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Security Scanner"
 summary: "安全扫描技能,主动扫描需仅在授权目标运行"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "file-organizer-zh"
 name: "file-organizer-zh"
-version: "1.0.0"
+version: 1.0.1
 displayName: "File Organizer"
 summary: "文件整理器，按类型自动分类（中文版）"
 license: "Proprietary"

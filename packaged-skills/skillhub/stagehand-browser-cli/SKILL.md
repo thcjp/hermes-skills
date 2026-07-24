@@ -1,7 +1,7 @@
 ---
 slug: "stagehand-browser-cli"
 name: "stagehand-browser-cli"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Stagehand Browser Cl"
 summary: "经CLI用自然语言自动化浏览器交互"
 license: "Proprietary"

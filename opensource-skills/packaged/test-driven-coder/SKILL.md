@@ -1,7 +1,7 @@
 ---
 slug: test-driven-coder
 name: test-driven-coder
-version: 1.1.0
+version: 1.0.1
 displayName: 测试驱动编码器
 summary: 强制TDD:Red-Green-Refactor循环,先写测试再写代码,质量内建
 license: Proprietary

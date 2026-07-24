@@ -1,7 +1,7 @@
 ---
 slug: "verify-claims"
 name: "verify-claims"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Verify Claims"
 summary: "事实核查技能(会自动建延迟跟进需谨慎)"
 license: "Proprietary"

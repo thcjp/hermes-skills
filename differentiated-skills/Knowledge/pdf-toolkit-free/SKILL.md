@@ -1,7 +1,7 @@
 ---
 slug: pdf-toolkit-free
 name: pdf-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: PDF工具包（免费版）
 summary: 综合PDF处理工具集：创建、编辑、转换、合并、拆分、压缩、加密一站式解决.
 license: Proprietary

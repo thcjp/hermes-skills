@@ -1,7 +1,7 @@
 ---
 slug: golang-toolkit-free
 name: golang-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Go语言工具包免费版
 summary: Go 语言陷阱防范与优选实践指南，覆盖并发、接口、错误处理等核心场景.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "encryption"
 name: "encryption"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Encryption"
 summary: "加密文件/管密钥/审代码加密实践,守住密码安全"
 license: "Proprietary"

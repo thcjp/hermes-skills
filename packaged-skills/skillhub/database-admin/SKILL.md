@@ -1,7 +1,7 @@
 ---
 slug: "database-admin"
 name: "database-admin"
-version: "1.0.0"
+version: 2.0.1
 displayName: "数据库管理专家"
 summary: "表结构设计、批量数据操作、查询优化、类型处理与事务安全的全面数据库管理服务"
 license: "Proprietary"

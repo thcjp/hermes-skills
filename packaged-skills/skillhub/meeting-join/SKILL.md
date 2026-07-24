@@ -1,7 +1,7 @@
 ---
 slug: "meeting-join"
 name: "meeting-join"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AI会议助手专业版"
 summary: "企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。"
 license: "Proprietary"

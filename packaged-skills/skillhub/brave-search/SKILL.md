@@ -1,7 +1,7 @@
 ---
 slug: "brave-search"
 name: "brave-search"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Brave Search"
 summary: "经Brave Search API做网页搜索与内容提取,隐私优先"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "json-lint"
 name: "json-lint"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON校验工具专业版"
 summary: "企业级JSON校验工具，支持并行扫描、Schema验证、超集兼容、自动修复与监控告警。"
 license: "Proprietary"

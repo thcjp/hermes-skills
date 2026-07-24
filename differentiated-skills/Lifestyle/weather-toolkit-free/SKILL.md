@@ -1,7 +1,7 @@
 ---
 slug: weather-toolkit-free
 name: weather-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 天气查询工具包免费版
 summary: 基于wttr.in与Open-Meteo的免费天气查询,无需API Key,支持当前天气与预报
 license: Proprietary

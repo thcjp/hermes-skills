@@ -1,7 +1,7 @@
 ---
 slug: azure-toolkit-free
 name: azure-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Azure管理入门工具
 summary: 微软Azure基础资源管理工具，支持虚拟机/存储/网络常用资源操作.
 license: Proprietary

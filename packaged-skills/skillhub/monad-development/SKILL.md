@@ -1,7 +1,7 @@
 ---
 slug: "monad-development"
 name: "monad-development"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Monad Development"
 summary: "在Monad区块链建dapp,部署合约/配前端"
 license: "Proprietary"

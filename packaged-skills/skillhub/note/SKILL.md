@@ -1,7 +1,7 @@
 ---
 slug: "note"
 name: "note"
-version: "2.1.0"
+version: 2.1.1
 displayName: "Note"
 summary: "知识捕获与连接系统,自动组织与检索"
 license: "Proprietary"

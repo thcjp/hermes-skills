@@ -1,7 +1,7 @@
 ---
 slug: "music-generation-cellcog"
 name: "music-generation-cellcog"
-version: "1.0.11"
+version: 1.0.12
 displayName: "Music Generation Cel"
 summary: "CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟"
 license: "Proprietary"

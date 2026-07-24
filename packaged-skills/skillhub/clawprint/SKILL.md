@@ -1,7 +1,7 @@
 ---
 slug: "clawprint"
 name: "clawprint"
-version: "3.0.1"
+version: 3.0.2
 displayName: "Skill"
 summary: "Agent发现信任与交换,注册ClawPrint被其他Agent找到并建立信誉"
 license: "Proprietary"

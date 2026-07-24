@@ -1,7 +1,7 @@
 ---
 slug: nextjs-fullstack-guide
 name: nextjs-fullstack-guide
-version: 1.1.0
+version: 1.0.1
 displayName: Next.js全栈指南
 summary: 基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导
 license: Proprietary

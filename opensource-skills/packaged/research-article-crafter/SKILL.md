@@ -1,7 +1,7 @@
 ---
 slug: research-article-crafter
 name: research-article-crafter
-version: 1.1.0
+version: 1.0.1
 displayName: 研究文章匠人
 summary: 研究引用钩子反馈四步法,产出有深度有据可查的专业长文
 license: Proprietary

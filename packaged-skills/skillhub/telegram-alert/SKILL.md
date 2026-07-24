@@ -1,7 +1,7 @@
 ---
 slug: "telegram-alert"
 name: "telegram-alert"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Telegram告警专业版"
 summary: "多通道交易告警系统，支持多群组、复杂触发、富媒体消息与团队协作。"
 license: "Proprietary"

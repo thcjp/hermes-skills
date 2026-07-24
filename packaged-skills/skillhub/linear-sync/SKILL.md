@@ -1,7 +1,7 @@
 ---
 slug: "linear-sync"
 name: "linear-sync"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Linear同步(专业版)"
 summary: "全功能Linear管理工具，支持任务全生命周期、批量操作、GraphQL API与Git集成"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: csv-insight-free
 name: csv-insight-free
-version: 1.0.0
+version: 1.0.1
 displayName: CSV洞察 免费版
 summary: 零依赖分析CSV文件，获取统计、筛选、异常检测与分组聚合，无需pandas.
 license: Proprietary

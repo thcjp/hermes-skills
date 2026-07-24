@@ -1,7 +1,7 @@
 ---
 slug: "db"
 name: "db"
-version: "1.0.0"
+version: 1.0.1
 displayName: "数据库设计与运维"
 summary: "识别并规避数据库连接、事务、Schema变更、备份恢复、复制、查询、数据完整性与扩展性陷阱"
 license: "Proprietary"

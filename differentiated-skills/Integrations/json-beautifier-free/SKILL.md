@@ -1,7 +1,7 @@
 ---
 slug: json-beautifier-free
 name: json-beautifier-free
-version: 1.0.0
+version: 1.0.1
 displayName: JSON美化工具免费版
 summary: 轻量级JSON格式化、压缩、验证与路径提取工具，适合日常开发调试与小文件处理.
 license: Proprietary

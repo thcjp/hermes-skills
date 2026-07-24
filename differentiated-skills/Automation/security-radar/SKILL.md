@@ -1,7 +1,7 @@
 ---
 slug: security-radar
 name: security-radar
-version: 1.0.0
+version: 1.0.1
 displayName: 安全情报雷达
 summary: 聚合多源漏洞情报并按资产关联排序，告别告警疲劳，只推真正影响你的威胁.
 license: Proprietary

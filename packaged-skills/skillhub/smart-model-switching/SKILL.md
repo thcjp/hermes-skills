@@ -1,7 +1,7 @@
 ---
 slug: "smart-model-switching"
 name: "smart-model-switching"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Smart Model Switchin"
 summary: "Claude模型路由指南,助你在模型间选择"
 license: "Proprietary"

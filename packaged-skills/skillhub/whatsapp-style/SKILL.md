@@ -1,7 +1,7 @@
 ---
 slug: "whatsapp-style"
 name: "whatsapp-style"
-version: "1.0.0"
+version: 1.0.1
 displayName: "WhatsApp样式工具-专业版"
 summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配"
 license: "Proprietary"

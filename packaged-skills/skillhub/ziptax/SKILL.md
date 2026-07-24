@@ -1,7 +1,7 @@
 ---
 slug: "ziptax"
 name: "ziptax"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Ziptax Sales Tax"
 summary: "销售税查询(其脚本可本地运行需谨慎)"
 license: "Proprietary"

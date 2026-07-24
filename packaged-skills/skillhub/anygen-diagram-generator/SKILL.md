@@ -1,7 +1,7 @@
 ---
 slug: "anygen-diagram-generator"
 name: "anygen-diagram-generator"
-version: "1.0.0"
+version: 3.0.1
 displayName: "AnyGen图表生成器"
 summary: "使用AnyGen CLI在服务端生成流程图、架构图、序列图等可视化图表，支持文本到图表的智能转换。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: doc-reasoning-analyst-free
 name: doc-reasoning-analyst-free
-version: 1.0.0
+version: 1.0.1
 displayName: 文档推理分析师(免费版)
 summary: 长文本推理优化器，解决商业法律文档逻辑混乱、风险遗漏、决策准备不足痛点，快速提取核心逻辑与风险.
 license: Proprietary

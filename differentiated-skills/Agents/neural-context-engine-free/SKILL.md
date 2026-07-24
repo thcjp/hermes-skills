@@ -1,7 +1,7 @@
 ---
 slug: neural-context-engine-free
 name: neural-context-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: Neural Context Engin
 summary: 基于扩散激活的联想记忆引擎，通过神经图谱检索概念相关记忆，零LLM依赖纯算法实现.
 license: Proprietary

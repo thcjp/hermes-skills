@@ -1,7 +1,7 @@
 ---
 slug: vault-sync-engine
 name: vault-sync-engine
-version: 1.0.0
+version: 1.0.1
 displayName: 知识库同步引擎
 summary: 解决多端冲突、插件配置漂移、iCloud丢笔记痛点，让Obsidian在多设备间稳定同步
 license: Proprietary

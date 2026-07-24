@@ -1,7 +1,7 @@
 ---
 slug: azure-cloud-automator
 name: azure-cloud-automator
-version: 1.1.0
+version: 1.0.1
 displayName: Azure云自动化
 summary: Azure云自动化:基础设施即代码+成本优化+无服务器架构,云上运维一站搞定
 license: Proprietary

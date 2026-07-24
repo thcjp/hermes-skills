@@ -1,7 +1,7 @@
 ---
 slug: "university-app"
 name: "university-app"
-version: "1.0.0"
+version: 1.0.1
 displayName: "命理咨询专业版"
 summary: "专业命理分析系统，支持八字、紫微、合婚、大运流年与批量排盘。"
 license: "Proprietary"

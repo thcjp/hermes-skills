@@ -1,7 +1,7 @@
 ---
 slug: "claude-code-runner"
 name: "claude-code-runner"
-version: "0.1.0"
+version: 0.1.1
 displayName: "ai-assistant Code Ru"
 summary: "经PTY调用Claude Code执行编程任务,搞定非TTY环境"
 license: "Proprietary"

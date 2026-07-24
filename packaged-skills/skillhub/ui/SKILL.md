@@ -1,7 +1,7 @@
 ---
 slug: "ui"
 name: "ui"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UI"
 summary: "设计清晰一致视觉精致的用户界面"
 license: "Proprietary"

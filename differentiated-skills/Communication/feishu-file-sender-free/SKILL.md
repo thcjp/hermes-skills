@@ -1,7 +1,7 @@
 ---
 slug: feishu-file-sender-free
 name: feishu-file-sender-free
-version: 1.0.0
+version: 1.0.1
 displayName: 飞书文件发送免费版
 summary: 飞书文件与图片发送工具，支持两步上传与稳定投递
 license: Proprietary

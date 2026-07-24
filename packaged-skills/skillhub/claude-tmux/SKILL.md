@@ -1,7 +1,7 @@
 ---
 slug: "claude-tmux"
 name: "claude-tmux"
-version: "1.0.0"
+version: 1.0.1
 displayName: "ai-assistant Tmux"
 summary: "纯指令型tmux助手,所宣即所做,会话管理利器"
 license: "Proprietary"

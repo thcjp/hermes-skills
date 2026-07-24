@@ -1,7 +1,7 @@
 ---
 slug: "miniprogram-development"
 name: "miniprogram-development"
-version: "1.28.12"
+version: 1.28.13
 displayName: "Miniprogram Developm"
 summary: "微信小程序开发,构建/调试/预览/测试/发布"
 license: "Proprietary"

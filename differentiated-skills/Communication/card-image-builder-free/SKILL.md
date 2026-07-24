@@ -1,7 +1,7 @@
 ---
 slug: card-image-builder-free
 name: card-image-builder-free
-version: 1.0.0
+version: 1.0.1
 displayName: 卡片图生成器-免费版
 summary: 将文案渲染为PNG卡片图,支持海报和文章封面,适合个人创作者快速出图
 license: Proprietary

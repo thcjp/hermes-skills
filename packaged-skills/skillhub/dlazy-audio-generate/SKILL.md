@@ -1,7 +1,7 @@
 ---
 slug: "dlazy-audio-generate"
 name: "dlazy-audio-generate"
-version: "1.0.0"
+version: 1.3.4
 displayName: "Dlazy Audio音频生成"
 summary: "通过dlazy CLI调用15+音频模型,涵盖TTS/音乐/音效/语音克隆,支持管道串联"
 license: "Proprietary"

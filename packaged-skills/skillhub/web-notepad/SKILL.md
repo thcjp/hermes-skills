@@ -1,7 +1,7 @@
 ---
 slug: "web-notepad"
 name: "web-notepad"
-version: "1.0.0"
+version: 1.0.1
 displayName: "在线表单笔记(专业版)"
 summary: "企业级表单管理工具,支持批量操作、Webhook订阅、RBAC权限、自定义模板、加密存储与审计日志,适合团队与企业规模化使用。"
 license: "Proprietary"

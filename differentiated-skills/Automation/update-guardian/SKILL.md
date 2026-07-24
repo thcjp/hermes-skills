@@ -1,7 +1,7 @@
 ---
 slug: update-guardian
 name: update-guardian
-version: 1.0.0
+version: 1.0.1
 displayName: 更新守护者
 summary: 解决破坏性变更、无法回滚、版本冲突、时机不当四大痛点，预检+快照+回滚三段式.
 license: Proprietary

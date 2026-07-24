@@ -5,7 +5,7 @@ pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 summary: "把重复任务变自动驾驶,看到重复即构建自动化"
 slug: "autopilot-flow"
-version: "1.0.0"
+version: 1.0.1
 name: "Autopilot Flow"
 tools: ["read", "write", "exec"]
 tags:

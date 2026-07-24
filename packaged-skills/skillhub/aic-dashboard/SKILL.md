@@ -1,7 +1,7 @@
 ---
 slug: "aic-dashboard"
 name: "aic-dashboard"
-version: "1.0.0"
+version: 1.8.1
 displayName: "AIC仪表盘监控"
 summary: "轻量级只读监控面板,展示入站邮件与浏览器会话状态,token保护,5秒自动刷新"
 license: "Proprietary"

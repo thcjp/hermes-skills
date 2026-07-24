@@ -1,7 +1,7 @@
 ---
 slug: "china-news"
 name: "china-news"
-version: "1.0.3"
+version: 1.0.4
 displayName: "China News"
 summary: "中国新闻资讯聚合,一键获取中文源最新动态"
 license: "Proprietary"

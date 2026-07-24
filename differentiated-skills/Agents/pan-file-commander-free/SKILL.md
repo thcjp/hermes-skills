@@ -1,7 +1,7 @@
 ---
 slug: pan-file-commander-free
 name: pan-file-commander-free
-version: 1.0.0
+version: 1.0.1
 displayName: 网盘指挥官免费版
 summary: 命令式百度网盘文件管理,快捷命令模板,分类视图,路径校验,确认规则.
 license: Proprietary

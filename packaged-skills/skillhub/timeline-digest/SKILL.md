@@ -1,7 +1,7 @@
 ---
 slug: "timeline-digest"
 name: "timeline-digest"
-version: "1.0.0"
+version: 1.0.1
 displayName: "时间线摘要工具-专业版"
 summary: "企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送"
 license: "Proprietary"

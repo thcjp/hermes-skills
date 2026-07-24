@@ -1,7 +1,7 @@
 ---
 slug: "vpn-rotate-skill"
 name: "vpn-rotate-skill"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Vpn Rotate Skill"
 summary: "轮换VPN服务器绕过API限流,兼容OpenVPN(ProtonVPN等)"
 license: "Proprietary"

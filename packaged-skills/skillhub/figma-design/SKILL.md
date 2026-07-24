@@ -1,7 +1,7 @@
 ---
 slug: "figma-design"
 name: "figma-design"
-version: "1.0.6"
+version: 1.0.7
 displayName: "Figma"
 summary: "读文件/管评论/提设计令牌/下图片/建Webhook,Figma全管"
 license: "Proprietary"

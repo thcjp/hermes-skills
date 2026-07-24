@@ -1,7 +1,7 @@
 ---
 slug: "mongodb"
 name: "mongodb"
-version: "1.0.1"
+version: 1.0.2
 displayName: "MongoDB"
 summary: "设计schema/写查询/配置MongoDB,兼顾一致性与性能"
 license: "Proprietary"

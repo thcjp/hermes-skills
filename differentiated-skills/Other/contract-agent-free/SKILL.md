@@ -1,7 +1,7 @@
 ---
 slug: contract-agent-free
 name: contract-agent-free
-version: 1.0.0
+version: 1.0.1
 displayName: 合约Agent免费版
 summary: 让AI Agent自主协商、签署、执行商业合约，提供身份认证与里程碑式托管支付
 license: Proprietary

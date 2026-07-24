@@ -1,7 +1,7 @@
 ---
 slug: "whatsapp-style-guide"
 name: "whatsapp-style-guide"
-version: "1.0.0"
+version: 1.0.1
 displayName: "WhatsApp样式指南-专业版"
 summary: "企业级WhatsApp格式完整规范,含边界场景/高级模式/多语言指南/交互式测试"
 license: "Proprietary"

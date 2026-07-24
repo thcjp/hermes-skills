@@ -1,7 +1,7 @@
 ---
 slug: "logo-design-guide-free"
 name: "logo-design-guide-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Logo设计指南(免费版)"
 summary: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。(免费版)"
 license: "MIT"

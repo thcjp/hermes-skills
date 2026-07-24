@@ -1,7 +1,7 @@
 ---
 slug: "shopify-helper"
 name: "shopify-helper"
-version: "2.0.0"
+version: 2.0.1
 displayName: "Shopify Helper"
 summary: "Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Shopify store builder with setup,"
 license: "Proprietary"

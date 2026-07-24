@@ -1,7 +1,7 @@
 ---
 slug: "openai-ai"
 name: "openai-ai"
-version: "1.0.6"
+version: 1.0.7
 displayName: "llm-provider"
 summary: "管OpenAI文件/助手/向量库/批次/微调/模型资源"
 license: "Proprietary"

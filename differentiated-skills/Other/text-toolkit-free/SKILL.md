@@ -1,7 +1,7 @@
 ---
 slug: text-toolkit-free
 name: text-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 文本处理工具免费版
 summary: 提供编码校验、空白清理、格式检测与快速变换的文本处理工具，适合个人开发日常.
 license: Proprietary

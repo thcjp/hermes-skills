@@ -1,7 +1,7 @@
 ---
 slug: ollama-toolkit-free
 name: ollama-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Ollama工具箱(免费版)
 summary: 本地运行Ollama AI模型的免费工具，支持模型列表、运行推理与基础对话
 license: Proprietary

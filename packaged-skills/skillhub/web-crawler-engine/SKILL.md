@@ -1,7 +1,7 @@
 ---
 slug: "web-crawler-engine"
 name: "web-crawler-engine"
-version: "1.0.0"
+version: 1.0.1
 displayName: "网页抓取引擎(专业版)"
 summary: "全功能数据抓取与归档平台，支持增量同步、SQL分析、批量调度与监控告警。"
 license: "Proprietary"

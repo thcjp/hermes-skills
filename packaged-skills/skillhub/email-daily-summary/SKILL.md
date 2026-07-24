@@ -1,7 +1,7 @@
 ---
 slug: "email-daily-summary"
 name: "email-daily-summary"
-version: "1.0.0"
+version: 0.1.1
 displayName: "Email Daily Summary"
 summary: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报"
 license: "Proprietary"

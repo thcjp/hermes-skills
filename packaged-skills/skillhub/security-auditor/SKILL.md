@@ -1,7 +1,7 @@
 ---
 slug: "security-auditor"
 name: "security-auditor"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Security Auditor"
 summary: "审代码安全漏洞/实现认证流/审计依赖,安全合规"
 license: "Proprietary"

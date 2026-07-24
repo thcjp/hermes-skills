@@ -1,7 +1,7 @@
 ---
 slug: "tailwindcss-toolkit"
 name: "tailwindcss-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Tailwind CSS工具包专业版"
 summary: "企业级Tailwind CSS工具包,支持自定义插件、设计系统、性能优化与组件库,适配团队协作与大型项目。"
 license: "Proprietary"

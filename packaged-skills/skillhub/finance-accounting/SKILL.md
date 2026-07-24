@@ -1,7 +1,7 @@
 ---
 slug: "finance-accounting"
 name: "finance-accounting"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Finance Accounting"
 summary: "财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能"
 license: "Proprietary"

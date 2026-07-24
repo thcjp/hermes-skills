@@ -1,7 +1,7 @@
 ---
 slug: "automation-recipe-pack"
 name: "automation-recipe-pack"
-version: "1.1.0"
+version: 1.1.1
 displayName: "SkillHub Automation"
 summary: "SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。"
 license: "Proprietary"

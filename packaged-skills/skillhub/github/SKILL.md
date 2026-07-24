@@ -1,7 +1,7 @@
 ---
 slug: "github"
 name: "github"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Github"
 summary: "用gh CLI操作GitHub,issue/pr/run/api一站管理"
 license: "Proprietary"

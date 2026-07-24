@@ -1,7 +1,7 @@
 ---
 slug: "baidu-netdisk-skills"
 name: "baidu-netdisk-skills"
-version: "2.0.0"
+version: 1.1.6
 displayName: "百度网盘"
 summary: "百度网盘文件管理，限 /apps/bdpan/ 目录，支持上传下载转存分享搜索与记忆备份。"
 license: "Proprietary"

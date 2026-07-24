@@ -1,7 +1,7 @@
 ---
 slug: "game-ai"
 name: "game-ai"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Game AI Systems"
 summary: "游戏AI开发指南,行为树/状态机/寻路/决策全覆盖"
 license: "Proprietary"

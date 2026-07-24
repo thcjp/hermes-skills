@@ -1,7 +1,7 @@
 ---
 slug: title-hook-factory
 name: title-hook-factory
-version: "1.1.0"
+version: 1.0.1
 displayName: "标题钩子工厂"
 summary: "生成爆款标题+钩子段落,基于6大钩子公式+量化打分+多平台字数控制"
 license: Proprietary

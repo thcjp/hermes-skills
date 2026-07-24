@@ -1,7 +1,7 @@
 ---
 slug: "finance"
 name: "finance"
-version: "1.1.2"
+version: 1.1.3
 displayName: "finance"
 summary: "跟踪股票/ETF/指数/加密/外汇,带缓存与提供商回退"
 license: "Proprietary"

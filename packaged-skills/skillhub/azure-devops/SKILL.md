@@ -1,7 +1,7 @@
 ---
 slug: "azure-devops"
 name: "azure-devops"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Azure DevOps"
 summary: "列Azure DevOps项目/仓库/分支,建PR管工作项,研发协同闭环"
 license: "Proprietary"

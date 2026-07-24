@@ -1,7 +1,7 @@
 ---
 slug: "browser-automation"
 name: "browser-automation"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Browser Automation"
 summary: "自然语言经CLI自动化浏览器交互,告别手写脚本"
 license: "Proprietary"

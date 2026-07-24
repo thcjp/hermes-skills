@@ -1,7 +1,7 @@
 ---
 slug: "azure-cli"
 name: "azure-cli"
-version: "1.0.0"
+version: 1.0.1
 displayName: "azure-cli"
 summary: "命令行全面管理Azure云平台,一条命令搞定资源运维"
 license: "Proprietary"

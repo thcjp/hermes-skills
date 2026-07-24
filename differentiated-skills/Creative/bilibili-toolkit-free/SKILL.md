@@ -1,7 +1,7 @@
 ---
 slug: bilibili-toolkit-free
 name: bilibili-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: B站工具箱免费版
 summary: B站热门监控、视频下载、数据查看与字幕获取，免登录使用核心功能，适合个人用户.
 license: Proprietary

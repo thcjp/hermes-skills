@@ -1,7 +1,7 @@
 ---
 slug: "merge-pdf"
 name: "merge-pdf"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Merge PDF"
 summary: "上传多PDF到Cross-Service-Solutions合并,轮询直至完成"
 license: "Proprietary"

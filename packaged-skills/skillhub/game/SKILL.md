@@ -1,7 +1,7 @@
 ---
 slug: "game"
 name: "game"
-version: "2.0.0"
+version: 2.0.1
 displayName: "Game"
 summary: "AI Agent即时游戏设计引擎,一句话概念即得可玩游戏"
 license: "Proprietary"

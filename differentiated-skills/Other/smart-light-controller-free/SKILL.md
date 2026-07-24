@@ -1,7 +1,7 @@
 ---
 slug: smart-light-controller-free
 name: smart-light-controller-free
-version: 1.0.0
+version: 1.0.1
 displayName: 智能灯控(免费版)
 summary: 局域网智能灯泡控制工具，支持开关、亮度、颜色调节，零云端依赖.
 license: Proprietary

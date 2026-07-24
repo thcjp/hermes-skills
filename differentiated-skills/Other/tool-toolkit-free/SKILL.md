@@ -1,7 +1,7 @@
 ---
 slug: tool-toolkit-free
 name: tool-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 工具评估工具免费版
 summary: 提供工具发现、评估框架与工作流设计指引，帮助个人开发者选对工具、避免工具切换综合征.
 license: Proprietary

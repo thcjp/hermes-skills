@@ -1,7 +1,7 @@
 ---
 slug: cloudflare-edge-developer
 name: cloudflare-edge-developer
-version: 1.1.0
+version: 1.0.1
 displayName: 边缘计算开发者
 summary: 全球300+边缘节点低延迟部署,Cloudflare全栈边缘开发一站搞定
 license: Proprietary

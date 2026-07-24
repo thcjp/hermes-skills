@@ -1,7 +1,7 @@
 ---
 slug: "bilibili-all-in-one"
 name: "bilibili-all-in-one"
-version: "1.0.0"
+version: 1.0.25
 displayName: "B站全功能工具箱"
 summary: "B站热门监控、视频下载、数据追踪、字幕处理、播放与投稿一体化工具集。"
 license: "Proprietary"

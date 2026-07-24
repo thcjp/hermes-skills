@@ -1,7 +1,7 @@
 ---
 slug: "merge-check-paid"
 name: "merge-check-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "合并检查工具(专业版)"
 summary: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。"
 license: "Proprietary"

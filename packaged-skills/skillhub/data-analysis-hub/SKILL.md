@@ -1,7 +1,7 @@
 ---
 slug: "data-analysis-hub"
 name: "data-analysis-hub"
-version: "1.0.0"
+version: 1.0.1
 displayName: "数据分析中枢(专业版)"
 summary: "全功能决策分析平台,支持批处理、多重比较校正、定时任务、协同审阅与高级报告模板。"
 license: "Proprietary"

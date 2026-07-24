@@ -1,7 +1,7 @@
 ---
 slug: "file-auto-organizer"
 name: "file-auto-organizer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "File Auto Organizer"
 summary: "文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。"
 license: "Proprietary"

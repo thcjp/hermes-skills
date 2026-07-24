@@ -1,7 +1,7 @@
 ---
 slug: "go-to-market-free"
 name: "go-to-market-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "上市策略引擎(免费版)"
 summary: "产品上市策略，覆盖市场定位、定价策略、渠道选择、发布计划与增长指标。免费版"
 license: "MIT"

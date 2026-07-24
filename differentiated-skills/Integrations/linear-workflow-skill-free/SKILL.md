@@ -1,7 +1,7 @@
 ---
 slug: linear-workflow-skill-free
 name: linear-workflow-skill-free
-version: 1.0.2
+version: 1.0.1
 displayName: Linear工作流(免费版)
 summary: 通过Node CLI管理Linear问题与项目，支持问题查看、创建与状态更新
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "markdown"
 name: "markdown"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Markdown"
 summary: "生成干净可移植Markdown,跨解析器正确渲染"
 license: "Proprietary"

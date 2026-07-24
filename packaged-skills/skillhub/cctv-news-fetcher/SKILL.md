@@ -1,7 +1,7 @@
 ---
 slug: "cctv-news-fetcher"
 name: "cctv-news-fetcher"
-version: "1.0.0"
+version: 1.0.1
 displayName: "CCTV News Fetcher"
 summary: "按日期抓取并解析央视新闻联播要点,新闻速览不漏报"
 license: "Proprietary"

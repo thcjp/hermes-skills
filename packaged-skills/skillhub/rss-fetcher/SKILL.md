@@ -1,7 +1,7 @@
 ---
 slug: "rss-fetcher"
 name: "rss-fetcher"
-version: "1.1.0"
+version: 1.1.1
 displayName: "Rss Fetcher"
 summary: "统一的RSS采集与管理系统 | Unified RSS Feed Fetcher and Manager 支持增量抓取、自动去重、自动标签、源健康监控、HTML报告生成"
 license: "Proprietary"

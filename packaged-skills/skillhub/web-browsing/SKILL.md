@@ -1,7 +1,7 @@
 ---
 slug: "web-browsing"
 name: "web-browsing"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Web Browsing"
 summary: "浏览汇总网站/从URL提取内容/搜网"
 license: "Proprietary"

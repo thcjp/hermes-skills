@@ -1,7 +1,7 @@
 ---
 slug: "resume-assistant-free"
 name: "resume-assistant-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "简历助手免费版"
 summary: "免费版简历助手，支持基础评分与润色功能。"
 license: "MIT"

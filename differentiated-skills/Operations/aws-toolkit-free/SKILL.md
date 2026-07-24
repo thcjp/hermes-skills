@@ -1,7 +1,7 @@
 ---
 slug: aws-toolkit-free
 name: aws-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: AWS部署入门工具
 summary: AWS基础架构部署工具，支持EC2/S3/VPC常用资源创建与管理.
 license: Proprietary

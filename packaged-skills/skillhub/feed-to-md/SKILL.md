@@ -1,7 +1,7 @@
 ---
 slug: "feed-to-md"
 name: "feed-to-md"
-version: "1.2.0"
+version: 1.2.1
 displayName: "Feed To Md"
 summary: "用内置本地转换器把RSS/Atom订阅转Markdown"
 license: "Proprietary"

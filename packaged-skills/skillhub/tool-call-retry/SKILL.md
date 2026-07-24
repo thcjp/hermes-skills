@@ -1,7 +1,7 @@
 ---
 slug: "tool-call-retry"
 name: "tool-call-retry"
-version: "1.0.1"
+version: 1.0.2
 displayName: "tool-call-retry"
 summary: "指数退避自动重试并修复LLM工具调用,格式校验/纠错"
 license: "Proprietary"

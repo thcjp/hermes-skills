@@ -1,7 +1,7 @@
 ---
 slug: drawing-insight-free
 name: drawing-insight-free
-version: 1.0.0
+version: 1.0.1
 displayName: 图纸解析(免费版)
 summary: 从建筑施工PDF图纸中提取标题栏、尺寸、注释与符号，生成质量检查报告，单文件快速解析.
 license: Proprietary

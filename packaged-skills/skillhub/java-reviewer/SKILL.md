@@ -1,7 +1,7 @@
 ---
 slug: "java-reviewer"
 name: "java-reviewer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Java代码审查专业版"
 summary: "企业级 Java 代码审查方案，支持批量审查、自定义规则、HTML 报告与 CI 集成。"
 license: "Proprietary"

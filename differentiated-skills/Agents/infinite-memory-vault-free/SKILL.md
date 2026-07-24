@@ -1,7 +1,7 @@
 ---
 slug: infinite-memory-vault-free
 name: infinite-memory-vault-free
-version: 1.0.0
+version: 1.0.1
 displayName: 无限记忆库(免费版)
 summary: 与Agent内置记忆并行的无限组织化记忆免费版：自定义分类、索引导航、即写即存.
 license: Proprietary

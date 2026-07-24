@@ -1,7 +1,7 @@
 ---
 slug: "alibaba-quark-scan"
 name: "alibaba-quark-scan"
-version: "2.0.0"
+version: 1.0.19
 displayName: "文档扫描增强"
 summary: "文档高清扫描增强工具，支持画质优化、去手写、去水印、去阴影等13种场景"
 license: "Proprietary"

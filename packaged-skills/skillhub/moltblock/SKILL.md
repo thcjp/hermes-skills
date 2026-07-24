@@ -1,7 +1,7 @@
 ---
 slug: "moltblock"
 name: "moltblock"
-version: "0.11.9"
+version: 0.11.10
 displayName: "Skill"
 summary: "AI产物验证门禁,策略检查拦截危险模式"
 license: "Proprietary"

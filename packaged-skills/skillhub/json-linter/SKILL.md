@@ -1,7 +1,7 @@
 ---
 slug: "json-linter"
 name: "json-linter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Json Linter"
 summary: "校验工作区JSON语法,排查配置语法错误"
 license: "Proprietary"

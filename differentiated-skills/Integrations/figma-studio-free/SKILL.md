@@ -1,7 +1,7 @@
 ---
 slug: figma-studio-free
 name: figma-studio-free
-version: 1.0.0
+version: 1.0.1
 displayName: Figma工作室(免费版)
 summary: 轻量级Figma设计文件读取工具，覆盖文件解析、评论管理与图片导出，60秒上手.
 license: Proprietary

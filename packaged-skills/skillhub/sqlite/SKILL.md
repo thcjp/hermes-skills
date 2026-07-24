@@ -1,7 +1,7 @@
 ---
 slug: "sqlite"
 name: "sqlite"
-version: "1.0.0"
+version: 1.0.1
 displayName: "SQLite"
 summary: "正确用SQLite,并发/pragmas/类型处理得当"
 license: "Proprietary"

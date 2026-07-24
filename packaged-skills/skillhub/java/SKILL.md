@@ -1,7 +1,7 @@
 ---
 slug: "java"
 name: "java"
-version: "1.1.0"
+version: 1.0.2
 displayName: "Java健壮编程"
 summary: "编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题"
 license: "Proprietary"

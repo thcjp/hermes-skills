@@ -1,7 +1,7 @@
 ---
 slug: "tg-bot-builder"
 name: "tg-bot-builder"
-version: "1.0.0"
+version: 1.0.1
 displayName: "TG机器人构建专业版"
 summary: "全功能Telegram机器人构建平台，支持支付集成、批量推送、状态机与高级群管"
 license: "Proprietary"

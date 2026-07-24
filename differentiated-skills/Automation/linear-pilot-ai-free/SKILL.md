@@ -1,7 +1,7 @@
 ---
 slug: linear-pilot-ai-free
 name: linear-pilot-ai-free
-version: 1.0.0
+version: 1.0.1
 displayName: Linear自动驾驶(免费版)
 summary: Linear任务自动化处理流水线，通过Webhook接收任务、更新状态、发送通知与Git同步，基础单工作流配置.
 license: Proprietary

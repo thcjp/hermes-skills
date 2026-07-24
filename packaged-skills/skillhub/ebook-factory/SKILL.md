@@ -1,7 +1,7 @@
 ---
 slug: ebook-factory
 name: ebook-factory
-version: "1.0.1"
+version: 1.0.1
 displayName: "电子书工厂"
 summary: "三天写完一本专业电子书,Markdown输入EPUB输出,KDP/微信读书多平台发布"
 license: Proprietary

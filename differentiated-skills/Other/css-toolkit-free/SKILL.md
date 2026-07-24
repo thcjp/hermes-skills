@@ -1,7 +1,7 @@
 ---
 slug: css-toolkit-free
 name: css-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: CSS工具箱(免费版)
 summary: CSS 常见陷阱速查手册，覆盖层叠上下文、布局陷阱与现代选择器.
 license: Proprietary

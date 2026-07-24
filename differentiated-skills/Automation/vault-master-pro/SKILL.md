@@ -1,7 +1,7 @@
 ---
 slug: vault-master-pro
 name: vault-master-pro
-version: 1.0.0
+version: 1.0.1
 displayName: 知识库大师
 summary: 解决多库混乱、移动即断链、附件散落、找不到笔记痛点，让Obsidian知识库井井有条
 license: Proprietary

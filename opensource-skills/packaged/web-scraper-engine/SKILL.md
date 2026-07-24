@@ -1,7 +1,7 @@
 ---
 slug: web-scraper-engine
 name: web-scraper-engine
-version: 1.1.0
+version: 1.0.1
 displayName: 网页抓取引擎
 summary: Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单
 license: Proprietary

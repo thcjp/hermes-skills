@@ -1,7 +1,7 @@
 ---
 slug: "key-guard"
 name: "key-guard"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Key Guard"
 summary: "安全护栏,阻止API Key被发送给Claude"Proprietary"
 description: |-

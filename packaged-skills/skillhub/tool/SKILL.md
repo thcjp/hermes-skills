@@ -1,7 +1,7 @@
 ---
 slug: "tool"
 name: "tool"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Tool"
 summary: "AI Agent技能,查找/评估/用好可用工具"
 license: "Proprietary"

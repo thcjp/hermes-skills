@@ -1,7 +1,7 @@
 ---
 slug: "bilibili-helper-free"
 name: "bilibili-helper-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "B站创作助手-免费版"
 summary: "B站视频运营基础工具，提供标题生成、简介与标签推荐、口播脚本撰写，帮助内容创作者快速完成投稿素材准备。"
 license: "MIT"

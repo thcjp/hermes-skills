@@ -1,7 +1,7 @@
 ---
 slug: docx-document-master
 name: docx-document-master
-version: 1.0.0
+version: 1.0.1
 displayName: 文档处理大师
 summary: Word文档全流程处理,从创建到修订到邮件合并,正式文档一站搞定
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: duckdb-analytics-engine
 name: duckdb-analytics-engine
-version: 1.0.0
+version: 1.0.1
 displayName: DuckDB分析引擎
 summary: 本地分析型数据库,免部署秒级启动,GB级数据SQL查询无压力
 license: Proprietary

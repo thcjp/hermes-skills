@@ -1,7 +1,7 @@
 ---
 slug: graph-knowledge-base-free
 name: graph-knowledge-base-free
-version: 1.0.0
+version: 1.0.1
 displayName: 知识图谱库(免费版)
 summary: 原子化知识管理工具，支持实体事实添加、版本替代与摘要生成
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "longmemo-elite"
 name: "longmemo-elite"
-version: "1.0.0"
+version: 2.0.1
 displayName: "精英长记忆"
 summary: "Agent精英级长记忆：WAL防丢失+三路混合检索+六层存储+成本预算控制。"
 license: "Proprietary"

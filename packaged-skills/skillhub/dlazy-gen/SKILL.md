@@ -1,7 +1,7 @@
 ---
 slug: "dlazy-gen"
 name: "dlazy-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "综合生成工具-专业版"
 summary: "全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "blog-seo-writer"
 name: "blog-seo-writer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "blog-seo-writer"
 summary: "写Google高排名SEO博文,内置关键词/元描述/结构化,流量可期"
 license: "Proprietary"

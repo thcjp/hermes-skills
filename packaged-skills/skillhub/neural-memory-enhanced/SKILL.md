@@ -1,7 +1,7 @@
 ---
 slug: "neural-memory-enhanced"
 name: "neural-memory-enhanced"
-version: "1.0.0"
+version: 1.0.1
 displayName: "神经记忆增强系统"
 summary: "基于扩散激活的联想记忆系统，通过神经图谱实现智能持久化召回"
 license: "Proprietary"

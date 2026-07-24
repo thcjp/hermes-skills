@@ -1,7 +1,7 @@
 ---
 slug: note-process-engine-free
 name: note-process-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: 笔记处理引擎(免费版)
 summary: 轻量化研究笔记分析工具,支持摘要生成、关键词提取、全文检索与主题列表,适合个人研究者快速提炼笔记洞察.
 license: Proprietary

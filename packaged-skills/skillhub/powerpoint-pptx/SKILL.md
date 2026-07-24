@@ -1,7 +1,7 @@
 ---
 slug: "powerpoint-pptx"
 name: "powerpoint-pptx"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Powerpoint / PPTX"
 summary: "创建检查编辑PowerPoint演示文稿与PPTX,布局可靠"
 license: "Proprietary"

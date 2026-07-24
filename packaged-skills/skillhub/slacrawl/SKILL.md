@@ -1,7 +1,7 @@
 ---
 slug: "slacrawl"
 name: "slacrawl"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Slacrawl"
 summary: "Slack归档,搜索/同步/线程私信/SQL计数"
 license: "Proprietary"

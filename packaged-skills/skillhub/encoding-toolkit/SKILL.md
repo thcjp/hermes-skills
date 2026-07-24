@@ -1,7 +1,7 @@
 ---
 slug: "encoding-toolkit"
 name: "encoding-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "编解码工具箱专业版"
 summary: "全场景编解码引擎，含二进制协议、序列化互转、批量哈希校验、自定义模板与跨平台性能优化策略。"
 license: "Proprietary"

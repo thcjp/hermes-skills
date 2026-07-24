@@ -1,7 +1,7 @@
 ---
 slug: "ai-podcast-free"
 name: "ai-podcast-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AI播客生成(免费版)"
 summary: "将文本内容转化为双主持人对话播客的基础工具"
 license: "MIT"

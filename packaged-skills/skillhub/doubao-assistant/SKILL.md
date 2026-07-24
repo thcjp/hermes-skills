@@ -1,7 +1,7 @@
 ---
 slug: "doubao-assistant"
 name: "doubao-assistant"
-version: "1.0.0"
+version: 1.0.1
 displayName: "豆包助手(专业版)"
 summary: "全功能豆包大模型集成平台，支持流式响应、函数调用、知识库与批量处理。"
 license: "Proprietary"

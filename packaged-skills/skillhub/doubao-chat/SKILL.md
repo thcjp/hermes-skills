@@ -1,7 +1,7 @@
 ---
 slug: "doubao-chat"
 name: "doubao-chat"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Doubao Chat"
 summary: "豆包大模型对话（免费 API，支持联网搜索）"
 license: "Proprietary"

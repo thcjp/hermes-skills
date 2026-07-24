@@ -1,7 +1,7 @@
 ---
 slug: "manage-liquidity"
 name: "manage-liquidity"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Manage Liquidity"
 summary: "在Uniswap V2/V3/V4池加撤流动性并收手续费"
 license: "Proprietary"

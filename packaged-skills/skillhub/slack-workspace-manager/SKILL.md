@@ -1,7 +1,7 @@
 ---
 slug: "slack-workspace-manager"
 name: "slack-workspace-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Slack工作区管理专业版"
 summary: "企业级Slack工作区管理平台，支持企业Grid、审计日志、Canvas文档、用户组管理与批量操作。"
 license: "Proprietary"

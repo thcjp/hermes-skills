@@ -1,7 +1,7 @@
 ---
 slug: "ai-kujiale-design"
 name: "ai-kujiale-design"
-version: "1.0.0"
+version: 0.0.7
 displayName: "酷家乐AI室内设计"
 summary: "酷家乐室内智能设计,分步对话完成户型确认、风格选择、布局生成与渲染出图。"
 license: "Proprietary"

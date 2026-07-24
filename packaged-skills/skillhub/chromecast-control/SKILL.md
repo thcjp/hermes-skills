@@ -1,7 +1,7 @@
 ---
 slug: "chromecast-control"
 name: "chromecast-control"
-version: "1.0.0"
+version: 1.0.1
 displayName: "投屏设备控制"
 summary: "控制局域网投屏设备，发现设备、投放媒体、管理播放和音量"
 license: "Proprietary"

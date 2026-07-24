@@ -1,7 +1,7 @@
 ---
 slug: "video"
 name: "video"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Video"
 summary: "为任意平台处理/编辑/优化视频,压缩/转码/字幕"
 license: "Proprietary"

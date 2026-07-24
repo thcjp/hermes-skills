@@ -1,7 +1,7 @@
 ---
 slug: pyx-scanner-free
 name: pyx-scanner-free
-version: 1.0.0
+version: 1.0.1
 displayName: Skill安全扫描(免费版)
 summary: 检查AI Agent Skill安装前的安全性，调用扫描API返回信任分、风险等级与详细报告.
 license: Proprietary

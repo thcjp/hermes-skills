@@ -1,7 +1,7 @@
 ---
 slug: "shadcn-ui"
 name: "shadcn-ui"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Shadcn Ui"
 summary: "用shadcn/ui组件/Tailwind布局/react-hook-form表单建UI"
 license: "Proprietary"

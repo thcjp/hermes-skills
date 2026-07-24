@@ -1,7 +1,7 @@
 ---
 slug: schedule-manager-free
 name: schedule-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 任务调度管家(免费版)
 summary: 自然语言驱动的定时任务管理，支持一次性与周期任务、时区感知与执行日志，让Agent准确知道何时执行何事.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: slack-workspace-manager-free
 name: slack-workspace-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: Slack工作区管理免费版
 summary: Slack工作区基础管理工具，支持消息发送、频道管理、文件处理与提醒创建，适合个人与小型团队.
 license: Proprietary

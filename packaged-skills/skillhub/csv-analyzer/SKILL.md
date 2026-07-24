@@ -1,7 +1,7 @@
 ---
 slug: "csv-analyzer"
 name: "csv-analyzer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "CSV数据分析器"
 summary: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。"
 license: "Proprietary"

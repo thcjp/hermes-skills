@@ -1,7 +1,7 @@
 ---
 slug: "email-skill"
 name: "email-skill"
-version: "1.0.0"
+version: 0.1.1
 displayName: "Email"
 summary: "SMTP邮件发送自动化,支持多供应商、附件、HTML模板与TLS加密"
 license: "Proprietary"

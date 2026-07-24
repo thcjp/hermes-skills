@@ -1,7 +1,7 @@
 ---
 slug: "go-to-market"
 name: "go-to-market"
-version: "1.0.0"
+version: 0.1.1
 displayName: "上市策略"
 summary: "从ICP定义到90天执行计划,覆盖定位、渠道、定价与度量的GTM全流程。"
 license: "Proprietary"

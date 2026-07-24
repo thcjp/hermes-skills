@@ -1,7 +1,7 @@
 ---
 slug: obsidian-toolkit-free
 name: obsidian-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Obsidian工具箱(免费版)
 summary: Obsidian综合工具箱免费版，含vault发现、笔记管理、基础模板与插件生态入门指南.
 license: Proprietary

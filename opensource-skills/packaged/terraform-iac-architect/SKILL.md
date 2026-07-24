@@ -1,7 +1,7 @@
 ---
 slug: terraform-iac-architect
 name: terraform-iac-architect
-version: 1.1.0
+version: 1.0.1
 displayName: IaC架构师
 summary: Terraform基础设施即代码,模块化多环境CI/CD,云资源一键编排
 license: Proprietary

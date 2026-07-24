@@ -1,7 +1,7 @@
 ---
 slug: "z-card-image"
 name: "z-card-image"
-version: "1.0.0"
+version: 1.1.1
 displayName: "卡片图渲染"
 summary: "将文案渲染为 PNG 卡片图,支持海报、长文分页、X 风格长图与公众号封面,多平台配色预设"
 license: "Proprietary"

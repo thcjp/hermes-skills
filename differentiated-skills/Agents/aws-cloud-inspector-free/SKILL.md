@@ -1,7 +1,7 @@
 ---
 slug: aws-cloud-inspector-free
 name: aws-cloud-inspector-free
-version: 1.0.0
+version: 1.0.1
 displayName: AWS云巡检免费版
 summary: 基于AWS CLI的只读云基础设施查询助手，免费提供资源清点、健康检查与基础安全核查能力，适合个人开发者日常巡检.
 license: Proprietary

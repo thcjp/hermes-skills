@@ -1,7 +1,7 @@
 ---
 slug: "hot-news-aggregator"
 name: "hot-news-aggregator"
-version: "1.0.0"
+version: 1.0.1
 displayName: "hot-news-aggregator"
 summary: "国内外社会科技军事新闻汇总,自动搜索筛选整理要点"
 license: "Proprietary"

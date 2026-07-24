@@ -1,7 +1,7 @@
 ---
 slug: cloudforge-automation-free
 name: cloudforge-automation-free
-version: 1.0.0
+version: 1.0.1
 displayName: Cloudforge Automatio
 summary: 单云基础设施即代码工具，含Terraform模板、基础资源配置与一键部署，支持AWS/GCP/Azure.
 license: Proprietary

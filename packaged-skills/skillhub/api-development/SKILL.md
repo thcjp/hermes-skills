@@ -1,7 +1,7 @@
 ---
 slug: "api-development"
 name: "api-development"
-version: "1.0.0"
+version: 1.0.1
 displayName: "api-development"
 summary: "编排API全生命周期,从设计到文档/测试/部署一站完成,规范产出API"
 license: "Proprietary"

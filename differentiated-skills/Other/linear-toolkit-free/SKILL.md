@@ -1,7 +1,7 @@
 ---
 slug: linear-toolkit-free
 name: linear-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Linear 工具箱
 summary: 面向个人的 Linear 任务查询与基础管理工具，含站会摘要.
 license: Proprietary

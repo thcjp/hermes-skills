@@ -1,7 +1,7 @@
 ---
 slug: "csv-toolkit"
 name: "csv-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "CSV工具箱 专业版"
 summary: "全功能CSV处理工具，支持流式解析、自定义方言、Schema校验与多格式互转。"
 license: "Proprietary"

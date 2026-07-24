@@ -1,7 +1,7 @@
 ---
 slug: "rss-reader-ai"
 name: "rss-reader-ai"
-version: "1.0.0"
+version: 1.0.1
 displayName: "RSS智能阅读器专业版"
 summary: "企业级RSS聚合平台，支持多源批量抓取、AI深度摘要、多渠道推送、定时调度与数据分析。"
 license: "Proprietary"

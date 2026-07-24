@@ -1,7 +1,7 @@
 ---
 slug: "pipedrive-toolkit"
 name: "pipedrive-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Pipedrive工具(专业版)"
 summary: "全功能Pipedrive CRM管理工具，支持商机全生命周期、批量操作与多连接管理"
 license: "Proprietary"

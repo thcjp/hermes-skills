@@ -1,7 +1,7 @@
 ---
 slug: "humanizer"
 name: "humanizer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Humanizer"
 summary: "去除文本中AI生成痕迹,让文字像人写的"
 license: "Proprietary"

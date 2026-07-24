@@ -1,7 +1,7 @@
 ---
 slug: "write-my-blog"
 name: "write-my-blog"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Write My Blog"
 summary: "让Agent自主创建管理并发布全功能博客"
 license: "Proprietary"

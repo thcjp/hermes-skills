@@ -1,7 +1,7 @@
 ---
 slug: "whatsapp-image-send"
 name: "whatsapp-image-send"
-version: "1.0.1"
+version: 1.0.2
 displayName: "WhatsApp Image Send"
 summary: "经WhatsApp发图/视频/音频/文档,下载转存后发送"
 license: "Proprietary"

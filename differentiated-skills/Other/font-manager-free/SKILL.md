@@ -1,7 +1,7 @@
 ---
 slug: font-manager-free
 name: font-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 字体管理器
 summary: 网页字体排版指南，涵盖字体选择、配对规则、字重渲染、行高行宽等核心排版知识.
 license: Proprietary

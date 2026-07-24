@@ -1,7 +1,7 @@
 ---
 slug: "dns"
 name: "dns"
-version: "1.0.0"
+version: 1.0.1
 displayName: "DNS配置专家"
 summary: "DNS记录配置、TTL迁移、邮件认证三件套、CAA证书锁定与Cloudflare代理排障"
 license: "Proprietary"

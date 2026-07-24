@@ -1,7 +1,7 @@
 ---
 slug: translate-hub-free
 name: translate-hub-free
-version: 1.0.0
+version: 1.0.1
 displayName: 中英翻译中枢(免费版)
 summary: 中英文双向翻译工具，支持文本翻译、代码注释翻译、基础术语对照，自动识别源语言并保留Markdown格式.
 license: Proprietary

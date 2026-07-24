@@ -1,7 +1,7 @@
 ---
 slug: slack-toolkit-free
 name: slack-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Slack工具箱免费版
 summary: Slack消息管理基础工具，支持发送、编辑、删除消息，表情回应与置顶操作，适合个人日常使用.
 license: Proprietary

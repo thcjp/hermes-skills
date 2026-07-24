@@ -1,7 +1,7 @@
 ---
 slug: "pdf"
 name: "pdf"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Pdf"
 summary: "PDF全操作工具箱,提取文本表格/建PDF/合并/填表"
 license: "Proprietary"

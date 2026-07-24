@@ -1,7 +1,7 @@
 ---
 slug: "game-developer-skill"
 name: "game-developer-skill"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Game Developer Skill"
 summary: "构建游戏系统/实现Unity与Unreal特性/优化性能"
 license: "Proprietary"

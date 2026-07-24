@@ -1,7 +1,7 @@
 ---
 slug: "x-timeline-digest"
 name: "x-timeline-digest"
-version: "1.0.0"
+version: 1.0.3
 displayName: "X 时间线摘要"
 summary: "用bird读X/Twitter时间线,增量去重生中文分类简报与JSON"
 license: "Proprietary"

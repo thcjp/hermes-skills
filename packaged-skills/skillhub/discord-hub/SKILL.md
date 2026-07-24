@@ -1,7 +1,7 @@
 ---
 slug: "discord-hub"
 name: "discord-hub"
-version: "1.1.0"
+version: 1.1.1
 displayName: "Discord"
 summary: "SkillHub的Discord Bot API技能,覆盖交互/命令/消息/运维"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: netdisk-sync-pro
 name: netdisk-sync-pro
-version: 1.0.0
+version: 1.0.1
 displayName: 网盘同步专家
 summary: 智能下载策略,断点续传后台模式,批量处理模板,增量同步,完整性校验.
 license: Proprietary

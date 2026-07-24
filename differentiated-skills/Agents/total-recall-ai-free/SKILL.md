@@ -1,7 +1,7 @@
 ---
 slug: total-recall-ai-free
 name: total-recall-ai-free
-version: 1.0.0
+version: 1.0.1
 displayName: 全息记忆AI(免费版)
 summary: AI Agent的端到端加密记忆系统，去中心化存储与原生检索，保护隐私的同时实现跨会话记忆.
 license: Proprietary

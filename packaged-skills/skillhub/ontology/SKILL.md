@@ -1,7 +1,7 @@
 ---
 slug: "ontology"
 name: "ontology"
-version: "1.0.0"
+version: 1.0.5
 displayName: "类型化知识图谱引擎"
 summary: "基于类型约束的知识图谱系统，为智能代理提供结构化记忆与可组合技能"
 license: "Proprietary"

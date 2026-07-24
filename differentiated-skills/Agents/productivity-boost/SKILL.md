@@ -1,7 +1,7 @@
 ---
 slug: productivity-boost
 name: productivity-boost
-version: 2.0.0
+version: 2.0.1
 displayName: 效率倍增器
 summary: 抗倦怠效率系统：能量感知+最小可行系统+反过载分诊+情境适配，告别任务清单焦虑.
 license: Proprietary

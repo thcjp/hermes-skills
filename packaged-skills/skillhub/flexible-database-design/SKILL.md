@@ -1,7 +1,7 @@
 ---
 slug: "flexible-database-design"
 name: "flexible-database-design"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Flexible Database De"
 summary: "指导Agent与用户设计实现灵活数据库,建模不踩坑"
 license: "Proprietary"

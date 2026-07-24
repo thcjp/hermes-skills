@@ -1,7 +1,7 @@
 ---
 slug: "email-163"
 name: "email-163"
-version: "1.0.0"
+version: 1.0.1
 displayName: "163邮箱助手专业版"
 summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档"
 license: "Proprietary"

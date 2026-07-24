@@ -1,7 +1,7 @@
 ---
 slug: performance-optimizer-pro
 name: performance-optimizer-pro
-version: 1.1.0
+version: 1.0.1
 displayName: 性能优化专家
 summary: 测量优先不盲目优化,Core Web Vitals目标驱动的前端性能提升方案
 license: Proprietary

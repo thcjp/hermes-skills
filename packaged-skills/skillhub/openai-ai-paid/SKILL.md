@@ -1,7 +1,7 @@
 ---
 slug: "openai-ai-paid"
 name: "openai-ai-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "OpenAI助手专业版"
 summary: "企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。"
 license: "Proprietary"

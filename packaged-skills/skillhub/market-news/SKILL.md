@@ -1,7 +1,7 @@
 ---
 slug: "market-news"
 name: "market-news"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Market News"
 summary: "自动搜索和总结最新财经新闻与市场动态"
 license: "Proprietary"

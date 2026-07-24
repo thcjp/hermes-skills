@@ -1,7 +1,7 @@
 ---
 slug: xlsx-handler-free
 name: xlsx-handler-free
-version: 1.0.0
+version: 1.0.1
 displayName: XLSX处理免费版
 summary: 安全读写 XLSX 工作簿，保留公式、日期、合并单元格与样式，适合单文件编辑与检查.
 license: Proprietary

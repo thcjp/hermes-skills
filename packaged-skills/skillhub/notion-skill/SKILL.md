@@ -1,7 +1,7 @@
 ---
 slug: "notion-skill"
 name: "notion-skill"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Notion"
 summary: "经官方Notion API操作页面与数据库"
 license: "Proprietary"

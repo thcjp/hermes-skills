@@ -1,7 +1,7 @@
 ---
 slug: smart-reminder-free
 name: smart-reminder-free
-version: 1.0.0
+version: 1.0.1
 displayName: 智能提醒助手(免费版)
 summary: 自然语言事件捕获与提醒助手免费版，含中文解析、事件存储、默认提醒偏移与基础查询.
 license: Proprietary

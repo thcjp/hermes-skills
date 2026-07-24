@@ -1,7 +1,7 @@
 ---
 slug: "aegis-security"
 name: "aegis-security"
-version: "1.2.2"
+version: 1.2.3
 displayName: "区块链安全防护"
 summary: "区块链安全API，扫描代币蜜罐、模拟交易、检查地址声誉风险"
 license: "Proprietary"

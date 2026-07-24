@@ -1,7 +1,7 @@
 ---
 slug: "azure-cli-toolkit"
 name: "azure-cli-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Azure命令行工具专业版"
 summary: "企业级Azure云管理,支持批量操作、自动化脚本、多订阅管理与成本优化分析"
 license: "Proprietary"

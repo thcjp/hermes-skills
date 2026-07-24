@@ -1,7 +1,7 @@
 ---
 slug: "api-scaffold-gen"
 name: "api-scaffold-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "API脚手架生成器(专业版)"
 summary: "企业级API脚手架平台，含多框架、DDD分层、微服务、ORM、Docker与CI/CD全套模板。"
 license: "Proprietary"

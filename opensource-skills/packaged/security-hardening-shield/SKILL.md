@@ -1,7 +1,7 @@
 ---
 slug: security-hardening-shield
 name: security-hardening-shield
-version: 1.1.0
+version: 1.0.1
 displayName: 安全加固之盾
 summary: OWASP Top 10防护+三层边界系统,上线前安全加固不留死角
 license: Proprietary

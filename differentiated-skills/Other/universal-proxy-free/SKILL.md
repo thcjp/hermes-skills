@@ -1,7 +1,7 @@
 ---
 slug: universal-proxy-free
 name: universal-proxy-free
-version: 1.0.0
+version: 1.0.1
 displayName: 通用代理工具免费版
 summary: 通过加密电路隐藏源IP，提供SOCKS5代理与流量转发，保护Agent通信隐私
 license: Proprietary

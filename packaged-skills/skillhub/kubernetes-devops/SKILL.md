@@ -1,7 +1,7 @@
 ---
 slug: "kubernetes-devops"
 name: "kubernetes-devops"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Kubernetes"
 summary: "K8s清单助手,生成规范的部署清单"
 license: "Proprietary"

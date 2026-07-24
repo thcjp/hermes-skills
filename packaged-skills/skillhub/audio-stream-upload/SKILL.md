@@ -1,7 +1,7 @@
 ---
 slug: "audio-stream-upload"
 name: "audio-stream-upload"
-version: "1.0.0"
+version: 1.0.1
 displayName: "音频流上传专业版"
 summary: "企业级音频上传工具，支持批量上传、自定义编码、多质量预设、分片上传与元数据管理。"
 license: "Proprietary"

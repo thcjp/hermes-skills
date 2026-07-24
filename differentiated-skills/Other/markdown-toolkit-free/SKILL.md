@@ -1,7 +1,7 @@
 ---
 slug: markdown-toolkit-free
 name: markdown-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Markdown 工具箱
 summary: 面向个人的干净可移植 Markdown 生成工具，兼容多平台.
 license: Proprietary

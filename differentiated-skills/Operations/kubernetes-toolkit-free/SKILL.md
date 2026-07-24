@@ -1,7 +1,7 @@
 ---
 slug: kubernetes-toolkit-free
 name: kubernetes-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: K8s集群管理入门
 summary: Kubernetes集群基础管理工具，支持多Agent协作与常用资源操作.
 license: Proprietary

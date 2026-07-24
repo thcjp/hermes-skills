@@ -1,7 +1,7 @@
 ---
 slug: discord-toolkit-free
 name: discord-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Discord工具箱免费版
 summary: 基础 Discord 消息管理工具,支持发送、回复、表情反应与简单投票,适合个人用户.
 license: Proprietary

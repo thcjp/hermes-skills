@@ -1,7 +1,7 @@
 ---
 slug: "calendar-skill"
 name: "calendar-skill"
-version: "1.0.4"
+version: 1.0.5
 displayName: "Calendar"
 summary: "安全管理Google日历/Outlook/Exchange,一处排程多端同步"
 license: "Proprietary"

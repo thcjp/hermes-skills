@@ -1,7 +1,7 @@
 ---
 slug: "cloud-architect"
 name: "cloud-architect"
-version: "1.0.0"
+version: 0.1.1
 displayName: "云架构师"
 summary: "设计多云架构、规划迁移策略、优化云成本,覆盖 AWS、Azure、GCP 的架构设计与治理"
 license: "Proprietary"

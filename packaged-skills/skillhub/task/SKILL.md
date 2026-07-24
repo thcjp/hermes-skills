@@ -1,7 +1,7 @@
 ---
 slug: "task"
 name: "task"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Task"
 summary: "Tasker docstore任务管理,清单/今日到期/逾期/周计划"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "typescript-skills"
 name: "typescript-skills"
-version: "1.0.6"
+version: 1.0.7
 displayName: "TypeScript规范"
 summary: "提供TypeScript最佳实践编码规范并生成符合标准的TypeScript代码。"
 license: "Proprietary"

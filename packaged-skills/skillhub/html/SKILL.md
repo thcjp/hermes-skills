@@ -1,7 +1,7 @@
 ---
 slug: "html"
 name: "html"
-version: "1.0.0"
+version: 1.0.1
 displayName: "HTML"
 summary: "规避HTML常见错误,无障碍/表单/SEO疏漏一网打尽"
 license: "Proprietary"

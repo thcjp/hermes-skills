@@ -1,7 +1,7 @@
 ---
 slug: "tts-whatsapp-paid"
 name: "tts-whatsapp-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "WhatsApp语音消息专业版"
 summary: "企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。"
 license: "Proprietary"

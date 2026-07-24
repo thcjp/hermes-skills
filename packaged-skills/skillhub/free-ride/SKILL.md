@@ -1,7 +1,7 @@
 ---
 slug: "free-ride"
 name: "free-ride"
-version: "1.0.11"
+version: 1.0.12
 displayName: "Free Ride"
 summary: "为SkillHub管理OpenRouter免费AI模型,零成本调用"
 license: "Proprietary"

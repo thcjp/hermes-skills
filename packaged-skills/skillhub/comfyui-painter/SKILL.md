@@ -1,7 +1,7 @@
 ---
 slug: "comfyui-painter"
 name: "comfyui-painter"
-version: "1.0.0"
+version: 2.0.1
 displayName: "ComfyUI本地画图工作流"
 summary: "本地ComfyUI画图工作流+CivitAI集成,API控制文生图/图生视频,支持模型搜索/下载/自动调参"
 license: "Proprietary"

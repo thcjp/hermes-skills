@@ -1,7 +1,7 @@
 ---
 slug: deepseek-assistant-free
 name: deepseek-assistant-free
-version: 1.0.0
+version: 1.0.1
 displayName: DeepSeek助手(免费版)
 summary: 基于DeepSeek API的中文对话助手，支持通用对话、代码生成与基础推理能力.
 license: Proprietary

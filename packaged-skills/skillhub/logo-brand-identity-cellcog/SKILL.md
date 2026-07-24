@@ -1,7 +1,7 @@
 ---
 slug: "logo-brand-identity-cellcog"
 name: "logo-brand-identity-cellcog"
-version: "1.0.13"
+version: 1.0.14
 displayName: "Logo Brand Identity"
 summary: "CellCog驱动AI logo与品牌识别设计,品牌套件/色板/字体"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "weiyun-toolkit"
 name: "weiyun-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "微云工具箱(专业版)"
 summary: "微云网盘全功能版：12 类操作、分类查询、分享外链、批量删除、移动重命名与版本管理。"
 license: "Proprietary"

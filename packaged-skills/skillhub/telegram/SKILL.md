@@ -1,7 +1,7 @@
 ---
 slug: "telegram"
 name: "telegram"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Telegram"
 summary: "设计Telegram Bot API工作流与命令驱动对话"
 license: "Proprietary"

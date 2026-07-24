@@ -1,7 +1,7 @@
 ---
 slug: yaml-toolkit-free
 name: yaml-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: YAML处理工具免费版
 summary: 解析、生成与校验YAML，正确处理缩进与多文档，适合个人开发者配置管理.
 license: Proprietary

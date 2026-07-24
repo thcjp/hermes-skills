@@ -1,7 +1,7 @@
 ---
 slug: "financial-literacy"
 name: "financial-literacy"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Finance"
 summary: "从个人预算到专业分析研究,全面提升财商"
 license: "Proprietary"

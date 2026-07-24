@@ -1,7 +1,7 @@
 ---
 slug: cloud-manager-free
 name: cloud-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 云存储管家 免费版
 summary: 个人云存储选型、整理、同步、备份与分享的实用指南，覆盖主流消费级云盘.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: api-scaffold-gen-free
 name: api-scaffold-gen-free
-version: 1.0.0
+version: 1.0.1
 displayName: API脚手架生成器(免费版)
 summary: 从资源名一键生成REST/GraphQL脚手架代码，含CRUD、认证、测试模板，60秒出码.
 license: Proprietary

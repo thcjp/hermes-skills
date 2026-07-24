@@ -1,7 +1,7 @@
 ---
 slug: cron-guard
 name: cron-guard
-version: 1.0.0
+version: 1.0.1
 displayName: 定时守护
 summary: cron 作业可靠性护栏，脚本优先、确定环境、静默成功，跨平台故障模式一网打尽.
 license: Proprietary

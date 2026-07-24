@@ -1,7 +1,7 @@
 ---
 slug: "doc-guard"
 name: "doc-guard"
-version: "1.0.0"
+version: 1.0.1
 displayName: "文档护盾专业版"
 summary: "团队级端到端加密文档协作平台，支持批量操作、版本回滚、权限管理与自定义加密策略。"
 license: "Proprietary"

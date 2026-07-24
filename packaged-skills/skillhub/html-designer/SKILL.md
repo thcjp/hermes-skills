@@ -1,7 +1,7 @@
 ---
 slug: "html-designer"
 name: "html-designer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "HTML Designer"
 summary: "专精HTML/CSS的网页平面设计师,深谙图形设计"
 license: "Proprietary"

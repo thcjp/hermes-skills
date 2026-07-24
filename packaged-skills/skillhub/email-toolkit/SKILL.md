@@ -1,7 +1,7 @@
 ---
 slug: "email-toolkit"
 name: "email-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "邮件工具箱专业版"
 summary: "企业邮件自动化与批量发送方案，支持模板与定时调度"
 license: "Proprietary"

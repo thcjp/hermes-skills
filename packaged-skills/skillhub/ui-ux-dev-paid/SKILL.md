@@ -1,7 +1,7 @@
 ---
 slug: "ui-ux-dev-paid"
 name: "ui-ux-dev-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UI/UX开发工具专业版"
 summary: "多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎"
 license: "Proprietary"

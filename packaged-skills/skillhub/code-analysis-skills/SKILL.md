@@ -1,7 +1,7 @@
 ---
 slug: "code-analysis-skills"
 name: "code-analysis-skills"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Code Analysis Skills"
 summary: "产出描述性Git历史反思报告,复盘代码演进"
 license: "Proprietary"

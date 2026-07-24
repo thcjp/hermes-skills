@@ -1,7 +1,7 @@
 ---
 slug: video-toolkit-free
 name: video-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 视频工具箱免费版
 summary: 基于FFmpeg的视频处理工具,支持格式转换、压缩、字幕生成、宽高比调整,适合个人内容创作者
 license: Proprietary

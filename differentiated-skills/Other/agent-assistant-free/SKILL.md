@@ -1,7 +1,7 @@
 ---
 slug: agent-assistant-free
 name: agent-assistant-free
-version: 1.0.0
+version: 1.0.1
 displayName: Agent身份助手免费版
 summary: 通过目标、价值观、视角三层模型定义AI助手的身份人格与边界，构建可信赖的对话风格
 license: Proprietary

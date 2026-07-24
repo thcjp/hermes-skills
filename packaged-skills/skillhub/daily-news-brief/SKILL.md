@@ -1,7 +1,7 @@
 ---
 slug: "daily-news-brief"
 name: "daily-news-brief"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Daily News Brief"
 summary: "每天早上8点自动搜集并发布国际时事、经济形势、科技发展新闻的skill。基于历史模式和近期国际动向（如特朗普即将访华等），提供专业的新闻简报。"
 license: "Proprietary"

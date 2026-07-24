@@ -1,7 +1,7 @@
 ---
 slug: auto-file-organizer-free
 name: auto-file-organizer-free
-version: 1.0.0
+version: 1.0.1
 displayName: 自动文件整理器
 summary: 按文件类型与日期自动归类文件夹，支持图片/文档/视频等六大类，一键整理下载文件夹.
 license: Proprietary

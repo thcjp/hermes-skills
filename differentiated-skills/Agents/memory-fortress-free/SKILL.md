@@ -1,7 +1,7 @@
 ---
 slug: memory-fortress-free
 name: memory-fortress-free
-version: 1.0.0
+version: 1.0.1
 displayName: 记忆堡垒(免费版)
 summary: AI Agent六层记忆系统，解决上下文丢失、决策遗忘、错误重复痛点，WAL协议确保持久化.
 license: Proprietary

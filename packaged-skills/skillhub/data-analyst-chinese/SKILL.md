@@ -1,7 +1,7 @@
 ---
 slug: "data-analyst-chinese"
 name: "data-analyst-chinese"
-version: "1.0.0"
+version: 1.0.1
 displayName: "中文数据分析(专业版)"
 summary: "全功能中文数据分析平台,支持时序分解、假设检验、大数据集批处理与自定义报告模板。"
 license: "Proprietary"

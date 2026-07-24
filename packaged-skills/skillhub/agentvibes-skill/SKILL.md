@@ -1,7 +1,7 @@
 ---
 slug: "agentvibes-skill"
 name: "agentvibes-skill"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AgentVibes语音合成-专业版"
 summary: "企业级TTS工具,支持神经声音、多角色协同、批量导出、背景音乐与音效,适配商业内容生产。"
 license: "Proprietary"

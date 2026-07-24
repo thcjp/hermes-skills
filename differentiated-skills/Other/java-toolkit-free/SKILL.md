@@ -1,7 +1,7 @@
 ---
 slug: java-toolkit-free
 name: java-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Java 工具箱
 summary: 面向个人 Java 开发者的健壮编码避坑工具，覆盖空值与并发.
 license: Proprietary

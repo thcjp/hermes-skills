@@ -1,7 +1,7 @@
 ---
 slug: xml-json-converter-free
 name: xml-json-converter-free
-version: 1.0.0
+version: 1.0.1
 displayName: XML转JSON(免费版)
 summary: 轻量级XML与JSON互转工具，覆盖属性处理、命名空间与单文件转换，60秒上手.
 license: Proprietary

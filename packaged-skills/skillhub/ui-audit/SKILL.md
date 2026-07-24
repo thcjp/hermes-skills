@@ -1,7 +1,7 @@
 ---
 slug: "ui-audit"
 name: "ui-audit"
-version: "1.0.1"
+version: 1.0.2
 displayName: "UI Audit"
 summary: "自动化 UI 审计工具，基于 UX 原则评估界面的视觉层级、样式和无障碍性。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "kubernetes"
 name: "kubernetes"
-version: "2.1.0"
+version: 2.1.1
 displayName: "Kubernetes"
 summary: "K8s与OpenShift多Agent集群,协同运营集群"
 license: "Proprietary"

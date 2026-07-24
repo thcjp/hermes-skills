@@ -1,7 +1,7 @@
 ---
 slug: domain-dns-manager-free
 name: domain-dns-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 域名DNS管理免费版
 summary: 管理Cloudflare/DNSimple/Namecheap的域名与DNS记录，支持单域名接入与基础记录操作.
 license: Proprietary

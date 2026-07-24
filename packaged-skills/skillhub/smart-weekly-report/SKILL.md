@@ -1,7 +1,7 @@
 ---
 slug: "smart-weekly-report"
 name: "smart-weekly-report"
-version: "1.1.3"
+version: 1.1.4
 displayName: "Report Generator"
 summary: "周报自动生成器,按pipeline流程配置质量gate检查,支持多模式批量处理,付费版独享高级功能。"
 license: "Proprietary"

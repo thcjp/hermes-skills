@@ -1,7 +1,7 @@
 ---
 slug: "calendar-reminder-free"
 name: "calendar-reminder-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "日历提醒(免费版)"
 summary: "每晚22点扫描明日Outlook日历,基础飞书提醒,支持手动运行与cron注册。"
 license: "MIT"

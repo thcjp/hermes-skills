@@ -1,7 +1,7 @@
 ---
 slug: "mcporter"
 name: "mcporter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Mcporter"
 summary: "用mcporter CLI列出/配置/认证/调用MCP服务与工具"
 license: "Proprietary"

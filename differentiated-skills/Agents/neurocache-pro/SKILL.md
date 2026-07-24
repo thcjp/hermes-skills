@@ -1,7 +1,7 @@
 ---
 slug: neurocache-pro
 name: neurocache-pro
-version: 2.0.0
+version: 2.0.1
 displayName: 神经缓存增强
 summary: 生物启发联想记忆：扩散激活+赫布学习+矛盾检测，找到向量检索找不到的关联.
 license: Proprietary

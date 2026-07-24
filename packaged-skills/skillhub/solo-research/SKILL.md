@@ -1,7 +1,7 @@
 ---
 slug: "solo-research"
 name: "solo-research"
-version: "1.0.0"
+version: 1.7.2
 displayName: "独立研究工具"
 summary: "多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研。"
 license: "Proprietary"

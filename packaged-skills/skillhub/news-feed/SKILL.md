@@ -1,7 +1,7 @@
 ---
 slug: "news-feed"
 name: "news-feed"
-version: "1.0.0"
+version: 1.0.1
 displayName: "News Feed"
 summary: "从BBC/Reuters/AP等主流RSS抓最新新闻标题"
 license: "Proprietary"

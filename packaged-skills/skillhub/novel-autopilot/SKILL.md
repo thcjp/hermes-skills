@@ -1,7 +1,7 @@
 ---
 slug: novel-autopilot
 name: novel-autopilot
-version: "1.1.0"
+version: 1.0.1
 displayName: "网文全自动写手"
 summary: "一人顶一个网文工作室,8步管道批量产章+黄金三章+三平台分发"
 license: Proprietary

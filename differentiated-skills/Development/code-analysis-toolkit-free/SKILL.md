@@ -1,7 +1,7 @@
 ---
 slug: code-analysis-toolkit-free
 name: code-analysis-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 代码分析工具包免费版
 summary: 个人Git历史自查工具,生成提交模式、代码风格、质量指标的描述性报告
 license: Proprietary

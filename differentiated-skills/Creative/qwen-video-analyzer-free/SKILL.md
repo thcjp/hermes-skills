@@ -1,7 +1,7 @@
 ---
 slug: qwen-video-analyzer-free
 name: qwen-video-analyzer-free
-version: 1.0.0
+version: 1.0.1
 displayName: 通义千问视频分析-免费版
 summary: 使用Qwen模型分析视频内容,支持本地文件与远程URL,可自定义提示词,适合个人创作者.
 license: Proprietary

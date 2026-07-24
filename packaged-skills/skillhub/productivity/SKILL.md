@@ -1,7 +1,7 @@
 ---
 slug: "productivity"
 name: "productivity"
-version: "1.0.0"
+version: 1.0.5
 displayName: "生产力操作系统"
 summary: "集成目标、项目、任务、习惯、规划、回顾的完整生产力管理系统"
 license: "Proprietary"

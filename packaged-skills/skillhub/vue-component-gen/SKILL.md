@@ -1,7 +1,7 @@
 ---
 slug: "vue-component-gen"
 name: "vue-component-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Vue组件生成(专业版)"
 summary: "面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。"
 license: "Proprietary"

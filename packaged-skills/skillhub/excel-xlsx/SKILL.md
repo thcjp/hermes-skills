@@ -1,7 +1,7 @@
 ---
 slug: "excel-xlsx"
 name: "excel-xlsx"
-version: "1.0.2"
+version: 1.0.3
 displayName: "Excel / XLSX"
 summary: "创建检查编辑Excel工作簿与XLSX,公式/日期可靠"
 license: "Proprietary"

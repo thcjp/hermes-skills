@@ -1,7 +1,7 @@
 ---
 slug: "mongo-manager"
 name: "mongo-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Mongo管理工具专业版"
 summary: "MongoDB企业级管理与优化全功能版，含分片集群、副本集高可用、Atlas Search、Change Stream与基准测试。"
 license: "Proprietary"

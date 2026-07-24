@@ -1,7 +1,7 @@
 ---
 slug: "music-generation"
 name: "music-generation"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Music Generation"
 summary: "优化提示生成AI音乐,风格控制/产出级音频"
 license: "Proprietary"

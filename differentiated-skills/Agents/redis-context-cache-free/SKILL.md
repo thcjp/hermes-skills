@@ -1,7 +1,7 @@
 ---
 slug: redis-context-cache-free
 name: redis-context-cache-free
-version: 1.0.0
+version: 1.0.1
 displayName: Redis Context Cache
 summary: AI Agent的Redis上下文缓存实践指南，覆盖过期策略、原子性陷阱、内存管理与常见模式.
 license: Proprietary

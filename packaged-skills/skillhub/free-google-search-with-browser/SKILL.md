@@ -1,7 +1,7 @@
 ---
 slug: "free-google-search-with-browser"
 name: "free-google-search-with-browser"
-version: "0.0.1"
+version: 0.0.2
 displayName: "Free Google Search W"
 summary: "用scrapling搜Google返回结构化结果(标题/链接/摘要)"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "plugin-architecture"
 name: "plugin-architecture"
-version: "1.0.1"
+version: 1.0.2
 displayName: "插件UI架构"
 summary: "为SkillHub安装UI插件架构，使插件可注册自定义视图与导航标签。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "azure-ai-voicelive-py"
 name: "azure-ai-voicelive-py"
-version: "1.0.0"
+version: 0.1.1
 displayName: "Azure实时语音AI开发"
 summary: "基于Azure VoiceLive SDK构建实时双向语音AI应用,支持流式音频、转写、函数调用与多语音模型。"
 license: "Proprietary"

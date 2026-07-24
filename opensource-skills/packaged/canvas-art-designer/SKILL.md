@@ -1,7 +1,7 @@
 ---
 slug: canvas-art-designer
 name: canvas-art-designer
-version: 1.1.0
+version: 1.0.1
 displayName: 画布艺术设计器
 summary: 用代码画出海报级视觉作品,原创构图+克制美学,告别通用AI审美
 license: Proprietary

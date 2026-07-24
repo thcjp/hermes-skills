@@ -1,7 +1,7 @@
 ---
 slug: "python-dataviz"
 name: "python-dataviz"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Python Dataviz"
 summary: "用Python(matplotlib/seaborn/plotly)做专业数据可视化"
 license: "Proprietary"

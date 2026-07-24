@@ -1,7 +1,7 @@
 ---
 slug: "daily-report-writer"
 name: "daily-report-writer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Daily Report Writer"
 summary: "根据输入生成日报 Markdown 草稿并写入 reports 目录"
 license: "Proprietary"

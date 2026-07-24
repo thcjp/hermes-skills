@@ -1,7 +1,7 @@
 ---
 slug: "ace-music-free"
 name: "ace-music-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "ACE Music AI音乐LITE"
 summary: "ACE Music基础版,文本转音乐生成,支持歌词定制和纯音乐模式"
 license: "MIT"

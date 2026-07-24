@@ -1,7 +1,7 @@
 ---
 slug: "explain-code-paid"
 name: "explain-code-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "代码解释工具专业版"
 summary: "企业级代码理解工具,支持项目架构分析、批量文档生成、Mermaid可视化与API文档输出。"
 license: "Proprietary"

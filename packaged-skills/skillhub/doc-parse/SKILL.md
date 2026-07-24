@@ -1,7 +1,7 @@
 ---
 slug: "doc-parse"
 name: "doc-parse"
-version: "1.0.0"
+version: 1.0.1
 displayName: "文档解析工具（专业版）"
 summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。"
 license: "Proprietary"

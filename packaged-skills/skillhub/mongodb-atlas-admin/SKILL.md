@@ -1,7 +1,7 @@
 ---
 slug: "mongodb-atlas-admin"
 name: "mongodb-atlas-admin"
-version: "2.0.0"
+version: 1.0.1
 displayName: "文档数据库管理"
 summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用"
 license: "Proprietary"

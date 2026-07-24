@@ -1,7 +1,7 @@
 ---
 slug: csv-toolkit-free
 name: csv-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: CSV工具箱 免费版
 summary: 符合RFC 4180的CSV解析与生成指南，覆盖引号、分隔符、编码与Excel兼容.
 license: Proprietary

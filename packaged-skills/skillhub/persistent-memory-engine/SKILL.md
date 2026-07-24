@@ -1,7 +1,7 @@
 ---
 slug: "persistent-memory-engine"
 name: "persistent-memory-engine"
-version: "1.0.0"
+version: 1.0.1
 displayName: "持久记忆引擎"
 summary: "无限分层持久记忆系统，解决跨会话遗忘、检索不准、记忆膨胀与冲突问题"
 license: "Proprietary"

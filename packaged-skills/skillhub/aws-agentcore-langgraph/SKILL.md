@@ -1,7 +1,7 @@
 ---
 slug: "aws-agentcore-langgraph"
 name: "aws-agentcore-langgraph"
-version: "2.0.0"
+version: 1.0.3
 displayName: "AgentCore LangGraph"
 summary: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手"
 license: "Proprietary"

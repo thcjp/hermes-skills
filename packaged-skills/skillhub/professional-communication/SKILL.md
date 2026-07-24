@@ -1,7 +1,7 @@
 ---
 slug: "professional-communication"
 name: "professional-communication"
-version: "1.0.0"
+version: 0.1.1
 displayName: "职场技术沟通写作"
 summary: "为工程师与产品经理生成邮件、Slack/Teams 消息、会议纪要、技术概念转译等职场写作，遵循关键信息优先、可扫描、明确行动项的核心原则。"
 license: "Proprietary"

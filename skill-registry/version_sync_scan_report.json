@@ -1,26 +1,6 @@
 {
-  "scan_time": "2026-07-24T07:32:45",
+  "scan_time": "2026-07-24T09:00:57",
   "changed": [
-    {
-      "slug": "accounting-and-finance",
-      "source": "packaged",
-      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\accounting-and-finance\\SKILL.md",
-      "old_hash": "a0dd53d2b250c330",
-      "new_hash": "ec199e8c7bf6f203",
-      "current_version": "1.0.0",
-      "skill_id": 218,
-      "file_size": 21924
-    },
-    {
-      "slug": "accounting-finance",
-      "source": "packaged",
-      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\accounting-finance\\SKILL.md",
-      "old_hash": "561d4cadebbcf6bc",
-      "new_hash": "38bc56d42de1b46f",
-      "current_version": "1.0.0",
-      "skill_id": 1456,
-      "file_size": 15700
-    },
     {
       "slug": "ace-music",
       "source": "packaged",
@@ -1230,16 +1210,6 @@
       "current_version": "1.0.0",
       "skill_id": 400,
       "file_size": 4876
-    },
-    {
-      "slug": "chat",
-      "source": "packaged",
-      "skill_md": "d:\\skills\\packaged-skills\\skillhub\\chat\\SKILL.md",
-      "old_hash": "00d5bcd1f5ed7508",
-      "new_hash": "1f87701660dc9bf5",
-      "current_version": "1.1.0",
-      "skill_id": 401,
-      "file_size": 3840
     },
     {
       "slug": "cheat-code",

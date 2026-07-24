@@ -1,7 +1,7 @@
 ---
 slug: "explain-code"
 name: "explain-code"
-version: "1.0.0"
+version: 1.0.1
 displayName: "explain-code"
 summary: "用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "clawddocs"
 name: "clawddocs"
-version: "1.2.2"
+version: 1.2.3
 displayName: "Clawddocs"
 summary: "SkillHub文档专家,带决策树导航,快速定位答案"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: cloud-storage-manager-free
 name: cloud-storage-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 云存储管理器(免费版)
 summary: 跨云存储服务统一管理文件的上传、下载、同步与成本核算，支持多Provider基础操作.
 license: Proprietary

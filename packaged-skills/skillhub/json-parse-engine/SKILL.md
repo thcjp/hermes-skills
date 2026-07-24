@@ -1,7 +1,7 @@
 ---
 slug: "json-parse-engine"
 name: "json-parse-engine"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON解析引擎专业版"
 summary: "企业级JSON解析引擎，支持流式解析、批量处理、DataFrame转换、自定义展平策略与增量解析。"
 license: "Proprietary"

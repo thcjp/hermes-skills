@@ -1,7 +1,7 @@
 ---
 slug: "wenxiang-2d5-banner"
 name: "wenxiang-2d5-banner"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Wenxiang 2d5 Banner"
 summary: "用Nano Banana Pro(Gemini 3 Pro Image)生成编辑图片"
 license: "Proprietary"

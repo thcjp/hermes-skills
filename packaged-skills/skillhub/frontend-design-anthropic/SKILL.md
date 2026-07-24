@@ -1,7 +1,7 @@
 ---
 slug: "frontend-design-anthropic"
 name: "frontend-design-anthropic"
-version: "1.0.0"
+version: 1.0.1
 displayName: "前端设计-专业版"
 summary: "企业级前端设计工具,支持设计系统生成、组件库批量产出、多端适配,适配商业产品开发。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "ai-image-gen-free"
 name: "ai-image-gen-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AI图像生成基础版"
 summary: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。"
 license: "MIT"

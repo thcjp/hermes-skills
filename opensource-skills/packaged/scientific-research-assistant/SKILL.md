@@ -1,7 +1,7 @@
 ---
 slug: scientific-research-assistant
 name: scientific-research-assistant
-version: 1.1.0
+version: 1.0.1
 displayName: 科研助手
 summary: 134个科学技能库,从文献检索到论文写作,科研全流程AI辅助
 license: Proprietary

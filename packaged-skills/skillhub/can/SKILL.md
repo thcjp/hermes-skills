@@ -1,7 +1,7 @@
 ---
 slug: "can"
 name: "can"
-version: "2.0.0"
+version: 1.9.2
 displayName: "CAN内容寻址"
 summary: "时钟地址命名协议，通过时间戳、内容哈希和可读名称为数据流建立可验证索引"
 license: "Proprietary"

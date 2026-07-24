@@ -1,7 +1,7 @@
 ---
 slug: "podcast-toolkit"
 name: "podcast-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "播客创作工具包专业版"
 summary: "企业级播客创作与运营工具包,支持多节目管理、增长分析、变现策略与AI生成,适配团队协作。"
 license: "Proprietary"

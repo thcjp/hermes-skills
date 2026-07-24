@@ -1,7 +1,7 @@
 ---
 slug: ui-ux-promax-plus-free
 name: ui-ux-promax-plus-free
-version: 1.0.0
+version: 1.0.1
 displayName: UI/UX ProMax+免费版
 summary: 专业UI/UX设计资源库,含风格库、配色方案、字体配对基础查询,适合个人设计师快速参考
 license: Proprietary

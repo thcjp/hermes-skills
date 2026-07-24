@@ -1,7 +1,7 @@
 ---
 slug: "discord-voice-free"
 name: "discord-voice-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Discord语音免费"
 summary: "Discord语音助手免费版,提供基础加入/离开/状态查询与本地Whisper转写"
 license: "MIT"

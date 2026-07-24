@@ -1,7 +1,7 @@
 ---
 slug: "auto-workflow"
 name: "auto-workflow"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Auto Workflow"
 summary: "从重复任务自动构建工作流,识别瓶颈并自动化,释放人力"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: web-artifact-studio
 name: web-artifact-studio
-version: 1.1.0
+version: 1.0.1
 displayName: Web工件工作室
 summary: React+Tailwind+shadcn构建复杂交互Web工件,状态路由组件全搞定
 license: Proprietary

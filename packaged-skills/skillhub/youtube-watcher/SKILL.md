@@ -1,7 +1,7 @@
 ---
 slug: "youtube-watcher"
 name: "youtube-watcher"
-version: "1.0.0"
+version: 1.0.1
 displayName: "YouTube Watcher"
 summary: "抓取并读取YouTube视频字幕转写"
 license: "Proprietary"

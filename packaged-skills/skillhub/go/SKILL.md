@@ -1,7 +1,7 @@
 ---
 slug: "go"
 name: "go"
-version: "1.0.2"
+version: 1.0.3
 displayName: "Go"
 summary: "写可靠Go代码,规避goroutine泄露/接口陷阱/并发bug"
 license: "Proprietary"

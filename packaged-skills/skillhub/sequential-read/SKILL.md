@@ -1,7 +1,7 @@
 ---
 slug: "sequential-read"
 name: "sequential-read"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Sequential Read"
 summary: "顺序阅读散文并结构化反思,模拟阅读体验"
 license: "Proprietary"

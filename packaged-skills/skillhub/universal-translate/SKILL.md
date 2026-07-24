@@ -1,7 +1,7 @@
 ---
 slug: "universal-translate"
 name: "universal-translate"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Universal Translate"
 summary: "在任意语言间翻译文本/文件/对话,自动检测源语言"
 license: "Proprietary"

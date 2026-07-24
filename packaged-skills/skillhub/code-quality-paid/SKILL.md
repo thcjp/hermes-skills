@@ -1,7 +1,7 @@
 ---
 slug: "code-quality-paid"
 name: "code-quality-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "代码质量检查专业版"
 summary: "企业级代码质量审计,支持OWASP Top 10、批量扫描、自定义规则与CI/CD集成,输出多格式报告。"
 license: "Proprietary"

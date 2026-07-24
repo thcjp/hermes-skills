@@ -1,7 +1,7 @@
 ---
 slug: "word-docx"
 name: "word-docx"
-version: "1.0.2"
+version: 1.0.3
 displayName: "Word / DOCX"
 summary: "创建检查编辑Word文档与DOCX,样式与编号可靠"
 license: "Proprietary"

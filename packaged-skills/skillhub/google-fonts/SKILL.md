@@ -1,7 +1,7 @@
 ---
 slug: "google-fonts"
 name: "google-fonts"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Google Fonts指南"
 summary: "Google Fonts字体选择与配对指南，覆盖加载优化、可变字体、子集化与自托管"
 license: "Proprietary"

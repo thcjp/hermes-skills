@@ -1,7 +1,7 @@
 ---
 slug: xlsx-data-wizard
 name: xlsx-data-wizard
-version: 1.1.0
+version: 1.0.1
 displayName: Excel数据魔法师
 summary: openpyxl全场景Excel处理,读写格式图表透视表公式全搞定
 license: Proprietary

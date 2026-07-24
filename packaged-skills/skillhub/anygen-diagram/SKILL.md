@@ -1,7 +1,7 @@
 ---
 slug: "anygen-diagram"
 name: "anygen-diagram"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AnyGen图表生成-专业版"
 summary: "企业级图表生成工具,支持批量生成、自定义模板、团队协作与API集成,适配商业文档生产。"
 license: "Proprietary"

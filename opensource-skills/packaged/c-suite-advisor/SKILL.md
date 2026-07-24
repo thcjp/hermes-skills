@@ -1,7 +1,7 @@
 ---
 slug: c-suite-advisor
 name: c-suite-advisor
-version: 1.1.0
+version: 1.0.1
 displayName: C套件顾问
 summary: 一人公司的高管团队,9大C级视角战略决策+创始人模式,省下百万咨询费
 license: Proprietary

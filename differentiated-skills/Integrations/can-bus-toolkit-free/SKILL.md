@@ -1,7 +1,7 @@
 ---
 slug: can-bus-toolkit-free
 name: can-bus-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: CAN总线工具包免费版
 summary: 轻量级数据溯源协议工具，通过时间戳、内容哈希与可读名称三元组为数据流打戳，支持本地验证与日志
 license: Proprietary

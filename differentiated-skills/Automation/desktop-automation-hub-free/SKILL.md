@@ -1,7 +1,7 @@
 ---
 slug: desktop-automation-hub-free
 name: desktop-automation-hub-free
-version: 1.0.0
+version: 1.0.1
 displayName: 桌面自动化中枢(免费版)
 summary: 鼠标键盘精准控制与屏幕截图核心能力，60秒上手桌面自动化，覆盖表单填写与窗口操作基础场景.
 license: Proprietary

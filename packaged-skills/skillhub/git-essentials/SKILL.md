@@ -1,7 +1,7 @@
 ---
 slug: "git-essentials"
 name: "git-essentials"
-version: "1.1.0"
+version: 1.0.1
 displayName: "Git核心操作"
 summary: "涵盖Git版本控制核心命令与工作流,包括分支、合并、变基、标签与冲突处理"
 license: "Proprietary"

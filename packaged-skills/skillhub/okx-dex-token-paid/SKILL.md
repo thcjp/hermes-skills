@@ -1,7 +1,7 @@
 ---
 slug: "okx-dex-token-paid"
 name: "okx-dex-token-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "DEX代币数据专业版"
 summary: "专业DEX代币分析与交易工具，支持多链深度分析、批量查询与限价交易。"
 license: "Proprietary"

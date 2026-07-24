@@ -1,7 +1,7 @@
 ---
 slug: "text-to-speech-heygen"
 name: "text-to-speech-heygen"
-version: "2.23.0"
+version: 2.23.1
 displayName: "Text to Speech"
 summary: "HeyGen TTS语音合成工具's Starfish TTS model. Use"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "iris-formatter"
 name: "iris-formatter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "IRIS代码格式化专业版"
 summary: "企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "game-asset-generation-cellcog"
 name: "game-asset-generation-cellcog"
-version: "1.0.14"
+version: 1.0.15
 displayName: "Game Asset Generatio"
 summary: "CellCog驱动的AI游戏资产生成,角色一致美术与精灵"
 license: "Proprietary"

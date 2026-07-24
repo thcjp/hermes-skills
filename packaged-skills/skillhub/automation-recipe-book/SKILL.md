@@ -1,7 +1,7 @@
 ---
 slug: "automation-recipe-book"
 name: "automation-recipe-book"
-version: "1.0.0"
+version: 1.0.1
 displayName: "自动化配方手册(专业版)"
 summary: "25+自动化配方库+配方生成器+高级模式+企业模板+调试工具包，支撑从个人到企业的全场景自动化。"
 license: "Proprietary"

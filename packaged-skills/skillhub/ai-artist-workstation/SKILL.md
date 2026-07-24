@@ -1,7 +1,7 @@
 ---
 slug: ai-artist-workstation
 name: ai-artist-workstation
-version: "1.0.1"
+version: 1.0.1
 displayName: "AI接单画师工作站"
 summary: "一个人开AI画师工作室,双引擎路由+98%面部保持+接单SOP全闭环"
 license: Proprietary

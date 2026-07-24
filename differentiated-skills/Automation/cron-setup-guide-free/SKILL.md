@@ -1,7 +1,7 @@
 ---
 slug: cron-setup-guide-free
 name: cron-setup-guide-free
-version: 1.0.0
+version: 1.0.1
 displayName: 定时任务设置指南(免费版)
 summary: Agent Gateway定时任务设置完全指南免费版，覆盖三种调度类型、会话模式、投递配置与基础作业管理.
 license: Proprietary

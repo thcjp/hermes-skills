@@ -1,7 +1,7 @@
 ---
 slug: "aws"
 name: "aws"
-version: "1.0.2"
+version: 1.0.3
 displayName: "Aws"
 summary: "架构部署优化AWS基础设施,避开成本失控与安全陷阱,省钱又稳"
 license: "Proprietary"

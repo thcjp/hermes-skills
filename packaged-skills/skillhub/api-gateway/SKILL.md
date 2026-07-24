@@ -1,7 +1,7 @@
 ---
 slug: "api-gateway"
 name: "api-gateway"
-version: "1.0.0"
+version: 1.0.1
 displayName: "API网关集成路由"
 summary: "通过托管API网关连接Slack/Gmail/Stripe等外部服务,含连接管理、触发器、事件重放与安全审批"
 license: "Proprietary"

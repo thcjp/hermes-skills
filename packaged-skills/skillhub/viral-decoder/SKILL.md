@@ -1,7 +1,7 @@
 ---
 slug: viral-decoder
 name: viral-decoder
-version: "1.1.0"
+version: 1.0.1
 displayName: "爆款拆解师"
 summary: "把爆款拆成可复用配方,6大爆款要素+11维拆解+逐字逐句拆解,3秒生成拆解报告"
 license: Proprietary

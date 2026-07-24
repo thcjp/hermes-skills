@@ -2,7 +2,7 @@
 name: "agentvibes-content-skill"
 slug: "agentvibes-content-skill"
 displayName: "AgentVibes内容技能"
-version: "1.0.0"
+version: 4.6.7
 summary: "AgentVibes内容创作与管理技能,支持多模态内容生成与发布"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.

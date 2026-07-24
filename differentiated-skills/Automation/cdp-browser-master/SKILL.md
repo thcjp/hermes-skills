@@ -1,7 +1,7 @@
 ---
 slug: cdp-browser-master
 name: cdp-browser-master
-version: 1.0.0
+version: 1.0.1
 displayName: CDP浏览器大师
 summary: 解决反爬检测、选择器易变、SPA路由、等待不准四大痛点，附反检测与智能等待.
 license: Proprietary

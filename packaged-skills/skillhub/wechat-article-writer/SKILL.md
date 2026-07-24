@@ -1,7 +1,7 @@
 ---
 slug: "wechat-article-writer"
 name: "wechat-article-writer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "公众号写作专业版"
 summary: "企业级公众号写作引擎，支持多模型切换、业务资料库、发布流程、配图管理与团队协作。"
 license: "Proprietary"

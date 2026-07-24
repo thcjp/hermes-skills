@@ -1,7 +1,7 @@
 ---
 slug: "solo-dev-companion"
 name: "solo-dev-companion"
-version: "1.0.0"
+version: 1.0.1
 displayName: "独立开发伙伴(专业版)"
 summary: "全功能TDD工作流引擎，含MCP工具集成、多语言质量工具、视觉验证、阶段检查点与高级回滚。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "diagram-generator"
 name: "diagram-generator"
-version: "1.0.0"
+version: 1.1.7
 displayName: "Diagram生成器"
 summary: "通过MCP工具生成与编辑Draw.io/Mermaid/Excalidraw图表,支持网络拓扑/架构/流程图/UML等"
 license: "Proprietary"

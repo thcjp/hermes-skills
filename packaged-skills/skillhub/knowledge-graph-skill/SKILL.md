@@ -1,7 +1,7 @@
 ---
 slug: "knowledge-graph-skill"
 name: "knowledge-graph-skill"
-version: "1.2.0"
+version: 1.1.2
 displayName: "知识图谱技能"
 summary: "嵌入式知识图谱,持久化存储结构化知识,支持查询、合并、可视化与配置"
 license: "Proprietary"

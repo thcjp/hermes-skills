@@ -1,7 +1,7 @@
 ---
 slug: "whatsapp-ultimate"
 name: "whatsapp-ultimate"
-version: "2.0.0"
+version: 4.0.4
 displayName: "通讯应用工具"
 summary: "通讯应用消息发送、交互反应、群组管理和多Agent讨论工具"
 license: "Proprietary"

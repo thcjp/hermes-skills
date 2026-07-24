@@ -1,7 +1,7 @@
 ---
 slug: "data-format-converter"
 name: "data-format-converter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "数据格式转换器"
 summary: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: workflow-essentials-free
 name: workflow-essentials-free
-version: 1.0.0
+version: 1.0.1
 displayName: Workflow Essentials
 summary: 自动化工作流的入门精要指南，三步法掌握识别、设计、构建自动化的核心方法.
 license: Proprietary

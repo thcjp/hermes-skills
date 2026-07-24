@@ -1,7 +1,7 @@
 ---
 slug: "in-depth-research"
 name: "in-depth-research"
-version: "1.0.0"
+version: 1.0.1
 displayName: "深度研究引擎"
 summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。"
 license: "Proprietary"

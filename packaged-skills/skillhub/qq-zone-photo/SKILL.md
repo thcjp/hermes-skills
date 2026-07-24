@@ -1,7 +1,7 @@
 ---
 slug: "qq-zone-photo"
 name: "qq-zone-photo"
-version: "1.0.3"
+version: 1.0.4
 displayName: "社交空间相册"
 summary: "管理社交空间相册，支持扫码登录、浏览照片、上传下载"
 license: "Proprietary"

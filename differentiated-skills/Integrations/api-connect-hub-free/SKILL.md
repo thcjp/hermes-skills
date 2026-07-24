@@ -1,7 +1,7 @@
 ---
 slug: api-connect-hub-free
 name: api-connect-hub-free
-version: 1.0.0
+version: 1.0.1
 displayName: API连接中心(免费版)
 summary: 轻量级第三方API连接与凭证管理，覆盖连接器注册、认证、调用模板与错误重试.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: email-multi-provider-free
 name: email-multi-provider-free
-version: 1.0.0
+version: 1.0.1
 displayName: 多邮箱管理免费版
 summary: Gmail与Outlook多账户邮件管理，支持收发搜索与安全认证
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "aws-cloud-architect"
 name: "aws-cloud-architect"
-version: "2.0.0"
+version: 1.0.1
 displayName: "AWS 云架构师"
 summary: "AWS 架构设计、成本优化、安全加固与迁移部署全流程助手"
 license: "Proprietary"

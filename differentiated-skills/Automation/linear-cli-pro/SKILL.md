@@ -1,7 +1,7 @@
 ---
 slug: linear-cli-pro
 name: linear-cli-pro
-version: 1.0.0
+version: 1.0.1
 displayName: Linear CLI专家
 summary: 解决JSON解析难、内联转义炸、批量操作慢、鉴权易失效痛点，让Linear CLI在Agent中稳跑
 license: Proprietary

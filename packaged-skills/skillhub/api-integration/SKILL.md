@@ -1,7 +1,7 @@
 ---
 slug: "api-integration"
 name: "api-integration"
-version: "1.0.0"
+version: 1.0.1
 displayName: "API集成开发助手"
 summary: "掌握RESTful调用、GraphQL查询、OAuth2/JWT认证管理与错误处理,连接第三方服务扩展能力"
 license: "Proprietary"

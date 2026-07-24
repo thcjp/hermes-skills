@@ -1,7 +1,7 @@
 ---
 slug: vpn-rotator-free
 name: vpn-rotator-free
-version: 1.0.0
+version: 1.0.1
 displayName: VPN轮换工具免费版
 summary: 自动轮换VPN服务器IP，规避API速率限制，兼容OpenVPN协议
 license: Proprietary

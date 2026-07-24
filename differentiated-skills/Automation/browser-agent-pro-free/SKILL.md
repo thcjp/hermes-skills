@@ -1,7 +1,7 @@
 ---
 slug: browser-agent-pro-free
 name: browser-agent-pro-free
-version: 1.0.0
+version: 1.0.1
 displayName: 浏览器代理(免费版)
 summary: 自然语言驱动浏览器自动化，含页面操作、截图、表单填写与基础数据抓取，让Agent像人一样浏览网页.
 license: Proprietary

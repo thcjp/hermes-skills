@@ -1,7 +1,7 @@
 ---
 slug: "finance-radar"
 name: "finance-radar"
-version: "1.1.0"
+version: 1.1.1
 displayName: "Finance Radar"
 summary: "基于雅虎财经做股票与加密分析,数据驱动决策"Proprietary"
 description: |-

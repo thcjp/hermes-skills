@@ -1,7 +1,7 @@
 ---
 slug: "csv-json-converter"
 name: "csv-json-converter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "CSV转JSON(专业版)"
 summary: "企业级CSV转JSON工具，支持批量流式转换、Schema校验、字段映射与数据库直写。"
 license: "Proprietary"

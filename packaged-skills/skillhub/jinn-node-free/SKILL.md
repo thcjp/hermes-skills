@@ -1,7 +1,7 @@
 ---
 slug: "jinn-node-free"
 name: "jinn-node-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Jinn Node Free"
 summary: "在自治网络中运行工作节点的基础版本，支持单任务测试和钱包查询。"
 license: "MIT"

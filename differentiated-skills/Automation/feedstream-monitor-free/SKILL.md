@@ -1,7 +1,7 @@
 ---
 slug: feedstream-monitor-free
 name: feedstream-monitor-free
-version: 1.0.0
+version: 1.0.1
 displayName: Feedstream Monitor
 summary: 安全公告订阅流监控免费版，支持多源RSS/Atom订阅、严重性分级、基础关键词过滤与本地去重.
 license: Proprietary

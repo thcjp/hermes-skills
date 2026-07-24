@@ -1,7 +1,7 @@
 ---
 slug: "javascript"
 name: "javascript"
-version: "1.0.3"
+version: 1.0.4
 displayName: "JavaScript"
 summary: "写健壮JavaScript,异步/类型转换/ES2023+特性"
 license: "Proprietary"

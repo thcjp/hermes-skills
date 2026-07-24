@@ -1,7 +1,7 @@
 ---
 slug: azure-cloud-inspector-free
 name: azure-cloud-inspector-free
-version: 1.0.0
+version: 1.0.1
 displayName: Azure巡检员免费版
 summary: 面向日常巡检的Azure检查助手,默认只读,风险评分,暴露面发现,配置漂移检测.
 license: Proprietary

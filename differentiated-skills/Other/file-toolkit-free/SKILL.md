@@ -1,7 +1,7 @@
 ---
 slug: file-toolkit-free
 name: file-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 文件工具箱
 summary: 智能文件管理体系，包含命名规范、目录结构设计、快速检索，帮助用户告别桌面混乱.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: finance-toolkit-free
 name: finance-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 行情追踪基础工具
 summary: 股票、ETF、指数、外汇行情查询工具，支持本地自选股与历史数据获取.
 license: Proprietary

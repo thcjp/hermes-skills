@@ -1,7 +1,7 @@
 ---
 slug: "slack-hub-skill"
 name: "slack-hub-skill"
-version: "1.0.0"
+version: 0.1.1
 displayName: "Slack消息中枢"
 summary: "Slack消息发送/线程回复/工作区搜索/频道发现，Bot Token直连Web API"
 license: "Proprietary"

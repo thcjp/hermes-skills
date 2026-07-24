@@ -1,7 +1,7 @@
 ---
 slug: "brainz-calendar"
 name: "brainz-calendar"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Calendar"
 summary: "用gcalcli管理Google日历,创建/列出/删除事件,日程不乱"
 license: "Proprietary"

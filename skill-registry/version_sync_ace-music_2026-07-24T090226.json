@@ -1,0 +1,35 @@
+{
+  "slug": "ace-music",
+  "timestamp": "2026-07-24T09:02:26",
+  "phases": {
+    "quality_check": {
+      "passed": true,
+      "score": "13/13",
+      "failed_checks": []
+    },
+    "github": {
+      "slug": "ace-music",
+      "platform": "github",
+      "version": "1.0.1",
+      "status": "success",
+      "commit_message": "feat(ace-music): upgrade to v1.0.1 - Auto-sync: content updated, version 1.0.0 → 1.0.1"
+    },
+    "skillhub": {
+      "slug": "ace-music",
+      "platform": "skillhub",
+      "version": "1.0.1",
+      "status": "blocked_content_too_long",
+      "free_upload": {
+        "status": "blocked_content_too_long",
+        "error": "内容过长(7863>5800)"
+      },
+      "paid_upload": null,
+      "error": "内容过长(7863>5800)"
+    },
+    "clawhub": {
+      "status": "skipped"
+    }
+  },
+  "source": "packaged",
+  "status": "partial_success"
+}

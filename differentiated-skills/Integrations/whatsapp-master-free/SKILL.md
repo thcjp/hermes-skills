@@ -1,7 +1,7 @@
 ---
 slug: whatsapp-master-free
 name: whatsapp-master-free
-version: 1.0.0
+version: 1.0.1
 displayName: WhatsApp大师(免费版)
 summary: WhatsApp 消息自动化免费版：文本/媒体/贴纸/语音发送，含 JID 格式与速率限制指南.
 license: Proprietary

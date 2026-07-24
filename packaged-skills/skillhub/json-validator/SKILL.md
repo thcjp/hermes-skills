@@ -1,7 +1,7 @@
 ---
 slug: "json-validator"
 name: "json-validator"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON校验器(专业版)"
 summary: "企业级JSON校验工具，支持批量校验、Schema校验、自动修复与CI/CD集成。"
 license: "Proprietary"

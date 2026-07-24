@@ -1,7 +1,7 @@
 ---
 slug: "design"
 name: "design"
-version: "1.0.0"
+version: 1.0.1
 displayName: "自适应设计偏好引擎"
 summary: "自动学习用户视觉偏好,适配UI/图形/视频/印刷多媒介,持续进化设计风格记忆"
 license: "Proprietary"

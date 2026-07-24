@@ -1,7 +1,7 @@
 ---
 slug: "remix-auth"
 name: "remix-auth"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Remix认证工具Pro"
 summary: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。"
 license: "Proprietary"

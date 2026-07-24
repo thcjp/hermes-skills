@@ -1,7 +1,7 @@
 ---
 slug: csv-processor-free
 name: csv-processor-free
-version: 1.0.0
+version: 1.0.1
 displayName: CSV处理器 免费版
 summary: 自动检测编码与分隔符的CSV清洗工具，支持读取、清洗、合并与类型转换.
 license: Proprietary

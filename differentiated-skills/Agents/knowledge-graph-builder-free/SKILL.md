@@ -1,7 +1,7 @@
 ---
 slug: knowledge-graph-builder-free
 name: knowledge-graph-builder-free
-version: 1.0.0
+version: 1.0.1
 displayName: Knowledge Graph Buil
 summary: AI Agent类型化知识图谱系统，实体-关系-约束三要素，JSONL存储+约束验证.
 license: Proprietary

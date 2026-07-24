@@ -1,7 +1,7 @@
 ---
 slug: "shop-culture"
 name: "shop-culture"
-version: "1.0.12"
+version: 1.0.13
 displayName: "生活方式购物"
 summary: "AI代理自主浏览生活方式商品、下单和跟踪物流的多链加密支付购物"
 license: "Proprietary"

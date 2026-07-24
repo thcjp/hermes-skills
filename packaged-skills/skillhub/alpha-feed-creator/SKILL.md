@@ -1,7 +1,7 @@
 ---
 slug: "alpha-feed-creator"
 name: "alpha-feed-creator"
-version: "1.0.0"
+version: 1.0.1
 displayName: "内容采集器专业版"
 summary: "多源批量采集并智能排名 AI 内容,支持群组推送与企业级内容运营工作流。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "reddit-research"
 name: "reddit-research"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Reddit Research"
 summary: "提取汇总Reddit趋势话题/反复问题/内容空白"
 license: "Proprietary"

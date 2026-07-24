@@ -1,7 +1,7 @@
 ---
 slug: "doubao-image-gen"
 name: "doubao-image-gen"
-version: "1.0.0"
+version: 1.0.1
 displayName: "豆包图片生成-专业版"
 summary: "企业级AI图片生成平台，支持批量生成、多比例输出、风格预设、提示词增强与工作流自动化。"
 license: "Proprietary"

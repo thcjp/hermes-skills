@@ -1,7 +1,7 @@
 ---
 slug: "git-workflow-cn-paid"
 name: "git-workflow-cn-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Git工作流专业版"
 summary: "企业级 Git 工作流方案，支持 Git Flow、团队协作、冲突工具集成与批量分支管理。"
 license: "Proprietary"

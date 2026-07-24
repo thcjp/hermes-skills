@@ -1,7 +1,7 @@
 ---
 slug: "telegram-agent-comm"
 name: "telegram-agent-comm"
-version: "1.0.0"
+version: 1.0.1
 displayName: "电报通信助手专业版"
 summary: "多角色 Agent 团队 Telegram 通信中枢，支持账号映射、批量调度、审计日志与优先级路由。"
 license: "Proprietary"

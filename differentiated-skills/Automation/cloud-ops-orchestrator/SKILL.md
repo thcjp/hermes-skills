@@ -1,7 +1,7 @@
 ---
 slug: cloud-ops-orchestrator
 name: cloud-ops-orchestrator
-version: 1.0.0
+version: 1.0.1
 displayName: 云运维编排器
 summary: 用 Terraform+Ansible 编排多云基础设施，内置漂移检测、变更预演与安全销毁，杜绝误删.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "vscode-node"
 name: "vscode-node"
-version: "1.0.2"
+version: 1.0.3
 displayName: "VS Code Node"
 summary: "经连为SkillHub节点的VS Code与Cursor操作代码,40+命令"
 license: "Proprietary"

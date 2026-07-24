@@ -1,7 +1,7 @@
 ---
 slug: "memory-compress"
 name: "memory-compress"
-version: "1.0.0"
+version: 1.2.2
 displayName: "日志压缩器"
 summary: "将冗长日志压缩为结构化摘要，4-8倍压缩比，借鉴古文压缩哲学实现零关键事件损失"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "api-generator"
 name: "api-generator"
-version: "1.0.0"
+version: 2.0.1
 displayName: "API代码生成器"
 summary: "生成RESTful端点、GraphQL schema、OpenAPI文档、API客户端、Mock服务、认证与测试套件"
 license: "Proprietary"

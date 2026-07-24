@@ -1,7 +1,7 @@
 ---
 slug: "slack-api"
 name: "slack-api"
-version: "1.0.11"
+version: 1.0.12
 displayName: "Slack"
 summary: "Slack API托管OAuth,发消息/管频道/搜会话"
 license: "Proprietary"

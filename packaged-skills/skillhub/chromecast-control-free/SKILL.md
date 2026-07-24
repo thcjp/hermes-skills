@@ -1,7 +1,7 @@
 ---
 slug: "chromecast-control-free"
 name: "chromecast-control-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "投屏设备基础版"
 summary: "基础投屏控制，设备发现、媒体投放、播放和音量管理"
 license: "MIT"

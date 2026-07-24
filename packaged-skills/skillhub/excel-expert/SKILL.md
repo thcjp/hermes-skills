@@ -1,7 +1,7 @@
 ---
 slug: "excel-expert"
 name: "excel-expert"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Excel专家专业版"
 summary: "全场景表格诊断与建模引擎，含跨平台降级矩阵、VBA 生成、敏感性分析与仪表盘设计。"
 license: "Proprietary"

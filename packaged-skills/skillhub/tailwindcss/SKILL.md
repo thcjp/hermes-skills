@@ -1,7 +1,7 @@
 ---
 slug: "tailwindcss"
 name: "tailwindcss"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Tailwind CSS"
 summary: "写Tailwind工具类,响应式/暗色模式/配置得当"
 license: "Proprietary"

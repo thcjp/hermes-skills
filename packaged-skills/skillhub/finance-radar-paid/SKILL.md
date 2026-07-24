@@ -1,7 +1,7 @@
 ---
 slug: "finance-radar-paid"
 name: "finance-radar-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "股票分析雷达专业版"
 summary: "专业股票与加密货币分析平台，支持批量分析、组合追踪、价格告警与传闻检测。"
 license: "Proprietary"

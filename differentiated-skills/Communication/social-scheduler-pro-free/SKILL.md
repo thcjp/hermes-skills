@@ -1,7 +1,7 @@
 ---
 slug: social-scheduler-pro-free
 name: social-scheduler-pro-free
-version: 1.0.0
+version: 1.0.1
 displayName: 社媒内容排期(免费版)
 summary: 社媒内容排期免费版：内容日历、平台适配草稿、内容支柱与标签策略，适合个人创作者.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: slack-api-toolkit-free
 name: slack-api-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Slack API工具箱
 summary: 通过托管OAuth安全调用Slack API，支持消息收发与频道管理，适合个人快速集成.
 license: Proprietary

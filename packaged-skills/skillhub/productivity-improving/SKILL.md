@@ -1,7 +1,7 @@
 ---
 slug: "productivity-improving"
 name: "productivity-improving"
-version: "1.1.0"
+version: 1.1.1
 displayName: "Productivity Tracker"
 summary: "生产力追踪与每日复盘助手,输入活动日志/目标/日报"
 license: "Proprietary"

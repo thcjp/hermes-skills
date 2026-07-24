@@ -1,7 +1,7 @@
 ---
 slug: "x-news-daily"
 name: "x-news-daily"
-version: "1.0.0"
+version: 2.0.1
 displayName: "X News Daily"
 summary: "抓取 X.com 关键词热门新闻 Top 10，生成全屏中文海报，支持多平台分发。"
 license: "Proprietary"

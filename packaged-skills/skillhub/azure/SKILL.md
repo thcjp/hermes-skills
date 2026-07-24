@@ -1,7 +1,7 @@
 ---
 slug: "azure"
 name: "azure"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Azure"
 summary: "用经实战检验的模式部署监控管理Azure服务,稳定上云"
 license: "Proprietary"

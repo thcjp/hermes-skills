@@ -1,7 +1,7 @@
 ---
 slug: "vue"
 name: "vue"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Vue"
 summary: "规避Vue常见错误,响应式陷阱/ref与reactive/组合式API"
 license: "Proprietary"

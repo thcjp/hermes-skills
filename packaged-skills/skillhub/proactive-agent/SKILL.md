@@ -1,7 +1,7 @@
 ---
 slug: "proactive-agent"
 name: "proactive-agent"
-version: "3.1.0"
+version: 3.1.1
 displayName: "主动式代理"
 summary: "将AI代理从任务跟随者转变为主动伙伴,含WAL协议、心跳系统与增长循环。"
 license: "Proprietary"

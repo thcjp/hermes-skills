@@ -1,7 +1,7 @@
 ---
 slug: "schedule-manager"
 name: "schedule-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "任务调度管家(专业版)"
 summary: "全功能任务调度系统，含依赖链、失败重试、多通道告警、日历集成、团队时区协调与监控仪表盘，支撑企业级调度场景。"
 license: "Proprietary"

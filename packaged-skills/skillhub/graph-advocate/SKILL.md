@@ -1,7 +1,7 @@
 ---
 slug: "graph-advocate"
 name: "graph-advocate"
-version: "2.9.1"
+version: 2.9.2
 displayName: "Graph Advocate"
 summary: "把区块链数据问题路由到对的Graph Protocol服务,返实时数据"
 license: "Proprietary"

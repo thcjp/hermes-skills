@@ -1,7 +1,7 @@
 ---
 slug: docker-toolkit-free
 name: docker-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Docker容器入门工具
 summary: Docker容器管理工具，支持镜像/容器/卷/网络基础操作与简单编排.
 license: Proprietary

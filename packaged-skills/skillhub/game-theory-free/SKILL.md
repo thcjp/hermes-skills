@@ -1,7 +1,7 @@
 ---
 slug: "game-theory-free"
 name: "game-theory-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "加密博弈论分析（免费版）"
 summary: "免费版crypto协议博弈论分析框架，支持Five Questions建模与基础Red Flags检测"
 license: "MIT"

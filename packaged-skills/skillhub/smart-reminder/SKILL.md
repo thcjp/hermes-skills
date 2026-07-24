@@ -1,7 +1,7 @@
 ---
 slug: "smart-reminder"
 name: "smart-reminder"
-version: "1.0.0"
+version: 1.0.1
 displayName: "智能提醒助手(专业版)"
 summary: "自然语言事件捕获与提醒助手专业版，含自定义偏移、多渠道投递、农历生日、语义搜索与完整重复模式。"
 license: "Proprietary"

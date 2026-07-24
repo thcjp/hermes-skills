@@ -1,7 +1,7 @@
 ---
 slug: "code-analyze"
 name: "code-analyze"
-version: "1.0.0"
+version: 1.0.1
 displayName: "代码分析工具专业版"
 summary: "企业级多领域结构化分析,支持批量分析、团队协作、自定义框架与优先级支持"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: task-queue-manager-free
 name: task-queue-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 任务队列管理器(免费版)
 summary: 持久化任务队列核心能力，支持可恢复、幂等的批量任务，60秒上手队列管理.
 license: Proprietary

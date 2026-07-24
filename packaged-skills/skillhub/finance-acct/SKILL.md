@@ -1,7 +1,7 @@
 ---
 slug: "finance-acct"
 name: "finance-acct"
-version: "1.0.0"
+version: 1.0.1
 displayName: "财务会计专业版"
 summary: "企业级财务会计系统，支持多账套、全税种、批量发票、ERP集成与审计追踪。"
 license: "Proprietary"

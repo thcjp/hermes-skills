@@ -1,7 +1,7 @@
 ---
 slug: "jinn-node"
 name: "jinn-node"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Jinn Node"
 summary: "在自治网络中运行工作节点，通过完成链上任务赚取代币奖励。"
 license: "Proprietary"

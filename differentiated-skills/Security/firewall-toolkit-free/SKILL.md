@@ -1,7 +1,7 @@
 ---
 slug: firewall-toolkit-free
 name: firewall-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 防火墙配置工具包免费版
 summary: 服务器防火墙配置助手,支持iptables/uffw基础规则、端口管理与安全基线检查,适合个人开发者服务器安全防护.
 license: Proprietary

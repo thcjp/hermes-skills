@@ -1,7 +1,7 @@
 ---
 slug: "grain-crawler"
 name: "grain-crawler"
-version: "1.0.0"
+version: 1.0.1
 displayName: "归档检索(专业版)"
 summary: "全功能 Granola 归档检索，含同步、SQL、转录稿、面板、批量导出。"
 license: "Proprietary"

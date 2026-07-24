@@ -1,7 +1,7 @@
 ---
 slug: "api-doc-writer"
 name: "api-doc-writer"
-version: "1.0.0"
+version: 1.0.2
 displayName: "API文档一键生成规范器"
 summary: "接口文档写不规范?一键生成REST API完整文档,含认证/状态码/安全建议模板,支持多模块结构,开发团队协作必备。"
 license: "Proprietary"

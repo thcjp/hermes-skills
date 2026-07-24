@@ -1,7 +1,7 @@
 ---
 slug: analytics-dashboard-free
 name: analytics-dashboard-free
-version: 1.0.0
+version: 1.0.1
 displayName: 数据分析面板(免费版)
 summary: 轻量数据可视化面板，聚合邮件、会话、任务多源数据，token保护，5秒自动刷新，一站式监控.
 license: Proprietary

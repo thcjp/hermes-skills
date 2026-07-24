@@ -1,7 +1,7 @@
 ---
 slug: theme-stylist
 name: theme-stylist
-version: 1.1.0
+version: 1.0.1
 displayName: 主题造型师
 summary: 10+预设主题一键应用,幻灯片文档报告HTML统一专业视觉风格
 license: Proprietary

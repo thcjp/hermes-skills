@@ -1,7 +1,7 @@
 ---
 slug: "dns-config"
 name: "dns-config"
-version: "1.0.0"
+version: 1.0.1
 displayName: "DNS配置工具专业版"
 summary: "企业级 DNS 配置工具,支持 CAA、Cloudflare 代理、通配符与批量迁移策略。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "azure-transcription"
 name: "azure-transcription"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Azure语音转写专业版"
 summary: "企业级语音转写工具，支持实时流式转写、说话人分离、批量处理与自定义模型。"
 license: "Proprietary"

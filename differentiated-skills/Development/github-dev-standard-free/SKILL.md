@@ -1,7 +1,7 @@
 ---
 slug: github-dev-standard-free
 name: github-dev-standard-free
-version: 1.0.0
+version: 1.0.1
 displayName: 项目开发标准免费版
 summary: 个人开发者项目开发标准流程，含 9 步开发流程与基础验收清单.
 license: Proprietary

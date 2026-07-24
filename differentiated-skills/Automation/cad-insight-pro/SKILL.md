@@ -1,7 +1,7 @@
 ---
 slug: cad-insight-pro
 name: cad-insight-pro
-version: 1.0.0
+version: 1.0.1
 displayName: CAD洞察专家
 summary: 同时解析 PDF 与 DWG 工程图，可配置标题栏模板、多比例检测、工程量自动统计.
 license: Proprietary

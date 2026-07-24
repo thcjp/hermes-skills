@@ -1,7 +1,7 @@
 ---
 slug: "queue-task"
 name: "queue-task"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Queue Task"
 summary: "task-father目录的可恢复幂等批处理队列任务助手"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "smart-auto-updater"
 name: "smart-auto-updater"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Smart Auto Updater"
 summary: "AI驱动影响评估的智能自动更新器,查更新/析变更"
 license: "Proprietary"

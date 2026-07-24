@@ -1,7 +1,7 @@
 ---
 slug: github-api-toolkit-free
 name: github-api-toolkit-free
-version: 1.0.2
+version: 1.0.1
 displayName: GitHub API工具包(免费版)
 summary: 通过GitHub REST API管理仓库、Issue、PR与分支,支持基础CRUD与结构化输出,适合个人开发者集成场景.
 license: Proprietary

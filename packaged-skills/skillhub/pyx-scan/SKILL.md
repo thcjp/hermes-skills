@@ -1,7 +1,7 @@
 ---
 slug: "pyx-scan"
 name: "pyx-scan"
-version: "2.0.0"
+version: 1.1.1
 displayName: "技能安全扫描"
 summary: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告"
 license: "Proprietary"

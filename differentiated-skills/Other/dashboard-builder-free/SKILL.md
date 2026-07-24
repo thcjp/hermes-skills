@@ -1,7 +1,7 @@
 ---
 slug: dashboard-builder-free
 name: dashboard-builder-free
-version: 1.0.0
+version: 1.0.1
 displayName: 仪表盘构建(免费版)
 summary: 从任意数据源生成本地静态仪表盘，支持基础数据抓取与可视化 QA.
 license: Proprietary

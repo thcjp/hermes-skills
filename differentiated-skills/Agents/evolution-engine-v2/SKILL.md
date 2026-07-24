@@ -1,7 +1,7 @@
 ---
 slug: "evolution-engine-v2"
 name: "evolution-engine-v2"
-version: "2.0.0"
+version: 2.0.1
 displayName: "进化引擎"
 summary: "Agent自我进化：反思+纠错学习+反污染防线+压缩不删，避免重复犯错与误学。"
 license: "Proprietary"

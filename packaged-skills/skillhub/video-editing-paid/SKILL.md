@@ -1,7 +1,7 @@
 ---
 slug: "video-editing-paid"
 name: "video-editing-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "视频剪辑变现专业版"
 summary: "多渠道矩阵+团队SOP+数据看板+90日全流程+合规体系,面向工作室的专业变现运营引擎"
 license: "Proprietary"

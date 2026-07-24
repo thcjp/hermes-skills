@@ -1,7 +1,7 @@
 ---
 slug: "ui-ux-design"
 name: "ui-ux-design"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UI/UX设计指南"
 summary: "涵盖设计原则、配色系统、Shadcn/ui+Tailwind栈、响应式设计与WCAG 2.2无障碍的完整指南。"
 license: "Proprietary"

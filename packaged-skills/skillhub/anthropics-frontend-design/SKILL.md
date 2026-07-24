@@ -1,7 +1,7 @@
 ---
 slug: "anthropics-frontend-design"
 name: "anthropics-frontend-design"
-version: "1.0.0"
+version: 0.1.1
 displayName: "前端设计工坊"
 summary: "创建独特的生产级前端界面,专注排版配色动效与空间构图,避免通用AI美学"
 license: "Proprietary"

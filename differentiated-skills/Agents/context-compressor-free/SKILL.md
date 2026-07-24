@@ -1,7 +1,7 @@
 ---
 slug: context-compressor-free
 name: context-compressor-free
-version: 1.0.0
+version: 1.0.1
 displayName: Context Compressor
 summary: 智能压缩对话日志为结构化摘要，4-8倍压缩比，保留关键决策与教训，降低Token成本.
 license: Proprietary

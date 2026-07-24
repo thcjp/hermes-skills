@@ -1,7 +1,7 @@
 ---
 slug: poetry-craftsman
 name: poetry-craftsman
-version: "1.1.0"
+version: 1.0.1
 displayName: "诗词匠心"
 summary: "一人做古诗词内容厂牌,6种融合模式+平仄校验+意境评分,图文短视频双输出"
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "discord-community-hub"
 name: "discord-community-hub"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Discord社区中心专业版"
 summary: "企业级 Discord 社区管理,支持应用命令、权益管理、角色连接与用户资料修改。"
 license: "Proprietary"

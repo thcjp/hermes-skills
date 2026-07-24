@@ -1,7 +1,7 @@
 ---
 slug: "grok-image"
 name: "grok-image"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Grok图片生成-专业版"
 summary: "批量AI图片生成引擎，支持多格式导出、消息平台集成与自动化工作流。"
 license: "Proprietary"

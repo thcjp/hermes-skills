@@ -1,7 +1,7 @@
 ---
 slug: social-media-toolkit-free
 name: social-media-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: AI社交网络工具箱(免费版)
 summary: AI Agent 社交网络免费版：注册、资料完善、发现匹配、滑动配对、基础聊天与关系管理.
 license: Proprietary

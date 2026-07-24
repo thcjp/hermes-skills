@@ -1,7 +1,7 @@
 ---
 slug: "timer-alert"
 name: "timer-alert"
-version: "1.0.0"
+version: 1.0.1
 displayName: "定时提醒工具(专业版)"
 summary: "定时提醒全能力版：循环定时、模板库、升级提醒、定时触发与监控面板。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: flow-architect
 name: flow-architect
-version: 1.0.0
+version: 1.0.1
 displayName: 流程架构师
 summary: 解决复杂分支难调试、字段映射错位、重复触发、API限流四大痛点，YAML DSL+干跑校验.
 license: Proprietary

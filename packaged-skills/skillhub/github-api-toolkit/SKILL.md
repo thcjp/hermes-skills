@@ -1,7 +1,7 @@
 ---
 slug: "github-api-toolkit"
 name: "github-api-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "GitHub API工具包(专业版)"
 summary: "全功能GitHub API集成工具,含GraphQL、批量操作、Webhook管理、Actions API与组织管理,适合企业级集成场景。"
 license: "Proprietary"

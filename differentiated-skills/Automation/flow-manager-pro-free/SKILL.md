@@ -1,7 +1,7 @@
 ---
 slug: flow-manager-pro-free
 name: flow-manager-pro-free
-version: 1.0.0
+version: 1.0.1
 displayName: 流程管理器(免费版)
 summary: 通过Admin API管理Node-RED实例，支持流程列表、部署、状态查询与基础节点管理.
 license: Proprietary

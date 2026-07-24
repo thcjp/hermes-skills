@@ -1,7 +1,7 @@
 ---
 slug: "json-canvas"
 name: "json-canvas"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Json Canvas"
 summary: "创建编辑JSON Canvas文件,含节点/边/分组/连接"
 license: "Proprietary"

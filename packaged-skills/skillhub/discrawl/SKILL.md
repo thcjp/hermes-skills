@@ -1,7 +1,7 @@
 ---
 slug: "discrawl"
 name: "discrawl"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Discrawl"
 summary: "Discord归档,搜索/同步新鲜度/私信/频道切片/SQL计数"
 license: "Proprietary"

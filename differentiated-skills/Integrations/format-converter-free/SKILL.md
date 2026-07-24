@@ -1,7 +1,7 @@
 ---
 slug: format-converter-free
 name: format-converter-free
-version: 1.0.0
+version: 1.0.1
 displayName: 数据格式转换(免费版)
 summary: CSV、JSON、XML、YAML、TOML 等格式互转的免费核心能力,支持单文件快速转换.
 license: Proprietary

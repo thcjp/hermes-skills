@@ -1,7 +1,7 @@
 ---
 slug: token-guard-pro
 name: token-guard-pro
-version: 1.0.0
+version: 1.0.1
 displayName: Token守护者
 summary: 解决压缩损质、缓存命中低、无模型路由、预算失控的Token成本守护器
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: ssl-toolkit-free
 name: ssl-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: SSL工具箱(免费版)
 summary: 个人用户的HTTPS配置、TLS证书管理与基础连接排障工具.
 license: Proprietary

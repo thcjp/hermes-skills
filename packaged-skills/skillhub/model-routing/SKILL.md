@@ -1,7 +1,7 @@
 ---
 slug: "model-routing"
 name: "model-routing"
-version: "1.0.0"
+version: 1.0.1
 displayName: "模型路由工具(专业版)"
 summary: "团队级模型路由套件,含成本仪表盘、批量分发、自定义规则与监控告警。"
 license: "Proprietary"

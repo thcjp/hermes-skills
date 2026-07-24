@@ -1,7 +1,7 @@
 ---
 slug: "ui-ux-toolkit"
 name: "ui-ux-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UI/UX设计工具箱专业版"
 summary: "全域设计数据库+持久化设计系统+多技术栈+批量搜索,面向团队企业的专业UI/UX设计决策引擎"
 license: "Proprietary"

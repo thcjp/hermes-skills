@@ -1,7 +1,7 @@
 ---
 slug: piper-tts-engine-free
 name: piper-tts-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: 本地语音合成免费版
 summary: 基于 Piper 的本地离线文字转语音工具，零云端调用、零 API 费用，适合个人单条语音生成.
 license: Proprietary

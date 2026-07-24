@@ -1,7 +1,7 @@
 ---
 slug: "task-planner"
 name: "task-planner"
-version: "3.0.5"
+version: 3.0.6
 displayName: "Task Planner"
 summary: "本地管任务/设优先级/追截止,支持中英双语"
 license: "Proprietary"

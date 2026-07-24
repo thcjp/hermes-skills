@@ -1,7 +1,7 @@
 ---
 slug: "mermaid-diagram"
 name: "mermaid-diagram"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Mermaid Diagram"
 summary: "生成有效Mermaid图,流程/时序/思维导图/ER图"
 license: "Proprietary"

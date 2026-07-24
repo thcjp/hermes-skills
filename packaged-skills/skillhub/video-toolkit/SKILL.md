@@ -1,7 +1,7 @@
 ---
 slug: "video-toolkit"
 name: "video-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "视频工具箱专业版"
 summary: "批量视频处理+AI超分+智能重构图+多码率+自动化工作流,面向内容团队的专业视频引擎"
 license: "Proprietary"

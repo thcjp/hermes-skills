@@ -1,7 +1,7 @@
 ---
 slug: "slack-api-toolkit"
 name: "slack-api-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Slack API工具箱Pro"
 summary: "Slack全功能集成方案，含文件、搜索、反应、书签、批量操作与审计日志。"
 license: "Proprietary"

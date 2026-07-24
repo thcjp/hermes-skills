@@ -1,7 +1,7 @@
 ---
 slug: "t-trading"
 name: "t-trading"
-version: "1.0.0"
+version: 1.0.1
 displayName: "T Trading"
 summary: "基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。"
 license: "Proprietary"

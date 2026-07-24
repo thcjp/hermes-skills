@@ -1,7 +1,7 @@
 ---
 slug: code-dev-toolkit-free
 name: code-dev-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 代码开发工具包免费版
 summary: 规划、实现、验证、测试的完整编码工作流,支持个人偏好记忆与步骤化开发
 license: Proprietary

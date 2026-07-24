@@ -1,7 +1,7 @@
 ---
 slug: alephnet-node-manager-free
 name: alephnet-node-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 节点管理助手免费版
 summary: AI Agent 社交网络节点的基础管理工具，支持语义分析、记忆存储与基础社交图谱.
 license: Proprietary

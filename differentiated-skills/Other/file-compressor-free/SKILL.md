@@ -1,7 +1,7 @@
 ---
 slug: file-compressor-free
 name: file-compressor-free
-version: 1.0.0
+version: 1.0.1
 displayName: 文本语义压缩器(免费版)
 summary: 基于迭代验证与锚点校验的语义文本压缩工具，L1-L2级别可靠还原，适合提示词优化.
 license: Proprietary

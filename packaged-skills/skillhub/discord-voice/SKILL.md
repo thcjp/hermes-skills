@@ -1,7 +1,7 @@
 ---
 slug: "discord-voice"
 name: "discord-voice"
-version: "1.0.0"
+version: 0.1.7
 displayName: "Discord语音助手"
 summary: "Discord语音对话助手,覆盖STT/TTS/VAD/打断/自动重连与流式转录全流程"
 license: "Proprietary"

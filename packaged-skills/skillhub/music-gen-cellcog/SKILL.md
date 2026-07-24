@@ -1,7 +1,7 @@
 ---
 slug: "music-gen-cellcog"
 name: "music-gen-cellcog"
-version: "1.0.0"
+version: 1.0.1
 displayName: "CellCog音乐生成专业版"
 summary: "基于CellCog AI引擎的企业级音乐生成系统,支持批量生成、版权管理、高质量输出与CI/CD集成,适合团队与商业项目。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "dlazy-generate"
 name: "dlazy-generate"
-version: "1.3.2"
+version: 1.3.3
 displayName: "Dlazy Generate"
 summary: "综合生成技能,自动选模型生成图/视频/音频,多模态出片"
 license: "Proprietary"

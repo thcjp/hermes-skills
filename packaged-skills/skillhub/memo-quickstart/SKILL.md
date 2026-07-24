@@ -1,7 +1,7 @@
 ---
 slug: "memo-quickstart"
 name: "memo-quickstart"
-version: "1.0.0"
+version: 1.0.1
 displayName: "记忆快速启动"
 summary: "零依赖本地记忆系统：三层架构+混合检索+WAL日志+关系图谱+迁移工具。"
 license: "Proprietary"

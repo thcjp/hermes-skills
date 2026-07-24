@@ -1,7 +1,7 @@
 ---
 slug: "task-queue-manager"
 name: "task-queue-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "任务队列管理器(专业版)"
 summary: "全功能持久化任务队列，含分布式处理、优先级调度、数据库存储与监控告警，支持6种角色场景。"
 license: "Proprietary"

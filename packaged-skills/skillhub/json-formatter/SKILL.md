@@ -1,7 +1,7 @@
 ---
 slug: "json-formatter"
 name: "json-formatter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON Formatter"
 summary: "格式化/校验/压缩JSON并提取路径,提升可读性"
 license: "Proprietary"

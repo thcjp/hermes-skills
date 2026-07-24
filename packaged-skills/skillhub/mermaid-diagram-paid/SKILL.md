@@ -1,7 +1,7 @@
 ---
 slug: "mermaid-diagram-paid"
 name: "mermaid-diagram-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Mermaid图表工具(专业版)"
 summary: "团队级Mermaid图表套件,含全类型、自定义主题、批量生成与CI语法校验。"
 license: "Proprietary"

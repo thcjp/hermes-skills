@@ -1,7 +1,7 @@
 ---
 slug: "visual-file-sorter"
 name: "visual-file-sorter"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Visual File Sorter"
 summary: "自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。"
 license: "Proprietary"

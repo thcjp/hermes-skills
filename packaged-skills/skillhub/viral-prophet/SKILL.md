@@ -1,7 +1,7 @@
 ---
 slug: viral-prophet
 name: viral-prophet
-version: "1.1.0"
+version: 1.0.1
 displayName: "爆款预言机"
 summary: "发布前预测爆款潜力,6维潜力评分+5大爆款要素+竞品对比,3秒出预测报告"
 license: Proprietary

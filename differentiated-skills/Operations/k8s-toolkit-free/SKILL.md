@@ -1,7 +1,7 @@
 ---
 slug: k8s-toolkit-free
 name: k8s-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: K8s避坑入门工具
 summary: Kubernetes常见问题避坑指南，提供基础排查与优选实践建议.
 license: Proprietary

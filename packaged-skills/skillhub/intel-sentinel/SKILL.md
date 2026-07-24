@@ -1,7 +1,7 @@
 ---
 slug: intel-sentinel
 name: intel-sentinel
-version: "1.0.1"
+version: 1.0.1
 displayName: "情报哨兵"
 summary: "开源情报自动收集与威胁分析,多源监控+AI分析+实时告警"
 license: Proprietary

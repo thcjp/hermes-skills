@@ -1,7 +1,7 @@
 ---
 slug: video-stream-upload-free
 name: video-stream-upload-free
-version: 1.0.0
+version: 1.0.1
 displayName: 视频上传-免费版
 summary: 轻量级视频上传工具，支持快速上传视频至流媒体平台并获取播放链接，适合个人创作者分发内容.
 license: Proprietary

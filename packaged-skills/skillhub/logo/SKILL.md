@@ -1,7 +1,7 @@
 ---
 slug: "logo"
 name: "logo"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Logo"
 summary: "用AI图像工具生成logo,含提示结构/校验/导出"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "beware-piper-tts"
 name: "beware-piper-tts"
-version: "1.0.0"
+version: 1.0.2
 displayName: "Piper TTS Pro"
 summary: "本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。"
 license: "Proprietary"

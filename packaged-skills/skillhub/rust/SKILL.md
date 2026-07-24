@@ -1,7 +1,7 @@
 ---
 slug: "rust"
 name: "rust"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Rust避坑指南"
 summary: "规避所有权、借用、生命周期、字符串、错误处理、并发与内存的常见陷阱。"
 license: "Proprietary"

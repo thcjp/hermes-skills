@@ -1,7 +1,7 @@
 ---
 slug: "discord-chat-manager"
 name: "discord-chat-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Discord聊天管理专业版"
 summary: "企业级 Discord 聊天管理,支持高级搜索、批量消息分发与频道全生命周期管理。"
 license: "Proprietary"

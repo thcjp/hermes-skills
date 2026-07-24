@@ -1,7 +1,7 @@
 ---
 slug: "news-sentiment-scan"
 name: "news-sentiment-scan"
-version: "1.0.0"
+version: 1.0.1
 displayName: "News Sentiment Scan"
 summary: "扫描港股/美股/A股的公司公告、新闻、券商研报与社交媒体,去噪后按-10至+10打分,输出情绪温度计与重大事件清单。"
 license: "Proprietary"

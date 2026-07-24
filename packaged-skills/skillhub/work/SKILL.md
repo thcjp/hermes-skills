@@ -1,7 +1,7 @@
 ---
 slug: "work"
 name: "work"
-version: "1.0.0"
+version: 1.0.1
 displayName: "职场工作汇报"
 summary: "职场日常工作指导，覆盖专业沟通、会议准备、职场动态与入职90天策略"
 license: "Proprietary"

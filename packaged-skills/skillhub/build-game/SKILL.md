@@ -1,7 +1,7 @@
 ---
 slug: "build-game"
 name: "build-game"
-version: "1.2.0"
+version: 1.2.1
 displayName: "3D Game Builder"
 summary: "自然语言生成并迭代精修3D浏览器游戏,任意类型即说即得"
 license: "Proprietary"

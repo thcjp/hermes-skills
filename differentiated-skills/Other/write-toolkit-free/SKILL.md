@@ -1,7 +1,7 @@
 ---
 slug: write-toolkit-free
 name: write-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 写作工具免费版
 summary: 规划、起草、版本化与精炼写作内容，强制版本管理与质量审计，适合个人创作者.
 license: Proprietary

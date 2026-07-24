@@ -1,7 +1,7 @@
 ---
 slug: "smart-crawler"
 name: "smart-crawler"
-version: "1.0.0"
+version: 1.0.1
 displayName: "智能爬虫(专业版)"
 summary: "企业级知识库爬取与检索平台,支持多工作空间、分布式调度、增量索引、全文检索与自定义导出,适合团队与企业规模化使用。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: topic-hunter
 name: topic-hunter
-version: "1.1.0"
+version: 1.0.1
 displayName: "选题捕手"
 summary: "告别不知道写啥,4平台热点聚合+趋势评分+差异化选题,3秒锁定下一个爆款选题"
 license: Proprietary

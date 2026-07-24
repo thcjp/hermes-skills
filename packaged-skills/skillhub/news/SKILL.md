@@ -1,7 +1,7 @@
 ---
 slug: "news"
 name: "news"
-version: "1.0.1"
+version: 1.0.2
 displayName: "News"
 summary: "个性化新闻简报,学习你的兴趣/格式/时间偏好"
 license: "Proprietary"

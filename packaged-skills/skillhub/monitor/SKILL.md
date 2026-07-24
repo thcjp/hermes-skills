@@ -1,7 +1,7 @@
 ---
 slug: "monitor"
 name: "monitor"
-version: "1.0.2"
+version: 1.0.3
 displayName: "Monitor"
 summary: "为任意事物建监控,用户定义检查项,技能管调度告警"
 license: "Proprietary"

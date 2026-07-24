@@ -1,7 +1,7 @@
 ---
 slug: batch-processor-pro
 name: batch-processor-pro
-version: 1.0.0
+version: 1.0.1
 displayName: 批处理专家
 summary: 解决OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点，附检查点与并行决策矩阵.
 license: Proprietary

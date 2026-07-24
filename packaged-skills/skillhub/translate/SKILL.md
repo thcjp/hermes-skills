@@ -1,7 +1,7 @@
 ---
 slug: "translate"
 name: "translate"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Translate"
 summary: "准确翻译文本,保格式/处理复数/按地区调语气"
 license: "Proprietary"

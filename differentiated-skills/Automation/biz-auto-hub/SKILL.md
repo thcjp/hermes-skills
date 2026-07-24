@@ -1,7 +1,7 @@
 ---
 slug: biz-auto-hub
 name: biz-auto-hub
-version: 1.0.0
+version: 1.0.1
 displayName: 商业自动中枢
 summary: 解决自动化ROI难量化、静默故障、过度自动化三大痛点，提供准入评分卡与健康度仪表盘.
 license: Proprietary

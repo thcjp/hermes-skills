@@ -1,7 +1,7 @@
 ---
 slug: health-toolkit-free
 name: health-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 健康管理工具箱免费版
 summary: 个人健康数据管理,支持运动、睡眠、饮食记录与基础健康分析
 license: Proprietary

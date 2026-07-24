@@ -1,7 +1,7 @@
 ---
 slug: "ollama-integration"
 name: "ollama-integration"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Ollama Integration"
 summary: "集成运行本地Ollama AI模型,自定义提示与自动模式"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "pro-comm-toolkit"
 name: "pro-comm-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "职场沟通工具箱专业版"
 summary: "企业级职场沟通助手，支持批量邮件生成、多语言翻译、自定义模板、跨文化沟通与团队协作场景。"
 license: "Proprietary"

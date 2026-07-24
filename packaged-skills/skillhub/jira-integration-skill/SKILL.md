@@ -2,7 +2,7 @@
 name: "jira-integration-skill"
 slug: "jira-integration-skill"
 displayName: "Jira集成技能"
-version: "1.0.0"
+version: 1.0.3
 summary: "Jira项目管理集成技能,支持工单创建、状态同步和工作流自动化"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.

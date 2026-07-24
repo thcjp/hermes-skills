@@ -1,7 +1,7 @@
 ---
 slug: "memory"
 name: "memory"
-version: "1.0.0"
+version: 1.0.3
 displayName: "记忆管理器"
 summary: "无限分类的长期记忆系统，与内置记忆并行扩展，支持索引导航与即时写入"
 license: "Proprietary"

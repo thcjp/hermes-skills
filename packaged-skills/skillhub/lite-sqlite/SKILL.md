@@ -1,7 +1,7 @@
 ---
 slug: "lite-sqlite"
 name: "lite-sqlite"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Lite Sqlite"
 summary: "SkillHub Agent用的快速轻量本地SQLite,低RAM低存储"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "jira-api-toolkit"
 name: "jira-api-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Jira工具箱(专业版)"
 summary: "全功能 Jira Cloud 集成，含创建/更新/流转/批量/自动化与多连接管理。"
 license: "Proprietary"

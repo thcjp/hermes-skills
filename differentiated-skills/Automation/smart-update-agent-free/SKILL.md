@@ -1,7 +1,7 @@
 ---
 slug: smart-update-agent-free
 name: smart-update-agent-free
-version: 1.0.0
+version: 1.0.1
 displayName: Smart Update Agent
 summary: 每日自动检查并更新Agent运行时与已安装技能，含版本对比、更新摘要与基础故障排查.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "weekly-report-writer"
 name: "weekly-report-writer"
-version: "1.0.0"
+version: 1.0.1
 displayName: "weekly-report-writer"
 summary: "用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。"
 license: "Proprietary"

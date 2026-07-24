@@ -1,7 +1,7 @@
 ---
 slug: "workflow-orchestrator"
 name: "workflow-orchestrator"
-version: "1.0.0"
+version: 1.0.1
 displayName: "工作流编排器(专业版)"
 summary: "全功能工作流编排与调度，含cron调度、DAG并行、熔断器、监控告警与分布式执行。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: data-toolkit-free
 name: data-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 数据工具箱(免费版)
 summary: 数据全生命周期工具，覆盖提取、清洗、分析与基础可视化.
 license: Proprietary

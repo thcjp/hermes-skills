@@ -1,7 +1,7 @@
 ---
 slug: "task-bot-orchestrator"
 name: "task-bot-orchestrator"
-version: "1.0.0"
+version: 1.0.1
 displayName: "任务编排机器人(专业版)"
 summary: "全功能任务编排，含条件触发、多渠道通知、高级编排、数据库集成与监控仪表盘，支持6种角色场景。"
 license: "Proprietary"

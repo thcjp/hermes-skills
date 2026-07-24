@@ -1,7 +1,7 @@
 ---
 slug: "reddit-research-paid"
 name: "reddit-research-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Reddit调研(专业版)"
 summary: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。"
 license: "Proprietary"

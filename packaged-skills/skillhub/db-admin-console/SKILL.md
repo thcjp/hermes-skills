@@ -1,7 +1,7 @@
 ---
 slug: "db-admin-console"
 name: "db-admin-console"
-version: "1.0.0"
+version: 1.0.1
 displayName: "数据库管理台(专业版)"
 summary: "全功能数据库管理平台,支持大规模批量操作、分区表、性能基线、定时备份与多实例管理。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "qq-zone-photo-free"
 name: "qq-zone-photo-free"
-version: "1.0.3"
+version: 1.0.1
 displayName: "社交空间相册基础版"
 summary: "基础社交空间相册管理，扫码登录、列出和浏览相册"
 license: "MIT"

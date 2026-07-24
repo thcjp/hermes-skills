@@ -1,7 +1,7 @@
 ---
 slug: reminder-engine-free
 name: reminder-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: 提醒引擎(免费版)
 summary: 一次性提醒创建引擎免费版，含时间解析、安全校验、频道投递、确认回复与基础生命周期管理.
 license: Proprietary

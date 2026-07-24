@@ -1,7 +1,7 @@
 ---
 slug: "docker-essentials-free"
 name: "docker-essentials-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Docker核心操作免费版"
 summary: "免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。"
 license: "MIT"

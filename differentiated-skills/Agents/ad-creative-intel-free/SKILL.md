@@ -1,7 +1,7 @@
 ---
 slug: ad-creative-intel-free
 name: ad-creative-intel-free
-version: 1.0.0
+version: 1.0.1
 displayName: 广告情报免费版
 summary: 解决竞品创意看不见、投放动态摸不透、榜单变化追不到的免费广告情报查询工具
 license: Proprietary

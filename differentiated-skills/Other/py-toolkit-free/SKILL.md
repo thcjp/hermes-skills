@@ -1,7 +1,7 @@
 ---
 slug: py-toolkit-free
 name: py-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Python工具包-免费版
 summary: Python开发优选实践助手,避免可变默认参数、导入陷阱与常见运行时问题
 license: Proprietary

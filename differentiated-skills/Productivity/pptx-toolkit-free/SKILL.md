@@ -1,7 +1,7 @@
 ---
 slug: pptx-toolkit-free
 name: pptx-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: PPT 演示工具包基础版
 summary: 创建、检查与编辑 PowerPoint 演示文稿,支持布局管理、模板应用与内容质量检查
 license: Proprietary

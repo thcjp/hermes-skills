@@ -1,7 +1,7 @@
 ---
 slug: local-vector-memory-free
 name: local-vector-memory-free
-version: 1.0.0
+version: 1.0.1
 displayName: 本地向量记忆(免费版)
 summary: 零API零云依赖的本地向量记忆免费版：离线可用、隐私不出域，核心存储与检索开箱即用.
 license: Proprietary

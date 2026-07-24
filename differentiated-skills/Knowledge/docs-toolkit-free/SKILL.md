@@ -1,7 +1,7 @@
 ---
 slug: docs-toolkit-free
 name: docs-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 文档导航工具包（免费版）
 summary: 决策树导航的文档专家系统，支持站点地图、关键词搜索、全文索引与版本追踪.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: cron-guard-free
 name: cron-guard-free
-version: 1.0.0
+version: 1.0.1
 displayName: 定时任务安全防护(免费版)
 summary: cron任务安全防护与异常恢复免费版，含脚本优先原则、常见故障模式、基础防护栏、异常恢复.
 license: Proprietary

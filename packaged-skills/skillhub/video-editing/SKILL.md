@@ -1,7 +1,7 @@
 ---
 slug: "video-editing"
 name: "video-editing"
-version: "1.0.0"
+version: 0.1.1
 displayName: "视频剪辑变现"
 summary: "视频剪辑变现全流程指南，覆盖赛道定位、MVP验证、流量获取与转化交付"
 license: "Proprietary"

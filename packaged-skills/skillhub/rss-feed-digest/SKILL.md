@@ -1,7 +1,7 @@
 ---
 slug: "rss-feed-digest"
 name: "rss-feed-digest"
-version: "1.0.0"
+version: 1.0.1
 displayName: "RSS Feed Digest"
 summary: "抓取/过滤/汇总RSS与Atom为日或周报,支持多源"
 license: "Proprietary"

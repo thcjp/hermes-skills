@@ -1,7 +1,7 @@
 ---
 slug: "dogecoin-node"
 name: "dogecoin-node"
-version: "1.0.5"
+version: 1.0.6
 displayName: "Dogecoin Node"
 summary: "搭建运营Dogecoin Core全节点,RPC访问+区块链工具"
 license: "Proprietary"

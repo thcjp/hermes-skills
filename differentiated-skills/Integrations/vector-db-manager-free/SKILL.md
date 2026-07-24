@@ -1,7 +1,7 @@
 ---
 slug: vector-db-manager-free
 name: vector-db-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 向量数据库管理免费版
 summary: 管理向量数据库的索引、嵌入与相似度检索，支持本地与云端部署
 license: Proprietary

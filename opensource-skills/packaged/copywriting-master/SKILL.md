@@ -1,7 +1,7 @@
 ---
 slug: copywriting-master
 name: copywriting-master
-version: 1.0.0
+version: 1.0.1
 displayName: 营销文案大师
 summary: 12种模板+四大经典框架,转化率导向的营销文案批量生成器
 license: Proprietary

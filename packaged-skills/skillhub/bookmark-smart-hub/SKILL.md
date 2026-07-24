@@ -1,7 +1,7 @@
 ---
 slug: "bookmark-smart-hub"
 name: "bookmark-smart-hub"
-version: "1.0.0"
+version: 1.0.1
 displayName: "书签智能中心专业版"
 summary: "自动化书签监控与 AI 深度分析平台，支持后台守护、多渠道通知与知识库全文检索。"
 license: "Proprietary"

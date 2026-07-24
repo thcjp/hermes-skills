@@ -1,7 +1,7 @@
 ---
 slug: "safe-encryption-skill"
 name: "safe-encryption-skill"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Safe Encryption"
 summary: "用SAFE CLI加解密管密钥,现代GPG替代,抗量子"
 license: "Proprietary"

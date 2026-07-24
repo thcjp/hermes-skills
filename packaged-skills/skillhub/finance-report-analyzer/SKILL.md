@@ -1,7 +1,7 @@
 ---
 slug: "finance-report-analyzer"
 name: "finance-report-analyzer"
-version: "1.2.0"
+version: 1.2.1
 displayName: "Finance Report Analy"
 summary: "分析Excel/PDF财务数据,生成含迷你图的交互报告"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "json-repair-kit"
 name: "json-repair-kit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON修复工具"
 summary: "通过Node.js解析修复格式错误的JSON文件，支持尾逗号、单引号等修复。"
 license: "Proprietary"

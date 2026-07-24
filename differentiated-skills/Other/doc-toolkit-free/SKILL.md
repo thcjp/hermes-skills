@@ -1,7 +1,7 @@
 ---
 slug: doc-toolkit-free
 name: doc-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 文档工具箱免费版
 summary: 使用python-docx读写与编辑DOCX文档，支持基础格式化与视觉校验，适合日常文档处理.
 license: Proprietary

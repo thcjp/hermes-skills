@@ -1,7 +1,7 @@
 ---
 slug: rust-toolkit-free
 name: rust-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Rust工具包-免费版
 summary: Rust开发优选实践助手,避免所有权、借用与生命周期常见陷阱,适合个人学习
 license: Proprietary

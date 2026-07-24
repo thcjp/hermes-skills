@@ -1,7 +1,7 @@
 ---
 slug: "ui-design-toolkit"
 name: "ui-design-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UI设计工具包专业版"
 summary: "企业级UI设计工具包,支持设计系统、设计令牌、可访问性与组件库,适配团队协作与大型项目。"
 license: "Proprietary"

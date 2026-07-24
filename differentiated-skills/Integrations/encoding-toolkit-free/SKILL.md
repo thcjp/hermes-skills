@@ -1,7 +1,7 @@
 ---
 slug: encoding-toolkit-free
 name: encoding-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 编解码工具箱免费版
 summary: 覆盖Base64、URL、Hex、Unicode、JWT等主流编解码场景，命令行与代码示例兼备，适合日常开发调试.
 license: Proprietary

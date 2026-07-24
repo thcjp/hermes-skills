@@ -1,7 +1,7 @@
 ---
 slug: "agent-chat"
 name: "agent-chat"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Agent Chat"
 summary: "为AI Agent建临时实时聊天室,密码保护+SSE流式+Web界面,跨Agent即时协作"
 license: "Proprietary"

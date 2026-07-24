@@ -1,7 +1,7 @@
 ---
 slug: "encrypted-docs"
 name: "encrypted-docs"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Encrypted Docs"
 summary: "端到端加密md文档,Agent与人协同编辑,隐私不泄"
 license: "Proprietary"

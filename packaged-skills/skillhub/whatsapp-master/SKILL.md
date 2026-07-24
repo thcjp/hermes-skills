@@ -1,7 +1,7 @@
 ---
 slug: "whatsapp-master"
 name: "whatsapp-master"
-version: "1.0.0"
+version: 1.0.1
 displayName: "WhatsApp大师(专业版)"
 summary: "WhatsApp 全能力版：消息/交互/群组/多智能体协作/预算调度/历史检索，22 类动作。"
 license: "Proprietary"

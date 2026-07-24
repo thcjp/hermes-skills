@@ -1,7 +1,7 @@
 ---
 slug: "yaml"
 name: "yaml"
-version: "1.0.0"
+version: 1.0.1
 displayName: "YAML"
 summary: "写跨语言跨版本可预测解析的有效YAML"
 license: "Proprietary"

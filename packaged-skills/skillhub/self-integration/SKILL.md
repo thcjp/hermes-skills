@@ -1,7 +1,7 @@
 ---
 slug: "self-integration"
 name: "self-integration"
-version: "1.1.2"
+version: 1.1.3
 displayName: "Self-Integration"
 summary: "连任意外部应用并对其执行操作"
 license: "Proprietary"

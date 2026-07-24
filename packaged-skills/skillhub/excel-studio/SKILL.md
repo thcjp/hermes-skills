@@ -1,7 +1,7 @@
 ---
 slug: "excel-studio"
 name: "excel-studio"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Excel Studio"
 summary: "专业Excel生成器,建数据表/报表/图表,办公利器"
 license: "Proprietary"

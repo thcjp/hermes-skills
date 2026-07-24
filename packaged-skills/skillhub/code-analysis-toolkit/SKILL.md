@@ -1,7 +1,7 @@
 ---
 slug: "code-analysis-toolkit"
 name: "code-analysis-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "代码分析工具包专业版"
 summary: "企业级Git历史分析,支持团队复盘、同意管理、趋势追踪与多格式报告"
 license: "Proprietary"

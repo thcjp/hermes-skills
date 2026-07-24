@@ -1,7 +1,7 @@
 ---
 slug: desktop-autopilot
 name: desktop-autopilot
-version: 1.0.0
+version: 1.0.1
 displayName: 桌面自动驾驶
 summary: 智能桌面 GUI 自动化，视觉识别定位、智能等待、工作流编排，DPI 自适应不迷路.
 license: Proprietary

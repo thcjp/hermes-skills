@@ -1,7 +1,7 @@
 ---
 slug: "code-runner"
 name: "code-runner"
-version: "1.0.0"
+version: 1.0.1
 displayName: "代码执行工具专业版"
 summary: "企业级PTY代码执行,支持批量任务、并发执行、执行审计与CI/CD集成"
 license: "Proprietary"

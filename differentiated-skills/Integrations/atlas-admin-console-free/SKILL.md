@@ -1,7 +1,7 @@
 ---
 slug: atlas-admin-console-free
 name: atlas-admin-console-free
-version: 1.0.0
+version: 1.0.1
 displayName: Atlas管理台免费版
 summary: MongoDB Atlas Admin API浏览与查询工具，支持50+API分类检索、端点详情查看、Schema定义获取.
 license: Proprietary

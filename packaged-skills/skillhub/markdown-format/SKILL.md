@@ -1,7 +1,7 @@
 ---
 slug: "markdown-format"
 name: "markdown-format"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Markdown格式化工具专业版"
 summary: "企业级文档批量格式化,支持自定义模板、团队规范、多格式输出与质量审计"
 license: "Proprietary"

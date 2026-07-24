@@ -1,7 +1,7 @@
 ---
 slug: "vector-control"
 name: "vector-control"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Vector Control"
 summary: "经Wirepod本地HTTP API控Vector机器人"
 license: "Proprietary"

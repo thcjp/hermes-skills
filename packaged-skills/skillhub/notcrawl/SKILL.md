@@ -1,7 +1,7 @@
 ---
 slug: "notcrawl"
 name: "notcrawl"
-version: "1.0.1"
+version: 1.0.2
 displayName: "Notcrawl"
 summary: "Notion归档,搜索/同步/页面数据库/Markdown导出"
 license: "Proprietary"

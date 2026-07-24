@@ -1,7 +1,7 @@
 ---
 slug: "ssl-toolkit"
 name: "ssl-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "SSL工具箱(专业版)"
 summary: "企业级TLS套件,含通配符/SAN、全服务器配置、安全审计、自动化监控与告警。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "git"
 name: "git"
-version: "1.0.8"
+version: 1.0.9
 displayName: "Git"
 summary: "Git提交/分支/rebase/合并/冲突解决/历史恢复与团队工作流"
 license: "Proprietary"

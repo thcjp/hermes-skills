@@ -1,7 +1,7 @@
 ---
 slug: notes-sync-cli-free
 name: notes-sync-cli-free
-version: 1.0.0
+version: 1.0.1
 displayName: 笔记同步CLI(免费版)
 summary: 通过命令行高效管理本地Markdown笔记库，支持搜索、创建、移动与Frontmatter基础操作.
 license: Proprietary

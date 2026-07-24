@@ -1,7 +1,7 @@
 ---
 slug: call-bridge-free
 name: call-bridge-free
-version: 1.0.0
+version: 1.0.1
 displayName: 通话桥接免费版
 summary: 让AI代理拨打美国电话的桥接工具，支持单次外呼、任务指令构建与通话状态轮询
 license: Proprietary

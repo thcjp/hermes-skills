@@ -1,7 +1,7 @@
 ---
 slug: "typescript-skills-paid"
 name: "typescript-skills-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "TS编码规范工具(专业版)"
 summary: "面向团队的TypeScript编码规范平台,含自动化审查、规则集管理、CI集成与规范文档生成。"
 license: "Proprietary"

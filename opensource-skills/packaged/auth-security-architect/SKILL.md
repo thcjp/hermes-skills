@@ -1,7 +1,7 @@
 ---
 slug: auth-security-architect
 name: auth-security-architect
-version: 1.1.0
+version: 1.0.1
 displayName: 认证安全架构师
 summary: OAuth/2FA/SSO全栈认证安全,基于Better Auth构建企业级认证体系
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "learn"
 name: "learn"
-version: "1.0.2"
+version: 1.0.3
 displayName: "Learn"
 summary: "用间隔重复与主动回忆结构化追踪学习,跨领域"
 license: "Proprietary"

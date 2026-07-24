@@ -1,7 +1,7 @@
 ---
 slug: "ws-excel"
 name: "ws-excel"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Excel"
 summary: "Excel提供读取/写入 Excel、数据清洗、公式计算等核心能力,付费版独享高级功能与批量处理。"
 license: "Proprietary"

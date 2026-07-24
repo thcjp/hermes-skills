@@ -1,7 +1,7 @@
 ---
 slug: "rss-ai-reader"
 name: "rss-ai-reader"
-version: "1.0.0"
+version: 1.0.1
 displayName: "RSS AI 摘要推送"
 summary: "RSS自动抓取与LLM摘要生成,推送飞书/Telegram/Email,SQLite去重与定时任务"
 license: "Proprietary"

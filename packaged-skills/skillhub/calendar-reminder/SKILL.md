@@ -1,7 +1,7 @@
 ---
 slug: "calendar-reminder"
 name: "calendar-reminder"
-version: "1.0.0"
+version: 1.0.1
 displayName: "日历提醒"
 summary: "每晚22点扫描明日Outlook日历,按上下午时段差异化飞书提醒,自动注册定时任务并汇报扫描结果。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: cloud-architect-design-free
 name: cloud-architect-design-free
-version: 1.0.0
+version: 1.0.1
 displayName: 云架构师免费版
 summary: 提供单云架构设计、基础成本估算与优选实践建议，帮助个人开发者规划云架构方案.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "obsidian-cli"
 name: "obsidian-cli"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Obsidian CLI(专业版)"
 summary: "全功能Obsidian命令行管理工具，支持模板、插件、同步、历史、开发工具与TUI交互模式"
 license: "Proprietary"

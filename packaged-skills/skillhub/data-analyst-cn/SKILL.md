@@ -1,7 +1,7 @@
 ---
 slug: "data-analyst-cn"
 name: "data-analyst-cn"
-version: "1.0.0"
+version: 1.0.24
 displayName: "数据分析师"
 summary: "数据清洗、统计分析、时间序列分析、可视化代码生成与分析报告自动生成"
 license: "Proprietary"

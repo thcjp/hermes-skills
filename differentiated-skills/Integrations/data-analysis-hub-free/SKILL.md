@@ -1,7 +1,7 @@
 ---
 slug: data-analysis-hub-free
 name: data-analysis-hub-free
-version: 1.0.0
+version: 1.0.1
 displayName: 数据分析中枢(免费版)
 summary: 面向决策的数据分析助手,提供统计严谨性、假设检验、A/B测试与陷阱识别的免费核心能力.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: office-productivity-hub
 name: office-productivity-hub
-version: 1.0.0
+version: 1.0.1
 displayName: 办公效率中枢
 summary: 解决批量炸裂、格式丢失、PII泄露、模板难复用痛点，让文档/数据/邮件/报表一键稳妥产出
 license: Proprietary

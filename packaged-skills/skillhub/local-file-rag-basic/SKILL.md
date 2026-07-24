@@ -1,7 +1,7 @@
 ---
 slug: "local-file-rag-basic"
 name: "local-file-rag-basic"
-version: "1.0.0"
+version: 1.0.1
 displayName: "local-file-rag-basic"
 summary: "高性能本地文件RAG套件基础版"
 license: "Proprietary"

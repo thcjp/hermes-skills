@@ -1,7 +1,7 @@
 ---
 slug: data-analyst-expert-free
 name: data-analyst-expert-free
-version: 1.0.0
+version: 1.0.1
 displayName: 数据分析专家(免费版)
 summary: 面向委派任务的数据分析助手,支持文件操作、代码执行与结论结构化输出的免费核心能力.
 license: Proprietary

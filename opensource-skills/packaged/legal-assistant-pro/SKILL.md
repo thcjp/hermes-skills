@@ -1,7 +1,7 @@
 ---
 slug: legal-doc-reviewer
 name: legal-assistant-pro
-version: 1.1.0
+version: 1.0.1
 displayName: 法律助手Pro
 summary: NDA审查到引文核验,法律团队的专业AI辅助,省下昂贵外部律师费
 license: Proprietary

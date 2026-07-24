@@ -1,7 +1,7 @@
 ---
 slug: "git-workflow-cn"
 name: "git-workflow-cn"
-version: "1.1.0"
+version: 1.1.1
 displayName: "Git Workflow Cn"
 summary: "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。"
 license: "Proprietary"

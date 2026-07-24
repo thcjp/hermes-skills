@@ -1,7 +1,7 @@
 ---
 slug: "weather"
 name: "weather"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Weather"
 summary: "免API Key获取当前天气与预报"
 license: "Proprietary"

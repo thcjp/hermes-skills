@@ -1,7 +1,7 @@
 ---
 slug: "communication-skill"
 name: "communication-skill"
-version: "1.0.0"
+version: 0.1.1
 displayName: "Comm Crafter Pro"
 summary: "基于GATHER-LISTEN-CONSIDER-CRAFT-REFINE五步法,融合心理学原理,打磨高情商沟通回复与冲突调解方案。"
 license: "Proprietary"

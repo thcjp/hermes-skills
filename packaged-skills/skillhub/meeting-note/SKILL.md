@@ -1,7 +1,7 @@
 ---
 slug: "meeting-note"
 name: "meeting-note"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Meeting Note"
 summary: "探讨决策型会议纪要(结论/共识/分歧/行动项)+Zettelkasten连接"
 license: "Proprietary"

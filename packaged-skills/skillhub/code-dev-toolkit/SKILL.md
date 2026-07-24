@@ -1,7 +1,7 @@
 ---
 slug: "code-dev-toolkit"
 name: "code-dev-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "代码开发工具包专业版"
 summary: "企业级编码工作流,支持多任务编排、团队规范、质量门禁与交付审计"
 license: "Proprietary"

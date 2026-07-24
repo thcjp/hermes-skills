@@ -1,7 +1,7 @@
 ---
 slug: ecommerce-pricing-strategist
 name: ecommerce-pricing-strategist
-version: "1.0.1"
+version: 1.0.1
 displayName: "电商定价策略师"
 summary: "AI分析市场数据智能定价,多策略配置+动态调价+利润最大化"
 license: Proprietary

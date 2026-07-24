@@ -1,7 +1,7 @@
 ---
 slug: "slack"
 name: "slack"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Slack 消息管理"
 summary: "通过slack工具管理Slack消息:回应、置顶、发送/编辑/删除、成员与表情查询"
 license: "Proprietary"

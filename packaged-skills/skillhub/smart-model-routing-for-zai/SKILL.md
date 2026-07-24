@@ -1,7 +1,7 @@
 ---
 slug: "smart-model-routing-for-zai"
 name: "smart-model-routing-for-zai"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Smart Model Routing"
 summary: "z.ai模型路由指南,不装代码不索凭据"
 license: "Proprietary"

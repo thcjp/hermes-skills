@@ -1,7 +1,7 @@
 ---
 slug: repo-manager-free
 name: repo-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: 仓库管理器(免费版)
 summary: 通过MCP工具协议管理GitHub仓库、Issue与PR,支持工具发现、参数预览与安全执行,适合个人开发者日常使用.
 license: Proprietary

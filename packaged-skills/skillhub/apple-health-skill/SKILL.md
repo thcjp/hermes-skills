@@ -1,7 +1,7 @@
 ---
 slug: "apple-health-skill"
 name: "apple-health-skill"
-version: "1.0.0"
+version: 1.0.1
 displayName: "运动健康数据"
 summary: "与运动健康数据对话，查询训练、心率、活动量和VO2 Max趋势"
 license: "Proprietary"

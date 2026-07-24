@@ -1,7 +1,7 @@
 ---
 slug: "notion-pages"
 name: "notion-pages"
-version: "0.1.1"
+version: 0.1.2
 displayName: "Notion"
 summary: "搜页面数据库/更新内容/管Notion工作区数据"
 license: "Proprietary"

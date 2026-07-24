@@ -1,7 +1,7 @@
 ---
 slug: "token-manager"
 name: "token-manager"
-version: "2.0.0"
+version: 1.2.1
 displayName: "Token用量管理"
 summary: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析"
 license: "Proprietary"

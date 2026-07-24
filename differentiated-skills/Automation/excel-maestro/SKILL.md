@@ -1,7 +1,7 @@
 ---
 slug: excel-maestro
 name: excel-maestro
-version: 1.0.0
+version: 1.0.1
 displayName: Excel大师
 summary: 解决大文件内存爆炸、格式丢失、科学计数法、公式不计算四大痛点，按文件规模分层处理.
 license: Proprietary

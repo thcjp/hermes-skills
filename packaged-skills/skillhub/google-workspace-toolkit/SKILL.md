@@ -1,7 +1,7 @@
 ---
 slug: "google-workspace-toolkit"
 name: "google-workspace-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "谷歌办公工具接口专业版"
 summary: "全功能Google办公工具接口,49个工具覆盖十大服务,支持企业级批量操作与多租户管理。"
 license: "Proprietary"

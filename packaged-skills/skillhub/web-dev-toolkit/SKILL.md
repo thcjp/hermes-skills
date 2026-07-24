@@ -1,7 +1,7 @@
 ---
 slug: "web-dev-toolkit"
 name: "web-dev-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Web开发工具集(专业版)"
 summary: "面向团队的企业级Web开发平台,含性能工程、SEO深度、WCAG审查、企业部署与监控。"
 license: "Proprietary"

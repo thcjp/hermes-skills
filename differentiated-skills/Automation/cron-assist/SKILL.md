@@ -1,7 +1,7 @@
 ---
 slug: cron-assist
 name: cron-assist
-version: 1.0.0
+version: 1.0.1
 displayName: 定时助手
 summary: 自然语言驱动的定时任务助手，内置模板库与成本优化，把口语意图秒变可靠调度.
 license: Proprietary

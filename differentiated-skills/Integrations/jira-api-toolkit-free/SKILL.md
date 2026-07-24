@@ -1,7 +1,7 @@
 ---
 slug: jira-api-toolkit-free
 name: jira-api-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Jira工具箱(免费版)
 summary: Jira Cloud 只读集成，支持 JQL 搜索、查看议题与项目列表.
 license: Proprietary

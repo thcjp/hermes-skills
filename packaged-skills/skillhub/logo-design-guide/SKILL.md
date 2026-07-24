@@ -1,7 +1,7 @@
 ---
 slug: "logo-design-guide"
 name: "logo-design-guide"
-version: "1.0.0"
+version: 0.1.6
 displayName: "Logo设计指南"
 summary: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。"
 license: "Proprietary"

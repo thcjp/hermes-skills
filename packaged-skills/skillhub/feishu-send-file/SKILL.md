@@ -1,7 +1,7 @@
 ---
 slug: "feishu-send-file"
 name: "feishu-send-file"
-version: "1.0.0"
+version: 1.2.2
 displayName: "飞书发文件"
 summary: "飞书发送普通文件与图片附件,支持file_key两步上传与image_key图片稳定链路。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "elite-longterm-memory-local"
 name: "elite-longterm-memory-local"
-version: "1.0.0"
+version: 1.1.1
 displayName: "本地向量记忆系统"
 summary: "基于 LanceDB 与本地 Embedding 的纯本地向量记忆，零外部 API 依赖。"
 license: "Proprietary"

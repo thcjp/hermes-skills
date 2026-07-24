@@ -1,7 +1,7 @@
 ---
 slug: calendar-toolkit-free
 name: calendar-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 日历管理工具包基础版
 summary: 日历管理与调度工具,支持创建事件、安排会议与跨平台同步,适合个人用户
 license: Proprietary

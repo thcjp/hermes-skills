@@ -1,7 +1,7 @@
 ---
 slug: "calendar"
 name: "calendar"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Calendar"
 summary: "日历管理与排期,创建事件/管会议/跨平台同步,时间不冲突"
 license: "Proprietary"

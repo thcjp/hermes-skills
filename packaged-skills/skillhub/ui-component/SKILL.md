@@ -1,7 +1,7 @@
 ---
 slug: "ui-component"
 name: "ui-component"
-version: "2.0.0"
+version: 2.0.1
 displayName: "Ui Component"
 summary: "UI组件HTML/CSS代码生成。表单、表格、卡片、模态框、导航栏，输出完整可运行HTML文件。UI component generator:
 license: "Proprietary"

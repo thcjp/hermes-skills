@@ -1,7 +1,7 @@
 ---
 slug: audit-toolkit-free
 name: audit-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 审计验证工具箱
 summary: 多领域审计验证工具箱，涵盖财务核对、合规检查、技术审计与伦理评估，提供结构化审计框架.
 license: Proprietary

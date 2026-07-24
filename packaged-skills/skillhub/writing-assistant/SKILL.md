@@ -1,7 +1,7 @@
 ---
 slug: "writing-assistant"
 name: "writing-assistant"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Writing Assistant"
 summary: "写作团队组长,经MCP工具管理专业写手并分析写作"
 license: "Proprietary"

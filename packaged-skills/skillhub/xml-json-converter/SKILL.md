@@ -1,7 +1,7 @@
 ---
 slug: "xml-json-converter"
 name: "xml-json-converter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "XML转JSON(专业版)"
 summary: "企业级XML与JSON互转工具，支持批量转换、XSD校验、XPath映射与SOAP协议封装。"
 license: "Proprietary"

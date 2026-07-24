@@ -1,7 +1,7 @@
 ---
 slug: excel-ninja-free
 name: excel-ninja-free
-version: 1.0.0
+version: 1.0.1
 displayName: Excel忍者(免费版)
 summary: 一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐.
 license: Proprietary

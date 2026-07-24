@@ -1,7 +1,7 @@
 ---
 slug: tg-bot-builder-free
 name: tg-bot-builder-free
-version: 1.0.2
+version: 1.0.1
 displayName: TG机器人构建免费版
 summary: 零代码快速搭建Telegram机器人，支持键盘按钮、内联菜单、Webhook与自动回复
 license: Proprietary

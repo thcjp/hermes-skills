@@ -1,7 +1,7 @@
 ---
 slug: web-crawler-engine-free
 name: web-crawler-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: 网页抓取引擎(免费版)
 summary: 轻量级网页与社区数据抓取工具，支持本地归档、搜索查询与新鲜度检查.
 license: Proprietary

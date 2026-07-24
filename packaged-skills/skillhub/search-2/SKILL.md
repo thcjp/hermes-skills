@@ -1,7 +1,7 @@
 ---
 slug: "search-2"
 name: "search-2"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Search"
 summary: "用Tavily的LLM优化搜索API搜网,返相关结果与片段"
 license: "Proprietary"

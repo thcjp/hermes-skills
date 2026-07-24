@@ -1,7 +1,7 @@
 ---
 slug: "powerpoint"
 name: "powerpoint"
-version: "1.0.0"
+version: 1.0.1
 displayName: "PowerPoint"
 summary: "经osascript控PowerPoint会话/幻灯片/备注/导出/放映状态"
 license: "Proprietary"

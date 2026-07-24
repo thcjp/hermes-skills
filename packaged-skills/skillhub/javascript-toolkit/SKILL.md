@@ -1,7 +1,7 @@
 ---
 slug: "javascript-toolkit"
 name: "javascript-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JavaScript工具包专业版"
 summary: "企业级 JavaScript 开发方案，含性能优化、模块化架构、测试策略与构建工具链。"
 license: "Proprietary"

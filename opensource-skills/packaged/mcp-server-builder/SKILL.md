@@ -1,7 +1,7 @@
 ---
 slug: mcp-toolkit-builder
 name: mcp-server-builder
-version: 1.1.0
+version: 1.0.1
 displayName: MCP服务器构建器
 summary: 构建生产级MCP服务器,Python/TypeScript双语言,让LLM连接一切外部系统
 license: Proprietary

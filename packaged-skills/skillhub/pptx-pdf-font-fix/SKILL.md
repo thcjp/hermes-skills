@@ -1,7 +1,7 @@
 ---
 slug: "pptx-pdf-font-fix"
 name: "pptx-pdf-font-fix"
-version: "1.0.0"
+version: 1.0.1
 displayName: "PPTX PDF Font Fix"
 summary: "本地编辑PPTX修复PowerPoint字体,窄范围修复工具"
 license: "Proprietary"

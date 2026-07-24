@@ -1,7 +1,7 @@
 ---
 slug: "cloud"
 name: "cloud"
-version: "1.0.0"
+version: 1.0.1
 displayName: "消费级云存储助手"
 summary: "选择、整理、同步、分享与备份iCloud、Google Drive、Dropbox等个人云存储文件。"
 license: "Proprietary"

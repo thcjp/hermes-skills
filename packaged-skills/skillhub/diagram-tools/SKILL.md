@@ -1,7 +1,7 @@
 ---
 slug: "diagram-tools"
 name: "diagram-tools"
-version: "1.0.2"
+version: 1.0.3
 displayName: "Diagram Tools"
 summary: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成"
 license: "Proprietary"

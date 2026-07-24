@@ -1,7 +1,7 @@
 ---
 slug: "archive"
 name: "archive"
-version: "1.0.0"
+version: 1.0.1
 displayName: "智能内容归档"
 summary: "将网页、视频、推文等内容捕获为带语义标签的可搜索快照，支持全文提取与主动浮现。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "bilibili-toolkit"
 name: "bilibili-toolkit"
-version: "1.0.0"
+version: 1.0.1
 displayName: "B站工具箱专业版"
 summary: "企业级B站运营工具，支持高清下载、视频发布、批量操作、数据追踪与凭证安全管理。"
 license: "Proprietary"

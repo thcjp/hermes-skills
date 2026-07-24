@@ -1,7 +1,7 @@
 ---
 slug: "jira-flow-skill"
 name: "jira-flow-skill"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Jira Flow 专业版"
 summary: "全功能Jira任务管理与团队工时分析，支持批量操作、自定义报表与自动化集成。"
 license: "Proprietary"

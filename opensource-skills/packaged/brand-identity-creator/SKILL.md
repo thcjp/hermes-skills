@@ -1,7 +1,7 @@
 ---
 slug: brand-identity-creator
 name: brand-identity-creator
-version: 1.1.0
+version: 1.0.1
 displayName: 品牌识别创造器
 summary: 从零搭建完整品牌识别系统,色彩字体语调视觉一站式输出品牌手册
 license: Proprietary

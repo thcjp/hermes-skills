@@ -1,7 +1,7 @@
 ---
 slug: monitor-toolkit-free
 name: monitor-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 监控工具包-免费版
 summary: 轻量级服务监控工具,支持HTTP/SSL/进程/磁盘检查,状态变更告警,适合个人项目
 license: Proprietary

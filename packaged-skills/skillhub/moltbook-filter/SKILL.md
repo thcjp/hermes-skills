@@ -1,7 +1,7 @@
 ---
 slug: "moltbook-filter"
 name: "moltbook-filter"
-version: "1.0.1"
+version: 1.0.2
 displayName: "社区垃圾过滤"
 summary: "客户端过滤社区平台代币铸造垃圾,96%去除率,支持自定义模式与黑名单。"
 license: "Proprietary"

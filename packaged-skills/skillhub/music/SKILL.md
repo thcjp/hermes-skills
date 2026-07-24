@@ -1,7 +1,7 @@
 ---
 slug: "music"
 name: "music"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Music"
 summary: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆"
 license: "Proprietary"

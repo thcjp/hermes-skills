@@ -1,7 +1,7 @@
 ---
 slug: "expanso-xml-to-json"
 name: "expanso-xml-to-json"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Expanso xml-to-json"
 summary: "用Expanso Edge流水线把XML转JSON,多模式部署"
 license: "Proprietary"

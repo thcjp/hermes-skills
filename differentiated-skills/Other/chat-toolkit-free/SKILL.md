@@ -1,7 +1,7 @@
 ---
 slug: chat-toolkit-free
 name: chat-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 沟通偏好工具箱(免费版)
 summary: 基于显式反馈学习沟通偏好，自动适配语气、格式与风格的轻量工具.
 license: Proprietary

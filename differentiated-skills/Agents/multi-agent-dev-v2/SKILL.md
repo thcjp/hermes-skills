@@ -1,7 +1,7 @@
 ---
 slug: "multi-agent-dev-v2"
 name: "multi-agent-dev-v2"
-version: "1.0.0"
+version: 1.0.1
 displayName: "多代理开发"
 summary: "智能任务分解,选择性并行执行,分层评审机制,上下文隔离防污染。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "dlazy-audio"
 name: "dlazy-audio"
-version: "1.0.0"
+version: 1.0.1
 displayName: "音频生成工具-专业版"
 summary: "全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。"
 license: "Proprietary"

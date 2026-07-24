@@ -1,7 +1,7 @@
 ---
 slug: "linear-api"
 name: "linear-api"
-version: "1.0.0"
+version: 1.0.7
 displayName: "项目管理API"
 summary: "通过GraphQL操作工作项、项目、周期、标签与评论,覆盖创建查询转换全流程。"
 license: "Proprietary"

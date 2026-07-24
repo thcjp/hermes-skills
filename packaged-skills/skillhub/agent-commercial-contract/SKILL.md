@@ -1,7 +1,7 @@
 ---
 slug: "agent-commercial-contract"
 name: "agent-commercial-contract"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Agent Commercial Con"
 summary: "让AI Agent自主谈判签署执行并强制履行具有法律效力的商业合同"
 license: "Proprietary"

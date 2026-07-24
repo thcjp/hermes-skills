@@ -1,7 +1,7 @@
 ---
 slug: "ops-dashboard"
 name: "ops-dashboard"
-version: "1.0.0"
+version: 1.0.1
 displayName: "运维看板(专业版)"
 summary: "全功能实时运维监控看板，支持成本分析、变更操作、告警通知与审计日志"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: py-data-analyzer-free
 name: py-data-analyzer-free
-version: 1.0.0
+version: 1.0.1
 displayName: Python数据分析(免费版)
 summary: 提供Python数据清洗、统计分析与可视化建议，覆盖业务报表与科研数据的快速处理流程.
 license: Proprietary

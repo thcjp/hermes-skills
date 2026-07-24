@@ -1,7 +1,7 @@
 ---
 slug: "straker-verify"
 name: "straker-verify"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Straker Verify"
 summary: "专业AI翻译+可选人工校验,支持100+语言"
 license: "Proprietary"

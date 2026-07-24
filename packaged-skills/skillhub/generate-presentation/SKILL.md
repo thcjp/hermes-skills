@@ -1,7 +1,7 @@
 ---
 slug: "generate-presentation"
 name: "generate-presentation"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Generate Presentatio"
 summary: "从Markdown/URL/主题生成专业HTML与PDF演示文稿"
 license: "Proprietary"

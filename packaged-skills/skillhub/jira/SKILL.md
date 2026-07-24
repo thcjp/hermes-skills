@@ -1,7 +1,7 @@
 ---
 slug: "jira"
 name: "jira"
-version: "1.0.0"
+version: 1.3.4
 displayName: "项目管理工具"
 summary: "通过工具操作史诗、故事、缺陷、冲刺与看板,覆盖创建搜索转换全流程。"
 license: "Proprietary"

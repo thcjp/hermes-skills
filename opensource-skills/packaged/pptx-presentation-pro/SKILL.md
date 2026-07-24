@@ -1,7 +1,7 @@
 ---
 slug: pptx-presentation-pro
 name: pptx-presentation-pro
-version: 1.1.0
+version: 1.0.1
 displayName: 演示文稿大师
 summary: 从大纲到专业PPT一键生成,布局模板图表母版全流程演示文稿处理
 license: Proprietary

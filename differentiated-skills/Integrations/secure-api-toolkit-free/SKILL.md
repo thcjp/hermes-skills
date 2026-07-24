@@ -1,7 +1,7 @@
 ---
 slug: secure-api-toolkit-free
 name: secure-api-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 安全API工具箱
 summary: "凭据代理让Agent调第三方API时密钥不落地,服务端注入真实令牌,免费个人开发者用"
 license: Proprietary

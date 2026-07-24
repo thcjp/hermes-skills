@@ -1,7 +1,7 @@
 ---
 slug: "news-aggregator"
 name: "news-aggregator"
-version: "1.0.0"
+version: 1.0.4
 displayName: "新闻聚合引擎"
 summary: "国内外科技、军事、社会新闻聚合，自动搜索、筛选、去重与结构化汇总。"
 license: "Proprietary"

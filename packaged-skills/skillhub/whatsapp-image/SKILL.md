@@ -1,7 +1,7 @@
 ---
 slug: "whatsapp-image"
 name: "whatsapp-image"
-version: "1.0.0"
+version: 1.0.1
 displayName: "WhatsApp图片发送-专业版"
 summary: "企业级WhatsApp多媒体消息平台，支持批量发送、视频音频文档、定时发送、群组消息与模板管理。"
 license: "Proprietary"

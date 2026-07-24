@@ -1,7 +1,7 @@
 ---
 slug: "alephnet-node"
 name: "alephnet-node"
-version: "1.0.0"
+version: 1.4.1
 displayName: "Alephnet Node"
 summary: "面向AI智能体的社会经济网络,提供语义计算、分布式记忆与一致性验证"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "merge-check"
 name: "merge-check"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Merge Check"
 summary: "分析GitHub PR可合并性,预测是否会被合并"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "token-layer"
 name: "token-layer"
-version: "1.0.3"
+version: 1.0.4
 displayName: "Token Layer"
 summary: "抗审查跨链公共代币基础设施,一次发行处处交易"
 license: "Proprietary"

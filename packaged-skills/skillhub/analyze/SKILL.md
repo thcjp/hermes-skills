@@ -1,7 +1,7 @@
 ---
 slug: "analyze"
 name: "analyze"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Analyze"
 summary: "对任意输入做结构化分析,数据/代码/文本/决策/可视化全支持,告别无序堆砌"
 license: "Proprietary"

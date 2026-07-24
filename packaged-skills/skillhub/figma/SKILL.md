@@ -1,7 +1,7 @@
 ---
 slug: "figma"
 name: "figma"
-version: "2.1.0"
+version: 2.1.1
 displayName: "Figma"
 summary: "读Figma数据/导出资产/写回请求,设计交付闭环"Proprietary"
 description: |-

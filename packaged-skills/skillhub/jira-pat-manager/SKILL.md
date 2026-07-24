@@ -2,7 +2,7 @@
 name: "Jira Pat Manager 核心处理"
 slug: "jira-pat-manager"
 displayName: "Jira PAT管理器"
-version: "1.0.0"
+version: 0.0.2
 summary: "管理Jira个人访问令牌(PAT),支持创建、撤销和权限配置"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.

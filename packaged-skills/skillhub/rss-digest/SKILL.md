@@ -1,7 +1,7 @@
 ---
 slug: "rss-digest"
 name: "rss-digest"
-version: "0.2.1"
+version: 0.2.2
 displayName: "Rss Digest"
 summary: "用feed CLI做RSS摘要,抓取/分诊/汇总高价值条目"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "vector-db-manager"
 name: "vector-db-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "向量数据库管理专业版"
 summary: "全功能向量数据库平台，支持混合检索、分布式部署、自动调优与性能监控"
 license: "Proprietary"

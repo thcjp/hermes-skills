@@ -1,7 +1,7 @@
 ---
 slug: art-creator-free
 name: art-creator-free
-version: 1.0.0
+version: 1.0.1
 displayName: 艺术创作助手
 summary: 智能艺术创作指导，涵盖媒介选择、技法训练、作品反馈与鉴赏，助力创作者突破瓶颈.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: redis-cache-master
 name: redis-cache-master
-version: 2.0.0
+version: 2.0.1
 displayName: Redis缓存大师
 summary: 生产级Redis实战：TTL纪律+淘汰决策树+集群哈希标签+原子陷阱防控，避坑指南.
 license: Proprietary

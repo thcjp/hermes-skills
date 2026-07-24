@@ -1,7 +1,7 @@
 ---
 slug: "code-quality"
 name: "code-quality"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Code Quality"
 summary: "编码风格标准/安全准则/无障碍要求,守住质量底线"
 license: "Proprietary"

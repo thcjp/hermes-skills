@@ -1,7 +1,7 @@
 ---
 slug: "chief-creative-officer"
 name: "chief-creative-officer"
-version: "1.0.0"
+version: 0.1.1
 displayName: "首席创意官"
 summary: "创意策略制定、品牌叙事构建、跨媒介创意指导与创意团队协作管理。"
 license: "Proprietary"

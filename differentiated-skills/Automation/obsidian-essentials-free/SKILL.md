@@ -1,7 +1,7 @@
 ---
 slug: obsidian-essentials-free
 name: obsidian-essentials-free
-version: 1.0.0
+version: 1.0.1
 displayName: Obsidian基础入门(免费版)
 summary: Obsidian新手入门与核心配置免费版，含安装、领先篇笔记、Markdown基础、核心配置与基础工作流.
 license: Proprietary

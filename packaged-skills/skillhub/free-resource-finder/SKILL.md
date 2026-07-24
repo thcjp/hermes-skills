@@ -1,7 +1,7 @@
 ---
 slug: "free-resource-finder"
 name: "free-resource-finder"
-version: "1.0.0"
+version: 1.0.1
 displayName: "免费资源发现器(专业版)"
 summary: "全功能免费AI资源管理工具,含自动fallback、后台守护、负载均衡、成本分析与质量监控,适合长期无人值守场景。"
 license: "Proprietary"

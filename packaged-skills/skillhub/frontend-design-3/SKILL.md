@@ -1,7 +1,7 @@
 ---
 slug: "frontend-design-3"
 name: "frontend-design-3"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Frontend Design"
 summary: "创建独特的生产级前端界面，避免通用 AI 风格，支持 11 种美学方向。"
 license: "Proprietary"

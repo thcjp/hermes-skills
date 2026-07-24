@@ -1,7 +1,7 @@
 ---
 slug: api-doc-generator-free
 name: api-doc-generator-free
-version: 1.0.0
+version: 1.0.1
 displayName: API文档生成器(免费版)
 summary: 从代码注释或接口描述自动生成OpenAPI 3.0文档与Markdown接口手册，60秒出稿.
 license: Proprietary

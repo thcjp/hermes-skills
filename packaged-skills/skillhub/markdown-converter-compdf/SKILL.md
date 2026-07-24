@@ -1,7 +1,7 @@
 ---
 slug: "markdown-converter-compdf"
 name: "markdown-converter-compdf"
-version: "1.2.0"
+version: 1.2.1
 displayName: "Markdown convert"
 summary: "用ComPDF Cloud API处理/转换/编辑/提取PDF"
 license: "Proprietary"

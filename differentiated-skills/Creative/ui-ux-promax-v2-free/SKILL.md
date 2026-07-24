@@ -1,7 +1,7 @@
 ---
 slug: ui-ux-promax-v2-free
 name: ui-ux-promax-v2-free
-version: 1.0.0
+version: 1.0.1
 displayName: UI/UX ProMax V2免费版
 summary: 优先级驱动的设计指南数据库,含50+风格、97配色、57字体配对,适合个人快速查询
 license: Proprietary

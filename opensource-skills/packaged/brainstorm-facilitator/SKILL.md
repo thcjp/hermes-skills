@@ -1,7 +1,7 @@
 ---
 slug: requirement-explorer-pro
 name: brainstorm-facilitator
-version: 1.1.0
+version: 1.0.1
 displayName: 头脑风暴引导师
 summary: 编码前先问对问题,苏格拉底式提问驱动需求探索,省下返工成本
 license: Proprietary

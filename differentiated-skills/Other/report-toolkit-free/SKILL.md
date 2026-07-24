@@ -1,7 +1,7 @@
 ---
 slug: report-toolkit-free
 name: report-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 报告工具包-免费版
 summary: 自定义定期报告生成工具,支持多数据源、定时调度与多渠道交付,适合个人使用
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "reminder"
 name: "reminder"
-version: "0.1.1"
+version: 0.1.2
 displayName: "Reminder"
 summary: "捕获自然语言事件存工作区并排Telegram提醒,自动解析"
 license: "Proprietary"

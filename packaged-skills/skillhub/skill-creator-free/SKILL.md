@@ -1,7 +1,7 @@
 ---
 slug: "skill-creator-free"
 name: "skill-creator-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AI技能创建指南（免费版）"
 summary: "免费版AI Skill创建指南，支持基础SKILL.md结构与Progressive Disclosure设计"
 license: "MIT"

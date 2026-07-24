@@ -1,7 +1,7 @@
 ---
 slug: "html-coder-paid"
 name: "html-coder-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "HTML编码工具-专业版"
 summary: "企业级HTML开发引擎，支持HTML5高级API、Web Components、WCAG全面合规与性能优化。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: knowledge-toolkit-free
 name: knowledge-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 知识工具包（免费版）
 summary: 构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法.
 license: Proprietary

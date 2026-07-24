@@ -1,7 +1,7 @@
 ---
 slug: gateway-manager-free
 name: gateway-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: API网关管理器(免费版)
 summary: 轻量级API网关配置与管理，覆盖路由、认证、限流、监控四大基础能力，60秒上手.
 license: Proprietary

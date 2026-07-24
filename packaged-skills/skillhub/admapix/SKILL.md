@@ -1,7 +1,7 @@
 ---
 slug: "admapix"
 name: "admapix"
-version: "1.0.0"
+version: 1.0.31
 displayName: "AdMapix"
 summary: "AdMapix原始数据层，广告创意/应用/榜单/下载收入查询"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "smart-cache"
 name: "smart-cache"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Smart Cache"
 summary: "LRU/LFU策略与TTL管理的智能缓存"
 license: "Proprietary"

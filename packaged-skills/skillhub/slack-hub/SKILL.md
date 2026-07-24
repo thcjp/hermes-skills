@@ -1,7 +1,7 @@
 ---
 slug: "slack-hub"
 name: "slack-hub"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Slack Hub工具专业版"
 summary: "企业级Slack集成工具，支持批量消息发送、高级搜索、限流处理、消息模板与工作区深度管理。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: json-parse-engine-free
 name: json-parse-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: JSON解析引擎免费版
 summary: 轻量级JSON解析、展平与提取工具，支持文件与字符串解析、嵌套结构展平、路径提取.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: work-toolkit-free
 name: work-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: 办公工具包基础版
 summary: 日常办公导航工具,帮助快速定位文件、管理日程与处理邮件
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "photo-caption"
 name: "photo-caption"
-version: "1.0.0"
+version: 1.0.1
 displayName: "照片配文工具专业版"
 summary: "全平台照片配文生成工具,支持13个社交平台,提供批量配文、品牌风格定制与编辑分析能力。"
 license: "Proprietary"

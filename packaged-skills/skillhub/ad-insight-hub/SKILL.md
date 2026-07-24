@@ -1,7 +1,7 @@
 ---
 slug: "ad-insight-hub"
 name: "ad-insight-hub"
-version: "1.0.0"
+version: 1.0.1
 displayName: "广告洞察中枢"
 summary: "聚合AdMapix广告情报API，参数翻译/端点编排/缓存/可信度标注四层能力"
 license: "Proprietary"

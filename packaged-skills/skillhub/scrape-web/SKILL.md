@@ -1,7 +1,7 @@
 ---
 slug: "scrape-web"
 name: "scrape-web"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Scrape Web"
 summary: "使用 Python + Scrapling 获取网页内容，支持简单选择器"
 license: "Proprietary"

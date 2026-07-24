@@ -1,7 +1,7 @@
 ---
 slug: "anthrovision-telegram-body-scan"
 name: "anthrovision-telegram-body-scan"
-version: "1.0.0"
+version: 1.0.5
 displayName: "Body Scan Flow"
 summary: "在Telegram中运行端到端身体扫描测量流程,含同意、轮询与确定性输出"
 license: "Proprietary"

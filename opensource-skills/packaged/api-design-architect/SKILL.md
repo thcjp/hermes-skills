@@ -1,7 +1,7 @@
 ---
 slug: api-design-architect
 name: api-design-architect
-version: 1.1.0
+version: 1.0.1
 displayName: API设计架构师
 summary: 契约优先设计API,从源头杜绝接口腐化,让API可演化不破坏老用户
 license: Proprietary

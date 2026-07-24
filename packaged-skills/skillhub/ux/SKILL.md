@@ -1,7 +1,7 @@
 ---
 slug: "ux"
 name: "ux"
-version: "1.0.0"
+version: 1.0.1
 displayName: "UX"
 summary: "设计分析直觉高效贴合心智模型的用户体验"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: smart-crawler-free
 name: smart-crawler-free
-version: 1.0.0
+version: 1.0.1
 displayName: 智能爬虫(免费版)
 summary: 轻量化本地知识库爬取与检索工具,支持归档同步、新鲜度检测、关键词搜索与基础SQL查询,适合个人知识管理.
 license: Proprietary

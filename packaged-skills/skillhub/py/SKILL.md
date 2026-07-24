@@ -1,7 +1,7 @@
 ---
 slug: "py"
 name: "py"
-version: "1.1.0"
+version: 1.0.2
 displayName: "Python健壮编程"
 summary: "编写可靠Python代码,避免可变默认值、导入陷阱与运行时意外"
 license: "Proprietary"

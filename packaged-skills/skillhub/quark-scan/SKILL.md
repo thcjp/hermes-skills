@@ -1,7 +1,7 @@
 ---
 slug: "quark-scan"
 name: "quark-scan"
-version: "1.0.0"
+version: 1.0.1
 displayName: "夸克扫描-专业版"
 summary: "企业级文件扫描增强工具,支持批量处理、API集成、自定义流水线,适配商业文档数字化。"
 license: "Proprietary"

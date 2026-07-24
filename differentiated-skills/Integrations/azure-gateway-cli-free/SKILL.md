@@ -1,7 +1,7 @@
 ---
 slug: azure-gateway-cli-free
 name: azure-gateway-cli-free
-version: 1.0.0
+version: 1.0.1
 displayName: Azure网关CLI免费版
 summary: 轻量级本地代理，将OpenAI兼容请求路由到用户自建的Azure OpenAI端点，支持基础健康检查与单实例转发
 license: Proprietary

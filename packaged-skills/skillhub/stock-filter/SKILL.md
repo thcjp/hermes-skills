@@ -1,7 +1,7 @@
 ---
 slug: "stock-filter"
 name: "stock-filter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "股票筛选专业版"
 summary: "多市场股票筛选系统，支持多策略组合、自定义公式、历史回测与批量导出。"
 license: "Proprietary"

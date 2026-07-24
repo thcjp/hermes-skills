@@ -1,7 +1,7 @@
 ---
 slug: "email-gmail-outlook"
 name: "email-gmail-outlook"
-version: "1.0.0"
+version: 1.0.8
 displayName: "Email Gmail Outlook"
 summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件"
 license: "Proprietary"

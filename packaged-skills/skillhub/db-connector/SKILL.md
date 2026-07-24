@@ -1,7 +1,7 @@
 ---
 slug: "db-connector"
 name: "db-connector"
-version: "1.0.0"
+version: 1.0.1
 displayName: "数据库连接助手(专业版)"
 summary: "全功能数据库运维与架构设计平台，覆盖分库分表、高可用、性能调优、监控告警全链路。"
 license: "Proprietary"

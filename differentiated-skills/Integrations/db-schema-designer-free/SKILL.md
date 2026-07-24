@@ -1,7 +1,7 @@
 ---
 slug: db-schema-designer-free
 name: db-schema-designer-free
-version: 1.0.0
+version: 1.0.1
 displayName: 数据库Schema设计器(免费版)
 summary: 面向开发者的轻量级数据库Schema设计助手,支持SQLite软Schema与三层演进,快速落地灵活数据存储方案.
 license: Proprietary

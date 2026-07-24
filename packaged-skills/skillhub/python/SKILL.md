@@ -1,7 +1,7 @@
 ---
 slug: "python"
 name: "python"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Python"
 summary: "Python编码规范与最佳实践,写审重构时用"
 license: "Proprietary"

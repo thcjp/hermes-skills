@@ -1,7 +1,7 @@
 ---
 slug: "memory-orchestrator-v2"
 name: "memory-orchestrator-v2"
-version: "1.0.0"
+version: 1.0.1
 displayName: "记忆编排器"
 summary: "解决分层不清、摘要不稳、并发冲突、无健康度指标的智能记忆编排器"
 license: "Proprietary"

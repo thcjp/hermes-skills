@@ -1,7 +1,7 @@
 ---
 slug: telegram-agent-comm-free
 name: telegram-agent-comm-free
-version: 1.0.0
+version: 1.0.1
 displayName: 电报通信助手免费版
 summary: 单 Agent 通过 Telegram 发送消息的轻量规范，支持基础通知与任务汇报，零配置快速上手.
 license: Proprietary

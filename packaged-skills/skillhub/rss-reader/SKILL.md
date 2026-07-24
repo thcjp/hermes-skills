@@ -1,7 +1,7 @@
 ---
 slug: "rss-reader"
 name: "rss-reader"
-version: "1.0.0"
+version: 1.0.1
 displayName: "RSS Reader"
 summary: "监控RSS与Atom订阅做内容研究,追踪博客/新闻/邮件"
 license: "Proprietary"

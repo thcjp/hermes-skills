@@ -1,7 +1,7 @@
 ---
 slug: "json-yaml-converter"
 name: "json-yaml-converter"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JSON转YAML(专业版)"
 summary: "企业级JSON与YAML互转工具，支持批量转换、Schema校验、模板渲染与配置中心对接。"
 license: "Proprietary"

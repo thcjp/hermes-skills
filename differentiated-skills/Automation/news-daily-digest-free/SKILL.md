@@ -1,7 +1,7 @@
 ---
 slug: news-daily-digest-free
 name: news-daily-digest-free
-version: 1.0.0
+version: 1.0.1
 displayName: 每日新闻摘要(免费版)
 summary: 抓取X.com与RSS源的热门新闻Top10，自动翻译中文并生成精美海报，每日资讯一目了然.
 license: Proprietary

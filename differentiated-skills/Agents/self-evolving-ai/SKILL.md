@@ -1,7 +1,7 @@
 ---
 slug: self-evolving-ai
 name: self-evolving-ai
-version: 1.0.0
+version: 1.0.1
 displayName: 自我进化AI
 summary: 自动捕获经验与错误,智能分层记忆,模式复发追踪,按需加载降本增效.
 license: Proprietary

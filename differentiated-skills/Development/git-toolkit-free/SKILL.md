@@ -1,7 +1,7 @@
 ---
 slug: git-toolkit-free
 name: git-toolkit-free
-version: 1.0.0
+version: 1.0.1
 displayName: Git工具包免费版
 summary: 提供Git提交、分支、合并、冲突解决与历史恢复等核心命令,适合开发者日常版本管理.
 license: Proprietary

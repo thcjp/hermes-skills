@@ -1,7 +1,7 @@
 ---
 slug: "javascript-sdk-paid"
 name: "javascript-sdk-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "JS SDK工具专业版"
 summary: "企业级 AI 应用 SDK 方案，支持智能体构建、流式响应、会话管理与服务器代理集成。"
 license: "Proprietary"

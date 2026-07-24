@@ -1,7 +1,7 @@
 ---
 slug: "jira-api"
 name: "jira-api"
-version: "1.0.8"
+version: 1.0.9
 displayName: "Jira"
 summary: "Jira API托管OAuth集成,JQL搜索/建改issue/管看板"
 license: "Proprietary"

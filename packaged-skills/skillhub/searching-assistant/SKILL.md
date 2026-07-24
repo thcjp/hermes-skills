@@ -1,7 +1,7 @@
 ---
 slug: "searching-assistant"
 name: "searching-assistant"
-version: "0.1.0"
+version: 0.1.1
 displayName: "Searching Assistant"
 summary: "搜索组组长,把任务拆为独立互补子任务并发搜"
 license: "Proprietary"

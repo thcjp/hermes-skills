@@ -1,7 +1,7 @@
 ---
 slug: "api-doc-generator"
 name: "api-doc-generator"
-version: "1.0.0"
+version: 1.0.1
 displayName: "API文档生成器(专业版)"
 summary: "企业级API文档平台，含代码扫描、多格式导出、版本管理、Mock联动与团队评审。"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "frontend-design"
 name: "frontend-design"
-version: "1.1.0"
+version: 1.1.1
 displayName: "Frontend Design"
 summary: "打造独特生产级前端界面,高设计质量,告别AI通用感"
 license: "Proprietary"

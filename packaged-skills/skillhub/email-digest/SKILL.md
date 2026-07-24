@@ -1,7 +1,7 @@
 ---
 slug: "email-digest"
 name: "email-digest"
-version: "1.0.0"
+version: 1.0.1
 displayName: "邮件日报专业版"
 summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案"
 license: "Proprietary"

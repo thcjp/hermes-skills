@@ -1,7 +1,7 @@
 ---
 slug: "chart-generator-2-0-0"
 name: "chart-generator-2-0-0"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Chart Generator 2 0"
 summary: "数据可视化出SVG图表,柱/线/饼图即需即出"
 license: "Proprietary"

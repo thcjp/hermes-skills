@@ -1,7 +1,7 @@
 ---
 slug: "resume-assistant"
 name: "resume-assistant"
-version: "1.0.0"
+version: 1.0.1
 displayName: "简历助手"
 summary: "AI简历助手，支持polish润色、customize定制、score评分与export多格式导出。"
 license: "Proprietary"

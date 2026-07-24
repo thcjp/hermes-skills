@@ -1,7 +1,7 @@
 ---
 slug: focus-flow-optimizer-free
 name: focus-flow-optimizer-free
-version: 1.0.0
+version: 1.0.1
 displayName: Focus Flow Optimizer
 summary: AI Agent驱动的个人专注流操作系统，整合能量管理、时间块与任务优先级，解决碎片化与拖延痛点.
 license: Proprietary

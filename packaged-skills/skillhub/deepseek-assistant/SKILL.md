@@ -1,7 +1,7 @@
 ---
 slug: "deepseek-assistant"
 name: "deepseek-assistant"
-version: "1.0.0"
+version: 1.0.1
 displayName: "DeepSeek助手(专业版)"
 summary: "全功能DeepSeek API集成平台，支持流式响应、函数调用、批量处理与成本管控。"
 license: "Proprietary"

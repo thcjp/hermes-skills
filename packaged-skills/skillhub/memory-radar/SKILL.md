@@ -1,7 +1,7 @@
 ---
 slug: "memory-radar"
 name: "memory-radar"
-version: "1.0.0"
+version: 1.0.1
 displayName: "记忆雷达"
 summary: "面向AI Agent记忆文件的安全扫描系统，检测注入、凭证泄漏、数据外泄等七大威胁"
 license: "Proprietary"

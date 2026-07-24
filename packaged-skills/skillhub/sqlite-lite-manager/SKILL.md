@@ -1,7 +1,7 @@
 ---
 slug: "sqlite-lite-manager"
 name: "sqlite-lite-manager"
-version: "1.0.0"
+version: 1.0.1
 displayName: "轻量SQLite管理专业版"
 summary: "面向AI Agent的轻量SQLite全功能专业版，含连接池监控、自动备份、Schema迁移、DuckDB分析集成与高并发优化。"
 license: "Proprietary"

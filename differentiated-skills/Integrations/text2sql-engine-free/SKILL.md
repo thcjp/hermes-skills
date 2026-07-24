@@ -1,7 +1,7 @@
 ---
 slug: text2sql-engine-free
 name: text2sql-engine-free
-version: 1.0.0
+version: 1.0.1
 displayName: 自然语言转SQL免费版
 summary: 将自然语言描述转换为标准SQL查询，支持多方言与Schema自动识别
 license: Proprietary

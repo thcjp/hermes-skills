@@ -1,7 +1,7 @@
 ---
 slug: "text"
 name: "text"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Text"
 summary: "用模式转换/格式化/处理文本,写作/清洗/本地化/引用"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: bookmark-smart-hub-free
 name: bookmark-smart-hub-free
-version: 1.0.0
+version: 1.0.1
 displayName: 书签智能中心免费版
 summary: 手动抓取社交书签并提取链接内容，基于关键词进行基础分析，适合个人单次处理.
 license: Proprietary

@@ -1,7 +1,7 @@
 ---
 slug: "social-sentiment"
 name: "social-sentiment"
-version: "1.4.0"
+version: 1.4.1
 displayName: "Social Sentiment"
 summary: "社交聆听工作流,用Xpoz与npm助手分析舆情"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: "azure-voicelive"
 name: "azure-voicelive"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Azure语音交互专业版"
 summary: "企业级实时语音AI工具，支持函数调用、自定义语音、电话音频、高级会话与中断处理。"
 license: "Proprietary"

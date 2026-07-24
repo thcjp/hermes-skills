@@ -1,7 +1,7 @@
 ---
 slug: key-vault-manager-free
 name: key-vault-manager-free
-version: 1.0.2
+version: 1.0.1
 displayName: 密钥保险箱(免费版)
 summary: 本地密钥管理工具，防止API密钥泄露到LLM服务器，支持密钥验证与脱敏读取
 license: Proprietary

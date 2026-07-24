@@ -1,7 +1,7 @@
 ---
 slug: workflow-symphony
 name: workflow-symphony
-version: 1.0.0
+version: 1.0.1
 displayName: 工作流交响曲
 summary: 解决不知自动化什么、工具选错、维护负担、测试不充分四大痛点，附机会雷达与决策树.
 license: Proprietary

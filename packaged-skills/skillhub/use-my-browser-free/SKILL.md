@@ -1,7 +1,7 @@
 ---
 slug: "use-my-browser-free"
 name: "use-my-browser-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "浏览器控制工具(免费版)"
 summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)"
 license: "MIT"

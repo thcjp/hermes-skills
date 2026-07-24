@@ -1,7 +1,7 @@
 ---
 slug: doc-guard-free
 name: doc-guard-free
-version: 1.0.0
+version: 1.0.1
 displayName: 文档护盾免费版
 summary: 端到端加密 Markdown 文档协作工具，支持创建、查询、同步加密笔记，适合个人隐私场景.
 license: Proprietary

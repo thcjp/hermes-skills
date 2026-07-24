@@ -1,7 +1,7 @@
 ---
 slug: discord-chat-manager-free
 name: discord-chat-manager-free
-version: 1.0.0
+version: 1.0.1
 displayName: Discord聊天管理免费版
 summary: 基础 Discord 聊天管理工具,支持消息发送、回复、搜索与读取,适合个人日常使用.
 license: Proprietary

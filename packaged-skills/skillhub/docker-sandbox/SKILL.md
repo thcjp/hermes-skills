@@ -1,7 +1,7 @@
 ---
 slug: "docker-sandbox"
 name: "docker-sandbox"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Docker Sandbox"
 summary: "建管Docker沙箱VM环境,让Agent安全执行不可信代码"
 license: "Proprietary"

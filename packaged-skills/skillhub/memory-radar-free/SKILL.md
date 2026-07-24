@@ -1,7 +1,7 @@
 ---
 slug: "memory-radar-free"
 name: "memory-radar-free"
-version: "1.0.0"
+version: 1.0.1
 displayName: "记忆雷达"
 summary: "面向AI Agent记忆文件的基础安全扫描工具，检测注入与凭证泄漏等常见威胁"
 license: "MIT"

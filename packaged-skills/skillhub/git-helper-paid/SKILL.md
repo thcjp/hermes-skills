@@ -1,7 +1,7 @@
 ---
 slug: "git-helper-paid"
 name: "git-helper-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Git助手专业版"
 summary: "企业级Git辅助工具,支持智能冲突分析、自动修复、批量诊断与团队知识库,提升协作效率。"
 license: "Proprietary"

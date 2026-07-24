@@ -1,7 +1,7 @@
 ---
 slug: "trading"
 name: "trading"
-version: "1.0.0"
+version: 1.0.1
 displayName: "交易分析专业版"
 summary: "多策略交易分析系统，支持批量分析、策略回测、自动交易与风险控制。"
 license: "Proprietary"

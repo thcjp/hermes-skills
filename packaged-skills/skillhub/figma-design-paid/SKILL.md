@@ -1,7 +1,7 @@
 ---
 slug: "figma-design-paid"
 name: "figma-design-paid"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Figma设计集成-专业版"
 summary: "企业级Figma集成平台，支持组件库管理、设计变量提取、批量导出与团队协作工作流"
 license: "Proprietary"

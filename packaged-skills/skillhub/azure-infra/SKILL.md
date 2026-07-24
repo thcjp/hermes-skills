@@ -1,7 +1,7 @@
 ---
 slug: "azure-infra"
 name: "azure-infra"
-version: "2.0.0"
+version: 1.0.1
 displayName: "Azure Infra"
 summary: "通过本地 Azure CLI 查询与管理 Azure 资源，默认只读，写操作需确认。"
 license: "Proprietary"

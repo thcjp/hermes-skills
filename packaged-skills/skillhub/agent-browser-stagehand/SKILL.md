@@ -1,7 +1,7 @@
 ---
 slug: "agent-browser-stagehand"
 name: "agent-browser-stagehand"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Agent Browser Stageh"
 summary: "自然语言驱动浏览器自动化,CLI直达交互,免去手写选择器的繁琐"
 license: "Proprietary"

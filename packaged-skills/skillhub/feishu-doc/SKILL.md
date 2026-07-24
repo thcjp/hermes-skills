@@ -1,7 +1,7 @@
 ---
 slug: "feishu-doc"
 name: "feishu-doc"
-version: "1.2.7"
+version: 1.2.8
 displayName: "Feishu Doc"
 summary: "抓取飞书Wiki/文档/表格/多维表格内容,自动解析URL"
 license: "Proprietary"

@@ -1,7 +1,7 @@
 ---
 slug: linear-workflow-bot
 name: linear-workflow-bot
-version: 1.0.0
+version: 1.0.1
 displayName: Linear工作流机器人
 summary: 解决Webhook易断、免费额度烧光、多服务配置混乱痛点，打造可自愈的Linear任务流水线
 license: Proprietary

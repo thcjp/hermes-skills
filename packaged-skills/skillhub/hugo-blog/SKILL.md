@@ -1,7 +1,7 @@
 ---
 slug: "hugo-blog"
 name: "hugo-blog"
-version: "1.0.0"
+version: 1.0.1
 displayName: "Hugo博客发布专业版"
 summary: "企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。"
 license: "Proprietary"

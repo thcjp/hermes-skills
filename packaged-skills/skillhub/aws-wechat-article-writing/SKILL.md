@@ -1,7 +1,7 @@
 ---
 slug: "aws-wechat-article-writing"
 name: "aws-wechat-article-writing"
-version: "1.0.0"
+version: 1.0.26
 displayName: "公众号长文写作引擎"
 summary: "公众号长文AI写作,从提纲或话题生成完整初稿,支持改写续写润色与多模型切换"
 license: "Proprietary"
