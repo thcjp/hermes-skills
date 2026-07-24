@@ -1,0 +1,1358 @@
+{
+  "timestamp": "2026-07-24T03:50:51Z",
+  "registry": "https://clawhub.ai",
+  "command": "sync --all --concurrency 5",
+  "summary": {
+    "total_to_sync": 995,
+    "total_processed": 581,
+    "succeeded": 218,
+    "rate_limited_skipped": 358,
+    "slug_errors": 5,
+    "not_processed": 414,
+    "exit_code": -1,
+    "last_processed_section": "m (memory-scan)",
+    "sync_completed": false
+  },
+  "slug_errors_detail": [
+    {
+      "slug": "dashboard",
+      "error": "reserved_slug",
+      "message": "\"dashboard\" is reserved and cannot be used as a slug. (reset in 24s)"
+    },
+    {
+      "slug": "database-admin",
+      "error": "protected_namespace",
+      "message": "\"database-admin\" uses the protected \"admin\" slug namespace. Choose a slug that does not start with \"admin-\" or end with \"-admin\". (reset in 33s)"
+    },
+    {
+      "slug": "unknown",
+      "error": "slug_too_short",
+      "message": "Slug must be at least 3 characters. (reset in 22s)"
+    },
+    {
+      "slug": "unknown",
+      "error": "slug_too_short",
+      "message": "Slug must be at least 3 characters. (reset in 16s)"
+    },
+    {
+      "slug": "health",
+      "error": "reserved_slug",
+      "message": "\"health\" is reserved and cannot be used as a slug. (reset in 43s)"
+    }
+  ],
+  "rate_limit_info": {
+    "limit": "200 new skills per 24 hours",
+    "behavior": "NEW skills are rate-limited; LOCAL CHANGES (updates) publish successfully",
+    "rate_limited_count": 358
+  },
+  "published_skills": [
+    {
+      "slug": "accounting-and-finance",
+      "version": "1.0.1",
+      "id": "k979pgk3pcrqp2nc3n10pk9k0x8b4c62",
+      "status": "published"
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "version": "1.0.1",
+      "id": "k97a3rex89cv3yhhnmf2etxj618b5zyt",
+      "status": "published"
+    },
+    {
+      "slug": "accounting-finance",
+      "version": "1.0.1",
+      "id": "k97ektgnf2bnkjv9dgmk8w2wa58b4n58",
+      "status": "published"
+    },
+    {
+      "slug": "ace-music",
+      "version": "1.0.1",
+      "id": "k97dqzck9d5xbr2bpxnnxw855h8b53f4",
+      "status": "published"
+    },
+    {
+      "slug": "ace-music-free",
+      "version": "1.0.1",
+      "id": "k9731etcycmf8290pa2590wxz18b5yxd",
+      "status": "published"
+    },
+    {
+      "slug": "actor-identifier",
+      "version": "1.0.1",
+      "id": "k97bgf3snn0bwdee7ra9y1230x8b4h54",
+      "status": "published"
+    },
+    {
+      "slug": "ad-insight-hub",
+      "version": "1.0.3",
+      "id": "k972qe4w0zt6fqq16v9xey8ntd8b5jya",
+      "status": "published"
+    },
+    {
+      "slug": "ad-insight-hub-free",
+      "version": "1.0.2",
+      "id": "k97baxtf6x7mm8t52av4fdmev98b5jqf",
+      "status": "published"
+    },
+    {
+      "slug": "admapix",
+      "version": "1.0.3",
+      "id": "k970jh7zsfts101tkpeynz54v18b5q4a",
+      "status": "published"
+    },
+    {
+      "slug": "admapix-free",
+      "version": "1.0.2",
+      "id": "k979t5hx2c9eq8w5vggrk6kz398b5jr0",
+      "status": "published"
+    },
+    {
+      "slug": "aegis-security",
+      "version": "1.0.1",
+      "id": "k97cvs14c9vkyc956mrdeccbb98b4zs3",
+      "status": "published"
+    },
+    {
+      "slug": "aegis-security-free",
+      "version": "1.0.1",
+      "id": "k97cfq322hmhmwgehwv8d8c6vd8b4mz8",
+      "status": "published"
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine",
+      "version": "1.0.1",
+      "id": "k97eddz42rntyetjfw9av7axc18b5075",
+      "status": "published"
+    },
+    {
+      "slug": "afrexai-cybersecurity-engine-free",
+      "version": "1.0.1",
+      "id": "k97167x0xhm17yadp4afjtsr5n8b5xws",
+      "status": "published"
+    },
+    {
+      "slug": "afrexai-knowledge-management-free",
+      "version": "1.0.1",
+      "id": "k9746fnmqfzh2v5ktchtcbx4f58b5w86",
+      "status": "published"
+    },
+    {
+      "slug": "agent",
+      "version": "1.0.1",
+      "id": "k97f8f0zj1rekm88m337047nrd8b56a6",
+      "status": "published"
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "version": "1.0.1",
+      "id": "k970b08wqr78yry30ybq561z7n8b4ccq",
+      "status": "published"
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "version": "1.0.2",
+      "id": "k97cabekx75npzkhe95zjw3a998b51s1",
+      "status": "published"
+    },
+    {
+      "slug": "agent-browser-cli",
+      "version": "1.0.1",
+      "id": "k97bm54qyjg72vat470tpbp4es8b441p",
+      "status": "published"
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "version": "1.0.1",
+      "id": "k97fsnghegh2arqx2hgftsayv58b5x42",
+      "status": "published"
+    },
+    {
+      "slug": "agent-chat",
+      "version": "1.0.1",
+      "id": "k979avv1xbbcsb7s7qt5mnqy7s8b57da",
+      "status": "published"
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "version": "1.0.1",
+      "id": "k972rk2ywtnv790q31m7xxc0vh8b43hf",
+      "status": "published"
+    },
+    {
+      "slug": "agent-group",
+      "version": "1.0.1",
+      "id": "k9798ksrj8wtd92fbyddqd02fn8b4w7z",
+      "status": "published"
+    },
+    {
+      "slug": "agent-knowledge",
+      "version": "1.0.1",
+      "id": "k978d3vwxh3mvvqw1n0km39d4s8b5kcp",
+      "status": "published"
+    },
+    {
+      "slug": "agent-telegram",
+      "version": "1.0.2",
+      "id": "k9712hxew0nsn5gx7cmvm2nsfs8b59yq",
+      "status": "published"
+    },
+    {
+      "slug": "agent-telegram-free",
+      "version": "1.0.2",
+      "id": "k97f6vrda0h9y9xtjp057eqfth8b4c1w",
+      "status": "published"
+    },
+    {
+      "slug": "agentic-security-audit",
+      "version": "1.0.1",
+      "id": "k975q92cn3e2fdz11drkm0xxt18b5fmt",
+      "status": "published"
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "version": "1.0.2",
+      "id": "k97a0maykryqmt6kqqg6b82kfn8b4erv",
+      "status": "published"
+    },
+    {
+      "slug": "agentvibes-skill",
+      "version": "1.0.1",
+      "id": "k97b47d5ex8gdn8fzvpa8n73c98b4dxh",
+      "status": "published"
+    },
+    {
+      "slug": "agentvibes-voice-skill",
+      "version": "1.0.2",
+      "id": "k97bb12bbztyqt1hq3k2ds7q1d8b4w0a",
+      "status": "published"
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "version": "1.0.2",
+      "id": "k978tjr903vp5zgm7hhpejv74d8b44fc",
+      "status": "published"
+    },
+    {
+      "slug": "ai-agent-helper",
+      "version": "1.0.3",
+      "id": "k97c7pzye32ad19y2dwd471e9n8b45wp",
+      "status": "published"
+    },
+    {
+      "slug": "ai-agent-helper-free",
+      "version": "1.0.2",
+      "id": "k97ezzr2mbx930j0e8fwqg1df58b52yw",
+      "status": "published"
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "version": "1.0.2",
+      "id": "k9785jzp0v33jzh3azsa13jnw98b50ek",
+      "status": "published"
+    },
+    {
+      "slug": "ai-assistant",
+      "version": "1.0.2",
+      "id": "k97fz1a3p2bjtmtzt24w43t2958b531t",
+      "status": "published"
+    },
+    {
+      "slug": "ai-assistant-free",
+      "version": "1.0.2",
+      "id": "k97289efwm76kkjq9k2mp5ry698b4hqy",
+      "status": "published"
+    },
+    {
+      "slug": "ai-image-gen",
+      "version": "1.0.1",
+      "id": "k972ke42xseaqz7gxexzmkrzm98b5qgd",
+      "status": "published"
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "version": "1.0.1",
+      "id": "k9758sh1e81pw0c2zvrpb9061x8b4e7y",
+      "status": "published"
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "version": "1.0.1",
+      "id": "k97bk1rb7k4f8f0nz43nrw4d018b5nz9",
+      "status": "published"
+    },
+    {
+      "slug": "ai-kujiale-design-free",
+      "version": "1.0.1",
+      "id": "k9721qb0qvgjgkc7tjt4c9nyrn8b4pb7",
+      "status": "published"
+    },
+    {
+      "slug": "ai-news",
+      "version": "1.0.1",
+      "id": "k97adcfpbacdaf244qaeejeghn8b416e",
+      "status": "published"
+    },
+    {
+      "slug": "ai-podcast",
+      "version": "1.0.1",
+      "id": "k97fqcw81vrh49pxc4d2dqjxz58b42ah",
+      "status": "published"
+    },
+    {
+      "slug": "ai-podcast-free",
+      "version": "1.0.1",
+      "id": "k97fgd7wkwvqtxpyaa9yqvxbzx8b48m3",
+      "status": "published"
+    },
+    {
+      "slug": "ai-writing-style-cloner",
+      "version": "1.0.1",
+      "id": "k97ahj3k2vw009q3xpc385aq8n8b4kk7",
+      "status": "published"
+    },
+    {
+      "slug": "aic-dashboard",
+      "version": "1.0.2",
+      "id": "k974qxs2m9heex4h1cyphrhj618b4cqe",
+      "status": "published"
+    },
+    {
+      "slug": "aic-dashboard-free",
+      "version": "1.0.2",
+      "id": "k970s5hrx46a4cavmqyy0ajkxn8b5mwy",
+      "status": "published"
+    },
+    {
+      "slug": "alephnet-node",
+      "version": "1.0.2",
+      "id": "k976g7e18c31a2q4mc14yshmqd8b5h8j",
+      "status": "published"
+    },
+    {
+      "slug": "alephnet-node-free",
+      "version": "1.0.2",
+      "id": "k978wn07bs63vd5js2sdma48fn8b58at",
+      "status": "published"
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "version": "1.0.1",
+      "id": "k973s41tt3q3jad4yrv08spec98b4ypq",
+      "status": "published"
+    },
+    {
+      "slug": "alibaba-quark-scan",
+      "version": "1.0.1",
+      "id": "k970f15xe7ejk07sa5h061nq158b57pg",
+      "status": "published"
+    },
+    {
+      "slug": "alibaba-quark-scan-free",
+      "version": "1.0.2",
+      "id": "k97b055xaczwjw5554hzdkkt1d8b4w71",
+      "status": "published"
+    },
+    {
+      "slug": "alpha-feed-creator",
+      "version": "1.0.1",
+      "id": "k97dqw4va6p47287sd5bmv7d018b4j5z",
+      "status": "published"
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "version": "1.0.1",
+      "id": "k971xbc17cc51xe6p5rk4qx55s8b46j0",
+      "status": "published"
+    },
+    {
+      "slug": "analytics-dashboard",
+      "version": "1.0.1",
+      "id": "k9740kba7twjrwj8qaj8tk7j5n8b455t",
+      "status": "published"
+    },
+    {
+      "slug": "analyze",
+      "version": "1.0.1",
+      "id": "k97bymdj5yhjrjketwq6fy70qh8b4rjw",
+      "status": "published"
+    },
+    {
+      "slug": "analyze-video-by-qwen",
+      "version": "1.0.1",
+      "id": "k97cr71e1t5yva56k1hmp16ef58b4sfs",
+      "status": "published"
+    },
+    {
+      "slug": "analyze-video-by-qwen-free",
+      "version": "1.0.1",
+      "id": "k97cfbcqjmytxejez856gesa8n8b54sp",
+      "status": "published"
+    },
+    {
+      "slug": "anthropics-frontend-design",
+      "version": "1.0.2",
+      "id": "k971rnpyd94par7de351979gan8b43ya",
+      "status": "published"
+    },
+    {
+      "slug": "anthropics-frontend-design-free",
+      "version": "1.0.2",
+      "id": "k97ae114ax0qzdavxva0ycctb98b5nha",
+      "status": "published"
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "version": "1.0.1",
+      "id": "k977rn48fscz5q8dy2yw0tek498b5g39",
+      "status": "published"
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "version": "1.0.1",
+      "id": "k972ggfmy1v08zn9nwe9wj96zh8b5b55",
+      "status": "published"
+    },
+    {
+      "slug": "anygen-diagram",
+      "version": "1.0.1",
+      "id": "k978f4mmjk4tq8mt5jc87xzhg58b52s5",
+      "status": "published"
+    },
+    {
+      "slug": "anygen-diagram-generator",
+      "version": "1.0.2",
+      "id": "k97e264y5fzvqxvqp7q7z9er958b5e79",
+      "status": "published"
+    },
+    {
+      "slug": "anygen-diagram-generator-free",
+      "version": "1.0.2",
+      "id": "k976bbn6dmn5dmz8gst9s4z23h8b4wj2",
+      "status": "published"
+    },
+    {
+      "slug": "api-connect-hub",
+      "version": "1.0.1",
+      "id": "k972c64ebap6x4npc4s9pn17yn8b443x",
+      "status": "published"
+    },
+    {
+      "slug": "api-development",
+      "version": "1.0.1",
+      "id": "k979ga75sxy374q030dy4yzhts8b5nj0",
+      "status": "published"
+    },
+    {
+      "slug": "api-doc-generator",
+      "version": "1.0.1",
+      "id": "k977b9xrgk32sy0rpktmgn5dkx8b5n8x",
+      "status": "published"
+    },
+    {
+      "slug": "api-doc-writer",
+      "version": "1.0.2",
+      "id": "k97crd3gnkjkvasyac8prefjjs8b58kh",
+      "status": "published"
+    },
+    {
+      "slug": "api-doc-writer-free",
+      "version": "1.0.2",
+      "id": "k975bhd3m40q0arq8cj918me9x8b4wb2",
+      "status": "published"
+    },
+    {
+      "slug": "api-free",
+      "version": "1.0.2",
+      "id": "k97fbzaav4q3xywckd166ec6tx8b5j66",
+      "status": "published"
+    },
+    {
+      "slug": "api-gateway",
+      "version": "1.0.2",
+      "id": "k97epp5bcg8ne1wxbe6h0d8g3d8b584v",
+      "status": "published"
+    },
+    {
+      "slug": "api-gateway-free",
+      "version": "1.0.2",
+      "id": "k97aeaz8cs3m1sak1c432hhe418b58a4",
+      "status": "published"
+    },
+    {
+      "slug": "api-generator",
+      "version": "1.0.2",
+      "id": "k975hjhq3zf4spxntkwz4bt9t58b493k",
+      "status": "published"
+    },
+    {
+      "slug": "api-generator-free",
+      "version": "1.0.2",
+      "id": "k972m3815pxzf8d3jb90d9p1sn8b5rwf",
+      "status": "published"
+    },
+    {
+      "slug": "api-integration",
+      "version": "1.0.2",
+      "id": "k97e6v8xew4qxtd34b6vhyq0q98b475y",
+      "status": "published"
+    },
+    {
+      "slug": "api-integration-free",
+      "version": "1.0.2",
+      "id": "k976m1m0bnpe1c3p30nbq2jgtn8b4nbp",
+      "status": "published"
+    },
+    {
+      "slug": "api-magic-gen",
+      "version": "1.0.1",
+      "id": "k9750b6p24fsk3jkn139br0a458b4x4a",
+      "status": "published"
+    },
+    {
+      "slug": "api-scaffold-gen",
+      "version": "1.0.1",
+      "id": "k971wbntnyy4s8abmdkkkxnzth8b4qvv",
+      "status": "published"
+    },
+    {
+      "slug": "api-toolkit",
+      "version": "1.0.1",
+      "id": "k97fc01ezc3f1v40zd2tf8mg9x8b5mt3",
+      "status": "published"
+    },
+    {
+      "slug": "apple-health-skill",
+      "version": "1.0.1",
+      "id": "k97axdqt9ckvf059gh3svzdyp18b4vdk",
+      "status": "published"
+    },
+    {
+      "slug": "apple-health-skill-free",
+      "version": "1.0.1",
+      "id": "k9782b0rjj92v0ppmdbsa0r78d8b4dgr",
+      "status": "published"
+    },
+    {
+      "slug": "archive",
+      "version": "1.0.1",
+      "id": "k97dyd925vb4vjysv4k6eqea618b5mhw",
+      "status": "published"
+    },
+    {
+      "slug": "archive-free",
+      "version": "1.0.1",
+      "id": "k97a5t5pkn9xj6tevyh6d5x6hn8b43fr",
+      "status": "published"
+    },
+    {
+      "slug": "art",
+      "version": "1.0.1",
+      "id": "k97d2gy2fb06vt86aaneey9rgn8b4vwa",
+      "status": "published"
+    },
+    {
+      "slug": "assistant",
+      "version": "1.0.1",
+      "id": "k971s4gjfagvxcdteaj9tznwtx8b5cmz",
+      "status": "published"
+    },
+    {
+      "slug": "atlas-admin-console",
+      "version": "1.0.1",
+      "id": "k97atm615yzfqb3zz11ryhmqfd8b5qdz",
+      "status": "published"
+    },
+    {
+      "slug": "audio-stream-upload",
+      "version": "1.0.1",
+      "id": "k97bzybeeb4nvetxk3r1h6zb618b45pa",
+      "status": "published"
+    },
+    {
+      "slug": "audio-upload-aioz-stream",
+      "version": "1.0.1",
+      "id": "k973axmffspxgy1qzkhece2b0h8b5rcb",
+      "status": "published"
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "version": "1.0.1",
+      "id": "k97aw2qgee6cmzk4res062qsks8b4nk7",
+      "status": "published"
+    },
+    {
+      "slug": "audit",
+      "version": "1.0.1",
+      "id": "k97d9m1q8nfgqz5z7h6qbecp0d8b4zvt",
+      "status": "published"
+    },
+    {
+      "slug": "auto-monitor",
+      "version": "1.0.1",
+      "id": "k973qgkjrgfjtazhqczfe14yyx8b43q1",
+      "status": "published"
+    },
+    {
+      "slug": "auto-workflow",
+      "version": "1.0.2",
+      "id": "k97f8jv42bpcwmebs19sde3bvn8b49kp",
+      "status": "published"
+    },
+    {
+      "slug": "automation-recipe-book",
+      "version": "1.0.1",
+      "id": "k97ckz9p93j6qsvp5fvycx9eqs8b4gw0",
+      "status": "published"
+    },
+    {
+      "slug": "automation-recipe-pack",
+      "version": "1.0.1",
+      "id": "k9798pm45f0v6c1g6pd81tcx2n8b4hdc",
+      "status": "published"
+    },
+    {
+      "slug": "aws",
+      "version": "1.0.1",
+      "id": "k973r8bh0hqc2kadnawt6e3c0h8b4cwm",
+      "status": "published"
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "version": "1.0.2",
+      "id": "k970g2p80gstp1whhj4v5q9wch8b50k2",
+      "status": "published"
+    },
+    {
+      "slug": "aws-agentcore-langgraph-free",
+      "version": "1.0.1",
+      "id": "k970megabkb14c19f9smgef52d8b4et0",
+      "status": "published"
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "version": "1.0.2",
+      "id": "k97eq70zxa04kpy1ts1tgypbt98b5dxf",
+      "status": "published"
+    },
+    {
+      "slug": "aws-cloud-architect-free",
+      "version": "1.0.1",
+      "id": "k9741bx2rfajt0n0v4gsy97c5s8b5eae",
+      "status": "published"
+    },
+    {
+      "slug": "aws-graph-agent",
+      "version": "1.0.3",
+      "id": "k972yrmha59h7219ycqswpj1498b5wa4",
+      "status": "published"
+    },
+    {
+      "slug": "aws-graph-agent-free",
+      "version": "1.0.2",
+      "id": "k97280fcb1h8d7kz6x4468gsh98b5qze",
+      "status": "published"
+    },
+    {
+      "slug": "aws-infra",
+      "version": "1.0.3",
+      "id": "k971dj2rsfx0awp3wgp0a1swxd8b4rgf",
+      "status": "published"
+    },
+    {
+      "slug": "aws-infra-free",
+      "version": "1.0.2",
+      "id": "k97btty7p1j44rh85n4b31r2058b4t9h",
+      "status": "published"
+    },
+    {
+      "slug": "aws-toolkit",
+      "version": "1.0.1",
+      "id": "k978dtvw589ah4dg3881jh0g758b5k32",
+      "status": "published"
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "version": "1.0.1",
+      "id": "k97ct754d1483vqr0x7xcbgtr98b5h7g",
+      "status": "published"
+    },
+    {
+      "slug": "aws-wechat-article-writing-free",
+      "version": "1.0.1",
+      "id": "k97awn144z2wxs0h0dytvxn6598b5cgz",
+      "status": "published"
+    },
+    {
+      "slug": "azure",
+      "version": "1.0.1",
+      "id": "k977bcrc77ge86wxfd1d6yqj1x8b5qkw",
+      "status": "published"
+    },
+    {
+      "slug": "azure-ai-transcription-py",
+      "version": "1.0.2",
+      "id": "k97c66synx1axt3jfksfen7ftn8b4z1b",
+      "status": "published"
+    },
+    {
+      "slug": "azure-ai-transcription-py-free",
+      "version": "1.0.2",
+      "id": "k971f115vwsz61m57gyzjwmhv18b51zy",
+      "status": "published"
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "version": "1.0.2",
+      "id": "k97ct1g683ns9ztm0rc58dmg3d8b4a6b",
+      "status": "published"
+    },
+    {
+      "slug": "azure-ai-voicelive-py-free",
+      "version": "1.0.2",
+      "id": "k97dt5n67bvwfxvetsjc7r4t7d8b54mg",
+      "status": "published"
+    },
+    {
+      "slug": "azure-cli",
+      "version": "1.0.1",
+      "id": "k9730wgdwx4qqq707b5ywp9c858b5ee1",
+      "status": "published"
+    },
+    {
+      "slug": "azure-cli-toolkit",
+      "version": "1.0.1",
+      "id": "k9726rdd5jv84b7yet7rqnw0z58b52d2",
+      "status": "published"
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "version": "1.0.3",
+      "id": "k9772xb3x30apan7mhsa53j6bx8b4gjj",
+      "status": "published"
+    },
+    {
+      "slug": "azure-cloud-architect-free",
+      "version": "1.0.2",
+      "id": "k9783r9d9ddm465b49s30vqnkn8b5t04",
+      "status": "published"
+    },
+    {
+      "slug": "azure-devops",
+      "version": "1.0.1",
+      "id": "k976tcvyncvmwdnxmv0rc66npx8b5f7f",
+      "status": "published"
+    },
+    {
+      "slug": "azure-gateway-cli",
+      "version": "1.0.1",
+      "id": "k97fbz7fkmewj48jt0z2qscc2h8b4bpq",
+      "status": "published"
+    },
+    {
+      "slug": "azure-infra",
+      "version": "1.0.3",
+      "id": "k97ecb3kvd0s5ffm84ts0gwgrh8b4txf",
+      "status": "published"
+    },
+    {
+      "slug": "azure-infra-free",
+      "version": "1.0.2",
+      "id": "k97547frxs75km5em9zjegrt5d8b4d1h",
+      "status": "published"
+    },
+    {
+      "slug": "azure-transcription",
+      "version": "1.0.1",
+      "id": "k970px60nm6e779g3xm4ebn9z98b4c9e",
+      "status": "published"
+    },
+    {
+      "slug": "azure-voicelive",
+      "version": "1.0.1",
+      "id": "k97ec20y54tfdgmfjsx65ed73n8b52b4",
+      "status": "published"
+    },
+    {
+      "slug": "baidu-netdisk-skills",
+      "version": "1.0.2",
+      "id": "k976qh8ft123mdpn6hab0b60ch8b42jc",
+      "status": "published"
+    },
+    {
+      "slug": "baidu-netdisk-skills-free",
+      "version": "1.0.2",
+      "id": "k973n7rahkywg4as1c7b3y4x6s8b47ft",
+      "status": "published"
+    },
+    {
+      "slug": "bailian-web-search",
+      "version": "1.0.1",
+      "id": "k973yydwppcajpk0whrj1eajr58b4kst",
+      "status": "published"
+    },
+    {
+      "slug": "baoyu-diagram",
+      "version": "1.0.1",
+      "id": "k97dxksb190xqcyrjnx97896g58b4qfc",
+      "status": "published"
+    },
+    {
+      "slug": "beware-piper-tts",
+      "version": "1.0.2",
+      "id": "k97f4v76ydvksmdwrfdhg11hth8b484t",
+      "status": "published"
+    },
+    {
+      "slug": "beware-piper-tts-free",
+      "version": "1.0.2",
+      "id": "k977ejgnwss6rnnxkks5qyy5118b4j4y",
+      "status": "published"
+    },
+    {
+      "slug": "bilibili-all-in-one",
+      "version": "1.0.2",
+      "id": "k97d3n4gn49effh8kr53rs1tvs8b41zj",
+      "status": "published"
+    },
+    {
+      "slug": "bilibili-all-in-one-free",
+      "version": "1.0.2",
+      "id": "k97bp4hagnjqqpe68a6fcz0f258b4h8q",
+      "status": "published"
+    },
+    {
+      "slug": "bilibili-helper",
+      "version": "1.0.2",
+      "id": "k977h1jta9ndv09r6s1nbs4my98b5k2t",
+      "status": "published"
+    },
+    {
+      "slug": "bilibili-helper-free",
+      "version": "1.0.2",
+      "id": "k97cxw3v4y1tzt661hjjkgcg5n8b4gjd",
+      "status": "published"
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "version": "1.0.1",
+      "id": "k97e3ddtz8krdjpq2v7k5m5a4s8b4ecn",
+      "status": "published"
+    },
+    {
+      "slug": "blog-seo-writer",
+      "version": "1.0.1",
+      "id": "k97admdafdvn4m9syc6geg28d18b5m3r",
+      "status": "published"
+    },
+    {
+      "slug": "blog-writer",
+      "version": "1.0.1",
+      "id": "k977vvk674ta15cykw2am8qpex8b5nsp",
+      "status": "published"
+    },
+    {
+      "slug": "blog-writer-free",
+      "version": "1.0.1",
+      "id": "k9767jvq4pxhcc34dp6ydtjwjd8b5mj8",
+      "status": "published"
+    },
+    {
+      "slug": "book-painter",
+      "version": "1.0.1",
+      "id": "k977nk7a9zm6pp3gqxqyn8gjqh8b435k",
+      "status": "published"
+    },
+    {
+      "slug": "bookmark-intelligence",
+      "version": "1.0.2",
+      "id": "k97b95fa5c5nmek1mps279xqj18b5c00",
+      "status": "published"
+    },
+    {
+      "slug": "bookmark-intelligence-free",
+      "version": "1.0.2",
+      "id": "k9742v9x9wt7xv5ggfrqf6qpj98b4zvb",
+      "status": "published"
+    },
+    {
+      "slug": "bookmark-smart-hub",
+      "version": "1.0.1",
+      "id": "k97dtjrxse9yqh74kcm1r87gth8b5rwb",
+      "status": "published"
+    },
+    {
+      "slug": "brainz-calendar",
+      "version": "1.0.1",
+      "id": "k973r4qqe9321h0gb21r7nc1ah8b5ryy",
+      "status": "published"
+    },
+    {
+      "slug": "browser-automation",
+      "version": "1.0.1",
+      "id": "k97e9gxv7fx7svzj1gh5h4g1758b4c05",
+      "status": "published"
+    },
+    {
+      "slug": "browser-automation-v2",
+      "version": "1.0.1",
+      "id": "k9741bntyzpg2kadg8kfnptpkh8b5044",
+      "status": "published"
+    },
+    {
+      "slug": "bsession",
+      "version": "1.0.1",
+      "id": "k9780wd8s6rj849t0exs1ewazd8b5yhs",
+      "status": "published"
+    },
+    {
+      "slug": "calendar",
+      "version": "1.0.1",
+      "id": "k971zbafg1xhbgk4cvz75azfpx8b4rg2",
+      "status": "published"
+    },
+    {
+      "slug": "calendar-reminder",
+      "version": "1.0.2",
+      "id": "k97e13e7ejvvshnrjwzatf6kw18b5x69",
+      "status": "published"
+    },
+    {
+      "slug": "calendar-reminder-free",
+      "version": "1.0.2",
+      "id": "k974mdx7gv4zp9f6jv73qmd7cn8b5rve",
+      "status": "published"
+    },
+    {
+      "slug": "calendar-skill",
+      "version": "1.0.1",
+      "id": "k9750c0f1c1zbfv1gs20d5bq0n8b4z8k",
+      "status": "published"
+    },
+    {
+      "slug": "call-bridge",
+      "version": "1.0.1",
+      "id": "k97de83avxzeqakqkjgr5fragd8b5ftp",
+      "status": "published"
+    },
+    {
+      "slug": "can",
+      "version": "1.0.1",
+      "id": "k976ba6wxtf0p8rhbwm9nttgj98b535b",
+      "status": "published"
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "version": "1.0.1",
+      "id": "k973gma9c1m1ke9nwhwhvwkq0n8b4wsx",
+      "status": "published"
+    },
+    {
+      "slug": "can-free",
+      "version": "1.0.2",
+      "id": "k9747zs3269re5xtk9rd4z6fr58b4crm",
+      "status": "published"
+    },
+    {
+      "slug": "canvas-json-handler",
+      "version": "1.0.1",
+      "id": "k979gk3pw4dddyzt53ywa624pd8b40wn",
+      "status": "published"
+    },
+    {
+      "slug": "card-image-builder",
+      "version": "1.0.1",
+      "id": "k974tk6m83xt0r7ryc6cx2ne418b5brp",
+      "status": "published"
+    },
+    {
+      "slug": "cashu-emoji",
+      "version": "1.0.1",
+      "id": "k970344f1yq7d0kc8xg5w49rhx8b423h",
+      "status": "published"
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "version": "1.0.1",
+      "id": "k9767easyn2v8pv9d42ps6ap298b5v2z",
+      "status": "published"
+    },
+    {
+      "slug": "cdn",
+      "version": "1.0.1",
+      "id": "k974x56n2mzda3a8crnvn9y0mh8b4x4r",
+      "status": "published"
+    },
+    {
+      "slug": "chart",
+      "version": "1.0.2",
+      "id": "k972x8bd4062apqxk42r89mkrd8b4v0z",
+      "status": "published"
+    },
+    {
+      "slug": "chart-craft",
+      "version": "1.0.1",
+      "id": "k97f8zfw10xg5hb4y6dxj3h07x8b55w5",
+      "status": "published"
+    },
+    {
+      "slug": "chart-free",
+      "version": "1.0.2",
+      "id": "k97fwkk8c8c1nzpd102bfmjfq98b56zs",
+      "status": "published"
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "version": "1.0.1",
+      "id": "k97fxkqyqm127hkv557mmbjr4d8b4gj7",
+      "status": "published"
+    },
+    {
+      "slug": "chat",
+      "version": "1.0.1",
+      "id": "k974w8xnyj5pqt11vp1bma8dpn8b41yk",
+      "status": "published"
+    },
+    {
+      "slug": "cheat-code",
+      "version": "1.0.1",
+      "id": "k972bb1xqfn9vwpbzbzbg9c7s58b470x",
+      "status": "published"
+    },
+    {
+      "slug": "cheat-code-paid",
+      "version": "1.0.1",
+      "id": "k97bc6ysrrqwamdp3n62ysvead8b459t",
+      "status": "published"
+    },
+    {
+      "slug": "chief-creative-officer-free",
+      "version": "1.0.1",
+      "id": "k97b5xn3wbftmezkpjatr9dfrd8b4pjp",
+      "status": "published"
+    },
+    {
+      "slug": "china-news",
+      "version": "1.0.1",
+      "id": "k97ahg6cx3m929fwdpz0acs05d8b4kh5",
+      "status": "published"
+    },
+    {
+      "slug": "chromecast-control",
+      "version": "1.0.1",
+      "id": "k97d8ddkc2n2vk4yx30r3jxay98b5p68",
+      "status": "published"
+    },
+    {
+      "slug": "chromecast-control-free",
+      "version": "1.0.1",
+      "id": "k974gdtn9d3s0qhd0ar3nnpv8s8b4kqf",
+      "status": "published"
+    },
+    {
+      "slug": "claude-code-delegate",
+      "version": "1.0.1",
+      "id": "k9738f2ae94kb1fj4qs5gfyxpx8b4kfz",
+      "status": "published"
+    },
+    {
+      "slug": "claude-code-delegate-free",
+      "version": "1.0.1",
+      "id": "k97ajq54t8xw76yb22v3rs99c98b5ez5",
+      "status": "published"
+    },
+    {
+      "slug": "claude-code-runner",
+      "version": "1.0.1",
+      "id": "k976y792skjb1s2bsgsqpbgnhd8b4vvw",
+      "status": "published"
+    },
+    {
+      "slug": "claude-tmux",
+      "version": "1.0.1",
+      "id": "k9730k7f6zek0zgrgmt5q0rn898b479m",
+      "status": "published"
+    },
+    {
+      "slug": "clawcall",
+      "version": "1.0.2",
+      "id": "k979rhxkdnxrhwzc5vevavvgwh8b4mj6",
+      "status": "published"
+    },
+    {
+      "slug": "clawcall-free",
+      "version": "1.0.2",
+      "id": "k97ara6tk61je2npscme70d2p18b4h4q",
+      "status": "published"
+    },
+    {
+      "slug": "clawddocs",
+      "version": "1.0.1",
+      "id": "k97633shk4egsdgaess0z4va458b58n0",
+      "status": "published"
+    },
+    {
+      "slug": "clawprint",
+      "version": "1.0.1",
+      "id": "k97987etvgh4wcd6c791sxnavx8b4smj",
+      "status": "published"
+    },
+    {
+      "slug": "cloud",
+      "version": "1.0.2",
+      "id": "k97bert4n48a9kryb2nn2xm4p18b544f",
+      "status": "published"
+    },
+    {
+      "slug": "cloud-architect",
+      "version": "1.0.2",
+      "id": "k974h03mq0rp41ekpmqa7xnfm98b45jf",
+      "status": "published"
+    },
+    {
+      "slug": "cloud-architect-design",
+      "version": "1.0.1",
+      "id": "k977jrewsqrxd18d109mvcdyhx8b4b6p",
+      "status": "published"
+    },
+    {
+      "slug": "cloud-architect-free",
+      "version": "1.0.2",
+      "id": "k97bf6prmefw1qfhx8727aw8x58b46k6",
+      "status": "published"
+    },
+    {
+      "slug": "cloud-free",
+      "version": "1.0.2",
+      "id": "k979k5gqwy4b1csrwfjh36nhpx8b459x",
+      "status": "published"
+    },
+    {
+      "slug": "cloud-manager",
+      "version": "1.0.1",
+      "id": "k97c4wnx08t51qchxrgrab9vbh8b49w3",
+      "status": "published"
+    },
+    {
+      "slug": "cloud-storage",
+      "version": "1.0.1",
+      "id": "k97fzzbp9t9bs8w6hje14v8zg58b4t5h",
+      "status": "published"
+    },
+    {
+      "slug": "code",
+      "version": "1.0.1",
+      "id": "k97ew4q78tq0tkrbb0mscsb0f98b50qc",
+      "status": "published"
+    },
+    {
+      "slug": "code-analysis-skills",
+      "version": "1.0.1",
+      "id": "k978ktmne80981fzdn8bwra7xn8b4373",
+      "status": "published"
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "version": "1.0.1",
+      "id": "k977xkwbzpryp53tjsg249dtjn8b4xdv",
+      "status": "published"
+    },
+    {
+      "slug": "code-analyze",
+      "version": "1.0.1",
+      "id": "k971prw95h4tv62yhyjbps6pks8b5ks0",
+      "status": "published"
+    },
+    {
+      "slug": "code-delegate",
+      "version": "1.0.1",
+      "id": "k97b9emxacxbzsmvnq5s5t36q18b5mjc",
+      "status": "published"
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "version": "1.0.1",
+      "id": "k97a006xyqttdewhhrpbk0v0g58b46kc",
+      "status": "published"
+    },
+    {
+      "slug": "code-dev-v1",
+      "version": "1.0.1",
+      "id": "k972nf4q80w8pf9mckff2q80718b58wt",
+      "status": "published"
+    },
+    {
+      "slug": "code-quality",
+      "version": "1.0.1",
+      "id": "k972835evfmntdrx0f44bamwd58b5z1c",
+      "status": "published"
+    },
+    {
+      "slug": "code-quality-paid",
+      "version": "1.0.1",
+      "id": "k979qervsjfk1sw5gzxkh2pj8n8b5f9m",
+      "status": "published"
+    },
+    {
+      "slug": "code-runner",
+      "version": "1.0.1",
+      "id": "k97at8a6ya5jyxphm81tzr1qbx8b5et7",
+      "status": "published"
+    },
+    {
+      "slug": "comfyui-painter",
+      "version": "1.0.1",
+      "id": "k974k2ht8qx89c5rhhs48s4ppn8b44z4",
+      "status": "published"
+    },
+    {
+      "slug": "comfyui-painter-free",
+      "version": "1.0.1",
+      "id": "k9789tc7ejab19smm9tsvpmr798b5mcw",
+      "status": "published"
+    },
+    {
+      "slug": "communication-skill-free",
+      "version": "1.0.2",
+      "id": "k973wk5j3x0j833ahypqkp96es8b4jg1",
+      "status": "published"
+    },
+    {
+      "slug": "company-search-fengniao",
+      "version": "1.0.1",
+      "id": "k97773dxzr5nbxwq65h199m4x58b4ket",
+      "status": "published"
+    },
+    {
+      "slug": "compress",
+      "version": "1.0.1",
+      "id": "k972x51bp98wm9q54h180aj34n8b49w2",
+      "status": "published"
+    },
+    {
+      "slug": "content-refiner",
+      "version": "1.0.2",
+      "id": "k977st6tw79t10sm58zs8c9gh98b46wf",
+      "status": "published"
+    },
+    {
+      "slug": "context-driven-development",
+      "version": "1.0.1",
+      "id": "k979acv5whfwfb7ghw181t9rp98b58fd",
+      "status": "published"
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "version": "1.0.1",
+      "id": "k978eqhbjzwc1jn8z3r7qbk49n8b4z86",
+      "status": "published"
+    },
+    {
+      "slug": "creative-officer",
+      "version": "1.0.1",
+      "id": "k976n0cagvje3rfrf3kkzzpkxs8b5r2h",
+      "status": "published"
+    },
+    {
+      "slug": "creator-alpha-feed",
+      "version": "1.0.2",
+      "id": "k974e9n480rjnxkvmmz8wjd7598b54qm",
+      "status": "published"
+    },
+    {
+      "slug": "creator-alpha-feed-free",
+      "version": "1.0.1",
+      "id": "k9746fss4ap99vkz7p6qv4vsnd8b4wnh",
+      "status": "published"
+    },
+    {
+      "slug": "decision-architect",
+      "version": "1.0.2",
+      "id": "k978eqhjth9wq4jpdf6k4vk86n8b4m51",
+      "status": "published"
+    },
+    {
+      "slug": "elite-longterm-memory",
+      "version": "1.0.2",
+      "id": "k9700jsbmhjng0dgg8vw49h6h98b5gsp",
+      "status": "published"
+    },
+    {
+      "slug": "elite-longterm-memory-local",
+      "version": "1.0.2",
+      "id": "k979jxx8a45ghc0x73j0c7vv658b5g15",
+      "status": "published"
+    },
+    {
+      "slug": "evolution-engine",
+      "version": "1.0.2",
+      "id": "k974bcm4vjezft8f8dz6c12sb18b5aby",
+      "status": "published"
+    },
+    {
+      "slug": "knowledge-ontology",
+      "version": "1.0.2",
+      "id": "k97f1c3hedx0ntrbr4pjefdh8s8b4cam",
+      "status": "published"
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "version": "1.0.2",
+      "id": "k97fbv7awxkg6h0d37ngxhkjzx8b581x",
+      "status": "published"
+    },
+    {
+      "slug": "longmemo-elite",
+      "version": "1.0.2",
+      "id": "k97atnve60fzqw5w8wnp2s687d8b532t",
+      "status": "published"
+    },
+    {
+      "slug": "memo-quickstart",
+      "version": "1.0.2",
+      "id": "k972e28bf5qa5brzk9yb5chg2d8b4ef8",
+      "status": "published"
+    },
+    {
+      "slug": "memory",
+      "version": "1.0.2",
+      "id": "k97202h1zzzz78q8kqs3d8h43d8b4nk1",
+      "status": "published"
+    },
+    {
+      "slug": "memory-compress",
+      "version": "1.0.2",
+      "id": "k97dyvq5tcpr04x839fztxqrk18b5mw2",
+      "status": "published"
+    },
+    {
+      "slug": "memory-distiller",
+      "version": "1.0.2",
+      "id": "k9753z6mwctarw98bfwhcqedqd8b5dje",
+      "status": "published"
+    },
+    {
+      "slug": "memory-orchestrator",
+      "version": "1.0.2",
+      "id": "k97dh2qpqkt3f1cac2q2k5sr9x8b539v",
+      "status": "published"
+    },
+    {
+      "slug": "memory-radar",
+      "version": "1.0.2",
+      "id": "k970rvqdy6kqn03znk1pg3kwe58b4d7g",
+      "status": "published"
+    },
+    {
+      "slug": "memory-radar-free",
+      "version": "1.0.1",
+      "id": "k975y0hgdbqhja6c2baa29tt4n8b43h3",
+      "status": "published"
+    },
+    {
+      "slug": "memory-scan",
+      "version": "1.0.2",
+      "id": "k97dawywjxexs7p9qsj8s650g18b5ard",
+      "status": "published"
+    }
+  ]
+}

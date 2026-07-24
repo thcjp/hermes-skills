@@ -31,7 +31,7 @@ DB_PATH = str(PROJECT_ROOT / "skill-registry.db")
 
 # 工具脚本目录（Phase 2后从skill-registry/重命名为tools/）
 # Phase 1期间仍指向skill-registry/，Phase 2后改为tools/
-TOOLS_DIR = PROJECT_ROOT / "skill-registry"
+TOOLS_DIR = PROJECT_ROOT / "tools"
 REGISTRY_DIR = TOOLS_DIR  # 向后兼容别名
 
 # 数据存储目录（Phase 2后创建）
