@@ -62,7 +62,8 @@ GITHUB_REPOS = [
         "url": GITHUB_PUBLIC_REPO_URL,
         "visibility": GITHUB_PUBLIC_VISIBILITY,
         "push_free": True,
-        "push_paid": False,
+        "push_paid": True,  # 付费skill也推送到公开引流仓库（与clawhub付费版一致）
+        "paid_strategy": "clawhub_aligned",  # 付费版与clawhub保持一致
     },
     {
         "name": GITHUB_PRIVATE_REMOTE,

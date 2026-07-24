@@ -1,265 +1,270 @@
-# 第50轮提示词 (v50.0) — 全层级100%A级达成 + 平台同步恢复 + 数据库重建 + 源技能扩展
+# 第50轮提示词 (v50.0修订版) — SkillHub可见性优先 + hermes-skills仓库重构 + 多平台版本同步 + 分类统一
 
 > **日期**: 2026-07-24
-> **上一轮完成**: V49 — L9全清零(100%A), L8全清零, fix_missing_fields.py根因修复 (commit 6795a1655)
+> **上一轮完成**: V49 — 全层级100%A级达成, GitHub双仓库推送成功 (commit 6795a1655 + 7b0a18c56)
 > **核心原则**: 严禁新增碎片化代码，必须增强已有流程/功能/代码/配置/数据库
 > **里程碑**: 🎯 全层级审计100%A级达成 — 历史最佳
+> **最高优先级**: 💰 SkillHub前台可见性 — 做出来是为了引流和赚钱的
 
 ## V49完成总结
 
 | 任务 | 状态 | 结果 |
 |------|------|------|
-| L9 MISSING_VALUE_PROPOSITION收敛 | ✅ | 98个修复, 120→0 |
-| L9 MISSING_OR_IRRELEVANT_TAGS收敛 | ✅ | 75个已OK(skipped), 77→0 |
-| L8 TAG_MISMATCH修复 | ✅ | 3→0 (5个skill的noise tags替换为body-derived tags) |
-| fix_missing_fields.py根因修复 | ✅ | VP关键词与审计对齐, 模板噪声词加入stop words |
+| L9 MISSING_VALUE_PROPOSITION收敛 | ✅ | 120→0 |
+| L9 MISSING_OR_IRRELEVANT_TAGS收敛 | ✅ | 77→0 |
+| L8 TAG_MISMATCH修复 | ✅ | 3→0 |
+| fix_missing_fields.py根因修复 | ✅ | VP关键词与审计对齐 |
 | Dashboard API端点验证 | ✅ | /api/stats, /api/l9-visibility, /api/l7-audit 全部正常 |
-| Git提交 | ✅ | commit 6795a1655 (279文件, +2877/-5588) |
-| GitHub推送 | ❌ 阻塞 | 网络连接重置, 5个commit待推送 |
+| Git提交 | ✅ | commit 6795a1655 (279文件) |
+| GitHub推送 | ✅ | origin + hermes-skills 均推送成功 (caba75978..7b0a18c56) |
 
-## V49审计最终结果 — 🏆 历史最佳
+## V49审计最终结果 — 🏆 全部100%A级
 
-### 全层级审计概览 (2097 skills) — 全部100%A级
-
-| 审计层 | 名称 | A级 | B级 | C级 | D/F级 | 平均分 | 通过率 |
-|--------|------|-----|-----|-----|-------|--------|--------|
-| L4 | 功能质量 | 2097 | 0 | 0 | 0 | 93.7 | 100% |
-| L5 | 可销售性 | 2097 | 0 | 0 | 0 | 90.4 | 100% |
-| L6 | 内容真实性 | 2097 | 0 | 0 | 0 | 100.0 | 100% |
-| L7a | 语义模板 | 2097 | 0 | 0 | 0 | 100.0 | 100% |
-| L7b | 可执行性 | 2097 | 0 | 0 | 0 | 100.0 | 100% |
-| L8 | 安全审计 | 2097 | 0 | 0 | 0 | 100.0 | 100% |
-| L9 | 可见性质量 | 2097 | 0 | 0 | 0 | 100.0 | 100% |
-
-### L4-L9 改善趋势 (V46→V49)
-
-| 审计层 | V46 A级 | V47 A级 | V48 A级 | V49 A级 | 总变化 |
-|--------|---------|---------|---------|---------|--------|
-| L4 | 2097 | 2097 | 2097 | 2097 | — |
-| L5 | 2092 | 2092 | 2092 | **2097** | +5 |
-| L6 | 2097 | 2097 | 2097 | 2097 | — |
-| L7a | 2097 | 2097 | 2097 | 2097 | — |
-| L7b | 2095 | 2095 | 2097 | 2097 | +2 |
-| L8 | 2097 | 2097 | 2097 | 2097 | — |
-| L9 | 1098(52%) | 1813(86%) | 1900(91%) | **2097(100%)** | +999 |
-
-### L9 可见性质量改善趋势
-
-| 指标 | V46 | V47 | V48 | V49 | 总变化 |
-|------|-----|-----|-----|-----|--------|
-| 平均分 | 91.6 | 97.6 | 98.3 | **100.0** | +8.4 |
-| A级 | 1098 (52%) | 1813 (86%) | 1900 (91%) | **2097 (100%)** | +999 |
-| B级 | 918 (44%) | 274 (13%) | 197 (9%) | **0 (0%)** | -918 |
-| C级 | 81 (4%) | 10 (0.5%) | 0 (0%) | **0 (0%)** | -81 |
-| A+B合格率 | 96% | 99% | 100% | **100%** | +4% |
-
-| 剩余问题类型 | V46 | V47 | V48 | V49 | 总减少 |
-|----------|-----|-----|-----|-----|--------|
-| MISSING_OR_IRRELEVANT_TAGS | 788 | 161 | 77 | **0** | -788 (100%) |
-| MISSING_VALUE_PROPOSITION | 292 | 133 | 120 | **0** | -292 (100%) |
-| INSUFFICIENT_SUMMARY | 0 | 0 | 0 | 0 | — |
-| MISSING_QUICK_START | 0 | 0 | 0 | 0 | — |
-| INVALID_CATEGORY | 0 | 0 | 0 | 0 | — |
-
-### L8 安全审计改善趋势
-
-| 问题类型 | V46 | V47 | V48 | V49 |
-|----------|-----|-----|-----|-----|
-| TAG_MISMATCH | 1421 | 3 | 3 | **0** |
-| DUPLICATE_YAML_FIELDS | 2090 | 0 | 0 | 0 |
-| 其他6类 | 0 | 0 | 0 | 0 |
-
-### 文件系统统计
-
-| 目录 | SKILL.md数量 |
-|------|-------------|
-| packaged-skills/skillhub | 995 |
-| opensource-skills/packaged | 40 |
-| differentiated-skills | 1102 |
-| **审计总计** | **2097** |
+| 审计层 | A级 | B级 | C级 | 平均分 | 通过率 |
+|--------|-----|-----|-----|--------|--------|
+| L4 功能质量 | 2097 | 0 | 0 | 93.7 | 100% |
+| L5 可销售性 | 2097 | 0 | 0 | 90.4 | 100% |
+| L6 内容真实性 | 2097 | 0 | 0 | 100.0 | 100% |
+| L7a 语义模板 | 2097 | 0 | 0 | 100.0 | 100% |
+| L7b 可执行性 | 2097 | 0 | 0 | 100.0 | 100% |
+| L8 安全审计 | 2097 | 0 | 0 | 100.0 | 100% |
+| L9 可见性质量 | 2097 | 0 | 0 | 100.0 | 100% |
 
 ### 平台状态 (upload_tracking.json)
 
 | 平台 | 成功 | 待处理 | 失败/拒绝 |
 |------|------|--------|----------|
-| SkillHub | 2036 published | 2 pending + 1 admin + 17 platform_review | 20 rejected + 9 deleted |
+| SkillHub | 2036 published (本地标记) | 2 pending + 1 admin + 17 platform_review | 20 rejected + 9 deleted |
 | ClawHub | 228 published | 704 not_uploaded | 1153 not_eligible |
 | Community | 4032 published | — | 40 failed |
-| Hermes | 759 eligible | 1326 not_eligible | — |
+| Hermes | 759 eligible (仅免费) | 1326 not_eligible (付费未推送) | — |
 
-### SkillHub可见性报告 (visibility_report.json)
+### SkillHub可见性根因
 
-| 状态 | 数量 |
-|------|------|
-| public_success | 1120 |
-| retry_pending | 8 |
-| null_visibility | 6 |
-| cancelled | 1 |
+| 根因 | 证据 | 影响 |
+|------|------|------|
+| CLI无publish命令 | v0.4.1仅支持install/search/list/config | 无法通过CLI上传skill |
+| 数据库标记≠平台状态 | 1120条success记录是V45本地DB设置 | DB状态不代表平台状态 |
+| download_ready全NULL | 1120条记录download_ready均为NULL | 从未验证平台是否处理了版本 |
+| 实际搜索验证失败 | `npx skillhub search`找不到我们的skill | 确认前台不可见 |
 
-### 三轨模型
+### 当前hermes-skills仓库问题
 
-| 轨道 | 数量 |
-|------|------|
-| 源技能 | 110 (71 clawhub + 39 opensource) |
-| 免费增强版 | 759 |
-| 付费增强版 | 1326 |
-| 生产总计 | 2085 (985 packaged + 1100 differentiated) |
-| 配对率 | 1516/2085 (73%) |
-
-### 已知问题
-
-1. **GitHub推送阻塞** — 5个commit未推送(V47: caba75978, V48: 395dcd427, V48prompt: d185cecad, V49: 9050c6b59, V49fix: 6795a1655), 网络连接持续重置
-2. **数据库空壳** — skills.db无表, 需运行daily_sync.py重建
-3. **ClawHub定时任务丢失** — 原任务ID 5f5e0baf已不在计划列表, 需重新创建
-4. **SkillHub前台不可见** — CLI无publish命令, 1120个"success"仅为本地DB标记, 需浏览器执行community_publish.js
-5. **ClawHub大量未上传** — 704个not_uploaded技能待上传
-6. **源技能来源单一** — 仅71个来自clawhub + 39个opensource, 需扩展hermes/dify/n8n/GitHub高星项目
+| 问题 | 现状 | 期望 |
+|------|------|------|
+| 仅含免费skill | 759个-free后缀目录 | 应含付费版（与clawhub付费版一致） |
+| 无分类目录结构 | 扁平目录，所有skill在同一层 | 按category分类（Agents/Automation/...） |
+| 无多语言目录 | 仅README.md + README.en.md | 需zh-CN/zh-TW/en三语分类索引 |
+| 付费skill全部闭源 | push_paid=False | 部分付费skill应开源引流 |
 
 ## 实施任务
 
-### 任务1: GitHub推送恢复 (持续阻塞)
+### 任务1: SkillHub前台可见性修复 — 浏览器发布 (最高优先级)
 
-**问题**: V47-V49共5个commit因GitHub网络持续重置未能推送
+**问题**: SkillHub前台完全看不到我们的skill，无法引流和赚钱。CLI无publish命令，1120个"success"仅为本地DB标记。
 
-**实现**:
-1. 检测GitHub连通性: `Test-NetConnection github.com -Port 443`
-2. 如连通, 增大buffer: `git config http.postBuffer 524288000`
-3. 推送私有备份: `git push origin main`
-4. 推送公开引流: `git push hermes-skills main`
-5. 如持续不可达, 跳过不阻塞后续任务
-6. **备选方案**: 使用SSH协议 `git remote set-url origin git@github.com:thcjp/-.git`
+**根因**: 从未真正上传到SkillHub平台，仅在本地DB设置了community_published=1和visibility=public。
 
-**验证**: `git log origin/main --oneline -1` 显示最新commit
+**修复方案**:
+1. 确认用户已登录 https://www.skillhub.cn
+2. 在浏览器控制台执行 `tools/community_publish.js`
+3. 脚本自动:
+   - 获取所有skill列表（含visibility/download_ready/namespace信息）
+   - 生成可见性诊断报告
+   - 筛选 org_only + NULL visibility 的skill
+   - 批量调用 `POST /admin/skills/{slug}/publish-to-community` API
+   - 处理slug冲突（自动追加-sk后缀）
+4. 执行后复制结果: `JSON.stringify(window.__publishResults)`
+5. 更新数据库状态和upload_tracking.json
+6. **验证**: `npx skillhub search "关键词"` 能找到我们的skill
 
-### 任务2: 数据库重建
+**优先发布顺序**: P0(8零依赖) → P1(5获奖) → P2(3已获奖) → P3(12变现) → P4+P5(32开源改造)
 
-**问题**: skills.db无表(daily_sync.py在V48运行后表结构丢失)
+**验证标准**: 至少10个skill在SkillHub前台可搜索到
+
+### 任务2: hermes-skills仓库重构 — 分类目录 + 付费版 + 多语言索引
+
+**问题**: hermes-skills仓库目前仅含免费skill（扁平目录），缺少付费版和分类结构。用户要求：
+- 传收费的版本（和clawhub收费版本一致），不要把收费的全部开源
+- 做一个分类目录，中文（繁体简体）英文，按分类排序
+- 分类汇总skillhub、clawhub的，在本地就建立好分类，上传平台也同样分类
+
+**修复方案**:
+
+#### 2.1 修改platform_config.py推送策略
+```python
+# 修改前: hermes-skills仅推免费
+GITHUB_REPOS = [
+    {"name": "hermes-skills", "push_free": True, "push_paid": False},
+    {"name": "origin", "push_free": True, "push_paid": True},
+]
+
+# 修改后: hermes-skills推免费+部分付费（与clawhub付费版一致）
+GITHUB_REPOS = [
+    {"name": "hermes-skills", "push_free": True, "push_paid": True, "paid_strategy": "clawhub_aligned"},
+    {"name": "origin", "push_free": True, "push_paid": True},
+]
+```
+
+#### 2.2 创建分类目录结构
+```
+hermes-skills/
+├── README.md                    # 中文简体索引
+├── README.zh-CN.md              # 中文简体
+├── README.zh-TW.md              # 中文繁体
+├── README.en.md                 # 英文索引
+├── Agents/                      # AI代理
+│   ├── README.md                # 分类说明（三语）
+│   ├── free/                     # 免费版
+│   │   ├── ai-agent-helper-free/SKILL.md
+│   │   └── ...
+│   └── paid/                     # 付费版（与clawhub一致）
+│       ├── ai-agent-helper-pro/SKILL.md
+│       └── ...
+├── Automation/                  # 自动化
+│   ├── README.md
+│   ├── free/
+│   └── paid/
+├── Communication/               # 通信
+├── Creative/                    # 创意
+├── Development/                 # 开发
+├── Finance/                     # 金融
+├── Integrations/                # 集成
+├── Knowledge/                   # 知识
+├── Lifestyle/                   # 生活
+├── Operations/                  # 运维
+├── Other/                       # 其他
+├── Productivity/                # 效率
+├── Research/                    # 研究
+└── Security/                    # 安全
+```
+
+#### 2.3 实现步骤
+1. 从`differentiated-skills/`读取所有skill的category字段
+2. 从`packaged-skills/skillhub/`读取所有免费skill
+3. 从`packaged-skills/clawhub/`或`enterprise-upload/`读取付费skill
+4. 按category创建分类目录，移动skill到对应`free/`或`paid/`子目录
+5. 为每个category目录创建README.md（三语分类说明）
+6. 创建顶层README.md/README.zh-CN.md/README.zh-TW.md/README.en.md（三语总索引）
+7. 提交并推送到hermes-skills仓库
+
+**验证**: hermes-skills仓库含14个分类目录，每个含free/paid子目录，三语README
+
+### 任务3: 多平台版本同步机制 — 本地升级自动同步到全部平台
+
+**问题**: 后续凡是本地skill（产品型）升级版本了，都必须同步升级发布出去的全部收费免费的对应skill。
+
+**修复方案**: 增强`tools/version_sync_pipeline.py`的`sync_skill_to_all_platforms()`函数:
+
+1. **版本升级检测**: 当本地SKILL.md的version字段变更时
+2. **自动同步触发**:
+   - **SkillHub**: 浏览器API重新发布（如已实现community_publish.js）
+   - **ClawHub**: `npx clawhub publish [path] --version [new_version]`
+   - **GitHub hermes-skills**: `git add → git commit → git push hermes-skills main`
+   - **GitHub origin**: `git push origin main`
+3. **同步日志**: 记录到upload_tracking.json和数据库platform_uploads表
+4. **验证**: 确认所有平台版本号一致
+
+**实现**: 在`sync_skill_to_all_platforms()`中增加：
+```python
+# 版本变更检测
+old_version = get_platform_version(slug, platform)
+if old_version and version.parse(new_version) > version.parse(old_version):
+    # 触发平台重新发布
+    for platform in ['skillhub', 'clawhub', 'github_public', 'github_private']:
+        sync_to_platform(slug, skill_md, new_version, platform)
+```
+
+**验证**: 手动修改一个skill的version，运行pipeline，确认4个平台同步更新
+
+### 任务4: 多平台分类统一 — 本地分类=平台分类
+
+**问题**: 用户要求"在本地就建立好分类，上传平台也同样分类"。当前各平台分类可能不一致。
+
+**修复方案**:
+1. 确认14个标准category（与skillhub/clawhub对齐）:
+   Agents, Automation, Communication, Creative, Development, Finance,
+   Integrations, Knowledge, Lifestyle, Operations, Other, Productivity,
+   Research, Security
+2. 检查所有SKILL.md的frontmatter category字段
+3. 确保category值在14个标准值范围内
+4. 在hermes-skills仓库的目录结构中使用相同分类
+5. 在SkillHub/ClawHub上传时使用相同category
+
+**验证**: 所有2097个skill的category字段均为14个标准值之一
+
+### 任务5: 数据库重建
+
+**问题**: skills.db无表，需重建
 
 **实现**:
 1. 运行: `python tools/daily_sync.py`
-2. 验证表结构: `sqlite3 data/skills.db ".tables"`
-3. 验证数据: `SELECT COUNT(*) FROM skills` 返回2882+
-4. 验证platform_uploads: `SELECT platform, status, COUNT(*) FROM platform_uploads GROUP BY platform, status`
-5. 验证FTS索引: `SELECT COUNT(*) FROM skills_fts`
-6. 启动dashboard验证: `python tools/dashboard_server.py` → 访问 http://localhost:8765/api/stats
+2. 验证表结构和数据
+3. 验证Dashboard API端点
 
-**验证**: Dashboard返回正确的统计数据
+**验证**: `SELECT COUNT(*) FROM skills` 返回2882+
 
-### 任务3: ClawHub定时任务重建
+### 任务6: ClawHub 704个待上传技能
 
-**问题**: 原ClawHub定时上传任务(ID: 5f5e0baf)已丢失, 704个技能未上传
+**问题**: ClawHub有704个未上传技能，原定时任务已丢失
 
 **实现**:
-1. 确认704个not_uploaded技能列表(从upload_tracking.json获取)
-2. 创建新的定时任务: 每日12:00(Beijing time)上传200个
-3. cron_expression: `0 4 * * *` (UTC 04:00 = Beijing 12:00)
-4. timezone: `Asia/Shanghai`
-5. 任务内容: 读取未上传列表, 执行clawhub上传命令, 记录结果
+1. 从upload_tracking.json获取704个not_uploaded技能列表
+2. 使用`npx clawhub publish`批量上传（每日200限制）
+3. 创建新的定时任务: 每日12:00(Beijing time)上传200个
+4. 处理VERSION_EXISTS错误（递增版本号）
+5. 处理protected namespace错误（重命名）
 
-**验证**: 调用Schedule list确认任务存在
+**验证**: ClawHub published从228提升至500+
 
-### 任务4: SkillHub可见性修复 — 浏览器发布
+### 任务7: SkillHub 8个retry_pending技能重试
 
-**问题**: SkillHub前台看不到已发布的skill, 根因是CLI无publish命令
+**问题**: 8个技能处于retry_pending状态
 
-**实现**:
-1. 确认用户已登录 https://www.skillhub.cn
-2. 在浏览器控制台执行 `tools/community_publish.js`
-3. 脚本将自动:
-   - 获取所有skill列表
-   - 诊断可见性(public/org_only/null)
-   - 批量发布org_only和null visibility的skill
-   - 处理slug冲突(自动重命名)
-4. 执行后复制结果: `JSON.stringify(window.__publishResults)`
-5. 更新数据库状态
-
-**验证**: 在SkillHub前台搜索可找到已发布的skill
-
-### 任务5: SkillHub 8个retry_pending技能重试
-
-**问题**: 8个技能处于retry_pending状态, 内容已在V40修复
-
-**技能列表**:
-- cdp-browser-master (Automation)
-- cron-guard (Automation)
-- linear-workflow-bot (Automation)
-- ai-artist-workstation (Automation)
-- sales-copy-writer (Automation)
-- accounting-and-finance (Finance)
-- accounting-finance (Finance)
-- ace-music (Creative)
+**技能列表**: cdp-browser-master, cron-guard, linear-workflow-bot, ai-artist-workstation, sales-copy-writer, accounting-and-finance, accounting-finance, ace-music
 
 **实现**:
-1. 检查每个skill的SKILL.md是否通过L1-L9审计
-2. 如通过, 通过浏览器或CLI重新上传
+1. 检查每个skill的SKILL.md是否通过L1-L9审计（已100%A级）
+2. 通过浏览器Admin API重新上传
 3. 更新upload_tracking.json状态
 
 **验证**: retry_pending从8降至0
 
-### 任务6: ClawHub 704个not_uploaded技能批量上传
-
-**问题**: ClawHub有704个未上传技能, 原定时任务已丢失
-
-**实现**:
-1. 从upload_tracking.json获取704个not_uploaded技能列表
-2. 检查每个skill是否符合ClawHub上传条件(非not_eligible)
-3. 使用clawhub CLI批量上传: `clawhub publish [skill-path]`
-4. 处理VERSION_EXISTS错误(递增版本号)
-5. 处理protected namespace错误(重命名)
-6. 记录上传结果到upload_tracking.json
-
-**验证**: ClawHub published从228提升至500+
-
-### 任务7: 平台上传状态同步
+### 任务8: 平台上传状态同步
 
 **问题**: upload_tracking.json中的状态可能与平台实际状态不一致
 
 **实现**:
-1. 运行: `python tools/auto_publish.py --sync-status`
-2. 从SkillHub API获取实际skill状态
-3. 从ClawHub API获取实际skill状态
-4. 更新upload_tracking.json中的status和visibility字段
-5. 更新数据库platform_uploads表
+1. 从SkillHub API获取实际skill状态
+2. 从ClawHub API获取实际skill状态
+3. 更新upload_tracking.json中的status和visibility字段
+4. 更新数据库platform_uploads表
 
 **验证**: upload_tracking.json与平台API状态一致
 
-### 任务8: 源技能发现与扩展
-
-**问题**: 源技能仅110个(71 clawhub + 39 opensource), 来源单一
-
-**实现**:
-1. 从Hermes项目提取可用skill模板
-2. 从Dify项目搜索可适配的agent/workflow模板
-3. 从n8n项目搜索可转换为skill的workflow节点
-4. 从GitHub搜索高星AI项目(stars>1000)中的工具/插件
-5. 筛选后下载到 `data/source-skills/` 目录
-6. 运行差异化处理生成free/paid版本
-
-**目标**: 源技能从110扩展至200+
-
-**验证**: 新增源技能在`data/source-skills/`目录可见
-
 ## 验证检查清单
 
-- [ ] GitHub推送成功(origin + hermes-skills), 或确认网络仍不可达
-- [ ] 数据库skills.db重建完成(含表结构和数据)
-- [ ] Dashboard所有API端点正常工作(/api/stats, /api/l9-visibility, /api/l7-audit)
-- [ ] ClawHub定时任务重新创建并验证
-- [ ] SkillHub浏览器发布验证(至少5个skill前台可搜索)
-- [ ] SkillHub 8个retry_pending技能全部重试
+- [ ] SkillHub浏览器发布验证(至少10个skill前台可搜索)
+- [ ] hermes-skills仓库含14个分类目录，每个含free/paid子目录
+- [ ] hermes-skills仓库含三语README（zh-CN/zh-TW/en）
+- [ ] hermes-skills仓库含付费skill（与clawhub付费版一致）
+- [ ] version_sync_pipeline.py支持多平台版本同步
+- [ ] 所有2097个skill的category为14个标准值之一
+- [ ] 数据库skills.db重建完成
 - [ ] ClawHub 704个not_uploaded技能至少上传200+
+- [ ] SkillHub 8个retry_pending技能全部重试
 - [ ] 平台上传状态同步完成
-- [ ] 源技能发现至少新增50个
 - [ ] Git提交完成
 
 ## 约束
 
-1. **不创建新文件** — 所有修复功能集成到现有工具脚本
+1. **增强已有代码** — 所有修复功能集成到现有工具脚本，不创建碎片化新文件（分类目录README除外）
 2. **不模拟/mock** — 所有文件修改和数据库操作必须真实执行
 3. **幂等操作** — 修复函数必须可重复执行不产生副作用
 4. **向后兼容** — 增强不能破坏现有命令功能
 5. **内容保真** — tags增强和value proposition增强不得改变技能原有语义和功能
 6. **网络容错** — GitHub推送失败不应阻塞其他任务的执行
-7. **block scalar安全** — 修复description时必须正确处理`|-`格式,不得产生`|-，XXX`损坏
-8. **tags格式一致** — tags必须使用字符串格式(`tags: tag1,tag2,tag3`),不得使用单个列表项包含逗号的格式
-9. **质量底线** — 不得引入任何会降低L4-L9审计等级的修改(当前100%A级)
+7. **质量底线** — 不得引入任何会降低L4-L9审计等级的修改(当前100%A级)
+8. **付费skill保护** — hermes-skills中的付费skill应与clawhub付费版一致，不得将全部付费skill开源
+9. **分类统一** — 本地分类目录=skillhub分类=clawhub分类=hermes-skills分类
+10. **版本同步** — 本地skill版本升级后，必须同步到全部3个平台的对应skill

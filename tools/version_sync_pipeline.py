@@ -467,29 +467,25 @@ def sync_to_github(slug: str, skill_md: Path, new_version: str,
                 record_platform_upload(skill_id, new_version, 'github_private', slug,
                                        'failed', error=push_private.stderr[:200])
 
-        # 2. 推送到公开引流仓库 (仅免费skill)
-        if result['is_free']:
-            push_public = subprocess.run(
-                ['git', 'push', PUBLIC_REMOTE, GITHUB_BRANCH],
-                capture_output=True, text=True, timeout=180,
-                cwd=str(SKILLS_ROOT)
-            )
-            if push_public.returncode == 0:
-                result['public_push'] = 'success'
-                if skill_id:
-                    record_platform_upload(skill_id, new_version, 'github_public', slug,
-                                           'success', visibility='public', pricing='free')
-            else:
-                result['public_push'] = 'failed'
-                result['public_error'] = push_public.stderr[:200]
-                if skill_id:
-                    record_platform_upload(skill_id, new_version, 'github_public', slug,
-                                           'failed', error=push_public.stderr[:200])
+        # 2. 推送到公开引流仓库 (免费+付费skill，付费版与clawhub一致)
+        # hermes-skills现在包含免费和付费两种skill
+        push_public = subprocess.run(
+            ['git', 'push', PUBLIC_REMOTE, GITHUB_BRANCH],
+            capture_output=True, text=True, timeout=180,
+            cwd=str(SKILLS_ROOT)
+        )
+        if push_public.returncode == 0:
+            result['public_push'] = 'success'
+            if skill_id:
+                pricing_val = 'free' if result['is_free'] else 'paid'
+                record_platform_upload(skill_id, new_version, 'github_public', slug,
+                                       'success', visibility='public', pricing=pricing_val)
         else:
-            result['public_push'] = 'skipped_paid'
+            result['public_push'] = 'failed'
+            result['public_error'] = push_public.stderr[:200]
             if skill_id:
                 record_platform_upload(skill_id, new_version, 'github_public', slug,
-                                       'skipped_paid', visibility='private')
+                                       'failed', error=push_public.stderr[:200])
 
         # 综合状态
         if result['private_push'] == 'success':

@@ -9,8 +9,10 @@ GitHub 仓库策略配置 (已迁移到 platform_config.py)
      - URL: https://github.com/thcjp/hermes-skills
      - git remote: hermes-skills
      - 可见性: public
-     - 推送内容: 仅免费skill (pricing=free, pricing_tier=L1/L2, license=MIT/Apache-2.0)
+     - 推送内容: 免费skill + 付费skill（与clawhub付费版一致）
      - 目的: 社区影响力、品牌建设、引流到SkillHub付费版
+     - 分类目录: 14个标准category，每个含free/paid子目录
+     - 多语言: README.md(zh-CN) + README.zh-TW.md + README.en.md
 
   2. origin (私有备份仓库)
      - URL: https://github.com/thcjp/-.git

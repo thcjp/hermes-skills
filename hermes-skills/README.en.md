@@ -1,118 +1,111 @@
 # Hermes Skills
 
-> 759 free AI agent skills in [agentskills.io](https://agentskills.io) format
+> AI Agent Skill Library · Categorized Index
 
-[English](README.en.md) | [简体中文](README.md) | [繁體中文](README.zh-TW.md)
+[English](README.en.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)
 
 ## About
 
-This repository contains a curated collection of 759 free AI agent skills, each packaged in the agentskills.io standard format. These skills are compatible with popular AI coding agents including:
+This repository hosts **759** free AI agent skills in the [agentskills.io](https://agentskills.io) standard format, compatible with Claude Code / Cursor / Codex / Gemini CLI and other agent platforms. Skills are organized into the 14 categories below, each split into `free/` (free) and `paid/` (paid, to be added) subdirectories.
 
-- **Claude Code** (Anthropic)
-- **Cursor** (Anysphere)
-- **Codex** (OpenAI)
-- **Gemini CLI** (Google)
-- Any agent platform that supports the SKILL.md standard
+## Category overview
 
-## Directory Structure
+| Category | Free skills | Paid skills | Description |
+|---|---|---|---|
+| [Agents](Agents/README.md) | 20 | 0 | Agents — AI agent frameworks, orchestration and multi-agent collaboration tools. |
+| [Automation](Automation/README.md) | 20 | 0 | Automation — Workflow automation, scheduled tasks and process orchestration tools. |
+| [Communication](Communication/README.md) | 56 | 0 | Communication — Messaging, email, notifications and social communication tools. |
+| [Creative](Creative/README.md) | 124 | 0 | Creative — Content creation, image/music generation, writing and visual design tools. |
+| [Development](Development/README.md) | 194 | 0 | Development — Coding, code quality, databases, frontend and DevOps tooling. |
+| [Finance](Finance/README.md) | 34 | 0 | Finance — Financial analysis, investing, tax and cryptocurrency tools. |
+| [Integrations](Integrations/README.md) | 5 | 0 | Integrations — Third-party platform and API integration connectors. |
+| [Knowledge](Knowledge/README.md) | 50 | 0 | Knowledge — Notes, knowledge bases, knowledge graphs and document management tools. |
+| [Lifestyle](Lifestyle/README.md) | 12 | 0 | Lifestyle — Weather, travel, health, smart home and daily-life tools. |
+| [Operations](Operations/README.md) | 41 | 0 | Operations — Cloud, infrastructure, networking and systems monitoring/operations tools. |
+| [Other](Other/README.md) | 0 | 0 | Other — Miscellaneous tools not fitting the above categories. |
+| [Productivity](Productivity/README.md) | 69 | 0 | Productivity — Task management, scheduling, office and personal-efficiency tools. |
+| [Research](Research/README.md) | 87 | 0 | Research — Information retrieval, data analysis, news and academic research tools. |
+| [Security](Security/README.md) | 47 | 0 | Security — Security auditing, vulnerability scanning, privacy and compliance tools. |
+| **Total** | **759** | **0** | — |
 
-Each skill is a self-contained directory with a `SKILL.md` file:
+## Directory structure
 
 ```
 hermes-skills/
-├── ad-creative-intel-free/
-│   └── SKILL.md
-├── aws-agent-orchestrator-free/
-│   └── SKILL.md
-├── ...
-└── README.md
+├── README.md            # Main index (Simplified Chinese)
+├── README.zh-CN.md      # 简体中文
+├── README.zh-TW.md      # 繁體中文
+├── README.en.md         # English
+├── Agents/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 20
+│   └── paid/            # 0
+├── Automation/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 20
+│   └── paid/            # 0
+├── Communication/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 56
+│   └── paid/            # 0
+├── Creative/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 124
+│   └── paid/            # 0
+├── Development/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 194
+│   └── paid/            # 0
+├── Finance/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 34
+│   └── paid/            # 0
+├── Integrations/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 5
+│   └── paid/            # 0
+├── Knowledge/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 50
+│   └── paid/            # 0
+├── Lifestyle/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 12
+│   └── paid/            # 0
+├── Operations/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 41
+│   └── paid/            # 0
+├── Other/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 0
+│   └── paid/            # 0
+├── Productivity/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 69
+│   └── paid/            # 0
+├── Research/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 87
+│   └── paid/            # 0
+├── Security/
+│   ├── README.md        # Category description (3 languages)
+│   ├── free/            # 47
+│   └── paid/            # 0
 ```
 
-## Skill Format
-
-Each `SKILL.md` file follows the agentskills.io standard:
-
-```yaml
----
-name: skill-name-free
-description: Brief description of the skill
-license: MIT
-allowed-tools: read write
-compatibility:
-  - claude-code
-  - cursor
-  - codex
-  - gemini-cli
-metadata:
-  version: 1.0.0
-  category: productivity
-  tags: [automation, workflow]
----
-
-# Skill Name
-
-## Description
-Detailed description of what the skill does...
-
-## Usage
-How to use this skill...
-```
-
-## Categories
-
-Skills are organized across multiple categories:
-
-| Category | Count | Examples |
-|----------|-------|---------|
-| Automation & Workflow | ~60 | cron-scheduler, task-queue-manager, workflow-orchestrator |
-| Communication | ~50 | discord-toolkit, slack-hub-tool, telegram-chat-tool |
-| Creative & Design | ~80 | logo-design-tool, ui-ux-toolkit, video-producer-tool |
-| Development Tools | ~70 | git-cli-tool, docker-essentials, code-analysis-toolkit |
-| Memory & Context | ~25 | context-compressor, memory-fortress, neural-context-engine |
-| Productivity | ~50 | excel-ninja, notes-sync-cli, schedule-manager |
-| Security | ~15 | encryption-tool, ssl-toolkit, aegis-security |
-| Data & Analytics | ~30 | data-analysis-toolkit, knowledge-graph-builder |
-| AI & LLM | ~40 | llm-provider-tool, prompt-architect, ai-image-gen-tool |
-| Other | ~339 | Various specialized tools |
-
 ## Usage
 
-### With Claude Code
-1. Clone this repository
-2. Copy any skill directory to your `.claude/skills/` folder
-3. The skill is automatically available in your Claude Code session
+1. Clone this repository.
+2. Copy the desired skill directory (e.g. `Development/free/git-cli-tool-free/`) into your agent's skills folder:
+   - **Claude Code**: `.claude/skills/`
+   - **Cursor**: `.cursor/skills/`
+   - **Codex**: reference the skill path in config
+   - **Gemini CLI**: add to the skill search path
+3. The skill becomes available automatically in the agent session.
 
-### With Cursor
-1. Clone this repository
-2. Copy any skill directory to your `.cursor/skills/` folder
-3. Restart Cursor to load the skill
+---
 
-### With Codex
-1. Clone this repository
-2. Reference the skill path in your Codex configuration
+License: MIT
 
-### With Gemini CLI
-1. Clone this repository
-2. Add the skill directory to Gemini CLI's skill search path
-
-## Quality Assurance
-
-All skills pass a 6-layer quality audit:
-- **Layer 1-3**: Format validation (YAML frontmatter, required fields, structure)
-- **Layer 4**: Functional validation (task definition, input/output, error handling)
-- **Layer 5**: Sellability assessment (market value, target audience, differentiation)
-- **Layer 6**: Content authenticity (no template padding, real executable code)
-
-## License
-
-MIT License - see [LICENSE](LICENSE) for details.
-
-## Related Platforms
-
-These skills are also published on:
-- **SkillHub** - Chinese AI skill marketplace (monetization)
-- **ClawHub** - International open-source skill ecosystem
-
-## Last Updated
-
-July 2026
+Last updated: July 2026
