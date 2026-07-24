@@ -1,233 +1,499 @@
-# Round 41 执行提示词 v41.0
+# Round 41 执行提示词 v41.0 (架构治理专项)
 
 ## 上下文
-- **上一轮**: Round 40 (Git: cadc4889, 14 files, +646/-2082, pushed to origin)
+- **上一轮**: Round 40 (Git: cadc4889, 14 files, +646/-2082)
 - **当前日期**: 2026-07-24
 - **数据库**: 2882 total skills (1162 updated + 959 active + 759 stale + 1 not_found + 1 optimized)
 - **平台状态**: SkillHub 1126 success, ClawHub 1152 success/855 published, GitHub 1159 success
-- **审计状态**: L4-L8 全量通过, 2097/2097 A级, 0问题
-- **定时任务**: ClawHub每日12:00北京时间自动上传 (ID: 5f5e0baf, Active, 0次执行)
-- **GitHub双仓库**: hermes-skills(公开引流) + origin(私有备份), 策略已固化到github_repo_strategy.py
+- **审计状态**: L4-L8 全量通过, 2097/2097 A级
+- **5轮交叉审核**: 发现31项问题, 3个致命SQL bug, 10个新遗漏, 用户核心要求实现度20%
 
-## Round 40 完成情况
+## 治理背景
 
-### Task 1 (P0): SkillHub blocked skill修复 - 完成 ✅
-- accounting-and-finance: 10731→5777字符, retry_pending
-- accounting-finance: 9857→4116字符, retry_pending
-- ace-music: 7863→4907字符, retry_pending
-- sales-copy-writer: 修复质量门禁, status=success
-- ai-artist-workstation: 精简至5353字符, status=success
-- ai-video-director: 标记not_found(文件系统不存在)
+项目已出现严重碎片化和冗余迹象：
+1. **配置散乱**: 17个脚本硬编码DB_PATH(非5个), DIFFERENTIATED_DIR在26个脚本中硬编码
+2. **工具/产品混合**: skill-registry/包含69个.py脚本 + 957个JSON数据文件混在一起
+3. **三轨模型错误**: 付费版映射到enterprise-upload/(仅2个), 实际260个paid在differentiated-skills/
+4. **数据缺失**: hermes-skills(759个)完全未导入数据库, packaged-skills/skillhub(807个)未导入
+5. **核心要求未实现**: 每日数据同步(0%), UI看板从数据库读取(10%)
 
-### Task 2 (P1): SkillHub failed skill重试 - 完成 ✅
-- cdp-browser-master: 精简至3901字符, status=success
-- cron-guard: 精简至3884字符, status=success
-- linear-workflow-bot: 精简至5784字符+修复YAML格式, status=success
-- ai-artist-workstation: 精简至5353字符, status=success
+## 执行原则
+1. **每个Phase完成后必须git commit**, 创建回滚tag
+2. **Phase 3前必须备份数据库**
+3. **禁止任何mock/fallback/skip/todo/pass**
+4. **所有SQL必须先用Python验证语法正确**
+5. **任务必须定义到结束**, 防止半拉子工程
 
-### Task 3 (P1): ClawHub protected namespace修复 - 完成 ✅
-- openclaw-dashboard → dashboard-toolkit (active)
-- openclaw-linear → linear-integration (active)
-- pandoc-convert-openclaw → pandoc-converter (active)
-- 4个剩余openclaw-前缀slug标记为stale
+---
 
-### Task 4 (P2): ClawHub上传进度监控 - 进行中 ⚠️
-- 定时任务Active, 0次执行, 今日12:00首次执行
-- 855 published, 1152 DB success records
+## Phase 1: 统一配置中心 (P0)
 
-### Task 5 (P2): chat skill付费版上传 - 未完成 ❌
-- skillhub_paid: 1条记录, 0 success (需浏览器session认证)
+### Task 1.1: 创建config/目录和模块
+- 创建 `d:\skills\config\__init__.py` - 导出所有配置
+- 创建 `d:\skills\config\project_config.py` - 从skill-registry/config.py迁移并扩展:
+  - 保留: PROJECT_ROOT, DB_PATH, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, EXPORT_DIR, BACKUP_DIR
+  - 保留: TRACE阈值, 付费判断, 数据库表名常量, TRACE_FIELD_MAPPING
+  - **新增**: TOOLS_DIR, DATA_DIR, REPORT_DIR(改为data/reports/)
+  - **新增**: CLAWHUB_DOWNLOADED_DIR, HERMES_SKILLS_DIR, ENTERPRISE_UPLOAD_DIR, DIFFERENTIATED_DIR
+  - **保留REGISTRY_DIR**: 暂时保留指向skill-registry/, Phase 2重命名后再改
+  - 修改: MARKET_DATA_DIR, BACKUP_DIR 改为基于DATA_DIR而非REGISTRY_DIR
+- 创建 `d:\skills\config\platform_config.py` - 平台配置:
+  - SkillHub: CLI路径、API URL、WAF限制(5800字符)
+  - ClawHub: 上传限制(200/24h)、Token路径
+  - GitHub: 双仓库remote配置、分支
+- 移动 `skill-registry/github_repo_strategy.py` → `config/github_repo_strategy.py`
 
-### Task 6 (P2): 全量平台同步状态验证 - 完成 ✅
-- GitHub: 1159 success (54.6%)
-- SkillHub: 1126 success + 16 retry_pending (53.8%)
-- ClawHub: 1152 success (54.3%)
-- 0 mock记录 ✅
+### Task 1.2: 修改17个硬编码DB_PATH脚本
+**完整清单(5轮审核确认)**:
+1. `orchestrator.py` (DB_PATH + SKILLS_ROOT + SKILL_REGISTRY_DIR, 3个常量)
+2. `version_sync_pipeline.py` (DB_PATH + SKILLS_ROOT + 5个路径常量, 7个常量)
+3. `db.py` (DB_PATH)
+4. `analyze_status.py` (DB_PATH)
+5. `dashboard_server.py` (DB_PATH + REGISTRY_DIR)
+6. `auto_discover.py` (DB_PATH + SKILLS_ROOT + CLAWHUB_DOWNLOADED_DIR)
+7. `clean_naming.py` (DB_PATH)
+8. `github_scanner.py` (DB_PATH + GITHUB_REPOS)
+9. `init_baseline.py` (DB_PATH + SKILLS_ROOT)
+10. `multi_source_discover.py` (DB_PATH)
+11. `skill_batch_upgrader_v3.py` (DB_PATH)
+12. `task3_pricing_calibration.py` (DB_PATH)
+13. `update_mechanism.py` (DB_PATH + SKILLS_ROOT + 5个路径常量)
+14. `update_v2_and_report.py` (DB_PATH)
+15. `skill_core/db.py` (DB_PATH fallback)
+16. `check_debranding.py` (直接sqlite3.connect硬编码)
+17. `scan_and_import.py` (3处直接sqlite3.connect硬编码)
 
-### 额外完成: GitHub双仓库策略固化 ✅
-- github_repo_strategy.py: 免费/付费skill判定规则
-- version_sync_pipeline.py: 双remote推送逻辑
-- git remote: hermes-skills + origin
-- 策略文档化: 公开引流(免费) + 私有备份(全部)
+**修改方式**: 每个脚本删除硬编码, 改为:
+```python
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'config'))
+from project_config import DB_PATH, SKILLS_ROOT, ...
+```
+**注意**: 此阶段**不修改REGISTRY_DIR引用**, 仅修改DB_PATH和相关路径常量
 
-## 交叉验证发现的遗留问题
+### Task 1.3: 统一GITHUB_REPOS定义
+- 将auto_discover.py和github_scanner.py中的GITHUB_REPOS统一到config/platform_config.py
+- 两个脚本都改为从config导入
 
-### 1. GitHub hermes-skills仓库首次推送未执行
-- git remote已配置, 但从未实际push到hermes-skills
-- 需验证GitHub上hermes-skills仓库是否存在
-- 需执行首次推送(仅免费skill目录)
+### Task 1.4: 修复阈值不一致
+- 使用UPDATE而非ALTER: `UPDATE scores SET pass_threshold = 42 WHERE pass_threshold = 40 OR pass_threshold IS NULL`
+- 所有脚本使用config.TRACE_PASS_THRESHOLD
 
-### 2. SkillHub 16条retry_pending历史记录
-- 这些是Round 40修复过程中的历史记录
-- 对应的skill已有success记录, retry_pending是旧记录
-- 需清理或标记为superseded
-
-### 3. ClawHub定时任务尚未执行
-- 今日12:00北京时间首次执行
-- 502个待上传, 预计3天完成
-
-### 4. 759个stale skills需调查
-- 这些skill在DB中存在但文件系统中不存在(或反向)
-- 可能是clawhub下载源、差异化前的原始skill、或已删除的skill
-- 需要分类处理: 源skill保留/无效skill清除
-
-### 5. chat skill付费版仍待上传
-- 需要浏览器session认证手动上传
-
-### 6. origin仓库可见性
-- 建议在GitHub设置中将origin (https://github.com/thcjp/-.git) 改为private
-- 当前可能为public, 付费skill内容暴露
-
-## Round 41 任务清单
-
-### Task 1 (P0): GitHub hermes-skills仓库首次推送
-**目标**: 将免费skill推送到公开引流仓库
-
-1. 验证GitHub上hermes-skills仓库是否存在(如不存在需创建)
-2. 执行首次推送: `git push hermes-skills main`
-3. 验证hermes-skills仓库内容: 仅包含免费skill
-4. 在GitHub上设置hermes-skills仓库为public
-5. 在GitHub上设置origin仓库为private
-6. 验证github_repo_strategy.py的is_free_skill()函数对全部2121个active+updated skill的分类结果
-7. 生成免费/付费skill分布报告
+### Task 1.5: 修改26个引用differentiated-skills的脚本
+- 所有脚本中的`Path(r"D:\skills\differentiated-skills")`改为从config导入DIFFERENTIATED_DIR
+- 完整脚本清单(通过grep确认): auto_publish.py, capability_pipeline.py, deep_quality_audit.py, diff_batch_fix.py, diff_batch_fix2.py, diff_batch_fix3.py, diff_l4_batch_fix.py, hermes_batch_convert.py, hermes_converter.py, template_cleanup.py等
 
 **验证标准**:
-- hermes-skills仓库push成功
-- hermes-skills仓库可见性为public
-- origin仓库可见性为private
-- 免费/付费skill分类报告生成
+- `grep -rn "d:\\\\skills\\\\skill-registry.db" skill-registry/*.py skill-registry/**/*.py` 返回0结果
+- `grep -rn "d:\\\\skills\\\\differentiated-skills" skill-registry/*.py` 返回0结果
+- `python -c "from config import DB_PATH; print(DB_PATH)"` 正常输出
+- 所有17个脚本可正常import config
 
-### Task 2 (P1): ClawHub定时任务执行验证
-**目标**: 验证定时任务首次执行结果
+**Git检查点**: `git add -A && git commit -m "Phase 1: unified configuration center - fixed 17+26 hardcoded scripts"`
+**回滚tag**: `git tag pre-phase-1` (在Phase开始前创建)
 
-1. 检查定时任务执行历史 (Schedule ID: 5f5e0baf)
-2. 如已执行: 查看clawhub_daily_log.txt执行记录
-3. 验证clawhub_published_slugs.json数量增长 (>855)
-4. 如未执行: 手动触发一次 (action: trigger)
-5. 验证数据库platform_uploads表clawhub记录同步
+---
 
-**验证标准**:
-- 定时任务至少执行1次
-- published count > 855
-- 日志文件有执行记录
-- 数据库记录同步
+## Phase 2: 工具/产品物理分离 (P0)
 
-### Task 3 (P1): SkillHub retry_pending历史记录清理
-**目标**: 清理16条已过时的retry_pending记录
+### Task 2.1: 创建data/目录结构
+```
+d:\skills\data\
+├── reports/           # 审计报告JSON
+├── health_reports/    # 健康检查报告
+├── market-data/       # 市场数据
+├── backups/           # 数据库备份
+└── discovery/         # 发现候选数据
+```
 
-1. 查询所有retry_pending记录
-2. 对每条记录检查是否已有对应的success记录
-3. 如有success记录: 将旧retry_pending标记为superseded
-4. 如无success记录: 保留retry_pending并标注待重试
-5. 生成清理报告
+### Task 2.2: 移动数据文件到data/
+- `skill-registry/*.json` (957个) → `data/reports/` (报告类) 或 `data/` (状态文件类)
+- 状态文件移到data/根目录: upload_tracking.json, clawhub_published_slugs.json, clawhub_upload_checkpoint.json, clawhub_upload_batches.json, clawhub_upload_results.json, clawhub_remaining.json, category_mapping.json
+- `skill-registry/health_reports/` → `data/health_reports/`
+- `skill-registry/market-data/` → `data/market-data/`
+- `skill-registry/backups/` → `data/backups/`
+- `skill-registry/discovery/` → `data/discovery/`
 
-**验证标准**:
-- 0条无对应success的retry_pending记录(或明确标注待重试)
-- 清理报告生成
+### Task 2.3: 重命名skill-registry/ → tools/
+- `skill-registry/*.py` → `tools/*.py` (使用git mv保留历史)
+- `skill-registry/skill_core/` → `tools/core/`
+- `skill-registry/templates/` → `tools/templates/`
+- 删除空的skill-registry/目录
 
-### Task 4 (P1): 759个stale skills分类处理
-**目标**: 调查并分类处理stale skills
+### Task 2.4: 移动顶层脚本到tools/scripts/
+- `retry-skillhub.ps1`, `retry-skillhub-v2.ps1` → `tools/scripts/`
+- `run-skillhub.sh`, `skillhub.ps1` → `tools/scripts/`
+- `upload-differentiated.ps1`, `upload-to-skillhub.ps1` → `tools/scripts/`
 
-1. 查询所有stale skills的slug和来源
-2. 分类:
-   a. clawhub下载源skill (is_source=true): 保留, 标记为source
-   b. 差异化前原始skill: 保留, 标记为original
-   c. 已删除/无效skill: 清除DB记录
-   d. 文件系统存在但DB标记stale: 重新标记为active
-3. 更新数据库current_status字段
-4. 生成stale skills分类报告
+### Task 2.5: 更新所有路径引用
+**关键更新清单**:
+1. `config/project_config.py`: REGISTRY_DIR → TOOLS_DIR, REPORT_DIR → DATA_DIR/reports/
+2. `tools/orchestrator.py`: 15处SKILL_REGISTRY_DIR引用 → TOOLS_DIR
+3. `tools/version_sync_pipeline.py`: SKILL_REGISTRY_DIR → TOOLS_DIR
+4. `tools/clawhub_batch_uploader.py`: 7个数据文件路径更新为data/目录
+5. `tools/dashboard_server.py`: REGISTRY_DIR → TOOLS_DIR, 报告路径更新
+6. `tools/deep_quality_audit.py`: REGISTRY_DIR → TOOLS_DIR
+7. 所有脚本中的`skill-registry`路径引用 → `tools`
+8. `.gitignore`: 更新路径规则
+9. 所有引用`.skillhub-credentials`的脚本 → `.credentials`
 
-**验证标准**:
-- 每个stale skill有明确分类
-- 无效skill已清除
-- 误标stale的skill已恢复active
-- 分类报告生成
-
-### Task 5 (P2): chat skill付费版上传
-**目标**: 完成chat skill付费版上传到SkillHub
-
-1. 检查enterprise-upload/payloads/chat-paid-v1.1.1.json
-2. 通过Trae Work浏览器方式上传到SkillHub
-3. 验证platform_uploads表skillhub_paid记录status=success
-
-**验证标准**:
-- chat skill付费版上传成功
-- platform_uploads表skillhub_paid记录status=success
-
-### Task 6 (P2): 版本同步流水线GitHub双仓库实跑验证
-**目标**: 端到端验证双仓库推送策略
-
-1. 选择一个免费skill和一个付费skill
-2. 修改SKILL.md内容(添加注释或微调)
-3. 运行version_sync_pipeline.py sync <slug>
-4. 验证:
-   - 免费skill: 推送到hermes-skills + origin
-   - 付费skill: 仅推送到origin
-5. 检查两个仓库的git log确认推送结果
-6. 恢复SKILL.md原始内容
+### Task 2.6: 更新定时任务路径
+- ClawHub定时任务(Schedule ID: 5f5e0baf)中的脚本路径需更新
+- 检查定时任务message中的路径引用
 
 **验证标准**:
-- 免费skill在hermes-skills仓库有commit记录
-- 付费skill在hermes-skills仓库无新commit记录
-- 两个skill在origin仓库都有commit记录
+- `skill-registry/`目录不存在
+- `tools/`目录包含所有69个.py脚本
+- `data/`目录包含所有957个JSON数据文件
+- `python tools/orchestrator.py status` 正常输出
+- `python tools/version_sync_pipeline.py scan` 正常输出
+- `python tools/clawhub_batch_uploader.py --dry-run` 正常运行
 
-## 执行规则
-1. 遵循`修复提示词.md`的R1-R78规则
-2. 每个任务完成后进行代码级验证(非文档声明)
-3. 禁止任何形式的mock/fallback/todo/pass
-4. 修复必须覆盖全部3个目录(packaged-skills/skillhub, opensource-skills/packaged, differentiated-skills)
-5. 完成后生成下一轮提示词v42.0
+**Git检查点**: `git add -A && git commit -m "Phase 2: physical separation - tools/ + data/ + path updates"`
+**回滚tag**: `git tag pre-phase-2` (在Phase开始前创建)
 
-## 平台统计速览
-| 平台 | 已发布 | 待审核/待上传 | 失败/阻塞 | 总计 |
-|------|--------|---------------|-----------|------|
-| SkillHub | 1126 | 0 | 0 (历史16 retry_pending) | 1126 |
-| ClawHub | 855 published / 1152 DB | 502 (定时任务处理中) | 0 | 1357 |
-| GitHub (origin) | 1159 | 962 (未同步) | 0 | 2121 |
-| GitHub (hermes-skills) | 0 (首次推送待执行) | - | - | - |
+---
 
-## 审计质量速览
-| 层级 | 状态 | A级 | B级 | C+D+F级 | avg_score | issues |
-|------|------|-----|-----|---------|-----------|--------|
-| L4 功能质量 | ✅ | 2097 | 0 | 0 | 93.6 | 0 |
-| L5 可销售性 | ✅ | 2097 | 0 | 0 | 90.3 | 0 |
-| L6 内容真实性 | ✅ | 2097 | 0 | 0 | 100.0 | 0 |
-| L7a 语义模板 | ✅ | 2097 | 0 | 0 | 100.0 | 0 |
-| L7b 可执行性 | ✅ | 2097 | 0 | 0 | 100.0 | 0 |
-| L8 安全审计 | ✅ | 2097 | 0 | 0 | 100.0 | 0 |
-| Critical | ✅ | 0 critical, 0 warning, 0 info, 2097 OK | | | | |
+## Phase 3: 数据库清理和增强 (P0)
 
-## 版本同步流水线速览
-| 阶段 | 脚本 | 状态 |
-|------|------|------|
-| 1. DISCOVER | auto_discover.py + version_sync_pipeline.py scan | ✅ |
-| 2. ENHANCE | orchestrator.py enhance (基于审计报告) | ⚠️ 半自动 |
-| 3. INCREMENT | version_sync_pipeline.py increment_version() | ✅ |
-| 4. VALIDATE | deep_quality_audit.py (L1-L8) | ✅ |
-| 5. SYNC_GITHUB | version_sync_pipeline.py sync_to_github() 双仓库 | ✅ (策略已固化, 待首次推送) |
-| 6. SYNC_SKILLHUB | version_sync_pipeline.py sync_to_skillhub() | ⚠️ 付费版半自动 |
-| 7. SYNC_CLAWHUB | clawhub_batch_uploader.py (定时任务自动) | ✅ |
-| 8. RECORD | SQLite (versions + platform_uploads + operations) | ✅ |
+### Task 3.0: 数据库备份
+```bash
+cp d:\skills\skill-registry.db d:\skills\data\backups\skill-registry.db.pre-phase-3
+```
 
-## GitHub双仓库策略速览
-| 仓库 | Remote | URL | 可见性 | 推送内容 | 状态 |
-|------|--------|-----|--------|----------|------|
-| hermes-skills | hermes-skills | https://github.com/thcjp/hermes-skills | public | 仅免费skill | ⚠️ 待首次推送 |
-| origin | origin | https://github.com/thcjp/-.git | 建议private | 全部skill+项目代码 | ✅ 已推送 |
+### Task 3.1: 删除冗余数据库文件
+- 删除前验证每个文件确认为空或备份
+- 删除: skills.db(0字节), skill-registry.db.backup_20260720_092727, skill-registry.db.bak_pricing_fix, skill-registry/skill-registry.db(0字节), skill-registry/skills.db(0字节), skill-registry/skill_registry.db(0字节)
+- 保留: d:\skills\skill-registry.db (唯一数据库)
 
-## 定时任务速览
-| 任务名 | Schedule ID | Cron | 时区 | 状态 | 下次执行 | 执行次数 |
-|--------|-------------|------|------|------|----------|----------|
-| ClawHub每日自动上传 | 5f5e0baf | 0 12 * * * | Asia/Shanghai | Active | 2026-07-24 12:00 | 0 |
+### Task 3.2: 数据库schema增强
+```sql
+-- 仅新增free_slug和paid_slug(skill_type和source_slug已存在)
+-- 使用Python try/except包裹实现幂等
+ALTER TABLE skills ADD COLUMN free_slug TEXT;
+ALTER TABLE skills ADD COLUMN paid_slug TEXT;
+-- 索引名使用idx_skills_source_slug避免与已有idx_skills_source冲突
+CREATE INDEX IF NOT EXISTS idx_skills_source_slug ON skills(source_slug);
+CREATE INDEX IF NOT EXISTS idx_skills_free ON skills(free_slug);
+CREATE INDEX IF NOT EXISTS idx_skills_paid ON skills(paid_slug);
+```
+
+### Task 3.2b: 迁移skill_type值到三轨模型
+```sql
+-- 迁移前备份原始值
+ALTER TABLE skills ADD COLUMN skill_type_original TEXT;
+UPDATE skills SET skill_type_original = skill_type;
+
+-- 源skill
+UPDATE skills SET skill_type = 'source' WHERE skill_type IN ('original_download', 'clawhub_download');
+-- 免费版(根据edition判断,不一律映射)
+UPDATE skills SET skill_type = 'free' WHERE skill_type IN ('md_exec', 'opensource_modified', 'original_creation');
+UPDATE skills SET skill_type = 'free' WHERE skill_type = 'differentiated' AND (is_paid = 0 OR is_paid IS NULL);
+-- 付费版(differentiated中is_paid=1的)
+UPDATE skills SET skill_type = 'paid' WHERE skill_type = 'differentiated' AND is_paid = 1;
+-- NULL值根据local_path + edition综合判断
+UPDATE skills SET skill_type = 'source' WHERE skill_type IS NULL AND local_path LIKE '%clawhub-skills/downloaded%';
+UPDATE skills SET skill_type = 'paid' WHERE skill_type IS NULL AND edition IN ('paid', 'pro');
+UPDATE skills SET skill_type = 'free' WHERE skill_type IS NULL AND (local_path LIKE '%packaged-skills%' OR local_path LIKE '%hermes-skills%' OR local_path LIKE '%opensource-skills%' OR local_path LIKE '%differentiated-skills%');
+-- tool保持不变
+```
+
+### Task 3.2c: 规范化pricing_tier格式 (已修正运算符优先级)
+```sql
+-- 统一为带中文后缀的格式
+UPDATE skills SET pricing_tier = 'L1-入门级' WHERE pricing_tier = 'L1';
+UPDATE skills SET pricing_tier = 'L2-标准级' WHERE pricing_tier = 'L2';
+UPDATE skills SET pricing_tier = 'L3-专业级' WHERE pricing_tier = 'L3';
+UPDATE skills SET pricing_tier = 'L4-企业级' WHERE pricing_tier = 'L4';
+-- 填充NULL和空值(必须加括号!)
+UPDATE skills SET pricing_tier = 'L1-入门级' WHERE (pricing_tier IS NULL OR pricing_tier = '') AND (edition IS NULL OR edition = '' OR edition = 'free');
+UPDATE skills SET pricing_tier = 'L3-专业级' WHERE (pricing_tier IS NULL OR pricing_tier = '') AND edition IN ('pro', 'paid');
+-- 填充is_paid NULL值
+UPDATE skills SET is_paid = 1 WHERE edition IN ('paid', 'pro') AND is_paid IS NULL;
+UPDATE skills SET is_paid = 0 WHERE edition = 'free' AND is_paid IS NULL;
+```
+
+### Task 3.3: 填充三轨关联字段
+```sql
+-- source类型自引用
+UPDATE skills SET source_slug = slug WHERE skill_type = 'source' AND (source_slug IS NULL OR source_slug = '');
+-- free类型自引用
+UPDATE skills SET free_slug = slug WHERE skill_type = 'free' AND free_slug IS NULL;
+-- paid类型自引用
+UPDATE skills SET paid_slug = slug WHERE skill_type = 'paid' AND paid_slug IS NULL;
+-- 关联free和paid(同parent_slug,加排序保证确定性)
+UPDATE skills SET paid_slug = (
+    SELECT s2.slug FROM skills s2
+    WHERE s2.parent_slug = skills.parent_slug AND s2.skill_type = 'paid'
+    ORDER BY s2.updated_at DESC LIMIT 1
+) WHERE skill_type = 'free' AND paid_slug IS NULL AND parent_slug IS NOT NULL;
+-- 根据local_path推断剩余NULL的source_slug
+UPDATE skills SET source_slug = slug WHERE source_slug IS NULL AND local_path LIKE '%clawhub-skills/downloaded%';
+```
+
+### Task 3.4: 重建FTS (已修正列名)
+```sql
+-- FTS表实际列: slug, name, display_name, description, tags, category
+-- skills表对应: slug, current_name, current_display_name, notes(作为description), ''(tags), category
+BEGIN TRANSACTION;
+DELETE FROM skills_fts;
+INSERT INTO skills_fts(rowid, slug, name, display_name, description, tags, category)
+SELECT id, slug, current_name, current_display_name, COALESCE(notes, ''), '', category
+FROM skills WHERE current_status IN ('active', 'updated');
+COMMIT;
+```
+
+### Task 3.5: 创建看板视图 (已修正字段名和平台匹配)
+```sql
+CREATE VIEW IF NOT EXISTS v_skill_lifecycle AS
+WITH latest_uploads AS (
+    SELECT
+        skill_id,
+        CASE
+            WHEN platform IN ('skillhub', 'skillhub_free', 'skillhub_paid') THEN 'skillhub'
+            WHEN platform IN ('github', 'github_private', 'github_public') THEN 'github'
+            ELSE platform
+        END as platform_group,
+        platform, upload_status,
+        ROW_NUMBER() OVER (
+            PARTITION BY skill_id,
+            CASE
+                WHEN platform IN ('skillhub', 'skillhub_free', 'skillhub_paid') THEN 'skillhub'
+                WHEN platform IN ('github', 'github_private', 'github_public') THEN 'github'
+                ELSE platform
+            END,
+            ORDER BY upload_date DESC
+        ) as rn
+    FROM platform_uploads
+    WHERE platform != 'quality_gate'
+)
+SELECT
+    s.slug, s.current_display_name, s.skill_type,
+    s.source_slug, s.free_slug, s.paid_slug,
+    s.current_version, s.current_status,
+    s.pricing_tier, s.edition, s.is_paid,
+    s.category, s.source,
+    sh.upload_status as skillhub_status,
+    ch.upload_status as clawhub_status,
+    gh.upload_status as github_status,
+    s.updated_at as last_updated
+FROM skills s
+LEFT JOIN latest_uploads sh ON sh.skill_id = s.id AND sh.platform_group = 'skillhub' AND sh.rn = 1
+LEFT JOIN latest_uploads ch ON ch.skill_id = s.id AND ch.platform_group = 'clawhub' AND ch.rn = 1
+LEFT JOIN latest_uploads gh ON gh.skill_id = s.id AND gh.platform_group = 'github' AND gh.rn = 1
+WHERE s.current_status IN ('active', 'updated', 'stale');
+```
+
+### Task 3.6: 清理空表
+- 删除空表dependencies或添加注释标记为预留
+- 记录operations表约束不一致问题
+
+### Task 3.7: 导入hermes-skills到数据库
+- 扫描hermes-skills/目录759个SKILL.md
+- 解析frontmatter获取slug, displayName, version等
+- 插入skills表, skill_type='free', source='hermes'
+
+### Task 3.8: 数据库与文件系统对齐
+- 扫描所有6个产品目录的SKILL.md文件
+- 对比数据库记录, 识别差异
+- 缺失的导入, 多余的标记stale
+
+**验证标准**:
+- 仅1个数据库文件存在
+- `SELECT skill_type, COUNT(*) FROM skills GROUP BY skill_type` 显示source/free/paid/tool分布
+- `SELECT * FROM v_skill_lifecycle LIMIT 10` 正常返回
+- `SELECT COUNT(*) FROM skills_fts` > 0 (FTS不为空)
+- `SELECT COUNT(*) FROM skills WHERE pricing_tier IS NULL OR pricing_tier = ''` 返回0
+- `SELECT COUNT(*) FROM skills WHERE is_paid IS NULL` 返回0
+- pro/paid edition的skill没有被错误标记为L1-入门级
+
+**Git检查点**: `git add -A && git commit -m "Phase 3: database enhancement - three-track model + views + FTS rebuild"`
+
+---
+
+## Phase 4: 文档统一 (P1)
+
+### Task 4.1: 创建ARCHITECTURE.md
+唯一架构文档, 包含:
+- 项目概述和特色(收集→增强→拆分→上传)
+- 目录结构说明(config/, tools/, data/, docs/, 产品skill目录)
+- 8阶段流水线(以orchestrator.py为准, version_sync_pipeline.py实现其中7个Phase)
+- L1-L8审计体系
+- 平台策略(SkillHub/ClawHub/GitHub双仓库)
+- 数据库schema和三轨模型
+- 配置系统说明
+
+### Task 4.2: 重写README.md
+- 项目简介
+- 快速开始
+- 目录结构导航
+- 文档索引
+
+### Task 4.3: 统一流程描述
+- 删除/合并其他文档中的流水线描述
+- 统一为8阶段(orchestrator.py为准)
+- 统一审计层数为L1-L8
+
+### Task 4.4: 修正三轨模型描述
+- 付费版: differentiated-skills/中edition=paid/pro的(713个) + enterprise-upload/(2个)
+- 免费版: packaged-skills/skillhub/(995个) + hermes-skills/(759个) + opensource-skills/(40个) + differentiated-skills/中edition=free的
+- 源: clawhub-skills/downloaded/(600个)
+
+### Task 4.5: 清理冗余文档
+- 删除v1审核报告, 保留v2
+- 归档历史Round计划到docs/plans/archive/
+- 合并UPLOAD-GUIDE.md → docs/ARCHITECTURE.md
+- 移动顶层报告到docs/reports/
+
+**验证标准**:
+- ARCHITECTURE.md存在且包含完整架构描述
+- README.md有实质内容
+- 0个v1审核报告
+- 流水线描述仅1处(8阶段)
+
+**Git检查点**: `git add -A && git commit -m "Phase 4: documentation unification - ARCHITECTURE.md + README + cleanup"`
+
+---
+
+## Phase 5: 顶层文件清理 (P2)
+
+### Task 5.1: 移动顶层文件
+- 13个.md报告文件 → docs/reports/
+- clawhub-config.json → config/
+- skill_verification_report.html → 删除(临时文件)
+
+### Task 5.2: 清理空目录
+- 检查并删除packaged-skills/下的空目录
+
+### Task 5.3: 重命名凭证目录
+- `.skillhub-credentials/` → `.credentials/`
+- 更新所有脚本和.gitignore中的引用
+
+### Task 5.4: 更新.gitignore
+- 添加: data/backups/, .credentials/, config/secrets.py
+- 移除: 过时的路径规则
+
+**验证标准**:
+- 顶层仅保留: config/, tools/, data/, docs/, 产品skill目录, .credentials/, skill-registry.db, .gitignore, README.md
+- 0个空目录
+
+**Git检查点**: `git add -A && git commit -m "Phase 5: top-level cleanup - moved files + renamed credentials"`
+
+---
+
+## Phase 6: 每日同步与看板 (P0 - 用户核心要求)
+
+### Task 6.1: 修改dashboard_server.py使用视图
+- 将直接查表改为`SELECT * FROM v_skill_lifecycle`
+- 看板UI增加三轨状态列(source/free/paid)
+- 看板UI增加各平台上传状态列(skillhub/clawhub/github)
+- 看板UI增加pricing_tier和edition显示
+
+### Task 6.2: 创建每日同步脚本
+- 创建 `tools/daily_sync.py`:
+  - 扫描变更(version_sync_pipeline.py scan)
+  - 同步GitHub(免费→hermes-skills, 全部→origin)
+  - 同步SkillHub(免费CLI + 付费payload)
+  - 同步ClawHub(定时任务已有)
+  - 记录到数据库
+  - 生成每日同步报告
+
+### Task 6.3: 配置每日定时任务
+- 创建Windows定时任务或使用Schedule工具
+- 每日固定时间执行daily_sync.py
+- 与现有ClawHub定时任务(5f5e0baf)协调
+
+**验证标准**:
+- `python tools/dashboard_server.py` 启动后看板显示三轨状态
+- `python tools/daily_sync.py --dry-run` 正常输出同步计划
+- 看板数据来自v_skill_lifecycle视图(非直接查表)
+
+**Git检查点**: `git add -A && git commit -m "Phase 6: daily sync + dashboard view integration"`
+
+---
+
+## Phase 7: 全量验证 (P0)
+
+### Task 7.1: 脚本运行验证
+- `python tools/orchestrator.py status` 正常输出
+- `python tools/version_sync_pipeline.py scan` 正常输出
+- `python tools/deep_quality_audit.py` 正常运行
+- `python tools/clawhub_batch_uploader.py --dry-run` 正常运行
+- `python tools/dashboard_server.py` 正常启动
+
+### Task 7.2: 配置一致性验证
+- `grep -rn "d:\\\\skills\\\\skill-registry.db" tools/ config/` 返回0结果
+- `grep -rn "d:\\\\skills\\\\differentiated-skills" tools/` 返回0结果
+- `grep -rn "skill-registry" tools/*.py` 仅出现在注释中
+- 所有脚本的DB_PATH来自config
+
+### Task 7.3: 数据库完整性验证
+- skills表记录数与文件系统对齐
+- v_skill_lifecycle视图可查询且数据正确
+- FTS搜索功能可用
+- 三轨字段(skill_type/source_slug/free_slug/paid_slug)正确填充
+
+### Task 7.4: 三轨模型验证
+- `SELECT skill_type, COUNT(*) FROM skills GROUP BY skill_type` 分布合理
+- `SELECT COUNT(*) FROM skills WHERE skill_type = 'paid' AND edition NOT IN ('paid', 'pro')` 返回0
+- `SELECT COUNT(*) FROM skills WHERE pricing_tier = 'L1-入门级' AND edition IN ('pro', 'paid')` 返回0
+
+### Task 7.5: Git提交和推送
+- 提交所有变更
+- 推送到origin(私有备份)
+- 验证hermes-skills仓库状态
+
+**验证标准**:
+- 所有脚本正常运行
+- 0个硬编码路径
+- 数据库完整且正确
+- 三轨模型数据准确
+
+**Git检查点**: `git add -A && git commit -m "Phase 7: full validation passed"`
+**最终推送**: `git push origin main`
+
+---
+
+## 修正后的三轨模型(唯一权威)
+
+| 轨道 | skill_type | 主要目录 | 实际数量 | 判定依据 |
+|------|-----------|----------|----------|----------|
+| 源 | source | clawhub-skills/downloaded/ | 600 | 从外部下载的原始skill |
+| 免费版 | free | packaged-skills/skillhub/ + hermes-skills/ + opensource-skills/packaged/ + differentiated-skills/(edition=free) | ~2121 | edition=free或is_paid=0 |
+| 付费版 | paid | differentiated-skills/(edition=paid/pro) + enterprise-upload/ | ~715 | edition=paid/pro或is_paid=1 |
+| 工具 | tool | tools/ | 8 | 项目工具脚本 |
+
+## 修正后的8阶段流水线(唯一权威)
+
+```
+1. DISCOVER     - 发现新skill + 检测已有skill变更 (orchestrator.py phase_discover)
+2. ENHANCE      - 内容增强建议 (orchestrator.py phase_enhance)
+3. AUDIT        - L1-L8全量质量审计 (orchestrator.py phase_audit)
+4. SYNC_GITHUB  - GitHub双仓库同步 (version_sync_pipeline.py sync_to_github)
+5. SYNC_SKILLHUB - SkillHub免费+付费同步 (version_sync_pipeline.py sync_to_skillhub)
+6. SYNC_CLAWHUB  - ClawHub同步 (clawhub_batch_uploader.py)
+7. RECORD       - 数据库记录 (version_sync_pipeline.py record_platform_upload)
+8. REPORT       - 生成报告 (orchestrator.py phase_report)
+```
+注: version_sync_pipeline.py实现其中Phase 4-7的子流程(DETECT→INCREMENT→VALIDATE→SYNC→RECORD)
+
+## 修正后的平台策略(唯一权威)
+
+| 平台 | 免费版 | 付费版 | 上传方式 | 限流 |
+|------|--------|--------|----------|------|
+| SkillHub | CLI publish | 浏览器session | skillhub publish | WAF 5800字符 |
+| ClawHub | 全部免费 | 10%引流 | clawhub_batch_uploader.py | 200/24h |
+| GitHub hermes-skills | 仅免费 | 不推送 | git push hermes-skills | 无 |
+| GitHub origin | 全部 | 全部 | git push origin | 无 |
 
 ## Git提交记录
 | 轮次 | Commit | 文件数 | 变更行数 |
 |------|--------|--------|----------|
-| Round 36 | 58542b46 | 63 | +1705/-24084 |
-| Round 36 | d8e61e8d | 1 | +192 |
-| Round 37 | 081cf7f0 | 2105 | +60051/-89044 |
-| Round 38 | d8412748 | 35 | +7216/-435 |
-| Round 39 | 73214748 | 8 | +12328/-15 |
-| Round 39 | 4679c803 | 1158 skills | batch version upgrade |
-| Round 39 | 27101ea3 | 8 | +12328/-15 |
 | Round 40 | cadc4889 | 14 | +646/-2082 |
+| Round 41 Phase 1 | (待提交) | - | - |
+| Round 41 Phase 2 | (待提交) | - | - |
+| Round 41 Phase 3 | (待提交) | - | - |
+| Round 41 Phase 4 | (待提交) | - | - |
+| Round 41 Phase 5 | (待提交) | - | - |
+| Round 41 Phase 6 | (待提交) | - | - |
+| Round 41 Phase 7 | (待提交) | - | - |

@@ -18,9 +18,16 @@ import os, json, re, hashlib
 from datetime import datetime
 from pathlib import Path
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "config"))
+from project_config import TOOLS_DIR, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR
+from project_config import CLAWHUB_DOWNLOADED_DIR, DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
 NOW = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-DB_FILE = Path(r"D:\skills\skill-registry\upload_tracking.json")
-REPORT_FILE = Path(r"D:\skills\skill-registry\upgrade_report.json")
+DB_FILE = TOOLS_DIR / "upload_tracking.json"
+REPORT_FILE = TOOLS_DIR / "upgrade_report.json"
 
 def load_db():
     with open(DB_FILE, "r", encoding="utf-8") as f:
@@ -81,12 +88,12 @@ def cmd_check():
     skills = db["skills"]
     
     # 扫描源skill目录
-    clawhub_source = find_all_skills(r"D:\skills\clawhub-skills")
-    opensource_source = find_all_skills(r"D:\skills\opensource-skills")
-    
+    clawhub_source = find_all_skills(str(CLAWHUB_DOWNLOADED_DIR.parent))
+    opensource_source = find_all_skills(str(OPENSOURCE_SKILLS_DIR.parent))
+
     # 扫描生产skill目录
-    packaged = find_all_skills(r"D:\skills\packaged-skills\skillhub")
-    diff_skills = find_all_skills(r"D:\skills\differentiated-skills")
+    packaged = find_all_skills(str(PACKAGED_SKILLS_DIR))
+    diff_skills = find_all_skills(str(DIFFERENTIATED_DIR))
     
     print(">>> 执行升级检查...")
     

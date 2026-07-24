@@ -11,13 +11,21 @@ Skill项目版本管理SQLite数据库
 6. sources - 来源信息（clawhub下载、原创、开源修改）
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+# === End Phase 1 ===
+
+
 import sqlite3
 import json
 from pathlib import Path
 from datetime import datetime
 import hashlib
 
-DB_PATH = r"d:\skills\skill-registry.db"
+# DB_PATH imported from config
 
 def init_database():
     """初始化数据库，创建所有表"""

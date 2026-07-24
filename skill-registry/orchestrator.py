@@ -31,6 +31,18 @@
   - 禁止任何mock/fallback/skip
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import PROJECT_ROOT
+from project_config import DB_PATH
+from project_config import TOOLS_DIR
+# === End Phase 1 ===
+SKILLS_ROOT = PROJECT_ROOT
+SKILL_REGISTRY_DIR = TOOLS_DIR
+
+
 import argparse
 import json
 import sqlite3
@@ -45,9 +57,9 @@ from typing import Any, Dict, List, Optional
 # 配置
 # ============================================================
 
-DB_PATH = r"d:\skills\skill-registry.db"
-SKILLS_ROOT = Path(r"d:\skills")
-SKILL_REGISTRY_DIR = SKILLS_ROOT / "skill-registry"
+# DB_PATH imported from config
+# SKILLS_ROOT = PROJECT_ROOT (imported from config)
+# SKILL_REGISTRY_DIR = TOOLS_DIR (imported from config)
 
 # 脚本路径
 DISCOVER_SCRIPT = SKILL_REGISTRY_DIR / "auto_discover.py"

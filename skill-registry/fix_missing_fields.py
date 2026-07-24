@@ -6,6 +6,14 @@ Fix MISSING_TOOLS / MISSING_TAGS / MISSING_SLUG / MISSING_VERSION / MISSING_NAME
 Scans all SKILL.md files, detects missing frontmatter fields, and adds them
 with inferred values based on content analysis.
 """
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
 import re
 import json
 from pathlib import Path
@@ -14,7 +22,7 @@ from datetime import datetime
 SCAN_DIRS = [
     Path(r"d:\skills\packaged-skills\skillhub"),
     Path(r"d:\skills\opensource-skills\packaged"),
-    Path(r"d:\skills\differentiated-skills"),
+    DIFFERENTIATED_DIR,
 ]
 
 # Default tools by category keywords in slug/path

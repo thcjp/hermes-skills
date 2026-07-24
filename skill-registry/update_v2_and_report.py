@@ -2,11 +2,20 @@
 更新数据库：记录v2 skill的上传结果 + 重新扫描目录
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import sqlite3
 from datetime import datetime
 from pathlib import Path
 
-DB_PATH = r'd:\skills\skill-registry.db'
+# DB_PATH imported from config
 
 def update_v2_uploads():
     """记录v2 skill的clawhub上传结果"""
@@ -63,7 +72,7 @@ def update_v2_uploads():
               f'Uploaded {new_slug} v1.0.0 to clawhub', 'published'))
 
     # Also register skill-production-standards
-    skill_path = r'd:\skills\differentiated-skills\Agents\skill-production-standards'
+    skill_path = r'str(DIFFERENTIATED_DIR)\Agents\skill-production-standards'
     c.execute("SELECT id FROM skills WHERE slug = 'skill-production-standards'")
     if not c.fetchone():
         c.execute("""

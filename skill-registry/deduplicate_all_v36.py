@@ -1,3 +1,11 @@
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
 # -*- coding: utf-8 -*-
 """
 L7A 全量去重脚本 v36
@@ -5,7 +13,7 @@ L7A 全量去重脚本 v36
 覆盖全部3个目录:
   - d:\skills\packaged-skills\skillhub
   - d:\skills\opensource-skills\packaged
-  - d:\skills\differentiated-skills
+  - str(DIFFERENTIATED_DIR)
 
 处理三类问题:
   a. 修复重复章节标题(如 ## 付费版专享能力 / ## 已知限制 出现2次) - 合并内容或重命名
@@ -31,7 +39,7 @@ from collections import Counter
 SCAN_DIRS = [
     Path(r"d:\skills\packaged-skills\skillhub"),
     Path(r"d:\skills\opensource-skills\packaged"),
-    Path(r"d:\skills\differentiated-skills"),
+    DIFFERENTIATED_DIR,
 ]
 
 REPORT_OUTPUT = Path(r"d:\skills\skill-registry\reports\dedup_all_v36.json")

@@ -15,6 +15,20 @@ Skill 自动更新机制主控脚本
   python update_mechanism.py report             # 生成更新报告(给AI分析用)
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+from project_config import TOOLS_DIR
+from project_config import DB_PATH
+from project_config import CLAWHUB_DOWNLOADED_DIR
+from project_config import PROJECT_ROOT
+# === End Phase 1 ===
+SKILLS_ROOT = PROJECT_ROOT
+SKILL_REGISTRY_DIR = TOOLS_DIR
+
+
 import argparse
 import json
 import sqlite3
@@ -35,15 +49,15 @@ from typing import Any, Dict, List, Optional, Tuple
 # 配置
 # ============================================================
 
-DB_PATH = r"d:\skills\skill-registry.db"
-SKILLS_ROOT = Path(r"d:\skills")
-SKILL_REGISTRY_DIR = Path(r"d:\skills\skill-registry")
+# DB_PATH imported from config
+# SKILLS_ROOT = PROJECT_ROOT (imported from config)
+# SKILL_REGISTRY_DIR = TOOLS_DIR (imported from config)
 PAYLOADS_DIR = Path(r"c:\Users\thcd\.trae-cn\work\6a5cf90c2aab822b9b427eb5\payloads")
 ENTERPRISE_UPLOAD_DIR = SKILLS_ROOT / "enterprise-upload"
 PACKAGED_SKILLS_DIR = SKILLS_ROOT / "packaged-skills" / "skillhub"
 OPENSOURCE_SKILLS_DIR = SKILLS_ROOT / "opensource-skills" / "packaged"
-DIFFERENTIATED_SKILLS_DIR = SKILLS_ROOT / "differentiated-skills"
-CLAWHUB_DOWNLOADED_DIR = SKILLS_ROOT / "clawhub-skills" / "downloaded"
+# DIFFERENTIATED_SKILLS_DIR = DIFFERENTIATED_DIR (imported from config)
+# CLAWHUB_DOWNLOADED_DIR imported from config
 
 # clawhub 来源URL模式: https://clawhub.ai/{author}/skills/{slug}
 CLAWHUB_URL_PATTERN = re.compile(r"https?://clawhub\.ai/[^/]+/skills/([^/]+)")

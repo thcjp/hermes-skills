@@ -22,6 +22,14 @@
     python template_cleanup.py --report     # 仅生成报告
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import re
 import json
 import sys
@@ -29,7 +37,7 @@ from pathlib import Path
 from datetime import datetime
 
 PACKAGED_DIR = Path(r"D:\skills\packaged-skills\skillhub")
-DIFFERENTIATED_DIR = Path(r"D:\skills\differentiated-skills")
+# DIFFERENTIATED_DIR imported from config
 REGISTRY_DIR = Path(r"D:\skills\skill-registry")
 
 # 需要移除的模板section patterns (匹配整个section包括内容)

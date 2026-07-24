@@ -16,6 +16,14 @@ Usage:
     python skill_batch_upgrader_v3.py report          # 生成合规报告
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+# === End Phase 1 ===
+
+
 import os
 import re
 import sys
@@ -33,7 +41,7 @@ from skill_batch_upgrader_v2 import (
     generate_section_content, upgrade_skill
 )
 
-DB_PATH = r"d:\skills\skill-registry.db"
+# DB_PATH imported from config
 
 # v3.0新增: 夸大词替换映射
 EXAGGERATION_MAP = {

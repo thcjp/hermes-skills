@@ -24,6 +24,14 @@ Usage:
     python diff_l4_batch_fix.py --slug xxx   # 只修复指定slug
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import sys
 import re
 import json
@@ -39,7 +47,7 @@ from typing import Tuple, List
 SKILL_REGISTRY_DIR = Path(__file__).parent
 sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
-DIFFERENTIATED_DIR = Path(r'D:\skills\differentiated-skills')
+# DIFFERENTIATED_DIR imported from config
 REPORT_PATH = SKILL_REGISTRY_DIR / 'diff_l4_fix_report.json'
 
 from skill_core.parser import parse_frontmatter as _parse_fm

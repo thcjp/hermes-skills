@@ -10,6 +10,14 @@ Usage:
     python clawhub_batch_uploader.py --dry-run          # Dry run (no actual upload)
     python clawhub_batch_uploader.py --resume            # Resume from last checkpoint
 """
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
 import json
 import subprocess
 import sys
@@ -35,7 +43,7 @@ CHANGELOG = "L7b quality fix - VAGUE_TASK cleared, input/output sections added"
 ALT_DIRS = [
     Path(r"D:\skills\packaged-skills\skillhub"),
     Path(r"D:\skills\opensource-skills\packaged"),
-    Path(r"D:\skills\differentiated-skills"),
+    DIFFERENTIATED_DIR,
 ]
 
 

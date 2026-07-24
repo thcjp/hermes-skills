@@ -15,6 +15,18 @@ Skill 自动发现系统
   python auto_discover.py import <slug>           # 导入指定skill到本地
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import PROJECT_ROOT
+from project_config import DB_PATH
+from project_config import CLAWHUB_DOWNLOADED_DIR
+from platform_config import GITHUB_REPOS
+# === End Phase 1 ===
+SKILLS_ROOT = PROJECT_ROOT
+
+
 import argparse
 import json
 import sqlite3
@@ -38,9 +50,9 @@ from skill_core.parser import parse_frontmatter as _parse_fm
 # 配置
 # ============================================================
 
-DB_PATH = r"d:\skills\skill-registry.db"
-SKILLS_ROOT = Path(r"d:\skills")
-CLAWHUB_DOWNLOADED_DIR = SKILLS_ROOT / "clawhub-skills" / "downloaded"
+# DB_PATH imported from config
+# SKILLS_ROOT = PROJECT_ROOT (imported from config)
+# CLAWHUB_DOWNLOADED_DIR imported from config
 DISCOVERY_DIR = SKILLS_ROOT / "skill-registry" / "discovery"
 CANDIDATES_FILE = DISCOVERY_DIR / "candidates.json"
 
@@ -49,13 +61,7 @@ CLAWHUB_API_BASE = "https://clawhub.ai/api"
 CLAWHUB_MIRROR = "https://mirror-cn.clawhub.com/api"
 
 # GitHub 来源仓库
-GITHUB_REPOS = [
-    {"owner": "anthropics", "repo": "skills", "license": "Apache-2.0", "star": "157k"},
-    {"owner": "obra", "repo": "superpowers", "license": "MIT", "star": "213k"},
-    {"owner": "addyosmani", "repo": "agent-skills", "license": "MIT", "star": "68k"},
-    {"owner": "ComposioHQ", "repo": "awesome-claude-skills", "license": "mixed", "star": "66k"},
-    {"owner": "VoltAgent", "repo": "awesome-openclaw-skills", "license": "mixed", "star": "51k"},
-]
+# GITHUB_REPOS imported from config
 
 # ClawHub 分类映射
 CLAWHUB_CATEGORIES = [

@@ -16,6 +16,14 @@ SkillHub/ClawHub 自动化审核系统
     python automated_review_system.py sync-log     # 查看同步日志
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import json
 import os
 import re
@@ -27,7 +35,7 @@ from datetime import datetime
 
 # 路径配置
 PACKAGED_DIR = Path(r"D:\skills\packaged-skills\skillhub")
-DIFFERENTIATED_BASE = Path(r"D:\skills\differentiated-skills")
+# DIFFERENTIATED_BASE = DIFFERENTIATED_DIR (imported from config)
 REGISTRY_DIR = Path(r"D:\skills\skill-registry")
 TRACKING_FILE = REGISTRY_DIR / "upload_tracking.json"
 AUDIT_LOG = REGISTRY_DIR / "upload_audit_log.jsonl"

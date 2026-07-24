@@ -14,6 +14,14 @@ Converts our SKILL.md format to agentskills.io standard:
 Also evaluates all free skills for Hermes publication eligibility.
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import json
 import re
 from pathlib import Path
@@ -21,7 +29,7 @@ from datetime import datetime
 
 DB_FILE = Path(r"D:\skills\skill-registry\upload_tracking.json")
 PACKAGED_DIR = Path(r"D:\skills\packaged-skills\skillhub")
-DIFFERENTIATED_DIR = Path(r"D:\skills\differentiated-skills")
+# DIFFERENTIATED_DIR imported from config
 NOW = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
 def parse_frontmatter(content):

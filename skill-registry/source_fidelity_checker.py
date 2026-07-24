@@ -26,6 +26,14 @@ Usage:
     python source_fidelity_checker.py --batch --limit 50
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import sys
 import re
 import json
@@ -42,7 +50,7 @@ from config import PACKAGED_SKILLS_DIR
 # 源skill目录 (多个可能的源)
 SOURCE_DIRS = [
     Path(r'D:\skills\clawhub-skills\downloaded'),
-    Path(r'D:\skills\differentiated-skills'),
+    DIFFERENTIATED_DIR,
 ]
 # 兼容旧代码
 SOURCE_DIR = SOURCE_DIRS[0]

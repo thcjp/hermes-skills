@@ -3,6 +3,15 @@
 检查SKILL.md中是否包含禁止的标识词
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import re
 import sys
 from pathlib import Path
@@ -189,7 +198,7 @@ def generate_report(results, output_file=None):
 
 def update_database_with_check_results(results):
     """将检测结果更新到数据库"""
-    conn = sqlite3.connect(r'd:\skills\skill-registry.db')
+    conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
 
     now = datetime.now().isoformat()
@@ -231,7 +240,7 @@ def update_database_with_check_results(results):
 
 if __name__ == '__main__':
 
-    target_dir = sys.argv[1] if len(sys.argv) > 1 else r'd:\skills\differentiated-skills'
+    target_dir = sys.argv[1] if len(sys.argv) > 1 else r'str(DIFFERENTIATED_DIR)'
 
     # Exclude the skill-production-standards itself (it documents the detection rules)
     exclude_dirs = ['skill-production-standards']

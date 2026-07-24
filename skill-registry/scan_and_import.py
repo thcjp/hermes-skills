@@ -1,10 +1,19 @@
 """
 扫描所有现有skill目录，导入到SQLite数据库
 - d:\skills\clawhub-skills\downloaded\ (原始下载)
-- d:\skills\differentiated-skills\ (已差异化)
+- str(DIFFERENTIATED_DIR)\ (已差异化)
 - d:\skills\opensource-skills\packaged\ (开源改造)
 - d:\skills\packaged-skills\skillhub\ (skillhub打包)
 """
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
 
 import sys
 import os
@@ -24,7 +33,7 @@ SCAN_DIRS = [
         'is_differentiated': 0
     },
     {
-        'path': r'd:\skills\differentiated-skills',
+        'path': r'str(DIFFERENTIATED_DIR)',
         'source': 'clawhub_download',
         'skill_type': 'differentiated',
         'is_differentiated': 1
@@ -215,7 +224,7 @@ def import_skills_to_db(skills):
             status = 'registered'
 
         import sqlite3
-        conn = sqlite3.connect(r'd:\skills\skill-registry.db')
+        conn = sqlite3.connect(DB_PATH)
         c = conn.cursor()
         c.execute("UPDATE skills SET current_status = ? WHERE id = ?", (status, skill_id))
         conn.commit()
@@ -231,7 +240,7 @@ def import_upload_logs():
     import sqlite3
     import csv
 
-    conn = sqlite3.connect(r'd:\skills\skill-registry.db')
+    conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
 
     # Import clawhub upload log (original)
@@ -267,7 +276,7 @@ def import_upload_logs():
                 )
 
     # Import differentiated skills upload log
-    diff_log = r'd:\skills\differentiated-skills\upload-log.csv'
+    diff_log = r'str(DIFFERENTIATED_DIR)\upload-log.csv'
     if Path(diff_log).exists():
         with open(diff_log, 'r', encoding='utf-8-sig') as f:
             reader = csv.DictReader(f)
@@ -303,7 +312,7 @@ def import_upload_logs():
 def print_stats():
     """打印统计信息"""
     import sqlite3
-    conn = sqlite3.connect(r'd:\skills\skill-registry.db')
+    conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
 
     print("\n" + "=" * 60)

@@ -28,6 +28,14 @@ Usage:
     Step 8: 汇总结果, 输出JSON报告
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import sys
 import json
 import re
@@ -971,7 +979,7 @@ def find_original_skill_md(slug: str) -> Optional[Path]:
                 return skill_path
 
     # 2. differentiated-skills (差异化版本)
-    diff_root = Path(r"d:\skills\differentiated-skills")
+    diff_root = DIFFERENTIATED_DIR
     if diff_root.exists():
         for category_dir in diff_root.iterdir():
             if not category_dir.is_dir():

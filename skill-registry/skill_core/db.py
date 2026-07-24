@@ -5,16 +5,21 @@ skill_core.db - DB连接(单一来源)
 完整的register_skill等业务函数仍在主db.py中(避免大规模迁移风险)
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+# === End Phase 1 ===
+
+
 import sqlite3
 from pathlib import Path
 
 # DB路径(单一来源, 消除5模块硬编码)
 # 优先使用环境变量, 其次默认路径
 import os
-DB_PATH = os.environ.get(
-    'SKILL_REGISTRY_DB',
-    r"d:\skills\skill-registry.db"
-)
+# DB_PATH imported from config
 
 
 def get_db():

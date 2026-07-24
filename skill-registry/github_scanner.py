@@ -10,6 +10,15 @@ GitHub Skill 来源扫描器
 - 增量扫描（跳过已入库的）
 - 输出结构化候选列表
 """
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+from platform_config import GITHUB_REPOS
+# === End Phase 1 ===
+
 import json
 import sqlite3
 import urllib.request
@@ -27,52 +36,11 @@ if _sys_path not in sys.path:
     sys.path.insert(0, _sys_path)
 from skill_core.parser import parse_frontmatter as _parse_fm
 
-DB_PATH = r"d:\skills\skill-registry.db"
-CANDIDATES_FILE = Path(r"d:\skills\skill-registry\discovery\github-candidates.json")
+# DB_PATH imported from config
+from project_config import TOOLS_DIR as _TOOLS_DIR
+CANDIDATES_FILE = _TOOLS_DIR / "discovery" / "github-candidates.json"
 
-# GitHub 来源仓库配置
-GITHUB_REPOS = [
-    {
-        "owner": "anthropics",
-        "repo": "skills",
-        "license": "Apache-2.0",
-        "star": "157k",
-        "skill_dirs": ["skills"],  # skill所在子目录
-        "description": "Anthropic官方skill集合"
-    },
-    {
-        "owner": "obra",
-        "repo": "superpowers",
-        "license": "MIT",
-        "star": "213k",
-        "skill_dirs": ["skills"],
-        "description": "Superpowers框架skill集合"
-    },
-    {
-        "owner": "addyosmani",
-        "repo": "agent-skills",
-        "license": "MIT",
-        "star": "68k",
-        "skill_dirs": ["skills"],
-        "description": "工程类agent skill"
-    },
-    {
-        "owner": "ComposioHQ",
-        "repo": "awesome-claude-skills",
-        "license": "mixed",
-        "star": "66k",
-        "skill_dirs": ["skills"],
-        "description": "1000+应用集成skill"
-    },
-    {
-        "owner": "VoltAgent",
-        "repo": "awesome-openclaw-skills",
-        "license": "mixed",
-        "star": "51k",
-        "skill_dirs": ["skills"],
-        "description": "OpenClaw生态skill集合"
-    },
-]
+# GitHub 来源仓库配置 - GITHUB_REPOS imported from config
 
 def fetch_json(url: str, timeout: int = 15) -> Optional[Any]:
     """获取JSON响应"""

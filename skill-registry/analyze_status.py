@@ -3,12 +3,20 @@ Skill项目状态分析报告
 分析：已优化/未优化、已上传/未上传、收费/免费、去除标识检测
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+# === End Phase 1 ===
+
+
 import sqlite3
 import sys
 from pathlib import Path
 from datetime import datetime
 
-DB_PATH = r'd:\skills\skill-registry.db'
+# DB_PATH imported from config
 
 
 def analyze_status():

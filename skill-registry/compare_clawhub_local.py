@@ -2,13 +2,20 @@
 """Compare ClawHub published skills with local packaged skills to find old skills to withdraw."""
 import json
 import os
+import sys
+from pathlib import Path
+
+# === Phase 1: 统一配置导入 ===
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "config"))
+from project_config import TOOLS_DIR, PACKAGED_SKILLS_DIR, DIFFERENTIATED_DIR
+# === End Phase 1 ===
 
 # Load ClawHub published slugs
-with open(r"D:\skills\skill-registry\clawhub_published_slugs.json", "r", encoding="utf-8") as f:
+with open(str(TOOLS_DIR / "clawhub_published_slugs.json"), "r", encoding="utf-8") as f:
     clawhub_slugs = set(json.load(f))
 
 # Get local packaged skill folder names
-local_skills_dir = r"D:\skills\packaged-skills\skillhub"
+local_skills_dir = str(PACKAGED_SKILLS_DIR)
 local_slugs = set()
 for item in os.listdir(local_skills_dir):
     item_path = os.path.join(local_skills_dir, item)
@@ -16,7 +23,7 @@ for item in os.listdir(local_skills_dir):
         local_slugs.add(item)
 
 # Also get differentiated skill slugs
-diff_skills_dir = r"D:\skills\differentiated-skills"
+diff_skills_dir = str(DIFFERENTIATED_DIR)
 diff_slugs = set()
 if os.path.exists(diff_skills_dir):
     for category in os.listdir(diff_skills_dir):

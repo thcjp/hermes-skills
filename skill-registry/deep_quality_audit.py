@@ -70,6 +70,14 @@ Layer 8 (安全审计 Security Audit):
     - 控制台汇总统计 (含功能质量+可销售性)
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import json
 import os
 import re
@@ -84,7 +92,7 @@ import config as _cfg
 # ============ 路径配置 ============
 # 优先使用 config.py 中的常量，回退到原始字符串路径
 PACKAGED_DIR = getattr(_cfg, 'PACKAGED_SKILLS_DIR', Path(r"D:\skills\packaged-skills\skillhub"))
-DIFFERENTIATED_DIR = Path(r"D:\skills\differentiated-skills")
+# DIFFERENTIATED_DIR imported from config
 REGISTRY_DIR = getattr(_cfg, 'REGISTRY_DIR', Path(r"D:\skills\skill-registry"))
 REPORT_PATH = REGISTRY_DIR / "deep_quality_audit_report.json"
 

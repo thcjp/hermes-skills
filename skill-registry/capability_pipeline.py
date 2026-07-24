@@ -18,6 +18,15 @@ Usage:
     python capability_pipeline.py --stats          # 查看统计信息
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+from project_config import CLAWHUB_DOWNLOADED_DIR
+# === End Phase 1 ===
+
+
 import sys
 import json
 import argparse
@@ -33,8 +42,8 @@ from config import get_db_connection, PACKAGED_SKILLS_DIR
 from l2_capability_checker import evaluate_capability
 
 # 源skill目录
-CLAWHUB_DOWNLOADED_DIR = Path(r'D:\skills\clawhub-skills\downloaded')
-DIFFERENTIATED_DIR = Path(r'D:\skills\differentiated-skills')
+# CLAWHUB_DOWNLOADED_DIR imported from config
+# DIFFERENTIATED_DIR imported from config
 
 # 质量阈值
 CAP_PASS_THRESHOLD = 70

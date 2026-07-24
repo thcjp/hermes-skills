@@ -14,6 +14,14 @@ slug-based简单工具惩罚
 4. 更新SKILL.md frontmatter (suggested_price, pricing_tier, pricing_model)
 5. 报告分布
 """
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DB_PATH
+# === End Phase 1 ===
+
 import re
 import sqlite3
 import shutil
@@ -21,7 +29,7 @@ from pathlib import Path
 from datetime import datetime
 from collections import Counter
 
-DB_PATH = r'd:\skills\skill-registry.db'
+# DB_PATH imported from config
 
 # ============ 评分维度关键词 ============
 

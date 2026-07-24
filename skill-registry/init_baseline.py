@@ -6,6 +6,16 @@
 3. 导入 enterprise-upload 中的企业版skill到数据库
 4. 为所有skill计算并存储content_hash基线
 """
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import PROJECT_ROOT
+from project_config import DB_PATH
+# === End Phase 1 ===
+SKILLS_ROOT = PROJECT_ROOT
+
 import sqlite3
 import hashlib
 import os
@@ -20,8 +30,8 @@ if _sys_path not in sys.path:
     sys.path.insert(0, _sys_path)
 from skill_core.parser import parse_frontmatter as _parse_fm
 
-DB_PATH = r"d:\skills\skill-registry.db"
-SKILLS_ROOT = Path(r"d:\skills")
+# DB_PATH imported from config
+# SKILLS_ROOT = PROJECT_ROOT (imported from config)
 
 def compute_file_hash(file_path):
     h = hashlib.sha256()

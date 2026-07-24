@@ -18,13 +18,21 @@
   修复4: free版本升级提示 (L4-6)
          - slug以-free结尾且缺升级关键词  →  在已知限制中添加升级提示
 """
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
 import sys
 import re
 import json
 from pathlib import Path
 from datetime import datetime
 
-DIFFERENTIATED_DIR = Path(r'D:\skills\differentiated-skills')
+# DIFFERENTIATED_DIR imported from config
 REPORT_PATH = Path(r'D:\skills\skill-registry\diff_fix_report.json')
 
 # 非能力点标题(元信息/补充说明)，这些###标题不当作能力点处理

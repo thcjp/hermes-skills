@@ -14,6 +14,14 @@ Conversion rules:
 Output: D:\skills\hermes-skills\ (converted copies ready for GitHub publishing)
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import json
 import re
 import shutil
@@ -22,7 +30,7 @@ from datetime import datetime
 
 DB_FILE = Path(r"D:\skills\skill-registry\upload_tracking.json")
 PACKAGED_DIR = Path(r"D:\skills\packaged-skills\skillhub")
-DIFFERENTIATED_DIR = Path(r"D:\skills\differentiated-skills")
+# DIFFERENTIATED_DIR imported from config
 OUTPUT_DIR = Path(r"D:\skills\hermes-skills")
 NOW = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 

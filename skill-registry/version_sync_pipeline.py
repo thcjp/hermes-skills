@@ -29,6 +29,19 @@
   - 禁止任何mock/fallback/skip
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import PROJECT_ROOT
+from project_config import DB_PATH
+from project_config import TOOLS_DIR
+from project_config import CLAWHUB_DOWNLOADED_DIR
+# === End Phase 1 ===
+SKILLS_ROOT = PROJECT_ROOT
+SKILL_REGISTRY_DIR = TOOLS_DIR
+
+
 import argparse
 import hashlib
 import json
@@ -46,13 +59,13 @@ from typing import Any, Dict, List, Optional, Tuple
 # 配置
 # ============================================================
 
-DB_PATH = r"d:\skills\skill-registry.db"
-SKILLS_ROOT = Path(r"d:\skills")
-SKILL_REGISTRY_DIR = SKILLS_ROOT / "skill-registry"
+# DB_PATH imported from config
+# SKILLS_ROOT = PROJECT_ROOT (imported from config)
+# SKILL_REGISTRY_DIR = TOOLS_DIR (imported from config)
 PACKAGED_SKILLS_DIR = SKILLS_ROOT / "packaged-skills" / "skillhub"
 OPENSOURCE_SKILLS_DIR = SKILLS_ROOT / "opensource-skills" / "packaged"
 DIFFERENTIATED_SKILLS_DIR = SKILLS_ROOT / "differentiated-skills"
-CLAWHUB_DOWNLOADED_DIR = SKILLS_ROOT / "clawhub-skills" / "downloaded"
+# CLAWHUB_DOWNLOADED_DIR imported from config
 
 # GitHub 仓库配置 (双仓库策略)
 # 1. hermes-skills: 公开引流仓库, 仅推送免费skill (MIT license, pricing=free/L1-L2)

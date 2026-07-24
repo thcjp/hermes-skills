@@ -12,6 +12,14 @@ Usage:
     python batch_l3_trial.py --limit 20
     python batch_l3_trial.py --dry-run
 """
+
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
 import sys
 import json
 import time
@@ -30,7 +38,7 @@ from trace_llm_scorer import read_skill_md
 SEARCH_DIRS = [
     Path(r"D:\skills\packaged-skills\skillhub"),
     Path(r"D:\skills\opensource-skills\packaged"),
-    Path(r"D:\skills\differentiated-skills"),
+    DIFFERENTIATED_DIR,
     Path(r"D:\skills\clawhub-skills\downloaded"),
 ]
 

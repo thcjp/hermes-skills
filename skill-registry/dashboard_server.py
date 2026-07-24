@@ -4,6 +4,16 @@ Skill 管理看板 - 全自动流水线可视化
 访问: http://localhost:8765
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import REGISTRY_DIR
+from project_config import DB_PATH
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import http.server
 import sqlite3
 import json
@@ -14,8 +24,8 @@ import os
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 
-DB_PATH = r"d:\skills\skill-registry.db"
-REGISTRY_DIR = r"d:\skills\skill-registry"
+# DB_PATH imported from config
+# REGISTRY_DIR imported from config
 PORT = 8765
 
 # ====== 任务状态追踪 ======
@@ -237,7 +247,7 @@ def get_file_stats():
     ch = Path(r"d:\skills\packaged-skills\clawhub")
     if ch.exists():
         stats["clawhub_dirs"] = len([d for d in ch.iterdir() if d.is_dir()])
-    df = Path(r"d:\skills\differentiated-skills")
+    df = DIFFERENTIATED_DIR
     if df.exists():
         stats["diff_dirs"] = len([d for d in df.iterdir() if d.is_dir()])
 

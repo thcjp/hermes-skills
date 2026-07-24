@@ -32,6 +32,14 @@
     python auto_publish.py sync-platform-status <results.json>
 """
 
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DIFFERENTIATED_DIR
+# === End Phase 1 ===
+
+
 import json
 import subprocess
 import time
@@ -43,7 +51,7 @@ from datetime import datetime
 REGISTRY_DIR = Path(r"D:\skills\skill-registry")
 DB_FILE = REGISTRY_DIR / "upload_tracking.json"
 PACKAGED_DIR = Path(r"D:\skills\packaged-skills\skillhub")
-DIFFERENTIATED_DIR = Path(r"D:\skills\differentiated-skills")
+# DIFFERENTIATED_DIR imported from config
 COS_FAILURE_FILE = REGISTRY_DIR / "cos_failure_slugs.json"
 NOW = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
