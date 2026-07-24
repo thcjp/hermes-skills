@@ -315,6 +315,377 @@ def add_field_to_frontmatter(content, field_name, field_value):
     return content
 
 
+def _parse_yaml_values(lines):
+    """Parse values from YAML key lines (list format or inline format).
+
+    Args:
+        lines: list of lines, first line is 'key: value' or 'key:', rest are list items
+
+    Returns: list of string values
+    """
+    values = []
+    if not lines:
+        return values
+
+    first_line = lines[0]
+    val = first_line.split(':', 1)[1].strip() if ':' in first_line else ''
+
+    if val:
+        # Inline format: tools: [read, exec] or tags: "some,tags"
+        if val.startswith('['):
+            for v in val.strip('[]').split(','):
+                v = v.strip().strip('"\'')
+                if v:
+                    values.append(v)
+        elif val.startswith('"') or val.startswith("'"):
+            for v in val.strip('"\'').split(','):
+                v = v.strip()
+                if v:
+                    values.append(v)
+        else:
+            # Plain inline value
+            if val not in ('|-', '|', '>', '>-'):
+                values.append(val)
+    else:
+        # YAML list format: parse following indented lines
+        for line in lines[1:]:
+            stripped = line.strip()
+            if stripped.startswith('-'):
+                v = stripped.lstrip('-').strip().strip('"\'')
+                if v:
+                    values.append(v)
+
+    return values
+
+
+def _extract_description(content):
+    """Extract description from frontmatter, handling multi-line YAML block scalars."""
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    if not content.startswith("---"):
+        return ''
+    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+    if len(parts) < 3:
+        return ''
+    fm_text = parts[1]
+
+    desc_match = re.search(r'^description\s*:\s*(.*)$', fm_text, re.MULTILINE)
+    if not desc_match:
+        return ''
+
+    val = desc_match.group(1).strip()
+    if val in ('|-', '|', '>', '>-'):
+        # Multi-line block scalar: extract indented lines
+        start_pos = desc_match.end()
+        remaining = fm_text[start_pos:]
+        lines = remaining.split('\n')
+        desc_lines = []
+        for line in lines:
+            if line.startswith('  ') or line.startswith('\t'):
+                desc_lines.append(line.strip())
+            elif line.strip() == '':
+                continue
+            else:
+                break
+        return ' '.join(desc_lines)
+    elif val:
+        return val.strip('"\'')
+
+    return ''
+
+
+def fix_duplicate_yaml_fields(content):
+    """Fix duplicate YAML fields in frontmatter (tools, tags, etc.)
+
+    Segment-based approach: parses frontmatter into key segments, merges duplicates,
+    removes pricing metadata, and fixes homepage URL.
+
+    Handles:
+    1. Duplicate tools/tags fields: keep first (YAML list), merge values from second, remove second
+    2. Remove pricing metadata: suggested_price, pricing_tier, pricing_model (and preceding comment)
+    3. Fix homepage: change "https://skillhub.cn" to ""
+    4. Convert inline tools/tags to YAML list format for consistency
+
+    Returns: (new_content, fixes_list)
+    """
+    if content.startswith('\ufeff'):
+        bom = '\ufeff'
+        content = content[1:]
+    else:
+        bom = ''
+
+    if not content.startswith("---"):
+        return bom + content, []
+
+    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+    if len(parts) < 3:
+        return bom + content, []
+
+    fm_text = parts[1]
+    body = parts[2]
+    fixes = []
+    pricing_keys = {'suggested_price', 'pricing_tier', 'pricing_model'}
+
+    # Parse frontmatter into segments: list of (key, lines_list)
+    # key is None for comments/blank lines; lines_list contains all lines belonging to this segment
+    fm_lines = fm_text.split('\n')
+    segments = []
+    current_key = None
+    current_lines = []
+
+    for line in fm_lines:
+        m = re.match(r'^([a-zA-Z_][a-zA-Z0-9_]*)\s*:', line)
+        if m:
+            # New top-level key — flush previous segment
+            if current_lines:
+                segments.append((current_key, current_lines))
+            current_key = m.group(1)
+            current_lines = [line]
+        else:
+            current_lines.append(line)
+    if current_lines:
+        segments.append((current_key, current_lines))
+
+    # Process segments
+    seen_keys = {}
+    new_segments = []
+
+    for key, lines in segments:
+        if key is None:
+            # Comment or blank line — keep (pricing comment handled below)
+            new_segments.append((key, lines))
+            continue
+
+        if key in pricing_keys:
+            # Remove pricing metadata and preceding comment
+            if new_segments and new_segments[-1][0] is None:
+                last_lines = new_segments[-1][1]
+                if any('定价' in l for l in last_lines):
+                    new_segments.pop()
+            fixes.append(f'REMOVED_PRICING_{key}')
+            continue
+
+        if key == 'homepage':
+            for i, line in enumerate(lines):
+                if 'skillhub.cn' in line:
+                    lines[i] = 'homepage: ""'
+                    if 'FIXED_HOMEPAGE' not in fixes:
+                        fixes.append('FIXED_HOMEPAGE')
+            new_segments.append((key, lines))
+            continue
+
+        if key in ('tools', 'tags'):
+            if key in seen_keys:
+                # Duplicate — merge values into first occurrence
+                first_idx = seen_keys[key]
+                first_lines = new_segments[first_idx][1]
+
+                first_values = _parse_yaml_values(first_lines)
+                current_values = _parse_yaml_values(lines)
+
+                # Merge unique values
+                for v in current_values:
+                    if v not in first_values:
+                        first_values.append(v)
+
+                # Rebuild first occurrence in YAML list format
+                new_lines = [f'{key}:']
+                for v in first_values:
+                    new_lines.append(f'  - {v}')
+                new_segments[first_idx] = (key, new_lines)
+
+                if f'DUPLICATE_YAML_{key}' not in fixes:
+                    fixes.append(f'DUPLICATE_YAML_{key}')
+                continue
+            else:
+                seen_keys[key] = len(new_segments)
+                # Convert inline format to YAML list for consistency
+                values = _parse_yaml_values(lines)
+                if values and len(lines) == 1:
+                    new_lines = [f'{key}:']
+                    for v in values:
+                        new_lines.append(f'  - {v}')
+                    new_segments.append((key, new_lines))
+                else:
+                    new_segments.append((key, lines))
+                continue
+
+        # For other duplicate keys, keep first and skip subsequent
+        if key in seen_keys:
+            if f'DUPLICATE_YAML_{key}' not in fixes:
+                fixes.append(f'DUPLICATE_YAML_{key}')
+            continue
+
+        seen_keys[key] = len(new_segments)
+        new_segments.append((key, lines))
+
+    # Rebuild frontmatter
+    new_fm_lines = []
+    for _, lines in new_segments:
+        new_fm_lines.extend(lines)
+    new_fm_text = '\n'.join(new_fm_lines)
+
+    new_content = bom + '---' + new_fm_text + '---' + body
+    return new_content, fixes
+
+
+def expand_summary(content, fm, body):
+    """Expand summary to >= 50 characters if it's too short.
+
+    Strategy:
+    1. If summary is empty, create from description/slug
+    2. If summary < 50 chars, append info from description
+    3. Ensure result is 50-100 chars
+
+    Returns: (new_content, fix_applied)
+    """
+    summary = str(fm.get('summary', '')).strip().strip('"').strip("'")
+    if len(summary) >= 50:
+        return content, False
+
+    # Extract description properly (handles multi-line YAML block scalars)
+    description = _extract_description(content)
+    slug = str(fm.get('slug', '')).strip()
+    display_name = str(fm.get('displayName', '')).strip()
+
+    # Build expanded summary
+    if not summary:
+        # Create from description or slug
+        if description and len(description) > 20:
+            # Take first sentence of description
+            first_sentence = description.split('。')[0].split('.')[0].split('\n')[0].strip()
+            new_summary = first_sentence[:90]
+        elif display_name:
+            new_summary = f'{display_name} - 专业AI技能,提供高效自动化处理能力'
+        else:
+            new_summary = f'{slug.replace("-", " ")} - AI技能,提供专业自动化处理能力'
+    else:
+        # Expand existing short summary
+        if description and len(description) > 20:
+            # Extract key phrases from description
+            desc_clean = description.replace('\n', ' ').strip()
+            # Find the most informative part
+            if len(desc_clean) > 40:
+                extra = desc_clean[:80]
+            else:
+                extra = desc_clean
+            # Combine: original summary + description excerpt
+            combined = f'{summary}。{extra}'
+            new_summary = combined[:95]
+        else:
+            # No description, pad with generic value proposition
+            if len(summary) < 30:
+                new_summary = f'{summary} - 提供专业AI自动化处理能力,支持多种使用场景'
+            else:
+                new_summary = f'{summary},支持多种使用场景和自动化处理'
+
+    # Ensure 50-100 chars
+    if len(new_summary) < 50:
+        new_summary = new_summary + '。提供高效自动化处理能力,适用于多种业务场景'
+    new_summary = new_summary[:100].rstrip()
+
+    if new_summary == summary:
+        return content, False
+
+    # Replace summary in content
+    if content.startswith('\ufeff'):
+        bom = '\ufeff'
+        content = content[1:]
+    else:
+        bom = ''
+
+    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+    if len(parts) >= 3:
+        fm_text = parts[1]
+        body_text = parts[2]
+        # Replace summary line
+        new_fm = re.sub(
+            r'^summary\s*:\s*.*$',
+            f'summary: "{new_summary}"',
+            fm_text,
+            count=1,
+            flags=re.MULTILINE
+        )
+        if new_fm == fm_text:
+            # summary not found in expected format, add it
+            new_fm = fm_text.rstrip() + f'\nsummary: "{new_summary}"\n'
+        return bom + '---' + new_fm + '---' + body_text, True
+
+    return content, False
+
+
+def add_quick_start_section(content, body):
+    """Add a Quick Start section if missing.
+
+    Inserts a standardized '## 快速开始' section after '## 核心能力' or
+    '## 使用流程' or at the beginning of body.
+
+    Returns: (new_content, fix_applied)
+    """
+    # Check if Quick Start already exists
+    if re.search(r'##\s*(?:快速开始|快速入门|Quick\s*Start|Getting\s*Started)', body, re.IGNORECASE):
+        return content, False
+
+    # Build the quick start section
+    quick_start = """
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+"""
+
+    if content.startswith('\ufeff'):
+        bom = '\ufeff'
+        content = content[1:]
+    else:
+        bom = ''
+
+    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+    if len(parts) >= 3:
+        fm_text = parts[1]
+        body_text = parts[2]
+
+        # Find insertion point: after 核心能力 or 使用流程 section
+        insertion_patterns = [
+            r'##\s*核心能力',
+            r'##\s*使用流程',
+            r'##\s*功能',
+            r'##\s*概览',
+            r'##\s*简介',
+            r'##\s*Overview',
+        ]
+
+        insert_pos = -1
+        for pattern in insertion_patterns:
+            match = re.search(pattern, body_text)
+            if match:
+                # Find the end of this section (next ## heading)
+                next_heading = re.search(r'\n##\s', body_text[match.end():])
+                if next_heading:
+                    insert_pos = match.end() + next_heading.start()
+                else:
+                    insert_pos = len(body_text)
+                break
+
+        if insert_pos == -1:
+            # Insert at the beginning of body (after first heading)
+            first_heading = re.search(r'^#\s+', body_text, re.MULTILINE)
+            if first_heading:
+                # Find end of first heading line
+                line_end = body_text.index('\n', first_heading.end()) if '\n' in body_text[first_heading.end():] else len(body_text)
+                insert_pos = line_end + 1
+            else:
+                insert_pos = 0
+
+        new_body = body_text[:insert_pos] + quick_start + body_text[insert_pos:]
+        return bom + '---' + fm_text + '---' + new_body, True
+
+    return content, False
+
+
 def scan_directory(base_dir):
     """Scan a directory for SKILL.md files"""
     if not base_dir.exists():
@@ -347,6 +718,11 @@ def main():
             'MISSING_TAGS': 0,
             'MISSING_CATEGORY': 0,
             'INVALID_CATEGORY': 0,
+            'DUPLICATE_YAML_FIELDS': 0,
+            'REMOVED_PRICING_METADATA': 0,
+            'FIXED_HOMEPAGE': 0,
+            'EXPANDED_SUMMARY': 0,
+            'ADDED_QUICK_START': 0,
         },
         'modified_files': []
     }
@@ -426,6 +802,37 @@ def main():
                     stats['fixes']['INVALID_CATEGORY'] += 1
                 # Also update database
                 update_db_category(slug, inferred_cat)
+
+            # === New: Fix duplicate YAML fields, pricing metadata, homepage ===
+            content, dup_fixes = fix_duplicate_yaml_fields(content)
+            for df in dup_fixes:
+                if df.startswith('DUPLICATE_YAML'):
+                    stats['fixes']['DUPLICATE_YAML_FIELDS'] += 1
+                    fixes_applied.append(df)
+                elif df.startswith('REMOVED_PRICING'):
+                    stats['fixes']['REMOVED_PRICING_METADATA'] += 1
+                    fixes_applied.append(df)
+                elif df == 'FIXED_HOMEPAGE':
+                    stats['fixes']['FIXED_HOMEPAGE'] += 1
+                    fixes_applied.append(df)
+
+            # Re-parse after duplicate fix
+            fm, fm_text, body, full = extract_frontmatter(content)
+
+            # === New: Expand short summary (< 50 chars) ===
+            content, summary_fixed = expand_summary(content, fm, body)
+            if summary_fixed:
+                stats['fixes']['EXPANDED_SUMMARY'] += 1
+                fixes_applied.append('EXPANDED_SUMMARY')
+
+            # Re-parse after summary fix
+            fm, fm_text, body, full = extract_frontmatter(content)
+
+            # === New: Add Quick Start section if missing ===
+            content, qs_fixed = add_quick_start_section(content, body)
+            if qs_fixed:
+                stats['fixes']['ADDED_QUICK_START'] += 1
+                fixes_applied.append('ADDED_QUICK_START')
 
             # Save if modified
             if content != original:

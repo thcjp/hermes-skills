@@ -91,12 +91,13 @@ AWESOME_LIST_REPOS = [
 ]
 
 # N8N API (公开无需认证，但响应慢，需60s超时; categories=25为AI分类)
+# 注意: api.n8n.io 位于 Cloudflare 后方，可能因 bot 防护导致请求超时（socket 超时是按操作计而非按请求计，
+# Cloudflare 可能缓慢滴答数据使每次 recv 都在超时窗口内，导致实际耗时远超设定值）
 N8N_API_URLS = [
-    "https://api.n8n.io/api/templates/workflows?skip=0&limit=50&categories=25",
     "https://api.n8n.io/api/templates/workflows?skip=0&limit=50",
 ]
 N8N_CATEGORIES_URL = "https://api.n8n.io/api/templates/categories"
-N8N_FETCH_TIMEOUT = 60  # N8N API响应极慢，需60秒超时
+N8N_FETCH_TIMEOUT = 10  # N8N API被Cloudflare拦截，socket超时按操作计，实际耗时远超此值
 
 # Dify (Explore API需要session cookie认证，暂不可用)
 # 备选方案: 从 https://creators.dify.ai/ 获取或从Dify GitHub社区获取
@@ -104,6 +105,17 @@ DIFY_EXPLORE_URL = "https://cloud.dify.ai/explore"
 DIFY_API_URLS = [
     "https://cloud.dify.ai/api/explore/apps",  # 需要认证
     "https://cloud.dify.ai/console/api/explore/apps",  # 需要认证
+]
+
+# Dify GitHub 社区仓库（Cloud API 需要认证时的备选数据源）
+# 扫描这些仓库的目录结构，提取可作为 skill 候选的模板/插件
+DIFY_GITHUB_REPOS = [
+    # Dify 官方插件仓库（tools, agent-strategies, datasources, extensions, triggers 等分类目录）
+    {"owner": "langgenius", "repo": "dify-official-plugins", "paths": ["tools", "agent-strategies", "datasources", "extensions", "triggers"]},
+    # Dify 社区插件市场仓库（根目录包含大量社区插件，435+）
+    {"owner": "langgenius", "repo": "dify-plugins", "paths": [""]},
+    # Dify 主仓库内置工具提供者目录
+    {"owner": "langgenius", "repo": "dify", "paths": ["api/core/tools/builtin_tool/providers"]},
 ]
 
 # Coze (Store API需要登录认证，返回 code:700012006)
@@ -285,23 +297,24 @@ class N8NScanner(BaseScanner):
         print("\n[N8NScanner] 扫描 N8N 工作流模板市场...")
 
         # 尝试多个 API 端点 (N8N API响应极慢，需60秒超时)
+        # 使用自带诊断的请求方法，避免 fetch_url 静默吞掉异常
         data = None
         for url in N8N_API_URLS:
-            content = fetch_url(url, timeout=N8N_FETCH_TIMEOUT)
+            content = self._fetch_with_diagnostics(url, N8N_FETCH_TIMEOUT)
             if not content:
-                print(f"  [N8N] 无法获取数据: {url}")
                 continue
             try:
                 data = json.loads(content)
                 if data:
-                    print(f"  [N8N] 成功获取数据: {url}")
+                    print(f"  [N8N] 成功获取数据 (HTTP 200, {len(content)} bytes): {url}")
                     break
-            except json.JSONDecodeError:
-                print(f"  [N8N] 响应非 JSON 格式: {url}")
+            except json.JSONDecodeError as e:
+                print(f"  [N8N] 响应非 JSON 格式 ({e}): {url}")
                 continue
 
         if not data:
-            print("  [N8N] 所有 API 端点均无法访问，跳过 N8N 扫描")
+            print("  [N8N] 所有 API 端点均无法访问（网络超时或被 Cloudflare 拦截），跳过 N8N 扫描")
+            print("  [N8N] 诊断: api.n8n.io 位于 Cloudflare 后方，可能因 bot 防护导致请求超时")
             return candidates
 
         # 解析工作流模板列表
@@ -384,6 +397,50 @@ class N8NScanner(BaseScanner):
 
         print(f"  [N8N] 提取 {len(candidates)} 个候选")
         return candidates
+
+    def _fetch_with_diagnostics(self, url: str, timeout: int) -> Optional[str]:
+        """带诊断信息的 HTTP 请求，捕获并打印具体异常类型（超时/HTTP错误/网络错误）
+
+        与 fetch_url 不同，此方法不会静默吞掉异常，
+        而是打印具体的失败原因，便于排查 N8N API 连接问题。
+
+        使用线程级总超时：urllib 的 socket timeout 是按操作计（per-recv），
+        无法应对 Cloudflare 缓慢滴答数据的行为（每次 recv 都在超时窗口内，
+        但总耗时远超设定值）。因此用 concurrent.futures 实现硬性总超时。
+        """
+        import urllib.request
+        import urllib.error
+        import socket as _socket
+        from concurrent.futures import ThreadPoolExecutor, TimeoutError as _FutTimeout
+
+        def _do_fetch() -> str:
+            req = urllib.request.Request(url, headers={
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                'Accept': 'application/json',
+            })
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read().decode('utf-8', errors='replace')
+
+        try:
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(_do_fetch)
+                return future.result(timeout=timeout + 5)
+        except _FutTimeout:
+            print(f"  [N8N] 请求总超时 ({timeout}s, Cloudflare 滴答数据): {url}")
+            return None
+        except _socket.timeout:
+            print(f"  [N8N] socket 超时 ({timeout}s): {url}")
+            return None
+        except urllib.error.HTTPError as e:
+            print(f"  [N8N] HTTP {e.code} {e.reason}: {url}")
+            return None
+        except urllib.error.URLError as e:
+            reason = str(e.reason)
+            print(f"  [N8N] URL错误 ({reason}): {url}")
+            return None
+        except Exception as e:
+            print(f"  [N8N] 请求异常 ({type(e).__name__}: {e}): {url}")
+            return None
 
 
 # ============================================================
@@ -485,7 +542,9 @@ class DifyScanner(BaseScanner):
                 candidates.append(candidate)
 
         if not candidates:
-            print("  [Dify] 所有端点均无法访问或未提取到数据，跳过 Dify 扫描")
+            print("  [Dify] Cloud API 需要认证，尝试从 Dify GitHub 社区获取...")
+            github_candidates = self._scan_github_community()
+            candidates.extend(github_candidates)
 
         print(f"  [Dify] 提取 {len(candidates)} 个候选")
         return candidates
@@ -543,6 +602,102 @@ class DifyScanner(BaseScanner):
                 if isinstance(item, (dict, list)):
                     results.extend(self._extract_templates_from_data(item, depth + 1))
         return results
+
+    def _scan_github_community(self) -> List[Dict[str, Any]]:
+        """从 Dify GitHub 社区仓库获取模板/插件目录作为候选
+
+        当 Cloud API 需要认证无法使用时，此方法作为备选数据源：
+        - langgenius/dify: 检查 templates/、workflows/ 等目录
+        - weixians/dify-plugins: 扫描根目录和 plugins/ 目录
+        """
+        candidates: List[Dict[str, Any]] = []
+        seen_paths: Set[str] = set()
+
+        for repo_config in DIFY_GITHUB_REPOS:
+            owner = repo_config['owner']
+            repo = repo_config['repo']
+            paths = repo_config.get('paths', [''])
+
+            for path in paths:
+                # 构造 GitHub Contents API URL
+                path_query = f"/{path}" if path else ""
+                api_url = (
+                    f"https://api.github.com/repos/{owner}/{repo}/contents{path_query}"
+                )
+                print(f"  [Dify-GitHub] 获取目录列表: {owner}/{repo}/{path or '(root)'}")
+                content = fetch_url(api_url, timeout=15)
+                if not content:
+                    print(f"  [Dify-GitHub] 无法获取: {owner}/{repo}/{path or '(root)'}")
+                    continue
+
+                try:
+                    items = json.loads(content)
+                except json.JSONDecodeError:
+                    print(f"  [Dify-GitHub] JSON 解析失败: {owner}/{repo}/{path or '(root)'}")
+                    continue
+
+                if not isinstance(items, list):
+                    # 可能是单文件或 404
+                    if isinstance(items, dict) and items.get('message'):
+                        print(f"  [Dify-GitHub] {items.get('message')}: {owner}/{repo}/{path or '(root)'}")
+                    continue
+
+                # 筛选目录（模板/插件通常以目录形式存在）
+                dirs = [
+                    item for item in items
+                    if isinstance(item, dict) and item.get('type') == 'dir'
+                ]
+                print(f"  [Dify-GitHub] {owner}/{repo}/{path or '(root)'}: {len(dirs)} 个目录")
+
+                for d in dirs:
+                    name = d.get('name', '')
+                    if not name:
+                        continue
+
+                    # 跳过常见基础设施/构建目录（非模板/插件）
+                    skip_names = {
+                        '.github', '.git', '.gitignore', 'node_modules', '__pycache__',
+                        '.vscode', '.idea', '.assets', '.claude', '.difyignore',
+                        '.devcontainer', '.gemini', '.vite-hooks', '.agents',
+                        'tests', 'docs', 'CONTRIBUTING.md', 'LICENSE', 'README.md',
+                    }
+                    if name.lower() in skip_names:
+                        continue
+
+                    source_id = f"{owner}/{repo}/{path}/{name}" if path else f"{owner}/{repo}/{name}"
+                    if source_id in seen_paths:
+                        continue
+                    seen_paths.add(source_id)
+
+                    html_url = d.get('html_url', '')
+                    display_name = name.replace('-', ' ').replace('_', ' ').title()
+                    category = categorize(name, display_name)
+                    content_preview = (
+                        f"来源: {owner}/{repo}\n"
+                        f"路径: {path or '(root)'}/{name}\n"
+                        f"类型: Dify GitHub 社区模板/插件"
+                    )
+
+                    candidate = self.make_candidate(
+                        source_id=source_id,
+                        name=display_name,
+                        description=f"Dify 社区模板: {name} (from {owner}/{repo})",
+                        category=category,
+                        content_preview=content_preview,
+                        url=html_url or f"https://github.com/{owner}/{repo}/tree/main/{path}/{name}" if path else f"https://github.com/{owner}/{repo}/tree/main/{name}",
+                        metadata={
+                            'source_repo': f"{owner}/{repo}",
+                            'source_platform': 'dify-github',
+                            'original_path': f"{path}/{name}" if path else name,
+                        },
+                    )
+                    candidates.append(candidate)
+
+                # GitHub API 速率限制（未认证 60 次/小时）
+                time.sleep(1)
+
+        print(f"  [Dify-GitHub] 从 GitHub 社区提取 {len(candidates)} 个候选")
+        return candidates
 
 
 # ============================================================
