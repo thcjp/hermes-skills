@@ -1,6 +1,6 @@
 {
   "date": "2026-07-24",
-  "timestamp": "2026-07-24T12:17:17.228911",
+  "timestamp": "2026-07-24T12:57:06.177382",
   "summary": {
     "total_skills": 2882,
     "active": 959,
@@ -24,8 +24,8 @@
     },
     "skillhub": {
       "blocked_by_quality_gate": 1,
-      "retry_pending": 16,
-      "success": 1126
+      "retry_pending": 8,
+      "success": 1120
     },
     "skillhub_free": {
       "failed": 1

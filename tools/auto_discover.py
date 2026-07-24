@@ -22,7 +22,8 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
 from project_config import PROJECT_ROOT
 from project_config import DB_PATH
 from project_config import CLAWHUB_DOWNLOADED_DIR
-from platform_config import GITHUB_REPOS
+from project_config import DISCOVERY_DIR
+from platform_config import GITHUB_SCAN_REPOS
 # === End Phase 1 ===
 SKILLS_ROOT = PROJECT_ROOT
 
@@ -53,7 +54,7 @@ from skill_core.parser import parse_frontmatter as _parse_fm
 # DB_PATH imported from config
 # SKILLS_ROOT = PROJECT_ROOT (imported from config)
 # CLAWHUB_DOWNLOADED_DIR imported from config
-DISCOVERY_DIR = SKILLS_ROOT / "tools" / "discovery"
+# DISCOVERY_DIR imported from config
 CANDIDATES_FILE = DISCOVERY_DIR / "candidates.json"
 
 # ClawHub API
@@ -256,7 +257,7 @@ def scan_github_repo(owner: str, repo: str) -> List[Dict[str, Any]]:
 def scan_github_all() -> List[Dict[str, Any]]:
     """扫描所有配置的GitHub仓库"""
     all_skills = []
-    for repo_config in GITHUB_REPOS:
+    for repo_config in GITHUB_SCAN_REPOS:
         print(f"  扫描仓库: {repo_config['owner']}/{repo_config['repo']}...")
         skills = scan_github_repo(repo_config['owner'], repo_config['repo'])
         for s in skills:

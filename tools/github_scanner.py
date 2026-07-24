@@ -16,7 +16,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
 from project_config import DB_PATH
-from platform_config import GITHUB_REPOS
+from platform_config import GITHUB_SCAN_REPOS
 # === End Phase 1 ===
 
 import json
@@ -223,7 +223,7 @@ def main():
 
     all_discovered = []
 
-    for repo_config in GITHUB_REPOS:
+    for repo_config in GITHUB_SCAN_REPOS:
         skills = scan_repo(repo_config)
         all_discovered.extend(skills)
         # 避免GitHub API限流

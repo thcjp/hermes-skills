@@ -55,7 +55,7 @@ FREE_LICENSES = {"MIT", "Apache-2.0"}
 PAID_PRICING_TIERS = {"L3-专业级", "L4-企业级"}
 PAID_LICENSES = {"Proprietary", "Commercial"}
 
-# 统一的GitHub仓库列表（供auto_discover.py和github_scanner.py使用）
+# GitHub Git 远程仓库配置（供推送使用）
 GITHUB_REPOS = [
     {
         "name": GITHUB_PUBLIC_REMOTE,
@@ -71,6 +71,15 @@ GITHUB_REPOS = [
         "push_free": True,
         "push_paid": True,
     },
+]
+
+# GitHub 扫描仓库列表（供 auto_discover.py 和 multi_source_discover.py 发现新 skill 使用）
+GITHUB_SCAN_REPOS = [
+    {"owner": "anthropics", "repo": "skills", "license": "Apache-2.0"},
+    {"owner": "obra", "repo": "superpowers", "license": "MIT"},
+    {"owner": "addyosmani", "repo": "agent-skills", "license": "MIT"},
+    {"owner": "ComposioHQ", "repo": "awesome-claude-skills", "license": "mixed"},
+    {"owner": "VoltAgent", "repo": "awesome-openclaw-skills", "license": "mixed"},
 ]
 
 

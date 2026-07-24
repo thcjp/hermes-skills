@@ -5,7 +5,7 @@
 扩展 auto_discover.py，新增 N8N / Dify / Coze / Hermes / AwesomeList 五个源头扫描器，
 并扩展 GitHub 扫描器支持关键词搜索（按 star 数排序，top 50 仓库）。
 
-所有扫描器统一输出到: d:\\skills\\tools\\discovery\\candidates_unified.json
+所有扫描器统一输出到: d:\\skills\\data\\discovery\\candidates_unified.json
 格式: [{source, source_id, name, description, category, content_preview, url, metadata}, ...]
 扫描结果记录到数据库 sources 表。
 
@@ -23,7 +23,7 @@
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DB_PATH
+from project_config import DB_PATH, DATA_DIR
 # === End Phase 1 ===
 
 
@@ -55,8 +55,8 @@ from auto_discover import (
     get_existing_display_names, # 获取已有display_name
     scan_github_repo,     # 扫描单个GitHub仓库（保留以供需要时使用）
     get_db,               # 获取数据库连接
-    GITHUB_REPOS,         # 现有配置的GitHub仓库列表
 )
+from platform_config import GITHUB_SCAN_REPOS
 
 # ============================================================
 # 配置
@@ -901,7 +901,7 @@ class ExtendedGitHubScanner(BaseScanner):
         # Part 1: 扫描现有配置的 GitHub 仓库（仅获取目录列表，不逐个获取SKILL.md）
         print("  [GitHub] Part 1: 扫描现有配置仓库...")
         try:
-            for repo_config in GITHUB_REPOS:
+            for repo_config in GITHUB_SCAN_REPOS:
                 owner = repo_config['owner']
                 repo = repo_config['repo']
                 license_str = repo_config.get('license', '')
