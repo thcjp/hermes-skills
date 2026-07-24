@@ -1,7 +1,7 @@
 ---
 slug: "ace-music"
 name: "ace-music"
-version: "1.0.0"
+version: 1.0.1
 displayName: "AI音乐创作翻唱工坊"
 summary: "版权音乐太贵?ACE-Step 1.5一键生成带人声歌曲,付费版独享翻唱、片段重绘、批量生成,精确控制BPM与调性,输出MP3"
 license: "Proprietary"
