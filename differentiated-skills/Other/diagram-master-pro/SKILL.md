@@ -21,6 +21,10 @@ tags:
   - 分析
   - 工作流
   - 知识
+  - svg
+  - diagram-master
+  - png
+  - arch
 tools:
   - read
   - exec

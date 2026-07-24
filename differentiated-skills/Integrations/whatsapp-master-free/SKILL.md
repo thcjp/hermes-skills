@@ -1,5 +1,4 @@
 ---
-
 slug: whatsapp-master-free
 name: whatsapp-master-free
 version: 1.0.1
@@ -16,15 +15,18 @@ tags:
   - 媒体处理
   - 社交
   - 通信
+  - whatsapp
+  - agent
+  - gif
+  - ffmpeg
+  - message
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # WhatsApp 大师（免费版）
 
 ## 概述

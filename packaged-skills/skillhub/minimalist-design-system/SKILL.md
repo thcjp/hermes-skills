@@ -1,12 +1,11 @@
 ---
-
 slug: "minimalist-design-system"
 name: "minimalist-design-system"
 version: 1.0.1
 displayName: "Minimalist Design Sy"
 summary: "专家级前端架构师与UI/UX设计系统集成指南。极简现代主义设计系统，帮助将精密设计系统无缝集成到现有代码库。适用于：前端组件开发、UI设计实现、设计令牌配置、Tailwind"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   专家级前端架构师与UI/UX设计系统集成指南。极简现代主义设计系统，帮助将精密设计系统无缝集成到现有代码库。Use when 、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
   - Creative
@@ -14,6 +13,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - 设计令牌
+  - css
+  - 不支持
+  - 依赖说明
+  - agent
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Minimalist Design Sy
 
 ## 付费版专享能力

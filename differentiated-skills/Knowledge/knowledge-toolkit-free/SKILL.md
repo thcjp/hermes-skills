@@ -1,5 +1,4 @@
 ---
-
 slug: knowledge-toolkit-free
 name: knowledge-toolkit-free
 version: 1.0.1
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 写作
+  - 支持创建
+  - 查询
+  - input_params
+  - api
+  - 免费版
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 知识工具包（免费版）
 
 ## 概述

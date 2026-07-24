@@ -1,5 +1,4 @@
 ---
-
 slug: tg-body-scan-tool-free
 name: tg-body-scan-tool-free
 version: 1.0.0
@@ -25,15 +24,18 @@ tags:
   - 研究
   - 分析
   - 通信
+  - telegram
+  - scan_id
+  - agent
+  - 手机型号
+  - 机器人
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 体测扫描工具 免费版
 
 ## 概述

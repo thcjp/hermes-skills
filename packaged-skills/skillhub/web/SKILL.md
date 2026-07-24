@@ -1,12 +1,11 @@
 ---
-
 slug: "web"
 name: "web"
 version: 1.0.1
 displayName: "Web Development"
 summary: "用HTML/CSS/JS与现代框架建调部署网站。Build, debug, and deploy websites using HTML, CSS, JavaScript, and mode"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Build, debug, and deploy websites using HTML, CSS, JavaScript, and modern
   frameworks following pr。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -14,6 +13,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - 不支持
+  - agent
+  - api
+  - 依赖说明
+  - llm
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Web Development
 
 ## 付费版专享能力

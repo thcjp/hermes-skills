@@ -1,12 +1,11 @@
 ---
-
 slug: "db-free"
 name: "db-free"
 version: "1.0.0"
 displayName: "数据库设计与运维(免费版)"
 summary: "识别并规避基础数据库连接、事务、查询与数据完整性陷阱。数据库设计与运维免费版，提供基础的数据库陷阱识别与规避能力. 核心能力包括： - 基础连接管理（连接池耗尽、空闲连接清理） - 基础事务"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   数据库设计与运维免费版，提供基础的数据库陷阱识别与规避能力.
   核心能力包括：
   - 基础连接管理（连接池耗尽、空闲连接清理）
@@ -15,26 +14,14 @@ description: |-，可自动提升工作效率
   - 基础数据完整性（唯一约束、时区存储、金额精度）
   高级功能（Schema变更安全策略、备份恢复、复制陷阱、扩展性规划）为付费版专享.
 tags:
-  - 研发工具
-  - database
-  - operations
-  - 工具
-  - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
-  - 写作
+  - 效率,select,update,api,balance,免费版不
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 数据库设计与运维（免费版）
 
 ## 输入格式

@@ -34,6 +34,11 @@ tags:
   - 播客
   - 音频
   - 媒体
+  - pdf
+  - api
+  - https
+  - magicpodcast
+  - app
 tools:
   - read
   - exec

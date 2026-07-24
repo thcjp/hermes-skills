@@ -1,12 +1,11 @@
 ---
-
 slug: "write"
 name: "write"
 version: 1.0.1
 displayName: "版本化写作工具"
 summary: "带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理草稿版本与audit审计。带强制版本控制与质量审计的版本化写作工具. 遵循Request→Plan→Draft→Audit→R"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   带强制版本控制与质量审计的版本化写作工具.
   遵循Request→Plan→Draft→Audit→Refine→Deliver工作流，通过edit.sh脚本强制版本备份，
   支持depth（quick/standard/thorough）配置与auto_audit自动审计.
@@ -28,10 +27,13 @@ tags:
   - AI代理
   - agent
   - 研究
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - audit
+  - step
 category: "Automation"
-
 ---
-
 # 版本化写作工具
 
 带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程.

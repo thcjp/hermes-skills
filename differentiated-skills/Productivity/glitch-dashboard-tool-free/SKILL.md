@@ -22,6 +22,11 @@ tags:
   - 电商
   - 研究
   - 分析
+  - free
+  - agent
+  - pro
+  - cli
+  - cpu
 tools:
   - read
   - exec

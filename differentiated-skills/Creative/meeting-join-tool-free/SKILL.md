@@ -1,5 +1,4 @@
 ---
-
 slug: meeting-join-tool-free
 name: meeting-join-tool-free
 version: 1.0.0
@@ -48,15 +47,18 @@ tags:
   - AI代理
   - agent
   - 创意
+  - audio
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # AI会议助手免费版
 
 ## 概述

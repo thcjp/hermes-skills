@@ -17,6 +17,10 @@ tags:
   - 邮件
   - 通信
   - 工具
+  - com
+  - smtp
+  - gmail
+  - python
 tools:
   - read
   - exec

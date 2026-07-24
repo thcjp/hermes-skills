@@ -28,6 +28,11 @@ tags:
   - 知识
   - 文档
   - 安全
+  - self
+  - str
+  - list
+  - 支持创建
+  - 查询
 tools:
   - read
   - exec

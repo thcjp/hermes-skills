@@ -20,6 +20,10 @@ tags:
   - AI代理
   - agent
   - 研究
+  - socks5
+  - proxy
+  - 代理服务
+  - com
 tools:
   - read
   - exec

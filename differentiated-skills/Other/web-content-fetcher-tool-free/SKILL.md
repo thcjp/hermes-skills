@@ -1,5 +1,4 @@
 ---
-
 slug: web-content-fetcher-tool-free
 name: web-content-fetcher-tool-free
 version: 1.0.0
@@ -20,6 +19,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - markdown
+  - https
+  - jina
+  - defuddle
+  - new
 tools:
   - read
   - exec
@@ -27,9 +31,7 @@ tools:
   - glob
 homepage: ""
 category: "Development"
-
 ---
-
 # 网页内容获取工具（免费版）
 
 ## 概述

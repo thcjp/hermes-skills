@@ -39,6 +39,11 @@ tags:
   - 分析
   - 知识
   - 文档
+  - skill-writer-pro
+  - data-validator
+  - true
+  - 质量评估
+  - 适用关键
 tools:
   - read
   - exec

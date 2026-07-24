@@ -1,5 +1,4 @@
 ---
-
 slug: whatsapp-style-tool-free
 name: whatsapp-style-tool-free
 version: 1.0.0
@@ -39,15 +38,18 @@ tags:
   - 格式化
   - 社交
   - 通信
+  - whatsapp
+  - markdown
+  - text
+  - 不支持
+  - 文本
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # WhatsApp样式工具(免费版)
 
 ## 概述

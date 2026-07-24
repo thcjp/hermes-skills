@@ -1,5 +1,4 @@
 ---
-
 slug: "email-163-tool-pro"
 name: "email-163-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "163邮箱助手专业版"
 summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档。163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、 高级搜索过滤、定时任务调度、邮件归档审"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、
   高级搜索过滤、定时任务调度、邮件归档审计、模板化发送与多账户管理等企业级特性。核心能力:
   - 批量邮件发送与群发通知（支持变量替换与模板）
@@ -25,15 +24,18 @@ tags:
   - 邮件
   - 通信
   - 工具
+  - com
+  - email-163-tool
+  - csv
+  - company
+  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # 163邮箱助手专业版
 **版本**: 1.0.0
 **适用对象**: 企业用户、团队管理者、运维与运营人员

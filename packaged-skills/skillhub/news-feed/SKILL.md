@@ -1,12 +1,11 @@
 ---
-
 slug: "news-feed"
 name: "news-feed"
 version: 1.0.1
 displayName: "News Feed"
 summary: "从BBC/Reuters/AP等主流RSS抓最新新闻标题。Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP,
   Al Jazeera, NPR, The Guardian。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -14,15 +13,18 @@ tags:
   - 新闻
   - 信息
   - 资讯
+  - bbc
+  - reuters
+  - rss
+  - https
+  - news
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # News Feed
 
 ## 付费版专享能力

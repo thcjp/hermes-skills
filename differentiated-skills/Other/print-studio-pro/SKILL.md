@@ -1,5 +1,4 @@
 ---
-
 slug: print-studio-pro
 name: print-studio-pro
 version: 1.0.0
@@ -34,6 +33,10 @@ tags:
   - 写作
   - 电商
   - 开发
+  - https
+  - print-studio
+  - curl
+  - post
 tools:
   - read
   - exec
@@ -42,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 印迹工作室(专业版)
 面向企业与团队的全功能Agent发现、信任与协作交换平台。在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等8项高级能力.
 ## 概述

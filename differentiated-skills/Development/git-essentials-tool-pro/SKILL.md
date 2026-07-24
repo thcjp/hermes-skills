@@ -42,6 +42,11 @@ tags:
   - Git
   - 版本控制
   - 企业级
+  - git
+  - bisect
+  - bash
+  - echo
+  - submodule
 tools:
   - read
   - exec

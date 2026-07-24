@@ -1,5 +1,4 @@
 ---
-
 slug: vault-sync-engine
 name: vault-sync-engine
 version: 1.0.1
@@ -16,6 +15,11 @@ tags:
   - 同步引擎
   - 工作流
   - 效率
+  - git
+  - obsidian
+  - json
+  - bash
+  - icloud
 tools:
   - read
   - exec
@@ -23,9 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 知识库同步引擎
 
 让 Obsidian vault 在多设备间稳定同步。聚焦"不丢笔记、不乱配置、冲突可解"，把同步从黑盒变成可监控的引擎.

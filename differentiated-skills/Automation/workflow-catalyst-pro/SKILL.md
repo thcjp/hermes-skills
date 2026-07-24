@@ -20,6 +20,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - step
+  - 测试
+  - log
+  - python
+  - text
 tools:
   - read
   - exec

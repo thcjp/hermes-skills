@@ -16,6 +16,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - ctx
+  - canvas
+  - png
+  - pdf
+  - svg
 tools:
   - read
   - exec

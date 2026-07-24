@@ -1,12 +1,11 @@
 ---
-
 slug: "remix-api-key-auth"
 name: "remix-api-key-auth"
 version: 0.1.1
 displayName: "Remix Api Key Auth"
 summary: "为Remix Agent发布流配置并校验bearer API Key认证。Configure and verify bearer API key authentication for Rem"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Configure and verify bearer API key authentication for Remix agent publishing
   workflows。核心能力:
 
@@ -30,6 +29,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - key
+  - 按流程执
+  - remix
+  - agent
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Remix Api Key Auth
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: "code-quality-paid"
 name: "code-quality-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "代码质量检查专业版"
 summary: "企业级代码质量审计,支持OWASP Top 10、批量扫描、自定义规则与CI/CD集成,输出多格式报告。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业研发团队的高级代码质量审计工具,提供深度安全扫描、合规性检查、批量项目分析与CI/CD流水线集成。核心能力:
   - OWASP Top 10 安全漏洞深度扫描
   - 全项目批量代码审计
@@ -32,6 +31,11 @@ tags:
   - DevSecOps
   - 代码生成
   - 编程辅助
+  - echo
+  - audit
+  - python
+  - json
+  - include
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # 代码质量检查专业版
 
 ## 付费版专享能力

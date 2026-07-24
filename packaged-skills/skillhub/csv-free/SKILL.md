@@ -1,12 +1,11 @@
 ---
-
 slug: "csv-free"
 name: "csv-free"
 version: "1.0.0"
 displayName: "CSV解析生成-免费版"
 summary: "CSV解析与生成免费版，提供基础引号规则与逗号分隔，适合简单跨工具数据交换。。CSV解析与生成免费版提供基于RFC 4180的基础引号规则与逗号分隔能力. 适合简单的跨工具数据交换场景，确保"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   CSV解析与生成免费版提供基于RFC 4180的基础引号规则与逗号分隔能力.
   适合简单的跨工具数据交换场景，确保含逗号/引号的字段正确转义.
   核心能力：
@@ -29,15 +28,18 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - excel
+  - bom
+  - 免费版
+  - 付费版专
+  - 逗号分隔
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # CSV — 解析与生成（免费版）
 
 ## 输入格式

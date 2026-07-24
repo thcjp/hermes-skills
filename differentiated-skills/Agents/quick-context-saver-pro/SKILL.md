@@ -22,6 +22,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - 专业版
+  - 基础
+  - mode
+  - true
+  - memory-search
 tools:
   - read
   - exec

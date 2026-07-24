@@ -12,6 +12,11 @@ tags:
   - 数据抓取
   - 工作流
   - 效率
+  - edge
+  - chrome
+  - cookie
+  - const
+  - await
 tools:
   - read
   - exec
@@ -74,6 +79,135 @@ UA天然真实(用已登录浏览器)、启动参数`--disable-blink-features=Au
 - 模块导入: `const { edge, chrome } = require('./cdp-automation.js');`
 
 **典型流程**: 导航→探测DOM(eval打印结构)→操作(click/填表)→智能等待(waitNetworkIdle)→提取数据(eval/screenshot)。SPA导航需先入父页面再JS点击侧边栏div。
+
+## 示例代码
+
+### 1. 启动浏览器远程调试（PowerShell）
+
+以反检测参数启动Edge，开启9222调试端口：
+
+```powershell
+# Edge：开启远程调试并禁用自动化标记
+Start-Process msedge.exe -ArgumentList @(
+    "--remote-debugging-port=9222",
+    "--disable-blink-features=AutomationControlled",
+    "--user-data-dir=$env:LOCALAPPDATA\Microsoft\Edge\User Data"
+)
+
+# Chrome：9223端口
+Start-Process chrome.exe -ArgumentList @(
+    "--remote-debugging-port=9223",
+    "--disable-blink-features=AutomationControlled"
+)
+
+# 验证端口是否就绪
+Invoke-RestMethod -Uri "http://localhost:9222/json/version" | Select-Object webSocketDebuggerUrl
+```
+
+### 2. CDP自动化完整流程（Node.js）
+
+导航→探测DOM→点击→智能等待→提取数据的典型流程：
+
+```javascript
+const { edge } = require('./cdp-automation.js');
+
+async function scrapeOrderList() {
+  // 1. 导航到订单页（复用已登录浏览器会话）
+  await edge.goto('https://shop.example.com/user-center/orders');
+  await edge.waitNetworkIdle(10000);
+
+  // 2. 探测DOM结构（先探索再定位，打印样本）
+  const probe = await edge.eval(`
+    (() => {
+      const rows = document.querySelectorAll('[class*="order"]');
+      return Array.from(rows).slice(0, 3).map(el => ({
+        tag: el.tagName,
+        cls: el.className,
+        text: el.innerText.slice(0, 80),
+      }));
+    })()
+  `);
+  console.log('DOM探测结果:', JSON.stringify(probe, null, 2));
+
+  // 3. 点击「已发货」筛选标签
+  await edge.click('[class*="shipped"]');
+
+  // 4. 智能等待网络空闲（替代固定sleep）
+  await edge.waitNetworkIdle(8000);
+
+  // 5. 提取订单数据
+  const orders = await edge.eval(`
+    (() => {
+      const items = document.querySelectorAll('[class*="order-item"]');
+      return Array.from(items).map(item => ({
+        id: item.querySelector('[class*="order-no"]')?.innerText,
+        amount: item.querySelector('[class*="price"]')?.innerText,
+        status: item.querySelector('[class*="status"]')?.innerText,
+      }));
+    })()
+  `);
+  return orders;
+}
+
+scrapeOrderList().then(orders => console.log(orders));
+```
+
+### 3. 获取HttpOnly Cookie（Node.js）
+
+`document.cookie`无法读取HttpOnly Cookie，需通过CDP命令获取：
+
+```javascript
+const { edge } = require('./cdp-automation.js');
+
+async function getHttpOnlyCookies(targetUrl) {
+  const cdpSession = await edge.getCdpSession();
+  // 通过 Network.getCookies 获取包含 HttpOnly 的完整 Cookie
+  const { cookies } = await cdpSession.send('Network.getCookies', {
+    urls: [targetUrl],
+  });
+  // 转为标准 Cookie 头格式
+  const cookieHeader = cookies
+    .map(c => `${c.name}=${c.value}`)
+    .join('; ');
+  console.log('Cookie数量:', cookies.length);
+  console.log('含HttpOnly:', cookies.filter(c => c.httpOnly).length);
+  return cookieHeader;
+}
+
+// 示例：获取登录态Cookie用于后续请求
+getHttpOnlyCookies('https://shop.example.com').then(header => {
+  console.log('Cookie头:', header.slice(0, 60) + '...');
+});
+```
+
+### 4. SPA内部路由导航（Node.js）
+
+直接navigate到SPA子路由会404，需先入父页面再JS点击侧边栏div：
+
+```javascript
+const { edge } = require('./cdp-automation.js');
+
+async function navigateSpaRoute() {
+  // 1. 先入可访问的父页面（非SPA内部子路由）
+  await edge.goto('https://app.example.com/user-center/basic-information');
+  await edge.waitNetworkIdle(8000);
+
+  // 2. JS点击侧边栏 div 触发内部路由跳转
+  await edge.eval(`
+    const nav = document.querySelector('div[cursor-pointer][class*="security"]');
+    if (nav) nav.click();
+  `);
+
+  // 3. 等待SPA路由切换完成
+  await edge.waitNetworkIdle(8000);
+
+  // 4. 截图确认已跳转
+  const screenshot = await edge.screenshot();
+  return screenshot;
+}
+
+navigateSpaRoute().then(() => console.log('SPA导航完成'));
+```
 
 ## 错误处理
 

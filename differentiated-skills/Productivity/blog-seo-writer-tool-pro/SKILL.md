@@ -22,6 +22,11 @@ tags:
   - 写作
   - 电商
   - 集成
+  - pro
+  - coffee
+  - seo
+  - agent
+  - free
 tools:
   - read
   - exec

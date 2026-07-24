@@ -17,6 +17,11 @@ tags:
   - 时间管理
   - 效率
   - 工具
+  - pro
+  - agent
+  - free
+  - true
+  - 逻辑
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: compress-pdf-tool-free
 name: compress-pdf-tool-free
 version: 1.0.0
@@ -28,15 +27,18 @@ tags:
   - 开发
   - 代码
   - 研究
+  - pdf
+  - api
+  - 支持创建
+  - 查询
+  - input_params
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # PDF压缩工具（免费版）
 
 ## 概述

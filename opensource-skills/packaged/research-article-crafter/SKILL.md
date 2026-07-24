@@ -15,6 +15,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - agent
+  - output
+  - article
+  - github
+  - arr
 tools:
   - read
   - exec

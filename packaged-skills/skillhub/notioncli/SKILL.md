@@ -1,12 +1,11 @@
 ---
-
 slug: "notioncli"
 name: "notioncli"
 version: 0.1.1
 displayName: "Notion"
 summary: "Notion API管页面/数据库/块/关系/汇总,多工作区。Notion API for creating and managing pages, databases, blocks, r"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Notion API for creating and managing pages, databases, blocks, relations,
   rollups, and multi-work。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -20,6 +19,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - api
+  - 不支持
+  - 依赖说明
+  - agent
+  - notioncli
 tools:
   - read
   - exec
@@ -27,9 +31,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Notion
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: skill-production-standards
 name: skill-production-standards
 version: 1.2.0
@@ -17,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - 维度
+  - 分制
+  - 评分项
+  - faq
+  - high
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
 ---
-
 本规范是所有Skill生产、优化、升级、改造的**唯一权威标准**。任何Skill在进入`d:\skills\differentiated-skills\`或`d:\skills\packaged-skills\`之前，必须通过本规范的全部检查.
 > **v1.2变更说明**：经第二轮五角色交叉审核，修复9项P0问题。主要变更：(1) 修复`\b`正则在中文上下文失效（改用ASCII-only lookarounds `(?<![A-Za-z0-9_])(?![A-Za-z0-9_])`）；(2) 数据库新增edition/parent_slug/current_score/workflow_state字段；(3) 新增scores表持久化八大维度评分；(4) 新增workflow_states表追踪10步工作流；(5) 修复License违规（规范要求保留原作者版权声明）；(6) 清除所有硬编码API Token；(7) 完善ALLOWED_CONTEXTS.
 ## 一、八大改造维度（量化评分）

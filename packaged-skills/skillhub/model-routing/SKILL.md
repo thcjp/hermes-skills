@@ -1,5 +1,4 @@
 ---
-
 slug: "model-routing"
 name: "model-routing"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "模型路由工具(专业版)"
 summary: "团队级模型路由套件,含成本仪表盘、批量分发、自定义规则与监控告警。。模型路由工具(专业版)面向团队与企业,在三层路由决策基础上,扩展成本分析仪表盘、批量任务分发、自定义路由规则、实时监控告警"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   模型路由工具(专业版)面向团队与企业,在三层路由决策基础上,扩展成本分析仪表盘、批量任务分发、自定义路由规则、实时监控告警与团队策略治理能力。核心能力:
   - 三层路由 + 自定义规则引擎
   - 成本仪表盘:按任务/项目/团队追踪成本
@@ -36,6 +35,11 @@ tags:
   - 研究
   - 分析
   - 知识
+  - flash
+  - yaml
+  - config
+  - standard
+  - route
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 模型路由工具(专业版)
 
 ## 付费版专享能力

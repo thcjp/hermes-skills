@@ -1,5 +1,4 @@
 ---
-
 slug: "cloud-manager"
 name: "cloud-manager"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "云存储管家 专业版"
 summary: "全功能云存储管理，支持多云统一视图、团队共享矩阵与自动化备份规则。。Cloud Manager 专业版面向多设备用户与小团队，在免费版基础上解锁多云统一视图、家庭/团队共享权限矩阵、定时备份"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   Cloud Manager 专业版面向多设备用户与小团队，在免费版基础上解锁多云统一视图、家庭/团队共享权限矩阵、定时备份规则与存储深度分析。核心能力：跨盘统一文件视图、多云迁移向导、家庭/团队共享权限矩阵、定时备份与清理规则、存储用量深度报表、版本历史对比与去重、跨盘文件搜索。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 集成工具
@@ -17,6 +16,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - cloud-manager
+  - bash
+  - 专业版独
+  - 家庭相册
+  - 不支持
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # 云存储管家 专业版
 
 ## 付费版专享能力

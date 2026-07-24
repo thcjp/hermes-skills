@@ -38,6 +38,11 @@ tags:
   - 研究
   - 分析
   - 创意
+  - java
+  - sql
+  - 规则
+  - critical
+  - major
 tools:
   - read
   - exec

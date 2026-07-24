@@ -1,12 +1,11 @@
 ---
-
 slug: "java-free"
 name: "java-free"
 version: "1.0.0"
 displayName: "Java基础版"
 summary: "编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断与基础异常处理。。编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断 与基础异常处理. 核心能力: - NullPo"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断
   与基础异常处理.
   核心能力:
@@ -38,15 +37,17 @@ tags:
   - AI代理
   - agent
   - 写作
+  - java
+  - equals
+  - optional
+  - hashcode
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
-
 ---
-
 # Java 基础版
 
 ## 核心能力

@@ -1,5 +1,4 @@
 ---
-
 slug: azure-transcription-tool-free
 name: azure-transcription-tool-free
 version: 1.0.0
@@ -35,15 +34,18 @@ tags:
   - 个人创作
   - 云计算
   - DevOps
+  - result
+  - azure
+  - blob
+  - wav
+  - locale
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
-
 ---
-
 # Azure语音转写免费版
 
 ## 概述

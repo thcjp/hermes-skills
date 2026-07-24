@@ -1,11 +1,10 @@
 ---
-
 slug: "figma"
 name: "figma"
 version: 2.1.1
 displayName: "Figma"
 summary: "读Figma数据/导出资产/写回请求,设计交付闭环"Proprietary。This skill does what it advertises: reads Figma data, exp"
-description: |-，可生成提升工作效率
+description: |-
   This skill does what it advertises: reads Figma data, exports assets,
   and writes user-requested r。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - api
+  - figma
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ homepage: ""
 # 定价元数据
 license: "MIT"
 category: "Automation"
-
 ---
-
 # Figma
 
 ## 付费版专享能力

@@ -15,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - group-agent
+  - group
+  - proj-q3
+  - researcher
 tools:
   - read
   - exec

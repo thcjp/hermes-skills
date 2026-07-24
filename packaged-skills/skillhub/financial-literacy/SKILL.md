@@ -1,12 +1,11 @@
 ---
-
 slug: "financial-literacy"
 name: "financial-literacy"
 version: 1.0.1
 displayName: "Finance"
 summary: "从个人预算到专业分析研究,全面提升财商。Support financial understanding from personal budgeting to professional ana"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Support financial understanding from personal budgeting to professional
   analysis and research。核心能力:
 
@@ -35,6 +34,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Finance
 
 ## 付费版专享能力

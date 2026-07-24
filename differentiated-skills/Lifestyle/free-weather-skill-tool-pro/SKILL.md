@@ -1,5 +1,4 @@
 ---
-
 slug: free-weather-skill-tool-pro
 name: free-weather-skill-tool-pro
 version: 1.0.0
@@ -30,6 +29,11 @@ tags:
   - 研究
   - 分析
   - 集成
+  - self
+  - source
+  - city
+  - results
+  - 不支持
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 免费天气技能 (专业版)
 ## 概述
 专业版在免费版零配置查询能力之上,扩展多数据源冗余、企业集成、缓存加速、监控告警等生产能力。支持同时对接 wttr.in、Open-Meteo、OpenWeather 等多个数据源,自动故障切换,提供 99.9% 可用性 SLA。适合需要将天气数据深度集成到生产系统的企业、IoT 平台、商业应用等场景.

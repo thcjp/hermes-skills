@@ -1,5 +1,4 @@
 ---
-
 slug: "quark-scan-tool-pro"
 name: "quark-scan-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "夸克扫描-专业版"
 summary: "企业级文件扫描增强工具,支持批量处理、API集成、自定义流水线,适配商业文档数字化。。夸克扫描专业版,面向企业团队与专业用户的高级文件扫描与图像增强工具。核心能力: - 批量图片处理,支持目"
 license: "Proprietary"
 edition: "pro"
-description: |-，可处理提升工作效率
+description: |-
   夸克扫描专业版,面向企业团队与专业用户的高级文件扫描与图像增强工具。核心能力:
   - 批量图片处理,支持目录扫描与队列处理
   - API 集成,可嵌入企业文档管理系统
@@ -35,15 +34,18 @@ tags:
   - 集成
   - integration
   - 知识
+  - api
+  - output
+  - input
+  - scene
+  - 请参考
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 夸克扫描工具 - 专业版
 
 ## 概述

@@ -1,5 +1,4 @@
 ---
-
 slug: straker-verify-tool-pro
 name: straker-verify-tool-pro
 version: 1.0.0
@@ -53,15 +52,17 @@ tags:
   - 安全
   - 加密
   - 工具
+  - options
+  - self
+  - get
+  - data
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
-
 ---
-
 AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。在免费版基础翻译功能上,增加AI质量增强、专业人工审核、翻译记忆库(TM)与术语表管理、批量并行翻译、Webhook翻译完成回调等企业级功能。支持无限API调用,提供HTML/JSON专业翻译报告。与免费版完全兼容,API接口和项目格式可无缝迁移.
 ## 核心能力
 ### 功能矩阵

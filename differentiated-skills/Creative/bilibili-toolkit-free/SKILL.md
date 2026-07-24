@@ -1,5 +1,4 @@
 ---
-
 slug: bilibili-toolkit-free
 name: bilibili-toolkit-free
 version: 1.0.1
@@ -39,15 +38,18 @@ tags:
   - 个人创作
   - 视频
   - 媒体
+  - python
+  - main
+  - url
+  - bv1xx411c7md
+  - print
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # B站工具箱免费版
 
 ## 概述

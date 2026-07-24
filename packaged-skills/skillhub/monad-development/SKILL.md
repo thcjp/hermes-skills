@@ -1,12 +1,11 @@
 ---
-
 slug: "monad-development"
 name: "monad-development"
 version: 1.0.1
 displayName: "Monad Development"
 summary: "在Monad区块链建dapp,部署合约/配前端。Builds dapps on Monad blockchain。Use when deploying contracts, setting"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Builds dapps on Monad blockchain。Use when deploying contracts, setting
   up frontends with viem/wa。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 创意
   - 图像
   - 运维
+  - mytoken
+  - sol
+  - 依赖说明
+  - src
+  - 不支持
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Monad Development
 
 ## 付费版专享能力

@@ -1,12 +1,11 @@
 ---
-
 slug: "universal-translate"
 name: "universal-translate"
 version: 1.0.1
 displayName: "Universal Translate"
 summary: "在任意语言间翻译文本/文件/对话,自动检测源语言。Translate text, files, and conversations between any languages。Auto-de"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Translate text, files, and conversations between any languages。Auto-detects
   source language。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 翻译
   - 语言
   - 工具
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # Universal Translate
 
 ## 付费版专享能力

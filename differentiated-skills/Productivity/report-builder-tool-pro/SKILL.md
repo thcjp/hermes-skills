@@ -18,6 +18,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - pro
+  - data
+  - reports
+  - agent
+  - free
 tools:
   - read
   - exec

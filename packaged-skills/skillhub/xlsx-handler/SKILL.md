@@ -1,5 +1,4 @@
 ---
-
 slug: "xlsx-handler"
 name: "xlsx-handler"
 version: 1.0.1
@@ -7,21 +6,10 @@ displayName: "XLSX处理专业版"
 summary: "企业级 XLSX 读写引擎，含批量处理、大文件流式、公式审计、跨平台兼容与数据源对接。。XLSX 处理专业版在免费版基础上扩展批量处理、大文件流式读写、工作簿差异对比、公式审计与依赖追踪、数"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   XLSX 处理专业版在免费版基础上扩展批量处理、大文件流式读写、工作簿差异对比、公式审计与依赖追踪、数据源对接与跨平台深度兼容能力。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
-  - 集成工具
-  - 表格处理
-  - 企业级
-  - 工作簿治理
-  - 工具
-  - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
-  - AI代理
+  - 效率,分析,python,str,row,llm
 tools:
   - read
   - exec
@@ -30,9 +18,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # XLSX处理专业版
 
 ## 付费版专享能力

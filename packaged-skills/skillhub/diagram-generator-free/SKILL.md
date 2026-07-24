@@ -1,12 +1,11 @@
 ---
-
 slug: "diagram-generator-free"
 name: "diagram-generator-free"
 version: "1.0.0"
 displayName: "Diagram基础版"
 summary: "通过MCP工具生成基础Mermaid流程图与Draw.io架构图,适合快速文档化。diagram-generator 基础客户端(免费版)。通过 mcp-diagram-generator"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   diagram-generator 基础客户端(免费版)。通过 mcp-diagram-generator MCP 服务器将自然语言意图转换为 JSON 规范,
   生成 Mermaid 流程图与 Draw.io 架构图两种基础能力。支持默认输出路径、交互式采集、基础质量校验.
 tags:
@@ -18,15 +17,18 @@ tags:
   - 开发
   - 代码
   - 研究
+  - type
+  - mermaid
+  - json
+  - mcp
+  - node
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Diagram Generator LITE
 
 基础版图表生成客户端,通过 mcp-diagram-generator MCP 服务器生成 Mermaid 流程图与 Draw.io 架构图.

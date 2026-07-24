@@ -13,6 +13,11 @@ tags:
   - 跨平台控制
   - 工作流
   - 效率
+  - sysctl-cli
+  - bash
+  - service
+  - file
+  - nginx
 tools:
   - read
   - exec

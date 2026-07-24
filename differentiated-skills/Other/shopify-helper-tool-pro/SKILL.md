@@ -47,6 +47,11 @@ tags:
   - 写作
   - 电商
   - 研究
+  - shopify
+  - app
+  - 用户提供
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec

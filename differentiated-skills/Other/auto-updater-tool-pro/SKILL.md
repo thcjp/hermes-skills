@@ -49,6 +49,11 @@ tags:
   - 运维
   - 监控
   - 生活
+  - internal
+  - 更新
+  - 返回结构
+  - 用户提供
+  - 完成核心
 tools:
   - read
   - exec

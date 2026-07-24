@@ -20,6 +20,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - true
+  - agent
+  - 并行
+  - 专业版启
+  - text
 tools:
   - read
   - exec

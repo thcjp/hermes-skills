@@ -15,6 +15,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - token
+  - api
+  - auth
+  - path
+  - github
 tools:
   - read
   - exec

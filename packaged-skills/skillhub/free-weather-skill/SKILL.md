@@ -1,12 +1,11 @@
 ---
-
 slug: "free-weather-skill"
 name: "free-weather-skill"
 version: 0.1.1
 displayName: "Weather"
 summary: "免API Key获取当前天气与预报,出门不抓瞎。Get current weather and forecasts (no API key required)。核心能力: - 生活工具领域的"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Get current weather and forecasts (no API key required)。核心能力:
 
   - 生活工具领域的专业化AI辅助工具
@@ -32,6 +31,10 @@ tags:
   - AI代理
   - agent
   - 研究
+  - api
+  - key
+  - 依赖说明
+  - 不支持
 tools:
   - read
   - exec
@@ -39,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Weather
 
 ## 付费版专享能力

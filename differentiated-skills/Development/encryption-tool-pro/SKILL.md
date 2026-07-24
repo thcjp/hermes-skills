@@ -1,5 +1,4 @@
 ---
-
 slug: "encryption-tool-pro"
 name: "encryption-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "加密工具专业版"
 summary: "企业级加密管理,支持KMS集成、密钥轮换、合规审计、批量加密与深度代码安全扫描。。面向企业安全团队的高级加密管理工具,提供KMS密钥管理集成、自动密钥轮换、合规性审计、批量加密与深度代码安全"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业安全团队的高级加密管理工具,提供KMS密钥管理集成、自动密钥轮换、合规性审计、批量加密与深度代码安全扫描。核心能力:
   - KMS/Vault密钥管理集成
   - 自动密钥轮换与版本管理
@@ -37,15 +36,18 @@ tags:
   - 开发
   - 代码
   - 写作
+  - echo
+  - json
+  - python3
+  - output
+  - kms
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 加密工具专业版为企业安全团队提供高级加密管理能力。在免费版基础加密能力之上,专业版新增KMS密钥管理集成、自动密钥轮换、合规性审计、批量文件加密和深度代码安全扫描,满足企业级数据保护和合规要求.
 专业版完全兼容免费版的所有加密命令和配置,安全团队可从免费版无缝升级,已有加密脚本无需修改即可在专业版中使用.
 ## 核心能力

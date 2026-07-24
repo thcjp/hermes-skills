@@ -39,6 +39,11 @@ tags:
   - 创意
   - 图像
   - 开发
+  - 简历驱动
+  - 定向问题
+  - json
+  - agent
+  - 面试模拟
 tools:
   - read
   - exec

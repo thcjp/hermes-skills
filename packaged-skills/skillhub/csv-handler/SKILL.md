@@ -1,12 +1,11 @@
 ---
-
 slug: "csv-handler"
 name: "csv-handler"
 version: 2.1.1
 displayName: "CSV文件处理专家"
 summary: "自动检测编码与分隔符，清洗、合并、拆分、转换CSV数据，支持进度计划与成本数据专用解析。CSV文件处理专家，覆盖建筑、工程、财务等场景下的CSV全生命周期管理. 核心能力包括： - 编码自动"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   CSV文件处理专家，覆盖建筑、工程、财务等场景下的CSV全生命周期管理.
   核心能力包括：
   - 编码自动检测（utf-8、utf-8-sig、latin-1、cp1252、iso-8859-1）
@@ -31,6 +30,10 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 专用解析
+  - 用户提供
+  - 包含执行
+  - 状态码
 tools:
   - read
   - exec
@@ -38,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # CSV文件处理专家
 
 ## 输入格式

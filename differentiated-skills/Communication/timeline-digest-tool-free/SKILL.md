@@ -45,6 +45,11 @@ tags:
   - 分析
   - 工作流
   - 通信
+  - tweet
+  - self
+  - tweets
+  - json
+  - list
 tools:
   - read
   - exec

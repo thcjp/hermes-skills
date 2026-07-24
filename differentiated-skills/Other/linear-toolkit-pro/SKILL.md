@@ -38,6 +38,11 @@ tags:
   - 分析
   - 工作流
   - 生活
+  - metrics
+  - 批量操作
+  - 跨团队看
+  - json
+  - linear
 tools:
   - read
   - exec

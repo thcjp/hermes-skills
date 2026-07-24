@@ -19,6 +19,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - memory
+  - 记忆
+  - 专业版
+  - 跨设备同
+  - 记忆堡垒
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "gog"
 name: "gog"
 version: 1.0.1
 displayName: "Gog"
 summary: "Google Workspace命令行工具,覆盖Gmail/日历/云盘/联系人/表格/文档六大服务。"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Google Workspace 命令行工具技能。通过 `gog` CLI 统一操作 Gmail、Calendar、Drive、
   Contacts、Sheets、Docs 六大服务,支持 OAuth 凭证管理、多账户切换、JSON 结构化输出与
   脚本化批处理。适用于独立开发者效率提升、自动化工作流编排与一人公司办公自动化场景.
@@ -22,6 +21,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - gog
+  - json
+  - bash
+  - gmail
+  - sheets
 tools:
   - read
   - exec
@@ -30,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # gog
 
 `gog` 是 Google Workspace 的命令行工具,统一封装 Gmail、Calendar、Drive、Contacts、Sheets、Docs 六大服务的 API 调用。所有操作通过 OAuth 凭证鉴权,支持多账户切换、JSON 结构化输出与 `--no-input` 脚本模式.

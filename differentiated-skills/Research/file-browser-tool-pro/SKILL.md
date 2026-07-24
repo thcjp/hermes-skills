@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - self
+  - def
+  - print
+  - return
+  - 不支持
 tools:
   - read
   - exec

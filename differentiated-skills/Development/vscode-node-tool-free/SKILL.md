@@ -36,6 +36,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - vscode
+  - ide
+  - git
+  - nodes
+  - status
 tools:
   - read
   - exec

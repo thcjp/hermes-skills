@@ -1,5 +1,4 @@
 ---
-
 slug: "doubao-image-gen-tool-pro"
 name: "doubao-image-gen-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "豆包图片生成-专业版"
 summary: "企业级AI图片生成平台，支持批量生成、多比例输出、风格预设、提示词增强与工作流自动化。。豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Creative
@@ -18,15 +17,18 @@ tags:
   - 企业级
   - 图像处理
   - 创意
+  - json
+  - python3
+  - tmp
+  - 提示词增
+  - 不支持
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 豆包图片生成专业版是一款面向企业团队与专业设计师的高级 AI 图片生成平台。在免费版单图生成能力之上，专业版扩展了批量生成、多比例输出、风格预设、提示词增强、参考图生成等企业级能力.
 专业版采用任务队列架构，支持并行生成、失败重试、断点续传，可稳定处理 50+ 图片的批量生成任务。同时完全兼容免费版工作流，已有配置可无缝迁移.
 ### 免费版与专业版能力对比

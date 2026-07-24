@@ -1,12 +1,11 @@
 ---
-
 slug: "expanso-json-to-yaml"
 name: "expanso-json-to-yaml"
 version: 1.0.1
 displayName: "Expanso json-to-yaml"
 summary: "用Expanso Edge流水线把JSON转YAML格式。Convert JSON input into YAML format using Expanso Edge pipelines f"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Convert JSON input into YAML format using Expanso Edge pipelines for
   CLI or MCP server integration。核心能力:
 
@@ -34,6 +33,11 @@ tags:
   - 代码
   - 工作流
   - 研究
+  - 按流程执
+  - 依赖说明
+  - expanso
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Expanso json-to-yaml
 
 ## 付费版专享能力

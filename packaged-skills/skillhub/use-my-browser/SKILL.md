@@ -1,12 +1,11 @@
 ---
-
 slug: "use-my-browser"
 name: "use-my-browser"
 version: 1.0.1
 displayName: "浏览器控制工具"
 summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展 桥接，直接操作用户已登录的浏览器会话，无需"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展
   桥接，直接操作用户已登录的浏览器会话，无需重新认证。支持页面文本提取、
   元素查找、JavaScript执行、截图和标签页管理。适用于独立开发者、企业团队
@@ -27,10 +26,13 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - json
+  - url
+  - com
+  - tmwd_elements
+  - 包含执行
 category: "Automation"
-
 ---
-
 # 浏览器控制工具
 
 控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取.

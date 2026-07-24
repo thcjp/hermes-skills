@@ -1,12 +1,11 @@
 ---
-
 slug: "translate"
 name: "translate"
 version: 1.0.1
 displayName: "Translate"
 summary: "准确翻译文本,保格式/处理复数/按地区调语气。Translate text accurately — preserve formatting, handle plurals, and ada"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Translate text accurately — preserve formatting, handle plurals, and
   adapt tone per locale。核心能力:
 
@@ -30,6 +29,11 @@ tags:
   - 翻译
   - 语言
   - 工具
+  - translate
+  - 依赖说明
+  - agent
+  - 不支持
+  - llm
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # Translate
 
 ## 付费版专享能力

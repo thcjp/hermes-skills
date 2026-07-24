@@ -20,6 +20,11 @@ tags:
   - 开发
   - 代码
   - 写作
+  - terraform
+  - var
+  - aws
+  - vpc
+  - state
 tools:
   - read
   - exec

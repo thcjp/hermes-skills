@@ -1,12 +1,11 @@
 ---
-
 slug: "openai-whisper"
 name: "openai-whisper"
 version: 1.0.1
 displayName: "llm-provider Whisper"
 summary: "用Whisper CLI本地语音转文字,免API Key。Local speech-to-text with the Whisper CLI (no API key)。核心能力: - 创意设"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Local speech-to-text with the Whisper CLI (no API key)。核心能力:
 
   - 创意设计领域的专业化AI辅助工具
@@ -32,6 +31,11 @@ tags:
   - AI代理
   - agent
   - 研究
+  - api
+  - whisper
+  - key
+  - 依赖说明
+  - 不支持
 tools:
   - read
   - exec
@@ -39,9 +43,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # llm-provider Whisper
 
 ## 付费版专享能力

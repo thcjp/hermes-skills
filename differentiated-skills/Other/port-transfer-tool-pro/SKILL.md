@@ -39,6 +39,10 @@ tags:
   - 写作
   - 电商
   - 研究
+  - json
+  - key
+  - rbac
+  - claude
 tools:
   - read
   - exec

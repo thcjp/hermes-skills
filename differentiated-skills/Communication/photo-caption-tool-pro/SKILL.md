@@ -1,5 +1,4 @@
 ---
-
 slug: "photo-caption-tool-pro"
 name: "photo-caption-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "照片配文工具专业版"
 summary: "全平台照片配文生成工具,支持13个社交平台,提供批量配文、品牌风格定制与编辑分析能力。。照片配文工具专业版,面向专业摄影师与内容创作者提供 13 个社交平台的配文生成能力,支持批量处理、品牌"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   照片配文工具专业版,面向专业摄影师与内容创作者提供 13 个社交平台的配文生成能力,支持批量处理、品牌风格定制与照片编辑分析。核心能力:
   - 13 个平台全覆盖(Instagram/Flickr/X/Glass/Tumblr/Bluesky/Threads/500px/Reddit/Facebook/VSCO/Substack/Pinterest)
   - 批量照片配文生成
@@ -18,29 +17,14 @@ description: |-，可生成提升工作效率
 
   适用场景:
 tags:
-  - 沟通协作
-  - 社交媒体
-  - 内容创作
-  - 摄影配文
-  - 专业效率
-  - 品牌管理
-  - 工具
-  - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 通信
-  - 邮件
-  - 知识
+  - 内容创作,工具,效率,分析,专业版独,不支持
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 照片配文工具专业版是一款面向专业摄影师与内容创作者的全平台照片配文生成解决方案。在完全兼容免费版 Instagram、X(Twitter)、Facebook 三大平台配文能力的基础上,专业版解锁了 Flickr、Glass、Tumblr、Bluesky、Threads、500px、Reddit、VSCO、Substack、Pinterest 共 13 个平台的配文生成能力.
 无论是同时在 13 个平台发布摄影作品、批量处理一组系列照片的配文、维护统一的品牌语气风格,还是获取照片编辑分析建议,专业版都能高效完成,帮助创作者在多平台建立专业形象.
 ### 免费版与专业版能力对比

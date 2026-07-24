@@ -40,6 +40,11 @@ tags:
   - 运维
   - 监控
   - 研究
+  - token-pro
+  - cron
+  - moonshot
+  - 余额
+  - api
 tools:
   - read
   - exec

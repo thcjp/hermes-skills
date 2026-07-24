@@ -16,6 +16,10 @@ tags:
   - 信息聚合
   - 检索
   - 工具
+  - pro
+  - google
+  - self
+  - duckduckgo
 tools:
   - read
   - exec

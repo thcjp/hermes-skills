@@ -17,6 +17,11 @@ tags:
   - 生产力
   - 文档
   - 工具
+  - uvx
+  - markitdown
+  - pdf
+  - markdown
+  - bash
 tools:
   - read
   - exec

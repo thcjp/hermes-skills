@@ -1,5 +1,4 @@
 ---
-
 slug: iris-formatter-tool-free
 name: iris-formatter-tool-free
 version: 1.0.0
@@ -39,15 +38,18 @@ tags:
   - 研究
   - 分析
   - 运维
+  - objectscript
+  - 代码格式
+  - iris
+  - tro
+  - 方法命名
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # IRIS 代码格式化工具（免费版）
 
 ## 概述

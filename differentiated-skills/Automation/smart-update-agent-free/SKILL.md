@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - agent
+  - 更新
+  - cron
+  - update
+  - bash
 tools:
   - read
   - exec

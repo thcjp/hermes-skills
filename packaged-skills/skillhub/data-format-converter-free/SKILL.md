@@ -1,12 +1,11 @@
 ---
-
 slug: "data-format-converter-free"
 name: "data-format-converter-free"
 version: "1.0.0"
 displayName: "数据格式转换(免费版)"
 summary: "CSV与JSON、JSON与YAML基础互转，支持单文件转换与中文输出。数据格式转换器免费版，提供基础的数据格式互转能力. 核心能力包括： - CSV转JSON（csv.DictReader"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   数据格式转换器免费版，提供基础的数据格式互转能力.
   核心能力包括：
   - CSV转JSON（csv.DictReader读取，json.dumps输出）
@@ -22,6 +21,11 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - json
+  - csv
+  - yaml
+  - data
+  - false
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
   - glob
 homepage: ""
 category: "Research"
-
 ---
-
 # 数据格式转换器（免费版）
 
 ## 输入格式

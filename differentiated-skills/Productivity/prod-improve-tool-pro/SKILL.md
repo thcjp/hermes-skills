@@ -23,6 +23,11 @@ tags:
   - 研究
   - 分析
   - 生活
+  - pro
+  - agent
+  - free
+  - 逻辑
+  - 返回结构
 tools:
   - read
   - exec

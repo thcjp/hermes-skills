@@ -39,6 +39,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - text
+  - url
+  - https
+  - com
+  - json
 tools:
   - read
   - exec

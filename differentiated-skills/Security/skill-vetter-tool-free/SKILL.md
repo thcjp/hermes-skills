@@ -1,5 +1,4 @@
 ---
-
 slug: skill-vetter-tool-free
 name: skill-vetter-tool-free
 version: 1.0.0
@@ -45,14 +44,17 @@ tags:
   - 风险评估
   - 加密
   - 工具
+  - pattern
+  - severity
+  - 安全审查
+  - high
+  - 文件
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
-
 ---
-
 # Skill安全审查(免费版)
 
 ## 概述

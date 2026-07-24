@@ -18,6 +18,11 @@ tags:
   - 免费版
   - 加密
   - 工具
+  - echo
+  - govulncheck
+  - dev
+  - null
+  - json
 tools:
   - read
   - exec

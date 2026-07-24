@@ -19,6 +19,11 @@ tags:
   - 文档
   - 加密
   - 研究
+  - mcp
+  - agent
+  - markdown
+  - docid
+  - 接入
 tools:
   - read
   - exec

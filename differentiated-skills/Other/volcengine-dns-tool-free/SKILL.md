@@ -38,6 +38,11 @@ tags:
   - 开发
   - 代码
   - 写作
+  - ttl
+  - example
+  - com
+  - api
+  - 记录
 tools:
   - read
   - exec

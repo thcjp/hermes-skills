@@ -1,12 +1,11 @@
 ---
-
 slug: "slack-workspace"
 name: "slack-workspace"
 version: 0.1.2
 displayName: "Slack工作区管家"
 summary: "Slack全量工作区管理：消息/频道/文件/提醒/画布/用户组，ClawLink OAuth托管。面向团队协作与工作区治理的Slack全量管理技能。通过ClawLink OAuth托管连接，"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   面向团队协作与工作区治理的Slack全量管理技能。通过ClawLink OAuth托管连接，
   提供消息管理、频道治理、对话历史、用户查询、文件操作、表情反应、提醒、
   置顶与星标、Canvas画布、团队管理、自定义emoji、通话管理十二大能力域.
@@ -21,6 +20,11 @@ tags:
   - Slack
   - 社交
   - 通信
+  - slack
+  - 验证返回
+  - 数据的完
+  - 整性和格
+  - 式正确性
 tools:
   - read
   - exec
@@ -28,9 +32,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # Slack工作区管家（Slack Workspace）
 
 通过ClawLink OAuth托管连接管理Slack工作区，覆盖消息、频道、文件、用户、提醒、画布等60+ API工具。内置读写分级安全策略，写操作需用户确认后执行.

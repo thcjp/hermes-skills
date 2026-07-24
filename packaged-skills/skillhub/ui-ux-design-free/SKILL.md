@@ -1,12 +1,11 @@
 ---
-
 slug: "ui-ux-design-free"
 name: "ui-ux-design-free"
 version: 1.0.1
 displayName: "UI/UX设计指南免费版"
 summary: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。。UI/UX设计指南免费版，提供基础设计原则与快速参考. 涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求."
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   UI/UX设计指南免费版，提供基础设计原则与快速参考.
   涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求.
   适用于个人项目的界面设计指导.
@@ -20,10 +19,13 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - mobile-first
+  - 用户提供
+  - 返回结构
+  - 的处理结
+  - api
 category: "Creative"
-
 ---
-
 # UI/UX设计指南（免费版）
 
 涵盖基础设计原则、配色与排版系统的UI/UX指南.

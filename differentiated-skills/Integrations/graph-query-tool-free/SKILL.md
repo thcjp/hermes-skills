@@ -1,5 +1,4 @@
 ---
-
 slug: graph-query-tool-free
 name: graph-query-tool-free
 version: 1.0.2
@@ -40,15 +39,18 @@ tags:
   - 开发
   - 代码
   - 知识
+  - 查询
+  - api
+  - 返回结构
+  - query_ready
+  - key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 链上数据查询（免费版）
 
 ## 概述

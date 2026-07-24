@@ -1,5 +1,4 @@
 ---
-
 slug: sonos-cli-tool-free
 name: sonos-cli-tool-free
 version: 1.0.0
@@ -45,15 +44,18 @@ tags:
   - 创意
   - 图像
   - 研究
+  - sonos-cli
+  - sonos
+  - 客厅
+  - room
+  - 卧室
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Sonos 控制工具 - 免费版
 
 ## 概述

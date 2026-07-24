@@ -1,12 +1,11 @@
 ---
-
 slug: "github"
 name: "github"
 version: 1.0.1
 displayName: "Github"
 summary: "用gh CLI操作GitHub,issue/pr/run/api一站管理。Interact with GitHub using the `gh` CLI。Use `gh issue`, `g"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Interact with GitHub using the `gh` CLI。Use `gh issue`, `gh pr`, `gh
   run`, and `gh api` for issu。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - 按流程执
+  - api
+  - 依赖说明
+  - 不支持
+  - agent
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Github
 
 ## 付费版专享能力

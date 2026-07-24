@@ -1,5 +1,4 @@
 ---
-
 slug: "code-runner-tool-pro"
 name: "code-runner-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "代码执行工具专业版"
 summary: "企业级PTY代码执行,支持批量任务、并发执行、执行审计与CI/CD集成。面向团队与企业的高级代码执行工具,在免费版基础上扩展批量执行、并发管理、执行审计等能力。核心能力: - 批量任务执行与"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向团队与企业的高级代码执行工具,在免费版基础上扩展批量执行、并发管理、执行审计等能力。核心能力:
   - 批量任务执行与并发管理
   - 执行日志审计与结果追踪
@@ -35,6 +34,11 @@ tags:
   - CI/CD集成
   - 代码生成
   - 编程辅助
+  - prompt
+  - workdir
+  - 成功
+  - code_runner
+  - 逻辑
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 # 代码执行工具专业版
 ## 概述
 代码执行工具专业版为企业团队提供高级 PTY 代码执行能力。在免费版单任务执行基础上,扩展了批量并发、执行审计、CI/CD 集成、多用户隔离等功能,满足企业级自动化开发的需求.

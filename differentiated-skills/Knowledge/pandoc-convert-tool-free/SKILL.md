@@ -28,6 +28,11 @@ tags:
   - 知识
   - 文档
   - 开发
+  - pandoc
+  - 支持创建
+  - 查询
+  - input_params
+  - markdown
 tools:
   - read
   - exec

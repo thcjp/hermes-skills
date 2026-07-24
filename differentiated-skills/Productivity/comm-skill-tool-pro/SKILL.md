@@ -23,6 +23,11 @@ tags:
   - 通信
   - 邮件
   - 写作
+  - pro
+  - agent
+  - free
+  - true
+  - 逻辑
 tools:
   - read
   - exec

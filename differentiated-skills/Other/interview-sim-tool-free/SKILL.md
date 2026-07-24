@@ -1,5 +1,4 @@
 ---
-
 slug: interview-sim-tool-free
 name: interview-sim-tool-free
 version: 1.0.0
@@ -41,15 +40,18 @@ tags:
   - 知识
   - 文档
   - 开发
+  - 分钟
+  - 系统设计
+  - text
+  - 场景题
+  - 高级
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 面试模拟工具（免费版）
 
 ## 概述

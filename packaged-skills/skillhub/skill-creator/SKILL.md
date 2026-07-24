@@ -1,12 +1,11 @@
 ---
-
 slug: "skill-creator"
 name: "skill-creator"
 version: 0.1.1
 displayName: "AI技能创建指南"
 summary: "创建有效AI Skill的完整指南，覆盖frontmatter、SKILL.md结构与Progressive Disclosure设计原则"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   创建有效AI Skill的完整指南，基于Core Principles与Anatomy of a Skill规范.
   覆盖frontmatter编写、SKILL.md结构设计、Bundled Resources（scripts/references/assets）组织，
   以及Progressive Disclosure三级加载体系。支持从需求理解到skill打包的完整创建流程.
@@ -27,10 +26,13 @@ tags:
   - 创意
   - 图像
   - AI代理
+  - references
+  - scripts
+  - context
+  - assets
+  - claude
 category: "Automation"
-
 ---
-
 # AI技能创建指南
 
 创建有效AI Skill的完整指南，覆盖从需求理解到skill打包的完整流程，基于Core Principles与Progressive Disclosure设计原则.

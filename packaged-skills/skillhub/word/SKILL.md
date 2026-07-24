@@ -1,12 +1,11 @@
 ---
-
 slug: "word"
 name: "word"
 version: 1.0.1
 displayName: "Word"
 summary: "经osascript控Word会话/文档/选区/批注/导出/审阅。Control Word app sessions, documents, selections, comments, ex"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Control Word app sessions, documents, selections, comments, export,
   and review state with osascri。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 知识
   - 文档
   - AI代理
+  - word
+  - 不支持
+  - agent
+  - api
+  - 依赖说明
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Word
 
 ## 付费版专享能力

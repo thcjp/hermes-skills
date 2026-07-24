@@ -37,6 +37,11 @@ tags:
   - 图像
   - 开发
   - 代码
+  - api
+  - png
+  - prompt
+  - key
+  - 请参考
 tools:
   - read
   - exec

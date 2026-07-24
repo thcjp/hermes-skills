@@ -39,6 +39,11 @@ tags:
   - 安全
   - 加密
   - 研究
+  - typescript
+  - const
+  - boolean
+  - string
+  - api
 tools:
   - read
   - exec

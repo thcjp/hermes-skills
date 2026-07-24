@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - pro
+  - research-pro
+  - run_id
+  - parallel-research
+  - ultra
 tools:
   - read
   - exec

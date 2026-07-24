@@ -15,6 +15,11 @@ tags:
   - 工作流
   - 效率工具
   - 效率
+  - yaml
+  - competitor
+  - config
+  - action
+  - step
 tools:
   - read
   - exec

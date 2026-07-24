@@ -1,12 +1,11 @@
 ---
-
 slug: "dns-free"
 name: "dns-free"
 version: "1.0.0"
 displayName: "DNS配置基础版"
 summary: "DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查。DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断. 核心能力: - 迁移前的"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断.
   核心能力:
   - 迁移前的TTL降级提示与基础缓存探测
@@ -29,15 +28,18 @@ tags:
   - AI代理
   - agent
   - 研究
+  - com
+  - dig
+  - example
+  - ttl
+  - spf
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # DNS配置基础版
 
 ## 输入格式

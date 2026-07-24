@@ -21,6 +21,11 @@ tags:
   - 分析
   - 写作
   - 电商
+  - pro
+  - agent
+  - free
+  - true
+  - 逻辑
 tools:
   - read
   - exec

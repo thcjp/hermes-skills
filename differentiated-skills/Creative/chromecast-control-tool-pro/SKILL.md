@@ -30,6 +30,11 @@ tags:
   - 创意
   - 图像
   - 运维
+  - self
+  - device_name
+  - def
+  - queues
+  - url
 tools:
   - read
   - exec

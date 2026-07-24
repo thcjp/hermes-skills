@@ -21,6 +21,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - mp4
+  - input
+  - ffmpeg
+  - output
+  - aac
 tools:
   - read
   - exec

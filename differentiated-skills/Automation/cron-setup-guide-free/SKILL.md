@@ -1,5 +1,4 @@
 ---
-
 slug: cron-setup-guide-free
 name: cron-setup-guide-free
 version: 1.0.1
@@ -10,22 +9,14 @@ edition: free
 description: 定时任务设置指南免费版是面向AI Agent的定时调度配置手册。不同于最佳实践类技能，本技能聚焦"如何正确配置定时任务"的技术细节：调度类型选择、会话目标决策、投递通道设置、JSON，可处理提升工作效率
   Schema编写、作业生命周期管理。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-  - 定时任务
-  - 调度配置
-  - 作业管理
-  - 自动化
-  - UI设计
-  - 前端
-  - 设计
+  - 定时任务,调度配置,作业管理,cron,string,kind
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 定时任务设置指南（免费版）
 
 > **不是教你写cron表达式，而是教你完整配置一个定时任务。调度类型、会话模式、投递通道，配置细节一网打尽。**

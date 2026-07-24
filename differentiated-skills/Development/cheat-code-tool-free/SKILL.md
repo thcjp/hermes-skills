@@ -1,5 +1,4 @@
 ---
-
 slug: cheat-code-tool-free
 name: cheat-code-tool-free
 version: 1.0.0
@@ -41,6 +40,11 @@ tags:
   - AI辅助
   - 代码生成
   - 编程辅助
+  - agent
+  - api
+  - bash
+  - 知识服务
+  - export
 tools:
   - read
   - exec
@@ -49,9 +53,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 # 能力扩展工具免费版
 
 ## 概述

@@ -40,6 +40,10 @@ tags:
   - 研究
   - 分析
   - 金融
+  - file-sorter-pro
+  - rules
+  - yaml
+  - 操作历史
 tools:
   - read
   - exec

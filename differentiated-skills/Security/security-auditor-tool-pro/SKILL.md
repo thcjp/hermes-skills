@@ -1,5 +1,4 @@
 ---
-
 slug: security-auditor-tool-pro
 name: security-auditor-tool-pro
 version: 1.0.0
@@ -39,15 +38,18 @@ tags:
   - DevSecOps
   - 加密
   - 工具
+  - owasp
+  - python
+  - top
+  - str
+  - sarif
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
-
 ---
-
 代码安全审计员专业版是一款面向企业用户的代码安全审计与SAST(静态应用安全测试)平台。在免费版Top 5 OWASP检查基础上,扩展至Top 10全覆盖,增加AST静态分析自动扫描、TypeScript/Python/Go/Java多语言支持、10+框架安全规则、OWASP ASVS合规等级映射等企业级功能。提供HTML/PDF/SARIF专业审计报告,支持Git Hook持续安全监控。与免费版完全兼容,检查清单和代码示例可无缝复用.
 ## 核心能力
 ### 功能矩阵

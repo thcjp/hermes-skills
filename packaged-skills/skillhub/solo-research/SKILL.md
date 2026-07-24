@@ -1,12 +1,11 @@
 ---
-
 slug: "solo-research"
 name: "solo-research"
 version: 1.7.2
 displayName: "独立研究工具"
 summary: "多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   独立研究工具，通过多搜索策略获取全面准确的研究结果.
   支持GitHub Library Discovery、WebFetch、MCP web_search、Blocked Content Fallback.
   覆盖Product Hunt调研、技术选型、库发现等多种研究场景.
@@ -22,10 +21,13 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - api
+  - product
+  - hunt
+  - webfetch
+  - github
 category: "Knowledge"
-
 ---
-
 # 独立研究工具
 
 多策略研究工具，支持GitHub库发现、WebFetch、MCP搜索、内容回退与Product Hunt调研.

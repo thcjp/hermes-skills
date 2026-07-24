@@ -41,6 +41,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - 文本
+  - whatsapp
+  - 用户提供
+  - 支持创建
+  - 查询
 tools:
   - read
   - exec

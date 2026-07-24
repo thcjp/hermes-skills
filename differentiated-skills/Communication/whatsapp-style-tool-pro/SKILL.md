@@ -1,5 +1,4 @@
 ---
-
 slug: "whatsapp-style-tool-pro"
 name: "whatsapp-style-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "WhatsApp样式工具-专业版"
 summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配。WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力: - 全部WhatsApp格"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力:
   - 全部WhatsApp格式语法支持(加粗/斜体/删除线/等宽体/列表/引用)
   - 自定义样式预设与消息模板管理
@@ -31,15 +30,18 @@ tags:
   - 格式规范
   - 社交
   - 通信
+  - rule
+  - message
+  - self
+  - whatsapp
+  - violations
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 WhatsApp样式工具专业版是一款面向企业和专业团队的高级消息格式化平台。在免费版基础格式能力之上,PRO版提供自定义样式预设、批量格式转换、团队样式规范、多平台格式适配等企业级功能,帮助团队实现消息样式的一致性管理和高效生产.
 PRO版与免费版完全兼容,升级后原有格式规则和清理逻辑继续生效。适合企业客服团队统一消息风格、营销团队批量格式化内容、多渠道发布场景下的格式自动适配等复杂需求.
 ### PRO版增强能力总览

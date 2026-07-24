@@ -25,6 +25,11 @@ tags:
   - 数据采集
   - 检索
   - 工具
+  - python
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - json
 tools:
   - read
   - exec

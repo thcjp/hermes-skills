@@ -35,6 +35,10 @@ tags:
   - SEO优化
   - 视频
   - 媒体
+  - python
+  - seo
+  - bili-pro
+  - duration
 tools:
   - read
   - exec

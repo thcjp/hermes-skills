@@ -1,5 +1,4 @@
 ---
-
 slug: security-scanner-tool-free
 name: security-scanner-tool-free
 version: 1.0.0
@@ -47,14 +46,17 @@ tags:
   - 网络安全
   - 加密
   - 工具
+  - self
+  - target
+  - result
+  - results
+  - 扫描
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
-
 ---
-
 # 安全扫描器(免费版)
 
 ## 概述

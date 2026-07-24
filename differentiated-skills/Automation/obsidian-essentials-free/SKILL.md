@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - obsidian
+  - vault
+  - markdown
+  - 核心插件
+  - text
 tools:
   - read
   - exec

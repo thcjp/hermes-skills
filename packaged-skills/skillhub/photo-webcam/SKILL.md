@@ -1,18 +1,22 @@
 ---
-
 slug: "photo-webcam"
 name: "photo-webcam"
 version: 1.0.7
 displayName: "Photo Webcam"
 summary: "列出并抓取网络摄像头快照(尤其foto-webcam.eu)。List and snapshot retrieval for webcams (especially foto-webcam。"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   List and snapshot retrieval for webcams (especially foto-webcam。eu)。Use when 用户需要Photo Webcam相关功能时使用。不适用于超出本技能能力范围的复杂需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Other
   - Web开发
   - 前端
   - 开发工具
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Photo Webcam
 
 ## 付费版专享能力

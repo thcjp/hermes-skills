@@ -21,6 +21,11 @@ tags:
   - 研究
   - 分析
   - 创意
+  - api
+  - deepseek
+  - token
+  - key
+  - chat
 tools:
   - read
   - exec

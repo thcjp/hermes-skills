@@ -1,5 +1,4 @@
 ---
-
 slug: "golang-toolkit"
 name: "golang-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Go语言工具包专业版"
 summary: "企业级 Go 开发方案，含性能优化、并发模式库、内存治理与构建工具链集成。。面向企业级 Go 开发团队的专业工具包，提供性能优化、并发模式与工程化能力。核心能力: - 并发模式库（Worke"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业级 Go 开发团队的专业工具包，提供性能优化、并发模式与工程化能力。核心能力:
   - 并发模式库（Worker Pool、Fan-In/Fan-Out、Pipeline、ErrGroup）
   - 性能优化（内存对齐、逃逸分析、GC 调优）
@@ -36,6 +35,11 @@ tags:
   - 研究
   - 分析
   - 集成
+  - func
+  - ctx
+  - context
+  - int
+  - return
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Go语言工具包专业版
 
 ## 付费版专享能力

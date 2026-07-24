@@ -1,12 +1,11 @@
 ---
-
 slug: "audio-upload-aioz-stream"
 name: "audio-upload-aioz-stream"
 version: 1.0.2
 displayName: "AIOZ音频上传"
 summary: "通过AIOZ Stream API快速上传音频文件，支持默认与自定义编码配置，返回HLS/DASH流媒体链接。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   基于 AIOZ Stream API 的音频上传技能，通过三步流程
   (Create → Upload Part → Complete) 将本地音频文件上传至
   AIOZ 流媒体平台。支持默认快速上传与自定义编码配置
@@ -22,6 +21,11 @@ tags:
   - 音频处理
   - 媒体
   - 创意
+  - api
+  - hls
+  - dash
+  - aioz
+  - key
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # AIOZ 音频上传
 
 通过 AIOZ Stream API 将本地音频文件上传至 AIOZ 流媒体平台。完整上传流程包含三次 API 调用：创建音频对象 → 上传文件分片 → 完成上传。上传完成后服务端自动触发转码，最终返回 HLS/DASH 流媒体播放链接.

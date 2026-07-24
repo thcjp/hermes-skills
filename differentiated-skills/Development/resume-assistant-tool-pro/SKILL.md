@@ -38,6 +38,10 @@ tags:
   - 开发
   - 代码
   - 知识
+  - resume
+  - pdf
+  - 优化
+  - 岗位定制
 tools:
   - read
   - exec

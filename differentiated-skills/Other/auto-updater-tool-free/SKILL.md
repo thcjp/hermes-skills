@@ -42,6 +42,11 @@ tags:
   - 研究
   - 分析
   - 运维
+  - auto-updater
+  - json
+  - 差异更新
+  - 返回结构
+  - 用户提供
 tools:
   - read
   - exec

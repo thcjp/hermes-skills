@@ -1,5 +1,4 @@
 ---
-
 slug: code-runner-tool-free
 name: code-runner-tool-free
 version: 1.0.0
@@ -41,6 +40,11 @@ tags:
   - PTY
   - 代码生成
   - 编程辅助
+  - python
+  - path
+  - prompt
+  - run_code_task
+  - developer
 tools:
   - read
   - exec
@@ -49,9 +53,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 # 代码执行工具免费版
 
 ## 概述

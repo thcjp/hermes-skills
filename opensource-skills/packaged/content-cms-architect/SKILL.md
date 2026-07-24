@@ -20,6 +20,11 @@ tags:
   - 电商
   - 工作流
   - 开发
+  - api
+  - sanity
+  - cms
+  - seo
+  - schema
 tools:
   - read
   - exec

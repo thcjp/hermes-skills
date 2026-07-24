@@ -17,6 +17,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - token
+  - agent
+  - 用户
+  - python
+  - text
 tools:
   - read
   - exec

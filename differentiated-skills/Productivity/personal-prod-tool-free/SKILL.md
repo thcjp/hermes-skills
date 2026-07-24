@@ -23,6 +23,11 @@ tags:
   - 研究
   - 分析
   - 创意
+  - pro
+  - free
+  - agent
+  - true
+  - 版本
 tools:
   - read
   - exec

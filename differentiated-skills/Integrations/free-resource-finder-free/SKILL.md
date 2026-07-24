@@ -39,6 +39,11 @@ tags:
   - 代码
   - 研究
   - 分析
+  - free-finder
+  - bash
+  - 免费模型
+  - qwen3-coder
+  - list
 tools:
   - read
   - exec

@@ -16,6 +16,10 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - icp
+  - linkedin
+  - output
+  - 行业
 tools:
   - read
   - exec

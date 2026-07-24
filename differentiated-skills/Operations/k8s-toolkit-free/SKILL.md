@@ -1,5 +1,4 @@
 ---
-
 slug: k8s-toolkit-free
 name: k8s-toolkit-free
 version: 1.0.1
@@ -23,15 +22,18 @@ tags:
   - 代码
   - 研究
   - 分析
+  - k8s
+  - kubectl
+  - pod
+  - deployment
+  - service
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # K8s避坑入门工具（免费版）
 
 ## 概述

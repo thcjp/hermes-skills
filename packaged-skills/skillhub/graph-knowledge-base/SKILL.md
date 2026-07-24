@@ -1,5 +1,4 @@
 ---
-
 slug: "graph-knowledge-base"
 name: "graph-knowledge-base"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "知识图谱库(专业版)"
 summary: "全功能知识图谱工具，支持图谱关系查询、知识分析、跨实体关联与多格式导出。知识图谱库(专业版)是面向团队与知识工作者的全功能知识图谱管理工具，在免费版基础上新增图谱关系查询、知识分析、跨实体关"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   知识图谱库(专业版)是面向团队与知识工作者的全功能知识图谱管理工具，在免费版基础上新增图谱关系查询、知识分析、跨实体关联与多格式导出等高级能力。核心能力：
   - 完整的实体管理、事实添加与版本替代能力
   - 图谱关系查询，发现跨实体隐含关联
@@ -27,6 +26,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - json
+  - csv
+  - markdown
+  - python
+  - graphml
 tools:
   - read
   - exec
@@ -34,9 +38,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 知识图谱库(专业版)
 
 ## 付费版专享能力

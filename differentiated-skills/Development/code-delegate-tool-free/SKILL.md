@@ -1,5 +1,4 @@
 ---
-
 slug: code-delegate-tool-free
 name: code-delegate-tool-free
 version: 1.0.0
@@ -40,6 +39,11 @@ tags:
   - 异步执行
   - 编程辅助
   - 代码生成
+  - agent
+  - cli
+  - continue
+  - bash
+  - claude
 tools:
   - read
   - exec
@@ -48,9 +52,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 # 代码委派工具免费版
 
 ## 概述

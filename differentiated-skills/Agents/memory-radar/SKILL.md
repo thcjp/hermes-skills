@@ -1,12 +1,11 @@
 ---
-
 slug: "memory-radar"
 name: "memory-radar"
 version: "1.0.0"
 displayName: "记忆雷达"
 summary: "解决Prompt注入难检、凭证泄漏被动、误报高、跨文件威胁关联难的记忆安全雷达。面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文件威"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文件威胁关联缺失四大痛点。提供七大威胁类别检测、五级安全分级、本地+可选远程LLM分析、跨文件威胁关联、误报抑制、隔离与恢复、增量扫描。适用于Agent记忆定期安全审计、引入外部数据后注入检测、凭证泄漏排查。适用关键词：记忆安全、注入检测、凭证泄漏、安全扫描、记忆审计、Prompt注入、memory scan、security scan
 tags:
   - 安全扫描
@@ -16,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - memory
+  - 凭证泄漏
+  - agent
+  - medium
+  - line
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 记忆雷达（Memory Radar）
 
 面向 AI Agent 记忆文件的**安全扫描系统**，对记忆文件、日志、工作区配置进行持续安全审计，主动发现恶意指令、注入模式、凭证泄漏与行为操纵，防患于未然.

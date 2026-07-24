@@ -20,6 +20,11 @@ tags:
   - AI代理
   - agent
   - 开发
+  - json
+  - content
+  - error
+  - pos
+  - return
 tools:
   - read
   - exec

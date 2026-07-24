@@ -1,12 +1,11 @@
 ---
-
 slug: "audio-upload-aioz-stream-free"
 name: "audio-upload-aioz-stream-free"
 version: "1.0.0"
 displayName: "AIOZ音频上传免费版"
 summary: "通过AIOZ Stream API以默认配置上传音频文件，返回HLS流媒体播放链接，适合快速发布。。基于 AIOZ Stream API 的音频上传技能免费版，通过三步流程 (Create"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   基于 AIOZ Stream API 的音频上传技能免费版，通过三步流程
   (Create → Upload Part → Complete) 将本地音频文件上传至
   AIOZ 流媒体平台。支持默认快速上传方式，使用默认编码配置，
@@ -20,15 +19,18 @@ tags:
   - 音频处理
   - 媒体
   - 创意
+  - api
+  - hls
+  - aioz
+  - 调用
+  - stream-public-key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # AIOZ 音频上传（免费版）
 
 通过 AIOZ Stream API 将本地音频文件上传至 AIOZ 流媒体平台。完整上传流程包含三次 API 调用：创建音频对象 → 上传文件分片 → 完成上传。上传完成后服务端自动触发转码，返回 HLS 流媒体播放链接。本免费版支持默认上传方式与基础编码配置.

@@ -1,12 +1,11 @@
 ---
-
 slug: "sonoscli"
 name: "sonoscli"
 version: 1.0.1
 displayName: "Sonoscli"
 summary: "控Sonos音箱,发现/状态/播放/音量/分组。Control Sonos speakers (discover/status/play/volume/group)。核心能力: - 其他工具"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Control Sonos speakers (discover/status/play/volume/group)。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
@@ -31,6 +30,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - 依赖说明
+  - 不支持
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -38,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Sonoscli
 
 ## 付费版专享能力

@@ -20,6 +20,11 @@ tags:
   - 分析
   - 写作
   - 电商
+  - csv
+  - schema
+  - yaml
+  - csv-processor
+  - rules
 tools:
   - read
   - exec

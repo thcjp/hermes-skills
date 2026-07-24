@@ -16,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - password
+  - url
+  - chat-agent
+  - web
 tools:
   - read
   - exec

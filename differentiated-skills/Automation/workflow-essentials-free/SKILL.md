@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - step
+  - text
+  - 识别
+  - 设计
+  - 构建
 tools:
   - read
   - exec

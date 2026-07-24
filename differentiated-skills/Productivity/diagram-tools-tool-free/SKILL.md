@@ -23,6 +23,10 @@ tags:
   - 分析
   - AI代理
   - agent
+  - free
+  - dot
+  - pro
+  - mermaid
 tools:
   - read
   - exec

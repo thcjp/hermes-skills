@@ -19,6 +19,10 @@ tags:
   - 安全
   - 加密
   - 工具
+  - echo
+  - ufw
+  - input
+  - tcp
 tools:
   - read
   - exec

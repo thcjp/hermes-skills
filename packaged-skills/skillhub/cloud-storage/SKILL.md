@@ -1,12 +1,11 @@
 ---
-
 slug: "cloud-storage"
 name: "cloud-storage"
 version: 1.0.2
 displayName: "Cloud Storage"
 summary: "跨云商管理文件,带认证/成本感知/多提供商操作,云盘统一。Manage files across cloud providers with authentication, cost awar"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Manage files across cloud providers with authentication, cost awareness,
   and multi-provider opera。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - api
+  - 不支持
+  - agent
+  - 依赖说明
+  - cloud
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Cloud Storage
 
 ## 付费版专享能力

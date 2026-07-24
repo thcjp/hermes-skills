@@ -1,12 +1,11 @@
 ---
-
 slug: "ui"
 name: "ui"
 version: 1.0.1
 displayName: "UI"
 summary: "设计清晰一致视觉精致的用户界面。Design clear, consistent, and visually polished user interfaces。核心能力: - 创意设计领域的"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Design clear, consistent, and visually polished user interfaces。核心能力:
 
   - 创意设计领域的专业化AI辅助工具
@@ -27,6 +26,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - button
+  - rem
+  - 不支持
+  - 依赖说明
+  - class
 tools:
   - read
   - exec
@@ -34,9 +38,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # UI
 
 ## 付费版专享能力

@@ -15,6 +15,11 @@ tags:
   - 任务编排
   - 自动化
   - 效率
+  - type
+  - yaml
+  - 配方
+  - trigger
+  - actions
 tools:
   - read
   - exec

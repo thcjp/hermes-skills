@@ -43,6 +43,11 @@ tags:
   - 图像处理
   - AI绘图
   - 创意
+  - png
+  - tmp
+  - python3
+  - template
+  - text
 tools:
   - read
   - exec

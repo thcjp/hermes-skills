@@ -41,6 +41,11 @@ tags:
   - 写作
   - 电商
   - 开发
+  - tarot-reader-pro
+  - markdown
+  - pdf
+  - api
+  - 批量占卜
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "openai-ai-paid"
 name: "openai-ai-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "OpenAI助手专业版"
 summary: "企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向团队与企业用户的 llm-provider API 全功能管理工具。核心能力:
   - 涵盖免费版全部能力(对话补全、图像生成、助手管理)
   - 批量任务(Batch API)大规模异步处理
@@ -37,6 +36,11 @@ tags:
   - 研究
   - 分析
   - 创意
+  - client
+  - 不支持
+  - llm-provider
+  - batch
+  - create
 tools:
   - read
   - exec
@@ -45,9 +49,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # OpenAI助手专业版
 
 ## 付费版专享能力

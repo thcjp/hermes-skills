@@ -1,12 +1,11 @@
 ---
-
 slug: "elite-longterm-memory-local-free"
 name: "elite-longterm-memory-local-free"
 version: "1.0.0"
 displayName: "本地向量记忆免费版"
 summary: "基础本地记忆系统，热内存加文件归档，纯本地运行无外部依赖。。面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.md）抗压缩与"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力.
   热内存（SESSION-STATE.md）抗压缩与重启，通过 WAL 协议确保先写状态再回复.
   精选归档（MEMORY.md + daily/）提供人类可读的长期记忆与每日日志.
@@ -23,10 +22,13 @@ tags:
   - 记忆管理
   - 上下文
   - AI
+  - memory
+  - session-state
+  - agent
+  - wal
+  - 会话开始
 category: "Agents"
-
 ---
-
 # 本地向量记忆免费版（Elite Longterm Memory Local Free）
 
 **本地优先，隐私至上。** 基础本地记忆系统，通过热内存与文件归档，让 Agent 不遗忘关键上下文与用户偏好。所有数据完全存储在本地，无需任何外部依赖。本免费版提供两层记忆能力，覆盖单设备本地记忆持久化需求.

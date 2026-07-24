@@ -1,12 +1,11 @@
 ---
-
 slug: ai-video-studio-pro
 name: ai-video-studio-pro
 version: "1.0.1"
 displayName: "AI视频导演"
 summary: "一个人就是一支视频团队,脚本到成片一站式+智能路由+营销策略注入。AI视频导演是一款从脚本到成片一站式视频制作工具。一个人就是一支视频团队,支持热点短视频生成、 口型同步数字人、智能路由决策"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   AI视频导演是一款从脚本到成片一站式视频制作工具。一个人就是一支视频团队,支持热点短视频生成、
   口型同步数字人、智能路由决策树、多引擎降级。营销策略自动注入,三层TTS降级链保证配音可用性.
   核心能力:
@@ -25,14 +24,17 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - 失败
+  - 口型同步
+  - 引擎
+  - tts
+  - duration
 tools:
   - read
   - exec
   - write
 category: "Creative"
-
 ---
-
 # AI视频导演
 
 > 定位: 脚本到成片一站式视频制作

@@ -1,5 +1,4 @@
 ---
-
 slug: "data-analyst-expert"
 name: "data-analyst-expert"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "数据分析专家(专业版)"
 summary: "全功能委派式分析平台,支持大数据流式处理、多任务编排、结果缓存与企业数据库集成。。数据分析专家专业版面向需要把复杂数据分析任务"委派"给 AI Agent 完成的专业用户与团队,提供完整的多"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   数据分析专家专业版面向需要把复杂数据分析任务"委派"给 AI Agent 完成的专业用户与团队,提供完整的多任务编排、大数据处理与企业级集成能力。核心能力:
   - 涵盖免费版全部能力,无文件大小与任务复杂度限制
   - 大数据流式处理:基于分块读取与生成器,处理 GB 级文件
@@ -24,6 +23,11 @@ tags:
   - 信息检索
   - 数据处理
   - 工具
+  - 任务
+  - 依赖
+  - api
+  - 示例数据
+  - text
 tools:
   - read
   - exec
@@ -32,9 +36,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
-
 ---
-
 # 数据分析专家(专业版)
 
 ## 付费版专享能力

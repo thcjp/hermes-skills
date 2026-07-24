@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - vault
+  - obsidian
+  - obsidian-cli
+  - documents
+  - path
 tools:
   - read
   - exec

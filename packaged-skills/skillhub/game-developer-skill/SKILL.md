@@ -1,12 +1,11 @@
 ---
-
 slug: "game-developer-skill"
 name: "game-developer-skill"
 version: 1.0.1
 displayName: "Game Developer Skill"
 summary: "构建游戏系统/实现Unity与Unreal特性/优化性能。Use when building game systems, implementing Unity/Unreal features"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Use when building game systems, implementing Unity/Unreal features,
   or optimizing game performanc。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 代码
   - 工作流
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - api
+  - 不支持
+  - agent
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Game Developer Skill
 
 ## 付费版专享能力

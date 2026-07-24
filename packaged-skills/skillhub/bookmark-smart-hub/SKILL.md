@@ -1,5 +1,4 @@
 ---
-
 slug: "bookmark-smart-hub"
 name: "bookmark-smart-hub"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "书签智能中心专业版"
 summary: "自动化书签监控与 AI 深度分析平台，支持后台守护、多渠道通知与知识库全文检索。。面向知识工作者与团队的自动化书签监控与 AI 分析平台. 核心能力: 后台自动监控、AI 深度分析、多渠道通"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向知识工作者与团队的自动化书签监控与 AI 分析平台.
   核心能力: 后台自动监控、AI 深度分析、多渠道通知、知识库全文检索、趋势发现、数据导出、团队共享.
   适用场景: 知识管理自动化、研究素材收集、行业趋势跟踪、团队知识沉淀、内容灵感挖掘.
@@ -27,6 +26,11 @@ tags:
   - 知识
   - 文档
   - AI代理
+  - pm2
+  - bookmark-smart-hub
+  - bash
+  - agent
+  - npm
 tools:
   - read
   - exec
@@ -34,9 +38,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 书签智能中心专业版
 
 ## 付费版专享能力

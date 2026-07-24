@@ -1,5 +1,4 @@
 ---
-
 slug: "knowledge-graph-tool-pro"
 name: "knowledge-graph-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "知识图谱工具(专业版)"
 summary: "团队级嵌入式知识图谱,含加密保险库、可视化、多Agent协作与内存导入。。知识图谱工具(专业版)面向团队与企业,提供完整的嵌入式知识图谱能力,含加密保险库、离线可视化、跨Agent协作与内存"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   知识图谱工具(专业版)面向团队与企业,提供完整的嵌入式知识图谱能力,含加密保险库、离线可视化、跨Agent协作与内存自动导入。核心能力:
   - 全量查询、合并、嵌套、整理能力
   - 加密保险库:密钥/令牌加密存储,权限隔离
@@ -36,6 +35,10 @@ tags:
   - 知识
   - 文档
   - 研究
+  - node
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
@@ -43,9 +46,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 知识图谱工具(专业版)
 
 ## 概述

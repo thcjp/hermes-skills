@@ -1,5 +1,4 @@
 ---
-
 slug: "notion-cli"
 name: "notion-cli"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Notion命令行(专业版)"
 summary: "企业级Notion命令行工具,支持多工作空间、文件上传、Schema管理、批量操作与审计日志,适合团队与企业规模化使用。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   Notion命令行(专业版)是面向团队与企业的全功能Notion操作Skill,在免费版基础上新增多工作空间管理、文件上传、Schema管理、页面移动、批量操作、模板管理、自定义输出与审计日志等高级能力。核心能力:
 
   - 多工作空间Profile,同时管理多个Notion账户
@@ -30,6 +29,11 @@ tags:
   - 研究
   - 分析
   - 知识
+  - notion
+  - tasks
+  - 不支持
+  - key
+  - workspace
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Notion命令行(专业版)
 
 ## 付费版专享能力

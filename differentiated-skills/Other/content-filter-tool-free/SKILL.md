@@ -1,5 +1,4 @@
 ---
-
 slug: content-filter-tool-free
 name: content-filter-tool-free
 version: 1.0.0
@@ -40,15 +39,18 @@ tags:
   - 电商
   - 研究
   - 分析
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - basedir
+  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 内容过滤工具（免费版）
 
 ## 概述

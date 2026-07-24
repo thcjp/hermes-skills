@@ -1,12 +1,11 @@
 ---
-
 slug: "knowledge-capture"
 name: "knowledge-capture"
 version: 0.1.1
 displayName: "Knowledge Capture"
 summary: "把对话讨论转为结构化Notion文档。Transform conversations and discussions into structured Notion documentation"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Transform conversations and discussions into structured Notion documentation
 
   核心能力:
@@ -34,6 +33,11 @@ tags:
   - 开发
   - 代码
   - 知识
+  - 按流程执
+  - knowledge
+  - capture
+  - 依赖说明
+  - 不支持
 tools:
   - read
   - exec
@@ -42,9 +46,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Knowledge Capture
 
 ## 付费版专享能力

@@ -29,6 +29,10 @@ tags:
   - 创意
   - 图像
   - 知识
+  - self
+  - payoff
+  - none
+  - def
 tools:
   - read
   - exec

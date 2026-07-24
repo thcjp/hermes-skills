@@ -38,6 +38,11 @@ tags:
   - 信息检索
   - 检索
   - 工具
+  - internet_search
+  - searxng
+  - bash
+  - 支持创建
+  - 查询
 tools:
   - read
   - exec

@@ -23,6 +23,11 @@ tags:
   - 音乐学习
   - 音频
   - 创意
+  - self
+  - midi
+  - def
+  - return
+  - scale
 tools:
   - read
   - exec

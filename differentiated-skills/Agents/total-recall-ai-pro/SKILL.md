@@ -22,6 +22,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - true
+  - 免费版
+  - json
+  - self
+  - 全息记忆
 tools:
   - read
   - exec

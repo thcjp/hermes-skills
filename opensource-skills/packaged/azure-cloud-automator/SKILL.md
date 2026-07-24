@@ -15,6 +15,11 @@ tags:
   - 无服务器
   - 云计算
   - DevOps
+  - azure
+  - storage
+  - sql
+  - location
+  - step
 tools:
   - read
   - exec

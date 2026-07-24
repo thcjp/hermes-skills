@@ -1,5 +1,4 @@
 ---
-
 slug: "okx-dex-token-tool-pro"
 name: "okx-dex-token-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "DEX代币数据专业版"
 summary: "专业DEX代币分析与交易工具，支持多链深度分析、批量查询与限价交易。。面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链 深度数据分析、批量代币查询、链上行为追踪、流动"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链
   深度数据分析、批量代币查询、链上行为追踪、流动性监控告警与限价
   交易执行。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -19,15 +18,18 @@ tags:
   - 金融
   - 财务
   - 数据
+  - pro
+  - 不支持
+  - ethereum
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
 ---
-
 # DEX代币数据专业版（PRO版）
 
 ## 概述

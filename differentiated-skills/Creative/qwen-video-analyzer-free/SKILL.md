@@ -32,6 +32,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - fps
+  - python
+  - prompt
+  - api
+  - dashscope
 tools:
   - read
   - exec

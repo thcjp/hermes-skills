@@ -15,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - bdpan
+  - docs
+  - bash
+  - txt
+  - baidu
 tools:
   - read
   - exec

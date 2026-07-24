@@ -26,6 +26,11 @@ tags:
   - 写作
   - 电商
   - 通信
+  - headers
+  - resp
+  - json
+  - self
+  - payload
 tools:
   - read
   - exec

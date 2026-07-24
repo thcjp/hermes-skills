@@ -38,6 +38,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - xml
+  - root
+  - child
+  - xpath
+  - tree
 tools:
   - read
   - exec

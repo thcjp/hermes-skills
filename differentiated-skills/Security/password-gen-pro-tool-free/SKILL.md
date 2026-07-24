@@ -17,6 +17,11 @@ tags:
   - 免费版
   - 加密
   - 工具
+  - append
+  - length
+  - password
+  - feedback
+  - secrets
 tools:
   - read
   - exec

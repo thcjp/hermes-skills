@@ -1,12 +1,11 @@
 ---
-
 slug: "doubao-chat"
 name: "doubao-chat"
 version: 1.0.1
 displayName: "Doubao Chat"
 summary: "豆包大模型对话（免费 API，支持联网搜索）。豆包大模型对话（免费 API，支持联网搜索） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   豆包大模型对话（免费 API，支持联网搜索）
 
   核心能力:
@@ -34,6 +33,10 @@ tags:
   - AI代理
   - agent
   - 通信
+  - api
+  - 不支持
+  - 依赖说明
+  - key
 tools:
   - read
   - exec
@@ -41,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Doubao Chat
 
 ## 付费版专享能力

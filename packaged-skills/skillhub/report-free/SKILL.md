@@ -1,12 +1,11 @@
 ---
-
 slug: "report-free"
 name: "report-free"
 version: "1.0.0"
 displayName: "报表配置基础版"
 summary: "自定义报表基础能力，支持单一数据源接入、基础字段映射与标准格式导出。。自定义报表基础能力，支持单一数据源接入、基础字段映射 与标准格式导出. 核心能力: - 单一数据源的基础报表配置 - 字"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   自定义报表基础能力，支持单一数据源接入、基础字段映射
   与标准格式导出.
   核心能力:
@@ -36,15 +35,18 @@ tags:
   - 开发
   - 代码
   - 写作
+  - json
+  - csv
+  - markdown
+  - string
+  - agent
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
-
 ---
-
 # 报表配置基础版
 
 ## 核心能力

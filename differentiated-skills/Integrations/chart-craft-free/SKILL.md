@@ -29,6 +29,11 @@ tags:
   - 写作
   - 电商
   - 创意
+  - python
+  - python3
+  - matplotlib
+  - api
+  - 图表工坊
 tools:
   - read
   - exec

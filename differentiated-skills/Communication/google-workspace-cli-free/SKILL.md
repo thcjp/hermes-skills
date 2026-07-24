@@ -29,6 +29,11 @@ tags:
   - 写作
   - 电商
   - 知识
+  - gmail
+  - gog
+  - com
+  - bash
+  - drive
 tools:
   - read
   - exec

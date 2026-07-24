@@ -16,6 +16,11 @@ tags:
   - 命令行工具
   - 工作流
   - 效率
+  - notesmd-cli
+  - daily
+  - obsidian
+  - note
+  - frontmatter
 tools:
   - read
   - exec

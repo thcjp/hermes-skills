@@ -41,6 +41,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - know
+  - pro
+  - 专业版新
+  - team
+  - bash
 tools:
   - read
   - exec

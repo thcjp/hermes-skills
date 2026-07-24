@@ -39,6 +39,11 @@ tags:
   - 研究
   - 分析
   - 运维
+  - json
+  - golangci
+  - yml
+  - issues
+  - run
 tools:
   - read
   - exec

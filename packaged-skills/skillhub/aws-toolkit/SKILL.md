@@ -1,5 +1,4 @@
 ---
-
 slug: "aws-toolkit"
 name: "aws-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "AWS部署专业版"
 summary: "企业级AWS全服务管理平台，支持多区域、IaC、合规审计与成本优化。。面向企业运维团队的AWS全服务管理平台。支持EC2/S3/VPC/RDS/Lambda/ CloudWatch等全量AW"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业运维团队的AWS全服务管理平台。支持EC2/S3/VPC/RDS/Lambda/
   CloudWatch等全量AWS服务，提供基础设施即代码（IaC）、多区域批量
   部署、合规审计、成本优化与安全扫描功能。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
@@ -18,6 +17,11 @@ tags:
   - 基础设施
   - 云计算
   - DevOps
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - terraform
+  - python3
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # AWS部署专业版
 
 ## 付费版专享能力

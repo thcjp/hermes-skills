@@ -18,6 +18,10 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - true
+  - 检查价格
+  - 检查数据
+  - pro
 tools:
   - read
   - exec

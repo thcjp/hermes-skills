@@ -20,6 +20,11 @@ tags:
   - 分析
   - 工作流
   - 知识
+  - json
+  - text
+  - file
+  - string
+  - markdown
 tools:
   - read
   - exec

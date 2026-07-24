@@ -1,5 +1,4 @@
 ---
-
 slug: "dlazy-gen"
 name: "dlazy-gen"
 version: 1.0.1
@@ -7,22 +6,12 @@ displayName: "综合生成工具-专业版"
 summary: "全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。。综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力： - 40+ 模型全覆盖（图片、视频、音频三大"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力：
   - 40+ 模型全覆盖（图片、视频、音频三大模态）
   - 高质量图片生成（seedream-4。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
-  - Creative
-  - ImageGeneration
-  - VideoGeneration
-  - Enterprise
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 工作流
-  - 研究
+  - 工具,效率,step,self,prompt,model
 tools:
   - read
   - exec
@@ -30,9 +19,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 综合生成工具-专业版
 
 ## 付费版专享能力

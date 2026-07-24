@@ -34,6 +34,11 @@ tags:
   - 个人效率
   - 营销
   - 通信
+  - text
+  - csv
+  - negative
+  - positive
+  - 不支持
 tools:
   - read
   - exec

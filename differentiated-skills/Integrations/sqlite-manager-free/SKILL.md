@@ -20,6 +20,11 @@ tags:
   - 写作
   - 电商
   - AI代理
+  - sqlite
+  - pragma
+  - wal
+  - vacuum
+  - agent
 tools:
   - read
   - exec

@@ -24,6 +24,10 @@ tags:
   - 分析
   - 开发
   - 代码
+  - xml
+  - xpath
+  - xml-reader-pro
+  - csv
 tools:
   - read
   - exec

@@ -28,6 +28,11 @@ tags:
   - 开发
   - 代码
   - 运维
+  - yaml
+  - json
+  - yaml-pro
+  - config
+  - true
 tools:
   - read
   - exec

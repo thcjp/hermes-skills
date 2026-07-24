@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - self
+  - date
+  - stats
+  - success
+  - result
 tools:
   - read
   - exec

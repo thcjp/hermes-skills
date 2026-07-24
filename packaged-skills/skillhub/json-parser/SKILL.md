@@ -1,12 +1,11 @@
 ---
-
 slug: "json-parser"
 name: "json-parser"
 version: 2.1.1
 displayName: "Json Parser"
 summary: "解析校验建筑API/IoT/BIM的JSON并转表。Parse and validate JSON data from construction APIs, IoT sensors, and"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Parse and validate JSON data from construction APIs, IoT sensors, and
   BIM exports。Transform nest。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -19,6 +18,11 @@ tags:
   - AI代理
   - agent
   - 研究
+  - parser
+  - result
+  - data
+  - json
+  - api
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Json Parser
 
 ## 付费版专享能力

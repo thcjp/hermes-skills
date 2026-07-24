@@ -1,5 +1,4 @@
 ---
-
 slug: github-dev-standard-free
 name: github-dev-standard-free
 version: 1.0.1
@@ -33,15 +32,18 @@ tags:
   - 项目管理
   - 版本控制
   - Git
+  - diff
+  - src
+  - 逻辑
+  - python3
+  - echo
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
 ---
-
 # 项目开发标准（免费版）
 
 ## 概述

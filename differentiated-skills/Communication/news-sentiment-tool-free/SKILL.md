@@ -36,6 +36,11 @@ tags:
   - 新闻
   - 信息
   - 资讯
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - skill_dir
 tools:
   - read
   - exec

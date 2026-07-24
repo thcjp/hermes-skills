@@ -1,12 +1,11 @@
 ---
-
 slug: title-hook-factory
 name: title-hook-factory
 version: 1.0.1
 displayName: "标题钩子工厂"
 summary: "生成爆款标题+钩子段落,基于6大钩子公式+量化打分+多平台字数控制。标题钩子工厂是一款内容创作引流工具,生成爆款标题与开篇钩子段落. 基于6大钩子公式,量化打分排序,适配多平台字数规则. 核"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   标题钩子工厂是一款内容创作引流工具,生成爆款标题与开篇钩子段落.
   基于6大钩子公式,量化打分排序,适配多平台字数规则.
   核心能力:
@@ -28,14 +27,17 @@ tags:
   - 写作
   - 电商
   - AI代理
+  - topic
+  - llm
+  - agent
+  - hook_type
+  - platform
 tools:
   - read
   - exec
   - write
 category: "Automation"
-
 ---
-
 # 标题钩子工厂 v1.1.0
 
 内容创作引流利器,基于6大钩子公式生成爆款标题与开篇钩子段落,量化打分排序,适配多平台字数规则.

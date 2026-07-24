@@ -1,5 +1,4 @@
 ---
-
 slug: javascript-toolkit-free
 name: javascript-toolkit-free
 version: 1.0.1
@@ -43,15 +42,18 @@ tags:
   - 研究
   - 分析
   - 安全
+  - false
+  - true
+  - javascript
+  - obj
+  - null
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 本工具为 JavaScript 开发者提供代码陷阱防范与优选实践指引，覆盖相等性比较、this 绑定、闭包、数组变异、异步编程、类型转换、严格模式等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 JavaScript 中常见的陷阱，编写更加健壮、可靠的代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例.
 ## 核心能力
 | 能力模块 | 描述 | 典型陷阱 |

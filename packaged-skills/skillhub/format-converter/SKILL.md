@@ -1,5 +1,4 @@
 ---
-
 slug: "format-converter"
 name: "format-converter"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "数据格式转换(专业版)"
 summary: "全功能数据格式转换平台,支持批量、流式、自定义映射、定时任务与企业数据库导入导出。。数据格式转换专业版面向需要在大规模数据与多源系统间进行格式转换的专业开发者与数据工程师,提供完整的批量、流"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   数据格式转换专业版面向需要在大规模数据与多源系统间进行格式转换的专业开发者与数据工程师,提供完整的批量、流式、自动化转换能力。核心能力:
   - 涵盖免费版全部能力,无文件大小与数量限制
   - 批量转换:目录级批量处理,支持通配符与递归
@@ -29,6 +28,11 @@ tags:
   - 分析
   - 写作
   - 电商
+  - json
+  - csv
+  - text
+  - 批量转换
+  - 文件
 tools:
   - read
   - exec
@@ -36,9 +40,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 数据格式转换(专业版)
 
 ## 付费版专享能力

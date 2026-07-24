@@ -16,6 +16,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - verify-claims
+  - check
+  - bash
+  - 用户提供
+  - 返回结构
 tools:
   - read
   - exec

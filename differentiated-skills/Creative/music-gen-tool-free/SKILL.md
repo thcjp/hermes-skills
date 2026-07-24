@@ -17,6 +17,10 @@ tags:
   - 内容创作
   - 音频
   - 创意
+  - bpm
+  - chorus
+  - 音乐风格
+  - lo-fi
 tools:
   - read
   - exec

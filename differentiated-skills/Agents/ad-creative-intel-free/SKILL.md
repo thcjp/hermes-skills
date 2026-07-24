@@ -1,5 +1,4 @@
 ---
-
 slug: ad-creative-intel-free
 name: ad-creative-intel-free
 version: 1.0.1
@@ -16,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - api
+  - data
+  - post
+  - get
+  - 调用
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 广告情报免费版（Ad Creative Intel Free）
 
 面向买量投放、创意策划、市场研究人员的轻量级广告情报查询工具。在一个会话内完成创意搜索、应用洞察、榜单查询三件事，所有结果以原始结构化 JSON 返回，由调用 Agent 决定分析与呈现方式.

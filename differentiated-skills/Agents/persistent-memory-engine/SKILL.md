@@ -1,12 +1,11 @@
 ---
-
 slug: "persistent-memory-engine"
 name: "persistent-memory-engine"
 version: "1.0.0"
 displayName: "持久记忆引擎"
 summary: "解决跨会话遗忘、检索不准、记忆膨胀冲突的无限分层持久记忆引擎。面向 AI Agent 的无限分层持久记忆系统，直击跨会话遗忘、检索不准、记忆膨胀、新旧冲突四大痛点。适用于长周期项目记忆、人脉"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   面向 AI Agent 的无限分层持久记忆系统，直击跨会话遗忘、检索不准、记忆膨胀、新旧冲突四大痛点。适用于长周期项目记忆、人脉网络、决策归档、领域知识库等场景。核心能力含三层索引体系、混合检索、记忆生命周期管理、冲突检测与版本化。适用关键词：长期记忆、跨会话记忆、记忆管理、记忆检索、持久化存储、memory、persistent memory.
 tags:
   - 记忆管理
@@ -16,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - memory
+  - index
+  - 分类
+  - 条目
+  - alpha
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 持久记忆引擎（Persistent Memory Engine）
 
 面向 AI Agent 的**无限分层持久记忆系统**，在内置记忆之上构建并行、可扩展、可检索的结构化本地存储，解决跨会话遗忘与记忆膨胀问题。本系统完全位于 `~/memory/`，与内置 Agent 记忆并行运作，永不修改内置 `MEMORY.md` 与 workspace `memory/` 目录.

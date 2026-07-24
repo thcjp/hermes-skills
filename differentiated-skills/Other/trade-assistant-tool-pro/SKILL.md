@@ -40,6 +40,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - trade-pro
+  - agent
+  - topic
+  - string
+  - 不支持
 tools:
   - read
   - exec

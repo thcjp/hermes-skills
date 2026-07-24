@@ -31,6 +31,11 @@ tags:
   - AI代理
   - agent
   - 安全
+  - https
+  - webhook
+  - curl
+  - chat
+  - ctxly
 tools:
   - read
   - exec

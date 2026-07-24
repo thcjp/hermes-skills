@@ -1,12 +1,11 @@
 ---
-
 slug: "csv-handler-free"
 name: "csv-handler-free"
 version: "1.0.0"
 displayName: "CSV文件处理(免费版)"
 summary: "自动检测编码与分隔符，读取并清洗CSV数据，支持基础合并与导出。CSV文件处理免费版，提供基础的CSV读写与清洗能力. 核心能力包括： - 编码自动检测（utf-8、utf-8-sig、la"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   CSV文件处理免费版，提供基础的CSV读写与清洗能力.
   核心能力包括：
   - 编码自动检测（utf-8、utf-8-sig、latin-1）
@@ -27,15 +26,17 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - utf-8-sig
+  - 编码
+  - bom
+  - utf-8
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # CSV文件处理（免费版）
 
 ## 输入格式

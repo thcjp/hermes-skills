@@ -1,5 +1,4 @@
 ---
-
 slug: file-compressor-free
 name: file-compressor-free
 version: 1.0.1
@@ -23,15 +22,18 @@ tags:
   - 开发
   - 代码
   - 创意
+  - 压缩
+  - tokens
+  - text
+  - 压缩比
+  - l3-l4
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 文本语义压缩器(免费版)
 
 面向长文本场景的语义压缩工具，通过迭代验证与锚点校验机制，在保证关键信息完整的前提下大幅缩减Token占用.

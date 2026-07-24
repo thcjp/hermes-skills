@@ -44,6 +44,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - shadcn-pro-cli
+  - 返回结构
+  - 用户提供
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec

@@ -27,6 +27,11 @@ tags:
   - 分析
   - 工作流
   - 开发
+  - excel
+  - xlookup
+  - vba
+  - agent
+  - 公式
 tools:
   - read
   - exec

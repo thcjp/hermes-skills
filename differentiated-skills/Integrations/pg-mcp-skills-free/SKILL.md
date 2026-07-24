@@ -21,6 +21,11 @@ tags:
   - 开发
   - 代码
   - 运维
+  - mcp
+  - 执行
+  - sql
+  - 查询计划
+  - 只读模式
 tools:
   - read
   - exec

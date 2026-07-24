@@ -1,12 +1,11 @@
 ---
-
 slug: "smart-cache"
 name: "smart-cache"
 version: 1.0.1
 displayName: "Smart Cache"
 summary: "LRU/LFU策略与TTL管理的智能缓存。Intelligent caching with LRU/LFU strategies and TTL management 核心能力: - 其他工"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Intelligent caching with LRU/LFU strategies and TTL management
 
   核心能力:
@@ -34,6 +33,10 @@ tags:
   - AI代理
   - agent
   - 创意
+  - 依赖说明
+  - 不支持
+  - cache
+  - api
 tools:
   - read
   - exec
@@ -41,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Smart Cache
 
 ## 付费版专享能力

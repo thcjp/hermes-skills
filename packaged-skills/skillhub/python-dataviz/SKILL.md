@@ -1,18 +1,22 @@
 ---
-
 slug: "python-dataviz"
 name: "python-dataviz"
 version: 1.0.1
 displayName: "Python Dataviz"
 summary: "用Python(matplotlib/seaborn/plotly)做专业数据可视化。Professional data visualization using Python (matplo"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Professional data visualization using Python (matplotlib, seaborn, plotly)。Create publication-qu。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Other
   - 数据处理
   - 数据分析
   - 工具
+  - plt
+  - plots
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
-
 ---
-
 # Python Dataviz
 
 ## 付费版专享能力

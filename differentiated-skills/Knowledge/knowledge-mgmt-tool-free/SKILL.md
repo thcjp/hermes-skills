@@ -27,6 +27,10 @@ tags:
   - 写作
   - 电商
   - 研究
+  - 支持创建
+  - 查询
+  - input_params
+  - api
 tools:
   - read
   - exec

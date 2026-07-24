@@ -17,6 +17,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - focus-flow
+  - eof
+  - 时段
+  - agent
+  - 时间块规
 tools:
   - read
   - exec

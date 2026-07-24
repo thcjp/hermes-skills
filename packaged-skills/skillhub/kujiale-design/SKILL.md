@@ -1,5 +1,4 @@
 ---
-
 slug: "kujiale-design"
 name: "kujiale-design"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "酷家乐设计-专业版"
 summary: "企业级室内设计工具,支持多方案对比、批量渲染、自定义风格与团队协作,适配商业设计生产。。酷家乐设计专业版,面向企业团队与专业室内设计师的高级智能设计工具。核心能力: - 多方案并行对比,支持"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   酷家乐设计专业版,面向企业团队与专业室内设计师的高级智能设计工具。核心能力:
   - 多方案并行对比,支持同户型多风格快速生成
   - 批量渲染高清效果图与全景图
@@ -30,6 +29,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - token
+  - python3
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # 酷家乐设计-专业版
 
 ## 付费版专享能力

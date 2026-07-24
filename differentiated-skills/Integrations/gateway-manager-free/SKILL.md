@@ -21,6 +21,11 @@ tags:
   - AI代理
   - agent
   - 写作
+  - yaml
+  - api
+  - qps
+  - type
+  - http
 tools:
   - read
   - exec

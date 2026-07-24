@@ -1,12 +1,11 @@
 ---
-
 slug: "evolution-engine-free"
 name: "evolution-engine-free"
 version: "1.0.0"
 displayName: "进化引擎免费版"
 summary: "基础 Agent 自我进化，纠错学习加反污染防线，避免重复犯错与误学。。面向 AI Agent 的基础自我进化引擎，提供纠错学习与反污染防线两大核心能力. 用户明确纠正时记录到纠错日志，召回"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   面向 AI Agent 的基础自我进化引擎，提供纠错学习与反污染防线两大核心能力.
   用户明确纠正时记录到纠错日志，召回时优先注入，避免重复犯错.
   反污染防线确保永不从沉默推断偏好，单次纠错不晋升永久规则.
@@ -28,10 +27,12 @@ tags:
   - AI代理
   - agent
   - 研究
+  - corrections
+  - 待观察
+  - memory
+  - 纠错学习
 category: "Automation"
-
 ---
-
 # 进化引擎免费版（Evolution Engine Free）
 
 **让 Agent 不重复犯错的基础工具。** 通过纠错学习与反污染防线，让 Agent 从用户纠正中积累经验。本免费版提供基础纠错记录与反污染防线，覆盖单 Agent 纠错学习需求.

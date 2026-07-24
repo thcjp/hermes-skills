@@ -35,6 +35,10 @@ tags:
   - 本地化
   - 语言
   - 工具
+  - markdown
+  - agent
+  - api
+  - readme
 tools:
   - read
   - exec

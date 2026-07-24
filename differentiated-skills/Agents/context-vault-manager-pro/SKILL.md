@@ -20,6 +20,10 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - 专业版
+  - true
+  - 基础
+  - 增强
 tools:
   - read
   - exec

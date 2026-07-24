@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - word
+  - str
+  - self
+  - doc
+  - para
 tools:
   - read
   - exec

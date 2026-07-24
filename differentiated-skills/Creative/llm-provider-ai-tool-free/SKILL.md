@@ -1,5 +1,4 @@
 ---
-
 slug: "llm-provider-ai-tool-free"
 name: "llm-provider-ai-tool-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "OpenAI助手免费版"
 summary: "轻量级OpenAI API调用工具,支持对话补全、文件管理与图像生成,适合个人开发者快速集成。。面向个人开发者的OpenAI API轻量调用工具。核心能力: - 对话补全(chat comp"
 license: "Proprietary"
 edition: "free"
-description: |-，可生成提升工作效率
+description: |-
   面向个人开发者的OpenAI API轻量调用工具。核心能力:
   - 对话补全(chat completions)与文本生成
   - 文件上传与基础向量存储管理
@@ -39,6 +38,11 @@ tags:
   - 写作
   - 电商
   - 创意
+  - llm-provider
+  - api
+  - openai_api_key
+  - client
+  - import
 tools:
   - read
   - exec
@@ -46,9 +50,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # llm-provider 助手工具 - 免费版
 
 ## 概述

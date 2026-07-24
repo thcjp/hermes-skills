@@ -1,12 +1,11 @@
 ---
-
 slug: "design"
 name: "design"
 version: 1.0.1
 displayName: "自适应设计偏好引擎"
 summary: "自动学习用户视觉偏好,适配UI/图形/视频/印刷多媒介,持续进化设计风格记忆。自适应设计偏好引擎。通过观察用户在设计过程中的选择、反馈与反应,自动提取并沉淀视觉偏好模式. 支持 UI 界面、"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   自适应设计偏好引擎。通过观察用户在设计过程中的选择、反馈与反应,自动提取并沉淀视觉偏好模式.
   支持 UI 界面、平面图形、视频视觉、印刷物料等多媒介类型。内置四大偏好分类: Aesthetic（美学风格）、
   By Medium（按媒介细分）、Brands（品牌专属偏好）、Never（禁忌清单）。检测到 2 次以上一致偏好后
@@ -19,6 +18,11 @@ tags:
   - 偏好学习
   - UI/UX
   - 创意
+  - 品牌
+  - 信号
+  - brands
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Design
 
 自适应设计偏好引擎。通过观察用户选择与反馈,自动学习并沉淀视觉偏好,适配 UI、图形、视频、印刷等多媒介创作。偏好档案随使用持续进化.

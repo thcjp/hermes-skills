@@ -1,11 +1,10 @@
 ---
-
 name: "agentvibes-content-skill"
 slug: "agentvibes-content-skill"
 displayName: "AgentVibes内容技能"
 version: 4.6.7
 summary: "AgentVibes内容创作与管理技能,支持多模态内容生成与发布。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Agentvib"
-description: |-，可生成提升工作效率
+description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Agentvibes Content Skill 核心处理"、Agentvibes Content Skill 核心处理时使用.
   不适用于需要人工判断的复杂场景.
@@ -22,10 +21,13 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - api
+  - agentvibes
+  - content
+  - llm
+  - 不支持
 category: "Agents"
-
 ---
-
 # Agentvibes Content Skill 智能分析
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: feishu-doc-write-tool-free
 name: feishu-doc-write-tool-free
 version: 1.0.0
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 创意
+  - 支持创建
+  - 查询
+  - input_params
+  - 飞书文档
+  - 免费版
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 飞书文档写入（免费版）
 
 ## 概述

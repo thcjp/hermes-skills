@@ -24,6 +24,11 @@ tags:
   - 音乐生成
   - 音频
   - 创意
+  - headers
+  - payload
+  - project_id
+  - resp
+  - json
 tools:
   - read
   - exec

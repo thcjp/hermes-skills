@@ -27,6 +27,11 @@ tags:
   - 电商
   - 研究
   - 分析
+  - str
+  - self
+  - list
+  - task_id
+  - dict
 tools:
   - read
   - exec

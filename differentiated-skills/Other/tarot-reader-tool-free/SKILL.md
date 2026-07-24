@@ -1,5 +1,4 @@
 ---
-
 slug: tarot-reader-tool-free
 name: tarot-reader-tool-free
 version: 1.0.0
@@ -39,15 +38,17 @@ tags:
   - AI代理
   - agent
   - 研究
+  - 用户
+  - 过去
+  - 现在
+  - 未来
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 韦特塔罗占卜（免费版）
 
 ## 概述

@@ -18,6 +18,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - logo
+  - flat
+  - vector
+  - white
+  - geometric
 tools:
   - read
   - exec

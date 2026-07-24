@@ -24,6 +24,11 @@ tags:
   - 监控
   - 运维
   - 工具
+  - headers
+  - resp
+  - target_config
+  - self
+  - json
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "code-delegate"
 name: "code-delegate"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "代码委派工具专业版"
 summary: "企业级批量代码委派,支持多任务并行、团队协作、权限治理与质量审计。面向团队与企业的高级代码委派工具,在免费版基础上扩展批量委派、并行执行、权限治理等能力。核心能力: - 多任务并行委派与任务"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向团队与企业的高级代码委派工具,在免费版基础上扩展批量委派、并行执行、权限治理等能力。核心能力:
   - 多任务并行委派与任务队列管理
   - 写入保护插件与权限治理
@@ -33,6 +32,11 @@ tags:
   - 权限治理
   - 代码生成
   - 编程辅助
+  - bash
+  - 任务
+  - true
+  - projects
+  - 不支持
 tools:
   - read
   - exec
@@ -42,9 +46,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # 代码委派工具专业版
 
 ## 付费版专享能力

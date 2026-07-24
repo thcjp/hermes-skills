@@ -1,12 +1,11 @@
 ---
-
 slug: "report-summary-builder"
 name: "report-summary-builder"
 version: 1.0.1
 displayName: "Report Summary Build"
 summary: "Report Summary Build提供基于已有日报自动汇总生成周报和月报等核心能力,付费版独享高级功能与批量处理。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   基于已有日报自动汇总生成周报和月报。核心能力:
 
   - 商业工具领域的专业化AI辅助工具
@@ -27,6 +26,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - 依赖说明
+  - 不支持
+  - report
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -34,9 +38,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Report Summary Build
 
 ## 付费版专享能力

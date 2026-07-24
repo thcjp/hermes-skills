@@ -17,6 +17,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - api
+  - users
+  - email
+  - workers
+  - wrangler
 tools:
   - read
   - exec

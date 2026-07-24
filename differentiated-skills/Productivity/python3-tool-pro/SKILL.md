@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - 安全
+  - venv
+  - python
+  - pro
+  - python3
+  - agent
 tools:
   - read
   - exec

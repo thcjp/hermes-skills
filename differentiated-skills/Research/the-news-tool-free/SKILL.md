@@ -15,6 +15,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - api
+  - curl
+  - https
+  - www
+  - thehear
 tools:
   - read
   - exec

@@ -16,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - eof
+  - soul-decision
+  - warm
+  - memory
+  - domains
 tools:
   - read
   - exec

@@ -23,6 +23,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - three
+  - html
+  - tmp
+  - game-build
+  - bash
 tools:
   - read
   - exec

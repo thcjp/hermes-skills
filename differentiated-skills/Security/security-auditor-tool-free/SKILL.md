@@ -1,5 +1,4 @@
 ---
-
 slug: security-auditor-tool-free
 name: security-auditor-tool-free
 version: 1.0.0
@@ -49,14 +48,17 @@ tags:
   - OWASP
   - 加密
   - 工具
+  - owasp
+  - top
+  - const
+  - await
+  - req
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
-
 ---
-
 # 代码安全审计员(免费版)
 
 ## 概述

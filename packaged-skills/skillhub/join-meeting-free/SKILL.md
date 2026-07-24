@@ -1,12 +1,11 @@
 ---
-
 slug: "join-meeting-free"
 name: "join-meeting-free"
 version: "1.0.0"
 displayName: "智能会议机器人免费版"
 summary: "免费版会议机器人，支持基础会议加入、语音状态监听与会议转写。。会议机器人免费版，提供基础的会议参与功能. 支持会议加入、语音状态监听与会议转写. 适用于个人会议记录与基础会议辅助场景."
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   会议机器人免费版，提供基础的会议参与功能.
   支持会议加入、语音状态监听与会议转写.
   适用于个人会议记录与基础会议辅助场景.
@@ -16,19 +15,9 @@ tools:
   - write
 homepage: ""
 tags:
-  - 通用办公
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 写作
-  - 电商
-  - AI代理
+  - 效率,api,meeting,加入会议,join,语音状态
 category: "Automation"
-
 ---
-
 # 智能会议机器人（免费版）
 
 提供基础会议加入、语音状态监听与会议转写的会议机器人.

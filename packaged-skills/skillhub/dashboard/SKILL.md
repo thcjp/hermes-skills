@@ -1,12 +1,11 @@
 ---
-
 slug: "dashboard"
 name: "dashboard"
 version: 1.0.2
 displayName: "Dashboard"
 summary: "从任意数据源构建自定义仪表盘,本地托管+视觉QA,数据可视。Build custom dashboards from any data source with local hosting a"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Build custom dashboards from any data source with local hosting and
   visual QA loops。核心能力:
 
@@ -33,6 +32,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - dashboard
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Dashboard
 
 ## 付费版专享能力

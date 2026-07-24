@@ -36,6 +36,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - https
+  - rss
+  - com
+  - markdown
+  - bash
 tools:
   - read
   - exec

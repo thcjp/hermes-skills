@@ -1,12 +1,11 @@
 ---
-
 slug: "the-news"
 name: "the-news"
 version: 1.0.18
 displayName: "The News"
 summary: "给Agent实时与归档访问20国头版头条。gives agents real-time and archival access to front-page headlines across"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   gives agents real-time and archival access to front-page headlines across
   20 countries for breaki
 tags:
@@ -14,15 +13,18 @@ tags:
   - 新闻
   - 信息
   - 资讯
+  - 依赖说明
+  - agent
+  - 不支持
+  - news
+  - api
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # The News
 
 ## 付费版专享能力

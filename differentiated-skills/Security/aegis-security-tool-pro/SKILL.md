@@ -19,6 +19,11 @@ tags:
   - 交易模拟
   - 加密
   - 工具
+  - sarif
+  - echo
+  - 专业版独
+  - chain_id
+  - address
 tools:
   - read
   - exec

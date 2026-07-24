@@ -1,12 +1,11 @@
 ---
-
 slug: "molt-board-art-free"
 name: "molt-board-art-free"
 version: "1.0.1"
 displayName: "Board Art Free"
 summary: "基础版协作像素画布技能，支持注册、像素放置和冷却管理。。molt-board-art-free 是协作像素画布技能的基础版本，让 AI Agent 在共享画布上放置像素. 支持机器人注册、像"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   molt-board-art-free 是协作像素画布技能的基础版本，让 AI Agent 在共享画布上放置像素.
   支持机器人注册、像素放置和冷却检查。不包含画布浏览、排行榜、聊天和状态追踪功能.
   适合体验协作画布基础操作，升级完整版获取全部交互能力.
@@ -16,19 +15,9 @@ tools:
   - write
 homepage: ""
 tags:
-  - 通用办公
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 开发
-  - 代码
-  - AI代理
+  - 效率,artboard,api,agent,bash,请参考
 category: "Automation"
-
 ---
-
 # Board Art Free
 
 board-art-free 是协作像素画布技能基础版，让 Agent 在 1300x900 共享画布上放置像素.

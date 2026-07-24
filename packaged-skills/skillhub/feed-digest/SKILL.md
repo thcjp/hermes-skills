@@ -1,12 +1,11 @@
 ---
-
 slug: "feed-digest"
 name: "feed-digest"
 version: 1.0.1
 displayName: "Feed Digest"
 summary: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏。This skill is a straightforward feed digest helper with disclosed feed"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   This skill is a straightforward feed digest helper with disclosed feed
   fetching and read-status c
 tags:
@@ -18,6 +17,11 @@ tags:
   - 代码
   - 工作流
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - feed
+  - 不支持
+  - digest
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Feed Digest
 
 ## 付费版专享能力

@@ -1,12 +1,11 @@
 ---
-
 slug: "x-timeline-digest"
 name: "x-timeline-digest"
 version: 1.0.3
 displayName: "X 时间线摘要"
 summary: "用bird读X/Twitter时间线,增量去重生中文分类简报与JSON。基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线, 对推文进"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线,
   对推文进行增量过滤、ID 硬去重、近重复文本合并与排序修剪,
   输出结构化 JSON 负载与中文分类简报.
@@ -26,6 +25,10 @@ tags:
   - AI代理
   - agent
   - 研究
+  - json
+  - llm
+  - following
+  - digest
 tools:
   - read
   - exec
@@ -33,9 +36,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # X Timeline Digest
 
 ## 输入格式

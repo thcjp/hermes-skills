@@ -21,6 +21,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - pro
+  - true
+  - agent
+  - free
+  - 逻辑
 tools:
   - read
   - exec

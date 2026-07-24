@@ -20,6 +20,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - svg
+  - fill
+  - rgba
+  - text
+  - f172a
 tools:
   - read
   - exec

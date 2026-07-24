@@ -1,5 +1,4 @@
 ---
-
 slug: api-dev-tool-free
 name: api-dev-tool-free
 version: 1.0.1
@@ -24,15 +23,18 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - 支持创建
+  - 查询
+  - input_params
+  - 免费版
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
 ---
-
 # API开发工具（免费版）
 
 ## 概述

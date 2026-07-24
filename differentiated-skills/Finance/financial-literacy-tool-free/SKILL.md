@@ -17,6 +17,11 @@ tags:
   - 金融
   - 财务
   - 数据
+  - 金融素养
+  - text
+  - 投资
+  - 用户提供
+  - quiz
 tools:
   - read
   - exec

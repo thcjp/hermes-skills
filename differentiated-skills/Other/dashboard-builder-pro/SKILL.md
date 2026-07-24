@@ -17,6 +17,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - dashboard
+  - ops
+  - bash
+  - stripe
+  - run
 tools:
   - read
   - exec

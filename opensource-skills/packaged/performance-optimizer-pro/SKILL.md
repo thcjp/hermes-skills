@@ -21,6 +21,11 @@ tags:
   - 研究
   - 分析
   - 运维
+  - lighthouse
+  - css
+  - output
+  - lcp
+  - project
 tools:
   - read
   - exec

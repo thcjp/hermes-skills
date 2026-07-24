@@ -1,5 +1,4 @@
 ---
-
 slug: pptx-pdf-font-fix-tool-free
 name: pptx-pdf-font-fix-tool-free
 version: 1.0.0
@@ -29,15 +28,18 @@ tags:
   - 知识
   - 文档
   - 写作
+  - ppt
+  - 支持创建
+  - 查询
+  - input_params
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # PPT字体修复工具（免费版）
 
 ## 概述

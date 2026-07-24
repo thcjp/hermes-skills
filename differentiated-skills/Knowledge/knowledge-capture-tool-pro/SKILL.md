@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - items
+  - self
+  - str
+  - list
+  - 支持创建
 tools:
   - read
   - exec

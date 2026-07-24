@@ -1,5 +1,4 @@
 ---
-
 slug: translate-toolkit-free
 name: translate-toolkit-free
 version: 1.0.1
@@ -33,15 +32,18 @@ tags:
   - 免费版
   - 语言
   - 工具
+  - markdown
+  - 用户
+  - json
+  - text
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Knowledge"
-
 ---
-
 # 翻译工具（免费版）
 
 ## 概述

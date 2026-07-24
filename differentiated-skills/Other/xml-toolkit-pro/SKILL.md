@@ -30,6 +30,11 @@ tags:
   - 创意
   - 图像
   - 开发
+  - xml
+  - json
+  - xml-pro
+  - xsd
+  - self
 tools:
   - read
   - exec

@@ -20,6 +20,11 @@ tags:
   - 创意
   - 图像
   - 写作
+  - output
+  - glossier
+  - cta
+  - 竞品广告
+  - 差异化机
 tools:
   - read
   - exec

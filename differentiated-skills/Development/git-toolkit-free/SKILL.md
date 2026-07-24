@@ -39,6 +39,11 @@ tags:
   - 开发工具
   - Git
   - 版本控制
+  - git
+  - commit
+  - rebase
+  - main
+  - branch
 tools:
   - read
   - exec

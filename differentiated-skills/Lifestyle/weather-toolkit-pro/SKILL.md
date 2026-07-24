@@ -1,5 +1,4 @@
 ---
-
 slug: weather-toolkit-pro
 name: weather-toolkit-pro
 version: 1.0.0
@@ -49,6 +48,11 @@ tags:
   - 开发
   - 代码
   - 集成
+  - self
+  - 不支持
+  - city
+  - json
+  - import
 tools:
   - read
   - exec
@@ -56,9 +60,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 天气查询工具包专业版
 
 企业级天气数据平台,在免费版核心能力之上,扩展批量查询、历史数据、预警推送与多数据源聚合能力,适合物流、农业、旅游等需要规模化天气数据的企业与开发者。与免费版数据格式完全兼容,支持平滑升级.

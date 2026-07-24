@@ -1,12 +1,11 @@
 ---
-
 slug: "daily-report-writer"
 name: "daily-report-writer"
 version: 1.0.1
 displayName: "Daily Report Writer"
 summary: "根据输入生成日报 Markdown 草稿并写入 reports 目录。根据输入生成日报 Markdown 草稿并写入 reports 目录 核心能力: - 商业工具领域的专业化AI辅助工具"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   根据输入生成日报 Markdown 草稿并写入 reports 目录
 
   核心能力:
@@ -33,6 +32,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - 依赖说明
+  - writer
+  - 不支持
+  - api
 tools:
   - read
   - exec
@@ -40,9 +43,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Daily Report Writer
 
 ## 付费版专享能力

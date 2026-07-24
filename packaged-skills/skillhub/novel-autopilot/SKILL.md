@@ -1,12 +1,11 @@
 ---
-
 slug: novel-autopilot
 name: novel-autopilot
 version: 1.0.1
 displayName: "网文全自动写手"
 summary: "一人顶一个网文工作室,8步管道批量产章+黄金三章+三平台分发。网文全自动写手是一款8步管道完成网文从大纲到章节全自动写作与多平台分发的工具. 一人顶一个网文工作室,支持6大题材、黄金三章打磨"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   网文全自动写手是一款8步管道完成网文从大纲到章节全自动写作与多平台分发的工具.
   一人顶一个网文工作室,支持6大题材、黄金三章打磨、品牌词软广告植入、批量产章与三平台一键分发.
   核心能力:
@@ -29,14 +28,17 @@ tags:
   - 电商
   - 创意
   - 图像
+  - string
+  - 默认
+  - seo
+  - 标题
+  - 异常处理
 tools:
   - read
   - exec
   - write
 category: "Automation"
-
 ---
-
 # 网文全自动写手 v1.1.0
 
 > 定位: 8步管道完成网文从大纲到章节的全自动写作与多平台分发

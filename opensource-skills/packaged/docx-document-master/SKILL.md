@@ -14,6 +14,11 @@ tags:
   - 邮件合并
   - 工具
   - 效率
+  - docx
+  - doc
+  - pdf
+  - output
+  - pypi
 tools:
   - read
   - exec

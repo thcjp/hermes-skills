@@ -1,5 +1,4 @@
 ---
-
 slug: heygen-tts-tool-free
 name: heygen-tts-tool-free
 version: 1.0.0
@@ -28,15 +27,18 @@ tags:
   - 创意
   - 图像
   - 研究
+  - language
+  - heygen
+  - data
+  - api
+  - voice_id
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # HeyGen TTS 工具 - 免费版
 
 ## 概述

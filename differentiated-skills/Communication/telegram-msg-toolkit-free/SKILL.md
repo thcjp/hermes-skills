@@ -1,5 +1,4 @@
 ---
-
 slug: telegram-msg-toolkit-free
 name: telegram-msg-toolkit-free
 version: 1.0.1
@@ -17,15 +16,18 @@ tags:
   - Bot开发
   - 社交
   - 通信
+  - bot
+  - telegram
+  - api
+  - https
+  - org
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # Telegram 消息工具箱（免费版）
 
 ## 概述

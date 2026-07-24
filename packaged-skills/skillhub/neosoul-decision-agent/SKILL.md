@@ -1,12 +1,11 @@
 ---
-
 slug: "neosoul-decision-agent"
 name: "neosoul-decision-agent"
 version: 1.0.1
 displayName: "自主决策代理"
 summary: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好。具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策. 通过分层记忆体系（HOT/WARM/RECOR"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策.
   通过分层记忆体系（HOT/WARM/RECORD/COLD四级）学习用户的风险偏好、框架偏好与领域权重，
   并在后续决策中应用学到的模式。提供决策信号自动识别、决策回顾、主动决策检测、置信度标注四大核心能力.
@@ -24,10 +23,13 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - hot
+  - domains
+  - memory
+  - 信号
+  - 更新
 category: "Agents"
-
 ---
-
 # 自主决策代理（Neosoul Decision Agent）
 
 具备自改进记忆的结构化决策支持系统，通过分层记忆体系学习用户的风险偏好与决策框架偏好，在后续决策中应用学到的模式，帮助用户做出更优决策.

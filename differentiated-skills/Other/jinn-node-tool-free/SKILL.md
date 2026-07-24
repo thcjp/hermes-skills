@@ -1,5 +1,4 @@
 ---
-
 slug: jinn-node-tool-free
 name: jinn-node-tool-free
 version: 1.0.0
@@ -41,15 +40,18 @@ tags:
   - 开发
   - 代码
   - 运维
+  - yarn
+  - python
+  - wallet
+  - gas
+  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 节点工作工具（免费版）
 
 ## 概述

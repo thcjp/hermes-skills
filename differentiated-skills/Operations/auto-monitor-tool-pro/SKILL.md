@@ -18,6 +18,11 @@ tags:
   - 监控
   - 运维
   - 工具
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - pro
 tools:
   - read
   - exec

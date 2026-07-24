@@ -1,12 +1,11 @@
 ---
-
 slug: "ai-assistant"
 name: "ai-assistant"
 version: "1.0.0"
 displayName: "AI Doc Reasoner"
 summary: "长文本推理优化器,针对商业合同、法律备忘录、高风险文档进行结构化分析与风险检测。长文本推理优化器。针对商业合同、法律备忘录、提案、谈判文本等高风险长文档,提供结构化推理与风险检测. 覆盖六大"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   长文本推理优化器。针对商业合同、法律备忘录、提案、谈判文本等高风险长文档,提供结构化推理与风险检测.
   覆盖六大核心能力:Document Assessment(文档评估,识别目的/受众/决策相关性)、Core Logic Extraction(核心逻辑提取,
   区分主张/支撑逻辑/关键假设)、Risk Detection(风险检测,识别歧义/矛盾/缺失假设/风险转移条款)、
@@ -25,6 +24,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - step
+  - 用户提供
+  - 返回
+  - 的处理结
+  - 包含执行
 tools:
   - read
   - exec
@@ -32,9 +36,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # AI Doc Reasoner
 
 将冗长、杂乱、高风险的文档转化为更清晰的推理和更干净的决策。针对商业与法律相关长文本进行结构化分析与风险检测.

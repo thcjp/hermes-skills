@@ -1,5 +1,4 @@
 ---
-
 slug: context-vault-manager-free
 name: context-vault-manager-free
 version: 1.0.1
@@ -17,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - action
+  - contextvaultmanager
+  - await
+  - skills
+  - 自动清理
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 上下文保险库（免费版）
 
 > **智能分层记忆管理。短期/长期/重要三层架构，Token占用降低70%。**

@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - word
+  - pdf
+  - excel
+  - csv
+  - 读取
 tools:
   - read
   - exec

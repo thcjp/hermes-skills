@@ -12,6 +12,11 @@ tags:
   - 效率工具
   - 工作流
   - 效率
+  - api
+  - item
+  - checkpoint
+  - chunk
+  - step
 tools:
   - read
   - exec

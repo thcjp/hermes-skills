@@ -23,6 +23,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - set
+  - config
+  - redis
+  - self
+  - 免费版
 tools:
   - read
   - exec

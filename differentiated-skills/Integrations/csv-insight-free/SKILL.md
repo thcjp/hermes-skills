@@ -19,6 +19,11 @@ tags:
   - 分析
   - 开发
   - 代码
+  - csv
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - top
 tools:
   - read
   - exec

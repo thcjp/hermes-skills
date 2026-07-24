@@ -1,12 +1,11 @@
 ---
-
 slug: "database-admin-free"
 name: "database-admin-free"
 version: "1.0.0"
 displayName: "数据库管理(免费版)"
 summary: "基础表结构设计、数据插入与简单查询，支持常用数据类型与事务操作。数据库管理免费版，提供基础的数据库表结构与数据操作能力. 核心能力包括： - 基础表结构设计（主键、NOT NULL、DEFA"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   数据库管理免费版，提供基础的数据库表结构与数据操作能力.
   核心能力包括：
   - 基础表结构设计（主键、NOT NULL、DEFAULT）
@@ -22,6 +21,11 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - stock_info
+  - key
+  - null
+  - varchar
+  - insert
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
   - glob
 homepage: ""
 category: "Research"
-
 ---
-
 # 数据库管理（免费版）
 
 ## 输入格式

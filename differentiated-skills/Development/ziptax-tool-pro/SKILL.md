@@ -1,5 +1,4 @@
 ---
-
 slug: "ziptax-tool-pro"
 name: "ziptax-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "销售税查询(专业版)"
 summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。。销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集"
 license: "Proprietary"
 edition: "pro"
-description: |-，可分析提升工作效率
+description: |-
   销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集成与高并发API封装。核心能力:
   - 批量地址/邮编查询(并行处理)
   - 本地缓存与增量刷新(降低API消耗)
@@ -38,6 +37,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - import
+  - address
+  - str
+  - rate
+  - return
 tools:
   - read
   - exec
@@ -45,9 +49,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 销售税查询工具(专业版)
 ## 概述
 `ziptax-tool-pro` 是面向团队与企业的端到端销售税工程平台。它在免费版基础查询能力之上,扩展了批量并行查询、本地缓存与增量刷新、税务合规报告、企业级 API 封装与 CI/CD 集成能力,帮助团队构建可审计、可扩展、高可用的销售税计算体系.

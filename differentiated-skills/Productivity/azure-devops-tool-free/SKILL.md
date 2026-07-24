@@ -16,6 +16,11 @@ tags:
   - 代码协作
   - Azure
   - 云计算
+  - azure
+  - free
+  - agent
+  - devops
+  - git
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "api-magic-gen"
 name: "api-magic-gen"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "接口魔法生成专业版"
 summary: "基于magic-api的接口全功能专业版，含多数据源、拦截器、OpenAPI导出、性能监控与团队协作能力。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向Java后端团队与企业的接口快速生成全功能专业版。在免费版基础上新增多数据源切换、自定义拦截器、全局变量、OpenAPI文档导出、性能监控告警、接口版本管理、团队协作编辑、灰度发布等高级能力，配套面向架构师、运维、前端的多角色场景指南。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - 集成工具
@@ -17,6 +16,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - token
+  - var
+  - user
+  - true
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # 接口魔法生成专业版
 
 ## 付费版专享能力

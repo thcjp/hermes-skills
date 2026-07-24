@@ -1,5 +1,4 @@
 ---
-
 slug: security-toolkit-free
 name: security-toolkit-free
 version: 1.0.1
@@ -43,14 +42,17 @@ tags:
   - 漏洞扫描
   - 加密
   - 工具
+  - critical
+  - high
+  - agent
+  - medium
+  - severity
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
-
 ---
-
 # Agent安全工具箱(免费版)
 
 ## 概述

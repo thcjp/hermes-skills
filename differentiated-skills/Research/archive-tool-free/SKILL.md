@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - saas
+  - items
+  - 语义搜索
+  - url
+  - bash
 tools:
   - read
   - exec

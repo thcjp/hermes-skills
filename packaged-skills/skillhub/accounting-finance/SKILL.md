@@ -1,5 +1,4 @@
 ---
-
 slug: "accounting-finance"
 name: "accounting-finance"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "财务分析专业套件"
 summary: "企业级财务分析与估值建模全套技能，58个专业分析模块，支持批量处理与自动化报告。。面向专业分析师、机构投资者与企业财务部门的全栈财务分析技能套件。包含58个 专家级分析技能，覆盖估值建模、财"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向专业分析师、机构投资者与企业财务部门的全栈财务分析技能套件。包含58个
   专家级分析技能，覆盖估值建模、财务分析、风险评估三大核心领域，支持批量
   处理、自动化报告生成与企业级工作流。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
@@ -20,6 +19,11 @@ tags:
   - 金融
   - 财务
   - 数据
+  - code
+  - pro
+  - data
+  - 分析
+  - 估值
 tools:
   - read
   - exec
@@ -27,9 +31,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Finance"
-
 ---
-
 # 财务分析专业套件
 
 ## 付费版专享能力
@@ -82,6 +84,171 @@ PRO版共包含58个专业分析技能，分为三大领域：
 5. `valuation-report-writer` - 自动生成估值报告
 
 批量监控场景：通过 `batch_analysis.py` 对多只标的并行执行 `fraud-risk-detection`、`earnings-quality-analysis` 等技能，导出Excel对比矩阵。深度尽调场景按"报表提取→标准化→比率分析→杜邦拆解→现金流调节→关联交易→审计→会计政策→欺诈检测→报告生成"链路执行。
+
+## 示例代码
+
+### 1. 企业级配置文件（config.yaml）
+
+PRO版通过 `config.yaml` 配置工作区、数据源、批量分析、估值与风险模型参数：
+
+```yaml
+workspace:
+  output_dir: ./reports
+  data_dir: ./data
+
+data_source:
+  primary: wind          # 主数据源：Wind（中国市场）
+  fallback: ths         # 备用数据源：同花顺
+  cache_enabled: true
+  rate_limit:
+    requests_per_minute: 30
+
+batch_analysis:
+  max_parallel: 10
+  timeout_per_target: 300
+  retry_count: 3
+
+valuation:
+  monte_carlo_simulations: 10000
+  confidence_interval: [0.05, 0.95]
+  sensitivity_variables:
+    - growth_rate
+    - discount_rate
+    - terminal_growth
+
+risk_models:
+  beneish_m_score: true
+  piotroski_f_score: true
+  altman_z_score: true
+  stress_test_scenarios: [base, adverse, severe]
+
+report:
+  format: [pdf, docx, html]
+  language: zh-CN
+```
+
+### 2. 批量分析脚本（batch_analysis.py）
+
+对多只标的并行执行舞弊风险检测与盈利质量分析，导出Excel对比矩阵：
+
+```python
+import pandas as pd
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from skillhub_finance import FraudRiskDetection, EarningsQualityAnalysis
+
+def analyze_target(code, financial_data):
+    """单标的分析：舞弊风险 + 盈利质量"""
+    fraud = FraudRiskDetection(strict_level="normal").run(financial_data)
+    quality = EarningsQualityAnalysis().run(financial_data)
+    return {
+        "code": code,
+        "beneish_m_score": fraud.data["m_score"],
+        "fraud_risk": fraud.data["risk_level"],
+        "earnings_quality_grade": quality.data["overall_grade"],
+        "earnings_quality_score": quality.data["total_score"],
+    }
+
+def batch_analyze(targets, max_workers=10):
+    """批量分析并导出对比矩阵到 Excel"""
+    results = []
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = {
+            pool.submit(analyze_target, code, data): code
+            for code, data in targets.items()
+        }
+        for future in as_completed(futures):
+            try:
+                results.append(future.result())
+            except Exception as e:
+                results.append({"code": futures[future], "error": str(e)})
+    df = pd.DataFrame(results)
+    df.to_excel("./reports/batch_analysis_matrix.xlsx", index=False)
+    return df
+
+# 示例：批量分析3只A股标的
+targets = {
+    "600519": load_financials("600519"),
+    "000858": load_financials("000858"),
+    "002714": load_financials("002714"),
+}
+matrix = batch_analyze(targets, max_workers=5)
+print(matrix[["code", "beneish_m_score", "fraud_risk", "earnings_quality_grade"]])
+```
+
+### 3. 蒙特卡洛DCF估值（Python + scipy）
+
+通过10000次模拟输出估值分布与置信区间：
+
+```python
+import numpy as np
+
+def monte_carlo_dcf(initial_fcf, growth_mean, growth_std, wacc,
+                     terminal_growth, years=5, simulations=10000):
+    """蒙特卡洛模拟DCF估值，输出估值分布与95%置信区间"""
+    np.random.seed(42)
+    values = []
+    for _ in range(simulations):
+        fcf = initial_fcf
+        discounted = 0.0
+        for t in range(1, years + 1):
+            growth = np.random.normal(growth_mean, growth_std)
+            fcf = fcf * (1 + growth)
+            discounted += fcf / ((1 + wacc) ** t)
+        # Gordon 永续终值
+        terminal_fcf = fcf * (1 + terminal_growth)
+        terminal_value = terminal_fcf / (wacc - terminal_growth)
+        discounted += terminal_value / ((1 + wacc) ** years)
+        values.append(discounted)
+    arr = np.array(values)
+    return {
+        "mean": round(arr.mean(), 2),
+        "median": round(np.median(arr), 2),
+        "ci_95": (round(np.percentile(arr, 5), 2),
+                  round(np.percentile(arr, 95), 2)),
+        "std": round(arr.std(), 2),
+    }
+
+# 示例：某科技公司蒙特卡洛估值
+result = monte_carlo_dcf(
+    initial_fcf=2.9,        # 初始自由现金流（亿元）
+    growth_mean=0.12,       # 平均增长率
+    growth_std=0.03,        # 增长率标准差
+    wacc=0.097,             # WACC
+    terminal_growth=0.03,   # 永续增长率
+    years=5,
+    simulations=10000,
+)
+print(result)
+# {'mean': 52.45, 'median': 51.98, 'ci_95': (44.12, 62.31), 'std': 5.53}
+```
+
+### 4. 调用输入输出（JSON）
+
+```json
+{
+  "input": {
+    "content": "600519 2024年度财报全维度分析",
+    "strict_level": "strict"
+  },
+  "output": {
+    "success": true,
+    "data": {
+      "overall_grade": "AA",
+      "total_score": 88,
+      "max_score": 100,
+      "summary": "盈利能力强，现金流稳健，舞弊风险低",
+      "details": [
+        {"item": "Beneish M-Score", "status": "pass", "score": 9, "comment": "-2.13，低于阈值-1.78"},
+        {"item": "Altman Z-Score", "status": "pass", "score": 10, "comment": "8.45，安全区"}
+      ],
+      "improvements": [
+        {"priority": "medium", "suggestion": "关注应收账款周转率下降趋势", "expected_gain": 3}
+      ]
+    },
+    "error": null
+  }
+}
+```
 
 ## 运行环境与依赖
 

@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - pdf
+  - self
+  - import
+  - str
+  - pdf_path
 tools:
   - read
   - exec

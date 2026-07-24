@@ -1,12 +1,11 @@
 ---
-
 slug: "kubernetes"
 name: "kubernetes"
 version: 2.1.1
 displayName: "Kubernetes"
 summary: "K8s与OpenShift多Agent集群,协同运营集群。Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-agent
   system for cluster operat。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -18,6 +17,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - 不支持
+  - api
+  - 依赖说明
+  - kubernetes
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Kubernetes
 
 ## 付费版专享能力

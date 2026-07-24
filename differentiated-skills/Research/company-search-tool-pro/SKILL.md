@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - self
+  - company
+  - monitor
+  - 不支持
+  - key
 tools:
   - read
   - exec

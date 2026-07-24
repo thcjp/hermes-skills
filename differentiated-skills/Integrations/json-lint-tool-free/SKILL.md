@@ -21,6 +21,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - json
+  - 文件
+  - agent
+  - string
+  - errors
 tools:
   - read
   - exec

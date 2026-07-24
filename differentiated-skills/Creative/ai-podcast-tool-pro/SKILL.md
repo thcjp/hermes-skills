@@ -39,6 +39,11 @@ tags:
   - 播客
   - 音频
   - 媒体
+  - api
+  - mp3
+  - style
+  - bash
+  - language
 tools:
   - read
   - exec

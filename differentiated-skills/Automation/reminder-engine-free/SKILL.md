@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - echo
+  - channel
+  - agent
+  - date
+  - remind_at
 tools:
   - read
   - exec

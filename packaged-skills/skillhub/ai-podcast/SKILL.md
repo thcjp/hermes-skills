@@ -1,12 +1,11 @@
 ---
-
 slug: "ai-podcast"
 name: "ai-podcast"
 version: 1.0.12
 displayName: "AI播客生成"
 summary: "将PDF、文本、笔记和链接转化为双主持人对话播客，几分钟生成可分享的音频节目。基于MagicPodcast API将PDF文档、文本内容、笔记和网页链接转化为 自然流畅的双主持人对话式播客节"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   基于MagicPodcast API将PDF文档、文本内容、笔记和网页链接转化为
   自然流畅的双主持人对话式播客节目。支持多语言生成，返回可分享的
   播客链接。适用于内容创作者、教育工作者、研究人员等需要将文字
@@ -16,6 +15,11 @@ tags:
   - 播客
   - 音频
   - 媒体
+  - api
+  - pdf
+  - url
+  - agent
+  - app
 tools:
   - read
   - exec
@@ -23,9 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # AI播客生成 - PDF与文本转对话式播客
 
 ## 输入格式

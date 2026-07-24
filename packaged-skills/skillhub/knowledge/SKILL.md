@@ -1,12 +1,11 @@
 ---
-
 slug: "knowledge"
 name: "knowledge"
 version: 1.0.1
 displayName: "Knowledge"
 summary: "本地知识库集成 - 文档检索、投喂、双轨模式切换。本地知识库集成 - 文档检索、投喂、双轨模式切换 核心能力: - 知识管理领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   本地知识库集成 - 文档检索、投喂、双轨模式切换
 
   核心能力:
@@ -34,6 +33,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 不支持
+  - 依赖说明
+  - agent
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Knowledge
 
 ## 付费版专享能力

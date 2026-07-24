@@ -14,6 +14,11 @@ tags:
   - 笔记工具
   - 工作流
   - 效率
+  - obsidian
+  - obsidian-cli
+  - vault
+  - bash
+  - move
 tools:
   - read
   - exec

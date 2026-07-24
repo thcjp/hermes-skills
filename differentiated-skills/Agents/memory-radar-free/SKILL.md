@@ -1,5 +1,4 @@
 ---
-
 slug: memory-radar-free
 name: memory-radar-free
 version: 1.0.0
@@ -17,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - agent
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 记忆雷达（免费版）
 
 > **Agent记忆的隐形威胁雷达。五级安全评级，本地模式零数据外泄。**

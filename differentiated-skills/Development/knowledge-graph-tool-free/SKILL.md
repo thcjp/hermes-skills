@@ -44,6 +44,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - node
+  - agent
 tools:
   - read
   - exec

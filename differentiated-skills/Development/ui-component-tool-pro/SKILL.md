@@ -1,5 +1,4 @@
 ---
-
 slug: "ui-component-tool-pro"
 name: "ui-component-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "UI组件生成(专业版)"
 summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理。UI组件生成工具专业版为团队与企业提供端到端UI组件工程能力,涵盖设计系统令牌、批量组件生成、WCAG AA"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   UI组件生成工具专业版为团队与企业提供端到端UI组件工程能力,涵盖设计系统令牌、批量组件生成、WCAG AA可访问性增强与企业级组件库管理。核心能力:
   - 设计系统令牌(颜色/排版/间距/圆角/阴影)生成与管理
   - 批量组件生成与脚手架
@@ -31,15 +30,17 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - comp
+  - rem
+  - eof
+  - wcag
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # UI 组件生成工具(专业版)
 
 ## 概述

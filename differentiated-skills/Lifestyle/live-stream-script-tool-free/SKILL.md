@@ -29,6 +29,10 @@ tags:
   - 研究
   - 分析
   - 知识
+  - 分钟
+  - min
+  - text
+  - python
 tools:
   - read
   - exec

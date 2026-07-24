@@ -1,18 +1,22 @@
 ---
-
 slug: "iris-code-formatter"
 name: "iris-code-formatter"
 version: 3.1.1
 displayName: "iris-code-formatter"
 summary: "对InterSystems IRIS/Cache ObjectScript代码进行格式化检查、审查和自动修正。 当用户需要格式化IRIS代码、检查代码规范合规性、审查代码质量或修正不符合规范的代..."
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   对InterSystems IRIS/Cache ObjectScript代码进行格式化检查、审查和自动修正。当用户需要格式化IRIS代码、检查代码规范合规性、审查代码质量或修正不符合规范的代。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
   - 开发工具
   - 代码生成
   - 编程辅助
+  - 用户提供
+  - 执行核心
+  - 处理逻辑
+  - 返回结构
+  - 化结果和
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # iris-code-formatter
 
 ## 付费版专享能力

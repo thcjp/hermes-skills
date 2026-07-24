@@ -29,6 +29,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - self
+  - headers
+  - payload
+  - resp
+  - json
 tools:
   - read
   - exec

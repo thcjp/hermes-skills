@@ -41,6 +41,11 @@ tags:
   - Azure
   - 云计算
   - DevOps
+  - import
+  - 专业版新
+  - mcp
+  - credential
+  - azure
 tools:
   - read
   - exec

@@ -1,18 +1,22 @@
 ---
-
 slug: "magic-api-generate"
 name: "magic-api-generate"
 version: 1.0.1
 displayName: "magic-api-generate"
 summary: "magic-api 国产接口快速开发框架。通过 Web UI 编写脚本自动映射为 HTTP 接口，无需 Controller/Service/Dao。当用户提到"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   magic-api 国产接口快速开发框架。通过 Web UI 编写脚本自动映射为 HTTP 接口，无需 Controller/Service/Dao。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
   - API
   - 接口
   - 开发工具
+  - api
+  - magic-api-generate
+  - references
+  - skills
+  - file
 tools:
   - read
   - exec
@@ -20,9 +24,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # magic-api-generate
 
 ## 付费版专享能力

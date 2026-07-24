@@ -20,6 +20,11 @@ tags:
   - 开发
   - 代码
   - 创意
+  - hex
+  - cmyk
+  - logo
+  - 目标受众
+  - rgb
 tools:
   - read
   - exec

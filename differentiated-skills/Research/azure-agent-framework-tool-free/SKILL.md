@@ -1,5 +1,4 @@
 ---
-
 slug: azure-agent-framework-tool-free
 name: azure-agent-framework-tool-free
 version: 1.0.0
@@ -36,15 +35,18 @@ tags:
   - Azure
   - 云计算
   - DevOps
+  - import
+  - azure
+  - agent
+  - credential
+  - run
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
-
 ---
-
 # Azure智能体框架工具(免费版)
 
 ## 概述

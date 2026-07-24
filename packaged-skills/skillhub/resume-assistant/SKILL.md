@@ -1,12 +1,11 @@
 ---
-
 slug: "resume-assistant"
 name: "resume-assistant"
 version: 1.0.1
 displayName: "简历助手"
 summary: "AI简历助手，支持polish润色、customize定制、score评分与export多格式导出。"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   AI驱动的简历/CV助手，帮助求职者创建、优化与导出简历.
   支持polish润色（40+检查项）、customize针对岗位定制、score 100分制评分.
   支持export导出为Word、Markdown、HTML、LaTeX、PDF多格式.
@@ -26,10 +25,13 @@ tags:
   - 研究
   - 分析
   - 创意
+  - string
+  - score
+  - agent
+  - markdown
+  - polish
 category: "Automation"
-
 ---
-
 # 简历助手
 
 AI简历助手，支持polish润色、customize定制、score评分与export多格式导出.

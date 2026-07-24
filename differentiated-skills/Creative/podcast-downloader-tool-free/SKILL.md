@@ -1,5 +1,4 @@
 ---
-
 slug: podcast-downloader-tool-free
 name: podcast-downloader-tool-free
 version: 1.0.0
@@ -19,15 +18,18 @@ tags:
   - 音频转换
   - 音频
   - 媒体
+  - mp3
+  - xiaoyuzhoufm
+  - title
+  - com
+  - m4a
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 播客下载工具 - 免费版
 
 ## 概述

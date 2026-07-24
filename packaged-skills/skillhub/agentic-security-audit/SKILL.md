@@ -1,12 +1,11 @@
 ---
-
 slug: "agentic-security-audit"
 name: "agentic-security-audit"
 version: 1.0.1
 displayName: "Agentic Security Aud"
 summary: "审计代码库/基础设施/Agent AI系统安全,覆盖传统与新型风险,一键出报告。Audit codebases, infrastructure, AND agentic AI systems"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Audit codebases, infrastructure, AND agentic AI systems for security
   issues。Covers traditional s。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
@@ -15,6 +14,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - api
+  - 不支持
+  - llm
+  - 依赖说明
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
 ---
-
 # Agentic Security Aud
 
 ## 付费版专享能力

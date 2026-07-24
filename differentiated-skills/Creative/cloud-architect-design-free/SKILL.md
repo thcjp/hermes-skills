@@ -1,5 +1,4 @@
 ---
-
 slug: cloud-architect-design-free
 name: cloud-architect-design-free
 version: 1.0.1
@@ -37,15 +36,18 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - aws
+  - ec2
+  - 云架构师
+  - api
+  - azure
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
-
 ---
-
 # 云架构师免费版
 
 ## 概述

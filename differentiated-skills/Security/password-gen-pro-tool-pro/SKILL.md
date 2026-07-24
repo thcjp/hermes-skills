@@ -18,6 +18,11 @@ tags:
   - 泄露检查
   - 加密
   - 工具
+  - 专业版独
+  - print
+  - result
+  - pwd
+  - 企业密码
 tools:
   - read
   - exec

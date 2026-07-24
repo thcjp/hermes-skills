@@ -21,6 +21,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - true
+  - learnings
+  - enabled
+  - eof
+  - hook
 tools:
   - read
   - exec

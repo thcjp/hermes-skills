@@ -1,12 +1,11 @@
 ---
-
 slug: "pyx-scan"
 name: "pyx-scan"
 version: 1.1.1
 displayName: "技能安全扫描"
 summary: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、数据泄露、"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度
   包括恶意指令、数据泄露、权限滥用、供应链风险等。返回信任评分（0-10）、
   风险评分（0-10）和置信度百分比。支持WebFetch和curl两种调用方式。适用于
@@ -26,10 +25,13 @@ tags:
   - 研究
   - 分析
   - 安全
+  - api
+  - confidence
+  - owner
+  - scanner
+  - curl
 category: "Automation"
-
 ---
-
 # 技能安全扫描
 
 通过Scanner API对AI技能进行安全评级和风险报告.

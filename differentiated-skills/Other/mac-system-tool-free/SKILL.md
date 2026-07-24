@@ -39,6 +39,11 @@ tags:
   - 分析
   - 写作
   - 电商
+  - volume
+  - cpu
+  - macos
+  - bash
+  - osascript
 tools:
   - read
   - exec

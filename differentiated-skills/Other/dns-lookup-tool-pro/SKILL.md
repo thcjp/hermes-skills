@@ -30,6 +30,11 @@ tags:
   - 监控
   - 研究
   - 分析
+  - dns
+  - json
+  - dnssec
+  - com
+  - 批量查询
 tools:
   - read
   - exec

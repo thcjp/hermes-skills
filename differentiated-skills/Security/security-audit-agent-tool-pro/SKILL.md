@@ -17,6 +17,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - echo
+  - agent
+  - 专业版独
+  - grep
+  - null
 tools:
   - read
   - exec

@@ -32,6 +32,11 @@ tags:
   - 图像处理
   - AI绘图
   - 创意
+  - gemini-3
+  - api
+  - model
+  - pro
+  - bash
 tools:
   - read
   - exec

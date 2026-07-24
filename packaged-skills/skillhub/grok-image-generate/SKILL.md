@@ -1,12 +1,11 @@
 ---
-
 slug: "grok-image-generate"
 name: "grok-image-generate"
 version: 1.0.1
 displayName: "grok_image_generate"
 summary: "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。。通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。核心能力: -"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。核心能力:
 
   - 创意设计领域的专业化AI辅助工具
@@ -27,6 +26,11 @@ tags:
   - 图像处理
   - AI绘图
   - 创意
+  - uvx
+  - desktop-agent
+  - grok
+  - imagine
+  - action
 tools:
   - read
   - exec
@@ -34,9 +38,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # grok_image_generate
 
 ## 付费版专享能力

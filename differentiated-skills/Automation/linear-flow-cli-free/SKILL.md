@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - linear
+  - issue
+  - list
+  - bash
+  - agent
 tools:
   - read
   - exec

@@ -27,6 +27,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - mermaid
+  - agent
+  - api
+  - png
+  - markdown
 tools:
   - read
   - exec

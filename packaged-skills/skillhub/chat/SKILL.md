@@ -1,12 +1,11 @@
 ---
-
 slug: "chat"
 name: "chat"
 version: 1.1.1
 displayName: "Chat"
 summary: "从显式反馈学习沟通偏好,自适应语气/格式/风格,越用越懂你。Learns communication preferences from explicit feedback。Adapts to"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Learns communication preferences from explicit feedback。Adapts tone,
   format, and style
 tags:
@@ -19,6 +18,10 @@ tags:
   - AI代理
   - agent
   - 通信
+  - 依赖说明
+  - 不支持
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -26,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Chat
 
 ## 付费版专享能力

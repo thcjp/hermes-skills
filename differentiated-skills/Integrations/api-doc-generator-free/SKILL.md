@@ -15,6 +15,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - type
+  - string
+  - openapi
+  - post
+  - api
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: web-vuln-assess-tool-free
 name: web-vuln-assess-tool-free
 version: 1.0.0
@@ -46,6 +45,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - high
+  - web
+  - owasp
+  - medium
+  - api
 tools:
   - read
   - exec
@@ -53,9 +57,7 @@ tools:
   - glob
 homepage: ""
 category: "Development"
-
 ---
-
 # Web漏洞评估(免费版)
 
 ## 概述

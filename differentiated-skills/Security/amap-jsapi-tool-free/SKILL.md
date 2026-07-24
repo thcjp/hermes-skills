@@ -19,6 +19,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - amap
+  - map
+  - result
+  - const
+  - console
 tools:
   - read
   - exec

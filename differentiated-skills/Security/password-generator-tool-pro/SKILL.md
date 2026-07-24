@@ -1,5 +1,4 @@
 ---
-
 slug: password-generator-tool-pro
 name: password-generator-tool-pro
 version: 1.0.0
@@ -44,15 +43,18 @@ tags:
   - 随机生成
   - 加密
   - 工具
+  - true
+  - string
+  - policy
+  - self
+  - import
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
-
 ---
-
 # 密码生成器(专业版)
 
 ## 概述

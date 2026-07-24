@@ -29,6 +29,11 @@ tags:
   - 生活
   - 健康
   - 写作
+  - normal
+  - high
+  - self
+  - ref
+  - metric
 tools:
   - read
   - exec

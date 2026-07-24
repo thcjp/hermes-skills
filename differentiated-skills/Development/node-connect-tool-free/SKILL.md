@@ -1,5 +1,4 @@
 ---
-
 slug: node-connect-tool-free
 name: node-connect-tool-free
 version: 1.0.0
@@ -45,15 +44,18 @@ tags:
   - 运维
   - 监控
   - 研究
+  - skill-platform
+  - gateway
+  - bind
+  - json
+  - lan
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 节点连接工具(免费版)
 
 ## 概述

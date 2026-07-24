@@ -46,6 +46,11 @@ tags:
   - 写作
   - 电商
   - 研究
+  - python
+  - json
+  - items
+  - ruff
+  - path
 tools:
   - read
   - exec

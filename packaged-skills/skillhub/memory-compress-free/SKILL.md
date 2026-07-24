@@ -1,12 +1,11 @@
 ---
-
 slug: "memory-compress-free"
 name: "memory-compress-free"
 version: "1.0.0"
 displayName: "日志压缩器免费版"
 summary: "基础日志压缩工具，将日志压缩为结构化摘要，支持单文件处理。日志压缩器免费版提供基础日志压缩能力，将冗长日志压缩为结构化摘要. 核心能力包括：单文件日志压缩、古文压缩四原则、关键词匹配提取、基"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   日志压缩器免费版提供基础日志压缩能力，将冗长日志压缩为结构化摘要.
   核心能力包括：单文件日志压缩、古文压缩四原则、关键词匹配提取、基础边界处理.
   适用于 Agent 每日日志归档场景，压缩比约 4 倍.
@@ -22,10 +21,13 @@ tags:
   - 记忆管理
   - 上下文
   - AI
+  - node
+  - memory
+  - tmp
+  - compressed
+  - agent
 category: "Agents"
-
 ---
-
 # 日志压缩器免费版
 
 基础日志压缩工具，将日志压缩为结构化摘要.

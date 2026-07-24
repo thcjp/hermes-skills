@@ -20,6 +20,10 @@ tags:
   - 开发
   - 代码
   - 知识
+  - yaml
+  - json
+  - false
+  - indent
 tools:
   - read
   - exec

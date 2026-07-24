@@ -1,12 +1,11 @@
 ---
-
 slug: "compress"
 name: "compress"
 version: 1.0.1
 displayName: "Compress"
 summary: "语义压缩文本,迭代校验+锚点校验和,信息无损瘦身。Compress text semantically with iterative validation, anchor checksums"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   Compress text semantically with iterative validation, anchor checksums,
   and verified information 。Use when 用户需要Compress相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
@@ -18,6 +17,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - compress
+  - 不支持
+  - 依赖说明
+  - api
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Compress
 
 ## 付费版专享能力

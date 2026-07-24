@@ -1,5 +1,4 @@
 ---
-
 slug: "video-translator-tool-pro"
 name: "video-translator-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "视频翻译-专业版"
 summary: "企业级视频翻译与配音平台，支持8种语言、双语字幕、批量翻译、语音克隆与优先队列，适合跨国内容本地化。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   视频翻译专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
@@ -20,15 +19,18 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - json
+  - bash
+  - python3
+  - 不支持
+  - 翻译记忆
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 视频翻译专业版是一款面向企业团队与跨国内容机构的多语言视频本地化平台。在免费版中英互译能力之上，专业版扩展了 8 种源语言支持、双语字幕烧录、批量翻译处理、语音克隆、翻译记忆库等企业级能力.
 专业版采用任务队列架构，支持优先级调度、断点续传、失败重试，可稳定处理 50+ 视频的批量翻译任务。同时完全兼容免费版 API Key 与调用方式，已有项目可无缝迁移.
 ### 免费版与专业版能力对比

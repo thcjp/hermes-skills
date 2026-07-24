@@ -1,12 +1,11 @@
 ---
-
 slug: "notion"
 name: "notion"
 version: 1.0.1
 displayName: "Notion"
 summary: "Notion API创建管理页面/数据库/块。Notion API for creating and managing pages, databases, and blocks。核心能力:"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Notion API for creating and managing pages, databases, and blocks。核心能力:
 
   - 商业工具领域的专业化AI辅助工具
@@ -32,6 +31,11 @@ tags:
   - 开发
   - 代码
   - 写作
+  - notion
+  - content
+  - text
+  - json
+  - api
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Notion
 
 ## 付费版专享能力

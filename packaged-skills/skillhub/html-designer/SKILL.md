@@ -1,12 +1,11 @@
 ---
-
 slug: "html-designer"
 name: "html-designer"
 version: 1.0.1
 displayName: "HTML Designer"
 summary: "专精HTML/CSS的网页平面设计师,深谙图形设计。Expert web graphic designer specializing in HTML/CSS design with deep"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Expert web graphic designer specializing in HTML/CSS design with deep
   knowledge of graphic design。
 tags:
@@ -15,6 +14,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - designer
+  - agent
+  - llm
+  - 不支持
+  - 依赖说明
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # HTML Designer
 
 ## 付费版专享能力

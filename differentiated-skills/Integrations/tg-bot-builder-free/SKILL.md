@@ -9,12 +9,7 @@ edition: free
 description: 面向独立开发者与小团队的Telegram机器人构建助手，覆盖Bot创建、交互菜单、消息流转、群组管理等核心场景。核心能力：通过自然语言指令生成Bot配置代码，支持Reply键盘、Inline内联按钮、Webhook接入、自动回复规则与基础群组权限管理。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-  - 集成工具
-  - 通信自动化
-  - 机器人开发
-  - UI设计
-  - 前端
-  - 设计
+  - bot,telegram,webhook,token,self
 tools:
   - read
   - exec

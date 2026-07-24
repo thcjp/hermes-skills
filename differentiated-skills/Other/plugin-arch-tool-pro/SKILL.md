@@ -49,6 +49,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - plugin-cli
+  - true
+  - 用户提供
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec

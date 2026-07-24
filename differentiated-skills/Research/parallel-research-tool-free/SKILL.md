@@ -1,5 +1,4 @@
 ---
-
 slug: parallel-research-tool-free
 name: parallel-research-tool-free
 version: 1.0.0
@@ -42,6 +41,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - research
+  - text
+  - agent
+  - 来源
+  - pdf
 tools:
   - read
   - exec
@@ -49,9 +53,7 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
-
 ---
-
 # 并行研究助手（免费版）
 
 ## 概述

@@ -1,24 +1,15 @@
 ---
-
 slug: "notion-pages"
 name: "notion-pages"
 version: 0.1.2
 displayName: "Notion"
 summary: "搜页面数据库/更新内容/管Notion工作区数据。Search pages and databases, update content, and manage Notion workspac"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Search pages and databases, update content, and manage Notion workspace
   data from chat。Use this。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
-  - Productivity
-  - Automation
-  - 工具
-  - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 工作流
-  - 开发
+  - 效率,按流程执,bash,notion,clawlink_call_tool,params
 tools:
   - read
   - exec
@@ -27,9 +18,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Notion
 
 ## 付费版专享能力

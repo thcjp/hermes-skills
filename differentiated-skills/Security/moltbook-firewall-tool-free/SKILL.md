@@ -18,6 +18,11 @@ tags:
   - 免费版
   - 加密
   - 工具
+  - input
+  - self
+  - agent
+  - violations
+  - echo
 tools:
   - read
   - exec

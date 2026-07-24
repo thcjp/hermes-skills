@@ -1,12 +1,11 @@
 ---
-
 slug: "word-docx"
 name: "word-docx"
 version: 1.0.3
 displayName: "Word / DOCX"
 summary: "创建检查编辑Word文档与DOCX,样式与编号可靠。Create, inspect, and edit Microsoft Word documents and DOCX files wit"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Create, inspect, and edit Microsoft Word documents and DOCX files with
   reliable styles, numbering。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 知识
   - 文档
   - AI代理
+  - docx
+  - 不支持
+  - agent
+  - api
+  - 依赖说明
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Word / DOCX
 
 ## 付费版专享能力

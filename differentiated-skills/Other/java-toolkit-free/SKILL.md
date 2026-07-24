@@ -1,5 +1,4 @@
 ---
-
 slug: java-toolkit-free
 name: java-toolkit-free
 version: 1.0.1
@@ -39,15 +38,18 @@ tags:
   - 研究
   - 分析
   - 运维
+  - equals
+  - java
+  - optional
+  - volatile
+  - string
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Java 工具箱（免费版）
 
 ## 概述

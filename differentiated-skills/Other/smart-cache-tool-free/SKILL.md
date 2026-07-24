@@ -45,6 +45,11 @@ tags:
   - 创意
   - 图像
   - 开发
+  - cache
+  - ttl
+  - lru
+  - 缓存策略
+  - lfu
 tools:
   - read
   - exec

@@ -23,6 +23,11 @@ tags:
   - 研究
   - 分析
   - 运维
+  - dns
+  - 分钟
+  - socks5h
+  - api
+  - socks5
 tools:
   - read
   - exec

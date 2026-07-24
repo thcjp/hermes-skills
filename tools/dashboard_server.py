@@ -164,6 +164,31 @@ def get_l8_security_stats():
         return {"available": False, "error": str(e)}
 
 
+def get_l9_visibility_stats():
+    """获取L9可见性质量预检统计 (从 deep_quality_audit_report.json 读取)"""
+    audit_report = Path(DATA_DIR) / "reports" / "deep_quality_audit_report.json"
+    if not audit_report.exists():
+        return {"available": False}
+    try:
+        import json as _j
+        data = _j.loads(audit_report.read_text(encoding="utf-8"))
+        va = data.get("visibility_audit", {})
+        if not va:
+            return {"available": False}
+        return {"available": True, "audit_date": data.get("audit_date", ""),
+                "enabled": va.get("enabled", False),
+                "l9_available_count": va.get("l9_available_count", 0),
+                "grade_distribution": va.get("grade_distribution", {}),
+                "avg_score": va.get("avg_score", 0),
+                "passed_count": va.get("passed_count", 0),
+                "failed_count": va.get("failed_count", 0),
+                "pass_rate": va.get("pass_rate", "0%"),
+                "category_distribution": va.get("category_distribution", {}),
+                "total_with_issues": va.get("total_with_issues", 0)}
+    except Exception as e:
+        return {"available": False, "error": str(e)}
+
+
 def get_pricing_stats():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row

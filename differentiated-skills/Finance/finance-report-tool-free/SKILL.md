@@ -18,6 +18,11 @@ tags:
   - 金融
   - 财务
   - 数据
+  - pdf
+  - html
+  - excel
+  - 用户提供
+  - 完成核心
 tools:
   - read
   - exec

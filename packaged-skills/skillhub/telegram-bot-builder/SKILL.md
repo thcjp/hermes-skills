@@ -1,12 +1,11 @@
 ---
-
 slug: "telegram-bot-builder"
 name: "telegram-bot-builder"
 version: 1.0.1
 displayName: "Telegram Bot Builder"
 summary: "Telegram Bot 快速build工具 - Keyboard、Inline Buttons、Webhook、Auto-reply、Group管理"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Telegram Bot 快速build工具 - Keyboard、Inline Buttons、Webhook、Auto-reply、Group管理
 
   核心能力:
@@ -31,6 +30,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - bot
+  - webhook
+  - text
+  - telegram
+  - json
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Telegram Bot Builder
 
 ## 付费版专享能力

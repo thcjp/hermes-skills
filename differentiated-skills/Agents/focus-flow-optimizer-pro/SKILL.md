@@ -22,6 +22,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - 专业版
+  - focus
+  - focus-flow
+  - direction
+  - execution
 tools:
   - read
   - exec

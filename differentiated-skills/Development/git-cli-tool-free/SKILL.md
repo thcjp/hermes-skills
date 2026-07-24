@@ -42,6 +42,11 @@ tags:
   - Git
   - 命令行
   - 版本控制
+  - git
+  - branch
+  - echo
+  - add
+  - commit
 tools:
   - read
   - exec

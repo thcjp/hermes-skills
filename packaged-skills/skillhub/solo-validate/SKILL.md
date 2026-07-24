@@ -1,12 +1,11 @@
 ---
-
 slug: "solo-validate"
 name: "solo-validate"
 version: 2.1.2
 displayName: "Validate"
 summary: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分。Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用于超出本技能能力范围的复杂需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Research
@@ -18,6 +17,11 @@ tags:
   - 开发
   - 代码
   - 知识
+  - stream
+  - devil
+  - advocate
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Validate
 
 ## 付费版专享能力

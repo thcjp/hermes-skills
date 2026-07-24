@@ -1,5 +1,4 @@
 ---
-
 slug: "mermaid-diagram-paid"
 name: "mermaid-diagram-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Mermaid图表工具(专业版)"
 summary: "团队级Mermaid图表套件,含全类型、自定义主题、批量生成与CI语法校验。。Mermaid图表工具(专业版)面向团队与企业,提供全类型Mermaid图表生成、复杂多节点图、自定义主题样式、"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   Mermaid图表工具(专业版)面向团队与企业,提供全类型Mermaid图表生成、复杂多节点图、自定义主题样式、从文档批量生成、CI语法校验与文档自动嵌入能力。核心能力:
   - 全图表类型:含C4架构图、Git图、类图、需求图等进阶类型
   - 复杂多节点图与子图分组
@@ -35,6 +34,11 @@ tags:
   - 代码
   - 工作流
   - 研究
+  - api
+  - web
+  - docs
+  - mmd
+  - theme
 tools:
   - read
   - exec
@@ -42,9 +46,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Mermaid图表工具(专业版)
 
 ## 付费版专享能力

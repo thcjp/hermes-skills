@@ -1,12 +1,11 @@
 ---
-
 slug: "discrawl"
 name: "discrawl"
 version: 1.0.1
 displayName: "Discrawl"
 summary: "Discord归档,搜索/同步新鲜度/私信/频道切片/SQL计数。Discord archive: search, sync freshness, DMs, channel slices,"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Discord archive: search, sync freshness, DMs, channel slices, SQL counts。核心能力:
 
   - 集成工具领域的专业化AI辅助工具
@@ -32,6 +31,11 @@ tags:
   - 通信
   - 邮件
   - AI代理
+  - api
+  - 不支持
+  - agent
+  - key
+  - 依赖说明
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Discrawl
 
 ## 付费版专享能力

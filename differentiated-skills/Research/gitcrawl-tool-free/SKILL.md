@@ -36,6 +36,11 @@ tags:
   - PR查询
   - 版本控制
   - Git
+  - gitcrawl
+  - issue
+  - owner
+  - repo
+  - json
 tools:
   - read
   - exec

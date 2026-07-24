@@ -34,6 +34,10 @@ tags:
   - 专业版
   - 语言
   - 工具
+  - translate-pro
+  - docs
+  - 术语一致
+  - 批量翻译
 tools:
   - read
   - exec

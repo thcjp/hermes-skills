@@ -1,12 +1,11 @@
 ---
-
 slug: "hugo-blog-publisher"
 name: "hugo-blog-publisher"
 version: 1.1.2
 displayName: "博客发布工具"
 summary: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库。将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取 标题、标签、分类，生成front matte"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取
   标题、标签、分类，生成front matter，创建标签分类映射文件，添加截断标记，
   执行Git推送并返回部署链接。支持Taxonomy Branch Bundle映射机制，无需i18n
@@ -26,10 +25,13 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - git
+  - content
+  - index
+  - agent
+  - 执行核心
 category: "Automation"
-
 ---
-
 # 博客发布工具
 
 将Markdown文章发布到静态站点生成器博客并推送到代码仓库.

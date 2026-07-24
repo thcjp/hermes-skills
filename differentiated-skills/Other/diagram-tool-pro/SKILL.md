@@ -31,6 +31,11 @@ tags:
   - 知识
   - 文档
   - 开发
+  - svg
+  - mmd
+  - 批量生成
+  - 模板
+  - html
 tools:
   - read
   - exec

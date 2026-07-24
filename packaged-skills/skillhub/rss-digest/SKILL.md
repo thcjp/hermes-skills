@@ -1,12 +1,11 @@
 ---
-
 slug: "rss-digest"
 name: "rss-digest"
 version: 0.2.2
 displayName: "Rss Digest"
 summary: "用feed CLI做RSS摘要,抓取/分诊/汇总高价值条目。Agentic RSS digest using the feed CLI。Fetch, triage, and summariz"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Agentic RSS digest using the feed CLI。Fetch, triage, and summarize
   RSS feeds to surface high-sig。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -14,15 +13,18 @@ tags:
   - RSS
   - 订阅
   - 信息
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # Rss Digest
 
 ## 付费版专享能力

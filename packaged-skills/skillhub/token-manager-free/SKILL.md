@@ -1,12 +1,11 @@
 ---
-
 slug: "token-manager-free"
 name: "token-manager-free"
 version: 1.0.1
 displayName: "Token用量管理(免费版)"
 summary: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析(免费版)。API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、 余额预警、工具集成和跨"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、
   余额预警、工具集成和跨会话分析。按¥12/1M tokens计费，80%上下文阈值
   触发提醒，50k会话Token触发预警。适用于独立开发者、企业团队和自动化
@@ -26,10 +25,13 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - token
+  - api
+  - tokens
+  - report
+  - bash
 category: "Automation"
-
 ---
-
 # Token用量管理(免费版)
 
 监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析.

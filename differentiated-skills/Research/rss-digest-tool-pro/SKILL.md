@@ -39,6 +39,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - feed
+  - tenant
+  - rss
+  - add
+  - distribute
 tools:
   - read
   - exec

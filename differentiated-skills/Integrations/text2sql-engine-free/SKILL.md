@@ -20,6 +20,11 @@ tags:
   - 通信
   - 邮件
   - 开发
+  - sql
+  - join
+  - select
+  - group
+  - created_at
 tools:
   - read
   - exec

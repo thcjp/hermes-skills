@@ -1,12 +1,11 @@
 ---
-
 slug: "security-auditor"
 name: "security-auditor"
 version: 1.0.1
 displayName: "Security Auditor"
 summary: "审代码安全漏洞/实现认证流/审计依赖,安全合规。Use when reviewing code for security vulnerabilities, implementing auth"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Use when reviewing code for security vulnerabilities, implementing authentication
   flows, auditing。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
@@ -15,15 +14,18 @@ tags:
   - 安全
   - 加密
   - 工具
+  - 不支持
+  - agent
+  - api
+  - 依赖说明
+  - llm
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
-
 ---
-
 # Security Auditor
 
 ## 付费版专享能力

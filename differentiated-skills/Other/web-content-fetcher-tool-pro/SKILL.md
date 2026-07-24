@@ -35,6 +35,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - web-fetcher-pro
+  - url
+  - true
+  - markdown
+  - https
 tools:
   - read
   - exec

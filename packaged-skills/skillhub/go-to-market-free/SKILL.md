@@ -1,12 +1,11 @@
 ---
-
 slug: "go-to-market-free"
 name: "go-to-market-free"
 version: 1.0.1
 displayName: "上市策略引擎(免费版)"
 summary: "产品上市策略，覆盖市场定位、定价策略、渠道选择、发布计划与增长指标。免费版。产品上市（Go-to-Market）策略引擎（免费版），覆盖从市场定位到发布执行全流程. 支持SaaS、消费应用、"
 license: "MIT"
-description: |-，可分析提升工作效率
+description: |-
   产品上市（Go-to-Market）策略引擎（免费版），覆盖从市场定位到发布执行全流程.
   支持SaaS、消费应用、企业产品等多种类型。核心能力：
   - 市场定位与差异化（ICP定义+竞品分析+价值主张）
@@ -28,10 +27,13 @@ tags:
   - 创意
   - 图像
   - 写作
+  - api
+  - saas
+  - plg
+  - 消费应用
+  - 策略
 category: "Automation"
-
 ---
-
 # 上市策略引擎(免费版)
 
 产品上市策略引擎，覆盖从市场定位到发布执行全流程，支持SaaS、消费应用、企业产品等多种类型.

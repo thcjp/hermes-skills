@@ -1,5 +1,4 @@
 ---
-
 slug: tts-whatsapp-tool-free
 name: tts-whatsapp-tool-free
 version: 1.0.0
@@ -44,15 +43,18 @@ tags:
   - 多语言
   - 社交
   - 通信
+  - 语音消息
+  - whatsapp
+  - tts-whatsapp
+  - target
+  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # WhatsApp 语音消息工具 - 免费版
 
 ## 概述

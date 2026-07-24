@@ -1,5 +1,4 @@
 ---
-
 slug: brave-search-tool-free
 name: brave-search-tool-free
 version: 1.0.0
@@ -35,6 +34,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - search
+  - content
+  - api
+  - url
+  - python
 tools:
   - read
   - exec
@@ -42,9 +46,7 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
-
 ---
-
 # Brave搜索工具(免费版)
 
 ## 概述

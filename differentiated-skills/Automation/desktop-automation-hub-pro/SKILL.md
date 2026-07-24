@@ -20,6 +20,10 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - 专业版独
+  - true
+  - location
+  - png
 tools:
   - read
   - exec

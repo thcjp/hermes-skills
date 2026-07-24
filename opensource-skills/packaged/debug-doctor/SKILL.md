@@ -21,6 +21,11 @@ tags:
   - 研究
   - 分析
   - 运维
+  - 阶段
+  - 定位
+  - 复现
+  - output
+  - 根因
 tools:
   - read
   - exec

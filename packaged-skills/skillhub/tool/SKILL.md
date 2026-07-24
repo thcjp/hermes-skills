@@ -1,12 +1,11 @@
 ---
-
 slug: "tool"
 name: "tool"
 version: 1.0.1
 displayName: "Tool"
 summary: "AI Agent技能,查找/评估/用好可用工具。A comprehensive AI agent skill for finding, evaluating, and getting the"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   A comprehensive AI agent skill for finding, evaluating, and getting
   the most from the tools that 。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 按流程执
+  - agent
+  - 依赖说明
+  - 不支持
+  - api
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Tool
 
 ## 付费版专享能力

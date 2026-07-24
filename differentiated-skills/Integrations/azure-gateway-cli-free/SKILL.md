@@ -1,5 +1,4 @@
 ---
-
 slug: azure-gateway-cli-free
 name: azure-gateway-cli-free
 version: 1.0.1
@@ -16,15 +15,18 @@ tags:
   - Azure
   - 云计算
   - DevOps
+  - azure
+  - openai
+  - api
+  - agent
+  - key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
-
 ---
-
 # Azure网关CLI免费版
 
 一款轻量级本地代理工具，桥接标准OpenAI兼容客户端与Azure OpenAI服务，解决URL路径与认证头的协议差异问题.

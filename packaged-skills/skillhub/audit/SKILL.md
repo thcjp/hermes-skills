@@ -1,12 +1,11 @@
 ---
-
 slug: "audit"
 name: "audit"
 version: 1.0.1
 displayName: "Audit"
 summary: "合成经济最高审计器,自主巡检代码/合约/资产,拦截风险于未然。The Supreme Verifier for the Synthetic Economy。Autonomous inspec"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   The Supreme Verifier for the Synthetic Economy。Autonomous inspection
   of code, contracts, and cap。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -19,6 +18,10 @@ tags:
   - AI代理
   - agent
   - 研究
+  - audit
+  - 依赖说明
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -26,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Audit
 
 ## 付费版专享能力

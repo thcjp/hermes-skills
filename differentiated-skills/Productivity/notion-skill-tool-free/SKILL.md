@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - 开发
+  - free
+  - agent
+  - pro
+  - api
+  - 版本
 tools:
   - read
   - exec

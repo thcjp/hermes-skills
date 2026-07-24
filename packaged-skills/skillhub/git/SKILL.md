@@ -1,12 +1,11 @@
 ---
-
 slug: "git"
 name: "git"
 version: 1.0.9
 displayName: "Git"
 summary: "Git提交/分支/rebase/合并/冲突解决/历史恢复与团队工作流。Git commits, branches, rebases, merges, conflict resolution,"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Git commits, branches, rebases, merges, conflict resolution, history
   recovery, team workflows, an。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - git
+  - 不支持
+  - agent
+  - api
+  - 依赖说明
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Git
 
 ## 付费版专享能力

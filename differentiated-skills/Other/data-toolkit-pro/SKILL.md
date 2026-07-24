@@ -15,6 +15,11 @@ tags:
   - 统计检验
   - 数据处理
   - 工具
+  - 检验
+  - amount
+  - 数据质量
+  - script
+  - stats
 tools:
   - read
   - exec

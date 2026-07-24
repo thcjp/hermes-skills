@@ -1,12 +1,11 @@
 ---
-
 slug: "write-free"
 name: "write-free"
 version: "1.0.0"
 displayName: "版本化写作工具（免费版）"
 summary: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制。带版本控制的写作工具（免费版）. 遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   带版本控制的写作工具（免费版）.
   遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，通过edit.sh脚本管理版本.
   支持depth基础配置。免费版不含完整参考文档库与质量审计深度能力.
@@ -26,10 +25,13 @@ tags:
   - AI代理
   - agent
   - 开发
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - audit
+  - piece
 category: "Automation"
-
 ---
-
 # 版本化写作工具（免费版）
 
 带基础版本控制的写作工具，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程.

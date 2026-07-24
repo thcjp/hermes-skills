@@ -15,6 +15,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - 视角
+  - ceo
+  - cto
+  - 假设
+  - cfo
 tools:
   - read
   - exec

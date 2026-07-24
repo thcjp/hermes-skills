@@ -41,6 +41,11 @@ tags:
   - 写作
   - 电商
   - 开发
+  - tarot-pro
+  - markdown
+  - 批量解读
+  - llm
+  - api
 tools:
   - read
   - exec

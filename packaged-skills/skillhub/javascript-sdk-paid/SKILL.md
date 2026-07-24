@@ -1,5 +1,4 @@
 ---
-
 slug: "javascript-sdk-paid"
 name: "javascript-sdk-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "JS SDK工具专业版"
 summary: "企业级 AI 应用 SDK 方案，支持智能体构建、流式响应、会话管理与服务器代理集成。。面向企业级 AI 应用开发的 JavaScript SDK 专业工具，提供智能体构建与高级调用能力。核"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业级 AI 应用开发的 JavaScript SDK 专业工具，提供智能体构建与高级调用能力。核心能力:
   - 智能体（Agent）构建与多轮对话
   - 流式响应与实时进度更新
@@ -28,6 +27,10 @@ tags:
   - 研究
   - 分析
   - 写作
+  - const
+  - await
+  - console
+  - log
 tools:
   - read
   - exec
@@ -36,9 +39,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # JS SDK工具专业版
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: "json-parse-engine"
 name: "json-parse-engine"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "JSON解析引擎专业版"
 summary: "企业级JSON解析引擎，支持流式解析、批量处理、DataFrame转换、自定义展平策略与增量解析。。JSON解析引擎专业版面向企业级场景，在免费版基础上扩展流式解析、批量目录处理、DataF"
 license: "Proprietary"
 edition: "pro"
-description: |-，可处理提升工作效率
+description: |-
   JSON解析引擎专业版面向企业级场景，在免费版基础上扩展流式解析、批量目录处理、DataFrame表格转换、自定义展平策略、增量解析与断点续传等高级能力。核心能力：GB级JSON流式解析、目录级批量解析、JSON转DataFrame表格、可配置展平深度与分隔符、增量解析与断点续传、性能基准与多级缓存
 tags:
   - 集成工具
@@ -22,6 +21,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - json
+  - dataframe
+  - 流式解析
+  - 按流程执
+  - parser
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # JSON解析引擎专业版
 
 ## 付费版专享能力

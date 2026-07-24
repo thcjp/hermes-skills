@@ -15,6 +15,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - bash
+  - tmwd_exec
+  - document
+  - code
+  - example
 tools:
   - read
   - exec

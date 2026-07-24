@@ -1,5 +1,4 @@
 ---
-
 slug: podcast-toolkit-free
 name: podcast-toolkit-free
 version: 1.0.1
@@ -48,15 +47,18 @@ tags:
   - 个人创作
   - 音频
   - 媒体
+  - podcasts
+  - episodes
+  - 节目笔记
+  - eof
+  - 分钟
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 播客创作工具包 - 免费版
 
 ## 概述

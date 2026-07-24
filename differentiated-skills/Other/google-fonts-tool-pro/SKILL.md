@@ -39,6 +39,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - woff2
+  - fonts
+  - lcp
+  - 字体系统
+  - font
 tools:
   - read
   - exec

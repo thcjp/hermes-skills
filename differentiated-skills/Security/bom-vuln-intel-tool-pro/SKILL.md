@@ -16,6 +16,11 @@ tags:
   - CycloneDX
   - 加密
   - 工具
+  - sbom
+  - json
+  - self
+  - ecosystem
+  - pkg
 tools:
   - read
   - exec

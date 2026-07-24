@@ -23,6 +23,11 @@ tags:
   - 电商
   - 工作流
   - 研究
+  - pro
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
 tools:
   - read
   - exec

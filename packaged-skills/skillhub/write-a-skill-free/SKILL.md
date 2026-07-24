@@ -1,12 +1,11 @@
 ---
-
 slug: "write-a-skill-free"
 name: "write-a-skill-free"
 version: "1.0.0"
 displayName: "技能创建工具(免费版)"
 summary: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分(免费版)。AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件 拆分。技能描述不超过1024字符，SKI"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件
   拆分。技能描述不超过1024字符，SKILL.md不超过100行，超过500行时拆分到
   REFERENCE.md和EXAMPLES.md。引用文件最多1层深度。适用于独立开发者、
@@ -26,10 +25,12 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - reference
+  - api
+  - examples
+  - json
 category: "Automation"
-
 ---
-
 # 技能创建工具(免费版)
 
 创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分.
@@ -125,27 +126,14 @@ tools:
   - read
   - exec
 ---
-# ...
-
-## 快速开始
-
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
-# 数据验证工具
-# ...
 ## 能力速查
 ### 1. JSON Schema验证
 ### 2. CSV格式检查
 ### 3. 数据清洗
-# ...
 ## 使用示例
 \`\`\`bash
 python3 （请参考skill目录中的脚本文件） --input data.json --schema schema.json
 \`\`\`
-# ...
 详见 [REFERENCE.md](REFERENCE.md) 获取完整API参考.
 ```
 

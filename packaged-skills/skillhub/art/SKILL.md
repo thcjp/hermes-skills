@@ -1,12 +1,11 @@
 ---
-
 slug: "art"
 name: "art"
 version: 1.0.1
 displayName: "Art"
 summary: "指导艺术创作技法精进与鉴赏,提供分媒介实操建议,提升创作水准。Guide art creation, technique development, and appreciation with"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Guide art creation, technique development, and appreciation with practical,
   medium-specific advice。核心能力:
 
@@ -35,6 +34,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - 不支持
+  - 依赖说明
+  - agent
+  - api
+  - 理结果
 tools:
   - read
   - exec
@@ -42,9 +46,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Art
 
 ## 付费版专享能力

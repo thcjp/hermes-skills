@@ -1,5 +1,4 @@
 ---
-
 slug: safe-encryption-tool-free
 name: safe-encryption-tool-free
 version: 1.0.0
@@ -39,15 +38,18 @@ tags:
   - 研究
   - 分析
   - 知识
+  - txt
+  - safe
+  - encrypted
+  - passphrase
+  - 加密文件
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 安全加密工具 - 免费版
 
 ## 概述

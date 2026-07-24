@@ -37,6 +37,10 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - plt
+  - sns
+  - python
+  - seaborn
 tools:
   - read
   - exec

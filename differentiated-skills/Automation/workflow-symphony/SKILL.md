@@ -16,6 +16,11 @@ tags:
   - 效率工具
   - 工作流
   - 效率
+  - 动作
+  - zapier
+  - n8n
+  - 触发
+  - crm
 tools:
   - read
   - exec

@@ -23,6 +23,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - free
+  - agent
+  - pro
+  - google
+  - apple
 tools:
   - read
   - exec

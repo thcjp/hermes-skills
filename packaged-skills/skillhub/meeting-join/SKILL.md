@@ -1,5 +1,4 @@
 ---
-
 slug: "meeting-join"
 name: "meeting-join"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "AI会议助手专业版"
 summary: "企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。。AI会议助手专业版为企业与团队提供全方位的智能会议机器人解决方案。在免费版语音会议能力之上"
 license: "Proprietary"
 edition: "pro"
-description: |-，可处理提升工作效率
+description: |-
   AI会议助手专业版为企业与团队提供全方位的智能会议机器人解决方案。在免费版语音会议能力之上,增加可视化头像、屏幕共享、实时网页协作、
   多种语音策略、批量会议调度与团队管理能力。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -24,6 +23,10 @@ tags:
   - 开发
   - 代码
   - 创意
+  - slide
+  - https
+  - com
+  - state
 tools:
   - read
   - exec
@@ -31,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # AI会议助手专业版
 
 ## 付费版专享能力

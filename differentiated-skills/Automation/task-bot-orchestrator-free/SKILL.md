@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - scheduler
+  - processor
+  - csv
+  - report
+  - notify
 tools:
   - read
   - exec

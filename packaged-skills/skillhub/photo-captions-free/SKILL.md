@@ -1,12 +1,11 @@
 ---
-
 slug: "photo-captions-free"
 name: "photo-captions-free"
 version: "1.0.0"
 displayName: "摄影配文免费版"
 summary: "为摄影作品生成 Instagram、Flickr、X、Reddit、VSCO 五个主流平台的差异化配文，根据照片场景与器材适配各社区语调。"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   面向摄影爱好者的入门级多平台配文生成助手。当用户分享照片并附带
   拍摄背景（地点、机身、胶片、主体、氛围）时，输出适配 Instagram、
   Flickr、X、Reddit、VSCO 五个主流社区的差异化配文。每个平台拥有
@@ -26,15 +25,17 @@ tags:
   - AI代理
   - agent
   - 写作
+  - vsco
+  - reddit
+  - instagram
+  - flickr
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Photo Captions Free
 
 当用户分享一张照片并附带拍摄背景（地点、机身、胶片型号、主体、氛围），为下方五个平台生成差异化配文。每个平台独立成段，语调与格式贴合该社区的真实习惯，禁止跨平台复制同一句话.

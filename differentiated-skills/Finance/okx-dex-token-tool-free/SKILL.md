@@ -1,5 +1,4 @@
 ---
-
 slug: okx-dex-token-tool-free
 name: okx-dex-token-tool-free
 version: 1.0.0
@@ -18,15 +17,18 @@ tags:
   - 金融
   - 财务
   - 数据
+  - api
+  - dex
+  - okx
+  - ethereum
+  - key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
 ---
-
 # DEX代币数据入门（免费版）
 
 ## 概述

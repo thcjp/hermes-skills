@@ -14,6 +14,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - json
+  - tool-orchestrator
+  - memory_search
+  - pin
+  - cli
 tools:
   - read
   - exec

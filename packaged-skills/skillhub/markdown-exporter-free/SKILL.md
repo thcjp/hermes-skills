@@ -1,12 +1,11 @@
 ---
-
 slug: "markdown-exporter-free"
 name: "markdown-exporter-free"
 version: "1.0.0"
 displayName: "Markdown导出工具(免费版)"
 summary: "Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。免费版"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   Markdown文本多格式导出引擎（免费版），支持将Markdown转换为DOCX、PDF、HTML、
   XLSX、CSV、JSON等常用格式。核心能力：
   - 文档格式转换（md_to_docx/md_to_pdf/md_to_html）
@@ -23,10 +22,13 @@ tags:
   - Markdown
   - 文档
   - 工具
+  - path
+  - markdown-exporter
+  - markdown
+  - input
+  - output
 category: "Development"
-
 ---
-
 # Markdown导出工具(免费版)
 
 Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTML、XLSX、CSV、JSON等格式.

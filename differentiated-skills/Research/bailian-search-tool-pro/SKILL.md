@@ -41,6 +41,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - 专业版新
+  - bailian-pro
+  - query
+  - api
+  - json
 tools:
   - read
   - exec

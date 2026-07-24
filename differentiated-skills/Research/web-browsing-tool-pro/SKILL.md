@@ -16,6 +16,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - web-browsing
+  - url
+  - https
+  - example
+  - com
 tools:
   - read
   - exec

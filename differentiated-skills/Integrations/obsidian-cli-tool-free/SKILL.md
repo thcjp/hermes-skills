@@ -21,6 +21,11 @@ tags:
   - 写作
   - 电商
   - 研究
+  - obsidian
+  - file
+  - daily
+  - bash
+  - agent
 tools:
   - read
   - exec

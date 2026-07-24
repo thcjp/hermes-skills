@@ -1,12 +1,11 @@
 ---
-
 slug: "tool-call-retry"
 name: "tool-call-retry"
 version: 1.0.2
 displayName: "tool-call-retry"
 summary: "指数退避自动重试并修复LLM工具调用,格式校验/纠错。Auto retry & fix LLM tool calls with exponential backoff, format val"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Auto retry & fix LLM tool calls with exponential backoff, format validation,
   error correction, bo。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -18,6 +17,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - api
+  - 依赖说明
+  - error
+  - const
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # tool-call-retry
 
 ## 付费版专享能力

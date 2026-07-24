@@ -1,5 +1,4 @@
 ---
-
 slug: "ollama-toolkit"
 name: "ollama-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Ollama工具箱(专业版)"
 summary: "全功能本地Ollama AI模型管理工具，支持多轮对话、自定义模型、批量推理与API集成。Ollama工具箱专业版是面向团队和高级用户的完整本地AI模型管理方案，在免费版基础上解锁多轮对话会"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   Ollama工具箱专业版是面向团队和高级用户的完整本地AI模型管理方案，在免费版基础上解锁多轮对话会话管理、Modelfile自定义模型创建、批量文件推理处理、REST API集成、性能资源监控和模型对比评估等全部高级能力。核心能力：多轮上下文对话、自定义模型构建与微调、批量文件推理与结果聚合、HTTP API服务集成、GPU/CPU/内存实时监控、多模型横向对比评估、提示词模板管理、流式输出处理
 tags:
   - 本地AI
@@ -22,6 +21,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - ollama
+  - api
+  - json
+  - modelfile
+  - gpu
 tools:
   - read
   - exec
@@ -30,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Ollama工具箱(专业版)
 
 ## 付费版专享能力

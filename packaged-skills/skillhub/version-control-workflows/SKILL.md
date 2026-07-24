@@ -1,12 +1,11 @@
 ---
-
 slug: "version-control-workflows"
 name: "version-control-workflows"
 version: "1.0.1"
 displayName: "Git Workflows"
 summary: "add/commit/push之外的高级git操作,rebase/bisect/worktree。Advanced git operations beyond add/commit/push"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   Advanced git operations beyond add/commit/push. Use when rebasing, bisecting
   bugs, using worktree, reflog recovery, subtrees, submodules, sparse checkout,
   conflict resolution, and monorepo patterns.
@@ -15,15 +14,18 @@ tags:
   - 工作流
   - 自动化
   - 效率
+  - 依赖说明
+  - workflows
+  - agent
+  - 确认运行
+  - git
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
-
 ---
-
 # Git Workflows
 
 ## 核心能力

@@ -1,5 +1,4 @@
 ---
-
 slug: html-toolkit-free
 name: html-toolkit-free
 version: 1.0.1
@@ -39,15 +38,18 @@ tags:
   - 研究
   - 分析
   - 安全
+  - type
+  - html
+  - label
+  - button
+  - email
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # HTML 工具箱（免费版）
 
 ## 概述

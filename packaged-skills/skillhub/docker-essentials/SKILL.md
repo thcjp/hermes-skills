@@ -1,12 +1,11 @@
 ---
-
 slug: "docker-essentials"
 name: "docker-essentials"
 version: 1.0.1
 displayName: "Docker核心操作指南"
 summary: "涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。。Docker核心操作指南，覆盖容器生命周期的完整管理流程. 包含容器调试、镜像构建与管理、Dock"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Docker核心操作指南，覆盖容器生命周期的完整管理流程.
   包含容器调试、镜像构建与管理、Docker Compose多容器编排.
   涵盖网络配置、数据卷管理、系统管理与常见工作流.
@@ -21,10 +20,13 @@ tags:
   - 容器
   - Docker
   - DevOps
+  - docker
+  - container_name
+  - bash
+  - docker-compose
+  - run
 category: "Development"
-
 ---
-
 # Docker核心操作指南
 
 涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作.

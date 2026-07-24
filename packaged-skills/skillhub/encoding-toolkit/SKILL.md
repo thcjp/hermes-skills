@@ -1,5 +1,4 @@
 ---
-
 slug: "encoding-toolkit"
 name: "encoding-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "编解码工具箱专业版"
 summary: "全场景编解码引擎，含二进制协议、序列化互转、批量哈希校验、自定义模板与跨平台性能优化策略。。编解码工具箱专业版在免费版六大场景基础上，扩展二进制协议解析、序列化格式互转、批量校验与自定义模板"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   编解码工具箱专业版在免费版六大场景基础上，扩展二进制协议解析、序列化格式互转、批量校验与自定义模板能力。面向中高级开发者、运维工程师与安全审计人员，提供完整的故障排查表、性能优化策略与多角色场景指南。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
   - 集成工具
@@ -22,6 +21,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - json
+  - data
+  - llm
+  - python
+  - cbor
 tools:
   - read
   - exec
@@ -30,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 编解码工具箱专业版
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: shop-culture-tool-free
 name: shop-culture-tool-free
 version: 1.0.0
@@ -30,15 +29,18 @@ tags:
   - 创意
   - 图像
   - 研究
+  - product
+  - self
+  - return
+  - points
+  - def
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 店铺文化助手 (免费版)
 
 ## 概述

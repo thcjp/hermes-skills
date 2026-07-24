@@ -1,12 +1,11 @@
 ---
-
 slug: "nano-pdf"
 name: "nano-pdf"
 version: 1.0.1
 displayName: "Nano Pdf"
 summary: "用nano-pdf CLI按自然语言指令编辑PDF。Edit PDFs with natural-language instructions using the nano-pdf CLI。核"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Edit PDFs with natural-language instructions using the nano-pdf CLI。核心能力:
 
   - 知识管理领域的专业化AI辅助工具
@@ -32,6 +31,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - pdf
+  - 不支持
+  - 依赖说明
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -39,9 +43,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Nano Pdf
 
 ## 付费版专享能力

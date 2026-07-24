@@ -21,6 +21,11 @@ tags:
   - 安全
   - 加密
   - 开发
+  - sql
+  - 查询
+  - schema
+  - 查询模式
+  - 基础备份
 tools:
   - read
   - exec

@@ -20,6 +20,11 @@ tags:
   - 分析
   - 工作流
   - 集成
+  - select
+  - csv
+  - parquet
+  - sales
+  - duckdb
 tools:
   - read
   - exec

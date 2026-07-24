@@ -1,12 +1,11 @@
 ---
-
 slug: "claude-code-delegate"
 name: "claude-code-delegate"
 version: 0.1.2
 displayName: "代码委派助手"
 summary: "将编程任务委派给本地AI代码助手CLI,支持异步执行与会话续接。将编程任务委派给本地AI代码助手CLI执行,支持非交互模式、异步轮询、会话续接与独立测试验证。核心能力包括环境前置检查、命令模"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   将编程任务委派给本地AI代码助手CLI执行,支持非交互模式、异步轮询、会话续接与独立测试验证。核心能力包括环境前置检查、命令模板化委派、异步非阻塞流程、会话上下文续接、独立测试验证、安全防护策略与结果中继.
 tools:
   - read
@@ -20,10 +19,13 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - ai-assistant
+  - continue
+  - bug
+  - api
+  - 写入保护
 category: "Development"
-
 ---
-
 # 代码委派助手
 
 将编程任务委派给本地AI代码助手CLI执行。AI助手自身永不直接编写代码,所有编程操作均通过 `ai-assistant -p` 命令委派完成.

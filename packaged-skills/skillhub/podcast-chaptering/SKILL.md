@@ -1,5 +1,4 @@
 ---
-
 slug: "podcast-chaptering"
 name: "podcast-chaptering"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "播客章节工具专业版"
 summary: "企业级播客章节工具,支持批量处理、社媒切片文案、多格式输出与API集成,适配生产流水线。。面向团队与企业用户的播客章节标记工具(专业版)。核心能力: - 涵盖免费版全部能力(章节标记、高光片"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向团队与企业用户的播客章节标记工具(专业版)。核心能力:
   - 涵盖免费版全部能力(章节标记、高光片段、节目笔记)
   - 批量处理:目录级递归,支持任务队列
@@ -31,6 +30,11 @@ tags:
   - AI生成
   - 音频
   - 媒体
+  - self
+  - chapters
+  - 不支持
+  - highlights
+  - json
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # 播客章节工具专业版
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: "cheat-code-tool-pro"
 name: "cheat-code-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "能力扩展工具专业版"
 summary: "企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享。面向团队与企业的高级能力扩展工具,在免费版基础上扩展批量查询、自定义数据源、知识缓存等能力。核心能力: - 批量知识查询与"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向团队与企业的高级能力扩展工具,在免费版基础上扩展批量查询、自定义数据源、知识缓存等能力。核心能力:
   - 批量知识查询与并行检索
   - 自定义数据源接入(内部文档库、Wiki、API)
@@ -33,6 +32,11 @@ tags:
   - 数据源集成
   - 代码生成
   - 编程辅助
+  - api
+  - 查询
+  - bash
+  - wiki
+  - 相关性
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 # 能力扩展工具专业版
 
 ## 概述

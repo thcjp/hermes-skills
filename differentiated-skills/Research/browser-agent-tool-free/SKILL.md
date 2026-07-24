@@ -33,6 +33,11 @@ tags:
   - 自动化
   - AI代理
   - 智能
+  - agent-browser
+  - json
+  - get
+  - wait
+  - bash
 tools:
   - read
   - exec

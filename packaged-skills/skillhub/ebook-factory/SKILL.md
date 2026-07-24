@@ -1,12 +1,11 @@
 ---
-
 slug: ebook-factory
 name: ebook-factory
 version: 1.0.1
 displayName: "电子书工厂"
 summary: "三天写完一本专业电子书,Markdown输入EPUB输出,KDP/微信读书多平台发布。电子书工厂是一款从Markdown大纲生成完整电子书的工具。支持逐节生成、多格式导出(EPUB/PDF)"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   电子书工厂是一款从Markdown大纲生成完整电子书的工具。支持逐节生成、多格式导出(EPUB/PDF)、
   多平台发布(KDP/微信读书/豆瓣阅读)、封面图生成。三天写完一本专业电子书.
   核心能力:
@@ -28,14 +27,17 @@ tags:
   - 代码
   - 写作
   - 电商
+  - markdown
+  - epub
+  - pdf
+  - api
+  - output
 tools:
   - read
   - exec
   - write
 category: "Automation"
-
 ---
-
 # 电子书工厂
 
 从Markdown大纲生成完整电子书,支持逐节生成、多格式导出(EPUB/PDF)、多平台发布(KDP/微信读书/豆瓣阅读)、封面图生成.

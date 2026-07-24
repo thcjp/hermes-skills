@@ -17,6 +17,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - pro
+  - true
+  - 不支持
+  - api
+  - read-github-pro
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "code-dev-v1-tool-pro"
 name: "code-dev-v1-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "结构化开发工具专业版"
 summary: "企业级版本化开发,支持多任务编排、发布管理、团队规范与交付审计。面向团队与企业的高级结构化开发工具,在免费版基础上扩展多任务编排、发布管理、团队规范等能力。核心能力: - 多任务并行编排与版"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向团队与企业的高级结构化开发工具,在免费版基础上扩展多任务编排、发布管理、团队规范等能力。核心能力:
   - 多任务并行编排与版本化检查点
   - 发布版本管理与变更日志
@@ -35,6 +34,11 @@ tags:
   - 发布流程
   - 代码生成
   - 编程辅助
+  - true
+  - bash
+  - 检查点
+  - 审计点
+  - 集成测试
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 # 结构化开发工具专业版
 
 ## 概述

@@ -14,6 +14,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - caused_by
+  - depth
+  - type
+  - 用户提供
+  - 完成核心
 tools:
   - read
   - exec

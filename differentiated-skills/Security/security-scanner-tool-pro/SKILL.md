@@ -1,5 +1,4 @@
 ---
-
 slug: security-scanner-tool-pro
 name: security-scanner-tool-pro
 version: 1.0.0
@@ -50,15 +49,18 @@ tags:
   - 持续监控
   - 加密
   - 工具
+  - command
+  - installed
+  - false
+  - nuclei
+  - ffuf
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
-
 ---
-
 # 安全扫描器(专业版)
 ## 概述
 安全扫描器专业版是一款面向企业用户的安全扫描与持续监控平台。在免费版4个核心工具基础上,扩展至10+工具集成(nmap、nuclei、masscan、ffuf、gobuster、testssl等),支持多目标批量并行扫描、HTML/PDF/SARIF专业报告、CVE数据库自动映射、Cron定时调度扫描和自定义扫描工作流。与免费版完全兼容,扫描配置和模板可无缝复用.

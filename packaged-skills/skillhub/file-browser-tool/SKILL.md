@@ -1,12 +1,11 @@
 ---
-
 slug: "file-browser-tool"
 name: "file-browser-tool"
 version: "1.0.0"
 displayName: "file-browser"
 summary: "SkillHub工作区只读文件浏览与读取,安全查看。Read-only file browsing and reading in the SkillHub workspace (/home/"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Read-only file browsing and reading in the SkillHub workspace (/home/alfred/。SkillHub/workspace)
 tags:
   - Research
@@ -17,6 +16,11 @@ tags:
   - 代码
   - 工作流
   - 安全
+  - 按流程执
+  - json
+  - string
+  - error
+  - workspace
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # file-browser
 
 ## 付费版专享能力

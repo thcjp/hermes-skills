@@ -40,6 +40,11 @@ tags:
   - 开发
   - 代码
   - 知识
+  - csv
+  - text-pro
+  - utf-8
+  - json
+  - input
 tools:
   - read
   - exec

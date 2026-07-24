@@ -26,6 +26,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - json
+  - stripe
+  - agent
+  - api
+  - dashboard
 tools:
   - read
   - exec

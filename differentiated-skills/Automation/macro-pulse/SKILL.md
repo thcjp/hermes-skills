@@ -14,6 +14,11 @@ tags:
   - 财经资讯
   - 工作流
   - 效率
+  - fail
+  - references
+  - indicators
+  - fred
+  - gmt
 tools:
   - read
   - exec

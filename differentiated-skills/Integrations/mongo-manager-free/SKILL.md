@@ -21,6 +21,11 @@ tags:
   - 创意
   - 图像
   - 知识
+  - schema
+  - mongodb
+  - javascript
+  - 索引
+  - match
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: explain-code-tool-free
 name: explain-code-tool-free
 version: 1.0.0
@@ -44,6 +43,11 @@ tags:
   - 技术学习
   - 代码生成
   - 编程辅助
+  - ascii
+  - 失败
+  - mid
+  - 可视化图
+  - return
 tools:
   - read
   - exec
@@ -52,9 +56,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 代码解释工具免费版为开发者提供直观的代码理解辅助能力。工具通过日常类比、ASCII可视化图表、逐行遍历解读和常见误区提示,帮助开发者快速理解不熟悉的代码逻辑.
 本版本适合学习新代码库、新成员入门和技术学习场景。所有解释均以自然语言配合图表呈现,降低代码理解门槛.
 ## 核心能力

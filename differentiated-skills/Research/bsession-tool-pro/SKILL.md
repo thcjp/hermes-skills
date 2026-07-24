@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - self
+  - 通知
+  - webhook
+  - status
+  - 不支持
 tools:
   - read
   - exec

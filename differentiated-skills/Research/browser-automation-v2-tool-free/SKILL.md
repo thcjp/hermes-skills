@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - url
+  - timeout
+  - result
+  - self
+  - def
 tools:
   - read
   - exec

@@ -39,6 +39,11 @@ tags:
   - 运维
   - 监控
   - 创意
+  - run
+  - miniprogram-ci
+  - npm
+  - taro
+  - build
 tools:
   - read
   - exec

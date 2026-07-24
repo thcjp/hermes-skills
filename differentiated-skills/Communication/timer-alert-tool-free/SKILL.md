@@ -22,6 +22,11 @@ tags:
   - 写作
   - 电商
   - AI代理
+  - bash
+  - background
+  - true
+  - command
+  - node
 tools:
   - read
   - exec

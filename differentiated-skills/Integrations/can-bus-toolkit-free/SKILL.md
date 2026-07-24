@@ -29,6 +29,10 @@ tags:
   - AI代理
   - agent
   - 创意
+  - sha256sum
+  - 哈希片段
+  - api
+  - echo
 tools:
   - read
   - exec

@@ -33,6 +33,11 @@ tags:
   - 消息管理
   - 社交
   - 通信
+  - action
+  - c0123456789
+  - slack
+  - channelid
+  - 表情回应
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "llm-provider-whisper-tool-free"
 name: "llm-provider-whisper-tool-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Whisper语音转文字免费版"
 summary: "本地Whisper CLI语音转文字工具,支持常见音频格式转录与翻译,无需API Key,适合个人使用。"
 license: "Proprietary"
 edition: "free"
-description: |-，可自动提升工作效率
+description: |-
   基于 Whisper CLI 的本地语音转文字工具(免费版)。核心能力:
   - 本地音频转文字(transcription),无需 API Key
   - 支持 mp3 / m4a / wav / flac 等常见格式
@@ -38,15 +37,18 @@ tags:
   - 知识
   - 文档
   - 开发
+  - whisper
+  - ffmpeg
+  - small
+  - install
+  - output_format
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Whisper 语音转文字工具 - 免费版
 
 ## 概述

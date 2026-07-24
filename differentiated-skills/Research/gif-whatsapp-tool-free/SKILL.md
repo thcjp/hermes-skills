@@ -36,6 +36,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - gif
+  - mp4
+  - tmp
+  - whatsapp
+  - message
 tools:
   - read
   - exec

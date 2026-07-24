@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - str
+  - 支持创建
+  - 查询
+  - input_params
+  - import
 tools:
   - read
   - exec

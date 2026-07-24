@@ -1,12 +1,11 @@
 ---
-
 slug: "game-asset-generation-cellcog"
 name: "game-asset-generation-cellcog"
 version: 1.0.15
 displayName: "Game Asset Generatio"
 summary: "CellCog驱动的AI游戏资产生成,角色一致美术与精灵。AI game asset generation and game development powered by CellCog。C"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   AI game asset generation and game development powered by CellCog。Character-consistent
   art, sprit。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -20,6 +19,11 @@ tags:
   - 创意
   - 图像
   - AI代理
+  - game
+  - 依赖说明
+  - agent
+  - style
+  - 不支持
 tools:
   - read
   - exec
@@ -27,9 +31,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Game Asset Generatio
 
 ## 付费版专享能力

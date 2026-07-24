@@ -41,6 +41,11 @@ tags:
   - 研究
   - 分析
   - 金融
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - basedir
+  - 负载均衡
 tools:
   - read
   - exec

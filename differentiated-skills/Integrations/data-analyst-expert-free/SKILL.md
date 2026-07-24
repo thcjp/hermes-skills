@@ -29,6 +29,11 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - csv
+  - sales
+  - agent
+  - read_csv
+  - 代码执行
 tools:
   - read
   - exec

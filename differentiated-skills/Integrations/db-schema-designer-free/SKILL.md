@@ -31,6 +31,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - text
+  - key
+  - create
+  - null
+  - schema
 tools:
   - read
   - exec

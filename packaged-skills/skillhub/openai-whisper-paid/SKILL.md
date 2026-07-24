@@ -1,5 +1,4 @@
 ---
-
 slug: "openai-whisper-paid"
 name: "openai-whisper-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Whisper语音转文字专业版"
 summary: "企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向团队与企业用户的 Whisper 语音转文字工具(专业版)。核心能力:
   - 涵盖免费版全部能力(本地转录、翻译、多格式输出)
   - 批量处理:目录级递归转录,支持任务队列
@@ -36,6 +35,11 @@ tags:
   - 分析
   - 工作流
   - 创意
+  - result
+  - 不支持
+  - whisper
+  - import
+  - segments
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Whisper语音转文字专业版
 
 ## 付费版专享能力

@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - txt
+  - dry-run
+  - 预览
+  - 完成
+  - processed
 tools:
   - read
   - exec

@@ -37,6 +37,11 @@ tags:
   - 图像处理
   - AI绘图
   - 创意
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - bash
 tools:
   - read
   - exec

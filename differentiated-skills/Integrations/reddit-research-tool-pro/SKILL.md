@@ -1,5 +1,4 @@
 ---
-
 slug: "reddit-research-tool-pro"
 name: "reddit-research-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Reddit调研(专业版)"
 summary: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。。Reddit调研专业版是一套面向市场研究团队与内容机构的企业级社区调研解决方案，在免费版基础上扩展出多"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   Reddit调研专业版是一套面向市场研究团队与内容机构的企业级社区调研解决方案，在免费版基础上扩展出多 Subreddit 并行扫描、自动化定时调研、跨平台舆情对比、情感分析与热度预测、团队协作与报告分发等能力。核心能力：提供多社区并行扫描与聚合分析、定时调研任务调度与趋势追踪、Reddit 与其他平台舆情对比、基于 NLP 的情感分析与话题热度预测、团队协作调研与报告自动分发
 tags:
   - 调研
@@ -18,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - subreddit
+  - reddit
+  - 情感分析
+  - 品牌舆情
+  - 团队协作
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
-
 ---
-
 # Reddit调研（专业版）
 
 ## 概述

@@ -1,5 +1,4 @@
 ---
-
 slug: figma-toolkit-free
 name: figma-toolkit-free
 version: 1.0.1
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 开发
+  - figma
+  - 支持创建
+  - 查询
+  - input_params
+  - 免费版
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Figma设计工具包（免费版）
 
 ## 概述

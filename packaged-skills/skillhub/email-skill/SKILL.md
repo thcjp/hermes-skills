@@ -1,12 +1,11 @@
 ---
-
 slug: "email-skill"
 name: "email-skill"
 version: 0.1.1
 displayName: "Email"
 summary: "SMTP邮件发送自动化,支持多供应商、附件、HTML模板与TLS加密。基于SMTP协议的邮件发送自动化Skill,支持Gmail、Outlook、QQ邮箱等主流服务商. 提供纯文本与HTML"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   基于SMTP协议的邮件发送自动化Skill,支持Gmail、Outlook、QQ邮箱等主流服务商.
   提供纯文本与HTML双模式、多附件并行上传、CC/BCC收件人编排、测试邮件校验、
   TLS/SSL加密传输与企业级凭据管理。适用于发信通知、报表投递、告警推送、
@@ -18,6 +17,11 @@ tags:
   - 邮件
   - 通信
   - 工具
+  - com
+  - gmail
+  - smtp
+  - api
+  - html
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # Email
 
 基于SMTP协议的邮件发送自动化Skill,围绕"配置-校验-投递-追踪"四个环节提供端到端的发信能力.

@@ -40,6 +40,11 @@ tags:
   - 研究
   - 分析
   - 运维
+  - v2ray-pro
+  - 节点
+  - 负载均衡
+  - nodes
+  - config
 tools:
   - read
   - exec

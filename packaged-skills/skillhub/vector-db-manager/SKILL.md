@@ -1,5 +1,4 @@
 ---
-
 slug: "vector-db-manager"
 name: "vector-db-manager"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "向量数据库管理专业版"
 summary: "全功能向量数据库平台，支持混合检索、分布式部署、自动调优与性能监控。面向AI工程团队的全功能向量数据库管理平台，支持混合检索、分布式部署、索引自动调优与实时性能监控。核心能力：在免费版基础上"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向AI工程团队的全功能向量数据库管理平台，支持混合检索、分布式部署、索引自动调优与实时性能监控。核心能力：在免费版基础上新增混合检索引擎、多副本分片管理、索引参数自动调优、向量数据版本管理、实时监控仪表盘、增量更新管道与跨引擎迁移工具。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - 数据库管理
@@ -22,6 +21,11 @@ tags:
   - 写作
   - 电商
   - 开发
+  - self
+  - await
+  - collection
+  - top_k
+  - count
 tools:
   - read
   - exec
@@ -30,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 向量数据库管理专业版
 
 ## 付费版专享能力

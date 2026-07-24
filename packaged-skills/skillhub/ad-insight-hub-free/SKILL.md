@@ -1,12 +1,11 @@
 ---
-
 slug: "ad-insight-hub-free"
 name: "ad-insight-hub-free"
 version: "1.0.0"
 displayName: "广告洞察中枢LITE"
 summary: "AdMapix广告情报API基础查询，参数翻译+创意搜索+应用画像。面向广告投放场景的广告情报数据查询工具（免费版）。在AdMapix原始API之上提供参数自然语言翻译与 基础创意搜索能力。"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   面向广告投放场景的广告情报数据查询工具（免费版）。在AdMapix原始API之上提供参数自然语言翻译与
   基础创意搜索能力。支持广告创意搜索/计数、应用与开发者画像查询两大基础能力域.
   内置高频行业码与国家码中文映射，支持单端点查询与基础参数翻译.
@@ -23,6 +22,11 @@ tags:
   - 创意
   - 图像
   - 知识
+  - api
+  - admapix
+  - key
+  - 搜索
+  - https
 tools:
   - read
   - exec
@@ -30,9 +34,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 广告洞察中枢 LITE（Ad Insight Hub Free）
 
 面向广告投放场景的广告情报数据查询工具（免费版）。提供参数翻译与基础创意搜索能力.

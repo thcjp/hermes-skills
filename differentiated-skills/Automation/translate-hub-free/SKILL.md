@@ -16,6 +16,10 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - markdown
+  - 翻译
+  - data
+  - text
 tools:
   - read
   - exec

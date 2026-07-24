@@ -15,6 +15,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - mvp
+  - agent
+  - step
+  - 苏格拉底
+  - 阶段
 tools:
   - read
   - exec

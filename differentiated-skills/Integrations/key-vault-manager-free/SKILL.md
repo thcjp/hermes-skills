@@ -1,5 +1,4 @@
 ---
-
 slug: key-vault-manager-free
 name: key-vault-manager-free
 version: 1.0.1
@@ -26,15 +25,18 @@ tags:
   - 安全
   - 加密
   - AI代理
+  - api
+  - mcp
+  - agent
+  - key_name
+  - env
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 密钥保险箱(免费版)
 
 本工具通过本地MCP工具架构守护API密钥安全，确保密钥值不会以明文形式发送到LLM服务器，所有密钥操作在用户设备本地完成.

@@ -1,5 +1,4 @@
 ---
-
 slug: solo-audit-tool-free
 name: solo-audit-tool-free
 version: 1.0.0
@@ -29,15 +28,18 @@ tags:
   - 安全
   - 加密
   - AI代理
+  - agent
+  - 支持创建
+  - 查询
+  - input_params
+  - issues
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 独立审计工具（免费版）
 
 ## 概述

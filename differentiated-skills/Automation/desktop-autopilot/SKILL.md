@@ -13,6 +13,11 @@ tags:
   - 视觉识别
   - 工作流
   - 效率
+  - python
+  - png
+  - location
+  - dpi
+  - timeout
 tools:
   - read
   - exec

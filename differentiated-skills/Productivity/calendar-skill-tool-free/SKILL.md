@@ -23,6 +23,10 @@ tags:
   - 通信
   - 邮件
   - 写作
+  - free
+  - agent
+  - pro
+  - 版本
 tools:
   - read
   - exec

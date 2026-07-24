@@ -1,12 +1,11 @@
 ---
-
 slug: "media-server-control"
 name: "media-server-control"
 version: "1.3.0"
 displayName: "Jellyfin Control"
 summary: "控Jellyfin媒体服务器与TV,搜索/续播/管会话。Control Jellyfin media server and TV。Search content, resume playbac"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Control Jellyfin media server and TV。Search content, resume playback,
   manage sessions, control T。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 代码
   - 创意
   - 图像
+  - control
+  - json
+  - env
+  - http
+  - jellyfin
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Jellyfin Control
 
 ## 付费版专享能力

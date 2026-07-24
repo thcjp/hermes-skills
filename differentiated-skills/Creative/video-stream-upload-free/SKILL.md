@@ -41,6 +41,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - api
+  - videos
+  - mp4
+  - stream-public-key
+  - stream-secret-key
 tools:
   - read
   - exec

@@ -16,6 +16,10 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - string
+  - 事件
+  - 分钟
+  - 后天上午
 tools:
   - read
   - exec

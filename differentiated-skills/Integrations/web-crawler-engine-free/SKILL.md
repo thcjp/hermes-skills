@@ -16,6 +16,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - text
+  - self
+  - 网页内容
+  - 数据新鲜
+  - 社区消息
 tools:
   - read
   - exec

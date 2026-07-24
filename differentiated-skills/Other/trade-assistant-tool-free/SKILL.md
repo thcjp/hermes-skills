@@ -1,5 +1,4 @@
 ---
-
 slug: trade-assistant-tool-free
 name: trade-assistant-tool-free
 version: 1.0.0
@@ -39,15 +38,18 @@ tags:
   - AI代理
   - agent
   - 开发
+  - exchange
+  - https
+  - example
+  - com
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 知识交换助手（免费版）
 
 ## 概述

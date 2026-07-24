@@ -17,6 +17,11 @@ tags:
   - Slack
   - 社交
   - 通信
+  - slack
+  - slack-crawler
+  - sql
+  - api
+  - limit
 tools:
   - read
   - exec

@@ -28,6 +28,10 @@ tags:
   - 创意
   - 图像
   - 研究
+  - goal
+  - 不支持
+  - 升级
+  - 变体
 tools:
   - read
   - exec

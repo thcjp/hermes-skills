@@ -1,12 +1,11 @@
 ---
-
 slug: "git-essentials-free"
 name: "git-essentials-free"
 version: 1.0.1
 displayName: "Git基础版"
 summary: "Git 版本控制基础能力，覆盖常用命令、分支管理与协作工作流，适合日常提交与团队协作。。Git 版本控制基础能力，覆盖常用命令、分支管理与团队协作工作流. 核心能力: - 常用 Git 命令"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   Git 版本控制基础能力，覆盖常用命令、分支管理与团队协作工作流.
   核心能力:
 
@@ -30,15 +29,18 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - git
+  - commit
+  - login
+  - api
+  - agent
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Development"
-
 ---
-
 # Git 基础版
 
 ## 核心能力

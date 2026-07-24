@@ -22,6 +22,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - git
+  - free
+  - pro
+  - agent
+  - markdown
 tools:
   - read
   - exec

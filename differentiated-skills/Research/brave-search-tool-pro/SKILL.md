@@ -41,6 +41,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - 专业版新
+  - brave-pro
+  - api
+  - query
+  - json
 tools:
   - read
   - exec

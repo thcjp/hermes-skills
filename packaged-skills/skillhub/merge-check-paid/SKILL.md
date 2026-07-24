@@ -1,5 +1,4 @@
 ---
-
 slug: "merge-check-paid"
 name: "merge-check-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "合并检查工具(专业版)"
 summary: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。。合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自定义拒绝向量规则。核心能力:
   - 批量PR分析与团队级看板
   - 全6维度深度分析:技术信号、PR卫生、架构契合、评审状态、流程合规、社交元信号
@@ -35,6 +34,11 @@ tags:
   - 分析
   - 工作流
   - 知识
+  - bash
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - owner
 tools:
   - read
   - exec
@@ -42,9 +46,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 合并检查工具(专业版)
 
 ## 付费版专享能力

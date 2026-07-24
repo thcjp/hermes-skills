@@ -22,6 +22,11 @@ tags:
   - 项目文档
   - AI
   - 工具
+  - self
+  - true
+  - 支持创建
+  - 查询
+  - input_params
 tools:
   - read
   - exec

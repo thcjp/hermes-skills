@@ -1,12 +1,11 @@
 ---
-
 slug: "explain-code"
 name: "explain-code"
 version: 1.0.1
 displayName: "explain-code"
 summary: "用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用。用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用 核心能力: - 开发工"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用
 
   核心能力:
@@ -29,6 +28,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - 不支持
+  - agent
+  - api
+  - 依赖说明
+  - llm
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # explain-code
 
 ## 付费版专享能力

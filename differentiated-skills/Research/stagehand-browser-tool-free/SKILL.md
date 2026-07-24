@@ -15,6 +15,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - browser
+  - chrome
+  - bash
+  - act
+  - example
 tools:
   - read
   - exec

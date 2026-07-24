@@ -15,6 +15,11 @@ tags:
   - 免费版
   - 社交
   - 通信
+  - bot
+  - discord
+  - 斜杠命令
+  - token
+  - commands
 tools:
   - read
   - exec

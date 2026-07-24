@@ -1,5 +1,4 @@
 ---
-
 slug: css-toolkit-free
 name: css-toolkit-free
 version: 1.0.1
@@ -22,15 +21,18 @@ tags:
   - AI代理
   - agent
   - 创意
+  - flex
+  - css
+  - z-index
+  - grid
+  - min-width
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # CSS 工具箱（免费版）
 
 ## 概述

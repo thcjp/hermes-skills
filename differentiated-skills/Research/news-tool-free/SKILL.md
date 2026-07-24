@@ -39,6 +39,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - agent
+  - text
+  - news
+  - 来源
+  - 时间
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: memory-fortress-free
 name: memory-fortress-free
 version: 1.0.1
@@ -16,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - memory
+  - agent
+  - session-state
+  - 决策
+  - bash
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 edition: free
 homepage: ""
 category: "Agents"
-
 ---
-
 > **AI Agent的终极记忆系统。六层架构，确保持久记忆。**
 
 永远不丢失上下文。永远不忘记决策。永远不重复犯错.

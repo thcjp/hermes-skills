@@ -1,5 +1,4 @@
 ---
-
 slug: print-studio-free
 name: print-studio-free
 version: 1.0.1
@@ -22,6 +21,10 @@ tags:
   - 开发
   - 代码
   - 写作
+  - handle
+  - post
+  - https
+  - print-studio
 tools:
   - read
   - exec
@@ -29,9 +32,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 印迹工作室(免费版)
 
 面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任、完成能力交换。免费版聚焦核心注册、检索与基础任务协作能力.

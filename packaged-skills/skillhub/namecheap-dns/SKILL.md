@@ -1,12 +1,11 @@
 ---
-
 slug: "namecheap-dns"
 name: "namecheap-dns"
 version: 1.1.1
 displayName: "Namecheap DNS"
 summary: "安全管理Namecheap DNS,拉取/合并/自动备份/原子更新。Manage Namecheap DNS records safely by fetching existing entr"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Manage Namecheap DNS records safely by fetching existing entries, merging
   changes, auto-backing u。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 运维
   - 监控
   - 安全
+  - records
+  - dns
+  - api
+  - namecheap
+  - ghost
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Namecheap DNS
 
 ## 付费版专享能力

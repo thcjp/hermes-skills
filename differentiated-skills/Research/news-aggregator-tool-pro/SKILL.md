@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - true
+  - pro
+  - news-agg-pro
+  - 不支持
+  - international
 tools:
   - read
   - exec

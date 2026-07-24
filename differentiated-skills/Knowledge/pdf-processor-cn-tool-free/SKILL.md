@@ -27,6 +27,11 @@ tags:
   - 文档
   - 研究
   - 分析
+  - pdf
+  - python
+  - 中文
+  - 支持创建
+  - 查询
 tools:
   - read
   - exec

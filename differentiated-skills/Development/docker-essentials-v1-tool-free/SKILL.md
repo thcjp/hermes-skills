@@ -41,6 +41,11 @@ tags:
   - 遗留系统
   - 容器
   - DevOps
+  - docker
+  - docker-compose
+  - container_name
+  - echo
+  - bash
 tools:
   - read
   - exec

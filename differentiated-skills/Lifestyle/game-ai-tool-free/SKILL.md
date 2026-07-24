@@ -1,5 +1,4 @@
 ---
-
 slug: game-ai-tool-free
 name: game-ai-tool-free
 version: 1.0.0
@@ -30,15 +29,18 @@ tags:
   - 生活
   - 健康
   - 创意
+  - neighbor
+  - point
+  - var
+  - fsm
+  - public
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 本工具为独立游戏开发者与学生提供游戏 AI 开发指南与代码模板,涵盖有限状态机 (FSM)、行为树 (Behavior Tree)、A* 寻路、效用 AI、感知系统、群体行为等主流 AI 架构。每种架构都配有完整的可运行代码示例,适合学习、原型验证与 Game Jam 使用.
 免费版聚焦个人学习与原型开发,适合独立开发者与学生使用.
 ## 核心能力

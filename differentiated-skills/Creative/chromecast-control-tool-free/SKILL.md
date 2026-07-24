@@ -1,5 +1,4 @@
 ---
-
 slug: chromecast-control-tool-free
 name: chromecast-control-tool-free
 version: 1.0.0
@@ -41,15 +40,17 @@ tags:
   - 研究
   - 分析
   - 写作
+  - catt
+  - chromecast
+  - cast
+  - 投屏本地
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 投屏控制免费版
 
 ## 概述

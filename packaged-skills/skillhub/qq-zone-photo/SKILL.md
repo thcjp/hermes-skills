@@ -1,12 +1,11 @@
 ---
-
 slug: "qq-zone-photo"
 name: "qq-zone-photo"
 version: 1.0.4
 displayName: "社交空间相册"
 summary: "管理社交空间相册，支持扫码登录、浏览照片、上传下载。社交空间相册自动化管理工具。支持扫码登录、相册浏览、照片上传/下载、 相册创建等功能。通过Cookie认证访问社交空间非官方API，适用于"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   社交空间相册自动化管理工具。支持扫码登录、相册浏览、照片上传/下载、
   相册创建等功能。通过Cookie认证访问社交空间非官方API，适用于相册备份、
   照片迁移和批量管理等场景.
@@ -25,10 +24,13 @@ tags:
   - 通信
   - 邮件
   - 研究
+  - cookies
+  - action
+  - json
+  - 请参考
+  - 目录中的
 category: "Automation"
-
 ---
-
 # 社交空间相册
 
 社交空间相册的自动化管理工具，支持扫码登录、相册浏览、照片上传/下载、相册创建等功能。通过 `qzone_photos.py` 脚本调用社交空间非官方API实现自动化操作.

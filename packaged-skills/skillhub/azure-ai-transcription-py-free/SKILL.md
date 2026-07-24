@@ -1,12 +1,11 @@
 ---
-
 slug: "azure-ai-transcription-py-free"
 name: "azure-ai-transcription-py-free"
 version: "1.0.0"
 displayName: "Azure语音转文字基础版"
 summary: "Azure AI Transcription 基础功能,支持批量语音转文字与语言指定。Azure AI Transcription 的 Python 客户端库基础功能。支持对存储在 Blob"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   Azure AI Transcription 的 Python 客户端库基础功能。支持对存储在 Blob 中的音频
   提交批量转写作业,通过 locale 指定识别语言。使用订阅密钥认证,通过
   TRANSCRIPTION_ENDPOINT 与 TRANSCRIPTION_KEY 环境变量配置资源。本基础版不含
@@ -17,15 +16,18 @@ tags:
   - Azure
   - 云计算
   - DevOps
+  - locale
+  - sas
+  - url
+  - result
+  - content_urls
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
-
 ---
-
 # Azure Ai Transcription Py Free
 
 Azure AI Transcription(speech-to-text)Python 客户端库基础功能,支持批量转写.

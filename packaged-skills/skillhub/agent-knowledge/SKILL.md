@@ -1,12 +1,11 @@
 ---
-
 slug: "agent-knowledge"
 name: "agent-knowledge"
 version: 1.0.1
 displayName: "Agent Knowledge"
 summary: "统一知识捕获与检索,聚合URL/视频/文章/论文/社媒,一处沉淀全源知识。Unified knowledge capture and retrieval for URLs, video/ar"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Unified knowledge capture and retrieval for URLs, video/article/paper
   extracts, social posts, and。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
@@ -14,6 +13,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - knowledge
+  - 不支持
+  - 依赖说明
+  - api
 tools:
   - read
   - exec
@@ -23,9 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
 ---
-
 # Agent Knowledge
 
 ## 付费版专享能力

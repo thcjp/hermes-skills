@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - pyautogui
+  - desc
+  - self
+  - import
+  - click
 tools:
   - read
   - exec

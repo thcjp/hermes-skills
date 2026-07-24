@@ -28,6 +28,10 @@ tags:
   - 开发
   - 代码
   - 知识
+  - 支持创建
+  - 查询
+  - input_params
+  - ppt
 tools:
   - read
   - exec

@@ -18,6 +18,11 @@ tags:
   - 社交媒体
   - 营销
   - 通信
+  - true
+  - linkedin
+  - twitter
+  - instagram
+  - python
 tools:
   - read
   - exec

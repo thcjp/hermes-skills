@@ -1,5 +1,4 @@
 ---
-
 slug: photo-webcam-tool-free
 name: photo-webcam-tool-free
 version: 1.0.0
@@ -37,6 +36,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - url
+  - jpg
+  - webcam
+  - zugspitze
+  - foto-webcam
 tools:
   - read
   - exec
@@ -44,9 +48,7 @@ tools:
   - glob
 homepage: ""
 category: "Development"
-
 ---
-
 # 网络摄像头工具 - 免费版
 
 ## 概述

@@ -1,12 +1,11 @@
 ---
-
 slug: "python"
 name: "python"
 version: 1.0.1
 displayName: "Python"
 summary: "Python编码规范与最佳实践,写审重构时用。Python coding guidelines and best practices。Use when writing, reviewing,"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Python coding guidelines and best practices。Use when writing, reviewing,
   or refactoring Python c。
 tags:
@@ -19,6 +18,10 @@ tags:
   - AI代理
   - agent
   - 研究
+  - python
+  - 不支持
+  - api
+  - 依赖说明
 tools:
   - read
   - exec
@@ -26,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Python
 
 ## 付费版专享能力

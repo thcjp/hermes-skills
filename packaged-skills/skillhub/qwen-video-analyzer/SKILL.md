@@ -1,5 +1,4 @@
 ---
-
 slug: "qwen-video-analyzer"
 name: "qwen-video-analyzer"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "通义千问视频分析-专业版"
 summary: "企业级视频分析工具,支持批量处理、自定义模型、结构化报告,适配商业内容审核与生产。。通义千问视频分析专业版,面向企业团队与专业用户的高级AI视频内容理解工具。核心能力: - 批量视频分析,支"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   通义千问视频分析专业版,面向企业团队与专业用户的高级AI视频内容理解工具。核心能力:
   - 批量视频分析,支持目录扫描与队列处理
   - 自定义模型选择(Qwen 系列多版本)
@@ -31,6 +30,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - json
+  - 分析
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # 通义千问视频分析-专业版
 
 ## 付费版专享能力

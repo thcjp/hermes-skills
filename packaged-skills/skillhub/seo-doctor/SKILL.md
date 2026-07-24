@@ -1,12 +1,11 @@
 ---
-
 slug: seo-doctor
 name: seo-doctor
 version: 1.0.1
 displayName: "SEO体检医生"
 summary: "给网站做全面SEO体检,技术+内容+结构化数据三维度诊断,BERT关键词+排名追踪。SEO体检医生是一款给网站做全面SEO体检的工具。基于BERT语义模型提取关键词,品牌词最高优先级注入,"
 license: Proprietary
-description: |-，可生成提升工作效率
+description: |-
   SEO体检医生是一款给网站做全面SEO体检的工具。基于BERT语义模型提取关键词,品牌词最高优先级注入,
   技术SEO审计+内容SEO优化+结构化数据三维度诊断,发布前优化与发布后排名追踪闭环.
   核心能力:
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 开发
+  - seo
+  - content
+  - api
+  - 工作流
+  - url
 tools:
   - read
   - exec
   - glob
   - grep
 category: "Automation"
-
 ---
-
 # SEO体检医生 v1.1.0
 
 给网站做全面SEO体检,基于BERT语义模型提取关键词,品牌词最高优先级注入,发布前优化+发布后排名追踪闭环.

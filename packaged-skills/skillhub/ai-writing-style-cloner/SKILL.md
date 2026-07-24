@@ -1,12 +1,11 @@
 ---
-
 slug: ai-writing-style-cloner
 name: ai-writing-style-cloner
 version: 1.0.1
 displayName: "AI写作分身工厂"
 summary: "5篇文章克隆任意作者文风,14种公式批量产出同风格爆款。AI写作分身工厂——上传任意作者的5-10篇文章,6维反向提取风格指纹,生成可永久复用的写作分身,让任何人用这个分身写出的文章读起来与"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   AI写作分身工厂——上传任意作者的5-10篇文章,6维反向提取风格指纹,生成可永久复用的写作分身,让任何人用这个分身写出的文章读起来与原作者一模一样。核心功能:6维风格指纹提取(词汇丰富度/句式结构/语调倾向/节奏模式/修辞偏好/情感基调)、14种写作公式(PAS/AIDA/STAR/FAB/金字塔原理等)、风格指纹JSON持久化一次蒸馏永久复用、智能公式推荐根据风格自动匹配、内容生成自动注入风格
 homepage: ""
 tags:
@@ -22,14 +21,17 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - json
+  - 风格指纹
+  - llm
+  - author_id
+  - 不适用
 tools:
   - read
   - exec
   - write
 category: "Automation"
-
 ---
-
 # AI写作分身工厂
 
 通过6维度风格分析从作者历史内容样本中反向提取结构化风格指纹,并结合14种写作公式,克隆任意作者的写作风格,生成风格一致的全新内容.

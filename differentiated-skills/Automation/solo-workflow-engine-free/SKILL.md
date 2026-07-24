@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - step
+  - zapier
+  - 操作
+  - text
+  - n8n
 tools:
   - read
   - exec

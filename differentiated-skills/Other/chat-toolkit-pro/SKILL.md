@@ -36,6 +36,10 @@ tags:
   - AI代理
   - agent
   - 开发
+  - chat-toolkit
+  - bash
+  - tone
+  - scene
 tools:
   - read
   - exec

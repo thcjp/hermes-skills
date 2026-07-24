@@ -49,6 +49,11 @@ tags:
   - 知识
   - 文档
   - 开发
+  - read-pro-cli
+  - 深度分析
+  - 返回结构
+  - 用户提供
+  - 完成核心
 tools:
   - read
   - exec

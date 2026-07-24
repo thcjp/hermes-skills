@@ -1,12 +1,11 @@
 ---
-
 slug: "figma-2"
 name: "figma-2"
 version: 0.1.2
 displayName: "Figma"
 summary: "Figma 集成。浏览团队项目与文件，读取设计结构、页面、节点，导出图片，管理评论，查看版本历史，检查组件/组件集/样式，获取设计变量（Token）。通过"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Figma 集成。浏览团队项目与文件，读取设计结构、页面、节点，导出图片，管理评论，查看版本历史，检查组件/组件集/样式，获取设计变量（Token）。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Creative
@@ -18,6 +17,10 @@ tags:
   - AI代理
   - agent
   - 创意
+  - figma
+  - 依赖说明
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Figma
 
 ## 付费版专享能力

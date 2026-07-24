@@ -39,6 +39,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - agent
+  - text
+  - 版本
+  - llm
+  - type
 tools:
   - read
   - exec

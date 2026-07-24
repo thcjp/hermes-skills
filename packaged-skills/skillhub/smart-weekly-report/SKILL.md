@@ -1,12 +1,11 @@
 ---
-
 slug: "smart-weekly-report"
 name: "smart-weekly-report"
 version: 1.1.4
 displayName: "Report Generator"
 summary: "周报自动生成器,按pipeline流程配置质量gate检查,支持多模式批量处理,付费版独享高级功能。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   自动提炼关键信息，生成结构化、专业且具有洞察力的周报。核心能力:
 
   - 商业工具领域的专业化AI辅助工具
@@ -31,6 +30,11 @@ tags:
   - 开发
   - 代码
   - 创意
+  - report
+  - step
+  - 按流程执
+  - 依赖说明
+  - agent
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Report Generator
 
 ## 付费版专享能力

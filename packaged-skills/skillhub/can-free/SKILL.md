@@ -1,12 +1,11 @@
 ---
-
 slug: "can-free"
 name: "can-free"
 version: "1.0.0"
 displayName: "CAN内容寻址-免费版"
 summary: "基于时钟地址命名协议，对内容加盖时间戳与哈希，本地三列日志记录与自评估。。CAN免费版提供基于Clock Address Naming的核心内容寻址能力. 每条事件一行三列：WHEN（uni"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   CAN免费版提供基于Clock Address Naming的核心内容寻址能力.
   每条事件一行三列：WHEN（unix毫秒）、WHERE（sha256哈希）、WHAT（可读名称），
   支持本地append-only日志与三问自评估.
@@ -28,15 +27,18 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 免费版
+  - 内容哈希
+  - api
+  - sha256
+  - 执行核心
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # CAN — Clock Address Naming（免费版）
 
 ## 输入格式

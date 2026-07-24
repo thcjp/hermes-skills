@@ -39,6 +39,11 @@ tags:
   - 通信
   - 邮件
   - 创意
+  - text
+  - instagram
+  - 照片内容
+  - 地点
+  - 器材
 tools:
   - read
   - exec

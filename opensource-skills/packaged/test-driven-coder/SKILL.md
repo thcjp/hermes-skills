@@ -16,6 +16,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - amount
+  - step
+  - result
+  - python
+  - calculate_discount
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "game"
 name: "game"
 version: 2.0.1
 displayName: "Game"
 summary: "AI Agent即时游戏设计引擎,一句话概念即得可玩游戏。The instant game design engine for AI agents。Describe any game con"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   The instant game design engine for AI agents。Describe any game concept
   in one sentence and get a。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 创意
   - 图像
   - 开发
+  - canvas
+  - ctx
+  - 游戏
+  - 不支持
+  - playing
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Game
 
 ## 付费版专享能力

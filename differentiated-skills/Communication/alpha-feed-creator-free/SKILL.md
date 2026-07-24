@@ -1,5 +1,4 @@
 ---
-
 slug: alpha-feed-creator-free
 name: alpha-feed-creator-free
 version: 1.0.1
@@ -37,15 +36,17 @@ tags:
   - 知识
   - 文档
   - 开发
+  - markdown
+  - 内容日报
+  - 日报
+  - obsidian
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 内容采集器(免费版)
 
 ## 概述

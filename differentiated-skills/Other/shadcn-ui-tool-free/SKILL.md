@@ -1,5 +1,4 @@
 ---
-
 slug: shadcn-ui-tool-free
 name: shadcn-ui-tool-free
 version: 1.0.0
@@ -38,15 +37,18 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - form
+  - shadcn
+  - import
+  - button
+  - components
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # shadcn UI 工具 - 免费版
 
 ## 概述

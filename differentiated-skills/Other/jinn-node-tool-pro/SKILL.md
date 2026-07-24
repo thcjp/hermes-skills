@@ -40,6 +40,10 @@ tags:
   - 电商
   - 运维
   - 监控
+  - cluster
+  - gas
+  - 任务
+  - roi
 tools:
   - read
   - exec

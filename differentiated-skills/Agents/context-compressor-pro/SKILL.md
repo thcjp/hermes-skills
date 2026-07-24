@@ -20,6 +20,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - memory
+  - node
+  - 专业版
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec

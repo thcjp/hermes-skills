@@ -35,6 +35,11 @@ tags:
   - 远程协助
   - 运维
   - 工具
+  - png
+  - tmp
+  - ocr
+  - install
+  - mode
 tools:
   - read
   - exec

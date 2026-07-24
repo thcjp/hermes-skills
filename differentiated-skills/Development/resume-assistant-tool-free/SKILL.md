@@ -45,6 +45,9 @@ tags:
   - 代码
   - 研究
   - 分析
+  - markdown
+  - text
+  - 免费版
 tools:
   - read
   - exec

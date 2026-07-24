@@ -1,5 +1,4 @@
 ---
-
 slug: "self-integration-paid"
 name: "self-integration-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "自集成工具Pro"
 summary: "企业级外部应用集成方案，含自定义连接器、批量动作、工作流编排与审计日志。。自集成工具（专业版）为团队与企业提供完整的外部应用集成治理方案，支持连接任意外部应用并编排自动化工作流。核心能力：自"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   自集成工具（专业版）为团队与企业提供完整的外部应用集成治理方案，支持连接任意外部应用并编排自动化工作流。核心能力：自定义连接器构建（自然语言驱动）、批量动作执行、多步骤工作流编排、操作审计日志、连接健康监控与自动重连、Agent辅助连接器开发、MCP工具集成适配。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - 集成工具
@@ -19,6 +18,11 @@ tags:
   - integration
   - 工作流
   - 开发
+  - agent
+  - api
+  - 授权连接
+  - oauth
+  - crm
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 自集成工具Pro
 
 ## 付费版专享能力

@@ -26,6 +26,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - csm
+  - bash
+  - kms
+  - team
+  - 智能分层
 tools:
   - read
   - exec

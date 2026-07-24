@@ -1,12 +1,11 @@
 ---
-
 slug: "expanso-json-validate"
 name: "expanso-json-validate"
 version: 1.0.1
 displayName: "Expanso Json Validat"
 summary: "用Expanso Edge流水线校验JSON语法与结构。Validate JSON syntax and structure using the Expanso Edge pipeline"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Validate JSON syntax and structure using the Expanso Edge pipeline in
   CLI or MCP server modes。核心能力:
 
@@ -34,6 +33,11 @@ tags:
   - 代码
   - 工作流
   - AI代理
+  - 按流程执
+  - expanso
+  - 依赖说明
+  - json
+  - api
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Expanso Json Validat
 
 ## 付费版专享能力

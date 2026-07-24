@@ -41,6 +41,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - agent-browser
+  - 专业版新
+  - session
+  - https
+  - com
 tools:
   - read
   - exec

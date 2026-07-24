@@ -40,6 +40,11 @@ tags:
   - 云资源管理
   - 云计算
   - DevOps
+  - bash
+  - list
+  - create
+  - myresourcegroup
+  - group
 tools:
   - read
   - exec

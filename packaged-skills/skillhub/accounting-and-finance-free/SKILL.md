@@ -1,12 +1,11 @@
 ---
-
 slug: "accounting-and-finance-free"
 name: "accounting-and-finance-free"
 version: "1.0.0"
 displayName: "Finance LITE"
 summary: "基础财务分析工具,提供偿债能力/盈利能力比率分析、DuPont拆解、现金流结构分析。基础财务分析工具(免费版)。提供偿债能力(流动比率/速动比率/资产负债率)、 盈利能力(毛利率/净利率/R"
 license: "MIT"
-description: |-，可分析提升工作效率
+description: |-
   基础财务分析工具(免费版)。提供偿债能力(流动比率/速动比率/资产负债率)、
   盈利能力(毛利率/净利率/ROE)等核心财务比率分析,支持DuPont三因素拆解定位ROE驱动因素,
   以及经营/投资/筹资三大现金流结构分析。适用于个人投资者快速体检上市公司财务健康度、
@@ -19,15 +18,18 @@ tags:
   - 金融
   - 财务
   - 数据
+  - roe
+  - 资产负债
+  - dupont
+  - 盈利能力
+  - 分析
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Finance"
-
 ---
-
 # Finance LITE
 
 基础财务分析工具,提供偿债能力、盈利能力比率分析、DuPont拆解与现金流结构分析.

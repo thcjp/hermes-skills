@@ -1,5 +1,4 @@
 ---
-
 slug: telegram-agent-comm-free
 name: telegram-agent-comm-free
 version: 1.0.1
@@ -20,6 +19,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - telegram
+  - agent
+  - message
+  - target
+  - 发送消息
 tools:
   - read
   - exec
@@ -28,9 +32,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 电报通信助手 免费版
 
 ## 概述

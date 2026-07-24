@@ -1,12 +1,11 @@
 ---
-
 slug: "in-depth-research"
 name: "in-depth-research"
 version: 1.0.1
 displayName: "深度研究引擎"
 summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。。系统化深度研究方法论，通过七步协议（Scope → Search → Evaluate → Deepen → Syn"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   系统化深度研究方法论，通过七步协议（Scope → Search → Evaluate → Deepen →
   Synthesize → Document → Deliver）实现穷尽式多源调研。核心能力：
   - 研究范围界定与问题重构
@@ -26,10 +25,13 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - 来源
+  - 用户提供
+  - 包含执行
+  - 状态码
+  - 结果数据
 category: "Knowledge"
-
 ---
-
 # 深度研究引擎
 
 ## 输入格式

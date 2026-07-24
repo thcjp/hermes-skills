@@ -1,5 +1,4 @@
 ---
-
 slug: ui-ux-promax-plus-pro
 name: ui-ux-promax-plus-pro
 version: 1.0.0
@@ -40,6 +39,11 @@ tags:
   - 组件规范
   - 数据可视化
   - UI设计
+  - recharts
+  - chart
+  - var
+  - hover
+  - 种数据可
 tools:
   - read
   - exec
@@ -47,9 +51,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # UI/UX ProMax+ - 专业版
 ## 概述
 UI/UX ProMax+专业版是一款面向企业设计团队的完整UI/UX设计资源引擎。在免费版基础资源之上,扩展至25种数据可视化图表推荐、UX交互模式库、常用组件设计规范和完整设计决策矩阵,帮助企业建立系统化、可维护的设计标准.

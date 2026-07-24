@@ -21,6 +21,11 @@ tags:
   - 安全审计
   - 成本管理
   - DevOps
+  - query
+  - echo
+  - list
+  - output
+  - table
 tools:
   - read
   - exec

@@ -19,6 +19,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - amap
+  - 专业版独
+  - function
+  - styles
+  - map
 tools:
   - read
   - exec

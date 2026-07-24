@@ -23,6 +23,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - get
+  - data
+  - current
+  - location
+  - 天气
 tools:
   - read
   - exec

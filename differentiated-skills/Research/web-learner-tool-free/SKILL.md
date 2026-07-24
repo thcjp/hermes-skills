@@ -16,6 +16,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - web_search
+  - bash
+  - web_fetch
+  - https
+  - url
 tools:
   - read
   - exec

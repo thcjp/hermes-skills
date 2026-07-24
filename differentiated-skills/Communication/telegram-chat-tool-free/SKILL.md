@@ -35,6 +35,11 @@ tags:
   - 个人效率
   - 社交
   - 通信
+  - bot
+  - telegram
+  - text
+  - 用户名
+  - 发送
 tools:
   - read
   - exec

@@ -28,6 +28,11 @@ tags:
   - 安全
   - 加密
   - 写作
+  - str
+  - list
+  - result
+  - self
+  - 支持创建
 tools:
   - read
   - exec

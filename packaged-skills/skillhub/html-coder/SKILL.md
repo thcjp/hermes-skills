@@ -1,12 +1,11 @@
 ---
-
 slug: "html-coder"
 name: "html-coder"
 version: 2.0.2
 displayName: "HTML Coder"
 summary: "专家级HTML开发,构建网页/表单/交互内容。Expert HTML development skill for building web pages, forms, and interac"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Expert HTML development skill for building web pages, forms, and interactive
   content。Use when cr。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - html
+  - api
+  - 不支持
+  - agent
+  - 依赖说明
 tools:
   - read
   - exec
@@ -23,9 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # HTML Coder
 
 ## 付费版专享能力

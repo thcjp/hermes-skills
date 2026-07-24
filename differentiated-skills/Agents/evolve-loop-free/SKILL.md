@@ -16,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - hot
+  - memory
+  - domains
+  - eof
+  - corrections
 tools:
   - read
   - exec

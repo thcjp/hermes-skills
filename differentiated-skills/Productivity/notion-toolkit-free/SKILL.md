@@ -23,6 +23,11 @@ tags:
   - 知识
   - 文档
   - 写作
+  - notion
+  - free
+  - agent
+  - pro
+  - api
 tools:
   - read
   - exec

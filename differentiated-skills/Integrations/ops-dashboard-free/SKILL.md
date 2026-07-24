@@ -21,6 +21,11 @@ tags:
   - 写作
   - 电商
   - 开发
+  - api
+  - localhost
+  - http
+  - curl
+  - token
 tools:
   - read
   - exec

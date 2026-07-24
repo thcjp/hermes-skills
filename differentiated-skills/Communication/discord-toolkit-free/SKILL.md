@@ -32,6 +32,11 @@ tags:
   - 社交互动
   - 社交
   - 通信
+  - discord
+  - json
+  - action
+  - sendmessage
+  - channel
 tools:
   - read
   - exec

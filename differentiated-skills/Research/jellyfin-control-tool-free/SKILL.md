@@ -39,6 +39,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - skills
+  - jellyfin-control
+  - jellyfin
+  - node
+  - cli
 tools:
   - read
   - exec

@@ -16,6 +16,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - easyeda
+  - agent
+  - 最小系统
+  - mcu
+  - 用户提供
 tools:
   - read
   - exec

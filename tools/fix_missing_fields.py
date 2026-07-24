@@ -185,7 +185,14 @@ INVALID_CATEGORIES = {"", "packaged", "null", "None", "NULL"}
 
 
 def extract_frontmatter(content):
-    """Parse frontmatter and return (fm_dict, fm_text, body, full_content)"""
+    """Parse frontmatter and return (fm_dict, fm_text, body, full_content).
+    
+    Handles:
+    - Simple key: value pairs
+    - YAML list format (key: followed by - item lines)
+    - YAML block scalars (|- and >-)
+    - Quoted values
+    """
     if content.startswith('\ufeff'):
         content = content[1:]
     if not content.startswith("---"):
@@ -195,13 +202,68 @@ def extract_frontmatter(content):
         fm_text = parts[1]
         body = parts[2]
         fm = {}
-        for line in fm_text.split("\n"):
+        lines = fm_text.split("\n")
+        i = 0
+        while i < len(lines):
+            line = lines[i]
+            # Match key: value
             m = re.match(r'^(\w+):\s*(.*)$', line)
             if m:
                 key = m.group(1)
-                val = m.group(2).strip().strip('"').strip("'")
+                val = m.group(2).strip()
+                
+                # Handle YAML block scalars (|- or >-) or corrupted values like "|-，text"
+                if val in ('|-', '>-', '|', '>') or re.match(r'^[|>][-+]?\s*[，,]?\s*\S', val):
+                    # Collect indented lines as block content
+                    block_lines = []
+                    # Extract any inline text after the block indicator
+                    inline_text = re.sub(r'^[|>][-+]?\s*[，,]?\s*', '', val)
+                    if inline_text:
+                        block_lines.append(inline_text)
+                    i += 1
+                    while i < len(lines):
+                        bl = lines[i]
+                        # Block content is indented (2+ spaces) or empty
+                        if bl.startswith('  ') or bl.strip() == '':
+                            block_lines.append(bl.strip())
+                            i += 1
+                        else:
+                            break
+                    # Join block lines, clean up
+                    block_val = ' '.join(l for l in block_lines if l).strip()
+                    # Remove leading marker like "|-，可生成提升工作效率"
+                    block_val = re.sub(r'^[|>][-+]?\s*[，,]?\s*', '', block_val)
+                    if block_val:
+                        fm[key] = block_val
+                    continue
+                
+                # Handle YAML list (value is empty, followed by - items)
+                if val == '' or val is None:
+                    # Check if next lines are list items
+                    list_items = []
+                    j = i + 1
+                    while j < len(lines):
+                        lm = re.match(r'^\s*-\s+(.+)$', lines[j])
+                        if lm:
+                            item_val = lm.group(1).strip().strip('"').strip("'")
+                            if item_val:
+                                list_items.append(item_val)
+                            j += 1
+                        else:
+                            break
+                    if list_items:
+                        fm[key] = list_items if len(list_items) > 1 else list_items[0]
+                        i = j
+                        continue
+                    # Empty value with no list items
+                    i += 1
+                    continue
+                
+                # Regular value: strip quotes
+                val = val.strip().strip('"').strip("'")
                 if val:
                     fm[key] = val
+            i += 1
         return fm, fm_text, body, content
     return {}, "", content, content
 
@@ -220,56 +282,100 @@ def infer_tools(slug, path, body):
     return DEFAULT_TOOLS
 
 
+def _extract_body_keywords(body, top_n=5):
+    """Extract meaningful keywords directly from body text.
+    
+    Returns terms that are GUARANTEED to appear in the body.
+    Uses frequency analysis with stop-word filtering.
+    """
+    import re as _re
+    from collections import Counter
+    
+    # Chinese + English stop words
+    STOP_WORDS = {
+        # Chinese
+        "的", "了", "是", "在", "和", "与", "或", "等", "为", "对", "由", "从", "到",
+        "可", "以", "及", "或", "但", "不", "无", "有", "这", "那", "也", "都", "就",
+        "将", "被", "让", "使", "给", "跟", "向", "于", "之", "其", "而", "且", "如",
+        "则", "若", "因", "所", "能", "会", "可", "需", "应", "该", "此", "彼", "某",
+        "一个", "一些", "一种", "可以", "需要", "应该", "支持", "使用", "通过", "进行",
+        "包括", "例如", "如下", "如图", "说明", "内容", "功能", "章节", "参见", "参考",
+        # English
+        "the", "a", "an", "is", "are", "was", "were", "be", "been", "being",
+        "have", "has", "had", "do", "does", "did", "will", "would", "could",
+        "should", "may", "might", "must", "can", "shall", "to", "of", "in",
+        "for", "on", "with", "at", "by", "from", "as", "into", "through",
+        "during", "before", "after", "above", "below", "up", "down", "out",
+        "off", "over", "under", "again", "further", "then", "once", "here",
+        "there", "when", "where", "why", "how", "all", "each", "every", "both",
+        "few", "more", "most", "other", "some", "such", "no", "nor", "not",
+        "only", "own", "same", "so", "than", "too", "very", "and", "but", "if",
+        "or", "because", "as", "until", "while", "this", "that", "these", "those",
+        "what", "which", "who", "whom", "this", "that", "am", "being", "about",
+        # Common generic terms that don't add search value
+        "skill", "tool", "tools", "description", "summary", "version", "name",
+        "license", "category", "tags", "homepage", "displayname", "slug",
+        "输入", "输出", "参数", "错误", "处理", "场景", "步骤", "方式", "方法",
+        "类型", "值", "结果", "信息", "数据", "系统", "平台", "支持", "提供",
+        "功能", "能力", "特性", "特点", "说明", "文档", "配置", "设置", "环境",
+    }
+    
+    body_lower = body[:5000].lower()
+    
+    # Extract Chinese words (2-4 chars) using regex
+    cn_words = _re.findall(r'[\u4e00-\u9fff]{2,4}', body[:5000])
+    # Extract English words (2+ chars, alphanumeric)
+    en_words = _re.findall(r'[a-z][a-z0-9_-]{2,}', body_lower)
+    
+    all_words = cn_words + en_words
+    
+    # Filter stop words and count frequency
+    filtered = [w for w in all_words if w not in STOP_WORDS and len(w) >= 2]
+    counter = Counter(filtered)
+    
+    # Return top N keywords
+    return [w for w, _ in counter.most_common(top_n)]
+
+
 def infer_tags(slug, path, body):
     """Infer tags field based on slug, path, and body content (content-aware).
     
     Priority:
-    1. Match slug/path keywords against TAG_CATEGORIES
-    2. Match body content keywords against TAG_TO_CATEGORY_MAP (reverse mapping)
-    3. Extract top frequency terms from body
+    1. Extract actual high-frequency keywords from body (guaranteed to match)
+    2. Match slug/path keywords against TAG_CATEGORIES (verify against body)
+    3. Fall back to body keyword extraction
     4. Fall back to DEFAULT_TAGS
     """
+    # 1. Extract real keywords from body - these are GUARANTEED to appear in body
+    body_keywords = _extract_body_keywords(body, top_n=5)
+    if len(body_keywords) >= 3:
+        return ",".join(body_keywords[:5])
+    
+    # 2. Slug/path keyword match (only if body extraction was insufficient)
     slug_lower = slug.lower()
-    # 1. Slug/path keyword match
     for keyword, tags in TAG_CATEGORIES.items():
         if keyword in slug_lower or keyword in str(path).lower():
-            # Also verify relevance against body
+            # Verify the keyword appears in body before using category tags
             body_lower = body[:3000].lower()
-            if any(kw in body_lower for kw in [keyword, keyword.lower()]):
-                return tags
-            return tags  # Still return if slug matches strongly
+            if keyword in body_lower or keyword.lower() in body_lower:
+                # Merge body keywords with category tags
+                tag_list = [t.strip() for t in tags.split(',')]
+                merged = list(dict.fromkeys(body_keywords[:2] + tag_list[:3]))
+                return ",".join(merged[:5])
     
-    # 2. Body content keyword matching (top 3 categories by frequency)
-    body_lower = body[:3000].lower()
-    category_scores = {}
-    for keyword, category in TAG_TO_CATEGORY_MAP.items():
-        count = body_lower.count(keyword.lower())
-        if count > 0:
-            category_scores[category] = category_scores.get(category, 0) + count
+    # 3. Body keyword extraction fallback (already done, but check again with more context)
+    if body_keywords:
+        return ",".join(body_keywords[:5])
     
-    if category_scores:
-        top_cats = sorted(category_scores.items(), key=lambda x: -x[1])[:3]
-        # Reverse map: category → representative tags
-        cat_to_tags = {}
-        for kw, cat in TAG_TO_CATEGORY_MAP.items():
-            if cat not in cat_to_tags:
-                cat_to_tags[cat] = []
-            cat_to_tags[cat].append(kw)
-        result_tags = []
-        for cat, _ in top_cats:
-            if cat in cat_to_tags:
-                result_tags.extend(cat_to_tags[cat][:2])
-        if result_tags:
-            return ",".join(result_tags[:5])
-    
+    # 4. Fall back to DEFAULT_TAGS
     return DEFAULT_TAGS
 
 
-def fix_irrelevant_tags(content, fm, body):
+def fix_irrelevant_tags(content, fm, body, description=""):
     """Fix tags that don't match body content (L9 MISSING_OR_IRRELEVANT_TAGS).
     
-    Checks if at least 3 tags have direct matches in the body content.
-    If not, re-infers tags based on content analysis.
+    Uses the SAME threshold as the audit: max(1, len(tag_words) // 2) tags
+    must appear in (description + body[:3000]).
     Returns (content, was_fixed).
     """
     tags_val = fm.get('tags', '')
@@ -284,28 +390,45 @@ def fix_irrelevant_tags(content, fm, body):
     else:
         tags = [str(tags_val)]
     
-    tags = [t for t in tags if t]
-    if len(tags) < 3:
-        # Too few tags, re-infer
+    tags = [t for t in tags if t and len(t) > 1]
+    if not tags:
+        # No valid tags, re-infer from body
         slug = fm.get('slug', '')
         new_tags = infer_tags(slug, '', body)
         content = _replace_frontmatter_field(content, 'tags', new_tags)
         return content, True
     
-    # Check tag relevance: at least 3 tags should appear in body
-    body_lower = body[:3000].lower()
-    matched = sum(1 for t in tags if t.lower() in body_lower)
+    # Use the SAME threshold as the audit: max(1, len(tag_words) // 2)
+    # The audit searches in (description + body[:3000])
+    search_text = (description + ' ' + body[:3000]).lower()
+    matched = sum(1 for t in tags if t.lower() in search_text)
+    threshold = max(1, len(tags) // 2)
     
-    if matched >= 3:
-        return content, False  # Tags are relevant
+    if matched >= threshold:
+        return content, False  # Tags pass the audit threshold
     
-    # Tags are irrelevant, re-infer based on content
+    # Tags don't pass audit threshold, re-infer from body keywords
     slug = fm.get('slug', '')
-    new_tags = infer_tags(slug, '', body)
     
-    # Merge: keep original tags that DO match, add new relevant ones
+    # Strategy: keep only matching tags + add body-derived keywords
+    keep_original = [t for t in tags if t.lower() in search_text]
+    
+    # If we have enough matching tags, just trim to those
+    if len(keep_original) >= threshold:
+        merged_str = ",".join(keep_original[:6])
+        content = _replace_frontmatter_field(content, 'tags', merged_str)
+        return content, True
+    
+    # Not enough matching tags, add body-derived keywords
+    new_tags = infer_tags(slug, '', body)
     new_tag_list = [t.strip() for t in new_tags.split(',')]
-    merged = list(set(tags[:2] + new_tag_list[:4]))  # Keep up to 2 original + 4 new
+    merged = list(dict.fromkeys(keep_original + new_tag_list))
+    
+    # Ensure at least 3 tags, all from body (guaranteed to match)
+    if len(merged) < 3:
+        body_kws = _extract_body_keywords(body, top_n=5)
+        merged = list(dict.fromkeys(merged + body_kws))
+    
     merged_str = ",".join(merged[:6])
     
     content = _replace_frontmatter_field(content, 'tags', merged_str)
@@ -398,19 +521,26 @@ def _replace_frontmatter_field(content, field_name, new_value):
         # Match field name (string value)
         m = re.match(r'^(\s*)(\w+):\s*(.*)$', line)
         if m and m.group(2) == field_name and not replaced:
-            # Check if next lines are list items (part of this field)
             indent = m.group(1)
+            old_val = m.group(3).strip()
             new_lines.append(f"{indent}{field_name}: {new_value}")
             replaced = True
-            # Skip following list items that belong to this field
             i += 1
+            # Skip following lines that belong to this field:
+            # 1. List items (lines starting with - )
+            # 2. Block scalar content (indented lines after |- or >-)
+            is_block_scalar = old_val in ('|-', '>-', '|', '>') or re.match(r'^[|>][-+]?\s*$', old_val)
             while i < len(lines):
                 next_line = lines[i]
+                # Skip list items
                 if re.match(r'^\s+-\s+', next_line):
                     i += 1
                     continue
-                else:
-                    break
+                # Skip block scalar content (indented lines)
+                if is_block_scalar and (next_line.startswith('  ') or next_line.strip() == ''):
+                    i += 1
+                    continue
+                break
             continue
         new_lines.append(line)
         i += 1
@@ -1090,7 +1220,8 @@ def main():
             fm, fm_text, body, full = extract_frontmatter(content)
 
             # === V47: Fix irrelevant tags (L9 MISSING_OR_IRRELEVANT_TAGS) ===
-            content, tags_irrelevant_fixed = fix_irrelevant_tags(content, fm, body)
+            desc_val = fm.get('description', '') or fm.get('summary', '')
+            content, tags_irrelevant_fixed = fix_irrelevant_tags(content, fm, body, desc_val)
             if tags_irrelevant_fixed:
                 stats['fixes']['FIXED_IRRELEVANT_TAGS'] += 1
                 fixes_applied.append('FIXED_IRRELEVANT_TAGS')

@@ -1,5 +1,4 @@
 ---
-
 slug: "diagram-gen"
 name: "diagram-gen"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "图表生成工具-专业版"
 summary: "全格式图表生成引擎，支持Draw.io/Mermaid/Excalidraw，覆盖8种图表类型与批量生成。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   图表生成工具专业版，面向团队的全格式图表生成与管理平台。核心能力：
   - 三大格式全覆盖：Draw。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
@@ -22,6 +21,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - type
+  - 不支持
+  - node
+  - edge
+  - source
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 图表生成工具-专业版
 
 ## 付费版专享能力

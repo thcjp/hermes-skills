@@ -27,6 +27,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - self
+  - 支持创建
+  - 查询
+  - input_params
+  - 批量处理
 tools:
   - read
   - exec

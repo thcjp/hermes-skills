@@ -26,12 +26,7 @@ description: 'AI图像提示词免费版,面向个人用户的图像生成提示
 
   差异化:免费版聚焦基础提示词模板与优化建议,帮助个人用户快速上手 AI 图像生成,提升出图效果'
 tags:
-  - Creative
-  - 提示词工程
-  - AI创作
-  - 图像处理
-  - AI绘图
-  - 创意
+  - 提示词,style,pro,soft,agent
 tools:
   - read
   - exec

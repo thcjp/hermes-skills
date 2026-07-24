@@ -22,6 +22,11 @@ tags:
   - 通信
   - 邮件
   - 写作
+  - free
+  - pro
+  - agent
+  - caldav
+  - export
 tools:
   - read
   - exec

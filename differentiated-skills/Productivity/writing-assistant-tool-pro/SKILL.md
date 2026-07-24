@@ -22,6 +22,11 @@ tags:
   - 研究
   - 分析
   - 创意
+  - pro
+  - 逻辑
+  - agent
+  - free
+  - seo
 tools:
   - read
   - exec

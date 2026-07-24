@@ -28,6 +28,11 @@ tags:
   - 写作
   - 电商
   - 创意
+  - self
+  - text
+  - scene
+  - def
+  - choices
 tools:
   - read
   - exec

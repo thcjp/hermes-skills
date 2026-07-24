@@ -1,12 +1,11 @@
 ---
-
 slug: "ai-agent-helper"
 name: "ai-agent-helper"
 version: 1.0.1
 displayName: "AI Agent Helper"
 summary: "AI Agent设计与优化助手,覆盖Prompt工程、任务拆解、ReAct循环、工具选择与Token优化"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   AI Agent设计与优化助手。面向独立开发者与一人公司,提供从System Prompt设计到Agent Loop编排的全流程辅助.
   覆盖六大核心能力:Prompt Engineering(角色定义、约束设定、输出格式)、Task Decomposition(复杂任务拆解为可执行子任务)、
   Agent Loop设计(ReAct、Chain-of-Thought、Plan-and-Execute、Reflexion四种范式)、Tool Selection(工具描述优化与选择策略)、
@@ -14,11 +13,7 @@ description: |-，可生成提升工作效率
   适用于构建客服Agent、数据分析Agent、代码Agent、自动化工作流Agent等场景。基于Markdown指令驱动,
   无需额外API Key(由Agent内置LLM提供推理能力)。已移除原始风险代码,清理外部依赖引用,适配SkillHub平台规范.
 tags:
-  - 研发工具
-  - Productivity
-  - AI代理
-  - 自动化
-  - 智能
+  - 自动化,agent,优化,prompt,产品,product
 tools:
   - read
   - exec
@@ -28,9 +23,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
 ---
-
 # AI Agent Helper
 
 帮你setup同优化AI Agents的技能。覆盖从Prompt设计到Agent Loop编排的全流程,支持ReAct、Chain-of-Thought、Plan-and-Execute、Reflexion四种主流Agent范式.

@@ -23,6 +23,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - agent
+  - free
+  - pro
+  - json
+  - notes
 tools:
   - read
   - exec

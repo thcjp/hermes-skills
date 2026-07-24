@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - hotkey
+  - ctrl
+  - screenshot
+  - 桌面自动
+  - 鼠标控制
 tools:
   - read
   - exec

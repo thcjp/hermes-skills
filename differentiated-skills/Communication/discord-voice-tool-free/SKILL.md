@@ -1,5 +1,4 @@
 ---
-
 slug: discord-voice-tool-free
 name: discord-voice-tool-free
 version: 1.0.0
@@ -35,15 +34,18 @@ tags:
   - 语音识别
   - 社交
   - 通信
+  - kokoro
+  - discord
+  - medium
+  - tts
+  - allowedusers
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # Discord 语音工具(免费版)
 
 ## 概述

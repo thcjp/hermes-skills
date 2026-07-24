@@ -1,5 +1,4 @@
 ---
-
 slug: google-workspace-toolkit-free
 name: google-workspace-toolkit-free
 version: 1.0.1
@@ -40,6 +39,11 @@ tags:
   - 知识
   - 文档
   - 写作
+  - gmail
+  - gwtool
+  - google-workspace
+  - google
+  - drive
 tools:
   - read
   - exec
@@ -47,9 +51,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 谷歌办公工具接口 - 免费版
 
 ## 概述

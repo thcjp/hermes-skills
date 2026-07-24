@@ -28,6 +28,10 @@ tags:
   - 分析
   - 开发
   - 代码
+  - 不支持
+  - game_id
+  - json
+  - run
 tools:
   - read
   - exec

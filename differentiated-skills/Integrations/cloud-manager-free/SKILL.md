@@ -15,6 +15,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - icloud
+  - rclone
+  - google
+  - dropbox
+  - gdrive
 tools:
   - read
   - exec

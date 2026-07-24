@@ -40,6 +40,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - basedir
+  - linear
 tools:
   - read
   - exec

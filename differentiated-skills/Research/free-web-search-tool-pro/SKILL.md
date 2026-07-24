@@ -28,6 +28,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - python
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - json
 tools:
   - read
   - exec

@@ -14,6 +14,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - prod
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - terraform
 tools:
   - read
   - exec

@@ -28,6 +28,11 @@ tags:
   - 知识
   - 文档
   - 安全
+  - str
+  - path
+  - input_file
+  - output_file
+  - 支持创建
 tools:
   - read
   - exec

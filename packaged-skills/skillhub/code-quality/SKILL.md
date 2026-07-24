@@ -1,18 +1,22 @@
 ---
-
 slug: "code-quality"
 name: "code-quality"
 version: 1.0.1
 displayName: "Code Quality"
 summary: "编码风格标准/安全准则/无障碍要求,守住质量底线。Coding style standards, security guidelines, and accessibility require"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Coding style standards, security guidelines, and accessibility requirements。Use when (1) Writing。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
   - 开发工具
   - 代码生成
   - 编程辅助
+  - 依赖说明
+  - 不支持
+  - quality
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Code Quality
 
 ## 付费版专享能力

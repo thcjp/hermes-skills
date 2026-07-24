@@ -29,6 +29,11 @@ tags:
   - 生活
   - 健康
   - 研究
+  - true
+  - key
+  - public
+  - 不支持
+  - enabled
 tools:
   - read
   - exec

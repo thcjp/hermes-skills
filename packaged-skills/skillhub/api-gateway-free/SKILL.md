@@ -1,12 +1,11 @@
 ---
-
 slug: "api-gateway-free"
 name: "api-gateway-free"
 version: "1.0.0"
 displayName: "API网关路由免费版"
 summary: "通过托管网关连接Slack/Gmail/Stripe等服务的只读路由,含基础连接管理与认证验证。托管式 API 网关路由服务免费版。通过统一的 API 路由地址连接 Slack、Gmail、"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   托管式 API 网关路由服务免费版。通过统一的 API 路由地址连接 Slack、Gmail、Stripe 等第三方服务,
   支持只读 GET 操作与基础连接管理。触发器管理、事件重放、写操作审批流程、高危操作审查等高级功能需升级付费版.
 tags:
@@ -15,15 +14,18 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - maton
+  - get
+  - 操作
+  - key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
 ---
-
 # API 网关集成路由（免费版）
 
 托管式 API 网关路由服务免费版。通过统一的 API 路由地址 `https://api.maton.ai/` 连接第三方服务,支持只读 GET 操作与基础连接管理.

@@ -1,12 +1,11 @@
 ---
-
 slug: "clawddocs"
 name: "clawddocs"
 version: 1.2.3
 displayName: "Clawddocs"
 summary: "SkillHub文档专家,带决策树导航,快速定位答案。SkillHub documentation expert with decision tree navigation。核心能力: -"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   SkillHub documentation expert with decision tree navigation。核心能力:
 
   - 知识管理领域的专业化AI辅助工具
@@ -31,6 +30,11 @@ tags:
   - 开发
   - 代码
   - 创意
+  - 按流程执
+  - check
+  - 不支持
+  - 依赖说明
+  - agent
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Clawddocs
 
 ## 付费版专享能力

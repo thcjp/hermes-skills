@@ -44,6 +44,11 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - import
+  - 返回结构
+  - fig
+  - 用户提供
+  - 完成核心
 tools:
   - read
   - exec

@@ -43,6 +43,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - archive
+  - pro
+  - 专业版新
+  - project
+  - api
 tools:
   - read
   - exec

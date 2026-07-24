@@ -40,6 +40,11 @@ tags:
   - 研究
   - 分析
   - 创意
+  - client
+  - const
+  - sdk
+  - input
+  - createclient
 tools:
   - read
   - exec

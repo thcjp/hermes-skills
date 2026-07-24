@@ -20,6 +20,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - base64
+  - url
+  - hello
+  - jwt
+  - text
 tools:
   - read
   - exec

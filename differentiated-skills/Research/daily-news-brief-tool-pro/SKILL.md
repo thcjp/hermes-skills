@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - https
+  - com
+  - feishu
+  - xxx
+  - 不支持
 tools:
   - read
   - exec

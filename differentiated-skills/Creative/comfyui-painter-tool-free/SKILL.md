@@ -21,6 +21,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - output
+  - comfyui
+  - prompt
+  - python
+  - cfg
 tools:
   - read
   - exec

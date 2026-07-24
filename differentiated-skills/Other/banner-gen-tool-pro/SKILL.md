@@ -39,6 +39,11 @@ tags:
   - 分析
   - 创意
   - 图像
+  - prompt
+  - banner-gen-pro
+  - png
+  - 不支持
+  - 批量生成
 tools:
   - read
   - exec

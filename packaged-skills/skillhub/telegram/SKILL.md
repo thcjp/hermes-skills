@@ -1,12 +1,11 @@
 ---
-
 slug: "telegram"
 name: "telegram"
 version: 1.0.2
 displayName: "Telegram"
 summary: "设计Telegram Bot API工作流与命令驱动对话。SkillHub skill for designing Telegram Bot API workflows and comman"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   SkillHub skill for designing Telegram Bot API workflows and command-driven
   conversations using di。
 tags:
@@ -14,6 +13,11 @@ tags:
   - Telegram
   - 社交
   - 通信
+  - 按流程执
+  - api
+  - 依赖说明
+  - bot
+  - 不支持
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # Telegram
 
 ## 付费版专享能力

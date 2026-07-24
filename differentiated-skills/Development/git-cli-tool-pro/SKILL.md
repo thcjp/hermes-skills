@@ -1,5 +1,4 @@
 ---
-
 slug: "git-cli-tool-pro"
 name: "git-cli-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Git命令行助手专业版"
 summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。。面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作能力。核心能力:
   - Git自动化脚本库
   - 深度仓库诊断与分析
@@ -36,15 +35,18 @@ tags:
   - 企业级
   - 自动化
   - 版本控制
+  - true
+  - git
+  - import
+  - print
+  - echo
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
 ---
-
 Git命令行助手专业版为企业研发团队提供高级Git CLI自动化能力。在免费版基础命令参考之上,专业版新增自动化脚本库、深度仓库诊断、标准化工作流模板、故障排除与恢复以及批量操作能力,帮助团队提升Git使用效率.
 专业版完全兼容免费版的所有Git命令和配置,研发团队可从免费版无缝升级,已有别名和配置无需修改.
 ## 核心能力

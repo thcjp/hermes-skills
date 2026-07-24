@@ -22,6 +22,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - figma
+  - file_key
+  - api
+  - agent
+  - python
 tools:
   - read
   - exec

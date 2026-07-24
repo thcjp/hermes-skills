@@ -41,6 +41,11 @@ tags:
   - 团队协作
   - 版本控制
   - Git
+  - python
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - org
 tools:
   - read
   - exec

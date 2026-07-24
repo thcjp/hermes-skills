@@ -1,5 +1,4 @@
 ---
-
 slug: calendar-reminder-tool-free
 name: calendar-reminder-tool-free
 version: 1.0.0
@@ -25,15 +24,18 @@ tags:
   - 邮件
   - 研究
   - 分析
+  - skill-platform
+  - cron
+  - 下午日程
+  - calendar_reminder
+  - open_id
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 日历提醒工具 免费版
 
 ## 概述

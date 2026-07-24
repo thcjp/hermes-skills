@@ -1,12 +1,11 @@
 ---
-
 slug: "sequential-read"
 name: "sequential-read"
 version: 1.0.1
 displayName: "Sequential Read"
 summary: "顺序阅读散文并结构化反思,模拟阅读体验。Read prose sequentially with structured reflections to simulate the reading"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Read prose sequentially with structured reflections to simulate the
   reading experience
 
@@ -34,6 +33,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Sequential Read
 
 ## 付费版专享能力

@@ -1,12 +1,11 @@
 ---
-
 slug: "ssl"
 name: "ssl"
 version: 1.0.3
 displayName: "SSL"
 summary: "配HTTPS/管TLS证书/调安全连接问题。Set up HTTPS, manage TLS certificates, and debug secure connection issues"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   Set up HTTPS, manage TLS certificates, and debug secure connection issues。核心能力:
 
   - 开发工具领域的专业化AI辅助工具
@@ -32,6 +31,10 @@ tags:
   - AI代理
   - agent
   - 安全
+  - 不支持
+  - api
+  - 依赖说明
+  - tls
 tools:
   - read
   - exec
@@ -39,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # SSL
 
 ## 付费版专享能力

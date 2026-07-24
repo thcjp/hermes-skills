@@ -1,12 +1,11 @@
 ---
-
 slug: "brainz-calendar"
 name: "brainz-calendar"
 version: 1.0.1
 displayName: "Calendar"
 summary: "用gcalcli管理Google日历,创建/列出/删除事件,日程不乱。Manage Google Calendar events using `gcalcli`。Create, list,"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Manage Google Calendar events using `gcalcli`。Create, list, and delete
   calendar events from the。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - api
+  - 不支持
+  - calendar
+  - agent
+  - llm
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Calendar
 
 ## 付费版专享能力

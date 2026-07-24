@@ -16,6 +16,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - mcp
+  - api
+  - 服务器
+  - fastmcp
+  - json
 tools:
   - read
   - exec

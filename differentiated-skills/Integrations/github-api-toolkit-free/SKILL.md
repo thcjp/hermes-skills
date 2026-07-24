@@ -31,6 +31,11 @@ tags:
   - 开发工具
   - 版本控制
   - Git
+  - api
+  - github_token
+  - curl
+  - authorization
+  - bearer
 tools:
   - read
   - exec

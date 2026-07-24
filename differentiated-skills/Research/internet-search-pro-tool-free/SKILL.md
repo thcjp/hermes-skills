@@ -38,6 +38,11 @@ tags:
   - 新闻查询
   - 检索
   - 工具
+  - 要点
+  - 来源
+  - text
+  - 链接
+  - api
 tools:
   - read
   - exec

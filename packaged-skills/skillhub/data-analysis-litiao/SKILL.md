@@ -1,12 +1,11 @@
 ---
-
 slug: "data-analysis-litiao"
 name: "data-analysis-litiao"
 version: 1.0.1
 displayName: "数据分析理调"
 summary: "数据分析方法论框架，覆盖统计严谨性、陷阱识别、方法选择与输出规范。数据分析理调是数据分析的方法论守护框架，覆盖 Methodology First（方法论优先）、 Statistical R"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   数据分析理调是数据分析的方法论守护框架，覆盖 Methodology First（方法论优先）、
   Statistical Rigor Checklist（统计严谨性检查清单）、Analytical Pitfalls（分析陷阱识别：
   p-hacking、Survivorship bias、Simpson's Paradox 等）、Approach Selection（分析方法选择）、
@@ -16,6 +15,10 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - agent
+  - confidence
+  - 不支持
+  - 回答
 tools:
   - read
   - write
@@ -24,9 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
-
 ---
-
 # 数据分析理调
 
 数据分析方法论守护框架，确保分析过程的统计严谨性、陷阱识别和方法论正确性.

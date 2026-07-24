@@ -38,6 +38,11 @@ tags:
   - 免费版
   - 图像处理
   - 创意
+  - 比例
+  - text
+  - agent
+  - 生成
+  - message
 tools:
   - read
   - exec

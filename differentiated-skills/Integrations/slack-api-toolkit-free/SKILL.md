@@ -14,6 +14,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - slack
+  - sgw
+  - api
+  - channel
+  - c0123456789
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: telegram-alert-tool-free
 name: telegram-alert-tool-free
 version: 1.0.0
@@ -18,15 +17,18 @@ tags:
   - 金融
   - 财务
   - 数据
+  - bot
+  - telegram
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
 ---
-
 # Telegram告警入门（免费版）
 
 ## 概述

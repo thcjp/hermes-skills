@@ -1,5 +1,4 @@
 ---
-
 slug: tailwindcss-toolkit-free
 name: tailwindcss-toolkit-free
 version: 1.0.1
@@ -50,15 +49,18 @@ tags:
   - 开发
   - 代码
   - 研究
+  - class
+  - dark
+  - focus
+  - div
+  - html
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Tailwind CSS 工具包 - 免费版
 
 ## 概述

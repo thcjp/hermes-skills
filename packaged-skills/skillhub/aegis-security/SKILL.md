@@ -1,12 +1,11 @@
 ---
-
 slug: "aegis-security"
 name: "aegis-security"
 version: 1.2.3
 displayName: "区块链安全防护"
 summary: "区块链安全API，扫描代币蜜罐、模拟交易、检查地址声誉风险。面向AI代理的区块链安全API。提供代币蜜罐检测、交易模拟、地址声誉检查等功能， 支持EVM和Solana多链，集成x402付费协"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   面向AI代理的区块链安全API。提供代币蜜罐检测、交易模拟、地址声誉检查等功能，
   支持EVM和Solana多链，集成x402付费协议。适用于DeFi交易前安全审计、代币风险评估、
   地址欺诈检测等场景。不适用于需要100%确定性的关键决策.
@@ -19,10 +18,13 @@ tags:
   - 安全
   - 加密
   - 工具
+  - chain_id
+  - x402
+  - api
+  - base
+  - x-client-fingerprint
 category: "Security"
-
 ---
-
 # 区块链安全防护
 
 面向AI代理的区块链安全API，提供交易前安全扫描能力。免费额度100次/天，超出后通过x402协议按需付费（USDC on Base或Solana）.

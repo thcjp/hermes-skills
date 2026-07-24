@@ -1,5 +1,4 @@
 ---
-
 slug: "secure-api-toolkit"
 name: "secure-api-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "安全API工具箱Pro"
 summary: "企业级凭据代理方案，含多SDK、团队金库、审计日志、自定义提供商与合规导出。。安全API工具箱（专业版）为团队与企业提供完整的凭据代理治理方案，从架构层杜绝Agent接触真实密钥。核心能力："
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   安全API工具箱（专业版）为团队与企业提供完整的凭据代理治理方案，从架构层杜绝Agent接触真实密钥。核心能力：多语言SDK集成（Python/TypeScript/Client）、团队凭据金库与共享、全量审计日志与不可篡改归档、自定义私有API提供商注册、凭据隔离与提供商绑定、GDPR/CCPA合规导出、AES-256-GCM静态加密
 tags:
   - 集成工具
@@ -16,6 +15,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - sdk
+  - python
+  - agent
+  - 不支持
 tools:
   - read
   - exec
@@ -23,9 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # 安全API工具箱Pro
 
 ## 付费版专享能力

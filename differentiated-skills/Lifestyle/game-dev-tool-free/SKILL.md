@@ -1,5 +1,4 @@
 ---
-
 slug: game-dev-tool-free
 name: game-dev-tool-free
 version: 1.0.0
@@ -30,15 +29,18 @@ tags:
   - 生活
   - 健康
   - 创意
+  - public
+  - int
+  - private
+  - level
+  - maxhealth
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 游戏开发助手 (免费版)
 
 ## 概述

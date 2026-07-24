@@ -26,6 +26,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - provider
+  - api
+  - csm
+  - bash
+  - dropbox
 tools:
   - read
   - exec

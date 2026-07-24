@@ -41,6 +41,11 @@ tags:
   - 通信
   - 邮件
   - 运维
+  - typescript
+  - type
+  - string
+  - true
+  - interface
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "bilibili-all-in-one-free"
 name: "bilibili-all-in-one-free"
 version: "1.0.0"
 displayName: "B站工具箱免费版"
 summary: "B站热门监控、标准清晰度下载、数据追踪与弹幕获取基础工具集,无需登录凭据。。B站全功能工具箱的免费基础版,集成热门监控(Hot Monitor)、标准清晰度下载(Downloader)、 数"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   B站全功能工具箱的免费基础版,集成热门监控(Hot Monitor)、标准清晰度下载(Downloader)、
   数据追踪(Watcher)与播放信息(Player)四大公共API模块。支持热门/热搜/必看榜/分区排行获取,
   360p至1080p视频下载与mp4格式输出,播放量/点赞/评论统计与多视频对比,弹幕获取与分P列表解析.
@@ -19,15 +18,18 @@ tags:
   - B站
   - 视频
   - 媒体
+  - main
+  - hot_monitor
+  - python
+  - downloader
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # Bilibili All In One 全功能工具箱 (免费版)
 
 ## 输入格式

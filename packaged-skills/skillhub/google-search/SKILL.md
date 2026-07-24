@@ -1,12 +1,11 @@
 ---
-
 slug: "google-search"
 name: "google-search"
 version: 1.0.1
 displayName: "google-search"
 summary: "用Google可编程搜索引擎(PSE)搜实时信息。Search the web using Google Custom Search Engine (PSE)。Use this when y"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Search the web using Google Custom Search Engine (PSE)。Use this when
   you need live information,。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # google-search
 
 ## 付费版专享能力

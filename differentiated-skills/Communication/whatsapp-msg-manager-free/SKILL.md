@@ -40,6 +40,11 @@ tags:
   - 通知提醒
   - 社交
   - 通信
+  - whatsapp
+  - bash
+  - connector_call_tool
+  - params
+  - 消息管理
 tools:
   - read
   - exec

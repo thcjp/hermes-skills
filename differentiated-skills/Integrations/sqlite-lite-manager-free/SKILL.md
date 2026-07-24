@@ -21,6 +21,11 @@ tags:
   - AI代理
   - agent
   - 写作
+  - python
+  - text
+  - create_index
+  - sqlite
+  - wal
 tools:
   - read
   - exec

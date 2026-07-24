@@ -20,6 +20,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - self
+  - advisory
+  - score
+  - text
+  - pro
 tools:
   - read
   - exec

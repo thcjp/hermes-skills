@@ -18,6 +18,11 @@ tags:
   - 任务管理
   - 效率
   - 工具
+  - pro
+  - true
+  - agent
+  - free
+  - 逻辑
 tools:
   - read
   - exec

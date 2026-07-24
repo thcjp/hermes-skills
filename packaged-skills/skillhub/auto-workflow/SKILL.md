@@ -1,12 +1,11 @@
 ---
-
 slug: "auto-workflow"
 name: "auto-workflow"
 version: 1.0.1
 displayName: "Auto Workflow"
 summary: "从重复任务自动构建工作流,识别瓶颈并自动化,释放人力。Builds automation workflows from repetitive tasks。Use when user ment"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Builds automation workflows from repetitive tasks。Use when user mentions
   \
 
@@ -30,6 +29,11 @@ tags:
   - 工作流
   - 自动化
   - 效率
+  - 按流程执
+  - 依赖说明
+  - agent
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Auto Workflow
 
 ## 付费版专享能力

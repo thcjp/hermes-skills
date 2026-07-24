@@ -1,12 +1,11 @@
 ---
-
 slug: "azure-devops"
 name: "azure-devops"
 version: 1.0.1
 displayName: "Azure DevOps"
 summary: "列Azure DevOps项目/仓库/分支,建PR管工作项,研发协同闭环。List Azure DevOps projects, repositories, and branches; cr"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   List Azure DevOps projects, repositories, and branches; create pull
   requests; manage work items; 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -14,6 +13,11 @@ tags:
   - Azure
   - 云计算
   - DevOps
+  - 建议优化
+  - 检查通过
+  - azure
+  - devops
+  - agent
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Azure DevOps
 
 ## 付费版专享能力

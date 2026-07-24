@@ -1,12 +1,11 @@
 ---
-
 slug: "university-applications"
 name: "university-applications"
 version: 1.2.11
 displayName: "命理大师"
 summary: "全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。。全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。核心能力: - 金融工具领域的专业化AI"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。核心能力:
 
   - 金融工具领域的专业化AI辅助工具
@@ -31,6 +30,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - agent
+  - applications
+  - 不支持
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 命理大师
 
 ## 付费版专享能力

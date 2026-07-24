@@ -1,12 +1,11 @@
 ---
-
 slug: "k8s"
 name: "k8s"
 version: 1.0.1
 displayName: "Kubernetes"
 summary: "规避Kubernetes常见错误,资源限制/探针/选择器。Avoid common Kubernetes mistakes — resource limits, probe configur"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   Avoid common Kubernetes mistakes — resource limits, probe configuration,
   selector mismatches, and。Use when 用户需要Kubernetes相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
@@ -18,6 +17,11 @@ tags:
   - agent
   - 开发
   - 代码
+  - yaml
+  - requests
+  - limits
+  - deployment
+  - resources
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Kubernetes
 
 ## 付费版专享能力

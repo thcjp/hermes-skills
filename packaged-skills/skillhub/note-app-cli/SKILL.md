@@ -1,24 +1,15 @@
 ---
-
 slug: "note-app-cli"
 name: "note-app-cli"
 version: "1.0.0"
 displayName: "Obsidian Official Cl"
 summary: "Obsidian管理技能,管笔记库(权限较广需谨慎)。This skill matches its Obsidian-management purpose, but it gives an"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   This skill matches its Obsidian-management purpose, but it gives an
   agent broad power to change, 
 tags:
-  - Integrations
-  - 工具
-  - 效率
-  - 自动化
-  - 集成
-  - integration
-  - 开发
-  - 代码
-  - 研究
+  - 效率,obsidian,sync,file,dev,history
 tools:
   - read
   - exec
@@ -26,9 +17,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Obsidian Official Cl
 
 ## 付费版专享能力

@@ -29,6 +29,11 @@ tags:
   - 生活
   - 健康
   - 写作
+  - member_id
+  - self
+  - headers
+  - json
+  - resp
 tools:
   - read
   - exec

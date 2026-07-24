@@ -17,6 +17,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - ttl
+  - set
+  - key
+  - redis
+  - user
 tools:
   - read
   - exec

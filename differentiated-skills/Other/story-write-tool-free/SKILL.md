@@ -1,5 +1,4 @@
 ---
-
 slug: story-write-tool-free
 name: story-write-tool-free
 version: 1.0.0
@@ -44,15 +43,18 @@ tags:
   - 研究
   - 分析
   - 创意
+  - story_write
+  - 返回结构
+  - 用户提供
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 长篇网文写作 - 免费版
 
 ## 概述

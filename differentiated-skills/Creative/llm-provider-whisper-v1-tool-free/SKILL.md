@@ -1,5 +1,4 @@
 ---
-
 slug: "llm-provider-whisper-v1-tool-free"
 name: "llm-provider-whisper-v1-tool-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Whisper v1转录免费版"
 summary: "Whisper v1稳定版本地转录工具,支持基础语音转文字与字幕生成,适合个人快速上手。。基于 Whisper v1 稳定版本的本地语音转文字工具(免费版)。核心能力: - v1 稳定版 C"
 license: "Proprietary"
 edition: "free"
-description: |-，可自动提升工作效率
+description: |-
   基于 Whisper v1 稳定版本的本地语音转文字工具(免费版)。核心能力:
   - v1 稳定版 CLI 转录能力,接口简洁可靠
   - 支持 mp3 / m4a / wav 等常见音频格式
@@ -38,15 +37,18 @@ tags:
   - 创意
   - 图像
   - 写作
+  - whisper
+  - model
+  - small
+  - output_format
+  - ffmpeg
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Whisper v1 语音转文字工具 - 免费版
 
 ## 概述

@@ -15,6 +15,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - 文件
+  - src
+  - diff
+  - oauth
+  - blocking
 tools:
   - read
   - exec

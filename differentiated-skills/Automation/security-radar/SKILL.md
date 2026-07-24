@@ -13,6 +13,11 @@ tags:
   - 情报订阅
   - 工作流
   - 效率
+  - json
+  - bash
+  - severity
+  - skill-platform
+  - feed
 tools:
   - read
   - exec

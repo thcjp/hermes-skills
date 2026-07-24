@@ -1,12 +1,11 @@
 ---
-
 slug: "logo-design-guide"
 name: "logo-design-guide"
 version: 0.1.6
 displayName: "Logo设计指南"
 summary: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。。从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式 输出(PNG/JPG/SVG/ICO/WebP)、多平"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式
   输出(PNG/JPG/SVG/ICO/WebP)、多平台适配(Favicon/App/PWA/Social)、
   色彩与字体系统、布局变体、矢量优先与一致性规范。适用于独立开发者、
@@ -21,10 +20,13 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - logo
+  - svg
+  - favicon
+  - png
+  - 执行核心
 category: "Creative"
-
 ---
-
 # Logo设计指南
 
 从辨识度设计到多平台交付的Logo设计全流程,确保Logo在任何尺寸、任何背景、任何平台下都清晰可辨且一致.

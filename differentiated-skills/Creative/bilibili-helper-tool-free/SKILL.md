@@ -1,5 +1,4 @@
 ---
-
 slug: bilibili-helper-tool-free
 name: bilibili-helper-tool-free
 version: 1.0.0
@@ -35,15 +34,18 @@ tags:
   - 个人创作
   - 视频
   - 媒体
+  - python
+  - bili
+  - 标签推荐
+  - 主题
+  - agent
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # B站创作助手免费版
 
 ## 概述

@@ -1,5 +1,4 @@
 ---
-
 slug: paper-parse-tool-free
 name: paper-parse-tool-free
 version: 1.0.0
@@ -29,15 +28,17 @@ tags:
   - 知识
   - 文档
   - 写作
+  - 支持创建
+  - 查询
+  - input_params
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 论文解析工具（免费版）
 
 ## 概述

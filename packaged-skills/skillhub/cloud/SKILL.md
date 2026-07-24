@@ -1,12 +1,11 @@
 ---
-
 slug: "cloud"
 name: "cloud"
 version: 1.0.1
 displayName: "消费级云存储助手"
 summary: "选择、整理、同步、分享与备份iCloud、Google Drive、Dropbox等个人云存储文件。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   消费级云存储助手帮助用户在iCloud、Google Drive、Dropbox、OneDrive等个人云存储服务间
   做出选择、整理、同步、分享与备份决策。覆盖服务选型、常见困惑澄清、存储满处理、备份策略、
   文件分享与安全基础。不适用于AWS、Azure、S3等infrastructure基础设施场景.
@@ -17,6 +16,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - agent
+  - 服务
+  - 用户提供
+  - api
+  - 的处理结
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Cloud — 消费级云存储助手
 
 ## 输入格式

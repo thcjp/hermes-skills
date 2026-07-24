@@ -1,12 +1,11 @@
 ---
-
 slug: topic-hunter
 name: topic-hunter
 version: 1.0.1
 displayName: "选题捕手"
 summary: "告别不知道写啥,4平台热点聚合+趋势评分+差异化选题,3秒锁定下一个爆款选题。选题捕手是一款内容选题推荐工具,解决"不知道写什么"的核心痛点. 聚合4大平台热点,基于5维趋势评分筛选高潜选题"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   选题捕手是一款内容选题推荐工具,解决"不知道写什么"的核心痛点.
   聚合4大平台热点,基于5维趋势评分筛选高潜选题,3秒锁定下一个爆款.
   核心能力:
@@ -28,15 +27,18 @@ tags:
   - 开发
   - 代码
   - 知识
+  - api
+  - llm
+  - 标注
+  - agent
+  - warning
 tools:
   - read
   - exec
   - glob
   - grep
 category: "Automation"
-
 ---
-
 # 选题捕手 v1.1.0
 
 解决内容创作者"不知道写什么"的核心痛点,聚合4大平台热点,基于5维趋势评分筛选高潜选题.

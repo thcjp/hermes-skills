@@ -1,5 +1,4 @@
 ---
-
 slug: port-transfer-tool-free
 name: port-transfer-tool-free
 version: 1.0.0
@@ -41,6 +40,11 @@ tags:
   - AI代理
   - agent
   - 研究
+  - json
+  - bundle
+  - env
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec
@@ -48,9 +52,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 工具移植工具（免费版）
 
 ## 概述

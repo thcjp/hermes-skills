@@ -19,6 +19,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - css
+  - obsidian
+  - markdown-preview-view
+  - daily
+  - 基础入门
 tools:
   - read
   - exec

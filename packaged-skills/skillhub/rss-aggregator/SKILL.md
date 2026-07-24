@@ -1,12 +1,11 @@
 ---
-
 slug: "rss-aggregator"
 name: "rss-aggregator"
 version: 1.0.3
 displayName: "Rss Aggregator"
 summary: "自动读取配置的 RSS 链接，抓取并合并多源报道，去重历史推送，生成无 Emoji、高信息密度的 Markdown 简报。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   自动读取配置的 RSS 链接，抓取并合并多源报道，去重历史推送，生成无 Emoji、高信息密度的 Markdown 简报。核心能力:
 
   - 研究工具领域的专业化AI辅助工具
@@ -27,15 +26,18 @@ tags:
   - RSS
   - 订阅
   - 信息
+  - rss
+  - api
+  - 不支持
+  - markdown
+  - agent
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # Rss Aggregator
 
 ## 付费版专享能力

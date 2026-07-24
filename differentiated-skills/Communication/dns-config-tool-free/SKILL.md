@@ -1,5 +1,4 @@
 ---
-
 slug: dns-config-tool-free
 name: dns-config-tool-free
 version: 1.0.0
@@ -39,15 +38,18 @@ tags:
   - 通信
   - 邮件
   - 开发
+  - com
+  - example
+  - ttl
+  - www
+  - dig
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # DNS 配置工具(免费版)
 
 ## 概述

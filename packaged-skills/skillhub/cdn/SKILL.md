@@ -1,12 +1,11 @@
 ---
-
 slug: "cdn"
 name: "cdn"
 version: 1.0.2
 displayName: "CDN"
 summary: "配置优化排障CDN部署,缓存策略+安全加固,加速又稳。Configure, optimize, and troubleshoot CDN deployments with caching s"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   Configure, optimize, and troubleshoot CDN deployments with caching strategies,
   security hardening。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 运维
   - 监控
   - 开发
+  - cdn
+  - https
+  - com
+  - example
+  - 缓存
 tools:
   - read
   - exec
@@ -27,9 +31,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # CDN
 
 ## 付费版专享能力

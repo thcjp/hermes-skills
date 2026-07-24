@@ -1,5 +1,4 @@
 ---
-
 slug: encryption-tool-free
 name: encryption-tool-free
 version: 1.0.0
@@ -48,6 +47,11 @@ tags:
   - 开发
   - 代码
   - 创意
+  - password
+  - salt
+  - grep
+  - age
+  - file
 tools:
   - read
   - exec
@@ -55,9 +59,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 加密工具免费版为开发者提供日常数据加密保护能力。工具涵盖文件加密解密、密码哈希存储、加密算法选择指南和基础代码安全审计,帮助开发者在开发阶段正确使用加密技术保护敏感数据.
 本版本适合敏感文件加密保护、用户密码安全存储和基础安全代码审查。所有操作通过命令行工具和代码示例完成.
 ## 核心能力

@@ -1,5 +1,4 @@
 ---
-
 slug: merge-pdf-tool-free
 name: merge-pdf-tool-free
 version: 1.0.0
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 写作
+  - pdf
+  - 支持创建
+  - 查询
+  - input_params
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # PDF合并工具（免费版）
 
 ## 概述

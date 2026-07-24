@@ -1,12 +1,11 @@
 ---
-
 slug: "chart"
 name: "chart"
 version: 1.0.1
 displayName: "本地图表生成引擎"
 summary: "本地优先的图表生成引擎，支持bar/line/pie/scatter四种类型，无需联网，输出可复用于报告与幻灯片。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   本地优先（local-first）的图表生成引擎，将数字转换为清晰的可视化输出.
   基于Python与matplotlib，支持柱状图、折线图、饼图、散点图四种核心类型.
   所有数据与产物仅落地本地，不依赖任何第三方图表API或云同步.
@@ -18,17 +17,7 @@ description: |-，可自动提升工作效率
   - 存储初始化：init_storage.py 一键初始化本地存储
   - 输出可复用于报告、幻灯片与快速决策
 tags:
-  - 需求设计
-  - 数据可视化
-  - matplotlib
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 开发
-  - 代码
-  - 研究
+  - matplotlib,效率,python3,labels,values,bash
 tools:
   - read
   - exec
@@ -36,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Chart — 本地图表生成引擎
 
 ## 输入格式

@@ -1,12 +1,11 @@
 ---
-
 slug: "finance-report-analyzer"
 name: "finance-report-analyzer"
 version: 1.2.1
 displayName: "Finance Report Analy"
 summary: "分析Excel/PDF财务数据,生成含迷你图的交互报告。Analyze financial data from uploaded Excel/PDF files and generate i"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Analyze financial data from uploaded Excel/PDF files and generate interactive
   reports with sparkl。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 金融
   - 财务
   - 数据
+  - 按流程执
+  - trend
+  - forecast
+  - sparkline
+  - charts
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Finance"
-
 ---
-
 # Finance Report Analy
 
 ## 付费版专享能力

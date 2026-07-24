@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - str
+  - self
+  - figma
+  - 支持创建
+  - 查询
 tools:
   - read
   - exec

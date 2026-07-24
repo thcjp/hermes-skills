@@ -1,5 +1,4 @@
 ---
-
 slug: learn-cog-tool-free
 name: learn-cog-tool-free
 version: 1.0.0
@@ -28,15 +27,18 @@ tags:
   - 分析
   - 知识
   - 文档
+  - interval
+  - 支持创建
+  - 查询
+  - input_params
+  - repetitions
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 认知学习工具（免费版）
 
 ## 概述

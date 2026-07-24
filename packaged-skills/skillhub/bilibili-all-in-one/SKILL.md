@@ -1,12 +1,11 @@
 ---
-
 slug: "bilibili-all-in-one"
 name: "bilibili-all-in-one"
 version: 1.0.25
 displayName: "B站全功能工具箱"
 summary: "B站热门监控、视频下载、数据追踪、字幕处理、播放与投稿一体化工具集。。面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、 数据追踪(W"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、
   数据追踪(Watcher)、字幕处理(Subtitle)、播放信息(Player)与视频投稿(Publisher)六大模块.
   支持热门/热搜/必看榜/分区排行实时获取,360p至4K多清晰度下载与mp4/flv/mp3格式转换,
@@ -22,6 +21,11 @@ tags:
   - B站
   - 视频
   - 媒体
+  - hot_monitor
+  - python
+  - main
+  - api
+  - watcher
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Bilibili All In One 全功能工具箱
 
 ## 输入格式

@@ -1,12 +1,11 @@
 ---
-
 slug: "resume-assistant-free"
 name: "resume-assistant-free"
 version: 1.0.1
 displayName: "简历助手免费版"
 summary: "免费版简历助手，支持基础评分与润色功能。。简历助手免费版，提供基础的简历评分与润色功能. 支持100分制评分与基础检查项审查. 适用于求职者的简历基础优化."
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   简历助手免费版，提供基础的简历评分与润色功能.
   支持100分制评分与基础检查项审查.
   适用于求职者的简历基础优化.
@@ -25,10 +24,12 @@ tags:
   - AI代理
   - agent
   - 知识
+  - api
+  - score
+  - html
+  - 简历评分
 category: "Automation"
-
 ---
-
 # 简历助手（免费版）
 
 提供基础简历评分与润色功能的AI助手.

@@ -1,5 +1,4 @@
 ---
-
 slug: ui-ux-promax-v2-pro
 name: ui-ux-promax-v2-pro
 version: 1.0.0
@@ -28,6 +27,11 @@ tags:
   - 技术栈
   - 规则引擎
   - UI设计
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - design-system
 tools:
   - read
   - exec
@@ -35,9 +39,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # UI/UX ProMax V2 - 专业版
 
 ## 概述

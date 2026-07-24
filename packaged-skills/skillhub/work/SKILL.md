@@ -1,12 +1,11 @@
 ---
-
 slug: "work"
 name: "work"
 version: 1.0.1
 displayName: "职场工作汇报"
 summary: "职场日常工作指导，覆盖专业沟通、会议准备、职场动态与入职90天策略。Work Skill 是职场日常工作指导工具，覆盖 Professional Communication（专业沟通）、 W"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Work Skill 是职场日常工作指导工具，覆盖 Professional Communication（专业沟通）、
   Workplace Dynamics（职场动态）、First 90 Days（入职90天）、Situation Detection（情境识别）、
   Work Profile（工作画像）五大能力。帮助处理邮件起草、会议准备、状态汇报、
@@ -21,6 +20,11 @@ tags:
   - 写作
   - 电商
   - 研究
+  - agent
+  - 策略
+  - work
+  - 情境识别
+  - 不支持
 tools:
   - read
   - write
@@ -28,9 +32,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Work Skill 职场工作汇报
 
 职场日常工作指导，覆盖专业沟通、职场动态处理、入职适应、情境识别与工作画像构建.

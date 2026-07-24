@@ -1,18 +1,22 @@
 ---
-
 slug: "company-search-fengniao"
 name: "company-search-fengniao"
 version: 1.0.3
 displayName: "Company Search Fengn"
 summary: "企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行..."
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - Research
   - 搜索
   - 检索
   - 工具
+  - entid
+  - 不支持
+  - 依赖说明
+  - company
+  - search
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # Company Search Fengn
 
 ## 付费版专享能力

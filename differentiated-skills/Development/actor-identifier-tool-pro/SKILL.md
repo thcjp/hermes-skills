@@ -1,5 +1,4 @@
 ---
-
 slug: "actor-identifier-tool-pro"
 name: "actor-identifier-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "仓库协作分析(专业版)"
 summary: "面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。。仓库协作分析工具专业版为团队与企业提供端到端Git仓库协作分析能力,涵盖多仓库批量分析、自定义指标、CI"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   仓库协作分析工具专业版为团队与企业提供端到端Git仓库协作分析能力,涵盖多仓库批量分析、自定义指标、CI/CD集成与企业级聚合报告。核心能力:
   - 多仓库批量分析与汇总
   - 自定义指标与团队级聚合
@@ -37,6 +36,11 @@ tags:
   - 分析
   - 开发
   - 代码
+  - echo
+  - git
+  - repo
+  - 新增
+  - pro
 tools:
   - read
   - exec
@@ -44,9 +48,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 仓库协作分析工具(专业版)
 
 ## 概述

@@ -15,6 +15,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - thesis-helper
+  - topic
+  - bash
+  - outline
+  - file
 tools:
   - read
   - exec

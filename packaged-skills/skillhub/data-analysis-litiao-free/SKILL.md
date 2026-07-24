@@ -1,12 +1,11 @@
 ---
-
 slug: "data-analysis-litiao-free"
 name: "data-analysis-litiao-free"
 version: "1.0.0"
 displayName: "数据分析助手(免费版)"
 summary: "基础数据分析框架，含方法论优先与统计严谨性检查清单，支持假设检验与描述统计。数据分析助手免费版，提供基础的数据分析框架与统计检查能力. 核心能力包括： - 方法论优先框架（决策目标、证伪条件"
 license: "MIT"
-description: |-，可分析提升工作效率
+description: |-
   数据分析助手免费版，提供基础的数据分析框架与统计检查能力.
   核心能力包括：
   - 方法论优先框架（决策目标、证伪条件、数据盘点、时间窗口）
@@ -21,6 +20,11 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - api
+  - 提升
+  - 分析
+  - 免费版不
+  - agent
 tools:
   - read
   - exec
@@ -28,9 +32,7 @@ tools:
   - glob
 homepage: ""
 category: "Research"
-
 ---
-
 # 数据分析助手（免费版）
 
 ## 输入格式

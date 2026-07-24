@@ -19,6 +19,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - json
+  - node
+  - bash
+  - tmp
+  - 不支持
 tools:
   - read
   - exec

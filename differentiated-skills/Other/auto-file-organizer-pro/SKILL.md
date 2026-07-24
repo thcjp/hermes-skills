@@ -19,6 +19,11 @@ tags:
   - 监控
   - 工作流
   - 研究
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - dedup
 tools:
   - read
   - exec

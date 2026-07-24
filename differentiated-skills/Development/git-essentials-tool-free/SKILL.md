@@ -43,6 +43,11 @@ tags:
   - 开发工具
   - Git
   - 版本控制
+  - git
+  - stash
+  - bash
+  - log
+  - 用户提供
 tools:
   - read
   - exec

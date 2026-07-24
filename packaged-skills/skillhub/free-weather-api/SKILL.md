@@ -1,18 +1,22 @@
 ---
-
 slug: "free-weather-api"
 name: "free-weather-api"
 version: 1.0.1
 displayName: "weather"
 summary: "查询指定城市或地区的天气预报信息，包括温度、天气状况、降水概率、风力风向等。支持实时天气和未来多日预报查询。"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   查询指定城市或地区的天气预报信息，包括温度、天气状况、降水概率、风力风向等。支持实时天气和未来多日预报查询。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - Lifestyle
   - API
   - 接口
   - 开发工具
+  - api
+  - 依赖说明
+  - 示例数据
+  - 不支持
+  - agent
 tools:
   - read
   - exec
@@ -20,9 +24,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # weather
 
 ## 付费版专享能力

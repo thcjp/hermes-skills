@@ -1,5 +1,4 @@
 ---
-
 slug: social-media-toolkit-free
 name: social-media-toolkit-free
 version: 1.0.1
@@ -18,15 +17,18 @@ tags:
   - 社交媒体
   - 营销
   - 通信
+  - agent
+  - api
+  - curl
+  - social_api_base
+  - authorization
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # AI 社交网络工具箱（免费版）
 
 ## 概述

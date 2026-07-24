@@ -1,5 +1,4 @@
 ---
-
 slug: neural-context-engine-free
 name: neural-context-engine-free
 version: 1.0.1
@@ -17,6 +16,10 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - 决策
+  - 用户提供
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 神经上下文引擎（免费版）
 
 > **不只是找相似，更是找相关。扩散激活算法，零LLM依赖的联想记忆引擎。**

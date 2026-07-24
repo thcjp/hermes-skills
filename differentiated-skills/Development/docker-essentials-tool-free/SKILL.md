@@ -41,6 +41,11 @@ tags:
   - 容器化
   - 容器
   - DevOps
+  - docker
+  - container_name
+  - docker-compose
+  - bash
+  - run
 tools:
   - read
   - exec

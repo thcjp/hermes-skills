@@ -1,5 +1,4 @@
 ---
-
 slug: linear-cli-pro
 name: linear-cli-pro
 version: 1.0.1
@@ -14,6 +13,11 @@ tags:
   - 开发者工具
   - 工作流
   - 效率
+  - linear
+  - issue
+  - json
+  - tmp
+  - graphql
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Linear CLI 专家
 
 在 Agent 运行时中安全、稳定地操作 Linear。所有写操作遵循"预览-执行-校验"闭环，所有 Markdown 内容走文件/stdin 而非内联，批量操作有并发与限速保护.

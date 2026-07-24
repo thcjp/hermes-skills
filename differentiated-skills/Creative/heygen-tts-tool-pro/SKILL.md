@@ -1,5 +1,4 @@
 ---
-
 slug: "heygen-tts-tool-pro"
 name: "heygen-tts-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "HeyGen TTS专业版"
 summary: "企业级HeyGen TTS工具,支持SSML标记、批量生成、词级时间戳与API服务化,适配生产环境。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   面向团队与企业用户的 HeyGen 文字转语音工具(专业版)。核心能力:
   - 涵盖免费版全部能力(Starfish TTS、多语言、语速控制、停顿)
   - SSML 高级标记(完整语音合成标记语言)
@@ -39,15 +38,18 @@ tags:
   - 创意
   - 图像
   - 运维
+  - ssml
+  - prosody
+  - api
+  - 不支持
+  - break
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 HeyGen TTS 工具(专业版)在免费版(`heygen-tts-tool-free`)基础 TTS 合成能力之上,新增 SSML 高级标记、批量生成、词级时间戳、多语言混合与 API 服务化等企业级能力。适合需要高吞吐与精细控制的内容生产团队.
 专业版与免费版 API 完全兼容,已使用免费版的代码无需修改即可运行。升级后可启用高级特性.
 ## 核心能力

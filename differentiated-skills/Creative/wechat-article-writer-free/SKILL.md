@@ -1,5 +1,4 @@
 ---
-
 slug: wechat-article-writer-free
 name: wechat-article-writer-free
 version: 1.0.1
@@ -41,15 +40,18 @@ tags:
   - 研究
   - 分析
   - 创意
+  - agent
+  - draft
+  - python
+  - tone
+  - 职场新人
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 公众号写作免费版
 
 ## 概述

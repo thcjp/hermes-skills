@@ -1,12 +1,11 @@
 ---
-
 slug: "weiyun-skills"
 name: "weiyun-skills"
 version: 1.0.11
 displayName: "Weiyun Skills"
 summary: "微云技能集合,提供内容生成与专业风格规范,支持多种变体处理,付费版独享批量与高级功能。。微云网盘MCP接口完整技能. 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人气开源Sk"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   微云网盘MCP接口完整技能.
   核心能力:
 
@@ -33,6 +32,11 @@ tags:
   - AI代理
   - agent
   - 创意
+  - weiyun
+  - skills
+  - 协议
+  - 示例数据
+  - api
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Weiyun Skills
 
 ## 付费版专享能力

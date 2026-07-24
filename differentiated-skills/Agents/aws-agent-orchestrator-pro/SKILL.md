@@ -24,6 +24,11 @@ tags:
   - AWS
   - 云计算
   - DevOps
+  - agentcore
+  - gateway
+  - state
+  - orchestrator
+  - agent
 tools:
   - read
   - exec

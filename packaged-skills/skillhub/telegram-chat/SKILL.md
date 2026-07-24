@@ -1,5 +1,4 @@
 ---
-
 slug: "telegram-chat"
 name: "telegram-chat"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "电报聊天工具专业版"
 summary: "企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。。电报聊天工具专业版,面向团队与企业用户提供多 Bot 管理、主动消息推送、消息归档审计与群组批"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   电报聊天工具专业版,面向团队与企业用户提供多 Bot 管理、主动消息推送、消息归档审计与群组批量管理能力。核心能力:
   - 多 Bot 统一管理与快速切换
   - 主动消息推送(无需被艾特即可发送)
@@ -34,6 +33,11 @@ tags:
   - 消息归档
   - 社交
   - 通信
+  - bot
+  - 专业版独
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # 电报聊天工具专业版
 
 ## 付费版专享能力

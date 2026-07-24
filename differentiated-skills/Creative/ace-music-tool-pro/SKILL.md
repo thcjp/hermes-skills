@@ -36,6 +36,11 @@ tags:
   - 商业内容
   - 音频
   - 创意
+  - cover
+  - mp3
+  - 批量生成
+  - repaint
+  - api
 tools:
   - read
   - exec

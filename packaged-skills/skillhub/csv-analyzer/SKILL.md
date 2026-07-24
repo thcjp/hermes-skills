@@ -1,12 +1,11 @@
 ---
-
 slug: "csv-analyzer"
 name: "csv-analyzer"
 version: 1.0.1
 displayName: "CSV数据分析器"
 summary: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。。CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果. 仅依赖Python标准库"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果.
   仅依赖Python标准库（csv模块），无需pandas或重型依赖，在2GB内存服务器上运行无压力.
   核心能力：
@@ -31,6 +30,11 @@ tags:
   - AI代理
   - agent
   - 开发
+  - csv
+  - python3
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Csv Analyzer — CSV数据分析器
 
 用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果——无需pandas或重型依赖.

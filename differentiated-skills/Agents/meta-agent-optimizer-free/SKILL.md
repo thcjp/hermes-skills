@@ -16,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - learnings
+  - eof
+  - 条目格式
+  - 特性请求
+  - 用户提供
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: local-rag-tool-free
 name: local-rag-tool-free
 version: 1.0.0
@@ -29,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - 支持创建
+  - 查询
+  - input_params
+  - index
+  - word
 tools:
   - read
   - exec
@@ -36,9 +40,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 本地文件检索（免费版）
 
 ## 概述

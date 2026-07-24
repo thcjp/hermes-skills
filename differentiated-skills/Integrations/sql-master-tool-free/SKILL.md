@@ -20,6 +20,11 @@ tags:
   - 创意
   - 图像
   - 开发
+  - sql
+  - orders
+  - create
+  - null
+  - select
 tools:
   - read
   - exec

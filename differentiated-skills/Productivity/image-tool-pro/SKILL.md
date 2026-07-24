@@ -18,6 +18,11 @@ tags:
   - 图像处理
   - AI绘图
   - 创意
+  - pro
+  - jpg
+  - agent
+  - free
+  - 逻辑
 tools:
   - read
   - exec

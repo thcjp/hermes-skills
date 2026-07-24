@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - 知识
+  - jira
+  - free
+  - pro
+  - jql
+  - agent
 tools:
   - read
   - exec

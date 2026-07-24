@@ -26,6 +26,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - self
+  - prompt
+  - def
+  - scheduler
+  - steps
 tools:
   - read
   - exec

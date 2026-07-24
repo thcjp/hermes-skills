@@ -1,23 +1,14 @@
 ---
-
 slug: "story-long-analyze"
 name: "story-long-analyze"
 version: 1.1.12
 displayName: "Story Long Analyze"
 summary: "长篇网文拆文。深度拆解爆款长篇小说的黄金三章、人设架构、爽点设计、节奏控制。单一深度拆解管道：跑完黄金三章（Stage 1）后产出快速预览报告并询问是否继续全量拆解，确认后从"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   长篇网文拆文。深度拆解爆款长篇小说的黄金三章、人设架构、爽点设计、节奏控制。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
-  - Other
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
+  - 效率,依赖说明,不支持,analyze,agent,api
 tools:
   - read
   - exec
@@ -25,9 +16,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Story Long Analyze
 
 ## 付费版专享能力

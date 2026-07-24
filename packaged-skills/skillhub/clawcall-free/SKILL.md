@@ -1,12 +1,11 @@
 ---
-
 slug: "clawcall-free"
 name: "clawcall-free"
 version: "1.0.0"
 displayName: "语音通话服务-免费版"
 summary: "AI语音代理拨打美国真实电话的免费版，支持基础外呼与轮询，每日有限试用额度。语音通话服务免费版提供基础外呼能力。AI语音代理可拨号、对话、处理简单电话菜单， 并在通话结束后返回转录与结果。首"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   语音通话服务免费版提供基础外呼能力。AI语音代理可拨号、对话、处理简单电话菜单，
   并在通话结束后返回转录与结果。首次外呼可自动签发API密钥。
   核心能力：
@@ -28,15 +27,18 @@ tags:
   - 代码
   - 写作
   - 电商
+  - api
+  - task
+  - api_key
+  - call
+  - answered
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 语音通话服务（免费版）
 
 语音通话服务免费版让AI代理为用户拨打真实的美国电话。语音AI代理负责拨号、对话、处理简单电话菜单，并在通话结束后返回转录与结果。首次外呼可自动签发API密钥。

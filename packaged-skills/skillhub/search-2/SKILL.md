@@ -1,12 +1,11 @@
 ---
-
 slug: "search-2"
 name: "search-2"
 version: 0.1.1
 displayName: "Search"
 summary: "用Tavily的LLM优化搜索API搜网,返相关结果与片段。Search the web using Tavily's LLM-optimized search API。Returns re"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Search the web using Tavily's LLM-optimized search API。Returns relevant
   results with content sni。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - search
+  - api
+  - header
+  - json
+  - query
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # Search
 
 ## 付费版专享能力

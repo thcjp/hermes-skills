@@ -1,5 +1,4 @@
 ---
-
 slug: word-toolkit-free
 name: word-toolkit-free
 version: 1.0.1
@@ -39,15 +38,18 @@ tags:
   - 研究
   - 分析
   - 写作
+  - word
+  - osascript
+  - tell
+  - microsoft
+  - pdf
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Word文档控制工具（免费版）
 
 ## 概述

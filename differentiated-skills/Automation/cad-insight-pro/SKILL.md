@@ -13,6 +13,11 @@ tags:
   - 工程造价
   - 工作流
   - 效率
+  - analyzer
+  - pdf
+  - type
+  - ocr
+  - python
 tools:
   - read
   - exec

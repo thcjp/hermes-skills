@@ -38,6 +38,11 @@ tags:
   - 写作
   - 电商
   - AI代理
+  - owner
+  - repo-manager
+  - call
+  - params
+  - repo
 tools:
   - read
   - exec

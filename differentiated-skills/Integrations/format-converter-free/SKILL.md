@@ -36,6 +36,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - json
+  - csv
+  - yaml
+  - toml
+  - data
 tools:
   - read
   - exec

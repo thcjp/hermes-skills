@@ -40,6 +40,11 @@ tags:
   - 研究
   - 分析
   - 知识
+  - tool-pro
+  - 任务管理
+  - project
+  - 工具选型
+  - markdown
 tools:
   - read
   - exec

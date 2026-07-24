@@ -21,6 +21,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - sql
+  - 生成
+  - agent
+  - select
+  - 自然语言
 tools:
   - read
   - exec

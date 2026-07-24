@@ -13,6 +13,11 @@ tags:
   - 任务管理
   - 工作流
   - 效率
+  - cron
+  - json
+  - python3
+  - bash
+  - add_job
 tools:
   - read
   - exec

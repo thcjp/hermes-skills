@@ -21,6 +21,11 @@ tags:
   - 开发
   - 代码
   - 创意
+  - 联网搜索
+  - api
+  - content
+  - 多轮对话
+  - role
 tools:
   - read
   - exec

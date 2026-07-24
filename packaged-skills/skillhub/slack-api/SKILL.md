@@ -1,12 +1,11 @@
 ---
-
 slug: "slack-api"
 name: "slack-api"
 version: 1.0.12
 displayName: "Slack"
 summary: "Slack API托管OAuth,发消息/管频道/搜会话。Slack API integration with managed OAuth。Send messages, manage cha"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Slack API integration with managed OAuth。Send messages, manage channels,
   search conversations, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -15,6 +14,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - slack
+  - maton
+  - json
+  - 按流程执
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Slack
 
 ## 付费版专享能力

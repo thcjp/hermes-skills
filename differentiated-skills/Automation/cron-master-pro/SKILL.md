@@ -13,6 +13,11 @@ tags:
   - 平台精通
   - 工作流
   - 效率
+  - cron
+  - agent
+  - kind
+  - agentturn
+  - schedule
 tools:
   - read
   - exec

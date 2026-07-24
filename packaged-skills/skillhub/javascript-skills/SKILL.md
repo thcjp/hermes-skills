@@ -1,12 +1,11 @@
 ---
-
 slug: "javascript-skills"
 name: "javascript-skills"
 version: 1.0.3
 displayName: "JavaScript"
 summary: "综合JavaScript风格指南,激活即供最佳实践。A comprehensive JavaScript style guide skill。When activated, it provi"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   A comprehensive JavaScript style guide skill。When activated, it provides
   best-practice JavaScrip。
 tags:
@@ -19,6 +18,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - 依赖说明
+  - 示例数据
+  - 不支持
+  - style
+  - agent
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # JavaScript
 
 ## 付费版专享能力

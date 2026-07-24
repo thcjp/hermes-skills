@@ -1,12 +1,11 @@
 ---
-
 slug: "code"
 name: "code"
 version: 1.0.5
 displayName: "Code"
 summary: "编码工作流含规划/实现/验证/测试,交付干净软件。Coding workflow with planning, implementation, verification, and testi"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Coding workflow with planning, implementation, verification, and testing
   for clean software devel。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -23,9 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Code
 
 ## 付费版专享能力

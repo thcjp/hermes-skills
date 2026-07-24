@@ -48,6 +48,10 @@ tags:
   - 研究
   - 分析
   - 写作
+  - target
+  - bash
+  - claude
+  - myproject
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "mongodb-atlas-admin"
 name: "mongodb-atlas-admin"
 version: 1.0.1
 displayName: "文档数据库管理"
 summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时API调用"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、
   Schema定义查询和实时API调用。覆盖50+分类的完整API端点，支持 dry-run
   预检和自动确认模式.
@@ -18,19 +17,9 @@ tools:
   - grep
 homepage: ""
 tags:
-  - 数据存储
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - 写作
+  - 效率,api,bash,请参考,目录中的,脚本文件
 category: "Automation"
-
 ---
-
 # 文档数据库云管理平台
 
 通过API浏览和调用文档数据库云管理平台的管理接口.

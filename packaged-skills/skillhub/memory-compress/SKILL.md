@@ -1,12 +1,11 @@
 ---
-
 slug: "memory-compress"
 name: "memory-compress"
 version: 1.2.2
 displayName: "日志压缩器"
 summary: "将冗长日志压缩为结构化摘要，4-8倍压缩比，借鉴古文压缩哲学实现零关键事件损失。日志压缩器是面向 AI Agent 日志的智能压缩工具，解决日志日均膨胀 2500 词导致 MEMORY.md"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   日志压缩器是面向 AI Agent 日志的智能压缩工具，解决日志日均膨胀 2500 词导致 MEMORY.md 爆炸的问题.
   核心能力包括：三层记忆架构（身份层/精选记忆/原始日志）、混合提取引擎（关键词匹配+兜底提取+混合模式）、
   古文压缩四原则（去重复/留转折/去过程/留白）、批量压缩多日日志、心跳集成自动维护、边界情况全兼容.
@@ -23,10 +22,13 @@ tags:
   - 记忆管理
   - 上下文
   - AI
+  - memory
+  - node
+  - tmp
+  - file
+  - compressed
 category: "Agents"
-
 ---
-
 # 日志压缩器
 
 将冗长日志压缩为结构化摘要，4-8 倍压缩比，零关键事件损失.

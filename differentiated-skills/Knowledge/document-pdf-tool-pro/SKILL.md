@@ -24,6 +24,11 @@ tags:
   - 文档处理
   - 工具
   - 效率
+  - pdf
+  - self
+  - file_path
+  - 支持创建
+  - 查询
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "meeting-note"
 name: "meeting-note"
 version: 1.0.1
 displayName: "Meeting Note"
 summary: "探讨决策型会议纪要(结论/共识/分歧/行动项)+Zettelkasten连接。探讨/决策型会议与谈话纪要（结论/共识/分歧/决策轨迹/隐含假设/风险机会/行动项）+ Zettelkasten"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   探讨/决策型会议与谈话纪要（结论/共识/分歧/决策轨迹/隐含假设/风险机会/行动项）+ Zettelkasten 连接。Use when
   用户要整理会议纪要、复盘讨论、把多方探讨变成可执行资产。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - 按流程执
+  - 依赖说明
+  - agent
+  - 不支持
+  - api
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Meeting Note
 
 ## 付费版专享能力

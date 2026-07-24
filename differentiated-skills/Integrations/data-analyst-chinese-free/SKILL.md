@@ -31,6 +31,11 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - col
+  - plt
+  - 统计分析
+  - 分析
+  - 数据清洗
 tools:
   - read
   - exec

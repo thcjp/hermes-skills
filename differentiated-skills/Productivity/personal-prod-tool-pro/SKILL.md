@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - 集成
+  - true
+  - pro
+  - agent
+  - free
+  - 逻辑
 tools:
   - read
   - exec

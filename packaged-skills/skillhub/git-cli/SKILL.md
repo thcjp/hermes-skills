@@ -1,12 +1,11 @@
 ---
-
 slug: "git-cli"
 name: "git-cli"
 version: 1.0.2
 displayName: "Git cli"
 summary: "用Git CLI检查/暂存/提交/分支/同步代码变更。Helper for using the Git CLI to inspect, stage, commit, branch, and"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Helper for using the Git CLI to inspect, stage, commit, branch, and
   synchronize code changes。Use。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - git
+  - src
+  - feature
+  - rebase
+  - index
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Git cli
 
 ## 付费版专享能力

@@ -16,6 +16,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - self
+  - return
+  - title
+  - content
+  - result
 tools:
   - read
   - exec

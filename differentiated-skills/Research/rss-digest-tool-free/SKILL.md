@@ -36,6 +36,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - feed
+  - get
+  - entries
+  - rss
+  - bash
 tools:
   - read
   - exec

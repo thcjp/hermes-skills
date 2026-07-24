@@ -16,6 +16,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - subreddit
+  - json
+  - reddit
+  - 用户提供
+  - 解析能力
 tools:
   - read
   - exec

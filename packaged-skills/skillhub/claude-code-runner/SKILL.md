@@ -1,18 +1,22 @@
 ---
-
 slug: "claude-code-runner"
 name: "claude-code-runner"
 version: 0.1.1
 displayName: "ai-assistant Code Ru"
 summary: "经PTY调用Claude Code执行编程任务,搞定非TTY环境。Execute programming tasks via ai-assistant Code using PTY-base"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Execute programming tasks via ai-assistant Code using PTY-based invocation。Handles non-TTY environment。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
   - 开发工具
   - 代码生成
   - 编程辅助
+  - code
+  - runner
+  - result
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # ai-assistant Code Ru
 
 ## 付费版专享能力

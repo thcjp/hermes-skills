@@ -1,5 +1,4 @@
 ---
-
 slug: agentvibes-skill-free
 name: agentvibes-skill-free
 version: 1.0.1
@@ -33,6 +32,10 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent-vibes
+  - macos
+  - windows
+  - switch
 tools:
   - read
   - exec
@@ -41,9 +44,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # AgentVibes语音合成工具 - 免费版
 
 ## 概述

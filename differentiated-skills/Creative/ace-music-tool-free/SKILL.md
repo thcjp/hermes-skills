@@ -31,6 +31,10 @@ tags:
   - AI创作
   - 音频
   - 创意
+  - ace
+  - bash
+  - api
+  - output
 tools:
   - read
   - exec

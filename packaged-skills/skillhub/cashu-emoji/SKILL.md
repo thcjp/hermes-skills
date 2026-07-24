@@ -1,12 +1,11 @@
 ---
-
 slug: "cashu-emoji"
 name: "cashu-emoji"
 version: 0.1.1
 displayName: "Cashu Emoji"
 summary: "用Unicode变体选择符将Cashu令牌编解码藏于emoji,隐秘传递价值。Encode and decode Cashu tokens that are hidden inside em"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Encode and decode Cashu tokens that are hidden inside emojis using Unicode
   variation selectors。核心能力:
 
@@ -34,6 +33,11 @@ tags:
   - 代码
   - 工作流
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - emoji
+  - agent
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Cashu Emoji
 
 ## 付费版专享能力

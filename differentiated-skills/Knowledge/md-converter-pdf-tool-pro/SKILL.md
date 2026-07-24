@@ -28,6 +28,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - str
+  - pdf
+  - self
+  - output_pdf
+  - path
 tools:
   - read
   - exec

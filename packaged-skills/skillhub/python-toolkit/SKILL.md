@@ -1,5 +1,4 @@
 ---
-
 slug: "python-toolkit"
 name: "python-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Python工具箱(专业版)"
 summary: "团队级Python规范套件,含类型系统、异步、测试金字塔、性能优化与CI治理。。Python工具箱(专业版)面向团队与企业,提供完整的Python编码规范、类型系统、异步优秀实践、测试金字塔"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   Python工具箱(专业版)面向团队与企业,提供完整的Python编码规范、类型系统、异步优秀实践、测试金字塔、性能优化策略与CI/CD治理方案。核心能力:
   - 全规范覆盖:PEP 8 + 类型系统 + 异步 + 性能 + 安全
   - 完整类型注解:泛型、Protocol、TypedDict、overload
@@ -34,6 +33,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - self
+  - def
+  - user_id
+  - int
+  - userdto
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Python工具箱(专业版)
 
 ## 付费版专享能力

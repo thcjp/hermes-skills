@@ -41,6 +41,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent-browser
+  - 专业版新
+  - bash
+  - json
+  - account
 tools:
   - read
   - exec

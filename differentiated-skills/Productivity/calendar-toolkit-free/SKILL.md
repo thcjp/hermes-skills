@@ -22,6 +22,11 @@ tags:
   - 通信
   - 邮件
   - 写作
+  - agent
+  - free
+  - pro
+  - google
+  - 版本
 tools:
   - read
   - exec

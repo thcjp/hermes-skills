@@ -22,6 +22,10 @@ tags:
   - 写作
   - 电商
   - 研究
+  - dogecoin
+  - true
+  - doge
+  - bash
 tools:
   - read
   - exec

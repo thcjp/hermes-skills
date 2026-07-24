@@ -21,6 +21,11 @@ tags:
   - 研究
   - 分析
   - 创意
+  - worker
+  - default
+  - skip
+  - locked
+  - jobs
 tools:
   - read
   - exec

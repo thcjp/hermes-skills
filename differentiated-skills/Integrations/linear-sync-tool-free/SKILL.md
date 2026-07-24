@@ -21,6 +21,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - linear
+  - issue
+  - api
+  - list
+  - toml
 tools:
   - read
   - exec

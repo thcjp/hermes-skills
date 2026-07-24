@@ -1,5 +1,4 @@
 ---
-
 slug: "news-sentiment"
 name: "news-sentiment"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "舆情情绪分析专业版"
 summary: "企业级舆情监控工具,支持批量多股票扫描、自定义权重、结构化报告导出与趋势对比分析。。舆情情绪分析工具专业版,面向专业投资者与企业用户提供批量多股票扫描、自定义权重配置、结构化报告导出与趋势对"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   舆情情绪分析工具专业版,面向专业投资者与企业用户提供批量多股票扫描、自定义权重配置、结构化报告导出与趋势对比分析能力。核心能力:
   - 批量扫描多只股票(支持 A股/港股/美股混合)
   - 自定义信息源权重与事件类型分数
@@ -34,15 +33,18 @@ tags:
   - 新闻
   - 信息
   - 资讯
+  - 专业版独
+  - json
+  - csv
+  - 对比
+  - 比亚迪
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # 舆情情绪分析专业版
 
 ## 付费版专享能力

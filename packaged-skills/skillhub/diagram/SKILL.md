@@ -1,12 +1,11 @@
 ---
-
 slug: "diagram"
 name: "diagram"
 version: 1.0.1
 displayName: "Diagram"
 summary: "用Mermaid/PlantUML/ASCII从描述生成图,架构/流程/时序全覆盖。Generate diagrams from descriptions with Mermaid, Pla"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII
   for architecture, flows, seq。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -18,6 +17,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - 不支持
+  - api
+  - 依赖说明
+  - mermaid
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Diagram
 
 ## 付费版专享能力

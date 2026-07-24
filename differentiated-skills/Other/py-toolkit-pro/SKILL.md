@@ -48,6 +48,11 @@ tags:
   - 研究
   - 分析
   - 集成
+  - python
+  - asyncio
+  - 用户提供
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec

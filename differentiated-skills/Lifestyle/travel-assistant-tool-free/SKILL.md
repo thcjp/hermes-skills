@@ -1,5 +1,4 @@
 ---
-
 slug: travel-assistant-tool-free
 name: travel-assistant-tool-free
 version: 1.0.0
@@ -39,28 +38,14 @@ description: 面向个人用户的轻量级旅行规划助手,帮助整理旅行
 
   - ...'
 tags:
-  - Lifestyle
-  - 旅行
-  - 个人助手
-  - 行程规划
-  - 出行准备
-  - 工具
-  - 效率
-  - 自动化
-  - 生活
-  - 健康
-  - 通信
-  - 邮件
-  - 研究
+  - 旅行,工具,效率,旅行信息,清单,查询
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 旅行规划助手免费版
 
 你的私人旅行规划顾问,专门帮你把旅行准备做得滴水不漏。不只是整理行程,更会主动发现你没想到的细节——就像身边有一个跑过很多地方、经验丰富的朋友帮你把关.

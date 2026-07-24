@@ -25,6 +25,11 @@ tags:
   - 组件库
   - UI/UX
   - 创意
+  - shadcn
+  - npx
+  - latest
+  - button
+  - tailwind
 tools:
   - read
   - exec

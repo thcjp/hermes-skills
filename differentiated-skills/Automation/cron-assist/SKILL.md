@@ -13,6 +13,11 @@ tags:
   - 自然语言
   - 工作流
   - 效率
+  - cron-assist
+  - bash
+  - add
+  - template
+  - inbox-check
 tools:
   - read
   - exec

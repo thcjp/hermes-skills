@@ -1,5 +1,4 @@
 ---
-
 slug: "whatsapp-msg-manager"
 name: "whatsapp-msg-manager"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "WhatsApp消息管理-专业版"
 summary: "全功能WhatsApp Business消息平台,支持媒体/交互/模板/批量发送与多账号企业级管理。WhatsApp消息管理专业版,提供完整的WhatsApp Business API能力覆"
 license: "Proprietary"
 edition: "pro"
-description: |-，可处理提升工作效率
+description: |-
   WhatsApp消息管理专业版,提供完整的WhatsApp Business API能力覆盖,面向企业和专业团队。核心能力:
   - 全类型消息发送(文本/图片/视频/音频/文档/位置/联系人)
   - 交互式按钮与列表消息,提升用户互动转化
@@ -30,6 +29,11 @@ tags:
   - 营销自动化
   - 社交
   - 通信
+  - connector_call_tool
+  - params
+  - phone_number_id
+  - 包含执行
+  - 状态码
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # WhatsApp消息管理-专业版
 
 ## 付费版专享能力

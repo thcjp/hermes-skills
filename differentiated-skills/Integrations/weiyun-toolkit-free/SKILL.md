@@ -1,5 +1,4 @@
 ---
-
 slug: weiyun-toolkit-free
 name: weiyun-toolkit-free
 version: 1.0.1
@@ -21,15 +20,18 @@ tags:
   - 分析
   - AI代理
   - agent
+  - weiyun
+  - pdir_key
+  - list
+  - mcp
+  - token
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 微云工具箱（免费版）
 
 ## 概述

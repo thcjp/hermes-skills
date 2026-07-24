@@ -1,5 +1,4 @@
 ---
-
 slug: update-guardian
 name: update-guardian
 version: 1.0.1
@@ -17,6 +16,11 @@ tags:
   - 运维
   - 工作流
   - 效率
+  - update-manager
+  - lib-x
+  - config
+  - agent
+  - bash
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 更新守护者
 
 自动更新Agent平台与所有已安装技能包，但更新前先预检、先快照，更新后跑健康检查，失败自动回滚。核心信条：**更新可以自动，但回滚必须一键。**

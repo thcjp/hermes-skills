@@ -39,6 +39,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - text
+  - true
+  - 社交媒体
+  - 帮我研究
+  - arxiv
 tools:
   - read
   - exec

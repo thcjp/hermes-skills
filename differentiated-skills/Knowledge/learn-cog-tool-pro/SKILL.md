@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - card
+  - str
+  - list
+  - self
+  - interval
 tools:
   - read
   - exec

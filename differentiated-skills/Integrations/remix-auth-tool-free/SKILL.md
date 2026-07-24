@@ -18,6 +18,11 @@ tags:
   - 代码
   - AI代理
   - agent
+  - remix
+  - api
+  - bearer
+  - https
+  - remix_api_key
 tools:
   - read
   - exec

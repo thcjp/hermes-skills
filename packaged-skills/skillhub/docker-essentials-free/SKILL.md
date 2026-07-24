@@ -1,12 +1,11 @@
 ---
-
 slug: "docker-essentials-free"
 name: "docker-essentials-free"
 version: 1.0.1
 displayName: "Docker核心操作免费版"
 summary: "免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。。Docker核心操作指南免费版，提供容器生命周期管理基础命令. 包含镜像管理、容器调试与常用工作流. 适用于个人开发与学习"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   Docker核心操作指南免费版，提供容器生命周期管理基础命令.
   包含镜像管理、容器调试与常用工作流.
   适用于个人开发与学习场景的Docker容器化操作.
@@ -20,10 +19,13 @@ tags:
   - 容器
   - Docker
   - DevOps
+  - docker
+  - container
+  - bash
+  - agent
+  - container_name
 category: "Development"
-
 ---
-
 # Docker核心操作指南（免费版）
 
 涵盖容器管理、镜像操作与基础调试的Docker核心命令.

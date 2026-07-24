@@ -1,12 +1,11 @@
 ---
-
 slug: seo-rank-monopolizer
 name: seo-rank-monopolizer
 version: 1.0.1
 displayName: "AI搜索占位师"
 summary: "AI搜索时代品牌霸屏,5维GEO评分+JSON-LD注入+评分门控,提升AI引用率。AI搜索占位师——AI搜索时代品牌霸屏利器,5维GEO评分模型+JSON-LD结构化数据注入+评分门控自动"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   AI搜索占位师——AI搜索时代品牌霸屏利器,5维GEO评分模型+JSON-LD结构化数据注入+评分门控自动优化重试,提升AI搜索引擎(如文心一言/Kimi/通义千问/Perplexity)引用率。核心能力:JSON-LD结构化数据注入(Article/HowTo/FAQPage/Product)、FAQ Schema自动生成、5维GEO评分(结构化数据/引用潜力/AI可访问性/EEAT/内容质量)、llms_txt摘要生成、评分门控(低于60分自动优化重试最多2次)
 homepage: ""
 tags:
@@ -22,14 +21,17 @@ tags:
   - 研究
   - 分析
   - 知识
+  - geo
+  - faq
+  - 评分
+  - article
+  - 结构化数
 tools:
   - read
   - write
   - exec
 category: "Automation"
-
 ---
-
 # AI搜索占位师 v1.1.0
 
 AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注入+评分门控,科学提升AI搜索引擎引用率.

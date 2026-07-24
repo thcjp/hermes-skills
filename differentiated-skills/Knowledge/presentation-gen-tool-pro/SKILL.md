@@ -28,6 +28,11 @@ tags:
   - 安全
   - 加密
   - 创意
+  - self
+  - str
+  - topic
+  - slides
+  - ppt
 tools:
   - read
   - exec

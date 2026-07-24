@@ -1,12 +1,11 @@
 ---
-
 slug: "ui-ux-design"
 name: "ui-ux-design"
 version: 1.0.1
 displayName: "UI/UX设计指南"
 summary: "涵盖设计原则、配色系统、Shadcn/ui+Tailwind栈、响应式设计与WCAG 2.2无障碍的完整指南。"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   现代UI/UX设计原则、模式与最佳实践指南.
   涵盖Mobile-First响应式设计、配色系统、排版、WCAG 2.2无障碍.
   包含Shadcn/ui + Tailwind CSS技术栈集成与微交互设计.
@@ -21,10 +20,13 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - shadcn
+  - 执行核心
+  - 处理逻辑
+  - 返回结构
+  - 化结果和
 category: "Creative"
-
 ---
-
 # UI/UX设计指南
 
 涵盖设计原则、配色系统、Shadcn/ui+Tailwind栈、响应式设计与WCAG 2.2无障碍的完整指南.

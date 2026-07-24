@@ -1,12 +1,11 @@
 ---
-
 slug: "feed-to-md"
 name: "feed-to-md"
 version: 1.2.1
 displayName: "Feed To Md"
 summary: "用内置本地转换器把RSS/Atom订阅转Markdown。Convert RSS or Atom feed URLs into Markdown using the bundled loca"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Convert RSS or Atom feed URLs into Markdown using the bundled local
   converter script。Use this wh。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -18,6 +17,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - 依赖说明
+  - 不支持
+  - llm
+  - api
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Feed To Md
 
 ## 付费版专享能力

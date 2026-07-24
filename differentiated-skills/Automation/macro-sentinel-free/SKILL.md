@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - text
+  - cpi
+  - 科普解释
+  - 政策动态
+  - 国际数据
 tools:
   - read
   - exec

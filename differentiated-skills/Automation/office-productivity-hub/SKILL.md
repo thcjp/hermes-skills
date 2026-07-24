@@ -13,6 +13,11 @@ tags:
   - 文档处理
   - 工作流
   - 效率
+  - pdf
+  - excel
+  - 劳动合同
+  - failed
+  - log
 tools:
   - read
   - exec

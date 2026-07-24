@@ -38,6 +38,11 @@ tags:
   - 写作
   - 电商
   - AI代理
+  - api
+  - token
+  - moonshot
+  - node
+  - 建议
 tools:
   - read
   - exec

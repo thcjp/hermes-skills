@@ -1,5 +1,4 @@
 ---
-
 slug: "dns-networking-tool-pro"
 name: "dns-networking-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "DNS网络诊断专业版"
 summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。。面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力: -"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力:
   - 批量多目标DNS与端口巡检
   - 防火墙规则审计(iptables/ufw/云安全组)
@@ -32,14 +31,17 @@ tags:
   - 网络
   - DNS
   - 工具
+  - echo
+  - grep
+  - sudo
+  - iptables
+  - bash
 tools:
   - read
   - exec
 homepage: ""
 category: "Operations"
-
 ---
-
 DNS网络诊断工具专业版为运维团队提供企业级网络诊断能力。在免费版基础诊断能力之上,专业版新增批量多目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知,满足企业级网络运维需求.
 专业版完全兼容免费版的所有诊断命令和配置,运维团队可从免费版无缝升级,已有诊断脚本无需修改即可在专业版中使用.
 ## 核心能力

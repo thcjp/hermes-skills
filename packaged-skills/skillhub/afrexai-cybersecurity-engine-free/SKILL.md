@@ -1,12 +1,11 @@
 ---
-
 slug: "afrexai-cybersecurity-engine-free"
 name: "afrexai-cybersecurity-engine-free"
 version: "1.0.0"
 displayName: "网络安全引擎(免费版)"
 summary: "全面安全评估、STRIDE威胁建模、OWASP Top 10审计、漏洞管理与应急响应体系。免费版。企业级网络安全评估与加固体系（免费版），覆盖安全态势评估、STRIDE威胁建模、 OWASP"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   企业级网络安全评估与加固体系（免费版），覆盖安全态势评估、STRIDE威胁建模、
   OWASP Top 10应用安全审计、基础设施加固。核心能力：
   - 12阶段安全评估方法论（态势评估到评分体系）
@@ -22,10 +21,13 @@ tags:
   - 安全
   - 加密
   - 工具
+  - stride
+  - api
+  - 基础设施
+  - 威胁建模
+  - 分析
 category: "Security"
-
 ---
-
 # 网络安全引擎(免费版)
 
 企业级网络安全评估与加固体系，覆盖安全态势评估、STRIDE威胁建模、OWASP Top 10应用安全审计与基础设施加固.

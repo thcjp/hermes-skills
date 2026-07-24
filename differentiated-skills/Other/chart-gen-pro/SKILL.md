@@ -36,6 +36,11 @@ tags:
   - 创意
   - 图像
   - 运维
+  - chart
+  - bash
+  - postgresql
+  - svg
+  - sqlite
 tools:
   - read
   - exec

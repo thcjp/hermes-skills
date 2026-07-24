@@ -34,6 +34,11 @@ tags:
   - 图像处理
   - AI绘图
   - 创意
+  - desktop-agent
+  - uvx
+  - grok
+  - 图片生成
+  - imagine
 tools:
   - read
   - exec

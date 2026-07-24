@@ -35,6 +35,11 @@ tags:
   - 工作区管理
   - 社交
   - 通信
+  - slack-workspace-manager
+  - 频道
+  - slack
+  - 消息
+  - true
 tools:
   - read
   - exec

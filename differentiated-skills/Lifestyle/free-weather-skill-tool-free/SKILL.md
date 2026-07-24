@@ -1,5 +1,4 @@
 ---
-
 slug: free-weather-skill-tool-free
 name: free-weather-skill-tool-free
 version: 1.0.0
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 集成
+  - wttr
+  - curl
+  - beijing
+  - format
+  - params
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 免费天气技能 (免费版)
 
 ## 概述

@@ -1,12 +1,11 @@
 ---
-
 slug: viral-decoder
 name: viral-decoder
 version: 1.0.1
 displayName: "爆款拆解师"
 summary: "把爆款拆成可复用配方,6大爆款要素+11维拆解+逐字逐句拆解,3秒生成拆解报告。爆款拆解师是一款把爆款内容拆解成可复用创作配方的工具。基于6大爆款要素进行11维度逐字逐句拆解, 生成量化评分"
 license: Proprietary
-description: |-，可生成提升工作效率
+description: |-
   爆款拆解师是一款把爆款内容拆解成可复用创作配方的工具。基于6大爆款要素进行11维度逐字逐句拆解,
   生成量化评分、可复用配方模板和差异化创作建议,3秒生成拆解报告.
   核心能力:
@@ -24,6 +23,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - cta
+  - 分析
+  - content
+  - step
+  - 钩子
 tools:
   - read
   - write
@@ -31,9 +35,7 @@ tools:
   - glob
   - grep
 category: "Development"
-
 ---
-
 # 爆款拆解师 v1.1.0
 
 把爆款内容拆解成可复用的创作配方,基于6大爆款要素进行11维度逐字逐句拆解,生成可复用配方和差异化创作建议.

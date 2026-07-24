@@ -21,6 +21,10 @@ tags:
   - 开发
   - 代码
   - 安全
+  - json
+  - 十六进制
+  - agent
+  - 未引号键
 tools:
   - read
   - exec

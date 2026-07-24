@@ -1,5 +1,4 @@
 ---
-
 slug: "docker-essentials-v1-tool-pro"
 name: "docker-essentials-v1-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Docker V1迁移专业版"
 summary: "企业级V1迁移工具,支持自动兼容性扫描、批量迁移、配置转换与回滚保障。。面向企业运维团队的Docker V1到V2迁移专业工具,提供自动兼容性扫描、批量配置转换、渐进式迁移与回滚保障。核心能"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业运维团队的Docker V1到V2迁移专业工具,提供自动兼容性扫描、批量配置转换、渐进式迁移与回滚保障。核心能力:
   - V1到V2自动兼容性深度扫描
   - 批量Compose配置转换
@@ -33,15 +32,18 @@ tags:
   - 迁移工具
   - 容器
   - DevOps
+  - self
+  - echo
+  - docker
+  - file
+  - dockerfile
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
 ---
-
 Docker V1迁移工具专业版为企业运维团队提供从V1到V2的完整迁移解决方案。在免费版V1命令支持之上,专业版新增自动兼容性深度扫描、批量Compose配置转换、Dockerfile现代化重构、渐进式迁移与回滚保障,帮助企业安全高效地完成Docker版本升级.
 专业版完全兼容免费版的所有V1命令,运维团队可从免费版无缝升级。专业版同时支持V1和V2双环境运行,确保迁移过程中业务不中断.
 ## 核心能力

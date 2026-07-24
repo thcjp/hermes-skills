@@ -41,6 +41,10 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - https
+  - targetlanguage
+  - luoji
+  - bash
 tools:
   - read
   - exec

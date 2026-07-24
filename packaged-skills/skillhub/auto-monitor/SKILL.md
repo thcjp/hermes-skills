@@ -1,27 +1,29 @@
 ---
-
 slug: "auto-monitor"
 name: "auto-monitor"
 version: 1.0.1
 displayName: "Auto Monitor"
 summary: "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。。主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - Operations
   - 监控
   - 运维
   - 工具
+  - api
+  - monitor
+  - 不支持
+  - 依赖说明
+  - agent
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Auto Monitor
 
 ## 付费版专享能力

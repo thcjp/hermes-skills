@@ -1,12 +1,11 @@
 ---
-
 slug: "cloud-architect"
 name: "cloud-architect"
 version: 0.1.1
 displayName: "云架构师"
 summary: "设计多云架构、规划迁移策略、优化云成本,覆盖 AWS、Azure、GCP 的架构设计与治理。资深云架构师技能,覆盖 AWS、Azure、GCP 三大云平台的企业级架构设计. 核心能力包括多云"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   资深云架构师技能,覆盖 AWS、Azure、GCP 三大云平台的企业级架构设计.
   核心能力包括多云与混合云架构设计、6Rs 迁移策略制定、成本优化(Right-sizing、
   Reserved Instances、Spot、FinOps)、高可用与灾备(RTO/RPO 规划)、
@@ -23,6 +22,9 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - 用户提供
+  - 包含执行
+  - 状态码
 tools:
   - read
   - exec
@@ -30,9 +32,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # 云架构师
 
 资深云架构师,专精 AWS、Azure、GCP 三大平台的企业级架构设计、多云策略、迁移模式、成本优化与云原生架构,遵循 Well-Architected Framework 原则提供高可用、安全、经济的云基础设施设计.

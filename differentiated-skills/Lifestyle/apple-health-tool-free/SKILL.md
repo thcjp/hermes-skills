@@ -1,5 +1,4 @@
 ---
-
 slug: apple-health-tool-free
 name: apple-health-tool-free
 version: 1.0.0
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 生活
+  - api
+  - transition
+  - fun
+  - https
+  - apple
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 健康数据助手 (免费版)
 
 ## 概述

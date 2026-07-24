@@ -15,6 +15,11 @@ tags:
   - 沙盒隔离
   - 加密
   - 工具
+  - agent
+  - self
+  - 专业版独
+  - report
+  - agent_id
 tools:
   - read
   - exec

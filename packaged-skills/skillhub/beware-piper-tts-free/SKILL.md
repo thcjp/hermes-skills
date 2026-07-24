@@ -1,36 +1,23 @@
 ---
-
 slug: "beware-piper-tts-free"
 name: "beware-piper-tts-free"
 version: "1.0.0"
 displayName: "Piper TTS Lite"
 summary: "基于Piper的本地语音合成基础版,使用默认音色将文本转为MP3语音消息,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成基础版(免费)。全部推理在本地完成,零云端调用、零 AP"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   基于 Piper 神经网络引擎的本地语音合成基础版(免费)。全部推理在本地完成,零云端调用、零 API 密钥.
   核心能力:单段文本转语音、默认音色(en_US-kusal-medium)朗读、MP3 输出与语音消息封装.
   适用于偶发的语音消息投递与短文本朗读。如需多音色切换、长文本分段合并、批量生成与风格控制,请升级至 beware-piper-tts 付费版.
 tags:
-  - 研发工具
-  - Creative
-  - 语音合成
-  - 工具
-  - 效率
-  - 自动化
-  - 通信
-  - 邮件
-  - 开发
-  - 代码
-  - AI代理
+  - 语音合成,效率,piper,mp3,agent,音色
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Piper TTS Lite
 
 基于 Piper 神经网络语音合成引擎的本地 TTS 基础版。所有推理在本地完成,无需 API Key、无需联网(首次下载音色后),单段生成约 0.5-1 秒.

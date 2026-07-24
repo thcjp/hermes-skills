@@ -1,12 +1,11 @@
 ---
-
 slug: "xml"
 name: "xml"
 version: 1.0.1
 displayName: "XML"
 summary: "解析生成转换XML,命名空间与编码处理正确。Parse, generate, and transform XML with correct namespace handling and en"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Parse, generate, and transform XML with correct namespace handling and
   encoding。核心能力:
 
@@ -33,6 +32,11 @@ tags:
   - 创意
   - 图像
   - 安全
+  - xml
+  - book
+  - title
+  - xsl
+  - python
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # XML
 
 ## 付费版专享能力

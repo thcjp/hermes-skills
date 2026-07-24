@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - AI代理
+  - pro
+  - free
+  - agent
+  - true
+  - 版本
 tools:
   - read
   - exec

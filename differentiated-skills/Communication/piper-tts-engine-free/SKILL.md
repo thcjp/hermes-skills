@@ -1,5 +1,4 @@
 ---
-
 slug: piper-tts-engine-free
 name: piper-tts-engine-free
 version: 1.0.1
@@ -26,15 +25,18 @@ tags:
   - 开发
   - 代码
   - 研究
+  - mp3
+  - piper
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 本地语音合成 免费版
 
 ## 概述

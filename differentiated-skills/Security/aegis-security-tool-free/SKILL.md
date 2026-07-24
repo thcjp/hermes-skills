@@ -18,6 +18,11 @@ tags:
   - 免费版
   - 加密
   - 工具
+  - echo
+  - bash
+  - chain_id
+  - curl
+  - https
 tools:
   - read
   - exec

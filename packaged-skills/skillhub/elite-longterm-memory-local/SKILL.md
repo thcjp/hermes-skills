@@ -1,12 +1,11 @@
 ---
-
 slug: "elite-longterm-memory-local"
 name: "elite-longterm-memory-local"
 version: 1.1.1
 displayName: "本地向量记忆系统"
 summary: "基于 LanceDB 与本地 Embedding 的纯本地向量记忆，零外部 API 依赖。。基于 LanceDB 与纯 JavaScript Embedding 的本地向量记忆系统，无需外部"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   基于 LanceDB 与纯 JavaScript Embedding 的本地向量记忆系统，无需外部 API 或原生模块.
   通过 Ollama 本地运行 nomic-embed-text 模型生成向量，所有数据完全留在本地，隐私至上.
   提供五层记忆架构：热内存（SESSION-STATE.md）、温存储（LanceDB 向量）、冷存储（Git-Notes）、
@@ -23,10 +22,13 @@ tags:
   - 记忆管理
   - 上下文
   - AI
+  - node
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - ollama
 category: "Agents"
-
 ---
-
 # 本地向量记忆系统（Elite Longterm Memory Local）
 
 **本地优先，隐私至上。** 基于 LanceDB 与 Ollama 本地 Embedding 的向量记忆系统，零外部 API 依赖，所有数据完全留在本地。通过五层记忆架构与 WAL 协议，让 Agent 具备高效的语义搜索与上下文召回能力，同时保障数据隐私.

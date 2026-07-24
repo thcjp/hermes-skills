@@ -15,6 +15,11 @@ tags:
   - 巡检
   - 安全检查
   - DevOps
+  - query
+  - list
+  - echo
+  - output
+  - table
 tools:
   - read
   - exec

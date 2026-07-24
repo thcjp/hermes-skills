@@ -1,5 +1,4 @@
 ---
-
 slug: vpn-toolkit-free
 name: vpn-toolkit-free
 version: 1.0.1
@@ -47,14 +46,17 @@ tags:
   - 隐私保护
   - 加密
   - 工具
+  - vpn
+  - dns
+  - sudo
+  - wireguard
+  - kill
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
-
 ---
-
 # VPN工具箱(免费版)
 
 ## 概述

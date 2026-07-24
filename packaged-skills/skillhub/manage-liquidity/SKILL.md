@@ -1,12 +1,11 @@
 ---
-
 slug: "manage-liquidity"
 name: "manage-liquidity"
 version: 0.1.1
 displayName: "Manage Liquidity"
 summary: "在Uniswap V2/V3/V4池加撤流动性并收手续费。Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4
   pools。Handles the full flow。
 tags:
@@ -14,6 +13,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - 按流程执
+  - agent
+  - 依赖说明
+  - 不支持
+  - liquidity
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Manage Liquidity
 
 ## 付费版专享能力

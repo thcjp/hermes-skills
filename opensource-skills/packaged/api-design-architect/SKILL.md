@@ -15,6 +15,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - type
+  - api
+  - string
+  - users
+  - 设计
 tools:
   - read
   - exec

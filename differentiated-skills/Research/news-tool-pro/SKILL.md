@@ -19,6 +19,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - pro
+  - true
+  - type
+  - api
+  - news
 tools:
   - read
   - exec

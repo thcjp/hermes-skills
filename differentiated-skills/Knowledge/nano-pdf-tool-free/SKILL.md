@@ -1,5 +1,4 @@
 ---
-
 slug: nano-pdf-tool-free
 name: nano-pdf-tool-free
 version: 1.0.2
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 写作
+  - pdf
+  - 支持创建
+  - 查询
+  - input_params
+  - nano
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Nano PDF工具（免费版）
 
 ## 概述

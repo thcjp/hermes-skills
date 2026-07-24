@@ -1,5 +1,4 @@
 ---
-
 slug: log-sanitizer-free
 name: log-sanitizer-free
 version: 1.0.1
@@ -22,6 +21,11 @@ tags:
   - 安全
   - 加密
   - 开发
+  - python3
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - scan
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 日志脱敏工具（免费版）
 
 > **日志中的敏感信息雷达。六大类别识别，本地运行零数据外泄。**

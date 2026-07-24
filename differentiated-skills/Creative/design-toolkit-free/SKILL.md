@@ -1,5 +1,4 @@
 ---
-
 slug: design-toolkit-free
 name: design-toolkit-free
 version: 1.0.1
@@ -33,15 +32,18 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - markdown
+  - design-preferences
+  - 偏好
+  - profile
+  - echo
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 设计偏好工具箱（免费版）
 
 ## 概述

@@ -41,6 +41,11 @@ tags:
   - 开发
   - 代码
   - 安全
+  - git
+  - path
+  - sort
+  - 必需
+  - log
 tools:
   - read
   - exec

@@ -38,6 +38,11 @@ tags:
   - 写作
   - 电商
   - 运维
+  - v2ray
+  - bash
+  - 代理
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec

@@ -33,6 +33,11 @@ tags:
   - 开发工具
   - 版本控制
   - Git
+  - repo
+  - owner
+  - issue
+  - list
+  - json
 tools:
   - read
   - exec

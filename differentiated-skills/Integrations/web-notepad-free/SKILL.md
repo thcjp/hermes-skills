@@ -30,6 +30,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - api
+  - label
+  - web_notepad_api_key
+  - example
+  - path
 tools:
   - read
   - exec

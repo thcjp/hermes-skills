@@ -1,12 +1,11 @@
 ---
-
 slug: "hugo-blog-publisher-free"
 name: "hugo-blog-publisher-free"
 version: "1.0.0"
 displayName: "博客发布工具(免费版)"
 summary: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库(免费版)。将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取 标题、标签、分类，生成front"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取
   标题、标签、分类，生成front matter，创建标签分类映射文件，添加截断标记，
   执行Git推送并返回部署链接.
@@ -25,10 +24,13 @@ tags:
   - 创意
   - 图像
   - 运维
+  - git
+  - index
+  - content
+  - front
+  - matter
 category: "Automation"
-
 ---
-
 # 博客发布工具(免费版)
 
 将Markdown文章发布到静态站点生成器博客并推送到代码仓库.

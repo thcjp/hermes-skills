@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - tdd
+  - solo-dev
+  - plan
+  - bash
+  - execute
 tools:
   - read
   - exec

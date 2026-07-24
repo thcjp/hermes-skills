@@ -39,6 +39,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - notion
+  - tasks
+  - filter
+  - bash
+  - query
 tools:
   - read
   - exec

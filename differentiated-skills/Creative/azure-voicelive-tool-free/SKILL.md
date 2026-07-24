@@ -1,5 +1,4 @@
 ---
-
 slug: azure-voicelive-tool-free
 name: azure-voicelive-tool-free
 version: 1.0.0
@@ -37,15 +36,18 @@ tags:
   - 个人开发
   - 云计算
   - DevOps
+  - event
+  - conn
+  - await
+  - type
+  - async
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
-
 ---
-
 # Azure语音交互免费版
 
 ## 概述

@@ -1,12 +1,11 @@
 ---
-
 slug: "json-formatter"
 name: "json-formatter"
 version: 1.0.1
 displayName: "JSON Formatter"
 summary: "格式化/校验/压缩JSON并提取路径,提升可读性。Format, validate, compress JSON data, and extract JSON paths for impro"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Format, validate, compress JSON data, and extract JSON paths for improved
   readability and structu。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 创意
   - 图像
   - 开发
+  - json
+  - api
+  - store
+  - indent
+  - book
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # JSON Formatter
 
 ## 付费版专享能力

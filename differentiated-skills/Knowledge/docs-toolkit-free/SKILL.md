@@ -1,5 +1,4 @@
 ---
-
 slug: docs-toolkit-free
 name: docs-toolkit-free
 version: 1.0.1
@@ -29,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - 支持创建
+  - 查询
+  - input_params
+  - api
+  - 免费版
 tools:
   - read
   - exec
@@ -36,9 +40,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 文档导航工具包（免费版）
 
 ## 概述

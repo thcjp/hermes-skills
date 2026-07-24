@@ -1,5 +1,4 @@
 ---
-
 slug: excel-formula-tool-free
 name: excel-formula-tool-free
 version: 1.0.1
@@ -28,15 +27,18 @@ tags:
   - 分析
   - 工作流
   - 开发
+  - excel
+  - 支持创建
+  - 查询
+  - input_params
+  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Excel公式工具（免费版）
 
 ## 概述

@@ -1,5 +1,4 @@
 ---
-
 slug: xml-reader-tool-free
 name: xml-reader-tool-free
 version: 1.0.0
@@ -39,15 +38,18 @@ tags:
   - 开发
   - 代码
   - 写作
+  - xml
+  - xpath
+  - xml-reader
+  - config
+  - add
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # XML读取器工具（免费版）
 
 ## 概述

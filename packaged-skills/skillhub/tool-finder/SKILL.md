@@ -1,12 +1,11 @@
 ---
-
 slug: "tool-finder"
 name: "tool-finder"
 version: 1.7.1
 displayName: "Tool Finder"
 summary: "统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - Research
@@ -18,6 +17,11 @@ tags:
   - AI代理
   - agent
   - 知识
+  - tool-finder
+  - search
+  - 协议
+  - type
+  - 依赖说明
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Tool Finder
 
 ## 付费版专享能力

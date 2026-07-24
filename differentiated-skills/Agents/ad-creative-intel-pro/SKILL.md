@@ -16,13 +16,7 @@ description: '广告情报专业版是面向买量团队、投放优化师、市
   适用关键词：广告情报分析、批量创意导出、历史趋势回溯、下载收入预估、多市场对比、创意归因、ad creative intelligence、bulk export、historical
   trend、download revenue estimate'
 tags:
-  - 广告情报
-  - 批量分析
-  - 趋势回溯
-  - 归因分析
-  - AI代理
-  - 自动化
-  - 智能
+  - 广告情报,api,data,post,专业版增,专业版独
 tools:
   - read
   - exec

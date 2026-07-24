@@ -32,6 +32,11 @@ tags:
   - 音频处理
   - 媒体
   - 创意
+  - dlazy
+  - api
+  - text
+  - key
+  - doubao-tts
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: cron-scheduler-pro-free
 name: cron-scheduler-pro-free
 version: 1.0.1
@@ -16,15 +15,18 @@ tags:
   - 本地优先
   - 工作流
   - 效率
+  - jobs
+  - runs
+  - json
+  - self
+  - job_id
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 > **将重复性意图转化为可信赖的执行契约。本地优先，隐私安全，四种调度模式。**
 
 重复的任务只需配置一次，然后放心交给调度引擎执行。本技能提供本地优先的定时任务调度框架，支持每日、每周、每月、间隔四种调度模式，配合完整的任务生命周期管理，让Agent按计划自动执行.

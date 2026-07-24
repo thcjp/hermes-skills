@@ -1,24 +1,15 @@
 ---
-
 slug: "chart-generator-2-0-0"
 name: "chart-generator-2-0-0"
 version: 1.0.1
 displayName: "Chart Generator 2 0"
 summary: "数据可视化出SVG图表,柱/线/饼图即需即出。Data visualization tool producing SVG charts。Use when you need bar chart"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Data visualization tool producing SVG charts。Use when you need bar
   charts, line charts, pie char。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
-  - Other
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 开发
-  - 代码
-  - AI代理
+  - 效率,依赖说明,agent,不支持,确认运行,api
 tools:
   - read
   - exec
@@ -26,9 +17,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Chart Generator 2 0
 
 ## 付费版专享能力

@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - 新闻海报
+  - workspace
+  - news-digest
+  - 自动翻译
+  - com
 tools:
   - read
   - exec

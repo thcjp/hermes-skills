@@ -38,6 +38,11 @@ tags:
   - 研究
   - 分析
   - 创意
+  - git
+  - hugo
+  - content
+  - posts
+  - draft
 tools:
   - read
   - exec

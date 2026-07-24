@@ -1,5 +1,4 @@
 ---
-
 slug: go-linter-config-tool-free
 name: go-linter-config-tool-free
 version: 1.0.0
@@ -40,15 +39,18 @@ tags:
   - 研究
   - 分析
   - 运维
+  - linter
+  - golangci-lint
+  - golangci
+  - run
+  - lint
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Go Lint 配置工具（免费版）
 
 ## 概述

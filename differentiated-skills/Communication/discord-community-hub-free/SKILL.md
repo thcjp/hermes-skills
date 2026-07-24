@@ -32,6 +32,11 @@ tags:
   - 服务器管理
   - 社交
   - 通信
+  - integration
+  - await
+  - discord
+  - call_tool
+  - parameters
 tools:
   - read
   - exec

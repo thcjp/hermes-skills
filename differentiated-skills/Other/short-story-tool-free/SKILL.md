@@ -1,5 +1,4 @@
 ---
-
 slug: short-story-tool-free
 name: short-story-tool-free
 version: 1.0.0
@@ -44,15 +43,18 @@ tags:
   - 研究
   - 分析
   - 创意
+  - short_story
+  - structure
+  - python3
+  - 返回结构
+  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 短篇网文写作 - 免费版
 
 ## 概述

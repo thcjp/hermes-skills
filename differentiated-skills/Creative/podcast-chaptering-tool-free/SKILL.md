@@ -1,5 +1,4 @@
 ---
-
 slug: podcast-chaptering-tool-free
 name: podcast-chaptering-tool-free
 version: 1.0.0
@@ -48,15 +47,18 @@ tags:
   - 个人创作
   - 音频
   - 媒体
+  - start
+  - text
+  - transcript
+  - json
+  - segments
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 播客章节工具 - 免费版
 
 ## 概述

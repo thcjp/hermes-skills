@@ -1,5 +1,4 @@
 ---
-
 slug: "md-export"
 name: "md-export"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "文档导出工具专业版"
 summary: "Markdown全格式专业导出工具，含批量并行、自定义样式、PDF加密水印、模板云同步与API服务模式。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向内容团队与企业的Markdown全格式专业导出工具。在免费版基础上新增批量并行转换、自定义样式表、PDF水印加密、模板云端同步、REST API服务模式、版本对比与差异导出等高级能力，配套面向技术写作、运维、产品经理的多角色场景指南。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - 集成工具
@@ -22,6 +21,11 @@ tags:
   - 知识
   - 文档
   - 研究
+  - api
+  - pdf
+  - docx
+  - bash
+  - 不支持
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 文档导出工具专业版
 
 ## 付费版专享能力

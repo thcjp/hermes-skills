@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - result
+  - self
+  - true
+  - return
+  - cli
 tools:
   - read
   - exec

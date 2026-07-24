@@ -1,5 +1,4 @@
 ---
-
 slug: creative-officer-tool-free
 name: creative-officer-tool-free
 version: 1.0.0
@@ -43,15 +42,18 @@ tags:
   - 通信
   - 邮件
   - 写作
+  - 创意总监
+  - 头脑风暴
+  - 方向
+  - text
+  - agent
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 创意总监免费版
 
 ## 概述

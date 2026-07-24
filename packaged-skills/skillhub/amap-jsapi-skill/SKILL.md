@@ -1,18 +1,22 @@
 ---
-
 slug: "amap-jsapi-skill"
 name: "amap-jsapi-skill"
 version: 1.1.2
 displayName: "Amap Jsapi Skill"
 summary: "高德地图 JSAPI v2.0 (WebGL) 开发技能。涵盖地图生命周期管理、强制安全配置、3D 视图控制、覆盖物绘制及 LBS 服务集成。"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   高德地图 JSAPI v2。0 (WebGL) 开发技能。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Security
   - API
   - 接口
   - 开发工具
+  - references
+  - amap
+  - key
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -20,9 +24,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Amap Jsapi Skill
 
 ## 付费版专享能力

@@ -38,6 +38,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - yaml
+  - config
+  - python
+  - open
+  - encoding
 tools:
   - read
   - exec

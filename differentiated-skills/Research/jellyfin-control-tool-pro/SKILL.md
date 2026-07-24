@@ -42,6 +42,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - bedroom
+  - bash
+  - skills
+  - jellyfin-control
+  - 请参考
 tools:
   - read
   - exec

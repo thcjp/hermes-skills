@@ -40,6 +40,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - 请参考
+  - node
+  - 目录中的
+  - 脚本文件
+  - com
 tools:
   - read
   - exec

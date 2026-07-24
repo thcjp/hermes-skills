@@ -1,12 +1,11 @@
 ---
-
 slug: "learn"
 name: "learn"
 version: 1.0.3
 displayName: "Learn"
 summary: "用间隔重复与主动回忆结构化追踪学习,跨领域。Structure and track learning with spaced repetition and active recall acr"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Structure and track learning with spaced repetition and active recall
   across any domain。核心能力:
 
@@ -33,6 +32,11 @@ tags:
   - 知识
   - 文档
   - AI代理
+  - 不支持
+  - agent
+  - api
+  - 依赖说明
+  - llm
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Learn
 
 ## 付费版专享能力

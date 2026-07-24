@@ -1,5 +1,4 @@
 ---
-
 slug: slack-hub-tool-free
 name: slack-hub-tool-free
 version: 1.0.0
@@ -36,15 +35,18 @@ tags:
   - 消息搜索
   - 社交
   - 通信
+  - slack
+  - slack-hub-tool
+  - bot
+  - token
+  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # Slack Hub工具（免费版）
 
 ## 概述

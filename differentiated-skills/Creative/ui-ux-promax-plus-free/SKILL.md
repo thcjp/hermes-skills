@@ -40,6 +40,11 @@ tags:
   - 前端
   - 资源库
   - UI设计
+  - inter
+  - tailwind
+  - 字体配对
+  - 快速应用
+  - css
 tools:
   - read
   - exec

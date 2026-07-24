@@ -22,6 +22,10 @@ tags:
   - 研究
   - 分析
   - 创意
+  - book-illustrator
+  - 基础
+  - 增强
+  - 儿童绘本
 tools:
   - read
   - exec

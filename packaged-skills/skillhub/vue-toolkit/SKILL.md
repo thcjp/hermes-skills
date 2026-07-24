@@ -1,5 +1,4 @@
 ---
-
 slug: "vue-toolkit"
 name: "vue-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Vue工具箱(专业版)"
 summary: "Vue 3 全栈实战：响应式、性能优化、SSR、Pinia、Composable 架构与团队规范。。Vue 工具箱（专业版）面向中高级 Vue 3 开发者与团队，在免费版陷阱清单的基础上新增"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   Vue 工具箱（专业版）面向中高级 Vue 3 开发者与团队，在免费版陷阱清单的基础上新增性能优化、SSR/SSG、Pinia 状态管理、Composable 架构、可访问性、测试与团队规范六大模块。目标是让 Agent 能够输出"架构级"建议而不仅是单点修复。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - 前端架构
@@ -23,6 +22,10 @@ tags:
   - 开发
   - 代码
   - 写作
+  - vue
+  - ssr
+  - npm
+  - pinia
 tools:
   - read
   - exec
@@ -30,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Vue工具箱(专业版)
 
 ## 付费版专享能力

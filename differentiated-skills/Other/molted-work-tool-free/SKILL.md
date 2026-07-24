@@ -1,5 +1,4 @@
 ---
-
 slug: molted-work-tool-free
 name: molted-work-tool-free
 version: 1.0.0
@@ -41,15 +40,18 @@ tags:
   - 开发
   - 代码
   - 研究
+  - usdc
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - basedir
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # AI 工作工具（免费版）
 
 ## 概述

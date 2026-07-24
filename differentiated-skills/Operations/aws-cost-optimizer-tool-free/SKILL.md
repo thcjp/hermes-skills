@@ -17,6 +17,11 @@ tags:
   - 云财务
   - 云计算
   - DevOps
+  - aws
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
 tools:
   - read
   - exec

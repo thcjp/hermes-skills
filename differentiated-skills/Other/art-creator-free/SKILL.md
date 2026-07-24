@@ -1,5 +1,4 @@
 ---
-
 slug: art-creator-free
 name: art-creator-free
 version: 1.0.1
@@ -22,15 +21,17 @@ tags:
   - AI代理
   - agent
   - 写作
+  - 用户提供
+  - 完成核心
+  - 逻辑
+  - 返回结构
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 艺术创作助手（免费版）
 
 > **从媒介出发，以练习驱动，用反馈成长。**

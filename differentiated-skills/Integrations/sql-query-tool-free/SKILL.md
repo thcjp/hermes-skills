@@ -21,6 +21,10 @@ tags:
   - AI代理
   - agent
   - 安全
+  - sql
+  - sqlite
+  - mysql
+  - postgresql
 tools:
   - read
   - exec

@@ -21,6 +21,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - bash
+  - jira
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "aws"
 name: "aws"
 version: 1.0.3
 displayName: "Aws"
 summary: "架构部署优化AWS基础设施,避开成本失控与安全陷阱,省钱又稳。Architect, deploy, and optimize AWS infrastructure avoiding cost"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
   and security pitfalls。核心能力:
 
@@ -30,6 +29,11 @@ tags:
   - AWS
   - 云计算
   - DevOps
+  - 按流程执
+  - 依赖说明
+  - aws
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Aws
 
 ## 付费版专享能力

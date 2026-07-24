@@ -1,5 +1,4 @@
 ---
-
 slug: password-generator-tool-free
 name: password-generator-tool-free
 version: 1.0.0
@@ -42,14 +41,17 @@ tags:
   - 随机生成
   - 加密
   - 工具
+  - python
+  - length
+  - password
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
-
 ---
-
 # 密码生成器(免费版)
 
 ## 概述

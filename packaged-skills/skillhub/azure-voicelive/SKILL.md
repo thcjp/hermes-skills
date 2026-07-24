@@ -1,5 +1,4 @@
 ---
-
 slug: "azure-voicelive"
 name: "azure-voicelive"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Azure语音交互专业版"
 summary: "企业级实时语音AI工具，支持函数调用、自定义语音、电话音频、高级会话与中断处理。。Azure语音交互专业版 —— 面向企业团队与专业开发者的高级实时语音AI工具。核心能力: - 函数调用（F"
 license: "Proprietary"
 edition: "pro"
-description: |-，可处理提升工作效率
+description: |-
   Azure语音交互专业版 —— 面向企业团队与专业开发者的高级实时语音AI工具。核心能力:
   - 函数调用（Function Tools），支持AI主动调用外部API
   - 自定义语音集成：Azure标准语音、自定义语音、个人语音
@@ -20,6 +19,11 @@ tags:
   - 电话客服
   - 云计算
   - DevOps
+  - conn
+  - type
+  - async
+  - await
+  - event
 tools:
   - read
   - exec
@@ -27,9 +31,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Azure语音交互专业版
 
 ## 付费版专享能力

@@ -40,6 +40,11 @@ tags:
   - 开发
   - 代码
   - 运维
+  - args
+  - true
+  - toolfn
+  - sql
+  - const
 tools:
   - read
   - exec

@@ -22,6 +22,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - pro
+  - market-news-pro
+  - topics
+  - 财经资讯
+  - 推送
 tools:
   - read
   - exec

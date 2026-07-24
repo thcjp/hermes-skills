@@ -21,6 +21,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - bdpan
+  - docs
+  - txt
+  - agent
+  - bash
 tools:
   - read
   - exec

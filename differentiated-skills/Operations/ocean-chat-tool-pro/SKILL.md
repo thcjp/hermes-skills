@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - 安全
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - pro
+  - python3
 tools:
   - read
   - exec

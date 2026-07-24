@@ -1,5 +1,4 @@
 ---
-
 slug: plugin-arch-tool-free
 name: plugin-arch-tool-free
 version: 1.0.0
@@ -42,15 +41,16 @@ tags:
   - AI代理
   - agent
   - 研究
+  - api
+  - registerview
+  - typescript
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 插件架构工具 - 免费版
 
 ## 概述

@@ -1,5 +1,4 @@
 ---
-
 slug: whatsapp-msg-tool-free
 name: whatsapp-msg-tool-free
 version: 1.0.0
@@ -17,15 +16,18 @@ tags:
   - 文件传输
   - 社交
   - 通信
+  - wacli
+  - whatsapp
+  - send
+  - limit
+  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # WhatsApp 消息工具（免费版）
 
 ## 概述

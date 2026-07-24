@@ -16,6 +16,11 @@ tags:
   - 自动化
   - AI代理
   - 智能
+  - pro
+  - research-agent
+  - deep
+  - mode
+  - run_id
 tools:
   - read
   - exec

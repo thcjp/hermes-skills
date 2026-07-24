@@ -1,5 +1,4 @@
 ---
-
 slug: "github-dev-standard"
 name: "github-dev-standard"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "项目开发标准专业版"
 summary: "企业级项目开发标准方案，含自动化验收、CI 集成、团队协作与质量度量。。面向企业研发团队的项目开发标准化专业工具，提供自动化验收与团队协作治理方案。核心能力: - 自动化验收清单（CI/CD"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业研发团队的项目开发标准化专业工具，提供自动化验收与团队协作治理方案。核心能力:
   - 自动化验收清单（CI/CD 集成）
   - 团队级开发规范与合并请求模板
@@ -30,6 +29,11 @@ tags:
   - CI/CD
   - 版本控制
   - Git
+  - echo
+  - diff
+  - git
+  - grep
+  - 请参考
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # 项目开发标准专业版
 
 ## 付费版专享能力

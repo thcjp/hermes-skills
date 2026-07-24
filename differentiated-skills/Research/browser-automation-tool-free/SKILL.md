@@ -1,5 +1,4 @@
 ---
-
 slug: browser-automation-tool-free
 name: browser-automation-tool-free
 version: 1.0.0
@@ -37,15 +36,18 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - browser
+  - act
+  - chrome
+  - observe
+  - extract
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 浏览器自动化工具(免费版)
 
 ## 概述

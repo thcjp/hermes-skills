@@ -1,12 +1,11 @@
 ---
-
 slug: "feishu-doc-write"
 name: "feishu-doc-write"
 version: 1.0.1
 displayName: "feishu-doc-write"
 summary: "飞书文档API写入规范,把Markdown转飞书Block结构。Feishu (Lark) Document API writing spec。Converts Markdown conte"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Feishu (Lark) Document API writing spec。Converts Markdown content to
   Feishu Block structures and。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 代码
   - 工作流
   - 创意
+  - block_type
+  - content
+  - 按流程执
+  - api
+  - json
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # feishu-doc-write
 
 ## 付费版专享能力

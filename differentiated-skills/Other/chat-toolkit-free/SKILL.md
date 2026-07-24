@@ -1,5 +1,4 @@
 ---
-
 slug: chat-toolkit-free
 name: chat-toolkit-free
 version: 1.0.1
@@ -37,15 +36,17 @@ tags:
   - 知识
   - 文档
   - 研究
+  - memory
+  - markdown
+  - text
+  - rejected
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 沟通偏好工具箱(免费版)
 
 一个基于显式反馈机制学习用户沟通偏好的轻量工具，让Agent在与用户长期协作过程中，自然适配其偏好的语气、格式与表达风格.

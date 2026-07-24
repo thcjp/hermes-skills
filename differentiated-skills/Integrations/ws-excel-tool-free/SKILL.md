@@ -20,6 +20,11 @@ tags:
   - 分析
   - AI代理
   - agent
+  - xlsx
+  - cell
+  - excel
+  - openpyxl
+  - python
 tools:
   - read
   - exec

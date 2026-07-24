@@ -1,5 +1,4 @@
 ---
-
 slug: popeye-prod-tool-free
 name: popeye-prod-tool-free
 version: 1.0.2
@@ -28,15 +27,18 @@ tags:
   - 电商
   - 研究
   - 分析
+  - 支持创建
+  - 查询
+  - input_params
+  - self
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 生产力增强工具（免费版）
 
 ## 概述

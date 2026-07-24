@@ -21,6 +21,11 @@ tags:
   - 知识
   - 文档
   - 研究
+  - path
+  - markdown
+  - markdown-exporter
+  - input
+  - pdf
 tools:
   - read
   - exec

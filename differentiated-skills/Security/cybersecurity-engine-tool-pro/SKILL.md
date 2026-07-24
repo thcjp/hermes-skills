@@ -19,6 +19,11 @@ tags:
   - 安全治理
   - 加密
   - 工具
+  - phase
+  - self
+  - weight
+  - 专业版独
+  - score
 tools:
   - read
   - exec

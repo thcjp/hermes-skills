@@ -1,12 +1,11 @@
 ---
-
 slug: "text"
 name: "text"
 version: 1.0.1
 displayName: "Text"
 summary: "用模式转换/格式化/处理文本,写作/清洗/本地化/引用。Transform, format, and process text with patterns for writing, data"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Transform, format, and process text with patterns for writing, data
   cleaning, localization, citat。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -18,6 +17,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - text
+  - 依赖说明
+  - 不支持
+  - llm
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Text
 
 ## 付费版专享能力

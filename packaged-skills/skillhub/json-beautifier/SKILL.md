@@ -1,5 +1,4 @@
 ---
-
 slug: "json-beautifier"
 name: "json-beautifier"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "JSON美化工具专业版"
 summary: "企业级JSON处理工具，支持大文件流式处理、批量目录扫描、自动修复、差异对比与自定义模板。。JSON美化工具专业版面向企业级场景，在免费版基础上扩展大文件流式处理、批量目录扫描、自动修复、差"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   JSON美化工具专业版面向企业级场景，在免费版基础上扩展大文件流式处理、批量目录扫描、自动修复、差异对比、自定义模板、性能基准等高级能力。核心能力：流式解析GB级JSON、目录级批量格式化、尾随逗号/单引号/未转义字符自动修复、两份JSON的结构差异对比、可编程输出模板、多级缓存与性能基准。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - 集成工具
@@ -22,6 +21,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - json
+  - agent
+  - string
+  - 流式处理
+  - 用户提供
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # JSON美化工具专业版
 
 ## 付费版专享能力

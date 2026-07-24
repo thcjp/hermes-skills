@@ -1,5 +1,4 @@
 ---
-
 slug: "frontend-design-ai-provider-free"
 name: "frontend-design-ai-provider-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "前端设计-免费版"
 summary: "创建高质量前端界面,避免AI审美同质化,支持组件/页面/应用设计,适合个人开发者。前端设计免费版,面向个人开发者的生产级前端界面设计工具。核心能力: - 创建独特、生产级的前端界面,避免通用"
 license: "Proprietary"
 edition: "free"
-description: |-，可生成提升工作效率
+description: |-
   前端设计免费版,面向个人开发者的生产级前端界面设计工具。核心能力:
   - 创建独特、生产级的前端界面,避免通用AI审美
   - 支持组件、页面、应用等多种设计粒度
@@ -27,15 +26,18 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - css
+  - html
+  - react
+  - agent
+  - 指导
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 前端设计工具 - 免费版
 
 ## 概述

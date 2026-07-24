@@ -42,6 +42,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - text
+  - emoji
+  - title
+  - 配音
+  - tts
 tools:
   - read
   - exec

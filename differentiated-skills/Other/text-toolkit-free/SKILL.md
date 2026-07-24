@@ -38,6 +38,11 @@ tags:
   - 通信
   - 邮件
   - 开发
+  - txt
+  - csv
+  - sed
+  - sort
+  - space
 tools:
   - read
   - exec

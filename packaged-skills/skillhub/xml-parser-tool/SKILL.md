@@ -1,12 +1,11 @@
 ---
-
 slug: "xml-parser-tool"
 name: "xml-parser-tool"
 version: "2.1.1"
 displayName: "Xml Reader"
 summary: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML。Read and parse XML from construction systems - P6 schedu"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Read and parse XML from construction systems - P6 schedules, BSDD exports,
   IFC-XML, COBie-XML. This skill parses XML and converts to structured DataFrames.
 tags:
@@ -19,15 +18,18 @@ tags:
   - 开发
   - 代码
   - 写作
+  - activities
+  - reader
+  - xml
+  - root
+  - 依赖说明
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
-
 ---
-
 # Xml Reader
 
 ## 核心能力

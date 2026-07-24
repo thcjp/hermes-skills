@@ -17,6 +17,10 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - team_name
+  - self
+  - team
+  - team_subscriptions
 tools:
   - read
   - exec

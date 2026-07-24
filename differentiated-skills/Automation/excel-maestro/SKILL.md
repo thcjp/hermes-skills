@@ -16,6 +16,11 @@ tags:
   - 效率工具
   - 工作流
   - 效率
+  - xlsx
+  - openpyxl
+  - true
+  - csv
+  - pandas
 tools:
   - read
   - exec

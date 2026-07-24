@@ -35,6 +35,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - url
+  - text
+  - python
+  - https
+  - example
 tools:
   - read
   - exec

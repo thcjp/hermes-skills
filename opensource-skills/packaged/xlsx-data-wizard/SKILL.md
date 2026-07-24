@@ -15,6 +15,11 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - excel
+  - cell
+  - sheet
+  - value
+  - chart
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: audio-stream-upload-free
 name: audio-stream-upload-free
 version: 1.0.1
@@ -35,15 +34,18 @@ tags:
   - 个人创作
   - 媒体
   - 创意
+  - audio_id
+  - api
+  - videos
+  - stream-public-key
+  - stream-secret-key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 音频流上传免费版
 
 ## 概述

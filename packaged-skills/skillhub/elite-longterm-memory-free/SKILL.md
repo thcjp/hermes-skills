@@ -1,12 +1,11 @@
 ---
-
 slug: "elite-longterm-memory-free"
 name: "elite-longterm-memory-free"
 version: "1.0.0"
 displayName: "精英长期记忆免费版"
 summary: "基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。。面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.m"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力.
   热内存（SESSION-STATE.md）抗压缩与重启，通过 WAL 协议确保先写状态再回复.
   精选归档（MEMORY.md + daily/）提供人类可读的长期记忆与每日日志.
@@ -23,10 +22,13 @@ tags:
   - 记忆管理
   - 上下文
   - AI
+  - memory
+  - agent
+  - session-state
+  - wal
+  - 跨设备同
 category: "Agents"
-
 ---
-
 # 精英长期记忆免费版（Elite Longterm Memory Free）
 
 **AI Agent 的基础记忆系统。** 通过热内存与文件归档，让 Agent 不遗忘关键上下文与用户偏好。本免费版提供两层记忆能力，覆盖单设备记忆持久化需求.

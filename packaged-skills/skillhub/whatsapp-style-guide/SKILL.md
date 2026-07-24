@@ -1,5 +1,4 @@
 ---
-
 slug: "whatsapp-style-guide"
 name: "whatsapp-style-guide"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "WhatsApp样式指南-专业版"
 summary: "企业级WhatsApp格式完整规范,含边界场景/高级模式/多语言指南/交互式测试。WhatsApp样式指南专业版,提供完整的WhatsApp消息格式规范体系,面向企业和专业内容团队。核心能力"
 license: "Proprietary"
 edition: "pro"
-description: |-，可处理提升工作效率
+description: |-
   WhatsApp样式指南专业版,提供完整的WhatsApp消息格式规范体系,面向企业和专业内容团队。核心能力:
   - 完整WhatsApp格式语法规范(含边界场景与特殊字符处理)
   - 高级排版模式库(商务/营销/客服/技术场景)
@@ -31,6 +30,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - emoji
+  - 模式
+  - print
+  - 不支持
+  - text
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # WhatsApp样式指南-专业版
 
 ## 付费版专享能力

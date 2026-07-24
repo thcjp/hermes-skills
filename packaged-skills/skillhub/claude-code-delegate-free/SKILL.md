@@ -1,12 +1,11 @@
 ---
-
 slug: "claude-code-delegate-free"
 name: "claude-code-delegate-free"
 version: "0.1.0"
 displayName: "代码委派基础版"
 summary: "将编程任务委派给 AI 助手处理的基础能力，支持任务分类、代码生成与执行日志记录。。将编程任务委派给 AI 助手执行的基础能力，支持任务分解、 基础代码生成与执行日志记录. 核心能力: -"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   将编程任务委派给 AI 助手执行的基础能力，支持任务分解、
   基础代码生成与执行日志记录.
   核心能力:
@@ -31,6 +30,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - api
+  - agent
+  - python
+  - 依赖说明
+  - llm
 tools:
   - read
   - exec
@@ -39,9 +43,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 # 代码委派基础版
 
 ## 核心能力

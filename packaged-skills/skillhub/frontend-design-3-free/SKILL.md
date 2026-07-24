@@ -1,12 +1,11 @@
 ---
-
 slug: "frontend-design-3-free"
 name: "frontend-design-3-free"
 version: "0.1.0"
 displayName: "Frontend Design Free"
 summary: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。。frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI"
 license: "MIT"
-description: |-，可分析提升工作效率
+description: |-
   frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI slop"美学.
   支持 3 种美学方向（brutally minimal、editorial/magazine、brutalist/raw）和基础字体、色彩、
   动效能力。不包含 8 种高级美学方向、Motion 库集成和背景视觉细节。适合快速创建独特界面，
@@ -21,10 +20,13 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - css-only
+  - display
+  - body
+  - motion
+  - html
 category: "Creative"
-
 ---
-
 # Frontend Design Free
 
 frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI slop"美学.

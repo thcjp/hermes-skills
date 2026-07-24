@@ -1,5 +1,4 @@
 ---
-
 slug: document-pdf-tool-free
 name: document-pdf-tool-free
 version: 1.0.0
@@ -25,15 +24,18 @@ tags:
   - 文档处理
   - 工具
   - 效率
+  - pdf
+  - 支持创建
+  - 查询
+  - input_params
+  - python
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Knowledge"
-
 ---
-
 # PDF文档工具（免费版）
 
 ## 概述

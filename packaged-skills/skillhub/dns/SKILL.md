@@ -1,12 +1,11 @@
 ---
-
 slug: "dns"
 name: "dns"
 version: 1.0.1
 displayName: "DNS配置专家"
 summary: "DNS记录配置、TTL迁移、邮件认证三件套、CAA证书锁定与Cloudflare代理排障。DNS领域专业配置与排障Skill,覆盖记录生命周期、邮件认证链、证书授权限制与CDN代理行为. 核"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   DNS领域专业配置与排障Skill,覆盖记录生命周期、邮件认证链、证书授权限制与CDN代理行为.
   核心能力:
   - 迁移前的TTL预降策略与多resolver缓存探测
@@ -33,6 +32,11 @@ tags:
   - 运维
   - 监控
   - 开发
+  - com
+  - example
+  - dig
+  - ttl
+  - caa
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # DNS配置专家
 
 ## 输入格式

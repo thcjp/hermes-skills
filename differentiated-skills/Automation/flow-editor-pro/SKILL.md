@@ -14,6 +14,11 @@ tags:
   - 物联网
   - 工作流
   - 效率
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - json
+  - instance
 tools:
   - read
   - exec

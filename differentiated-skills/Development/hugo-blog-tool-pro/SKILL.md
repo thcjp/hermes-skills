@@ -1,5 +1,4 @@
 ---
-
 slug: "hugo-blog-tool-pro"
 name: "hugo-blog-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Hugo博客发布专业版"
 summary: "企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。。面向专业博主的 Hugo 博客管理工具，提供批量发布与站点级管理能力。核心能力: - 批量文章发"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向专业博主的 Hugo 博客管理工具，提供批量发布与站点级管理能力。核心能力:
   - 批量文章发布与定时发布调度
   - 多语言站点（i18n）内容管理
@@ -36,6 +35,11 @@ tags:
   - 电商
   - 工作流
   - 创意
+  - posts
+  - hugo
+  - content
+  - title
+  - eof
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 本工具面向专业博主与内容团队，提供 Hugo 博客的站点级管理与自动化运营方案。在免费版单篇文章发布能力之上，专业版新增批量发布与定时调度、多语言站点管理、SEO 优化（结构化数据、站点地图）、CI/CD 自动化部署、文章系列管理与交叉引用、图片资源自动优化等能力。通过工具链集成与流程自动化，帮助团队高效运营专业级博客站点.
 **版本兼容性说明**：专业版完全兼容免费版（`hugo-blog-tool-free`）的所有 Front Matter 规范与发布流程，可无缝升级.
 ## 核心能力

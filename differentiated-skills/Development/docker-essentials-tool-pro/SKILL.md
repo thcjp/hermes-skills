@@ -44,6 +44,11 @@ tags:
   - 企业级
   - DevOps
   - 容器
+  - docker
+  - echo
+  - swarm
+  - myapp
+  - service
 tools:
   - read
   - exec

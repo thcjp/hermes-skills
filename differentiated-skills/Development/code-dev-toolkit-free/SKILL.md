@@ -40,6 +40,11 @@ tags:
   - 代码质量
   - 代码生成
   - 编程辅助
+  - code
+  - memory
+  - bash
+  - 验证
+  - 偏好记忆
 tools:
   - read
   - exec

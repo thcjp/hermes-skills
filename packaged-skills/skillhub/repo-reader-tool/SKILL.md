@@ -1,12 +1,11 @@
 ---
-
 slug: "repo-reader-tool"
 name: "repo-reader-tool"
 version: "1.0.1"
 displayName: "Read GitHub"
 summary: "经gitmcp.io读GitHub仓库(权限较广需谨慎)。This skill is mostly transparent about reading GitHub through gitm"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   This skill is mostly transparent about reading GitHub through gitmcp。io,
   but it exposes broader r
 tags:
@@ -19,6 +18,11 @@ tags:
   - 代码
   - 工作流
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Read GitHub
 
 ## 付费版专享能力

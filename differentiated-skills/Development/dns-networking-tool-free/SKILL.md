@@ -1,5 +1,4 @@
 ---
-
 slug: dns-networking-tool-free
 name: dns-networking-tool-free
 version: 1.0.0
@@ -42,14 +41,17 @@ tags:
   - DNS
   - 网络
   - 工具
+  - example
+  - com
+  - echo
+  - dns
+  - bash
 tools:
   - read
   - exec
 homepage: ""
 category: "Operations"
-
 ---
-
 # DNS网络诊断工具 - 免费版
 
 ## 概述

@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - self
+  - md_file
+  - docs_root
+  - 支持创建
+  - 查询
 tools:
   - read
   - exec

@@ -15,6 +15,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - pdf
+  - output
+  - csv
+  - 生成
+  - 表格
 tools:
   - read
   - exec

@@ -35,6 +35,10 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - figma
+  - ui-audit-pro
+  - 批量审计
+  - true
 tools:
   - read
   - exec

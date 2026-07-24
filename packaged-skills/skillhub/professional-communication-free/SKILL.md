@@ -1,12 +1,11 @@
 ---
-
 slug: "professional-communication-free"
 name: "professional-communication-free"
 version: "1.0.0"
 displayName: "职场沟通写作免费版"
 summary: "为技术团队生成状态更新邮件、升级请求与 Slack/Teams 消息，遵循关键信息优先、可扫描、明确行动项的核心原则。"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   面向技术团队的入门级职场沟通写作助手。覆盖状态更新邮件、升级
   请求、Slack/Teams 即时消息三个基础场景。核心原则是关键信息优先、
   可扫描格式、明确行动请求。每条消息回答三个问题：你需要知道什么、
@@ -16,27 +15,14 @@ description: |-，可处理提升工作效率
   全部等典型职场沟通病灶。覆盖场景与模板深度为本系列免费版本，
   付费版扩展至技术概念转译、异步团队协作、跨文化沟通等更多场景.
 tags:
-  - 项目管理
-  - Writing
-  - Workplace
-  - Email
-  - 工具
-  - 效率
-  - 自动化
-  - 通信
-  - 邮件
-  - AI代理
-  - agent
-  - 开发
+  - 效率,邮件,agent,slack,项目符号,api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Professional Communication Free
 
 写出清晰、有效、会被读到并被行动的职场消息。技术团队的写作问题通常不是文笔问题，而是结构问题——关键信息埋在第三段、行动请求模糊、渠道错配。本 Skill 用结构化模板与硬规则消除这些病灶.

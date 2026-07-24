@@ -38,6 +38,11 @@ tags:
   - 代码
   - 工作流
   - 创意
+  - anygen
+  - api
+  - auth
+  - login
+  - bash
 tools:
   - read
   - exec

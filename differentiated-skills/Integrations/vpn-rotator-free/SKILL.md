@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - 研究
+  - vpn
+  - api
+  - openvpn
+  - python
+  - vpn_rotator
 tools:
   - read
   - exec

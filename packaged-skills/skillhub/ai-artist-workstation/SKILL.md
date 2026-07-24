@@ -1,12 +1,11 @@
 ---
-
 slug: ai-artist-workstation
 name: ai-artist-workstation
 version: 1.0.1
 displayName: "AI接单画师工作站"
 summary: "一个人开AI画师工作室,双引擎路由+98%面部保持+接单SOP全闭环。AI接单画师工作站是一款面向商业画师和设计师的AI绘画工具. 支持双引擎智能路由、8种风格模板全覆盖、接单SOP全流程闭"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   AI接单画师工作站是一款面向商业画师和设计师的AI绘画工具.
   支持双引擎智能路由、8种风格模板全覆盖、接单SOP全流程闭环,实现98%面部保持.
   核心能力:
@@ -28,14 +27,17 @@ tags:
   - 图像
   - 工作流
   - 写作
+  - 通用绘画
+  - 头像
+  - prompt
+  - 面部保持
+  - 鹧应
 tools:
   - read
   - exec
   - write
 category: "Automation"
-
 ---
-
 # AI接单画师工作站
 
 > 定位: 多引擎AI绘画+接单SOP全流程工作站

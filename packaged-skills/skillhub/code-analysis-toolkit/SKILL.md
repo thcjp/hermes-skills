@@ -1,5 +1,4 @@
 ---
-
 slug: "code-analysis-toolkit"
 name: "code-analysis-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "代码分析工具包专业版"
 summary: "企业级Git历史分析,支持团队复盘、同意管理、趋势追踪与多格式报告。面向团队与企业的高级 Git 历史分析工具,在免费版基础上扩展团队复盘、同意管理、趋势追踪等能力。核心能力: - 团队复盘"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   面向团队与企业的高级 Git 历史分析工具,在免费版基础上扩展团队复盘、同意管理、趋势追踪等能力。核心能力:
   - 团队复盘分析(需全员同意)
   - 同意管理与审计追踪
@@ -34,6 +33,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - python
+  - src
+  - main
+  - i-have-consent
+  - consented-author
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # 代码分析工具包专业版
 
 ## 付费版专享能力

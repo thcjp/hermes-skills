@@ -25,6 +25,11 @@ tags:
   - 知识
   - 文档
   - 创意
+  - json
+  - bash
+  - npm
+  - 社交平台
+  - env
 tools:
   - read
   - exec

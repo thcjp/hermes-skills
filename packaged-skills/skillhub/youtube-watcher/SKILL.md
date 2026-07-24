@@ -1,12 +1,11 @@
 ---
-
 slug: "youtube-watcher"
 name: "youtube-watcher"
 version: 1.0.1
 displayName: "YouTube Watcher"
 summary: "抓取并读取YouTube视频字幕转写。Fetch and read transcripts from YouTube videos。核心能力: - 创意设计领域的专业化AI辅助工具 - 基于"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Fetch and read transcripts from YouTube videos。核心能力:
 
   - 创意设计领域的专业化AI辅助工具
@@ -27,6 +26,11 @@ tags:
   - YouTube
   - 视频
   - 媒体
+  - 依赖说明
+  - 不支持
+  - watcher
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -34,9 +38,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # YouTube Watcher
 
 ## 付费版专享能力

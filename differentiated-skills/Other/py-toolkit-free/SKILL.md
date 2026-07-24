@@ -1,5 +1,4 @@
 ---
-
 slug: py-toolkit-free
 name: py-toolkit-free
 version: 1.0.1
@@ -47,15 +46,18 @@ tags:
   - 研究
   - 分析
   - 写作
+  - items
+  - python
+  - print
+  - none
+  - decimal
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Python 工具包 - 免费版
 
 ## 概述

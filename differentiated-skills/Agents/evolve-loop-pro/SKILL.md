@@ -20,6 +20,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - evolve-loop
+  - eof
+  - true
+  - 专业版
+  - 进化循环
 tools:
   - read
   - exec

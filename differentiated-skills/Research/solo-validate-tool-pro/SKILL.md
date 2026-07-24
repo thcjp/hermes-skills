@@ -19,6 +19,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - manifest
+  - 原则
+  - stream
+  - 单位经济
+  - 魔鬼代言
 tools:
   - read
   - exec

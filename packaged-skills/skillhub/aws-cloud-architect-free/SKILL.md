@@ -1,12 +1,11 @@
 ---
-
 slug: "aws-cloud-architect-free"
 name: "aws-cloud-architect-free"
 version: "1.0.0"
 displayName: "AWS 架构师免费"
 summary: "AWS 基础架构设计与成本优化助手(免费版)。AWS 云架构师助手(免费版),提供基础架构设计、服务选型与只读资源查询. 覆盖 MVP 阶段技术栈推荐、常用 CLI 只读命令、基础成本陷阱识"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   AWS 云架构师助手(免费版),提供基础架构设计、服务选型与只读资源查询.
   覆盖 MVP 阶段技术栈推荐、常用 CLI 只读命令、基础成本陷阱识别.
   不含安全加固深度诊断、6Rs 迁移框架、Performance 模式库、IaC 模板生成等
@@ -19,15 +18,18 @@ tags:
   - AWS
   - 云计算
   - DevOps
+  - aws
+  - rds
+  - ec2
+  - nat
+  - vpc
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
-
 ---
-
 # AWS 云架构师 (免费版)
 
 基础 AWS 架构设计、服务选型与只读资源查询助手。遵循 Well-Architected Framework 基本原则.

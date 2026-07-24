@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - results
+  - query
+  - lang
+  - 多语言搜
+  - 不支持
 tools:
   - read
   - exec

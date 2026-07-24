@@ -1,5 +1,4 @@
 ---
-
 slug: md-converter-pdf-tool-free
 name: md-converter-pdf-tool-free
 version: 1.0.0
@@ -29,15 +28,18 @@ tags:
   - 开发
   - 代码
   - 研究
+  - markdown
+  - pdf
+  - 支持创建
+  - 查询
+  - input_params
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Markdown转PDF（免费版）
 
 ## 概述

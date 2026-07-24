@@ -1,5 +1,4 @@
 ---
-
 slug: monad-dev-tool-free
 name: monad-dev-tool-free
 version: 1.0.0
@@ -42,15 +41,18 @@ tags:
   - 运维
   - 监控
   - 集成
+  - monad
+  - foundry
+  - 部署
+  - forge
+  - erc20
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Monad 开发工具 - 免费版
 
 ## 概述

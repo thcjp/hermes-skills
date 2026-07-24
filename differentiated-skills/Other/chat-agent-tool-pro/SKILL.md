@@ -16,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - web
+  - jwt
+  - 用户提供
+  - 解析能力
 tools:
   - read
   - exec

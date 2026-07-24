@@ -1,12 +1,11 @@
 ---
-
 slug: "rust"
 name: "rust"
 version: 1.0.2
 displayName: "Rust避坑指南"
 summary: "规避所有权、借用、生命周期、字符串、错误处理、并发与内存的常见陷阱。。编写地道Rust代码,规避所有权移动、借用检查器、生命周期推断、 UTF-8字符串、错误处理、惰性迭代器、线程安全与智能"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   编写地道Rust代码,规避所有权移动、借用检查器、生命周期推断、
   UTF-8字符串、错误处理、惰性迭代器、线程安全与智能指针的高频
   陷阱。覆盖常见编译错误与Cargo包管理陷阱。适用于独立开发者、
@@ -26,10 +25,13 @@ tags:
   - 研究
   - 分析
   - 安全
+  - rust
+  - cargo
+  - 借用
+  - str
+  - 错误处理
 category: "Automation"
-
 ---
-
 # Rust避坑指南
 
 编写地道Rust代码,规避所有权、借用、生命周期、字符串、错误处理、迭代器、并发与内存的高频陷阱,以及常见编译错误与Cargo陷阱.

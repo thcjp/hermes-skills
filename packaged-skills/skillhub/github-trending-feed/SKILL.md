@@ -1,12 +1,11 @@
 ---
-
 slug: "github-trending-feed"
 name: "github-trending-feed"
 version: 1.0.1
 displayName: "GitHub Trending Feed"
 summary: "获取 GitHub Trending 热门仓库列表。当用户要求查看 GitHub 热榜、每日 GitHub trending、推送 GitHub"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   获取 GitHub Trending 热门仓库列表。当用户要求查看 GitHub 热榜、每日 GitHub trending、推送 GitHub
   热门项目时使用。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - github
+  - api
+  - agent
+  - trending
+  - 不支持
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # GitHub Trending Feed
 
 ## 付费版专享能力

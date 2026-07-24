@@ -1,5 +1,4 @@
 ---
-
 slug: context-compressor-free
 name: context-compressor-free
 version: 1.0.1
@@ -17,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - memory
+  - node
+  - tmp
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 上下文压缩器（免费版）
 
 > **让Agent的记忆瘦身。4-8倍压缩比，关键信息零丢失。**

@@ -1,5 +1,4 @@
 ---
-
 slug: "github-api-toolkit"
 name: "github-api-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "GitHub API工具包(专业版)"
 summary: "全功能GitHub API集成工具,含GraphQL、批量操作、Webhook管理、Actions API与组织管理,适合企业级集成场景。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   GitHub API工具包(专业版)是企业级GitHub API集成工具,在免费版REST基础能力上,扩展GraphQL查询、批量操作、Webhook管理、GitHub Actions API、组织与团队管理等高级能力。核心能力:
   - GraphQL API: 高效关联查询,减少请求次数,支持复杂分页
   - 批量操作: 批量创建/更新/删除资源,含速率控制与回滚
@@ -22,6 +21,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - api
+  - https
+  - 相关技术
+  - curl
+  - authorization
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # GitHub API工具包(专业版)
 
 ## 付费版专享能力

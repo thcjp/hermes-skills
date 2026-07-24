@@ -1,12 +1,11 @@
 ---
-
 slug: "visual-file-sorter"
 name: "visual-file-sorter"
 version: 0.1.1
 displayName: "Visual File Sorter"
 summary: "自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。。自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。核心能力: -"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
@@ -32,6 +31,11 @@ tags:
   - 知识
   - 文档
   - 开发
+  - 截图
+  - png
+  - json
+  - 发票
+  - pdf
 tools:
   - read
   - exec
@@ -39,9 +43,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Visual File Sorter
 
 ## 付费版专享能力

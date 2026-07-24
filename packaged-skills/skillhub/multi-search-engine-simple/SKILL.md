@@ -1,12 +1,11 @@
 ---
-
 slug: "multi-search-engine-simple"
 name: "multi-search-engine-simple"
 version: 1.0.1
 displayName: "Multi Search Engine"
 summary: "【国内精简版】多种免费搜索方式在互联网上搜索最新信息，10个国内网站（精简7个国内不能访问的海外网站）"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   【国内精简版】多种免费搜索方式在互联网上搜索最新信息，10个国内网站（精简7个国内不能访问的海外网站）\n\n核心能力:\n- 研究工具领域的专业化AI辅助工具\n\
   - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 数据研究、文献分析、信息收集\n- 独立开发者与一人公司效率提升\n\
 tags:
@@ -14,6 +13,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # Multi Search Engine
 
 ## 付费版专享能力

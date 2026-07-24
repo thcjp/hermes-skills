@@ -15,6 +15,11 @@ tags:
   - IoT
   - 工作流
   - 效率
+  - flow-manager
+  - json
+  - bash
+  - node-red
+  - admin
 tools:
   - read
   - exec

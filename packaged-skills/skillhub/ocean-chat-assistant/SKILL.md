@@ -1,12 +1,11 @@
 ---
-
 slug: "ocean-chat-assistant"
 name: "ocean-chat-assistant"
 version: "2.20.0"
 displayName: "Ocean Chat"
 summary: "OceanBus驱动的P2P消息/共享通讯录/1v1约见/话题。OceanBus-powered P2P messaging, shared address book, 1v1 meetup"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,
   and conversation thr
 tags:
@@ -18,6 +17,11 @@ tags:
   - 代码
   - 工作流
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - agent
+  - llm
+  - 不支持
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Ocean Chat
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: merge-check-tool-free
 name: merge-check-tool-free
 version: 1.0.0
@@ -45,15 +44,17 @@ tags:
   - 通信
   - 邮件
   - 开发
+  - bash
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 合并检查工具(免费版)
 
 ## 概述

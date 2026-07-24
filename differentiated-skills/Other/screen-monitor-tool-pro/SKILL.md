@@ -44,6 +44,11 @@ tags:
   - 监控
   - 运维
   - 工具
+  - screen-pro-cli
+  - 返回结构
+  - 用户提供
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "anthropics-frontend-design"
 name: "anthropics-frontend-design"
 version: 0.1.1
 displayName: "前端设计工坊"
 summary: "创建独特的生产级前端界面,专注排版配色动效与空间构图,避免通用AI美学。前端设计创作技能,生成具有鲜明美学风格的生产级前端代码。覆盖排版字体、配色主题、动效交互、 空间构图、背景纹理五大维度"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   前端设计创作技能,生成具有鲜明美学风格的生产级前端代码。覆盖排版字体、配色主题、动效交互、
   空间构图、背景纹理五大维度,支持 HTML/CSS/JS、React、Vue 等多种技术栈输出.
   核心理念是避免通用 AI 美学(Inter/Roboto 字体、紫色渐变白底、千篇一律的卡片布局),
@@ -18,6 +17,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - css
+  - html
+  - api
+  - 字体
+  - 工业实用
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # 前端设计工坊
 
 生成具有鲜明美学风格的生产级前端代码。避免通用 AI 美学(Inter/Roboto 字体、紫色渐变白底、千篇一律的卡片布局),追求具有记忆点的独特视觉表达。支持 HTML/CSS/JS、React、Vue 等多种技术栈.

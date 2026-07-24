@@ -1,5 +1,4 @@
 ---
-
 slug: "figma-design-paid"
 name: "figma-design-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Figma设计集成-专业版"
 summary: "企业级Figma集成平台，支持组件库管理、设计变量提取、批量导出与团队协作工作流,支持多种使用场景和自动化处理"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   Figma设计集成工具专业版。
 tags:
   - Creative
@@ -17,6 +16,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - self
+  - file_key
+  - 不支持
+  - report
+  - mx_figma
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Figma设计集成-专业版
 
 ## 付费版专享能力

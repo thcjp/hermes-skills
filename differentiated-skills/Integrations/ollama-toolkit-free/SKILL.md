@@ -21,6 +21,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - ollama
+  - qwen2
+  - api
+  - run
+  - 专业版提
 tools:
   - read
   - exec

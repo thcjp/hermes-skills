@@ -20,6 +20,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - step
+  - text
+  - 触发
+  - 模式
+  - 错误处理
 tools:
   - read
   - exec

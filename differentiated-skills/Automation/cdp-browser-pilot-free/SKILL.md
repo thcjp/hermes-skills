@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - edge
+  - await
+  - const
+  - wait
+  - click
 tools:
   - read
   - exec

@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - 通信
+  - free
+  - agent
+  - pro
+  - note-taker
+  - 版本
 tools:
   - read
   - exec

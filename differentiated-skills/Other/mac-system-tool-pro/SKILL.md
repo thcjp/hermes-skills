@@ -40,6 +40,11 @@ tags:
   - 写作
   - 电商
   - 研究
+  - cmd
+  - ssh
+  - json
+  - mdm
+  - 请参考
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: research-agent-tool-free
 name: research-agent-tool-free
 version: 1.0.0
@@ -40,6 +39,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - research
+  - text
+  - agent
+  - true
+  - research-agent
 tools:
   - read
   - exec
@@ -48,9 +52,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # 研究代理助手（免费版）
 ## 概述
 研究代理助手免费版是一款帮助用户围绕特定主题开展开放式研究的智能代理工具。核心理念是"对话是短暂的，文档才是重要的"。代理为每个研究主题创建独立的研究文件夹，通过交互式对话逐步搜索、综合和更新研究文档，最终形成结构化的知识沉淀.

@@ -15,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - 反语调
+  - 基调
+  - 身份助手
+  - 示例
 tools:
   - read
   - exec

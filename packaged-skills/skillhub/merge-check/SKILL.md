@@ -1,12 +1,11 @@
 ---
-
 slug: "merge-check"
 name: "merge-check"
 version: 1.0.1
 displayName: "Merge Check"
 summary: "分析GitHub PR可合并性,预测是否会被合并。Analyze a GitHub pull request for mergeability — predict whether it wi"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Analyze a GitHub pull request for mergeability — predict whether it
   will get merged 基于 tech。Use when 用户需要Merge Check相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 安全
   - 加密
   - AI代理
+  - 建议优化
+  - 检查通过
+  - 不支持
+  - github
+  - agent
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Merge Check
 
 ## 付费版专享能力

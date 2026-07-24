@@ -15,6 +15,11 @@ tags:
   - 可视化
   - 数据处理
   - 工具
+  - amount
+  - csv
+  - sql
+  - python
+  - agent
 tools:
   - read
   - exec

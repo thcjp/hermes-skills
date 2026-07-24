@@ -34,6 +34,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - jira
+  - maton
+  - api
+  - cloud-id
+  - jql
 tools:
   - read
   - exec

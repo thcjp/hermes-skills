@@ -18,13 +18,7 @@ description: '提示词架构师专业版是面向 AI Agent 团队负责人、Pr
   新增上下文腐烂诊断器，量化三因素并给出治理建议.
   适用关键词：prompt工程、few-shot生成、token预算、多agent编排、dag拆解、ab测试、幻觉检测、回归测试、上下文腐烂、plan-execute、reflection'
 tags:
-  - 提示词工程
-  - 多Agent编排
-  - 质量评估
-  - 成本优化
-  - AI代理
-  - 自动化
-  - 智能
+  - token,prompt,few-shot,agent,专业版独
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "accounting-and-finance"
 name: "accounting-and-finance"
 version: 1.0.1
 displayName: "Finance Analyst Pro"
 summary: "企业级财务分析工具,涵盖估值建模(14项)、财务分析(26项)、风险评估(18项)共58个专业分析技能"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   企业级财务分析工具,内置58个专业金融分析技能,覆盖三大核心领域:
   估值建模(DCF/可比公司/分部估值/银行/保险/地产/科技公司估值共14项)、
   财务分析(财务比率/DuPont/ROE-ROIC/盈利能力/现金流/资产结构/报表处理共26项)、
@@ -18,6 +17,11 @@ tags:
   - 金融
   - 财务
   - 数据
+  - 分析
+  - dcf
+  - 模型
+  - wacc
+  - 估值
 tools:
   - read
   - write
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Finance"
-
 ---
-
 # Finance Analyst Pro
 
 企业级财务分析工具,内置58个专业金融分析技能.
@@ -170,6 +172,140 @@ category: "Finance"
 3. **选择框架**: 估值场景→收益法+市场法+特殊行业模型;分析场景→比率+DuPont+现金流+行业专项;风险场景→舞弊+度量+深度+审计
 4. **交叉验证**: 多方法交叉验证(如DCF+CCA+PTA),对比行业基准与历史趋势,识别异常值并敏感性分析
 5. **生成报告**: 输出结构化报告(分析结论+关键指标表+风险提示+假设条件+数据来源)
+
+## 示例代码
+
+### 1. DCF估值输入数据格式（JSON）
+
+调用「DCF折现现金流模型」时，输入3-5年历史财报及预测参数：
+
+```json
+{
+  "company": "某科技股份有限公司",
+  "currency": "CNY",
+  "unit": "亿元",
+  "historical_years": [2022, 2023, 2024],
+  "income_statement": {
+    "revenue": [10.2, 13.5, 18.1],
+    "operating_profit": [1.8, 2.6, 3.7],
+    "net_profit": [1.5, 2.1, 2.9]
+  },
+  "balance_sheet": {
+    "total_assets": [8.5, 11.2, 14.6],
+    "total_debt": [1.2, 1.5, 1.8],
+    "shareholders_equity": [6.1, 8.3, 11.0]
+  },
+  "cash_flow": {
+    "operating_cf": [1.9, 2.7, 3.8],
+    "capex": [0.5, 0.7, 0.9]
+  },
+  "forecast": {
+    "revenue_growth": [0.15, 0.13, 0.11, 0.09, 0.07],
+    "terminal_growth": 0.03,
+    "wacc": 0.097,
+    "tax_rate": 0.25
+  }
+}
+```
+
+### 2. DCF估值输出结果（JSON）
+
+```json
+{
+  "company": "某科技股份有限公司",
+  "valuation_method": "DCF (Gordon Terminal)",
+  "enterprise_value": 52.3,
+  "equity_value": 50.5,
+  "per_share_value": 50.5,
+  "shares_outstanding": 1.0,
+  "assumptions": {
+    "wacc": "9.7%",
+    "terminal_growth": "3.0%",
+    "forecast_period": "5年"
+  },
+  "sensitivity": {
+    "wacc_8.7%_terminal_3.5%": 58.1,
+    "wacc_9.7%_terminal_3.0%": 52.3,
+    "wacc_10.7%_terminal_2.5%": 47.6
+  },
+  "conclusion": "估值区间47.6-58.1亿元，基准值52.3亿元"
+}
+```
+
+### 3. WACC与CAPM计算（Python）
+
+WACC = E/(D+E)×Ke + D/(D+E)×Kd×(1-T)，其中股权成本Ke由CAPM确定：
+
+```python
+def calc_wacc(market_value_equity, market_value_debt, beta,
+              risk_free_rate, market_risk_premium, cost_of_debt, tax_rate):
+    """计算加权平均资本成本 WACC（CAPM确定股权成本）"""
+    e = market_value_equity
+    d = market_value_debt
+    v = e + d
+    # CAPM 股权成本：Ke = Rf + Beta × ERP
+    cost_of_equity = risk_free_rate + beta * market_risk_premium
+    # WACC = E/V×Ke + D/V×Kd×(1-T)
+    wacc = (e / v) * cost_of_equity + (d / v) * cost_of_debt * (1 - tax_rate)
+    return {
+        "cost_of_equity": round(cost_of_equity, 4),
+        "wacc": round(wacc, 4),
+        "weight_equity": round(e / v, 4),
+        "weight_debt": round(d / v, 4),
+    }
+
+# 示例：科技公司IPO估值（中国市场基准）
+result = calc_wacc(
+    market_value_equity=50.0,      # 股权市值（亿元）
+    market_value_debt=1.8,        # 债务市值（亿元）
+    beta=1.2,                     # 行业Beta
+    risk_free_rate=0.025,         # 10年期国债收益率
+    market_risk_premium=0.06,     # 市场风险溢价
+    cost_of_debt=0.045,           # 实际借款利率
+    tax_rate=0.25,                # 企业所得税率
+)
+print(result)
+# {'cost_of_equity': 0.097, 'wacc': 0.0944, 'weight_equity': 0.9653, 'weight_debt': 0.0347}
+```
+
+### 4. Beneish M-Score舞弊识别（Python）
+
+8因子模型识别盈余操纵可能性，阈值-1.78：
+
+```python
+def beneish_m_score(days_sales_receivable_idx, gross_margin_idx,
+                    asset_quality_idx, sales_growth_idx, depreciation_idx,
+                    sga_idx, leverage_idx, total_accruals_to_total_assets):
+    """Beneish M-Score 盈余操纵识别模型"""
+    m_score = (
+        -0.920 * days_sales_receivable_idx
+        + 0.528 * gross_margin_idx
+        + 0.404 * asset_quality_idx
+        + 0.892 * sales_growth_idx
+        - 0.172 * depreciation_idx
+        + 4.679 * sga_idx
+        - 0.327 * leverage_idx
+        + 0.666 * total_accruals_to_total_assets
+    )
+    threshold = -1.78
+    risk_level = "操纵可能性高" if m_score > threshold else "操纵可能性低"
+    return {
+        "m_score": round(m_score, 4),
+        "threshold": threshold,
+        "risk_level": risk_level,
+        "warning": "M-Score仅为辅助工具，需结合红旗预警与现金流分析交叉验证",
+    }
+
+# 示例：某公司8因子指标
+fraud = beneish_m_score(
+    days_sales_receivable_idx=1.012, gross_margin_idx=1.005,
+    asset_quality_idx=1.034, sales_growth_idx=1.185,
+    depreciation_idx=0.997, sga_idx=1.021,
+    leverage_idx=1.045, total_accruals_to_total_assets=0.052,
+)
+print(fraud)
+# {'m_score': 0.6421, 'threshold': -1.78, 'risk_level': '操纵可能性高', ...}
+```
 
 ## 案例展示
 

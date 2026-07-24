@@ -1,12 +1,11 @@
 ---
-
 slug: "typescript-skills"
 name: "typescript-skills"
 version: 1.0.7
 displayName: "TypeScript规范"
 summary: "提供TypeScript最佳实践编码规范并生成符合标准的TypeScript代码。。TypeScript编码规范技能提供最佳实践编码约定并生成符合标准的TypeScript代码. 覆盖Nam"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   TypeScript编码规范技能提供最佳实践编码约定并生成符合标准的TypeScript代码.
   覆盖Naming Conventions命名约定、Types & Interfaces类型与接口、Enums枚举、
   Error Handling错误处理、async/await、工具配置（Recommended tsconfig.json、
@@ -23,6 +22,11 @@ tags:
   - 集成
   - integration
   - 研究
+  - type
+  - error
+  - agent
+  - typescript-eslint
+  - api
 tools:
   - read
   - exec
@@ -30,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # TypeScript — 编码规范
 
 ## 输入格式

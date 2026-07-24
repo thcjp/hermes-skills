@@ -23,6 +23,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - issue
+  - linear
+  - dry-run
+  - eng
+  - csv
 tools:
   - read
   - exec

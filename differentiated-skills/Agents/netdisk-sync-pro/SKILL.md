@@ -14,6 +14,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - bdpan
+  - bash
+  - agent
+  - 记忆备份
+  - download
 tools:
   - read
   - exec

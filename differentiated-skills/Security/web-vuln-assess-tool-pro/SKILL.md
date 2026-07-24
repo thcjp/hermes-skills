@@ -1,5 +1,4 @@
 ---
-
 slug: web-vuln-assess-tool-pro
 name: web-vuln-assess-tool-pro
 version: 1.0.0
@@ -45,6 +44,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - api
+  - html
+  - python
+  - web
+  - 请参考
 tools:
   - read
   - exec
@@ -53,9 +57,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 Web漏洞评估专业版是一款面向企业用户的自动化Web安全评估平台。在免费版手动检查清单基础上,增加API驱动的自动化评估能力,支持19类100+检查项的自动扫描。提供HTML/PDF/SARIF专业评估报告,自动生成渗透测试脚本,覆盖OWASP/PCI-DSS/GDPR/HIPAA四种合规框架映射。支持多应用批量评估与并行处理,满足企业级安全审计需求。与免费版完全兼容,检查清单和评估流程可无缝复用.
 ## 核心能力
 ### 功能矩阵

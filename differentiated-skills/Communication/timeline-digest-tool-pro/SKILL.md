@@ -1,5 +1,4 @@
 ---
-
 slug: "timeline-digest-tool-pro"
 name: "timeline-digest-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "时间线摘要工具-专业版"
 summary: "企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送。时间线摘要工具专业版,面向企业和专业用户的高级X/Twitter时间线信息聚合平台。核心能力: - 全时间"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   时间线摘要工具专业版,面向企业和专业用户的高级X/Twitter时间线信息聚合平台。核心能力:
   - 全时间线抓取(For You + Following + 自定义列表)
   - 智能分类摘要(AI分类:科技/加密货币/商业洞察/其他)
@@ -33,6 +32,11 @@ tags:
   - 研究
   - 分析
   - 通信
+  - pro
+  - aggregator
+  - twitter
+  - com
+  - telegram
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 时间线摘要工具专业版是一款面向企业和专业用户的高级X/Twitter时间线信息聚合平台。在免费版基础抓取和去重能力之上,PRO版新增了AI智能分类摘要、定时自动调度、多源信息聚合、自动推送通知等企业级功能,帮助用户构建自动化的信息聚合与分发工作流.
 PRO版与免费版完全兼容,升级后原有配置和状态数据继续使用。适合企业舆情监控、投资研究信息聚合、内容团队素材采集等需要持续追踪和自动化处理的场景.
 ### PRO版增强能力总览

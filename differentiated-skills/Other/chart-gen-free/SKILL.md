@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 运维
+  - chart
+  - bash
+  - svg
+  - html
+  - title
 tools:
   - read
   - exec

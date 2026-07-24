@@ -39,6 +39,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - granola
+  - json
+  - grain-crawler
+  - doctor
+  - get
 tools:
   - read
   - exec

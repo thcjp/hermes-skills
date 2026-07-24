@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - notes-sync
+  - vault
+  - obsidian
+  - frontmatter
+  - bash
 tools:
   - read
   - exec

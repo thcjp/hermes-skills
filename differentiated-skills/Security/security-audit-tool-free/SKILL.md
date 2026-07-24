@@ -1,5 +1,4 @@
 ---
-
 slug: security-audit-tool-free
 name: security-audit-tool-free
 version: 1.0.0
@@ -49,14 +48,17 @@ tags:
   - 配置检查
   - 加密
   - 工具
+  - self
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - node
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
-
 ---
-
 # 安全审计工具(免费版)
 
 ## 概述

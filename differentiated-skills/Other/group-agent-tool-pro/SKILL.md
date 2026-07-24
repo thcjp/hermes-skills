@@ -15,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - 用户提供
+  - 解析能力
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec

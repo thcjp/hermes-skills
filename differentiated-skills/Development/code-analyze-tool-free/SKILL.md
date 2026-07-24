@@ -40,6 +40,11 @@ tags:
   - 数据分析
   - 代码生成
   - 编程辅助
+  - agent
+  - mece
+  - markdown
+  - 结构化分
+  - 用户提供
 tools:
   - read
   - exec

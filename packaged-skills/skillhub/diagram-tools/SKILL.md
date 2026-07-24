@@ -1,5 +1,4 @@
 ---
-
 slug: "diagram-tools"
 name: "diagram-tools"
 version: 1.0.3
@@ -8,7 +7,7 @@ summary: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导
 
 核心"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成\n\n核心能力:\n- 商业工具领域的专业化AI辅助工具\n\
   - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 日程管理、效率提升、团队协作\n- 独立开发者与一人公司效率提升\n\
 tags:
@@ -21,6 +20,10 @@ tags:
   - AI代理
   - agent
   - 研究
+  - 依赖说明
+  - 不支持
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -28,9 +31,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Diagram Tools
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: tardis-tool-free
 name: tardis-tool-free
 version: 1.0.0
@@ -44,6 +43,11 @@ tags:
   - 研究
   - 分析
   - 知识
+  - tardis
+  - python3
+  - 返回结构
+  - 用户提供
+  - 完成核心
 tools:
   - read
   - exec
@@ -51,9 +55,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 生活事件追踪 - 免费版
 
 ## 概述

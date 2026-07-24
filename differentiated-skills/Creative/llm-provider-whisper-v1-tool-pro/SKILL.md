@@ -1,5 +1,4 @@
 ---
-
 slug: "llm-provider-whisper-v1-tool-pro"
 name: "llm-provider-whisper-v1-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Whisper v1转录专业版"
 summary: "Whisper v1稳定版企业级转录工具,支持批量处理、模型管理、性能调优与服务化部署。。基于 Whisper v1 稳定版本的企业级语音转文字工具(专业版)。核心能力: - 涵盖免费版全部"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   基于 Whisper v1 稳定版本的企业级语音转文字工具(专业版)。核心能力:
   - 涵盖免费版全部能力(v1 稳定 CLI、多格式输出、翻译)
   - 批量处理:目录递归与任务队列
@@ -36,15 +35,18 @@ tags:
   - 写作
   - 电商
   - 运维
+  - self
+  - whisper
+  - import
+  - device
+  - result
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Whisper v1 语音转文字工具 - 专业版
 
 ## 概述

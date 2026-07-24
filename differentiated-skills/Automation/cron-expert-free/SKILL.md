@@ -1,5 +1,4 @@
 ---
-
 slug: cron-expert-free
 name: cron-expert-free
 version: 1.0.1
@@ -17,15 +16,18 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - self
+  - reminders
+  - json
+  - next_run
+  - datetime
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # cron优选实践专家（免费版）
 
 > **不是教你写cron表达式，而是教你正确使用定时系统。自唤醒、时区锁定、陷阱规避，经验法则一网打尽。**

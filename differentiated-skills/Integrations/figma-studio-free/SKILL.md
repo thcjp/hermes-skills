@@ -19,6 +19,11 @@ tags:
   - 代码
   - AI代理
   - agent
+  - figma
+  - resp
+  - json
+  - get
+  - api
 tools:
   - read
   - exec

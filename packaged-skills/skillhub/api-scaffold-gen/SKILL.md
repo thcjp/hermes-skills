@@ -1,5 +1,4 @@
 ---
-
 slug: "api-scaffold-gen"
 name: "api-scaffold-gen"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "API脚手架生成器(专业版)"
 summary: "企业级API脚手架平台，含多框架、DDD分层、微服务、ORM、Docker与CI/CD全套模板。。API脚手架生成器专业版是面向研发团队的全功能API脚手架平台。在免费版的REST/Grap"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   API脚手架生成器专业版是面向研发团队的全功能API脚手架平台。在免费版的REST/GraphQL生成、认证模板、测试套件、Mock服务器基础上，解锁数据库ORM与迁移、多框架支持、DDD分层架构、微服务模板、OpenAPI反向生成、多资源关联、自定义模板引擎、Docker与CI/CD配置、WebSocket端点九大高级能力，覆盖从脚手架到部署的完整项目起步流程
 tags:
   - 代码生成
@@ -18,6 +17,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api-scaffold-gen
+  - ddd
+  - openapi
+  - orm
+  - 解决痛点
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # API脚手架生成器(专业版)
 
 ## 付费版专享能力

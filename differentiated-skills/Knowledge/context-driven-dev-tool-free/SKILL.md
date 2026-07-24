@@ -1,5 +1,4 @@
 ---
-
 slug: context-driven-dev-tool-free
 name: context-driven-dev-tool-free
 version: 1.0.0
@@ -23,15 +22,18 @@ tags:
   - 项目文档
   - AI
   - 工具
+  - 支持创建
+  - 查询
+  - input_params
+  - api
+  - 免费版
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Agents"
-
 ---
-
 # 上下文驱动开发（免费版）
 
 ## 概述

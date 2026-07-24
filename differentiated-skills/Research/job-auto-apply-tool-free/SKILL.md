@@ -42,6 +42,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - json
+  - 支持创建
+  - 查询
+  - input_params
+  - python
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "financial-literacy-paid"
 name: "financial-literacy-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "金融素养专业版"
 summary: "专业金融教育与理财规划系统，支持个性化方案、认证培训与企业内训。。面向专业用户与机构的全栈金融素养教育系统。支持个性化理财方案生成、 金融从业认证培训课程、企业内训定制与学习进度追踪。Use"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向专业用户与机构的全栈金融素养教育系统。支持个性化理财方案生成、
   金融从业认证培训课程、企业内训定制与学习进度追踪。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -23,6 +22,11 @@ tags:
   - 研究
   - 分析
   - 金融
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - 不支持
 tools:
   - read
   - exec
@@ -30,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 金融素养专业版
 
 ## 付费版专享能力

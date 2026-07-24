@@ -1,5 +1,4 @@
 ---
-
 slug: "frontend-design-ai-provider-pro"
 name: "frontend-design-ai-provider-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "前端设计-专业版"
 summary: "企业级前端设计工具,支持设计系统生成、组件库批量产出、多端适配,适配商业产品开发。前端设计专业版,面向企业团队与专业设计师的高级前端界面设计工具。核心能力: - 完整设计系统生成(Desig"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   前端设计专业版,面向企业团队与专业设计师的高级前端界面设计工具。核心能力:
   - 完整设计系统生成(Design Tokens、主题、规范文档)
   - 组件库批量设计与产出,支持 Storybook 集成
@@ -31,15 +30,18 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - storybook
+  - css
+  - rem
+  - tokens
+  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 前端设计工具 - 专业版
 
 ## 概述

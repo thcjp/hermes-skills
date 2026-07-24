@@ -16,6 +16,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - lines
+  - append
+  - get
+  - info
+  - 未知
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "azure-cli-toolkit"
 name: "azure-cli-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Azure命令行工具专业版"
 summary: "企业级Azure云管理,支持批量操作、自动化脚本、多订阅管理与成本优化分析。面向企业团队的高级 Azure 云平台管理工具,在免费版基础上扩展自动化、批量操作与成本治理能力。核心能力: -"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业团队的高级 Azure 云平台管理工具,在免费版基础上扩展自动化、批量操作与成本治理能力。核心能力:
   - 服务主体与托管身份认证(自动化场景)
   - 批量资源操作与脚本化部署
@@ -34,6 +33,11 @@ tags:
   - 成本治理
   - 云计算
   - DevOps
+  - list
+  - query
+  - bash
+  - table
+  - env
 tools:
   - read
   - exec
@@ -41,9 +45,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Azure命令行工具专业版
 
 ## 付费版专享能力

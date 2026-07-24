@@ -1,5 +1,4 @@
 ---
-
 slug: skill-writer-tool-free
 name: skill-writer-tool-free
 version: 1.0.0
@@ -23,15 +22,18 @@ tags:
   - 代码
   - 写作
   - 电商
+  - agent
+  - 编写工具
+  - reference
+  - use
+  - markdown
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Skill编写工具（免费版）
 
 ## 概述

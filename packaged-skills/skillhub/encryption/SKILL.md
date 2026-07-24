@@ -1,12 +1,11 @@
 ---
-
 slug: "encryption"
 name: "encryption"
 version: 1.0.1
 displayName: "Encryption"
 summary: "加密文件/管密钥/审代码加密实践,守住密码安全。Encrypt files, secure passwords, manage keys, and audit code for crypto"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Encrypt files, secure passwords, manage keys, and audit code for cryptographic
   best practices。核心能力:
 
@@ -35,6 +34,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - api
+  - 不支持
+  - agent
+  - key
+  - 依赖说明
 tools:
   - read
   - exec
@@ -42,9 +46,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Encryption
 
 ## 付费版专享能力

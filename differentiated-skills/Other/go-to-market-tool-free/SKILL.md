@@ -38,6 +38,11 @@ tags:
   - 写作
   - 电商
   - 研究
+  - icp
+  - 即时
+  - text
+  - 时间
+  - 动作
 tools:
   - read
   - exec

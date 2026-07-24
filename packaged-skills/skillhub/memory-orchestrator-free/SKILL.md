@@ -1,12 +1,11 @@
 ---
-
 slug: "memory-orchestrator-free"
 name: "memory-orchestrator-free"
 version: "1.0.0"
 displayName: "记忆编排器免费版"
 summary: "基础两层记忆管理，支持关键词检索与简单摘要，本地持久化存储。记忆编排器免费版提供基础记忆管理能力，支持短期与长期两层记忆架构. 核心能力包括：两层记忆存储（短期/长期）、关键词检索、基础摘要"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   记忆编排器免费版提供基础记忆管理能力，支持短期与长期两层记忆架构.
   核心能力包括：两层记忆存储（短期/长期）、关键词检索、基础摘要生成、本地持久化.
   适用于简单的 Agent 记忆管理场景：当前会话上下文存储、基础偏好记录.
@@ -22,10 +21,13 @@ tags:
   - 记忆管理
   - 上下文
   - AI
+  - action
+  - agent
+  - await
+  - skills
+  - memoryorchestrator
 category: "Agents"
-
 ---
-
 # 记忆编排器免费版
 
 基础记忆管理系统，两层架构与关键词检索.

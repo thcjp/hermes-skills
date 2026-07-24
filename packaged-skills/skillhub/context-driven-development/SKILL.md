@@ -1,12 +1,11 @@
 ---
-
 slug: "context-driven-development"
 name: "context-driven-development"
 version: 1.0.1
 displayName: "Context Driven Devel"
 summary: "把项目上下文当受管制品与代码并行,用结构化文档沉淀。Treat project context as a managed artifact alongside code。Use struct"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Treat project context as a managed artifact alongside code。Use structured
   context documents (pro。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -14,6 +13,11 @@ tags:
   - 上下文管理
   - AI
   - 工具
+  - 按流程执
+  - 不支持
+  - 依赖说明
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -21,9 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
 ---
-
 # Context Driven Devel
 
 ## 付费版专享能力

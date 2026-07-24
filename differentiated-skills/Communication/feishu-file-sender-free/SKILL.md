@@ -1,5 +1,4 @@
 ---
-
 slug: feishu-file-sender-free
 name: feishu-file-sender-free
 version: 1.0.1
@@ -22,6 +21,11 @@ tags:
   - 通信
   - 邮件
   - 研究
+  - html
+  - file_key
+  - python3
+  - zip
+  - report
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 飞书文件发送免费版
 
 **版本**: 1.0.0

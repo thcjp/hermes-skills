@@ -1,12 +1,11 @@
 ---
-
 slug: "graincrawl"
 name: "graincrawl"
 version: 1.0.2
 displayName: "Graincrawl"
 summary: "Granola归档,搜索/同步/笔记/转写/面板/SQL。Granola archive: search, sync freshness, notes, transcripts, panel"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Granola archive: search, sync freshness, notes, transcripts, panels,
   SQL。核心能力:
 
@@ -32,6 +31,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - 依赖说明
+  - api
+  - 不支持
+  - key
 tools:
   - read
   - exec
@@ -40,9 +43,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Graincrawl
 
 ## 付费版专享能力

@@ -19,6 +19,11 @@ tags:
   - 代码
   - 写作
   - 电商
+  - key
+  - api
+  - json
+  - call-bridge
+  - 通话指令
 tools:
   - read
   - exec

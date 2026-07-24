@@ -32,6 +32,11 @@ tags:
   - 版本控制
   - Git进阶
   - Git
+  - git
+  - bisect
+  - rebase
+  - bash
+  - pick
 tools:
   - read
   - exec

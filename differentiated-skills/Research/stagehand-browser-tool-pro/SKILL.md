@@ -16,6 +16,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - browser
+  - https
+  - com
+  - json
+  - url
 tools:
   - read
   - exec

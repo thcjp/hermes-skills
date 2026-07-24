@@ -27,6 +27,11 @@ tags:
   - 分析
   - 工作流
   - 写作
+  - bash
+  - run
+  - control_kasa_light
+  - hsv
+  - python
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "git-helper-paid"
 name: "git-helper-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "Git助手专业版"
 summary: "企业级Git辅助工具,支持智能冲突分析、自动修复、批量诊断与团队知识库,提升协作效率。。面向企业研发团队的高级Git辅助工具,提供智能冲突分析、自动修复建议、批量仓库诊断、团队知识库与故障自"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业研发团队的高级Git辅助工具,提供智能冲突分析、自动修复建议、批量仓库诊断、团队知识库与故障自动恢复。核心能力:
   - 智能冲突分析与自动修复建议
   - 批量仓库健康诊断
@@ -33,6 +32,11 @@ tags:
   - 企业级
   - 智能分析
   - 版本控制
+  - analysis
+  - print
+  - echo
+  - git
+  - strip
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Git助手专业版
 
 ## 付费版专享能力

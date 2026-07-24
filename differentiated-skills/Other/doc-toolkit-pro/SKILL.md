@@ -31,6 +31,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - docx
+  - html
+  - pdf
+  - offer
+  - csv
 tools:
   - read
   - exec

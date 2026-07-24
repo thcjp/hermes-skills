@@ -17,6 +17,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - tsx
+  - next
+  - server
+  - components
+  - app
 tools:
   - read
   - exec

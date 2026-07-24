@@ -14,6 +14,10 @@ tags:
   - 免费版
   - 数据处理
   - 工具
+  - col
+  - python
+  - print
+  - 分析
 tools:
   - read
   - exec

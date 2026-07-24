@@ -1,12 +1,11 @@
 ---
-
 slug: "json"
 name: "json"
 version: 1.0.1
 displayName: "JSON"
 summary: "高效处理JSON数据结构/API/序列化。Work with JSON data structures, APIs, and serialization effectively。核心能力:"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Work with JSON data structures, APIs, and serialization effectively。核心能力:
 
   - 集成工具领域的专业化AI辅助工具
@@ -31,6 +30,11 @@ tags:
   - 代码
   - 工作流
   - 研究
+  - 按流程执
+  - json
+  - 依赖说明
+  - api
+  - 不支持
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # JSON
 
 ## 付费版专享能力

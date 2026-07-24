@@ -39,6 +39,10 @@ tags:
   - 开发
   - 代码
   - 安全
+  - json
+  - cookie
+  - agent
+  - accounts
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "html"
 name: "html"
 version: 1.0.1
 displayName: "HTML"
 summary: "规避HTML常见错误,无障碍/表单/SEO疏漏一网打尽。Avoid common HTML mistakes — accessibility gaps, form pitfalls, and"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Avoid common HTML mistakes — accessibility gaps, form pitfalls, and
   SEO oversights。核心能力:
 
@@ -32,6 +31,11 @@ tags:
   - 图像
   - 通信
   - 邮件
+  - div
+  - label
+  - meta
+  - type
+  - html
 tools:
   - read
   - exec
@@ -39,9 +43,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # HTML
 
 ## 付费版专享能力

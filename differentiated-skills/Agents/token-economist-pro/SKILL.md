@@ -23,6 +23,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - token
+  - self
+  - 免费版
+  - true
+  - best_score
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: "stock-filter-tool-pro"
 name: "stock-filter-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "股票筛选专业版"
 summary: "多市场股票筛选系统，支持多策略组合、自定义公式、历史回测与批量导出。。面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、 多策略组合（AND/OR逻辑）、自定义选股公式、历"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、
   多策略组合（AND/OR逻辑）、自定义选股公式、历史回测验证与批量导出。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
@@ -18,15 +17,18 @@ tags:
   - 金融
   - 财务
   - 数据
+  - pro
+  - 自定义公
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
 ---
-
 # 股票筛选专业版（PRO版）
 
 ## 概述

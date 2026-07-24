@@ -18,6 +18,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - pro
+  - free
+  - true
+  - 逻辑
 tools:
   - read
   - exec

@@ -22,6 +22,11 @@ tags:
   - 分析
   - 电商
   - AI代理
+  - free
+  - agent
+  - pro
+  - 版本
+  - 逻辑
 tools:
   - read
   - exec

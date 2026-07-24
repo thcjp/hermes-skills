@@ -1,12 +1,11 @@
 ---
-
 slug: "dashboard-toolkit"
 name: "openclaw-dashboard"
 version: "1.7.3"
 displayName: "SkillHub-dashboard"
 summary: "SkillHub实时运营仪表盘,监控会话/成本/cron/网关。Real-time operations dashboard for SkillHub。Monitors sessions,"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Real-time operations dashboard for SkillHub。Monitors sessions, costs,
   cron jobs, and gateway hea。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - api
+  - 不支持
+  - agent
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # SkillHub-dashboard
 
 ## 付费版专享能力

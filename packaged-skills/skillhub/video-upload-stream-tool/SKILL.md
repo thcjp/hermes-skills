@@ -1,12 +1,11 @@
 ---
-
 slug: "video-upload-stream-tool"
 name: "video-upload-stream-tool"
 version: "1.0.2"
 displayName: "Video Upload Aioz St"
 summary: "快速上传视频到AIOZ Stream API,建视频对象配编码。Quick upload video to AIOZ Stream API. Create video objects wit"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Quick upload video to AIOZ Stream API. Create video objects with default
   or custom encoding config, upload thumbnails, manage and delete videos.
 tags:
@@ -14,15 +13,18 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - video
+  - upload
+  - api
+  - 按流程执
+  - step
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Creative"
-
 ---
-
 # Video Upload Aioz St
 
 ## 核心能力

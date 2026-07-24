@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - self
+  - topic
+  - str
+  - list
+  - dict
 tools:
   - read
   - exec

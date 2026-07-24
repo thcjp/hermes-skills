@@ -36,6 +36,11 @@ tags:
   - 代码
   - 工作流
   - 创意
+  - mermaid
+  - markdown
+  - flowchart
+  - mmd
+  - mermaid-cli
 tools:
   - read
   - exec

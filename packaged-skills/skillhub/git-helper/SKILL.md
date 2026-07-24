@@ -1,12 +1,11 @@
 ---
-
 slug: "git-helper"
 name: "git-helper"
 version: 1.0.1
 displayName: "Git Helper"
 summary: "常用git操作技能,涵盖status/pull/push/branch/log。Common git operations as a skill (status, pull, push, b"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Common git operations as a skill (status, pull, push, branch, log)
 
   核心能力:
@@ -29,6 +28,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -36,9 +40,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Git Helper
 
 ## 付费版专享能力

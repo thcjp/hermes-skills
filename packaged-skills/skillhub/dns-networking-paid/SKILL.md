@@ -1,5 +1,4 @@
 ---
-
 slug: "dns-networking-paid"
 name: "dns-networking-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "DNS网络诊断专业版"
 summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。。面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力: -"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力:
   - 批量多目标DNS与端口巡检
   - 防火墙规则审计(iptables/ufw/云安全组)
@@ -32,15 +31,18 @@ tags:
   - 网络
   - DNS
   - 工具
+  - echo
+  - grep
+  - sudo
+  - iptables
+  - bash
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # DNS网络诊断专业版
 
 ## 付费版专享能力

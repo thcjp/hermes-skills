@@ -1,12 +1,11 @@
 ---
-
 slug: "discord-communities-free"
 name: "discord-communities-free"
 version: "1.0.0"
 displayName: "Discord社区免费"
 summary: "Discord社区只读查询助手,提供用户身份、公会列表与邀请解析基础能力。Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力. 覆盖当前用户资料、公"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力.
   覆盖当前用户资料、公会列表、成员信息、邀请解析与公钥查询等基础场景.
   核心能力:
@@ -25,15 +24,18 @@ tags:
   - Discord
   - 社交
   - 通信
+  - scope
+  - oauth2
+  - discord
+  - token
+  - bearer
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # Discord 社区管理 (免费版)
 
 基于 ClawLink OAuth 的 Discord 只读查询助手,提供用户身份、公会列表与邀请解析基础能力。所有操作均为 `safe` 风险等级,无需额外确认.

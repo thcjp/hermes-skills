@@ -43,6 +43,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - news-pro
+  - 专业版新
+  - date
+  - period
+  - topic
 tools:
   - read
   - exec

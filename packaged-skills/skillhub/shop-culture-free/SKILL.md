@@ -1,12 +1,11 @@
 ---
-
 slug: "shop-culture-free"
 name: "shop-culture-free"
 version: 1.0.1
 displayName: "生活方式购物基础版"
 summary: "基础商品浏览和搜索，AI购物助手和分类导航。AI代理自主购物技能的免费版。支持商品浏览、语义搜索、AI购物助手和分类导航. 适用于商品查找和信息查看场景。升级至完整版可解锁多链加密支付结账、"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   AI代理自主购物技能的免费版。支持商品浏览、语义搜索、AI购物助手和分类导航.
   适用于商品查找和信息查看场景。升级至完整版可解锁多链加密支付结账、x402协议、
   订单跟踪和代理身份功能.
@@ -26,10 +25,12 @@ tags:
   - AI代理
   - agent
   - 知识
+  - get
+  - api
+  - products
+  - post
 category: "Automation"
-
 ---
-
 # 生活方式购物（免费版）
 
 AI代理自主购物技能的免费版。支持商品浏览、语义搜索、AI购物助手和分类导航，无需API Key.

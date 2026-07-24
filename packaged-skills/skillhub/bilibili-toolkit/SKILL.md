@@ -1,5 +1,4 @@
 ---
-
 slug: "bilibili-toolkit"
 name: "bilibili-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "B站工具箱专业版"
 summary: "企业级B站运营工具，支持高清下载、视频发布、批量操作、数据追踪与凭证安全管理。。B站工具箱专业版 —— 面向专业UP主与企业运营的全功能B站工具。核心能力: - 高清视频下载：支持1080p"
 license: "Proprietary"
 edition: "pro"
-description: |-，可分析提升工作效率
+description: |-
   B站工具箱专业版 —— 面向专业UP主与企业运营的全功能B站工具。核心能力:
   - 高清视频下载：支持1080p+、4K超清画质下载
   - 视频发布管理：上传、定时发布、草稿管理、视频编辑
@@ -22,6 +21,11 @@ tags:
   - 批量处理
   - 视频
   - 媒体
+  - python
+  - app
+  - await
+  - execute
+  - publisher
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # B站工具箱专业版
 
 ## 付费版专享能力

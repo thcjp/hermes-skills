@@ -17,6 +17,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - bash
+  - node
+  - markdown
+  - skills
+  - feishu-card-builder
 tools:
   - read
   - exec

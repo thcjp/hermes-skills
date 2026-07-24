@@ -1,12 +1,11 @@
 ---
-
 slug: "css"
 name: "css"
 version: 1.0.2
 displayName: "CSS避坑指南"
 summary: "规避堆叠上下文、布局怪癖与现代CSS特性误用,覆盖flex/grid/响应式/性能。。规避常见CSS陷阱:堆叠上下文失效、margin collapse、flexbox/grid 误解、响应"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   规避常见CSS陷阱:堆叠上下文失效、margin collapse、flexbox/grid
   误解、响应式策略、现代选择器、滚动行为、简写陷阱、性能优化与
   可访问性基线.
@@ -25,10 +24,13 @@ tags:
   - AI代理
   - agent
   - 创意
+  - 执行核心
+  - 处理逻辑
+  - 返回结构
+  - 化结果和
+  - 执行状态
 category: "Automation"
-
 ---
-
 # CSS避坑指南
 
 用户需要CSS专业能力时提供支持,从布局挑战到生产级优化。覆盖堆叠上下文、flexbox/grid模式、响应式设计、性能与可访问性.

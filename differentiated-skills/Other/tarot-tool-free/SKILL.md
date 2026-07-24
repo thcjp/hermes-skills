@@ -1,5 +1,4 @@
 ---
-
 slug: tarot-tool-free
 name: tarot-tool-free
 version: 1.0.0
@@ -39,15 +38,17 @@ tags:
   - AI代理
   - agent
   - 研究
+  - 关键词
+  - 反思
+  - 用户
+  - 正位
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 塔罗反思工具（免费版）
 
 ## 概述

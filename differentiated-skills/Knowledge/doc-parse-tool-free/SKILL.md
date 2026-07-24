@@ -1,5 +1,4 @@
 ---
-
 slug: doc-parse-tool-free
 name: doc-parse-tool-free
 version: 1.0.1
@@ -29,15 +28,17 @@ tags:
   - 研究
   - 分析
   - 开发
+  - 支持创建
+  - 查询
+  - input_params
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 文档解析工具（免费版）
 
 ## 概述

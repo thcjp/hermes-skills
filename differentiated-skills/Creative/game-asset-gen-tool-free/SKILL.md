@@ -39,6 +39,11 @@ tags:
   - 生活
   - 健康
   - 开发
+  - prompt
+  - 风格
+  - 游戏资产
+  - 角色设计
+  - details
 tools:
   - read
   - exec

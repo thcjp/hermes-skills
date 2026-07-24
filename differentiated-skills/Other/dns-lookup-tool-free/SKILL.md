@@ -26,6 +26,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - dns
+  - dig
+  - short
+  - example
+  - com
 tools:
   - read
   - exec

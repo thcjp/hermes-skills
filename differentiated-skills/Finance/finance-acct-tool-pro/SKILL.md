@@ -1,5 +1,4 @@
 ---
-
 slug: "finance-acct-tool-pro"
 name: "finance-acct-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "财务会计专业版"
 summary: "企业级财务会计系统，支持多账套、全税种、批量发票、ERP集成与审计追踪。。面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、 全税种自动计算、批量电子发票生成、银行API直连对"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、
   全税种自动计算、批量电子发票生成、银行API直连对账、ERP系统集成
   与完整审计追踪。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
@@ -19,15 +18,18 @@ tags:
   - 金融
   - 财务
   - 数据
+  - true
+  - pro
+  - finance_pro
+  - python
+  - sap
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
 ---
-
 # 财务会计专业版（PRO版）
 
 ## 概述

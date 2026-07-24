@@ -1,5 +1,4 @@
 ---
-
 slug: "csv-insight"
 name: "csv-insight"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "CSV洞察 专业版"
 summary: "全功能CSV分析，支持流式大文件、相关性分析、分布可视化与高级异常检测。。CSV Insight 专业版面向专业数据分析师与数据科学家，在免费版基础上解锁流式大文件处理、相关性分析、分布可视"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   CSV Insight 专业版面向专业数据分析师与数据科学家，在免费版基础上解锁流式大文件处理、相关性分析、分布可视化与高级异常检测算法。核心能力：GB 级 CSV 流式分析、列间相关系数矩阵、分布可视化（直方图/箱线图/散点图）、高级聚合（median/std/percentile）、多异常检测算法（IQR/DBSCAN/Z-Score）、多文件对比分析、Schema 配置与列类型强制、报表导出（Markdown/HTML）
 tags:
   - 集成工具
@@ -21,6 +20,11 @@ tags:
   - 分析
   - 知识
   - 文档
+  - csv
+  - csv-insight
+  - bash
+  - method
+  - data
 tools:
   - read
   - exec
@@ -28,9 +32,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # CSV洞察 专业版
 
 ## 付费版专享能力

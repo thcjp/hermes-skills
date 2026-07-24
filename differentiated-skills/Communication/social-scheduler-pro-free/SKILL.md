@@ -17,6 +17,11 @@ tags:
   - 社交媒体
   - 营销
   - 通信
+  - twitter
+  - linkedin
+  - instagram
+  - facebook
+  - 内容支柱
 tools:
   - read
   - exec

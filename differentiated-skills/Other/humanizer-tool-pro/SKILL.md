@@ -38,6 +38,11 @@ tags:
   - 文档
   - 研究
   - 分析
+  - json
+  - path
+  - agent
+  - python
+  - style
 tools:
   - read
   - exec

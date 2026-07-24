@@ -29,6 +29,11 @@ tags:
   - 生活
   - 健康
   - 开发
+  - self
+  - headers
+  - api
+  - resp
+  - pmc
 tools:
   - read
   - exec

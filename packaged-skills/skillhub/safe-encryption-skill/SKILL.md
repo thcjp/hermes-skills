@@ -1,12 +1,11 @@
 ---
-
 slug: "safe-encryption-skill"
 name: "safe-encryption-skill"
 version: 0.1.1
 displayName: "Safe Encryption"
 summary: "用SAFE CLI加解密管密钥,现代GPG替代,抗量子。Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG alternative
   with post-quantum 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 安全
   - 加密
   - AI代理
+  - api
+  - 不支持
+  - 依赖说明
+  - llm
+  - key
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Safe Encryption
 
 ## 付费版专享能力

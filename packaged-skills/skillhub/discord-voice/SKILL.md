@@ -1,12 +1,11 @@
 ---
-
 slug: "discord-voice"
 name: "discord-voice"
 version: 0.1.7
 displayName: "Discord语音助手"
 summary: "Discord语音对话助手,覆盖STT/TTS/VAD/打断/自动重连与流式转录全流程。Discord 语音对话专业版 —— 在 Discord 语音频道中实现实时双向语音对话的端到端助手."
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Discord 语音对话专业版 —— 在 Discord 语音频道中实现实时双向语音对话的端到端助手.
   覆盖语音活动检测(VAD)、语音转文字(STT)、文字转语音(TTS)、打断响应(Barge-in)、
   自动重连与流式转录等核心能力.
@@ -33,6 +32,11 @@ tags:
   - Discord
   - 社交
   - 通信
+  - tts
+  - agent
+  - stt
+  - discord_voice
+  - api
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # Discord 语音助手
 
 在 Discord 语音频道中实现端到端语音对话:VAD 检测说话 → 录音缓冲 → STT 转写 → Agent 处理 → TTS 合成 → 频道播放。支持打断响应与自动重连,提供斜杠命令、CLI、Agent Tool 三种入口.

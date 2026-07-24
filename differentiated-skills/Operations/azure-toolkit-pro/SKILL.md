@@ -18,6 +18,11 @@ tags:
   - 基础设施
   - 云计算
   - DevOps
+  - azure
+  - bicep
+  - pro
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec

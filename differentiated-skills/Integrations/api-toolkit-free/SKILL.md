@@ -15,6 +15,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - bearer
+  - key
+  - token
+  - authorization
 tools:
   - read
   - exec

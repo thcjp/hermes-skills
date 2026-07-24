@@ -32,6 +32,11 @@ tags:
   - 分析
   - 知识
   - 文档
+  - note_process_engine
+  - 检索
+  - bash
+  - dbs
+  - 不支持
 tools:
   - read
   - exec

@@ -15,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - 文档类型
+  - 标注
+  - 备忘录
+  - 核心逻辑
 tools:
   - read
   - exec

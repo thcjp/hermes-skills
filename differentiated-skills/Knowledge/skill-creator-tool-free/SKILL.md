@@ -1,5 +1,4 @@
 ---
-
 slug: skill-creator-tool-free
 name: skill-creator-tool-free
 version: 1.0.0
@@ -29,15 +28,18 @@ tags:
   - 写作
   - 电商
   - 开发
+  - 支持创建
+  - 查询
+  - input_params
+  - api
+  - 免费版
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Skill创建工具（免费版）
 
 ## 概述

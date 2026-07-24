@@ -21,6 +21,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - ollama
+  - embedding
+  - memory
+  - 专业版
+  - 自动捕获
 tools:
   - read
   - exec

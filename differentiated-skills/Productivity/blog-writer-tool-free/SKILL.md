@@ -22,6 +22,11 @@ tags:
   - 写作
   - 电商
   - 知识
+  - free
+  - agent
+  - pro
+  - 用户提供
+  - 版本
 tools:
   - read
   - exec

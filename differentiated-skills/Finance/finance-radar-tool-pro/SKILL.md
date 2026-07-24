@@ -1,5 +1,4 @@
 ---
-
 slug: "finance-radar-tool-pro"
 name: "finance-radar-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "股票分析雷达专业版"
 summary: "专业股票与加密货币分析平台，支持批量分析、组合追踪、价格告警与传闻检测。。面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、 投资组合追踪、价格告警、热门趋势检测、传闻与早期信"
 license: "Proprietary"
 edition: "pro"
-description: |-，可分析提升工作效率
+description: |-
   面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、
   投资组合追踪、价格告警、热门趋势检测、传闻与早期信号识别。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
@@ -18,15 +17,18 @@ tags:
   - 金融
   - 财务
   - 数据
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - pro
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
 ---
-
 # 股票分析雷达专业版（PRO版）
 
 ## 概述

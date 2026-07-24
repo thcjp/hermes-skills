@@ -1,12 +1,11 @@
 ---
-
 slug: "ai-kujiale-design"
 name: "ai-kujiale-design"
 version: 0.0.7
 displayName: "酷家乐AI室内设计"
 summary: "酷家乐室内智能设计,分步对话完成户型确认、风格选择、布局生成与渲染出图。。基于酷家乐(Kujiale)开放能力的室内智能设计技能,通过分步式对话完成 户型确认、风格选择、布局生成、渲染出图全"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   基于酷家乐(Kujiale)开放能力的室内智能设计技能,通过分步式对话完成
   户型确认、风格选择、布局生成、渲染出图全流程.
   核心能力:
@@ -26,6 +25,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - token
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - node
 tools:
   - read
   - exec
@@ -33,9 +37,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # 酷家乐 AI 室内设计
 
 基于酷家乐开放能力,通过分步式对话完成户型确认、风格选择、布局生成与渲染出图。必须严格按本文档流程执行,不可自作主张发散.

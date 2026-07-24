@@ -1,12 +1,11 @@
 ---
-
 slug: "azure-ai-voicelive-py"
 name: "azure-ai-voicelive-py"
 version: 0.1.1
 displayName: "Azure实时语音AI开发"
 summary: "基于Azure VoiceLive SDK构建实时双向语音AI应用,支持流式音频、转写、函数调用与多语音模型。"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   面向Azure VoiceLive SDK的实时语音AI开发技能,覆盖WebSocket双向通信、流式音频输入输出、
   实时转写、会话管理、VAD端点检测、函数调用工具集成与多语音模型选择。适用于构建语音助手、
   客服对话、实时翻译、会议转写等场景。支持DefaultAzureCredential与API Key两种认证方式,
@@ -19,6 +18,10 @@ tags:
   - Azure
   - 云计算
   - DevOps
+  - api
+  - import
+  - agent
+  - connect
 tools:
   - read
   - exec
@@ -26,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Azure VoiceLive 实时语音AI开发
 
 ## 输入格式

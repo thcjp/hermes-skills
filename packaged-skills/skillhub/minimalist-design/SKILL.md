@@ -1,5 +1,4 @@
 ---
-
 slug: "minimalist-design"
 name: "minimalist-design"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "极简设计系统专业版"
 summary: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,增加完整组件库、多主题切换、设计系统文档自动生成、
   设计审计与CI/CD集成能力。
 tags:
@@ -20,6 +19,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - output
+  - source
+  - yml
+  - true
+  - opacity
 tools:
   - read
   - exec
@@ -27,9 +31,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # 极简设计系统专业版
 
 ## 付费版专享能力

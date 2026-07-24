@@ -16,6 +16,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - adata
+  - egfr
+  - 分析
+  - output
+  - rdkit
 tools:
   - read
   - exec

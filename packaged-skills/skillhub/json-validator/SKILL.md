@@ -1,5 +1,4 @@
 ---
-
 slug: "json-validator"
 name: "json-validator"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "JSON校验器(专业版)"
 summary: "企业级JSON校验工具，支持批量校验、Schema校验、自动修复与CI/CD集成。。JSON校验器专业版是一款面向数据团队与企业级数据质量保障场景的全功能JSON校验工具。在免费版的语法检查"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   JSON校验器专业版是一款面向数据团队与企业级数据质量保障场景的全功能JSON校验工具。在免费版的语法检查、错误定位、兼容解析基础上，新增批量校验、JSON Schema校验、自动修复、流式校验、持续监控与CI/CD集成六大高级能力，覆盖从单文件到企业级数据质量流水线的全场景需求。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 数据校验
@@ -21,6 +20,11 @@ tags:
   - 安全
   - 加密
   - AI代理
+  - json
+  - schema
+  - path
+  - self
+  - event
 tools:
   - read
   - exec
@@ -28,9 +32,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # JSON校验器(专业版)
 
 ## 付费版专享能力

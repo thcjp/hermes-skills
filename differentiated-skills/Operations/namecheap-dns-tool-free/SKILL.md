@@ -22,6 +22,11 @@ tags:
   - 运维
   - 监控
   - 写作
+  - api
+  - dns
+  - com
+  - example
+  - ttl
 tools:
   - read
   - exec

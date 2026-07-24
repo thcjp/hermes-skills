@@ -19,6 +19,11 @@ tags:
   - 监控
   - 运维
   - 工具
+  - term
+  - rules_dir
+  - txt
+  - self
+  - result
 tools:
   - read
   - exec

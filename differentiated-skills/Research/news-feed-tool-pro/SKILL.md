@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - pro
+  - rss
+  - true
+  - 不支持
+  - news-feed-pro
 tools:
   - read
   - exec

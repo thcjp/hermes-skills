@@ -36,6 +36,11 @@ tags:
   - 分析
   - 知识
   - 文档
+  - note_process_engine
+  - bash
+  - 标签
+  - summarize
+  - keywords
 tools:
   - read
   - exec

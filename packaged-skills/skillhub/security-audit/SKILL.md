@@ -1,12 +1,11 @@
 ---
-
 slug: "security-audit"
 name: "security-audit"
 version: 1.0.1
 displayName: "Security Audit"
 summary: "SkillHub部署全面安全审计,扫暴露凭据与开放端口。Comprehensive security auditing for SkillHub deployments。Scans for"
 license: "Proprietary"
-description: |-，可分析提升工作效率
+description: |-
   Comprehensive security auditing for SkillHub deployments。Scans for
   exposed credentials, open por。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
@@ -14,15 +13,18 @@ tags:
   - 安全
   - 加密
   - 工具
+  - critical
+  - cve
+  - 扫描
+  - env
+  - key
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
-
 ---
-
 # Security Audit
 
 ## 付费版专享能力

@@ -1,12 +1,11 @@
 ---
-
 slug: "bailian-web-search"
 name: "bailian-web-search"
 version: 1.0.5
 displayName: "Bailian Web Search"
 summary: "调百炼(阿里ModelStudio)API做AI优化网搜,多源精炼结果。AI-optimized web search via Bailian(Alibaba ModelStdio) API"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   AI-optimized web search via Bailian(Alibaba ModelStdio) API。Returns
   multisourced, concise web se。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -14,6 +13,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - api
+  - 依赖说明
+  - agent
+  - key
+  - 不支持
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Bailian Web Search
 
 ## 付费版专享能力

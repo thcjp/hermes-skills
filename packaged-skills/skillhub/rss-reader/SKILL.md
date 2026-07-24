@@ -1,12 +1,11 @@
 ---
-
 slug: "rss-reader"
 name: "rss-reader"
 version: 1.0.1
 displayName: "RSS Reader"
 summary: "监控RSS与Atom订阅做内容研究,追踪博客/新闻/邮件。Monitor RSS and Atom feeds for content research。Track blogs, news"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Monitor RSS and Atom feeds for content research。Track blogs, news sites,
   newsletters, and any fe。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
@@ -14,15 +13,18 @@ tags:
   - RSS
   - 订阅
   - 信息
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - node
+  - https
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # RSS Reader
 
 ## 付费版专享能力

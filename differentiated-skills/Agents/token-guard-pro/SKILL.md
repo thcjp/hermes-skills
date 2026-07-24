@@ -15,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - token
+  - cache
+  - prefix
+  - 缓存
+  - 适用
 tools:
   - read
   - exec

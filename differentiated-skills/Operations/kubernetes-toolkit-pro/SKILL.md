@@ -23,6 +23,11 @@ tags:
   - 运维
   - 监控
   - 写作
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - true
 tools:
   - read
   - exec

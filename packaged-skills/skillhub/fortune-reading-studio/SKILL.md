@@ -1,12 +1,11 @@
 ---
-
 slug: fortune-reading-studio
 name: fortune-reading-studio
 version: "1.0.1"
 displayName: "赛博命理师"
 summary: "一人开命理工作室,8种命理体系排盘+AI深度解读,9.9到99元全价位变现。赛博命理师是一款面向命理咨询从业者的AI命理解读工具. 支持8种命理体系排盘、AI深度解读生成报告、安全交付与运势"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   赛博命理师是一款面向命理咨询从业者的AI命理解读工具.
   支持8种命理体系排盘、AI深度解读生成报告、安全交付与运势引流,9.9到99元全价位变现.
   核心能力:
@@ -28,14 +27,17 @@ tags:
   - 通信
   - 邮件
   - 写作
+  - type
+  - llm
+  - api
+  - 不适用
+  - agent
 tools:
   - read
   - exec
   - write
 category: "Automation"
-
 ---
-
 # 赛博命理师 Cyber Fortune Teller
 
 赛博命理师,基于命理排盘引擎支持8种命理体系,AI深度解读生成专业命理报告,支持报告交付与运势摘要生成.

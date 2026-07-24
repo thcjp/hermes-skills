@@ -23,6 +23,10 @@ tags:
   - 开发
   - 代码
   - 知识
+  - json
+  - file-compressor
+  - bash
+  - output
 tools:
   - read
   - exec

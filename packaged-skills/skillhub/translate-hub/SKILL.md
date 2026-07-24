@@ -1,5 +1,4 @@
 ---
-
 slug: "translate-hub"
 name: "translate-hub"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "中英翻译中枢(专业版)"
 summary: "企业级多语言翻译专业版，支持批量文档翻译、自定义术语库、翻译记忆库、多语言互译与API集成，覆盖本地化全流程。"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   中英翻译中枢（专业版）面向翻译团队、本地化工程师与跨国企业，在免费版基础上解锁全部高级能力：无上限批量文档翻译、自定义术语库与团队共享、翻译记忆库（TM）复用历史翻译、多语言互译（中英日韩法德西俄）、文档级上下文记忆、API集成与CI/CD自动化、垂直领域专用术语库。覆盖从单段翻译到企业级本地化流水线的完整工作流
 tags:
   - 翻译工具
@@ -18,6 +17,10 @@ tags:
   - 翻译
   - 语言
   - 工具
+  - 专业版独
+  - translator
+  - 用户提供
+  - 所需的指
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # 中英翻译中枢(专业版)
 
 ## 付费版专享能力

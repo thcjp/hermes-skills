@@ -15,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - 合约
+  - 合约模板
+  - 用户提供
+  - 解析能力
 tools:
   - read
   - exec

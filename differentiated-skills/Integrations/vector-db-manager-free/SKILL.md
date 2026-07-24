@@ -20,6 +20,11 @@ tags:
   - 知识
   - 文档
   - 写作
+  - embedding
+  - documents
+  - conn
+  - vectors
+  - source
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: word-docx-v1-tool-free
 name: word-docx-v1-tool-free
 version: 1.0.0
@@ -28,15 +27,18 @@ tags:
   - 文档
   - 研究
   - 分析
+  - word
+  - 支持创建
+  - 查询
+  - input_params
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Word文档工具V1（免费版）
 
 ## 概述

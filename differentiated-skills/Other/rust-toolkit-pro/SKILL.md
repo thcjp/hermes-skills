@@ -47,6 +47,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - unsafe
+  - self
+  - rust
+  - let
+  - mut
 tools:
   - read
   - exec

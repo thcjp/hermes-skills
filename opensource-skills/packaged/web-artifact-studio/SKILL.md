@@ -16,6 +16,11 @@ tags:
   - Web开发
   - 前端
   - 开发工具
+  - html
+  - tsx
+  - import
+  - react
+  - card
 tools:
   - read
   - exec

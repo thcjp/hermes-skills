@@ -37,6 +37,11 @@ tags:
   - 研究
   - 分析
   - 知识
+  - smart-crawler
+  - sql
+  - api
+  - sync
+  - notion
 tools:
   - read
   - exec

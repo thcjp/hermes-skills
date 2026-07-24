@@ -1,5 +1,4 @@
 ---
-
 slug: golang-toolkit-free
 name: golang-toolkit-free
 version: 1.0.1
@@ -41,15 +40,18 @@ tags:
   - 研究
   - 分析
   - 安全
+  - nil
+  - func
+  - int
+  - channel
+  - original
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Go 语言工具包（免费版）
 ## 概述
 本工具为 Go 开发者提供代码陷阱防范与优选实践指引，覆盖并发编程、接口与类型系统、错误处理、集合操作等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 Goroutine 泄漏、Channel 死锁、接口误用、Slice 共享内存等常见陷阱，编写更加可靠、高效的 Go 代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例.

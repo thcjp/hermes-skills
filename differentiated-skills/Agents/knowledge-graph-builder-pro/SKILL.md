@@ -20,6 +20,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - true
+  - memory
+  - knowledge-graph
+  - eof
+  - sqlite
 tools:
   - read
   - exec

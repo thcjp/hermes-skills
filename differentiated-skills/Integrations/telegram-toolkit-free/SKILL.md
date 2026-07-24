@@ -15,6 +15,11 @@ tags:
   - Telegram
   - 社交
   - 通信
+  - telegram
+  - help
+  - webhook
+  - token
+  - text
 tools:
   - read
   - exec

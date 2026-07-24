@@ -1,12 +1,11 @@
 ---
-
 slug: "plugin-architecture"
 name: "plugin-architecture"
 version: 1.0.2
 displayName: "插件UI架构"
 summary: "为SkillHub安装UI插件架构，使插件可注册自定义视图与导航标签。。插件UI架构为SkillHub（OpenClaw）安装UI插件注册支持，使插件可在Control仪表板侧边栏 注册自定"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   插件UI架构为SkillHub（OpenClaw）安装UI插件注册支持，使插件可在Control仪表板侧边栏
   注册自定义UI视图/标签。支持registerView API注册，包含id、label、subtitle、icon、
   group、position等配置项，可指定Chat、Control、Agent、Settings导航分组.
@@ -24,6 +23,10 @@ tags:
   - AI代理
   - agent
   - 集成
+  - api
+  - group
+  - control
+  - registerview
 tools:
   - read
   - exec
@@ -31,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Plugin Architecture — 插件UI架构
 
 ## 输入格式

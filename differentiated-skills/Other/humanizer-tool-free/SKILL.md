@@ -39,6 +39,11 @@ tags:
   - 代码
   - 电商
   - 研究
+  - 高频词
+  - 语言
+  - 此外
+  - 关键
+  - text
 tools:
   - read
   - exec

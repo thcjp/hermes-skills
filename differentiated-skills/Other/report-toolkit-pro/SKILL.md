@@ -49,6 +49,11 @@ tags:
   - 写作
   - 电商
   - 开发
+  - report-pro-cli
+  - 用户提供
+  - 完成核心
+  - 逻辑
+  - 返回结构
 tools:
   - read
   - exec

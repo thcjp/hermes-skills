@@ -1,5 +1,4 @@
 ---
-
 slug: logo-brand-identity-tool-free
 name: logo-brand-identity-tool-free
 version: 1.0.0
@@ -11,28 +10,14 @@ description: 品牌标识设计免费版帮助个人用户与初创团队通过A
 
   完整品牌套件'
 tags:
-  - 品牌设计
-  - Logo设计
-  - 品牌标识
-  - 配色方案
-  - 视觉设计
-  - 工具
-  - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 研究
-  - 分析
-  - 通信
+  - 品牌标识,配色方案,工具,效率,自动化,创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 品牌标识设计免费版
 
 ## 概述

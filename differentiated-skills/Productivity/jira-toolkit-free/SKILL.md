@@ -22,6 +22,11 @@ tags:
   - 写作
   - 电商
   - AI代理
+  - jira
+  - mcp
+  - agent
+  - free
+  - cli
 tools:
   - read
   - exec

@@ -23,6 +23,11 @@ tags:
   - 写作
   - 电商
   - 知识
+  - free
+  - agent
+  - pro
+  - notion
+  - api
 tools:
   - read
   - exec

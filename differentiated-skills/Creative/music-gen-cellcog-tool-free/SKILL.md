@@ -17,6 +17,11 @@ tags:
   - 内容创作
   - 音频
   - 创意
+  - cellcog
+  - mp3
+  - api
+  - json
+  - 音乐
 tools:
   - read
   - exec

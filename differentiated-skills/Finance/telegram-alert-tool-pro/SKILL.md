@@ -1,5 +1,4 @@
 ---
-
 slug: "telegram-alert-tool-pro"
 name: "telegram-alert-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Telegram告警专业版"
 summary: "多通道交易告警系统，支持多群组、复杂触发、富媒体消息与团队协作。。面向专业交易团队的多通道告警通知系统。支持Telegram多群组推送、 复合触发条件、富媒体消息（图表/图片）、定时播报与团"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向专业交易团队的多通道告警通知系统。支持Telegram多群组推送、
   复合触发条件、富媒体消息（图表/图片）、定时播报与团队协作功能。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发.
 tags:
@@ -18,15 +17,18 @@ tags:
   - 金融
   - 财务
   - 数据
+  - pro
+  - telegram
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
 ---
-
 # Telegram告警专业版（PRO版）
 
 ## 概述

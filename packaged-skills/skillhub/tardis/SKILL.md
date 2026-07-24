@@ -1,12 +1,11 @@
 ---
-
 slug: "tardis"
 name: "tardis"
 version: 1.2.1
 displayName: "TARDIS"
 summary: "核心时间追踪(含较广密钥加载需谨慎)。The core time tracker appears legitimate, but the package also includes broa"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   The core time tracker appears legitimate, but the package also includes
   broad secret loading, pub
 tags:
@@ -18,6 +17,11 @@ tags:
   - 代码
   - 工作流
   - AI代理
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # TARDIS
 
 ## 付费版专享能力

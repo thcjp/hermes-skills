@@ -1,12 +1,11 @@
 ---
-
 slug: "game-ai"
 name: "game-ai"
 version: 1.0.1
 displayName: "Game AI Systems"
 summary: "游戏AI开发指南,行为树/状态机/寻路/决策全覆盖。Game AI development guide covering behavior trees, state machines, pa"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Game AI development guide covering behavior trees, state machines, pathfinding,
   and decision-maki。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 图像
   - 开发
   - 代码
+  - nodestatus
+  - child
+  - status
+  - return
+  - failure
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Game AI Systems
 
 ## 付费版专享能力

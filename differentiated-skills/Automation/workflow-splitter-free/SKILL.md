@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - workflow-splitter
+  - 推理模型
+  - 代码模型
+  - 模型匹配
+  - bash
 tools:
   - read
   - exec

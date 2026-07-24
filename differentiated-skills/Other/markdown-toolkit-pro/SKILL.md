@@ -32,6 +32,11 @@ tags:
   - 其他工具
   - 文档
   - 工具
+  - lint
+  - toc
+  - docs
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec

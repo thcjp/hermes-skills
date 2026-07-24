@@ -20,6 +20,11 @@ tags:
   - 开发
   - 代码
   - 写作
+  - cell
+  - value
+  - xlsx
+  - openpyxl
+  - report
 tools:
   - read
   - exec

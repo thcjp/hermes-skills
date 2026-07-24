@@ -1,12 +1,11 @@
 ---
-
 slug: "vpn"
 name: "vpn"
 version: 1.0.1
 displayName: "VPN"
 summary: "配置排障VPN连接,保障隐私与远程访问。Configure and troubleshoot VPN connections for privacy and remote access。核心"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Configure and troubleshoot VPN connections for privacy and remote access。核心能力:
 
   - 安全工具领域的专业化AI辅助工具
@@ -32,6 +31,10 @@ tags:
   - AI代理
   - agent
   - 安全
+  - vpn
+  - 不支持
+  - api
+  - 依赖说明
 tools:
   - read
   - exec
@@ -39,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # VPN
 
 ## 付费版专享能力

@@ -21,6 +21,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - csv
+  - pypi
+  - output
+  - 文件
+  - charts
 tools:
   - read
   - exec

@@ -34,6 +34,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - agent-browser
+  - find
+  - bash
+  - snapshot
+  - ref
 tools:
   - read
   - exec

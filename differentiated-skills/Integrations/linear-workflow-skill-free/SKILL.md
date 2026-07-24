@@ -20,6 +20,11 @@ tags:
   - 工作流
   - 自动化
   - 效率
+  - api
+  - linear
+  - linear-cli
+  - node
+  - 密钥
 tools:
   - read
   - exec

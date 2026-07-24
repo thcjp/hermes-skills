@@ -1,12 +1,11 @@
 ---
-
 slug: "slack-hub-skill-free"
 name: "slack-hub-skill-free"
 version: "1.0.0"
 displayName: "Slack消息中枢LITE"
 summary: "Slack基础消息发送与公共频道列表，Bot Token直连Web API。面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API， 提"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API，
   提供频道消息发送与公共频道列表两大基础能力.
   支持频道ID寻址、基础消息格式化（粗体/斜体/代码块）、emoji语法.
@@ -17,15 +16,18 @@ tags:
   - Slack
   - 社交
   - 通信
+  - token
+  - slack
+  - bot
+  - api
+  - 发送
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # Slack消息中枢 LITE（Slack Hub Skill Free）
 
 面向团队协作场景的Slack基础消息集成（免费版）。提供频道消息发送与公共频道列表两大能力.

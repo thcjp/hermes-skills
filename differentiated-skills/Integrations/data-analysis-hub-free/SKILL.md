@@ -33,6 +33,10 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - agent
+  - python
+  - 决策优先
+  - 统计严谨
 tools:
   - read
   - exec

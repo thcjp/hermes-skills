@@ -1,5 +1,4 @@
 ---
-
 slug: "finance-toolkit"
 name: "finance-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "行情追踪专业工具"
 summary: "多数据源行情追踪，支持股票、ETF、指数、外汇、加密货币，含告警与批量导出。。面向专业投资者与交易团队的多数据源行情追踪工具。支持股票、ETF、指数、 外汇、加密货币的实时报价与深度历史数据"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向专业投资者与交易团队的多数据源行情追踪工具。支持股票、ETF、指数、
   外汇、加密货币的实时报价与深度历史数据，内置多数据源自动回退、价格
   告警、批量导出与组合分析功能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -19,6 +18,11 @@ tags:
   - 金融
   - 财务
   - 数据
+  - python
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - 不支持
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Finance"
-
 ---
-
 # 行情追踪专业工具
 
 ## 付费版专享能力

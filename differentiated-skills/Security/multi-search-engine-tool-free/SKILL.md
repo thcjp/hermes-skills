@@ -18,6 +18,11 @@ tags:
   - 安全
   - 加密
   - 工具
+  - https
+  - com
+  - query
+  - echo
+  - url
 tools:
   - read
   - exec

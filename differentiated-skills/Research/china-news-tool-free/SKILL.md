@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - rss
+  - self
+  - items
+  - news
+  - append
 tools:
   - read
   - exec

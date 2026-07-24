@@ -30,6 +30,11 @@ tags:
   - 金融
   - 财务
   - 运维
+  - dogecoin
+  - dogecoin-cli
+  - doge
+  - rpc
+  - agent
 tools:
   - read
   - exec

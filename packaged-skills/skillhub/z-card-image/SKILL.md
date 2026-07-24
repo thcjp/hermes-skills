@@ -1,12 +1,11 @@
 ---
-
 slug: "z-card-image"
 name: "z-card-image"
 version: 1.1.1
 displayName: "卡片图渲染"
 summary: "将文案渲染为 PNG 卡片图,支持海报、长文分页、X 风格长图与公众号封面,多平台配色预设。将用户提供的文案渲染成 PNG 卡片图. 支持短文案封面图(poster-3-4)、长文分页卡片("
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   将用户提供的文案渲染成 PNG 卡片图.
   支持短文案封面图(poster-3-4)、长文分页卡片(article-3-4)、
   X 风格帖子分享长图(x-like-posts)与公众号文章封面长条图(wechat-cover-split).
@@ -21,6 +20,11 @@ tags:
   - 图像处理
   - AI绘图
   - 创意
+  - x-like-posts
+  - chrome
+  - 执行
+  - agent
+  - part
 tools:
   - read
   - exec
@@ -28,9 +32,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # z-card-image
 
 将用户提供的文案渲染成 PNG 卡片图.

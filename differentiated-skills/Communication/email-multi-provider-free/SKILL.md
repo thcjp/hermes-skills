@@ -19,6 +19,10 @@ tags:
   - 邮件
   - 通信
   - 工具
+  - porteden
+  - email
+  - bash
+  - messages
 tools:
   - read
   - exec

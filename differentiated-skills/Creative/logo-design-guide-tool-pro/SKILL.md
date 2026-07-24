@@ -19,6 +19,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - logo
+  - true
+  - model
+  - text_rendering
+  - test
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "whatsapp-messaging-free"
 name: "whatsapp-messaging-free"
 version: "1.0.0"
 displayName: "WhatsApp 消息（免费版）"
 summary: "通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求。"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   通过 WhatsApp Business API 发送基础消息。免费版支持文本消息、图片消息与手机号查询.
   通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问.
   适合个人或小团队的日常消息触达场景，不包含模板管理、交互按钮、媒体上传等进阶能力.
@@ -17,15 +16,18 @@ tags:
   - WhatsApp
   - 社交
   - 通信
+  - whatsapp
+  - 消息
+  - api
+  - phone_number_id
+  - clawlink
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # WhatsApp（免费版）
 
 通过 WhatsApp Business API 发送基础消息。免费版支持文本消息、图片消息与手机号查询，满足日常触达需求。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问.

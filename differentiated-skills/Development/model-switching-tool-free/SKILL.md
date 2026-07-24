@@ -43,6 +43,9 @@ tags:
   - 开发
   - 代码
   - 研究
+  - haiku
+  - sonnet
+  - opus
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: sales-copy-writer
 name: sales-copy-writer
 version: 1.0.1
 displayName: "卖货文案手"
 summary: "文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案。卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点. 基于FAB法则提炼卖点,结合6种情绪钩子与4种"
 license: Proprietary
-description: |-，可自动提升工作效率
+description: |-
   卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点.
   基于FAB法则提炼卖点,结合6种情绪钩子与4种CTA话术,5平台风格自动适配.
   核心能力:
@@ -28,14 +27,17 @@ tags:
   - 通信
   - 邮件
   - AI代理
+  - cta
+  - fab
+  - topic
+  - platform
+  - hook_type
 tools:
   - read
   - exec
   - write
 category: "Automation"
-
 ---
-
 # 卖货文案手
 
 解决内容营销中"文案干瘪无转化"的核心痛点,基于FAB法则+情绪钩子+CTA话术生成高转化卖货文案.
@@ -121,6 +123,115 @@ category: "Automation"
 - **CTA**(order): "左下角小黄车,最后3小时59元,抢到就是赚到!"
 
 **效果验证**: FAB卖点直击痛点 / 紧迫感钩子制造焦虑 / 抖音口语化风格 / CTA下单引导+紧迫感
+
+## 示例代码
+
+### 1. 调用输入（JSON）
+
+生成电商详情页护肤品文案的完整输入参数：
+
+```json
+{
+  "topic": "烟酰胺精华液",
+  "brand_info": "瓷肌研 | 专注成分护肤",
+  "platform": "ecommerce",
+  "hook_type": "social_proof",
+  "cta_type": "order"
+}
+```
+
+### 2. 结构化输出（JSON）
+
+技能返回FAB卖点、情绪钩子、平台适配文案与CTA话术：
+
+```json
+{
+  "success": true,
+  "code": 0,
+  "error": null,
+  "data": {
+    "selling_points": [
+      {
+        "feature": "5%高浓度烟酰胺",
+        "advantage": "业内公认有效美白浓度",
+        "benefit": "28天提亮肤色"
+      },
+      {
+        "feature": "玻尿酸+神经酰胺复配",
+        "advantage": "美白同时修护屏障",
+        "benefit": "敏感肌也能用"
+      },
+      {
+        "feature": "第三方机构功效检测",
+        "advantage": "93%受试者28天提亮",
+        "benefit": "有数据支撑更可信"
+      }
+    ],
+    "hook": "10万+真实用户回购，小红书精华液排行榜TOP3，93%受试者28天肉眼可见提亮——不是精华液选不起，而是瓷肌研更有性价比。",
+    "adapted_content": "瓷肌研烟酰胺精华液，5%黄金浓度科学提亮。玻尿酸+神经酰胺复配，美白同时修护屏障，敏感肌也能安心用。第三方机构检测，93%受试者28天肉眼可见提亮。",
+    "cta": "限时活动价89元(原价159元)，前500名送同款旅行装，点击立即下单！"
+  }
+}
+```
+
+### 3. 多平台批量生成（Python）
+
+对同一产品生成5平台风格文案并按平台分类输出：
+
+```python
+import json
+
+def generate_multi_platform(topic, brand_info, hook_type, cta_type):
+    """对同一产品生成5平台风格文案矩阵"""
+    platforms = ["xiaohongshu", "douyin", "wechat", "weibo", "ecommerce"]
+    results = {}
+    for platform in platforms:
+        payload = {
+            "topic": topic,
+            "brand_info": brand_info,
+            "platform": platform,
+            "hook_type": hook_type,
+            "cta_type": cta_type,
+        }
+        # 调用卖货文案手技能（由 Agent LLM 执行）
+        output = call_skill("sales-copy-writer", payload)
+        results[platform] = {
+            "content": output["data"]["adapted_content"],
+            "cta": output["data"]["cta"],
+            "word_count": len(output["data"]["adapted_content"]),
+        }
+    return results
+
+# 示例：为新品上市生成全平台文案矩阵
+matrix = generate_multi_platform(
+    topic="便携式果汁杯",
+    brand_info="鲜生活 | 随身榨汁",
+    hook_type="urgency",
+    cta_type="order",
+)
+print(json.dumps(matrix, ensure_ascii=False, indent=2))
+```
+
+### 4. FAB卖点提炼Prompt模板
+
+LLM执行卖点提炼时的结构化提示模板：
+
+```text
+【任务】基于FAB法则提炼产品核心卖点
+【产品】{topic}
+【品牌】{brand_info}
+【平台】{platform}
+
+【输出要求】生成3-5个FAB结构化卖点：
+- Feature(特性)：产品客观属性，如成分/规格/工艺
+- Advantage(优势)：特性带来的差异化优势
+- Benefit(利益)：用户最终获得的可感知利益
+
+【示例】
+- Feature: 5%高浓度烟酰胺
+- Advantage: 业内公认有效美白浓度
+- Benefit: 28天提亮肤色
+```
 
 ## 异常处理
 

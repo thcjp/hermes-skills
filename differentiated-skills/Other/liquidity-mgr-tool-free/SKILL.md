@@ -35,6 +35,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - 无常损失
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - basedir
 tools:
   - read
   - exec

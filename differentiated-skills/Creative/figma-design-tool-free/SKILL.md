@@ -1,5 +1,4 @@
 ---
-
 slug: figma-design-tool-free
 name: figma-design-tool-free
 version: 1.0.0
@@ -33,15 +32,18 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - file_key
+  - figma
+  - mx_figma
+  - action
+  - depth
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # Figma设计集成工具（免费版）
 
 ## 概述

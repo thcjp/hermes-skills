@@ -1,12 +1,11 @@
 ---
-
 slug: "video-frames"
 name: "video-frames"
 version: 1.0.1
 displayName: "Video Frames"
 summary: "用ffmpeg从视频提取帧或短片段。Extract frames or short clips from videos using ffmpeg。核心能力: - 创意设计领域的专业化AI辅助"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   Extract frames or short clips from videos using ffmpeg。核心能力:
 
   - 创意设计领域的专业化AI辅助工具
@@ -27,6 +26,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - frames
+  - video
+  - 不支持
+  - 依赖说明
+  - 相关配置
 tools:
   - read
   - exec
@@ -34,9 +38,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Video Frames
 
 ## 付费版专享能力

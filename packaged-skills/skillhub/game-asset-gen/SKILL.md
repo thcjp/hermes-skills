@@ -1,5 +1,4 @@
 ---
-
 slug: "game-asset-gen"
 name: "game-asset-gen"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "游戏资产生成-专业版"
 summary: "全栈游戏资产生成引擎，支持2D/3D资产、完整GDD、批量生成与多艺术风格。。游戏资产生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   游戏资产生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Creative
@@ -22,6 +21,11 @@ tags:
   - 生活
   - 健康
   - 知识
+  - self
+  - weapon
+  - 不支持
+  - gdd
+  - def
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 游戏资产生成-专业版
 
 ## 付费版专享能力

@@ -39,6 +39,11 @@ tags:
   - 文档
   - 研究
   - 分析
+  - word-pro
+  - 修订审计
+  - word
+  - docx
+  - template
 tools:
   - read
   - exec

@@ -1,5 +1,4 @@
 ---
-
 slug: self-integration-tool-free
 name: self-integration-tool-free
 version: 1.0.1
@@ -19,6 +18,11 @@ tags:
   - 开发
   - 代码
   - 知识
+  - api
+  - slack
+  - integration_token
+  - bash
+  - authorization
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
 ---
-
 # 自集成工具（免费版）
 
 ## 概述

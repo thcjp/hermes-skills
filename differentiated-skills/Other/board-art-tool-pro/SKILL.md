@@ -40,6 +40,11 @@ tags:
   - 分析
   - 写作
   - 电商
+  - json
+  - 批量发布
+  - 多帧动画
+  - pixels
+  - duration_ms
 tools:
   - read
   - exec

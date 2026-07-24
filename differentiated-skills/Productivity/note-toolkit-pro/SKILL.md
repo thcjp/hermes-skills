@@ -23,6 +23,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - pro
+  - agent
+  - notes
+  - json
+  - free
 tools:
   - read
   - exec

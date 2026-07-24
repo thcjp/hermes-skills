@@ -1,12 +1,11 @@
 ---
-
 slug: "text-to-sql"
 name: "text-to-sql"
 version: 999.0.1
 displayName: "Text To Sql"
 summary: "用户自然语言描述数据需求,生成对应SQL查询。Use when (1) user describes what data they want in plain English and ask"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Use when (1) user describes what data they want in plain English and
   asks for the corresponding S。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -18,6 +17,11 @@ tags:
   - 代码
   - 工作流
   - 研究
+  - 按流程执
+  - 依赖说明
+  - api
+  - 不支持
+  - agent
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Text To Sql
 
 ## 付费版专享能力

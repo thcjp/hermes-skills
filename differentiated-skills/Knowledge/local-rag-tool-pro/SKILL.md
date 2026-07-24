@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - str
+  - self
+  - file_path
+  - 支持创建
+  - 查询
 tools:
   - read
   - exec

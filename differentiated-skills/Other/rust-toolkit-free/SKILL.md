@@ -1,5 +1,4 @@
 ---
-
 slug: rust-toolkit-free
 name: rust-toolkit-free
 version: 1.0.1
@@ -47,15 +46,18 @@ tags:
   - 研究
   - 分析
   - 知识
+  - let
+  - rust
+  - 生命周期
+  - data
+  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Rust 工具包 - 免费版
 
 ## 概述

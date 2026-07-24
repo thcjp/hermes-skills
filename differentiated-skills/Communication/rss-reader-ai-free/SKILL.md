@@ -34,6 +34,11 @@ tags:
   - AI摘要
   - 订阅
   - 信息
+  - rss
+  - yaml
+  - https
+  - com
+  - atom
 tools:
   - read
   - exec

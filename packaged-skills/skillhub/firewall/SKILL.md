@@ -1,12 +1,11 @@
 ---
-
 slug: "firewall"
 name: "firewall"
 version: 1.0.1
 displayName: "Firewall"
 summary: "按安全最佳实践配置服务器与云防火墙,封堵风险。Configure firewalls on servers and cloud providers with security best pr"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Configure firewalls on servers and cloud providers with security best
   practices。核心能力:
 
@@ -33,6 +32,11 @@ tags:
   - 开发
   - 代码
   - AI代理
+  - 不支持
+  - agent
+  - api
+  - 依赖说明
+  - llm
 tools:
   - read
   - exec
@@ -40,9 +44,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Firewall
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: pdf-toolkit-free
 name: pdf-toolkit-free
 version: 1.0.1
@@ -29,15 +28,18 @@ tags:
   - 研究
   - 分析
   - 安全
+  - pdf
+  - 支持创建
+  - 查询
+  - input_params
+  - python
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # PDF工具包（免费版）
 
 ## 概述

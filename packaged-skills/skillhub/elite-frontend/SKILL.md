@@ -1,5 +1,4 @@
 ---
-
 slug: "elite-frontend"
 name: "elite-frontend"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "精英前端设计-专业版"
 summary: "企业级前端设计系统，支持多页面应用、React/Vue组件、品牌一致性与高级动效编排。。精英前端设计工具专业版，面向团队的企业级前端设计系统。核心能力： - 多页面应用设计，统一视觉语言贯穿"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   精英前端设计工具专业版，面向团队的企业级前端设计系统。核心能力：
   - 多页面应用设计，统一视觉语言贯穿全站
   - React/Vue 组件库生成，含 TypeScript 类型定义
@@ -29,6 +28,11 @@ tags:
   - 开发
   - 代码
   - 写作
+  - vue
+  - typescript
+  - json
+  - 不支持
+  - api
 tools:
   - read
   - exec
@@ -36,9 +40,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # 精英前端设计-专业版
 
 ## 付费版专享能力

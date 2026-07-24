@@ -1,12 +1,11 @@
 ---
-
 slug: "agentvibes-voice-skill-free"
 name: "agentvibes-voice-skill-free"
 version: "1.0.0"
 displayName: "AgentVibes TTS LITE"
 summary: "基础TTS语音合成,支持声音切换、预览、语速控制。AgentVibes TTS 语音合成基础客户端（免费版）。集成 Piper TTS 单一 Provider, 支持声音切换、列出、预览、采"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   AgentVibes TTS 语音合成基础客户端（免费版）。集成 Piper TTS 单一 Provider,
   支持声音切换、列出、预览、采样、语速控制等基础能力。免费离线、无需账号（Piper 声音文件需下载）.
   适用于 AI Agent 基础语音播报、简单内容配音场景.
@@ -15,6 +14,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent-vibes
+  - bash
+  - tts
+  - piper
+  - provider
 tools:
   - read
   - exec
@@ -23,9 +27,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
 ---
-
 # AgentVibes TTS LITE
 
 AgentVibes 基础版,基于 Piper TTS 提供文本转语音能力。免费、离线、无需账号（Piper 声音文件需从 HuggingFace 下载）.

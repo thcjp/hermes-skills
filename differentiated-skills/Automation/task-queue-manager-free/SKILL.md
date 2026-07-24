@@ -16,6 +16,10 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - queue
+  - task
+  - task_id
+  - status
 tools:
   - read
   - exec

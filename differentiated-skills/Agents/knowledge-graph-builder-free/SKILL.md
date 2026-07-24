@@ -16,6 +16,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - task
+  - project
+  - type
+  - memory
+  - knowledge-graph
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "email-163-com-free"
 name: "email-163-com-free"
 version: "1.0.0"
 displayName: "163邮箱基础版"
 summary: "163邮箱CLI基础工具,支持发送邮件、读取邮件与简单搜索。163邮箱基础版Skill,基于Python CLI实现,覆盖发送、读取与简单搜索核心功能. 核心能力: - 发送邮件(纯文本/单"
 license: "MIT"
-description: |-，可自动提升工作效率
+description: |-
   163邮箱基础版Skill,基于Python CLI实现,覆盖发送、读取与简单搜索核心功能.
   核心能力:
   - 发送邮件(纯文本/单附件)
@@ -24,15 +23,18 @@ tags:
   - 邮件
   - 通信
   - 工具
+  - imap
+  - com
+  - email-163-com
+  - agent
+  - smtp
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
 ---
-
 # 163邮箱基础版
 
 ## 输入格式

@@ -1,5 +1,4 @@
 ---
-
 slug: "video-toolkit"
 name: "video-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "视频工具箱专业版"
 summary: "批量视频处理+AI超分+智能重构图+多码率+自动化工作流,面向内容团队的专业视频引擎。面向内容团队和机构的专业级视频处理引擎,在免费版核心功能之上,新增批量 文件处理、AI超分辨率、智能重构"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   面向内容团队和机构的专业级视频处理引擎,在免费版核心功能之上,新增批量
   文件处理、AI超分辨率、智能重构图、多码率自适应、自动化工作流和全平台
   规格支持。核心能力:
@@ -35,6 +34,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - echo
+  - mp4
+  - input
+  - crf
+  - hls
 tools:
   - read
   - exec
@@ -42,9 +46,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # 视频工具箱专业版
 
 ## 付费版专享能力

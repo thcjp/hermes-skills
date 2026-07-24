@@ -14,6 +14,11 @@ tags:
   - 工作流
   - 自动化
   - 效率
+  - linear
+  - api
+  - git
+  - agent
+  - 用户提供
 tools:
   - read
   - exec

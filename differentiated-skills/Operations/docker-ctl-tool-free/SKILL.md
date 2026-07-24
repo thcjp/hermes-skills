@@ -17,6 +17,11 @@ tags:
   - 容器
   - Docker
   - DevOps
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
+  - podman
 tools:
   - read
   - exec

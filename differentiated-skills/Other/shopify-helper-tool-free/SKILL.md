@@ -1,5 +1,4 @@
 ---
-
 slug: shopify-helper-tool-free
 name: shopify-helper-tool-free
 version: 1.0.0
@@ -44,15 +43,18 @@ tags:
   - 创意
   - 图像
   - 开发
+  - shopify
+  - div
+  - product
+  - class
+  - liquid
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Shopify 助手 - 免费版
 
 ## 概述

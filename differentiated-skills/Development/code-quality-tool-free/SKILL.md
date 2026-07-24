@@ -1,5 +1,4 @@
 ---
-
 slug: code-quality-tool-free
 name: code-quality-tool-free
 version: 1.0.0
@@ -40,6 +39,10 @@ tags:
   - 安全检查
   - 代码生成
   - 编程辅助
+  - include
+  - grep
+  - echo
+  - bash
 tools:
   - read
   - exec
@@ -48,9 +51,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
 ---
-
 # 代码质量检查工具 - 免费版
 
 ## 概述

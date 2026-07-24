@@ -25,6 +25,11 @@ tags:
   - 邮件
   - 工作流
   - 研究
+  - priority
+  - message
+  - event
+  - color
+  - all_events
 tools:
   - read
   - exec

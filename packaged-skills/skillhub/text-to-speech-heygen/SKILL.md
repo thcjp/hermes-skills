@@ -1,12 +1,11 @@
 ---
-
 slug: "text-to-speech-heygen"
 name: "text-to-speech-heygen"
 version: 2.23.1
 displayName: "Text to Speech"
 summary: "HeyGen TTS语音合成工具's Starfish TTS model. Use。Generate speech audio from text using HeyGen's Starf"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Generate speech audio from text using HeyGen's Starfish TTS model。Use when: (1) Generating stand。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
@@ -17,6 +16,11 @@ tags:
   - 代码
   - AI代理
   - agent
+  - text
+  - result
+  - const
+  - await
+  - language
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Text to Speech
 
 ## 付费版专享能力

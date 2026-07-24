@@ -1,5 +1,4 @@
 ---
-
 slug: weather-toolkit-free
 name: weather-toolkit-free
 version: 1.0.1
@@ -23,15 +22,18 @@ tags:
   - 开发
   - 代码
   - 集成
+  - wttr
+  - open-meteo
+  - curl
+  - json
+  - format
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 天气查询工具包免费版
 
 基于 wttr.in 与 Open-Meteo 两大免费公开服务的天气查询工具包,无需API Key,适合个人用户在命令行或脚本中快速获取天气信息.

@@ -27,6 +27,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - json
+  - 事实
+  - people
+  - zhangsan
+  - 版本替代
 tools:
   - read
   - exec

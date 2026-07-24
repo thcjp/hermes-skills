@@ -27,6 +27,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - self
+  - int
+  - pdf
+  - str
+  - 支持创建
 tools:
   - read
   - exec

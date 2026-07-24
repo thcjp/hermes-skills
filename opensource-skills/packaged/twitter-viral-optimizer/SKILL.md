@@ -20,6 +20,11 @@ tags:
   - 创意
   - 图像
   - 开发
+  - 小红书
+  - twitter
+  - 微博
+  - 版本
+  - 目标受众
 tools:
   - read
   - exec

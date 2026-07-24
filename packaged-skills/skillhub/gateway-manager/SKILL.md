@@ -1,5 +1,4 @@
 ---
-
 slug: "gateway-manager"
 name: "gateway-manager"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "API网关管理器(专业版)"
 summary: "企业级API网关平台，含多租户、熔断、灰度、动态配置、可观测性与插件体系。。API网关管理器专业版是面向企业的全功能API网关平台。在免费版的声明式路由、统一认证、基础限流、监控指标基础上，"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   API网关管理器专业版是面向企业的全功能API网关平台。在免费版的声明式路由、统一认证、基础限流、监控指标基础上，解锁多租户差异化限流、熔断与降级、灰度发布与AB测试、动态配置下发、分布式限流、可观测性套件、插件体系、配置dry-run八大高级能力，覆盖从路由到流量治理到可观测性的完整网关生命周期。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - API网关
@@ -23,6 +22,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - gateway-manager
+  - 动态配置
+  - 解决痛点
+  - 专业版能
+  - yaml
 tools:
   - read
   - exec
@@ -30,9 +34,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # API网关管理器(专业版)
 
 ## 付费版专享能力

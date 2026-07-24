@@ -1,12 +1,11 @@
 ---
-
 slug: "api-gateway"
 name: "api-gateway"
 version: 1.0.1
 displayName: "API网关集成路由"
 summary: "通过托管API网关连接Slack/Gmail/Stripe等外部服务,含连接管理、触发器、事件重放与安全审批"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   托管式 API 网关路由服务。通过统一的 API 路由地址连接 Slack、Gmail、HubSpot、Salesforce、Stripe、
   Airtable、Notion 等第三方服务。提供连接管理（创建/列出/删除）、触发器管理（事件监听/重放/目标配置）、
   安全审批流程（只读优先、写操作需确认、高危操作额外审查）。支持 CLI 与 HTTP 两种调用方式,
@@ -17,6 +16,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - maton
+  - slack
+  - bash
+  - https
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # API 网关集成路由
 
 托管式 API 网关路由服务。通过统一的 API 路由地址 `https://api.maton.ai/` 连接第三方服务,提供连接管理、触发器管理与安全审批流程.

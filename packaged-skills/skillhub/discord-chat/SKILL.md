@@ -1,12 +1,11 @@
 ---
-
 slug: "discord-chat"
 name: "discord-chat"
 version: 1.0.1
 displayName: "Discord Chat"
 summary: "通过message工具在Discord频道发消息、回复、搜索、读取、回应、编辑与删除。discord-chat 通过 message 工具与 Discord 频道交互,覆盖消息发送、线程回复"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   discord-chat 通过 message 工具与 Discord 频道交互,覆盖消息发送、线程回复、
   全文搜索、历史读取、表情回应、消息编辑与删除、频道列表与详情查询.
   支持频道名(#name)或频道 ID 作为目标,支持回复指定消息、按作者/时间分页搜索、
@@ -18,6 +17,11 @@ tags:
   - Chat
   - 社交
   - 通信
+  - action
+  - discord
+  - message
+  - channel
+  - target
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # Discord Chat
 
 ## 输入格式

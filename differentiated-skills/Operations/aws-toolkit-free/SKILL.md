@@ -16,6 +16,11 @@ tags:
   - 云计算
   - 部署
   - DevOps
+  - aws
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
 tools:
   - read
   - exec

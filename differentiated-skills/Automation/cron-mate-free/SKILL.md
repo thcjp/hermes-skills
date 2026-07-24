@@ -1,5 +1,4 @@
 ---
-
 slug: cron-mate-free
 name: cron-mate-free
 version: 1.0.1
@@ -17,15 +16,18 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - cron
+  - group
+  - lambda
+  - print
+  - desc_parts
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 > **写cron不用查文档。自然语言描述，自动生成表达式，一键验证语法。**
 
 将"每天早上8点"翻译成 `0 8 * * *`，将 `0 8 * * 1-5` 翻译成"工作日每天8点"。本技能提供cron表达式的辅助编写与验证能力，让定时规则编写变得直观高效.

@@ -1,5 +1,4 @@
 ---
-
 slug: google-fonts-tool-free
 name: google-fonts-tool-free
 version: 1.0.0
@@ -39,15 +38,18 @@ tags:
   - 写作
   - 电商
   - 研究
+  - display
+  - swap
+  - preconnect
+  - fonts
+  - 变量字体
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 谷歌字体工具（免费版）
 
 ## 概述

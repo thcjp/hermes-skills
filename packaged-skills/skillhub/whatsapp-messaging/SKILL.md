@@ -1,12 +1,11 @@
 ---
-
 slug: "whatsapp-messaging"
 name: "whatsapp-messaging"
 version: 1.0.7
 displayName: "WhatsApp 商业消息"
 summary: "通过 WhatsApp Business API 发送消息、管理模板、处理媒体，支持文本、图片、交互按钮、模板等消息类型。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   通过 WhatsApp Business API 发送消息、管理模板、处理媒体，自动化 WhatsApp Business 消息工作流.
   支持文本、图片、视频、音频、文档、位置、联系人、交互按钮、列表、模板等多种消息类型.
   通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问.
@@ -18,6 +17,11 @@ tags:
   - WhatsApp
   - 社交
   - 通信
+  - whatsapp
+  - api
+  - write
+  - clawlink
+  - business
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # WhatsApp
 
 通过 WhatsApp Business API 发送消息、管理模板、处理媒体，自动化 WhatsApp Business 消息工作流。本技能通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问.

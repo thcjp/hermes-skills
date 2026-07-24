@@ -18,6 +18,11 @@ tags:
   - 金融
   - 财务
   - 数据
+  - python
+  - finance
+  - type
+  - code
+  - period
 tools:
   - read
   - exec

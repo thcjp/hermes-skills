@@ -1,5 +1,4 @@
 ---
-
 slug: discord-voice-tool-pro
 name: discord-voice-tool-pro
 version: 1.0.0
@@ -36,6 +35,11 @@ tags:
   - 企业级
   - 社交
   - 通信
+  - deepgram
+  - apikey
+  - process
+  - env
+  - elevenlabs
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # Discord 语音工具(专业版)
 
 ## 概述

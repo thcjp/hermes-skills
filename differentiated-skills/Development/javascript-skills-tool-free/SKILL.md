@@ -44,6 +44,11 @@ tags:
   - 研究
   - 分析
   - 运维
+  - javascript
+  - const
+  - 推荐
+  - return
+  - var
 tools:
   - read
   - exec

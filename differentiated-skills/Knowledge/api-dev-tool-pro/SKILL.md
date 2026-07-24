@@ -23,6 +23,11 @@ tags:
   - API
   - 接口
   - 开发工具
+  - api
+  - self
+  - path
+  - true
+  - 支持创建
 tools:
   - read
   - exec

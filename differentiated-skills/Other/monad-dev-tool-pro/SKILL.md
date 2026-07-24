@@ -50,6 +50,11 @@ tags:
   - 研究
   - 分析
   - 开发
+  - monad
+  - gas
+  - 用户提供
+  - 完成核心
+  - 逻辑
 tools:
   - read
   - exec

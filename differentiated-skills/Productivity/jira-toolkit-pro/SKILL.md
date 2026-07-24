@@ -21,6 +21,11 @@ tags:
   - 电商
   - 研究
   - 分析
+  - pro
+  - agent
+  - jira
+  - free
+  - true
 tools:
   - read
   - exec

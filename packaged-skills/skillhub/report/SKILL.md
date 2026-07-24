@@ -1,12 +1,11 @@
 ---
-
 slug: "report"
 name: "report"
 version: 1.0.4
 displayName: "定制报表生成"
 summary: "配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。核心能力包括数据源用户驱动配置、YAML报表配置、Cron定时"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。核心能力包括数据源用户驱动配置、YAML报表配置、Cron定时调度、多渠道投递(chat/telegram/file/email)、报表管理(列表/暂停/按需运行)与环境变量安全凭证管理.
 tools:
   - read
@@ -22,10 +21,13 @@ tags:
   - 分析
   - 开发
   - 代码
+  - api
+  - report
+  - 报表
+  - yaml
+  - telegram
 category: "Automation"
-
 ---
-
 # 定制报表生成
 
 配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递.

@@ -1,5 +1,4 @@
 ---
-
 slug: "video-editing-paid"
 name: "video-editing-paid"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "视频剪辑变现专业版"
 summary: "多渠道矩阵+团队SOP+数据看板+90日全流程+合规体系,面向工作室的专业变现运营引擎。面向视频剪辑工作室和团队的专业级变现运营引擎,提供多渠道矩阵策略、 团队协作SOP、数据追踪看板、90"
 license: "Proprietary"
 edition: "pro"
-description: |-，可生成提升工作效率
+description: |-
   面向视频剪辑工作室和团队的专业级变现运营引擎,提供多渠道矩阵策略、
   团队协作SOP、数据追踪看板、90日全流程执行计划和完整合规体系。核心能力:
   - 多渠道矩阵运营策略(5+渠道并行)
@@ -36,6 +35,11 @@ tags:
   - 视频处理
   - 媒体
   - 创意
+  - sop
+  - text
+  - gmv
+  - 用户提供
+  - 目标
 tools:
   - read
   - exec
@@ -43,9 +47,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # 视频剪辑变现专业版
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: board-art-tool-free
 name: board-art-tool-free
 version: 1.0.0
@@ -40,15 +39,18 @@ tags:
   - 电商
   - 研究
   - 分析
+  - json
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - basedir
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 画板艺术工具（免费版）
 
 ## 概述

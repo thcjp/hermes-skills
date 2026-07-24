@@ -1,5 +1,4 @@
 ---
-
 slug: straker-verify-tool-free
 name: straker-verify-tool-free
 version: 1.0.0
@@ -48,14 +47,17 @@ tags:
   - 安全
   - 加密
   - 工具
+  - self
+  - project_id
+  - response
+  - get
+  - headers
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
-
 ---
-
 # AI翻译验证(免费版)
 
 ## 概述

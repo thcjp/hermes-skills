@@ -20,6 +20,11 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
+  - eof
+  - swarm
+  - true
+  - 列出
+  - review
 tools:
   - read
   - exec

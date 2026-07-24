@@ -1,12 +1,11 @@
 ---
-
 slug: "token-layer"
 name: "token-layer"
 version: 1.0.4
 displayName: "Token Layer"
 summary: "抗审查跨链公共代币基础设施,一次发行处处交易。Token Layer - Censorship resistant crosschain public token infrastructur"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Token Layer - Censorship resistant crosschain public token infrastructure。Launch once, trade eve
 tags:
   - Operations
@@ -18,6 +17,11 @@ tags:
   - AI代理
   - agent
   - 创意
+  - api
+  - json
+  - bash
+  - token
+  - https
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Token Layer
 
 ## 付费版专享能力

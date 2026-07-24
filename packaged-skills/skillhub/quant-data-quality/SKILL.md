@@ -1,12 +1,11 @@
 ---
-
 slug: "quant-data-quality"
 name: "quant-data-quality"
 version: 1.0.1
 displayName: "Quant Data Quality"
 summary: "数据质量检查技能。当用户说\。数据质量检查技能。当用户说\ 核心能力: - 商业工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强安全性和稳定性"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   数据质量检查技能。当用户说\
 
   核心能力:
@@ -29,6 +28,11 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - 依赖说明
+  - 不支持
+  - quality
+  - agent
+  - api
 tools:
   - read
   - exec
@@ -37,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
-
 ---
-
 # Quant Data Quality
 
 ## 付费版专享能力

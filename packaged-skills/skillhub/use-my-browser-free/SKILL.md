@@ -1,12 +1,11 @@
 ---
-
 slug: "use-my-browser-free"
 name: "use-my-browser-free"
 version: 1.0.1
 displayName: "浏览器控制工具(免费版)"
 summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)。控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展 桥接，直接操作用户已登录的浏览器"
 license: "MIT"
-description: |-，可处理提升工作效率
+description: |-
   控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展
   桥接，直接操作用户已登录的浏览器会话，无需重新认证。支持页面文本提取、
   元素查找、JavaScript执行、截图和标签页管理。适用于独立开发者、企业团队
@@ -27,10 +26,13 @@ tags:
   - AI代理
   - agent
   - 开发
+  - json
+  - url
+  - tmwd_text
+  - tmwd_elements
+  - max_chars
 category: "Automation"
-
 ---
-
 # 浏览器控制工具(免费版)
 
 控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取.

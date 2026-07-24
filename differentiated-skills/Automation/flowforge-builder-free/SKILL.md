@@ -16,6 +16,11 @@ tags:
   - UI设计
   - 前端
   - 设计
+  - json
+  - action
+  - output
+  - trigger
+  - data
 tools:
   - read
   - exec

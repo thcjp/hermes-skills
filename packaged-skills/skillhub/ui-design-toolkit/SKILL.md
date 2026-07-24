@@ -1,5 +1,4 @@
 ---
-
 slug: "ui-design-toolkit"
 name: "ui-design-toolkit"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "UI设计工具包专业版"
 summary: "企业级UI设计工具包,支持设计系统、设计令牌、可访问性与组件库,适配团队协作与大型项目。。面向团队与企业用户的 UI 设计工具包(专业版)。核心能力: - 涵盖免费版全部能力(视觉层次、排版"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向团队与企业用户的 UI 设计工具包(专业版)。核心能力:
   - 涵盖免费版全部能力(视觉层次、排版、色彩、间距、状态)
   - 设计系统(Design System)构建与维护
@@ -32,6 +31,11 @@ tags:
   - 设计
   - UI/UX
   - 创意
+  - 不支持
+  - button
+  - brand
+  - 免费版
+  - 专业版对
 tools:
   - read
   - exec
@@ -39,9 +43,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # UI设计工具包专业版
 
 ## 付费版专享能力

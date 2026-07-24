@@ -1,12 +1,11 @@
 ---
-
 slug: hook-retention-master
 name: hook-retention-master
 version: 1.0.1
 displayName: "钩子留存大师"
 summary: "8平台25钩子公式,开篇3秒留人,完播率提升300%的内容留存工具。钩子留存大师是一款内容开篇留存优化工具,提升完播率300%. 基于25种钩子公式,为8大平台生成高留存开篇内容,支持A/B"
 license: Proprietary
-description: |-，可生成提升工作效率
+description: |-
   钩子留存大师是一款内容开篇留存优化工具,提升完播率300%.
   基于25种钩子公式,为8大平台生成高留存开篇内容,支持A/B测试与留存曲线分析.
   核心能力:
@@ -28,14 +27,17 @@ tags:
   - 研究
   - 分析
   - 开发
+  - 公式
+  - 编号
+  - 示例
+  - platform
+  - 共鸣型
 tools:
   - read
   - exec
   - write
 category: "Automation"
-
 ---
-
 # 钩子留存大师
 
 开篇3秒决定完播率。本工具基于25种钩子公式,为8大平台生成高留存开篇内容,提升完播率300%.

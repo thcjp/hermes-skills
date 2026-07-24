@@ -25,6 +25,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - repo
+  - self
+  - url
+  - react
+  - facebook
 tools:
   - read
   - exec

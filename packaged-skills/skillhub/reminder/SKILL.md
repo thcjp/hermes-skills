@@ -1,12 +1,11 @@
 ---
-
 slug: "reminder"
 name: "reminder"
 version: 0.1.2
 displayName: "Reminder"
 summary: "捕获自然语言事件存工作区并排Telegram提醒,自动解析。Capture natural-language events, save to your workspace, and sche"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Capture natural-language events, save to your workspace, and schedule
   Telegram reminders with aut。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
@@ -19,6 +18,10 @@ tags:
   - AI代理
   - agent
   - 通信
+  - reminder
+  - 依赖说明
+  - 不支持
+  - api
 tools:
   - read
   - exec
@@ -26,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Reminder
 
 ## 付费版专享能力

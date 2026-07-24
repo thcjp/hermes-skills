@@ -17,6 +17,11 @@ tags:
   - 邮件
   - 通信
   - 工具
+  - profile
+  - porteden
+  - email
+  - csv
+  - com
 tools:
   - read
   - exec

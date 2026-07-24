@@ -1,5 +1,4 @@
 ---
-
 slug: miniprogram-dev-tool-free
 name: miniprogram-dev-tool-free
 version: 1.0.0
@@ -41,15 +40,18 @@ tags:
   - 开发
   - 代码
   - 创意
+  - setdata
+  - key
+  - index
+  - nav
+  - json
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 小程序开发工具（免费版）
 
 ## 概述

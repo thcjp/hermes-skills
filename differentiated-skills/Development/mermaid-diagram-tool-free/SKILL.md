@@ -43,6 +43,11 @@ tags:
   - 代码
   - 工作流
   - 研究
+  - mermaid
+  - 服务端
+  - text
+  - flowchart
+  - 用户
 tools:
   - read
   - exec

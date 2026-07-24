@@ -20,6 +20,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - true
+  - soul-decision
+  - eof
+  - enabled
+  - 专业版
 tools:
   - read
   - exec

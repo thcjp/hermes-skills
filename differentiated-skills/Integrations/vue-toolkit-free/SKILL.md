@@ -1,5 +1,4 @@
 ---
-
 slug: vue-toolkit-free
 name: vue-toolkit-free
 version: 1.0.1
@@ -23,15 +22,18 @@ tags:
   - AI代理
   - agent
   - 研究
+  - watch
+  - ref
+  - reactive
+  - vue
+  - state
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # Vue 工具箱（免费版）
 
 ## 概述

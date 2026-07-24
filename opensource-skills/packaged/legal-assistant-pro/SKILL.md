@@ -20,6 +20,11 @@ tags:
   - 知识
   - 文档
   - 通信
+  - nda
+  - output
+  - 保密期限
+  - agent
+  - 保密信息
 tools:
   - read
   - exec

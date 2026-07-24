@@ -1,12 +1,11 @@
 ---
-
 slug: "aic-dashboard"
 name: "aic-dashboard"
 version: 1.8.1
 displayName: "AIC仪表盘监控"
 summary: "轻量级只读监控面板,展示入站邮件与浏览器会话状态,token保护,5秒自动刷新。AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 5"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 50 封入站邮件,
   读取 session.json 展示浏览器会话状态。通过 token 保护的本地端口提供服务,每 5 秒自动刷新.
   不捕获凭证、不控制浏览器、不发送消息,仅读取本地数据文件并安全呈现.
@@ -22,6 +21,11 @@ tags:
   - 通信
   - 邮件
   - 研究
+  - token
+  - json
+  - url
+  - inbox
+  - jsonl
 tools:
   - read
   - exec
@@ -29,9 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # AIC 仪表盘监控
 
 AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取邮件收集器写入的 `inbox.jsonl` 和浏览器认证写入的 `session.json`,在 token 保护的本地端口统一展示。不捕获凭证、不控制浏览器、不发送消息.

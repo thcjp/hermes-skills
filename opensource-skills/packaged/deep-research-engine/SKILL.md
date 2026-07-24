@@ -15,6 +15,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - 财报
+  - output
+  - agent
+  - 一手
+  - 二手
 tools:
   - read
   - exec

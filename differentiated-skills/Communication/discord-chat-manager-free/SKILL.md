@@ -32,6 +32,11 @@ tags:
   - 消息搜索
   - 社交
   - 通信
+  - discord
+  - message
+  - action
+  - channel
+  - bash
 tools:
   - read
   - exec

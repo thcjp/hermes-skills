@@ -1,5 +1,4 @@
 ---
-
 slug: "ui-ux-dev-tool-pro"
 name: "ui-ux-dev-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "UI/UX开发工具专业版"
 summary: "多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎。面向开发团队和代理机构的专业级React页面生成引擎,支持多页面项目管理、 设计系统持久化、自动化"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向开发团队和代理机构的专业级React页面生成引擎,支持多页面项目管理、
   设计系统持久化、自动化截图审查循环、批量图片处理和Zip打包导出。核心能力:
   - 多页面项目管理与配置持久化
@@ -34,15 +33,18 @@ tags:
   - 项目管理
   - 批量处理
   - UI设计
+  - bash
+  - echo
+  - project
+  - page
+  - 请参考
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 UI/UX开发工具专业版是一款面向开发团队和代理机构的专业级React页面生成引擎。在免费版单页面生成能力之上,扩展至多页面项目管理、设计系统持久化引用、自动化多分辨率截图审查循环、批量图片处理和Zip打包导出.
 专业版保障跨页面设计一致性,支持自动化视觉质量门禁,是代理机构多客户交付和企业多页面应用的理想选择。完全兼容免费版单页面生成流程,可无缝升级.
 ## 核心能力

@@ -1,12 +1,11 @@
 ---
-
 slug: "telegram-messaging"
 name: "telegram-messaging"
 version: 0.2.3
 displayName: "Telegram 消息机器人"
 summary: "通过 Telegram Bot API 发送消息、管理聊天、处理文件与自动化机器人工作流。。Telegram Bot API 集成 Skill。支持发送文本、图片、文档、位置、投票等多类型消"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Telegram Bot API 集成 Skill。支持发送文本、图片、文档、位置、投票等多类型消息，
   管理聊天信息与成员、检索聊天历史、转发与编辑消息、生成与撤销邀请链接、
   处理内联键盘回调、设置机器人命令列表。所有写操作需用户确认后执行，读操作可直接调用.
@@ -18,6 +17,11 @@ tags:
   - Telegram
   - 社交
   - 通信
+  - 写操作
+  - token
+  - 读操作
+  - bot
+  - 消息
 tools:
   - read
   - exec
@@ -25,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
 ---
-
 # Telegram 消息机器人
 
 通过 Telegram Bot API 实现 Telegram 机器人消息发送、聊天管理、文件处理与自动化工作流。所有调用通过 Bot Token 认证，写操作需用户显式确认后执行.

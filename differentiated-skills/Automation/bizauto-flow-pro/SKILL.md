@@ -20,6 +20,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - 分钟
+  - 阶段
+  - 决策
+  - pro
+  - true
 tools:
   - read
   - exec

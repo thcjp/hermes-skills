@@ -17,6 +17,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - https
+  - com
+  - true
+  - feed
+  - 不支持
 tools:
   - read
   - exec

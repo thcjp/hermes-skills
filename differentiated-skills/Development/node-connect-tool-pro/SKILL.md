@@ -1,5 +1,4 @@
 ---
-
 slug: "node-connect-tool-pro"
 name: "node-connect-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "节点连接工具(专业版)"
 summary: "全拓扑节点连接诊断,含尾网/公网/远程网关、批量配对、审计日志与自动修复。。节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:
   - 全拓扑支持:同机器/局域网/Tailscale尾网/公网反代/远程网关
   - 批量设备配对与状态管理
@@ -38,15 +37,18 @@ tags:
   - 研究
   - 分析
   - 写作
+  - skill-platform
+  - echo
+  - tailscale
+  - gateway
+  - config
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 节点连接工具(专业版)
 
 ## 概述

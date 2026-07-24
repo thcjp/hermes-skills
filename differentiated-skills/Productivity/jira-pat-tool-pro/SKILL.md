@@ -22,6 +22,11 @@ tags:
   - 分析
   - 写作
   - 电商
+  - pro
+  - agent
+  - free
+  - jql
+  - api
 tools:
   - read
   - exec

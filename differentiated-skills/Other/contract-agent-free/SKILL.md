@@ -16,6 +16,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - sdk
+  - 合约
+  - const
+  - await
 tools:
   - read
   - exec

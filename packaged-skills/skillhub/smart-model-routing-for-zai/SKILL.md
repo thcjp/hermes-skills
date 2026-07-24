@@ -1,12 +1,11 @@
 ---
-
 slug: "smart-model-routing-for-zai"
 name: "smart-model-routing-for-zai"
 version: 1.0.1
 displayName: "Smart Model Routing"
 summary: "z.ai模型路由指南,不装代码不索凭据。This skill is a disclosed z。ai model-routing guide and does not install cod"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   This skill is a disclosed z。ai model-routing guide and does not install
   code, request credentials。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -19,6 +18,10 @@ tags:
   - AI代理
   - agent
   - 创意
+  - 不支持
+  - api
+  - 依赖说明
+  - llm
 tools:
   - read
   - exec
@@ -26,9 +29,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Smart Model Routing
 
 ## 付费版专享能力

@@ -16,6 +16,11 @@ tags:
   - 自动化
   - 工作流
   - 效率
+  - python
+  - text
+  - json
+  - agent
+  - step
 tools:
   - read
   - exec

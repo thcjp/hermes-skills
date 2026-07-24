@@ -29,6 +29,11 @@ tags:
   - 研究
   - 分析
   - 写作
+  - self
+  - data_dir
+  - datetime
+  - workouts
+  - json
 tools:
   - read
   - exec

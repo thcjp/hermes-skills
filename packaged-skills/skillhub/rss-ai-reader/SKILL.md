@@ -1,12 +1,11 @@
 ---
-
 slug: "rss-ai-reader"
 name: "rss-ai-reader"
 version: 1.0.1
 displayName: "RSS AI 摘要推送"
 summary: "RSS自动抓取与LLM摘要生成,推送飞书/Telegram/Email,SQLite去重与定时任务。RSS AI 阅读器。自动抓取 RSS/Atom 订阅源,通过 ai-assistant"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   RSS AI 阅读器。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 或 llm-provider 生成中文摘要,
   并推送到飞书、Telegram、Email 三个渠道。基于 SQLite 存储实现条目去重,避免重复推送.
   支持单次执行与定时任务两种运行模式,通过命令行参数控制执行行为.
@@ -21,15 +20,18 @@ tags:
   - RSS
   - 订阅
   - 信息
+  - feed
+  - llm
+  - rss
+  - url
+  - telegram
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # RSS AI 摘要推送
 
 自动抓取 RSS/Atom 订阅源,通过 LLM 生成中文摘要,推送到飞书、Telegram、Email。基于 SQLite 去重,支持定时任务.

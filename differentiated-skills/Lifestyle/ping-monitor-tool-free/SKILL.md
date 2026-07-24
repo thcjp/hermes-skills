@@ -23,6 +23,11 @@ tags:
   - 监控
   - 运维
   - 工具
+  - self
+  - target
+  - def
+  - config
+  - return
 tools:
   - read
   - exec

@@ -16,6 +16,11 @@ tags:
   - AWS
   - 云计算
   - DevOps
+  - agentcore
+  - agent
+  - 本免费版
+  - gateway
+  - langgraph
 tools:
   - read
   - exec

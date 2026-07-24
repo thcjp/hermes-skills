@@ -1,5 +1,4 @@
 ---
-
 slug: redis-cache-master
 name: redis-cache-master
 version: 2.0.1
@@ -15,6 +14,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - ttl
+  - redis
+  - token
+  - key
+  - set
 tools:
   - read
   - exec
@@ -24,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
 ---
-
 # Redis 缓存大师（Redis Cache Master）
 
 **不是命令清单，而是生产避坑指南。** 直击五大高频 Redis 生产事故：无 TTL 内存泄漏、淘汰策略错配、集群跨槽报错、原子性陷阱、大 Key 拖垮 eviction。提供决策树与模式库，让每次选型都有依据.

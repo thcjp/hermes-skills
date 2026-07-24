@@ -25,6 +25,11 @@ tags:
   - 通信
   - 邮件
   - 知识
+  - alephnet-node
+  - agent
+  - bash
+  - json
+  - recall
 tools:
   - read
   - exec

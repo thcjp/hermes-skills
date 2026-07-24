@@ -21,6 +21,11 @@ tags:
   - 安全
   - 加密
   - 写作
+  - soc
+  - output
+  - 持续
+  - 计划
+  - 个人信息
 tools:
   - read
   - exec

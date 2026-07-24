@@ -1,5 +1,4 @@
 ---
-
 slug: "universal-translate-tool-pro"
 name: "universal-translate-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "通用翻译工具(专业版)"
 summary: "面向团队的企业级本地化平台,含批量翻译、术语库、对话模式与CI集成,支持多文件并行。。通用翻译工具专业版为团队与企业提供端到端本地化工程能力,涵盖批量文件翻译、术语库管理、对话模式、API集"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   通用翻译工具专业版为团队与企业提供端到端本地化工程能力,涵盖批量文件翻译、术语库管理、对话模式、API集成与CI/CD流水线集成。核心能力:
   - 批量文件翻译(多文件并行处理)
   - 术语库管理(统一样式与命名)
@@ -33,15 +32,18 @@ tags:
   - 团队协作
   - 语言
   - 工具
+  - echo
+  - report_file
+  - yaml
+  - 新增
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Knowledge"
-
 ---
-
 # 通用翻译工具(专业版)
 
 ## 概述

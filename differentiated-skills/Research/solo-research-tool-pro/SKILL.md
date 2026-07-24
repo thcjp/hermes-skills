@@ -40,6 +40,10 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - mcp
+  - reddit
+  - youtube
+  - websearch
 tools:
   - read
   - exec

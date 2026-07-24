@@ -9,18 +9,7 @@ edition: free
 description: Pipedrive工具免费版是一款面向销售数据管理的命令行辅助Skill，让AI Agent能够通过API查询Pipedrive中的商机、联系人、组织和活动数据，实现销售信息的快速检索和展示。核心能力：商机列表与搜索、联系人查询、组织查询、活动列表、管道与阶段查看、当前用户信息。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-  - 销售管理
-  - CRM集成
-  - 数据查询
-  - 集成工具
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - 知识
+  - 工具,自动化,request,api,urllib,json
 tools:
   - read
   - exec

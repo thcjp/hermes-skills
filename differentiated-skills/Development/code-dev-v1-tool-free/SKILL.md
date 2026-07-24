@@ -40,6 +40,11 @@ tags:
   - 版本管理
   - 代码生成
   - 编程辅助
+  - 检查点
+  - code
+  - bash
+  - text
+  - memory
 tools:
   - read
   - exec

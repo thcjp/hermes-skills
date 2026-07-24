@@ -1,5 +1,4 @@
 ---
-
 slug: news-feed-tool-free
 name: news-feed-tool-free
 version: 1.0.0
@@ -40,6 +39,11 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - rss
+  - top
+  - bbc
+  - news
+  - reuters
 tools:
   - read
   - exec
@@ -47,9 +51,7 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
-
 ---
-
 # RSS新闻订阅工具（免费版）
 
 ## 概述

@@ -18,6 +18,10 @@ tags:
   - 数据处理
   - 数据分析
   - 工具
+  - true
+  - pro
+  - agent
+  - free
 tools:
   - read
   - exec

@@ -28,6 +28,11 @@ tags:
   - 安全
   - 加密
   - AI代理
+  - formula
+  - str
+  - self
+  - excel
+  - 支持创建
 tools:
   - read
   - exec

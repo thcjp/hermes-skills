@@ -21,6 +21,11 @@ tags:
   - 云计算
   - DevOps
   - 基础设施
+  - aws
+  - true
+  - azure
+  - pro
+  - gcp
 tools:
   - read
   - exec

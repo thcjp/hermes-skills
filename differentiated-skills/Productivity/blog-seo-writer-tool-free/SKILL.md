@@ -22,6 +22,11 @@ tags:
   - 研究
   - 分析
   - AI代理
+  - free
+  - pro
+  - seo
+  - agent
+  - coffee
 tools:
   - read
   - exec

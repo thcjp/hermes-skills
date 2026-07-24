@@ -1,18 +1,22 @@
 ---
-
 slug: "elite-frontend-design"
 name: "elite-frontend-design"
 version: 1.0.1
 displayName: "Elite Frontend Desig"
 summary: "前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。 输出 HTML/CSS/JS"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。Use when 、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
   - Creative
   - 设计
   - UI/UX
   - 创意
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -20,9 +24,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
 ---
-
 # Elite Frontend Desig
 
 ## 付费版专享能力

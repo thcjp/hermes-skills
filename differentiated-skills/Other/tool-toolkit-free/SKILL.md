@@ -1,5 +1,4 @@
 ---
-
 slug: tool-toolkit-free
 name: tool-toolkit-free
 version: 1.0.1
@@ -38,15 +37,16 @@ tags:
   - 代码
   - 工作流
   - 创意
+  - 用户
+  - text
+  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 工具评估工具（免费版）
 
 ## 概述

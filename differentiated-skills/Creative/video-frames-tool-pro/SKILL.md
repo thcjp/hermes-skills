@@ -1,5 +1,4 @@
 ---
-
 slug: "video-frames-tool-pro"
 name: "video-frames-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "视频帧提取-专业版"
 summary: "企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。。视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
@@ -18,15 +17,18 @@ tags:
   - 企业级
   - 媒体
   - 创意
+  - mp4
+  - videos
+  - 不支持
+  - tmp
+  - json
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
 ---
-
 # 视频帧提取工具 - 专业版
 
 ## 概述

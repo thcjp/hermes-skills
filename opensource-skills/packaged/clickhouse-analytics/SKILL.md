@@ -20,6 +20,11 @@ tags:
   - 创意
   - 图像
   - 运维
+  - string
+  - event_name
+  - day
+  - ttl
+  - 物化视图
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "github-development-standard"
 name: "github-development-standard"
 version: 2.0.1
 displayName: "Github Development S"
 summary: "完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单。完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单 核心能力: -"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单
 
   核心能力:
@@ -29,6 +28,11 @@ tags:
   - 版本控制
   - Git
   - 开发工具
+  - 依赖说明
+  - 不支持
+  - agent
+  - api
+  - 确认运行
 tools:
   - read
   - exec
@@ -36,9 +40,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
 ---
-
 # Github Development S
 
 ## 付费版专享能力

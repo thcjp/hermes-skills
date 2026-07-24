@@ -35,6 +35,11 @@ tags:
   - 个人开发
   - 前端
   - 开发工具
+  - html
+  - meta
+  - cors
+  - web
+  - viewport
 tools:
   - read
   - exec

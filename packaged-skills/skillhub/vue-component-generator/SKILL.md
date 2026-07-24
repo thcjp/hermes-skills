@@ -1,12 +1,11 @@
 ---
-
 slug: "vue-component-generator"
 name: "vue-component-generator"
 version: 1.0.1
 displayName: "Vue Component Genera"
 summary: "生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，一键生成完整"
 license: "Proprietary"
-description: |-，可生成提升工作效率
+description: |-
   生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Development
@@ -18,6 +17,10 @@ tags:
   - AI代理
   - agent
   - 研究
+  - api
+  - vue
+  - 不支持
+  - 依赖说明
 tools:
   - read
   - exec
@@ -25,9 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Vue Component Genera
 
 ## 付费版专享能力

@@ -1,5 +1,4 @@
 ---
-
 slug: file-sorter-tool-free
 name: file-sorter-tool-free
 version: 1.0.0
@@ -39,15 +38,17 @@ tags:
   - 知识
   - 文档
   - 研究
+  - file-sorter
+  - organize
+  - api
+  - target
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 视觉文件整理工具（免费版）
 
 ## 概述

@@ -1,18 +1,22 @@
 ---
-
 slug: "ws-agent-browser"
 name: "ws-agent-browser"
 version: 1.0.1
 displayName: "Agent Browser"
 summary: "浏览器智能控制。自动化操作、截图、填表、数据抓取。。浏览器智能控制。自动化操作、截图、填表、数据抓取。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   浏览器智能控制。自动化操作、截图、填表、数据抓取。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Automation
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - 依赖说明
+  - 不支持
+  - 解析
+  - api
 tools:
   - read
   - exec
@@ -22,9 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
 ---
-
 # Agent Browser
 
 ## 付费版专享能力

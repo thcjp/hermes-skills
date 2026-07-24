@@ -1,12 +1,11 @@
 ---
-
 slug: "yaml"
 name: "yaml"
 version: 1.0.1
 displayName: "YAML"
 summary: "写跨语言跨版本可预测解析的有效YAML。Write valid YAML that parses predictably across languages and versions。核心能力"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Write valid YAML that parses predictably across languages and versions。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
@@ -31,6 +30,10 @@ tags:
   - 代码
   - AI代理
   - agent
+  - 依赖说明
+  - 不支持
+  - yaml
+  - api
 tools:
   - read
   - exec
@@ -38,9 +41,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # YAML
 
 ## 付费版专享能力

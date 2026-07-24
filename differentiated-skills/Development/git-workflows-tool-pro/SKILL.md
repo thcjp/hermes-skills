@@ -1,5 +1,4 @@
 ---
-
 slug: "git-workflows-tool-pro"
 name: "git-workflows-tool-pro"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Git高级操作专业版"
 summary: "企业级 Git 进阶方案，支持子树子模块、稀疏检出、大型单体仓库与冲突自动记忆。。面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流"
 license: "Proprietary"
 edition: "pro"
-description: |-，可自动提升工作效率
+description: |-
   面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 开发工具
@@ -16,15 +15,18 @@ tags:
   - 企业架构
   - Monorepo
   - Git
+  - git
+  - submodule
+  - path
+  - file
+  - rerere
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
 ---
-
 # Git 高级操作助手（专业版）
 
 ## 概述

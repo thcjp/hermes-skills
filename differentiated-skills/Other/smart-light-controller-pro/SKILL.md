@@ -28,6 +28,11 @@ tags:
   - 电商
   - 工作流
   - 开发
+  - bash
+  - run
+  - json
+  - hsv
+  - brightness
 tools:
   - read
   - exec

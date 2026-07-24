@@ -18,6 +18,11 @@ tags:
   - 任务管理
   - 效率
   - 工具
+  - free
+  - agent
+  - pro
+  - 版本
+  - 返回结构
 tools:
   - read
   - exec

@@ -1,12 +1,11 @@
 ---
-
 slug: "feishu-doc"
 name: "feishu-doc"
 version: 1.2.8
 displayName: "Feishu Doc"
 summary: "抓取飞书Wiki/文档/表格/多维表格内容,自动解析URL。Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。Automatically
   resolves Wiki URL。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
@@ -19,6 +18,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - url
+  - wiki
+  - docx
+  - 标题
+  - feishu
 tools:
   - read
   - exec
@@ -26,9 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
 ---
-
 # Feishu Doc
 
 ## 付费版专享能力

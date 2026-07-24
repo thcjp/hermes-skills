@@ -1,5 +1,4 @@
 ---
-
 slug: auto-file-organizer-free
 name: auto-file-organizer-free
 version: 1.0.1
@@ -21,15 +20,18 @@ tags:
   - 创意
   - 图像
   - 开发
+  - downloads
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - python3
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
 ---
-
 # 自动文件整理器（免费版）
 
 > **一键整理凌乱文件夹。按类型/日期自动归类，六大类别覆盖常见文件。**

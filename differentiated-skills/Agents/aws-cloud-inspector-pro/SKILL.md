@@ -24,6 +24,11 @@ tags:
   - AWS
   - 云计算
   - DevOps
+  - aws
+  - profile
+  - output
+  - region
+  - table
 tools:
   - read
   - exec

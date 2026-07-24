@@ -1,12 +1,11 @@
 ---
-
 slug: "x-news-daily"
 name: "x-news-daily"
 version: 2.0.1
 displayName: "X News Daily"
 summary: "抓取 X.com 关键词热门新闻 Top 10，生成全屏中文海报，支持多平台分发。。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，为每条新闻生成 1-2"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，为每条新闻生成 1-2 句中文摘要，
   最终渲染为全屏 HTML 海报图片。支持 Headless Chrome 打印 PDF、大视口截图、kiosk 模式配合 screencapture 三种截图方案.
   生成的海报可作为文件分发到 QQ、Telegram、Discord、微信等任意 IM 平台.
@@ -18,15 +17,18 @@ tags:
   - 新闻
   - 信息
   - 资讯
+  - html
+  - top
+  - var
+  - chrome
+  - 精确提取
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
 ---
-
 # X News Daily
 
 抓取 X.com 上指定关键词的热门新闻 Top 10，翻译为中文，生成全屏精美 HTML 海报并发送给用户.

@@ -28,6 +28,11 @@ tags:
   - 研究
   - 分析
   - 安全
+  - self
+  - str
+  - note
+  - set
+  - notes
 tools:
   - read
   - exec

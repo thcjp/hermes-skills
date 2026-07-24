@@ -15,6 +15,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - ollama
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - memory
 tools:
   - read
   - exec

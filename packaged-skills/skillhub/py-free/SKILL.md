@@ -1,12 +1,11 @@
 ---
-
 slug: "py-free"
 name: "py-free"
 version: "1.0.0"
 displayName: "Python基础版"
 summary: "编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、import 规范与基础异常处理。。编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、 import 规范与基础异常"
 license: "MIT"
-description: |-，可生成提升工作效率
+description: |-
   编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、
   import 规范与基础异常处理.
   核心能力:
@@ -38,15 +37,18 @@ tags:
   - AI代理
   - agent
   - 集成
+  - import
+  - python
+  - items
+  - except
+  - none
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
-
 ---
-
 # Python 基础版
 
 ## 核心能力

@@ -1,12 +1,11 @@
 ---
-
 slug: "dns-networking"
 name: "dns-networking"
 version: 1.0.1
 displayName: "DNS & Networking"
 summary: "调试DNS解析与网络连通,DNS故障/端口测试一键诊断。Debug DNS resolution and network connectivity。Use when troubleshoot"
 license: "Proprietary"
-description: |-，可处理提升工作效率
+description: |-
   Debug DNS resolution and network connectivity。Use when troubleshooting
   DNS failures, testing por。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -14,15 +13,18 @@ tags:
   - 网络
   - DNS
   - 工具
+  - 按流程执
+  - openssl
+  - dns
+  - agent
+  - example
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # DNS & Networking
 
 ## 付费版专享能力

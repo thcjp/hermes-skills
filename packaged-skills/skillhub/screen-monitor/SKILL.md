@@ -1,27 +1,29 @@
 ---
-
 slug: "screen-monitor"
 name: "screen-monitor"
 version: 1.0.2
 displayName: "Screen Monitor"
 summary: "双模屏幕共享与分析,模型无关(Gemini/Claude/Qwen3-VL)。Dual-mode screen sharing and analysis。Model-agnostic (Ge"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   Dual-mode screen sharing and analysis。Model-agnostic (Gemini/ai-assistant/Qwen3-VL)。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Other
   - 监控
   - 运维
   - 工具
+  - 依赖说明
+  - api
+  - 不支持
+  - agent
+  - key
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Operations"
-
 ---
-
 # Screen Monitor
 
 ## 付费版专享能力

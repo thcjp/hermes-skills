@@ -1,12 +1,11 @@
 ---
-
 slug: "agent-group"
 name: "agent-group"
 version: 1.0.4
 displayName: "Agent Group"
 summary: "极简多Agent群组 - 像微信拉群一样简单。极简多Agent群组 - 像微信拉群一样简单 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移"
 license: "Proprietary"
-description: |-，可自动提升工作效率
+description: |-
   极简多Agent群组 - 像微信拉群一样简单
 
   核心能力:
@@ -29,6 +28,11 @@ tags:
   - AI代理
   - 自动化
   - 智能
+  - agent
+  - 不支持
+  - 依赖说明
+  - api
+  - llm
 tools:
   - read
   - exec
@@ -38,9 +42,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
 ---
-
 # Agent Group
 
 ## 付费版专享能力

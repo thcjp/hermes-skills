@@ -28,6 +28,11 @@ tags:
   - 开发
   - 代码
   - 研究
+  - libreoffice
+  - docx
+  - python-docx
+  - install
+  - api
 tools:
   - read
   - exec

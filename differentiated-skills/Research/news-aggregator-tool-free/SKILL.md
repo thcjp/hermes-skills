@@ -39,6 +39,10 @@ tags:
   - 搜索
   - 检索
   - 工具
+  - text
+  - url
+  - tier
+  - 新闻聚合
 tools:
   - read
   - exec
