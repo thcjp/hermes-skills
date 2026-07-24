@@ -29,11 +29,8 @@ tags:
   - 工作流
   - 自动化
   - 效率
-  - 按流程执
-  - 依赖说明
   - agent
   - api
-  - 不支持
 tools:
   - read
   - exec

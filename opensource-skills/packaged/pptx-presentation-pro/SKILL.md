@@ -6,8 +6,7 @@ displayName: 演示文稿大师
 summary: "从大纲到专业PPT一键生成,布局模板图表母版全流程演示文稿处理。演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可"
 license: Proprietary
 description: 演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可视化、批量参数化生成。适用于商业汇报、产品发布、教学课件、培训演示、会议演讲场景。触发关键词:PPT、PowerPoint、演示文稿、幻灯片、pptx、演讲、汇报、课件、母版、幻灯片模板。
-tags:
-  - 演示文稿,幻灯片,商业汇报,工具,pptx,ppt
+tags: 演示文稿,幻灯片,商业汇报,工具,pptx,ppt
 tools:
   - read
   - exec

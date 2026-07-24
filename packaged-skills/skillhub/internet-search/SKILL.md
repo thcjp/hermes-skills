@@ -13,11 +13,8 @@ tags:
   - 搜索
   - 检索
   - 工具
-  - 依赖说明
-  - 不支持
   - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

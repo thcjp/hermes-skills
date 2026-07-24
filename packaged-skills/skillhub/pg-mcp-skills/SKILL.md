@@ -16,16 +16,11 @@ tags:
   - 专业版
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
   - 运维
   - mcp
   - postgresql
-  - agent
-  - 不支持
   - 自动化性
 tools:
   - read

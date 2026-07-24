@@ -32,10 +32,8 @@ tags:
   - 团队协作
   - 语言
   - 工具
-  - echo
   - report_file
   - yaml
-  - 新增
   - api
 tools:
   - read

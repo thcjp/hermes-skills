@@ -23,8 +23,6 @@ tags:
   - path
   - documents
   - 关键文档
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

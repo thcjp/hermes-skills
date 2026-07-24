@@ -22,9 +22,6 @@ tags:
   - 通信
   - action
   - agent
-  - 请参考
-  - 目录中的
-  - 脚本文件
 category: "Communication"
 ---
 # 通讯应用工具

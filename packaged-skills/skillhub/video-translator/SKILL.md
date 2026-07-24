@@ -13,10 +13,8 @@ tags:
   - 视频处理
   - 媒体
   - 创意
-  - 不支持
   - agent
   - api
-  - 依赖说明
   - 视频文件
 tools:
   - read

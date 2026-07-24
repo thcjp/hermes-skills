@@ -44,7 +44,6 @@ tags:
   - ssh
   - json
   - mdm
-  - 请参考
 tools:
   - read
   - exec

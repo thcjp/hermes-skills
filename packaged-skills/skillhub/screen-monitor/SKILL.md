@@ -12,9 +12,7 @@ tags:
   - 监控
   - 运维
   - 工具
-  - 依赖说明
   - api
-  - 不支持
   - agent
   - key
 tools:

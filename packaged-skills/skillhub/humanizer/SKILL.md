@@ -25,16 +25,9 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - 创意
   - humanizer
   - removed
-  - 依赖说明
-  - 不支持
 tools:
   - read
   - exec

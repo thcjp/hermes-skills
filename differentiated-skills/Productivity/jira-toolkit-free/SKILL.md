@@ -16,15 +16,10 @@ tags:
   - 敏捷开发
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
-  - AI代理
   - jira
   - mcp
-  - agent
   - free
   - cli
 tools:

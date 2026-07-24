@@ -32,9 +32,7 @@ tags:
   - 团队协作
   - 语言
   - 工具
-  - echo
   - report_file
-  - 新增
   - pro
 tools:
   - read

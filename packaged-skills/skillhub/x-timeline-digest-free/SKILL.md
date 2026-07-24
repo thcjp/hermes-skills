@@ -16,16 +16,9 @@ tags:
   - Social Media
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - bird
   - following
   - json
-  - agent
   - you
 tools:
   - read

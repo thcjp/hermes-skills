@@ -26,17 +26,10 @@ tags:
   - Lifestyle
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 写作
   - 电商
-  - AI代理
   - api
-  - 不支持
-  - agent
   - llm
-  - 依赖说明
 tools:
   - read
   - exec

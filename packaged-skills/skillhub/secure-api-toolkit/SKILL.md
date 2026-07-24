@@ -19,7 +19,6 @@ tags:
   - sdk
   - python
   - agent
-  - 不支持
 tools:
   - read
   - exec

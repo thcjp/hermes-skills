@@ -13,10 +13,8 @@ tags:
   - Web开发
   - 前端
   - 开发工具
-  - 不支持
   - agent
   - api
-  - 依赖说明
   - llm
 tools:
   - read

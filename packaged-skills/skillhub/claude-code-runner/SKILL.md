@@ -16,7 +16,6 @@ tags:
   - runner
   - result
   - api
-  - 不支持
 tools:
   - read
   - exec

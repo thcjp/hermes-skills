@@ -16,7 +16,6 @@ tags:
   - k8s
   - sidecar
   - 来源
-  - 不支持
   - 查询
 tools:
   - read

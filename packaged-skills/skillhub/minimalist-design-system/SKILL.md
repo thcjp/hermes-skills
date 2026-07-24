@@ -15,8 +15,6 @@ tags:
   - 创意
   - 设计令牌
   - css
-  - 不支持
-  - 依赖说明
   - agent
 tools:
   - read

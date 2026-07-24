@@ -12,17 +12,11 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - AI代理
-  - agent
-  - 开发
-  - 代码
   - 写作
   - activities
   - reader
   - xml
   - root
-  - 依赖说明
 tools:
   - read
   - write

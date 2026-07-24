@@ -19,15 +19,9 @@ tags:
   - 通用办公
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
   - 创意
   - string
   - score
-  - agent
   - markdown
   - polish
 category: "Automation"

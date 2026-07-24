@@ -36,7 +36,6 @@ tags:
   - 检索
   - bash
   - dbs
-  - 不支持
 tools:
   - read
   - exec

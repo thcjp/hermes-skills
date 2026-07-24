@@ -14,16 +14,11 @@ tags:
   - 匿名通信
   - 工具
   - 效率
-  - 自动化
   - 安全
   - 加密
-  - AI代理
-  - agent
-  - 研究
   - socks5
   - proxy
   - 代理服务
-  - com
 tools:
   - read
   - exec

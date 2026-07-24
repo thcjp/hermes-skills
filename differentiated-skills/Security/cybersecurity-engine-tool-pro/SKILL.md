@@ -22,7 +22,6 @@ tags:
   - phase
   - self
   - weight
-  - 专业版独
   - score
 tools:
   - read

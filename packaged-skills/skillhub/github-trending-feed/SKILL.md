@@ -17,7 +17,6 @@ tags:
   - api
   - agent
   - trending
-  - 不支持
 tools:
   - read
   - exec

@@ -2,14 +2,12 @@
 slug: "note-app-cli"
 name: "note-app-cli"
 version: "1.0.0"
-displayName: "Obsidian Official Cl"
+displayName: "Obsidian CLI"
 summary: "Obsidian管理技能,管笔记库(权限较广需谨慎)。This skill matches its Obsidian-management purpose, but it gives an"
 license: "Proprietary"
 description: |-
-  This skill matches its Obsidian-management purpose, but it gives an
-  agent broad power to change, 
-tags:
-  - 效率,obsidian,sync,file,dev,history
+  Obsidian笔记管理CLI工具,支持文件同步、历史版本管理和Vault操作. 提供笔记的创建、编辑、搜索和组织能力
+tags: obsidian,sync,file,history,笔记管理,Vault
 tools:
   - read
   - exec

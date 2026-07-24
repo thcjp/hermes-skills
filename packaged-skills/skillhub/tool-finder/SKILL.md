@@ -11,17 +11,11 @@ tags:
   - Research
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - 知识
   - tool-finder
   - search
   - 协议
   - type
-  - 依赖说明
 tools:
   - read
   - exec

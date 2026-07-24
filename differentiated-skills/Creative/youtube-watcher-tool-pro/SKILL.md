@@ -22,7 +22,6 @@ tags:
   - json
   - python3
   - 频道监控
-  - 不支持
   - youtube
 tools:
   - read

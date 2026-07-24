@@ -11,16 +11,9 @@ tags:
   - Knowledge
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 工作流
   - 创意
   - step
-  - 按流程执
   - part
-  - 不支持
-  - 依赖说明
 tools:
   - read
   - exec

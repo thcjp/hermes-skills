@@ -14,8 +14,7 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 效率,artboard,api,agent,bash,请参考
+tags: 效率,artboard,api,agent,bash
 category: "Automation"
 ---
 # Board Art Free

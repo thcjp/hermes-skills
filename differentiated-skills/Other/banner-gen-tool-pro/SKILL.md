@@ -42,7 +42,6 @@ tags:
   - prompt
   - banner-gen-pro
   - png
-  - 不支持
   - 批量生成
 tools:
   - read

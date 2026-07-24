@@ -25,16 +25,9 @@ tags:
   - Knowledge
   - 工具
   - 效率
-  - 自动化
   - 知识
   - 文档
-  - 开发
-  - 代码
-  - AI代理
   - pdf
-  - 不支持
-  - 依赖说明
-  - agent
   - api
 tools:
   - read

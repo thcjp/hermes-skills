@@ -14,8 +14,6 @@ tags:
   - 工具
   - api
   - monitor
-  - 不支持
-  - 依赖说明
   - agent
 tools:
   - read

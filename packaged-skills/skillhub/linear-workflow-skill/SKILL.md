@@ -25,7 +25,6 @@ tags:
   - linear
   - node
   - 冲刺规划
-  - 不支持
 tools:
   - read
   - exec

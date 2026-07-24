@@ -39,7 +39,6 @@ tags:
   - git
   - import
   - print
-  - echo
 tools:
   - read
   - exec

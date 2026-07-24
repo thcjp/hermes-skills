@@ -17,16 +17,12 @@ tags:
   - 日程
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
   - 集成
   - pro
   - mcporter
   - url
-  - agent
   - free
 tools:
   - read

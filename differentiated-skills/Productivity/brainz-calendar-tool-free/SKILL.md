@@ -16,15 +16,11 @@ tags:
   - 时间管理
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 通信
   - 邮件
   - 写作
   - free
   - pro
-  - agent
   - caldav
   - export
 tools:

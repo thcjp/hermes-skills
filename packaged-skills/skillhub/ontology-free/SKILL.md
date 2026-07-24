@@ -15,8 +15,7 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 效率,schema,task,status,type,返回
+tags: 效率,schema,task,status,type,返回
 category: "Automation"
 ---
 # 类型化知识图谱引擎（基础版）

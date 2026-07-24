@@ -23,7 +23,6 @@ tags:
   - 知识
   - self
   - weapon
-  - 不支持
   - gdd
   - def
 tools:

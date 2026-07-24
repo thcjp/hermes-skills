@@ -16,13 +16,9 @@ tags:
   - 数据分析
   - 自动化
   - 工具
-  - 效率
-  - 研究
-  - 分析
   - 写作
   - 电商
   - free
-  - agent
   - pro
   - true
 tools:

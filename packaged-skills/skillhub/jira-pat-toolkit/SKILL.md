@@ -12,14 +12,8 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - 写作
   - jira
-  - 不支持
   - issue
   - api
 tools:

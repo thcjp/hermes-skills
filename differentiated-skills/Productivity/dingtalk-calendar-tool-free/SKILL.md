@@ -17,15 +17,11 @@ tags:
   - 日程
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
   - 通信
   - mcporter
   - free
-  - agent
   - pro
   - url
 tools:

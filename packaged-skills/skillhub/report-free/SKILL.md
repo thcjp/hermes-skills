@@ -29,17 +29,11 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
   - 写作
   - json
   - csv
   - markdown
   - string
-  - agent
 tools:
   - read
   - write

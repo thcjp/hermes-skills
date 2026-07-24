@@ -41,7 +41,6 @@ tags:
   - ssml
   - prosody
   - api
-  - 不支持
   - break
 tools:
   - read

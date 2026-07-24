@@ -31,7 +31,6 @@ tags:
   - 网络
   - DNS
   - 工具
-  - echo
   - grep
   - sudo
   - iptables

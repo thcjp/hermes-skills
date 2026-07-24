@@ -36,7 +36,6 @@ tags:
   - design-preferences
   - 偏好
   - profile
-  - echo
 tools:
   - read
   - exec

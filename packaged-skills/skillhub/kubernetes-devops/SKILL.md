@@ -12,15 +12,8 @@ tags:
   - Operations
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 运维
   - 监控
-  - AI代理
-  - 不支持
-  - 依赖说明
-  - agent
   - api
   - llm
 tools:

@@ -17,9 +17,6 @@ tags:
   - SSO
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
   - 知识
@@ -27,7 +24,6 @@ tags:
   - free
   - pro
   - jql
-  - agent
 tools:
   - read
   - exec

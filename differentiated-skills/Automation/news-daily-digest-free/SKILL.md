@@ -20,7 +20,6 @@ tags:
   - workspace
   - news-digest
   - 自动翻译
-  - com
 tools:
   - read
   - exec

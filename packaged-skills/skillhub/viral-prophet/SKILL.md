@@ -21,17 +21,12 @@ tags:
   - 数据驱动
   - 工具
   - 效率
-  - 自动化
   - 创意
   - 图像
-  - 研究
-  - 分析
-  - 开发
   - content
   - step
   - platform
   - 发布时机
-  - 不支持
 tools:
   - read
   - exec

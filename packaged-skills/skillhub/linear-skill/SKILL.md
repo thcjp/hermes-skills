@@ -12,17 +12,9 @@ tags:
   - Integrations
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
-  - 研究
   - api
   - linear
   - node
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

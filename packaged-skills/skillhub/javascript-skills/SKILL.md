@@ -12,17 +12,8 @@ tags:
   - Development
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
-  - 依赖说明
   - 示例数据
-  - 不支持
   - style
-  - agent
 tools:
   - read
   - exec

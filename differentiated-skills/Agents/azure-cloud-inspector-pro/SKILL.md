@@ -22,7 +22,6 @@ tags:
   - 成本管理
   - DevOps
   - query
-  - echo
   - list
   - output
   - table

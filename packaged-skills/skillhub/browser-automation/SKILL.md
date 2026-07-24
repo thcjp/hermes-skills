@@ -13,11 +13,9 @@ tags:
   - 自动化
   - 工作流
   - 效率
-  - 按流程执
   - browser
   - agent
   - api
-  - 不支持
 tools:
   - read
   - exec

@@ -12,17 +12,11 @@ tags:
   - Development
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 安全
   - 加密
-  - AI代理
   - 建议优化
   - 检查通过
-  - 不支持
   - github
-  - agent
 tools:
   - read
   - exec

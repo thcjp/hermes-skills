@@ -20,7 +20,6 @@ tags:
   - pro
   - bot
   - webhook
-  - 不支持
 tools:
   - read
   - exec

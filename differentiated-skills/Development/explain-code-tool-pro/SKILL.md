@@ -34,7 +34,6 @@ tags:
   - true
   - docs
   - mermaid
-  - echo
   - api
 tools:
   - read

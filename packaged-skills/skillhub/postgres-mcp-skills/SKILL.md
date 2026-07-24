@@ -11,17 +11,8 @@ tags:
   - Integrations
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
-  - AI代理
   - mcp
-  - 依赖说明
   - postgres
-  - 不支持
-  - agent
 tools:
   - read
   - exec

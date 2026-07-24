@@ -15,10 +15,8 @@ tags:
   - 工作流
   - 效率
   - agent
-  - 按流程执
   - agent-browser
   - json
-  - 不支持
 tools:
   - read
   - exec

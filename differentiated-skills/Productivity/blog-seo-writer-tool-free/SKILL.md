@@ -16,16 +16,11 @@ tags:
   - 博客营销
   - 工具
   - 效率
-  - 自动化
   - 写作
   - 电商
-  - 研究
-  - 分析
-  - AI代理
   - free
   - pro
   - seo
-  - agent
   - coffee
 tools:
   - read

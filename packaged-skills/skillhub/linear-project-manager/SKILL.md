@@ -18,17 +18,10 @@ tags:
   - 通用办公
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - linear
   - manager
   - api
   - project
-  - 不支持
 category: "Automation"
 ---
 # Linear Project Manager 批量处理

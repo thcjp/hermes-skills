@@ -22,16 +22,11 @@ tags:
   - 内容营销
   - 工具
   - 效率
-  - 自动化
   - 写作
   - 电商
-  - 研究
-  - 分析
-  - 开发
   - seo
   - content
   - api
-  - 工作流
   - url
 tools:
   - read

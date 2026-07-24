@@ -23,16 +23,11 @@ tags:
   - 性能优化
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 生活
   - 健康
-  - 研究
   - true
   - key
   - public
-  - 不支持
   - enabled
 tools:
   - read

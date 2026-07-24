@@ -21,16 +21,10 @@ tags:
   - 趋势分析
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
   - 知识
   - api
   - llm
   - 标注
-  - agent
   - warning
 tools:
   - read

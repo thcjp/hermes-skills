@@ -27,7 +27,6 @@ tags:
   - 文档
   - 工具
   - markdown
-  - 不支持
   - html
   - toc
   - github

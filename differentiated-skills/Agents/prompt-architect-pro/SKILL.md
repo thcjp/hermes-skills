@@ -1,7 +1,7 @@
 ---
 slug: prompt-architect-pro
 name: prompt-architect-pro
-version: 1.0.0
+version: "1.0.0"
 displayName: 提示词架构师专业版
 summary: 解决 Few-shot 难编写、Token 预算失控、多 Agent 协作混乱、幻觉难检测的专业 Prompt 工程平台
 license: Proprietary
@@ -17,8 +17,7 @@ description: '提示词架构师专业版是面向 AI Agent 团队负责人、Pr
   支持 DAG 任务拆解与多 Agent 并行编排，自动发现依赖与并行机会；(4) 新增 Prompt A/B 测试框架，支持显著性分析与胜出判定；(5) 新增幻觉检测规则引擎，自动生成回归测试用例；(6)
   新增上下文腐烂诊断器，量化三因素并给出治理建议.
   适用关键词：prompt工程、few-shot生成、token预算、多agent编排、dag拆解、ab测试、幻觉检测、回归测试、上下文腐烂、plan-execute、reflection'
-tags:
-  - token,prompt,few-shot,agent,专业版独
+tags: prompt,few-shot,token,agent,A/B测试,幻觉检测,DAG,上下文腐烂,回归测试
 tools:
   - read
   - exec

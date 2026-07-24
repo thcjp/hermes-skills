@@ -17,15 +17,10 @@ tags:
   - 幻灯片
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
-  - AI代理
   - pro
   - free
-  - agent
   - true
   - 版本
 tools:

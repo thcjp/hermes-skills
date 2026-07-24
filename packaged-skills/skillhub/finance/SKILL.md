@@ -13,10 +13,8 @@ tags:
   - 金融
   - 财务
   - 数据
-  - 不支持
   - agent
   - api
-  - 依赖说明
   - llm
 tools:
   - read

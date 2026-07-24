@@ -5,23 +5,8 @@ version: "2.20.0"
 displayName: "Ocean Chat"
 summary: "OceanBus驱动的P2P消息/共享通讯录/1v1约见/话题。OceanBus-powered P2P messaging, shared address book, 1v1 meetup"
 license: "Proprietary"
-description: |-
-  OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,
-  and conversation thr
-tags:
-  - Operations
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
-  - AI代理
-  - 按流程执
-  - 依赖说明
-  - agent
-  - llm
-  - 不支持
+description: "OceanBus-powered P2P messaging with shared address book and meetup negotiation. 支持P2P消息通信、管理共享通讯录和约见协商"
+tags: P2P,messaging,通讯录,约见,OceanBus,消息通信
 tools:
   - read
   - exec
@@ -45,8 +30,7 @@ category: "Automation"
 
 ## 核心能力
 
-- OceanBus-powered P2P messaging, shared address book, 1v1 meetup negotiation,
-  and conversation thr
+- OceanBus-powered P2P messaging with shared address book and meetup negotiation. 支持P2P消息通信、管理共享通讯录和约见协商
 #
 ## 快速开始
 

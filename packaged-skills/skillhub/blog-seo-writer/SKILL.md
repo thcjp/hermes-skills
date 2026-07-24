@@ -12,16 +12,11 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 写作
   - 电商
-  - 研究
   - 建议优化
   - 检查通过
   - api
-  - agent
   - seo
 tools:
   - read

@@ -21,7 +21,6 @@ tags:
   - mp3
   - xiaoyuzhoufm
   - title
-  - com
   - m4a
 tools:
   - read

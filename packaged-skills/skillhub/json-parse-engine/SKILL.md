@@ -15,16 +15,9 @@ tags:
   - 解析
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
-  - AI代理
   - json
   - dataframe
   - 流式解析
-  - 按流程执
   - parser
 tools:
   - read

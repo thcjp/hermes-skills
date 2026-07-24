@@ -12,16 +12,10 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
   - 通信
   - 邮件
-  - 开发
-  - 代码
-  - AI代理
   - api
-  - 不支持
   - calendar
-  - agent
   - llm
 tools:
   - read

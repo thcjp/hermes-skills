@@ -1,5 +1,5 @@
 {
-  "audit_date": "2026-07-24T18:05:10.827551",
+  "audit_date": "2026-07-24T18:42:58.376159",
   "total_skills": 2097,
   "fix_mode": false,
   "fix_all": false,
@@ -118,89 +118,16 @@
   },
   "sellability": {
     "grade_distribution": {
-      "A": 2092,
-      "B": 5,
+      "A": 2097,
+      "B": 0,
       "C": 0,
       "D": 0
     },
-    "avg_score": 90.3,
+    "avg_score": 90.4,
     "total_below_b": 0,
     "below_b_detail": [],
-    "total_b_grade": 5,
-    "b_grade_detail": [
-      {
-        "slug": "automation-recipe-pack",
-        "source": "packaged",
-        "grade": "B",
-        "score": 60,
-        "factors": [
-          "内容偏少(<2K字符)",
-          "功能完整(A级)",
-          "含技术规格",
-          "有使用步骤",
-          "有错误处理",
-          "有依赖说明"
-        ]
-      },
-      {
-        "slug": "data-analysis-toolkit",
-        "source": "packaged",
-        "grade": "B",
-        "score": 65,
-        "factors": [
-          "内容偏少(<2K字符)",
-          "功能完整(A级)",
-          "含技术规格",
-          "有使用步骤",
-          "有示例",
-          "有错误处理",
-          "有依赖说明"
-        ]
-      },
-      {
-        "slug": "pdf-compressor-tool",
-        "source": "packaged",
-        "grade": "B",
-        "score": 65,
-        "factors": [
-          "内容偏少(<2K字符)",
-          "功能完整(A级)",
-          "含技术规格",
-          "有使用步骤",
-          "有示例",
-          "有错误处理",
-          "有依赖说明"
-        ]
-      },
-      {
-        "slug": "trading-strategy-guide",
-        "source": "packaged",
-        "grade": "B",
-        "score": 55,
-        "factors": [
-          "内容偏少(<2K字符)",
-          "功能完整(A级)",
-          "含技术规格",
-          "有示例",
-          "有错误处理",
-          "有依赖说明"
-        ]
-      },
-      {
-        "slug": "version-control-workflows",
-        "source": "packaged",
-        "grade": "B",
-        "score": 66,
-        "factors": [
-          "内容中等(>2K字符)",
-          "功能完整(A级)",
-          "含技术规格",
-          "有示例",
-          "有错误处理",
-          "有依赖说明"
-        ]
-      }
-    ]
+    "total_b_grade": 0,
+    "b_grade_detail": []
   },
   "content_authenticity": {
     "grade_distribution": {
@@ -235,9 +162,9 @@
     "enabled": true,
     "l7b_available_count": 2097,
     "grade_distribution": {
-      "A": 2095,
-      "B": 1,
-      "C": 1,
+      "A": 2097,
+      "B": 0,
+      "C": 0,
       "D": 0,
       "F": 0,
       "N/A": 0
@@ -249,38 +176,12 @@
       "L7B_NO_CODE": 0,
       "L7B_BROKEN_REF": 0,
       "L7B_VAGUE_TASK": 0,
-      "L7B_MISSING_INPUT": 1,
-      "L7B_NO_OUTPUT": 2,
+      "L7B_MISSING_INPUT": 0,
+      "L7B_NO_OUTPUT": 0,
       "L7B_CONTRADICTION": 0
     },
-    "total_with_issues": 2,
-    "issues_detail": [
-      {
-        "slug": "accounting-and-finance",
-        "source": "packaged",
-        "grade": "B",
-        "score": 80,
-        "executable": true,
-        "checks_passed": 5,
-        "checks_failed": 1,
-        "issues": [
-          "L7B_NO_OUTPUT: 有代码但缺少输出格式说明"
-        ]
-      },
-      {
-        "slug": "cdp-browser-master",
-        "source": "differentiated/Automation",
-        "grade": "C",
-        "score": 60,
-        "executable": true,
-        "checks_passed": 4,
-        "checks_failed": 2,
-        "issues": [
-          "L7B_MISSING_INPUT: 有代码但缺少输入参数说明",
-          "L7B_NO_OUTPUT: 有代码但缺少输出格式说明"
-        ]
-      }
-    ]
+    "total_with_issues": 0,
+    "issues_detail": []
   },
   "security_audit": {
     "enabled": true,
@@ -294,8 +195,8 @@
       "N/A": 0
     },
     "avg_score": 100.0,
-    "passed_count": 2096,
-    "failed_count": 1,
+    "passed_count": 2094,
+    "failed_count": 3,
     "pass_rate": "99%",
     "category_distribution": {
       "EXTERNAL_URL": 0,
@@ -303,14 +204,64 @@
       "API_KEY_EXPOSURE": 0,
       "SLUG_CONTENT_MISMATCH": 0,
       "DUPLICATE_YAML_FIELDS": 0,
-      "TAG_MISMATCH": 1,
+      "TAG_MISMATCH": 3,
       "GARBLED_TEXT": 0,
       "DEPENDENCY_CONTRADICTION": 0
     },
-    "total_with_issues": 1,
+    "total_with_issues": 3,
     "issues_detail": [
       {
-        "slug": "infinite-memory-vault-pro",
+        "slug": "db-free",
+        "source": "packaged",
+        "grade": "A",
+        "score": 90,
+        "passed": false,
+        "category_counts": {
+          "EXTERNAL_URL": 0,
+          "INJECTED_MARKETING_TEXT": 0,
+          "API_KEY_EXPOSURE": 0,
+          "SLUG_CONTENT_MISMATCH": 0,
+          "DUPLICATE_YAML_FIELDS": 0,
+          "TAG_MISMATCH": 1,
+          "GARBLED_TEXT": 0,
+          "DEPENDENCY_CONTRADICTION": 0
+        },
+        "issues": [
+          {
+            "category": "TAG_MISMATCH",
+            "severity": "low",
+            "message": "tags字段与内容不匹配: ['效率', 'select', 'update', 'api', 'balance', '免费版不'] (匹配2/6)",
+            "evidence": "未匹配tags: ['效率', 'api', 'balance', '免费版不']"
+          }
+        ]
+      },
+      {
+        "slug": "dlazy-gen",
+        "source": "packaged",
+        "grade": "A",
+        "score": 90,
+        "passed": false,
+        "category_counts": {
+          "EXTERNAL_URL": 0,
+          "INJECTED_MARKETING_TEXT": 0,
+          "API_KEY_EXPOSURE": 0,
+          "SLUG_CONTENT_MISMATCH": 0,
+          "DUPLICATE_YAML_FIELDS": 0,
+          "TAG_MISMATCH": 1,
+          "GARBLED_TEXT": 0,
+          "DEPENDENCY_CONTRADICTION": 0
+        },
+        "issues": [
+          {
+            "category": "TAG_MISMATCH",
+            "severity": "low",
+            "message": "tags字段与内容不匹配: ['工具', '效率', 'step', 'self', 'prompt', 'model'] (匹配1/6)",
+            "evidence": "未匹配tags: ['效率', 'step', 'self', 'prompt', 'model']"
+          }
+        ]
+      },
+      {
+        "slug": "memory-orchestrator-v2",
         "source": "differentiated/Agents",
         "grade": "A",
         "score": 90,
@@ -329,8 +280,8 @@
           {
             "category": "TAG_MISMATCH",
             "severity": "low",
-            "message": "tags字段与内容不匹配: ['智能', 'memory', '请参考', '目录中的', '脚本文件', 'node'] (匹配2/6)",
-            "evidence": "未匹配tags: ['请参考', '目录中的', '脚本文件', 'node']"
+            "message": "tags字段与内容不匹配: ['记忆编排', '智能', 'action', 'await', 'skills', '默认'] (匹配2/6)",
+            "evidence": "未匹配tags: ['action', 'await', 'skills', '默认']"
           }
         ]
       }
@@ -340,24 +291,24 @@
     "enabled": true,
     "l9_available_count": 2097,
     "grade_distribution": {
-      "A": 1813,
-      "B": 274,
-      "C": 10,
+      "A": 1900,
+      "B": 197,
+      "C": 0,
       "D": 0,
       "N/A": 0
     },
-    "avg_score": 97.6,
-    "passed_count": 1813,
-    "failed_count": 284,
-    "pass_rate": "86%",
+    "avg_score": 98.3,
+    "passed_count": 1900,
+    "failed_count": 197,
+    "pass_rate": "90%",
     "category_distribution": {
       "INVALID_CATEGORY": 0,
       "INSUFFICIENT_SUMMARY": 0,
-      "MISSING_VALUE_PROPOSITION": 133,
+      "MISSING_VALUE_PROPOSITION": 120,
       "MISSING_QUICK_START": 0,
-      "MISSING_OR_IRRELEVANT_TAGS": 161
+      "MISSING_OR_IRRELEVANT_TAGS": 77
     },
-    "total_with_issues": 284,
+    "total_with_issues": 197,
     "issues_detail": [
       {
         "slug": "afrexai-knowledge-management",
@@ -378,204 +329,6 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "ai-agent-helper",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['自动化,agent,优化,prompt,产品,product']"
-          }
-        ]
-      },
-      {
-        "slug": "ai-assistant",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['研发工具', 'Knowledge', '工具', '效率', '自动化', '知识', '研究', 'AI代理', 'step']"
-          }
-        ]
-      },
-      {
-        "slug": "alephnet-node",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['研发工具', '工具', '效率', '自动化', 'AI代理', '开发', '代码', '写作']"
-          }
-        ]
-      },
-      {
-        "slug": "alephnet-node-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['研发工具', '工具', '效率', '自动化', '邮件', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "anygen-diagram-generator",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
-            "evidence": "未匹配tags: ['研发工具', 'Visualization', '工具', '效率', '自动化', '开发', '代码', '工作流', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "anygen-diagram-generator-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['研发工具', 'Visualization', '工具', '效率', '自动化', '开发', '代码', '工作流', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "apple-health-skill",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['生活服务', '工具', '效率', '自动化', '研究', '开发', '代码', '生活']"
-          }
-        ]
-      },
-      {
-        "slug": "apple-health-skill-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,api,get,key,duration,sport']"
-          }
-        ]
-      },
-      {
-        "slug": "baoyu-diagram",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '研究']"
           }
         ]
       },
@@ -602,50 +355,6 @@
         ]
       },
       {
-        "slug": "beware-piper-tts",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['语音合成,效率,mp3,piper,请参考,目录中的']"
-          }
-        ]
-      },
-      {
-        "slug": "beware-piper-tts-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['语音合成,效率,piper,mp3,agent,音色']"
-          }
-        ]
-      },
-      {
         "slug": "blog-writer",
         "source": "packaged",
         "grade": "B",
@@ -664,50 +373,6 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "book-painter",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "bookmark-intelligence-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['信息检索', '知识管理', '工具', '效率', '自动化', '研究', 'AI代理', '开发']"
           }
         ]
       },
@@ -750,8 +415,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['通用办公', 'Automation', '工具', '效率', '自动化', '通信', '邮件', '研究', '原因']"
+            "message": "tags 与内容相关性不足 (匹配4/11)",
+            "evidence": "未匹配tags: ['通用办公', 'Automation', '工具', '效率', '通信', '邮件', '原因']"
           }
         ]
       },
@@ -772,13 +437,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Productivity', '工具', '效率', '自动化', '开发', '代码', '邮件', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Productivity', '工具', '效率', '邮件']"
           }
         ]
       },
       {
-        "slug": "call-bridge",
+        "slug": "chart-craft",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -794,96 +459,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
-            "evidence": "未匹配tags: ['集成工具', '语音通信', '企业通信', '效率', '开发', '代码', '集成', 'integration', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "can",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['通用办公', '效率', '自动化', '研究', '分析', '开发', '代码', '知识']"
-          }
-        ]
-      },
-      {
-        "slug": "chart",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['matplotlib,效率,python3,labels,values,bash']"
-          }
-        ]
-      },
-      {
-        "slug": "chart-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['需求设计', '数据可视化', '工具', '效率', '自动化', '研究', '开发', '代码', '创意']"
-          }
-        ]
-      },
-      {
-        "slug": "chart-generator-2-0-0",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,依赖说明,agent,不支持,确认运行,api']"
+            "message": "tags 与内容相关性不足 (匹配2/8)",
+            "evidence": "未匹配tags: ['集成工具', '数据可视化', '企业报表', '工具', '效率', '知识']"
           }
         ]
       },
@@ -932,50 +509,6 @@
         ]
       },
       {
-        "slug": "chromecast-control-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['通用办公', '效率', '自动化', '创意', '图像', '研究', '分析', '开发']"
-          }
-        ]
-      },
-      {
-        "slug": "claude-tmux",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Development', '工具', '效率', '自动化', '开发', '代码', '工作流', 'AI代理']"
-          }
-        ]
-      },
-      {
         "slug": "clawprint",
         "source": "packaged",
         "grade": "B",
@@ -1014,13 +547,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率']"
           }
         ]
       },
       {
-        "slug": "creator-alpha-feed",
+        "slug": "dashboard-toolkit",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -1036,272 +569,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,obsidian,vault,api,内容日报,项目']"
-          }
-        ]
-      },
-      {
-        "slug": "creator-alpha-feed-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,obsidian,api,日报,报告写入,vault']"
-          }
-        ]
-      },
-      {
-        "slug": "css",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['通用办公', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '创意']"
-          }
-        ]
-      },
-      {
-        "slug": "css-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['通用办公', '效率', '自动化', '开发', '代码', '创意', '图像', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "csv",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
-            "evidence": "未匹配tags: ['研发工具', '数据格式', '效率', '自动化', '开发', '代码', '研究', '分析', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "csv-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
-            "evidence": "未匹配tags: ['研发工具', '数据格式', '效率', '自动化', '研究', '分析', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "csv-handler",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['研发工具', 'data-processing', '工具', '效率', '自动化', '研究', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "csv-handler-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['研发工具', 'data-processing', '工具', '效率', '自动化', '研究', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "csv-json-converter",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['数据转换', 'ETL流水线', '企业工具', '效率', '自动化', '研究', '分析', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "ctxly-chat",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,chat,ctxly,agent,room,json']"
-          }
-        ]
-      },
-      {
-        "slug": "data-analysis-hub",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['数据分析,批量处理,协同审阅,用户提供,python,pip']"
-          }
-        ]
-      },
-      {
-        "slug": "data-analyst-chinese",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['数据分析,假设检验,分析,python,pip,install']"
-          }
-        ]
-      },
-      {
-        "slug": "db",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
-            "evidence": "未匹配tags: ['研发工具', 'database', 'operations', '工具', '效率', '自动化', '研究', '分析', '开发']"
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Integrations', '工具', '效率']"
           }
         ]
       },
@@ -1328,116 +597,6 @@
         ]
       },
       {
-        "slug": "db-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,select,update,api,balance,免费版不']"
-          }
-        ]
-      },
-      {
-        "slug": "dingtalk-calendar",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,calendar,json,管理,不支持,依赖说明']"
-          }
-        ]
-      },
-      {
-        "slug": "dlazy-audio",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['Audio,dlazy,不支持,text,工具,api']"
-          }
-        ]
-      },
-      {
-        "slug": "dlazy-gen",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['工具,效率,step,self,prompt,model']"
-          }
-        ]
-      },
-      {
-        "slug": "dlazy-generate",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,generate,依赖说明,示例数据,不支持,agent']"
-          }
-        ]
-      },
-      {
         "slug": "dns",
         "source": "packaged",
         "grade": "B",
@@ -1454,36 +613,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
+            "message": "tags 与内容相关性不足 (匹配5/14)",
             "evidence": "未匹配tags: ['研发工具', 'Networking', 'DevOps', '工具', '效率', '自动化', '运维', '监控', '开发']"
-          }
-        ]
-      },
-      {
-        "slug": "dns-free",
-        "source": "packaged",
-        "grade": "C",
-        "score": 65,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['研发工具', 'Networking', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '研究']"
           }
         ]
       },
@@ -1510,6 +641,28 @@
         ]
       },
       {
+        "slug": "dogecoin-node",
+        "source": "packaged",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率']"
+          }
+        ]
+      },
+      {
         "slug": "domain-dns-ops",
         "source": "packaged",
         "grade": "B",
@@ -1526,13 +679,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '开发', '代码', '监控', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率', '监控']"
           }
         ]
       },
       {
-        "slug": "drama-hit-producer",
+        "slug": "elite-frontend",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -1548,80 +701,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['短剧,效率,api,style_track,tts,anime']"
-          }
-        ]
-      },
-      {
-        "slug": "encrypted-docs",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Integrations', 'Security', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "excel-formula",
-        "source": "packaged",
-        "grade": "C",
-        "score": 65,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,agent,formula,不支持,excel,api']"
-          }
-        ]
-      },
-      {
-        "slug": "excel-studio",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '研究']"
+            "message": "tags 与内容相关性不足 (匹配7/16)",
+            "evidence": "未匹配tags: ['Creative', 'Enterprise', 'DesignSystem', '效率', '自动化', '创意', '图像', '开发', '写作']"
           }
         ]
       },
@@ -1642,8 +723,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', '工作流', '运维']"
+            "message": "tags 与内容相关性不足 (匹配1/5)",
+            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '运维']"
           }
         ]
       },
@@ -1670,7 +751,7 @@
         ]
       },
       {
-        "slug": "feed-to-md",
+        "slug": "feishu-file-sender",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -1686,52 +767,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['Research', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "feishu-doc-write",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Knowledge', '工具', '效率', '自动化', '开发', '代码', '工作流', '创意']"
-          }
-        ]
-      },
-      {
-        "slug": "figma",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Knowledge', '工具', '效率', '自动化', '开发', '代码', '研究', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配6/15)",
+            "evidence": "未匹配tags: ['沟通协作', '企业效率', '批量操作', '工具', '效率', '自动化', '研究', '知识', '写作']"
           }
         ]
       },
@@ -1846,7 +883,7 @@
         ]
       },
       {
-        "slug": "generate-mindmap",
+        "slug": "game-asset-generation-cellcog",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -1862,13 +899,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Knowledge', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '知识']"
+            "message": "tags 与内容相关性不足 (匹配2/8)",
+            "evidence": "未匹配tags: ['Creative', 'Lifestyle', '工具', '效率', '创意', '图像']"
           }
         ]
       },
       {
-        "slug": "go-to-market",
+        "slug": "game-developer-skill",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -1884,13 +921,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,gtm,icp,包含执行,状态码,结果数据']"
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Lifestyle', '工具', '效率']"
           }
         ]
       },
       {
-        "slug": "grok-image",
+        "slug": "generate-presentation",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -1906,8 +943,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['创意,self,prompt_data,style,mood,template']"
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Knowledge', '工具', '效率']"
           }
         ]
       },
@@ -1956,7 +993,7 @@
         ]
       },
       {
-        "slug": "java",
+        "slug": "image",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -1972,8 +1009,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['研发工具', '工具', '效率', '自动化', '开发', '研究', 'AI代理', 'user']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Productivity', '图像处理', 'AI绘图', '创意']"
           }
         ]
       },
@@ -2000,7 +1037,7 @@
         ]
       },
       {
-        "slug": "jira-skill-free",
+        "slug": "knowledge-ontology",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -2016,130 +1053,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['Jira,效率,jira,abc-123,请参考,目录中的']"
-          }
-        ]
-      },
-      {
-        "slug": "join-meeting",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,tts,api,meeting,触发,事件']"
-          }
-        ]
-      },
-      {
-        "slug": "join-meeting-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,api,meeting,加入会议,join,语音状态']"
-          }
-        ]
-      },
-      {
-        "slug": "json-parser",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "kai-tw-figma",
-        "source": "packaged",
-        "grade": "C",
-        "score": 65,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "knowledge-graph",
-        "source": "packaged",
-        "grade": "C",
-        "score": 65,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '知识']"
+            "message": "tags 与内容相关性不足 (匹配4/11)",
+            "evidence": "未匹配tags: ['智能助手', '工具', '效率', '自动化', '写作', '电商', '研究']"
           }
         ]
       },
@@ -2160,145 +1075,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
+            "message": "tags 与内容相关性不足 (匹配3/11)",
             "evidence": "未匹配tags: ['智能助手', '工具', '效率', '自动化', '写作', '电商', '研究', '分析']"
           }
         ]
       },
       {
-        "slug": "linear-integration",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "lite-sqlite",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '创意']"
-          }
-        ]
-      },
-      {
-        "slug": "live-stream-script",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,agent,script,依赖说明,不支持,api']"
-          }
-        ]
-      },
-      {
-        "slug": "logo-brand-identity",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['品牌系统,品牌标识,CI/CD,效率,不支持,identity']"
-          }
-        ]
-      },
-      {
         "slug": "logo-brand-identity-cellcog",
-        "source": "packaged",
-        "grade": "B",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "longmemo-elite-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['通用办公', '工具', '效率', '自动化', 'AI代理', '写作', '电商', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "manage-liquidity",
         "source": "packaged",
         "grade": "B",
         "score": 80,
@@ -2364,6 +1147,28 @@
         ]
       },
       {
+        "slug": "meeting-note",
+        "source": "packaged",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Productivity', '工具', '效率']"
+          }
+        ]
+      },
+      {
         "slug": "merge-check-paid",
         "source": "packaged",
         "grade": "B",
@@ -2380,30 +1185,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配8/18)",
-            "evidence": "未匹配tags: ['Development', '代码审查', 'GitHub', '企业级', 'DevOps', '效率', '自动化', '研究', '工作流', '知识']"
-          }
-        ]
-      },
-      {
-        "slug": "merge-pdf",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Knowledge', '工具', '效率', '自动化', '知识', '开发', '代码', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配4/11)",
+            "evidence": "未匹配tags: ['Development', '代码审查', 'GitHub', '企业级', 'DevOps', '效率', '知识']"
           }
         ]
       },
@@ -2424,13 +1207,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Development', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '创意']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Development', '工具', '效率', '创意']"
           }
         ]
       },
       {
-        "slug": "molt-board-art-free",
+        "slug": "miniprogram-development",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -2446,8 +1229,30 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,artboard,api,agent,bash,请参考']"
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率']"
+          }
+        ]
+      },
+      {
+        "slug": "monad-development",
+        "source": "packaged",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配5/12)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '创意', '图像', '运维']"
           }
         ]
       },
@@ -2468,13 +1273,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/17)",
-            "evidence": "未匹配tags: ['集成工具', '数据库', 'NoSQL', '效率', '自动化', '研究', '创意', '图像', '知识', '按流程执']"
+            "message": "tags 与内容相关性不足 (匹配7/16)",
+            "evidence": "未匹配tags: ['集成工具', '数据库', 'NoSQL', '效率', '自动化', '研究', '创意', '图像', '知识']"
           }
         ]
       },
       {
-        "slug": "mongodb-atlas-admin",
+        "slug": "music",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -2490,30 +1295,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,api,bash,请参考,目录中的,脚本文件']"
-          }
-        ]
-      },
-      {
-        "slug": "mongodb-atlas-admin-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,api,dry-run,分类,schema,请参考']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Lifestyle', '音乐生成', '音频', '创意']"
           }
         ]
       },
@@ -2584,30 +1367,24 @@
         ]
       },
       {
-        "slug": "note-app-cli",
+        "slug": "node-connect",
         "source": "packaged",
-        "grade": "C",
-        "score": 65,
+        "grade": "B",
+        "score": 85,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
-          "value_proposition": false,
+          "value_proposition": true,
           "quick_start_section": true,
           "tags_relevant": false
         },
         "issues": [
           {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,obsidian,sync,file,dev,history']"
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Development', '工具', '效率']"
           }
         ]
       },
@@ -2628,30 +1405,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
+            "message": "tags 与内容相关性不足 (匹配6/15)",
             "evidence": "未匹配tags: ['集成工具', '企业Notion', '效率', '自动化', '写作', '电商', '研究', '分析', '知识']"
-          }
-        ]
-      },
-      {
-        "slug": "notion-pages",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,按流程执,bash,notion,clawlink_call_tool,params']"
           }
         ]
       },
@@ -2672,41 +1427,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['Integrations', 'Productivity', '工具', '效率', '自动化', '开发', '代码', '研究', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Integrations', 'Productivity', '工具', '效率']"
           }
         ]
       },
       {
-        "slug": "ocean-chat-assistant",
-        "source": "packaged",
-        "grade": "C",
-        "score": 65,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Operations', '工具', '效率', '自动化', '开发', '代码', '工作流', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "ollama-integration",
+        "slug": "okx-dex-token-paid",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -2722,8 +1449,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配5/13)",
+            "evidence": "未匹配tags: ['Finance', '加密货币', '企业级', '效率', '自动化', '金融', '财务', '运维']"
           }
         ]
       },
@@ -2750,7 +1477,7 @@
         ]
       },
       {
-        "slug": "ontology-free",
+        "slug": "openai-ai",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -2766,8 +1493,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,schema,task,status,type,返回']"
+            "message": "tags 与内容相关性不足 (匹配5/12)",
+            "evidence": "未匹配tags: ['Creative', '工具', '效率', '自动化', '创意', '图像', '开发']"
           }
         ]
       },
@@ -2794,29 +1521,7 @@
         ]
       },
       {
-        "slug": "pdf-compressor-tool",
-        "source": "packaged",
-        "grade": "B",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "photo-captions",
+        "slug": "pandoc-converter",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -2832,13 +1537,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
-            "evidence": "未匹配tags: ['需求设计', 'SocialMedia', 'Writing', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配4/10)",
+            "evidence": "未匹配tags: ['Knowledge', '工具', '效率', '自动化', '知识', '研究']"
           }
         ]
       },
       {
-        "slug": "photo-captions-free",
+        "slug": "photo-caption",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -2854,13 +1559,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['需求设计', 'SocialMedia', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '写作']"
+            "message": "tags 与内容相关性不足 (匹配8/18)",
+            "evidence": "未匹配tags: ['沟通协作', '社交媒体', '摄影配文', '专业效率', '品牌管理', '效率', '自动化', '研究', '知识', '写作']"
           }
         ]
       },
       {
-        "slug": "pipedrive-toolkit",
+        "slug": "photo-webcam",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -2876,8 +1581,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/17)",
-            "evidence": "未匹配tags: ['销售管理', 'CRM集成', '高级集成', '效率', '自动化', '写作', '电商', '开发', '代码', '研究']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Other', 'Web开发', '前端', '开发工具']"
           }
         ]
       },
@@ -2904,6 +1609,72 @@
         ]
       },
       {
+        "slug": "powerpoint",
+        "source": "packaged",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率']"
+          }
+        ]
+      },
+      {
+        "slug": "powerpoint-pptx",
+        "source": "packaged",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Productivity', '工具', '效率']"
+          }
+        ]
+      },
+      {
+        "slug": "powerpoint-pptx-cn",
+        "source": "packaged",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Productivity', '工具', '效率']"
+          }
+        ]
+      },
+      {
         "slug": "proactive-agent-free",
         "source": "packaged",
         "grade": "B",
@@ -2922,94 +1693,6 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "productivity-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['通用办公', '工具', '效率', '自动化', '写作', '电商', '代码', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "productivity-improving",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['Productivity,效率,建议优化,time,依赖说明,不支持']"
-          }
-        ]
-      },
-      {
-        "slug": "professional-communication-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,邮件,agent,slack,项目符号,api']"
-          }
-        ]
-      },
-      {
-        "slug": "py",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['通用办公', '工具', '效率', '自动化', '开发', '加密', '研究', 'print']"
           }
         ]
       },
@@ -3036,35 +1719,7 @@
         ]
       },
       {
-        "slug": "repo-reader-tool",
-        "source": "packaged",
-        "grade": "C",
-        "score": 65,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Research', 'Development', '工具', '效率', '自动化', '开发', '工作流', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "report",
+        "slug": "scrape-web",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3080,30 +1735,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['通用办公', '工具', '效率', '自动化', '研究', '分析', '开发', '代码']"
-          }
-        ]
-      },
-      {
-        "slug": "resume-assistant-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['通用办公', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '知识']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Research', 'Web开发', '前端', '开发工具']"
           }
         ]
       },
@@ -3146,13 +1779,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '写作']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率', '写作']"
           }
         ]
       },
       {
-        "slug": "skill-creator-free",
+        "slug": "smart-auto-updater",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3168,8 +1801,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,bundled,resources,body,progressive,disclosure']"
+            "message": "tags 与内容相关性不足 (匹配5/12)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '创意', '图像', 'AI代理']"
           }
         ]
       },
@@ -3190,13 +1823,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['Automation', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Automation', '工具', '效率']"
           }
         ]
       },
       {
-        "slug": "sql",
+        "slug": "social-sentiment",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3212,52 +1845,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['数据存储', '工具', '效率', '自动化', '开发', '代码', '研究', '创意']"
-          }
-        ]
-      },
-      {
-        "slug": "sql-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['数据存储', '工具', '效率', '自动化', '研究', '创意', '图像', '开发']"
-          }
-        ]
-      },
-      {
-        "slug": "sql-generator",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Integrations', '效率', '自动化', '开发', '代码', '研究', '分析', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Research', '社交媒体', '营销', '通信']"
           }
         ]
       },
@@ -3284,7 +1873,7 @@
         ]
       },
       {
-        "slug": "stagehand-browser-cli",
+        "slug": "stock-filter",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3300,30 +1889,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Research', 'Automation', '工具', '效率', '工作流', '开发', '代码', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "story-long-analyze",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,依赖说明,不支持,analyze,agent,api']"
+            "message": "tags 与内容相关性不足 (匹配3/8)",
+            "evidence": "未匹配tags: ['Finance', '量化选股', '企业级', '工具', '知识']"
           }
         ]
       },
@@ -3372,7 +1939,7 @@
         ]
       },
       {
-        "slug": "straker-verify",
+        "slug": "task-bot-orchestrator",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3388,52 +1955,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['translation,language,translate,straker,verify,professional']"
-          }
-        ]
-      },
-      {
-        "slug": "tardis",
-        "source": "packaged",
-        "grade": "B",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "tarot",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,next,step,张大阿卡,api,spread']"
+            "message": "tags 与内容相关性不足 (匹配5/12)",
+            "evidence": "未匹配tags: ['工作流引擎', '监控告警', '任务管理', '效率', '工具', '痛点', '解决方案']"
           }
         ]
       },
@@ -3460,7 +1983,7 @@
         ]
       },
       {
-        "slug": "text",
+        "slug": "telegram-chat",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3476,23 +1999,23 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
+            "message": "tags 与内容相关性不足 (匹配4/10)",
+            "evidence": "未匹配tags: ['沟通协作', '即时通讯', '机器人', '企业效率', '社交', '通信']"
           }
         ]
       },
       {
         "slug": "text-rpg-arcade-v3",
         "source": "packaged",
-        "grade": "C",
-        "score": 65,
+        "grade": "B",
+        "score": 80,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
           "value_proposition": false,
           "quick_start_section": true,
-          "tags_relevant": false
+          "tags_relevant": true
         },
         "issues": [
           {
@@ -3500,12 +2023,6 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Lifestyle', '工具', '效率', '自动化', '生活', '健康', '工作流', '创意']"
           }
         ]
       },
@@ -3526,8 +2043,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', '工作流', '研究']"
+            "message": "tags 与内容相关性不足 (匹配1/4)",
+            "evidence": "未匹配tags: ['Integrations', '工具', '效率']"
           }
         ]
       },
@@ -3576,72 +2093,6 @@
         ]
       },
       {
-        "slug": "thesis-helper",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['Research', '工具', '效率', '自动化', '开发', '代码', 'AI代理']"
-          }
-        ]
-      },
-      {
-        "slug": "timer-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['通用办公', 'Productivity', '工具', '效率', '自动化', '通信', '开发', '代码', '写作']"
-          }
-        ]
-      },
-      {
-        "slug": "title-hook-factory",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/17)",
-            "evidence": "未匹配tags: ['内容引流', '爆款创作', '副业工具', '效率', '自动化', '开发', '代码', '写作', '电商', 'AI代理']"
-          }
-        ]
-      },
-      {
         "slug": "token-layer",
         "source": "packaged",
         "grade": "B",
@@ -3686,24 +2137,24 @@
         ]
       },
       {
-        "slug": "trading-strategy-guide",
+        "slug": "trading",
         "source": "packaged",
         "grade": "B",
-        "score": 80,
+        "score": 85,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
-          "value_proposition": false,
+          "value_proposition": true,
           "quick_start_section": true,
-          "tags_relevant": true
+          "tags_relevant": false
         },
         "issues": [
           {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配5/12)",
+            "evidence": "未匹配tags: ['Finance', '量化策略', '企业级', '工具', '效率', '研究', '金融']"
           }
         ]
       },
@@ -3724,8 +2175,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Lifestyle', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '生活']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Lifestyle', '工具', '效率', '生活']"
           }
         ]
       },
@@ -3746,8 +2197,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/15)",
-            "evidence": "未匹配tags: ['集成工具', '数据聚合', '企业效率', '自动化', '工具', '效率', '研究', '开发', 'api']"
+            "message": "tags 与内容相关性不足 (匹配4/10)",
+            "evidence": "未匹配tags: ['集成工具', '数据聚合', '企业效率', '自动化', '工具', 'api']"
           }
         ]
       },
@@ -3796,29 +2247,7 @@
         ]
       },
       {
-        "slug": "ux",
-        "source": "packaged",
-        "grade": "B",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "vector-control",
+        "slug": "university-app",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3834,57 +2263,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '研究']"
-          }
-        ]
-      },
-      {
-        "slug": "vector-db-manager",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/17)",
-            "evidence": "未匹配tags: ['向量检索', '企业级AI', '分布式系统', '效率', '自动化', '研究', '分析', '写作', '开发', 'count']"
+            "message": "tags 与内容相关性不足 (匹配4/13)",
+            "evidence": "未匹配tags: ['Finance', '命理文化', '传统文化', '工具', '效率', '自动化', '创意', '图像', '知识']"
           }
         ]
       },
       {
         "slug": "version-control-workflows",
-        "source": "packaged",
-        "grade": "B",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": true,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "video",
         "source": "packaged",
         "grade": "B",
         "score": 80,
@@ -3944,13 +2329,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/17)",
-            "evidence": "未匹配tags: ['爆款预测', '内容评估', '发布前自检', '数据驱动', '效率', '自动化', '创意', '图像', '研究', '开发']"
+            "message": "tags 与内容相关性不足 (匹配5/12)",
+            "evidence": "未匹配tags: ['爆款预测', '内容评估', '发布前自检', '数据驱动', '效率', '创意', '图像']"
           }
         ]
       },
       {
-        "slug": "vpn-rotate-skill",
+        "slug": "web-browsing",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3966,13 +2351,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '研究']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Research', 'Web开发', '前端', '开发工具']"
           }
         ]
       },
       {
-        "slug": "vue",
+        "slug": "web-notepad",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -3988,8 +2373,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Integrations', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '研究']"
+            "message": "tags 与内容相关性不足 (匹配4/10)",
+            "evidence": "未匹配tags: ['集成工具', '企业表单', '数据合规', 'Web开发', '前端', '开发工具']"
           }
         ]
       },
@@ -4010,13 +2395,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/13)",
-            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', '开发', '代码', 'AI代理', '运维']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Other', '工具', '效率', '运维']"
           }
         ]
       },
       {
-        "slug": "write-my-blog",
+        "slug": "whatsapp-image-send",
         "source": "packaged",
         "grade": "B",
         "score": 85,
@@ -4032,74 +2417,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,bash,api,blog,http,localhost']"
-          }
-        ]
-      },
-      {
-        "slug": "xlsx-handler",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['效率,分析,python,str,row,llm']"
-          }
-        ]
-      },
-      {
-        "slug": "xml-parser-tool",
-        "source": "packaged",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配6/14)",
-            "evidence": "未匹配tags: ['Other', '工具', '效率', '自动化', 'AI代理', '开发', '代码', '写作']"
-          }
-        ]
-      },
-      {
-        "slug": "ad-creative-intel-pro",
-        "source": "differentiated/Agents",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['广告情报,api,data,post,专业版增,专业版独']"
+            "message": "tags 与内容相关性不足 (匹配2/6)",
+            "evidence": "未匹配tags: ['Creative', '图像处理', 'AI绘图', '创意']"
           }
         ]
       },
@@ -4126,7 +2445,7 @@
         ]
       },
       {
-        "slug": "infinite-memory-vault-pro",
+        "slug": "knowledge-ontology",
         "source": "differentiated/Agents",
         "grade": "B",
         "score": 85,
@@ -4142,13 +2461,13 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配2/6)",
-            "evidence": "未匹配tags: ['请参考', '目录中的', '脚本文件', 'node']"
+            "message": "tags 与内容相关性不足 (匹配2/8)",
+            "evidence": "未匹配tags: ['智能代理', '知识管理', '数据建模', 'AI代理', '自动化', '智能']"
           }
         ]
       },
       {
-        "slug": "memory-orchestrator-v2",
+        "slug": "local-vector-memory-free",
         "source": "differentiated/Agents",
         "grade": "B",
         "score": 85,
@@ -4164,23 +2483,67 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['记忆编排,智能,action,await,skills,默认']"
+            "message": "tags 与内容相关性不足 (匹配2/8)",
+            "evidence": "未匹配tags: ['智能代理', '记忆管理', '本地存储', 'AI代理', '自动化', '智能']"
+          }
+        ]
+      },
+      {
+        "slug": "localmemo-pro",
+        "source": "differentiated/Agents",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配2/8)",
+            "evidence": "未匹配tags: ['智能代理', '记忆管理', '本地存储', 'AI代理', '自动化', '智能']"
+          }
+        ]
+      },
+      {
+        "slug": "memory-distiller-v2",
+        "source": "differentiated/Agents",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配3/9)",
+            "evidence": "未匹配tags: ['记忆压缩', '日志归档', '上下文优化', '信息蒸馏', 'AI代理', '自动化']"
           }
         ]
       },
       {
         "slug": "prompt-architect-pro",
         "source": "differentiated/Agents",
-        "grade": "C",
-        "score": 65,
+        "grade": "B",
+        "score": 80,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
           "value_proposition": false,
           "quick_start_section": true,
-          "tags_relevant": false
+          "tags_relevant": true
         },
         "issues": [
           {
@@ -4188,144 +2551,6 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['token,prompt,few-shot,agent,专业版独']"
-          }
-        ]
-      },
-      {
-        "slug": "self-evolving-ai",
-        "source": "differentiated/Agents",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['智能,learnings,recurrence-count,step,用户提供,pnpm']"
-          }
-        ]
-      },
-      {
-        "slug": "cron-setup-guide-free",
-        "source": "differentiated/Automation",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['定时任务,调度配置,作业管理,cron,string,kind']"
-          }
-        ]
-      },
-      {
-        "slug": "drawing-insight-free",
-        "source": "differentiated/Automation",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['图纸解析,pdf,row,用户提供,result,print']"
-          }
-        ]
-      },
-      {
-        "slug": "feedstream-monitor-free",
-        "source": "differentiated/Automation",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['安全公告,json,encoding,utf-8,rss,self']"
-          }
-        ]
-      },
-      {
-        "slug": "flowforge-builder-pro",
-        "source": "differentiated/Automation",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['工作流构建,触发器系统,Webhook,数据处理,webhook,json']"
-          }
-        ]
-      },
-      {
-        "slug": "photo-caption-tool-pro",
-        "source": "differentiated/Communication",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['内容创作,工具,效率,分析,专业版独,不支持']"
           }
         ]
       },
@@ -4348,28 +2573,6 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          }
-        ]
-      },
-      {
-        "slug": "ai-image-prompt-tool-free",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['提示词,style,pro,soft,agent']"
           }
         ]
       },
@@ -4456,140 +2659,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配7/16)",
+            "message": "tags 与内容相关性不足 (匹配6/15)",
             "evidence": "未匹配tags: ['创意策划', '品牌策略', '企业工具', '工具', '效率', '自动化', '图像', '写作', '电商']"
-          }
-        ]
-      },
-      {
-        "slug": "diagram-gen-tool-pro",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['Diagram,工具,效率,自动化,工作流,type']"
-          }
-        ]
-      },
-      {
-        "slug": "dlazy-gen-tool-free",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['工具,创意,dlazy,prompt,banana2,api']"
-          }
-        ]
-      },
-      {
-        "slug": "dlazy-gen-tool-pro",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['工具,效率,自动化,工作流,prompt,dlazy']"
-          }
-        ]
-      },
-      {
-        "slug": "elite-frontend-tool-pro",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['工具,效率,代码,vue,card,css']"
-          }
-        ]
-      },
-      {
-        "slug": "frontend-design-v3-free",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['设计,创意,rem,html,div,work-item']"
-          }
-        ]
-      },
-      {
-        "slug": "grok-image-tool-pro",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['创意,self,style,subject,prompt_data,mood']"
           }
         ]
       },
@@ -4660,28 +2731,6 @@
         ]
       },
       {
-        "slug": "logo-brand-identity-tool-free",
-        "source": "differentiated/Creative",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['品牌标识,配色方案,工具,效率,自动化,创意']"
-          }
-        ]
-      },
-      {
         "slug": "logo-brand-identity-tool-pro",
         "source": "differentiated/Creative",
         "grade": "B",
@@ -4700,6 +2749,28 @@
             "severity": "low",
             "message": "tags 与内容相关性不足 (匹配8/19)",
             "evidence": "未匹配tags: ['品牌设计', '设计管理', '工具', '效率', '自动化', '创意', '图像', '写作', '电商', '开发', 'formats']"
+          }
+        ]
+      },
+      {
+        "slug": "quark-scan-tool-pro",
+        "source": "differentiated/Creative",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配7/16)",
+            "evidence": "未匹配tags: ['Creative', '图像处理', '商业内容', '效率', '自动化', '开发', '代码', 'integration', '知识']"
           }
         ]
       },
@@ -4792,50 +2863,6 @@
         ]
       },
       {
-        "slug": "csv-json-converter-free",
-        "source": "differentiated/Integrations",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['工具,agent,csv,json,value,utf-8']"
-          }
-        ]
-      },
-      {
-        "slug": "excel-craft-free",
-        "source": "differentiated/Integrations",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['表格生成,sheet,excel,python,openpyxl,font']"
-          }
-        ]
-      },
-      {
         "slug": "notion-cli-tool-pro",
         "source": "differentiated/Integrations",
         "grade": "B",
@@ -4854,94 +2881,6 @@
             "severity": "low",
             "message": "tags 与内容相关性不足 (匹配7/16)",
             "evidence": "未匹配tags: ['集成工具', '企业Notion', '效率', '自动化', '写作', '电商', '研究', '分析', '知识']"
-          }
-        ]
-      },
-      {
-        "slug": "pipedrive-toolkit-free",
-        "source": "differentiated/Integrations",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['工具,自动化,request,api,urllib,json']"
-          }
-        ]
-      },
-      {
-        "slug": "tg-bot-builder-free",
-        "source": "differentiated/Integrations",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['bot,telegram,webhook,token,self']"
-          }
-        ]
-      },
-      {
-        "slug": "tpn-proxy-tool-pro",
-        "source": "differentiated/Integrations",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['数据采集,分析,self,proxy_id,proxy,def']"
-          }
-        ]
-      },
-      {
-        "slug": "xml-json-converter-free",
-        "source": "differentiated/Integrations",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['工具,agent,xml,json,data,命名空间']"
           }
         ]
       },
@@ -5716,8 +3655,8 @@
         ]
       },
       {
-        "slug": "travel-assistant-tool-free",
-        "source": "differentiated/Lifestyle",
+        "slug": "k8s-devops-tool-pro",
+        "source": "differentiated/Operations",
         "grade": "B",
         "score": 85,
         "passed": false,
@@ -5732,8 +3671,30 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['旅行,工具,效率,旅行信息,清单,查询']"
+            "message": "tags 与内容相关性不足 (匹配5/14)",
+            "evidence": "未匹配tags: ['Operations', 'Kubernetes', '工具', '效率', '创意', '图像', '写作', '电商', '研究']"
+          }
+        ]
+      },
+      {
+        "slug": "namecheap-dns-tool-pro",
+        "source": "differentiated/Operations",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配6/14)",
+            "evidence": "未匹配tags: ['Operations', '域名管理', '工具', '效率', '自动化', '开发', '代码', '写作']"
           }
         ]
       },
@@ -5756,6 +3717,28 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
+          }
+        ]
+      },
+      {
+        "slug": "board-art-tool-free",
+        "source": "differentiated/Other",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配5/13)",
+            "evidence": "未匹配tags: ['创意', '个人效率', '其他工具', '自动化', '写作', '电商', '研究', '分析']"
           }
         ]
       },
@@ -5784,15 +3767,15 @@
       {
         "slug": "content-filter-tool-pro",
         "source": "differentiated/Other",
-        "grade": "C",
-        "score": 65,
+        "grade": "B",
+        "score": 80,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
           "value_proposition": false,
           "quick_start_section": true,
-          "tags_relevant": false
+          "tags_relevant": true
         },
         "issues": [
           {
@@ -5800,12 +3783,6 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['内容过滤,AI 语义,合规,工具,json,合规审计']"
           }
         ]
       },
@@ -5828,6 +3805,50 @@
             "severity": "medium",
             "message": "description 缺少清晰的价值命题关键词",
             "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
+          }
+        ]
+      },
+      {
+        "slug": "file-toolkit-pro",
+        "source": "differentiated/Other",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配6/14)",
+            "evidence": "未匹配tags: ['文件管理', '文档治理', '效率', '自动化', '写作', '电商', '工作流', '知识']"
+          }
+        ]
+      },
+      {
+        "slug": "font-manager-free",
+        "source": "differentiated/Other",
+        "grade": "B",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": true,
+          "tags_relevant": false
+        },
+        "issues": [
+          {
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 与内容相关性不足 (匹配4/10)",
+            "evidence": "未匹配tags: ['网页设计', '排版规范', '工具', '效率', '写作', '电商']"
           }
         ]
       },
@@ -5986,7 +4007,7 @@
         ]
       },
       {
-        "slug": "log-sanitizer-pro",
+        "slug": "liquidity-mgr-tool-free",
         "source": "differentiated/Other",
         "grade": "B",
         "score": 85,
@@ -6002,8 +4023,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['日志安全,工具,邮件,yaml,rules,日志脱敏']"
+            "message": "tags 与内容相关性不足 (匹配3/9)",
+            "evidence": "未匹配tags: ['DeFi', '个人效率', '其他工具', 'UI设计', '前端', '设计']"
           }
         ]
       },
@@ -6580,8 +4601,8 @@
         ]
       },
       {
-        "slug": "brainz-calendar-tool-pro",
-        "source": "differentiated/Productivity",
+        "slug": "free-web-search-tool-pro",
+        "source": "differentiated/Research",
         "grade": "B",
         "score": 85,
         "passed": false,
@@ -6596,52 +4617,8 @@
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['日历,工具,分析,pro,agent,free']"
-          }
-        ]
-      },
-      {
-        "slug": "calendar-skill-tool-pro",
-        "source": "differentiated/Productivity",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['日历,porteden,工具,分析,pro,agent']"
-          }
-        ]
-      },
-      {
-        "slug": "calendar-toolkit-pro",
-        "source": "differentiated/Productivity",
-        "grade": "B",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/1)",
-            "evidence": "未匹配tags: ['日历管理,工具,分析,pro,agent,free']"
+            "message": "tags 与内容相关性不足 (匹配4/10)",
+            "evidence": "未匹配tags: ['企业工具', '数据采集', '研究工具', 'Web开发', '前端', '开发工具']"
           }
         ]
       },

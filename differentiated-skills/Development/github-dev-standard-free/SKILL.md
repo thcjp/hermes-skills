@@ -36,7 +36,6 @@ tags:
   - src
   - 逻辑
   - python3
-  - echo
 tools:
   - read
   - exec

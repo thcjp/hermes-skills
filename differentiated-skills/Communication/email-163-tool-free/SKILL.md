@@ -19,7 +19,6 @@ tags:
   - 通信
   - 工具
   - email-163-tool
-  - com
   - bash
   - imap
   - 用户提供

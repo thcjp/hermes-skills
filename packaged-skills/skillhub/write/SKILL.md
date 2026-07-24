@@ -21,15 +21,8 @@ tags:
   - 通用办公
   - 工具
   - 效率
-  - 自动化
   - 写作
   - 电商
-  - AI代理
-  - agent
-  - 研究
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - audit
   - step
 category: "Automation"

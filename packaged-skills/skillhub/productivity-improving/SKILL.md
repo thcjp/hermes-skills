@@ -8,8 +8,7 @@ license: "Proprietary"
 description: |-
   Productivity tracker and daily review assistant。Input activity logs,
   time notes, goals, or a dai。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
-tags:
-  - Productivity,效率,建议优化,time,依赖说明,不支持
+tags: Productivity,效率,建议优化,time
 tools:
   - read
   - exec

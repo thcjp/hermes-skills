@@ -19,7 +19,6 @@ tags:
   - chrome
   - bash
   - act
-  - example
 tools:
   - read
   - exec

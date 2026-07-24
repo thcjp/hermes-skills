@@ -34,7 +34,6 @@ tags:
   - 批量处理
   - UI设计
   - bash
-  - echo
   - project
   - page
   - tmp

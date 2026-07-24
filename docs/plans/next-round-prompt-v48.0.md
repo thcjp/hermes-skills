@@ -173,6 +173,22 @@
 4. 重建FTS全文搜索索引
 5. 验证dashboard可正常查询
 
+### 任务0: 工具脚本严重Bug修复 (前置任务)
+
+**问题**: 探索代理发现4个工具脚本存在严重Bug,必须优先修复
+
+**Bug列表**:
+1. **dashboard_server.py** — `DATA_DIR`未导入,7个API端点(/api/l7-audit, /api/l7b-audit, /api/l8-security, /api/marketing, /api/license, /api/files, /api/l9-visibility)会NameError崩溃
+2. **auto_publish.py** — `sync_platform_status`函数中`{{}}`双花括号语法导致TypeError,函数完全不可用
+3. **fix_missing_fields.py** — `_replace_frontmatter_field`不处理损坏的block scalar(`|-，text`),导致YAML残留孤立行
+4. **dashboard_server.py** — L9可见性端点`/api/l9-visibility`未在do_GET中注册,前端未调用
+
+**修复方案**:
+1. dashboard_server.py: 添加`from project_config import DATA_DIR`到导入区
+2. auto_publish.py: 将`{{ r["original"]: r["renamed"] for r in renamed }}`改为`{r["original"]: r["renamed"] for r in renamed}`
+3. fix_missing_fields.py: 在`_replace_frontmatter_field`中扩展`is_block_scalar`检测,增加`re.match(r'^[|>][-+]?\s*[，,]?\s*\S', old_val)`模式
+4. dashboard_server.py: 在do_GET中添加`/api/l9-visibility`端点路由
+
 ### 任务8: ClawHub 505个待上传skill监控
 
 **问题**: ClawHub有505个not_uploaded技能,定时任务每日12:00上传200个

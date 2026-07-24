@@ -13,11 +13,9 @@ tags:
   - AI代理
   - 自动化
   - 智能
-  - 按流程执
   - agent
   - browser
   - api
-  - 不支持
 tools:
   - read
   - exec

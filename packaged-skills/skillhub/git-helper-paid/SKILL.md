@@ -34,7 +34,6 @@ tags:
   - 版本控制
   - analysis
   - print
-  - echo
   - git
   - strip
 tools:

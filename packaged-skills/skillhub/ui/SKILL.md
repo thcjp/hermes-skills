@@ -28,8 +28,6 @@ tags:
   - 设计
   - button
   - rem
-  - 不支持
-  - 依赖说明
   - class
 tools:
   - read

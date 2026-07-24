@@ -15,8 +15,6 @@ tags:
   - 工具
   - agent
   - llm
-  - 不支持
-  - 依赖说明
   - free
 tools:
   - read

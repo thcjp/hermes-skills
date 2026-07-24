@@ -11,17 +11,9 @@ tags:
   - Integrations
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - sql
   - generator
-  - 依赖说明
   - api
-  - 不支持
 tools:
   - read
   - exec

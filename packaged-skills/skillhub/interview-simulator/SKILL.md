@@ -25,15 +25,7 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
-  - AI代理
-  - 按流程执
-  - 依赖说明
   - interview
-  - agent
   - question
 tools:
   - read

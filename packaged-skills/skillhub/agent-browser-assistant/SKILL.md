@@ -25,7 +25,6 @@ tags:
   - assistant
   - api
   - browser
-  - 不支持
 category: "Agents"
 ---
 # Agent Browser Assistant 批量处理

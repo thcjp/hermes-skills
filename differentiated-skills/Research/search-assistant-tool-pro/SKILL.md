@@ -42,7 +42,6 @@ tags:
   - 通用搜索
   - 学术搜索
   - 竞品
-  - 不支持
 tools:
   - read
   - exec

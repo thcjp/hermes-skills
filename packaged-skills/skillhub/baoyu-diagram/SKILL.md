@@ -12,15 +12,7 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
-  - 研究
   - diagram
-  - 不支持
-  - 依赖说明
   - api
 tools:
   - read

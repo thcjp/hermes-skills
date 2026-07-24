@@ -22,16 +22,11 @@ tags:
   - 效率工具
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
   - 写作
   - cdp
   - chrome
   - cookie
   - dom
-  - agent
 tools:
   - read
   - exec

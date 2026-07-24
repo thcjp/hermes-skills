@@ -20,16 +20,11 @@ tags:
   - 趋势发现
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 知识
   - 文档
-  - AI代理
   - pm2
   - bookmark-smart-hub
   - bash
-  - agent
   - npm
 tools:
   - read

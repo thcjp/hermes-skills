@@ -44,7 +44,6 @@ tags:
   - 版本控制
   - git
   - branch
-  - echo
   - add
   - commit
 tools:

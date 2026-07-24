@@ -7,8 +7,7 @@ summary: "专业AI翻译+可选人工校验,支持100+语言。Professional AI-p
 license: "Proprietary"
 description: |-
   Professional AI-powered translation with optional human verification。Supports 100+ languages。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
-tags:
-  - translation,language,translate,straker,verify,professional
+tags: translation,language,translate,straker,verify,professional
 tools:
   - read
   - exec

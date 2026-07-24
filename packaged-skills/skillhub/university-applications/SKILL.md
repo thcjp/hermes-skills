@@ -25,16 +25,7 @@ tags:
   - Finance
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
-  - AI代理
-  - 按流程执
-  - 依赖说明
-  - agent
   - applications
-  - 不支持
 tools:
   - read
   - exec

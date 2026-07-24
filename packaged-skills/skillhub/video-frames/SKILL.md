@@ -28,8 +28,6 @@ tags:
   - 创意
   - frames
   - video
-  - 不支持
-  - 依赖说明
   - 相关配置
 tools:
   - read

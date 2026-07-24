@@ -23,7 +23,6 @@ tags:
   - node
   - bash
   - tmp
-  - 不支持
 tools:
   - read
   - exec

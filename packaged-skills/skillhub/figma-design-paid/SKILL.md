@@ -18,7 +18,6 @@ tags:
   - 创意
   - self
   - file_key
-  - 不支持
   - report
   - mx_figma
 tools:

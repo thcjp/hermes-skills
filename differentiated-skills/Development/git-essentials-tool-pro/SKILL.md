@@ -45,7 +45,6 @@ tags:
   - git
   - bisect
   - bash
-  - echo
   - submodule
 tools:
   - read

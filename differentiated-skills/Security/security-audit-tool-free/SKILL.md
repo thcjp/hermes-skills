@@ -49,9 +49,6 @@ tags:
   - 加密
   - 工具
   - self
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - node
 tools:
   - read

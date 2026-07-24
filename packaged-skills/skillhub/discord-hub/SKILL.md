@@ -13,10 +13,7 @@ tags:
   - Discord
   - 社交
   - 通信
-  - 按流程执
   - api
-  - 依赖说明
-  - 不支持
   - agent
 tools:
   - read

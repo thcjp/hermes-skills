@@ -22,7 +22,6 @@ tags:
   - ocr
   - pdf
   - markdown
-  - 不支持
 category: "Knowledge"
 ---
 # Document Parse Free

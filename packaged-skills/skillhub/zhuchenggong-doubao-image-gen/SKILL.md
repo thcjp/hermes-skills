@@ -13,11 +13,8 @@ tags:
   - 图像处理
   - AI绘图
   - 创意
-  - 依赖说明
-  - 不支持
   - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

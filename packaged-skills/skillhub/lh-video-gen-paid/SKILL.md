@@ -20,9 +20,6 @@ tags:
   - 媒体
   - 创意
   - output
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - script
 tools:
   - read

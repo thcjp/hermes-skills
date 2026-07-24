@@ -36,7 +36,6 @@ tags:
   - 检查点
   - 审计点
   - bash
-  - 不支持
 tools:
   - read
   - exec

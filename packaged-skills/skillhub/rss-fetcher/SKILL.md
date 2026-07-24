@@ -15,9 +15,6 @@ tags:
   - 订阅
   - 信息
   - html
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
 tools:
   - read

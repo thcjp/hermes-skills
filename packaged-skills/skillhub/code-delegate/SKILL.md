@@ -36,7 +36,6 @@ tags:
   - 任务
   - true
   - projects
-  - 不支持
 tools:
   - read
   - exec

@@ -36,7 +36,6 @@ tags:
   - git
   - print
   - strip
-  - echo
 tools:
   - read
   - exec

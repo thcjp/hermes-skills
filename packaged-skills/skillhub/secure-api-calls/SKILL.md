@@ -17,7 +17,6 @@ tags:
   - calls
   - keychains
   - secure
-  - 不支持
 tools:
   - read
   - exec

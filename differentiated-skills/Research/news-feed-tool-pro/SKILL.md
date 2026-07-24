@@ -20,7 +20,6 @@ tags:
   - pro
   - rss
   - true
-  - 不支持
   - news-feed-pro
 tools:
   - read

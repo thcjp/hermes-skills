@@ -18,14 +18,9 @@ tags:
   - 协作
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
   - 创意
   - slide
   - https
-  - com
   - state
 tools:
   - read

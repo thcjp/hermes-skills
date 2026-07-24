@@ -16,9 +16,7 @@ tags:
   - 智能
   - agent
   - api
-  - 不支持
   - llm
-  - 依赖说明
 tools:
   - read
   - exec

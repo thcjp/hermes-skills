@@ -19,7 +19,6 @@ tags:
   - tmwd_exec
   - document
   - code
-  - example
 tools:
   - read
   - exec

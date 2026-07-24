@@ -28,16 +28,7 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
-  - AI代理
-  - 按流程执
-  - 依赖说明
-  - 不支持
   - emoji
-  - agent
 tools:
   - read
   - exec

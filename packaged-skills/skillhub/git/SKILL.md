@@ -14,10 +14,8 @@ tags:
   - Git
   - 开发工具
   - git
-  - 不支持
   - agent
   - api
-  - 依赖说明
 tools:
   - read
   - exec

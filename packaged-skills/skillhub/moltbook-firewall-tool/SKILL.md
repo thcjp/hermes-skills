@@ -12,17 +12,9 @@ tags:
   - Security
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 安全
   - 加密
-  - AI代理
-  - 依赖说明
-  - agent
-  - 不支持
   - api
-  - 确认运行
 tools:
   - read
   - exec

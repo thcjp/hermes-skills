@@ -14,8 +14,6 @@ tags:
   - 运维
   - 工具
   - monitor
-  - 依赖说明
-  - 不支持
   - agent
   - api
 tools:

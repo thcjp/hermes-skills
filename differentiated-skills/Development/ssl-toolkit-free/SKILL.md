@@ -47,8 +47,6 @@ tags:
   - 电商
   - 研究
   - 分析
-  - com
-  - example
   - openssl
   - pem
   - certbot

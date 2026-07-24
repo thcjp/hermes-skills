@@ -22,7 +22,6 @@ tags:
   - json
   - agent
   - bash
-  - 不支持
   - 用户提供
 tools:
   - read

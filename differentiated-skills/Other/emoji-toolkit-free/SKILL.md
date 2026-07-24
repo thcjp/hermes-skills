@@ -15,16 +15,10 @@ tags:
   - Unicode
   - 工具
   - 效率
-  - 自动化
   - 通信
   - 邮件
-  - 开发
-  - 代码
-  - 研究
   - 变体选择
   - unicode
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

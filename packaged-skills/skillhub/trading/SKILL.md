@@ -23,10 +23,6 @@ tags:
   - 金融
   - 财务
   - python
-  - 不支持
-  - 请参考
-  - 目录中的
-  - 脚本文件
 tools:
   - read
   - exec

@@ -29,8 +29,6 @@ tags:
   - AWS
   - 云计算
   - DevOps
-  - 按流程执
-  - 依赖说明
   - aws
   - agent
   - api

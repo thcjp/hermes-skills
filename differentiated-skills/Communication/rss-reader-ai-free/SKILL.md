@@ -37,7 +37,6 @@ tags:
   - rss
   - yaml
   - https
-  - com
   - atom
 tools:
   - read

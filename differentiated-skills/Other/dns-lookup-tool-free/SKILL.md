@@ -20,17 +20,11 @@ tags:
   - 域名解析
   - 工具
   - 效率
-  - 自动化
   - 运维
   - 监控
-  - 研究
-  - 分析
-  - 开发
   - dns
   - dig
   - short
-  - example
-  - com
 tools:
   - read
   - exec

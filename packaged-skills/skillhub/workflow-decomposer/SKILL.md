@@ -14,10 +14,8 @@ tags:
   - 自动化
   - 效率
   - decomposer
-  - 依赖说明
   - qwen3
   - plus
-  - 不支持
 tools:
   - read
   - exec

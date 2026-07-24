@@ -30,8 +30,6 @@ tags:
   - DevOps
   - azure-cli
   - bash
-  - 不支持
-  - 依赖说明
   - agent
 tools:
   - read

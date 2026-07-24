@@ -28,11 +28,8 @@ tags:
   - 版本控制
   - Git
   - 开发工具
-  - 依赖说明
-  - 不支持
   - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

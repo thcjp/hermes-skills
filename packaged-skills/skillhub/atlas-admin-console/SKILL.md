@@ -24,7 +24,6 @@ tags:
   - csv
   - operation
   - atlas
-  - 不支持
 tools:
   - read
   - exec

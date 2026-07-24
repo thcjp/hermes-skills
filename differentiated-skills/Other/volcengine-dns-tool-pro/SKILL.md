@@ -41,8 +41,6 @@ tags:
   - 电商
   - 研究
   - volcengine-dns-pro
-  - com
-  - example
   - true
   - dns
 tools:

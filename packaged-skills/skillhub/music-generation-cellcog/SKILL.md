@@ -13,10 +13,7 @@ tags:
   - 音乐生成
   - 音频
   - 创意
-  - 依赖说明
   - agent
-  - 不支持
-  - 确认运行
   - cellcog
 tools:
   - read

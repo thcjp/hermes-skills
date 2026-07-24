@@ -28,10 +28,8 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
-  - 不支持
   - agent
   - api
-  - 依赖说明
   - llm
 tools:
   - read

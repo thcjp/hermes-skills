@@ -21,8 +21,6 @@ tags:
   - azure
   - bicep
   - pro
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

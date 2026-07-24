@@ -13,11 +13,8 @@ tags:
   - Telegram
   - 社交
   - 通信
-  - 按流程执
   - api
-  - 依赖说明
   - bot
-  - 不支持
 tools:
   - read
   - exec

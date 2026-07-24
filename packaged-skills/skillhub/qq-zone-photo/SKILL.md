@@ -18,17 +18,11 @@ tags:
   - 通用办公
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 通信
   - 邮件
-  - 研究
   - cookies
   - action
   - json
-  - 请参考
-  - 目录中的
 category: "Automation"
 ---
 # 社交空间相册

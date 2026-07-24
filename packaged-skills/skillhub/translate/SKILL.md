@@ -30,9 +30,7 @@ tags:
   - 语言
   - 工具
   - translate
-  - 依赖说明
   - agent
-  - 不支持
   - llm
 tools:
   - read

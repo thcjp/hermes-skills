@@ -13,11 +13,9 @@ tags:
   - 网络
   - DNS
   - 工具
-  - 按流程执
   - openssl
   - dns
   - agent
-  - example
 tools:
   - read
   - exec

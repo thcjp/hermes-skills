@@ -11,17 +11,12 @@ tags:
   - Integrations
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 创意
   - 图像
-  - 研究
   - polymarket
   - paid
   - api
   - hyperliquid
-  - 不支持
 tools:
   - read
   - exec

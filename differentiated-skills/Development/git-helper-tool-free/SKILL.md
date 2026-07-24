@@ -43,7 +43,6 @@ tags:
   - 辅助工具
   - 版本控制
   - git
-  - echo
   - branch
   - bash
   - errors

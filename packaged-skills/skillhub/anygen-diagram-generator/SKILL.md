@@ -19,15 +19,9 @@ tags:
   - Flowchart
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
-  - AI代理
   - anygen
   - api
   - smart_draw
-  - agent
   - 用户提供
 tools:
   - read

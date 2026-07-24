@@ -13,17 +13,10 @@ tags:
   - Lifestyle
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 创意
   - 图像
-  - AI代理
   - game
-  - 依赖说明
-  - agent
   - style
-  - 不支持
 tools:
   - read
   - exec

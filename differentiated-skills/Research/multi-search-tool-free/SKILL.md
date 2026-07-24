@@ -37,7 +37,6 @@ tags:
   - 检索
   - 工具
   - https
-  - com
   - keyword
   - url
   - www

@@ -36,9 +36,6 @@ tags:
   - 开发
   - anygen
   - api
-  - 请参考
-  - 目录中的
-  - 脚本文件
 tools:
   - read
   - exec

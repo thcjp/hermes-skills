@@ -13,10 +13,8 @@ tags:
   - 定时任务
   - 调度
   - 自动化
-  - 不支持
   - agent
   - api
-  - 依赖说明
   - llm
 tools:
   - read

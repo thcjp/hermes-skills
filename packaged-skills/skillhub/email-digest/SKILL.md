@@ -17,7 +17,6 @@ tags:
   - 邮件
   - 通信
   - 工具
-  - com
   - email-digest-tool
   - gmail
   - outlook

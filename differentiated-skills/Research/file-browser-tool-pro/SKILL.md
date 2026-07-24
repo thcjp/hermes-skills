@@ -21,7 +21,6 @@ tags:
   - def
   - print
   - return
-  - 不支持
 tools:
   - read
   - exec

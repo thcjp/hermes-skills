@@ -52,7 +52,6 @@ tags:
   - 创意
   - self
   - true
-  - 不支持
   - pdf
   - city
 tools:

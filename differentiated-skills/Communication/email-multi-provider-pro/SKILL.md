@@ -21,7 +21,6 @@ tags:
   - porteden
   - email
   - csv
-  - com
 tools:
   - read
   - exec

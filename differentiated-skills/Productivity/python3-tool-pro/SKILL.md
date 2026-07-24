@@ -17,9 +17,6 @@ tags:
   - pip
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
   - 安全
@@ -27,7 +24,6 @@ tags:
   - python
   - pro
   - python3
-  - agent
 tools:
   - read
   - exec

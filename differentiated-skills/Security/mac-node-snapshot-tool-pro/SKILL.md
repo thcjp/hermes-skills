@@ -19,9 +19,7 @@ tags:
   - 安全
   - 加密
   - 工具
-  - echo
   - output_dir
-  - 专业版独
   - timestamp
 tools:
   - read

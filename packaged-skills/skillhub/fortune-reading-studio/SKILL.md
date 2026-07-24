@@ -21,9 +21,6 @@ tags:
   - AI解读
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 通信
   - 邮件
   - 写作
@@ -31,7 +28,6 @@ tags:
   - llm
   - api
   - 不适用
-  - agent
 tools:
   - read
   - exec

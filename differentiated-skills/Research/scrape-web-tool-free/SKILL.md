@@ -39,7 +39,6 @@ tags:
   - text
   - python
   - https
-  - example
 tools:
   - read
   - exec

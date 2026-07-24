@@ -22,7 +22,6 @@ tags:
   - self
   - agent
   - violations
-  - echo
 tools:
   - read
   - exec

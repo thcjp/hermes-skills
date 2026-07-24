@@ -17,16 +17,10 @@ tags:
   - Visualization
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
-  - 研究
   - anygen
   - api
   - smart_draw
   - key
-  - agent
 tools:
   - read
   - exec

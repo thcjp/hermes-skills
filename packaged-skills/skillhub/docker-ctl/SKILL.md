@@ -28,11 +28,8 @@ tags:
   - 容器
   - Docker
   - DevOps
-  - 依赖说明
-  - 不支持
   - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

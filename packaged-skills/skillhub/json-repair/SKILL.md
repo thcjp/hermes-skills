@@ -15,15 +15,9 @@ tags:
   - 修复
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - AI代理
-  - agent
   - json
   - string
   - 流式修复
-  - 不支持
 tools:
   - read
   - exec

@@ -28,16 +28,9 @@ tags:
   - Development
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - 集成
   - javascript
-  - 不支持
   - api
-  - 依赖说明
 tools:
   - read
   - exec

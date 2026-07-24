@@ -14,9 +14,6 @@ tags:
   - 工具
   - plt
   - plots
-  - 请参考
-  - 目录中的
-  - 脚本文件
 tools:
   - read
   - exec

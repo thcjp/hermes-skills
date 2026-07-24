@@ -33,7 +33,6 @@ tags:
   - emoji
   - 模式
   - print
-  - 不支持
   - text
 tools:
   - read

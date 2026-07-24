@@ -22,7 +22,6 @@ tags:
   - json
   - bash
   - python3
-  - 不支持
   - 翻译记忆
 tools:
   - read

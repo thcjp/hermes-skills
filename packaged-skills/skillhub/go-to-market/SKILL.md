@@ -14,8 +14,7 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 效率,gtm,icp,包含执行,状态码,结果数据
+tags: 效率,gtm,icp,包含执行,状态码,结果数据
 category: "Automation"
 ---
 # 上市策略

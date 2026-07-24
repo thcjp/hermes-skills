@@ -29,17 +29,10 @@ tags:
   - DevOps
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
   - 集成
   - bash
   - owner
   - repo
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

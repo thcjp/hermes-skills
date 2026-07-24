@@ -37,9 +37,6 @@ tags:
   - 检索
   - 工具
   - node
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - rss
 tools:
   - read

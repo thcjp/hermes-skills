@@ -36,10 +36,8 @@ tags:
   - AI生成
   - 音频
   - 媒体
-  - 不支持
   - true
   - markdown
-  - 依赖说明
   - agent
 tools:
   - read

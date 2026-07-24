@@ -31,7 +31,6 @@ tags:
   - 知识
   - gmail
   - gog
-  - com
   - bash
   - drive
 tools:

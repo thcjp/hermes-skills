@@ -48,8 +48,6 @@ tags:
   - 加密
   - 工具
   - vpn
-  - example
-  - com
   - protocol
   - endpoint
 tools:

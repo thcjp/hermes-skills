@@ -41,7 +41,6 @@ tags:
   - 编程辅助
   - include
   - grep
-  - echo
   - bash
 tools:
   - read

@@ -33,7 +33,6 @@ tags:
   - api
   - label
   - web_notepad_api_key
-  - example
   - path
 tools:
   - read

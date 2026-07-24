@@ -13,9 +13,7 @@ tags:
   - 调度
   - 自动化
   - cron
-  - 按流程执
   - skill-platform
-  - 不支持
   - agent
 tools:
   - read

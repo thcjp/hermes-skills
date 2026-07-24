@@ -13,8 +13,7 @@ description: |-
   - 基础查询优化（N+1查询、外键索引、无界SELECT）
   - 基础数据完整性（唯一约束、时区存储、金额精度）
   高级功能（Schema变更安全策略、备份恢复、复制陷阱、扩展性规划）为付费版专享.
-tags:
-  - 效率,select,update,api,balance,免费版不
+tags: 效率,select,update,api,balance,免费版不
 tools:
   - read
   - exec

@@ -32,15 +32,9 @@ tags:
   - 部署发布
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
   - 运维
   - api
   - bash
-  - agent
   - vercel
   - curl
 tools:

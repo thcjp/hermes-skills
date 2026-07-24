@@ -12,17 +12,8 @@ tags:
   - Integrations
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - queue
-  - 依赖说明
   - api
-  - 不支持
-  - agent
 tools:
   - read
   - exec

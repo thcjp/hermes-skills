@@ -33,7 +33,6 @@ tags:
   - self
   - article
   - feeds
-  - com
   - 验证返回
 tools:
   - read

@@ -29,8 +29,6 @@ tags:
   - 自动化
   - 智能
   - agent
-  - 不支持
-  - 依赖说明
   - api
   - llm
 tools:

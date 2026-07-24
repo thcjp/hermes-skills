@@ -24,17 +24,8 @@ tags:
   - CSV
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - AI代理
-  - agent
-  - 开发
   - csv
   - python3
-  - 请参考
-  - 目录中的
-  - 脚本文件
 tools:
   - read
   - exec

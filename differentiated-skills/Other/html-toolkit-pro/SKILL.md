@@ -28,8 +28,6 @@ tags:
   - 安全
   - hreflang
   - https
-  - example
-  - com
   - json
 tools:
   - read

@@ -13,9 +13,7 @@ tags:
   - 代码生成
   - 编程辅助
   - agent
-  - 依赖说明
   - code
-  - 不支持
   - api
 tools:
   - read

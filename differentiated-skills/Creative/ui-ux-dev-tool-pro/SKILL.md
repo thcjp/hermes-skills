@@ -34,10 +34,8 @@ tags:
   - 批量处理
   - UI设计
   - bash
-  - echo
   - project
   - page
-  - 请参考
 tools:
   - read
   - exec

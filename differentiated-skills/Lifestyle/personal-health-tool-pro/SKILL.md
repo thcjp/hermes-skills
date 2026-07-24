@@ -30,7 +30,6 @@ tags:
   - 健康
   - 写作
   - true
-  - 不支持
   - 辅助诊断
   - patient_id
   - 管理

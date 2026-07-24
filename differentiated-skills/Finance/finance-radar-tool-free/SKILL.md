@@ -18,9 +18,6 @@ tags:
   - 金融
   - 财务
   - 数据
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
   - ticker
 tools:

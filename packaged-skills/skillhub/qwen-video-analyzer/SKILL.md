@@ -32,9 +32,6 @@ tags:
   - 创意
   - json
   - 分析
-  - 请参考
-  - 目录中的
-  - 脚本文件
 tools:
   - read
   - exec

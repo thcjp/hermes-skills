@@ -12,8 +12,7 @@ description: |-
   - 多角色对话一次性渲染（最多10个角色）
   - 语音克隆（ElevenLabs IVC、Qwen、Kling、Vidu）
   - 原创音乐生成（Suno V5
-tags:
-  - Audio,dlazy,不支持,text,工具,api
+tags: Audio,dlazy,text,工具,api
 tools:
   - read
   - exec

@@ -33,7 +33,6 @@ tags:
   - 写作
   - text
   - tri-x
-  - 专业版独
   - road
   - desert
 tools:

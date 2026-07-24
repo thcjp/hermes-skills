@@ -15,8 +15,7 @@ description: '广告情报专业版是面向买量团队、投放优化师、市
   新增创意效果归因模板，把创意素材关联到投放时间、花费、转化等业务指标；(5) 提供优先 API 速率（10 QPS）与并发配额（5 路），适合构建数据看板与定时任务.
   适用关键词：广告情报分析、批量创意导出、历史趋势回溯、下载收入预估、多市场对比、创意归因、ad creative intelligence、bulk export、historical
   trend、download revenue estimate'
-tags:
-  - 广告情报,api,data,post,专业版增,专业版独
+tags: 广告情报,api,data,post,专业版增
 tools:
   - read
   - exec

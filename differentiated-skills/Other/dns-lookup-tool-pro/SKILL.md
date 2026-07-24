@@ -33,7 +33,6 @@ tags:
   - dns
   - json
   - dnssec
-  - com
   - 批量查询
 tools:
   - read

@@ -35,7 +35,6 @@ tags:
   - bash
   - code-analyze
   - api
-  - 不支持
 tools:
   - read
   - exec

@@ -13,9 +13,6 @@ tags:
   - RSS
   - 订阅
   - 信息
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - node
   - https
 tools:

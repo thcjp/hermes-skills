@@ -13,8 +13,6 @@ tags:
   - 前端
   - 开发工具
   - llm
-  - 不支持
-  - 依赖说明
   - full
   - bing
 tools:

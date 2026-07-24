@@ -15,16 +15,11 @@ tags:
   - 开发者工具
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 创意
   - 图像
-  - 开发
   - csv
   - schema
   - csv-toolkit
-  - 专业版独
   - bash
 tools:
   - read

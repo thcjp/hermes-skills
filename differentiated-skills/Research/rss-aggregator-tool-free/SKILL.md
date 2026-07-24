@@ -39,8 +39,6 @@ tags:
   - 工具
   - rss
   - https
-  - example
-  - com
   - feeds
 tools:
   - read

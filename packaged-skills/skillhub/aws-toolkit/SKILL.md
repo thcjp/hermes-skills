@@ -17,9 +17,6 @@ tags:
   - 基础设施
   - 云计算
   - DevOps
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - terraform
   - python3
 tools:

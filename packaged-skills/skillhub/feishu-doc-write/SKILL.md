@@ -12,14 +12,9 @@ tags:
   - Knowledge
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
   - 创意
   - block_type
   - content
-  - 按流程执
   - api
   - json
 tools:

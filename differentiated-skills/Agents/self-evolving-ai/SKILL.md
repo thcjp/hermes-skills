@@ -6,8 +6,7 @@ displayName: 自我进化AI
 summary: "自动捕获经验与错误,智能分层记忆,模式复发追踪,按需加载降本增效.。让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库"
 license: Proprietary
 description: 让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库、领域知识积累、减少重复犯错等场景。核心能力含三类结构化记忆、自动痛点检测、模式复发追踪与晋升、分层文档加载、技能提取。适用关键词：自我进化、经验捕获、错误学习、模式追踪、记忆晋升、self-evolving、learnings、pattern-detection.
-tags:
-  - 智能,learnings,recurrence-count,step,用户提供,pnpm
+tags: 智能,learnings,recurrence-count,step,用户提供,pnpm
 tools:
   - read
   - exec

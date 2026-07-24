@@ -21,15 +21,10 @@ tags:
   - 副业工具
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 写作
   - 电商
-  - AI代理
   - topic
   - llm
-  - agent
   - hook_type
   - platform
 tools:

@@ -21,7 +21,6 @@ tags:
   - 通知
   - webhook
   - status
-  - 不支持
 tools:
   - read
   - exec

@@ -649,7 +649,7 @@ def sync_platform_status(results_file):
     skills = db.get("skills", {})
     
     # 处理重命名映射
-    rename_map = {{ r["original"]: r["renamed"] for r in renamed }}
+    rename_map = {r["original"]: r["renamed"] for r in renamed}
     
     # 更新已发布的skill
     success_count = 0
@@ -664,7 +664,7 @@ def sync_platform_status(results_file):
         # 在数据库中查找 (可能是原始slug或重命名后的slug)
         db_slug = original_slug if original_slug else slug
         if db_slug in skills:
-            sh = skills[db_slug].get("skillhub", {{}})
+            sh = skills[db_slug].get("skillhub", {})
             sh["public_published"] = True
             sh["public_published_at"] = NOW
             sh["community_published"] = True
@@ -675,7 +675,7 @@ def sync_platform_status(results_file):
             if "community_publish_error" in sh:
                 del sh["community_publish_error"]
             
-            lifecycle = skills[db_slug].get("lifecycle", {{}})
+            lifecycle = skills[db_slug].get("lifecycle", {})
             lifecycle["stage"] = "community_published"
             lifecycle["last_modified"] = NOW
             skills[db_slug]["lifecycle"] = lifecycle
@@ -686,34 +686,34 @@ def sync_platform_status(results_file):
     for item in failed:
         slug = item.get("slug", "")
         if slug in skills:
-            sh = skills[slug].get("skillhub", {{}})
+            sh = skills[slug].get("skillhub", {})
             sh["public_published"] = False
             sh["community_publish_failed"] = True
             sh["community_publish_error"] = item.get("error", "unknown")
             sh["community_publish_retry_count"] = sh.get("community_publish_retry_count", 0) + 1
             sh["last_sync"] = NOW
             
-            lifecycle = skills[slug].get("lifecycle", {{}})
+            lifecycle = skills[slug].get("lifecycle", {})
             lifecycle["stage"] = "community_publish_failed"
             lifecycle["last_modified"] = NOW
             skills[slug]["lifecycle"] = lifecycle
             fail_count += 1
     
     # 更新统计
-    stats = db.get("stats", {{}})
+    stats = db.get("stats", {})
     stats["community_published"] = success_count
     stats["community_publish_failed"] = fail_count
     db["stats"] = stats
     
     db["metadata"]["last_updated"] = NOW
-    db["metadata"]["platform_sync"] = {{
+    db["metadata"]["platform_sync"] = {
         "synced_at": NOW,
         "published_count": len(published),
         "failed_count": len(failed),
         "renamed_count": len(renamed),
         "db_updated_success": success_count,
         "db_updated_failed": fail_count
-    }}
+    }
     
     save_db(db)
     

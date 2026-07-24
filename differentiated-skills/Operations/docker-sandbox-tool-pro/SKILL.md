@@ -17,9 +17,6 @@ tags:
   - 企业级
   - 容器
   - DevOps
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
   - true
 tools:

@@ -16,16 +16,10 @@ tags:
   - 进度跟踪
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
   - 写作
   - git
   - free
   - pro
-  - agent
   - markdown
 tools:
   - read

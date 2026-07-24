@@ -18,7 +18,6 @@ tags:
   - 免费版
   - 加密
   - 工具
-  - echo
   - grep
   - dev
   - null

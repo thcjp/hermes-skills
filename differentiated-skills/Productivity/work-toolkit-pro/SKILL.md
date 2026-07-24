@@ -17,15 +17,11 @@ tags:
   - 邮件
   - 工具
   - 效率
-  - 自动化
   - 知识
   - 文档
-  - 研究
-  - 分析
   - 写作
   - true
   - pro
-  - agent
   - free
   - 逻辑
 tools:

@@ -31,7 +31,6 @@ tags:
   - DevSecOps
   - 代码生成
   - 编程辅助
-  - echo
   - audit
   - python
   - json

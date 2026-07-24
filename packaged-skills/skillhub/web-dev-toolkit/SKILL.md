@@ -25,10 +25,7 @@ tags:
   - 前端
   - 开发工具
   - https
-  - com
   - seo
-  - echo
-  - example
 tools:
   - read
   - exec

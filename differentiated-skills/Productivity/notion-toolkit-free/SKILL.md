@@ -17,15 +17,11 @@ tags:
   - 数据库
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 知识
   - 文档
   - 写作
   - notion
   - free
-  - agent
   - pro
   - api
 tools:

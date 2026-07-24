@@ -22,7 +22,6 @@ tags:
   - python
   - figma
   - file_key
-  - 不支持
   - 必需
 tools:
   - read

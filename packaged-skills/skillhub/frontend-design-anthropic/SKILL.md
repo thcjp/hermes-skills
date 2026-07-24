@@ -33,7 +33,6 @@ tags:
   - rem
   - 指导
   - storybook
-  - 不支持
   - css
 tools:
   - read

@@ -16,9 +16,6 @@ tags:
   - 检索
   - 工具
   - search
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - skill-platform
 tools:
   - read

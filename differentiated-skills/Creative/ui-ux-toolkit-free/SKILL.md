@@ -38,9 +38,6 @@ tags:
   - 前端
   - UI设计
   - python3
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - domain
 tools:
   - read

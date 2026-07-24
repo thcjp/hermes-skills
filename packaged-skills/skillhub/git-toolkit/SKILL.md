@@ -32,7 +32,6 @@ tags:
   - 企业级
   - DevOps
   - git
-  - echo
   - branch
   - json
   - true

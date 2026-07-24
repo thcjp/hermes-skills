@@ -29,7 +29,6 @@ tags:
   - aws
   - azure
   - text
-  - 不支持
   - 包含执行
 tools:
   - read

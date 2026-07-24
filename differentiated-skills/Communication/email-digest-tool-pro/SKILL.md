@@ -18,7 +18,6 @@ tags:
   - 通信
   - 工具
   - email-digest-tool
-  - com
   - gmail
   - outlook
   - https

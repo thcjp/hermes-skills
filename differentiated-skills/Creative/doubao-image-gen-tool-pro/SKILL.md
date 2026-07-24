@@ -21,7 +21,6 @@ tags:
   - python3
   - tmp
   - 提示词增
-  - 不支持
 tools:
   - read
   - exec

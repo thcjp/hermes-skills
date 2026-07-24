@@ -18,17 +18,9 @@ tags:
   - 通用办公
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
-  - AI代理
   - api
   - dashboard
   - analytics
-  - 不支持
-  - agent
 category: "Automation"
 ---
 # Dashboard Analytics Tool 智能分析

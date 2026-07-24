@@ -15,8 +15,7 @@ tools:
   - glob
   - grep
 homepage: ""
-tags:
-  - 效率,bundled,resources,body,progressive,disclosure
+tags: 效率,bundled,resources,body,progressive,disclosure
 category: "Automation"
 ---
 # AI技能创建指南（免费版）

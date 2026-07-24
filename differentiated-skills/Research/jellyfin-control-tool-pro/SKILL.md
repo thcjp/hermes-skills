@@ -46,7 +46,6 @@ tags:
   - bash
   - skills
   - jellyfin-control
-  - 请参考
 tools:
   - read
   - exec

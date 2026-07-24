@@ -28,16 +28,9 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
   - 知识
-  - 按流程执
   - knowledge
   - capture
-  - 依赖说明
-  - 不支持
 tools:
   - read
   - exec

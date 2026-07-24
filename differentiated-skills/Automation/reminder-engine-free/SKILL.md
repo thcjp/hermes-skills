@@ -16,7 +16,6 @@ tags:
   - 自动化
   - 工作流
   - 效率
-  - echo
   - channel
   - agent
   - date

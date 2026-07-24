@@ -13,10 +13,7 @@ tags:
   - 搜索
   - 检索
   - 工具
-  - 按流程执
-  - 依赖说明
   - api
-  - 不支持
   - agent
 tools:
   - read

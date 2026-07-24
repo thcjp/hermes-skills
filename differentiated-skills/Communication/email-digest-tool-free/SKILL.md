@@ -22,9 +22,7 @@ tags:
   - 通信
   - 工具
   - browser-use
-  - com
   - https
-  - echo
   - mail
 tools:
   - read

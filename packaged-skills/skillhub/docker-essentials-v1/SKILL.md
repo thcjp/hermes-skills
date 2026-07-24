@@ -33,7 +33,6 @@ tags:
   - 容器
   - DevOps
   - self
-  - echo
   - docker
   - file
   - dockerfile

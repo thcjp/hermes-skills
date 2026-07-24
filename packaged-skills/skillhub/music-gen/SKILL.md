@@ -21,7 +21,6 @@ tags:
   - true
   - platform
   - output
-  - 不支持
 tools:
   - read
   - exec

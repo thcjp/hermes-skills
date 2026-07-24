@@ -21,7 +21,6 @@ tags:
   - pdf
   - 行业基准
   - ocr
-  - 请参考
 tools:
   - read
   - exec

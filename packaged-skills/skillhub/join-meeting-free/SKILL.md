@@ -14,8 +14,7 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 效率,api,meeting,加入会议,join,语音状态
+tags: 效率,api,meeting,加入会议,join,语音状态
 category: "Automation"
 ---
 # 智能会议机器人（免费版）

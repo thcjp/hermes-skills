@@ -42,9 +42,6 @@ tags:
   - 搜索
   - 检索
   - 工具
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python
   - topic
 tools:

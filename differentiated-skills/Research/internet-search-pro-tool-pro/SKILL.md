@@ -26,9 +26,6 @@ tags:
   - 检索
   - 工具
   - json
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python
 tools:
   - read

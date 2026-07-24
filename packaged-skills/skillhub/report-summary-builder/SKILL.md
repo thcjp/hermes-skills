@@ -26,8 +26,6 @@ tags:
   - UI设计
   - 前端
   - 设计
-  - 依赖说明
-  - 不支持
   - report
   - agent
   - api

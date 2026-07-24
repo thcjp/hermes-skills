@@ -33,14 +33,10 @@ tags:
   - 其他工具
   - 工具
   - 效率
-  - 自动化
   - 知识
   - 文档
-  - 研究
-  - 分析
   - json
   - path
-  - agent
   - python
   - style
 tools:

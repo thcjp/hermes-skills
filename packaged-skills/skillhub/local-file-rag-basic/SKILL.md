@@ -25,13 +25,6 @@ tags:
   - Knowledge
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
-  - 依赖说明
-  - 不支持
   - llm
   - api
 tools:

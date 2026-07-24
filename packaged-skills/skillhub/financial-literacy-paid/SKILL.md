@@ -22,11 +22,7 @@ tags:
   - 研究
   - 分析
   - 金融
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
-  - 不支持
 tools:
   - read
   - exec

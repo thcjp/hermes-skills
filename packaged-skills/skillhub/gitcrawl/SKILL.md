@@ -27,10 +27,8 @@ tags:
   - Git
   - 开发工具
   - issue
-  - 不支持
   - agent
   - api
-  - 依赖说明
 tools:
   - read
   - exec

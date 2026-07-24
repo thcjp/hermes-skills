@@ -24,7 +24,6 @@ tags:
   - pro
   - postgresql
   - 专业版
-  - 不支持
 tools:
   - read
   - exec

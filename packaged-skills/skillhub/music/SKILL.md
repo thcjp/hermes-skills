@@ -30,10 +30,7 @@ tags:
   - 音频
   - 创意
   - agent
-  - 依赖说明
-  - 不支持
   - api
-  - 确认运行
 tools:
   - read
   - exec

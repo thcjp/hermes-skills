@@ -13,9 +13,7 @@ tags:
   - UI设计
   - 前端
   - 设计
-  - 依赖说明
   - 示例数据
-  - 不支持
   - shadcn
   - agent
 tools:

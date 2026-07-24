@@ -20,7 +20,6 @@ tags:
   - bash
   - graphql
   - rest
-  - 请参考
 tools:
   - read
   - exec

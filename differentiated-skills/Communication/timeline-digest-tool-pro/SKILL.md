@@ -27,15 +27,10 @@ tags:
   - 智能摘要
   - 自动化
   - 工具
-  - 效率
-  - 工作流
-  - 研究
-  - 分析
   - 通信
   - pro
   - aggregator
   - twitter
-  - com
   - telegram
 tools:
   - read

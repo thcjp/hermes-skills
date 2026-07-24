@@ -45,7 +45,6 @@ tags:
   - 专业版新
   - session
   - https
-  - com
 tools:
   - read
   - exec

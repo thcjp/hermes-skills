@@ -45,7 +45,6 @@ tags:
   - DevOps
   - 容器
   - docker
-  - echo
   - swarm
   - myapp
   - service

@@ -9,8 +9,7 @@ edition: "pro"
 description: |-
   品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整品牌系统、多品牌管理、
   批量资产生成、品牌一致性审计与CI/CD集成能力。
-tags:
-  - 品牌系统,品牌标识,CI/CD,效率,不支持,identity
+tags: 品牌系统,品牌标识,CI/CD,效率,identity
 tools:
   - read
   - exec

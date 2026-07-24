@@ -30,9 +30,7 @@ tags:
   - 电商
   - 研究
   - dns
-  - com
   - cloudflare
-  - example
   - 域名
 tools:
   - read

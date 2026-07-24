@@ -14,8 +14,7 @@ description: |-
   拒绝"Just checking in"无上下文、被动语态、文字墙、不必要的回复
   全部等典型职场沟通病灶。覆盖场景与模板深度为本系列免费版本，
   付费版扩展至技术概念转译、异步团队协作、跨文化沟通等更多场景.
-tags:
-  - 效率,邮件,agent,slack,项目符号,api
+tags: 效率,邮件,agent,slack,项目符号,api
 tools:
   - read
   - exec

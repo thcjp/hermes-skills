@@ -25,14 +25,8 @@ tags:
   - Development
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
-  - AI代理
   - path
   - my-project
-  - 按流程执
   - churn
   - bus-factor
 tools:

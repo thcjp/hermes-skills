@@ -209,6 +209,49 @@ async function navigateSpaRoute() {
 navigateSpaRoute().then(() => console.log('SPA导航完成'));
 ```
 
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|---|---|---|---|
+| action | string | 是 | 操作类型: `navigate`/`eval`/`click`/`screenshot`/`get_cookies`/`connect` |
+| url | string | 条件必填 | 目标页面URL,`navigate`/`get_cookies`时必填 |
+| js | string | 条件必填 | JS表达式字符串,`eval`时必填 |
+| selector | string | 条件必填 | CSS选择器,`click`时必填 |
+| browser | string | 否 | 浏览器类型: `edge`(默认)/`chrome` |
+| port | number | 否 | 远程调试端口,Edge默认9222,Chrome默认9223 |
+| timeout | number | 否 | 最大等待毫秒数,默认10000 |
+| input_params | object | 否 | 附加配置选项,支持创建/查询/导出操作 |
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "CDP自动化执行结果",
+    "execution_time": "1.2s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "cdp-browser-master"
+    }
+  },
+  "execution_log": ["解析输入参数", "连接浏览器调试端口", "执行自动化操作", "提取并格式化结果"],
+  "error": null
+}
+```
+
+**字段说明**:
+
+| 字段 | 类型 | 说明 |
+|:-----|:-----|:-----|
+| success | boolean | 处理是否成功,`true`表示成功,`false`表示失败 |
+| data.result | string/object | 自动化执行结果,可能是提取的DOM数据、截图base64或Cookie字符串 |
+| data.execution_time | string | 处理耗时,格式如`1.2s` |
+| data.metadata.version | string | 技能版本号 |
+| data.metadata.processor | string | 处理器标识,固定为`cdp-browser-master` |
+| execution_log | array | 执行步骤日志,记录连接、导航、操作、提取各阶段 |
+| error | string/null | 错误信息,成功时为`null`,失败时为错误描述(如端口被占用、选择器未找到等) |
+
 ## 错误处理
 
 | 场景 | 原因 | 处理方式 |

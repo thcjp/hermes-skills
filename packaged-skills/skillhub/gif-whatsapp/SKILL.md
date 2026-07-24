@@ -13,11 +13,8 @@ tags:
   - WhatsApp
   - 社交
   - 通信
-  - 按流程执
   - gif
-  - 依赖说明
   - whatsapp
-  - 不支持
 tools:
   - read
   - exec

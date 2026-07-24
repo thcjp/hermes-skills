@@ -11,17 +11,8 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - assistant
-  - 依赖说明
-  - 不支持
   - writing
-  - agent
 tools:
   - read
   - exec

@@ -33,7 +33,6 @@ tags:
   - 通信
   - self
   - target
-  - 不支持
   - lang
   - message
 tools:

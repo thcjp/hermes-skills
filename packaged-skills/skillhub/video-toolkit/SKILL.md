@@ -34,7 +34,6 @@ tags:
   - 视频处理
   - 媒体
   - 创意
-  - echo
   - mp4
   - input
   - crf

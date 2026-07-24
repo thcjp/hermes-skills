@@ -42,8 +42,6 @@ tags:
   - youtube
   - 字幕
   - bash
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

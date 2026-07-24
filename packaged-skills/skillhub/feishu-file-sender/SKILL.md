@@ -23,9 +23,6 @@ tags:
   - 文档
   - 写作
   - pdf
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - csv
 tools:
   - read

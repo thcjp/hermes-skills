@@ -18,17 +18,11 @@ tags:
   - 通用办公
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - 写作
   - jira
   - pat
   - api
   - manager
-  - 不支持
 category: "Automation"
 ---
 # Jira Pat Manager 批量处理

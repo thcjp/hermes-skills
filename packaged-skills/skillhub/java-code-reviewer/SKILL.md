@@ -13,8 +13,6 @@ tags:
   - 代码生成
   - 编程辅助
   - java
-  - 不支持
-  - 依赖说明
   - code
   - agent
 tools:

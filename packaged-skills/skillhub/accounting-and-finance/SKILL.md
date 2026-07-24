@@ -340,6 +340,36 @@ A: WACC = E/(D+E)×Ke + D/(D+E)×Kd×(1-T)。Ke(股权成本)=无风险利率+Be
 ### Q3: Beneish M-Score的阈值如何解读?
 A: M-Score=-1.78是经验阈值。M-Score>-1.78盈余操纵可能性较高(约76%操纵公司超过此值);<-1.78可能性较低。但M-Score仅为辅助工具,不能单独作为舞弊结论,需结合红旗预警和现金流分析交叉验证。
 
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "财务分析结果",
+    "execution_time": "0.5s",
+    "metadata": {
+      "version": "1.0",
+      "processor": "accounting-and-finance"
+    }
+  },
+  "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],
+  "error": null
+}
+```
+
+**字段说明**:
+
+| 字段 | 类型 | 说明 |
+|:-----|:-----|:-----|
+| success | boolean | 处理是否成功,`true`表示成功,`false`表示失败 |
+| data.result | string | 财务分析结果文本,包含估值结论、比率分析、风险提示等 |
+| data.execution_time | string | 处理耗时,格式如`0.5s` |
+| data.metadata.version | string | 技能版本号 |
+| data.metadata.processor | string | 处理器标识,固定为`accounting-and-finance` |
+| execution_log | array | 执行步骤日志,记录处理各阶段动作 |
+| error | string/null | 错误信息,成功时为`null`,失败时为错误描述 |
+
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

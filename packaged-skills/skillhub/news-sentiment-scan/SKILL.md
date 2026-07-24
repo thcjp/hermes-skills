@@ -15,9 +15,6 @@ tags:
   - 信息
   - 资讯
   - python3
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - agent
 tools:
   - read

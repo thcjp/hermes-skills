@@ -13,9 +13,7 @@ tags:
   - 新闻
   - 信息
   - 资讯
-  - 依赖说明
   - agent
-  - 不支持
   - news
   - api
 tools:

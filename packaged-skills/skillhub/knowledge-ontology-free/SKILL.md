@@ -27,9 +27,6 @@ tags:
   - 分析
   - 知识
   - status
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - task
 category: "Automation"
 ---

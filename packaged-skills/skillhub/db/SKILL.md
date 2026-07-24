@@ -22,17 +22,11 @@ tags:
   - operations
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
   - 运维
   - 用户提供
   - schema
   - 陷阱
   - api
-  - 不支持
 tools:
   - read
   - exec

@@ -24,7 +24,6 @@ tags:
   - 策略
   - work
   - 情境识别
-  - 不支持
 tools:
   - read
   - write

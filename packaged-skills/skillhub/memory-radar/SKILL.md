@@ -21,9 +21,6 @@ tags:
   - 上下文
   - AI
   - memory
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - line
 category: "Agents"
 ---

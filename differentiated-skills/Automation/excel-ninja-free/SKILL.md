@@ -17,9 +17,6 @@ tags:
   - 工作流
   - 效率
   - xlsx
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python
 tools:
   - read

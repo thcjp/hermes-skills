@@ -19,15 +19,10 @@ tags:
   - 密钥管理
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 安全
   - 加密
-  - AI代理
   - api
   - mcp
-  - agent
   - key_name
   - env
 tools:

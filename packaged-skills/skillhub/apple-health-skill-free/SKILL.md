@@ -14,8 +14,7 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 效率,api,get,key,duration,sport
+tags: 效率,api,get,key,duration,sport
 category: "Automation"
 ---
 # 运动健康数据（免费版）

@@ -11,15 +11,8 @@ tags:
   - Research
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - helper
-  - 依赖说明
   - thesis
-  - 不支持
 tools:
   - read
   - exec

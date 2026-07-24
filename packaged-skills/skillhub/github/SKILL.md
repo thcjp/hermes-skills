@@ -13,10 +13,7 @@ tags:
   - 版本控制
   - Git
   - 开发工具
-  - 按流程执
   - api
-  - 依赖说明
-  - 不支持
   - agent
 tools:
   - read

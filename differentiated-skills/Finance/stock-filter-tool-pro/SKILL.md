@@ -19,9 +19,6 @@ tags:
   - 数据
   - pro
   - 自定义公
-  - 请参考
-  - 目录中的
-  - 脚本文件
 tools:
   - read
   - exec

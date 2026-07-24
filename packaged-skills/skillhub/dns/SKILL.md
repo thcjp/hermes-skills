@@ -32,8 +32,6 @@ tags:
   - 运维
   - 监控
   - 开发
-  - com
-  - example
   - dig
   - ttl
   - caa

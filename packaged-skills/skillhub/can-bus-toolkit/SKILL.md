@@ -20,17 +20,10 @@ tags:
   - 企业审计
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 集成
   - integration
-  - AI代理
   - ots
   - python
-  - agent
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

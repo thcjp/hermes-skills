@@ -12,14 +12,8 @@ tags:
   - Research
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
-  - AI代理
   - job
   - apply
-  - 按流程执
   - json
   - auto
 tools:

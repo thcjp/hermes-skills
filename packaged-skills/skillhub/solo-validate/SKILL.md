@@ -11,17 +11,11 @@ tags:
   - Research
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
   - 知识
   - stream
   - devil
   - advocate
   - api
-  - 不支持
 tools:
   - read
   - exec

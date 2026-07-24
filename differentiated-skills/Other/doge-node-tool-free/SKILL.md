@@ -24,9 +24,6 @@ tags:
   - RPC工具
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 金融
   - 财务
   - 运维
@@ -34,7 +31,6 @@ tags:
   - dogecoin-cli
   - doge
   - rpc
-  - agent
 tools:
   - read
   - exec

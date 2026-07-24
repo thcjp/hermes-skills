@@ -22,9 +22,6 @@ tags:
   - 生活
   - 健康
   - 安全
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
   - cookie
 tools:

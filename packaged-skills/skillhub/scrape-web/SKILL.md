@@ -28,11 +28,8 @@ tags:
   - Web开发
   - 前端
   - 开发工具
-  - 不支持
-  - 依赖说明
   - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

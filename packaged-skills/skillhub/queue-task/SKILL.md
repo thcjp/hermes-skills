@@ -29,8 +29,6 @@ tags:
   - 任务管理
   - 效率
   - 工具
-  - 依赖说明
-  - 不支持
   - queue
   - task
   - agent

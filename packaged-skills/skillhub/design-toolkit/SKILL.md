@@ -34,7 +34,6 @@ tags:
   - brand
   - user_id
   - design-preferences
-  - 不支持
 tools:
   - read
   - exec

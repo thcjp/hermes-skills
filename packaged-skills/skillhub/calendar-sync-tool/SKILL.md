@@ -12,17 +12,9 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 通信
   - 邮件
-  - AI代理
-  - 依赖说明
-  - 不支持
-  - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

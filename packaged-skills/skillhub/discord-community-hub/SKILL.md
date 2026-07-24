@@ -32,7 +32,6 @@ tags:
   - integration
   - call_tool
   - parameters
-  - 不支持
 tools:
   - read
   - exec

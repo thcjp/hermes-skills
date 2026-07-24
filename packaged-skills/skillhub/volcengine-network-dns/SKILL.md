@@ -13,8 +13,6 @@ tags:
   - 网络
   - DNS
   - 工具
-  - 依赖说明
-  - 不支持
   - dns
   - agent
   - api

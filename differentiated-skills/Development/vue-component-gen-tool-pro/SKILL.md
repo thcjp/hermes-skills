@@ -38,7 +38,6 @@ tags:
   - comp
   - vue
   - disabled
-  - 新增
   - pro
 tools:
   - read

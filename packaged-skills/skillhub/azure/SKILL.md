@@ -26,11 +26,8 @@ tags:
   - Azure
   - 云计算
   - DevOps
-  - 按流程执
   - azure
   - api
-  - 不支持
-  - 依赖说明
 tools:
   - read
   - exec

@@ -30,16 +30,10 @@ tags:
   - Whisper
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 工作流
-  - 开发
   - whisper
   - result
   - import
   - segments
-  - 不支持
 tools:
   - read
   - exec

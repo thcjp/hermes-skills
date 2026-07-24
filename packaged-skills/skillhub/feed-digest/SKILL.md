@@ -12,15 +12,7 @@ tags:
   - Research
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
-  - AI代理
-  - 按流程执
-  - 依赖说明
   - feed
-  - 不支持
   - digest
 tools:
   - read

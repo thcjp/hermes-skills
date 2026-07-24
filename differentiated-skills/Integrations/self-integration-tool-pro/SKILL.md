@@ -13,15 +13,10 @@ tags:
   - 自动化
   - 企业级
   - 工具
-  - 效率
   - 集成
   - integration
-  - 工作流
-  - 开发
-  - agent
   - api
   - https
-  - com
   - integration_token
 tools:
   - read

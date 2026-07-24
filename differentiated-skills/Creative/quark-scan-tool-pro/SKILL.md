@@ -38,7 +38,6 @@ tags:
   - output
   - input
   - scene
-  - 请参考
 tools:
   - read
   - exec

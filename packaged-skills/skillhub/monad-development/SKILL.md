@@ -20,9 +20,7 @@ tags:
   - 运维
   - mytoken
   - sol
-  - 依赖说明
   - src
-  - 不支持
 tools:
   - read
   - exec

@@ -20,7 +20,6 @@ tags:
   - true
   - pro
   - news-agg-pro
-  - 不支持
   - international
 tools:
   - read

@@ -13,16 +13,9 @@ tags:
   - Integrations
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
   - 写作
-  - 按流程执
   - bot
   - productivity
-  - 依赖说明
-  - 不支持
 tools:
   - read
   - exec

@@ -24,7 +24,6 @@ tags:
   - 通信
   - 工具
   - imap
-  - com
   - email-163-com
   - agent
   - smtp

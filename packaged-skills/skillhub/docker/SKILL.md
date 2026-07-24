@@ -14,9 +14,6 @@ tags:
   - 容器
   - Docker
   - DevOps
-  - 按流程执
-  - 依赖说明
-  - 不支持
   - agent
   - api
 tools:

@@ -38,7 +38,6 @@ tags:
   - 分析
   - 写作
   - skill-platform
-  - echo
   - tailscale
   - gateway
   - config

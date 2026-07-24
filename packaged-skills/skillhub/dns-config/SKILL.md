@@ -34,8 +34,6 @@ tags:
   - 写作
   - 电商
   - 通信
-  - example
-  - com
   - caa
   - dig
   - domain

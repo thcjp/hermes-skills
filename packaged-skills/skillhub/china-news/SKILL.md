@@ -12,11 +12,8 @@ tags:
   - 新闻
   - 信息
   - 资讯
-  - 按流程执
   - china
   - news
-  - 依赖说明
-  - 不支持
 tools:
   - read
   - exec

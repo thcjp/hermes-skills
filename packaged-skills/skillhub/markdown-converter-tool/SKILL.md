@@ -15,8 +15,6 @@ tags:
   - Markdown
   - 文档
   - 工具
-  - 依赖说明
-  - 不支持
   - markdown
   - agent
   - api

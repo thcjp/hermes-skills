@@ -17,14 +17,10 @@ tags:
   - 数据库
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
   - pro
   - notion
-  - agent
   - free
   - 逻辑
 tools:

@@ -13,8 +13,6 @@ tags:
   - 检索
   - 工具
   - entid
-  - 不支持
-  - 依赖说明
   - company
   - search
 tools:

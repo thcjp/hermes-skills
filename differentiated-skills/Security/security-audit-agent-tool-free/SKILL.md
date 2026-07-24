@@ -19,7 +19,6 @@ tags:
   - AI代理
   - 自动化
   - 智能
-  - echo
   - agent
   - grep
   - dev

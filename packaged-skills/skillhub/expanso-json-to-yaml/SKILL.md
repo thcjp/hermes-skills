@@ -28,16 +28,8 @@ tags:
   - Integrations
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
-  - 研究
-  - 按流程执
-  - 依赖说明
   - expanso
   - api
-  - 不支持
 tools:
   - read
   - exec

@@ -12,14 +12,7 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - text
-  - 依赖说明
-  - 不支持
   - llm
 tools:
   - read

@@ -44,7 +44,6 @@ tags:
   - docker
   - docker-compose
   - container_name
-  - echo
   - bash
 tools:
   - read

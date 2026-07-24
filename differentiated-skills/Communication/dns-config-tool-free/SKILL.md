@@ -38,8 +38,6 @@ tags:
   - 通信
   - 邮件
   - 开发
-  - com
-  - example
   - ttl
   - www
   - dig

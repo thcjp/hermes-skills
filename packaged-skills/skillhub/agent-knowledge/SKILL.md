@@ -15,8 +15,6 @@ tags:
   - 智能
   - agent
   - knowledge
-  - 不支持
-  - 依赖说明
   - api
 tools:
   - read

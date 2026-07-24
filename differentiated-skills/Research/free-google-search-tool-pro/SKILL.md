@@ -21,7 +21,6 @@ tags:
   - query
   - lang
   - 多语言搜
-  - 不支持
 tools:
   - read
   - exec

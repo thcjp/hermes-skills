@@ -34,17 +34,11 @@ tags:
   - 专业版
   - 工具
   - 效率
-  - 自动化
   - 知识
   - 文档
-  - 开发
-  - 代码
-  - AI代理
   - trade-pro
-  - agent
   - topic
   - string
-  - 不支持
 tools:
   - read
   - exec

@@ -26,16 +26,8 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
   - 通信
   - 邮件
-  - 开发
-  - 代码
-  - AI代理
-  - 依赖说明
-  - agent
-  - 不支持
-  - 确认运行
   - calendar
 tools:
   - read

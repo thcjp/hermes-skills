@@ -15,8 +15,7 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 效率,tts,api,meeting,触发,事件
+tags: 效率,tts,api,meeting,触发,事件
 category: "Automation"
 ---
 # 智能会议机器人

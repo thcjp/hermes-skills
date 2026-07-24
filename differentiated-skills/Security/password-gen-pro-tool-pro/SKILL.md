@@ -18,7 +18,6 @@ tags:
   - 泄露检查
   - 加密
   - 工具
-  - 专业版独
   - print
   - result
   - pwd

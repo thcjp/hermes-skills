@@ -20,8 +20,6 @@ tags:
   - 开发
   - cdn
   - https
-  - com
-  - example
   - 缓存
 tools:
   - read

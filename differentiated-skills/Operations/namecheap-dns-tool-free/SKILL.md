@@ -24,8 +24,6 @@ tags:
   - 写作
   - api
   - dns
-  - com
-  - example
   - ttl
 tools:
   - read

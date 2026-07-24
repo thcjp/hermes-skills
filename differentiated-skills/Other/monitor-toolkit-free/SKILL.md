@@ -35,9 +35,6 @@ tags:
   - 工具
   - http
   - ssl
-  - example
-  - com
-  - echo
 tools:
   - read
   - exec

@@ -34,17 +34,9 @@ tags:
   - 其他工具
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
-  - 研究
   - json
   - bundle
   - env
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

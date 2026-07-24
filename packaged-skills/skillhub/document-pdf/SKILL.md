@@ -16,8 +16,6 @@ tags:
   - pdf
   - reader
   - pages
-  - 不支持
-  - 依赖说明
 tools:
   - read
   - exec

@@ -20,7 +20,6 @@ tags:
   - self
   - company
   - monitor
-  - 不支持
   - key
 tools:
   - read

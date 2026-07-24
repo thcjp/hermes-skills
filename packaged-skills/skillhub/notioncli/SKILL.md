@@ -13,16 +13,7 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - api
-  - 不支持
-  - 依赖说明
-  - agent
   - notioncli
 tools:
   - read

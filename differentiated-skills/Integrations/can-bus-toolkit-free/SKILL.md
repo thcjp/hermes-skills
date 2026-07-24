@@ -23,16 +23,10 @@ tags:
   - 审计日志
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - AI代理
-  - agent
   - 创意
   - sha256sum
   - 哈希片段
   - api
-  - echo
 tools:
   - read
   - exec

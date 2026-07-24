@@ -41,7 +41,6 @@ tags:
   - png
   - prompt
   - key
-  - 请参考
 tools:
   - read
   - exec

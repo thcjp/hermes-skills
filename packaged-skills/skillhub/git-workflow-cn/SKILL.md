@@ -16,7 +16,6 @@ tags:
   - git
   - 建议优化
   - 检查通过
-  - 依赖说明
   - agent
 tools:
   - read

@@ -15,9 +15,7 @@ tags:
   - 编程辅助
   - html
   - api
-  - 不支持
   - agent
-  - 依赖说明
 tools:
   - read
   - exec

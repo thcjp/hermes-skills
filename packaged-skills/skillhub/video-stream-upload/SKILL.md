@@ -21,7 +21,6 @@ tags:
   - json
   - bps
   - bash
-  - 不支持
 tools:
   - read
   - exec

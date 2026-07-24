@@ -30,7 +30,6 @@ tags:
   - 项目符号
   - needed
   - 行动请求
-  - 不支持
   - 结构
 tools:
   - read

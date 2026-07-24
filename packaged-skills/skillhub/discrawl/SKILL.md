@@ -25,17 +25,10 @@ tags:
   - Integrations
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 通信
   - 邮件
-  - AI代理
   - api
-  - 不支持
-  - agent
   - key
-  - 依赖说明
 tools:
   - read
   - exec

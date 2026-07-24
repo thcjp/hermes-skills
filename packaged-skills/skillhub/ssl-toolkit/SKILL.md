@@ -23,8 +23,6 @@ tags:
   - 自动化
   - 工作流
   - 研究
-  - example
-  - com
   - ssl
   - https
   - pem

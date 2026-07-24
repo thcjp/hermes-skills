@@ -8,8 +8,7 @@ license: Proprietary
 edition: free
 description: 安全公告流监控免费版是面向安全运维团队的漏洞与公告订阅监控工具。聚合多个安全信息源的RSS/Atom订阅流，自动解析、分级、去重，帮助团队第一时间感知安全威胁。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
-tags:
-  - 安全公告,json,encoding,utf-8,rss,self
+tags: 安全公告,json,encoding,utf-8,rss,self
 tools:
   - read
   - exec

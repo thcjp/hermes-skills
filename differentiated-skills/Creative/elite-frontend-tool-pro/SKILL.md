@@ -15,8 +15,7 @@ description: |-
   - 设计令牌（Design Token）自动生成与管理
   - 响应式适配策略，多断点一致体验
   - 可访问性合规.
-tags:
-  - 工具,效率,代码,vue,card,css
+tags: 工具,效率,代码,vue,card,css
 tools:
   - read
   - exec

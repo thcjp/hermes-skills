@@ -11,16 +11,9 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 写作
   - 电商
-  - AI代理
-  - 不支持
-  - agent
   - api
-  - 依赖说明
   - mac-system-control
 tools:
   - read

@@ -12,13 +12,7 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - api
-  - 依赖说明
   - error
   - const
 tools:

@@ -15,16 +15,11 @@ tags:
   - 流量增长
   - 工具
   - 效率
-  - 自动化
   - 写作
   - 电商
-  - 研究
-  - 分析
-  - 开发
   - seo
   - google
   - sitemap
-  - com
   - https
 tools:
   - read

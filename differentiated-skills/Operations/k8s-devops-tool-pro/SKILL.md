@@ -23,9 +23,6 @@ tags:
   - 电商
   - 研究
   - helm
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
 tools:
   - read

@@ -38,7 +38,6 @@ tags:
   - 工具
   - https
   - rss
-  - com
   - markdown
   - bash
 tools:

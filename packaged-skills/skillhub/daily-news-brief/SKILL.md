@@ -16,7 +16,6 @@ tags:
   - api
   - content
   - 示例数据
-  - 不支持
 tools:
   - read
   - exec

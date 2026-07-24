@@ -17,9 +17,6 @@ tags:
   - 容器编排
   - 容器
   - DevOps
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
   - pro
 tools:

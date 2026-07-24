@@ -32,7 +32,6 @@ tags:
   - 分析
   - 知识
   - theme
-  - 不支持
   - rem
   - colors
   - 设计令牌

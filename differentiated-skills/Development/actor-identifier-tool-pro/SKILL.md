@@ -31,15 +31,8 @@ tags:
   - 隐私保护
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
-  - echo
   - git
   - repo
-  - 新增
   - pro
 tools:
   - read

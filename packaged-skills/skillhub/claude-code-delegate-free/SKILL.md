@@ -33,7 +33,6 @@ tags:
   - api
   - agent
   - python
-  - 依赖说明
   - llm
 tools:
   - read

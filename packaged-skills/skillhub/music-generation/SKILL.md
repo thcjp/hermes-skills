@@ -29,9 +29,7 @@ tags:
   - 音乐生成
   - 音频
   - 创意
-  - 依赖说明
   - generation
-  - 不支持
   - agent
   - api
 tools:

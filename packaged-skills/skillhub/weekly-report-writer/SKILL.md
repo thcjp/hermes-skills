@@ -11,16 +11,9 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - writer
-  - 依赖说明
   - 相关配置
   - weekly-report-writer
-  - 不支持
 tools:
   - read
   - exec

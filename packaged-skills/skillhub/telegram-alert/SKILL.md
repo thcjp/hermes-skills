@@ -17,9 +17,6 @@ tags:
   - Telegram
   - 社交
   - 通信
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
   - telegram
 tools:

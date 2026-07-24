@@ -18,9 +18,6 @@ tags:
   - 工作流
   - 研究
   - pdf
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - format
 tools:
   - read

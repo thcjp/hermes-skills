@@ -15,8 +15,7 @@ description: |-
   - 自己的未关闭事务列表
   升级付费版专享：状态变更、指派、评论、创建、工时记录、多维工时统计.
   适用场景：只读浏览Jira事务、快速定位事务、查看自己的待办.
-tags:
-  - Jira,效率,jira,abc-123,请参考,目录中的
+tags: Jira,效率,jira,abc-123
 tools:
   - read
   - exec

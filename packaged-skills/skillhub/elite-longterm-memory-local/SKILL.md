@@ -23,9 +23,6 @@ tags:
   - 上下文
   - AI
   - node
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - ollama
 category: "Agents"
 ---

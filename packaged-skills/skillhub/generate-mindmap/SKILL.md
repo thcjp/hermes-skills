@@ -11,15 +11,9 @@ tags:
   - Knowledge
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - 知识
   - mindmap
   - json
-  - 不支持
   - generate
   - markdown
 tools:

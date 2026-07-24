@@ -15,9 +15,6 @@ tags:
   - 自动化
   - 智能
   - embedding
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - node
 tools:
   - read

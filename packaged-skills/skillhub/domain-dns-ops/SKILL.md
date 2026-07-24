@@ -12,17 +12,9 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 运维
   - 监控
-  - AI代理
-  - 依赖说明
-  - 不支持
-  - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

@@ -7,17 +7,14 @@ summary: "在Uniswap V2/V3/V4池加撤流动性并收手续费。Add liquidity, 
 license: "Proprietary"
 description: |-
   Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4
-  pools。Handles the full flow。
+  pools。Handles the full flow。自动化管理Uniswap流动性,提供高效的加撤池与手续费收取能力
 tags:
   - Other
-  - UI设计
-  - 前端
-  - 设计
-  - 按流程执
-  - agent
-  - 依赖说明
-  - 不支持
   - liquidity
+  - agent
+  - 流动性
+  - Uniswap
+  - 手续费
 tools:
   - read
   - exec

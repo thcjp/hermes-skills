@@ -16,8 +16,7 @@ tools:
   - glob
   - grep
 homepage: ""
-tags:
-  - 效率,api,bash,请参考,目录中的,脚本文件
+tags: 效率,api,bash
 category: "Automation"
 ---
 # 文档数据库云管理平台

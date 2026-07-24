@@ -14,10 +14,8 @@ tags:
   - 云计算
   - DevOps
   - aws
-  - 不支持
   - agent
   - api
-  - 依赖说明
 tools:
   - read
   - exec

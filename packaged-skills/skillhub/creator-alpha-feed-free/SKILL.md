@@ -11,8 +11,7 @@ description: |-
   行业 TOP3 三档基础排名,完整报告以 YYYY-MM-DD_HHMM.md 命名写入 Obsidian Vault.
   适合个人创作者快速搭建每日选题流。高级特性(群频道推送、必追账号校验、API 优先、
   登录拦截处理、降级回退)请升级付费版.
-tags:
-  - 效率,obsidian,api,日报,报告写入,vault
+tags: 效率,obsidian,api,日报,报告写入,vault
 tools:
   - read
   - exec

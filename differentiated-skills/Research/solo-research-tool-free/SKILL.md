@@ -36,7 +36,6 @@ tags:
   - 搜索
   - 检索
   - 工具
-  - 不支持
   - websearch
   - seo
   - research

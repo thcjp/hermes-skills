@@ -16,15 +16,10 @@ tags:
   - 编码规范
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 集成
   - integration
-  - 研究
   - type
   - error
-  - agent
   - typescript-eslint
   - api
 tools:

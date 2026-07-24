@@ -11,17 +11,8 @@ tags:
   - Knowledge
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - api
   - figma
-  - 请参考
-  - 目录中的
-  - 脚本文件
 tools:
   - read
   - exec

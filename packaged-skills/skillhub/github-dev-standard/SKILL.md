@@ -29,11 +29,9 @@ tags:
   - CI/CD
   - 版本控制
   - Git
-  - echo
   - diff
   - git
   - grep
-  - 请参考
 tools:
   - read
   - exec

@@ -13,10 +13,8 @@ tags:
   - 任务管理
   - 效率
   - 工具
-  - 不支持
   - agent
   - api
-  - 依赖说明
   - task
 tools:
   - read

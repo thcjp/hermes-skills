@@ -14,10 +14,8 @@ tags:
   - 前端
   - 设计
   - game
-  - 不支持
   - agent
   - api
-  - 依赖说明
 tools:
   - read
   - exec

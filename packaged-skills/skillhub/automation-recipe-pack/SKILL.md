@@ -12,8 +12,6 @@ tags:
   - 工作流
   - 效率
   - agent
-  - 不支持
-  - 依赖说明
   - string
   - llm
 tools:
@@ -39,10 +37,25 @@ category: "Automation"
 
 ## 核心能力
 
-- 10个实用自动化场景配方
-- 文件批量处理与格式转换
-- 数据清洗与结构化输出
-- 工作流自动化编排
+本技能提供10个实用自动化场景配方,覆盖文件处理、数据转换、批量操作等高频任务:
+
+### 文件处理配方
+- **批量文件重命名**: 按规则(日期/序号/正则)批量重命名目录下文件,支持预览与回滚
+- **文件格式转换**: 支持CSV/JSON/Excel/TXT等格式互转,保留数据结构完整性
+- **重复文件清理**: 基于文件哈希(MD5/SHA256)识别并清理重复文件,释放存储空间
+- **目录结构同步**: 增量同步源目录到目标目录,支持过滤规则与删除策略
+
+### 数据转换配方
+- **数据清洗与结构化**: 去除空行/空格/特殊字符,统一日期与数字格式,输出标准化结构数据
+- **多源数据合并**: 按主键合并多个CSV/Excel数据源,处理冲突字段与缺失值
+- **模板数据填充**: 基于模板文件批量生成个性化文档(邮件/合同/报告),支持变量替换
+
+### 工作流编排配方
+- **定时任务编排**: 基于cron表达式定时触发数据处理流水线,支持失败重试与通知
+- **条件分支流程**: 根据数据内容自动选择处理分支(IF-ELSE/SWITCH模式),实现智能路由
+- **多步骤管道编排**: 将多个处理步骤串联为管道,前一步输出作为后一步输入,支持中间结果缓存
+
+每个配方均可独立调用,也可组合编排为复杂工作流。付费版支持可视化编排界面、执行日志审计与异常重试机制。
 
 ## 快速开始
 
@@ -52,12 +65,17 @@ category: "Automation"
 
 ## 适用场景
 
-| 场景 | 输入 | 输出 |
+| 场景 | 典型输入 | 输出内容 |
 |:-----|:-----|:-----|
-| 文件批量处理 | 文件路径列表 | 处理结果摘要 |
-| 数据格式转换 | 源格式数据 | 目标格式数据 |
+| 文件批量处理 | 文件路径列表+重命名规则 | 处理结果摘要+变更明细 |
+| 数据格式转换 | 源格式数据(CSV/JSON/Excel) | 目标格式数据文件 |
+| 重复文件清理 | 目标目录路径 | 重复文件清单+释放空间统计 |
+| 多源数据合并 | 多个CSV文件+合并主键 | 合并后数据文件+冲突报告 |
+| 模板批量生成 | 模板文件+变量数据源 | 批量生成的个性化文档 |
+| 定时数据处理 | cron表达式+处理流程 | 定时执行日志+结果通知 |
+| 目录结构同步 | 源目录+目标目录+过滤规则 | 同步操作日志+差异报告 |
 
-**不适用于**：需要人工判断的复杂决策场景
+**不适用于**：需要人工判断的复杂决策场景、实时性要求极高的在线服务
 
 ## 使用流程
 
@@ -65,6 +83,67 @@ category: "Automation"
 2. **编排执行流程**: 按依赖顺序执行各步骤,处理条件分支与异常重试
 3. **监控与报告**: 记录执行日志,输出任务状态与结果摘要
 4. **异常处理**: 如遇错误,参考错误处理章节中对应场景的处理方式
+
+## 示例代码
+
+### 1. 批量文件重命名配方（PowerShell）
+
+按日期前缀批量重命名指定目录下的图片文件:
+
+```powershell
+# 批量重命名配方：按 YYYYMMDD_序号 格式重命名图片
+$targetDir = "C:\Photos\2024"
+$files = Get-ChildItem -Path $targetDir -Include *.jpg,*.png -File | Sort-Object Name
+$datePrefix = Get-Date -Format "yyyyMMdd"
+$counter = 1
+
+foreach ($file in $files) {
+    $newName = "${datePrefix}_{0:D3}{1}" -f $counter, $file.Extension
+    $newPath = Join-Path $targetDir $newName
+    Rename-Item -Path $file.FullName -NewName $newPath
+    Write-Host "已重命名: $($file.Name) -> $newName"
+    $counter++
+}
+Write-Host "完成! 共重命名 $($counter - 1) 个文件"
+```
+
+### 2. CSV数据清洗与格式转换配方（Python）
+
+清洗CSV数据并转换为JSON格式:
+
+```python
+import csv
+import json
+from datetime import datetime
+
+def clean_and_convert(input_csv, output_json):
+    """数据清洗配方：去空行、统一日期格式、转JSON"""
+    cleaned = []
+    with open(input_csv, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            # 去除首尾空格
+            row = {k.strip(): v.strip() for k, v in row.items() if k}
+            # 跳过空行
+            if not any(row.values()):
+                continue
+            # 统一日期格式为 YYYY-MM-DD
+            for key, val in row.items():
+                if 'date' in key.lower() and val:
+                    try:
+                        row[key] = datetime.strptime(val, '%m/%d/%Y').strftime('%Y-%m-%d')
+                    except ValueError:
+                        pass
+            cleaned.append(row)
+
+    with open(output_json, 'w', encoding='utf-8') as f:
+        json.dump(cleaned, f, ensure_ascii=False, indent=2)
+
+    print(f"清洗完成: 输入 {len(cleaned)} 条记录 -> {output_json}")
+
+# 示例：清洗销售数据CSV并输出JSON
+clean_and_convert('sales_raw.csv', 'sales_clean.json')
+```
 
 ## 输入格式
 

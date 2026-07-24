@@ -15,7 +15,6 @@ tags:
   - 新闻
   - 信息
   - 资讯
-  - com
   - top
   - html
   - png

@@ -18,16 +18,10 @@ tags:
   - 通用办公
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
   - 集成
   - integration
-  - AI代理
   - jira
   - api
-  - 不支持
-  - agent
 category: "Automation"
 ---
 # Jira Integration Skill 智能分析

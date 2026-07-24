@@ -41,9 +41,6 @@ tags:
   - DNS
   - 网络
   - 工具
-  - example
-  - com
-  - echo
   - dns
   - bash
 tools:

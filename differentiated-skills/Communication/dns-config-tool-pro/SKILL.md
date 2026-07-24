@@ -34,8 +34,6 @@ tags:
   - 写作
   - 电商
   - 安全
-  - com
-  - example
   - caa
   - dns
   - domain

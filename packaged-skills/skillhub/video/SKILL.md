@@ -7,15 +7,12 @@ summary: "为任意平台处理/编辑/优化视频,压缩/转码/字幕。Proce
 license: "Proprietary"
 description: |-
   Process, edit, and optimize videos for any platform with compression,
-  format conversion, captioni
+  format conversion, captioni. 自动处理与优化视频,支持压缩转码与字幕生成
 tags:
   - Creative
-  - 视频处理
-  - 媒体
-  - 创意
-  - 按流程执
-  - 依赖说明
-  - 不支持
+  - 视频
+  - 处理
+  - 优化
   - agent
   - api
 tools:

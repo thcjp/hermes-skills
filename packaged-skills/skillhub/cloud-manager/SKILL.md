@@ -18,9 +18,7 @@ tags:
   - 基础设施
   - cloud-manager
   - bash
-  - 专业版独
   - 家庭相册
-  - 不支持
 tools:
   - read
   - exec

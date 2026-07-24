@@ -19,8 +19,6 @@ tags:
   - 安全
   - 加密
   - 工具
-  - echo
-  - 专业版独
   - grep
   - check_cis
   - cis

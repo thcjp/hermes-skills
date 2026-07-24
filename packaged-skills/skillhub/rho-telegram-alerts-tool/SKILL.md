@@ -14,11 +14,8 @@ tags:
   - Telegram
   - 社交
   - 通信
-  - 依赖说明
-  - 不支持
   - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

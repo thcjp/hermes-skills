@@ -22,15 +22,9 @@ tags:
   - 数据分析
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 工作流
-  - 开发
   - excel
   - xlookup
   - vba
-  - agent
   - 公式
 tools:
   - read

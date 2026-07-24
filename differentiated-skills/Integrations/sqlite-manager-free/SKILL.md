@@ -14,17 +14,12 @@ tags:
   - SQLite
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - 电商
-  - AI代理
   - sqlite
   - pragma
   - wal
   - vacuum
-  - agent
 tools:
   - read
   - exec

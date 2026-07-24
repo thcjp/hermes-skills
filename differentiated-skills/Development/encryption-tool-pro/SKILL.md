@@ -36,7 +36,6 @@ tags:
   - 开发
   - 代码
   - 写作
-  - echo
   - json
   - python3
   - output

@@ -14,7 +14,6 @@ tags:
   - 自动化
   - 智能
   - 示例数据
-  - 按流程执
   - step
   - agent
   - cli

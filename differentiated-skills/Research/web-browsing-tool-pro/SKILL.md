@@ -19,8 +19,6 @@ tags:
   - web-browsing
   - url
   - https
-  - example
-  - com
 tools:
   - read
   - exec

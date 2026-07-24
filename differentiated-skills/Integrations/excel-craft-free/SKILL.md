@@ -8,8 +8,7 @@ license: Proprietary
 edition: free
 description: Excel 工艺免费版面向需要程序化生成 Excel 文件的开发者与运营人员，提供多 Sheet、公式、图表与基础格式化能力。基于 openpyxl
   与 Python，输出兼容 Excel / WPS / LibreOffice 的。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
-tags:
-  - 表格生成,sheet,excel,python,openpyxl,font
+tags: 表格生成,sheet,excel,python,openpyxl,font
 tools:
   - read
   - exec

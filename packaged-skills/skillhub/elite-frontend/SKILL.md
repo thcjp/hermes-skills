@@ -31,7 +31,6 @@ tags:
   - vue
   - typescript
   - json
-  - 不支持
   - api
 tools:
   - read

@@ -16,8 +16,7 @@ tools:
   - glob
   - grep
 homepage: ""
-tags:
-  - 效率,api,dry-run,分类,schema,请参考
+tags: 效率,api,dry-run,分类,schema
 category: "Automation"
 ---
 # 文档数据库云管理平台(免费版)

@@ -12,11 +12,8 @@ tags:
   - 播客
   - 音频
   - 媒体
-  - 依赖说明
-  - 不支持
   - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

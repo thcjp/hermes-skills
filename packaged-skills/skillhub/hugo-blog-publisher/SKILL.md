@@ -19,16 +19,9 @@ tags:
   - 研发工具
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - git
   - content
   - index
-  - agent
   - 执行核心
 category: "Automation"
 ---

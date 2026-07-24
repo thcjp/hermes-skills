@@ -33,10 +33,8 @@ tags:
   - 消息归档
   - 社交
   - 通信
-  - 专业版独
   - bot
   - 推送
-  - 不支持
 tools:
   - read
   - exec

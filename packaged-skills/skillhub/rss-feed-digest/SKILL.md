@@ -13,11 +13,9 @@ tags:
   - RSS
   - 订阅
   - 信息
-  - 按流程执
   - rss
   - feed
   - digest
-  - 依赖说明
 tools:
   - read
   - exec

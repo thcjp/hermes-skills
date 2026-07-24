@@ -8,20 +8,7 @@ license: "Proprietary"
 description: |-
   综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、
   中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights Out 等游戏.
-tags:
-  - Lifestyle
-  - 工具
-  - 效率
-  - 自动化
-  - 生活
-  - 健康
-  - 工作流
-  - 创意
-  - ascii
-  - 依赖说明
-  - agent
-  - 扫雷
-  - 确认运行
+tags: 游戏,棋类,五子棋,围棋,ASCII,扫雷,人机对战
 tools:
   - read
   - write

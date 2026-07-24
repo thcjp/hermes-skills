@@ -44,7 +44,6 @@ tags:
   - 专业版新
   - browser
   - https
-  - com
   - captcha
 tools:
   - read

@@ -13,7 +13,6 @@ tags:
   - 金融
   - 财务
   - 数据
-  - 按流程执
   - trend
   - forecast
   - sparkline

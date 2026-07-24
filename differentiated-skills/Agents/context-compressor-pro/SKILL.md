@@ -23,8 +23,6 @@ tags:
   - memory
   - node
   - 专业版
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

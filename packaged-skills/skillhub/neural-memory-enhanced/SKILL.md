@@ -25,7 +25,6 @@ tags:
   - type
   - depth
   - priority
-  - 不支持
   - nmem_remember
 category: "Agents"
 ---

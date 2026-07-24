@@ -13,9 +13,6 @@ tags:
   - RSS
   - 订阅
   - 信息
-  - 按流程执
-  - 依赖说明
-  - 不支持
   - agent
   - api
 tools:

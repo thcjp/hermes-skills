@@ -7,21 +7,13 @@ summary: "核心时间追踪(含较广密钥加载需谨慎)。The core time tra
 license: "Proprietary"
 description: |-
   The core time tracker appears legitimate, but the package also includes
-  broad secret loading, pub
+  broad secret loading, pub. 自动监控密钥与追踪时间,提供高效的任务管理能力
 tags:
   - Other
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
-  - AI代理
-  - 按流程执
-  - 依赖说明
-  - 不支持
-  - agent
   - api
+  - 时间
+  - 密钥
+  - 追踪
 tools:
   - read
   - exec

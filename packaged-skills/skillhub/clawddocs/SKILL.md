@@ -25,16 +25,8 @@ tags:
   - Knowledge
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
   - 创意
-  - 按流程执
   - check
-  - 不支持
-  - 依赖说明
-  - agent
 tools:
   - read
   - exec

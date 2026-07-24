@@ -27,13 +27,7 @@ tags:
   - 批量调度
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - AI代理
-  - agent
   - alpha-feed-creator-pro
-  - 不支持
   - run
   - yaml
 tools:

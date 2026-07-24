@@ -48,7 +48,6 @@ tags:
   - html
   - python
   - web
-  - 请参考
 tools:
   - read
   - exec

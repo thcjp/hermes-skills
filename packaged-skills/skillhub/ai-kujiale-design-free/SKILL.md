@@ -24,9 +24,6 @@ tags:
   - UI/UX
   - 创意
   - token
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - node
 tools:
   - read

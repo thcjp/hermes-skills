@@ -29,9 +29,6 @@ tags:
   - 设计
   - UI/UX
   - 创意
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - token
   - python3
 tools:

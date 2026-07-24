@@ -16,7 +16,6 @@ tags:
   - bash
   - target
   - scan
-  - 不支持
   - agent
 tools:
   - read

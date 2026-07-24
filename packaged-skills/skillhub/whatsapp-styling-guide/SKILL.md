@@ -22,7 +22,6 @@ tags:
   - whatsapp
   - markdown
   - text
-  - 不支持
   - 替代
 tools:
   - read

@@ -17,7 +17,6 @@ tags:
   - agent
   - ltv
   - 视频剪辑
-  - 不支持
 tools:
   - read
   - write

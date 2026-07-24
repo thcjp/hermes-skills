@@ -25,16 +25,9 @@ tags:
   - Productivity
   - 工具
   - 效率
-  - 自动化
-  - 工作流
-  - 开发
-  - 代码
   - 创意
   - report
   - step
-  - 按流程执
-  - 依赖说明
-  - agent
 tools:
   - read
   - exec

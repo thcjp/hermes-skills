@@ -41,7 +41,6 @@ tags:
   - whatsapp
   - markdown
   - text
-  - 不支持
   - 文本
 tools:
   - read

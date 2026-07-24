@@ -16,9 +16,6 @@ tags:
   - AI代理
   - 自动化
   - 智能
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
   - agent
 tools:

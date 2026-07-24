@@ -22,7 +22,6 @@ tags:
   - rem
   - css
   - brand
-  - 不支持
   - 批量生成
 tools:
   - read

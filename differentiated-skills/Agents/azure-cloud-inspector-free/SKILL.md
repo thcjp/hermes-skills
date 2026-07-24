@@ -17,7 +17,6 @@ tags:
   - DevOps
   - query
   - list
-  - echo
   - output
   - table
 tools:

@@ -20,7 +20,6 @@ tags:
   - 代码生成
   - 编程辅助
   - html
-  - 不支持
   - canvas
   - const
   - ctx

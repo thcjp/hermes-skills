@@ -26,7 +26,6 @@ tags:
   - 分钟
   - text
   - 成功
-  - 不支持
 tools:
   - read
   - exec

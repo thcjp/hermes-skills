@@ -28,17 +28,10 @@ tags:
   - Development
   - 工具
   - 效率
-  - 自动化
   - 安全
   - 加密
-  - 开发
-  - 代码
-  - AI代理
   - api
-  - 不支持
-  - agent
   - key
-  - 依赖说明
 tools:
   - read
   - exec

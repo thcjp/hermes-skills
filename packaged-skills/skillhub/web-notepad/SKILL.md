@@ -28,7 +28,6 @@ tags:
   - 开发工具
   - api
   - https
-  - example
   - curl
   - authorization
 tools:

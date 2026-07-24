@@ -18,7 +18,6 @@ tags:
   - smtp
   - gmail
   - agent
-  - com
   - 原因
 tools:
   - read

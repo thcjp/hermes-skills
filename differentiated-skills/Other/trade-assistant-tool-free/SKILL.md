@@ -32,16 +32,10 @@ tags:
   - 免费版
   - 工具
   - 效率
-  - 自动化
   - 知识
   - 文档
-  - AI代理
-  - agent
-  - 开发
   - exchange
   - https
-  - example
-  - com
   - api
 tools:
   - read

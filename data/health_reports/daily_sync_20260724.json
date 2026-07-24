@@ -1,6 +1,6 @@
 {
   "date": "2026-07-24",
-  "timestamp": "2026-07-24T12:57:06.177382",
+  "timestamp": "2026-07-24T18:44:19.176348",
   "summary": {
     "total_skills": 2882,
     "active": 959,
@@ -15,15 +15,14 @@
   },
   "platforms": {
     "clawhub": {
-      "fail": 2,
-      "retry_pending": 1,
-      "success": 1152
+      "cancelled": 2,
+      "success": 1153
     },
     "github": {
       "success": 1159
     },
     "skillhub": {
-      "blocked_by_quality_gate": 1,
+      "cancelled": 1,
       "retry_pending": 8,
       "success": 1120
     },
@@ -36,10 +35,10 @@
   },
   "quality": {
     "pricing_tiers": {
-      "L3-专业级": 967,
-      "L2-标准级": 807,
-      "L1-入门级": 597,
-      "L4-企业级": 511
+      "L2-标准级": 1087,
+      "L3-专业级": 1010,
+      "L1-入门级": 554,
+      "L4-企业级": 231
     }
   },
   "recent_operations": {

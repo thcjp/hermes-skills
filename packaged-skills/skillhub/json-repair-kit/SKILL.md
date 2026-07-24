@@ -15,14 +15,7 @@ tags:
   - 修复
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 研究
-  - 分析
-  - AI代理
   - json
-  - agent
   - node
   - api
 tools:

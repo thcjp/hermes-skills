@@ -14,15 +14,10 @@ tags:
   - 企业级
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 工作流
   - 写作
   - remix
   - api
   - agents
-  - agent
   - read
 tools:
   - read

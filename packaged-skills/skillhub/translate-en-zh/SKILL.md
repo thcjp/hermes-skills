@@ -13,8 +13,6 @@ tags:
   - 翻译
   - 语言
   - 工具
-  - 不支持
-  - 依赖说明
   - agent
   - api
 tools:

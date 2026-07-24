@@ -21,7 +21,6 @@ tags:
   - canvas
   - ctx
   - 游戏
-  - 不支持
   - playing
 tools:
   - read

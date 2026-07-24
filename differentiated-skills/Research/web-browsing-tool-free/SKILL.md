@@ -17,8 +17,6 @@ tags:
   - 开发工具
   - web-browsing
   - https
-  - com
-  - example
   - bash
 tools:
   - read

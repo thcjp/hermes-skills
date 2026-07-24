@@ -22,15 +22,10 @@ tags:
   - 数据平台
   - 工具
   - 效率
-  - 自动化
   - 创意
   - 图像
-  - 研究
-  - 分析
-  - 开发
   - smart-crawler
   - add
-  - 不支持
   - 工作空间
   - token
 tools:

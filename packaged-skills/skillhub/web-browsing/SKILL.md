@@ -13,10 +13,7 @@ tags:
   - Web开发
   - 前端
   - 开发工具
-  - 依赖说明
   - agent
-  - 不支持
-  - 确认运行
   - browsing
 tools:
   - read

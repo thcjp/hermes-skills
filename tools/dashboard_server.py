@@ -10,6 +10,7 @@ from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
 from project_config import REGISTRY_DIR
 from project_config import DB_PATH
+from project_config import DATA_DIR
 from project_config import DIFFERENTIATED_DIR
 # === End Phase 1 ===
 
@@ -45,7 +46,8 @@ def get_db_stats():
 
     stats = {"total_skills": 0, "three_track": {}, "categories": {},
              "platforms": {}, "quality": {}, "recent_ops": [],
-             "sources": {}, "workflow_states": {}, "pricing_tiers": {}}
+             "sources": {}, "workflow_states": {}, "pricing_tiers": {},
+             "paid_count": 0, "free_count": 0}
 
     try:
         c.execute("SELECT COUNT(*) as cnt FROM skills")
@@ -82,6 +84,12 @@ def get_db_stats():
         # 定价分层统计
         c.execute("SELECT pricing_tier, COUNT(*) as cnt FROM skills GROUP BY pricing_tier ORDER BY cnt DESC")
         stats["pricing_tiers"] = {row["pricing_tier"]: row["cnt"] for row in c.fetchall()}
+
+        # 付费/免费skill统计（slug以-free结尾为免费，与marketing统计口径一致）
+        c.execute("SELECT COUNT(*) as cnt FROM skills WHERE slug NOT LIKE ?", ("%-free",))
+        stats["paid_count"] = c.fetchone()["cnt"]
+        c.execute("SELECT COUNT(*) as cnt FROM skills WHERE slug LIKE ?", ("%-free",))
+        stats["free_count"] = c.fetchone()["cnt"]
 
         c.execute("SELECT source, COUNT(*) as cnt FROM skills GROUP BY source ORDER BY cnt DESC LIMIT 10")
         stats["sources"] = {row["source"]: row["cnt"] for row in c.fetchall()}
@@ -1173,6 +1181,9 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
 
         elif path == '/api/l8-security':
             self._json(get_l8_security_stats())
+
+        elif path == '/api/l9-visibility':
+            self._json(get_l9_visibility_stats())
 
         elif path == '/api/pricing':
             self._json(get_pricing_stats())

@@ -12,16 +12,8 @@ tags:
   - Other
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
-  - 研究
   - audit
-  - 依赖说明
   - api
-  - 不支持
 tools:
   - read
   - exec

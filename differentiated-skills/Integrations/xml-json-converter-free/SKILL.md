@@ -8,8 +8,7 @@ license: Proprietary
 edition: free
 description: XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕"双向转换—属性处理—命名空间—单文件处理"四件事，提供可复制即用的Python/Node。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
-tags:
-  - 工具,agent,xml,json,data,命名空间
+tags: 工具,agent,xml,json,data,命名空间
 tools:
   - read
   - exec

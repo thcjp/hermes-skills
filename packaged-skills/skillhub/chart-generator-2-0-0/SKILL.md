@@ -8,8 +8,7 @@ license: "Proprietary"
 description: |-
   Data visualization tool producing SVG charts。Use when you need bar
   charts, line charts, pie char。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
-tags:
-  - 效率,依赖说明,agent,不支持,确认运行,api
+tags: 效率,agent,api
 tools:
   - read
   - exec

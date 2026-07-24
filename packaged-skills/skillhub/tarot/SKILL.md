@@ -17,8 +17,7 @@ tools:
   - exec
   - write
 homepage: ""
-tags:
-  - 效率,next,step,张大阿卡,api,spread
+tags: 效率,next,step,张大阿卡,api,spread
 category: "Automation"
 ---
 # Reflective Tarot

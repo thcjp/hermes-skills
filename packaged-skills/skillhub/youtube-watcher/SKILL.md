@@ -26,8 +26,6 @@ tags:
   - YouTube
   - 视频
   - 媒体
-  - 依赖说明
-  - 不支持
   - watcher
   - agent
   - api

@@ -13,9 +13,7 @@ tags:
   - 接口
   - 开发工具
   - api
-  - 依赖说明
   - 示例数据
-  - 不支持
   - agent
 tools:
   - read

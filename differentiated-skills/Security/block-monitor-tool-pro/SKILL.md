@@ -20,7 +20,6 @@ tags:
   - 监控
   - 运维
   - 工具
-  - 专业版独
   - self
   - stats
   - json

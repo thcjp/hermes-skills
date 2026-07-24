@@ -28,17 +28,7 @@ tags:
   - Finance
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
-  - AI代理
-  - 依赖说明
-  - 不支持
-  - agent
   - api
-  - 确认运行
 tools:
   - read
   - exec

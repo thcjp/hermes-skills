@@ -29,17 +29,11 @@ tags:
   - 其他工具
   - 工具
   - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - AI代理
-  - agent
   - 写作
   - api_key
   - handle
   - doc-print
   - https
-  - example
 tools:
   - read
   - exec

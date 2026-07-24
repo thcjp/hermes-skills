@@ -12,8 +12,6 @@ tags:
   - 播客
   - 音频
   - 媒体
-  - 不支持
-  - 依赖说明
   - agent
   - api
   - podcast

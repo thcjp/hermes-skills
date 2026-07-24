@@ -17,13 +17,9 @@ tags:
   - 运维
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
   - 写作
   - pro
   - true
-  - agent
   - free
   - 逻辑
 tools:

@@ -35,7 +35,6 @@ tags:
   - 研究
   - 分析
   - self
-  - 不支持
   - whisper
   - import
   - device

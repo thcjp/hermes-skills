@@ -529,7 +529,10 @@ def _replace_frontmatter_field(content, field_name, new_value):
             # Skip following lines that belong to this field:
             # 1. List items (lines starting with - )
             # 2. Block scalar content (indented lines after |- or >-)
-            is_block_scalar = old_val in ('|-', '>-', '|', '>') or re.match(r'^[|>][-+]?\s*$', old_val)
+            # 3. Corrupted block scalar markers like "|-，可生成提升工作效率"
+            is_block_scalar = (old_val in ('|-', '>-', '|', '>')
+                               or re.match(r'^[|>][-+]?\s*$', old_val)
+                               or re.match(r'^[|>][-+]?\s*[，,]?\s*\S', old_val))
             while i < len(lines):
                 next_line = lines[i]
                 # Skip list items

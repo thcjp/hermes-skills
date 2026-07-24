@@ -14,10 +14,7 @@ tags:
   - 自动化
   - 智能
   - agent
-  - 按流程执
   - chat
-  - 依赖说明
-  - 不支持
 tools:
   - read
   - exec

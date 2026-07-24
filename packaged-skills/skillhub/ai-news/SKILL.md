@@ -15,8 +15,6 @@ tags:
   - api
   - ai-news
   - content
-  - 不支持
-  - 依赖说明
 tools:
   - read
   - exec

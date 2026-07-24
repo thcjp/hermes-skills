@@ -17,7 +17,6 @@ tags:
   - 邮件
   - 通信
   - 工具
-  - com
   - gmail
   - smtp
   - api

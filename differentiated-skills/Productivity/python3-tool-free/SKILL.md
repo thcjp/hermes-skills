@@ -17,16 +17,9 @@ tags:
   - pip
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 开发
-  - 代码
-  - AI代理
   - venv
   - python
   - free
-  - agent
   - pro
 tools:
   - read

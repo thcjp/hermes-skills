@@ -42,7 +42,6 @@ tags:
   - text
   - url
   - https
-  - com
   - json
 tools:
   - read

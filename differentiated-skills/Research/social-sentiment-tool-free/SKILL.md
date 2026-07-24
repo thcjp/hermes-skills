@@ -38,7 +38,6 @@ tags:
   - csv
   - negative
   - positive
-  - 不支持
 tools:
   - read
   - exec

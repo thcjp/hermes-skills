@@ -7,21 +7,15 @@ summary: "设计分析直觉高效贴合心智模型的用户体验。Design and
 license: "Proprietary"
 description: |-
   Design and analyze user experiences that are intuitive, efficient, and
-  aligned with user mental m。
+  aligned with user mental m。分析用户体验与交互流程,优化可用性,提供高效的设计诊断能力
 tags:
   - Creative
-  - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 创意
-  - 图像
-  - 依赖说明
-  - 不支持
   - 定量
-  - agent
   - api
+  - UX
+  - 用户体验
+  - 交互
 tools:
   - read
   - exec

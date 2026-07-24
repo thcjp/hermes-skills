@@ -19,10 +19,7 @@ tags:
   - 财务
   - 数据
   - pro
-  - 不支持
   - ethereum
-  - 请参考
-  - 目录中的
 tools:
   - read
   - exec

@@ -27,9 +27,6 @@ tags:
   - 研究
   - 分析
   - 知识
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - python3
   - task
 category: "Automation"

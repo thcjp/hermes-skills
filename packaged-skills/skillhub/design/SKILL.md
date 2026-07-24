@@ -22,7 +22,6 @@ tags:
   - 信号
   - brands
   - api
-  - 不支持
 tools:
   - read
   - exec

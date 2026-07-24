@@ -44,9 +44,6 @@ tags:
   - 加密
   - 工具
   - params
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - node
 tools:
   - read

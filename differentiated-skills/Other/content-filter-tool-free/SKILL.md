@@ -39,9 +39,6 @@ tags:
   - 电商
   - 研究
   - 分析
-  - 请参考
-  - 目录中的
-  - 脚本文件
   - basedir
   - bash
 tools:

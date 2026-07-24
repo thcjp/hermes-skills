@@ -21,10 +21,7 @@ tags:
   - 知识
   - 文档
   - 创意
-  - 请参考
-  - 目录中的
   - python3
-  - 脚本文件
   - desktop
 tools:
   - read
