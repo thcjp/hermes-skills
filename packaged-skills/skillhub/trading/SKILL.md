@@ -3,7 +3,7 @@ slug: "trading"
 name: "trading"
 version: 1.0.1
 displayName: "交易分析专业版"
-summary: "多策略交易分析系统，支持批量分析、策略回测、自动交易与风险控制。"
+summary: "多策略交易分析系统，支持批量分析、策略回测、自动交易与风险控制。。面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带 等多种技术策略组合，提供批量标的分析、历史回测验证、自"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,16 +15,16 @@ tags:
   - 交易分析
   - 量化策略
   - 企业级
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 交易分析专业版
@@ -78,6 +78,14 @@ category: "Automation"
 **输出**: 返回策略数量的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`策略数量`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：批量信号扫描

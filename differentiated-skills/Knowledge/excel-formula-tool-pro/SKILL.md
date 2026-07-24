@@ -3,7 +3,7 @@ slug: excel-formula-tool-pro
 name: excel-formula-tool-pro
 version: 1.0.0
 displayName: Excel公式工具（专业版）
-summary: 从自然语言描述生成Excel公式，诊断表格错误，支持VLOOKUP、条件求和等常用函数.
+summary: "从自然语言描述生成Excel公式，诊断表格错误，支持VLOOKUP、条件求和等常用函数.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: 'Excel公式工具 - （专业版）
@@ -16,20 +16,19 @@ description: 'Excel公式工具 - （专业版）
 
   适用关键词: Excel公式, VLOOKUP, SUMIF, COUNTIF, 公式诊断, 公式优化, 表格计算'
 tags:
-- Excel
-- 公式生成
-- 错误诊断
-- 表格处理
+  - Excel
+  - 公式生成
+  - 错误诊断
+  - 表格处理
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Excel公式工具（专业版）

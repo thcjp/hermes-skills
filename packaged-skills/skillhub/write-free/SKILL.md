@@ -3,7 +3,7 @@ slug: "write-free"
 name: "write-free"
 version: "1.0.0"
 displayName: "版本化写作工具（免费版）"
-summary: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制"
+summary: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制。带版本控制的写作工具（免费版）. 遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，"
 license: "MIT"
 description: |-
   带版本控制的写作工具（免费版）.
@@ -12,11 +12,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 版本化写作工具（免费版）
@@ -97,6 +100,14 @@ Request → Plan → Draft → Audit → Refine → Deliver
 **输入**: 用户提供工作空间初始化所需的指令和必要参数.
 **处理**: 解析工作空间初始化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **初始化工作空间**：首次使用运行`（请参考skill目录中的脚本文件） ~/writing`创建项目结构

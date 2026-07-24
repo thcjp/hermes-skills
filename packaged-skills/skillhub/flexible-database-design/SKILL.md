@@ -3,7 +3,10 @@ slug: "flexible-database-design"
 name: "flexible-database-design"
 version: 1.0.1
 displayName: "Flexible Database De"
-summary: "指导Agent与用户设计实现灵活数据库,建模不踩坑"
+summary: "指导Agent与用户设计实现灵活数据库,建模不踩坑。Guide agents and users to design and implement a \
+
+核心能力:
+- 集成工具领"
 license: "Proprietary"
 description: |-
   Guide agents and users to design and implement a \\\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\
@@ -11,16 +14,16 @@ description: |-
 tags:
   - Integrations
   - Knowledge
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
 category: "Research"
 ---
 # Flexible Database De
@@ -39,6 +42,14 @@ category: "Research"
 ## 核心能力
 
 本工具的核心能力包括：指导Agent与用户设计实现灵活数据库,建模不踩坑。具体功能详情请参考下方能力说明表格与使用场景.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 根据用户描述，选择最接近的场景并适配：

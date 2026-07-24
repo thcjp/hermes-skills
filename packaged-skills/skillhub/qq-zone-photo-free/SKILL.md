@@ -3,7 +3,7 @@ slug: "qq-zone-photo-free"
 name: "qq-zone-photo-free"
 version: 1.0.1
 displayName: "社交空间相册基础版"
-summary: "基础社交空间相册管理，扫码登录、列出和浏览相册"
+summary: "基础社交空间相册管理，扫码登录、列出和浏览相册。社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能. 适用于相册查看和照片URL获取场景。升级至完整版可解锁照片上"
 license: "MIT"
 description: |-
   社交空间相册自动化管理工具的免费版。支持扫码登录、列出相册和浏览照片等基础功能.
@@ -12,11 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 社交空间相册（免费版）
@@ -72,6 +74,14 @@ export API_KEY="your_api_key_here"
 通过 `python3 （请参考skill目录中的脚本文件） --action photos --album-id "ALBUM_ID" --cookies cookies.json` 浏览指定相册中的照片。必填参数 `--album-id` 指定目标相册，可选参数 `--qq` 指定账号。返回照片列表，包含照片URL、缩略图、上传时间等信息。适用于查看相册内容。- 验证返回数据的完整性和格式正确性
 - 参考`浏览相册照片`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 升级提示
 
 以下为完整版（qq-zone-photo）独有功能，免费版不可用：

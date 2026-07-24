@@ -3,27 +3,26 @@ slug: read-github-tool-pro
 name: read-github-tool-pro
 version: 1.0.0
 displayName: 代码仓库阅读专业版
-summary: 企业级代码仓库分析平台，支持批量仓库分析、跨仓库搜索、代码审计与API集成
+summary: "企业级代码仓库分析平台，支持批量仓库分析、跨仓库搜索、代码审计与API集成。代码仓库阅读工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆"
 license: Proprietary
 edition: pro
 description: 代码仓库阅读工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
-- 开发
-- 企业级
-- 代码审计
-- 仓库分析
-- 技术选型
+  - 开发
+  - 企业级
+  - 代码审计
+  - 仓库分析
+  - 技术选型
+  - 版本控制
+  - Git
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 category: "Development"
 ---
 # 代码仓库阅读工具（专业版）

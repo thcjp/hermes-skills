@@ -3,7 +3,7 @@ slug: "reddit-research-paid"
 name: "reddit-research-paid"
 version: 1.0.1
 displayName: "Reddit调研(专业版)"
-summary: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。"
+summary: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。。Reddit调研专业版是一套面向市场研究团队与内容机构的企业级社区调研解决方案，在免费版基础上扩展出多"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,16 @@ tags:
   - 内容创作
   - 企业级
   - 专业版
+  - 搜索
+  - 检索
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # Reddit调研(专业版)
@@ -78,6 +78,14 @@ category: "Knowledge"
 **输出**: 返回聚合维度的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`聚合维度`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：品牌舆情监控

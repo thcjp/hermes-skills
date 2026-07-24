@@ -3,7 +3,7 @@ slug: "podcast-toolkit"
 name: "podcast-toolkit"
 version: 1.0.1
 displayName: "播客创作工具包专业版"
-summary: "企业级播客创作与运营工具包,支持多节目管理、增长分析、变现策略与AI生成,适配团队协作。"
+summary: "企业级播客创作与运营工具包,支持多节目管理、增长分析、变现策略与AI生成,适配团队协作。。面向团队与专业创作者的播客创作与运营工具包(专业版)。核心能力: - 涵盖免费版全部能力(选题、脚本"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -34,16 +34,14 @@ tags:
   - 增长分析
   - 变现策略
   - AI生成
+  - 音频
+  - 媒体
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
 category: "Creative"
 ---
 # 播客创作工具包专业版
@@ -91,6 +89,14 @@ category: "Creative"
 **输出**: 返回选题规划的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`选题规划`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:播客矩阵管理

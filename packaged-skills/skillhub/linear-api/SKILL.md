@@ -3,7 +3,7 @@ slug: "linear-api"
 name: "linear-api"
 version: 1.0.7
 displayName: "项目管理API"
-summary: "通过GraphQL操作工作项、项目、周期、标签与评论,覆盖创建查询转换全流程。"
+summary: "通过GraphQL操作工作项、项目、周期、标签与评论,覆盖创建查询转换全流程。。通过项目管理工具的GraphQL API操作工作项全生命周期:工作项CRUD、 项目管理、团队管理、周期管理、"
 license: "Proprietary"
 description: |-
   通过项目管理工具的GraphQL API操作工作项全生命周期:工作项CRUD、
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 研发工具
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - API
+  - 接口
+  - 开发工具
 category: "Development"
 ---
 # 项目管理API集成
@@ -151,6 +149,14 @@ export API_KEY="your_api_key_here"
 **处理**: 解析GraphQL查询构造的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回GraphQL查询构造的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -3,7 +3,7 @@ slug: "elite-longterm-memory-local-free"
 name: "elite-longterm-memory-local-free"
 version: "1.0.0"
 displayName: "本地向量记忆免费版"
-summary: "基础本地记忆系统，热内存加文件归档，纯本地运行无外部依赖。"
+summary: "基础本地记忆系统，热内存加文件归档，纯本地运行无外部依赖。。面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.md）抗压缩与"
 license: "MIT"
 description: |-
   面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力.
@@ -15,11 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 本地向量记忆免费版（Elite Longterm Memory Local Free）
@@ -58,6 +60,14 @@ category: "Agents"
 **输出**: 返回WAL 协议保障的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`WAL 协议保障`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 第一步：创建记忆系统结构。手动创建 SESSION-STATE.md（热内存，含 Current Task、Key Context、Pending Actions、Recent Decisions 四区块）、MEMORY.md（长期摘要）、memory/ 目录（每日日志）.

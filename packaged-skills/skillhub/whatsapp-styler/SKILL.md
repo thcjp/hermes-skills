@@ -15,15 +15,15 @@ description: |-
 tags:
   - 研发工具
   - Productivity
+  - WhatsApp
+  - 社交
+  - 通信
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - write
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
 category: "Communication"
 ---
 # WhatsApp Styler
@@ -145,6 +145,14 @@ category: "Communication"
 **输入**: 用户提供特殊字符冲突处理所需的指令和必要参数.
 **输出**: 返回特殊字符冲突处理的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -191,6 +199,14 @@ category: "Communication"
 *订单确认*
 您的订单 *#20250118* 已确认!
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 *商品明细*
 * 蓝牙耳机: 1件 ¥299
 * 手机壳: 2件 ¥78

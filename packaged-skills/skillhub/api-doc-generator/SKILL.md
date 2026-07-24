@@ -3,7 +3,7 @@ slug: "api-doc-generator"
 name: "api-doc-generator"
 version: 1.0.1
 displayName: "API文档生成器(专业版)"
-summary: "企业级API文档平台，含代码扫描、多格式导出、版本管理、Mock联动与团队评审。"
+summary: "企业级API文档平台，含代码扫描、多格式导出、版本管理、Mock联动与团队评审。。API文档生成器专业版是面向研发团队的全功能API文档平台。在免费版的自然语言→OpenAPI+Markdo"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 代码扫描
   - 团队协作
   - 文档治理
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # API文档生成器(专业版)
@@ -157,6 +156,14 @@ api-doc generate --spec ./openapi.yaml --bilingual --output ./docs/
 **输入**: 用户提供功能8：多语言文档所需的指令和必要参数.
 **处理**: 解析功能8：多语言文档的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级API文档治理（技术负责人角色）

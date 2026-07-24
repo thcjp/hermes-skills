@@ -3,7 +3,7 @@ slug: "tts-whatsapp"
 name: "tts-whatsapp"
 version: 1.0.1
 displayName: "TTS WhatsApp"
-summary: "在WhatsApp发40+语言高质量TTS语音消息,自动送达"
+summary: "在WhatsApp发40+语言高质量TTS语音消息,自动送达。Send high-quality text-to-speech voice messages on WhatsApp in 4"
 license: "Proprietary"
 description: |-
   Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages
@@ -29,16 +29,15 @@ description: |-
 tags:
   - Creative
   - Communication
+  - WhatsApp
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
 category: "Communication"
 ---
 # TTS WhatsApp
@@ -64,6 +63,14 @@ category: "Communication"
 * 🧹 **Smart cleanup** - Auto-delete files after successful send
 * ⚡ **Fast** - ~2-3s from command to delivery
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

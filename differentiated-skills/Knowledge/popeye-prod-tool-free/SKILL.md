@@ -3,7 +3,7 @@ slug: popeye-prod-tool-free
 name: popeye-prod-tool-free
 version: 1.0.2
 displayName: 生产力增强工具（免费版）
-summary: AI驱动的个人生产力工具，支持任务管理、时间追踪、工作流自动化与效率分析.
+summary: "AI驱动的个人生产力工具，支持任务管理、时间追踪、工作流自动化与效率分析.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
 description: '生产力增强工具 - （免费版）
@@ -16,19 +16,18 @@ description: '生产力增强工具 - （免费版）
 
   适用关键词: 生产力, 任务管理, 时间追踪, 工作流, 番茄钟, 日报, 效率分析, habit tracking'
 tags:
-- 生产力
-- 任务管理
-- 时间追踪
-- 工作流自动化
+  - 生产力
+  - 任务管理
+  - 时间追踪
+  - 工作流自动化
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 生产力增强工具（免费版）

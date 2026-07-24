@@ -3,7 +3,7 @@ slug: local-rag-tool-pro
 name: local-rag-tool-pro
 version: 1.0.0
 displayName: 本地文件检索（专业版）
-summary: 本地文件RAG检索增强生成工具，支持文档索引、语义搜索与上下文注入.
+summary: "本地文件RAG检索增强生成工具，支持文档索引、语义搜索与上下文注入.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
 description: '本地文件检索 - （专业版）
@@ -16,20 +16,20 @@ description: '本地文件检索 - （专业版）
 
   适用关键词: 本地RAG, 文档检索, 语义搜索, 知识库, RAG, retrieval augmented, 向量搜索, 上下文注入'
 tags:
-- RAG
-- 本地检索
-- 语义搜索
-- 知识库
+  - RAG
+  - 本地检索
+  - 语义搜索
+  - 知识库
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 本地文件检索（专业版）

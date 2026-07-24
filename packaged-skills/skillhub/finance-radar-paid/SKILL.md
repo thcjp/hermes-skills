@@ -3,7 +3,7 @@ slug: "finance-radar-paid"
 name: "finance-radar-paid"
 version: 1.0.1
 displayName: "股票分析雷达专业版"
-summary: "专业股票与加密货币分析平台，支持批量分析、组合追踪、价格告警与传闻检测。"
+summary: "专业股票与加密货币分析平台，支持批量分析、组合追踪、价格告警与传闻检测。。面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、 投资组合追踪、价格告警、热门趋势检测、传闻与早期信"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 股票分析
   - 投资组合
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
 category: "Finance"
 ---
 # 股票分析雷达专业版
@@ -84,6 +83,14 @@ python3 （请参考skill目录中的脚本文件） risk-analysis --output risk
 ```
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：批量筛选股票

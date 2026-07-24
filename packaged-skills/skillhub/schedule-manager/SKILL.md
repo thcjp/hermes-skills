@@ -14,16 +14,14 @@ tags:
   - 依赖编排
   - 企业调度
   - 监控告警
+  - 定时任务
+  - 调度
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "定时任务,调度,自动化"
 category: "Automation"
 ---
 # 任务调度管家(专业版)
@@ -169,6 +167,14 @@ python3 ~/workspace/schedule/dashboard.py --port 19196
 - `normal`：默认优先级
 - `low`：仅在资源空闲时执行
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **痛点**：CI/CD流水线涉及构建、测试、扫描、部署多步骤，步骤间有严格依赖，任一失败需立即告警.

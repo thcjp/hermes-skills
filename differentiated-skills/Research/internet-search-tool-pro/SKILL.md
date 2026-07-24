@@ -16,21 +16,20 @@ description: '企业级多引擎聚合搜索工具，支持批量查询、自定
 
   - 定时任务调度。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。'
 tags:
-- 搜索
-- 企业工具
-- 批量查询
-- 多引擎聚合
-- 数据采集
+  - 搜索
+  - 企业工具
+  - 批量查询
+  - 多引擎聚合
+  - 数据采集
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 聚合搜索专业版

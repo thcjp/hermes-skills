@@ -3,7 +3,7 @@ slug: proactive-agent-tool-free
 name: proactive-agent-tool-free
 version: 1.0.0
 displayName: 主动型 Agent 基础版
-summary: 将 AI Agent 从任务跟随者转变为主动伙伴,支持记忆持久化与自我改进
+summary: "将 AI Agent 从任务跟随者转变为主动伙伴,支持记忆持久化与自我改进。核心能力: AI Agent领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: Proprietary
 edition: free
 description: '核心能力: AI Agent领域的专业化 AI 辅助工具,提供核心基础功能支持.
@@ -11,19 +11,20 @@ description: '核心能力: AI Agent领域的专业化 AI 辅助工具,提供核
   差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持.
   适用关键词: proactive, agent, 主动, 记忆, WAL, 自我改进, 安全加固'
 tags:
-- 主动型Agent
-- 记忆管理
-- 自我改进
-- 安全
+  - 主动型Agent
+  - 记忆管理
+  - 自我改进
+  - 安全
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 主动型 Agent 基础版
@@ -313,6 +314,13 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 - **SLA**: 社区支持,尽力响应
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 **版本信息**
 

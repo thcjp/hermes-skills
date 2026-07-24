@@ -3,7 +3,7 @@ slug: "jinn-node-free"
 name: "jinn-node-free"
 version: 1.0.1
 displayName: "Jinn Node Free"
-summary: "在自治网络中运行工作节点的基础版本，支持单任务测试和钱包查询。"
+summary: "在自治网络中运行工作节点的基础版本，支持单任务测试和钱包查询。。jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询. 不包含持续工作"
 license: "MIT"
 description: |-
   jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询.
@@ -12,11 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # jinn-node-free
@@ -81,6 +83,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回钱包余额查询的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`钱包余额查询`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 克隆仓库并执行 `corepack enable && yarn install` 安装依赖

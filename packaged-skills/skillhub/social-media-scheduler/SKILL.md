@@ -3,7 +3,7 @@ slug: "social-media-scheduler"
 name: "social-media-scheduler"
 version: 1.0.1
 displayName: "社媒内容排期"
-summary: "跨平台社媒内容排期助手,生成内容日历、平台优化文案、内容支柱、跨平台复用与三阶标签策略。"
+summary: "跨平台社媒内容排期助手,生成内容日历、平台优化文案、内容支柱、跨平台复用与三阶标签策略。。跨平台社媒内容排期与文案生成 skill。支持 Twitter/X、LinkedIn、Instagr"
 license: "Proprietary"
 description: |-
   跨平台社媒内容排期与文案生成 skill。支持 Twitter/X、LinkedIn、Instagram、TikTok、Facebook 五大平台,
@@ -16,16 +16,15 @@ tags:
   - 系统运维
   - Marketing
   - Content
+  - 社交媒体
+  - 营销
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "社交媒体,营销,通信"
 category: "Communication"
 ---
 # 社媒内容排期
@@ -93,6 +92,14 @@ category: "Communication"
 **输出**: 返回内容支柱定义的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`内容支柱定义`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

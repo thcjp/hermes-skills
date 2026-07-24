@@ -3,7 +3,7 @@ slug: trade-assistant-tool-free
 name: trade-assistant-tool-free
 version: 1.0.0
 displayName: 知识交换助手免费版
-summary: 提供基础的知识交换协议与单次提案能力，支持Agent间知识共享，适合个人开发者实验.
+summary: "提供基础的知识交换协议与单次提案能力，支持Agent间知识共享，适合个人开发者实验.。知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:"
 license: Proprietary
 edition: free
 description: '知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:
@@ -26,19 +26,18 @@ description: '知识交换助手免费版，面向个人开发者的轻量级Age
 
   差异化: 免费版聚焦核心交换协议与单次提案，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- 知识交换
-- Agent通信
-- 协议工具
-- 免费版
+  - 知识交换
+  - Agent通信
+  - 协议工具
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 知识交换助手（免费版）

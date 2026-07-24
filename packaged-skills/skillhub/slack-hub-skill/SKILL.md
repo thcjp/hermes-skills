@@ -3,7 +3,7 @@ slug: "slack-hub-skill"
 name: "slack-hub-skill"
 version: 0.1.1
 displayName: "Slack消息中枢"
-summary: "Slack消息发送/线程回复/工作区搜索/频道发现，Bot Token直连Web API"
+summary: "Slack消息发送/线程回复/工作区搜索/频道发现，Bot Token直连Web API。面向团队协作场景的Slack消息与搜索集成技能。通过Slack Bot Token直连Slack W"
 license: "Proprietary"
 description: |-
   面向团队协作场景的Slack消息与搜索集成技能。通过Slack Bot Token直连Slack Web API，
@@ -16,16 +16,15 @@ tags:
   - Communication
   - 团队协作
   - 消息API
+  - Slack
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
 category: "Communication"
 ---
 # Slack消息中枢（Slack Hub Skill）
@@ -89,6 +88,14 @@ Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/
 **处理**: 解析速率限制感知的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回速率限制感知的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 频道与用户寻址
 
 ### 频道寻址

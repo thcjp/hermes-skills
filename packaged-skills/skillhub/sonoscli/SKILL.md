@@ -3,7 +3,7 @@ slug: "sonoscli"
 name: "sonoscli"
 version: 1.0.1
 displayName: "Sonoscli"
-summary: "控Sonos音箱,发现/状态/播放/音量/分组"
+summary: "控Sonos音箱,发现/状态/播放/音量/分组。Control Sonos speakers (discover/status/play/volume/group)。核心能力: - 其他工具"
 license: "Proprietary"
 description: |-
   Control Sonos speakers (discover/status/play/volume/group)。核心能力:
@@ -23,16 +23,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Sonoscli
@@ -52,6 +51,14 @@ category: "Automation"
 
 - Control Sonos speakers (discover/status/play/volume/group)
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

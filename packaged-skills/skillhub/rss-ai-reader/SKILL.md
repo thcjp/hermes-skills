@@ -3,7 +3,7 @@ slug: "rss-ai-reader"
 name: "rss-ai-reader"
 version: 1.0.1
 displayName: "RSS AI 摘要推送"
-summary: "RSS自动抓取与LLM摘要生成,推送飞书/Telegram/Email,SQLite去重与定时任务"
+summary: "RSS自动抓取与LLM摘要生成,推送飞书/Telegram/Email,SQLite去重与定时任务。RSS AI 阅读器。自动抓取 RSS/Atom 订阅源,通过 ai-assistant"
 license: "Proprietary"
 description: |-
   RSS AI 阅读器。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 或 llm-provider 生成中文摘要,
@@ -17,16 +17,14 @@ tags:
   - 研发工具
   - Research
   - Automation
+  - RSS
+  - 订阅
+  - 信息
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "RSS,订阅,信息"
 category: "Knowledge"
 ---
 # RSS AI 摘要推送
@@ -119,6 +117,14 @@ category: "Knowledge"
 - **状态查看**: 通过 --stats 参数查看历史执行统计,辅助调整调度频率
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

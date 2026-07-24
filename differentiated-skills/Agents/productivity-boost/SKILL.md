@@ -3,23 +3,24 @@ slug: productivity-boost
 name: productivity-boost
 version: 2.0.1
 displayName: 效率倍增器
-summary: 抗倦怠效率系统：能量感知+最小可行系统+反过载分诊+情境适配，告别任务清单焦虑.
+summary: "抗倦怠效率系统：能量感知+最小可行系统+反过载分诊+情境适配，告别任务清单焦虑.。面向真实工作场景的效率操作系统，直击任务清单焦虑、完美系统难维护、能量错配、忽视情境约束四大痛点。适用于过载"
 license: Proprietary
 description: 面向真实工作场景的效率操作系统，直击任务清单焦虑、完美系统难维护、能量错配、忽视情境约束四大痛点。适用于过载焦虑、ADHD/倦怠等情境适配、可持续效率系统等场景。核心能力含能量感知规划、最小可行系统、反过载分诊、目标-项目-任务分层、回顾节奏。适用关键词：效率、生产力、任务管理、过载、倦怠、计划、回顾、productivity、burnout、ADHD.
 tags:
-- 智能代理
-- 效率管理
-- 任务规划
+  - 智能代理
+  - 效率管理
+  - 任务规划
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 效率倍增器（Productivity Boost）
@@ -58,6 +59,14 @@ category: "Agents"
 **输出**: 返回目标-项目-任务严格分层 + 回顾节奏的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：抗倦怠效率系统、告别任务清单焦虑、面向真实工作场景、的效率操作系统、直击任务清单焦虑、完美系统难维护、能量错配、忽视情境约束四大、适用于过载焦虑、倦怠等情境适配、可持续效率系统等、核心能力含能量感、任务分层、适用关键词、生产力、任务管理、productivity、burnout等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景类型 | 输入 | 输出 | 是否适用 |

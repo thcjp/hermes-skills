@@ -3,7 +3,7 @@ slug: "security-free"
 name: "security-free"
 version: "1.0.0"
 displayName: "GoPlus安全扫描免费版"
-summary: "免费版GoPlus安全扫描，支持基础安全扫描与漏洞发现查看。"
+summary: "免费版GoPlus安全扫描，支持基础安全扫描与漏洞发现查看。。GoPlus安全扫描免费版，提供基础代码安全检查功能. 支持一次性安全扫描与漏洞发现详情查看. 适用于个人项目的安全自检与漏洞发"
 license: "MIT"
 description: |-
   GoPlus安全扫描免费版，提供基础代码安全检查功能.
@@ -12,11 +12,12 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 安全合规
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - 安全
+  - 加密
+  - 工具
 category: "Security"
 ---
 # GoPlus安全扫描（免费版）
@@ -85,6 +86,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回代码扫描的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`代码扫描`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 安装GoPlus CLI：`go install 相关技术文档

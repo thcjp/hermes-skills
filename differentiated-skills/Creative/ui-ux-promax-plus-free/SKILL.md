@@ -3,7 +3,7 @@ slug: ui-ux-promax-plus-free
 name: ui-ux-promax-plus-free
 version: 1.0.1
 displayName: UI/UX ProMax+免费版
-summary: 专业UI/UX设计资源库,含风格库、配色方案、字体配对基础查询,适合个人设计师快速参考
+summary: "专业UI/UX设计资源库,含风格库、配色方案、字体配对基础查询,适合个人设计师快速参考。面向个人设计师和开发者的UI/UX设计资源库,提供界面风格、配色方案、"
 license: Proprietary
 edition: free
 description: '面向个人设计师和开发者的UI/UX设计资源库,提供界面风格、配色方案、
@@ -32,22 +32,19 @@ description: '面向个人设计师和开发者的UI/UX设计资源库,提供界
 
   适合个人快速参考'
 tags:
-- 设计
-- UI
-- UX
-- 配色
-- 字体
-- 前端
-- 资源库
+  - 设计
+  - UI
+  - UX
+  - 配色
+  - 字体
+  - 前端
+  - 资源库
+  - UI设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # UI/UX ProMax+ - 免费版

@@ -3,7 +3,7 @@ slug: "meeting-join-tool-pro"
 name: "meeting-join-tool-pro"
 version: "1.0.0"
 displayName: "AI会议助手专业版"
-summary: "企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。"
+summary: "企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。。AI会议助手专业版为企业与团队提供全方位的智能会议机器人解决方案。在免费版语音会议能力之上"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -16,15 +16,14 @@ tags:
   - 企业级
   - 屏幕共享
   - 协作
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # AI会议助手专业版

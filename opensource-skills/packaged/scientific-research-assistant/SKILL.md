@@ -3,25 +3,24 @@ slug: scientific-research-assistant
 name: scientific-research-assistant
 version: 1.0.1
 displayName: 科研助手
-summary: 134个科学技能库,从文献检索到论文写作,科研全流程AI辅助
+summary: "134个科学技能库,从文献检索到论文写作,科研全流程AI辅助。科研助手基于134个科学技能库,提供从文献检索到论文发表的全流程科研支持,核心功能包括文献检索与综述(PubMed/Google"
 license: Proprietary
 description: 科研助手基于134个科学技能库,提供从文献检索到论文发表的全流程科研支持,核心功能包括文献检索与综述(PubMed/Google Scholar/arXiv)、数据分析与可视化(统计/生信/绘图)、药物发现流程(靶点/筛选/对接/ADMET)、论文写作与发表(IMRaD/投稿/Cover
   Letter)、基金申请(假设/计划/预算/影响陈述)
 tags:
-- 科研辅助
-- 文献检索
-- 生物信息学
-- 论文写作
-- 数据分析
+  - 科研辅助
+  - 文献检索
+  - 生物信息学
+  - 论文写作
+  - 数据分析
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
 category: "Knowledge"
 ---
 # 科研助手
@@ -35,6 +34,14 @@ category: "Knowledge"
 3. **药物发现流程**:靶点识别(疾病-基因关联Open Targets/通路分析/文献挖掘),虚拟筛选(化合物库ChEMBL/PubChem/ZINC/分子对接AutoDock/DiffDock/药效团搜索/ADMET预测),先导化合物优化(构效关系SAR/类似物生成RDKit/datamol/选择性预测/毒性评估)。
 4. **论文写作与发表**:IMRaD格式(Introduction/Methods/Results/Discussion),摘要(结构化/非结构化),图表说明,补充材料;写作流程(大纲→方法→结果→讨论→引言→摘要),引用管理,语言润色;投稿准备(期刊选择/影响因子/开放获取/审稿周期),Cover Letter,格式调整。
 5. **基金申请**:假设生成(基于文献空白提出可验证假设),研究计划(具体目标/方法/时间线/预期成果),预算规划(人员/设备/材料/差旅/间接成本),影响陈述(科学意义/社会影响/转化潜力)。
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

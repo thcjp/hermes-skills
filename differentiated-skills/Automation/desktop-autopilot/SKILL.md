@@ -3,24 +3,22 @@ slug: desktop-autopilot
 name: desktop-autopilot
 version: 1.0.1
 displayName: 桌面自动驾驶
-summary: 智能桌面 GUI 自动化，视觉识别定位、智能等待、工作流编排，DPI 自适应不迷路.
+summary: "智能桌面 GUI 自动化，视觉识别定位、智能等待、工作流编排，DPI 自适应不迷路.。桌面自动驾驶为 AI Agent 提供基于视觉的智能 GUI 自动化能力。它不依赖固定坐标，而是通过图像"
 license: Proprietary
 description: 桌面自动驾驶为 AI Agent 提供基于视觉的智能 GUI 自动化能力。它不依赖固定坐标，而是通过图像识别、OCR 文本定位、智能等待元素出现来操控界面，内置工作流编排、录制回放、DPI
   自适应与多显示器支持，让自动化脚本像人一样"看着屏幕操作"。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 自动化
-- 桌面自动化
-- 视觉识别
+  - 自动化
+  - 桌面自动化
+  - 视觉识别
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 桌面自动驾驶

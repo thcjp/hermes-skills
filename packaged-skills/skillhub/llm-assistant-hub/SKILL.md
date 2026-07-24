@@ -3,7 +3,7 @@ slug: "llm-assistant-hub"
 name: "llm-assistant-hub"
 version: 1.0.1
 displayName: "LLM助手中枢"
-summary: "长文档推理优化器：分层分析+假设检测+结构化压缩+差异化比对。"
+summary: "长文档推理优化器：分层分析+假设检测+结构化压缩+差异化比对。。针对商业、法律等高风险长文档的长上下文推理优化器，提供五大核心能力. 分层分析策略（L0快速扫描→L1深度分析→L2聚焦深挖）"
 license: "Proprietary"
 description: |-
   针对商业、法律等高风险长文档的长上下文推理优化器，提供五大核心能力.
@@ -16,15 +16,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # LLM助手中枢
@@ -75,6 +73,14 @@ category: "Automation"
 **输出**: 返回假设检测框架的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`假设检测框架`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：解析上下文

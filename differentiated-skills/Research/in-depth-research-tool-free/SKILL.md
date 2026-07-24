@@ -35,19 +35,19 @@ description: '多源深度研究工具，支持系统性信息探索、来源评
 
   适用关键词: 深度研究, 多源调研, 信息分析, 研究报告, 课题调研'
 tags:
-- 研究
-- 分析工具
-- 信息检索
-- 报告生成
+  - 研究
+  - 分析工具
+  - 信息检索
+  - 报告生成
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 深度研究工具（免费版）

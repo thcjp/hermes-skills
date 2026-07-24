@@ -3,7 +3,7 @@ slug: "notion-skill"
 name: "notion-skill"
 version: 1.0.1
 displayName: "Notion"
-summary: "经官方Notion API操作页面与数据库"
+summary: "经官方Notion API操作页面与数据库。Work with Notion pages and databases via the official Notion API。核心能力: -"
 license: "Proprietary"
 description: |-
   Work with Notion pages and databases via the official Notion API。核心能力:
@@ -23,16 +23,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Notion
@@ -56,6 +55,14 @@ category: "Automation"
 - **Markdown双向转换**：将Markdown文本转换为Notion Block JSON格式写入页面，或将Notion页面内容导出为Markdown
 - **模板应用**：基于预设模板批量创建结构化页面，自动填充属性与内容块
 - **关联关系管理**：创建与维护数据库间的Relation属性，实现跨数据库引用与Rollup汇总
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

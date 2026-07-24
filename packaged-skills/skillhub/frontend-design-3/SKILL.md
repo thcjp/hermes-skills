@@ -3,7 +3,7 @@ slug: "frontend-design-3"
 name: "frontend-design-3"
 version: 0.1.1
 displayName: "Frontend Design"
-summary: "创建独特的生产级前端界面，避免通用 AI 风格，支持 11 种美学方向。"
+summary: "创建独特的生产级前端界面，避免通用 AI 风格，支持 11 种美学方向。。frontend-design-3 是一个前端设计技能，创建独特的生产级界面，避免通用"AI slop"美学. 支持"
 license: "Proprietary"
 description: |-
   frontend-design-3 是一个前端设计技能，创建独特的生产级界面，避免通用"AI slop"美学.
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 创意设计
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - 设计
+  - UI/UX
+  - 创意
 category: "Creative"
 ---
 # Frontend Design
@@ -134,6 +132,14 @@ minimalist 设计需要克制、精准，仔细关注间距、字体和细微细
 输出生产级功能代码（HTML/CSS/JS、React、Vue 等），视觉上引人注目且令人难忘。- 验证返回数据的完整性和格式正确性
 - 参考`实现复杂度匹配`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 分析界面目的、目标用户和技术约束

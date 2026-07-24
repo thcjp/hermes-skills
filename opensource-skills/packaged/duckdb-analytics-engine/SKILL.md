@@ -3,25 +3,24 @@ slug: duckdb-analytics-engine
 name: duckdb-analytics-engine
 version: 1.0.1
 displayName: DuckDB分析引擎
-summary: 本地分析型数据库,免部署秒级启动,GB级数据SQL查询无压力
+summary: "本地分析型数据库,免部署秒级启动,GB级数据SQL查询无压力。DuckDB分析引擎——为数据分析而生的嵌入式OLAP数据库,无需部署服务,单文件即用,支持GB级数据秒级SQL查询。覆盖多格式"
 license: Proprietary
 description: DuckDB分析引擎——为数据分析而生的嵌入式OLAP数据库,无需部署服务,单文件即用,支持GB级数据秒级SQL查询。覆盖多格式数据加载(CSV/Parquet/JSON/Excel)、跨源联邦查询、窗口函数、Pandas互操作、Jupyter集成。Use
   when 需要本地大数据分析、CSV/Parquet快速查询、Python数据分析加速、无需数据库服务器的OLAP分析时使用。不适用于高并发在线事务处理。
 tags:
-- 数据分析
-- DuckDB
-- SQL查询
-- OLAP数据库
-- 数据仓库
+  - 数据分析
+  - DuckDB
+  - SQL查询
+  - OLAP数据库
+  - 数据仓库
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
 category: "Automation"
 ---
 # DuckDB 分析引擎
@@ -54,6 +53,14 @@ category: "Automation"
 3. **SQL标准支持**:窗口函数/CTE/递归查询/聚合/JOIN/UNION/PIVOT全支持,PostgreSQL兼容语法
 4. **Pandas互操作**:DataFrame↔DuckDB零拷贝转换,SQL查询Pandas DataFrame,Python生态无缝集成
 5. **联邦查询与扩展**:跨文件/跨数据库JOIN,PostgreSQL/MySQL/SQLite附加查询,JSON/文本/空间/HTTP扩展
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 使用流程
 

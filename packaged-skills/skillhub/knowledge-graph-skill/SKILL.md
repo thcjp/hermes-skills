@@ -3,22 +3,21 @@ slug: "knowledge-graph-skill"
 name: "knowledge-graph-skill"
 version: 1.1.2
 displayName: "知识图谱技能"
-summary: "嵌入式知识图谱,持久化存储结构化知识,支持查询、合并、可视化与配置"
+summary: "嵌入式知识图谱,持久化存储结构化知识,支持查询、合并、可视化与配置。嵌入式知识图谱,以JSON存储持久化结构化知识,通过CLI脚本查询,生成KGML摘要供会话上下文使用。核心能力包括KGML"
 license: "Proprietary"
 description: |-
   嵌入式知识图谱,以JSON存储持久化结构化知识,通过CLI脚本查询,生成KGML摘要供会话上下文使用。核心能力包括KGML格式知识表示、高级查询(子节点/类型/孤儿/统计/时间线)、实体合并(absorb/nest)、密钥保管库、深度启发式提取、可视化、配置管理、跨助手只读访问与记忆导入.
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 知识图谱技能
@@ -115,6 +114,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回实体合并的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`实体合并`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 高级查询命令(补充)
 
 ```bash

@@ -3,7 +3,7 @@ slug: ui-component-tool-free
 name: ui-component-tool-free
 version: 1.0.0
 displayName: UI组件生成(免费版)
-summary: 面向个人开发者的HTML/CSS UI组件生成工具,覆盖表单、表格、卡片、模态框、导航栏.
+summary: "面向个人开发者的HTML/CSS UI组件生成工具,覆盖表单、表格、卡片、模态框、导航栏.。UI组件生成工具免费版为个人开发者提供常用HTML/CSS组件的快速生成能力,覆盖表单、表格、卡片"
 license: Proprietary
 edition: free
 description: 'UI组件生成工具免费版为个人开发者提供常用HTML/CSS组件的快速生成能力,覆盖表单、表格、卡片、模态框、导航栏等基础组件。核心能力:
@@ -28,20 +28,19 @@ description: 'UI组件生成工具免费版为个人开发者提供常用HTML/CS
 
   差异化:免费版聚焦个人开发者的基础组件需求,输出单文件HTML'
 tags:
-- UI组件
-- HTML
-- CSS
-- 前端开发
-- 个人开发
+  - UI组件
+  - HTML
+  - CSS
+  - 前端开发
+  - 个人开发
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # UI 组件生成工具(免费版)

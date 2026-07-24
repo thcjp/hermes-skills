@@ -3,24 +3,22 @@ slug: competitive-ad-spy
 name: competitive-ad-spy
 version: 1.0.1
 displayName: 竞品广告侦察兵
-summary: 扒光竞品广告底牌,解读信息策略创意方向,找到差异化投放机会
+summary: "扒光竞品广告底牌,解读信息策略创意方向,找到差异化投放机会。竞品广告侦察兵——从Meta/TikTok/Google/巨量引擎/腾讯广告等中外广告库提取竞品广告情报,系统解读信息策略、创意方"
 license: Proprietary
 description: 竞品广告侦察兵——从Meta/TikTok/Google/巨量引擎/腾讯广告等中外广告库提取竞品广告情报,系统解读信息策略、创意方向、受众定位与投放节奏。覆盖竞品识别、素材提取、视觉/文案/受众分析、策略解读与差异化机会挖掘全流程。适用场景:竞品调研、广告创意灵感、差异化定位、投放优化、新市场进入、创意A/B测试设计。触发关键词:竞品广告、广告分析、广告间谍、广告库、Meta广告、TikTok广告、Google广告、巨量引擎、腾讯广告、竞品分析、广告创意、投放策略、广告素材、差异化投放。
 tags:
-- 竞品分析
-- 广告投放
-- 市场情报
-- 营销策略
-- 投放优化
+  - 竞品分析
+  - 广告投放
+  - 市场情报
+  - 营销策略
+  - 投放优化
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
 category: "Automation"
 ---
 # 竞品广告侦察兵
@@ -51,6 +49,14 @@ category: "Automation"
 3. **受众与策略推断**:基于素材推断目标受众画像、信息策略(主打/弱化)、创意方向(UGC/专业制作)、投放节奏与变体测试力度
 4. **差异化机会挖掘**:卖点矩阵对比、空白点识别、行动建议输出
 5. **情报报告结构化输出**:统一目录结构(intel-report/ads.csv/creative-analysis/differentiation/assets)
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 使用流程
 

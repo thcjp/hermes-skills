@@ -3,7 +3,7 @@ slug: "afrexai-knowledge-management-free"
 name: "afrexai-knowledge-management-free"
 version: "1.0.0"
 displayName: "知识管理引擎(免费版)"
-summary: "结构化知识捕获、关联推理、主动浮现与多源知识库构建。免费版"
+summary: "结构化知识捕获、关联推理、主动浮现与多源知识库构建。免费版。结构化知识管理与推理引擎（免费版），支持知识捕获、关联推理、主动浮现与 多源知识库构建。采用图结构存储知识实体与关系。核心能力："
 license: "MIT"
 description: |-
   结构化知识管理与推理引擎（免费版），支持知识捕获、关联推理、主动浮现与
@@ -15,11 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 知识管理引擎(免费版)
@@ -109,6 +111,14 @@ category: "Automation"
 **输入**: 用户提供知识库生命周期管理所需的指令和必要参数.
 **处理**: 解析知识库生命周期管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

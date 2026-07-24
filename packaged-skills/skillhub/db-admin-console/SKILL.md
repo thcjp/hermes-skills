@@ -3,7 +3,7 @@ slug: "db-admin-console"
 name: "db-admin-console"
 version: 1.0.1
 displayName: "数据库管理台(专业版)"
-summary: "全功能数据库管理平台,支持大规模批量操作、分区表、性能基线、定时备份与多实例管理。"
+summary: "全功能数据库管理平台,支持大规模批量操作、分区表、性能基线、定时备份与多实例管理。。数据库管理台专业版面向专业 DBA、后端架构师与运维团队,提供完整的数据库设计、批量操作、性能优化与运维自"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -21,16 +21,15 @@ tags:
   - 自动化运维
   - 集成工具
   - 需求设计
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 数据库管理台(专业版)
@@ -157,6 +156,14 @@ CREATE TABLE events_2024_02 PARTITION OF events
 **处理**: 解析10 安全与审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回10 安全与审计的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 3.1 按角色场景矩阵

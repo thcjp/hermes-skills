@@ -3,25 +3,23 @@ slug: performance-optimizer-pro
 name: performance-optimizer-pro
 version: 1.0.1
 displayName: 性能优化专家
-summary: 测量优先不盲目优化,Core Web Vitals目标驱动的前端性能提升方案
+summary: "测量优先不盲目优化,Core Web Vitals目标驱动的前端性能提升方案。性能优化专家坚持测量优先原则,核心功能包括Core Web Vitals目标设定与基线采集(LCP/CLS/IN"
 license: Proprietary
 description: 性能优化专家坚持测量优先原则,核心功能包括Core Web Vitals目标设定与基线采集(LCP/CLS/INP/FCP/TTFB)、性能分析工作流(Profiling/瓶颈定位/优化实施/效果验证)、性能反模式检测、持续监控与性能预算。适用于网站性能审计、瓶颈定位、优化实施、性能回归分析、持续监控场景。触发关键词:性能优化、性能调优、Core
   Web Vitals、LCP、CLS、INP、性能分析、性能瓶颈、前端性能、加载速度、渲染性能。
 tags:
-- 性能优化
-- Core Web Vitals
-- 前端性能
-- 性能调优
-- 用户体验
+  - 性能优化
+  - Core Web Vitals
+  - 前端性能
+  - 性能调优
+  - 用户体验
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
 category: "Automation"
 ---
 # 性能优化专家
@@ -37,6 +35,14 @@ category: "Automation"
 3. **优化实施**:加载优化(图片WebP/AVIF/懒加载/响应式、代码分割、资源预加载、CDN、HTTP/2/3),渲染优化(虚拟列表、CSS containment、will-change、requestAnimationFrame、防抖节流),缓存策略(HTTP缓存/Service Worker/内存缓存)。
 4. **性能反模式检测**:检测巨型JS包、阻塞渲染、未优化图片、字体闪烁(FOIT/FOUT)、布局抖动、长任务、过度渲染、内存泄漏8类反模式,给出症状与解决方案。
 5. **持续监控**:RUM部署采集真实用户性能数据,性能预算设定阈值超限告警,CI集成PR自动跑Lighthouse防止回归,定期审计(月/季度)。
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 
@@ -510,6 +516,14 @@ function VirtualTable({ data }) {
 # ...
 ---
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 ## 瓶颈2: 内存泄漏(10分钟堆内存15MB→120MB)
 # ...
 ### 症状(补充)

@@ -3,7 +3,7 @@ slug: ai-news-tool-free
 name: ai-news-tool-free
 version: 1.0.0
 displayName: AI新闻工具-免费版
-summary: 每日新闻获取工具,支持按日期查询、热点排行与详情阅读,适合个人用户
+summary: "每日新闻获取工具,支持按日期查询、热点排行与详情阅读,适合个人用户。每日新闻获取工具,通过 API 获取每日新闻摘要与详情,支持按日期查询、"
 license: Proprietary
 edition: free
 description: '每日新闻获取工具,通过 API 获取每日新闻摘要与详情,支持按日期查询、
@@ -32,18 +32,18 @@ description: '每日新闻获取工具,通过 API 获取每日新闻摘要与详
   差异化:免费版提供核心新闻获取与浏览能力,适合个人用户日常使用.
   适用关键词: 新闻, 每日新闻, 日报, 热点新闻, 新闻摘要, 新闻详情'
 tags:
-- 研究工具
-- 新闻资讯
-- 信息收集
+  - 研究工具
+  - 新闻资讯
+  - 信息收集
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # AI新闻工具(免费版)

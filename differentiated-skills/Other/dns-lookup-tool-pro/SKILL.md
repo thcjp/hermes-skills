@@ -3,7 +3,7 @@ slug: dns-lookup-tool-pro
 name: dns-lookup-tool-pro
 version: 1.0.0
 displayName: DNS查询专业版
-summary: 企业级DNS诊断引擎，支持批量查询、DNSSEC验证、JSON输出、监控告警与历史追踪.
+summary: "企业级DNS诊断引擎，支持批量查询、DNSSEC验证、JSON输出、监控告警与历史追踪.。DNS查询专业版是面向运维团队与SRE的企业级DNS诊断与管理Skill，在免费版基础上扩展了批量查"
 license: Proprietary
 edition: pro
 description: 'DNS查询专业版是面向运维团队与SRE的企业级DNS诊断与管理Skill，在免费版基础上扩展了批量查询、结构化输出、DNSSEC验证、解析历史追踪、延迟监控与告警能力。核心能力：
@@ -18,21 +18,20 @@ description: 'DNS查询专业版是面向运维团队与SRE的企业级DNS诊断
 
   - 解析历史记录与变更追踪...'
 tags:
-- DNS查询
-- 企业运维
-- 监控告警
-- DNSSEC
-- 批量诊断
+  - DNS查询
+  - 企业运维
+  - 监控告警
+  - DNSSEC
+  - 批量诊断
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # DNS查询专业版（DNS Lookup Tool Pro）

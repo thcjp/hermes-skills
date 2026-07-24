@@ -3,24 +3,22 @@ slug: cron-master-pro
 name: cron-master-pro
 version: 1.0.1
 displayName: 定时大师
-summary: 平台级定时系统精通指南，heartbeat 与 cron 决策矩阵、推送策略、自唤醒规则全覆盖.
+summary: "平台级定时系统精通指南，heartbeat 与 cron 决策矩阵、推送策略、自唤醒规则全覆盖.。定时大师是平台级定时系统的深度使用指南，解决"何时用心跳、何时用 cron""推送还是静默""
 license: Proprietary
 description: 定时大师是平台级定时系统的深度使用指南，解决"何时用心跳、何时用 cron""推送还是静默""怎么跨回合等待"等高阶决策问题。它提供 heartbeat
   与 cron 的决策矩阵、payload 类型选择（agentTurn 推送 vs systemEvent 静默）、严格指令模板、自唤醒规则、时区锁定规范与历史模式迁移指南
 tags:
-- 自动化
-- 定时调度
-- 平台精通
+  - 自动化
+  - 定时调度
+  - 平台精通
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 定时大师
@@ -392,6 +390,14 @@ A：`"now"`（立即唤醒）最常用。其他值取决于网关版本，未明
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景(补充)
 

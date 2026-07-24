@@ -3,7 +3,7 @@ slug: kubernetes-toolkit-free
 name: kubernetes-toolkit-free
 version: 1.0.1
 displayName: K8s集群管理入门
-summary: Kubernetes集群基础管理工具，支持多Agent协作与常用资源操作.
+summary: "Kubernetes集群基础管理工具，支持多Agent协作与常用资源操作.。面向个人开发者与小团队的K8s集群管理工具。支持多Agent协作模式，"
 license: Proprietary
 edition: free
 description: '面向个人开发者与小团队的K8s集群管理工具。支持多Agent协作模式，
@@ -12,18 +12,17 @@ description: '面向个人开发者与小团队的K8s集群管理工具。支持
 
   管理功能。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-- Operations
-- Kubernetes
-- 集群管理
+  - Operations
+  - Kubernetes
+  - 集群管理
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # K8s集群管理入门（免费版）

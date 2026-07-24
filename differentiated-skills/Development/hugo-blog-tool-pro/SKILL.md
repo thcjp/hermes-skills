@@ -3,7 +3,7 @@ slug: "hugo-blog-tool-pro"
 name: "hugo-blog-tool-pro"
 version: "1.0.0"
 displayName: "Hugo博客发布专业版"
-summary: "企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。"
+summary: "企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。。面向专业博主的 Hugo 博客管理工具，提供批量发布与站点级管理能力。核心能力: - 批量文章发"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,15 +28,15 @@ tags:
   - Hugo
   - 内容运营
   - SEO
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 本工具面向专业博主与内容团队，提供 Hugo 博客的站点级管理与自动化运营方案。在免费版单篇文章发布能力之上，专业版新增批量发布与定时调度、多语言站点管理、SEO 优化（结构化数据、站点地图）、CI/CD 自动化部署、文章系列管理与交叉引用、图片资源自动优化等能力。通过工具链集成与流程自动化，帮助团队高效运营专业级博客站点.

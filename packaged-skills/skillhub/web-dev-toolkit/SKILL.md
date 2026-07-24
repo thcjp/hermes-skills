@@ -3,7 +3,7 @@ slug: "web-dev-toolkit"
 name: "web-dev-toolkit"
 version: 1.0.1
 displayName: "Web开发工具集(专业版)"
-summary: "面向团队的企业级Web开发平台,含性能工程、SEO深度、WCAG审查、企业部署与监控。"
+summary: "面向团队的企业级Web开发平台,含性能工程、SEO深度、WCAG审查、企业部署与监控。。Web开发工具集专业版为团队与企业提供端到端Web开发工程能力,涵盖性能工程化、SEO深度优化、WCA"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -22,16 +22,15 @@ tags:
   - SEO
   - 监控告警
   - CI/CD
+  - 前端
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
 category: "Development"
 ---
 # Web开发工具集(专业版)
@@ -77,6 +76,14 @@ category: "Development"
 **输出**: 返回SEO 深度优化的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`SEO 深度优化`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1:性能工程化(性能预算 + Lighthouse CI)

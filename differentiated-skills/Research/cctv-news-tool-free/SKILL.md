@@ -3,25 +3,25 @@ slug: cctv-news-tool-free
 name: cctv-news-tool-free
 version: 1.0.0
 displayName: 央视新闻抓取(免费版)
-summary: 央视新闻联播抓取免费版，支持按日期获取新闻标题与摘要，生成基础简报.
+summary: "央视新闻联播抓取免费版，支持按日期获取新闻标题与摘要，生成基础简报.。央视新闻抓取助手免费版是面向个人用户的轻量新闻联播内容抓取工具。聚焦"指定日期-抓取标题-生成简报"三步流程，快速获取新"
 license: Proprietary
 edition: free
 description: 央视新闻抓取助手免费版是面向个人用户的轻量新闻联播内容抓取工具。聚焦"指定日期-抓取标题-生成简报"三步流程，快速获取新闻联播要点。Use
   when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
-- 央视新闻
-- 新闻联播
-- 日期查询
-- 简报生成
+  - 央视新闻
+  - 新闻联播
+  - 日期查询
+  - 简报生成
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 央视新闻抓取助手（免费版）
@@ -483,6 +483,13 @@ def fetch_with_cache(date_input, cache_dir="./cache"):
 - **说明**: 通过自然语言指令驱动Agent执行新闻抓取与简报生成任务
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 已知限制
 本免费体验版限制以下高级功能（需升级至专业版解锁）：

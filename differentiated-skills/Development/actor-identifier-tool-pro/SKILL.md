@@ -3,7 +3,7 @@ slug: "actor-identifier-tool-pro"
 name: "actor-identifier-tool-pro"
 version: "1.0.0"
 displayName: "仓库协作分析(专业版)"
-summary: "面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。"
+summary: "面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。。仓库协作分析工具专业版为团队与企业提供端到端Git仓库协作分析能力,涵盖多仓库批量分析、自定义指标、CI"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,15 +29,15 @@ tags:
   - CI/CD
   - 研发效能
   - 隐私保护
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 仓库协作分析工具(专业版)

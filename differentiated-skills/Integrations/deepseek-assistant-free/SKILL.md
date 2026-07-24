@@ -3,25 +3,24 @@ slug: deepseek-assistant-free
 name: deepseek-assistant-free
 version: 1.0.1
 displayName: DeepSeek助手(免费版)
-summary: 基于DeepSeek API的中文对话助手，支持通用对话、代码生成与基础推理能力.
+summary: "基于DeepSeek API的中文对话助手，支持通用对话、代码生成与基础推理能力.。DeepSeek 助手免费版是一个基于 DeepSeek 官方 API 的中文对话辅助工具，帮助开发者以极"
 license: Proprietary
 edition: free
 description: DeepSeek 助手免费版是一个基于 DeepSeek 官方 API 的中文对话辅助工具，帮助开发者以极低成本接入大模型对话、代码生成与基础推理能力。核心能力：提供三种模型选择指引（通用对话、代码生成、深度推理）、单轮与短多轮对话模板、基础错误处理与重试策略、Token
   用量预估参考。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- AI对话
-- 集成工具
-- API接入
-- 免费版
+  - AI对话
+  - 集成工具
+  - API接入
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # DeepSeek 助手（免费版）

@@ -3,7 +3,7 @@ slug: "email-gmail-outlook"
 name: "email-gmail-outlook"
 version: 1.0.8
 displayName: "Email Gmail Outlook"
-summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件"
+summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件。基于 porteden CLI(`porteden email` / `porteden ma"
 license: "Proprietary"
 description: |-
   基于 porteden CLI(`porteden email` / `porteden mail`)安全读写 Gmail、Outlook、Exchange 邮箱,
@@ -14,16 +14,15 @@ tags:
   - 通用办公
   - Email
   - Productivity
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
 category: "Communication"
 ---
 # Email Gmail Outlook
@@ -108,6 +107,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回邮件列表与筛选的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`邮件列表与筛选`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

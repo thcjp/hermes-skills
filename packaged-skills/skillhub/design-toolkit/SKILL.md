@@ -3,7 +3,7 @@ slug: "design-toolkit"
 name: "design-toolkit"
 version: 1.0.1
 displayName: "设计偏好工具箱-专业版"
-summary: "企业级视觉偏好管理系统，支持多媒介、品牌系统、团队协作与批量设计生成。"
+summary: "企业级视觉偏好管理系统，支持多媒介、品牌系统、团队协作与批量设计生成。。设计偏好工具箱专业版，面向团队与企业的视觉偏好管理平台。核心能力： - 覆盖 UI、图形、视频、印刷、3D 五大媒介的"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,16 +27,15 @@ tags:
   - Design
   - Enterprise
   - BrandSystem
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # 设计偏好工具箱-专业版
@@ -103,6 +102,14 @@ category: "Creative"
 **输出**: 返回能力维度的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`能力维度`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业设计团队统一视觉语言

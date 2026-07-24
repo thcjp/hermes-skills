@@ -3,7 +3,7 @@ slug: "dlazy-audio-generate"
 name: "dlazy-audio-generate"
 version: 1.3.4
 displayName: "Dlazy Audio音频生成"
-summary: "通过dlazy CLI调用15+音频模型,涵盖TTS/音乐/音效/语音克隆,支持管道串联"
+summary: "通过dlazy CLI调用15+音频模型,涵盖TTS/音乐/音效/语音克隆,支持管道串联。dlazy 音频生成客户端。通过 dlazy CLI 调用 15+ 托管音频模型,涵盖文本转语音(T"
 license: "Proprietary"
 description: |-
   dlazy 音频生成客户端。通过 dlazy CLI 调用 15+ 托管音频模型,涵盖文本转语音(TTS)、音乐生成、音效生成、
@@ -13,16 +13,15 @@ description: |-
   通过管道引用(@N、@*、@stdin)串联多步骤工作流,无需手动复制 URL。适用于配音、有声书、播客、
 tags:
   - Creative
+  - 音频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "音频处理,媒体,创意"
 category: "Creative"
 ---
 # Dlazy Audio Generate
@@ -112,6 +111,14 @@ export API_KEY="your_api_key_here"
 
 **输入**: 用户提供管道串联相关的配置参数、输入数据和处理选项.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 认证
 
 所有请求需 dLazy API Key。推荐设备码流程:

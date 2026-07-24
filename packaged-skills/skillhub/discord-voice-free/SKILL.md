@@ -3,7 +3,7 @@ slug: "discord-voice-free"
 name: "discord-voice-free"
 version: 1.0.1
 displayName: "Discord语音免费"
-summary: "Discord语音助手免费版,提供基础加入/离开/状态查询与本地Whisper转写"
+summary: "Discord语音助手免费版,提供基础加入/离开/状态查询与本地Whisper转写。Discord 语音对话助手(免费版),提供基础的语音频道加入、离开、状态查询与本地 Whisper 离线"
 license: "MIT"
 description: |-
   Discord 语音对话助手(免费版),提供基础的语音频道加入、离开、状态查询与本地
@@ -24,12 +24,14 @@ description: |-
 tags:
   - Communication
   - 语音对话
+  - Discord
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Discord 语音助手 (免费版)
@@ -70,6 +72,14 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 **输出**: 返回仅支持默认配置的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`仅支持默认配置`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

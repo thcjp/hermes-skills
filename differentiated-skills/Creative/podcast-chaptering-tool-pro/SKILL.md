@@ -3,7 +3,7 @@ slug: "podcast-chaptering-tool-pro"
 name: "podcast-chaptering-tool-pro"
 version: "1.0.0"
 displayName: "播客章节工具专业版"
-summary: "企业级播客章节工具,支持批量处理、社媒切片文案、多格式输出与API集成,适配生产流水线。"
+summary: "企业级播客章节工具,支持批量处理、社媒切片文案、多格式输出与API集成,适配生产流水线。。面向团队与企业用户的播客章节标记工具(专业版)。核心能力: - 涵盖免费版全部能力(章节标记、高光片"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,15 +28,13 @@ tags:
   - 批量处理
   - 社媒切片
   - AI生成
+  - 音频
+  - 媒体
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 播客章节工具 - 专业版

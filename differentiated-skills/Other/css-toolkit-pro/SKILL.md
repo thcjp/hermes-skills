@@ -3,27 +3,26 @@ slug: css-toolkit-pro
 name: css-toolkit-pro
 version: 1.0.0
 displayName: CSS工具箱(专业版)
-summary: 全功能 CSS 工程手册，覆盖性能优化、无障碍、设计系统与跨浏览器兼容.
+summary: "全功能 CSS 工程手册，覆盖性能优化、无障碍、设计系统与跨浏览器兼容.。CSS 工具箱专业版是一份面向前端工程团队的全功能 CSS 知识体系，在免费版陷阱速查基础上扩展性能优化、无障碍设计"
 license: Proprietary
 edition: pro
 description: CSS 工具箱专业版是一份面向前端工程团队的全功能 CSS 知识体系，在免费版陷阱速查基础上扩展性能优化、无障碍设计、设计系统架构、滚动行为、跨浏览器兼容矩阵与降级方案。
   when 、品牌视觉时使用.
 tags:
-- 前端开发
-- CSS
-- 性能优化
-- 设计系统
-- 无障碍
+  - 前端开发
+  - CSS
+  - 性能优化
+  - 设计系统
+  - 无障碍
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # CSS 工具箱（专业版）

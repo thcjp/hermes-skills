@@ -3,7 +3,7 @@ slug: "rss-reader-ai"
 name: "rss-reader-ai"
 version: 1.0.1
 displayName: "RSS智能阅读器专业版"
-summary: "企业级RSS聚合平台，支持多源批量抓取、AI深度摘要、多渠道推送、定时调度与数据分析。"
+summary: "企业级RSS聚合平台，支持多源批量抓取、AI深度摘要、多渠道推送、定时调度与数据分析。。RSS智能阅读器（专业版）—— 面向团队和企业的全功能信息聚合平台。核心能力: - 无限订阅源批量抓取"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,16 +28,13 @@ tags:
   - 信息聚合
   - RSS
   - 数据分析
+  - 订阅
+  - 信息
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "RSS,订阅,信息"
 category: "Knowledge"
 ---
 # RSS智能阅读器专业版
@@ -86,6 +83,14 @@ category: "Knowledge"
 **输出**: 返回团队订阅共享的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`团队订阅共享`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业竞品情报监控

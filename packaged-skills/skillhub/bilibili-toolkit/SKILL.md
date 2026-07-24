@@ -3,7 +3,7 @@ slug: "bilibili-toolkit"
 name: "bilibili-toolkit"
 version: 1.0.1
 displayName: "B站工具箱专业版"
-summary: "企业级B站运营工具，支持高清下载、视频发布、批量操作、数据追踪与凭证安全管理。"
+summary: "企业级B站运营工具，支持高清下载、视频发布、批量操作、数据追踪与凭证安全管理。。B站工具箱专业版 —— 面向专业UP主与企业运营的全功能B站工具。核心能力: - 高清视频下载：支持1080p"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -19,16 +19,14 @@ tags:
   - 企业工具
   - 数据追踪
   - 批量处理
+  - 视频
+  - 媒体
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "B站,视频,媒体"
 category: "Creative"
 ---
 # B站工具箱专业版
@@ -192,6 +190,14 @@ app.auth.clear_persisted()  # 清除持久化文件
 - 关键参数: `凭证安全管理` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：UP主内容发布管理

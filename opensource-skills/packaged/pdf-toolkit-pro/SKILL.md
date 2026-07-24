@@ -3,24 +3,23 @@ slug: pdf-workflow-suite
 name: pdf-toolkit-pro
 version: 1.1.0
 displayName: PDF工具箱Pro
-summary: PDF全流程处理:提取合并拆分填表生成,文档数字化一站搞定
+summary: "PDF全流程处理:提取合并拆分填表生成,文档数字化一站搞定。PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印"
 license: Apache-2.0
 description: PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印签名、以及从HTML/Markdown/代码生成PDF。适用于文档数字化、合同处理、报表归档、表单自动化、批量PDF处理场景。触发关键词:PDF、PDF处理、文本提取、表格提取、PDF合并、PDF拆分、填表、PDF注释、文档数字化、PDF生成。
 tags:
-- PDF处理
-- 文档数字化
-- 文本提取
-- 表单填写
-- 文档生成
+  - PDF处理
+  - 文档数字化
+  - 文本提取
+  - 表单填写
+  - 文档生成
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-suggested_price: '19.9'
-pricing_tier: L2
+  - read
+  - exec
+  - write
 pricing_rationale: 文件处理类, large市场, enterprise复杂度, daily频次, L2层 → 高频通用工具(平台类多功能)
-pricing_model: monthly
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # PDF工具箱Pro
@@ -34,6 +33,14 @@ category: "Creative"
 3. **合并拆分与页面操作**:多PDF按顺序合并(添加分隔页/目录/统一页面大小),按页码范围/书签/章节拆分,每页拆为单独PDF,删除/重排/旋转(90/180/270)/提取指定页。
 4. **表单处理**:识别表单字段(文本框/复选框/单选/下拉/签名域),从JSON/Excel读取数据映射填充,批量填充多个表单,填充后扁平化锁定不可编辑。
 5. **注释标记与PDF生成**:高亮(多色)/批注/下划线/删除线/形状标注/手写签名嵌入/水印(文字图片),从HTML/CSS/Markdown生成PDF(含目录页码页眉页脚),程序化生成(文本/图片/表格/图形)。
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

@@ -3,7 +3,7 @@ slug: "ui-design-toolkit"
 name: "ui-design-toolkit"
 version: 1.0.1
 displayName: "UI设计工具包专业版"
-summary: "企业级UI设计工具包,支持设计系统、设计令牌、可访问性与组件库,适配团队协作与大型项目。"
+summary: "企业级UI设计工具包,支持设计系统、设计令牌、可访问性与组件库,适配团队协作与大型项目。。面向团队与企业用户的 UI 设计工具包(专业版)。核心能力: - 涵盖免费版全部能力(视觉层次、排版"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,16 +28,15 @@ tags:
   - 设计系统
   - 可访问性
   - 组件库
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # UI设计工具包专业版
@@ -91,6 +90,14 @@ category: "Creative"
 **输出**: 返回排版规范的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`排版规范`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:设计系统构建

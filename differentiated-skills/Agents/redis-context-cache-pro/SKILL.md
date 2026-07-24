@@ -14,22 +14,23 @@ description: 'Redis上下文缓存（专业版）在免费版基础上解锁Redi
   差异化：基于开源Redis实践深度改造，完全中文化，新增集群/性能/监控/Redlock等高级主题，多角色场景指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：Redis集群、性能调优、监控指标、Redlock、令牌桶、漏桶、Pipeline、连接池、慢查询、命中率'
 tags:
-- Redis
-- 集群方案
-- 性能调优
-- 监控告警
-- 分布式锁
-- 限流算法
+  - Redis
+  - 集群方案
+  - 性能调优
+  - 监控告警
+  - 分布式锁
+  - 限流算法
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # Redis上下文缓存（专业版）

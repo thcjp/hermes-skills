@@ -3,7 +3,7 @@ slug: "daily-report-writer"
 name: "daily-report-writer"
 version: 1.0.1
 displayName: "Daily Report Writer"
-summary: "根据输入生成日报 Markdown 草稿并写入 reports 目录"
+summary: "根据输入生成日报 Markdown 草稿并写入 reports 目录。根据输入生成日报 Markdown 草稿并写入 reports 目录 核心能力: - 商业工具领域的专业化AI辅助工具"
 license: "Proprietary"
 description: |-
   根据输入生成日报 Markdown 草稿并写入 reports 目录
@@ -25,16 +25,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Daily Report Writer
@@ -51,6 +50,14 @@ category: "Automation"
 | 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

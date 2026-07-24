@@ -3,7 +3,7 @@ slug: "video-editing-paid"
 name: "video-editing-paid"
 version: 1.0.1
 displayName: "视频剪辑变现专业版"
-summary: "多渠道矩阵+团队SOP+数据看板+90日全流程+合规体系,面向工作室的专业变现运营引擎"
+summary: "多渠道矩阵+团队SOP+数据看板+90日全流程+合规体系,面向工作室的专业变现运营引擎。面向视频剪辑工作室和团队的专业级变现运营引擎,提供多渠道矩阵策略、 团队协作SOP、数据追踪看板、90"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -32,16 +32,15 @@ tags:
   - 工作室运营
   - 团队管理
   - 数据分析
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 category: "Creative"
 ---
 # 视频剪辑变现专业版
@@ -167,6 +166,14 @@ category: "Creative"
 - 关键参数: `财务模型与盈利分析` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:工作室从0到1启动

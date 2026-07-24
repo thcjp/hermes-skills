@@ -14,15 +14,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 生活服务
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 加密协议博弈论分析
@@ -130,6 +129,14 @@ category: "Automation"
 - **Cooperative Game Theory**：可形成binding coalitions的博弈；分析MEV extraction coalitions、validator cartels、governance blocs
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **确定分析目标**：明确要分析的协议或机制（DeFi协议、governance提案、tokenomics设计等）

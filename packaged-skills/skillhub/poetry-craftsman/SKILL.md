@@ -3,7 +3,7 @@ slug: poetry-craftsman
 name: poetry-craftsman
 version: 1.0.1
 displayName: "诗词匠心"
-summary: "一人做古诗词内容厂牌,6种融合模式+平仄校验+意境评分,图文短视频双输出"
+summary: "一人做古诗词内容厂牌,6种融合模式+平仄校验+意境评分,图文短视频双输出。诗词匠心是一款古诗词融合故事编织工具,打造古诗词内容厂牌. 支持6种融合模式、平仄韵律校验、意境评分,图文与短视频双"
 license: Proprietary
 description: |-
   诗词匠心是一款古诗词融合故事编织工具,打造古诗词内容厂牌.
@@ -13,21 +13,19 @@ description: |-
   - 平仄韵律自动校验
   - 意境融合度评分
   - 图文+短视频双输出
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 古诗词
   - 内容创作
   - 短视频
   - 文化IP
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 诗词匠心 Poetry Craftsman v1.1.0
@@ -52,6 +50,14 @@ category: "Automation"
 4. **图文+短视频双输出**: article图文模式输出融合段落,short_video短视频脚本模式输出分镜(画面+台词+时长)
 5. **诗词数据库查询与历史人物档案**: 按人物名查询相关诗词与背景资料,不可用时降级为纯LLM创作
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

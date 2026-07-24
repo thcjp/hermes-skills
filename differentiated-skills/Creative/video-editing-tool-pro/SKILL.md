@@ -3,7 +3,7 @@ slug: "video-editing-tool-pro"
 name: "video-editing-tool-pro"
 version: "1.0.0"
 displayName: "视频剪辑变现专业版"
-summary: "多渠道矩阵+团队SOP+数据看板+90日全流程+合规体系,面向工作室的专业变现运营引擎"
+summary: "多渠道矩阵+团队SOP+数据看板+90日全流程+合规体系,面向工作室的专业变现运营引擎。面向视频剪辑工作室和团队的专业级变现运营引擎,提供多渠道矩阵策略、 团队协作SOP、数据追踪看板、90"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -32,15 +32,14 @@ tags:
   - 工作室运营
   - 团队管理
   - 数据分析
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 视频剪辑变现工具专业版是一款面向视频剪辑工作室和团队的专业级变现运营引擎。在免费版个人创作者路径之上,扩展至多渠道矩阵策略、团队协作SOP、CRM数据看板、90日全流程执行计划和完整合规体系,帮助工作室实现规模化变现和标准化运营.

@@ -3,23 +3,22 @@ slug: "clawprint"
 name: "clawprint"
 version: 3.0.2
 displayName: "Skill"
-summary: "Agent发现信任与交换,注册ClawPrint被其他Agent找到并建立信誉"
+summary: "Agent发现信任与交换,注册ClawPrint被其他Agent找到并建立信誉。Agent discovery, trust, and exchange。Register on ClawPr"
 license: "Proprietary"
 description: |-
   Agent discovery, trust, and exchange。Register on ClawPrint to be found
   by other agents, build re。
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Skill
@@ -41,6 +40,14 @@ category: "Automation"
 - Register on ClawPrint to be found
   by other agents, build re
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -3,7 +3,7 @@ slug: "upstage-document-parse"
 name: "upstage-document-parse"
 version: 1.0.6
 displayName: "Document Parse"
-summary: "将 PDF、图片、Office 文档解析为带版面感知的 Markdown/HTML，含表格和坐标。"
+summary: "将 PDF、图片、Office 文档解析为带版面感知的 Markdown/HTML，含表格和坐标。。upstage-document-parse 是一个文档解析技能，将 PDF、图片、DOC"
 license: "Proprietary"
 description: |-
   upstage-document-parse 是一个文档解析技能，将 PDF、图片、DOCX、PPTX、XLSX、HWP 等格式
@@ -13,15 +13,12 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 文档处理
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "文档处理,工具,效率"
+  - 工具
+  - 效率
 category: "Knowledge"
 ---
 # Document Parse
@@ -107,6 +104,14 @@ export API_KEY="your_api_key_here"
 （`md` 或 `html`）。例如 `/tmp/report.parsed.md`。使用 `tempfile.gettempdir()` 实现跨平台路径.
 如果用户指定输出路径，则使用用户路径。始终在响应中打印解析后的绝对路径，方便用户定位文件.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认文档格式在支持列表中（JPEG/PNG/BMP/PDF/TIFF/HEIC/DOCX/PPTX/XLSX/HWP/HWPX）

@@ -3,7 +3,7 @@ slug: "google-workspace-toolkit"
 name: "google-workspace-toolkit"
 version: 1.0.1
 displayName: "谷歌办公工具接口专业版"
-summary: "全功能Google办公工具接口,49个工具覆盖十大服务,支持企业级批量操作与多租户管理。"
+summary: "全功能Google办公工具接口,49个工具覆盖十大服务,支持企业级批量操作与多租户管理。。谷歌办公工具接口专业版,通过工具协议统一调用 Google Workspace 全部十大服务共 49"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -21,16 +21,15 @@ tags:
   - 企业效率
   - 自动化
   - 数据处理
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 谷歌办公工具接口专业版
@@ -130,6 +129,14 @@ category: "Automation"
 **处理**: 解析十、Auth 认证管理(2个工具)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回十、Auth 认证管理(2个工具)的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:通过 Google Chat 向团队空间推送通知

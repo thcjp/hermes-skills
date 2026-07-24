@@ -3,23 +3,22 @@ slug: "video-translator"
 name: "video-translator"
 version: 1.0.6
 displayName: "Video Translator"
-summary: "实时视频翻译/配音,翻译用户视频并返回"
+summary: "实时视频翻译/配音,翻译用户视频并返回。Real time video translation / dubbing skill。Translate user-provided video ("
 license: "Proprietary"
 description: |-
   Real time video translation / dubbing skill。Translate user-provided
   video (file or URL) and retu。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - Creative
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 category: "Creative"
 ---
 # Video Translator
@@ -41,6 +40,14 @@ category: "Creative"
 - Translate user-provided
   video (file or URL) and retu
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

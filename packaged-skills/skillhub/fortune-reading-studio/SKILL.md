@@ -3,7 +3,7 @@ slug: fortune-reading-studio
 name: fortune-reading-studio
 version: "1.0.1"
 displayName: "赛博命理师"
-summary: "一人开命理工作室,8种命理体系排盘+AI深度解读,9.9到99元全价位变现"
+summary: "一人开命理工作室,8种命理体系排盘+AI深度解读,9.9到99元全价位变现。赛博命理师是一款面向命理咨询从业者的AI命理解读工具. 支持8种命理体系排盘、AI深度解读生成报告、安全交付与运势"
 license: Proprietary
 description: |-
   赛博命理师是一款面向命理咨询从业者的AI命理解读工具.
@@ -13,21 +13,19 @@ description: |-
   - AI深度解读生成报告
   - 敏感词审核与合规
   - 安全报告交付与运势内容引流
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 命理咨询
   - 内容变现
   - 副业工具
   - AI解读
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 赛博命理师 Cyber Fortune Teller
@@ -52,6 +50,14 @@ category: "Automation"
 4. **安全报告交付**:报告保存为文件→上传文件存储→生成安全分享链接(随机6位密码+3天有效期)→通过电商平台消息发送→事后验证发货结果,全链路闭环
 5. **运势内容引流**:生成50字运势摘要(含今日运势+幸运色/数字),发布到社交平台引流,格式"[星座/生肖]今日运势 | [50字摘要] | #运势 #今日运势"
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |

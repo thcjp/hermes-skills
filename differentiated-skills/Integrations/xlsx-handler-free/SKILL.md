@@ -3,24 +3,23 @@ slug: xlsx-handler-free
 name: xlsx-handler-free
 version: 1.0.1
 displayName: XLSX处理免费版
-summary: 安全读写 XLSX 工作簿，保留公式、日期、合并单元格与样式，适合单文件编辑与检查.
+summary: "安全读写 XLSX 工作簿，保留公式、日期、合并单元格与样式，适合单文件编辑与检查.。XLSX 处理免费版面向需要程序化读写 Excel 工作簿的开发者与运维人员，提供"按任务选工具"的工作"
 license: Proprietary
 edition: free
 description: XLSX 处理免费版面向需要程序化读写 Excel 工作簿的开发者与运维人员，提供"按任务选工具"的工作流——区分 pandas 与 openpyxl
   适用场景，避免公式丢失、日期损坏、合并单元格错乱等常见陷阱。所有操作在交付前进行校验，确保零公式错误。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 集成工具
-- 表格处理
-- 开发者工具
+  - 集成工具
+  - 表格处理
+  - 开发者工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # XLSX 处理（免费版）

@@ -3,7 +3,7 @@ slug: "alibaba-quark-scan"
 name: "alibaba-quark-scan"
 version: 1.0.19
 displayName: "文档扫描增强"
-summary: "文档高清扫描增强工具，支持画质优化、去手写、去水印、去阴影等13种场景"
+summary: "文档高清扫描增强工具，支持画质优化、去手写、去水印、去阴影等13种场景。文档高清扫描增强工具，通过扫描服务API对图片进行画质优化、瑕疵去除和视觉增强. 支持13种场景：考试增强、画质增强、"
 license: "Proprietary"
 description: |-
   文档高清扫描增强工具，通过扫描服务API对图片进行画质优化、瑕疵去除和视觉增强.
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 文档扫描增强工具
@@ -183,6 +181,14 @@ export API_KEY="your_api_key_here"
 - 示例指令："优化一下这张文档图片，让它看起来更专业"
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：输入处理

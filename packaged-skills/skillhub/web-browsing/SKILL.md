@@ -3,23 +3,23 @@ slug: "web-browsing"
 name: "web-browsing"
 version: 1.0.1
 displayName: "Web Browsing"
-summary: "浏览汇总网站/从URL提取内容/搜网"
+summary: "浏览汇总网站/从URL提取内容/搜网。Browse and summarize websites, extract content from URLs, search the web for"
 license: "Proprietary"
 description: |-
   Browse and summarize websites, extract content from URLs, search the
   web for information。Use whe。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Research
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
 category: "Development"
 ---
 # Web Browsing
@@ -40,6 +40,14 @@ category: "Development"
 - Browse and summarize websites, extract content from URLs, search the
   web for information
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -148,5 +156,12 @@ A:
 * Login-required pages won't work without credentials
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 **Ready to browse!** Just give me a URL or tell me what to search for. 🌐

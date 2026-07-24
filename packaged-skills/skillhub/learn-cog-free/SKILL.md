@@ -3,7 +3,7 @@ slug: "learn-cog-free"
 name: "learn-cog-free"
 version: 1.0.1
 displayName: "个性化学习助手免费版"
-summary: "免费版AI学习助手，支持概念解释、语言学习与学习指南生成。"
+summary: "免费版AI学习助手，支持概念解释、语言学习与学习指南生成。。个性化学习助手免费版，提供基础AI辅导功能. 支持概念解释、语言学习基础与学习指南生成. 适用于学生的日常学习与知识获取."
 license: "MIT"
 description: |-
   个性化学习助手免费版，提供基础AI辅导功能.
@@ -12,11 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 个性化学习助手（免费版）
@@ -87,6 +89,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回概念拆解的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`概念拆解`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

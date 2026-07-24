@@ -3,7 +3,7 @@ slug: "gog-free"
 name: "gog-free"
 version: "1.0.0"
 displayName: "Gog(免费)"
-summary: "Google Workspace命令行工具基础版,覆盖Gmail搜索与Sheets读写。"
+summary: "Google Workspace命令行工具基础版,覆盖Gmail搜索与Sheets读写。。Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets"
 license: "MIT"
 description: |-
   Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets 表格读写两类核心操作,
@@ -11,12 +11,15 @@ description: |-
   本免费版仅支持 Gmail search 与 Sheets get/append,Calendar/Drive/Contacts/Docs 等高级能力请升级付费版.
 tags:
   - 研发工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # gog-free
@@ -59,6 +62,14 @@ export API_KEY="your_api_key_here"
 - Sheets 读取:读取指定范围的数据,支持 JSON 输出
 - Sheets 追加:向指定范围追加行数据
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

@@ -16,15 +16,14 @@ tags:
   - 品牌标识
   - CI/CD
   - 设计管理
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,PRO版引入完整品牌系统、多品牌管理、批量资产生成、品牌一致性审计与CI/CD集成能力,满足企业级品牌建设的全面需求。

@@ -3,7 +3,7 @@ slug: "dns-networking-tool-pro"
 name: "dns-networking-tool-pro"
 version: "1.0.0"
 displayName: "DNS网络诊断专业版"
-summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。"
+summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。。面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力: -"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,15 +28,13 @@ tags:
   - 网络诊断
   - 运维监控
   - 企业级
+  - 网络
+  - DNS
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec"]
-tags: "网络,DNS,工具"
+homepage: ""
 category: "Operations"
 ---
 DNS网络诊断工具专业版为运维团队提供企业级网络诊断能力。在免费版基础诊断能力之上,专业版新增批量多目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知,满足企业级网络运维需求.

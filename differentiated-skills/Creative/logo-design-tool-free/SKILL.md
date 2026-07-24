@@ -3,27 +3,26 @@ slug: logo-design-tool-free
 name: logo-design-tool-free
 version: 1.0.0
 displayName: Logo设计工具免费版
-summary: 使用AI图像生成工具创建Logo,提供提示词框架、验证循环与导出建议,适合个人与小型项目.
+summary: "使用AI图像生成工具创建Logo,提供提示词框架、验证循环与导出建议,适合个人与小型项目.。Logo设计工具免费版帮助个人用户使用AI图像生成工具创建专业Logo。提供结构化的提示词框架、多"
 license: Proprietary
 edition: free
 description: 'Logo设计工具免费版帮助个人用户使用AI图像生成工具创建专业Logo。提供结构化的提示词框架、多模型对比、视觉验证循环与导出格式建议,
 
   让没有设计经验的用户也能产出可用的Logo'
 tags:
-- Logo设计
-- 品牌设计
-- AI生成
-- 图标
-- 视觉设计
+  - Logo设计
+  - 品牌设计
+  - AI生成
+  - 图标
+  - 视觉设计
+  - 设计
+  - UI/UX
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # Logo设计工具免费版

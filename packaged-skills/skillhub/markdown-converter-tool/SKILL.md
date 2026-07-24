@@ -3,7 +3,7 @@ slug: "markdown-converter-tool"
 name: "markdown-converter-tool"
 version: "1.0.0"
 displayName: "Markdown Converter"
-summary: "简洁Markdown转换助手(用Azure有隐私提示)"
+summary: "简洁Markdown转换助手(用Azure有隐私提示)。This is a straightforward Markdown conversion helper, with privacy"
 license: "Proprietary"
 description: |-
   This is a straightforward Markdown conversion helper, with privacy caveats
@@ -12,16 +12,15 @@ tags:
   - Creative
   - Knowledge
   - Integrations
+  - Markdown
+  - 文档
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
 category: "Development"
 ---
 # Markdown Converter
@@ -42,6 +41,14 @@ category: "Development"
 - This is a straightforward Markdown conversion helper, with privacy caveats
   if users choose Azure
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

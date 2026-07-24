@@ -3,7 +3,7 @@ slug: "code-runner"
 name: "code-runner"
 version: 1.0.1
 displayName: "代码执行工具专业版"
-summary: "企业级PTY代码执行,支持批量任务、并发执行、执行审计与CI/CD集成"
+summary: "企业级PTY代码执行,支持批量任务、并发执行、执行审计与CI/CD集成。面向团队与企业的高级代码执行工具,在免费版基础上扩展批量执行、并发管理、执行审计等能力。核心能力: - 批量任务执行与"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,16 +30,16 @@ tags:
   - 企业级
   - 批量处理
   - CI/CD集成
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # 代码执行工具专业版
@@ -178,6 +178,14 @@ custom_responses = {
 **处理**: 解析自定义应答规则的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回自定义应答规则的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一: 企业级批量代码处理

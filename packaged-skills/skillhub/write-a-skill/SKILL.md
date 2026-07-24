@@ -3,7 +3,7 @@ slug: "write-a-skill"
 name: "write-a-skill"
 version: 202.0.21
 displayName: "技能创建工具"
-summary: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分"
+summary: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分。AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件 拆分。技能描述不超过1024字符，SKILL.md"
 license: "Proprietary"
 description: |-
   AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件
@@ -13,15 +13,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 技能创建工具
@@ -153,6 +152,14 @@ tools:
 **输入**: 用户提供质量检查所需的指令和必要参数.
 **输出**: 返回质量检查的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

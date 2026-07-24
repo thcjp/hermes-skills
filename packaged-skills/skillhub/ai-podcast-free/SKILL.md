@@ -3,7 +3,7 @@ slug: "ai-podcast-free"
 name: "ai-podcast-free"
 version: 1.0.1
 displayName: "AI播客生成(免费版)"
-summary: "将文本内容转化为双主持人对话播客的基础工具"
+summary: "将文本内容转化为双主持人对话播客的基础工具。基于MagicPodcast API将纯文本内容转化为双主持人对话式播客. 支持多语言生成，返回可分享的播客链接。适用于个人用户快速 将文字内容转"
 license: "MIT"
 description: |-
   基于MagicPodcast API将纯文本内容转化为双主持人对话式播客.
@@ -11,12 +11,14 @@ description: |-
   将文字内容转为音频场景.
 tags:
   - Creative
+  - 播客
+  - 音频
+  - 媒体
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # AI播客生成(免费版) - 文本转对话式播客
@@ -60,6 +62,14 @@ export API_KEY="your_api_key_here"
 - 异步任务状态查询
 - 返回可分享的播客链接
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

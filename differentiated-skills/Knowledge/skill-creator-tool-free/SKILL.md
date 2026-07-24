@@ -3,7 +3,7 @@ slug: skill-creator-tool-free
 name: skill-creator-tool-free
 version: 1.0.0
 displayName: Skill创建工具（免费版）
-summary: 创建和管理AI Skill的专用工具，支持模板生成、结构验证与元数据管理.
+summary: "{description} - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
 description: 'Skill创建工具 - （免费版）
@@ -16,19 +16,18 @@ description: 'Skill创建工具 - （免费版）
 
   适用关键词: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator'
 tags:
-- Skill创建
-- 开发工具
-- 模板生成
-- 结构验证
+  - Skill创建
+  - 开发工具
+  - 模板生成
+  - 结构验证
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Skill创建工具（免费版）
@@ -146,7 +145,8 @@ pip install requests
 import os
 # ...
 def create_skill(name, description, triggers):
-    skill_md = f"""---
+    skill_md = f"""
+---
 slug: {name}
 name: {name}
 version: "1.0.0"
@@ -155,6 +155,14 @@ summary: {description}
 license: MIT
 ---
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 # {name}
 # ...
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.

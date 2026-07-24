@@ -3,7 +3,7 @@ slug: "bookmark-intelligence"
 name: "bookmark-intelligence"
 version: 1.0.1
 displayName: "书签智析专业版"
-summary: "自动监控X书签、抓取链接文章、AI提取关键概念与行动项,关联个人项目并推送高价值洞察。"
+summary: "自动监控X书签、抓取链接文章、AI提取关键概念与行动项,关联个人项目并推送高价值洞察。。X(Twitter)书签自动化分析与知识萃取专业版。持续监控你的 X 书签,抓取推文所链接文章的完整正"
 license: "Proprietary"
 description: |-
   X(Twitter)书签自动化分析与知识萃取专业版。持续监控你的 X 书签,抓取推文所链接文章的完整正文,
@@ -15,16 +15,14 @@ tags:
   - 信息检索
   - 知识管理
   - 自动化
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 书签智析专业版
@@ -118,6 +116,14 @@ pm2 logs bookmark-intelligence     # 查看分析日志
 每条分析结果以 JSON 落盘到 `life/resources/bookmarks/bookmark-<id>.json`,包含原推文(作者、正文、互动数据)、完整分析、实现建议、优先级与时间戳,可被后续检索与导出。- 验证返回数据的完整性和格式正确性
 - 参考`本地知识库沉淀`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

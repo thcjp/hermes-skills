@@ -9,19 +9,18 @@ edition: free
 description: 面向内容创作者与开发者的Markdown多格式导出工具。通过命令行将Markdown文本一键转换为DOCX、PDF、HTML、XLSX、CSV、JSON、XML等主流格式，免去手动排版与格式调整的繁琐工作，特别适合技术文档、报告、数据表导出场景。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 集成工具
-- 文档转换
-- Markdown
-- 命令行工具
+  - 集成工具
+  - 文档转换
+  - Markdown
+  - 命令行工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 文档导出工具（免费版）
@@ -205,6 +204,14 @@ markdown-exporter md_to_pdf input.md output.pdf --strip-wrapper
 # ...
 ---
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 ## 第二页
 # ...
 - 项目一

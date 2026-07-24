@@ -3,7 +3,7 @@ slug: diagram-tool-free
 name: diagram-tool-free
 version: 1.0.0
 displayName: 图表工具免费版
-summary: 通过自然语言生成Mermaid流程图、时序图、ER图，快速可视化系统结构与业务流程.
+summary: "通过自然语言生成Mermaid流程图、时序图、ER图，快速可视化系统结构与业务流程.。图表工具免费版是一款面向开发者与技术写作者的智能图表生成Skill，支持通过自然语言描述快速产出标准化M"
 license: Proprietary
 edition: free
 description: '图表工具免费版是一款面向开发者与技术写作者的智能图表生成Skill，支持通过自然语言描述快速产出标准化Mermaid图表。核心能力：
@@ -16,19 +16,18 @@ description: '图表工具免费版是一款面向开发者与技术写作者的
 
   - 提供迭代式细化能力...'
 tags:
-- 图表生成
-- 可视化
-- 文档辅助
-- Mermaid
+  - 图表生成
+  - 可视化
+  - 文档辅助
+  - Mermaid
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 图表工具免费版（Diagram Tool Free）

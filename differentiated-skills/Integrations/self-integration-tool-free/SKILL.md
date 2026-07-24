@@ -3,23 +3,22 @@ slug: self-integration-tool-free
 name: self-integration-tool-free
 version: 1.0.1
 displayName: 自集成工具
-summary: 通过统一网关连接任意外部应用并执行操作，适合个人开发者快速打通多平台.
+summary: "通过统一网关连接任意外部应用并执行操作，适合个人开发者快速打通多平台.。自集成工具（免费版）通过统一集成网关让Agent连接任意外部应用（Slack、HubSpot、Notion等）并执行操"
 license: Proprietary
 edition: free
 description: 自集成工具（免费版）通过统一集成网关让Agent连接任意外部应用（Slack、HubSpot、Notion等）并执行操作，无需为每个平台单独开发集成。核心能力：已有连接查询、连接器搜索、OAuth授权连接创建、动作搜索与执行、基础API参考。Use
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
-- 集成工具
-- 自动化
+  - 集成工具
+  - 自动化
+  - 工具
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 自集成工具（免费版）
@@ -63,6 +62,14 @@ category: "Automation"
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过统一网关连接、任意外部应用并执、适合个人开发者快、速打通多平台、自集成工具、通过统一集成网关、Agent、连接任意外部应用、Slack、HubSpot、Notion、并执行操作、无需为每个平台单、独开发集成、授权连接创建、动作搜索与执行、API、Use、when、接口对接、Webhook、系统连接时使用、不适用于逆向工程等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 ### 场景1：个人开发者打通Slack与HubSpot

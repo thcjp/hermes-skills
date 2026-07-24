@@ -3,23 +3,21 @@ slug: "rss-digest"
 name: "rss-digest"
 version: 0.2.2
 displayName: "Rss Digest"
-summary: "用feed CLI做RSS摘要,抓取/分诊/汇总高价值条目"
+summary: "用feed CLI做RSS摘要,抓取/分诊/汇总高价值条目。Agentic RSS digest using the feed CLI。Fetch, triage, and summariz"
 license: "Proprietary"
 description: |-
   Agentic RSS digest using the feed CLI。Fetch, triage, and summarize
   RSS feeds to surface high-sig。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Research
+  - RSS
+  - 订阅
+  - 信息
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "RSS,订阅,信息"
 category: "Knowledge"
 ---
 # Rss Digest
@@ -41,6 +39,14 @@ category: "Knowledge"
 - Fetch, triage, and summarize
   RSS feeds to surface high-sig
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

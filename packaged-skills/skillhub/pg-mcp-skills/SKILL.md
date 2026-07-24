@@ -3,7 +3,7 @@ slug: "pg-mcp-skills"
 name: "pg-mcp-skills"
 version: 1.0.1
 displayName: "PG-MCP助手(专业版)"
-summary: "企业级`PostgreSQL`数据库管理方案，支持自动化调优、迁移升级、多实例管理与高可用监控。"
+summary: "企业级`PostgreSQL`数据库管理方案，支持自动化调优、迁移升级、多实例管理与高可用监控。。PG-MCP助手专业版是一套面向中大型团队与企业级场景的 `PostgreSQL` 数据库管"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - MCP工具
   - 企业级
   - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # PG-MCP助手(专业版)
@@ -69,6 +68,14 @@ category: "Automation"
 **输入**: 用户提供能力六：慢查询自动归档与分析报告所需的指令和必要参数。- 验证返回数据的完整性和格式正确性
 - 参考`能力四：多实例统一管理`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：生产数据库性能调优

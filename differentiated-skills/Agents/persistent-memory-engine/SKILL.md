@@ -3,7 +3,7 @@ slug: "persistent-memory-engine"
 name: "persistent-memory-engine"
 version: "1.0.0"
 displayName: "持久记忆引擎"
-summary: "解决跨会话遗忘、检索不准、记忆膨胀冲突的无限分层持久记忆引擎"
+summary: "解决跨会话遗忘、检索不准、记忆膨胀冲突的无限分层持久记忆引擎。面向 AI Agent 的无限分层持久记忆系统，直击跨会话遗忘、检索不准、记忆膨胀、新旧冲突四大痛点。适用于长周期项目记忆、人脉"
 license: "Proprietary"
 description: |-
   面向 AI Agent 的无限分层持久记忆系统，直击跨会话遗忘、检索不准、记忆膨胀、新旧冲突四大痛点。适用于长周期项目记忆、人脉网络、决策归档、领域知识库等场景。核心能力含三层索引体系、混合检索、记忆生命周期管理、冲突检测与版本化。适用关键词：长期记忆、跨会话记忆、记忆管理、记忆检索、持久化存储、memory、persistent memory.
@@ -12,15 +12,16 @@ tags:
   - 持久化存储
   - 知识库
   - 上下文管理
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 持久记忆引擎（Persistent Memory Engine）
@@ -58,6 +59,14 @@ category: "Agents"
 **输出**: 返回冲突检测与版本化的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解决跨会话遗忘、检索不准、记忆膨胀冲突的无、限分层持久记忆引、Agent、的无限分层持久记、忆系统、直击跨会话遗忘、新旧冲突四大痛点、适用于长周期项目、人脉网络、决策归档、领域知识库等场景、核心能力含三层索、适用关键词、长期记忆、跨会话记忆、记忆管理、记忆检索、持久化存储、persistent等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景类型 | 输入 | 输出 | 是否适用 |
@@ -153,6 +162,14 @@ importance: 0.8
 related: []
 ---
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 ## 项目概要
 技术栈：React + TypeScript + Tailwind
 目标：构建客户管理系统

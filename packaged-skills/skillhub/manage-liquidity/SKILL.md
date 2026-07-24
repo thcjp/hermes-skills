@@ -3,23 +3,22 @@ slug: "manage-liquidity"
 name: "manage-liquidity"
 version: 0.1.1
 displayName: "Manage Liquidity"
-summary: "在Uniswap V2/V3/V4池加撤流动性并收手续费"
+summary: "在Uniswap V2/V3/V4池加撤流动性并收手续费。Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/"
 license: "Proprietary"
 description: |-
   Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4
   pools。Handles the full flow。
 tags:
   - Other
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # Manage Liquidity
@@ -45,6 +44,14 @@ This is the primary skill for all liquidity operations on Uniswap. It handles th
 
 Each action delegates to the `liquidity-manager` agent for execution, with optional `pool-researcher` delegation for intelligent pool selection. This skill extracts the user's intent, validates parameters, and orchestrates the right agent workflow.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

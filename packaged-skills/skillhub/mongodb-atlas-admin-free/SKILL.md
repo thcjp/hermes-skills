@@ -3,7 +3,7 @@ slug: "mongodb-atlas-admin-free"
 name: "mongodb-atlas-admin-free"
 version: "1.0.0"
 displayName: "文档数据库管理(免费版)"
-summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用(免费版)"
+summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用(免费版)。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时"
 license: "MIT"
 description: |-
   通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、
@@ -13,11 +13,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 数据存储
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 文档数据库云管理平台(免费版)
@@ -64,6 +67,14 @@ node （请参考skill目录中的脚本文件） --category "Clusters" --endpoi
 ```
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

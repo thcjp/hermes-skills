@@ -3,7 +3,7 @@ slug: "task-queue-manager"
 name: "task-queue-manager"
 version: 1.0.1
 displayName: "任务队列管理器(专业版)"
-summary: "全功能持久化任务队列，含分布式处理、优先级调度、数据库存储与监控告警，支持6种角色场景。"
+summary: "全功能持久化任务队列，含分布式处理、优先级调度、数据库存储与监控告警，支持6种角色场景。。任务队列管理器（专业版）是在免费版基础上的全功能升级，为AI Agent提供企业级的持久化任务队列管"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 优先级调度
   - 数据库持久化
   - 监控告警
+  - 任务管理
+  - 效率
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "任务管理,效率,工具"
 category: "Productivity"
 ---
 # 任务队列管理器(专业版)
@@ -186,6 +185,14 @@ queue = ProQueue(
 **输出**: 返回八、免费版全部功能的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`八、免费版全部功能`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：大规模数据ETL（数据工程师）

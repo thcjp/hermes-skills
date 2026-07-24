@@ -3,7 +3,7 @@ slug: "db"
 name: "db"
 version: 1.0.1
 displayName: "数据库设计与运维"
-summary: "识别并规避数据库连接、事务、Schema变更、备份恢复、复制、查询、数据完整性与扩展性陷阱"
+summary: "识别并规避数据库连接、事务、Schema变更、备份恢复、复制、查询、数据完整性与扩展性陷阱。数据库设计与运维——帮助设计和操作数据库时避免常见的扩展性、可靠性和数据完整性陷阱. 核心能力包括"
 license: "Proprietary"
 description: |-
   数据库设计与运维——帮助设计和操作数据库时避免常见的扩展性、可靠性和数据完整性陷阱.
@@ -20,16 +20,15 @@ tags:
   - 研发工具
   - database
   - operations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 数据库设计与运维
@@ -165,6 +164,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回连接池耗尽的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`连接池耗尽`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **场景识别**：判断当前属于连接、事务、Schema、备份、复制、查询、完整性还是扩展性问题

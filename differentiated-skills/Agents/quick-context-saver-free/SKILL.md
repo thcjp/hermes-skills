@@ -3,25 +3,24 @@ slug: quick-context-saver-free
 name: quick-context-saver-free
 version: 1.0.1
 displayName: Quick Context Saver
-summary: 零依赖本地记忆系统，无需API Key，TF-IDF智能搜索，100%本地存储隐私无忧.
+summary: "零依赖本地记忆系统，无需API Key，TF-IDF智能搜索，100%本地存储隐私无忧.。快速上下文记忆免费版解决隐私敏感用户"不想用云端记忆、不想配API Key、离线也能用"的核心痛点。"
 license: Proprietary
 edition: free
 description: 快速上下文记忆免费版解决隐私敏感用户"不想用云端记忆、不想配API Key、离线也能用"的核心痛点。零外部依赖、零API Key、零云服务，纯本地JSON存储配合TF-IDF智能搜索，实现Agent记忆的完全自主可控。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 本地记忆
-- 零依赖
-- 隐私保护
-- TF-IDF搜索
+  - 本地记忆
+  - 零依赖
+  - 隐私保护
+  - TF-IDF搜索
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 快速上下文记忆（免费版）
@@ -255,6 +254,14 @@ function searchMemories(query, limit = 5) {
 **输出**: 返回记忆存储格式的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零依赖本地记忆系、API、本地存储隐私无忧、快速上下文记忆免、费版解决隐私敏感、不想用云端记忆、不想配、离线也能用、的核心痛点、零外部依赖、零云服务、纯本地、存储配合、Agent、记忆的完全自主可、Use、when、模型调用、智能对话、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 使用场景
 

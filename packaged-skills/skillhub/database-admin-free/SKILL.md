@@ -3,7 +3,7 @@ slug: "database-admin-free"
 name: "database-admin-free"
 version: "1.0.0"
 displayName: "数据库管理(免费版)"
-summary: "基础表结构设计、数据插入与简单查询，支持常用数据类型与事务操作"
+summary: "基础表结构设计、数据插入与简单查询，支持常用数据类型与事务操作。数据库管理免费版，提供基础的数据库表结构与数据操作能力. 核心能力包括： - 基础表结构设计（主键、NOT NULL、DEFA"
 license: "MIT"
 description: |-
   数据库管理免费版，提供基础的数据库表结构与数据操作能力.
@@ -18,12 +18,15 @@ tags:
   - 信息检索
   - database
   - postgresql
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
+  - write
+  - glob
+homepage: ""
 category: "Research"
 ---
 # 数据库管理（免费版）
@@ -91,6 +94,14 @@ COMMIT;
 **输入**: 用户提供事务操作所需的指令和必要参数.
 **输出**: 返回事务的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 依赖说明
 
 ### 运行环境

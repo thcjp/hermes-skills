@@ -3,7 +3,7 @@ slug: "persistent-memory-engine-free"
 name: "persistent-memory-engine-free"
 version: "1.0.0"
 displayName: "持久记忆引擎"
-summary: "基础分层持久记忆系统，解决跨会话遗忘与记忆检索问题"
+summary: "基础分层持久记忆系统，解决跨会话遗忘与记忆检索问题。面向 AI Agent 的基础持久记忆系统，在内置记忆之上构建并行的结构化本地存储. 基础能力涵盖分层结构化存储、三层索引体系、混合检索策"
 license: "MIT"
 description: |-
   面向 AI Agent 的基础持久记忆系统，在内置记忆之上构建并行的结构化本地存储.
@@ -13,11 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 持久记忆引擎（基础版）
@@ -81,6 +83,14 @@ importance: 0.8
 - 写入条目文件后同步更新分类 INDEX.md
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：首次初始化

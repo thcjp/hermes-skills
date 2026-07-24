@@ -3,7 +3,7 @@ slug: "tarot-free"
 name: "tarot-free"
 version: 1.0.1
 displayName: "Tarot Free"
-summary: "基础版反思式塔罗抽取，支持单牌阵和基础语言校准，用于情感反思。"
+summary: "基础版反思式塔罗抽取，支持单牌阵和基础语言校准，用于情感反思。。tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子 而非预言"，采用 `pr"
 license: "MIT"
 description: |-
   tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子
@@ -13,11 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # Tarot Free
@@ -87,6 +89,14 @@ Reflection（5-8 行反思，温和语调）、Invitation question（1 行邀请
 **输出**: 返回基础语言校准的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`基础语言校准`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认使用者意图：情感反思或自我觉察需求

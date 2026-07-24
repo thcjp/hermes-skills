@@ -9,19 +9,18 @@ edition: free
 description: 办公任务自动化（免费版）为AI Agent提供日常办公文档的批量处理能力，覆盖Word文档生成、Excel数据清洗、PDF格式转换、文本格式互转四大核心场景。通过自然语言指令驱动，让繁琐的文档处理工作一键完成。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 办公自动化
-- 文档处理
-- 数据清洗
-- 格式转换
+  - 办公自动化
+  - 文档处理
+  - 数据清洗
+  - 格式转换
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 办公任务自动化（免费版）

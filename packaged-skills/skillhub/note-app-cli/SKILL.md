@@ -3,23 +3,22 @@ slug: "note-app-cli"
 name: "note-app-cli"
 version: "1.0.0"
 displayName: "Obsidian Official Cl"
-summary: "Obsidian管理技能,管笔记库(权限较广需谨慎)"
+summary: "Obsidian管理技能,管笔记库(权限较广需谨慎)。This skill matches its Obsidian-management purpose, but it gives an"
 license: "Proprietary"
 description: |-
   This skill matches its Obsidian-management purpose, but it gives an
   agent broad power to change, 
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Obsidian Official Cl
@@ -76,6 +75,14 @@ obsidian dev:debug on/off
 **处理**: 解析Developer Tools的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Developer Tools的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

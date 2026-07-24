@@ -3,7 +3,7 @@ slug: "aegis-security"
 name: "aegis-security"
 version: 1.2.3
 displayName: "区块链安全防护"
-summary: "区块链安全API，扫描代币蜜罐、模拟交易、检查地址声誉风险"
+summary: "区块链安全API，扫描代币蜜罐、模拟交易、检查地址声誉风险。面向AI代理的区块链安全API。提供代币蜜罐检测、交易模拟、地址声誉检查等功能， 支持EVM和Solana多链，集成x402付费协"
 license: "Proprietary"
 description: |-
   面向AI代理的区块链安全API。提供代币蜜罐检测、交易模拟、地址声誉检查等功能，
@@ -12,15 +12,12 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 安全合规
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - 安全
+  - 加密
+  - 工具
 category: "Security"
 ---
 # 区块链安全防护
@@ -105,6 +102,14 @@ export API_KEY="your_api_key_here"
 **处理**: 解析反馈提交的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回反馈提交的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 在所有请求中设置 `X-Client-Fingerprint` 头部为稳定的用户标识，确保免费配额稳定分配

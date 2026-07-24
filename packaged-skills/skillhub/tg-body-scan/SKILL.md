@@ -3,7 +3,7 @@ slug: "tg-body-scan"
 name: "tg-body-scan"
 version: 1.0.1
 displayName: "体测扫描工具专业版"
-summary: "企业级 Telegram 体测测量平台，支持批量扫描、历史趋势、团队管理与高级分析报表。"
+summary: "企业级 Telegram 体测测量平台，支持批量扫描、历史趋势、团队管理与高级分析报表。。面向健身工作室、运动队与健康管理团队的批量体测测量平台. 核心能力: 批量视频扫描、历史趋势对比、团"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -18,16 +18,15 @@ tags:
   - 团队管理
   - 健康报表
   - 企业级
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 体测扫描工具专业版
@@ -77,6 +76,14 @@ category: "Automation"
 **输出**: 返回腰臀比汇总的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`腰臀比汇总`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：健身工作室会员月度批量体测

@@ -3,26 +3,26 @@ slug: pyx-scanner-free
 name: pyx-scanner-free
 version: 1.0.1
 displayName: Skill安全扫描(免费版)
-summary: 检查AI Agent Skill安装前的安全性，调用扫描API返回信任分、风险等级与详细报告.
+summary: "检查AI Agent Skill安装前的安全性，调用扫描API返回信任分、风险等级与详细报告.。Skill安全扫描免费版是一套面向独立开发者与小型团队的 AI Agent Skill 安全检"
 license: Proprietary
 edition: free
 description: Skill安全扫描免费版是一套面向独立开发者与小型团队的 AI Agent Skill 安全检测知识库，帮助用户在安装或使用第三方 Skill
   前快速评估其安全性。核心能力：提供 Skill 标识解析、扫描 API 调用、五种判定结果处理（安全/过时/警告/失败/未扫描）、错误处理与重试机制、结构化 Markdown
   报告输出
 tags:
-- 安全
-- 集成工具
-- 扫描
-- 免费版
+  - 安全
+  - 集成工具
+  - 扫描
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # Skill安全扫描（免费版）

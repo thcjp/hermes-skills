@@ -3,7 +3,7 @@ slug: "ai-assistant-free"
 name: "ai-assistant-free"
 version: "1.0.0"
 displayName: "AI Doc LITE"
-summary: "长文本推理基础工具,提供文档评估、核心逻辑提取与基础风险检测三大能力"
+summary: "长文本推理基础工具,提供文档评估、核心逻辑提取与基础风险检测三大能力。长文本推理基础工具(免费版)。针对商业合同、备忘录、提案等长文档,提供文档评估、核心逻辑提取与基础风险检测 三大基础能力"
 license: "MIT"
 description: |-
   长文本推理基础工具(免费版)。针对商业合同、备忘录、提案等长文档,提供文档评估、核心逻辑提取与基础风险检测
@@ -13,12 +13,14 @@ description: |-
 tags:
   - 研发工具
   - Knowledge
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # AI Doc LITE
@@ -79,6 +81,14 @@ category: "Automation"
 **处理**: 解析Risk Detection(基础风险检测)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Risk Detection(基础风险检测)的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 标准输出格式
 
 ```

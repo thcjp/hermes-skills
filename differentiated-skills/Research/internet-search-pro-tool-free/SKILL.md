@@ -32,19 +32,18 @@ description: '智能联网搜索助手，帮你检索最新信息、新闻、实
 
   - 结构化输出...'
 tags:
-- 搜索
-- 信息检索
-- 智能助手
-- 新闻查询
+  - 搜索
+  - 信息检索
+  - 智能助手
+  - 新闻查询
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 联网搜索助手（免费版）

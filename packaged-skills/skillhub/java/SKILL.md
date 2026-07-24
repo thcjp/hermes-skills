@@ -3,22 +3,20 @@ slug: "java"
 name: "java"
 version: 1.0.2
 displayName: "Java健壮编程"
-summary: "编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题"
+summary: "编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。核心能力涵盖空值与Optional处理、集合迭代陷阱、泛型与类型擦"
 license: "Proprietary"
 description: |-
   编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。核心能力涵盖空值与Optional处理、集合迭代陷阱、泛型与类型擦除、并发与同步、类继承与内存模型、Stream与CompletableFuture、测试(JUnit/Mockito)及JVM/GC/模块系统,提供关键规则与错误场景防护.
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 研发工具
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # Java健壮编程
@@ -108,6 +106,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回集合与迭代陷阱的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`集合与迭代陷阱`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 关键规则
 
 * `==` 比较引用,不是内容 — 字符串始终使用 `.equals()`

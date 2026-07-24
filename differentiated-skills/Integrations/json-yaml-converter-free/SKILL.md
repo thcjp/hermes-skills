@@ -3,24 +3,23 @@ slug: json-yaml-converter-free
 name: json-yaml-converter-free
 version: 1.0.1
 displayName: JSON转YAML(免费版)
-summary: 轻量级JSON与YAML互转工具，覆盖缩进规范、注释保留与单文件转换，60秒上手.
+summary: "轻量级JSON与YAML互转工具，覆盖缩进规范、注释保留与单文件转换，60秒上手.。JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕"双向转换—缩进"
 license: Proprietary
 edition: free
 description: JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕"双向转换—缩进规范—注释保留—单文件处理"四件事，提供可复制即用的Python/Node。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 数据转换
-- 配置管理
-- 集成工具
+  - 数据转换
+  - 配置管理
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # JSON转YAML（免费版）
@@ -165,6 +164,14 @@ def multi_json_to_yaml(json_path: str, yaml_path: str):
 **输出**: 返回功能4：多文档YAML处理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、互转工具、覆盖缩进规范、注释保留与单文件、秒上手、免费版是一款面向、独立开发者与运维、工程师的轻量级配、置文件格式互转工、双向转换、注释保留、单文件处理、四件事、提供可复制即用的、Node、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 使用场景
 

@@ -3,7 +3,7 @@ slug: "baidu-netdisk-skills"
 name: "baidu-netdisk-skills"
 version: 1.1.6
 displayName: "百度网盘"
-summary: "百度网盘文件管理，限 /apps/bdpan/ 目录，支持上传下载转存分享搜索与记忆备份。"
+summary: "百度网盘文件管理，限 /apps/bdpan/ 目录，支持上传下载转存分享搜索与记忆备份。。百度网盘文件管理技能，通过 bdpan 命令行工具对百度网盘进行文件操作，所有操作限制在 /app"
 license: "Proprietary"
 description: |-
   百度网盘文件管理技能，通过 bdpan 命令行工具对百度网盘进行文件操作，所有操作限制在
@@ -29,16 +29,16 @@ tags:
   - Agents
   - Storage
   - Baidu
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 百度网盘
@@ -226,6 +226,14 @@ bdpan mkdir <路径>
 **处理**: 解析移动 / 复制 / 重命名 / 创建文件夹的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回移动 / 复制 / 重命名 / 创建文件夹的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

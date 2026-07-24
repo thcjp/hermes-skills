@@ -3,7 +3,7 @@ slug: web-vuln-assess-tool-pro
 name: web-vuln-assess-tool-pro
 version: 1.0.0
 displayName: Web漏洞评估(专业版)
-summary: 企业级Web漏洞评估平台,API自动化评估、HTML/PDF报告、测试脚本生成与合规审计
+summary: "企业级Web漏洞评估平台,API自动化评估、HTML/PDF报告、测试脚本生成与合规审计,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: '核心能力:
@@ -36,21 +36,21 @@ description: '核心能力:
 
   - API自动化评估...'
 tags:
-- 安全
-- Web安全
-- 企业安全
-- 漏洞评估
-- 合规审计
+  - 安全
+  - Web安全
+  - 企业安全
+  - 漏洞评估
+  - 合规审计
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
 category: "Development"
 ---
 Web漏洞评估专业版是一款面向企业用户的自动化Web安全评估平台。在免费版手动检查清单基础上,增加API驱动的自动化评估能力,支持19类100+检查项的自动扫描。提供HTML/PDF/SARIF专业评估报告,自动生成渗透测试脚本,覆盖OWASP/PCI-DSS/GDPR/HIPAA四种合规框架映射。支持多应用批量评估与并行处理,满足企业级安全审计需求。与免费版完全兼容,检查清单和评估流程可无缝复用.

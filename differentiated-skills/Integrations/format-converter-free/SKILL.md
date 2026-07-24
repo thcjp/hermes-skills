@@ -3,7 +3,7 @@ slug: format-converter-free
 name: format-converter-free
 version: 1.0.1
 displayName: 数据格式转换(免费版)
-summary: CSV、JSON、XML、YAML、TOML 等格式互转的免费核心能力,支持单文件快速转换.
+summary: "CSV、JSON、XML、YAML、TOML 等格式互转的免费核心能力,支持单文件快速转换.。数据格式转换免费版面向需要在不同数据格式间快速转换的开发者与数据工作者,提供 CSV、JSON、"
 license: Proprietary
 edition: free
 description: '数据格式转换免费版面向需要在不同数据格式间快速转换的开发者与数据工作者,提供 CSV、JSON、XML、YAML、TOML 等主流格式的互转能力。核心能力:
@@ -24,19 +24,18 @@ description: '数据格式转换免费版面向需要在不同数据格式间快
 
   - API ...'
 tags:
-- 格式转换
-- 数据交换
-- 配置文件
-- 集成工具
+  - 格式转换
+  - 数据交换
+  - 配置文件
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 数据格式转换 免费版
@@ -109,6 +108,14 @@ category: "Automation"
 **处理**: 解析5 边界情况处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回5 边界情况处理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：等格式互转的免费、核心能力、支持单文件快速转、数据格式转换免费、版面向需要在不同、数据格式间快速转、换的开发者与数据、工作者、等主流格式的互转、主流格式互转、单文件快速转换、输入一个文件、输出另一种格式、自动检测与转换等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 角色 | 典型场景 | 输入 | 输出 |

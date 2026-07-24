@@ -3,23 +3,22 @@ slug: "logo"
 name: "logo"
 version: 1.0.1
 displayName: "Logo"
-summary: "用AI图像工具生成logo,含提示结构/校验/导出"
+summary: "用AI图像工具生成logo,含提示结构/校验/导出。Generate logos with AI image tools using effective prompt structures,"
 license: "Proprietary"
 description: |-
   Generate logos with AI image tools using effective prompt structures,
   validation loops, and expor。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - Creative
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Logo
@@ -40,6 +39,14 @@ category: "Automation"
 - Generate logos with AI image tools using effective prompt structures,
   validation loops, and expor
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -72,6 +79,13 @@ The logo should look good at 32px with recognizable shapes.
 For the full 7-step prompt framework and model comparison, load `ai-generation.md`.
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 **使用步骤**:

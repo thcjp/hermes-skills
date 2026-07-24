@@ -3,7 +3,7 @@ slug: lifestyle-assistant-tool-pro
 name: lifestyle-assistant-tool-pro
 version: 1.0.0
 displayName: 生活助手专业版
-summary: 团队协作与自动化工作流平台,支持多人任务分派、邮件批处理与跨系统集成
+summary: "团队协作与自动化工作流平台,支持多人任务分派、邮件批处理与跨系统集成。面向团队、中小企业与项目管理场景的协作助手平台."
 license: Proprietary
 edition: pro
 description: '面向团队、中小企业与项目管理场景的协作助手平台.
@@ -15,22 +15,21 @@ description: '面向团队、中小企业与项目管理场景的协作助手平
 
   适用关键词: 团队协作, 任务分派, 自动化工作流, 邮件批处理, 知识库共享, 项目管理'
 tags:
-- 团队协作
-- 项目管理
-- 自动化
-- 企业级
-- 知识管理
-- 工作流
+  - 团队协作
+  - 项目管理
+  - 自动化
+  - 企业级
+  - 知识管理
+  - 工作流
+  - 工具
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 生活助手 (专业版)

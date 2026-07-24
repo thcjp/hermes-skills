@@ -3,7 +3,7 @@ slug: brave-search-tool-pro
 name: brave-search-tool-pro
 version: 1.0.0
 displayName: Brave搜索工具-专业版
-summary: 企业级Brave搜索,支持批量查询、并发搜索、结果缓存与搜索分析,面向团队生产场景
+summary: "企业级Brave搜索,支持批量查询、并发搜索、结果缓存与搜索分析,面向团队生产场景。企业级 Brave Search 网页搜索工具,在免费版核心能力之上,提供批量查询、"
 license: Proprietary
 edition: pro
 description: '企业级 Brave Search 网页搜索工具,在免费版核心能力之上,提供批量查询、
@@ -34,20 +34,20 @@ description: '企业级 Brave Search 网页搜索工具,在免费版核心能力
 
   差异化:专业版面向团队与企业,提供批量、并发、缓存、分析等高阶能力,并保持与免费版完全兼容'
 tags:
-- 研究工具
-- 网页搜索
-- 企业级
-- 批量操作
+  - 研究工具
+  - 网页搜索
+  - 企业级
+  - 批量操作
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # Brave搜索工具(专业版)

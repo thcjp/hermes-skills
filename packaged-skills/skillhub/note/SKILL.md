@@ -3,23 +3,23 @@ slug: "note"
 name: "note"
 version: 2.1.1
 displayName: "Note"
-summary: "知识捕获与连接系统,自动组织与检索"
+summary: "知识捕获与连接系统,自动组织与检索。Knowledge capture and connection system with automatic organization and retri"
 license: "Proprietary"
 description: |-
   Knowledge capture and connection system with automatic organization
   and retrieval。Use when user。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Note
@@ -41,6 +41,14 @@ category: "Automation"
   and retrieval
 - Use when user
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

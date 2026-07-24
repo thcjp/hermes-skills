@@ -3,7 +3,7 @@ slug: "communication-skill-free"
 name: "communication-skill-free"
 version: "1.0.0"
 displayName: "Comm LITE"
-summary: "基础沟通辅助工具,通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息"
+summary: "基础沟通辅助工具,通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息。沟通辅助基础版(免费)。通过简化的3步流程(GATHER-CRAFT-REFINE)帮助用户快速"
 license: "MIT"
 edition: "free"
 description: |-
@@ -15,11 +15,14 @@ description: |-
 tags:
   - 信息检索
   - Communication
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+  - exec
+homepage: ""
 category: "Automation"
 ---
 # Comm LITE - 沟通辅助基础版
@@ -85,6 +88,14 @@ category: "Automation"
 **输出**: 返回过渡(Bridge)的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`过渡(Bridge)`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

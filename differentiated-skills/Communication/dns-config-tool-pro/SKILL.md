@@ -3,7 +3,7 @@ slug: "dns-config-tool-pro"
 name: "dns-config-tool-pro"
 version: "1.0.0"
 displayName: "DNS配置工具专业版"
-summary: "企业级 DNS 配置工具,支持 CAA、Cloudflare 代理、通配符与批量迁移策略。"
+summary: "企业级 DNS 配置工具,支持 CAA、Cloudflare 代理、通配符与批量迁移策略。。面向企业运维与基础设施团队的 DNS 全功能配置与迁移工具。核心能力: - CAA 记录配置(限制"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -26,15 +26,14 @@ tags:
   - Communication
   - 安全配置
   - 批量迁移
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # DNS 配置工具(专业版)

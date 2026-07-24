@@ -3,7 +3,7 @@ slug: "hugo-blog-publisher-free"
 name: "hugo-blog-publisher-free"
 version: "1.0.0"
 displayName: "博客发布工具(免费版)"
-summary: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库(免费版)"
+summary: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库(免费版)。将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取 标题、标签、分类，生成front"
 license: "MIT"
 description: |-
   将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取
@@ -12,11 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 研发工具
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 博客发布工具(免费版)
@@ -98,6 +100,14 @@ git push
 **处理**: 解析截断标记与Git推送的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回截断标记与Git推送的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -149,7 +159,8 @@ description: "如何将静态站点部署到生产环境"
 ```bash
 # 3. 如需新标签，创建映射
 content/tags/deployment/_index.md
-# 内容: ---\ntitle: "部署"\n---
+# 内容: ---\ntitle: "部署"\n
+---
 # ...
 # 4. Git推送
 cd ~/my-blog

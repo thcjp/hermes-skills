@@ -3,7 +3,7 @@ slug: ad-creative-intel-pro
 name: ad-creative-intel-pro
 version: 1.0.0
 displayName: 广告情报专业版
-summary: 解决批量创意导出慢、历史趋势无法回溯、下载收入数据缺失的专业广告情报分析平台
+summary: "解决批量创意导出慢、历史趋势无法回溯、下载收入数据缺失的专业广告情报分析平台。广告情报专业版是面向买量团队、投放优化师、市场研究负责人的全功能广告情报分析平台，针对"批量创意导出受限于单次"
 license: Proprietary
 edition: pro
 description: '广告情报专业版是面向买量团队、投放优化师、市场研究负责人的全功能广告情报分析平台，针对"批量创意导出受限于单次 10 条、历史趋势无法回溯分析、下载与收入预估数据缺失、跨市场对比需手动聚合、创意效果难以归因到投放动作"五大高频痛点而设计。它在免费版三大端点集群基础上，解锁批量导出、历史回溯、下载/收入预估三类高级端点，并新增多市场对比、创意效果归因、优先速率并发三项独有能力.
@@ -16,20 +16,21 @@ description: '广告情报专业版是面向买量团队、投放优化师、市
   适用关键词：广告情报分析、批量创意导出、历史趋势回溯、下载收入预估、多市场对比、创意归因、ad creative intelligence、bulk export、historical
   trend、download revenue estimate'
 tags:
-- 广告情报
-- 批量分析
-- 趋势回溯
-- 归因分析
+  - 广告情报
+  - 批量分析
+  - 趋势回溯
+  - 归因分析
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 广告情报专业版（Ad Creative Intel Pro）

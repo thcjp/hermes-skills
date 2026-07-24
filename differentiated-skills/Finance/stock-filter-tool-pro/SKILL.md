@@ -3,7 +3,7 @@ slug: "stock-filter-tool-pro"
 name: "stock-filter-tool-pro"
 version: "1.0.0"
 displayName: "股票筛选专业版"
-summary: "多市场股票筛选系统，支持多策略组合、自定义公式、历史回测与批量导出。"
+summary: "多市场股票筛选系统，支持多策略组合、自定义公式、历史回测与批量导出。。面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、 多策略组合（AND/OR逻辑）、自定义选股公式、历"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,15 +14,14 @@ tags:
   - 股票筛选
   - 量化选股
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 股票筛选专业版（PRO版）

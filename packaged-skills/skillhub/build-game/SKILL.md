@@ -3,23 +3,22 @@ slug: "build-game"
 name: "build-game"
 version: 1.2.1
 displayName: "3D Game Builder"
-summary: "自然语言生成并迭代精修3D浏览器游戏,任意类型即说即得"
+summary: "自然语言生成并迭代精修3D浏览器游戏,任意类型即说即得。Generate and iteratively develop polished 3D browser games from nat"
 license: "Proprietary"
 description: |-
   Generate and iteratively develop polished 3D browser games from natural
   language。Supports any ge。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Lifestyle
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # 3D Game Builder
@@ -41,6 +40,14 @@ category: "Creative"
   language
 - Supports any ge
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

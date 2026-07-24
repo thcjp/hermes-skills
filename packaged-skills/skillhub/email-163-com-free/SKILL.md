@@ -3,7 +3,7 @@ slug: "email-163-com-free"
 name: "email-163-com-free"
 version: "1.0.0"
 displayName: "163邮箱基础版"
-summary: "163邮箱CLI基础工具,支持发送邮件、读取邮件与简单搜索"
+summary: "163邮箱CLI基础工具,支持发送邮件、读取邮件与简单搜索。163邮箱基础版Skill,基于Python CLI实现,覆盖发送、读取与简单搜索核心功能. 核心能力: - 发送邮件(纯文本/单"
 license: "MIT"
 description: |-
   163邮箱基础版Skill,基于Python CLI实现,覆盖发送、读取与简单搜索核心功能.
@@ -20,12 +20,14 @@ description: |-
 tags:
   - 通用办公
   - Productivity
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # 163邮箱基础版
@@ -87,6 +89,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回简单搜索的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`简单搜索`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

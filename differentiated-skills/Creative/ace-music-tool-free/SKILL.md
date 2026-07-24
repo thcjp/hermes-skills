@@ -3,7 +3,7 @@ slug: ace-music-tool-free
 name: ace-music-tool-free
 version: 1.0.0
 displayName: ACE音乐生成-免费版
-summary: 通过ACE-Step模型免费生成带人声的AI歌曲,支持多语种、多风格,适合个人创作者快速出曲.
+summary: "通过ACE-Step模型免费生成带人声的AI歌曲,支持多语种、多风格,适合个人创作者快速出曲.。ACE音乐生成免费版,面向个人内容创作者的AI音乐生成工具。核心能力:"
 license: Proprietary
 edition: free
 description: 'ACE音乐生成免费版,面向个人内容创作者的AI音乐生成工具。核心能力:
@@ -26,18 +26,16 @@ description: 'ACE音乐生成免费版,面向个人内容创作者的AI音乐生
 
   差异化:免费版聚焦核心生成能力,操作简单,适合个人用户体验AI音乐创作'
 tags:
-- Creative
-- 音乐生成
-- AI创作
+  - Creative
+  - 音乐生成
+  - AI创作
+  - 音频
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "音乐生成,音频,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # ACE音乐生成工具 - 免费版

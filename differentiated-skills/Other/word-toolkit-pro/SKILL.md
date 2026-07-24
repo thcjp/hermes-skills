@@ -3,7 +3,7 @@ slug: word-toolkit-pro
 name: word-toolkit-pro
 version: 1.0.0
 displayName: Word文档控制专业版
-summary: 批量文档处理、模板工作流、修订审计与跨平台支持，适合团队与企业文档自动化.
+summary: "批量文档处理、模板工作流、修订审计与跨平台支持，适合团队与企业文档自动化.。Word文档控制工具专业版，面向团队与企业的高阶Word文档自动化平台。核心能力:"
 license: Proprietary
 edition: pro
 description: 'Word文档控制工具专业版，面向团队与企业的高阶Word文档自动化平台。核心能力:
@@ -28,20 +28,19 @@ description: 'Word文档控制工具专业版，面向团队与企业的高阶Wo
 
   差异化: 专业版在免费版核心 Word 控制之上扩展批量与模板，新增修订审计、跨平台、质量检查等企业级能力，并与免费版 osascript 规则兼容'
 tags:
-- Word文档
-- 批量处理
-- 企业自动化
-- 专业版
+  - Word文档
+  - 批量处理
+  - 企业自动化
+  - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Word文档控制工具（专业版）

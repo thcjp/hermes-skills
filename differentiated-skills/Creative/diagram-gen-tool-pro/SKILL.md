@@ -14,15 +14,14 @@ tags:
   - Diagram
   - Enterprise
   - Architecture
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 图表生成工具（专业版）

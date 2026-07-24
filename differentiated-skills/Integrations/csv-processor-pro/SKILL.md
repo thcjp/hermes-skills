@@ -3,26 +3,25 @@ slug: csv-processor-pro
 name: csv-processor-pro
 version: 1.0.0
 displayName: CSV处理器 专业版
-summary: 全功能CSV清洗平台，支持流式大文件、自定义规则、Schema校验与数据质量评分.
+summary: "全功能CSV清洗平台，支持流式大文件、自定义规则、Schema校验与数据质量评分.。CSV Processor 专业版面向专业数据工程师与数据治理团队，在免费版基础上解锁流式大文件处理、自定"
 license: Proprietary
 edition: pro
 description: CSV Processor 专业版面向专业数据工程师与数据治理团队，在免费版基础上解锁流式大文件处理、自定义清洗规则、Schema 校验与数据质量评分。核心能力：GB
   级 CSV 流式清洗、自定义清洗规则配置（列名映射/值替换/条件清洗）、Schema 校验与列类型强制、增量合并与去重策略、数据质量评分与报告、多格式导出（Parquet/JSON/Excel）、清洗日志与审计追踪
 tags:
-- 集成工具
-- 数据处理
-- 数据工程
-- 数据治理
+  - 集成工具
+  - 数据处理
+  - 数据工程
+  - 数据治理
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 面向专业数据工程师与数据治理团队的全功能 CSV 清洗平台，在免费版基础上解锁流式处理、自定义规则、Schema 校验与数据质量评分.

@@ -3,7 +3,7 @@ slug: "encryption-tool-pro"
 name: "encryption-tool-pro"
 version: "1.0.0"
 displayName: "加密工具专业版"
-summary: "企业级加密管理,支持KMS集成、密钥轮换、合规审计、批量加密与深度代码安全扫描。"
+summary: "企业级加密管理,支持KMS集成、密钥轮换、合规审计、批量加密与深度代码安全扫描。。面向企业安全团队的高级加密管理工具,提供KMS密钥管理集成、自动密钥轮换、合规性审计、批量加密与深度代码安全"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,15 +30,14 @@ tags:
   - 加密
   - 企业级
   - 合规审计
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 加密工具专业版为企业安全团队提供高级加密管理能力。在免费版基础加密能力之上,专业版新增KMS密钥管理集成、自动密钥轮换、合规性审计、批量文件加密和深度代码安全扫描,满足企业级数据保护和合规要求.

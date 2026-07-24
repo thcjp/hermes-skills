@@ -3,7 +3,7 @@ slug: "ui-ux-dev-paid"
 name: "ui-ux-dev-paid"
 version: 1.0.1
 displayName: "UI/UX开发工具专业版"
-summary: "多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎"
+summary: "多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎。面向开发团队和代理机构的专业级React页面生成引擎,支持多页面项目管理、 设计系统持久化、自动化"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -32,16 +32,13 @@ tags:
   - 企业级
   - 项目管理
   - 批量处理
+  - UI设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # UI/UX开发工具专业版
@@ -237,6 +234,14 @@ cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/ \
 - 关键参数: `zip打包导出` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:代理机构多客户项目交付

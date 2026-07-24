@@ -30,21 +30,18 @@ description: '面向个人开发者的轻量级UI/UX设计查询工具,内置丰
 
   去除企业级持久化和批量操作功能,降低使用门槛,.'
 tags:
-- 设计
-- UI
-- UX
-- 配色
-- 字体
-- 前端
+  - 设计
+  - UI
+  - UX
+  - 配色
+  - 字体
+  - 前端
+  - UI设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # UI/UX设计工具箱 - 免费版

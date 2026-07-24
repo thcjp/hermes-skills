@@ -3,7 +3,7 @@ slug: actor-identifier-tool-free
 name: actor-identifier-tool-free
 version: 1.0.0
 displayName: 仓库协作分析(免费版)
-summary: 面向个人开发者的Git仓库协作模式分析工具,只读、零依赖、隐私优先,输出仓库级聚合报告.
+summary: "面向个人开发者的Git仓库协作模式分析工具,只读、零依赖、隐私优先,输出仓库级聚合报告.。仓库协作分析工具免费版为个人开发者提供Git仓库级别的协作模式分析能力,基于只读git命令,零安装依"
 license: Proprietary
 edition: free
 description: '仓库协作分析工具免费版为个人开发者提供Git仓库级别的协作模式分析能力,基于只读git命令,零安装依赖,隐私优先。核心能力:
@@ -28,20 +28,20 @@ description: '仓库协作分析工具免费版为个人开发者提供Git仓库
 
   差异化:免费版聚焦个人仓库的聚合分析,严格保护隐私,不做个人评估'
 tags:
-- Git
-- 仓库分析
-- 协作模式
-- 个人开发
-- 隐私保护
+  - Git
+  - 仓库分析
+  - 协作模式
+  - 个人开发
+  - 隐私保护
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 仓库协作分析工具(免费版)

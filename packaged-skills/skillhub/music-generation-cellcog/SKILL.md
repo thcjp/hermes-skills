@@ -3,23 +3,22 @@ slug: "music-generation-cellcog"
 name: "music-generation-cellcog"
 version: 1.0.12
 displayName: "Music Generation Cel"
-summary: "CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟"
+summary: "CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟。AI music generation powered by CellCog。Original instrumental and"
 license: "Proprietary"
 description: |-
   AI music generation powered by CellCog。Original instrumental and vocal
   tracks, 5 seconds to 10 m。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
+  - 音乐生成
+  - 音频
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "音乐生成,音频,创意"
 category: "Creative"
 ---
 # Music Generation Cel
@@ -41,6 +40,14 @@ category: "Creative"
 - Original instrumental and vocal
   tracks, 5 seconds to 10 m
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -141,6 +148,13 @@ export API_KEY="your_api_key_here"
 > "Compose a 2-minute boss battle theme for a fantasy RPG. Intense orchestral with choir, driving percussion, escalating tension. Think Dark Souls meets Final Fantasy."
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 常见问题
 

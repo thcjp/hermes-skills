@@ -3,25 +3,26 @@ slug: doc-reasoning-analyst-free
 name: doc-reasoning-analyst-free
 version: 1.0.1
 displayName: 文档推理分析师(免费版)
-summary: 长文本推理优化器，解决商业法律文档逻辑混乱、风险遗漏、决策准备不足痛点，快速提取核心逻辑与风险.
+summary: "长文本推理优化器，解决商业法律文档逻辑混乱、风险遗漏、决策准备不足痛点，快速提取核心逻辑与风险.。文档推理分析师是一款专注于长文本推理优化的AI辅助工具，专为商业、法律及高风险文档工作流设计"
 license: Proprietary
 description: 文档推理分析师是一款专注于长文本推理优化的AI辅助工具，专为商业、法律及高风险文档工作流设计。它能将冗长、杂乱的高风险文档转化为更清晰的推理链条和更干净的决策依据，帮助用户在合同审查、备忘录分析和提案评估中不再遗漏关键风险。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
-- 文档推理
-- 合同审查
-- 风险分析
-- 决策支持
+  - 文档推理
+  - 合同审查
+  - 风险分析
+  - 决策支持
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
+  - read
+  - exec
+  - write
+  - glob
+  - grep
 edition: free
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+homepage: ""
 category: "Agents"
 ---
 # 文档推理分析师（免费版）

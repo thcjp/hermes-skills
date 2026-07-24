@@ -29,15 +29,15 @@ tags:
   - 安全审计
   - 企业级
   - DevSecOps
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 代码质量检查工具专业版为企业研发团队提供深度代码审计能力。在免费版基础能力之上,专业版新增 OWASP Top 10 漏洞扫描、全项目批量分析、自定义规则引擎、多格式报告输出和 CI/CD 流水线集成,满足企业级 DevSecOps 实践需求.

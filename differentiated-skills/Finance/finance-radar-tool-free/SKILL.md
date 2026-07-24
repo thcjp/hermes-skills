@@ -3,7 +3,7 @@ slug: finance-radar-tool-free
 name: finance-radar-tool-free
 version: 1.0.0
 displayName: 股票分析雷达入门
-summary: 股票与加密货币基础分析工具，提供价格查询、基本面分析与单只标的评分.
+summary: "股票与加密货币基础分析工具，提供价格查询、基本面分析与单只标的评分.。面向个人投资者的股票与加密货币分析工具，通过Yahoo Finance数据提供"
 license: Proprietary
 edition: free
 description: '面向个人投资者的股票与加密货币分析工具，通过Yahoo Finance数据提供
@@ -12,18 +12,17 @@ description: '面向个人投资者的股票与加密货币分析工具，通过
 
   快速分析与初步筛选。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-- Finance
-- 股票分析
-- 投资决策
+  - Finance
+  - 股票分析
+  - 投资决策
+  - 金融
+  - 财务
+  - 数据
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 股票分析雷达入门（免费版）

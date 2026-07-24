@@ -3,7 +3,7 @@ slug: "knowledge-graph-skill-free"
 name: "knowledge-graph-skill-free"
 version: "1.0.0"
 displayName: "知识图谱基础版"
-summary: "嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储与查询，适合结构化知识管理。"
+summary: "嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储与查询，适合结构化知识管理。。嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储 与查询. 核心能力: - 实体与关系的基础创建、更"
 license: "MIT"
 description: |-
   嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储
@@ -29,11 +29,14 @@ tags:
   - Development
   - Agents
   - Research
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+  - exec
+homepage: ""
 category: "Automation"
 ---
 # 知识图谱基础版
@@ -46,6 +49,14 @@ category: "Automation"
 - 持久化存储：将图谱数据持久化到本地文件（JSON / SQLite），支持加载与导出
 - 基础检索：按实体名称、类型、属性值进行基础检索
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

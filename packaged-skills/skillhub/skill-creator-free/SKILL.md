@@ -11,11 +11,15 @@ description: |-
   免费版不含完整Bundled Resources规范、Skill Creation Process脚本集成与不应包含内容指南.
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - exec
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # AI技能创建指南（免费版）
@@ -93,6 +97,14 @@ skill-name/
 - **Assets（`assets/`）**：用于输出而非加载入context的文件（templates、icons、fonts等）
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **理解需求**：通过concrete examples明确skill应支持的功能与触发场景

@@ -9,16 +9,16 @@ description: |-
   统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - Research
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Tool Finder
@@ -40,6 +40,14 @@ category: "Automation"
 - 支持评分排序、推荐规则、来源标识
 - 优先原词搜索，扩展补充
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **看到以下关键词 → 立即调用 tool-finder：**
@@ -54,12 +62,19 @@ category: "Automation"
 | "能...的 skill" | `tool-finder search "<功能>" --type skill` |
 
 ---
-
 ## 使用流程
 
 Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）.
 **解决**：输出指引让用户手动安装.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |

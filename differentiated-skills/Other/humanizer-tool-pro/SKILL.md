@@ -3,7 +3,7 @@ slug: humanizer-tool-pro
 name: humanizer-tool-pro
 version: 1.0.0
 displayName: 文本人性化工具专业版
-summary: 面向团队的批量文本去痕、风格库与品牌语气治理工具.
+summary: "面向团队的批量文本去痕、风格库与品牌语气治理工具.。面向团队的批量文本去痕与品牌语气治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
 description: '面向团队的批量文本去痕与品牌语气治理专业工具。核心能力:
@@ -26,21 +26,20 @@ description: '面向团队的批量文本去痕与品牌语气治理专业工具
 
   差异化: 专业版在免费版单篇去痕上扩展批量流水线、品牌风格库、痕迹评分与多语言治理，兼容免费版 24 类痕迹'
 tags:
-- 写作
-- 企业级
-- 品牌语气
-- 批量处理
-- 其他工具
+  - 写作
+  - 企业级
+  - 品牌语气
+  - 批量处理
+  - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 文本人性化工具（专业版）

@@ -3,7 +3,7 @@ slug: ai-podcast-tool-pro
 name: ai-podcast-tool-pro
 version: 1.0.0
 displayName: AI播客生成-专业版
-summary: 企业级播客生产工具,支持批量生成、自定义风格、音频下载与团队协作,适配商业内容生产.
+summary: "企业级播客生产工具,支持批量生成、自定义风格、音频下载与团队协作,适配商业内容生产.。AI播客生成专业版,面向企业团队与专业内容生产者的高级播客制作工具。核心能力:"
 license: Proprietary
 edition: pro
 description: 'AI播客生成专业版,面向企业团队与专业内容生产者的高级播客制作工具。核心能力:
@@ -32,20 +32,19 @@ description: 'AI播客生成专业版,面向企业团队与专业内容生产者
 
   差异化:专业版在免费版基础上扩展批量生成、自定义风格、音频下载与团队协作,兼容免费版所有流程,适合商...'
 tags:
-- Creative
-- 播客生成
-- 企业版
-- 商业内容
+  - Creative
+  - 播客生成
+  - 企业版
+  - 商业内容
+  - 播客
+  - 音频
+  - 媒体
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
 category: "Creative"
 ---
 # AI播客生成工具 - 专业版

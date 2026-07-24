@@ -11,12 +11,13 @@ tags:
   - 通用办公
   - Research
   - Finance
+  - 新闻
+  - 信息
+  - 资讯
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
+homepage: ""
 category: "Knowledge"
 ---
 # News Sentiment Scan 免费版
@@ -60,6 +61,14 @@ export API_KEY="your_api_key_here"
 **事件提取**: 识别重大事件并标注来源与时间,输出事件清单辅助判断舆情驱动因素.
 **输出报告**: 情绪温度计、重大事件清单与正负面事件统计,辅助快速了解市场情绪方向.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

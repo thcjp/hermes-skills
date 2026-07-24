@@ -3,7 +3,7 @@ slug: tarot-tool-free
 name: tarot-tool-free
 version: 1.0.0
 displayName: 塔罗反思工具免费版
-summary: 提供单张牌与三张牌阵的反思性塔罗抽牌，支持情绪陪伴与象征性解读，适合个人日常自省.
+summary: "提供单张牌与三张牌阵的反思性塔罗抽牌，支持情绪陪伴与象征性解读，适合个人日常自省.。塔罗反思工具免费版，面向个人用户的轻量级情绪陪伴与自省工具。核心能力:"
 license: Proprietary
 edition: free
 description: '塔罗反思工具免费版，面向个人用户的轻量级情绪陪伴与自省工具。核心能力:
@@ -26,19 +26,18 @@ description: '塔罗反思工具免费版，面向个人用户的轻量级情绪
 
   差异化: 免费版聚焦核心抽牌与解读能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- 塔罗
-- 情绪陪伴
-- 反思工具
-- 免费版
+  - 塔罗
+  - 情绪陪伴
+  - 反思工具
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 塔罗反思工具（免费版）

@@ -3,7 +3,7 @@ slug: "memory-orchestrator-free"
 name: "memory-orchestrator-free"
 version: "1.0.0"
 displayName: "记忆编排器免费版"
-summary: "基础两层记忆管理，支持关键词检索与简单摘要，本地持久化存储"
+summary: "基础两层记忆管理，支持关键词检索与简单摘要，本地持久化存储。记忆编排器免费版提供基础记忆管理能力，支持短期与长期两层记忆架构. 核心能力包括：两层记忆存储（短期/长期）、关键词检索、基础摘要"
 license: "MIT"
 description: |-
   记忆编排器免费版提供基础记忆管理能力，支持短期与长期两层记忆架构.
@@ -13,11 +13,14 @@ description: |-
   如需四层架构、混合检索、健康度仪表盘、并发冲突解决等高级能力，请升级到付费版.
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - write
+  - exec
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 记忆编排器免费版
@@ -76,6 +79,14 @@ const result = await skills.memoryOrchestrator({
 - **输出**：持久化文件
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：添加记忆

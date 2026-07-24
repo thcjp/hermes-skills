@@ -3,7 +3,7 @@ slug: "ux-design-tool-pro"
 name: "ux-design-tool-pro"
 version: "1.0.0"
 displayName: "UX设计工具专业版"
-summary: "完整UX方法论+用户研究+WCAG合规+状态机设计+企业UX审计,面向UX团队的专业体验设计引擎"
+summary: "完整UX方法论+用户研究+WCAG合规+状态机设计+企业UX审计,面向UX团队的专业体验设计引擎。面向企业UX团队和专业设计师的完整用户体验设计引擎,涵盖深度流程分析、 用户研究方法论、WC"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -20,15 +20,13 @@ tags:
   - 企业级
   - 用户研究
   - WCAG
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 UX设计工具专业版是一款面向企业UX团队和专业设计师的完整用户体验设计引擎。在免费版核心UX原则之上,扩展至深度流程分析、用户研究方法论、WCAG 2.2无障碍合规审计、状态机设计模式和企业级UX审计框架。

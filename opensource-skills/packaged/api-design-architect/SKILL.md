@@ -3,24 +3,22 @@ slug: api-design-architect
 name: api-design-architect
 version: 1.0.1
 displayName: API设计架构师
-summary: 契约优先设计API,从源头杜绝接口腐化,让API可演化不破坏老用户
+summary: "契约优先设计API,从源头杜绝接口腐化,让API可演化不破坏老用户。API设计架构师——在写第一行代码前先定义接口契约，从源头杜绝接口腐化与破坏性变更。适用于新API设计、模块边界划分、公共"
 license: Proprietary
 description: API设计架构师——在写第一行代码前先定义接口契约，从源头杜绝接口腐化与破坏性变更。适用于新API设计、模块边界划分、公共接口暴露、API演化迭代、接口质量审查等场景。遵循Hyrum定律与One-Version规则，支持REST/GraphQL/gRPC多协议，让API可演化、可维护、不破坏老用户。触发关键词：API设计、接口契约、OpenAPI、REST、GraphQL、gRPC、错误处理、API版本、模块边界、公共接口
 tags:
-- API设计
-- 技术架构
-- 接口规范
-- 独立开发
-- 软件设计
+  - API设计
+  - 技术架构
+  - 接口规范
+  - 独立开发
+  - 软件设计
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - read
+  - exec
+  - write
 category: "Development"
 ---
 # API设计架构师
@@ -34,6 +32,14 @@ category: "Development"
 - **错误语义规范**：统一错误格式（机器可读错误码 + 人类可读消息 + requestId），区分可重试与不可重试错误
 - **边界校验体系**：入口校验（信任边界白名单）+ 出口校验（响应不泄露内部细节）+ 写操作幂等键
 - **设计审查清单**：10 项设计检查清单，量化接口质量遵循度
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

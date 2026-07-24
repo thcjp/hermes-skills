@@ -3,25 +3,26 @@ slug: context-compressor-free
 name: context-compressor-free
 version: 1.0.1
 displayName: Context Compressor
-summary: 智能压缩对话日志为结构化摘要，4-8倍压缩比，保留关键决策与教训，降低Token成本.
+summary: "智能压缩对话日志为结构化摘要，4-8倍压缩比，保留关键决策与教训，降低Token成本.。上下文压缩器免费版解决AI Agent长期协作中"记忆膨胀"的核心痛点：MEMORY。md动辄上万字、"
 license: Proprietary
 edition: free
 description: 上下文压缩器免费版解决AI Agent长期协作中"记忆膨胀"的核心痛点：MEMORY。md动辄上万字、每日日志堆积如山、关键决策被冗余信息淹没、Token成本随对话增长线性飙升。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 上下文压缩
-- 记忆管理
-- Token优化
-- 日志归档
+  - 上下文压缩
+  - 记忆管理
+  - Token优化
+  - 日志归档
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 上下文压缩器（免费版）
@@ -92,6 +93,14 @@ cat /tmp/today.md >> MEMORY.md
 ```markdown
 # ...
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 记忆维护（每2-3天执行）
 1. 执行：node （请参考skill目录中的脚本文件） memory/YYYY-MM-DD.md /tmp/compressed.md
 2. 人工审核压缩结果准确性

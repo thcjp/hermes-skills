@@ -3,25 +3,23 @@ slug: flow-manager-pro-free
 name: flow-manager-pro-free
 version: 1.0.1
 displayName: 流程管理器(免费版)
-summary: 通过Admin API管理Node-RED实例，支持流程列表、部署、状态查询与基础节点管理.
+summary: "通过Admin API管理Node-RED实例，支持流程列表、部署、状态查询与基础节点管理.。流程管理器免费版为IoT与自动化开发者提供轻量级的Node-RED实例管理能力，聚焦流程（Flo"
 license: Proprietary
 edition: free
 description: 流程管理器免费版为IoT与自动化开发者提供轻量级的Node-RED实例管理能力，聚焦流程（Flow）的日常高频操作。通过Admin API与Node-RED交互，无需打开浏览器即可完成流程列表、部署、状态查询与基础节点管理。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- Node-RED
-- 流程管理
-- 自动化
-- IoT
+  - Node-RED
+  - 流程管理
+  - 自动化
+  - IoT
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 流程管理器（免费版）

@@ -3,7 +3,7 @@ slug: "claude-code-delegate-free"
 name: "claude-code-delegate-free"
 version: "0.1.0"
 displayName: "代码委派基础版"
-summary: "将编程任务委派给 AI 助手处理的基础能力，支持任务分类、代码生成与执行日志记录。"
+summary: "将编程任务委派给 AI 助手处理的基础能力，支持任务分类、代码生成与执行日志记录。。将编程任务委派给 AI 助手执行的基础能力，支持任务分解、 基础代码生成与执行日志记录. 核心能力: -"
 license: "MIT"
 description: |-
   将编程任务委派给 AI 助手执行的基础能力，支持任务分解、
@@ -27,12 +27,16 @@ description: |-
   差异化:基础版提供任务委派核心流程，针对常见编程场景进行优化，去除了高级版的多步门控与断点续传能力.
 tags:
   - Development
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 # 代码委派基础版
@@ -44,6 +48,14 @@ category: "Development"
 - 基础代码生成与输出校验：根据子任务生成对应代码片段，并对输出做基础语法与格式校验
 - 执行日志记录：记录每个子任务的执行状态与耗时，便于回溯问题
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

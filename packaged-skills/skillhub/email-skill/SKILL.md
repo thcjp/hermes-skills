@@ -3,7 +3,7 @@ slug: "email-skill"
 name: "email-skill"
 version: 0.1.1
 displayName: "Email"
-summary: "SMTP邮件发送自动化,支持多供应商、附件、HTML模板与TLS加密"
+summary: "SMTP邮件发送自动化,支持多供应商、附件、HTML模板与TLS加密。基于SMTP协议的邮件发送自动化Skill,支持Gmail、Outlook、QQ邮箱等主流服务商. 提供纯文本与HTML"
 license: "Proprietary"
 description: |-
   基于SMTP协议的邮件发送自动化Skill,支持Gmail、Outlook、QQ邮箱等主流服务商.
@@ -14,16 +14,15 @@ tags:
   - 通用办公
   - SMTP
   - Automation
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
 category: "Communication"
 ---
 # Email
@@ -98,6 +97,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回多附件并行投递的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`多附件并行投递`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

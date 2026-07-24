@@ -3,7 +3,7 @@ slug: "elite-longterm-memory-free"
 name: "elite-longterm-memory-free"
 version: "1.0.0"
 displayName: "精英长期记忆免费版"
-summary: "基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。"
+summary: "基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。。面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.m"
 license: "MIT"
 description: |-
   面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力.
@@ -15,11 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 精英长期记忆免费版（Elite Longterm Memory Free）
@@ -53,6 +55,14 @@ category: "Agents"
 **输出**: 返回记忆检索与关联的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`记忆检索与关联`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 第一步：创建热内存文件。执行 `cat > SESSION-STATE.md` 创建包含 Current Task、Key Context、Pending Actions、Recent Decisions 四区块的状态文件。这是 Agent 的"RAM"，抗压缩、抗重启.

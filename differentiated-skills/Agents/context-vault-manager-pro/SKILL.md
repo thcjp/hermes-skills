@@ -12,21 +12,22 @@ description: '上下文保险库专业版是智能分层记忆管理的终极方
   差异化：完全中文化表达，针对企业级场景重新设计检索策略与清理机制，新增七大高级功能、多角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整记忆管理能力与优先支持。保留原始MIT版权声明.
   适用关键词：分层记忆、语义检索、混合检索、向量数据库、多项目隔离、RAG优化、企业记忆'
 tags:
-- 记忆管理
-- 语义检索
-- 向量数据库
-- 企业级
-- RAG优化
+  - 记忆管理
+  - 语义检索
+  - 向量数据库
+  - 企业级
+  - RAG优化
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 上下文保险库（专业版）

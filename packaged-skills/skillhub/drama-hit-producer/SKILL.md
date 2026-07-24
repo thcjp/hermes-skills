@@ -3,26 +3,23 @@ slug: drama-hit-producer
 name: drama-hit-producer
 version: 1.0.1
 displayName: "短剧爆款生产线"
-summary: "小说一键转竖屏短剧,25步全链路从脚本到成片自动产出"
+summary: "小说一键转竖屏短剧,25步全链路从脚本到成片自动产出。短剧爆款生产线——丢进一章小说,25步全自动管道吐出可发布的竖屏短剧。核心功能:双轨风格(真人剧InstantID+动漫FLUX/Kli"
 license: Proprietary
 description: |-
   短剧爆款生产线——丢进一章小说,25步全自动管道吐出可发布的竖屏短剧。核心功能:双轨风格(真人剧InstantID+动漫FLUX/Kling)、三轨角色构建(手工/AI批量/自动提取)、四层TTS智能配音(云端/本地GPU/免费)、质量闭环(A/B/C/D评分+自动重做+人工兜底)、25步管道从剧本转换到多平台发布全链路覆盖、资产持久化、经验回写自生长闭环
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 视频创作
   - 短剧
   - 内容创作
   - 自动化
   - AI视频
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 短剧爆款生产线
@@ -47,6 +44,14 @@ category: "Automation"
 4. **四层TTS智能配音**:L1 CosyVoice2(云端) / L2 Fish-Speech(本地GPU) / L3 GPT-SoVITS(本地GPU) / L4 Edge-TTS(云端免费),自动降级链保证配音可用
 5. **质量闭环+经验回写**:A/B/C/D四级评分+R1-R4红线检查,C/D级自动重做(最大2次)+人工兜底裁决;生成完成后自动回写经验到自生长系统供后续参考
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |

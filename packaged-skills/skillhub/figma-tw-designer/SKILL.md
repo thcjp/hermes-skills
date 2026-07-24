@@ -3,7 +3,7 @@ slug: "figma-tw-designer"
 name: "figma-tw-designer"
 version: 1.0.1
 displayName: "Figma设计助手(专业版)"
-summary: "全功能Figma交互工具，支持批量导出、高级缓存、团队协作分析与自定义模板"
+summary: "全功能Figma交互工具，支持批量导出、高级缓存、团队协作分析与自定义模板。Figma设计助手(专业版)是面向团队与重度用户的Figma全功能交互工具，在免费版基础上新增批量导出、高级缓存、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -16,16 +16,15 @@ tags:
   - 设计协作
   - Figma
   - 专业版
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # Figma设计助手(专业版)
@@ -77,6 +76,14 @@ category: "Creative"
 **输出**: 返回多格式导出的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`多格式导出`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：设计系统组件批量交付

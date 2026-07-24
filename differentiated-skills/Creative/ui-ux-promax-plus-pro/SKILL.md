@@ -3,7 +3,7 @@ slug: ui-ux-promax-plus-pro
 name: ui-ux-promax-plus-pro
 version: 1.0.0
 displayName: UI/UX ProMax+专业版
-summary: 完整设计资源库+图表推荐+UX模式库+组件规范+决策矩阵,面向企业设计团队的专业资源引擎
+summary: "完整设计资源库+图表推荐+UX模式库+组件规范+决策矩阵,面向企业设计团队的专业资源引擎。面向企业设计团队的完整UI/UX设计资源引擎,包含全部界面风格库、配色方案、"
 license: Proprietary
 edition: pro
 description: '面向企业设计团队的完整UI/UX设计资源引擎,包含全部界面风格库、配色方案、
@@ -28,26 +28,23 @@ description: '面向企业设计团队的完整UI/UX设计资源引擎,包含全
 
   ...'
 tags:
-- 设计
-- UI
-- UX
-- 配色
-- 字体
-- 前端
-- 企业级
-- 资源库
-- 组件规范
-- 数据可视化
+  - 设计
+  - UI
+  - UX
+  - 配色
+  - 字体
+  - 前端
+  - 企业级
+  - 资源库
+  - 组件规范
+  - 数据可视化
+  - UI设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # UI/UX ProMax+ - 专业版

@@ -3,7 +3,7 @@ slug: "workflow"
 name: "workflow"
 version: 1.0.1
 displayName: "Workflow"
-summary: "用可复用组件/节点间数据流/状态管理建自动化流水线"
+summary: "用可复用组件/节点间数据流/状态管理建自动化流水线。Build automated pipelines with reusable components, data flow between"
 license: "Proprietary"
 description: |-
   Build automated pipelines with reusable components, data flow between
@@ -26,16 +26,15 @@ description: |-
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强...
 tags:
   - Automation
+  - 工作流
+  - 自动化
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工作流,自动化,效率"
 category: "Automation"
 ---
 # Workflow
@@ -56,6 +55,14 @@ category: "Automation"
 - Build automated pipelines with reusable components, data flow between
   nodes, and state management
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

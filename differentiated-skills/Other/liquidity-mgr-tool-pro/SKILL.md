@@ -3,7 +3,7 @@ slug: liquidity-mgr-tool-pro
 name: liquidity-mgr-tool-pro
 version: 1.0.0
 displayName: 流动性管理工具专业版
-summary: 面向团队的批量头寸、自动再平衡与收益优化工具.
+summary: "面向团队的批量头寸、自动再平衡与收益优化工具.。面向团队的流动性批量管理与收益优化专业工具。核心能力:"
 license: Proprietary
 edition: pro
 description: '面向团队的流动性批量管理与收益优化专业工具。核心能力:
@@ -26,21 +26,20 @@ description: '面向团队的流动性批量管理与收益优化专业工具。
 
   差异化: 专业版在免费版单头寸基础上扩展批量管理、自动再平衡、V4 Hook 与风险监控，兼容免费版命令'
 tags:
-- DeFi
-- 企业级
-- 流动性
-- 风险监控
-- 其他工具
+  - DeFi
+  - 企业级
+  - 流动性
+  - 风险监控
+  - 其他工具
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # 流动性管理工具（专业版）

@@ -3,23 +3,22 @@ slug: "document-pdf"
 name: "document-pdf"
 version: 1.0.1
 displayName: "Pdf"
-summary: "PDF全操作工具箱,提取文本表格/建PDF/合并拆分/填表"
+summary: "PDF全操作工具箱,提取文本表格/建PDF/合并拆分/填表。Comprehensive PDF manipulation toolkit for extracting text and ta"
 license: "Proprietary"
 description: |-
   Comprehensive PDF manipulation toolkit for extracting text and tables,
   creating new PDFs, merging。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
+  - 文档处理
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "文档处理,工具,效率"
 category: "Knowledge"
 ---
 # Pdf
@@ -39,6 +38,14 @@ category: "Knowledge"
 
 This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

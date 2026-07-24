@@ -3,26 +3,26 @@ slug: feishu-file-sender-free
 name: feishu-file-sender-free
 version: 1.0.1
 displayName: 飞书文件发送免费版
-summary: 飞书文件与图片发送工具，支持两步上传与稳定投递
+summary: "飞书文件与图片发送工具，支持两步上传与稳定投递。飞书文件发送免费版是一款面向个人用户的飞书文件与图片发送工具，通过两步上传流程"
 license: Proprietary
 edition: free
 description: '飞书文件发送免费版是一款面向个人用户的飞书文件与图片发送工具，通过两步上传流程
 
   （先上传获取 file_key/image_key，再发送消息）确保文件稳定投递。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。'
 tags:
-- 沟通协作
-- 飞书
-- 文件发送
-- 个人效率
+  - 沟通协作
+  - 飞书
+  - 文件发送
+  - 个人效率
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 飞书文件发送免费版

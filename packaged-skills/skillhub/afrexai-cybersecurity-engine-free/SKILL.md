@@ -3,7 +3,7 @@ slug: "afrexai-cybersecurity-engine-free"
 name: "afrexai-cybersecurity-engine-free"
 version: "1.0.0"
 displayName: "网络安全引擎(免费版)"
-summary: "全面安全评估、STRIDE威胁建模、OWASP Top 10审计、漏洞管理与应急响应体系。免费版"
+summary: "全面安全评估、STRIDE威胁建模、OWASP Top 10审计、漏洞管理与应急响应体系。免费版。企业级网络安全评估与加固体系（免费版），覆盖安全态势评估、STRIDE威胁建模、 OWASP"
 license: "MIT"
 description: |-
   企业级网络安全评估与加固体系（免费版），覆盖安全态势评估、STRIDE威胁建模、
@@ -15,11 +15,12 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 安全合规
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - 安全
+  - 加密
+  - 工具
 category: "Security"
 ---
 # 网络安全引擎(免费版)
@@ -86,6 +87,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回基础设施安全加固的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`基础设施安全加固`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

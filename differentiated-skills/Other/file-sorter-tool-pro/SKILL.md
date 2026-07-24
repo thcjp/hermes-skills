@@ -3,7 +3,7 @@ slug: file-sorter-tool-pro
 name: file-sorter-tool-pro
 version: 1.0.0
 displayName: 视觉文件整理专业版
-summary: 自定义分类规则、批量处理、操作历史回滚与团队共享配置，适合内容团队与企业文件治理.
+summary: "自定义分类规则、批量处理、操作历史回滚与团队共享配置，适合内容团队与企业文件治理.。视觉文件整理工具专业版，面向内容团队与企业的高阶文件治理平台。核心能力:"
 license: Proprietary
 edition: pro
 description: '视觉文件整理工具专业版，面向内容团队与企业的高阶文件治理平台。核心能力:
@@ -28,20 +28,19 @@ description: '视觉文件整理工具专业版，面向内容团队与企业的
 
   差异化: 专业版在免费版核心视觉识别之上扩展自定义规则与批量处理，新增历史回滚、团队共享、报告导出等企业级能力，并与免费版安全红线兼容'
 tags:
-- 文件整理
-- 企业治理
-- 批量处理
-- 专业版
+  - 文件整理
+  - 企业治理
+  - 批量处理
+  - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 视觉文件整理工具（专业版）

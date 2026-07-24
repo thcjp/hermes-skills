@@ -3,7 +3,7 @@ slug: "vue-component-gen-tool-pro"
 name: "vue-component-gen-tool-pro"
 version: "1.0.0"
 displayName: "Vue组件生成(专业版)"
-summary: "面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。"
+summary: "面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。。Vue组件生成工具专业版为团队与企业提供端到端Vue 3组件工程能力,涵盖企业级组件库结构、批"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,15 +27,14 @@ tags:
   - 自动化测试
   - 团队协作
   - CI/CD
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Vue 组件生成工具(专业版)
@@ -390,13 +389,20 @@ npm run storybook
 ```
 
 ---
-
 ## 示例
 
 ### CI/CD 组件质量门禁
 
 ```yaml
 # .github/workflows/component-quality.yml
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 name: Vue Component Quality Gate
 on:
   pull_request:

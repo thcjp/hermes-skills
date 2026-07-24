@@ -3,7 +3,7 @@ slug: "ui-component-paid"
 name: "ui-component-paid"
 version: 1.0.1
 displayName: "UI组件生成(专业版)"
-summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理。"
+summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理。。UI组件生成工具专业版为团队与企业提供端到端UI组件工程能力,涵盖设计系统令牌、批量组件生成、WCAG A"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,16 +27,15 @@ tags:
   - 可访问性
   - 组件库
   - 团队协作
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # UI组件生成(专业版)
@@ -82,6 +81,14 @@ category: "Creative"
 **输出**: 返回批量组件生成的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`批量组件生成`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1:设计系统令牌生成

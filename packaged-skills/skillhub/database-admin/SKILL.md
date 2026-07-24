@@ -3,7 +3,7 @@ slug: "database-admin"
 name: "database-admin"
 version: 2.0.1
 displayName: "数据库管理专家"
-summary: "表结构设计、批量数据操作、查询优化、类型处理与事务安全的全面数据库管理服务"
+summary: "表结构设计、批量数据操作、查询优化、类型处理与事务安全的全面数据库管理服务。数据库管理专家——提供全面的数据库管理功能，包括表结构创建、数据操作、查询优化、类型处理等. 核心能力包括： -"
 license: "Proprietary"
 description: |-
   数据库管理专家——提供全面的数据库管理功能，包括表结构创建、数据操作、查询优化、类型处理等.
@@ -19,16 +19,16 @@ tags:
   - 信息检索
   - database
   - postgresql
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
 category: "Research"
 ---
 # 数据库管理专家
@@ -126,6 +126,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供事务安全所需的指令和必要参数.
 **输出**: 返回事务安全的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **明确需求**：确认需要建表、插入数据、查询优化还是维护操作

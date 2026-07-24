@@ -3,7 +3,7 @@ slug: "azure-infra-free"
 name: "azure-infra-free"
 version: "2.0.0"
 displayName: "Azure Infra Free"
-summary: "通过本地 Azure CLI 只读查询 Azure 资源，基础盘点与健康检查。"
+summary: "通过本地 Azure CLI 只读查询 Azure 资源，基础盘点与健康检查。。Azure Infra Free 是 Azure Infra 技能的免费精简版，通过本地 Azure CLI（"
 license: "MIT"
 description: |-
   Azure Infra Free 是 Azure Infra 技能的免费精简版，通过本地 Azure CLI（az 命令）
@@ -25,12 +25,13 @@ tags:
   - Agents
   - Cloud
   - Azure
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # Azure Infra Free

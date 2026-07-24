@@ -3,23 +3,23 @@ slug: "game-ai"
 name: "game-ai"
 version: 1.0.1
 displayName: "Game AI Systems"
-summary: "游戏AI开发指南,行为树/状态机/寻路/决策全覆盖"
+summary: "游戏AI开发指南,行为树/状态机/寻路/决策全覆盖。Game AI development guide covering behavior trees, state machines, pa"
 license: "Proprietary"
 description: |-
   Game AI development guide covering behavior trees, state machines, pathfinding,
   and decision-maki。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Lifestyle
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Game AI Systems
@@ -44,6 +44,14 @@ category: "Automation"
 - 群体行为模拟：Boids 集群算法、Flocking 行为、编队移动、避障
 - 游戏AI架构模式：感知系统、记忆系统、 Steering Behaviors、AI 调度器
 - 多语言实现支持：C++/C#/Python/JavaScript，适配 Unity/Unreal/Godot/自研引擎
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

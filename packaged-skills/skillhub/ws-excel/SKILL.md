@@ -3,7 +3,7 @@ slug: "ws-excel"
 name: "ws-excel"
 version: 1.0.1
 displayName: "Excel"
-summary: "Excel提供读取/写入 Excel、数据清洗、公式计算等核心能力,付费版独享高级功能与批量处理。"
+summary: "Excel提供读取/写入 Excel、数据清洗、公式计算等核心能力,付费版独享高级功能与批量处理。。Excel 操作。数据处理、公式、表格操作. 核心能力: - 集成工具领域的专业化AI辅助"
 license: "Proprietary"
 description: |-
   Excel 操作。数据处理、公式、表格操作.
@@ -24,16 +24,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Excel
@@ -56,6 +55,14 @@ category: "Automation"
 * 公式计算
 * 多表格处理
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -130,6 +137,13 @@ export API_KEY="your_api_key_here"
 ```
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 **技能**: 使用 `minimax-xlsx` 处理 Excel
 

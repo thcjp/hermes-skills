@@ -3,7 +3,7 @@ slug: "task-bot-orchestrator"
 name: "task-bot-orchestrator"
 version: 1.0.1
 displayName: "任务编排机器人(专业版)"
-summary: "全功能任务编排，含条件触发、多渠道通知、高级编排、数据库集成与监控仪表盘，支持6种角色场景。"
+summary: "全功能任务编排，含条件触发、多渠道通知、高级编排、数据库集成与监控仪表盘，支持6种角色场景。。任务编排机器人（专业版）是在免费版基础上的全功能升级，为AI Agent提供完整的任务编排与自动"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 条件触发
   - 数据库集成
   - 监控告警
+  - 任务管理
+  - 效率
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "任务管理,效率,工具"
 category: "Productivity"
 ---
 # 任务编排机器人(专业版)
@@ -152,6 +151,14 @@ orch.enable_dashboard(
 **输入**: 用户提供八、免费版全部功能所需的指令和必要参数.
 **输出**: 返回八、免费版全部功能的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级数据处理管道（数据工程师）

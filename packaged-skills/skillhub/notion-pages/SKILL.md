@@ -3,7 +3,7 @@ slug: "notion-pages"
 name: "notion-pages"
 version: 0.1.2
 displayName: "Notion"
-summary: "搜页面数据库/更新内容/管Notion工作区数据"
+summary: "搜页面数据库/更新内容/管Notion工作区数据。Search pages and databases, update content, and manage Notion workspac"
 license: "Proprietary"
 description: |-
   Search pages and databases, update content, and manage Notion workspace
@@ -11,16 +11,16 @@ description: |-
 tags:
   - Productivity
   - Automation
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Notion
@@ -41,6 +41,14 @@ category: "Automation"
 - Search pages and databases, update content, and manage Notion workspace
   data from chat
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

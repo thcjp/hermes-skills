@@ -3,7 +3,7 @@ slug: "aws-wechat-article-writing"
 name: "aws-wechat-article-writing"
 version: 1.0.26
 displayName: "公众号长文写作引擎"
-summary: "公众号长文AI写作,从提纲或话题生成完整初稿,支持改写续写润色与多模型切换"
+summary: "公众号长文AI写作,从提纲或话题生成完整初稿,支持改写续写润色与多模型切换。面向微信公众号长文的 AI 写作引擎。从选题卡、提纲或口述话题生成完整初稿, 覆盖改写、续写、润色、开头结尾优化等"
 license: "Proprietary"
 description: |-
   面向微信公众号长文的 AI 写作引擎。从选题卡、提纲或口述话题生成完整初稿,
@@ -14,16 +14,15 @@ description: |-
 tags:
   - Creative
   - Writing
+  - AWS
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
 category: "Operations"
 ---
 # Aws Wechat Article Writing
@@ -94,6 +93,14 @@ export API_KEY="your_api_key_here"
 - 发布意图管理:`publish_method` 取 `draft` / `published` / `none`,默认 `draft`
 - 降级机制:模型未配置(退出码 2)自动取 prompt 由 Agent 代写;网络类失败自动重试一次
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

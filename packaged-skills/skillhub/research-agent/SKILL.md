@@ -3,22 +3,23 @@ slug: "research-agent"
 name: "research-agent"
 version: 1.0.1
 displayName: "Research"
-summary: "开放式主题研究,构建活的Markdown文档,支持交互(付费增强版)"
+summary: "开放式主题研究,构建活的Markdown文档,支持交互(付费增强版)。Conduct open-ended research on a topic, building a living ma"
 license: "Proprietary"
 description: |-
   Conduct open-ended research on a topic, building a living markdown document。Supports interactive。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - Research
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # Research
@@ -39,6 +40,14 @@ category: "Agents"
 - Conduct open-ended research on a topic, building a living markdown document
 - Supports interactive
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

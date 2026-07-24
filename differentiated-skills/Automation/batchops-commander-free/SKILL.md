@@ -3,25 +3,24 @@ slug: batchops-commander-free
 name: batchops-commander-free
 version: 1.0.1
 displayName: Batchops Commander
-summary: 批量处理多项目的完整生命周期管理，含进度追踪、检查点保存、错误恢复与dry-run预览.
+summary: "批量处理多项目的完整生命周期管理，含进度追踪、检查点保存、错误恢复与dry-run预览.。批处理指挥官免费版帮助你安全高效地批量处理大量项目。覆盖批处理全生命周期（开始前-处理中-完成后），"
 license: Proprietary
 edition: free
 description: 批处理指挥官免费版帮助你安全高效地批量处理大量项目。覆盖批处理全生命周期（开始前-处理中-完成后），提供进度追踪、检查点保存、错误恢复与dry-run预览，确保批量任务可监控、可恢复、可追溯。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 批处理
-- 进度追踪
-- 错误恢复
-- 检查点
+  - 批处理
+  - 进度追踪
+  - 错误恢复
+  - 检查点
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 批处理指挥官（免费版）

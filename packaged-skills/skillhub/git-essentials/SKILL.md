@@ -3,22 +3,20 @@ slug: "git-essentials"
 name: "git-essentials"
 version: 1.0.1
 displayName: "Git核心操作"
-summary: "涵盖Git版本控制核心命令与工作流,包括分支、合并、变基、标签与冲突处理"
+summary: "涵盖Git版本控制核心命令与工作流,包括分支、合并、变基、标签与冲突处理。涵盖Git版本控制核心命令与工作流,包括初始配置、基础工作流、分支管理、合并、远程操作、历史查询、撤销变更、暂存、变"
 license: "Proprietary"
 description: |-
   涵盖Git版本控制核心命令与工作流,包括初始配置、基础工作流、分支管理、合并、远程操作、历史查询、撤销变更、暂存、变基、标签、高级操作(cherry-pick、子模块、clean)与常见工作流模式。提供冲突解决、分支恢复与安全强制推送等错误处理策略.
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 研发工具
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+  - 版本控制
+  - Git
+  - 开发工具
 category: "Development"
 ---
 # Git核心操作
@@ -110,6 +108,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回分支管理与切换的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`分支管理与切换`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 基础工作流
 
 ### 暂存与提交

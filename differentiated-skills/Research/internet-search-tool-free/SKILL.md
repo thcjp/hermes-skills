@@ -32,19 +32,18 @@ description: '基于 SearXNG 的多引擎聚合搜索工具，支持分类路由
 
   - 结果聚合...'
 tags:
-- 搜索
-- 聚合工具
-- 多引擎
-- 信息检索
+  - 搜索
+  - 聚合工具
+  - 多引擎
+  - 信息检索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 聚合搜索工具（免费版）

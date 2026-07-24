@@ -3,7 +3,7 @@ slug: "figma-studio"
 name: "figma-studio"
 version: 1.0.1
 displayName: "Figma工作室(专业版)"
-summary: "企业级Figma设计协作工具，支持批量导出、Webhook管理、设计变更监控与团队资源治理。"
+summary: "企业级Figma设计协作工具，支持批量导出、Webhook管理、设计变更监控与团队资源治理。。Figma工作室专业版是一款面向设计团队与企业级设计工程化场景的全功能Figma协作工具。在免费"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,16 +12,15 @@ tags:
   - 设计协作
   - 设计工程化
   - 企业工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Figma工作室(专业版)
@@ -262,6 +261,14 @@ def compare_versions(file_key: str, old_version: str, new_version: str) -> dict:
 - 关键参数: `能力6：设计版本对比` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级设计系统治理（设计负责人角色）

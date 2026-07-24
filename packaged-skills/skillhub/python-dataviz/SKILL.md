@@ -3,22 +3,22 @@ slug: "python-dataviz"
 name: "python-dataviz"
 version: 1.0.1
 displayName: "Python Dataviz"
-summary: "用Python(matplotlib/seaborn/plotly)做专业数据可视化"
+summary: "用Python(matplotlib/seaborn/plotly)做专业数据可视化。Professional data visualization using Python (matplo"
 license: "Proprietary"
 description: |-
   Professional data visualization using Python (matplotlib, seaborn, plotly)。Create publication-qu。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Other
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
 category: "Research"
 ---
 # Python Dataviz
@@ -39,6 +39,14 @@ category: "Research"
 - Professional data visualization using Python (matplotlib, seaborn, plotly)
 - Create publication-qu
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **matplotlib** - Static plots, publication-quality, full control

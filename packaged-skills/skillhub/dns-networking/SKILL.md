@@ -3,23 +3,21 @@ slug: "dns-networking"
 name: "dns-networking"
 version: 1.0.1
 displayName: "DNS & Networking"
-summary: "调试DNS解析与网络连通,DNS故障/端口测试一键诊断"
+summary: "调试DNS解析与网络连通,DNS故障/端口测试一键诊断。Debug DNS resolution and network connectivity。Use when troubleshoot"
 license: "Proprietary"
 description: |-
   Debug DNS resolution and network connectivity。Use when troubleshooting
   DNS failures, testing por。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
+  - 网络
+  - DNS
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "网络,DNS,工具"
 category: "Operations"
 ---
 # DNS & Networking
@@ -41,6 +39,14 @@ category: "Operations"
 - Use when troubleshooting
   DNS failures, testing por
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

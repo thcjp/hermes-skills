@@ -3,7 +3,7 @@ slug: "data-analyst-cn-free"
 name: "data-analyst-cn-free"
 version: "1.0.0"
 displayName: "数据分析师(免费版)"
-summary: "基础数据清洗、描述统计与基础可视化代码生成，支持CSV与Excel读取"
+summary: "基础数据清洗、描述统计与基础可视化代码生成，支持CSV与Excel读取。数据分析师免费版，提供基础的数据清洗与统计分析能力. 核心能力包括： - CSV与Excel数据读取（pd.read_"
 license: "MIT"
 description: |-
   数据分析师免费版，提供基础的数据清洗与统计分析能力.
@@ -18,12 +18,15 @@ tags:
   - 信息检索
   - data-analysis
   - visualization
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
+  - write
+  - glob
+homepage: ""
 category: "Research"
 ---
 # 数据分析师（免费版）
@@ -125,6 +128,14 @@ plt.rcParams['axes.unicode_minus'] = False
 
 > **升级提示**：箱线图（`sns.boxplot`）、热力图（`sns.heatmap`）、小提琴图、成对关系图、多轴趋势图为付费版专享功能。时间序列分析（`resample`、`rolling`、`seasonal_decompose`）为付费版专享功能。分析报告自动生成为付费版专享功能.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 依赖说明
 
 ### 运行环境

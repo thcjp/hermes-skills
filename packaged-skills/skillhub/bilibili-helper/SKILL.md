@@ -21,16 +21,15 @@ tags:
   - bilibili
   - video
   - content-creation
+  - B站
+  - 视频
+  - 媒体
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "B站,视频,媒体"
 category: "Creative"
 ---
 # B站爆款内容生产引擎
@@ -97,6 +96,14 @@ bili.sh help
 提供粉丝增长路径规划、充电计划设计、弹幕互动话术、专栏联动与动态运营建议。支持按UP主发展阶段（起步期、成长期、稳定期）输出差异化运营策略，包含内容矩阵规划与更新频率建议。- 验证返回数据的完整性和格式正确性
 - 参考`UP主运营指导`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

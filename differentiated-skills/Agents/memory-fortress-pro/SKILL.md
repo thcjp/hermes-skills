@@ -11,22 +11,23 @@ description: '记忆堡垒专业版是在免费版基础上的全功能升级，
   差异化：基于开源记忆系统方法深度改造，完全中文化，路径改为~/workspace标准目录，新增三大高级功能、多角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整六层架构与优先支持。保留原始MIT版权声明.
   适用关键词：记忆系统、长期记忆、向量搜索、自动提取、云备份、WAL协议、知识图谱、跨设备同步'
 tags:
-- 记忆系统
-- Agent记忆
-- 向量搜索
-- 知识管理
-- 跨设备同步
+  - 记忆系统
+  - Agent记忆
+  - 向量搜索
+  - 知识管理
+  - 跨设备同步
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
+  - read
+  - exec
+  - write
+  - glob
+  - grep
 edition: pro
-homepage: https://skillhub.cn
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 记忆堡垒（专业版）

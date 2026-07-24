@@ -3,25 +3,24 @@ slug: workflow-essentials-free
 name: workflow-essentials-free
 version: 1.0.1
 displayName: Workflow Essentials
-summary: 自动化工作流的入门精要指南，三步法掌握识别、设计、构建自动化的核心方法.
+summary: "自动化工作流的入门精要指南，三步法掌握识别、设计、构建自动化的核心方法.。工作流精要为AI Agent提供自动化工作流的入门级方法论。不同于面向特定角色或特定工具的指南，工作流精要聚焦自动化"
 license: Proprietary
 edition: free
 description: 工作流精要为AI Agent提供自动化工作流的入门级方法论。不同于面向特定角色或特定工具的指南，工作流精要聚焦自动化的通用原理与核心方法，适合任何角色快速建立自动化思维。Use
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
-- 自动化基础
-- 工作流入门
-- 效率提升
-- 无代码
+  - 自动化基础
+  - 工作流入门
+  - 效率提升
+  - 无代码
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 工作流精要（免费版）
@@ -295,7 +294,6 @@ Agent（三步引导）：
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent讲解自动化原理并指导构建
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -343,6 +341,14 @@ Agent（三步引导）：
 ```
 ### 自动化的核心原理（<60秒理解）(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 ```text
 自动化 = 触发器 + 操作步骤 + 错误处理
 

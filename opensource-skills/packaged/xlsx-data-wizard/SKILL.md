@@ -3,24 +3,23 @@ slug: xlsx-data-wizard
 name: xlsx-data-wizard
 version: 1.0.1
 displayName: Excel数据魔法师
-summary: openpyxl全场景Excel处理,读写格式图表透视表公式全搞定
+summary: "openpyxl全场景Excel处理,读写格式图表透视表公式全搞定。Excel数据魔法师——基于openpyxl实现全场景Excel文件处理。覆盖读取写入、格式化、公式、图表、透视表、多Sh"
 license: Proprietary
 description: Excel数据魔法师——基于openpyxl实现全场景Excel文件处理。覆盖读取写入、格式化、公式、图表、透视表、多Sheet操作、合并拆分、数据校验、批注、保护全链路。同时提供WPS表格适配说明。适用于数据报表生成、Excel模板填充、批量数据处理、格式美化、图表可视化、财务报表自动化场景。触发关键词:Excel、xlsx、openpyxl、Excel处理、表格处理、数据报表、Excel格式化、Excel图表、透视表、Excel公式、WPS表格、Excel自动化
 tags:
-- Excel处理
-- 数据报表
-- 表格美化
-- 数据可视化
-- 办公自动化
+  - Excel处理
+  - 数据报表
+  - 表格美化
+  - 数据可视化
+  - 办公自动化
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
+  - read
+  - exec
+  - write
+  - glob
 category: "Research"
 ---
 # Excel数据魔法师
@@ -34,6 +33,14 @@ category: "Research"
 3. **公式与函数**:SUM/AVERAGE/VLOOKUP/IF/COUNTIF/数组公式、动态引用、公式审计
 4. **图表生成**:柱状图/折线图/饼图/散点图/组合图、标题/图例/坐标轴/数据标签
 5. **数据透视表与高级功能**:PivotTable 创建、数据校验、批注、保护、合并拆分
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

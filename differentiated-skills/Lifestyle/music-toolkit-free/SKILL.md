@@ -3,7 +3,7 @@ slug: music-toolkit-free
 name: music-toolkit-free
 version: 1.0.1
 displayName: 音乐工具箱免费版
-summary: 音乐生成与编辑工具,支持MIDI生成、音频处理与基础乐理分析
+summary: "音乐生成与编辑工具,支持MIDI生成、音频处理与基础乐理分析。面向个人音乐爱好者与学习者的音乐生成与编辑工具箱."
 license: Proprietary
 edition: free
 description: '面向个人音乐爱好者与学习者的音乐生成与编辑工具箱.
@@ -15,21 +15,19 @@ description: '面向个人音乐爱好者与学习者的音乐生成与编辑工
 
   适用关键词: 音乐生成, MIDI, 音频处理, 乐理分析, 和弦进行, 旋律创作'
 tags:
-- 音乐生成
-- 音频处理
-- 乐理分析
-- MIDI
-- 创作工具
-- 音乐学习
+  - 音乐生成
+  - 音频处理
+  - 乐理分析
+  - MIDI
+  - 创作工具
+  - 音乐学习
+  - 音频
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "音乐生成,音频,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 音乐工具箱 (免费版)

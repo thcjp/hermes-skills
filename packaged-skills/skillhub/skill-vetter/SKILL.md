@@ -3,7 +3,7 @@ slug: "skill-vetter"
 name: "skill-vetter"
 version: 1.0.1
 displayName: "Skill Vetter"
-summary: "安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。"
+summary: "安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。。skill-vetter 是一个安全优先的 AI Agent 技能审查工具。在安装任何技能前执行 4 步审查协议： 来源"
 license: "Proprietary"
 description: |-
   skill-vetter 是一个安全优先的 AI Agent 技能审查工具。在安装任何技能前执行 4 步审查协议：
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # Skill Vetter
@@ -115,6 +113,14 @@ DO NOT INSTALL）；附注观察.
 请求凭证的技能（始终需人工批准）。信任层级越低，审查深度越深。- 验证返回数据的完整性和格式正确性
 - 参考`信任层级评估`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认技能来源（SkillHub / GitHub / 其他），记录作者和版本

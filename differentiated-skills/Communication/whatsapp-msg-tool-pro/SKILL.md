@@ -3,7 +3,7 @@ slug: "whatsapp-msg-tool-pro"
 name: "whatsapp-msg-tool-pro"
 version: "1.0.0"
 displayName: "WhatsApp消息工具(专业版)"
-summary: "WhatsApp消息全能力版：批量发送、历史回填、群组管理、持续同步与高级搜索。"
+summary: "WhatsApp消息全能力版：批量发送、历史回填、群组管理、持续同步与高级搜索。。WhatsApp 消息工具（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引擎、历史回填、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,15 +15,13 @@ tags:
   - 批量操作
   - 群组管理
   - 消息自动化
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # WhatsApp 消息工具（专业版）

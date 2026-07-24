@@ -3,23 +3,22 @@ slug: secure-api-toolkit-free
 name: secure-api-toolkit-free
 version: 1.0.1
 displayName: 安全API工具箱
-summary: "凭据代理让Agent调第三方API时密钥不落地,服务端注入真实令牌,免费个人开发者用"
+summary: "凭据代理让Agent调第三方API时密钥不落地,服务端注入真实令牌,免费个人开发者用。安全API工具箱（免费版）通过凭据代理机制让Agent在调用第三方API时无需接触真实密钥，从架构层杜绝"
 license: Proprietary
 edition: free
 description: 安全API工具箱（免费版）通过凭据代理机制让Agent在调用第三方API时无需接触真实密钥，从架构层杜绝密钥泄露风险。核心能力：占位符模板化请求、服务端密钥注入、生物识别授权、单提供商连通验证、CLI命令行调用。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 集成工具
-- 安全合规
+  - 集成工具
+  - 安全合规
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # 安全API工具箱（免费版）
@@ -63,6 +62,14 @@ category: "Development"
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过占位符代理安、全调用第三方、密钥不落地、Agent、适合个人开发者试、工具箱、通过凭据代理机制、在调用第三方、时无需接触真实密、从架构层杜绝密钥、泄露风险、核心能力、占位符模板化请求、单提供商连通验证、命令行调用、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 ### 场景1：个人开发者安全调用GitHub API

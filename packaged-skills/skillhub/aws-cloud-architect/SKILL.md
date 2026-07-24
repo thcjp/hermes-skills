@@ -3,7 +3,7 @@ slug: "aws-cloud-architect"
 name: "aws-cloud-architect"
 version: 1.0.1
 displayName: "AWS 云架构师"
-summary: "AWS 架构设计、成本优化、安全加固与迁移部署全流程助手"
+summary: "AWS 架构设计、成本优化、安全加固与迁移部署全流程助手。资深 AWS 云架构师助手,覆盖架构设计、服务选型、成本优化、安全加固、 性能调优与迁移部署全流程。遵循 Well-Architec"
 license: "Proprietary"
 description: |-
   资深 AWS 云架构师助手,覆盖架构设计、服务选型、成本优化、安全加固、
@@ -17,16 +17,15 @@ description: |-
 tags:
   - Operations
   - Creative
+  - AWS
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
 category: "Operations"
 ---
 # AWS 云架构师
@@ -58,6 +57,14 @@ category: "Operations"
 5. **迁移(Migration)** - 应用 6Rs 框架、定义迁移批次、测试故障切换
 6. **运维(Operate)** - 监控、自动化、持续优化
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 能力速查
 ### 1. 先验证账户上下文
 

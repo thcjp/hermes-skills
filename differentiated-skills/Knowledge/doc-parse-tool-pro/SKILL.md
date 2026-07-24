@@ -3,7 +3,7 @@ slug: "doc-parse-tool-pro"
 name: "doc-parse-tool-pro"
 version: "1.0.0"
 displayName: "文档解析工具（专业版）"
-summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。"
+summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。。文档解析工具 - （专业版） 核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document par"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -21,15 +21,14 @@ tags:
   - OCR
   - 表格识别
   - 版面分析
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 文档解析工具（专业版）

@@ -3,7 +3,7 @@ slug: ai-image-prompt-tool-pro
 name: ai-image-prompt-tool-pro
 version: 1.0.0
 displayName: AI图像提示词-专业版
-summary: 企业级提示词工程工具,支持批量生成、A/B测试、版本管理与团队协作,适配商业内容生产.
+summary: "企业级提示词工程工具,支持批量生成、A/B测试、版本管理与团队协作,适配商业内容生产.。AI图像提示词专业版,面向企业团队与专业设计师的高级提示词工程工具。核心能力:"
 license: Proprietary
 edition: pro
 description: 'AI图像提示词专业版,面向企业团队与专业设计师的高级提示词工程工具。核心能力:
@@ -30,20 +30,19 @@ description: 'AI图像提示词专业版,面向企业团队与专业设计师的
 
   差异化:专业版在免费版基础上扩展行业模板、批量生成、A/B测试与版本管理,兼容免费版所有模板,适...'
 tags:
-- Creative
-- 提示词工程
-- 企业版
-- 商业内容
+  - Creative
+  - 提示词工程
+  - 企业版
+  - 商业内容
+  - 图像处理
+  - AI绘图
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
 category: "Creative"
 ---
 # AI图像提示词工具 - 专业版

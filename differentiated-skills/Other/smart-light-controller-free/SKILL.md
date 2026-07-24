@@ -3,7 +3,7 @@ slug: smart-light-controller-free
 name: smart-light-controller-free
 version: 1.0.1
 displayName: 智能灯控(免费版)
-summary: 局域网智能灯泡控制工具，支持开关、亮度、颜色调节，零云端依赖.
+summary: "局域网智能灯泡控制工具，支持开关、亮度、颜色调节，零云端依赖.。智能灯控工具是一款面向本地局域网智能灯泡的轻量级控制方案，兼容 TP-Link Kasa 协议设备，无需云端账号即可完成开关、"
 license: Proprietary
 edition: free
 description: '智能灯控工具是一款面向本地局域网智能灯泡的轻量级控制方案，兼容 TP-Link Kasa 协议设备，无需云端账号即可完成开关、亮度、色温与
@@ -17,19 +17,17 @@ description: '智能灯控工具是一款面向本地局域网智能灯泡的轻
 
   - 内置错误恢复策略...'
 tags:
-- 智能家居
-- 灯光控制
-- 局域网
-- 自动化
+  - 智能家居
+  - 灯光控制
+  - 局域网
+  - 自动化
+  - 工具
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 智能灯控工具（免费版）

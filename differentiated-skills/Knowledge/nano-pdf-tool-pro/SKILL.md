@@ -3,7 +3,7 @@ slug: nano-pdf-tool-pro
 name: nano-pdf-tool-pro
 version: 1.0.0
 displayName: Nano PDF工具（专业版）
-summary: 轻量级PDF处理工具：读取、创建、编辑PDF，支持文本提取与基本页面操作.
+summary: "轻量级PDF处理工具：读取、创建、编辑PDF，支持文本提取与基本页面操作.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: 'Nano PDF工具 - （专业版）
@@ -16,20 +16,19 @@ description: 'Nano PDF工具 - （专业版）
 
   适用关键词: PDF读取, PDF创建, 文本提取, 页面操作, nano pdf, PDF编辑, 页面旋转'
 tags:
-- PDF处理
-- 轻量级
-- 文本提取
-- 页面操作
+  - PDF处理
+  - 轻量级
+  - 文本提取
+  - 页面操作
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Nano PDF工具（专业版）

@@ -3,7 +3,7 @@ slug: "explain-code-tool-pro"
 name: "explain-code-tool-pro"
 version: "1.0.0"
 displayName: "代码解释工具专业版"
-summary: "企业级代码理解工具,支持项目架构分析、批量文档生成、Mermaid可视化与API文档输出。"
+summary: "企业级代码理解工具,支持项目架构分析、批量文档生成、Mermaid可视化与API文档输出。。面向研发团队的高级代码理解工具,提供项目级架构分析、批量代码文档生成、Mermaid/UML可视化"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,15 +29,15 @@ tags:
   - 代码理解
   - 技术文档
   - 企业级
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 代码解释工具专业版为研发团队提供项目级代码理解能力。在免费版单文件解释能力之上,专业版新增项目架构分析、批量代码文档生成、Mermaid/UML高质量可视化和API文档自动提取,帮助团队高效理解和管理大型代码库.

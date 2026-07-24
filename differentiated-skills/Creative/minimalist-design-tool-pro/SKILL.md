@@ -16,15 +16,14 @@ tags:
   - 多主题
   - CI/CD
   - 前端开发
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,PRO版增加完整组件库、多主题切换、设计系统文档自动生成、设计审计与CI/CD集成能力,满足企业级设计系统的全面需求。

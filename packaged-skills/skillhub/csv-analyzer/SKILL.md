@@ -3,7 +3,7 @@ slug: "csv-analyzer"
 name: "csv-analyzer"
 version: 1.0.1
 displayName: "CSV数据分析器"
-summary: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。"
+summary: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。。CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果. 仅依赖Python标准库"
 license: "Proprietary"
 description: |-
   CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果.
@@ -22,16 +22,15 @@ tags:
   - 信息检索
   - 数据分析
   - CSV
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Csv Analyzer — CSV数据分析器
@@ -127,6 +126,14 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） group data.csv --
 
 `filter` 等命令支持 `--output` 参数，将处理结果导出为CSV，便于后续分析或报表使用.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 为何不用pandas？
 
 pandas很强大，但：

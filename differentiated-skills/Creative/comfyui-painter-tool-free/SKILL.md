@@ -3,7 +3,7 @@ slug: comfyui-painter-tool-free
 name: comfyui-painter-tool-free
 version: 1.0.0
 displayName: ComfyUI绘画免费版
-summary: 本地ComfyUI图像生成工具，支持文生图基础工作流与默认模型，适合个人创作.
+summary: "本地ComfyUI图像生成工具，支持文生图基础工作流与默认模型，适合个人创作.。ComfyUI绘画免费版 —— 面向个人用户的轻量级本地AI图像生成工具。核心能力:"
 license: Proprietary
 edition: free
 description: 'ComfyUI绘画免费版 —— 面向个人用户的轻量级本地AI图像生成工具。核心能力:
@@ -14,19 +14,18 @@ description: 'ComfyUI绘画免费版 —— 面向个人用户的轻量级本地
 
   - 默认模型支持：使用SD1。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。'
 tags:
-- AI绘画
-- 图像生成
-- ComfyUI
-- 个人创作
+  - AI绘画
+  - 图像生成
+  - ComfyUI
+  - 个人创作
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # ComfyUI绘画免费版

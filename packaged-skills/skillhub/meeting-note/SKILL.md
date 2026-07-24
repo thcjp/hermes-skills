@@ -3,23 +3,22 @@ slug: "meeting-note"
 name: "meeting-note"
 version: 1.0.1
 displayName: "Meeting Note"
-summary: "探讨决策型会议纪要(结论/共识/分歧/行动项)+Zettelkasten连接"
+summary: "探讨决策型会议纪要(结论/共识/分歧/行动项)+Zettelkasten连接。探讨/决策型会议与谈话纪要（结论/共识/分歧/决策轨迹/隐含假设/风险机会/行动项）+ Zettelkasten"
 license: "Proprietary"
 description: |-
   探讨/决策型会议与谈话纪要（结论/共识/分歧/决策轨迹/隐含假设/风险机会/行动项）+ Zettelkasten 连接。Use when
   用户要整理会议纪要、复盘讨论、把多方探讨变成可执行资产。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Meeting Note
@@ -41,6 +40,14 @@ category: "Automation"
 - Use when
   用户要整理会议纪要、复盘讨论、把多方探讨变成可执行资产
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -64,7 +71,6 @@ category: "Automation"
   + Zettelkasten 连接（≥2 条，使用 `[[文件名]]`）
 
 ---
-
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 输入格式
 
@@ -172,6 +178,14 @@ export API_KEY="your_api_key_here"
   + 行动项（可衡量+责任人+截止时间+成功标准）
   + Zettelkasten 连接（≥2 条，使用 `[[文件名]]`）
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 ---
 ```
 

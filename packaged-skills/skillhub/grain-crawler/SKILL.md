@@ -3,7 +3,7 @@ slug: "grain-crawler"
 name: "grain-crawler"
 version: 1.0.1
 displayName: "归档检索(专业版)"
-summary: "全功能 Granola 归档检索，含同步、SQL、转录稿、面板、批量导出。"
+summary: "全功能 Granola 归档检索，含同步、SQL、转录稿、面板、批量导出。。全功能 Granola 归档检索。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,16 @@ tags:
   - 知识管理
   - 企业效率
   - 数据分析
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 归档检索(专业版)
@@ -73,6 +73,14 @@ category: "Automation"
 **输出**: 返回笔记详情的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`笔记详情`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1：企业会议知识库集中检索

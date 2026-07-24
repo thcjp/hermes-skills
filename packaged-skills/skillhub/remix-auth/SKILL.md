@@ -3,7 +3,7 @@ slug: "remix-auth"
 name: "remix-auth"
 version: 1.0.1
 displayName: "Remix认证工具Pro"
-summary: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。"
+summary: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。。Remix认证工具（专业版）为团队与企业提供Remix平台API的完整Bearer Token认证治理"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,16 +12,15 @@ tags:
   - 集成工具
   - 认证授权
   - 企业级
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Remix认证工具Pro
@@ -68,6 +67,14 @@ category: "Automation"
 **输出**: 返回团队密钥管理的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`团队密钥管理`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景1：企业级Remix API集成

@@ -3,7 +3,7 @@ slug: "knowledge-graph-tool-pro"
 name: "knowledge-graph-tool-pro"
 version: "1.0.0"
 displayName: "知识图谱工具(专业版)"
-summary: "团队级嵌入式知识图谱,含加密保险库、可视化、多Agent协作与内存导入。"
+summary: "团队级嵌入式知识图谱,含加密保险库、可视化、多Agent协作与内存导入。。知识图谱工具(专业版)面向团队与企业,提供完整的嵌入式知识图谱能力,含加密保险库、离线可视化、跨Agent协作与内存"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,15 +27,15 @@ tags:
   - 企业级
   - 可视化
   - 安全
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 知识图谱工具(专业版)

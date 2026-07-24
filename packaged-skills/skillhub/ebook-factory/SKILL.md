@@ -3,7 +3,7 @@ slug: ebook-factory
 name: ebook-factory
 version: 1.0.1
 displayName: "电子书工厂"
-summary: "三天写完一本专业电子书,Markdown输入EPUB输出,KDP/微信读书多平台发布"
+summary: "三天写完一本专业电子书,Markdown输入EPUB输出,KDP/微信读书多平台发布。电子书工厂是一款从Markdown大纲生成完整电子书的工具。支持逐节生成、多格式导出(EPUB/PDF)"
 license: Proprietary
 description: |-
   电子书工厂是一款从Markdown大纲生成完整电子书的工具。支持逐节生成、多格式导出(EPUB/PDF)、
@@ -14,21 +14,19 @@ description: |-
   - 多格式导出:EPUB(Kindle/手机阅读器)、PDF(印刷版)、Markdown(源文件备份)
   - 多平台发布:KDP/微信读书/豆瓣阅读,自动适配各平台格式要求
   - 封面图与版权页自动生成:调用图像API生成封面,自动生成版权页
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 内容创作
   - 电子书
   - 出版
   - 知识付费
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 电子书工厂
@@ -53,6 +51,14 @@ category: "Automation"
 4. **多平台发布**:KDP(亚马逊Kindle Direct Publishing)、微信读书、豆瓣阅读,自动适配各平台格式要求(封面尺寸/章节结构/元数据)
 5. **封面图与版权页自动生成**:调用图像生成API生成书籍封面图(支持自定义风格描述),自动生成版权页(书名/作者/出版日期/版权声明/ISBN占位)
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |

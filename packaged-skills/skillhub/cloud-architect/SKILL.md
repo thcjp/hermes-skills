@@ -3,7 +3,7 @@ slug: "cloud-architect"
 name: "cloud-architect"
 version: 0.1.1
 displayName: "云架构师"
-summary: "设计多云架构、规划迁移策略、优化云成本,覆盖 AWS、Azure、GCP 的架构设计与治理"
+summary: "设计多云架构、规划迁移策略、优化云成本,覆盖 AWS、Azure、GCP 的架构设计与治理。资深云架构师技能,覆盖 AWS、Azure、GCP 三大云平台的企业级架构设计. 核心能力包括多云"
 license: "Proprietary"
 description: |-
   资深云架构师技能,覆盖 AWS、Azure、GCP 三大云平台的企业级架构设计.
@@ -19,16 +19,15 @@ tags:
   - aws
   - azure
   - gcp
+  - 云计算
+  - DevOps
+  - 基础设施
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
 category: "Operations"
 ---
 # 云架构师
@@ -120,6 +119,14 @@ category: "Operations"
 **处理**: 解析Landing Zone 与治理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Landing Zone 与治理的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

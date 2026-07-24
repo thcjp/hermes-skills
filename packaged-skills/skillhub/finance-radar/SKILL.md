@@ -3,23 +3,22 @@ slug: "finance-radar"
 name: "finance-radar"
 version: 1.1.1
 displayName: "Finance Radar"
-summary: "基于雅虎财经做股票与加密分析,数据驱动决策"Proprietary"
+summary: "基于雅虎财经做股票与加密分析,数据驱动决策"Proprietary。Stock and cryptocurrency analysis powered by Yahoo Finance da"
 description: |-
   Stock and cryptocurrency analysis powered by Yahoo Finance data。Use
   when a user wants to: (1) An。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Finance
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
 license: "MIT"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
 category: "Finance"
 ---
 # Finance Radar
@@ -41,6 +40,14 @@ category: "Finance"
 - Use
   when a user wants to: (1) An
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

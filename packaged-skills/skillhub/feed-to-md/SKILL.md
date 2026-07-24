@@ -3,23 +3,22 @@ slug: "feed-to-md"
 name: "feed-to-md"
 version: 1.2.1
 displayName: "Feed To Md"
-summary: "用内置本地转换器把RSS/Atom订阅转Markdown"
+summary: "用内置本地转换器把RSS/Atom订阅转Markdown。Convert RSS or Atom feed URLs into Markdown using the bundled loca"
 license: "Proprietary"
 description: |-
   Convert RSS or Atom feed URLs into Markdown using the bundled local
   converter script。Use this wh。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Research
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Feed To Md
@@ -41,6 +40,14 @@ category: "Automation"
   converter script
 - Use this wh
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -3,7 +3,7 @@ slug: "telegram-alert-tool-pro"
 name: "telegram-alert-tool-pro"
 version: "1.0.0"
 displayName: "Telegram告警专业版"
-summary: "多通道交易告警系统，支持多群组、复杂触发、富媒体消息与团队协作。"
+summary: "多通道交易告警系统，支持多群组、复杂触发、富媒体消息与团队协作。。面向专业交易团队的多通道告警通知系统。支持Telegram多群组推送、 复合触发条件、富媒体消息（图表/图片）、定时播报与团"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,15 +14,14 @@ tags:
   - 告警通知
   - 企业级
   - 团队协作
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+homepage: ""
 category: "Finance"
 ---
 # Telegram告警专业版（PRO版）

@@ -3,7 +3,7 @@ slug: password-generator-tool-pro
 name: password-generator-tool-pro
 version: 1.0.0
 displayName: 密码生成器(专业版)
-summary: 企业级密码生成工具,支持8-128位自定义、批量生成、泄露检测、策略模板与多格式导出
+summary: "企业级密码生成工具,支持8-128位自定义、批量生成、泄露检测、策略模板与多格式导出,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: '核心能力:
@@ -36,21 +36,18 @@ description: '核心能力:
 
   - 批...'
 tags:
-- 安全
-- 密码管理
-- 企业安全
-- 合规审计
-- 随机生成
+  - 安全
+  - 密码管理
+  - 企业安全
+  - 合规审计
+  - 随机生成
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
 category: "Security"
 ---
 # 密码生成器(专业版)

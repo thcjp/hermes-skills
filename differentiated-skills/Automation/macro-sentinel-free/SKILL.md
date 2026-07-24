@@ -3,25 +3,24 @@ slug: macro-sentinel-free
 name: macro-sentinel-free
 version: 1.0.1
 displayName: 宏观哨兵(免费版)
-summary: 每日宏观数据自动采集与整理，覆盖国内外核心数据源，生成结构化简报，60秒上手.
+summary: "每日宏观数据自动采集与整理，覆盖国内外核心数据源，生成结构化简报，60秒上手.。宏观哨兵（免费版）为AI Agent提供每日宏观经济数据的自动采集与整理能力，覆盖Trading Econom"
 license: Proprietary
 edition: free
 description: 宏观哨兵（免费版）为AI Agent提供每日宏观经济数据的自动采集与整理能力，覆盖Trading Economics、FRED、国家统计局、央行官网等核心数据源。自动浏览免费数据源，整理过去24小时发布的宏观数据与政策信息，生成结构化简报并推送。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
-- 宏观经济
-- 数据监控
-- 经济指标
-- 每日简报
+  - 宏观经济
+  - 数据监控
+  - 经济指标
+  - 每日简报
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 宏观哨兵（免费版）

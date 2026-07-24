@@ -3,7 +3,7 @@ slug: feishu-doc-write-tool-free
 name: feishu-doc-write-tool-free
 version: 1.0.0
 displayName: 飞书文档写入（免费版）
-summary: 向飞书文档追加内容，支持按标题层级分块写入、批量块操作与格式转换.
+summary: "向飞书文档追加内容，支持按标题层级分块写入、批量块操作与格式转换.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
 description: '飞书文档写入 - （免费版）
@@ -16,19 +16,18 @@ description: '飞书文档写入 - （免费版）
 
   适用关键词: 飞书文档写入, 内容追加, 块操作, feishu write, 文档编辑, 长文档分块'
 tags:
-- 飞书集成
-- 文档写入
-- 块操作
-- 内容追加
+  - 飞书集成
+  - 文档写入
+  - 块操作
+  - 内容追加
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 飞书文档写入（免费版）

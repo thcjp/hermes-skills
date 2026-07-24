@@ -15,11 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 文档处理
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+  - Markdown
+  - 文档
+  - 工具
 category: "Development"
 ---
 # Markdown导出工具(免费版)
@@ -96,6 +98,14 @@ markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
 - 关键参数: `代码块提取` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

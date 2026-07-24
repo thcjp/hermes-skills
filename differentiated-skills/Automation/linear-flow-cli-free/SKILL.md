@@ -9,19 +9,18 @@ edition: free
 description: Linear流程CLI（免费版）面向使用Linear进行项目管理的开发团队，提供通过命令行读写Linear数据的Agent原生能力。基于稳定的JSON契约设计，让AI
   Agent能够以机器可读的方式查询任务、创建Issue、更新状态、管理团队与项目，无需通过Web界面手动操作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- Linear
-- 任务管理
-- 命令行工具
-- Agent原生
+  - Linear
+  - 任务管理
+  - 命令行工具
+  - Agent原生
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Linear流程CLI（免费版）
@@ -31,6 +30,14 @@ category: "Automation"
 ### 1. Linear认证与配置管理
 
 通过 `linear auth` 管理Linear API认证：
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |

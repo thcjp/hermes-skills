@@ -3,7 +3,7 @@ slug: "email-163"
 name: "email-163"
 version: 1.0.1
 displayName: "163邮箱助手专业版"
-summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档"
+summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档。163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、 高级搜索过滤、定时任务调度、邮件归档审"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -21,16 +21,15 @@ tags:
   - 163邮箱
   - 企业效率
   - 批量操作
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
 category: "Communication"
 ---
 # 163邮箱助手专业版
@@ -95,6 +94,14 @@ category: "Communication"
 **处理**: 解析多账户管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回多账户管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：批量发送个性化通知邮件

@@ -3,13 +3,16 @@ slug: "video-upload-stream-tool"
 name: "video-upload-stream-tool"
 version: "1.0.2"
 displayName: "Video Upload Aioz St"
-summary: "快速上传视频到AIOZ Stream API,建视频对象配编码"
+summary: "快速上传视频到AIOZ Stream API,建视频对象配编码。Quick upload video to AIOZ Stream API. Create video objects wit"
 license: "Proprietary"
 description: |-
   Quick upload video to AIOZ Stream API. Create video objects with default
   or custom encoding config, upload thumbnails, manage and delete videos.
 tags:
   - Creative
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - write
@@ -48,6 +51,14 @@ Remove a video. 请参考平台API文档了解具体调用方式。
 **处理**: 解析Delete Video的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Delete Video的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

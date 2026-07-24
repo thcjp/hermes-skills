@@ -3,7 +3,7 @@ slug: "ui-ux-design-free"
 name: "ui-ux-design-free"
 version: 1.0.1
 displayName: "UI/UX设计指南免费版"
-summary: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。"
+summary: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。。UI/UX设计指南免费版，提供基础设计原则与快速参考. 涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求."
 license: "MIT"
 description: |-
   UI/UX设计指南免费版，提供基础设计原则与快速参考.
@@ -12,13 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 创意设计
-pricing_tier: "L2-标准级"
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - 设计
+  - UI/UX
+  - 创意
 category: "Creative"
 ---
 # UI/UX设计指南（免费版）
@@ -112,6 +112,14 @@ WCAG基础要求：
 **输出**: 返回Visual Hierarchy的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Visual Hierarchy`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

@@ -3,26 +3,25 @@ slug: file-compressor-free
 name: file-compressor-free
 version: 1.0.1
 displayName: 文本语义压缩器(免费版)
-summary: 基于迭代验证与锚点校验的语义文本压缩工具，L1-L2级别可靠还原，适合提示词优化.
+summary: "基于迭代验证与锚点校验的语义文本压缩工具，L1-L2级别可靠还原，适合提示词优化.。面向长文本场景的语义压缩工具，通过迭代验证与锚点校验机制，在保证关键信息完整的前提下大幅缩减Token占用"
 license: Proprietary
 edition: free
 description: '面向长文本场景的语义压缩工具，通过迭代验证与锚点校验机制，在保证关键信息完整的前提下大幅缩减Token占用。核心能力：
 
   - 四级压缩级别（L1-L4），从0。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。'
 tags:
-- 文本压缩
-- Token优化
-- 语义压缩
-- 提示词优化
+  - 文本压缩
+  - Token优化
+  - 语义压缩
+  - 提示词优化
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 文本语义压缩器(免费版)
@@ -79,6 +78,14 @@ category: "Automation"
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：基于迭代验证与锚、点校验的语义文本、压缩工具、级别可靠还原、适合提示词优化、面向长文本场景的、语义压缩工具、通过迭代验证与锚、点校验机制、在保证关键信息完、整的前提下大幅缩、Token、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 ### 场景1：系统提示词压缩（开发者角色）

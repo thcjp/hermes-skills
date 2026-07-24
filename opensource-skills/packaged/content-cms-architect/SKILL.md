@@ -3,25 +3,23 @@ slug: content-cms-architect
 name: content-cms-architect
 version: 1.0.1
 displayName: CMS内容架构师
-summary: Headless CMS内容架构,从内容建模到SEO-AEO,打造可扩展内容平台
+summary: "Headless CMS内容架构,从内容建模到SEO-AEO,打造可扩展内容平台。CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩"
 license: Proprietary
 description: CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩展内容管理系统,从内容建模到GROQ/REST/GraphQL查询,从SEO-AEO优化到内容A/B实验,打造前端自由、内容结构化的现代内容平台。覆盖Schema定义、字段类型设计、引用关系、Portable
   Text、多语言i18n、草稿发布工作流、答案引擎优化全栈
 tags:
-- 内容管理
-- Headless CMS
-- 内容建模
-- SEO优化
-- Sanity
+  - 内容管理
+  - Headless CMS
+  - 内容建模
+  - SEO优化
+  - Sanity
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
 category: "Automation"
 ---
 # CMS内容架构师
@@ -53,6 +51,14 @@ category: "Automation"
 3. **Studio/管理后台配置**:多角色编辑(编辑/审阅者/管理员)、字段级权限、自定义结构、预览组件
 4. **SEO与AEO双优化**:元数据字段、JSON-LD结构化数据、E-E-A-T信号、FAQ Schema、LLM引用追踪
 5. **内容工作流与实验**:草稿→审核→发布、内容排期、版本历史、A/B测试变体、多语言i18n翻译工作流
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 使用流程
 

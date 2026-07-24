@@ -3,7 +3,7 @@ slug: "stock-filter"
 name: "stock-filter"
 version: 1.0.1
 displayName: "股票筛选专业版"
-summary: "多市场股票筛选系统，支持多策略组合、自定义公式、历史回测与批量导出。"
+summary: "多市场股票筛选系统，支持多策略组合、自定义公式、历史回测与批量导出。。面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、 多策略组合（AND/OR逻辑）、自定义选股公式、历"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 股票筛选
   - 量化选股
   - 企业级
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 股票筛选专业版
@@ -88,6 +87,14 @@ strategy:
 **输出**: 返回市场覆盖的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`市场覆盖`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：多市场筛选

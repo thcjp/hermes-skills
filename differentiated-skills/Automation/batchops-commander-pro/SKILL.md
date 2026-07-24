@@ -3,7 +3,7 @@ slug: batchops-commander-pro
 name: batchops-commander-pro
 version: 1.0.0
 displayName: Batchops Commander
-summary: 企业级批处理编排系统，含并行决策、高级检查点恢复、回滚模式、子Agent委派与幂等性设计.
+summary: "企业级批处理编排系统，含并行决策、高级检查点恢复、回滚模式、子Agent委派与幂等性设计.。批处理指挥官专业版是面向团队与企业的大规模批处理编排系统。不仅覆盖批处理全生命周期，更提供并行vs"
 license: Proprietary
 edition: pro
 description: '批处理指挥官专业版是面向团队与企业的大规模批处理编排系统。不仅覆盖批处理全生命周期，更提供并行vs串行自动决策、高级检查点恢复、回滚模式、多策略错误处理、子Agent委派与幂等性设计，确保大规模批量处理高效、安全、可恢复.
@@ -12,21 +12,20 @@ description: '批处理指挥官专业版是面向团队与企业的大规模批
   差异化：完全中文化重写，新增并行决策矩阵、高级检查点恢复、回滚模式、子Agent委派、幂等性设计、大规模处理策略六大高级能力。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整编排能力与优先支持。保留原始MIT版权声明.
   适用关键词：批处理编排、并行决策、检查点恢复、回滚模式、子Agent委派、幂等性、大规模处理'
 tags:
-- 批处理
-- 并行决策
-- 回滚模式
-- 幂等性
-- 子Agent委派
+  - 批处理
+  - 并行决策
+  - 回滚模式
+  - 幂等性
+  - 子Agent委派
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 批处理指挥官（专业版）

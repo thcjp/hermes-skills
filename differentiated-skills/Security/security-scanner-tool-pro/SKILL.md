@@ -3,7 +3,7 @@ slug: security-scanner-tool-pro
 name: security-scanner-tool-pro
 version: 1.0.0
 displayName: 安全扫描器(专业版)
-summary: 企业级安全扫描平台,10+工具集成、批量并行扫描、HTML报告、CVE映射与定时调度
+summary: "企业级安全扫描平台,10+工具集成、批量并行扫描、HTML报告、CVE映射与定时调度,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: '核心能力:
@@ -42,21 +42,18 @@ description: '核心能力:
 
   - ...'
 tags:
-- 安全
-- 漏洞扫描
-- 企业安全
-- 网络安全
-- 持续监控
+  - 安全
+  - 漏洞扫描
+  - 企业安全
+  - 网络安全
+  - 持续监控
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
 category: "Security"
 ---
 # 安全扫描器(专业版)

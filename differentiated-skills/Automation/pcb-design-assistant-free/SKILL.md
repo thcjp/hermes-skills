@@ -9,19 +9,18 @@ edition: free
 description: PCB设计助手（免费版）面向电子工程师、硬件创客与教学场景，作为JLC EDA / EasyEDA的智能副驾驶，帮助用户从需求描述快速产出可打板的单页原理图。基于三层架构（桥接层/EDA
   API层/设计层），优先调用MCP工具协议，覆盖从元件搜索、原理图绘制到基础质量检查的完整单页设计流程。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- PCB设计
-- 电路设计
-- EasyEDA
-- 硬件开发
+  - PCB设计
+  - 电路设计
+  - EasyEDA
+  - 硬件开发
+  - 设计
+  - UI/UX
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # PCB设计助手（免费版）
@@ -31,6 +30,14 @@ category: "Creative"
 ### 1. EasyEDA桥接层连接
 
 检查EasyEDA客户端是否可用，建立Agent与EDA工具的通信通道：
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |

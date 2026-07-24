@@ -3,7 +3,7 @@ slug: "memory-distiller-v2"
 name: "memory-distiller-v2"
 version: 1.0.1
 displayName: "记忆蒸馏器"
-summary: "解决日志膨胀、关键信息丢失、压缩后难回溯的分层记忆蒸馏器"
+summary: "解决日志膨胀、关键信息丢失、压缩后难回溯的分层记忆蒸馏器。记忆蒸馏器是面向 AI Agent 日志的智能压缩系统，针对"日志日均膨胀 2500 词、压缩后关键信息丢失、压缩结果难以回溯细节、"
 license: "Proprietary"
 description: |-
   记忆蒸馏器是面向 AI Agent 日志的智能压缩系统，针对"日志日均膨胀 2500 词、压缩后关键信息丢失、压缩结果难以回溯细节、不同内容需不同压缩策略"四大高频痛点而设计。它借鉴古文压缩哲学（去重复、留转折、去过程、留白），把冗长的原始日志蒸馏为高密度结构化摘要，实现 4-8 倍压缩比且零关键事件损失
@@ -12,12 +12,16 @@ tags:
   - 日志归档
   - 上下文优化
   - 信息蒸馏
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 记忆蒸馏器（Memory Distiller）
@@ -110,6 +114,14 @@ done
 ```
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 混合提取引擎
 
 ### Step 1：关键词匹配

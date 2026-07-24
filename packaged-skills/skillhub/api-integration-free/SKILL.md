@@ -3,7 +3,7 @@ slug: "api-integration-free"
 name: "api-integration-free"
 version: "1.0.0"
 displayName: "API集成助手免费版"
-summary: "掌握RESTful调用与API Key认证,含基础错误处理,快速接入第三方服务"
+summary: "掌握RESTful调用与API Key认证,含基础错误处理,快速接入第三方服务。API 集成开发助手免费版。掌握 RESTful API 调用与 API Key 认证管理,提供 Python"
 license: "MIT"
 description: |-
   API 集成开发助手免费版。掌握 RESTful API 调用与 API Key 认证管理,提供 Python requests 调用模板
@@ -11,12 +11,14 @@ description: |-
 tags:
   - 研发工具
   - Development
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # API 集成开发助手（免费版）
@@ -84,6 +86,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回API Key 认证的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`API Key 认证`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 核心知识
 
 ### 1. RESTful API
@@ -198,6 +208,13 @@ A: 免费版不包含速率限制处理。升级付费版可获取 `X-RateLimit-
 6. **以 Python 为主**: 示例使用 Python `requests` 库
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > **升级付费版** 解锁: OAuth2 令牌管理、JWT 认证、GraphQL 查询、完整错误处理（分状态码）、速率限制处理等完整能力.
 ## 输出格式

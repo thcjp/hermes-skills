@@ -9,19 +9,18 @@ edition: free
 description: 面向Java后端开发者的接口快速生成工具，基于magic-api框架能力封装。通过Web UI编写脚本即可自动映射为HTTP接口，免除Controller、Service、Dao、Mapper、XML、VO等Java对象的编写负担，特别适合原型验证、内部工具、数据看板接口等场景。Use
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
-- 集成工具
-- 接口开发
-- 低代码
-- Java生态
+  - 集成工具
+  - 接口开发
+  - 低代码
+  - Java生态
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # 接口魔法生成工具（免费版）

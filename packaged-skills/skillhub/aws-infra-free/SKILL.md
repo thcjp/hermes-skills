@@ -3,7 +3,7 @@ slug: "aws-infra-free"
 name: "aws-infra-free"
 version: "1.0.0"
 displayName: "AWS Infra LITE"
-summary: "通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景"
+summary: "通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景。AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速"
 license: "MIT"
 description: |-
   AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速了解云资源状态.
@@ -14,12 +14,13 @@ tags:
   - Cloud
   - DevOps
   - 通用办公
+  - AWS
+  - 云计算
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # AWS Infra LITE
@@ -79,6 +80,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回EC2实例清单的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`EC2实例清单`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

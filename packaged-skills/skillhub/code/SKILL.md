@@ -3,23 +3,24 @@ slug: "code"
 name: "code"
 version: 1.0.5
 displayName: "Code"
-summary: "编码工作流含规划/实现/验证/测试,交付干净软件"
+summary: "编码工作流含规划/实现/验证/测试,交付干净软件。Coding workflow with planning, implementation, verification, and testi"
 license: "Proprietary"
 description: |-
   Coding workflow with planning, implementation, verification, and testing
   for clean software devel。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # Code
@@ -40,6 +41,14 @@ category: "Development"
 - Coding workflow with planning, implementation, verification, and testing
   for clean software devel
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

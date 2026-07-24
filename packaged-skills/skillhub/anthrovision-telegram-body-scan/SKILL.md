@@ -3,7 +3,7 @@ slug: "anthrovision-telegram-body-scan"
 name: "anthrovision-telegram-body-scan"
 version: 1.0.5
 displayName: "Body Scan Flow"
-summary: "在Telegram中运行端到端身体扫描测量流程,含同意、轮询与确定性输出"
+summary: "在Telegram中运行端到端身体扫描测量流程,含同意、轮询与确定性输出。在Telegram中运行端到端身体扫描测量流程。通过AnthroVision桥接工具提交视频, 执行同意流程、轮询状"
 license: "Proprietary"
 description: |-
   在Telegram中运行端到端身体扫描测量流程。通过AnthroVision桥接工具提交视频,
@@ -13,16 +13,15 @@ description: |-
   不适用于医疗诊断、未成年人扫描、非本人视频处理.
 tags:
   - Communication
+  - Telegram
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
 category: "Communication"
 ---
 # Anthrovision Telegram Body Scan
@@ -111,6 +110,14 @@ export API_KEY="your_api_key_here"
 - 询问用户是否继续等待
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

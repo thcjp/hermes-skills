@@ -3,7 +3,7 @@ slug: frontend-design-other-tool-free
 name: frontend-design-other-tool-free
 version: 1.0.0
 displayName: 前端设计工具
-summary: 面向个人开发者的前端界面设计助手，产出有辨识度的高质量页面.
+summary: "面向个人开发者的前端界面设计助手，产出有辨识度的高质量页面.。面向个人开发者与独立设计者的前端界面设计工具。核心能力:"
 license: Proprietary
 edition: free
 description: '面向个人开发者与独立设计者的前端界面设计工具。核心能力:
@@ -26,20 +26,19 @@ description: '面向个人开发者与独立设计者的前端界面设计工具
 
   差异化: 免费版聚焦单页与组件级设计，提供四件套令牌、反模板自检与基础质量底线，适合个人快速产出'
 tags:
-- 前端设计
-- 视觉设计
-- 落地页
-- 个人效率
-- 其他工具
+  - 前端设计
+  - 视觉设计
+  - 落地页
+  - 个人效率
+  - 其他工具
+  - 设计
+  - UI/UX
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 前端设计工具（免费版）

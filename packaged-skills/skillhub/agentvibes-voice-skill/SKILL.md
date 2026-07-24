@@ -3,7 +3,7 @@ slug: "agentvibes-voice-skill"
 name: "agentvibes-voice-skill"
 version: "1.0.0"
 displayName: "AgentVibes TTS语音"
-summary: "多Provider TTS语音合成,914+声音,个性风格、语速、效果、背景音乐、语言学习"
+summary: "多Provider TTS语音合成,914+声音,个性风格、语速、效果、背景音乐、语言学习。AgentVibes TTS 语音合成客户端。集成 Piper TTS、macOS Say、Win"
 license: "Proprietary"
 description: |-
   AgentVibes TTS 语音合成客户端。集成 Piper TTS、macOS Say、Windows SAPI、Soprano 四种 Provider,
@@ -12,16 +12,17 @@ description: |-
   免费离线、无需账号（Piper 声音需下载）。适用于 AI Agent 语音播报、内容创作配音、语言学习辅助等场景.
 tags:
   - 研发工具
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # AgentVibes TTS
@@ -215,6 +216,14 @@ export API_KEY="your_api_key_here"
 **处理**: 解析Provider 管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Provider 管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## Provider 概览
 
 | Provider | 平台 | 成本 | 声音数量 | 特点 |

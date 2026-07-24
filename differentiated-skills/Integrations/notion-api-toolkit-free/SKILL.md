@@ -28,18 +28,17 @@ description: 'Notion API工具箱(免费版)是面向个人开发者与知识工
 
   - MVP阶段的..'
 tags:
-- 集成工具
-- Notion
-- 生产力
+  - 集成工具
+  - Notion
+  - 生产力
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # Notion API工具箱(免费版)

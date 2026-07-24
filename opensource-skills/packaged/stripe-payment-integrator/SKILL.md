@@ -3,25 +3,23 @@ slug: stripe-payment-integrator
 name: stripe-payment-integrator
 version: 1.0.1
 displayName: 支付集成专家
-summary: Stripe支付全链路集成,从支付意图到订阅分账,安全合规少踩坑
+summary: "Stripe支付全链路集成,从支付意图到订阅分账,安全合规少踩坑。支付集成专家——基于Stripe官方最佳实践实现全流程支付集成,覆盖支付意图创建、订阅管理、Webhook处理、退款分账全链"
 license: Proprietary
 description: 支付集成专家——基于Stripe官方最佳实践实现全流程支付集成,覆盖支付意图创建、订阅管理、Webhook处理、退款分账全链路。同时提供微信支付/支付宝/银联国内替代方案。适用于电商支付、SaaS订阅、退款处理、平台分账、发票管理、Webhook集成场景。触发关键词:支付集成、Stripe、订阅、Webhook、退款、发票、支付意图、3D
   Secure、微信支付、支付宝、分账、支付网关
 tags:
-- 支付集成
-- Stripe
-- 订阅付费
-- 电商支付
-- SaaS收款
+  - 支付集成
+  - Stripe
+  - 订阅付费
+  - 电商支付
+  - SaaS收款
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
 category: "Automation"
 ---
 # 支付集成专家
@@ -35,6 +33,14 @@ category: "Automation"
 3. **Webhook 安全处理**:签名验证、幂等去重、事件路由、失败重试
 4. **退款与争议处理**:全额/部分退款、争议证据提交、Radar 防欺诈
 5. **国内支付适配**:微信支付(JSAPI/Native/APP)、支付宝(电脑网站/手机网站/APP)、银联全渠道
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

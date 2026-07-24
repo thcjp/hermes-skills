@@ -3,7 +3,7 @@ slug: "memo-quickstart"
 name: "memo-quickstart"
 version: 1.0.1
 displayName: "记忆快速启动"
-summary: "零依赖本地记忆系统：三层架构+混合检索+WAL日志+关系图谱+迁移工具。"
+summary: "零依赖本地记忆系统：三层架构+混合检索+WAL日志+关系图谱+迁移工具。。面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点. 三层记忆架构（热内存SESSI"
 license: "Proprietary"
 description: |-
   面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点.
@@ -18,15 +18,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 创意设计
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - UI设计
+  - 前端
+  - 设计
 category: "Creative"
 ---
 # 记忆快速启动
@@ -89,6 +87,14 @@ category: "Creative"
 **输出**: 返回decision的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`decision`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：初始化（10秒）

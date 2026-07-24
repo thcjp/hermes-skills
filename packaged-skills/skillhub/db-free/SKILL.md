@@ -3,7 +3,7 @@ slug: "db-free"
 name: "db-free"
 version: "1.0.0"
 displayName: "数据库设计与运维(免费版)"
-summary: "识别并规避基础数据库连接、事务、查询与数据完整性陷阱"
+summary: "识别并规避基础数据库连接、事务、查询与数据完整性陷阱。数据库设计与运维免费版，提供基础的数据库陷阱识别与规避能力. 核心能力包括： - 基础连接管理（连接池耗尽、空闲连接清理） - 基础事务"
 license: "MIT"
 description: |-
   数据库设计与运维免费版，提供基础的数据库陷阱识别与规避能力.
@@ -17,12 +17,14 @@ tags:
   - 研发工具
   - database
   - operations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 数据库设计与运维（免费版）
@@ -79,6 +81,14 @@ category: "Automation"
 
 > **升级提示**：CHECK约束管理、外键缺失致孤儿行处理为付费版专享功能。Schema变更安全策略（带默认值加列、`CREATE INDEX CONCURRENTLY`、列重命名与删除顺序）、备份恢复最佳实践（PITR、备份验证）、复制陷阱预防（脑裂、故障转移）、扩展性限制规划（1亿行分片、Autovacuum监控）为付费版专享功能.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 依赖说明
 
 ### 运行环境

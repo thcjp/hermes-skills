@@ -26,19 +26,18 @@ description: 'Word文档控制工具免费版，面向个人macOS用户的轻量
 
   差异化: 免费版聚焦核心 Word 应用控制能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- Word文档
-- 应用控制
-- macOS自动化
-- 免费版
+  - Word文档
+  - 应用控制
+  - macOS自动化
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Word文档控制工具（免费版）

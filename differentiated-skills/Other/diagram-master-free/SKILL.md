@@ -3,25 +3,24 @@ slug: diagram-master-free
 name: diagram-master-free
 version: 1.0.1
 displayName: 图表制作大师
-summary: 专业SVG图表生成工具，支持架构图、流程图、时序图等九种图表类型，暗色主题自包含输出.
+summary: "专业SVG图表生成工具，支持架构图、流程图、时序图等九种图表类型，暗色主题自包含输出.。图表制作大师免费版解决技术文档中"图表绘制效率低、样式不统一、跨平台兼容差"的核心痛点。图表制作大师生"
 license: Proprietary
 edition: free
 description: 图表制作大师免费版解决技术文档中"图表绘制效率低、样式不统一、跨平台兼容差"的核心痛点。图表制作大师生成自包含的SVG文件，内嵌样式与字体，无需外部依赖，支持九种主流图表类型，采用统一的暗色主题设计系统。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 图表制作
-- SVG生成
-- 架构图
-- 技术文档
+  - 图表制作
+  - SVG生成
+  - 架构图
+  - 技术文档
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 图表制作大师（免费版）
@@ -90,6 +89,14 @@ category: "Automation"
 将以下内容作为图表请求的标准格式：
 
 ```markdown
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 图表请求
 # ...
 ### 基本信息

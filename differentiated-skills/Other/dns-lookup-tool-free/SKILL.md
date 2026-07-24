@@ -3,7 +3,7 @@ slug: dns-lookup-tool-free
 name: dns-lookup-tool-free
 version: 1.0.0
 displayName: DNS查询免费版
-summary: 使用dig工具解析域名A/AAAA/CNAME/MX记录，支持基础正反向查询与文档输出.
+summary: "使用dig工具解析域名A/AAAA/CNAME/MX记录，支持基础正反向查询与文档输出.。DNS查询免费版是一款面向运维与开发者的轻量级DNS诊断Skill，封装标准dig命令并提供结构化输"
 license: Proprietary
 edition: free
 description: 'DNS查询免费版是一款面向运维与开发者的轻量级DNS诊断Skill，封装标准dig命令并提供结构化输出。核心能力：
@@ -14,19 +14,18 @@ description: 'DNS查询免费版是一款面向运维与开发者的轻量级DNS
 
   - 指定上游DNS服务器（如1。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-- DNS查询
-- 网络诊断
-- 运维工具
-- 域名解析
+  - DNS查询
+  - 网络诊断
+  - 运维工具
+  - 域名解析
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # DNS查询免费版（DNS Lookup Tool Free）

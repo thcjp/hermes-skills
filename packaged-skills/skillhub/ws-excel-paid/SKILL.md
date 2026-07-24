@@ -3,7 +3,7 @@ slug: "ws-excel-paid"
 name: "ws-excel-paid"
 version: 1.0.1
 displayName: "Excel工具(专业版)"
-summary: "Excel 全能力版：多表合并、透视表、图表、大数据处理、自动化流水线与数据库联动。"
+summary: "Excel 全能力版：多表合并、透视表、图表、大数据处理、自动化流水线与数据库联动。。Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 透视表
   - 图表可视化
   - 自动化流水线
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Excel工具(专业版)
@@ -68,6 +67,14 @@ category: "Automation"
 **输出**: 返回图表生成的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`图表生成`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：月度销售报表自动化（运营视角）

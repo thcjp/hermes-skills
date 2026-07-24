@@ -3,7 +3,7 @@ slug: "markdown-format-tool-pro"
 name: "markdown-format-tool-pro"
 version: "1.0.0"
 displayName: "Markdown格式化工具专业版"
-summary: "企业级文档批量格式化,支持自定义模板、团队规范、多格式输出与质量审计"
+summary: "企业级文档批量格式化,支持自定义模板、团队规范、多格式输出与质量审计。面向团队与企业的高级 Markdown 格式化工具,在免费版基础上扩展批量处理、规范管理、质量审计等能力。核心能力: -"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,15 +30,13 @@ tags:
   - 批量处理
   - 企业级
   - 质量审计
+  - 文档
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # Markdown 格式化工具专业版

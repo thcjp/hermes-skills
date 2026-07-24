@@ -3,7 +3,7 @@ slug: "doubao-image-gen"
 name: "doubao-image-gen"
 version: 1.0.1
 displayName: "豆包图片生成-专业版"
-summary: "企业级AI图片生成平台，支持批量生成、多比例输出、风格预设、提示词增强与工作流自动化。"
+summary: "企业级AI图片生成平台，支持批量生成、多比例输出、风格预设、提示词增强与工作流自动化。。豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,16 +15,14 @@ tags:
   - 专业版
   - 批量处理
   - 企业级
+  - 图像处理
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
 category: "Creative"
 ---
 # 豆包图片生成-专业版
@@ -115,6 +113,14 @@ AI 自动优化提示词：
 ```
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 > 详细内容已移至 `references/detail.md` - ### 场景 1：电商商品图批量生成

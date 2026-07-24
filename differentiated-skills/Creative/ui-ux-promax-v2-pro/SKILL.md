@@ -3,7 +3,7 @@ slug: ui-ux-promax-v2-pro
 name: ui-ux-promax-v2-pro
 version: 1.0.0
 displayName: UI/UX ProMax V2专业版
-summary: 全域设计数据库+持久化+推理引擎+多技术栈+层级检索,面向企业的综合设计决策引擎
+summary: "全域设计数据库+持久化+推理引擎+多技术栈+层级检索,面向企业的综合设计决策引擎。面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、"
 license: Proprietary
 edition: pro
 description: '面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、
@@ -16,26 +16,23 @@ description: '面向设计团队和企业的综合UI/UX设计决策引擎,涵盖
 
   - 10种技术栈实现指引(React/Vue/Next'
 tags:
-- 设计
-- UI
-- UX
-- 配色
-- 字体
-- 前端
-- 企业级
-- 设计系统
-- 技术栈
-- 规则引擎
+  - 设计
+  - UI
+  - UX
+  - 配色
+  - 字体
+  - 前端
+  - 企业级
+  - 设计系统
+  - 技术栈
+  - 规则引擎
+  - UI设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # UI/UX ProMax V2 - 专业版

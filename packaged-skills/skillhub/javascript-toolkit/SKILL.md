@@ -3,7 +3,7 @@ slug: "javascript-toolkit"
 name: "javascript-toolkit"
 version: 1.0.1
 displayName: "JavaScript工具包专业版"
-summary: "企业级 JavaScript 开发方案，含性能优化、模块化架构、测试策略与构建工具链。"
+summary: "企业级 JavaScript 开发方案，含性能优化、模块化架构、测试策略与构建工具链。。面向企业级 JavaScript 开发团队的专业工具包。Use when 需要代码生成、编程辅助、调试"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 性能优化
   - 企业开发
   - 前端架构
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # JavaScript工具包专业版
@@ -70,6 +69,14 @@ category: "Automation"
 **输出**: 返回性能优化的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`性能优化`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：性能优化方案

@@ -3,7 +3,7 @@ slug: "timer-alert"
 name: "timer-alert"
 version: 1.0.1
 displayName: "定时提醒工具(专业版)"
-summary: "定时提醒全能力版：循环定时、模板库、升级提醒、定时触发与监控面板。"
+summary: "定时提醒全能力版：循环定时、模板库、升级提醒、定时触发与监控面板。。定时提醒工具（专业版）面向团队与企业用户，在免费版基础定时能力之上新增循环定时、提醒模板库、多级升级提醒、指定时间点触发、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,16 +15,15 @@ tags:
   - 任务调度
   - 监控告警
   - 效率工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 定时提醒工具(专业版)
@@ -75,6 +74,14 @@ category: "Automation"
 **输出**: 返回多计时器的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`多计时器`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：循环提醒（健康视角）

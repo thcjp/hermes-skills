@@ -3,7 +3,7 @@ slug: search-assistant-tool-free
 name: search-assistant-tool-free
 version: 1.0.0
 displayName: 搜索助手免费版
-summary: 轻量级搜索任务分解与调度助手,支持子任务拆分与通用搜索代理调用,适合个人研究查询
+summary: "轻量级搜索任务分解与调度助手,支持子任务拆分与通用搜索代理调用,适合个人研究查询。搜索助手免费版为个人用户提供轻量级的搜索任务分解与调度能力."
 license: Proprietary
 edition: free
 description: '搜索助手免费版为个人用户提供轻量级的搜索任务分解与调度能力.
@@ -28,19 +28,18 @@ description: '搜索助手免费版为个人用户提供轻量级的搜索任务
   差异化:免费版聚焦核心任务分解与通用搜索流程,通过自然语言指令驱动Agent完成搜索任务,适合个人用户处理需要多步搜索的复杂查询.
   适用关键词: 搜索助手, 任务分解, 子任务, 搜索调度, 查询拆分, 多步搜索, 研究助手'
 tags:
-- 研究工具
-- 搜索
-- 任务分解
-- 个人效率
+  - 研究工具
+  - 搜索
+  - 任务分解
+  - 个人效率
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 搜索助手免费版

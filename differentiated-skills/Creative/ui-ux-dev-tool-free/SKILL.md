@@ -3,7 +3,7 @@ slug: ui-ux-dev-tool-free
 name: ui-ux-dev-tool-free
 version: 1.0.0
 displayName: UI/UX开发工具免费版
-summary: 自然语言生成React页面,CDN零构建,含截图审查循环,适合个人快速原型开发
+summary: "自然语言生成React页面,CDN零构建,含截图审查循环,适合个人快速原型开发。面向个人开发者的自然语言驱动React页面生成工具,通过CDN方式零构建运行,"
 license: Proprietary
 edition: free
 description: '面向个人开发者的自然语言驱动React页面生成工具,通过CDN方式零构建运行,
@@ -34,22 +34,19 @@ description: '面向个人开发者的自然语言驱动React页面生成工具,
 
   适合个人快速原型'
 tags:
-- 设计
-- UI
-- UX
-- React
-- 前端
-- 原型
-- 开发
+  - 设计
+  - UI
+  - UX
+  - React
+  - 前端
+  - 原型
+  - 开发
+  - UI设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # UI/UX开发工具 - 免费版

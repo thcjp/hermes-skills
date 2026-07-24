@@ -3,23 +3,22 @@ slug: "namecheap-dns"
 name: "namecheap-dns"
 version: 1.1.1
 displayName: "Namecheap DNS"
-summary: "安全管理Namecheap DNS,拉取/合并/自动备份/原子更新"
+summary: "安全管理Namecheap DNS,拉取/合并/自动备份/原子更新。Manage Namecheap DNS records safely by fetching existing entr"
 license: "Proprietary"
 description: |-
   Manage Namecheap DNS records safely by fetching existing entries, merging
   changes, auto-backing u。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Operations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Namecheap DNS
@@ -46,6 +45,14 @@ category: "Automation"
 7. **Rollback** — one command to restore from backup
 8. **Safety override** — `--force` flag for when you need to bypass ghost record warnings
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

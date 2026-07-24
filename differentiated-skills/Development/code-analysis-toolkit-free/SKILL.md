@@ -3,7 +3,7 @@ slug: code-analysis-toolkit-free
 name: code-analysis-toolkit-free
 version: 1.0.1
 displayName: 代码分析工具包免费版
-summary: 个人Git历史自查工具,生成提交模式、代码风格、质量指标的描述性报告
+summary: "个人Git历史自查工具,生成提交模式、代码风格、质量指标的描述性报告。面向个人开发者的 Git 历史自查工具,生成描述性的提交模式分析报告。核心能力:"
 license: Proprietary
 edition: free
 description: '面向个人开发者的 Git 历史自查工具,生成描述性的提交模式分析报告。核心能力:
@@ -34,19 +34,20 @@ description: '面向个人开发者的 Git 历史自查工具,生成描述性的
 
   适用关键词: git, history, r...'
 tags:
-- 代码分析
-- Git历史
-- 开发自查
-- 代码质量
+  - 代码分析
+  - Git历史
+  - 开发自查
+  - 代码质量
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 # 代码分析工具包免费版

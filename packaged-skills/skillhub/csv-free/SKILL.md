@@ -3,7 +3,7 @@ slug: "csv-free"
 name: "csv-free"
 version: "1.0.0"
 displayName: "CSV解析生成-免费版"
-summary: "CSV解析与生成免费版，提供基础引号规则与逗号分隔，适合简单跨工具数据交换。"
+summary: "CSV解析与生成免费版，提供基础引号规则与逗号分隔，适合简单跨工具数据交换。。CSV解析与生成免费版提供基于RFC 4180的基础引号规则与逗号分隔能力. 适合简单的跨工具数据交换场景，确保"
 license: "MIT"
 description: |-
   CSV解析与生成免费版提供基于RFC 4180的基础引号规则与逗号分隔能力.
@@ -20,12 +20,14 @@ tags:
   - 研发工具
   - 数据格式
   - CSV
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # CSV — 解析与生成（免费版）
@@ -110,6 +112,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供付费版专享能力相关的配置参数、输入数据和处理选项.
 **输出**: 返回付费版专享能力的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 核心能力（免费版）(补充)
 
 ### 1. 基础引号规则(补充)

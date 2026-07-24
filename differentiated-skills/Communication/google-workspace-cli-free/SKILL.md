@@ -16,20 +16,20 @@ description: '谷歌办公命令行工具免费版,为个人用户提供Gmail邮
 
   - OAuth 2。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。'
 tags:
-- 沟通协作
-- 邮件管理
-- 谷歌办公
-- 命令行工具
-- 个人效率
+  - 沟通协作
+  - 邮件管理
+  - 谷歌办公
+  - 命令行工具
+  - 个人效率
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 谷歌办公命令行工具 - 免费版

@@ -3,7 +3,7 @@ slug: "ai-image-gen-free"
 name: "ai-image-gen-free"
 version: 1.0.1
 displayName: "AI图像生成基础版"
-summary: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。"
+summary: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。。AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成"
 license: "MIT"
 description: |-
   AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成文本生成图像.
@@ -18,14 +18,14 @@ description: |-
 tags:
   - Creative
   - 图像生成
+  - 图像处理
+  - AI绘图
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L2-标准级"
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # AI Image Gen LITE
@@ -120,6 +120,14 @@ python3 （请参考skill目录中的脚本文件） "你的提示词" \
 **处理**: 解析提示词技巧的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回提示词技巧的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 认证与配置(补充)
 
 ```bash
@@ -271,6 +279,13 @@ A: 图片版权以 Gemini Image 服务方条款为准。商业使用前请确认
 5. **需网络访问**: 无法访问 IMAGE_GEN_BASE_URL 时不可用
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > **想要 4K 印刷级输出、图生图、风格转换、批量生成?** 升级到 ai-image-gen 专业版解锁全部高级能力.
 ## 输出格式

@@ -26,20 +26,20 @@ description: '谷歌办公工具接口免费版,通过工具协议直接调用 G
 
   - 需要命令行驱动 Google 服务的自动化...'
 tags:
-- 沟通协作
-- 谷歌办公
-- 工具接口
-- OAuth认证
-- 个人效率
+  - 沟通协作
+  - 谷歌办公
+  - 工具接口
+  - OAuth认证
+  - 个人效率
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 谷歌办公工具接口 - 免费版

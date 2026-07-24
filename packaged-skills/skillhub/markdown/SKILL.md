@@ -3,7 +3,7 @@ slug: "markdown"
 name: "markdown"
 version: 1.0.2
 displayName: "Markdown"
-summary: "生成干净可移植Markdown,跨解析器正确渲染"
+summary: "生成干净可移植Markdown,跨解析器正确渲染。Generate clean, portable Markdown that renders correctly across parser"
 license: "Proprietary"
 description: |-
   Generate clean, portable Markdown that renders correctly across parsers。核心能力:
@@ -23,16 +23,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Other
+  - Markdown
+  - 文档
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
 category: "Development"
 ---
 # Markdown
@@ -56,6 +55,14 @@ category: "Development"
 - **链接与图片优化**：规范化链接格式（行内/引用式）、处理相对路径与锚点、生成TOC目录
 - **HTML转Markdown**：将HTML标签转为等效Markdown语法，保留语义结构，丢弃样式属性
 - **Markdown Lint**：检测常见格式问题（行尾空格、连续空行、标题跳级、代码块缺语言标识）
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

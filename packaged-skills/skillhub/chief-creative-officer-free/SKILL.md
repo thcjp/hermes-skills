@@ -18,12 +18,14 @@ tags:
   - Creative
   - design
   - branding
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Chief Creative Officer Free
@@ -67,6 +69,14 @@ category: "Automation"
 针对营销campaign需求，生成创意概念方案。包含核心创意概念、传播主题与内容方向建议。支持按campaign类型（品牌形象、产品发布、节日营销）输出基础创意框架，为内容生产提供方向指导。- 验证返回数据的完整性和格式正确性
 - 参考`创意策略制定`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

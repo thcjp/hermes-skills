@@ -3,7 +3,7 @@ slug: "api-scaffold-gen"
 name: "api-scaffold-gen"
 version: 1.0.1
 displayName: "API脚手架生成器(专业版)"
-summary: "企业级API脚手架平台，含多框架、DDD分层、微服务、ORM、Docker与CI/CD全套模板。"
+summary: "企业级API脚手架平台，含多框架、DDD分层、微服务、ORM、Docker与CI/CD全套模板。。API脚手架生成器专业版是面向研发团队的全功能API脚手架平台。在免费版的REST/Grap"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - DDD架构
   - 微服务
   - 企业开发
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # API脚手架生成器(专业版)
@@ -136,6 +135,14 @@ router.模板化内容生成('/"gen_status"', async (req, res) => {
 **处理**: 解析功能9：WebSocket端点生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
 - 参考`功能9：WebSocket端点生成`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级API项目起步（技术负责人角色）

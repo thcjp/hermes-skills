@@ -3,7 +3,7 @@ slug: "decision-architect-free"
 name: "decision-architect-free"
 version: "1.0.0"
 displayName: "决策架构师免费版"
-summary: "基础结构化决策支持与认知偏差检测，帮助避免拍脑袋决策。"
+summary: "基础结构化决策支持与认知偏差检测，帮助避免拍脑袋决策。。面向 AI Agent 的基础结构化决策支持系统，提供决策框架匹配与认知偏差检测两大核心能力. 内置决策矩阵、成本效益、奥卡姆剃刀、可"
 license: "MIT"
 description: |-
   面向 AI Agent 的基础结构化决策支持系统，提供决策框架匹配与认知偏差检测两大核心能力.
@@ -13,11 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 系统运维
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 决策架构师免费版（Decision Architect Free）
@@ -56,6 +58,14 @@ category: "Automation"
 **输出**: 返回置信度标注的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`置信度标注`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 第一步：识别决策类型。读取用户问题，识别类型（strategic 长周期高风险 / tactical 中周期中风险 / operational 日常低风险）。例如"用 React 还是 Vue"识别为 tactical 类型.

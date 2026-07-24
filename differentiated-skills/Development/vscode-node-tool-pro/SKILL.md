@@ -3,7 +3,7 @@ slug: "vscode-node-tool-pro"
 name: "vscode-node-tool-pro"
 version: "1.0.0"
 displayName: "VSCode节点工具(专业版)"
-summary: "面向团队的企业级IDE远程操作平台,含调试、测试、终端、Agent委托与团队协作能力。"
+summary: "面向团队的企业级IDE远程操作平台,含调试、测试、终端、Agent委托与团队协作能力。。VSCode节点工具专业版为团队与企业提供端到端IDE远程操作能力,涵盖调试、测试、终端、Agent委"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,15 +29,16 @@ tags:
   - 远程调试
   - 团队协作
   - 自动化测试
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 # VSCode 节点工具(专业版)

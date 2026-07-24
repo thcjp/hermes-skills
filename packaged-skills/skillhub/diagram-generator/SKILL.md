@@ -13,16 +13,15 @@ description: |-
   通过 generate_diagram 提交 JSON 规范生成文件。适用于架构文档、流程规范、UML 设计、白板协作等场景.
 tags:
   - Creative
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Diagram Generator
@@ -144,6 +143,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供配置助手相关的配置参数、输入数据和处理选项.
 **处理**: 解析配置助手的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 必需 MCP 工具(补充)
 
 若工具缺失,需配置 MCP 服务器并重启 Agent 环境。推荐远程配置:

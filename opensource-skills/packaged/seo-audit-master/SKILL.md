@@ -3,25 +3,24 @@ slug: seo-audit-master
 name: seo-audit-master
 version: 1.0.1
 displayName: SEO审计大师
-summary: 全站SEO体检:技术内容架构链接四维度审计,输出可执行优化清单
+summary: "全站SEO体检:技术内容架构链接四维度审计,输出可执行优化清单。SEO审计大师——对网站执行全面SEO审计,覆盖技术SEO+内容SEO+架构验证+链接分析四维度。输出按优先级排序的可执行优化"
 license: Proprietary
 description: SEO审计大师——对网站执行全面SEO审计,覆盖技术SEO+内容SEO+架构验证+链接分析四维度。输出按优先级排序的可执行优化清单,支持Google与百度双搜索引擎,适用于上线前体检、排名下降诊断、新站优化、竞品对比、迁移检查场景。触发关键词:SEO审计、SEO诊断、技术SEO、内容SEO、SEO优化、网站审计、搜索引擎优化、索引、可抓取性、结构化数据、百度SEO、Google
   SEO
 tags:
-- SEO优化
-- 网站审计
-- 搜索引擎优化
-- 技术SEO
-- 流量增长
+  - SEO优化
+  - 网站审计
+  - 搜索引擎优化
+  - 技术SEO
+  - 流量增长
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
 category: "Automation"
 ---
 # SEO审计大师
@@ -35,6 +34,14 @@ category: "Automation"
 3. **架构与链接审计**:结构化数据(JSON-LD)、内部链接结构、URL 规范化、外链质量分析
 4. **双引擎适配**:Google Search Console + 百度站长平台 + 搜狗站长平台
 5. **优化清单输出**:按 Critical/Important/Suggested 三级优先级输出可执行修复步骤
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

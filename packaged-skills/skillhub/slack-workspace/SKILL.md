@@ -3,7 +3,7 @@ slug: "slack-workspace"
 name: "slack-workspace"
 version: 0.1.2
 displayName: "Slack工作区管家"
-summary: "Slack全量工作区管理：消息/频道/文件/提醒/画布/用户组，ClawLink OAuth托管"
+summary: "Slack全量工作区管理：消息/频道/文件/提醒/画布/用户组，ClawLink OAuth托管。面向团队协作与工作区治理的Slack全量管理技能。通过ClawLink OAuth托管连接，"
 license: "Proprietary"
 description: |-
   面向团队协作与工作区治理的Slack全量管理技能。通过ClawLink OAuth托管连接，
@@ -17,16 +17,15 @@ tags:
   - Communication
   - 团队协作
   - 自动化
+  - Slack
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
 category: "Communication"
 ---
 # Slack工作区管家（Slack Workspace）
@@ -140,6 +139,14 @@ Agent 聊话 ───▶ ClawLink (OAuth托管) ───▶ Slack Web API
 **输出**: 返回通话管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`通话管理`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 工具调用规范
 
 ### 调用格式

@@ -3,13 +3,16 @@ slug: "trading-strategy-guide"
 name: "trading-strategy-guide"
 version: "1.1.1"
 displayName: "Trade With Taro"
-summary: "提供交易策略分析与决策支持的AI技能"
+summary: "提供交易策略分析与决策支持的AI技能。Provide AI-powered trading strategy analysis and decision support. Analyze m"
 license: "Proprietary"
 description: |-
   Provide AI-powered trading strategy analysis and decision support. Analyze
   market trends, evaluate trading signals, and generate strategy recommendations.
 tags:
   - Other
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - write
@@ -26,6 +29,14 @@ category: "Creative"
 - 生成策略建议与风险评估
 - 支持多种交易策略模式
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

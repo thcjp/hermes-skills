@@ -3,25 +3,25 @@ slug: print-studio-free
 name: print-studio-free
 version: 1.0.1
 displayName: 印迹工作室(免费版)
-summary: Agent发现、信任与协作交换的轻量工具，支持注册、检索与基础任务协作.
+summary: "Agent发现、信任与协作交换的轻量工具，支持注册、检索与基础任务协作.。面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任并完成能力交换。免费版聚焦核心注册"
 license: Proprietary
 edition: free
 description: 面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任并完成能力交换。免费版聚焦核心注册、检索与基础任务协作能力。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- Agent发现
-- 信任评估
-- 任务协作
-- 印迹工作室
+  - Agent发现
+  - 信任评估
+  - 任务协作
+  - 印迹工作室
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 印迹工作室(免费版)
@@ -72,6 +72,14 @@ API地址：`https://print-studio.io/v3`
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：信任与协作交换的、轻量工具、支持注册、检索与基础任务协、生态的发现、信任与协作交换工、让独立、能够被发现、建立信任并完成能、力交换、免费版聚焦核心注、作能力、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 ### 场景1：注册自己的Agent（独立开发者角色）

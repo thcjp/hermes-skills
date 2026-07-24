@@ -3,25 +3,24 @@ slug: web-scraper-engine
 name: web-scraper-engine
 version: 1.0.1
 displayName: 网页抓取引擎
-summary: Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单
+summary: "Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单。网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数"
 license: Proprietary
 description: 网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数据采集。覆盖搜索发现、单页抓取、结构化提取、多步骤浏览器交互全链路。同时提供Crawl4AI开源国内替代方案,无需海外API。适用于竞品分析、价格监控、内容采集、Lead
   Generation、市场调研、结构化提取场景。触发关键词:网页抓取、爬虫、Firecrawl、Playwright、Crawl4AI、网页提取、数据采集、结构化提取、浏览器自动化、竞品监控、价格监控
 tags:
-- 网页抓取
-- 数据采集
-- 爬虫
-- 竞品监控
-- 数据提取
+  - 网页抓取
+  - 数据采集
+  - 爬虫
+  - 竞品监控
+  - 数据提取
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+  - read
+  - exec
+  - write
+  - glob
 category: "Development"
 ---
 # 网页抓取引擎
@@ -35,6 +34,14 @@ category: "Development"
 3. **批量异步爬取**:深度控制、路径过滤、速率限制、结果去重
 4. **多步骤浏览器交互**:点击/表单填写/翻页/登录状态保持
 5. **数据处理与导出**:清洗、结构化、CSV/JSON/Parquet 导出、数据库写入
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

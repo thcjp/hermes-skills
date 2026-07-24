@@ -3,25 +3,23 @@ slug: debug-doctor
 name: debug-doctor
 version: 1.0.1
 displayName: 调试医生
-summary: 不猜测不试错,4阶段科学调试法精准定位Bug根因并验证修复
+summary: "不猜测不试错,4阶段科学调试法精准定位Bug根因并验证修复。调试医生——不猜测,不试错,用科学方法找到Bug真正的根因。4阶段调试法(复现/定位/缩减/修复)+二分查找+验证闭环,让生产事故"
 license: Proprietary
 description: 调试医生——不猜测,不试错,用科学方法找到Bug真正的根因。4阶段调试法(复现/定位/缩减/修复)+二分查找+验证闭环,让生产事故排查和复杂Bug修复有章可循,支持多语言多环境调试。Use
   when 遇到难以复现的Bug、生产事故排查、性能问题定位、需要系统化调试方法时使用。不适用于简单语法错误和UI样式微调。
 tags:
-- 调试
-- Bug修复
-- 根因分析
-- 生产事故
-- 问题排查
+  - 调试
+  - Bug修复
+  - 根因分析
+  - 生产事故
+  - 问题排查
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
 category: "Automation"
 ---
 # 调试医生
@@ -54,6 +52,14 @@ category: "Automation"
 3. **高级调试技术**:条件等待(间歇性故障)、并发调试(Thread Sanitizer/线程转储/锁图)、性能调试(Flame Graph/py-spy/内存快照/GC日志)
 4. **验证闭环**:回归测试(先验证失败→修复后通过)、完整测试套件(无回归)、代码审查、防御深度(输入验证/边界检查/断言/监控)
 5. **多语言工具适配**:Python(pdb/cProfile)、JS(Chrome DevTools)、Go(pprof)、Java(jstack/jmap/MAT)、Rust(gdb)
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 使用流程
 

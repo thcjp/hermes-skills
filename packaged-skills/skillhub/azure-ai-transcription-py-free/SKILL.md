@@ -3,7 +3,7 @@ slug: "azure-ai-transcription-py-free"
 name: "azure-ai-transcription-py-free"
 version: "1.0.0"
 displayName: "Azure语音转文字基础版"
-summary: "Azure AI Transcription 基础功能,支持批量语音转文字与语言指定"
+summary: "Azure AI Transcription 基础功能,支持批量语音转文字与语言指定。Azure AI Transcription 的 Python 客户端库基础功能。支持对存储在 Blob"
 license: "MIT"
 description: |-
   Azure AI Transcription 的 Python 客户端库基础功能。支持对存储在 Blob 中的音频
@@ -13,12 +13,14 @@ description: |-
 tags:
   - 系统运维
   - Speech
+  - Azure
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # Azure Ai Transcription Py Free
@@ -89,6 +91,14 @@ export API_KEY="your_api_key_here"
 - 订阅密钥认证:通过环境变量配置资源,实例化时传入密钥
 - 作业结果查询:`job.result()` 阻塞等待作业完成并返回结果
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

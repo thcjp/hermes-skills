@@ -28,20 +28,19 @@ description: 'Web开发工具集免费版为个人开发者提供Web开发全流
 
   差异化:免费版聚焦个人开发者的基础Web开发需求'
 tags:
-- Web开发
-- HTML
-- CSS
-- JavaScript
-- 个人开发
+  - Web开发
+  - HTML
+  - CSS
+  - JavaScript
+  - 个人开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+  - read
+  - exec
+  - write
+  - glob
+homepage: ""
 category: "Development"
 ---
 # Web 开发工具集(免费版)

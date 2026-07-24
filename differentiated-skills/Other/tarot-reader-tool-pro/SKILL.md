@@ -3,7 +3,7 @@ slug: tarot-reader-tool-pro
 name: tarot-reader-tool-pro
 version: 1.0.0
 displayName: 韦特塔罗占卜专业版
-summary: 完整韦特塔罗牌阵库、客户档案管理、批量占卜与报告导出，适合专业占卜师与内容工作室.
+summary: "完整韦特塔罗牌阵库、客户档案管理、批量占卜与报告导出，适合专业占卜师与内容工作室.。韦特塔罗占卜专业版，面向专业占卜师与内容工作室的高阶塔罗占卜平台。核心能力:"
 license: Proprietary
 edition: pro
 description: '韦特塔罗占卜专业版，面向专业占卜师与内容工作室的高阶塔罗占卜平台。核心能力:
@@ -28,21 +28,21 @@ description: '韦特塔罗占卜专业版，面向专业占卜师与内容工作
 
   差异化: 专业版在免费版核心能力之上扩展完整牌阵库与客户管理...'
 tags:
-- 塔罗
-- 专业占卜
-- 韦特塔罗
-- 客户管理
-- 专业版
+  - 塔罗
+  - 专业占卜
+  - 韦特塔罗
+  - 客户管理
+  - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 韦特塔罗占卜（专业版）

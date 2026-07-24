@@ -3,7 +3,7 @@ slug: bilibili-helper-tool-free
 name: bilibili-helper-tool-free
 version: 1.0.0
 displayName: B站创作助手免费版
-summary: B站视频标题生成、简介模板与标签推荐，帮助个人UP主快速产出投稿内容.
+summary: "B站视频标题生成、简介模板与标签推荐，帮助个人UP主快速产出投稿内容.。B站创作助手免费版 —— 面向个人UP主的轻量级B站内容创作辅助工具。核心能力:"
 license: Proprietary
 edition: free
 description: 'B站创作助手免费版 —— 面向个人UP主的轻量级B站内容创作辅助工具。核心能力:
@@ -28,19 +28,17 @@ description: 'B站创作助手免费版 —— 面向个人UP主的轻量级B站
 
   差异化:免费版提供核心标题与简介生成能力，适合个人UP主日常使用'
 tags:
-- B站
-- 内容创作
-- UP主工具
-- 个人创作
+  - B站
+  - 内容创作
+  - UP主工具
+  - 个人创作
+  - 视频
+  - 媒体
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "B站,视频,媒体"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # B站创作助手免费版

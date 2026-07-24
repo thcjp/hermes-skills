@@ -3,7 +3,7 @@ slug: "meeting-join"
 name: "meeting-join"
 version: 1.0.1
 displayName: "AI会议助手专业版"
-summary: "企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。"
+summary: "企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。。AI会议助手专业版为企业与团队提供全方位的智能会议机器人解决方案。在免费版语音会议能力之上"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -16,16 +16,15 @@ tags:
   - 企业级
   - 屏幕共享
   - 协作
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # AI会议助手专业版
@@ -194,6 +193,14 @@ teams = {
 **处理**: 解析团队管理与多租户的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回团队管理与多租户的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:企业销售演示会议

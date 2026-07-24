@@ -25,16 +25,15 @@ tags:
   - 企业效率
   - 自动化
   - 数据处理
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 谷歌办公命令行专业版
@@ -96,6 +95,14 @@ category: "Automation"
 **输入**: 用户提供六、Contacts 联系人管理(专业版独有)所需的指令和必要参数.
 **输出**: 返回六、Contacts 联系人管理(专业版独有)的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:批量发送会议通知邮件

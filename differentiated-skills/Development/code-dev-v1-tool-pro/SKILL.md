@@ -3,7 +3,7 @@ slug: "code-dev-v1-tool-pro"
 name: "code-dev-v1-tool-pro"
 version: "1.0.0"
 displayName: "结构化开发工具专业版"
-summary: "企业级版本化开发,支持多任务编排、发布管理、团队规范与交付审计"
+summary: "企业级版本化开发,支持多任务编排、发布管理、团队规范与交付审计。面向团队与企业的高级结构化开发工具,在免费版基础上扩展多任务编排、发布管理、团队规范等能力。核心能力: - 多任务并行编排与版"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -32,15 +32,15 @@ tags:
   - 企业级
   - 版本管理
   - 发布流程
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 # 结构化开发工具专业版

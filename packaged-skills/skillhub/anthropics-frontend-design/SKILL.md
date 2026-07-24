@@ -3,7 +3,7 @@ slug: "anthropics-frontend-design"
 name: "anthropics-frontend-design"
 version: 0.1.1
 displayName: "前端设计工坊"
-summary: "创建独特的生产级前端界面,专注排版配色动效与空间构图,避免通用AI美学"
+summary: "创建独特的生产级前端界面,专注排版配色动效与空间构图,避免通用AI美学。前端设计创作技能,生成具有鲜明美学风格的生产级前端代码。覆盖排版字体、配色主题、动效交互、 空间构图、背景纹理五大维度"
 license: "Proprietary"
 description: |-
   前端设计创作技能,生成具有鲜明美学风格的生产级前端代码。覆盖排版字体、配色主题、动效交互、
@@ -14,16 +14,15 @@ description: |-
   适用于落地页设计、仪表盘界面、品牌视觉页、创意组件、产品展示页等场景.
 tags:
   - 研发工具
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # 前端设计工坊
@@ -105,6 +104,14 @@ export API_KEY="your_api_key_here"
 **处理**: 解析前端美学指南的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回配色主题的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 设计思维(补充)
 
 - **Purpose(目的)**: 这个界面解决什么问题?谁在使用它?

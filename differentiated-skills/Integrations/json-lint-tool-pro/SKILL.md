@@ -3,7 +3,7 @@ slug: "json-lint-tool-pro"
 name: "json-lint-tool-pro"
 version: "1.0.0"
 displayName: "JSON校验工具专业版"
-summary: "企业级JSON校验工具，支持并行扫描、Schema验证、超集兼容、自动修复与监控告警。"
+summary: "企业级JSON校验工具，支持并行扫描、Schema验证、超集兼容、自动修复与监控告警。。JSON校验工具专业版面向企业级场景，在免费版基础上扩展并行扫描、JSON Schema验证、JSON"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,15 +13,14 @@ tags:
   - JSON
   - 企业级
   - 校验
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # JSON校验工具（专业版）
@@ -82,6 +81,14 @@ category: "Automation"
 **处理**: 解析监控告警的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回监控告警的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、校验工具、支持并行扫描、自动修复与监控告、校验工具专业版面、向企业级场景、在免费版基础上扩、展并行扫描、历史趋势监控等高、级能力、核心能力、多线程并行扫描万、的语义校验、超集支持、自动修复建议生成、通过率历史趋势与、深度集成等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 | 场景 | 角色 | 价值 | 推荐能力 |

@@ -3,27 +3,26 @@ slug: email-multi-provider-pro
 name: email-multi-provider-pro
 version: 1.0.0
 displayName: 多邮箱管理专业版
-summary: 企业级Gmail与Outlook统一管理，批量操作与多账户隔离
+summary: "企业级Gmail与Outlook统一管理，批量操作与多账户隔离。多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于"
 license: Proprietary
 edition: pro
 description: 多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
-- 沟通协作
-- 邮件管理
-- 多邮箱
-- 企业效率
-- 批量操作
+  - 沟通协作
+  - 邮件管理
+  - 多邮箱
+  - 企业效率
+  - 批量操作
+  - 邮件
+  - 通信
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
 category: "Communication"
 ---
 # 多邮箱管理专业版

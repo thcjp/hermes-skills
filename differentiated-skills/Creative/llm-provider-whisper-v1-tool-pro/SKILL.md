@@ -3,7 +3,7 @@ slug: "llm-provider-whisper-v1-tool-pro"
 name: "llm-provider-whisper-v1-tool-pro"
 version: "1.0.0"
 displayName: "Whisper v1转录专业版"
-summary: "Whisper v1稳定版企业级转录工具,支持批量处理、模型管理、性能调优与服务化部署。"
+summary: "Whisper v1稳定版企业级转录工具,支持批量处理、模型管理、性能调优与服务化部署。。基于 Whisper v1 稳定版本的企业级语音转文字工具(专业版)。核心能力: - 涵盖免费版全部"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,12 +27,14 @@ tags:
   - 批量处理
   - 模型管理
   - Whisper v1
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Whisper v1 语音转文字工具 - 专业版

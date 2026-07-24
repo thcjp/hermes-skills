@@ -3,7 +3,7 @@ slug: "api-generator-free"
 name: "api-generator-free"
 version: "1.0.0"
 displayName: "API代码生成器免费版"
-summary: "生成RESTful端点、GraphQL schema与测试套件,快速搭建API代码脚手架"
+summary: "生成RESTful端点、GraphQL schema与测试套件,快速搭建API代码脚手架。API 代码生成器免费版。从零生成基础 API 代码脚手架,支持 RESTful CRUD 端点（E"
 license: "MIT"
 description: |-
   API 代码生成器免费版。从零生成基础 API 代码脚手架,支持 RESTful CRUD 端点（Express.js）、
@@ -12,12 +12,14 @@ description: |-
 tags:
   - 研发工具
   - Development
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # API 代码生成器（免费版）
@@ -84,6 +86,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回graphql的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`graphql`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 命令用法
 
 ```bash
@@ -194,5 +204,12 @@ A: 不能。`rate-limit` 命令为付费版专享。升级付费版可生成 `to
 6. **无 Python 客户端**: 不支持 client 命令生成 Python API 客户端
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > **升级付费版** 解锁: swagger（OpenAPI 文档）、client（Python 客户端）、mock（Mock 服务器）、auth（认证代码）、rate-limit（速率限制器）等完整生成能力.

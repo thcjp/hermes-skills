@@ -3,7 +3,7 @@ slug: social-sentiment-tool-free
 name: social-sentiment-tool-free
 version: 1.0.0
 displayName: 社交情感分析免费版
-summary: 轻量级社交媒体情感分析工具,支持单平台关键词监控与基础情感分类,适合个人品牌追踪
+summary: "轻量级社交媒体情感分析工具,支持单平台关键词监控与基础情感分类,适合个人品牌追踪。社交情感分析免费版为个人用户提供轻量级的社交媒体情感监控能力."
 license: Proprietary
 edition: free
 description: '社交情感分析免费版为个人用户提供轻量级的社交媒体情感监控能力.
@@ -28,19 +28,17 @@ description: '社交情感分析免费版为个人用户提供轻量级的社交
   差异化:免费版聚焦核心情感分析流程,通过Python+CSV实现轻量部署,适合个人用户监控单一平台的品牌或话题情感,无需复杂配置.
   适用关键词: 社交媒体, 情感分析, sentiment, 口碑监控, 品牌追踪, 舆情分析, 关键词监控'
 tags:
-- 研究工具
-- 情感分析
-- 社交媒体
-- 个人效率
+  - 研究工具
+  - 情感分析
+  - 社交媒体
+  - 个人效率
+  - 营销
+  - 通信
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "社交媒体,营销,通信"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Communication"
 ---
 # 社交情感分析免费版

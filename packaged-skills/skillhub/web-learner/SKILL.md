@@ -10,16 +10,16 @@ description: |-
 tags:
   - Research
   - Knowledge
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
 category: "Development"
 ---
 # Web Learner
@@ -45,6 +45,14 @@ category: "Development"
 * 获取特定主题的详细资料
 * 多源交叉验证信息的准确性
 * 结构化组织获取的知识并标注来源
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 搜索策略方法论
 

@@ -3,7 +3,7 @@ slug: "pyx-scanner"
 name: "pyx-scanner"
 version: 1.0.1
 displayName: "Skill安全扫描(专业版)"
-summary: "企业级Skill安全检测方案，支持批量扫描、持续监控、自定义策略与团队协作审计。"
+summary: "企业级Skill安全检测方案，支持批量扫描、持续监控、自定义策略与团队协作审计。。Skill安全扫描专业版是一套面向安全团队与企业级场景的 AI Agent Skill 安全检测解决方案，在"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,16 @@ tags:
   - 扫描
   - 企业级
   - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Skill安全扫描(专业版)
@@ -70,6 +70,14 @@ category: "Automation"
 **输出**: 返回能力六：CI/CD 集成门禁的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`能力五：团队协作与审计日志`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业 Skill 仓库季度审计

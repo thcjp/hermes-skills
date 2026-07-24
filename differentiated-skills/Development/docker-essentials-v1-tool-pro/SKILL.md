@@ -3,7 +3,7 @@ slug: "docker-essentials-v1-tool-pro"
 name: "docker-essentials-v1-tool-pro"
 version: "1.0.0"
 displayName: "Docker V1迁移专业版"
-summary: "企业级V1迁移工具,支持自动兼容性扫描、批量迁移、配置转换与回滚保障。"
+summary: "企业级V1迁移工具,支持自动兼容性扫描、批量迁移、配置转换与回滚保障。。面向企业运维团队的Docker V1到V2迁移专业工具,提供自动兼容性扫描、批量配置转换、渐进式迁移与回滚保障。核心能"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,15 +30,13 @@ tags:
   - 遗留系统
   - 企业级
   - 迁移工具
+  - 容器
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "容器,Docker,DevOps"
+  - write
+homepage: ""
 category: "Development"
 ---
 Docker V1迁移工具专业版为企业运维团队提供从V1到V2的完整迁移解决方案。在免费版V1命令支持之上,专业版新增自动兼容性深度扫描、批量Compose配置转换、Dockerfile现代化重构、渐进式迁移与回滚保障,帮助企业安全高效地完成Docker版本升级.

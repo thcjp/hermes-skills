@@ -3,7 +3,7 @@ slug: free-web-search-tool-pro
 name: free-web-search-tool-pro
 version: 1.0.0
 displayName: 网页搜索工具专业版
-summary: 企业级联网搜索工具，支持批量查询、结果导出、代理配置、定时任务与团队协作，适合专业研究与企业场景.
+summary: "企业级联网搜索工具，支持批量查询、结果导出、代理配置、定时任务与团队协作，适合专业研究与企业场景.。企业级联网搜索工具，支持批量查询、结果导出、代理配置、定时任务与团队协作，适合专业研究与企"
 license: Proprietary
 edition: pro
 description: '企业级联网搜索工具，支持批量查询、结果导出、代理配置、定时任务与团队协作，适合专业研究与企业场景。核心能力:
@@ -20,21 +20,21 @@ description: '企业级联网搜索工具，支持批量查询、结果导出、
 
   - 团队协作配置...'
 tags:
-- 搜索
-- 企业工具
-- 批量查询
-- 数据采集
-- 研究工具
+  - 搜索
+  - 企业工具
+  - 批量查询
+  - 数据采集
+  - 研究工具
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
 category: "Development"
 ---
 # 网页搜索工具专业版

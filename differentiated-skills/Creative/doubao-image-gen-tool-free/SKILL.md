@@ -3,7 +3,7 @@ slug: doubao-image-gen-tool-free
 name: doubao-image-gen-tool-free
 version: 1.0.0
 displayName: 豆包图片生成-免费版
-summary: 轻量级AI图片生成工具，支持单图生成与基础提示词，适合个人用户快速创作视觉内容.
+summary: "轻量级AI图片生成工具，支持单图生成与基础提示词，适合个人用户快速创作视觉内容.。豆包图片生成免费版，为个人用户提供轻量化的 AI 图片生成能力。核心能力:"
 license: Proprietary
 edition: free
 description: '豆包图片生成免费版，为个人用户提供轻量化的 AI 图片生成能力。核心能力:
@@ -32,19 +32,17 @@ description: '豆包图片生成免费版，为个人用户提供轻量化的 AI
 
   - 免费版聚焦单图生成核心场景.'
 tags:
-- Creative
-- AI绘图
-- 图片生成
-- 免费版
+  - Creative
+  - AI绘图
+  - 图片生成
+  - 免费版
+  - 图像处理
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 豆包图片生成工具 - 免费版

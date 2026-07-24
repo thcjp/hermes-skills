@@ -3,7 +3,7 @@ slug: "alibaba-quark-scan-free"
 name: "alibaba-quark-scan-free"
 version: "1.0.0"
 displayName: "夸克扫描王(免费版)"
-summary: "基础文件扫描工具，支持画质增强、去手写和文档扫描"
+summary: "基础文件扫描工具，支持画质增强、去手写和文档扫描。由夸克扫描王官方提供的基础文件高清扫描工具。支持画质增强、 去手写和文档扫描三种基础场景。适用于个人用户的日常图片 优化和文档数字化需求."
 license: "MIT"
 description: |-
   由夸克扫描王官方提供的基础文件高清扫描工具。支持画质增强、
@@ -12,12 +12,14 @@ description: |-
 tags:
   - 研发工具
   - Knowledge
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 夸克扫描王(免费版) - 基础文件扫描与增强
@@ -72,6 +74,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供批量扫描与导出所需的指令和必要参数。- 验证返回数据的完整性和格式正确性
 - 参考`批量扫描与导出`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 环境配置
 
 ### API密钥配置

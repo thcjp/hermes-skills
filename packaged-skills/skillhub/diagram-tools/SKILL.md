@@ -3,23 +3,24 @@ slug: "diagram-tools"
 name: "diagram-tools"
 version: 1.0.3
 displayName: "Diagram Tools"
-summary: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成"
+summary: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成。图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成
+
+核心"
 license: "Proprietary"
 description: |-
   图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成\n\n核心能力:\n- 商业工具领域的专业化AI辅助工具\n\
   - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 日程管理、效率提升、团队协作\n- 独立开发者与一人公司效率提升\n\
 tags:
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Diagram Tools
@@ -70,6 +71,14 @@ category: "Automation"
 **处理**: 解析数据图表的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回数据图表的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 * 📊 流程图设计

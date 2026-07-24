@@ -3,7 +3,7 @@ slug: "card-image-builder"
 name: "card-image-builder"
 version: 1.0.1
 displayName: "卡片图生成器-专业版"
-summary: "企业级卡片图生成平台,支持全模板/批量生成/自定义模板/品牌定制/X长图"
+summary: "企业级卡片图生成平台,支持全模板/批量生成/自定义模板/品牌定制/X长图。卡片图生成器专业版,面向企业和专业内容团队的全功能卡片图片生成平台。核心能力: - 全模板支持(海报/长文卡片/X风"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,16 +29,15 @@ tags:
   - 企业级
   - 批量生成
   - 品牌定制
+  - 图像处理
+  - AI绘图
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
 category: "Creative"
 ---
 # 卡片图生成器-专业版
@@ -166,6 +165,14 @@ python3 render_card.py \
 - 关键参数: `水印与版权信息` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:企业社交媒体内容矩阵

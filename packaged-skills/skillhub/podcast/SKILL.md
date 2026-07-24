@@ -3,23 +3,22 @@ slug: "podcast"
 name: "podcast"
 version: 1.0.2
 displayName: "Podcast"
-summary: "规划剧集/产音频视频/生成切片,创建并增长播客"
+summary: "规划剧集/产音频视频/生成切片,创建并增长播客。Create and grow podcasts by planning episodes, producing audio or video"
 license: "Proprietary"
 description: |-
   Create and grow podcasts by planning episodes, producing audio or video,
   generating clips, and bu。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
+  - 播客
+  - 音频
+  - 媒体
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
 category: "Creative"
 ---
 # Podcast
@@ -43,6 +42,14 @@ category: "Creative"
 - **视频制作**：将音频内容配合静态画面或动态可视化生成视频版本，支持波形图、字幕叠加和片头片尾
 - **切片生成**：从长音频中自动识别高光片段（30秒-3分钟），生成社交媒体短视频切片与对应文案
 - **增长策略**：基于播客主题生成SEO标题与描述、show notes模板、跨平台分发建议和听众互动策略
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

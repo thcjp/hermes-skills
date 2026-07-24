@@ -3,7 +3,7 @@ slug: "aegis-security-free"
 name: "aegis-security-free"
 version: 1.0.1
 displayName: "区块链安全基础版"
-summary: "基础区块链安全API，地址声誉检查和代币蜜罐检测"
+summary: "基础区块链安全API，地址声誉检查和代币蜜罐检测。面向AI代理的区块链安全API免费版。提供地址声誉检查、代币蜜罐检测和免费额度查询等基础功能， 支持Ethereum和Base链。适用于基础"
 license: "MIT"
 description: |-
   面向AI代理的区块链安全API免费版。提供地址声誉检查、代币蜜罐检测和免费额度查询等基础功能，
@@ -12,11 +12,12 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 安全合规
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - 安全
+  - 加密
+  - 工具
 category: "Security"
 ---
 # 区块链安全防护（免费版）
@@ -75,6 +76,14 @@ export API_KEY="your_api_key_here"
 
 根据检查结果自动计算综合风险等级。`LOW` 表示次要风险可放行，`MEDIUM` 表示存在部分风险需人工复核，`HIGH` 表示显著风险需阻止并确认，`CRITICAL` 表示恶意或不安全必须阻止。每个响应包含 `isSafe` 布尔值和详细威胁信号列表。适用于基础安全决策.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 升级提示
 
 以下为完整版（aegis-security）独有功能，免费版不可用：

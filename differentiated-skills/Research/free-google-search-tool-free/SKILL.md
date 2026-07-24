@@ -3,25 +3,25 @@ slug: free-google-search-tool-free
 name: free-google-search-tool-free
 version: 1.0.0
 displayName: 谷歌搜索(免费版)
-summary: 谷歌搜索免费版，通过浏览器自动化执行搜索、解析结果、基础摘要生成.
+summary: "谷歌搜索免费版，通过浏览器自动化执行搜索、解析结果、基础摘要生成.。谷歌搜索助手免费版是面向个人用户的轻量Google搜索工具。通过浏览器自动化方式执行搜索（无需API Key），解析搜索结"
 license: Proprietary
 edition: free
 description: 谷歌搜索助手免费版是面向个人用户的轻量Google搜索工具。通过浏览器自动化方式执行搜索（无需API Key），解析搜索结果，提取标题、URL与摘要。Use
   when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
-- 谷歌搜索
-- 浏览器自动化
-- 结果解析
-- 免费搜索
+  - 谷歌搜索
+  - 浏览器自动化
+  - 结果解析
+  - 免费搜索
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 > **搜索、解析、筛选、导出。四步完成Google搜索与结果处理。**

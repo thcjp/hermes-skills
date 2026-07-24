@@ -3,7 +3,7 @@ slug: "ziptax-paid"
 name: "ziptax-paid"
 version: 1.0.1
 displayName: "销售税查询(专业版)"
-summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。"
+summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。。销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,16 +29,15 @@ tags:
   - CI/CD
   - 合规审计
   - 团队协作
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 销售税查询(专业版)
@@ -85,6 +84,14 @@ category: "Automation"
 **输出**: 返回本地缓存的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`本地缓存`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1:批量地址查询(并行处理)

@@ -3,7 +3,7 @@ slug: "x-news-daily"
 name: "x-news-daily"
 version: 2.0.1
 displayName: "X News Daily"
-summary: "抓取 X.com 关键词热门新闻 Top 10，生成全屏中文海报，支持多平台分发。"
+summary: "抓取 X.com 关键词热门新闻 Top 10，生成全屏中文海报，支持多平台分发。。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，为每条新闻生成 1-2"
 license: "Proprietary"
 description: |-
   抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，为每条新闻生成 1-2 句中文摘要，
@@ -14,16 +14,14 @@ tags:
   - 通用办公
   - Research
   - Content
+  - 新闻
+  - 信息
+  - 资讯
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
 category: "Knowledge"
 ---
 # X News Daily
@@ -85,6 +83,14 @@ category: "Knowledge"
 **输出**: 返回自动中英翻译的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`自动中英翻译`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

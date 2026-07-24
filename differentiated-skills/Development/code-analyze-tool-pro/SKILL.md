@@ -3,7 +3,7 @@ slug: "code-analyze-tool-pro"
 name: "code-analyze-tool-pro"
 version: "1.0.0"
 displayName: "代码分析工具专业版"
-summary: "企业级多领域结构化分析,支持批量分析、团队协作、自定义框架与优先级支持"
+summary: "企业级多领域结构化分析,支持批量分析、团队协作、自定义框架与优先级支持。面向团队与企业的高级结构化分析工具,在免费版基础上扩展批量分析、协作评审、自定义框架等能力。核心能力: - 多领域深度"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,15 +30,15 @@ tags:
   - 企业级
   - 批量分析
   - 团队协作
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 # 代码分析工具专业版

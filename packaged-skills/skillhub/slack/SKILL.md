@@ -3,7 +3,7 @@ slug: "slack"
 name: "slack"
 version: 1.0.1
 displayName: "Slack 消息管理"
-summary: "通过slack工具管理Slack消息:回应、置顶、发送/编辑/删除、成员与表情查询"
+summary: "通过slack工具管理Slack消息:回应、置顶、发送/编辑/删除、成员与表情查询。Slack 消息管理。通过 slack 工具对 Slack 工作区进行消息操作,涵盖五大动作组: reac"
 license: "Proprietary"
 description: |-
   Slack 消息管理。通过 slack 工具对 Slack 工作区进行消息操作,涵盖五大动作组:
@@ -17,15 +17,15 @@ tags:
   - 通用办公
   - Collaboration
   - Productivity
+  - Slack
+  - 社交
+  - 通信
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - write
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
 category: "Communication"
 ---
 # Slack 消息管理
@@ -100,6 +100,14 @@ category: "Communication"
 **处理**: 解析EmojiList(表情列表)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回EmojiList(表情列表)的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 输入采集
 
 - **channelId**: Slack 频道 ID,格式为 C 开头的字符串(如 C1234567890)

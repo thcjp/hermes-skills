@@ -3,7 +3,7 @@ slug: game-theory-tool-free
 name: game-theory-tool-free
 version: 1.0.0
 displayName: 博弈论分析免费版
-summary: 策略互动分析工具,支持纳什均衡、囚徒困境与决策树分析
+summary: "策略互动分析工具,支持纳什均衡、囚徒困境与决策树分析。面向学生、研究者与决策者的博弈论分析工具.。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
 description: '面向学生、研究者与决策者的博弈论分析工具.
@@ -15,21 +15,20 @@ description: '面向学生、研究者与决策者的博弈论分析工具.
 
   适用关键词: 博弈论, 纳什均衡, 囚徒困境, 收益矩阵, 决策树, 策略分析'
 tags:
-- 博弈论
-- 决策分析
-- 纳什均衡
-- 策略互动
-- 经济学
-- 学习工具
+  - 博弈论
+  - 决策分析
+  - 纳什均衡
+  - 策略互动
+  - 经济学
+  - 学习工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 博弈论分析 (免费版)

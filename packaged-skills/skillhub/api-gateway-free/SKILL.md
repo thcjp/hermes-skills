@@ -3,7 +3,7 @@ slug: "api-gateway-free"
 name: "api-gateway-free"
 version: "1.0.0"
 displayName: "API网关路由免费版"
-summary: "通过托管网关连接Slack/Gmail/Stripe等服务的只读路由,含基础连接管理与认证验证"
+summary: "通过托管网关连接Slack/Gmail/Stripe等服务的只读路由,含基础连接管理与认证验证。托管式 API 网关路由服务免费版。通过统一的 API 路由地址连接 Slack、Gmail、"
 license: "MIT"
 description: |-
   托管式 API 网关路由服务免费版。通过统一的 API 路由地址连接 Slack、Gmail、Stripe 等第三方服务,
@@ -11,12 +11,14 @@ description: |-
 tags:
   - 研发工具
   - Automation
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # API 网关集成路由（免费版）
@@ -84,6 +86,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回只读 GET 操作的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`只读 GET 操作`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 路由示例
 
 ```text
@@ -185,6 +195,13 @@ A: 免费版以 `maton` CLI 与 curl 为主。Python requests 与 JavaScript fet
 6. **无多语言调用**: 不支持 Python/JavaScript 调用方式
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > **升级付费版** 解锁: 写操作审批、触发器管理、事件重放、高危操作审查、多语言调用、事件检查点、jq 过滤等完整能力.
 ## 输出格式

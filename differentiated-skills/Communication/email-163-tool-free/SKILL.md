@@ -3,7 +3,7 @@ slug: email-163-tool-free
 name: email-163-tool-free
 version: 1.0.0
 displayName: 163邮箱助手免费版
-summary: 163邮箱收发与搜索基础工具，支持附件与文件夹管理，适合个人日常使用
+summary: "163邮箱收发与搜索基础工具，支持附件与文件夹管理，适合个人日常使用。163邮箱助手免费版是一款面向个人用户的网易163邮箱管理工具，通过命令行实现邮件收发、"
 license: Proprietary
 edition: free
 description: '163邮箱助手免费版是一款面向个人用户的网易163邮箱管理工具，通过命令行实现邮件收发、
@@ -11,19 +11,18 @@ description: '163邮箱助手免费版是一款面向个人用户的网易163邮
   搜索与文件夹管理等核心能力。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use
   when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。'
 tags:
-- 沟通协作
-- 邮件管理
-- 163邮箱
-- 个人效率
+  - 沟通协作
+  - 邮件管理
+  - 163邮箱
+  - 个人效率
+  - 邮件
+  - 通信
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Communication"
 ---
 # 163邮箱助手免费版

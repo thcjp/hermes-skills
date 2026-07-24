@@ -3,23 +3,22 @@ slug: "monad-development"
 name: "monad-development"
 version: 1.0.1
 displayName: "Monad Development"
-summary: "在Monad区块链建dapp,部署合约/配前端"
+summary: "在Monad区块链建dapp,部署合约/配前端。Builds dapps on Monad blockchain。Use when deploying contracts, setting"
 license: "Proprietary"
 description: |-
   Builds dapps on Monad blockchain。Use when deploying contracts, setting
   up frontends with viem/wa。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Monad Development
@@ -41,6 +40,14 @@ category: "Automation"
 - Use when deploying contracts, setting
   up frontends with viem/wa
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

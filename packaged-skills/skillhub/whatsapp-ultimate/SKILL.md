@@ -3,7 +3,7 @@ slug: "whatsapp-ultimate"
 name: "whatsapp-ultimate"
 version: 4.0.4
 displayName: "通讯应用工具"
-summary: "通讯应用消息发送、交互反应、群组管理和多Agent讨论工具"
+summary: "通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、 语音、视频、贴纸等多种消息类型，支持投票、群组创建、"
 license: "Proprietary"
 description: |-
   通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+  - WhatsApp
+  - 社交
+  - 通信
 category: "Communication"
 ---
 # 通讯应用工具
@@ -148,6 +146,14 @@ ffmpeg -i input.wav -ar 48000 -ac 1 -b:a 64k -c:a libopus output.opus
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

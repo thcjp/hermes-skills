@@ -3,7 +3,7 @@ slug: "feishu-card"
 name: "feishu-card"
 version: 1.4.12
 displayName: "协作平台卡片"
-summary: "发送富交互协作平台卡片，支持Markdown、标题、按钮、图片和人格化消息"
+summary: "发送富交互协作平台卡片，支持Markdown、标题、按钮、图片和人格化消息。向协作平台用户或群组发送富交互卡片。支持Markdown（代码块、表格）、标题、彩色头部、 按钮组件、图片嵌入和多"
 license: "Proprietary"
 description: |-
   向协作平台用户或群组发送富交互卡片。支持Markdown（代码块、表格）、标题、彩色头部、
@@ -12,15 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 协作平台卡片
@@ -106,6 +104,14 @@ export API_KEY="your_api_key_here"
 ### 8. 多种人格样式
 支持4种预设人格：`d-guide`（红色警告头部，粗体/代码前缀，讽刺后缀）、`green-tea`（胭脂红头部，柔软可爱风格）、`mad-dog`（灰色头部，原始运行时错误风格）、`default`（标准蓝色头部）。通过 `--persona <type>` 参数选择，`--text` 或 `--text-file` 提供内容。适用于不同场景和语气的消息表达.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认已安装 `feishu-common` 依赖，Token和API认证已配置

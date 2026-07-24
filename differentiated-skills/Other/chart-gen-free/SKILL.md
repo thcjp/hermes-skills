@@ -3,7 +3,7 @@ slug: chart-gen-free
 name: chart-gen-free
 version: 1.0.1
 displayName: 图表生成器(免费版)
-summary: 一条命令生成ASCII/HTML/SVG图表，覆盖柱状、折线、饼图、热力图等十余种类型，开箱即用.
+summary: "一条命令生成ASCII/HTML/SVG图表，覆盖柱状、折线、饼图、热力图等十余种类型，开箱即用.。一条命令即可生成终端可视化图表的轻量工具，支持ASCII柱状图、折线图、饼图、迷你趋势图、"
 license: Proprietary
 edition: free
 description: '一条命令即可生成终端可视化图表的轻量工具，支持ASCII柱状图、折线图、饼图、迷你趋势图、热力图、进度条、SVG矢量图与HTML交互页面等多种形态。核心能力：
@@ -16,19 +16,18 @@ description: '一条命令即可生成终端可视化图表的轻量工具，支
 
   - HTML与SVG双输出形态...'
 tags:
-- 数据可视化
-- 图表生成
-- 命令行工具
-- 终端可视化
+  - 数据可视化
+  - 图表生成
+  - 命令行工具
+  - 终端可视化
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 图表生成器(免费版)
@@ -82,6 +81,14 @@ category: "Automation"
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：一条命令生成、覆盖柱状、热力图等十余种类、开箱即用、一条命令即可生成、终端可视化图表的、轻量工具、矢量图与、交互页面等多种形、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 ### 场景1：日报中展示部门预算对比

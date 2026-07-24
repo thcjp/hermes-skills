@@ -3,7 +3,7 @@ slug: "json-repair-tool-pro"
 name: "json-repair-tool-pro"
 version: "1.0.0"
 displayName: "JSON修复工具专业版"
-summary: "企业级JSON修复工具，支持批量目录修复、流式处理、自定义规则、修复预览与历史回滚。"
+summary: "企业级JSON修复工具，支持批量目录修复、流式处理、自定义规则、修复预览与历史回滚。。JSON修复工具专业版面向企业级场景，在免费版基础上扩展批量目录修复、流式处理、自定义修复规则、修复预览"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,15 +13,14 @@ tags:
   - JSON
   - 企业级
   - 修复
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # JSON修复工具（专业版）
@@ -89,6 +88,14 @@ category: "Automation"
 **处理**: 解析历史回滚的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回历史回滚的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、JSON、修复工具、支持批量目录修复、流式处理、自定义规则、修复预览与历史回、修复工具专业版面、向企业级场景、在免费版基础上扩、展批量目录修复、自定义修复规则、修复预览、增量修复与历史回、滚等高级能力、核心能力、目录级批量修复、级文件流式修复、自定义正则规则、修复前后差异预览、修复规则市场与共、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务等.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 | 场景 | 角色 | 价值 | 推荐能力 |

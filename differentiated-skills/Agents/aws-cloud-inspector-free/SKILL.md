@@ -8,20 +8,19 @@ license: Proprietary
 description: AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力。它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- AWS巡检
-- 只读查询
-- 云基础设施
-- 免费工具
+  - AWS巡检
+  - 只读查询
+  - 云基础设施
+  - 免费工具
+  - AWS
+  - 云计算
+  - DevOps
 tools:
-- read
-- exec
+  - read
+  - exec
+  - write
 edition: free
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+homepage: ""
 category: "Operations"
 ---
 # AWS云巡检免费版（aws-cloud-inspector-free）
@@ -365,6 +364,14 @@ aws/credentials` 标准位置）
 
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的只读云基础设施、查询助手、免费提供资源清点、健康检查与基础安、全核查能力、适合个人开发者日、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景(补充)
 
 ```bash

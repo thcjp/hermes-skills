@@ -3,7 +3,7 @@ slug: "self-integration-tool-pro"
 name: "self-integration-tool-pro"
 version: "1.0.0"
 displayName: "自集成工具Pro"
-summary: "企业级外部应用集成方案，含自定义连接器、批量动作、工作流编排与审计日志。"
+summary: "企业级外部应用集成方案，含自定义连接器、批量动作、工作流编排与审计日志。。自集成工具（专业版）为团队与企业提供完整的外部应用集成治理方案，支持连接任意外部应用并编排自动化工作流。核心能力：自"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,15 +12,13 @@ tags:
   - 集成工具
   - 自动化
   - 企业级
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 自集成工具（专业版）
@@ -65,6 +63,14 @@ category: "Automation"
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级外部应用集、成方案、含自定义连接器、工作流编排与审计、自集成工具、为团队与企业提供、完整的外部应用集、成治理方案、支持连接任意外部、应用并编排自动化、核心能力、连接健康监控与自、动重连、辅助连接器开发、Use、when、API、接口对接、Webhook、系统连接时使用、不适用于逆向工程等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 ### 场景1：企业级跨SaaS工作流自动化

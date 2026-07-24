@@ -3,7 +3,7 @@ slug: "security"
 name: "security"
 version: 1.0.13
 displayName: "GoPlus安全扫描"
-summary: "GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。"
+summary: "GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。。GoPlus AgentGuard驱动的安全扫描工具，提供代码与依赖安全检查. 支持定时巡"
 license: "Proprietary"
 description: |-
   GoPlus AgentGuard驱动的安全扫描工具，提供代码与依赖安全检查.
@@ -13,15 +13,12 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 安全合规
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - 安全
+  - 加密
+  - 工具
 category: "Security"
 ---
 # GoPlus安全扫描
@@ -142,6 +139,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供健康检查（Health Check）所需的指令和必要参数.
 **输出**: 返回健康检查（Health Check）的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 安装GoPlus CLI：`go install 相关技术文档

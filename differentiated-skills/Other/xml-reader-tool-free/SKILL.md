@@ -3,7 +3,7 @@ slug: xml-reader-tool-free
 name: xml-reader-tool-free
 version: 1.0.0
 displayName: XML读取器免费版
-summary: 快速读取与浏览XML文件结构，支持节点遍历与简单查询，适合个人开发者日常查阅.
+summary: "快速读取与浏览XML文件结构，支持节点遍历与简单查询，适合个人开发者日常查阅.。XML读取器工具免费版，面向个人开发者的轻量级XML文件读取与浏览工具。核心能力:"
 license: Proprietary
 edition: free
 description: 'XML读取器工具免费版，面向个人开发者的轻量级XML文件读取与浏览工具。核心能力:
@@ -26,19 +26,18 @@ description: 'XML读取器工具免费版，面向个人开发者的轻量级XML
 
   差异化: 免费版聚焦核心读取与浏览能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- XML读取
-- 节点遍历
-- 配置查阅
-- 免费版
+  - XML读取
+  - 节点遍历
+  - 配置查阅
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # XML读取器工具（免费版）

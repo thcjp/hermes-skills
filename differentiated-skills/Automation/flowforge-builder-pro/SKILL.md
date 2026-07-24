@@ -3,7 +3,7 @@ slug: flowforge-builder-pro
 name: flowforge-builder-pro
 version: 1.0.0
 displayName: Flowforge Builder
-summary: 全功能JSON工作流构建，四种触发器、多条件组合、数据处理、通知发送、六模板库.
+summary: "全功能JSON工作流构建，四种触发器、多条件组合、数据处理、通知发送、六模板库.。流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent提供代码化的工作流构建能力。通过JSON定义"
 license: Proprietary
 edition: pro
 description: '流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤、条件判断和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。专业版解锁API
@@ -13,22 +13,21 @@ description: '流程锻造器专业版是在免费版基础上的全功能升级
   差异化：采用JSON声明式工作流定义，便于版本控制和团队协作。专业版完整支持四种触发器和五类操作节点，提供六模板库和定制开发指南，适合企业级自动化流程构建。保留原始版权声明.
   适用关键词：工作流构建、自动化流程、JSON工作流、触发器、Webhook、定时任务、文件监控、数据处理'
 tags:
-- 工作流构建
-- 流程自动化
-- JSON配置
-- 触发器系统
-- Webhook
-- 数据处理
+  - 工作流构建
+  - 流程自动化
+  - JSON配置
+  - 触发器系统
+  - Webhook
+  - 数据处理
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # 流程锻造器（专业版）
@@ -905,6 +904,13 @@ PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent构建和执行JSON工作流
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## License与版权声明
 

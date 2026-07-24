@@ -3,24 +3,25 @@ slug: local-vector-memory-free
 name: local-vector-memory-free
 version: 1.0.1
 displayName: 本地向量记忆(免费版)
-summary: 零API零云依赖的本地向量记忆免费版：离线可用、隐私不出域，核心存储与检索开箱即用.
+summary: "零API零云依赖的本地向量记忆免费版：离线可用、隐私不出域，核心存储与检索开箱即用.。面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding"
 license: Proprietary
 edition: free
 description: 面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部
   API 调用、零数据出域、完全离线可用的语义记忆检索。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
-- 智能代理
-- 记忆管理
-- 本地存储
+  - 智能代理
+  - 记忆管理
+  - 本地存储
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 本地向量记忆（免费版）
@@ -180,6 +181,14 @@ node （请参考skill目录中的脚本文件）
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 示例
 
 ### 场景 1：个人开发者偏好记忆
@@ -403,7 +412,6 @@ node （请参考skill目录中的脚本文件） cleanup --before 30d
 - 新增依赖说明章节与版本兼容性
 
 ---
-
 *本地优先，隐私至上。免费体验，专业解锁。*
 
 ## 核心能力
@@ -450,6 +458,14 @@ md 热内存持久化（抗压缩/重启）、WAL 写前日志协议（防数据
 
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零云依赖的本地向、量记忆免费版、隐私不出域、核心存储与检索开、箱即用、Use、when、需要数据库操作、SQL、数据存储管理时使、不适用于数据库架、构设计决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 适用于需要零API零云依赖的本地向量记忆免费版：离线可用、隐私不出域，核心存储与检索开箱即用。的场景。具体使用场景请参考下方详细说明.

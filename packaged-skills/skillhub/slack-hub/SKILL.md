@@ -3,7 +3,7 @@ slug: "slack-hub"
 name: "slack-hub"
 version: 1.0.1
 displayName: "Slack Hub工具专业版"
-summary: "企业级Slack集成工具，支持批量消息发送、高级搜索、限流处理、消息模板与工作区深度管理。"
+summary: "企业级Slack集成工具，支持批量消息发送、高级搜索、限流处理、消息模板与工作区深度管理。。Slack Hub工具（专业版）—— 面向团队和企业的全功能Slack集成工具。核心能力: - 批"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,16 +28,14 @@ tags:
   - Slack
   - 搜索引擎
   - 批量处理
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
 category: "Communication"
 ---
 # Slack Hub工具专业版
@@ -80,6 +78,14 @@ category: "Communication"
 **输入**: 用户提供搜索结果导出所需的指令和必要参数。- 验证返回数据的完整性和格式正确性
 - 参考`搜索结果导出`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业公告批量分发

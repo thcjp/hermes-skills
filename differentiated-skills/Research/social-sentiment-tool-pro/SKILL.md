@@ -3,7 +3,7 @@ slug: social-sentiment-tool-pro
 name: social-sentiment-tool-pro
 version: 1.0.0
 displayName: 社交情感分析专业版
-summary: 企业级社交情感分析系统,支持多平台采集、LLM增强分析、病毒传播检测、竞品对比与定时监控告警
+summary: "企业级社交情感分析系统,支持多平台采集、LLM增强分析、病毒传播检测、竞品对比与定时监控告警。社交情感分析专业版为企业团队提供高阶社交媒体情感监控与分析能力。核心能力:"
 license: Proprietary
 edition: pro
 description: '社交情感分析专业版为企业团队提供高阶社交媒体情感监控与分析能力。核心能力:
@@ -32,21 +32,19 @@ description: '社交情感分析专业版为企业团队提供高阶社交媒体
 
   差异化:专业版在免费版词典法情感分析基础上,扩展多平台采集、LLM增强、病毒检测、竞品对比与定时告警能力'
 tags:
-- 研究工具
-- 情感分析
-- 企业级
-- 社交媒体
-- 舆情监控
+  - 研究工具
+  - 情感分析
+  - 企业级
+  - 社交媒体
+  - 舆情监控
+  - 营销
+  - 通信
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "社交媒体,营销,通信"
 category: "Communication"
 ---
 # 社交情感分析专业版

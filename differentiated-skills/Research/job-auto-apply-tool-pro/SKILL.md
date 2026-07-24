@@ -34,21 +34,21 @@ description: '企业级求职自动化工具，支持多平台批量投递、申
 
   - PRO 版支持 5+ 平台批量投递...'
 tags:
-- 求职
-- 企业工具
-- 批量投递
-- 招聘管理
-- AI 匹配
+  - 求职
+  - 企业工具
+  - 批量投递
+  - 招聘管理
+  - AI 匹配
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 求职申请专业版

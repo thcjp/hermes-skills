@@ -9,21 +9,18 @@ edition: pro
 description: 物料清单漏洞情报专业版,为企业安全团队提供全方位SBOM管理与依赖漏洞治理能力。核心能力:多生态SBOM生成、CycloneDX/SPDX标准输出、OSV+GHSA+NVD三库联查、批量扫描、持续监控与告警、SARIF报告。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
-- 安全
-- SBOM
-- 供应链安全
-- 企业版
-- CycloneDX
+  - 安全
+  - SBOM
+  - 供应链安全
+  - 企业版
+  - CycloneDX
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
 category: "Security"
 ---
 # 物料清单漏洞情报专业版

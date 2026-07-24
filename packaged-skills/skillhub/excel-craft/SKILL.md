@@ -3,7 +3,7 @@ slug: "excel-craft"
 name: "excel-craft"
 version: 1.0.1
 displayName: "Excel工艺专业版"
-summary: "企业级 Excel 生成引擎，含批量处理、条件格式、高级图表、模板系统与数据源对接。"
+summary: "企业级 Excel 生成引擎，含批量处理、条件格式、高级图表、模板系统与数据源对接。。Excel 工艺专业版在免费版基础上扩展批量生成、多文件合并拆分、条件格式与数据验证、高级图表、模板系统"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,14 @@ tags:
   - 表格生成
   - 企业级
   - 自动化
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Excel工艺专业版
@@ -60,6 +58,14 @@ category: "Automation"
 **输出**: 返回LLM响应超时或无响应的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`LLM响应超时或无响应`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 已知限制
 - 多 Sheet 工作簿生成
 - 基础格式化（字体 / 填充 / 边框 / 对齐）

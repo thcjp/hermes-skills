@@ -3,7 +3,7 @@ slug: "neosoul-decision-agent"
 name: "neosoul-decision-agent"
 version: 1.0.1
 displayName: "自主决策代理"
-summary: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好"
+summary: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好。具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策. 通过分层记忆体系（HOT/WARM/RECOR"
 license: "Proprietary"
 description: |-
   具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策.
@@ -14,15 +14,15 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 tags:
   - 系统运维
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - AI代理
+  - 自动化
+  - 智能
 category: "Agents"
 ---
 # 自主决策代理（Neosoul Decision Agent）
@@ -107,6 +107,14 @@ category: "Agents"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：初始化决策记忆环境

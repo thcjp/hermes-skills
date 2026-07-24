@@ -3,23 +3,22 @@ slug: "universal-translate"
 name: "universal-translate"
 version: 1.0.1
 displayName: "Universal Translate"
-summary: "在任意语言间翻译文本/文件/对话,自动检测源语言"
+summary: "在任意语言间翻译文本/文件/对话,自动检测源语言。Translate text, files, and conversations between any languages。Auto-de"
 license: "Proprietary"
 description: |-
   Translate text, files, and conversations between any languages。Auto-detects
   source language。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - Development
+  - 翻译
+  - 语言
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "翻译,语言,工具"
 category: "Knowledge"
 ---
 # Universal Translate
@@ -41,6 +40,14 @@ category: "Knowledge"
 - Auto-detects
   source language
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

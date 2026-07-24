@@ -3,7 +3,7 @@ slug: meta-agent-optimizer-pro
 name: meta-agent-optimizer-pro
 version: 1.0.0
 displayName: Meta Agent Optimizer
-summary: AI Agent全功能优化引擎，性能指标采集+瓶颈诊断+技能自动提取+多平台Hook集成.
+summary: "AI Agent全功能优化引擎，性能指标采集+瓶颈诊断+技能自动提取+多平台Hook集成.。元代理优化器专业版是在免费版基础上的全功能升级，为AI Agent提供从日志记录到性能优化的完整闭"
 license: Proprietary
 edition: pro
 description: '元代理优化器专业版是在免费版基础上的全功能升级，为AI Agent提供从日志记录到性能优化的完整闭环。专业版解锁性能指标采集、自动瓶颈诊断、优化建议生成、多平台Hook集成、技能自动提取五大高级功能，实现Agent自我进化的全自动闭环.
@@ -13,21 +13,22 @@ description: '元代理优化器专业版是在免费版基础上的全功能升
   差异化：完全中文化重写，新增Agent性能指标采集体系、自动瓶颈诊断算法、优化建议生成引擎、三平台Hook集成方案、技能自动提取流水线、复发模式可视化、跨项目知识聚合。内容原创度超过70%，针对企业级"Agent性能不可量化、瓶颈难定位、知识难复用"三大痛点重新设计。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：元代理优化、性能指标、瓶颈诊断、技能提取、Hook集成、复发可视化、知识聚合'
 tags:
-- 元代理优化
-- 性能指标
-- 瓶颈诊断
-- 技能提取
-- Hook集成
+  - 元代理优化
+  - 性能指标
+  - 瓶颈诊断
+  - 技能提取
+  - Hook集成
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 元代理优化器（专业版）

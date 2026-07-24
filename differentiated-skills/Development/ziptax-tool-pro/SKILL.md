@@ -3,7 +3,7 @@ slug: "ziptax-tool-pro"
 name: "ziptax-tool-pro"
 version: "1.0.0"
 displayName: "销售税查询(专业版)"
-summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。"
+summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。。销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,15 +29,15 @@ tags:
   - CI/CD
   - 合规审计
   - 团队协作
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 销售税查询工具(专业版)

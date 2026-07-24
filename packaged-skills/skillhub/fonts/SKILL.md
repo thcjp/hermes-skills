@@ -3,7 +3,7 @@ slug: "fonts"
 name: "fonts"
 version: 1.0.1
 displayName: "Fonts"
-summary: "选配网页字体,规避渲染/配对/层级常见错误,排版专业"
+summary: "选配网页字体,规避渲染/配对/层级常见错误,排版专业。Choose and implement web typography avoiding common rendering, pairi"
 license: "Proprietary"
 description: |-
   Choose and implement web typography avoiding common rendering, pairing,
@@ -26,16 +26,15 @@ description: |-
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和...
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Fonts
@@ -60,6 +59,14 @@ category: "Automation"
 - 字体层级系统设计：标题/正文/代码/数字的字号、字重、行高、字间距规范
 - 多语言字体栈构建：中英混排字体回退链、CJK 字体 `font-family` 顺序优化
 - 可变字体（Variable Fonts）配置与 `font-variation-settings` 调用
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

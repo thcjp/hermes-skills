@@ -3,24 +3,23 @@ slug: api-toolkit-free
 name: api-toolkit-free
 version: 1.0.1
 displayName: API工具箱(免费版)
-summary: 轻量级API测试调试工具箱，覆盖请求构造、认证、错误诊断与文档速查，60秒上手.
+summary: "轻量级API测试调试工具箱，覆盖请求构造、认证、错误诊断与文档速查，60秒上手.。API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕"请求构造—认证管理—错"
 license: Proprietary
 edition: free
 description: API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕"请求构造—认证管理—错误诊断—文档速查"四件事，提供可复制即用的curl/HTTPie模板、常见认证流程速查表、HTTP状态码与错误体诊断决策树，以及一份覆盖15类共80+主流第三方服务的端点索引。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- API测试
-- 接口调试
-- 集成工具
+  - API测试
+  - 接口调试
+  - 集成工具
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # API工具箱（免费版）
@@ -224,7 +223,6 @@ HTTP状态码
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成可执行的API测试命令
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -267,6 +265,14 @@ HTTP状态码
 ```
 ### 30秒上手：生成一个带认证的请求(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
 > "帮我发一个 POST 请求到 https://api.example.com/v1/orders，body 是 `{"sku":"A1","qty":2}`，用 Bearer Token 认证。"

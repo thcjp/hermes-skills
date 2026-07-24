@@ -3,7 +3,7 @@ slug: "jira-free"
 name: "jira-free"
 version: "1.0.0"
 displayName: "Jira集成引擎(免费版)"
-summary: "Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版"
+summary: "Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版。Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例. 覆盖问题管"
 license: "MIT"
 description: |-
   Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例.
@@ -15,11 +15,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # Jira集成引擎(免费版)
@@ -154,6 +157,14 @@ curl -X POST "https://your-domain.atlassian.net/rest/api/3/issue/PROJ-123/commen
 - 关键参数: `工作流与状态流转` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

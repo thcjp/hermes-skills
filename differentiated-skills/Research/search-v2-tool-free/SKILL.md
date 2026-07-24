@@ -3,7 +3,7 @@ slug: search-v2-tool-free
 name: search-v2-tool-free
 version: 1.0.0
 displayName: 搜索工具免费版
-summary: 轻量级LLM优化搜索工具,支持基础网页搜索与结果摘要,适合个人用户快速获取信息
+summary: "轻量级LLM优化搜索工具,支持基础网页搜索与结果摘要,适合个人用户快速获取信息。搜索工具免费版为个人用户提供轻量级的LLM优化网页搜索能力."
 license: Proprietary
 edition: free
 description: '搜索工具免费版为个人用户提供轻量级的LLM优化网页搜索能力.
@@ -28,19 +28,18 @@ description: '搜索工具免费版为个人用户提供轻量级的LLM优化网
   差异化:免费版聚焦核心搜索流程,通过Tavily API实现LLM友好的搜索结果,适合个人用户快速获取优化后的搜索内容,无需复杂配置.
   适用关键词: 搜索, search, Tavily, 网页搜索, LLM优化, 检索, 查询'
 tags:
-- 研究工具
-- 搜索
-- 信息检索
-- 个人效率
+  - 研究工具
+  - 搜索
+  - 信息检索
+  - 个人效率
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 搜索工具免费版

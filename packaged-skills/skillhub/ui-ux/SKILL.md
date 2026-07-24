@@ -3,20 +3,22 @@ slug: "ui-ux"
 name: "ui-ux"
 version: 1.0.1
 displayName: "UI / UX"
-summary: "可搜UI/UX设计库,50+风格/97色板/57字体对/99规则"
+summary: "可搜UI/UX设计库,50+风格/97色板/57字体对/99规则。Searchable UI/UX design databases: 50+ styles, 97 palettes, 57"
 license: "Proprietary"
 homepage: "https://skillhub.ai/skills/ui-ux"
 description: |-
   Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font
   pairings, 99 UX rules, 25 character sets.
 tools:
-- read
-- exec
+  - read
+  - exec
+  - write
 tags:
-- ui
-- ux
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - ui
+  - ux
+  - UI设计
+  - 前端
+  - 设计
 category: "Creative"
 ---
 ## 任务定义
@@ -58,6 +60,14 @@ category: "Creative"
 
 ```bash
 # 搜索设计系统
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 python3 design_db.py "saas dashboard data-heavy minimal" --design-system -p "MetricsPro"
 
 # 补充搜索UX规则和字体

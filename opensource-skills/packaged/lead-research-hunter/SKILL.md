@@ -3,25 +3,24 @@ slug: lead-research-hunter
 name: lead-research-hunter
 version: 1.0.1
 displayName: 销售线索猎手
-summary: 3D线索打分模型自动筛选高价值潜客,让销售只打能赢的电话
+summary: "3D线索打分模型自动筛选高价值潜客,让销售只打能赢的电话。销售线索猎手——不只是找名单,更会筛选与打分。用3D线索打分模型(Fit+Intent+Engagement)自动筛选高价值潜客,从"
 license: Proprietary
 description: 销售线索猎手——不只是找名单,更会筛选与打分。用3D线索打分模型(Fit+Intent+Engagement)自动筛选高价值潜客,从公司情报到决策人识别到个性化触达话术全流程。Use
   when 需要B2B销售线索挖掘、客户画像分析、决策人识别、触达话术生成、线索优先级排序时使用。不适用于C端消费者获客和批量邮件群发。
 tags:
-- 销售线索
-- 线索打分
-- 客户画像
-- 销售触达
-- ABM营销
+  - 销售线索
+  - 线索打分
+  - 客户画像
+  - 销售触达
+  - ABM营销
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
 category: "Knowledge"
 ---
 # 销售线索猎手
@@ -54,6 +53,14 @@ category: "Knowledge"
 3. **公司情报收集**:公司基本信息+融资历史+招聘动态+技术栈+新闻动态+竞品关系,整合企查查/天眼查(国内)+Crunchbase(海外)
 4. **决策人识别**:基于采购决策链(发起者/影响者/决策者/批准者),识别关键联系人,脉脉/LinkedIn数据补充
 5. **个性化触达话术**:基于公司情报+决策人痛点,生成邮件/电话/LinkedIn多渠道触达话术
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 使用流程
 

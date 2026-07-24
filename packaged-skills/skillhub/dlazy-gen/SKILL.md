@@ -3,7 +3,7 @@ slug: "dlazy-gen"
 name: "dlazy-gen"
 version: 1.0.1
 displayName: "综合生成工具-专业版"
-summary: "全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。"
+summary: "全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。。综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力： - 40+ 模型全覆盖（图片、视频、音频三大"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,16 +15,15 @@ tags:
   - ImageGeneration
   - VideoGeneration
   - Enterprise
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 综合生成工具-专业版
@@ -93,6 +92,14 @@ category: "Automation"
 **输出**: 返回基础文生图的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`基础文生图`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：广告素材全流程制作

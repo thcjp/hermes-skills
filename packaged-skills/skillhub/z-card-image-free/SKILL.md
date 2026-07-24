@@ -3,7 +3,7 @@ slug: "z-card-image-free"
 name: "z-card-image-free"
 version: "1.0.0"
 displayName: "卡片图渲染免费版"
-summary: "将短文案渲染为 PNG 海报,支持公众号配色与整行高亮,基础渲染能力"
+summary: "将短文案渲染为 PNG 海报,支持公众号配色与整行高亮,基础渲染能力。将用户提供的短文案渲染成 PNG 卡片图. 免费版仅支持 poster-3-4 文字海报模板, 内置公众号配色预设与整行"
 license: "MIT"
 description: |-
   将用户提供的短文案渲染成 PNG 卡片图.
@@ -14,12 +14,14 @@ description: |-
 tags:
   - 需求设计
   - Creative
+  - 图像处理
+  - AI绘图
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # z-card-image Free
@@ -262,6 +264,14 @@ export API_KEY="your_api_key_here"
 - 参考`案例:金句海报渲染`的配置文档进行参数调优
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

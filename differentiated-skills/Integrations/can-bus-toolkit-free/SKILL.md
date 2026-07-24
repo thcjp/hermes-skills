@@ -3,7 +3,7 @@ slug: can-bus-toolkit-free
 name: can-bus-toolkit-free
 version: 1.0.1
 displayName: CAN总线工具包免费版
-summary: 轻量级数据溯源协议工具，通过时间戳、内容哈希与可读名称三元组为数据流打戳，支持本地验证与日志
+summary: "轻量级数据溯源协议工具，通过时间戳、内容哈希与可读名称三元组为数据流打戳，支持本地验证与日志。CAN总线工具包免费版是一款面向独立开发者的数据溯源协议工具，采用"时间-地址-命名"三列模型，"
 license: Proprietary
 edition: free
 description: 'CAN总线工具包免费版是一款面向独立开发者的数据溯源协议工具，采用"时间-地址-命名"三列模型，为流经任意管道的数据打上可验证的时间戳、内容哈希与人类可读名称，解决数据来源不可信、查找效率低、时间戳被他人控制三大痛点。核心能力：
@@ -18,18 +18,18 @@ description: 'CAN总线工具包免费版是一款面向独立开发者的数据
 
   - 传输无关设计...'
 tags:
-- 集成工具
-- 数据溯源
-- 审计日志
+  - 集成工具
+  - 数据溯源
+  - 审计日志
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # CAN总线工具包免费版

@@ -3,7 +3,7 @@ slug: "timeline-digest-tool-pro"
 name: "timeline-digest-tool-pro"
 version: "1.0.0"
 displayName: "时间线摘要工具-专业版"
-summary: "企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送"
+summary: "企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送。时间线摘要工具专业版,面向企业和专业用户的高级X/Twitter时间线信息聚合平台。核心能力: - 全时间"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -26,15 +26,14 @@ tags:
   - 企业级
   - 智能摘要
   - 自动化
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 时间线摘要工具专业版是一款面向企业和专业用户的高级X/Twitter时间线信息聚合平台。在免费版基础抓取和去重能力之上,PRO版新增了AI智能分类摘要、定时自动调度、多源信息聚合、自动推送通知等企业级功能,帮助用户构建自动化的信息聚合与分发工作流.

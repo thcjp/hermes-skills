@@ -3,7 +3,7 @@ slug: "merge-check-tool-pro"
 name: "merge-check-tool-pro"
 version: "1.0.0"
 displayName: "合并检查工具(专业版)"
-summary: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。"
+summary: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。。合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,15 +27,14 @@ tags:
   - 企业级
   - CI/CD
   - DevOps
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 合并检查工具(专业版)

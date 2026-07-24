@@ -10,16 +10,17 @@ description: |-
 tags:
   - Research
   - Automation
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # Agent Browser CLI
@@ -42,6 +43,14 @@ category: "Agents"
 - 触发条件：(1) 用户要求自动化浏览器操作
   (2) 需要签到、填表、点击按钮 (
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

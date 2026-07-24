@@ -34,21 +34,21 @@ description: '企业级新闻聚合工具，支持多源监控、定时更新、
 
   - PRO 版支持 50+ 新闻源...'
 tags:
-- 新闻
-- 企业工具
-- 舆情监控
-- 品牌监测
-- 情报分析
+  - 新闻
+  - 企业工具
+  - 舆情监控
+  - 品牌监测
+  - 情报分析
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 新闻聚合专业版

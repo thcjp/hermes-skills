@@ -3,7 +3,7 @@ slug: "aws-cloud-architect"
 name: "aws-cloud-architect"
 version: "2.0.0"
 displayName: "AWS云架构师"
-summary: "安全审计剧本,成本优化工作流,分层权限模型,智能上下文检测,零暴露密钥。"
+summary: "安全审计剧本,成本优化工作流,分层权限模型,智能上下文检测,零暴露密钥。。AWS云基础设施智能管理助手：基于AWS CLI，提供默认只读查询、分层权限模型（L0只读→L1预演→L2确认写→L"
 license: "Proprietary"
 description: |-
   AWS云基础设施智能管理助手：基于AWS CLI，提供默认只读查询、分层权限模型（L0只读→L1预演→L2确认写→L3破坏性→L4敏感）、安全审计剧本（IAM/S3/安全组/KMS检查清单）、成本优化工作流（空闲资源识别+Cost Explorer分析）、智能上下文检测（环境变量→配置文件→默认值）与零暴露密钥硬约束五大核心能力。适用于AWS资源盘点、CloudWatch健康监控、IAM与S3安全审计、成本分析、基础设施变更规划、多区域多账号管理。适用关键词：AWS云架构师、基础设施管理、安全审计、成本优化、AWS CLI、资源盘点.
@@ -13,15 +13,12 @@ tags:
   - AWS
   - 基础设施
   - 安全审计
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # AWS云架构师（AWS Cloud Architect）
@@ -65,6 +62,14 @@ Cost Explorer按服务/按日分组成本分析、空闲资源识别（停止的
 **输出**: 返回零暴露密钥硬约束的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：云基础设施智能管、理助手、CLI、提供默认只读查询、检查清单、默认值、与零暴露密钥硬约、束五大核心能力、适用于、资源盘点、CloudWatch、健康监控、基础设施变更规划、多区域多账号管理、适用关键词、云架构师、基础设施管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **何时使用**：

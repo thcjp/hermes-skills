@@ -3,25 +3,24 @@ slug: book-illustrator-free
 name: book-illustrator-free
 version: 1.0.1
 displayName: 书籍插画助手
-summary: 书籍插画创作与管理工具，支持插画需求规划、风格匹配、创作指导与项目管理全流程.
+summary: "书籍插画创作与管理工具，支持插画需求规划、风格匹配、创作指导与项目管理全流程.。书籍插画助手免费版解决作者与出版方在书籍插画制作中"需求不清晰、风格不匹配、沟通效率低"的核心痛点。书籍插画助"
 license: Proprietary
 edition: free
 description: 书籍插画助手免费版解决作者与出版方在书籍插画制作中"需求不清晰、风格不匹配、沟通效率低"的核心痛点。书籍插画助手提供从插画需求规划到创作指导的完整流程框架，帮助作者系统化地规划书籍插画，与插画师高效协作。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 书籍插画
-- 创作指导
-- 插画管理
-- 出版配图
+  - 书籍插画
+  - 创作指导
+  - 插画管理
+  - 出版配图
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 书籍插画助手（免费版）
@@ -101,6 +100,14 @@ category: "Automation"
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 # ...
 # ...
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 书籍插画规划请求
 # ...
 ### 书籍信息

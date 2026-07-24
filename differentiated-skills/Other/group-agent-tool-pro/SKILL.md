@@ -3,25 +3,26 @@ slug: group-agent-tool-pro
 name: group-agent-tool-pro
 version: 1.0.0
 displayName: Agent群组工具专业版
-summary: 跨实例联邦、企业权限、群机器人、端到端加密与数据分析的多Agent群组治理平台
+summary: "跨实例联邦、企业权限、群机器人、端到端加密与数据分析的多Agent群组治理平台。Agent群组工具专业版是面向企业级多Agent系统的群组治理平台，在免费版极简群组的基础上，新增跨实例群组联"
 license: Proprietary
 edition: pro
 description: Agent群组工具专业版是面向企业级多Agent系统的群组治理平台，在免费版极简群组的基础上，新增跨实例群组联邦、企业级权限管理、群组机器人、端到端加密、Webhook外发集成与群组数据分析能力。核心能力：多实例之间群组互通联邦；细粒度角色权限（管理员/编辑/只读/访客）；群机器人自动响应@消息与事件；消息端到端加密保障敏感协作；与企业IM（飞书/企业微信/Slack）双向同步；群组活跃度、协作效率、瓶颈分析等数据看板
 tags:
-- 多Agent协作
-- 企业级
-- 群组治理
-- 协作分析
+  - 多Agent协作
+  - 企业级
+  - 群组治理
+  - 协作分析
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 当企业内部运行着数十个Agent实例、数百个群组、上千个Agent成员时，免费版的"单实例轻量群组"模型就会遇到瓶颈：**跨实例群组无法联邦、权限无法统一管理、敏感协作无法加密、与企业IM无法打通、协作效率无法度量**.

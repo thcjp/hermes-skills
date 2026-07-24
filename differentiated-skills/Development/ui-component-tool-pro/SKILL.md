@@ -3,7 +3,7 @@ slug: "ui-component-tool-pro"
 name: "ui-component-tool-pro"
 version: "1.0.0"
 displayName: "UI组件生成(专业版)"
-summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理"
+summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理。UI组件生成工具专业版为团队与企业提供端到端UI组件工程能力,涵盖设计系统令牌、批量组件生成、WCAG AA"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,15 +27,14 @@ tags:
   - 可访问性
   - 组件库
   - 团队协作
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # UI 组件生成工具(专业版)

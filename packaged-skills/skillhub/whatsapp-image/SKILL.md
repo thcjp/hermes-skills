@@ -3,7 +3,7 @@ slug: "whatsapp-image"
 name: "whatsapp-image"
 version: 1.0.1
 displayName: "WhatsApp图片发送-专业版"
-summary: "企业级WhatsApp多媒体消息平台，支持批量发送、视频音频文档、定时发送、群组消息与模板管理。"
+summary: "企业级WhatsApp多媒体消息平台，支持批量发送、视频音频文档、定时发送、群组消息与模板管理。。WhatsApp 多媒体消息发送专业版。Use when 需要视频处理、音频编辑、媒体转换、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -16,16 +16,15 @@ tags:
   - 批量处理
   - 企业级
   - 营销
+  - 图像处理
+  - AI绘图
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
 category: "Creative"
 ---
 # WhatsApp图片发送-专业版
@@ -115,6 +114,14 @@ category: "Creative"
 **输入**: 用户提供发送频率控制所需的指令和必要参数.
 **输出**: 返回发送频率控制的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1：电商订单批量通知

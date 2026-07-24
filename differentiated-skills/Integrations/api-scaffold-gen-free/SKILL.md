@@ -3,24 +3,23 @@ slug: api-scaffold-gen-free
 name: api-scaffold-gen-free
 version: 1.0.1
 displayName: API脚手架生成器(免费版)
-summary: 从资源名一键生成REST/GraphQL脚手架代码，含CRUD、认证、测试模板，60秒出码.
+summary: "从资源名一键生成REST/GraphQL脚手架代码，含CRUD、认证、测试模板，60秒出码.。API脚手架生成器免费版解决"新项目起步慢、样板代码写到吐"的痛点。从资源名出发，一键生成RES"
 license: Proprietary
 edition: free
 description: API脚手架生成器免费版解决"新项目起步慢、样板代码写到吐"的痛点。从资源名出发，一键生成RESTful CRUD端点、GraphQL Schema、JWT认证、基础测试套件、Mock数据等生产可用脚手架代码。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 代码生成
-- 脚手架
-- API开发
+  - 代码生成
+  - 脚手架
+  - API开发
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # API脚手架生成器（免费版）
@@ -427,6 +426,13 @@ api-scaffold-gen mock user --port 3000
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成API脚手架代码
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## License与版权声明
 

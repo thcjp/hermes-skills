@@ -3,7 +3,7 @@ slug: "google-fonts"
 name: "google-fonts"
 version: 1.0.1
 displayName: "Google Fonts指南"
-summary: "Google Fonts字体选择与配对指南，覆盖加载优化、可变字体、子集化与自托管"
+summary: "Google Fonts字体选择与配对指南，覆盖加载优化、可变字体、子集化与自托管。Google Fonts 字体选择与配对指南，涵盖加载优化、可变字体、子集化、经典字体配对、 按用途选字体"
 license: "Proprietary"
 description: |-
   Google Fonts 字体选择与配对指南，涵盖加载优化、可变字体、子集化、经典字体配对、
@@ -11,16 +11,15 @@ description: |-
 tags:
   - Other
   - 通用办公
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Google Fonts 字体选择与配对指南
@@ -144,6 +143,14 @@ Google Fonts CDN 在部分地区（如欧盟 GDPR 场景）可能有隐私问题
 - 验证返回数据的完整性和格式正确性
 - 参考`Playfair Display（heading）+ Source Sans Pro（body）`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

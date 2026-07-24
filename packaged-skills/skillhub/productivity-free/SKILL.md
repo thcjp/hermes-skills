@@ -3,7 +3,7 @@ slug: "productivity-free"
 name: "productivity-free"
 version: "1.0.0"
 displayName: "生产力操作系统"
-summary: "集成目标、项目、任务、习惯的基础生产力管理系统"
+summary: "集成目标、项目、任务、习惯的基础生产力管理系统。基础生产力管理系统，覆盖目标设定、项目管理、任务执行、习惯追踪等核心功能. 基础能力涵盖目标-项目-任务三级体系、收件箱捕获与分流、习惯追踪、"
 license: "MIT"
 description: |-
   基础生产力管理系统，覆盖目标设定、项目管理、任务执行、习惯追踪等核心功能.
@@ -13,11 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 生产力操作系统（基础版）
@@ -66,6 +68,14 @@ category: "Automation"
 **输出**: 返回习惯追踪的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 习惯：每日复盘15分钟
 - 目标频率：每日
 - 当前连续：12天

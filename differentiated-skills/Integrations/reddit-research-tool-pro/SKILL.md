@@ -3,7 +3,7 @@ slug: "reddit-research-tool-pro"
 name: "reddit-research-tool-pro"
 version: "1.0.0"
 displayName: "Reddit调研(专业版)"
-summary: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。"
+summary: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。。Reddit调研专业版是一套面向市场研究团队与内容机构的企业级社区调研解决方案，在免费版基础上扩展出多"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,15 +14,15 @@ tags:
   - 内容创作
   - 企业级
   - 专业版
+  - 搜索
+  - 检索
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # Reddit调研（专业版）

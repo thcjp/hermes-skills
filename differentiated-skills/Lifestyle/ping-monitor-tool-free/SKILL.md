@@ -3,7 +3,7 @@ slug: ping-monitor-tool-free
 name: ping-monitor-tool-free
 version: 1.0.0
 displayName: 网络监控免费版
-summary: 网站可用性监控,支持ICMP/HTTP检测、告警通知与基础可视化
+summary: "网站可用性监控,支持ICMP/HTTP检测、告警通知与基础可视化。面向个人开发者与小团队的网站可用性监控工具."
 license: Proprietary
 edition: free
 description: '面向个人开发者与小团队的网站可用性监控工具.
@@ -15,20 +15,18 @@ description: '面向个人开发者与小团队的网站可用性监控工具.
 
   适用关键词: 网站监控, Ping检测, HTTP健康检查, 可用性监控, 告警通知'
 tags:
-- 网络监控
-- 可用性监控
-- 个人工具
-- 告警通知
-- 网站健康
+  - 网络监控
+  - 可用性监控
+  - 个人工具
+  - 告警通知
+  - 网站健康
+  - 监控
+  - 运维
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec"]
-tags: "监控,运维,工具"
+  - read
+  - exec
+homepage: ""
 category: "Operations"
 ---
 # 网络监控 (免费版)

@@ -3,23 +3,22 @@ slug: "git-cli"
 name: "git-cli"
 version: 1.0.2
 displayName: "Git cli"
-summary: "用Git CLI检查/暂存/提交/分支/同步代码变更"
+summary: "用Git CLI检查/暂存/提交/分支/同步代码变更。Helper for using the Git CLI to inspect, stage, commit, branch, and"
 license: "Proprietary"
 description: |-
   Helper for using the Git CLI to inspect, stage, commit, branch, and
   synchronize code changes。Use。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
+  - 版本控制
+  - Git
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 category: "Development"
 ---
 # Git cli
@@ -44,6 +43,14 @@ category: "Development"
 - 变更审查：差异对比、暂存审查、提交历史分析、 blame 追溯
 - 工作流支持：Git Flow、GitHub Flow、Trunk-Based Development
 - 冲突解决：三方合并、cherry-pick、rebase 冲突处理、冲突标记解析
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

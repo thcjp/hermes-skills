@@ -12,21 +12,20 @@ description: '知识图谱构建器专业版是在免费版基础上的全功能
   差异化：完全中文化重写，新增SQLite迁移引擎、图可视化渲染器、SPARQL-like查询解析器、版本追踪时间机、跨技能事件总线。内容原创度超过70%，针对企业级"大规模性能差、关系不可视、查询能力弱、变更不可追"四大痛点重新设计。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：知识图谱、SQLite迁移、图可视化、SPARQL查询、版本追踪、跨技能通信、事件总线'
 tags:
-- 知识图谱
-- SQLite迁移
-- 图可视化
-- SPARQL查询
-- 版本追踪
+  - 知识图谱
+  - SQLite迁移
+  - 图可视化
+  - SPARQL查询
+  - 版本追踪
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # 知识图谱构建器（专业版）

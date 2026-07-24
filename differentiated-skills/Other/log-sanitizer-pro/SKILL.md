@@ -9,20 +9,19 @@ edition: pro
 description: 日志脱敏工具专业版面向团队与企业级日志安全场景，在免费版基础上扩展全功能脱敏能力。解决团队日志治理的"规模与合规"痛点：海量日志文件需要定时自动扫描、不同业务线需要差异化脱敏规则、合规审计要求可追溯的脱敏报告、敏感信息泄露需要实时告警、跨平台日志流水线需要统一编排。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
-- 日志安全
-- 企业合规
-- 数据脱敏
-- 流水线编排
+  - 日志安全
+  - 企业合规
+  - 数据脱敏
+  - 流水线编排
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 日志脱敏工具（专业版）
@@ -122,6 +121,14 @@ enterprise:
 ```
 
 ---
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 示例
 

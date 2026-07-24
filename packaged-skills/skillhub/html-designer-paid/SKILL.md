@@ -16,16 +16,15 @@ tags:
   - CSS
   - 企业级
   - 组件库
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # HTML设计工具专业版
@@ -161,6 +160,14 @@ python3 generate_pages.py --config pages-config.yml --output ./dist/
 - 关键参数: `多主题切换系统` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:企业S产品设计系统

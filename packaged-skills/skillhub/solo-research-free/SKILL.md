@@ -3,7 +3,7 @@ slug: "solo-research-free"
 name: "solo-research-free"
 version: 1.0.1
 displayName: "独立研究工具免费版"
-summary: "免费版研究工具，支持WebFetch内容获取与基础搜索策略。"
+summary: "免费版研究工具，支持WebFetch内容获取与基础搜索策略。。独立研究工具免费版，提供基础的多策略搜索能力. 支持WebFetch内容获取与基础搜索回退策略. 适用于个人研究与技术调研场景."
 license: "MIT"
 description: |-
   独立研究工具免费版，提供基础的多策略搜索能力.
@@ -12,11 +12,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 信息检索
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - 搜索
+  - 检索
+  - 工具
 category: "Knowledge"
 ---
 # 独立研究工具（免费版）
@@ -87,6 +90,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回内容获取的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`内容获取`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认运行环境满足依赖说明中的要求

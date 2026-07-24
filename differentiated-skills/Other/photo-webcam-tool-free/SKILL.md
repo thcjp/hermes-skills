@@ -3,7 +3,7 @@ slug: photo-webcam-tool-free
 name: photo-webcam-tool-free
 version: 1.0.0
 displayName: 网络摄像头工具-免费版
-summary: 网络摄像头快照获取工具,支持收藏列表管理与图片下载,适合个人使用
+summary: "网络摄像头快照获取工具,支持收藏列表管理与图片下载,适合个人使用。网络摄像头快照获取工具免费版,面向个人用户."
 license: Proprietary
 edition: free
 description: '网络摄像头快照获取工具免费版,面向个人用户.
@@ -30,18 +30,18 @@ description: '网络摄像头快照获取工具免费版,面向个人用户.
   差异化:免费版提供基础快照获取能力。PRO版扩展定时抓取、图片拼接、历史归档与多平台推送.
   适用关键词: webcam, 摄像头, 快照, photo, snapshot, 实时画面, 收藏列表'
 tags:
-- 摄像头
-- 图片获取
-- 工具
+  - 摄像头
+  - 图片获取
+  - 工具
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+  - read
+  - exec
+  - write
+  - glob
+homepage: ""
 category: "Development"
 ---
 # 网络摄像头工具 - 免费版

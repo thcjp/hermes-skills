@@ -3,22 +3,21 @@ slug: "vector-control"
 name: "vector-control"
 version: 1.0.2
 displayName: "Vector Control"
-summary: "经Wirepod本地HTTP API控Vector机器人"
+summary: "经Wirepod本地HTTP API控Vector机器人。Control a Vector robot via Wirepod’s local HTTP API on the same ne"
 license: "Proprietary"
 description: |-
   Control a Vector robot via Wirepod’s local HTTP API on the same network。Use when you need to mov。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Vector Control
@@ -38,6 +37,14 @@ category: "Automation"
 
 Control Vector through Wirepod’s `/api-sdk/*` endpoints and the camera stream at `/cam-stream`. Use this skill for movement, speech, camera snapshots, patrols, and exploration from the Pi.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

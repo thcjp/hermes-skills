@@ -3,7 +3,7 @@ slug: flow-manager-pro-pro
 name: flow-manager-pro-pro
 version: 1.0.0
 displayName: 流程管理器(专业版)
-summary: 全功能Node-RED实例管理，含多实例、完整备份、Docker编排、性能监控与审计日志.
+summary: "全功能Node-RED实例管理，含多实例、完整备份、Docker编排、性能监控与审计日志.。流程管理器专业版是在免费版基础上的全功能升级，为IoT团队与自动化运维提供企业级Node-RED实"
 license: Proprietary
 edition: pro
 description: '流程管理器专业版是在免费版基础上的全功能升级，为IoT团队与自动化运维提供企业级Node-RED实例管理能力。除核心流程操作外，解锁多实例管理、完整备份恢复、Docker容器编排、性能监控告警、批量节点操作、流程版本对比回滚、审计日志七大高级功能.
@@ -12,21 +12,19 @@ description: '流程管理器专业版是在免费版基础上的全功能升级
   差异化：完全中文化表达，重新设计七大角色场景，新增七大高级功能与性能优化策略，提供多平台集成示例与版本迁移指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：Node-RED管理、多实例、完整备份、Docker编排、性能监控、批量节点、版本回滚、审计日志'
 tags:
-- Node-RED
-- 流程管理
-- 自动化
-- DevOps
-- 运维监控
+  - Node-RED
+  - 流程管理
+  - 自动化
+  - DevOps
+  - 运维监控
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 流程管理器（专业版）

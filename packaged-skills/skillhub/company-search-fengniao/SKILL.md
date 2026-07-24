@@ -9,16 +9,16 @@ description: |-
   企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - Research
+  - 搜索
+  - 检索
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # Company Search Fengn
@@ -39,6 +39,14 @@ category: "Knowledge"
 - 企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill
 - 风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

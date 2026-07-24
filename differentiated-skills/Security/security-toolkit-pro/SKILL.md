@@ -3,7 +3,7 @@ slug: security-toolkit-pro
 name: security-toolkit-pro
 version: 1.0.0
 displayName: Agent安全工具箱(专业版)
-summary: 企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告
+summary: "企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: '核心能力:
@@ -36,21 +36,18 @@ description: '核心能力:
 
   ...'
 tags:
-- 安全
-- Agent安全
-- 企业安全
-- 合规审计
-- 安全治理
+  - 安全
+  - Agent安全
+  - 企业安全
+  - 合规审计
+  - 安全治理
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
 category: "Security"
 ---
 # Agent安全工具箱(专业版)

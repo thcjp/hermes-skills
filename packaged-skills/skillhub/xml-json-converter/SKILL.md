@@ -3,7 +3,7 @@ slug: "xml-json-converter"
 name: "xml-json-converter"
 version: 1.0.1
 displayName: "XML转JSON(专业版)"
-summary: "企业级XML与JSON互转工具，支持批量转换、XSD校验、XPath映射与SOAP协议封装。"
+summary: "企业级XML与JSON互转工具，支持批量转换、XSD校验、XPath映射与SOAP协议封装。。XML转JSON专业版是一款面向集成团队与企业级数据交换场景的全功能结构化数据格式互转工具。在免"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,16 +12,15 @@ tags:
   - 数据转换
   - 数据交换
   - 企业工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # XML转JSON(专业版)
@@ -232,6 +231,14 @@ def xml_to_postgres(xml_path: str, table: str, mapping: dict, dsn: str):
 - 关键参数: `能力6：数据库直写` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级ESB数据交换（集成工程师角色）
@@ -403,7 +410,6 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成可执行的企业级数据交换流水线
 
 ---
-
 ## 案例展示
 
 ### 示例1：基础用法
@@ -411,6 +417,14 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 ### 60秒上手：批量转换+XSD校验(补充)
 直接对Agent说：
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 > "帮我把 ./xml 目录下所有XML批量转JSON，按 schema.xsd 校验结构。"
 # ...
 Agent会按本工具的批量校验模板输出：

@@ -3,7 +3,7 @@ slug: "key-vault-manager"
 name: "key-vault-manager"
 version: 1.0.1
 displayName: "密钥保险箱(专业版)"
-summary: "企业级密钥安全管家，支持多保险箱、审计日志、密钥轮换与团队共享"
+summary: "企业级密钥安全管家，支持多保险箱、审计日志、密钥轮换与团队共享。密钥保险箱(专业版)是面向团队与企业的全功能密钥安全管理工具，在免费版基础上新增多保险箱管理、审计日志、密钥轮换与团队共享等高"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -19,16 +19,15 @@ tags:
   - 安全防护
   - 密钥管理
   - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 密钥保险箱(专业版)
@@ -75,6 +74,14 @@ category: "Automation"
 **输出**: 返回多保险箱管理的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`多保险箱管理`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业多项目密钥隔离

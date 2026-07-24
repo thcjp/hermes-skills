@@ -21,16 +21,15 @@ tags:
   - 研发工具
   - 数据格式
   - CSV
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # CSV — 解析与生成
@@ -124,6 +123,14 @@ export API_KEY="your_api_key_here"
 - 数字中的 `E` 触发科学计数法——需字面文本时引号
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **识别目标工具**：确认CSV的消费方（Excel/Google Sheets/pandas/数据库导入）.

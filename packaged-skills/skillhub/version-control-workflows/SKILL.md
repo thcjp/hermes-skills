@@ -3,7 +3,7 @@ slug: "version-control-workflows"
 name: "version-control-workflows"
 version: "1.0.1"
 displayName: "Git Workflows"
-summary: "add/commit/push之外的高级git操作,rebase/bisect/worktree"
+summary: "add/commit/push之外的高级git操作,rebase/bisect/worktree。Advanced git operations beyond add/commit/push"
 license: "Proprietary"
 description: |-
   Advanced git operations beyond add/commit/push. Use when rebasing, bisecting
@@ -11,6 +11,9 @@ description: |-
   conflict resolution, and monorepo patterns.
 tags:
   - Development
+  - 工作流
+  - 自动化
+  - 效率
 tools:
   - read
   - write
@@ -26,6 +29,14 @@ category: "Automation"
 - Use when rebasing, bisecting
   bugs, using worktree
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 - 用户说"Version Control Workflows 核心处理" → 执行审查

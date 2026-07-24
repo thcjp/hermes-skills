@@ -3,7 +3,7 @@ slug: "aic-dashboard"
 name: "aic-dashboard"
 version: 1.8.1
 displayName: "AIC仪表盘监控"
-summary: "轻量级只读监控面板,展示入站邮件与浏览器会话状态,token保护,5秒自动刷新"
+summary: "轻量级只读监控面板,展示入站邮件与浏览器会话状态,token保护,5秒自动刷新。AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 5"
 license: "Proprietary"
 description: |-
   AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 50 封入站邮件,
@@ -13,16 +13,15 @@ description: |-
 tags:
   - 研发工具
   - Monitoring
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # AIC 仪表盘监控
@@ -96,6 +95,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回Token 保护的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Token 保护`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 环境变量
 
 | 变量 | 必需 | 默认值 | 说明 |

@@ -3,7 +3,7 @@ slug: "javascript-sdk-paid"
 name: "javascript-sdk-paid"
 version: 1.0.1
 displayName: "JS SDK工具专业版"
-summary: "企业级 AI 应用 SDK 方案，支持智能体构建、流式响应、会话管理与服务器代理集成。"
+summary: "企业级 AI 应用 SDK 方案，支持智能体构建、流式响应、会话管理与服务器代理集成。。面向企业级 AI 应用开发的 JavaScript SDK 专业工具，提供智能体构建与高级调用能力。核"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -19,16 +19,16 @@ tags:
   - AI应用
   - 智能体
   - 企业开发
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # JS SDK工具专业版
@@ -75,6 +75,14 @@ category: "Automation"
 **输出**: 返回智能体的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`智能体`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：构建自定义智能体

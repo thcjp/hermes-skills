@@ -3,7 +3,7 @@ slug: "email-163-tool-pro"
 name: "email-163-tool-pro"
 version: "1.0.0"
 displayName: "163邮箱助手专业版"
-summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档"
+summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档。163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、 高级搜索过滤、定时任务调度、邮件归档审"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -21,15 +21,14 @@ tags:
   - 163邮箱
   - 企业效率
   - 批量操作
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # 163邮箱助手专业版

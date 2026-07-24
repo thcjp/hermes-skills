@@ -3,7 +3,7 @@ slug: "rest-api-reference"
 name: "rest-api-reference"
 version: "1.0.0"
 displayName: "REST API参考手册"
-summary: "147个第三方服务的REST API参考,含认证模式、端点、速率限制、分页与Webhook模式"
+summary: "147个第三方服务的REST API参考,含认证模式、端点、速率限制、分页与Webhook模式。REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模"
 license: "Proprietary"
 description: |-
   REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模式与 Webhook 处理.
@@ -12,16 +12,15 @@ description: |-
 tags:
   - 研发工具
   - Productivity
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # REST API 参考手册
@@ -98,6 +97,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回端点参考的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`端点参考`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## API 分类索引
 
 | 分类 | 文件 | 代表服务 |

@@ -3,7 +3,7 @@ slug: rss-digest-tool-pro
 name: rss-digest-tool-pro
 version: 1.0.0
 displayName: RSS摘要工具专业版
-summary: 企业级RSS摘要生成与分发系统,支持批量源管理、定时调度、多租户配置与团队协作摘要分发
+summary: "企业级RSS摘要生成与分发系统,支持批量源管理、定时调度、多租户配置与团队协作摘要分发。RSS摘要工具专业版为企业团队提供高阶RSS内容消化与分发能力。核心能力:"
 license: Proprietary
 edition: pro
 description: 'RSS摘要工具专业版为企业团队提供高阶RSS内容消化与分发能力。核心能力:
@@ -30,22 +30,22 @@ description: 'RSS摘要工具专业版为企业团队提供高阶RSS内容消化
 
   差异化:专业版在免费版核心流程基础上,扩展批量操作、定时调度、团队协作与企业级配置能力'
 tags:
-- 研究工具
-- RSS
-- 企业级
-- 信息聚合
-- 竞争情报
-- 团队协作
+  - 研究工具
+  - RSS
+  - 企业级
+  - 信息聚合
+  - 竞争情报
+  - 团队协作
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # RSS摘要工具专业版

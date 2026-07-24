@@ -3,7 +3,7 @@ slug: "aws-cloud-architect-free"
 name: "aws-cloud-architect-free"
 version: "1.0.0"
 displayName: "AWS 架构师免费"
-summary: "AWS 基础架构设计与成本优化助手(免费版)"
+summary: "AWS 基础架构设计与成本优化助手(免费版)。AWS 云架构师助手(免费版),提供基础架构设计、服务选型与只读资源查询. 覆盖 MVP 阶段技术栈推荐、常用 CLI 只读命令、基础成本陷阱识"
 license: "MIT"
 description: |-
   AWS 云架构师助手(免费版),提供基础架构设计、服务选型与只读资源查询.
@@ -15,12 +15,14 @@ description: |-
 tags:
   - Operations
   - Creative
+  - AWS
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # AWS 云架构师 (免费版)
@@ -63,6 +65,14 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 **处理**: 解析默认安全的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回默认安全的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 服务选型(基础)
 
 | 需求 | 服务 | 原因 |

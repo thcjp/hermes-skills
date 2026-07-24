@@ -3,7 +3,7 @@ slug: solo-workflow-engine-pro
 name: solo-workflow-engine-pro
 version: 1.0.0
 displayName: Solo Workflow Engine
-summary: 完整七步无代码自动化框架，含高级场景、维护监控、ROI计算与故障排查.
+summary: "完整七步无代码自动化框架，含高级场景、维护监控、ROI计算与故障排查.。独立者引擎专业版是完整的全功能版本，为独立开发者、一人公司、自由职业者提供完整的七步无代码自动化方法论。从识别机会到计"
 license: Proprietary
 edition: pro
 description: '独立者引擎专业版是完整的全功能版本，为独立开发者、一人公司、自由职业者提供完整的七步无代码自动化方法论。从识别机会到计算ROI，全流程覆盖自动化工作流的构建、维护与优化。专业版解锁维护监控、高级自动化场景、ROI计算工具和完整故障排查表.
@@ -12,21 +12,20 @@ description: '独立者引擎专业版是完整的全功能版本，为独立开
   差异化：专为独立开发者设计的无代码自动化方法论，七步框架每步都有可操作的模板、检查清单和真实示例。专业版新增维护监控（确保自动化持续有效）、高级场景（超越基础的进阶自动化）和ROI计算（用数据驱动决策）。保留原始MIT版权声明.
   适用关键词：独立开发者、一人公司、无代码自动化、Zapier、Make、n8n、工作流、效率提升、ROI'
 tags:
-- 无代码自动化
-- 独立开发者
-- 效率提升
-- 工作流设计
-- ROI分析
+  - 无代码自动化
+  - 独立开发者
+  - 效率提升
+  - 工作流设计
+  - ROI分析
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 独立者引擎（专业版）
@@ -624,6 +623,13 @@ n8n自托管无月费，但需要技术能力来部署和维护。Zapier每月$2
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent设计和指导无代码自动化工作流的构建与维护
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## License与版权声明
 

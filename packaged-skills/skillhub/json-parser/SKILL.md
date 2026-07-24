@@ -3,23 +3,22 @@ slug: "json-parser"
 name: "json-parser"
 version: 2.1.1
 displayName: "Json Parser"
-summary: "解析校验建筑API/IoT/BIM的JSON并转表"
+summary: "解析校验建筑API/IoT/BIM的JSON并转表。Parse and validate JSON data from construction APIs, IoT sensors, and"
 license: "Proprietary"
 description: |-
   Parse and validate JSON data from construction APIs, IoT sensors, and
   BIM exports。Transform nest。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Json Parser
@@ -39,6 +38,14 @@ category: "Automation"
 
 Construction systems increasingly use JSON for data exchange - from IoT sensors to BIM metadata exports. This skill handles parsing, validation, and flattening of JSON structures.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 1. BIM Metadata

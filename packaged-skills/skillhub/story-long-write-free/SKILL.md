@@ -3,7 +3,7 @@ slug: "story-long-write-free"
 name: "story-long-write-free"
 version: "1.0.0"
 displayName: "长篇网文写作(免费版)"
-summary: "从选题到正文,辅助长篇网络小说创作,含世界观、人物、情节线管理。(免费版)"
+summary: "从选题到正文,辅助长篇网络小说创作,含世界观、人物、情节线管理。(免费版)。长篇网络小说创作全流程:选题方向、核心设定、卷级大纲、章节细纲、 正文写作与质量检查。覆盖情绪交付、读者契约、期待"
 license: "MIT"
 description: |-
   长篇网络小说创作全流程:选题方向、核心设定、卷级大纲、章节细纲、
@@ -11,11 +11,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 长篇网文写作(免费版)
@@ -77,6 +79,14 @@ category: "Automation"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

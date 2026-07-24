@@ -3,7 +3,7 @@ slug: focus-flow-optimizer-pro
 name: focus-flow-optimizer-pro
 version: 1.0.0
 displayName: Focus Flow Optimizer
-summary: AI Agent全功能生产力操作系统，七角色场景指南、团队协作、深度性能分析与多平台集成.
+summary: "AI Agent全功能生产力操作系统，七角色场景指南、团队协作、深度性能分析与多平台集成.。专注流优化器（专业版）在免费版五层架构基础上，解锁团队协作模式、深度性能分析、多角色场景指南、多平"
 license: Proprietary
 edition: pro
 description: '专注流优化器（专业版）在免费版五层架构基础上，解锁团队协作模式、深度性能分析、多角色场景指南、多平台集成与版本迁移指南。为长期项目、团队负责人、独立创业者、远程工作者、ADHD/育儿/倦怠期等真实处境提供针对性方案.
@@ -13,22 +13,23 @@ description: '专注流优化器（专业版）在免费版五层架构基础上
   差异化：基于开源生产力方法论深度改造，完全中文化，路径改为~/focus-flow标准目录，新增七大角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：专注流、团队协作、能量管理、时间块、瓶颈诊断、深度工作、ADHD、远程工作、倦怠恢复、估算误差、迁移指南'
 tags:
-- 专注管理
-- 时间块
-- 能量管理
-- 团队协作
-- 性能优化
-- 多角色场景
+  - 专注管理
+  - 时间块
+  - 能量管理
+  - 团队协作
+  - 性能优化
+  - 多角色场景
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 专注流优化器（专业版）

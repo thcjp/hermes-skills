@@ -3,7 +3,7 @@ slug: "memory-scan"
 name: "memory-scan"
 version: 1.0.1
 displayName: "记忆安全扫描"
-summary: "扫描AI Agent记忆文件与工作区配置，检测恶意内容、凭证泄漏与注入攻击"
+summary: "扫描AI Agent记忆文件与工作区配置，检测恶意内容、凭证泄漏与注入攻击。面向AI Agent记忆文件与工作区配置的安全扫描工具，检测恶意指令、Prompt注入、凭证泄漏、数据外泄、护栏绕"
 license: "Proprietary"
 description: |-
   面向AI Agent记忆文件与工作区配置的安全扫描工具，检测恶意指令、Prompt注入、凭证泄漏、数据外泄、护栏绕过、行为操纵、权限提升七大威胁类别.
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 记忆安全扫描（Memory Scan）
@@ -92,6 +90,14 @@ category: "Agents"
    - 静默模式（`--quiet`）适合自动化场景
    - JSON输出模式（`--json`）便于集成到CI/CD或其他工具链
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：执行安全扫描

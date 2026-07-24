@@ -3,7 +3,7 @@ slug: "memo-quickstart-free"
 name: "memo-quickstart-free"
 version: "1.0.0"
 displayName: "记忆快速启动"
-summary: "零依赖本地记忆基础版：三层架构+TF-IDF检索+WAL日志，10秒上手。"
+summary: "零依赖本地记忆基础版：三层架构+TF-IDF检索+WAL日志，10秒上手。。面向零依赖场景的本地记忆系统基础版，解决搜索精度不足与上手门槛高两大痛点. 三层记忆架构（热内存/冷存储/人类可读"
 license: "MIT"
 description: |-
   面向零依赖场景的本地记忆系统基础版，解决搜索精度不足与上手门槛高两大痛点.
@@ -16,11 +16,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 创意设计
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - UI设计
+  - 前端
+  - 设计
 category: "Creative"
 ---
 # 记忆快速启动（基础版）
@@ -59,6 +61,14 @@ category: "Creative"
 **输出**: 返回WAL写前日志协议的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`WAL写前日志协议`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：初始化（10秒）

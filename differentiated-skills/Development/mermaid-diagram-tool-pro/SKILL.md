@@ -3,7 +3,7 @@ slug: "mermaid-diagram-tool-pro"
 name: "mermaid-diagram-tool-pro"
 version: "1.0.0"
 displayName: "Mermaid图表工具(专业版)"
-summary: "团队级Mermaid图表套件,含全类型、自定义主题、批量生成与CI语法校验。"
+summary: "团队级Mermaid图表套件,含全类型、自定义主题、批量生成与CI语法校验。。Mermaid图表工具(专业版)面向团队与企业,提供全类型Mermaid图表生成、复杂多节点图、自定义主题样式、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,15 +27,14 @@ tags:
   - 企业级
   - 可视化
   - 架构
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Mermaid图表工具(专业版)

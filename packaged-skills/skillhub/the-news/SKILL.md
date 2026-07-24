@@ -3,23 +3,21 @@ slug: "the-news"
 name: "the-news"
 version: 1.0.18
 displayName: "The News"
-summary: "给Agent实时与归档访问20国头版头条"
+summary: "给Agent实时与归档访问20国头版头条。gives agents real-time and archival access to front-page headlines across"
 license: "Proprietary"
 description: |-
   gives agents real-time and archival access to front-page headlines across
   20 countries for breaki
 tags:
   - Research
+  - 新闻
+  - 信息
+  - 资讯
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
 category: "Knowledge"
 ---
 # The News
@@ -40,6 +38,14 @@ category: "Knowledge"
 - gives agents real-time and archival access to front-page headlines across
   20 countries for breaki
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

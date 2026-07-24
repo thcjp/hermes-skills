@@ -3,25 +3,24 @@ slug: reminder-engine-free
 name: reminder-engine-free
 version: 1.0.1
 displayName: 提醒引擎(免费版)
-summary: 一次性提醒创建引擎免费版，含时间解析、安全校验、频道投递、确认回复与基础生命周期管理.
+summary: "一次性提醒创建引擎免费版，含时间解析、安全校验、频道投递、确认回复与基础生命周期管理.。提醒引擎免费版是面向AI Agent的一次性提醒创建引擎。不同于定时任务配置指南，本技能聚焦"如何安全"
 license: Proprietary
 edition: free
 description: 提醒引擎免费版是面向AI Agent的一次性提醒创建引擎。不同于定时任务配置指南，本技能聚焦"如何安全可靠地创建一次性提醒"的完整流程：时间解析、安全校验、频道投递、确认回复、生命周期管理。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 提醒引擎
-- 一次性提醒
-- 时间解析
-- 安全校验
+  - 提醒引擎
+  - 一次性提醒
+  - 时间解析
+  - 安全校验
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 > **不是教你配置定时任务，而是教你安全可靠地创建一次性提醒。时间解析、安全校验、频道投递，一条龙服务。**

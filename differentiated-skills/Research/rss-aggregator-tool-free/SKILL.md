@@ -3,7 +3,7 @@ slug: rss-aggregator-tool-free
 name: rss-aggregator-tool-free
 version: 1.0.0
 displayName: RSS聚合工具免费版
-summary: 自动读取RSS链接，抓取合并多源报道，去重历史推送，生成高密度Markdown简报
+summary: "自动读取RSS链接，抓取合并多源报道，去重历史推送，生成高密度Markdown简报。RSS聚合工具免费版，自动读取配置的RSS链接，抓取并合并多源报道，通过历史日志核对实现增量推送，生成高信"
 license: Proprietary
 edition: free
 description: 'RSS聚合工具免费版，自动读取配置的RSS链接，抓取并合并多源报道，通过历史日志核对实现增量推送，生成高信息密度的纯文本简报。核心能力:
@@ -30,19 +30,19 @@ description: 'RSS聚合工具免费版，自动读取配置的RSS链接，抓取
 
   - 免费版聚焦增量推送...'
 tags:
-- RSS
-- 聚合
-- 资讯
-- 增量推送
+  - RSS
+  - 聚合
+  - 资讯
+  - 增量推送
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # RSS聚合工具（免费版）

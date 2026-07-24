@@ -3,7 +3,7 @@ slug: "persistent-memory-engine"
 name: "persistent-memory-engine"
 version: 1.0.1
 displayName: "持久记忆引擎"
-summary: "无限分层持久记忆系统，解决跨会话遗忘、检索不准、记忆膨胀与冲突问题"
+summary: "无限分层持久记忆系统，解决跨会话遗忘、检索不准、记忆膨胀与冲突问题。面向 AI Agent 的无限分层持久记忆系统，在内置记忆之上构建并行、可扩展、可检索的结构化本地存储. 直击跨会话遗忘、"
 license: "Proprietary"
 description: |-
   面向 AI Agent 的无限分层持久记忆系统，在内置记忆之上构建并行、可扩展、可检索的结构化本地存储.
@@ -14,15 +14,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 持久记忆引擎
@@ -118,6 +116,14 @@ expires: 2026-12-31
 ```markdown
 # ...
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 版本历史
 - v1 (2026-06-01)：用户偏好深色模式
 - v2 (2026-07-18)：用户偏好浅色模式（冲突，已确认最新）

@@ -3,7 +3,7 @@ slug: "model-routing-tool-pro"
 name: "model-routing-tool-pro"
 version: "1.0.0"
 displayName: "模型路由工具(专业版)"
-summary: "团队级模型路由套件,含成本仪表盘、批量分发、自定义规则与监控告警。"
+summary: "团队级模型路由套件,含成本仪表盘、批量分发、自定义规则与监控告警。。模型路由工具(专业版)面向团队与企业,在三层路由决策基础上,扩展成本分析仪表盘、批量任务分发、自定义路由规则、实时监控告警"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,15 +27,14 @@ tags:
   - 企业级
   - 成本优化
   - 监控
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 模型路由工具(专业版)

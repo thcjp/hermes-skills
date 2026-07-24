@@ -9,18 +9,17 @@ edition: free
 description: Azure网关CLI免费版是一款面向独立开发者的本地代理工具，用于解决OpenAI兼容客户端与Azure OpenAI服务之间的协议适配问题。Azure
   OpenAI使用专属的URL路径与查询参数格式，与标准OpenAI API存在差异，直接对接往往导致请求失败或参数丢失。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 集成工具
-- API网关
-- 本地代理
+  - 集成工具
+  - API网关
+  - 本地代理
+  - Azure
+  - 云计算
+  - DevOps
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Operations"
 ---
 # Azure网关CLI免费版

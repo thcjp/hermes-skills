@@ -3,7 +3,7 @@ slug: "kujiale-design-tool-pro"
 name: "kujiale-design-tool-pro"
 version: "1.0.0"
 displayName: "酷家乐设计-专业版"
-summary: "企业级室内设计工具,支持多方案对比、批量渲染、自定义风格与团队协作,适配商业设计生产"
+summary: "企业级室内设计工具,支持多方案对比、批量渲染、自定义风格与团队协作,适配商业设计生产。酷家乐设计专业版,面向企业团队与专业室内设计师的高级智能设计工具。核心能力: - 多方案并行对比,支持同"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -26,15 +26,14 @@ tags:
   - 室内设计
   - 企业版
   - 商业内容
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 酷家乐设计工具 - 专业版

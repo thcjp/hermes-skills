@@ -3,24 +3,25 @@ slug: infinite-memory-vault-free
 name: infinite-memory-vault-free
 version: 1.0.1
 displayName: 无限记忆库(免费版)
-summary: 与Agent内置记忆并行的无限组织化记忆免费版：自定义分类、索引导航、即写即存.
+summary: "与Agent内置记忆并行的无限组织化记忆免费版：自定义分类、索引导航、即写即存.。面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库免费体验版。与 Agent 内置记忆并行工"
 license: Proprietary
 edition: free
 description: 面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库免费体验版。与 Agent 内置记忆并行工作，互不冲突，提供无限分类、索引导航、即写即存能力。Use
   when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
-- 智能代理
-- 记忆管理
-- 知识组织
+  - 智能代理
+  - 记忆管理
+  - 知识组织
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 **与 Agent 内置记忆并行的无限组织化记忆系统**。你的 Agent 有基础内置记忆，本 Skill 为它添加无限、完美组织的并行记忆系统——互补而非替代，永不冲突.
@@ -304,6 +305,14 @@ tar -czf ~/backups/memory-$(date +%Y%m%d).tar.gz -C ~/ memory/
 **输出**: 返回扩展能力3的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`param_3`参数,支持创建/查询/修改操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：内置记忆并行的无、限组织化记忆免费、自定义分类、Use、when、需要数据库操作、SQL、数据存储管理时使、不适用于数据库架、构设计决策、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 **角色**：同时管理 5+ 个项目的项目经理
 **痛点**：Agent 内置记忆装不下所有项目细节，经常混淆

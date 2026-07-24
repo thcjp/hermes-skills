@@ -3,7 +3,7 @@ slug: write-toolkit-pro
 name: write-toolkit-pro
 version: 1.0.0
 displayName: 写作工具专业版
-summary: 多人协作、自定义审计、多格式导出与内容资产库，适合内容团队与企业写作治理.
+summary: "多人协作、自定义审计、多格式导出与内容资产库，适合内容团队与企业写作治理.。写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:"
 license: Proprietary
 edition: pro
 description: '写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:
@@ -28,20 +28,20 @@ description: '写作工具专业版，面向内容团队与企业的高阶写作
 
   差异化: 专业版在免费版核心写作流程之上扩展协作与审计，新增多格式导出、资产库、写作分析等企业级能力，并与免费版工作流兼容'
 tags:
-- 写作
-- 团队协作
-- 内容治理
-- 专业版
+  - 写作
+  - 团队协作
+  - 内容治理
+  - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 写作工具（专业版）

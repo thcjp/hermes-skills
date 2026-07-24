@@ -3,7 +3,7 @@ slug: docker-essentials-v1-tool-free
 name: docker-essentials-v1-tool-free
 version: 1.0.0
 displayName: Docker V1基础工具免费版
-summary: 提供Docker V1经典命令集与基础容器管理,适合维护旧版Docker环境的开发者.
+summary: "提供Docker V1经典命令集与基础容器管理,适合维护旧版Docker环境的开发者.。面向旧版Docker环境的容器管理工具,涵盖V1经典命令集、基础容器生命周期与镜像管理。核心能力:"
 license: Proprietary
 edition: free
 description: '面向旧版Docker环境的容器管理工具,涵盖V1经典命令集、基础容器生命周期与镜像管理。核心能力:
@@ -36,18 +36,16 @@ description: '面向旧版Docker环境的容器管理工具,涵盖V1经典命令
 
   适用关键词: Docker V1, 旧版D...'
 tags:
-- 开发工具
-- Docker
-- 遗留系统
+  - 开发工具
+  - Docker
+  - 遗留系统
+  - 容器
+  - DevOps
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "容器,Docker,DevOps"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # Docker V1基础工具 - 免费版

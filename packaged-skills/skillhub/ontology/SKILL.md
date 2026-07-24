@@ -3,7 +3,7 @@ slug: "ontology"
 name: "ontology"
 version: 1.0.5
 displayName: "类型化知识图谱引擎"
-summary: "基于类型约束的知识图谱系统，为智能代理提供结构化记忆与可组合技能"
+summary: "基于类型约束的知识图谱系统，为智能代理提供结构化记忆与可组合技能。类型化知识图谱引擎，将知识表示为可验证的实体-关系图谱。每个实体拥有类型、属性和关系， 所有变更在提交前根据类型约束进行验证"
 license: "Proprietary"
 description: |-
   类型化知识图谱引擎，将知识表示为可验证的实体-关系图谱。每个实体拥有类型、属性和关系，
@@ -15,15 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 类型化知识图谱引擎
@@ -177,6 +175,14 @@ ontology:
 
 每步验证通过后提交，任一步骤失败则回滚已执行的步骤，保证图谱一致性.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：初始化图谱目录与Schema

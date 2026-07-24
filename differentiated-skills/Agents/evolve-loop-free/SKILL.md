@@ -3,25 +3,26 @@ slug: evolve-loop-free
 name: evolve-loop-free
 version: 1.0.1
 displayName: 进化循环(免费版)
-summary: AI Agent自改进PDCA闭环引擎，三层记忆分层存储，从纠正与反思中持续进化.
+summary: "AI Agent自改进PDCA闭环引擎，三层记忆分层存储，从纠正与反思中持续进化.。进化循环免费版为AI Agent提供一套基于PDCA（计划-执行-检查-改进）闭环的自改进引擎，将零散的""
 license: Proprietary
 edition: free
 description: 进化循环免费版为AI Agent提供一套基于PDCA（计划-执行-检查-改进）闭环的自改进引擎，将零散的"用户纠正-自我反思"过程结构化为可追溯、可演化的记忆系统。核心能力：三层记忆分层（HOT热内存≤100行
   / WARM温存储项目域 / COLD冷归档），自动升降级机制（3次命中升级HOT，30天未用降级WARM，90天归档COLD），纠正信号识别（8类显式纠正短语），自我反思触发器（多步任务后/反馈后/Bug修复后），命名空间隔离（项目/域/全局三级继承），冲突解决（最具体优先+最近优先+歧义询问），透明引用（每次行动标注来源）...
 tags:
-- 自改进
-- Agent记忆
-- 反思学习
-- 偏好沉淀
+  - 自改进
+  - Agent记忆
+  - 反思学习
+  - 偏好沉淀
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 进化循环（免费版）

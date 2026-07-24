@@ -3,23 +3,23 @@ slug: "okx-dex-token"
 name: "okx-dex-token"
 version: 3.1.4
 displayName: "Okx Dex Token"
-summary: "代币级数据,搜代币/热门榜/流动性池"Proprietary"
+summary: "代币级数据,搜代币/热门榜/流动性池"Proprietary。Use this skill for token-level data: search tokens, trending/hot"
 description: |-
   Use this skill for token-level data: search tokens, trending/hot tokens
   (热门, 代币榜单), liquidity poo。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Finance
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
 license: "MIT"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Okx Dex Token
@@ -40,6 +40,14 @@ category: "Automation"
 - Use this skill for token-level data: search tokens, trending/hot tokens
   (热门, 代币榜单), liquidity poo
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

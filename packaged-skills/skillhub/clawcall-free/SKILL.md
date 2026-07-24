@@ -3,7 +3,7 @@ slug: "clawcall-free"
 name: "clawcall-free"
 version: "1.0.0"
 displayName: "语音通话服务-免费版"
-summary: "AI语音代理拨打美国真实电话的免费版，支持基础外呼与轮询，每日有限试用额度"
+summary: "AI语音代理拨打美国真实电话的免费版，支持基础外呼与轮询，每日有限试用额度。语音通话服务免费版提供基础外呼能力。AI语音代理可拨号、对话、处理简单电话菜单， 并在通话结束后返回转录与结果。首"
 license: "MIT"
 description: |-
   语音通话服务免费版提供基础外呼能力。AI语音代理可拨号、对话、处理简单电话菜单，
@@ -20,12 +20,14 @@ tags:
   - 通用办公
   - 语音通话
   - AI代理
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 语音通话服务（免费版）
@@ -42,6 +44,14 @@ category: "Automation"
 ## 核心能力
 电话代理只知道你作为 `task` 发送的**通话指令**。细节越相关越好。拨号前构建完整的简报，不要让用户提供你本可自行查询的公开/商业信息。
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 持久状态
 
 在任何涉及语音通话服务的对话开始时，检查 `~/.config/voicecall/key.json` 或宿主密钥库。若存在API密钥，作为 `X-Api-Key` 发送。

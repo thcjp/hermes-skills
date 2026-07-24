@@ -3,7 +3,7 @@ slug: scrape-web-tool-pro
 name: scrape-web-tool-pro
 version: 1.0.0
 displayName: 网页抓取工具专业版
-summary: 企业级网页抓取系统,支持批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证注入
+summary: "企业级网页抓取系统,支持批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证注入。网页抓取工具专业版为企业团队提供高阶网页内容抓取与数据提取能力。核心能力:"
 license: Proprietary
 edition: pro
 description: '网页抓取工具专业版为企业团队提供高阶网页内容抓取与数据提取能力。核心能力:
@@ -32,20 +32,20 @@ description: '网页抓取工具专业版为企业团队提供高阶网页内容
 
   差异化:专业版在免费版单页抓取与CSS选择器基础上,扩展批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证能力'
 tags:
-- 研究工具
-- 网页抓取
-- 企业级
-- 数据采集
+  - 研究工具
+  - 网页抓取
+  - 企业级
+  - 数据采集
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
 category: "Development"
 ---
 # 网页抓取工具专业版

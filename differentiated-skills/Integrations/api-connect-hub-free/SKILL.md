@@ -3,24 +3,23 @@ slug: api-connect-hub-free
 name: api-connect-hub-free
 version: 1.0.1
 displayName: API连接中心(免费版)
-summary: 轻量级第三方API连接与凭证管理，覆盖连接器注册、认证、调用模板与错误重试.
+summary: "轻量级第三方API连接与凭证管理，覆盖连接器注册、认证、调用模板与错误重试.。API连接中心免费版解决独立开发者"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙"的痛点。提供"
 license: Proprietary
 edition: free
 description: API连接中心免费版解决独立开发者"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙"的痛点。提供统一连接器注册、凭证安全存储、标准化调用模板、错误重试策略四大能力。Use
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
-- API集成
-- 连接器管理
-- 凭证安全
+  - API集成
+  - 连接器管理
+  - 凭证安全
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # API连接中心（免费版）
@@ -406,7 +405,6 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent管理API连接与调用
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -452,6 +450,14 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 ```
 ### 30秒上手：注册一个连接器(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 对Agent说：
 # ...
 > "帮我注册一个GitHub连接器，用Personal Access Token认证。"

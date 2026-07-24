@@ -3,7 +3,7 @@ slug: "excel-expert"
 name: "excel-expert"
 version: 1.0.1
 displayName: "Excel专家专业版"
-summary: "全场景表格诊断与建模引擎，含跨平台降级矩阵、VBA 生成、敏感性分析与仪表盘设计。"
+summary: "全场景表格诊断与建模引擎，含跨平台降级矩阵、VBA 生成、敏感性分析与仪表盘设计。。Excel 专家专业版在免费版诊断能力基础上，扩展跨平台深度降级矩阵、VBA 宏生成与优化、财务建模与敏感"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,15 @@ tags:
   - 表格处理
   - 企业级
   - 财务建模
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Excel专家专业版
@@ -60,6 +59,14 @@ category: "Automation"
 **输出**: 返回LLM响应超时或无响应的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`LLM响应超时或无响应`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 已知限制
 - 七大类问题诊断与最优工具选择
 - 标准公式 / 动态数组 / 透视表 / 清洗流程

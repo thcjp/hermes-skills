@@ -3,7 +3,7 @@ slug: "git-cli-paid"
 name: "git-cli-paid"
 version: 1.0.1
 displayName: "Git命令行助手专业版"
-summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。"
+summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。。面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -34,16 +34,13 @@ tags:
   - 命令行
   - 企业级
   - 自动化
+  - 版本控制
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 category: "Development"
 ---
 # Git命令行助手专业版
@@ -77,6 +74,14 @@ category: "Development"
 **处理**: 解析多仓库管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回多仓库管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:日常开发自动化

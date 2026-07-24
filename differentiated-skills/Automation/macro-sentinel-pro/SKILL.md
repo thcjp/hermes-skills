@@ -3,7 +3,7 @@ slug: macro-sentinel-pro
 name: macro-sentinel-pro
 version: 1.0.0
 displayName: 宏观哨兵(专业版)
-summary: 全功能宏观监控，含深度解读、高频采集、多渠道推送、可视化图表与告警，支持6种角色场景.
+summary: "全功能宏观监控，含深度解读、高频采集、多渠道推送、可视化图表与告警，支持6种角色场景.。宏观哨兵（专业版）是在免费版基础上的全功能升级，为AI Agent提供完整的宏观经济监控与分析能力。在"
 license: Proprietary
 edition: pro
 description: '宏观哨兵（专业版）是在免费版基础上的全功能升级，为AI Agent提供完整的宏观经济监控与分析能力。在核心数据采集与整理能力之上，解锁指标深度解读、历史趋势对比、高频实时监控、多渠道推送、可视化图表生成、阈值告警、专业报告输出七大高级功能.
@@ -12,20 +12,19 @@ description: '宏观哨兵（专业版）是在免费版基础上的全功能升
   差异化：针对专业宏观分析需求深度改造，完全中文化，新增6种角色×场景映射、性能优化策略、多平台集成示例、版本升级迁移指南、扩展FAQ（12问）与故障排查表（11项），内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：宏观监控、深度解读、趋势分析、阈值告警、可视化图表、专业报告、多渠道推送'
 tags:
-- 宏观经济
-- 深度分析
-- 趋势预测
-- 告警预警
+  - 宏观经济
+  - 深度分析
+  - 趋势预测
+  - 告警预警
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 宏观哨兵（专业版）

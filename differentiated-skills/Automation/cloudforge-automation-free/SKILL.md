@@ -9,19 +9,18 @@ edition: free
 description: 云锻造自动化免费版帮助你使用基础设施即代码（IaC）管理云资源。通过Terraform模板定义、一键部署与基础配置管理，告别手动控制台操作，实现云资源的可重复、可版本化、可追溯管理。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 云基础设施
-- Terraform
-- IaC
-- 云资源管理
+  - 云基础设施
+  - Terraform
+  - IaC
+  - 云资源管理
+  - 云计算
+  - DevOps
+  - 基础设施
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Operations"
 ---
 # 云锻造自动化（免费版）

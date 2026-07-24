@@ -3,25 +3,24 @@ slug: emoji-toolkit-free
 name: emoji-toolkit-free
 version: 1.0.1
 displayName: 表情符号工具箱
-summary: 表情符号编码解码工具，支持Unicode变体选择器隐藏消息、代币编码与元数据解析.
+summary: "表情符号编码解码工具，支持Unicode变体选择器隐藏消息、代币编码与元数据解析.。表情符号工具箱免费版解决在即时通讯中"隐藏消息传递、代币安全传输、表情符号深度解析"的核心需求。表情符号工"
 license: Proprietary
 edition: free
 description: 表情符号工具箱免费版解决在即时通讯中"隐藏消息传递、代币安全传输、表情符号深度解析"的核心需求。表情符号工具箱利用Unicode变体选择器（VS1-VS256）技术，将文本隐藏在表情符号内部，实现视觉上只显示表情但实际携带隐藏信息的效果。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
-- 表情符号
-- 隐藏消息
-- 编码解码
-- Unicode
+  - 表情符号
+  - 隐藏消息
+  - 编码解码
+  - Unicode
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 表情符号工具箱（免费版）
@@ -83,6 +82,14 @@ node （请参考skill目录中的脚本文件） decode "<粘贴消息>" --meta
 将以下内容作为编解码请求的标准格式：
 
 ```markdown
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 表情符号编解码请求
 # ...
 ### 操作类型

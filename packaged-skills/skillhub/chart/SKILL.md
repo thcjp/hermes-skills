@@ -20,16 +20,15 @@ tags:
   - 需求设计
   - 数据可视化
   - matplotlib
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Chart — 本地图表生成引擎
@@ -160,6 +159,14 @@ python3 {baseDir}/（请参考skill目录中的脚本文件）
 **输入**: 用户提供多类型组合工作流所需的指令和必要参数.
 **处理**: 解析多类型组合工作流的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **确认环境**：检查 `python3` 与 `matplotlib` 是否可用（`python3 -c "import matplotlib"`）.

@@ -3,7 +3,7 @@ slug: "dns-networking-paid"
 name: "dns-networking-paid"
 version: 1.0.1
 displayName: "DNS网络诊断专业版"
-summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。"
+summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。。面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力: -"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,16 +28,14 @@ tags:
   - 网络诊断
   - 运维监控
   - 企业级
+  - 网络
+  - DNS
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "网络,DNS,工具"
 category: "Operations"
 ---
 # DNS网络诊断专业版
@@ -172,6 +170,14 @@ done
 - 关键参数: `网络路径分析` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:生产环境网络巡检

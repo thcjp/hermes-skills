@@ -3,27 +3,27 @@ slug: research-agent-tool-pro
 name: research-agent-tool-pro
 version: 1.0.0
 displayName: 研究代理助手专业版
-summary: 企业级研究代理平台，支持深度异步研究、多主题并行、定时任务与API集成
+summary: "企业级研究代理平台，支持深度异步研究、多主题并行、定时任务与API集成。研究代理助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭"
 license: Proprietary
 edition: pro
 description: 研究代理助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
-- 研究
-- 企业级
-- 深度研究
-- 团队协作
-- 自动化
+  - 研究
+  - 企业级
+  - 深度研究
+  - 团队协作
+  - 自动化
+  - AI代理
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 研究代理助手专业版在免费版交互式研究的基础上，新增深度异步研究模式、多主题并行处理、定时研究任务、多格式导出、版本管理、多租户团队协作和 REST API 集成等企业级能力，满足研究机构和企业对深度、批量、自动化研究的全面需求.

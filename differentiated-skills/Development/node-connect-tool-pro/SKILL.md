@@ -3,7 +3,7 @@ slug: "node-connect-tool-pro"
 name: "node-connect-tool-pro"
 version: "1.0.0"
 displayName: "节点连接工具(专业版)"
-summary: "全拓扑节点连接诊断,含尾网/公网/远程网关、批量配对、审计日志与自动修复。"
+summary: "全拓扑节点连接诊断,含尾网/公网/远程网关、批量配对、审计日志与自动修复。。节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,15 +30,14 @@ tags:
   - 企业级
   - 运维
   - 安全
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 节点连接工具(专业版)

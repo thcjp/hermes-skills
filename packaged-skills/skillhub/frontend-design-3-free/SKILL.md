@@ -3,7 +3,7 @@ slug: "frontend-design-3-free"
 name: "frontend-design-3-free"
 version: "0.1.0"
 displayName: "Frontend Design Free"
-summary: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。"
+summary: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。。frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI"
 license: "MIT"
 description: |-
   frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI slop"美学.
@@ -13,11 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 创意设计
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - 设计
+  - UI/UX
+  - 创意
 category: "Creative"
 ---
 # Frontend Design Free
@@ -84,6 +86,14 @@ Motion 库（React）集成.
 **处理**: 解析CSS-only 动效的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回CSS-only 动效的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 分析界面目的和目标用户

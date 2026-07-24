@@ -3,7 +3,7 @@ slug: "blog-writer"
 name: "blog-writer"
 version: 0.1.1
 displayName: "博客写作助手"
-summary: "捕捉作者独特写作风格,从研究材料到发布笔记平台的全流程博客创作。"
+summary: "捕捉作者独特写作风格,从研究材料到发布笔记平台的全流程博客创作。。基于作者已发表作品校准语气、用词、结构与长度,产出直白、有观点、 对话式且扎根实战经验的博客文章。覆盖信息收集、起草、审查迭"
 license: "Proprietary"
 description: |-
   基于作者已发表作品校准语气、用词、结构与长度,产出直白、有观点、
@@ -12,15 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 博客写作助手
@@ -139,6 +137,14 @@ export API_KEY="your_api_key_here"
 **处理**: 解析主题元素对齐的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回主题元素对齐的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -3,23 +3,21 @@ slug: cdp-browser-master
 name: cdp-browser-master
 version: 1.0.1
 displayName: CDP浏览器大师
-summary: 解决反爬检测、选择器易变、SPA路由、等待不准四大痛点，附反检测与智能等待.
+summary: "解决反爬检测、选择器易变、SPA路由、等待不准四大痛点，附反检测与智能等待.。通过Chrome DevTools Protocol驱动已登录浏览器执行自动化任务,解决反爬检测、选择器易变、S"
 license: Proprietary
 description: 通过Chrome DevTools Protocol驱动已登录浏览器执行自动化任务,解决反爬检测、选择器易变、SPA路由难导航、等待不准四大痛点,提供反检测策略、选择器探测模式、SPA导航模式、智能等待、Cookie获取、连接管理六大核心能力。适用于JS渲染页面抓取、需登录态网站操作、平台配额查询场景。适用关键词:CDP、浏览器自动化、Chrome、Edge、反爬、选择器、SPA、智能等待、Cookie
 tags:
-- 自动化
-- 浏览器
-- 数据抓取
+  - 自动化
+  - 浏览器
+  - 数据抓取
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # CDP浏览器大师
@@ -45,6 +43,14 @@ UA天然真实(用已登录浏览器)、启动参数`--disable-blink-features=Au
 
 ### 6. 连接管理
 端口复用(每端口同时一个WebSocket)、ConnectionManager自动管理、残留连接清理、端口占用排查。使用`input_params`参数支持创建/查询/导出操作。
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

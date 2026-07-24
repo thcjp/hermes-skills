@@ -3,7 +3,7 @@ slug: "ux-design"
 name: "ux-design"
 version: 1.0.1
 displayName: "UX设计工具专业版"
-summary: "完整UX方法论+用户研究+WCAG合规+状态机设计+企业UX审计,面向UX团队的专业体验设计引擎"
+summary: "完整UX方法论+用户研究+WCAG合规+状态机设计+企业UX审计,面向UX团队的专业体验设计引擎。面向企业UX团队和专业设计师的完整用户体验设计引擎,涵盖深度流程分析、 用户研究方法论、WC"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -20,16 +20,14 @@ tags:
   - 企业级
   - 用户研究
   - WCAG
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # UX设计工具专业版
@@ -258,6 +256,14 @@ UX审计维度:
 - 关键参数: `企业级ux审计框架` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:企业产品UX全面审计

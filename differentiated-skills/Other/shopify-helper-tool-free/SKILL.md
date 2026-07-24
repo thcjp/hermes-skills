@@ -3,7 +3,7 @@ slug: shopify-helper-tool-free
 name: shopify-helper-tool-free
 version: 1.0.0
 displayName: Shopify助手-免费版
-summary: Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家
+summary: "Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家。Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:"
 license: Proprietary
 edition: free
 description: 'Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:
@@ -32,19 +32,18 @@ description: 'Shopify 建站助手免费版,面向个人卖家与小型电商。
 
   差异化:免费版提供基础建站能力'
 tags:
-- Shopify
-- 电商
-- Liquid
-- 建站
+  - Shopify
+  - 电商
+  - Liquid
+  - 建站
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Shopify 助手 - 免费版

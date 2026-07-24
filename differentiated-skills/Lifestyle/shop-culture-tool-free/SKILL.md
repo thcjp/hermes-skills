@@ -3,7 +3,7 @@ slug: shop-culture-tool-free
 name: shop-culture-tool-free
 version: 1.0.0
 displayName: 店铺文化助手免费版
-summary: 小型店铺文化建设与营销文案生成,支持品牌故事与社交媒体内容
+summary: "小型店铺文化建设与营销文案生成,支持品牌故事与社交媒体内容。面向个体店主与小微商家的店铺文化与营销助手."
 license: Proprietary
 edition: free
 description: '面向个体店主与小微商家的店铺文化与营销助手.
@@ -15,21 +15,20 @@ description: '面向个体店主与小微商家的店铺文化与营销助手.
 
   适用关键词: 店铺文化, 品牌故事, 营销文案, 社交媒体, 客户互动, 促销活动'
 tags:
-- 店铺运营
-- 品牌建设
-- 营销文案
-- 社交媒体
-- 客户互动
-- 小微商家
+  - 店铺运营
+  - 品牌建设
+  - 营销文案
+  - 社交媒体
+  - 客户互动
+  - 小微商家
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 店铺文化助手 (免费版)

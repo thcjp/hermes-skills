@@ -3,25 +3,25 @@ slug: verify-claims-tool-free
 name: verify-claims-tool-free
 version: 1.0.0
 displayName: 事实核查助手免费版
-summary: 多源交叉验证的事实核查工具,对接全球专业事实核查机构,适合个人信息鉴别
+summary: "多源交叉验证的事实核查工具,对接全球专业事实核查机构,适合个人信息鉴别。事实核查助手免费版,面向个人用户提供基础的事实核查能力。通过对接全球专业事实核查机构,对用户提供的声明进行多源交叉验证"
 license: Proprietary
 edition: free
 description: 事实核查助手免费版,面向个人用户提供基础的事实核查能力。通过对接全球专业事实核查机构,对用户提供的声明进行多源交叉验证。Use when
   需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use when
   需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 研究工具
-- 事实核查
-- 信息鉴别
+  - 研究工具
+  - 事实核查
+  - 信息鉴别
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 事实核查助手免费版

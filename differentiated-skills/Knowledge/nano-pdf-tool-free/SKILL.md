@@ -3,7 +3,7 @@ slug: nano-pdf-tool-free
 name: nano-pdf-tool-free
 version: 1.0.2
 displayName: Nano PDF工具（免费版）
-summary: 轻量级PDF处理工具：读取、创建、编辑PDF，支持文本提取与基本页面操作.
+summary: "轻量级PDF处理工具：读取、创建、编辑PDF，支持文本提取与基本页面操作.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
 description: 'Nano PDF工具 - （免费版）
@@ -16,19 +16,18 @@ description: 'Nano PDF工具 - （免费版）
 
   适用关键词: PDF读取, PDF创建, 文本提取, 页面操作, nano pdf, PDF编辑, 页面旋转'
 tags:
-- PDF处理
-- 轻量级
-- 文本提取
-- 页面操作
+  - PDF处理
+  - 轻量级
+  - 文本提取
+  - 页面操作
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Nano PDF工具（免费版）

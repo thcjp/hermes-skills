@@ -3,23 +3,22 @@ slug: "stagehand-browser-cli"
 name: "stagehand-browser-cli"
 version: 1.0.1
 displayName: "Stagehand Browser Cl"
-summary: "经CLI用自然语言自动化浏览器交互"
+summary: "经CLI用自然语言自动化浏览器交互。Automate web browser interactions using natural language via CLI commands。Use"
 license: "Proprietary"
 description: |-
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - Research
   - Automation
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Stagehand Browser Cl
@@ -40,6 +39,14 @@ category: "Automation"
 - Automate web browser interactions using natural language via CLI commands
 - Use when the user asks
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

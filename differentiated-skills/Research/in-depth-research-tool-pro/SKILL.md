@@ -34,21 +34,21 @@ description: '企业级深度研究工具，支持团队协作、自动化引用
 
   - PRO 版支持团队协作...'
 tags:
-- 研究
-- 企业工具
-- 团队协作
-- 知识库
-- 报告生成
+  - 研究
+  - 企业工具
+  - 团队协作
+  - 知识库
+  - 报告生成
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 深度研究专业版

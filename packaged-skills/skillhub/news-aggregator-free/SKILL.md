@@ -3,7 +3,7 @@ slug: "news-aggregator-free"
 name: "news-aggregator-free"
 version: 1.0.1
 displayName: "新闻聚合引擎(免费版)"
-summary: "国内外科技、军事、社会新闻聚合，自动搜索、筛选、去重与结构化汇总。免费版"
+summary: "国内外科技、军事、社会新闻聚合，自动搜索、筛选、去重与结构化汇总。免费版。国内外社会、科技、军事新闻聚合引擎（免费版），自动搜索、筛选、整理新闻要点. 覆盖国内科技、国内军事、国际科技、国际"
 license: "MIT"
 description: |-
   国内外社会、科技、军事新闻聚合引擎（免费版），自动搜索、筛选、整理新闻要点.
@@ -15,13 +15,12 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 信息检索
-pricing_tier: "L1-入门级"
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
+  - 新闻
+  - 信息
+  - 资讯
 category: "Knowledge"
 ---
 # 新闻聚合引擎(免费版)
@@ -109,6 +108,14 @@ category: "Knowledge"
 **处理**: 解析结构化汇总输出的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
 - 参考`结构化汇总输出`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 工作流
 
 1. **搜索** — 搜索各新闻源

@@ -3,25 +3,25 @@ slug: test-driven-coder
 name: test-driven-coder
 version: 1.0.1
 displayName: 测试驱动编码器
-summary: 强制TDD:Red-Green-Refactor循环,先写测试再写代码,质量内建
+summary: "强制TDD:Red-Green-Refactor循环,先写测试再写代码,质量内建。测试驱动编码器——强制执行测试驱动开发(TDD)流程,先写失败的测试,再写实现代码,最后重构。Red-Gre"
 license: Proprietary
 description: 测试驱动编码器——强制执行测试驱动开发(TDD)流程,先写失败的测试,再写实现代码,最后重构。Red-Green-Refactor循环 +
   测试金字塔分层(单元80%/集成15%/E2E 5%),让代码质量内建于开发过程。适用于新功能开发、Bug修复、重构保护、测试补充、测试审查场景。触发关键词:测试驱动、TDD、单元测试、集成测试、端到端测试、Red-Green-Refactor、测试金字塔、测试覆盖、自动化测试、测试先行、pytest、jest
 tags:
-- 测试驱动
-- TDD
-- 单元测试
-- 自动化测试
-- 代码质量
+  - 测试驱动
+  - TDD
+  - 单元测试
+  - 自动化测试
+  - 代码质量
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
 category: "Development"
 ---
 # 测试驱动编码器
@@ -35,6 +35,14 @@ category: "Development"
 3. **多语言测试框架**:Python(pytest)/ JavaScript(jest/vitest)/ Go(testing)/ Java(JUnit)
 4. **测试反模式检测**:冰激凌测试、实现细节测试、过度 Mock、测试依赖顺序识别
 5. **覆盖率与质量评估**:行/分支/函数覆盖率,测试有效性分析(突变测试)
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

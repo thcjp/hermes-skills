@@ -3,7 +3,7 @@ slug: db-admin-console-free
 name: db-admin-console-free
 version: 1.0.1
 displayName: 数据库管理台(免费版)
-summary: 数据库表结构设计、数据操作、查询优化与事务安全的免费核心能力,支持基础 DDL/DML 操作.
+summary: "数据库表结构设计、数据操作、查询优化与事务安全的免费核心能力,支持基础 DDL/DML 操作.。数据库管理台免费版面向独立开发者与一人公司的 DBA 日常工作流,提供表结构设计、数据操作、查"
 license: Proprietary
 edition: free
 description: '数据库管理台免费版面向独立开发者与一人公司的 DBA 日常工作流,提供表结构设计、数据操作、查询优化与事务安全的核心能力。核心能力:
@@ -24,19 +24,18 @@ description: '数据库管理台免费版面向独立开发者与一人公司的
 
   - 个...'
 tags:
-- 数据库管理
-- 表结构设计
-- 查询优化
-- 集成工具
+  - 数据库管理
+  - 表结构设计
+  - 查询优化
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 数据库管理台 免费版
@@ -105,6 +104,14 @@ category: "Automation"
 **处理**: 解析4 类型处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回4 类型处理的响应数据,包含状态码、结果和日志.
 ### 2.5 事务安全
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |

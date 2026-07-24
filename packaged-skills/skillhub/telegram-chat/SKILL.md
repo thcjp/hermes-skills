@@ -3,7 +3,7 @@ slug: "telegram-chat"
 name: "telegram-chat"
 version: 1.0.1
 displayName: "电报聊天工具专业版"
-summary: "企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。"
+summary: "企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。。电报聊天工具专业版,面向团队与企业用户提供多 Bot 管理、主动消息推送、消息归档审计与群组批"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -31,16 +31,14 @@ tags:
   - 企业效率
   - 自动化
   - 消息归档
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
 category: "Communication"
 ---
 # 电报聊天工具专业版
@@ -109,6 +107,14 @@ category: "Communication"
 **输入**: 用户提供七、消息模板与定时发送(专业版独有)所需的指令和必要参数.
 **输出**: 返回七、消息模板与定时发送(专业版独有)的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:跨群组广播重要公告

@@ -3,7 +3,7 @@ slug: "longmemo-elite"
 name: "longmemo-elite"
 version: "2.0.0"
 displayName: "精英长记忆"
-summary: "解决Agent金鱼记忆：WAL防丢失+混合检索+成本预算+自动卫生，跨会话不丢上下文。"
+summary: "解决Agent金鱼记忆：WAL防丢失+混合检索+成本预算+自动卫生，跨会话不丢上下文。。面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大痛点。提供WAL写前日"
 license: "Proprietary"
 description: |-
   面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大痛点。提供WAL写前日志防丢失、向量+关键词+图谱三路混合检索、六层存储架构、成本预算控制、记忆卫生自动化。适用于跨会话项目开发、多代理协作、长期偏好维护。适用关键词：长期记忆、跨会话、WAL、向量检索、记忆管理、agent记忆、memory
@@ -11,15 +11,16 @@ tags:
   - 智能代理
   - 记忆管理
   - 长期记忆
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 精英长记忆（LongMemo Elite）
@@ -60,6 +61,14 @@ category: "Agents"
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Agent、金鱼记忆、自动卫生、跨会话不丢上下文、的精英级长期记忆、解决跨会话遗忘、检索不准、成本失控三大痛点、适用于跨会话项目、多代理协作、长期偏好维护、适用关键词、长期记忆、跨会话、记忆管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **何时使用：**

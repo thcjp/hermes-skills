@@ -9,21 +9,20 @@ edition: pro
 description: PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自动生成与立创下单对接。覆盖从需求到打板的全流程。
   when 、品牌视觉时使用.
 tags:
-- PCB设计
-- 电路设计
-- DRC检查
-- 多层板
-- 硬件开发
+  - PCB设计
+  - 电路设计
+  - DRC检查
+  - 多层板
+  - 硬件开发
+  - 设计
+  - UI/UX
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 > 从需求到打板的全流程副驾驶。多页原理图、PCB布局、DRC检查、BOM下单，让硬件团队的设计效率提升10倍.

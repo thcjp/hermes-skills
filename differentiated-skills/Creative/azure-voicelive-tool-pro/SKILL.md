@@ -3,7 +3,7 @@ slug: "azure-voicelive-tool-pro"
 name: "azure-voicelive-tool-pro"
 version: "1.0.0"
 displayName: "Azure语音交互专业版"
-summary: "企业级实时语音AI工具，支持函数调用、自定义语音、电话音频、高级会话与中断处理。"
+summary: "企业级实时语音AI工具，支持函数调用、自定义语音、电话音频、高级会话与中断处理。。Azure语音交互专业版 —— 面向企业团队与专业开发者的高级实时语音AI工具。核心能力: - 函数调用（F"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -17,15 +17,13 @@ tags:
   - 企业工具
   - 函数调用
   - 电话客服
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # Azure语音交互专业版

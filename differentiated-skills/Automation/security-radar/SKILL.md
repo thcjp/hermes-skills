@@ -3,24 +3,22 @@ slug: security-radar
 name: security-radar
 version: 1.0.1
 displayName: 安全情报雷达
-summary: 聚合多源漏洞情报并按资产关联排序，告别告警疲劳，只推真正影响你的威胁.
+summary: "聚合多源漏洞情报并按资产关联排序，告别告警疲劳，只推真正影响你的威胁.。安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Secur"
 license: Proprietary
 description: 安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处理的两三条。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 自动化
-- 安全
-- 情报订阅
+  - 自动化
+  - 安全
+  - 情报订阅
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 安全情报雷达
@@ -44,6 +42,14 @@ category: "Automation"
 ### 第 1 步：初始化资产清单
 
 资产清单是过滤的基础。把已安装的技能、依赖、运行时版本写入清单文件：
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |

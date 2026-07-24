@@ -3,7 +3,7 @@ slug: miniprogram-dev-tool-pro
 name: miniprogram-dev-tool-pro
 version: 1.0.0
 displayName: 小程序开发工具专业版
-summary: 面向团队的多端框架、CI/CD 与企业云治理工具.
+summary: "面向团队的多端框架、CI/CD 与企业云治理工具.。面向团队的小程序多端框架与企业级开发治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
 description: '面向团队的小程序多端框架与企业级开发治理专业工具。核心能力:
@@ -26,21 +26,20 @@ description: '面向团队的小程序多端框架与企业级开发治理专业
 
   差异化: 专业版在免费版单项目微信小程序上扩展多端框架、CI/CD、企业云治理与性能监控，兼容免费版规范'
 tags:
-- 小程序
-- 企业级
-- 多端开发
-- CI/CD
-- 其他工具
+  - 小程序
+  - 企业级
+  - 多端开发
+  - CI/CD
+  - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 小程序开发工具（专业版）

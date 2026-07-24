@@ -3,7 +3,7 @@ slug: explain-code-tool-free
 name: explain-code-tool-free
 version: 1.0.0
 displayName: 代码解释工具免费版
-summary: 用可视化图表和类比解释代码,帮助开发者快速理解代码逻辑与结构.
+summary: "用可视化图表和类比解释代码,帮助开发者快速理解代码逻辑与结构.。面向开发者的代码理解辅助工具,通过类比、ASCII图表和逐步遍历帮助理解代码逻辑。核心能力:"
 license: Proprietary
 edition: free
 description: '面向开发者的代码理解辅助工具,通过类比、ASCII图表和逐步遍历帮助理解代码逻辑。核心能力:
@@ -38,18 +38,18 @@ description: '面向开发者的代码理解辅助工具,通过类比、ASCII图
 
   适用关键词: 解释代...'
 tags:
-- 开发工具
-- 代码理解
-- 技术学习
+  - 开发工具
+  - 代码理解
+  - 技术学习
+  - 代码生成
+  - 编程辅助
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 代码解释工具免费版为开发者提供直观的代码理解辅助能力。工具通过日常类比、ASCII可视化图表、逐行遍历解读和常见误区提示,帮助开发者快速理解不熟悉的代码逻辑.

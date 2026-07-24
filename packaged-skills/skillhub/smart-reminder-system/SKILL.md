@@ -3,23 +3,22 @@ slug: "smart-reminder-system"
 name: "smart-reminder-system"
 version: 1.0.6
 displayName: "Reminder"
-summary: "用SkillHub cron建一次性提醒任务,指定时间与内容"
+summary: "用SkillHub cron建一次性提醒任务,指定时间与内容。Create one-time reminder tasks using SkillHub cron。User specifie"
 license: "Proprietary"
 description: |-
   Create one-time reminder tasks using SkillHub cron。User specifies reminder
   time and task content。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Automation
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Reminder
@@ -41,6 +40,14 @@ category: "Automation"
 - User specifies reminder
   time and task content
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

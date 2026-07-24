@@ -3,7 +3,7 @@ slug: "jira"
 name: "jira"
 version: 1.3.4
 displayName: "项目管理工具"
-summary: "通过工具操作史诗、故事、缺陷、冲刺与看板,覆盖创建搜索转换全流程。"
+summary: "通过工具操作史诗、故事、缺陷、冲刺与看板,覆盖创建搜索转换全流程。。通过项目管理工具集成操作工作项全生命周期:史诗、故事、缺陷、 子任务、冲刺、看板、关联、状态转换与用户管理。覆盖JQL高级"
 license: "Proprietary"
 description: |-
   通过项目管理工具集成操作工作项全生命周期:史诗、故事、缺陷、
@@ -12,15 +12,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 项目管理工具集成
@@ -149,6 +148,14 @@ export API_KEY="your_api_key_here"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

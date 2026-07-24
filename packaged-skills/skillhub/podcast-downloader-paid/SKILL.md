@@ -3,7 +3,7 @@ slug: "podcast-downloader-paid"
 name: "podcast-downloader-paid"
 version: 1.0.1
 displayName: "播客下载工具专业版"
-summary: "企业级播客下载工具,支持批量下载、播放列表订阅、定时同步与多平台扩展,适配生产环境。"
+summary: "企业级播客下载工具,支持批量下载、播放列表订阅、定时同步与多平台扩展,适配生产环境。。面向团队与高级用户的播客下载工具(专业版)。核心能力: - 涵盖免费版全部能力(单集下载、MP3 转换、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -32,16 +32,14 @@ tags:
   - 批量下载
   - 自动订阅
   - 多平台
+  - 音频
+  - 媒体
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
 category: "Creative"
 ---
 # 播客下载工具专业版
@@ -91,6 +89,14 @@ category: "Creative"
 **输出**: 返回MP3 转换的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`MP3 转换`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 - 不适用: 需要人工判断的复杂决策场景
 

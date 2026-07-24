@@ -3,7 +3,7 @@ slug: hook-retention-master
 name: hook-retention-master
 version: 1.0.1
 displayName: "钩子留存大师"
-summary: "8平台25钩子公式,开篇3秒留人,完播率提升300%的内容留存工具"
+summary: "8平台25钩子公式,开篇3秒留人,完播率提升300%的内容留存工具。钩子留存大师是一款内容开篇留存优化工具,提升完播率300%. 基于25种钩子公式,为8大平台生成高留存开篇内容,支持A/B"
 license: Proprietary
 description: |-
   钩子留存大师是一款内容开篇留存优化工具,提升完播率300%.
@@ -13,21 +13,19 @@ description: |-
   - 8平台精准适配
   - 开篇3秒黄金法则
   - A/B测试与留存曲线评分
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 内容创作
   - 钩子设计
   - 留存优化
   - 短视频
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 钩子留存大师
@@ -52,6 +50,14 @@ category: "Automation"
 4. **A/B测试钩子效果对比**:生成多个钩子方案(默认3个),支持A/B测试对比,输出每个钩子的预测完播率/留存率/互动率,推荐最优方案
 5. **留存曲线分析与评分**:分析内容留存曲线(0-3秒/3-15秒/15-60秒/60秒+四段),识别留存流失点,输出钩子效果评分(0-100分)和优化建议
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |

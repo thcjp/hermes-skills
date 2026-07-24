@@ -3,27 +3,27 @@ slug: company-search-tool-pro
 name: company-search-tool-pro
 version: 1.0.0
 displayName: 企业查询助手(专业版)
-summary: 企业级查询专业版，含尽调报告、风险筛查、批量查询、监控告警、关联关系分析.
+summary: "企业级查询专业版，含尽调报告、风险筛查、批量查询、监控告警、关联关系分析.。企业查询助手专业版是面向企业级场景的完整企业信息查询与风险分析工具。在免费版单维度查询能力之上，新增企业尽调报告、"
 license: Proprietary
 edition: pro
 description: 企业查询助手专业版是面向企业级场景的完整企业信息查询与风险分析工具。在免费版单维度查询能力之上，新增企业尽调报告、风险筛查、批量查询、监控告警、关联关系分析、历史数据查询、知识产权查询、招投标查询八大高级能力。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
-- 企业查询
-- 企业尽调
-- 风险筛查
-- 批量查询
-- 监控告警
+  - 企业查询
+  - 企业尽调
+  - 风险筛查
+  - 批量查询
+  - 监控告警
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 > **尽调报告+风险筛查+批量查询+监控告警。企业级查询全功能覆盖。**

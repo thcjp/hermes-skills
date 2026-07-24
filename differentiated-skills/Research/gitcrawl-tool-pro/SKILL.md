@@ -34,21 +34,19 @@ description: '企业级代码仓库归档管理工具，支持多仓库监控、
 
   - PRO 版支持多仓库批量管理...'
 tags:
-- 开发工具
-- 企业工具
-- 仓库管理
-- issue分流
-- 团队协作
+  - 开发工具
+  - 企业工具
+  - 仓库管理
+  - issue分流
+  - 团队协作
+  - 版本控制
+  - Git
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 category: "Development"
 ---
 # 仓库归档专业版

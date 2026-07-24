@@ -315,6 +315,51 @@ def add_field_to_frontmatter(content, field_name, field_value):
     return content
 
 
+def fix_frontmatter_separators(content):
+    """Fix frontmatter where --- separators are concatenated with other text.
+
+    Handles two common patterns:
+    1. Closing separator concatenated: `category: "Finance"---` → `category: "Finance"\n---`
+    2. Opening separator concatenated: `---summary: "..."` → `---\nsummary: "..."`
+
+    This must be called BEFORE extract_frontmatter() since the regex
+    `^---\\s*$` requires --- to be on its own line.
+
+    Returns: (new_content, fix_applied)
+    """
+    if content.startswith('\ufeff'):
+        bom = '\ufeff'
+        content = content[1:]
+    else:
+        bom = ''
+
+    original = content
+    fixes = []
+
+    # Pattern 1: Closing separator concatenated to end of a value line
+    # e.g., `category: "Finance"---` or `homepage: ""---`
+    # Match any line ending with --- that isn't just --- on its own
+    content = re.sub(r'([^\s#-])---\s*$', r'\1\n---', content, flags=re.MULTILINE)
+    # Also handle `value"---` or `value'---` or `value]---` etc.
+    content = re.sub(r'(["\'\]\)])---\s*$', r'\1\n---', content, flags=re.MULTILINE)
+
+    # Pattern 2: Opening separator concatenated with first field
+    # e.g., `---summary: "..."` or `---slug: "..."` at the start of file
+    # Only match at the very beginning of the file
+    if content.startswith('---') and not content.startswith('---\n') and not content.startswith('---\r\n'):
+        # Check if it's `---something` (not `---` alone)
+        after_sep = content[3:]
+        # If the 4th character is not a newline, we need to split
+        if after_sep and after_sep[0] not in ('\n', '\r'):
+            content = '---\n' + after_sep
+            fixes.append('OPENING_SEPARATOR')
+
+    if content != original:
+        fixes.append('CLOSING_SEPARATOR')
+
+    return bom + content, len(fixes) > 0
+
+
 def _parse_yaml_values(lines):
     """Parse values from YAML key lines (list format or inline format).
 
@@ -519,13 +564,16 @@ def fix_duplicate_yaml_fields(content):
         seen_keys[key] = len(new_segments)
         new_segments.append((key, lines))
 
-    # Rebuild frontmatter
+    # Rebuild frontmatter - ensure proper newlines around --- separators
     new_fm_lines = []
     for _, lines in new_segments:
         new_fm_lines.extend(lines)
     new_fm_text = '\n'.join(new_fm_lines)
+    # Strip leading/trailing newlines and add them back explicitly
+    # This prevents --- from being concatenated with frontmatter fields
+    new_fm_text = new_fm_text.strip('\n')
 
-    new_content = bom + '---' + new_fm_text + '---' + body
+    new_content = bom + '---\n' + new_fm_text + '\n---' + body
     return new_content, fixes
 
 
@@ -718,6 +766,7 @@ def main():
             'MISSING_TAGS': 0,
             'MISSING_CATEGORY': 0,
             'INVALID_CATEGORY': 0,
+            'FIXED_FRONTMATTER_SEPARATOR': 0,
             'DUPLICATE_YAML_FIELDS': 0,
             'REMOVED_PRICING_METADATA': 0,
             'FIXED_HOMEPAGE': 0,
@@ -735,12 +784,19 @@ def main():
             stats['total_files'] += 1
             content = skill_md.read_text(encoding='utf-8', errors='replace')
             original = content
+            fixes_applied = []
+
+            # === Fix frontmatter separators FIRST (before any parsing) ===
+            # This fixes `category: "..."---` → `category: "..."\n---`
+            # and `---summary:` → `---\nsummary:`
+            content, sep_fixed = fix_frontmatter_separators(content)
+            if sep_fixed:
+                stats['fixes']['FIXED_FRONTMATTER_SEPARATOR'] += 1
+                fixes_applied.append('FIXED_FRONTMATTER_SEPARATOR')
 
             fm, fm_text, body, full = extract_frontmatter(content)
             dir_name = skill_md.parent.name
             slug = fm.get('slug', '')
-
-            fixes_applied = []
 
             # Fix MISSING_SLUG
             if not slug:
@@ -846,7 +902,7 @@ def main():
     stats['completed_at'] = datetime.now().isoformat()
 
     # Save report
-    report_path = DATA_DIR / "reports" / "fix_missing_fields_v36.json"
+    report_path = DATA_DIR / "reports" / "fix_missing_fields_v46.json"
     report_path.parent.mkdir(exist_ok=True)
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)

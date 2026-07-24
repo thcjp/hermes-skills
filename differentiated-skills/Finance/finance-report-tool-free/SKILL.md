@@ -3,7 +3,7 @@ slug: finance-report-tool-free
 name: finance-report-tool-free
 version: 1.0.0
 displayName: 财报分析入门工具
-summary: 从Excel/PDF文件分析财务数据，生成含趋势图的HTML分析报告.
+summary: "从Excel/PDF文件分析财务数据，生成含趋势图的HTML分析报告.。面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF"
 license: Proprietary
 edition: free
 description: '面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF
@@ -12,18 +12,17 @@ description: '面向个人投资者与初级分析师的财务报告分析工具
 
   分析报告。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-- Finance
-- 财报分析
-- 报告生成
+  - Finance
+  - 财报分析
+  - 报告生成
+  - 金融
+  - 财务
+  - 数据
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 财报分析入门工具（免费版）

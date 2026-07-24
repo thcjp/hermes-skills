@@ -3,7 +3,7 @@ slug: "aws-agentcore-langgraph-free"
 name: "aws-agentcore-langgraph-free"
 version: "1.0.0"
 displayName: "AgentCore 免费"
-summary: "AWS Bedrock AgentCore 与 LangGraph 基础智能体部署助手"
+summary: "AWS Bedrock AgentCore 与 LangGraph 基础智能体部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的基础智能体"
 license: "MIT"
 description: |-
   基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的基础智能体构建助手(免费版).
@@ -14,12 +14,14 @@ description: |-
 tags:
   - Agents
   - Operations
+  - AWS
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # aws-agentcore-langgraph (免费版)

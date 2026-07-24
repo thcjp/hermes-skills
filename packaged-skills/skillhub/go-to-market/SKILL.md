@@ -3,7 +3,7 @@ slug: "go-to-market"
 name: "go-to-market"
 version: 0.1.1
 displayName: "上市策略"
-summary: "从ICP定义到90天执行计划,覆盖定位、渠道、定价与度量的GTM全流程。"
+summary: "从ICP定义到90天执行计划,覆盖定位、渠道、定价与度量的GTM全流程。。构建产品上市或进入新市场的GTM策略:目标客户画像、定位陈述、 销售运动模式选择、渠道筛选、90天执行计划、定价与优"
 license: "Proprietary"
 description: |-
   构建产品上市或进入新市场的GTM策略:目标客户画像、定位陈述、
@@ -12,15 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 研发工具
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 上市策略
@@ -181,6 +179,14 @@ SALES/CONVERSION:
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

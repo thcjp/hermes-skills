@@ -3,7 +3,7 @@ slug: "accounting-and-finance-free"
 name: "accounting-and-finance-free"
 version: "1.0.0"
 displayName: "Finance LITE"
-summary: "基础财务分析工具,提供偿债能力/盈利能力比率分析、DuPont拆解、现金流结构分析"
+summary: "基础财务分析工具,提供偿债能力/盈利能力比率分析、DuPont拆解、现金流结构分析。基础财务分析工具(免费版)。提供偿债能力(流动比率/速动比率/资产负债率)、 盈利能力(毛利率/净利率/R"
 license: "MIT"
 description: |-
   基础财务分析工具(免费版)。提供偿债能力(流动比率/速动比率/资产负债率)、
@@ -15,11 +15,14 @@ description: |-
 tags:
   - Finance
   - Analysis
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+  - exec
+homepage: ""
 category: "Finance"
 ---
 # Finance LITE
@@ -86,6 +89,14 @@ category: "Finance"
 
 > **升级提示**: 估值建模(DCF/DDM/CCA)、风险评估(Beneish M-Score/造假红旗)、行业专项分析等高级功能仅在accounting-and-finance付费版中提供.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

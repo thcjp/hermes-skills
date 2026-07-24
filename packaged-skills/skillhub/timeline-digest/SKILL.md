@@ -3,7 +3,7 @@ slug: "timeline-digest"
 name: "timeline-digest"
 version: 1.0.1
 displayName: "时间线摘要工具-专业版"
-summary: "企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送"
+summary: "企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送。时间线摘要工具专业版,面向企业和专业用户的高级X/Twitter时间线信息聚合平台。核心能力: - 全时间"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -26,16 +26,15 @@ tags:
   - 企业级
   - 智能摘要
   - 自动化
+  - 工具
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 时间线摘要工具-专业版
@@ -71,6 +70,14 @@ PRO版支持cron式定时调度,自动执行摘要生成流程.
 **处理**: 解析自动推送通知的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回自动推送通知的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:企业舆情自动监控

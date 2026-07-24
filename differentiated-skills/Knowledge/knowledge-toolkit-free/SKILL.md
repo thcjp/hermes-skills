@@ -3,7 +3,7 @@ slug: knowledge-toolkit-free
 name: knowledge-toolkit-free
 version: 1.0.1
 displayName: 知识工具包（免费版）
-summary: 构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法.
+summary: "构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
 description: '知识工具包 - （免费版）
@@ -16,19 +16,18 @@ description: '知识工具包 - （免费版）
 
   适用关键词: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱'
 tags:
-- 知识管理
-- Zettelkasten
-- 双链笔记
-- 知识图谱
+  - 知识管理
+  - Zettelkasten
+  - 双链笔记
+  - 知识图谱
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 知识工具包（免费版）
@@ -147,12 +146,21 @@ import os
 from datetime import datetime
 # ...
 def create_note(title, content, tags=None):
-    note = f"""---
+    note = f"""
+---
 title: {title}
 date: {datetime.now().isoformat()}
 tags: {','.join(tags or [])}
 ---
 # {title}
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 # ...
 {content}
 """

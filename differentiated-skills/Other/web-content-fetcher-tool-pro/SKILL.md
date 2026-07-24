@@ -3,7 +3,7 @@ slug: web-content-fetcher-tool-pro
 name: web-content-fetcher-tool-pro
 version: 1.0.0
 displayName: 网页内容获取专业版
-summary: 批量获取、本地缓存、内容解析与质量评分，适合数据团队与内容聚合场景.
+summary: "批量获取、本地缓存、内容解析与质量评分，适合数据团队与内容聚合场景.。网页内容获取工具专业版，面向数据团队与内容聚合的高阶网页抓取平台。核心能力:"
 license: Proprietary
 edition: pro
 description: '网页内容获取工具专业版，面向数据团队与内容聚合的高阶网页抓取平台。核心能力:
@@ -28,20 +28,20 @@ description: '网页内容获取工具专业版，面向数据团队与内容聚
 
   差异化: 专业版在免费版核心获取能力之上扩展批量与缓存，新增内容解析、质量评分、认证支持等企业级能力，并与免费版服务优先级兼容'
 tags:
-- 网页抓取
-- 批量采集
-- 内容聚合
-- 专业版
+  - 网页抓取
+  - 批量采集
+  - 内容聚合
+  - 专业版
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
 category: "Development"
 ---
 # 网页内容获取工具（专业版）

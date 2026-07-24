@@ -3,25 +3,26 @@ slug: swarm-coder-free
 name: swarm-coder-free
 version: 1.0.1
 displayName: 集群编码器(免费版)
-summary: AI Agent子代理分派开发系统，每任务新代理+两阶段review，高质量快速迭代.
+summary: "AI Agent子代理分派开发系统，每任务新代理+两阶段review，高质量快速迭代.。集群编码器免费版为AI Agent提供子代理驱动的开发执行系统，将"一个人从头到尾做完所有任务"升级为"
 license: Proprietary
 edition: free
 description: 集群编码器免费版为AI Agent提供子代理驱动的开发执行系统，将"一个人从头到尾做完所有任务"升级为"每任务分派新子代理+两阶段review"的集群协作模式。基于"新鲜上下文+规范review+质量review"双阶段审查，实现高质量、快迭代、零上下文污染。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 集群编码
-- 子代理开发
-- 代码审查
-- 任务分派
+  - 集群编码
+  - 子代理开发
+  - 代码审查
+  - 任务分派
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 > **AI Agent的子代理驱动开发系统。每任务新代理+两阶段review，高质量快速迭代。**

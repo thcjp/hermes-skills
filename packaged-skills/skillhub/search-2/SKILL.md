@@ -3,23 +3,23 @@ slug: "search-2"
 name: "search-2"
 version: 0.1.1
 displayName: "Search"
-summary: "用Tavily的LLM优化搜索API搜网,返相关结果与片段"
+summary: "用Tavily的LLM优化搜索API搜网,返相关结果与片段。Search the web using Tavily's LLM-optimized search API。Returns re"
 license: "Proprietary"
 description: |-
   Search the web using Tavily's LLM-optimized search API。Returns relevant
   results with content sni。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Research
+  - 搜索
+  - 检索
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # Search
@@ -41,6 +41,14 @@ category: "Knowledge"
 - Returns relevant
   results with content sni
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

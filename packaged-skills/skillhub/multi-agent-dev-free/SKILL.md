@@ -3,7 +3,7 @@ slug: "multi-agent-dev-free"
 name: "multi-agent-dev-free"
 version: "1.0.0"
 displayName: "多代理开发框架"
-summary: "基础版子代理编排开发框架，任务分解、新鲜子代理执行、两阶段评审"
+summary: "基础版子代理编排开发框架，任务分解、新鲜子代理执行、两阶段评审。多代理开发基础版，通过子代理编排执行实现计划。为每个任务派发新鲜子代理避免上下文污染，并在每步后进行两阶段评审. 提供智能任务"
 license: "MIT"
 description: |-
   多代理开发基础版，通过子代理编排执行实现计划。为每个任务派发新鲜子代理避免上下文污染，并在每步后进行两阶段评审.
@@ -13,11 +13,15 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - AI代理
+  - 自动化
+  - 智能
 category: "Agents"
 ---
 # 多代理开发框架（Multi-Agent Dev）- 免费版
@@ -61,6 +65,14 @@ category: "Agents"
    - 子代理任务失败：派发修复子代理并附具体指令
    - 子代理上下文不足：控制器补充缺失上下文，重新派发
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：确认前置条件并读取计划

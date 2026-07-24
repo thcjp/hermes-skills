@@ -3,7 +3,7 @@ slug: "use-my-browser"
 name: "use-my-browser"
 version: 1.0.1
 displayName: "浏览器控制工具"
-summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取"
+summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展 桥接，直接操作用户已登录的浏览器会话，无需"
 license: "Proprietary"
 description: |-
   控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展
@@ -12,15 +12,15 @@ description: |-
   和自动化工作流场景。不适用于无头浏览器或远程浏览器场景.
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - exec
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 浏览器控制工具
@@ -130,6 +130,14 @@ category: "Automation"
 **处理**: 解析标签页管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回标签页管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：检查连接状态

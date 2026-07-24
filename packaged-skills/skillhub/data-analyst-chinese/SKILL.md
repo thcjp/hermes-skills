@@ -3,7 +3,7 @@ slug: "data-analyst-chinese"
 name: "data-analyst-chinese"
 version: 1.0.1
 displayName: "中文数据分析(专业版)"
-summary: "全功能中文数据分析平台,支持时序分解、假设检验、大数据集批处理与自定义报告模板。"
+summary: "全功能中文数据分析平台,支持时序分解、假设检验、大数据集批处理与自定义报告模板。。中文数据分析专业版面向专业数据分析师、BI 工程师与数据团队负责人,提供完整的数据分析生产线能力。核心能力:"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -21,16 +21,15 @@ tags:
   - 假设检验
   - 集成工具
   - 信息检索
+  - 数据处理
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
 category: "Research"
 ---
 # 中文数据分析(专业版)
@@ -117,6 +116,14 @@ category: "Research"
 **处理**: 解析7 企业数据库深度集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回7 企业数据库深度集成的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 3.1 按角色场景矩阵

@@ -3,7 +3,7 @@ slug: "anygen-diagram"
 name: "anygen-diagram"
 version: 1.0.1
 displayName: "AnyGen图表生成-专业版"
-summary: "企业级图表生成工具,支持批量生成、自定义模板、团队协作与API集成,适配商业文档生产。"
+summary: "企业级图表生成工具,支持批量生成、自定义模板、团队协作与API集成,适配商业文档生产。。AnyGen图表生成专业版,面向企业团队与专业用户的高级图表与可视化结构生成工具。核心能力: - 批量"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,16 +27,15 @@ tags:
   - 图表生成
   - 企业版
   - 商业内容
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # AnyGen图表生成-专业版
@@ -86,6 +85,14 @@ category: "Automation"
 **输出**: 返回流程图/架构图/组织图的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`流程图/架构图/组织图`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:技术文档批量配图

@@ -3,7 +3,7 @@ slug: ai-artist-workstation
 name: ai-artist-workstation
 version: 1.0.1
 displayName: "AI接单画师工作站"
-summary: "一个人开AI画师工作室,双引擎路由+98%面部保持+接单SOP全闭环"
+summary: "一个人开AI画师工作室,双引擎路由+98%面部保持+接单SOP全闭环。AI接单画师工作站是一款面向商业画师和设计师的AI绘画工具. 支持双引擎智能路由、8种风格模板全覆盖、接单SOP全流程闭"
 license: Proprietary
 description: |-
   AI接单画师工作站是一款面向商业画师和设计师的AI绘画工具.
@@ -13,22 +13,20 @@ description: |-
   - 8种风格模板全覆盖
   - 接单SOP全流程闭环
   - 多级引擎降级链与敏感词审核
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - AI绘画
   - 接单变现
   - 商业画图
   - AI写真
   - 副业变现
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # AI接单画师工作站
@@ -53,6 +51,14 @@ category: "Automation"
 3. **接单SOP全流程闭环**:订单接收→需求提取→引擎路由→图片生成→敏感词审核→网盘交付,5步标准化流程,支持电商订单自动交付
 4. **多级引擎降级链**:首选引擎不可用时自动降级(鹧应AI写真→通用绘画T2I),全部失败返回明确错误码
 5. **敏感词审核与合规**:自动审核prompt和生成结果描述,含违禁内容时拒绝生成并支持退款流程
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

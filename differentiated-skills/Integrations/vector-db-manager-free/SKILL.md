@@ -3,24 +3,24 @@ slug: vector-db-manager-free
 name: vector-db-manager-free
 version: 1.0.1
 displayName: 向量数据库管理免费版
-summary: 管理向量数据库的索引、嵌入与相似度检索，支持本地与云端部署
+summary: "管理向量数据库的索引、嵌入与相似度检索，支持本地与云端部署。面向AI应用开发者的向量数据库管理工具，覆盖向量索引创建、嵌入向量管理、相似度检索与基础性能调优。核心能力：创建与删除向量索引、批"
 license: Proprietary
 edition: free
 description: 面向AI应用开发者的向量数据库管理工具，覆盖向量索引创建、嵌入向量管理、相似度检索与基础性能调优。核心能力：创建与删除向量索引、批量导入嵌入向量、执行KNN/ANN相似度检索、管理集合与分区、查询基础统计信息。Use
   when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
-- 数据库管理
-- 向量检索
-- AI基础设施
+  - 数据库管理
+  - 向量检索
+  - AI基础设施
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 向量数据库管理工具（免费版）

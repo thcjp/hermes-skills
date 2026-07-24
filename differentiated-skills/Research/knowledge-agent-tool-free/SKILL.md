@@ -3,24 +3,25 @@ slug: knowledge-agent-tool-free
 name: knowledge-agent-tool-free
 version: 1.0.0
 displayName: 知识管理工具-免费版
-summary: 基于文件的知识捕获与检索工具,支持URL、视频、文章、社交内容收藏与搜索
+summary: "基于文件的知识捕获与检索工具,支持URL、视频、文章、社交内容收藏与搜索。基于文件的知识组织工具,实现快速捕获、后续检索与自动整理。支持 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔"
 license: Proprietary
 edition: free
 description: 基于文件的知识组织工具,实现快速捕获、后续检索与自动整理。支持 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔记管理。Use when
   需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
-- 研究工具
-- 知识管理
-- 信息收集
+  - 研究工具
+  - 知识管理
+  - 信息收集
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 知识管理工具(免费版)
@@ -178,6 +179,14 @@ added_by: "agent-name"
 summary: "一行摘要"
 ---
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 ## 正文内容
 ...
 ```

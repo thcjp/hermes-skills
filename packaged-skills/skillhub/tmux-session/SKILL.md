@@ -3,7 +3,7 @@ slug: "tmux-session"
 name: "tmux-session"
 version: 1.0.1
 displayName: "Tmux会话工具专业版"
-summary: "企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计"
+summary: "企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计。面向团队与企业的高级 tmux 会话管理工具,在免费版基础上扩展多会话、编排、监控等能力。核心能力: - 多会话批量管理与并"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,16 +30,16 @@ tags:
   - 企业级
   - 多会话管理
   - 监控告警
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Tmux会话工具专业版
@@ -173,6 +173,14 @@ cat .tmux-logs/20260718-session.log
 **输入**: 用户提供会话模板管理所需的指令和必要参数.
 **输出**: 返回会话模板管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一: 多项目并行开发会话管理

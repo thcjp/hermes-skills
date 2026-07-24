@@ -3,7 +3,7 @@ slug: "memory-distiller"
 name: "memory-distiller"
 version: "1.0.0"
 displayName: "记忆蒸馏器"
-summary: "智能日志蒸馏系统，分类型差异化压缩，含溯源链与质量评估，4-8倍压缩比零关键事件损失"
+summary: "智能日志蒸馏系统，分类型差异化压缩，含溯源链与质量评估，4-8倍压缩比零关键事件损失。记忆蒸馏器是面向 AI Agent 日志的智能压缩系统，针对日志膨胀、关键信息丢失、压缩后难回溯、 不同"
 license: "Proprietary"
 description: |-
   记忆蒸馏器是面向 AI Agent 日志的智能压缩系统，针对日志膨胀、关键信息丢失、压缩后难回溯、
@@ -15,15 +15,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 记忆蒸馏器
@@ -154,6 +153,14 @@ category: "Agents"
 - **输出**：含溯源链的结构化蒸馏摘要
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：准备日志文件

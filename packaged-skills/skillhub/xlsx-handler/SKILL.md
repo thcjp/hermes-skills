@@ -3,7 +3,7 @@ slug: "xlsx-handler"
 name: "xlsx-handler"
 version: 1.0.1
 displayName: "XLSX处理专业版"
-summary: "企业级 XLSX 读写引擎，含批量处理、大文件流式、公式审计、跨平台兼容与数据源对接。"
+summary: "企业级 XLSX 读写引擎，含批量处理、大文件流式、公式审计、跨平台兼容与数据源对接。。XLSX 处理专业版在免费版基础上扩展批量处理、大文件流式读写、工作簿差异对比、公式审计与依赖追踪、数"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,16 @@ tags:
   - 表格处理
   - 企业级
   - 工作簿治理
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # XLSX处理专业版
@@ -60,6 +60,14 @@ category: "Automation"
 **输出**: 返回LLM响应超时或无响应的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`LLM响应超时或无响应`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 已知限制
 - 按任务选择 pandas / openpyxl 路径
 - 保留公式、样式、合并单元格、定义名称

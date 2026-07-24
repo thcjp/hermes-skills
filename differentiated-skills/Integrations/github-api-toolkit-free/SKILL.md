@@ -25,19 +25,17 @@ description: 'GitHub API工具包(免费版)是一款面向开发者的GitHub RE
 
   - 脚本化批量管理仓库..'
 tags:
-- GitHub
-- API
-- 集成
-- 开发工具
+  - GitHub
+  - API
+  - 集成
+  - 开发工具
+  - 版本控制
+  - Git
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # GitHub API工具包(免费版)

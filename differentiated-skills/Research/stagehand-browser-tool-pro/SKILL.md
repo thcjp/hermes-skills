@@ -3,26 +3,26 @@ slug: stagehand-browser-tool-pro
 name: stagehand-browser-tool-pro
 version: 1.0.0
 displayName: 浏览器自动化工具专业版
-summary: 企业级浏览器自动化平台,支持远程浏览器、批量任务调度、代理穿透与团队协作
+summary: "企业级浏览器自动化平台,支持远程浏览器、批量任务调度、代理穿透与团队协作。浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理"
 license: Proprietary
 edition: pro
 description: 浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理穿透、验证码处理、团队协作等高级能力。Use
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
-- 研究工具
-- 浏览器自动化
-- 企业级
-- 批量处理
+  - 研究工具
+  - 浏览器自动化
+  - 企业级
+  - 批量处理
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 浏览器自动化工具专业版

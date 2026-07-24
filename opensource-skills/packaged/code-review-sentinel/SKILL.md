@@ -3,24 +3,24 @@ slug: code-review-sentinel
 name: code-review-sentinel
 version: 1.0.1
 displayName: 代码审查哨兵
-summary: 合并前五维度质量审查,以高级工程师标准把关每次代码提交
+summary: "合并前五维度质量审查,以高级工程师标准把关每次代码提交。代码审查哨兵——在代码合并前执行五维度质量审查，以"高级工程师是否会批准"为标准把关每次提交。适用于PR审查、变更评估、质量门禁、代码"
 license: Proprietary
 description: 代码审查哨兵——在代码合并前执行五维度质量审查，以"高级工程师是否会批准"为标准把关每次提交。适用于PR审查、变更评估、质量门禁、代码健康度审计、新人指导等场景。正确性/可维护性/安全性/性能/可测试性全面覆盖，支持严重度标签与拆分策略，让代码腐化止于合并前。触发关键词：代码审查、代码review、合并前审查、代码质量、PR审查、五维审查、代码健康度、变更尺寸、代码拆分、质量门禁
 tags:
-- 代码审查
-- 质量门禁
-- 代码质量
-- PR审查
-- 工程规范
+  - 代码审查
+  - 质量门禁
+  - 代码质量
+  - PR审查
+  - 工程规范
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
 category: "Development"
 ---
 # 代码审查哨兵
@@ -34,6 +34,14 @@ category: "Development"
 - **严重度标签体系**：Blocking（阻塞）/ Should Fix（建议修复）/ Nit（小问题）/ Optional（可选）/ FYI（参考）/ Praise（表扬）
 - **拆分策略**：按功能/按层/按文件拆分 + 先重构后功能 + 确保子 PR 独立可编译可测试
 - **审查报告输出**：总体评估 + 五维度评分（0-10）+ 问题清单 + 改进建议 + 亮点表扬
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

@@ -3,7 +3,7 @@ slug: "docker-essentials"
 name: "docker-essentials"
 version: 1.0.1
 displayName: "Docker核心操作指南"
-summary: "涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。"
+summary: "涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。。Docker核心操作指南，覆盖容器生命周期的完整管理流程. 包含容器调试、镜像构建与管理、Dock"
 license: "Proprietary"
 description: |-
   Docker核心操作指南，覆盖容器生命周期的完整管理流程.
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 系统运维
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "容器,Docker,DevOps"
+  - 容器
+  - Docker
+  - DevOps
 category: "Development"
 ---
 # Docker核心操作指南
@@ -273,6 +271,14 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 **输入**: 用户提供常见工作流（Common Workflows）所需的指令和必要参数.
 **输出**: 返回常见工作流（Common Workflows）的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认Docker Engine与Docker Compose已安装并运行

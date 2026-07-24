@@ -3,7 +3,7 @@ slug: "slack-workspace-free"
 name: "slack-workspace-free"
 version: "1.0.0"
 displayName: "Slack工作区管家LITE"
-summary: "Slack基础消息发送与频道列表，ClawLink OAuth托管连接"
+summary: "Slack基础消息发送与频道列表，ClawLink OAuth托管连接。面向团队协作场景的Slack基础工作区管理技能（免费版）。通过ClawLink OAuth托管连接， 提供频道消息发送"
 license: "MIT"
 description: |-
   面向团队协作场景的Slack基础工作区管理技能（免费版）。通过ClawLink OAuth托管连接，
@@ -13,12 +13,14 @@ description: |-
 tags:
   - Communication
   - 团队协作
+  - Slack
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Slack工作区管家 LITE（Slack Workspace Free）
@@ -67,6 +69,14 @@ category: "Communication"
 > **升级提示**：线程回复、定时消息、频道创建/归档/重命名、文件上传/下载、表情反应、提醒、画布、用户组管理、企业Grid审计日志等高级功能仅在 slack-workspace 付费版中提供。- 验证返回数据的完整性和格式正确性
 - 参考`用户列表`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |
@@ -165,5 +175,12 @@ A：常见原因：1) OAuth Token缺少 `chat:write` 权限，需在Dashboard重
 5. **无定时消息**：不支持消息定时发送与提醒创建（需升级付费版）
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > **需要更多能力？** 升级到 slack-workspace 付费版获取线程回复、定时消息、频道管理、文件操作、提醒、画布、用户组管理、企业Grid审计等60+工具覆盖12大能力域的高级功能.

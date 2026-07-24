@@ -14,16 +14,14 @@ tags:
   - 情感分析
   - 企业资讯
   - 海报生成
+  - 新闻
+  - 信息
+  - 资讯
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
 category: "Knowledge"
 ---
 # 每日新闻摘要(专业版)
@@ -190,6 +188,14 @@ agent news export --keyword "AI" --formats png,pdf,html,markdown,json
 **输入**: 用户提供功能八：增量更新与去重所需的指令和必要参数.
 **输出**: 返回功能八：增量更新与去重的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **痛点**：需要每日监控品牌相关舆情，了解正负面情绪变化，及时预警负面消息.

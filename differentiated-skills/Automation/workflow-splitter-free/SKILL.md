@@ -3,25 +3,24 @@ slug: workflow-splitter-free
 name: workflow-splitter-free
 version: 1.0.1
 displayName: 工作流分解器(免费版)
-summary: 将复杂任务拆解为可执行子步骤，为每步匹配最合适模型并跟踪进度.
+summary: "将复杂任务拆解为可执行子步骤，为每步匹配最合适模型并跟踪进度.。工作流分解器免费版为知识工作者提供轻量级的任务拆解能力，聚焦将复杂工作任务分解为详细、可执行的子步骤，并为每个步骤匹配最合适的"
 license: Proprietary
 edition: free
 description: 工作流分解器免费版为知识工作者提供轻量级的任务拆解能力，聚焦将复杂工作任务分解为详细、可执行的子步骤，并为每个步骤匹配最合适的执行模型。解决"面对复杂任务不知从何下手"的核心痛点。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 任务拆解
-- 工作流分解
-- 模型编排
-- 进度跟踪
+  - 任务拆解
+  - 工作流分解
+  - 模型编排
+  - 进度跟踪
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 工作流分解器（免费版）

@@ -3,7 +3,7 @@ slug: "feishu-send-file"
 name: "feishu-send-file"
 version: 1.2.2
 displayName: "飞书发文件"
-summary: "飞书发送普通文件与图片附件,支持file_key两步上传与image_key图片稳定链路。"
+summary: "飞书发送普通文件与图片附件,支持file_key两步上传与image_key图片稳定链路。。飞书机器人发送文件附件技能。覆盖普通文件(HTML/ZIP/PDF/代码文件等)与图片两类链路,"
 license: "Proprietary"
 description: |-
   飞书机器人发送文件附件技能。覆盖普通文件(HTML/ZIP/PDF/代码文件等)与图片两类链路,
@@ -13,16 +13,16 @@ description: |-
 tags:
   - 研发工具
   - Automation
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # feishu-send-file
@@ -78,6 +78,14 @@ export API_KEY="your_api_key_here"
 - 接收者类型切换:`receive_id_type=open_id` 对应个人用户,`receive_id_type=chat_id` 对应群聊
 - 文件类型统一处理:普通文件一律使用 `file_type=stream`,兼容 HTML、ZIP、PDF、代码文件、CSV 等所有非媒体类型
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

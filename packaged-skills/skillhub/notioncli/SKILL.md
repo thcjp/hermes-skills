@@ -3,7 +3,7 @@ slug: "notioncli"
 name: "notioncli"
 version: 0.1.1
 displayName: "Notion"
-summary: "Notion API管页面/数据库/块/关系/汇总,多工作区"
+summary: "Notion API管页面/数据库/块/关系/汇总,多工作区。Notion API for creating and managing pages, databases, blocks, r"
 license: "Proprietary"
 description: |-
   Notion API for creating and managing pages, databases, blocks, relations,
@@ -11,16 +11,15 @@ description: |-
 tags:
   - Integrations
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Notion
@@ -41,6 +40,14 @@ category: "Automation"
 - Notion API for creating and managing pages, databases, blocks, relations,
   rollups, and multi-work
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

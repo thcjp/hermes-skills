@@ -3,7 +3,7 @@ slug: "azure-cloud-architect"
 name: "azure-cloud-architect"
 version: "1.0.0"
 displayName: "Azure云架构师"
-summary: "多订阅导航,角色审计最小权限,成本分析,合规检查,跨订阅批量操作。"
+summary: "多订阅导航,角色审计最小权限,成本分析,合规检查,跨订阅批量操作。。基于Azure CLI的智能云基础设施管理助手,提供多订阅导航、RBAC角色审计与最小权限、成本分析工作流、合规检查清单、"
 license: "Proprietary"
 description: |-
   基于Azure CLI的智能云基础设施管理助手,提供多订阅导航、RBAC角色审计与最小权限、成本分析工作流、合规检查清单、跨订阅批量操作五大核心能力。适用于Azure资源盘点、健康监控、安全审计、Cost Management分析、多订阅多租户管理场景。默认只读查询,写操作与破坏性操作需确认。适用关键词:Azure云架构师、基础设施管理、多订阅、RBAC审计、成本分析、Azure CLI、azure-cloud-architect
@@ -13,15 +13,12 @@ tags:
   - Azure
   - 基础设施
   - 安全合规
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # Azure云架构师
@@ -65,6 +62,14 @@ RBAC角色审计(检测Owner过度授权)、存储安全检查(公共访问/HTTP
 **输出**: 返回跨订阅批量操作的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：角色审计最小权限、合规检查、Azure、CLI、的智能云基础设施、管理助手、角色审计与最小权、合规检查清单、跨订阅批量操作五、大核心能力、适用于、资源盘点、健康监控、多订阅多租户管理、默认只读查询、写操作与破坏性操、作需确认、适用关键词、云架构师、基础设施管理、cloud、architect等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **何时使用**:

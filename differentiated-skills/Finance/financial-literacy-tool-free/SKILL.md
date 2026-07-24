@@ -3,7 +3,7 @@ slug: financial-literacy-tool-free
 name: financial-literacy-tool-free
 version: 1.0.0
 displayName: 金融素养学习工具
-summary: 个人金融素养教育工具，提供基础金融概念、理财入门与风险意识培养.
+summary: "个人金融素养教育工具，提供基础金融概念、理财入门与风险意识培养.。面向个人用户的金融素养教育工具。通过互动问答、案例分析和知识卡片"
 license: Proprietary
 edition: free
 description: '面向个人用户的金融素养教育工具。通过互动问答、案例分析和知识卡片
@@ -11,18 +11,17 @@ description: '面向个人用户的金融素养教育工具。通过互动问答
   帮助用户建立基础金融认知。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-- Finance
-- 金融教育
-- 理财入门
+  - Finance
+  - 金融教育
+  - 理财入门
+  - 金融
+  - 财务
+  - 数据
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 金融素养学习工具（免费版）

@@ -3,23 +3,22 @@ slug: "ziptax"
 name: "ziptax"
 version: 1.0.1
 displayName: "Ziptax Sales Tax"
-summary: "销售税查询(其脚本可本地运行需谨慎)"
+summary: "销售税查询(其脚本可本地运行需谨慎)。This sales-tax lookup skill is legitimate in purpose, but its bundled lookup"
 license: "Proprietary"
 description: |-
   This sales-tax lookup skill is legitimate in purpose, but its bundled
   lookup script can run local。Use when 用户需要Ziptax Sales Tax相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Development
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Ziptax Sales Tax
@@ -40,6 +39,14 @@ category: "Automation"
 - This sales-tax lookup skill is legitimate in purpose, but its bundled
   lookup script can run local
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

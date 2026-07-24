@@ -3,25 +3,23 @@ slug: mcp-toolkit-builder
 name: mcp-server-builder
 version: 1.0.1
 displayName: MCP服务器构建器
-summary: 构建生产级MCP服务器,Python/TypeScript双语言,让LLM连接一切外部系统
+summary: "构建生产级MCP服务器,Python/TypeScript双语言,让LLM连接一切外部系统。MCP服务器构建器指导创建生产级MCP(Model Context Protocol)服务器,核心"
 license: Proprietary
 description: MCP服务器构建器指导创建生产级MCP(Model Context Protocol)服务器,核心功能包括工具定义、资源暴露、提示模板、传输层选择、认证安全和测试部署全流程。适用于让LLM调用外部API、访问数据库、集成SaaS服务、暴露企业内部能力等场景。支持Python(FastMCP)和TypeScript(MCP
   SDK)双语言。触发关键词:MCP、MCP服务器、Model Context Protocol、FastMCP、MCP SDK、工具集成、API集成、LLM集成、MCP开发、协议服务器。
 tags:
-- MCP服务器
-- LLM集成
-- API集成
-- 工具开发
-- 协议实现
+  - MCP服务器
+  - LLM集成
+  - API集成
+  - 工具开发
+  - 协议实现
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
 category: "Creative"
 ---
 # MCP服务器构建器
@@ -35,6 +33,14 @@ category: "Creative"
 3. **提示(Prompts)模板**:提供参数化的预设提示模板,支持变量注入和模板组合。
 4. **传输层选择**:stdio(本地CLI)、HTTP+SSE(远程Web)、WebSocket(实时双向)三种传输方案选型与实现。
 5. **认证与安全**:API Key/OAuth 2.0/Bearer Token认证,最小权限授权,输入校验,速率限制,审计日志全流程安全设计。
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

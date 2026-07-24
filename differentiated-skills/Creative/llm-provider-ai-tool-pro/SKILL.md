@@ -28,12 +28,15 @@ tags:
   - 模型微调
   - 批量处理
   - 向量检索
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # llm-provider 助手工具 - 专业版

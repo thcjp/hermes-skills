@@ -3,7 +3,7 @@ slug: "ollama-toolkit"
 name: "ollama-toolkit"
 version: 1.0.1
 displayName: "Ollama工具箱(专业版)"
-summary: "全功能本地Ollama AI模型管理工具，支持多轮对话、自定义模型、批量推理与API集成"
+summary: "全功能本地Ollama AI模型管理工具，支持多轮对话、自定义模型、批量推理与API集成。Ollama工具箱专业版是面向团队和高级用户的完整本地AI模型管理方案，在免费版基础上解锁多轮对话会"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,16 @@ tags:
   - 模型管理
   - 批量推理
   - 高级集成
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Ollama工具箱(专业版)
@@ -71,6 +71,14 @@ category: "Automation"
 **输出**: 返回单轮推理的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`单轮推理`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 开发者场景：API集成与流式输出

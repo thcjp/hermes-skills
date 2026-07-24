@@ -3,7 +3,7 @@ slug: intel-sentinel
 name: intel-sentinel
 version: 1.0.1
 displayName: "情报哨兵"
-summary: "开源情报自动收集与威胁分析,多源监控+AI分析+实时告警"
+summary: "开源情报自动收集与威胁分析,多源监控+AI分析+实时告警。情报哨兵是一款开源情报(OSINT)自动收集与威胁分析工具. 支持多源情报监控、AI威胁分析、实时告警推送、情报去重与关联分析. 核"
 license: Proprietary
 description: |-
   情报哨兵是一款开源情报(OSINT)自动收集与威胁分析工具.
@@ -13,21 +13,19 @@ description: |-
   - AI威胁分析与等级评估
   - 实时告警多渠道推送
   - 情报去重与威胁画像IOC提取
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 安全
   - 情报分析
   - OSINT
   - 威胁监控
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 情报哨兵 Intel Sentinel
@@ -52,6 +50,14 @@ category: "Automation"
 4. **情报去重与关联分析**:SimHash相似度检测去重(相似度>85%判定重复),关联分析识别同一攻击活动的多个情报,构建情报关联图谱
 5. **威胁画像与IOC提取**:从情报中自动提取IOC(IP/域名/URL/文件哈希/邮箱),构建威胁画像(攻击者/攻击手法/目标/工具/TTPs),支持STIX 2.1格式输出共享
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |

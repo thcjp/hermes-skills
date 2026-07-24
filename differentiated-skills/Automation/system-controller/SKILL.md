@@ -3,24 +3,22 @@ slug: system-controller
 name: system-controller
 version: 1.0.1
 displayName: 系统控制器
-summary: 统一管理系统进程、服务、文件与环境配置，跨平台命令映射，带操作回滚.
+summary: "统一管理系统进程、服务、文件与环境配置，跨平台命令映射，带操作回滚.。系统控制器为 AI Agent 提供操作系统层面的统一控制能力，覆盖进程管理、服务启停、文件事务、环境变量、计划任务与系"
 license: Proprietary
 description: 系统控制器为 AI Agent 提供操作系统层面的统一控制能力，覆盖进程管理、服务启停、文件事务、环境变量、计划任务与系统信息采集。它把
   Linux/macOS/Windows 三套差异巨大的命令抽象为统一语义，让 Agent 用同一套指令跨平台操作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 自动化
-- 系统运维
-- 跨平台控制
+  - 自动化
+  - 系统运维
+  - 跨平台控制
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 系统控制器

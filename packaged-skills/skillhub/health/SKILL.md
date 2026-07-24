@@ -3,7 +3,7 @@ slug: "health"
 name: "health"
 version: 1.0.2
 displayName: "健康指导助手"
-summary: "提供个性化健康指导，同时保持严格的安全边界与证据分级。"
+summary: "提供个性化健康指导，同时保持严格的安全边界与证据分级。。健康指导助手在严格安全边界下提供个性化健康建议。覆盖Safety Boundary Protocols、 个性化基线建立、Commun"
 license: "Proprietary"
 description: |-
   健康指导助手在严格安全边界下提供个性化健康建议。覆盖Safety Boundary Protocols、
@@ -14,16 +14,15 @@ tags:
   - Lifestyle
   - 健康
   - 健康
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Health — 健康指导助手
@@ -112,6 +111,14 @@ export API_KEY="your_api_key_here"
 **处理**: 解析进度追踪模式（Progress Tracking Patterns）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回进度追踪模式（Progress Tracking Patterns）的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **建立安全边界**：确认不诊断、不治疗、不开处方，建议咨询医疗提供者.

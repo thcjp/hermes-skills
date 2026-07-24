@@ -3,25 +3,24 @@ slug: web-artifact-studio
 name: web-artifact-studio
 version: 1.0.1
 displayName: Web工件工作室
-summary: React+Tailwind+shadcn构建复杂交互Web工件,状态路由组件全搞定
+summary: "React+Tailwind+shadcn构建复杂交互Web工件,状态路由组件全搞定。Web工件工作室——用现代前端技术栈(React/TypeScript/Tailwind CSS/sha"
 license: Proprietary
 description: Web工件工作室——用现代前端技术栈(React/TypeScript/Tailwind CSS/shadcn/ui)构建复杂的多组件HTML工件。覆盖状态管理、路由、shadcn/ui
   组件组合、打包交付全流程,支持交互式演示、数据仪表盘、表单工作流、组件展示、单页应用原型。触发关键词:Web工件、HTML工件、React组件、Tailwind、shadcn、ui组件、前端工件、交互组件、单页应用、SPA、组件库、Vite
 tags:
-- Web工件
-- React组件
-- 前端开发
-- 交互应用
-- shadcn
+  - Web工件
+  - React组件
+  - 前端开发
+  - 交互应用
+  - shadcn
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+  - read
+  - exec
+  - write
+  - glob
 category: "Development"
 ---
 # Web工件工作室
@@ -35,6 +34,14 @@ category: "Development"
 3. **状态管理分层**:useState(局部)/ Context(跨组件)/ Zustand(全局)/ localStorage(持久化)
 4. **路由与多页面**:React Router 路由配置、嵌套路由、动态参数、路由守卫
 5. **打包与交付**:Vite 单文件打包(内联 JS/CSS)、图片 base64、无外部依赖可移植
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

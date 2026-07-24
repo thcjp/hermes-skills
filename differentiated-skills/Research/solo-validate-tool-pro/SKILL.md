@@ -11,21 +11,21 @@ description: '想法验证工具专业版为企业团队提供深度创业想法
   - S。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when
   需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-- 研究工具
-- 想法验证
-- 企业级
-- 风险评估
-- 创业
+  - 研究工具
+  - 想法验证
+  - 企业级
+  - 风险评估
+  - 创业
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 想法验证工具专业版

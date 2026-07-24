@@ -3,24 +3,23 @@ slug: xml-json-converter-free
 name: xml-json-converter-free
 version: 1.0.1
 displayName: XML转JSON(免费版)
-summary: 轻量级XML与JSON互转工具，覆盖属性处理、命名空间与单文件转换，60秒上手.
+summary: "轻量级XML与JSON互转工具，覆盖属性处理、命名空间与单文件转换，60秒上手.。XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕"双向转换—属性处"
 license: Proprietary
 edition: free
 description: XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕"双向转换—属性处理—命名空间—单文件处理"四件事，提供可复制即用的Python/Node。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 数据转换
-- 格式适配
-- 集成工具
+  - 数据转换
+  - 格式适配
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # XML转JSON（免费版）
@@ -253,7 +252,6 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成可执行的转换脚本
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -297,6 +295,14 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 ```
 ### 30秒上手：XML转JSON(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
 > "帮我把 response.xml 转成 JSON，属性用 @ 前缀。"

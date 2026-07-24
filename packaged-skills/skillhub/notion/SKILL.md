@@ -3,7 +3,7 @@ slug: "notion"
 name: "notion"
 version: 1.0.1
 displayName: "Notion"
-summary: "Notion API创建管理页面/数据库/块"
+summary: "Notion API创建管理页面/数据库/块。Notion API for creating and managing pages, databases, and blocks。核心能力:"
 license: "Proprietary"
 description: |-
   Notion API for creating and managing pages, databases, and blocks。核心能力:
@@ -23,16 +23,16 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Notion
@@ -56,6 +56,14 @@ category: "Automation"
 - **属性类型支持**：处理标题、文本、数字、选择(Select)、多选(Multi-select)、日期、人员、文件、复选框、URL、邮箱、公式、关联(Relation)等属性
 - **搜索功能**：按标题和内容搜索用户有权限访问的页面和数据库
 - **批量操作**：支持单次请求批量创建最多100个块、批量查询数据库条目（分页获取）
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

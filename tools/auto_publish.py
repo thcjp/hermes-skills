@@ -116,17 +116,20 @@ def publish_to_skillhub(slug, dry_run=False):
     if dry_run:
         return {"success": True, "dry_run": True, "command": f"skillhub publish {skill_dir}"}
 
-    # 执行上传
-    cmd = f'skillhub publish "{skill_dir}" --changelog "Automated publish"'
+    # 执行上传 (使用 npx skillhub 确保 CLI 可用)
+    cmd = f'npx skillhub publish "{skill_dir}" --changelog "Automated publish"'
     try:
         result = subprocess.run(
-            cmd, shell=True, capture_output=True, text=True, timeout=60
+            cmd, shell=True, capture_output=True, text=True, timeout=120
         )
         output = result.stdout + result.stderr
 
         # 解析响应
         if result.returncode == 0:
             return {"success": True, "output": output}
+        elif "unknown command" in output and "publish" in output:
+            return {"success": False, "error": "CLI_NO_PUBLISH", "output": output,
+                    "action": "skillhub CLI不支持publish命令,需通过浏览器https://www.skillhub.cn上传"}
         elif "409" in output and "VERSION_EXISTS" in output:
             return {"success": False, "error": "VERSION_EXISTS", "output": output,
                     "action": "需递增版本号"}

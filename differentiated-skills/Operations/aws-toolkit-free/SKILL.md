@@ -3,7 +3,7 @@ slug: aws-toolkit-free
 name: aws-toolkit-free
 version: 1.0.1
 displayName: AWS部署入门工具
-summary: AWS基础架构部署工具，支持EC2/S3/VPC常用资源创建与管理.
+summary: "AWS基础架构部署工具，支持EC2/S3/VPC常用资源创建与管理.。面向个人开发者与初创团队的AWS基础部署工具。支持EC2实例、S3存储、"
 license: Proprietary
 edition: free
 description: '面向个人开发者与初创团队的AWS基础部署工具。支持EC2实例、S3存储、
@@ -11,19 +11,16 @@ description: '面向个人开发者与初创团队的AWS基础部署工具。支
   VPC网络等常用资源的创建与管理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-- Operations
-- AWS
-- 云计算
-- 部署
+  - Operations
+  - AWS
+  - 云计算
+  - 部署
+  - DevOps
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Operations"
 ---
 # AWS部署入门工具（免费版）

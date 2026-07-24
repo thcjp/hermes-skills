@@ -3,7 +3,7 @@ slug: "tts-whatsapp-tool-pro"
 name: "tts-whatsapp-tool-pro"
 version: "1.0.0"
 displayName: "WhatsApp语音消息专业版"
-summary: "企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。"
+summary: "企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。。面向团队与企业用户的 WhatsApp 语音消息工具(专业版)。核心能力: - 涵盖免费版全部"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,15 +29,13 @@ tags:
   - 企业级
   - 群发广播
   - 自动化
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # WhatsApp 语音消息工具 - 专业版

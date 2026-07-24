@@ -3,7 +3,7 @@ slug: sales-copy-writer
 name: sales-copy-writer
 version: 1.0.1
 displayName: "卖货文案手"
-summary: "文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案"
+summary: "文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案。卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点. 基于FAB法则提炼卖点,结合6种情绪钩子与4种"
 license: Proprietary
 description: |-
   卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点.
@@ -13,21 +13,19 @@ description: |-
   - 6种情绪钩子生成
   - 4种CTA话术注入
   - 5平台风格自动适配
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 卖货文案
   - 营销转化
   - 电商带货
   - 副业工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 卖货文案手
@@ -51,6 +49,14 @@ category: "Automation"
 3. **4种CTA话术注入**: follow(关注)/dm(私信)/order(下单)/group(加群),匹配不同转化目标
 4. **5平台风格自动适配**: 小红书活泼种草/抖音口语化/公众号深度种草/微博简洁观点/电商促转化,自动调整字数与风格
 5. **活动促销文案**: 结合紧迫感和社交证明,生成限时活动文案
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

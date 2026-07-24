@@ -3,26 +3,27 @@ slug: total-recall-ai-free
 name: total-recall-ai-free
 version: 1.0.1
 displayName: 全息记忆AI(免费版)
-summary: AI Agent的端到端加密记忆系统，去中心化存储与原生检索，保护隐私的同时实现跨会话记忆.
+summary: "AI Agent的端到端加密记忆系统，去中心化存储与原生检索，保护隐私的同时实现跨会话记忆.。全息记忆AI（免费版）为AI Agent提供端到端加密的去中心化记忆系统。针对"会话结束后记忆丢"
 license: Proprietary
 edition: free
 description: 全息记忆AI（免费版）为AI Agent提供端到端加密的去中心化记忆系统。针对"会话结束后记忆丢失、用户隐私无法保护、中心化存储单点风险"等真实痛点，提供加密记忆存储、原生记忆检索与手动事实记录三大核心能力。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 加密记忆
-- 去中心化
-- 隐私保护
-- 跨会话记忆
-- AI记忆系统
+  - 加密记忆
+  - 去中心化
+  - 隐私保护
+  - 跨会话记忆
+  - AI记忆系统
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 全息记忆AI（免费版）

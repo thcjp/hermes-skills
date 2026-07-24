@@ -3,24 +3,22 @@ slug: c-suite-advisor
 name: c-suite-advisor
 version: 1.0.1
 displayName: C套件顾问
-summary: 一人公司的高管团队,9大C级视角战略决策+创始人模式,省下百万咨询费
+summary: "一人公司的高管团队,9大C级视角战略决策+创始人模式,省下百万咨询费。C套件顾问——一个人开公司也能拥有完整高管团队。从CEO战略到CTO技术，从CFO财务到CMO市场，9大C级高管视角的战"
 license: Proprietary
 description: C套件顾问——一个人开公司也能拥有完整高管团队。从CEO战略到CTO技术，从CFO财务到CMO市场，9大C级高管视角的战略决策支持。适用于战略规划、技术决策、财务分析、市场策略、收入增长、产品决策、运营优化、人才管理、安全治理等场景，外加创始人模式快速决断。触发关键词：C套件、CEO、CTO、CFO、CMO、战略决策、创始人模式、董事会、高管顾问、商业战略、组织管理
 tags:
-- 战略决策
-- 高管顾问
-- 商业分析
-- 一人公司
-- 企业管理
+  - 战略决策
+  - 高管顾问
+  - 商业分析
+  - 一人公司
+  - 企业管理
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
 category: "Creative"
 ---
 # C套件顾问
@@ -34,6 +32,14 @@ category: "Creative"
 - **CFO 财务规划**：SaaS 核心指标（MRR/ARR/Churn/LTV/CAC）+ 现金流预测 + 单位经济模型 + 融资估值
 - **CMO 市场策略**：TAM/SAM/SOM 市场细分 + GTM 策略 + 营销漏斗 + 增长实验 + A/B 测试框架
 - **创始人模式**：快速决策（信息不完整时）+ 第一性原理 + 风险偏好 + 资源杠杆 + 人才密度
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

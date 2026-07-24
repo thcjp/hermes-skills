@@ -3,7 +3,7 @@ slug: "ui-ux-toolkit"
 name: "ui-ux-toolkit"
 version: 1.0.1
 displayName: "UI/UX设计工具箱专业版"
-summary: "全域设计数据库+持久化设计系统+多技术栈+批量搜索,面向团队企业的专业UI/UX设计决策引擎"
+summary: "全域设计数据库+持久化设计系统+多技术栈+批量搜索,面向团队企业的专业UI/UX设计决策引擎。面向设计团队和企业项目的专业级UI/UX设计决策引擎,涵盖全部10个设计域、 10种技术栈、设计"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -23,16 +23,13 @@ tags:
   - 设计系统
   - 技术栈
   - 批量处理
+  - UI设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # UI/UX设计工具箱专业版
@@ -135,6 +132,14 @@ python3 （请参考skill目录中的脚本文件） "fintech" --domain color -n
 ```- 验证返回数据的完整性和格式正确性
 - 参考`批量搜索与多格式输出`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:企业级多页面应用设计系统管理

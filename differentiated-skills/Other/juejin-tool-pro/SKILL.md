@@ -3,7 +3,7 @@ slug: juejin-tool-pro
 name: juejin-tool-pro
 version: 1.0.0
 displayName: 掘金工具专业版
-summary: 面向团队的多账号批量发布、内容矩阵与数据分析工具.
+summary: "面向团队的多账号批量发布、内容矩阵与数据分析工具.。面向团队的掘金多账号批量发布与内容矩阵治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
 description: '面向团队的掘金多账号批量发布与内容矩阵治理专业工具。核心能力:
@@ -26,21 +26,20 @@ description: '面向团队的掘金多账号批量发布与内容矩阵治理专
 
   差异化: 专业版在免费版单账号草稿上扩展多账号矩阵、批量定时发布、审批流与效果分析，兼容免费版安全限制'
 tags:
-- 掘金
-- 企业级
-- 内容运营
-- 数据分析
-- 其他工具
+  - 掘金
+  - 企业级
+  - 内容运营
+  - 数据分析
+  - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 掘金工具（专业版）

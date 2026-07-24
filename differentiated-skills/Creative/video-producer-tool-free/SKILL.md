@@ -3,7 +3,7 @@ slug: video-producer-tool-free
 name: video-producer-tool-free
 version: 1.0.0
 displayName: 短视频生成-免费版
-summary: 轻量短视频一键生成工具，支持画面规划、AI素材生成、TTS配音与视频渲染，适合个人创作者快速出片.
+summary: "轻量短视频一键生成工具，支持画面规划、AI素材生成、TTS配音与视频渲染，适合个人创作者快速出片.。短视频生成免费版，为个人创作者提供从文案到成片的轻量化生产流程。核心能力:"
 license: Proprietary
 edition: free
 description: '短视频生成免费版，为个人创作者提供从文案到成片的轻量化生产流程。核心能力:
@@ -34,20 +34,19 @@ description: '短视频生成免费版，为个人创作者提供从文案到成
 
   - 内置常用素材关键词映射表...'
 tags:
-- Creative
-- 视频生成
-- 短视频
-- 免费版
-- AI创作
+  - Creative
+  - 视频生成
+  - 短视频
+  - 免费版
+  - AI创作
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 短视频生成工具 - 免费版

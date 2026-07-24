@@ -3,7 +3,7 @@ slug: "javascript-skills-tool-pro"
 name: "javascript-skills-tool-pro"
 version: "1.0.0"
 displayName: "JavaScript规范工具(专业版)"
-summary: "面向团队与企业的全量JavaScript规范套件,含性能优化、安全审查与CI/CD集成。"
+summary: "面向团队与企业的全量JavaScript规范套件,含性能优化、安全审查与CI/CD集成。。JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,15 +27,14 @@ tags:
   - 企业级
   - 性能优化
   - 安全审查
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # JavaScript规范工具(专业版)

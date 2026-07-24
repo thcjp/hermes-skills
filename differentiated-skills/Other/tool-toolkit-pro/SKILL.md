@@ -3,7 +3,7 @@ slug: tool-toolkit-pro
 name: tool-toolkit-pro
 version: 1.0.0
 displayName: 工具评估工具专业版
-summary: 团队协作评估、工具数据库、自定义评估模型与决策报告导出，适合团队与技术负责人.
+summary: "团队协作评估、工具数据库、自定义评估模型与决策报告导出，适合团队与技术负责人.。工具评估工具专业版，面向团队与技术负责人的高阶工具选型与评估平台。核心能力:"
 license: Proprietary
 edition: pro
 description: '工具评估工具专业版，面向团队与技术负责人的高阶工具选型与评估平台。核心能力:
@@ -28,20 +28,20 @@ description: '工具评估工具专业版，面向团队与技术负责人的高
 
   差异化: 专业版在免费版核心能力之上扩展团队协作与自定义模型，新增工具数据库、报告导出、工具栈分析等企业级能力，并与免费版评估框架兼容'
 tags:
-- 工具评估
-- 团队协作
-- 选型治理
-- 专业版
+  - 工具评估
+  - 团队协作
+  - 选型治理
+  - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 工具评估工具（专业版）

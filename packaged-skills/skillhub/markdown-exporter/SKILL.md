@@ -17,15 +17,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 文档处理
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+  - Markdown
+  - 文档
+  - 工具
 category: "Development"
 ---
 # Markdown导出工具
@@ -119,6 +117,14 @@ markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
 ```
 `--strip-wrapper` 选项移除代码块外层```包裹后再处理.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 支持格式总览
 
 | 工具 | 输入 | 输出格式 |

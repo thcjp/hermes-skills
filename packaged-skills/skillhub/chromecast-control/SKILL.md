@@ -3,7 +3,7 @@ slug: "chromecast-control"
 name: "chromecast-control"
 version: 1.0.1
 displayName: "投屏设备控制"
-summary: "控制局域网投屏设备，发现设备、投放媒体、管理播放和音量"
+summary: "控制局域网投屏设备，发现设备、投放媒体、管理播放和音量。使用catt工具控制局域网内的投屏设备。支持设备发现、媒体投放（视频/音频/网页）、 播放控制、进度跳转、音量调节、队列管理、字幕加载"
 license: "Proprietary"
 description: |-
   使用catt工具控制局域网内的投屏设备。支持设备发现、媒体投放（视频/音频/网页）、
@@ -12,15 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 投屏设备控制
@@ -118,6 +116,14 @@ category: "Automation"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 运行 `catt scan` 发现局域网内的投屏设备，记录设备名称或IP地址

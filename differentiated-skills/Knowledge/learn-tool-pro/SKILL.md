@@ -3,7 +3,7 @@ slug: learn-tool-pro
 name: learn-tool-pro
 version: 1.0.0
 displayName: 学习助手（专业版）
-summary: 为任何主题生成结构化学习计划、练习题与进度追踪，支持自适应学习路径.
+summary: "为任何主题生成结构化学习计划、练习题与进度追踪，支持自适应学习路径.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
 description: '学习助手 - （专业版）
@@ -16,20 +16,19 @@ description: '学习助手 - （专业版）
 
   适用关键词: 学习计划, 学习助手, 练习题, 学习评估, 自适应学习, learning plan, 知识评估'
 tags:
-- 学习教育
-- 学习计划
-- 自适应学习
-- 练习生成
+  - 学习教育
+  - 学习计划
+  - 自适应学习
+  - 练习生成
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 学习助手（专业版）

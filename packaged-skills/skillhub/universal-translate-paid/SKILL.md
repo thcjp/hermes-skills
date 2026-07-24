@@ -3,7 +3,7 @@ slug: "universal-translate-paid"
 name: "universal-translate-paid"
 version: 1.0.1
 displayName: "通用翻译工具(专业版)"
-summary: "面向团队的企业级本地化平台,含批量翻译、术语库、对话模式与CI集成,支持多文件并行。"
+summary: "面向团队的企业级本地化平台,含批量翻译、术语库、对话模式与CI集成,支持多文件并行。。通用翻译工具专业版为团队与企业提供端到端本地化工程能力,涵盖批量文件翻译、术语库管理、对话模式、API集"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,16 +30,14 @@ tags:
   - 文档工程
   - CI/CD
   - 团队协作
+  - 语言
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "翻译,语言,工具"
 category: "Knowledge"
 ---
 # 通用翻译工具(专业版)
@@ -86,6 +84,14 @@ category: "Knowledge"
 **输出**: 返回术语库管理的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`术语库管理`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1:批量文档本地化

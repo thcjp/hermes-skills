@@ -3,7 +3,7 @@ slug: "discord-chat-free"
 name: "discord-chat-free"
 version: "1.0.0"
 displayName: "Discord Chat 基础"
-summary: "通过message工具在Discord频道发送消息、回复、读取历史与表情回应"
+summary: "通过message工具在Discord频道发送消息、回复、读取历史与表情回应。discord-chat-free 提供 Discord 频道的基础聊天能力,覆盖消息发送、 线程回复、历史读取"
 license: "MIT"
 description: |-
   discord-chat-free 提供 Discord 频道的基础聊天能力,覆盖消息发送、
@@ -13,12 +13,13 @@ description: |-
 tags:
   - Communication
   - Discord
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Discord Chat 基础
@@ -74,6 +75,14 @@ message action=react channel=discord messageId="1234567890" emoji="👍"
 **处理**: 解析消息写作风格的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回消息写作风格的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:通知推送

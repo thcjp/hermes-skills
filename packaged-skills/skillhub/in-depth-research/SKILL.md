@@ -3,7 +3,7 @@ slug: "in-depth-research"
 name: "in-depth-research"
 version: 1.0.1
 displayName: "深度研究引擎"
-summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。"
+summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。。系统化深度研究方法论，通过七步协议（Scope → Search → Evaluate → Deepen → Syn"
 license: "Proprietary"
 description: |-
   系统化深度研究方法论，通过七步协议（Scope → Search → Evaluate → Deepen →
@@ -17,15 +17,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 信息检索
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - 搜索
+  - 检索
+  - 工具
 category: "Knowledge"
 ---
 # 深度研究引擎
@@ -143,6 +142,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供三种交付格式所需的指令和必要参数.
 **输出**: 返回三种交付格式的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 深度级别
 
 | 级别 | 时间投入 | 来源数量 | 适用场景 |

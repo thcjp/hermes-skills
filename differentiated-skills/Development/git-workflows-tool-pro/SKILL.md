@@ -3,7 +3,7 @@ slug: "git-workflows-tool-pro"
 name: "git-workflows-tool-pro"
 version: "1.0.0"
 displayName: "Git高级操作专业版"
-summary: "企业级 Git 进阶方案，支持子树子模块、稀疏检出、大型单体仓库与冲突自动记忆。"
+summary: "企业级 Git 进阶方案，支持子树子模块、稀疏检出、大型单体仓库与冲突自动记忆。。面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,15 +14,12 @@ tags:
   - Git进阶
   - 企业架构
   - Monorepo
+  - Git
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # Git 高级操作助手（专业版）

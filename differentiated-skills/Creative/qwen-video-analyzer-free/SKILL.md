@@ -3,7 +3,7 @@ slug: qwen-video-analyzer-free
 name: qwen-video-analyzer-free
 version: 1.0.1
 displayName: 通义千问视频分析-免费版
-summary: 使用Qwen模型分析视频内容,支持本地文件与远程URL,可自定义提示词,适合个人创作者.
+summary: "使用Qwen模型分析视频内容,支持本地文件与远程URL,可自定义提示词,适合个人创作者.。通义千问视频分析免费版,面向个人用户的AI视频内容理解工具。核心能力:"
 license: Proprietary
 edition: free
 description: '通义千问视频分析免费版,面向个人用户的AI视频内容理解工具。核心能力:
@@ -26,18 +26,17 @@ description: '通义千问视频分析免费版,面向个人用户的AI视频内
 
   差异化:免费版聚焦单视频分析能力,提供基础提示词自定义,适合个人用户体验AI视频理解'
 tags:
-- Creative
-- 视频分析
-- AI创作
+  - Creative
+  - 视频分析
+  - AI创作
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 通义千问视频分析工具 - 免费版

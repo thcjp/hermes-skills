@@ -3,7 +3,7 @@ slug: "knowledge-ontology-free"
 name: "knowledge-ontology-free"
 version: "1.0.0"
 displayName: "知识本体"
-summary: "类型化知识图谱基础版：实体关系建模+约束校验+图遍历查询。"
+summary: "类型化知识图谱基础版：实体关系建模+约束校验+图遍历查询。。面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力. 内置Person/Proje"
 license: "MIT"
 description: |-
   面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力.
@@ -14,11 +14,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 知识本体（基础版）
@@ -56,6 +58,14 @@ category: "Automation"
 **输出**: 返回图遍历查询的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`图遍历查询`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：初始化目录与schema

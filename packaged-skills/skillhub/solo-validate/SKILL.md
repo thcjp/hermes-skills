@@ -3,22 +3,22 @@ slug: "solo-validate"
 name: "solo-validate"
 version: 2.1.2
 displayName: "Validate"
-summary: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分"
+summary: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分。Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用"
 license: "Proprietary"
 description: |-
   Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用于超出本技能能力范围的复杂需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Research
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Validate
@@ -39,6 +39,14 @@ category: "Automation"
 - Score startup idea through S.E.E.D. niche validation
 - Niche check + STREAM 6-layer analysis
 - Devil's Advocate investgation (反方论证压力测试)
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## S.E.E.D. 利基检查框架
 

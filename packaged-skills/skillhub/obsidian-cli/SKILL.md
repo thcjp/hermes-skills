@@ -3,7 +3,7 @@ slug: "obsidian-cli"
 name: "obsidian-cli"
 version: 1.0.1
 displayName: "Obsidian CLI(专业版)"
-summary: "全功能Obsidian命令行管理工具，支持模板、插件、同步、历史、开发工具与TUI交互模式"
+summary: "全功能Obsidian命令行管理工具，支持模板、插件、同步、历史、开发工具与TUI交互模式。Obsidian CLI工具专业版是面向团队和高级用户的完整命令行知识管理方案，在免费版基础上解锁"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,16 @@ tags:
   - 命令行工具
   - 知识库运维
   - 高级集成
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Obsidian CLI(专业版)
@@ -76,6 +76,14 @@ category: "Automation"
 **输出**: 返回全文搜索的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`全文搜索`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 开发者场景：插件开发与调试

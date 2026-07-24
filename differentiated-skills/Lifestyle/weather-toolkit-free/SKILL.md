@@ -3,26 +3,25 @@ slug: weather-toolkit-free
 name: weather-toolkit-free
 version: 1.0.1
 displayName: 天气查询工具包免费版
-summary: 基于wttr.in与Open-Meteo的免费天气查询,无需API Key,支持当前天气与预报
+summary: "基于wttr.in与Open-Meteo的免费天气查询,无需API Key,支持当前天气与预报。面向个人用户的免费天气查询工具包,基于wttr。in与Open-Meteo公开API,无需AP"
 license: Proprietary
 edition: free
 description: 面向个人用户的免费天气查询工具包,基于wttr。in与Open-Meteo公开API,无需API Key即可获取当前天气与预报。Use when
   需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
-- Lifestyle
-- 天气
-- 生活工具
-- 命令行工具
-- 免费API
+  - Lifestyle
+  - 天气
+  - 生活工具
+  - 命令行工具
+  - 免费API
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L0-免费"
-pricing_model: free
-suggested_price: "0"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 天气查询工具包免费版

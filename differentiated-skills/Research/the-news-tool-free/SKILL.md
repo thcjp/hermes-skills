@@ -3,24 +3,24 @@ slug: the-news-tool-free
 name: the-news-tool-free
 version: 1.0.0
 displayName: 全球新闻速递免费版
-summary: 覆盖 20 个国家的实时头条新闻聚合工具,提供多语种新闻快照与历史查询,适合个人资讯获取
+summary: "覆盖 20 个国家的实时头条新闻聚合工具,提供多语种新闻快照与历史查询,适合个人资讯获取。全球新闻速递免费版,面向个人用户提供覆盖 20 个国家的实时头条新闻聚合能力。通过统一的公共 API"
 license: Proprietary
 edition: free
 description: 全球新闻速递免费版,面向个人用户提供覆盖 20 个国家的实时头条新闻聚合能力。通过统一的公共 API 获取多语种新闻快照,支持实时查询和基础历史回溯。Use
   when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
-- 研究工具
-- 新闻资讯
-- 信息获取
+  - 研究工具
+  - 新闻资讯
+  - 信息获取
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 全球新闻速递免费版

@@ -3,7 +3,7 @@ slug: "agentvibes-skill"
 name: "agentvibes-skill"
 version: 1.0.1
 displayName: "AgentVibes语音合成-专业版"
-summary: "企业级TTS工具,支持神经声音、多角色协同、批量导出、背景音乐与音效,适配商业内容生产。"
+summary: "企业级TTS工具,支持神经声音、多角色协同、批量导出、背景音乐与音效,适配商业内容生产。。AgentVibes语音合成专业版,面向企业团队与专业内容生产者的高级文本转语音工具。核心能力: -"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -26,16 +26,17 @@ tags:
   - 语音合成
   - 企业版
   - 商业内容
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # AgentVibes语音合成-专业版
@@ -83,6 +84,14 @@ category: "Agents"
 **输出**: 返回神经声音引擎的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`神经声音引擎`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:有声书批量制作

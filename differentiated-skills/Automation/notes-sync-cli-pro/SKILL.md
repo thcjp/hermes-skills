@@ -3,7 +3,7 @@ slug: notes-sync-cli-pro
 name: notes-sync-cli-pro
 version: 1.0.0
 displayName: 笔记同步CLI(专业版)
-summary: 全功能Markdown笔记库管理，含批量操作、多Vault、模板系统、Git同步与LLM智能整理.
+summary: "全功能Markdown笔记库管理，含批量操作、多Vault、模板系统、Git同步与LLM智能整理.。笔记同步CLI专业版是在免费版基础上的全功能升级，为重度知识工作者提供企业级Markdow"
 license: Proprietary
 edition: pro
 description: '笔记同步CLI专业版是在免费版基础上的全功能升级，为重度知识工作者提供企业级Markdown笔记库管理能力。除核心高频操作外，解锁批量操作、多Vault并行管理、自定义模板系统、Git自动同步、LLM智能整理、跨设备同步六大高级功能.
@@ -12,21 +12,20 @@ description: '笔记同步CLI专业版是在免费版基础上的全功能升级
   差异化：完全中文化表达，重新设计七大角色场景，新增六大高级功能与性能优化策略，提供多平台集成示例与版本迁移指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：笔记同步、批量笔记操作、多Vault管理、模板系统、Git同步、LLM整理、跨设备同步、知识库健康度'
 tags:
-- 笔记管理
-- 命令行工具
-- 知识库
-- 批量操作
-- 智能整理
+  - 笔记管理
+  - 命令行工具
+  - 知识库
+  - 批量操作
+  - 智能整理
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 笔记同步CLI（专业版）

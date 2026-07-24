@@ -3,7 +3,7 @@ slug: "aws-graph-agent"
 name: "aws-graph-agent"
 version: "1.0.0"
 displayName: "AWS图代理"
-summary: "Bedrock AgentCore与LangGraph编排,引导式部署,一致性处理,多代理模式库。"
+summary: "Bedrock AgentCore与LangGraph编排,引导式部署,一致性处理,多代理模式库。。AWS Bedrock AgentCore与LangGraph多代理部署编排工具：提供St"
 license: "Proprietary"
 description: |-
   AWS Bedrock AgentCore与LangGraph多代理部署编排工具：提供StateGraph状态图编排、AgentCore Runtime HTTP封装（8080端口）、Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力。适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署。适用关键词：Bedrock AgentCore、LangGraph、多代理编排、状态图、agentcore、state-graph.
@@ -12,15 +12,12 @@ tags:
   - 云计算
   - AWS
   - 多代理系统
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # AWS图代理（AWS Graph Agent）
@@ -62,6 +59,14 @@ category: "Operations"
 **处理**: 解析agentcore CLI 全生命周期管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回agentcore CLI 全生命周期管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Bedrock、引导式部署、多代理模式库、AWS、多代理部署编排工、全生命周期管理五、大核心能力、适用于多代理协调、的复杂业务系统、跨会话持久记忆代、集成到代理工具链、生产级、代理部署、适用关键词、多代理编排等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **何时使用**：

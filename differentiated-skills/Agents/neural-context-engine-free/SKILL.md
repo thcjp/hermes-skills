@@ -3,25 +3,26 @@ slug: neural-context-engine-free
 name: neural-context-engine-free
 version: 1.0.1
 displayName: Neural Context Engin
-summary: 基于扩散激活的联想记忆引擎，通过神经图谱检索概念相关记忆，零LLM依赖纯算法实现.
+summary: "基于扩散激活的联想记忆引擎，通过神经图谱检索概念相关记忆，零LLM依赖纯算法实现.。神经上下文引擎免费版解决传统记忆检索"只能找相似，不能找相关"的核心痛点。向量搜索只能找到与查询字面相似的"
 license: Proprietary
 edition: free
 description: 神经上下文引擎免费版解决传统记忆检索"只能找相似，不能找相关"的核心痛点。向量搜索只能找到与查询字面相似的记忆，关键词搜索无法理解意图，而本引擎采用扩散激活算法，通过神经图谱遍历找到概念相关的记忆，即使没有关键词或嵌入重叠也能命中。Use
   when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
-- 联想记忆
-- 神经图谱
-- 扩散激活
-- 上下文检索
+  - 联想记忆
+  - 神经图谱
+  - 扩散激活
+  - 上下文检索
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 神经上下文引擎（免费版）
@@ -116,6 +117,14 @@ nmem stats
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 # ...
 # ...
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 神经记忆使用规则
 # ...
 会话开始时：

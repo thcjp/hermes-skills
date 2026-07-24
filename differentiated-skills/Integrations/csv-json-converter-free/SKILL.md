@@ -3,24 +3,23 @@ slug: csv-json-converter-free
 name: csv-json-converter-free
 version: 1.0.1
 displayName: CSV转JSON(免费版)
-summary: 轻量级CSV转JSON工具，覆盖表头推断、类型识别与单文件转换，60秒上手即用.
+summary: "轻量级CSV转JSON工具，覆盖表头推断、类型识别与单文件转换，60秒上手即用.。CSV转JSON免费版是一款面向独立开发者与数据工程师的轻量级表格数据格式转换工具。围绕"表头推断—类型识别"
 license: Proprietary
 edition: free
 description: CSV转JSON免费版是一款面向独立开发者与数据工程师的轻量级表格数据格式转换工具。围绕"表头推断—类型识别—单文件转换—结果校验"四件事，提供可复制即用的Python/Node。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 数据转换
-- 格式适配
-- 集成工具
+  - 数据转换
+  - 格式适配
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # CSV转JSON（免费版）
@@ -239,7 +238,6 @@ CSV本身不支持合并单元格，Excel导出CSV时会将合并单元格拆为
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成可执行的转换脚本
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -282,6 +280,14 @@ CSV本身不支持合并单元格，Excel导出CSV时会将合并单元格拆为
 ```
 ### 30秒上手：单文件转换(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
 > "帮我把 data.csv 转成 JSON，第一行是表头。"

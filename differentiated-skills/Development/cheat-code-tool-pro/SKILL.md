@@ -3,7 +3,7 @@ slug: "cheat-code-tool-pro"
 name: "cheat-code-tool-pro"
 version: "1.0.0"
 displayName: "能力扩展工具专业版"
-summary: "企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享"
+summary: "企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享。面向团队与企业的高级能力扩展工具,在免费版基础上扩展批量查询、自定义数据源、知识缓存等能力。核心能力: - 批量知识查询与"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,15 +30,15 @@ tags:
   - 企业级
   - 批量查询
   - 数据源集成
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Development"
 ---
 # 能力扩展工具专业版

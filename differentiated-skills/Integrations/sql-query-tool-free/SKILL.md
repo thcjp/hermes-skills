@@ -9,19 +9,18 @@ edition: free
 description: 面向独立开发者与AI Agent的SQL查询执行工具免费版。聚焦命令行场景下的关系型数据库查询、参数化执行、执行计划分析与跨数据库可移植性，提供经过实战检验的查询模式、索引陷阱清单与EXPLAIN解读方法，帮助用户在不依赖重量级ORM的前提下高效完成数据访问任务。Use
   when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
-- 集成工具
-- 数据库
-- SQL查询
-- 命令行
+  - 集成工具
+  - 数据库
+  - SQL查询
+  - 命令行
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # SQL查询工具（免费版）

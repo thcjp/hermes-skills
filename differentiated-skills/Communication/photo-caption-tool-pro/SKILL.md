@@ -3,7 +3,7 @@ slug: "photo-caption-tool-pro"
 name: "photo-caption-tool-pro"
 version: "1.0.0"
 displayName: "照片配文工具专业版"
-summary: "全平台照片配文生成工具,支持13个社交平台,提供批量配文、品牌风格定制与编辑分析能力。"
+summary: "全平台照片配文生成工具,支持13个社交平台,提供批量配文、品牌风格定制与编辑分析能力。。照片配文工具专业版,面向专业摄影师与内容创作者提供 13 个社交平台的配文生成能力,支持批量处理、品牌"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -23,15 +23,14 @@ tags:
   - 摄影配文
   - 专业效率
   - 品牌管理
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 照片配文工具专业版是一款面向专业摄影师与内容创作者的全平台照片配文生成解决方案。在完全兼容免费版 Instagram、X(Twitter)、Facebook 三大平台配文能力的基础上,专业版解锁了 Flickr、Glass、Tumblr、Bluesky、Threads、500px、Reddit、VSCO、Substack、Pinterest 共 13 个平台的配文生成能力.

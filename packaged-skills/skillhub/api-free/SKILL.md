@@ -3,7 +3,7 @@ slug: "api-free"
 name: "api-free"
 version: "1.0.0"
 displayName: "REST API参考免费版"
-summary: "3大类核心服务的REST API参考,含认证模式与端点示例,快速查阅集成要点"
+summary: "3大类核心服务的REST API参考,含认证模式与端点示例,快速查阅集成要点。REST API 参考文档库免费版。覆盖 AI/ML、支付、通信 3 大类核心服务的认证模式与端点参考. 提供基"
 license: "MIT"
 description: |-
   REST API 参考文档库免费版。覆盖 AI/ML、支付、通信 3 大类核心服务的认证模式与端点参考.
@@ -12,12 +12,14 @@ description: |-
 tags:
   - 研发工具
   - Productivity
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # REST API 参考手册（免费版）
@@ -88,6 +90,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回认证文档的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`认证文档`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 免费版服务索引
 
 | 分类 | 文件 | 代表服务 |
@@ -207,6 +217,13 @@ A: 免费版不包含多账户凭证命名规范。升级付费版可查阅 `cre
 6. **无多账户命名**: 不含 `{SERVICE}_{ACCOUNT}_{TYPE}` 凭证规范
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > **升级付费版** 解锁: 完整 16 类 147 服务、速率限制策略、分页模式、Webhook 签名验证、多账户凭证命名、幂等键使用等完整能力.
 ## 输出格式

@@ -3,25 +3,26 @@ slug: context-vault-manager-free
 name: context-vault-manager-free
 version: 1.0.1
 displayName: Context Vault Manage
-summary: 智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%.
+summary: "智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%.。上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短"
 license: Proprietary
 edition: free
 description: 上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短期/长期/重要三层记忆分层架构，自动清理过期短期记忆，避免上下文窗口被无效信息占满。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 记忆管理
-- 分层架构
-- 上下文管理
-- Token优化
+  - 记忆管理
+  - 分层架构
+  - 上下文管理
+  - Token优化
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 上下文保险库（免费版）
@@ -96,6 +97,14 @@ const result = await skills.contextVaultManager({
 ```markdown
 
 具体详情请参考下方内容.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 上下文保险库使用规则
 # ...
 会话开始时：

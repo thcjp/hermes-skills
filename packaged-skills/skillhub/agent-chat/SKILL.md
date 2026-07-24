@@ -3,23 +3,24 @@ slug: "agent-chat"
 name: "agent-chat"
 version: 0.1.1
 displayName: "Agent Chat"
-summary: "为AI Agent建临时实时聊天室,密码保护+SSE流式+Web界面,跨Agent即时协作"
+summary: "为AI Agent建临时实时聊天室,密码保护+SSE流式+Web界面,跨Agent即时协作。Temporary real-time chat rooms for AI agents。Pass"
 license: "Proprietary"
 description: |-
   Temporary real-time chat rooms for AI agents。Password-protected, with
   SSE streaming, web UI for。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Other
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # Agent Chat
@@ -43,6 +44,14 @@ category: "Agents"
 - Agent Chat 多格式支持 - 失败自动重试+断点续传
 - Agent Chat 扩展能力9 - 全流程可追溯, 输出执行日志
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 - Multi-agent collaboration on complex tasks

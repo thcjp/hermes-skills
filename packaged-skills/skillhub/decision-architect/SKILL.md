@@ -3,7 +3,7 @@ slug: "decision-architect"
 name: "decision-architect"
 version: 2.0.1
 displayName: "决策架构师"
-summary: "结构化决策支持加认知偏差检测与回顾复盘，避免拍脑袋决策与重复踩坑。"
+summary: "结构化决策支持加认知偏差检测与回顾复盘，避免拍脑袋决策与重复踩坑。。面向 AI Agent 的结构化决策支持系统，提供决策框架匹配、认知偏差检测、风险画像学习与强制复盘闭环. 内置 8 类决"
 license: "Proprietary"
 description: |-
   面向 AI Agent 的结构化决策支持系统，提供决策框架匹配、认知偏差检测、风险画像学习与强制复盘闭环.
@@ -13,15 +13,14 @@ description: |-
   通过 3 次一致信号确认才入档的风险画像学习机制，结合 30 天心跳触发的回顾复盘闭环，
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - write
+  - exec
+homepage: ""
 tags:
   - 系统运维
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 决策架构师（Decision Architect）
@@ -73,6 +72,14 @@ category: "Automation"
 **输出**: 返回风险画像学习的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`风险画像学习`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 第一步：识别决策类型。读取用户问题，识别领域（product/tech/business/personal）与类型（strategic 长周期高风险 / tactical 中周期中风险 / operational 日常低风险）。例如"支付系统用 Stripe 还是自建"识别为领域=tech，类型=strategic.

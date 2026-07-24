@@ -3,7 +3,7 @@ slug: apple-health-tool-pro
 name: apple-health-tool-pro
 version: 1.0.0
 displayName: 健康数据助手专业版
-summary: 企业级健康数据分析平台,支持多用户聚合、PMC疲劳模型、团队报告与批量导出
+summary: "企业级健康数据分析平台,支持多用户聚合、PMC疲劳模型、团队报告与批量导出。面向企业、健身工作室与专业运动队的健康数据分析平台."
 license: Proprietary
 edition: pro
 description: '面向企业、健身工作室与专业运动队的健康数据分析平台.
@@ -15,22 +15,21 @@ description: '面向企业、健身工作室与专业运动队的健康数据分
 
   适用关键词: 健康数据分析, 团队健康报告, PMC疲劳模型, 运动队管理, 健身工作室, 批量导出'
 tags:
-- 健康管理
-- 企业级
-- 数据分析
-- 团队管理
-- 运动科学
-- 批量处理
+  - 健康管理
+  - 企业级
+  - 数据分析
+  - 团队管理
+  - 运动科学
+  - 批量处理
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 健康数据助手 (专业版)

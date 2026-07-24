@@ -3,25 +3,25 @@ slug: bsession-tool-free
 name: bsession-tool-free
 version: 1.0.0
 displayName: 浏览器会话(免费版)
-summary: 浏览器会话管理免费版，支持一次性页面抓取、基础会话列表与简易调试.
+summary: "浏览器会话管理免费版，支持一次性页面抓取、基础会话列表与简易调试.。浏览器会话助手免费版是面向个人开发者的轻量浏览器会话管理工具。聚焦"打开URL-提取信息-返回结果"三步流程，无需编写完整"
 license: Proprietary
 edition: free
 description: 浏览器会话助手免费版是面向个人开发者的轻量浏览器会话管理工具。聚焦"打开URL-提取信息-返回结果"三步流程，无需编写完整脚本即可完成单次页面抓取任务。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 浏览器会话
-- 单次抓取
-- Docker
-- 轻量级
+  - 浏览器会话
+  - 单次抓取
+  - Docker
+  - 轻量级
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 浏览器会话助手（免费版）
@@ -504,6 +504,13 @@ class PortManager:
 - **说明**: 通过自然语言指令驱动Agent执行浏览器会话管理任务
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 已知限制
 本免费体验版限制以下高级功能（需升级至专业版解锁）：

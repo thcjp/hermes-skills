@@ -3,7 +3,7 @@ slug: "assistant"
 name: "assistant"
 version: 1.0.1
 displayName: "Assistant"
-summary: "主动有序管理任务沟通与日程,做你的全能助理,琐事不遗漏"
+summary: "主动有序管理任务沟通与日程,做你的全能助理,琐事不遗漏。Manage tasks, communications, and scheduling with proactive and org"
 license: "Proprietary"
 description: |-
   Manage tasks, communications, and scheduling with proactive and organized
@@ -24,16 +24,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Lifestyle
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Assistant
@@ -54,6 +53,14 @@ category: "Automation"
 - Manage tasks, communications, and scheduling with proactive and organized
   support
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

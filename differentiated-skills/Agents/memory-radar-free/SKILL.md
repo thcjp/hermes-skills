@@ -3,25 +3,26 @@ slug: memory-radar-free
 name: memory-radar-free
 version: 1.0.0
 displayName: 记忆雷达
-summary: 扫描Agent记忆文件检测恶意指令、凭据泄露、提示注入，五级安全评级，本地模式零数据外泄.
+summary: "扫描Agent记忆文件检测恶意指令、凭据泄露、提示注入，五级安全评级，本地模式零数据外泄.。记忆雷达免费版解决AI Agent记忆安全的"隐形威胁"痛点：恶意指令潜入MEMORY。md绕过安"
 license: Proprietary
 edition: free
 description: 记忆雷达免费版解决AI Agent记忆安全的"隐形威胁"痛点：恶意指令潜入MEMORY。md绕过安全护栏、API Key在对话日志中明文泄露、提示注入攻击操纵Agent行为、数据外泄指令窃取敏感信息。Use
   when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
-- 记忆安全
-- 安全扫描
-- 提示注入
-- 凭据保护
+  - 记忆安全
+  - 安全扫描
+  - 提示注入
+  - 凭据保护
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 记忆雷达（免费版）
@@ -100,6 +101,14 @@ python3 （请参考skill目录中的脚本文件） --quiet
 将以下内容加入Agent的维护周期：
 
 ```markdown
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 每周记忆安全扫描
 # ...
 每周日执行记忆安全扫描：

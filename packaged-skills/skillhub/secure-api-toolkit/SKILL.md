@@ -3,7 +3,7 @@ slug: "secure-api-toolkit"
 name: "secure-api-toolkit"
 version: 1.0.1
 displayName: "安全API工具箱Pro"
-summary: "企业级凭据代理方案，含多SDK、团队金库、审计日志、自定义提供商与合规导出。"
+summary: "企业级凭据代理方案，含多SDK、团队金库、审计日志、自定义提供商与合规导出。。安全API工具箱（专业版）为团队与企业提供完整的凭据代理治理方案，从架构层杜绝Agent接触真实密钥。核心能力："
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,16 +12,15 @@ tags:
   - 集成工具
   - 安全合规
   - 企业级
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # 安全API工具箱Pro
@@ -69,6 +68,14 @@ category: "Development"
 **输出**: 返回团队凭据金库的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`团队凭据金库`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 - 不适用: 需要人工判断的复杂决策场景
 

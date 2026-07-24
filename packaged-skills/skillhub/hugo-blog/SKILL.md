@@ -3,7 +3,7 @@ slug: "hugo-blog"
 name: "hugo-blog"
 version: 1.0.1
 displayName: "Hugo博客发布专业版"
-summary: "企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。"
+summary: "企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。。面向专业博主的 Hugo 博客管理工具，提供批量发布与站点级管理能力。核心能力: - 批量文章发"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,16 +28,15 @@ tags:
   - Hugo
   - 内容运营
   - SEO
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Hugo博客发布专业版
@@ -84,6 +83,14 @@ category: "Automation"
 **输出**: 返回Front Matter的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Front Matter`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：批量发布文章系列

@@ -3,7 +3,7 @@ slug: neural-context-engine-pro
 name: neural-context-engine-pro
 version: 1.0.0
 displayName: Neural Context Engin
-summary: 联想记忆引擎专业版，含多脑管理、版本快照、脑移植、深度因果链、习惯识别、矛盾检测，全功能.
+summary: "联想记忆引擎专业版，含多脑管理、版本快照、脑移植、深度因果链、习惯识别、矛盾检测，全功能.。神经上下文引擎专业版是联想记忆引擎的终极形态。在免费版基础上解锁多脑管理（多项目/多角色独立记忆空"
 license: Proprietary
 edition: pro
 description: '神经上下文引擎专业版是联想记忆引擎的终极形态。在免费版基础上解锁多脑管理（多项目/多角色独立记忆空间）、脑版本快照（快照/回滚/diff）、脑移植（跨脑知识迁移）、深度因果链追踪（depth=2/3跨域关联）、习惯模式识别（工作流建议）、矛盾自动检测（冲突记忆识别）、自动事实提取（对话自动提取决策/错误/待办）七大高级功能.
@@ -12,21 +12,22 @@ description: '神经上下文引擎专业版是联想记忆引擎的终极形态
   差异化：完全中文化表达，针对企业级场景重新设计检索策略，新增七大高级功能、多角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整联想记忆能力与优先支持。保留原始MIT版权声明.
   适用关键词：联想记忆、多脑管理、脑移植、因果链追踪、习惯识别、矛盾检测、自动提取'
 tags:
-- 联想记忆
-- 神经图谱
-- 多脑管理
-- 企业级
-- 因果链
+  - 联想记忆
+  - 神经图谱
+  - 多脑管理
+  - 企业级
+  - 因果链
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 神经上下文引擎（专业版）

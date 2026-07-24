@@ -3,7 +3,7 @@ slug: "golang-toolkit"
 name: "golang-toolkit"
 version: 1.0.1
 displayName: "Go语言工具包专业版"
-summary: "企业级 Go 开发方案，含性能优化、并发模式库、内存治理与构建工具链集成。"
+summary: "企业级 Go 开发方案，含性能优化、并发模式库、内存治理与构建工具链集成。。面向企业级 Go 开发团队的专业工具包，提供性能优化、并发模式与工程化能力。核心能力: - 并发模式库（Worke"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,16 +27,15 @@ tags:
   - 并发编程
   - 性能优化
   - 企业开发
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Go语言工具包专业版
@@ -82,6 +81,14 @@ category: "Automation"
 **输出**: 返回并发模式的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`并发模式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：高并发 Worker Pool 实现

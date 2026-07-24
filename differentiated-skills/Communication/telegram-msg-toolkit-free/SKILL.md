@@ -9,20 +9,18 @@ edition: free
 description: Telegram 消息工具箱（免费版）面向个人用户与独立开发者，封装 Telegram Bot API 的基础消息能力：文本消息、图片、文件、投票发送，聊天信息查询与基础
   Bot 命令管理。通过 REST API 直接调用 Telegram Bot 接口，无需额外中间件。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
-- 沟通协作
-- 即时通讯
-- Telegram
-- 消息自动化
-- Bot开发
+  - 沟通协作
+  - 即时通讯
+  - Telegram
+  - 消息自动化
+  - Bot开发
+  - 社交
+  - 通信
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Telegram 消息工具箱（免费版）

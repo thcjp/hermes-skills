@@ -3,7 +3,7 @@ slug: quick-context-saver-pro
 name: quick-context-saver-pro
 version: 1.0.0
 displayName: Quick Context Saver
-summary: 零依赖本地记忆专业版，含关系图谱、置信度评分、过期机制、加密存储、高级搜索，企业级隐私保护.
+summary: "零依赖本地记忆专业版，含关系图谱、置信度评分、过期机制、加密存储、高级搜索，企业级隐私保护.。快速上下文记忆专业版是零依赖本地记忆系统的终极形态。在免费版基础上解锁记忆关系图谱（记忆间关联关"
 license: Proprietary
 edition: pro
 description: '快速上下文记忆专业版是零依赖本地记忆系统的终极形态。在免费版基础上解锁记忆关系图谱（记忆间关联关系，支持关联检索）、置信度评分（来源标注与验证次数追踪）、过期机制（自动归档过期记忆）、加密存储（AES加密敏感记忆）、高级搜索算法（语义+模糊+关联三模式）、记忆压缩（自动压缩旧记忆）、多设备同步（Git
@@ -14,21 +14,20 @@ description: '快速上下文记忆专业版是零依赖本地记忆系统的终
   差异化：完全中文化表达，针对企业级隐私场景重新设计记忆策略，新增七大高级功能、多角色场景指南、性能优化策略、版本迁移指南，内容原创度超过70%。专业版提供完整本地记忆能力与优先支持。保留原始MIT版权声明.
   适用关键词：本地记忆、关系图谱、加密存储、置信度评分、过期机制、多设备同步、企业隐私'
 tags:
-- 本地记忆
-- 关系图谱
-- 加密存储
-- 企业级
-- 隐私保护
+  - 本地记忆
+  - 关系图谱
+  - 加密存储
+  - 企业级
+  - 隐私保护
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # 快速上下文记忆（专业版）

@@ -3,22 +3,21 @@ slug: "automation-recipe-pack"
 name: "automation-recipe-pack"
 version: 1.1.1
 displayName: "SkillHub Automation"
-summary: "SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。"
+summary: "SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。。SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。Us"
 license: "Proprietary"
 description: |-
   SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Automation
+  - 自动化
+  - 工作流
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # SkillHub Automation
@@ -38,6 +37,14 @@ category: "Automation"
 - SkillHub 自动化配方 - 10 个实用自动化场景
 - 适合：效率工具爱好者、自动化新手
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

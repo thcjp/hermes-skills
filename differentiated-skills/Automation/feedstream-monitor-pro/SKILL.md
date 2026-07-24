@@ -3,7 +3,7 @@ slug: feedstream-monitor-pro
 name: feedstream-monitor-pro
 version: 1.0.0
 displayName: Feedstream Monitor
-summary: 企业级安全公告监控专业版，含CVE关联分析、可利用性评分、状态追踪、速率限制、完整性校验.
+summary: "企业级安全公告监控专业版，含CVE关联分析、可利用性评分、状态追踪、速率限制、完整性校验.。安全公告流监控专业版是面向企业级场景的完整安全公告监控解决方案。在免费版基础监控之上，专业版新增C"
 license: Proprietary
 edition: pro
 description: '安全公告流监控专业版是面向企业级场景的完整安全公告监控解决方案。在免费版基础监控之上，专业版新增CVE关联分析、可利用性评分、状态追踪管理、速率限制与礼貌抓取、数据完整性校验、Webhook通知集成六大高级能力，满足安全团队对漏洞情报的深度分析和响应需求.
@@ -12,21 +12,20 @@ description: '安全公告流监控专业版是面向企业级场景的完整安
   差异化：完全中文化重写，去除所有平台烙印标识，新增六大高级功能、七种角色场景指南、可利用性评分模型、状态管理工作流、Webhook集成示例、完整FAQ（12问）与故障排查表（11项）。内容原创度超过70%。专业版使用GPT-4o模型路由，提供完整企业级监控能力与优先支持.
   适用关键词：企业漏洞管理、CVE关联分析、可利用性评分、状态追踪、Webhook告警、完整性校验、安全运营'
 tags:
-- 企业安全
-- CVE关联
-- 可利用性评分
-- 状态追踪
-- Webhook告警
+  - 企业安全
+  - CVE关联
+  - 可利用性评分
+  - 状态追踪
+  - Webhook告警
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 安全公告流监控（专业版）

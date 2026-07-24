@@ -3,7 +3,7 @@ slug: "join-meeting-free"
 name: "join-meeting-free"
 version: "1.0.0"
 displayName: "智能会议机器人免费版"
-summary: "免费版会议机器人，支持基础会议加入、语音状态监听与会议转写。"
+summary: "免费版会议机器人，支持基础会议加入、语音状态监听与会议转写。。会议机器人免费版，提供基础的会议参与功能. 支持会议加入、语音状态监听与会议转写. 适用于个人会议记录与基础会议辅助场景."
 license: "MIT"
 description: |-
   会议机器人免费版，提供基础的会议参与功能.
@@ -12,11 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 智能会议机器人（免费版）
@@ -86,6 +88,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回加入会议（Join Meeting）的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`加入会议（Join Meeting）`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 配置会议平台API凭证

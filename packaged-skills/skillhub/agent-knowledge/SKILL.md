@@ -3,23 +3,24 @@ slug: "agent-knowledge"
 name: "agent-knowledge"
 version: 1.0.1
 displayName: "Agent Knowledge"
-summary: "统一知识捕获与检索,聚合URL/视频/文章/论文/社媒,一处沉淀全源知识"
+summary: "统一知识捕获与检索,聚合URL/视频/文章/论文/社媒,一处沉淀全源知识。Unified knowledge capture and retrieval for URLs, video/ar"
 license: "Proprietary"
 description: |-
   Unified knowledge capture and retrieval for URLs, video/article/paper
   extracts, social posts, and。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Research
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # Agent Knowledge
@@ -40,6 +41,14 @@ category: "Agents"
 - Unified knowledge capture and retrieval for URLs, video/article/paper
   extracts, social posts, and
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

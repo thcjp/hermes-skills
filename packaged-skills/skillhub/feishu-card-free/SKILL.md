@@ -3,7 +3,7 @@ slug: "feishu-card-free"
 name: "feishu-card-free"
 version: "1.4.11"
 displayName: "协作平台卡片基础版"
-summary: "基础协作平台卡片发送，支持文本、标题和颜色设置"
+summary: "基础协作平台卡片发送，支持文本、标题和颜色设置。向协作平台用户或群组发送基础文本卡片的免费版。支持简单文本、卡片标题和颜色设置、 安全发送（自动处理转义）。适用于基础通知和简单消息推送场景."
 license: "MIT"
 description: |-
   向协作平台用户或群组发送基础文本卡片的免费版。支持简单文本、卡片标题和颜色设置、
@@ -12,11 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 协作平台卡片（免费版）
@@ -72,6 +74,14 @@ export API_KEY="your_api_key_here"
 通过 `node skills/feishu-card/send_safe.js` 包装器安全发送原始文本。自动处理临时文件创建和清理，避免shell转义问题。支持 `--text` 直接传入含特殊字符的内容，配合 `--title` 设置卡片标题。适用于自动化流程中的安全消息发送。- 验证返回数据的完整性和格式正确性
 - 参考`安全发送`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 升级提示
 
 以下为完整版（feishu-card）独有功能，免费版不可用：

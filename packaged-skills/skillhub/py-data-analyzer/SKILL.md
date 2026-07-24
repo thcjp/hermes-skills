@@ -3,7 +3,7 @@ slug: "py-data-analyzer"
 name: "py-data-analyzer"
 version: 1.0.1
 displayName: "Python数据分析(专业版)"
-summary: "企业级Python数据分析方案，支持机器学习建模、时间序列预测、大数据处理与自动化报表。"
+summary: "企业级Python数据分析方案，支持机器学习建模、时间序列预测、大数据处理与自动化报表。。Python数据分析专业版是一套面向数据科学家与企业级团队的高级数据分析解决方案，在免费版基础上扩展"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - Python
   - 企业级
   - 专业版
+  - 数据处理
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
 category: "Research"
 ---
 # Python数据分析(专业版)
@@ -72,6 +71,14 @@ category: "Research"
 **输出**: 返回任务类型的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`任务类型`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：销售预测与库存优化

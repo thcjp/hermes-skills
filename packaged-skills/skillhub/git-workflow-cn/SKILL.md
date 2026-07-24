@@ -3,23 +3,22 @@ slug: "git-workflow-cn"
 name: "git-workflow-cn"
 version: 1.1.1
 displayName: "Git Workflow Cn"
-summary: "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。"
+summary: "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。。Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。Use when 需要代码生成、"
 license: "Proprietary"
 description: |-
   Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
   - Automation
+  - 版本控制
+  - Git
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 category: "Development"
 ---
 # Git Workflow Cn
@@ -62,6 +61,14 @@ category: "Development"
 **输出**: 返回提交规范的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`提交规范`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -311,6 +318,13 @@ git gc --prune=now --aggressive
 * 重要操作先备份
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 创建：2026-03-12
 版本：1.0

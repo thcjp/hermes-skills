@@ -3,7 +3,7 @@ slug: "memory-scan-free"
 name: "memory-scan-free"
 version: "1.0.0"
 displayName: "记忆安全扫描"
-summary: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏"
+summary: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏。面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁. 提供"
 license: "MIT"
 description: |-
   面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁.
@@ -13,11 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 记忆安全扫描（Memory Scan）- 免费版
@@ -64,6 +66,14 @@ category: "Agents"
    - 支持扫描MEMORY.md、memory/*.md及工作区配置文件
    - 支持JSON格式输出，便于集成到其他工具
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：执行安全扫描

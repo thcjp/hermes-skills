@@ -3,24 +3,23 @@ slug: clickhouse-olap-expert
 name: clickhouse-analytics
 version: 1.0.1
 displayName: ClickHouse分析专家
-summary: 亿级数据秒级查询,ClickHouse列式数据库从建表到集群全栈优化
+summary: "亿级数据秒级查询,ClickHouse列式数据库从建表到集群全栈优化。ClickHouse分析专家——基于官方最佳实践设计高性能列式分析数据库，让亿级数据查询秒级返回。适用于实时分析、日志分"
 license: Proprietary
 description: ClickHouse分析专家——基于官方最佳实践设计高性能列式分析数据库，让亿级数据查询秒级返回。适用于实时分析、日志分析、用户行为分析、时序数据、广告技术、数据仓库等场景。从表引擎选择到集群管理，全栈OLAP方案。国内场景可使用阿里云ClickHouse或腾讯云CDWCH。触发关键词：ClickHouse、列式数据库、分析数据库、MergeTree、分区、物化视图、投影、查询优化、OLAP、大数据分析
 tags:
-- 数据分析
-- ClickHouse
-- 列式数据库
-- OLAP
-- 大数据
+  - 数据分析
+  - ClickHouse
+  - 列式数据库
+  - OLAP
+  - 大数据
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
 category: "Automation"
 ---
 # ClickHouse分析专家
@@ -34,6 +33,14 @@ category: "Automation"
 - **物化视图与投影**：物化视图（跨表预聚合）+ 投影（同表多排序）+ 自动选择最优投影
 - **查询优化**：列式存储只查所需列 + groupBitmap 替代 COUNT(DISTINCT) + 字典替代 JOIN + 分布式查询优化
 - **集群管理**：分片（Distributed 表路由）+ 副本（ReplicatedMergeTree + ZooKeeper/Keeper）+ 负载均衡
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

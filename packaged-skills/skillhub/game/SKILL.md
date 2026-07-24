@@ -3,23 +3,22 @@ slug: "game"
 name: "game"
 version: 2.0.1
 displayName: "Game"
-summary: "AI Agent即时游戏设计引擎,一句话概念即得可玩游戏"
+summary: "AI Agent即时游戏设计引擎,一句话概念即得可玩游戏。The instant game design engine for AI agents。Describe any game con"
 license: "Proprietary"
 description: |-
   The instant game design engine for AI agents。Describe any game concept
   in one sentence and get a。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Lifestyle
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Game
@@ -44,6 +43,14 @@ category: "Automation"
 - 游戏循环架构：状态管理（菜单/游戏中/暂停/结束）、帧率控制、资源加载
 - 音效与视觉效果：粒子系统、屏幕震动、缓动动画、程序化音效
 - 触屏与键盘双输入支持，响应式适配桌面和移动设备
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

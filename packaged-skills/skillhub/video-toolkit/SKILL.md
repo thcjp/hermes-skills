@@ -3,7 +3,7 @@ slug: "video-toolkit"
 name: "video-toolkit"
 version: 1.0.1
 displayName: "视频工具箱专业版"
-summary: "批量视频处理+AI超分+智能重构图+多码率+自动化工作流,面向内容团队的专业视频引擎"
+summary: "批量视频处理+AI超分+智能重构图+多码率+自动化工作流,面向内容团队的专业视频引擎。面向内容团队和机构的专业级视频处理引擎,在免费版核心功能之上,新增批量 文件处理、AI超分辨率、智能重构"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -31,16 +31,15 @@ tags:
   - 企业级
   - 批量处理
   - AI增强
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 category: "Creative"
 ---
 # 视频工具箱专业版
@@ -310,6 +309,14 @@ ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.
 - 关键参数: `视频质量评估` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:内容团队批量多平台发布

@@ -3,7 +3,7 @@ slug: "report-free"
 name: "report-free"
 version: "1.0.0"
 displayName: "报表配置基础版"
-summary: "自定义报表基础能力，支持单一数据源接入、基础字段映射与标准格式导出。"
+summary: "自定义报表基础能力，支持单一数据源接入、基础字段映射与标准格式导出。。自定义报表基础能力，支持单一数据源接入、基础字段映射 与标准格式导出. 核心能力: - 单一数据源的基础报表配置 - 字"
 license: "MIT"
 description: |-
   自定义报表基础能力，支持单一数据源接入、基础字段映射
@@ -27,11 +27,14 @@ description: |-
   差异化:基础版聚焦单一数据源的报表生成，去除了高级版的多源合并、复杂调度与可视化图表能力.
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+  - exec
+homepage: ""
 category: "Automation"
 ---
 # 报表配置基础版
@@ -44,6 +47,14 @@ category: "Automation"
 - 标准格式导出：将结果导出为 Markdown 表格、JSON 或 CSV 格式
 - 报表元信息记录：记录数据源、生成时间、记录数等基础元信息
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

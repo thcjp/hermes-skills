@@ -3,7 +3,7 @@ slug: docker-toolkit-pro
 name: docker-toolkit-pro
 version: 1.0.0
 displayName: Docker容器专业版
-summary: 企业级Docker管理平台，支持集群、私有仓库、安全扫描与CI/CD集成.
+summary: "企业级Docker管理平台，支持集群、私有仓库、安全扫描与CI/CD集成.。面向企业运维团队的Docker全功能管理平台。支持多节点集群管理、"
 license: Proprietary
 edition: pro
 description: '面向企业运维团队的Docker全功能管理平台。支持多节点集群管理、
@@ -11,20 +11,18 @@ description: '面向企业运维团队的Docker全功能管理平台。支持多
   私有镜像仓库、镜像安全扫描、容器监控与CI/CD流水线集成。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
 tags:
-- Operations
-- Docker
-- 企业级
-- 容器编排
+  - Operations
+  - Docker
+  - 企业级
+  - 容器编排
+  - 容器
+  - DevOps
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "容器,Docker,DevOps"
 category: "Development"
 ---
 # Docker容器专业版（PRO版）

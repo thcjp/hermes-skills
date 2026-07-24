@@ -3,7 +3,7 @@ slug: flow-control-hub-pro
 name: flow-control-hub-pro
 version: 1.0.0
 displayName: 桌面流程控制中枢(专业版)
-summary: 桌面自动化全功能专业版，含图像识别、多显示器、审批模式、操作回放，覆盖企业级RPA需求.
+summary: "桌面自动化全功能专业版，含图像识别、多显示器、审批模式、操作回放，覆盖企业级RPA需求.。桌面流程控制中枢专业版是面向企业级RPA场景的完整桌面自动化解决方案。在免费版核心能力之上，专业版解"
 license: Proprietary
 edition: pro
 description: '桌面流程控制中枢专业版是面向企业级RPA场景的完整桌面自动化解决方案。在免费版核心能力之上，专业版解锁图像识别定位、多显示器支持、审批模式、操作日志回放、自定义移动曲线五大高级功能，满足高精度、高安全、高可靠的自动化需求.
@@ -12,21 +12,20 @@ description: '桌面流程控制中枢专业版是面向企业级RPA场景的完
   差异化：完全中文化重写，统一流程控制语义模型，新增五大高级功能、七种角色场景指南、性能优化策略（缓存/并行/批处理）、多平台集成示例、版本升级迁移指南、完整FAQ（12问）与故障排查表（11项）。内容原创度超过70%。专业版使用GPT-4o模型路由，提供完整企业级能力与优先支持.
   适用关键词：桌面自动化、图像识别、多显示器、审批模式、操作回放、RPA企业版、流程编排、自动化测试'
 tags:
-- 桌面自动化
-- 企业RPA
-- 图像识别
-- 流程编排
-- 自动化测试
+  - 桌面自动化
+  - 企业RPA
+  - 图像识别
+  - 流程编排
+  - 自动化测试
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 桌面流程控制中枢（专业版）

@@ -3,7 +3,7 @@ slug: "memory-orchestrator-v2"
 name: "memory-orchestrator-v2"
 version: 1.0.1
 displayName: "记忆编排器"
-summary: "解决分层不清、摘要不稳、并发冲突、无健康度指标的智能记忆编排器"
+summary: "解决分层不清、摘要不稳、并发冲突、无健康度指标的智能记忆编排器。记忆编排器是面向 AI Agent 的智能记忆管理系统，针对"分层体系不够清晰、自动摘要质量不稳定、并发写入冲突、缺乏记忆健康"
 license: "Proprietary"
 description: |-
   记忆编排器是面向 AI Agent 的智能记忆管理系统，针对"分层体系不够清晰、自动摘要质量不稳定、并发写入冲突、缺乏记忆健康度指标"四大高频痛点而设计。它用四层记忆架构（工作/短期/长期/重要）与多模式检索，提供从存储到检索到摘要的全生命周期编排，让 Agent 记忆真正可控可观测。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -12,12 +12,16 @@ tags:
   - 智能管理
   - 语义检索
   - 上下文治理
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 记忆编排器（Memory Orchestrator）
@@ -144,6 +148,14 @@ await skills.memoryOrchestrator({
   persistPath: "./my-memory.json"
 });
 ```
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 参数说明
 | 参数 | 类型 | 必填 | 说明 |

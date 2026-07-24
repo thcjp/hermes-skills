@@ -3,7 +3,7 @@ slug: "api-toolkit"
 name: "api-toolkit"
 version: 1.0.1
 displayName: "API工具箱(专业版)"
-summary: "企业级API测试调试全套件，含批量回归、Mock服务、性能压测、契约校验与团队协作。"
+summary: "企业级API测试调试全套件，含批量回归、Mock服务、性能压测、契约校验与团队协作。。API工具箱专业版是面向研发团队的全功能API测试调试套件。在免费版的请求模板、认证范式、错误诊断基础上"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 回归测试
   - 性能压测
   - 契约校验
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # API工具箱(专业版)
@@ -163,6 +162,14 @@ Doc: 搜索 "Stripe card_declined codes"
 
 - 参考`功能6：团队协作空间`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：前后端并行开发（前端+后端角色）

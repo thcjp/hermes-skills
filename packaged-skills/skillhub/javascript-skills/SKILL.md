@@ -3,23 +3,22 @@ slug: "javascript-skills"
 name: "javascript-skills"
 version: 1.0.3
 displayName: "JavaScript"
-summary: "综合JavaScript风格指南,激活即供最佳实践"
+summary: "综合JavaScript风格指南,激活即供最佳实践。A comprehensive JavaScript style guide skill。When activated, it provi"
 license: "Proprietary"
 description: |-
   A comprehensive JavaScript style guide skill。When activated, it provides
   best-practice JavaScrip。
 tags:
   - Development
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # JavaScript
@@ -41,6 +40,14 @@ category: "Automation"
 - When activated, it provides
   best-practice JavaScrip
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

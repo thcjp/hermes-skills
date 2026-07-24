@@ -14,20 +14,19 @@ description: '智能更新管家专业版是面向团队与企业的全功能更
   差异化：完全中文化重写，移除原始平台标识，新增六大高级功能（多环境编排、回滚备份、金丝雀发布、依赖分析、Breaking Change检测、合规审计）。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整更新编排能力与优先支持。保留原始MIT版权声明.
   适用关键词：更新编排、多环境更新、回滚备份、金丝雀发布、依赖分析、Breaking Change、合规审计、更新窗口'
 tags:
-- 自动更新
-- 多环境编排
-- 回滚备份
-- 合规审计
+  - 自动更新
+  - 多环境编排
+  - 回滚备份
+  - 合规审计
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 智能更新管家（专业版）

@@ -3,22 +3,20 @@ slug: "auto-monitor"
 name: "auto-monitor"
 version: 1.0.1
 displayName: "Auto Monitor"
-summary: "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。"
+summary: "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。。主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使"
 license: "Proprietary"
 description: |-
   主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - Operations
+  - 监控
+  - 运维
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "监控,运维,工具"
 category: "Operations"
 ---
 # Auto Monitor
@@ -38,6 +36,14 @@ category: "Operations"
 
 - 定期检查服务器健康，主动汇报，无需等待指令
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

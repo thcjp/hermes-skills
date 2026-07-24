@@ -26,19 +26,19 @@ description: '面向个人博主的 Hugo 博客发布工具，简化文章发布
 
   差异化: 免费版聚焦个人博主的单篇文章发布场景，提供自动化的 Front Matter 生成与推送流程，开箱即用'
 tags:
-- 开发工具
-- 博客
-- Hugo
-- 内容发布
+  - 开发工具
+  - 博客
+  - Hugo
+  - 内容发布
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # Hugo 博客发布工具（免费版）

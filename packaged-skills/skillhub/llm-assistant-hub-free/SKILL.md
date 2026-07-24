@@ -3,7 +3,7 @@ slug: "llm-assistant-hub-free"
 name: "llm-assistant-hub-free"
 version: "1.0.0"
 displayName: "LLM助手中枢"
-summary: "长文档推理基础版：分层分析+假设检测，提升文档推理质量。"
+summary: "长文档推理基础版：分层分析+假设检测，提升文档推理质量。。针对长文档的长上下文推理优化器基础版，提供分层分析与假设检测两大核心能力. 分层分析策略（L0快速扫描→L1深度分析）按文档长度自动"
 license: "MIT"
 description: |-
   针对长文档的长上下文推理优化器基础版，提供分层分析与假设检测两大核心能力.
@@ -14,11 +14,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # LLM助手中枢（基础版）
@@ -56,6 +58,14 @@ category: "Automation"
 **输出**: 返回结构化输出的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`结构化输出`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：解析上下文

@@ -3,26 +3,27 @@ slug: skill-production-standards
 name: skill-production-standards
 version: 1.2.0
 displayName: Skill生产规范
-summary: 统一规范所有Skill的优化、升级、改造、去标识、分收费/免费双版本的工作流程（v1.2修复版）
+summary: "统一规范所有Skill的优化、升级、改造、去标识、分收费/免费双版本的工作流程（v1.2修复版）。Skill生产规范是一套统一的Skill生产流水线标准，用于指导从原始skill（下载/原创"
 license: Proprietary
 edition: standards
 description: Skill生产规范是一套统一的Skill生产流水线标准，用于指导从原始skill（下载/原创）到可商用skill的完整改造流程。它解决"每个skill改造标准不一、质量参差不齐、收费策略混乱、去除标识不彻底"的核心痛点。Use
   when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单.
 tags:
-- Skill规范
-- 生产流水线
-- 商业化
-- 质量标准
+  - Skill规范
+  - 生产流水线
+  - 商业化
+  - 质量标准
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 本规范是所有Skill生产、优化、升级、改造的**唯一权威标准**。任何Skill在进入`d:\skills\differentiated-skills\`或`d:\skills\packaged-skills\`之前，必须通过本规范的全部检查.
@@ -467,6 +468,14 @@ A: 通过`exclude_dirs = ['skill-production-standards']`排除，因为规范需
 
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：统一规范所有、的优化、去标识、分收费、免费双版本的工作、修复版、生产规范是一套统、生产流水线标准、用于指导从原始、到可商用、的完整改造流程、它解决、改造标准不一、质量参差不齐、收费策略混乱、去除标识不彻底、的核心痛点、Use、when、需要电商运营、商品管理、订单处理、支付集成时使用、不适用于虚假交易、和刷单等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 | 场景 | 输入 | 输出 |
 |:---:|:---:|:---:|

@@ -3,25 +3,26 @@ slug: agent-copilot-pro
 name: agent-copilot-pro
 version: 1.0.1
 displayName: 代理副驾驶
-summary: 解决Prompt幻觉、上下文腐烂、工具误选、任务拆解不彻底的AI代理工程副驾驶
+summary: "解决Prompt幻觉、上下文腐烂、工具误选、任务拆解不彻底的AI代理工程副驾驶。AI Agent工程化副驾驶：提供五段式System Prompt结构化生成、上下文腐烂诊断（密度衰减/噪声累"
 license: Proprietary
 description: AI Agent工程化副驾驶：提供五段式System Prompt结构化生成、上下文腐烂诊断（密度衰减/噪声累积/注意力漂移三因素）、工具选择决策矩阵（任务类型×参数复杂度×失败成本）、任务DAG拆解、Agent
   Loop模式选择（ReAct/CoT/Plan-Execute）、Prompt质量评估与幻觉检测六项核心能力
 tags:
-- 代理工程
-- 提示词工程
-- 任务编排
-- 质量评估
+  - 代理工程
+  - 提示词工程
+  - 任务编排
+  - 质量评估
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 代理副驾驶（Agent Copilot Pro）
@@ -64,6 +65,14 @@ category: "Agents"
 **输出**: 返回Prompt 质量评估器（含幻觉检测）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：工具误选、任务拆解不彻底的、代理工程副驾驶、Agent、工程化副驾驶、提供五段式、Loop、模式选择、ReAct、CoT、Plan、Execute、质量评估与幻觉检、测六项核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **何时使用**：

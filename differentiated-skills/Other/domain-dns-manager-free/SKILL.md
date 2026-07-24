@@ -9,19 +9,18 @@ edition: free
 description: 域名DNS管理免费版是一款面向个人开发者与小团队的域名管理Skill，封装Cloudflare、DNSimple、Namecheap三大平台的常用操作。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 域名管理
-- DNS配置
-- Cloudflare
-- 运维工具
+  - 域名管理
+  - DNS配置
+  - Cloudflare
+  - 运维工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 域名DNS管理免费版（Domain DNS Manager Free）

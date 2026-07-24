@@ -3,25 +3,26 @@ slug: token-guard-pro
 name: token-guard-pro
 version: 1.0.1
 displayName: Token守护者
-summary: 解决压缩损质、缓存命中低、无模型路由、预算失控的Token成本守护器
+summary: "解决压缩损质、缓存命中低、无模型路由、预算失控的Token成本守护器。面向 AI Agent 的 token 成本优化系统，直击压缩损质、缓存命中低、无模型路由、预算失控四大痛点。适用于长会"
 license: Proprietary
 description: 面向 AI Agent 的 token 成本优化系统，直击压缩损质、缓存命中低、无模型路由、预算失控四大痛点。适用于长会话治理、高频问答缓存、多模型混合调用、企业预算管控等场景。核心能力含分级上下文压缩、三层语义缓存、自适应模型路由、预算守护、Prefix
   Cache 支持。适用关键词：token优化、成本降低、语义缓存、上下文压缩、模型路由、预算控制、token saver、semantic cache.
 tags:
-- Token优化
-- 成本控制
-- 语义缓存
-- 模型路由
+  - Token优化
+  - 成本控制
+  - 语义缓存
+  - 模型路由
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # Token 守护者（Token Guard Pro）
@@ -60,6 +61,14 @@ L1 精确查询匹配（100% 节省，高频重复 FAQ）、L2 语义相似度 >
 **输出**: 返回Prefix Cache 与成本可视化的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解决压缩损质、缓存命中低、无模型路由、预算失控的、成本守护器、Agent、成本优化系统、直击压缩损质、预算失控四大痛点、适用于长会话治理、高频问答缓存、多模型混合调用、企业预算管控等场、核心能力含分级上、自适应模型路由、适用关键词、成本降低、预算控制、saver、semantic等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景类型 | 输入 | 输出 | 是否适用 |

@@ -3,7 +3,7 @@ slug: "finance-acct-tool-pro"
 name: "finance-acct-tool-pro"
 version: "1.0.0"
 displayName: "财务会计专业版"
-summary: "企业级财务会计系统，支持多账套、全税种、批量发票、ERP集成与审计追踪。"
+summary: "企业级财务会计系统，支持多账套、全税种、批量发票、ERP集成与审计追踪。。面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、 全税种自动计算、批量电子发票生成、银行API直连对"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,15 +15,14 @@ tags:
   - 会计记账
   - 企业级
   - 审计合规
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 财务会计专业版（PRO版）

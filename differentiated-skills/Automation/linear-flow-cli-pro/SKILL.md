@@ -15,21 +15,20 @@ description: 'Linear流程CLI（专业版）面向使用Linear进行复杂项目
   SkillPay发布。保留原始MIT-0版权声明.
   适用关键词：批量操作、dry-run预览、自动化策略、Slack集成、Git联动、Webhook、Initiative、Agent运行时'
 tags:
-- Linear
-- 任务管理
-- Agent运行时
-- 批量操作
-- 工作流自动化
+  - Linear
+  - 任务管理
+  - Agent运行时
+  - 批量操作
+  - 工作流自动化
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # Linear流程CLI（专业版）

@@ -3,7 +3,7 @@ slug: "design"
 name: "design"
 version: 1.0.1
 displayName: "自适应设计偏好引擎"
-summary: "自动学习用户视觉偏好,适配UI/图形/视频/印刷多媒介,持续进化设计风格记忆"
+summary: "自动学习用户视觉偏好,适配UI/图形/视频/印刷多媒介,持续进化设计风格记忆。自适应设计偏好引擎。通过观察用户在设计过程中的选择、反馈与反应,自动提取并沉淀视觉偏好模式. 支持 UI 界面、"
 license: "Proprietary"
 description: |-
   自适应设计偏好引擎。通过观察用户在设计过程中的选择、反馈与反应,自动提取并沉淀视觉偏好模式.
@@ -16,16 +16,14 @@ tags:
   - Creative
   - 设计
   - 偏好学习
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # Design
@@ -79,6 +77,14 @@ category: "Creative"
 **输出**: 返回四大偏好分类的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`四大偏好分类`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 依赖说明
 
 ### 运行环境

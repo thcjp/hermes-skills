@@ -3,7 +3,7 @@ slug: "vector-db-manager"
 name: "vector-db-manager"
 version: 1.0.1
 displayName: "向量数据库管理专业版"
-summary: "全功能向量数据库平台，支持混合检索、分布式部署、自动调优与性能监控"
+summary: "全功能向量数据库平台，支持混合检索、分布式部署、自动调优与性能监控。面向AI工程团队的全功能向量数据库管理平台，支持混合检索、分布式部署、索引自动调优与实时性能监控。核心能力：在免费版基础上"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,16 @@ tags:
   - 向量检索
   - 企业级AI
   - 分布式系统
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 向量数据库管理专业版
@@ -72,6 +72,14 @@ category: "Automation"
 **输出**: 返回嵌入向量导入的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`嵌入向量导入`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：大规模语义搜索引擎（AI工程师视角）

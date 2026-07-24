@@ -3,7 +3,7 @@ slug: "whatsapp-style"
 name: "whatsapp-style"
 version: 1.0.1
 displayName: "WhatsApp样式工具-专业版"
-summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配"
+summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配。WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力: - 全部WhatsApp格"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,16 +28,14 @@ tags:
   - 企业级
   - 批量转换
   - 格式规范
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
 category: "Communication"
 ---
 # WhatsApp样式工具-专业版
@@ -143,6 +141,14 @@ print(f"校验结果: {result}")
 ```
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:客服团队统一消息风格

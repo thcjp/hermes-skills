@@ -3,7 +3,7 @@ slug: local-vector-memory-pro
 name: local-vector-memory-pro
 version: 1.0.0
 displayName: 本地向量记忆(专业版)
-summary: 零API零云依赖的本地向量记忆专业版：LanceDB高级搜索+自动召回+知识图谱，全功能解锁.
+summary: "零API零云依赖的本地向量记忆专业版：LanceDB高级搜索+自动召回+知识图谱，全功能解锁.。面向隐私敏感与离线场景的本地向量记忆系统专业版。基于 LanceDB + 纯本地 embedd"
 license: Proprietary
 edition: pro
 description: '面向隐私敏感与离线场景的本地向量记忆系统专业版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部
@@ -15,19 +15,20 @@ description: '面向隐私敏感与离线场景的本地向量记忆系统专业
   知识图谱（决策分支感知）。所有指令按需分层加载，降低 token 消耗，embedding 缓存避免重复计算.
   适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local memory、知识图谱、自动召回、专业记忆'
 tags:
-- 智能代理
-- 记忆管理
-- 本地存储
+  - 智能代理
+  - 记忆管理
+  - 本地存储
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 本地向量记忆（专业版）
@@ -679,5 +680,12 @@ node （请参考skill目录中的脚本文件） stats --detailed
 - 新增依赖说明章节与版本兼容性（含 Git、level-js）
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 *本地优先，隐私至上。专业解锁，全功能开。*

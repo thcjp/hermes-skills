@@ -3,7 +3,7 @@ slug: "discord-communities-free"
 name: "discord-communities-free"
 version: "1.0.0"
 displayName: "Discord社区免费"
-summary: "Discord社区只读查询助手,提供用户身份、公会列表与邀请解析基础能力"
+summary: "Discord社区只读查询助手,提供用户身份、公会列表与邀请解析基础能力。Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力. 覆盖当前用户资料、公"
 license: "MIT"
 description: |-
   Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力.
@@ -21,12 +21,14 @@ description: |-
 tags:
   - Communication
   - 社区运营
+  - Discord
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Discord 社区管理 (免费版)
@@ -62,6 +64,14 @@ clawlink_list_tools({ integration: "discord" });
 **处理**: 解析 safe 级别指令的输入参数,完成核心逻辑,返回结构化响应和状态.
 **输出**: 返回仅执行 safe 级别的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

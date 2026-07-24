@@ -3,7 +3,7 @@ slug: "discord-chat"
 name: "discord-chat"
 version: 1.0.1
 displayName: "Discord Chat"
-summary: "通过message工具在Discord频道发消息、回复、搜索、读取、回应、编辑与删除"
+summary: "通过message工具在Discord频道发消息、回复、搜索、读取、回应、编辑与删除。discord-chat 通过 message 工具与 Discord 频道交互,覆盖消息发送、线程回复"
 license: "Proprietary"
 description: |-
   discord-chat 通过 message 工具与 Discord 频道交互,覆盖消息发送、线程回复、
@@ -15,16 +15,14 @@ tags:
   - Communication
   - Discord
   - Chat
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
 category: "Communication"
 ---
 # Discord Chat
@@ -109,6 +107,14 @@ message action=channel-info channel=discord channelId="1234567890"
 **处理**: 解析频道管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回频道管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:社区答疑机器人

@@ -3,7 +3,7 @@ slug: cloudforge-automation-pro
 name: cloudforge-automation-pro
 version: 1.0.0
 displayName: Cloudforge Automatio
-summary: 企业级多云IaC编排系统，含多云管理、Ansible配置、CI/CD流水线、合规审计与灾备恢复.
+summary: "企业级多云IaC编排系统，含多云管理、Ansible配置、CI/CD流水线、合规审计与灾备恢复.。云锻造自动化专业版是面向团队与企业的全功能多云基础设施即代码编排系统。不仅覆盖单云IaC基础"
 license: Proprietary
 edition: pro
 description: '云锻造自动化专业版是面向团队与企业的全功能多云基础设施即代码编排系统。不仅覆盖单云IaC基础能力，更提供多云统一管理、Ansible配置管理、CI/CD部署流水线、合规策略审计、灾备恢复、成本优化与安全加固，确保企业级云基础设施安全、合规、高效.
@@ -13,21 +13,20 @@ description: '云锻造自动化专业版是面向团队与企业的全功能多
   差异化：完全中文化重写，移除原始作者署名行，新增多云统一管理、Ansible配置管理、CI/CD流水线、合规审计、灾备恢复、成本优化、安全加固七大高级能力。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整多云编排能力与优先支持。保留原始MIT版权声明.
   适用关键词：多云管理、IaC编排、Ansible、CI/CD、合规审计、灾备恢复、成本优化、安全加固'
 tags:
-- 多云管理
-- IaC编排
-- 合规审计
-- 灾备恢复
-- 成本优化
+  - 多云管理
+  - IaC编排
+  - 合规审计
+  - 灾备恢复
+  - 成本优化
+  - 云计算
+  - DevOps
+  - 基础设施
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
 category: "Operations"
 ---
 # 云锻造自动化（专业版）

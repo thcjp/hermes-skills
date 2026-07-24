@@ -3,27 +3,26 @@ slug: diagram-master-pro
 name: diagram-master-pro
 version: 1.0.0
 displayName: 图表制作大师(专业版)
-summary: 全功能SVG图表系统，含批量生成、自定义配色、模板库、高清导出、版本管理与交互式图表.
+summary: "全功能SVG图表系统，含批量生成、自定义配色、模板库、高清导出、版本管理与交互式图表.。图表制作大师专业版是技术文档图表制作的完整解决方案。在免费版基础上解锁批量图表生成、自定义配色方案、图"
 license: Proprietary
 edition: pro
 description: 图表制作大师专业版是技术文档图表制作的完整解决方案。在免费版基础上解锁批量图表生成、自定义配色方案、图表模板库、SVG转PNG高清导出、图表版本管理、交互式图表、图表组件库七大高级功能，帮助团队建立统一、高效、可复用的图表制作体系。
   when 、品牌视觉时使用.
 tags:
-- 图表制作
-- 批量生成
-- 自定义配色
-- 高清导出
-- 专业版
+  - 图表制作
+  - 批量生成
+  - 自定义配色
+  - 高清导出
+  - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 > **从单张手工到批量自动化，从固定配色到品牌定制。企业级图表制作系统。**

@@ -3,7 +3,7 @@ slug: "python-toolkit"
 name: "python-toolkit"
 version: 1.0.1
 displayName: "Python工具箱(专业版)"
-summary: "团队级Python规范套件,含类型系统、异步、测试金字塔、性能优化与CI治理。"
+summary: "团队级Python规范套件,含类型系统、异步、测试金字塔、性能优化与CI治理。。Python工具箱(专业版)面向团队与企业,提供完整的Python编码规范、类型系统、异步优秀实践、测试金字塔"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -25,16 +25,15 @@ tags:
   - 异步
   - 性能优化
   - 测试
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Python工具箱(专业版)
@@ -81,6 +80,14 @@ category: "Automation"
 **输出**: 返回类型系统的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`类型系统`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:企业级异步服务规范统一

@@ -3,27 +3,27 @@ slug: file-browser-tool-pro
 name: file-browser-tool-pro
 version: 1.0.0
 displayName: 文件浏览器(专业版)
-summary: 企业级文件浏览器专业版，含批量操作、高级搜索、文件监控、压缩解压与云存储集成.
+summary: "企业级文件浏览器专业版，含批量操作、高级搜索、文件监控、压缩解压与云存储集成.。文件浏览器助手专业版是面向企业级场景的完整文件管理与操作工具。在免费版基础操作能力之上，新增批量操作、高级搜索"
 license: Proprietary
 edition: pro
 description: 文件浏览器助手专业版是面向企业级场景的完整文件管理与操作工具。在免费版基础操作能力之上，新增批量操作、高级搜索、文件监控、压缩解压、二进制查看、权限管理、文件比较、云存储集成八大高级能力。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 文件管理
-- 企业级
-- 批量操作
-- 文件监控
-- 云存储
+  - 文件管理
+  - 企业级
+  - 批量操作
+  - 文件监控
+  - 云存储
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 > **批量操作+高级搜索+文件监控+云存储。企业级文件管理全功能覆盖。**

@@ -3,7 +3,7 @@ slug: "json-parse-engine"
 name: "json-parse-engine"
 version: 1.0.1
 displayName: "JSON解析引擎专业版"
-summary: "企业级JSON解析引擎，支持流式解析、批量处理、DataFrame转换、自定义展平策略与增量解析。"
+summary: "企业级JSON解析引擎，支持流式解析、批量处理、DataFrame转换、自定义展平策略与增量解析。。JSON解析引擎专业版面向企业级场景，在免费版基础上扩展流式解析、批量目录处理、DataF"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,15 @@ tags:
   - JSON
   - 企业级
   - 解析
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # JSON解析引擎专业版
@@ -91,6 +90,14 @@ category: "Automation"
 **输入**: 用户提供性能基准所需的指令和必要参数.
 **输出**: 返回性能基准的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 角色 | 价值 | 推荐能力 |

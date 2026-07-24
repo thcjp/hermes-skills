@@ -3,7 +3,7 @@ slug: "bilibili-all-in-one"
 name: "bilibili-all-in-one"
 version: 1.0.25
 displayName: "B站全功能工具箱"
-summary: "B站热门监控、视频下载、数据追踪、字幕处理、播放与投稿一体化工具集。"
+summary: "B站热门监控、视频下载、数据追踪、字幕处理、播放与投稿一体化工具集。。面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、 数据追踪(W"
 license: "Proprietary"
 description: |-
   面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、
@@ -18,16 +18,15 @@ tags:
   - bilibili
   - video
   - downloader
+  - B站
+  - 视频
+  - 媒体
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "B站,视频,媒体"
 category: "Creative"
 ---
 # Bilibili All In One 全功能工具箱
@@ -102,6 +101,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回数据追踪 (watcher)的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`数据追踪 (watcher)`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

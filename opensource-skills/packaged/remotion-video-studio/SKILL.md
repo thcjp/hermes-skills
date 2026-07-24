@@ -3,25 +3,22 @@ slug: react-video-composer
 name: remotion-video-studio
 version: 1.0.1
 displayName: 视频创作工作室
-summary: 自然语言转视频,用React代码生成字幕转场配音动画,无需剪辑软件
+summary: "自然语言转视频,用React代码生成字幕转场配音动画,无需剪辑软件。视频创作工作室将自然语言描述转换为基于React的可渲染视频代码,核心功能包括分镜脚本结构化、React视频代码生成(Co"
 license: Proprietary
 description: 视频创作工作室将自然语言描述转换为基于React的可渲染视频代码,核心功能包括分镜脚本结构化、React视频代码生成(Composition/Sequence/动画原语)、TTS配音与音频转录字幕同步、多规格渲染输出(横屏/竖屏/方形)。适用于文字转视频、字幕同步、数据可视化动画、产品演示视频、社交短视频场景。触发关键词:视频制作、视频生成、React视频、短视频、内容创作、Remotion、字幕同步、视频渲染。
 tags:
-- 视频制作
-- 视频生成
-- React视频
-- 短视频
-- 内容创作
+  - 视频制作
+  - 视频生成
+  - React视频
+  - 短视频
+  - 内容创作
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
-- read
-- exec
-  0.5元/次
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+  - read
+  - exec
+  - write
 category: "Creative"
 ---
 # 视频创作工作室
@@ -35,6 +32,14 @@ category: "Creative"
 3. **配音与音效处理**:TTS配音将脚本文本转为语音生成音频文件,音频转录对配音音频转录生成精确时间轴用于字幕同步,背景音乐可选添加BGM支持节拍同步视觉脉冲。
 4. **多规格渲染输出**:浏览器实时预览,调用渲染管线输出MP4/WebM,支持横屏1920x1080、竖屏1080x1920、方形1080x1080多规格。
 5. **动画原语库**:淡入淡出/缩放/位移/旋转/路径动画,文字特效(marker sweep/手绘圆圈/爆发线/scribble/sketchout),数据可视化(动态柱状图/折线图/数字翻滚),音频反应(beat sync/glow pulse)。
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

@@ -3,7 +3,7 @@ slug: "music-gen-tool-pro"
 name: "music-gen-tool-pro"
 version: "1.0.0"
 displayName: "音乐生成工具专业版"
-summary: "企业级AI音乐生成系统,支持批量生成、版权管理、多平台调度与CI/CD集成,适合团队与商业项目。"
+summary: "企业级AI音乐生成系统,支持批量生成、版权管理、多平台调度与CI/CD集成,适合团队与商业项目。。音乐生成工具专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -16,15 +16,13 @@ tags:
   - 版权管理
   - CI/CD
   - 自动化
+  - 音频
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "音乐生成,音频,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 音乐生成工具专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,PRO版增加批量生成、版权资产管理、多平台智能调度、音乐质量审计与CI/CD集成能力,满足商业级音乐生产的效率与合规需求.

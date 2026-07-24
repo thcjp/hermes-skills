@@ -3,7 +3,7 @@ slug: "discord-toolkit"
 name: "discord-toolkit"
 version: 1.0.1
 displayName: "Discord工具箱专业版"
-summary: "企业级 Discord 管理工具,支持批量操作、审核管理、角色权限与自定义表情贴纸。"
+summary: "企业级 Discord 管理工具,支持批量操作、审核管理、角色权限与自定义表情贴纸。。面向企业运营与社区管理团队的 Discord 全功能管理工具。核心能力: - 批量消息发送、清理与定时发"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -26,16 +26,14 @@ tags:
   - Communication
   - 社区审核
   - 批量操作
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
 category: "Communication"
 ---
 # Discord工具箱专业版
@@ -84,6 +82,14 @@ category: "Communication"
 **输出**: 返回表情反应的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`表情反应`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:批量发布多频道通知

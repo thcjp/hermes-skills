@@ -3,25 +3,24 @@ slug: obsidian-toolkit-free
 name: obsidian-toolkit-free
 version: 1.0.1
 displayName: Obsidian工具箱(免费版)
-summary: Obsidian综合工具箱免费版，含vault发现、笔记管理、基础模板与插件生态入门指南.
+summary: "Obsidian综合工具箱免费版，含vault发现、笔记管理、基础模板与插件生态入门指南.。Obsidian工具箱免费版是面向AI Agent的Obsidian综合管理工具。不同于基础入门指"
 license: Proprietary
 edition: free
 description: Obsidian工具箱免费版是面向AI Agent的Obsidian综合管理工具。不同于基础入门指南，本技能聚焦"综合工具箱"能力：vault发现、笔记全生命周期管理、模板系统入门、插件生态认知，帮助Agent成为Obsidian用户的得力助手。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- Obsidian
-- 笔记管理
-- 模板系统
-- 插件生态
+  - Obsidian
+  - 笔记管理
+  - 模板系统
+  - 插件生态
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 > **不是教你入门Obsidian，而是提供一套综合工具箱。vault发现、笔记管理、模板入门、插件认知，一站式服务。**

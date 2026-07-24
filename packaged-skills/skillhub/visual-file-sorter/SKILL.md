@@ -3,7 +3,7 @@ slug: "visual-file-sorter"
 name: "visual-file-sorter"
 version: 0.1.1
 displayName: "Visual File Sorter"
-summary: "自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。"
+summary: "自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。。自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。核心能力: -"
 license: "Proprietary"
 description: |-
   自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。核心能力:
@@ -23,16 +23,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Visual File Sorter
@@ -54,6 +53,14 @@ category: "Automation"
 - 图片/文档/截图的视觉内容识别与语义命名
 - 自定义分类规则与目录结构映射
 - 批量处理与去重
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 文件分类目录结构
 

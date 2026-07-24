@@ -3,7 +3,7 @@ slug: "accounting-finance"
 name: "accounting-finance"
 version: 1.0.1
 displayName: "财务分析专业套件"
-summary: "企业级财务分析与估值建模全套技能，58个专业分析模块，支持批量处理与自动化报告。"
+summary: "企业级财务分析与估值建模全套技能，58个专业分析模块，支持批量处理与自动化报告。。面向专业分析师、机构投资者与企业财务部门的全栈财务分析技能套件。包含58个 专家级分析技能，覆盖估值建模、财"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -16,16 +16,15 @@ tags:
   - 财务建模
   - 风险评估
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
 category: "Finance"
 ---
 # 财务分析专业套件
@@ -61,6 +60,14 @@ PRO版共包含58个专业分析技能，分为三大领域：
 - **风险检测与质量评估**：欺诈风险(Beneish模型)、流动性风险、敏感性分析、盈利质量、利润质量、报表质量
 - **特殊事项分析（PRO专属）**：关联交易、审计报告、会计政策、会计估计、税务分析
 - **决策支持**：趋势分析、投资论点生成、投资组合跟踪、估值报告撰写
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景（综合流程示例）
 

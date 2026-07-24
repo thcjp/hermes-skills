@@ -3,25 +3,24 @@ slug: solo-dev-companion-free
 name: solo-dev-companion-free
 version: 1.0.1
 displayName: 独立开发伙伴(免费版)
-summary: 独立开发者TDD工作流引擎，自动执行实施计划任务、提交代码并更新进度.
+summary: "独立开发者TDD工作流引擎，自动执行实施计划任务、提交代码并更新进度.。独立开发伙伴免费版为独立开发者与一人公司提供轻量级的TDD工作流引擎，聚焦实施计划（plan。md）的自动执行。Use"
 license: Proprietary
 edition: free
 description: 独立开发伙伴免费版为独立开发者与一人公司提供轻量级的TDD工作流引擎，聚焦实施计划（plan。md）的自动执行。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- TDD
-- 独立开发
-- 工作流引擎
-- 代码质量
+  - TDD
+  - 独立开发
+  - 工作流引擎
+  - 代码质量
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 独立开发伙伴（免费版）

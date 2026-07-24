@@ -3,24 +3,23 @@ slug: figma-studio-free
 name: figma-studio-free
 version: 1.0.1
 displayName: Figma工作室(免费版)
-summary: 轻量级Figma设计文件读取工具，覆盖文件解析、评论管理与图片导出，60秒上手.
+summary: "轻量级Figma设计文件读取工具，覆盖文件解析、评论管理与图片导出，60秒上手.。Figma工作室免费版是一款面向前端工程师与独立设计师的轻量级Figma设计文件读取与协作工具。围绕"文件读"
 license: Proprietary
 edition: free
 description: Figma工作室免费版是一款面向前端工程师与独立设计师的轻量级Figma设计文件读取与协作工具。围绕"文件读取—评论管理—图片导出—设计令牌提取"四件事，提供可复制即用的Python/Node。
   when 、品牌视觉时使用.
 tags:
-- 设计协作
-- 资源导出
-- 集成工具
+  - 设计协作
+  - 资源导出
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Figma工作室（免费版）
@@ -317,7 +316,6 @@ Personal Token是长期有效的个人凭证，适合个人开发与脚本；OAu
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成可执行的Figma API调用脚本
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -361,6 +359,14 @@ Personal Token是长期有效的个人凭证，适合个人开发与脚本；OAu
 ```
 ### 30秒上手：读取Figma文件(补充)
 # .
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # .
 > "帮我读取这个Figma文件的JSON：file_key=ABC123xyz"

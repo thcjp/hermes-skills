@@ -3,7 +3,7 @@ slug: "multi-agent-dev"
 name: "multi-agent-dev"
 version: "1.0.0"
 displayName: "多代理开发框架"
-summary: "通过子代理编排执行实现计划，智能任务分解、选择性并行、分层评审、上下文隔离"
+summary: "通过子代理编排执行实现计划，智能任务分解、选择性并行、分层评审、上下文隔离。多代理开发是一个通过子代理编排执行实现计划的开发框架。针对传统子代理开发"协调开销大、上下文污染、串行瓶颈、评审成"
 license: "Proprietary"
 description: |-
   多代理开发是一个通过子代理编排执行实现计划的开发框架。针对传统子代理开发"协调开销大、上下文污染、串行瓶颈、评审成本高"四大痛点，
@@ -14,15 +14,16 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags:
   - 智能助手
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - AI代理
+  - 自动化
+  - 智能
 category: "Agents"
 ---
 # 多代理开发框架（Multi-Agent Dev）
@@ -94,6 +95,14 @@ category: "Agents"
    - 替代工作流：executing-plans（用于并行会话而非同会话执行）
    - 评审模板：implementer-prompt.md、spec-reviewer-prompt.md、code-quality-reviewer-prompt.md
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：确认前置条件并读取计划

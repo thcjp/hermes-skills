@@ -3,7 +3,7 @@ slug: "whatsapp-style-guide"
 name: "whatsapp-style-guide"
 version: 1.0.1
 displayName: "WhatsApp样式指南-专业版"
-summary: "企业级WhatsApp格式完整规范,含边界场景/高级模式/多语言指南/交互式测试"
+summary: "企业级WhatsApp格式完整规范,含边界场景/高级模式/多语言指南/交互式测试。WhatsApp样式指南专业版,提供完整的WhatsApp消息格式规范体系,面向企业和专业内容团队。核心能力"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,16 +27,15 @@ tags:
   - 企业级
   - 格式规范
   - 合规审计
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # WhatsApp样式指南-专业版
@@ -191,6 +190,14 @@ _您好,很高兴为您服务_
 **处理**: 解析团队规范定制与合规审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回团队规范定制与合规审计的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:制定团队WhatsApp消息规范

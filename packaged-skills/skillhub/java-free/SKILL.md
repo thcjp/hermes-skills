@@ -3,7 +3,7 @@ slug: "java-free"
 name: "java-free"
 version: "1.0.0"
 displayName: "Java基础版"
-summary: "编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断与基础异常处理。"
+summary: "编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断与基础异常处理。。编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断 与基础异常处理. 核心能力: - NullPo"
 license: "MIT"
 description: |-
   编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断
@@ -29,11 +29,14 @@ description: |-
   差异化:基础版聚焦 Java 编程的高频陷阱防护，去除了高级版的并发陷阱、复杂泛型与 JVM 性能调优能力.
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+  - exec
+homepage: ""
 category: "Automation"
 ---
 # Java 基础版
@@ -46,6 +49,14 @@ category: "Automation"
 - 基础集合操作：推荐使用不可变集合（List.of、Map.of、Set.of）与 ArrayList、HashMap 的基础用法
 - 基础异常处理：区分受检异常与非受检异常，避免捕获 Throwable 与吞没异常
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

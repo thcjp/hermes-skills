@@ -3,7 +3,7 @@ slug: "music"
 name: "music"
 version: 1.0.1
 displayName: "Music"
-summary: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆"
+summary: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆。Build a personal music system for tracking discoveries, favorites, con"
 license: "Proprietary"
 description: |-
   Build a personal music system for tracking discoveries, favorites, concerts,
@@ -26,16 +26,15 @@ description: |-
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增...
 tags:
   - Lifestyle
+  - 音乐生成
+  - 音频
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "音乐生成,音频,创意"
 category: "Creative"
 ---
 # Music
@@ -52,6 +51,14 @@ category: "Creative"
 | 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 核心能力
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

@@ -3,7 +3,7 @@ slug: "pyx-scan"
 name: "pyx-scan"
 version: 1.1.1
 displayName: "技能安全扫描"
-summary: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告"
+summary: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、数据泄露、"
 license: "Proprietary"
 description: |-
   AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 技能安全扫描
@@ -106,6 +104,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供批量扫描所需的指令和必要参数。- 验证返回数据的完整性和格式正确性
 - 参考`批量扫描`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：确认技能信息

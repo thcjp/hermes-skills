@@ -3,7 +3,7 @@ slug: "whatsapp-style-tool-pro"
 name: "whatsapp-style-tool-pro"
 version: "1.0.0"
 displayName: "WhatsApp样式工具-专业版"
-summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配"
+summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配。WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力: - 全部WhatsApp格"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,15 +28,13 @@ tags:
   - 企业级
   - 批量转换
   - 格式规范
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 WhatsApp样式工具专业版是一款面向企业和专业团队的高级消息格式化平台。在免费版基础格式能力之上,PRO版提供自定义样式预设、批量格式转换、团队样式规范、多平台格式适配等企业级功能,帮助团队实现消息样式的一致性管理和高效生产.

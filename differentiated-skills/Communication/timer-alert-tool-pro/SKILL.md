@@ -3,7 +3,7 @@ slug: "timer-alert-tool-pro"
 name: "timer-alert-tool-pro"
 version: "1.0.0"
 displayName: "定时提醒工具(专业版)"
-summary: "定时提醒全能力版：循环定时、模板库、升级提醒、定时触发与监控面板。"
+summary: "定时提醒全能力版：循环定时、模板库、升级提醒、定时触发与监控面板。。定时提醒工具（专业版）面向团队与企业用户，在免费版基础定时能力之上新增循环定时、提醒模板库、多级升级提醒、指定时间点触发、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,15 +15,14 @@ tags:
   - 任务调度
   - 监控告警
   - 效率工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 定时提醒工具（专业版）

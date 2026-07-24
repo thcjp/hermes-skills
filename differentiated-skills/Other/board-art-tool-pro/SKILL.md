@@ -3,7 +3,7 @@ slug: board-art-tool-pro
 name: board-art-tool-pro
 version: 1.0.0
 displayName: 画板艺术工具专业版
-summary: 面向团队的批量发布、多帧动画与画布治理工具.
+summary: "面向团队的批量发布、多帧动画与画布治理工具.。面向团队的协作画布批量发布与治理专业工具.。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
 description: '面向团队的协作画布批量发布与治理专业工具.
@@ -28,21 +28,20 @@ description: '面向团队的协作画布批量发布与治理专业工具.
   差异化: 专业版在免费版单作品基础上扩展批量发布、多帧动画、画布治理与数据分析，兼容免费版作品格式.
   适用关键词: 批量发布, 多帧动画, 画布治理, 分区权限, 热度看板, 定时发布, board art pro'
 tags:
-- 创意
-- 企业级
-- 画布治理
-- 数据分析
-- 其他工具
+  - 创意
+  - 企业级
+  - 画布治理
+  - 数据分析
+  - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 画板艺术工具（专业版）

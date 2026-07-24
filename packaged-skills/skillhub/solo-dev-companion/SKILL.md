@@ -3,7 +3,7 @@ slug: "solo-dev-companion"
 name: "solo-dev-companion"
 version: 1.0.1
 displayName: "独立开发伙伴(专业版)"
-summary: "全功能TDD工作流引擎，含MCP工具集成、多语言质量工具、视觉验证、阶段检查点与高级回滚。"
+summary: "全功能TDD工作流引擎，含MCP工具集成、多语言质量工具、视觉验证、阶段检查点与高级回滚。。独立开发伙伴专业版是在免费版基础上的全功能升级，为独立开发者与一人公司提供企业级TDD工作流引擎。"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,16 @@ tags:
   - 工作流引擎
   - 代码质量
   - MCP工具集成
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 独立开发伙伴(专业版)
@@ -87,6 +87,14 @@ solo-dev progress-report
 **处理**: 解析Rationalizations反模式检测（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回Rationalizations反模式检测（专业版）的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：独立开发者的大型项目（独立开发者角色）

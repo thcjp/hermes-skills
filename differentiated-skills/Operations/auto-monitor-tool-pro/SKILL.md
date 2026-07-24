@@ -3,7 +3,7 @@ slug: auto-monitor-tool-pro
 name: auto-monitor-tool-pro
 version: 1.0.0
 displayName: 系统监控专业版
-summary: 企业级分布式监控平台，支持多节点、容器、日志分析与可视化仪表盘.
+summary: "企业级分布式监控平台，支持多节点、容器、日志分析与可视化仪表盘.。面向企业运维团队的分布式监控平台。支持多节点服务器统一监控、"
 license: Proprietary
 edition: pro
 description: '面向企业运维团队的分布式监控平台。支持多节点服务器统一监控、
@@ -11,20 +11,18 @@ description: '面向企业运维团队的分布式监控平台。支持多节点
   Docker/K8s容器监控、日志聚合分析、可视化仪表盘与智能告警。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
 tags:
-- Operations
-- 系统监控
-- 企业级
-- 容器监控
+  - Operations
+  - 系统监控
+  - 企业级
+  - 容器监控
+  - 监控
+  - 运维
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "监控,运维,工具"
 category: "Operations"
 ---
 # 系统监控专业版（PRO版）

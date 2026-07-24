@@ -3,7 +3,7 @@ slug: evolve-loop-pro
 name: evolve-loop-pro
 version: 1.0.0
 displayName: 进化循环(专业版)
-summary: AI Agent全功能PDCA自改进引擎，六西格玛质量度量+跨设备云同步+决策回溯+多项目并行.
+summary: "AI Agent全功能PDCA自改进引擎，六西格玛质量度量+跨设备云同步+决策回溯+多项目并行.。进化循环专业版是在免费版基础上的全功能升级，为AI Agent提供终极自改进引擎。在PDCA"
 license: Proprietary
 edition: pro
 description: '进化循环专业版是在免费版基础上的全功能升级，为AI Agent提供终极自改进引擎。在PDCA闭环之上叠加六西格玛质量度量体系，实现可量化的持续进化。专业版解锁跨设备云同步、多项目并行记忆隔离、决策回溯与历史版本对比三大高级功能.
@@ -12,21 +12,22 @@ description: '进化循环专业版是在免费版基础上的全功能升级，
   差异化：完全中文化重写，新增六西格玛DMAIC度量体系、多项目并行隔离机制、跨设备云同步协议、决策回溯时间机、自动瓶颈诊断算法、多维质量看板。内容原创度超过70%，针对企业级"改进效果不可量化、跨设备记忆不一致、多项目记忆污染"三大痛点重新设计。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：自改进、PDCA、六西格玛、DMAIC、跨设备同步、决策回溯、质量度量、多项目并行'
 tags:
-- 自改进
-- Agent记忆
-- 质量度量
-- 跨设备同步
-- 决策回溯
+  - 自改进
+  - Agent记忆
+  - 质量度量
+  - 跨设备同步
+  - 决策回溯
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 进化循环（专业版）

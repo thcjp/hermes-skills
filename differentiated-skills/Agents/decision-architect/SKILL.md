@@ -3,7 +3,7 @@ slug: "decision-architect"
 name: "decision-architect"
 version: "2.0.0"
 displayName: "决策架构师"
-summary: "结构化决策支持+认知偏差检测+回顾复盘，避免拍脑袋决策与重复踩坑。"
+summary: "结构化决策支持+认知偏差检测+回顾复盘，避免拍脑袋决策与重复踩坑。。面向AI Agent的结构化决策支持系统，提供决策框架匹配、认知偏差检测、风险画像学习与强制复盘闭环。适用于产品/技术/商"
 license: "Proprietary"
 description: |-
   面向AI Agent的结构化决策支持系统，提供决策框架匹配、认知偏差检测、风险画像学习与强制复盘闭环。适用于产品/技术/商业/个人重大权衡、高风险irreversible决策、需留痕的团队决策场景，避免拍脑袋、框架错配、不复盘、重复犯同类错误。适用关键词：决策、权衡、选择、should I、怎么办、pros cons、复盘、认知偏差、decision、tradeoff.
@@ -11,15 +11,16 @@ tags:
   - 智能代理
   - 决策支持
   - 认知科学
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 决策架构师（Decision Architect）
@@ -58,6 +59,14 @@ category: "Agents"
 **输出**: 返回主动决策检测的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：结构化决策支持、避免拍脑袋决策与、重复踩坑、Agent、的结构化决策支持、风险画像学习与强、制复盘闭环、适用于产品、个人重大权衡、高风险、irreversible、需留痕的团队决策、避免拍脑袋、框架错配、不复盘、重复犯同类错误、适用关键词、should、怎么办、pros、cons、decision、tradeoff等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **何时使用：**

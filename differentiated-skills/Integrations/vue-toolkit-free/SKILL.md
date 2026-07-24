@@ -10,19 +10,18 @@ description: Vue 工具箱（免费版）面向 Vue 3 开发者，聚焦 Composi
   的取舍、computed 与 watch 的边界、组件设计与路由集成。目标是让 Agent 在 60 秒内给出可直接复用的代码片段，避免反复踩坑。Use when
   需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 前端开发
-- Vue
-- 组合式API
-- 响应式
+  - 前端开发
+  - Vue
+  - 组合式API
+  - 响应式
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Vue 工具箱（免费版）

@@ -3,24 +3,21 @@ slug: security-hardening-shield
 name: security-hardening-shield
 version: 1.0.1
 displayName: 安全加固之盾
-summary: OWASP Top 10防护+三层边界系统,上线前安全加固不留死角
+summary: "OWASP Top 10防护+三层边界系统,上线前安全加固不留死角。安全加固之盾——系统化安全防护框架,基于OWASP Top 10预防+三层边界(信任/数据/网络)分层防护,提供从输入校验"
 license: Proprietary
 description: 安全加固之盾——系统化安全防护框架,基于OWASP Top 10预防+三层边界(信任/数据/网络)分层防护,提供从输入校验到密钥管理到依赖审计的全链路加固方案。适用于上线前安全审计、认证授权设计、密钥凭证管理、依赖漏洞扫描、输入输出防护场景。触发关键词:安全加固、安全审计、OWASP、漏洞扫描、密钥管理、认证授权、依赖审计、安全边界、输入校验、安全防护
 tags:
-- 安全加固
-- OWASP
-- 安全审计
-- 漏洞防护
-- 安全架构
+  - 安全加固
+  - OWASP
+  - 安全审计
+  - 漏洞防护
+  - 安全架构
+  - 安全
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - read
+  - exec
 category: "Security"
 ---
 # 安全加固之盾
@@ -34,6 +31,14 @@ category: "Security"
 3. **认证授权设计**:密码哈希(bcrypt/argon2)、OAuth 2.0、多因子认证、RBAC/ABAC 权限模型
 4. **密钥凭证管理**:密钥分级存储、KMS/Vault 集成、定期轮换、零硬编码策略
 5. **依赖漏洞审计**:npm audit/pip-audit/bandit/snyk 全链路扫描与许可证合规检查
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

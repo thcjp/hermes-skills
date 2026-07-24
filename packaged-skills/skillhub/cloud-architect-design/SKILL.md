@@ -3,7 +3,7 @@ slug: "cloud-architect-design"
 name: "cloud-architect-design"
 version: 1.0.1
 displayName: "云架构师专业版"
-summary: "企业级云架构设计平台，支持多云策略、迁移规划、FinOps优化、合规设计与灾备方案。"
+summary: "企业级云架构设计平台，支持多云策略、迁移规划、FinOps优化、合规设计与灾备方案。。云架构师专业版 —— 面向企业团队与架构师的高级云架构设计平台。核心能力: - 多云架构策略：AWS+A"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -23,16 +23,15 @@ tags:
   - 企业工具
   - 多云策略
   - FinOps
+  - 云计算
+  - DevOps
+  - 基础设施
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
 category: "Operations"
 ---
 # 云架构师专业版
@@ -208,6 +207,14 @@ HIPAA要求：
 - 关键参数: `合规架构设计` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业多云架构设计

@@ -3,7 +3,7 @@ slug: "baidu-netdisk-skills-free"
 name: "baidu-netdisk-skills-free"
 version: "2.0.0"
 displayName: "百度网盘 Free"
-summary: "百度网盘基础文件管理，限 /apps/bdpan/，支持查看列表与上传下载。"
+summary: "百度网盘基础文件管理，限 /apps/bdpan/，支持查看列表与上传下载。。百度网盘 Free 是百度网盘技能的免费精简版，通过 bdpan 命令行工具对百度网盘进行基础文件操作， 所有操"
 license: "MIT"
 description: |-
   百度网盘 Free 是百度网盘技能的免费精简版，通过 bdpan 命令行工具对百度网盘进行基础文件操作，
@@ -26,12 +26,14 @@ tags:
   - Agents
   - Storage
   - Baidu
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 百度网盘 Free
@@ -297,6 +299,14 @@ bdpan upload <本地路径> <远端路径
 **输出**: 返回触发条件的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 # ...
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

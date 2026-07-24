@@ -3,7 +3,7 @@ slug: "graph-query"
 name: "graph-query"
 version: 1.0.1
 displayName: "链上数据查询(专业版)"
-summary: "全功能链上数据查询，含付费端点、高级 MCP工具、支出控制、收据与批量分析。"
+summary: "全功能链上数据查询，含付费端点、高级 MCP工具、支出控制、收据与批量分析。。全功能链上数据查询。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,15 @@ tags:
   - 区块链
   - 专业交易
   - 数据分析
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 链上数据查询(专业版)
@@ -73,6 +72,14 @@ category: "Automation"
 **输出**: 返回子图检索的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`子图检索`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1：跨场内预测市场套利监控

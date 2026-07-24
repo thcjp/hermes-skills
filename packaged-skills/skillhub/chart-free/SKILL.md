@@ -3,7 +3,7 @@ slug: "chart-free"
 name: "chart-free"
 version: "1.0.0"
 displayName: "本地图表生成-免费版"
-summary: "本地优先的图表生成免费版，支持bar与line两种基础类型，无需联网，适合快速可视化。"
+summary: "本地优先的图表生成免费版，支持bar与line两种基础类型，无需联网，适合快速可视化。。本地优先的图表生成引擎免费版，提供柱状图与折线图两种基础类型. 基于Python与matplotlib"
 license: "MIT"
 description: |-
   本地优先的图表生成引擎免费版，提供柱状图与折线图两种基础类型.
@@ -17,12 +17,14 @@ tags:
   - 需求设计
   - 数据可视化
   - matplotlib
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Chart — 本地图表生成引擎（免费版）
@@ -132,6 +134,14 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） \
 **输入**: 用户提供付费版专享能力相关的配置参数、输入数据和处理选项.
 **处理**: 解析付费版专享能力的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 存储路径(补充)
 
 ## 支持的图表类型（免费版）(补充)

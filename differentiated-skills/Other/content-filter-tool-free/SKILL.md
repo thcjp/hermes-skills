@@ -3,7 +3,7 @@ slug: content-filter-tool-free
 name: content-filter-tool-free
 version: 1.0.0
 displayName: 内容过滤工具
-summary: 面向个人的信息流内容过滤工具，关键词与作者过滤.
+summary: "面向个人的信息流内容过滤工具，关键词与作者过滤. - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
 description: '面向个人用户的信息流内容过滤工具.
@@ -28,19 +28,18 @@ description: '面向个人用户的信息流内容过滤工具.
   差异化: 免费版聚焦个人单用户过滤，提供关键词与作者规则，零成本降噪.
   适用关键词: 内容过滤, 关键词过滤, 作者屏蔽, 白名单, 信息流降噪, content filter, spam filter'
 tags:
-- 内容过滤
-- 信息流
-- 个人效率
-- 其他工具
+  - 内容过滤
+  - 信息流
+  - 个人效率
+  - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 内容过滤工具（免费版）

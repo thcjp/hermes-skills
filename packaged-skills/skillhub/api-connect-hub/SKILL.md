@@ -3,7 +3,7 @@ slug: "api-connect-hub"
 name: "api-connect-hub"
 version: 1.0.1
 displayName: "API连接中心(专业版)"
-summary: "企业级API集成平台，含连接编排、数据同步、Webhook管理、OAuth2刷新与监控告警。"
+summary: "企业级API集成平台，含连接编排、数据同步、Webhook管理、OAuth2刷新与监控告警。。API连接中心专业版是面向企业的全功能API集成平台。在免费版的连接器注册、凭证安全存储、统一调"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 连接编排
   - Webhook
   - 企业集成
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # API连接中心(专业版)
@@ -127,6 +126,14 @@ tenant:
 **解决痛点**：要调多个服务获取数据再聚合展示，逐个调太慢.
 **专业版能力**：并行批量调用，结果聚合.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级SaaS多服务集成（平台架构师角色）

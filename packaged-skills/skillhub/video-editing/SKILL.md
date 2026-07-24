@@ -3,22 +3,22 @@ slug: "video-editing"
 name: "video-editing"
 version: 0.1.1
 displayName: "视频剪辑变现"
-summary: "视频剪辑变现全流程指南，覆盖赛道定位、MVP验证、流量获取与转化交付"
+summary: "视频剪辑变现全流程指南，覆盖赛道定位、MVP验证、流量获取与转化交付。视频剪辑变现指南，覆盖赛道定位与人群分析、MVP验证、流量获取、转化交付、复盘迭代全流程. 包含变现模型、工具清单、合规"
 license: "Proprietary"
 description: |-
   视频剪辑变现指南，覆盖赛道定位与人群分析、MVP验证、流量获取、转化交付、复盘迭代全流程.
   包含变现模型、工具清单、合规风险、30日执行计划。适用于独立剪辑师和工作室的商业化运营.
 tags:
   - Creative
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - write
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 category: "Creative"
 ---
 # 视频剪辑变现指南
@@ -112,6 +112,14 @@ category: "Creative"
 **输出**: 返回剪辑软件的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`剪辑软件`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

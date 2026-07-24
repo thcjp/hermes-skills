@@ -3,7 +3,7 @@ slug: knowledge-capture-tool-pro
 name: knowledge-capture-tool-pro
 version: 1.0.0
 displayName: 知识捕获工具（专业版）
-summary: 从对话和讨论中提取结构化知识，自动分类并保存到知识库或文档系统.
+summary: "从对话和讨论中提取结构化知识，自动分类并保存到知识库或文档系统.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
 description: '知识捕获工具 - （专业版）
@@ -16,20 +16,20 @@ description: '知识捕获工具 - （专业版）
 
   适用关键词: 知识捕获, 对话提取, 会议纪要, 知识沉淀, knowledge capture, 对话分析, 知识归档'
 tags:
-- 知识捕获
-- 会议纪要
-- 知识提取
-- 对话分析
+  - 知识捕获
+  - 会议纪要
+  - 知识提取
+  - 对话分析
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 知识捕获工具（专业版）

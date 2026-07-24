@@ -3,7 +3,7 @@ slug: kubernetes-toolkit-pro
 name: kubernetes-toolkit-pro
 version: 1.0.0
 displayName: K8s集群管理专业版
-summary: 企业级K8s管理平台，支持多集群、策略治理、监控告警与GitOps自动化.
+summary: "企业级K8s管理平台，支持多集群、策略治理、监控告警与GitOps自动化.。面向企业运维团队的K8s全功能管理平台。支持多集群统一管理、策略"
 license: Proprietary
 edition: pro
 description: '面向企业运维团队的K8s全功能管理平台。支持多集群统一管理、策略
@@ -11,20 +11,19 @@ description: '面向企业运维团队的K8s全功能管理平台。支持多集
   治理（OPA/Kyverno）、监控告警、GitOps自动化与CRD完整管理。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
 tags:
-- Operations
-- Kubernetes
-- 企业级
-- GitOps
+  - Operations
+  - Kubernetes
+  - 企业级
+  - GitOps
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # K8s集群管理专业版（PRO版）

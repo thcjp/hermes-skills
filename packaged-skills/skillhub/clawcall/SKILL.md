@@ -3,7 +3,7 @@ slug: "clawcall"
 name: "clawcall"
 version: 1.0.13
 displayName: "语音通话服务"
-summary: "由AI语音代理拨打美国真实电话，处理菜单、等待、转接，返回转录、结果与录音链接。"
+summary: "由AI语音代理拨打美国真实电话，处理菜单、等待、转接，返回转录、结果与录音链接。。语音通话服务让AI代理为用户拨打真实的美国电话。语音AI代理负责拨号、对话、处理电话菜单或等待时间， 并在通"
 license: "Proprietary"
 description: |-
   语音通话服务让AI代理为用户拨打真实的美国电话。语音AI代理负责拨号、对话、处理电话菜单或等待时间，
@@ -22,16 +22,15 @@ tags:
   - 通用办公
   - 语音通话
   - AI代理
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 语音通话服务（Voice Call Service）
@@ -57,6 +56,14 @@ category: "Automation"
 ## 核心能力
 电话代理只知道你作为 `task` 发送的**通话指令**。细节越相关越好。拨号前构建完整的简报，不要让用户提供你本可自行查询的公开/商业信息.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 工作流选择
 
 | 用户意图 | 操作 |

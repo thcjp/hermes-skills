@@ -3,24 +3,24 @@ slug: thesis-helper-tool-free
 name: thesis-helper-tool-free
 version: 1.0.0
 displayName: 论文写作助手免费版
-summary: 面向学生和研究者的论文辅助工具,提供大纲生成、文献综述框架、摘要撰写与引用格式转换
+summary: "面向学生和研究者的论文辅助工具,提供大纲生成、文献综述框架、摘要撰写与引用格式转换。论文写作助手免费版,面向学生和个人研究者提供基础的论文写作辅助能力。支持论文大纲生成、文献综述框架搭建、摘"
 license: Proprietary
 edition: free
 description: 论文写作助手免费版,面向学生和个人研究者提供基础的论文写作辅助能力。支持论文大纲生成、文献综述框架搭建、摘要撰写、引用格式转换等核心功能。Use
   when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
-- 研究工具
-- 论文写作
-- 学术辅助
+  - 研究工具
+  - 论文写作
+  - 学术辅助
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 论文写作助手免费版

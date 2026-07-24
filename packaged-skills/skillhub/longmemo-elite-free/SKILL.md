@@ -3,7 +3,7 @@ slug: "longmemo-elite-free"
 name: "longmemo-elite-free"
 version: "1.0.0"
 displayName: "精英长记忆"
-summary: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。"
+summary: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。。面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点. WAL写前日志协议采用"先写状态，再回复用"
 license: "MIT"
 description: |-
   面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点.
@@ -14,11 +14,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 精英长记忆（基础版）
@@ -56,6 +58,14 @@ category: "Automation"
 **输出**: 返回会话管理的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`会话管理`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：创建热内存文件

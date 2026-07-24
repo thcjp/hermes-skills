@@ -3,7 +3,7 @@ slug: "video-frames-tool-pro"
 name: "video-frames-tool-pro"
 version: "1.0.0"
 displayName: "视频帧提取-专业版"
-summary: "企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。"
+summary: "企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。。视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,15 +15,13 @@ tags:
   - 专业版
   - 批量处理
   - 企业级
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 视频帧提取工具 - 专业版

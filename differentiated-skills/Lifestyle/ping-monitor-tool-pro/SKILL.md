@@ -3,7 +3,7 @@ slug: ping-monitor-tool-pro
 name: ping-monitor-tool-pro
 version: 1.0.0
 displayName: 网络监控专业版
-summary: 企业级监控平台,支持多地区、API性能、状态页与团队协作
+summary: "企业级监控平台,支持多地区、API性能、状态页与团队协作 - 提供专业AI自动化处理能力,支持多种使用场景"
 license: Proprietary
 edition: pro
 description: '面向企业与运维团队的企业级监控平台.
@@ -15,22 +15,20 @@ description: '面向企业与运维团队的企业级监控平台.
 
   适用关键词: 多地区监控, API性能, 状态页, 团队协作, SLA保障, SRE运维'
 tags:
-- 网络监控
-- 企业级
-- 多地区监控
-- API性能
-- 状态页
-- SRE运维
+  - 网络监控
+  - 企业级
+  - 多地区监控
+  - API性能
+  - 状态页
+  - SRE运维
+  - 监控
+  - 运维
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "监控,运维,工具"
 category: "Operations"
 ---
 # 网络监控 (专业版)

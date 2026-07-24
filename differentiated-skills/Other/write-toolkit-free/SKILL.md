@@ -3,7 +3,7 @@ slug: write-toolkit-free
 name: write-toolkit-free
 version: 1.0.1
 displayName: 写作工具免费版
-summary: 规划、起草、版本化与精炼写作内容，强制版本管理与质量审计，适合个人创作者.
+summary: "规划、起草、版本化与精炼写作内容，强制版本管理与质量审计，适合个人创作者.。写作工具免费版，面向个人创作者的轻量级写作流程管理工具."
 license: Proprietary
 edition: free
 description: '写作工具免费版，面向个人创作者的轻量级写作流程管理工具.
@@ -28,19 +28,18 @@ description: '写作工具免费版，面向个人创作者的轻量级写作流
   差异化: 免费版聚焦核心写作流程与版本管理，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手.
   适用关键词: 写作, 起草, 版本管理, 质量审计, 内容精炼, 子代理写作, 文档规划'
 tags:
-- 写作
-- 版本管理
-- 质量审计
-- 免费版
+  - 写作
+  - 版本管理
+  - 质量审计
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 写作工具（免费版）

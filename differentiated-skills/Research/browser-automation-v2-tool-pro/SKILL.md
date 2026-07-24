@@ -3,27 +3,26 @@ slug: browser-automation-v2-tool-pro
 name: browser-automation-v2-tool-pro
 version: 1.0.0
 displayName: 浏览器自动化(专业版)
-summary: 企业级浏览器自动化专业版，含批量处理、并发锁、Cloudflare绕过、截图PDF、监控集成.
+summary: "企业级浏览器自动化专业版，含批量处理、并发锁、Cloudflare绕过、截图PDF、监控集成.。浏览器自动化助手专业版是面向企业级场景的完整浏览器自动化工具链。在免费版单页面能力之上，新增批"
 license: Proprietary
 edition: pro
 description: 浏览器自动化助手专业版是面向企业级场景的完整浏览器自动化工具链。在免费版单页面能力之上，新增批量URL处理、并发锁机制、Cloudflare绕过、页面截图与PDF导出、复杂表单填写、结构化数据提取、CI/CD集成与监控告警七大高级能力。Use
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
-- 浏览器自动化
-- 企业级
-- 批量处理
-- 并发锁
-- Cloudflare绕过
+  - 浏览器自动化
+  - 企业级
+  - 批量处理
+  - 并发锁
+  - Cloudflare绕过
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 > **批量URL+并发锁+Cloudflare绕过+截图PDF+企业集成。完整工具链覆盖企业级场景。**

@@ -3,7 +3,7 @@ slug: music-toolkit-pro
 name: music-toolkit-pro
 version: 1.0.0
 displayName: 音乐工具箱专业版
-summary: 专业音乐制作平台,支持AI编曲、多轨录音、母带处理与商业授权
+summary: "专业音乐制作平台,支持AI编曲、多轨录音、母带处理与商业授权。面向音乐工作室、独立音乐人与商业项目的专业音乐制作平台."
 license: Proprietary
 edition: pro
 description: '面向音乐工作室、独立音乐人与商业项目的专业音乐制作平台.
@@ -15,22 +15,21 @@ description: '面向音乐工作室、独立音乐人与商业项目的专业音
 
   适用关键词: AI编曲, 多轨录音, 母带处理, 商业音乐, 影视配乐, 游戏音效'
 tags:
-- 音乐制作
-- 企业级
-- AI编曲
-- 母带处理
-- 商业授权
-- 影视配乐
+  - 音乐制作
+  - 企业级
+  - AI编曲
+  - 母带处理
+  - 商业授权
+  - 影视配乐
+  - 音乐生成
+  - 音频
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "音乐生成,音频,创意"
 category: "Creative"
 ---
 # 音乐工具箱 (专业版)

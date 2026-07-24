@@ -3,7 +3,7 @@ slug: "tg-bot-builder"
 name: "tg-bot-builder"
 version: 1.0.1
 displayName: "TG机器人构建专业版"
-summary: "全功能Telegram机器人构建平台，支持支付集成、批量推送、状态机与高级群管"
+summary: "全功能Telegram机器人构建平台，支持支付集成、批量推送、状态机与高级群管。面向企业团队与专业开发者的Telegram机器人全功能构建平台，覆盖Bot全生命周期管理与高级业务集成。核心能"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,15 @@ tags:
   - 通信自动化
   - 企业级机器人
   - 支付集成
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # TG机器人构建专业版
@@ -71,6 +70,14 @@ category: "Creative"
 **输出**: 返回Reply/Inline键盘的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Reply/Inline键盘`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：电商交易闭环（开发者视角）

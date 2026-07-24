@@ -3,7 +3,7 @@ slug: "neural-memory-enhanced"
 name: "neural-memory-enhanced"
 version: 1.0.1
 displayName: "神经记忆增强系统"
-summary: "基于扩散激活的联想记忆系统，通过神经图谱实现智能持久化召回"
+summary: "基于扩散激活的联想记忆系统，通过神经图谱实现智能持久化召回。生物学启发的联想记忆系统，采用扩散激活替代关键词检索和向量搜索。记忆以神经图谱形式组织， 神经元之间通过20种类型化突触连接，频繁"
 license: "Proprietary"
 description: |-
   生物学启发的联想记忆系统，采用扩散激活替代关键词检索和向量搜索。记忆以神经图谱形式组织，
@@ -15,15 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 神经记忆增强系统
@@ -137,6 +135,14 @@ category: "Agents"
 
 输出：移植的记忆数量、跳过的冲突数量、新增突触数量。- 验证返回数据的完整性和格式正确性
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：初始化大脑环境

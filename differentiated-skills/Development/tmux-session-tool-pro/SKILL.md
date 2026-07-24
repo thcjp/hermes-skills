@@ -3,7 +3,7 @@ slug: "tmux-session-tool-pro"
 name: "tmux-session-tool-pro"
 version: "1.0.0"
 displayName: "Tmux会话工具专业版"
-summary: "企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计"
+summary: "企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计。面向团队与企业的高级 tmux 会话管理工具,在免费版基础上扩展多会话、编排、监控等能力。核心能力: - 多会话批量管理与并"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -32,15 +32,15 @@ tags:
   - 企业级
   - 多会话管理
   - 监控告警
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # Tmux 会话工具专业版

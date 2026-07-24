@@ -3,7 +3,7 @@ slug: "smart-reminder"
 name: "smart-reminder"
 version: 1.0.1
 displayName: "智能提醒助手(专业版)"
-summary: "自然语言事件捕获与提醒助手专业版，含自定义偏移、多渠道投递、农历生日、语义搜索与完整重复模式。"
+summary: "自然语言事件捕获与提醒助手专业版，含自定义偏移、多渠道投递、农历生日、语义搜索与完整重复模式。。智能提醒助手专业版是在免费版基础上的全功能升级，为AI Agent提供企业级自然语言事件管理能"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,16 @@ tags:
   - 事件管理
   - 农历生日
   - 语义搜索
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 智能提醒助手(专业版)
@@ -154,6 +154,14 @@ results = sr.semantic_search("上次关于产品规划的讨论")
 - 关键参数: `事件生命周期管理` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：农历生日年度提醒（家庭角色）

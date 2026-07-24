@@ -3,7 +3,7 @@ slug: security-audit-tool-free
 name: security-audit-tool-free
 version: 1.0.0
 displayName: 安全审计工具(免费版)
-summary: 扫描暴露凭据、开放端口、配置问题,支持自动修复常见安全问题,适合个人与小型团队
+summary: "扫描暴露凭据、开放端口、配置问题,支持自动修复常见安全问题,适合个人与小型团队,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
 description: '核心能力:
@@ -42,19 +42,16 @@ description: '核心能力:
 
   适用关键词: 安全审...'
 tags:
-- 安全
-- 安全审计
-- 漏洞扫描
-- 配置检查
+  - 安全
+  - 安全审计
+  - 漏洞扫描
+  - 配置检查
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - read
+  - exec
+homepage: ""
 category: "Security"
 ---
 # 安全审计工具(免费版)

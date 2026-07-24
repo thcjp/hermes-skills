@@ -3,7 +3,7 @@ slug: local-rag-tool-free
 name: local-rag-tool-free
 version: 1.0.0
 displayName: 本地文件检索（免费版）
-summary: 本地文件RAG检索增强生成工具，支持文档索引、语义搜索与上下文注入.
+summary: "本地文件RAG检索增强生成工具，支持文档索引、语义搜索与上下文注入.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
 description: '本地文件检索 - （免费版）
@@ -16,19 +16,19 @@ description: '本地文件检索 - （免费版）
 
   适用关键词: 本地RAG, 文档检索, 语义搜索, 知识库, RAG, retrieval augmented, 向量搜索, 上下文注入'
 tags:
-- RAG
-- 本地检索
-- 语义搜索
-- 知识库
+  - RAG
+  - 本地检索
+  - 语义搜索
+  - 知识库
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 本地文件检索（免费版）

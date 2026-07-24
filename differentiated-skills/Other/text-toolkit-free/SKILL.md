@@ -3,7 +3,7 @@ slug: text-toolkit-free
 name: text-toolkit-free
 version: 1.0.1
 displayName: 文本处理工具免费版
-summary: 提供编码校验、空白清理、格式检测与快速变换的文本处理工具，适合个人开发日常.
+summary: "提供编码校验、空白清理、格式检测与快速变换的文本处理工具，适合个人开发日常.。文本处理工具免费版，面向个人开发者的轻量级文本变换与清理工具。核心能力:"
 license: Proprietary
 edition: free
 description: '文本处理工具免费版，面向个人开发者的轻量级文本变换与清理工具。核心能力:
@@ -26,19 +26,19 @@ description: '文本处理工具免费版，面向个人开发者的轻量级文
 
   差异化: 免费版聚焦核心文本清理与变换能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- 文本处理
-- 数据清洗
-- 编码规范
-- 免费版
+  - 文本处理
+  - 数据清洗
+  - 编码规范
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 文本处理工具（免费版）

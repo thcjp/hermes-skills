@@ -3,7 +3,7 @@ slug: rss-aggregator-tool-pro
 name: rss-aggregator-tool-pro
 version: 1.0.0
 displayName: RSS聚合工具专业版
-summary: 企业级RSS聚合平台，支持定时调度、多渠道推送、语义去重与API集成
+summary: "企业级RSS聚合平台，支持定时调度、多渠道推送、语义去重与API集成。RSS聚合工具专业版，面向企业用户提供定时自动调度、多渠道推送、语义级去重与API集成能力。核心能力:"
 license: Proprietary
 edition: pro
 description: 'RSS聚合工具专业版，面向企业用户提供定时自动调度、多渠道推送、语义级去重与API集成能力。核心能力:
@@ -11,21 +11,21 @@ description: 'RSS聚合工具专业版，面向企业用户提供定时自动调
   - 定时自动调度（cron表达式。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。'
 tags:
-- RSS
-- 聚合
-- 企业级
-- 定时调度
-- 多渠道推送
+  - RSS
+  - 聚合
+  - 企业级
+  - 定时调度
+  - 多渠道推送
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 RSS聚合工具专业版在免费版增量推送的基础上，新增定时自动调度、多渠道推送、语义级去重与智能聚类、自定义输出模板、多领域自动分组、历史自动归档与全文检索和 REST API 集成等企业级能力，满足企业资讯分发、媒体采编和行业研究的深度需求.

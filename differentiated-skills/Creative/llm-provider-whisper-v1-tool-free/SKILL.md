@@ -3,7 +3,7 @@ slug: "llm-provider-whisper-v1-tool-free"
 name: "llm-provider-whisper-v1-tool-free"
 version: "1.0.0"
 displayName: "Whisper v1转录免费版"
-summary: "Whisper v1稳定版本地转录工具,支持基础语音转文字与字幕生成,适合个人快速上手。"
+summary: "Whisper v1稳定版本地转录工具,支持基础语音转文字与字幕生成,适合个人快速上手。。基于 Whisper v1 稳定版本的本地语音转文字工具(免费版)。核心能力: - v1 稳定版 C"
 license: "Proprietary"
 edition: "free"
 description: |-
@@ -29,12 +29,14 @@ tags:
   - 本地工具
   - 字幕生成
   - Whisper v1
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Whisper v1 语音转文字工具 - 免费版

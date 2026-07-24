@@ -3,7 +3,7 @@ slug: "encoding-toolkit"
 name: "encoding-toolkit"
 version: 1.0.1
 displayName: "编解码工具箱专业版"
-summary: "全场景编解码引擎，含二进制协议、序列化互转、批量哈希校验、自定义模板与跨平台性能优化策略。"
+summary: "全场景编解码引擎，含二进制协议、序列化互转、批量哈希校验、自定义模板与跨平台性能优化策略。。编解码工具箱专业版在免费版六大场景基础上，扩展二进制协议解析、序列化格式互转、批量校验与自定义模板"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,16 @@ tags:
   - 编解码
   - 企业级
   - 性能优化
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 编解码工具箱专业版
@@ -60,6 +60,14 @@ category: "Automation"
 **输出**: 返回LLM响应超时或无响应的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`LLM响应超时或无响应`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 已知限制
 - Base64 / Base64url 双向转换
 - URL 编解码、查询字符串拼装

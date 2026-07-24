@@ -3,7 +3,7 @@ slug: "evolution-engine"
 name: "evolution-engine"
 version: "1.0.0"
 displayName: "进化引擎"
-summary: "Agent 自我进化引擎，反思纠错加反污染防线与压缩不删，避免重复犯错与误学。"
+summary: "Agent 自我进化引擎，反思纠错加反污染防线与压缩不删，避免重复犯错与误学。。面向 AI Agent 的自我进化引擎，直击"重复犯错、从沉默误学、记忆压缩丢失、进化无法衡量"四大痛点. 通"
 license: "Proprietary"
 description: |-
   面向 AI Agent 的自我进化引擎，直击"重复犯错、从沉默误学、记忆压缩丢失、进化无法衡量"四大痛点.
@@ -16,15 +16,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 进化引擎（Evolution Engine）
@@ -78,6 +77,14 @@ category: "Automation"
 **输出**: 返回自反思机制的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`自反思机制`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 第一步：初始化记忆架构。在 ~/evolution-engine/ 创建分层目录结构：memory.md（热层，≤100 行）、index.md（主题索引含行数）、heartbeat-state.md（心跳状态）、metrics.md（进化指标）、projects/（按项目隔离）、domains/（按领域隔离：code.md/writing.md/comms.md）、archive/（冷层）、corrections.md（最近 50 条纠错）.

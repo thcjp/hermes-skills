@@ -3,25 +3,24 @@ slug: feedstream-monitor-free
 name: feedstream-monitor-free
 version: 1.0.1
 displayName: Feedstream Monitor
-summary: 安全公告订阅流监控免费版，支持多源RSS/Atom订阅、严重性分级、基础关键词过滤与本地去重.
+summary: "安全公告订阅流监控免费版，支持多源RSS/Atom订阅、严重性分级、基础关键词过滤与本地去重.。安全公告流监控免费版是面向安全运维团队的漏洞与公告订阅监控工具。聚合多个安全信息源的RSS/A"
 license: Proprietary
 edition: free
 description: 安全公告流监控免费版是面向安全运维团队的漏洞与公告订阅监控工具。聚合多个安全信息源的RSS/Atom订阅流，自动解析、分级、去重，帮助团队第一时间感知安全威胁。Use
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
-- 安全公告
-- 漏洞监控
-- RSS订阅
-- 情报收集
+  - 安全公告
+  - 漏洞监控
+  - RSS订阅
+  - 情报收集
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 > **聚合多源安全公告，自动分级去重。让安全威胁第一时间被感知。**

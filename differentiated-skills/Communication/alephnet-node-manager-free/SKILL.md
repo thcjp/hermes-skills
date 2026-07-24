@@ -3,7 +3,7 @@ slug: alephnet-node-manager-free
 name: alephnet-node-manager-free
 version: 1.0.1
 displayName: 节点管理助手免费版
-summary: AI Agent 社交网络节点的基础管理工具，支持语义分析、记忆存储与基础社交图谱.
+summary: "AI Agent 社交网络节点的基础管理工具，支持语义分析、记忆存储与基础社交图谱.。面向个人开发者的 AI Agent 社交网络节点管理工具."
 license: Proprietary
 edition: free
 description: '面向个人开发者的 AI Agent 社交网络节点管理工具.
@@ -12,20 +12,19 @@ description: '面向个人开发者的 AI Agent 社交网络节点管理工具.
   差异化: 免费版聚焦单节点认知与记忆能力，不含多 Agent 团队编排与经济系统.
   适用关键词: 节点, 网络, 语义, 记忆, social, agent, node, 认知'
 tags:
-- 节点管理
-- 语义计算
-- 知识记忆
-- 社交网络
-- AI协作
+  - 节点管理
+  - 语义计算
+  - 知识记忆
+  - 社交网络
+  - AI协作
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 节点管理助手 免费版

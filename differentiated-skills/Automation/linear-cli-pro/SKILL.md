@@ -8,19 +8,17 @@ license: Proprietary
 description: 面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者。聚焦 v3
   执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 自动化
-- 项目管理
-- 开发者工具
+  - 自动化
+  - 项目管理
+  - 开发者工具
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # Linear CLI 专家
@@ -317,6 +315,14 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
   - Agent 优先执行循环：capabilities 发现 → 读 → dry-run 预览 → 写 → 校验 receipt/error
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解析难、内联转义炸、批量操作慢、鉴权易失效痛点、中稳跑、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 适用于需要解决JSON解析难、内联转义炸、批量操作慢、鉴权易失效痛点，让Linear CLI在Agent中稳跑的场景。具体使用场景请参考下方详细说明.

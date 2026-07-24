@@ -3,25 +3,24 @@ slug: solo-workflow-engine-free
 name: solo-workflow-engine-free
 version: 1.0.1
 displayName: Solo Workflow Engine
-summary: 独立开发者的无代码自动化引擎，七步法识别、设计、构建、维护自动化工作流.
+summary: "独立开发者的无代码自动化引擎，七步法识别、设计、构建、维护自动化工作流.。独立者引擎为独立开发者、一人公司、自由职业者提供系统化的无代码自动化方法论。免费版开放七步框架的前四步核心流程（识别"
 license: Proprietary
 edition: free
 description: 独立者引擎为独立开发者、一人公司、自由职业者提供系统化的无代码自动化方法论。免费版开放七步框架的前四步核心流程（识别机会、选择工具、设计方案、构建测试），帮助用户从零开始构建自动化工作流，节省时间、扩大运营规模。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 无代码自动化
-- 独立开发者
-- 效率提升
-- 工作流设计
+  - 无代码自动化
+  - 独立开发者
+  - 效率提升
+  - 工作流设计
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 独立者引擎（免费版）
@@ -313,7 +312,6 @@ Agent（四步执行）：
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent设计和指导无代码自动化工作流的构建
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -360,6 +358,14 @@ Agent（四步执行）：
 ```
 ### 核心原则（<60秒理解）(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 ```text
 自动化一切每周重复两次以上、不需要创造性思维的任务.
 时间是最宝贵的资产——自动化让你无需雇佣就能扩大规模.

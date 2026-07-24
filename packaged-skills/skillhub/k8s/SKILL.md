@@ -3,23 +3,23 @@ slug: "k8s"
 name: "k8s"
 version: 1.0.1
 displayName: "Kubernetes"
-summary: "规避Kubernetes常见错误,资源限制/探针/选择器"
+summary: "规避Kubernetes常见错误,资源限制/探针/选择器。Avoid common Kubernetes mistakes — resource limits, probe configur"
 license: "Proprietary"
 description: |-
   Avoid common Kubernetes mistakes — resource limits, probe configuration,
   selector mismatches, and。Use when 用户需要Kubernetes相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Operations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Kubernetes
@@ -43,6 +43,14 @@ category: "Automation"
 - **镜像安全扫描**：识别使用 `:latest` 标签、root用户运行、未设置 `imagePullPolicy` 的风险配置
 - **网络策略审计**：验证NetworkPolicy的ingress/egress规则，检测未限制命名空间间流量的场景
 - **RBAC最小权限检查**：分析ClusterRoleBinding/RoleBinding，标记过度授权（如 `*.*` verbs）
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

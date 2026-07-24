@@ -3,7 +3,7 @@ slug: pdf-processor-cn-tool-pro
 name: pdf-processor-cn-tool-pro
 version: 1.0.0
 displayName: 中文PDF处理器（专业版）
-summary: 针对中文PDF优化的处理工具，支持中文OCR、版面分析、表格提取与智能分块.
+summary: "针对中文PDF优化的处理工具，支持中文OCR、版面分析、表格提取与智能分块.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: '中文PDF处理器 - （专业版）
@@ -16,20 +16,19 @@ description: '中文PDF处理器 - （专业版）
 
   适用关键词: 中文PDF, PDF解析, 中文OCR, 表格提取, 版面分析, 智能分块, 双栏识别'
 tags:
-- PDF处理
-- 中文OCR
-- 表格提取
-- 版面分析
+  - PDF处理
+  - 中文OCR
+  - 表格提取
+  - 版面分析
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 中文PDF处理器（专业版）

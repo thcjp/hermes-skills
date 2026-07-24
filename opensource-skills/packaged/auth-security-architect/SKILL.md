@@ -3,25 +3,22 @@ slug: auth-security-architect
 name: auth-security-architect
 version: 1.0.1
 displayName: 认证安全架构师
-summary: OAuth/2FA/SSO全栈认证安全,基于Better Auth构建企业级认证体系
+summary: "OAuth/2FA/SSO全栈认证安全,基于Better Auth构建企业级认证体系。认证安全架构师——基于Better Auth官方最佳实践设计安全、可扩展的认证授权系统。适用于SaaS认"
 license: Proprietary
 description: 认证安全架构师——基于Better Auth官方最佳实践设计安全、可扩展的认证授权系统。适用于SaaS认证、企业SSO、双因素认证、RBAC权限管理、API安全防护、移动端认证等场景。从OAuth集成到2FA，从会话管理到权限控制，全栈安全覆盖。触发关键词：认证、授权、OAuth、2FA、SSO、会话、权限、RBAC、密码、密钥、CSRF、XSS、安全架构、Better
   Auth
 tags:
-- 认证安全
-- OAuth
-- 权限管理
-- SSO
-- 安全架构
+  - 认证安全
+  - OAuth
+  - 权限管理
+  - SSO
+  - 安全架构
+  - 安全
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - read
+  - exec
 category: "Security"
 ---
 # 认证安全架构师
@@ -35,6 +32,14 @@ category: "Security"
 - **双因素认证（2FA）**：TOTP（Google Authenticator）+ 短信验证码 + 邮箱验证码 + WebAuthn/Passkey + 备份码
 - **权限模型设计**：RBAC（角色-权限映射）+ ABAC（属性-权限映射）+ 多组织隔离（组织/团队/成员）
 - **OWASP Top 10 防护**：注入防护 + XSS（CSP）+ CSRF（SameSite + Token）+ 速率限制 + 密钥安全管理
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

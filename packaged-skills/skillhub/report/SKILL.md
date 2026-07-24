@@ -3,22 +3,20 @@ slug: "report"
 name: "report"
 version: 1.0.4
 displayName: "定制报表生成"
-summary: "配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递"
+summary: "配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。核心能力包括数据源用户驱动配置、YAML报表配置、Cron定时"
 license: "Proprietary"
 description: |-
   配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。核心能力包括数据源用户驱动配置、YAML报表配置、Cron定时调度、多渠道投递(chat/telegram/file/email)、报表管理(列表/暂停/按需运行)与环境变量安全凭证管理.
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 定制报表生成
@@ -106,6 +104,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回Cron定时调度的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Cron定时调度`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用范围
 
 本技能:

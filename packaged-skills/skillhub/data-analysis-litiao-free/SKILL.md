@@ -3,7 +3,7 @@ slug: "data-analysis-litiao-free"
 name: "data-analysis-litiao-free"
 version: "1.0.0"
 displayName: "数据分析助手(免费版)"
-summary: "基础数据分析框架，含方法论优先与统计严谨性检查清单，支持假设检验与描述统计"
+summary: "基础数据分析框架，含方法论优先与统计严谨性检查清单，支持假设检验与描述统计。数据分析助手免费版，提供基础的数据分析框架与统计检查能力. 核心能力包括： - 方法论优先框架（决策目标、证伪条件"
 license: "MIT"
 description: |-
   数据分析助手免费版，提供基础的数据分析框架与统计检查能力.
@@ -17,12 +17,15 @@ tags:
   - 信息检索
   - data-analysis
   - statistics
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
+  - write
+  - glob
+homepage: ""
 category: "Research"
 ---
 # 数据分析助手（免费版）
@@ -72,6 +75,14 @@ category: "Research"
 **输入**: 用户提供输出规范所需的指令和必要参数.
 **输出**: 返回输出规范的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 依赖说明
 
 ### 运行环境

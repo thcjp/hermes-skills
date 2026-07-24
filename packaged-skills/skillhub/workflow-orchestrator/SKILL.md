@@ -3,7 +3,7 @@ slug: "workflow-orchestrator"
 name: "workflow-orchestrator"
 version: 1.0.1
 displayName: "工作流编排器(专业版)"
-summary: "全功能工作流编排与调度，含cron调度、DAG并行、熔断器、监控告警与分布式执行。"
+summary: "全功能工作流编排与调度，含cron调度、DAG并行、熔断器、监控告警与分布式执行。。工作流编排器专业版是在免费版基础上的全功能升级，为自动化团队提供企业级工作流编排与调度能力。除核心编排能力"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,14 @@ tags:
   - 任务调度
   - 分布式执行
   - 监控告警
+  - 工作流
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工作流,自动化,效率"
 category: "Automation"
 ---
 # 工作流编排器(专业版)
@@ -162,6 +160,14 @@ workflow visualize report --flow my-flow --run-id "run-001" --output "report.htm
 - 关键参数: `可视化编排（专业版）` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级数据管道（数据工程团队角色）

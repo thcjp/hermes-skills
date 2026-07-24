@@ -11,16 +11,14 @@ tags:
   - 通用办公
   - Research
   - Finance
+  - 新闻
+  - 信息
+  - 资讯
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
 category: "Knowledge"
 ---
 # News Sentiment Scan
@@ -76,6 +74,14 @@ export API_KEY="your_api_key_here"
 **来源权重加权**: 不同信源按权威性赋权,公司公告与监管文件权重最高,社交媒体与论坛权重较低,确保权威信源主导评分.
 **输出报告**: 情绪温度计可视化、重大事件清单、正/中/负面事件统计与操作建议,辅助快速判断市场情绪方向.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

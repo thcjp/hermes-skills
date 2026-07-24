@@ -3,7 +3,7 @@ slug: title-hook-factory
 name: title-hook-factory
 version: 1.0.1
 displayName: "标题钩子工厂"
-summary: "生成爆款标题+钩子段落,基于6大钩子公式+量化打分+多平台字数控制"
+summary: "生成爆款标题+钩子段落,基于6大钩子公式+量化打分+多平台字数控制。标题钩子工厂是一款内容创作引流工具,生成爆款标题与开篇钩子段落. 基于6大钩子公式,量化打分排序,适配多平台字数规则. 核"
 license: Proprietary
 description: |-
   标题钩子工厂是一款内容创作引流工具,生成爆款标题与开篇钩子段落.
@@ -13,21 +13,19 @@ description: |-
   - 3-5个标题候选+量化打分
   - 钩子段落生成
   - 多平台字数控制与风格适配
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 标题生成
   - 内容引流
   - 爆款创作
   - 副业工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 标题钩子工厂 v1.1.0
@@ -52,6 +50,14 @@ category: "Automation"
 4. **多平台字数控制**: 小红书20字内/抖音15字内/公众号30字内/微博30字内,自动适配各平台标题字数限制
 5. **平台风格适配**: 根据平台调整标题风格(小红书活泼种草/抖音口语化/公众号深度/微博简洁观点)
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

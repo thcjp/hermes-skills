@@ -3,7 +3,7 @@ slug: "discord-voice"
 name: "discord-voice"
 version: 0.1.7
 displayName: "Discord语音助手"
-summary: "Discord语音对话助手,覆盖STT/TTS/VAD/打断/自动重连与流式转录全流程"
+summary: "Discord语音对话助手,覆盖STT/TTS/VAD/打断/自动重连与流式转录全流程。Discord 语音对话专业版 —— 在 Discord 语音频道中实现实时双向语音对话的端到端助手."
 license: "Proprietary"
 description: |-
   Discord 语音对话专业版 —— 在 Discord 语音频道中实现实时双向语音对话的端到端助手.
@@ -29,16 +29,15 @@ tags:
   - 语音对话
   - AI助手
   - 实时转录
+  - Discord
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
 category: "Communication"
 ---
 # Discord 语音助手
@@ -91,6 +90,14 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 
 每个公会同一时间仅允许 Bot 加入 1 个语音频道。重复调用 `join` 会返回 `already_in_voice_channel`,需先 `leave` 再切换。- 验证返回数据的完整性和格式正确性
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

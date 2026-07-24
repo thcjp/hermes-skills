@@ -3,7 +3,7 @@ slug: "git-workflow-cn-tool-pro"
 name: "git-workflow-cn-tool-pro"
 version: "1.0.0"
 displayName: "Git工作流专业版"
-summary: "企业级 Git 工作流方案，支持 Git Flow、团队协作、冲突工具集成与批量分支管理。"
+summary: "企业级 Git 工作流方案，支持 Git Flow、团队协作、冲突工具集成与批量分支管理。。面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -17,12 +17,8 @@ tags:
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # Git 工作流助手（专业版）

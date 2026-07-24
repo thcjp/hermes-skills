@@ -3,7 +3,7 @@ slug: solo-research-tool-free
 name: solo-research-tool-free
 version: 1.0.0
 displayName: 市场研究工具免费版
-summary: 轻量级市场研究助手,支持竞品分析、用户痛点挖掘与基础SEO关键词研究,适合个人创业者
+summary: "轻量级市场研究助手,支持竞品分析、用户痛点挖掘与基础SEO关键词研究,适合个人创业者。市场研究工具免费版为个人创业者提供轻量级的市场研究能力。核心能力:"
 license: Proprietary
 edition: free
 description: '市场研究工具免费版为个人创业者提供轻量级的市场研究能力。核心能力:
@@ -28,20 +28,20 @@ description: '市场研究工具免费版为个人创业者提供轻量级的市
 
   差异化:免费版聚焦核心研究流程,通过WebSearch与WebFetch实现轻量调研,适合个人创业者在产品开发前快速了解市场格局'
 tags:
-- 研究工具
-- 市场研究
-- 竞品分析
-- 个人效率
-- 创业
+  - 研究工具
+  - 市场研究
+  - 竞品分析
+  - 个人效率
+  - 创业
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 市场研究工具免费版

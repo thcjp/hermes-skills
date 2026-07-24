@@ -3,7 +3,7 @@ slug: "can-free"
 name: "can-free"
 version: "1.0.0"
 displayName: "CAN内容寻址-免费版"
-summary: "基于时钟地址命名协议，对内容加盖时间戳与哈希，本地三列日志记录与自评估。"
+summary: "基于时钟地址命名协议，对内容加盖时间戳与哈希，本地三列日志记录与自评估。。CAN免费版提供基于Clock Address Naming的核心内容寻址能力. 每条事件一行三列：WHEN（uni"
 license: "MIT"
 description: |-
   CAN免费版提供基于Clock Address Naming的核心内容寻址能力.
@@ -19,12 +19,14 @@ tags:
   - 研发工具
   - 审计
   - 内容寻址
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # CAN — Clock Address Naming（免费版）
@@ -136,6 +138,14 @@ WHAT    人类可读名称        你的称呼            trust find-fast
 **处理**: 解析付费版专享能力的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回付费版专享能力的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 核心能力（免费版）(补充)
 
 ### 1. 三列协议记录(补充)

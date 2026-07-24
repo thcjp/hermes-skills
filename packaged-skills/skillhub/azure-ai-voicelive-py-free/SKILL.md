@@ -14,12 +14,14 @@ tags:
   - 通用办公
   - voice
   - azure
+  - Azure
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # Azure VoiceLive 实时语音AI (免费版)
@@ -63,6 +65,14 @@ export API_KEY="your_api_key_here"
 - 监听 `response.audio.delta` 接收base64 PCM音频,`response.audio_transcript.done` 接收完整文字转写
 - 支持服务端VAD (`server_vad`) 自动检测话音起止,默认 `threshold` 0.5、`silence_duration_ms` 500ms
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

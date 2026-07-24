@@ -9,19 +9,18 @@ edition: free
 description: 面向MongoDB Atlas运维者的Admin API浏览与查询工具。通过命令行检索50+API分类、查看端点定义、获取Schema详情，免凭证即可作为只读文档浏览器使用，配置凭证后可执行实时API调用。Use
   when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
-- 集成工具
-- MongoDB
-- 云数据库
-- API管理
+  - 集成工具
+  - MongoDB
+  - 云数据库
+  - API管理
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Atlas管理台（免费版）

@@ -3,25 +3,23 @@ slug: canvas-art-designer
 name: canvas-art-designer
 version: 1.0.1
 displayName: 画布艺术设计器
-summary: 用代码画出海报级视觉作品,原创构图+克制美学,告别通用AI审美
+summary: "用代码画出海报级视觉作品,原创构图+克制美学,告别通用AI审美。画布艺术设计器——用代码在 PNG/PDF 画布上创作原创视觉艺术，坚持设计哲学，告别千篇一律的 AI 美学。适用于海报设计、"
 license: Proprietary
 description: 画布艺术设计器——用代码在 PNG/PDF 画布上创作原创视觉艺术，坚持设计哲学，告别千篇一律的 AI 美学。适用于海报设计、艺术作品、信息图、品牌物料、社交配图等场景。支持
   Canvas API/SVG/HTML2Canvas 多渲染方式，输出可打印可分享的 PNG/PDF/SVG。触发关键词：海报设计、视觉设计、画布设计、艺术创作、PNG设计、PDF设计、平面设计、海报制作、视觉艺术、设计稿
 tags:
-- 视觉设计
-- 海报制作
-- 平面设计
-- 品牌物料
-- 艺术创作
+  - 视觉设计
+  - 海报制作
+  - 平面设计
+  - 品牌物料
+  - 艺术创作
+  - 设计
+  - UI/UX
+  - 创意
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - read
+  - exec
+  - write
 category: "Creative"
 ---
 # 画布艺术设计器
@@ -35,6 +33,14 @@ category: "Creative"
 - **色彩与排版**：主色+辅色+强调色（3-5 色限制）+ 色彩情绪 + 双字体（标题+正文）+ 字号层级
 - **多格式渲染**：Canvas API / SVG / HTML2Canvas 代码生成 + PNG（位图）+ PDF（矢量可打印）+ SVG（可缩放）
 - **设计哲学守护**：原创构图（非模板）+ 图像主导 + 克制色彩 + 有意义的内容结构 + 拒绝通用 AI 美学
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

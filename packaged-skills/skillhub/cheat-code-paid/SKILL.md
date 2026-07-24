@@ -3,7 +3,7 @@ slug: "cheat-code-paid"
 name: "cheat-code-paid"
 version: 1.0.1
 displayName: "能力扩展工具专业版"
-summary: "企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享"
+summary: "企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享。面向团队与企业的高级能力扩展工具,在免费版基础上扩展批量查询、自定义数据源、知识缓存等能力。核心能力: - 批量知识查询与"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,16 +30,16 @@ tags:
   - 企业级
   - 批量查询
   - 数据源集成
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # 能力扩展工具专业版
@@ -161,6 +161,14 @@ category: "Development"
 | 可信度 | 数据来源的权威性 |
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一: 企业内部知识库统一检索

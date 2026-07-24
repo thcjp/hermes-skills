@@ -3,7 +3,7 @@ slug: "upstage-document-parse-free"
 name: "upstage-document-parse-free"
 version: "1.0.5"
 displayName: "Document Parse Free"
-summary: "基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。"
+summary: "基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。。upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 M"
 license: "MIT-0"
 description: |-
   upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 Markdown 格式.
@@ -12,11 +12,12 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 文档处理
-tools: ["read", "write", "exec"]
-tags: "文档处理,工具,效率"
+  - 工具
+  - 效率
 category: "Knowledge"
 ---
 # Document Parse Free
@@ -71,6 +72,14 @@ export API_KEY="your_api_key_here"
 `figure`、`caption`。不支持 `chart`、`equation`、`header`、`footer`、`index`、`footnote`
 等高级元素类别.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 确认文档格式在支持列表中（JPEG/PNG/BMP/PDF/TIFF）

@@ -9,21 +9,22 @@ edition: pro
 description: Agent安全审计专业版,为企业安全团队提供全方位AI Agent安全审计能力。核心能力:多Agent批量审计、上下文感知提示注入检测、沙盒逃逸分析、工具参数投毒检测、供应链安全、SARIF报告与CI/CD集成。Use
   when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
-- 安全
-- AI安全
-- Agent审计
-- 企业版
-- 深度检测
+  - 安全
+  - AI安全
+  - Agent审计
+  - 企业版
+  - 深度检测
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 专业版为企业安全团队提供完整的AI Agent安全审计平台,涵盖多Agent批量审计、上下文感知深度提示注入检测、沙盒逃逸分析、工具参数投毒检测、供应链安全审查与CI/CD安全门禁。在免费版基础审计能力之上,新增企业级深度检测、自动化修复建议与合规报告导出。专业版完全兼容免费版审计方法,已有审计流程可无缝升级.

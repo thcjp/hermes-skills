@@ -3,7 +3,7 @@ slug: "json-validator"
 name: "json-validator"
 version: 1.0.1
 displayName: "JSON校验器(专业版)"
-summary: "企业级JSON校验工具，支持批量校验、Schema校验、自动修复与CI/CD集成。"
+summary: "企业级JSON校验工具，支持批量校验、Schema校验、自动修复与CI/CD集成。。JSON校验器专业版是一款面向数据团队与企业级数据质量保障场景的全功能JSON校验工具。在免费版的语法检查"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,16 +12,15 @@ tags:
   - 数据校验
   - 质量保障
   - 企业工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # JSON校验器(专业版)
@@ -208,6 +207,14 @@ jobs:
 
 **支持的CI平台**：GitHub Actions、GitLab CI、Jenkins、Drone CI。每种提供开箱即用的任务模板.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级数据质量保障流水线（数据工程师角色）
@@ -406,7 +413,6 @@ def auto_fix_json(content: str) -> dict:
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成可执行的企业级校验流水线
 
 ---
-
 ## 案例展示
 
 ### 示例1：基础用法
@@ -414,6 +420,14 @@ def auto_fix_json(content: str) -> dict:
 ```
 ### 60秒上手：批量校验+Schema校验(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
 > "帮我校验 ./data 目录下所有JSON，按 user-schema.json 校验结构。"

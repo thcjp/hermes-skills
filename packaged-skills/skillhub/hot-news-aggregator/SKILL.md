@@ -3,22 +3,20 @@ slug: "hot-news-aggregator"
 name: "hot-news-aggregator"
 version: 1.0.1
 displayName: "hot-news-aggregator"
-summary: "国内外社会科技军事新闻汇总,自动搜索筛选整理要点"
+summary: "国内外社会科技军事新闻汇总,自动搜索筛选整理要点。国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不"
 license: "Proprietary"
 description: |-
   国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - Research
+  - 新闻
+  - 信息
+  - 资讯
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
 category: "Knowledge"
 ---
 # hot-news-aggregator
@@ -44,6 +42,14 @@ category: "Knowledge"
 - 分类标注：自动识别新闻类别（社会/科技/军事/财经/国际/教育/健康）
 - 趋势分析：识别热点话题的发展趋势、舆论走向和关联事件
 - 多语言支持：中文新闻源与英文国际新闻源并行检索
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

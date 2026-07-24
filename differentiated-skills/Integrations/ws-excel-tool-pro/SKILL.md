@@ -3,7 +3,7 @@ slug: "ws-excel-tool-pro"
 name: "ws-excel-tool-pro"
 version: "1.0.0"
 displayName: "Excel工具(专业版)"
-summary: "Excel 全能力版：多表合并、透视表、图表、大数据处理、自动化流水线与数据库联动。"
+summary: "Excel 全能力版：多表合并、透视表、图表、大数据处理、自动化流水线与数据库联动。。Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,15 +14,14 @@ tags:
   - 透视表
   - 图表可视化
   - 自动化流水线
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Excel 工具（专业版）

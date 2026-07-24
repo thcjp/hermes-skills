@@ -3,7 +3,7 @@ slug: "email-skill-free"
 name: "email-skill-free"
 version: "1.0.0"
 displayName: "Email Free"
-summary: "SMTP基础邮件发送,支持单供应商与纯文本附件投递"
+summary: "SMTP基础邮件发送,支持单供应商与纯文本附件投递。基于SMTP协议的轻量邮件发送Skill,提供纯文本正文、单附件投递与 测试邮件校验能力,支持Gmail与Outlook主流服务商。适用于"
 license: "MIT"
 description: |-
   基于SMTP协议的轻量邮件发送Skill,提供纯文本正文、单附件投递与
@@ -12,12 +12,14 @@ description: |-
 tags:
   - Communication
   - SMTP
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Email Free
@@ -79,6 +81,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回单附件投递的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`单附件投递`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求
@@ -199,5 +209,12 @@ python email_sender.py --to "your-email@gmail.com" --test
 - 仅内置Gmail与Outlook两套SMTP预设,不支持自定义服务器.
 - 凭据仅支持配置文件方式注入,不支持环境变量与密钥管理服务.
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > 想要HTML富文本、多附件并行、CC/BCC抄送、多供应商适配与企业级凭据管理?升级至付费版 **email-skill**,解锁完整邮件自动化能力.

@@ -3,7 +3,7 @@ slug: cdp-browser-pilot-pro
 name: cdp-browser-pilot-pro
 version: 1.0.0
 displayName: Cdp Browser Pilot
-summary: 企业级CDP浏览器自动化系统，含平台踩坑指南、SPA导航、连接管理、反检测与Cookie处理.
+summary: "企业级CDP浏览器自动化系统，含平台踩坑指南、SPA导航、连接管理、反检测与Cookie处理.。CDP浏览器领航专业版是面向团队与企业的全功能CDP浏览器自动化系统。不仅覆盖基础CDP操作，"
 license: Proprietary
 edition: pro
 description: 'CDP浏览器领航专业版是面向团队与企业的全功能CDP浏览器自动化系统。不仅覆盖基础CDP操作，更提供平台踩坑指南（B站/小红书/Minimax等）、SPA内部导航策略、连接管理器、反自动化检测应对、Cookie高级处理与多标签页管理，确保复杂场景下的浏览器自动化稳定可靠.
@@ -12,21 +12,20 @@ description: 'CDP浏览器领航专业版是面向团队与企业的全功能CDP
   差异化：完全中文化重写，移除原始平台标识，新增平台踩坑指南、SPA导航策略、连接管理器、反检测应对、Cookie处理、多标签页管理六大高级能力。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整CDP能力与优先支持。保留原始MIT版权声明.
   适用关键词：CDP自动化、平台踩坑、SPA导航、连接管理、反检测、Cookie处理、多标签页、浏览器自动化'
 tags:
-- 浏览器自动化
-- CDP
-- SPA导航
-- 反检测
-- 平台踩坑
+  - 浏览器自动化
+  - CDP
+  - SPA导航
+  - 反检测
+  - 平台踩坑
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # CDP浏览器领航（专业版）

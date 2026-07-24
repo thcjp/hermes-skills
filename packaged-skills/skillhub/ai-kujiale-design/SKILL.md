@@ -3,7 +3,7 @@ slug: "ai-kujiale-design"
 name: "ai-kujiale-design"
 version: 0.0.7
 displayName: "酷家乐AI室内设计"
-summary: "酷家乐室内智能设计,分步对话完成户型确认、风格选择、布局生成与渲染出图。"
+summary: "酷家乐室内智能设计,分步对话完成户型确认、风格选择、布局生成与渲染出图。。基于酷家乐(Kujiale)开放能力的室内智能设计技能,通过分步式对话完成 户型确认、风格选择、布局生成、渲染出图全"
 license: "Proprietary"
 description: |-
   基于酷家乐(Kujiale)开放能力的室内智能设计技能,通过分步式对话完成
@@ -22,16 +22,15 @@ tags:
   - Creative
   - 室内设计
   - 装修
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # 酷家乐 AI 室内设计
@@ -128,6 +127,14 @@ node （请参考skill目录中的脚本文件） --token=$TOKEN --query="
 **输出**: 返回阶段一: 户型获取与确认的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 # ...
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

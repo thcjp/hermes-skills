@@ -3,7 +3,7 @@ slug: "apple-health-skill-free"
 name: "apple-health-skill-free"
 version: "1.0.0"
 displayName: "运动健康数据基础版"
-summary: "基础运动健康数据查询，获取训练方案和训练记录"
+summary: "基础运动健康数据查询，获取训练方案和训练记录。使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录. 适用于基础训练数据查看场景。升级至完整版可解锁AI教练对话"
 license: "MIT"
 description: |-
   使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录.
@@ -12,11 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 生活服务
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 运动健康数据（免费版）
@@ -76,6 +78,14 @@ export API_KEY="your_api_key_here"
 通过 `GET /api/v1/profile` 获取运动员档案信息。返回用户的基本信息、运动偏好、历史训练摘要等数据。适用于用户画像构建和基础数据获取。- 验证返回数据的完整性和格式正确性
 - 参考`运动员档案`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 升级提示
 
 以下为完整版（apple-health-skill）独有功能，免费版不可用：

@@ -3,7 +3,7 @@ slug: "bsession"
 name: "bsession"
 version: 0.1.1
 displayName: "browser"
-summary: "搭bsession环境做浏览器自动化,一次性抓取或建持久会话"
+summary: "搭bsession环境做浏览器自动化,一次性抓取或建持久会话。Browser automation — setup the bsession environment, fetch info"
 license: "Proprietary"
 description: |-
   Browser automation — setup the bsession environment, fetch info from
@@ -11,16 +11,15 @@ description: |-
 tags:
   - Research
   - Automation
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # browser
@@ -41,6 +40,14 @@ category: "Automation"
 - Browser automation — setup the bsession environment, fetch info from
   a website (one-shot), create
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

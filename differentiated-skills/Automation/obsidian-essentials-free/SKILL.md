@@ -9,19 +9,18 @@ edition: free
 description: Obsidian基础入门免费版是面向AI Agent的Obsidian新手入门指南。不同于综合工具箱，本技能聚焦"新手快速上手"：安装配置、领先篇笔记、Markdown基础、核心配置项、基础工作流，帮助Agent引导用户完成Obsidian的初次配置与基础使用。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- Obsidian
-- 新手入门
-- 核心配置
-- Markdown
+  - Obsidian
+  - 新手入门
+  - 核心配置
+  - Markdown
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 > **不是教你成为Obsidian高手，而是带你从零开始迈出领先步。安装、配置、领先篇笔记，新手友好。**

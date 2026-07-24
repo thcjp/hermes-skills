@@ -3,7 +3,7 @@ name: "agentvibes-content-skill"
 slug: "agentvibes-content-skill"
 displayName: "AgentVibes内容技能"
 version: 4.6.7
-summary: "AgentVibes内容创作与管理技能,支持多模态内容生成与发布"
+summary: "AgentVibes内容创作与管理技能,支持多模态内容生成与发布。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Agentvib"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Agentvibes Content Skill 核心处理"、Agentvibes Content Skill 核心处理时使用.
@@ -12,15 +12,15 @@ license: "Proprietary"
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - AI代理
+  - 自动化
+  - 智能
 category: "Agents"
 ---
 # Agentvibes Content Skill 智能分析
@@ -42,6 +42,14 @@ category: "Agents"
 - Agentvibes Content Skill 错误重试
 - Agentvibes Content Skill 多格式支持
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 - 用户说"Agentvibes Content Skill 扩展能力9" → 执行API调用

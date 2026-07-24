@@ -3,23 +3,22 @@ slug: "baoyu-md-formatter"
 name: "baoyu-md-formatter"
 version: "1.117.2"
 displayName: "Baoyu Format Markdow"
-summary: "格式化纯文本与Markdown,补frontmatter/标题/摘要/加粗/列表,规范文档"
+summary: "格式化纯文本与Markdown,补frontmatter/标题/摘要/加粗/列表,规范文档。Formats plain text or markdown files with frontma"
 license: "Proprietary"
 description: |-
   Formats plain text or markdown files with frontmatter, titles, summaries,
   headings, bold, lists, 
 tags:
   - Development
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Baoyu Format Markdow
@@ -39,6 +38,14 @@ category: "Automation"
 - Formats plain text or markdown files with frontmatter, titles, summaries,
   headings, bold, lists,
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

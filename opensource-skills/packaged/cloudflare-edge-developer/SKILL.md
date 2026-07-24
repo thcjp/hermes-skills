@@ -3,26 +3,24 @@ slug: cloudflare-edge-developer
 name: cloudflare-edge-developer
 version: 1.0.1
 displayName: 边缘计算开发者
-summary: 全球300+边缘节点低延迟部署,Cloudflare全栈边缘开发一站搞定
+summary: "全球300+边缘节点低延迟部署,Cloudflare全栈边缘开发一站搞定。边缘计算开发者——基于Cloudflare官方最佳实践，在全球300+边缘节点部署低延迟应用。适用于边缘API、CD"
 license: Proprietary
 description: 边缘计算开发者——基于Cloudflare官方最佳实践，在全球300+边缘节点部署低延迟应用。适用于边缘API、CDN优化、边缘函数、实时协作、边缘AI、全栈应用等场景。从Workers脚本到Durable
   Objects，从KV到Workers AI，全栈边缘开发。国内场景可迁移至腾讯云EdgeOne或阿里云函数计算。触发关键词：Cloudflare、Workers、边缘计算、KV、R2、D1、Queues、Durable
   Objects、Workers AI、wrangler、边缘函数
 tags:
-- 边缘计算
-- Cloudflare
-- 无服务器
-- 低延迟
-- 全球部署
+  - 边缘计算
+  - Cloudflare
+  - 无服务器
+  - 低延迟
+  - 全球部署
+  - 云计算
+  - DevOps
+  - 基础设施
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
+  - read
+  - exec
+  - write
 category: "Operations"
 ---
 # 边缘计算开发者
@@ -36,6 +34,14 @@ category: "Operations"
 - **Workers AI 集成**：文本生成（Llama/Mistral）+ 图像生成（Stable Diffusion）+ 语音识别（Whisper）+ 嵌入向量
 - **性能优化**：最小化 Worker 体积（ES modules）+ Cache API 缓存 + 异步处理（`ctx.waitUntil`）+ 避免阻塞
 - **部署与运维**：蓝绿/金丝雀部署 + 环境管理 + `wrangler tail` 实时日志 + 版本回滚
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

@@ -3,7 +3,7 @@ slug: "iris-formatter-tool-pro"
 name: "iris-formatter-tool-pro"
 version: "1.0.0"
 displayName: "IRIS代码格式化专业版"
-summary: "企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。"
+summary: "企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。。面向企业级 IRIS 开发团队的 ObjectScript 代码审查与治理工具。核心能力: -"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,15 +28,15 @@ tags:
   - ObjectScript
   - 企业协作
   - 代码质量
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # IRIS 代码格式化工具（专业版）

@@ -3,7 +3,7 @@ slug: volcengine-dns-tool-free
 name: volcengine-dns-tool-free
 version: 1.0.0
 displayName: 火山引擎DNS免费版
-summary: 火山引擎DNS记录管理，支持域名区查询、记录增删改与传播验证，适合个人开发者日常运维.
+summary: "火山引擎DNS记录管理，支持域名区查询、记录增删改与传播验证，适合个人开发者日常运维.。火山引擎DNS管理工具免费版，面向个人开发者的轻量级DNS记录管理工具。核心能力:"
 license: Proprietary
 edition: free
 description: '火山引擎DNS管理工具免费版，面向个人开发者的轻量级DNS记录管理工具。核心能力:
@@ -26,19 +26,18 @@ description: '火山引擎DNS管理工具免费版，面向个人开发者的轻
 
   差异化: 免费版聚焦核心DNS记录管理能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- DNS管理
-- 火山引擎
-- 域名运维
-- 免费版
+  - DNS管理
+  - 火山引擎
+  - 域名运维
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 火山引擎DNS管理（免费版）

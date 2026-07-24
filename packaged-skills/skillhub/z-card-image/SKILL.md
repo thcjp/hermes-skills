@@ -3,7 +3,7 @@ slug: "z-card-image"
 name: "z-card-image"
 version: 1.1.1
 displayName: "卡片图渲染"
-summary: "将文案渲染为 PNG 卡片图,支持海报、长文分页、X 风格长图与公众号封面,多平台配色预设"
+summary: "将文案渲染为 PNG 卡片图,支持海报、长文分页、X 风格长图与公众号封面,多平台配色预设。将用户提供的文案渲染成 PNG 卡片图. 支持短文案封面图(poster-3-4)、长文分页卡片("
 license: "Proprietary"
 description: |-
   将用户提供的文案渲染成 PNG 卡片图.
@@ -17,16 +17,15 @@ tags:
   - 需求设计
   - Creative
   - Image
+  - 图像处理
+  - AI绘图
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "图像处理,AI绘图,创意"
 category: "Creative"
 ---
 # z-card-image
@@ -197,6 +196,14 @@ export API_KEY="your_api_key_here"
 **处理**: 解析自动拆分与缩写的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
 - 参考`平台配色预设`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

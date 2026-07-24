@@ -3,25 +3,26 @@ slug: soul-decision-engine-free
 name: soul-decision-engine-free
 version: 1.0.1
 displayName: Soul Decision Engine
-summary: AI Agent结构化决策支持系统，混合命名空间记忆，从决策复盘中持续学习偏好.
+summary: "AI Agent结构化决策支持系统，混合命名空间记忆，从决策复盘中持续学习偏好.。灵魂决策引擎免费版为AI Agent提供结构化决策支持系统，将"我应该选A还是B"的纠结过程转化为可追溯、可"
 license: Proprietary
 edition: free
 description: 灵魂决策引擎免费版为AI Agent提供结构化决策支持系统，将"我应该选A还是B"的纠结过程转化为可追溯、可复盘、可学习的决策记忆。基于混合命名空间（域×类型）存储决策模式，从每次决策复盘中提取用户的风险偏好与框架偏好。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 决策引擎
-- 结构化决策
-- 决策复盘
-- 风险画像
+  - 决策引擎
+  - 结构化决策
+  - 决策复盘
+  - 风险画像
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # 灵魂决策引擎（免费版）

@@ -3,7 +3,7 @@ slug: content-refiner
 name: content-refiner
 version: 1.0.1
 displayName: "内容洗稿师"
-summary: "同质化内容救星,LLM深度改写+8平台适配+SimHash去重,原创度99%规避查重"
+summary: "同质化内容救星,LLM深度改写+8平台适配+SimHash去重,原创度99%规避查重。内容洗稿师是一款同质化内容改写工具,解决内容查重与原创度问题. 支持LLM深度改写、8平台风格适配、Si"
 license: Proprietary
 description: |-
   内容洗稿师是一款同质化内容改写工具,解决内容查重与原创度问题.
@@ -13,21 +13,19 @@ description: |-
   - 8平台风格精准适配
   - SimHash汉明距离去重
   - 自动降级与变更明细追踪
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 内容改写
   - 原创度
   - 多平台分发
   - 查重规避
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # 内容洗稿师
@@ -51,6 +49,14 @@ category: "Automation"
 4. **自动降级机制**:LLM服务调用失败或超时时自动降级为本地同义替换模式,标注warning保证改写不中断
 5. **改写变更明细追踪**:输出word_replacements(词汇替换数)/sentence_restructures(句式调整数)/emoji_added(emoji添加数)等变更摘要,改写过程透明可追溯
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |

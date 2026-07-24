@@ -3,7 +3,7 @@ slug: mindmap-gen-tool-free
 name: mindmap-gen-tool-free
 version: 1.0.0
 displayName: 思维导图生成（免费版）
-summary: 从主题或文档自动生成思维导图，支持Markmap格式与多种布局风格.
+summary: "从主题或文档自动生成思维导图，支持Markmap格式与多种布局风格.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
 description: '思维导图生成 - （免费版）
@@ -16,19 +16,18 @@ description: '思维导图生成 - （免费版）
 
   适用关键词: 思维导图, mindmap, markmap, 知识结构, 学习路径, 主题展开, 文档转导图'
 tags:
-- 思维导图
-- 可视化
-- 知识结构
-- Markmap
+  - 思维导图
+  - 可视化
+  - 知识结构
+  - Markmap
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 思维导图生成（免费版）

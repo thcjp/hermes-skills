@@ -3,7 +3,7 @@ slug: "longmemo-elite"
 name: "longmemo-elite"
 version: 2.0.1
 displayName: "精英长记忆"
-summary: "Agent精英级长记忆：WAL防丢失+三路混合检索+六层存储+成本预算控制。"
+summary: "Agent精英级长记忆：WAL防丢失+三路混合检索+六层存储+成本预算控制。。面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大核心痛点. WAL写前日志协议采"
 license: "Proprietary"
 description: |-
   面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大核心痛点.
@@ -16,15 +16,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 精英长记忆
@@ -81,6 +80,14 @@ category: "Automation"
 **输出**: 返回L2温向量的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`L2温向量`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：创建热内存文件

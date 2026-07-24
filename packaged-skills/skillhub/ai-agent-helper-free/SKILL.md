@@ -3,7 +3,7 @@ slug: "ai-agent-helper-free"
 name: "ai-agent-helper-free"
 version: "1.0.0"
 displayName: "AI Agent LITE"
-summary: "AI Agent基础设计助手,提供Prompt工程与ReAct循环设计两大基础能力"
+summary: "AI Agent基础设计助手,提供Prompt工程与ReAct循环设计两大基础能力。AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能"
 license: "MIT"
 description: |-
   AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能力,
@@ -14,12 +14,16 @@ description: |-
 tags:
   - 研发工具
   - Productivity
+  - AI代理
+  - 自动化
+  - 智能
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # AI Agent LITE
@@ -104,6 +108,14 @@ system = """你是一个{role}.
 - **格式提醒**: 多轮对话中在user message末尾追加格式约束
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

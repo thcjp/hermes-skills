@@ -3,22 +3,20 @@ slug: "py"
 name: "py"
 version: 1.0.2
 displayName: "Python健壮编程"
-summary: "编写可靠Python代码,避免可变默认值、导入陷阱与运行时意外"
+summary: "编写可靠Python代码,避免可变默认值、导入陷阱与运行时意外。编写可靠Python代码,避免可变默认值、导入陷阱与常见运行时意外。核心能力涵盖动态类型与类型提示、集合陷阱与推导式、参数/闭"
 license: "Proprietary"
 description: |-
   编写可靠Python代码,避免可变默认值、导入陷阱与常见运行时意外。核心能力涵盖动态类型与类型提示、集合陷阱与推导式、参数/闭包/装饰器/生成器、继承/描述符/元类、GIL/线程/asyncio/多进程、循环导入/包管理、Pytest测试与模拟,提供关键规则与错误场景防护.
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # Python健壮编程
@@ -110,6 +108,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回迭代修改安全的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`迭代修改安全`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 关键规则
 
 * `def f(items=[])` 在所有调用间共享列表 — 使用 `items=None` 然后 `items = items or []`

@@ -3,25 +3,24 @@ slug: art-creator-free
 name: art-creator-free
 version: 1.0.1
 displayName: 艺术创作助手
-summary: 智能艺术创作指导，涵盖媒介选择、技法训练、作品反馈与鉴赏，助力创作者突破瓶颈.
+summary: "智能艺术创作指导，涵盖媒介选择、技法训练、作品反馈与鉴赏，助力创作者突破瓶颈.。艺术创作助手免费版解决创作者在练习过程中"技法指导碎片化、反馈缺乏针对性、练习方向不清晰"的核心痛点。艺术创作"
 license: Proprietary
 edition: free
 description: 艺术创作助手免费版解决创作者在练习过程中"技法指导碎片化、反馈缺乏针对性、练习方向不清晰"的核心痛点。艺术创作助手以媒介优先原则为起点，将复杂的艺术学习拆解为可执行的训练单元，帮助创作者在正确的方向上持续进步。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 艺术创作
-- 创作指导
-- 技法训练
-- 作品反馈
+  - 艺术创作
+  - 创作指导
+  - 技法训练
+  - 作品反馈
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 艺术创作助手（免费版）
@@ -91,6 +90,14 @@ category: "Automation"
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 # ...
 # ...
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 创作指导请求
 # ...
 ### 基本信息

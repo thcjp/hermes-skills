@@ -3,7 +3,7 @@ slug: tarot-tool-pro
 name: tarot-tool-pro
 version: 1.0.0
 displayName: 塔罗反思工具专业版
-summary: 完整78张韦特塔罗牌阵库、多牌阵模板、会话归档与团队协作，适合专业占卜师与内容创作者.
+summary: "完整78张韦特塔罗牌阵库、多牌阵模板、会话归档与团队协作，适合专业占卜师与内容创作者.。塔罗反思工具专业版，面向专业占卜师、内容创作者与团队协作场景的高阶塔罗解读平台。核心能力:"
 license: Proprietary
 edition: pro
 description: '塔罗反思工具专业版，面向专业占卜师、内容创作者与团队协作场景的高阶塔罗解读平台。核心能力:
@@ -28,21 +28,21 @@ description: '塔罗反思工具专业版，面向专业占卜师、内容创作
 
   差异化: 专业版在免费版核心能力之上扩展完整牌组与牌阵库...'
 tags:
-- 塔罗
-- 专业占卜
-- 韦特塔罗
-- 牌阵库
-- 专业版
+  - 塔罗
+  - 专业占卜
+  - 韦特塔罗
+  - 牌阵库
+  - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 塔罗反思工具（专业版）

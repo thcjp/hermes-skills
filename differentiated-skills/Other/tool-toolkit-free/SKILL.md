@@ -3,7 +3,7 @@ slug: tool-toolkit-free
 name: tool-toolkit-free
 version: 1.0.1
 displayName: 工具评估工具免费版
-summary: 提供工具发现、评估框架与工作流设计指引，帮助个人开发者选对工具、避免工具切换综合征.
+summary: "提供工具发现、评估框架与工作流设计指引，帮助个人开发者选对工具、避免工具切换综合征.。工具评估工具免费版，面向个人开发者的轻量级工具选择与评估框架。核心能力:"
 license: Proprietary
 edition: free
 description: '工具评估工具免费版，面向个人开发者的轻量级工具选择与评估框架。核心能力:
@@ -26,19 +26,18 @@ description: '工具评估工具免费版，面向个人开发者的轻量级工
 
   差异化: 免费版聚焦核心评估框架与选型方法，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- 工具评估
-- 选型框架
-- 工作流设计
-- 免费版
+  - 工具评估
+  - 选型框架
+  - 工作流设计
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 工具评估工具（免费版）

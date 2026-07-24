@@ -3,7 +3,7 @@ slug: "github-dev-standard"
 name: "github-dev-standard"
 version: 1.0.1
 displayName: "项目开发标准专业版"
-summary: "企业级项目开发标准方案，含自动化验收、CI 集成、团队协作与质量度量。"
+summary: "企业级项目开发标准方案，含自动化验收、CI 集成、团队协作与质量度量。。面向企业研发团队的项目开发标准化专业工具，提供自动化验收与团队协作治理方案。核心能力: - 自动化验收清单（CI/CD"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,16 +27,14 @@ tags:
   - 代码质量
   - 企业协作
   - CI/CD
+  - 版本控制
+  - Git
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 category: "Development"
 ---
 # 项目开发标准专业版
@@ -83,6 +81,14 @@ category: "Development"
 **输出**: 返回编码纪律的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`编码纪律`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级合并请求质量管控

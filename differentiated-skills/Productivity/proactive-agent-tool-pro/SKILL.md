@@ -3,7 +3,7 @@ slug: proactive-agent-tool-pro
 name: proactive-agent-tool-pro
 version: 1.0.0
 displayName: 主动型 Agent 专业版
-summary: 企业级主动型 Agent 架构,支持 WAL 协议、工作缓冲区、压缩恢复与安全加固
+summary: "企业级主动型 Agent 架构,支持 WAL 协议、工作缓冲区、压缩恢复与安全加固。核心能力: AI Agent领域的专业化 AI 辅助工具,提供企业级高级功能支持."
 license: Proprietary
 edition: pro
 description: '核心能力: AI Agent领域的专业化 AI 辅助工具,提供企业级高级功能支持.
@@ -11,20 +11,21 @@ description: '核心能力: AI Agent领域的专业化 AI 辅助工具,提供企
   差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持.
   适用关键词: proactive, agent, 主动, 记忆, WAL, 自我改进, 安全加固'
 tags:
-- 主动型Agent
-- 记忆管理
-- 自我改进
-- 安全
+  - 主动型Agent
+  - 记忆管理
+  - 自我改进
+  - 安全
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 主动型 Agent 专业版
@@ -357,6 +358,13 @@ PRO 版本支持以下 API Key 管理方式:
 - **SLA**: 优先响应,工作时间内 2 小时内响应
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 **版本信息**
 

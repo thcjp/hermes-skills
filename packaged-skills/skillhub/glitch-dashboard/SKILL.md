@@ -3,7 +3,7 @@ slug: "glitch-dashboard"
 name: "glitch-dashboard"
 version: 2026.2.19
 displayName: "Dashboard"
-summary: "统一Web仪表盘,管任务队列/监控指标/查ZeroTier状态"
+summary: "统一Web仪表盘,管任务队列/监控指标/查ZeroTier状态。Unified web dashboard for managing task queues, monitoring syst"
 license: "Proprietary"
 description: |-
   Unified web dashboard for managing task queues, monitoring system metrics,
@@ -11,16 +11,15 @@ description: |-
 tags:
   - Productivity
   - Operations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Dashboard
@@ -43,6 +42,14 @@ category: "Automation"
 - Glitch Dashboard 错误重试 - 提供可操作改进建议
 - Glitch Dashboard 多格式支持 - 支持全维度全维度评估
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 1. **Operations Dashboard** - Monitor all systems in one view

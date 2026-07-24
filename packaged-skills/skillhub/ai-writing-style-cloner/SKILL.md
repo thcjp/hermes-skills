@@ -3,26 +3,24 @@ slug: ai-writing-style-cloner
 name: ai-writing-style-cloner
 version: 1.0.1
 displayName: "AI写作分身工厂"
-summary: "5篇文章克隆任意作者文风,14种公式批量产出同风格爆款"
+summary: "5篇文章克隆任意作者文风,14种公式批量产出同风格爆款。AI写作分身工厂——上传任意作者的5-10篇文章,6维反向提取风格指纹,生成可永久复用的写作分身,让任何人用这个分身写出的文章读起来与"
 license: Proprietary
 description: |-
   AI写作分身工厂——上传任意作者的5-10篇文章,6维反向提取风格指纹,生成可永久复用的写作分身,让任何人用这个分身写出的文章读起来与原作者一模一样。核心功能:6维风格指纹提取(词汇丰富度/句式结构/语调倾向/节奏模式/修辞偏好/情感基调)、14种写作公式(PAS/AIDA/STAR/FAB/金字塔原理等)、风格指纹JSON持久化一次蒸馏永久复用、智能公式推荐根据风格自动匹配、内容生成自动注入风格
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 内容创作
   - 写作
   - 风格分析
   - AI写作
   - 风格克隆
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
 category: "Automation"
 ---
 # AI写作分身工厂
@@ -46,6 +44,14 @@ category: "Automation"
 4. **智能公式推荐**:根据风格指纹中的tone_tendency和emotional_tone自动推荐最适合的写作公式(权威+理性→PREP/金字塔原理,亲和+感性→钩子-故事-金句-行动/情感共鸣法)
 5. **内容生成自动注入**:写新内容时自动读取作者风格指纹JSON,拼接为风格描述注入LLM Prompt半静态层,确保生成内容与目标作者风格一致
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |

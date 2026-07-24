@@ -3,25 +3,25 @@ slug: daily-news-brief-tool-free
 name: daily-news-brief-tool-free
 version: 1.0.0
 displayName: 每日新闻简报(免费版)
-summary: 每日新闻简报免费版，自动搜集国际时事、经济形势、科技发展新闻生成简报.
+summary: "每日新闻简报免费版，自动搜集国际时事、经济形势、科技发展新闻生成简报.。每日新闻简报助手免费版是面向个人用户的轻量新闻简报生成工具。聚焦"搜集-筛选-生成"三步流程，自动获取国际时事、经济形"
 license: Proprietary
 edition: free
 description: 每日新闻简报助手免费版是面向个人用户的轻量新闻简报生成工具。聚焦"搜集-筛选-生成"三步流程，自动获取国际时事、经济形势、科技发展新闻，生成统一格式的简报。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 每日新闻
-- 新闻简报
-- 多领域
-- 资讯速递
+  - 每日新闻
+  - 新闻简报
+  - 多领域
+  - 资讯速递
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 > **搜集、筛选、生成。三步完成每日新闻简报。**

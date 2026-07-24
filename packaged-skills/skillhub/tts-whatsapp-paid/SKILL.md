@@ -3,7 +3,7 @@ slug: "tts-whatsapp-paid"
 name: "tts-whatsapp-paid"
 version: 1.0.1
 displayName: "WhatsApp语音消息专业版"
-summary: "企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。"
+summary: "企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。。面向团队与企业用户的 WhatsApp 语音消息工具(专业版)。核心能力: - 涵盖免费版全部"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,16 +29,14 @@ tags:
   - 企业级
   - 群发广播
   - 自动化
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
 category: "Communication"
 ---
 # WhatsApp语音消息专业版
@@ -89,6 +87,14 @@ category: "Communication"
 **输出**: 返回多语言的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`多语言`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:群组广播

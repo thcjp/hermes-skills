@@ -3,23 +3,22 @@ slug: slack-api-toolkit-free
 name: slack-api-toolkit-free
 version: 1.0.1
 displayName: Slack API工具箱
-summary: 通过托管OAuth安全调用Slack API，支持消息收发与频道管理，适合个人快速集成.
+summary: "通过托管OAuth安全调用Slack API，支持消息收发与频道管理，适合个人快速集成.。Slack API工具箱（免费版）通过托管OAuth机制安全调用Slack API，免去手动管理To"
 license: Proprietary
 edition: free
 description: Slack API工具箱（免费版）通过托管OAuth机制安全调用Slack API，免去手动管理Token的繁琐，支持消息收发与频道管理核心能力。核心能力：托管OAuth连接管理、消息发送与回复、频道列表与信息查询、用户信息查询、CLI与Python调用示例。Use
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
-- 集成工具
-- 团队协作
+  - 集成工具
+  - 团队协作
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Development"
 ---
 # Slack API工具箱（免费版）
@@ -64,6 +63,14 @@ Slack API工具箱（免费版）通过托管OAuth机制帮助Agent安全调用S
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过托管、安全调用、Slack、API、支持消息收发与频、道管理、适合个人快速集成、工具箱、机制安全调用、免去手动管理、的繁琐、道管理核心能力、核心能力、连接管理、消息发送与回复、频道列表与信息查、CLI、Python、调用示例、Use、when、接口对接、Webhook、系统连接时使用、不适用于逆向工程等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 ### 场景1：个人开发者Slack自动化

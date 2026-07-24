@@ -3,7 +3,7 @@ slug: "anthrovision-telegram-body-scan-free"
 name: "anthrovision-telegram-body-scan-free"
 version: "1.0.0"
 displayName: "Body Scan Basic"
-summary: "在Telegram中运行基础身体扫描流程,提交视频并轮询测量结果"
+summary: "在Telegram中运行基础身体扫描流程,提交视频并轮询测量结果。在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具, 轮询状态并输出基础测量结果。基础"
 license: "MIT"
 description: |-
   在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具,
@@ -12,12 +12,14 @@ description: |-
   不适用于腰臀比汇总、超时处理、确定性格式化等高级场景.
 tags:
   - Communication
+  - Telegram
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Anthrovision Telegram Body Scan Free
@@ -70,6 +72,14 @@ export API_KEY="your_api_key_here"
 
 **输入**: 用户提供扫描提交与轮询(基础)所需的指令和必要参数.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

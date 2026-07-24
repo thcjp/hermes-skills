@@ -3,7 +3,7 @@ slug: "telegram-messaging-free"
 name: "telegram-messaging-free"
 version: "1.0.0"
 displayName: "Telegram 消息 LITE"
-summary: "Telegram Bot API 基础消息发送与聊天信息查询。"
+summary: "Telegram Bot API 基础消息发送与聊天信息查询。。Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、 查询聊天基本信息与成员计"
 license: "MIT"
 description: |-
   Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、
@@ -12,12 +12,14 @@ description: |-
 tags:
   - 通用办公
   - Automation
+  - Telegram
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Telegram 消息 LITE
@@ -56,6 +58,14 @@ Telegram Bot API 集成免费版。支持发送文本消息与图片、获取机
 **输出**: 返回聊天信息查询的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`聊天信息查询`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 工具列表
 
 - `telegram_get_me`：获取机器人基本信息（用户名、名称、能力）— 读操作
@@ -174,6 +184,13 @@ A：全局约 30 条/秒，单聊天约 1 条/秒。触发限制时返回 HTTP 4
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 升级提示
 

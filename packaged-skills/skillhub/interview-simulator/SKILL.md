@@ -3,7 +3,7 @@ slug: "interview-simulator"
 name: "interview-simulator"
 version: 1.0.1
 displayName: "Interview Simulator"
-summary: "模拟任意角色与经验级别的面试,求职演练"
+summary: "模拟任意角色与经验级别的面试,求职演练。Simulates mock interviews for any role and experience level。核心能力: - 其他工具领域的"
 license: "Proprietary"
 description: |-
   Simulates mock interviews for any role and experience level。核心能力:
@@ -23,16 +23,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Interview Simulator
@@ -52,6 +51,14 @@ category: "Automation"
 
 - Simulates mock interviews for any role and experience level
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -178,6 +185,13 @@ Design a distributed task scheduling system similar to a simplified version of A
 How would you approach this? Start with the high-level architecture.
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 **User:** Mock interview for HR, mid-level, focus on talent acquisition, 30 minutes.
 

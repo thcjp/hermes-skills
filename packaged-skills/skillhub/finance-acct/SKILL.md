@@ -3,7 +3,7 @@ slug: "finance-acct"
 name: "finance-acct"
 version: 1.0.1
 displayName: "财务会计专业版"
-summary: "企业级财务会计系统，支持多账套、全税种、批量发票、ERP集成与审计追踪。"
+summary: "企业级财务会计系统，支持多账套、全税种、批量发票、ERP集成与审计追踪。。面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、 全税种自动计算、批量电子发票生成、银行API直连对"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,16 +15,15 @@ tags:
   - 会计记账
   - 企业级
   - 审计合规
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
 category: "Finance"
 ---
 # 财务会计专业版
@@ -96,6 +95,14 @@ accounts_sets:
 **输出**: 返回功能模块的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`功能模块`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：集团合并报表

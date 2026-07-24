@@ -3,7 +3,7 @@ slug: swarm-coder-pro
 name: swarm-coder-pro
 version: 1.0.0
 displayName: 集群编码器(专业版)
-summary: AI Agent全功能集群开发引擎，并行调度+多层review+成本控制+失败回滚+多角色协作.
+summary: "AI Agent全功能集群开发引擎，并行调度+多层review+成本控制+失败回滚+多角色协作.。集群编码器专业版是在免费版基础上的全功能升级，为AI Agent提供从任务分派到集群协作的完"
 license: Proprietary
 edition: pro
 description: '集群编码器专业版是在免费版基础上的全功能升级，为AI Agent提供从任务分派到集群协作的完整开发引擎。专业版解锁并行任务调度、成本预估与控制、多层review、自动修复循环、多角色协作、失败回滚六大高级功能，实现开发效率与质量的双重飞跃.
@@ -12,21 +12,22 @@ description: '集群编码器专业版是在免费版基础上的全功能升级
   差异化：完全中文化重写，新增并行任务调度算法、成本预估与控制引擎、五层review流水线、自动修复循环机制、多角色协作框架、失败回滚协议。内容原创度超过70%，针对企业级"任务串行慢、成本不可控、review单一、失败无回滚"四大痛点重新设计。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：集群编码、并行调度、多层review、成本控制、失败回滚、多角色协作、自动修复'
 tags:
-- 集群编码
-- 并行调度
-- 多层review
-- 成本控制
-- 失败回滚
+  - 集群编码
+  - 并行调度
+  - 多层review
+  - 成本控制
+  - 失败回滚
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # 集群编码器（专业版）

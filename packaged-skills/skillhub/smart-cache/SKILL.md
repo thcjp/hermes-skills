@@ -3,7 +3,7 @@ slug: "smart-cache"
 name: "smart-cache"
 version: 1.0.1
 displayName: "Smart Cache"
-summary: "LRU/LFU策略与TTL管理的智能缓存"
+summary: "LRU/LFU策略与TTL管理的智能缓存。Intelligent caching with LRU/LFU strategies and TTL management 核心能力: - 其他工"
 license: "Proprietary"
 description: |-
   Intelligent caching with LRU/LFU strategies and TTL management
@@ -25,16 +25,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Smart Cache
@@ -51,6 +50,14 @@ category: "Automation"
 | 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

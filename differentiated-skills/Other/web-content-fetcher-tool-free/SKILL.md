@@ -3,7 +3,7 @@ slug: web-content-fetcher-tool-free
 name: web-content-fetcher-tool-free
 version: 1.0.0
 displayName: 网页内容获取免费版
-summary: 当常规爬虫被过滤时，使用替代服务获取网页Markdown内容，支持多服务降级，适合个人开发.
+summary: "当常规爬虫被过滤时，使用替代服务获取网页Markdown内容，支持多服务降级，适合个人开发.。网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:"
 license: Proprietary
 edition: free
 description: '网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:
@@ -12,19 +12,19 @@ description: '网页内容获取工具免费版，面向个人开发者的轻量
 
   - 自动按优先级尝试（jina/markdown。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。'
 tags:
-- 网页抓取
-- 内容获取
-- Markdown转换
-- 免费版
+  - 网页抓取
+  - 内容获取
+  - Markdown转换
+  - 免费版
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L2
-pricing_model: per_use
-suggested_price: 19.9
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+  - read
+  - exec
+  - write
+  - glob
+homepage: ""
 category: "Development"
 ---
 # 网页内容获取工具（免费版）

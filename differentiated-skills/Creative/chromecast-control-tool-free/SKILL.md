@@ -3,7 +3,7 @@ slug: chromecast-control-tool-free
 name: chromecast-control-tool-free
 version: 1.0.0
 displayName: 投屏控制免费版
-summary: 使用catt工具控制Chromecast设备，支持设备发现、视频投屏与基础播放控制.
+summary: "使用catt工具控制Chromecast设备，支持设备发现、视频投屏与基础播放控制.。投屏控制免费版 —— 面向个人用户的轻量级Chromecast投屏控制工具。核心能力:"
 license: Proprietary
 edition: free
 description: '投屏控制免费版 —— 面向个人用户的轻量级Chromecast投屏控制工具。核心能力:
@@ -28,19 +28,18 @@ description: '投屏控制免费版 —— 面向个人用户的轻量级Chromec
 
   差异化:免费版提供核心投屏与播放控制能力，适合个人用户日常使用'
 tags:
-- 投屏控制
-- Chromecast
-- 智能家居
-- 个人创作
+  - 投屏控制
+  - Chromecast
+  - 智能家居
+  - 个人创作
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 投屏控制免费版

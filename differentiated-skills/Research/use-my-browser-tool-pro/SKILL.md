@@ -3,26 +3,26 @@ slug: use-my-browser-tool-pro
 name: use-my-browser-tool-pro
 version: 1.0.0
 displayName: 真实浏览器控制专业版
-summary: 企业级真实浏览器控制平台,支持批量会话、多浏览器管理、安全审计与团队协作
+summary: "企业级真实浏览器控制平台,支持批量会话、多浏览器管理、安全审计与团队协作。真实浏览器控制专业版,面向企业团队和高级用户提供深度的真实浏览器控制能力。支持批量会话管理、多浏览器实例控制、安全审"
 license: Proprietary
 edition: pro
 description: 真实浏览器控制专业版,面向企业团队和高级用户提供深度的真实浏览器控制能力。支持批量会话管理、多浏览器实例控制、安全审计、团队协作等高级功能。Use
   when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
-- 研究工具
-- 浏览器控制
-- 企业级
-- 批量处理
+  - 研究工具
+  - 浏览器控制
+  - 企业级
+  - 批量处理
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 真实浏览器控制专业版是企业级的真实浏览器自动化解决方案。在完整兼容免费版所有单浏览器控制能力的基础上,专业版引入了批量会话管理、多浏览器实例控制、安全审计、团队协作等高级能力,适用于企业级 Web 自动化测试、跨账号数据采集、批量表单处理等复杂场景.

@@ -3,7 +3,7 @@ slug: ui-ux-design-tool-free
 name: ui-ux-design-tool-free
 version: 1.0.0
 displayName: UI/UX设计指南免费版
-summary: 移动优先的UI/UX设计指南,涵盖配色系统、字体排版、布局模式、微交互的基础设计原则
+summary: "移动优先的UI/UX设计指南,涵盖配色系统、字体排版、布局模式、微交互的基础设计原则。面向个人开发者和小型团队的UI/UX设计入门指南,提供移动优先的设计原则、"
 license: Proprietary
 edition: free
 description: '面向个人开发者和小型团队的UI/UX设计入门指南,提供移动优先的设计原则、
@@ -32,22 +32,20 @@ description: '面向个人开发者和小型团队的UI/UX设计入门指南,提
 
   差异化:免费版聚焦核心设计.'
 tags:
-- 设计
-- UI
-- UX
-- 配色
-- 字体
-- 响应式
-- 前端
+  - 设计
+  - UI
+  - UX
+  - 配色
+  - 字体
+  - 响应式
+  - 前端
+  - UI/UX
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # UI/UX设计指南 - 免费版

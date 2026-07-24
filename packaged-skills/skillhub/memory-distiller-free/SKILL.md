@@ -3,7 +3,7 @@ slug: "memory-distiller-free"
 name: "memory-distiller-free"
 version: "1.0.0"
 displayName: "记忆蒸馏器免费版"
-summary: "基础日志蒸馏工具，支持单文件压缩与古文压缩原则，约4倍压缩比"
+summary: "基础日志蒸馏工具，支持单文件压缩与古文压缩原则，约4倍压缩比。记忆蒸馏器免费版提供基础日志蒸馏能力，将冗长日志压缩为结构化摘要. 核心能力包括：单文件日志蒸馏、古文压缩四原则、关键词匹配提取"
 license: "MIT"
 description: |-
   记忆蒸馏器免费版提供基础日志蒸馏能力，将冗长日志压缩为结构化摘要.
@@ -14,11 +14,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 记忆蒸馏器免费版
@@ -72,6 +74,14 @@ category: "Agents"
 
 - 参考`关键词匹配提取`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：准备日志文件

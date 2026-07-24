@@ -3,7 +3,7 @@ slug: "typescript-toolkit"
 name: "typescript-toolkit"
 version: 1.0.1
 displayName: "TypeScript工具集(专业版)"
-summary: "面向团队与企业的TypeScript类型安全平台,含批量迁移、CI集成、规范审查与高级泛型工程。"
+summary: "面向团队与企业的TypeScript类型安全平台,含批量迁移、CI集成、规范审查与高级泛型工程。。TypeScript工具集专业版为团队与企业提供端到端类型安全工程能力,涵盖批量JS→TS迁"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,16 +27,16 @@ tags:
   - CI/CD
   - 代码审查
   - 团队协作
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # TypeScript工具集(专业版)
@@ -82,6 +82,14 @@ category: "Automation"
 **输出**: 返回企业 tsconfig 模板的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`企业 tsconfig 模板`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1:批量 JavaScript → TypeScript 渐进式迁移

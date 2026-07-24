@@ -3,24 +3,23 @@ slug: csv-toolkit-free
 name: csv-toolkit-free
 version: 1.0.1
 displayName: CSV工具箱 免费版
-summary: 符合RFC 4180的CSV解析与生成指南，覆盖引号、分隔符、编码与Excel兼容.
+summary: "符合RFC 4180的CSV解析与生成指南，覆盖引号、分隔符、编码与Excel兼容.。CSV Toolkit 是面向开发者的 CSV 文件解析与生成参考指南，帮助处理跨工具交换时的引号、分隔"
 license: Proprietary
 edition: free
 description: CSV Toolkit 是面向开发者的 CSV 文件解析与生成参考指南，帮助处理跨工具交换时的引号、分隔符、编码与 Excel 兼容性问题。核心能力：RFC
   4180 引号规则、多分隔符检测（逗号/分号/制表符/管道）、UTF-8 BOM 处理策略、Excel 公式注入防护、数字与日期格式标准化、常见解析失败排查
 tags:
-- 集成工具
-- 数据处理
-- 开发者工具
+  - 集成工具
+  - 数据处理
+  - 开发者工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # CSV Toolkit（免费版）

@@ -3,7 +3,7 @@ slug: "cloud-architect-free"
 name: "cloud-architect-free"
 version: "1.0.0"
 displayName: "云架构师免费版"
-summary: "基础云架构设计,覆盖 AWS、Azure、GCP 服务选型与迁移策略框架"
+summary: "基础云架构设计,覆盖 AWS、Azure、GCP 服务选型与迁移策略框架。面向云架构入门场景的基础技能,覆盖 AWS、Azure、GCP 三大云平台的 服务选型、迁移策略框架与基础架构设计原"
 license: "MIT"
 description: |-
   面向云架构入门场景的基础技能,覆盖 AWS、Azure、GCP 三大云平台的
@@ -14,12 +14,14 @@ tags:
   - 通用办公
   - cloud
   - architecture
+  - 云计算
+  - DevOps
+  - 基础设施
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # 云架构师免费版
@@ -78,6 +80,14 @@ category: "Operations"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

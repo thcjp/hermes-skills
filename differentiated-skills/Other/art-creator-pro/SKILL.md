@@ -3,27 +3,26 @@ slug: art-creator-pro
 name: art-creator-pro
 version: 1.0.0
 displayName: 艺术创作助手(专业版)
-summary: 全功能艺术创作系统，含个性化练习计划、多媒介对比、作品集评估、色彩深度指导与风格规划.
+summary: "全功能艺术创作系统，含个性化练习计划、多媒介对比、作品集评估、色彩深度指导与风格规划.。艺术创作助手专业版是创作者的全周期成长引擎。在免费版基础上解锁个性化练习计划定制、多媒介进阶对比分析、"
 license: Proprietary
 edition: pro
 description: 艺术创作助手专业版是创作者的全周期成长引擎。在免费版基础上解锁个性化练习计划定制、多媒介进阶对比分析、作品集系统评估、高级色彩理论深度指导、创作风格发展路径规划五大高级功能，帮助创作者从临摹阶段系统化过渡到原创表达。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
-- 艺术创作
-- 个性化训练
-- 多媒介对比
-- 作品集评估
-- 专业版
+  - 艺术创作
+  - 个性化训练
+  - 多媒介对比
+  - 作品集评估
+  - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 > **从临摹到原创，从爱好到专业。全周期创作成长引擎。**

@@ -3,7 +3,7 @@ slug: "code-delegate"
 name: "code-delegate"
 version: 1.0.1
 displayName: "代码委派工具专业版"
-summary: "企业级批量代码委派,支持多任务并行、团队协作、权限治理与质量审计"
+summary: "企业级批量代码委派,支持多任务并行、团队协作、权限治理与质量审计。面向团队与企业的高级代码委派工具,在免费版基础上扩展批量委派、并行执行、权限治理等能力。核心能力: - 多任务并行委派与任务"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,16 +30,16 @@ tags:
   - 企业级
   - 批量执行
   - 权限治理
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # 代码委派工具专业版
@@ -149,6 +149,14 @@ category: "Development"
 | 规范性 | 代码风格、命名、注释 | 100% 符合为优秀 |
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一: 企业级批量代码重构

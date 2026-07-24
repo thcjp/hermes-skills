@@ -3,7 +3,7 @@ slug: "accounting-finance-tool-pro"
 name: "accounting-finance-tool-pro"
 version: "1.0.0"
 displayName: "财务分析专业套件"
-summary: "企业级财务分析与估值建模全套技能，58个专业分析模块，支持批量处理与自动化报告。"
+summary: "企业级财务分析与估值建模全套技能，58个专业分析模块，支持批量处理与自动化报告。。面向专业分析师、机构投资者与企业财务部门的全栈财务分析技能套件。包含58个 专家级分析技能，覆盖估值建模、财"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -16,15 +16,14 @@ tags:
   - 财务建模
   - 风险评估
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 财务分析专业套件（PRO版）

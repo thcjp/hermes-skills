@@ -3,7 +3,7 @@ slug: "csv-handler"
 name: "csv-handler"
 version: 2.1.1
 displayName: "CSV文件处理专家"
-summary: "自动检测编码与分隔符，清洗、合并、拆分、转换CSV数据，支持进度计划与成本数据专用解析"
+summary: "自动检测编码与分隔符，清洗、合并、拆分、转换CSV数据，支持进度计划与成本数据专用解析。CSV文件处理专家，覆盖建筑、工程、财务等场景下的CSV全生命周期管理. 核心能力包括： - 编码自动"
 license: "Proprietary"
 description: |-
   CSV文件处理专家，覆盖建筑、工程、财务等场景下的CSV全生命周期管理.
@@ -22,16 +22,15 @@ tags:
   - 研发工具
   - csv
   - data-processing
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # CSV文件处理专家
@@ -154,6 +153,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供多编码导出所需的指令和必要参数.
 **处理**: 解析多编码导出的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **画像分析**：调用 `profile_csv("export.csv")` 获取文件编码、分隔符、行列数

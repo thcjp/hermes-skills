@@ -3,23 +3,22 @@ slug: "kubernetes"
 name: "kubernetes"
 version: 2.1.1
 displayName: "Kubernetes"
-summary: "K8s与OpenShift多Agent集群,协同运营集群"
+summary: "K8s与OpenShift多Agent集群,协同运营集群。Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-"
 license: "Proprietary"
 description: |-
   Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-agent
   system for cluster operat。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Operations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Kubernetes
@@ -40,6 +39,14 @@ category: "Automation"
 - Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-agent
   system for cluster operat
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

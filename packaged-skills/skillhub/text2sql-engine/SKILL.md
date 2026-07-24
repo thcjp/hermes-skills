@@ -3,7 +3,7 @@ slug: "text2sql-engine"
 name: "text2sql-engine"
 version: 1.0.1
 displayName: "自然语言转SQL专业版"
-summary: "全功能NL2SQL引擎，支持复杂多表查询、性能优化、查询解释与替代方案生成"
+summary: "全功能NL2SQL引擎，支持复杂多表查询、性能优化、查询解释与替代方案生成。面向数据工程师与DBA的全功能自然语言转SQL引擎，支持复杂多表关联、窗口函数、查询性能优化与执行计划分析。核心能"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,15 @@ tags:
   - SQL优化
   - 数据工程
   - 性能调优
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 自然语言转SQL专业版
@@ -72,6 +71,14 @@ category: "Automation"
 **输出**: 返回Schema自动识别的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Schema自动识别`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：复杂报表生成（数据分析师视角）

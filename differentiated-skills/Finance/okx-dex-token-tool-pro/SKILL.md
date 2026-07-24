@@ -3,7 +3,7 @@ slug: "okx-dex-token-tool-pro"
 name: "okx-dex-token-tool-pro"
 version: "1.0.0"
 displayName: "DEX代币数据专业版"
-summary: "专业DEX代币分析与交易工具，支持多链深度分析、批量查询与限价交易。"
+summary: "专业DEX代币分析与交易工具，支持多链深度分析、批量查询与限价交易。。面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链 深度数据分析、批量代币查询、链上行为追踪、流动"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,15 +15,14 @@ tags:
   - 加密货币
   - DEX
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+homepage: ""
 category: "Finance"
 ---
 # DEX代币数据专业版（PRO版）

@@ -3,7 +3,7 @@ slug: "trading-tool-pro"
 name: "trading-tool-pro"
 version: "1.0.0"
 displayName: "交易分析专业版"
-summary: "多策略交易分析系统，支持批量分析、策略回测、自动交易与风险控制。"
+summary: "多策略交易分析系统，支持批量分析、策略回测、自动交易与风险控制。。面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带 等多种技术策略组合，提供批量标的分析、历史回测验证、自"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,15 +15,14 @@ tags:
   - 交易分析
   - 量化策略
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 交易分析专业版（PRO版）

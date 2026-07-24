@@ -3,7 +3,7 @@ slug: "in-depth-research-free"
 name: "in-depth-research-free"
 version: 1.0.1
 displayName: "深度研究引擎(免费版)"
-summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。免费版"
+summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。免费版。系统化深度研究方法论（免费版），通过七步协议（Scope → Search → Evaluate → Deep"
 license: "MIT"
 description: |-
   系统化深度研究方法论（免费版），通过七步协议（Scope → Search → Evaluate → Deepen →
@@ -15,11 +15,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 信息检索
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - 搜索
+  - 检索
+  - 工具
 category: "Knowledge"
 ---
 # 深度研究引擎(免费版)
@@ -101,6 +104,14 @@ export API_KEY="your_api_key_here"
 **处理**: 解析迭代深化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回迭代深化的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 深度级别
 
 | 级别 | 时间投入 | 来源数量 | 适用场景 |

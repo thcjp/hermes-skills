@@ -3,7 +3,7 @@ slug: dashboard-builder-free
 name: dashboard-builder-free
 version: 1.0.1
 displayName: 仪表盘构建(免费版)
-summary: 从任意数据源生成本地静态仪表盘，支持基础数据抓取与可视化 QA.
+summary: "从任意数据源生成本地静态仪表盘，支持基础数据抓取与可视化 QA.。仪表盘构建工具免费版是一款面向个人开发者的本地仪表盘生成方案，支持从用户指定的数据源生成交互式静态 HTML 仪表盘，配套数"
 license: Proprietary
 edition: free
 description: '仪表盘构建工具免费版是一款面向个人开发者的本地仪表盘生成方案，支持从用户指定的数据源生成交互式静态 HTML 仪表盘，配套数据抓取脚本与基础可视化
@@ -19,19 +19,18 @@ description: '仪表盘构建工具免费版是一款面向个人开发者的本
 
   - 凭据通过环境变量注入...'
 tags:
-- 数据可视化
-- 仪表盘
-- 本地工具
-- 自动化
+  - 数据可视化
+  - 仪表盘
+  - 本地工具
+  - 自动化
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 仪表盘构建工具（免费版）

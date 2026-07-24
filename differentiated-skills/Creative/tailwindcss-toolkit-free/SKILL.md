@@ -36,20 +36,19 @@ description: '面向个人开发者的 Tailwind CSS 实用类编写工具(免费
 
   -...'
 tags:
-- 创意设计
-- 前端开发
-- CSS
-- Tailwind
-- 响应式设计
+  - 创意设计
+  - 前端开发
+  - CSS
+  - Tailwind
+  - 响应式设计
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Tailwind CSS 工具包 - 免费版

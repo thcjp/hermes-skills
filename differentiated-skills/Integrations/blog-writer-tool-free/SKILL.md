@@ -3,7 +3,7 @@ slug: "blog-writer-tool-free"
 name: "blog-writer-tool-free"
 version: "1.0.0"
 displayName: "博客写作(免费版)"
-summary: "AI 博客写作免费版：文章增删改查、Markdown 内容、标签与草稿管理，含 REST API。"
+summary: "AI 博客写作免费版：文章增删改查、Markdown 内容、标签与草稿管理，含 REST API。。博客写作工具（免费版）面向个人创作者与独立开发者，提供博客文章的基础管理能力：创建、查询、"
 license: "MIT"
 edition: "free"
 description: |-
@@ -27,12 +27,14 @@ tags:
   - 博客
   - Markdown
   - REST API
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 博客写作工具（免费版）

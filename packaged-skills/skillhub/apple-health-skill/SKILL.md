@@ -3,7 +3,7 @@ slug: "apple-health-skill"
 name: "apple-health-skill"
 version: 1.0.1
 displayName: "运动健康数据"
-summary: "与运动健康数据对话，查询训练、心率、活动量和VO2 Max趋势"
+summary: "与运动健康数据对话，查询训练、心率、活动量和VO2 Max趋势。使用AI与运动健康数据对话。支持查询训练记录、心率趋势、活动量环、VO2 Max、 性能管理图表（CTL/ATL/TSB）等。"
 license: "Proprietary"
 description: |-
   使用AI与运动健康数据对话。支持查询训练记录、心率趋势、活动量环、VO2 Max、
@@ -12,15 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 生活服务
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 运动健康数据
@@ -109,6 +107,14 @@ export API_KEY="your_api_key_here"
 通过 `GET /api/v1/coach/history` 获取AI教练的聊天历史记录。返回之前的对话内容，包含用户问题和AI教练回复。适用于对话上下文回顾和连续性对话场景。- 验证返回数据的完整性和格式正确性
 - 参考`聊天历史`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 配置环境变量 `HEALTH_API_KEY`，确保健康数据同步服务已授权

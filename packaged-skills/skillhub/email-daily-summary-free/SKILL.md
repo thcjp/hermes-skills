@@ -3,7 +3,7 @@ slug: "email-daily-summary-free"
 name: "email-daily-summary-free"
 version: "1.0.0"
 displayName: "Email Summary Free"
-summary: "基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版"
+summary: "基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱, 抓取当日收件"
 license: "MIT"
 description: |-
   基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱,
@@ -12,12 +12,14 @@ description: |-
 tags:
   - Communication
   - Email
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Email Daily Summary Free
@@ -79,6 +81,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回未读统计的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`未读统计`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 前置依赖
 
 1. 安装 browser-use CLI:

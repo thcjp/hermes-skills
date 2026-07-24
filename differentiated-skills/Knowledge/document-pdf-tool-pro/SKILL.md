@@ -3,7 +3,7 @@ slug: document-pdf-tool-pro
 name: document-pdf-tool-pro
 version: 1.0.0
 displayName: PDF文档工具（专业版）
-summary: 综合PDF处理工具包：文本表格提取、PDF创建、合并拆分、水印、加密、OCR识别.
+summary: "综合PDF处理工具包：文本表格提取、PDF创建、合并拆分、水印、加密、OCR识别.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: 'PDF文档工具 - （专业版）
@@ -16,21 +16,20 @@ description: 'PDF文档工具 - （专业版）
 
   适用关键词: PDF处理, 文本提取, 表格提取, PDF合并, PDF拆分, OCR识别, 水印, 加密'
 tags:
-- PDF处理
-- 文本提取
-- 表格提取
-- OCR
-- 文档工具
+  - PDF处理
+  - 文本提取
+  - 表格提取
+  - OCR
+  - 文档工具
+  - 文档处理
+  - 工具
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "文档处理,工具,效率"
 category: "Knowledge"
 ---
 # PDF文档工具（专业版）

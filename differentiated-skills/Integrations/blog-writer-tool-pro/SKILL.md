@@ -3,7 +3,7 @@ slug: "blog-writer-tool-pro"
 name: "blog-writer-tool-pro"
 version: "1.0.0"
 displayName: "博客写作(专业版)"
-summary: "AI 博客全栈版：文章/主题/媒体/分析/部署，10 套主题与多平台一键发布。"
+summary: "AI 博客全栈版：文章/主题/媒体/分析/部署，10 套主题与多平台一键发布。。博客写作工具（专业版）面向内容团队与独立创作者，在免费版文章 CRUD 的基础上新增主题切换、媒体上传、数据分"
 license: "MIT"
 edition: "pro"
 description: |-
@@ -30,12 +30,14 @@ tags:
   - 主题定制
   - 数据分析
   - 部署发布
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 博客写作工具（专业版）

@@ -3,7 +3,7 @@ slug: game-theory-tool-pro
 name: game-theory-tool-pro
 version: 1.0.0
 displayName: 博弈论分析专业版
-summary: 企业级博弈论平台,支持演化博弈、机制设计、n人博弈与实验数据
+summary: "企业级博弈论平台,支持演化博弈、机制设计、n人博弈与实验数据。面向研究机构、咨询公司与企业的专业博弈论分析平台."
 license: Proprietary
 edition: pro
 description: '面向研究机构、咨询公司与企业的专业博弈论分析平台.
@@ -15,22 +15,21 @@ description: '面向研究机构、咨询公司与企业的专业博弈论分析
 
   适用关键词: 演化博弈, 机制设计, n人博弈, 贝叶斯博弈, 拍卖设计, 政策评估'
 tags:
-- 博弈论
-- 企业级
-- 演化博弈
-- 机制设计
-- 拍卖理论
-- 政策分析
+  - 博弈论
+  - 企业级
+  - 演化博弈
+  - 机制设计
+  - 拍卖理论
+  - 政策分析
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 博弈论分析 (专业版)

@@ -3,7 +3,7 @@ slug: "productivity"
 name: "productivity"
 version: 1.0.5
 displayName: "生产力操作系统"
-summary: "集成目标、项目、任务、习惯、规划、回顾的完整生产力管理系统"
+summary: "集成目标、项目、任务、习惯、规划、回顾的完整生产力管理系统。完整的生产力操作系统，覆盖目标设定、项目管理、任务执行、习惯追踪、时间规划、定期回顾、 精力管理、专注保护、承诺跟踪等全生命周期。"
 license: "Proprietary"
 description: |-
   完整的生产力操作系统，覆盖目标设定、项目管理、任务执行、习惯追踪、时间规划、定期回顾、
@@ -15,15 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 生产力操作系统
@@ -96,6 +94,14 @@ category: "Automation"
 **输出**: 返回习惯追踪与摩擦分析的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 习惯：每日复盘15分钟
 - 目标频率：每日
 - 当前连续：12天

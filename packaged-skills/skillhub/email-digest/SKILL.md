@@ -3,7 +3,7 @@ slug: "email-digest"
 name: "email-digest"
 version: 1.0.1
 displayName: "邮件日报专业版"
-summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案"
+summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案。邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 邮件摘要
   - 企业效率
   - AI智能
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
 category: "Communication"
 ---
 # 邮件日报专业版
@@ -88,6 +87,14 @@ category: "Communication"
 **输入**: 用户提供趋势分析所需的指令和必要参数.
 **输出**: 返回趋势分析的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：管理者多邮箱统一日报

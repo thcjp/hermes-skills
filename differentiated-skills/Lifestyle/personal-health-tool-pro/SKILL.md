@@ -3,7 +3,7 @@ slug: personal-health-tool-pro
 name: personal-health-tool-pro
 version: 1.0.0
 displayName: 个人健康管家专业版
-summary: 企业级健康管家,支持慢病管理、医生共享、AI诊断与穿戴设备同步
+summary: "企业级健康管家,支持慢病管理、医生共享、AI诊断与穿戴设备同步。面向家庭、慢病患者与健康机构的企业级健康管家平台."
 license: Proprietary
 edition: pro
 description: '面向家庭、慢病患者与健康机构的企业级健康管家平台.
@@ -15,22 +15,21 @@ description: '面向家庭、慢病患者与健康机构的企业级健康管家
 
   适用关键词: 慢病管理, 医生共享, AI诊断, 穿戴设备, 家庭健康, 术后康复'
 tags:
-- 健康管理
-- 企业级
-- 慢病管理
-- AI诊断
-- 穿戴设备
-- 医疗协作
+  - 健康管理
+  - 企业级
+  - 慢病管理
+  - AI诊断
+  - 穿戴设备
+  - 医疗协作
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 专业版面向家庭、慢病患者与健康机构,在免费版个人健康管理之上,扩展慢病管理、医生数据共享、AI 辅助诊断、穿戴设备同步、家庭多成员管理等企业级能力。支持构建完整的个人健康档案,与医疗系统协作,适合慢病管理、术后康复、家庭健康关怀等专业场景.

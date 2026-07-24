@@ -3,7 +3,7 @@ slug: "azure-cli-toolkit"
 name: "azure-cli-toolkit"
 version: 1.0.1
 displayName: "Azure命令行工具专业版"
-summary: "企业级Azure云管理,支持批量操作、自动化脚本、多订阅管理与成本优化分析"
+summary: "企业级Azure云管理,支持批量操作、自动化脚本、多订阅管理与成本优化分析。面向企业团队的高级 Azure 云平台管理工具,在免费版基础上扩展自动化、批量操作与成本治理能力。核心能力: -"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -31,16 +31,14 @@ tags:
   - 自动化
   - 企业级
   - 成本治理
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
 category: "Operations"
 ---
 # Azure命令行工具专业版
@@ -188,6 +186,14 @@ az security assessment list -o table
 **输入**: 用户提供策略合规审计所需的指令和必要参数.
 **输出**: 返回策略合规审计的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一: 企业级基础设施自动化部署

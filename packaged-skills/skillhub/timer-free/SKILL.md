@@ -3,7 +3,7 @@ slug: "timer-free"
 name: "timer-free"
 version: "1.0.0"
 displayName: "后台定时器（免费版）"
-summary: "在后台运行基础倒计时，完成后通过系统通知提醒用户，支持秒/分/时三种时间格式。"
+summary: "在后台运行基础倒计时，完成后通过系统通知提醒用户，支持秒/分/时三种时间格式。。在后台设置基础定时器。当后台定时器完成时，会收到系统通知，必须将提醒内容传达给用户. 免费版支持秒、分、时三种"
 license: "MIT"
 description: |-
   在后台设置基础定时器。当后台定时器完成时，会收到系统通知，必须将提醒内容传达给用户.
@@ -12,12 +12,14 @@ description: |-
 tags:
   - 通用办公
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # timer-free

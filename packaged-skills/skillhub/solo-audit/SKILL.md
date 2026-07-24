@@ -3,23 +3,22 @@ slug: "solo-audit"
 name: "solo-audit"
 version: 1.4.2
 displayName: "Audit"
-summary: "知识库健康检查,断链/缺frontmatter/标签不一致/封面"
+summary: "知识库健康检查,断链/缺frontmatter/标签不一致/封面。Health check knowledge base for broken links, missing frontmat"
 license: "Proprietary"
 description: |-
   Health check knowledge base for broken links, missing frontmatter, tag
   inconsistencies, and cover。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
   - Knowledge
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Audit
@@ -40,6 +39,14 @@ category: "Automation"
 - Health check knowledge base for broken links, missing frontmatter, tag
   inconsistencies, and cover
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

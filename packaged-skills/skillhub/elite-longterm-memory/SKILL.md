@@ -3,7 +3,7 @@ slug: "elite-longterm-memory"
 name: "elite-longterm-memory"
 version: 1.2.4
 displayName: "长期记忆系统"
-summary: "六层记忆架构,从会话状态到云端备份,结合WAL协议与向量检索。"
+summary: "六层记忆架构,从会话状态到云端备份,结合WAL协议与向量检索。。融合六种成熟方法的AI代理记忆架构:会话状态热内存、向量数据库 温存储、Git笔记冷存储、策展归档、云端备份与自动事实提取。通"
 license: "Proprietary"
 description: |-
   融合六种成熟方法的AI代理记忆架构:会话状态热内存、向量数据库
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 长期记忆系统
@@ -157,6 +155,14 @@ export API_KEY="your_api_key_here"
 **输入**: 用户提供即时修复检查表所需的指令和必要参数.
 **输出**: 返回即时修复检查表的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

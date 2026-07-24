@@ -3,7 +3,7 @@ slug: podcast-downloader-tool-free
 name: podcast-downloader-tool-free
 version: 1.0.0
 displayName: 播客下载工具免费版
-summary: 从小宇宙平台下载播客音频与节目笔记,自动转换为MP3格式,适合个人离线收听.
+summary: "从小宇宙平台下载播客音频与节目笔记,自动转换为MP3格式,适合个人离线收听.。面向个人用户的播客下载工具(免费版)。核心能力:"
 license: Proprietary
 edition: free
 description: '面向个人用户的播客下载工具(免费版)。核心能力:
@@ -11,20 +11,18 @@ description: '面向个人用户的播客下载工具(免费版)。核心能力:
   - 从小宇宙(xiaoyuzhoufmUse
   when 、时使用。'
 tags:
-- 创意设计
-- 播客
-- 下载工具
-- 离线收听
-- 音频转换
+  - 创意设计
+  - 播客
+  - 下载工具
+  - 离线收听
+  - 音频转换
+  - 音频
+  - 媒体
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "播客,音频,媒体"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 播客下载工具 - 免费版

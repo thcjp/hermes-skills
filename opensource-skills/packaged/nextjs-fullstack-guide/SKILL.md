@@ -3,26 +3,24 @@ slug: nextjs-fullstack-guide
 name: nextjs-fullstack-guide
 version: 1.0.1
 displayName: Next.js全栈指南
-summary: 基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导
+summary: "基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导。Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、S"
 license: Proprietary
 description: Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、Server/Client组件分层、数据获取策略(SSR/SSG/ISR/Streaming)、Middleware认证、性能优化(Core
   Web Vitals)和部署配置。适用于电商网站、SaaS面板、博客CMS、实时应用等全栈Web场景。触发关键词:Next.js、React、App Router、Server
   Components、全栈、Web应用、Vercel、SSR、SSG、ISR、中间件。
 tags:
-- Next.js
-- 全栈开发
-- React
-- 前端框架
-- Vercel
+  - Next.js
+  - 全栈开发
+  - React
+  - 前端框架
+  - Vercel
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
 category: "Creative"
 ---
 # Next.js全栈指南
@@ -36,6 +34,14 @@ category: "Creative"
 3. **中间件与认证集成**:middleware.ts请求拦截(认证检查/重定向/A-B测试),NextAuth.js/Auth.js/Better Auth/Clerk认证方案选型与实现。
 4. **性能优化**:SSG/SSR/ISR/Streaming渲染策略选择,next/image/next/font/next/script/next/link内置优化,Core Web Vitals目标达成(LCP<2.5s/FID<100ms/CLS<0.1)。
 5. **部署配置**:Vercel部署(Git push自动部署/预览部署/环境变量)与自托管(next build+next start/Docker/output:standalone),环境管理(.env.local/.env.production)。
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

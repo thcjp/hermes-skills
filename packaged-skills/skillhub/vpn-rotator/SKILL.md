@@ -3,7 +3,7 @@ slug: "vpn-rotator"
 name: "vpn-rotator"
 version: 1.0.1
 displayName: "VPN轮换工具专业版"
-summary: "全功能VPN轮换平台，支持自动重连、多VPN并发、负载均衡与熔断机制"
+summary: "全功能VPN轮换平台，支持自动重连、多VPN并发、负载均衡与熔断机制。面向数据工程团队与自动化测试团队的全功能VPN轮换平台，支持多VPN并发管理、智能负载均衡、自动重连与失败熔断。核心能力"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,15 @@ tags:
   - IP轮换
   - 企业级网络
   - 分布式采集
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # VPN轮换工具专业版
@@ -71,6 +70,14 @@ category: "Automation"
 **输出**: 返回IP轮换的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`IP轮换`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：大规模分布式采集（数据工程师视角）

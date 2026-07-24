@@ -3,7 +3,7 @@ slug: ai-video-studio-pro
 name: ai-video-studio-pro
 version: "1.0.1"
 displayName: "AI视频导演"
-summary: "一个人就是一支视频团队,脚本到成片一站式+智能路由+营销策略注入"
+summary: "一个人就是一支视频团队,脚本到成片一站式+智能路由+营销策略注入。AI视频导演是一款从脚本到成片一站式视频制作工具。一个人就是一支视频团队,支持热点短视频生成、 口型同步数字人、智能路由决策"
 license: Proprietary
 description: |-
   AI视频导演是一款从脚本到成片一站式视频制作工具。一个人就是一支视频团队,支持热点短视频生成、
@@ -14,22 +14,20 @@ description: |-
   - 营销策略注入:卖点提炼+情绪钩子+CTA话术,注入脚本关键帧
   - 三层TTS降级链:高质量TTS→备用TTS→静默+字幕,保证交付不中断
   - 场景路由+配额管理:7场景+5卡片+降级链+成本预估+日/月配额检查
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 视频创作
   - AI视频
   - 短视频
   - 数字人
   - 内容自动化
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+  - write
 category: "Creative"
 ---
 # AI视频导演
@@ -55,6 +53,14 @@ category: "Creative"
 4. **三层TTS降级链**:Layer1高质量TTS引擎(免费,85%场景)→Layer2备用TTS(本地,10%)→Layer3静默+字幕(5%),保证配音可用性
 5. **场景路由+配额管理**:scene参数场景路由模式(scene_1~scene_7),7场景+5卡片+降级链+成本预估+配额管理,渲染前检查日/月配额
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 | 是否适用 |

@@ -3,7 +3,7 @@ slug: "git-essentials-free"
 name: "git-essentials-free"
 version: 1.0.1
 displayName: "Git基础版"
-summary: "Git 版本控制基础能力，覆盖常用命令、分支管理与协作工作流，适合日常提交与团队协作。"
+summary: "Git 版本控制基础能力，覆盖常用命令、分支管理与协作工作流，适合日常提交与团队协作。。Git 版本控制基础能力，覆盖常用命令、分支管理与团队协作工作流. 核心能力: - 常用 Git 命令"
 license: "MIT"
 description: |-
   Git 版本控制基础能力，覆盖常用命令、分支管理与团队协作工作流.
@@ -26,11 +26,14 @@ description: |-
   差异化:基础版聚焦 Git 核心命令与协作流程，去除了高级版的复杂合并策略、Rebase 交互式重写与二分查找等进阶能力.
 tags:
   - Development
+  - 版本控制
+  - Git
+  - 开发工具
 tools:
   - read
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+  - write
+  - exec
+homepage: ""
 category: "Development"
 ---
 # Git 基础版
@@ -43,6 +46,14 @@ category: "Development"
 - 冲突基础处理：识别合并冲突文件，提供基础解决思路与标记位置说明
 - 远程仓库基础操作：clone、fetch、pull、push 的基础用法与常见错误识别
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -3,7 +3,7 @@ slug: "cloud-manager"
 name: "cloud-manager"
 version: 1.0.1
 displayName: "云存储管家 专业版"
-summary: "全功能云存储管理，支持多云统一视图、团队共享矩阵与自动化备份规则。"
+summary: "全功能云存储管理，支持多云统一视图、团队共享矩阵与自动化备份规则。。Cloud Manager 专业版面向多设备用户与小团队，在免费版基础上解锁多云统一视图、家庭/团队共享权限矩阵、定时备份"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,15 @@ tags:
   - 云存储
   - 团队协作
   - 自动化
+  - 云计算
+  - DevOps
+  - 基础设施
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "云计算,DevOps,基础设施"
 category: "Operations"
 ---
 # 云存储管家 专业版
@@ -72,6 +71,14 @@ category: "Operations"
 **输出**: 返回跨盘迁移的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`跨盘迁移`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：家庭多成员多设备统一管理（家庭管理员角色）

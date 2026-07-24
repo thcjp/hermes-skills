@@ -3,7 +3,7 @@ slug: "automation-recipe-book"
 name: "automation-recipe-book"
 version: 1.0.1
 displayName: "自动化配方手册(专业版)"
-summary: "25+自动化配方库+配方生成器+高级模式+企业模板+调试工具包，支撑从个人到企业的全场景自动化。"
+summary: "25+自动化配方库+配方生成器+高级模式+企业模板+调试工具包，支撑从个人到企业的全场景自动化。。自动化配方手册专业版是面向从个人到企业的全场景自动化配方系统。在免费版8个配方基础上扩展至2"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 企业自动化
   - 配方生成器
   - 流程数字化
+  - 自动化
+  - 工作流
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 自动化配方手册(专业版)
@@ -108,6 +107,14 @@ agent recipe install --from community --name trending-news-monitor
 **输入**: 用户提供功能七：配方分享与导入所需的指令和必要参数.
 **处理**: 解析功能七：配方分享与导入的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **痛点**：企业内部有大量审批、通知、报表流程，依赖人工流转，效率低且易出错.

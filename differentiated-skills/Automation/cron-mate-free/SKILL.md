@@ -3,25 +3,24 @@ slug: cron-mate-free
 name: cron-mate-free
 version: 1.0.1
 displayName: cron表达式助手(免费版)
-summary: cron表达式辅助编写与验证工具免费版，支持自然语言转表达式、常用模板速查、基础语法验证.
+summary: "cron表达式辅助编写与验证工具免费版，支持自然语言转表达式、常用模板速查、基础语法验证.。cron表达式助手免费版是面向开发者和运维人员的cron表达式辅助编写工具。将晦涩的cron语法转"
 license: Proprietary
 edition: free
 description: cron表达式助手免费版是面向开发者和运维人员的cron表达式辅助编写工具。将晦涩的cron语法转化为友好的交互体验：自然语言转表达式、常用模板速查、基础语法验证、人类可读翻译，让cron编写不再痛苦。Use
   when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
-- cron表达式
-- 辅助编写
-- 语法验证
-- 自然语言
+  - cron表达式
+  - 辅助编写
+  - 语法验证
+  - 自然语言
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 > **写cron不用查文档。自然语言描述，自动生成表达式，一键验证语法。**

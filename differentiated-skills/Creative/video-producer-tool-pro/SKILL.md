@@ -9,23 +9,22 @@ edition: pro
 description: 短视频生成专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use
   when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
-- Creative
-- 视频生成
-- 短视频
-- 专业版
-- 批量生产
-- 企业级
-- 多语言
+  - Creative
+  - 视频生成
+  - 短视频
+  - 专业版
+  - 批量生产
+  - 企业级
+  - 多语言
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 category: "Creative"
 ---
 短视频生成专业版是一款面向企业团队与 MCN 机构的规模化视频生产平台。在免费版核心生产流程之上，专业版扩展了批量生产、多语言配音、自定义模板、A/B 变体、品牌一致性管理等企业级能力.

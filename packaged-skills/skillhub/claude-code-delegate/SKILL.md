@@ -3,22 +3,22 @@ slug: "claude-code-delegate"
 name: "claude-code-delegate"
 version: 0.1.2
 displayName: "代码委派助手"
-summary: "将编程任务委派给本地AI代码助手CLI,支持异步执行与会话续接"
+summary: "将编程任务委派给本地AI代码助手CLI,支持异步执行与会话续接。将编程任务委派给本地AI代码助手CLI执行,支持非交互模式、异步轮询、会话续接与独立测试验证。核心能力包括环境前置检查、命令模"
 license: "Proprietary"
 description: |-
   将编程任务委派给本地AI代码助手CLI执行,支持非交互模式、异步轮询、会话续接与独立测试验证。核心能力包括环境前置检查、命令模板化委派、异步非阻塞流程、会话上下文续接、独立测试验证、安全防护策略与结果中继.
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 tags:
   - 研发工具
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 category: "Development"
 ---
 # 代码委派助手
@@ -221,6 +221,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回异步非阻塞流程的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`异步非阻塞流程`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 执行环境前置检查,确认CLI已安装、API密钥已配置

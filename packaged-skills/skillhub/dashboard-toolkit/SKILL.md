@@ -3,23 +3,22 @@ slug: "dashboard-toolkit"
 name: "openclaw-dashboard"
 version: "1.7.3"
 displayName: "SkillHub-dashboard"
-summary: "SkillHub实时运营仪表盘,监控会话/成本/cron/网关"
+summary: "SkillHub实时运营仪表盘,监控会话/成本/cron/网关。Real-time operations dashboard for SkillHub。Monitors sessions,"
 license: "Proprietary"
 description: |-
   Real-time operations dashboard for SkillHub。Monitors sessions, costs,
   cron jobs, and gateway hea。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # SkillHub-dashboard
@@ -41,6 +40,14 @@ category: "Automation"
 - Monitors sessions, costs,
   cron jobs, and gateway hea
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

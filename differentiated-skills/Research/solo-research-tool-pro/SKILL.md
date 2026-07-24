@@ -3,7 +3,7 @@ slug: solo-research-tool-pro
 name: solo-research-tool-pro
 version: 1.0.0
 displayName: 市场研究工具专业版
-summary: 企业级深度市场研究系统,支持MCP工具集成、多引擎搜索、收入验证、YouTube分析与深度内容抓取
+summary: "企业级深度市场研究系统,支持MCP工具集成、多引擎搜索、收入验证、YouTube分析与深度内容抓取。市场研究工具专业版为企业团队提供深度市场研究与竞争分析能力。核心能力:"
 license: Proprietary
 edition: pro
 description: '市场研究工具专业版为企业团队提供深度市场研究与竞争分析能力。核心能力:
@@ -32,21 +32,21 @@ description: '市场研究工具专业版为企业团队提供深度市场研究
 
   差异化:专业版在免费版基础研究流程上...'
 tags:
-- 研究工具
-- 市场研究
-- 企业级
-- 竞品分析
-- 尽职调查
+  - 研究工具
+  - 市场研究
+  - 企业级
+  - 竞品分析
+  - 尽职调查
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 市场研究工具专业版

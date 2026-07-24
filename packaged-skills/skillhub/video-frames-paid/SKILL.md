@@ -3,7 +3,7 @@ slug: "video-frames-paid"
 name: "video-frames-paid"
 version: 1.0.1
 displayName: "视频帧提取-专业版"
-summary: "企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。"
+summary: "企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。。视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,16 +15,14 @@ tags:
   - 专业版
   - 批量处理
   - 企业级
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 category: "Creative"
 ---
 # 视频帧提取-专业版
@@ -95,6 +93,14 @@ category: "Creative"
 **输入**: 用户提供任务队列与断点续传所需的指令和必要参数.
 **输出**: 返回任务队列与断点续传的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1：电商商品视频批量封面采集

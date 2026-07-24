@@ -3,7 +3,7 @@ slug: "doc-print-tool-free"
 name: "doc-print-tool-free"
 version: "1.0.0"
 displayName: "文档凭证注册工具"
-summary: "面向个人用户的文档凭证注册、检索与基础交换工具，支持快速登记与发现。"
+summary: "面向个人用户的文档凭证注册、检索与基础交换工具，支持快速登记与发现。。面向个人开发者与一人公司的文档凭证注册与发现工具. 核心能力: - 文档/服务凭证的快速注册与唯一标识签发 - 按关键词"
 license: "MIT"
 edition: "free"
 description: |-
@@ -26,12 +26,15 @@ tags:
   - 凭证注册
   - 个人效率
   - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 文档凭证注册工具（免费版）

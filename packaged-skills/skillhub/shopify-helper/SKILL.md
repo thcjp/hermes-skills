@@ -9,16 +9,15 @@ description: |-
   Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单.
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Shopify Helper
@@ -41,6 +40,14 @@ category: "Automation"
 - Shopify store builder with
   setup, theme, product, SEO,
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

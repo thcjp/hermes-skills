@@ -3,23 +3,22 @@ slug: "frontend-design"
 name: "frontend-design"
 version: 1.1.1
 displayName: "Frontend Design"
-summary: "打造独特生产级前端界面,高设计质量,告别AI通用感"
+summary: "打造独特生产级前端界面,高设计质量,告别AI通用感。Create distinctive, production-grade frontend interfaces with high de"
 license: "Proprietary"
 description: |-
   Create distinctive, production-grade frontend interfaces with high design
   quality。Use this skill。
 tags:
   - Other
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
 category: "Creative"
 ---
 # Frontend Design
@@ -44,6 +43,14 @@ category: "Creative"
 - 设计系统（Design System）搭建：Token 体系、组件库、设计规范文档
 - 无障碍设计（a11y）集成：WCAG 2.1 AA 合规、ARIA 语义、键盘导航
 - 性能优化：CSS 架构选择、Bundle 分析、关键渲染路径、图片优化策略
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

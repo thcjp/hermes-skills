@@ -12,20 +12,18 @@ description: 'macOS截图工具专业版,为专业用户提供全方位屏幕捕
   差异化:专业版兼容免费版截图功能,新增OCR识别与批量处理能力,满足专业内容创作需求.
   适用关键词: macOS截图, OCR识别, 批量截图, 音频录屏, 多显示器, screenshot pro, OCR, batch capture'
 tags:
-- macOS
-- 截图
-- 企业版
-- OCR
+  - macOS
+  - 截图
+  - 企业版
+  - OCR
+  - 安全
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
 category: "Security"
 ---
 # macOS截图工具专业版

@@ -3,7 +3,7 @@ slug: "sql"
 name: "sql"
 version: 1.0.2
 displayName: "SQL查询引擎"
-summary: "SQL查询编写、性能优化、索引策略、Schema设计与事务管理的全栈指导。"
+summary: "SQL查询编写、性能优化、索引策略、Schema设计与事务管理的全栈指导。。SQL全栈能力引擎，覆盖查询编写、性能优化、索引策略、Schema设计、事务管理与 数据库运维。支持Postgre"
 license: "Proprietary"
 description: |-
   SQL全栈能力引擎，覆盖查询编写、性能优化、索引策略、Schema设计、事务管理与
@@ -17,15 +17,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 数据存储
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # SQL查询引擎
@@ -261,6 +259,14 @@ SELECT pg_reload_conf();
 ```
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

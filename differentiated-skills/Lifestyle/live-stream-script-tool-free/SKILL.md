@@ -3,7 +3,7 @@ slug: live-stream-script-tool-free
 name: live-stream-script-tool-free
 version: 1.0.0
 displayName: 直播脚本生成免费版
-summary: 为个人主播生成直播脚本,含开场白、产品介绍、互动话题与结尾
+summary: "为个人主播生成直播脚本,含开场白、产品介绍、互动话题与结尾。面向个人主播与内容创作者的直播脚本生成工具."
 license: Proprietary
 edition: free
 description: '面向个人主播与内容创作者的直播脚本生成工具.
@@ -15,21 +15,20 @@ description: '面向个人主播与内容创作者的直播脚本生成工具.
 
   适用关键词: 直播脚本, 主播话术, 开场白, 产品介绍, 互动话题, 直播带货'
 tags:
-- 直播脚本
-- 主播工具
-- 内容创作
-- 电商直播
-- 话术设计
-- 互动话题
+  - 直播脚本
+  - 主播工具
+  - 内容创作
+  - 电商直播
+  - 话术设计
+  - 互动话题
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 直播脚本生成 (免费版)

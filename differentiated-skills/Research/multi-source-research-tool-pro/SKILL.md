@@ -3,7 +3,7 @@ slug: multi-source-research-tool-pro
 name: multi-source-research-tool-pro
 version: 1.0.0
 displayName: 多源研究助手专业版
-summary: 企业级多源研究平台，支持批量研究、语义去重、自定义数据源与团队协作
+summary: "企业级多源研究平台，支持批量研究、语义去重、自定义数据源与团队协作。多源研究助手专业版，面向研究机构和企业用户提供企业级多源数据采集与分析能力。核心能力:"
 license: Proprietary
 edition: pro
 description: '多源研究助手专业版，面向研究机构和企业用户提供企业级多源数据采集与分析能力。核心能力:
@@ -11,21 +11,21 @@ description: '多源研究助手专业版，面向研究机构和企业用户提
   - 批量多主题并行研究。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-- 研究
-- 企业级
-- 文献分析
-- 尽职调查
-- 团队协作
+  - 研究
+  - 企业级
+  - 文献分析
+  - 尽职调查
+  - 团队协作
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 多源研究助手（专业版）

@@ -3,7 +3,7 @@ slug: resume-assistant-tool-pro
 name: resume-assistant-tool-pro
 version: 1.0.0
 displayName: 简历助手工具(专业版)
-summary: 求职全流程套件,含岗位定制、JD分析、5格式导出、4模板与详细评分.
+summary: "求职全流程套件,含岗位定制、JD分析、5格式导出、4模板与详细评分.。简历助手工具(专业版)面向求职者与招聘方,提供完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:"
 license: Proprietary
 edition: pro
 description: '简历助手工具(专业版)面向求职者与招聘方,提供完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:
@@ -24,22 +24,21 @@ description: '简历助手工具(专业版)面向求职者与招聘方,提供完
 
   - 多格式投递(在...'
 tags:
-- Development
-- 求职
-- 简历
-- 企业级
-- 文档
-- 多格式
+  - Development
+  - 求职
+  - 简历
+  - 企业级
+  - 文档
+  - 多格式
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 简历助手工具(专业版)

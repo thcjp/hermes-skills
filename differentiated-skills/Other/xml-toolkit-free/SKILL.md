@@ -3,7 +3,7 @@ slug: xml-toolkit-free
 name: xml-toolkit-free
 version: 1.0.1
 displayName: XML处理工具免费版
-summary: 解析、生成与转换XML，正确处理命名空间与编码，适合个人开发者日常XML任务.
+summary: "解析、生成与转换XML，正确处理命名空间与编码，适合个人开发者日常XML任务.。XML处理工具免费版，面向个人开发者的轻量级XML解析与生成工具。核心能力:"
 license: Proprietary
 edition: free
 description: 'XML处理工具免费版，面向个人开发者的轻量级XML解析与生成工具。核心能力:
@@ -26,19 +26,18 @@ description: 'XML处理工具免费版，面向个人开发者的轻量级XML解
 
   差异化: 免费版聚焦核心解析与生成能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- XML
-- 数据解析
-- 格式转换
-- 免费版
+  - XML
+  - 数据解析
+  - 格式转换
+  - 免费版
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # XML处理工具（免费版）

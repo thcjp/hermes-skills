@@ -3,7 +3,7 @@ slug: market-news-tool-pro
 name: market-news-tool-pro
 version: 1.0.0
 displayName: 财经资讯助手专业版
-summary: 企业级财经资讯平台，支持批量多市场分析、定时推送、历史回溯与专业级深度研报生成
+summary: "企业级财经资讯平台，支持批量多市场分析、定时推送、历史回溯与专业级深度研报生成。财经资讯助手专业版，面向专业投资者、研究机构和企业用户提供高级财经资讯分析能力。核心能力:"
 license: Proprietary
 edition: pro
 description: '财经资讯助手专业版，面向专业投资者、研究机构和企业用户提供高级财经资讯分析能力。核心能力:
@@ -14,21 +14,21 @@ description: '财经资讯助手专业版，面向专业投资者、研究机构
 
   - 近实时数据推送。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-- 财经
-- 资讯
-- 专业研究
-- 企业级
-- 投资决策
+  - 财经
+  - 资讯
+  - 专业研究
+  - 企业级
+  - 投资决策
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 财经资讯助手（专业版）

@@ -3,7 +3,7 @@ slug: "linear-api-toolkit"
 name: "linear-api-toolkit"
 version: 1.0.1
 displayName: "Linear工具箱(专业版)"
-summary: "全功能Linear管理工具，支持批量操作、Webhook集成、高级分析与自定义查询模板"
+summary: "全功能Linear管理工具，支持批量操作、Webhook集成、高级分析与自定义查询模板。Linear工具箱(专业版)是面向团队与项目管理者的全功能Linear交互工具，在免费版基础上新增批量"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -17,16 +17,15 @@ tags:
   - 项目管理
   - Linear
   - 专业版
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # Linear工具箱(专业版)
@@ -72,6 +71,14 @@ category: "Development"
 **输出**: 返回Webhook集成的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`Webhook集成`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：迭代规划批量任务分配

@@ -3,25 +3,24 @@ slug: excel-ninja-free
 name: excel-ninja-free
 version: 1.0.1
 displayName: Excel忍者(免费版)
-summary: 一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐.
+summary: "一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐.。Excel忍者为AI Agent提供专业的Excel文件自动化处理能力。免费版开放8个核心脚本，覆盖"
 license: Proprietary
 edition: free
 description: Excel忍者为AI Agent提供专业的Excel文件自动化处理能力。免费版开放8个核心脚本，覆盖合并、转换、筛选、拆分、去重、聚合、校验、列选择等高频场景，让Agent像Excel高手一样批量处理表格。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- Excel自动化
-- 表格处理
-- 数据清洗
-- 批量操作
+  - Excel自动化
+  - 表格处理
+  - 数据清洗
+  - 批量操作
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Excel忍者（免费版）
@@ -328,6 +327,13 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Excel处理任务
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## License与版权声明
 

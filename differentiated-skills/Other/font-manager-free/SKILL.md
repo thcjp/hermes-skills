@@ -3,25 +3,24 @@ slug: font-manager-free
 name: font-manager-free
 version: 1.0.1
 displayName: 字体管理器
-summary: 网页字体排版指南，涵盖字体选择、配对规则、字重渲染、行高行宽等核心排版知识.
+summary: "网页字体排版指南，涵盖字体选择、配对规则、字重渲染、行高行宽等核心排版知识.。字体管理器免费版解决网页排版的"常见错误"痛点：展示字体用在正文导致可读性差、两个相似字体配对看起来像错误、细字"
 license: Proprietary
 edition: free
 description: 字体管理器免费版解决网页排版的"常见错误"痛点：展示字体用在正文导致可读性差、两个相似字体配对看起来像错误、细字重在Windows上渲染模糊、行高过密导致阅读困难、全大写文字字母挤在一起。这些错误让网页看起来不专业，但开发者往往不知道问题出在哪里。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 字体排版
-- 网页设计
-- 排版规范
-- 前端开发
+  - 字体排版
+  - 网页设计
+  - 排版规范
+  - 前端开发
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 字体管理器（免费版）
@@ -104,6 +103,14 @@ python3 （请参考skill目录中的脚本文件） perf-check index.html
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 # ...
 # ...
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 字体排版检查清单
 # ...
 每次页面开发完成后检查：

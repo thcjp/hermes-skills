@@ -3,7 +3,7 @@ slug: "ad-insight-hub-free"
 name: "ad-insight-hub-free"
 version: "1.0.0"
 displayName: "广告洞察中枢LITE"
-summary: "AdMapix广告情报API基础查询，参数翻译+创意搜索+应用画像"
+summary: "AdMapix广告情报API基础查询，参数翻译+创意搜索+应用画像。面向广告投放场景的广告情报数据查询工具（免费版）。在AdMapix原始API之上提供参数自然语言翻译与 基础创意搜索能力。"
 license: "MIT"
 description: |-
   面向广告投放场景的广告情报数据查询工具（免费版）。在AdMapix原始API之上提供参数自然语言翻译与
@@ -14,12 +14,15 @@ tags:
   - 广告情报
   - 数据API
   - 信息检索
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # 广告洞察中枢 LITE（Ad Insight Hub Free）
@@ -53,6 +56,14 @@ category: "Automation"
 统一产品搜索（`unified-product-search`）、应用详情（`app-detail`）、开发者详情（`developer-detail`）.
 > **升级提示**：创意分布查询、商店榜单、下载/收入估算（带可信度分级）、端点依赖编排、结果缓存复用等高级功能仅在 [ad-insight-hub 付费版](#) 中提供.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 参数映射表
 
 ### 高频行业码（trade_level1）

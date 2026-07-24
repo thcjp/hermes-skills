@@ -3,7 +3,7 @@ slug: "actor-identifier"
 name: "actor-identifier"
 version: 1.0.1
 displayName: "仓库协作分析(专业版)"
-summary: "面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。"
+summary: "面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。。仓库协作分析工具专业版为团队与企业提供端到端Git仓库协作分析能力,涵盖多仓库批量分析、自定义指标、CI"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -29,16 +29,16 @@ tags:
   - CI/CD
   - 研发效能
   - 隐私保护
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 仓库协作分析(专业版)
@@ -85,6 +85,14 @@ category: "Automation"
 **输出**: 返回自定义指标的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`自定义指标`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景 1:多仓库批量分析

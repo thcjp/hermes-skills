@@ -3,7 +3,7 @@ slug: "can"
 name: "can"
 version: 1.9.2
 displayName: "CAN内容寻址"
-summary: "时钟地址命名协议，通过时间戳、内容哈希和可读名称为数据流建立可验证索引"
+summary: "时钟地址命名协议，通过时间戳、内容哈希和可读名称为数据流建立可验证索引。CAN（Clock Address Naming）协议为Agent数据流提供可验证的内容寻址能力. 通过三列结构（WH"
 license: "Proprietary"
 description: |-
   CAN（Clock Address Naming）协议为Agent数据流提供可验证的内容寻址能力.
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # CAN — 时钟地址命名协议
@@ -132,6 +130,14 @@ CAN标记流经任何管道的内容：
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 评估条目

@@ -3,7 +3,7 @@ slug: discord-toolkit-free
 name: discord-toolkit-free
 version: 1.0.1
 displayName: Discord工具箱免费版
-summary: 基础 Discord 消息管理工具,支持发送、回复、表情反应与简单投票,适合个人用户.
+summary: "基础 Discord 消息管理工具,支持发送、回复、表情反应与简单投票,适合个人用户.。面向个人用户的轻量 Discord 消息与互动管理工具。核心能力:"
 license: Proprietary
 edition: free
 description: '面向个人用户的轻量 Discord 消息与互动管理工具。核心能力:
@@ -26,19 +26,17 @@ description: '面向个人用户的轻量 Discord 消息与互动管理工具。
 
   差异化: 免费版聚焦高频基础操作,零配置即用;Pro 版提供批量操作、审核管理与角色权限等企业级能力'
 tags:
-- Discord
-- 消息管理
-- Communication
-- 社交互动
+  - Discord
+  - 消息管理
+  - Communication
+  - 社交互动
+  - 社交
+  - 通信
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Discord 工具箱(免费版)

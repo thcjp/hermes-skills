@@ -3,7 +3,7 @@ slug: namecheap-dns-tool-pro
 name: namecheap-dns-tool-pro
 version: 1.0.0
 displayName: DNS管理专业版
-summary: 企业级DNS管理平台，支持多域名批量、DNS监控、告警与多注册商集成.
+summary: "企业级DNS管理平台，支持多域名批量、DNS监控、告警与多注册商集成.。面向企业运维团队的DNS管理平台。支持多域名批量管理、DNS传播监控、"
 license: Proprietary
 edition: pro
 description: '面向企业运维团队的DNS管理平台。支持多域名批量管理、DNS传播监控、
@@ -12,20 +12,19 @@ description: '面向企业运维团队的DNS管理平台。支持多域名批量
 
   DNS安全配置（DNSSEC/CAA）。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
 tags:
-- Operations
-- DNS
-- 企业级
-- 域名管理
+  - Operations
+  - DNS
+  - 企业级
+  - 域名管理
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # DNS管理专业版（PRO版）

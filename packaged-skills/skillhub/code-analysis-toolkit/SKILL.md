@@ -3,7 +3,7 @@ slug: "code-analysis-toolkit"
 name: "code-analysis-toolkit"
 version: 1.0.1
 displayName: "代码分析工具包专业版"
-summary: "企业级Git历史分析,支持团队复盘、同意管理、趋势追踪与多格式报告"
+summary: "企业级Git历史分析,支持团队复盘、同意管理、趋势追踪与多格式报告。面向团队与企业的高级 Git 历史分析工具,在免费版基础上扩展团队复盘、同意管理、趋势追踪等能力。核心能力: - 团队复盘"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,16 +30,17 @@ tags:
   - 企业级
   - 团队复盘
   - 趋势追踪
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # 代码分析工具包专业版
@@ -168,6 +169,14 @@ python -m src.main --i-have-consent \
 **输入**: 用户提供匿名化输出所需的指令和必要参数.
 **输出**: 返回匿名化输出的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一: 团队迭代复盘

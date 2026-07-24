@@ -3,26 +3,24 @@ slug: vault-sync-engine
 name: vault-sync-engine
 version: 1.0.1
 displayName: 知识库同步引擎
-summary: 解决多端冲突、插件配置漂移、iCloud丢笔记痛点，让Obsidian在多设备间稳定同步
+summary: "解决多端冲突、插件配置漂移、iCloud丢笔记痛点，让Obsidian在多设备间稳定同步。Obsidian 多端同步引擎，解决 iCloud/Dropbox 同步冲突、插件配置漂移、`。ob"
 license: Proprietary
 description: 'Obsidian 多端同步引擎，解决 iCloud/Dropbox 同步冲突、插件配置漂移、`。obsidian/` 目录混乱、
 
   移动端笔记丢失四大痛点。Use when 用户需要知识库同步引擎相关功能时使用。不适用于超出本技能能力范围的复杂需求。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
 tags:
-- 自动化
-- 知识管理
-- 同步引擎
+  - 自动化
+  - 知识管理
+  - 同步引擎
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 知识库同步引擎
@@ -356,6 +354,14 @@ obsidian/` 目录混乱、
   - 选择性同步：笔记同步、`
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解决多端冲突、丢笔记痛点、在多设备间稳定同、Use、when、用户需要知识库同、步引擎相关功能时、不适用于超出本技、能能力范围的复杂、适用于独立开发者、企业团队和自动化、工作流场景、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ```

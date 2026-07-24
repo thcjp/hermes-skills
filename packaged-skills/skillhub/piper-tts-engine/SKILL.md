@@ -3,7 +3,7 @@ slug: "piper-tts-engine"
 name: "piper-tts-engine"
 version: 1.0.1
 displayName: "本地语音合成专业版"
-summary: "企业级本地 TTS 引擎，支持批量合成、自定义音色训练、多语言、SSML 标记与 API 服务化。"
+summary: "企业级本地 TTS 引擎，支持批量合成、自定义音色训练、多语言、SSML 标记与 API 服务化。。面向团队与企业的本地离线文字转语音引擎. 核心能力: 批量合成、自定义音色训练、多语言支持"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -18,16 +18,15 @@ tags:
   - 多语言
   - 企业级
   - 有声书
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 本地语音合成专业版
@@ -77,6 +76,14 @@ category: "Automation"
 **输出**: 返回批量合成的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`批量合成`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：有声书批量章节配音

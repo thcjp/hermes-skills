@@ -3,7 +3,7 @@ slug: "git-cli-tool-pro"
 name: "git-cli-tool-pro"
 version: "1.0.0"
 displayName: "Git命令行助手专业版"
-summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。"
+summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。。面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -34,15 +34,12 @@ tags:
   - 命令行
   - 企业级
   - 自动化
+  - 版本控制
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 Git命令行助手专业版为企业研发团队提供高级Git CLI自动化能力。在免费版基础命令参考之上,专业版新增自动化脚本库、深度仓库诊断、标准化工作流模板、故障排除与恢复以及批量操作能力,帮助团队提升Git使用效率.

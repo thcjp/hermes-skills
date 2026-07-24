@@ -3,7 +3,7 @@ slug: "iris-formatter"
 name: "iris-formatter"
 version: 1.0.1
 displayName: "IRIS代码格式化专业版"
-summary: "企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。"
+summary: "企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。。面向企业级 IRIS 开发团队的 ObjectScript 代码审查与治理工具。核心能力: -"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,16 +28,16 @@ tags:
   - ObjectScript
   - 企业协作
   - 代码质量
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # IRIS代码格式化专业版
@@ -83,6 +83,14 @@ category: "Automation"
 **输出**: 返回规范规则的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`规范规则`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 - 不适用: 需要人工判断的复杂决策场景
 

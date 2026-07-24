@@ -3,7 +3,7 @@ slug: "email-toolkit"
 name: "email-toolkit"
 version: 1.0.1
 displayName: "邮件工具箱专业版"
-summary: "企业邮件自动化与批量发送方案，支持模板与定时调度"
+summary: "企业邮件自动化与批量发送方案，支持模板与定时调度。邮件工具箱专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 邮件发送
   - 企业效率
   - 批量操作
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
 category: "Communication"
 ---
 # 邮件工具箱专业版
@@ -98,6 +97,14 @@ category: "Communication"
 **输出**: 返回收件人列表的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`收件人列表`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：批量发送个性化营销邮件

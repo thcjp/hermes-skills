@@ -3,23 +3,22 @@ slug: "linear-skill"
 name: "linear-skill"
 version: 1.0.1
 displayName: "Linear"
-summary: "经内置Node CLI与Linear API管项目/issue/任务"
+summary: "经内置Node CLI与Linear API管项目/issue/任务。Manage Linear projects, issues, and tasks via the bundled No"
 license: "Proprietary"
 description: |-
   Manage Linear projects, issues, and tasks via the bundled Node CLI and
   the official Linear API。U。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Linear
@@ -40,6 +39,14 @@ category: "Automation"
 - Manage Linear projects, issues, and tasks via the bundled Node CLI and
   the official Linear API
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -8,19 +8,17 @@ license: Proprietary
 edition: free
 description: Linear自动驾驶（免费版）面向使用Linear进行任务管理的个人开发者与小团队，提供从Linear任务创建到自动解析再到响应同步的端到端流水线。当Linear中创建新任务时，自动触发Webhook通知，Agent接收后完成任务解析、状态更新、响应通知与Git同步，让任务管理从手动任务变为自动流转
 tags:
-- Linear
-- 任务自动化
-- Webhook
-- 工作流
+  - Linear
+  - 任务自动化
+  - Webhook
+  - 工作流
+  - 自动化
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Linear自动驾驶（免费版）
@@ -30,6 +28,14 @@ category: "Automation"
 ### 1. Linear API配置与认证
 
 安全存储Linear API Key，避免硬编码：
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |

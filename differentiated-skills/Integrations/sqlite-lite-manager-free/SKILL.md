@@ -9,19 +9,18 @@ edition: free
 description: 面向AI Agent场景重新设计的轻量级SQLite本地数据库管理工具。通过单一文件、零运维的方式提供结构化数据存储能力，配套Python封装API、性能调优参数与常用Schema模板，可快速接入会话记忆、缓存层、日志归档等典型工作流。Use
   when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
-- 集成工具
-- 本地存储
-- 数据库
-- 轻量级
+  - 集成工具
+  - 本地存储
+  - 数据库
+  - 轻量级
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 轻量SQLite管理工具（免费版）

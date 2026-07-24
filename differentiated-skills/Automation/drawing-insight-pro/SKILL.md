@@ -13,21 +13,20 @@ description: '图纸解析（专业版）面向工程团队与造价咨询机构
   SkillPay发布。保留原始MIT版权声明.
   适用关键词：图纸批量解析、DWG解析、OCR预处理、跨图纸索引、中文注释分类、版本差异、图纸资产管理'
 tags:
-- 图纸解析
-- 建筑工程
-- DWG解析
-- 批量处理
-- 图纸管理
+  - 图纸解析
+  - 建筑工程
+  - DWG解析
+  - 批量处理
+  - 图纸管理
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 图纸解析（专业版）

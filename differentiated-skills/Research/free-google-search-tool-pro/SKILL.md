@@ -3,27 +3,27 @@ slug: free-google-search-tool-pro
 name: free-google-search-tool-pro
 version: 1.0.0
 displayName: 谷歌搜索(专业版)
-summary: 企业级Google搜索专业版，含批量搜索、AI摘要、定时监控、多语言搜索与结果缓存.
+summary: "企业级Google搜索专业版，含批量搜索、AI摘要、定时监控、多语言搜索与结果缓存.。谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批"
 license: Proprietary
 edition: pro
 description: 谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 谷歌搜索
-- 企业级
-- 批量搜索
-- AI摘要
-- 关键词监控
+  - 谷歌搜索
+  - 企业级
+  - 批量搜索
+  - AI摘要
+  - 关键词监控
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 > **批量搜索+AI摘要+定时监控+多语言。企业级Google搜索全功能覆盖。**

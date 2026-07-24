@@ -3,23 +3,22 @@ slug: "markdown-converter-compdf"
 name: "markdown-converter-compdf"
 version: 1.2.1
 displayName: "Markdown convert"
-summary: "用ComPDF Cloud API处理/转换/编辑/提取PDF"
+summary: "用ComPDF Cloud API处理/转换/编辑/提取PDF。Process, convert, edit, and extract data from PDF files using t"
 license: "Proprietary"
 description: |-
   Process, convert, edit, and extract data from PDF files using the ComPDF
   Cloud API。Supports form。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
+  - Markdown
+  - 文档
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
 category: "Development"
 ---
 # Markdown convert
@@ -41,6 +40,14 @@ category: "Development"
   Cloud API
 - Supports form
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

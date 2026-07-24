@@ -3,23 +3,22 @@ slug: "mac-node-snapshot"
 name: "mac-node-snapshot"
 version: 1.0.1
 displayName: "mac-node-snapshot"
-summary: "经SkillHub screen record权限友好地截macOS屏幕"
+summary: "经SkillHub screen record权限友好地截macOS屏幕。A robust, permission-friendly method to capture macOS scre"
 license: "Proprietary"
 description: |-
   A robust, permission-friendly method to capture macOS screens via SkillHub
   screen。record。Use when 用户需要mac-node-snapshot相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - Security
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # mac-node-snapshot
@@ -39,6 +38,14 @@ category: "Automation"
 
 Uses node screen.record to record a 1-second clip and extract a high-quality PNG frame. This workflow bypasses common screencapture permission issues and ensures a reliable image return.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

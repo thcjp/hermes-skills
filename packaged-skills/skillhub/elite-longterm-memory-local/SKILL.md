@@ -3,7 +3,7 @@ slug: "elite-longterm-memory-local"
 name: "elite-longterm-memory-local"
 version: 1.1.1
 displayName: "本地向量记忆系统"
-summary: "基于 LanceDB 与本地 Embedding 的纯本地向量记忆，零外部 API 依赖。"
+summary: "基于 LanceDB 与本地 Embedding 的纯本地向量记忆，零外部 API 依赖。。基于 LanceDB 与纯 JavaScript Embedding 的本地向量记忆系统，无需外部"
 license: "Proprietary"
 description: |-
   基于 LanceDB 与纯 JavaScript Embedding 的本地向量记忆系统，无需外部 API 或原生模块.
@@ -15,15 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 本地向量记忆系统（Elite Longterm Memory Local）
@@ -75,6 +73,14 @@ category: "Agents"
 **输出**: 返回热内存（SESSION-STATE.md）的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`热内存（SESSION-STATE.md）`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 第一步：安装依赖。执行 `ollama --version` 检查 Ollama 是否安装，执行 `ollama pull nomic-embed-text` 下载本地 Embedding 模型。进入 skills/elite-longterm-memory 目录执行 `npm install` 安装 Node.js 依赖.

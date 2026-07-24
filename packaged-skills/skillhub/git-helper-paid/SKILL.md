@@ -3,7 +3,7 @@ slug: "git-helper-paid"
 name: "git-helper-paid"
 version: 1.0.1
 displayName: "Git助手专业版"
-summary: "企业级Git辅助工具,支持智能冲突分析、自动修复、批量诊断与团队知识库,提升协作效率。"
+summary: "企业级Git辅助工具,支持智能冲突分析、自动修复、批量诊断与团队知识库,提升协作效率。。面向企业研发团队的高级Git辅助工具,提供智能冲突分析、自动修复建议、批量仓库诊断、团队知识库与故障自"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -31,16 +31,13 @@ tags:
   - 辅助工具
   - 企业级
   - 智能分析
+  - 版本控制
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 category: "Development"
 ---
 # Git助手专业版
@@ -155,6 +152,14 @@ class ConflictResolver:
 **处理**: 解析团队知识库的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回团队知识库的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:智能冲突解决

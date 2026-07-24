@@ -3,7 +3,7 @@ slug: "memory-free"
 name: "memory-free"
 version: "1.0.0"
 displayName: "记忆管理器免费版"
-summary: "基础分类长期记忆系统，支持预设类别与关键词检索，本地隐私存储"
+summary: "基础分类长期记忆系统，支持预设类别与关键词检索，本地隐私存储。记忆管理器免费版提供基础分类长期记忆能力，与 Agent 内置记忆并行运行. 核心能力包括：预设三类分类存储（项目/人脉/知识）"
 license: "MIT"
 description: |-
   记忆管理器免费版提供基础分类长期记忆能力，与 Agent 内置记忆并行运行.
@@ -14,11 +14,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 记忆管理器免费版
@@ -72,6 +74,14 @@ category: "Agents"
 
 - 参考`关键词检索`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：创建目录结构

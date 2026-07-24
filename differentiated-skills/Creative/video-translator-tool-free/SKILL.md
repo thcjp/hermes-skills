@@ -3,7 +3,7 @@ slug: video-translator-tool-free
 name: video-translator-tool-free
 version: 1.0.0
 displayName: 视频翻译-免费版
-summary: 轻量级视频翻译与配音工具，支持中英互译、字幕翻译出片，适合个人创作者快速完成跨语言视频本地化.
+summary: "轻量级视频翻译与配音工具，支持中英互译、字幕翻译出片，适合个人创作者快速完成跨语言视频本地化.。视频翻译免费版，为个人用户提供轻量化的视频翻译与配音能力。核心能力:"
 license: Proprietary
 edition: free
 description: '视频翻译免费版，为个人用户提供轻量化的视频翻译与配音能力。核心能力:
@@ -34,19 +34,18 @@ description: '视频翻译免费版，为个人用户提供轻量化的视频翻
 
   - 单视频任务流程清晰...'
 tags:
-- Creative
-- 视频翻译
-- 多语言
-- 免费版
+  - Creative
+  - 视频翻译
+  - 多语言
+  - 免费版
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 视频翻译工具 - 免费版

@@ -3,7 +3,7 @@ slug: "rho-telegram-alerts-tool"
 name: "rho-telegram-alerts-tool"
 version: "1.0.1"
 displayName: "Telegram Alerts"
-summary: "经Telegram发交易告警/组合更新/市场信号"
+summary: "经Telegram发交易告警/组合更新/市场信号。Send formatted trading alerts, portfolio updates, and market signals v"
 license: "Proprietary"
 description: |-
   Send formatted trading alerts, portfolio updates, and market signals
@@ -11,16 +11,15 @@ description: |-
 tags:
   - Finance
   - Automation
+  - Telegram
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
 category: "Communication"
 ---
 # Telegram Alerts
@@ -42,6 +41,14 @@ category: "Communication"
   via Telegram
 - Supports price
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

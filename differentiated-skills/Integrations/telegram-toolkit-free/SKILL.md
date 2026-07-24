@@ -9,19 +9,17 @@ edition: free
 description: 面向独立开发者与AI Agent的Telegram Bot工作流设计工具免费版。聚焦命令优先的机器人交互设计、更新处理（webhook或长轮询）、HTTP请求模板与安全配置，提供生产可用的命令路由规范与更新归一化处理模式，帮助用户快速构建专业、可靠的Telegram机器人。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 集成工具
-- 即时通讯
-- 机器人
-- Telegram
+  - 集成工具
+  - 即时通讯
+  - 机器人
+  - Telegram
+  - 社交
+  - 通信
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "Telegram,社交,通信"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Communication"
 ---
 # TG机器人工具（免费版）

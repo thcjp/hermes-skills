@@ -3,7 +3,7 @@ slug: "git-helper-tool-pro"
 name: "git-helper-tool-pro"
 version: "1.0.0"
 displayName: "Git助手专业版"
-summary: "企业级Git辅助工具,支持智能冲突分析、自动修复、批量诊断与团队知识库,提升协作效率。"
+summary: "企业级Git辅助工具,支持智能冲突分析、自动修复、批量诊断与团队知识库,提升协作效率。。面向企业研发团队的高级Git辅助工具,提供智能冲突分析、自动修复建议、批量仓库诊断、团队知识库与故障自"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -31,15 +31,12 @@ tags:
   - 辅助工具
   - 企业级
   - 智能分析
+  - 版本控制
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # Git助手 - 专业版

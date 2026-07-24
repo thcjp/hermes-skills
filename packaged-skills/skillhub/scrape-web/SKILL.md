@@ -3,7 +3,7 @@ slug: "scrape-web"
 name: "scrape-web"
 version: 1.0.1
 displayName: "Scrape Web"
-summary: "使用 Python + Scrapling 获取网页内容，支持简单选择器"
+summary: "使用 Python + Scrapling 获取网页内容，支持简单选择器。使用 Python + Scrapling 获取网页内容，支持简单选择器 核心能力: - 研究工具领域的专业化AI辅"
 license: "Proprietary"
 description: |-
   使用 Python + Scrapling 获取网页内容，支持简单选择器
@@ -25,16 +25,16 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Research
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
 category: "Development"
 ---
 # Scrape Web
@@ -51,6 +51,14 @@ category: "Development"
 | 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

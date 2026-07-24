@@ -3,25 +3,25 @@ slug: jira-flow-skill-free
 name: jira-flow-skill-free
 version: 1.0.1
 displayName: Jira Flow 免费版
-summary: 通过Jira Cloud REST API管理任务、状态流转与工时记录，适合个人开发者日常追踪.
+summary: "通过Jira Cloud REST API管理任务、状态流转与工时记录，适合个人开发者日常追踪.。Jira Flow Skill 是面向个人开发者与小型团队的 Jira 任务管理辅助工具，通"
 license: Proprietary
 edition: free
 description: Jira Flow Skill 是面向个人开发者与小型团队的 Jira 任务管理辅助工具，通过命令行脚本驱动 Jira Cloud REST
   API 完成日常事务流转。核心能力：任务检索与详情查看、状态流转与分配、工时记录与统计、评论与创建任务，覆盖一名开发者日常所需的 Jira 操作。Use when
   需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 集成工具
-- 任务管理
-- 效率提升
+  - 集成工具
+  - 任务管理
+  - 效率提升
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # Jira Flow Skill（免费版）

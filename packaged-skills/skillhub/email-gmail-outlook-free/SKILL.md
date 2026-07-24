@@ -3,7 +3,7 @@ slug: "email-gmail-outlook-free"
 name: "email-gmail-outlook-free"
 version: "1.0.0"
 displayName: "Email Free"
-summary: "基于 porteden CLI 读取与搜索 Gmail、Outlook 邮件的基础版"
+summary: "基于 porteden CLI 读取与搜索 Gmail、Outlook 邮件的基础版。基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook"
 license: "MIT"
 description: |-
   基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook 邮箱邮件,
@@ -12,12 +12,14 @@ description: |-
 tags:
   - Communication
   - Email
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Email Gmail Outlook Free
@@ -85,6 +87,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回关键词搜索的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`关键词搜索`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

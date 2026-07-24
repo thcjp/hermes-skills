@@ -3,24 +3,25 @@ slug: localmemo-pro
 name: localmemo-pro
 version: 2.0.1
 displayName: 本地长记忆
-summary: 零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本.
+summary: "零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本.。面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-te"
 license: Proprietary
 description: 面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-text，提供本地embedding生成、向量语义检索、embedding缓存、WAL写前日志、三层冷热分层能力。适用于隐私敏感行业（医疗/金融/法律）、离线/弱网环境、个人知识库、合规要求数据不出域场景，实现零外部API、零数据出域、完全离线可用。适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local
   memory.
 tags:
-- 智能代理
-- 记忆管理
-- 本地存储
+  - 智能代理
+  - 记忆管理
+  - 本地存储
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 本地长记忆（LocalMemo Pro）
@@ -58,6 +59,14 @@ L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（Lance
 **处理**: 解析一键初始化与维护的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回一键初始化与维护的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零云依赖的本地向、量记忆、隐私不出域、缓存省成本、面向隐私敏感与离、线场景的本地向量、记忆系统、向量语义检索、三层冷热分层能力、适用于隐私敏感行、弱网环境、个人知识库、合规要求数据不出、域场景、实现零外部、适用关键词、本地记忆、向量记忆、离线记忆、隐私记忆、本地向量、local等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 **何时使用：**

@@ -3,7 +3,7 @@ slug: "doc-parse"
 name: "doc-parse"
 version: 1.0.1
 displayName: "文档解析工具（专业版）"
-summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。"
+summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。。文档解析工具 - （专业版） 核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document par"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -19,16 +19,15 @@ tags:
   - OCR
   - 表格识别
   - 版面分析
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 文档解析工具（专业版）
@@ -58,6 +57,14 @@ category: "Automation"
 **输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **输出**: 返回专业版增强功能的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景1：文档结构化

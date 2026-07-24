@@ -3,24 +3,22 @@ slug: terraform-iac-architect
 name: terraform-iac-architect
 version: 1.0.1
 displayName: IaC架构师
-summary: Terraform基础设施即代码,模块化多环境CI/CD,云资源一键编排
+summary: "Terraform基础设施即代码,模块化多环境CI/CD,云资源一键编排。IaC架构师——基于HashiCorp官方风格规范生成生产级Terraform代码。覆盖模块化设计、状态管理、多环境"
 license: Proprietary
 description: IaC架构师——基于HashiCorp官方风格规范生成生产级Terraform代码。覆盖模块化设计、状态管理、多环境部署、CI/CD集成全流程。同时提供阿里云ROS/腾讯云Terraform/华为云Terraform国内云适配方案。适用于云基础设施搭建、多环境管理、模块化设计、状态迁移、CI/CD集成场景。触发关键词:Terraform、IaC、基础设施即代码、HCL、模块、状态管理、workspace、terragrunt、Provider、云基础设施、资源编排、ROS、阿里云
 tags:
-- Terraform
-- 基础设施即代码
-- 云架构
-- IaC
-- 资源编排
+  - Terraform
+  - 基础设施即代码
+  - 云架构
+  - IaC
+  - 资源编排
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
 category: "Automation"
 ---
 # IaC架构师
@@ -34,6 +32,14 @@ category: "Automation"
 3. **状态管理**:Remote State(S3+DynamoDB/OSS+Tablestore/COS)、状态锁定、状态迁移、状态隔离
 4. **多环境部署**:Workspace(轻量)/ Terragrunt(目录级)/ 独立状态文件(完全隔离)三种方案
 5. **CI/CD 集成**:GitHub Actions / GitLab CI / Jenkins 流水线,OIDC 安全凭证注入
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

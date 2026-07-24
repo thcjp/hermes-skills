@@ -3,7 +3,7 @@ slug: "dlazy-audio"
 name: "dlazy-audio"
 version: 1.0.1
 displayName: "音频生成工具-专业版"
-summary: "全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。"
+summary: "全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。。音频生成工具专业版，面向专业内容团队的全功能音频生成平台。核心能力： - 15+ 音频模型全覆盖（TTS、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -17,16 +17,15 @@ tags:
   - Audio
   - Enterprise
   - VoiceClone
+  - 音频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "音频处理,媒体,创意"
 category: "Creative"
 ---
 # 音频生成工具-专业版
@@ -96,6 +95,14 @@ category: "Creative"
 **输出**: 返回模型类别的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`模型类别`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：播客全流程制作

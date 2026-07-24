@@ -3,7 +3,7 @@ slug: "aws"
 name: "aws"
 version: 1.0.3
 displayName: "Aws"
-summary: "架构部署优化AWS基础设施,避开成本失控与安全陷阱,省钱又稳"
+summary: "架构部署优化AWS基础设施,避开成本失控与安全陷阱,省钱又稳。Architect, deploy, and optimize AWS infrastructure avoiding cost"
 license: "Proprietary"
 description: |-
   Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
@@ -26,16 +26,15 @@ description: |-
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元...
 tags:
   - Operations
+  - AWS
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
 category: "Operations"
 ---
 # Aws
@@ -55,6 +54,14 @@ category: "Operations"
 - Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
   and security pitfalls
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

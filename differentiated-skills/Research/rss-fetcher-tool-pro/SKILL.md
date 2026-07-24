@@ -3,7 +3,7 @@ slug: rss-fetcher-tool-pro
 name: rss-fetcher-tool-pro
 version: 1.0.0
 displayName: RSS采集器专业版
-summary: 企业级RSS采集管理系统,支持并行抓取、HTML报告、自定义标签规则、数据导出与源健康监控告警
+summary: "企业级RSS采集管理系统,支持并行抓取、HTML报告、自定义标签规则、数据导出与源健康监控告警。RSS采集器专业版为企业团队提供高阶RSS订阅采集与管理系统。核心能力:"
 license: Proprietary
 edition: pro
 description: 'RSS采集器专业版为企业团队提供高阶RSS订阅采集与管理系统。核心能力:
@@ -32,21 +32,21 @@ description: 'RSS采集器专业版为企业团队提供高阶RSS订阅采集与
 
   差异化:专业版在免费版增量抓取与SQLite存储基础上,扩展并行抓取、HTML报告、自定义标签、数据导出与健...'
 tags:
-- 研究工具
-- RSS
-- 企业级
-- 数据采集
-- 内容管理
+  - 研究工具
+  - RSS
+  - 企业级
+  - 数据采集
+  - 内容管理
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # RSS采集器专业版

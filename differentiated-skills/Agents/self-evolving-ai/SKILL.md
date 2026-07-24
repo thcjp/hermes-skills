@@ -3,24 +3,25 @@ slug: self-evolving-ai
 name: self-evolving-ai
 version: 1.0.1
 displayName: 自我进化AI
-summary: 自动捕获经验与错误,智能分层记忆,模式复发追踪,按需加载降本增效.
+summary: "自动捕获经验与错误,智能分层记忆,模式复发追踪,按需加载降本增效.。让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库"
 license: Proprietary
 description: 让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库、领域知识积累、减少重复犯错等场景。核心能力含三类结构化记忆、自动痛点检测、模式复发追踪与晋升、分层文档加载、技能提取。适用关键词：自我进化、经验捕获、错误学习、模式追踪、记忆晋升、self-evolving、learnings、pattern-detection.
 tags:
-- 智能代理
-- 记忆管理
-- 持续改进
-- 自主学习
+  - 智能代理
+  - 记忆管理
+  - 持续改进
+  - 自主学习
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 自我进化 AI（Self-Evolving AI）
@@ -59,6 +60,14 @@ category: "Agents"
 **输出**: 返回多代理平台兼容与技能提取的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：自动捕获经验与错、智能分层记忆、按需加载降本增效、让智能体从每次交、互中持续学习的记、忆与进化系统、针对记不住、用不上、成本高三大痛点、适用于长期、代理项目、多人协作仓库、领域知识积累、减少重复犯错等场、核心能力含三类结、适用关键词、自我进化、经验捕获、错误学习、模式追踪、记忆晋升、self、evolving、detection等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景类型 | 输入 | 输出 | 是否适用 |

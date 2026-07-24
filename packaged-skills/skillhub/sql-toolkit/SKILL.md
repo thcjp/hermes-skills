@@ -3,7 +3,7 @@ slug: "sql-toolkit"
 name: "sql-toolkit"
 version: 1.0.1
 displayName: "SQL Toolkit"
-summary: "关系型数据库操作工具箱，覆盖SQLite/PostgreSQL/MySQL的查询、设计、迁移与优化"
+summary: "关系型数据库操作工具箱，覆盖SQLite/PostgreSQL/MySQL的查询、设计、迁移与优化。SQL Toolkit 是关系型数据库命令行操作的完整工具箱，覆盖 SQLite、Post"
 license: "Proprietary"
 description: |-
   SQL Toolkit 是关系型数据库命令行操作的完整工具箱，覆盖 SQLite、PostgreSQL、MySQL 三大数据库.
@@ -12,16 +12,16 @@ description: |-
   备份与恢复。适用于数据库开发、数据探索、性能调优场景.
 tags:
   - 需求设计
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # SQL Toolkit

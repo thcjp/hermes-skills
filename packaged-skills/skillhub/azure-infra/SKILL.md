@@ -3,7 +3,7 @@ slug: "azure-infra"
 name: "azure-infra"
 version: 1.0.1
 displayName: "Azure Infra"
-summary: "通过本地 Azure CLI 查询与管理 Azure 资源，默认只读，写操作需确认。"
+summary: "通过本地 Azure CLI 查询与管理 Azure 资源，默认只读，写操作需确认。。Azure Infra 技能通过本地 Azure CLI（az 命令）帮助用户查询、诊断和管理 Azur"
 license: "Proprietary"
 description: |-
   Azure Infra 技能通过本地 Azure CLI（az 命令）帮助用户查询、诊断和管理 Azure 云资源.
@@ -28,16 +28,14 @@ tags:
   - 通用办公
   - Cloud
   - Azure
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
 category: "Operations"
 ---
 # Azure Infra

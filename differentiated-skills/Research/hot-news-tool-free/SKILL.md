@@ -3,7 +3,7 @@ slug: hot-news-tool-free
 name: hot-news-tool-free
 version: 1.0.0
 displayName: 热点新闻聚合
-summary: 轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态.
+summary: "轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态.。轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态。"
 license: Proprietary
 edition: free
 description: '轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态。核心能力:
@@ -32,19 +32,19 @@ description: '轻量级新闻聚合工具，自动搜索筛选国内外科技、
 
   - 输出格式清晰...'
 tags:
-- 新闻
-- 信息聚合
-- 研究工具
-- 资讯
+  - 新闻
+  - 信息聚合
+  - 研究工具
+  - 资讯
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 热点新闻聚合（免费版）

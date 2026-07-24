@@ -3,7 +3,7 @@ slug: "security-auditor"
 name: "security-auditor"
 version: 1.0.1
 displayName: "Security Auditor"
-summary: "审代码安全漏洞/实现认证流/审计依赖,安全合规"
+summary: "审代码安全漏洞/实现认证流/审计依赖,安全合规。Use when reviewing code for security vulnerabilities, implementing auth"
 license: "Proprietary"
 description: |-
   Use when reviewing code for security vulnerabilities, implementing authentication
@@ -11,16 +11,14 @@ description: |-
 tags:
   - Security
   - Development
+  - 安全
+  - 加密
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
 category: "Security"
 ---
 # Security Auditor
@@ -41,6 +39,14 @@ category: "Security"
 - Use when reviewing code for security vulnerabilities, implementing authentication
   flows, auditing
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

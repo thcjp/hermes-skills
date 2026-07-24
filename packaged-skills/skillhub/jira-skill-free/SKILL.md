@@ -3,7 +3,7 @@ slug: "jira-skill-free"
 name: "jira-skill-free"
 version: "1.0.0"
 displayName: "Jira集成助手-免费版"
-summary: "通过Jira Cloud REST API查看事务详情、状态流转与浏览器链接，适合只读浏览场景。"
+summary: "通过Jira Cloud REST API查看事务详情、状态流转与浏览器链接，适合只读浏览场景。。Jira集成助手免费版提供Jira事务的只读浏览能力. 支持模糊搜索、事务详情查看、浏览器链"
 license: "MIT"
 description: |-
   Jira集成助手免费版提供Jira事务的只读浏览能力.
@@ -19,12 +19,15 @@ tags:
   - 通用办公
   - Productivity
   - Jira
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # Jira集成助手（免费版）
@@ -154,6 +157,14 @@ export API_KEY="your_api_key_here"
 - 参考`jira.sh search "关键词" max`的配置文档进行参数调优
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 核心能力（免费版）(补充)
 
 ### 1. 事务搜索(补充)

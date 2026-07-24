@@ -3,7 +3,7 @@ slug: "doc-print-tool-pro"
 name: "doc-print-tool-pro"
 version: "1.0.0"
 displayName: "文档凭证注册工具专业版"
-summary: "面向团队与企业的凭证注册、批量发现、链上验证与信誉治理工具。"
+summary: "面向团队与企业的凭证注册、批量发现、链上验证与信誉治理工具。。面向团队与企业的文档凭证注册、发现与信任治理专业工具. 核心能力: - 多租户批量注册与团队凭证矩阵管理 - 六维加权信誉引擎与"
 license: "MIT"
 edition: "pro"
 description: |-
@@ -27,12 +27,14 @@ tags:
   - 企业级
   - 链上验证
   - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 文档凭证注册工具（专业版）

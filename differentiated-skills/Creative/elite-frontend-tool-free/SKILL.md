@@ -3,7 +3,7 @@ slug: elite-frontend-tool-free
 name: elite-frontend-tool-free
 version: 1.0.0
 displayName: 精英前端设计-免费版
-summary: 高品质前端UI设计工具，提供字体、色彩、动效规则与反模式检查，输出HTML/CSS代码.
+summary: "高品质前端UI设计工具，提供字体、色彩、动效规则与反模式检查，输出HTML/CSS代码.。精英前端设计工具免费版，面向个人开发者的前端UI设计规范与生成工具。核心能力："
 license: Proprietary
 edition: free
 description: '精英前端设计工具免费版，面向个人开发者的前端UI设计规范与生成工具。核心能力：
@@ -28,19 +28,18 @@ description: '精英前端设计工具免费版，面向个人开发者的前端
 
   差异化：免费版提供核心设计规范与单页面生成能力，适合个人项目'
 tags:
-- Creative
-- Frontend
-- UI
-- Design
+  - Creative
+  - Frontend
+  - UI
+  - Design
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 精英前端设计工具（免费版）

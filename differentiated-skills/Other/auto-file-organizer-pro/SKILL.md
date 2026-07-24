@@ -3,26 +3,24 @@ slug: auto-file-organizer-pro
 name: auto-file-organizer-pro
 version: 1.0.0
 displayName: 自动整理专业版
-summary: 全功能文件自动整理工具，支持重复清理、智能内容分类、批量定时整理与多目录批量处理.
+summary: "全功能文件自动整理工具，支持重复清理、智能内容分类、批量定时整理与多目录批量处理.。自动文件整理器专业版面向高效文件治理场景，在免费版基础上扩展全功能自动化能力。解决文件整理的"规模与智能""
 license: Proprietary
 edition: pro
 description: 自动文件整理器专业版面向高效文件治理场景，在免费版基础上扩展全功能自动化能力。解决文件整理的"规模与智能"痛点：大量重复文件占用空间需要清理、按扩展名分类不够准确需要内容感知、多个文件夹需要批量定时整理、团队需要共享分类规则、文件变更需要实时监控自动整理。Use
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
-- 文件整理
-- 智能分类
-- 重复清理
-- 自动化
+  - 文件整理
+  - 智能分类
+  - 重复清理
+  - 自动化
+  - 工具
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 > **全功能文件自动整理。重复清理、智能内容分类、批量定时整理、实时监控。**
@@ -93,6 +91,14 @@ python3 （请参考skill目录中的脚本文件） watch ~/Downloads/ --auto-o
 > 详细代码示例已移至 `references/detail.md`
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 核心能力
 ### 1. 重复文件清理
 | 能力 | 说明 | 应用场景 |

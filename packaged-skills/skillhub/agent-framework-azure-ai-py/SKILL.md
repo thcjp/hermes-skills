@@ -3,7 +3,7 @@ slug: "agent-framework-azure-ai-py"
 name: "agent-framework-azure-ai-py"
 version: 0.1.1
 displayName: "Agent Framework Azur"
-summary: "纯文档型技能,指导构建Azure AI Foundry Agent,覆盖云搜索与多模型能力"
+summary: "纯文档型技能,指导构建Azure AI Foundry Agent,覆盖云搜索与多模型能力。This is a documentation-only skill for building A"
 license: "Proprietary"
 description: |-
   This is a documentation-only skill for building Azure AI Foundry agents;
@@ -11,16 +11,15 @@ description: |-
 tags:
   - Research
   - Development
+  - Azure
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
 category: "Operations"
 ---
 # Agent Framework Azur
@@ -40,6 +39,14 @@ category: "Operations"
 - This is a documentation-only skill for building Azure AI Foundry agents
 - its cloud, web search, M
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

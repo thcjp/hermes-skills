@@ -3,7 +3,7 @@ slug: "proactive-agent-free"
 name: "proactive-agent-free"
 version: 1.0.1
 displayName: "主动式代理(免费版)"
-summary: "将AI代理从任务跟随者转变为主动伙伴,含WAL协议、心跳系统与增长循环。(免费版)"
+summary: "将AI代理从任务跟随者转变为主动伙伴,含WAL协议、心跳系统与增长循环。(免费版)。将AI代理从被动任务跟随者转变为主动伙伴的架构。覆盖六大支柱、 WAL协议、工作缓冲区、压缩恢复、安全加固"
 license: "MIT"
 description: |-
   将AI代理从被动任务跟随者转变为主动伙伴的架构。覆盖六大支柱、
@@ -12,11 +12,15 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 tags:
   - 智能助手
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - AI代理
+  - 自动化
+  - 智能
 category: "Agents"
 ---
 # 主动式代理(免费版)
@@ -74,6 +78,14 @@ category: "Agents"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

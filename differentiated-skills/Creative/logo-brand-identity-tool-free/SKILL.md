@@ -10,20 +10,19 @@ description: '品牌标识设计免费版帮助个人用户与初创团队通过
 
   完整品牌套件'
 tags:
-- 品牌设计
-- Logo设计
-- 品牌标识
-- 配色方案
-- 视觉设计
+  - 品牌设计
+  - Logo设计
+  - 品牌标识
+  - 配色方案
+  - 视觉设计
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 品牌标识设计免费版

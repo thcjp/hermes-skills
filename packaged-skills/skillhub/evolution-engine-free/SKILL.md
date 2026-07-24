@@ -3,7 +3,7 @@ slug: "evolution-engine-free"
 name: "evolution-engine-free"
 version: "1.0.0"
 displayName: "进化引擎免费版"
-summary: "基础 Agent 自我进化，纠错学习加反污染防线，避免重复犯错与误学。"
+summary: "基础 Agent 自我进化，纠错学习加反污染防线，避免重复犯错与误学。。面向 AI Agent 的基础自我进化引擎，提供纠错学习与反污染防线两大核心能力. 用户明确纠正时记录到纠错日志，召回"
 license: "MIT"
 description: |-
   面向 AI Agent 的基础自我进化引擎，提供纠错学习与反污染防线两大核心能力.
@@ -15,11 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 进化引擎免费版（Evolution Engine Free）
@@ -58,6 +60,14 @@ category: "Automation"
 **输出**: 返回基础分层记忆的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`基础分层记忆`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 第一步：初始化记忆架构。在 ~/evolution-engine/ 创建基础目录结构：memory.md（热层，≤100 行，确认规则与核心偏好）、corrections.md（纠错层，最近 50 条纠错记录）.

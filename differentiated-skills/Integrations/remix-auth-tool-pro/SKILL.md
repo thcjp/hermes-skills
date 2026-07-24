@@ -3,7 +3,7 @@ slug: "remix-auth-tool-pro"
 name: "remix-auth-tool-pro"
 version: "1.0.0"
 displayName: "Remix认证工具Pro"
-summary: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。"
+summary: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。。Remix认证工具（专业版）为团队与企业提供Remix平台API的完整Bearer Token认证治理"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,15 +12,14 @@ tags:
   - 集成工具
   - 认证授权
   - 企业级
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Remix认证工具（专业版）
@@ -63,6 +62,14 @@ Remix平台通过API Key对调用方进行身份鉴权。专业版将"密钥"从
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Remix、平台全功能、Bearer、认证方案、含密钥轮换、团队管理、审计日志与多环境、认证工具、专业版、为团队与企业提供、API、的完整、Token、认证治理方案、覆盖密钥全生命周、期管理、核心能力、密钥生成与轮换自、团队密钥分发与回、认证审计日志与异、常告警、多环境集中配置、权限精细化策略模、MCP、工具集成认证适配、批量密钥失效与替、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务等.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 ### 场景1：企业级Remix API集成

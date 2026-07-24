@@ -3,27 +3,26 @@ slug: k8s-devops-tool-pro
 name: k8s-devops-tool-pro
 version: 1.0.0
 displayName: K8s清单生成专业版
-summary: 企业级K8s清单管理平台，支持Helm/Kustomize、策略校验与CI/CD集成.
+summary: "企业级K8s清单管理平台，支持Helm/Kustomize、策略校验与CI/CD集成.。面向企业DevOps团队的K8s清单管理平台。支持Helm Chart与Kustomize"
 license: Proprietary
 edition: pro
 description: '面向企业DevOps团队的K8s清单管理平台。支持Helm Chart与Kustomize
 
   完整工作流、策略合规校验、多环境覆盖、GitOps集成与CRD管理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
-- Operations
-- Kubernetes
-- DevOps
-- 企业级
+  - Operations
+  - Kubernetes
+  - DevOps
+  - 企业级
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # K8s清单生成专业版（PRO版）

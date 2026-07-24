@@ -3,7 +3,7 @@ slug: soul-decision-engine-pro
 name: soul-decision-engine-pro
 version: 1.0.0
 displayName: Soul Decision Engine
-summary: AI Agent全功能决策引擎，决策质量评分+偏见深度检测+决策树可视化+跨设备云同步.
+summary: "AI Agent全功能决策引擎，决策质量评分+偏见深度检测+决策树可视化+跨设备云同步.。灵魂决策引擎专业版是在免费版基础上的全功能升级，为AI Agent提供从决策分析到决策优化的完整闭环"
 license: Proprietary
 edition: pro
 description: '灵魂决策引擎专业版是在免费版基础上的全功能升级，为AI Agent提供从决策分析到决策优化的完整闭环。专业版解锁决策质量评分、偏见深度检测、决策树可视化、多领域权重学习、跨设备云同步、决策回溯六大高级功能，实现决策能力的量化与持续优化.
@@ -12,21 +12,22 @@ description: '灵魂决策引擎专业版是在免费版基础上的全功能升
   差异化：完全中文化重写，新增决策质量5维评分模型、10+种偏见检测算法、决策树可视化引擎、多领域权重学习算法、跨设备云同步协议、决策回溯时间机。内容原创度超过70%，针对企业级"决策质量不可量化、偏见难识别、跨设备决策不一致"三大痛点重新设计。专业版提供完整功能与优先支持。保留原始MIT版权声明.
   适用关键词：决策引擎、质量评分、偏见检测、决策树、跨设备同步、决策回溯、权重学习'
 tags:
-- 决策引擎
-- 质量评分
-- 偏见检测
-- 决策树可视化
-- 跨设备同步
+  - 决策引擎
+  - 质量评分
+  - 偏见检测
+  - 决策树可视化
+  - 跨设备同步
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # 灵魂决策引擎（专业版）

@@ -3,23 +3,22 @@ slug: "api-development"
 name: "api-development"
 version: 1.0.1
 displayName: "api-development"
-summary: "编排API全生命周期,从设计到文档/测试/部署一站完成,规范产出API"
+summary: "编排API全生命周期,从设计到文档/测试/部署一站完成,规范产出API。Meta-skill that orchestrates the full API development lifec"
 license: "Proprietary"
 description: |-
   Meta-skill that orchestrates the full API development lifecycle — from
   design through documentati。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Knowledge
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # api-development
@@ -39,6 +38,14 @@ category: "Development"
 - Meta-skill that orchestrates the full API development lifecycle — from
   design through documentati
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

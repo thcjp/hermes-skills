@@ -3,7 +3,7 @@ slug: "azure-cloud-architect-free"
 name: "azure-cloud-architect-free"
 version: "1.0.0"
 displayName: "Azure云架构师LITE"
-summary: "基于Azure CLI的多订阅导航与资源清单查询,提供只读查询与VM健康检查。"
+summary: "基于Azure CLI的多订阅导航与资源清单查询,提供只读查询与VM健康检查。。基于 Azure CLI 的基础云资源查询工具（免费版）。提供多订阅导航与资源清单查询两大基础能力. 支持虚拟"
 license: "MIT"
 description: |-
   基于 Azure CLI 的基础云资源查询工具（免费版）。提供多订阅导航与资源清单查询两大基础能力.
@@ -15,12 +15,12 @@ tags:
   - Azure
   - 基础设施
   - 通用办公
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # Azure 云架构师 LITE
@@ -68,6 +68,14 @@ export API_KEY="your_api_key_here"
 > **升级提示**: RBAC 角色审计（Owner 过度授权检测）、成本分析工作流（Cost Management）、合规检查（NSG/存储安全）、跨订阅批量操作、分层权限模型（L0-L4）等高级功能仅在 [azure-cloud-architect 付费版] 中提供。- 验证返回数据的完整性和格式正确性
 - 参考`资源清单查询`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 典型输入 | 输出内容 | 涉及能力 |

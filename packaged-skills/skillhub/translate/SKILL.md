@@ -3,7 +3,7 @@ slug: "translate"
 name: "translate"
 version: 1.0.1
 displayName: "Translate"
-summary: "准确翻译文本,保格式/处理复数/按地区调语气"
+summary: "准确翻译文本,保格式/处理复数/按地区调语气。Translate text accurately — preserve formatting, handle plurals, and ada"
 license: "Proprietary"
 description: |-
   Translate text accurately — preserve formatting, handle plurals, and
@@ -26,16 +26,15 @@ description: |-
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键...
 tags:
   - Other
+  - 翻译
+  - 语言
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "翻译,语言,工具"
 category: "Knowledge"
 ---
 # Translate
@@ -56,6 +55,14 @@ category: "Knowledge"
 - Translate text accurately — preserve formatting, handle plurals, and
   adapt tone per locale
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

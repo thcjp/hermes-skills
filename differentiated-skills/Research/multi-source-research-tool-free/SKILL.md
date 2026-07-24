@@ -3,7 +3,7 @@ slug: multi-source-research-tool-free
 name: multi-source-research-tool-free
 version: 1.0.0
 displayName: 多源研究助手免费版
-summary: 整合网页搜索、学术平台、社交媒体与新闻聚合，支持自动去重与可信度分类
+summary: "整合网页搜索、学术平台、社交媒体与新闻聚合，支持自动去重与可信度分类。多源研究助手免费版，整合网页搜索、学术平台、社交媒体和新闻聚合四大数据源，帮助用户高效完成深度研究。核心能力:"
 license: Proprietary
 edition: free
 description: '多源研究助手免费版，整合网页搜索、学术平台、社交媒体和新闻聚合四大数据源，帮助用户高效完成深度研究。核心能力:
@@ -32,19 +32,19 @@ description: '多源研究助手免费版，整合网页搜索、学术平台、
 
   - 与PRO版本完全兼容...'
 tags:
-- 研究
-- 文献
-- 舆情
-- 信息收集
+  - 研究
+  - 文献
+  - 舆情
+  - 信息收集
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 # 多源研究助手（免费版）

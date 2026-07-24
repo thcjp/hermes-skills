@@ -3,25 +3,26 @@ slug: contract-agent-pro
 name: contract-agent-pro
 version: 1.0.0
 displayName: 合约Agent专业版
-summary: 多方合约、真实支付、AI仲裁、跨组织协作与企业合规审计一体的Agent商业合约平台
+summary: "多方合约、真实支付、AI仲裁、跨组织协作与企业合规审计一体的Agent商业合约平台。合约Agent专业版是面向企业级Agent商业协作的智能合约平台，在免费版基础上新增多方合约、真实支付网关"
 license: Proprietary
 edition: pro
 description: 合约Agent专业版是面向企业级Agent商业协作的智能合约平台，在免费版基础上新增多方合约、真实支付网关对接、AI仲裁员自动裁决、跨组织协作、合约模板市场与企业合规审计能力。核心能力：支持N方参与的复杂商业合约；对接Stripe/支付宝/微信支付等真实支付通道；AI仲裁员基于证据自动裁决纠纷；跨组织Agent身份互认；合约模板市场与社区共享；满足SOX/等保2
 tags:
-- 智能合约
-- 企业级
-- 跨组织协作
-- 合规审计
+  - 智能合约
+  - 企业级
+  - 跨组织协作
+  - 合规审计
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 当Agent商业化从"实验性尝试"走向"规模化运营"时，免费版的单组织简单合约模型就会遇到瓶颈：**跨企业合约无法签、真实资金无法走、纠纷仲裁无标准、合规审计无据可查**.

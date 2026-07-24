@@ -3,26 +3,27 @@ slug: prompt-architect-free
 name: prompt-architect-free
 version: 1.0.1
 displayName: 提示词架构师免费版
-summary: 解决 Prompt 答非所问、任务拆解混乱、Agent Loop 选型盲目的免费提示词工程工具
+summary: "解决 Prompt 答非所问、任务拆解混乱、Agent Loop 选型盲目的免费提示词工程工具。提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级"
 license: Proprietary
 edition: free
 description: 提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具，针对"Prompt
   答非所问与幻觉频发、复杂任务拆解颗粒度失控、Agent Loop 模式选型盲目、输出格式不可控"四大高频痛点而设计。它把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让
   Agent 从"能跑"升级到"基本可控"
 tags:
-- 提示词工程
-- 任务拆解
-- 代理设计
-- 输出校验
+  - 提示词工程
+  - 任务拆解
+  - 代理设计
+  - 输出校验
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具。把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让 Agent 从"能跑"升级到"基本可控".
@@ -254,6 +255,14 @@ def on_validation_fail(raw_output, errors):
 **处理**: 解析输出 Schema 校验的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回输出 Schema 校验的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：答非所问、任务拆解混乱、选型盲目的免费提、示词工程工具、提示词架构师免费、版是面向、开发者、工程师、独立开发者的轻量、工程工具、答非所问与幻觉频、复杂任务拆解颗粒、度失控、模式选型盲目、输出格式不可控、四大高频痛点而设、它把零散的、工程经验沉淀为可、复用的结构化模板、与决策表、升级到、基本可控等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 示例
 ### 场景一：构建退款客服 Agent 的 System Prompt
 

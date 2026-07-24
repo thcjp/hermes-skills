@@ -3,27 +3,27 @@ slug: daily-news-brief-tool-pro
 name: daily-news-brief-tool-pro
 version: 1.0.0
 displayName: 每日新闻简报(专业版)
-summary: 企业级新闻简报专业版，含定时推送、AI分析、多渠道分发、情感分析与趋势预测.
+summary: "企业级新闻简报专业版，含定时推送、AI分析、多渠道分发、情感分析与趋势预测.。每日新闻简报助手专业版是面向企业级场景的完整新闻简报生成与分发工具。在免费版基础搜集能力之上，新增定时自动执行、"
 license: Proprietary
 edition: pro
 description: 每日新闻简报助手专业版是面向企业级场景的完整新闻简报生成与分发工具。在免费版基础搜集能力之上，新增定时自动执行、多渠道推送、AI智能分析、个性化定制、多语言支持、历史回顾、情感分析、趋势预测八大高级能力。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 每日新闻
-- 企业级
-- AI分析
-- 定时推送
-- 多渠道
+  - 每日新闻
+  - 企业级
+  - AI分析
+  - 定时推送
+  - 多渠道
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 > **定时推送+AI分析+多渠道分发+趋势预测。企业级新闻简报全功能覆盖。**

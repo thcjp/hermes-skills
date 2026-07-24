@@ -3,7 +3,7 @@ slug: "weiyun-skills"
 name: "weiyun-skills"
 version: 1.0.11
 displayName: "Weiyun Skills"
-summary: "微云技能集合,提供内容生成与专业风格规范,支持多种变体处理,付费版独享批量与高级功能。"
+summary: "微云技能集合,提供内容生成与专业风格规范,支持多种变体处理,付费版独享批量与高级功能。。微云网盘MCP接口完整技能. 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人气开源Sk"
 license: "Proprietary"
 description: |-
   微云网盘MCP接口完整技能.
@@ -24,16 +24,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Weiyun Skills
@@ -56,6 +55,14 @@ category: "Automation"
 - Weiyun Skills 错误重试 - 支持多种变体等多种变体
 - Weiyun Skills 多格式支持 - 自动适配多种场景
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 * 使用微云 协议 工具进行文件管理（查询、下载、删除、上传、分享、重命名、创建文件夹、移动文件/目录）

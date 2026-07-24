@@ -3,7 +3,7 @@ slug: "aws-agentcore-langgraph"
 name: "aws-agentcore-langgraph"
 version: 1.0.3
 displayName: "AgentCore LangGraph"
-summary: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手"
+summary: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体"
 license: "Proprietary"
 description: |-
   基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体系统构建与部署助手.
@@ -16,16 +16,15 @@ description: |-
 tags:
   - Agents
   - Operations
+  - AWS
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "AWS,云计算,DevOps"
 category: "Operations"
 ---
 # aws-agentcore-langgraph

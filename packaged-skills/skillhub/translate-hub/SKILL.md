@@ -14,16 +14,15 @@ tags:
   - 本地化
   - 翻译记忆库
   - 术语管理
+  - 翻译
+  - 语言
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "翻译,语言,工具"
 category: "Knowledge"
 ---
 # 中英翻译中枢(专业版)
@@ -186,6 +185,14 @@ evaluation = translator.evaluate(
 **处理**: 解析翻译质量评估（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回翻译质量评估（专业版独有）的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：软件产品本地化（本地化工程师角色）

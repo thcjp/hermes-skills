@@ -3,7 +3,7 @@ slug: "git-workflow-cn-paid"
 name: "git-workflow-cn-paid"
 version: 1.0.1
 displayName: "Git工作流专业版"
-summary: "企业级 Git 工作流方案，支持 Git Flow、团队协作、冲突工具集成与批量分支管理。"
+summary: "企业级 Git 工作流方案，支持 Git Flow、团队协作、冲突工具集成与批量分支管理。。面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -17,13 +17,9 @@ tags:
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "版本控制,Git,开发工具"
 category: "Development"
 ---
 # Git工作流专业版
@@ -68,6 +64,14 @@ category: "Development"
 **输出**: 返回工作流模型的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`工作流模型`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：Git Flow 发布流程管理

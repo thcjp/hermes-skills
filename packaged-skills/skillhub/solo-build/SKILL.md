@@ -3,7 +3,7 @@ slug: "solo-build"
 name: "solo-build"
 version: 2.2.2
 displayName: "构建执行引擎"
-summary: "执行实现计划任务,TDD工作流,自动提交,阶段门检查,进度跟踪。"
+summary: "执行实现计划任务,TDD工作流,自动提交,阶段门检查,进度跟踪。。执行实现计划任务的引擎:轨道选择、上下文加载、任务恢复、 TDD工作流、集成测试、视觉验证、阶段门检查、错误处理与进度 跟踪"
 license: "Proprietary"
 description: |-
   执行实现计划任务的引擎:轨道选择、上下文加载、任务恢复、
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 创意设计
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - UI设计
+  - 前端
+  - 设计
 category: "Creative"
 ---
 # 构建执行引擎
@@ -213,6 +211,14 @@ export API_KEY="your_api_key_here"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

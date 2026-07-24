@@ -3,7 +3,7 @@ slug: "finance-report"
 name: "finance-report"
 version: 1.0.1
 displayName: "财报分析专业版"
-summary: "企业级财报分析系统，支持批量处理、多格式导出、行业基准与深度预测模型。"
+summary: "企业级财报分析系统，支持批量处理、多格式导出、行业基准与深度预测模型。。面向专业分析师与机构的财报分析系统。支持批量文件处理、PDF/DOCX/ Markdown多格式导出、行业基准对比、高"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,16 +14,15 @@ tags:
   - 财报分析
   - 企业级
   - 报告生成
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
 category: "Finance"
 ---
 # 财报分析专业版
@@ -78,6 +77,14 @@ category: "Finance"
 **输出**: 返回报告格式的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`报告格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：批量财报分析

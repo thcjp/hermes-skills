@@ -3,22 +3,23 @@ slug: "claude-code-runner"
 name: "claude-code-runner"
 version: 0.1.1
 displayName: "ai-assistant Code Ru"
-summary: "经PTY调用Claude Code执行编程任务,搞定非TTY环境"
+summary: "经PTY调用Claude Code执行编程任务,搞定非TTY环境。Execute programming tasks via ai-assistant Code using PTY-base"
 license: "Proprietary"
 description: |-
   Execute programming tasks via ai-assistant Code using PTY-based invocation。Handles non-TTY environment。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Development
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # ai-assistant Code Ru
@@ -41,6 +42,14 @@ category: "Development"
 - Claude Code Runner 错误重试 - 支持多种变体等多种变体
 - Claude Code Runner 多格式支持 - 自动适配多种场景
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 1. Automated Code Review

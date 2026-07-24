@@ -3,7 +3,7 @@ slug: board-art-tool-free
 name: board-art-tool-free
 version: 1.0.0
 displayName: 画板艺术工具
-summary: 面向个人的协作画布艺术发布工具，支持像素画作.
+summary: "面向个人的协作画布艺术发布工具，支持像素画作. - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
 description: '面向个人用户的协作画布艺术发布工具.
@@ -28,19 +28,18 @@ description: '面向个人用户的协作画布艺术发布工具.
   差异化: 免费版聚焦个人单作品发布与查看，提供坐标与颜色管理，零成本创作.
   适用关键词: 画板, 像素艺术, 协作画布, 发布画作, 画布定位, pixel art, canvas, board art'
 tags:
-- 创意
-- 像素艺术
-- 个人效率
-- 其他工具
+  - 创意
+  - 像素艺术
+  - 个人效率
+  - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 画板艺术工具（免费版）

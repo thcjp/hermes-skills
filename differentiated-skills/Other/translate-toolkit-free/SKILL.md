@@ -3,7 +3,7 @@ slug: translate-toolkit-free
 name: translate-toolkit-free
 version: 1.0.1
 displayName: 翻译工具免费版
-summary: "格式保留术语一致的文本翻译,模板标记保护不误译,多语言处理,免费个人用"
+summary: "格式保留术语一致的文本翻译,模板标记保护不误译,多语言处理,免费个人用。翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:"
 license: Proprietary
 edition: free
 description: '翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:
@@ -26,19 +26,17 @@ description: '翻译工具免费版，面向个人用户的轻量级文本翻译
 
   差异化: 免费版聚焦核心翻译与格式保留能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
 tags:
-- 翻译
-- 本地化
-- 格式保留
-- 免费版
+  - 翻译
+  - 本地化
+  - 格式保留
+  - 免费版
+  - 语言
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "翻译,语言,工具"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Knowledge"
 ---
 # 翻译工具（免费版）

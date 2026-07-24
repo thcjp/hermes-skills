@@ -3,7 +3,7 @@ slug: "json-yaml-converter"
 name: "json-yaml-converter"
 version: 1.0.1
 displayName: "JSON转YAML(专业版)"
-summary: "企业级JSON与YAML互转工具，支持批量转换、Schema校验、模板渲染与配置中心对接。"
+summary: "企业级JSON与YAML互转工具，支持批量转换、Schema校验、模板渲染与配置中心对接。。JSON转YAML专业版是一款面向DevOps团队与企业级配置管理场景的全功能格式互转工具。在免费"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,16 +12,15 @@ tags:
   - 数据转换
   - 配置管理
   - 企业工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # JSON转YAML(专业版)
@@ -195,6 +194,14 @@ def pull_from_nacos(server: str, data_id: str, group: str) -> dict:
 
 **支持的配置中心**：Apollo、Nacos、Consul、etcd。每种提供拉取与推送两套API模板.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：K8s多环境配置管理（DevOps工程师角色）
@@ -373,7 +380,6 @@ print(config)
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成可执行的企业级配置管理流水线
 
 ---
-
 ## 案例展示
 
 ### 示例1：基础用法
@@ -381,6 +387,14 @@ print(config)
 ```
 ### 60秒上手：批量转换+Schema校验(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
 > "帮我把 ./configs 目录下所有JSON批量转YAML，并按 k8s-schema.json 校验。"

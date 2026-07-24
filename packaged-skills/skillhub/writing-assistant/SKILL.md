@@ -3,22 +3,21 @@ slug: "writing-assistant"
 name: "writing-assistant"
 version: 0.1.1
 displayName: "Writing Assistant"
-summary: "写作团队组长,经MCP工具管理专业写手并分析写作"
+summary: "写作团队组长,经MCP工具管理专业写手并分析写作。You are a Writing Team Lead managing specialized writers via 协议 tools。"
 license: "Proprietary"
 description: |-
   You are a Writing Team Lead managing specialized writers via 协议 tools。Please ANALYZE the writin。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Writing Assistant
@@ -38,6 +37,14 @@ category: "Automation"
 
 This skill provides specialized capabilities for writing assistant.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -3,25 +3,24 @@ slug: cron-expert-free
 name: cron-expert-free
 version: 1.0.1
 displayName: cron优选实践专家(免费版)
-summary: cron定时系统优选实践指南免费版，含自唤醒规则、时区锁定、基础提醒模式、常见陷阱规避.
+summary: "cron定时系统优选实践指南免费版，含自唤醒规则、时区锁定、基础提醒模式、常见陷阱规避.。cron优选实践专家免费版是面向AI Agent的定时系统使用优选实践指南。不同于表达式编写工具，本"
 license: Proprietary
 edition: free
 description: cron优选实践专家免费版是面向AI Agent的定时系统使用优选实践指南。不同于表达式编写工具，本技能聚焦"如何正确使用定时系统"的方法论与经验法则，帮助Agent建立可靠的定时行为模式。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- cron优选实践
-- 定时提醒
-- 时区策略
-- 陷阱规避
+  - cron优选实践
+  - 定时提醒
+  - 时区策略
+  - 陷阱规避
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # cron优选实践专家（免费版）

@@ -3,7 +3,7 @@ slug: "data-analysis-litiao"
 name: "data-analysis-litiao"
 version: 1.0.1
 displayName: "数据分析理调"
-summary: "数据分析方法论框架，覆盖统计严谨性、陷阱识别、方法选择与输出规范"
+summary: "数据分析方法论框架，覆盖统计严谨性、陷阱识别、方法选择与输出规范。数据分析理调是数据分析的方法论守护框架，覆盖 Methodology First（方法论优先）、 Statistical R"
 license: "Proprietary"
 description: |-
   数据分析理调是数据分析的方法论守护框架，覆盖 Methodology First（方法论优先）、
@@ -12,15 +12,16 @@ description: |-
   Output Standards（输出规范）、Red Flags to Escalate（风险升级机制）.
 tags:
   - 信息检索
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - write
+  - exec
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
 category: "Research"
 ---
 # 数据分析理调
@@ -116,6 +117,14 @@ category: "Research"
 - 结果依赖于特定时间段或特定子集（Cherry-picking 风险）
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

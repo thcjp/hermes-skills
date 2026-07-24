@@ -3,7 +3,7 @@ slug: "json-repair-kit"
 name: "json-repair-kit"
 version: 1.0.1
 displayName: "JSON修复工具"
-summary: "通过Node.js解析修复格式错误的JSON文件，支持尾逗号、单引号等修复。"
+summary: "通过Node.js解析修复格式错误的JSON文件，支持尾逗号、单引号等修复。。JSON修复工具通过Node.js解析将格式错误的"宽松"JSON文件（如含尾逗号、单引号、未加引号键） 解析为"
 license: "Proprietary"
 description: |-
   JSON修复工具通过Node.js解析将格式错误的"宽松"JSON文件（如含尾逗号、单引号、未加引号键）
@@ -13,16 +13,15 @@ tags:
   - 研发工具
   - JSON
   - 修复
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # JSON Repair Kit — JSON修复工具
@@ -88,6 +87,14 @@ export API_KEY="your_api_key_here"
 修复JSON中的十六进制和八进制数字。将 `0xFF` 转换为 `255`，确保所有数字使用标准十进制格式。JavaScript支持十六进制字面量，解析后转换为十进制数字输出。- 验证返回数据的完整性和格式正确性
 - 参考`Hex/Octal Numbers 修复`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

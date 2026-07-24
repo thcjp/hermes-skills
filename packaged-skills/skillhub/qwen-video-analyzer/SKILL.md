@@ -3,7 +3,7 @@ slug: "qwen-video-analyzer"
 name: "qwen-video-analyzer"
 version: 1.0.1
 displayName: "通义千问视频分析-专业版"
-summary: "企业级视频分析工具,支持批量处理、自定义模型、结构化报告,适配商业内容审核与生产。"
+summary: "企业级视频分析工具,支持批量处理、自定义模型、结构化报告,适配商业内容审核与生产。。通义千问视频分析专业版,面向企业团队与专业用户的高级AI视频内容理解工具。核心能力: - 批量视频分析,支"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -27,16 +27,15 @@ tags:
   - 视频分析
   - 企业版
   - 商业内容
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 category: "Creative"
 ---
 # 通义千问视频分析-专业版
@@ -89,6 +88,14 @@ category: "Creative"
 **输出**: 返回远程 URL 分析的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`远程 URL 分析`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:视频平台批量内容审核

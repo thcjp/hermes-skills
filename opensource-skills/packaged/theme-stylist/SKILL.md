@@ -3,24 +3,22 @@ slug: theme-stylist
 name: theme-stylist
 version: 1.0.1
 displayName: 主题造型师
-summary: 10+预设主题一键应用,幻灯片文档报告HTML统一专业视觉风格
+summary: "10+预设主题一键应用,幻灯片文档报告HTML统一专业视觉风格。主题造型师——为各类产出物(幻灯片/文档/报告/HTML落地页)应用专业字体与配色主题,内置10+预设主题(Corporate"
 license: Proprietary
 description: 主题造型师——为各类产出物(幻灯片/文档/报告/HTML落地页)应用专业字体与配色主题,内置10+预设主题(Corporate/Minimal/Warm/Nature/Elegant/Tech/Editorial/Playful/Mono/Sunset),支持自定义品牌色生成完整色板。适用于PPT美化、文档美化、报告配色、HTML落地页主题驱动、品牌主题定制场景。触发关键词:主题、配色主题、字体主题、幻灯片主题、文档主题、报告主题、视觉主题、主题设计、主题应用、配色方案、品牌色
 tags:
-- 主题设计
-- 配色方案
-- 视觉风格
-- 字体配色
-- 品牌统一
+  - 主题设计
+  - 配色方案
+  - 视觉风格
+  - 字体配色
+  - 品牌统一
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-# 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
 category: "Automation"
 ---
 # 主题造型师
@@ -34,6 +32,14 @@ category: "Automation"
 3. **自定义主题生成**:基于品牌主色,按色轮理论生成辅色/强调色/功能色/中性色完整色板
 4. **一致性检查**:60-30-10 配色比例校验、字体使用审计、间距统一性、图表配色对齐
 5. **多产出物适配**:PPT/DOCX/HTML/Markdown/PDF 统一主题输出,CSS 变量 + JSON 配置双格式
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

@@ -26,20 +26,19 @@ description: '照片配文工具免费版,为个人用户提供 Instagram、X(Tw
 
   差异化:免费版聚焦 Instagram、X、Facebook 三大高频平台,配置简单,适合个人用户快速生成平台适配的配文内容'
 tags:
-- 沟通协作
-- 社交媒体
-- 内容创作
-- 摄影配文
-- 个人效率
+  - 沟通协作
+  - 社交媒体
+  - 内容创作
+  - 摄影配文
+  - 个人效率
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 照片配文工具 - 免费版

@@ -3,7 +3,7 @@ slug: "neosoul-decision-agent-free"
 name: "neosoul-decision-agent-free"
 version: "1.0.0"
 displayName: "自主决策代理"
-summary: "基础版结构化决策支持工具，提供框架分析与决策记录功能"
+summary: "基础版结构化决策支持工具，提供框架分析与决策记录功能。基础版结构化决策支持工具，帮助用户在面临权衡选择时进行结构化分析. 提供分层记忆基础存储、决策框架应用、决策记录与回顾三大核心能力. 适"
 license: "MIT"
 description: |-
   基础版结构化决策支持工具，帮助用户在面临权衡选择时进行结构化分析.
@@ -13,11 +13,15 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 tags:
   - 系统运维
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - AI代理
+  - 自动化
+  - 智能
 category: "Agents"
 ---
 # 自主决策代理（Neosoul Decision Agent）- 免费版
@@ -67,6 +71,14 @@ category: "Agents"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：初始化决策记忆环境

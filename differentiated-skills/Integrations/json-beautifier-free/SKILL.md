@@ -3,25 +3,24 @@ slug: json-beautifier-free
 name: json-beautifier-free
 version: 1.0.1
 displayName: JSON美化工具免费版
-summary: 轻量级JSON格式化、压缩、验证与路径提取工具，适合日常开发调试与小文件处理.
+summary: "轻量级JSON格式化、压缩、验证与路径提取工具，适合日常开发调试与小文件处理.。JSON美化工具免费版提供格式化、压缩、验证、路径提取四项核心能力，帮助开发者快速整理JSON数据，提升可读性"
 license: Proprietary
 edition: free
 description: JSON美化工具免费版提供格式化、压缩、验证、路径提取四项核心能力，帮助开发者快速整理JSON数据，提升可读性与可维护性。核心能力：支持2/4空格缩进格式化、单行压缩、语法合法性验证、JSONPath路径提取；内置类型识别、键名排序、Unicode转义处理；提供标准化的结构化输出，便于下游消费。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 集成工具
-- JSON
-- 格式化
-- 开发者工具
+  - 集成工具
+  - JSON
+  - 格式化
+  - 开发者工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # JSON美化工具（免费版）
@@ -70,6 +69,14 @@ JSON是现代API与配置文件的主流数据格式，但原始JSON往往以压
 **输出**: 返回路径提取的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、JSON、格式化、验证与路径提取工、适合日常开发调试、与小文件处理、美化工具免费版提、供格式化、路径提取四项核心、帮助开发者快速整、提升可读性与可维、核心能力、空格缩进格式化、单行压缩、语法合法性验证、JSONPath、路径提取、内置类型识别、键名排序、Unicode、转义处理、提供标准化的结构、化输出、便于下游消费、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用场景
 
 | 场景 | 角色 | 价值 |

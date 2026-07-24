@@ -3,7 +3,7 @@ slug: "data-analysis-toolkit"
 name: "data-analysis-toolkit"
 version: "1.0.1"
 displayName: "Python Data Analysis"
-summary: "提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。"
+summary: "提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。。提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析. 核心能力:数据清洗"
 license: "Proprietary"
 description: |-
   提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析.
@@ -11,6 +11,9 @@ description: |-
   适用场景:业务数据分析、科研数据处理、报表生成辅助、数据探索性分析.
 tags:
   - Integrations
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - write
@@ -28,6 +31,14 @@ category: "Research"
 * 数据可视化建议
 * 常见分析模式指导
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 - 不适用: 需要人工判断的复杂决策场景
 

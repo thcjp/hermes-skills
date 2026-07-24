@@ -3,23 +3,22 @@ slug: "shadcn-ui"
 name: "shadcn-ui"
 version: 1.0.1
 displayName: "Shadcn Ui"
-summary: "用shadcn/ui组件/Tailwind布局/react-hook-form表单建UI"
+summary: "用shadcn/ui组件/Tailwind布局/react-hook-form表单建UI。Use when building UI with shadcn/ui components, Ta"
 license: "Proprietary"
 description: |-
   Use when building UI with shadcn/ui components, Tailwind CSS layouts,
   form patterns with react-ho。
 tags:
   - Other
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # Shadcn Ui
@@ -40,6 +39,14 @@ category: "Creative"
 - Use when building UI with shadcn/ui components, Tailwind CSS layouts,
   form patterns with react-ho
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

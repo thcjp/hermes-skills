@@ -9,19 +9,18 @@ edition: free
 description: 定时任务设置指南免费版是面向AI Agent的定时调度配置手册。不同于最佳实践类技能，本技能聚焦"如何正确配置定时任务"的技术细节：调度类型选择、会话目标决策、投递通道设置、JSON
   Schema编写、作业生命周期管理。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 定时任务
-- 调度配置
-- 作业管理
-- 自动化
+  - 定时任务
+  - 调度配置
+  - 作业管理
+  - 自动化
+  - UI设计
+  - 前端
+  - 设计
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Creative"
 ---
 # 定时任务设置指南（免费版）

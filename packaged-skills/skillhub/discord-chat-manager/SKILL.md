@@ -3,7 +3,7 @@ slug: "discord-chat-manager"
 name: "discord-chat-manager"
 version: 1.0.1
 displayName: "Discord聊天管理专业版"
-summary: "企业级 Discord 聊天管理,支持高级搜索、批量消息分发与频道全生命周期管理。"
+summary: "企业级 Discord 聊天管理,支持高级搜索、批量消息分发与频道全生命周期管理。。面向运营团队与企业场景的 Discord 聊天全功能管理工具。核心能力: - 多条件组合高级搜索(作者/时"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -25,16 +25,14 @@ tags:
   - Communication
   - 高级搜索
   - 批量分发
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Discord,社交,通信"
 category: "Communication"
 ---
 # Discord聊天管理专业版
@@ -83,6 +81,14 @@ category: "Communication"
 **输出**: 返回回复消息的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`回复消息`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:多频道批量通知分发

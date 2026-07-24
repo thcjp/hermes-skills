@@ -3,7 +3,7 @@ slug: "xml"
 name: "xml"
 version: 1.0.1
 displayName: "XML"
-summary: "解析生成转换XML,命名空间与编码处理正确"
+summary: "解析生成转换XML,命名空间与编码处理正确。Parse, generate, and transform XML with correct namespace handling and en"
 license: "Proprietary"
 description: |-
   Parse, generate, and transform XML with correct namespace handling and
@@ -24,16 +24,16 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # XML
@@ -56,6 +56,14 @@ category: "Automation"
 - XSLT 转换与 XPath 查询
 - XML 与 JSON/CSV/YAML 互转
 - XXE 防护与安全 XML 处理
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## XML 解析方式对比
 

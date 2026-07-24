@@ -16,15 +16,13 @@ tags:
   - 批量处理
   - 自动化
   - CI/CD
+  - 文档
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "Markdown,文档,工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # Markdown转换器专业版

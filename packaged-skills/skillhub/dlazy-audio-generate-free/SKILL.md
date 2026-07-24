@@ -3,19 +3,21 @@ slug: "dlazy-audio-generate-free"
 name: "dlazy-audio-generate-free"
 version: "1.0.0"
 displayName: "Dlazy Audio LITE"
-summary: "通过dlazy CLI调用基础TTS模型,支持中英文文本转语音"
+summary: "通过dlazy CLI调用基础TTS模型,支持中英文文本转语音。dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个"
 license: "MIT"
 description: |-
   dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个基础 TTS 模型,
   支持中英文文本转语音、音色与语速控制。适用于有声书朗读、配音原型、语音播报等基础场景.
 tags:
   - Creative
+  - 音频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "音频处理,媒体,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # Dlazy Audio LITE
@@ -55,6 +57,14 @@ export API_KEY="your_api_key_here"
 ## 核心能力
 
 本工具的核心能力包括：通过dlazy CLI调用基础TTS模型,支持中英文文本转语音。具体功能详情请参考下方能力说明表格与使用场景.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 认证
 
 所有请求需 dLazy API Key。推荐:
@@ -164,6 +174,13 @@ A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,
 5. **安全策略限制**: prompt 含敏感内容会触发 `504 task_failed`
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > **想要音乐生成、音效、语音克隆、多角色对话?** 升级到 dlazy-audio-generate 付费版解锁 15+ 高级音频模型.
 ## 输出格式

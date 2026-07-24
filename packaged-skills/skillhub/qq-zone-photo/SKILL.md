@@ -3,7 +3,7 @@ slug: "qq-zone-photo"
 name: "qq-zone-photo"
 version: 1.0.4
 displayName: "社交空间相册"
-summary: "管理社交空间相册，支持扫码登录、浏览照片、上传下载"
+summary: "管理社交空间相册，支持扫码登录、浏览照片、上传下载。社交空间相册自动化管理工具。支持扫码登录、相册浏览、照片上传/下载、 相册创建等功能。通过Cookie认证访问社交空间非官方API，适用于"
 license: "Proprietary"
 description: |-
   社交空间相册自动化管理工具。支持扫码登录、相册浏览、照片上传/下载、
@@ -12,15 +12,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 社交空间相册
@@ -102,6 +100,14 @@ export API_KEY="your_api_key_here"
 
 通过 `python3 （请参考skill目录中的脚本文件） --action create --title "我的新相册" --cookies cookies.json` 创建新相册。必填参数 `--title` 指定相册标题，可选参数 `--desc` 指定相册描述，`--qq` 指定账号。创建成功后返回新相册的 `album-id`。适用于批量上传前的相册准备.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 首次使用执行扫码登录：`python3 （请参考skill目录中的脚本文件） --action login --cookies cookies.json`

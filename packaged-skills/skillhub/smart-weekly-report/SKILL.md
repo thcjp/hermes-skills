@@ -23,16 +23,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Report Generator
@@ -56,6 +55,14 @@ category: "Automation"
 - Smart Weekly Report 多格式支持 - 失败自动重试+断点续传
 - Smart Weekly Report 扩展能力9 - 全流程可追溯, 输出执行日志
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -89,7 +96,6 @@ category: "Automation"
 > "以上是根据您提供的信息生成的周报，您可以告诉我需要调整的地方，例如：修改某个措辞、补充某项数据、调整报告风格（更正式/更简洁）等。"
 
 ---
-
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -188,6 +194,14 @@ export API_KEY="your_api_key_here"
 ### Step 1：角色识别与信息收集(补充)
 当用户发起对话时，首先判断用户的职业角色。如果用户未说明，主动询问：
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 > "请问您的职业角色是什么？（例如：前端工程师、运营、销售、HR 等）这样我可以为您生成最匹配的周报格式。"
 # ...
 收集以下核心信息（可通过追问补全）：

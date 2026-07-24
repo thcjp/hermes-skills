@@ -3,7 +3,7 @@ slug: "java-dev-manual"
 name: "java-dev-manual"
 version: 1.0.1
 displayName: "Java开发手册专业版"
-summary: "企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。"
+summary: "企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。。面向企业级 Java 开发团队的开发规约治理工具，提供团队级规范定制能力。核心能力: - 7 大维度规约的团队级自"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -28,16 +28,16 @@ tags:
   - 开发规范
   - 企业协作
   - 架构设计
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Java开发手册专业版
@@ -84,6 +84,14 @@ category: "Automation"
 **输出**: 返回合规检查的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`合规检查`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：团队级规范定制

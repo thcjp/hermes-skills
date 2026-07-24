@@ -3,7 +3,7 @@ slug: stealth-browser-assistant
 name: stealth-browser-assistant
 version: 1.0.1
 displayName: "反检测浏览器助手"
-summary: "一人管百号的浏览器自动化底座,指纹隔离+崩溃自愈+智能定位,告别封号掉线"
+summary: "一人管百号的浏览器自动化底座,指纹隔离+崩溃自愈+智能定位,告别封号掉线。反检测浏览器助手是一款浏览器自动化引擎,专为Agent浏览器场景设计。 支持指纹隔离、崩溃自愈、DOM蒸馏智能定位,"
 license: Proprietary
 description: |-
   反检测浏览器助手是一款浏览器自动化引擎,专为Agent浏览器场景设计。
@@ -14,16 +14,19 @@ description: |-
   - Tab崩溃3秒自愈
   - 浏览器指纹防护与多账号隔离
   - 反检测混合方案与行为模拟
-homepage: "https://skillhub.cn"
-tags: [浏览器自动化, 多账号管理, 反检测, 效率工具]
+homepage: ""
+tags:
+  - 浏览器自动化
+  - 多账号管理
+  - 反检测
+  - 效率工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
+  - write
 category: "Automation"
 ---
 # 反检测浏览器助手 Stealth Browser Assistant v1.1.0
@@ -51,6 +54,14 @@ category: "Automation"
 4. **反检测混合方案**: 日常操作走自动化API,敏感操作走独立WebSocket直连CDP,敏感操作前通过直连通道执行反检测JS,CDP探针验证反检测有效性
 5. **行为模拟与Cookie预热**: 模拟真人操作节奏,先访问首页建立Session再执行搜索,操作前校验ref/key/fields参数完整性(防LLM幻觉)
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

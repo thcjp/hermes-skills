@@ -28,12 +28,14 @@ tags:
   - GPU加速
   - 说话人分离
   - Whisper
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Whisper 语音转文字工具 - 专业版

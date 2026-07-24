@@ -3,25 +3,25 @@ slug: pipedrive-toolkit-free
 name: pipedrive-toolkit-free
 version: 1.0.1
 displayName: Pipedrive工具(免费版)
-summary: 管理Pipedrive销售数据的免费工具，支持商机、联系人、组织的查询与搜索
+summary: "管理Pipedrive销售数据的免费工具，支持商机、联系人、组织的查询与搜索。Pipedrive工具免费版是一款面向销售数据管理的命令行辅助Skill，让AI Agent能够通过API查询P"
 license: Proprietary
 edition: free
 description: Pipedrive工具免费版是一款面向销售数据管理的命令行辅助Skill，让AI Agent能够通过API查询Pipedrive中的商机、联系人、组织和活动数据，实现销售信息的快速检索和展示。核心能力：商机列表与搜索、联系人查询、组织查询、活动列表、管道与阶段查看、当前用户信息。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 销售管理
-- CRM集成
-- 数据查询
-- 集成工具
+  - 销售管理
+  - CRM集成
+  - 数据查询
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # Pipedrive工具（免费版）

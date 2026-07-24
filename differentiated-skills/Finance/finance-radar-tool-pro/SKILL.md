@@ -3,7 +3,7 @@ slug: "finance-radar-tool-pro"
 name: "finance-radar-tool-pro"
 version: "1.0.0"
 displayName: "股票分析雷达专业版"
-summary: "专业股票与加密货币分析平台，支持批量分析、组合追踪、价格告警与传闻检测。"
+summary: "专业股票与加密货币分析平台，支持批量分析、组合追踪、价格告警与传闻检测。。面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、 投资组合追踪、价格告警、热门趋势检测、传闻与早期信"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,15 +14,14 @@ tags:
   - 股票分析
   - 投资组合
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 股票分析雷达专业版（PRO版）

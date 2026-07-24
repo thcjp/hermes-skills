@@ -3,25 +3,26 @@ slug: memory-fortress-free
 name: memory-fortress-free
 version: 1.0.1
 displayName: 记忆堡垒(免费版)
-summary: AI Agent六层记忆系统，解决上下文丢失、决策遗忘、错误重复痛点，WAL协议确保持久化.
+summary: "AI Agent六层记忆系统，解决上下文丢失、决策遗忘、错误重复痛点，WAL协议确保持久化.。记忆堡垒是一款为AI Agent设计的终极记忆系统，采用六层架构（热内存/温存储/冷存储/归档/"
 license: Proprietary
 description: 记忆堡垒是一款为AI Agent设计的终极记忆系统，采用六层架构（热内存/温存储/冷存储/归档/云备份/自动提取），确保Agent永远不丢失上下文、不忘记决策、不重复犯错。基于写前日志（WAL）协议，在响应前先写入状态，保证记忆持久性。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 记忆系统
-- Agent记忆
-- 上下文持久化
-- 知识管理
+  - 记忆系统
+  - Agent记忆
+  - 上下文持久化
+  - 知识管理
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
+  - read
+  - exec
+  - write
+  - glob
+  - grep
 edition: free
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+homepage: ""
 category: "Agents"
 ---
 > **AI Agent的终极记忆系统。六层架构，确保持久记忆。**

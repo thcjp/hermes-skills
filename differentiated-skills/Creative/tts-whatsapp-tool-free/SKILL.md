@@ -36,20 +36,18 @@ description: '面向个人用户的 WhatsApp 语音消息工具(免费版)。核
 
   - 完...'
 tags:
-- 创意设计
-- 语音合成
-- WhatsApp
-- 消息发送
-- 多语言
+  - 创意设计
+  - 语音合成
+  - WhatsApp
+  - 消息发送
+  - 多语言
+  - 社交
+  - 通信
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Communication"
 ---
 # WhatsApp 语音消息工具 - 免费版

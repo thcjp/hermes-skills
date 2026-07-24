@@ -3,25 +3,24 @@ slug: task-queue-manager-free
 name: task-queue-manager-free
 version: 1.0.1
 displayName: 任务队列管理器(免费版)
-summary: 持久化任务队列核心能力，支持可恢复、幂等的批量任务，60秒上手队列管理.
+summary: "持久化任务队列核心能力，支持可恢复、幂等的批量任务，60秒上手队列管理.。任务队列管理器（免费版）为AI Agent提供持久化任务队列管理能力，支持可恢复、幂等的批量任务执行。采用JSONL"
 license: Proprietary
 edition: free
 description: 任务队列管理器（免费版）为AI Agent提供持久化任务队列管理能力，支持可恢复、幂等的批量任务执行。采用JSONL追加日志与状态文件机制，确保任务在崩溃或中断后可从断点恢复，不丢失不重复。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- 任务队列
-- 持久化
-- 批量处理
-- 断点续传
+  - 任务队列
+  - 持久化
+  - 批量处理
+  - 断点续传
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 任务队列管理器（免费版）

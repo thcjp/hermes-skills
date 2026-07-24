@@ -3,24 +3,22 @@ slug: cron-assist
 name: cron-assist
 version: 1.0.1
 displayName: 定时助手
-summary: 自然语言驱动的定时任务助手，内置模板库与成本优化，把口语意图秒变可靠调度.
+summary: "自然语言驱动的定时任务助手，内置模板库与成本优化，把口语意图秒变可靠调度.。定时助手是定时调度专家的"自然语言层"。用户说"每天早上9点发日报"，它解析意图、匹配模板、生成调度命令并执行，全"
 license: Proprietary
 description: 定时助手是定时调度专家的"自然语言层"。用户说"每天早上9点发日报"，它解析意图、匹配模板、生成调度命令并执行，全程无需懂 cron 语法。Use
   when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
-- 自动化
-- 定时调度
-- 自然语言
+  - 自动化
+  - 定时调度
+  - 自然语言
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 定时助手

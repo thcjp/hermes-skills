@@ -3,26 +3,26 @@ slug: china-news-tool-free
 name: china-news-tool-free
 version: 1.0.0
 displayName: 中国新闻聚合(免费版)
-summary: 中国新闻聚合免费版，支持RSS订阅获取主流媒体新闻，智能分类生成简报.
+summary: "中国新闻聚合免费版，支持RSS订阅获取主流媒体新闻，智能分类生成简报.。中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类"
 license: Proprietary
 edition: free
 description: 中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类生成新闻简报。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 中国新闻
-- RSS聚合
-- 智能分类
-- 新闻简报
+  - 中国新闻
+  - RSS聚合
+  - 智能分类
+  - 新闻简报
+  - 搜索
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Knowledge"
 ---
 > **RSS订阅、智能分类、生成简报。三步完成中国主流媒体新闻聚合。**

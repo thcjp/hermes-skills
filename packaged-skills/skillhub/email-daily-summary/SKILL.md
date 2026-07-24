@@ -3,7 +3,7 @@ slug: "email-daily-summary"
 name: "email-daily-summary"
 version: 0.1.1
 displayName: "Email Daily Summary"
-summary: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报"
+summary: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微"
 license: "Proprietary"
 description: |-
   基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微信邮箱,
@@ -14,16 +14,15 @@ tags:
   - 通用办公
   - Email
   - Automation
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
 category: "Communication"
 ---
 # Email Daily Summary
@@ -99,6 +98,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回统计聚合的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`统计聚合`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 前置依赖
 
 1. 安装 browser-use CLI:

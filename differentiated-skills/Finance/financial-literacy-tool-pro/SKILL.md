@@ -3,7 +3,7 @@ slug: "financial-literacy-tool-pro"
 name: "financial-literacy-tool-pro"
 version: "1.0.0"
 displayName: "金融素养专业版"
-summary: "专业金融教育与理财规划系统，支持个性化方案、认证培训与企业内训。"
+summary: "专业金融教育与理财规划系统，支持个性化方案、认证培训与企业内训。。面向专业用户与机构的全栈金融素养教育系统。支持个性化理财方案生成、 金融从业认证培训课程、企业内训定制与学习进度追踪。Use"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,15 +14,14 @@ tags:
   - 金融教育
   - 理财规划
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
+  - write
+homepage: ""
 category: "Finance"
 ---
 # 金融素养专业版（PRO版）

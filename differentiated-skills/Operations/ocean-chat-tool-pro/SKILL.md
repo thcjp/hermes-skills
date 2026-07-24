@@ -3,7 +3,7 @@ slug: ocean-chat-tool-pro
 name: ocean-chat-tool-pro
 version: 1.0.0
 displayName: P2P通讯专业版
-summary: 企业级P2P通讯平台，支持群组、多设备、大文件与团队管理.
+summary: "企业级P2P通讯平台，支持群组、多设备、大文件与团队管理.。面向企业与团队的企业级P2P通讯平台。支持群组通讯、多设备同步、"
 license: Proprietary
 edition: pro
 description: '面向企业与团队的企业级P2P通讯平台。支持群组通讯、多设备同步、
@@ -11,20 +11,19 @@ description: '面向企业与团队的企业级P2P通讯平台。支持群组通
   大文件传输、语音视频通话与团队管理。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。'
 tags:
-- Operations
-- 通讯
-- 企业级
-- 安全通讯
+  - Operations
+  - 通讯
+  - 企业级
+  - 安全通讯
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # P2P通讯专业版（PRO版）

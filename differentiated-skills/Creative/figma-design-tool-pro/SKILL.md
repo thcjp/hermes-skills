@@ -3,7 +3,7 @@ slug: "figma-design-tool-pro"
 name: "figma-design-tool-pro"
 version: "1.0.0"
 displayName: "Figma设计集成-专业版"
-summary: "企业级Figma集成平台，支持组件库管理、设计变量提取、批量导出与团队协作工作流"
+summary: "企业级Figma集成平台，支持组件库管理、设计变量提取、批量导出与团队协作工作流,支持多种使用场景和自动化处理"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,15 +13,14 @@ tags:
   - Figma
   - Enterprise
   - DesignSystem
+  - 设计
+  - UI/UX
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "设计,UI/UX,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 # Figma设计集成工具（专业版）

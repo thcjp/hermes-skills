@@ -3,7 +3,7 @@ slug: skill-vetter-tool-pro
 name: skill-vetter-tool-pro
 version: 1.0.0
 displayName: Skill安全审查(专业版)
-summary: 企业级Skill安全审查平台,含自动扫描、沙箱测试、信任注册表与持续监控
+summary: "企业级Skill安全审查平台,含自动扫描、沙箱测试、信任注册表与持续监控,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
 description: '核心能力:
@@ -42,21 +42,18 @@ description: '核心能力:
 
   - ...'
 tags:
-- 安全
-- Skill安全
-- 企业安全
-- 供应链安全
-- 沙箱测试
+  - 安全
+  - Skill安全
+  - 企业安全
+  - 供应链安全
+  - 沙箱测试
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
 category: "Security"
 ---
 Skill安全审查专业版是一款面向企业用户的AI Agent Skill安全治理平台。在免费版12项红旗规则基础上,扩展至24项规则并支持自定义规则引擎,增加自动化代码扫描与AI风险分析、沙箱隔离环境测试、Skill信任注册表与生命周期管理、批量审查与并行处理、变更检测与持续监控等企业级功能。与免费版完全兼容,红旗规则和审查流程可无缝复用.

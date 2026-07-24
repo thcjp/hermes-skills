@@ -3,7 +3,7 @@ slug: linear-toolkit-free
 name: linear-toolkit-free
 version: 1.0.1
 displayName: Linear 工具箱
-summary: 面向个人的 Linear 任务查询与基础管理工具，含站会摘要.
+summary: "面向个人的 Linear 任务查询与基础管理工具，含站会摘要.。面向个人开发者的 Linear 任务查询与基础管理工具."
 license: Proprietary
 edition: free
 description: '面向个人开发者的 Linear 任务查询与基础管理工具.
@@ -28,19 +28,19 @@ description: '面向个人开发者的 Linear 任务查询与基础管理工具.
   差异化: 免费版聚焦个人单团队任务管理，提供查询、更新与站会摘要，零成本接入.
   适用关键词: linear, 任务管理, 站会, 待办, issue, standup, branch'
 tags:
-- Linear
-- 任务管理
-- 个人效率
-- 其他工具
+  - Linear
+  - 任务管理
+  - 个人效率
+  - 其他工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # Linear 工具箱（免费版）

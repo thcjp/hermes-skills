@@ -3,7 +3,7 @@ slug: chart-craft-free
 name: chart-craft-free
 version: 1.0.1
 displayName: 图表工坊免费版
-summary: 本地优先的图表生成引擎，支持柱状图、折线图、饼图、散点图四种基础类型与智能图表推荐
+summary: "本地优先的图表生成引擎，支持柱状图、折线图、饼图、散点图四种基础类型与智能图表推荐。图表工坊免费版是一款面向独立开发者的本地图表生成工具，将数字转化为清晰的可视化图形，支持柱状图、折线图、饼"
 license: Proprietary
 edition: free
 description: '图表工坊免费版是一款面向独立开发者的本地图表生成工具，将数字转化为清晰的可视化图形，支持柱状图、折线图、饼图、散点图四种基础类型，并提供智能图表类型推荐能力。核心能力：
@@ -18,18 +18,17 @@ description: '图表工坊免费版是一款面向独立开发者的本地图表
 
   - 基于Python与matplotlib...'
 tags:
-- 集成工具
-- 数据可视化
-- 图表生成
+  - 集成工具
+  - 数据可视化
+  - 图表生成
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 图表工坊免费版

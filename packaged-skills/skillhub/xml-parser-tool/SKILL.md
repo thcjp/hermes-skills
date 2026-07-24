@@ -3,13 +3,16 @@ slug: "xml-parser-tool"
 name: "xml-parser-tool"
 version: "2.1.1"
 displayName: "Xml Reader"
-summary: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML"
+summary: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML。Read and parse XML from construction systems - P6 schedu"
 license: "Proprietary"
 description: |-
   Read and parse XML from construction systems - P6 schedules, BSDD exports,
   IFC-XML, COBie-XML. This skill parses XML and converts to structured DataFrames.
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - write
@@ -23,6 +26,14 @@ category: "Automation"
 
 XML is used in construction for P6 schedules (XER), IFC-XML, COBie-XML, and buildingSMART Data Dictionary exports. This skill parses XML and converts to structured DataFrames.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 1. P6 Schedule Import

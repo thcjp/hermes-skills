@@ -3,7 +3,7 @@ slug: vpn-toolkit-free
 name: vpn-toolkit-free
 version: 1.0.1
 displayName: VPN工具箱(免费版)
-summary: VPN配置与故障排除指南,含DNS泄露检测、Kill Switch、协议选择与常见问题解决
+summary: "VPN配置与故障排除指南,含DNS泄露检测、Kill Switch、协议选择与常见问题解决,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
 description: '核心能力:
@@ -40,19 +40,16 @@ description: '核心能力:
 
   适用关键词: VPN, 虚拟专用网络, DNS泄露, Kill Switch, 隐私保护, 远程访问..'
 tags:
-- 安全
-- 网络安全
-- VPN
-- 隐私保护
+  - 安全
+  - 网络安全
+  - VPN
+  - 隐私保护
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - read
+  - exec
+homepage: ""
 category: "Security"
 ---
 # VPN工具箱(免费版)

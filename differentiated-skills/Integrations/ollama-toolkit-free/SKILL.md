@@ -3,25 +3,24 @@ slug: ollama-toolkit-free
 name: ollama-toolkit-free
 version: 1.0.1
 displayName: Ollama工具箱(免费版)
-summary: 本地运行Ollama AI模型的免费工具，支持模型列表、运行推理与基础对话
+summary: "本地运行Ollama AI模型的免费工具，支持模型列表、运行推理与基础对话。Ollama工具箱免费版是一款面向本地AI模型运行的命令行辅助Skill，让AI Agent能够通过Ollama在"
 license: Proprietary
 edition: free
 description: Ollama工具箱免费版是一款面向本地AI模型运行的命令行辅助Skill，让AI Agent能够通过Ollama在本地环境运行大语言模型，实现无需云端API的私有化AI推理。核心能力：模型列表查询、单轮对话推理、模型拉取下载、运行状态检查、基础参数配置。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 本地AI
-- 模型推理
-- 私有化部署
-- 集成工具
+  - 本地AI
+  - 模型推理
+  - 私有化部署
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # Ollama工具箱（免费版）

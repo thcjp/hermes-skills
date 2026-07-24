@@ -3,7 +3,7 @@ slug: "brave-search"
 name: "brave-search"
 version: 1.0.2
 displayName: "Brave Search"
-summary: "经Brave Search API做网页搜索与内容提取,隐私优先"
+summary: "经Brave Search API做网页搜索与内容提取,隐私优先。Web search and content extraction via Brave Search API。核心能力: -"
 license: "Proprietary"
 description: |-
   Web search and content extraction via Brave Search API。核心能力:
@@ -23,16 +23,16 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Research
+  - 搜索
+  - 检索
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # Brave Search
@@ -51,6 +51,14 @@ category: "Knowledge"
 
 - Web search and content extraction via Brave Search API
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

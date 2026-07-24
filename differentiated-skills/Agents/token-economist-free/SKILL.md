@@ -9,20 +9,21 @@ edition: free
 description: Token经济学家（免费版）为AI Agent提供智能Token成本优化方案。针对"长对话Token暴涨、重复查询浪费、代码上下文堆积"等真实痛点，提供上下文压缩、语义缓存与自适应优化三大核心能力。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- Token优化
-- 上下文压缩
-- 语义缓存
-- 成本控制
-- AI经济学
+  - Token优化
+  - 上下文压缩
+  - 语义缓存
+  - 成本控制
+  - AI经济学
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 category: "Agents"
 ---
 # Token经济学家（免费版）

@@ -10,16 +10,15 @@ description: |-
   长时间任务卡住需要。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Automation
+  - 工作流
+  - 自动化
+  - 效率
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工作流,自动化,效率"
 category: "Automation"
 ---
 # Workflow Decomposer
@@ -39,6 +38,14 @@ category: "Automation"
 
 本技能负责将复杂工作任务拆解为详细、可执行的步骤，并为每个步骤选择最合适的模型进行执行.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

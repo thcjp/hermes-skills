@@ -3,7 +3,7 @@ slug: "music-gen"
 name: "music-gen"
 version: 1.0.1
 displayName: "音乐生成工具专业版"
-summary: "企业级AI音乐生成系统,支持批量生成、版权管理、多平台调度与CI/CD集成,适合团队与商业项目。"
+summary: "企业级AI音乐生成系统,支持批量生成、版权管理、多平台调度与CI/CD集成,适合团队与商业项目。。音乐生成工具专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -16,16 +16,14 @@ tags:
   - 版权管理
   - CI/CD
   - 自动化
+  - 音频
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "音乐生成,音频,创意"
 category: "Creative"
 ---
 # 音乐生成工具专业版
@@ -246,6 +244,14 @@ music_library = {
 - 关键参数: `多平台智能调度` 选项
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一:MCN批量配乐生产

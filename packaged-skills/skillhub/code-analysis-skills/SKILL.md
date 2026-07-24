@@ -3,7 +3,7 @@ slug: "code-analysis-skills"
 name: "code-analysis-skills"
 version: 1.0.1
 displayName: "Code Analysis Skills"
-summary: "产出描述性Git历史反思报告,复盘代码演进"
+summary: "产出描述性Git历史反思报告,复盘代码演进。Produces a DESCRIPTIVE Git-history reflection report。核心能力: - 开发工具领域的专业化AI"
 license: "Proprietary"
 description: |-
   Produces a DESCRIPTIVE Git-history reflection report。核心能力:
@@ -23,16 +23,17 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Development
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # Code Analysis Skills
@@ -52,6 +53,14 @@ category: "Development"
 
 - Produces a DESCRIPTIVE Git-history reflection report
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 - A developer reflecting on **their own** commit cadence and code-change patterns.

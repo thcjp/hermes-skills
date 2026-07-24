@@ -3,7 +3,7 @@ slug: "news"
 name: "news"
 version: 1.0.2
 displayName: "News"
-summary: "个性化新闻简报,学习你的兴趣/格式/时间偏好"
+summary: "个性化新闻简报,学习你的兴趣/格式/时间偏好。Personalized news briefings that learn your interests, formats, and timi"
 license: "Proprietary"
 description: |-
   Personalized news briefings that learn your interests, formats, and
@@ -24,16 +24,14 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Research
+  - 新闻
+  - 信息
+  - 资讯
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "新闻,信息,资讯"
 category: "Knowledge"
 ---
 # News
@@ -54,6 +52,14 @@ category: "Knowledge"
 - Personalized news briefings that learn your interests, formats, and
   timing preferences
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

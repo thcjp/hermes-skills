@@ -3,23 +3,22 @@ slug: "postgres-job-queue"
 name: "postgres-job-queue"
 version: 1.0.1
 displayName: "Postgres Job Queue"
-summary: "基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪"
+summary: "基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪。关系型数据库-based job queue with priority scheduling, batch claiming,"
 license: "Proprietary"
 description: |-
   关系型数据库-based job queue with priority scheduling, batch claiming,
   and progress tracking。Use w。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Postgres Job Queue
@@ -40,6 +39,14 @@ category: "Automation"
 - 关系型数据库-based job queue with priority scheduling, batch claiming,
   and progress tracking
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

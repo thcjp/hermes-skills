@@ -3,7 +3,7 @@ slug: skill-creator-tool-pro
 name: skill-creator-tool-pro
 version: 1.0.0
 displayName: Skill创建工具（专业版）
-summary: 创建和管理AI Skill的专用工具，支持模板生成、结构验证与元数据管理.
+summary: "{meta.summary} - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
 description: 'Skill创建工具 - （专业版）
@@ -16,20 +16,20 @@ description: 'Skill创建工具 - （专业版）
 
   适用关键词: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator'
 tags:
-- Skill创建
-- 开发工具
-- 模板生成
-- 结构验证
+  - Skill创建
+  - 开发工具
+  - 模板生成
+  - 结构验证
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Skill创建工具（专业版）
@@ -271,7 +271,8 @@ class SkillCreatorEngine:
 # ...
     def _generate_skillmd(self, meta: SkillMetadata, template: str) -> str:
         tag_str = NL.join(f"- {t}" for t in meta.tags)
-        return f"""---
+        return f"""
+---
 slug: {meta.slug}
 name: {meta.name}
 version: "{meta.version}"

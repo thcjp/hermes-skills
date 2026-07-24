@@ -3,7 +3,7 @@ slug: straker-verify-tool-free
 name: straker-verify-tool-free
 version: 1.0.0
 displayName: AI翻译验证(免费版)
-summary: 100+语言AI翻译服务,支持项目创建、状态查询与文件下载,适合个人翻译需求
+summary: "100+语言AI翻译服务,支持项目创建、状态查询与文件下载,适合个人翻译需求,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
 description: '核心能力:
@@ -40,19 +40,17 @@ description: '核心能力:
 
   适用关键词: 翻译, AI翻译, 多语言, translation, translate, localization, 语言翻译, 文档翻译'
 tags:
-- 翻译
-- 本地化
-- 多语言
-- AI翻译
+  - 翻译
+  - 本地化
+  - 多语言
+  - AI翻译
+  - 安全
+  - 加密
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
+  - read
+  - exec
+homepage: ""
 category: "Security"
 ---
 # AI翻译验证(免费版)

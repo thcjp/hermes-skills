@@ -3,7 +3,7 @@ slug: "db-connector"
 name: "db-connector"
 version: 1.0.1
 displayName: "数据库连接助手(专业版)"
-summary: "全功能数据库运维与架构设计平台，覆盖分库分表、高可用、性能调优、监控告警全链路。"
+summary: "全功能数据库运维与架构设计平台，覆盖分库分表、高可用、性能调优、监控告警全链路。。数据库连接助手专业版是面向团队与企业的全链路数据库运维与架构设计知识平台，在免费版基础上新增分库分表策略、复"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,16 @@ tags:
   - 集成工具
   - 架构设计
   - 专业版
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 数据库连接助手(专业版)
@@ -119,6 +119,14 @@ category: "Automation"
 **处理**: 解析模块五：监控告警指标体系（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回模块五：监控告警指标体系（专业版独有）的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：亿级数据量分库分表规划

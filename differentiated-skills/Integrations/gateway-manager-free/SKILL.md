@@ -3,25 +3,24 @@ slug: gateway-manager-free
 name: gateway-manager-free
 version: 1.0.1
 displayName: API网关管理器(免费版)
-summary: 轻量级API网关配置与管理，覆盖路由、认证、限流、监控四大基础能力，60秒上手.
+summary: "轻量级API网关配置与管理，覆盖路由、认证、限流、监控四大基础能力，60秒上手.。API网关管理器免费版解决中小团队"网关配置散乱、限流靠猜、认证各自实现"的痛点。提供声明式路由配置、统一认"
 license: Proprietary
 edition: free
 description: API网关管理器免费版解决中小团队"网关配置散乱、限流靠猜、认证各自实现"的痛点。提供声明式路由配置、统一认证接入、基础速率限制、实时监控看板四大能力，支持以YAML或JSON声明式定义网关规则，自动生成主流网关（Kong/APISIX/Nginx/Envoy）的配置文件。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
-- API网关
-- 路由配置
-- 限流
-- 集成工具
+  - API网关
+  - 路由配置
+  - 限流
+  - 集成工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # API网关管理器（免费版）
@@ -311,7 +310,6 @@ Top Routes by QPS:
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成网关配置
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -358,6 +356,14 @@ Top Routes by QPS:
 ```
 ### 30秒上手：生成一个路由配置(补充)
 # ...
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 对Agent说：
 # ...
 > "帮我配置一个网关路由：把 /api/v1/users/* 转发到用户服务 http://user-service:8001，需要JWT认证，限流100QPS。"

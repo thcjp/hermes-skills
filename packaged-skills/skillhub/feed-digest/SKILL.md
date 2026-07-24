@@ -3,23 +3,22 @@ slug: "feed-digest"
 name: "feed-digest"
 version: 1.0.1
 displayName: "Feed Digest"
-summary: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏"
+summary: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏。This skill is a straightforward feed digest helper with disclosed feed"
 license: "Proprietary"
 description: |-
   This skill is a straightforward feed digest helper with disclosed feed
   fetching and read-status c
 tags:
   - Research
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Feed Digest
@@ -40,6 +39,14 @@ category: "Automation"
 - This skill is a straightforward feed digest helper with disclosed feed
   fetching and read-status c
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

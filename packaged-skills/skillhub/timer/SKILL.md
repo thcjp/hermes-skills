@@ -3,7 +3,7 @@ slug: "timer"
 name: "timer"
 version: 1.0.1
 displayName: "后台定时器与提醒"
-summary: "在后台运行定时器与闹钟，完成后通过系统通知提醒用户，支持多种时间格式与多任务并行管理。"
+summary: "在后台运行定时器与闹钟，完成后通过系统通知提醒用户，支持多种时间格式与多任务并行管理。。在后台设置定时器和闹钟。当后台定时器完成时，会收到系统通知，必须将提醒内容传达给用户. 支持秒、分、时"
 license: "Proprietary"
 description: |-
   在后台设置定时器和闹钟。当后台定时器完成时，会收到系统通知，必须将提醒内容传达给用户.
@@ -13,16 +13,15 @@ description: |-
 tags:
   - 通用办公
   - Productivity
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # timer

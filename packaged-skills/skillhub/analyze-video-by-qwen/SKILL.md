@@ -3,7 +3,7 @@ slug: "analyze-video-by-qwen"
 name: "analyze-video-by-qwen"
 version: 1.0.2
 displayName: "Qwen视频智能分析"
-summary: "使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率"
+summary: "使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率。基于 Qwen 3.5 Plus 多模态模型对视频进行智能分析。支持本地视频文件和远程 URL 两种输"
 license: "Proprietary"
 description: |-
   基于 Qwen 3.5 Plus 多模态模型对视频进行智能分析。支持本地视频文件和远程 URL 两种输入方式,
@@ -13,16 +13,15 @@ description: |-
   API Key 从 ~/.skill-platform/skill-platform.json 的 skills.dashscope.apiKey 字段读取.
 tags:
   - Creative
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
 category: "Creative"
 ---
 # Qwen 视频智能分析
@@ -63,6 +62,14 @@ category: "Creative"
 ## 核心能力
 
 本工具的核心能力包括：使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率。具体功能详情请参考下方能力说明表格与使用场景.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 认证
 
 API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey` 字段读取.

@@ -3,23 +3,24 @@ slug: "html-coder"
 name: "html-coder"
 version: 2.0.2
 displayName: "HTML Coder"
-summary: "专家级HTML开发,构建网页/表单/交互内容"
+summary: "专家级HTML开发,构建网页/表单/交互内容。Expert HTML development skill for building web pages, forms, and interac"
 license: "Proprietary"
 description: |-
   Expert HTML development skill for building web pages, forms, and interactive
   content。Use when cr。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - Creative
+  - 开发工具
+  - 代码生成
+  - 编程辅助
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "开发工具,代码生成,编程辅助"
 category: "Development"
 ---
 # HTML Coder
@@ -41,6 +42,14 @@ category: "Development"
   content
 - Use when cr
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

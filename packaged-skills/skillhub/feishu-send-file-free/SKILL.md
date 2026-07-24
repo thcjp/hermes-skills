@@ -3,7 +3,7 @@ slug: "feishu-send-file-free"
 name: "feishu-send-file-free"
 version: "1.0.0"
 displayName: "飞书发文件(免费)"
-summary: "飞书发送普通文件附件的基础版,支持file_key两步上传链路。"
+summary: "飞书发送普通文件附件的基础版,支持file_key两步上传链路。。飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路, 提供脚本化与手动两"
 license: "MIT"
 description: |-
   飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路,
@@ -11,12 +11,15 @@ description: |-
   本免费版仅支持普通文件链路,图片稳定发送与国际版 Lark 适配等高级能力请升级付费版.
 tags:
   - 研发工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - glob
+  - grep
+homepage: ""
 category: "Automation"
 ---
 # feishu-send-file-free
@@ -60,6 +63,14 @@ export API_KEY="your_api_key_here"
 - 脚本化调用:通过 `send_file.py` 一键完成上传与发送两步
 - 手动两步调用:支持 curl 手动执行,便于排查问题
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

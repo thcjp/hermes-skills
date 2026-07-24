@@ -3,7 +3,7 @@ slug: "reminder-engine"
 name: "reminder-engine"
 version: 1.0.1
 displayName: "提醒引擎(专业版)"
-summary: "一次性提醒创建引擎专业版，含多渠道投递、批量创建、递增提醒、周期性提醒与完整安全校验。"
+summary: "一次性提醒创建引擎专业版，含多渠道投递、批量创建、递增提醒、周期性提醒与完整安全校验。。提醒引擎专业版是在免费版基础上的全功能升级，为AI Agent提供企业级提醒创建能力。专业版解锁多渠道"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -13,16 +13,15 @@ tags:
   - 多渠道投递
   - 批量提醒
   - 企业自动化
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # 提醒引擎(专业版)
@@ -112,6 +111,14 @@ category: "Automation"
 **输出**: 返回绝对时间的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`绝对时间`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：多渠道项目截止提醒（项目经理角色）

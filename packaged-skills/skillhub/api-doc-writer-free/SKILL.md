@@ -3,7 +3,7 @@ slug: "api-doc-writer-free"
 name: "api-doc-writer-free"
 version: "1.0.0"
 displayName: "API文档编写器免费版"
-summary: "编写基础REST API文档,含模板、认证方式、请求响应格式与基础RESTful规范"
+summary: "编写基础REST API文档,含模板、认证方式、请求响应格式与基础RESTful规范。API 接口文档编写助手免费版。用于编写基础 REST API 文档,提供文档模板、认证方式、请求/响应"
 license: "MIT"
 description: |-
   API 接口文档编写助手免费版。用于编写基础 REST API 文档,提供文档模板、认证方式、请求/响应格式
@@ -11,12 +11,14 @@ description: |-
 tags:
   - 研发工具
   - Documentation
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
+  - write
+homepage: ""
 category: "Development"
 ---
 # API 接口文档编写器（免费版）
@@ -86,6 +88,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回RESTful 规范的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`RESTful 规范`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 基础文档模板(补充)
 
 ### 文档头
@@ -243,6 +253,13 @@ A: 免费版仅提供 HTTP 方法语义表。升级付费版可获取完整 URL 
 6. **无错误示例**: 不提供每个接口的错误响应示例
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 > **升级付费版** 解锁: 完整安全建议、多模块结构、变更记录、HTTP 状态码分类、分页参数规范、URL 命名规范、错误示例编写等完整能力.
 ## 输出格式

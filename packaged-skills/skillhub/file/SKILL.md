@@ -3,7 +3,7 @@ slug: "file"
 name: "file"
 version: 1.0.1
 displayName: "文件管理整理"
-summary: "文件与文件夹管理工具，覆盖命名规范、文件夹结构、文件检索与关键文档归档"
+summary: "文件与文件夹管理工具，覆盖命名规范、文件夹结构、文件检索与关键文档归档。File 是文件与文件夹管理的完整工具，覆盖桌面整理、命名规范构建、文件夹结构设计、 文件检索找回、项目文件管理、Do"
 license: "Proprietary"
 description: |-
   File 是文件与文件夹管理的完整工具，覆盖桌面整理、命名规范构建、文件夹结构设计、
@@ -12,16 +12,15 @@ description: |-
 tags:
   - Other
   - 信息检索
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # File 文件管理整理
@@ -109,6 +108,14 @@ category: "Automation"
 **输入**: 用户提供文件维护习惯养成（Maintenance Without Effort）所需的指令和必要参数.
 **输出**: 返回文件维护习惯养成（Maintenance Without Effort）的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

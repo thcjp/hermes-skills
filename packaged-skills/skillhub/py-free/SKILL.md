@@ -3,7 +3,7 @@ slug: "py-free"
 name: "py-free"
 version: "1.0.0"
 displayName: "Python基础版"
-summary: "编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、import 规范与基础异常处理。"
+summary: "编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、import 规范与基础异常处理。。编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、 import 规范与基础异常"
 license: "MIT"
 description: |-
   编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、
@@ -29,11 +29,14 @@ description: |-
   差异化:基础版聚焦 Python 高频陷阱防护，去除了高级版的并发陷阱（GIL、asyncio）、性能调优与元类高级用法.
 tags:
   - Other
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
-homepage: "https://skillhub.cn"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+  - exec
+homepage: ""
 category: "Automation"
 ---
 # Python 基础版
@@ -46,6 +49,14 @@ category: "Automation"
 - 上下文管理器使用：对文件、锁、连接等资源使用 with 语句，确保资源正确释放
 - 基础类型提示与 None 检查：为函数添加 type hints，识别潜在的 None 解引用风险
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

@@ -3,25 +3,24 @@ slug: cron-guard-free
 name: cron-guard-free
 version: 1.0.1
 displayName: 定时任务安全防护(免费版)
-summary: cron任务安全防护与异常恢复免费版，含脚本优先原则、常见故障模式、基础防护栏、异常恢复.
+summary: "cron任务安全防护与异常恢复免费版，含脚本优先原则、常见故障模式、基础防护栏、异常恢复.。定时任务安全防护免费版是面向AI Agent的cron任务安全防护框架。聚焦"让定时任务不脆弱"这"
 license: Proprietary
 edition: free
 description: 定时任务安全防护免费版是面向AI Agent的cron任务安全防护框架。聚焦"让定时任务不脆弱"这一核心目标，提供防护栏设计、故障模式识别、异常恢复策略，确保定时任务在生产环境中稳定可靠运行。Use
   when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
-- 安全防护
-- 异常恢复
-- 故障模式
-- 防护栏
+  - 安全防护
+  - 异常恢复
+  - 故障模式
+  - 防护栏
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 > **让定时任务不脆弱。脚本优先、故障识别、防护栏、异常恢复，四层防护体系。**

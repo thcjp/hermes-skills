@@ -3,23 +3,22 @@ slug: "netpad-tool"
 name: "netpad-tool"
 version: "1.0.0"
 displayName: "Netpad"
-summary: "NetPad管理工具,管表单/提交/用户(删除需谨慎)"
+summary: "NetPad管理工具,管表单/提交/用户(删除需谨慎)。The skill appears to be a legitimate NetPad management tool, but it"
 license: "Proprietary"
 description: |-
   The skill appears to be a legitimate NetPad management tool, but it
   gives an agent powerful delet
 tags:
   - Integrations
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Netpad
@@ -40,6 +39,14 @@ category: "Automation"
 - The skill appears to be a legitimate NetPad management tool, but it
   gives an agent powerful delet
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

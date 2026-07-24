@@ -3,7 +3,7 @@ slug: "memory-compress"
 name: "memory-compress"
 version: 1.2.2
 displayName: "日志压缩器"
-summary: "将冗长日志压缩为结构化摘要，4-8倍压缩比，借鉴古文压缩哲学实现零关键事件损失"
+summary: "将冗长日志压缩为结构化摘要，4-8倍压缩比，借鉴古文压缩哲学实现零关键事件损失。日志压缩器是面向 AI Agent 日志的智能压缩工具，解决日志日均膨胀 2500 词导致 MEMORY.md"
 license: "Proprietary"
 description: |-
   日志压缩器是面向 AI Agent 日志的智能压缩工具，解决日志日均膨胀 2500 词导致 MEMORY.md 爆炸的问题.
@@ -15,15 +15,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 日志压缩器
@@ -139,6 +137,14 @@ category: "Agents"
 | 多日合并文件 | 混合策略，所有日期均保留 |
 
 ---
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 使用流程
 

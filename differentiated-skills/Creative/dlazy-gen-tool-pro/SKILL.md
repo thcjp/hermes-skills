@@ -3,7 +3,7 @@ slug: "dlazy-gen-tool-pro"
 name: "dlazy-gen-tool-pro"
 version: "1.0.0"
 displayName: "综合生成工具-专业版"
-summary: "全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。"
+summary: "全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。。综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力： - 40+ 模型全覆盖（图片、视频、音频三大"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,15 +15,14 @@ tags:
   - ImageGeneration
   - VideoGeneration
   - Enterprise
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 综合生成工具（专业版）

@@ -11,16 +11,16 @@ tags:
   - 通用办公
   - Productivity
   - Google
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Google Workspace MCP
@@ -82,6 +82,14 @@ export API_KEY="your_api_key_here"
 **Time 时间(3项)**: `time.getCurrentDate`/`time.getCurrentTime`/`time.getTimeZone` 获取当前日期、时间与时区.
 **Auth 鉴权(2项)**: `auth.clear` 清除凭证触发重新授权; `auth.refreshToken` 刷新令牌.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **环境确认**: 确认Agent平台已加载本skill，检查依赖说明中的环境要求

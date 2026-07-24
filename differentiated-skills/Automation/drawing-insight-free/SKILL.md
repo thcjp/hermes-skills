@@ -3,25 +3,24 @@ slug: drawing-insight-free
 name: drawing-insight-free
 version: 1.0.1
 displayName: 图纸解析(免费版)
-summary: 从建筑施工PDF图纸中提取标题栏、尺寸、注释与符号，生成质量检查报告，单文件快速解析.
+summary: "从建筑施工PDF图纸中提取标题栏、尺寸、注释与符号，生成质量检查报告，单文件快速解析.。图纸解析（免费版）面向建筑、结构、机电工程师与造价人员，提供从PDF施工图纸中自动提取标题栏、尺寸标注"
 license: Proprietary
 edition: free
 description: 图纸解析（免费版）面向建筑、结构、机电工程师与造价人员，提供从PDF施工图纸中自动提取标题栏、尺寸标注、注释说明、构件符号以及质量问题的能力。基于正则模式与表格解析的双通道抽取，结合英制/公制单位自动识别，让原本需要人工逐张阅读的图纸在数秒内转为结构化数据。Use
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
-- 图纸解析
-- 建筑工程
-- PDF处理
-- 数据抽取
+  - 图纸解析
+  - 建筑工程
+  - PDF处理
+  - 数据抽取
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 图纸解析（免费版）
@@ -31,6 +30,14 @@ category: "Automation"
 ### 1. PDF图纸文本抽取
 
 通过 `pdfplumber` 库逐页提取文本与表格，保留坐标信息用于后续定位.
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|

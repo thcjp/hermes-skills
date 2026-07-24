@@ -3,7 +3,7 @@ slug: "azure-cli"
 name: "azure-cli"
 version: 1.0.1
 displayName: "azure-cli"
-summary: "命令行全面管理Azure云平台,一条命令搞定资源运维"
+summary: "命令行全面管理Azure云平台,一条命令搞定资源运维。Comprehensive Azure Cloud Platform management via command-line inter"
 license: "Proprietary"
 description: |-
   Comprehensive Azure Cloud Platform management via command-line interface
@@ -25,16 +25,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Development
+  - Azure
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
 category: "Operations"
 ---
 # azure-cli
@@ -51,6 +50,14 @@ category: "Operations"
 | CI/CD流水线集成 | 不支持 | 支持 |
 
 ## 核心能力
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

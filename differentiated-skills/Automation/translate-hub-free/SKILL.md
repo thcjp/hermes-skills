@@ -9,19 +9,18 @@ edition: free
 description: 中英翻译中枢（免费版）面向开发者、技术写作者与跨语言协作用户，提供准确的中英文双向翻译能力。自动识别源语言方向，保留Markdown格式与代码结构，内置基础术语库保证翻译一致性，特别适合代码注释、技术文档与日常文本的快速翻译。Use
   when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
-- 翻译工具
-- 中英互译
-- 代码注释
-- 术语对照
+  - 翻译工具
+  - 中英互译
+  - 代码注释
+  - 术语对照
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L4
-pricing_model: monthly
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 中英翻译中枢（免费版）

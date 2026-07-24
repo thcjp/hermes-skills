@@ -3,7 +3,7 @@ slug: "finance-toolkit"
 name: "finance-toolkit"
 version: 1.0.1
 displayName: "行情追踪专业工具"
-summary: "多数据源行情追踪，支持股票、ETF、指数、外汇、加密货币，含告警与批量导出。"
+summary: "多数据源行情追踪，支持股票、ETF、指数、外汇、加密货币，含告警与批量导出。。面向专业投资者与交易团队的多数据源行情追踪工具。支持股票、ETF、指数、 外汇、加密货币的实时报价与深度历史数据"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -15,16 +15,15 @@ tags:
   - 行情追踪
   - 多数据源
   - 企业级
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
 category: "Finance"
 ---
 # 行情追踪专业工具
@@ -78,6 +77,14 @@ category: "Finance"
 **输出**: 返回美股/ETF的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`美股/ETF`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：投资组合批量估值

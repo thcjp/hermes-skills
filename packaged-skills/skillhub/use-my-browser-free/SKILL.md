@@ -3,7 +3,7 @@ slug: "use-my-browser-free"
 name: "use-my-browser-free"
 version: 1.0.1
 displayName: "浏览器控制工具(免费版)"
-summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)"
+summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)。控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展 桥接，直接操作用户已登录的浏览器"
 license: "MIT"
 description: |-
   控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展
@@ -12,11 +12,15 @@ description: |-
   和自动化工作流场景。不适用于无头浏览器或远程浏览器场景.
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - exec
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 浏览器控制工具(免费版)
@@ -70,6 +74,14 @@ category: "Automation"
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
 - 参考`输出格式`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

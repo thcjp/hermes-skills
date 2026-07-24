@@ -3,7 +3,7 @@ slug: "creative-officer-tool-pro"
 name: "creative-officer-tool-pro"
 version: "1.0.0"
 displayName: "创意总监专业版"
-summary: "企业级创意管理平台，支持完整品牌体系、营销战役规划、创意资产管理与团队协作。"
+summary: "企业级创意管理平台，支持完整品牌体系、营销战役规划、创意资产管理与团队协作。。创意总监专业版 —— 面向企业团队与专业机构的高级创意管理平台。核心能力: - 完整品牌体系构建：品牌定位、视觉"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -18,15 +18,14 @@ tags:
   - 企业工具
   - 营销战役
   - 团队协作
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 创意总监专业版

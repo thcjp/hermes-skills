@@ -3,7 +3,7 @@ slug: free-weather-api-tool-pro
 name: free-weather-api-tool-pro
 version: 1.0.0
 displayName: 天气查询专业版
-summary: 企业级天气数据平台,支持多城市对比、历史数据、农业气象与定时推送
+summary: "企业级天气数据平台,支持多城市对比、历史数据、农业气象与定时推送。面向企业、农业、物流与媒体场景的专业天气数据平台."
 license: Proprietary
 edition: pro
 description: '面向企业、农业、物流与媒体场景的专业天气数据平台.
@@ -15,22 +15,21 @@ description: '面向企业、农业、物流与媒体场景的专业天气数据
 
   适用关键词: 多城市天气, 历史天气, 农业气象, 分钟级降水, 天气推送, 批量查询'
 tags:
-- 天气数据
-- 企业级
-- 农业气象
-- 物流调度
-- 历史数据
-- 批量查询
+  - 天气数据
+  - 企业级
+  - 农业气象
+  - 物流调度
+  - 历史数据
+  - 批量查询
+  - API
+  - 接口
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # 天气查询 (专业版)

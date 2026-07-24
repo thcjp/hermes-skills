@@ -3,7 +3,7 @@ slug: "moltbook-filter"
 name: "moltbook-filter"
 version: 1.0.2
 displayName: "社区垃圾过滤"
-summary: "客户端过滤社区平台代币铸造垃圾,96%去除率,支持自定义模式与黑名单。"
+summary: "客户端过滤社区平台代币铸造垃圾,96%去除率,支持自定义模式与黑名单。。社区平台客户端垃圾内容过滤器,识别并移除数字资产协议铸造机器人的 批量垃圾帖。覆盖内容模式检测、作者模式检测、子板块扫"
 license: "Proprietary"
 description: |-
   社区平台客户端垃圾内容过滤器,识别并移除数字资产协议铸造机器人的
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 社区垃圾过滤
@@ -139,6 +137,14 @@ function isSpam(post) {
 **输入**: 用户提供性能指标所需的指令和必要参数.
 **输出**: 返回性能指标的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

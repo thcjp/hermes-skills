@@ -3,7 +3,7 @@ slug: "memory"
 name: "memory"
 version: 1.0.3
 displayName: "记忆管理器"
-summary: "无限分类的长期记忆系统，与内置记忆并行扩展，支持索引导航与即时写入"
+summary: "无限分类的长期记忆系统，与内置记忆并行扩展，支持索引导航与即时写入。记忆管理器是一套面向 AI Agent 的无限分类长期记忆系统，与 Agent 内置记忆并行运行、互不冲突. 核心能力包括"
 license: "Proprietary"
 description: |-
   记忆管理器是一套面向 AI Agent 的无限分类长期记忆系统，与 Agent 内置记忆并行运行、互不冲突.
@@ -14,15 +14,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 记忆管理器
@@ -145,6 +143,14 @@ category: "Agents"
 
 - 参考`隐私安全存储`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：首次配置

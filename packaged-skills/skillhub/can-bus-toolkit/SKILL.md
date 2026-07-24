@@ -3,7 +3,7 @@ slug: "can-bus-toolkit"
 name: "can-bus-toolkit"
 version: 1.0.1
 displayName: "CAN总线工具包专业版"
-summary: "企业级数据溯源平台，支持OTS时间戳同步、并行索引、篡改检测告警、多传输协议适配与审计报表"
+summary: "企业级数据溯源平台，支持OTS时间戳同步、并行索引、篡改检测告警、多传输协议适配与审计报表。CAN总线工具包专业版是一款面向团队与企业的数据溯源平台，在免费版三列协议基础上，新增OTS外部时"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -18,16 +18,15 @@ tags:
   - 集成工具
   - 数据溯源
   - 企业审计
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # CAN总线工具包专业版
@@ -92,6 +91,14 @@ category: "Automation"
 **处理**: 解析增量同步与版本对比的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 **输出**: 返回增量同步与版本对比的处理结果,包含执行状态码、结果数据和执行日志.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：合规场景的第三方时间戳背书

@@ -3,7 +3,7 @@ slug: "memory-radar"
 name: "memory-radar"
 version: 1.0.1
 displayName: "记忆雷达"
-summary: "面向AI Agent记忆文件的安全扫描系统，检测注入、凭证泄漏、数据外泄等七大威胁"
+summary: "面向AI Agent记忆文件的安全扫描系统，检测注入、凭证泄漏、数据外泄等七大威胁。面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文"
 license: "Proprietary"
 description: |-
   面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文件威胁关联缺失四大痛点.
@@ -13,15 +13,13 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 tags:
   - 智能助手
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "记忆管理,上下文,AI"
+  - 记忆管理
+  - 上下文
+  - AI
 category: "Agents"
 ---
 # 记忆雷达（Memory Radar）
@@ -97,6 +95,14 @@ category: "Agents"
    - 自动检测LLM提供商：优先使用OpenAI（gpt-4o-mini），回退到Anthropic（claude-sonnet-4-5）
    - 远程模式可识别隐含指令、间接提示注入等高级攻击
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 ### 第一步：执行安全扫描

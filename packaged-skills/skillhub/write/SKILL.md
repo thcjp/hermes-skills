@@ -3,7 +3,7 @@ slug: "write"
 name: "write"
 version: 1.0.1
 displayName: "版本化写作工具"
-summary: "带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理草稿版本与audit审计"
+summary: "带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理草稿版本与audit审计。带强制版本控制与质量审计的版本化写作工具. 遵循Request→Plan→Draft→Audit→R"
 license: "Proprietary"
 description: |-
   带强制版本控制与质量审计的版本化写作工具.
@@ -14,15 +14,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 版本化写作工具
@@ -141,6 +140,14 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Cleanup流程**：仅在用户确认piece最终后运行`（请参考skill目录中的脚本文件）`清除旧versions
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. **初始化工作空间**：首次使用运行`（请参考skill目录中的脚本文件） ~/writing`创建项目结构

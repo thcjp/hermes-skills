@@ -3,7 +3,7 @@ slug: "ping-monitor"
 name: "ping-monitor"
 version: 1.0.1
 displayName: "Ping Monitor"
-summary: "对主机/手机/守护进程做ICMP健康检查"
+summary: "对主机/手机/守护进程做ICMP健康检查。ICMP health check for hosts, phones, and daemons 核心能力: - 生活工具领域的专业化AI辅助工具"
 license: "Proprietary"
 description: |-
   ICMP health check for hosts, phones, and daemons
@@ -25,16 +25,14 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Lifestyle
+  - 监控
+  - 运维
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "exec"]
-tags: "监控,运维,工具"
 category: "Operations"
 ---
 # Ping Monitor
@@ -51,6 +49,14 @@ category: "Operations"
 | 知识图谱构建与关系推理 | 不支持 | 支持 |
 
 ## 核心能力
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

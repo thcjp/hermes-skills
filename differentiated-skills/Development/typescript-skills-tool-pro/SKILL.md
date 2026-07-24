@@ -3,7 +3,7 @@ slug: "typescript-skills-tool-pro"
 name: "typescript-skills-tool-pro"
 version: "1.0.0"
 displayName: "TS编码规范工具(专业版)"
-summary: "面向团队的TypeScript编码规范平台,含自动化审查、规则集管理、CI集成与规范文档生成。"
+summary: "面向团队的TypeScript编码规范平台,含自动化审查、规则集管理、CI集成与规范文档生成。。TypeScript编码规范工具专业版为团队与企业提供端到端编码规范落地能力,涵盖自动化审查、"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -30,15 +30,14 @@ tags:
   - CI/CD
   - 团队协作
   - 工程规范
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - write
+homepage: ""
 category: "Automation"
 ---
 # TypeScript 编码规范工具(专业版)

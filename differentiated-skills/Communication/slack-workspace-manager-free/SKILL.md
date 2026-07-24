@@ -3,7 +3,7 @@ slug: slack-workspace-manager-free
 name: slack-workspace-manager-free
 version: 1.0.1
 displayName: Slack工作区管理免费版
-summary: Slack工作区基础管理工具，支持消息发送、频道管理、文件处理与提醒创建，适合个人与小型团队.
+summary: "Slack工作区基础管理工具，支持消息发送、频道管理、文件处理与提醒创建，适合个人与小型团队.。Slack工作区管理器（免费版）—— 面向个人与小型团队的Slack工作区管理工具。核心能力:"
 license: Proprietary
 edition: free
 description: 'Slack工作区管理器（免费版）—— 面向个人与小型团队的Slack工作区管理工具。核心能力:
@@ -30,18 +30,16 @@ description: 'Slack工作区管理器（免费版）—— 面向个人与小型
 
   差异化: 聚焦个人与小型团队核心需求，提供基础的Slack工作区管理能力，通过OAuth安全认证'
 tags:
-- 沟通协作
-- Slack
-- 工作区管理
+  - 沟通协作
+  - Slack
+  - 工作区管理
+  - 社交
+  - 通信
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L2-标准级"
-pricing_model: per_use
-suggested_price: "19.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "Slack,社交,通信"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Communication"
 ---
 # Slack工作区管理器（免费版）

@@ -3,24 +3,23 @@ slug: call-bridge-free
 name: call-bridge-free
 version: 1.0.1
 displayName: 通话桥接免费版
-summary: 让AI代理拨打美国电话的桥接工具，支持单次外呼、任务指令构建与通话状态轮询
+summary: "让AI代理拨打美国电话的桥接工具，支持单次外呼、任务指令构建与通话状态轮询。通话桥接免费版是一款面向独立开发者的AI电话代理工具，通过语音AI代理拨打美国电话号码，完成通话后返回转写文本、通"
 license: Proprietary
 edition: free
 description: 通话桥接免费版是一款面向独立开发者的AI电话代理工具，通过语音AI代理拨打美国电话号码，完成通话后返回转写文本、通话结果与录音链接。代理负责拨号、对话、处理电话菜单与等待，并将结果结构化返回。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
-- 集成工具
-- 语音通信
-- AI代理
+  - 集成工具
+  - 语音通信
+  - AI代理
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: "L1-入门级"
-pricing_model: per_use
-suggested_price: "9.9 CNY/per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 通话桥接免费版

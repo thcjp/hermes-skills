@@ -3,25 +3,24 @@ slug: smart-update-agent-free
 name: smart-update-agent-free
 version: 1.0.1
 displayName: Smart Update Agent
-summary: 每日自动检查并更新Agent运行时与已安装技能，含版本对比、更新摘要与基础故障排查.
+summary: "每日自动检查并更新Agent运行时与已安装技能，含版本对比、更新摘要与基础故障排查.。智能更新管家免费版帮助你自动保持Agent运行时与已安装技能的最新状态。通过每日定时检查、版本对比与更新"
 license: Proprietary
 edition: free
 description: 智能更新管家免费版帮助你自动保持Agent运行时与已安装技能的最新状态。通过每日定时检查、版本对比与更新摘要，告别手动更新与版本滞后，确保始终使用最新功能与安全补丁。Use
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
-- 自动更新
-- 版本管理
-- 技能维护
-- 定时任务
+  - 自动更新
+  - 版本管理
+  - 技能维护
+  - 定时任务
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
+  - read
+  - exec
+  - write
+homepage: ""
 category: "Automation"
 ---
 # 智能更新管家（免费版）

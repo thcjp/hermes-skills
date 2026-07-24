@@ -3,7 +3,7 @@ slug: "shop-culture"
 name: "shop-culture"
 version: 1.0.13
 displayName: "生活方式购物"
-summary: "AI代理自主浏览生活方式商品、下单和跟踪物流的多链加密支付购物"
+summary: "AI代理自主浏览生活方式商品、下单和跟踪物流的多链加密支付购物。AI代理自主购物技能。支持商品浏览、语义搜索、AI购物助手、多链加密支付结账、 订单跟踪等功能。支持8+区块链支付（Solan"
 license: "Proprietary"
 description: |-
   AI代理自主购物技能。支持商品浏览、语义搜索、AI购物助手、多链加密支付结账、
@@ -12,15 +12,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 生活方式购物
@@ -119,6 +118,14 @@ export API_KEY="your_api_key_here"
 ### 12. 代理身份
 通过 `GET /agent/me`、`GET /agent/me/orders`、`GET /agent/me/preferences` 获取代理身份信息。需在请求头中携带 `X-Moltbook-Identity` 令牌（由代理运行时提供）。仅在运行时明确提供令牌时使用，正常浏览和结账流程禁止发送身份令牌。适用于代理个性化场景.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 调用 `GET /agent/capabilities` 了解API能力和支持的支付方式

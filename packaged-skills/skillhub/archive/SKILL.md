@@ -3,7 +3,7 @@ slug: "archive"
 name: "archive"
 version: 1.0.1
 displayName: "智能内容归档"
-summary: "将网页、视频、推文等内容捕获为带语义标签的可搜索快照，支持全文提取与主动浮现。"
+summary: "将网页、视频、推文等内容捕获为带语义标签的可搜索快照，支持全文提取与主动浮现。。智能内容归档工具，将外部内容捕获为持久化的智能快照. 支持视频、推文、文章、PDF等多种内容类型的全文提取与语"
 license: "Proprietary"
 description: |-
   智能内容归档工具，将外部内容捕获为持久化的智能快照.
@@ -13,15 +13,14 @@ description: |-
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - glob
+  - grep
+homepage: ""
 tags:
   - 通用办公
-# 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - 工具
+  - 效率
+  - 自动化
 category: "Automation"
 ---
 # 智能内容归档
@@ -155,6 +154,14 @@ project: clawmsg
 - 避免打扰，保持浮现的相关性与精准度
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 使用流程
 
 1. 首次使用时创建归档目录：`mkdir -p ~/archive/items ~/archive/projects`

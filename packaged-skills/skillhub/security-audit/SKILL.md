@@ -3,23 +3,21 @@ slug: "security-audit"
 name: "security-audit"
 version: 1.0.1
 displayName: "Security Audit"
-summary: "SkillHub部署全面安全审计,扫暴露凭据与开放端口"
+summary: "SkillHub部署全面安全审计,扫暴露凭据与开放端口。Comprehensive security auditing for SkillHub deployments。Scans for"
 license: "Proprietary"
 description: |-
   Comprehensive security auditing for SkillHub deployments。Scans for
   exposed credentials, open por。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
   - Security
+  - 安全
+  - 加密
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "exec"]
-tags: "安全,加密,工具"
 category: "Security"
 ---
 # Security Audit
@@ -43,6 +41,14 @@ category: "Security"
 - 安全基线合规审计（CIS Benchmarks / OWASP Top 10）
 - 批量资产风险评分与威胁情报订阅
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

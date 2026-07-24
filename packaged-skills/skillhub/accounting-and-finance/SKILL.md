@@ -14,15 +14,15 @@ description: |-
 tags:
   - Finance
   - Analysis
+  - 金融
+  - 财务
+  - 数据
 tools:
   - read
-homepage: "https://skillhub.cn"
+  - write
+  - exec
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "金融,财务,数据"
 category: "Finance"
 ---
 # Finance Analyst Pro
@@ -140,6 +140,14 @@ category: "Finance"
 - **会计估计合理性**: 折旧年限、坏账计提比例、保修准备金等估计合理性分析
 - **信息披露质量评估**: 财报附注完整性、重大事项披露及时性评估
 - **持续经营能力评估**: 综合财务指标评估企业持续经营能力(参考审计准则)
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

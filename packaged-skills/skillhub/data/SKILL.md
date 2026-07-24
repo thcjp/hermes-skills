@@ -3,23 +3,23 @@ slug: "data"
 name: "data"
 version: 1.0.2
 displayName: "Data"
-summary: "贯穿数据全生命周期,从抽取清洗到分析可视化,一站处理"
+summary: "贯穿数据全生命周期,从抽取清洗到分析可视化,一站处理。Work with data across the full lifecycle from extraction and cleanin"
 license: "Proprietary"
 description: |-
   Work with data across the full lifecycle from extraction and cleaning
   to analysis, visualization,。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Other
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
 category: "Research"
 ---
 # Data
@@ -40,6 +40,14 @@ category: "Research"
 - Work with data across the full lifecycle from extraction and cleaning
   to analysis, visualization,
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

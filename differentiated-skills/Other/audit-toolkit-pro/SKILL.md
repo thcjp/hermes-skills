@@ -3,27 +3,26 @@ slug: audit-toolkit-pro
 name: audit-toolkit-pro
 version: 1.0.0
 displayName: 审计验证工具箱(专业版)
-summary: 全功能审计验证系统，含批量审计、实时监控、多标准交叉分析、加密认证与趋势追踪.
+summary: "全功能审计验证系统，含批量审计、实时监控、多标准交叉分析、加密认证与趋势追踪.。审计验证工具箱专业版是企业级审计验证的完整解决方案。在免费版基础上解锁批量审计自动化、实时监控告警、多标准交叉"
 license: Proprietary
 edition: pro
 description: 审计验证工具箱专业版是企业级审计验证的完整解决方案。在免费版基础上解锁批量审计自动化、实时监控告警、多标准交叉合规分析、审计历史趋势分析、自定义审计模板、加密认证签发六大高级功能，帮助组织建立持续化、自动化、可追溯的审计验证体系。Use
   when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
-- 审计验证
-- 批量审计
-- 实时监控
-- 多标准合规
-- 企业级
+  - 审计验证
+  - 批量审计
+  - 实时监控
+  - 多标准合规
+  - 企业级
+  - 工具
+  - 效率
+  - 自动化
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 > **从一次性审计到持续验证，从人工检查到自动化流水线。企业级审计验证系统。**

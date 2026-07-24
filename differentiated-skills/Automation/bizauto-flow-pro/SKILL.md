@@ -3,7 +3,7 @@ slug: bizauto-flow-pro
 name: bizauto-flow-pro
 version: 1.0.0
 displayName: 业务自动化师(专业版)
-summary: 全流程业务自动化架构师，含事件驱动、人机协同、多系统同步、ROI仪表盘与五级容错降级.
+summary: "全流程业务自动化架构师，含事件驱动、人机协同、多系统同步、ROI仪表盘与五级容错降级.。业务自动化师专业版是面向团队与企业的全功能业务自动化架构系统。采用"审计-设计-实现-监控-优化"五阶"
 license: Proprietary
 edition: pro
 description: '业务自动化师专业版是面向团队与企业的全功能业务自动化架构系统。采用"审计-设计-实现-监控-优化"五阶段方法论，从识别瓶颈到高级容错，覆盖自动化全生命周期。专业版解锁事件驱动架构、人机协同审批门、五级容错降级、多系统同步策略与ROI仪表盘五大高级能力.
@@ -12,21 +12,20 @@ description: '业务自动化师专业版是面向团队与企业的全功能业
   差异化：完全中文化重写，新增事件驱动架构、人机协同审批门、五级容错降级、多系统同步策略、ROI仪表盘五大高级功能。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整五阶段架构与优先支持。保留原始MIT版权声明.
   适用关键词：业务自动化、事件驱动、人机协同、容错降级、多系统同步、ROI仪表盘、审批门、事件溯源'
 tags:
-- 业务自动化
-- 事件驱动
-- 人机协同
-- 容错降级
-- ROI分析
+  - 业务自动化
+  - 事件驱动
+  - 人机协同
+  - 容错降级
+  - ROI分析
+  - 自动化
+  - 工作流
+  - 效率
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "自动化,工作流,效率"
 category: "Automation"
 ---
 # 业务自动化师（专业版）

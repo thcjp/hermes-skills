@@ -30,19 +30,19 @@ description: '轻量级联网搜索工具，支持 Bing 与 DuckDuckGo 双引擎
 
   - 无需注册 API Key...'
 tags:
-- 搜索
-- 研究工具
-- 网页抓取
-- 信息检索
+  - 搜索
+  - 研究工具
+  - 网页抓取
+  - 信息检索
+  - Web开发
+  - 前端
+  - 开发工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-tools: ["read", "write", "exec", "glob"]
-tags: "Web开发,前端,开发工具"
+  - read
+  - exec
+  - write
+  - glob
+homepage: ""
 category: "Development"
 ---
 # 免费网页搜索工具

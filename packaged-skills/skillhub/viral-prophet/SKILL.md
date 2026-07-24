@@ -3,7 +3,7 @@ slug: viral-prophet
 name: viral-prophet
 version: 1.0.1
 displayName: "爆款预言机"
-summary: "发布前预测爆款潜力,6维潜力评分+5大爆款要素+竞品对比,3秒出预测报告"
+summary: "发布前预测爆款潜力,6维潜力评分+5大爆款要素+竞品对比,3秒出预测报告。爆款预言机是一款内容爆款潜力预测工具,发布前评估内容表现. 基于6维潜力评分、5大爆款要素分析与竞品对比,3秒生成预"
 license: Proprietary
 description: |-
   爆款预言机是一款内容爆款潜力预测工具,发布前评估内容表现.
@@ -13,20 +13,20 @@ description: |-
   - 5大爆款要素分析
   - 竞品对比分析
   - 优化建议与发布时机推荐
-homepage: "https://skillhub.cn"
+homepage: ""
 tags:
   - 爆款预测
   - 内容评估
   - 发布前自检
   - 数据驱动
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "工具,效率,自动化"
+  - exec
+  - glob
+  - grep
 category: "Automation"
 ---
 # 爆款预言机 v1.1.0
@@ -52,6 +52,14 @@ category: "Automation"
 4. **优化建议生成**: 基于评分和要素分析,提供具体的优化建议(哪里需要改进)
 5. **发布时机建议**: 基于平台活跃时间和热点趋势,建议最佳发布时间
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |

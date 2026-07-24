@@ -3,7 +3,7 @@ slug: "ui"
 name: "ui"
 version: 1.0.1
 displayName: "UI"
-summary: "设计清晰一致视觉精致的用户界面"
+summary: "设计清晰一致视觉精致的用户界面。Design clear, consistent, and visually polished user interfaces。核心能力: - 创意设计领域的"
 license: "Proprietary"
 description: |-
   Design clear, consistent, and visually polished user interfaces。核心能力:
@@ -23,16 +23,15 @@ description: |-
   - 自动化工作流与智能决策辅助
 tags:
   - Creative
+  - UI设计
+  - 前端
+  - 设计
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "UI设计,前端,设计"
 category: "Creative"
 ---
 # UI
@@ -54,6 +53,14 @@ category: "Creative"
 - 设计系统构建：颜色体系、字体规范、间距栅格
 - 组件库设计：按钮、表单、卡片、导航、模态框等
 - 响应式布局与无障碍设计（WCAG 2.1 AA）
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 设计原则
 

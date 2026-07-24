@@ -13,16 +13,15 @@ description: |-
 tags:
   - 研发工具
   - Development
+  - API
+  - 接口
+  - 开发工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec"]
-tags: "API,接口,开发工具"
 category: "Development"
 ---
 # API 集成开发助手
@@ -97,6 +96,14 @@ export API_KEY="your_api_key_here"
 **输出**: 返回GraphQL 查询的处理结果。- 验证返回数据的完整性和格式正确性
 - 参考`GraphQL 查询`的配置文档进行参数调优
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 核心知识
 
 ### 1. RESTful API

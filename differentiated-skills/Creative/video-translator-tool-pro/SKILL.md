@@ -16,15 +16,14 @@ tags:
   - 批量处理
   - 语音克隆
   - 企业级
+  - 视频处理
+  - 媒体
+  - 创意
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "视频处理,媒体,创意"
+  - write
+homepage: ""
 category: "Creative"
 ---
 视频翻译专业版是一款面向企业团队与跨国内容机构的多语言视频本地化平台。在免费版中英互译能力之上，专业版扩展了 8 种源语言支持、双语字幕烧录、批量翻译处理、语音克隆、翻译记忆库等企业级能力.

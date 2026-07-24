@@ -3,7 +3,7 @@ slug: "azure-transcription-tool-pro"
 name: "azure-transcription-tool-pro"
 version: "1.0.0"
 displayName: "Azure语音转写专业版"
-summary: "企业级语音转写工具，支持实时流式转写、说话人分离、批量处理与自定义模型。"
+summary: "企业级语音转写工具，支持实时流式转写、说话人分离、批量处理与自定义模型。。Azure语音转写专业版 —— 面向企业团队与专业用户的高级语音转写工具。核心能力: - 实时流式语音转写，支持麦克"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -19,15 +19,13 @@ tags:
   - 企业工具
   - 实时转写
   - 说话人分离
+  - 云计算
+  - DevOps
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "Azure,云计算,DevOps"
+  - write
+homepage: ""
 category: "Operations"
 ---
 # Azure语音转写专业版

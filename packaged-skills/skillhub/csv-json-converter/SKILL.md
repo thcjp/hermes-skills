@@ -3,7 +3,7 @@ slug: "csv-json-converter"
 name: "csv-json-converter"
 version: 1.0.1
 displayName: "CSV转JSON(专业版)"
-summary: "企业级CSV转JSON工具，支持批量流式转换、Schema校验、字段映射与数据库直写。"
+summary: "企业级CSV转JSON工具，支持批量流式转换、Schema校验、字段映射与数据库直写。。CSV转JSON专业版是一款面向数据团队与企业级ETL场景的全功能表格数据格式转换工具。在免费版的表头"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -12,16 +12,15 @@ tags:
   - 数据转换
   - ETL流水线
   - 企业工具
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "9.9 CNY/per_use"
-pricing_tier: "L1-入门级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # CSV转JSON(专业版)
@@ -182,6 +181,14 @@ def csv_to_postgres(csv_path: str, table_name: str, dsn: str):
 
 **支持的数据库**：`PostgreSQL`、MySQL、SQLite、ClickHouse。每种数据库提供独立的连接模板与批量写入策略.
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 适用场景
 
 ### 场景一：企业级ETL流水线CSV接入节点（数据工程师角色）
@@ -340,6 +347,13 @@ print("Schema校验通过")
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent生成可执行的企业级转换流水线
 
 ---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 案例展示
 

@@ -422,24 +422,31 @@ class N8NScanner(BaseScanner):
                 return resp.read().decode('utf-8', errors='replace')
 
         try:
-            with ThreadPoolExecutor(max_workers=1) as executor:
-                future = executor.submit(_do_fetch)
-                return future.result(timeout=timeout + 5)
+            executor = ThreadPoolExecutor(max_workers=1)
+            future = executor.submit(_do_fetch)
+            result = future.result(timeout=timeout + 5)
+            executor.shutdown(wait=False)
+            return result
         except _FutTimeout:
             print(f"  [N8N] 请求总超时 ({timeout}s, Cloudflare 滴答数据): {url}")
+            executor.shutdown(wait=False)
             return None
         except _socket.timeout:
             print(f"  [N8N] socket 超时 ({timeout}s): {url}")
+            executor.shutdown(wait=False)
             return None
         except urllib.error.HTTPError as e:
             print(f"  [N8N] HTTP {e.code} {e.reason}: {url}")
+            executor.shutdown(wait=False)
             return None
         except urllib.error.URLError as e:
             reason = str(e.reason)
             print(f"  [N8N] URL错误 ({reason}): {url}")
+            executor.shutdown(wait=False)
             return None
         except Exception as e:
             print(f"  [N8N] 请求异常 ({type(e).__name__}: {e}): {url}")
+            executor.shutdown(wait=False)
             return None
 
 

@@ -3,23 +3,22 @@ slug: "feishu-doc"
 name: "feishu-doc"
 version: 1.2.8
 displayName: "Feishu Doc"
-summary: "抓取飞书Wiki/文档/表格/多维表格内容,自动解析URL"
+summary: "抓取飞书Wiki/文档/表格/多维表格内容,自动解析URL。Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。"
 license: "Proprietary"
 description: |-
   Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。Automatically
   resolves Wiki URL。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Knowledge
+  - 工具
+  - 效率
+  - 自动化
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "工具,效率,自动化"
 category: "Automation"
 ---
 # Feishu Doc
@@ -43,6 +42,14 @@ category: "Automation"
 - 支持批量抓取知识库下所有子文档，保留目录层级结构
 - 提取电子表格数据为结构化 JSON，支持指定工作表、单元格范围与格式选项
 - 解析多维表格记录，支持按视图筛选、字段映射与关联记录展开
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用场景
 

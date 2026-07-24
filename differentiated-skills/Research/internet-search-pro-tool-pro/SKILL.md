@@ -18,21 +18,20 @@ description: '企业级智能搜索助手，支持多轮对话、批量查询、
 
   - 多搜索引擎策略...'
 tags:
-- 搜索
-- 企业工具
-- 多轮对话
-- 批量查询
-- 情报收集
+  - 搜索
+  - 企业工具
+  - 多轮对话
+  - 批量查询
+  - 情报收集
+  - 检索
+  - 工具
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "exec", "glob", "grep"]
-tags: "搜索,检索,工具"
 category: "Knowledge"
 ---
 # 联网搜索专业版

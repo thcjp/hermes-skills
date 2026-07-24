@@ -3,25 +3,26 @@ slug: agent-assistant-pro
 name: agent-assistant-pro
 version: 1.0.0
 displayName: Agent身份助手专业版
-summary: 多人格矩阵、跨场景自适应、合规审计与A/B测试一体的Agent身份治理平台
+summary: "多人格矩阵、跨场景自适应、合规审计与A/B测试一体的Agent身份治理平台。Agent身份助手专业版是面向团队与企业的Agent人格治理平台，在免费版三层身份模型的基础上，新增多人格矩阵管理"
 license: Proprietary
 edition: pro
 description: Agent身份助手专业版是面向团队与企业的Agent人格治理平台，在免费版三层身份模型的基础上，新增多人格矩阵管理、跨场景自适应切换、企业级合规审计、人格A/B测试框架与团队协作能力。核心能力：支持同时管理20+个Agent人格卡，根据对话上下文自动切换基调；生成价值观一致性审计报告；提供人格对比测试框架，量化不同人格在转化率、满意度上的差异；支持团队级人格库共享与权限管理
 tags:
-- 智能助手
-- 人格治理
-- 合规审计
-- 企业级
+  - 智能助手
+  - 人格治理
+  - 合规审计
+  - 企业级
+  - AI代理
+  - 自动化
+  - 智能
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
+  - read
+  - exec
+  - write
+  - glob
+  - grep
+homepage: ""
 # 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
-tools: ["read", "write", "exec", "glob", "grep"]
-tags: "AI代理,自动化,智能"
 category: "Agents"
 ---
 # Agent身份助手（专业版）

@@ -14,16 +14,15 @@ description: |-
 tags:
   - 研发工具
   - Automation
+  - WhatsApp
+  - 社交
+  - 通信
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+homepage: ""
 # 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec"]
-tags: "WhatsApp,社交,通信"
 category: "Communication"
 ---
 # WhatsApp

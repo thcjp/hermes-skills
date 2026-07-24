@@ -3,7 +3,7 @@ slug: "email-digest-tool-pro"
 name: "email-digest-tool-pro"
 version: "1.0.0"
 displayName: "邮件日报专业版"
-summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案"
+summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案。邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -14,15 +14,14 @@ tags:
   - 邮件摘要
   - 企业效率
   - AI智能
+  - 邮件
+  - 通信
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-tools: ["read", "write", "exec"]
-tags: "邮件,通信,工具"
+  - write
+homepage: ""
 category: "Communication"
 ---
 # 邮件日报专业版

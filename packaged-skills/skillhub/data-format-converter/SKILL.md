@@ -3,7 +3,7 @@ slug: "data-format-converter"
 name: "data-format-converter"
 version: 1.0.1
 displayName: "数据格式转换器"
-summary: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理"
+summary: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理。数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换. 核心能力"
 license: "Proprietary"
 description: |-
   数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换.
@@ -19,16 +19,16 @@ tags:
   - 信息检索
   - data-format
   - converter
+  - 数据处理
+  - 数据分析
+  - 工具
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
+  - write
+  - glob
+homepage: ""
 # 定价元数据
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-标准级"
-pricing_model: "per_use"
-tools: ["read", "write", "exec", "glob"]
-tags: "数据处理,数据分析,工具"
 category: "Research"
 ---
 # 数据格式转换器
@@ -198,6 +198,14 @@ def batch_convert(input_dir, output_dir, from_fmt, to_fmt):
 ```
 
 #
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
 ## 支持格式矩阵
 
 | 输入\输出 | CSV | JSON | YAML | XML | TOML |
