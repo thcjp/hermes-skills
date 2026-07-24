@@ -1,3 +1,0 @@
-{"success": false, "status": 429, "error": "发布频率过高: 请求过于频繁，请稍后再试", "body": {"error": "请求过于频繁，请稍后再试", "code": "RATE_LIMITED"}}
-
-[EXIT_CODE:1]

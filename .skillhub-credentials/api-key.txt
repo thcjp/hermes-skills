@@ -1,5 +1,0 @@
-SKILLHUB_API_KEY=skh_7906ab19cefaf3854349fae7b8b97310c5582073b76acf1557731c0f1c612c11
-SKILLHUB_HOST=https://api.skillhub.cn
-# 创建时间: 2026-07-17
-# 用途: 通过 skillhub CLI 或 Agent 对话发布 Skill
-# 重要: 此 Token 平台仅展示一次,请勿泄露或提交到 git 仓库

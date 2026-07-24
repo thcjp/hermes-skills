@@ -28,3 +28,4 @@ skill-registry.db
 
 # Reports with sensitive content
 **/debranding-report.md
+.skillhub-credentials/
