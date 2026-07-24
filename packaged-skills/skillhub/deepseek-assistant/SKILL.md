@@ -1,4 +1,5 @@
 ---
+
 slug: "deepseek-assistant"
 name: "deepseek-assistant"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "DeepSeek助手(专业版)"
 summary: "全功能DeepSeek API集成平台，支持流式响应、函数调用、批量处理与成本管控。。DeepSeek 助手专业版是面向团队与生产环境的全功能 DeepSeek API 集成平台，在免费版基"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   DeepSeek 助手专业版是面向团队与生产环境的全功能 DeepSeek API 集成平台，在免费版基础上新增流式响应、函数调用、批量并发管理、多级缓存、用量统计与预算控制六大高级模块。核心能力：提供 SSE 流式响应处理框架、Function Calling 工具集成模板、批量请求调度与并发控制、基于内容哈希的多级缓存策略、实时用量统计与预算阈值告警、可复用的系统提示词模板库
 tags:
   - AI对话
@@ -16,6 +17,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 开发
+  - 代码
+  - 研究
 tools:
   - read
   - exec
@@ -23,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # DeepSeek助手(专业版)
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "self-integration"
 name: "self-integration"
 version: 1.1.3
 displayName: "Self-Integration"
 summary: "连任意外部应用并对其执行操作。Connect to any external app and perform actions on it。Use when the user wants to"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Connect to any external app and perform actions on it。Use when the
   user wants to interact with e。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - 集成
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Self-Integration
 
 ## 付费版专享能力

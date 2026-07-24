@@ -1,4 +1,5 @@
 ---
+
 slug: "video-frames-paid"
 name: "video-frames-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "视频帧提取-专业版"
 summary: "企业级视频帧提取与剪辑工具，支持批量处理、区间抓取、分辨率调整、水印添加等高级能力。。视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 视频帧提取-专业版
 
 ## 付费版专享能力

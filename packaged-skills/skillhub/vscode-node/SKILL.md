@@ -1,11 +1,12 @@
 ---
+
 slug: "vscode-node"
 name: "vscode-node"
 version: 1.0.3
 displayName: "VS Code Node"
 summary: "经连为SkillHub节点的VS Code与Cursor操作代码,40+命令。Operate on code through a VS Code/Cursor IDE connected a"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Operate on code through a VS Code/Cursor IDE connected as an SkillHub
   Node。Provides 40+ commands。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # VS Code Node
 
 ## 付费版专享能力

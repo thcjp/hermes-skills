@@ -1,11 +1,12 @@
 ---
+
 slug: "api-development"
 name: "api-development"
 version: 1.0.1
 displayName: "api-development"
 summary: "编排API全生命周期,从设计到文档/测试/部署一站完成,规范产出API。Meta-skill that orchestrates the full API development lifec"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Meta-skill that orchestrates the full API development lifecycle — from
   design through documentati。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # api-development
 
 ## 付费版专享能力

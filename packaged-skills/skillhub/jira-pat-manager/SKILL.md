@@ -1,10 +1,11 @@
 ---
+
 name: "Jira Pat Manager 核心处理"
 slug: "jira-pat-manager"
 displayName: "Jira PAT管理器"
 version: 0.0.2
 summary: "管理Jira个人访问令牌(PAT),支持创建、撤销和权限配置。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Jira Pat M"
-description: |-
+description: |-，可处理提升工作效率
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Jira Pat Manager 智能分析"、Jira Pat Manager 智能分析时使用.
   不适用于需要人工判断的复杂场景.
@@ -19,8 +20,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 写作
 category: "Automation"
+
 ---
+
 # Jira Pat Manager 批量处理
 
 ## 付费版专享能力

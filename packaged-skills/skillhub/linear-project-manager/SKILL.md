@@ -1,10 +1,11 @@
 ---
+
 name: "Linear Project Manager 核心处理"
 slug: "linear-project-manager"
 displayName: "Linear项目管理"
 version: 1.0.2
 summary: "封装Linear项目管理API,请求参数直转响应数据,付费版独享批量与高级配置。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"L"
-description: |-
+description: |-，可自动提升工作效率
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Linear Project Manager 智能分析"、Linear Project Manager 智能分析时使用.
   不适用于需要人工判断的复杂场景.
@@ -19,8 +20,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - AI代理
 category: "Automation"
+
 ---
+
 # Linear Project Manager 批量处理
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: content-filter-tool-free
 name: content-filter-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 内容过滤工具
 summary: "面向个人的信息流内容过滤工具，关键词与作者过滤. - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
-description: '面向个人用户的信息流内容过滤工具.
+description: 面向个人用户的信息流内容过滤工具，可处理提升工作效率
   核心能力:
 
   - 关键词过滤与正则匹配
@@ -35,13 +36,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 研究
+  - 分析
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 内容过滤工具（免费版）
 
 ## 概述

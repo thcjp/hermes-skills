@@ -1,11 +1,12 @@
 ---
+
 slug: "kubernetes-devops"
 name: "kubernetes-devops"
 version: 1.0.1
 displayName: "Kubernetes"
 summary: "K8s清单助手,生成规范的部署清单。This is a coherent Kubernetes manifest helper; its main risk is that users co"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   This is a coherent Kubernetes manifest helper; its main risk is that
   users could copy examples th。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 运维
+  - 监控
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Kubernetes
 
 ## 付费版专享能力

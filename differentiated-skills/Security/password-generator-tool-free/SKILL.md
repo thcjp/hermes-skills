@@ -1,4 +1,5 @@
 ---
+
 slug: password-generator-tool-free
 name: password-generator-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 密码生成器(免费版)
 summary: "生成12-16位随机安全密码,支持大小写字母、数字、符号组合,满足个人日常密码需求,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - 生成12-16位随机安全密码
 
@@ -46,7 +47,9 @@ tools:
   - exec
 homepage: ""
 category: "Security"
+
 ---
+
 # 密码生成器(免费版)
 
 ## 概述

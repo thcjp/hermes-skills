@@ -1,11 +1,12 @@
 ---
+
 slug: "go-linter-configuration"
 name: "go-linter-configuration"
 version: 1.0.1
 displayName: "Go Linter Configurat"
 summary: "配置排障golangci-lint,处理导入与类型检查问题。Configure and troubleshoot golangci-lint for Go projects。Handle i"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Configure and troubleshoot golangci-lint for Go projects。Handle import
   resolution issues, type-c。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Go Linter Configurat
 
 ## 付费版专享能力

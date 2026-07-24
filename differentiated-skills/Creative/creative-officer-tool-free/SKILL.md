@@ -1,4 +1,5 @@
 ---
+
 slug: creative-officer-tool-free
 name: creative-officer-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 创意总监免费版
 summary: "提供创意咨询、头脑风暴与方案评估，帮助个人用户快速产出创意想法与执行方向.。创意总监免费版 —— 面向个人用户的轻量级创意辅助工具。核心能力:"
 license: Proprietary
 edition: free
-description: '创意总监免费版 —— 面向个人用户的轻量级创意辅助工具。核心能力:
+description: 创意总监免费版 —— 面向个人用户的轻量级创意辅助工具。核心能力:，可生成提升工作效率
 
   - 创意咨询：回答创意相关问题，提供专业建议
 
@@ -37,13 +38,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 通信
+  - 邮件
+  - 写作
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 创意总监免费版
 
 ## 概述

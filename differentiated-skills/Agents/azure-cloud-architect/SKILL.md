@@ -1,11 +1,12 @@
 ---
+
 slug: "azure-cloud-architect"
 name: "azure-cloud-architect"
 version: "1.0.0"
 displayName: "Azure云架构师"
 summary: "多订阅导航,角色审计最小权限,成本分析,合规检查,跨订阅批量操作。。基于Azure CLI的智能云基础设施管理助手,提供多订阅导航、RBAC角色审计与最小权限、成本分析工作流、合规检查清单、"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   基于Azure CLI的智能云基础设施管理助手,提供多订阅导航、RBAC角色审计与最小权限、成本分析工作流、合规检查清单、跨订阅批量操作五大核心能力。适用于Azure资源盘点、健康监控、安全审计、Cost Management分析、多订阅多租户管理场景。默认只读查询,写操作与破坏性操作需确认。适用关键词:Azure云架构师、基础设施管理、多订阅、RBAC审计、成本分析、Azure CLI、azure-cloud-architect
 tags:
   - 通用办公
@@ -20,7 +21,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # Azure云架构师
 
 使用本地Azure CLI回答关于Azure资源的问题。默认只读查询,仅在用户明确要求变更并确认后执行写/破坏性操作.

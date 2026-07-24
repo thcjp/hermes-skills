@@ -1,11 +1,12 @@
 ---
+
 slug: "json-linter"
 name: "json-linter"
 version: 1.0.1
 displayName: "Json Linter"
 summary: "校验工作区JSON语法,排查配置语法错误。Validates JSON syntax across the workspace。Use this skill to check for syn"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Validates JSON syntax across the workspace。Use this skill to check
   for syntax errors in configur。Use when 用户需要Json Linter相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Json Linter
 
 ## 付费版专享能力

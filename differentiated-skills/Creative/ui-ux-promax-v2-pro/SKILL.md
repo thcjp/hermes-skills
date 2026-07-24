@@ -1,4 +1,5 @@
 ---
+
 slug: ui-ux-promax-v2-pro
 name: ui-ux-promax-v2-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: UI/UX ProMax V2专业版
 summary: "全域设计数据库+持久化+推理引擎+多技术栈+层级检索,面向企业的综合设计决策引擎。面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、"
 license: Proprietary
 edition: pro
-description: '面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、
+description: 面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、，可处理提升工作效率
 
   99条UX规则、25种图表类型,支持全部10个设计域、10种技术栈、设计系统
 
@@ -34,7 +35,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # UI/UX ProMax V2 - 专业版
 
 ## 概述

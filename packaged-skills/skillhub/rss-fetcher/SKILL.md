@@ -1,11 +1,12 @@
 ---
+
 slug: "rss-fetcher"
 name: "rss-fetcher"
 version: 1.1.1
 displayName: "Rss Fetcher"
 summary: "统一的RSS采集与管理系统 | Unified RSS Feed Fetcher and Manager 支持增量抓取、自动去重、自动标签、源健康监控、HTML报告生成"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   统一的RSS采集与管理系统 | Unified RSS Feed Fetcher and Manager 支持增量抓取、自动去重、自动标签、源健康监控、HTML报告生成\
   \ Incremental 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # Rss Fetcher
 
 ## 付费版专享能力

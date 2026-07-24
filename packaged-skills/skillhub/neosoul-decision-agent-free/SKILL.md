@@ -1,11 +1,12 @@
 ---
+
 slug: "neosoul-decision-agent-free"
 name: "neosoul-decision-agent-free"
 version: "1.0.0"
 displayName: "自主决策代理"
 summary: "基础版结构化决策支持工具，提供框架分析与决策记录功能。基础版结构化决策支持工具，帮助用户在面临权衡选择时进行结构化分析. 提供分层记忆基础存储、决策框架应用、决策记录与回顾三大核心能力. 适"
 license: "MIT"
-description: |-
+description: |-，可分析提升工作效率
   基础版结构化决策支持工具，帮助用户在面临权衡选择时进行结构化分析.
   提供分层记忆基础存储、决策框架应用、决策记录与回顾三大核心能力.
   适用于产品决策、技术架构决策、商业战略决策等多领域场景.
@@ -23,7 +24,9 @@ tags:
   - 自动化
   - 智能
 category: "Agents"
+
 ---
+
 # 自主决策代理（Neosoul Decision Agent）- 免费版
 
 基础版结构化决策支持工具，通过分层记忆存储用户决策偏好，提供框架分析帮助用户做出更优决策.

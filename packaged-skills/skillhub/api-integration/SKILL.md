@@ -1,11 +1,12 @@
 ---
+
 slug: "api-integration"
 name: "api-integration"
 version: 1.0.1
 displayName: "API集成开发助手"
 summary: "掌握RESTful调用、GraphQL查询、OAuth2/JWT认证管理与错误处理,连接第三方服务扩展能力"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   API 集成开发助手。掌握 RESTful API 调用、GraphQL 查询支持、API 认证管理（API Key/OAuth2/JWT/Basic Auth）
   与错误处理等核心能力。提供 Python requests 调用模板、OAuth2 client_credentials 令牌获取、
   HTTP 状态码体系（200/201/400/401/404/500）、GraphQL 按需查询与实时订阅等知识.
@@ -23,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # API 集成开发助手
 
 提供完整的 API 集成能力,从 RESTful 到 GraphQL,帮助 AI Agent 快速接入第三方服务,扩展能力边界.

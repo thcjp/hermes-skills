@@ -1,4 +1,5 @@
 ---
+
 slug: graph-query-tool-free
 name: graph-query-tool-free
 version: 1.0.2
@@ -6,7 +7,7 @@ displayName: 链上数据查询(免费版)
 summary: "区块链数据自然语言查询，路由到免费数据服务，返回实时结果.。区块链数据自然语言查询，路由到免费数据服务，返回实时结果。核心能力："
 license: Proprietary
 edition: free
-description: '区块链数据自然语言查询，路由到免费数据服务，返回实时结果。核心能力：
+description: 区块链数据自然语言查询，路由到免费数据服务，返回实时结果。核心能力：，可自动提升工作效率
 
   - 自然语言提问自动路由到合适的链上数据服务
 
@@ -34,13 +35,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - 知识
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 链上数据查询（免费版）
 
 ## 概述

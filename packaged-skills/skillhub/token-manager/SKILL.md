@@ -1,11 +1,12 @@
 ---
+
 slug: "token-manager"
 name: "token-manager"
 version: 1.2.1
 displayName: "Token用量管理"
 summary: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析。API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、 余额预警、工具集成和跨会话分析。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、
   余额预警、工具集成和跨会话分析。按¥12/1M tokens计费，80%上下文阈值
   触发提醒，50k会话Token触发预警。适用于独立开发者、企业团队和自动化
@@ -20,8 +21,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - AI代理
 category: "Automation"
+
 ---
+
 # Token用量管理
 
 监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析.

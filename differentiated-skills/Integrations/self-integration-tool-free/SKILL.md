@@ -1,4 +1,5 @@
 ---
+
 slug: self-integration-tool-free
 name: self-integration-tool-free
 version: 1.0.1
@@ -6,13 +7,18 @@ displayName: 自集成工具
 summary: "通过统一网关连接任意外部应用并执行操作，适合个人开发者快速打通多平台.。自集成工具（免费版）通过统一集成网关让Agent连接任意外部应用（Slack、HubSpot、Notion等）并执行操"
 license: Proprietary
 edition: free
-description: 自集成工具（免费版）通过统一集成网关让Agent连接任意外部应用（Slack、HubSpot、Notion等）并执行操作，无需为每个平台单独开发集成。核心能力：已有连接查询、连接器搜索、OAuth授权连接创建、动作搜索与执行、基础API参考。Use
+description: 自集成工具（免费版）通过统一集成网关让Agent连接任意外部应用（Slack、HubSpot、Notion等）并执行操作，无需为每个平台单独开发集成。核心能力：已有连接查询、连接器搜索、OAuth授权连接创建、动作搜索与执行、基础API参考。Use，可自动提升工作效率
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - 集成工具
   - 自动化
   - 工具
   - 效率
+  - 集成
+  - integration
+  - 开发
+  - 代码
+  - 知识
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # 自集成工具（免费版）
 
 ## 概述

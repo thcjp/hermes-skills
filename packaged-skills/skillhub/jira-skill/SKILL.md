@@ -1,11 +1,12 @@
 ---
+
 slug: "jira-skill"
 name: "jira-skill"
 version: "1.0.0"
 displayName: "Jira集成助手"
 summary: "通过Jira Cloud REST API管理事务、状态流转与工时日志，支持搜索、创建、指派、评论、工时统计。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Jira集成助手通过Jira Cloud REST API管理事务、状态流转与工时日志.
   支持模糊搜索、详情查看、状态变更、指派、评论、创建、工时记录与多维度工时统计.
   核心能力：
@@ -25,6 +26,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 知识
+  - 文档
+  - 研究
 tools:
   - read
   - exec
@@ -33,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Jira集成助手
 
 通过Jira Cloud REST API管理事务、状态流转与工时日志。支持搜索、详情、状态变更、指派、评论、创建、工时记录与多维度工时统计.

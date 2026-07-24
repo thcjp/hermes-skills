@@ -1,11 +1,12 @@
 ---
+
 slug: "jira-free"
 name: "jira-free"
 version: "1.0.0"
 displayName: "Jira集成引擎(免费版)"
 summary: "Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版。Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例. 覆盖问题管"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例.
   覆盖问题管理、Sprint规划、看板操作与工作流自动化。核心能力：
   - 问题管理（创建/更新/查询/批量操作）
@@ -23,8 +24,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
+  - 通信
 category: "Automation"
+
 ---
+
 # Jira集成引擎(免费版)
 
 Jira问题跟踪与项目管理集成引擎，通过REST API操作Jira实例，覆盖问题管理、Sprint规划与工作流自动化.

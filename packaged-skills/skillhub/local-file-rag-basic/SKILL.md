@@ -1,11 +1,12 @@
 ---
+
 slug: "local-file-rag-basic"
 name: "local-file-rag-basic"
 version: 1.0.1
 displayName: "local-file-rag-basic"
 summary: "高性能本地文件RAG套件基础版。High-performance local File RAG suite (Basic Edition)。核心能力: - 知识管理领域的专业化AI辅助工具"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   High-performance local File RAG suite (Basic Edition)。核心能力:
 
   - 知识管理领域的专业化AI辅助工具
@@ -26,6 +27,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -33,7 +38,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # local-file-rag-basic
 
 ## 付费版专享能力

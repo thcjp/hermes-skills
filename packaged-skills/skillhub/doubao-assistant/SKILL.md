@@ -1,4 +1,5 @@
 ---
+
 slug: "doubao-assistant"
 name: "doubao-assistant"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "豆包助手(专业版)"
 summary: "全功能豆包大模型集成平台，支持流式响应、函数调用、知识库与批量处理。。豆包助手专业版是面向团队与生产环境的全功能豆包大模型集成平台，在免费版基础上新增流式响应、函数调用、知识库检索增强、批量"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可生成提升工作效率
   豆包助手专业版是面向团队与生产环境的全功能豆包大模型集成平台，在免费版基础上新增流式响应、函数调用、知识库检索增强、批量并发管理、系统提示词模板库、用量与会话分析六大高级模块。核心能力：提供 SSE 流式响应处理框架、Function Calling 工具集成模板、RAG 知识库检索增强方案、批量请求调度与并发控制、可复用提示词模板库、会话级用量统计与分析面板
 tags:
   - AI对话
@@ -16,6 +17,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 开发
+  - 代码
+  - 知识
 tools:
   - read
   - exec
@@ -24,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 豆包助手(专业版)
 
 ## 付费版专享能力

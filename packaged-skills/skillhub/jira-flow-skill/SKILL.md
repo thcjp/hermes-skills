@@ -1,4 +1,5 @@
 ---
+
 slug: "jira-flow-skill"
 name: "jira-flow-skill"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Jira Flow 专业版"
 summary: "全功能Jira任务管理与团队工时分析，支持批量操作、自定义报表与自动化集成。。Jira Flow Skill 专业版面向团队负责人与项目经理，在免费版基础上解锁批量任务操作、多项目工时对比、"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Jira Flow Skill 专业版面向团队负责人与项目经理，在免费版基础上解锁批量任务操作、多项目工时对比、自定义报表模板与团队工时聚合视图。核心能力：单条命令完成批量状态流转、跨项目工时对比报表、自定义工时模板导出（Markdown/CSV/JSON）、团队成员工时聚合、Webhook 自动化触发、并发请求与缓存优化
 tags:
   - 集成工具
@@ -15,6 +16,11 @@ tags:
   - 自动化
   - 工具
   - 效率
+  - 写作
+  - 电商
+  - 研究
+  - 分析
+  - 开发
 tools:
   - read
   - exec
@@ -23,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Jira Flow 专业版
 
 ## 付费版专享能力

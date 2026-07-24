@@ -1,11 +1,12 @@
 ---
+
 slug: "news-sentiment-scan"
 name: "news-sentiment-scan"
 version: 1.0.1
 displayName: "News Sentiment Scan"
 summary: "扫描港股/美股/A股的公司公告、新闻、券商研报与社交媒体,去噪后按-10至+10打分,输出情绪温度计与重大事件清单。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   舆情监控与情绪分析技能,扫描港股、美股、A股等公司公告、新闻报道、券商研报与社交媒体(微博、雪球),去噪后进行情绪打分(-10至+10),输出情绪温度计与重大事件清单。支持多渠道信息采集、来源权重加权、事件类型量化与操作建议生成,适用于投资决策辅助、舆情预警与市场情绪跟踪。基于Python脚本执行,通过自然语言指令驱动Agent完成任务.
 tags:
   - 通用办公
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # News Sentiment Scan
 
 舆情监控与情绪分析技能,扫描多渠道信息源并进行情绪打分。覆盖港股、美股、A股市场,采集公司公告、新闻报道、券商研报与社交媒体讨论,经去噪处理后输出情绪温度计与重大事件清单.

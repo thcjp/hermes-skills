@@ -1,4 +1,5 @@
 ---
+
 slug: "whatsapp-msg"
 name: "whatsapp-msg"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "WhatsApp消息工具(专业版)"
 summary: "WhatsApp消息全能力版：批量发送、历史回填、群组管理、持续同步与高级搜索。。WhatsApp 消息工具（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引擎、历史回填、"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   WhatsApp 消息工具（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引擎、历史回填、群组管理、持续同步与高级搜索。支持从消息发送到数据归档的完整工作流。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 沟通协作
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # WhatsApp消息工具(专业版)
 
 ## 付费版专享能力

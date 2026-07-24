@@ -1,11 +1,12 @@
 ---
+
 slug: "dns-lookup"
 name: "dns-lookup"
 version: 1.0.1
 displayName: "Dns Lookup"
 summary: "用bind-utils的dig把主机名解析为IP,排查域名。Resolve hostnames to IP addresses using `dig` from bind-utils。核心能"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Resolve hostnames to IP addresses using `dig` from bind-utils。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
@@ -26,6 +27,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 运维
 tools:
   - read
   - exec
@@ -33,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Dns Lookup
 
 ## 付费版专享能力

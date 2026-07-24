@@ -1,4 +1,5 @@
 ---
+
 slug: knowledge-toolkit-free
 name: knowledge-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 知识工具包（免费版）
 summary: "构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '知识工具包 - （免费版）
+description: 知识工具包 - （免费版），可处理提升工作效率
 
   核心能力: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 研究
+  - 分析
+  - 写作
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 知识工具包（免费版）
 
 ## 概述

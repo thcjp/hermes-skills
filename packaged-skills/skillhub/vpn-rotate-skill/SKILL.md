@@ -1,11 +1,12 @@
 ---
+
 slug: "vpn-rotate-skill"
 name: "vpn-rotate-skill"
 version: 0.1.1
 displayName: "Vpn Rotate Skill"
 summary: "轮换VPN服务器绕过API限流,兼容OpenVPN(ProtonVPN等)。Bypass API rate limits by rotating VPN servers。Works with"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Bypass API rate limits by rotating VPN servers。Works with any OpenVPN-compatible
   VPN (ProtonVPN,。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Vpn Rotate Skill
 
 ## 付费版专享能力

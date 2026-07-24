@@ -1,4 +1,5 @@
 ---
+
 slug: learn-tool-free
 name: learn-tool-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 学习助手（免费版）
 summary: "为任何主题生成结构化学习计划、练习题与进度追踪，支持自适应学习路径.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
-description: '学习助手 - （免费版）
+description: 学习助手 - （免费版），可生成提升工作效率
 
   核心能力: 学习计划, 学习助手, 练习题, 学习评估, 自适应学习, learning plan, 知识评估
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 研究
+  - 分析
+  - 写作
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 学习助手（免费版）
 
 ## 概述

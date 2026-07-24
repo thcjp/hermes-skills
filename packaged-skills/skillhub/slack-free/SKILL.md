@@ -1,11 +1,12 @@
 ---
+
 slug: "slack-free"
 name: "slack-free"
 version: "1.0.0"
 displayName: "Slack 消息 LITE"
 summary: "通过slack工具发送与读取Slack消息,支持频道通知与历史消息查询。Slack 消息管理(免费版)。通过 slack 工具对 Slack 工作区进行基础消息操作,涵盖两大动作组: mes"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   Slack 消息管理(免费版)。通过 slack 工具对 Slack 工作区进行基础消息操作,涵盖两大动作组:
   messages(发送消息与读取消息)。工具使用已配置的 Bot Token 进行认证,支持 channel 与 user
   两种消息目标。适用于发送频道通知、读取频道历史等基础场景.
@@ -23,7 +24,9 @@ tools:
   - exec
 homepage: ""
 category: "Communication"
+
 ---
+
 # Slack 消息 LITE
 
 通过 `slack` 工具对 Slack 工作区进行基础消息操作,涵盖发送消息与读取消息两大动作组。工具使用已配置的 Bot Token 进行认证.

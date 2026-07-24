@@ -15,6 +15,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - AI代理
+  - agent
+  - 研究
+  - 分析
 tools:
   - read
   - exec

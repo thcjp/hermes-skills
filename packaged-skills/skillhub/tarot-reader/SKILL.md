@@ -1,17 +1,22 @@
 ---
+
 slug: "tarot-reader"
 name: "tarot-reader"
 version: 1.0.1
 displayName: "tarot-reader"
 summary: "专业塔罗占卜服务。当用户提及塔罗、抽牌、占卜等关键词时激活，提供单张牌或时间之流（过去-现在-未来）牌阵的解读。使用经典韦特塔罗体系，支持正逆位随机抽取，以温暖治愈的文字风格提供理性洞察。"
 license: "Proprietary"
-description: |-
+description: |-，可分析提升工作效率
   专业塔罗占卜服务。当用户提及塔罗、抽牌、占卜等关键词时激活，提供单张牌或时间之流（过去-现在-未来）牌阵的解读。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Other
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -19,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # tarot-reader
 
 ## 付费版专享能力

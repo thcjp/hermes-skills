@@ -1,11 +1,12 @@
 ---
+
 slug: "baoyu-md-formatter"
 name: "baoyu-md-formatter"
 version: "1.117.2"
 displayName: "Baoyu Format Markdow"
 summary: "格式化纯文本与Markdown,补frontmatter/标题/摘要/加粗/列表,规范文档。Formats plain text or markdown files with frontma"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Formats plain text or markdown files with frontmatter, titles, summaries,
   headings, bold, lists, 
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Baoyu Format Markdow
 
 ## 付费版专享能力

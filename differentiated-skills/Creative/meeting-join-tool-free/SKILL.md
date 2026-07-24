@@ -1,4 +1,5 @@
 ---
+
 slug: meeting-join-tool-free
 name: meeting-join-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: AI会议助手免费版
 summary: 让AI机器人以语音方式加入视频会议(Google Meet/Teams/Zoom),支持实时转写、问答与笔记,适合个人使用.
 license: Proprietary
 edition: free
-description: 'AI会议助手免费版让AI机器人以语音方式加入视频会议平台
+description: AI会议助手免费版让AI机器人以语音方式加入视频会议平台，可自动提升工作效率
 
   (Google Meet、Microsoft Teams、Zoom),实现实时会议转写、
 
@@ -42,13 +43,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # AI会议助手免费版
 
 ## 概述

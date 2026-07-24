@@ -1,4 +1,5 @@
 ---
+
 slug: "flexible-database-design"
 name: "flexible-database-design"
 version: 1.0.1
@@ -8,7 +9,7 @@ summary: "指导Agent与用户设计实现灵活数据库,建模不踩坑。Guid
 核心能力:
 - 集成工具领"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Guide agents and users to design and implement a \\\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\
   - 基于高人气开源Skill深度优化升级\n- 移除风险代码,增强安全性和稳定性\n\n适用场景:\n- 第三方API集成、平台对接、数据同步\n- 独立开发者与一人公司效率提升\n\
 tags:
@@ -25,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
+
 ---
+
 # Flexible Database De
 
 ## 付费版专享能力

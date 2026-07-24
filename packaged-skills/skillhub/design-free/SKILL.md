@@ -1,11 +1,12 @@
 ---
+
 slug: "design-free"
 name: "design-free"
 version: "1.0.0"
 displayName: "设计偏好基础版"
 summary: "基础视觉偏好学习,支持UI设计风格记忆,检测3次以上一致偏好后写入档案。设计偏好基础客户端（免费版）。通过观察用户在 UI 设计中的选择与反馈,自动提取视觉偏好模式. 支持两大偏好分类: A"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   设计偏好基础客户端（免费版）。通过观察用户在 UI 设计中的选择与反馈,自动提取视觉偏好模式.
   支持两大偏好分类: Aesthetic（美学风格）与 Never（禁忌清单）。检测到 3 次以上一致偏好后
   自动确认写入偏好档案,保持条目精简紧凑。仅支持 UI 设计媒介,不包含按媒介细分、品牌专属偏好、
@@ -23,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # Design LITE
 
 设计偏好基础版,通过观察用户在 UI 设计中的选择与反馈,自动学习视觉偏好。支持 Aesthetic 与 Never 两大分类,偏好档案随使用逐步积累.

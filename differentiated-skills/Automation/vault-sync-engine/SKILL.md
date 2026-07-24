@@ -1,11 +1,12 @@
 ---
+
 slug: vault-sync-engine
 name: vault-sync-engine
 version: 1.0.1
 displayName: 知识库同步引擎
 summary: "解决多端冲突、插件配置漂移、iCloud丢笔记痛点，让Obsidian在多设备间稳定同步。Obsidian 多端同步引擎，解决 iCloud/Dropbox 同步冲突、插件配置漂移、`。ob"
 license: Proprietary
-description: 'Obsidian 多端同步引擎，解决 iCloud/Dropbox 同步冲突、插件配置漂移、`。obsidian/` 目录混乱、
+description: Obsidian 多端同步引擎，解决 iCloud/Dropbox 同步冲突、插件配置漂移、`。obsidian/` 目录混乱、，可生成提升工作效率
 
   移动端笔记丢失四大痛点。Use when 用户需要知识库同步引擎相关功能时使用。不适用于超出本技能能力范围的复杂需求。Use
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 知识库同步引擎
 
 让 Obsidian vault 在多设备间稳定同步。聚焦"不丢笔记、不乱配置、冲突可解"，把同步从黑盒变成可监控的引擎.

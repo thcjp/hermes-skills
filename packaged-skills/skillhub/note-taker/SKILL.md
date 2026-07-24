@@ -1,17 +1,23 @@
 ---
+
 slug: "note-taker"
 name: "note-taker"
 version: 2.0.2
 displayName: "Note Taker"
 summary: "笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Note-taking with"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Productivity
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -19,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Note Taker
 
 ## 付费版专享能力

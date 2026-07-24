@@ -1,4 +1,5 @@
 ---
+
 slug: "xml-json-converter"
 name: "xml-json-converter"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "XML转JSON(专业版)"
 summary: "企业级XML与JSON互转工具，支持批量转换、XSD校验、XPath映射与SOAP协议封装。。XML转JSON专业版是一款面向集成团队与企业级数据交换场景的全功能结构化数据格式互转工具。在免"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   XML转JSON专业版是一款面向集成团队与企业级数据交换场景的全功能结构化数据格式互转工具。在免费版的双向转换、属性处理、命名空间基础上，新增批量转换、XSD Schema校验、XPath字段映射、流式转换、SOAP协议封装与数据库直写六大高级能力，覆盖从单文件到企业级数据交换流水线的全场景需求。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - 数据转换
@@ -15,6 +16,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - AI代理
+  - agent
+  - 通信
 tools:
   - read
   - exec
@@ -22,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # XML转JSON(专业版)
 
 ## 付费版专享能力

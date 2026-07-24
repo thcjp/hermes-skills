@@ -1,4 +1,5 @@
 ---
+
 slug: file-sorter-tool-free
 name: file-sorter-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 视觉文件整理免费版
 summary: "利用视觉模型识别文件内容并智能重命名归档，模拟人类整理流程，适合个人桌面清理.。视觉文件整理工具免费版，面向个人用户的轻量级文件整理助手。核心能力:"
 license: Proprietary
 edition: free
-description: '视觉文件整理工具免费版，面向个人用户的轻量级文件整理助手。核心能力:
+description: 视觉文件整理工具免费版，面向个人用户的轻量级文件整理助手。核心能力:，可自动提升工作效率
 
   - 自动遍历下载文件夹或桌面
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 金融
+  - 财务
+  - 知识
+  - 文档
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 视觉文件整理工具（免费版）
 
 ## 概述

@@ -1,11 +1,12 @@
 ---
+
 slug: "feishu-send-file"
 name: "feishu-send-file"
 version: 1.2.2
 displayName: "飞书发文件"
 summary: "飞书发送普通文件与图片附件,支持file_key两步上传与image_key图片稳定链路。。飞书机器人发送文件附件技能。覆盖普通文件(HTML/ZIP/PDF/代码文件等)与图片两类链路,"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   飞书机器人发送文件附件技能。覆盖普通文件(HTML/ZIP/PDF/代码文件等)与图片两类链路,
   解决"本地图片路径被发成路径文本"的常见故障,提供脚本化与手动两步两种调用方式,
   适配中国版飞书(open.feishu.cn)与国际版 Lark(open.larksuite.com).
@@ -16,6 +17,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 通信
 tools:
   - read
   - exec
@@ -24,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # feishu-send-file
 
 飞书机器人发送文件附件需要区分两条链路:普通文件走 `im/v1/files` 拿 `file_key` 后发 `msg_type=file`;图片走 `im/v1/images` 拿 `image_key` 后发 `msg_type=image`。混用会导致用户在飞书里看到路径文本而不是文件本体.

@@ -1,4 +1,5 @@
 ---
+
 slug: whatsapp-master-free
 name: whatsapp-master-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: WhatsApp大师(免费版)
 summary: "WhatsApp 消息自动化免费版：文本/媒体/贴纸/语音发送，含 JID 格式与速率限制指南.。WhatsApp 大师（免费版）面向个人用户与独立开发者，封装 WhatsApp 的基础消息"
 license: Proprietary
 edition: free
-description: WhatsApp 大师（免费版）面向个人用户与独立开发者，封装 WhatsApp 的基础消息能力：文本发送、媒体发送、贴纸、语音笔记与 GIF。通过原生通道集成直接调用
+description: WhatsApp 大师（免费版）面向个人用户与独立开发者，封装 WhatsApp 的基础消息能力：文本发送、媒体发送、贴纸、语音笔记与 GIF。通过原生通道集成直接调用，可自动提升工作效率
   WhatsApp Web 协议，无需外部 Docker 或 CLI 包装。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - 即时通讯
@@ -21,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # WhatsApp 大师（免费版）
 
 ## 概述

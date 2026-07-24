@@ -1,4 +1,5 @@
 ---
+
 slug: "ws-excel-paid"
 name: "ws-excel-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Excel工具(专业版)"
 summary: "Excel 全能力版：多表合并、透视表、图表、大数据处理、自动化流水线与数据库联动。。Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、大数据处理、自动化流水线与数据库联动六大模块。支持从 `关系型数据库` 等数据库直接导入导出，处理百万行级数据不溢出。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 数据分析
@@ -17,6 +18,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -24,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Excel工具(专业版)
 
 ## 付费版专享能力

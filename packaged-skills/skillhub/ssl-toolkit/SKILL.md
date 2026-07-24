@@ -1,4 +1,5 @@
 ---
+
 slug: "ssl-toolkit"
 name: "ssl-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "SSL工具箱(专业版)"
 summary: "企业级TLS套件,含通配符/SAN、全服务器配置、安全审计、自动化监控与告警。。SSL工具箱(专业版)面向团队与企业,提供完整的TLS证书管理、全主流服务器配置、安全审计评分、自动化监控告警"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   SSL工具箱(专业版)面向团队与企业,提供完整的TLS证书管理、全主流服务器配置、安全审计评分、自动化监控告警与多域名治理能力。核心能力:
   - 全证书类型:单域名/通配符/SAN/多域名/EV
   - 全主流服务器:Nginx/Apache/Node。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
@@ -21,6 +22,8 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 研究
 tools:
   - read
   - exec
@@ -28,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # SSL工具箱(专业版)
 
 ## 付费版专享能力

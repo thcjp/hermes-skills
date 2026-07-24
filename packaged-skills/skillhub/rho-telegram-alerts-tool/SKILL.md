@@ -1,11 +1,12 @@
 ---
+
 slug: "rho-telegram-alerts-tool"
 name: "rho-telegram-alerts-tool"
 version: "1.0.1"
 displayName: "Telegram Alerts"
 summary: "经Telegram发交易告警/组合更新/市场信号。Send formatted trading alerts, portfolio updates, and market signals v"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Send formatted trading alerts, portfolio updates, and market signals
   via Telegram。Supports price
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Telegram Alerts
 
 ## 付费版专享能力

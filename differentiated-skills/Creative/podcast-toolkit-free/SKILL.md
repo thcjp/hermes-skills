@@ -1,4 +1,5 @@
 ---
+
 slug: podcast-toolkit-free
 name: podcast-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 播客创作工具包免费版
 summary: "个人播客创作工具包,覆盖选题规划、脚本撰写与节目笔记,帮助独立创作者快速起步.。面向个人创作者的播客创作工具包(免费版)。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人创作者的播客创作工具包(免费版)。核心能力:
+description: 面向个人创作者的播客创作工具包(免费版)。核心能力:，可生成提升工作效率
 
   - 播客选题规划与节目定位
 
@@ -53,7 +54,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 播客创作工具包 - 免费版
 
 ## 概述

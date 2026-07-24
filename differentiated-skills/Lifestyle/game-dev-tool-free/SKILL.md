@@ -1,4 +1,5 @@
 ---
+
 slug: game-dev-tool-free
 name: game-dev-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 游戏开发助手免费版
 summary: "全流程游戏开发向导,涵盖设计、编码、测试、发布与运营基础。面向独立开发者与小团队的全流程游戏开发向导."
 license: Proprietary
 edition: free
-description: '面向独立开发者与小团队的全流程游戏开发向导.
+description: 面向独立开发者与小团队的全流程游戏开发向导，可生成提升工作效率
   核心能力: 游戏设计文档、编码指导、测试策略、发布流程、运营基础
 
   适用场景: 独立游戏开发、小型团队协作、Game Jam、学习游戏开发
@@ -24,13 +25,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 生活
+  - 健康
+  - 创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 游戏开发助手 (免费版)
 
 ## 概述

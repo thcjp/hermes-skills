@@ -1,4 +1,5 @@
 ---
+
 slug: "trading-tool-pro"
 name: "trading-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "交易分析专业版"
 summary: "多策略交易分析系统，支持批量分析、策略回测、自动交易与风险控制。。面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带 等多种技术策略组合，提供批量标的分析、历史回测验证、自"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带
   等多种技术策略组合，提供批量标的分析、历史回测验证、自动信号触发
   与风险控制功能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -24,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Finance"
+
 ---
+
 # 交易分析专业版（PRO版）
 
 ## 概述

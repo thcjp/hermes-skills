@@ -1,4 +1,5 @@
 ---
+
 slug: prompt-architect-free
 name: prompt-architect-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 提示词架构师免费版
 summary: "解决 Prompt 答非所问、任务拆解混乱、Agent Loop 选型盲目的免费提示词工程工具。提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级"
 license: Proprietary
 edition: free
-description: 提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具，针对"Prompt
+description: 提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具，针对"Prompt，可自动提升工作效率
   答非所问与幻觉频发、复杂任务拆解颗粒度失控、Agent Loop 模式选型盲目、输出格式不可控"四大高频痛点而设计。它把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让
   Agent 从"能跑"升级到"基本可控"
 tags:
@@ -25,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具。把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让 Agent 从"能跑"升级到"基本可控".
 > 本免费版面向个人开发者试用与轻量场景。如需 Few-shot 自动生成、Token 预算管理、多 Agent 编排等高级能力，请使用 `prompt-architect-pro` 专业版.
 ## 设计动机：四大高频痛点

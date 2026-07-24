@@ -1,11 +1,12 @@
 ---
+
 slug: "frontend-design"
 name: "frontend-design"
 version: 1.1.1
 displayName: "Frontend Design"
 summary: "打造独特生产级前端界面,高设计质量,告别AI通用感。Create distinctive, production-grade frontend interfaces with high de"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Create distinctive, production-grade frontend interfaces with high design
   quality。Use this skill。
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Frontend Design
 
 ## 付费版专享能力

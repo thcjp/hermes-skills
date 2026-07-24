@@ -1,4 +1,5 @@
 ---
+
 slug: wechat-article-writer-free
 name: wechat-article-writer-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 公众号写作免费版
 summary: "从话题或提纲生成公众号长文初稿，支持基础润色与改写，适合个人创作者快速产出.。公众号写作免费版 —— 面向个人创作者的轻量级公众号长文写作工具。核心能力:"
 license: Proprietary
 edition: free
-description: '公众号写作免费版 —— 面向个人创作者的轻量级公众号长文写作工具。核心能力:
+description: 公众号写作免费版 —— 面向个人创作者的轻量级公众号长文写作工具。核心能力:，可自动提升工作效率
 
   - 从话题或提纲自动生成完整公众号文章初稿
 
@@ -35,13 +36,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 研究
+  - 分析
+  - 创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 公众号写作免费版
 
 ## 概述

@@ -1,11 +1,12 @@
 ---
+
 slug: "api-generator-free"
 name: "api-generator-free"
 version: "1.0.0"
 displayName: "API代码生成器免费版"
 summary: "生成RESTful端点、GraphQL schema与测试套件,快速搭建API代码脚手架。API 代码生成器免费版。从零生成基础 API 代码脚手架,支持 RESTful CRUD 端点（E"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   API 代码生成器免费版。从零生成基础 API 代码脚手架,支持 RESTful CRUD 端点（Express.js）、
   GraphQL Type+Query+Mutation schema 与 Jest+Supertest 测试套件.
   OpenAPI 文档、Python 客户端、Mock 服务器、认证代码、速率限制器等高级功能需升级付费版.
@@ -21,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 # API 代码生成器（免费版）
 
 从零生成基础 API 代码脚手架。支持 RESTful 端点、GraphQL schema 与测试套件,所有代码输出到 stdout.

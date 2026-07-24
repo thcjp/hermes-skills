@@ -1,11 +1,12 @@
 ---
+
 slug: "secure-api-calls"
 name: "secure-api-calls"
 version: 1.0.4
 displayName: "Secure API Calls"
 summary: "调任意API不泄密钥,Keychains代理并在服务端注入真实令牌。Call any API without leaking credentials。Keychains proxies re"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Call any API without leaking credentials。Keychains proxies requests
   and injects real tokens serv。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Secure API Calls
 
 ## 付费版专享能力

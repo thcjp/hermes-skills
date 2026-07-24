@@ -1,11 +1,12 @@
 ---
+
 slug: "admapix"
 name: "admapix"
 version: 1.0.31
 displayName: "AdMapix"
 summary: "AdMapix原始数据层，广告创意/应用/榜单/下载收入查询。AdMapix 原始数据层客户端。覆盖广告创意搜索/计数/分布、应用与开发者画像、商店榜单、 下载与收入估算、应用分发与全球推广"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   AdMapix 原始数据层客户端。覆盖广告创意搜索/计数/分布、应用与开发者画像、商店榜单、
   下载与收入估算、应用分发与全球推广、市场级搜索七大端点类别。作为薄客户端透传 API 返回的原始结构化 JSON，
   不分析、不总结、不排序、不生成页面。调用方 Agent 负责决定调用哪些端点、组合多调用工作流并完成分析.
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # AdMapix
 
 AdMapix 原始 API 薄客户端。获取原始结构化数据并返回 JSON，不分析、不总结、不排序、不生成页面。调用方 Agent 决定调用哪些端点、组合多调用工作流并完成分析.

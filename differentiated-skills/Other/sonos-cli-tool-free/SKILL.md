@@ -1,4 +1,5 @@
 ---
+
 slug: sonos-cli-tool-free
 name: sonos-cli-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Sonos控制工具-免费版
 summary: "Sonos音箱命令行控制工具,支持播放控制、音量调节与分组管理,适合个人家庭使用。Sonos 音箱命令行控制工具免费版,面向个人家庭用户."
 license: Proprietary
 edition: free
-description: 'Sonos 音箱命令行控制工具免费版,面向个人家庭用户.
+description: Sonos 音箱命令行控制工具免费版,面向个人家庭用户，可自动提升工作效率
   核心能力:
 
   - 播放/暂停/下一曲/上一曲控制
@@ -39,13 +40,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 创意
+  - 图像
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Sonos 控制工具 - 免费版
 
 ## 概述

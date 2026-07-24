@@ -1,11 +1,12 @@
 ---
+
 slug: "smart-model-switching"
 name: "smart-model-switching"
 version: 1.0.1
 displayName: "Smart Model Switchin"
 summary: "Claude模型路由指南,助你在模型间选择。This skill is a model-routing guide that helps choose between ai-assistan"
 license: "Proprietary"
-description: |-
+description: |-，可分析提升工作效率
   This skill is a model-routing guide that helps choose between ai-assistant
   models and shows no evidence。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 写作
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Smart Model Switchin
 
 ## 付费版专享能力

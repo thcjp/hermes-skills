@@ -1,11 +1,12 @@
 ---
+
 slug: "video-translator"
 name: "video-translator"
 version: 1.0.6
 displayName: "Video Translator"
 summary: "实时视频翻译/配音,翻译用户视频并返回。Real time video translation / dubbing skill。Translate user-provided video ("
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Real time video translation / dubbing skill。Translate user-provided
   video (file or URL) and retu。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Video Translator
 
 ## 付费版专享能力

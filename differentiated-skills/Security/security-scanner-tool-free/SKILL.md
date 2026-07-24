@@ -1,4 +1,5 @@
 ---
+
 slug: security-scanner-tool-free
 name: security-scanner-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 安全扫描器(免费版)
 summary: "自动化安全扫描工具包,含端口扫描、漏洞检测、SSL分析,适合安全测试与评估,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - 端口扫描与服务识别(nmap)
 
@@ -51,7 +52,9 @@ tools:
   - exec
 homepage: ""
 category: "Security"
+
 ---
+
 # 安全扫描器(免费版)
 
 ## 概述

@@ -1,11 +1,12 @@
 ---
+
 slug: "expanso-csv-to-json"
 name: "expanso-csv-to-json"
 version: 1.0.1
 displayName: "Expanso csv-to-json"
 summary: "用Expanso Edge CLI/MCP把CSV转JSON对象数组。Convert CSV input into a JSON array of objects using Expanso"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Convert CSV input into a JSON array of objects using Expanso Edge CLI
   or MCP pipelines。核心能力:
 
@@ -29,6 +30,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -36,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Expanso csv-to-json
 
 ## 付费版专享能力

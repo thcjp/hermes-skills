@@ -1,11 +1,12 @@
 ---
+
 slug: "social-media-scheduler"
 name: "social-media-scheduler"
 version: 1.0.1
 displayName: "社媒内容排期"
 summary: "跨平台社媒内容排期助手,生成内容日历、平台优化文案、内容支柱、跨平台复用与三阶标签策略。。跨平台社媒内容排期与文案生成 skill。支持 Twitter/X、LinkedIn、Instagr"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   跨平台社媒内容排期与文案生成 skill。支持 Twitter/X、LinkedIn、Instagram、TikTok、Facebook 五大平台,
   生成按日期/时段/平台/内容类型组织的内容日历,按各平台风格规范输出文案(Twitter 少于280 字符、
   LinkedIn 1300 字符甜点区、Instagram 视觉优先配 20-30 标签、TikTok 前 2 秒钩子、Facebook 对话驱动).
@@ -26,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # 社媒内容排期
 
 跨平台社媒内容排期与文案生成助手。根据主题与目标,生成结构化内容日历,按平台风格规范输出文案,

@@ -1,4 +1,5 @@
 ---
+
 slug: "whatsapp-style"
 name: "whatsapp-style"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "WhatsApp样式工具-专业版"
 summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配。WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力: - 全部WhatsApp格"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力:
   - 全部WhatsApp格式语法支持(加粗/斜体/删除线/等宽体/列表/引用)
   - 自定义样式预设与消息模板管理
@@ -37,7 +38,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # WhatsApp样式工具-专业版
 
 ## 付费版专享能力

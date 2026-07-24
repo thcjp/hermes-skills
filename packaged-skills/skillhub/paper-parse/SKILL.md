@@ -1,17 +1,22 @@
 ---
+
 slug: "paper-parse"
 name: "paper-parse"
 version: 1.0.1
 displayName: "Paper Parse"
 summary: "对用户提供的任何学术论文（PDF附件或URL）进行双模式深度研读。当用户请求分析、研读、解读或总结一篇学术论文时，使用此技能。一次性生成两份报告：Part"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   对用户提供的任何学术论文（PDF附件或URL）进行双模式深度研读。当用户请求分析、研读、解读或总结一篇学术论文时，使用此技能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Knowledge
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 工作流
+  - 创意
 tools:
   - read
   - exec
@@ -19,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Paper Parse
 
 ## 付费版专享能力

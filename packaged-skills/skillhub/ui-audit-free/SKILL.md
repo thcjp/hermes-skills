@@ -1,11 +1,12 @@
 ---
+
 slug: "ui-audit-free"
 name: "ui-audit-free"
 version: 1.0.1
 displayName: "UI Audit Free"
 summary: "基础版 UI 审计工具，评估界面的视觉层级、视觉样式和无障碍性。。ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估界面设计.
   支持 3 大支柱决策流程和视觉层级、视觉样式、无障碍性三项必检项审计。不包含 12 类 UI 模式库
   匹配、Macro Bet 对齐分析和上下文检查项。适合快速设计评审，升级完整版获取全量审计能力.
@@ -20,7 +21,9 @@ tags:
   - 前端
   - 设计
 category: "Creative"
+
 ---
+
 # UI Audit Free
 
 ui-audit-free 基于 Warp-Speed Decisioning 框架，对界面进行基础 UX 审计。核心理念是

@@ -1,11 +1,12 @@
 ---
+
 slug: "rest-api-reference"
 name: "rest-api-reference"
 version: "1.0.0"
 displayName: "REST API参考手册"
 summary: "147个第三方服务的REST API参考,含认证模式、端点、速率限制、分页与Webhook模式。REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模式与 Webhook 处理.
   按类别组织（AI/ML、支付、通信、CRM、数据库、媒体等 16 类）,每类含索引表与逐服务详解.
   提供多账户凭证命名规范、错误处理模式、幂等键使用等工程实践。仅作文档参考,不代用户执行请求.
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # REST API 参考手册
 
 147 个第三方服务的 REST API 参考文档。按类别组织,每类含索引表与逐服务详解,覆盖认证模式、端点参考、速率限制、分页模式与 Webhook 处理.

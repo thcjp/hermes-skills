@@ -1,11 +1,12 @@
 ---
+
 slug: "apple-health-skill"
 name: "apple-health-skill"
 version: 1.0.1
 displayName: "运动健康数据"
 summary: "与运动健康数据对话，查询训练、心率、活动量和VO2 Max趋势。使用AI与运动健康数据对话。支持查询训练记录、心率趋势、活动量环、VO2 Max、 性能管理图表（CTL/ATL/TSB）等。"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   使用AI与运动健康数据对话。支持查询训练记录、心率趋势、活动量环、VO2 Max、
   性能管理图表（CTL/ATL/TSB）等。通过健康数据同步服务获取数据，AI教练提供
   个性化训练建议。适用于运动训练分析、恢复评估和健身数据管理场景.
@@ -19,8 +20,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - 生活
 category: "Automation"
+
 ---
+
 # 运动健康数据
 
 使用AI与运动健康数据对话。查询训练记录、心率趋势、活动量环、VO2 Max、性能管理图表等。通过健康数据同步服务获取运动手环/手表同步的健康数据，AI教练提供个性化训练建议.

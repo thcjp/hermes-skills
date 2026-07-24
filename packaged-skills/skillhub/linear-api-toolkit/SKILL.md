@@ -1,4 +1,5 @@
 ---
+
 slug: "linear-api-toolkit"
 name: "linear-api-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Linear工具箱(专业版)"
 summary: "全功能Linear管理工具，支持批量操作、Webhook集成、高级分析与自定义查询模板。Linear工具箱(专业版)是面向团队与项目管理者的全功能Linear交互工具，在免费版基础上新增批量"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Linear工具箱(专业版)是面向团队与项目管理者的全功能Linear交互工具，在免费版基础上新增批量操作、Webhook集成、高级分析与自定义查询模板等高级能力。核心能力：
   - 完整的问题查询、项目管理与团队协作能力
   - 批量操作引擎，支持批量创建/更新/迁移
@@ -27,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Linear工具箱(专业版)
 
 ## 付费版专享能力

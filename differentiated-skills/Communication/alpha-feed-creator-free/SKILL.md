@@ -1,4 +1,5 @@
 ---
+
 slug: alpha-feed-creator-free
 name: alpha-feed-creator-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 内容采集器免费版
 summary: "每日采集并排名 AI 领域优质内容,助力个人创作者高效获取选题灵感.。面向个人内容创作者的轻量化 AI 内容采集与排名工具。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人内容创作者的轻量化 AI 内容采集与排名工具。核心能力:
+description: 面向个人内容创作者的轻量化 AI 内容采集与排名工具。核心能力:，可生成提升工作效率
 
   - 按配置采集 X 平台首页信息流、白名单账号与关键词内容
 
@@ -31,13 +32,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - AI代理
+  - agent
+  - 知识
+  - 文档
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 内容采集器(免费版)
 
 ## 概述

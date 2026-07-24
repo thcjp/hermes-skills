@@ -1,11 +1,12 @@
 ---
+
 slug: "excel-formula"
 name: "excel-formula"
 version: 2.0.2
 displayName: "Excel Formula"
 summary: "从描述生成Excel公式并诊断表格错误,VLOOKUP不再难。Generate Excel formulas from descriptions and diagnose spreadshe"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Generate Excel formulas from descriptions and diagnose spreadsheet errors。Use when writing VLOOK
 tags:
   - Knowledge
@@ -14,6 +15,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -21,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Excel Formula
 
 ## 付费版专享能力

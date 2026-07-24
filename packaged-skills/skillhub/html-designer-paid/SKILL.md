@@ -1,4 +1,5 @@
 ---
+
 slug: "html-designer-paid"
 name: "html-designer-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "HTML设计工具专业版"
 summary: "企业级HTML/CSS设计系统,支持设计令牌、组件库、批量生成、主题切换与团队协作,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可生成提升工作效率
   HTML设计工具专业版是一款面向企业与专业团队的网页设计系统化解决方案。在免费版核心能力之上,提供完整的设计令牌系统、可复用组件库、
   批量页面生成、多主题切换、团队协作与品牌一致性保障。
 tags:
@@ -26,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # HTML设计工具专业版
 
 ## 付费版专享能力

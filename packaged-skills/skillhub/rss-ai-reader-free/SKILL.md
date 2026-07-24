@@ -1,11 +1,12 @@
 ---
+
 slug: "rss-ai-reader-free"
 name: "rss-ai-reader-free"
 version: "1.0.0"
 displayName: "RSS AI 摘要 LITE"
 summary: "RSS抓取与LLM中文摘要生成,推送到飞书,SQLite去重,单次执行模式。RSS AI 阅读器(免费版)。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 生成中文摘要,"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   RSS AI 阅读器(免费版)。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 生成中文摘要,
   推送到飞书群机器人 Webhook。基于 SQLite 存储实现条目去重,避免重复推送.
   覆盖三大基础能力:Feed 抓取(支持 RSS 2.0 与 Atom 1.0)、LLM 摘要生成(中文输出)、
@@ -24,7 +25,9 @@ tools:
   - exec
 homepage: ""
 category: "Knowledge"
+
 ---
+
 # RSS AI 摘要 LITE
 
 自动抓取 RSS/Atom 订阅源,通过 LLM 生成中文摘要,推送到飞书。基于 SQLite 去重,支持单次执行.

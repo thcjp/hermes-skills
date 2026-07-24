@@ -1,4 +1,5 @@
 ---
+
 slug: miniprogram-dev-tool-free
 name: miniprogram-dev-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 小程序开发工具
 summary: "面向个人开发者的微信小程序开发规范与避坑工具.。面向个人开发者的微信小程序开发规范与避坑工具.。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
-description: '面向个人开发者的微信小程序开发规范与避坑工具.
+description: 面向个人开发者的微信小程序开发规范与避坑工具，可处理提升工作效率
   核心能力:
 
   - 页面/组件结构与配置规范
@@ -35,13 +36,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - 创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 小程序开发工具（免费版）
 
 ## 概述

@@ -1,11 +1,12 @@
 ---
+
 slug: "comfyui-painter"
 name: "comfyui-painter"
 version: 2.0.1
 displayName: "ComfyUI本地画图工作流"
 summary: "本地ComfyUI画图工作流+CivitAI集成,API控制文生图/图生视频,支持模型搜索/下载/自动调参"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   本地 ComfyUI 画图工作流与 CivitAI 模型管理集成客户端。通过 ComfyUI API 在本地 GPU 上生成图片,
   支持文生图与图生视频两种任务类型。集成 CivitAI 模型生态,支持模型搜索、详情查询、推荐参数提取、
   本地模型更新检查与一键下载。内置自动调参引擎,从 CivitAI 样图元数据中提取推荐 Steps/CFG/采样器
@@ -26,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # ComfyUI Painter
 
 通过 ComfyUI API 在本地 GPU 上生成图片,集成 CivitAI 模型管理与自动调参引擎。支持文生图、图生视频、模型搜索下载、推荐参数提取等完整工作流.

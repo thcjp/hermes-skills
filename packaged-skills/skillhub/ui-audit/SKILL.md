@@ -1,11 +1,12 @@
 ---
+
 slug: "ui-audit"
 name: "ui-audit"
 version: 1.0.2
 displayName: "UI Audit"
 summary: "自动化 UI 审计工具，基于 UX 原则评估界面的视觉层级、样式和无障碍性。。ui-audit 是一个自动化 UI 审计技能，基于 Warp-Speed Decisioning 框架评估界面"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   ui-audit 是一个自动化 UI 审计技能，基于 Warp-Speed Decisioning 框架评估界面设计质量.
   支持 3 大支柱（Scaffolding、Decisioning、Crafting）、12 类 UI 模式库、4 级创新光谱和
   结构化审计报告生成。输出包含视觉层级、视觉样式、无障碍性等必检项，以及导航、可用性、
@@ -21,7 +22,9 @@ tags:
   - 前端
   - 设计
 category: "Creative"
+
 ---
+
 # UI Audit
 
 ui-audit 基于 Warp-Speed Decisioning 框架，对界面进行结构化 UX 审计。核心理念是

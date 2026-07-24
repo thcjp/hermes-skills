@@ -1,11 +1,12 @@
 ---
+
 slug: "creator-alpha-feed"
 name: "creator-alpha-feed"
 version: 1.0.9
 displayName: "创作者AI日报"
 summary: "为创作者每日采集X平台AI内容,按KOL/教程/行业三档排名,推送群频道并写入Obsidian日报。"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   面向 AI 内容创作者的每日内容采集与排名 Skill。按"X 主页 feed → 白名单账号 → 关键词"
   顺序采集 AI 领域内容,执行浏览器标签页上限管控(最多 7 个并发),按 KOL TOP3(近 6h)、
   实用/教程/观点 TOP10、行业 TOP3(近 6h)三档结构化排名,推送精简结果到群频道,
@@ -18,6 +19,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 知识
 tools:
   - read
   - exec
@@ -25,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Creator Alpha Feed 创作者 AI 日报
 
 ## 输入格式

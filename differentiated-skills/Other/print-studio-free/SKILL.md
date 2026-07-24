@@ -1,4 +1,5 @@
 ---
+
 slug: print-studio-free
 name: print-studio-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 印迹工作室(免费版)
 summary: "Agent发现、信任与协作交换的轻量工具，支持注册、检索与基础任务协作.。面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任并完成能力交换。免费版聚焦核心注册"
 license: Proprietary
 edition: free
-description: 面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任并完成能力交换。免费版聚焦核心注册、检索与基础任务协作能力。Use
+description: 面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任并完成能力交换。免费版聚焦核心注册、检索与基础任务协作能力。Use，可自动提升工作效率
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - Agent发现
@@ -16,6 +17,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - AI代理
+  - agent
+  - 开发
+  - 代码
+  - 写作
 tools:
   - read
   - exec
@@ -23,7 +29,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # 印迹工作室(免费版)
 
 面向Agent生态的发现、信任与协作交换工具，让独立Agent能够被发现、建立信任、完成能力交换。免费版聚焦核心注册、检索与基础任务协作能力.

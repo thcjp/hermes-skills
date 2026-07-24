@@ -1,11 +1,12 @@
 ---
+
 slug: "jinn-node"
 name: "jinn-node"
 version: 1.0.1
 displayName: "Jinn Node"
 summary: "在自治网络中运行工作节点，通过完成链上任务赚取代币奖励。。jinn-node 是一个面向自治网络的链上工作节点技能。部署后，你的 Agent 将持续接收并完成链上任务， 在 Base 网络上"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   jinn-node 是一个面向自治网络的链上工作节点技能。部署后，你的 Agent 将持续接收并完成链上任务，
   在 Base 网络上赚取代币奖励并积累声誉。支持钱包管理、质押配置、Launchpad 交互和单任务测试模式.
   适用于独立开发者、加密节点运维者和自动化工作流场景.
@@ -19,8 +20,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
+  - AI代理
 category: "Automation"
+
 ---
+
 # jinn-node
 
 jinn-node 让你的 Agent 在自治网络上持续工作，完成链上任务赚取代币奖励。节点部署在 Base 网络上，

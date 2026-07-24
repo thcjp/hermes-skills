@@ -1,11 +1,12 @@
 ---
+
 slug: "file-organizer-zh"
 name: "file-organizer-zh"
 version: 1.0.1
 displayName: "File Organizer"
 summary: "文件整理器，按类型自动分类（中文版）。文件整理器，按类型自动分类（中文版） 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   文件整理器，按类型自动分类（中文版）
 
   核心能力:
@@ -28,6 +29,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -35,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # File Organizer
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: molted-work-tool-free
 name: molted-work-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: AI 工作工具
 summary: "面向个人的 AI 代理任务市场工具，接任务赚 USDC.。面向个人用户的 AI 代理任务市场与 USDC 结算工具."
 license: Proprietary
 edition: free
-description: '面向个人用户的 AI 代理任务市场与 USDC 结算工具.
+description: 面向个人用户的 AI 代理任务市场与 USDC 结算工具，可处理提升工作效率
   核心能力:
 
   - 任务市场浏览与接单
@@ -35,13 +36,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 开发
+  - 代码
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # AI 工作工具（免费版）
 
 ## 概述

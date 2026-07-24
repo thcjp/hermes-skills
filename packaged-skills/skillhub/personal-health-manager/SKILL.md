@@ -1,11 +1,12 @@
 ---
+
 slug: "personal-health-manager"
 name: "personal-health-manager"
 version: 1.0.1
 displayName: "Personal Health Mana"
 summary: "个人健康管理与养生助手,追踪健康数据。Personal health management and wellness assistant。Use when users want to tra"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Personal health management and wellness assistant。Use when users want
   to track health data, get。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 研究
+  - 分析
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Personal Health Mana
 
 ## 付费版专享能力

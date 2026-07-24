@@ -1,11 +1,12 @@
 ---
+
 slug: "anthrovision-telegram-body-scan-free"
 name: "anthrovision-telegram-body-scan-free"
 version: "1.0.0"
 displayName: "Body Scan Basic"
 summary: "在Telegram中运行基础身体扫描流程,提交视频并轮询测量结果。在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具, 轮询状态并输出基础测量结果。基础"
 license: "MIT"
-description: |-
+description: |-，可处理提升工作效率
   在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具,
   轮询状态并输出基础测量结果。基础版覆盖输入校验、扫描提交与状态轮询.
   适用场景:基础体型测量、健身追踪.
@@ -21,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # Anthrovision Telegram Body Scan Free
 
 ## 输入格式

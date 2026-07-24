@@ -1,4 +1,5 @@
 ---
+
 slug: css-toolkit-free
 name: css-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: CSS工具箱(免费版)
 summary: "CSS 常见陷阱速查手册，覆盖层叠上下文、布局陷阱与现代选择器.。CSS 工具箱免费版是一份面向前端开发者的 CSS 常见陷阱速查手册，聚焦层叠上下文、Flexbox/Grid 布局陷阱、现"
 license: Proprietary
 edition: free
-description: CSS 工具箱免费版是一份面向前端开发者的 CSS 常见陷阱速查手册，聚焦层叠上下文、Flexbox/Grid 布局陷阱、现代选择器与响应式设计基础。Use
+description: CSS 工具箱免费版是一份面向前端开发者的 CSS 常见陷阱速查手册，聚焦层叠上下文、Flexbox/Grid 布局陷阱、现代选择器与响应式设计基础。Use，可自动提升工作效率
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - 前端开发
@@ -16,13 +17,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # CSS 工具箱（免费版）
 
 ## 概述

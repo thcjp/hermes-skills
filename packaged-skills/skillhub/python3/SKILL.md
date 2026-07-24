@@ -1,11 +1,12 @@
 ---
+
 slug: "python3"
 name: "python3"
 version: 1.0.1
 displayName: "python"
 summary: "用Python做项目搭建/依赖安装/脚本执行/环境排障。Use Python for practical project setup, dependency install, script"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Use Python for practical project setup, dependency install, script execution,
   and environment tro。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # python
 
 ## 付费版专享能力

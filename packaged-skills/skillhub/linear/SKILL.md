@@ -1,11 +1,12 @@
 ---
+
 slug: "linear"
 name: "linear"
 version: 1.0.1
 displayName: "Linear"
 summary: "查询管理Linear issue/项目/团队工作流。Query and manage Linear issues, projects, and team workflows。核心能力: -"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Query and manage Linear issues, projects, and team workflows。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
@@ -26,6 +27,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 写作
 tools:
   - read
   - exec
@@ -33,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Linear
 
 ## 付费版专享能力

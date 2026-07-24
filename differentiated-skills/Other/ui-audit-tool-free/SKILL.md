@@ -1,4 +1,5 @@
 ---
+
 slug: ui-audit-tool-free
 name: ui-audit-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: UI审计工具免费版
 summary: "基于UX原则的界面审计，评估视觉层级、视觉风格与可访问性，生成结构化审计报告，适合个人设计师.。UI审计工具免费版，面向个人设计师与前端开发者的轻量级界面审计工具。核心能力:"
 license: Proprietary
 edition: free
-description: 'UI审计工具免费版，面向个人设计师与前端开发者的轻量级界面审计工具。核心能力:
+description: UI审计工具免费版，面向个人设计师与前端开发者的轻量级界面审计工具。核心能力:，可生成提升工作效率
 
   - 视觉层级评估（标题、CTA、分组、阅读流）
 
@@ -39,7 +40,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # UI审计工具（免费版）
 
 ## 概述

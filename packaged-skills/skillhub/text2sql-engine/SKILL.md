@@ -1,4 +1,5 @@
 ---
+
 slug: "text2sql-engine"
 name: "text2sql-engine"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "自然语言转SQL专业版"
 summary: "全功能NL2SQL引擎，支持复杂多表查询、性能优化、查询解释与替代方案生成。面向数据工程师与DBA的全功能自然语言转SQL引擎，支持复杂多表关联、窗口函数、查询性能优化与执行计划分析。核心能"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向数据工程师与DBA的全功能自然语言转SQL引擎，支持复杂多表关联、窗口函数、查询性能优化与执行计划分析。核心能力：在免费版基础上新增多表嵌套JOIN、子查询/CTE/窗口函数、查询解释注释、替代方案对比、执行计划分析、索引优化建议、SQL安全审计等高级特性。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - 数据查询
@@ -16,6 +17,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 写作
+  - 电商
+  - AI代理
 tools:
   - read
   - exec
@@ -23,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 自然语言转SQL专业版
 
 ## 付费版专享能力

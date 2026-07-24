@@ -1,4 +1,5 @@
 ---
+
 slug: telegram-agent-comm-free
 name: telegram-agent-comm-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 电报通信助手免费版
 summary: 单 Agent 通过 Telegram 发送消息的轻量规范，支持基础通知与任务汇报，零配置快速上手.
 license: Proprietary
 edition: free
-description: '面向个人开发者与独立创作者的 Telegram 消息发送规范.
+description: 面向个人开发者与独立创作者的 Telegram 消息发送规范，可自动提升工作效率
   核心能力: 单 Agent 身份发送、标准消息格式、任务汇报模板、错误自检.
   适用场景: 个人任务提醒、自动化通知推送、单人工作流汇报.
   差异化: 免费版聚焦单账号通信，去除多角色映射与批量调度，启动门槛低.
@@ -27,7 +28,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # 电报通信助手 免费版
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: "code-dev-toolkit"
 name: "code-dev-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "代码开发工具包专业版"
 summary: "企业级编码工作流,支持多任务编排、团队规范、质量门禁与交付审计。面向团队与企业的高级代码开发工作流工具,在免费版基础上扩展多任务编排、团队规范、质量门禁等能力。核心能力: - 多任务并行编排"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可生成提升工作效率
   面向团队与企业的高级代码开发工作流工具,在免费版基础上扩展多任务编排、团队规范、质量门禁等能力。核心能力:
   - 多任务并行编排与依赖管理
   - 团队编码规范与质量门禁
@@ -41,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # 代码开发工具包专业版
 
 ## 付费版专享能力

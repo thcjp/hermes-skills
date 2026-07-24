@@ -1,11 +1,12 @@
 ---
+
 slug: "css-free"
 name: "css-free"
 version: "1.0.0"
 displayName: "CSS样式引擎(免费版)"
 summary: "现代CSS布局、动画、响应式设计与组件样式生成，支持Flexbox/Grid/Tailwind。免费版"
 license: "MIT"
-description: |-
+description: |-，可生成提升工作效率
   CSS样式与布局辅助引擎（免费版），覆盖现代CSS布局、动画效果、响应式设计与
   组件样式生成。核心能力：
   - 现代CSS布局（Flexbox/Grid/Container Queries）
@@ -22,8 +23,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 创意
+  - 图像
+  - 研究
 category: "Automation"
+
 ---
+
 # CSS样式引擎(免费版)
 
 CSS样式与布局辅助引擎，覆盖现代CSS布局、动画效果、响应式设计与组件样式生成.

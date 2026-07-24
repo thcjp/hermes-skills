@@ -1,11 +1,12 @@
 ---
+
 slug: "typescript"
 name: "typescript"
 version: 1.0.3
 displayName: "TypeScript"
 summary: "写类型安全TypeScript,窄化/推断/严格模式最佳实践。Write type-safe TypeScript with proper narrowing, inference patt"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Write type-safe TypeScript with proper narrowing, inference patterns,
   and strict mode best practi。Use when 用户需要TypeScript相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 安全
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # TypeScript
 
 ## 付费版专享能力

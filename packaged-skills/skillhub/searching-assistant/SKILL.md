@@ -1,11 +1,12 @@
 ---
+
 slug: "searching-assistant"
 name: "searching-assistant"
 version: 0.1.1
 displayName: "Searching Assistant"
 summary: "搜索组组长,把任务拆为独立互补子任务并发搜。You are the leader of searching group (搜索组组长)。Break down the task into in"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   You are the leader of searching group (搜索组组长)。Break down the task into
   independent and complemen。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # Searching Assistant
 
 ## 付费版专享能力

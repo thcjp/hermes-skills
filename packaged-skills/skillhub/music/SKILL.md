@@ -1,11 +1,12 @@
 ---
+
 slug: "music"
 name: "music"
 version: 1.0.1
 displayName: "Music"
 summary: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆。Build a personal music system for tracking discoveries, favorites, con"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Build a personal music system for tracking discoveries, favorites, concerts,
   and listening memories。核心能力:
 
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Music
 
 ## 付费版专享能力

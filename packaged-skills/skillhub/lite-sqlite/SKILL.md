@@ -1,11 +1,12 @@
 ---
+
 slug: "lite-sqlite"
 name: "lite-sqlite"
 version: 1.0.1
 displayName: "Lite Sqlite"
 summary: "SkillHub Agent用的快速轻量本地SQLite,低RAM低存储。Fast lightweight local SQLite database for SkillHub agents"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Fast lightweight local SQLite database for SkillHub agents with minimal
   RAM and storage usage。Us。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 创意
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Lite Sqlite
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "multi-search-engine"
 name: "multi-search-engine"
 version: 2.1.4
 displayName: "Multi Search Engine"
 summary: "多搜索引擎集成,16引擎(7国内+9全球)。Multi search engine integration with 16 engines (7 CN + 9 Global)。核心能力: -"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Multi search engine integration with 16 engines (7 CN + 9 Global)。核心能力:
 
   - 安全工具领域的专业化AI辅助工具
@@ -35,7 +36,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # Multi Search Engine
 
 ## 付费版专享能力

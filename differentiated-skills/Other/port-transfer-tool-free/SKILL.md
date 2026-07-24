@@ -1,4 +1,5 @@
 ---
+
 slug: port-transfer-tool-free
 name: port-transfer-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 工具移植工具
 summary: "面向个人的 MCP工具配置跨环境移植工具，支持导入导出.。面向个人用户的 MCP工具配置跨环境移植工具."
 license: Proprietary
 edition: free
-description: '面向个人用户的 MCP工具配置跨环境移植工具.
+description: 面向个人用户的 MCP工具配置跨环境移植工具，可处理提升工作效率
   核心能力:
 
   - MCP工具配置导出为可移植清单
@@ -35,6 +36,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -42,7 +48,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # 工具移植工具（免费版）
 
 ## 概述

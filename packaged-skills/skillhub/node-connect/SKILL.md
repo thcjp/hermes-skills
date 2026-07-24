@@ -1,11 +1,12 @@
 ---
+
 slug: "node-connect"
 name: "node-connect"
 version: 1.0.1
 displayName: "node-connect"
 summary: "诊断SkillHub节点连接与配对失败(Android/iOS/macOS)。Diagnose SkillHub node connection and pairing failures f"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Diagnose SkillHub node connection and pairing failures for Android,
   iOS, and macOS companion apps。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # node-connect
 
 ## 付费版专享能力

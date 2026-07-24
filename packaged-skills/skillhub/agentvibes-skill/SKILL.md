@@ -1,4 +1,5 @@
 ---
+
 slug: "agentvibes-skill"
 name: "agentvibes-skill"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "AgentVibes语音合成-专业版"
 summary: "企业级TTS工具,支持神经声音、多角色协同、批量导出、背景音乐与音效,适配商业内容生产。。AgentVibes语音合成专业版,面向企业团队与专业内容生产者的高级文本转语音工具。核心能力: -"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   AgentVibes语音合成专业版,面向企业团队与专业内容生产者的高级文本转语音工具。核心能力:
   - 神经声音引擎(Soprano),提供更自然的语音质量
   - 多角色协同播报,适合对话与剧本场景
@@ -38,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+
 ---
+
 # AgentVibes语音合成-专业版
 
 ## 付费版专享能力

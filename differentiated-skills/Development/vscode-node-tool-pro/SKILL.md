@@ -1,4 +1,5 @@
 ---
+
 slug: "vscode-node-tool-pro"
 name: "vscode-node-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "VSCode节点工具(专业版)"
 summary: "面向团队的企业级IDE远程操作平台,含调试、测试、终端、Agent委托与团队协作能力。。VSCode节点工具专业版为团队与企业提供端到端IDE远程操作能力,涵盖调试、测试、终端、Agent委"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   VSCode节点工具专业版为团队与企业提供端到端IDE远程操作能力,涵盖调试、测试、终端、Agent委托、工作区管理与团队协作。核心能力:
   - 调试能力(启动/停止/断点/求值/堆栈/变量)
   - 测试能力(列举/运行/结果)
@@ -40,7 +41,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 # VSCode 节点工具(专业版)
 
 ## 概述

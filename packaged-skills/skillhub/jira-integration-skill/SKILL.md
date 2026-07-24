@@ -1,10 +1,11 @@
 ---
+
 name: "jira-integration-skill"
 slug: "jira-integration-skill"
 displayName: "Jira集成技能"
 version: 1.0.3
 summary: "Jira项目管理集成技能,支持工单创建、状态同步和工作流自动化。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Jira Inte"
-description: |-
+description: |-，可分析提升工作效率
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Jira Integration Skill 核心处理"、Jira Integration Skill 核心处理时使用.
   不适用于需要人工判断的复杂场景.
@@ -19,8 +20,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 集成
+  - integration
+  - AI代理
 category: "Automation"
+
 ---
+
 # Jira Integration Skill 智能分析
 
 ## 付费版专享能力

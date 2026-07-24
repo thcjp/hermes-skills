@@ -1,4 +1,5 @@
 ---
+
 slug: "java-dev-manual"
 name: "java-dev-manual"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Java开发手册专业版"
 summary: "企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。。面向企业级 Java 开发团队的开发规约治理工具，提供团队级规范定制能力。核心能力: - 7 大维度规约的团队级自"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向企业级 Java 开发团队的开发规约治理工具，提供团队级规范定制能力。核心能力:
   - 7 大维度规约的团队级自定义配置
   - 规约合规性自动检查与报告生成
@@ -31,6 +32,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
 tools:
   - read
   - exec
@@ -39,7 +44,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Java开发手册专业版
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "baidu-netdisk-skills"
 name: "baidu-netdisk-skills"
 version: 1.1.6
 displayName: "百度网盘"
 summary: "百度网盘文件管理，限 /apps/bdpan/ 目录，支持上传下载转存分享搜索与记忆备份。。百度网盘文件管理技能，通过 bdpan 命令行工具对百度网盘进行文件操作，所有操作限制在 /app"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   百度网盘文件管理技能，通过 bdpan 命令行工具对百度网盘进行文件操作，所有操作限制在
   /apps/bdpan/ 目录范围内。支持完整的文件生命周期管理与 Agent 记忆备份恢复能力.
   核心能力：
@@ -32,6 +33,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - AI代理
+  - agent
+  - 研究
+  - 分析
+  - 知识
 tools:
   - read
   - exec
@@ -40,7 +46,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 百度网盘
 
 百度网盘文件管理工具，所有操作限制在 `/apps/bdpan/` 目录内。适配 Claude Code、DuClaw、Skill 平台等 Agent 环境.

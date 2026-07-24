@@ -1,4 +1,5 @@
 ---
+
 slug: "git-workflows-paid"
 name: "git-workflows-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Git高级操作专业版"
 summary: "企业级 Git 进阶方案，支持子树子模块、稀疏检出、大型单体仓库与冲突自动记忆。。面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 开发工具
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Git高级操作专业版
 
 ## 付费版专享能力

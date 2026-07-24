@@ -1,11 +1,12 @@
 ---
+
 slug: "data-format-converter"
 name: "data-format-converter"
 version: 1.0.1
 displayName: "数据格式转换器"
 summary: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理。数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换. 核心能力"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换.
   核心能力包括：
   - CSV与JSON互转（支持嵌套结构展开与扁平化）
@@ -30,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
+
 ---
+
 # 数据格式转换器
 
 ## 输入格式

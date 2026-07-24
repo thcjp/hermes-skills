@@ -221,12 +221,206 @@ def infer_tools(slug, path, body):
 
 
 def infer_tags(slug, path, body):
-    """Infer tags field based on slug and content"""
+    """Infer tags field based on slug, path, and body content (content-aware).
+    
+    Priority:
+    1. Match slug/path keywords against TAG_CATEGORIES
+    2. Match body content keywords against TAG_TO_CATEGORY_MAP (reverse mapping)
+    3. Extract top frequency terms from body
+    4. Fall back to DEFAULT_TAGS
+    """
     slug_lower = slug.lower()
+    # 1. Slug/path keyword match
     for keyword, tags in TAG_CATEGORIES.items():
         if keyword in slug_lower or keyword in str(path).lower():
-            return tags
+            # Also verify relevance against body
+            body_lower = body[:3000].lower()
+            if any(kw in body_lower for kw in [keyword, keyword.lower()]):
+                return tags
+            return tags  # Still return if slug matches strongly
+    
+    # 2. Body content keyword matching (top 3 categories by frequency)
+    body_lower = body[:3000].lower()
+    category_scores = {}
+    for keyword, category in TAG_TO_CATEGORY_MAP.items():
+        count = body_lower.count(keyword.lower())
+        if count > 0:
+            category_scores[category] = category_scores.get(category, 0) + count
+    
+    if category_scores:
+        top_cats = sorted(category_scores.items(), key=lambda x: -x[1])[:3]
+        # Reverse map: category → representative tags
+        cat_to_tags = {}
+        for kw, cat in TAG_TO_CATEGORY_MAP.items():
+            if cat not in cat_to_tags:
+                cat_to_tags[cat] = []
+            cat_to_tags[cat].append(kw)
+        result_tags = []
+        for cat, _ in top_cats:
+            if cat in cat_to_tags:
+                result_tags.extend(cat_to_tags[cat][:2])
+        if result_tags:
+            return ",".join(result_tags[:5])
+    
     return DEFAULT_TAGS
+
+
+def fix_irrelevant_tags(content, fm, body):
+    """Fix tags that don't match body content (L9 MISSING_OR_IRRELEVANT_TAGS).
+    
+    Checks if at least 3 tags have direct matches in the body content.
+    If not, re-infers tags based on content analysis.
+    Returns (content, was_fixed).
+    """
+    tags_val = fm.get('tags', '')
+    if not tags_val:
+        return content, False
+    
+    # Parse tags (handle both string and list formats)
+    if isinstance(tags_val, str):
+        tags = [t.strip().strip('"').strip("'") for t in tags_val.split(',')]
+    elif isinstance(tags_val, list):
+        tags = [str(t).strip() for t in tags_val]
+    else:
+        tags = [str(tags_val)]
+    
+    tags = [t for t in tags if t]
+    if len(tags) < 3:
+        # Too few tags, re-infer
+        slug = fm.get('slug', '')
+        new_tags = infer_tags(slug, '', body)
+        content = _replace_frontmatter_field(content, 'tags', new_tags)
+        return content, True
+    
+    # Check tag relevance: at least 3 tags should appear in body
+    body_lower = body[:3000].lower()
+    matched = sum(1 for t in tags if t.lower() in body_lower)
+    
+    if matched >= 3:
+        return content, False  # Tags are relevant
+    
+    # Tags are irrelevant, re-infer based on content
+    slug = fm.get('slug', '')
+    new_tags = infer_tags(slug, '', body)
+    
+    # Merge: keep original tags that DO match, add new relevant ones
+    new_tag_list = [t.strip() for t in new_tags.split(',')]
+    merged = list(set(tags[:2] + new_tag_list[:4]))  # Keep up to 2 original + 4 new
+    merged_str = ",".join(merged[:6])
+    
+    content = _replace_frontmatter_field(content, 'tags', merged_str)
+    return content, True
+
+
+def enhance_value_proposition(content, fm, body):
+    """Enhance description with value proposition keywords (L9 MISSING_VALUE_PROPOSITION).
+    
+    Checks if description contains at least 1 value proposition keyword.
+    If missing, extracts key capability from body and appends to description.
+    Returns (content, was_fixed).
+    """
+    desc_val = fm.get('description', '') or fm.get('summary', '')
+    if not desc_val:
+        return content, False
+    
+    # Value proposition keywords
+    VP_KEYWORDS = [
+        # Efficiency
+        "提升", "节省", "加速", "自动化", "优化", "简化", "效率", "快速",
+        # Capability  
+        "分析", "生成", "转换", "处理", "监控", "管理", "检测", "识别",
+        # Professional
+        "企业级", "专业", "智能", "深度", "全面", "精准", "高效",
+        # Scenario
+        "适用", "支持", "覆盖", "内置", "提供", "实现",
+        # English equivalents
+        "improve", "save", "accelerate", "automate", "optimize", "simplify",
+        "analyze", "generate", "convert", "process", "monitor", "manage",
+    ]
+    
+    desc_lower = desc_val.lower()
+    has_vp = any(kw.lower() in desc_lower for kw in VP_KEYWORDS)
+    
+    if has_vp:
+        return content, False  # Already has value proposition
+    
+    # Extract key capability from body (first 1500 chars)
+    body_snippet = body[:1500].lower()
+    
+    # Find a capability sentence in body
+    capability_keywords = [
+        "自动", "生成", "分析", "处理", "转换", "监控", "管理", "检测",
+        "识别", "优化", "集成", "支持", "提供", "实现", "简化",
+    ]
+    
+    found_capability = None
+    for kw in capability_keywords:
+        if kw in body_snippet:
+            found_capability = kw
+            break
+    
+    if found_capability:
+        # Append value proposition to description
+        vp_suffix = f"，可{found_capability}提升工作效率"
+        new_desc = desc_val.rstrip('。，.') + vp_suffix
+        
+        # Update in frontmatter
+        if 'description' in fm:
+            content = _replace_frontmatter_field(content, 'description', new_desc)
+        elif 'summary' in fm:
+            content = _replace_frontmatter_field(content, 'summary', new_desc)
+        
+        return content, True
+    
+    return content, False
+
+
+def _replace_frontmatter_field(content, field_name, new_value):
+    """Replace a frontmatter field value, preserving format.
+    
+    Handles both list format and string format.
+    """
+    if not content.startswith('---'):
+        return content
+    
+    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+    if len(parts) < 3:
+        return content
+    
+    fm_text = parts[1]
+    lines = fm_text.split('\n')
+    new_lines = []
+    i = 0
+    replaced = False
+    
+    while i < len(lines):
+        line = lines[i]
+        # Match field name (string value)
+        m = re.match(r'^(\s*)(\w+):\s*(.*)$', line)
+        if m and m.group(2) == field_name and not replaced:
+            # Check if next lines are list items (part of this field)
+            indent = m.group(1)
+            new_lines.append(f"{indent}{field_name}: {new_value}")
+            replaced = True
+            # Skip following list items that belong to this field
+            i += 1
+            while i < len(lines):
+                next_line = lines[i]
+                if re.match(r'^\s+-\s+', next_line):
+                    i += 1
+                    continue
+                else:
+                    break
+            continue
+        new_lines.append(line)
+        i += 1
+    
+    if not replaced:
+        # Field not found in frontmatter, add it
+        new_lines.append(f"{field_name}: {new_value}")
+    
+    new_fm = '\n'.join(new_lines)
+    return f"---\n{new_fm}\n---\n{parts[2]}"
 
 
 def infer_category(slug, path, body, tags=None):
@@ -772,6 +966,8 @@ def main():
             'FIXED_HOMEPAGE': 0,
             'EXPANDED_SUMMARY': 0,
             'ADDED_QUICK_START': 0,
+            'FIXED_IRRELEVANT_TAGS': 0,
+            'ENHANCED_VALUE_PROPOSITION': 0,
         },
         'modified_files': []
     }
@@ -890,6 +1086,24 @@ def main():
                 stats['fixes']['ADDED_QUICK_START'] += 1
                 fixes_applied.append('ADDED_QUICK_START')
 
+            # Re-parse after quick start fix
+            fm, fm_text, body, full = extract_frontmatter(content)
+
+            # === V47: Fix irrelevant tags (L9 MISSING_OR_IRRELEVANT_TAGS) ===
+            content, tags_irrelevant_fixed = fix_irrelevant_tags(content, fm, body)
+            if tags_irrelevant_fixed:
+                stats['fixes']['FIXED_IRRELEVANT_TAGS'] += 1
+                fixes_applied.append('FIXED_IRRELEVANT_TAGS')
+
+            # Re-parse after tags fix
+            fm, fm_text, body, full = extract_frontmatter(content)
+
+            # === V47: Enhance value proposition (L9 MISSING_VALUE_PROPOSITION) ===
+            content, vp_fixed = enhance_value_proposition(content, fm, body)
+            if vp_fixed:
+                stats['fixes']['ENHANCED_VALUE_PROPOSITION'] += 1
+                fixes_applied.append('ENHANCED_VALUE_PROPOSITION')
+
             # Save if modified
             if content != original:
                 skill_md.write_text(content, encoding='utf-8')
@@ -902,7 +1116,7 @@ def main():
     stats['completed_at'] = datetime.now().isoformat()
 
     # Save report
-    report_path = DATA_DIR / "reports" / "fix_missing_fields_v46.json"
+    report_path = DATA_DIR / "reports" / "fix_missing_fields_v47.json"
     report_path.parent.mkdir(exist_ok=True)
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)

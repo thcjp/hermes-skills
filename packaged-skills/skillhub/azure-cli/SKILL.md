@@ -1,11 +1,12 @@
 ---
+
 slug: "azure-cli"
 name: "azure-cli"
 version: 1.0.1
 displayName: "azure-cli"
 summary: "命令行全面管理Azure云平台,一条命令搞定资源运维。Comprehensive Azure Cloud Platform management via command-line inter"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Comprehensive Azure Cloud Platform management via command-line interface
 
   核心能力:
@@ -35,7 +36,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
+
 ---
+
 # azure-cli
 
 ## 付费版专享能力

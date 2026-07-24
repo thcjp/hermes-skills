@@ -1,4 +1,5 @@
 ---
+
 slug: tool-toolkit-free
 name: tool-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 工具评估工具免费版
 summary: "提供工具发现、评估框架与工作流设计指引，帮助个人开发者选对工具、避免工具切换综合征.。工具评估工具免费版，面向个人开发者的轻量级工具选择与评估框架。核心能力:"
 license: Proprietary
 edition: free
-description: '工具评估工具免费版，面向个人开发者的轻量级工具选择与评估框架。核心能力:
+description: 工具评估工具免费版，面向个人开发者的轻量级工具选择与评估框架。核心能力:，可自动提升工作效率
 
   - 从问题出发的工具发现方法
 
@@ -33,13 +34,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - 创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 工具评估工具（免费版）
 
 ## 概述

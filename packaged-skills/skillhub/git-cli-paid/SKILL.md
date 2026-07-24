@@ -1,4 +1,5 @@
 ---
+
 slug: "git-cli-paid"
 name: "git-cli-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Git命令行助手专业版"
 summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。。面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作能力。核心能力:
   - Git自动化脚本库
   - 深度仓库诊断与分析
@@ -42,7 +43,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Git命令行助手专业版
 
 ## 付费版专享能力

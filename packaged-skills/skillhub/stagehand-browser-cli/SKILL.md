@@ -1,11 +1,12 @@
 ---
+
 slug: "stagehand-browser-cli"
 name: "stagehand-browser-cli"
 version: 1.0.1
 displayName: "Stagehand Browser Cl"
 summary: "经CLI用自然语言自动化浏览器交互。Automate web browser interactions using natural language via CLI commands。Use"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - Research
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 开发
+  - 代码
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Stagehand Browser Cl
 
 ## 付费版专享能力

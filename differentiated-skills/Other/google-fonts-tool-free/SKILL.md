@@ -1,4 +1,5 @@
 ---
+
 slug: google-fonts-tool-free
 name: google-fonts-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 谷歌字体工具
 summary: "面向个人开发者的 Google Fonts 加载、子集与经典搭配工具.。面向个人开发者的 Google Fonts 性能加载与字体搭配工具。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人开发者的 Google Fonts 性能加载与字体搭配工具。核心能力:
+description: 面向个人开发者的 Google Fonts 性能加载与字体搭配工具。核心能力:，可处理提升工作效率
 
   - display=swap 与 preconnect 最佳加载
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 谷歌字体工具（免费版）
 
 ## 概述

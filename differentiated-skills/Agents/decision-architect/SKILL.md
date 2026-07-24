@@ -1,11 +1,12 @@
 ---
+
 slug: "decision-architect"
 name: "decision-architect"
 version: "2.0.0"
 displayName: "决策架构师"
 summary: "结构化决策支持+认知偏差检测+回顾复盘，避免拍脑袋决策与重复踩坑。。面向AI Agent的结构化决策支持系统，提供决策框架匹配、认知偏差检测、风险画像学习与强制复盘闭环。适用于产品/技术/商"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   面向AI Agent的结构化决策支持系统，提供决策框架匹配、认知偏差检测、风险画像学习与强制复盘闭环。适用于产品/技术/商业/个人重大权衡、高风险irreversible决策、需留痕的团队决策场景，避免拍脑袋、框架错配、不复盘、重复犯同类错误。适用关键词：决策、权衡、选择、should I、怎么办、pros cons、复盘、认知偏差、decision、tradeoff.
 tags:
   - 智能代理
@@ -22,7 +23,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # 决策架构师（Decision Architect）
 
 **不替你做决定，但帮你做更好的决定。** 通过结构化框架匹配、12类认知偏差检测、风险画像学习、强制复盘闭环，让每次决策都留下可复用的经验.

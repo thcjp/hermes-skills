@@ -1,11 +1,12 @@
 ---
+
 slug: "email-gmail-outlook-free"
 name: "email-gmail-outlook-free"
 version: "1.0.0"
 displayName: "Email Free"
 summary: "基于 porteden CLI 读取与搜索 Gmail、Outlook 邮件的基础版。基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook 邮箱邮件,
   支持日期范围筛选、关键词搜索、单封获取。使用 `-jc` 紧凑 JSON 输出降低 token 消耗.
   适用于个人用户邮件快速查阅与基础搜索场景.
@@ -21,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # Email Gmail Outlook Free
 
 使用 `porteden email` 读取与搜索当前活动账号的邮件。免费版支持列表、筛选、搜索、单封获取等只读操作,适合个人邮件快速查阅.

@@ -1,4 +1,5 @@
 ---
+
 slug: "node-connect-paid"
 name: "node-connect-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "节点连接工具(专业版)"
 summary: "全拓扑节点连接诊断,含尾网/公网/远程网关、批量配对、审计日志与自动修复。。节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:
   - 全拓扑支持:同机器/局域网/Tailscale尾网/公网反代/远程网关
   - 批量设备配对与状态管理
@@ -33,6 +34,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 写作
+  - 电商
+  - 研究
 tools:
   - read
   - exec
@@ -40,7 +45,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 节点连接工具(专业版)
 
 ## 付费版专享能力

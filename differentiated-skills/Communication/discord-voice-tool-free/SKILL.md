@@ -1,4 +1,5 @@
 ---
+
 slug: discord-voice-tool-free
 name: discord-voice-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Discord语音工具免费版
 summary: "基础 Discord 语音频道 AI 对话工具,支持加入/离开与本地语音识别合成.。面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:
+description: 面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:，可自动提升工作效率
 
   - 加入/离开 Discord 语音频道
 
@@ -40,7 +41,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # Discord 语音工具(免费版)
 
 ## 概述

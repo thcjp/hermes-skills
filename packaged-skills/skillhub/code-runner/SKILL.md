@@ -1,4 +1,5 @@
 ---
+
 slug: "code-runner"
 name: "code-runner"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "代码执行工具专业版"
 summary: "企业级PTY代码执行,支持批量任务、并发执行、执行审计与CI/CD集成。面向团队与企业的高级代码执行工具,在免费版基础上扩展批量执行、并发管理、执行审计等能力。核心能力: - 批量任务执行与"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队与企业的高级代码执行工具,在免费版基础上扩展批量执行、并发管理、执行审计等能力。核心能力:
   - 批量任务执行与并发管理
   - 执行日志审计与结果追踪
@@ -41,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # 代码执行工具专业版
 
 ## 付费版专享能力

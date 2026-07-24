@@ -1,4 +1,5 @@
 ---
+
 slug: "timer-alert-tool-pro"
 name: "timer-alert-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "定时提醒工具(专业版)"
 summary: "定时提醒全能力版：循环定时、模板库、升级提醒、定时触发与监控面板。。定时提醒工具（专业版）面向团队与企业用户，在免费版基础定时能力之上新增循环定时、提醒模板库、多级升级提醒、指定时间点触发、"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   定时提醒工具（专业版）面向团队与企业用户，在免费版基础定时能力之上新增循环定时、提醒模板库、多级升级提醒、指定时间点触发、实时监控面板与定时器链。支持从简单提醒到复杂定时策略的完整工作流。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - 沟通协作
@@ -18,13 +19,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 通信
+  - 邮件
+  - 运维
+  - 监控
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 定时提醒工具（专业版）
 
 ## 概述

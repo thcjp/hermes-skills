@@ -1,11 +1,12 @@
 ---
+
 slug: "ws-calendar"
 name: "ws-calendar"
 version: 1.0.1
 displayName: "Calendar"
 summary: "Calendar提供创建日程、设置提醒、查看今日/本周安排等核心能力,付费版独享高级功能与批量处理。"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   日程管理。创建日程、设置提醒、查看安排.
   核心能力:
 
@@ -27,6 +28,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 通信
+  - 邮件
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -34,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Calendar
 
 ## 付费版专享能力

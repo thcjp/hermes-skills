@@ -1,4 +1,5 @@
 ---
+
 slug: whatsapp-style-tool-free
 name: whatsapp-style-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: WhatsApp样式工具-免费版
 summary: "WhatsApp消息格式化工具,支持加粗/斜体/删除线等基础样式,确保消息干净美观。WhatsApp样式工具免费版,确保发送到WhatsApp的消息遵循平台专属格式语法。核心能力:"
 license: Proprietary
 edition: free
-description: 'WhatsApp样式工具免费版,确保发送到WhatsApp的消息遵循平台专属格式语法。核心能力:
+description: WhatsApp样式工具免费版,确保发送到WhatsApp的消息遵循平台专属格式语法。核心能力:，可自动提升工作效率
 
   - WhatsApp基础文本样式格式化(加粗/斜体/删除线/等宽体)
 
@@ -44,7 +45,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # WhatsApp样式工具(免费版)
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: "git-workflow-cn-tool-pro"
 name: "git-workflow-cn-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "Git工作流专业版"
 summary: "企业级 Git 工作流方案，支持 Git Flow、团队协作、冲突工具集成与批量分支管理。。面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 开发工具
@@ -20,7 +21,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 # Git 工作流助手（专业版）
 
 ## 概述

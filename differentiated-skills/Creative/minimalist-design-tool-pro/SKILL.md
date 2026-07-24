@@ -1,4 +1,5 @@
 ---
+
 slug: "minimalist-design-tool-pro"
 name: "minimalist-design-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "极简设计系统专业版"
 summary: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,增加完整组件库、多主题切换、设计系统文档自动生成、
   设计审计与CI/CD集成能力。
 tags:
@@ -25,7 +26,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,PRO版增加完整组件库、多主题切换、设计系统文档自动生成、设计审计与CI/CD集成能力,满足企业级设计系统的全面需求。
 
 PRO版完全兼容免费版,可直接继承免费版的设计令牌与Tailwind配置,并在此基础上扩展为完整的设计系统。

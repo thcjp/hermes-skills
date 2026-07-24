@@ -1,4 +1,5 @@
 ---
+
 slug: "remix-auth"
 name: "remix-auth"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Remix认证工具Pro"
 summary: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。。Remix认证工具（专业版）为团队与企业提供Remix平台API的完整Bearer Token认证治理"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Remix认证工具（专业版）为团队与企业提供Remix平台API的完整Bearer Token认证治理方案，覆盖密钥全生命周期管理。核心能力：密钥生成与轮换自动化、团队密钥分发与回收、认证审计日志与异常告警、多环境集中配置、权限精细化策略模板、MCP工具集成认证适配、批量密钥失效与替换。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 集成工具
@@ -15,6 +16,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - 写作
 tools:
   - read
   - exec
@@ -22,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Remix认证工具Pro
 
 ## 付费版专享能力

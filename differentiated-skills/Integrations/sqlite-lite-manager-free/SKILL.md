@@ -16,6 +16,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - AI代理
+  - agent
+  - 写作
 tools:
   - read
   - exec

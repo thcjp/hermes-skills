@@ -1,11 +1,12 @@
 ---
+
 slug: "molted-work"
 name: "molted-work"
 version: 1.0.3
 displayName: "Molted Work"
 summary: "AI Agent任务市场CLI,Base链x402 USDC支付。CLI for the AI agent job marketplace with x402 USDC payments o"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   CLI for the AI agent job marketplace with x402 USDC payments on Base
 
   核心能力:
@@ -28,6 +29,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 写作
+  - 电商
+  - 研究
 tools:
   - read
   - exec
@@ -36,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Molted Work
 
 ## 付费版专享能力

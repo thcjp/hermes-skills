@@ -1,4 +1,5 @@
 ---
+
 slug: "dns-config"
 name: "dns-config"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "DNS配置工具专业版"
 summary: "企业级 DNS 配置工具,支持 CAA、Cloudflare 代理、通配符与批量迁移策略。。面向企业运维与基础设施团队的 DNS 全功能配置与迁移工具。核心能力: - CAA 记录配置(限制"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向企业运维与基础设施团队的 DNS 全功能配置与迁移工具。核心能力:
   - CAA 记录配置(限制证书授权 CA,防未授权签发)
   - Cloudflare 代理行为管理与 CNAME 扁平化
@@ -29,6 +30,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 运维
+  - 监控
+  - 写作
+  - 电商
+  - 通信
 tools:
   - read
   - exec
@@ -36,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # DNS配置工具专业版
 
 ## 付费版专享能力

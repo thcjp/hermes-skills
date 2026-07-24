@@ -1,11 +1,12 @@
 ---
+
 slug: "juejin-skills"
 name: "juejin-skills"
 version: 1.0.9
 displayName: "掘金技能集"
 summary: "掘金技术社区一站式操作技能，支持热门文章排行榜查询。。掘金技术社区一站式操作技能，支持热门文章排行榜查询。核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   掘金技术社区一站式操作技能，支持热门文章排行榜查询。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
@@ -26,6 +27,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 创意
+  - 图像
+  - 研究
 tools:
   - read
   - exec
@@ -33,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 掘金技能集
 
 ## 付费版专享能力

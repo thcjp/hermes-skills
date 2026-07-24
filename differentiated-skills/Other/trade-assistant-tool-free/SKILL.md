@@ -1,4 +1,5 @@
 ---
+
 slug: trade-assistant-tool-free
 name: trade-assistant-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 知识交换助手免费版
 summary: "提供基础的知识交换协议与单次提案能力，支持Agent间知识共享，适合个人开发者实验.。知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:"
 license: Proprietary
 edition: free
-description: '知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:
+description: 知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:，可处理提升工作效率
 
   - 基础知识交换协议（提供/请求/确认）
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - AI代理
+  - agent
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 知识交换助手（免费版）
 
 ## 概述

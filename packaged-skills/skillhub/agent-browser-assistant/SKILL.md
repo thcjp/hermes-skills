@@ -1,10 +1,11 @@
 ---
+
 name: "Agent Browser Assistant 核心处理"
 slug: "agent-browser-assistant"
 displayName: "浏览器代理助手"
 version: 0.1.1
 summary: "AI浏览器代理助手,自动化网页交互与数据采集,支持复杂页面操作流程。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Agent B"
-description: |-
+description: |-，可自动提升工作效率
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Agent Browser Assistant 智能分析"、Agent Browser Assistant 智能分析时使用.
   不适用于需要人工判断的复杂场景.
@@ -22,7 +23,9 @@ tags:
   - 自动化
   - 智能
 category: "Agents"
+
 ---
+
 # Agent Browser Assistant 批量处理
 
 ## 付费版专享能力

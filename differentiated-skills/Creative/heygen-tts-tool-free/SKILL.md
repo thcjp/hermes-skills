@@ -1,4 +1,5 @@
 ---
+
 slug: heygen-tts-tool-free
 name: heygen-tts-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: HeyGen TTS免费版
 summary: 基于HeyGen Starfish模型的文字转语音工具,支持多语言语音合成与基础语速控制,适合个人使用.
 license: Proprietary
 edition: free
-description: '面向个人用户的 HeyGen 文字转语音工具(免费版)。核心能力:
+description: 面向个人用户的 HeyGen 文字转语音工具(免费版)。核心能力:，可自动提升工作效率
 
   - 基于 HeyGen Starfish TTS 模型的语音合成
 
@@ -22,13 +23,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 创意
+  - 图像
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # HeyGen TTS 工具 - 免费版
 
 ## 概述

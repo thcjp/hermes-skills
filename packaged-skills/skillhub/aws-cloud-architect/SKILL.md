@@ -1,11 +1,12 @@
 ---
+
 slug: "aws-cloud-architect"
 name: "aws-cloud-architect"
 version: 1.0.1
 displayName: "AWS 云架构师"
 summary: "AWS 架构设计、成本优化、安全加固与迁移部署全流程助手。资深 AWS 云架构师助手,覆盖架构设计、服务选型、成本优化、安全加固、 性能调优与迁移部署全流程。遵循 Well-Architec"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   资深 AWS 云架构师助手,覆盖架构设计、服务选型、成本优化、安全加固、
   性能调优与迁移部署全流程。遵循 Well-Architected Framework 原则,
   提供 6Rs 迁移框架、零信任安全设计、FinOps 成本治理实践.
@@ -27,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
+
 ---
+
 # AWS 云架构师
 
 资深 AWS 云架构师,专注架构设计、成本优化、安全加固与运维卓越。遵循 Well-Architected Framework 原则.

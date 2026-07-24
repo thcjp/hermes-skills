@@ -1,4 +1,5 @@
 ---
+
 slug: security-toolkit-pro
 name: security-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Agent安全工具箱(专业版)
 summary: "企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - 24条规则+自定义规则安全扫描引擎
 
@@ -49,7 +50,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+
 ---
+
 # Agent安全工具箱(专业版)
 ## 概述
 Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理平台。在免费版24条静态扫描规则基础上,增加了运行时行动安全评估、8项自动化安全巡检、Skill信任注册表、6维度健康评分与可视化HTML报告等企业级功能。支持3级保护策略(strict/balanced/permissive),全面保障企业AI Agent生态安全。与免费版完全兼容,扫描规则和报告格式可无缝复用.

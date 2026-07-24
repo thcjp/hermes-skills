@@ -1,4 +1,5 @@
 ---
+
 slug: azure-agent-framework-tool-free
 name: azure-agent-framework-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Azure智能体框架工具-免费版
 summary: "基于Azure AI Foundry构建持久化智能体,支持函数工具、托管工具与会话线程。文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK"
 license: Proprietary
 edition: free
-description: '文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry
+description: 文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry，可处理提升工作效率
   上
 
   构建持久化智能体,支持函数工具、托管工具(代码解释器/文件搜索/Web搜索)与会话线程。核心能力:
@@ -41,7 +42,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # Azure智能体框架工具(免费版)
 
 ## 概述

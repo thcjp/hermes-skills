@@ -1,11 +1,12 @@
 ---
+
 slug: "ai-podcast-free"
 name: "ai-podcast-free"
 version: 1.0.1
 displayName: "AI播客生成(免费版)"
 summary: "将文本内容转化为双主持人对话播客的基础工具。基于MagicPodcast API将纯文本内容转化为双主持人对话式播客. 支持多语言生成，返回可分享的播客链接。适用于个人用户快速 将文字内容转"
 license: "MIT"
-description: |-
+description: |-，可生成提升工作效率
   基于MagicPodcast API将纯文本内容转化为双主持人对话式播客.
   支持多语言生成，返回可分享的播客链接。适用于个人用户快速
   将文字内容转为音频场景.
@@ -20,7 +21,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # AI播客生成(免费版) - 文本转对话式播客
 
 ## 输入格式

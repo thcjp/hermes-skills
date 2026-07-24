@@ -1,4 +1,5 @@
 ---
+
 slug: skill-vetter-tool-free
 name: skill-vetter-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Skill安全审查(免费版)
 summary: "安装前安全审查协议,含红旗检测、权限评估与风险分级,保障Agent生态安全,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - 4步安全审查协议(来源/代码/权限/风险)
 
@@ -49,7 +50,9 @@ tools:
   - exec
 homepage: ""
 category: "Security"
+
 ---
+
 # Skill安全审查(免费版)
 
 ## 概述

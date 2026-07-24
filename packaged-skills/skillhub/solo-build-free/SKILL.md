@@ -1,11 +1,12 @@
 ---
+
 slug: "solo-build-free"
 name: "solo-build-free"
 version: "1.0.0"
 displayName: "构建执行引擎(免费版)"
 summary: "执行实现计划任务,TDD工作流,自动提交,阶段门检查,进度跟踪。(免费版)。执行实现计划任务的引擎:轨道选择、上下文加载、任务恢复、 TDD工作流、集成测试、阶段门检查、错误处理与进度跟踪。"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   执行实现计划任务的引擎:轨道选择、上下文加载、任务恢复、
   TDD工作流、集成测试、阶段门检查、错误处理与进度跟踪。覆盖
   Python/JS-TS/iOS/Android多栈质量工具与理性化防护。适用于
@@ -21,7 +22,9 @@ tags:
   - 前端
   - 设计
 category: "Creative"
+
 ---
+
 # 构建执行引擎(免费版)
 
 执行实现计划中的任务,采用TDD工作流、自动提交与阶段门检查。从 `plan.md` 选取下一个未完成任务,实现、提交、更新进度,直至全部完成.

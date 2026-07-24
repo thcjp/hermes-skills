@@ -1,4 +1,5 @@
 ---
+
 slug: "linear-workflow-skill"
 name: "linear-workflow-skill"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Linear工作流(专业版)"
 summary: "全功能Linear工作流工具，支持冲刺规划、依赖链管理、批量操作与迭代报告。Linear工作流(专业版)是面向敏捷团队的全功能工作流管理工具，在免费版基础上新增冲刺规划自动化、依赖链管理、批"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Linear工作流(专业版)是面向敏捷团队的全功能工作流管理工具，在免费版基础上新增冲刺规划自动化、依赖链管理、批量操作与迭代报告等高级能力。核心能力：
   - 完整的问题管理、团队查询与项目管理能力
   - 冲刺规划自动化，智能创建迭代问题与分配
@@ -28,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Linear工作流(专业版)
 
 ## 付费版专享能力

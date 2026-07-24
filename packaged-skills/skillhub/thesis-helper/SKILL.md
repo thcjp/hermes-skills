@@ -1,17 +1,22 @@
 ---
+
 slug: "thesis-helper"
 name: "thesis-helper"
 version: 2.0.1
 displayName: "Thesis Helper"
 summary: "论文写作助手。论文大纲生成、文献综述框架、摘要生成、引用格式转换、格式规范检查、答辩准备。Thesis helper with outline generation,"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   论文写作助手。论文大纲生成、文献综述框架、摘要生成、引用格式转换、格式规范检查、答辩准备。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Research
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -19,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Thesis Helper
 
 ## 付费版专享能力

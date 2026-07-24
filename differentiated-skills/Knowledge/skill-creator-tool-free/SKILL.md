@@ -1,4 +1,5 @@
 ---
+
 slug: skill-creator-tool-free
 name: skill-creator-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Skill创建工具（免费版）
 summary: "{description} - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
-description: 'Skill创建工具 - （免费版）
+description: Skill创建工具 - （免费版），可生成提升工作效率
 
   核心能力: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 写作
+  - 电商
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Skill创建工具（免费版）
 
 ## 概述

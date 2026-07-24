@@ -1,4 +1,5 @@
 ---
+
 slug: translate-toolkit-free
 name: translate-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 翻译工具免费版
 summary: "格式保留术语一致的文本翻译,模板标记保护不误译,多语言处理,免费个人用。翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:"
 license: Proprietary
 edition: free
-description: '翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:
+description: 翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:，可自动提升工作效率
 
   - 格式保留翻译（代码块、HTML、Markdown 结构不变）
 
@@ -38,7 +39,9 @@ tools:
   - write
 homepage: ""
 category: "Knowledge"
+
 ---
+
 # 翻译工具（免费版）
 
 ## 概述

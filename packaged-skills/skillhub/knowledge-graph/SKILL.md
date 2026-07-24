@@ -1,11 +1,12 @@
 ---
+
 slug: "knowledge-graph"
 name: "knowledge-graph"
 version: 1.0.1
 displayName: "Knowledge Graph"
 summary: "维护SkillHub复利知识图谱,增删与替代原子笔记。Maintain SkillHub's compounding knowledge graph under life/areas/**"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Maintain SkillHub's compounding knowledge graph under life/areas/**
   by adding/superseding atomic 
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 知识
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Knowledge Graph
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "t-trading"
 name: "t-trading"
 version: 1.0.1
 displayName: "T Trading"
 summary: "基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。。基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。核心能力: - 金融工具领域的专业化"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。核心能力:
 
   - 金融工具领域的专业化AI辅助工具
@@ -26,6 +27,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
 tools:
   - read
   - exec
@@ -33,7 +38,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # T Trading
 
 ## 付费版专享能力

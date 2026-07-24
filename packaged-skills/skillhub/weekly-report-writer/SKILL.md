@@ -1,17 +1,22 @@
 ---
+
 slug: "weekly-report-writer"
 name: "weekly-report-writer"
 version: 1.0.1
 displayName: "weekly-report-writer"
 summary: "用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Productivity
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -19,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # weekly-report-writer
 
 ## 付费版专享能力

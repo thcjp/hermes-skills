@@ -1,11 +1,12 @@
 ---
+
 slug: "news-sentiment-scan-free"
 name: "news-sentiment-scan-free"
 version: "1.0.0"
 displayName: "News Sentiment免费版"
 summary: "扫描港股/美股/A股的公司公告与新闻报道,去噪后按-10至+10打分,输出情绪温度计与重大事件清单的基础舆情分析。"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   舆情监控与情绪分析技能免费版,扫描港股、美股、A股的公司公告与新闻报道,去噪后进行情绪打分(-10至+10),输出情绪温度计与重大事件清单。免费版聚焦基础信源采集与情绪评分,适合个人投资者快速了解个股舆情方向。券商研报深度加权、社交媒体(微博、雪球)采集、多标的横向对比等高级能力见付费版。基于Python脚本执行,通过自然语言指令驱动Agent完成任务.
 tags:
   - 通用办公
@@ -19,7 +20,9 @@ tools:
   - exec
 homepage: ""
 category: "Knowledge"
+
 ---
+
 # News Sentiment Scan 免费版
 
 舆情监控与情绪分析技能免费版,扫描公司公告与新闻报道并进行情绪打分。覆盖港股、美股、A股市场,经去噪处理后输出情绪温度计与重大事件清单,辅助快速判断个股舆情方向.

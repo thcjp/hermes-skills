@@ -1,11 +1,12 @@
 ---
+
 slug: "data-analysis-toolkit"
 name: "data-analysis-toolkit"
 version: "1.0.1"
 displayName: "Python Data Analysis"
 summary: "提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。。提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析. 核心能力:数据清洗"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析.
   核心能力:数据清洗预处理、统计分析支持、数据可视化建议、常见分析模式指导.
   适用场景:业务数据分析、科研数据处理、报表生成辅助、数据探索性分析.
@@ -21,7 +22,9 @@ tools:
   - glob
 homepage: ""
 category: "Research"
+
 ---
+
 # Python Data Analysis
 
 ## 核心能力

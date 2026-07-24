@@ -1,4 +1,5 @@
 ---
+
 slug: "photo-caption"
 name: "photo-caption"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "照片配文工具专业版"
 summary: "全平台照片配文生成工具,支持13个社交平台,提供批量配文、品牌风格定制与编辑分析能力。。照片配文工具专业版,面向专业摄影师与内容创作者提供 13 个社交平台的配文生成能力,支持批量处理、品牌"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   照片配文工具专业版,面向专业摄影师与内容创作者提供 13 个社交平台的配文生成能力,支持批量处理、品牌风格定制与照片编辑分析。核心能力:
   - 13 个平台全覆盖(Instagram/Flickr/X/Glass/Tumblr/Bluesky/Threads/500px/Reddit/Facebook/VSCO/Substack/Pinterest)
   - 批量照片配文生成
@@ -26,6 +27,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 知识
+  - 文档
+  - 写作
 tools:
   - read
   - exec
@@ -33,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 照片配文工具专业版
 
 ## 付费版专享能力

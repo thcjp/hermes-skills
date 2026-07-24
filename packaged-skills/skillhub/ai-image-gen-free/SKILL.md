@@ -1,11 +1,12 @@
 ---
+
 slug: "ai-image-gen-free"
 name: "ai-image-gen-free"
 version: 1.0.1
 displayName: "AI图像生成基础版"
 summary: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。。AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成"
 license: "MIT"
-description: |-
+description: |-，可生成提升工作效率
   AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成文本生成图像.
   核心能力:
   - 文生图: 文本提示词生成图像,支持主体/场景/光线/风格/色调描述
@@ -27,7 +28,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # AI Image Gen LITE
 
 AI 图像生成基础版,通过执行 `（请参考skill目录中的脚本文件）` 调用 Gemini Flash Image API 生成图片。仅支持文本生成图像(文生图),覆盖标准与 2K 两档分辨率、10 种画面比例.

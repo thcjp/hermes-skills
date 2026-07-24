@@ -1,4 +1,5 @@
 ---
+
 slug: board-art-tool-free
 name: board-art-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 画板艺术工具
 summary: "面向个人的协作画布艺术发布工具，支持像素画作. - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
-description: '面向个人用户的协作画布艺术发布工具.
+description: 面向个人用户的协作画布艺术发布工具，可处理提升工作效率
   核心能力:
 
   - 像素画作发布到共享画布
@@ -35,13 +36,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 研究
+  - 分析
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 画板艺术工具（免费版）
 
 ## 概述

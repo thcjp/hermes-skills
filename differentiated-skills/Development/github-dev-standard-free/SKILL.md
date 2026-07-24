@@ -1,4 +1,5 @@
 ---
+
 slug: github-dev-standard-free
 name: github-dev-standard-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 项目开发标准免费版
 summary: "个人开发者项目开发标准流程，含 9 步开发流程与基础验收清单.。面向独立开发者的项目开发标准化工具，通过结构化流程约束代码质量。核心能力:"
 license: Proprietary
 edition: free
-description: '面向独立开发者的项目开发标准化工具，通过结构化流程约束代码质量。核心能力:
+description: 面向独立开发者的项目开发标准化工具，通过结构化流程约束代码质量。核心能力:，可处理提升工作效率
 
   - 9 步开发流程（读需求→写任务卡→编码→验证→发布）
 
@@ -38,7 +39,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 # 项目开发标准（免费版）
 
 ## 概述

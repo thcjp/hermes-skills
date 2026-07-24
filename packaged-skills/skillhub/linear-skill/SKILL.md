@@ -1,11 +1,12 @@
 ---
+
 slug: "linear-skill"
 name: "linear-skill"
 version: 1.0.1
 displayName: "Linear"
 summary: "经内置Node CLI与Linear API管项目/issue/任务。Manage Linear projects, issues, and tasks via the bundled No"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Manage Linear projects, issues, and tasks via the bundled Node CLI and
   the official Linear API。U。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Linear
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "write-a-skill"
 name: "write-a-skill"
 version: 202.0.21
 displayName: "技能创建工具"
 summary: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分。AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件 拆分。技能描述不超过1024字符，SKILL.md"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件
   拆分。技能描述不超过1024字符，SKILL.md不超过100行，超过500行时拆分到
   REFERENCE.md和EXAMPLES.md。引用文件最多1层深度。适用于独立开发者、
@@ -21,8 +22,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 category: "Automation"
+
 ---
+
 # 技能创建工具
 
 创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分.

@@ -1,11 +1,12 @@
 ---
+
 slug: "database-admin"
 name: "database-admin"
 version: 2.0.1
 displayName: "数据库管理专家"
 summary: "表结构设计、批量数据操作、查询优化、类型处理与事务安全的全面数据库管理服务。数据库管理专家——提供全面的数据库管理功能，包括表结构创建、数据操作、查询优化、类型处理等. 核心能力包括： -"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   数据库管理专家——提供全面的数据库管理功能，包括表结构创建、数据操作、查询优化、类型处理等.
   核心能力包括：
   - 表结构设计（主键、索引、外键约束、检查约束、NULL与默认值策略）
@@ -30,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
+
 ---
+
 # 数据库管理专家
 
 ## 输入格式

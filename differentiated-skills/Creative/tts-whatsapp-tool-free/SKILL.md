@@ -1,4 +1,5 @@
 ---
+
 slug: tts-whatsapp-tool-free
 name: tts-whatsapp-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: WhatsApp语音消息免费版
 summary: 基于 Piper TTS 的 WhatsApp 语音消息发送工具,支持 40+ 语言,适合个人用户发送语音消息.
 license: Proprietary
 edition: free
-description: '面向个人用户的 WhatsApp 语音消息工具(免费版)。核心能力:
+description: 面向个人用户的 WhatsApp 语音消息工具(免费版)。核心能力:，可自动提升工作效率
 
   - 基于 Piper TTS 的高质量语音合成(40+ 语言)
 
@@ -49,7 +50,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # WhatsApp 语音消息工具 - 免费版
 
 ## 概述

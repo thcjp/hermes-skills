@@ -1,4 +1,5 @@
 ---
+
 slug: rust-toolkit-free
 name: rust-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: Rust工具包-免费版
 summary: "Rust开发优选实践助手,避免所有权、借用与生命周期常见陷阱,适合个人学习。Rust 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:"
 license: Proprietary
 edition: free
-description: 'Rust 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:
+description: Rust 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:，可自动提升工作效率
 
   - 所有权与借用陷阱检测
 
@@ -41,13 +42,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 知识
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Rust 工具包 - 免费版
 
 ## 概述

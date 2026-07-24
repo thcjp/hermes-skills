@@ -1,11 +1,12 @@
 ---
+
 slug: "smart-auto-updater"
 name: "smart-auto-updater"
 version: 1.0.1
 displayName: "Smart Auto Updater"
 summary: "AI驱动影响评估的智能自动更新器,查更新/析变更。Smart auto-updater with AI-powered impact assessment。Checks updates, a"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Smart auto-updater with AI-powered impact assessment。Checks updates,
   analyzes changes, evaluates。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Smart Auto Updater
 
 ## 付费版专享能力

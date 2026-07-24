@@ -1,4 +1,5 @@
 ---
+
 slug: "notion-api-toolkit"
 name: "notion-api-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Notion API工具箱(专业版)"
 summary: "企业级Notion API集成平台,支持多连接管理、批量操作、Webhook订阅、自动分页与审计日志,适合团队与企业规模化使用。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Notion API工具箱(专业版)是面向团队与企业的全功能Notion集成Skill,在免费版基础上新增多连接管理、批量操作、Webhook订阅、自动分页、高级筛选、审计日志等高级能力。核心能力:
 
   - 多连接管理,同时操作多个Notion账户
@@ -31,7 +32,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Notion API工具箱(专业版)
 
 ## 付费版专享能力

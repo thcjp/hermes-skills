@@ -1,4 +1,5 @@
 ---
+
 slug: html-toolkit-free
 name: html-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: HTML 工具箱
 summary: "面向个人开发者的 HTML 常见坑规避工具，覆盖可访问性与表单.。面向个人开发者的 HTML 常见错误规避工具。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人开发者的 HTML 常见错误规避工具。核心能力:
+description: 面向个人开发者的 HTML 常见错误规避工具。核心能力:，可处理提升工作效率
 
   - 布局抖动预防与表单陷阱规避
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 通信
+  - 邮件
+  - 研究
+  - 分析
+  - 安全
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # HTML 工具箱（免费版）
 
 ## 概述

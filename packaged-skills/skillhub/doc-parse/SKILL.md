@@ -1,4 +1,5 @@
 ---
+
 slug: "doc-parse"
 name: "doc-parse"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "文档解析工具（专业版）"
 summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。。文档解析工具 - （专业版） 核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document par"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可生成提升工作效率
   文档解析工具 - （专业版）
 
   核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document parse, 结构化提取, 图片识别
@@ -22,6 +23,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 开发
+  - 代码
+  - 研究
 tools:
   - read
   - exec
@@ -29,7 +35,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 文档解析工具（专业版）
 
 ## 付费版专享能力

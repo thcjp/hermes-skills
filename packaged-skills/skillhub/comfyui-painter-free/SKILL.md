@@ -1,11 +1,12 @@
 ---
+
 slug: "comfyui-painter-free"
 name: "comfyui-painter-free"
 version: 1.0.1
 displayName: "ComfyUI画图基础版"
 summary: "ComfyUI基础画图,支持文生图与本地模型管理,手动调参,不含CivitAI集成。ComfyUI 本地画图基础客户端（免费版）。通过 ComfyUI API 在本地 GPU 上生成图片,"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   ComfyUI 本地画图基础客户端（免费版）。通过 ComfyUI API 在本地 GPU 上生成图片,
   支持文生图任务与基础参数控制。提供 ComfyUI 启动/关闭/状态检查与空闲自动关闭功能.
   内置 3 种基础模型别名覆盖动漫与写实风格。用户需手动指定 Steps/CFG/采样器等参数.
@@ -24,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # ComfyUI Painter LITE
 
 ComfyUI 基础版,通过 ComfyUI API 在本地 GPU 上生成图片。支持文生图任务与手动参数控制,内置 3 种基础模型别名.

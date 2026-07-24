@@ -1,4 +1,5 @@
 ---
+
 slug: "github-manager"
 name: "github-manager"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "GitHub管理器(专业版)"
 summary: "全功能GitHub管理工具,含批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理,适合团队企业级协作。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   GitHub管理器(专业版)是企业级GitHub协作管理工具,在免费版基础查询能力上,扩展批量操作、GraphQL高级查询、自动化工作流、团队仪表盘与Webhook管理等高级能力。核心能力:
   - 批量Issue/PR操作: 批量关闭、打标签、分配负责人、迁移
   - GraphQL高级查询: 复杂关联查询、跨仓库聚合、深度分页
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # GitHub管理器(专业版)
 
 ## 付费版专享能力

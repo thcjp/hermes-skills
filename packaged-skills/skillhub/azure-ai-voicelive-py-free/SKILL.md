@@ -1,11 +1,12 @@
 ---
+
 slug: "azure-ai-voicelive-py-free"
 name: "azure-ai-voicelive-py-free"
 version: "1.0.0"
 displayName: "Azure实时语音AI免费版"
 summary: "Azure VoiceLive SDK基础实时语音对话能力,支持API Key认证、流式音频与文字转写。"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   Azure VoiceLive SDK基础版技能,提供WebSocket双向连接、API Key认证、
   pcm16音频流式输入输出与文字转写能力。适用于快速验证语音对话效果、
   构建简单语音助手原型。仅支持OpenAI系列音色与服务端VAD,不包含
@@ -23,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # Azure VoiceLive 实时语音AI (免费版)
 
 ## 输入格式

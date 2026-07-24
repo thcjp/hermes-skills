@@ -1,11 +1,12 @@
 ---
+
 slug: "memory-scan"
 name: "memory-scan"
 version: 1.0.1
 displayName: "记忆安全扫描"
 summary: "扫描AI Agent记忆文件与工作区配置，检测恶意内容、凭证泄漏与注入攻击。面向AI Agent记忆文件与工作区配置的安全扫描工具，检测恶意指令、Prompt注入、凭证泄漏、数据外泄、护栏绕"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   面向AI Agent记忆文件与工作区配置的安全扫描工具，检测恶意指令、Prompt注入、凭证泄漏、数据外泄、护栏绕过、行为操纵、权限提升七大威胁类别.
   提供五级安全分级、本地模式与可选远程LLM分析、隔离与恢复、定时监控集成、心跳任务集成五大核心能力.
   适用于Agent记忆日常安全审计、凭证泄漏排查、引入外部数据后安全检查、多Agent协作前信任验证等场景.
@@ -21,7 +22,9 @@ tags:
   - 上下文
   - AI
 category: "Agents"
+
 ---
+
 # 记忆安全扫描（Memory Scan）
 
 面向 AI Agent 记忆文件与工作区配置的**安全扫描工具**，对 MEMORY.md、每日日志、工作区配置文件进行安全审计，检测恶意内容、凭证泄漏与注入攻击，保障Agent运行安全.

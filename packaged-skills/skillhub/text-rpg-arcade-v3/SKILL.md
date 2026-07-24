@@ -1,11 +1,12 @@
 ---
+
 slug: "text-rpg-arcade-v3"
 name: "text-rpg-arcade-v3"
 version: "1.0.1"
 displayName: "Text Game Arcade Uni"
 summary: "综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights..."
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   综合性 ASCII 文字游戏大厅。严格按规则渲染和裁判五子棋、围棋、井字棋、黑白棋、四子棋、海战棋、
   中国象棋、国际象棋、扫雷、数独、2048、推箱子、文字迷宫，以及接龙、猜词、猜数、Lights Out 等游戏.
 tags:
@@ -13,13 +14,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 生活
+  - 健康
+  - 工作流
+  - 创意
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
+
 ---
+
 # Text Game Arcade Uni
 
 ## 核心能力

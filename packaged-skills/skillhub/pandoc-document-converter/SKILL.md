@@ -1,10 +1,11 @@
 ---
+
 name: "Pandoc Document Converter 核心处理"
 slug: "pandoc-document-converter"
 displayName: "Pandoc文档转换"
 version: 0.1.1
 summary: "使用Pandoc进行多格式文档转换,支持Markdown、HTML、PDF、Word等格式互转。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use wh"
-description: |-
+description: |-，可自动提升工作效率
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Pandoc Document Converter 智能分析"、Pandoc Document Converter 智能分析时使用.
   不适用于需要人工判断的复杂场景.
@@ -19,7 +20,9 @@ tags:
   - 工具
   - 效率
 category: "Knowledge"
+
 ---
+
 # Pandoc Document Converter 批量处理
 
 ## 付费版专享能力

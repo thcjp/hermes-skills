@@ -1,11 +1,12 @@
 ---
+
 slug: "telegram-chat-manager"
 name: "telegram-chat-manager"
 version: 0.1.1
 displayName: "SkillHub Telegram Ch"
 summary: "启用Telegram跨实例聊天/用户提及/个人bot设置。Enable Telegram cross-instance chat, user mention, and personal bo"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Enable Telegram cross-instance chat, user mention, and personal bot
   setup for seamless communicat。Use when 用户需要Openclaw Telegram Ch相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # SkillHub Telegram Ch
 
 ## 付费版专享能力

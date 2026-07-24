@@ -1,11 +1,12 @@
 ---
+
 slug: "aws-graph-agent-free"
 name: "aws-graph-agent-free"
 version: "1.0.0"
 displayName: "AWS Graph LITE"
 summary: "Bedrock AgentCore与LangGraph基础代理编排,提供StateGraph状态图与容器部署能力。"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   AWS Bedrock AgentCore与LangGraph基础代理编排工具（免费版）。提供StateGraph状态图编排与
   AgentCore Runtime容器部署两大基础能力。支持 tools_condition 自动路由与 ToolNode 工具执行器，
   可将代理封装为 8080 端口 HTTP 服务.
@@ -23,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # AWS Graph LITE
 
 基于 AWS Bedrock AgentCore 与 LangGraph 的基础代理编排工具。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务.

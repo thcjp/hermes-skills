@@ -1,11 +1,12 @@
 ---
+
 slug: ecommerce-pricing-strategist
 name: ecommerce-pricing-strategist
 version: 1.0.1
 displayName: "电商定价策略师"
 summary: "AI分析市场数据智能定价,多策略配置+动态调价+利润最大化。电商定价策略师是一款AI驱动的电商定价决策工具. 支持市场数据多维分析、5种定价策略智能推荐、多平台价格监控与利润最大化测算. 核"
 license: Proprietary
-description: |-
+description: |-，可自动提升工作效率
   电商定价策略师是一款AI驱动的电商定价决策工具.
   支持市场数据多维分析、5种定价策略智能推荐、多平台价格监控与利润最大化测算.
   核心能力:
@@ -22,12 +23,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 运维
+  - 监控
+  - 写作
 tools:
   - read
   - exec
   - write
 category: "Automation"
+
 ---
+
 # 电商定价策略师
 
 AI驱动的电商定价策略工具,分析市场数据智能定价,支持5种定价策略、多平台价格监控、动态调价建议、利润最大化测算.

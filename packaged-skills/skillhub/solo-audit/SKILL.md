@@ -1,11 +1,12 @@
 ---
+
 slug: "solo-audit"
 name: "solo-audit"
 version: 1.4.2
 displayName: "Audit"
 summary: "知识库健康检查,断链/缺frontmatter/标签不一致/封面。Health check knowledge base for broken links, missing frontmat"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Health check knowledge base for broken links, missing frontmatter, tag
   inconsistencies, and cover。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Audit
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "pandoc-converter"
 name: "pandoc-convert-openclaw"
 version: "0.1.0"
 displayName: "Pandoc Convert"
 summary: "用pandoc CLI在40+格式间转文档,Markdown/Word/PDF/HTML。Convert documents between 40+ formats using pandoc"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Convert documents between 40+ formats using pandoc CLI。Handles Markdown
   ↔ Word ↔ PDF ↔ HTML ↔ La。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 工作流
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Pandoc Convert
 
 ## 付费版专享能力

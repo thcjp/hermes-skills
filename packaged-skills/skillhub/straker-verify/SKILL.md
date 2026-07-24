@@ -1,11 +1,12 @@
 ---
+
 slug: "straker-verify"
 name: "straker-verify"
 version: 1.0.1
 displayName: "Straker Verify"
 summary: "专业AI翻译+可选人工校验,支持100+语言。Professional AI-powered translation with optional human verification。Sup"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Professional AI-powered translation with optional human verification。Supports 100+ languages。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - translation
@@ -31,6 +32,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -38,7 +44,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Straker Verify
 
 ## 付费版专享能力

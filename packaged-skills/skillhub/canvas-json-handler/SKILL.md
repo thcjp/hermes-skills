@@ -1,4 +1,5 @@
 ---
+
 slug: "canvas-json-handler"
 name: "canvas-json-handler"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "画布JSON处理专业版"
 summary: "企业级JSON Canvas处理工具，支持批量操作、模板库、自动布局、跨画布合并与智能修复。。画布JSON处理工具专业版面向团队与企业场景，在免费版基础上扩展批量处理、模板库、自动布局、跨画"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   画布JSON处理工具专业版面向团队与企业场景，在免费版基础上扩展批量处理、模板库、自动布局、跨画布合并、智能修复等高级能力。核心能力：单次处理千级节点、内置思维导图/流程图/看板/知识图谱等8类模板、力导向/树形/层次/网格四种自动布局算法、多画布差异对比与合并、悬空引用智能修复、性能基准测试、版本快照与回滚
 tags:
   - 集成工具
@@ -16,6 +17,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 工作流
+  - 研究
 tools:
   - read
   - exec
@@ -23,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 画布JSON处理专业版
 
 ## 付费版专享能力

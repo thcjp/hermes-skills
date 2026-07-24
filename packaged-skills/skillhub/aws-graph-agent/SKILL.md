@@ -1,11 +1,12 @@
 ---
+
 slug: "aws-graph-agent"
 name: "aws-graph-agent"
 version: 1.0.1
 displayName: "AWS Graph Agent"
 summary: "Bedrock AgentCore与LangGraph多代理编排,覆盖状态图、Runtime、记忆、网关、CLI全生命周期。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   AWS Bedrock AgentCore与LangGraph多代理部署编排工具。提供StateGraph状态图编排、AgentCore Runtime HTTP封装（8080端口）、
   Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力.
   适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署.
@@ -23,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
+
 ---
+
 # AWS Graph Agent
 
 基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具.

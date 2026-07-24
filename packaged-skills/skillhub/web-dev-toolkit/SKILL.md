@@ -1,4 +1,5 @@
 ---
+
 slug: "web-dev-toolkit"
 name: "web-dev-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Web开发工具集(专业版)"
 summary: "面向团队的企业级Web开发平台,含性能工程、SEO深度、WCAG审查、企业部署与监控。。Web开发工具集专业版为团队与企业提供端到端Web开发工程能力,涵盖性能工程化、SEO深度优化、WCA"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Web开发工具集专业版为团队与企业提供端到端Web开发工程能力,涵盖性能工程化、SEO深度优化、WCAG AA可访问性审查、企业级部署与监控告警。核心能力:
   - 性能工程化(Lighthouse CI/性能预算/监控)
   - SEO深度优化(结构化数据/站点地图/国际化)
@@ -32,7 +33,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Web开发工具集(专业版)
 
 ## 付费版专享能力

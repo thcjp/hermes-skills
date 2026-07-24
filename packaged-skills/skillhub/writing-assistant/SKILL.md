@@ -1,17 +1,23 @@
 ---
+
 slug: "writing-assistant"
 name: "writing-assistant"
 version: 0.1.1
 displayName: "Writing Assistant"
 summary: "写作团队组长,经MCP工具管理专业写手并分析写作。You are a Writing Team Lead managing specialized writers via 协议 tools。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   You are a Writing Team Lead managing specialized writers via 协议 tools。Please ANALYZE the writin。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
   - Productivity
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - AI代理
 tools:
   - read
   - exec
@@ -19,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Writing Assistant
 
 ## 付费版专享能力

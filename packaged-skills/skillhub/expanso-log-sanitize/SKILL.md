@@ -1,11 +1,12 @@
 ---
+
 slug: "expanso-log-sanitize"
 name: "expanso-log-sanitize"
 version: 1.0.1
 displayName: "Expanso log-sanitize"
 summary: "清洗日志,去除密码/令牌等敏感模式,防泄露。Sanitize log entries by removing passwords, tokens, and other sensitive p"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Sanitize log entries by removing passwords, tokens, and other sensitive
   patterns using Expanso Ed。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Expanso log-sanitize
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "can"
 name: "can"
 version: 1.9.2
 displayName: "CAN内容寻址"
 summary: "时钟地址命名协议，通过时间戳、内容哈希和可读名称为数据流建立可验证索引。CAN（Clock Address Naming）协议为Agent数据流提供可验证的内容寻址能力. 通过三列结构（WH"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   CAN（Clock Address Naming）协议为Agent数据流提供可验证的内容寻址能力.
   通过三列结构（WHEN/WHERE/WHAT）记录事件，实现内容完整性验证、快速查找和
   审计追踪。支持任意传输管道（MCP、A2A、curl脚本），本地追加日志，无需共识
@@ -20,8 +21,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - 知识
 category: "Automation"
+
 ---
+
 # CAN — 时钟地址命名协议
 
 ## 输入格式

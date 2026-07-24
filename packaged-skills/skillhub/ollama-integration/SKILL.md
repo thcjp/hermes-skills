@@ -1,11 +1,12 @@
 ---
+
 slug: "ollama-integration"
 name: "ollama-integration"
 version: 1.0.1
 displayName: "Ollama Integration"
 summary: "集成运行本地Ollama AI模型,自定义提示与自动模式。Integrate and run local Ollama AI models with custom prompts for A"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Integrate and run local Ollama AI models with custom prompts for AI
   assistance and automatic mode。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Ollama Integration
 
 ## 付费版专享能力

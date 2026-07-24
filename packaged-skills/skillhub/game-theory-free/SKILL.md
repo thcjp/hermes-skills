@@ -1,11 +1,12 @@
 ---
+
 slug: "game-theory-free"
 name: "game-theory-free"
 version: 1.0.1
 displayName: "加密博弈论分析（免费版）"
 summary: "免费版crypto协议博弈论分析框架，支持Five Questions建模与基础Red Flags检测"
 license: "MIT"
-description: |-
+description: |-，可分析提升工作效率
   面向加密协议的博弈论分析框架（免费版）.
   基于Five Questions分析模型，覆盖Nash Equilibrium、Dominant Strategy等核心概念，
   支持基础Common Crypto Games识别与Red Flags检测.
@@ -21,8 +22,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 创意
+  - 图像
+  - 开发
 category: "Automation"
+
 ---
+
 # 加密协议博弈论分析（免费版）
 
 面向web3协议的博弈论分析框架，提供Five Questions建模与基础风险检测能力.

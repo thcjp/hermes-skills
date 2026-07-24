@@ -1,11 +1,12 @@
 ---
+
 slug: "web-learner"
 name: "web-learner"
 version: 1.0.1
 displayName: "Web Learner"
 summary: "自主上网学习技能 - 让 AI 能够主动搜索、浏览和从互联网获取知识。当用户要求了解最新信息、学习新知识、查询新闻、获取某个主题的详细信息，或需要从网络上获取数据时触发此技能。"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   自主上网学习技能 - 让 AI 能够主动搜索、浏览和从互联网获取知识。当用户要求了解最新信息、学习新知识、查询新闻、获取某个主题的详细信息，或需要从网络上获取数据时触发此技能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Research
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Web Learner
 
 ## 付费版专享能力

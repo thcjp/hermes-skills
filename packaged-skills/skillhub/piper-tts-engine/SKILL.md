@@ -1,4 +1,5 @@
 ---
+
 slug: "piper-tts-engine"
 name: "piper-tts-engine"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "本地语音合成专业版"
 summary: "企业级本地 TTS 引擎，支持批量合成、自定义音色训练、多语言、SSML 标记与 API 服务化。。面向团队与企业的本地离线文字转语音引擎. 核心能力: 批量合成、自定义音色训练、多语言支持"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队与企业的本地离线文字转语音引擎.
   核心能力: 批量合成、自定义音色训练、多语言支持、SSML 标记、API 服务化、语音后处理、跨平台部署.
   适用场景: 内容批量配音、多语言客服、有声书制作、无障碍服务、企业通知语音化.
@@ -21,6 +22,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 知识
+  - 文档
+  - 写作
 tools:
   - read
   - exec
@@ -28,7 +34,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 本地语音合成专业版
 
 ## 付费版专享能力

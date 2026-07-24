@@ -1,11 +1,12 @@
 ---
+
 slug: "evolution-engine-v2"
 name: "evolution-engine-v2"
 version: 2.0.1
 displayName: "进化引擎"
 summary: "Agent自我进化：反思+纠错学习+反污染防线+压缩不删，避免重复犯错与误学。。面向 AI Agent 的自我进化引擎，直击"重复犯错、从沉默误学、记忆压缩丢失、进化无法衡量"四大痛点。通过"
 license: "Proprietary"
-description: |-
+description: |-，可识别提升工作效率
   面向 AI Agent 的自我进化引擎，直击"重复犯错、从沉默误学、记忆压缩丢失、进化无法衡量"四大痛点。通过自反思、纠错学习、模式晋升机制，让 Agent 从每次交互中积累可复用经验，而非每次会话从零开始。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 智能代理
@@ -22,7 +23,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # 进化引擎（Evolution Engine）
 
 **让 Agent 越用越好，而非每次从零开始。** 直击四大自我进化顽疾：重复犯错、从沉默误学、记忆压缩丢失、进化无法衡量。通过自反思、纠错学习、反污染防线，让每次交互都积累可复用经验.

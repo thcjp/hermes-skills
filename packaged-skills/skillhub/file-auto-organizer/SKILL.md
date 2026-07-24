@@ -1,17 +1,23 @@
 ---
+
 slug: "file-auto-organizer"
 name: "file-auto-organizer"
 version: 1.0.1
 displayName: "File Auto Organizer"
 summary: "文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。。文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。Use when 需要文件处理、文档"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Other
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -19,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # File Auto Organizer
 
 ## 付费版专享能力

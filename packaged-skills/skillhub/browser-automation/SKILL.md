@@ -1,11 +1,12 @@
 ---
+
 slug: "browser-automation"
 name: "browser-automation"
 version: 1.0.2
 displayName: "Browser Automation"
 summary: "自然语言经CLI自动化浏览器交互,告别手写脚本。Automate web browser interactions using natural language via CLI comman"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Research
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Browser Automation
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: tailwindcss-toolkit-free
 name: tailwindcss-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: Tailwind CSS工具包免费版
 summary: Tailwind CSS实用类编写工具,涵盖响应式设计、暗黑模式与基础配置,适合个人开发者快速上手.
 license: Proprietary
 edition: free
-description: '面向个人开发者的 Tailwind CSS 实用类编写工具(免费版)。核心能力:
+description: 面向个人开发者的 Tailwind CSS 实用类编写工具(免费版)。核心能力:，可处理提升工作效率
 
   - Tailwind 实用类编写规范与最佳实践
 
@@ -44,13 +45,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 开发
+  - 代码
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Tailwind CSS 工具包 - 免费版
 
 ## 概述

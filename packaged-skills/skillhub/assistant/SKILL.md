@@ -1,11 +1,12 @@
 ---
+
 slug: "assistant"
 name: "assistant"
 version: 1.0.1
 displayName: "Assistant"
 summary: "主动有序管理任务沟通与日程,做你的全能助理,琐事不遗漏。Manage tasks, communications, and scheduling with proactive and org"
 license: "Proprietary"
-description: |-
+description: |-，可分析提升工作效率
   Manage tasks, communications, and scheduling with proactive and organized
   support。核心能力:
 
@@ -27,6 +28,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
+  - AI代理
 tools:
   - read
   - exec
@@ -34,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Assistant
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "encrypted-docs"
 name: "encrypted-docs"
 version: 1.0.1
 displayName: "Encrypted Docs"
 summary: "端到端加密md文档,Agent与人协同编辑,隐私不泄。End-to-end encrypted 。md documents for agents & humans to collaborat"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   End-to-end encrypted 。md documents for agents & humans to collaborate。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Integrations
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 安全
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Encrypted Docs
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: "vue-component-gen"
 name: "vue-component-gen"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Vue组件生成(专业版)"
 summary: "面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。。Vue组件生成工具专业版为团队与企业提供端到端Vue 3组件工程能力,涵盖企业级组件库结构、批"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Vue组件生成工具专业版为团队与企业提供端到端Vue 3组件工程能力,涵盖企业级组件库结构、批量组件生成、WCAG AA可访问性、单元测试模板与CI/CD集成。核心能力:
   - 企业级组件库目录结构与文档
   - 批量组件生成脚手架
@@ -30,6 +31,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 知识
+  - 文档
 tools:
   - read
   - exec
@@ -37,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Vue组件生成(专业版)
 
 ## 付费版专享能力

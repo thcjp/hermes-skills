@@ -1,4 +1,5 @@
 ---
+
 slug: context-driven-dev-tool-free
 name: context-driven-dev-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 上下文驱动开发（免费版）
 summary: "将项目上下文作为可管理制品，通过结构化文档确保AI辅助开发的一致性.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
-description: '上下文驱动开发 - （免费版）
+description: 上下文驱动开发 - （免费版），可处理提升工作效率
 
   核心能力: 上下文驱动, 项目初始化, 上下文文档, AI开发对齐, context driven, 技术栈追踪
 
@@ -28,7 +29,9 @@ tools:
   - write
 homepage: ""
 category: "Agents"
+
 ---
+
 # 上下文驱动开发（免费版）
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: solo-audit-tool-free
 name: solo-audit-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 独立审计工具（免费版）
 summary: "对AI Agent进行全面审计：安全性、性能、合规性、代码质量与优选实践检查.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '独立审计工具 - （免费版）
+description: 独立审计工具 - （免费版），可生成提升工作效率
 
   核心能力: 安全审计, 合规检查, 性能分析, 漏洞扫描, 代码审计, solo audit, 风险评估
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 安全
+  - 加密
+  - AI代理
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 独立审计工具（免费版）
 
 ## 概述

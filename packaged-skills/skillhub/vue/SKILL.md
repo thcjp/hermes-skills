@@ -1,11 +1,12 @@
 ---
+
 slug: "vue"
 name: "vue"
 version: 1.0.2
 displayName: "Vue"
 summary: "规避Vue常见错误,响应式陷阱/ref与reactive/组合式API。Avoid common Vue mistakes — reactivity traps, ref vs reacti"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Avoid common Vue mistakes — reactivity traps, ref vs reactive, computed
   timing, and Composition A。Use when 用户需要Vue相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Vue
 
 ## 付费版专享能力

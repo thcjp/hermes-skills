@@ -1,11 +1,12 @@
 ---
+
 slug: "free-google-search-with-browser"
 name: "free-google-search-with-browser"
 version: 0.0.2
 displayName: "Free Google Search W"
 summary: "用scrapling搜Google返回结构化结果(标题/链接/摘要)。Search Google using scrapling and return structured results"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Search Google using scrapling and return structured results (title,
   link, snippet)。Invoke when u。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # Free Google Search W
 
 ## 付费版专享能力

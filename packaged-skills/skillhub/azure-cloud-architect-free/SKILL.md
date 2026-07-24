@@ -1,11 +1,12 @@
 ---
+
 slug: "azure-cloud-architect-free"
 name: "azure-cloud-architect-free"
 version: "1.0.0"
 displayName: "Azure云架构师LITE"
 summary: "基于Azure CLI的多订阅导航与资源清单查询,提供只读查询与VM健康检查。。基于 Azure CLI 的基础云资源查询工具（免费版）。提供多订阅导航与资源清单查询两大基础能力. 支持虚拟"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   基于 Azure CLI 的基础云资源查询工具（免费版）。提供多订阅导航与资源清单查询两大基础能力.
   支持虚拟机列表、运行状态检查、订阅切换等只读操作。默认只读模式，不执行任何变更操作.
   适用于日常资源盘点和健康巡检场景。如需 RBAC 角色审计、成本分析、合规检查、跨订阅批量操作等
@@ -22,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # Azure 云架构师 LITE
 
 使用本地 Azure CLI 回答关于 Azure 资源的基础问题。默认只读查询，不执行任何变更操作.

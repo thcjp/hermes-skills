@@ -1,11 +1,12 @@
 ---
+
 slug: "who-is-actor"
 name: "who-is-actor"
 version: 1.0.1
 displayName: "Who Is Actor"
 summary: "Git仓库参与者识别技能。Git repository actor identification skill。核心能力: - 开发工具领域的专业化AI辅助工具 - 基于高人气开源Skil"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Git repository actor identification skill。核心能力:
 
   - 开发工具领域的专业化AI辅助工具
@@ -26,6 +27,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -33,7 +38,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Who Is Actor
 
 ## 付费版专享能力

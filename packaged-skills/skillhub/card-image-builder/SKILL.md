@@ -1,4 +1,5 @@
 ---
+
 slug: "card-image-builder"
 name: "card-image-builder"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "卡片图生成器-专业版"
 summary: "企业级卡片图生成平台,支持全模板/批量生成/自定义模板/品牌定制/X长图。卡片图生成器专业版,面向企业和专业内容团队的全功能卡片图片生成平台。核心能力: - 全模板支持(海报/长文卡片/X风"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   卡片图生成器专业版,面向企业和专业内容团队的全功能卡片图片生成平台。核心能力:
   - 全模板支持(海报/长文卡片/X风格长图/公众号封面/自定义模板)
   - X/Twitter风格帖子分享长图生成
@@ -39,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 卡片图生成器-专业版
 
 ## 付费版专享能力

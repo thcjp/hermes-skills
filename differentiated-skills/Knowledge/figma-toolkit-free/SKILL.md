@@ -1,4 +1,5 @@
 ---
+
 slug: figma-toolkit-free
 name: figma-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: Figma设计工具包（免费版）
 summary: "从Figma设计稿获取设计上下文、截图、变量与资源，并转化为生产代码.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: 'Figma设计工具包 - （免费版）
+description: Figma设计工具包 - （免费版），可处理提升工作效率
 
   核心能力: Figma, 设计转代码, 设计导出, 设计变量, design to code, figma to react, 组件生成
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 研究
+  - 分析
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Figma设计工具包（免费版）
 
 ## 概述

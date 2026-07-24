@@ -1,4 +1,5 @@
 ---
+
 slug: "code-analyze"
 name: "code-analyze"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "代码分析工具专业版"
 summary: "企业级多领域结构化分析,支持批量分析、团队协作、自定义框架与优先级支持。面向团队与企业的高级结构化分析工具,在免费版基础上扩展批量分析、协作评审、自定义框架等能力。核心能力: - 多领域深度"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队与企业的高级结构化分析工具,在免费版基础上扩展批量分析、协作评审、自定义框架等能力。核心能力:
   - 多领域深度分析(代码、数据、文本、决策、可视化、架构)
   - 批量文件分析与聚合报告生成
@@ -41,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # 代码分析工具专业版
 
 ## 付费版专享能力

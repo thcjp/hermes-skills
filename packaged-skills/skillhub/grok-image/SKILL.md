@@ -1,4 +1,5 @@
 ---
+
 slug: "grok-image"
 name: "grok-image"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Grok图片生成-专业版"
 summary: "批量AI图片生成引擎，支持多格式导出、消息平台集成与自动化工作流。。Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Creative
@@ -23,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Grok图片生成-专业版
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: pptx-pdf-font-fix-tool-free
 name: pptx-pdf-font-fix-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: PPT字体修复工具（免费版）
 summary: "修复PPT转PDF时的字体缺失与乱码问题，支持字体嵌入、替换与批量处理.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: 'PPT字体修复工具 - （免费版）
+description: PPT字体修复工具 - （免费版），可处理提升工作效率
 
   核心能力: PPT字体, 字体修复, PPT转PDF, 字体乱码, 字体缺失, font fix, 字体替换
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 知识
+  - 文档
+  - 写作
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # PPT字体修复工具（免费版）
 
 ## 概述

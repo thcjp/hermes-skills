@@ -1,17 +1,23 @@
 ---
+
 slug: "shopify-helper"
 name: "shopify-helper"
 version: 2.0.1
 displayName: "Shopify Helper"
 summary: "Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Shopify store builder with setup,"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单.
 tags:
   - Other
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 写作
 tools:
   - read
   - exec
@@ -19,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Shopify Helper
 
 ## 付费版专享能力

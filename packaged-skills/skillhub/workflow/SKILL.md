@@ -1,11 +1,12 @@
 ---
+
 slug: "workflow"
 name: "workflow"
 version: 1.0.1
 displayName: "Workflow"
 summary: "用可复用组件/节点间数据流/状态管理建自动化流水线。Build automated pipelines with reusable components, data flow between"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Build automated pipelines with reusable components, data flow between
   nodes, and state management。核心能力:
 
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Workflow
 
 ## 付费版专享能力

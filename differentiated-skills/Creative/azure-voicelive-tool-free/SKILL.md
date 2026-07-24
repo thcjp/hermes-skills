@@ -1,4 +1,5 @@
 ---
+
 slug: azure-voicelive-tool-free
 name: azure-voicelive-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Azure语音交互免费版
 summary: "使用Azure VoiceLive构建基础实时语音AI应用，支持文本/音频输出与基本会话管理.。Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:"
 license: Proprietary
 edition: free
-description: 'Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:
+description: Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:，可处理提升工作效率
 
   - 通过WebSocket建立双向实时语音通信
 
@@ -42,7 +43,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # Azure语音交互免费版
 
 ## 概述

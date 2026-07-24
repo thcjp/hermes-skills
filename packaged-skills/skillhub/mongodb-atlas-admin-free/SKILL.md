@@ -1,11 +1,12 @@
 ---
+
 slug: "mongodb-atlas-admin-free"
 name: "mongodb-atlas-admin-free"
 version: "1.0.0"
 displayName: "文档数据库管理(免费版)"
 summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用(免费版)。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、
   Schema定义查询和实时API调用。覆盖50+分类的完整API端点，支持 dry-run
   预检和自动确认模式.
@@ -21,8 +22,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 知识
 category: "Automation"
+
 ---
+
 # 文档数据库云管理平台(免费版)
 
 通过API浏览和调用文档数据库云管理平台的管理接口.

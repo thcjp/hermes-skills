@@ -1,4 +1,5 @@
 ---
+
 slug: security-toolkit-free
 name: security-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: Agent安全工具箱(免费版)
 summary: "AI Agent安全扫描与风险检测,24条规则覆盖注入、密钥泄露、恶意代码等,适合个人开发者,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - 24条安全检测规则覆盖代码与配置
 
@@ -47,7 +48,9 @@ tools:
   - exec
 homepage: ""
 category: "Security"
+
 ---
+
 # Agent安全工具箱(免费版)
 
 ## 概述

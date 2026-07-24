@@ -1,11 +1,12 @@
 ---
+
 slug: "tts-whatsapp"
 name: "tts-whatsapp"
 version: 1.0.1
 displayName: "TTS WhatsApp"
 summary: "在WhatsApp发40+语言高质量TTS语音消息,自动送达。Send high-quality text-to-speech voice messages on WhatsApp in 4"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Send high-quality text-to-speech voice messages on WhatsApp in 40+ languages
   with automatic delivery
 
@@ -39,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # TTS WhatsApp
 
 ## 付费版专享能力

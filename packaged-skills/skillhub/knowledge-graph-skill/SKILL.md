@@ -1,11 +1,12 @@
 ---
+
 slug: "knowledge-graph-skill"
 name: "knowledge-graph-skill"
 version: 1.1.2
 displayName: "知识图谱技能"
 summary: "嵌入式知识图谱,持久化存储结构化知识,支持查询、合并、可视化与配置。嵌入式知识图谱,以JSON存储持久化结构化知识,通过CLI脚本查询,生成KGML摘要供会话上下文使用。核心能力包括KGML"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   嵌入式知识图谱,以JSON存储持久化结构化知识,通过CLI脚本查询,生成KGML摘要供会话上下文使用。核心能力包括KGML格式知识表示、高级查询(子节点/类型/孤儿/统计/时间线)、实体合并(absorb/nest)、密钥保管库、深度启发式提取、可视化、配置管理、跨助手只读访问与记忆导入.
 tools:
   - read
@@ -18,8 +19,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 开发
+  - 代码
+  - 研究
 category: "Automation"
+
 ---
+
 # 知识图谱技能
 
 个人知识图谱以JSON存储,通过CLI脚本查询,生成紧凑的KGML摘要供会话上下文使用.

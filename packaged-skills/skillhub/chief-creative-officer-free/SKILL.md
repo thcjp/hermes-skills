@@ -1,11 +1,12 @@
 ---
+
 slug: "chief-creative-officer-free"
 name: "chief-creative-officer-free"
 version: "1.0.0"
 displayName: "首席创意官助手-免费版"
 summary: "首席创意官基础AI助手，提供创意方向规划、视觉风格指导与营销创意概念生成，辅助个人创作者与小型团队完成创意策划。"
 license: "MIT"
-description: |-
+description: |-，可生成提升工作效率
   面向创意决策者与内容创作者的基础AI辅助工具，覆盖创意策划的核心环节.
   核心能力：
   - 创意策略制定：品牌创意方向规划与创意概念生成
@@ -21,13 +22,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 写作
+  - 电商
+  - AI代理
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Chief Creative Officer Free
 
 首席创意官基础AI助手。提供创意方向规划、视觉风格指导与营销创意概念生成，为个人创作者与小型团队提供创意策划支持.

@@ -1,11 +1,12 @@
 ---
+
 slug: content-refiner
 name: content-refiner
 version: 1.0.1
 displayName: "内容洗稿师"
 summary: "同质化内容救星,LLM深度改写+8平台适配+SimHash去重,原创度99%规避查重。内容洗稿师是一款同质化内容改写工具,解决内容查重与原创度问题. 支持LLM深度改写、8平台风格适配、Si"
 license: Proprietary
-description: |-
+description: |-，可自动提升工作效率
   内容洗稿师是一款同质化内容改写工具,解决内容查重与原创度问题.
   支持LLM深度改写、8平台风格适配、SimHash去重检测,原创度达99%.
   核心能力:
@@ -22,12 +23,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 创意
+  - 图像
+  - 开发
 tools:
   - read
   - exec
   - write
 category: "Automation"
+
 ---
+
 # 内容洗稿师
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: monad-dev-tool-free
 name: monad-dev-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Monad开发工具-免费版
 summary: "Monad区块链DApp开发助手,支持合约部署、验证与前端集成,适合个人开发者快速上手。Monad区块链DApp开发助手免费版,面向个人开发者与区块链爱好者。核心能力:"
 license: Proprietary
 edition: free
-description: 'Monad区块链DApp开发助手免费版,面向个人开发者与区块链爱好者。核心能力:
+description: Monad区块链DApp开发助手免费版,面向个人开发者与区块链爱好者。核心能力:，可生成提升工作效率
 
   - Monad测试网合约部署与验证
 
@@ -36,13 +37,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 运维
+  - 监控
+  - 集成
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Monad 开发工具 - 免费版
 
 ## 概述

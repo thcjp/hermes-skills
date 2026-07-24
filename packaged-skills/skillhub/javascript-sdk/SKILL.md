@@ -1,11 +1,12 @@
 ---
+
 slug: "javascript-sdk"
 name: "javascript-sdk"
 version: 0.1.6
 displayName: "Javascript Sdk"
 summary: "inference.sh的JS/TS SDK,跑AI应用/建Agent/集成150+模型。JavaScript/TypeScript SDK for inference。sh - run A"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   JavaScript/TypeScript SDK for inference。sh - run AI apps, build agents,
   integrate 150+ models。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Javascript Sdk
 
 ## 付费版专享能力

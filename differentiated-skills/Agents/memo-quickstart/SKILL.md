@@ -1,11 +1,12 @@
 ---
+
 slug: "memo-quickstart"
 name: "memo-quickstart"
 version: "1.0.0"
 displayName: "记忆快速启动"
 summary: "解决零依赖记忆能力弱、搜索精度低、上手难的本地记忆快速启动器。面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点。提供三层记忆架构（热内存/冷存储/归档）、T"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点。提供三层记忆架构（热内存/冷存储/归档）、TF-IDF+近期加权+重要度加权+标签匹配混合检索、WAL写前日志、统一JSON schema、记忆关系图谱、迁移工具。适用于隐私敏感场景、离线开发、学习记忆系统。适用关键词：本地记忆、零依赖记忆、记忆快速启动、记忆搜索、记忆存储、local memory、zero-dependency memory
 tags:
   - 本地记忆
@@ -21,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 使用流程
 
 面向零依赖场景的**本地记忆系统**，用三层架构和混合检索算法，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无 API Key、无云、无追踪，纯本地记忆.

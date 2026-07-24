@@ -1,11 +1,12 @@
 ---
+
 slug: "json-repair-kit"
 name: "json-repair-kit"
 version: 1.0.1
 displayName: "JSON修复工具"
 summary: "通过Node.js解析修复格式错误的JSON文件，支持尾逗号、单引号等修复。。JSON修复工具通过Node.js解析将格式错误的"宽松"JSON文件（如含尾逗号、单引号、未加引号键） 解析为"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   JSON修复工具通过Node.js解析将格式错误的"宽松"JSON文件（如含尾逗号、单引号、未加引号键）
   解析为JavaScript对象并重新序列化为有效JSON。支持Trailing Commas、Single Quotes、
   Unquoted Keys、Comments、Hex/Octal Numbers五种修复模式，内置备份与验证安全机制.
@@ -16,6 +17,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - AI代理
 tools:
   - read
   - exec
@@ -23,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # JSON Repair Kit — JSON修复工具
 
 ## 输入格式

@@ -1,11 +1,12 @@
 ---
+
 slug: "tarot"
 name: "tarot"
 version: 1.0.1
 displayName: "Reflective Tarot"
 summary: "反思式塔罗抽取，用于情感支持和自我觉察，非临床非预测性。。tarot 是一个反思式塔罗抽取技能，用于情感支持和意义构建。核心理念是"塔罗是镜子而非预言"， 采用 `presence-firs"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   tarot 是一个反思式塔罗抽取技能，用于情感支持和意义构建。核心理念是"塔罗是镜子而非预言"，
   采用 `presence-first`（临在优先）、`non-clinical`（非临床化）、`agency-first`（主体性优先）
   三大原则。支持 `Single-card spread`（单牌阵）和 `Three-card spread`（三牌阵：情境/张力/下一步），
@@ -22,8 +23,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - AI代理
 category: "Automation"
+
 ---
+
 # Reflective Tarot
 
 塔罗在这里是镜子，不是预言。它用于意义构建、grounding 和温和的反思.

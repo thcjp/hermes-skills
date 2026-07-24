@@ -1,4 +1,5 @@
 ---
+
 slug: "tailwindcss-toolkit"
 name: "tailwindcss-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Tailwind CSS工具包专业版"
 summary: "企业级Tailwind CSS工具包,支持自定义插件、设计系统、性能优化与组件库,适配团队协作与大型项目。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队与企业用户的 Tailwind CSS 工具包(专业版)。核心能力:
   - 涵盖免费版全部能力(实用类、响应式、暗黑模式、状态变体)
   - 自定义插件开发与集成
@@ -26,6 +27,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 研究
+  - 分析
+  - 知识
 tools:
   - read
   - exec
@@ -33,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Tailwind CSS工具包专业版
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "discord"
 name: "discord"
 version: 1.0.2
 displayName: "Discord 全能控制"
 summary: "通过discord工具控制机器人,管理消息、表情、投票、线程、审核等Discord全功能。通过 discord 工具控制 Discord 机器人,覆盖消息收发与编辑、表情回应与统计、 贴纸发"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   通过 discord 工具控制 Discord 机器人,覆盖消息收发与编辑、表情回应与统计、
   贴纸发送与上传、自定义表情包上传、投票创建、线程管理、消息置顶、全文搜索、
   成员与角色查询、频道信息、语音状态、定时事件、审核操作(禁言/踢出/封禁)等全套能力.
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Discord 全能控制
 
 ## 输入格式

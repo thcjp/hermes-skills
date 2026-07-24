@@ -1,11 +1,12 @@
 ---
+
 slug: "logo-design-guide-free"
 name: "logo-design-guide-free"
 version: 1.0.1
 displayName: "Logo设计指南(免费版)"
 summary: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。(免费版)。从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式 输出(PNG/JPG/SVG/ICO/Web"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式
   输出(PNG/JPG/SVG/ICO/WebP)、多平台适配(Favicon/App/PWA/Social)、
   色彩与字体系统、矢量优先与一致性规范。适用于独立开发者、企业团队
@@ -21,7 +22,9 @@ tags:
   - UI/UX
   - 创意
 category: "Creative"
+
 ---
+
 # Logo设计指南(免费版)
 
 从辨识度设计到多平台交付的Logo设计全流程,确保Logo在任何尺寸、任何背景、任何平台下都清晰可辨且一致.

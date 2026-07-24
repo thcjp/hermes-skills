@@ -1,4 +1,5 @@
 ---
+
 slug: juejin-tool-free
 name: juejin-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 掘金工具
 summary: "面向个人用户的掘金社区只读与草稿发布工具，支持热门排行.。面向个人用户的掘金技术社区操作工具。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人用户的掘金技术社区操作工具。核心能力:
+description: 面向个人用户的掘金技术社区操作工具。核心能力:，可处理提升工作效率
 
   - 热门文章排行榜与分类查询（只读）
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 掘金工具（免费版）
 
 ## 概述

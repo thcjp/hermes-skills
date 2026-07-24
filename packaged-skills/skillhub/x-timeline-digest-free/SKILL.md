@@ -1,11 +1,12 @@
 ---
+
 slug: "x-timeline-digest-free"
 name: "x-timeline-digest-free"
 version: "1.0.0"
 displayName: "X 时间线摘要免费版"
 summary: "使用 bird 读取 X/Twitter 时间线,增量去重后输出结构化 JSON,不含中文分类简报。基于 bird 命令行工具读取 X(Twitter)的 For You 与 Followi"
 license: "MIT"
-description: |-
+description: |-，可生成提升工作效率
   基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线,
   对推文进行增量过滤、ID 硬去重与近重复文本合并,
   输出结构化 JSON 负载.
@@ -17,13 +18,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - AI代理
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # X Timeline Digest Free
 
 ## 输入格式

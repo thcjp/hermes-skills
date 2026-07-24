@@ -1,4 +1,5 @@
 ---
+
 slug: code-delegate-tool-free
 name: code-delegate-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 代码委派工具免费版
 summary: "将编程任务委派给本地代码CLI执行,支持异步流程与单任务调试迭代。面向个人开发者的代码委派工具,将编程任务委派给本地代码 CLI 执行,保持主 Agent 响应性。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人开发者的代码委派工具,将编程任务委派给本地代码 CLI 执行,保持主 Agent 响应性。核心能力:
+description: 面向个人开发者的代码委派工具,将编程任务委派给本地代码 CLI 执行,保持主 Agent 响应性。核心能力:，可处理提升工作效率
 
   - 异步委派编程任务,不阻塞主 Agent
 
@@ -47,7 +48,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 # 代码委派工具免费版
 
 ## 概述

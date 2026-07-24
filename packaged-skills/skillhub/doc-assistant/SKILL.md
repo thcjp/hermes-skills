@@ -1,11 +1,12 @@
 ---
+
 slug: "doc-assistant"
 name: "doc-assistant"
 version: "1.0.0"
 displayName: "Doc"
 summary: "读写编辑docx文档,格式/表格/修订全保留,文档处理利器。Use when the task involves reading, creating, or editing `。docx`"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Use when the task involves reading, creating, or editing `。docx` documents,
   especially when forma
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 知识
+  - 文档
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Doc
 
 ## 付费版专享能力

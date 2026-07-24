@@ -1,11 +1,12 @@
 ---
+
 slug: "markdown"
 name: "markdown"
 version: 1.0.2
 displayName: "Markdown"
 summary: "生成干净可移植Markdown,跨解析器正确渲染。Generate clean, portable Markdown that renders correctly across parser"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Generate clean, portable Markdown that renders correctly across parsers。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
@@ -33,7 +34,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Markdown
 
 ## 付费版专享能力

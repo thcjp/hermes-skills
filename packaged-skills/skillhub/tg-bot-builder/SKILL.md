@@ -1,4 +1,5 @@
 ---
+
 slug: "tg-bot-builder"
 name: "tg-bot-builder"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "TG机器人构建专业版"
 summary: "全功能Telegram机器人构建平台，支持支付集成、批量推送、状态机与高级群管。面向企业团队与专业开发者的Telegram机器人全功能构建平台，覆盖Bot全生命周期管理与高级业务集成。核心能"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向企业团队与专业开发者的Telegram机器人全功能构建平台，覆盖Bot全生命周期管理与高级业务集成。核心能力：在免费版基础上新增Telegram Stars支付集成、批量消息推送引擎、多轮对话状态机、高级群组权限矩阵、自定义模板库、A/B测试支持与性能监控仪表盘。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - 集成工具
@@ -23,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # TG机器人构建专业版
 
 ## 付费版专享能力

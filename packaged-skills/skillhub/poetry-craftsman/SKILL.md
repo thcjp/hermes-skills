@@ -1,11 +1,12 @@
 ---
+
 slug: poetry-craftsman
 name: poetry-craftsman
 version: 1.0.1
 displayName: "诗词匠心"
 summary: "一人做古诗词内容厂牌,6种融合模式+平仄校验+意境评分,图文短视频双输出。诗词匠心是一款古诗词融合故事编织工具,打造古诗词内容厂牌. 支持6种融合模式、平仄韵律校验、意境评分,图文与短视频双"
 license: Proprietary
-description: |-
+description: |-，可自动提升工作效率
   诗词匠心是一款古诗词融合故事编织工具,打造古诗词内容厂牌.
   支持6种融合模式、平仄韵律校验、意境评分,图文与短视频双输出.
   核心能力:
@@ -22,12 +23,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - AI代理
+  - agent
+  - 开发
 tools:
   - read
   - exec
   - write
 category: "Automation"
+
 ---
+
 # 诗词匠心 Poetry Craftsman v1.1.0
 
 古诗词融合故事编织工具,将历史人物诗词自然融入故事叙述,支持6种融合模式与图文/短视频双输出格式,可选画外音解说.

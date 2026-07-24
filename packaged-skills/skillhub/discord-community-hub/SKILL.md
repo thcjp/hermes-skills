@@ -1,4 +1,5 @@
 ---
+
 slug: "discord-community-hub"
 name: "discord-community-hub"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Discord社区中心专业版"
 summary: "企业级 Discord 社区管理,支持应用命令、权益管理、角色连接与用户资料修改。。面向企业运营与社区管理团队的 Discord 社区全功能管理工具。核心能力: - 应用命令权限管理与批量权"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向企业运营与社区管理团队的 Discord 社区全功能管理工具。核心能力:
   - 应用命令权限管理与批量权限配置
   - 权益(Entitlement)与订阅管理
@@ -35,7 +36,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Discord社区中心专业版
 
 ## 付费版专享能力

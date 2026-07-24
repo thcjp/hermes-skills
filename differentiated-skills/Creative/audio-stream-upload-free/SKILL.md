@@ -1,4 +1,5 @@
 ---
+
 slug: audio-stream-upload-free
 name: audio-stream-upload-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 音频流上传免费版
 summary: "快速上传音频至流媒体平台，支持基础创建、上传与完成三步流程，获取HLS流媒体链接.。音频流上传免费版 —— 面向个人创作者的轻量级音频上传工具。核心能力:"
 license: Proprietary
 edition: free
-description: '音频流上传免费版 —— 面向个人创作者的轻量级音频上传工具。核心能力:
+description: 音频流上传免费版 —— 面向个人创作者的轻量级音频上传工具。核心能力:，可自动提升工作效率
 
   - 通过三步API调用完成音频上传：创建对象 → 上传文件 → 完成处理
 
@@ -40,7 +41,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 音频流上传免费版
 
 ## 概述

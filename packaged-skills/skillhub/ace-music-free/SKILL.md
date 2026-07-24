@@ -1,11 +1,12 @@
 ---
+
 slug: "ace-music-free"
 name: "ace-music-free"
 version: 1.0.1
 displayName: "ACE Music AI音乐LITE"
 summary: "ACE Music基础版,文本转音乐生成,支持歌词定制和纯音乐模式。ACE Music AI 音乐生成基础客户端（免费版）。通过 ACE Music 托管的免费 API 调用 ACE-Ste"
 license: "MIT"
-description: |-
+description: |-，可生成提升工作效率
   ACE Music AI 音乐生成基础客户端（免费版）。通过 ACE Music 托管的免费 API 调用 ACE-Step 1.5 模型,
   支持文本转音乐、自定义歌词、纯音乐模式三种基础能力。支持时长参数控制,音频以 base64 MP3 返回并由脚本自动解码.
   API 需付费订阅。适用于个人创作者、快速音乐原型、学习试用场景.
@@ -20,7 +21,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # ACE Music LITE
 
 ACE Music 基础版,基于 ACE-Step 1.5 模型生成 AI 音乐。付费订阅使用。仅支持文本转音乐（text2music）任务.

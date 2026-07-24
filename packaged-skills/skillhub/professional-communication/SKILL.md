@@ -1,11 +1,12 @@
 ---
+
 slug: "professional-communication"
 name: "professional-communication"
 version: 0.1.1
 displayName: "职场技术沟通写作"
 summary: "为工程师与产品经理生成邮件、Slack/Teams 消息、会议纪要、技术概念转译等职场写作，遵循关键信息优先、可扫描、明确行动项的核心原则。"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   面向技术团队的职场沟通写作助手。覆盖状态更新邮件、升级请求、
   会议议程与纪要、Slack/Teams 异步消息、技术概念向非技术受众的
   转译、远程团队协作等场景。核心原则是关键信息优先、可扫描格式、
@@ -22,6 +23,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 通信
+  - 邮件
+  - AI代理
+  - agent
+  - 写作
 tools:
   - read
   - exec
@@ -29,7 +35,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Professional Communication
 
 写出清晰、有效、会被读到并被行动的职场消息。技术团队的写作问题通常不是文笔问题，而是结构问题——关键信息埋在第三段、行动请求模糊、渠道错配、术语堆砌。本 Skill 用结构化模板与硬规则消除这些病灶.

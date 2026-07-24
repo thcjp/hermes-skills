@@ -1,4 +1,5 @@
 ---
+
 slug: "doc-print-tool-free"
 name: "doc-print-tool-free"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "文档凭证注册工具"
 summary: "面向个人用户的文档凭证注册、检索与基础交换工具，支持快速登记与发现。。面向个人开发者与一人公司的文档凭证注册与发现工具. 核心能力: - 文档/服务凭证的快速注册与唯一标识签发 - 按关键词"
 license: "MIT"
 edition: "free"
-description: |-
+description: |-，可处理提升工作效率
   面向个人开发者与一人公司的文档凭证注册与发现工具.
   核心能力:
   - 文档/服务凭证的快速注册与唯一标识签发
@@ -29,6 +30,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
+  - AI代理
 tools:
   - read
   - exec
@@ -36,7 +42,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # 文档凭证注册工具（免费版）
 
 ## 概述

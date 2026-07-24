@@ -1,4 +1,5 @@
 ---
+
 slug: "db-admin-console"
 name: "db-admin-console"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "数据库管理台(专业版)"
 summary: "全功能数据库管理平台,支持大规模批量操作、分区表、性能基线、定时备份与多实例管理。。数据库管理台专业版面向专业 DBA、后端架构师与运维团队,提供完整的数据库设计、批量操作、性能优化与运维自"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   数据库管理台专业版面向专业 DBA、后端架构师与运维团队,提供完整的数据库设计、批量操作、性能优化与运维自动化能力。核心能力:
   - 涵盖免费版全部能力,无单表大小与操作规模限制
   - 大规模批量操作:COPY 命令、批量 INSERT 10 万级、事务优化与检查点
@@ -24,6 +25,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 写作
+  - 电商
+  - 创意
 tools:
   - read
   - exec
@@ -31,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 数据库管理台(专业版)
 
 ## 付费版专享能力

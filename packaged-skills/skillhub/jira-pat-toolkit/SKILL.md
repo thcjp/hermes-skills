@@ -1,11 +1,12 @@
 ---
+
 slug: "jira-pat-toolkit"
 name: "jira-pat-toolkit"
 version: "0.0.1"
 displayName: "SkillHub Jira Pat Sk"
 summary: "用PAT管理自托管与企业Jira实例的issue。Manage Jira issues on self-hosted or enterprise Jira instances using P"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Manage Jira issues on self-hosted or enterprise Jira instances using
   Personal Access Tokens in SS。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 写作
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # SkillHub Jira Pat Ski
 
 ## 付费版专享能力

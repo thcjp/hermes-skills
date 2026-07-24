@@ -1,11 +1,12 @@
 ---
+
 slug: "cctv-news-fetcher"
 name: "cctv-news-fetcher"
 version: 1.0.1
 displayName: "CCTV News Fetcher"
 summary: "按日期抓取并解析央视新闻联播要点,新闻速览不漏报。Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianb"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo)
   for a given date。核心能力:
 
@@ -33,7 +34,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # CCTV News Fetcher
 
 ## 付费版专享能力

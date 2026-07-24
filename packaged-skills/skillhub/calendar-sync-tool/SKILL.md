@@ -1,11 +1,12 @@
 ---
+
 slug: "calendar-sync-tool"
 name: "calendar-sync-tool"
 version: "1.0.0"
 displayName: "feishu-calendar"
 summary: "管理飞书Lark日历,列出/搜索/查日程/同步事件,办公协同。Manage Feishu (Lark) calendars by listing, searching, checking s"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Manage Feishu (Lark) calendars by listing, searching, checking schedules,
   syncing events, and mar。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 通信
+  - 邮件
+  - AI代理
 tools:
   - read
   - exec
@@ -21,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # feishu-calendar
 
 ## 付费版专享能力

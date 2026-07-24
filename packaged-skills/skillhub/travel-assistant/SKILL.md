@@ -1,17 +1,23 @@
 ---
+
 slug: "travel-assistant"
 name: "travel-assistant"
 version: 1.0.2
 displayName: "Travel Assistant"
 summary: "私人旅行规划顾问。整理你的所有旅行信息，主动发现你忽略的签证、天气、文化禁忌、行李清单等细节，用起来像真人助手一样贴心可靠。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   私人旅行规划顾问。整理你的所有旅行信息，主动发现你忽略的签证、天气、文化禁忌、行李清单等细节，用起来像真人助手一样贴心可靠。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Lifestyle
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 生活
 tools:
   - read
   - exec
@@ -19,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Travel Assistant
 
 ## 付费版专享能力

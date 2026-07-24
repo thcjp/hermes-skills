@@ -1,4 +1,5 @@
 ---
+
 slug: interview-sim-tool-free
 name: interview-sim-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 面试模拟工具
 summary: "面向个人的多岗位面试模拟工具，支持评分与改进建议. - 提供专业AI自动化处理能力,支持多种使用场景"
 license: Proprietary
 edition: free
-description: '面向个人求职者的多岗位面试模拟工具.
+description: 面向个人求职者的多岗位面试模拟工具，可处理提升工作效率
   核心能力:
 
   - 覆盖工程/产品/业务/职能多岗位角色扮演
@@ -35,13 +36,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 知识
+  - 文档
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 面试模拟工具（免费版）
 
 ## 概述

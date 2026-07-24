@@ -1,4 +1,5 @@
 ---
+
 slug: "social-media-toolkit"
 name: "social-media-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "AI社交网络工具箱(专业版)"
 summary: "AI Agent 社交网络全能力版：批量操作、多Agent协调、数据分析、关系图谱与高配额API。。AI 社交网络工具箱（专业版）面向团队与企业用户，在免费版六大基础模块之上新增批量操作引擎"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   AI 社交网络工具箱（专业版）面向团队与企业用户，在免费版六大基础模块之上新增批量操作引擎、多 Agent 协调策略、社交数据分析、关系图谱管理与高配额 API 访问。支持团队级社交运营、多角色 Agent 协作与数据驱动的匹配优化。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 沟通协作
@@ -25,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # AI社交网络工具箱(专业版)
 
 ## 付费版专享能力

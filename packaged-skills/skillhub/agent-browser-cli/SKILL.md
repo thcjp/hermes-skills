@@ -1,11 +1,12 @@
 ---
+
 slug: "agent-browser-cli"
 name: "agent-browser-cli"
 version: 1.0.1
 displayName: "Agent Browser CLI"
 summary: "使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。触发条件：(1) 用户要求自动化浏览器操作"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - Research
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+
 ---
+
 # Agent Browser CLI
 
 ## 付费版专享能力

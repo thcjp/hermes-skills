@@ -1,11 +1,12 @@
 ---
+
 slug: "aws-infra"
 name: "aws-infra"
 version: 1.0.1
 displayName: "AWS Infra Inspector"
 summary: "通过AWS CLI执行只读基础设施查询,覆盖实例清单、健康检查、安全审计、成本分析、变更追踪五大场景"
 license: "Proprietary"
-description: |-
+description: |-，可分析提升工作效率
   AWS基础设施只读检查工具。通过AWS CLI执行read-only查询,帮助开发者和管理员快速了解云资源状态.
   覆盖五大场景:EC2/S3/RDS资源清单、实例健康检查与CloudWatch告警、IAM用户与安全组审计、
   Cost Explorer成本分析、CloudTrail变更追踪。默认只读模式,所有变更操作需显式确认并使用--dry-run.
@@ -23,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
+
 ---
+
 # AWS Infra Inspector
 
 通过AWS CLI执行只读基础设施查询,覆盖五大运维场景.

@@ -1,11 +1,12 @@
 ---
+
 slug: "discord-chat-free"
 name: "discord-chat-free"
 version: "1.0.0"
 displayName: "Discord Chat 基础"
 summary: "通过message工具在Discord频道发送消息、回复、读取历史与表情回应。discord-chat-free 提供 Discord 频道的基础聊天能力,覆盖消息发送、 线程回复、历史读取"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   discord-chat-free 提供 Discord 频道的基础聊天能力,覆盖消息发送、
   线程回复、历史读取与表情回应。适合个人开发者与小型社区进行通知推送、
   简单答疑与消息确认。全文搜索、消息编辑与删除、频道管理、消息特效等
@@ -21,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # Discord Chat 基础
 
 ## 输入格式

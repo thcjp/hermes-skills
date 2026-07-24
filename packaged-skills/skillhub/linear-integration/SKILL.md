@@ -1,11 +1,12 @@
 ---
+
 slug: "linear-integration"
 name: "openclaw-linear"
 version: "1.0.1"
 displayName: "Linear CLI"
 summary: "命令行管Linear issue/项目/团队/文档。Manage Linear issues, projects, teams, and documents from the command"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Manage Linear issues, projects, teams, and documents from the command
   line using the linear CLI。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Linear CLI
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "knowledge-ontology-free"
 name: "knowledge-ontology-free"
 version: "1.0.0"
 displayName: "知识本体"
 summary: "类型化知识图谱基础版：实体关系建模+约束校验+图遍历查询。。面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力. 内置Person/Proje"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力.
   内置Person/Project/Task等基础实体类型与required/enum/forbidden_properties等约束规则.
   支持按类型与条件查询实体、关联查询、依赖关系遍历.
@@ -21,8 +22,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 研究
+  - 分析
+  - 知识
 category: "Automation"
+
 ---
+
 # 知识本体（基础版）
 
 将Agent记忆从扁平文件升级为类型化可验证的知识图谱，支持实体关系建模、约束校验与图遍历查询，让知识结构化、可查询.

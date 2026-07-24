@@ -1,12 +1,11 @@
 ---
 slug: "automation-recipe-pack"
 name: "automation-recipe-pack"
-version: 1.1.1
-displayName: "SkillHub Automation"
-summary: "SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。。SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。Us"
+version: 1.1.2
+displayName: "自动化配方"
+summary: "10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务，可自动化提升工作效率"
 license: "Proprietary"
-description: |-
-  SkillHub 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务。适用于效率工具爱好者、自动化新手，可自动化提升工作效率。支持批量处理、工作流优化、定时触发等场景。"
 tags:
   - Automation
   - 自动化
@@ -17,10 +16,12 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
-# SkillHub Automation
+
+# 自动化配方
+
+10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务。
 
 ## 付费版专享能力
 
@@ -34,23 +35,23 @@ category: "Automation"
 
 ## 核心能力
 
-- SkillHub 自动化配方 - 10 个实用自动化场景
-- 适合：效率工具爱好者、自动化新手
-#
+- 10个实用自动化场景配方
+- 文件批量处理与格式转换
+- 数据清洗与结构化输出
+- 工作流自动化编排
+
 ## 快速开始
 
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
-
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
-| 场景1: SkillHub 自动化配方 - 10 个实用自动化场景 | 用户请求数据 | 结构化处理结果 |
-| 场景2: 适合：效率工具爱好者、自动化新手 | 用户请求数据 | 结构化处理结果 |
+| 文件批量处理 | 文件路径列表 | 处理结果摘要 |
+| 数据格式转换 | 源格式数据 | 目标格式数据 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
@@ -65,9 +66,9 @@ category: "Automation"
 
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
-| content | string | 否 | automation-recipe-pack处理的内容输入 |,  |
-| content | string | 否 | automation-recipe-pack处理的内容输入 |, 可选值: json/text/markdown |
-| style | string | 否 | 输出风格, 参考 `references/style.md` |
+| content | string | 否 | 处理的内容输入 |
+| format | string | 否 | 可选值: json/text/markdown |
+| style | string | 否 | 输出风格 |
 
 ## 输出格式
 
@@ -75,11 +76,9 @@ category: "Automation"
 {
   "success": true,
   "data": {
-    result: "pack 相关配置参数",
-    result: "pack 相关配置参数",
-    result: "pack 相关配置参数",
+    "result": "处理结果",
     "metadata": {
-      "template_used": "reviewer",
+      "template_used": "automation",
       "word_count": 0,
       "style": "专业"
     }
@@ -88,50 +87,32 @@ category: "Automation"
 }
 ```
 
-输出模板参考: `assets/output.json`
-
 ## 异常处理
 
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试 |
 
 ## 依赖说明
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-
-### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:------|------:|:------|:------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Agent LLM | API | 必需 | 由Agent内置LLM提供 |
+| Agent平台 | 运行时 | 必需 | 支持SKILL.md的任意AI Agent |
 
-### API Key 配置
-- 
+### 运行环境
+- **Agent平台**: Claude Code / Cursor / Codex / Gemini CLI等
+- **操作系统**: Windows / macOS / Linux
 
-### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,
-
-**API Key配置方式**:
-```bash
-export API_KEY="your_api_key_here"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
-### Q1: 如何开始使用Openclaw Automation？
-A: 
+### Q1: 如何开始使用自动化配方？
+A: 在AI Agent对话中直接调用本技能,提供需要自动化处理的任务描述即可。
 
-## 错误处理
+## 已知限制
 
-| 错误场景2 | 原因 | 处理方式 |
-|---:|:---|---:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
+1. 不适用于需要人工创意判断的任务
+2. 复杂工作流编排需付费版支持
+3. 依赖Agent平台的LLM能力执行

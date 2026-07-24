@@ -1,11 +1,12 @@
 ---
+
 slug: "task-planner"
 name: "task-planner"
 version: 3.0.6
 displayName: "Task Planner"
 summary: "本地管任务/设优先级/追截止,支持中英双语。Manage tasks, set priorities, and track deadlines locally。Supports biling"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Manage tasks, set priorities, and track deadlines locally。Supports
   bilingual (EN/CN) documentati。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Productivity"
+
 ---
+
 # Task Planner
 
 ## 付费版专享能力

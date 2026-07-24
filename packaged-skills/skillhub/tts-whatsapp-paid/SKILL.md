@@ -1,4 +1,5 @@
 ---
+
 slug: "tts-whatsapp-paid"
 name: "tts-whatsapp-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "WhatsApp语音消息专业版"
 summary: "企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。。面向团队与企业用户的 WhatsApp 语音消息工具(专业版)。核心能力: - 涵盖免费版全部"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队与企业用户的 WhatsApp 语音消息工具(专业版)。核心能力:
   - 涵盖免费版全部能力(Piper TTS、40+ 语言、单条发送)
   - 群组广播:发送到 WhatsApp 群组
@@ -38,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # WhatsApp语音消息专业版
 
 ## 付费版专享能力

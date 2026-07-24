@@ -1,11 +1,12 @@
 ---
+
 slug: "memory-distiller-v2"
 name: "memory-distiller-v2"
 version: 1.0.1
 displayName: "记忆蒸馏器"
 summary: "解决日志膨胀、关键信息丢失、压缩后难回溯的分层记忆蒸馏器。记忆蒸馏器是面向 AI Agent 日志的智能压缩系统，针对"日志日均膨胀 2500 词、压缩后关键信息丢失、压缩结果难以回溯细节、"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   记忆蒸馏器是面向 AI Agent 日志的智能压缩系统，针对"日志日均膨胀 2500 词、压缩后关键信息丢失、压缩结果难以回溯细节、不同内容需不同压缩策略"四大高频痛点而设计。它借鉴古文压缩哲学（去重复、留转折、去过程、留白），把冗长的原始日志蒸馏为高密度结构化摘要，实现 4-8 倍压缩比且零关键事件损失
 tags:
   - 记忆压缩
@@ -23,7 +24,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # 记忆蒸馏器（Memory Distiller）
 
 面向 AI Agent 日志的**智能压缩系统**，借鉴古文压缩哲学，把冗长原始日志蒸馏为高密度结构化摘要，4-8 倍压缩比且零关键事件损失.

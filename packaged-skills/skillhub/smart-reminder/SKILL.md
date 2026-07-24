@@ -1,4 +1,5 @@
 ---
+
 slug: "smart-reminder"
 name: "smart-reminder"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "智能提醒助手(专业版)"
 summary: "自然语言事件捕获与提醒助手专业版，含自定义偏移、多渠道投递、农历生日、语义搜索与完整重复模式。。智能提醒助手专业版是在免费版基础上的全功能升级，为AI Agent提供企业级自然语言事件管理能"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可处理提升工作效率
   智能提醒助手专业版是在免费版基础上的全功能升级，为AI Agent提供企业级自然语言事件管理能力。专业版解锁自定义提醒偏移、多渠道投递、完整重复模式、农历生日支持、语义搜索、事件更新与归档等高级特性，实现复杂事件场景的智能管理。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 智能提醒
@@ -16,6 +17,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 通信
+  - 邮件
+  - 研究
+  - 分析
+  - 创意
 tools:
   - read
   - exec
@@ -24,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 智能提醒助手(专业版)
 
 ## 付费版专享能力

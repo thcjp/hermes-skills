@@ -1,4 +1,5 @@
 ---
+
 slug: merge-check-tool-free
 name: merge-check-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 合并检查工具(免费版)
 summary: "预测单个PR能否被合并,基于技术信号与PR卫生维度的拒绝向量分析.。合并检查工具(免费版)为个人开发者预测单个Pull Request能否被合并,基于技术信号与PR卫生维度的拒绝向量分类体系"
 license: Proprietary
 edition: free
-description: '合并检查工具(免费版)为个人开发者预测单个Pull Request能否被合并,基于技术信号与PR卫生维度的拒绝向量分类体系。核心能力:
+description: 合并检查工具(免费版)为个人开发者预测单个Pull Request能否被合并,基于技术信号与PR卫生维度的拒绝向量分类体系。核心能力:，可生成提升工作效率
 
   - 单个PR数据采集与解析
 
@@ -39,13 +40,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 通信
+  - 邮件
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 合并检查工具(免费版)
 
 ## 概述

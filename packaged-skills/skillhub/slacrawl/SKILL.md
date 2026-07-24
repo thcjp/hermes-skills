@@ -1,11 +1,12 @@
 ---
+
 slug: "slacrawl"
 name: "slacrawl"
 version: 1.0.2
 displayName: "Slacrawl"
 summary: "Slack归档,搜索/同步/线程私信/SQL计数。Slack archive: search, sync freshness, threads/DMs, SQL counts。核心能力: -"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Slack archive: search, sync freshness, threads/DMs, SQL counts。核心能力:
 
   - 集成工具领域的专业化AI辅助工具
@@ -26,6 +27,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -34,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Slacrawl
 
 ## 付费版专享能力

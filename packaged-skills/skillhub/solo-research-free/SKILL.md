@@ -1,11 +1,12 @@
 ---
+
 slug: "solo-research-free"
 name: "solo-research-free"
 version: 1.0.1
 displayName: "独立研究工具免费版"
 summary: "免费版研究工具，支持WebFetch内容获取与基础搜索策略。。独立研究工具免费版，提供基础的多策略搜索能力. 支持WebFetch内容获取与基础搜索回退策略. 适用于个人研究与技术调研场景."
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   独立研究工具免费版，提供基础的多策略搜索能力.
   支持WebFetch内容获取与基础搜索回退策略.
   适用于个人研究与技术调研场景.
@@ -21,7 +22,9 @@ tags:
   - 检索
   - 工具
 category: "Knowledge"
+
 ---
+
 # 独立研究工具（免费版）
 
 提供基础WebFetch内容获取与搜索策略的研究工具.

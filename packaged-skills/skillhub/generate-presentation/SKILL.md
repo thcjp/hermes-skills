@@ -1,11 +1,12 @@
 ---
+
 slug: "generate-presentation"
 name: "generate-presentation"
 version: 1.0.1
 displayName: "Generate Presentatio"
 summary: "从Markdown/URL/主题生成专业HTML与PDF演示文稿。Generate professional HTML and PDF presentations from markdown"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Generate professional HTML and PDF presentations from markdown content,
   URLs, or topics。Creates。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Generate Presentatio
 
 ## 付费版专享能力

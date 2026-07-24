@@ -1,4 +1,5 @@
 ---
+
 slug: security-audit-tool-free
 name: security-audit-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 安全审计工具(免费版)
 summary: "扫描暴露凭据、开放端口、配置问题,支持自动修复常见安全问题,适合个人与小型团队,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - 凭据泄露检测(API Key、Token、硬编码密码)
 
@@ -53,7 +54,9 @@ tools:
   - exec
 homepage: ""
 category: "Security"
+
 ---
+
 # 安全审计工具(免费版)
 
 ## 概述

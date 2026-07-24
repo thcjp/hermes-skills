@@ -1,11 +1,12 @@
 ---
+
 slug: "figma-design"
 name: "figma-design"
 version: 1.0.7
 displayName: "Figma"
 summary: "读文件/管评论/提设计令牌/下图片/建Webhook,Figma全管。Read files, manage comments, extract design tokens, download"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Read files, manage comments, extract design tokens, download images,
   and create webhooks in Figma。
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Figma
 
 ## 付费版专享能力

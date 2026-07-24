@@ -1,4 +1,5 @@
 ---
+
 slug: shadcn-ui-tool-free
 name: shadcn-ui-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: shadcn UI工具-免费版
 summary: "使用shadcn/ui构建现代React应用,支持组件安装、表单验证与主题定制。shadcn/ui 开发工具免费版,面向个人开发者与小型项目。核心能力:"
 license: Proprietary
 edition: free
-description: 'shadcn/ui 开发工具免费版,面向个人开发者与小型项目。核心能力:
+description: shadcn/ui 开发工具免费版,面向个人开发者与小型项目。核心能力:，可处理提升工作效率
 
   - shadcn/ui 组件安装与管理
 
@@ -43,7 +44,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # shadcn UI 工具 - 免费版
 
 ## 概述

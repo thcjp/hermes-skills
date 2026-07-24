@@ -1,11 +1,12 @@
 ---
+
 slug: "moltbook-firewall-tool"
 name: "moltbook-firewall-tool"
 version: "0.1.0"
 displayName: "Moltbook Firewall"
 summary: "保护Agent免受提示操纵/社工/恶意内容的安全层。Security layer protecting agents from prompt manipulation, social eng"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Security layer protecting agents from prompt manipulation, social engineering,
   and malicious content。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 安全
+  - 加密
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Moltbook Firewall
 
 ## 付费版专享能力

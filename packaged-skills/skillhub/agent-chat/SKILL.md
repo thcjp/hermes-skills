@@ -1,11 +1,12 @@
 ---
+
 slug: "agent-chat"
 name: "agent-chat"
 version: 0.1.1
 displayName: "Agent Chat"
 summary: "为AI Agent建临时实时聊天室,密码保护+SSE流式+Web界面,跨Agent即时协作。Temporary real-time chat rooms for AI agents。Pass"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Temporary real-time chat rooms for AI agents。Password-protected, with
   SSE streaming, web UI for。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+
 ---
+
 # Agent Chat
 
 ## 付费版专享能力

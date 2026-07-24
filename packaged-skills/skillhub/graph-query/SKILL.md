@@ -1,4 +1,5 @@
 ---
+
 slug: "graph-query"
 name: "graph-query"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "链上数据查询(专业版)"
 summary: "全功能链上数据查询，含付费端点、高级 MCP工具、支出控制、收据与批量分析。。全功能链上数据查询。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   全功能链上数据查询。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 集成工具
@@ -16,6 +17,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 金融
+  - 财务
 tools:
   - read
   - exec
@@ -23,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 链上数据查询(专业版)
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: "ui-ux"
 name: "ui-ux"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "UI / UX"
 summary: "可搜UI/UX设计库,50+风格/97色板/57字体对/99规则。Searchable UI/UX design databases: 50+ styles, 97 palettes, 57"
 license: "Proprietary"
 homepage: "https://skillhub.ai/skills/ui-ux"
-description: |-
+description: |-，可生成提升工作效率
   Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font
   pairings, 99 UX rules, 25 character sets.
 tools:
@@ -20,7 +21,9 @@ tags:
   - 前端
   - 设计
 category: "Creative"
+
 ---
+
 ## 任务定义
 
 根据用户的设计需求，从可搜索的UI/UX设计库中检索匹配的设计风格、配色方案、字体配对和UX规则，输出完整的设计系统供开发者使用。

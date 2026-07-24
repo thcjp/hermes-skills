@@ -1,4 +1,5 @@
 ---
+
 slug: "tg-body-scan"
 name: "tg-body-scan"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "体测扫描工具专业版"
 summary: "企业级 Telegram 体测测量平台，支持批量扫描、历史趋势、团队管理与高级分析报表。。面向健身工作室、运动队与健康管理团队的批量体测测量平台. 核心能力: 批量视频扫描、历史趋势对比、团"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向健身工作室、运动队与健康管理团队的批量体测测量平台.
   核心能力: 批量视频扫描、历史趋势对比、团队数据管理、高级分析报表、数据导出、API 集成.
   适用场景: 健身工作室会员管理、运动队体测跟踪、企业健康项目、医疗康复监测.
@@ -21,6 +22,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 创意
+  - 图像
+  - 写作
 tools:
   - read
   - exec
@@ -28,7 +34,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 体测扫描工具专业版
 
 ## 付费版专享能力

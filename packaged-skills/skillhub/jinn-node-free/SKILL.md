@@ -1,11 +1,12 @@
 ---
+
 slug: "jinn-node-free"
 name: "jinn-node-free"
 version: 1.0.1
 displayName: "Jinn Node Free"
 summary: "在自治网络中运行工作节点的基础版本，支持单任务测试和钱包查询。。jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询. 不包含持续工作"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询.
   不包含持续工作模式、资金提取和 Launchpad 交互等高级功能。适合先体验节点运行流程，再升级到完整版.
   适用于独立开发者和自动化工作流验证场景.
@@ -19,8 +20,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
+  - AI代理
 category: "Automation"
+
 ---
+
 # jinn-node-free
 
 jinn-node-free 让你的 Agent 在自治网络上执行单个链上任务，体验从任务领取到代码提交的完整流程.

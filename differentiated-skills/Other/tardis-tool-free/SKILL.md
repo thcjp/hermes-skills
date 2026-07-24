@@ -1,4 +1,5 @@
 ---
+
 slug: tardis-tool-free
 name: tardis-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 生活事件追踪-免费版
 summary: "个人生活事件追踪工具,支持三种模式记录与回顾,适合个人时间管理。个人生活事件追踪工具免费版,面向个人用户的时间记录与回顾."
 license: Proprietary
 edition: free
-description: '个人生活事件追踪工具免费版,面向个人用户的时间记录与回顾.
+description: 个人生活事件追踪工具免费版,面向个人用户的时间记录与回顾，可自动提升工作效率
   核心能力:
 
   - 三种记录模式(简单/详细/故事)
@@ -38,6 +39,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 生活
+  - 健康
+  - 研究
+  - 分析
+  - 知识
 tools:
   - read
   - exec
@@ -45,7 +51,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # 生活事件追踪 - 免费版
 
 ## 概述

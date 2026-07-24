@@ -1,4 +1,5 @@
 ---
+
 slug: "doc-parse-tool-pro"
 name: "doc-parse-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "文档解析工具（专业版）"
 summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。。文档解析工具 - （专业版） 核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document par"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可分析提升工作效率
   文档解析工具 - （专业版）
 
   核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document parse, 结构化提取, 图片识别
@@ -24,13 +25,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 研究
+  - 分析
+  - 安全
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 文档解析工具（专业版）
 
 ## 概述

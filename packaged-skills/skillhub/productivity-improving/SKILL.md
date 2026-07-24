@@ -1,11 +1,12 @@
 ---
+
 slug: "productivity-improving"
 name: "productivity-improving"
 version: 1.1.1
 displayName: "Productivity Tracker"
 summary: "生产力追踪与每日复盘助手,输入活动日志/目标/日报。Productivity tracker and daily review assistant。Input activity logs,"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Productivity tracker and daily review assistant。Input activity logs,
   time notes, goals, or a dai。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 创意
+  - 图像
+  - 开发
 tools:
   - read
   - exec
@@ -21,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Productivity Tracker
 
 ## 付费版专享能力

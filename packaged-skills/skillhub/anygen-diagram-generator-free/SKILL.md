@@ -1,11 +1,12 @@
 ---
+
 slug: "anygen-diagram-generator-free"
 name: "anygen-diagram-generator-free"
 version: "1.0.0"
 displayName: "AnyGen图表生成器免费版"
 summary: "使用AnyGen CLI生成基础流程图与架构图，支持文本到图表的智能转换，适合快速可视化需求。。基于AnyGen CLI的图表生成技能免费版，通过www.anygen.io服务端 将文本描述"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   基于AnyGen CLI的图表生成技能免费版，通过www.anygen.io服务端
   将文本描述转换为流程图、架构图等基础可视化图表。采用smart_draw
   操作类型驱动智能绘图引擎，支持API Key认证。适用于技术文档配图、
@@ -18,13 +19,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # AnyGen 图表生成器（免费版）
 
 通过 AnyGen CLI 调用 `www.anygen.io` 服务端绘图引擎，将文本描述转换为流程图、架构图等基础可视化图表。核心操作类型为 `smart_draw`，由 `anygen-workflow-generate` 依赖技能编排生成流程。本免费版支持基础图表类型与默认渲染配置.

@@ -1,11 +1,12 @@
 ---
+
 slug: "email-daily-summary"
 name: "email-daily-summary"
 version: 0.1.1
 displayName: "Email Daily Summary"
 summary: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微信邮箱,
   抓取收件箱列表,提取发件人、主题、摘要片段与时间戳,生成结构化每日邮件日报.
   支持未读统计、按重要性/发件人/主题分类、AI 智能摘要、截图归档与定时任务调度.
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Email Daily Summary
 
 通过 `browser-use` CLI 驱动浏览器自动化登录 Web 邮箱,抓取当日邮件并生成结构化日报。优先复用本机 Chrome 已登录会话(`--browser real`),避免在脚本中存储明文密码.

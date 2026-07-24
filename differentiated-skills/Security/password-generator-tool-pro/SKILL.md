@@ -1,4 +1,5 @@
 ---
+
 slug: password-generator-tool-pro
 name: password-generator-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 密码生成器(专业版)
 summary: "企业级密码生成工具,支持8-128位自定义、批量生成、泄露检测、策略模板与多格式导出,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - 8-128位高度可定制密码生成
 
@@ -49,7 +50,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+
 ---
+
 # 密码生成器(专业版)
 
 ## 概述

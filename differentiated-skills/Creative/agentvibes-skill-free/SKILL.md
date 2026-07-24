@@ -1,4 +1,5 @@
 ---
+
 slug: agentvibes-skill-free
 name: agentvibes-skill-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: AgentVibes语音合成-免费版
 summary: "免费离线TTS语音合成工具,支持914+声音切换、语速调节、个性风格,适合个人开发者使用.。AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。核心能力:"
 license: Proprietary
 edition: free
-description: 'AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。核心能力:
+description: AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。核心能力:，可处理提升工作效率
 
   - 支持 914+ 离线声音,覆盖 30+ 语种
 
@@ -40,7 +41,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # AgentVibes语音合成工具 - 免费版
 
 ## 概述

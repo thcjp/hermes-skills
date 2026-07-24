@@ -1,11 +1,12 @@
 ---
+
 slug: "ai-news"
 name: "ai-news"
 version: 1.0.2
 displayName: "ai-news"
 summary: "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - Research
@@ -18,7 +19,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # ai-news
 
 ## 付费版专享能力

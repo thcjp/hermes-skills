@@ -1,11 +1,12 @@
 ---
+
 slug: stealth-browser-assistant
 name: stealth-browser-assistant
 version: 1.0.1
 displayName: "反检测浏览器助手"
 summary: "一人管百号的浏览器自动化底座,指纹隔离+崩溃自愈+智能定位,告别封号掉线。反检测浏览器助手是一款浏览器自动化引擎,专为Agent浏览器场景设计。 支持指纹隔离、崩溃自愈、DOM蒸馏智能定位,"
 license: Proprietary
-description: |-
+description: |-，可自动提升工作效率
   反检测浏览器助手是一款浏览器自动化引擎,专为Agent浏览器场景设计。
   支持指纹隔离、崩溃自愈、DOM蒸馏智能定位,实现一人管百号不关联。
   
@@ -23,12 +24,18 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 开发
+  - 代码
+  - 写作
 tools:
   - read
   - exec
   - write
 category: "Automation"
+
 ---
+
 # 反检测浏览器助手 Stealth Browser Assistant v1.1.0
 
 智能浏览器自动化引擎,融合DOM蒸馏定位、稳定性增强、反检测混合方案,专为Agent浏览器自动化场景设计。

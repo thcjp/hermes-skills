@@ -1,11 +1,12 @@
 ---
+
 slug: "docker"
 name: "docker"
 version: 1.0.5
 displayName: "Docker"
 summary: "管Docker容器/镜像/Compose/网络/卷,含调试与生产加固。Docker containers, images, Compose stacks, networking, volum"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Docker containers, images, Compose stacks, networking, volumes, debugging,
   production hardening, 。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Docker
 
 ## 付费版专享能力

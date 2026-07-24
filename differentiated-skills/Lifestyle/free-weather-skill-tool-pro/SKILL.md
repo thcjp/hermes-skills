@@ -1,4 +1,5 @@
 ---
+
 slug: free-weather-skill-tool-pro
 name: free-weather-skill-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 免费天气技能专业版
 summary: "高可靠天气查询平台,支持多源冗余、企业集成、自定义数据源与监控告警。面向企业、运维与生产环境的高可靠天气查询平台."
 license: Proprietary
 edition: pro
-description: '面向企业、运维与生产环境的高可靠天气查询平台.
+description: 面向企业、运维与生产环境的高可靠天气查询平台，可自动提升工作效率
   核心能力: 多数据源冗余、批量查询、缓存加速、监控告警、自定义数据源、企业集成
 
   适用场景: 生产系统集成、运维监控、商业应用、IoT 设备、SLA 保障场景
@@ -24,6 +25,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 集成
 tools:
   - read
   - exec
@@ -31,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 免费天气技能 (专业版)
 ## 概述
 专业版在免费版零配置查询能力之上,扩展多数据源冗余、企业集成、缓存加速、监控告警等生产能力。支持同时对接 wttr.in、Open-Meteo、OpenWeather 等多个数据源,自动故障切换,提供 99.9% 可用性 SLA。适合需要将天气数据深度集成到生产系统的企业、IoT 平台、商业应用等场景.

@@ -26,6 +26,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 通信
+  - 邮件
+  - AI代理
+  - agent
+  - 安全
 tools:
   - read
   - exec

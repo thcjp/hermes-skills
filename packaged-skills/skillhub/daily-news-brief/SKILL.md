@@ -1,11 +1,12 @@
 ---
+
 slug: "daily-news-brief"
 name: "daily-news-brief"
 version: 1.0.2
 displayName: "Daily News Brief"
 summary: "每天早上8点自动搜集并发布国际时事、经济形势、科技发展新闻的skill。基于历史模式和近期国际动向（如特朗普即将访华等），提供专业的新闻简报。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   每天早上8点自动搜集并发布国际时事、经济形势、科技发展新闻的skill。基于历史模式和近期国际动向（如特朗普即将访华等），提供专业的新闻简报。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - Research
@@ -18,7 +19,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # Daily News Brief
 
 ## 付费版专享能力

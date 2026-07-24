@@ -1,4 +1,5 @@
 ---
+
 slug: golang-toolkit-free
 name: golang-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: Go语言工具包免费版
 summary: "Go 语言陷阱防范与优选实践指南，覆盖并发、接口、错误处理等核心场景.。面向 Go 开发者的代码陷阱防范工具，帮助编写可靠的 Go 代码。核心能力:"
 license: Proprietary
 edition: free
-description: '面向 Go 开发者的代码陷阱防范工具，帮助编写可靠的 Go 代码。核心能力:
+description: 面向 Go 开发者的代码陷阱防范工具，帮助编写可靠的 Go 代码。核心能力:，可处理提升工作效率
 
   - Goroutine 泄漏检测与防范
 
@@ -35,13 +36,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 安全
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Go 语言工具包（免费版）
 ## 概述
 本工具为 Go 开发者提供代码陷阱防范与优选实践指引，覆盖并发编程、接口与类型系统、错误处理、集合操作等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 Goroutine 泄漏、Channel 死锁、接口误用、Slice 共享内存等常见陷阱，编写更加可靠、高效的 Go 代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例.

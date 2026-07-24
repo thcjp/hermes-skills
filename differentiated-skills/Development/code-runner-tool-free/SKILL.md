@@ -1,4 +1,5 @@
 ---
+
 slug: code-runner-tool-free
 name: code-runner-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 代码执行工具免费版
 summary: "通过PTY方式在非交互环境中执行编程任务,支持自动应答与文件同步。面向个人开发者的代码执行工具,在非交互环境中以 PTY 方式运行编程任务。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人开发者的代码执行工具,在非交互环境中以 PTY 方式运行编程任务。核心能力:
+description: 面向个人开发者的代码执行工具,在非交互环境中以 PTY 方式运行编程任务。核心能力:，可自动提升工作效率
 
   - PTY 伪终端执行,适配非 TTY 环境
 
@@ -48,7 +49,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 # 代码执行工具免费版
 
 ## 概述

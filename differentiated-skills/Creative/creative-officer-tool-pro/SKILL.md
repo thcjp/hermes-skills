@@ -1,4 +1,5 @@
 ---
+
 slug: "creative-officer-tool-pro"
 name: "creative-officer-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "创意总监专业版"
 summary: "企业级创意管理平台，支持完整品牌体系、营销战役规划、创意资产管理与团队协作。。创意总监专业版 —— 面向企业团队与专业机构的高级创意管理平台。核心能力: - 完整品牌体系构建：品牌定位、视觉"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可分析提升工作效率
   创意总监专业版 —— 面向企业团队与专业机构的高级创意管理平台。核心能力:
   - 完整品牌体系构建：品牌定位、视觉系统、语调系统、品牌指南
   - 营销战役全流程规划：从洞察到执行到评估的完整战役框架
@@ -21,13 +22,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 写作
+  - 电商
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 创意总监专业版
 
 ## 概述

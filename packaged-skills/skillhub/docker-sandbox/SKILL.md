@@ -1,11 +1,12 @@
 ---
+
 slug: "docker-sandbox"
 name: "docker-sandbox"
 version: 1.0.1
 displayName: "Docker Sandbox"
 summary: "建管Docker沙箱VM环境,让Agent安全执行不可信代码。Create and manage Docker sandboxed VM environments for safe agen"
 license: "Proprietary"
-description: |-
+description: |-，可分析提升工作效率
   Create and manage Docker sandboxed VM environments for safe agent execution。Use when running unt。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - Operations
@@ -19,7 +20,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Docker Sandbox
 
 ## 付费版专享能力

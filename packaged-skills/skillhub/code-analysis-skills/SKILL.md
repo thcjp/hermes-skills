@@ -1,11 +1,12 @@
 ---
+
 slug: "code-analysis-skills"
 name: "code-analysis-skills"
 version: 1.0.1
 displayName: "Code Analysis Skills"
 summary: "产出描述性Git历史反思报告,复盘代码演进。Produces a DESCRIPTIVE Git-history reflection report。核心能力: - 开发工具领域的专业化AI"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Produces a DESCRIPTIVE Git-history reflection report。核心能力:
 
   - 开发工具领域的专业化AI辅助工具
@@ -35,7 +36,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Code Analysis Skills
 
 ## 付费版专享能力

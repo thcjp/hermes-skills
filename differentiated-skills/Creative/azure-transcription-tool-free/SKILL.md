@@ -1,4 +1,5 @@
 ---
+
 slug: azure-transcription-tool-free
 name: azure-transcription-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Azure语音转写免费版
 summary: "使用Azure AI进行批量语音转文字，支持基础转写与时间戳，适合个人用户处理音频.。Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:"
 license: Proprietary
 edition: free
-description: 'Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:
+description: Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:，可自动提升工作效率
 
   - 批量语音转文字，支持存储在Blob中的音频文件
 
@@ -40,7 +41,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # Azure语音转写免费版
 
 ## 概述

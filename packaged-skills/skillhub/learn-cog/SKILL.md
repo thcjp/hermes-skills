@@ -1,11 +1,12 @@
 ---
+
 slug: "learn-cog"
 name: "learn-cog"
 version: 1.0.13
 displayName: "个性化学习助手"
 summary: "AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。。个性化学习助手，基于CellCog提供多模式AI辅导. 支持项目教程、语言学习、写作反馈、视觉学习与学习指南"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   个性化学习助手，基于CellCog提供多模式AI辅导.
   支持项目教程、语言学习、写作反馈、视觉学习与学习指南生成.
   覆盖STEM、人文、技术与职业技能等多学科领域.
@@ -20,8 +21,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 开发
+  - 代码
+  - 写作
 category: "Automation"
+
 ---
+
 # 个性化学习助手
 
 AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南.

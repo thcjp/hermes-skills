@@ -1,11 +1,12 @@
 ---
+
 slug: "build-game"
 name: "build-game"
 version: 1.2.1
 displayName: "3D Game Builder"
 summary: "自然语言生成并迭代精修3D浏览器游戏,任意类型即说即得。Generate and iteratively develop polished 3D browser games from nat"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Generate and iteratively develop polished 3D browser games from natural
   language。Supports any ge。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 3D Game Builder
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: "typescript-toolkit"
 name: "typescript-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "TypeScript工具集(专业版)"
 summary: "面向团队与企业的TypeScript类型安全平台,含批量迁移、CI集成、规范审查与高级泛型工程。。TypeScript工具集专业版为团队与企业提供端到端类型安全工程能力,涵盖批量JS→TS迁"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   TypeScript工具集专业版为团队与企业提供端到端类型安全工程能力,涵盖批量JS→TS迁移、CI流水线集成、企业级规范审查与高级泛型设计。核心能力:
   - 批量代码迁移与渐进式类型化策略
   - 企业级tsconfig与ESLint规则集
@@ -30,6 +31,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 安全
 tools:
   - read
   - exec
@@ -38,7 +44,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # TypeScript工具集(专业版)
 
 ## 付费版专享能力

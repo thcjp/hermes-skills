@@ -1,4 +1,5 @@
 ---
+
 slug: slack-hub-tool-free
 name: slack-hub-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Slack Hub工具免费版
 summary: "Slack消息发送与搜索基础工具，支持频道列表查看、消息发送与线程回复，适合个人日常使用.。Slack Hub工具（免费版）—— 面向个人用户的Slack消息发送与搜索工具."
 license: Proprietary
 edition: free
-description: 'Slack Hub工具（免费版）—— 面向个人用户的Slack消息发送与搜索工具.
+description: Slack Hub工具（免费版）—— 面向个人用户的Slack消息发送与搜索工具，可处理提升工作效率
   核心能力:
 
   - 向频道或用户发送消息
@@ -41,7 +42,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # Slack Hub工具（免费版）
 
 ## 概述

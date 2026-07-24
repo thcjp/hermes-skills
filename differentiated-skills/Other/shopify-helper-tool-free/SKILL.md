@@ -1,4 +1,5 @@
 ---
+
 slug: shopify-helper-tool-free
 name: shopify-helper-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Shopify助手-免费版
 summary: "Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家。Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:"
 license: Proprietary
 edition: free
-description: 'Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:
+description: Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:，可处理提升工作效率
 
   - Shopify 主题 Liquid 模板开发
 
@@ -39,13 +40,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 创意
+  - 图像
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Shopify 助手 - 免费版
 
 ## 概述

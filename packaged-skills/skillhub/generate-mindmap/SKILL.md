@@ -1,17 +1,23 @@
 ---
+
 slug: "generate-mindmap"
 name: "generate-mindmap"
 version: 1.0.4
 displayName: "Generate Mindmap"
 summary: "生成基于认知科学方法论的交互式思维导图。支持 Markdown 大纲或 JSON 输入，一条命令同时导出 HTML（可交互编辑、8 种布局、深浅双主题）、PNG、JPG、SVG、PDF、XMin..."
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   生成基于认知科学方法论的交互式思维导图。支持 Markdown 大纲或 JSON 输入，一条命令同时导出 HTML（可交互编辑、8 种布局、深浅双主题）、PNG、JPG、SVG、PDF、XMin。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - Knowledge
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 知识
 tools:
   - read
   - exec
@@ -19,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Generate Mindmap
 
 ## 付费版专享能力

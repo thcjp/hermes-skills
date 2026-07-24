@@ -1,11 +1,12 @@
 ---
+
 slug: "longmemo-elite"
 name: "longmemo-elite"
 version: "2.0.0"
 displayName: "精英长记忆"
 summary: "解决Agent金鱼记忆：WAL防丢失+混合检索+成本预算+自动卫生，跨会话不丢上下文。。面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大痛点。提供WAL写前日"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大痛点。提供WAL写前日志防丢失、向量+关键词+图谱三路混合检索、六层存储架构、成本预算控制、记忆卫生自动化。适用于跨会话项目开发、多代理协作、长期偏好维护。适用关键词：长期记忆、跨会话、WAL、向量检索、记忆管理、agent记忆、memory
 tags:
   - 智能代理
@@ -22,7 +23,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # 精英长记忆（LongMemo Elite）
 
 解决 AI Agent 三大记忆顽疾：**跨会话遗忘、检索不准、成本失控**。本系统将六种成熟记忆策略整合为一套防弹架构，配合 WAL 写前日志协议，确保永不丢失上下文、永不遗忘决策、永不重复犯错.

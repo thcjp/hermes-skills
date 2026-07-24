@@ -1,4 +1,5 @@
 ---
+
 slug: dns-config-tool-free
 name: dns-config-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: DNS配置工具免费版
 summary: "基础 DNS 记录配置工具,支持 TTL 管理、邮件认证与迁移前准备,适合个人站点.。面向个人开发者与小站点的 DNS 记录配置辅助工具。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人开发者与小站点的 DNS 记录配置辅助工具。核心能力:
+description: 面向个人开发者与小站点的 DNS 记录配置辅助工具。核心能力:，可处理提升工作效率
 
   - DNS 迁移前 TTL 调整与缓存检查
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 运维
+  - 监控
+  - 通信
+  - 邮件
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # DNS 配置工具(免费版)
 
 ## 概述

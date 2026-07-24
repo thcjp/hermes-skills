@@ -1,4 +1,5 @@
 ---
+
 slug: pdf-toolkit-free
 name: pdf-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: PDF工具包（免费版）
 summary: "综合PDF处理工具集：创建、编辑、转换、合并、拆分、压缩、加密一站式解决.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: 'PDF工具包 - （免费版）
+description: PDF工具包 - （免费版），可处理提升工作效率
 
   核心能力: PDF处理, PDF创建, PDF合并, PDF拆分, PDF压缩, PDF加密, 水印, OCR, 表格提取
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 研究
+  - 分析
+  - 安全
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # PDF工具包（免费版）
 
 ## 概述

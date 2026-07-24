@@ -1,11 +1,12 @@
 ---
+
 slug: "music-generation"
 name: "music-generation"
 version: 1.0.1
 displayName: "Music Generation"
 summary: "优化提示生成AI音乐,风格控制/产出级音频。Generate AI music with optimized prompts, style control, and production-r"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Generate AI music with optimized prompts, style control, and production-ready
   audio output。核心能力:
 
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Music Generation
 
 ## 付费版专享能力

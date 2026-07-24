@@ -1,11 +1,12 @@
 ---
+
 slug: "data-analyst-cn-free"
 name: "data-analyst-cn-free"
 version: "1.0.0"
 displayName: "数据分析师(免费版)"
 summary: "基础数据清洗、描述统计与基础可视化代码生成，支持CSV与Excel读取。数据分析师免费版，提供基础的数据清洗与统计分析能力. 核心能力包括： - CSV与Excel数据读取（pd.read_"
 license: "MIT"
-description: |-
+description: |-，可分析提升工作效率
   数据分析师免费版，提供基础的数据清洗与统计分析能力.
   核心能力包括：
   - CSV与Excel数据读取（pd.read_csv、pd.read_excel）
@@ -28,7 +29,9 @@ tools:
   - glob
 homepage: ""
 category: "Research"
+
 ---
+
 # 数据分析师（免费版）
 
 ## 输入格式

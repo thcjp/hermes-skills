@@ -1,11 +1,12 @@
 ---
+
 slug: "agent-commercial-contract"
 name: "agent-commercial-contract"
 version: 1.0.1
 displayName: "Agent Commercial Con"
 summary: "让AI Agent自主谈判签署执行并强制履行具有法律效力的商业合同。Enables AI agents to autonomously negotiate, sign, execute, a"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Enables AI agents to autonomously negotiate, sign, execute, and enforce
   legally binding commercia。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+
 ---
+
 # Agent Commercial Con
 
 ## 付费版专享能力

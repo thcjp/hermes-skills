@@ -1,11 +1,12 @@
 ---
+
 slug: "z-card-image-free"
 name: "z-card-image-free"
 version: "1.0.0"
 displayName: "卡片图渲染免费版"
 summary: "将短文案渲染为 PNG 海报,支持公众号配色与整行高亮,基础渲染能力。将用户提供的短文案渲染成 PNG 卡片图. 免费版仅支持 poster-3-4 文字海报模板, 内置公众号配色预设与整行"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   将用户提供的短文案渲染成 PNG 卡片图.
   免费版仅支持 poster-3-4 文字海报模板,
   内置公众号配色预设与整行高亮能力,
@@ -23,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # z-card-image Free
 
 将用户提供的短文案渲染成 PNG 卡片图.

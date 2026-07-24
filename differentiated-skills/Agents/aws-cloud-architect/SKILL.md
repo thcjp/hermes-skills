@@ -1,11 +1,12 @@
 ---
+
 slug: "aws-cloud-architect"
 name: "aws-cloud-architect"
 version: "2.0.0"
 displayName: "AWS云架构师"
 summary: "安全审计剧本,成本优化工作流,分层权限模型,智能上下文检测,零暴露密钥。。AWS云基础设施智能管理助手：基于AWS CLI，提供默认只读查询、分层权限模型（L0只读→L1预演→L2确认写→L"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   AWS云基础设施智能管理助手：基于AWS CLI，提供默认只读查询、分层权限模型（L0只读→L1预演→L2确认写→L3破坏性→L4敏感）、安全审计剧本（IAM/S3/安全组/KMS检查清单）、成本优化工作流（空闲资源识别+Cost Explorer分析）、智能上下文检测（环境变量→配置文件→默认值）与零暴露密钥硬约束五大核心能力。适用于AWS资源盘点、CloudWatch健康监控、IAM与S3安全审计、成本分析、基础设施变更规划、多区域多账号管理。适用关键词：AWS云架构师、基础设施管理、安全审计、成本优化、AWS CLI、资源盘点.
 tags:
   - 智能代理
@@ -20,7 +21,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # AWS云架构师（AWS Cloud Architect）
 
 使用本地 AWS CLI 回答关于 AWS 资源的问题。默认只读查询，仅在用户明确要求变更并确认后执行写/破坏性操作.

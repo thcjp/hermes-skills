@@ -1,11 +1,12 @@
 ---
+
 slug: "pipedrive-api"
 name: "pipedrive-api"
 version: 1.0.5
 displayName: "Pipedrive"
 summary: "Pipedrive API托管OAuth,管交易/联系人/机构/活动。Pipedrive API integration with managed OAuth。Manage deals, p"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Pipedrive API integration with managed OAuth。Manage deals, persons,
   organizations, activities, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Pipedrive
 
 ## 付费版专享能力

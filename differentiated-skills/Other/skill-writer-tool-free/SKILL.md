@@ -1,4 +1,5 @@
 ---
+
 slug: skill-writer-tool-free
 name: skill-writer-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Skill编写工具免费版
 summary: "创建结构规范的Agent技能，支持渐进式展开与资源捆绑，适合个人开发者快速上手.。Skill编写工具免费版，面向个人开发者的轻量级Agent技能创建工具。核心能力:"
 license: Proprietary
 edition: free
-description: 'Skill编写工具免费版，面向个人开发者的轻量级Agent技能创建工具。核心能力:
+description: Skill编写工具免费版，面向个人开发者的轻量级Agent技能创建工具。核心能力:，可自动提升工作效率
 
   - 结构化 SKILL。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use
   when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。'
@@ -18,13 +19,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Skill编写工具（免费版）
 
 ## 概述

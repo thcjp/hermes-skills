@@ -1,11 +1,12 @@
 ---
+
 slug: "blog-seo-writer"
 name: "blog-seo-writer"
 version: 1.0.1
 displayName: "blog-seo-writer"
 summary: "写Google高排名SEO博文,内置关键词/元描述/结构化,流量可期。Create SEO-optimized blog posts that rank higher on Google。I"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Create SEO-optimized blog posts that rank higher on Google。Includes
   keyword integration, meta de。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # blog-seo-writer
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: ui-design-toolkit-free
 name: ui-design-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: UI设计工具包免费版
 summary: "UI设计原则与优选实践工具包,涵盖视觉层次、排版、色彩与间距,适合个人开发者快速上手.。面向个人开发者的 UI 设计工具包(免费版)。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人开发者的 UI 设计工具包(免费版)。核心能力:
+description: 面向个人开发者的 UI 设计工具包(免费版)。核心能力:，可处理提升工作效率
 
   - 视觉层次(Visual Hierarchy)设计原则
 
@@ -52,7 +53,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # UI 设计工具包 - 免费版
 
 ## 概述

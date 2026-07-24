@@ -1,4 +1,5 @@
 ---
+
 slug: java-toolkit-free
 name: java-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: Java 工具箱
 summary: "面向个人 Java 开发者的健壮编码避坑工具，覆盖空值与并发.。面向个人 Java 开发者的健壮编码避坑工具。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人 Java 开发者的健壮编码避坑工具。核心能力:
+description: 面向个人 Java 开发者的健壮编码避坑工具。核心能力:，可自动提升工作效率
 
   - 空值/Optional/自动装箱陷阱速查
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 运维
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Java 工具箱（免费版）
 
 ## 概述

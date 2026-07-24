@@ -1,11 +1,12 @@
 ---
+
 slug: "pdf-compressor-tool"
 name: "pdf-compressor-tool"
 version: "1.0.1"
 displayName: "Compress PDF"
 summary: "上传PDF到Cross-Service-Solutions压缩,轮询至完成。Compress a user-provided PDF by uploading it to Cross-Ser"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Compress a user-provided PDF by uploading it to Cross-Service-Solutions,
   polling until completion. Returns download URL and compression settings.
 tags:
@@ -13,13 +14,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - AI代理
+  - agent
+  - 开发
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
+
 ---
+
 # Compress PDF
 
 ## 核心能力

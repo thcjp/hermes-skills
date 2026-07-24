@@ -1,4 +1,5 @@
 ---
+
 slug: "communication-skill-free"
 name: "communication-skill-free"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "Comm LITE"
 summary: "基础沟通辅助工具,通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息。沟通辅助基础版(免费)。通过简化的3步流程(GATHER-CRAFT-REFINE)帮助用户快速"
 license: "MIT"
 edition: "free"
-description: |-
+description: |-，可自动提升工作效率
   沟通辅助基础版(免费)。通过简化的3步流程(GATHER-CRAFT-REFINE)帮助用户快速撰写得体、结构清晰的回应消息.
   核心能力:收集对话背景信息、按"承认-过渡-引导"单一结构组织回应、自我审视语气一致性.
   适用于客户投诉回复、同事请求婉拒、工作汇报措辞优化等常见文本沟通场景.
@@ -18,13 +19,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 知识
+  - 文档
+  - 集成
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
+
 ---
+
 # Comm LITE - 沟通辅助基础版
 
 通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息,采用"承认-过渡-引导"单一结构组织回应内容,适用于日常文本沟通场景.

@@ -1,11 +1,12 @@
 ---
+
 slug: "bookmark-intelligence"
 name: "bookmark-intelligence"
 version: 1.0.1
 displayName: "书签智析专业版"
 summary: "自动监控X书签、抓取链接文章、AI提取关键概念与行动项,关联个人项目并推送高价值洞察。。X(Twitter)书签自动化分析与知识萃取专业版。持续监控你的 X 书签,抓取推文所链接文章的完整正"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   X(Twitter)书签自动化分析与知识萃取专业版。持续监控你的 X 书签,抓取推文所链接文章的完整正文,
   用 AI 提取关键概念、可执行行动项与实现建议,并关联你在 config.json 中声明的活跃项目.
   核心能力:后台守护进程自动轮询、无限制书签处理、AI 深度分析(非关键词匹配)、
@@ -17,6 +18,11 @@ tags:
   - 自动化
   - 工具
   - 效率
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - 知识
 tools:
   - read
   - exec
@@ -24,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 书签智析专业版
 
 把你 X(Twitter)上的书签自动转化为可执行的知识与行动清单。后台守护进程持续轮询新书签,AI 抓取并分析链接文章正文,关联你的活跃项目,高价值洞察通过 Telegram 推送.

@@ -1,4 +1,5 @@
 ---
+
 slug: "explain-code-tool-pro"
 name: "explain-code-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "代码解释工具专业版"
 summary: "企业级代码理解工具,支持项目架构分析、批量文档生成、Mermaid可视化与API文档输出。。面向研发团队的高级代码理解工具,提供项目级架构分析、批量代码文档生成、Mermaid/UML可视化"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向研发团队的高级代码理解工具,提供项目级架构分析、批量代码文档生成、Mermaid/UML可视化与API文档自动输出。核心能力:
   - 项目级架构分析与依赖图
   - 批量代码文档自动生成
@@ -39,7 +40,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 代码解释工具专业版为研发团队提供项目级代码理解能力。在免费版单文件解释能力之上,专业版新增项目架构分析、批量代码文档生成、Mermaid/UML高质量可视化和API文档自动提取,帮助团队高效理解和管理大型代码库.
 专业版完全兼容免费版的解释风格和配置,研发团队可从免费版无缝升级。专业版保留了免费版的类比解释和ASCII图表风格,同时增加了更强大的可视化能力.
 ## 核心能力

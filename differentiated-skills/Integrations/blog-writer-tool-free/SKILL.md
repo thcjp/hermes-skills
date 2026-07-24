@@ -1,4 +1,5 @@
 ---
+
 slug: "blog-writer-tool-free"
 name: "blog-writer-tool-free"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "博客写作(免费版)"
 summary: "AI 博客写作免费版：文章增删改查、Markdown 内容、标签与草稿管理，含 REST API。。博客写作工具（免费版）面向个人创作者与独立开发者，提供博客文章的基础管理能力：创建、查询、"
 license: "MIT"
 edition: "free"
-description: |-
+description: |-，可自动提升工作效率
   博客写作工具（免费版）面向个人创作者与独立开发者，提供博客文章的基础管理能力：创建、查询、更新、删除文章，支持 Markdown 内容、标签分类与草稿/发布状态切换。通过 REST API 与本地博客平台交互，所有接口受 API Key 鉴权保护.
   核心能力：
   - 文章 CRUD：创建、列表、详情、更新、删除
@@ -30,13 +31,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 博客写作工具（免费版）
 
 ## 概述

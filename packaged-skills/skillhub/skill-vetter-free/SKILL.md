@@ -1,11 +1,12 @@
 ---
+
 slug: "skill-vetter-free"
 name: "skill-vetter-free"
 version: 1.0.1
 displayName: "Skill Vetter Free"
 summary: "基础版 AI Agent 技能审查工具，执行来源检查和 RED FLAGS 检测。。skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。在安装技能前执行来"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。在安装技能前执行来源检查和
   RED FLAGS 代码审查，输出基础审查报告。不包含 GitHub API 快速审查命令、权限范围评估、
   信任层级评估和 4 级风险分级。适合快速安全筛查，升级完整版获取全量审查协议.
@@ -19,8 +20,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - AI代理
 category: "Automation"
+
 ---
+
 # Skill Vetter Free
 
 skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。**永远不要在未审查前安装任何技能。**

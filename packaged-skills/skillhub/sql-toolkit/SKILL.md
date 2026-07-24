@@ -1,11 +1,12 @@
 ---
+
 slug: "sql-toolkit"
 name: "sql-toolkit"
 version: 1.0.1
 displayName: "SQL Toolkit"
 summary: "关系型数据库操作工具箱，覆盖SQLite/PostgreSQL/MySQL的查询、设计、迁移与优化。SQL Toolkit 是关系型数据库命令行操作的完整工具箱，覆盖 SQLite、Post"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   SQL Toolkit 是关系型数据库命令行操作的完整工具箱，覆盖 SQLite、PostgreSQL、MySQL 三大数据库.
   核心能力包括 Schema Operations（表结构创建与修改）、Quick Start（零配置快速上手）、
   查询模式（Joins、Aggregations、CTEs、窗口函数）、数据库迁移、查询优化（EXPLAIN、索引策略）、
@@ -15,6 +16,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - 研究
+  - 分析
+  - 通信
 tools:
   - read
   - exec
@@ -23,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # SQL Toolkit
 
 关系型数据库命令行操作工具箱，覆盖 SQLite、PostgreSQL、MySQL，提供 Schema 设计、查询编写、迁移脚本、索引优化、备份恢复的完整模式.

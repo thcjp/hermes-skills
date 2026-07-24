@@ -1,11 +1,12 @@
 ---
+
 slug: "job-auto-apply"
 name: "job-auto-apply"
 version: 1.0.1
 displayName: "Job Auto Apply"
 summary: "求职申请自动化,代你提交申请(需授权谨慎)。This skill fits its job-application automation purpose, but it gives an a"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   This skill fits its job-application automation purpose, but it gives
   an agent authority to submit。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -21,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Job Auto Apply
 
 ## 付费版专享能力

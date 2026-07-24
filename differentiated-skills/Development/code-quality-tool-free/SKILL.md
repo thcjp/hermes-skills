@@ -1,4 +1,5 @@
 ---
+
 slug: code-quality-tool-free
 name: code-quality-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 代码质量检查基础版
 summary: "提供代码风格规范、安全基础检查与可访问性要点,适合个人开发者快速校验代码质量.。面向独立开发者与小团队的代码质量辅助工具,涵盖命名规范、格式化标准、基础安全检查与可访问性要点。核心能力:"
 license: Proprietary
 edition: free
-description: '面向独立开发者与小团队的代码质量辅助工具,涵盖命名规范、格式化标准、基础安全检查与可访问性要点。核心能力:
+description: 面向独立开发者与小团队的代码质量辅助工具,涵盖命名规范、格式化标准、基础安全检查与可访问性要点。核心能力:，可处理提升工作效率
 
   - 代码风格规范校验(命名、格式、注释)
 
@@ -47,7 +48,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 # 代码质量检查工具 - 免费版
 
 ## 概述

@@ -1,11 +1,12 @@
 ---
+
 slug: "json-canvas"
 name: "json-canvas"
 version: 1.0.1
 displayName: "Json Canvas"
 summary: "创建编辑JSON Canvas文件,含节点/边/分组/连接。Create and edit JSON Canvas files (。canvas) with nodes, edges, gr"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Create and edit JSON Canvas files (。canvas) with nodes, edges, groups,
   and connections。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -21,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Json Canvas
 
 ## 付费版专享能力

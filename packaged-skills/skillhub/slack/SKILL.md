@@ -1,11 +1,12 @@
 ---
+
 slug: "slack"
 name: "slack"
 version: 1.0.1
 displayName: "Slack 消息管理"
 summary: "通过slack工具管理Slack消息:回应、置顶、发送/编辑/删除、成员与表情查询。Slack 消息管理。通过 slack 工具对 Slack 工作区进行消息操作,涵盖五大动作组: reac"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Slack 消息管理。通过 slack 工具对 Slack 工作区进行消息操作,涵盖五大动作组:
   reactions(添加回应与列出回应)、messages(发送、编辑、删除、读取消息)、
   pins(置顶、取消置顶、列出置顶消息)、memberInfo(查询成员信息)、emojiList(列出自定义表情).
@@ -27,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Slack 消息管理
 
 通过 `slack` 工具对 Slack 工作区进行消息操作,涵盖回应、消息收发与编辑、置顶管理、成员查询、表情列表五大动作组。工具使用已配置的 Bot Token 进行认证.

@@ -1,11 +1,12 @@
 ---
+
 slug: "lh-video-gen"
 name: "lh-video-gen"
 version: 1.0.1
 displayName: "LH Video Gen"
 summary: "从Markdown脚本生成9:16竖屏短视频,自动分镜。Generate vertical short videos (9:16) from a Markdown script。Parses"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Generate vertical short videos (9:16) from a Markdown script。Parses
   script sections, generates T。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # LH Video Gen
 
 ## 付费版专享能力

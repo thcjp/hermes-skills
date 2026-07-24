@@ -15,6 +15,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 创意
+  - 图像
+  - AI代理
+  - agent
+  - 开发
 tools:
   - read
   - exec

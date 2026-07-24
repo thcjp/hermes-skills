@@ -1,11 +1,12 @@
 ---
+
 slug: "feishu-send-file-free"
 name: "feishu-send-file-free"
 version: "1.0.0"
 displayName: "飞书发文件(免费)"
 summary: "飞书发送普通文件附件的基础版,支持file_key两步上传链路。。飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路, 提供脚本化与手动两"
 license: "MIT"
-description: |-
+description: |-，可处理提升工作效率
   飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路,
   提供脚本化与手动两种调用方式。适用于个人开发者与轻量级文件投递场景.
   本免费版仅支持普通文件链路,图片稳定发送与国际版 Lark 适配等高级能力请升级付费版.
@@ -14,6 +15,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 通信
 tools:
   - read
   - exec
@@ -21,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # feishu-send-file-free
 
 飞书机器人发送普通文件附件需要两步:先上传文件到 `im/v1/files` 获取 `file_key`,再用 `file_key` 发送 `msg_type=file` 消息。直接把本地路径塞给消息发送器只会显示路径文本.

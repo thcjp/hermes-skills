@@ -1,11 +1,12 @@
 ---
+
 slug: "deepseek-chat"
 name: "deepseek-chat"
 version: 1.0.1
 displayName: "DeepSeek Chat"
 summary: "DeepSeek 官方 API 对话（免费/超便宜，支持中文）。DeepSeek 官方 API 对话（免费/超便宜，支持中文） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   DeepSeek 官方 API 对话（免费/超便宜，支持中文）
 
   核心能力:
@@ -28,6 +29,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 通信
 tools:
   - read
   - exec
@@ -35,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # DeepSeek Chat
 
 ## 付费版专享能力

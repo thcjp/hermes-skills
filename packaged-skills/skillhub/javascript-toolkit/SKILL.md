@@ -1,4 +1,5 @@
 ---
+
 slug: "javascript-toolkit"
 name: "javascript-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "JavaScript工具包专业版"
 summary: "企业级 JavaScript 开发方案，含性能优化、模块化架构、测试策略与构建工具链。。面向企业级 JavaScript 开发团队的专业工具包。Use when 需要代码生成、编程辅助、调试"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向企业级 JavaScript 开发团队的专业工具包。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - 开发工具
@@ -17,6 +18,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 创意
 tools:
   - read
   - exec
@@ -24,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # JavaScript工具包专业版
 
 ## 付费版专享能力

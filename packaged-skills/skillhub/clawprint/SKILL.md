@@ -1,11 +1,12 @@
 ---
+
 slug: "clawprint"
 name: "clawprint"
 version: 3.0.2
 displayName: "Skill"
 summary: "Agent发现信任与交换,注册ClawPrint被其他Agent找到并建立信誉。Agent discovery, trust, and exchange。Register on ClawPr"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Agent discovery, trust, and exchange。Register on ClawPrint to be found
   by other agents, build re。
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 创意
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Skill
 
 ## 付费版专享能力

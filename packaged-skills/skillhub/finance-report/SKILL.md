@@ -1,4 +1,5 @@
 ---
+
 slug: "finance-report"
 name: "finance-report"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "财报分析专业版"
 summary: "企业级财报分析系统，支持批量处理、多格式导出、行业基准与深度预测模型。。面向专业分析师与机构的财报分析系统。支持批量文件处理、PDF/DOCX/ Markdown多格式导出、行业基准对比、高"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向专业分析师与机构的财报分析系统。支持批量文件处理、PDF/DOCX/
   Markdown多格式导出、行业基准对比、高级预测模型与自定义报告模板。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Finance"
+
 ---
+
 # 财报分析专业版
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "ws-excel"
 name: "ws-excel"
 version: 1.0.1
 displayName: "Excel"
 summary: "Excel提供读取/写入 Excel、数据清洗、公式计算等核心能力,付费版独享高级功能与批量处理。。Excel 操作。数据处理、公式、表格操作. 核心能力: - 集成工具领域的专业化AI辅助"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Excel 操作。数据处理、公式、表格操作.
   核心能力:
 
@@ -27,6 +28,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -34,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Excel
 
 ## 付费版专享能力

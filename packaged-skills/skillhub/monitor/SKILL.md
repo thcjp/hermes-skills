@@ -1,11 +1,12 @@
 ---
+
 slug: "monitor"
 name: "monitor"
 version: 1.0.3
 displayName: "Monitor"
 summary: "为任意事物建监控,用户定义检查项,技能管调度告警。Create monitors for anything。User defines what to check, skill handles"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Create monitors for anything。User defines what to check, skill handles
   scheduling and alerts。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
@@ -19,7 +20,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
+
 ---
+
 # Monitor
 
 ## 付费版专享能力

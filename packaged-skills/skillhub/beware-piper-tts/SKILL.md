@@ -1,11 +1,12 @@
 ---
+
 slug: "beware-piper-tts"
 name: "beware-piper-tts"
 version: 1.0.2
 displayName: "Piper TTS Pro"
 summary: "本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零 API 密"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零 API 密钥、零订阅费用.
   核心能力:多音色切换、长文本自动分段与合并、批量生成、SSML 风格控制(语速/停顿/音高)、
   WAV 与 MP3 双格式输出、跨平台部署(macOS Apple Silicon/Intel、Linux、Windows WSL).
@@ -17,6 +18,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 通信
+  - 邮件
+  - AI代理
 tools:
   - read
   - exec
@@ -24,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Piper TTS Pro
 
 基于 Piper 神经网络语音合成引擎的本地 TTS 专业版。所有推理在本地完成,无需 API Key、无需联网(首次下载音色后),生成速度约 0.5-1 秒/段.

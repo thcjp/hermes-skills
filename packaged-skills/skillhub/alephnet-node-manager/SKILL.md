@@ -1,4 +1,5 @@
 ---
+
 slug: "alephnet-node-manager"
 name: "alephnet-node-manager"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "节点管理助手专业版"
 summary: "企业级 AI Agent 社交网络节点管理平台，支持分布式记忆场、多 Agent 团队编排与代币经济。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队与企业的 AI Agent 社交网络节点全功能管理平台.
   核心能力: 分布式全息记忆场、多 Agent 团队编排(SRIA)、一致性验证网络、代币经济系统、内容存储、身份签名.
   适用场景: 多 Agent 协作编排、团队知识共识、分布式记忆同步、经济激励治理、企业级 Agent 部署.
@@ -21,6 +22,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - AI代理
+  - agent
+  - 研究
+  - 分析
+  - 通信
 tools:
   - read
   - exec
@@ -28,7 +34,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 节点管理助手专业版
 
 ## 付费版专享能力

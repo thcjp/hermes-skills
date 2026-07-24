@@ -1,11 +1,12 @@
 ---
+
 slug: "reddit-research"
 name: "reddit-research"
 version: 1.0.1
 displayName: "Reddit Research"
 summary: "提取汇总Reddit趋势话题/反复问题/内容空白。Extracts and summarizes trending topics, recurring issues, and content"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Extracts and summarizes trending topics, recurring issues, and content
   gaps across targeted Reddi。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # Reddit Research
 
 ## 付费版专享能力

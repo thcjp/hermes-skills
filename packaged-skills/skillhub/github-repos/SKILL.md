@@ -1,11 +1,12 @@
 ---
+
 slug: "github-repos"
 name: "github-repos"
 version: 1.0.6
 displayName: "GitHub"
 summary: "管GitHub仓库/issue/PR/提交/分支/发布/工作流。Work with GitHub repositories, issues, pull requests, commits,"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Work with GitHub repositories, issues, pull requests, commits, branches,
   releases, and workflows 。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # GitHub
 
 ## 付费版专享能力

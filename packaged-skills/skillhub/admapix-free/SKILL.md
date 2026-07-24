@@ -1,11 +1,12 @@
 ---
+
 slug: "admapix-free"
 name: "admapix-free"
 version: "1.0.0"
 displayName: "AdMapix LITE"
 summary: "AdMapix基础查询，创意搜索+应用详情+商店榜单。AdMapix 原始数据层基础客户端（免费版）。覆盖广告创意搜索、应用详情查询、商店榜单查询三大基础端点类别. 作为薄客户端透传 API"
 license: "MIT"
-description: |-
+description: |-，可生成提升工作效率
   AdMapix 原始数据层基础客户端（免费版）。覆盖广告创意搜索、应用详情查询、商店榜单查询三大基础端点类别.
   作为薄客户端透传 API 返回的原始结构化 JSON，不分析、不总结、不排序、不生成页面.
   支持 X-API-Key 认证、page_size 上限 10 自动钳制、filter-options 元数据发现.
@@ -22,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 # AdMapix LITE
 
 AdMapix 原始 API 基础客户端（免费版）。获取原始结构化数据并返回 JSON，不分析、不总结、不排序、不生成页面.

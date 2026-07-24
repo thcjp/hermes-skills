@@ -1,10 +1,11 @@
 ---
+
 slug: "key-guard"
 name: "key-guard"
 version: 1.0.2
 displayName: "Key Guard"
 summary: "安全护栏,阻止API Key被发送给Claude"Proprietary。Security guardrail: prevents API keys from being sent to a"
-description: |-
+description: |-，可处理提升工作效率
   Security guardrail: prevents API keys from being sent to ai-assistant。Triggers
   when user asks to call。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -12,6 +13,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 安全
+  - 加密
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ homepage: ""
 # 定价元数据
 license: "MIT"
 category: "Automation"
+
 ---
+
 # Key Guard
 
 ## 付费版专享能力

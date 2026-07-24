@@ -1,11 +1,12 @@
 ---
+
 slug: "netpad-tool"
 name: "netpad-tool"
 version: "1.0.0"
 displayName: "Netpad"
 summary: "NetPad管理工具,管表单/提交/用户(删除需谨慎)。The skill appears to be a legitimate NetPad management tool, but it"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   The skill appears to be a legitimate NetPad management tool, but it
   gives an agent powerful delet
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 写作
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Netpad
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "markdown-converter-tool"
 name: "markdown-converter-tool"
 version: "1.0.0"
 displayName: "Markdown Converter"
 summary: "简洁Markdown转换助手(用Azure有隐私提示)。This is a straightforward Markdown conversion helper, with privacy"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   This is a straightforward Markdown conversion helper, with privacy caveats
   if users choose Azure 
 tags:
@@ -22,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Markdown Converter
 
 ## 付费版专享能力

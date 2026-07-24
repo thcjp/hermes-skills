@@ -1,4 +1,5 @@
 ---
+
 slug: "email-digest"
 name: "email-digest"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "邮件日报专业版"
 summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案。邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发.
 tags:
   - 沟通协作
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # 邮件日报专业版
 
 ## 付费版专享能力

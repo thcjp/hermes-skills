@@ -1,4 +1,5 @@
 ---
+
 slug: free-weather-skill-tool-free
 name: free-weather-skill-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 免费天气技能免费版
 summary: "通过wttr.in和Open-Meteo免费API查询全球天气,无需API Key。面向个人用户的轻量天气查询工具,完全免费且无需 API Key."
 license: Proprietary
 edition: free
-description: '面向个人用户的轻量天气查询工具,完全免费且无需 API Key.
+description: 面向个人用户的轻量天气查询工具,完全免费且无需 API Key，可自动提升工作效率
   核心能力: 全球城市天气查询、多格式输出、JSON编程接口、命令行便捷调用
 
   适用场景: 个人出行查询、脚本集成、开发调试、终端天气展示
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 集成
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 免费天气技能 (免费版)
 
 ## 概述

@@ -1,4 +1,5 @@
 ---
+
 slug: "ui-ux-dev-paid"
 name: "ui-ux-dev-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "UI/UX开发工具专业版"
 summary: "多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎。面向开发团队和代理机构的专业级React页面生成引擎,支持多页面项目管理、 设计系统持久化、自动化"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可生成提升工作效率
   面向开发团队和代理机构的专业级React页面生成引擎,支持多页面项目管理、
   设计系统持久化、自动化截图审查循环、批量图片处理和Zip打包导出。核心能力:
   - 多页面项目管理与配置持久化
@@ -40,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # UI/UX开发工具专业版
 
 ## 付费版专享能力

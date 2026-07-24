@@ -1,4 +1,5 @@
 ---
+
 slug: "financial-literacy-tool-pro"
 name: "financial-literacy-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "金融素养专业版"
 summary: "专业金融教育与理财规划系统，支持个性化方案、认证培训与企业内训。。面向专业用户与机构的全栈金融素养教育系统。支持个性化理财方案生成、 金融从业认证培训课程、企业内训定制与学习进度追踪。Use"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向专业用户与机构的全栈金融素养教育系统。支持个性化理财方案生成、
   金融从业认证培训课程、企业内训定制与学习进度追踪。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -23,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Finance"
+
 ---
+
 # 金融素养专业版（PRO版）
 
 ## 概述

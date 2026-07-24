@@ -1,11 +1,12 @@
 ---
+
 slug: "mcporter"
 name: "mcporter"
 version: 1.0.1
 displayName: "Mcporter"
 summary: "用mcporter CLI列出/配置/认证/调用MCP服务与工具。Use the mcporter CLI to list, configure, auth, and call 协议 ser"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Use the mcporter CLI to list, configure, auth, and call 协议 servers/tools。核心能力:
 
   - 其他工具领域的专业化AI辅助工具
@@ -26,6 +27,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 写作
+  - 电商
 tools:
   - read
   - exec
@@ -34,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Mcporter
 
 ## 付费版专享能力

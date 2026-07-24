@@ -1,4 +1,5 @@
 ---
+
 slug: story-write-tool-free
 name: story-write-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 长篇网文写作-免费版
 summary: "长篇网文创作助手,支持大纲管理、章节生成与一致性检查,适合个人作者。长篇网文创作助手免费版,面向个人网文作者."
 license: Proprietary
 edition: free
-description: '长篇网文创作助手免费版,面向个人网文作者.
+description: 长篇网文创作助手免费版,面向个人网文作者，可自动提升工作效率
   核心能力:
 
   - 小说大纲与设定管理
@@ -38,13 +39,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 研究
+  - 分析
+  - 创意
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 长篇网文写作 - 免费版
 
 ## 概述

@@ -1,11 +1,12 @@
 ---
+
 slug: "book-painter"
 name: "book-painter"
 version: 1.0.2
 displayName: "Book Painter"
 summary: "经Lokuli协议预约油漆工,找到并下单本地画师服务。Book painter services through Lokuli 协议。Use when user needs to find"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Book painter services through Lokuli 协议。Use when user needs to find
   and book painter。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Book Painter
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "free-ride"
 name: "free-ride"
 version: 1.0.12
 displayName: "Free Ride"
 summary: "为SkillHub管理OpenRouter免费AI模型,零成本调用。Manages free AI models from OpenRouter for SkillHub。核心能力: - 集"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Manages free AI models from OpenRouter for SkillHub。核心能力:
 
   - 集成工具领域的专业化AI辅助工具
@@ -26,6 +27,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -33,7 +38,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Free Ride
 
 ## 付费版专享能力

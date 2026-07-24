@@ -1,4 +1,5 @@
 ---
+
 slug: cheat-code-tool-free
 name: cheat-code-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 能力扩展工具免费版
 summary: "为AI代理提供训练数据之外的外部知识检索能力,扩展问题解决边界。面向个人用户的能力扩展工具,让 AI Agent 能够访问训练数据之外的结构化知识。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人用户的能力扩展工具,让 AI Agent 能够访问训练数据之外的结构化知识。核心能力:
+description: 面向个人用户的能力扩展工具,让 AI Agent 能够访问训练数据之外的结构化知识。核心能力:，可处理提升工作效率
 
   - 外部知识库查询与结构化数据获取
 
@@ -48,7 +49,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 # 能力扩展工具免费版
 
 ## 概述

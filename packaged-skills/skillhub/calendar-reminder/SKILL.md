@@ -1,11 +1,12 @@
 ---
+
 slug: "calendar-reminder"
 name: "calendar-reminder"
 version: 1.0.1
 displayName: "日历提醒"
 summary: "每晚22点扫描明日Outlook日历,按上下午时段差异化飞书提醒,自动注册定时任务并汇报扫描结果。。面向独立开发者与企业团队的 Outlook 日历智能提醒 Skill。每晚 22:00 自"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   面向独立开发者与企业团队的 Outlook 日历智能提醒 Skill。每晚 22:00 自动扫描明日全部日程,
   按时段策略差异化推送飞书通知:上午日程提前 2 小时提醒,下午日程在当天 12:00 统一汇总提醒,
   扫描完成立即发送汇报消息。基于 owa-outlook skill 提供的 owa_calendar.py 读取日历数据,
@@ -18,6 +19,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 通信
+  - 邮件
+  - 开发
+  - 代码
+  - 写作
 tools:
   - read
   - exec
@@ -25,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Calendar Reminder 日历提醒
 
 ## 输入格式

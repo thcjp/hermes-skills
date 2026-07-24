@@ -1,4 +1,5 @@
 ---
+
 slug: podcast-chaptering-tool-free
 name: podcast-chaptering-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 播客章节工具免费版
 summary: "从播客音频或文字稿生成章节标记与高光片段建议,适合个人创作者快速制作节目笔记.。面向个人创作者的播客章节标记工具(免费版)。核心能力:"
 license: Proprietary
 edition: free
-description: '面向个人创作者的播客章节标记工具(免费版)。核心能力:
+description: 面向个人创作者的播客章节标记工具(免费版)。核心能力:，可自动提升工作效率
 
   - 从音频或文字稿生成章节标记(时间戳+标题)
 
@@ -53,7 +54,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 播客章节工具 - 免费版
 
 ## 概述

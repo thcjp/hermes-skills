@@ -1,11 +1,12 @@
 ---
+
 slug: "pptx-pdf-font-fix"
 name: "pptx-pdf-font-fix"
 version: 1.0.1
 displayName: "PPTX PDF Font Fix"
 summary: "本地编辑PPTX修复PowerPoint字体,窄范围修复工具。This skill is a narrow PowerPoint repair utility that locally ed"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   This skill is a narrow PowerPoint repair utility that locally edits
   a user-provided PPTX and show。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # PPTX PDF Font Fix
 
 ## 付费版专享能力

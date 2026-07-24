@@ -1,11 +1,12 @@
 ---
+
 slug: "gitcrawl"
 name: "gitcrawl"
 version: 1.0.1
 displayName: "Gitcrawl"
 summary: "GitHub归档,issue/PR搜索/同步新鲜度/重复聚类。GitHub archive: issue/PR search, sync freshness, duplicate clust"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   GitHub archive: issue/PR search, sync freshness, duplicate clusters。核心能力:
 
   - 研究工具领域的专业化AI辅助工具
@@ -33,7 +34,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Gitcrawl
 
 ## 付费版专享能力

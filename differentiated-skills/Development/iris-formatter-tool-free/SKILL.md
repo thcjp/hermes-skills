@@ -1,4 +1,5 @@
 ---
+
 slug: iris-formatter-tool-free
 name: iris-formatter-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: IRIS代码格式化免费版
 summary: "InterSystems IRIS ObjectScript 代码格式化与基础规范检查工具.。面向 IRIS 开发者的 ObjectScript 代码格式化与规范检查工具。核心能力:"
 license: Proprietary
 edition: free
-description: '面向 IRIS 开发者的 ObjectScript 代码格式化与规范检查工具。核心能力:
+description: 面向 IRIS 开发者的 ObjectScript 代码格式化与规范检查工具。核心能力:，可处理提升工作效率
 
   - 变量与方法命名规范检查
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 运维
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # IRIS 代码格式化工具（免费版）
 
 ## 概述

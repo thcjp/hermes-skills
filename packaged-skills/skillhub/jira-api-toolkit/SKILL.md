@@ -1,4 +1,5 @@
 ---
+
 slug: "jira-api-toolkit"
 name: "jira-api-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Jira工具箱(专业版)"
 summary: "全功能 Jira Cloud 集成，含创建/更新/流转/批量/自动化与多连接管理。。全功能 Jira Cloud 集成，含创建/更新/流转/批量/自动化与多连接管理。核心能力： - 全部只读"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   全功能 Jira Cloud 集成，含创建/更新/流转/批量/自动化与多连接管理。核心能力：
   - 全部只读能力 + 创建/更新/删除议题
   - 流转议题状态与评论管理
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Jira工具箱(专业版)
 
 ## 付费版专享能力

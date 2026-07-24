@@ -1,4 +1,5 @@
 ---
+
 slug: "ziptax-paid"
 name: "ziptax-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "销售税查询(专业版)"
 summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。。销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集成与高并发API封装。核心能力:
   - 批量地址/邮编查询(并行处理)
   - 本地缓存与增量刷新(降低API消耗)
@@ -32,6 +33,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 集成
+  - integration
+  - 研究
+  - 分析
+  - 开发
 tools:
   - read
   - exec
@@ -39,7 +45,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 销售税查询(专业版)
 
 ## 付费版专享能力

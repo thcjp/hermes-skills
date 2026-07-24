@@ -1,11 +1,12 @@
 ---
+
 slug: "mongodb"
 name: "mongodb"
 version: 1.0.2
 displayName: "MongoDB"
 summary: "设计schema/写查询/配置MongoDB,兼顾一致性与性能。Design schemas, write queries, and configure MongoDB for consis"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Design schemas, write queries, and configure MongoDB for consistency
   and performance。核心能力:
 
@@ -27,6 +28,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -34,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # MongoDB
 
 ## 付费版专享能力

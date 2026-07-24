@@ -1,4 +1,5 @@
 ---
+
 slug: design-toolkit-free
 name: design-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 设计偏好工具箱-免费版
 summary: "自动学习用户视觉偏好的轻量级工具，支持UI与图形设计的基础偏好跟踪与适配.。设计偏好工具箱免费版，面向个人创作者的视觉偏好自学习工具。核心能力："
 license: Proprietary
 edition: free
-description: '设计偏好工具箱免费版，面向个人创作者的视觉偏好自学习工具。核心能力：
+description: 设计偏好工具箱免费版，面向个人创作者的视觉偏好自学习工具。核心能力：，可自动提升工作效率
 
   - 自动识别用户在设计选择中的审美倾向
 
@@ -38,7 +39,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 设计偏好工具箱（免费版）
 
 ## 概述

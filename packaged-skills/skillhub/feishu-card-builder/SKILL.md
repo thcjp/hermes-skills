@@ -1,4 +1,5 @@
 ---
+
 slug: "feishu-card-builder"
 name: "feishu-card-builder"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "飞书卡片专业版"
 summary: "企业级飞书交互卡片与批量推送，支持模板与高级组件。飞书卡片专业版面向企业用户与高效能个人用户，在免费版卡片消息发送能力之上扩展 批量推送、卡片模板系统、高级交互组件、数据动态绑定、卡片版本管"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   飞书卡片专业版面向企业用户与高效能个人用户，在免费版卡片消息发送能力之上扩展
   批量推送、卡片模板系统、高级交互组件、数据动态绑定、卡片版本管理与发送分析等
   企业级特性。核心能力:
@@ -28,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 飞书卡片专业版
 
 ## 付费版专享能力

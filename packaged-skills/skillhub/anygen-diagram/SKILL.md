@@ -1,4 +1,5 @@
 ---
+
 slug: "anygen-diagram"
 name: "anygen-diagram"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "AnyGen图表生成-专业版"
 summary: "企业级图表生成工具,支持批量生成、自定义模板、团队协作与API集成,适配商业文档生产。。AnyGen图表生成专业版,面向企业团队与专业用户的高级图表与可视化结构生成工具。核心能力: - 批量"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   AnyGen图表生成专业版,面向企业团队与专业用户的高级图表与可视化结构生成工具。核心能力:
   - 批量图表生成,支持多描述队列处理
   - 自定义图表模板库,统一团队风格
@@ -30,6 +31,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 工作流
+  - 知识
+  - 文档
+  - 开发
 tools:
   - read
   - exec
@@ -37,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # AnyGen图表生成-专业版
 
 ## 付费版专享能力

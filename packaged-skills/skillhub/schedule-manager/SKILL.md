@@ -1,4 +1,5 @@
 ---
+
 slug: "schedule-manager"
 name: "schedule-manager"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "任务调度管家(专业版)"
 summary: "全功能任务调度系统，含依赖链、失败重试、多通道告警、日历集成、团队时区协调与监控仪表盘，支撑企业级调度场景。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   任务调度管家专业版是面向团队与企业的全功能任务调度系统。在免费版基础上解锁任务依赖链（DAG编排）、失败自动重试与指数退避、多通道告警（邮件/Telegram/钉钉/飞书）、日历集成（Google Calendar/Outlook）、团队时区协调视图、监控仪表盘、任务优先级与资源调度七大高级能力。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - 任务调度
@@ -23,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 任务调度管家(专业版)
 
 ## 付费版专享能力

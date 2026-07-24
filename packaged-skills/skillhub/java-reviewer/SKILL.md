@@ -1,4 +1,5 @@
 ---
+
 slug: "java-reviewer"
 name: "java-reviewer"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Java代码审查专业版"
 summary: "企业级 Java 代码审查方案，支持批量审查、自定义规则、HTML 报告与 CI 集成。。面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
   - 开发工具
@@ -17,6 +18,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 知识
 tools:
   - read
   - exec
@@ -25,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Java代码审查专业版
 
 ## 付费版专享能力

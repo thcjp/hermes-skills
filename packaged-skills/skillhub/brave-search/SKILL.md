@@ -1,11 +1,12 @@
 ---
+
 slug: "brave-search"
 name: "brave-search"
 version: 1.0.2
 displayName: "Brave Search"
 summary: "经Brave Search API做网页搜索与内容提取,隐私优先。Web search and content extraction via Brave Search API。核心能力: -"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Web search and content extraction via Brave Search API。核心能力:
 
   - 研究工具领域的专业化AI辅助工具
@@ -34,7 +35,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # Brave Search
 
 ## 付费版专享能力

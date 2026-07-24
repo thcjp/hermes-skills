@@ -1,4 +1,5 @@
 ---
+
 slug: "video-translator-paid"
 name: "video-translator-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "视频翻译-专业版"
 summary: "企业级视频翻译与配音平台，支持8种语言、双语字幕、批量翻译、语音克隆与优先队列，适合跨国内容本地化。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   视频翻译专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
@@ -26,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 视频翻译-专业版
 
 ## 付费版专享能力

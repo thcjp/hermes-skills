@@ -1,11 +1,12 @@
 ---
+
 slug: "api-doc-writer"
 name: "api-doc-writer"
 version: 1.0.2
 displayName: "API文档一键生成规范器"
 summary: "接口文档写不规范?一键生成REST API完整文档,含认证/状态码/安全建议模板,支持多模块结构,开发团队协作必备。"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   API 接口文档编写助手。用于编写 REST API 文档、定义接口规范、生成接口说明.
   提供完整文档模板（接口概览、通用说明、认证方式、请求/响应格式、状态码、接口详情、变更记录）、
   RESTful 设计规范（HTTP 方法语义、URL 命名、状态码分类）、安全建议（加密传输、Token 过期、频率限制、参数校验）.
@@ -23,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # API文档一键生成规范器
 
 接口文档写不规范、团队成员各写各的?一键生成符合RESTful规范的完整API文档,含认证方式、状态码分类、安全建议模板,支持用户/订单/支付等多模块结构,开发团队协作必备.

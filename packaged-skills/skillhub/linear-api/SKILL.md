@@ -1,11 +1,12 @@
 ---
+
 slug: "linear-api"
 name: "linear-api"
 version: 1.0.7
 displayName: "项目管理API"
 summary: "通过GraphQL操作工作项、项目、周期、标签与评论,覆盖创建查询转换全流程。。通过项目管理工具的GraphQL API操作工作项全生命周期:工作项CRUD、 项目管理、团队管理、周期管理、"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   通过项目管理工具的GraphQL API操作工作项全生命周期:工作项CRUD、
   项目管理、团队管理、周期管理、标签管理、评论与关联。覆盖GraphQL
   查询构造、工作流状态转换与自定义视图。适用于独立开发者、企业团队
@@ -21,7 +22,9 @@ tags:
   - 接口
   - 开发工具
 category: "Development"
+
 ---
+
 # 项目管理API集成
 
 通过项目管理工具的 GraphQL API 操作工作项全生命周期,从创建到状态推进,覆盖项目、周期、标签、评论与关联管理.

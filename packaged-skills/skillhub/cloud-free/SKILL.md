@@ -1,11 +1,12 @@
 ---
+
 slug: "cloud-free"
 name: "cloud-free"
 version: "1.0.0"
 displayName: "消费级云存储-免费版"
 summary: "消费级云存储免费版，提供服务选型与常见困惑澄清，适合基础决策场景。。消费级云存储助手免费版提供服务选型与常见困惑澄清能力. 帮助用户按设备组合选择最佳云存储服务，并澄清同步机制与存储空间等常"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   消费级云存储助手免费版提供服务选型与常见困惑澄清能力.
   帮助用户按设备组合选择最佳云存储服务，并澄清同步机制与存储空间等常见误解.
   核心能力：
@@ -27,7 +28,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+
 ---
+
 # Cloud — 消费级云存储助手（免费版）
 
 ## 输入格式

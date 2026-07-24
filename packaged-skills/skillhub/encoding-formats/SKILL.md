@@ -1,11 +1,12 @@
 ---
+
 slug: "encoding-formats"
 name: "encoding-formats"
 version: 1.0.1
 displayName: "编码格式工具"
 summary: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化。编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解码、
   哈希校验和序列化格式转换。支持命令行和代码两种方式，适用于API响应解码、
   HTTP请求参数编码、二进制数据检查、JWT令牌分析、文件完整性校验等场景.
@@ -20,8 +21,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 安全
 category: "Automation"
+
 ---
+
 # 编码格式工具
 
 编码、解码和检查常见数据格式。覆盖Base64、URL编码、Hex、Unicode、JWT、哈希校验和序列化格式.

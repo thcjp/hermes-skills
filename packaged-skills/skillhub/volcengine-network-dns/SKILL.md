@@ -1,11 +1,12 @@
 ---
+
 slug: "volcengine-network-dns"
 name: "volcengine-network-dns"
 version: 1.0.1
 displayName: "Volcengine Network D"
 summary: "火山引擎网络服务DNS记录管理,区记录查询与更新。DNS record management on Volcengine networking services。Use when users"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   DNS record management on Volcengine networking services。Use when users
   need zone record query/up。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
@@ -19,7 +20,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
+
 ---
+
 # Volcengine Network D
 
 ## 付费版专享能力

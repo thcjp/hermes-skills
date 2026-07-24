@@ -1,11 +1,12 @@
 ---
+
 slug: "discord-communities"
 name: "discord-communities"
 version: 1.0.7
 displayName: "Discord社区管理"
 summary: "Discord社区管理助手,覆盖OAuth连接、公会查询、成员权限、应用命令与商业订阅全流程。Discord 社区管理专业版 —— 基于 ClawLink OAuth 集成的一站式 Disc"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Discord 社区管理专业版 —— 基于 ClawLink OAuth 集成的一站式 Discord 社区运营助手.
   覆盖用户身份、公会与小组件、应用命令权限、商业权益(SKU/订阅/消耗)、
   角色连接元数据、网关与邀请解析等核心领域.
@@ -40,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Discord 社区管理
 
 基于 ClawLink OAuth 的 Discord 社区管理助手,围绕用户身份、公会、应用命令权限、商业权益与角色连接五大领域提供只读与变更操作。所有变更操作遵循风险分级策略,`confirm` 与 `high_impact` 操作需显式确认.

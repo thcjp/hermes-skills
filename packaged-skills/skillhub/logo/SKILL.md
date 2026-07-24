@@ -1,11 +1,12 @@
 ---
+
 slug: "logo"
 name: "logo"
 version: 1.0.1
 displayName: "Logo"
 summary: "用AI图像工具生成logo,含提示结构/校验/导出。Generate logos with AI image tools using effective prompt structures,"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Generate logos with AI image tools using effective prompt structures,
   validation loops, and expor。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Logo
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "javascript"
 name: "javascript"
 version: 1.0.4
 displayName: "JavaScript"
 summary: "写健壮JavaScript,异步/类型转换/ES2023+特性。Write robust JavaScript with async patterns, type coercion hand"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Write robust JavaScript with async patterns, type coercion handling,
   and modern ES2023+ features。核心能力:
 
@@ -29,6 +30,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 集成
 tools:
   - read
   - exec
@@ -36,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # JavaScript
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "jira-api"
 name: "jira-api"
 version: 1.0.9
 displayName: "Jira"
 summary: "Jira API托管OAuth集成,JQL搜索/建改issue/管看板。Jira API integration with managed OAuth。Search issues with"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Jira API integration with managed OAuth。Search issues with JQL, create
   and update issues, manage。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Jira
 
 ## 付费版专享能力

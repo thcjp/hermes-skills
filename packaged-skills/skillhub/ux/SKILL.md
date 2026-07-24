@@ -1,11 +1,12 @@
 ---
+
 slug: "ux"
 name: "ux"
 version: 1.0.1
 displayName: "UX"
 summary: "设计分析直觉高效贴合心智模型的用户体验。Design and analyze user experiences that are intuitive, efficient, and alig"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Design and analyze user experiences that are intuitive, efficient, and
   aligned with user mental m。
 tags:
@@ -13,6 +14,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 创意
+  - 图像
 tools:
   - read
   - exec
@@ -20,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # UX
 
 ## 付费版专享能力

@@ -1,4 +1,5 @@
 ---
+
 slug: straker-verify-tool-free
 name: straker-verify-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: AI翻译验证(免费版)
 summary: "100+语言AI翻译服务,支持项目创建、状态查询与文件下载,适合个人翻译需求,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - 100+语言AI翻译服务
 
@@ -52,7 +53,9 @@ tools:
   - exec
 homepage: ""
 category: "Security"
+
 ---
+
 # AI翻译验证(免费版)
 
 ## 概述

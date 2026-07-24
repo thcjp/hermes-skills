@@ -1,11 +1,12 @@
 ---
+
 slug: "shop-culture"
 name: "shop-culture"
 version: 1.0.13
 displayName: "生活方式购物"
 summary: "AI代理自主浏览生活方式商品、下单和跟踪物流的多链加密支付购物。AI代理自主购物技能。支持商品浏览、语义搜索、AI购物助手、多链加密支付结账、 订单跟踪等功能。支持8+区块链支付（Solan"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   AI代理自主购物技能。支持商品浏览、语义搜索、AI购物助手、多链加密支付结账、
   订单跟踪等功能。支持8+区块链支付（Solana/Ethereum/Base等）和x402协议结账.
   适用于AI驱动的自主购物、礼品选购和订单管理等场景.
@@ -20,8 +21,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 知识
+  - 文档
+  - 生活
 category: "Automation"
+
 ---
+
 # 生活方式购物
 
 AI代理自主购物技能，为生活方式商店提供完整的浏览、下单和跟踪能力。支持自然语言搜索、多链加密支付和x402协议结账，无需API Key.

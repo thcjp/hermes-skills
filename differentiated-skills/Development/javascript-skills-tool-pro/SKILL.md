@@ -1,4 +1,5 @@
 ---
+
 slug: "javascript-skills-tool-pro"
 name: "javascript-skills-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "JavaScript规范工具(专业版)"
 summary: "面向团队与企业的全量JavaScript规范套件,含性能优化、安全审查与CI/CD集成。。JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能优化策略、安全审查清单与CI/CD自动化集成方案。核心能力:
   - 覆盖28+全量风格规则,含迭代器、生成器、标准库等进阶主题
   - 完整异步并发模型与错误链路最佳实践
@@ -30,13 +31,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 安全
+  - 加密
+  - 集成
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # JavaScript规范工具(专业版)
 
 ## 概述

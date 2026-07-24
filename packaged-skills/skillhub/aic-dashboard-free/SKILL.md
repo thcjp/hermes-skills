@@ -1,11 +1,12 @@
 ---
+
 slug: "aic-dashboard-free"
 name: "aic-dashboard-free"
 version: "1.0.0"
 displayName: "AIC仪表盘监控免费版"
 summary: "轻量级只读监控面板,展示入站邮件与浏览器会话状态,本机访问,5秒自动刷新。AI Commander 配套管理仪表盘免费版。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 5"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   AI Commander 配套管理仪表盘免费版。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 50 封入站邮件,
   读取 session.json 展示浏览器会话状态。通过 token 保护的本地端口提供服务,每 5 秒自动刷新.
   免费版支持本机访问与基础监控功能。局域网共享、自定义数据源路径等高级功能需升级付费版.
@@ -15,13 +16,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 通信
+  - 邮件
+  - 研究
+  - 分析
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # AIC 仪表盘监控（免费版）
 
 AI Commander 配套管理仪表盘免费版。轻量级只读 Web UI,读取邮件收集器写入的 `inbox.jsonl` 和浏览器认证写入的 `session.json`,在 token 保护的本地端口统一展示。不捕获凭证、不控制浏览器、不发送消息.

@@ -1,11 +1,12 @@
 ---
+
 slug: "knowledge-graph-skill-free"
 name: "knowledge-graph-skill-free"
 version: "1.0.0"
 displayName: "知识图谱基础版"
 summary: "嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储与查询，适合结构化知识管理。。嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储 与查询. 核心能力: - 实体与关系的基础创建、更"
 license: "MIT"
-description: |-
+description: |-，可分析提升工作效率
   嵌入式知识图谱基础能力，支持实体、关系、属性的基础存储
   与查询.
   核心能力:
@@ -32,13 +33,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Automation"
+
 ---
+
 # 知识图谱基础版
 
 ## 核心能力

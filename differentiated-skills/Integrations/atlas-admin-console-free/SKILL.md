@@ -1,4 +1,5 @@
 ---
+
 slug: atlas-admin-console-free
 name: atlas-admin-console-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: Atlas管理台免费版
 summary: MongoDB Atlas Admin API浏览与查询工具，支持50+API分类检索、端点详情查看、Schema定义获取.
 license: Proprietary
 edition: free
-description: 面向MongoDB Atlas运维者的Admin API浏览与查询工具。通过命令行检索50+API分类、查看端点定义、获取Schema详情，免凭证即可作为只读文档浏览器使用，配置凭证后可执行实时API调用。Use
+description: 面向MongoDB Atlas运维者的Admin API浏览与查询工具。通过命令行检索50+API分类、查看端点定义、获取Schema详情，免凭证即可作为只读文档浏览器使用，配置凭证后可执行实时API调用。Use，可处理提升工作效率
   when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - 集成工具
@@ -16,13 +17,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 知识
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Atlas管理台（免费版）
 
 本工具为MongoDB Atlas运维者提供Admin API浏览与查询能力。免费版覆盖核心场景：API目录浏览、端点详情查看、Schema定义获取、只读API调用，足以应对日常文档查阅与状态查询需求.

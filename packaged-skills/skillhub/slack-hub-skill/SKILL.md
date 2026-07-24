@@ -1,11 +1,12 @@
 ---
+
 slug: "slack-hub-skill"
 name: "slack-hub-skill"
 version: 0.1.1
 displayName: "Slack消息中枢"
 summary: "Slack消息发送/线程回复/工作区搜索/频道发现，Bot Token直连Web API。面向团队协作场景的Slack消息与搜索集成技能。通过Slack Bot Token直连Slack W"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   面向团队协作场景的Slack消息与搜索集成技能。通过Slack Bot Token直连Slack Web API，
   提供频道与用户消息发送、线程回复、工作区内容搜索、公共频道列表四大能力.
   支持频道名与频道ID双向寻址、用户ID提及、Slack消息格式化（粗体/斜体/代码块/引用）、
@@ -26,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Slack消息中枢（Slack Hub Skill）
 
 面向团队协作场景的Slack消息与搜索集成。通过Bot Token直连Slack Web API，提供消息投递、线程回复、工作区搜索、频道发现四大能力.

@@ -1,4 +1,5 @@
 ---
+
 slug: "markdown-converter-paid"
 name: "markdown-converter-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "Markdown转换器专业版"
 summary: "企业级文档批量转换系统,支持目录扫描、批量处理、自定义模板、元数据提取与CI/CD集成,适合团队与商业项目。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,增加批量处理、目录扫描、自定义输出模板、
   元数据提取、文档质量审计与CI/CD集成能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -25,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Markdown转换器专业版
 
 ## 付费版专享能力

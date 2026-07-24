@@ -1,4 +1,5 @@
 ---
+
 slug: "stock-filter"
 name: "stock-filter"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "股票筛选专业版"
 summary: "多市场股票筛选系统，支持多策略组合、自定义公式、历史回测与批量导出。。面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、 多策略组合（AND/OR逻辑）、自定义选股公式、历"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、
   多策略组合（AND/OR逻辑）、自定义选股公式、历史回测验证与批量导出。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
@@ -17,6 +18,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 工作流
+  - 知识
 tools:
   - read
   - exec
@@ -24,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 股票筛选专业版
 
 ## 付费版专享能力

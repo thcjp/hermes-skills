@@ -1,11 +1,12 @@
 ---
+
 slug: "creator-alpha-feed-free"
 name: "creator-alpha-feed-free"
 version: "1.0.0"
 displayName: "创作者AI日报(免费版)"
 summary: "每日采集X平台AI内容,基础三档排名,写入Obsidian日报,适合个人创作者快速选题。。面向 AI 内容创作者的每日内容采集 Skill 免费版。按"X 主页 feed → 白名单账号 →"
 license: "MIT"
-description: |-
+description: |-，可处理提升工作效率
   面向 AI 内容创作者的每日内容采集 Skill 免费版。按"X 主页 feed → 白名单账号 → 关键词"
   顺序采集 AI 领域内容,浏览器标签页最多 7 个并发,按 KOL TOP3、实用/教程/观点 TOP10、
   行业 TOP3 三档基础排名,完整报告以 YYYY-MM-DD_HHMM.md 命名写入 Obsidian Vault.
@@ -17,13 +18,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # Creator Alpha Feed Free 创作者 AI 日报(免费版)
 
 ## 输入格式

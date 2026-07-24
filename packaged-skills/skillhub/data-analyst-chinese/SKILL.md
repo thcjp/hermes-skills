@@ -1,4 +1,5 @@
 ---
+
 slug: "data-analyst-chinese"
 name: "data-analyst-chinese"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "中文数据分析(专业版)"
 summary: "全功能中文数据分析平台,支持时序分解、假设检验、大数据集批处理与自定义报告模板。。中文数据分析专业版面向专业数据分析师、BI 工程师与数据团队负责人,提供完整的数据分析生产线能力。核心能力:"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   中文数据分析专业版面向专业数据分析师、BI 工程师与数据团队负责人,提供完整的数据分析生产线能力。核心能力:
   - 涵盖免费版全部能力,无条数与功能限制
   - 时间序列分析:重采样、滚动窗口、季节性分解、ARIMA/Prophet 预测
@@ -31,7 +32,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
+
 ---
+
 # 中文数据分析(专业版)
 
 ## 付费版专享能力

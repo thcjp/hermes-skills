@@ -1,4 +1,5 @@
 ---
+
 slug: "google-workspace-toolkit"
 name: "google-workspace-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "谷歌办公工具接口专业版"
 summary: "全功能Google办公工具接口,49个工具覆盖十大服务,支持企业级批量操作与多租户管理。。谷歌办公工具接口专业版,通过工具协议统一调用 Google Workspace 全部十大服务共 49"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可处理提升工作效率
   谷歌办公工具接口专业版,通过工具协议统一调用 Google Workspace 全部十大服务共 49 个工具,OAuth 登录即用,无需云控制台配置。核心能力:
   - 49 个工具全覆盖:Gmail / Calendar / Drive / Docs / Sheets / Slides / Chat / People / Time / Auth
   - 企业级批量操作与自动化工作流
@@ -23,6 +24,11 @@ tags:
   - 数据处理
   - 工具
   - 效率
+  - 写作
+  - 电商
+  - 通信
+  - 邮件
+  - 知识
 tools:
   - read
   - exec
@@ -31,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 谷歌办公工具接口专业版
 
 ## 付费版专享能力

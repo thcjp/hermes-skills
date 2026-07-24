@@ -1,11 +1,12 @@
 ---
+
 slug: "note"
 name: "note"
 version: 2.1.1
 displayName: "Note"
 summary: "知识捕获与连接系统,自动组织与检索。Knowledge capture and connection system with automatic organization and retri"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Knowledge capture and connection system with automatic organization
   and retrieval。Use when user。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 知识
+  - 文档
+  - AI代理
 tools:
   - read
   - exec
@@ -21,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Note
 
 ## 付费版专享能力

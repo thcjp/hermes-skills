@@ -1,4 +1,5 @@
 ---
+
 slug: "podcast-downloader-tool-pro"
 name: "podcast-downloader-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "播客下载工具专业版"
 summary: "企业级播客下载工具,支持批量下载、播放列表订阅、定时同步与多平台扩展,适配生产环境。。面向团队与高级用户的播客下载工具(专业版)。核心能力: - 涵盖免费版全部能力(单集下载、MP3 转换、"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队与高级用户的播客下载工具(专业版)。核心能力:
   - 涵盖免费版全部能力(单集下载、MP3 转换、节目笔记)
   - 批量下载:URL 列表与目录级处理
@@ -40,7 +41,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 播客下载工具 - 专业版
 
 ## 概述

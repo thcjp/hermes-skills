@@ -1,11 +1,12 @@
 ---
+
 slug: "internet-search"
 name: "internet-search"
 version: 0.3.5
 displayName: "Internet Search"
 summary: "高效用internet_search工具,类目路由/查询构造/多步。How to use the internet_search tool effectively — category ro"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   How to use the internet_search tool effectively — category routing,
   query formulation, and multi-。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # Internet Search
 
 ## 付费版专享能力

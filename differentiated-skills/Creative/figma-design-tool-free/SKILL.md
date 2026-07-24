@@ -1,4 +1,5 @@
 ---
+
 slug: figma-design-tool-free
 name: figma-design-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Figma设计集成-免费版
 summary: "轻量级Figma集成工具，支持文件浏览、节点读取、图片导出与评论查看.。Figma设计集成工具免费版，面向个人设计师的Figma工作区访问工具。核心能力："
 license: Proprietary
 edition: free
-description: 'Figma设计集成工具免费版，面向个人设计师的Figma工作区访问工具。核心能力：
+description: Figma设计集成工具免费版，面向个人设计师的Figma工作区访问工具。核心能力：，可自动提升工作效率
 
   - 浏览Figma团队项目与文件列表
 
@@ -38,7 +39,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # Figma设计集成工具（免费版）
 
 ## 概述

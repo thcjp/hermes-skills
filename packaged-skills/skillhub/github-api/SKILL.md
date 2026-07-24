@@ -1,11 +1,12 @@
 ---
+
 slug: "github-api"
 name: "github-api"
 version: 1.0.8
 displayName: "GitHub"
 summary: "经Maton托管OAuth/API接入GitHub,含适当权限范围。This is a disclosed GitHub integration that uses Maton-manage"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   This is a disclosed GitHub integration that uses Maton-managed OAuth/API
   access and includes appr。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
@@ -21,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # GitHub
 
 ## 付费版专享能力

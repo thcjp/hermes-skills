@@ -1,4 +1,5 @@
 ---
+
 slug: knowledge-capture-tool-free
 name: knowledge-capture-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 知识捕获工具（免费版）
 summary: "从对话和讨论中提取结构化知识，自动分类并保存到知识库或文档系统.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: free
-description: '知识捕获工具 - （免费版）
+description: 知识捕获工具 - （免费版），可自动提升工作效率
 
   核心能力: 知识捕获, 对话提取, 会议纪要, 知识沉淀, knowledge capture, 对话分析, 知识归档
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 研究
+  - 分析
+  - 写作
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 知识捕获工具（免费版）
 
 ## 概述

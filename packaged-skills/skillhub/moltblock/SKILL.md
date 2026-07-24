@@ -1,11 +1,12 @@
 ---
+
 slug: "moltblock"
 name: "moltblock"
 version: 0.11.10
 displayName: "Skill"
 summary: "AI产物验证门禁,策略检查拦截危险模式。Verification gating for AI-generated artifacts。Policy checks to catch dange"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Verification gating for AI-generated artifacts。Policy checks to catch
   dangerous patterns before。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 安全
+  - 加密
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Skill
 
 ## 付费版专享能力

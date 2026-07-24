@@ -1,11 +1,12 @@
 ---
+
 slug: "frontend-design-3"
 name: "frontend-design-3"
 version: 0.1.1
 displayName: "Frontend Design"
 summary: "创建独特的生产级前端界面，避免通用 AI 风格，支持 11 种美学方向。。frontend-design-3 是一个前端设计技能，创建独特的生产级界面，避免通用"AI slop"美学. 支持"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   frontend-design-3 是一个前端设计技能，创建独特的生产级界面，避免通用"AI slop"美学.
   支持 11 种美学方向（极简、最大化、复古未来、有机自然、奢华精致、俏皮玩具、编辑杂志、
   粗野主义、艺术装饰、柔和粉彩、工业实用），覆盖字体、色彩、动效、空间构图和背景细节.
@@ -21,7 +22,9 @@ tags:
   - UI/UX
   - 创意
 category: "Creative"
+
 ---
+
 # Frontend Design
 
 frontend-design-3 创建独特的生产级前端界面，避免通用"AI slop"美学。实现真正可用的代码，

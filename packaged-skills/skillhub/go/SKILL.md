@@ -1,11 +1,12 @@
 ---
+
 slug: "go"
 name: "go"
 version: 1.0.3
 displayName: "Go"
 summary: "写可靠Go代码,规避goroutine泄露/接口陷阱/并发bug。Write reliable Go code avoiding goroutine leaks, interface tra"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Write reliable Go code avoiding goroutine leaks, interface traps, and
   common concurrency bugs。核心能力:
 
@@ -29,6 +30,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -36,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Go
 
 ## 付费版专享能力

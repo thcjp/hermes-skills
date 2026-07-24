@@ -1,4 +1,5 @@
 ---
+
 slug: apple-health-tool-free
 name: apple-health-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 健康数据助手免费版
 summary: "个人用户与Apple健康数据对话查询,支持运动、心率、活动圆环等基础问答。面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互."
 license: Proprietary
 edition: free
-description: '面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互.
+description: 面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互，可生成提升工作效率
   核心能力: 运动记录查询、心率趋势分析、活动圆环进度、VO2 Max 趋势、AI 教练问答
 
   适用场景: 个人健身追踪、日常健康自检、运动习惯养成
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 研究
+  - 分析
+  - 生活
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 健康数据助手 (免费版)
 
 ## 概述

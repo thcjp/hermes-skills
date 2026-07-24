@@ -1,11 +1,12 @@
 ---
+
 slug: "longmemo-elite-free"
 name: "longmemo-elite-free"
 version: "1.0.0"
 displayName: "精英长记忆"
 summary: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。。面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点. WAL写前日志协议采用"先写状态，再回复用"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点.
   WAL写前日志协议采用"先写状态，再回复用户"模式，在压缩/崩溃场景下保证上下文不丢失.
   热内存文件（SESSION-STATE.md）记录当前任务、关键上下文、待办动作、近期决策，抗上下文压缩.
@@ -21,8 +22,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - AI代理
+  - agent
+  - 写作
+  - 电商
+  - 研究
 category: "Automation"
+
 ---
+
 # 精英长记忆（基础版）
 
 解决AI Agent跨会话遗忘问题。基础版提供WAL写前日志与热内存两大核心能力，确保关键上下文不丢失、决策不遗忘.

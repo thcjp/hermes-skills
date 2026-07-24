@@ -1,4 +1,5 @@
 ---
+
 slug: "sql-master"
 name: "sql-master"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "SQL大师工具(专业版)"
 summary: "面向企业的SQL全栈专业版，含自动化迁移、增量压缩备份、Schema对比同步、高可用与读写分离配置。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队、企业与专业DBA的SQL全栈工具专业版。在免费版基础上新增自动化迁移工具、增量与压缩备份、多数据库Schema对比与同步、查询性能基准测试、高可用与读写分离配置、灾备恢复等高级能力，配套面向运维、数据工程师、DBA的多角色场景指南。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - 集成工具
@@ -16,6 +17,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 研究
+  - 分析
 tools:
   - read
   - exec
@@ -23,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # SQL大师工具(专业版)
 
 ## 付费版专享能力

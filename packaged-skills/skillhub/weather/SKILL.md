@@ -1,11 +1,12 @@
 ---
+
 slug: "weather"
 name: "weather"
 version: 1.0.1
 displayName: "Weather"
 summary: "免API Key获取当前天气与预报。Get current weather and forecasts (no API key required)。核心能力: - 生活工具领域的专业化AI辅"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Get current weather and forecasts (no API key required)。核心能力:
 
   - 生活工具领域的专业化AI辅助工具
@@ -26,6 +27,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -33,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Weather
 
 ## 付费版专享能力

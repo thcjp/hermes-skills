@@ -1,11 +1,12 @@
 ---
+
 slug: "tailwindcss"
 name: "tailwindcss"
 version: 1.0.1
 displayName: "Tailwind CSS"
 summary: "写Tailwind工具类,响应式/暗色模式/配置得当。Write Tailwind utility classes with proper responsive design, dark m"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Write Tailwind utility classes with proper responsive design, dark mode,
   and configuration。核心能力:
 
@@ -29,6 +30,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -36,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Tailwind CSS
 
 ## 付费版专享能力

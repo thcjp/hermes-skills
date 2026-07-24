@@ -1,4 +1,5 @@
 ---
+
 slug: xml-reader-tool-free
 name: xml-reader-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: XML读取器免费版
 summary: "快速读取与浏览XML文件结构，支持节点遍历与简单查询，适合个人开发者日常查阅.。XML读取器工具免费版，面向个人开发者的轻量级XML文件读取与浏览工具。核心能力:"
 license: Proprietary
 edition: free
-description: 'XML读取器工具免费版，面向个人开发者的轻量级XML文件读取与浏览工具。核心能力:
+description: XML读取器工具免费版，面向个人开发者的轻量级XML文件读取与浏览工具。核心能力:，可自动提升工作效率
 
   - XML文件结构与节点遍历
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - 写作
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # XML读取器工具（免费版）
 
 ## 概述

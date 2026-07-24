@@ -1,11 +1,12 @@
 ---
+
 slug: "fonts"
 name: "fonts"
 version: 1.0.1
 displayName: "Fonts"
 summary: "选配网页字体,规避渲染/配对/层级常见错误,排版专业。Choose and implement web typography avoiding common rendering, pairi"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Choose and implement web typography avoiding common rendering, pairing,
   and hierarchy mistakes。核心能力:
 
@@ -29,6 +30,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - 写作
 tools:
   - read
   - exec
@@ -36,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Fonts
 
 ## 付费版专享能力

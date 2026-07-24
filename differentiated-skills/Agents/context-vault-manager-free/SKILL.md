@@ -1,4 +1,5 @@
 ---
+
 slug: context-vault-manager-free
 name: context-vault-manager-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: Context Vault Manage
 summary: "智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%.。上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短"
 license: Proprietary
 edition: free
-description: 上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短期/长期/重要三层记忆分层架构，自动清理过期短期记忆，避免上下文窗口被无效信息占满。Use
+description: 上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短期/长期/重要三层记忆分层架构，自动清理过期短期记忆，避免上下文窗口被无效信息占满。Use，可自动提升工作效率
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - 记忆管理
@@ -24,7 +25,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # 上下文保险库（免费版）
 
 > **智能分层记忆管理。短期/长期/重要三层架构，Token占用降低70%。**

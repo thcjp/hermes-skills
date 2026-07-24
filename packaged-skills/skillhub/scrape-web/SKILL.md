@@ -1,11 +1,12 @@
 ---
+
 slug: "scrape-web"
 name: "scrape-web"
 version: 1.0.1
 displayName: "Scrape Web"
 summary: "使用 Python + Scrapling 获取网页内容，支持简单选择器。使用 Python + Scrapling 获取网页内容，支持简单选择器 核心能力: - 研究工具领域的专业化AI辅"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   使用 Python + Scrapling 获取网页内容，支持简单选择器
 
   核心能力:
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # Scrape Web
 
 ## 付费版专享能力

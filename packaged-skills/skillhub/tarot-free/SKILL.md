@@ -1,11 +1,12 @@
 ---
+
 slug: "tarot-free"
 name: "tarot-free"
 version: 1.0.1
 displayName: "Tarot Free"
 summary: "基础版反思式塔罗抽取，支持单牌阵和基础语言校准，用于情感反思。。tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子 而非预言"，采用 `pr"
 license: "MIT"
-description: |-
+description: |-，可处理提升工作效率
   tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子
   而非预言"，采用 `presence-first` 和 `non-clinical` 原则。支持 `Single-card spread`（单牌阵）抽取
   和基础语言校准，使用 22 张 `Major Arcana`（大阿卡纳牌）。不包含 `Three-card spread`（三牌阵）、
@@ -20,8 +21,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 category: "Automation"
+
 ---
+
 # Tarot Free
 
 tarot-free 是反思式塔罗抽取基础版。塔罗在这里是镜子，不是预言。它用于意义构建和温和的反思.

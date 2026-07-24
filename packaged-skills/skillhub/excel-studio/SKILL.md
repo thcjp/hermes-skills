@@ -1,11 +1,12 @@
 ---
+
 slug: "excel-studio"
 name: "excel-studio"
 version: 1.0.1
 displayName: "Excel Studio"
 summary: "专业Excel生成器,建数据表/报表/图表,办公利器。Professional Excel spreadsheet generator。Use when user needs to crea"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Professional Excel spreadsheet generator。Use when user needs to create
   data tables, reports, cha。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Excel Studio
 
 ## 付费版专享能力

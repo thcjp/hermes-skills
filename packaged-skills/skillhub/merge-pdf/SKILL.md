@@ -1,11 +1,12 @@
 ---
+
 slug: "merge-pdf"
 name: "merge-pdf"
 version: 1.0.1
 displayName: "Merge PDF"
 summary: "上传多PDF到Cross-Service-Solutions合并,轮询直至完成。Merge multiple user-provided PDF files by uploading the"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Merge multiple user-provided PDF files by uploading them to Cross-Service-Solutions,
   polling unti。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 开发
+  - 代码
+  - AI代理
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Merge PDF
 
 ## 付费版专享能力

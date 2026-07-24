@@ -1,11 +1,12 @@
 ---
+
 slug: "trading-strategy-guide"
 name: "trading-strategy-guide"
 version: "1.1.1"
 displayName: "Trade With Taro"
 summary: "提供交易策略分析与决策支持的AI技能。Provide AI-powered trading strategy analysis and decision support. Analyze m"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Provide AI-powered trading strategy analysis and decision support. Analyze
   market trends, evaluate trading signals, and generate strategy recommendations.
 tags:
@@ -19,7 +20,9 @@ tools:
   - exec
 homepage: ""
 category: "Creative"
+
 ---
+
 # Trade With Taro
 
 ## 核心能力

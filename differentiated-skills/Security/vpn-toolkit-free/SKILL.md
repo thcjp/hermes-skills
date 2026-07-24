@@ -1,4 +1,5 @@
 ---
+
 slug: vpn-toolkit-free
 name: vpn-toolkit-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: VPN工具箱(免费版)
 summary: "VPN配置与故障排除指南,含DNS泄露检测、Kill Switch、协议选择与常见问题解决,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - VPN配置与故障排除指南
 
@@ -51,7 +52,9 @@ tools:
   - exec
 homepage: ""
 category: "Security"
+
 ---
+
 # VPN工具箱(免费版)
 
 ## 概述

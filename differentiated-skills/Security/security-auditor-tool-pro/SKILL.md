@@ -1,4 +1,5 @@
 ---
+
 slug: security-auditor-tool-pro
 name: security-auditor-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 代码安全审计员(专业版)
 summary: "企业级代码安全审计,OWASP Top 10全覆盖、AST自动扫描、多语言支持、ASVS合规映射,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - OWASP Top 10:2021全覆盖审计(10大类别)
 
@@ -44,7 +45,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+
 ---
+
 代码安全审计员专业版是一款面向企业用户的代码安全审计与SAST(静态应用安全测试)平台。在免费版Top 5 OWASP检查基础上,扩展至Top 10全覆盖,增加AST静态分析自动扫描、TypeScript/Python/Go/Java多语言支持、10+框架安全规则、OWASP ASVS合规等级映射等企业级功能。提供HTML/PDF/SARIF专业审计报告,支持Git Hook持续安全监控。与免费版完全兼容,检查清单和代码示例可无缝复用.
 ## 核心能力
 ### 功能矩阵

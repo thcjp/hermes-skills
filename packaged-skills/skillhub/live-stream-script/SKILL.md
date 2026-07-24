@@ -1,11 +1,12 @@
 ---
+
 slug: "live-stream-script"
 name: "live-stream-script"
 version: 2.0.1
 displayName: "Live Stream Script"
 summary: "直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Live stream script generator"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Use when 、品牌视觉时使用。不适用于3D建模和动画制作。
 tags:
   - Lifestyle
@@ -13,6 +14,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 创意
 tools:
   - read
   - exec
@@ -20,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Live Stream Script
 
 ## 付费版专享能力

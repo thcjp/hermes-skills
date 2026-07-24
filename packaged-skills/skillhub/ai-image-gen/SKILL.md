@@ -1,11 +1,12 @@
 ---
+
 slug: "ai-image-gen"
 name: "ai-image-gen"
 version: 1.1.1
 displayName: "4K商用图像一键生成"
 summary: "设计素材太慢?Gemini Flash Image一键生成4K商用图,支持10种比例、风格转换、批量生产,广告海报到印刷输出全覆盖。"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   AI 图像生成专业版,通过执行脚本调用 Gemini Flash Image API 完成图像生成与编辑.
   核心能力:
   - 文生图: 文本提示词生成图像,支持主体/场景/光线/风格/色调/构图等维度描述
@@ -32,7 +33,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # 4K商用图像一键生成
 
 设计素材外包太慢、设计师产能不足?Gemini Flash Image 一键生成 4K 商用级图像,10 种比例覆盖从社交媒体到印刷输出全场景。付费版独享图生图、风格转换、4K 分辨率与批量生产.

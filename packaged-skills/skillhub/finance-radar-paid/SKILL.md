@@ -1,4 +1,5 @@
 ---
+
 slug: "finance-radar-paid"
 name: "finance-radar-paid"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "股票分析雷达专业版"
 summary: "专业股票与加密货币分析平台，支持批量分析、组合追踪、价格告警与传闻检测。。面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、 投资组合追踪、价格告警、热门趋势检测、传闻与早期信"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、
   投资组合追踪、价格告警、热门趋势检测、传闻与早期信号识别。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Finance"
+
 ---
+
 # 股票分析雷达专业版
 
 ## 付费版专享能力

@@ -1,17 +1,23 @@
 ---
+
 slug: "vector-control"
 name: "vector-control"
 version: 1.0.2
 displayName: "Vector Control"
 summary: "经Wirepod本地HTTP API控Vector机器人。Control a Vector robot via Wirepod’s local HTTP API on the same ne"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Control a Vector robot via Wirepod’s local HTTP API on the same network。Use when you need to mov。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - Integrations
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -19,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Vector Control
 
 ## 付费版专享能力

@@ -1,11 +1,12 @@
 ---
+
 slug: "sql-free"
 name: "sql-free"
 version: "1.0.0"
 displayName: "SQL查询助手(免费版)"
 summary: "多数据库SQL查询、优化、schema设计与数据分析，支持MySQL/PostgreSQL/SQLite/SQLServer。免费版"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   SQL查询与数据库操作辅助引擎（免费版），支持MySQL、PostgreSQL、SQLite、SQLServer.
   核心能力：
   - 自然语言转SQL查询（跨4种数据库方言）
@@ -22,8 +23,15 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 创意
+  - 图像
+  - 开发
 category: "Automation"
+
 ---
+
 # SQL查询助手(免费版)
 
 SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQLServer，覆盖自然语言转SQL、性能优化与Schema设计.

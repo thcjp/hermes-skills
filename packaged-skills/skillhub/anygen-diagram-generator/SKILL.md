@@ -1,11 +1,12 @@
 ---
+
 slug: "anygen-diagram-generator"
 name: "anygen-diagram-generator"
 version: 3.0.1
 displayName: "AnyGen图表生成器"
 summary: "使用AnyGen CLI在服务端生成流程图、架构图、序列图等可视化图表，支持文本到图表的智能转换。。基于AnyGen CLI的图表生成技能，通过www.anygen.io服务端渲染 将自然语"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   基于AnyGen CLI的图表生成技能，通过www.anygen.io服务端渲染
   将自然语言描述转换为流程图、系统架构图、时序图、思维导图等
   可视化结构。采用smart_draw操作类型驱动智能绘图引擎，支持
@@ -20,6 +21,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -27,7 +32,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # AnyGen 图表生成器
 
 通过 AnyGen CLI 调用 `www.anygen.io` 服务端绘图引擎，将文本描述转换为流程图、架构图、时序图、思维导图等可视化图表。核心操作类型为 `smart_draw`，由 `anygen-workflow-generate` 依赖技能编排完整生成流程.

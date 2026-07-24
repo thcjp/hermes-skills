@@ -1,11 +1,12 @@
 ---
+
 slug: "memory-orchestrator-v2"
 name: "memory-orchestrator-v2"
 version: 1.0.1
 displayName: "记忆编排器"
 summary: "解决分层不清、摘要不稳、并发冲突、无健康度指标的智能记忆编排器。记忆编排器是面向 AI Agent 的智能记忆管理系统，针对"分层体系不够清晰、自动摘要质量不稳定、并发写入冲突、缺乏记忆健康"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   记忆编排器是面向 AI Agent 的智能记忆管理系统，针对"分层体系不够清晰、自动摘要质量不稳定、并发写入冲突、缺乏记忆健康度指标"四大高频痛点而设计。它用四层记忆架构（工作/短期/长期/重要）与多模式检索，提供从存储到检索到摘要的全生命周期编排，让 Agent 记忆真正可控可观测。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 记忆编排
@@ -23,7 +24,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
+
 # 记忆编排器（Memory Orchestrator）
 面向 AI Agent 的**智能记忆管理系统**，用四层记忆架构与多模式检索，提供从存储到检索到摘要的全生命周期编排，让 Agent 记忆真正可控可观测.
 ## 设计动机：四大高频痛点

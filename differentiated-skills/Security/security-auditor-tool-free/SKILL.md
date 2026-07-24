@@ -1,4 +1,5 @@
 ---
+
 slug: security-auditor-tool-free
 name: security-auditor-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 代码安全审计员(免费版)
 summary: "OWASP Top 10代码审计,含安全编码模式、输入验证、认证安全检查,适合开发者自检,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '核心能力:
+description: 核心能力:，可自动提升工作效率
 
   - OWASP Top 10:2021安全审计检查清单
 
@@ -53,7 +54,9 @@ tools:
   - exec
 homepage: ""
 category: "Security"
+
 ---
+
 # 代码安全审计员(免费版)
 
 ## 概述

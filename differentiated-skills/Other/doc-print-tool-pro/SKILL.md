@@ -1,4 +1,5 @@
 ---
+
 slug: "doc-print-tool-pro"
 name: "doc-print-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "文档凭证注册工具专业版"
 summary: "面向团队与企业的凭证注册、批量发现、链上验证与信誉治理工具。。面向团队与企业的文档凭证注册、发现与信任治理专业工具. 核心能力: - 多租户批量注册与团队凭证矩阵管理 - 六维加权信誉引擎与"
 license: "MIT"
 edition: "pro"
-description: |-
+description: |-，可处理提升工作效率
   面向团队与企业的文档凭证注册、发现与信任治理专业工具.
   核心能力:
   - 多租户批量注册与团队凭证矩阵管理
@@ -30,13 +31,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 写作
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 文档凭证注册工具（专业版）
 
 ## 概述

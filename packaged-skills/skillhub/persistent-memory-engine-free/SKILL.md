@@ -1,11 +1,12 @@
 ---
+
 slug: "persistent-memory-engine-free"
 name: "persistent-memory-engine-free"
 version: "1.0.0"
 displayName: "持久记忆引擎"
 summary: "基础分层持久记忆系统，解决跨会话遗忘与记忆检索问题。面向 AI Agent 的基础持久记忆系统，在内置记忆之上构建并行的结构化本地存储. 基础能力涵盖分层结构化存储、三层索引体系、混合检索策"
 license: "MIT"
-description: |-
+description: |-，可自动提升工作效率
   面向 AI Agent 的基础持久记忆系统，在内置记忆之上构建并行的结构化本地存储.
   基础能力涵盖分层结构化存储、三层索引体系、混合检索策略.
   完全位于 ~/memory/，与内置 Agent 记忆并行运作，永不修改内置 MEMORY.md.
@@ -21,7 +22,9 @@ tags:
   - 上下文
   - AI
 category: "Agents"
+
 ---
+
 # 持久记忆引擎（基础版）
 
 面向 AI Agent 的基础持久记忆系统，在内置记忆之上构建并行的结构化本地存储，解决跨会话遗忘问题。本系统完全位于 `~/memory/`，与内置 Agent 记忆并行运作，永不修改内置 `MEMORY.md` 与 workspace `memory/` 目录.

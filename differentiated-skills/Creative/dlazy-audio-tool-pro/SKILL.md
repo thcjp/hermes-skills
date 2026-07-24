@@ -1,4 +1,5 @@
 ---
+
 slug: "dlazy-audio-tool-pro"
 name: "dlazy-audio-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "音频生成工具-专业版"
 summary: "全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。。音频生成工具专业版，面向专业内容团队的全功能音频生成平台。核心能力： - 15+ 音频模型全覆盖（TTS、"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   音频生成工具专业版，面向专业内容团队的全功能音频生成平台。核心能力：
   - 15+ 音频模型全覆盖（TTS、语音克隆、音乐生成、音效、对话）
   - 多角色对话一次性渲染（最多10个角色）
@@ -26,7 +27,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 音频生成工具（专业版）
 
 ## 概述

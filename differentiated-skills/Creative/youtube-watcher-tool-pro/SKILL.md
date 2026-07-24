@@ -1,4 +1,5 @@
 ---
+
 slug: "youtube-watcher-tool-pro"
 name: "youtube-watcher-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "YouTube字幕提取-专业版"
 summary: "企业级YouTube内容分析平台，支持批量字幕提取、频道监控、多语言对比与关键词追踪，适合内容研究团队。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   YouTube 内容分析专业版。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
   - Creative
@@ -25,7 +26,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 YouTube 内容分析专业版是一款面向企业团队与内容研究机构的高级字幕提取与分析平台。在免费版单视频字幕提取能力之上，专业版扩展了批量提取、频道监控、多语言对比、关键词追踪等企业级能力.
 专业版采用任务队列架构，支持并行提取、失败重试、断点续传，可稳定处理 50+ 视频的批量提取任务。同时完全兼容免费版配置，已有项目可无缝迁移.
 ### 免费版与专业版能力对比

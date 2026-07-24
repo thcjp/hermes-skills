@@ -1,11 +1,12 @@
 ---
+
 slug: "queue-task"
 name: "queue-task"
 version: 0.1.1
 displayName: "Queue Task"
 summary: "task-father目录的可恢复幂等批处理队列任务助手。Durable queue-task helper for resumable, idempotent batch jobs in"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   Durable queue-task helper for resumable, idempotent batch jobs in task-father
   task folders。核心能力:
 
@@ -36,7 +37,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Productivity"
+
 ---
+
 # Queue Task
 
 ## 付费版专享能力

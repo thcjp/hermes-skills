@@ -1,4 +1,5 @@
 ---
+
 slug: "email-toolkit"
 name: "email-toolkit"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "邮件工具箱专业版"
 summary: "企业邮件自动化与批量发送方案，支持模板与定时调度。邮件工具箱专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   邮件工具箱专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 沟通协作
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # 邮件工具箱专业版
 
 ## 付费版专享能力

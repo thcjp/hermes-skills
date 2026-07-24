@@ -1,4 +1,5 @@
 ---
+
 slug: "api-connect-hub"
 name: "api-connect-hub"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "API连接中心(专业版)"
 summary: "企业级API集成平台，含连接编排、数据同步、Webhook管理、OAuth2刷新与监控告警。。API连接中心专业版是面向企业的全功能API集成平台。在免费版的连接器注册、凭证安全存储、统一调"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   API连接中心专业版是面向企业的全功能API集成平台。在免费版的连接器注册、凭证安全存储、统一调用模板、错误重试策略基础上，解锁连接编排、数据同步管道、OAuth2自动刷新、Webhook管理、监控告警、连接器市场、多租户隔离、批量调用八大高级能力，覆盖从单服务调用到多服务编排到数据同步到事件驱动的完整集成生命周期
 tags:
   - API集成
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 # API连接中心(专业版)
 
 ## 付费版专享能力

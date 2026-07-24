@@ -1,11 +1,12 @@
 ---
+
 slug: "analyze-video-by-qwen-free"
 name: "analyze-video-by-qwen-free"
 version: "1.0.0"
 displayName: "Qwen视频分析LITE"
 summary: "Qwen多模态模型视频分析基础版,支持本地视频文件场景描述与内容理解。Qwen 视频智能分析基础客户端(免费版)。基于 Qwen 3.5 Plus 多模态模型对本地视频文件进行内容分析, 支"
 license: "MIT"
-description: |-
+description: |-，可分析提升工作效率
   Qwen 视频智能分析基础客户端(免费版)。基于 Qwen 3.5 Plus 多模态模型对本地视频文件进行内容分析,
   支持场景描述与基础内容理解。使用默认抽帧频率与默认提示词,适合快速概览视频内容.
   API Key 从 ~/.skill-platform/skill-platform.json 的 skills.dashscope.apiKey 字段读取.
@@ -21,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # Qwen 视频分析 LITE
 
 Qwen 视频智能分析基础版,基于 Qwen 3.5 Plus 多模态模型对本地视频文件进行内容分析。仅支持本地文件输入与默认分析参数.

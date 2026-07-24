@@ -1,11 +1,12 @@
 ---
+
 slug: "music-generation-cellcog"
 name: "music-generation-cellcog"
 version: 1.0.12
 displayName: "Music Generation Cel"
 summary: "CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟。AI music generation powered by CellCog。Original instrumental and"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   AI music generation powered by CellCog。Original instrumental and vocal
   tracks, 5 seconds to 10 m。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
@@ -20,7 +21,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # Music Generation Cel
 
 ## 付费版专享能力

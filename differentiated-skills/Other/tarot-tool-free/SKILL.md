@@ -1,4 +1,5 @@
 ---
+
 slug: tarot-tool-free
 name: tarot-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 塔罗反思工具免费版
 summary: "提供单张牌与三张牌阵的反思性塔罗抽牌，支持情绪陪伴与象征性解读，适合个人日常自省.。塔罗反思工具免费版，面向个人用户的轻量级情绪陪伴与自省工具。核心能力:"
 license: Proprietary
 edition: free
-description: '塔罗反思工具免费版，面向个人用户的轻量级情绪陪伴与自省工具。核心能力:
+description: 塔罗反思工具免费版，面向个人用户的轻量级情绪陪伴与自省工具。核心能力:，可自动提升工作效率
 
   - 提供 22 张大阿尔卡那牌的象征性解读
 
@@ -33,13 +34,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 塔罗反思工具（免费版）
 
 ## 概述

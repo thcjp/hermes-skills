@@ -1,4 +1,5 @@
 ---
+
 slug: news-feed-tool-free
 name: news-feed-tool-free
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: RSS新闻订阅免费版
 summary: "从主流国际RSS源获取最新新闻标题与摘要，零API密钥零依赖。RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:"
 license: Proprietary
 edition: free
-description: 'RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:
+description: RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:，可自动提升工作效率
 
   - 从7个国际主流媒体RSS源获取新闻
 
@@ -46,7 +47,9 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+
 ---
+
 # RSS新闻订阅工具（免费版）
 
 ## 概述

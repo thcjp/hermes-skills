@@ -1,4 +1,5 @@
 ---
+
 slug: "sql-gen-tool-pro"
 name: "sql-gen-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "SQL生成器(专业版)"
 summary: "面向团队的自然语言转SQL专业版，含Schema感知、多表JOIN生成、性能优化建议、迁移脚本与优先支持。"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队、企业与专业开发者的SQL生成器专业版。在免费版基础上新增Schema智能感知自动补全、复杂多表JOIN自动生成、SQL性能优化建议、数据库迁移脚本自动生成、批量SQL生成与版本管理、生成质量回归测试等高级能力，配套面向产品、开发、DBA的多角色场景指南。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - 集成工具
@@ -16,13 +17,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 写作
+  - 电商
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # SQL生成器（专业版）
 
 专业版在免费版核心能力之上，新增Schema智能感知、复杂多表JOIN生成、SQL性能优化建议、数据库迁移脚本生成、批量生成与版本管理等高级能力，专为团队协作、企业生产环境与高保真SQL生成场景设计.

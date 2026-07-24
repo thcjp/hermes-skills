@@ -1,4 +1,5 @@
 ---
+
 slug: "markdown-format-tool-pro"
 name: "markdown-format-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,7 @@ displayName: "Markdown格式化工具专业版"
 summary: "企业级文档批量格式化,支持自定义模板、团队规范、多格式输出与质量审计。面向团队与企业的高级 Markdown 格式化工具,在免费版基础上扩展批量处理、规范管理、质量审计等能力。核心能力: -"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向团队与企业的高级 Markdown 格式化工具,在免费版基础上扩展批量处理、规范管理、质量审计等能力。核心能力:
   - 批量目录格式化与聚合报告
   - 自定义格式化模板与团队规范
@@ -38,7 +39,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 # Markdown 格式化工具专业版
 
 ## 概述

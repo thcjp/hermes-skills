@@ -1,11 +1,12 @@
 ---
+
 slug: "whatsapp-ultimate"
 name: "whatsapp-ultimate"
 version: 4.0.4
 displayName: "通讯应用工具"
 summary: "通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、 语音、视频、贴纸等多种消息类型，支持投票、群组创建、"
 license: "Proprietary"
-description: |-
+description: |-，可处理提升工作效率
   通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、
   语音、视频、贴纸等多种消息类型，支持投票、群组创建、历史搜索和多Agent
   协作讨论。通过协议库桥接通讯应用，提供完整的消息交互能力。适用于独立
@@ -21,7 +22,9 @@ tags:
   - 社交
   - 通信
 category: "Communication"
+
 ---
+
 # 通讯应用工具
 
 通讯应用消息发送、交互反应、群组管理和多Agent讨论.

@@ -1,11 +1,12 @@
 ---
+
 slug: sales-copy-writer
 name: sales-copy-writer
 version: 1.0.1
 displayName: "卖货文案手"
 summary: "文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案。卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点. 基于FAB法则提炼卖点,结合6种情绪钩子与4种"
 license: Proprietary
-description: |-
+description: |-，可自动提升工作效率
   卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点.
   基于FAB法则提炼卖点,结合6种情绪钩子与4种CTA话术,5平台风格自动适配.
   核心能力:
@@ -22,12 +23,19 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 写作
+  - 电商
+  - 通信
+  - 邮件
+  - AI代理
 tools:
   - read
   - exec
   - write
 category: "Automation"
+
 ---
+
 # 卖货文案手
 
 解决内容营销中"文案干瘪无转化"的核心痛点,基于FAB法则+情绪钩子+CTA话术生成高转化卖货文案.

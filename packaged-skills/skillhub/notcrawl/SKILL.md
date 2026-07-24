@@ -1,11 +1,12 @@
 ---
+
 slug: "notcrawl"
 name: "notcrawl"
 version: 1.0.2
 displayName: "Notcrawl"
 summary: "Notion归档,搜索/同步/页面数据库/Markdown导出。Notion archive: search, sync freshness, pages/databases, Markdo"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Notion archive: search, sync freshness, pages/databases, Markdown exports。核心能力:
 
   - 集成工具领域的专业化AI辅助工具
@@ -27,6 +28,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -35,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Notcrawl
 
 ## 付费版专享能力

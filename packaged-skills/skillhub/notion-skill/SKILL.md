@@ -1,11 +1,12 @@
 ---
+
 slug: "notion-skill"
 name: "notion-skill"
 version: 1.0.1
 displayName: "Notion"
 summary: "经官方Notion API操作页面与数据库。Work with Notion pages and databases via the official Notion API。核心能力: -"
 license: "Proprietary"
-description: |-
+description: |-，可自动提升工作效率
   Work with Notion pages and databases via the official Notion API。核心能力:
 
   - 商业工具领域的专业化AI辅助工具
@@ -26,6 +27,11 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - 开发
+  - 代码
+  - 创意
 tools:
   - read
   - exec
@@ -33,7 +39,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Notion
 
 ## 付费版专享能力

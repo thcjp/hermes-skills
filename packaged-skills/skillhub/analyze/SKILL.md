@@ -1,17 +1,23 @@
 ---
+
 slug: "analyze"
 name: "analyze"
 version: 1.0.1
 displayName: "Analyze"
 summary: "对任意输入做结构化分析,数据/代码/文本/决策/可视化全支持,告别无序堆砌。Structured analysis for any input。Data, code, text, decis"
 license: "Proprietary"
-description: |-
+description: |-，可生成提升工作效率
   Structured analysis for any input。Data, code, text, decisions, visuals。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - Development
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - AI代理
+  - agent
+  - 研究
 tools:
   - read
   - exec
@@ -19,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # Analyze
 
 ## 付费版专享能力

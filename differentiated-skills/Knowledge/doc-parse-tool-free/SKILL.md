@@ -1,4 +1,5 @@
 ---
+
 slug: doc-parse-tool-free
 name: doc-parse-tool-free
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: 文档解析工具（免费版）
 summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: free
-description: '文档解析工具 - （免费版）
+description: 文档解析工具 - （免费版），可分析提升工作效率
 
   核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document parse, 结构化提取, 图片识别
 
@@ -23,13 +24,20 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 知识
+  - 文档
+  - 研究
+  - 分析
+  - 开发
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 文档解析工具（免费版）
 
 ## 概述

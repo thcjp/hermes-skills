@@ -1,10 +1,11 @@
 ---
+
 slug: "okx-dex-token"
 name: "okx-dex-token"
 version: 3.1.4
 displayName: "Okx Dex Token"
 summary: "代币级数据,搜代币/热门榜/流动性池"Proprietary。Use this skill for token-level data: search tokens, trending/hot"
-description: |-
+description: |-，可处理提升工作效率
   Use this skill for token-level data: search tokens, trending/hot tokens
   (热门, 代币榜单), liquidity poo。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -12,6 +13,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 开发
+  - 代码
+  - 工作流
+  - AI代理
 tools:
   - read
   - exec
@@ -21,7 +26,9 @@ homepage: ""
 # 定价元数据
 license: "MIT"
 category: "Automation"
+
 ---
+
 # Okx Dex Token
 
 ## 付费版专享能力

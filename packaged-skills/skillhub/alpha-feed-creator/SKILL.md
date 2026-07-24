@@ -1,4 +1,5 @@
 ---
+
 slug: "alpha-feed-creator"
 name: "alpha-feed-creator"
 version: 1.0.1
@@ -6,7 +7,7 @@ displayName: "内容采集器专业版"
 summary: "多源批量采集并智能排名 AI 内容,支持群组推送与企业级内容运营工作流。。面向内容团队与企业级运营的多源 AI 内容采集与智能排名平台。核心能力: - 跨平台多源采集(X、知乎、即刻、微博等"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: |-，可自动提升工作效率
   面向内容团队与企业级运营的多源 AI 内容采集与智能排名平台。核心能力:
   - 跨平台多源采集(X、知乎、即刻、微博等),支持批量白名单与多关键词组
   - 基于语义相似度与质量评估的多维智能排名算法
@@ -28,6 +29,10 @@ tags:
   - 工具
   - 效率
   - 自动化
+  - 研究
+  - 分析
+  - AI代理
+  - agent
 tools:
   - read
   - exec
@@ -36,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 内容采集器专业版
 
 ## 付费版专享能力
