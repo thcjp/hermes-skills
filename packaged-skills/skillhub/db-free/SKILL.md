@@ -21,7 +21,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 数据库设计与运维（免费版）
 

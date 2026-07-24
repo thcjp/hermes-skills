@@ -19,7 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L2-标准级"
 pricing_model: per_use
 suggested_price: "19.9 CNY/per_use"
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 百度网盘文件管理工具,以"命令式高效操作"为核心视角,所有操作限制在 `/apps/bdpan/` 目录内。适配所有支持SKILL.md的Agent平台.
 > 本免费版提供核心文件管理能力(上传/下载/转存/分享/搜索/移动/复制/重命名/创建/删除)。记忆备份恢复、大文件后台下载与批量操作为专业版功能.

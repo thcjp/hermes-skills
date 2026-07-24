@@ -23,7 +23,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
+category: "Creative"
 ---
 # 短视频生成专业版
 

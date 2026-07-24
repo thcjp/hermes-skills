@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 > **从一次性审计到持续验证，从人工检查到自动化流水线。企业级审计验证系统。**
 

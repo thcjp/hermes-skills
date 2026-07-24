@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
+category: "Operations"
 ---
 # Azure DevOps 基础版
 

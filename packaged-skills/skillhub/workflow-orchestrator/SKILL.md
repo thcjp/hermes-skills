@@ -22,7 +22,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "工作流,自动化,效率"
+category: "Automation"
 ---
 # 工作流编排器(专业版)
 

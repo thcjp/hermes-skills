@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 > **浏览器模式+AI摘要+定时推送+情感分析。企业级新闻聚合全功能覆盖。**
 

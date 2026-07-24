@@ -15,6 +15,9 @@ tools:
 tags:
 - ui
 - ux
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
+category: "Creative"
 ---
 ## 任务定义
 

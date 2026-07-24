@@ -38,7 +38,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
+category: "Development"
 ---
 # Docker V1迁移专业版
 

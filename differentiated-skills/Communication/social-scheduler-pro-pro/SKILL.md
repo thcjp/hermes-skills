@@ -23,7 +23,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "社交媒体,营销,通信"
+category: "Communication"
 ---
 # 社媒内容排期工具（专业版）
 

@@ -33,7 +33,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # DNS 配置工具(专业版)
 

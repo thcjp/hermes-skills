@@ -16,7 +16,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "exec"]
+tags: "新闻,信息,资讯"
+category: "Knowledge"
 ---
 # X News Daily LITE
 

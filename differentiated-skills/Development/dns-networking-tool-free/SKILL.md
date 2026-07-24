@@ -46,7 +46,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "exec"]
+tags: "网络,DNS,工具"
+category: "Operations"
 ---
 # DNS网络诊断工具 - 免费版
 

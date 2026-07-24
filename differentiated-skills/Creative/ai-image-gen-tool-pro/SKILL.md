@@ -42,7 +42,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "图像处理,AI绘图,创意"
+category: "Creative"
 ---
 # AI图像生成工具 - 专业版
 

@@ -22,7 +22,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
+category: "Operations"
 ---
 # Cloud — 消费级云存储助手（免费版）
 

@@ -38,7 +38,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "exec"]
+tags: "新闻,信息,资讯"
+category: "Knowledge"
 ---
 # 舆情情绪分析专业版
 

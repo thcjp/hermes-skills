@@ -18,7 +18,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 广告洞察中枢 LITE（Ad Insight Hub Free）
 

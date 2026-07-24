@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
+category: "Finance"
 ---
 # 财务分析入门工具（免费版）
 

@@ -23,7 +23,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "图像处理,AI绘图,创意"
+category: "Creative"
 ---
 WhatsApp 多媒体消息发送专业版是一款面向企业团队与营销机构的高级消息分发平台。在免费版单图发送能力之上，专业版扩展了批量发送、多媒体支持、定时发送、群组消息、模板管理等企业级能力.
 专业版采用发送队列架构，支持频率控制、失败重试、断点续传，可稳定处理大批量消息分发任务。同时完全兼容免费版工作流，已有配置可无缝迁移.

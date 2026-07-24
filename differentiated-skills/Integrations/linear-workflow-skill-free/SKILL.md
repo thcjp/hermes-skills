@@ -24,6 +24,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
+tools: ["read", "write", "exec"]
+tags: "工作流,自动化,效率"
+category: "Automation"
 ---
 # Linear工作流(免费版)
 

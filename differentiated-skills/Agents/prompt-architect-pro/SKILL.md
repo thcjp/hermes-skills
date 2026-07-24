@@ -30,7 +30,9 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 # 提示词架构师专业版（Prompt Architect Pro）
 

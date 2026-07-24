@@ -18,7 +18,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 研发工具
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 上市策略引擎(免费版)
 

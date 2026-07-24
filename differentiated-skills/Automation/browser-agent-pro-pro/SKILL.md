@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
+category: "Automation"
 ---
 > **企业级浏览器自动化系统。反检测+多标签+代理+动态抓取+登录态+UI测试，支撑复杂自动化场景。**
 

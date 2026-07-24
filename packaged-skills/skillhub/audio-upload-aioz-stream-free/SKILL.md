@@ -20,7 +20,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
+category: "Creative"
 ---
 # AIOZ 音频上传（免费版）
 

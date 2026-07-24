@@ -37,7 +37,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
-
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
+category: "Research"
 ---
 # 数据分析中枢 免费版
 

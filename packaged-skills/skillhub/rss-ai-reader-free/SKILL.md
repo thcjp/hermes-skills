@@ -20,7 +20,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "exec"]
+tags: "RSS,订阅,信息"
+category: "Knowledge"
 ---
 # RSS AI 摘要 LITE
 

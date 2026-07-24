@@ -21,7 +21,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 # Reddit调研（专业版）
 

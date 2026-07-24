@@ -29,7 +29,9 @@ tags:
 tools:
   - read
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
+category: "Development"
 ---
 # Git 基础版
 

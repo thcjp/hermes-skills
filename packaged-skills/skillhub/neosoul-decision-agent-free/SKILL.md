@@ -16,7 +16,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 系统运维
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 # 自主决策代理（Neosoul Decision Agent）- 免费版
 

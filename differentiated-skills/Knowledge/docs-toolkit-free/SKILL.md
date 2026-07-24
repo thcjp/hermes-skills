@@ -27,7 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 文档导航工具包（免费版）
 

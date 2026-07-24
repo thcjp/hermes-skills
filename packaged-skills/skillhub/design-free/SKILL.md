@@ -19,7 +19,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
+category: "Creative"
 ---
 # Design LITE
 

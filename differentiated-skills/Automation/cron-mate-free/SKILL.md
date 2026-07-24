@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
+category: "Automation"
 ---
 > **写cron不用查文档。自然语言描述，自动生成表达式，一键验证语法。**
 

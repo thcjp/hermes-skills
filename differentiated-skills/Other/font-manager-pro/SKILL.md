@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 > **全功能字体排版管理。智能配对、子集化、设计系统集成、无障碍检查、多语言适配。**
 

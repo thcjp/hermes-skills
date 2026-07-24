@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
+category: "Automation"
 ---
 > **聚合多源安全公告，自动分级去重。让安全威胁第一时间被感知。**
 

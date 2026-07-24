@@ -39,7 +39,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
+category: "Operations"
 ---
 # 监控工具包 - 免费版
 

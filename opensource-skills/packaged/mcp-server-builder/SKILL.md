@@ -22,6 +22,7 @@ pricing_tier: "L4-企业级"
 pricing_model: "monthly"
 tools: ["read", "write", "exec"]
 tags: "UI设计,前端,设计"
+category: "Creative"
 ---
 # MCP服务器构建器
 

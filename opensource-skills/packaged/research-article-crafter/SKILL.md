@@ -21,6 +21,7 @@ pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 tools: ["read", "exec", "glob", "grep"]
 tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 # 研究文章匠人
 

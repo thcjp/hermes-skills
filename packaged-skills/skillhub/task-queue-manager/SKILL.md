@@ -22,7 +22,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec"]
+tags: "任务管理,效率,工具"
+category: "Productivity"
 ---
 # 任务队列管理器(专业版)
 

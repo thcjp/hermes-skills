@@ -29,7 +29,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
+category: "Operations"
 ---
 # Azure Infra Free
 

@@ -18,7 +18,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
+category: "Development"
 ---
 # Slack API工具箱（免费版）
 

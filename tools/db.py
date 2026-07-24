@@ -133,6 +133,18 @@ def init_database():
         )
     """)
 
+    # 迁移：为已存在的 platform_uploads 表添加可见性追踪字段（v1.3新增）
+    # community_published: 是否已发布到社区 (0=未发布, 1=已发布)
+    # download_ready: 下载就绪时间戳 (ISO格式, NULL表示尚未就绪)
+    try:
+        c.execute("ALTER TABLE platform_uploads ADD COLUMN community_published INTEGER DEFAULT 0")
+    except sqlite3.OperationalError:
+        pass  # 列已存在
+    try:
+        c.execute("ALTER TABLE platform_uploads ADD COLUMN download_ready TEXT")
+    except sqlite3.OperationalError:
+        pass  # 列已存在
+
     # 5. pricing - 收费策略表
     c.execute("""
         CREATE TABLE IF NOT EXISTS pricing (
@@ -475,8 +487,14 @@ def update_workflow_state(skill_id, step_number, step_name, status, result_data=
 
 def record_upload(skill_id, version, platform, platform_slug, upload_status,
                   http_status=None, error_message=None, visibility=None,
-                  pricing_on_platform=None):
-    """记录上传到平台"""
+                  pricing_on_platform=None, community_published=0,
+                  download_ready=None):
+    """记录上传到平台
+
+    v1.3新增参数：
+        community_published: 是否已发布到社区 (0=未发布, 1=已发布, 默认0)
+        download_ready: 下载就绪时间戳 (ISO格式字符串, None表示尚未就绪)
+    """
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
     now = datetime.now().isoformat()
@@ -484,10 +502,12 @@ def record_upload(skill_id, version, platform, platform_slug, upload_status,
     c.execute("""
         INSERT INTO platform_uploads (
             skill_id, version, platform, platform_slug, upload_date,
-            upload_status, http_status, error_message, visibility, pricing_on_platform
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            upload_status, http_status, error_message, visibility, pricing_on_platform,
+            community_published, download_ready
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (skill_id, version, platform, platform_slug, now, upload_status,
-          http_status, error_message, visibility, pricing_on_platform))
+          http_status, error_message, visibility, pricing_on_platform,
+          community_published, download_ready))
 
     c.execute("""
         INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)

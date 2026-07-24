@@ -17,6 +17,9 @@ tags:
 description: |-
   AI logo and brand identity design powered by CellCog。Brand kits, color
   palettes, typography, brand guidelines generation.
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 ## 任务定义
 

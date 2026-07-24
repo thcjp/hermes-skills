@@ -43,7 +43,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "YouTube,视频,媒体"
+category: "Creative"
 ---
 # YouTube 字幕提取工具 - 免费版
 

@@ -16,6 +16,7 @@
   9. gen-community-publish-js          — 生成浏览器端社区发布JS脚本
  10. retry-cos-failures                — 生成COS失败重试JS脚本
  11. sync-platform-status <results.json> — 根据浏览器返回结果同步数据库
+ 12. check-visibility                    — 检查所有SkillHub技能可见性状态
 
 重要说明:
   SkillHub Admin API (orgs/862/admin/*) 需要浏览器cookie认证,
@@ -36,7 +37,7 @@
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DIFFERENTIATED_DIR
+from project_config import DIFFERENTIATED_DIR, DATA_DIR, REGISTRY_DIR, REPORT_DIR, DB_PATH
 # === End Phase 1 ===
 
 
@@ -45,10 +46,10 @@ import subprocess
 import time
 import sys
 import re
+import sqlite3
 from pathlib import Path
 from datetime import datetime
 
-# REGISTRY_DIR imported from config
 DB_FILE = DATA_DIR / "upload_tracking.json"
 PACKAGED_DIR = Path(r"D:\skills\packaged-skills\skillhub")
 # DIFFERENTIATED_DIR imported from config
@@ -339,26 +340,28 @@ def retry_rejected(dry_run=False):
 
 
 def generate_community_publish_js():
-    """生成浏览器端社区发布JS脚本
+    """生成浏览器端社区发布JS脚本（增强版 - 含可见性诊断）
     
     SkillHub Admin API需要cookie认证,无法通过Python直接调用。
     此函数生成一个JS脚本,可在SkillHub管理后台(https://skillhub.cn/admin/skills)
     的浏览器控制台中执行,自动完成:
-    1. 获取所有org_only(未对外发布)的skill
-    2. 批量调用publish-to-community API
-    3. 处理slug冲突(自动追加-sk后缀)
-    4. 输出JSON格式结果供数据库同步
+    1. 获取所有skill（含 visibility, download_ready, namespace 信息）
+    2. 生成可见性诊断报告（识别不可见原因）
+    3. 筛选 org_only + NULL visibility 的skill
+    4. 批量调用publish-to-community API
+    5. 处理slug冲突(自动追加-sk后缀)
+    6. 输出JSON格式结果供数据库同步
     """
-    js_code = f"""// SkillHub 批量社区发布脚本 (自动生成)
+    js_code = f"""// SkillHub 批量社区发布脚本 (增强版 - 含可见性诊断)
 // 在 https://skillhub.cn/admin/skills 页面控制台执行
 (async function() {{
   const API_HOST = "{ADMIN_API_HOST}";
   const ORG_ID = {ADMIN_ORG_ID};
   const PUBLISHER_ID = {ADMIN_PUBLISHER_ID};
   const BATCH_SIZE = 10;  // 每批并发数
-  const RESULTS = {{ published: [], failed: [], renamed: [] }};
+  const RESULTS = {{ published: [], failed: [], renamed: [], visibility_report: {{}} }};
   
-  console.log("=== SkillHub 批量社区发布 ===");
+  console.log("=== SkillHub 批量社区发布 (增强版) ===");
   
   // 1. 获取所有skill
   const allSkills = [];
@@ -376,20 +379,73 @@ def generate_community_publish_js():
   }}
   console.log(`总共 ${{allSkills.length}} 个skill`);
   
-  // 2. 筛选org_only
-  const orgOnly = allSkills.filter(s => s.visibility === 'org_only');
-  console.log(`未对外发布(org_only): ${{orgOnly.length}} 个`);
-  console.log(`已对外发布(public): ${{allSkills.length - orgOnly.length}} 个`);
+  // 2. 可见性诊断报告
+  const visReport = {{
+    total: allSkills.length,
+    public: 0,
+    org_only: 0,
+    null_visibility: 0,
+    hidden: 0,
+    not_download_ready: 0,
+    team_namespace: 0,
+    global_namespace: 0,
+    invisible_reasons: []
+  }};
   
-  if (orgOnly.length === 0) {{
+  allSkills.forEach(s => {{
+    if (s.visibility === 'public') visReport.public++;
+    else if (s.visibility === 'org_only') visReport.org_only++;
+    else visReport.null_visibility++;
+    
+    if (s.hidden === true) {{
+      visReport.hidden++;
+      visReport.invisible_reasons.push({{ slug: s.slug, reason: 'hidden' }});
+    }}
+    
+    if (s.latestVersion && s.latestVersion.download_ready === false) {{
+      visReport.not_download_ready++;
+      visReport.invisible_reasons.push({{ slug: s.slug, reason: 'download_not_ready' }});
+    }}
+    
+    if (s.namespace && s.namespace.type === 'TEAM' && s.visibility !== 'public') {{
+      visReport.team_namespace++;
+      visReport.invisible_reasons.push({{ slug: s.slug, reason: 'team_namespace_not_public' }});
+    }} else if (s.namespace && s.namespace.type === 'GLOBAL') {{
+      visReport.global_namespace++;
+    }}
+  }});
+  
+  console.log("\\n=== 可见性诊断报告 ===");
+  console.log(`  public: ${{visReport.public}}`);
+  console.log(`  org_only: ${{visReport.org_only}}`);
+  console.log(`  null_visibility: ${{visReport.null_visibility}}`);
+  console.log(`  hidden: ${{visReport.hidden}}`);
+  console.log(`  not_download_ready: ${{visReport.not_download_ready}}`);
+  console.log(`  TEAM namespace: ${{visReport.team_namespace}}`);
+  console.log(`  GLOBAL namespace: ${{visReport.global_namespace}}`);
+  if (visReport.invisible_reasons.length > 0) {{
+    console.log(`\\n  不可见原因 (${{visReport.invisible_reasons.length}} 个):`);
+    visReport.invisible_reasons.slice(0, 20).forEach(r => 
+      console.log(`    ${{r.slug}}: ${{r.reason}}`));
+  }}
+  RESULTS.visibility_report = visReport;
+  
+  // 3. 筛选需要发布的skill (org_only + null visibility)
+  const toPublish = allSkills.filter(s => 
+    s.visibility === 'org_only' || !s.visibility);
+  console.log(`\\n需要发布(org_only + null): ${{toPublish.length}} 个`);
+  
+  if (toPublish.length === 0) {{
     console.log("✅ 所有skill已对外发布!");
+    window.__publishResults = RESULTS;
+    console.log("结果已保存到 window.__publishResults");
     return;
   }}
   
-  // 3. 批量发布
-  for (let i = 0; i < orgOnly.length; i += BATCH_SIZE) {{
-    const batch = orgOnly.slice(i, i + BATCH_SIZE);
-    console.log(`处理批次 ${{Math.floor(i/BATCH_SIZE)+1}}: ${{i+1}}-${{Math.min(i+BATCH_SIZE, orgOnly.length)}}/${{orgOnly.length}}`);
+  // 4. 批量发布
+  for (let i = 0; i < toPublish.length; i += BATCH_SIZE) {{
+    const batch = toPublish.slice(i, i + BATCH_SIZE);
+    console.log(`处理批次 ${{Math.floor(i/BATCH_SIZE)+1}}: ${{i+1}}-${{Math.min(i+BATCH_SIZE, toPublish.length)}}/${{toPublish.length}}`);
     
     const promises = batch.map(async (skill) => {{
       const slug = skill.slug;
@@ -452,12 +508,12 @@ def generate_community_publish_js():
     console.log(`  已发布: ${{RESULTS.published.length}}, 失败: ${{RESULTS.failed.length}}`);
     
     // 批次间短暂等待
-    if (i + BATCH_SIZE < orgOnly.length) {{
+    if (i + BATCH_SIZE < toPublish.length) {{
       await new Promise(r => setTimeout(r, 500));
     }}
   }}
   
-  // 4. 输出结果
+  // 5. 输出结果
   console.log("\\n=== 发布结果 ===");
   console.log(`✅ 成功发布: ${{RESULTS.published.length}}`);
   console.log(`❌ 发布失败: ${{RESULTS.failed.length}}`);
@@ -470,7 +526,7 @@ def generate_community_publish_js():
   
   // 保存结果到window供复制
   window.__publishResults = RESULTS;
-  console.log("\\n结果已保存到 window.__publishResults");
+  console.log("\\n结果已保存到 window.__publishResults (含可见性诊断报告)");
   console.log("复制结果: JSON.stringify(window.__publishResults)");
 }})();
 """
@@ -479,14 +535,16 @@ def generate_community_publish_js():
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(js_code)
     
-    print(f"✅ JS脚本已生成: {output_file}")
+    print(f"✅ 增强版JS脚本已生成: {output_file}")
+    print(f"功能: 可见性诊断 + 批量社区发布")
     print(f"使用方法:")
     print(f"  1. 打开 https://skillhub.cn/admin/skills")
     print(f"  2. 按 F12 打开浏览器开发者工具")
     print(f"  3. 切换到 Console 标签")
     print(f"  4. 粘贴 {output_file} 的内容并回车执行")
-    print(f"  5. 执行完成后, 运行: JSON.stringify(window.__publishResults)")
-    print(f"  6. 将结果保存为JSON文件, 然后运行:")
+    print(f"  5. 脚本会先输出可见性诊断报告，然后自动发布不可见技能")
+    print(f"  6. 执行完成后, 运行: JSON.stringify(window.__publishResults)")
+    print(f"  7. 将结果保存为JSON文件, 然后运行:")
     print(f"     python auto_publish.py sync-platform-status <results.json>")
 
 
@@ -666,6 +724,124 @@ def sync_platform_status(results_file):
             print(f"    {r['original']} → {r['renamed']}")
 
 
+def check_visibility():
+    """检查所有SkillHub技能的可见性状态
+    
+    查询SQLite数据库中platform_uploads表，
+    识别不可见技能(org_only/NULL visibility)并生成诊断报告。
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+
+    # 1. 总体统计
+    c.execute("""SELECT upload_status, visibility, COUNT(*) 
+                 FROM platform_uploads WHERE platform='skillhub' 
+                 GROUP BY upload_status, visibility ORDER BY upload_status""")
+    print("=== SkillHub 可见性总体统计 ===")
+    stats = []
+    for row in c.fetchall():
+        vis = row[1] if row[1] else "NULL"
+        print(f"  status={row[0]:20s} | visibility={vis:15s} | count={row[2]}")
+        stats.append({"status": row[0], "visibility": vis, "count": row[2]})
+
+    # 2. org_only 技能（不可见）
+    c.execute("""SELECT s.slug, s.category, pu.upload_status, pu.error_message
+                 FROM platform_uploads pu 
+                 JOIN skills s ON pu.skill_id = s.id
+                 WHERE pu.platform='skillhub' AND pu.visibility='org_only'""")
+    org_only_skills = []
+    print(f"\n=== org_only 可见性技能 (前台不可见) ===")
+    for row in c.fetchall():
+        err = str(row[3])[:60] if row[3] else "None"
+        print(f"  {row[0]:40s} | cat={str(row[1]):15s} | status={row[2]} | err={err}")
+        org_only_skills.append({"slug": row[0], "category": row[1], "status": row[2], "error": row[3]})
+
+    # 3. NULL 可见性技能（状态未知）
+    c.execute("""SELECT s.slug, s.category, pu.upload_status
+                 FROM platform_uploads pu 
+                 JOIN skills s ON pu.skill_id = s.id
+                 WHERE pu.platform='skillhub' AND pu.visibility IS NULL""")
+    null_vis_skills = []
+    print(f"\n=== NULL 可见性技能 (状态未知，可能不可见) ===")
+    for row in c.fetchall():
+        print(f"  {row[0]:40s} | cat={str(row[1]):15s} | status={row[2]}")
+        null_vis_skills.append({"slug": row[0], "category": row[1], "status": row[2]})
+
+    # 4. retry_pending 技能
+    c.execute("""SELECT s.slug, s.category, pu.error_message
+                 FROM platform_uploads pu 
+                 JOIN skills s ON pu.skill_id = s.id
+                 WHERE pu.platform='skillhub' AND pu.upload_status='retry_pending'""")
+    retry_skills = []
+    print(f"\n=== retry_pending 技能 (需重新上传) ===")
+    for row in c.fetchall():
+        err = str(row[2])[:80] if row[2] else "None"
+        print(f"  {row[0]:40s} | cat={str(row[1]):15s} | error={err}")
+        retry_skills.append({"slug": row[0], "category": row[1], "error": row[2]})
+
+    # 5. NULL/无效 category 统计
+    c.execute("""SELECT COUNT(*) FROM skills WHERE category IS NULL OR category = '' OR category = 'packaged'""")
+    null_cat_count = c.fetchone()[0]
+    c.execute("""SELECT COUNT(*) FROM skills WHERE category IS NOT NULL AND category != '' AND category != 'packaged'""")
+    valid_cat_count = c.fetchone()[0]
+    print(f"\n=== Category 统计 ===")
+    print(f"  有效 category: {valid_cat_count}")
+    print(f"  NULL/无效 category: {null_cat_count}")
+
+    # 6. public + success 技能数量（理论可见）
+    c.execute("""SELECT COUNT(*) FROM platform_uploads 
+                 WHERE platform='skillhub' AND visibility='public' AND upload_status='success'""")
+    public_success = c.fetchone()[0]
+    print(f"\n=== 理论可见技能 (public+success): {public_success} ===")
+    print(f"  注意: 实际可见性还需验证平台侧 download_ready, namespace.type, hidden 状态")
+
+    conn.close()
+
+    # 7. 生成诊断报告
+    report = {
+        "generated_at": NOW,
+        "summary": {
+            "total_skillhub_uploads": sum(s["count"] for s in stats),
+            "public_success": public_success,
+            "org_only": len(org_only_skills),
+            "null_visibility": len(null_vis_skills),
+            "retry_pending": len(retry_skills),
+            "null_invalid_category": null_cat_count,
+        },
+        "org_only_skills": org_only_skills,
+        "null_visibility_skills": null_vis_skills,
+        "retry_pending_skills": retry_skills,
+        "stats_breakdown": stats,
+        "recommendations": [
+            "对 org_only 技能执行 gen-community-publish-js 生成发布脚本",
+            "对 NULL visibility 技能执行 gen-community-publish-js (含诊断模式)",
+            "对 retry_pending 技能执行 publish-skillhub 重新上传",
+            "对 NULL/无效 category 技能执行 fix_missing_fields.py 推断category",
+            "在浏览器执行生成的JS脚本后执行 sync-platform-status 同步结果",
+        ],
+    }
+
+    report_file = REPORT_DIR / "visibility_report.json"
+    report_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(report_file, "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=2)
+    print(f"\n=== 诊断报告已生成: {report_file} ===")
+
+    # 8. 输出行动建议
+    print(f"\n=== 行动建议 ===")
+    if org_only_skills:
+        print(f"  1. 执行: python tools/auto_publish.py gen-community-publish-js")
+        print(f"     → 生成浏览器JS脚本，发布 {len(org_only_skills)} 个 org_only 技能到社区")
+    if null_vis_skills:
+        print(f"  2. 检查 {len(null_vis_skills)} 个 NULL visibility 技能的平台侧状态")
+    if retry_skills:
+        print(f"  3. 执行: python tools/auto_publish.py publish-skillhub <slug>")
+        print(f"     → 重新上传 {len(retry_skills)} 个 retry_pending 技能")
+    if null_cat_count > 0:
+        print(f"  4. 执行: python tools/fix_missing_fields.py")
+        print(f"     → 修复 {null_cat_count} 个 NULL/无效 category")
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -709,6 +885,9 @@ def main():
             print("用法: python auto_publish.py sync-platform-status <results.json>")
             return
         sync_platform_status(sys.argv[2])
+
+    elif cmd == "check-visibility":
+        check_visibility()
 
     else:
         print(f"未知命令: {cmd}")

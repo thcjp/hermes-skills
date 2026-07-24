@@ -23,7 +23,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
+category: "Finance"
 ---
 # 行情追踪专业工具
 

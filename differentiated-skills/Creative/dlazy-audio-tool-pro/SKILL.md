@@ -24,7 +24,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
+category: "Creative"
 ---
 # 音频生成工具（专业版）
 

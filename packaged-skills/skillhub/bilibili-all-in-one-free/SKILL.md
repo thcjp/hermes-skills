@@ -19,7 +19,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "B站,视频,媒体"
+category: "Creative"
 ---
 # Bilibili All In One 全功能工具箱 (免费版)
 

@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L2-标准级"
 pricing_model: per_use
 suggested_price: "19.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
+category: "Development"
 ---
 # 接口魔法生成工具（免费版）
 

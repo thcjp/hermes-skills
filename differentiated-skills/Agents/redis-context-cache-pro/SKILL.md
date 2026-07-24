@@ -28,7 +28,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 # Redis上下文缓存（专业版）
 

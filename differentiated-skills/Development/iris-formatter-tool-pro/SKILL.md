@@ -35,7 +35,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # IRIS 代码格式化工具（专业版）
 ## 概述

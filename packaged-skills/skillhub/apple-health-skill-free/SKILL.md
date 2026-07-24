@@ -15,7 +15,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 生活服务
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 运动健康数据（免费版）
 

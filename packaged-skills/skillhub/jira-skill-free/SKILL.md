@@ -23,7 +23,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # Jira集成助手（免费版）
 

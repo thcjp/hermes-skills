@@ -18,7 +18,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
+category: "Operations"
 ---
 # Cloud Storage
 

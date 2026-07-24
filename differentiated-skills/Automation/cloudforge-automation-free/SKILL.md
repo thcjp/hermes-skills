@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
+category: "Operations"
 ---
 # 云锻造自动化（免费版）
 

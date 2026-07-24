@@ -20,7 +20,9 @@ tags:
   - 通用办公
 pricing_tier: "L2-标准级"
 suggested_price: "19.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 博客写作引擎(免费版)
 

@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
+category: "Creative"
 ---
 # 知识图谱构建器（免费版）
 > **AI Agent的类型化知识图谱系统。实体-关系-约束三要素，每条变更都经过验证。**

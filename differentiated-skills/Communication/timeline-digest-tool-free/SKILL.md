@@ -45,7 +45,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 时间线摘要工具免费版是一款X(Twitter)时间线信息聚合工具。通过命令行工具抓取For You和Following两个时间线的最新推文,进行增量过滤、硬去重和近似去重处理,最终生成结构化的JSON摘要数据,帮助用户快速了解关注领域的最新动态,减少信息噪音.
 本版本聚焦单次摘要生成能力,内置增量过滤机制避免重复处理。适合个人用户的日常信息聚合阅读需求。如需定时自动调度、智能分类摘要、多源聚合等高级功能,请升级至PRO版.

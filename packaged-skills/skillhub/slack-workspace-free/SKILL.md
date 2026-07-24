@@ -17,7 +17,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
+category: "Communication"
 ---
 # Slack工作区管家 LITE（Slack Workspace Free）
 

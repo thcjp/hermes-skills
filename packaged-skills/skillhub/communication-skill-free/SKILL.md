@@ -18,7 +18,9 @@ tags:
 tools:
   - read
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # Comm LITE - 沟通辅助基础版
 

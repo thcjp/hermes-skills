@@ -24,7 +24,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
+category: "Creative"
 ---
 # Logo设计指南专业版
 ## 概述

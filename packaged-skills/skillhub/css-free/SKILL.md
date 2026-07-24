@@ -18,7 +18,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # CSS样式引擎(免费版)
 

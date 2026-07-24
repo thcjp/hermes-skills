@@ -20,7 +20,9 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
+category: "Development"
 ---
 # Docker核心操作指南
 

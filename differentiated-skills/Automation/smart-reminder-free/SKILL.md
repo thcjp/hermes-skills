@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
+category: "Automation"
 ---
 > **不是教你创建提醒，而是教你理解用户的自然语言事件描述。中文解析、结构化存储、智能查询，一站式日程助手。**
 

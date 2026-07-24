@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
+category: "Automation"
 ---
 > **让定时任务不脆弱。脚本优先、故障识别、防护栏、异常恢复，四层防护体系。**
 

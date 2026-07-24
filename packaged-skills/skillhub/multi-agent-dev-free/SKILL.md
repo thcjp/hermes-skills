@@ -16,7 +16,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 智能助手
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 # 多代理开发框架（Multi-Agent Dev）- 免费版
 

@@ -36,7 +36,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "exec"]
+tags: "RSS,订阅,信息"
+category: "Knowledge"
 ---
 # RSS智能阅读器专业版
 

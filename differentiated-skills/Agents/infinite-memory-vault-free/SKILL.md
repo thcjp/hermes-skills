@@ -19,7 +19,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 **与 Agent 内置记忆并行的无限组织化记忆系统**。你的 Agent 有基础内置记忆，本 Skill 为它添加无限、完美组织的并行记忆系统——互补而非替代，永不冲突.
 ## 痛点与对策速查

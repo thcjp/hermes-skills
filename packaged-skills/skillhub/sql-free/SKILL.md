@@ -18,7 +18,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 数据存储
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # SQL查询助手(免费版)
 

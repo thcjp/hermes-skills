@@ -27,6 +27,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 精英前端设计工具专业版是企业级前端设计系统平台。它不仅生成单页面代码，更将设计规范扩展至多页面应用、React/Vue 组件库、品牌设计系统和高级动效编排。通过设计令牌（Design Token）管理，确保全站视觉语言的一致性与可维护性。
 

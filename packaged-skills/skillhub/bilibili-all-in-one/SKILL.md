@@ -26,7 +26,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "B站,视频,媒体"
+category: "Creative"
 ---
 # Bilibili All In One 全功能工具箱
 

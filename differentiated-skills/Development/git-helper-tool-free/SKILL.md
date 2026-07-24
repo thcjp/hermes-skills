@@ -48,7 +48,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
+category: "Development"
 ---
 Git助手免费版为开发者提供Git操作辅助能力。工具提供常见操作指引、合并冲突解决步骤、提交信息规范检查和安全操作检查清单,帮助开发者安全高效地使用Git.
 本版本适合Git操作遇到问题时的辅助、冲突解决指引和新手Git操作指导。所有指引以步骤化方式呈现,易于跟随.

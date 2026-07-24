@@ -19,7 +19,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
+category: "Research"
 ---
 # 数据分析理调
 

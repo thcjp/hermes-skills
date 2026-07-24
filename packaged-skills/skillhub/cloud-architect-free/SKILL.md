@@ -18,7 +18,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "云计算,DevOps,基础设施"
+category: "Operations"
 ---
 # 云架构师免费版
 

@@ -18,7 +18,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 文档处理
-
+tools: ["read", "write", "exec"]
+tags: "Markdown,文档,工具"
+category: "Development"
 ---
 # Markdown导出工具(免费版)
 

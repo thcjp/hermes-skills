@@ -15,7 +15,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "音乐生成,音频,创意"
+category: "Creative"
 ---
 # ACE Music LITE
 

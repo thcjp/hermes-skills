@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 面向专业数据工程师与数据治理团队的全功能 CSV 清洗平台，在免费版基础上解锁流式处理、自定义规则、Schema 校验与数据质量评分.
 ## 概述

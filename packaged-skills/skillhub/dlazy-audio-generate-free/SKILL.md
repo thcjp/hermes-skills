@@ -14,7 +14,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "音频处理,媒体,创意"
+category: "Creative"
 ---
 # Dlazy Audio LITE
 

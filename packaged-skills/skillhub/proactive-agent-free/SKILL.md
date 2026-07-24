@@ -15,7 +15,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 智能助手
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 # 主动式代理(免费版)
 

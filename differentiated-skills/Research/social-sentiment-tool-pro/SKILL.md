@@ -45,7 +45,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec"]
+tags: "社交媒体,营销,通信"
+category: "Communication"
 ---
 # 社交情感分析专业版
 ## 概述

@@ -29,7 +29,9 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 专业版面向家庭、慢病患者与健康机构,在免费版个人健康管理之上,扩展慢病管理、医生数据共享、AI 辅助诊断、穿戴设备同步、家庭多成员管理等企业级能力。支持构建完整的个人健康档案,与医疗系统协作,适合慢病管理、术后康复、家庭健康关怀等专业场景.
 专业版与免费版数据格式完全兼容,个人用户升级后历史数据无缝迁移.

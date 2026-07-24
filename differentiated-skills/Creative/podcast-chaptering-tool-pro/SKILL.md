@@ -35,7 +35,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
+category: "Creative"
 ---
 # 播客章节工具 - 专业版
 

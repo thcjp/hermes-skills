@@ -36,7 +36,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
+category: "Creative"
 ---
 # 通义千问视频分析工具 - 免费版
 

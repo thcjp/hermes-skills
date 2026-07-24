@@ -28,7 +28,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 知识捕获工具（专业版）
 

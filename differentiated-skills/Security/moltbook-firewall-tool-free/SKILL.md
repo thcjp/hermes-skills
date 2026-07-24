@@ -23,7 +23,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
+category: "Security"
 ---
 本工具为AI Agent应用提供基础安全防护层,在用户输入与Agent执行之间建立防火墙,检测并过滤提示注入攻击、恶意工具调用与不当输入。免费版支持基础提示注入检测、工具调用过滤与输入净化,适合个人开发者保护Agent应用免受常见攻击.
 ### 免费版与专业版对比

@@ -23,6 +23,7 @@ pricing_tier: "L4-企业级"
 pricing_model: "monthly"
 tools: ["read", "write", "exec"]
 tags: "云计算,DevOps,基础设施"
+category: "Operations"
 ---
 # 边缘计算开发者
 

@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
+category: "Security"
 ---
 专业版为企业Go开发团队提供完整的安全扫描与治理平台,在免费版govulncheck依赖漏洞扫描基础上,新增gosec代码安全分析、深度调用路径追踪、批量多项目扫描、CI/CD安全门禁、SARIF合规报告与持续漏洞监控。专业版完全兼容免费版扫描方法,已有安全脚本可无缝升级,适合企业级Go安全治理.
 ### 专业版核心优势

@@ -27,7 +27,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "B站,视频,媒体"
+category: "Creative"
 ---
 # B站工具箱专业版
 

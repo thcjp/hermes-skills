@@ -33,7 +33,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
+category: "Communication"
 ---
 # 163邮箱管理专家
 

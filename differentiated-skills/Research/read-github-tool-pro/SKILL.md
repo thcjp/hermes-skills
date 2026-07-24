@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
+category: "Development"
 ---
 # 代码仓库阅读工具（专业版）
 ## 概述

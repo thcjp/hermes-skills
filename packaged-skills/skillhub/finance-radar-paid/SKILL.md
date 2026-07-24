@@ -22,7 +22,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
+category: "Finance"
 ---
 # 股票分析雷达专业版
 

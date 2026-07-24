@@ -27,7 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
-
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
+category: "Development"
 ---
 # API开发工具（免费版）
 

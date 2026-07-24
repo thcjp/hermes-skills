@@ -15,7 +15,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "API,接口,开发工具"
+category: "Development"
 ---
 # API 集成开发助手（免费版）
 

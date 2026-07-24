@@ -16,7 +16,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 生产力操作系统（基础版）
 

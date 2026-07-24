@@ -31,7 +31,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 # Brave Search
 

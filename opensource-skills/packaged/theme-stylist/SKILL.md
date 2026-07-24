@@ -21,6 +21,7 @@ pricing_tier: "L1-入门级"
 pricing_model: "per_use"
 tools: ["read", "write", "exec"]
 tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 主题造型师
 

@@ -20,6 +20,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
+category: "Creative"
 ---
 # Figma设计集成工具（专业版）
 

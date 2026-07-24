@@ -27,7 +27,9 @@ homepage: https://skillhub.cn
 pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
-
+tools: ["read", "write", "exec"]
+tags: "上下文管理,AI,工具"
+category: "Agents"
 ---
 # 上下文驱动开发（免费版）
 

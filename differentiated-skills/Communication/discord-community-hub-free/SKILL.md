@@ -37,7 +37,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
+category: "Communication"
 ---
 # Discord 社区中心(免费版)
 

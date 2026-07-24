@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L0-免费"
 pricing_model: free
 suggested_price: "0"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 天气查询工具包免费版
 

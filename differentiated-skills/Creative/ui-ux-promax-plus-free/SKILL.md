@@ -46,7 +46,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
+category: "Creative"
 ---
 # UI/UX ProMax+ - 免费版
 

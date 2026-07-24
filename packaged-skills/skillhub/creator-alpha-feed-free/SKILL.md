@@ -18,7 +18,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # Creator Alpha Feed Free 创作者 AI 日报(免费版)
 

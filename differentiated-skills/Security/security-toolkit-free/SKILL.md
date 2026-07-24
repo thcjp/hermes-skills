@@ -47,7 +47,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
+category: "Security"
 ---
 # Agent安全工具箱(免费版)
 

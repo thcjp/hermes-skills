@@ -36,7 +36,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
+category: "Communication"
 ---
 # WhatsApp样式工具-专业版
 

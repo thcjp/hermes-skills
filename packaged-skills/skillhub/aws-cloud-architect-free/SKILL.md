@@ -19,7 +19,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
+category: "Operations"
 ---
 # AWS 云架构师 (免费版)
 

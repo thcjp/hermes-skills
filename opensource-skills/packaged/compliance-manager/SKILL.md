@@ -22,6 +22,7 @@ pricing_tier: "L4-企业级"
 pricing_model: "monthly"
 tools: ["read", "exec", "glob", "grep"]
 tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 合规管理器
 

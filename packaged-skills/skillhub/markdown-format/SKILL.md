@@ -38,7 +38,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "Markdown,文档,工具"
+category: "Development"
 ---
 # Markdown格式化工具专业版
 

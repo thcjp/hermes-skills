@@ -22,7 +22,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
+category: "Research"
 ---
 # 数据格式转换器（免费版）
 

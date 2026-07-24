@@ -23,7 +23,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
+category: "Operations"
 ---
 # 系统监控专业版（PRO版）
 

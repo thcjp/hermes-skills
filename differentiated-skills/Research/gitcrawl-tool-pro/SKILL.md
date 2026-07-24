@@ -47,7 +47,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
+category: "Development"
 ---
 # 仓库归档专业版
 

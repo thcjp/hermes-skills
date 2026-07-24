@@ -44,7 +44,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
+category: "Development"
 ---
 # 网页抓取工具专业版
 

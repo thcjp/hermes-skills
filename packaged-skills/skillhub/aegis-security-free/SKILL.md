@@ -15,7 +15,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 安全合规
-
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
+category: "Security"
 ---
 # 区块链安全防护（免费版）
 

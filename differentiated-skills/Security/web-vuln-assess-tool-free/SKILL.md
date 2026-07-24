@@ -49,7 +49,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
-
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
+category: "Development"
 ---
 # Web漏洞评估(免费版)
 

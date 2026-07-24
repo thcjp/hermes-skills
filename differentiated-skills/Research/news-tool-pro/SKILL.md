@@ -24,7 +24,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 个性化新闻助手专业版在免费版单用户个性化简报的基础上，新增多用户/多租户管理、定时自动推送、阅读行为深度分析、自定义新闻源接入、多格式导出和 REST API 集成等企业级能力，满足团队和企业的定制化新闻服务需求.
 PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，原有兴趣画像和偏好配置均可无缝迁移.

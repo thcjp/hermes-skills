@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 > **AI Agent的学习闭环系统。三类日志结构化记录，从错误与纠正中提取可复用知识。**
 

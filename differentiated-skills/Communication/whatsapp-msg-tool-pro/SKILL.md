@@ -22,7 +22,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
+category: "Communication"
 ---
 # WhatsApp 消息工具（专业版）
 

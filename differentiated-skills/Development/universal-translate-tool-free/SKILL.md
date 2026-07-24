@@ -40,7 +40,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "翻译,语言,工具"
+category: "Knowledge"
 ---
 # 通用翻译工具(免费版)
 

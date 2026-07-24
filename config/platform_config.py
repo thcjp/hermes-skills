@@ -80,6 +80,17 @@ GITHUB_SCAN_REPOS = [
     {"owner": "addyosmani", "repo": "agent-skills", "license": "MIT"},
     {"owner": "ComposioHQ", "repo": "awesome-claude-skills", "license": "mixed"},
     {"owner": "VoltAgent", "repo": "awesome-openclaw-skills", "license": "mixed"},
+    # 高星 AI Agent / LLM 项目仓库（可能包含可提取的 skill 或 tool）
+    {"owner": "humanlayer", "repo": "12-factor-agents", "license": "MIT"},
+    {"owner": "langchain-ai", "repo": "langgraph", "license": "MIT"},
+    {"owner": "crewAIInc", "repo": "crewAI", "license": "MIT"},
+    {"owner": "microsoft", "repo": "autogen", "license": "MIT"},
+    {"owner": "openai", "repo": "openai-agents-python", "license": "MIT"},
+    {"owner": "ollama", "repo": "ollama", "license": "MIT"},
+    {"owner": "vllm-project", "repo": "vllm", "license": "Apache-2.0"},
+    {"owner": "huggingface", "repo": "transformers", "license": "Apache-2.0"},
+    {"owner": "ggerganov", "repo": "llama.cpp", "license": "MIT"},
+    {"owner": "run-llama", "repo": "llama_index", "license": "MIT"},
 ]
 
 

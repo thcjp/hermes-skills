@@ -31,7 +31,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "Azure,云计算,DevOps"
+category: "Operations"
 ---
 # Azure
 

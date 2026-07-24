@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "Telegram,社交,通信"
+category: "Communication"
 ---
 # Telegram 消息工具箱（免费版）
 

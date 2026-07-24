@@ -16,7 +16,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 系统运维
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 决策架构师免费版（Decision Architect Free）
 

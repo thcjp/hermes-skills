@@ -40,7 +40,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
+category: "Communication"
 ---
 # Slack Hub工具（免费版）
 

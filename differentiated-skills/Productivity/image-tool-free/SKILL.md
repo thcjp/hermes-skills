@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "图像处理,AI绘图,创意"
+category: "Creative"
 ---
 # 图像处理基础版
 

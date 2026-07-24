@@ -15,7 +15,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "exec"]
+tags: "新闻,信息,资讯"
+category: "Knowledge"
 ---
 # News Sentiment Scan 免费版
 

@@ -18,7 +18,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
+category: "Operations"
 ---
 # aws-agentcore-langgraph (免费版)
 

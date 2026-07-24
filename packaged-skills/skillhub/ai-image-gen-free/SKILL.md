@@ -24,7 +24,9 @@ tools:
 homepage: "https://skillhub.cn"
 pricing_tier: "L2-标准级"
 suggested_price: "19.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "图像处理,AI绘图,创意"
+category: "Creative"
 ---
 # AI Image Gen LITE
 

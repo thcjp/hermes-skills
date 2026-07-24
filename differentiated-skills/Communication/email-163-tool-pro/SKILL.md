@@ -28,7 +28,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
+category: "Communication"
 ---
 # 163邮箱助手专业版
 **版本**: 1.0.0

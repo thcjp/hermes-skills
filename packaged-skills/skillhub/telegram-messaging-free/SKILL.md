@@ -16,7 +16,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "Telegram,社交,通信"
+category: "Communication"
 ---
 # Telegram 消息 LITE
 

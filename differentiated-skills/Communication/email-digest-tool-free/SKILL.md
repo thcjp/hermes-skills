@@ -25,7 +25,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
+category: "Communication"
 ---
 # 邮件日报免费版
 

@@ -12,25 +12,12 @@ tags:
   - Knowledge
 tools:
   - read
+  - write
   - exec
-homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+homepage: ""
+category: "Automation"
 ---
 # Compress PDF
-
-## 付费版专享能力
-
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| Compress PDF压缩服务 | 不支持 | 支持 |
-| 复杂工作流可视化编排 | 不支持 | 支持 |
-| 条件分支与异常重试 | 不支持 | 支持 |
-| 定时触发与事件驱动 | 不支持 | 支持 |
-| 执行日志与审计追踪 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -100,18 +87,10 @@ Example output:
 |:------|------:|:------|:------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### API Key 配置
-- 
-
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
 
-**API Key配置方式**:
-```bash
-export API_KEY="your_api_key_here"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 错误处理
 
 | 错误场景(续)| 原因 | 处理方式 |

@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具。把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让 Agent 从"能跑"升级到"基本可控".
 > 本免费版面向个人开发者试用与轻量场景。如需 Few-shot 自动生成、Token 预算管理、多 Agent 编排等高级能力，请使用 `prompt-architect-pro` 专业版.

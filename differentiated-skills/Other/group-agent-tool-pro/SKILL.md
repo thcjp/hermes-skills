@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 当企业内部运行着数十个Agent实例、数百个群组、上千个Agent成员时，免费版的"单实例轻量群组"模型就会遇到瓶颈：**跨实例群组无法联邦、权限无法统一管理、敏感协作无法加密、与企业IM无法打通、协作效率无法度量**.
 Agent群组工具专业版正是为企业级群组治理而设计。它在免费版极简协作的基础上，叠加"联邦层 + 权限层 + 加密层 + 集成层 + 分析层"，让Agent群组成为可治理、可审计、可优化的企业资产.

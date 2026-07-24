@@ -17,7 +17,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
+category: "Communication"
 ---
 # WhatsApp（免费版）
 

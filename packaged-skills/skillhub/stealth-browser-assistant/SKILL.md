@@ -23,6 +23,8 @@ tools:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
+tools: ["read", "write", "exec"]
+category: "Automation"
 ---
 # 反检测浏览器助手 Stealth Browser Assistant v1.1.0
 

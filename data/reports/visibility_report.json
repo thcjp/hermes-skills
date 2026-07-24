@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-07-24T14:15:56",
+  "summary": {
+    "total_skillhub_uploads": 1129,
+    "public_success": 1120,
+    "org_only": 0,
+    "null_visibility": 6,
+    "retry_pending": 8,
+    "null_invalid_category": 0
+  },
+  "org_only_skills": [],
+  "null_visibility_skills": [
+    {
+      "slug": "cdp-browser-master",
+      "category": "Automation",
+      "status": "retry_pending"
+    },
+    {
+      "slug": "cron-guard",
+      "category": "Automation",
+      "status": "retry_pending"
+    },
+    {
+      "slug": "linear-workflow-bot",
+      "category": "Automation",
+      "status": "retry_pending"
+    },
+    {
+      "slug": "accounting-and-finance",
+      "category": "Finance",
+      "status": "retry_pending"
+    },
+    {
+      "slug": "accounting-finance",
+      "category": "Finance",
+      "status": "retry_pending"
+    },
+    {
+      "slug": "ace-music",
+      "category": "Creative",
+      "status": "retry_pending"
+    }
+  ],
+  "retry_pending_skills": [
+    {
+      "slug": "cdp-browser-master",
+      "category": "Automation",
+      "error": "Content trimmed/fixed in Round 40, ready for retry"
+    },
+    {
+      "slug": "cron-guard",
+      "category": "Automation",
+      "error": "Content trimmed/fixed in Round 40, ready for retry"
+    },
+    {
+      "slug": "linear-workflow-bot",
+      "category": "Automation",
+      "error": "Content trimmed/fixed in Round 40, ready for retry"
+    },
+    {
+      "slug": "ai-artist-workstation",
+      "category": "Automation",
+      "error": "Content trimmed/fixed in Round 40, ready for retry"
+    },
+    {
+      "slug": "sales-copy-writer",
+      "category": "Automation",
+      "error": "Content trimmed/fixed in Round 40, ready for retry"
+    },
+    {
+      "slug": "accounting-and-finance",
+      "category": "Finance",
+      "error": "Content trimmed/fixed in Round 40, ready for retry"
+    },
+    {
+      "slug": "accounting-finance",
+      "category": "Finance",
+      "error": "Content trimmed/fixed in Round 40, ready for retry"
+    },
+    {
+      "slug": "ace-music",
+      "category": "Creative",
+      "error": "Content trimmed/fixed in Round 40, ready for retry"
+    }
+  ],
+  "stats_breakdown": [
+    {
+      "status": "cancelled",
+      "visibility": "public",
+      "count": 1
+    },
+    {
+      "status": "retry_pending",
+      "visibility": "NULL",
+      "count": 6
+    },
+    {
+      "status": "retry_pending",
+      "visibility": "public",
+      "count": 2
+    },
+    {
+      "status": "success",
+      "visibility": "public",
+      "count": 1120
+    }
+  ],
+  "recommendations": [
+    "对 org_only 技能执行 gen-community-publish-js 生成发布脚本",
+    "对 NULL visibility 技能执行 gen-community-publish-js (含诊断模式)",
+    "对 retry_pending 技能执行 publish-skillhub 重新上传",
+    "对 NULL/无效 category 技能执行 fix_missing_fields.py 推断category",
+    "在浏览器执行生成的JS脚本后执行 sync-platform-status 同步结果"
+  ]
+}

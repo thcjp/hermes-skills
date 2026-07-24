@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
+category: "Communication"
 ---
 # 邮件工具箱免费版
 

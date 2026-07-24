@@ -59,11 +59,20 @@ Layer 8 (安全审计 Security Audit):
   - DEPENDENCY_CONTRADICTION: 依赖说明与已知限制矛盾
   评级: A(90+) / B(70+) / C(50+) / D(30+) / F(<30)
 
+Layer 9 (可见性质量预检 Visibility Quality):
+  - INVALID_CATEGORY: category为NULL或不在14个有效分类中
+  - INSUFFICIENT_SUMMARY: summary缺失或不足50字符
+  - MISSING_VALUE_PROPOSITION: description缺少清晰价值命题
+  - MISSING_QUICK_START: 缺少"快速开始"/"Quick Start"章节
+  - MISSING_OR_IRRELEVANT_TAGS: tags缺失或与内容不相关
+  评级: A(90+) / B(70+) / C(50+) / D(<50)
+
 使用方式:
     python deep_quality_audit.py              # 执行审计
     python deep_quality_audit.py --fix        # 审计并自动修复 warning 级别问题
     python deep_quality_audit.py --fix-all    # 审计并自动修复 warning + info 级别问题
     python deep_quality_audit.py --no-layer8  # 关闭L8安全审计
+    python deep_quality_audit.py --no-layer9  # 关闭L9可见性质量预检
 
 输出:
     - JSON 报告: deep_quality_audit_report.json
@@ -93,8 +102,8 @@ import config as _cfg
 # 优先使用 config.py 中的常量，回退到原始字符串路径
 PACKAGED_DIR = getattr(_cfg, 'PACKAGED_SKILLS_DIR', Path(r"D:\skills\packaged-skills\skillhub"))
 # DIFFERENTIATED_DIR imported from config
-REGISTRY_DIR = getattr(_cfg, 'REGISTRY_DIR', TOOLS_DIR)
-REPORT_PATH = DATA_DIR / "reports" / "deep_quality_audit_report.json"
+REGISTRY_DIR = getattr(_cfg, 'REGISTRY_DIR', _cfg.TOOLS_DIR)
+REPORT_PATH = _cfg.DATA_DIR / "reports" / "deep_quality_audit_report.json"
 
 # ============ 阈值常量 ============
 # 从 config.py 导入统一阈值，确保与其他脚本一致
@@ -249,7 +258,7 @@ def collect_skill_files():
     return files
 
 
-def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7b: bool = True, enable_l8: bool = True):
+def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7b: bool = True, enable_l8: bool = True, enable_l9: bool = True):
     """对单个 SKILL.md 执行全部质量检查
 
     Returns:
@@ -419,6 +428,15 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
             "passed": False, "category_counts": {},
         }
 
+    # === 可见性质量预检 (Layer 9) ===
+    if enable_l9:
+        l9_result = check_visibility_quality(fm=fm, body_text=body_text)
+    else:
+        l9_result = {
+            "issues": [], "score": -1, "grade": "N/A",
+            "passed": False, "check_results": {},
+        }
+
     # 确定最终严重级别
     if issues["critical"]:
         severity = "critical"
@@ -485,6 +503,14 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
             "l8_passed": l8_result["passed"],
             "category_counts": l8_result["category_counts"],
             "issues": l8_result["issues"],
+        },
+        "visibility": {
+            "l9_enabled": enable_l9,
+            "l9_score": l9_result["score"],
+            "l9_grade": l9_result["grade"],
+            "l9_passed": l9_result["passed"],
+            "check_results": l9_result["check_results"],
+            "issues": l9_result["issues"],
         },
         "_content": content,
         "_issues_map": issues,
@@ -1862,7 +1888,216 @@ def check_security_quality(content: str, fm: dict, fm_text: str, body_text: str,
     }
 
 
-def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = True, enable_l7b: bool = True, enable_l8: bool = True):
+# ============ 可见性质量预检 (Layer 9: Visibility Quality) ============
+# 检查skill在平台上的可发现性和可理解性 - 确保用户能找到并理解skill价值
+
+# 14个有效分类
+VALID_CATEGORIES = {
+    "Agents", "Automation", "Communication", "Creative", "Development",
+    "Finance", "Integrations", "Knowledge", "Lifestyle", "Operations",
+    "Other", "Productivity", "Research", "Security",
+}
+
+# 价值命题关键词（中英文）- 用于判断description是否清晰传达skill价值
+_VALUE_PROPOSITION_KEYWORDS = [
+    # 中文价值表达
+    "提供", "实现", "帮助", "自动化", "支持", "允许", "能够", "用于",
+    "简化", "提升", "优化", "加速", "减少", "降低", "增强", "确保",
+    "集成", "管理", "监控", "分析", "处理", "转换", "生成", "检测",
+    "保护", "扫描", "调度", "构建", "部署", "验证", "评估",
+    # 英文价值表达
+    "provides", "enables", "helps", "automates", "supports", "allows",
+    "simplifies", "improves", "optimizes", "accelerates", "reduces",
+    "integrates", "manages", "monitors", "analyzes", "generates",
+    "detects", "converts", "transforms", "ensures", "facilitates",
+    "protects", "scans", "schedules", "builds", "deploys", "validates",
+]
+
+
+def check_visibility_quality(fm: dict, body_text: str) -> dict:
+    """Layer 9: 可见性质量预检 - 检查skill在平台上的可发现性和可理解性
+
+    检查项:
+    1. category 是否为NULL或不在14个有效分类中
+    2. summary 是否存在且 >= 50字符
+    3. description 是否包含清晰的价值命题
+    4. 是否包含"快速开始"或"Quick Start"章节
+    5. tags 是否存在且与内容相关
+
+    评级: A(90+) / B(70+) / C(50+) / D(<50)
+
+    Args:
+        fm: 解析后的frontmatter字典
+        body_text: 正文文本 (不含frontmatter)
+
+    Returns:
+        dict: {
+            issues: list,          # 问题描述列表 [{category, severity, message, evidence}]
+            score: int,            # 0-100
+            grade: str,            # A/B/C/D
+            passed: bool,          # 是否通过可见性检查
+            check_results: dict,   # 各检查项通过状态
+        }
+    """
+    issues = []
+    check_results = {
+        "category_valid": False,
+        "summary_sufficient": False,
+        "value_proposition": False,
+        "quick_start_section": False,
+        "tags_relevant": False,
+    }
+
+    # === 1. category 检查 ===
+    category = str(fm.get('category', '')).strip().strip('"').strip("'")
+    if not category:
+        issues.append({
+            "category": "INVALID_CATEGORY",
+            "severity": "high",
+            "message": "category 字段为空或缺失",
+            "evidence": "frontmatter中未找到category字段",
+        })
+    elif category not in VALID_CATEGORIES:
+        issues.append({
+            "category": "INVALID_CATEGORY",
+            "severity": "high",
+            "message": f"category '{category}' 不在14个有效分类中",
+            "evidence": f"有效分类: {', '.join(sorted(VALID_CATEGORIES))}",
+        })
+    else:
+        check_results["category_valid"] = True
+
+    # === 2. summary 检查 (>= 50字符) ===
+    summary = str(fm.get('summary', '')).strip()
+    if not summary:
+        issues.append({
+            "category": "INSUFFICIENT_SUMMARY",
+            "severity": "high",
+            "message": "summary 字段为空或缺失",
+            "evidence": "summary应至少50字符以充分描述skill功能",
+        })
+    elif len(summary) < 50:
+        issues.append({
+            "category": "INSUFFICIENT_SUMMARY",
+            "severity": "high",
+            "message": f"summary 长度 {len(summary)} 不足50字符",
+            "evidence": f"当前summary: '{summary[:50]}'",
+        })
+    else:
+        check_results["summary_sufficient"] = True
+
+    # === 3. description 价值命题检查 ===
+    description = str(fm.get('description', '')).strip()
+    if not description:
+        issues.append({
+            "category": "MISSING_VALUE_PROPOSITION",
+            "severity": "medium",
+            "message": "description 为空，无法体现价值命题",
+            "evidence": "description字段缺失或为空",
+        })
+    else:
+        desc_lower = description.lower()
+        has_value_prop = any(kw.lower() in desc_lower for kw in _VALUE_PROPOSITION_KEYWORDS)
+        if has_value_prop:
+            check_results["value_proposition"] = True
+        else:
+            issues.append({
+                "category": "MISSING_VALUE_PROPOSITION",
+                "severity": "medium",
+                "message": "description 缺少清晰的价值命题关键词",
+                "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)",
+            })
+
+    # === 4. 快速开始 / Quick Start 章节检查 ===
+    quick_start_pattern = re.search(
+        r'##\s*(?:快速开始|快速入门|Quick\s*Start|Getting\s*Started)',
+        body_text, re.IGNORECASE
+    )
+    if quick_start_pattern:
+        check_results["quick_start_section"] = True
+    else:
+        issues.append({
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题",
+        })
+
+    # === 5. tags 相关性检查 ===
+    tags_val = fm.get('tags', None)
+    if tags_val is None or (isinstance(tags_val, list) and len(tags_val) == 0) or \
+       (isinstance(tags_val, str) and not tags_val.strip()):
+        issues.append({
+            "category": "MISSING_OR_IRRELEVANT_TAGS",
+            "severity": "low",
+            "message": "tags 字段为空或缺失",
+            "evidence": "tags有助于平台搜索和分类发现",
+        })
+    else:
+        # 规范化tags为词列表
+        if isinstance(tags_val, list):
+            tag_words = [str(t).strip().strip("'\"") for t in tags_val if str(t).strip()]
+        else:
+            tag_words = [t.strip().strip("'\"") for t in str(tags_val).split(',') if t.strip()]
+        tag_words = [t for t in tag_words if len(t) > 1]
+
+        if not tag_words:
+            issues.append({
+                "category": "MISSING_OR_IRRELEVANT_TAGS",
+                "severity": "low",
+                "message": "tags 字段为空或缺失",
+                "evidence": "tags有助于平台搜索和分类发现",
+            })
+        else:
+            # 检查tags与内容的相关性: 至少一半tags词出现在description或body中
+            search_text = (description + ' ' + body_text[:3000]).lower()
+            matched_tags = [t for t in tag_words if t.lower() in search_text]
+            if len(matched_tags) >= max(1, len(tag_words) // 2):
+                check_results["tags_relevant"] = True
+            else:
+                unmatched = [t for t in tag_words if t.lower() not in search_text]
+                issues.append({
+                    "category": "MISSING_OR_IRRELEVANT_TAGS",
+                    "severity": "low",
+                    "message": f"tags 与内容相关性不足 (匹配{len(matched_tags)}/{len(tag_words)})",
+                    "evidence": f"未匹配tags: {unmatched}",
+                })
+
+    # === 评分 ===
+    # 基础分100, high扣25, medium扣20, low扣15
+    penalty = 0
+    for issue in issues:
+        sev = issue["severity"]
+        if sev == "high":
+            penalty += 25
+        elif sev == "medium":
+            penalty += 20
+        elif sev == "low":
+            penalty += 15
+    score = max(0, 100 - penalty)
+
+    # 评级 A(90+) / B(70+) / C(50+) / D(<50)
+    if score >= 90:
+        grade = "A"
+    elif score >= 70:
+        grade = "B"
+    elif score >= 50:
+        grade = "C"
+    else:
+        grade = "D"
+
+    passed = len(issues) == 0
+
+    return {
+        "issues": issues,
+        "score": score,
+        "grade": grade,
+        "passed": passed,
+        "check_results": check_results,
+    }
+
+
+def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = True, enable_l7b: bool = True, enable_l8: bool = True, enable_l9: bool = True):
     """执行全量审计
 
     Args:
@@ -1884,6 +2119,8 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
         print("[Layer 7b] 可执行性审计已启用 (L7b 静态可执行性检查)")
     if enable_l8:
         print("[Layer 8] 安全审计已启用 (L8 8类安全审核检查)")
+    if enable_l9:
+        print("[Layer 9] 可见性质量预检已启用 (L9 平台可发现性检查)")
     print()
 
     # 收集所有 SKILL.md 文件
@@ -1897,7 +2134,7 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
     fixes_applied = []
 
     for skill_path, source in skill_files:
-        result = check_skill(skill_path, source, enable_l7=enable_l7, enable_l7b=enable_l7b, enable_l8=enable_l8)
+        result = check_skill(skill_path, source, enable_l7=enable_l7, enable_l7b=enable_l7b, enable_l8=enable_l8, enable_l9=enable_l9)
         all_results.append(result)
 
         # 自动修复 warning 级别问题
@@ -1991,6 +2228,22 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
         "TAG_MISMATCH": 0,
         "GARBLED_TEXT": 0,
         "DEPENDENCY_CONTRADICTION": 0,
+    }
+
+    # Layer 9 (可见性质量预检) 统计
+    l9_grades = {"A": 0, "B": 0, "C": 0, "D": 0, "N/A": 0}
+    l9_issues_list = []
+    l9_score_sum = 0
+    l9_available_count = 0
+    l9_passed_count = 0
+    l9_failed_count = 0
+    # 5类可见性问题触发分布
+    l9_category_distribution = {
+        "INVALID_CATEGORY": 0,
+        "INSUFFICIENT_SUMMARY": 0,
+        "MISSING_VALUE_PROPOSITION": 0,
+        "MISSING_QUICK_START": 0,
+        "MISSING_OR_IRRELEVANT_TAGS": 0,
     }
 
     for result in all_results:
@@ -2143,6 +2396,36 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
                 "issues": sec["issues"],
             })
 
+        # 收集可见性质量统计 (Layer 9)
+        vis = result.get("visibility", {})
+        l9_grade = vis.get("l9_grade", "N/A")
+        l9_score = vis.get("l9_score", -1)
+        if l9_grade not in l9_grades:
+            l9_grades[l9_grade] = 0
+        l9_grades[l9_grade] += 1
+        if l9_score >= 0:
+            l9_score_sum += l9_score
+            l9_available_count += 1
+        if vis.get("l9_passed"):
+            l9_passed_count += 1
+        else:
+            l9_failed_count += 1
+        # 统计5类可见性问题触发分布
+        for issue in vis.get("issues", []):
+            cat = issue.get("category") if isinstance(issue, dict) else None
+            if cat and cat in l9_category_distribution:
+                l9_category_distribution[cat] += 1
+        if vis.get("issues"):
+            l9_issues_list.append({
+                "slug": result["slug"],
+                "source": result["source"],
+                "grade": l9_grade,
+                "score": l9_score,
+                "passed": vis.get("l9_passed"),
+                "check_results": vis.get("check_results", {}),
+                "issues": vis["issues"],
+            })
+
         entry = {
             "slug": result["slug"],
             "source": result["source"],
@@ -2164,6 +2447,9 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
             "security_grade": l8_grade,
             "security_score": l8_score,
             "security_passed": sec.get("l8_passed"),
+            "visibility_grade": l9_grade,
+            "visibility_score": l9_score,
+            "visibility_passed": vis.get("l9_passed"),
         }
 
         if sev == "critical":
@@ -2241,6 +2527,18 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
             "category_distribution": l8_category_distribution,
             "total_with_issues": len(l8_issues_list),
             "issues_detail": l8_issues_list,
+        },
+        "visibility_audit": {
+            "enabled": enable_l9,
+            "l9_available_count": l9_available_count,
+            "grade_distribution": l9_grades,
+            "avg_score": round(l9_score_sum / l9_available_count, 1) if l9_available_count else 0,
+            "passed_count": l9_passed_count,
+            "failed_count": l9_failed_count,
+            "pass_rate": f"{l9_passed_count * 100 // total}%" if total else "0%",
+            "category_distribution": l9_category_distribution,
+            "total_with_issues": len(l9_issues_list),
+            "issues_detail": l9_issues_list,
         },
     }
 
@@ -2428,6 +2726,39 @@ def run_audit(fix_mode: bool = False, fix_all: bool = False, enable_l7: bool = T
                     if len(severe_l8) > 25:
                         print(f"    ... 还有 {len(severe_l8) - 25} 个")
 
+    # Layer 9: 可见性质量预检统计
+    if enable_l9:
+        print()
+        print("─" * 60)
+        print("可见性质量预检 (Layer 9: Visibility Quality - L9 平台可发现性检查):")
+        if l9_available_count > 0:
+            l9_avg = l9_score_sum / l9_available_count
+            print(f"  已分析: {l9_available_count} / {total} 个 skill")
+            print(f"  平均分: {l9_avg:.1f} / 100")
+            print(f"  等级分布: A={l9_grades.get('A',0)}  B={l9_grades.get('B',0)}  "
+                  f"C={l9_grades.get('C',0)}  D={l9_grades.get('D',0)}  "
+                  f"N/A={l9_grades.get('N/A',0)}")
+            l9_a_b = l9_grades.get('A', 0) + l9_grades.get('B', 0)
+            print(f"  可见性通过: {l9_passed_count} / {total} ({l9_passed_count*100//total if total else 0}%)")
+            print(f"  可见性失败: {l9_failed_count} / {total} ({l9_failed_count*100//total if total else 0}%)")
+            print(f"  A+B级 (可见性合格): {l9_a_b} / {l9_available_count} ({l9_a_b*100//l9_available_count if l9_available_count else 0}%)")
+            print(f"  5类可见性问题触发分布:")
+            for cat, cnt in l9_category_distribution.items():
+                print(f"    {cat}: {cnt}")
+            print(f"  有问题skill: {len(l9_issues_list)} 个")
+            if l9_issues_list:
+                severe_l9 = [item for item in l9_issues_list if item['grade'] in ('C', 'D')]
+                if severe_l9:
+                    print(f"  C+D级 (可见性严重不足): {len(severe_l9)} 个")
+                    for item in severe_l9[:25]:
+                        issues_str = '; '.join(
+                            (i.get('message', str(i)) if isinstance(i, dict) else str(i))
+                            for i in item['issues'][:3]
+                        )
+                        print(f"    [{item['grade']}] {item['slug']} (分:{item['score']}): {issues_str}")
+                    if len(severe_l9) > 25:
+                        print(f"    ... 还有 {len(severe_l9) - 25} 个")
+
     if critical_issues:
         print()
         print(f"CRITICAL 问题列表 ({len(critical_issues)} 个):")
@@ -2498,8 +2829,10 @@ def main():
     enable_l7b = "--no-layer7b" not in sys.argv
     # L8 安全审计默认启用; 可通过 --no-layer8 关闭
     enable_l8 = "--no-layer8" not in sys.argv
+    # L9 可见性质量预检默认启用; 可通过 --no-layer9 关闭
+    enable_l9 = "--no-layer9" not in sys.argv
 
-    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all, enable_l7=enable_l7, enable_l7b=enable_l7b, enable_l8=enable_l8)
+    passed = run_audit(fix_mode=fix_mode, fix_all=fix_all, enable_l7=enable_l7, enable_l7b=enable_l7b, enable_l8=enable_l8, enable_l9=enable_l9)
 
     # 如果存在 critical 问题，返回非零退出码
     if not passed:

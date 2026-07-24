@@ -23,7 +23,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "exec"]
+tags: "监控,运维,工具"
+category: "Operations"
 ---
 本工具为AI应用开发者提供内容验证与策略管理能力,在AI生成内容输出前执行策略检查,通过黑白名单机制过滤不当内容。免费版支持基础策略检查、内容分类标记与验证结果记录,适合个人开发者对AI输出进行基础内容审核.
 ### 免费版与专业版对比

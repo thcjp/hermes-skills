@@ -22,7 +22,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "B站,视频,媒体"
+category: "Creative"
 ---
 # Bilibili Helper Free
 

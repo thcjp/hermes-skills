@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 RSS新闻订阅工具专业版在免费版 7 个国际 RSS 源的基础上，新增 50+ 国内外 RSS 源、定时自动获取、全文内容抓取、多源去重与主题聚类、多格式导出和 REST API 集成等企业级能力，满足企业新闻监控、媒体采编和行业情报收集的深度需求.
 PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，原有 RSS 源配置均可无缝迁移.

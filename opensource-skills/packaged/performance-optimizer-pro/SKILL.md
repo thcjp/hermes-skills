@@ -22,6 +22,7 @@ pricing_tier: "L4-企业级"
 pricing_model: "monthly"
 tools: ["read", "write", "exec"]
 tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 性能优化专家
 

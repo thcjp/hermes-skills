@@ -14,7 +14,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # AI技能创建指南（免费版）
 

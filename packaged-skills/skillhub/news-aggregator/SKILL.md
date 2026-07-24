@@ -23,7 +23,9 @@ tags:
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "exec"]
+tags: "新闻,信息,资讯"
+category: "Knowledge"
 ---
 # 新闻聚合引擎
 

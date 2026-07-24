@@ -24,7 +24,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 RSS聚合工具专业版在免费版增量推送的基础上，新增定时自动调度、多渠道推送、语义级去重与智能聚类、自定义输出模板、多领域自动分组、历史自动归档与全文检索和 REST API 集成等企业级能力，满足企业资讯分发、媒体采编和行业研究的深度需求.
 PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，原有 RSS 配置和历史日志均可无缝迁移.

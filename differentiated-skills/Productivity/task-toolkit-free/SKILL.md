@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "任务管理,效率,工具"
+category: "Productivity"
 ---
 # 任务工具包基础版
 

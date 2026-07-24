@@ -22,7 +22,9 @@ tags:
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
+category: "Agents"
 ---
 # 神经记忆增强系统
 

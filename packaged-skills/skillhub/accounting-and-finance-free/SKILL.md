@@ -18,7 +18,9 @@ tags:
 tools:
   - read
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
+category: "Finance"
 ---
 # Finance LITE
 

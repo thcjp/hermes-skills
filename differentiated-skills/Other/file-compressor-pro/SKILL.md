@@ -23,7 +23,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 面向专业场景的全功能语义文本压缩工具。在免费版基础上扩展L3-L4极限压缩、批量压缩流水线、多模型并行验证、自定义锚点策略、跨格式智能优化与压缩质量量化报告等8项高级能力.
 ## 概述

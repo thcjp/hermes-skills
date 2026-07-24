@@ -32,7 +32,9 @@ tags:
 tools:
   - read
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # Java 基础版
 

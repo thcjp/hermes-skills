@@ -84,6 +84,10 @@ GITHUB_SEARCH_PER_PAGE = 10  # 5 关键词 × 10 = top 50
 AWESOME_LIST_REPOS = [
     {"owner": "e2b-dev", "repo": "awesome-ai-agents"},
     {"owner": "Shubhamsaboo", "repo": "awesome-llm-apps"},
+    # MCP 生态相关 awesome-list
+    {"owner": "punkpeye", "repo": "awesome-mcp-servers"},
+    {"owner": "punkpeye", "repo": "fastmcp"},
+    {"owner": "modelcontextprotocol", "repo": "servers"},
 ]
 
 # N8N API (公开无需认证，但响应慢，需60s超时; categories=25为AI分类)

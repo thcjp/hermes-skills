@@ -23,7 +23,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
+category: "Development"
 ---
 HTML编码工具专业版是企业级 HTML 开发平台，覆盖 HTML5 全部 API、Web Components 组件化开发、WCAG 2.1 全面合规检查和性能优化策略。从基础语义化标记到高级 Canvas 绘图、SVG 操作、Web Storage 和地理定位，专业版提供完整的 HTML 开发能力.
 本版本与免费版完全兼容——免费版的语义化 HTML、表单验证和响应式图片能力在专业版中完整保留。专业版新增 HTML5 高级 API、Web Components、WCAG 全面合规和性能优化等能力.

@@ -22,6 +22,7 @@ pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 tools: ["read", "write", "exec"]
 tags: "设计,UI/UX,创意"
+category: "Creative"
 ---
 # 画布艺术设计器
 

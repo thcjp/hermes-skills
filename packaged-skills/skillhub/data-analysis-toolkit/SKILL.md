@@ -13,25 +13,13 @@ tags:
   - Integrations
 tools:
   - read
+  - write
   - exec
-homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "99.9 CNY/monthly"
-pricing_tier: "L4-企业级"
-pricing_model: "monthly"
+  - glob
+homepage: ""
+category: "Research"
 ---
 # Python Data Analysis
-
-## 付费版专享能力
-
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| Python Data Analysis统计分析 | 不支持 | 支持 |
-| Python Data Analysis和科研数据的快速处理 | 不支持 | 支持 |
-| 代码静态分析与质量评分 | 不支持 | 支持 |
-| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
-| 批量代码审查与报告生成 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -95,18 +83,10 @@ pricing_model: "monthly"
 |:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### API Key 配置
-- 
-
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
 
-**API Key配置方式**:
-```bash
-export API_KEY="your_api_key_here"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
 以下是Python Data Analysis在实际场景中的应用案例，展示完整的输入处理输出流程.

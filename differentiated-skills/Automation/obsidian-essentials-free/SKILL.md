@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
+category: "Automation"
 ---
 > **不是教你成为Obsidian高手，而是带你从零开始迈出领先步。安装、配置、领先篇笔记，新手友好。**
 

@@ -18,7 +18,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 智能助手
-
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
+category: "Agents"
 ---
 # 本地向量记忆免费版（Elite Longterm Memory Local Free）
 

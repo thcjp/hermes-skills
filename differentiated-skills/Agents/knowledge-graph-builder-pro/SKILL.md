@@ -25,7 +25,9 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
+category: "Creative"
 ---
 # 知识图谱构建器（专业版）
 

@@ -17,7 +17,9 @@ tags:
   - 创意设计
 pricing_tier: "L2-标准级"
 suggested_price: "19.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "设计,UI/UX,创意"
+category: "Creative"
 ---
 # UI/UX设计指南（免费版）
 

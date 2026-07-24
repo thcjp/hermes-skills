@@ -24,7 +24,9 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
+category: "Security"
 ---
 专业版为企业安全团队提供完整的密码生成与管理平台,在免费版密码生成与强度检测基础上,新增批量密码生成(CSV导出)、HaveIBeenPwned泄露检查、企业密码策略模板、加密密码存储与多格式导出。专业版完全兼容免费版生成方法,已有密码生成脚本可无缝升级,适合企业级密码安全治理.
 ### 专业版核心优势

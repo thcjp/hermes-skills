@@ -22,7 +22,9 @@ tags:
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
+category: "Agents"
 ---
 # 本地向量记忆系统（Elite Longterm Memory Local）
 

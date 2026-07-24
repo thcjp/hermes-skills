@@ -16,7 +16,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 生活服务
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 加密协议博弈论分析（免费版）
 

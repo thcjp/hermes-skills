@@ -17,7 +17,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
+category: "Creative"
 ---
 # Podcast Downloader
 

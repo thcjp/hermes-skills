@@ -29,7 +29,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 专业版面向游戏工作室与商业项目,在免费版基础 AI 架构之上,扩展 GOAP 目标导向行动规划、强化学习集成、多 AI 协作、可视化调试器、性能分析工具链等企业级能力。支持构建复杂的战术 AI、可学习的 NPC 行为、团队协作 AI,适合 3A 级游戏与训练模拟项目.
 专业版与免费版代码格式完全兼容,个人开发者升级后现有 AI 代码无缝迁移.

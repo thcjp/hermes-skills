@@ -16,7 +16,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 通用办公
-
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
+category: "Communication"
 ---
 # 通讯应用工具(免费版)
 

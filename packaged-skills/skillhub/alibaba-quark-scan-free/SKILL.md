@@ -16,7 +16,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # 夸克扫描王(免费版) - 基础文件扫描与增强
 

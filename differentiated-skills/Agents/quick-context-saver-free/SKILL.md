@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "UI设计,前端,设计"
+category: "Creative"
 ---
 # 快速上下文记忆（免费版）
 

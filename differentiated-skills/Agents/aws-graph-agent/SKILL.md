@@ -19,7 +19,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
+category: "Operations"
 ---
 # AWS图代理（AWS Graph Agent）
 

@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L1-入门级"
 pricing_model: per_use
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
+category: "Operations"
 ---
 # AWS部署入门工具（免费版）
 

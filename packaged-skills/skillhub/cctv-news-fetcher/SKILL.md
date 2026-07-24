@@ -32,7 +32,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "exec"]
+tags: "新闻,信息,资讯"
+category: "Knowledge"
 ---
 # CCTV News Fetcher
 

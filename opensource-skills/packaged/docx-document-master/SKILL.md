@@ -21,6 +21,7 @@ pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 tools: ["read", "write", "exec"]
 tags: "文档处理,工具,效率"
+category: "Knowledge"
 ---
 # 文档处理大师
 

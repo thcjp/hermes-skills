@@ -16,7 +16,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "邮件,通信,工具"
+category: "Communication"
 ---
 # Email Gmail Outlook Free
 

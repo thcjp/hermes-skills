@@ -16,7 +16,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 # 记忆编排器（Memory Orchestrator）
 面向 AI Agent 的**智能记忆管理系统**，用四层记忆架构与多模式检索，提供从存储到检索到摘要的全生命周期编排，让 Agent 记忆真正可控可观测.

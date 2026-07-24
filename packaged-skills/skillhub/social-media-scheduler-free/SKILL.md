@@ -16,7 +16,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "社交媒体,营销,通信"
+category: "Communication"
 ---
 # 社媒内容排期 LITE
 

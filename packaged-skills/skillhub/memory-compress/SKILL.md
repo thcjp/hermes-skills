@@ -22,7 +22,9 @@ tags:
 suggested_price: "9.9 CNY/per_use"
 pricing_tier: "L1-入门级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
+category: "Agents"
 ---
 # 日志压缩器
 

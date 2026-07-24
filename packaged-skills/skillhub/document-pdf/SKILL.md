@@ -18,7 +18,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "文档处理,工具,效率"
+category: "Knowledge"
 ---
 # Pdf
 

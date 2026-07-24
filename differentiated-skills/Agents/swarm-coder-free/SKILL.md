@@ -20,7 +20,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "开发工具,代码生成,编程辅助"
+category: "Development"
 ---
 > **AI Agent的子代理驱动开发系统。每任务新代理+两阶段review，高质量快速迭代。**
 

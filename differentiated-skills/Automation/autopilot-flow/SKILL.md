@@ -15,7 +15,8 @@ tags:
 homepage: "https://skillhub.cn"
 license: "MIT"
 description: "把重复任务变自动驾驶,看到重复即构建自动化。六步具象化法+三个端到端模板,实现从观察到优化的完整自动化闭环。"
-
+tags: "自动化,工作流,效率"
+category: "Automation"
 ---
 # 自动驾驶流程（Autopilot Flow）
 

@@ -46,7 +46,9 @@ homepage: https://skillhub.cn
 pricing_tier: L4
 pricing_model: monthly
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
+category: "Development"
 ---
 # Docker V1基础工具 - 免费版
 ## 概述

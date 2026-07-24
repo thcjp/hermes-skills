@@ -18,7 +18,9 @@ suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 license: "MIT"
-
+tools: ["read", "write", "exec"]
+tags: "金融,财务,数据"
+category: "Finance"
 ---
 # Finance Radar
 

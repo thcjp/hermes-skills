@@ -37,7 +37,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L2-标准级"
 pricing_model: per_use
 suggested_price: "19.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
+category: "Communication"
 ---
 # Discord 聊天管理(免费版)
 

@@ -22,7 +22,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "Telegram,社交,通信"
+category: "Communication"
 ---
 # Telegram 消息机器人
 

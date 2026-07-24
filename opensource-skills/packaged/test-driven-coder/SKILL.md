@@ -22,6 +22,7 @@ pricing_tier: "L2-标准级"
 pricing_model: "per_use"
 tools: ["read", "write", "exec", "glob", "grep"]
 tags: "开发工具,代码生成,编程辅助"
+category: "Development"
 ---
 # 测试驱动编码器
 

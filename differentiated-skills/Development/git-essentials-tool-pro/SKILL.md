@@ -50,7 +50,9 @@ homepage: https://skillhub.cn
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
+category: "Development"
 ---
 Git基础工具专业版为研发团队提供高级版本控制能力。在免费版核心Git命令之上,专业版新增交互式变基、历史重写、子模块批量管理、仓库性能优化和二分查找调试,满足企业级版本控制需求.
 专业版完全兼容免费版的所有Git命令和配置,研发团队可从免费版无缝升级,已有配置和别名无需修改.

@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
+category: "Development"
 ---
 自主学习助手专业版是企业级的知识获取与管理平台。在完整兼容免费版所有搜索和学习能力的基础上,专业版引入了批量主题学习、知识库管理与版本控制、定时知识更新、团队协作、自定义学习策略等高级能力,适用于企业研发情报追踪、大规模知识采集、行业知识积累等专业场景.
 专业版特别强化了知识积累和团队协作能力,支持构建组织级知识库、版本控制、知识共享,帮助企业将分散的互联网知识转化为系统化的知识资产.

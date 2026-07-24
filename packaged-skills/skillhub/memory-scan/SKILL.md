@@ -20,7 +20,9 @@ tags:
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
+category: "Agents"
 ---
 # 记忆安全扫描（Memory Scan）
 

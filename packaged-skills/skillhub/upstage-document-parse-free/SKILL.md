@@ -15,7 +15,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 文档处理
-
+tools: ["read", "write", "exec"]
+tags: "文档处理,工具,效率"
+category: "Knowledge"
 ---
 # Document Parse Free
 

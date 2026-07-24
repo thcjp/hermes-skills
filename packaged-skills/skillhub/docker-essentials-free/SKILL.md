@@ -15,7 +15,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 系统运维
-
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
+category: "Development"
 ---
 # Docker核心操作指南（免费版）
 

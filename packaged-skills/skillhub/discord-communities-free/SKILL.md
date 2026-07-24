@@ -25,7 +25,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "Discord,社交,通信"
+category: "Communication"
 ---
 # Discord 社区管理 (免费版)
 

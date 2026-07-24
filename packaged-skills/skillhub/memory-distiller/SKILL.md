@@ -22,7 +22,9 @@ pricing_tier: "L4-企业级"
 pricing_model: "monthly"
 tags:
   - 智能助手
-
+tools: ["read", "write", "exec"]
+tags: "记忆管理,上下文,AI"
+category: "Agents"
 ---
 # 记忆蒸馏器
 

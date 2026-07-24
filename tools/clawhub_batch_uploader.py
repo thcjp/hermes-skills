@@ -15,7 +15,7 @@ Usage:
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DIFFERENTIATED_DIR
+from project_config import DIFFERENTIATED_DIR, DATA_DIR, REGISTRY_DIR
 # === End Phase 1 ===
 
 import json
@@ -307,8 +307,8 @@ def main():
 
     # Merge with previous results
     if prev_results:
-        prev_results['success'].extend(results['success'])
-        prev_results['failed'].extend(results['failed'])
+        prev_results.setdefault('success', []).extend(results['success'])
+        prev_results.setdefault('failed', []).extend(results['failed'])
         save_json(RESULTS_FILE, prev_results)
     else:
         results['date'] = datetime.now().isoformat()

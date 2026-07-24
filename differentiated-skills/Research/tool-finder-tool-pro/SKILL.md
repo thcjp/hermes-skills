@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "exec", "glob", "grep"]
+tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 工具发现引擎专业版是企业级的工具发现与评估平台。在完整兼容免费版所有搜索和安装能力的基础上,专业版引入了批量并行搜索、团队推荐、工具评估报告、自动化部署、使用统计等高级能力,适用于企业团队统一工具选型、DevOps 批量部署、技术评审等复杂场景.
 专业版特别强化了协作和评估能力,支持团队共享工具发现成果、自定义评分规则、生成评估报告,帮助企业建立标准化的工具选型流程.

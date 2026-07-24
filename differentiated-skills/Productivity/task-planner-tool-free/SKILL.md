@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "任务管理,效率,工具"
+category: "Productivity"
 ---
 # 任务规划器基础版
 

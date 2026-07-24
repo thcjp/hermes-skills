@@ -22,6 +22,7 @@ pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 tools: ["read", "exec", "glob", "grep"]
 tags: "搜索,检索,工具"
+category: "Knowledge"
 ---
 # 销售线索猎手
 

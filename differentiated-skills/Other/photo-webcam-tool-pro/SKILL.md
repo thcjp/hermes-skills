@@ -49,7 +49,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec", "glob"]
+tags: "Web开发,前端,开发工具"
+category: "Development"
 ---
 # 网络摄像头工具 - 专业版
 

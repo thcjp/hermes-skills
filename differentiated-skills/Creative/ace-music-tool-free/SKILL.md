@@ -36,7 +36,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "音乐生成,音频,创意"
+category: "Creative"
 ---
 # ACE音乐生成工具 - 免费版
 

@@ -20,7 +20,9 @@ tools:
 homepage: "https://skillhub.cn"
 pricing_tier: "L1-入门级"
 suggested_price: "9.9 CNY/per_use"
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # Calendar Reminder Free 日历提醒(免费版)
 

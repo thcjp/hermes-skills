@@ -11,11 +11,12 @@ with inferred values based on content analysis.
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DIFFERENTIATED_DIR, DATA_DIR
+from project_config import DIFFERENTIATED_DIR, DATA_DIR, DB_PATH
 # === End Phase 1 ===
 
 import re
 import json
+import sqlite3
 from pathlib import Path
 from datetime import datetime
 
@@ -122,6 +123,66 @@ TAG_CATEGORIES = {
 DEFAULT_TOOLS = ["read", "write", "exec"]
 DEFAULT_TAGS = "工具,效率,自动化"
 
+# Tag关键词到category的映射（14个有效category）
+TAG_TO_CATEGORY_MAP = {
+    # Agents
+    "AI代理": "Agents", "agent": "Agents", "智能体": "Agents", "AI助手": "Agents",
+    "自动化助手": "Agents", "自主代理": "Agents", "记忆管理": "Agents", "上下文": "Agents",
+    "self-evolving": "Agents", "memory": "Agents", "orchestrator": "Agents",
+    # Automation
+    "自动化": "Automation", "工作流": "Automation", "workflow": "Automation",
+    "定时任务": "Automation", "调度": "Automation", "批处理": "Automation",
+    "RPA": "Automation", "流程": "Automation", "recipe": "Automation",
+    # Communication
+    "通信": "Communication", "邮件": "Communication", "email": "Communication",
+    "社交": "Communication", "Discord": "Communication", "Telegram": "Communication",
+    "Slack": "Communication", "WhatsApp": "Communication", "消息": "Communication",
+    "calendar": "Communication", "日历": "Communication", "提醒": "Communication",
+    # Creative
+    "创意": "Creative", "图像": "Creative", "视频": "Creative", "音频": "Creative",
+    "音乐": "Creative", "设计": "Creative", "UI": "Creative", "art": "Creative",
+    "drawing": "Creative", "绘画": "Creative", "写作": "Creative", "content": "Creative",
+    "bilibili": "Creative", "youtube": "Creative", "podcast": "Creative", "媒体": "Creative",
+    # Development
+    "开发": "Development", "代码": "Development", "code": "Development", "编程": "Development",
+    "git": "Development", "docker": "Development", "API": "Development", "web": "Development",
+    "前端": "Development", "后端": "Development", "database": "Development", "redis": "Development",
+    "markdown": "Development", "测试": "Development", "debug": "Development",
+    # Finance
+    "金融": "Finance", "财务": "Finance", "会计": "Finance", "finance": "Finance",
+    "accounting": "Finance", "交易": "Finance", "投资": "Finance", "pricing": "Finance",
+    # Integrations
+    "集成": "Integrations", "integration": "Integrations", "第三方": "Integrations",
+    "对接": "Integrations", "webhook": "Integrations", "sync": "Integrations",
+    "连接器": "Integrations", "bridge": "Integrations",
+    # Knowledge
+    "知识": "Knowledge", "文档": "Knowledge", "knowledge": "Knowledge",
+    "笔记": "Knowledge", "wiki": "Knowledge", "搜索": "Knowledge",
+    "translate": "Knowledge", "翻译": "Knowledge", "PDF": "Knowledge",
+    "RSS": "Knowledge", "新闻": "Knowledge", "学习": "Knowledge",
+    # Lifestyle
+    "生活": "Lifestyle", "健康": "Lifestyle", "美食": "Lifestyle", "旅行": "Lifestyle",
+    "购物": "Lifestyle", "电商": "Lifestyle", "娱乐": "Lifestyle", "游戏": "Lifestyle",
+    # Operations
+    "运维": "Operations", "监控": "Operations", "部署": "Operations", "security": "Operations",
+    "网络": "Operations", "DNS": "Operations", "aws": "Operations", "azure": "Operations",
+    "cloud": "Operations", "基础设施": "Operations", "DevOps": "Operations",
+    # Productivity
+    "效率": "Productivity", "productivity": "Productivity", "任务": "Productivity",
+    "task": "Productivity", "管理": "Productivity", "SEO": "Productivity",
+    "营销": "Productivity", "文案": "Productivity", "电商": "Productivity",
+    "小说": "Productivity", "写作": "Productivity", "电子书": "Productivity",
+    # Research
+    "研究": "Research", "分析": "Research", "research": "Research", "数据": "Research",
+    "调研": "Research", "报告": "Research", "统计": "Research", "调研": "Research",
+    # Security
+    "安全": "Security", "加密": "Security", "防护": "Security", "firewall": "Security",
+    "密码": "Security", "漏洞": "Security", "privacy": "Security", "隐私": "Security",
+}
+
+# 无效category值需要修复
+INVALID_CATEGORIES = {"", "packaged", "null", "None", "NULL"}
+
 
 def extract_frontmatter(content):
     """Parse frontmatter and return (fm_dict, fm_text, body, full_content)"""
@@ -166,6 +227,58 @@ def infer_tags(slug, path, body):
         if keyword in slug_lower or keyword in str(path).lower():
             return tags
     return DEFAULT_TAGS
+
+
+def infer_category(slug, path, body, tags=None):
+    """Infer category field based on tags, slug, path, and body content.
+    
+    Priority:
+    1. Match tags against TAG_TO_CATEGORY_MAP
+    2. Match slug/path keywords against TAG_TO_CATEGORY_MAP
+    3. Match body content keywords against TAG_TO_CATEGORY_MAP
+    4. Fall back to 'Other'
+    """
+    # 1. Try tags first
+    if tags:
+        tags_lower = tags.lower() if isinstance(tags, str) else " ".join(str(t) for t in tags).lower()
+        for keyword, category in TAG_TO_CATEGORY_MAP.items():
+            if keyword.lower() in tags_lower:
+                return category
+    
+    # 2. Try slug and path
+    slug_lower = slug.lower()
+    path_lower = str(path).lower()
+    for keyword, category in TAG_TO_CATEGORY_MAP.items():
+        if keyword.lower() in slug_lower or keyword.lower() in path_lower:
+            return category
+    
+    # 3. Try body content (first 2000 chars for performance)
+    body_lower = body[:2000].lower()
+    category_scores = {}
+    for keyword, category in TAG_TO_CATEGORY_MAP.items():
+        count = body_lower.count(keyword.lower())
+        if count > 0:
+            category_scores[category] = category_scores.get(category, 0) + count
+    
+    if category_scores:
+        return max(category_scores, key=category_scores.get)
+    
+    # 4. Fall back to 'Other'
+    return "Other"
+
+
+def update_db_category(slug, category):
+    """Update the skills.category field in the SQLite database"""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        c = conn.cursor()
+        c.execute("UPDATE skills SET category = ?, updated_at = ? WHERE slug = ?", 
+                  (category, datetime.now().strftime("%Y-%m-%dT%H:%M:%S"), slug))
+        conn.commit()
+        conn.close()
+        return True
+    except Exception:
+        return False
 
 
 def add_field_to_frontmatter(content, field_name, field_value):
@@ -232,6 +345,8 @@ def main():
             'MISSING_NAME': 0,
             'MISSING_TOOLS': 0,
             'MISSING_TAGS': 0,
+            'MISSING_CATEGORY': 0,
+            'INVALID_CATEGORY': 0,
         },
         'modified_files': []
     }
@@ -293,6 +408,24 @@ def main():
                 content = add_field_to_frontmatter(content, 'tags', inferred_tags)
                 fixes_applied.append('MISSING_TAGS')
                 stats['fixes']['MISSING_TAGS'] += 1
+
+            # Re-parse after tags fix
+            fm, fm_text, body, full = extract_frontmatter(content)
+
+            # Fix MISSING_CATEGORY or INVALID_CATEGORY
+            cat_val = fm.get('category', None)
+            current_tags = fm.get('tags', '')
+            if not cat_val or cat_val.strip() in INVALID_CATEGORIES:
+                inferred_cat = infer_category(slug, skill_md.parent, body, current_tags)
+                content = add_field_to_frontmatter(content, 'category', inferred_cat)
+                if not cat_val:
+                    fixes_applied.append('MISSING_CATEGORY')
+                    stats['fixes']['MISSING_CATEGORY'] += 1
+                else:
+                    fixes_applied.append('INVALID_CATEGORY')
+                    stats['fixes']['INVALID_CATEGORY'] += 1
+                # Also update database
+                update_db_category(slug, inferred_cat)
 
             # Save if modified
             if content != original:

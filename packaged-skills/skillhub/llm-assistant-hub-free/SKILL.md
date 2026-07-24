@@ -17,7 +17,9 @@ tools:
 homepage: "https://skillhub.cn"
 tags:
   - 智能助手
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 # LLM助手中枢（基础版）
 

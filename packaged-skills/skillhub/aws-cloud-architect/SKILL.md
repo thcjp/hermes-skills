@@ -25,7 +25,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "write", "exec"]
+tags: "AWS,云计算,DevOps"
+category: "Operations"
 ---
 # AWS 云架构师
 

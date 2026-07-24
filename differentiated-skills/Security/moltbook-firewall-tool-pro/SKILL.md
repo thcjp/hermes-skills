@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 suggested_price: "99.9 CNY/monthly"
 pricing_tier: "L4-企业级"
 pricing_model: "monthly"
-
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
+category: "Security"
 ---
 专业版为企业提供完整的AI Agent安全防护平台,在免费版基础防护能力之上,新增上下文感知深度注入检测、沙盒隔离执行、工具参数投毒检测、多Agent统一管理、实时监控与Webhook告警、完整审计链与SARIF报告。专业版完全兼容免费版防护规则,已有安全配置可无缝升级,适合企业级Agent安全治理.
 ### 专业版核心优势

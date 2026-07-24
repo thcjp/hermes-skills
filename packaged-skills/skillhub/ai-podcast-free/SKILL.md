@@ -15,7 +15,9 @@ tools:
   - read
   - exec
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "播客,音频,媒体"
+category: "Creative"
 ---
 # AI播客生成(免费版) - 文本转对话式播客
 

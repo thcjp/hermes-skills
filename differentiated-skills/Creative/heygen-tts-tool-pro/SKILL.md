@@ -37,7 +37,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "工具,效率,自动化"
+category: "Automation"
 ---
 HeyGen TTS 工具(专业版)在免费版(`heygen-tts-tool-free`)基础 TTS 合成能力之上,新增 SSML 高级标记、批量生成、词级时间戳、多语言混合与 API 服务化等企业级能力。适合需要高吞吐与精细控制的内容生产团队.
 专业版与免费版 API 完全兼容,已使用免费版的代码无需修改即可运行。升级后可启用高级特性.

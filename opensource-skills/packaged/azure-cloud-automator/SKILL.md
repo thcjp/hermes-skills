@@ -22,6 +22,7 @@ pricing_tier: "L4-企业级"
 pricing_model: "monthly"
 tools: ["read", "write", "exec"]
 tags: "Azure,云计算,DevOps"
+category: "Operations"
 ---
 # Azure云自动化
 

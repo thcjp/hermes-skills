@@ -22,7 +22,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "exec"]
+tags: "安全,加密,工具"
+category: "Security"
 ---
 本工具为个人用户提供多样化的密码生成与强度检测能力,支持强密码生成、密码强度评估、口令短语(Passphrase)生成与PIN码生成。免费版覆盖个人用户日常密码管理需求,帮助用户创建安全且易记的密码.
 ### 免费版与专业版对比

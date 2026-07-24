@@ -23,7 +23,9 @@ homepage: "https://skillhub.cn"
 suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-标准级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "视频处理,媒体,创意"
+category: "Creative"
 ---
 # 视频上传-专业版
 

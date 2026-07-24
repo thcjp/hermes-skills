@@ -17,7 +17,9 @@ tags:
 tools:
   - read
 homepage: "https://skillhub.cn"
-
+tools: ["read", "write", "exec"]
+tags: "Slack,社交,通信"
+category: "Communication"
 ---
 # Slack 消息 LITE
 

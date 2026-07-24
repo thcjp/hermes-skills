@@ -41,7 +41,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec", "glob"]
+tags: "数据处理,数据分析,工具"
+category: "Research"
 ---
 # Python 数据可视化 - 免费版
 

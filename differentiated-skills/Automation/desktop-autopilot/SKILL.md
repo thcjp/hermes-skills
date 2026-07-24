@@ -19,7 +19,9 @@ homepage: https://skillhub.cn
 suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
-
+tools: ["read", "write", "exec"]
+tags: "自动化,工作流,效率"
+category: "Automation"
 ---
 # 桌面自动驾驶
 让 AI Agent 像人一样"看着屏幕操作"，而不是盲点坐标。本技能解决五个核心痛点：**坐标漂移**（DPI 缩放、窗口移动导致固定坐标失效）、**时机不对**（元素没加载就点击）、**识别率低**（原始 locateOnScreen 效果差）、**操作不可逆**（点错了无法回退）、**流程难复用**（每次重写脚本）.

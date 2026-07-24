@@ -41,7 +41,9 @@ homepage: "https://skillhub.cn"
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
-
+tools: ["read", "write", "exec"]
+tags: "版本控制,Git,开发工具"
+category: "Development"
 ---
 Git命令行助手专业版为企业研发团队提供高级Git CLI自动化能力。在免费版基础命令参考之上,专业版新增自动化脚本库、深度仓库诊断、标准化工作流模板、故障排除与恢复以及批量操作能力,帮助团队提升Git使用效率.
 专业版完全兼容免费版的所有Git命令和配置,研发团队可从免费版无缝升级,已有别名和配置无需修改.

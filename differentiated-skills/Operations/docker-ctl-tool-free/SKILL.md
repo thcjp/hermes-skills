@@ -21,7 +21,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "容器,Docker,DevOps"
+category: "Development"
 ---
 # 容器检查入门工具（免费版）
 

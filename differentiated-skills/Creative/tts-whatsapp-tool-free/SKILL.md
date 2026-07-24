@@ -48,7 +48,9 @@ homepage: https://skillhub.cn
 pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
-
+tools: ["read", "write", "exec"]
+tags: "WhatsApp,社交,通信"
+category: "Communication"
 ---
 # WhatsApp 语音消息工具 - 免费版
 

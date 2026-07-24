@@ -13,25 +13,12 @@ tags:
   - Development
 tools:
   - read
+  - write
   - exec
-homepage: "https://skillhub.cn"
-# 定价元数据
-suggested_price: "29.9 CNY/per_use"
-pricing_tier: "L3-专业级"
-pricing_model: "per_use"
+homepage: ""
+category: "Automation"
 ---
 # Git Workflows
-
-## 付费版专享能力
-
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| 代码静态分析与质量评分 | 不支持 | 支持 |
-| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
-| 批量代码审查与报告生成 | 不支持 | 支持 |
-| CI/CD流水线集成 | 不支持 | 支持 |
-| 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
 ## 核心能力
 
@@ -120,18 +107,10 @@ pricing_model: "per_use"
 |:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### API Key 配置
-- 
-
 ### 可用性分类
 - **分类**: MD+EXEC()
 - **说明**: 基于Markdown的AI Skill,
 
-**API Key配置方式**:
-```bash
-export API_KEY="your_api_key_here"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 常见问题
 
 ### Q1: 如何开始使用Git Workflows？

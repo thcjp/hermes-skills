@@ -36,7 +36,9 @@ homepage: https://skillhub.cn
 pricing_tier: "L0-免费"
 pricing_model: free
 suggested_price: "0"
-
+tools: ["read", "write", "exec", "glob", "grep"]
+tags: "AI代理,自动化,智能"
+category: "Agents"
 ---
 # AgentVibes语音合成工具 - 免费版
 
