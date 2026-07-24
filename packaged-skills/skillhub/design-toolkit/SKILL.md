@@ -4,7 +4,7 @@ name: "design-toolkit"
 version: 1.0.1
 displayName: "设计偏好工具箱-专业版"
 summary: "企业级视觉偏好管理系统，支持多媒介、品牌系统、团队协作与批量设计生成。。设计偏好工具箱专业版，面向团队与企业的视觉偏好管理平台。核心能力： - 覆盖 UI、图形、视频、印刷、3D 五大媒介的"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   设计偏好工具箱专业版，面向团队与企业的视觉偏好管理平台。核心能力：
@@ -39,7 +39,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 设计偏好工具箱-专业版

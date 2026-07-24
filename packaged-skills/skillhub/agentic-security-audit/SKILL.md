@@ -4,7 +4,7 @@ name: "agentic-security-audit"
 version: 1.0.1
 displayName: "Agentic Security Aud"
 summary: "审计代码库/基础设施/Agent AI系统安全,覆盖传统与新型风险,一键出报告。Audit codebases, infrastructure, AND agentic AI systems"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Audit codebases, infrastructure, AND agentic AI systems for security
   issues。Covers traditional s。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
@@ -24,7 +24,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Agents"
 ---
 # Agentic Security Aud

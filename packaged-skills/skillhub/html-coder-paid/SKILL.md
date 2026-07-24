@@ -5,7 +5,7 @@ name: "html-coder-paid"
 version: 1.0.1
 displayName: "HTML编码工具-专业版"
 summary: "企业级HTML开发引擎，支持HTML5高级API、Web Components、WCAG全面合规与性能优化。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: HTML编码工具专业版，面向团队的企业级HTML开发平台。核心能力： - HTML5 全API覆盖（Canvas/SVG/Storage/Geolocation/Drag&Drop/Web Workers） - Web Components 与 Shadow DOM 组件化开发 - WCAG 2。可自动提升工作效率
 tags:
@@ -27,7 +27,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Development"
 
 ---

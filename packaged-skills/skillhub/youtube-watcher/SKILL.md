@@ -4,7 +4,7 @@ name: "youtube-watcher"
 version: 1.0.1
 displayName: "YouTube Watcher"
 summary: "抓取并读取YouTube视频字幕转写。Fetch and read transcripts from YouTube videos。核心能力: - 创意设计领域的专业化AI辅助工具 - 基于"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Fetch and read transcripts from YouTube videos。核心能力:
 
@@ -34,7 +34,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # YouTube Watcher

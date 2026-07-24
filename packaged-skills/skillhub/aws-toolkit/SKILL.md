@@ -4,7 +4,7 @@ name: "aws-toolkit"
 version: 1.0.1
 displayName: "AWS部署专业版"
 summary: "企业级AWS全服务管理平台，支持多区域、IaC、合规审计与成本优化。。面向企业运维团队的AWS全服务管理平台。支持EC2/S3/VPC/RDS/Lambda/ CloudWatch等全量AW"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向企业运维团队的AWS全服务管理平台。支持EC2/S3/VPC/RDS/Lambda/
@@ -24,7 +24,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # AWS部署专业版

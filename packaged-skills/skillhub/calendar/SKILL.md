@@ -4,7 +4,7 @@ name: "calendar"
 version: 1.0.1
 displayName: "Calendar"
 summary: "日历管理与排期,创建事件/管会议/跨平台同步,时间不冲突。Calendar management and scheduling。Create events, manage meetings,"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Calendar management and scheduling。Create events, manage meetings,
   and sync across calendar prov。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Calendar

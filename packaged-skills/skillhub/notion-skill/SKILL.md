@@ -4,7 +4,7 @@ name: "notion-skill"
 version: 1.0.1
 displayName: "Notion"
 summary: "经官方Notion API操作页面与数据库。Work with Notion pages and databases via the official Notion API。核心能力: -"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Work with Notion pages and databases via the official Notion API。核心能力:
 
@@ -36,7 +36,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Notion

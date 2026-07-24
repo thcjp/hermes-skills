@@ -4,7 +4,7 @@ name: "dashboard"
 version: 1.0.2
 displayName: "Dashboard"
 summary: "从任意数据源构建自定义仪表盘,本地托管+视觉QA,数据可视。Build custom dashboards from any data source with local hosting a"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Build custom dashboards from any data source with local hosting and
   visual QA loops。核心能力:
@@ -33,7 +33,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Dashboard

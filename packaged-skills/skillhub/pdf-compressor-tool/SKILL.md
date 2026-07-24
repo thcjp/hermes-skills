@@ -4,7 +4,7 @@ name: "pdf-compressor-tool"
 version: "1.0.1"
 displayName: "Compress PDF"
 summary: "上传PDF到Cross-Service-Solutions压缩,轮询至完成。Compress a user-provided PDF by uploading it to Cross-Ser"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Compress a user-provided PDF by uploading it to Cross-Service-Solutions,
   polling until completion. Returns download URL and compression settings.

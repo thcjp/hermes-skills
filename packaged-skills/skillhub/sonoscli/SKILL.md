@@ -4,7 +4,7 @@ name: "sonoscli"
 version: 1.0.1
 displayName: "Sonoscli"
 summary: "控Sonos音箱,发现/状态/播放/音量/分组。Control Sonos speakers (discover/status/play/volume/group)。核心能力: - 其他工具"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Control Sonos speakers (discover/status/play/volume/group)。核心能力:
 
@@ -31,7 +31,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Sonoscli

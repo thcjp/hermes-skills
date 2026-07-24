@@ -4,7 +4,7 @@ name: "node-connect-paid"
 version: 1.0.1
 displayName: "节点连接工具(专业版)"
 summary: "全拓扑节点连接诊断,含尾网/公网/远程网关、批量配对、审计日志与自动修复。。节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:
@@ -46,7 +46,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 节点连接工具(专业版)

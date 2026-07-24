@@ -5,7 +5,7 @@ name: "chart-craft"
 version: 1.0.1
 displayName: "图表工坊专业版"
 summary: "企业级图表生成平台，支持12种高级图表类型、自定义模板、批量生成、多格式导出与使用分析。图表工坊专业版是一款面向团队与企业的图表生成平台，在免费版四种基础图表基础上，新增堆叠柱状图、面积图、"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   图表工坊专业版是一款面向团队与企业的图表生成平台，在免费版四种基础图表基础上，新增堆叠柱状图、面积图、雷达图、热力图等8种高级图表类型，并提供自定义模板、批量生成、多格式导出与使用统计分析等高级能力。核心能力：
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

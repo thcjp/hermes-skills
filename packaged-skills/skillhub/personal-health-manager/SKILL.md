@@ -4,7 +4,7 @@ name: "personal-health-manager"
 version: 1.0.1
 displayName: "Personal Health Mana"
 summary: "个人健康管理与养生助手,追踪健康数据。Personal health management and wellness assistant。Use when users want to tra"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Personal health management and wellness assistant。Use when users want
   to track health data, get。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Personal Health Mana

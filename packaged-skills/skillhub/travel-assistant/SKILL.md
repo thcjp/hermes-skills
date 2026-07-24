@@ -5,7 +5,7 @@ name: "travel-assistant"
 version: 1.0.2
 displayName: "Travel Assistant"
 summary: "私人旅行规划顾问。整理你的所有旅行信息，主动发现你忽略的签证、天气、文化禁忌、行李清单等细节，用起来像真人助手一样贴心可靠。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   私人旅行规划顾问。整理你的所有旅行信息，主动发现你忽略的签证、天气、文化禁忌、行李清单等细节，用起来像真人助手一样贴心可靠。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags: llm,api,依赖说明,agent,确认运行
@@ -14,7 +14,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

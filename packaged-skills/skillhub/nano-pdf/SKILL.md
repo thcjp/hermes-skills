@@ -4,7 +4,7 @@ name: "nano-pdf"
 version: 1.0.1
 displayName: "Nano Pdf"
 summary: "用nano-pdf CLI按自然语言指令编辑PDF。Edit PDFs with natural-language instructions using the nano-pdf CLI。核"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Edit PDFs with natural-language instructions using the nano-pdf CLI。核心能力:
 
@@ -34,7 +34,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Nano Pdf

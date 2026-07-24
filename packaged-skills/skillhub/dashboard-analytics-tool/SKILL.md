@@ -8,7 +8,7 @@ description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Dashboard Analytics Tool 核心处理"、Dashboard Analytics Tool 核心处理时使用.
   不适用于需要人工判断的复杂场景.
-license: "Proprietary"
+license: "MIT"
 tools:
   - read
   - exec

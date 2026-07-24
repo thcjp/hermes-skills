@@ -4,7 +4,7 @@ name: "email-163-com"
 version: 1.0.6
 displayName: "163邮箱管理专家"
 summary: "163邮箱CLI工具,支持IMAP ID认证收发邮件、附件、文件夹、搜索与邮件操作。163邮箱完整邮件管理Skill,基于Python CLI实现,覆盖发送、读取、搜索、文件夹、附件与邮件操"
-license: "Proprietary"
+license: "MIT"
 description: |-
   163邮箱完整邮件管理Skill,基于Python CLI实现,覆盖发送、读取、搜索、文件夹、附件与邮件操作全链路.
   核心能力:
@@ -38,7 +38,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # 163邮箱管理专家

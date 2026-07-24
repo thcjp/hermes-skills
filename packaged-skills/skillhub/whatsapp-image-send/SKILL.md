@@ -5,7 +5,7 @@ name: "whatsapp-image-send"
 version: 1.0.2
 displayName: "WhatsApp Image Send"
 summary: "经WhatsApp发图/视频/音频/文档,下载转存后发送。Send images, videos, audio, or documents via WhatsApp by downloadi"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Send images, videos, audio, or documents via WhatsApp by downloading,
   copying to workspace, sendi。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 
 ---

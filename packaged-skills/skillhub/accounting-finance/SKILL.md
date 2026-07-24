@@ -4,7 +4,7 @@ name: "accounting-finance"
 version: 1.0.1
 displayName: "财务分析专业套件"
 summary: "企业级财务分析与估值建模全套技能，58个专业分析模块，支持批量处理与自动化报告。。面向专业分析师、机构投资者与企业财务部门的全栈财务分析技能套件。包含58个 专家级分析技能，覆盖估值建模、财"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业分析师、机构投资者与企业财务部门的全栈财务分析技能套件。包含58个
@@ -29,7 +29,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Finance"
 ---
 # 财务分析专业套件

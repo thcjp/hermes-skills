@@ -4,7 +4,7 @@ name: "finance-report-analyzer"
 version: 1.2.1
 displayName: "Finance Report Analy"
 summary: "分析Excel/PDF财务数据,生成含迷你图的交互报告。Analyze financial data from uploaded Excel/PDF files and generate i"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Analyze financial data from uploaded Excel/PDF files and generate interactive
   reports with sparkl。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Finance"
 ---
 # Finance Report Analy

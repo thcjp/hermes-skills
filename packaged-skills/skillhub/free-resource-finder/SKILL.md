@@ -4,7 +4,7 @@ name: "free-resource-finder"
 version: 1.0.1
 displayName: "免费资源发现器(专业版)"
 summary: "全功能免费AI资源管理工具,含自动fallback、后台守护、负载均衡、成本分析与质量监控,适合长期无人值守场景。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   免费资源发现器(专业版)是企业级免费AI资源管理工具,在免费版基础上扩展自动fallback链、后台守护进程、多Key负载均衡、调用统计与成本分析、模型质量监控等高级能力。核心能力:
@@ -30,7 +30,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 免费资源发现器(专业版)

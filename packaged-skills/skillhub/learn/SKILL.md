@@ -4,7 +4,7 @@ name: "learn"
 version: 1.0.3
 displayName: "Learn"
 summary: "用间隔重复与主动回忆结构化追踪学习,跨领域。Structure and track learning with spaced repetition and active recall acr"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Structure and track learning with spaced repetition and active recall
   across any domain。核心能力:
@@ -35,7 +35,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Learn

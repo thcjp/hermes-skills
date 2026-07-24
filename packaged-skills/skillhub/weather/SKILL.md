@@ -4,7 +4,7 @@ name: "weather"
 version: 1.0.1
 displayName: "Weather"
 summary: "免API Key获取当前天气与预报。Get current weather and forecasts (no API key required)。核心能力: - 生活工具领域的专业化AI辅"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Get current weather and forecasts (no API key required)。核心能力:
 
@@ -33,7 +33,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Weather

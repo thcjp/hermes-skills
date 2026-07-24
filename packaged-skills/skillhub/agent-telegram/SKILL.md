@@ -4,7 +4,7 @@ name: "agent-telegram"
 version: 1.0.1
 displayName: "Agent Telegram"
 summary: "Agent 团队 Telegram 通信规范，统一 8 类角色消息发送与汇报。。Agent 团队 Telegram 通信规范。定义 main、architect、backend、fronte"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Agent 团队 Telegram 通信规范。定义 main、architect、backend、frontend、product、content、crawler、qa
   共 8 类 Agent 角色的 accountId、emoji 标识与消息发送格式。所有 Agent 向用户发送 Telegram 消息时必须遵循此规范，
@@ -30,7 +30,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Agents"
 ---
 # Agent Telegram

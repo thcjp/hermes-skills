@@ -4,7 +4,7 @@ name: "openai-whisper-v1"
 version: 1.0.1
 displayName: "Whisper v1转录专业版"
 summary: "Whisper v1稳定版企业级转录工具,支持批量处理、模型管理、性能调优与服务化部署。。基于 Whisper v1 稳定版本的企业级语音转文字工具(专业版)。核心能力: - 涵盖免费版全部"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   基于 Whisper v1 稳定版本的企业级语音转文字工具(专业版)。核心能力:
@@ -43,7 +43,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Whisper v1转录专业版

@@ -4,7 +4,7 @@ name: "ws-calendar"
 version: 1.0.1
 displayName: "Calendar"
 summary: "Calendar提供创建日程、设置提醒、查看今日/本周安排等核心能力,付费版独享高级功能与批量处理。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   日程管理。创建日程、设置提醒、查看安排.
   核心能力:
@@ -34,7 +34,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Calendar

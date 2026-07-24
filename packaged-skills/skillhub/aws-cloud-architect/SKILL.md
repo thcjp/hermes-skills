@@ -4,7 +4,7 @@ name: "aws-cloud-architect"
 version: 1.0.1
 displayName: "AWS 云架构师"
 summary: "AWS 架构设计、成本优化、安全加固与迁移部署全流程助手。资深 AWS 云架构师助手,覆盖架构设计、服务选型、成本优化、安全加固、 性能调优与迁移部署全流程。遵循 Well-Architec"
-license: "Proprietary"
+license: "MIT"
 description: |-
   资深 AWS 云架构师助手,覆盖架构设计、服务选型、成本优化、安全加固、
   性能调优与迁移部署全流程。遵循 Well-Architected Framework 原则,
@@ -30,7 +30,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # AWS 云架构师

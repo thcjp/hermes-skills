@@ -5,7 +5,7 @@ name: "dlazy-gen"
 version: 1.0.1
 displayName: "综合生成工具-专业版"
 summary: "全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。。综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力： - 40+ 模型全覆盖（图片、视频、音频三大"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力：
@@ -17,7 +17,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

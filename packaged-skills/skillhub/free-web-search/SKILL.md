@@ -4,7 +4,7 @@ name: "free-web-search"
 version: 8.1.1
 displayName: "Free Web Search"
 summary: "基于 Bing 国内版 / DuckDuckGo 的联网搜索工具，中文环境优化，可按需抓取目标网页正文，返回结构化结果。仅在用户明确请求联网搜索时调用。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   基于 Bing 国内版 / DuckDuckGo 的联网搜索工具，中文环境优化，可按需抓取目标网页正文，返回结构化结果。仅在用户明确请求联网搜索时调用。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
@@ -21,7 +21,6 @@ tools:
   - write
   - glob
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # Free Web Search

@@ -4,7 +4,7 @@ name: "book-painter"
 version: 1.0.2
 displayName: "Book Painter"
 summary: "经Lokuli协议预约油漆工,找到并下单本地画师服务。Book painter services through Lokuli 协议。Use when user needs to find"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Book painter services through Lokuli 协议。Use when user needs to find
   and book painter。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Book Painter

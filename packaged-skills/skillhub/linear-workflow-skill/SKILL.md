@@ -4,7 +4,7 @@ name: "linear-workflow-skill"
 version: 1.0.1
 displayName: "Linear工作流(专业版)"
 summary: "全功能Linear工作流工具，支持冲刺规划、依赖链管理、批量操作与迭代报告。Linear工作流(专业版)是面向敏捷团队的全功能工作流管理工具，在免费版基础上新增冲刺规划自动化、依赖链管理、批"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   Linear工作流(专业版)是面向敏捷团队的全功能工作流管理工具，在免费版基础上新增冲刺规划自动化、依赖链管理、批量操作与迭代报告等高级能力。核心能力：
@@ -30,7 +30,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Linear工作流(专业版)

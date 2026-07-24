@@ -4,7 +4,7 @@ name: "automation-recipe-pack"
 version: 1.1.2
 displayName: "自动化配方"
 summary: "10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务，可自动化提升工作效率。10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务。适用于效率工具爱好者、自动化"
-license: "Proprietary"
+license: "MIT"
 description: "10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务。适用于效率工具爱好者、自动化新手，可自动化提升工作效率。支持批量处理、工作流优化、定时触发等场景。"
 tags:
   - Automation

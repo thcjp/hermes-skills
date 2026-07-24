@@ -4,7 +4,7 @@ name: "pg-mcp-skills"
 version: 1.0.1
 displayName: "PG-MCP助手(专业版)"
 summary: "企业级`PostgreSQL`数据库管理方案，支持自动化调优、迁移升级、多实例管理与高可用监控。。PG-MCP助手专业版是一套面向中大型团队与企业级场景的 `PostgreSQL` 数据库管"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   PG-MCP助手专业版是一套面向中大型团队与企业级场景的 `PostgreSQL` 数据库管理解决方案，在免费版基础上扩展出自动化性能调优、智能索引推荐、数据库迁移与版本升级、多实例统一管理、高可用与故障转移监控等能力。核心能力：提供基于执行计划的自动索引推荐、冗余索引清理流程、大版本升级迁移方案、多实例配置中心化管 理、主备切换与故障转移监控、慢查询自动归档与分析报告
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # PG-MCP助手(专业版)

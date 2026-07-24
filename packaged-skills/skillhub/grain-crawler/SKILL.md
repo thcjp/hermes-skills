@@ -4,7 +4,7 @@ name: "grain-crawler"
 version: 1.0.1
 displayName: "归档检索(专业版)"
 summary: "全功能 Granola 归档检索，含同步、SQL、转录稿、面板、批量导出。。全功能 Granola 归档检索。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   全功能 Granola 归档检索。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
@@ -32,7 +32,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 归档检索(专业版)

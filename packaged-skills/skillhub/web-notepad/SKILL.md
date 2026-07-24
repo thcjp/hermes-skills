@@ -5,7 +5,7 @@ name: "web-notepad"
 version: 1.0.1
 displayName: "在线表单笔记(专业版)"
 summary: "企业级表单管理工具,支持批量操作、Webhook订阅、RBAC权限、自定义模板、加密存储与审计日志,适合团队与企业规模化使用。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   在线表单笔记(专业版)是面向团队与企业的全功能表单管理Skill,在免费版基础上新增批量处理、Webhook订阅、自定义模板、RBAC权限管理、加密存储、审计日志等高级能力。核心能力:
@@ -27,7 +27,6 @@ tools:
   - write
   - glob
 homepage: ""
-# 定价元数据
 category: "Development"
 
 ---

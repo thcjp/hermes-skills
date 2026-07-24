@@ -4,7 +4,7 @@ name: "calendar-skill"
 version: 1.0.5
 displayName: "Calendar"
 summary: "安全管理Google日历/Outlook/Exchange,一处排程多端同步。Calendar Management - secure Google Calendar, Microsoft"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Calendar Management - secure Google Calendar, Microsoft Outlook & Exchange。Use when the user wan。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Calendar

@@ -4,7 +4,7 @@ name: "graincrawl"
 version: 1.0.2
 displayName: "Graincrawl"
 summary: "Granola归档,搜索/同步/笔记/转写/面板/SQL。Granola archive: search, sync freshness, notes, transcripts, panel"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Granola archive: search, sync freshness, notes, transcripts, panels,
   SQL。核心能力:
@@ -34,7 +34,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Graincrawl

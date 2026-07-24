@@ -4,7 +4,7 @@ name: "weiyun-skills"
 version: 1.0.11
 displayName: "Weiyun Skills"
 summary: "微云技能集合,提供内容生成与专业风格规范,支持多种变体处理,付费版独享批量与高级功能。。微云网盘MCP接口完整技能. 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人气开源Sk"
-license: "Proprietary"
+license: "MIT"
 description: |-
   微云网盘MCP接口完整技能.
   核心能力:
@@ -37,7 +37,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Weiyun Skills

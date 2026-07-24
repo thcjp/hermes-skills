@@ -5,7 +5,7 @@ name: "data-analysis-hub"
 version: 1.0.1
 displayName: "数据分析中枢(专业版)"
 summary: "全功能决策分析平台,支持批处理、多重比较校正、定时任务、协同审阅与高级报告模板。。数据分析中枢专业版面向数据分析师、增长负责人、产品负责人与 BI 团队,提供完整的方法论纪律、批量处理能力与"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   数据分析中枢专业版面向数据分析师、增长负责人、产品负责人与 BI 团队,提供完整的方法论纪律、批量处理能力与团队协同机制。核心能力:
@@ -22,7 +22,6 @@ tools:
   - write
   - glob
 homepage: ""
-# 定价元数据
 category: "Research"
 
 ---

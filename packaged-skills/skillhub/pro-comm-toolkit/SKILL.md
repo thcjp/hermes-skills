@@ -4,7 +4,7 @@ name: "pro-comm-toolkit"
 version: 1.0.1
 displayName: "职场沟通工具箱专业版"
 summary: "企业级职场沟通助手，支持批量邮件生成、多语言翻译、自定义模板、跨文化沟通与团队协作场景。。职场沟通工具箱（专业版）—— 面向团队和企业的全功能写作辅助工具。核心能力: - 批量邮件生成与多收"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   职场沟通工具箱（专业版）—— 面向团队和企业的全功能写作辅助工具。核心能力:
@@ -47,7 +47,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 职场沟通工具箱专业版

@@ -5,7 +5,7 @@ name: "ui-ux"
 version: 1.0.1
 displayName: "UI / UX"
 summary: "可搜UI/UX设计库,50+风格/97色板/57字体对/99规则。Searchable UI/UX design databases: 50+ styles, 97 palettes, 57"
-license: "Proprietary"
+license: "MIT"
 homepage: "https://skillhub.ai/skills/ui-ux"
 description: Searchable UI/UX design databases: 50+ styles, 97 palettes, 57 font pairings, 99 UX rules, 25 character sets，可生成提升工作效率
 tools:

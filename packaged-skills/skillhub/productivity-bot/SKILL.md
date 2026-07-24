@@ -4,7 +4,7 @@ name: "productivity-bot"
 version: 1.0.1
 displayName: "Productivity Bot"
 summary: "生产力任务自动化bot,数据处理/定时通知/工作流。Automation bot for productivity tasks including data processing, sche"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Automation bot for productivity tasks including data processing, scheduled
   notifications, and wor。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Productivity Bot

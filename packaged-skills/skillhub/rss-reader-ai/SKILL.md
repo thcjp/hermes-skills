@@ -4,7 +4,7 @@ name: "rss-reader-ai"
 version: 1.0.1
 displayName: "RSS智能阅读器专业版"
 summary: "企业级RSS聚合平台，支持多源批量抓取、AI深度摘要、多渠道推送、定时调度与数据分析。。RSS智能阅读器（专业版）—— 面向团队和企业的全功能信息聚合平台。核心能力: - 无限订阅源批量抓取"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   RSS智能阅读器（专业版）—— 面向团队和企业的全功能信息聚合平台。核心能力:
@@ -38,7 +38,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # RSS智能阅读器专业版

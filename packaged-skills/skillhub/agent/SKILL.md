@@ -4,7 +4,7 @@ name: "agent"
 version: 1.0.1
 displayName: "Agent"
 summary: "定义Agent身份性格语气与边界,打造风格一致的拟人助手,解决人设漂移难题。Define agent identity, personality, voice, and boundaries"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Define agent identity, personality, voice, and boundaries to create
   assistants that feel authenti。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -23,7 +23,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Agents"
 ---
 # Agent

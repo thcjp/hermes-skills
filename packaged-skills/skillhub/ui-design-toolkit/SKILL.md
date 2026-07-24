@@ -4,7 +4,7 @@ name: "ui-design-toolkit"
 version: 1.0.1
 displayName: "UI设计工具包专业版"
 summary: "企业级UI设计工具包,支持设计系统、设计令牌、可访问性与组件库,适配团队协作与大型项目。。面向团队与企业用户的 UI 设计工具包(专业版)。核心能力: - 涵盖免费版全部能力(视觉层次、排版"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业用户的 UI 设计工具包(专业版)。核心能力:
@@ -40,7 +40,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # UI设计工具包专业版

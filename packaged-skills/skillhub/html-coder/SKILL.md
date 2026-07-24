@@ -4,7 +4,7 @@ name: "html-coder"
 version: 2.0.2
 displayName: "HTML Coder"
 summary: "专家级HTML开发,构建网页/表单/交互内容。Expert HTML development skill for building web pages, forms, and interac"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Expert HTML development skill for building web pages, forms, and interactive
   content。Use when cr。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
@@ -23,7 +23,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # HTML Coder

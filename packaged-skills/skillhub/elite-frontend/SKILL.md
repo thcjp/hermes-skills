@@ -5,7 +5,7 @@ name: "elite-frontend"
 version: 1.0.1
 displayName: "精英前端设计-专业版"
 summary: "企业级前端设计系统，支持多页面应用、React/Vue组件、品牌一致性与高级动效编排。。精英前端设计工具专业版，面向团队的企业级前端设计系统。核心能力： - 多页面应用设计，统一视觉语言贯穿"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   精英前端设计工具专业版，面向团队的企业级前端设计系统。核心能力：
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

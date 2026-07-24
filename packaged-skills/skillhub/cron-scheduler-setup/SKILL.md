@@ -4,7 +4,7 @@ name: "cron-scheduler-setup"
 version: 1.0.1
 displayName: "SkillHub Cron Setup"
 summary: "SkillHub Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。支持主会话系统事件和独立会话执行，可配置投递到聊天频道或"
-license: "Proprietary"
+license: "MIT"
 description: |-
   SkillHub Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # SkillHub Cron Setup

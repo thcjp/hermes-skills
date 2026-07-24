@@ -4,7 +4,7 @@ name: ecommerce-pricing-strategist
 version: 1.0.1
 displayName: "电商定价策略师"
 summary: "AI分析市场数据智能定价,多策略配置+动态调价+利润最大化。电商定价策略师是一款AI驱动的电商定价决策工具. 支持市场数据多维分析、5种定价策略智能推荐、多平台价格监控与利润最大化测算. 核"
-license: Proprietary
+license: "MIT"
 description: |-
   电商定价策略师是一款AI驱动的电商定价决策工具.
   支持市场数据多维分析、5种定价策略智能推荐、多平台价格监控与利润最大化测算.

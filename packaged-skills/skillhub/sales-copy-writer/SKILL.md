@@ -4,7 +4,7 @@ name: sales-copy-writer
 version: 1.0.1
 displayName: "卖货文案手"
 summary: "文案干瘪没转化?FAB卖点+6种情绪钩子+4种CTA,一键生成高转化卖货文案。卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点. 基于FAB法则提炼卖点,结合6种情绪钩子与4种"
-license: Proprietary
+license: "MIT"
 description: |-
   卖货文案手是一款高转化卖货文案生成工具,解决文案干瘪无转化痛点.
   基于FAB法则提炼卖点,结合6种情绪钩子与4种CTA话术,5平台风格自动适配.

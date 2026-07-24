@@ -4,7 +4,7 @@ name: "wechat-article-writer"
 version: 1.0.1
 displayName: "公众号写作专业版"
 summary: "企业级公众号写作引擎，支持多模型切换、业务资料库、发布流程、配图管理与团队协作。。公众号写作专业版 —— 面向专业内容团队与企业运营的高级公众号写作引擎。核心能力: - 多模型切换：支持De"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   公众号写作专业版 —— 面向专业内容团队与企业运营的高级公众号写作引擎。核心能力:
@@ -38,7 +38,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 公众号写作专业版

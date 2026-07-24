@@ -4,7 +4,7 @@ name: "repo-manager"
 version: 1.0.1
 displayName: "仓库管理器(专业版)"
 summary: "全功能仓库管理工具,含工作流管理、Release管理、批量操作、工具目录搜索与团队共享,适合企业级仓库治理。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   仓库管理器(专业版)是企业级GitHub仓库管理工具,在免费版基础能力上,扩展工作流管理、Release管理、批量操作、工具目录搜索、自定义工具集成与团队共享配置等高级能力。核心能力:
@@ -36,7 +36,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 仓库管理器(专业版)

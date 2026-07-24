@@ -4,7 +4,7 @@ name: "openclaw-linear"
 version: "1.0.1"
 displayName: "Linear CLI"
 summary: "命令行管Linear issue/项目/团队/文档。Manage Linear issues, projects, teams, and documents from the command"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Manage Linear issues, projects, teams, and documents from the command
   line using the linear CLI。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Linear CLI

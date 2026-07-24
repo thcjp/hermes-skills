@@ -4,7 +4,7 @@ name: title-hook-factory
 version: 1.0.1
 displayName: "标题钩子工厂"
 summary: "生成爆款标题+钩子段落,基于6大钩子公式+量化打分+多平台字数控制。标题钩子工厂是一款内容创作引流工具,生成爆款标题与开篇钩子段落. 基于6大钩子公式,量化打分排序,适配多平台字数规则. 核"
-license: Proprietary
+license: "MIT"
 description: |-
   标题钩子工厂是一款内容创作引流工具,生成爆款标题与开篇钩子段落.
   基于6大钩子公式,量化打分排序,适配多平台字数规则.

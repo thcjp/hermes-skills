@@ -4,7 +4,7 @@ name: "doubao-image-gen"
 version: 1.0.1
 displayName: "豆包图片生成-专业版"
 summary: "企业级AI图片生成平台，支持批量生成、多比例输出、风格预设、提示词增强与工作流自动化。。豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 豆包图片生成-专业版

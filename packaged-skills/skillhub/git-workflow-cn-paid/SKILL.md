@@ -4,7 +4,7 @@ name: "git-workflow-cn-paid"
 version: 1.0.1
 displayName: "Git工作流专业版"
 summary: "企业级 Git 工作流方案，支持 Git Flow、团队协作、冲突工具集成与批量分支管理。。面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
@@ -24,7 +24,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # Git工作流专业版

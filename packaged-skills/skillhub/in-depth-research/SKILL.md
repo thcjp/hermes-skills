@@ -4,7 +4,7 @@ name: "in-depth-research"
 version: 1.0.1
 displayName: "深度研究引擎"
 summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。。系统化深度研究方法论，通过七步协议（Scope → Search → Evaluate → Deepen → Syn"
-license: "Proprietary"
+license: "MIT"
 description: |-
   系统化深度研究方法论，通过七步协议（Scope → Search → Evaluate → Deepen →
   Synthesize → Document → Deliver）实现穷尽式多源调研。核心能力：

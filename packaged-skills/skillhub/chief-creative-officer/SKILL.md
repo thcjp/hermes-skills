@@ -4,7 +4,7 @@ name: "chief-creative-officer"
 version: 0.1.1
 displayName: "首席创意官"
 summary: "创意策略制定、品牌叙事构建、跨媒介创意指导与创意团队协作管理。。首席创意官级别的内容创意指导，覆盖创意策略制定、品牌叙事架构、跨媒介创意方案、 创意评审与团队协作。核心能力： - 创意策略制"
-license: "Proprietary"
+license: "MIT"
 description: |-
   首席创意官级别的内容创意指导，覆盖创意策略制定、品牌叙事架构、跨媒介创意方案、
   创意评审与团队协作。核心能力：

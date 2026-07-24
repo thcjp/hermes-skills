@@ -4,7 +4,7 @@ name: "longmemo-elite"
 version: 2.0.1
 displayName: "精英长记忆"
 summary: "Agent精英级长记忆：WAL防丢失+三路混合检索+六层存储+成本预算控制。。面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大核心痛点. WAL写前日志协议采"
-license: "Proprietary"
+license: "MIT"
 description: |-
   面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大核心痛点.
   WAL写前日志协议采用"先写状态，再回复用户"模式，在压缩/崩溃/重启场景下保证上下文不丢失.

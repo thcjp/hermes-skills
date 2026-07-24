@@ -4,7 +4,7 @@ name: "diagram"
 version: 1.0.1
 displayName: "Diagram"
 summary: "用Mermaid/PlantUML/ASCII从描述生成图,架构/流程/时序全覆盖。Generate diagrams from descriptions with Mermaid, Pla"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Generate diagrams from descriptions with Mermaid, PlantUML, or ASCII
   for architecture, flows, seq。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Diagram

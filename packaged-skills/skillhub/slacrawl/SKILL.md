@@ -4,7 +4,7 @@ name: "slacrawl"
 version: 1.0.2
 displayName: "Slacrawl"
 summary: "Slack归档,搜索/同步/线程私信/SQL计数。Slack archive: search, sync freshness, threads/DMs, SQL counts。核心能力: -"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Slack archive: search, sync freshness, threads/DMs, SQL counts。核心能力:
 
@@ -33,7 +33,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Slacrawl

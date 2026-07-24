@@ -4,7 +4,7 @@ name: "art"
 version: 1.0.1
 displayName: "Art"
 summary: "指导艺术创作技法精进与鉴赏,提供分媒介实操建议,提升创作水准。Guide art creation, technique development, and appreciation with"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Guide art creation, technique development, and appreciation with practical,
   medium-specific advice。核心能力:
@@ -35,7 +35,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Art

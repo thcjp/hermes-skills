@@ -5,7 +5,7 @@ name: "telegram"
 version: 1.0.2
 displayName: "Telegram"
 summary: "设计Telegram Bot API工作流与命令驱动对话。SkillHub skill for designing Telegram Bot API workflows and comman"
-license: "Proprietary"
+license: "MIT"
 description: SkillHub skill for designing Telegram Bot API workflows and command-driven conversations using di，可处理提升工作效率
 tags:
   - Integrations
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 
 ---

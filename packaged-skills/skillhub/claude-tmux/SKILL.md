@@ -4,7 +4,7 @@ name: "claude-tmux"
 version: 1.0.1
 displayName: "ai-assistant Tmux"
 summary: "纯指令型tmux助手,所宣即所做,会话管理利器。This skill is an instruction-only tmux helper that does what it adverti"
-license: "Proprietary"
+license: "MIT"
 description: |-
   This skill is an instruction-only tmux helper that does what it advertises,
   though users should b。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # ai-assistant Tmux

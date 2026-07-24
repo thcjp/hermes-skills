@@ -4,7 +4,7 @@ name: "news"
 version: 1.0.2
 displayName: "News"
 summary: "个性化新闻简报,学习你的兴趣/格式/时间偏好。Personalized news briefings that learn your interests, formats, and timi"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Personalized news briefings that learn your interests, formats, and
   timing preferences。核心能力:
@@ -33,7 +33,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # News

@@ -4,7 +4,7 @@ name: "clawddocs"
 version: 1.2.3
 displayName: "Clawddocs"
 summary: "SkillHub文档专家,带决策树导航,快速定位答案。SkillHub documentation expert with decision tree navigation。核心能力: -"
-license: "Proprietary"
+license: "MIT"
 description: |-
   SkillHub documentation expert with decision tree navigation。核心能力:
 
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Clawddocs

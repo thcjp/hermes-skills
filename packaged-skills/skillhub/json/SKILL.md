@@ -4,7 +4,7 @@ name: "json"
 version: 1.0.1
 displayName: "JSON"
 summary: "高效处理JSON数据结构/API/序列化。Work with JSON data structures, APIs, and serialization effectively。核心能力:"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Work with JSON data structures, APIs, and serialization effectively。核心能力:
 
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # JSON

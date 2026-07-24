@@ -4,7 +4,7 @@ name: "cron-setup-guide"
 version: 1.0.1
 displayName: "定时任务设置指南(专业版)"
 summary: "Agent Gateway定时任务设置完全指南专业版，含Webhook投递、模型覆盖、话题投递、退避策略、高级配置项。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   定时任务设置指南专业版是在免费版基础上的全功能升级，为AI Agent提供完整的定时调度配置能力。专业版解锁Webhook投递、模型覆盖、思考强度配置、Telegram话题投递、退避策略调优、高级配置项等高级特性，实现企业级定时任务管理。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -26,7 +26,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 定时任务设置指南(专业版)

@@ -4,7 +4,7 @@ name: "free-weather-skill"
 version: 0.1.1
 displayName: "Weather"
 summary: "免API Key获取当前天气与预报,出门不抓瞎。Get current weather and forecasts (no API key required)。核心能力: - 生活工具领域的"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Get current weather and forecasts (no API key required)。核心能力:
 
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Weather

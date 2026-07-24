@@ -4,7 +4,7 @@ name: "iris-formatter"
 version: 1.0.1
 displayName: "IRIS代码格式化专业版"
 summary: "企业级 IRIS ObjectScript 代码审查方案，含批量处理、自定义规则与报告导出。。面向企业级 IRIS 开发团队的 ObjectScript 代码审查与治理工具。核心能力: -"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向企业级 IRIS 开发团队的 ObjectScript 代码审查与治理工具。核心能力:
@@ -40,7 +40,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # IRIS代码格式化专业版

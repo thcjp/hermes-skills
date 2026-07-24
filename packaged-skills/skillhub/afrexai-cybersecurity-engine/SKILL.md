@@ -4,7 +4,7 @@ name: "afrexai-cybersecurity-engine"
 version: 1.0.1
 displayName: "网络安全引擎"
 summary: "全面安全评估、STRIDE威胁建模、OWASP Top 10审计、漏洞管理与应急响应体系。。企业级网络安全评估与加固体系，覆盖安全态势评估、STRIDE威胁建模、OWASP Top 10 应"
-license: "Proprietary"
+license: "MIT"
 description: |-
   企业级网络安全评估与加固体系，覆盖安全态势评估、STRIDE威胁建模、OWASP Top 10
   应用安全审计、基础设施加固、漏洞生命周期管理、事件响应（SEV-1至SEV-4）、

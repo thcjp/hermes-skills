@@ -4,7 +4,7 @@ name: "self-integration"
 version: 1.1.3
 displayName: "Self-Integration"
 summary: "连任意外部应用并对其执行操作。Connect to any external app and perform actions on it。Use when the user wants to"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Connect to any external app and perform actions on it。Use when the
   user wants to interact with e。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Self-Integration

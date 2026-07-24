@@ -4,7 +4,7 @@ name: "dns-networking-paid"
 version: 1.0.1
 displayName: "DNS网络诊断专业版"
 summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。。面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力: -"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力:
@@ -39,7 +39,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # DNS网络诊断专业版

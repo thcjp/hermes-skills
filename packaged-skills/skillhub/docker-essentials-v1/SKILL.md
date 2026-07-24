@@ -4,7 +4,7 @@ name: "docker-essentials-v1"
 version: 1.0.1
 displayName: "Docker V1迁移专业版"
 summary: "企业级V1迁移工具,支持自动兼容性扫描、批量迁移、配置转换与回滚保障。。面向企业运维团队的Docker V1到V2迁移专业工具,提供自动兼容性扫描、批量配置转换、渐进式迁移与回滚保障。核心能"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向企业运维团队的Docker V1到V2迁移专业工具,提供自动兼容性扫描、批量配置转换、渐进式迁移与回滚保障。核心能力:
@@ -41,7 +41,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # Docker V1迁移专业版

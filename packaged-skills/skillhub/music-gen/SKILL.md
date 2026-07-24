@@ -4,7 +4,7 @@ name: "music-gen"
 version: 1.0.1
 displayName: "音乐生成工具专业版"
 summary: "企业级AI音乐生成系统,支持批量生成、版权管理、多平台调度与CI/CD集成,适合团队与商业项目。。音乐生成工具专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   音乐生成工具专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批量生成、版权资产管理、多平台智能调度、
@@ -26,7 +26,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 音乐生成工具专业版

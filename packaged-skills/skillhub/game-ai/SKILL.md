@@ -4,7 +4,7 @@ name: "game-ai"
 version: 1.0.1
 displayName: "Game AI Systems"
 summary: "游戏AI开发指南,行为树/状态机/寻路/决策全覆盖。Game AI development guide covering behavior trees, state machines, pa"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Game AI development guide covering behavior trees, state machines, pathfinding,
   and decision-maki。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
@@ -28,7 +28,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Game AI Systems

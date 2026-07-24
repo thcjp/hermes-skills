@@ -4,7 +4,7 @@ name: "git-helper"
 version: 1.0.1
 displayName: "Git Helper"
 summary: "常用git操作技能,涵盖status/pull/push/branch/log。Common git operations as a skill (status, pull, push, b"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Common git operations as a skill (status, pull, push, branch, log)
 
@@ -35,7 +35,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # Git Helper

@@ -4,7 +4,7 @@ name: "finance"
 version: 1.1.3
 displayName: "finance"
 summary: "跟踪股票/ETF/指数/加密/外汇,带缓存与提供商回退。Track stocks, ETFs, indices, crypto (where available), and FX pairs"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Track stocks, ETFs, indices, crypto (where available), and FX pairs
   with caching + provider fallb。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Finance"
 ---
 # finance

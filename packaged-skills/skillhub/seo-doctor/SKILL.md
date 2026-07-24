@@ -4,7 +4,7 @@ name: seo-doctor
 version: 1.0.1
 displayName: "SEO体检医生"
 summary: "给网站做全面SEO体检,技术+内容+结构化数据三维度诊断,BERT关键词+排名追踪。SEO体检医生是一款给网站做全面SEO体检的工具。基于BERT语义模型提取关键词,品牌词最高优先级注入,"
-license: Proprietary
+license: "MIT"
 description: |-
   SEO体检医生是一款给网站做全面SEO体检的工具。基于BERT语义模型提取关键词,品牌词最高优先级注入,
   技术SEO审计+内容SEO优化+结构化数据三维度诊断,发布前优化与发布后排名追踪闭环.

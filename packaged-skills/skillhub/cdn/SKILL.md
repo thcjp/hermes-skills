@@ -4,7 +4,7 @@ name: "cdn"
 version: 1.0.2
 displayName: "CDN"
 summary: "配置优化排障CDN部署,缓存策略+安全加固,加速又稳。Configure, optimize, and troubleshoot CDN deployments with caching s"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Configure, optimize, and troubleshoot CDN deployments with caching strategies,
   security hardening。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
@@ -27,7 +27,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # CDN

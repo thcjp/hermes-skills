@@ -4,7 +4,7 @@ name: "figma-tw-designer"
 version: 1.0.1
 displayName: "Figma设计助手(专业版)"
 summary: "全功能Figma交互工具，支持批量导出、高级缓存、团队协作分析与自定义模板。Figma设计助手(专业版)是面向团队与重度用户的Figma全功能交互工具，在免费版基础上新增批量导出、高级缓存、"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   Figma设计助手(专业版)是面向团队与重度用户的Figma全功能交互工具，在免费版基础上新增批量导出、高级缓存、团队协作分析与自定义模板等高级能力。核心能力：
@@ -28,7 +28,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # Figma设计助手(专业版)

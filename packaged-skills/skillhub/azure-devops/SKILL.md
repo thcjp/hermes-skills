@@ -4,7 +4,7 @@ name: "azure-devops"
 version: 1.0.1
 displayName: "Azure DevOps"
 summary: "列Azure DevOps项目/仓库/分支,建PR管工作项,研发协同闭环。List Azure DevOps projects, repositories, and branches; cr"
-license: "Proprietary"
+license: "MIT"
 description: |-
   List Azure DevOps projects, repositories, and branches; create pull
   requests; manage work items; 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -23,7 +23,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # Azure DevOps

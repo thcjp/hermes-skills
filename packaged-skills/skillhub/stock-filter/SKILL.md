@@ -5,7 +5,7 @@ name: "stock-filter"
 version: 1.0.1
 displayName: "股票筛选专业版"
 summary: "多市场股票筛选系统，支持多策略组合、自定义公式、历史回测与批量导出。。面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、 多策略组合（AND/OR逻辑）、自定义选股公式、历"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业投资者与机构的股票筛选系统。支持A股/美股/港股多市场筛选、
@@ -16,7 +16,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

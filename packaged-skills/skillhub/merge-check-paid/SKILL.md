@@ -5,7 +5,7 @@ name: "merge-check-paid"
 version: 1.0.1
 displayName: "合并检查工具(专业版)"
 summary: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。。合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自定义拒绝向量规则。核心能力:
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

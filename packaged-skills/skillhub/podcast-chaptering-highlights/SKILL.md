@@ -4,7 +4,7 @@ name: "podcast-chaptering-highlights"
 version: 1.0.1
 displayName: "Podcast Chaptering H"
 summary: "从播客音频或转写生成章节/亮点/节目说明。Create chapters, highlights, and show notes from podcast audio or transcri"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Create chapters, highlights, and show notes from podcast audio or transcripts。Use when a user wa。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
 tags:
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # Podcast Chaptering H

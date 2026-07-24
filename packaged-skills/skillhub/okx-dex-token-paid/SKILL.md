@@ -5,7 +5,7 @@ name: "okx-dex-token-paid"
 version: 1.0.1
 displayName: "DEX代币数据专业版"
 summary: "专业DEX代币分析与交易工具，支持多链深度分析、批量查询与限价交易。。面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链 深度数据分析、批量代币查询、链上行为追踪、流动"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链
@@ -17,7 +17,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

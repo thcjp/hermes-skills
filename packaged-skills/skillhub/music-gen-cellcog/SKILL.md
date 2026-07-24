@@ -4,7 +4,7 @@ name: "music-gen-cellcog"
 version: 1.0.1
 displayName: "CellCog音乐生成专业版"
 summary: "基于CellCog AI引擎的企业级音乐生成系统,支持批量生成、版权管理、高质量输出与CI/CD集成,适合团队与商业项目。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   CellCog音乐生成专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批量生成、高质量音频输出、版权资产管理、
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # CellCog音乐生成专业版

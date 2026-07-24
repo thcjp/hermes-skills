@@ -4,7 +4,7 @@ name: "slack-api"
 version: 1.0.12
 displayName: "Slack"
 summary: "Slack API托管OAuth,发消息/管频道/搜会话。Slack API integration with managed OAuth。Send messages, manage cha"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Slack API integration with managed OAuth。Send messages, manage channels,
   search conversations, a。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
@@ -23,7 +23,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # Slack

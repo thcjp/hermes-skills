@@ -4,7 +4,7 @@ name: "audit"
 version: 1.0.1
 displayName: "Audit"
 summary: "合成经济最高审计器,自主巡检代码/合约/资产,拦截风险于未然。The Supreme Verifier for the Synthetic Economy。Autonomous inspec"
-license: "Proprietary"
+license: "MIT"
 description: |-
   The Supreme Verifier for the Synthetic Economy。Autonomous inspection
   of code, contracts, and cap。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Audit

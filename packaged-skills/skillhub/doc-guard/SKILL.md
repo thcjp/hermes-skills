@@ -4,7 +4,7 @@ name: "doc-guard"
 version: 1.0.1
 displayName: "文档护盾专业版"
 summary: "团队级端到端加密文档协作平台，支持批量操作、版本回滚、权限管理与自定义加密策略。。文档护盾专业版在免费版基础上扩展团队协作、版本管理、自定义加密与批量操作能力。Use when 需要提升效率"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   文档护盾专业版在免费版基础上扩展团队协作、版本管理、自定义加密与批量操作能力。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
@@ -30,7 +30,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 文档护盾专业版

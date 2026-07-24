@@ -4,7 +4,7 @@ name: "discord-chat-manager"
 version: 1.0.1
 displayName: "Discord聊天管理专业版"
 summary: "企业级 Discord 聊天管理,支持高级搜索、批量消息分发与频道全生命周期管理。。面向运营团队与企业场景的 Discord 聊天全功能管理工具。核心能力: - 多条件组合高级搜索(作者/时"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向运营团队与企业场景的 Discord 聊天全功能管理工具。核心能力:
@@ -36,7 +36,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # Discord聊天管理专业版

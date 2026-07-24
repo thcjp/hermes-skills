@@ -4,7 +4,7 @@ name: "universal-translate"
 version: 1.0.1
 displayName: "Universal Translate"
 summary: "在任意语言间翻译文本/文件/对话,自动检测源语言。Translate text, files, and conversations between any languages。Auto-de"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Translate text, files, and conversations between any languages。Auto-detects
   source language。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # Universal Translate

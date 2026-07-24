@@ -4,7 +4,7 @@ name: "logo"
 version: 1.0.1
 displayName: "Logo"
 summary: "用AI图像工具生成logo,含提示结构/校验/导出。Generate logos with AI image tools using effective prompt structures,"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Generate logos with AI image tools using effective prompt structures,
   validation loops, and expor。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Logo

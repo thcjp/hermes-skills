@@ -4,7 +4,7 @@ name: "ux-design"
 version: 1.0.1
 displayName: "UX设计工具专业版"
 summary: "完整UX方法论+用户研究+WCAG合规+状态机设计+企业UX审计,面向UX团队的专业体验设计引擎。面向企业UX团队和专业设计师的完整用户体验设计引擎,涵盖深度流程分析、 用户研究方法论、WC"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向企业UX团队和专业设计师的完整用户体验设计引擎,涵盖深度流程分析、
@@ -31,7 +31,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # UX设计工具专业版

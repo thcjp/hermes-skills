@@ -4,7 +4,7 @@ name: "sql"
 version: 1.0.2
 displayName: "SQL查询引擎"
 summary: "SQL查询编写、性能优化、索引策略、Schema设计与事务管理的全栈指导。。SQL全栈能力引擎，覆盖查询编写、性能优化、索引策略、Schema设计、事务管理与 数据库运维。支持Postgre"
-license: "Proprietary"
+license: "MIT"
 description: |-
   SQL全栈能力引擎，覆盖查询编写、性能优化、索引策略、Schema设计、事务管理与
   数据库运维。支持PostgreSQL、MySQL、SQLite等主流数据库。核心能力：

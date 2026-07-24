@@ -4,7 +4,7 @@ name: "finance-accounting"
 version: 1.0.1
 displayName: "Finance Accounting"
 summary: "财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能。财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能 核心能力: - 金融工具领域的专业化AI辅助工具"
-license: "Proprietary"
+license: "MIT"
 description: |-
   财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能
 
@@ -38,7 +38,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Finance"
 ---
 # Finance Accounting

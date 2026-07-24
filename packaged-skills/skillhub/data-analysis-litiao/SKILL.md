@@ -4,7 +4,7 @@ name: "data-analysis-litiao"
 version: 1.0.1
 displayName: "数据分析理调"
 summary: "数据分析方法论框架，覆盖统计严谨性、陷阱识别、方法选择与输出规范。数据分析理调是数据分析的方法论守护框架，覆盖 Methodology First（方法论优先）、 Statistical R"
-license: "Proprietary"
+license: "MIT"
 description: |-
   数据分析理调是数据分析的方法论守护框架，覆盖 Methodology First（方法论优先）、
   Statistical Rigor Checklist（统计严谨性检查清单）、Analytical Pitfalls（分析陷阱识别：
@@ -24,7 +24,6 @@ tools:
   - exec
   - glob
 homepage: ""
-# 定价元数据
 category: "Research"
 ---
 # 数据分析理调

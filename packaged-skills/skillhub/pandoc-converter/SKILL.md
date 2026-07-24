@@ -5,7 +5,7 @@ name: "pandoc-convert-openclaw"
 version: "0.1.0"
 displayName: "Pandoc Convert"
 summary: "用pandoc CLI在40+格式间转文档,Markdown/Word/PDF/HTML。Convert documents between 40+ formats using pandoc"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Convert documents between 40+ formats using pandoc CLI。Handles Markdown
   ↔ Word ↔ PDF ↔ HTML ↔ La。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

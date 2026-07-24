@@ -4,7 +4,7 @@ name: "creative-officer"
 version: 1.0.1
 displayName: "创意总监专业版"
 summary: "企业级创意管理平台，支持完整品牌体系、营销战役规划、创意资产管理与团队协作。。创意总监专业版 —— 面向企业团队与专业机构的高级创意管理平台。核心能力: - 完整品牌体系构建：品牌定位、视觉"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   创意总监专业版 —— 面向企业团队与专业机构的高级创意管理平台。核心能力:
@@ -33,7 +33,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 创意总监专业版

@@ -4,7 +4,7 @@ name: "security-scanner"
 version: 1.0.1
 displayName: "Security Scanner"
 summary: "安全扫描技能,主动扫描需仅在授权目标运行。This appears to be a legitimate security-scanning skill, but users must on"
-license: "Proprietary"
+license: "MIT"
 description: |-
   This appears to be a legitimate security-scanning skill, but users must
   only run its active scans。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
@@ -21,7 +21,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Security"
 ---
 # Security Scanner

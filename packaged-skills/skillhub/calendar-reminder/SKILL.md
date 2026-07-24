@@ -4,7 +4,7 @@ name: "calendar-reminder"
 version: 1.0.1
 displayName: "日历提醒"
 summary: "每晚22点扫描明日Outlook日历,按上下午时段差异化飞书提醒,自动注册定时任务并汇报扫描结果。。面向独立开发者与企业团队的 Outlook 日历智能提醒 Skill。每晚 22:00 自"
-license: "Proprietary"
+license: "MIT"
 description: |-
   面向独立开发者与企业团队的 Outlook 日历智能提醒 Skill。每晚 22:00 自动扫描明日全部日程,
   按时段策略差异化推送飞书通知:上午日程提前 2 小时提醒,下午日程在当天 12:00 统一汇总提醒,
@@ -33,7 +33,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Calendar Reminder 日历提醒

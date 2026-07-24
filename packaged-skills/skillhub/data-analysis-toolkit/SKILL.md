@@ -4,7 +4,7 @@ name: "data-analysis-toolkit"
 version: "1.0.1"
 displayName: "Python Data Analysis"
 summary: "提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。。提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析. 核心能力:数据清洗"
-license: "Proprietary"
+license: "MIT"
 description: |-
   提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析.
   核心能力:数据清洗预处理、统计分析支持、数据可视化建议、常见分析模式指导.

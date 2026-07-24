@@ -4,7 +4,7 @@ name: "heygen-tts"
 version: 1.0.1
 displayName: "HeyGen TTS专业版"
 summary: "企业级HeyGen TTS工具,支持SSML标记、批量生成、词级时间戳与API服务化,适配生产环境。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业用户的 HeyGen 文字转语音工具(专业版)。核心能力:
@@ -43,7 +43,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # HeyGen TTS专业版

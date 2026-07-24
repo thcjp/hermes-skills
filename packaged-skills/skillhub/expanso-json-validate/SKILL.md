@@ -4,7 +4,7 @@ name: "expanso-json-validate"
 version: 1.0.1
 displayName: "Expanso Json Validat"
 summary: "用Expanso Edge流水线校验JSON语法与结构。Validate JSON syntax and structure using the Expanso Edge pipeline"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Validate JSON syntax and structure using the Expanso Edge pipeline in
   CLI or MCP server modes。核心能力:
@@ -36,7 +36,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Expanso Json Validat

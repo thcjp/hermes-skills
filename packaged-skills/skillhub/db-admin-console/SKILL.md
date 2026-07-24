@@ -5,7 +5,7 @@ name: "db-admin-console"
 version: 1.0.1
 displayName: "数据库管理台(专业版)"
 summary: "全功能数据库管理平台,支持大规模批量操作、分区表、性能基线、定时备份与多实例管理。。数据库管理台专业版面向专业 DBA、后端架构师与运维团队,提供完整的数据库设计、批量操作、性能优化与运维自"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   数据库管理台专业版面向专业 DBA、后端架构师与运维团队,提供完整的数据库设计、批量操作、性能优化与运维自动化能力。核心能力:
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

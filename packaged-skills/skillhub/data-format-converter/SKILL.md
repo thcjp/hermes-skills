@@ -4,7 +4,7 @@ name: "data-format-converter"
 version: 1.0.1
 displayName: "数据格式转换器"
 summary: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理。数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换. 核心能力"
-license: "Proprietary"
+license: "MIT"
 description: |-
   数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换.
   核心能力包括：
@@ -33,7 +33,6 @@ tools:
   - write
   - glob
 homepage: ""
-# 定价元数据
 category: "Research"
 ---
 # 数据格式转换器

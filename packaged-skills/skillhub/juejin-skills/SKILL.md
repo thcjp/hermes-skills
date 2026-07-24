@@ -4,7 +4,7 @@ name: "juejin-skills"
 version: 1.0.9
 displayName: "掘金技能集"
 summary: "掘金技术社区一站式操作技能，支持热门文章排行榜查询。。掘金技术社区一站式操作技能，支持热门文章排行榜查询。核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优"
-license: "Proprietary"
+license: "MIT"
 description: |-
   掘金技术社区一站式操作技能，支持热门文章排行榜查询。核心能力:
 
@@ -37,7 +37,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 掘金技能集

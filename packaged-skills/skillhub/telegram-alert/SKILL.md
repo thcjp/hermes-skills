@@ -4,7 +4,7 @@ name: "telegram-alert"
 version: 1.0.1
 displayName: "Telegram告警专业版"
 summary: "多通道交易告警系统，支持多群组、复杂触发、富媒体消息与团队协作。。面向专业交易团队的多通道告警通知系统。支持Telegram多群组推送、 复合触发条件、富媒体消息（图表/图片）、定时播报与团"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业交易团队的多通道告警通知系统。支持Telegram多群组推送、
@@ -24,7 +24,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # Telegram告警专业版

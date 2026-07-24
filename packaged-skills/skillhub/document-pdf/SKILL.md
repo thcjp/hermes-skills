@@ -4,7 +4,7 @@ name: "document-pdf"
 version: 1.0.1
 displayName: "Pdf"
 summary: "PDF全操作工具箱,提取文本表格/建PDF/合并拆分/填表。Comprehensive PDF manipulation toolkit for extracting text and ta"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Comprehensive PDF manipulation toolkit for extracting text and tables,
   creating new PDFs, merging。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # Pdf

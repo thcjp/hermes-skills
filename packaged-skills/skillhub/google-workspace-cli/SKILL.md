@@ -4,7 +4,7 @@ name: "google-workspace-cli"
 version: 1.0.1
 displayName: "谷歌办公命令行专业版"
 summary: "全功能Google Workspace命令行工具,覆盖六大服务与批量操作,支持企业级多租户场景与自动化工作流。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   谷歌办公命令行工具专业版,面向企业与专业用户提供 Gmail、Calendar、Drive、Contacts、Sheets、Docs 全六大服务的深度操作能力。核心能力:
@@ -42,7 +42,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 谷歌办公命令行专业版

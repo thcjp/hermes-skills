@@ -4,7 +4,7 @@ name: "market-news"
 version: 1.0.1
 displayName: "Market News"
 summary: "自动搜索和总结最新财经新闻与市场动态。自动搜索和总结最新财经新闻与市场动态 核心能力: - 研究工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
-license: "Proprietary"
+license: "MIT"
 description: |-
   自动搜索和总结最新财经新闻与市场动态
 
@@ -34,7 +34,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # Market News

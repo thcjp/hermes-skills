@@ -4,7 +4,7 @@ name: "research-agent"
 version: 1.0.1
 displayName: "Research"
 summary: "开放式主题研究,构建活的Markdown文档,支持交互(付费增强版)。Conduct open-ended research on a topic, building a living ma"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Conduct open-ended research on a topic, building a living markdown document。Supports interactive。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
@@ -21,7 +21,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Agents"
 ---
 # Research

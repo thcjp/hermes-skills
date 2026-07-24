@@ -4,7 +4,7 @@ name: "linear"
 version: 1.0.1
 displayName: "Linear"
 summary: "查询管理Linear issue/项目/团队工作流。Query and manage Linear issues, projects, and team workflows。核心能力: -"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Query and manage Linear issues, projects, and team workflows。核心能力:
 
@@ -33,7 +33,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Linear

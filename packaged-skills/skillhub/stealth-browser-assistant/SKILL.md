@@ -4,7 +4,7 @@ name: stealth-browser-assistant
 version: 1.0.1
 displayName: "反检测浏览器助手"
 summary: "一人管百号的浏览器自动化底座,指纹隔离+崩溃自愈+智能定位,告别封号掉线。反检测浏览器助手是一款浏览器自动化引擎,专为Agent浏览器场景设计。 支持指纹隔离、崩溃自愈、DOM蒸馏智能定位,"
-license: Proprietary
+license: "MIT"
 description: |-
   反检测浏览器助手是一款浏览器自动化引擎,专为Agent浏览器场景设计。
   支持指纹隔离、崩溃自愈、DOM蒸馏智能定位,实现一人管百号不关联。

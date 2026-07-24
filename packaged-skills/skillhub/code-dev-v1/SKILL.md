@@ -4,7 +4,7 @@ name: "code-dev-v1"
 version: 1.0.1
 displayName: "结构化开发工具专业版"
 summary: "企业级版本化开发,支持多任务编排、发布管理、团队规范与交付审计。面向团队与企业的高级结构化开发工具,在免费版基础上扩展多任务编排、发布管理、团队规范等能力。核心能力: - 多任务并行编排与版"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业的高级结构化开发工具,在免费版基础上扩展多任务编排、发布管理、团队规范等能力。核心能力:
@@ -43,7 +43,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # 结构化开发工具专业版

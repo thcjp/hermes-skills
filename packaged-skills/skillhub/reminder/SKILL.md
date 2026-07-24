@@ -4,7 +4,7 @@ name: "reminder"
 version: 0.1.2
 displayName: "Reminder"
 summary: "捕获自然语言事件存工作区并排Telegram提醒,自动解析。Capture natural-language events, save to your workspace, and sche"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Capture natural-language events, save to your workspace, and schedule
   Telegram reminders with aut。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Reminder

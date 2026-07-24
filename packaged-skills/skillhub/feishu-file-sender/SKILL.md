@@ -5,7 +5,7 @@ name: "feishu-file-sender"
 version: 1.0.1
 displayName: "飞书文件发送专业版"
 summary: "企业级文件批量分发与稳定投递，支持审计与重试机制。飞书文件发送专业版面向企业用户与高效能个人用户。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。U"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   飞书文件发送专业版面向企业用户与高效能个人用户。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

@@ -5,7 +5,7 @@ name: "university-app"
 version: 1.0.1
 displayName: "命理咨询专业版"
 summary: "专业命理分析系统，支持八字、紫微、合婚、大运流年与批量排盘。。面向命理研究者的专业命理分析系统。支持八字命理、紫微斗数、合婚 分析、大运流年推演与批量排盘。Use when 需要数据分析、报"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向命理研究者的专业命理分析系统。支持八字命理、紫微斗数、合婚
@@ -17,7 +17,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

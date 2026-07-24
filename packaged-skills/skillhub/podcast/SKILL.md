@@ -4,7 +4,7 @@ name: "podcast"
 version: 1.0.2
 displayName: "Podcast"
 summary: "规划剧集/产音频视频/生成切片,创建并增长播客。Create and grow podcasts by planning episodes, producing audio or video"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Create and grow podcasts by planning episodes, producing audio or video,
   generating clips, and bu。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
@@ -23,7 +23,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # Podcast

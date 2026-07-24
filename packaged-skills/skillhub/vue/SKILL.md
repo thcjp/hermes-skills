@@ -4,7 +4,7 @@ name: "vue"
 version: 1.0.2
 displayName: "Vue"
 summary: "规避Vue常见错误,响应式陷阱/ref与reactive/组合式API。Avoid common Vue mistakes — reactivity traps, ref vs reacti"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Avoid common Vue mistakes — reactivity traps, ref vs reactive, computed
   timing, and Composition A。Use when 用户需要Vue相关功能时使用。不适用于超出本技能能力范围的复杂需求.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Vue

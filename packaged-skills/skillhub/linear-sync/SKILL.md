@@ -4,7 +4,7 @@ name: "linear-sync"
 version: 1.0.1
 displayName: "Linear同步(专业版)"
 summary: "全功能Linear管理工具，支持任务全生命周期、批量操作、GraphQL API与Git集成。Linear同步工具专业版是面向研发团队的完整项目管理命令行方案，在免费版基础上解锁任务全生命周"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   Linear同步工具专业版是面向研发团队的完整项目管理命令行方案，在免费版基础上解锁任务全生命周期管理、批量操作、文档管理、里程碑管理、GraphQL API直接调用和Git集成等全部高级能力。核心能力：任务创建/更新/删除/评论全生命周期、批量任务操作、Linear文档管理、项目里程碑管理、GraphQL原始查询、Git分支创建与PR关联、任务状态自动流转、团队与项目管理全量操作
@@ -32,7 +32,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Linear同步(专业版)

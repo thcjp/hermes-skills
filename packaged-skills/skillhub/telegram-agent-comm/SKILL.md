@@ -4,7 +4,7 @@ name: "telegram-agent-comm"
 version: 1.0.1
 displayName: "电报通信助手专业版"
 summary: "多角色 Agent 团队 Telegram 通信中枢，支持账号映射、批量调度、审计日志与优先级路由。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业的多 Agent Telegram 通信管理规范.
@@ -31,7 +31,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Agents"
 ---
 # 电报通信助手专业版

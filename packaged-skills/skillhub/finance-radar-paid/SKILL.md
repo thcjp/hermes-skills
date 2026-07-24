@@ -4,7 +4,7 @@ name: "finance-radar-paid"
 version: 1.0.1
 displayName: "股票分析雷达专业版"
 summary: "专业股票与加密货币分析平台，支持批量分析、组合追踪、价格告警与传闻检测。。面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、 投资组合追踪、价格告警、热门趋势检测、传闻与早期信"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、
@@ -23,7 +23,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Finance"
 ---
 # 股票分析雷达专业版

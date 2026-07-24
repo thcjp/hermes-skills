@@ -4,7 +4,7 @@ name: "ai-assistant"
 version: "1.0.0"
 displayName: "AI Doc Reasoner"
 summary: "长文本推理优化器,针对商业合同、法律备忘录、高风险文档进行结构化分析与风险检测。长文本推理优化器。针对商业合同、法律备忘录、提案、谈判文本等高风险长文档,提供结构化推理与风险检测. 覆盖六大"
-license: "Proprietary"
+license: "MIT"
 description: |-
   长文本推理优化器。针对商业合同、法律备忘录、提案、谈判文本等高风险长文档,提供结构化推理与风险检测.
   覆盖六大核心能力:Document Assessment(文档评估,识别目的/受众/决策相关性)、Core Logic Extraction(核心逻辑提取,
@@ -30,7 +30,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # AI Doc Reasoner

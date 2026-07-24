@@ -5,7 +5,7 @@ name: "mermaid-diagram"
 version: 1.0.1
 displayName: "Mermaid Diagram"
 summary: "生成有效Mermaid图,流程/时序/思维导图/ER图。Generate valid Mermaid diagrams like flowcharts, sequence diagrams,"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Generate valid Mermaid diagrams like flowcharts, sequence diagrams,
   mind maps, ER diagrams, or us。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

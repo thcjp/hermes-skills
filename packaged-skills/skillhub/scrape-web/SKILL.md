@@ -5,7 +5,7 @@ name: "scrape-web"
 version: 1.0.1
 displayName: "Scrape Web"
 summary: "使用 Python + Scrapling 获取网页内容，支持简单选择器。使用 Python + Scrapling 获取网页内容，支持简单选择器 核心能力: - 研究工具领域的专业化AI辅"
-license: "Proprietary"
+license: "MIT"
 description: |-
   使用 Python + Scrapling 获取网页内容，支持简单选择器
 
@@ -31,7 +31,6 @@ tools:
   - write
   - glob
 homepage: ""
-# 定价元数据
 category: "Development"
 
 ---

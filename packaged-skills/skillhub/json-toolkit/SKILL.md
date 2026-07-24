@@ -4,7 +4,7 @@ name: "json-toolkit"
 version: 1.0.1
 displayName: "JSON工具箱(专业版)"
 summary: "全功能 JSON 处理，含高级序列化、解析安全、Unicode 边界、自动化校验。。全功能 JSON 处理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   全功能 JSON 处理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
@@ -29,7 +29,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # JSON工具箱(专业版)

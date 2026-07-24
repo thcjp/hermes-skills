@@ -4,7 +4,7 @@ name: "schedule"
 version: 1.0.3
 displayName: "Schedule"
 summary: "编程定时或一次性任务,用户定做什么技能管何时。Program recurring or one-time tasks。User defines what to do, skill handl"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Program recurring or one-time tasks。User defines what to do, skill
   handles when。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Schedule

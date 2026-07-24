@@ -5,7 +5,7 @@ name: "doc-assistant"
 version: "1.0.0"
 displayName: "Doc"
 summary: "读写编辑docx文档,格式/表格/修订全保留,文档处理利器。Use when the task involves reading, creating, or editing `。docx`"
-license: "Proprietary"
+license: "MIT"
 description: Use when the task involves reading, creating, or editing `。docx` documents, especially when forma，可处理提升工作效率
 tags:
   - Other
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

@@ -5,7 +5,7 @@ name: "ui-ux-developer-tool"
 version: "1.0.0"
 displayName: "Ui Ux Dev"
 summary: "UI设计技能(其setup脚本会改Nginx与系统配置需谨慎)。This UI design skill is useful, but its setup script can make p"
-license: "Proprietary"
+license: "MIT"
 description: This UI design skill is useful, but its setup script can make persistent privileged Nginx and sys，可生成提升工作效率
 tags:
   - Creative
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 
 ---

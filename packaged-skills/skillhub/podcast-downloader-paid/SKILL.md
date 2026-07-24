@@ -4,7 +4,7 @@ name: "podcast-downloader-paid"
 version: 1.0.1
 displayName: "播客下载工具专业版"
 summary: "企业级播客下载工具,支持批量下载、播放列表订阅、定时同步与多平台扩展,适配生产环境。。面向团队与高级用户的播客下载工具(专业版)。核心能力: - 涵盖免费版全部能力(单集下载、MP3 转换、"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与高级用户的播客下载工具(专业版)。核心能力:
@@ -43,7 +43,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 播客下载工具专业版

@@ -4,7 +4,7 @@ name: "agent-framework-azure-ai-py"
 version: 0.1.1
 displayName: "Agent Framework Azur"
 summary: "纯文档型技能,指导构建Azure AI Foundry Agent,覆盖云搜索与多模型能力。This is a documentation-only skill for building A"
-license: "Proprietary"
+license: "MIT"
 description: |-
   This is a documentation-only skill for building Azure AI Foundry agents;
   its cloud, web search, M。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -23,7 +23,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # Agent Framework Azur

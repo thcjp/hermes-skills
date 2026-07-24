@@ -4,7 +4,7 @@ name: "api-toolkit"
 version: 1.0.1
 displayName: "API工具箱(专业版)"
 summary: "企业级API测试调试全套件，含批量回归、Mock服务、性能压测、契约校验与团队协作。。API工具箱专业版是面向研发团队的全功能API测试调试套件。在免费版的请求模板、认证范式、错误诊断基础上"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   API工具箱专业版是面向研发团队的全功能API测试调试套件。在免费版的请求模板、认证范式、错误诊断基础上，解锁批量回归测试集、本地Mock服务器、性能压测、OpenAPI契约校验、按服务细分的完整错误码字典、团队协作空间六大高级能力，覆盖从联调到上线再到持续回归的完整生命周期。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # API工具箱(专业版)

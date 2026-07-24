@@ -4,7 +4,7 @@ name: "claude-code-runner"
 version: 0.1.1
 displayName: "ai-assistant Code Ru"
 summary: "经PTY调用Claude Code执行编程任务,搞定非TTY环境。Execute programming tasks via ai-assistant Code using PTY-base"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Execute programming tasks via ai-assistant Code using PTY-based invocation。Handles non-TTY environment。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -23,7 +23,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # ai-assistant Code Ru

@@ -4,7 +4,7 @@ name: "data"
 version: 1.0.2
 displayName: "Data"
 summary: "贯穿数据全生命周期,从抽取清洗到分析可视化,一站处理。Work with data across the full lifecycle from extraction and cleanin"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Work with data across the full lifecycle from extraction and cleaning
   to analysis, visualization,。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -21,7 +21,6 @@ tools:
   - write
   - glob
 homepage: ""
-# 定价元数据
 category: "Research"
 ---
 # Data

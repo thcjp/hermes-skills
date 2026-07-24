@@ -5,7 +5,7 @@ name: "notion-pages"
 version: 0.1.2
 displayName: "Notion"
 summary: "搜页面数据库/更新内容/管Notion工作区数据。Search pages and databases, update content, and manage Notion workspac"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Search pages and databases, update content, and manage Notion workspace
   data from chat。Use this。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
@@ -16,7 +16,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

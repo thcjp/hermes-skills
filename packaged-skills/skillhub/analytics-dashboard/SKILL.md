@@ -4,7 +4,7 @@ name: "analytics-dashboard"
 version: 1.0.1
 displayName: "数据分析面板(专业版)"
 summary: "全功能数据可视化系统，含widget构建器、高级分析、多通道告警、报表导出与团队协作，支撑企业级监控。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   数据分析面板专业版是面向团队与企业的全功能数据可视化与监控系统。在免费版基础上解锁自定义widget构建器、高级分析（趋势/异常/预测）、多通道告警、报表导出、团队协作与分享、自定义数据源、主题定制、实时数据推送八大高级能力。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -28,7 +28,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 数据分析面板(专业版)

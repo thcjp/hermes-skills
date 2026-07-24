@@ -4,7 +4,7 @@ name: "queue-task"
 version: 0.1.1
 displayName: "Queue Task"
 summary: "task-father目录的可恢复幂等批处理队列任务助手。Durable queue-task helper for resumable, idempotent batch jobs in"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Durable queue-task helper for resumable, idempotent batch jobs in task-father
   task folders。核心能力:
@@ -37,7 +37,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Productivity"
 ---
 # Queue Task

@@ -4,7 +4,7 @@ name: "db"
 version: 1.0.1
 displayName: "数据库设计与运维"
 summary: "识别并规避数据库连接、事务、Schema变更、备份恢复、复制、查询、数据完整性与扩展性陷阱。数据库设计与运维——帮助设计和操作数据库时避免常见的扩展性、可靠性和数据完整性陷阱. 核心能力包括"
-license: "Proprietary"
+license: "MIT"
 description: |-
   数据库设计与运维——帮助设计和操作数据库时避免常见的扩展性、可靠性和数据完整性陷阱.
   核心能力包括：
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 数据库设计与运维

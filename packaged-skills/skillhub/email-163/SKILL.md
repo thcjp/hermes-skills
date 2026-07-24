@@ -4,7 +4,7 @@ name: "email-163"
 version: 1.0.1
 displayName: "163邮箱助手专业版"
 summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档。163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、 高级搜索过滤、定时任务调度、邮件归档审"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、
@@ -33,7 +33,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # 163邮箱助手专业版

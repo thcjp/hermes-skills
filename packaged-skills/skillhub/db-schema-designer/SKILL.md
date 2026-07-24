@@ -4,7 +4,7 @@ name: "db-schema-designer"
 version: 1.0.1
 displayName: "数据库Schema设计器(专业版)"
 summary: "全功能数据库建模工具,支持SQLite/`PostgreSQL`/MySQL多引擎,含性能诊断、版本管理、团队协作与自定义抽取器。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   数据库Schema设计器(专业版)是企业级数据库建模与演进管理工具,在免费版软Schema方法论基础上,扩展多数据库引擎适配、性能诊断、Schema版本管理、团队协作与自定义抽取器等高级能力。核心能力:
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 数据库Schema设计器(专业版)

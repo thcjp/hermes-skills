@@ -4,7 +4,7 @@ name: "news-sentiment"
 version: 1.0.1
 displayName: "舆情情绪分析专业版"
 summary: "企业级舆情监控工具,支持批量多股票扫描、自定义权重、结构化报告导出与趋势对比分析。。舆情情绪分析工具专业版,面向专业投资者与企业用户提供批量多股票扫描、自定义权重配置、结构化报告导出与趋势对"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   舆情情绪分析工具专业版,面向专业投资者与企业用户提供批量多股票扫描、自定义权重配置、结构化报告导出与趋势对比分析能力。核心能力:
@@ -41,7 +41,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # 舆情情绪分析专业版

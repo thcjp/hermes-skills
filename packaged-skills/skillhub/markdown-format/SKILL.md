@@ -4,7 +4,7 @@ name: "markdown-format"
 version: 1.0.1
 displayName: "Markdown格式化工具专业版"
 summary: "企业级文档批量格式化,支持自定义模板、团队规范、多格式输出与质量审计。面向团队与企业的高级 Markdown 格式化工具,在免费版基础上扩展批量处理、规范管理、质量审计等能力。核心能力: -"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业的高级 Markdown 格式化工具,在免费版基础上扩展批量处理、规范管理、质量审计等能力。核心能力:
@@ -42,7 +42,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # Markdown格式化工具专业版

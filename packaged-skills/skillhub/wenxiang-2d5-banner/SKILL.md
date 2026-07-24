@@ -5,7 +5,7 @@ name: "wenxiang-2d5-banner"
 version: 1.0.1
 displayName: "Wenxiang 2d5 Banner"
 summary: "用Nano Banana Pro(Gemini 3 Pro Image)生成编辑图片。Generate/edit images with Nano Banana Pro (Gemini 3"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image)。Use\
   \ for image create/modify reque。Use when 用户需要Wenxiang 2d5 Banner相关功能时使用。不适用于超出本技能能力范围的复杂需求.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

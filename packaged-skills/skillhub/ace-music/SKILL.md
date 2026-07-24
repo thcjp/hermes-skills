@@ -4,7 +4,7 @@ name: "ace-music"
 version: 1.0.1
 displayName: "AI音乐创作翻唱工坊"
 summary: "版权音乐太贵?ACE-Step 1.5一键生成带人声歌曲,付费版独享翻唱、片段重绘、批量生成,精确控制BPM与调性,输出MP3"
-license: "Proprietary"
+license: "MIT"
 description: |-
   ACE Music AI 音乐生成客户端。通过 ACE-Step 1.5 模型生成完整带人声的歌曲,
   支持文本转音乐、自定义歌词、纯音乐、采样模式、翻唱与片段重绘等多种任务类型.
@@ -25,7 +25,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # ACE Music

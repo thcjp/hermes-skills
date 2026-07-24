@@ -4,7 +4,7 @@ name: "openai-ai-paid"
 version: 1.0.1
 displayName: "OpenAI助手专业版"
 summary: "企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业用户的 llm-provider API 全功能管理工具。核心能力:
@@ -46,7 +46,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # OpenAI助手专业版

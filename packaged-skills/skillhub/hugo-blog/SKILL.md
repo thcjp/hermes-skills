@@ -4,7 +4,7 @@ name: "hugo-blog"
 version: 1.0.1
 displayName: "Hugo博客发布专业版"
 summary: "企业级 Hugo 博客管理方案，支持批量发布、多语言站点、SEO 优化与 CI/CD 集成。。面向专业博主的 Hugo 博客管理工具，提供批量发布与站点级管理能力。核心能力: - 批量文章发"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业博主的 Hugo 博客管理工具，提供批量发布与站点级管理能力。核心能力:
@@ -42,7 +42,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Hugo博客发布专业版

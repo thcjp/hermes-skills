@@ -4,7 +4,7 @@ name: "anthropics-frontend-design"
 version: 0.1.1
 displayName: "前端设计工坊"
 summary: "创建独特的生产级前端界面,专注排版配色动效与空间构图,避免通用AI美学。前端设计创作技能,生成具有鲜明美学风格的生产级前端代码。覆盖排版字体、配色主题、动效交互、 空间构图、背景纹理五大维度"
-license: "Proprietary"
+license: "MIT"
 description: |-
   前端设计创作技能,生成具有鲜明美学风格的生产级前端代码。覆盖排版字体、配色主题、动效交互、
   空间构图、背景纹理五大维度,支持 HTML/CSS/JS、React、Vue 等多种技术栈输出.
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 前端设计工坊

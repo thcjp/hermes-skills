@@ -4,7 +4,7 @@ name: "notion"
 version: 1.0.1
 displayName: "Notion"
 summary: "Notion API创建管理页面/数据库/块。Notion API for creating and managing pages, databases, and blocks。核心能力:"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Notion API for creating and managing pages, databases, and blocks。核心能力:
 
@@ -37,7 +37,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Notion

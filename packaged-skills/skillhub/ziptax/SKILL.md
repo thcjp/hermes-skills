@@ -4,7 +4,7 @@ name: "ziptax"
 version: 1.0.1
 displayName: "Ziptax Sales Tax"
 summary: "销售税查询(其脚本可本地运行需谨慎)。This sales-tax lookup skill is legitimate in purpose, but its bundled lookup"
-license: "Proprietary"
+license: "MIT"
 description: |-
   This sales-tax lookup skill is legitimate in purpose, but its bundled
   lookup script can run local。Use when 用户需要Ziptax Sales Tax相关功能时使用。不适用于超出本技能能力范围的复杂需求.
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Ziptax Sales Tax

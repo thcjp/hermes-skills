@@ -4,7 +4,7 @@ name: "firewall"
 version: 1.0.1
 displayName: "Firewall"
 summary: "按安全最佳实践配置服务器与云防火墙,封堵风险。Configure firewalls on servers and cloud providers with security best pr"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Configure firewalls on servers and cloud providers with security best
   practices。核心能力:
@@ -35,7 +35,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Firewall

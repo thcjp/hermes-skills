@@ -4,7 +4,7 @@ name: "audio-stream-upload"
 version: 1.0.1
 displayName: "音频流上传专业版"
 summary: "企业级音频上传工具，支持批量上传、自定义编码、多质量预设、分片上传与元数据管理。。音频流上传专业版 —— 面向企业团队与专业创作者的高级音频上传工具。核心能力: - 批量音频上传，支持队列管"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   音频流上传专业版 —— 面向企业团队与专业创作者的高级音频上传工具。核心能力:
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 音频流上传专业版

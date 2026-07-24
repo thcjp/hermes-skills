@@ -4,7 +4,7 @@ name: "professional-communication"
 version: 0.1.1
 displayName: "职场技术沟通写作"
 summary: "为工程师与产品经理生成邮件、Slack/Teams 消息、会议纪要、技术概念转译等职场写作，遵循关键信息优先、可扫描、明确行动项的核心原则。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   面向技术团队的职场沟通写作助手。覆盖状态更新邮件、升级请求、
   会议议程与纪要、Slack/Teams 异步消息、技术概念向非技术受众的
@@ -36,7 +36,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Professional Communication

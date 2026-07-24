@@ -4,7 +4,7 @@ name: "ui-ux-toolkit"
 version: 1.0.1
 displayName: "UI/UX设计工具箱专业版"
 summary: "全域设计数据库+持久化设计系统+多技术栈+批量搜索,面向团队企业的专业UI/UX设计决策引擎。面向设计团队和企业项目的专业级UI/UX设计决策引擎,涵盖全部10个设计域、 10种技术栈、设计"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向设计团队和企业项目的专业级UI/UX设计决策引擎,涵盖全部10个设计域、
@@ -31,7 +31,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # UI/UX设计工具箱专业版

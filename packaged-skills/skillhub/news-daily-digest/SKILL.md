@@ -4,7 +4,7 @@ name: "news-daily-digest"
 version: 1.0.1
 displayName: "每日新闻摘要(专业版)"
 summary: "全功能新闻聚合系统，含8+源、多关键词组合、10+主题、情感分析、多格式导出与品牌定制，支撑企业级资讯场景。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   每日新闻摘要专业版是面向团队与企业的全功能新闻聚合与可视化系统。在免费版基础上解锁8+新闻源聚合、多关键词组合搜索、10+海报主题与自定义模板、情感分析与趋势检测、多格式导出、多时段定时、品牌水印定制、登录态抓取八大高级能力。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -25,7 +25,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # 每日新闻摘要(专业版)

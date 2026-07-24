@@ -4,7 +4,7 @@ name: "podcast-chaptering"
 version: 1.0.1
 displayName: "播客章节工具专业版"
 summary: "企业级播客章节工具,支持批量处理、社媒切片文案、多格式输出与API集成,适配生产流水线。。面向团队与企业用户的播客章节标记工具(专业版)。核心能力: - 涵盖免费版全部能力(章节标记、高光片"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业用户的播客章节标记工具(专业版)。核心能力:
@@ -39,7 +39,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 播客章节工具专业版

@@ -3,7 +3,7 @@ slug: "finance-radar"
 name: "finance-radar"
 version: 1.1.1
 displayName: "Finance Radar"
-summary: "基于雅虎财经做股票与加密分析,数据驱动决策"Proprietary。Stock and cryptocurrency analysis powered by Yahoo Finance da"
+summary: "基于雅虎财经做股票与加密分析,数据驱动决策"MIT。Stock and cryptocurrency analysis powered by Yahoo Finance da"
 description: |-
   Stock and cryptocurrency analysis powered by Yahoo Finance data。Use
   when a user wants to: (1) An。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.

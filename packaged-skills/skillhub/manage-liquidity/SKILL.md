@@ -4,7 +4,7 @@ name: "manage-liquidity"
 version: 0.1.1
 displayName: "Manage Liquidity"
 summary: "在Uniswap V2/V3/V4池加撤流动性并收手续费。Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4
   pools。Handles the full flow。自动化管理Uniswap流动性,提供高效的加撤池与手续费收取能力
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # Manage Liquidity

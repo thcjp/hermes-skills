@@ -5,7 +5,7 @@ name: "python"
 version: 1.0.1
 displayName: "Python"
 summary: "Python编码规范与最佳实践,写审重构时用。Python coding guidelines and best practices。Use when writing, reviewing,"
-license: "Proprietary"
+license: "MIT"
 description: Python coding guidelines and best practices。Use when writing, reviewing, or refactoring Python c，可生成提升工作效率
 tags:
   - Development
@@ -18,7 +18,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

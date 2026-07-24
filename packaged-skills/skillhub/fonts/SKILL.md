@@ -4,7 +4,7 @@ name: "fonts"
 version: 1.0.1
 displayName: "Fonts"
 summary: "选配网页字体,规避渲染/配对/层级常见错误,排版专业。Choose and implement web typography avoiding common rendering, pairi"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Choose and implement web typography avoiding common rendering, pairing,
   and hierarchy mistakes。核心能力:
@@ -39,7 +39,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Fonts

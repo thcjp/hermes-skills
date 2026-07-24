@@ -4,7 +4,7 @@ name: "whatsapp-style"
 version: 1.0.1
 displayName: "WhatsApp样式工具-专业版"
 summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配。WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力: - 全部WhatsApp格"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力:
@@ -40,7 +40,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # WhatsApp样式工具-专业版

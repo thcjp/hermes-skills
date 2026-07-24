@@ -4,7 +4,7 @@ name: "azure-infra"
 version: 1.0.1
 displayName: "Azure Infra"
 summary: "通过本地 Azure CLI 查询与管理 Azure 资源，默认只读，写操作需确认。。Azure Infra 技能通过本地 Azure CLI（az 命令）帮助用户查询、诊断和管理 Azur"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Azure Infra 技能通过本地 Azure CLI（az 命令）帮助用户查询、诊断和管理 Azure 云资源.
   默认所有操作为只读查询，任何写操作或破坏性变更（删除、缩放、修改 IAM、计费配置等）
@@ -40,7 +40,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # Azure Infra

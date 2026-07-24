@@ -4,7 +4,7 @@ name: "video-stream-upload"
 version: 1.0.1
 displayName: "视频上传-专业版"
 summary: "企业级视频上传与流媒体管理平台，支持自定义编码、多分辨率、批量上传、缩略图管理与转码费用预估。。视频上传专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   视频上传专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
@@ -26,7 +26,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 视频上传-专业版

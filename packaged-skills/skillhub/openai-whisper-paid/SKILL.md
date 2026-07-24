@@ -4,7 +4,7 @@ name: "openai-whisper-paid"
 version: 1.0.1
 displayName: "Whisper语音转文字专业版"
 summary: "企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业用户的 Whisper 语音转文字工具(专业版)。核心能力:
@@ -40,7 +40,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Whisper语音转文字专业版

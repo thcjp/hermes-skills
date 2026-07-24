@@ -5,7 +5,7 @@ name: drama-hit-producer
 version: 1.0.1
 displayName: "短剧爆款生产线"
 summary: "小说一键转竖屏短剧,25步全链路从脚本到成片自动产出。短剧爆款生产线——丢进一章小说,25步全自动管道吐出可发布的竖屏短剧。核心功能:双轨风格(真人剧InstantID+动漫FLUX/Kli"
-license: Proprietary
+license: "MIT"
 description: |-
   短剧爆款生产线——丢进一章小说,25步全自动管道吐出可发布的竖屏短剧。核心功能:双轨风格(真人剧InstantID+动漫FLUX/Kling)、三轨角色构建(手工/AI批量/自动提取)、四层TTS智能配音(云端/本地GPU/免费)、质量闭环(A/B/C/D评分+自动重做+人工兜底)、25步管道从剧本转换到多平台发布全链路覆盖、资产持久化、经验回写自生长闭环
 homepage: ""

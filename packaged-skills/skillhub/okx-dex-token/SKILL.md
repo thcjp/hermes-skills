@@ -3,7 +3,7 @@ slug: "okx-dex-token"
 name: "okx-dex-token"
 version: 3.1.4
 displayName: "Okx Dex Token"
-summary: "代币级数据,搜代币/热门榜/流动性池"Proprietary。Use this skill for token-level data: search tokens, trending/hot"
+summary: "代币级数据,搜代币/热门榜/流动性池"MIT。Use this skill for token-level data: search tokens, trending/hot"
 description: |-
   Use this skill for token-level data: search tokens, trending/hot tokens
   (热门, 代币榜单), liquidity poo。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.

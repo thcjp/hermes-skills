@@ -4,7 +4,7 @@ name: "alpha-feed-creator"
 version: 1.0.1
 displayName: "内容采集器专业版"
 summary: "多源批量采集并智能排名 AI 内容,支持群组推送与企业级内容运营工作流。。面向内容团队与企业级运营的多源 AI 内容采集与智能排名平台。核心能力: - 跨平台多源采集(X、知乎、即刻、微博等"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向内容团队与企业级运营的多源 AI 内容采集与智能排名平台。核心能力:
@@ -36,7 +36,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 内容采集器专业版

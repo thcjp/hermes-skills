@@ -4,7 +4,7 @@ name: "typescript"
 version: 1.0.3
 displayName: "TypeScript"
 summary: "写类型安全TypeScript,窄化/推断/严格模式最佳实践。Write type-safe TypeScript with proper narrowing, inference patt"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Write type-safe TypeScript with proper narrowing, inference patterns,
   and strict mode best practi。Use when 用户需要TypeScript相关功能时使用。不适用于超出本技能能力范围的复杂需求.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # TypeScript

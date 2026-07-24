@@ -4,7 +4,7 @@ name: "go-linter-configuration"
 version: 1.0.1
 displayName: "Go Linter Configurat"
 summary: "配置排障golangci-lint,处理导入与类型检查问题。Configure and troubleshoot golangci-lint for Go projects。Handle i"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Configure and troubleshoot golangci-lint for Go projects。Handle import
   resolution issues, type-c。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Go Linter Configurat

@@ -4,7 +4,7 @@ name: "html"
 version: 1.0.1
 displayName: "HTML"
 summary: "规避HTML常见错误,无障碍/表单/SEO疏漏一网打尽。Avoid common HTML mistakes — accessibility gaps, form pitfalls, and"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Avoid common HTML mistakes — accessibility gaps, form pitfalls, and
   SEO oversights。核心能力:
@@ -41,7 +41,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # HTML

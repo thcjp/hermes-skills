@@ -5,7 +5,7 @@ name: "image"
 version: 1.0.5
 displayName: "Image"
 summary: "创建/检查/处理/优化图像与视觉资产,格式选择可靠。Create, inspect, process, and optimize image files and visual assets"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Create, inspect, process, and optimize image files and visual assets
   with reliable format choice,。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 
 ---

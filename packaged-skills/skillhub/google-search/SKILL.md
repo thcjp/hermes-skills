@@ -4,7 +4,7 @@ name: "google-search"
 version: 1.0.1
 displayName: "google-search"
 summary: "用Google可编程搜索引擎(PSE)搜实时信息。Search the web using Google Custom Search Engine (PSE)。Use this when y"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Search the web using Google Custom Search Engine (PSE)。Use this when
   you need live information,。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
@@ -21,7 +21,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # google-search

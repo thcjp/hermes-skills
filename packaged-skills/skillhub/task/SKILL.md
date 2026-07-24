@@ -4,7 +4,7 @@ name: "task"
 version: 0.1.1
 displayName: "Task"
 summary: "Tasker docstore任务管理,清单/今日到期/逾期/周计划。Tasker docstore task management via tool-dispatch。Use for ta"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Tasker docstore task management via tool-dispatch。Use for task lists,
   due today/overdue, week pl。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Productivity"
 ---
 # Task

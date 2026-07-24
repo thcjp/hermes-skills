@@ -4,7 +4,7 @@ name: "mongodb"
 version: 1.0.2
 displayName: "MongoDB"
 summary: "设计schema/写查询/配置MongoDB,兼顾一致性与性能。Design schemas, write queries, and configure MongoDB for consis"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Design schemas, write queries, and configure MongoDB for consistency
   and performance。核心能力:
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # MongoDB

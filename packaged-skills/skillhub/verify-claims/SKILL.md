@@ -4,7 +4,7 @@ name: "verify-claims"
 version: 1.0.1
 displayName: "Verify Claims"
 summary: "事实核查技能(会自动建延迟跟进需谨慎)。This fact-checking skill is mostly coherent, but it can automatically creat"
-license: "Proprietary"
+license: "MIT"
 description: |-
   This fact-checking skill is mostly coherent, but it can automatically
   create delayed follow-up ch。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -22,7 +22,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Verify Claims

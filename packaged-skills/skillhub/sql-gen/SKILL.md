@@ -4,7 +4,7 @@ name: "sql-gen"
 version: 1.0.1
 displayName: "SQL生成器(专业版)"
 summary: "面向团队的自然语言转SQL专业版，含Schema感知、多表JOIN生成、性能优化建议、迁移脚本与优先支持。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队、企业与专业开发者的SQL生成器专业版。在免费版基础上新增Schema智能感知自动补全、复杂多表JOIN自动生成、SQL性能优化建议、数据库迁移脚本自动生成、批量SQL生成与版本管理、生成质量回归测试等高级能力，配套面向产品、开发、DBA的多角色场景指南。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
@@ -30,7 +30,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # SQL生成器(专业版)

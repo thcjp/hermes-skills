@@ -4,7 +4,7 @@ name: "design"
 version: 1.0.1
 displayName: "自适应设计偏好引擎"
 summary: "自动学习用户视觉偏好,适配UI/图形/视频/印刷多媒介,持续进化设计风格记忆。自适应设计偏好引擎。通过观察用户在设计过程中的选择、反馈与反应,自动提取并沉淀视觉偏好模式. 支持 UI 界面、"
-license: "Proprietary"
+license: "MIT"
 description: |-
   自适应设计偏好引擎。通过观察用户在设计过程中的选择、反馈与反应,自动提取并沉淀视觉偏好模式.
   支持 UI 界面、平面图形、视频视觉、印刷物料等多媒介类型。内置四大偏好分类: Aesthetic（美学风格）、
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # Design

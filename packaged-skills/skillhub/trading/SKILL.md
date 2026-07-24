@@ -5,7 +5,7 @@ name: "trading"
 version: 1.0.1
 displayName: "交易分析专业版"
 summary: "多策略交易分析系统，支持批量分析、策略回测、自动交易与风险控制。。面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带 等多种技术策略组合，提供批量标的分析、历史回测验证、自"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带
@@ -18,7 +18,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

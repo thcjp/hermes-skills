@@ -4,7 +4,7 @@ name: "ping-monitor"
 version: 1.0.1
 displayName: "Ping Monitor"
 summary: "对主机/手机/守护进程做ICMP健康检查。ICMP health check for hosts, phones, and daemons 核心能力: - 生活工具领域的专业化AI辅助工具"
-license: "Proprietary"
+license: "MIT"
 description: |-
   ICMP health check for hosts, phones, and daemons
 
@@ -34,7 +34,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # Ping Monitor

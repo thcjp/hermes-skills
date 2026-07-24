@@ -4,7 +4,7 @@ name: "yaml"
 version: 1.0.1
 displayName: "YAML"
 summary: "写跨语言跨版本可预测解析的有效YAML。Write valid YAML that parses predictably across languages and versions。核心能力"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Write valid YAML that parses predictably across languages and versions。核心能力:
 
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # YAML

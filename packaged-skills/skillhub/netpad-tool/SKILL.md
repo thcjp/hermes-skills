@@ -5,7 +5,7 @@ name: "netpad-tool"
 version: "1.0.0"
 displayName: "Netpad"
 summary: "NetPad管理工具,管表单/提交/用户(删除需谨慎)。The skill appears to be a legitimate NetPad management tool, but it"
-license: "Proprietary"
+license: "MIT"
 description: The skill appears to be a legitimate NetPad management tool, but it gives an agent powerful delet。可处理提升工作效率
 tags:
   - Integrations
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

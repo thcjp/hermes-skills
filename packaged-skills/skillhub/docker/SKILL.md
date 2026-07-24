@@ -4,7 +4,7 @@ name: "docker"
 version: 1.0.5
 displayName: "Docker"
 summary: "管Docker容器/镜像/Compose/网络/卷,含调试与生产加固。Docker containers, images, Compose stacks, networking, volum"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Docker containers, images, Compose stacks, networking, volumes, debugging,
   production hardening, 。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # Docker

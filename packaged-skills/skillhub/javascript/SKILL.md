@@ -4,7 +4,7 @@ name: "javascript"
 version: 1.0.4
 displayName: "JavaScript"
 summary: "写健壮JavaScript,异步/类型转换/ES2023+特性。Write robust JavaScript with async patterns, type coercion hand"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Write robust JavaScript with async patterns, type coercion handling,
   and modern ES2023+ features。核心能力:
@@ -36,7 +36,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # JavaScript

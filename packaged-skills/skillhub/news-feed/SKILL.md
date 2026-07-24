@@ -4,7 +4,7 @@ name: "news-feed"
 version: 1.0.1
 displayName: "News Feed"
 summary: "从BBC/Reuters/AP等主流RSS抓最新新闻标题。Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP,
   Al Jazeera, NPR, The Guardian。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
@@ -22,7 +22,6 @@ tools:
   - read
   - exec
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # News Feed

@@ -4,7 +4,7 @@ name: "workflow-decomposer"
 version: 1.0.1
 displayName: "Workflow Decomposer"
 summary: "工作流任务拆解与模型编排技能。使用场景：(1) 收到复杂工作任务需要拆解为可执行步骤，(2) 需要为不同步骤选择最合适的模型，(3) 需要跟踪工作流进度和模型使用情况，(4)"
-license: "Proprietary"
+license: "MIT"
 description: |-
   工作流任务拆解与模型编排技能。使用场景：(1) 收到复杂工作任务需要拆解为可执行步骤，(2) 需要为不同步骤选择最合适的模型，(3) 需要跟踪工作流进度和模型使用情况，(4)
   长时间任务卡住需要。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Workflow Decomposer

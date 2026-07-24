@@ -4,7 +4,7 @@ name: "data-analyst-cn"
 version: 1.0.24
 displayName: "数据分析师"
 summary: "数据清洗、统计分析、时间序列分析、可视化代码生成与分析报告自动生成。数据分析师——快速进行数据清洗、统计分析和可视化，适合数据分析师、产品经理、运营人员. 核心能力包括： - 多源数据读取（"
-license: "Proprietary"
+license: "MIT"
 description: |-
   数据分析师——快速进行数据清洗、统计分析和可视化，适合数据分析师、产品经理、运营人员.
   核心能力包括：
@@ -33,7 +33,6 @@ tools:
   - write
   - glob
 homepage: ""
-# 定价元数据
 category: "Research"
 ---
 # 数据分析师

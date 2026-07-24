@@ -4,7 +4,7 @@ name: "encryption"
 version: 1.0.1
 displayName: "Encryption"
 summary: "加密文件/管密钥/审代码加密实践,守住密码安全。Encrypt files, secure passwords, manage keys, and audit code for crypto"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Encrypt files, secure passwords, manage keys, and audit code for cryptographic
   best practices。核心能力:
@@ -37,7 +37,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Encryption

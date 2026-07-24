@@ -4,7 +4,7 @@ name: "azure-ai-transcription-py"
 version: 0.1.1
 displayName: "Azure语音转文字SDK"
 summary: "Azure AI Transcription Python SDK,支持实时与批量语音转文字,含说话人分离与时间戳"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Azure AI Transcription 的 Python 客户端库,覆盖实时流式与批量两种语音转文字模式.
   批量模式适合存储在 Blob 中的长音频,支持说话人分离(diarization)与多通道;
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # Azure Ai Transcription Py

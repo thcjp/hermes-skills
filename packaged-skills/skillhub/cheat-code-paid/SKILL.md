@@ -4,7 +4,7 @@ name: "cheat-code-paid"
 version: 1.0.1
 displayName: "能力扩展工具专业版"
 summary: "企业级外部知识检索,支持批量查询、自定义数据源、知识缓存与团队共享。面向团队与企业的高级能力扩展工具,在免费版基础上扩展批量查询、自定义数据源、知识缓存等能力。核心能力: - 批量知识查询与"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业的高级能力扩展工具,在免费版基础上扩展批量查询、自定义数据源、知识缓存等能力。核心能力:
@@ -44,7 +44,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # 能力扩展工具专业版

@@ -4,7 +4,7 @@ name: "git-essentials"
 version: 1.0.1
 displayName: "Git核心操作"
 summary: "涵盖Git版本控制核心命令与工作流,包括分支、合并、变基、标签与冲突处理。涵盖Git版本控制核心命令与工作流,包括初始配置、基础工作流、分支管理、合并、远程操作、历史查询、撤销变更、暂存、变"
-license: "Proprietary"
+license: "MIT"
 description: |-
   涵盖Git版本控制核心命令与工作流,包括初始配置、基础工作流、分支管理、合并、远程操作、历史查询、撤销变更、暂存、变基、标签、高级操作(cherry-pick、子模块、clean)与常见工作流模式。提供冲突解决、分支恢复与安全强制推送等错误处理策略.
 tools:

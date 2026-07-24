@@ -4,7 +4,7 @@ name: "ux"
 version: 1.0.1
 displayName: "UX"
 summary: "设计分析直觉高效贴合心智模型的用户体验。Design and analyze user experiences that are intuitive, efficient, and alig"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Design and analyze user experiences that are intuitive, efficient, and
   aligned with user mental m。分析用户体验与交互流程,优化可用性,提供高效的设计诊断能力
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # UX

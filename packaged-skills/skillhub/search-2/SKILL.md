@@ -4,7 +4,7 @@ name: "search-2"
 version: 0.1.1
 displayName: "Search"
 summary: "用Tavily的LLM优化搜索API搜网,返相关结果与片段。Search the web using Tavily's LLM-optimized search API。Returns re"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Search the web using Tavily's LLM-optimized search API。Returns relevant
   results with content sni。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
@@ -24,7 +24,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # Search

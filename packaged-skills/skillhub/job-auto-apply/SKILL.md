@@ -4,7 +4,7 @@ name: "job-auto-apply"
 version: 1.0.1
 displayName: "Job Auto Apply"
 summary: "求职申请自动化,代你提交申请(需授权谨慎)。This skill fits its job-application automation purpose, but it gives an a"
-license: "Proprietary"
+license: "MIT"
 description: |-
   This skill fits its job-application automation purpose, but it gives
   an agent authority to submit。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
@@ -22,7 +22,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Job Auto Apply

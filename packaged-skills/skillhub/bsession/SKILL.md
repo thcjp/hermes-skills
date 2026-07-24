@@ -4,7 +4,7 @@ name: "bsession"
 version: 0.1.1
 displayName: "browser"
 summary: "搭bsession环境做浏览器自动化,一次性抓取或建持久会话。Browser automation — setup the bsession environment, fetch info"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Browser automation — setup the bsession environment, fetch info from
   a website (one-shot), create。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # browser

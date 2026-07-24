@@ -5,7 +5,7 @@ name: "web-browsing"
 version: 1.0.1
 displayName: "Web Browsing"
 summary: "浏览汇总网站/从URL提取内容/搜网。Browse and summarize websites, extract content from URLs, search the web for"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Browse and summarize websites, extract content from URLs, search the
   web for information。Use whe。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
@@ -16,7 +16,6 @@ tools:
   - write
   - glob
 homepage: ""
-# 定价元数据
 category: "Development"
 
 ---

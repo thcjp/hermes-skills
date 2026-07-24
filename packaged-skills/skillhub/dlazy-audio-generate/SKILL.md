@@ -4,7 +4,7 @@ name: "dlazy-audio-generate"
 version: 1.3.4
 displayName: "Dlazy Audio音频生成"
 summary: "通过dlazy CLI调用15+音频模型,涵盖TTS/音乐/音效/语音克隆,支持管道串联。dlazy 音频生成客户端。通过 dlazy CLI 调用 15+ 托管音频模型,涵盖文本转语音(T"
-license: "Proprietary"
+license: "MIT"
 description: |-
   dlazy 音频生成客户端。通过 dlazy CLI 调用 15+ 托管音频模型,涵盖文本转语音(TTS)、音乐生成、音效生成、
   语音克隆四大类别。模型包括 doubao-tts、elevenlabs-tts/dialogue/music/sfx/voice-clone、gemini-2.5-tts、
@@ -26,7 +26,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # Dlazy Audio Generate

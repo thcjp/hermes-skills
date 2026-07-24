@@ -4,7 +4,7 @@ name: "azure-gateway-cli"
 version: 1.0.1
 displayName: "Azure网关CLI专业版"
 summary: "企业级Azure OpenAI代理网关，支持多端点路由、负载均衡、故障切换、请求缓存与成本治理。Azure网关CLI专业版是一款面向团队与企业的本地代理网关，在免费版协议适配基础上，新增多端"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   Azure网关CLI专业版是一款面向团队与企业的本地代理网关，在免费版协议适配基础上，新增多端点路由、智能负载均衡、故障自动切换、请求级缓存、成本统计与多租户隔离等高级能力。核心能力：
@@ -31,7 +31,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # Azure网关CLI专业版

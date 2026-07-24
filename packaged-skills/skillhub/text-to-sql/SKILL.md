@@ -5,7 +5,7 @@ name: "text-to-sql"
 version: 999.0.1
 displayName: "Text To Sql"
 summary: "用户自然语言描述数据需求,生成对应SQL查询。Use when (1) user describes what data they want in plain English and ask"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Use when (1) user describes what data they want in plain English and
   asks for the corresponding S。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

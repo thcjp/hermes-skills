@@ -4,7 +4,7 @@ name: "api-generator"
 version: 2.0.1
 displayName: "API代码生成器"
 summary: "生成RESTful端点、GraphQL schema、OpenAPI文档、API客户端、Mock服务、认证与测试套件"
-license: "Proprietary"
+license: "MIT"
 description: |-
   API 代码生成器。从零生成生产级 API 代码脚手架,支持 RESTful CRUD 端点（Express.js）、
   GraphQL Type+Query+Mutation schema、OpenAPI 3.0 规范文档、Python API 客户端类、
@@ -25,7 +25,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # API 代码生成器

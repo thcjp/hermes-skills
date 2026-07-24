@@ -4,7 +4,7 @@ name: "proactive-agent"
 version: 3.1.1
 displayName: "主动式代理"
 summary: "将AI代理从任务跟随者转变为主动伙伴,含WAL协议、心跳系统与增长循环。。将AI代理从被动任务跟随者转变为主动伙伴的架构。覆盖六大支柱、 WAL协议、工作缓冲区、压缩恢复、统一搜索、安全加固"
-license: "Proprietary"
+license: "MIT"
 description: |-
   将AI代理从被动任务跟随者转变为主动伙伴的架构。覆盖六大支柱、
   WAL协议、工作缓冲区、压缩恢复、统一搜索、安全加固、自我改进

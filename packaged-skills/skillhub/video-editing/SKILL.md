@@ -4,7 +4,7 @@ name: "video-editing"
 version: 0.1.1
 displayName: "视频剪辑变现"
 summary: "视频剪辑变现全流程指南，覆盖赛道定位、MVP验证、流量获取与转化交付。视频剪辑变现指南，覆盖赛道定位与人群分析、MVP验证、流量获取、转化交付、复盘迭代全流程. 包含变现模型、工具清单、合规"
-license: "Proprietary"
+license: "MIT"
 description: |-
   视频剪辑变现指南，覆盖赛道定位与人群分析、MVP验证、流量获取、转化交付、复盘迭代全流程.
   包含变现模型、工具清单、合规风险、30日执行计划。适用于独立剪辑师和工作室的商业化运营.
@@ -22,7 +22,6 @@ tools:
   - write
   - exec
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 视频剪辑变现指南

@@ -4,7 +4,7 @@ name: "learn-cog"
 version: 1.0.13
 displayName: "个性化学习助手"
 summary: "AI驱动的个性化学习助手，支持项目教程、语言学习、写作反馈、视觉学习与学习指南。。个性化学习助手，基于CellCog提供多模式AI辅导. 支持项目教程、语言学习、写作反馈、视觉学习与学习指南"
-license: "Proprietary"
+license: "MIT"
 description: |-
   个性化学习助手，基于CellCog提供多模式AI辅导.
   支持项目教程、语言学习、写作反馈、视觉学习与学习指南生成.

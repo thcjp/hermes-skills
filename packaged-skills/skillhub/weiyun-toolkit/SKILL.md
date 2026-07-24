@@ -4,7 +4,7 @@ name: "weiyun-toolkit"
 version: 1.0.1
 displayName: "微云工具箱(专业版)"
 summary: "微云网盘全功能版：12 类操作、分类查询、分享外链、批量删除、移动重命名与版本管理。。微云工具箱（专业版）面向团队与企业用户，提供微云网盘的全部 12 类 MCP工具能力：目录浏览、分类查询"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   微云工具箱（专业版）面向团队与企业用户，提供微云网盘的全部 12 类 MCP工具能力：目录浏览、分类查询、下载、上传、删除、分享外链、重命名、创建文件夹、移动文件/目录与版本检查。配套一键脚本、错误码全表、数据上报披露与多角色工作流。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -30,7 +30,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 微云工具箱(专业版)

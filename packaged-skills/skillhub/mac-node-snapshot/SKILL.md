@@ -4,7 +4,7 @@ name: "mac-node-snapshot"
 version: 1.0.1
 displayName: "mac-node-snapshot"
 summary: "经SkillHub screen record权限友好地截macOS屏幕。A robust, permission-friendly method to capture macOS scre"
-license: "Proprietary"
+license: "MIT"
 description: |-
   A robust, permission-friendly method to capture macOS screens via SkillHub
   screen。record。Use when 用户需要mac-node-snapshot相关功能时使用。不适用于超出本技能能力范围的复杂需求.
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # mac-node-snapshot

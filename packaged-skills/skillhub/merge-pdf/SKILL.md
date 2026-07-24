@@ -4,7 +4,7 @@ name: "merge-pdf"
 version: 1.0.1
 displayName: "Merge PDF"
 summary: "上传多PDF到Cross-Service-Solutions合并,轮询直至完成。Merge multiple user-provided PDF files by uploading the"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Merge multiple user-provided PDF files by uploading them to Cross-Service-Solutions,
   polling unti。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
@@ -21,7 +21,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Merge PDF

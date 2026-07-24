@@ -4,7 +4,7 @@ name: "slack-crawler"
 version: 1.0.1
 displayName: "Slack爬虫工具Pro"
 summary: "企业级Slack归档方案，含API同步、线程完整化、定时调度、增量更新与数据导出。。Slack爬虫工具（专业版）为团队与企业提供完整的Slack归档与检索方案，支持API同步、线程/DM完整"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   Slack爬虫工具（专业版）为团队与企业提供完整的Slack归档与检索方案，支持API同步、线程/DM完整化、定时调度与增量更新。核心能力：Slack API双向同步、线程回复与私信完整化、定时调度自动同步、增量更新与版本对比、数据导出（CSV/JSON）、高级SQL分析、多工作区归档、数据回滚。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -25,7 +25,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # Slack爬虫工具Pro

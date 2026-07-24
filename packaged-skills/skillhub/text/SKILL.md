@@ -4,7 +4,7 @@ name: "text"
 version: 1.0.1
 displayName: "Text"
 summary: "用模式转换/格式化/处理文本,写作/清洗/本地化/引用。Transform, format, and process text with patterns for writing, data"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Transform, format, and process text with patterns for writing, data
   cleaning, localization, citat。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Text

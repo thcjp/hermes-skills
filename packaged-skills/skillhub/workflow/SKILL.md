@@ -4,7 +4,7 @@ name: "workflow"
 version: 1.0.1
 displayName: "Workflow"
 summary: "用可复用组件/节点间数据流/状态管理建自动化流水线。Build automated pipelines with reusable components, data flow between"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Build automated pipelines with reusable components, data flow between
   nodes, and state management。核心能力:
@@ -36,7 +36,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Workflow

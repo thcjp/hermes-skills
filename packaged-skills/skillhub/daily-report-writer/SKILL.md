@@ -4,7 +4,7 @@ name: "daily-report-writer"
 version: 1.0.1
 displayName: "Daily Report Writer"
 summary: "根据输入生成日报 Markdown 草稿并写入 reports 目录。根据输入生成日报 Markdown 草稿并写入 reports 目录 核心能力: - 商业工具领域的专业化AI辅助工具"
-license: "Proprietary"
+license: "MIT"
 description: |-
   根据输入生成日报 Markdown 草稿并写入 reports 目录
 
@@ -34,7 +34,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Daily Report Writer

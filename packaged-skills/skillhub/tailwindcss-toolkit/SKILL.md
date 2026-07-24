@@ -4,7 +4,7 @@ name: "tailwindcss-toolkit"
 version: 1.0.1
 displayName: "Tailwind CSS工具包专业版"
 summary: "企业级Tailwind CSS工具包,支持自定义插件、设计系统、性能优化与组件库,适配团队协作与大型项目。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业用户的 Tailwind CSS 工具包(专业版)。核心能力:
@@ -40,7 +40,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Tailwind CSS工具包专业版

@@ -4,7 +4,7 @@ name: "brave-search"
 version: 1.0.2
 displayName: "Brave Search"
 summary: "经Brave Search API做网页搜索与内容提取,隐私优先。Web search and content extraction via Brave Search API。核心能力: -"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Web search and content extraction via Brave Search API。核心能力:
 
@@ -36,7 +36,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # Brave Search

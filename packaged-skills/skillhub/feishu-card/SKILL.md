@@ -4,7 +4,7 @@ name: "feishu-card"
 version: 1.4.12
 displayName: "协作平台卡片"
 summary: "发送富交互协作平台卡片，支持Markdown、标题、按钮、图片和人格化消息。向协作平台用户或群组发送富交互卡片。支持Markdown（代码块、表格）、标题、彩色头部、 按钮组件、图片嵌入和多"
-license: "Proprietary"
+license: "MIT"
 description: |-
   向协作平台用户或群组发送富交互卡片。支持Markdown（代码块、表格）、标题、彩色头部、
   按钮组件、图片嵌入和多种AI人格化消息样式。适用于自动化通知、告警推送、

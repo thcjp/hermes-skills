@@ -4,7 +4,7 @@ name: "key-vault-manager"
 version: 1.0.1
 displayName: "密钥保险箱(专业版)"
 summary: "企业级密钥安全管家，支持多保险箱、审计日志、密钥轮换与团队共享。密钥保险箱(专业版)是面向团队与企业的全功能密钥安全管理工具，在免费版基础上新增多保险箱管理、审计日志、密钥轮换与团队共享等高"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   密钥保险箱(专业版)是面向团队与企业的全功能密钥安全管理工具，在免费版基础上新增多保险箱管理、审计日志、密钥轮换与团队共享等高级能力。核心能力：
@@ -37,7 +37,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 密钥保险箱(专业版)

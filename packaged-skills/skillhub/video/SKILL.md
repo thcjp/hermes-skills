@@ -4,7 +4,7 @@ name: "video"
 version: 1.0.2
 displayName: "Video"
 summary: "为任意平台处理/编辑/优化视频,压缩/转码/字幕。Process, edit, and optimize videos for any platform with compression,"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Process, edit, and optimize videos for any platform with compression,
   format conversion, captioni. 自动处理与优化视频,支持压缩转码与字幕生成
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # Video

@@ -4,7 +4,7 @@ name: "format-converter"
 version: 1.0.1
 displayName: "数据格式转换(专业版)"
 summary: "全功能数据格式转换平台,支持批量、流式、自定义映射、定时任务与企业数据库导入导出。。数据格式转换专业版面向需要在大规模数据与多源系统间进行格式转换的专业开发者与数据工程师,提供完整的批量、流"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   数据格式转换专业版面向需要在大规模数据与多源系统间进行格式转换的专业开发者与数据工程师,提供完整的批量、流式、自动化转换能力。核心能力:
@@ -38,7 +38,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 数据格式转换(专业版)

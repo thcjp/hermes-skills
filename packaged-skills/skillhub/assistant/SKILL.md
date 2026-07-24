@@ -4,7 +4,7 @@ name: "assistant"
 version: 1.0.1
 displayName: "Assistant"
 summary: "主动有序管理任务沟通与日程,做你的全能助理,琐事不遗漏。Manage tasks, communications, and scheduling with proactive and org"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Manage tasks, communications, and scheduling with proactive and organized
   support。核心能力:
@@ -35,7 +35,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Assistant

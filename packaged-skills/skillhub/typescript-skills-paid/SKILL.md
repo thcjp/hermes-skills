@@ -4,7 +4,7 @@ name: "typescript-skills-paid"
 version: 1.0.1
 displayName: "TS编码规范工具(专业版)"
 summary: "面向团队的TypeScript编码规范平台,含自动化审查、规则集管理、CI集成与规范文档生成。。TypeScript编码规范工具专业版为团队与企业提供端到端编码规范落地能力,涵盖自动化审查、"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   TypeScript编码规范工具专业版为团队与企业提供端到端编码规范落地能力,涵盖自动化审查、企业级规则集、CI集成与规范文档自动生成。核心能力:
@@ -42,7 +42,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # TS编码规范工具(专业版)

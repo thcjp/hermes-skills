@@ -5,7 +5,7 @@ name: "join-meeting"
 version: 1.1.16
 displayName: "智能会议机器人"
 summary: "会议机器人，支持会议感知、系统状态管理、生命周期、语音状态与TTS事件处理。。智能会议机器人，主动感知并参与在线会议. 支持会议感知、系统状态管理、生命周期管理（加入/离开）. 覆盖语音状态"
-license: "Proprietary"
+license: "MIT"
 description: |-
   智能会议机器人，主动感知并参与在线会议.
   支持会议感知、系统状态管理、生命周期管理（加入/离开）.

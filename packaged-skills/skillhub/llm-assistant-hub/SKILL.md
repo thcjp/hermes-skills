@@ -4,7 +4,7 @@ name: "llm-assistant-hub"
 version: 1.0.1
 displayName: "LLM助手中枢"
 summary: "长文档推理优化器：分层分析+假设检测+结构化压缩+差异化比对。。针对商业、法律等高风险长文档的长上下文推理优化器，提供五大核心能力. 分层分析策略（L0快速扫描→L1深度分析→L2聚焦深挖）"
-license: "Proprietary"
+license: "MIT"
 description: |-
   针对商业、法律等高风险长文档的长上下文推理优化器，提供五大核心能力.
   分层分析策略（L0快速扫描→L1深度分析→L2聚焦深挖）按文档长度自动选择层级组合，控制token成本.

@@ -4,7 +4,7 @@ name: "anthrovision-telegram-body-scan"
 version: 1.0.5
 displayName: "Body Scan Flow"
 summary: "在Telegram中运行端到端身体扫描测量流程,含同意、轮询与确定性输出。在Telegram中运行端到端身体扫描测量流程。通过AnthroVision桥接工具提交视频, 执行同意流程、轮询状"
-license: "Proprietary"
+license: "MIT"
 description: |-
   在Telegram中运行端到端身体扫描测量流程。通过AnthroVision桥接工具提交视频,
   执行同意流程、轮询状态检查与确定性测量结果输出。核心能力覆盖输入校验、
@@ -26,7 +26,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # Anthrovision Telegram Body Scan

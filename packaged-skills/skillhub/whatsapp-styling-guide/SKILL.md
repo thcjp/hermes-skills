@@ -4,7 +4,7 @@ name: "whatsapp-styling-guide"
 version: 1.0.1
 displayName: "WhatsApp 排版指南"
 summary: "WhatsApp消息排版参考指南,涵盖语法规则、禁用范式、风格规范与消息模板库。WhatsApp消息排版参考指南。提供WhatsApp原生排版语法的完整规则说明、禁用范式目录、 Human-"
-license: "Proprietary"
+license: "MIT"
 description: |-
   WhatsApp消息排版参考指南。提供WhatsApp原生排版语法的完整规则说明、禁用范式目录、
   Human-to-Human风格规范,以及面向通知、客服、营销、公告四类场景的消息模板库.
@@ -28,7 +28,6 @@ tools:
   - write
   - exec
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # WhatsApp 排版指南

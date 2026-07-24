@@ -4,7 +4,7 @@ name: "who-is-actor"
 version: 1.0.1
 displayName: "Who Is Actor"
 summary: "Git仓库参与者识别技能。Git repository actor identification skill。核心能力: - 开发工具领域的专业化AI辅助工具 - 基于高人气开源Skil"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Git repository actor identification skill。核心能力:
 
@@ -34,7 +34,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Who Is Actor

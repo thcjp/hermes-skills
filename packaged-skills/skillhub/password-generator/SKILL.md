@@ -4,7 +4,7 @@ name: "password-generator"
 version: 1.1.1
 displayName: "Password Generator"
 summary: "生成随机安全密码。长度12-16位随机(默认)，包含大小写字母、数字、符号。当用户要求生成密码、创建密码、随机密码时使用此技能。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   生成随机安全密码。长度12-16位随机(默认)，包含大小写字母、数字、符号。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Password Generator

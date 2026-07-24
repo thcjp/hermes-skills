@@ -5,7 +5,7 @@ name: "markdown-converter-tool"
 version: "1.0.0"
 displayName: "Markdown Converter"
 summary: "简洁Markdown转换助手(用Azure有隐私提示)。This is a straightforward Markdown conversion helper, with privacy"
-license: "Proprietary"
+license: "MIT"
 description: This is a straightforward Markdown conversion helper, with privacy caveats if users choose Azure，可处理提升工作效率
 tags:
   - Creative
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 
 ---

@@ -4,7 +4,7 @@ name: "finance-toolkit"
 version: 1.0.1
 displayName: "行情追踪专业工具"
 summary: "多数据源行情追踪，支持股票、ETF、指数、外汇、加密货币，含告警与批量导出。。面向专业投资者与交易团队的多数据源行情追踪工具。支持股票、ETF、指数、 外汇、加密货币的实时报价与深度历史数据"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业投资者与交易团队的多数据源行情追踪工具。支持股票、ETF、指数、
@@ -24,7 +24,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Finance"
 ---
 # 行情追踪专业工具

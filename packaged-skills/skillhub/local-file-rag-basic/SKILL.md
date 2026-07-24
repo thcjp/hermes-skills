@@ -4,7 +4,7 @@ name: "local-file-rag-basic"
 version: 1.0.1
 displayName: "local-file-rag-basic"
 summary: "高性能本地文件RAG套件基础版。High-performance local File RAG suite (Basic Edition)。核心能力: - 知识管理领域的专业化AI辅助工具"
-license: "Proprietary"
+license: "MIT"
 description: |-
   High-performance local File RAG suite (Basic Edition)。核心能力:
 
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # local-file-rag-basic

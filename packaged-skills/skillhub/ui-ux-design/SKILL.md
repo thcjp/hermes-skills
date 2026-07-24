@@ -4,7 +4,7 @@ name: "ui-ux-design"
 version: 1.0.1
 displayName: "UI/UX设计指南"
 summary: "涵盖设计原则、配色系统、Shadcn/ui+Tailwind栈、响应式设计与WCAG 2.2无障碍的完整指南。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   现代UI/UX设计原则、模式与最佳实践指南.
   涵盖Mobile-First响应式设计、配色系统、排版、WCAG 2.2无障碍.

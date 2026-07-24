@@ -4,7 +4,7 @@ name: "tailwindcss"
 version: 1.0.1
 displayName: "Tailwind CSS"
 summary: "写Tailwind工具类,响应式/暗色模式/配置得当。Write Tailwind utility classes with proper responsive design, dark m"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Write Tailwind utility classes with proper responsive design, dark mode,
   and configuration。核心能力:
@@ -35,7 +35,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Tailwind CSS

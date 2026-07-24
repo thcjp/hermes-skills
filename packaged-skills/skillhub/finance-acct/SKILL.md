@@ -4,7 +4,7 @@ name: "finance-acct"
 version: 1.0.1
 displayName: "财务会计专业版"
 summary: "企业级财务会计系统，支持多账套、全税种、批量发票、ERP集成与审计追踪。。面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、 全税种自动计算、批量电子发票生成、银行API直连对"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、
@@ -28,7 +28,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Finance"
 ---
 # 财务会计专业版

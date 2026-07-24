@@ -4,7 +4,7 @@ name: "namecheap-dns"
 version: 1.1.1
 displayName: "Namecheap DNS"
 summary: "安全管理Namecheap DNS,拉取/合并/自动备份/原子更新。Manage Namecheap DNS records safely by fetching existing entr"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Manage Namecheap DNS records safely by fetching existing entries, merging
   changes, auto-backing u。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -28,7 +28,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Namecheap DNS

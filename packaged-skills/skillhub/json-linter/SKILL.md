@@ -4,7 +4,7 @@ name: "json-linter"
 version: 1.0.1
 displayName: "Json Linter"
 summary: "校验工作区JSON语法,排查配置语法错误。Validates JSON syntax across the workspace。Use this skill to check for syn"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Validates JSON syntax across the workspace。Use this skill to check
   for syntax errors in configur。Use when 用户需要Json Linter相关功能时使用。不适用于超出本技能能力范围的复杂需求.
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Json Linter

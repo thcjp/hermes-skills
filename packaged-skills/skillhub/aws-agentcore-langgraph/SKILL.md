@@ -4,7 +4,7 @@ name: "aws-agentcore-langgraph"
 version: 1.0.3
 displayName: "AgentCore LangGraph"
 summary: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体"
-license: "Proprietary"
+license: "MIT"
 description: |-
   基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体系统构建与部署助手.
   覆盖智能体编排(Orchestrator + Specialists)、跨会话记忆(STM/LTM)、
@@ -29,7 +29,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # aws-agentcore-langgraph

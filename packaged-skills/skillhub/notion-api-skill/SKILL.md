@@ -4,7 +4,7 @@ name: "notion-api-skill"
 version: 1.0.12
 displayName: "Notion"
 summary: "Notion API托管OAuth集成,查数据库/搜页面/读工作区。Notion API integration with managed OAuth。Query databases, se"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Notion API integration with managed OAuth。Query databases, search pages,
   and read workspace cont。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
@@ -23,7 +23,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # Notion

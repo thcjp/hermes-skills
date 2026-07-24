@@ -4,7 +4,7 @@ name: "csv-handler"
 version: 2.1.1
 displayName: "CSV文件处理专家"
 summary: "自动检测编码与分隔符，清洗、合并、拆分、转换CSV数据，支持进度计划与成本数据专用解析。CSV文件处理专家，覆盖建筑、工程、财务等场景下的CSV全生命周期管理. 核心能力包括： - 编码自动"
-license: "Proprietary"
+license: "MIT"
 description: |-
   CSV文件处理专家，覆盖建筑、工程、财务等场景下的CSV全生命周期管理.
   核心能力包括：
@@ -33,7 +33,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # CSV文件处理专家

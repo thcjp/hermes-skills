@@ -4,7 +4,7 @@ name: "logo-design-guide"
 version: 0.1.6
 displayName: "Logo设计指南"
 summary: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。。从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式 输出(PNG/JPG/SVG/ICO/WebP)、多平"
-license: "Proprietary"
+license: "MIT"
 description: |-
   从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式
   输出(PNG/JPG/SVG/ICO/WebP)、多平台适配(Favicon/App/PWA/Social)、

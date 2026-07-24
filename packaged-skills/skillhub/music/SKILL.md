@@ -5,7 +5,7 @@ name: "music"
 version: 1.0.1
 displayName: "Music"
 summary: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆。Build a personal music system for tracking discoveries, favorites, con"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Build a personal music system for tracking discoveries, favorites, concerts,
   and listening memories。核心能力:
@@ -31,7 +31,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 
 ---

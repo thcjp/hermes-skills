@@ -5,7 +5,7 @@ name: "domain-dns-ops"
 version: 1.0.1
 displayName: "Domain Dns Ops"
 summary: "跨Cloudflare/DNSimple/Namecheap做域名DNS运维与区托管。Domain/DNS ops across Cloudflare, DNSimple, Namechea"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter。Use
   for onboarding zones to Clou。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

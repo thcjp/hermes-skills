@@ -4,7 +4,7 @@ name: "aws-wechat-article-writing"
 version: 1.0.26
 displayName: "公众号长文写作引擎"
 summary: "公众号长文AI写作,从提纲或话题生成完整初稿,支持改写续写润色与多模型切换。面向微信公众号长文的 AI 写作引擎。从选题卡、提纲或口述话题生成完整初稿, 覆盖改写、续写、润色、开头结尾优化等"
-license: "Proprietary"
+license: "MIT"
 description: |-
   面向微信公众号长文的 AI 写作引擎。从选题卡、提纲或口述话题生成完整初稿,
   覆盖改写、续写、润色、开头结尾优化等环节。写作约束来自 .aws-article/config.yaml
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # Aws Wechat Article Writing

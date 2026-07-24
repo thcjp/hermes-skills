@@ -5,7 +5,7 @@ name: "chart-generator-2-0-0"
 version: 1.0.1
 displayName: "Chart Generator 2 0"
 summary: "数据可视化出SVG图表,柱/线/饼图即需即出。Data visualization tool producing SVG charts。Use when you need bar chart"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Data visualization tool producing SVG charts。Use when you need bar
   charts, line charts, pie char。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

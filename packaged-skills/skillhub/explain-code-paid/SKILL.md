@@ -4,7 +4,7 @@ name: "explain-code-paid"
 version: 1.0.1
 displayName: "代码解释工具专业版"
 summary: "企业级代码理解工具,支持项目架构分析、批量文档生成、Mermaid可视化与API文档输出。。面向研发团队的高级代码理解工具,提供项目级架构分析、批量代码文档生成、Mermaid/UML可视化"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向研发团队的高级代码理解工具,提供项目级架构分析、批量代码文档生成、Mermaid/UML可视化与API文档自动输出。核心能力:
@@ -42,7 +42,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # 代码解释工具专业版

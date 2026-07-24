@@ -4,7 +4,7 @@ name: "video-editing-paid"
 version: 1.0.1
 displayName: "视频剪辑变现专业版"
 summary: "多渠道矩阵+团队SOP+数据看板+90日全流程+合规体系,面向工作室的专业变现运营引擎。面向视频剪辑工作室和团队的专业级变现运营引擎,提供多渠道矩阵策略、 团队协作SOP、数据追踪看板、90"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向视频剪辑工作室和团队的专业级变现运营引擎,提供多渠道矩阵策略、
@@ -45,7 +45,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 视频剪辑变现专业版

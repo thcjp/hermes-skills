@@ -4,7 +4,7 @@ name: "java-development-manual"
 version: 0.1.1
 displayName: "Java Development Man"
 summary: "Java开发手册规约集合，基于阿里巴巴Java开发手册（嵩山版）。 涵盖7大维度：编程规约、异常日志、单元测试、安全规约、MySQL数据库、工程结构、设计规约。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Java开发手册规约集合，基于阿里巴巴Java开发手册（嵩山版）。涵盖7大维度：编程规约、异常日志、单元测试、安全规约、MySQL数据库、工程结构、设计规约。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
 tags:
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Java Development Man

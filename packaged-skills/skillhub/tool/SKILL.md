@@ -4,7 +4,7 @@ name: "tool"
 version: 1.0.1
 displayName: "Tool"
 summary: "AI Agent技能,查找/评估/用好可用工具。A comprehensive AI agent skill for finding, evaluating, and getting the"
-license: "Proprietary"
+license: "MIT"
 description: |-
   A comprehensive AI agent skill for finding, evaluating, and getting
   the most from the tools that 。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -18,7 +18,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Tool

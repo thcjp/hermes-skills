@@ -4,7 +4,7 @@ name: fortune-reading-studio
 version: "1.0.1"
 displayName: "赛博命理师"
 summary: "一人开命理工作室,8种命理体系排盘+AI深度解读,9.9到99元全价位变现。赛博命理师是一款面向命理咨询从业者的AI命理解读工具. 支持8种命理体系排盘、AI深度解读生成报告、安全交付与运势"
-license: Proprietary
+license: "MIT"
 description: |-
   赛博命理师是一款面向命理咨询从业者的AI命理解读工具.
   支持8种命理体系排盘、AI深度解读生成报告、安全交付与运势引流,9.9到99元全价位变现.

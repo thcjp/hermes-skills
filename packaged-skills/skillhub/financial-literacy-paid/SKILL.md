@@ -4,7 +4,7 @@ name: "financial-literacy-paid"
 version: 1.0.1
 displayName: "金融素养专业版"
 summary: "专业金融教育与理财规划系统，支持个性化方案、认证培训与企业内训。。面向专业用户与机构的全栈金融素养教育系统。支持个性化理财方案生成、 金融从业认证培训课程、企业内训定制与学习进度追踪。Use"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向专业用户与机构的全栈金融素养教育系统。支持个性化理财方案生成、
@@ -28,7 +28,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # 金融素养专业版

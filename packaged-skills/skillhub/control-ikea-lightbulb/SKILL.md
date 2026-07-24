@@ -5,7 +5,7 @@ name: "control-ikea-lightbulb"
 version: 1.0.2
 displayName: "Control Ikea Lightbu"
 summary: "控IKEA/TP-Link Kasa智能灯泡,开关/亮度/颜色一键调。Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightnes"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Control IKEA/TP-Link Kasa smart bulbs (set on/off, brightness, and color)。Use when you want to p。Use when 用户需要Control Ikea Lightbu相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags: api,依赖说明,不支持,agent,确认运行
@@ -14,7 +14,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

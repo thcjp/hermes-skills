@@ -4,7 +4,7 @@ name: "excel-xlsx"
 version: 1.0.3
 displayName: "Excel / XLSX"
 summary: "创建检查编辑Excel工作簿与XLSX,公式/日期可靠。Create, inspect, and edit Microsoft Excel workbooks and XLSX files"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Create, inspect, and edit Microsoft Excel workbooks and XLSX files with
   reliable formulas, dates,。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Excel / XLSX

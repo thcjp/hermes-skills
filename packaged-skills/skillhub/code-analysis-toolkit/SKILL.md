@@ -4,7 +4,7 @@ name: "code-analysis-toolkit"
 version: 1.0.1
 displayName: "代码分析工具包专业版"
 summary: "企业级Git历史分析,支持团队复盘、同意管理、趋势追踪与多格式报告。面向团队与企业的高级 Git 历史分析工具,在免费版基础上扩展团队复盘、同意管理、趋势追踪等能力。核心能力: - 团队复盘"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业的高级 Git 历史分析工具,在免费版基础上扩展团队复盘、同意管理、趋势追踪等能力。核心能力:
@@ -45,7 +45,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # 代码分析工具包专业版

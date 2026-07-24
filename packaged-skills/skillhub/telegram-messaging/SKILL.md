@@ -4,7 +4,7 @@ name: "telegram-messaging"
 version: 0.2.3
 displayName: "Telegram 消息机器人"
 summary: "通过 Telegram Bot API 发送消息、管理聊天、处理文件与自动化机器人工作流。。Telegram Bot API 集成 Skill。支持发送文本、图片、文档、位置、投票等多类型消"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Telegram Bot API 集成 Skill。支持发送文本、图片、文档、位置、投票等多类型消息，
   管理聊天信息与成员、检索聊天历史、转发与编辑消息、生成与撤销邀请链接、
@@ -27,7 +27,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # Telegram 消息机器人

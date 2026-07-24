@@ -4,7 +4,7 @@ name: "dns-config"
 version: 1.0.1
 displayName: "DNS配置工具专业版"
 summary: "企业级 DNS 配置工具,支持 CAA、Cloudflare 代理、通配符与批量迁移策略。。面向企业运维与基础设施团队的 DNS 全功能配置与迁移工具。核心能力: - CAA 记录配置(限制"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向企业运维与基础设施团队的 DNS 全功能配置与迁移工具。核心能力:
@@ -42,7 +42,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # DNS配置工具专业版

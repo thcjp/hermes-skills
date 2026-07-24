@@ -4,7 +4,7 @@ name: "agent-browser-automation"
 version: "0.1.0"
 displayName: "Agent Browser"
 summary: "无头浏览器自动化CLI,专为AI Agent优化,带可访问性树快照与引用,稳定抓取。Headless browser automation CLI optimized for AI agen"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Headless browser automation CLI optimized for AI agents with accessibility
   tree snapshots and ref。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Agent Browser

@@ -4,7 +4,7 @@ name: "api-integration"
 version: 1.0.1
 displayName: "API集成开发助手"
 summary: "掌握RESTful调用、GraphQL查询、OAuth2/JWT认证管理与错误处理,连接第三方服务扩展能力"
-license: "Proprietary"
+license: "MIT"
 description: |-
   API 集成开发助手。掌握 RESTful API 调用、GraphQL 查询支持、API 认证管理（API Key/OAuth2/JWT/Basic Auth）
   与错误处理等核心能力。提供 Python requests 调用模板、OAuth2 client_credentials 令牌获取、
@@ -26,7 +26,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Development"
 ---
 # API 集成开发助手

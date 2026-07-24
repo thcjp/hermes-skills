@@ -4,7 +4,7 @@ name: "communication-skill"
 version: 0.1.1
 displayName: "Comm Crafter Pro"
 summary: "基于GATHER-LISTEN-CONSIDER-CRAFT-REFINE五步法,融合心理学原理,打磨高情商沟通回复与冲突调解方案。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   Communication Crafter Pro 是面向复杂人际沟通场景的专业级消息打磨工具,融合心理学原理与结构化表达框架,帮助用户在高压对话、冲突调解、跨文化沟通、敏感反馈等场景中产出高情商、高说服力的回复。核心能力:
@@ -41,7 +41,6 @@ tools:
   - write
   - exec
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Communication Crafter Pro

@@ -4,7 +4,7 @@ name: "vpn-rotator"
 version: 1.0.1
 displayName: "VPN轮换工具专业版"
 summary: "全功能VPN轮换平台，支持自动重连、多VPN并发、负载均衡与熔断机制。面向数据工程团队与自动化测试团队的全功能VPN轮换平台，支持多VPN并发管理、智能负载均衡、自动重连与失败熔断。核心能力"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向数据工程团队与自动化测试团队的全功能VPN轮换平台，支持多VPN并发管理、智能负载均衡、自动重连与失败熔断。核心能力：在免费版基础上新增自动重连机制、多VPN会话池、智能负载均衡、失败熔断器、VPN+SOCKS5代理链、按地区智能路由与性能监控仪表盘。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
@@ -30,7 +30,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # VPN轮换工具专业版

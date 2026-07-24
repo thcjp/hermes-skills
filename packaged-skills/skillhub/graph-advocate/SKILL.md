@@ -4,7 +4,7 @@ name: "graph-advocate"
 version: 2.9.2
 displayName: "Graph Advocate"
 summary: "把区块链数据问题路由到对的Graph Protocol服务,返实时数据。Route any blockchain data question to the right Graph Proto"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Route any blockchain data question to the right Graph Protocol service。Returns live data from 15。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Graph Advocate

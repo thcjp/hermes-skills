@@ -5,7 +5,7 @@ name: "media-server-control"
 version: "1.3.0"
 displayName: "Jellyfin Control"
 summary: "控Jellyfin媒体服务器与TV,搜索/续播/管会话。Control Jellyfin media server and TV。Search content, resume playbac"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Control Jellyfin media server and TV。Search content, resume playback,
   manage sessions, control T。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

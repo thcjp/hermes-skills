@@ -4,7 +4,7 @@ name: intel-sentinel
 version: 1.0.1
 displayName: "情报哨兵"
 summary: "开源情报自动收集与威胁分析,多源监控+AI分析+实时告警。情报哨兵是一款开源情报(OSINT)自动收集与威胁分析工具. 支持多源情报监控、AI威胁分析、实时告警推送、情报去重与关联分析. 核"
-license: Proprietary
+license: "MIT"
 description: |-
   情报哨兵是一款开源情报(OSINT)自动收集与威胁分析工具.
   支持多源情报监控、AI威胁分析、实时告警推送、情报去重与关联分析.

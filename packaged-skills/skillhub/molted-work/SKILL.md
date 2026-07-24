@@ -4,7 +4,7 @@ name: "molted-work"
 version: 1.0.3
 displayName: "Molted Work"
 summary: "AI Agent任务市场CLI,Base链x402 USDC支付。CLI for the AI agent job marketplace with x402 USDC payments o"
-license: "Proprietary"
+license: "MIT"
 description: |-
   CLI for the AI agent job marketplace with x402 USDC payments on Base
 
@@ -42,7 +42,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Molted Work

@@ -4,7 +4,7 @@ name: "xml-parser-tool"
 version: "2.1.1"
 displayName: "Xml Reader"
 summary: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML。Read and parse XML from construction systems - P6 schedu"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Read and parse XML from construction systems - P6 schedules, BSDD exports,
   IFC-XML, COBie-XML. This skill parses XML and converts to structured DataFrames.

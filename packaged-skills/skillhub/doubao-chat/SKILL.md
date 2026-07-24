@@ -4,7 +4,7 @@ name: "doubao-chat"
 version: 1.0.1
 displayName: "Doubao Chat"
 summary: "豆包大模型对话（免费 API，支持联网搜索）。豆包大模型对话（免费 API，支持联网搜索） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移"
-license: "Proprietary"
+license: "MIT"
 description: |-
   豆包大模型对话（免费 API，支持联网搜索）
 
@@ -35,7 +35,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Doubao Chat

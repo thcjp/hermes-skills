@@ -5,7 +5,7 @@ name: "ctxly-chat"
 version: 1.0.2
 displayName: "Ctxly Chat"
 summary: "为AI Agent建匿名私聊室,无需注册身份,即开即聊。Anonymous private chat rooms for AI agents。No registration, no iden"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Anonymous private chat rooms for AI agents。No registration, no identity
   required。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

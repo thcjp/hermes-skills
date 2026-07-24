@@ -4,7 +4,7 @@ name: "reddit-research"
 version: 1.0.1
 displayName: "Reddit Research"
 summary: "提取汇总Reddit趋势话题/反复问题/内容空白。Extracts and summarizes trending topics, recurring issues, and content"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Extracts and summarizes trending topics, recurring issues, and content
   gaps across targeted Reddi。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
@@ -21,7 +21,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Knowledge"
 ---
 # Reddit Research

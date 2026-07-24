@@ -4,7 +4,7 @@ name: "podcast-toolkit"
 version: 1.0.1
 displayName: "播客创作工具包专业版"
 summary: "企业级播客创作与运营工具包,支持多节目管理、增长分析、变现策略与AI生成,适配团队协作。。面向团队与专业创作者的播客创作与运营工具包(专业版)。核心能力: - 涵盖免费版全部能力(选题、脚本"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与专业创作者的播客创作与运营工具包(专业版)。核心能力:
@@ -44,7 +44,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 播客创作工具包专业版

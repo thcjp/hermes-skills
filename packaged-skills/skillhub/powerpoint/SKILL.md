@@ -5,7 +5,7 @@ name: "powerpoint"
 version: 1.0.1
 displayName: "PowerPoint"
 summary: "经osascript控PowerPoint会话/幻灯片/备注/导出/放映状态。Control PowerPoint app sessions, slides, notes, export,"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Control PowerPoint app sessions, slides, notes, export, and presentation
   state with osascript wor。Use when 用户需要PowerPoint相关功能时使用。不适用于超出本技能能力范围的复杂需求.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

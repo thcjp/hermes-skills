@@ -4,7 +4,7 @@ name: "safe-encryption-skill"
 version: 0.1.1
 displayName: "Safe Encryption"
 summary: "用SAFE CLI加解密管密钥,现代GPG替代,抗量子。Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG alternative
   with post-quantum 。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Safe Encryption

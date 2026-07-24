@@ -4,7 +4,7 @@ name: "frontend-design-anthropic"
 version: 1.0.1
 displayName: "前端设计-专业版"
 summary: "企业级前端设计工具,支持设计系统生成、组件库批量产出、多端适配,适配商业产品开发。。前端设计专业版,面向企业团队与专业设计师的高级前端界面设计工具。核心能力: - 完整设计系统生成(Desi"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   前端设计专业版,面向企业团队与专业设计师的高级前端界面设计工具。核心能力:
@@ -39,7 +39,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 前端设计-专业版

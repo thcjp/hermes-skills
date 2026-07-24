@@ -5,7 +5,7 @@ name: "tg-body-scan"
 version: 1.0.1
 displayName: "体测扫描工具专业版"
 summary: "企业级 Telegram 体测测量平台，支持批量扫描、历史趋势、团队管理与高级分析报表。。面向健身工作室、运动队与健康管理团队的批量体测测量平台. 核心能力: 批量视频扫描、历史趋势对比、团"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向健身工作室、运动队与健康管理团队的批量体测测量平台.
@@ -18,7 +18,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

@@ -5,7 +5,7 @@ name: "go-to-market"
 version: 0.1.1
 displayName: "上市策略"
 summary: "从ICP定义到90天执行计划,覆盖定位、渠道、定价与度量的GTM全流程。。构建产品上市或进入新市场的GTM策略:目标客户画像、定位陈述、 销售运动模式选择、渠道筛选、90天执行计划、定价与优"
-license: "Proprietary"
+license: "MIT"
 description: 构建产品上市或进入新市场的GTM策略:目标客户画像、定位陈述、 销售运动模式选择、渠道筛选、90天执行计划、定价与优惠、度量 迭代与常见错误规避，可处理提升工作效率
 tools:
   - read

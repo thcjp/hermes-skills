@@ -4,7 +4,7 @@ name: "agent-browser-stagehand"
 version: 1.0.1
 displayName: "Agent Browser Stageh"
 summary: "自然语言驱动浏览器自动化,CLI直达交互,免去手写选择器的繁琐。Automate web browser interactions using natural language via CL"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
 tags:
@@ -23,7 +23,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Agents"
 ---
 # Agent Browser Stageh

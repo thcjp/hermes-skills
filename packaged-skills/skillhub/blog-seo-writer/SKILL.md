@@ -4,7 +4,7 @@ name: "blog-seo-writer"
 version: 1.0.1
 displayName: "blog-seo-writer"
 summary: "写Google高排名SEO博文,内置关键词/元描述/结构化,流量可期。Create SEO-optimized blog posts that rank higher on Google。I"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Create SEO-optimized blog posts that rank higher on Google。Includes
   keyword integration, meta de。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
@@ -23,7 +23,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # blog-seo-writer

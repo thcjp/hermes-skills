@@ -4,7 +4,7 @@ name: "tmux-session"
 version: 1.0.1
 displayName: "Tmux会话工具专业版"
 summary: "企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计。面向团队与企业的高级 tmux 会话管理工具,在免费版基础上扩展多会话、编排、监控等能力。核心能力: - 多会话批量管理与并"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向团队与企业的高级 tmux 会话管理工具,在免费版基础上扩展多会话、编排、监控等能力。核心能力:
@@ -48,7 +48,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Tmux会话工具专业版

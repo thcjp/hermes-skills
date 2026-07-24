@@ -4,7 +4,7 @@ name: "slack"
 version: 1.0.1
 displayName: "Slack 消息管理"
 summary: "通过slack工具管理Slack消息:回应、置顶、发送/编辑/删除、成员与表情查询。Slack 消息管理。通过 slack 工具对 Slack 工作区进行消息操作,涵盖五大动作组: reac"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Slack 消息管理。通过 slack 工具对 Slack 工作区进行消息操作,涵盖五大动作组:
   reactions(添加回应与列出回应)、messages(发送、编辑、删除、读取消息)、
@@ -30,7 +30,6 @@ tools:
   - write
   - exec
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # Slack 消息管理

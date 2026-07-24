@@ -4,7 +4,7 @@ name: "gif-whatsapp"
 version: 1.3.1
 displayName: "Gif Whatsapp"
 summary: "在WhatsApp搜发GIF,自动处理Tenor转MP4转换。Search and send GIFs on WhatsApp。Handles the Tenor→MP4 conversio"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Search and send GIFs on WhatsApp。Handles the Tenor→MP4 conversion required
   for WhatsApp。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
@@ -20,7 +20,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Communication"
 ---
 # Gif Whatsapp

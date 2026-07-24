@@ -4,7 +4,7 @@ name: "telegram-bot-builder"
 version: 1.0.1
 displayName: "Telegram Bot Builder"
 summary: "Telegram Bot 快速build工具 - Keyboard、Inline Buttons、Webhook、Auto-reply、Group管理"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Telegram Bot 快速build工具 - Keyboard、Inline Buttons、Webhook、Auto-reply、Group管理
 
@@ -40,7 +40,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # Telegram Bot Builder

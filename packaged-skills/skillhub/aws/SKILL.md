@@ -4,7 +4,7 @@ name: "aws"
 version: 1.0.3
 displayName: "Aws"
 summary: "架构部署优化AWS基础设施,避开成本失控与安全陷阱,省钱又稳。Architect, deploy, and optimize AWS infrastructure avoiding cost"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Architect, deploy, and optimize AWS infrastructure avoiding cost explosions
   and security pitfalls。核心能力:
@@ -37,7 +37,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Operations"
 ---
 # Aws

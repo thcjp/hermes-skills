@@ -5,7 +5,7 @@ name: "generate-presentation"
 version: 1.0.1
 displayName: "Generate Presentatio"
 summary: "从Markdown/URL/主题生成专业HTML与PDF演示文稿。Generate professional HTML and PDF presentations from markdown"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Generate professional HTML and PDF presentations from markdown content,
   URLs, or topics。Creates。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
@@ -15,7 +15,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

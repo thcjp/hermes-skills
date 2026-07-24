@@ -4,7 +4,7 @@ name: "gog"
 version: 1.0.1
 displayName: "Gog"
 summary: "Google Workspace命令行工具,覆盖Gmail/日历/云盘/联系人/表格/文档六大服务。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Google Workspace 命令行工具技能。通过 `gog` CLI 统一操作 Gmail、Calendar、Drive、
   Contacts、Sheets、Docs 六大服务,支持 OAuth 凭证管理、多账户切换、JSON 结构化输出与
@@ -28,7 +28,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # gog

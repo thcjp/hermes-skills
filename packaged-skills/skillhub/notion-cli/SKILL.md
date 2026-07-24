@@ -5,7 +5,7 @@ name: "notion-cli"
 version: 1.0.1
 displayName: "Notion命令行(专业版)"
 summary: "企业级Notion命令行工具,支持多工作空间、文件上传、Schema管理、批量操作与审计日志,适合团队与企业规模化使用。"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   Notion命令行(专业版)是面向团队与企业的全功能Notion操作Skill,在免费版基础上新增多工作空间管理、文件上传、Schema管理、页面移动、批量操作、模板管理、自定义输出与审计日志等高级能力。核心能力:
@@ -25,7 +25,6 @@ tools:
   - glob
   - grep
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

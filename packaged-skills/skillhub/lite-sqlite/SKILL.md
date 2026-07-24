@@ -4,7 +4,7 @@ name: "lite-sqlite"
 version: 1.0.1
 displayName: "Lite Sqlite"
 summary: "SkillHub Agent用的快速轻量本地SQLite,低RAM低存储。Fast lightweight local SQLite database for SkillHub agents"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Fast lightweight local SQLite database for SkillHub agents with minimal
   RAM and storage usage。Us。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
@@ -22,7 +22,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # Lite Sqlite

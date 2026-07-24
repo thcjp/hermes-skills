@@ -4,7 +4,7 @@ name: "sqlite"
 version: 1.0.1
 displayName: "SQLite"
 summary: "正确用SQLite,并发/pragmas/类型处理得当。Use SQLite correctly with proper concurrency, pragmas, and type han"
-license: "Proprietary"
+license: "MIT"
 description: |-
   Use SQLite correctly with proper concurrency, pragmas, and type handling。核心能力:
 
@@ -32,7 +32,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # SQLite

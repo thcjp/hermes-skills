@@ -5,7 +5,7 @@ name: "live-stream-script"
 version: 2.0.1
 displayName: "Live Stream Script"
 summary: "直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Live stream script generator"
-license: "Proprietary"
+license: "MIT"
 description: |-
   直播脚本生成器。带货直播、娱乐直播、知识直播话术、互动设计、开场预热、逼单话术、互动话术库。Use when 、品牌视觉时使用。不适用于3D建模和动画制作。
 tags: agent,script,api,依赖说明,不支持,确认运行
@@ -14,7 +14,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

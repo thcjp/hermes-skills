@@ -4,7 +4,7 @@ name: "video-toolkit"
 version: 1.0.1
 displayName: "视频工具箱专业版"
 summary: "批量视频处理+AI超分+智能重构图+多码率+自动化工作流,面向内容团队的专业视频引擎。面向内容团队和机构的专业级视频处理引擎,在免费版核心功能之上,新增批量 文件处理、AI超分辨率、智能重构"
-license: "Proprietary"
+license: "MIT"
 edition: "pro"
 description: |-
   面向内容团队和机构的专业级视频处理引擎,在免费版核心功能之上,新增批量
@@ -43,7 +43,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Creative"
 ---
 # 视频工具箱专业版

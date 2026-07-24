@@ -4,7 +4,7 @@ name: "file-organizer-zh"
 version: 1.0.1
 displayName: "File Organizer"
 summary: "文件整理器，按类型自动分类（中文版）。文件整理器，按类型自动分类（中文版） 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
-license: "Proprietary"
+license: "MIT"
 description: |-
   文件整理器，按类型自动分类（中文版）
 
@@ -33,7 +33,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # File Organizer

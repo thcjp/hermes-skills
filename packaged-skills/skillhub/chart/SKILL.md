@@ -5,7 +5,7 @@ name: "chart"
 version: 1.0.1
 displayName: "本地图表生成引擎"
 summary: "本地优先的图表生成引擎，支持bar/line/pie/scatter四种类型，无需联网，输出可复用于报告与幻灯片。"
-license: "Proprietary"
+license: "MIT"
 description: |-
   本地优先（local-first）的图表生成引擎，将数字转换为清晰的可视化输出.
   基于Python与matplotlib，支持柱状图、折线图、饼图、散点图四种核心类型.
@@ -23,7 +23,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 
 ---

@@ -4,7 +4,7 @@ name: "tardis"
 version: 1.2.1
 displayName: "TARDIS"
 summary: "核心时间追踪(含较广密钥加载需谨慎)。The core time tracker appears legitimate, but the package also includes broa"
-license: "Proprietary"
+license: "MIT"
 description: |-
   The core time tracker appears legitimate, but the package also includes
   broad secret loading, pub. 自动监控密钥与追踪时间,提供高效的任务管理能力
@@ -19,7 +19,6 @@ tools:
   - exec
   - write
 homepage: ""
-# 定价元数据
 category: "Automation"
 ---
 # TARDIS
