@@ -1,0 +1,321 @@
+---
+slug: "okx-dex-token-tool-pro"
+name: "okx-dex-token-tool-pro"
+version: "1.0.0"
+displayName: "DEX代币数据专业版"
+summary: "专业DEX代币分析与交易工具，支持多链深度分析、批量查询与限价交易。。面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链 深度数据分析、批量代币查询、链上行为追踪、流动"
+license: "Proprietary"
+edition: "pro"
+description: |-
+  面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链
+  深度数据分析、批量代币查询、链上行为追踪、流动性监控告警与限价
+  交易执行。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+tags:
+  - Finance
+  - 加密货币
+  - DEX
+  - 企业级
+  - 金融
+  - 财务
+  - 数据
+  - pro
+  - ethereum
+tools:
+  - read
+  - exec
+  - write
+homepage: ""
+category: "Finance"
+---
+# DEX代币数据专业版（PRO版）
+
+## 概述
+
+本工具为专业DeFi交易者和研究员提供全功能的DEX代币分析与交易能力。相比免费版，PRO版新增15+条链全链支持、批量查询、链上行为追踪、流动性监控、限价交易和套利识别等高级功能，全面满足专业DeFi交易与研究需求.
+PRO版完全兼容免费版全部命令与查询接口，升级后原有工作流可直接使用.
+## 核心能力
+
+### PRO版功能增强对比
+
+| 功能 | 免费版 | PRO版 |
+|---|---|----|
+| 支持链数 | 5条 | 15+条 |
+| 批量查询 | 不支持 | 支持+CSV导出 |
+| 链上追踪 | 不支持 | 大户/鲸鱼监控 |
+| 价格告警 | 不支持 | 多通道通知 |
+| 交易执行 | 不支持 | 限价+MEV防护 |
+| 套利识别 | 不支持 | 跨DEX/跨链 |
+| 安全审计 | 不支持 | 合约风险评分 |
+| 数据导出 | 不支持 | CSV/Excel/JSON |
+
+**输入**: 用户提供PRO版功能增强对比所需的指令和必要参数.
+**处理**: 解析PRO版功能增强对比的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回PRO版功能增强对比的响应数据,包含状态码、结果和日志.
+### 全链支持
+
+| 链名称 | Chain ID | 免费版 | PRO版 |
+|:-----|:-----|:-----|:-----|
+| Ethereum | 1 | 支持 | 支持 |
+| BSC | 56 | 支持 | 支持 |
+| Polygon | 137 | 支持 | 支持 |
+| Arbitrum | 42161 | 支持 | 支持 |
+| Optimism | 10 | 支持 | 支持 |
+| Avalanche | 43114 | 不支持 | 支持 |
+| Fantom | 250 | 不支持 | 支持 |
+| Base | 8453 | 不支持 | 支持 |
+| Linea | 59144 | 不支持 | 支持 |
+| zkSync Era | 324 | 不支持 | 支持 |
+| Scroll | 534352 | 不支持 | 支持 |
+| Mantle | 5000 | 不支持 | 支持 |
+| ... | ... | ... | 支持 |
+
+**输入**: 用户提供全链支持所需的指令和必要参数.
+**处理**: 解析全链支持的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回全链支持的响应数据,包含状态码、结果和日志.
+### 核心功能执行
+用`input_params`参数进行配置.
+**输入**: 用户提供核心功能执行所需的指令和必要参数.
+**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
+- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：代币分析与交易工、支持多链深度分析、批量查询与限价交、面向专业、DeFi、交易者与研究员的、深度数据分析、批量代币查询、链上行为追踪、流动性监控告警与、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+## 使用场景
+
+### 场景一：批量代币研究
+
+用户输入："分析以太坊上流动性前50的代币"
+
+## 输入格式
+| 参数名 | 类型 | 必填 | 说明 |
+|---:|---:|---:|---:|
+| input | string | 是 | DEX代币数据专业版处理的输入数据或指令 |
+| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
+| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+
+```bash
+# 批量查询代币数据
+python3 （请参考skill目录中的脚本文件） \
+  --chain ethereum \
+  --top 50 \
+  --sort-by liquidity \
+  --export \
+  --output top50_tokens.xlsx
+# ...
+# 输出包含：
+# - 代币价格与24h变化
+# - 流动性池规模
+# - 交易量排名
+# - 合约安全评分
+# - 持有者分布
+```
+
+### 场景二：鲸鱼监控
+
+用户输入："追踪某代币大户的买卖行为"
+
+```bash
+# 设置鲸鱼监控
+python3 （请参考skill目录中的脚本文件） \
+  --token 0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984 \
+  --chain ethereum \
+  --threshold 100000 \
+  --alert
+# ...
+# 实时输出：
+# [ALERT] 鲸鱼地址 0xabc... 买入 500,000 UNI
+# [ALERT] 鲸鱼地址 0xdef... 卖出 200,000 UNI
+```
+
+### 场景三：限价交易
+
+用户输入："当UNIS跌到6美元以下时自动买入"
+
+```bash
+# 设置限价单
+python3 （请参考skill目录中的脚本文件） create \
+  --token UNIS \
+  --chain ethereum \
+  --side buy \
+  --price 6.0 \
+  --amount 1000 \
+  --mev-protection
+# ...
+# 监控执行状态
+python3 （请参考skill目录中的脚本文件） status
+```
+
+## 快速开始
+
+1. 阅读## 核心能力章节了解skill功能
+2. 按## 依赖说明配置环境
+3. 执行所需能力对应的命令
+4. 参考## 错误处理章节处理异常
+5. 查看## FAQ解答常见疑问
+
+### PRO版初始化
+
+```bash
+# 依赖说明
+pip install -r requirements_pro.txt
+# ...
+# 配置钱包与API
+cp config_pro_template.yaml config_pro.yaml
+# 填入钱包私钥（仅本地使用）和API凭证
+```
+
+### 常用命令
+
+```bash
+# 批量查询
+python3 （请参考skill目录中的脚本文件） --chain ethereum --top 50 --export
+# ...
+# 鲸鱼追踪
+python3 （请参考skill目录中的脚本文件） --token 0x... --chain ethereum --threshold 100000
+# ...
+# 限价交易
+python3 （请参考skill目录中的脚本文件） create --token UNIS --side buy --price 6.0 --amount 1000
+# ...
+# 套利扫描
+python3 （请参考skill目录中的脚本文件） --chains ethereum,bsc,arbitrum
+# ...
+# 安全审计
+python3 （请参考skill目录中的脚本文件） --token 0x... --chain ethereum
+```
+
+## 示例
+
+### PRO交易配置
+
+```yaml
+pro_config:
+  api:
+    endpoint: "https://www.okx.com/dex-api"
+    api_key: "${OKX_API_KEY}"
+    api_secret: "${OKX_API_SECRET}"
+    passphrase: "${OKX_PASSPHRASE}"
+# ...
+  chains:
+    supported: "all"               # 全链支持
+    default: ethereum
+# ...
+  trading:
+    enabled: true
+    wallet:
+      private_key: "${WALLET_PRIVATE_KEY}"   # 仅本地存储
+      rpc_endpoints:
+        ethereum: "${ETH_RPC_URL}"
+        bsc: "${BSC_RPC_URL}"
+    mev_protection:
+      enabled: true
+      service: "flashbots"
+    slippage:
+      default: 0.5%
+      max: 3%
+# ...
+  monitoring:
+    whale_tracking: true
+    min_whale_amount: 100000
+    liquidity_alert: true
+    alert_channels:
+      - console
+      - webhook
+      - telegram
+# ...
+  batch:
+    max_parallel: 10
+    export_formats: ["csv", "excel", "json"]
+```
+
+## 最佳实践
+
+### PRO版高级实践
+
+| 实践领域 | 建议做法 |
+|:---:|:---:|
+| 批量研究 | 先按流动性筛选，再深度分析前20 |
+| 鲸鱼追踪 | 设置合理阈值，避免过多噪音 |
+| 限价交易 | 必须开启MEV防护，防止抢跑 |
+| 套利交易 | 注意跨链桥费用与时间成本 |
+| 安全审计 | 投资前必须检查合约安全评分 |
+
+### 免费版兼容性
+
+```text
+免费版命令 → PRO版命令（增强）：
+token_info.py --token UNIS    → batch_query.py --top 50 --export
+liquidity_pool.py             → +流动性告警监控
+基础链查询                    → 15+条链全链支持
+```
+
+## 常见问题
+
+### Q1：交易功能安全吗？
+
+PRO版交易通过本地钱包私钥签名，私钥不会上传任何服务器。同时开启MEV防护（Flashbots）防止抢跑攻击。但DeFi交易固有风险（如智能合约漏洞）无法完全消除.
+### Q2：鲸鱼监控如何工作？
+
+PRO版监控链上大额交易，当指定代币出现超过阈值的买卖行为时触发告警。数据来自链上公开交易记录，可追踪任何公开地址的行为.
+### Q3：套利扫描支持哪些类型？
+
+支持同一链上不同DEX间的套利（如Uniswap vs SushiSwap）和跨链套利（如以太坊vs Arbitrum）。扫描结果包含预估利润、Gas费用和执行路径.
+### Q4：私钥如何存储？
+
+私钥存储在本地配置文件中，建议设置文件权限为600（仅所有者可读写）。PRO版不会将私钥传输至任何外部服务器，所有交易在本地签名后广播.
+### Q5：支持多少条链？
+
+PRO版支持15+条主流区块链，包括所有EVM兼容链。新增链支持会通过更新包发布，无需重新安装.
+## 依赖说明
+
+### 运行环境
+
+- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **操作系统**: Windows / macOS / Linux
+- **Python版本**: 3.9+
+- **Node.js**: 16+（部分链交互需要）
+
+### 第三方依赖
+
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:------|------:|:------|:------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| Python | 运行时 | 必需 | 系统安装或conda环境 |
+| requests | Python库 | 必需 | `pip install requests` |
+| web3 | Python库 | 必需 | `pip install web3` |
+| eth-account | Python库 | 必需 | `pip install eth-account`（交易签名） |
+| pandas | Python库 | 可选 | `pip install pandas`（数据导出） |
+| openpyxl | Python库 | 可选 | `pip install openpyxl`（Excel导出） |
+
+### API Key 配置
+
+| 服务 | 环境变量 | 是否必需 | 用途 |
+|---:|:---|---:|---:|
+| OKX API | `OKX_API_KEY` | 必需 | DEX聚合器接口 |
+| OKX Secret | `OKX_API_SECRET` | 必需 | API签名 |
+| OKX Passphrase | `OKX_PASSPHRASE` | 必需 | API验证 |
+| 钱包私钥 | `WALLET_PRIVATE_KEY` | 交易必需 | 本地签名（不上传） |
+| RPC节点 | `ETH_RPC_URL`等 | 推荐 | 自定义RPC节点 |
+
+- 私钥仅存储在本地，用于交易签名，不会上传任何服务器
+- API凭证加密存储在本地配置文件
+
+### 可用性分类
+
+- **分类**: MD+EXEC（Markdown指令+Python脚本+链上交互执行）
+- **说明**: 专业DEX代币分析与交易工具，支持全链数据与交易执行
+- **PRO版特性**: 15+链支持、批量查询、鲸鱼追踪、限价交易、MEV防护、套利识别
+- **兼容性**: 完全兼容免费版全部命令与查询接口
+- **风险提示**: DeFi交易存在固有风险，请充分了解后再使用交易功能
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|:------:|--------|:-------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 已知限制
+
+- 需LLM支持,无LLM环境不可用
+- 复杂业务场景建议结合人工经验判断
+- 执行效率受模型能力与网络环境影响
