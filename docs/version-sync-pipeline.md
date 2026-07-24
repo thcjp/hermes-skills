@@ -2,224 +2,290 @@
 
 ## 概述
 
-版本同步流水线实现了从本地skill变更检测到多平台同步的端到端自动化流程。覆盖 GitHub开放库、SkillHub(免费+付费)、ClawHub三个平台，以SQLite数据库为唯一权威数据源。
+版本同步流水线是一个端到端自动化系统，负责将本地Skill的版本变更同步到GitHub开放库、SkillHub（免费+付费）和ClawHub三个平台。系统以SQLite数据库为唯一权威数据源，通过8个阶段完成从变更检测到多平台同步的全流程。
 
 ## 架构图
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    orchestrator.py (统一编排)                     │
-│                                                                 │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐        │
-│  │ DISCOVER │→│ ENHANCE  │→│  AUDIT   │→│   SYNC   │→RECORD  │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘        │
-│       │              │              │              │              │
-└───────┼──────────────┼──────────────┼──────────────┼──────────────┘
-        │              │              │              │
-        ▼              ▼              ▼              ▼
-┌───────────────┐ ┌──────────┐ ┌──────────────┐ ┌─────────────────┐
-│auto_discover   │ │审计报告   │ │deep_quality  │ │version_sync     │
-│version_sync    │ │JSON读取  │ │_audit.py     │ │_pipeline.py     │
-│_pipeline.py    │ │B级识别   │ │L1-L8全量审计  │ │sync_to_github   │
-│scan            │ │          │ │              │ │sync_to_skillhub │
-└───────────────┘ └──────────┘ └──────────────┘ │sync_to_clawhub  │
-                                                  └─────────────────┘
-                                                         │
-                          ┌──────────────┬───────────────┼──────────────┐
-                          ▼              ▼               ▼              ▼
-                   ┌──────────┐  ┌─────────────┐  ┌──────────┐  ┌──────────┐
-                   │ GitHub   │  │ SkillHub    │  │ ClawHub  │  │ Database │
-                   │ git push │  │ CLI + API   │  │ npx CLI  │  │ SQLite   │
-                   └──────────┘  └─────────────┘  └──────────┘  └──────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                    orchestrator.py                           │
+│                   (统一编排入口)                               │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐    │
+│  │ DISCOVER │→│ ENHANCE  │→│ INCREMENT│→│ VALIDATE │    │
+│  │ 变更检测  │  │ 内容增强  │  │ 版本递增  │  │ 质量门禁  │    │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘    │
+│       │                                          │           │
+│       ▼                                          ▼           │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐    │
+│  │  GITHUB  │→│ SKILLHUB │→│ CLAWHUB  │→│  RECORD  │    │
+│  │ 开放库同步 │  │ 免费+付费 │  │ 免费同步  │  │ 数据记录  │    │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘    │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+         │              │              │
+         ▼              ▼              ▼
+   ┌──────────┐  ┌──────────┐  ┌──────────┐
+   │  GitHub  │  │ SkillHub │  │ ClawHub  │
+   │  仓库    │  │ CLI/API  │  │   CLI    │
+   └──────────┘  └──────────┘  └──────────┘
+         │              │              │
+         └──────────────┼──────────────┘
+                        ▼
+              ┌──────────────────┐
+              │  SQLite 数据库    │
+              │ skill-registry.db │
+              ├──────────────────┤
+              │ skills 表        │
+              │ versions 表      │
+              │ platform_uploads │
+              │ operations 表    │
+              └──────────────────┘
 ```
 
-## 8阶段流程
+## 8阶段详细说明
 
-### 阶段1: DISCOVER (发现)
-- **脚本**: `auto_discover.py scan` + `version_sync_pipeline.py scan`
-- **功能**: 扫描新skill + 检测已有skill的SKILL.md变更(通过SHA-256 hash对比)
-- **扫描目录**:
-  - `packaged-skills/skillhub/` → source: packaged
-  - `opensource-skills/packaged/` → source: opensource
-  - `differentiated-skills/` → source: differentiated
-- **输出**: `version_sync_scan_report.json` (变更skill列表)
+### 阶段1: DISCOVER - 变更检测
 
-### 阶段2: ENHANCE (增强)
-- **脚本**: `orchestrator.py enhance`
-- **功能**: 基于审计报告识别B级skill，生成增强建议
-- **数据源**: `deep_quality_audit_report.json`
-- **识别维度**: L5可销售性B级、L7b可执行性B级、L6内容真实性问题、L7a语义模板问题
-- **状态**: 半自动(识别自动，内容增强需AI介入)
+**脚本**: `auto_discover.py` + `version_sync_pipeline.py scan`
 
-### 阶段3: INCREMENT (版本递增)
-- **脚本**: `version_sync_pipeline.py increment_version()`
-- **功能**: 自动递增patch版本号 (1.0.0 → 1.0.1)
-- **规则**: 
-  - 三段式版本号: 递增patch位
-  - 两段式版本号: 递增minor位并补0
-  - 无版本号: 默认1.0.1
-- **文件更新**: 直接修改SKILL.md中的version字段
+**功能**:
+- 扫描本地SKILL.md文件，计算SHA-256哈希
+- 对比数据库`versions`表中记录的最后哈希值
+- 检测内容变更，输出变更skill列表
 
-### 阶段4: VALIDATE (质量门禁)
-- **脚本**: `deep_quality_audit.py` (L1-L8全量审计)
-- **功能**: 对变更skill执行8层质量检查
-- **层级**:
-  | 层级 | 名称 | 检查内容 | 默认状态 |
-  |------|------|----------|----------|
-  | L1 | 静态格式 | frontmatter完整性、必填字段 | 默认启用 |
-  | L2 | LLM验证 | 语义合理性、逻辑一致性 | 按需启用 |
-  | L3 | Agent试用 | 实际执行验证 | 按需启用 |
-  | L4 | 功能质量 | 完整性、准确性、可用性 | 默认启用 |
-  | L5 | 可销售性 | 商业价值、差异化、定价合理性 | 默认启用 |
-  | L6 | 内容真实性 | 已知限制、依赖说明真实性 | 默认启用 |
-  | L7a | 语义模板 | TF-IDF重复块检测、模板化检测 | 默认启用(opt-out) |
-  | L7b | 可执行性 | 任务定义清晰度、输入输出规范 | 默认启用(opt-out) |
-  | L8 | 安全审计 | API密钥暴露、URL安全、注入检测 | 默认启用(opt-out) |
-- **门禁规则**: L1未通过则阻塞同步
+**使用方式**:
+```bash
+python version_sync_pipeline.py scan
+```
 
-### 阶段5: SYNC_GITHUB (GitHub同步)
-- **脚本**: `version_sync_pipeline.py sync_to_github()`
-- **功能**: git add → git commit → git push
-- **仓库**: `https://github.com/thcjp/-.git` (main分支)
-- **超时**: 180秒(git push)
-- **提交格式**: `feat({slug}): upgrade to v{version} - {changelog}`
-- **记录**: platform_uploads表记录同步结果
+**输出**: `version_sync_scan_report.json` - 包含所有变更skill的slug、旧/新哈希、当前版本
 
-### 阶段6: SYNC_SKILLHUB (SkillHub同步)
-- **脚本**: `version_sync_pipeline.py sync_to_skillhub()`
-- **免费版**: 通过`skillhub publish` CLI上传
-  - WAF限制: 内容 ≤ 5800字符
-  - 超长内容自动阻塞并记录
-- **付费版**: 生成payload JSON文件
-  - 路径: `enterprise-upload/payloads/{slug}-paid-v{version}.json`
-  - 需浏览器session认证手动上传
-- **状态**: 免费版自动，付费版半自动
+### 阶段2: ENHANCE - 内容增强
 
-### 阶段7: SYNC_CLAWHUB (ClawHub同步)
-- **脚本**: `version_sync_pipeline.py sync_to_clawhub()`
-- **功能**: 通过`npx clawhub publish`直接上传
-- **限流**: 200个/24小时
-- **重试**: 通过checkpoint文件支持断点续传
-- **批量上传**: `clawhub_batch_uploader.py --resume --limit 200`
+**脚本**: `orchestrator.py enhance`
 
-### 阶段8: RECORD (记录)
-- **数据库**: SQLite (`d:\skills\skill-registry.db`)
-- **表结构**:
-  | 表名 | 用途 |
-  |------|------|
-  | skills | skill主表(slug, version, status, pricing等) |
-  | versions | 版本历史(hash, changelog, file_size) |
-  | platform_uploads | 平台上传记录(platform, status, error) |
-  | operations | 操作日志(operation_type, details) |
-- **原则**: 所有操作均记录到operations表，平台同步结果记录到platform_uploads表
+**功能**:
+- 读取`deep_quality_audit_report.json`审计报告
+- 识别L5/L6/L7a/L7b各层级B级skill
+- 生成增强建议列表
+
+**状态**: 半自动（识别自动，增强内容需AI执行）
+
+### 阶段3: INCREMENT - 版本递增
+
+**脚本**: `version_sync_pipeline.py` 内的 `increment_version()` 函数
+
+**功能**:
+- 自动递增patch版本号（如1.0.0 → 1.0.1）
+- 更新SKILL.md文件中的version字段
+- 重新计算文件哈希
+
+**规则**:
+- 三段式版本号（X.Y.Z）：递增Z
+- 两段式版本号（X.Y）：递增Y，补Z为0
+- 非标准版本号：追加.1
+
+### 阶段4: VALIDATE - 质量门禁
+
+**脚本**: `deep_quality_audit.py`
+
+**功能**:
+- L1 静态格式检查（frontmatter合规性）
+- L2 LLM语义验证
+- L3 Agent试用测试
+- L4 功能质量审计
+- L5 可销售性评估
+- L6 内容真实性验证
+- L7a 语义模板审计（TF-IDF重复检测）
+- L7b 可执行性审计
+- L8 安全审计
+
+**默认状态**: L7a/L7b/L8均默认启用（opt-out模式）
+
+**使用方式**:
+```bash
+python deep_quality_audit.py                    # 全量审计
+python deep_quality_audit.py --no-layer7b       # 跳过L7b
+```
+
+### 阶段5: SYNC_GITHUB - GitHub同步
+
+**脚本**: `version_sync_pipeline.py` 内的 `sync_to_github()` 函数
+
+**功能**:
+- `git add <SKILL.md路径>`
+- `git commit -m "feat(<slug>): upgrade to v<version> - <changelog>"`
+- `git push origin main`
+
+**验证**: commit哈希记录到`platform_uploads`表
+
+### 阶段6: SYNC_SKILLHUB - SkillHub同步
+
+**脚本**: `version_sync_pipeline.py` 内的 `sync_to_skillhub()` 函数
+
+**免费版**: 通过`skillhub publish` CLI上传
+- WAF限制：内容长度 ≤ 5800字符
+- 超长内容自动标记为`blocked_content_too_long`
+
+**付费版**: 生成payload JSON文件
+- 输出到 `enterprise-upload/payloads/<slug>-paid-v<version>.json`
+- 包含定价信息（按次计费，9.90 CNY/次）
+- 实际上传需浏览器session认证
+
+### 阶段7: SYNC_CLAWHUB - ClawHub同步
+
+**脚本**: `version_sync_pipeline.py` 内的 `sync_to_clawhub()` 函数 + `clawhub_batch_uploader.py`
+
+**功能**:
+- 通过`npx clawhub publish`上传
+- 限流：200个新skill/24小时
+- 版本冲突自动递增重试
+- 断点续传支持
+
+**批量上传**:
+```bash
+python clawhub_batch_uploader.py --resume --limit 200
+```
+
+### 阶段8: RECORD - 数据记录
+
+**数据库表**:
+- `skills`: 更新`current_version`和`updated_at`
+- `versions`: 插入新版本记录（版本号、哈希、文件大小、行数、changelog）
+- `platform_uploads`: 插入平台上传记录（平台、状态、HTTP状态码、错误信息）
+- `operations`: 插入操作日志（操作类型、时间、操作者、详情、结果状态）
 
 ## 脚本依赖关系
 
 ```
-orchestrator.py
-  ├── auto_discover.py          (阶段1: 扫描新skill)
-  ├── version_sync_pipeline.py   (阶段1-8: 变更检测→同步)
-  │   ├── quality_gate.py        (阶段4: L1质量门禁)
-  │   └── skill_core/parser.py   (frontmatter解析)
-  ├── deep_quality_audit.py      (阶段4: L1-L8全量审计)
-  └── clawhub_batch_uploader.py  (阶段7: ClawHub批量上传)
+orchestrator.py (统一入口)
+  ├── auto_discover.py (发现新skill, API扫描)
+  ├── version_sync_pipeline.py (变更检测+版本递增+多平台同步)
+  │   ├── skill_core/parser.py (frontmatter解析, 单一来源)
+  │   ├── quality_gate.py (L1静态检查)
+  │   ├── clawhub_batch_uploader.py (ClawHub批量上传)
+  │   └── git (GitHub同步: add/commit/push)
+  └── deep_quality_audit.py (L1-L8全量质量审计)
+      ├── skill_core/parser.py (frontmatter解析)
+      └── sklearn (TF-IDF语义分析)
 ```
 
 ## 数据流
 
 ```
-SKILL.md文件 → SHA-256 hash → 数据库versions表对比
-                                    ↓ (hash不匹配)
-                              版本递增 + SKILL.md更新
+SKILL.md文件 → 哈希计算 → DB对比 → 变更检测
                                     ↓
-                              质量门禁检查 (L1-L8)
-                                    ↓ (通过)
+                              版本递增 → 质量门禁
+                                    ↓
                     ┌───────────────┼───────────────┐
                     ↓               ↓               ↓
-              GitHub push      SkillHub upload   ClawHub upload
+              GitHub push     SkillHub上传    ClawHub上传
                     ↓               ↓               ↓
-              platform_uploads表记录(每平台独立)
-                    ↓
-              operations表记录(操作日志)
+                    └───────────────┼───────────────┘
+                                    ↓
+                            SQLite DB记录
+                            (versions + platform_uploads + operations)
 ```
 
 ## 使用方式
 
-### 单个skill同步
+### 日常运维命令
+
 ```bash
+# 查看全流程状态
+python orchestrator.py status
+
+# 查看流水线完整性报告
+python orchestrator.py pipeline-report
+
+# 执行完整流程
+python orchestrator.py full-run
+```
+
+### 单skill同步
+
+```bash
+# 同步单个skill到所有平台
 python version_sync_pipeline.py sync <slug>
-# 跳过特定平台:
-python version_sync_pipeline.py sync <slug> --skip-github --skip-clawhub
+
+# 仅同步到GitHub
+python version_sync_pipeline.py sync-github <slug>
+
+# 强制同步（即使无变更）
+python version_sync_pipeline.py sync <slug> --force
+
+# 跳过特定平台
+python version_sync_pipeline.py sync <slug> --skip-clawhub --skip-skillhub
 ```
 
-### 批量同步所有变更
-```bash
-python version_sync_pipeline.py scan          # 检测变更
-python version_sync_pipeline.py sync-all       # 同步所有变更skill
-```
+### 批量同步
 
-### 统一编排
 ```bash
-python orchestrator.py status                 # 状态概览
-python orchestrator.py discover               # 仅执行发现阶段
-python orchestrator.py enhance                # 仅执行增强阶段
-python orchestrator.py audit                  # 仅执行审计阶段
-python orchestrator.py sync-all               # 同步所有变更skill
-python orchestrator.py sync <slug>            # 同步单个skill
-python orchestrator.py full-run               # 完整流程
-python orchestrator.py pipeline-report        # 流水线报告
+# 扫描所有变更
+python version_sync_pipeline.py scan
+
+# 同步所有变更skill
+python version_sync_pipeline.py sync-all
+
+# 生成同步报告
+python version_sync_pipeline.py report
 ```
 
 ### ClawHub批量上传
+
 ```bash
+# 上传200个（每日限流）
 python clawhub_batch_uploader.py --resume --limit 200
+
+# 干跑模式（不实际上传）
+python clawhub_batch_uploader.py --dry-run
 ```
 
 ## 已知限制
 
-1. **SkillHub WAF限制**: 内容超过5800字符的skill无法通过CLI上传，需手动通过浏览器提交
-2. **SkillHub付费版**: 需浏览器session认证，无法完全自动化
-3. **ClawHub限流**: 每日200个新skill上限，大批量上传需多天完成
-4. **GitHub网络**: push操作受网络状况影响，已设置180秒超时
-5. **L2/L3审计**: 需要LLM API Key，默认不启用
-6. **ENHANCE阶段**: B级skill识别自动，但内容增强需AI介入
+1. **无文件监听**: 使用cron调度而非watchdog实时监听，需手动运行或设置定时任务
+2. **内容增强半自动**: B级→A级增强需AI执行，无法全自动
+3. **SkillHub付费版**: 上传需浏览器session认证，仅payload自动生成
+4. **ClawHub限流**: 200个新skill/24小时，大批量上传需多轮
+5. **SkillHub WAF限制**: 内容超过5800字符无法通过CLI上传
 
 ## 灾难恢复和回滚
 
 ### 版本回滚
+
 ```bash
 # 查看历史版本
-sqlite3 skill-registry.db "SELECT version, created_at, changelog FROM versions WHERE skill_id=? ORDER BY created_at DESC"
+sqlite3 d:\skills\skill-registry.db "SELECT version, created_at, changelog FROM versions WHERE skill_id = (SELECT id FROM skills WHERE slug = '<slug>') ORDER BY created_at DESC"
 
-# Git回滚到上一版本
-git revert HEAD~1 --no-edit
-git push origin main
-```
-
-### 数据库恢复
-```bash
-# 数据库备份(执行前建议)
-cp skill-registry.db skill-registry.db.bak
-
-# 恢复
-cp skill-registry.db.bak skill-registry.db
+# Git回滚到指定commit
+cd d:\skills
+git log --oneline --grep="<slug>"
+git revert <commit_hash>
 ```
 
 ### 平台同步失败处理
-1. **GitHub失败**: 检查网络和认证，重试`git push origin main`
-2. **SkillHub失败**: 检查CLI是否安装(`skillhub --version`)，内容是否超长
-3. **ClawHub限流**: 等待24小时后重试，使用`--resume`从断点继续
 
-### Checkpoint恢复
-- ClawHub上传checkpoint: `clawhub_upload_checkpoint.json`
-- 版本同步报告: `version_sync_{slug}_{timestamp}.json`
-- 审计报告: `deep_quality_audit_report.json`
+1. **GitHub push失败**: 检查网络和权限，重新运行`sync-github <slug>`
+2. **SkillHub上传失败**: 检查内容长度，缩短SKILL.md或使用浏览器手动上传
+3. **ClawHub限流**: 等待24小时后运行`clawhub_batch_uploader.py --resume`
+4. **ClawHub版本冲突**: 自动递增版本号重试，或手动修改版本号
+
+### 数据库备份
+
+```bash
+# 备份数据库
+copy d:\skills\skill-registry.db d:\skills\skill-registry.db.bak
+
+# 恢复数据库
+copy d:\skills\skill-registry.db.bak d:\skills\skill-registry.db
+```
 
 ## 后续优化方向
 
-1. SkillHub API直传(绕过CLI和WAF限制)
-2. ClawHub限流自适应调度(自动检测限流窗口)
-3. L2/L3审计自动化(LLM API集成)
-4. 增强阶段AI自动化(基于审计报告自动生成增强建议)
-5. 多仓库GitHub同步(支持多个开放库)
-6. 同步结果通知(飞书/邮件告警)
+1. **文件监听**: 集成watchdog实现SKILL.md变更实时检测
+2. **SkillHub API**: 研究API方式替代CLI上传，突破WAF限制
+3. **并行上传**: 多平台并行同步，减少总同步时间
+4. **增量审计**: 仅审计变更的skill而非全量审计
+5. **自动回滚**: 同步失败时自动回滚版本号和文件变更

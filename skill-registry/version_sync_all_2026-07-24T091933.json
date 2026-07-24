@@ -1,0 +1,113 @@
+{
+  "scan_time": "2026-07-24T09:19:33",
+  "total_changed": 15,
+  "synced": [],
+  "failed": [],
+  "skipped": [
+    {
+      "slug": "ad-insight-hub",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "aws-cloud-architect",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "aws-graph-agent",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "azure-cloud-architect",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "decision-architect",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "knowledge-ontology",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "longmemo-elite",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "memo-quickstart",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "memory-radar",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "memory-radar-free",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "packaged",
+      "status": "no_changes"
+    },
+    {
+      "slug": "pdf-toolkit-pro",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "opensource",
+      "status": "no_changes"
+    },
+    {
+      "slug": "blog-writer-tool-free",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "differentiated",
+      "status": "no_changes"
+    },
+    {
+      "slug": "blog-writer-tool-pro",
+      "timestamp": "2026-07-24T09:19:33",
+      "phases": {},
+      "source": "differentiated",
+      "status": "no_changes"
+    }
+  ]
+}

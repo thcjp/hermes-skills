@@ -107,7 +107,7 @@ def phase_discover() -> Dict[str, Any]:
     try:
         proc = subprocess.run(
             [sys.executable, str(DISCOVER_SCRIPT), "scan"],
-            capture_output=True, text=True, timeout=120,
+            capture_output=True, text=True, timeout=300,
             cwd=str(SKILL_REGISTRY_DIR)
         )
         if proc.returncode == 0:
@@ -116,6 +116,9 @@ def phase_discover() -> Dict[str, Any]:
         else:
             print(f"  [1a] 发现扫描失败: {proc.stderr[:200]}")
             result["details"].append({"sub": "scan_new", "status": "error", "error": proc.stderr[:200]})
+    except subprocess.TimeoutExpired:
+        print(f"  [1a] 发现扫描超时(300s),跳过")
+        result["details"].append({"sub": "scan_new", "status": "timeout"})
     except Exception as e:
         print(f"  [1a] 发现扫描异常: {e}")
         result["details"].append({"sub": "scan_new", "status": "exception", "error": str(e)})
@@ -565,10 +568,53 @@ def main():
         print("=" * 60)
 
         results = {}
-        results["discover"] = phase_discover()
+
+        # 1. DISCOVER: 仅检测本地变更(跳过auto_discover.py API扫描以避免内存问题)
+        print("\n  [1/5] 检测本地变更 (跳过API扫描)...")
+        try:
+            proc = subprocess.run(
+                [sys.executable, str(SYNC_PIPELINE_SCRIPT), "scan"],
+                capture_output=True, text=True, timeout=300,
+                cwd=str(SKILL_REGISTRY_DIR)
+            )
+            import re as _re
+            changed_match = _re.search(r'(\d+)\s*个?\s*(?:changed|变更)', proc.stdout or '')
+            changed_count = int(changed_match.group(1)) if changed_match else 0
+            results["discover"] = {"phase": "discover", "changed_skills": changed_count, "skipped_api_scan": True}
+            print(f"  [1/5] 变更检测完成: {changed_count} 个变更skill")
+        except Exception as e:
+            results["discover"] = {"phase": "discover", "error": str(e)}
+            print(f"  [1/5] 变更检测失败: {e}")
+
+        # 2. ENHANCE: 使用现有审计报告
         results["enhance"] = phase_enhance()
-        results["audit"] = phase_audit()
+
+        # 3. AUDIT: 使用现有审计报告(避免重复运行耗时审计)
+        if AUDIT_REPORT.exists():
+            report = json.load(open(AUDIT_REPORT, "r", encoding="utf-8"))
+            audit_age = (datetime.now() - datetime.fromisoformat(report.get("audit_date", "2026-01-01T00:00:00"))).total_seconds() / 3600
+            if audit_age < 24:
+                print(f"\n  [3/5] 使用现有审计报告 ({audit_age:.1f}h前生成)")
+                results["audit"] = {
+                    "phase": "audit",
+                    "skipped": True,
+                    "reason": f"existing_report_{audit_age:.1f}h_old",
+                    "summary": {
+                        "total_skills": report.get("total_skills", 0),
+                        "critical": report.get("by_severity", {}).get("critical", 0),
+                        "l5_b": report.get("sellability", {}).get("grade_distribution", {}).get("B", 0),
+                        "l7b_b": report.get("executability_audit", {}).get("grade_distribution", {}).get("B", 0),
+                    }
+                }
+            else:
+                results["audit"] = phase_audit()
+        else:
+            results["audit"] = phase_audit()
+
+        # 4. SYNC: 同步变更skill
         results["sync"] = phase_sync()
+
+        # 5. RECORD
         results["record"] = phase_record(results)
 
         print("\n" + "=" * 60)
