@@ -3,7 +3,7 @@
 slug: "clawprint"
 name: "clawprint"
 version: 3.0.2
-displayName: "Skill"
+displayName: "Clawprint打印工具"
 summary: "Agent发现信任与交换,注册ClawPrint被其他Agent找到并建立信誉。Agent discovery, trust, and exchange。Register on ClawPr"
 summary_zh: "Agent发现信任与交换,注册ClawPrint被其他Agent找到并建立信誉。Agent discovery, trust, and exchange。Register on ClawPr"
 license: "MIT"

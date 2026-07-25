@@ -2,7 +2,7 @@
 slug: "deepseek-chat"
 name: "deepseek-chat"
 version: 1.0.1
-displayName: "DeepSeek Chat"
+displayName: "Deepseek聊天"
 summary: "DeepSeek 官方 API 对话（免费/超便宜，支持中文）。DeepSeek 官方 API 对话（免费/超便宜，支持中文） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人"
 summary_zh: "DeepSeek 官方 API 对话（免费/超便宜，支持中文）。DeepSeek 官方 API 对话（免费/超便宜，支持中文） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人"
 license: "MIT"

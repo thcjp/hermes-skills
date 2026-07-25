@@ -2,7 +2,7 @@
 slug: "figma-2"
 name: "figma-2"
 version: 0.1.2
-displayName: "Figma"
+displayName: "Figma设计工具v2"
 summary: "Figma 集成。浏览团队项目与文件，读取设计结构、页面、节点，导出图片，管理评论，查看版本历史，检查组件/组件集/样式，获取设计变量（Token）。通过"
 summary_zh: "Figma 集成。浏览团队项目与文件，读取设计结构、页面、节点，导出图片，管理评论，查看版本历史，检查组件/组件集/样式，获取设计变量（Token）。通过"
 license: "MIT"

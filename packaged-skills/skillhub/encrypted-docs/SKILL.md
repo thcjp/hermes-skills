@@ -2,7 +2,7 @@
 slug: "encrypted-docs"
 name: "encrypted-docs"
 version: 1.0.1
-displayName: "Encrypted Docs"
+displayName: "文档"
 summary: "端到端加密md文档,Agent与人协同编辑,隐私不泄。End-to-end encrypted 。md documents for agents & humans to collaborat"
 summary_zh: "端到端加密md文档,Agent与人协同编辑,隐私不泄。End-to-end encrypted 。md documents for agents & humans to collaborat"
 license: "MIT"

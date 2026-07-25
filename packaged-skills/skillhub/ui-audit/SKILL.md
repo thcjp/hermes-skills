@@ -2,7 +2,7 @@
 slug: "ui-audit"
 name: "ui-audit"
 version: 1.0.2
-displayName: "UI Audit"
+displayName: "审计"
 summary: "自动化 UI 审计工具，基于 UX 原则评估界面的视觉层级、样式和无障碍性。。ui-audit 是一个自动化 UI 审计技能，基于 Warp-Speed Decisioning 框架评估界面"
 summary_zh: "自动化 UI 审计工具，基于 UX 原则评估界面的视觉层级、样式和无障碍性。。ui-audit 是一个自动化 UI 审计技能，基于 Warp-Speed Decisioning 框架评估界面"
 license: "MIT"

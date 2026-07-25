@@ -2,7 +2,7 @@
 slug: "aws"
 name: "aws"
 version: 1.0.3
-displayName: "Aws"
+displayName: "AWS云服务工具"
 summary: "架构部署优化AWS基础设施,避开成本失控与安全陷阱,省钱又稳。Architect, deploy, and optimize AWS infrastructure avoiding cost"
 summary_zh: "架构部署优化AWS基础设施,避开成本失控与安全陷阱,省钱又稳。Architect, deploy, and optimize AWS infrastructure avoiding cost"
 license: "MIT"

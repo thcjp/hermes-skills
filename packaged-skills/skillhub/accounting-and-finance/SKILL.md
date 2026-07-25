@@ -2,7 +2,7 @@
 slug: "accounting-and-finance"
 name: "accounting-and-finance"
 version: 1.0.1
-displayName: "Finance Analyst Pro"
+displayName: "财务"
 summary: "企业级财务分析工具,涵盖估值建模(14项)、财务分析(26项)、风险评估(18项)共58个专业分析技能"
 summary_zh: "企业级财务分析工具,涵盖估值建模(14项)、财务分析(26项)、风险评估(18项)共58个专业分析技能"
 license: "MIT"

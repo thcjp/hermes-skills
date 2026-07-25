@@ -2,7 +2,7 @@
 slug: "podcast-chaptering-highlights"
 name: "podcast-chaptering-highlights"
 version: 1.0.1
-displayName: "Podcast Chaptering H"
+displayName: "播客"
 summary: "从播客音频或转写生成章节/亮点/节目说明。Create chapters, highlights, and show notes from podcast audio or transcri"
 summary_zh: "从播客音频或转写生成章节/亮点/节目说明。Create chapters, highlights, and show notes from podcast audio or transcri"
 license: "MIT"

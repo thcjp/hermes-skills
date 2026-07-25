@@ -2,7 +2,7 @@
 slug: "finance"
 name: "finance"
 version: 1.1.3
-displayName: "finance"
+displayName: "财务"
 summary: "跟踪股票/ETF/指数/加密/外汇,带缓存与提供商回退。Track stocks, ETFs, indices, crypto (where available), and FX pairs"
 summary_zh: "跟踪股票/ETF/指数/加密/外汇,带缓存与提供商回退。Track stocks, ETFs, indices, crypto (where available), and FX pairs"
 license: "MIT"

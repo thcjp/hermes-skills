@@ -3,7 +3,7 @@
 slug: "dogecoin-node"
 name: "dogecoin-node"
 version: 1.0.6
-displayName: "Dogecoin Node"
+displayName: "节点"
 summary: "搭建运营Dogecoin Core全节点,RPC访问+区块链工具。A skill to set up and operate a Dogecoin Core full node with R"
 summary_zh: "搭建运营Dogecoin Core全节点,RPC访问+区块链工具。A skill to set up and operate a Dogecoin Core full node with R"
 license: "MIT"

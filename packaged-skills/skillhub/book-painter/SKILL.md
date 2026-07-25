@@ -2,7 +2,7 @@
 slug: "book-painter"
 name: "book-painter"
 version: 1.0.2
-displayName: "Book Painter"
+displayName: "书籍画师"
 summary: "经Lokuli协议预约油漆工,找到并下单本地画师服务。Book painter services through Lokuli 协议。Use when user needs to find"
 summary_zh: "经Lokuli协议预约油漆工,找到并下单本地画师服务。Book painter services through Lokuli 协议。Use when user needs to find"
 license: "MIT"

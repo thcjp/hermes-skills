@@ -2,7 +2,7 @@
 slug: "security-auditor"
 name: "security-auditor"
 version: 1.0.1
-displayName: "Security Auditor"
+displayName: "安全审计器"
 summary: "审代码安全漏洞/实现认证流/审计依赖,安全合规。Use when reviewing code for security vulnerabilities, implementing auth"
 summary_zh: "审代码安全漏洞/实现认证流/审计依赖,安全合规。Use when reviewing code for security vulnerabilities, implementing auth"
 license: "MIT"

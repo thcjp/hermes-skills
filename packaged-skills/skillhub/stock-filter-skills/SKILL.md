@@ -2,7 +2,7 @@
 slug: "stock-filter-skills"
 name: "stock-filter-skills"
 version: 1.3.1
-displayName: "Stock Filter Skills"
+displayName: "过滤"
 summary: "股票多条件筛选、热门因子管理、Jiuyan 数据查询和抖音热点分析。提供 17 个 CLI 工具覆盖四大模块。"
 summary_zh: "股票多条件筛选、热门因子管理、Jiuyan 数据查询和抖音热点分析。提供 17 个 CLI 工具覆盖四大模块。"
 license: "MIT"

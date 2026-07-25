@@ -3,7 +3,7 @@
 slug: "scrape-web"
 name: "scrape-web"
 version: 1.0.1
-displayName: "Scrape Web"
+displayName: "爬虫网页"
 summary: "使用 Python + Scrapling 获取网页内容，支持简单选择器。使用 Python + Scrapling 获取网页内容，支持简单选择器 核心能力: - 研究工具领域的专业化AI辅"
 summary_zh: "使用 Python + Scrapling 获取网页内容，支持简单选择器。使用 Python + Scrapling 获取网页内容，支持简单选择器 核心能力: - 研究工具领域的专业化AI辅"
 license: "MIT"

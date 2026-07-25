@@ -2,7 +2,7 @@
 slug: "moltbook-firewall-tool"
 name: "moltbook-firewall-tool"
 version: "0.1.0"
-displayName: "Moltbook Firewall"
+displayName: "防火墙工具"
 summary: "保护Agent免受提示操纵/社工/恶意内容的安全层。Security layer protecting agents from prompt manipulation, social eng"
 summary_zh: "保护Agent免受提示操纵/社工/恶意内容的安全层。Security layer protecting agents from prompt manipulation, social eng"
 license: "MIT"

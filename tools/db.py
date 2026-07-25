@@ -703,6 +703,38 @@ def record_upload(skill_id, version, platform, platform_slug, upload_status,
     conn.close()
 
 
+def record_source(source_type, source_name, source_url, source_author,
+                   source_license, source_version, original_slug, notes, skill_id=None):
+    """记录技能来源信息到sources表
+
+    参数：
+        source_type: 来源类型（如 'github', 'clawhub', 'original'）
+        source_name: 来源名称
+        source_url: 来源URL
+        source_author: 来源作者
+        source_license: 来源许可证
+        source_version: 来源版本
+        original_slug: 原始slug
+        notes: 备注（JSON字符串或文本）
+        skill_id: 关联的skill ID（可选，D3修复后支持外键关联）
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    now = datetime.now().isoformat()
+
+    c.execute("""
+        INSERT INTO sources (
+            source_type, source_name, source_url, source_author,
+            source_license, source_version, download_date, original_slug, notes, skill_id
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (source_type, source_name, source_url, source_author,
+          source_license, source_version, now, original_slug, notes, skill_id))
+
+    conn.commit()
+    conn.close()
+
+
 def record_operation(skill_id, operation_type, details, before_state=None, after_state=None,
                      operator='system'):
     """记录操作
@@ -869,7 +901,7 @@ def record_platform_upload(skill_id, version, platform, platform_slug, upload_st
 
 def set_pricing(skill_id, edition, price_model, price_amount, price_currency,
                 trial_limits, pro_features):
-    """设置收费策略"""
+    """设置收费策略（新建记录）"""
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
     c.execute("PRAGMA foreign_keys = ON")
@@ -881,6 +913,22 @@ def set_pricing(skill_id, edition, price_model, price_amount, price_currency,
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     """, (skill_id, edition, price_model, price_amount, price_currency,
           trial_limits, pro_features, now))
+
+    conn.commit()
+    conn.close()
+
+
+def update_pricing(skill_id, edition, price_model, price_amount, price_currency='CNY'):
+    """更新收费策略（已存在记录）"""
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+
+    c.execute("""
+        UPDATE pricing
+        SET edition = ?, price_model = ?, price_amount = ?, price_currency = ?
+        WHERE skill_id = ?
+    """, (edition, price_model, price_amount, price_currency, skill_id))
 
     conn.commit()
     conn.close()

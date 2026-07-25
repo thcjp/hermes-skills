@@ -2,7 +2,7 @@
 slug: "discrawl"
 name: "discrawl"
 version: 1.0.1
-displayName: "Discrawl"
+displayName: "网页爬取工具"
 summary: "Discord归档,搜索/同步新鲜度/私信/频道切片/SQL计数。Discord archive: search, sync freshness, DMs, channel slices,"
 summary_zh: "Discord归档,搜索/同步新鲜度/私信/频道切片/SQL计数。Discord archive: search, sync freshness, DMs, channel slices,"
 license: "MIT"

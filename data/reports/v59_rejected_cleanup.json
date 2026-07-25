@@ -1,0 +1,50 @@
+{
+  "delete_only": [
+    "xml-reader",
+    "ui-ux-dev",
+    "compress-pdf"
+  ],
+  "already_gone": [
+    "video-upload-aioz-stream",
+    "trade-with-taro",
+    "text-rpg-arcade-v3",
+    "rho-telegram-alerts",
+    "read-github",
+    "python-data-analysis",
+    "ocean-chat",
+    "obsidian-official-cli",
+    "netpad",
+    "moltbook-firewall",
+    "markdown-converter",
+    "jellyfin-control",
+    "git-workflows",
+    "file-browser",
+    "feishu-calendar",
+    "doc",
+    "baoyu-format-markdown"
+  ],
+  "needs_reupload": [],
+  "deleted": [
+    "xml-reader",
+    "ui-ux-dev",
+    "compress-pdf",
+    "video-upload-aioz-stream",
+    "trade-with-taro",
+    "text-rpg-arcade-v3",
+    "rho-telegram-alerts",
+    "read-github",
+    "python-data-analysis",
+    "ocean-chat",
+    "obsidian-official-cli",
+    "netpad",
+    "moltbook-firewall",
+    "markdown-converter",
+    "jellyfin-control",
+    "git-workflows",
+    "file-browser",
+    "feishu-calendar",
+    "doc",
+    "baoyu-format-markdown"
+  ],
+  "delete_failed": []
+}

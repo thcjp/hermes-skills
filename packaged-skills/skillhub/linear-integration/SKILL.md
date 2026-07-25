@@ -2,7 +2,7 @@
 slug: "linear-integration"
 name: "openclaw-linear"
 version: "1.0.1"
-displayName: "Linear CLI"
+displayName: "Linear集成工具"
 summary: "命令行管Linear issue/项目/团队/文档。Manage Linear issues, projects, teams, and documents from the command"
 summary_zh: "命令行管Linear issue/项目/团队/文档。Manage Linear issues, projects, teams, and documents from the command"
 license: "MIT"

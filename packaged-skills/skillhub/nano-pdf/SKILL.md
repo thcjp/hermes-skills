@@ -2,7 +2,7 @@
 slug: "nano-pdf"
 name: "nano-pdf"
 version: 1.0.1
-displayName: "Nano Pdf"
+displayName: "PDF精简工具"
 summary: "用nano-pdf CLI按自然语言指令编辑PDF。Edit PDFs with natural-language instructions using the nano-pdf CLI。核"
 summary_zh: "用nano-pdf CLI按自然语言指令编辑PDF。Edit PDFs with natural-language instructions using the nano-pdf CLI。核"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "learn"
 name: "learn"
 version: 1.0.3
-displayName: "Learn"
+displayName: "用间隔重复与主动回忆结构化追踪学习"
 summary: "用间隔重复与主动回忆结构化追踪学习,跨领域。Structure and track learning with spaced repetition and active recall acr"
 summary_zh: "用间隔重复与主动回忆结构化追踪学习,跨领域。Structure and track learning with spaced repetition and active recall acr"
 license: "MIT"

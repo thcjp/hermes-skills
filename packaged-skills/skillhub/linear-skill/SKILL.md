@@ -2,7 +2,7 @@
 slug: "linear-skill"
 name: "linear-skill"
 version: 1.0.1
-displayName: "Linear"
+displayName: "Linear技能"
 summary: "经内置Node CLI与Linear API管项目/issue/任务。Manage Linear projects, issues, and tasks via the bundled No"
 summary_zh: "经内置Node CLI与Linear API管项目/issue/任务。Manage Linear projects, issues, and tasks via the bundled No"
 license: "MIT"

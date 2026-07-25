@@ -2,7 +2,7 @@
 slug: "financial-literacy"
 name: "financial-literacy"
 version: 1.0.1
-displayName: "Finance"
+displayName: "从个人预算到专业分析研究"
 summary: "从个人预算到专业分析研究,全面提升财商。Support financial understanding from personal budgeting to professional ana"
 summary_zh: "从个人预算到专业分析研究,全面提升财商。Support financial understanding from personal budgeting to professional ana"
 license: "MIT"

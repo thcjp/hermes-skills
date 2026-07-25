@@ -2,7 +2,7 @@
 slug: "admapix-free"
 name: "admapix-free"
 version: "1.0.0"
-displayName: "AdMapix LITE"
+displayName: "Admapix免费版"
 summary: "AdMapix基础查询，创意搜索+应用详情+商店榜单。AdMapix 原始数据层基础客户端（免费版）。覆盖广告创意搜索、应用详情查询、商店榜单查询三大基础端点类别. 作为薄客户端透传 API"
 summary_zh: "AdMapix基础查询，创意搜索+应用详情+商店榜单。AdMapix 原始数据层基础客户端（免费版）。覆盖广告创意搜索、应用详情查询、商店榜单查询三大基础端点类别. 作为薄客户端透传 API"
 license: "MIT"

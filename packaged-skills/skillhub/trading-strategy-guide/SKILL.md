@@ -2,7 +2,7 @@
 slug: "trading-strategy-guide"
 name: "trading-strategy-guide"
 version: "1.1.1"
-displayName: "Trade With Taro"
+displayName: "指南"
 summary: "提供交易策略分析与决策支持的AI技能。Provide AI-powered trading strategy analysis and decision support. Analyze m"
 summary_zh: "提供交易策略分析与决策支持的AI技能。Provide AI-powered trading strategy analysis and decision support. Analyze m"
 license: "MIT"

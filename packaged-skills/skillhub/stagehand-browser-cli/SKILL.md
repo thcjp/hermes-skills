@@ -2,7 +2,7 @@
 slug: "stagehand-browser-cli"
 name: "stagehand-browser-cli"
 version: 1.0.1
-displayName: "Stagehand Browser Cl"
+displayName: "浏览器命令行"
 summary: "经CLI用自然语言自动化浏览器交互。Automate web browser interactions using natural language via CLI commands。Use"
 summary_zh: "经CLI用自然语言自动化浏览器交互。Automate web browser interactions using natural language via CLI commands。Use"
 license: "MIT"

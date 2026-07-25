@@ -2,7 +2,7 @@
 slug: "excel-xlsx"
 name: "excel-xlsx"
 version: 1.0.3
-displayName: "Excel / XLSX"
+displayName: "Excel表格处理工具"
 summary: "创建检查编辑Excel工作簿与XLSX,公式/日期可靠。Create, inspect, and edit Microsoft Excel workbooks and XLSX files"
 summary_zh: "创建检查编辑Excel工作簿与XLSX,公式/日期可靠。Create, inspect, and edit Microsoft Excel workbooks and XLSX files"
 license: "MIT"

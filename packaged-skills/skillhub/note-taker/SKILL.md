@@ -2,7 +2,7 @@
 slug: "note-taker"
 name: "note-taker"
 version: 2.0.2
-displayName: "Note Taker"
+displayName: "笔记"
 summary: "笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Note-taking with"
 summary_zh: "笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Note-taking with"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "docker-ctl"
 name: "docker-ctl"
 version: 1.0.1
-displayName: "Docker Ctl"
+displayName: "Docker控制管理工具"
 summary: "经podman检查容器/日志/镜像,轻量运维。Inspect containers, logs, and images via podman 核心能力: - 运维工具领域的专业化AI辅助工具"
 summary_zh: "经podman检查容器/日志/镜像,轻量运维。Inspect containers, logs, and images via podman 核心能力: - 运维工具领域的专业化AI辅助工具"
 license: "MIT"

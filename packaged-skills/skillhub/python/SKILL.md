@@ -3,7 +3,7 @@
 slug: "python"
 name: "python"
 version: 1.0.1
-displayName: "Python"
+displayName: "Python开发工具"
 summary: "Python编码规范与最佳实践,写审重构时用。Python coding guidelines and best practices。Use when writing, reviewing,"
 summary_zh: "Python编码规范与最佳实践,写审重构时用。Python coding guidelines and best practices。Use when writing, reviewing,"
 license: "MIT"

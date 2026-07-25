@@ -19,6 +19,7 @@ import json
 import sqlite3
 from pathlib import Path
 from datetime import datetime
+import db
 
 SCAN_DIRS = [
     Path(r"d:\skills\packaged-skills\skillhub"),
@@ -603,15 +604,18 @@ def infer_category(slug, path, body, tags=None):
 
 
 def update_db_category(slug, category):
-    """Update the skills.category field in the SQLite database"""
+    """Update the skills.category field in the SQLite database (R7-1收口: 使用db.update_skill_fields)"""
     try:
         conn = sqlite3.connect(DB_PATH)
         conn.execute("PRAGMA foreign_keys = ON")
         c = conn.cursor()
-        c.execute("UPDATE skills SET category = ?, updated_at = ? WHERE slug = ?", 
-                  (category, datetime.now().strftime("%Y-%m-%dT%H:%M:%S"), slug))
-        conn.commit()
+        c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
+        row = c.fetchone()
         conn.close()
+        if not row:
+            return False
+        skill_id = row[0]
+        db.update_skill_fields(skill_id, category=category)
         return True
     except Exception:
         return False

@@ -2,7 +2,7 @@
 slug: "discord-hub"
 name: "discord-hub"
 version: 1.1.1
-displayName: "Discord"
+displayName: "Discord中心"
 summary: "SkillHub的Discord Bot API技能,覆盖交互/命令/消息/运维。SkillHub skill for Discord Bot API workflows, covering"
 summary_zh: "SkillHub的Discord Bot API技能,覆盖交互/命令/消息/运维。SkillHub skill for Discord Bot API workflows, covering"
 license: "MIT"

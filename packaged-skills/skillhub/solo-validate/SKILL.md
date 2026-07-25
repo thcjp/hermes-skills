@@ -2,7 +2,7 @@
 slug: "solo-validate"
 name: "solo-validate"
 version: 2.1.2
-displayName: "Validate"
+displayName: "数据验证工具"
 summary: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分。Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用"
 summary_zh: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分。Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "ssl"
 name: "ssl"
 version: 1.0.3
-displayName: "SSL"
+displayName: "SSL证书工具"
 summary: "配HTTPS/管TLS证书/调安全连接问题。Set up HTTPS, manage TLS certificates, and debug secure connection issues"
 summary_zh: "配HTTPS/管TLS证书/调安全连接问题。Set up HTTPS, manage TLS certificates, and debug secure connection issues"
 license: "MIT"

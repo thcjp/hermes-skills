@@ -2,7 +2,7 @@
 slug: "local-file-rag-basic"
 name: "local-file-rag-basic"
 version: 1.0.1
-displayName: "local-file-rag-basic"
+displayName: "文件RAG"
 summary: "高性能本地文件RAG套件基础版。High-performance local File RAG suite (Basic Edition)。核心能力: - 知识管理领域的专业化AI辅助工具"
 summary_zh: "高性能本地文件RAG套件基础版。High-performance local File RAG suite (Basic Edition)。核心能力: - 知识管理领域的专业化AI辅助工具"
 license: "MIT"

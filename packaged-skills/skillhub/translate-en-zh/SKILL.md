@@ -2,7 +2,7 @@
 slug: "translate-en-zh"
 name: "translate-en-zh"
 version: 1.0.1
-displayName: "Translate EN ZH"
+displayName: "翻译"
 summary: "中英文互转工具，支持文本翻译、批量文件翻译、术语对齐。使用场景：(1) 用户需要将中文翻译成英文或英文翻译成中文；(2) 翻译文档、代码注释、邮件等文本内容；(3)"
 summary_zh: "中英文互转工具，支持文本翻译、批量文件翻译、术语对齐。使用场景：(1) 用户需要将中文翻译成英文或英文翻译成中文；(2) 翻译文档、代码注释、邮件等文本内容；(3)"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "safe-encryption-skill"
 name: "safe-encryption-skill"
 version: 0.1.1
-displayName: "Safe Encryption"
+displayName: "技能"
 summary: "用SAFE CLI加解密管密钥,现代GPG替代,抗量子。Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG"
 summary_zh: "用SAFE CLI加解密管密钥,现代GPG替代,抗量子。Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG"
 license: "MIT"

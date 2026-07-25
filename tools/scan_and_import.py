@@ -23,7 +23,7 @@ from datetime import datetime
 # Add parent dir to path
 sys.path.insert(0, str(Path(__file__).parent))
 from db import (init_database, parse_skill_md, register_skill, record_upload,
-                record_operation, compute_file_hash)
+                record_operation, compute_file_hash, update_skill_fields)
 
 SCAN_DIRS = [
     {
@@ -217,19 +217,12 @@ def import_skills_to_db(skills):
             notes=f"File hash: {skill['file_hash'][:16]}, size: {skill['file_size']}b"
         )
 
-        # Update status
+        # Update status (R7-1收口: 使用db.update_skill_fields替代裸SQL)
         if skill['is_differentiated']:
             status = 'optimized'
         else:
             status = 'registered'
-
-        import sqlite3
-        conn = sqlite3.connect(DB_PATH)
-        conn.execute("PRAGMA foreign_keys = ON")
-        c = conn.cursor()
-        c.execute("UPDATE skills SET current_status = ? WHERE id = ?", (status, skill_id))
-        conn.commit()
-        conn.close()
+        update_skill_fields(skill_id, current_status=status)
 
         count += 1
 

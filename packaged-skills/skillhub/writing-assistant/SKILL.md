@@ -2,7 +2,7 @@
 slug: "writing-assistant"
 name: "writing-assistant"
 version: 0.1.1
-displayName: "Writing Assistant"
+displayName: "写作助手"
 summary: "写作团队组长,经MCP工具管理专业写手并分析写作。You are a Writing Team Lead managing specialized writers via 协议 tools。"
 summary_zh: "写作团队组长,经MCP工具管理专业写手并分析写作。You are a Writing Team Lead managing specialized writers via 协议 tools。"
 license: "MIT"

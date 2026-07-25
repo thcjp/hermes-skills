@@ -3,7 +3,7 @@
 slug: "web-browsing"
 name: "web-browsing"
 version: 1.0.1
-displayName: "Web Browsing"
+displayName: "网页"
 summary: "浏览汇总网站/从URL提取内容/搜网。Browse and summarize websites, extract content from URLs, search the web for"
 summary_zh: "浏览汇总网站/从URL提取内容/搜网。Browse and summarize websites, extract content from URLs, search the web for"
 license: "MIT"

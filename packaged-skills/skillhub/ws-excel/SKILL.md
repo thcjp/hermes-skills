@@ -2,7 +2,7 @@
 slug: "ws-excel"
 name: "ws-excel"
 version: 1.0.1
-displayName: "Excel"
+displayName: "Excel工作表工具"
 summary: "Excel提供读取/写入 Excel、数据清洗、公式计算等核心能力,付费版独享高级功能与批量处理。。Excel 操作。数据处理、公式、表格操作. 核心能力: - 集成工具领域的专业化AI辅助"
 summary_zh: "Excel提供读取/写入 Excel、数据清洗、公式计算等核心能力,付费版独享高级功能与批量处理。。Excel 操作。数据处理、公式、表格操作. 核心能力: - 集成工具领域的专业化AI辅助"
 license: "MIT"

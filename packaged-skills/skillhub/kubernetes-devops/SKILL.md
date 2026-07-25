@@ -2,7 +2,7 @@
 slug: "kubernetes-devops"
 name: "kubernetes-devops"
 version: 1.0.1
-displayName: "Kubernetes"
+displayName: "Kubernetes运维工具"
 summary: "K8s清单助手,生成规范的部署清单。This is a coherent Kubernetes manifest helper; its main risk is that users co"
 summary_zh: "K8s清单助手,生成规范的部署清单。This is a coherent Kubernetes manifest helper; its main risk is that users co"
 license: "MIT"

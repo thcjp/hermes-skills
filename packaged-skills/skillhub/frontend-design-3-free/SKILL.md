@@ -2,7 +2,7 @@
 slug: "frontend-design-3-free"
 name: "frontend-design-3-free"
 version: "0.1.0"
-displayName: "Frontend Design Free"
+displayName: "设计免费版"
 summary: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。。frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI"
 summary_zh: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。。frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI"
 license: "MIT"

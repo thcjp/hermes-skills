@@ -2,7 +2,7 @@
 slug: "pdf-compressor-tool"
 name: "pdf-compressor-tool"
 version: "1.0.1"
-displayName: "Compress PDF"
+displayName: "PDF工具"
 summary: "上传PDF到Cross-Service-Solutions压缩,轮询至完成。Compress a user-provided PDF by uploading it to Cross-Ser"
 summary_zh: "上传PDF到Cross-Service-Solutions压缩,轮询至完成。Compress a user-provided PDF by uploading it to Cross-Ser"
 license: "MIT"

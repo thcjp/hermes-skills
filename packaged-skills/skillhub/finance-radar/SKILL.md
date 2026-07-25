@@ -2,7 +2,7 @@
 slug: "finance-radar"
 name: "finance-radar"
 version: 1.1.1
-displayName: "Finance Radar"
+displayName: "财务"
 summary: "基于雅虎财经做股票与加密分析,数据驱动决策"MIT。Stock and cryptocurrency analysis powered by Yahoo Finance da"
 summary_zh: "基于雅虎财经做股票与加密分析,数据驱动决策"MIT。Stock and cryptocurrency analysis powered by Yahoo Finance da"
 description: |-

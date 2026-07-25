@@ -2,7 +2,7 @@
 slug: "note"
 name: "note"
 version: 2.1.1
-displayName: "Note"
+displayName: "笔记"
 summary: "知识捕获与连接系统,自动组织与检索。Knowledge capture and connection system with automatic organization and retri"
 summary_zh: "知识捕获与连接系统,自动组织与检索。Knowledge capture and connection system with automatic organization and retri"
 license: "MIT"

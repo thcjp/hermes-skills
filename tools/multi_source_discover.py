@@ -57,6 +57,7 @@ from auto_discover import (
     get_db,               # 获取数据库连接
 )
 from platform_config import GITHUB_SCAN_REPOS
+import db
 
 # ============================================================
 # 配置
@@ -232,25 +233,19 @@ def record_source_to_db(candidate: Dict[str, Any]) -> bool:
                     break
 
         metadata = candidate.get('metadata', {})
-        c.execute("""
-            INSERT INTO sources (
-                source_type, source_name, source_url, source_author,
-                source_license, source_version, download_date, original_slug, notes, skill_id
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            candidate.get('source', ''),
-            candidate.get('name', ''),
-            candidate.get('url', ''),
-            metadata.get('author', ''),
-            metadata.get('license', ''),
-            metadata.get('version', ''),
-            datetime.now().isoformat(),
-            candidate.get('source_id', ''),
-            json.dumps(metadata, ensure_ascii=False),
-            skill_id,
-        ))
-        conn.commit()
-        conn.close()
+        # R7-1收口: 使用db.record_source替代裸SQL
+        conn.close()  # 关闭前面的连接，record_source内部会自建连接
+        db.record_source(
+            source_type=candidate.get('source', ''),
+            source_name=candidate.get('name', ''),
+            source_url=candidate.get('url', ''),
+            source_author=metadata.get('author', ''),
+            source_license=metadata.get('license', ''),
+            source_version=metadata.get('version', ''),
+            original_slug=candidate.get('source_id', ''),
+            notes=json.dumps(metadata, ensure_ascii=False),
+            skill_id=skill_id,
+        )
         return True
     except Exception as e:
         print(f"  [DB ERROR] 记录 source 失败: {e}")

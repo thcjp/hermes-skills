@@ -2,7 +2,7 @@
 slug: "multi-search-engine"
 name: "multi-search-engine"
 version: 2.1.4
-displayName: "Multi Search Engine"
+displayName: "搜索引擎"
 summary: "多搜索引擎集成,16引擎(7国内+9全球)。Multi search engine integration with 16 engines (7 CN + 9 Global)。核心能力: -"
 summary_zh: "多搜索引擎集成,16引擎(7国内+9全球)。Multi search engine integration with 16 engines (7 CN + 9 Global)。核心能力: -"
 license: "MIT"

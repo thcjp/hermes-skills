@@ -2,7 +2,7 @@
 slug: "agent-browser-automation"
 name: "agent-browser-automation"
 version: "0.1.0"
-displayName: "Agent Browser"
+displayName: "智能体浏览器自动化"
 summary: "无头浏览器自动化CLI,专为AI Agent优化,带可访问性树快照与引用,稳定抓取。Headless browser automation CLI optimized for AI agen"
 summary_zh: "无头浏览器自动化CLI,专为AI Agent优化,带可访问性树快照与引用,稳定抓取。Headless browser automation CLI optimized for AI agen"
 license: "MIT"

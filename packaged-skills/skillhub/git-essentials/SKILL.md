@@ -1,7 +1,7 @@
 ---
 name: git-essentials
 slug: git-essentials
-displayName: "Git Essentials"
+displayName: "Git版本管理工具"
 version: "1.0.1"
 summary: "版本控制/分支/协作的Git必备命令与工作流"
 description: "Git版本控制必备命令与团队协作工作流技能，系统覆盖本地初始化配置、暂存提交、分支管理与切换、合并冲突解决、远程仓库同步、历史日志检索、提交回退撤销、标签发布、变基整理、储藏恢复、子模块与清理等核心场景，深度适配Gitee与GitCode等国内代码托管平台，提供从ERR-001到ERR-008的结构化错误码表与常见问题FAQ解答，适用于日常提交、特性分支协作、紧急修复与历史整理等多种任务。"

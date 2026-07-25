@@ -2,7 +2,7 @@
 slug: "claude-code-runner"
 name: "claude-code-runner"
 version: 0.1.1
-displayName: "ai-assistant Code Ru"
+displayName: "Claude代码运行器"
 summary: "经PTY调用Claude Code执行编程任务,搞定非TTY环境。Execute programming tasks via ai-assistant Code using PTY-base"
 summary_zh: "经PTY调用Claude Code执行编程任务,搞定非TTY环境。Execute programming tasks via ai-assistant Code using PTY-base"
 license: "MIT"

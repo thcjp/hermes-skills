@@ -2,7 +2,7 @@
 slug: "china-news"
 name: "china-news"
 version: 1.0.4
-displayName: "China News"
+displayName: "新闻"
 summary: "中国新闻资讯聚合,一键获取中文源最新动态。中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources。Use"
 summary_zh: "中国新闻资讯聚合,一键获取中文源最新动态。中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources。Use"
 license: "MIT"

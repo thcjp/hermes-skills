@@ -3,7 +3,7 @@
 slug: "chart-generator-2-0-0"
 name: "chart-generator-2-0-0"
 version: 1.0.1
-displayName: "Chart Generator 2 0"
+displayName: "图表生成器"
 summary: "数据可视化出SVG图表,柱/线/饼图即需即出。Data visualization tool producing SVG charts。Use when you need bar chart"
 summary_zh: "数据可视化出SVG图表,柱/线/饼图即需即出。Data visualization tool producing SVG charts。Use when you need bar chart"
 license: "MIT"

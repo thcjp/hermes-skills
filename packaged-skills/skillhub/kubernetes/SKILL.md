@@ -2,7 +2,7 @@
 slug: "kubernetes"
 name: "kubernetes"
 version: 2.1.1
-displayName: "Kubernetes"
+displayName: "Kubernetes容器编排工具"
 summary: "K8s与OpenShift多Agent集群,协同运营集群。Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-"
 summary_zh: "K8s与OpenShift多Agent集群,协同运营集群。Kubernetes & OpenShift Platform Agent Swarm — A coordinated multi-"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "bsession"
 name: "bsession"
 version: 0.1.1
-displayName: "browser"
+displayName: "浏览器会话管理工具"
 summary: "搭bsession环境做浏览器自动化,一次性抓取或建持久会话。Browser automation — setup the bsession environment, fetch info"
 summary_zh: "搭bsession环境做浏览器自动化,一次性抓取或建持久会话。Browser automation — setup the bsession environment, fetch info"
 license: "MIT"

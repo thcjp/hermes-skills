@@ -3,7 +3,7 @@
 slug: "chat"
 name: "chat"
 version: 1.1.1
-displayName: "Chat"
+displayName: "聊天"
 summary: "从显式反馈学习沟通偏好,自适应语气/格式/风格,越用越懂你。Learns communication preferences from explicit feedback。Adapts to"
 summary_zh: "从显式反馈学习沟通偏好,自适应语气/格式/风格,越用越懂你。Learns communication preferences from explicit feedback。Adapts to"
 license: "MIT"

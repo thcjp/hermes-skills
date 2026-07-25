@@ -2,7 +2,7 @@
 slug: "javascript"
 name: "javascript"
 version: 1.0.4
-displayName: "JavaScript"
+displayName: "JavaScript开发工具"
 summary: "写健壮JavaScript,异步/类型转换/ES2023+特性。Write robust JavaScript with async patterns, type coercion hand"
 summary_zh: "写健壮JavaScript,异步/类型转换/ES2023+特性。Write robust JavaScript with async patterns, type coercion hand"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "agent-chat"
 name: "agent-chat"
 version: 0.1.1
-displayName: "Agent Chat"
+displayName: "智能体聊天"
 summary: "为AI Agent建临时实时聊天室,密码保护+SSE流式+Web界面,跨Agent即时协作。Temporary real-time chat rooms for AI agents。Pass"
 summary_zh: "为AI Agent建临时实时聊天室,密码保护+SSE流式+Web界面,跨Agent即时协作。Temporary real-time chat rooms for AI agents。Pass"
 license: "MIT"

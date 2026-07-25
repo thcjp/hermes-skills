@@ -2,7 +2,7 @@
 slug: "research-agent"
 name: "research-agent"
 version: 1.0.1
-displayName: "Research"
+displayName: "智能体"
 summary: "开放式主题研究,构建活的Markdown文档,支持交互(付费增强版)。Conduct open-ended research on a topic, building a living ma"
 summary_zh: "开放式主题研究,构建活的Markdown文档,支持交互(付费增强版)。Conduct open-ended research on a topic, building a living ma"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "rss-digest"
 name: "rss-digest"
 version: 0.2.2
-displayName: "Rss Digest"
+displayName: "RSS摘要工具"
 summary: "用feed CLI做RSS摘要,抓取/分诊/汇总高价值条目。Agentic RSS digest using the feed CLI。Fetch, triage, and summariz"
 summary_zh: "用feed CLI做RSS摘要,抓取/分诊/汇总高价值条目。Agentic RSS digest using the feed CLI。Fetch, triage, and summariz"
 license: "MIT"

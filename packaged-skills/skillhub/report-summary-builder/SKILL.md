@@ -2,7 +2,7 @@
 slug: "report-summary-builder"
 name: "report-summary-builder"
 version: 1.0.1
-displayName: "Report Summary Build"
+displayName: "报告摘要构建器"
 summary: "Report Summary Build提供基于已有日报自动汇总生成周报和月报等核心能力,付费版独享高级功能与批量处理。"
 summary_zh: "Report Summary Build提供基于已有日报自动汇总生成周报和月报等核心能力,付费版独享高级功能与批量处理。"
 license: "MIT"

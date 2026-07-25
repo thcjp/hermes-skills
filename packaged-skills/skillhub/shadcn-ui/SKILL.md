@@ -3,7 +3,7 @@
 slug: "shadcn-ui"
 name: "shadcn-ui"
 version: 1.0.1
-displayName: "Shadcn Ui"
+displayName: "Shadcn UI组件工具"
 summary: "用shadcn/ui组件/Tailwind布局/react-hook-form表单建UI。Use when building UI with shadcn/ui components, Ta"
 summary_zh: "用shadcn/ui组件/Tailwind布局/react-hook-form表单建UI。Use when building UI with shadcn/ui components, Ta"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "dashboard"
 name: "dashboard"
 version: 1.0.2
-displayName: "Dashboard"
+displayName: "仪表盘"
 summary: "从任意数据源构建自定义仪表盘,本地托管+视觉QA,数据可视。Build custom dashboards from any data source with local hosting a"
 summary_zh: "从任意数据源构建自定义仪表盘,本地托管+视觉QA,数据可视。Build custom dashboards from any data source with local hosting a"
 license: "MIT"

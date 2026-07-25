@@ -2,7 +2,7 @@
 slug: "graph-advocate"
 name: "graph-advocate"
 version: 2.9.2
-displayName: "Graph Advocate"
+displayName: "图谱"
 summary: "把区块链数据问题路由到对的Graph Protocol服务,返实时数据。Route any blockchain data question to the right Graph Proto"
 summary_zh: "把区块链数据问题路由到对的Graph Protocol服务,返实时数据。Route any blockchain data question to the right Graph Proto"
 license: "MIT"

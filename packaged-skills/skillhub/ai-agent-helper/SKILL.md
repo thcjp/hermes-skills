@@ -3,7 +3,7 @@
 slug: "ai-agent-helper"
 name: "ai-agent-helper"
 version: 1.0.1
-displayName: "AI Agent Helper"
+displayName: "AI智能体辅助"
 summary: "AI Agent设计与优化助手,覆盖Prompt工程、任务拆解、ReAct循环、工具选择与Token优化"
 summary_zh: "AI Agent设计与优化助手,覆盖Prompt工程、任务拆解、ReAct循环、工具选择与Token优化"
 license: "MIT"

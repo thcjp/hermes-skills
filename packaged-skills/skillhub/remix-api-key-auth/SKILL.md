@@ -2,7 +2,7 @@
 slug: "remix-api-key-auth"
 name: "remix-api-key-auth"
 version: 0.1.1
-displayName: "Remix Api Key Auth"
+displayName: "API密钥认证"
 summary: "为Remix Agent发布流配置并校验bearer API Key认证。Configure and verify bearer API key authentication for Rem"
 summary_zh: "为Remix Agent发布流配置并校验bearer API Key认证。Configure and verify bearer API key authentication for Rem"
 license: "MIT"

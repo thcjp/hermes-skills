@@ -3,7 +3,7 @@
 slug: "feed-digest"
 name: "feed-digest"
 version: 1.0.1
-displayName: "Feed Digest"
+displayName: "订阅"
 summary: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏。This skill is a straightforward feed digest helper with disclosed feed"
 summary_zh: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏。This skill is a straightforward feed digest helper with disclosed feed"
 license: "MIT"

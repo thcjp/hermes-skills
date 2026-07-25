@@ -2,7 +2,7 @@
 slug: "k8s"
 name: "k8s"
 version: 1.0.1
-displayName: "Kubernetes"
+displayName: "K8s容器编排工具"
 summary: "规避Kubernetes常见错误,资源限制/探针/选择器。Avoid common Kubernetes mistakes — resource limits, probe configur"
 summary_zh: "规避Kubernetes常见错误,资源限制/探针/选择器。Avoid common Kubernetes mistakes — resource limits, probe configur"
 license: "MIT"

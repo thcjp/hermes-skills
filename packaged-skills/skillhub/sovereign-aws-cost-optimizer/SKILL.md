@@ -2,7 +2,7 @@
 slug: "sovereign-aws-cost-optimizer"
 name: "sovereign-aws-cost-optimizer"
 version: 1.0.1
-displayName: "AWS Cost Optimizer"
+displayName: "AWS成本优化器"
 summary: "分析AWS基础设施省钱,右尺寸/预留实例/储蓄计划。Analyzes AWS infrastructure for cost savings。Right-sizing, Reserved I"
 summary_zh: "分析AWS基础设施省钱,右尺寸/预留实例/储蓄计划。Analyzes AWS infrastructure for cost savings。Right-sizing, Reserved I"
 license: "MIT"

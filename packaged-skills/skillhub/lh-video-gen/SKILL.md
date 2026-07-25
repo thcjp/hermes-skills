@@ -2,7 +2,7 @@
 slug: "lh-video-gen"
 name: "lh-video-gen"
 version: 1.0.1
-displayName: "LH Video Gen"
+displayName: "视频"
 summary: "从Markdown脚本生成9:16竖屏短视频,自动分镜。Generate vertical short videos (9:16) from a Markdown script。Parses"
 summary_zh: "从Markdown脚本生成9:16竖屏短视频,自动分镜。Generate vertical short videos (9:16) from a Markdown script。Parses"
 license: "MIT"

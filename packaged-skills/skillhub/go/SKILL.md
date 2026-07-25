@@ -2,7 +2,7 @@
 slug: "go"
 name: "go"
 version: 1.0.3
-displayName: "Go"
+displayName: "Go语言开发工具"
 summary: "写可靠Go代码,规避goroutine泄露/接口陷阱/并发bug。Write reliable Go code avoiding goroutine leaks, interface tra"
 summary_zh: "写可靠Go代码,规避goroutine泄露/接口陷阱/并发bug。Write reliable Go code avoiding goroutine leaks, interface tra"
 license: "MIT"

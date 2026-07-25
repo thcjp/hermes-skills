@@ -2,7 +2,7 @@
 slug: "solo-audit"
 name: "solo-audit"
 version: 1.4.2
-displayName: "Audit"
+displayName: "审计"
 summary: "知识库健康检查,断链/缺frontmatter/标签不一致/封面。Health check knowledge base for broken links, missing frontmat"
 summary_zh: "知识库健康检查,断链/缺frontmatter/标签不一致/封面。Health check knowledge base for broken links, missing frontmat"
 license: "MIT"

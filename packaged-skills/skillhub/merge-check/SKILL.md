@@ -2,7 +2,7 @@
 slug: "merge-check"
 name: "merge-check"
 version: 1.0.1
-displayName: "Merge Check"
+displayName: "分析"
 summary: "分析GitHub PR可合并性,预测是否会被合并。Analyze a GitHub pull request for mergeability — predict whether it wi"
 summary_zh: "分析GitHub PR可合并性,预测是否会被合并。Analyze a GitHub pull request for mergeability — predict whether it wi"
 license: "MIT"

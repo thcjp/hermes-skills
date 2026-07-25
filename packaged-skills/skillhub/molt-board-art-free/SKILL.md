@@ -3,7 +3,7 @@
 slug: "molt-board-art-free"
 name: "molt-board-art-free"
 version: "1.0.1"
-displayName: "Board Art Free"
+displayName: "艺术免费版"
 summary: "基础版协作像素画布技能，支持注册、像素放置和冷却管理。。molt-board-art-free 是协作像素画布技能的基础版本，让 AI Agent 在共享画布上放置像素. 支持机器人注册、像"
 summary_zh: "基础版协作像素画布技能，支持注册、像素放置和冷却管理。。molt-board-art-free 是协作像素画布技能的基础版本，让 AI Agent 在共享画布上放置像素. 支持机器人注册、像"
 license: "MIT"

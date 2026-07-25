@@ -3,7 +3,7 @@
 slug: "note-app-cli"
 name: "note-app-cli"
 version: "1.0.0"
-displayName: "Obsidian CLI"
+displayName: "笔记命令行"
 summary: "Obsidian管理技能,管笔记库(权限较广需谨慎)。This skill matches its Obsidian-management purpose, but it gives an"
 summary_zh: "Obsidian管理技能,管笔记库(权限较广需谨慎)。This skill matches its Obsidian-management purpose, but it gives an"
 license: "MIT"

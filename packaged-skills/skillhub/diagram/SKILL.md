@@ -2,7 +2,7 @@
 slug: "diagram"
 name: "diagram"
 version: 1.0.1
-displayName: "Diagram"
+displayName: "图解"
 summary: "用Mermaid/PlantUML/ASCII从描述生成图,架构/流程/时序全覆盖。Generate diagrams from descriptions with Mermaid, Pla"
 summary_zh: "用Mermaid/PlantUML/ASCII从描述生成图,架构/流程/时序全覆盖。Generate diagrams from descriptions with Mermaid, Pla"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "gog"
 name: "gog"
 version: 1.0.1
-displayName: "Gog"
+displayName: "命令行工具"
 summary: "Google Workspace命令行工具,覆盖Gmail/日历/云盘/联系人/表格/文档六大服务。"
 summary_zh: "Google Workspace命令行工具,覆盖Gmail/日历/云盘/联系人/表格/文档六大服务。"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "linear"
 name: "linear"
 version: 1.0.1
-displayName: "Linear"
+displayName: "Linear项目管理工具"
 summary: "查询管理Linear issue/项目/团队工作流。Query and manage Linear issues, projects, and team workflows。核心能力: -"
 summary_zh: "查询管理Linear issue/项目/团队工作流。Query and manage Linear issues, projects, and team workflows。核心能力: -"
 license: "MIT"

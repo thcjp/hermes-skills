@@ -2,7 +2,7 @@
 slug: "calendar"
 name: "calendar"
 version: 1.0.1
-displayName: "Calendar"
+displayName: "日历"
 summary: "日历管理与排期,创建事件/管会议/跨平台同步,时间不冲突。Calendar management and scheduling。Create events, manage meetings,"
 summary_zh: "日历管理与排期,创建事件/管会议/跨平台同步,时间不冲突。Calendar management and scheduling。Create events, manage meetings,"
 license: "MIT"

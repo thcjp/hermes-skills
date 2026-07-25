@@ -2,7 +2,7 @@
 slug: "smart-model-routing-for-zai"
 name: "smart-model-routing-for-zai"
 version: 1.0.1
-displayName: "Smart Model Routing"
+displayName: "模型路由指南"
 summary: "z.ai模型路由指南,不装代码不索凭据。This skill is a disclosed z。ai model-routing guide and does not install cod"
 summary_zh: "z.ai模型路由指南,不装代码不索凭据。This skill is a disclosed z。ai model-routing guide and does not install cod"
 license: "MIT"

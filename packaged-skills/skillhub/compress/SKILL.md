@@ -2,7 +2,7 @@
 slug: "compress"
 name: "compress"
 version: 1.0.1
-displayName: "Compress"
+displayName: "压缩"
 summary: "语义压缩文本,迭代校验+锚点校验和,信息无损瘦身。Compress text semantically with iterative validation, anchor checksums"
 summary_zh: "语义压缩文本,迭代校验+锚点校验和,信息无损瘦身。Compress text semantically with iterative validation, anchor checksums"
 license: "MIT"

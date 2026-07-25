@@ -3,7 +3,7 @@
 slug: "image"
 name: "image"
 version: 1.0.5
-displayName: "Image"
+displayName: "图像"
 summary: "创建/检查/处理/优化图像与视觉资产,格式选择可靠。Create, inspect, process, and optimize image files and visual assets"
 summary_zh: "创建/检查/处理/优化图像与视觉资产,格式选择可靠。Create, inspect, process, and optimize image files and visual assets"
 license: "MIT"

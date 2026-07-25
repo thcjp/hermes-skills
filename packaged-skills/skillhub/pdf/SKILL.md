@@ -2,7 +2,7 @@
 slug: "pdf"
 name: "pdf"
 version: 0.1.1
-displayName: "Pdf"
+displayName: "PDF处理工具"
 summary: "PDF全操作工具箱,提取文本表格/建PDF/合并/填表。Comprehensive PDF manipulation toolkit for extracting text and tabl"
 summary_zh: "PDF全操作工具箱,提取文本表格/建PDF/合并/填表。Comprehensive PDF manipulation toolkit for extracting text and tabl"
 license: "MIT"

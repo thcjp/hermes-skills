@@ -2,7 +2,7 @@
 slug: "lite-sqlite"
 name: "lite-sqlite"
 version: 1.0.1
-displayName: "Lite Sqlite"
+displayName: "精简版Sqlite"
 summary: "SkillHub Agent用的快速轻量本地SQLite,低RAM低存储。Fast lightweight local SQLite database for SkillHub agents"
 summary_zh: "SkillHub Agent用的快速轻量本地SQLite,低RAM低存储。Fast lightweight local SQLite database for SkillHub agents"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "ai-assistant-free"
 name: "ai-assistant-free"
 version: "1.0.0"
-displayName: "AI Doc LITE"
+displayName: "AI助手免费版"
 summary: "长文本推理基础工具,提供文档评估、核心逻辑提取与基础风险检测三大能力。长文本推理基础工具(免费版)。针对商业合同、备忘录、提案等长文档,提供文档评估、核心逻辑提取与基础风险检测 三大基础能力"
 summary_zh: "长文本推理基础工具,提供文档评估、核心逻辑提取与基础风险检测三大能力。长文本推理基础工具(免费版)。针对商业合同、备忘录、提案等长文档,提供文档评估、核心逻辑提取与基础风险检测 三大基础能力"
 license: "MIT"

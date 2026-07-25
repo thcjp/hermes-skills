@@ -2,7 +2,7 @@
 slug: "ai-news"
 name: "ai-news"
 version: 1.0.2
-displayName: "ai-news"
+displayName: "AI新闻"
 summary: "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
 summary_zh: "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
 license: "MIT"

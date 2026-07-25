@@ -3,7 +3,7 @@
 slug: "knowledge-graph"
 name: "knowledge-graph"
 version: "1.0.1"
-displayName: "Knowledge Graph"
+displayName: "图谱"
 summary: "维护SkillHub复利知识图谱,增删与替代原子笔记。Maintain SkillHub's compounding knowledge graph under life/areas/**"
 summary_zh: "维护SkillHub复利知识图谱,增删与替代原子笔记。Maintain SkillHub's compounding knowledge graph under life/areas/**"
 license: "MIT"

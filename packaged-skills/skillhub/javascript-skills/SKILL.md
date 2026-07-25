@@ -3,7 +3,7 @@
 slug: "javascript-skills"
 name: "javascript-skills"
 version: 1.0.3
-displayName: "JavaScript"
+displayName: "JavaScript技能集"
 summary: "综合JavaScript风格指南,激活即供最佳实践。A comprehensive JavaScript style guide skill。When activated, it provi"
 summary_zh: "综合JavaScript风格指南,激活即供最佳实践。A comprehensive JavaScript style guide skill。When activated, it provi"
 license: "MIT"

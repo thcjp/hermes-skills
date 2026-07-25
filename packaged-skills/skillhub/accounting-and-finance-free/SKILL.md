@@ -2,7 +2,7 @@
 slug: "accounting-and-finance-free"
 name: "accounting-and-finance-free"
 version: "1.0.0"
-displayName: "Finance LITE"
+displayName: "财务免费版"
 summary: "基础财务分析工具,提供偿债能力/盈利能力比率分析、DuPont拆解、现金流结构分析。基础财务分析工具(免费版)。提供偿债能力(流动比率/速动比率/资产负债率)、 盈利能力(毛利率/净利率/R"
 summary_zh: "基础财务分析工具,提供偿债能力/盈利能力比率分析、DuPont拆解、现金流结构分析。基础财务分析工具(免费版)。提供偿债能力(流动比率/速动比率/资产负债率)、 盈利能力(毛利率/净利率/R"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "go-linter-configuration"
 name: "go-linter-configuration"
 version: 1.0.1
-displayName: "Go Linter Configurat"
+displayName: "Go代码检查配置工具"
 summary: "配置排障golangci-lint,处理导入与类型检查问题。Configure and troubleshoot golangci-lint for Go projects。Handle i"
 summary_zh: "配置排障golangci-lint,处理导入与类型检查问题。Configure and troubleshoot golangci-lint for Go projects。Handle i"
 license: "MIT"

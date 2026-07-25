@@ -3,7 +3,7 @@
 slug: "whatsapp-image-send"
 name: "whatsapp-image-send"
 version: 1.0.2
-displayName: "WhatsApp Image Send"
+displayName: "WhatsApp图像"
 summary: "经WhatsApp发图/视频/音频/文档,下载转存后发送。Send images, videos, audio, or documents via WhatsApp by downloadi"
 summary_zh: "经WhatsApp发图/视频/音频/文档,下载转存后发送。Send images, videos, audio, or documents via WhatsApp by downloadi"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "vector-control"
 name: "vector-control"
 version: 1.0.2
-displayName: "Vector Control"
+displayName: "向量控制工具"
 summary: "经Wirepod本地HTTP API控Vector机器人。Control a Vector robot via Wirepod’s local HTTP API on the same ne"
 summary_zh: "经Wirepod本地HTTP API控Vector机器人。Control a Vector robot via Wirepod’s local HTTP API on the same ne"
 license: "MIT"

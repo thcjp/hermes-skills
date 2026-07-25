@@ -2,7 +2,7 @@
 slug: "word-docx"
 name: "word-docx"
 version: 1.0.3
-displayName: "Word / DOCX"
+displayName: "创建检查编辑"
 summary: "创建检查编辑Word文档与DOCX,样式与编号可靠。Create, inspect, and edit Microsoft Word documents and DOCX files wit"
 summary_zh: "创建检查编辑Word文档与DOCX,样式与编号可靠。Create, inspect, and edit Microsoft Word documents and DOCX files wit"
 license: "MIT"

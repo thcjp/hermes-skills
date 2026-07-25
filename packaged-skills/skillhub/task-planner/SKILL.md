@@ -2,7 +2,7 @@
 slug: "task-planner"
 name: "task-planner"
 version: 3.0.6
-displayName: "Task Planner"
+displayName: "任务"
 summary: "本地管任务/设优先级/追截止,支持中英双语。Manage tasks, set priorities, and track deadlines locally。Supports biling"
 summary_zh: "本地管任务/设优先级/追截止,支持中英双语。Manage tasks, set priorities, and track deadlines locally。Supports biling"
 license: "MIT"

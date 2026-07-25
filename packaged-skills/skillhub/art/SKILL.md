@@ -2,7 +2,7 @@
 slug: "art"
 name: "art"
 version: 1.0.1
-displayName: "Art"
+displayName: "艺术"
 summary: "指导艺术创作技法精进与鉴赏,提供分媒介实操建议,提升创作水准。Guide art creation, technique development, and appreciation with"
 summary_zh: "指导艺术创作技法精进与鉴赏,提供分媒介实操建议,提升创作水准。Guide art creation, technique development, and appreciation with"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "firewall"
 name: "firewall"
 version: 1.0.1
-displayName: "Firewall"
+displayName: "防火墙"
 summary: "按安全最佳实践配置服务器与云防火墙,封堵风险。Configure firewalls on servers and cloud providers with security best pr"
 summary_zh: "按安全最佳实践配置服务器与云防火墙,封堵风险。Configure firewalls on servers and cloud providers with security best pr"
 license: "MIT"

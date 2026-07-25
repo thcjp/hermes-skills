@@ -2,7 +2,7 @@
 slug: "skill-vetter"
 name: "skill-vetter"
 version: 1.0.1
-displayName: "Skill Vetter"
+displayName: "技能"
 summary: "安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。。skill-vetter 是一个安全优先的 AI Agent 技能审查工具。在安装任何技能前执行 4 步审查协议： 来源"
 summary_zh: "安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。。skill-vetter 是一个安全优先的 AI Agent 技能审查工具。在安装任何技能前执行 4 步审查协议： 来源"
 license: "MIT"

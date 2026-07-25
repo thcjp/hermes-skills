@@ -3,7 +3,7 @@
 slug: "netpad-tool"
 name: "netpad-tool"
 version: "1.0.0"
-displayName: "Netpad"
+displayName: "工具"
 summary: "NetPad管理工具,管表单/提交/用户(删除需谨慎)。The skill appears to be a legitimate NetPad management tool, but it"
 summary_zh: "NetPad管理工具,管表单/提交/用户(删除需谨慎)。The skill appears to be a legitimate NetPad management tool, but it"
 license: "MIT"

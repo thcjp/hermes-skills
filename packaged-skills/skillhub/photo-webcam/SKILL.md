@@ -3,7 +3,7 @@
 slug: "photo-webcam"
 name: "photo-webcam"
 version: 1.0.7
-displayName: "Photo Webcam"
+displayName: "照片"
 summary: "列出并抓取网络摄像头快照(尤其foto-webcam.eu)。List and snapshot retrieval for webcams (especially foto-webcam。"
 summary_zh: "列出并抓取网络摄像头快照(尤其foto-webcam.eu)。List and snapshot retrieval for webcams (especially foto-webcam。"
 license: "MIT"

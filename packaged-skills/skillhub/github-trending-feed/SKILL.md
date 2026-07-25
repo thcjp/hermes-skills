@@ -2,7 +2,7 @@
 slug: "github-trending-feed"
 name: "github-trending-feed"
 version: 1.0.1
-displayName: "GitHub Trending Feed"
+displayName: "GitHub订阅"
 summary: "获取 GitHub Trending 热门仓库列表。当用户要求查看 GitHub 热榜、每日 GitHub trending、推送 GitHub"
 summary_zh: "获取 GitHub Trending 热门仓库列表。当用户要求查看 GitHub 热榜、每日 GitHub trending、推送 GitHub"
 license: "MIT"

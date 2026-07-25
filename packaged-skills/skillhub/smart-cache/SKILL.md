@@ -2,7 +2,7 @@
 slug: "smart-cache"
 name: "smart-cache"
 version: 1.0.1
-displayName: "Smart Cache"
+displayName: "缓存"
 summary: "LRU/LFU策略与TTL管理的智能缓存。Intelligent caching with LRU/LFU strategies and TTL management 核心能力: - 其他工"
 summary_zh: "LRU/LFU策略与TTL管理的智能缓存。Intelligent caching with LRU/LFU strategies and TTL management 核心能力: - 其他工"
 license: "MIT"

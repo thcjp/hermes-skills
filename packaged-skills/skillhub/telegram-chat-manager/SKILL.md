@@ -2,7 +2,7 @@
 slug: "telegram-chat-manager"
 name: "telegram-chat-manager"
 version: 0.1.1
-displayName: "SkillHub Telegram Ch"
+displayName: "Telegram聊天管理器"
 summary: "启用Telegram跨实例聊天/用户提及/个人bot设置。Enable Telegram cross-instance chat, user mention, and personal bo"
 summary_zh: "启用Telegram跨实例聊天/用户提及/个人bot设置。Enable Telegram cross-instance chat, user mention, and personal bo"
 license: "MIT"

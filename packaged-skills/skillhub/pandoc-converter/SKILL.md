@@ -3,7 +3,7 @@
 slug: "pandoc-converter"
 name: "pandoc-convert-openclaw"
 version: "0.1.0"
-displayName: "Pandoc Convert"
+displayName: "转换器"
 summary: "用pandoc CLI在40+格式间转文档,Markdown/Word/PDF/HTML。Convert documents between 40+ formats using pandoc"
 summary_zh: "用pandoc CLI在40+格式间转文档,Markdown/Word/PDF/HTML。Convert documents between 40+ formats using pandoc"
 license: "MIT"

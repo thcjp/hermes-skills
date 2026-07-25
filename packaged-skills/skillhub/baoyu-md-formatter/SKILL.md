@@ -3,7 +3,7 @@
 slug: "baoyu-md-formatter"
 name: "baoyu-md-formatter"
 version: "1.117.2"
-displayName: "Baoyu Format Markdow"
+displayName: "宝玉Markdown格式化工具"
 summary: "格式化纯文本与Markdown,补frontmatter/标题/摘要/加粗/列表,规范文档。Formats plain text or markdown files with frontma"
 summary_zh: "格式化纯文本与Markdown,补frontmatter/标题/摘要/加粗/列表,规范文档。Formats plain text or markdown files with frontma"
 license: "MIT"

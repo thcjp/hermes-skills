@@ -2,7 +2,7 @@
 slug: "json-canvas"
 name: "json-canvas"
 version: 1.0.1
-displayName: "Json Canvas"
+displayName: "JSON画布工具"
 summary: "创建编辑JSON Canvas文件,含节点/边/分组/连接。Create and edit JSON Canvas files (。canvas) with nodes, edges, gr"
 summary_zh: "创建编辑JSON Canvas文件,含节点/边/分组/连接。Create and edit JSON Canvas files (。canvas) with nodes, edges, gr"
 license: "MIT"

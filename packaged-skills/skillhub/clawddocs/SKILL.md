@@ -2,7 +2,7 @@
 slug: "clawddocs"
 name: "clawddocs"
 version: 1.2.3
-displayName: "Clawddocs"
+displayName: "文档助手工具"
 summary: "SkillHub文档专家,带决策树导航,快速定位答案。SkillHub documentation expert with decision tree navigation。核心能力: -"
 summary_zh: "SkillHub文档专家,带决策树导航,快速定位答案。SkillHub documentation expert with decision tree navigation。核心能力: -"
 license: "MIT"

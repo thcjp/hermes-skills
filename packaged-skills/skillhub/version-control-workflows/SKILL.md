@@ -3,7 +3,7 @@
 slug: "version-control-workflows"
 name: "version-control-workflows"
 version: "1.0.1"
-displayName: "Git Workflows"
+displayName: "之外的高级"
 summary: "add/commit/push之外的高级git操作,rebase/bisect/worktree。Advanced git operations beyond add/commit/push"
 summary_zh: "add/commit/push之外的高级git操作,rebase/bisect/worktree。Advanced git operations beyond add/commit/push"
 license: "MIT"

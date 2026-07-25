@@ -2,7 +2,7 @@
 slug: "aws-infra-free"
 name: "aws-infra-free"
 version: "1.0.0"
-displayName: "AWS Infra LITE"
+displayName: "AWS免费版"
 summary: "通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景。AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速"
 summary_zh: "通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景。AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速"
 license: "MIT"

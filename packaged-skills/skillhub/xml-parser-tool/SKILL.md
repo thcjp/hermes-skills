@@ -2,7 +2,7 @@
 slug: "xml-parser-tool"
 name: "xml-parser-tool"
 version: "2.1.1"
-displayName: "Xml Reader"
+displayName: "XML解析器工具"
 summary: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML。Read and parse XML from construction systems - P6 schedu"
 summary_zh: "读解析建筑系统XML,P6进度/BSDD/IFC-XML/COBie-XML。Read and parse XML from construction systems - P6 schedu"
 license: "MIT"

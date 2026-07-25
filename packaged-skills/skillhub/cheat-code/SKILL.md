@@ -2,7 +2,7 @@
 slug: "cheat-code"
 name: "cheat-code"
 version: 1.0.12
-displayName: "Cheat Code"
+displayName: "秘籍代码"
 summary: "让Agent才能无极限,说出想要即兑现,解锁隐藏能力。Makes your agent's talents limitless。Tell your agent what you want。U"
 summary_zh: "让Agent才能无极限,说出想要即兑现,解锁隐藏能力。Makes your agent's talents limitless。Tell your agent what you want。U"
 license: "MIT"

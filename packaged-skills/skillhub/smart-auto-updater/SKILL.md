@@ -3,7 +3,7 @@
 slug: "smart-auto-updater"
 name: "smart-auto-updater"
 version: 1.0.1
-displayName: "Smart Auto Updater"
+displayName: "驱动影响评估的智能自动更新器"
 summary: "AI驱动影响评估的智能自动更新器,查更新/析变更。Smart auto-updater with AI-powered impact assessment。Checks updates, a"
 summary_zh: "AI驱动影响评估的智能自动更新器,查更新/析变更。Smart auto-updater with AI-powered impact assessment。Checks updates, a"
 license: "MIT"

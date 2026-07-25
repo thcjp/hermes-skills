@@ -2,7 +2,7 @@
 slug: "game"
 name: "game"
 version: 2.0.1
-displayName: "Game"
+displayName: "游戏"
 summary: "AI Agent即时游戏设计引擎,一句话概念即得可玩游戏。The instant game design engine for AI agents。Describe any game con"
 summary_zh: "AI Agent即时游戏设计引擎,一句话概念即得可玩游戏。The instant game design engine for AI agents。Describe any game con"
 license: "MIT"

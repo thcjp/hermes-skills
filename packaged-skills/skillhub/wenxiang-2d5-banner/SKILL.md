@@ -3,7 +3,7 @@
 slug: "wenxiang-2d5-banner"
 name: "wenxiang-2d5-banner"
 version: 1.0.1
-displayName: "Wenxiang 2d5 Banner"
+displayName: "2.5D横幅生成工具"
 summary: "用Nano Banana Pro(Gemini 3 Pro Image)生成编辑图片。Generate/edit images with Nano Banana Pro (Gemini 3"
 summary_zh: "用Nano Banana Pro(Gemini 3 Pro Image)生成编辑图片。Generate/edit images with Nano Banana Pro (Gemini 3"
 license: "MIT"

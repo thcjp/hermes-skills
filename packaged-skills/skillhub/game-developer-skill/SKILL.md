@@ -3,7 +3,7 @@
 slug: "game-developer-skill"
 name: "game-developer-skill"
 version: 1.0.1
-displayName: "Game Developer Skill"
+displayName: "游戏技能"
 summary: "构建游戏系统/实现Unity与Unreal特性/优化性能。Use when building game systems, implementing Unity/Unreal features"
 summary_zh: "构建游戏系统/实现Unity与Unreal特性/优化性能。Use when building game systems, implementing Unity/Unreal features"
 license: "MIT"

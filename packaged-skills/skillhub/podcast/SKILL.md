@@ -2,7 +2,7 @@
 slug: "podcast"
 name: "podcast"
 version: 1.0.2
-displayName: "Podcast"
+displayName: "播客"
 summary: "规划剧集/产音频视频/生成切片,创建并增长播客。Create and grow podcasts by planning episodes, producing audio or video"
 summary_zh: "规划剧集/产音频视频/生成切片,创建并增长播客。Create and grow podcasts by planning episodes, producing audio or video"
 license: "MIT"

@@ -3,7 +3,7 @@
 slug: "calendar-sync-tool"
 name: "calendar-sync-tool"
 version: "1.0.0"
-displayName: "feishu-calendar"
+displayName: "日历工具"
 summary: "管理飞书Lark日历,列出/搜索/查日程/同步事件,办公协同。Manage Feishu (Lark) calendars by listing, searching, checking s"
 summary_zh: "管理飞书Lark日历,列出/搜索/查日程/同步事件,办公协同。Manage Feishu (Lark) calendars by listing, searching, checking s"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "aws-graph-agent-free"
 name: "aws-graph-agent-free"
 version: "1.0.0"
-displayName: "AWS Graph LITE"
+displayName: "AWS图谱智能体免费版"
 summary: "Bedrock AgentCore与LangGraph基础代理编排,提供StateGraph状态图与容器部署能力。"
 summary_zh: "Bedrock AgentCore与LangGraph基础代理编排,提供StateGraph状态图与容器部署能力。"
 license: "MIT"

@@ -3,7 +3,7 @@
 slug: "domain-dns-ops"
 name: "domain-dns-ops"
 version: 1.0.1
-displayName: "Domain Dns Ops"
+displayName: "域名DNS"
 summary: "跨Cloudflare/DNSimple/Namecheap做域名DNS运维与区托管。Domain/DNS ops across Cloudflare, DNSimple, Namechea"
 summary_zh: "跨Cloudflare/DNSimple/Namecheap做域名DNS运维与区托管。Domain/DNS ops across Cloudflare, DNSimple, Namechea"
 license: "MIT"

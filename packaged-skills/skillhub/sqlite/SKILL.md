@@ -2,7 +2,7 @@
 slug: "sqlite"
 name: "sqlite"
 version: 1.0.1
-displayName: "SQLite"
+displayName: "SQLite数据库工具"
 summary: "正确用SQLite,并发/pragmas/类型处理得当。Use SQLite correctly with proper concurrency, pragmas, and type han"
 summary_zh: "正确用SQLite,并发/pragmas/类型处理得当。Use SQLite correctly with proper concurrency, pragmas, and type han"
 license: "MIT"

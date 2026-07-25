@@ -28,6 +28,7 @@ import shutil
 from pathlib import Path
 from datetime import datetime
 from collections import Counter
+import db
 
 # DB_PATH imported from config
 
@@ -423,22 +424,14 @@ def main():
             if c.rowcount > 0:
                 db_updated += 1
 
-            # 更新/插入pricing表
+            # 更新/插入pricing表 (R7-1收口: 使用db.update_pricing/db.set_pricing替代裸SQL)
             c.execute("SELECT id FROM pricing WHERE skill_id = ?", (r['id'],))
             pricing_row = c.fetchone()
-            now = datetime.now().strftime('%Y-%m-%d')
             if pricing_row:
-                c.execute("""
-                    UPDATE pricing
-                    SET edition = ?, price_model = ?, price_amount = ?, price_currency = 'CNY'
-                    WHERE skill_id = ?
-                """, (r['new_tier'], r['model'], r['price'], r['id']))
+                db.update_pricing(r['id'], r['new_tier'], r['model'], r['price'])
                 pricing_updated += 1
             else:
-                c.execute("""
-                    INSERT INTO pricing (skill_id, edition, price_model, price_amount, price_currency, effective_date)
-                    VALUES (?, ?, ?, ?, 'CNY', ?)
-                """, (r['id'], r['new_tier'], r['model'], r['price'], now))
+                db.set_pricing(r['id'], r['new_tier'], r['model'], r['price'], 'CNY', None, None)
                 pricing_inserted += 1
 
         conn.commit()

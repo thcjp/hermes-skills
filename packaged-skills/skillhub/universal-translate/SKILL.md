@@ -2,7 +2,7 @@
 slug: "universal-translate"
 name: "universal-translate"
 version: 1.0.1
-displayName: "Universal Translate"
+displayName: "翻译"
 summary: "在任意语言间翻译文本/文件/对话,自动检测源语言。Translate text, files, and conversations between any languages。Auto-de"
 summary_zh: "在任意语言间翻译文本/文件/对话,自动检测源语言。Translate text, files, and conversations between any languages。Auto-de"
 license: "MIT"

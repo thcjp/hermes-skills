@@ -2,7 +2,7 @@
 slug: "video-translator"
 name: "video-translator"
 version: 1.0.6
-displayName: "Video Translator"
+displayName: "视频"
 summary: "实时视频翻译/配音,翻译用户视频并返回。Real time video translation / dubbing skill。Translate user-provided video ("
 summary_zh: "实时视频翻译/配音,翻译用户视频并返回。Real time video translation / dubbing skill。Translate user-provided video ("
 license: "MIT"

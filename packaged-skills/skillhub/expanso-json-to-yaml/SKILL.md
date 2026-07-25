@@ -2,7 +2,7 @@
 slug: "expanso-json-to-yaml"
 name: "expanso-json-to-yaml"
 version: 1.0.1
-displayName: "Expanso json-to-yaml"
+displayName: "JSON转YAML工具"
 summary: "用Expanso Edge流水线把JSON转YAML格式。Convert JSON input into YAML format using Expanso Edge pipelines f"
 summary_zh: "用Expanso Edge流水线把JSON转YAML格式。Convert JSON input into YAML format using Expanso Edge pipelines f"
 license: "MIT"

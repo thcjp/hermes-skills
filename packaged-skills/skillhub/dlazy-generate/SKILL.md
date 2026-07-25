@@ -3,7 +3,7 @@
 slug: "dlazy-generate"
 name: "dlazy-generate"
 version: 1.3.3
-displayName: "Dlazy Generate"
+displayName: "综合生成技能"
 summary: "综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehensive generation skill。Can generate images, videos, and a"
 summary_zh: "综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehensive generation skill。Can generate images, videos, and a"
 license: "MIT"

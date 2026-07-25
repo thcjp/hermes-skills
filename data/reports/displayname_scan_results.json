@@ -1,0 +1,2199 @@
+{
+  "total": 1001,
+  "chinese_count": 563,
+  "english_count": 438,
+  "empty_count": 0,
+  "english_displaynames": [
+    {
+      "slug": "accounting-and-finance",
+      "displayName": "Finance Analyst Pro",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\accounting-and-finance\\SKILL.md"
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "displayName": "Finance LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\accounting-and-finance-free\\SKILL.md"
+    },
+    {
+      "slug": "ace-music",
+      "displayName": "Ace Music",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ace-music\\SKILL.md"
+    },
+    {
+      "slug": "admapix",
+      "displayName": "AdMapix",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\admapix\\SKILL.md"
+    },
+    {
+      "slug": "admapix-free",
+      "displayName": "AdMapix LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\admapix-free\\SKILL.md"
+    },
+    {
+      "slug": "agent",
+      "displayName": "Agent",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent\\SKILL.md"
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "displayName": "Agent Bom Vulnerabil",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-bom-vulnerability-intel\\SKILL.md"
+    },
+    {
+      "slug": "agent-browser-automation",
+      "displayName": "Agent Browser",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-browser-automation\\SKILL.md"
+    },
+    {
+      "slug": "agent-browser-cli",
+      "displayName": "Agent Browser CLI",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-browser-cli\\SKILL.md"
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "displayName": "Agent Browser Stageh",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-browser-stagehand\\SKILL.md"
+    },
+    {
+      "slug": "agent-chat",
+      "displayName": "Agent Chat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-chat\\SKILL.md"
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "displayName": "Agent Commercial Con",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-commercial-contract\\SKILL.md"
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "displayName": "Agent Framework Azur",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-framework-azure-ai-py\\SKILL.md"
+    },
+    {
+      "slug": "agent-group",
+      "displayName": "Agent Group",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-group\\SKILL.md"
+    },
+    {
+      "slug": "agent-knowledge",
+      "displayName": "Agent Knowledge",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-knowledge\\SKILL.md"
+    },
+    {
+      "slug": "agent-telegram",
+      "displayName": "Agent Telegram",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-telegram\\SKILL.md"
+    },
+    {
+      "slug": "agent-telegram-free",
+      "displayName": "Agent TG LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-telegram-free\\SKILL.md"
+    },
+    {
+      "slug": "agentic-security-audit",
+      "displayName": "Agentic Security Aud",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agentic-security-audit\\SKILL.md"
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "displayName": "AgentVibes TTS LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agentvibes-voice-skill-free\\SKILL.md"
+    },
+    {
+      "slug": "ai-agent-helper",
+      "displayName": "AI Agent Helper",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-agent-helper\\SKILL.md"
+    },
+    {
+      "slug": "ai-agent-helper-free",
+      "displayName": "AI Agent LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-agent-helper-free\\SKILL.md"
+    },
+    {
+      "slug": "ai-assistant",
+      "displayName": "AI Doc Reasoner",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-assistant\\SKILL.md"
+    },
+    {
+      "slug": "ai-assistant-free",
+      "displayName": "AI Doc LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-assistant-free\\SKILL.md"
+    },
+    {
+      "slug": "ai-news",
+      "displayName": "ai-news",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-news\\SKILL.md"
+    },
+    {
+      "slug": "alephnet-node",
+      "displayName": "Alephnet Node",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\alephnet-node\\SKILL.md"
+    },
+    {
+      "slug": "alephnet-node-free",
+      "displayName": "Alephnet Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\alephnet-node-free\\SKILL.md"
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "displayName": "Amap Jsapi Skill",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\amap-jsapi-skill\\SKILL.md"
+    },
+    {
+      "slug": "analyze",
+      "displayName": "Analyze",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\analyze\\SKILL.md"
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "displayName": "Body Scan Flow",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\anthrovision-telegram-body-scan\\SKILL.md"
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "displayName": "Body Scan Basic",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\anthrovision-telegram-body-scan-free\\SKILL.md"
+    },
+    {
+      "slug": "api-development",
+      "displayName": "api-development",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\api-development\\SKILL.md"
+    },
+    {
+      "slug": "art",
+      "displayName": "Art",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\art\\SKILL.md"
+    },
+    {
+      "slug": "assistant",
+      "displayName": "Assistant",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\assistant\\SKILL.md"
+    },
+    {
+      "slug": "audit",
+      "displayName": "Audit",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\audit\\SKILL.md"
+    },
+    {
+      "slug": "auto-monitor",
+      "displayName": "Auto Monitor",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\auto-monitor\\SKILL.md"
+    },
+    {
+      "slug": "auto-updater",
+      "displayName": "auto-updater",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\auto-updater\\SKILL.md"
+    },
+    {
+      "slug": "auto-workflow",
+      "displayName": "Auto Workflow",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\auto-workflow\\SKILL.md"
+    },
+    {
+      "slug": "aws",
+      "displayName": "Aws",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws\\SKILL.md"
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "displayName": "AgentCore LangGraph",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-agentcore-langgraph\\SKILL.md"
+    },
+    {
+      "slug": "aws-graph-agent",
+      "displayName": "AWS Graph Agent",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-graph-agent\\SKILL.md"
+    },
+    {
+      "slug": "aws-graph-agent-free",
+      "displayName": "AWS Graph LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-graph-agent-free\\SKILL.md"
+    },
+    {
+      "slug": "aws-infra",
+      "displayName": "AWS Infra Inspector",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-infra\\SKILL.md"
+    },
+    {
+      "slug": "aws-infra-free",
+      "displayName": "AWS Infra LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-infra-free\\SKILL.md"
+    },
+    {
+      "slug": "azure",
+      "displayName": "Azure",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure\\SKILL.md"
+    },
+    {
+      "slug": "azure-cli",
+      "displayName": "azure-cli",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure-cli\\SKILL.md"
+    },
+    {
+      "slug": "azure-devops",
+      "displayName": "Azure DevOps",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure-devops\\SKILL.md"
+    },
+    {
+      "slug": "azure-infra",
+      "displayName": "Azure Infra",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure-infra\\SKILL.md"
+    },
+    {
+      "slug": "azure-infra-free",
+      "displayName": "Azure Infra Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure-infra-free\\SKILL.md"
+    },
+    {
+      "slug": "bailian-web-search",
+      "displayName": "Bailian Web Search",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\bailian-web-search\\SKILL.md"
+    },
+    {
+      "slug": "baoyu-diagram",
+      "displayName": "Baoyu Diagram",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\baoyu-diagram\\SKILL.md"
+    },
+    {
+      "slug": "baoyu-md-formatter",
+      "displayName": "Baoyu Format Markdow",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\baoyu-md-formatter\\SKILL.md"
+    },
+    {
+      "slug": "beware-piper-tts",
+      "displayName": "Piper TTS Pro",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\beware-piper-tts\\SKILL.md"
+    },
+    {
+      "slug": "beware-piper-tts-free",
+      "displayName": "Piper TTS Lite",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\beware-piper-tts-free\\SKILL.md"
+    },
+    {
+      "slug": "blog-seo-writer",
+      "displayName": "blog-seo-writer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\blog-seo-writer\\SKILL.md"
+    },
+    {
+      "slug": "book-painter",
+      "displayName": "Book Painter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\book-painter\\SKILL.md"
+    },
+    {
+      "slug": "brainz-calendar",
+      "displayName": "Calendar",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\brainz-calendar\\SKILL.md"
+    },
+    {
+      "slug": "brave-search",
+      "displayName": "Brave Search",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\brave-search\\SKILL.md"
+    },
+    {
+      "slug": "browser-automation",
+      "displayName": "Browser Automation",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\browser-automation\\SKILL.md"
+    },
+    {
+      "slug": "browser-automation-v2",
+      "displayName": "Browser Automation V",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\browser-automation-v2\\SKILL.md"
+    },
+    {
+      "slug": "bsession",
+      "displayName": "browser",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\bsession\\SKILL.md"
+    },
+    {
+      "slug": "build-game",
+      "displayName": "3D Game Builder",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\build-game\\SKILL.md"
+    },
+    {
+      "slug": "calendar",
+      "displayName": "Calendar",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\calendar\\SKILL.md"
+    },
+    {
+      "slug": "calendar-skill",
+      "displayName": "Calendar",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\calendar-skill\\SKILL.md"
+    },
+    {
+      "slug": "calendar-sync-tool",
+      "displayName": "feishu-calendar",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\calendar-sync-tool\\SKILL.md"
+    },
+    {
+      "slug": "cashu-emoji",
+      "displayName": "Cashu Emoji",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cashu-emoji\\SKILL.md"
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "displayName": "CCTV News Fetcher",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cctv-news-fetcher\\SKILL.md"
+    },
+    {
+      "slug": "cdn",
+      "displayName": "CDN",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cdn\\SKILL.md"
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "displayName": "Chart Generator 2 0",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\chart-generator-2-0-0\\SKILL.md"
+    },
+    {
+      "slug": "chat",
+      "displayName": "Chat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\chat\\SKILL.md"
+    },
+    {
+      "slug": "cheat-code",
+      "displayName": "Cheat Code",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cheat-code\\SKILL.md"
+    },
+    {
+      "slug": "china-news",
+      "displayName": "China News",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\china-news\\SKILL.md"
+    },
+    {
+      "slug": "claude-code-runner",
+      "displayName": "ai-assistant Code Ru",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\claude-code-runner\\SKILL.md"
+    },
+    {
+      "slug": "claude-tmux",
+      "displayName": "ai-assistant Tmux",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\claude-tmux\\SKILL.md"
+    },
+    {
+      "slug": "clawddocs",
+      "displayName": "Clawddocs",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\clawddocs\\SKILL.md"
+    },
+    {
+      "slug": "clawprint",
+      "displayName": "Skill",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\clawprint\\SKILL.md"
+    },
+    {
+      "slug": "cloud-storage",
+      "displayName": "Cloud Storage",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cloud-storage\\SKILL.md"
+    },
+    {
+      "slug": "code",
+      "displayName": "Code",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\code\\SKILL.md"
+    },
+    {
+      "slug": "code-analysis-skills",
+      "displayName": "Code Analysis Skills",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\code-analysis-skills\\SKILL.md"
+    },
+    {
+      "slug": "code-quality",
+      "displayName": "Code Quality",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\code-quality\\SKILL.md"
+    },
+    {
+      "slug": "communication-skill",
+      "displayName": "Comm Crafter Pro",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\communication-skill\\SKILL.md"
+    },
+    {
+      "slug": "communication-skill-free",
+      "displayName": "Comm LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\communication-skill-free\\SKILL.md"
+    },
+    {
+      "slug": "company-search-fengniao",
+      "displayName": "Company Search Fengn",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\company-search-fengniao\\SKILL.md"
+    },
+    {
+      "slug": "compress",
+      "displayName": "Compress",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\compress\\SKILL.md"
+    },
+    {
+      "slug": "context-driven-development",
+      "displayName": "Context Driven Devel",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\context-driven-development\\SKILL.md"
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "displayName": "Control Ikea Lightbu",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\control-ikea-lightbulb\\SKILL.md"
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "displayName": "SkillHub Cron Setup",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cron-scheduler-setup\\SKILL.md"
+    },
+    {
+      "slug": "ctxly-chat",
+      "displayName": "Ctxly Chat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ctxly-chat\\SKILL.md"
+    },
+    {
+      "slug": "daily-news-brief",
+      "displayName": "Daily News Brief",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\daily-news-brief\\SKILL.md"
+    },
+    {
+      "slug": "daily-report-writer",
+      "displayName": "Daily Report Writer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\daily-report-writer\\SKILL.md"
+    },
+    {
+      "slug": "dashboard",
+      "displayName": "Dashboard",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dashboard\\SKILL.md"
+    },
+    {
+      "slug": "dashboard-toolkit",
+      "displayName": "SkillHub-dashboard",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dashboard-toolkit\\SKILL.md"
+    },
+    {
+      "slug": "data",
+      "displayName": "Data",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\data\\SKILL.md"
+    },
+    {
+      "slug": "data-analysis-toolkit",
+      "displayName": "Python Data Analysis",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\data-analysis-toolkit\\SKILL.md"
+    },
+    {
+      "slug": "deepseek-chat",
+      "displayName": "DeepSeek Chat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\deepseek-chat\\SKILL.md"
+    },
+    {
+      "slug": "diagram",
+      "displayName": "Diagram",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\diagram\\SKILL.md"
+    },
+    {
+      "slug": "diagram-tools",
+      "displayName": "Diagram Tools",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\diagram-tools\\SKILL.md"
+    },
+    {
+      "slug": "dingtalk-calendar",
+      "displayName": "Dingtalk Calendar",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dingtalk-calendar\\SKILL.md"
+    },
+    {
+      "slug": "discord-chat",
+      "displayName": "Discord Chat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\discord-chat\\SKILL.md"
+    },
+    {
+      "slug": "discord-hub",
+      "displayName": "Discord",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\discord-hub\\SKILL.md"
+    },
+    {
+      "slug": "discrawl",
+      "displayName": "Discrawl",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\discrawl\\SKILL.md"
+    },
+    {
+      "slug": "dlazy-audio-generate-free",
+      "displayName": "Dlazy Audio LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dlazy-audio-generate-free\\SKILL.md"
+    },
+    {
+      "slug": "dlazy-generate",
+      "displayName": "Dlazy Generate",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dlazy-generate\\SKILL.md"
+    },
+    {
+      "slug": "dns-lookup",
+      "displayName": "Dns Lookup",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dns-lookup\\SKILL.md"
+    },
+    {
+      "slug": "dns-networking",
+      "displayName": "DNS & Networking",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dns-networking\\SKILL.md"
+    },
+    {
+      "slug": "doc-assistant",
+      "displayName": "Doc",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\doc-assistant\\SKILL.md"
+    },
+    {
+      "slug": "docker",
+      "displayName": "Docker",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\docker\\SKILL.md"
+    },
+    {
+      "slug": "docker-ctl",
+      "displayName": "Docker Ctl",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\docker-ctl\\SKILL.md"
+    },
+    {
+      "slug": "docker-sandbox",
+      "displayName": "Docker Sandbox",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\docker-sandbox\\SKILL.md"
+    },
+    {
+      "slug": "document-pdf",
+      "displayName": "Pdf",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\document-pdf\\SKILL.md"
+    },
+    {
+      "slug": "dogecoin-node",
+      "displayName": "Dogecoin Node",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dogecoin-node\\SKILL.md"
+    },
+    {
+      "slug": "domain-dns-ops",
+      "displayName": "Domain Dns Ops",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\domain-dns-ops\\SKILL.md"
+    },
+    {
+      "slug": "doubao-chat",
+      "displayName": "Doubao Chat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\doubao-chat\\SKILL.md"
+    },
+    {
+      "slug": "elite-frontend-design",
+      "displayName": "Elite Frontend Desig",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\elite-frontend-design\\SKILL.md"
+    },
+    {
+      "slug": "email-daily-summary",
+      "displayName": "Email Daily Summary",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-daily-summary\\SKILL.md"
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "displayName": "Email Summary Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-daily-summary-free\\SKILL.md"
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "displayName": "Email Gmail Outlook",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-gmail-outlook\\SKILL.md"
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "displayName": "Email Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-gmail-outlook-free\\SKILL.md"
+    },
+    {
+      "slug": "email-skill",
+      "displayName": "Email",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-skill\\SKILL.md"
+    },
+    {
+      "slug": "email-skill-free",
+      "displayName": "Email Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-skill-free\\SKILL.md"
+    },
+    {
+      "slug": "encrypted-docs",
+      "displayName": "Encrypted Docs",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\encrypted-docs\\SKILL.md"
+    },
+    {
+      "slug": "encryption",
+      "displayName": "Encryption",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\encryption\\SKILL.md"
+    },
+    {
+      "slug": "excel-formula",
+      "displayName": "Excel Formula",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\excel-formula\\SKILL.md"
+    },
+    {
+      "slug": "excel-studio",
+      "displayName": "Excel Studio",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\excel-studio\\SKILL.md"
+    },
+    {
+      "slug": "excel-xlsx",
+      "displayName": "Excel / XLSX",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\excel-xlsx\\SKILL.md"
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "displayName": "Expanso csv-to-json",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-csv-to-json\\SKILL.md"
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "displayName": "Expanso json-to-yaml",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-json-to-yaml\\SKILL.md"
+    },
+    {
+      "slug": "expanso-json-validate",
+      "displayName": "Expanso Json Validat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-json-validate\\SKILL.md"
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "displayName": "Expanso log-sanitize",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-log-sanitize\\SKILL.md"
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "displayName": "Expanso xml-to-json",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-xml-to-json\\SKILL.md"
+    },
+    {
+      "slug": "explain-code",
+      "displayName": "explain-code",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\explain-code\\SKILL.md"
+    },
+    {
+      "slug": "feed-digest",
+      "displayName": "Feed Digest",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\feed-digest\\SKILL.md"
+    },
+    {
+      "slug": "feed-to-md",
+      "displayName": "Feed To Md",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\feed-to-md\\SKILL.md"
+    },
+    {
+      "slug": "feishu-doc",
+      "displayName": "Feishu Doc",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\feishu-doc\\SKILL.md"
+    },
+    {
+      "slug": "feishu-doc-write",
+      "displayName": "feishu-doc-write",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\feishu-doc-write\\SKILL.md"
+    },
+    {
+      "slug": "figma",
+      "displayName": "Figma",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\figma\\SKILL.md"
+    },
+    {
+      "slug": "figma-2",
+      "displayName": "Figma",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\figma-2\\SKILL.md"
+    },
+    {
+      "slug": "figma-design",
+      "displayName": "Figma",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\figma-design\\SKILL.md"
+    },
+    {
+      "slug": "file-auto-organizer",
+      "displayName": "File Auto Organizer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\file-auto-organizer\\SKILL.md"
+    },
+    {
+      "slug": "file-browser-tool",
+      "displayName": "file-browser",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\file-browser-tool\\SKILL.md"
+    },
+    {
+      "slug": "file-organizer-zh",
+      "displayName": "File Organizer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\file-organizer-zh\\SKILL.md"
+    },
+    {
+      "slug": "finance",
+      "displayName": "finance",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\finance\\SKILL.md"
+    },
+    {
+      "slug": "finance-accounting",
+      "displayName": "Finance Accounting",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\finance-accounting\\SKILL.md"
+    },
+    {
+      "slug": "finance-radar",
+      "displayName": "Finance Radar",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\finance-radar\\SKILL.md"
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "displayName": "Finance Report Analy",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\finance-report-analyzer\\SKILL.md"
+    },
+    {
+      "slug": "financial-literacy",
+      "displayName": "Finance",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\financial-literacy\\SKILL.md"
+    },
+    {
+      "slug": "firewall",
+      "displayName": "Firewall",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\firewall\\SKILL.md"
+    },
+    {
+      "slug": "flexible-database-design",
+      "displayName": "Flexible Database De",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\flexible-database-design\\SKILL.md"
+    },
+    {
+      "slug": "fonts",
+      "displayName": "Fonts",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\fonts\\SKILL.md"
+    },
+    {
+      "slug": "free-google-search-with-browser",
+      "displayName": "Free Google Search W",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-google-search-with-browser\\SKILL.md"
+    },
+    {
+      "slug": "free-ride",
+      "displayName": "Free Ride",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-ride\\SKILL.md"
+    },
+    {
+      "slug": "free-weather-api",
+      "displayName": "weather",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-weather-api\\SKILL.md"
+    },
+    {
+      "slug": "free-weather-skill",
+      "displayName": "Weather",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-weather-skill\\SKILL.md"
+    },
+    {
+      "slug": "free-web-search",
+      "displayName": "Free Web Search",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-web-search\\SKILL.md"
+    },
+    {
+      "slug": "frontend-design",
+      "displayName": "Frontend Design",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\frontend-design\\SKILL.md"
+    },
+    {
+      "slug": "frontend-design-3",
+      "displayName": "Frontend Design",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\frontend-design-3\\SKILL.md"
+    },
+    {
+      "slug": "frontend-design-3-free",
+      "displayName": "Frontend Design Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\frontend-design-3-free\\SKILL.md"
+    },
+    {
+      "slug": "game",
+      "displayName": "Game",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\game\\SKILL.md"
+    },
+    {
+      "slug": "game-ai",
+      "displayName": "Game AI Systems",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\game-ai\\SKILL.md"
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "displayName": "Game Asset Generatio",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\game-asset-generation-cellcog\\SKILL.md"
+    },
+    {
+      "slug": "game-developer-skill",
+      "displayName": "Game Developer Skill",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\game-developer-skill\\SKILL.md"
+    },
+    {
+      "slug": "generate-mindmap",
+      "displayName": "Generate Mindmap",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\generate-mindmap\\SKILL.md"
+    },
+    {
+      "slug": "generate-presentation",
+      "displayName": "Generate Presentatio",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\generate-presentation\\SKILL.md"
+    },
+    {
+      "slug": "gif-whatsapp",
+      "displayName": "Gif Whatsapp",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\gif-whatsapp\\SKILL.md"
+    },
+    {
+      "slug": "git",
+      "displayName": "Git",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git\\SKILL.md"
+    },
+    {
+      "slug": "git-cli",
+      "displayName": "Git cli",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git-cli\\SKILL.md"
+    },
+    {
+      "slug": "git-essentials",
+      "displayName": "Git Essentials",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git-essentials\\SKILL.md"
+    },
+    {
+      "slug": "git-helper",
+      "displayName": "Git Helper",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git-helper\\SKILL.md"
+    },
+    {
+      "slug": "git-workflow-cn",
+      "displayName": "Git Workflow Cn",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git-workflow-cn\\SKILL.md"
+    },
+    {
+      "slug": "gitcrawl",
+      "displayName": "Gitcrawl",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\gitcrawl\\SKILL.md"
+    },
+    {
+      "slug": "github",
+      "displayName": "Github",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github\\SKILL.md"
+    },
+    {
+      "slug": "github-api",
+      "displayName": "GitHub",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github-api\\SKILL.md"
+    },
+    {
+      "slug": "github-development-standard",
+      "displayName": "Github Development S",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github-development-standard\\SKILL.md"
+    },
+    {
+      "slug": "github-repos",
+      "displayName": "GitHub",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github-repos\\SKILL.md"
+    },
+    {
+      "slug": "github-trending-feed",
+      "displayName": "GitHub Trending Feed",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github-trending-feed\\SKILL.md"
+    },
+    {
+      "slug": "glitch-dashboard",
+      "displayName": "Dashboard",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\glitch-dashboard\\SKILL.md"
+    },
+    {
+      "slug": "go",
+      "displayName": "Go",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\go\\SKILL.md"
+    },
+    {
+      "slug": "go-linter-configuration",
+      "displayName": "Go Linter Configurat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\go-linter-configuration\\SKILL.md"
+    },
+    {
+      "slug": "gog",
+      "displayName": "Gog",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\gog\\SKILL.md"
+    },
+    {
+      "slug": "google-search",
+      "displayName": "google-search",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\google-search\\SKILL.md"
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "displayName": "Google Workspace MCP",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\google-workspace-mcp\\SKILL.md"
+    },
+    {
+      "slug": "graincrawl",
+      "displayName": "Graincrawl",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\graincrawl\\SKILL.md"
+    },
+    {
+      "slug": "graph-advocate",
+      "displayName": "Graph Advocate",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\graph-advocate\\SKILL.md"
+    },
+    {
+      "slug": "grok-image-generate",
+      "displayName": "grok_image_generate",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\grok-image-generate\\SKILL.md"
+    },
+    {
+      "slug": "hot-news-aggregator",
+      "displayName": "hot-news-aggregator",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\hot-news-aggregator\\SKILL.md"
+    },
+    {
+      "slug": "html",
+      "displayName": "HTML",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\html\\SKILL.md"
+    },
+    {
+      "slug": "html-coder",
+      "displayName": "HTML Coder",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\html-coder\\SKILL.md"
+    },
+    {
+      "slug": "html-designer",
+      "displayName": "HTML Designer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\html-designer\\SKILL.md"
+    },
+    {
+      "slug": "humanizer",
+      "displayName": "Humanizer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\humanizer\\SKILL.md"
+    },
+    {
+      "slug": "image",
+      "displayName": "Image",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\image\\SKILL.md"
+    },
+    {
+      "slug": "internet-search",
+      "displayName": "Internet Search",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\internet-search\\SKILL.md"
+    },
+    {
+      "slug": "interview-simulator",
+      "displayName": "Interview Simulator",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\interview-simulator\\SKILL.md"
+    },
+    {
+      "slug": "iris-code-formatter",
+      "displayName": "iris-code-formatter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\iris-code-formatter\\SKILL.md"
+    },
+    {
+      "slug": "java-code-reviewer",
+      "displayName": "Java Code Reviewer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\java-code-reviewer\\SKILL.md"
+    },
+    {
+      "slug": "java-development-manual",
+      "displayName": "Java Development Man",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\java-development-manual\\SKILL.md"
+    },
+    {
+      "slug": "javascript",
+      "displayName": "JavaScript",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\javascript\\SKILL.md"
+    },
+    {
+      "slug": "javascript-sdk",
+      "displayName": "Javascript Sdk",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\javascript-sdk\\SKILL.md"
+    },
+    {
+      "slug": "javascript-skills",
+      "displayName": "JavaScript",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\javascript-skills\\SKILL.md"
+    },
+    {
+      "slug": "jinn-node",
+      "displayName": "Jinn Node",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\jinn-node\\SKILL.md"
+    },
+    {
+      "slug": "jinn-node-free",
+      "displayName": "Jinn Node Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\jinn-node-free\\SKILL.md"
+    },
+    {
+      "slug": "jira-api",
+      "displayName": "Jira",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\jira-api\\SKILL.md"
+    },
+    {
+      "slug": "jira-pat-toolkit",
+      "displayName": "SkillHub Jira Pat Sk",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\jira-pat-toolkit\\SKILL.md"
+    },
+    {
+      "slug": "job-auto-apply",
+      "displayName": "Job Auto Apply",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\job-auto-apply\\SKILL.md"
+    },
+    {
+      "slug": "json",
+      "displayName": "JSON",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json\\SKILL.md"
+    },
+    {
+      "slug": "json-canvas",
+      "displayName": "Json Canvas",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json-canvas\\SKILL.md"
+    },
+    {
+      "slug": "json-formatter",
+      "displayName": "JSON Formatter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json-formatter\\SKILL.md"
+    },
+    {
+      "slug": "json-linter",
+      "displayName": "Json Linter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json-linter\\SKILL.md"
+    },
+    {
+      "slug": "json-parser",
+      "displayName": "Json Parser",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json-parser\\SKILL.md"
+    },
+    {
+      "slug": "k8s",
+      "displayName": "Kubernetes",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\k8s\\SKILL.md"
+    },
+    {
+      "slug": "kai-tw-figma",
+      "displayName": "Figma",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\kai-tw-figma\\SKILL.md"
+    },
+    {
+      "slug": "key-guard",
+      "displayName": "Key Guard",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\key-guard\\SKILL.md"
+    },
+    {
+      "slug": "knowledge",
+      "displayName": "Knowledge",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\knowledge\\SKILL.md"
+    },
+    {
+      "slug": "knowledge-capture",
+      "displayName": "Knowledge Capture",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\knowledge-capture\\SKILL.md"
+    },
+    {
+      "slug": "knowledge-graph",
+      "displayName": "Knowledge Graph",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\knowledge-graph\\SKILL.md"
+    },
+    {
+      "slug": "kubernetes",
+      "displayName": "Kubernetes",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\kubernetes\\SKILL.md"
+    },
+    {
+      "slug": "kubernetes-devops",
+      "displayName": "Kubernetes",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\kubernetes-devops\\SKILL.md"
+    },
+    {
+      "slug": "learn",
+      "displayName": "Learn",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\learn\\SKILL.md"
+    },
+    {
+      "slug": "lh-video-gen",
+      "displayName": "LH Video Gen",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\lh-video-gen\\SKILL.md"
+    },
+    {
+      "slug": "linear",
+      "displayName": "Linear",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\linear\\SKILL.md"
+    },
+    {
+      "slug": "linear-integration",
+      "displayName": "Linear CLI",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\linear-integration\\SKILL.md"
+    },
+    {
+      "slug": "linear-skill",
+      "displayName": "Linear",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\linear-skill\\SKILL.md"
+    },
+    {
+      "slug": "lite-sqlite",
+      "displayName": "Lite Sqlite",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\lite-sqlite\\SKILL.md"
+    },
+    {
+      "slug": "live-stream-script",
+      "displayName": "Live Stream Script",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\live-stream-script\\SKILL.md"
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "displayName": "local-file-rag-basic",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\local-file-rag-basic\\SKILL.md"
+    },
+    {
+      "slug": "logo",
+      "displayName": "Logo",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\logo\\SKILL.md"
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "displayName": "Logo Brand Identity",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\logo-brand-identity-cellcog\\SKILL.md"
+    },
+    {
+      "slug": "logo-design-guide",
+      "displayName": "Logo Design Guide",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\logo-design-guide\\SKILL.md"
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "displayName": "mac-node-snapshot",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mac-node-snapshot\\SKILL.md"
+    },
+    {
+      "slug": "mac-system-control",
+      "displayName": "mac-system-control",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mac-system-control\\SKILL.md"
+    },
+    {
+      "slug": "magic-api-generate",
+      "displayName": "magic-api-generate",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\magic-api-generate\\SKILL.md"
+    },
+    {
+      "slug": "manage-liquidity",
+      "displayName": "Manage Liquidity",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\manage-liquidity\\SKILL.md"
+    },
+    {
+      "slug": "markdown",
+      "displayName": "Markdown",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\markdown\\SKILL.md"
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "displayName": "Markdown convert",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\markdown-converter-compdf\\SKILL.md"
+    },
+    {
+      "slug": "markdown-converter-tool",
+      "displayName": "Markdown Converter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\markdown-converter-tool\\SKILL.md"
+    },
+    {
+      "slug": "market-news",
+      "displayName": "Market News",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\market-news\\SKILL.md"
+    },
+    {
+      "slug": "mcporter",
+      "displayName": "Mcporter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mcporter\\SKILL.md"
+    },
+    {
+      "slug": "media-server-control",
+      "displayName": "Jellyfin Control",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\media-server-control\\SKILL.md"
+    },
+    {
+      "slug": "meeting-note",
+      "displayName": "Meeting Note",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\meeting-note\\SKILL.md"
+    },
+    {
+      "slug": "merge-check",
+      "displayName": "Merge Check",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\merge-check\\SKILL.md"
+    },
+    {
+      "slug": "merge-pdf",
+      "displayName": "Merge PDF",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\merge-pdf\\SKILL.md"
+    },
+    {
+      "slug": "mermaid-diagram",
+      "displayName": "Mermaid Diagram",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mermaid-diagram\\SKILL.md"
+    },
+    {
+      "slug": "minimalist-design-system",
+      "displayName": "Minimalist Design Sy",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\minimalist-design-system\\SKILL.md"
+    },
+    {
+      "slug": "miniprogram-development",
+      "displayName": "Miniprogram Developm",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\miniprogram-development\\SKILL.md"
+    },
+    {
+      "slug": "molt-board-art",
+      "displayName": "Board Art Canvas",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\molt-board-art\\SKILL.md"
+    },
+    {
+      "slug": "molt-board-art-free",
+      "displayName": "Board Art Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\molt-board-art-free\\SKILL.md"
+    },
+    {
+      "slug": "moltblock",
+      "displayName": "Skill",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\moltblock\\SKILL.md"
+    },
+    {
+      "slug": "moltbook-firewall-tool",
+      "displayName": "Moltbook Firewall",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\moltbook-firewall-tool\\SKILL.md"
+    },
+    {
+      "slug": "molted-work",
+      "displayName": "Molted Work",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\molted-work\\SKILL.md"
+    },
+    {
+      "slug": "monad-development",
+      "displayName": "Monad Development",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\monad-development\\SKILL.md"
+    },
+    {
+      "slug": "mongodb",
+      "displayName": "MongoDB",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mongodb\\SKILL.md"
+    },
+    {
+      "slug": "monitor",
+      "displayName": "Monitor",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\monitor\\SKILL.md"
+    },
+    {
+      "slug": "multi-search-engine",
+      "displayName": "Multi Search Engine",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\multi-search-engine\\SKILL.md"
+    },
+    {
+      "slug": "multi-search-engine-simple",
+      "displayName": "Multi Search Engine",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\multi-search-engine-simple\\SKILL.md"
+    },
+    {
+      "slug": "multi-source-research",
+      "displayName": "Multi Source Researc",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\multi-source-research\\SKILL.md"
+    },
+    {
+      "slug": "music",
+      "displayName": "Music",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\music\\SKILL.md"
+    },
+    {
+      "slug": "music-generation",
+      "displayName": "Music Generation",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\music-generation\\SKILL.md"
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "displayName": "Music Generation Cel",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\music-generation-cellcog\\SKILL.md"
+    },
+    {
+      "slug": "namecheap-dns",
+      "displayName": "Namecheap DNS",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\namecheap-dns\\SKILL.md"
+    },
+    {
+      "slug": "nano-pdf",
+      "displayName": "Nano Pdf",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\nano-pdf\\SKILL.md"
+    },
+    {
+      "slug": "netpad-tool",
+      "displayName": "Netpad",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\netpad-tool\\SKILL.md"
+    },
+    {
+      "slug": "news",
+      "displayName": "News",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\news\\SKILL.md"
+    },
+    {
+      "slug": "news-feed",
+      "displayName": "News Feed",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\news-feed\\SKILL.md"
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "displayName": "News Sentiment Scan",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\news-sentiment-scan\\SKILL.md"
+    },
+    {
+      "slug": "node-connect",
+      "displayName": "node-connect",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\node-connect\\SKILL.md"
+    },
+    {
+      "slug": "notcrawl",
+      "displayName": "Notcrawl",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notcrawl\\SKILL.md"
+    },
+    {
+      "slug": "note",
+      "displayName": "Note",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\note\\SKILL.md"
+    },
+    {
+      "slug": "note-app-cli",
+      "displayName": "Obsidian CLI",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\note-app-cli\\SKILL.md"
+    },
+    {
+      "slug": "note-taker",
+      "displayName": "Note Taker",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\note-taker\\SKILL.md"
+    },
+    {
+      "slug": "notion",
+      "displayName": "Notion",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notion\\SKILL.md"
+    },
+    {
+      "slug": "notion-api-skill",
+      "displayName": "Notion",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notion-api-skill\\SKILL.md"
+    },
+    {
+      "slug": "notion-pages",
+      "displayName": "Notion",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notion-pages\\SKILL.md"
+    },
+    {
+      "slug": "notion-skill",
+      "displayName": "Notion",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notion-skill\\SKILL.md"
+    },
+    {
+      "slug": "notioncli",
+      "displayName": "Notion",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notioncli\\SKILL.md"
+    },
+    {
+      "slug": "ocean-chat-assistant",
+      "displayName": "Ocean Chat",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ocean-chat-assistant\\SKILL.md"
+    },
+    {
+      "slug": "okx-dex-token",
+      "displayName": "Okx Dex Token",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\okx-dex-token\\SKILL.md"
+    },
+    {
+      "slug": "ollama-integration",
+      "displayName": "Ollama Integration",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ollama-integration\\SKILL.md"
+    },
+    {
+      "slug": "openai-ai",
+      "displayName": "llm-provider",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\openai-ai\\SKILL.md"
+    },
+    {
+      "slug": "openai-whisper",
+      "displayName": "llm-provider Whisper",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\openai-whisper\\SKILL.md"
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "displayName": "llm-provider Whisper",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\openai-whisper-1-0-0\\SKILL.md"
+    },
+    {
+      "slug": "pandoc-converter",
+      "displayName": "Pandoc Convert",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pandoc-converter\\SKILL.md"
+    },
+    {
+      "slug": "paper-parse",
+      "displayName": "Paper Parse",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\paper-parse\\SKILL.md"
+    },
+    {
+      "slug": "parallel-ai-research",
+      "displayName": "Research",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\parallel-ai-research\\SKILL.md"
+    },
+    {
+      "slug": "password-generator",
+      "displayName": "Password Generator",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\password-generator\\SKILL.md"
+    },
+    {
+      "slug": "pdf",
+      "displayName": "Pdf",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pdf\\SKILL.md"
+    },
+    {
+      "slug": "pdf-compressor-tool",
+      "displayName": "Compress PDF",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pdf-compressor-tool\\SKILL.md"
+    },
+    {
+      "slug": "pentest-commands",
+      "displayName": "Pentest Commands",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pentest-commands\\SKILL.md"
+    },
+    {
+      "slug": "personal-health-manager",
+      "displayName": "Personal Health Mana",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\personal-health-manager\\SKILL.md"
+    },
+    {
+      "slug": "photo-webcam",
+      "displayName": "Photo Webcam",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\photo-webcam\\SKILL.md"
+    },
+    {
+      "slug": "ping-monitor",
+      "displayName": "Ping Monitor",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ping-monitor\\SKILL.md"
+    },
+    {
+      "slug": "pipedrive-api",
+      "displayName": "Pipedrive",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pipedrive-api\\SKILL.md"
+    },
+    {
+      "slug": "podcast",
+      "displayName": "Podcast",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\podcast\\SKILL.md"
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "displayName": "Podcast Chaptering H",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\podcast-chaptering-highlights\\SKILL.md"
+    },
+    {
+      "slug": "podcast-downloader",
+      "displayName": "podcast-downloader",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\podcast-downloader\\SKILL.md"
+    },
+    {
+      "slug": "podcast-downloader-tool",
+      "displayName": "Podcast Downloader",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\podcast-downloader-tool\\SKILL.md"
+    },
+    {
+      "slug": "postgres-job-queue",
+      "displayName": "Postgres Job Queue",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\postgres-job-queue\\SKILL.md"
+    },
+    {
+      "slug": "postgres-mcp-skills",
+      "displayName": "postgres mcp",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\postgres-mcp-skills\\SKILL.md"
+    },
+    {
+      "slug": "powerpoint",
+      "displayName": "PowerPoint",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\powerpoint\\SKILL.md"
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "displayName": "Powerpoint / PPTX",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx\\SKILL.md"
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "displayName": "Powerpoint Pptx Cn",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx-cn\\SKILL.md"
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "displayName": "PPTX PDF Font Fix",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pptx-pdf-font-fix\\SKILL.md"
+    },
+    {
+      "slug": "productivity-bot",
+      "displayName": "Productivity Bot",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\productivity-bot\\SKILL.md"
+    },
+    {
+      "slug": "productivity-improving",
+      "displayName": "Productivity Tracker",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\productivity-improving\\SKILL.md"
+    },
+    {
+      "slug": "python",
+      "displayName": "Python",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\python\\SKILL.md"
+    },
+    {
+      "slug": "python-dataviz",
+      "displayName": "Python Dataviz",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\python-dataviz\\SKILL.md"
+    },
+    {
+      "slug": "python3",
+      "displayName": "python",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\python3\\SKILL.md"
+    },
+    {
+      "slug": "quant-data-quality",
+      "displayName": "Quant Data Quality",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\quant-data-quality\\SKILL.md"
+    },
+    {
+      "slug": "queue-task",
+      "displayName": "Queue Task",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\queue-task\\SKILL.md"
+    },
+    {
+      "slug": "reddit-research",
+      "displayName": "Reddit Research",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\reddit-research\\SKILL.md"
+    },
+    {
+      "slug": "reminder",
+      "displayName": "Reminder",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\reminder\\SKILL.md"
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "displayName": "Remix Api Key Auth",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\remix-api-key-auth\\SKILL.md"
+    },
+    {
+      "slug": "repo-reader-tool",
+      "displayName": "Read GitHub",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\repo-reader-tool\\SKILL.md"
+    },
+    {
+      "slug": "report-summary-builder",
+      "displayName": "Report Summary Build",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\report-summary-builder\\SKILL.md"
+    },
+    {
+      "slug": "research-agent",
+      "displayName": "Research",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\research-agent\\SKILL.md"
+    },
+    {
+      "slug": "rho-telegram-alerts-tool",
+      "displayName": "Telegram Alerts",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rho-telegram-alerts-tool\\SKILL.md"
+    },
+    {
+      "slug": "rss-aggregator",
+      "displayName": "Rss Aggregator",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-aggregator\\SKILL.md"
+    },
+    {
+      "slug": "rss-digest",
+      "displayName": "Rss Digest",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-digest\\SKILL.md"
+    },
+    {
+      "slug": "rss-feed-digest",
+      "displayName": "RSS Feed Digest",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-feed-digest\\SKILL.md"
+    },
+    {
+      "slug": "rss-fetcher",
+      "displayName": "Rss Fetcher",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-fetcher\\SKILL.md"
+    },
+    {
+      "slug": "rss-reader",
+      "displayName": "RSS Reader",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-reader\\SKILL.md"
+    },
+    {
+      "slug": "safe-encryption-skill",
+      "displayName": "Safe Encryption",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\safe-encryption-skill\\SKILL.md"
+    },
+    {
+      "slug": "schedule",
+      "displayName": "Schedule",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\schedule\\SKILL.md"
+    },
+    {
+      "slug": "scrape-web",
+      "displayName": "Scrape Web",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\scrape-web\\SKILL.md"
+    },
+    {
+      "slug": "screen-monitor",
+      "displayName": "Screen Monitor",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\screen-monitor\\SKILL.md"
+    },
+    {
+      "slug": "search-2",
+      "displayName": "Search",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\search-2\\SKILL.md"
+    },
+    {
+      "slug": "searching-assistant",
+      "displayName": "Searching Assistant",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\searching-assistant\\SKILL.md"
+    },
+    {
+      "slug": "secure-api-calls",
+      "displayName": "Secure API Calls",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\secure-api-calls\\SKILL.md"
+    },
+    {
+      "slug": "security-audit",
+      "displayName": "Security Audit",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\security-audit\\SKILL.md"
+    },
+    {
+      "slug": "security-auditor",
+      "displayName": "Security Auditor",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\security-auditor\\SKILL.md"
+    },
+    {
+      "slug": "security-scanner",
+      "displayName": "Security Scanner",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\security-scanner\\SKILL.md"
+    },
+    {
+      "slug": "self-integration",
+      "displayName": "Self-Integration",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\self-integration\\SKILL.md"
+    },
+    {
+      "slug": "sequential-read",
+      "displayName": "Sequential Read",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sequential-read\\SKILL.md"
+    },
+    {
+      "slug": "shadcn-ui",
+      "displayName": "Shadcn Ui",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\shadcn-ui\\SKILL.md"
+    },
+    {
+      "slug": "shopify-helper",
+      "displayName": "Shopify Helper",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\shopify-helper\\SKILL.md"
+    },
+    {
+      "slug": "skill-vetter",
+      "displayName": "Skill Vetter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\skill-vetter\\SKILL.md"
+    },
+    {
+      "slug": "skill-vetter-free",
+      "displayName": "Skill Vetter Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\skill-vetter-free\\SKILL.md"
+    },
+    {
+      "slug": "slack-api",
+      "displayName": "Slack",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\slack-api\\SKILL.md"
+    },
+    {
+      "slug": "slacrawl",
+      "displayName": "Slacrawl",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\slacrawl\\SKILL.md"
+    },
+    {
+      "slug": "smart-auto-updater",
+      "displayName": "Smart Auto Updater",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-auto-updater\\SKILL.md"
+    },
+    {
+      "slug": "smart-cache",
+      "displayName": "Smart Cache",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-cache\\SKILL.md"
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "displayName": "Smart Model Routing",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-model-routing-for-zai\\SKILL.md"
+    },
+    {
+      "slug": "smart-model-switching",
+      "displayName": "Smart Model Switchin",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-model-switching\\SKILL.md"
+    },
+    {
+      "slug": "smart-reminder-system",
+      "displayName": "Reminder",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-reminder-system\\SKILL.md"
+    },
+    {
+      "slug": "smart-weekly-report",
+      "displayName": "Report Generator",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-weekly-report\\SKILL.md"
+    },
+    {
+      "slug": "social-sentiment",
+      "displayName": "Social Sentiment",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\social-sentiment\\SKILL.md"
+    },
+    {
+      "slug": "solo-audit",
+      "displayName": "Audit",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\solo-audit\\SKILL.md"
+    },
+    {
+      "slug": "solo-validate",
+      "displayName": "Validate",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\solo-validate\\SKILL.md"
+    },
+    {
+      "slug": "sonoscli",
+      "displayName": "Sonoscli",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sonoscli\\SKILL.md"
+    },
+    {
+      "slug": "sovereign-aws-cost-optimizer",
+      "displayName": "AWS Cost Optimizer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sovereign-aws-cost-optimizer\\SKILL.md"
+    },
+    {
+      "slug": "sql-generator",
+      "displayName": "Sql Generator",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sql-generator\\SKILL.md"
+    },
+    {
+      "slug": "sql-toolkit",
+      "displayName": "SQL Toolkit",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sql-toolkit\\SKILL.md"
+    },
+    {
+      "slug": "sqlite",
+      "displayName": "SQLite",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sqlite\\SKILL.md"
+    },
+    {
+      "slug": "ssl",
+      "displayName": "SSL",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ssl\\SKILL.md"
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "displayName": "Stagehand Browser Cl",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\stagehand-browser-cli\\SKILL.md"
+    },
+    {
+      "slug": "stock-filter-skills",
+      "displayName": "Stock Filter Skills",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\stock-filter-skills\\SKILL.md"
+    },
+    {
+      "slug": "story-long-analyze",
+      "displayName": "Story Long Analyze",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\story-long-analyze\\SKILL.md"
+    },
+    {
+      "slug": "story-short-write",
+      "displayName": "Story Short Write",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\story-short-write\\SKILL.md"
+    },
+    {
+      "slug": "straker-verify",
+      "displayName": "Straker Verify",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\straker-verify\\SKILL.md"
+    },
+    {
+      "slug": "t-trading",
+      "displayName": "T Trading",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\t-trading\\SKILL.md"
+    },
+    {
+      "slug": "tailwindcss",
+      "displayName": "Tailwind CSS",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tailwindcss\\SKILL.md"
+    },
+    {
+      "slug": "tardis",
+      "displayName": "TARDIS",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tardis\\SKILL.md"
+    },
+    {
+      "slug": "tarot",
+      "displayName": "Reflective Tarot",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tarot\\SKILL.md"
+    },
+    {
+      "slug": "tarot-free",
+      "displayName": "Tarot Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tarot-free\\SKILL.md"
+    },
+    {
+      "slug": "tarot-reader",
+      "displayName": "tarot-reader",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tarot-reader\\SKILL.md"
+    },
+    {
+      "slug": "task",
+      "displayName": "Task",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\task\\SKILL.md"
+    },
+    {
+      "slug": "task-planner",
+      "displayName": "Task Planner",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\task-planner\\SKILL.md"
+    },
+    {
+      "slug": "telegram",
+      "displayName": "Telegram",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\telegram\\SKILL.md"
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "displayName": "Telegram Bot Builder",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\telegram-bot-builder\\SKILL.md"
+    },
+    {
+      "slug": "telegram-chat-manager",
+      "displayName": "SkillHub Telegram Ch",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\telegram-chat-manager\\SKILL.md"
+    },
+    {
+      "slug": "text",
+      "displayName": "Text",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\text\\SKILL.md"
+    },
+    {
+      "slug": "text-rpg-arcade-v3",
+      "displayName": "Text Game Arcade Uni",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\text-rpg-arcade-v3\\SKILL.md"
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "displayName": "Text to Speech",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\text-to-speech-heygen\\SKILL.md"
+    },
+    {
+      "slug": "text-to-sql",
+      "displayName": "Text To Sql",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\text-to-sql\\SKILL.md"
+    },
+    {
+      "slug": "the-news",
+      "displayName": "The News",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\the-news\\SKILL.md"
+    },
+    {
+      "slug": "thesis-helper",
+      "displayName": "Thesis Helper",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\thesis-helper\\SKILL.md"
+    },
+    {
+      "slug": "token-layer",
+      "displayName": "Token Layer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\token-layer\\SKILL.md"
+    },
+    {
+      "slug": "token-saver-skill",
+      "displayName": "token-saver-skill",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\token-saver-skill\\SKILL.md"
+    },
+    {
+      "slug": "tool",
+      "displayName": "Tool",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tool\\SKILL.md"
+    },
+    {
+      "slug": "tool-call-retry",
+      "displayName": "tool-call-retry",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tool-call-retry\\SKILL.md"
+    },
+    {
+      "slug": "tool-finder",
+      "displayName": "Tool Finder",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tool-finder\\SKILL.md"
+    },
+    {
+      "slug": "trading-strategy-guide",
+      "displayName": "Trade With Taro",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\trading-strategy-guide\\SKILL.md"
+    },
+    {
+      "slug": "translate",
+      "displayName": "Translate",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\translate\\SKILL.md"
+    },
+    {
+      "slug": "translate-en-zh",
+      "displayName": "Translate EN ZH",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\translate-en-zh\\SKILL.md"
+    },
+    {
+      "slug": "travel-assistant",
+      "displayName": "Travel Assistant",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\travel-assistant\\SKILL.md"
+    },
+    {
+      "slug": "tts-whatsapp",
+      "displayName": "TTS WhatsApp",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tts-whatsapp\\SKILL.md"
+    },
+    {
+      "slug": "typescript",
+      "displayName": "TypeScript",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\typescript\\SKILL.md"
+    },
+    {
+      "slug": "ui",
+      "displayName": "UI",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui\\SKILL.md"
+    },
+    {
+      "slug": "ui-audit",
+      "displayName": "UI Audit",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-audit\\SKILL.md"
+    },
+    {
+      "slug": "ui-audit-free",
+      "displayName": "UI Audit Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-audit-free\\SKILL.md"
+    },
+    {
+      "slug": "ui-component",
+      "displayName": "Ui Component",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-component\\SKILL.md"
+    },
+    {
+      "slug": "ui-ux",
+      "displayName": "UI / UX",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-ux\\SKILL.md"
+    },
+    {
+      "slug": "ui-ux-developer-tool",
+      "displayName": "Ui Ux Dev",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-ux-developer-tool\\SKILL.md"
+    },
+    {
+      "slug": "universal-translate",
+      "displayName": "Universal Translate",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\universal-translate\\SKILL.md"
+    },
+    {
+      "slug": "upstage-document-parse",
+      "displayName": "Document Parse",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\upstage-document-parse\\SKILL.md"
+    },
+    {
+      "slug": "upstage-document-parse-free",
+      "displayName": "Document Parse Free",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\upstage-document-parse-free\\SKILL.md"
+    },
+    {
+      "slug": "ux",
+      "displayName": "UX",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ux\\SKILL.md"
+    },
+    {
+      "slug": "vector-control",
+      "displayName": "Vector Control",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vector-control\\SKILL.md"
+    },
+    {
+      "slug": "verify-claims",
+      "displayName": "Verify Claims",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\verify-claims\\SKILL.md"
+    },
+    {
+      "slug": "version-control-workflows",
+      "displayName": "Git Workflows",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\version-control-workflows\\SKILL.md"
+    },
+    {
+      "slug": "video",
+      "displayName": "Video",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\video\\SKILL.md"
+    },
+    {
+      "slug": "video-frames",
+      "displayName": "Video Frames",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\video-frames\\SKILL.md"
+    },
+    {
+      "slug": "video-translator",
+      "displayName": "Video Translator",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\video-translator\\SKILL.md"
+    },
+    {
+      "slug": "video-upload-stream-tool",
+      "displayName": "Video Upload Aioz St",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\video-upload-stream-tool\\SKILL.md"
+    },
+    {
+      "slug": "visual-file-sorter",
+      "displayName": "Visual File Sorter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\visual-file-sorter\\SKILL.md"
+    },
+    {
+      "slug": "volcengine-network-dns",
+      "displayName": "Volcengine Network D",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\volcengine-network-dns\\SKILL.md"
+    },
+    {
+      "slug": "vpn",
+      "displayName": "VPN",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vpn\\SKILL.md"
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "displayName": "Vpn Rotate Skill",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vpn-rotate-skill\\SKILL.md"
+    },
+    {
+      "slug": "vscode-node",
+      "displayName": "VS Code Node",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vscode-node\\SKILL.md"
+    },
+    {
+      "slug": "vue",
+      "displayName": "Vue",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vue\\SKILL.md"
+    },
+    {
+      "slug": "vue-component-generator",
+      "displayName": "Vue Component Genera",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vue-component-generator\\SKILL.md"
+    },
+    {
+      "slug": "weather",
+      "displayName": "Weather",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\weather\\SKILL.md"
+    },
+    {
+      "slug": "web",
+      "displayName": "Web Development",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web\\SKILL.md"
+    },
+    {
+      "slug": "web-browsing",
+      "displayName": "Web Browsing",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web-browsing\\SKILL.md"
+    },
+    {
+      "slug": "web-content-fetcher",
+      "displayName": "Web Content Fetcher",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web-content-fetcher\\SKILL.md"
+    },
+    {
+      "slug": "web-learner",
+      "displayName": "Web Learner",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web-learner\\SKILL.md"
+    },
+    {
+      "slug": "web-vulnerability-assessment",
+      "displayName": "Web Vulnerability As",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web-vulnerability-assessment\\SKILL.md"
+    },
+    {
+      "slug": "weekly-report-writer",
+      "displayName": "weekly-report-writer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\weekly-report-writer\\SKILL.md"
+    },
+    {
+      "slug": "weiyun-skills",
+      "displayName": "Weiyun Skills",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\weiyun-skills\\SKILL.md"
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "displayName": "Wenxiang 2d5 Banner",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\wenxiang-2d5-banner\\SKILL.md"
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "displayName": "WhatsApp Image Send",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\whatsapp-image-send\\SKILL.md"
+    },
+    {
+      "slug": "whatsapp-styler",
+      "displayName": "WhatsApp Styler",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\whatsapp-styler\\SKILL.md"
+    },
+    {
+      "slug": "whatsapp-styler-free",
+      "displayName": "WhatsApp Styler LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\whatsapp-styler-free\\SKILL.md"
+    },
+    {
+      "slug": "who-is-actor",
+      "displayName": "Who Is Actor",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\who-is-actor\\SKILL.md"
+    },
+    {
+      "slug": "word",
+      "displayName": "Word",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\word\\SKILL.md"
+    },
+    {
+      "slug": "word-docx",
+      "displayName": "Word / DOCX",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\word-docx\\SKILL.md"
+    },
+    {
+      "slug": "workflow",
+      "displayName": "Workflow",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\workflow\\SKILL.md"
+    },
+    {
+      "slug": "workflow-decomposer",
+      "displayName": "Workflow Decomposer",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\workflow-decomposer\\SKILL.md"
+    },
+    {
+      "slug": "write-my-blog",
+      "displayName": "Write My Blog",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\write-my-blog\\SKILL.md"
+    },
+    {
+      "slug": "writing-assistant",
+      "displayName": "Writing Assistant",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\writing-assistant\\SKILL.md"
+    },
+    {
+      "slug": "ws-agent-browser",
+      "displayName": "Agent Browser",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ws-agent-browser\\SKILL.md"
+    },
+    {
+      "slug": "ws-calendar",
+      "displayName": "Calendar",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ws-calendar\\SKILL.md"
+    },
+    {
+      "slug": "ws-excel",
+      "displayName": "Excel",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ws-excel\\SKILL.md"
+    },
+    {
+      "slug": "x-news-daily",
+      "displayName": "X News Daily",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\x-news-daily\\SKILL.md"
+    },
+    {
+      "slug": "x-news-daily-free",
+      "displayName": "X News Daily LITE",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\x-news-daily-free\\SKILL.md"
+    },
+    {
+      "slug": "xml",
+      "displayName": "XML",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\xml\\SKILL.md"
+    },
+    {
+      "slug": "xml-parser-tool",
+      "displayName": "Xml Reader",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\xml-parser-tool\\SKILL.md"
+    },
+    {
+      "slug": "yaml",
+      "displayName": "YAML",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\yaml\\SKILL.md"
+    },
+    {
+      "slug": "youtube-watcher",
+      "displayName": "YouTube Watcher",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\youtube-watcher\\SKILL.md"
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "displayName": "Zhuchenggong Doubao",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\zhuchenggong-doubao-image-gen\\SKILL.md"
+    },
+    {
+      "slug": "ziptax",
+      "displayName": "Ziptax Sales Tax",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ziptax\\SKILL.md"
+    }
+  ],
+  "empty_displaynames": []
+}

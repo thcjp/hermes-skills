@@ -2,7 +2,7 @@
 slug: "rss-reader"
 name: "rss-reader"
 version: 1.0.1
-displayName: "RSS Reader"
+displayName: "RSS阅读器"
 summary: "监控RSS与Atom订阅做内容研究,追踪博客/新闻/邮件。Monitor RSS and Atom feeds for content research。Track blogs, news"
 summary_zh: "监控RSS与Atom订阅做内容研究,追踪博客/新闻/邮件。Monitor RSS and Atom feeds for content research。Track blogs, news"
 license: "MIT"

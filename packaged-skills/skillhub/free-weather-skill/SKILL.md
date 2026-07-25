@@ -2,7 +2,7 @@
 slug: "free-weather-skill"
 name: "free-weather-skill"
 version: 0.1.1
-displayName: "Weather"
+displayName: "免费版天气技能"
 summary: "免API Key获取当前天气与预报,出门不抓瞎。Get current weather and forecasts (no API key required)。核心能力: - 生活工具领域的"
 summary_zh: "免API Key获取当前天气与预报,出门不抓瞎。Get current weather and forecasts (no API key required)。核心能力: - 生活工具领域的"
 license: "MIT"

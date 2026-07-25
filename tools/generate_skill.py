@@ -51,6 +51,7 @@ SKILL_REGISTRY_DIR = Path(__file__).parent
 sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
 from config import get_db_connection, PACKAGED_SKILLS_DIR, MAX_SKILL_MD_LINES
+import db
 
 # 模板目录
 TEMPLATES_DIR = SKILL_REGISTRY_DIR / "templates"
@@ -1511,20 +1512,26 @@ def cmd_from_existing(args):
 
 def cmd_from_candidate(args):
     """从发现候选创建全新skill"""
-    # 先在DB中创建记录(如果不存在)
+    # 先在DB中创建记录(如果不存在) (R7-1收口: 使用db.insert_skill替代裸SQL)
     try:
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("SELECT id FROM skills WHERE slug = ?", (args.slug,))
         if not c.fetchone():
-            c.execute("""
-                INSERT INTO skills (slug, current_display_name, category, source,
-                                    current_version, current_status, created_at, updated_at)
-                VALUES (?, ?, 'generated', 'original_creation', '1.0.0', 'generated', ?, ?)
-            """, (args.slug, args.description[:20], datetime.now().isoformat(), datetime.now().isoformat()))
-            conn.commit()
+            conn.close()
+            db.insert_skill(
+                slug=args.slug,
+                name=args.description[:20],
+                display_name=args.description[:20],
+                version='1.0.0',
+                category='generated',
+                source='original_creation',
+                local_path=str(PACKAGED_SKILLS_DIR / args.slug),
+                current_status='generated',
+            )
             print(f"已在DB中创建skill记录: {args.slug}")
-        conn.close()
+        else:
+            conn.close()
     except Exception as e:
         print(f"警告: DB操作失败: {e}")
 

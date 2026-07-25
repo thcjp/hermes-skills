@@ -2,7 +2,7 @@
 slug: "assistant"
 name: "assistant"
 version: 1.0.1
-displayName: "Assistant"
+displayName: "助手"
 summary: "主动有序管理任务沟通与日程,做你的全能助理,琐事不遗漏。Manage tasks, communications, and scheduling with proactive and org"
 summary_zh: "主动有序管理任务沟通与日程,做你的全能助理,琐事不遗漏。Manage tasks, communications, and scheduling with proactive and org"
 license: "MIT"

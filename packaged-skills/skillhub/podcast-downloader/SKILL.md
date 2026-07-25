@@ -1,7 +1,7 @@
 ---
 name: podcast-downloader
 slug: podcast-downloader
-displayName: "podcast-downloader"
+displayName: "播客下载器"
 version: "1.0.0"
 summary: "从小宇宙下载播客音频与节目说明"
 description: "从小宇宙下载播客音频与节目说明。从小宇宙(xiaoyuzhoufm。com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。支持多种输入格式,输出结构化结果,适用于独立开发者与一人公司效率提升。"

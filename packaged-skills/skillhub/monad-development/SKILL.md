@@ -3,7 +3,7 @@
 slug: "monad-development"
 name: "monad-development"
 version: 1.0.1
-displayName: "Monad Development"
+displayName: "Monad开发工具"
 summary: "在Monad区块链建dapp,部署合约/配前端。Builds dapps on Monad blockchain。Use when deploying contracts, setting"
 summary_zh: "在Monad区块链建dapp,部署合约/配前端。Builds dapps on Monad blockchain。Use when deploying contracts, setting"
 license: "MIT"

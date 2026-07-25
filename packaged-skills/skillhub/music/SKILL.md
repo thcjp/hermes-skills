@@ -3,7 +3,7 @@
 slug: "music"
 name: "music"
 version: 1.0.1
-displayName: "Music"
+displayName: "音乐"
 summary: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆。Build a personal music system for tracking discoveries, favorites, con"
 summary_zh: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆。Build a personal music system for tracking discoveries, favorites, con"
 license: "MIT"

@@ -3,7 +3,7 @@
 slug: "write-my-blog"
 name: "write-my-blog"
 version: 0.1.1
-displayName: "Write My Blog"
+displayName: "博客"
 summary: "让Agent自主创建管理并发布全功能博客。Enables the agent to create, manage, and publish a full-featured blog auto"
 summary_zh: "让Agent自主创建管理并发布全功能博客。Enables the agent to create, manage, and publish a full-featured blog auto"
 license: "MIT"

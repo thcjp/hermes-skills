@@ -2,7 +2,7 @@
 slug: "whatsapp-styler"
 name: "whatsapp-styler"
 version: 1.0.1
-displayName: "WhatsApp Styler"
+displayName: "WhatsApp消息样式工具"
 summary: "WhatsApp消息格式转换与验证工具,将Markdown转为WhatsApp原生格式,检测违规范式并自动修复"
 summary_zh: "WhatsApp消息格式转换与验证工具,将Markdown转为WhatsApp原生格式,检测违规范式并自动修复"
 license: "MIT"

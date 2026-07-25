@@ -2,7 +2,7 @@
 slug: "email-gmail-outlook"
 name: "email-gmail-outlook"
 version: 1.0.8
-displayName: "Email Gmail Outlook"
+displayName: "邮件"
 summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件。基于 porteden CLI(`porteden email` / `porteden ma"
 summary_zh: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件。基于 porteden CLI(`porteden email` / `porteden ma"
 license: "MIT"

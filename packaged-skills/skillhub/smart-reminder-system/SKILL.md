@@ -3,7 +3,7 @@
 slug: "smart-reminder-system"
 name: "smart-reminder-system"
 version: 1.0.6
-displayName: "Reminder"
+displayName: "提醒"
 summary: "用SkillHub cron建一次性提醒任务,指定时间与内容。Create one-time reminder tasks using SkillHub cron。User specifie"
 summary_zh: "用SkillHub cron建一次性提醒任务,指定时间与内容。Create one-time reminder tasks using SkillHub cron。User specifie"
 license: "MIT"

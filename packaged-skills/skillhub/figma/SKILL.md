@@ -2,7 +2,7 @@
 slug: "figma"
 name: "figma"
 version: 2.1.1
-displayName: "Figma"
+displayName: "Figma设计工具"
 summary: "读Figma数据/导出资产/写回请求,设计交付闭环"MIT。This skill does what it advertises: reads Figma data, exp"
 summary_zh: "读Figma数据/导出资产/写回请求,设计交付闭环"MIT。This skill does what it advertises: reads Figma data, exp"
 description: |-

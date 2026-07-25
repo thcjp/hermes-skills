@@ -3,7 +3,7 @@
 slug: "notioncli"
 name: "notioncli"
 version: 0.1.1
-displayName: "Notion"
+displayName: "管页面"
 summary: "Notion API管页面/数据库/块/关系/汇总,多工作区。Notion API for creating and managing pages, databases, blocks, r"
 summary_zh: "Notion API管页面/数据库/块/关系/汇总,多工作区。Notion API for creating and managing pages, databases, blocks, r"
 license: "MIT"

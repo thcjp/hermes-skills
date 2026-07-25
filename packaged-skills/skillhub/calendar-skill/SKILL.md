@@ -2,7 +2,7 @@
 slug: "calendar-skill"
 name: "calendar-skill"
 version: 1.0.5
-displayName: "Calendar"
+displayName: "日历技能"
 summary: "安全管理Google日历/Outlook/Exchange,一处排程多端同步。Calendar Management - secure Google Calendar, Microsoft"
 summary_zh: "安全管理Google日历/Outlook/Exchange,一处排程多端同步。Calendar Management - secure Google Calendar, Microsoft"
 license: "MIT"

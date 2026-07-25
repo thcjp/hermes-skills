@@ -3,7 +3,7 @@
 slug: "browser-automation-v2"
 name: "browser-automation-v2"
 version: 2.0.1
-displayName: "Browser Automation V"
+displayName: "浏览器自动化"
 summary: "企业级浏览器自动化,自动清标签/超时重试/并发锁,稳如生产。Enterprise-grade browser automation with automatic tab cleanup, t"
 summary_zh: "企业级浏览器自动化,自动清标签/超时重试/并发锁,稳如生产。Enterprise-grade browser automation with automatic tab cleanup, t"
 license: "MIT"

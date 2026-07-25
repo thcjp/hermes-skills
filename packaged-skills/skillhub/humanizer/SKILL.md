@@ -2,7 +2,7 @@
 slug: "humanizer"
 name: "humanizer"
 version: 1.0.1
-displayName: "Humanizer"
+displayName: "去除文本中"
 summary: "去除文本中AI生成痕迹,让文字像人写的。Remove signs of AI-generated writing from text。核心能力: - 其他工具领域的专业化AI辅助工具 - 基"
 summary_zh: "去除文本中AI生成痕迹,让文字像人写的。Remove signs of AI-generated writing from text。核心能力: - 其他工具领域的专业化AI辅助工具 - 基"
 license: "MIT"

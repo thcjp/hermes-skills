@@ -3,7 +3,7 @@
 slug: "text-to-sql"
 name: "text-to-sql"
 version: 999.0.1
-displayName: "Text To Sql"
+displayName: "自然语言转SQL工具"
 summary: "用户自然语言描述数据需求,生成对应SQL查询。Use when (1) user describes what data they want in plain English and ask"
 summary_zh: "用户自然语言描述数据需求,生成对应SQL查询。Use when (1) user describes what data they want in plain English and ask"
 license: "MIT"

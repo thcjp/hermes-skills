@@ -2,7 +2,7 @@
 slug: "self-integration"
 name: "self-integration"
 version: 1.1.3
-displayName: "Self-Integration"
+displayName: "连任意外部应用并对其执行操作"
 summary: "连任意外部应用并对其执行操作。Connect to any external app and perform actions on it。Use when the user wants to"
 summary_zh: "连任意外部应用并对其执行操作。Connect to any external app and perform actions on it。Use when the user wants to"
 license: "MIT"

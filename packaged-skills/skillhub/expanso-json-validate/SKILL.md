@@ -2,7 +2,7 @@
 slug: "expanso-json-validate"
 name: "expanso-json-validate"
 version: 1.0.1
-displayName: "Expanso Json Validat"
+displayName: "JSON验证工具"
 summary: "用Expanso Edge流水线校验JSON语法与结构。Validate JSON syntax and structure using the Expanso Edge pipeline"
 summary_zh: "用Expanso Edge流水线校验JSON语法与结构。Validate JSON syntax and structure using the Expanso Edge pipeline"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "cctv-news-fetcher"
 name: "cctv-news-fetcher"
 version: 1.0.1
-displayName: "CCTV News Fetcher"
+displayName: "新闻抓取器"
 summary: "按日期抓取并解析央视新闻联播要点,新闻速览不漏报。Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianb"
 summary_zh: "按日期抓取并解析央视新闻联播要点,新闻速览不漏报。Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianb"
 license: "MIT"

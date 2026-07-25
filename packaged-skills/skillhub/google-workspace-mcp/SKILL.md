@@ -2,7 +2,7 @@
 slug: "google-workspace-mcp"
 name: "google-workspace-mcp"
 version: 1.0.1
-displayName: "Google Workspace MCP"
+displayName: "Google Workspace工具"
 summary: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets/Chat等49项工具,覆盖邮件、日历、文档、表格与联系人管理。"
 summary_zh: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets/Chat等49项工具,覆盖邮件、日历、文档、表格与联系人管理。"
 license: "MIT"

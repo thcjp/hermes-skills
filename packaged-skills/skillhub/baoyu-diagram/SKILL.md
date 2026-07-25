@@ -2,7 +2,7 @@
 slug: "baoyu-diagram"
 name: "baoyu-diagram"
 version: 1.117.4
-displayName: "Baoyu Diagram"
+displayName: "Baoyu图解"
 summary: "一句话生成专业暗色SVG图,架构/流程/时序全覆盖,告别丑图。Create professional, dark-themed SVG diagrams of any type — arch"
 summary_zh: "一句话生成专业暗色SVG图,架构/流程/时序全覆盖,告别丑图。Create professional, dark-themed SVG diagrams of any type — arch"
 license: "MIT"

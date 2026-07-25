@@ -2,7 +2,7 @@
 slug: "aws-graph-agent"
 name: "aws-graph-agent"
 version: 1.0.1
-displayName: "AWS Graph Agent"
+displayName: "AWS图谱智能体"
 summary: "Bedrock AgentCore与LangGraph多代理编排,覆盖状态图、Runtime、记忆、网关、CLI全生命周期。"
 summary_zh: "Bedrock AgentCore与LangGraph多代理编排,覆盖状态图、Runtime、记忆、网关、CLI全生命周期。"
 license: "MIT"

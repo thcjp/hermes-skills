@@ -2,7 +2,7 @@
 slug: "vpn-rotate-skill"
 name: "vpn-rotate-skill"
 version: 0.1.1
-displayName: "Vpn Rotate Skill"
+displayName: "技能"
 summary: "轮换VPN服务器绕过API限流,兼容OpenVPN(ProtonVPN等)。Bypass API rate limits by rotating VPN servers。Works with"
 summary_zh: "轮换VPN服务器绕过API限流,兼容OpenVPN(ProtonVPN等)。Bypass API rate limits by rotating VPN servers。Works with"
 license: "MIT"

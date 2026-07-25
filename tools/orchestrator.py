@@ -47,6 +47,7 @@ import argparse
 import json
 import sqlite3
 import subprocess
+import db
 import sys
 import time
 from datetime import datetime
@@ -86,15 +87,14 @@ def get_db():
 
 
 def log_operation(skill_id: Optional[int], operation_type: str, details: str, status: str = "completed"):
-    """记录操作到数据库"""
-    conn = get_db()
-    c = conn.cursor()
-    c.execute("""
-        INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (skill_id, operation_type, datetime.now().isoformat(), 'orchestrator', details, status))
-    conn.commit()
-    conn.close()
+    """记录操作到数据库 (R7-1收口: 使用db.record_operation替代裸SQL)"""
+    db.record_operation(
+        skill_id=skill_id,
+        operation_type=operation_type,
+        details=details,
+        after_state=status,
+        operator='orchestrator',
+    )
 
 
 # ============================================================

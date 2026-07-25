@@ -2,7 +2,7 @@
 slug: "docker-sandbox"
 name: "docker-sandbox"
 version: 1.0.1
-displayName: "Docker Sandbox"
+displayName: "Docker沙箱环境工具"
 summary: "建管Docker沙箱VM环境,让Agent安全执行不可信代码。Create and manage Docker sandboxed VM environments for safe agen"
 summary_zh: "建管Docker沙箱VM环境,让Agent安全执行不可信代码。Create and manage Docker sandboxed VM environments for safe agen"
 license: "MIT"

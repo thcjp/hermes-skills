@@ -2,7 +2,7 @@
 slug: "multi-search-engine-simple"
 name: "multi-search-engine-simple"
 version: 1.0.1
-displayName: "Multi Search Engine"
+displayName: "搜索引擎"
 summary: "【国内精简版】多种免费搜索方式在互联网上搜索最新信息，10个国内网站（精简7个国内不能访问的海外网站）"
 summary_zh: "【国内精简版】多种免费搜索方式在互联网上搜索最新信息，10个国内网站（精简7个国内不能访问的海外网站）"
 license: "MIT"

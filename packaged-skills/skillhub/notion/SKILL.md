@@ -2,7 +2,7 @@
 slug: "notion"
 name: "notion"
 version: 1.0.1
-displayName: "Notion"
+displayName: "Notion笔记工具"
 summary: "Notion API创建管理页面/数据库/块。Notion API for creating and managing pages, databases, and blocks。核心能力:"
 summary_zh: "Notion API创建管理页面/数据库/块。Notion API for creating and managing pages, databases, and blocks。核心能力:"
 license: "MIT"

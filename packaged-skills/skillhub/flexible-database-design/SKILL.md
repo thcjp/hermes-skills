@@ -2,7 +2,7 @@
 slug: "flexible-database-design"
 name: "flexible-database-design"
 version: 1.0.1
-displayName: "Flexible Database De"
+displayName: "数据库设计"
 summary: "指导Agent与用户设计实现灵活数据库,建模不踩坑。Guide agents and users to design and implement a \
 
 核心能力:

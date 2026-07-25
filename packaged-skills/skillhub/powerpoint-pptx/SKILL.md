@@ -3,7 +3,7 @@
 slug: "powerpoint-pptx"
 name: "powerpoint-pptx"
 version: 1.0.2
-displayName: "Powerpoint / PPTX"
+displayName: "创建检查编辑"
 summary: "创建检查编辑PowerPoint演示文稿与PPTX,布局可靠。Create, inspect, and edit Microsoft PowerPoint presentations and"
 summary_zh: "创建检查编辑PowerPoint演示文稿与PPTX,布局可靠。Create, inspect, and edit Microsoft PowerPoint presentations and"
 license: "MIT"

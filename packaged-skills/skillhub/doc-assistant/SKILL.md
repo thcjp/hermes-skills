@@ -3,7 +3,7 @@
 slug: "doc-assistant"
 name: "doc-assistant"
 version: "1.0.0"
-displayName: "Doc"
+displayName: "文档助手"
 summary: "读写编辑docx文档,格式/表格/修订全保留,文档处理利器。Use when the task involves reading, creating, or editing `。docx`"
 summary_zh: "读写编辑docx文档,格式/表格/修订全保留,文档处理利器。Use when the task involves reading, creating, or editing `。docx`"
 license: "MIT"

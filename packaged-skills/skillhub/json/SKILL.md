@@ -2,7 +2,7 @@
 slug: "json"
 name: "json"
 version: 1.0.1
-displayName: "JSON"
+displayName: "JSON数据处理工具"
 summary: "高效处理JSON数据结构/API/序列化。Work with JSON data structures, APIs, and serialization effectively。核心能力:"
 summary_zh: "高效处理JSON数据结构/API/序列化。Work with JSON data structures, APIs, and serialization effectively。核心能力:"
 license: "MIT"

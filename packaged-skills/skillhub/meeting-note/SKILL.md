@@ -3,7 +3,7 @@
 slug: "meeting-note"
 name: "meeting-note"
 version: 1.0.1
-displayName: "Meeting Note"
+displayName: "笔记"
 summary: "探讨决策型会议纪要(结论/共识/分歧/行动项)+Zettelkasten连接。探讨/决策型会议与谈话纪要（结论/共识/分歧/决策轨迹/隐含假设/风险机会/行动项）+ Zettelkasten"
 summary_zh: "探讨决策型会议纪要(结论/共识/分歧/行动项)+Zettelkasten连接。探讨/决策型会议与谈话纪要（结论/共识/分歧/决策轨迹/隐含假设/风险机会/行动项）+ Zettelkasten"
 license: "MIT"

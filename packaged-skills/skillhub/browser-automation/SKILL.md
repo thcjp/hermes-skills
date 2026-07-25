@@ -2,7 +2,7 @@
 slug: "browser-automation"
 name: "browser-automation"
 version: 1.0.2
-displayName: "Browser Automation"
+displayName: "浏览器自动化"
 summary: "自然语言经CLI自动化浏览器交互,告别手写脚本。Automate web browser interactions using natural language via CLI comman"
 summary_zh: "自然语言经CLI自动化浏览器交互,告别手写脚本。Automate web browser interactions using natural language via CLI comman"
 license: "MIT"

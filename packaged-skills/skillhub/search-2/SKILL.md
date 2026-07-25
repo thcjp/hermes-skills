@@ -2,7 +2,7 @@
 slug: "search-2"
 name: "search-2"
 version: 0.1.1
-displayName: "Search"
+displayName: "搜索"
 summary: "用Tavily的LLM优化搜索API搜网,返相关结果与片段。Search the web using Tavily's LLM-optimized search API。Returns re"
 summary_zh: "用Tavily的LLM优化搜索API搜网,返相关结果与片段。Search the web using Tavily's LLM-optimized search API。Returns re"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "word"
 name: "word"
 version: 1.0.1
-displayName: "Word"
+displayName: "Word文档工具"
 summary: "经osascript控Word会话/文档/选区/批注/导出/审阅。Control Word app sessions, documents, selections, comments, ex"
 summary_zh: "经osascript控Word会话/文档/选区/批注/导出/审阅。Control Word app sessions, documents, selections, comments, ex"
 license: "MIT"

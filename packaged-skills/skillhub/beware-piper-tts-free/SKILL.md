@@ -3,7 +3,7 @@
 slug: "beware-piper-tts-free"
 name: "beware-piper-tts-free"
 version: "1.0.0"
-displayName: "Piper TTS Lite"
+displayName: "Piper语音合成免费版"
 summary: "基于Piper的本地语音合成基础版,使用默认音色将文本转为MP3语音消息,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成基础版(免费)。全部推理在本地完成,零云端调用、零 AP"
 summary_zh: "基于Piper的本地语音合成基础版,使用默认音色将文本转为MP3语音消息,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成基础版(免费)。全部推理在本地完成,零云端调用、零 AP"
 license: "MIT"

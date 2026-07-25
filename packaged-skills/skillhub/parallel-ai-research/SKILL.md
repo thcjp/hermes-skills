@@ -2,7 +2,7 @@
 slug: "parallel-ai-research"
 name: "parallel-ai-research"
 version: 1.1.1
-displayName: "Research"
+displayName: "AI并行研究工具"
 summary: "开放式主题研究,构建活的Markdown文档,支持交互。Conduct open-ended research on a topic, building a living markdown"
 summary_zh: "开放式主题研究,构建活的Markdown文档,支持交互。Conduct open-ended research on a topic, building a living markdown"
 license: "MIT"

@@ -1,7 +1,7 @@
 ---
 name: logo-design-guide
 slug: logo-design-guide
-displayName: "Logo Design Guide"
+displayName: "设计指南"
 version: "1.0.1"
 summary: "logo设计原则与AI图像生成实用指南,产出专业logo"
 description: "logo设计原则与AI图像生成实用指南,帮助用户产出专业logo。覆盖字标、字母标、图形、抽象、吉祥物、组合型等logo类型,讲解提示词结构、色彩心理学、尺寸适配规范、文件格式交付全流程,并提供通义万相、文心一格等国内AI平台适配方案与错误码体系。当用户请求设计logo、品牌标志、AI生成图标、企业徽标时触发本技能。"

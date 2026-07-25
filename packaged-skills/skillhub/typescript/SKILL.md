@@ -2,7 +2,7 @@
 slug: "typescript"
 name: "typescript"
 version: 1.0.3
-displayName: "TypeScript"
+displayName: "TypeScript开发工具"
 summary: "写类型安全TypeScript,窄化/推断/严格模式最佳实践。Write type-safe TypeScript with proper narrowing, inference patt"
 summary_zh: "写类型安全TypeScript,窄化/推断/严格模式最佳实践。Write type-safe TypeScript with proper narrowing, inference patt"
 license: "MIT"

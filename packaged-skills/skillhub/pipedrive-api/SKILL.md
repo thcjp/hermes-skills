@@ -2,7 +2,7 @@
 slug: "pipedrive-api"
 name: "pipedrive-api"
 version: 1.0.5
-displayName: "Pipedrive"
+displayName: "Pipedrive API工具"
 summary: "Pipedrive API托管OAuth,管交易/联系人/机构/活动。Pipedrive API integration with managed OAuth。Manage deals, p"
 summary_zh: "Pipedrive API托管OAuth,管交易/联系人/机构/活动。Pipedrive API integration with managed OAuth。Manage deals, p"
 license: "MIT"

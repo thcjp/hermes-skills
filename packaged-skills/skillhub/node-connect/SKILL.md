@@ -3,7 +3,7 @@
 slug: "node-connect"
 name: "node-connect"
 version: 1.0.1
-displayName: "node-connect"
+displayName: "节点"
 summary: "诊断SkillHub节点连接与配对失败(Android/iOS/macOS)。Diagnose SkillHub node connection and pairing failures f"
 summary_zh: "诊断SkillHub节点连接与配对失败(Android/iOS/macOS)。Diagnose SkillHub node connection and pairing failures f"
 license: "MIT"

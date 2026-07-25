@@ -1,7 +1,7 @@
 ---
 name: ace-music
 slug: ace-music
-displayName: "Ace Music"
+displayName: "音乐"
 version: "1.0.0"
 summary: "经ACE Music免费API用ACE-Step 1.5生成AI音乐"
 description: "经ACE Music免费API用ACE-Step 1.5生成AI音乐。Generate AI music using ACE-Step 1。5 via ACE Music's free API。Use。"

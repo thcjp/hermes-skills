@@ -2,7 +2,7 @@
 slug: "graincrawl"
 name: "graincrawl"
 version: 1.0.2
-displayName: "Graincrawl"
+displayName: "归档"
 summary: "Granola归档,搜索/同步/笔记/转写/面板/SQL。Granola archive: search, sync freshness, notes, transcripts, panel"
 summary_zh: "Granola归档,搜索/同步/笔记/转写/面板/SQL。Granola archive: search, sync freshness, notes, transcripts, panel"
 license: "MIT"

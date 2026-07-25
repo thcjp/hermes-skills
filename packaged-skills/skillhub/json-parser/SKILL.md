@@ -2,7 +2,7 @@
 slug: "json-parser"
 name: "json-parser"
 version: 2.1.1
-displayName: "Json Parser"
+displayName: "JSON解析器"
 summary: "解析校验建筑API/IoT/BIM的JSON并转表。Parse and validate JSON data from construction APIs, IoT sensors, and"
 summary_zh: "解析校验建筑API/IoT/BIM的JSON并转表。Parse and validate JSON data from construction APIs, IoT sensors, and"
 license: "MIT"

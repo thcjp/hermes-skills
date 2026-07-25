@@ -2,7 +2,7 @@
 slug: "git"
 name: "git"
 version: 1.0.9
-displayName: "Git"
+displayName: "Git版本控制工具"
 summary: "Git提交/分支/rebase/合并/冲突解决/历史恢复与团队工作流。Git commits, branches, rebases, merges, conflict resolution,"
 summary_zh: "Git提交/分支/rebase/合并/冲突解决/历史恢复与团队工作流。Git commits, branches, rebases, merges, conflict resolution,"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "file-organizer-zh"
 name: "file-organizer-zh"
 version: 1.0.1
-displayName: "File Organizer"
+displayName: "文件"
 summary: "文件整理器，按类型自动分类（中文版）。文件整理器，按类型自动分类（中文版） 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
 summary_zh: "文件整理器，按类型自动分类（中文版）。文件整理器，按类型自动分类（中文版） 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "aws-infra"
 name: "aws-infra"
 version: 1.0.1
-displayName: "AWS Infra Inspector"
+displayName: "AWS基础设施检查工具"
 summary: "通过AWS CLI执行只读基础设施查询,覆盖实例清单、健康检查、安全审计、成本分析、变更追踪五大场景"
 summary_zh: "通过AWS CLI执行只读基础设施查询,覆盖实例清单、健康检查、安全审计、成本分析、变更追踪五大场景"
 license: "MIT"

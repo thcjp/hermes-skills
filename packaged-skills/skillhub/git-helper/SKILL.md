@@ -2,7 +2,7 @@
 slug: "git-helper"
 name: "git-helper"
 version: 1.0.1
-displayName: "Git Helper"
+displayName: "Git辅助"
 summary: "常用git操作技能,涵盖status/pull/push/branch/log。Common git operations as a skill (status, pull, push, b"
 summary_zh: "常用git操作技能,涵盖status/pull/push/branch/log。Common git operations as a skill (status, pull, push, b"
 license: "MIT"

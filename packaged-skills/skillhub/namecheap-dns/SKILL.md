@@ -2,7 +2,7 @@
 slug: "namecheap-dns"
 name: "namecheap-dns"
 version: 1.1.1
-displayName: "Namecheap DNS"
+displayName: "Namecheap DNS工具"
 summary: "安全管理Namecheap DNS,拉取/合并/自动备份/原子更新。Manage Namecheap DNS records safely by fetching existing entr"
 summary_zh: "安全管理Namecheap DNS,拉取/合并/自动备份/原子更新。Manage Namecheap DNS records safely by fetching existing entr"
 license: "MIT"

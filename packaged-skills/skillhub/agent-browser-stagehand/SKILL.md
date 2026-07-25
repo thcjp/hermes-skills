@@ -2,7 +2,7 @@
 slug: "agent-browser-stagehand"
 name: "agent-browser-stagehand"
 version: 1.0.1
-displayName: "Agent Browser Stageh"
+displayName: "智能体浏览器"
 summary: "自然语言驱动浏览器自动化,CLI直达交互,免去手写选择器的繁琐。Automate web browser interactions using natural language via CL"
 summary_zh: "自然语言驱动浏览器自动化,CLI直达交互,免去手写选择器的繁琐。Automate web browser interactions using natural language via CL"
 license: "MIT"

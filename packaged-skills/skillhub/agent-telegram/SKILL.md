@@ -2,7 +2,7 @@
 slug: "agent-telegram"
 name: "agent-telegram"
 version: 1.0.1
-displayName: "Agent Telegram"
+displayName: "智能体Telegram"
 summary: "Agent 团队 Telegram 通信规范，统一 8 类角色消息发送与汇报。。Agent 团队 Telegram 通信规范。定义 main、architect、backend、fronte"
 summary_zh: "Agent 团队 Telegram 通信规范，统一 8 类角色消息发送与汇报。。Agent 团队 Telegram 通信规范。定义 main、architect、backend、fronte"
 license: "MIT"

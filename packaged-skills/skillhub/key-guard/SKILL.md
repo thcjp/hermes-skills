@@ -2,7 +2,7 @@
 slug: "key-guard"
 name: "key-guard"
 version: 1.0.2
-displayName: "Key Guard"
+displayName: "密钥卫士"
 summary: "安全护栏,阻止API Key被发送给Claude"MIT。Security guardrail: prevents API keys from being sent to a"
 summary_zh: "安全护栏,阻止API Key被发送给Claude"MIT。Security guardrail: prevents API keys from being sent to a"
 description: |-

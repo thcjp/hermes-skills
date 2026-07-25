@@ -2,7 +2,7 @@
 slug: "gif-whatsapp"
 name: "gif-whatsapp"
 version: 1.3.1
-displayName: "Gif Whatsapp"
+displayName: "WhatsApp GIF工具"
 summary: "在WhatsApp搜发GIF,自动处理Tenor转MP4转换。Search and send GIFs on WhatsApp。Handles the Tenor→MP4 conversio"
 summary_zh: "在WhatsApp搜发GIF,自动处理Tenor转MP4转换。Search and send GIFs on WhatsApp。Handles the Tenor→MP4 conversio"
 license: "MIT"

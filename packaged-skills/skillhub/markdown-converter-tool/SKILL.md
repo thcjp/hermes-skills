@@ -3,7 +3,7 @@
 slug: "markdown-converter-tool"
 name: "markdown-converter-tool"
 version: "1.0.0"
-displayName: "Markdown Converter"
+displayName: "Markdown转换器工具"
 summary: "简洁Markdown转换助手(用Azure有隐私提示)。This is a straightforward Markdown conversion helper, with privacy"
 summary_zh: "简洁Markdown转换助手(用Azure有隐私提示)。This is a straightforward Markdown conversion helper, with privacy"
 license: "MIT"

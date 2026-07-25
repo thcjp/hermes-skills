@@ -3,7 +3,7 @@
 slug: "powerpoint"
 name: "powerpoint"
 version: 1.0.1
-displayName: "PowerPoint"
+displayName: "PowerPoint演示工具"
 summary: "经osascript控PowerPoint会话/幻灯片/备注/导出/放映状态。Control PowerPoint app sessions, slides, notes, export,"
 summary_zh: "经osascript控PowerPoint会话/幻灯片/备注/导出/放映状态。Control PowerPoint app sessions, slides, notes, export,"
 license: "MIT"

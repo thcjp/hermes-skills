@@ -2,7 +2,7 @@
 slug: "frontend-design-3"
 name: "frontend-design-3"
 version: 0.1.1
-displayName: "Frontend Design"
+displayName: "设计"
 summary: "创建独特的生产级前端界面，避免通用 AI 风格，支持 11 种美学方向。。frontend-design-3 是一个前端设计技能，创建独特的生产级界面，避免通用"AI slop"美学. 支持"
 summary_zh: "创建独特的生产级前端界面，避免通用 AI 风格，支持 11 种美学方向。。frontend-design-3 是一个前端设计技能，创建独特的生产级界面，避免通用"AI slop"美学. 支持"
 license: "MIT"

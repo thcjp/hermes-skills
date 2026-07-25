@@ -2,7 +2,7 @@
 slug: "python3"
 name: "python3"
 version: 1.0.1
-displayName: "python"
+displayName: "Python3开发工具"
 summary: "用Python做项目搭建/依赖安装/脚本执行/环境排障。Use Python for practical project setup, dependency install, script"
 summary_zh: "用Python做项目搭建/依赖安装/脚本执行/环境排障。Use Python for practical project setup, dependency install, script"
 license: "MIT"

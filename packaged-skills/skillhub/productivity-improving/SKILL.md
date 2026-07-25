@@ -3,7 +3,7 @@
 slug: "productivity-improving"
 name: "productivity-improving"
 version: 1.1.1
-displayName: "Productivity Tracker"
+displayName: "生产力追踪与每日复盘助手"
 summary: "生产力追踪与每日复盘助手,输入活动日志/目标/日报。Productivity tracker and daily review assistant。Input activity logs,"
 summary_zh: "生产力追踪与每日复盘助手,输入活动日志/目标/日报。Productivity tracker and daily review assistant。Input activity logs,"
 license: "MIT"

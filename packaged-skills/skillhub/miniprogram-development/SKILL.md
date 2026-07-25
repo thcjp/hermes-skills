@@ -3,7 +3,7 @@
 slug: "miniprogram-development"
 name: "miniprogram-development"
 version: 1.28.13
-displayName: "Miniprogram Developm"
+displayName: "微信小程序开发"
 summary: "微信小程序开发,构建/调试/预览/测试/发布。WeChat Mini Program development skill for building, debugging, previewin"
 summary_zh: "微信小程序开发,构建/调试/预览/测试/发布。WeChat Mini Program development skill for building, debugging, previewin"
 license: "MIT"

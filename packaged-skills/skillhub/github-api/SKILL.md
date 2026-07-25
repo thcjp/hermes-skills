@@ -2,7 +2,7 @@
 slug: "github-api"
 name: "github-api"
 version: 1.0.8
-displayName: "GitHub"
+displayName: "GitHub API工具"
 summary: "经Maton托管OAuth/API接入GitHub,含适当权限范围。This is a disclosed GitHub integration that uses Maton-manage"
 summary_zh: "经Maton托管OAuth/API接入GitHub,含适当权限范围。This is a disclosed GitHub integration that uses Maton-manage"
 license: "MIT"

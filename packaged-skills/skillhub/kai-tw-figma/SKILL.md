@@ -3,7 +3,7 @@
 slug: "kai-tw-figma"
 name: "kai-tw-figma"
 version: "1.0.4"
-displayName: "Figma"
+displayName: "Figma台式设计工具"
 summary: "交互Figma文件,读结构/导图层为图/取评论。Interact with Figma files to read structure, export layers as images, a"
 summary_zh: "交互Figma文件,读结构/导图层为图/取评论。Interact with Figma files to read structure, export layers as images, a"
 license: "MIT"

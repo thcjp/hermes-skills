@@ -2,7 +2,7 @@
 slug: "postgres-job-queue"
 name: "postgres-job-queue"
 version: 1.0.1
-displayName: "Postgres Job Queue"
+displayName: "Postgres作业队列"
 summary: "基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪。关系型数据库-based job queue with priority scheduling, batch claiming,"
 summary_zh: "基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪。关系型数据库-based job queue with priority scheduling, batch claiming,"
 license: "MIT"

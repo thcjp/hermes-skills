@@ -2,7 +2,7 @@
 slug: "free-weather-api"
 name: "free-weather-api"
 version: 1.0.1
-displayName: "weather"
+displayName: "免费版天气API"
 summary: "查询指定城市或地区的天气预报信息，包括温度、天气状况、降水概率、风力风向等。支持实时天气和未来多日预报查询。"
 summary_zh: "查询指定城市或地区的天气预报信息，包括温度、天气状况、降水概率、风力风向等。支持实时天气和未来多日预报查询。"
 license: "MIT"

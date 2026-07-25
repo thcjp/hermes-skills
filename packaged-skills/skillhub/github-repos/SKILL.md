@@ -2,7 +2,7 @@
 slug: "github-repos"
 name: "github-repos"
 version: 1.0.6
-displayName: "GitHub"
+displayName: "GitHub仓库管理工具"
 summary: "管GitHub仓库/issue/PR/提交/分支/发布/工作流。Work with GitHub repositories, issues, pull requests, commits,"
 summary_zh: "管GitHub仓库/issue/PR/提交/分支/发布/工作流。Work with GitHub repositories, issues, pull requests, commits,"
 license: "MIT"

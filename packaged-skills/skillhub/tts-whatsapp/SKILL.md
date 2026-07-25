@@ -2,7 +2,7 @@
 slug: "tts-whatsapp"
 name: "tts-whatsapp"
 version: 1.0.1
-displayName: "TTS WhatsApp"
+displayName: "语音合成WhatsApp"
 summary: "在WhatsApp发40+语言高质量TTS语音消息,自动送达。Send high-quality text-to-speech voice messages on WhatsApp in 4"
 summary_zh: "在WhatsApp发40+语言高质量TTS语音消息,自动送达。Send high-quality text-to-speech voice messages on WhatsApp in 4"
 license: "MIT"

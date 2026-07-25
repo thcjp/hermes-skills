@@ -2,7 +2,7 @@
 slug: "docker"
 name: "docker"
 version: 1.0.5
-displayName: "Docker"
+displayName: "Docker容器管理工具"
 summary: "管Docker容器/镜像/Compose/网络/卷,含调试与生产加固。Docker containers, images, Compose stacks, networking, volum"
 summary_zh: "管Docker容器/镜像/Compose/网络/卷,含调试与生产加固。Docker containers, images, Compose stacks, networking, volum"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "finance-report-analyzer"
 name: "finance-report-analyzer"
 version: 1.2.1
-displayName: "Finance Report Analy"
+displayName: "财务报告分析器"
 summary: "分析Excel/PDF财务数据,生成含迷你图的交互报告。Analyze financial data from uploaded Excel/PDF files and generate i"
 summary_zh: "分析Excel/PDF财务数据,生成含迷你图的交互报告。Analyze financial data from uploaded Excel/PDF files and generate i"
 license: "MIT"

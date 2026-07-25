@@ -2,7 +2,7 @@
 slug: "text"
 name: "text"
 version: 1.0.1
-displayName: "Text"
+displayName: "用模式转换"
 summary: "用模式转换/格式化/处理文本,写作/清洗/本地化/引用。Transform, format, and process text with patterns for writing, data"
 summary_zh: "用模式转换/格式化/处理文本,写作/清洗/本地化/引用。Transform, format, and process text with patterns for writing, data"
 license: "MIT"

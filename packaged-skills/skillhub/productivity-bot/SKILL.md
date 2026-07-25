@@ -2,7 +2,7 @@
 slug: "productivity-bot"
 name: "productivity-bot"
 version: 1.0.1
-displayName: "Productivity Bot"
+displayName: "机器人"
 summary: "生产力任务自动化bot,数据处理/定时通知/工作流。Automation bot for productivity tasks including data processing, sche"
 summary_zh: "生产力任务自动化bot,数据处理/定时通知/工作流。Automation bot for productivity tasks including data processing, sche"
 license: "MIT"

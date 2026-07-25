@@ -2,7 +2,7 @@
 slug: "expanso-log-sanitize"
 name: "expanso-log-sanitize"
 version: 1.0.1
-displayName: "Expanso log-sanitize"
+displayName: "日志"
 summary: "清洗日志,去除密码/令牌等敏感模式,防泄露。Sanitize log entries by removing passwords, tokens, and other sensitive p"
 summary_zh: "清洗日志,去除密码/令牌等敏感模式,防泄露。Sanitize log entries by removing passwords, tokens, and other sensitive p"
 license: "MIT"

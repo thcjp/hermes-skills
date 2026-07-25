@@ -2,7 +2,7 @@
 slug: "screen-monitor"
 name: "screen-monitor"
 version: 1.0.2
-displayName: "Screen Monitor"
+displayName: "屏幕监控器"
 summary: "双模屏幕共享与分析,模型无关(Gemini/Claude/Qwen3-VL)。Dual-mode screen sharing and analysis。Model-agnostic (Ge"
 summary_zh: "双模屏幕共享与分析,模型无关(Gemini/Claude/Qwen3-VL)。Dual-mode screen sharing and analysis。Model-agnostic (Ge"
 license: "MIT"

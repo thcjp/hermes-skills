@@ -2,7 +2,7 @@
 slug: "mongodb"
 name: "mongodb"
 version: 1.0.2
-displayName: "MongoDB"
+displayName: "设计"
 summary: "设计schema/写查询/配置MongoDB,兼顾一致性与性能。Design schemas, write queries, and configure MongoDB for consis"
 summary_zh: "设计schema/写查询/配置MongoDB,兼顾一致性与性能。Design schemas, write queries, and configure MongoDB for consis"
 license: "MIT"

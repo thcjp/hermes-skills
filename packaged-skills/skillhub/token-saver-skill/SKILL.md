@@ -1,7 +1,7 @@
 ---
 name: token-saver-skill
 slug: token-saver-skill
-displayName: "token-saver-skill"
+displayName: "令牌技能"
 version: "1.0.0"
 summary: "省50-80%AI token用量,不牺牲响应质量"
 description: "省50-80%AI token用量,不牺牲响应质量。Code blocks (always kept intact)。Error messages and stack traces。User-marked important messages。支持多种输入格式,输出结构化结果,适用于独立开发者与一人公司效率提升。"

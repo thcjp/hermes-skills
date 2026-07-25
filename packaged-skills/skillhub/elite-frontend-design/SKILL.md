@@ -2,7 +2,7 @@
 slug: "elite-frontend-design"
 name: "elite-frontend-design"
 version: 1.0.1
-displayName: "Elite Frontend Desig"
+displayName: "设计"
 summary: "前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。 输出 HTML/CSS/JS"
 summary_zh: "前端 UI 界面设计。当用户要创建网页、landing page、dashboard、React/Vue 组件、前端页面时触发。 输出 HTML/CSS/JS"
 license: "MIT"

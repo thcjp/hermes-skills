@@ -2,7 +2,7 @@
 slug: "slack-api"
 name: "slack-api"
 version: 1.0.12
-displayName: "Slack"
+displayName: "Slack API工具"
 summary: "Slack API托管OAuth,发消息/管频道/搜会话。Slack API integration with managed OAuth。Send messages, manage cha"
 summary_zh: "Slack API托管OAuth,发消息/管频道/搜会话。Slack API integration with managed OAuth。Send messages, manage cha"
 license: "MIT"

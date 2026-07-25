@@ -3,7 +3,7 @@
 slug: "sql-toolkit"
 name: "sql-toolkit"
 version: 1.0.1
-displayName: "SQL Toolkit"
+displayName: "SQL工具箱"
 summary: "关系型数据库操作工具箱，覆盖SQLite/PostgreSQL/MySQL的查询、设计、迁移与优化。SQL Toolkit 是关系型数据库命令行操作的完整工具箱，覆盖 SQLite、Post"
 summary_zh: "关系型数据库操作工具箱，覆盖SQLite/PostgreSQL/MySQL的查询、设计、迁移与优化。SQL Toolkit 是关系型数据库命令行操作的完整工具箱，覆盖 SQLite、Post"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "email-daily-summary"
 name: "email-daily-summary"
 version: 0.1.1
-displayName: "Email Daily Summary"
+displayName: "邮件摘要"
 summary: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微"
 summary_zh: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微"
 license: "MIT"

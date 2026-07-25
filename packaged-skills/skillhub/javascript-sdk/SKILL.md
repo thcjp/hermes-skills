@@ -2,7 +2,7 @@
 slug: "javascript-sdk"
 name: "javascript-sdk"
 version: 0.1.6
-displayName: "Javascript Sdk"
+displayName: "JavaScript SDK工具"
 summary: "inference.sh的JS/TS SDK,跑AI应用/建Agent/集成150+模型。JavaScript/TypeScript SDK for inference。sh - run A"
 summary_zh: "inference.sh的JS/TS SDK,跑AI应用/建Agent/集成150+模型。JavaScript/TypeScript SDK for inference。sh - run A"
 license: "MIT"

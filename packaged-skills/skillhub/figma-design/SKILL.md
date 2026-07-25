@@ -3,7 +3,7 @@
 slug: "figma-design"
 name: "figma-design"
 version: 1.0.7
-displayName: "Figma"
+displayName: "Figma设计"
 summary: "读文件/管评论/提设计令牌/下图片/建Webhook,Figma全管。Read files, manage comments, extract design tokens, download"
 summary_zh: "读文件/管评论/提设计令牌/下图片/建Webhook,Figma全管。Read files, manage comments, extract design tokens, download"
 license: "MIT"

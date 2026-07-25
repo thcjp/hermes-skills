@@ -2,7 +2,7 @@
 slug: "verify-claims"
 name: "verify-claims"
 version: 1.0.1
-displayName: "Verify Claims"
+displayName: "事实核查技能"
 summary: "事实核查技能(会自动建延迟跟进需谨慎)。This fact-checking skill is mostly coherent, but it can automatically creat"
 summary_zh: "事实核查技能(会自动建延迟跟进需谨慎)。This fact-checking skill is mostly coherent, but it can automatically creat"
 license: "MIT"

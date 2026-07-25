@@ -2,7 +2,7 @@
 slug: "tarot-free"
 name: "tarot-free"
 version: 1.0.1
-displayName: "Tarot Free"
+displayName: "免费版"
 summary: "基础版反思式塔罗抽取，支持单牌阵和基础语言校准，用于情感反思。。tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子 而非预言"，采用 `pr"
 summary_zh: "基础版反思式塔罗抽取，支持单牌阵和基础语言校准，用于情感反思。。tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子 而非预言"，采用 `pr"
 license: "MIT"

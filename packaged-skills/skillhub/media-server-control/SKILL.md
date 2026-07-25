@@ -3,7 +3,7 @@
 slug: "media-server-control"
 name: "media-server-control"
 version: "1.3.0"
-displayName: "Jellyfin Control"
+displayName: "服务器"
 summary: "控Jellyfin媒体服务器与TV,搜索/续播/管会话。Control Jellyfin media server and TV。Search content, resume playbac"
 summary_zh: "控Jellyfin媒体服务器与TV,搜索/续播/管会话。Control Jellyfin media server and TV。Search content, resume playbac"
 license: "MIT"

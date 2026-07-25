@@ -2,7 +2,7 @@
 slug: "interview-simulator"
 name: "interview-simulator"
 version: 1.0.1
-displayName: "Interview Simulator"
+displayName: "模拟任意角色与经验级别的面试"
 summary: "模拟任意角色与经验级别的面试,求职演练。Simulates mock interviews for any role and experience level。核心能力: - 其他工具领域的"
 summary_zh: "模拟任意角色与经验级别的面试,求职演练。Simulates mock interviews for any role and experience level。核心能力: - 其他工具领域的"
 license: "MIT"

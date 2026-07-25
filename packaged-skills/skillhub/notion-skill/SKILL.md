@@ -2,7 +2,7 @@
 slug: "notion-skill"
 name: "notion-skill"
 version: 1.0.1
-displayName: "Notion"
+displayName: "Notion技能"
 summary: "经官方Notion API操作页面与数据库。Work with Notion pages and databases via the official Notion API。核心能力: -"
 summary_zh: "经官方Notion API操作页面与数据库。Work with Notion pages and databases via the official Notion API。核心能力: -"
 license: "MIT"

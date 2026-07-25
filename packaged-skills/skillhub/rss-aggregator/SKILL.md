@@ -2,7 +2,7 @@
 slug: "rss-aggregator"
 name: "rss-aggregator"
 version: 1.0.3
-displayName: "Rss Aggregator"
+displayName: "RSS聚合工具"
 summary: "自动读取配置的 RSS 链接，抓取并合并多源报道，去重历史推送，生成无 Emoji、高信息密度的 Markdown 简报。"
 summary_zh: "自动读取配置的 RSS 链接，抓取并合并多源报道，去重历史推送，生成无 Emoji、高信息密度的 Markdown 简报。"
 license: "MIT"

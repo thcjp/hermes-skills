@@ -2,7 +2,7 @@
 slug: "reminder"
 name: "reminder"
 version: 0.1.2
-displayName: "Reminder"
+displayName: "提醒"
 summary: "捕获自然语言事件存工作区并排Telegram提醒,自动解析。Capture natural-language events, save to your workspace, and sche"
 summary_zh: "捕获自然语言事件存工作区并排Telegram提醒,自动解析。Capture natural-language events, save to your workspace, and sche"
 license: "MIT"

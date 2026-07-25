@@ -3,7 +3,7 @@
 slug: "dashboard-toolkit"
 name: "openclaw-dashboard"
 version: "1.7.3"
-displayName: "SkillHub-dashboard"
+displayName: "仪表盘工具箱"
 summary: "SkillHub实时运营仪表盘,监控会话/成本/cron/网关。Real-time operations dashboard for SkillHub。Monitors sessions,"
 summary_zh: "SkillHub实时运营仪表盘,监控会话/成本/cron/网关。Real-time operations dashboard for SkillHub。Monitors sessions,"
 license: "MIT"

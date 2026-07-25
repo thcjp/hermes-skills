@@ -2,7 +2,7 @@
 slug: "text-to-speech-heygen"
 name: "text-to-speech-heygen"
 version: 2.23.1
-displayName: "Text to Speech"
+displayName: "语音合成工具"
 summary: "HeyGen TTS语音合成工具's Starfish TTS model. Use。Generate speech audio from text using HeyGen's Starf"
 summary_zh: "HeyGen TTS语音合成工具's Starfish TTS model. Use。Generate speech audio from text using HeyGen's Starf"
 license: "MIT"

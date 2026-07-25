@@ -2,7 +2,7 @@
 slug: "ws-agent-browser"
 name: "ws-agent-browser"
 version: 1.0.1
-displayName: "Agent Browser"
+displayName: "智能体浏览器"
 summary: "浏览器智能控制。自动化操作、截图、填表、数据抓取。。浏览器智能控制。自动化操作、截图、填表、数据抓取。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于"
 summary_zh: "浏览器智能控制。自动化操作、截图、填表、数据抓取。。浏览器智能控制。自动化操作、截图、填表、数据抓取。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于"
 license: "MIT"

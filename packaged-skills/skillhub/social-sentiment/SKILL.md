@@ -3,7 +3,7 @@
 slug: "social-sentiment"
 name: "social-sentiment"
 version: 1.4.1
-displayName: "Social Sentiment"
+displayName: "社交聆听工作流"
 summary: "社交聆听工作流,用Xpoz与npm助手分析舆情。This skill is a disclosed social-listening workflow that uses Xpoz and"
 summary_zh: "社交聆听工作流,用Xpoz与npm助手分析舆情。This skill is a disclosed social-listening workflow that uses Xpoz and"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "vue-component-generator"
 name: "vue-component-generator"
 version: 1.0.1
-displayName: "Vue Component Genera"
+displayName: "生成器"
 summary: "生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，一键生成完整"
 summary_zh: "生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，一键生成完整"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "reddit-research"
 name: "reddit-research"
 version: 1.0.1
-displayName: "Reddit Research"
+displayName: "Reddit研究工具"
 summary: "提取汇总Reddit趋势话题/反复问题/内容空白。Extracts and summarizes trending topics, recurring issues, and content"
 summary_zh: "提取汇总Reddit趋势话题/反复问题/内容空白。Extracts and summarizes trending topics, recurring issues, and content"
 license: "MIT"

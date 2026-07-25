@@ -2,7 +2,7 @@
 slug: "ux"
 name: "ux"
 version: 1.0.1
-displayName: "UX"
+displayName: "设计分析直觉高效贴合心智模型的用户体验"
 summary: "设计分析直觉高效贴合心智模型的用户体验。Design and analyze user experiences that are intuitive, efficient, and alig"
 summary_zh: "设计分析直觉高效贴合心智模型的用户体验。Design and analyze user experiences that are intuitive, efficient, and alig"
 license: "MIT"

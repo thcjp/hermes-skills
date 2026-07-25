@@ -3,7 +3,7 @@
 slug: "beware-piper-tts"
 name: "beware-piper-tts"
 version: 1.0.2
-displayName: "Piper TTS Pro"
+displayName: "Piper语音合成"
 summary: "本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零 API 密"
 summary_zh: "本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零 API 密"
 license: "MIT"

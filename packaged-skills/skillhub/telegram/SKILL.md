@@ -3,7 +3,7 @@
 slug: "telegram"
 name: "telegram"
 version: 1.0.2
-displayName: "Telegram"
+displayName: "Telegram消息工具"
 summary: "设计Telegram Bot API工作流与命令驱动对话。SkillHub skill for designing Telegram Bot API workflows and comman"
 summary_zh: "设计Telegram Bot API工作流与命令驱动对话。SkillHub skill for designing Telegram Bot API workflows and comman"
 license: "MIT"

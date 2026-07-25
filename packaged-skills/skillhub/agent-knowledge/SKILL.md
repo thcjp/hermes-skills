@@ -2,7 +2,7 @@
 slug: "agent-knowledge"
 name: "agent-knowledge"
 version: 1.0.1
-displayName: "Agent Knowledge"
+displayName: "智能体"
 summary: "统一知识捕获与检索,聚合URL/视频/文章/论文/社媒,一处沉淀全源知识。Unified knowledge capture and retrieval for URLs, video/ar"
 summary_zh: "统一知识捕获与检索,聚合URL/视频/文章/论文/社媒,一处沉淀全源知识。Unified knowledge capture and retrieval for URLs, video/ar"
 license: "MIT"

@@ -3,7 +3,7 @@
 slug: "travel-assistant"
 name: "travel-assistant"
 version: 1.0.2
-displayName: "Travel Assistant"
+displayName: "助手"
 summary: "私人旅行规划顾问。整理你的所有旅行信息，主动发现你忽略的签证、天气、文化禁忌、行李清单等细节，用起来像真人助手一样贴心可靠。"
 summary_zh: "私人旅行规划顾问。整理你的所有旅行信息，主动发现你忽略的签证、天气、文化禁忌、行李清单等细节，用起来像真人助手一样贴心可靠。"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "video"
 name: "video"
 version: 1.0.2
-displayName: "Video"
+displayName: "视频"
 summary: "为任意平台处理/编辑/优化视频,压缩/转码/字幕。Process, edit, and optimize videos for any platform with compression,"
 summary_zh: "为任意平台处理/编辑/优化视频,压缩/转码/字幕。Process, edit, and optimize videos for any platform with compression,"
 license: "MIT"

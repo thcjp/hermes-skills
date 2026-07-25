@@ -2,7 +2,7 @@
 slug: "queue-task"
 name: "queue-task"
 version: 0.1.1
-displayName: "Queue Task"
+displayName: "队列任务"
 summary: "task-father目录的可恢复幂等批处理队列任务助手。Durable queue-task helper for resumable, idempotent batch jobs in"
 summary_zh: "task-father目录的可恢复幂等批处理队列任务助手。Durable queue-task helper for resumable, idempotent batch jobs in"
 license: "MIT"

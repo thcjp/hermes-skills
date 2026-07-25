@@ -2,7 +2,7 @@
 slug: "aws-agentcore-langgraph"
 name: "aws-agentcore-langgraph"
 version: 1.0.3
-displayName: "AgentCore LangGraph"
+displayName: "AWS AgentCore开发工具"
 summary: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体"
 summary_zh: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "upstage-document-parse"
 name: "upstage-document-parse"
 version: 1.0.6
-displayName: "Document Parse"
+displayName: "文档解析工具"
 summary: "将 PDF、图片、Office 文档解析为带版面感知的 Markdown/HTML，含表格和坐标。。upstage-document-parse 是一个文档解析技能，将 PDF、图片、DOC"
 summary_zh: "将 PDF、图片、Office 文档解析为带版面感知的 Markdown/HTML，含表格和坐标。。upstage-document-parse 是一个文档解析技能，将 PDF、图片、DOC"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "git-workflow-cn"
 name: "git-workflow-cn"
 version: 1.1.1
-displayName: "Git Workflow Cn"
+displayName: "Git工作流"
 summary: "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。。Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。Use when 需要代码生成、"
 summary_zh: "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。。Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。Use when 需要代码生成、"
 license: "MIT"

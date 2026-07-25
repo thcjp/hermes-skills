@@ -1,0 +1,2642 @@
+{
+  "total_english": 438,
+  "translated": 395,
+  "untranslated": 43,
+  "applied": 395,
+  "apply_failed": 0,
+  "translations": [
+    {
+      "slug": "accounting-and-finance",
+      "old_displayName": "Finance Analyst Pro",
+      "new_displayName": "财务",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\accounting-and-finance\\SKILL.md"
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "old_displayName": "Finance LITE",
+      "new_displayName": "财务免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\accounting-and-finance-free\\SKILL.md"
+    },
+    {
+      "slug": "ace-music",
+      "old_displayName": "Ace Music",
+      "new_displayName": "音乐",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ace-music\\SKILL.md"
+    },
+    {
+      "slug": "admapix",
+      "old_displayName": "AdMapix",
+      "new_displayName": "AdMapix广告投放工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\admapix\\SKILL.md"
+    },
+    {
+      "slug": "admapix-free",
+      "old_displayName": "AdMapix LITE",
+      "new_displayName": "Admapix免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\admapix-free\\SKILL.md"
+    },
+    {
+      "slug": "agent",
+      "old_displayName": "Agent",
+      "new_displayName": "智能体",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent\\SKILL.md"
+    },
+    {
+      "slug": "agent-bom-vulnerability-intel",
+      "old_displayName": "Agent Bom Vulnerabil",
+      "new_displayName": "智能体漏洞",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-bom-vulnerability-intel\\SKILL.md"
+    },
+    {
+      "slug": "agent-browser-automation",
+      "old_displayName": "Agent Browser",
+      "new_displayName": "智能体浏览器自动化",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-browser-automation\\SKILL.md"
+    },
+    {
+      "slug": "agent-browser-cli",
+      "old_displayName": "Agent Browser CLI",
+      "new_displayName": "智能体浏览器命令行",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-browser-cli\\SKILL.md"
+    },
+    {
+      "slug": "agent-browser-stagehand",
+      "old_displayName": "Agent Browser Stageh",
+      "new_displayName": "智能体浏览器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-browser-stagehand\\SKILL.md"
+    },
+    {
+      "slug": "agent-chat",
+      "old_displayName": "Agent Chat",
+      "new_displayName": "智能体聊天",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-chat\\SKILL.md"
+    },
+    {
+      "slug": "agent-commercial-contract",
+      "old_displayName": "Agent Commercial Con",
+      "new_displayName": "智能体合同",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-commercial-contract\\SKILL.md"
+    },
+    {
+      "slug": "agent-framework-azure-ai-py",
+      "old_displayName": "Agent Framework Azur",
+      "new_displayName": "智能体框架AzureAI",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-framework-azure-ai-py\\SKILL.md"
+    },
+    {
+      "slug": "agent-group",
+      "old_displayName": "Agent Group",
+      "new_displayName": "智能体",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-group\\SKILL.md"
+    },
+    {
+      "slug": "agent-knowledge",
+      "old_displayName": "Agent Knowledge",
+      "new_displayName": "智能体",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-knowledge\\SKILL.md"
+    },
+    {
+      "slug": "agent-telegram",
+      "old_displayName": "Agent Telegram",
+      "new_displayName": "智能体Telegram",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-telegram\\SKILL.md"
+    },
+    {
+      "slug": "agent-telegram-free",
+      "old_displayName": "Agent TG LITE",
+      "new_displayName": "智能体Telegram免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agent-telegram-free\\SKILL.md"
+    },
+    {
+      "slug": "agentic-security-audit",
+      "old_displayName": "Agentic Security Aud",
+      "new_displayName": "安全审计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agentic-security-audit\\SKILL.md"
+    },
+    {
+      "slug": "agentvibes-voice-skill-free",
+      "old_displayName": "AgentVibes TTS LITE",
+      "new_displayName": "Agentvibes技能免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\agentvibes-voice-skill-free\\SKILL.md"
+    },
+    {
+      "slug": "ai-agent-helper",
+      "old_displayName": "AI Agent Helper",
+      "new_displayName": "AI智能体辅助",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-agent-helper\\SKILL.md"
+    },
+    {
+      "slug": "ai-agent-helper-free",
+      "old_displayName": "AI Agent LITE",
+      "new_displayName": "AI智能体辅助免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-agent-helper-free\\SKILL.md"
+    },
+    {
+      "slug": "ai-assistant",
+      "old_displayName": "AI Doc Reasoner",
+      "new_displayName": "AI助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-assistant\\SKILL.md"
+    },
+    {
+      "slug": "ai-assistant-free",
+      "old_displayName": "AI Doc LITE",
+      "new_displayName": "AI助手免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-assistant-free\\SKILL.md"
+    },
+    {
+      "slug": "ai-news",
+      "old_displayName": "ai-news",
+      "new_displayName": "AI新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ai-news\\SKILL.md"
+    },
+    {
+      "slug": "alephnet-node",
+      "old_displayName": "Alephnet Node",
+      "new_displayName": "Alephnet节点",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\alephnet-node\\SKILL.md"
+    },
+    {
+      "slug": "alephnet-node-free",
+      "old_displayName": "Alephnet Free",
+      "new_displayName": "Alephnet节点免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\alephnet-node-free\\SKILL.md"
+    },
+    {
+      "slug": "amap-jsapi-skill",
+      "old_displayName": "Amap Jsapi Skill",
+      "new_displayName": "技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\amap-jsapi-skill\\SKILL.md"
+    },
+    {
+      "slug": "analyze",
+      "old_displayName": "Analyze",
+      "new_displayName": "对任意输入做结构化分析",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\analyze\\SKILL.md"
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan",
+      "old_displayName": "Body Scan Flow",
+      "new_displayName": "Telegram身体扫描工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\anthrovision-telegram-body-scan\\SKILL.md"
+    },
+    {
+      "slug": "anthrovision-telegram-body-scan-free",
+      "old_displayName": "Body Scan Basic",
+      "new_displayName": "Telegram免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\anthrovision-telegram-body-scan-free\\SKILL.md"
+    },
+    {
+      "slug": "api-development",
+      "old_displayName": "api-development",
+      "new_displayName": "API开发工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\api-development\\SKILL.md"
+    },
+    {
+      "slug": "art",
+      "old_displayName": "Art",
+      "new_displayName": "艺术",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\art\\SKILL.md"
+    },
+    {
+      "slug": "assistant",
+      "old_displayName": "Assistant",
+      "new_displayName": "助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\assistant\\SKILL.md"
+    },
+    {
+      "slug": "audit",
+      "old_displayName": "Audit",
+      "new_displayName": "审计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\audit\\SKILL.md"
+    },
+    {
+      "slug": "auto-monitor",
+      "old_displayName": "Auto Monitor",
+      "new_displayName": "监控器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\auto-monitor\\SKILL.md"
+    },
+    {
+      "slug": "auto-updater",
+      "old_displayName": "auto-updater",
+      "new_displayName": "每日自动检查更新",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\auto-updater\\SKILL.md"
+    },
+    {
+      "slug": "auto-workflow",
+      "old_displayName": "Auto Workflow",
+      "new_displayName": "工作流",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\auto-workflow\\SKILL.md"
+    },
+    {
+      "slug": "aws",
+      "old_displayName": "Aws",
+      "new_displayName": "AWS云服务工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws\\SKILL.md"
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "old_displayName": "AgentCore LangGraph",
+      "new_displayName": "AWS AgentCore开发工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-agentcore-langgraph\\SKILL.md"
+    },
+    {
+      "slug": "aws-graph-agent",
+      "old_displayName": "AWS Graph Agent",
+      "new_displayName": "AWS图谱智能体",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-graph-agent\\SKILL.md"
+    },
+    {
+      "slug": "aws-graph-agent-free",
+      "old_displayName": "AWS Graph LITE",
+      "new_displayName": "AWS图谱智能体免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-graph-agent-free\\SKILL.md"
+    },
+    {
+      "slug": "aws-infra",
+      "old_displayName": "AWS Infra Inspector",
+      "new_displayName": "AWS基础设施检查工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-infra\\SKILL.md"
+    },
+    {
+      "slug": "aws-infra-free",
+      "old_displayName": "AWS Infra LITE",
+      "new_displayName": "AWS免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\aws-infra-free\\SKILL.md"
+    },
+    {
+      "slug": "azure-cli",
+      "old_displayName": "azure-cli",
+      "new_displayName": "Azure命令行",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure-cli\\SKILL.md"
+    },
+    {
+      "slug": "azure-devops",
+      "old_displayName": "Azure DevOps",
+      "new_displayName": "Azure DevOps开发工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure-devops\\SKILL.md"
+    },
+    {
+      "slug": "azure-infra",
+      "old_displayName": "Azure Infra",
+      "new_displayName": "Azure基础设施工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure-infra\\SKILL.md"
+    },
+    {
+      "slug": "azure-infra-free",
+      "old_displayName": "Azure Infra Free",
+      "new_displayName": "Azure免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure-infra-free\\SKILL.md"
+    },
+    {
+      "slug": "bailian-web-search",
+      "old_displayName": "Bailian Web Search",
+      "new_displayName": "Bailian网页搜索",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\bailian-web-search\\SKILL.md"
+    },
+    {
+      "slug": "baoyu-diagram",
+      "old_displayName": "Baoyu Diagram",
+      "new_displayName": "Baoyu图解",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\baoyu-diagram\\SKILL.md"
+    },
+    {
+      "slug": "baoyu-md-formatter",
+      "old_displayName": "Baoyu Format Markdow",
+      "new_displayName": "宝玉Markdown格式化工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\baoyu-md-formatter\\SKILL.md"
+    },
+    {
+      "slug": "beware-piper-tts",
+      "old_displayName": "Piper TTS Pro",
+      "new_displayName": "Piper语音合成",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\beware-piper-tts\\SKILL.md"
+    },
+    {
+      "slug": "beware-piper-tts-free",
+      "old_displayName": "Piper TTS Lite",
+      "new_displayName": "Piper语音合成免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\beware-piper-tts-free\\SKILL.md"
+    },
+    {
+      "slug": "blog-seo-writer",
+      "old_displayName": "blog-seo-writer",
+      "new_displayName": "博客SEO写作",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\blog-seo-writer\\SKILL.md"
+    },
+    {
+      "slug": "book-painter",
+      "old_displayName": "Book Painter",
+      "new_displayName": "书籍画师",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\book-painter\\SKILL.md"
+    },
+    {
+      "slug": "brainz-calendar",
+      "old_displayName": "Calendar",
+      "new_displayName": "日历",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\brainz-calendar\\SKILL.md"
+    },
+    {
+      "slug": "brave-search",
+      "old_displayName": "Brave Search",
+      "new_displayName": "搜索",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\brave-search\\SKILL.md"
+    },
+    {
+      "slug": "browser-automation",
+      "old_displayName": "Browser Automation",
+      "new_displayName": "浏览器自动化",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\browser-automation\\SKILL.md"
+    },
+    {
+      "slug": "browser-automation-v2",
+      "old_displayName": "Browser Automation V",
+      "new_displayName": "浏览器自动化",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\browser-automation-v2\\SKILL.md"
+    },
+    {
+      "slug": "bsession",
+      "old_displayName": "browser",
+      "new_displayName": "浏览器会话管理工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\bsession\\SKILL.md"
+    },
+    {
+      "slug": "build-game",
+      "old_displayName": "3D Game Builder",
+      "new_displayName": "构建游戏",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\build-game\\SKILL.md"
+    },
+    {
+      "slug": "calendar",
+      "old_displayName": "Calendar",
+      "new_displayName": "日历",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\calendar\\SKILL.md"
+    },
+    {
+      "slug": "calendar-skill",
+      "old_displayName": "Calendar",
+      "new_displayName": "日历技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\calendar-skill\\SKILL.md"
+    },
+    {
+      "slug": "calendar-sync-tool",
+      "old_displayName": "feishu-calendar",
+      "new_displayName": "日历工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\calendar-sync-tool\\SKILL.md"
+    },
+    {
+      "slug": "cctv-news-fetcher",
+      "old_displayName": "CCTV News Fetcher",
+      "new_displayName": "新闻抓取器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cctv-news-fetcher\\SKILL.md"
+    },
+    {
+      "slug": "chart-generator-2-0-0",
+      "old_displayName": "Chart Generator 2 0",
+      "new_displayName": "图表生成器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\chart-generator-2-0-0\\SKILL.md"
+    },
+    {
+      "slug": "chat",
+      "old_displayName": "Chat",
+      "new_displayName": "聊天",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\chat\\SKILL.md"
+    },
+    {
+      "slug": "cheat-code",
+      "old_displayName": "Cheat Code",
+      "new_displayName": "秘籍代码",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cheat-code\\SKILL.md"
+    },
+    {
+      "slug": "china-news",
+      "old_displayName": "China News",
+      "new_displayName": "新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\china-news\\SKILL.md"
+    },
+    {
+      "slug": "claude-code-runner",
+      "old_displayName": "ai-assistant Code Ru",
+      "new_displayName": "Claude代码运行器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\claude-code-runner\\SKILL.md"
+    },
+    {
+      "slug": "claude-tmux",
+      "old_displayName": "ai-assistant Tmux",
+      "new_displayName": "Claude终端复用工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\claude-tmux\\SKILL.md"
+    },
+    {
+      "slug": "clawprint",
+      "old_displayName": "Skill",
+      "new_displayName": "Clawprint打印工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\clawprint\\SKILL.md"
+    },
+    {
+      "slug": "cloud-storage",
+      "old_displayName": "Cloud Storage",
+      "new_displayName": "云存储",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cloud-storage\\SKILL.md"
+    },
+    {
+      "slug": "code",
+      "old_displayName": "Code",
+      "new_displayName": "代码",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\code\\SKILL.md"
+    },
+    {
+      "slug": "code-analysis-skills",
+      "old_displayName": "Code Analysis Skills",
+      "new_displayName": "代码",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\code-analysis-skills\\SKILL.md"
+    },
+    {
+      "slug": "code-quality",
+      "old_displayName": "Code Quality",
+      "new_displayName": "代码",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\code-quality\\SKILL.md"
+    },
+    {
+      "slug": "communication-skill",
+      "old_displayName": "Comm Crafter Pro",
+      "new_displayName": "技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\communication-skill\\SKILL.md"
+    },
+    {
+      "slug": "communication-skill-free",
+      "old_displayName": "Comm LITE",
+      "new_displayName": "技能免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\communication-skill-free\\SKILL.md"
+    },
+    {
+      "slug": "company-search-fengniao",
+      "old_displayName": "Company Search Fengn",
+      "new_displayName": "搜索",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\company-search-fengniao\\SKILL.md"
+    },
+    {
+      "slug": "compress",
+      "old_displayName": "Compress",
+      "new_displayName": "压缩",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\compress\\SKILL.md"
+    },
+    {
+      "slug": "context-driven-development",
+      "old_displayName": "Context Driven Devel",
+      "new_displayName": "把项目上下文当受管制品与代码并行",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\context-driven-development\\SKILL.md"
+    },
+    {
+      "slug": "cron-scheduler-setup",
+      "old_displayName": "SkillHub Cron Setup",
+      "new_displayName": "定时调度器设置",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cron-scheduler-setup\\SKILL.md"
+    },
+    {
+      "slug": "ctxly-chat",
+      "old_displayName": "Ctxly Chat",
+      "new_displayName": "Ctxly聊天",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ctxly-chat\\SKILL.md"
+    },
+    {
+      "slug": "daily-news-brief",
+      "old_displayName": "Daily News Brief",
+      "new_displayName": "新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\daily-news-brief\\SKILL.md"
+    },
+    {
+      "slug": "daily-report-writer",
+      "old_displayName": "Daily Report Writer",
+      "new_displayName": "报告写作",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\daily-report-writer\\SKILL.md"
+    },
+    {
+      "slug": "dashboard",
+      "old_displayName": "Dashboard",
+      "new_displayName": "仪表盘",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dashboard\\SKILL.md"
+    },
+    {
+      "slug": "dashboard-toolkit",
+      "old_displayName": "SkillHub-dashboard",
+      "new_displayName": "仪表盘工具箱",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dashboard-toolkit\\SKILL.md"
+    },
+    {
+      "slug": "data",
+      "old_displayName": "Data",
+      "new_displayName": "数据",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\data\\SKILL.md"
+    },
+    {
+      "slug": "data-analysis-toolkit",
+      "old_displayName": "Python Data Analysis",
+      "new_displayName": "数据工具箱",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\data-analysis-toolkit\\SKILL.md"
+    },
+    {
+      "slug": "deepseek-chat",
+      "old_displayName": "DeepSeek Chat",
+      "new_displayName": "Deepseek聊天",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\deepseek-chat\\SKILL.md"
+    },
+    {
+      "slug": "diagram",
+      "old_displayName": "Diagram",
+      "new_displayName": "图解",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\diagram\\SKILL.md"
+    },
+    {
+      "slug": "diagram-tools",
+      "old_displayName": "Diagram Tools",
+      "new_displayName": "图解",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\diagram-tools\\SKILL.md"
+    },
+    {
+      "slug": "dingtalk-calendar",
+      "old_displayName": "Dingtalk Calendar",
+      "new_displayName": "钉钉日历",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dingtalk-calendar\\SKILL.md"
+    },
+    {
+      "slug": "discord-chat",
+      "old_displayName": "Discord Chat",
+      "new_displayName": "Discord聊天",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\discord-chat\\SKILL.md"
+    },
+    {
+      "slug": "discord-hub",
+      "old_displayName": "Discord",
+      "new_displayName": "Discord中心",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\discord-hub\\SKILL.md"
+    },
+    {
+      "slug": "dlazy-audio-generate-free",
+      "old_displayName": "Dlazy Audio LITE",
+      "new_displayName": "音频免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dlazy-audio-generate-free\\SKILL.md"
+    },
+    {
+      "slug": "dlazy-generate",
+      "old_displayName": "Dlazy Generate",
+      "new_displayName": "综合生成技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dlazy-generate\\SKILL.md"
+    },
+    {
+      "slug": "dns-lookup",
+      "old_displayName": "Dns Lookup",
+      "new_displayName": "DNS查询工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dns-lookup\\SKILL.md"
+    },
+    {
+      "slug": "dns-networking",
+      "old_displayName": "DNS & Networking",
+      "new_displayName": "DNS网络管理工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dns-networking\\SKILL.md"
+    },
+    {
+      "slug": "doc-assistant",
+      "old_displayName": "Doc",
+      "new_displayName": "文档助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\doc-assistant\\SKILL.md"
+    },
+    {
+      "slug": "docker-ctl",
+      "old_displayName": "Docker Ctl",
+      "new_displayName": "Docker控制管理工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\docker-ctl\\SKILL.md"
+    },
+    {
+      "slug": "docker-sandbox",
+      "old_displayName": "Docker Sandbox",
+      "new_displayName": "Docker沙箱环境工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\docker-sandbox\\SKILL.md"
+    },
+    {
+      "slug": "document-pdf",
+      "old_displayName": "Pdf",
+      "new_displayName": "PDF文档处理工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\document-pdf\\SKILL.md"
+    },
+    {
+      "slug": "dogecoin-node",
+      "old_displayName": "Dogecoin Node",
+      "new_displayName": "节点",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\dogecoin-node\\SKILL.md"
+    },
+    {
+      "slug": "domain-dns-ops",
+      "old_displayName": "Domain Dns Ops",
+      "new_displayName": "域名DNS",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\domain-dns-ops\\SKILL.md"
+    },
+    {
+      "slug": "doubao-chat",
+      "old_displayName": "Doubao Chat",
+      "new_displayName": "聊天",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\doubao-chat\\SKILL.md"
+    },
+    {
+      "slug": "elite-frontend-design",
+      "old_displayName": "Elite Frontend Desig",
+      "new_displayName": "设计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\elite-frontend-design\\SKILL.md"
+    },
+    {
+      "slug": "email-daily-summary",
+      "old_displayName": "Email Daily Summary",
+      "new_displayName": "邮件摘要",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-daily-summary\\SKILL.md"
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "old_displayName": "Email Summary Free",
+      "new_displayName": "邮件摘要免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-daily-summary-free\\SKILL.md"
+    },
+    {
+      "slug": "email-gmail-outlook",
+      "old_displayName": "Email Gmail Outlook",
+      "new_displayName": "邮件",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-gmail-outlook\\SKILL.md"
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "old_displayName": "Email Free",
+      "new_displayName": "邮件免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-gmail-outlook-free\\SKILL.md"
+    },
+    {
+      "slug": "email-skill",
+      "old_displayName": "Email",
+      "new_displayName": "邮件技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-skill\\SKILL.md"
+    },
+    {
+      "slug": "email-skill-free",
+      "old_displayName": "Email Free",
+      "new_displayName": "邮件技能免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\email-skill-free\\SKILL.md"
+    },
+    {
+      "slug": "encrypted-docs",
+      "old_displayName": "Encrypted Docs",
+      "new_displayName": "文档",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\encrypted-docs\\SKILL.md"
+    },
+    {
+      "slug": "encryption",
+      "old_displayName": "Encryption",
+      "new_displayName": "加密文件",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\encryption\\SKILL.md"
+    },
+    {
+      "slug": "excel-formula",
+      "old_displayName": "Excel Formula",
+      "new_displayName": "Excel公式工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\excel-formula\\SKILL.md"
+    },
+    {
+      "slug": "excel-studio",
+      "old_displayName": "Excel Studio",
+      "new_displayName": "Excel工作室",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\excel-studio\\SKILL.md"
+    },
+    {
+      "slug": "excel-xlsx",
+      "old_displayName": "Excel / XLSX",
+      "new_displayName": "Excel表格处理工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\excel-xlsx\\SKILL.md"
+    },
+    {
+      "slug": "expanso-csv-to-json",
+      "old_displayName": "Expanso csv-to-json",
+      "new_displayName": "CSV转JSON工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-csv-to-json\\SKILL.md"
+    },
+    {
+      "slug": "expanso-json-to-yaml",
+      "old_displayName": "Expanso json-to-yaml",
+      "new_displayName": "JSON转YAML工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-json-to-yaml\\SKILL.md"
+    },
+    {
+      "slug": "expanso-json-validate",
+      "old_displayName": "Expanso Json Validat",
+      "new_displayName": "JSON验证工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-json-validate\\SKILL.md"
+    },
+    {
+      "slug": "expanso-log-sanitize",
+      "old_displayName": "Expanso log-sanitize",
+      "new_displayName": "日志",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-log-sanitize\\SKILL.md"
+    },
+    {
+      "slug": "expanso-xml-to-json",
+      "old_displayName": "Expanso xml-to-json",
+      "new_displayName": "XML转JSON工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\expanso-xml-to-json\\SKILL.md"
+    },
+    {
+      "slug": "explain-code",
+      "old_displayName": "explain-code",
+      "new_displayName": "代码",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\explain-code\\SKILL.md"
+    },
+    {
+      "slug": "feed-digest",
+      "old_displayName": "Feed Digest",
+      "new_displayName": "订阅",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\feed-digest\\SKILL.md"
+    },
+    {
+      "slug": "feed-to-md",
+      "old_displayName": "Feed To Md",
+      "new_displayName": "订阅",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\feed-to-md\\SKILL.md"
+    },
+    {
+      "slug": "feishu-doc",
+      "old_displayName": "Feishu Doc",
+      "new_displayName": "飞书文档",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\feishu-doc\\SKILL.md"
+    },
+    {
+      "slug": "feishu-doc-write",
+      "old_displayName": "feishu-doc-write",
+      "new_displayName": "飞书文档",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\feishu-doc-write\\SKILL.md"
+    },
+    {
+      "slug": "figma-design",
+      "old_displayName": "Figma",
+      "new_displayName": "Figma设计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\figma-design\\SKILL.md"
+    },
+    {
+      "slug": "file-auto-organizer",
+      "old_displayName": "File Auto Organizer",
+      "new_displayName": "文件",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\file-auto-organizer\\SKILL.md"
+    },
+    {
+      "slug": "file-browser-tool",
+      "old_displayName": "file-browser",
+      "new_displayName": "文件浏览器工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\file-browser-tool\\SKILL.md"
+    },
+    {
+      "slug": "file-organizer-zh",
+      "old_displayName": "File Organizer",
+      "new_displayName": "文件",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\file-organizer-zh\\SKILL.md"
+    },
+    {
+      "slug": "finance",
+      "old_displayName": "finance",
+      "new_displayName": "财务",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\finance\\SKILL.md"
+    },
+    {
+      "slug": "finance-accounting",
+      "old_displayName": "Finance Accounting",
+      "new_displayName": "财务",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\finance-accounting\\SKILL.md"
+    },
+    {
+      "slug": "finance-radar",
+      "old_displayName": "Finance Radar",
+      "new_displayName": "财务",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\finance-radar\\SKILL.md"
+    },
+    {
+      "slug": "finance-report-analyzer",
+      "old_displayName": "Finance Report Analy",
+      "new_displayName": "财务报告分析器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\finance-report-analyzer\\SKILL.md"
+    },
+    {
+      "slug": "financial-literacy",
+      "old_displayName": "Finance",
+      "new_displayName": "从个人预算到专业分析研究",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\financial-literacy\\SKILL.md"
+    },
+    {
+      "slug": "firewall",
+      "old_displayName": "Firewall",
+      "new_displayName": "防火墙",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\firewall\\SKILL.md"
+    },
+    {
+      "slug": "flexible-database-design",
+      "old_displayName": "Flexible Database De",
+      "new_displayName": "数据库设计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\flexible-database-design\\SKILL.md"
+    },
+    {
+      "slug": "fonts",
+      "old_displayName": "Fonts",
+      "new_displayName": "选配网页字体",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\fonts\\SKILL.md"
+    },
+    {
+      "slug": "free-google-search-with-browser",
+      "old_displayName": "Free Google Search W",
+      "new_displayName": "免费版Google搜索浏览器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-google-search-with-browser\\SKILL.md"
+    },
+    {
+      "slug": "free-ride",
+      "old_displayName": "Free Ride",
+      "new_displayName": "免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-ride\\SKILL.md"
+    },
+    {
+      "slug": "free-weather-api",
+      "old_displayName": "weather",
+      "new_displayName": "免费版天气API",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-weather-api\\SKILL.md"
+    },
+    {
+      "slug": "free-weather-skill",
+      "old_displayName": "Weather",
+      "new_displayName": "免费版天气技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-weather-skill\\SKILL.md"
+    },
+    {
+      "slug": "free-web-search",
+      "old_displayName": "Free Web Search",
+      "new_displayName": "免费版网页搜索",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\free-web-search\\SKILL.md"
+    },
+    {
+      "slug": "frontend-design",
+      "old_displayName": "Frontend Design",
+      "new_displayName": "设计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\frontend-design\\SKILL.md"
+    },
+    {
+      "slug": "frontend-design-3",
+      "old_displayName": "Frontend Design",
+      "new_displayName": "设计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\frontend-design-3\\SKILL.md"
+    },
+    {
+      "slug": "frontend-design-3-free",
+      "old_displayName": "Frontend Design Free",
+      "new_displayName": "设计免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\frontend-design-3-free\\SKILL.md"
+    },
+    {
+      "slug": "game",
+      "old_displayName": "Game",
+      "new_displayName": "游戏",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\game\\SKILL.md"
+    },
+    {
+      "slug": "game-ai",
+      "old_displayName": "Game AI Systems",
+      "new_displayName": "游戏AI",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\game-ai\\SKILL.md"
+    },
+    {
+      "slug": "game-asset-generation-cellcog",
+      "old_displayName": "Game Asset Generatio",
+      "new_displayName": "游戏",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\game-asset-generation-cellcog\\SKILL.md"
+    },
+    {
+      "slug": "game-developer-skill",
+      "old_displayName": "Game Developer Skill",
+      "new_displayName": "游戏技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\game-developer-skill\\SKILL.md"
+    },
+    {
+      "slug": "generate-mindmap",
+      "old_displayName": "Generate Mindmap",
+      "new_displayName": "生成基于认知科学方法论的交互式思维导图",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\generate-mindmap\\SKILL.md"
+    },
+    {
+      "slug": "gif-whatsapp",
+      "old_displayName": "Gif Whatsapp",
+      "new_displayName": "WhatsApp GIF工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\gif-whatsapp\\SKILL.md"
+    },
+    {
+      "slug": "git-cli",
+      "old_displayName": "Git cli",
+      "new_displayName": "Git命令行",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git-cli\\SKILL.md"
+    },
+    {
+      "slug": "git-essentials",
+      "old_displayName": "Git Essentials",
+      "new_displayName": "Git版本管理工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git-essentials\\SKILL.md"
+    },
+    {
+      "slug": "git-helper",
+      "old_displayName": "Git Helper",
+      "new_displayName": "Git辅助",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git-helper\\SKILL.md"
+    },
+    {
+      "slug": "git-workflow-cn",
+      "old_displayName": "Git Workflow Cn",
+      "new_displayName": "Git工作流",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git-workflow-cn\\SKILL.md"
+    },
+    {
+      "slug": "gitcrawl",
+      "old_displayName": "Gitcrawl",
+      "new_displayName": "归档",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\gitcrawl\\SKILL.md"
+    },
+    {
+      "slug": "github",
+      "old_displayName": "Github",
+      "new_displayName": "GitHub开发工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github\\SKILL.md"
+    },
+    {
+      "slug": "github-api",
+      "old_displayName": "GitHub",
+      "new_displayName": "GitHub API工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github-api\\SKILL.md"
+    },
+    {
+      "slug": "github-development-standard",
+      "old_displayName": "Github Development S",
+      "new_displayName": "GitHub开发规范工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github-development-standard\\SKILL.md"
+    },
+    {
+      "slug": "github-trending-feed",
+      "old_displayName": "GitHub Trending Feed",
+      "new_displayName": "GitHub订阅",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github-trending-feed\\SKILL.md"
+    },
+    {
+      "slug": "glitch-dashboard",
+      "old_displayName": "Dashboard",
+      "new_displayName": "仪表盘",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\glitch-dashboard\\SKILL.md"
+    },
+    {
+      "slug": "go-linter-configuration",
+      "old_displayName": "Go Linter Configurat",
+      "new_displayName": "Go代码检查配置工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\go-linter-configuration\\SKILL.md"
+    },
+    {
+      "slug": "gog",
+      "old_displayName": "Gog",
+      "new_displayName": "命令行工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\gog\\SKILL.md"
+    },
+    {
+      "slug": "google-search",
+      "old_displayName": "google-search",
+      "new_displayName": "Google搜索",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\google-search\\SKILL.md"
+    },
+    {
+      "slug": "google-workspace-mcp",
+      "old_displayName": "Google Workspace MCP",
+      "new_displayName": "Google Workspace工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\google-workspace-mcp\\SKILL.md"
+    },
+    {
+      "slug": "graincrawl",
+      "old_displayName": "Graincrawl",
+      "new_displayName": "归档",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\graincrawl\\SKILL.md"
+    },
+    {
+      "slug": "graph-advocate",
+      "old_displayName": "Graph Advocate",
+      "new_displayName": "图谱",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\graph-advocate\\SKILL.md"
+    },
+    {
+      "slug": "grok-image-generate",
+      "old_displayName": "grok_image_generate",
+      "new_displayName": "图像",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\grok-image-generate\\SKILL.md"
+    },
+    {
+      "slug": "hot-news-aggregator",
+      "old_displayName": "hot-news-aggregator",
+      "new_displayName": "新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\hot-news-aggregator\\SKILL.md"
+    },
+    {
+      "slug": "html-coder",
+      "old_displayName": "HTML Coder",
+      "new_displayName": "HTML编码工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\html-coder\\SKILL.md"
+    },
+    {
+      "slug": "html-designer",
+      "old_displayName": "HTML Designer",
+      "new_displayName": "HTML设计工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\html-designer\\SKILL.md"
+    },
+    {
+      "slug": "humanizer",
+      "old_displayName": "Humanizer",
+      "new_displayName": "去除文本中",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\humanizer\\SKILL.md"
+    },
+    {
+      "slug": "image",
+      "old_displayName": "Image",
+      "new_displayName": "图像",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\image\\SKILL.md"
+    },
+    {
+      "slug": "internet-search",
+      "old_displayName": "Internet Search",
+      "new_displayName": "搜索",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\internet-search\\SKILL.md"
+    },
+    {
+      "slug": "interview-simulator",
+      "old_displayName": "Interview Simulator",
+      "new_displayName": "模拟任意角色与经验级别的面试",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\interview-simulator\\SKILL.md"
+    },
+    {
+      "slug": "iris-code-formatter",
+      "old_displayName": "iris-code-formatter",
+      "new_displayName": "代码",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\iris-code-formatter\\SKILL.md"
+    },
+    {
+      "slug": "java-code-reviewer",
+      "old_displayName": "Java Code Reviewer",
+      "new_displayName": "Java代码",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\java-code-reviewer\\SKILL.md"
+    },
+    {
+      "slug": "java-development-manual",
+      "old_displayName": "Java Development Man",
+      "new_displayName": "Java手册",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\java-development-manual\\SKILL.md"
+    },
+    {
+      "slug": "javascript-sdk",
+      "old_displayName": "Javascript Sdk",
+      "new_displayName": "JavaScript SDK工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\javascript-sdk\\SKILL.md"
+    },
+    {
+      "slug": "jinn-node",
+      "old_displayName": "Jinn Node",
+      "new_displayName": "节点",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\jinn-node\\SKILL.md"
+    },
+    {
+      "slug": "jinn-node-free",
+      "old_displayName": "Jinn Node Free",
+      "new_displayName": "节点免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\jinn-node-free\\SKILL.md"
+    },
+    {
+      "slug": "jira-api",
+      "old_displayName": "Jira",
+      "new_displayName": "Jira API工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\jira-api\\SKILL.md"
+    },
+    {
+      "slug": "jira-pat-toolkit",
+      "old_displayName": "SkillHub Jira Pat Sk",
+      "new_displayName": "JIRA工具箱",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\jira-pat-toolkit\\SKILL.md"
+    },
+    {
+      "slug": "job-auto-apply",
+      "old_displayName": "Job Auto Apply",
+      "new_displayName": "作业",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\job-auto-apply\\SKILL.md"
+    },
+    {
+      "slug": "json-canvas",
+      "old_displayName": "Json Canvas",
+      "new_displayName": "JSON画布工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json-canvas\\SKILL.md"
+    },
+    {
+      "slug": "json-formatter",
+      "old_displayName": "JSON Formatter",
+      "new_displayName": "JSON格式化工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json-formatter\\SKILL.md"
+    },
+    {
+      "slug": "json-linter",
+      "old_displayName": "Json Linter",
+      "new_displayName": "JSON检查工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json-linter\\SKILL.md"
+    },
+    {
+      "slug": "json-parser",
+      "old_displayName": "Json Parser",
+      "new_displayName": "JSON解析器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json-parser\\SKILL.md"
+    },
+    {
+      "slug": "k8s",
+      "old_displayName": "Kubernetes",
+      "new_displayName": "K8s容器编排工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\k8s\\SKILL.md"
+    },
+    {
+      "slug": "key-guard",
+      "old_displayName": "Key Guard",
+      "new_displayName": "密钥卫士",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\key-guard\\SKILL.md"
+    },
+    {
+      "slug": "knowledge",
+      "old_displayName": "Knowledge",
+      "new_displayName": "本地知识库集成",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\knowledge\\SKILL.md"
+    },
+    {
+      "slug": "knowledge-capture",
+      "old_displayName": "Knowledge Capture",
+      "new_displayName": "把对话讨论转为结构化",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\knowledge-capture\\SKILL.md"
+    },
+    {
+      "slug": "knowledge-graph",
+      "old_displayName": "Knowledge Graph",
+      "new_displayName": "图谱",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\knowledge-graph\\SKILL.md"
+    },
+    {
+      "slug": "kubernetes",
+      "old_displayName": "Kubernetes",
+      "new_displayName": "Kubernetes容器编排工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\kubernetes\\SKILL.md"
+    },
+    {
+      "slug": "kubernetes-devops",
+      "old_displayName": "Kubernetes",
+      "new_displayName": "Kubernetes运维工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\kubernetes-devops\\SKILL.md"
+    },
+    {
+      "slug": "learn",
+      "old_displayName": "Learn",
+      "new_displayName": "用间隔重复与主动回忆结构化追踪学习",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\learn\\SKILL.md"
+    },
+    {
+      "slug": "lh-video-gen",
+      "old_displayName": "LH Video Gen",
+      "new_displayName": "视频",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\lh-video-gen\\SKILL.md"
+    },
+    {
+      "slug": "linear-integration",
+      "old_displayName": "Linear CLI",
+      "new_displayName": "Linear集成工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\linear-integration\\SKILL.md"
+    },
+    {
+      "slug": "linear-skill",
+      "old_displayName": "Linear",
+      "new_displayName": "Linear技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\linear-skill\\SKILL.md"
+    },
+    {
+      "slug": "lite-sqlite",
+      "old_displayName": "Lite Sqlite",
+      "new_displayName": "精简版Sqlite",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\lite-sqlite\\SKILL.md"
+    },
+    {
+      "slug": "live-stream-script",
+      "old_displayName": "Live Stream Script",
+      "new_displayName": "流",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\live-stream-script\\SKILL.md"
+    },
+    {
+      "slug": "local-file-rag-basic",
+      "old_displayName": "local-file-rag-basic",
+      "new_displayName": "文件RAG",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\local-file-rag-basic\\SKILL.md"
+    },
+    {
+      "slug": "logo-brand-identity-cellcog",
+      "old_displayName": "Logo Brand Identity",
+      "new_displayName": "驱动",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\logo-brand-identity-cellcog\\SKILL.md"
+    },
+    {
+      "slug": "logo-design-guide",
+      "old_displayName": "Logo Design Guide",
+      "new_displayName": "设计指南",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\logo-design-guide\\SKILL.md"
+    },
+    {
+      "slug": "mac-node-snapshot",
+      "old_displayName": "mac-node-snapshot",
+      "new_displayName": "节点",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mac-node-snapshot\\SKILL.md"
+    },
+    {
+      "slug": "mac-system-control",
+      "old_displayName": "mac-system-control",
+      "new_displayName": "管理和控制",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mac-system-control\\SKILL.md"
+    },
+    {
+      "slug": "magic-api-generate",
+      "old_displayName": "magic-api-generate",
+      "new_displayName": "API自动生成工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\magic-api-generate\\SKILL.md"
+    },
+    {
+      "slug": "markdown-converter-compdf",
+      "old_displayName": "Markdown convert",
+      "new_displayName": "Markdown转换器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\markdown-converter-compdf\\SKILL.md"
+    },
+    {
+      "slug": "markdown-converter-tool",
+      "old_displayName": "Markdown Converter",
+      "new_displayName": "Markdown转换器工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\markdown-converter-tool\\SKILL.md"
+    },
+    {
+      "slug": "market-news",
+      "old_displayName": "Market News",
+      "new_displayName": "新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\market-news\\SKILL.md"
+    },
+    {
+      "slug": "media-server-control",
+      "old_displayName": "Jellyfin Control",
+      "new_displayName": "服务器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\media-server-control\\SKILL.md"
+    },
+    {
+      "slug": "meeting-note",
+      "old_displayName": "Meeting Note",
+      "new_displayName": "笔记",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\meeting-note\\SKILL.md"
+    },
+    {
+      "slug": "merge-check",
+      "old_displayName": "Merge Check",
+      "new_displayName": "分析",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\merge-check\\SKILL.md"
+    },
+    {
+      "slug": "merge-pdf",
+      "old_displayName": "Merge PDF",
+      "new_displayName": "PDF合并工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\merge-pdf\\SKILL.md"
+    },
+    {
+      "slug": "mermaid-diagram",
+      "old_displayName": "Mermaid Diagram",
+      "new_displayName": "图解",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mermaid-diagram\\SKILL.md"
+    },
+    {
+      "slug": "minimalist-design-system",
+      "old_displayName": "Minimalist Design Sy",
+      "new_displayName": "设计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\minimalist-design-system\\SKILL.md"
+    },
+    {
+      "slug": "miniprogram-development",
+      "old_displayName": "Miniprogram Developm",
+      "new_displayName": "微信小程序开发",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\miniprogram-development\\SKILL.md"
+    },
+    {
+      "slug": "molt-board-art",
+      "old_displayName": "Board Art Canvas",
+      "new_displayName": "艺术",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\molt-board-art\\SKILL.md"
+    },
+    {
+      "slug": "molt-board-art-free",
+      "old_displayName": "Board Art Free",
+      "new_displayName": "艺术免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\molt-board-art-free\\SKILL.md"
+    },
+    {
+      "slug": "moltblock",
+      "old_displayName": "Skill",
+      "new_displayName": "产物验证门禁",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\moltblock\\SKILL.md"
+    },
+    {
+      "slug": "moltbook-firewall-tool",
+      "old_displayName": "Moltbook Firewall",
+      "new_displayName": "防火墙工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\moltbook-firewall-tool\\SKILL.md"
+    },
+    {
+      "slug": "molted-work",
+      "old_displayName": "Molted Work",
+      "new_displayName": "任务市场",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\molted-work\\SKILL.md"
+    },
+    {
+      "slug": "mongodb",
+      "old_displayName": "MongoDB",
+      "new_displayName": "设计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mongodb\\SKILL.md"
+    },
+    {
+      "slug": "monitor",
+      "old_displayName": "Monitor",
+      "new_displayName": "监控器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\monitor\\SKILL.md"
+    },
+    {
+      "slug": "multi-search-engine",
+      "old_displayName": "Multi Search Engine",
+      "new_displayName": "搜索引擎",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\multi-search-engine\\SKILL.md"
+    },
+    {
+      "slug": "multi-search-engine-simple",
+      "old_displayName": "Multi Search Engine",
+      "new_displayName": "搜索引擎",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\multi-search-engine-simple\\SKILL.md"
+    },
+    {
+      "slug": "multi-source-research",
+      "old_displayName": "Multi Source Researc",
+      "new_displayName": "多源研究助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\multi-source-research\\SKILL.md"
+    },
+    {
+      "slug": "music",
+      "old_displayName": "Music",
+      "new_displayName": "音乐",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\music\\SKILL.md"
+    },
+    {
+      "slug": "music-generation",
+      "old_displayName": "Music Generation",
+      "new_displayName": "音乐",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\music-generation\\SKILL.md"
+    },
+    {
+      "slug": "music-generation-cellcog",
+      "old_displayName": "Music Generation Cel",
+      "new_displayName": "音乐",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\music-generation-cellcog\\SKILL.md"
+    },
+    {
+      "slug": "namecheap-dns",
+      "old_displayName": "Namecheap DNS",
+      "new_displayName": "Namecheap DNS工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\namecheap-dns\\SKILL.md"
+    },
+    {
+      "slug": "nano-pdf",
+      "old_displayName": "Nano Pdf",
+      "new_displayName": "PDF精简工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\nano-pdf\\SKILL.md"
+    },
+    {
+      "slug": "netpad-tool",
+      "old_displayName": "Netpad",
+      "new_displayName": "工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\netpad-tool\\SKILL.md"
+    },
+    {
+      "slug": "news",
+      "old_displayName": "News",
+      "new_displayName": "新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\news\\SKILL.md"
+    },
+    {
+      "slug": "news-feed",
+      "old_displayName": "News Feed",
+      "new_displayName": "新闻订阅",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\news-feed\\SKILL.md"
+    },
+    {
+      "slug": "news-sentiment-scan",
+      "old_displayName": "News Sentiment Scan",
+      "new_displayName": "新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\news-sentiment-scan\\SKILL.md"
+    },
+    {
+      "slug": "node-connect",
+      "old_displayName": "node-connect",
+      "new_displayName": "节点",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\node-connect\\SKILL.md"
+    },
+    {
+      "slug": "notcrawl",
+      "old_displayName": "Notcrawl",
+      "new_displayName": "归档",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notcrawl\\SKILL.md"
+    },
+    {
+      "slug": "note",
+      "old_displayName": "Note",
+      "new_displayName": "笔记",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\note\\SKILL.md"
+    },
+    {
+      "slug": "note-app-cli",
+      "old_displayName": "Obsidian CLI",
+      "new_displayName": "笔记命令行",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\note-app-cli\\SKILL.md"
+    },
+    {
+      "slug": "note-taker",
+      "old_displayName": "Note Taker",
+      "new_displayName": "笔记",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\note-taker\\SKILL.md"
+    },
+    {
+      "slug": "notion-api-skill",
+      "old_displayName": "Notion",
+      "new_displayName": "NotionAPI技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notion-api-skill\\SKILL.md"
+    },
+    {
+      "slug": "notion-skill",
+      "old_displayName": "Notion",
+      "new_displayName": "Notion技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notion-skill\\SKILL.md"
+    },
+    {
+      "slug": "notioncli",
+      "old_displayName": "Notion",
+      "new_displayName": "管页面",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notioncli\\SKILL.md"
+    },
+    {
+      "slug": "ocean-chat-assistant",
+      "old_displayName": "Ocean Chat",
+      "new_displayName": "聊天助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ocean-chat-assistant\\SKILL.md"
+    },
+    {
+      "slug": "okx-dex-token",
+      "old_displayName": "Okx Dex Token",
+      "new_displayName": "令牌",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\okx-dex-token\\SKILL.md"
+    },
+    {
+      "slug": "ollama-integration",
+      "old_displayName": "Ollama Integration",
+      "new_displayName": "Ollama集成工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ollama-integration\\SKILL.md"
+    },
+    {
+      "slug": "openai-ai",
+      "old_displayName": "llm-provider",
+      "new_displayName": "OpenAI AI工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\openai-ai\\SKILL.md"
+    },
+    {
+      "slug": "openai-whisper",
+      "old_displayName": "llm-provider Whisper",
+      "new_displayName": "OpenAI Whisper语音工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\openai-whisper\\SKILL.md"
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "old_displayName": "llm-provider Whisper",
+      "new_displayName": "OpenAI Whisper语音工具v1",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\openai-whisper-1-0-0\\SKILL.md"
+    },
+    {
+      "slug": "pandoc-converter",
+      "old_displayName": "Pandoc Convert",
+      "new_displayName": "转换器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pandoc-converter\\SKILL.md"
+    },
+    {
+      "slug": "paper-parse",
+      "old_displayName": "Paper Parse",
+      "new_displayName": "对用户提供的任何学术论文",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\paper-parse\\SKILL.md"
+    },
+    {
+      "slug": "parallel-ai-research",
+      "old_displayName": "Research",
+      "new_displayName": "AI并行研究工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\parallel-ai-research\\SKILL.md"
+    },
+    {
+      "slug": "password-generator",
+      "old_displayName": "Password Generator",
+      "new_displayName": "密码生成器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\password-generator\\SKILL.md"
+    },
+    {
+      "slug": "pdf",
+      "old_displayName": "Pdf",
+      "new_displayName": "PDF处理工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pdf\\SKILL.md"
+    },
+    {
+      "slug": "pdf-compressor-tool",
+      "old_displayName": "Compress PDF",
+      "new_displayName": "PDF工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pdf-compressor-tool\\SKILL.md"
+    },
+    {
+      "slug": "pentest-commands",
+      "old_displayName": "Pentest Commands",
+      "new_displayName": "渗透",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pentest-commands\\SKILL.md"
+    },
+    {
+      "slug": "personal-health-manager",
+      "old_displayName": "Personal Health Mana",
+      "new_displayName": "健康管理器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\personal-health-manager\\SKILL.md"
+    },
+    {
+      "slug": "photo-webcam",
+      "old_displayName": "Photo Webcam",
+      "new_displayName": "照片",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\photo-webcam\\SKILL.md"
+    },
+    {
+      "slug": "ping-monitor",
+      "old_displayName": "Ping Monitor",
+      "new_displayName": "监控器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ping-monitor\\SKILL.md"
+    },
+    {
+      "slug": "pipedrive-api",
+      "old_displayName": "Pipedrive",
+      "new_displayName": "Pipedrive API工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pipedrive-api\\SKILL.md"
+    },
+    {
+      "slug": "podcast",
+      "old_displayName": "Podcast",
+      "new_displayName": "播客",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\podcast\\SKILL.md"
+    },
+    {
+      "slug": "podcast-chaptering-highlights",
+      "old_displayName": "Podcast Chaptering H",
+      "new_displayName": "播客",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\podcast-chaptering-highlights\\SKILL.md"
+    },
+    {
+      "slug": "podcast-downloader",
+      "old_displayName": "podcast-downloader",
+      "new_displayName": "播客下载器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\podcast-downloader\\SKILL.md"
+    },
+    {
+      "slug": "podcast-downloader-tool",
+      "old_displayName": "Podcast Downloader",
+      "new_displayName": "播客下载器工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\podcast-downloader-tool\\SKILL.md"
+    },
+    {
+      "slug": "postgres-job-queue",
+      "old_displayName": "Postgres Job Queue",
+      "new_displayName": "Postgres作业队列",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\postgres-job-queue\\SKILL.md"
+    },
+    {
+      "slug": "postgres-mcp-skills",
+      "old_displayName": "postgres mcp",
+      "new_displayName": "PostgreSQL数据库工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\postgres-mcp-skills\\SKILL.md"
+    },
+    {
+      "slug": "powerpoint-pptx",
+      "old_displayName": "Powerpoint / PPTX",
+      "new_displayName": "创建检查编辑",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx\\SKILL.md"
+    },
+    {
+      "slug": "powerpoint-pptx-cn",
+      "old_displayName": "Powerpoint Pptx Cn",
+      "new_displayName": "创建检查编辑",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx-cn\\SKILL.md"
+    },
+    {
+      "slug": "pptx-pdf-font-fix",
+      "old_displayName": "PPTX PDF Font Fix",
+      "new_displayName": "PPTX PDF字体修复工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\pptx-pdf-font-fix\\SKILL.md"
+    },
+    {
+      "slug": "productivity-bot",
+      "old_displayName": "Productivity Bot",
+      "new_displayName": "机器人",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\productivity-bot\\SKILL.md"
+    },
+    {
+      "slug": "productivity-improving",
+      "old_displayName": "Productivity Tracker",
+      "new_displayName": "生产力追踪与每日复盘助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\productivity-improving\\SKILL.md"
+    },
+    {
+      "slug": "python-dataviz",
+      "old_displayName": "Python Dataviz",
+      "new_displayName": "Python数据可视化工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\python-dataviz\\SKILL.md"
+    },
+    {
+      "slug": "quant-data-quality",
+      "old_displayName": "Quant Data Quality",
+      "new_displayName": "数据",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\quant-data-quality\\SKILL.md"
+    },
+    {
+      "slug": "queue-task",
+      "old_displayName": "Queue Task",
+      "new_displayName": "队列任务",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\queue-task\\SKILL.md"
+    },
+    {
+      "slug": "reddit-research",
+      "old_displayName": "Reddit Research",
+      "new_displayName": "Reddit研究工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\reddit-research\\SKILL.md"
+    },
+    {
+      "slug": "reminder",
+      "old_displayName": "Reminder",
+      "new_displayName": "提醒",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\reminder\\SKILL.md"
+    },
+    {
+      "slug": "remix-api-key-auth",
+      "old_displayName": "Remix Api Key Auth",
+      "new_displayName": "API密钥认证",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\remix-api-key-auth\\SKILL.md"
+    },
+    {
+      "slug": "repo-reader-tool",
+      "old_displayName": "Read GitHub",
+      "new_displayName": "阅读器工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\repo-reader-tool\\SKILL.md"
+    },
+    {
+      "slug": "report-summary-builder",
+      "old_displayName": "Report Summary Build",
+      "new_displayName": "报告摘要构建器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\report-summary-builder\\SKILL.md"
+    },
+    {
+      "slug": "research-agent",
+      "old_displayName": "Research",
+      "new_displayName": "智能体",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\research-agent\\SKILL.md"
+    },
+    {
+      "slug": "rho-telegram-alerts-tool",
+      "old_displayName": "Telegram Alerts",
+      "new_displayName": "Telegram工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rho-telegram-alerts-tool\\SKILL.md"
+    },
+    {
+      "slug": "rss-aggregator",
+      "old_displayName": "Rss Aggregator",
+      "new_displayName": "RSS聚合工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-aggregator\\SKILL.md"
+    },
+    {
+      "slug": "rss-digest",
+      "old_displayName": "Rss Digest",
+      "new_displayName": "RSS摘要工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-digest\\SKILL.md"
+    },
+    {
+      "slug": "rss-feed-digest",
+      "old_displayName": "RSS Feed Digest",
+      "new_displayName": "RSS订阅",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-feed-digest\\SKILL.md"
+    },
+    {
+      "slug": "rss-fetcher",
+      "old_displayName": "Rss Fetcher",
+      "new_displayName": "RSS抓取器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-fetcher\\SKILL.md"
+    },
+    {
+      "slug": "rss-reader",
+      "old_displayName": "RSS Reader",
+      "new_displayName": "RSS阅读器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\rss-reader\\SKILL.md"
+    },
+    {
+      "slug": "safe-encryption-skill",
+      "old_displayName": "Safe Encryption",
+      "new_displayName": "技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\safe-encryption-skill\\SKILL.md"
+    },
+    {
+      "slug": "schedule",
+      "old_displayName": "Schedule",
+      "new_displayName": "调度",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\schedule\\SKILL.md"
+    },
+    {
+      "slug": "scrape-web",
+      "old_displayName": "Scrape Web",
+      "new_displayName": "爬虫网页",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\scrape-web\\SKILL.md"
+    },
+    {
+      "slug": "screen-monitor",
+      "old_displayName": "Screen Monitor",
+      "new_displayName": "屏幕监控器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\screen-monitor\\SKILL.md"
+    },
+    {
+      "slug": "search-2",
+      "old_displayName": "Search",
+      "new_displayName": "搜索",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\search-2\\SKILL.md"
+    },
+    {
+      "slug": "searching-assistant",
+      "old_displayName": "Searching Assistant",
+      "new_displayName": "助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\searching-assistant\\SKILL.md"
+    },
+    {
+      "slug": "secure-api-calls",
+      "old_displayName": "Secure API Calls",
+      "new_displayName": "安全API调用工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\secure-api-calls\\SKILL.md"
+    },
+    {
+      "slug": "security-audit",
+      "old_displayName": "Security Audit",
+      "new_displayName": "安全审计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\security-audit\\SKILL.md"
+    },
+    {
+      "slug": "security-auditor",
+      "old_displayName": "Security Auditor",
+      "new_displayName": "安全审计器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\security-auditor\\SKILL.md"
+    },
+    {
+      "slug": "security-scanner",
+      "old_displayName": "Security Scanner",
+      "new_displayName": "安全扫描器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\security-scanner\\SKILL.md"
+    },
+    {
+      "slug": "self-integration",
+      "old_displayName": "Self-Integration",
+      "new_displayName": "连任意外部应用并对其执行操作",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\self-integration\\SKILL.md"
+    },
+    {
+      "slug": "sequential-read",
+      "old_displayName": "Sequential Read",
+      "new_displayName": "顺序阅读散文并结构化反思",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sequential-read\\SKILL.md"
+    },
+    {
+      "slug": "shopify-helper",
+      "old_displayName": "Shopify Helper",
+      "new_displayName": "Shopify辅助",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\shopify-helper\\SKILL.md"
+    },
+    {
+      "slug": "skill-vetter",
+      "old_displayName": "Skill Vetter",
+      "new_displayName": "技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\skill-vetter\\SKILL.md"
+    },
+    {
+      "slug": "skill-vetter-free",
+      "old_displayName": "Skill Vetter Free",
+      "new_displayName": "技能免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\skill-vetter-free\\SKILL.md"
+    },
+    {
+      "slug": "slack-api",
+      "old_displayName": "Slack",
+      "new_displayName": "Slack API工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\slack-api\\SKILL.md"
+    },
+    {
+      "slug": "slacrawl",
+      "old_displayName": "Slacrawl",
+      "new_displayName": "归档",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\slacrawl\\SKILL.md"
+    },
+    {
+      "slug": "smart-auto-updater",
+      "old_displayName": "Smart Auto Updater",
+      "new_displayName": "驱动影响评估的智能自动更新器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-auto-updater\\SKILL.md"
+    },
+    {
+      "slug": "smart-cache",
+      "old_displayName": "Smart Cache",
+      "new_displayName": "缓存",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-cache\\SKILL.md"
+    },
+    {
+      "slug": "smart-model-routing-for-zai",
+      "old_displayName": "Smart Model Routing",
+      "new_displayName": "模型路由指南",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-model-routing-for-zai\\SKILL.md"
+    },
+    {
+      "slug": "smart-model-switching",
+      "old_displayName": "Smart Model Switchin",
+      "new_displayName": "模型路由指南",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-model-switching\\SKILL.md"
+    },
+    {
+      "slug": "smart-reminder-system",
+      "old_displayName": "Reminder",
+      "new_displayName": "提醒",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-reminder-system\\SKILL.md"
+    },
+    {
+      "slug": "smart-weekly-report",
+      "old_displayName": "Report Generator",
+      "new_displayName": "报告",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\smart-weekly-report\\SKILL.md"
+    },
+    {
+      "slug": "social-sentiment",
+      "old_displayName": "Social Sentiment",
+      "new_displayName": "社交聆听工作流",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\social-sentiment\\SKILL.md"
+    },
+    {
+      "slug": "solo-audit",
+      "old_displayName": "Audit",
+      "new_displayName": "审计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\solo-audit\\SKILL.md"
+    },
+    {
+      "slug": "sovereign-aws-cost-optimizer",
+      "old_displayName": "AWS Cost Optimizer",
+      "new_displayName": "AWS成本优化器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sovereign-aws-cost-optimizer\\SKILL.md"
+    },
+    {
+      "slug": "sql-generator",
+      "old_displayName": "Sql Generator",
+      "new_displayName": "SQL生成器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sql-generator\\SKILL.md"
+    },
+    {
+      "slug": "sql-toolkit",
+      "old_displayName": "SQL Toolkit",
+      "new_displayName": "SQL工具箱",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sql-toolkit\\SKILL.md"
+    },
+    {
+      "slug": "sqlite",
+      "old_displayName": "SQLite",
+      "new_displayName": "SQLite数据库工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sqlite\\SKILL.md"
+    },
+    {
+      "slug": "stagehand-browser-cli",
+      "old_displayName": "Stagehand Browser Cl",
+      "new_displayName": "浏览器命令行",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\stagehand-browser-cli\\SKILL.md"
+    },
+    {
+      "slug": "stock-filter-skills",
+      "old_displayName": "Stock Filter Skills",
+      "new_displayName": "过滤",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\stock-filter-skills\\SKILL.md"
+    },
+    {
+      "slug": "story-long-analyze",
+      "old_displayName": "Story Long Analyze",
+      "new_displayName": "长篇网文拆文",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\story-long-analyze\\SKILL.md"
+    },
+    {
+      "slug": "story-short-write",
+      "old_displayName": "Story Short Write",
+      "new_displayName": "短篇网文写作",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\story-short-write\\SKILL.md"
+    },
+    {
+      "slug": "straker-verify",
+      "old_displayName": "Straker Verify",
+      "new_displayName": "专业",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\straker-verify\\SKILL.md"
+    },
+    {
+      "slug": "t-trading",
+      "old_displayName": "T Trading",
+      "new_displayName": "基于维加斯通道",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\t-trading\\SKILL.md"
+    },
+    {
+      "slug": "tardis",
+      "old_displayName": "TARDIS",
+      "new_displayName": "核心时间追踪",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tardis\\SKILL.md"
+    },
+    {
+      "slug": "tarot",
+      "old_displayName": "Reflective Tarot",
+      "new_displayName": "反思式塔罗抽取",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tarot\\SKILL.md"
+    },
+    {
+      "slug": "tarot-free",
+      "old_displayName": "Tarot Free",
+      "new_displayName": "免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tarot-free\\SKILL.md"
+    },
+    {
+      "slug": "tarot-reader",
+      "old_displayName": "tarot-reader",
+      "new_displayName": "阅读器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tarot-reader\\SKILL.md"
+    },
+    {
+      "slug": "task",
+      "old_displayName": "Task",
+      "new_displayName": "任务",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\task\\SKILL.md"
+    },
+    {
+      "slug": "task-planner",
+      "old_displayName": "Task Planner",
+      "new_displayName": "任务",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\task-planner\\SKILL.md"
+    },
+    {
+      "slug": "telegram-bot-builder",
+      "old_displayName": "Telegram Bot Builder",
+      "new_displayName": "Telegram机器人构建器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\telegram-bot-builder\\SKILL.md"
+    },
+    {
+      "slug": "telegram-chat-manager",
+      "old_displayName": "SkillHub Telegram Ch",
+      "new_displayName": "Telegram聊天管理器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\telegram-chat-manager\\SKILL.md"
+    },
+    {
+      "slug": "text",
+      "old_displayName": "Text",
+      "new_displayName": "用模式转换",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\text\\SKILL.md"
+    },
+    {
+      "slug": "text-rpg-arcade-v3",
+      "old_displayName": "Text Game Arcade Uni",
+      "new_displayName": "街机",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\text-rpg-arcade-v3\\SKILL.md"
+    },
+    {
+      "slug": "text-to-speech-heygen",
+      "old_displayName": "Text to Speech",
+      "new_displayName": "语音合成工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\text-to-speech-heygen\\SKILL.md"
+    },
+    {
+      "slug": "text-to-sql",
+      "old_displayName": "Text To Sql",
+      "new_displayName": "自然语言转SQL工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\text-to-sql\\SKILL.md"
+    },
+    {
+      "slug": "the-news",
+      "old_displayName": "The News",
+      "new_displayName": "新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\the-news\\SKILL.md"
+    },
+    {
+      "slug": "thesis-helper",
+      "old_displayName": "Thesis Helper",
+      "new_displayName": "辅助",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\thesis-helper\\SKILL.md"
+    },
+    {
+      "slug": "token-layer",
+      "old_displayName": "Token Layer",
+      "new_displayName": "令牌",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\token-layer\\SKILL.md"
+    },
+    {
+      "slug": "token-saver-skill",
+      "old_displayName": "token-saver-skill",
+      "new_displayName": "令牌技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\token-saver-skill\\SKILL.md"
+    },
+    {
+      "slug": "tool",
+      "old_displayName": "Tool",
+      "new_displayName": "工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tool\\SKILL.md"
+    },
+    {
+      "slug": "tool-call-retry",
+      "old_displayName": "tool-call-retry",
+      "new_displayName": "工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tool-call-retry\\SKILL.md"
+    },
+    {
+      "slug": "tool-finder",
+      "old_displayName": "Tool Finder",
+      "new_displayName": "工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tool-finder\\SKILL.md"
+    },
+    {
+      "slug": "trading-strategy-guide",
+      "old_displayName": "Trade With Taro",
+      "new_displayName": "指南",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\trading-strategy-guide\\SKILL.md"
+    },
+    {
+      "slug": "translate",
+      "old_displayName": "Translate",
+      "new_displayName": "翻译",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\translate\\SKILL.md"
+    },
+    {
+      "slug": "translate-en-zh",
+      "old_displayName": "Translate EN ZH",
+      "new_displayName": "翻译",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\translate-en-zh\\SKILL.md"
+    },
+    {
+      "slug": "travel-assistant",
+      "old_displayName": "Travel Assistant",
+      "new_displayName": "助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\travel-assistant\\SKILL.md"
+    },
+    {
+      "slug": "tts-whatsapp",
+      "old_displayName": "TTS WhatsApp",
+      "new_displayName": "语音合成WhatsApp",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tts-whatsapp\\SKILL.md"
+    },
+    {
+      "slug": "ui",
+      "old_displayName": "UI",
+      "new_displayName": "设计清晰一致视觉精致的用户界面",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui\\SKILL.md"
+    },
+    {
+      "slug": "ui-audit",
+      "old_displayName": "UI Audit",
+      "new_displayName": "审计",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-audit\\SKILL.md"
+    },
+    {
+      "slug": "ui-audit-free",
+      "old_displayName": "UI Audit Free",
+      "new_displayName": "审计免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-audit-free\\SKILL.md"
+    },
+    {
+      "slug": "ui-component",
+      "old_displayName": "Ui Component",
+      "new_displayName": "组件",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-component\\SKILL.md"
+    },
+    {
+      "slug": "ui-ux",
+      "old_displayName": "UI / UX",
+      "new_displayName": "可搜",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-ux\\SKILL.md"
+    },
+    {
+      "slug": "ui-ux-developer-tool",
+      "old_displayName": "Ui Ux Dev",
+      "new_displayName": "工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ui-ux-developer-tool\\SKILL.md"
+    },
+    {
+      "slug": "universal-translate",
+      "old_displayName": "Universal Translate",
+      "new_displayName": "翻译",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\universal-translate\\SKILL.md"
+    },
+    {
+      "slug": "upstage-document-parse-free",
+      "old_displayName": "Document Parse Free",
+      "new_displayName": "免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\upstage-document-parse-free\\SKILL.md"
+    },
+    {
+      "slug": "ux",
+      "old_displayName": "UX",
+      "new_displayName": "设计分析直觉高效贴合心智模型的用户体验",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ux\\SKILL.md"
+    },
+    {
+      "slug": "verify-claims",
+      "old_displayName": "Verify Claims",
+      "new_displayName": "事实核查技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\verify-claims\\SKILL.md"
+    },
+    {
+      "slug": "version-control-workflows",
+      "old_displayName": "Git Workflows",
+      "new_displayName": "之外的高级",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\version-control-workflows\\SKILL.md"
+    },
+    {
+      "slug": "video",
+      "old_displayName": "Video",
+      "new_displayName": "视频",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\video\\SKILL.md"
+    },
+    {
+      "slug": "video-frames",
+      "old_displayName": "Video Frames",
+      "new_displayName": "视频",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\video-frames\\SKILL.md"
+    },
+    {
+      "slug": "video-translator",
+      "old_displayName": "Video Translator",
+      "new_displayName": "视频",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\video-translator\\SKILL.md"
+    },
+    {
+      "slug": "video-upload-stream-tool",
+      "old_displayName": "Video Upload Aioz St",
+      "new_displayName": "视频流工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\video-upload-stream-tool\\SKILL.md"
+    },
+    {
+      "slug": "visual-file-sorter",
+      "old_displayName": "Visual File Sorter",
+      "new_displayName": "文件",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\visual-file-sorter\\SKILL.md"
+    },
+    {
+      "slug": "volcengine-network-dns",
+      "old_displayName": "Volcengine Network D",
+      "new_displayName": "网络DNS",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\volcengine-network-dns\\SKILL.md"
+    },
+    {
+      "slug": "vpn",
+      "old_displayName": "VPN",
+      "new_displayName": "配置排障",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vpn\\SKILL.md"
+    },
+    {
+      "slug": "vpn-rotate-skill",
+      "old_displayName": "Vpn Rotate Skill",
+      "new_displayName": "技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vpn-rotate-skill\\SKILL.md"
+    },
+    {
+      "slug": "vscode-node",
+      "old_displayName": "VS Code Node",
+      "new_displayName": "节点",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vscode-node\\SKILL.md"
+    },
+    {
+      "slug": "vue",
+      "old_displayName": "Vue",
+      "new_displayName": "规避",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vue\\SKILL.md"
+    },
+    {
+      "slug": "vue-component-generator",
+      "old_displayName": "Vue Component Genera",
+      "new_displayName": "生成器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vue-component-generator\\SKILL.md"
+    },
+    {
+      "slug": "weather",
+      "old_displayName": "Weather",
+      "new_displayName": "天气",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\weather\\SKILL.md"
+    },
+    {
+      "slug": "web",
+      "old_displayName": "Web Development",
+      "new_displayName": "网页",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web\\SKILL.md"
+    },
+    {
+      "slug": "web-browsing",
+      "old_displayName": "Web Browsing",
+      "new_displayName": "网页",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web-browsing\\SKILL.md"
+    },
+    {
+      "slug": "web-content-fetcher",
+      "old_displayName": "Web Content Fetcher",
+      "new_displayName": "网页内容抓取器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web-content-fetcher\\SKILL.md"
+    },
+    {
+      "slug": "web-learner",
+      "old_displayName": "Web Learner",
+      "new_displayName": "网页",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web-learner\\SKILL.md"
+    },
+    {
+      "slug": "web-vulnerability-assessment",
+      "old_displayName": "Web Vulnerability As",
+      "new_displayName": "网页漏洞",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\web-vulnerability-assessment\\SKILL.md"
+    },
+    {
+      "slug": "weekly-report-writer",
+      "old_displayName": "weekly-report-writer",
+      "new_displayName": "报告写作",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\weekly-report-writer\\SKILL.md"
+    },
+    {
+      "slug": "weiyun-skills",
+      "old_displayName": "Weiyun Skills",
+      "new_displayName": "微云技能集合",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\weiyun-skills\\SKILL.md"
+    },
+    {
+      "slug": "whatsapp-image-send",
+      "old_displayName": "WhatsApp Image Send",
+      "new_displayName": "WhatsApp图像",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\whatsapp-image-send\\SKILL.md"
+    },
+    {
+      "slug": "whatsapp-styler",
+      "old_displayName": "WhatsApp Styler",
+      "new_displayName": "WhatsApp消息样式工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\whatsapp-styler\\SKILL.md"
+    },
+    {
+      "slug": "whatsapp-styler-free",
+      "old_displayName": "WhatsApp Styler LITE",
+      "new_displayName": "WhatsApp免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\whatsapp-styler-free\\SKILL.md"
+    },
+    {
+      "slug": "who-is-actor",
+      "old_displayName": "Who Is Actor",
+      "new_displayName": "仓库参与者识别技能",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\who-is-actor\\SKILL.md"
+    },
+    {
+      "slug": "word-docx",
+      "old_displayName": "Word / DOCX",
+      "new_displayName": "创建检查编辑",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\word-docx\\SKILL.md"
+    },
+    {
+      "slug": "workflow",
+      "old_displayName": "Workflow",
+      "new_displayName": "工作流",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\workflow\\SKILL.md"
+    },
+    {
+      "slug": "workflow-decomposer",
+      "old_displayName": "Workflow Decomposer",
+      "new_displayName": "工作流",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\workflow-decomposer\\SKILL.md"
+    },
+    {
+      "slug": "write-my-blog",
+      "old_displayName": "Write My Blog",
+      "new_displayName": "博客",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\write-my-blog\\SKILL.md"
+    },
+    {
+      "slug": "writing-assistant",
+      "old_displayName": "Writing Assistant",
+      "new_displayName": "写作助手",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\writing-assistant\\SKILL.md"
+    },
+    {
+      "slug": "ws-agent-browser",
+      "old_displayName": "Agent Browser",
+      "new_displayName": "智能体浏览器",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ws-agent-browser\\SKILL.md"
+    },
+    {
+      "slug": "ws-calendar",
+      "old_displayName": "Calendar",
+      "new_displayName": "日历",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ws-calendar\\SKILL.md"
+    },
+    {
+      "slug": "x-news-daily",
+      "old_displayName": "X News Daily",
+      "new_displayName": "X新闻",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\x-news-daily\\SKILL.md"
+    },
+    {
+      "slug": "x-news-daily-free",
+      "old_displayName": "X News Daily LITE",
+      "new_displayName": "X新闻免费版",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\x-news-daily-free\\SKILL.md"
+    },
+    {
+      "slug": "xml-parser-tool",
+      "old_displayName": "Xml Reader",
+      "new_displayName": "XML解析器工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\xml-parser-tool\\SKILL.md"
+    },
+    {
+      "slug": "youtube-watcher",
+      "old_displayName": "YouTube Watcher",
+      "new_displayName": "YouTube监控工具",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\youtube-watcher\\SKILL.md"
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen",
+      "old_displayName": "Zhuchenggong Doubao",
+      "new_displayName": "图像",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\zhuchenggong-doubao-image-gen\\SKILL.md"
+    },
+    {
+      "slug": "ziptax",
+      "old_displayName": "Ziptax Sales Tax",
+      "new_displayName": "销售税查询",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ziptax\\SKILL.md"
+    },
+    {
+      "slug": "azure",
+      "displayName": "Azure",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\azure\\SKILL.md",
+      "new_displayName": "Azure云服务工具",
+      "old_displayName": "Azure"
+    },
+    {
+      "slug": "cashu-emoji",
+      "displayName": "Cashu Emoji",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cashu-emoji\\SKILL.md",
+      "new_displayName": "Cashu表情生成工具",
+      "old_displayName": "Cashu Emoji"
+    },
+    {
+      "slug": "cdn",
+      "displayName": "CDN",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\cdn\\SKILL.md",
+      "new_displayName": "CDN内容分发管理工具",
+      "old_displayName": "CDN"
+    },
+    {
+      "slug": "clawddocs",
+      "displayName": "Clawddocs",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\clawddocs\\SKILL.md",
+      "new_displayName": "文档助手工具",
+      "old_displayName": "Clawddocs"
+    },
+    {
+      "slug": "control-ikea-lightbulb",
+      "displayName": "Control Ikea Lightbu",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\control-ikea-lightbulb\\SKILL.md",
+      "new_displayName": "宜家灯泡控制工具",
+      "old_displayName": "Control Ikea Lightbu"
+    },
+    {
+      "slug": "discrawl",
+      "displayName": "Discrawl",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\discrawl\\SKILL.md",
+      "new_displayName": "网页爬取工具",
+      "old_displayName": "Discrawl"
+    },
+    {
+      "slug": "docker",
+      "displayName": "Docker",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\docker\\SKILL.md",
+      "new_displayName": "Docker容器管理工具",
+      "old_displayName": "Docker"
+    },
+    {
+      "slug": "figma",
+      "displayName": "Figma",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\figma\\SKILL.md",
+      "new_displayName": "Figma设计工具",
+      "old_displayName": "Figma"
+    },
+    {
+      "slug": "figma-2",
+      "displayName": "Figma",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\figma-2\\SKILL.md",
+      "new_displayName": "Figma设计工具v2",
+      "old_displayName": "Figma"
+    },
+    {
+      "slug": "generate-presentation",
+      "displayName": "Generate Presentatio",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\generate-presentation\\SKILL.md",
+      "new_displayName": "演示文稿生成工具",
+      "old_displayName": "Generate Presentatio"
+    },
+    {
+      "slug": "git",
+      "displayName": "Git",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\git\\SKILL.md",
+      "new_displayName": "Git版本控制工具",
+      "old_displayName": "Git"
+    },
+    {
+      "slug": "github-repos",
+      "displayName": "GitHub",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\github-repos\\SKILL.md",
+      "new_displayName": "GitHub仓库管理工具",
+      "old_displayName": "GitHub"
+    },
+    {
+      "slug": "go",
+      "displayName": "Go",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\go\\SKILL.md",
+      "new_displayName": "Go语言开发工具",
+      "old_displayName": "Go"
+    },
+    {
+      "slug": "html",
+      "displayName": "HTML",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\html\\SKILL.md",
+      "new_displayName": "HTML网页开发工具",
+      "old_displayName": "HTML"
+    },
+    {
+      "slug": "javascript",
+      "displayName": "JavaScript",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\javascript\\SKILL.md",
+      "new_displayName": "JavaScript开发工具",
+      "old_displayName": "JavaScript"
+    },
+    {
+      "slug": "javascript-skills",
+      "displayName": "JavaScript",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\javascript-skills\\SKILL.md",
+      "new_displayName": "JavaScript技能集",
+      "old_displayName": "JavaScript"
+    },
+    {
+      "slug": "json",
+      "displayName": "JSON",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\json\\SKILL.md",
+      "new_displayName": "JSON数据处理工具",
+      "old_displayName": "JSON"
+    },
+    {
+      "slug": "kai-tw-figma",
+      "displayName": "Figma",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\kai-tw-figma\\SKILL.md",
+      "new_displayName": "Figma台式设计工具",
+      "old_displayName": "Figma"
+    },
+    {
+      "slug": "linear",
+      "displayName": "Linear",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\linear\\SKILL.md",
+      "new_displayName": "Linear项目管理工具",
+      "old_displayName": "Linear"
+    },
+    {
+      "slug": "logo",
+      "displayName": "Logo",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\logo\\SKILL.md",
+      "new_displayName": "Logo品牌设计工具",
+      "old_displayName": "Logo"
+    }
+  ],
+  "untranslated_items": [
+    {
+      "slug": "manage-liquidity",
+      "displayName": "Manage Liquidity",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\manage-liquidity\\SKILL.md"
+    },
+    {
+      "slug": "markdown",
+      "displayName": "Markdown",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\markdown\\SKILL.md"
+    },
+    {
+      "slug": "mcporter",
+      "displayName": "Mcporter",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\mcporter\\SKILL.md"
+    },
+    {
+      "slug": "monad-development",
+      "displayName": "Monad Development",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\monad-development\\SKILL.md"
+    },
+    {
+      "slug": "notion",
+      "displayName": "Notion",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notion\\SKILL.md"
+    },
+    {
+      "slug": "notion-pages",
+      "displayName": "Notion",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\notion-pages\\SKILL.md"
+    },
+    {
+      "slug": "powerpoint",
+      "displayName": "PowerPoint",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\powerpoint\\SKILL.md"
+    },
+    {
+      "slug": "python",
+      "displayName": "Python",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\python\\SKILL.md"
+    },
+    {
+      "slug": "python3",
+      "displayName": "python",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\python3\\SKILL.md"
+    },
+    {
+      "slug": "shadcn-ui",
+      "displayName": "Shadcn Ui",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\shadcn-ui\\SKILL.md"
+    },
+    {
+      "slug": "solo-validate",
+      "displayName": "Validate",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\solo-validate\\SKILL.md"
+    },
+    {
+      "slug": "sonoscli",
+      "displayName": "Sonoscli",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\sonoscli\\SKILL.md"
+    },
+    {
+      "slug": "ssl",
+      "displayName": "SSL",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ssl\\SKILL.md"
+    },
+    {
+      "slug": "tailwindcss",
+      "displayName": "Tailwind CSS",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\tailwindcss\\SKILL.md"
+    },
+    {
+      "slug": "telegram",
+      "displayName": "Telegram",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\telegram\\SKILL.md"
+    },
+    {
+      "slug": "typescript",
+      "displayName": "TypeScript",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\typescript\\SKILL.md"
+    },
+    {
+      "slug": "upstage-document-parse",
+      "displayName": "Document Parse",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\upstage-document-parse\\SKILL.md"
+    },
+    {
+      "slug": "vector-control",
+      "displayName": "Vector Control",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\vector-control\\SKILL.md"
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "displayName": "Wenxiang 2d5 Banner",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\wenxiang-2d5-banner\\SKILL.md"
+    },
+    {
+      "slug": "word",
+      "displayName": "Word",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\word\\SKILL.md"
+    },
+    {
+      "slug": "ws-excel",
+      "displayName": "Excel",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\ws-excel\\SKILL.md"
+    },
+    {
+      "slug": "xml",
+      "displayName": "XML",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\xml\\SKILL.md"
+    },
+    {
+      "slug": "yaml",
+      "displayName": "YAML",
+      "path": "D:\\skills\\packaged-skills\\skillhub\\yaml\\SKILL.md"
+    }
+  ],
+  "apply_failures": [],
+  "final_chinese": 350,
+  "final_english": 88,
+  "final_fixed_count": 88,
+  "final_still_english": 0,
+  "still_english_items": []
+}

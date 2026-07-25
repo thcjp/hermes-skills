@@ -2,7 +2,7 @@
 slug: "job-auto-apply"
 name: "job-auto-apply"
 version: 1.0.1
-displayName: "Job Auto Apply"
+displayName: "作业"
 summary: "求职申请自动化,代你提交申请(需授权谨慎)。This skill fits its job-application automation purpose, but it gives an a"
 summary_zh: "求职申请自动化,代你提交申请(需授权谨慎)。This skill fits its job-application automation purpose, but it gives an a"
 license: "MIT"

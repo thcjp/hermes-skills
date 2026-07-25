@@ -3,7 +3,7 @@
 slug: "notion-pages"
 name: "notion-pages"
 version: 0.1.2
-displayName: "Notion"
+displayName: "Notion页面工具"
 summary: "搜页面数据库/更新内容/管Notion工作区数据。Search pages and databases, update content, and manage Notion workspac"
 summary_zh: "搜页面数据库/更新内容/管Notion工作区数据。Search pages and databases, update content, and manage Notion workspac"
 license: "MIT"

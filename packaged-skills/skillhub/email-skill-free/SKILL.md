@@ -2,7 +2,7 @@
 slug: "email-skill-free"
 name: "email-skill-free"
 version: "1.0.0"
-displayName: "Email Free"
+displayName: "邮件技能免费版"
 summary: "SMTP基础邮件发送,支持单供应商与纯文本附件投递。基于SMTP协议的轻量邮件发送Skill,提供纯文本正文、单附件投递与 测试邮件校验能力,支持Gmail与Outlook主流服务商。适用于"
 summary_zh: "SMTP基础邮件发送,支持单供应商与纯文本附件投递。基于SMTP协议的轻量邮件发送Skill,提供纯文本正文、单附件投递与 测试邮件校验能力,支持Gmail与Outlook主流服务商。适用于"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "jira-api"
 name: "jira-api"
 version: 1.0.9
-displayName: "Jira"
+displayName: "Jira API工具"
 summary: "Jira API托管OAuth集成,JQL搜索/建改issue/管看板。Jira API integration with managed OAuth。Search issues with"
 summary_zh: "Jira API托管OAuth集成,JQL搜索/建改issue/管看板。Jira API integration with managed OAuth。Search issues with"
 license: "MIT"

@@ -2,7 +2,7 @@
 slug: "okx-dex-token"
 name: "okx-dex-token"
 version: 3.1.4
-displayName: "Okx Dex Token"
+displayName: "令牌"
 summary: "代币级数据,搜代币/热门榜/流动性池"MIT。Use this skill for token-level data: search tokens, trending/hot"
 summary_zh: "代币级数据,搜代币/热门榜/流动性池"MIT。Use this skill for token-level data: search tokens, trending/hot"
 description: |-

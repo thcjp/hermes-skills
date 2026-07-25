@@ -2,7 +2,7 @@
 slug: "internet-search"
 name: "internet-search"
 version: 0.3.5
-displayName: "Internet Search"
+displayName: "搜索"
 summary: "高效用internet_search工具,类目路由/查询构造/多步。How to use the internet_search tool effectively — category ro"
 summary_zh: "高效用internet_search工具,类目路由/查询构造/多步。How to use the internet_search tool effectively — category ro"
 license: "MIT"

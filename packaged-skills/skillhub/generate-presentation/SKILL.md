@@ -3,7 +3,7 @@
 slug: "generate-presentation"
 name: "generate-presentation"
 version: 1.0.1
-displayName: "Generate Presentatio"
+displayName: "演示文稿生成工具"
 summary: "从Markdown/URL/主题生成专业HTML与PDF演示文稿。Generate professional HTML and PDF presentations from markdown"
 summary_zh: "从Markdown/URL/主题生成专业HTML与PDF演示文稿。Generate professional HTML and PDF presentations from markdown"
 license: "MIT"

@@ -1,7 +1,7 @@
 ---
 name: analyze
 slug: analyze
-displayName: "Analyze"
+displayName: "对任意输入做结构化分析"
 version: "1.0.0"
 summary: "对任意输入做结构化分析,数据/代码/文本/决策/可视化"
 description: "对任意输入做结构化分析,数据/代码/文本/决策/可视化。Structured analysis for any input。Data, code, text, decisions, visuals。Prioritize, question, co。"

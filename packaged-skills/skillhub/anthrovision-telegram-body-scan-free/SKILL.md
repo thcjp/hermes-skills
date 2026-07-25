@@ -2,7 +2,7 @@
 slug: "anthrovision-telegram-body-scan-free"
 name: "anthrovision-telegram-body-scan-free"
 version: "1.0.0"
-displayName: "Body Scan Basic"
+displayName: "Telegram免费版"
 summary: "在Telegram中运行基础身体扫描流程,提交视频并轮询测量结果。在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具, 轮询状态并输出基础测量结果。基础"
 summary_zh: "在Telegram中运行基础身体扫描流程,提交视频并轮询测量结果。在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具, 轮询状态并输出基础测量结果。基础"
 license: "MIT"

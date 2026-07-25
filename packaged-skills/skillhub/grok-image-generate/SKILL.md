@@ -2,7 +2,7 @@
 slug: "grok-image-generate"
 name: "grok-image-generate"
 version: 1.0.1
-displayName: "grok_image_generate"
+displayName: "图像"
 summary: "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。。通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。核心能力: -"
 summary_zh: "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。。通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。核心能力: -"
 license: "MIT"

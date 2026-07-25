@@ -2,7 +2,7 @@
 slug: "web"
 name: "web"
 version: 1.0.1
-displayName: "Web Development"
+displayName: "网页"
 summary: "用HTML/CSS/JS与现代框架建调部署网站。Build, debug, and deploy websites using HTML, CSS, JavaScript, and mode"
 summary_zh: "用HTML/CSS/JS与现代框架建调部署网站。Build, debug, and deploy websites using HTML, CSS, JavaScript, and mode"
 license: "MIT"

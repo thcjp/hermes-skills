@@ -1,7 +1,7 @@
 ---
 name: auto-updater
 slug: auto-updater
-displayName: "auto-updater"
+displayName: "每日自动检查更新"
 version: "1.0.0"
 summary: "每日自动检查更新SkillHub与技能"
 description: "每日自动检查更新SkillHub与技能。Automatically update Clawdbot and all installed skills once daily。触发关键词: automatically, auto-updater, auto, clawdbot, installed, updater, update,。"

@@ -2,7 +2,7 @@
 slug: "encryption"
 name: "encryption"
 version: 1.0.1
-displayName: "Encryption"
+displayName: "加密文件"
 summary: "加密文件/管密钥/审代码加密实践,守住密码安全。Encrypt files, secure passwords, manage keys, and audit code for crypto"
 summary_zh: "加密文件/管密钥/审代码加密实践,守住密码安全。Encrypt files, secure passwords, manage keys, and audit code for crypto"
 license: "MIT"

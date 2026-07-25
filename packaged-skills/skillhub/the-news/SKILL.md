@@ -3,7 +3,7 @@
 slug: "the-news"
 name: "the-news"
 version: 1.0.18
-displayName: "The News"
+displayName: "新闻"
 summary: "给Agent实时与归档访问20国头版头条。gives agents real-time and archival access to front-page headlines across"
 summary_zh: "给Agent实时与归档访问20国头版头条。gives agents real-time and archival access to front-page headlines across"
 license: "MIT"

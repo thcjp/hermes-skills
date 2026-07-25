@@ -3,7 +3,7 @@
 slug: "excel-formula"
 name: "excel-formula"
 version: "2.0.2"
-displayName: "Excel Formula"
+displayName: "Excel公式工具"
 summary: "从描述生成Excel公式并诊断表格错误,VLOOKUP不再难。Generate Excel formulas from descriptions and diagnose spreadshe"
 summary_zh: "从描述生成Excel公式并诊断表格错误,VLOOKUP不再难。Generate Excel formulas from descriptions and diagnose spreadshe"
 license: "MIT"

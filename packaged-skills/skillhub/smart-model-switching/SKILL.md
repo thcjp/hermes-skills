@@ -2,7 +2,7 @@
 slug: "smart-model-switching"
 name: "smart-model-switching"
 version: 1.0.1
-displayName: "Smart Model Switchin"
+displayName: "模型路由指南"
 summary: "Claude模型路由指南,助你在模型间选择。This skill is a model-routing guide that helps choose between ai-assistan"
 summary_zh: "Claude模型路由指南,助你在模型间选择。This skill is a model-routing guide that helps choose between ai-assistan"
 license: "MIT"

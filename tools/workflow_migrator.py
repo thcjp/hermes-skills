@@ -40,6 +40,7 @@ SKILL_REGISTRY_DIR = Path(__file__).parent
 sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
 from config import get_db_connection
+import db
 
 
 # ============================================================
@@ -155,9 +156,8 @@ def migrate_skill(skill_id: int, slug: str, workflow_state: str,
             'status': 'dry_run'
         }
 
-    # 实际写入DB
+    # 实际写入DB (R7-1收口: 使用db.update_workflow_state替代裸SQL)
     c = conn.cursor()
-    now = datetime.now().isoformat()
     for step_info in steps_to_add:
         result_data = json.dumps({
             'backfilled': True,
@@ -165,17 +165,14 @@ def migrate_skill(skill_id: int, slug: str, workflow_state: str,
             'inferred_from': workflow_state
         }, ensure_ascii=False)
 
-        c.execute("""
-            INSERT INTO workflow_states
-                (skill_id, step_number, step_name, completed_at, status, result_data, retry_count, notes)
-            VALUES (?, ?, ?, ?, 'completed', ?, 0, '迁移器自动补全')
-        """, (
-            skill_id,
-            step_info['step_number'],
-            step_info['step_name'],
-            now,
-            result_data
-        ))
+        db.update_workflow_state(
+            skill_id=skill_id,
+            step_number=step_info['step_number'],
+            step_name=step_info['step_name'],
+            status='completed',
+            result_data=result_data,
+            notes='迁移器自动补全',
+        )
 
     return {
         'skill_id': skill_id, 'slug': slug,

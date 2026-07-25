@@ -2,7 +2,7 @@
 slug: "agent-browser-cli"
 name: "agent-browser-cli"
 version: 1.0.1
-displayName: "Agent Browser CLI"
+displayName: "智能体浏览器命令行"
 summary: "使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。触发条件：(1) 用户要求自动化浏览器操作"
 summary_zh: "使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。触发条件：(1) 用户要求自动化浏览器操作"
 license: "MIT"

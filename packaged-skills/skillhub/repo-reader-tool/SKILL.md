@@ -3,7 +3,7 @@
 slug: "repo-reader-tool"
 name: "repo-reader-tool"
 version: "1.0.1"
-displayName: "Read GitHub"
+displayName: "阅读器工具"
 summary: "经gitmcp.io读GitHub仓库(权限较广需谨慎)。This skill is mostly transparent about reading GitHub through gitm"
 summary_zh: "经gitmcp.io读GitHub仓库(权限较广需谨慎)。This skill is mostly transparent about reading GitHub through gitm"
 license: "MIT"
