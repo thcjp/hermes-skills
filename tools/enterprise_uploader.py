@@ -25,7 +25,7 @@ from urllib.error import URLError, HTTPError
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import (
     DB_PATH, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, REPORT_DIR,
-    DIFFERENTIATED_DIR,
+    DIFFERENTIATED_DIR, ENTERPRISE_UPLOAD_DIR,
     is_paid_skill, TRACE_PASS_THRESHOLD
 )
 from skill_core.parser import parse_frontmatter as _parse_fm
@@ -367,10 +367,11 @@ def find_skill_md(slug: str) -> Path:
     搜索目录(按优先级):
     1. PACKAGED_SKILLS_DIR — 扁平结构: {dir}/{slug}/SKILL.md
     2. OPENSOURCE_SKILLS_DIR — 扁平结构: {dir}/{slug}/SKILL.md
-    3. DIFFERENTIATED_DIR — 嵌套结构: {dir}/{category}/{slug}/SKILL.md
+    3. ENTERPRISE_UPLOAD_DIR — 扁平结构: {dir}/{slug}/SKILL.md
+    4. DIFFERENTIATED_DIR — 嵌套结构: {dir}/{category}/{slug}/SKILL.md
     """
     # 扁平结构目录
-    for base_dir in [PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR]:
+    for base_dir in [PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, ENTERPRISE_UPLOAD_DIR]:
         if not base_dir.exists():
             continue
         for d in base_dir.iterdir():
