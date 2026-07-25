@@ -30,6 +30,8 @@ if _sys_path not in sys.path:
     sys.path.insert(0, _sys_path)
 from skill_core.parser import parse_frontmatter as _parse_fm
 
+import db as db_module
+
 # DB_PATH imported from config
 # SKILLS_ROOT = PROJECT_ROOT (imported from config)
 
@@ -82,46 +84,32 @@ def import_packaged_skills():
         now = datetime.now().isoformat()
         version = metadata.get('version', '1.0.0')
 
-        c.execute("""
-            INSERT INTO skills (slug, current_name, current_version, category, source, source_slug, source_url,
-                               local_path, current_status, is_differentiated, pricing_model, edition,
-                               parent_slug, current_display_name, skill_type, workflow_state,
-                               created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            slug,
-            metadata.get('name', slug),
-            version,
-            metadata.get('category', 'original'),
-            'original_creation',
-            '',  # no source_slug for original
-            '',  # no source_url
-            str(skill_dir),
-            'published',
-            0,
-            'free',
-            'free',
-            None,
-            metadata.get('displayName', slug),
-            'original_creation',
-            'completed',
-            now, now
-        ))
-
-        skill_id = c.lastrowid
+        skill_id = db_module.insert_skill(
+            slug=slug,
+            name=metadata.get('name', slug),
+            display_name=metadata.get('displayName', slug),
+            version=version,
+            category=metadata.get('category', 'original'),
+            source='original_creation',
+            local_path=str(skill_dir),
+            current_status='published',
+            is_differentiated=0,
+            pricing_model='free',
+            edition='free',
+            parent_slug=None,
+            skill_type='original_creation',
+            workflow_state='completed',
+            source_slug='',
+            source_url='',
+        )
 
         # 插入版本记录（含content_hash基线）
-        c.execute("""
-            INSERT INTO versions (skill_id, version, created_at, changelog, content_hash,
-                                 file_size, line_count, changes_summary)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (skill_id, version, now, '初始版本', content_hash, file_size, line_count, '初始导入'))
+        db_module.add_version(skill_id, version, changelog='初始版本',
+                              content_hash=content_hash, file_size=file_size,
+                              line_count=line_count, changes_summary='初始导入')
 
         # 插入操作记录
-        c.execute("""
-            INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, (skill_id, 'import', now, 'baseline_init', '基线初始化导入', 'published'))
+        db_module.record_operation(skill_id, 'import', '基线初始化导入', after_state='published')
 
         imported += 1
         print(f"  导入: {slug} v{version} (hash: {content_hash[:16]}...)")
@@ -167,43 +155,31 @@ def import_opensource_skills():
         # 从catalog.md中查找来源信息
         source_repo = metadata.get('homepage', '')
 
-        c.execute("""
-            INSERT INTO skills (slug, current_name, current_version, category, source, source_slug, source_url,
-                               local_path, current_status, is_differentiated, pricing_model, edition,
-                               parent_slug, current_display_name, skill_type, workflow_state,
-                               created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            slug,
-            metadata.get('name', slug),
-            version,
-            'opensource',
-            'opensource_modified',
-            slug,  # source_slug = self (原始仓库)
-            source_repo,
-            str(skill_dir),
-            'packaged',
-            1,
-            'dual',
-            'free',
-            None,
-            metadata.get('displayName', slug),
-            'opensource_modified',
-            'completed',
-            now, now
-        ))
+        skill_id = db_module.insert_skill(
+            slug=slug,
+            name=metadata.get('name', slug),
+            display_name=metadata.get('displayName', slug),
+            version=version,
+            category='opensource',
+            source='opensource_modified',
+            local_path=str(skill_dir),
+            current_status='packaged',
+            is_differentiated=1,
+            pricing_model='dual',
+            edition='free',
+            parent_slug=None,
+            skill_type='opensource_modified',
+            workflow_state='completed',
+            source_slug=slug,
+            source_url=source_repo,
+        )
 
-        skill_id = c.lastrowid
-        c.execute("""
-            INSERT INTO versions (skill_id, version, created_at, changelog, content_hash,
-                                 file_size, line_count, changes_summary)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (skill_id, version, now, '开源改造初始版本', content_hash, file_size, line_count, '初始导入'))
+        db_module.add_version(skill_id, version, changelog='开源改造初始版本',
+                              content_hash=content_hash, file_size=file_size,
+                              line_count=line_count, changes_summary='初始导入')
 
-        c.execute("""
-            INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, (skill_id, 'import', now, 'baseline_init', '基线初始化导入', 'packaged'))
+        db_module.record_operation(skill_id, 'import', '基线初始化导入',
+                                   operator='baseline_init', after_state='packaged')
 
         imported += 1
         print(f"  导入开源: {slug} v{version}")
@@ -244,8 +220,7 @@ def update_baseline_hashes():
 
         try:
             content_hash = compute_file_hash(skill_md)
-            c.execute("UPDATE versions SET content_hash = ? WHERE id = ?",
-                     (content_hash, row['id']))
+            db_module.update_version_hash(row['id'], content_hash)
             updated += 1
         except Exception as e:
             print(f"  跳过 {row['slug']}: {e}")
@@ -277,13 +252,13 @@ def import_enterprise_skills():
         slug = skill_dir.name
         # 检查是否已存在（企业版slug可能与packaged版相同）
         c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
-        if c.fetchone():
+        existing = c.fetchone()
+        if existing:
             # 已存在，更新edition为dual
-            c.execute("""
-                UPDATE skills SET edition = 'dual', pricing_model = 'dual',
-                       local_path = ?, updated_at = ?
-                WHERE slug = ?
-            """, (str(skill_dir), datetime.now().isoformat(), slug))
+            skill_id = existing[0]
+            db_module.update_skill_fields(skill_id, edition='dual',
+                                          pricing_model='dual',
+                                          local_path=str(skill_dir))
             continue
 
         content = skill_md.read_text(encoding='utf-8')
@@ -292,36 +267,30 @@ def import_enterprise_skills():
         line_count = len(content.split('\n'))
         file_size = skill_md.stat().st_size
 
-        now = datetime.now().isoformat()
         version = metadata.get('version', '1.0.0')
 
-        c.execute("""
-            INSERT INTO skills (slug, current_name, current_version, category, source, source_slug, source_url,
-                               local_path, current_status, is_differentiated, pricing_model, edition,
-                               parent_slug, current_display_name, skill_type, workflow_state,
-                               created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            slug,
-            metadata.get('name', slug),
-            version,
-            'enterprise',
-            'original_creation',
-            '', '', str(skill_dir),
-            'published', 0, 'dual', 'dual',
-            None,
-            metadata.get('displayName', slug),
-            'original_creation',
-            'completed',
-            now, now
-        ))
+        skill_id = db_module.insert_skill(
+            slug=slug,
+            name=metadata.get('name', slug),
+            display_name=metadata.get('displayName', slug),
+            version=version,
+            category='enterprise',
+            source='original_creation',
+            local_path=str(skill_dir),
+            current_status='published',
+            is_differentiated=0,
+            pricing_model='dual',
+            edition='dual',
+            parent_slug=None,
+            skill_type='original_creation',
+            workflow_state='completed',
+            source_slug='',
+            source_url='',
+        )
 
-        skill_id = c.lastrowid
-        c.execute("""
-            INSERT INTO versions (skill_id, version, created_at, changelog, content_hash,
-                                 file_size, line_count, changes_summary)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (skill_id, version, now, '企业版初始版本', content_hash, file_size, line_count, '初始导入'))
+        db_module.add_version(skill_id, version, changelog='企业版初始版本',
+                              content_hash=content_hash, file_size=file_size,
+                              line_count=line_count, changes_summary='初始导入')
 
         imported += 1
         print(f"  导入企业版: {slug} v{version}")

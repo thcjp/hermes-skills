@@ -551,6 +551,65 @@ def record_score(skill_id, score_type, quality, practicality, simplicity, cost,
     return total, is_pass
 
 
+def save_score(skill_id, score_type, total_score,
+               quality=0, practicality=0, simplicity=0,
+               performance=0, debranding=0, differentiation=0,
+               compliance=0, cost=0,
+               reviewer='system', notes=None, is_pass=None,
+               pass_threshold=40):
+    """保存评分记录（支持is_current历史保护机制）
+
+    D5修复延续: 标记同类型旧记录为is_current=0，插入新记录is_current=1。
+    替代: 各模块中的 UPDATE scores SET is_current=0 + INSERT INTO scores 裸SQL。
+
+    参数：
+        skill_id: skill ID
+        score_type: 评分类型 ('trace_llm', 'agent_trial', 'baseline', 'final' 等)
+        total_score: 总分
+        quality..cost: 八大维度分数
+        reviewer: 评分者标识
+        notes: 评分备注（JSON字符串或普通文本）
+        is_pass: 是否通过（None则自动按pass_threshold判定）
+        pass_threshold: 通过阈值（默认40）
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+
+    now = datetime.now().isoformat()
+
+    # 标记同类型旧记录为非当前
+    c.execute(
+        "UPDATE scores SET is_current = 0 WHERE skill_id = ? AND score_type = ? AND is_current = 1",
+        (skill_id, score_type)
+    )
+
+    # 自动判定是否通过
+    if is_pass is None:
+        is_pass = 1 if total_score >= pass_threshold else 0
+
+    # 插入新记录，is_current=1
+    c.execute("""
+        INSERT INTO scores (skill_id, score_type, total_score,
+            quality_score, practicality_score, simplicity_score,
+            performance_score, debranding_score, differentiation_score,
+            compliance_score, cost_score, scored_at, reviewer, notes, is_pass, pass_threshold, is_current)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+    """, (skill_id, score_type, total_score,
+          quality, practicality, simplicity,
+          performance, debranding, differentiation,
+          compliance, cost,
+          now, reviewer, notes, is_pass, pass_threshold))
+
+    # 更新skills表的current_score
+    c.execute("UPDATE skills SET current_score = ?, updated_at = ? WHERE id = ?",
+              (total_score, now, skill_id))
+
+    conn.commit()
+    conn.close()
+    return total_score, is_pass
+
+
 def update_workflow_state(skill_id, step_number, step_name, status, result_data=None, notes=None):
     """更新10步工作流状态（v1.1新增，修复工作流无状态机问题）
 
@@ -644,8 +703,18 @@ def record_upload(skill_id, version, platform, platform_slug, upload_status,
     conn.close()
 
 
-def record_operation(skill_id, operation_type, details, before_state=None, after_state=None):
-    """记录操作"""
+def record_operation(skill_id, operation_type, details, before_state=None, after_state=None,
+                     operator='system'):
+    """记录操作
+
+    参数：
+        skill_id: skill ID
+        operation_type: 操作类型（如 'register', 'import', 'version_sync', 'naming_governance'）
+        details: 操作详情描述
+        before_state: 操作前状态
+        after_state: 操作后状态
+        operator: 操作者标识（默认 'system'，多平台同步等场景可传 'version_sync_pipeline'）
+    """
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
     c.execute("PRAGMA foreign_keys = ON")
@@ -654,8 +723,146 @@ def record_operation(skill_id, operation_type, details, before_state=None, after
     c.execute("""
         INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, before_state, after_state)
         VALUES (?, ?, ?, ?, ?, ?, ?)
-    """, (skill_id, operation_type, now, 'system', details, before_state, after_state))
+    """, (skill_id, operation_type, now, operator, details, before_state, after_state))
 
+    conn.commit()
+    conn.close()
+
+
+def insert_skill(slug, name, display_name, version, category, source, local_path,
+                 current_status='registered', source_slug=None, source_url=None,
+                 source_author=None, source_license=None, skill_type=None,
+                 pricing_model=None, is_differentiated=0, differentiation_date=None,
+                 notes=None, edition=None, parent_slug=None, workflow_state=None):
+    """仅插入skill记录（不含版本和操作记录）
+
+    用于基线导入、自动差异化等需要单独控制版本记录内容（如content_hash）的场景。
+    替代: INSERT INTO skills
+    返回: skill_id
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    now = datetime.now().isoformat()
+    wf_state = workflow_state or 'step1_read_original'
+    c.execute("""
+        INSERT INTO skills (
+            slug, current_name, current_display_name, current_version,
+            category, source, source_slug, source_url, source_author, source_license,
+            local_path, created_at, updated_at, current_status,
+            is_differentiated, differentiation_date, pricing_model, skill_type, notes,
+            edition, parent_slug, workflow_state
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (slug, name, display_name, version, category, source,
+          source_slug, source_url, source_author, source_license,
+          local_path, now, now, current_status,
+          is_differentiated, differentiation_date, pricing_model, skill_type, notes,
+          edition, parent_slug, wf_state))
+    conn.commit()
+    skill_id = c.lastrowid
+    conn.close()
+    return skill_id
+
+
+def add_version(skill_id, version, changelog=None, content_hash=None,
+                file_size=None, line_count=None, changes_summary=None):
+    """添加版本记录（含content_hash基线）
+
+    用于基线导入、版本同步等需要记录content_hash的场景。
+    替代: INSERT INTO versions
+    返回: version_id
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    now = datetime.now().isoformat()
+    c.execute("""
+        INSERT INTO versions (skill_id, version, created_at, changelog, content_hash,
+                             file_size, line_count, changes_summary)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """, (skill_id, version, now, changelog, content_hash, file_size, line_count, changes_summary))
+    conn.commit()
+    version_id = c.lastrowid
+    conn.close()
+    return version_id
+
+
+def update_version_hash(version_id, content_hash):
+    """更新版本记录的content_hash
+
+    用于回填hash基线（update_baseline_hashes场景）。
+    替代: UPDATE versions SET content_hash WHERE id = ?
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    c.execute("UPDATE versions SET content_hash = ? WHERE id = ?",
+              (content_hash, version_id))
+    conn.commit()
+    conn.close()
+
+
+# update_skill_fields 允许更新的字段白名单
+_SKILL_FIELD_WHITELIST = frozenset({
+    'slug', 'current_name', 'current_display_name', 'current_version',
+    'category', 'source', 'source_slug', 'source_url', 'source_author',
+    'source_license', 'local_path', 'current_status', 'is_differentiated',
+    'differentiation_date', 'pricing_model', 'skill_type', 'notes',
+    'edition', 'parent_slug', 'workflow_state', 'pricing_category',
+    'pricing_rationale', 'pricing_tier', 'is_paid', 'suggested_price'
+})
+
+
+def update_skill_fields(skill_id, **fields):
+    """更新skill的指定字段
+
+    用于命名治理、版本同步、自动差异化等需要部分更新skill记录的场景。
+    替代: UPDATE skills SET ... WHERE id = ?
+    仅允许更新白名单字段（_SKILL_FIELD_WHITELIST），防止SQL注入。自动更新 updated_at。
+    """
+    updates = {k: v for k, v in fields.items() if k in _SKILL_FIELD_WHITELIST}
+    if not updates:
+        return
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    now = datetime.now().isoformat()
+    updates['updated_at'] = now
+    set_clause = ', '.join(f'{k} = ?' for k in updates.keys())
+    values = list(updates.values()) + [skill_id]
+    c.execute(f"UPDATE skills SET {set_clause} WHERE id = ?", values)
+    conn.commit()
+    conn.close()
+
+
+def record_platform_upload(skill_id, version, platform, platform_slug, upload_status,
+                           http_status=None, error_message=None, visibility=None,
+                           pricing_on_platform=None, operator='system',
+                           operation_type=None, operation_details=None):
+    """记录平台上传（可自定义操作者和操作类型）
+
+    用于版本同步流水线等多平台同步场景，需要自定义操作记录中的operator和operation_type。
+    替代: INSERT INTO platform_uploads + INSERT INTO operations
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    now = datetime.now().isoformat()
+    c.execute("""
+        INSERT INTO platform_uploads (
+            skill_id, version, platform, platform_slug, upload_date,
+            upload_status, http_status, error_message, visibility, pricing_on_platform,
+            community_published, download_ready
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (skill_id, version, platform, platform_slug, now, upload_status,
+          http_status, error_message, visibility, pricing_on_platform,
+          0, None))
+    op_type = operation_type or f'upload_{platform}'
+    op_details = operation_details or f'Uploaded {version} to {platform}: {upload_status}'
+    c.execute("""
+        INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (skill_id, op_type, now, operator, op_details, upload_status))
     conn.commit()
     conn.close()
 

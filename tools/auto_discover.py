@@ -57,9 +57,9 @@ from skill_core.parser import parse_frontmatter as _parse_fm
 # DISCOVERY_DIR imported from config
 CANDIDATES_FILE = DISCOVERY_DIR / "candidates.json"
 
-# ClawHub API
-CLAWHUB_API_BASE = "https://clawhub.ai/api"
-CLAWHUB_MIRROR = "https://mirror-cn.clawhub.com/api"
+# ClawHub API (修复: 使用clawhub.ai/api/v1，原api.clawhub.dev DNS无法解析)
+CLAWHUB_API_BASE = "https://clawhub.ai/api/v1"
+CLAWHUB_MIRROR = "https://mirror-cn.clawhub.com/api/v1"
 
 # GitHub 来源仓库
 # GITHUB_REPOS imported from config
@@ -133,11 +133,11 @@ def scan_clawhub_category(category: str, limit: int = 50) -> List[Dict[str, Any]
     """扫描clawhub指定类别的新skill"""
     skills = []
 
-    # 尝试API端点
+    # 尝试API端点 (v1端点优先，已验证可用)
     api_urls = [
-        f"{CLAWHUB_API_BASE}/skills?category={category}&sort=newest&limit={limit}",
-        f"{CLAWHUB_MIRROR}/skills?category={category}&sort=newest&limit={limit}",
-        f"{CLAWHUB_API_BASE}/v1/skills?category={category}&page=1&pageSize={limit}",
+        f"{CLAWHUB_API_BASE}/skills?category={category}&page=1&pageSize={limit}",
+        f"{CLAWHUB_MIRROR}/skills?category={category}&page=1&pageSize={limit}",
+        f"{CLAWHUB_API_BASE}/skills?sort=newest&limit={limit}",
     ]
 
     for url in api_urls:

@@ -1,290 +1,316 @@
 ---
-slug: "logo-design-guide"
-name: "logo-design-guide"
-version: 0.1.6
-displayName: "Logo设计指南"
-summary: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。。从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式 输出(PNG/JPG/SVG/ICO/WebP)、多平"
-summary_zh: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。。从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式 输出(PNG/JPG/SVG/ICO/WebP)、多平"
+name: logo-design-guide
+slug: logo-design-guide
+displayName: "Logo Design Guide"
+version: "1.0.1"
+summary: "logo设计原则与AI图像生成实用指南,产出专业logo"
+description: "logo设计原则与AI图像生成实用指南,帮助用户产出专业logo。覆盖字标、字母标、图形、抽象、吉祥物、组合型等logo类型,讲解提示词结构、色彩心理学、尺寸适配规范、文件格式交付全流程,并提供通义万相、文心一格等国内AI平台适配方案与错误码体系。当用户请求设计logo、品牌标志、AI生成图标、企业徽标时触发本技能。"
 license: "MIT"
-description: |-
-  从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式
-  输出(PNG/JPG/SVG/ICO/WebP)、多平台适配(Favicon/App/PWA/Social)、
-  色彩与字体系统、布局变体、矢量优先与一致性规范。适用于独立开发者、
-  企业团队和自动化工作流场景.
 tools:
-  - read
-  - exec
-  - write
-homepage: ""
-tags:
-  - 创意设计
-  - 设计
-  - UI/UX
-  - 创意
-  - logo
-  - svg
-  - favicon
-  - png
-  - 执行核心
-category: "Creative"
+  - Read
+  - Write
+  - Edit
+  - Bash
 ---
-# Logo设计指南
 
-从辨识度设计到多平台交付的Logo设计全流程,确保Logo在任何尺寸、任何背景、任何平台下都清晰可辨且一致.
-## 输入格式
+# Logo Design Guide
 
-| 参数名 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| input | string | 是 | Logo设计指南处理的输入数据或指令 |
-| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
-| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+借助AI图像生成工具设计专业logo的实用指南,覆盖类型选择、提示词、配色、尺寸、交付与国内平台适配。
 
-## 付费版专享能力
+## 触发条件
 
-| 能力 | 免费版 | 付费版 |
-|:-----|:-----|:-----|
-| 基础功能 | 支持 | 支持 |
-| 高清分辨率与无损输出 | 不支持 | 支持 |
-| 批量生成与风格预设 | 不支持 | 支持 |
-| 自定义模型微调 | 不支持 | 支持 |
-| 商用版权授权 | 不支持 | 支持 |
-| 多版本对比与A/B优选 | 不支持 | 支持 |
+当用户表达以下意图时触发本技能:
+
+- "设计一个logo" / "帮我设计logo" / "做个logo"
+- "品牌标志" / "企业徽标" / "品牌图标"
+- "AI生成图标" / "AI画logo" / "AI设计标志"
+- "logo设计原则" / "logo配色" / "logo尺寸规范"
+- 包含"logo""标志""徽标""图标设计"等关键词的设计请求
+
+触发后,Agent应先确认logo用途、品牌调性与目标尺寸,再进入提示词生成环节。
+
+## 快速开始
+
+以下为通用AI图像生成工具调用示意,实际命令请替换为所选平台的CLI或SDK:
+
+```bash
+# 通用调用格式(以通义万相为例)
+ai-image generate --model wanx-v1 \
+  --prompt "flat vector logo of a mountain peak with a sunrise, minimal geometric style, single color, clean lines, white background" \
+  --width 1024 --height 1024
+```
+
+以通义万相(Wanx)为例的真实HTTP调用:
+
+```bash
+# 需先配置环境变量 DASHSCOPE_API_KEY
+curl -X POST 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis' \
+  -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "wanx-v1",
+    "input": {
+      "prompt": "flat vector logo of a mountain peak with a sunrise, minimal geometric style, single color, white background"
+    },
+    "parameters": {"size": "1024*1024", "n": 1}
+  }'
+```
+
+> 安装说明:各AI图像生成平台的CLI仅识别本机操作系统与架构,下载对应二进制并校验哈希,无需管理员权限或后台进程。
+
+## AI平台适配
+
+| 平台 | 模型示例 | 调用方式 | 适用场景 |
+| --- | --- | --- | --- |
+| 通义万相(阿里) | wanx-v1 / wanx2.1 | DashScope API / SDK | 国内首选,中文提示词友好 |
+| 文心一格(百度) | ernie-vilg | Qianfan API | 中文品牌命名场景 |
+| 豆包(字节) | seedream-4-5 | 火山引擎API | 高清写实与插画风格 |
+| 通用Flux | flux-dev-lora | 各推理平台CLI | 矢量扁平风格表现佳 |
+| 其他 | grok-imagine-image-pro | 对应平台CLI | 抽象线条风格 |
+
+> 海外平台访问不稳定时,优先选用通义万相或文心一格等国内服务,降低网络与合规风险。
+
+## Logo类型
+
+| 类型 | 说明 | 适用场景 | 示例 |
+| --- | --- | --- | --- |
+| **字标(Wordmark)** | 公司名称作为logo | 品牌名简短(<10字符)且强 | Google, Coca-Cola |
+| **字母标(Lettermark)** | 仅首字母缩写 | 公司名长、偏正式 | IBM, HBO, CNN |
+| **图形标(Pictorial)** | 可识别的图标/符号 | 通用品牌,脱离文字仍可辨识 | Apple, Twitter bird |
+| **抽象标(Abstract)** | 几何/非具象图形 | 科技公司、概念品牌 | Nike swoosh, Pepsi |
+| **吉祥物(Mascot)** | 角色插画 | 亲切品牌、餐饮/体育 | KFC Colonel, Pringles |
+| **组合标(Combination)** | 图标+字标 | 新品牌需同时建立识别与名称 | Burger King, Adidas |
+
+## AI文字渲染限制(关键)
+
+**AI图像生成工具无法可靠渲染文字。** 生成的字母会扭曲、错拼或乱码。
+
+应对策略:
+
+1. 仅用AI生成**图标/符号部分**
+2. 文字/字标在设计工具(Figma、Canva、Illustrator)中手动添加
+3. 或采用组合方式:AI图标 + 手动排版字体
+
+## Logo提示词
+
+### 有效关键词
+
+```text
+flat vector logo, simple minimal icon, single color silhouette,
+geometric logo mark, clean lines, negative space design,
+line art logo, flat design icon, minimalist symbol
+```
+
+### 失败关键词
+
+```text
+photorealistic logo (矛盾——logo不是照片)
+3D rendered logo (过于复杂,缩小后失真)
+gradient logo (结果不稳定,难以复现)
+logo with text "Company Name" (文字渲染失败)
+```
+
+### 提示词结构
+
+```text
+flat vector logo of [主体], [风格], [颜色约束], [背景], [附加细节]
+```
+
+### 示例
+
+```bash
+# 抽象字母S标
+ai-image generate --model wanx-v1 --prompt 'flat vector abstract logo, interlocking hexagonal shapes forming a letter S, minimal geometric style, single navy blue color, white background, clean sharp edges'
+
+# 几何狐狸头
+ai-image generate --model flux-dev-lora --prompt 'flat vector logo of a fox head in profile, geometric faceted style, orange and white, minimal clean lines, white background, negative space design'
+
+# 吉祥物猫头鹰
+ai-image generate --model seedream-4-5 --prompt 'friendly cartoon owl mascot logo, simple flat illustration, wearing graduation cap, purple and gold colors, white background, clean vector style'
+
+# 抽象大脑节点
+ai-image generate --model grok-imagine-image-pro --prompt 'minimal abstract logo mark, interconnected nodes forming a brain shape, line art style, single teal color, white background, tech startup aesthetic'
+```
+
+## 尺寸适配规则
+
+logo必须在所有尺寸下都可用:
+
+| 场景 | 尺寸 | 必须满足 |
+| --- | --- | --- |
+| 网站favicon | 16x16 px | 轮廓可辨识 |
+| App图标 | 1024x1024 px | 细节完整 |
+| 社交头像 | 400x400 px | 一眼清晰 |
+| 名片 | 约1英寸 | 印刷清晰复现 |
+| 户外广告牌 | 10英尺+ | 无锯齿,足够简洁 |
+
+### 尺寸自检清单
+
+- 缩到16px favicon仍可辨识(眯眼测试)
+- 单色可用(黑底白字、白底黑字)
+- 反色可用
+- 无缩小后消失的细小细节
+- 无缩细后断掉的细线
+- 去掉颜色后轮廓仍清晰
+
+## 配色指南
+
+- 主logo**最多2-3种颜色**
+- 必须支持**单色**呈现(黑、白或品牌主色)
+- 参考**色彩心理学**:
+  - 蓝:信任、专业(金融、科技、医疗)
+  - 红:活力、紧迫(餐饮、娱乐、零售)
+  - 绿:成长、自然(健康、可持续、金融)
+  - 橙:亲和、创意(初创、年轻品牌)
+  - 紫:奢华、智慧(美妆、教育)
+  - 黑:高端、优雅(时尚、奢侈、科技)
+- 在浅色与深色背景下均需测试
+
+## 迭代工作流
+
+```bash
+# 批量生成候选(5张)
+for i in 1 2 3 4 5; do
+  ai-image generate --model flux-dev-lora \
+    --prompt 'flat vector logo of a lighthouse, minimal geometric, single color, white background' \
+    --no-wait
+done
+
+# 选定方向后细化
+ai-image generate --model flux-dev-lora --prompt 'flat vector logo of a geometric lighthouse with light beam rays, minimal line art, navy blue, white background, negative space design'
+
+# 高清放大(2K)
+ai-image generate --model seedream-4-5 --prompt 'flat vector logo of a geometric lighthouse with radiating light beams, minimal clean design, navy blue single color, pure white background' --size 2K
+
+# 超分辨率放大
+ai-image upscale --input best-logo.png --scale 4
+```
+
+## 常见错误
+
+| 错误 | 问题 | 修复 |
+| --- | --- | --- |
+| 细节过多 | 小尺寸丢失清晰度 | 简化为核心形状 |
+| 依赖颜色 | 黑白场景失效 | 先用黑色设计 |
+| AI生成含文字 | 字母乱码/错拼 | 仅生成图标,文字手动添加 |
+| 滥用特效(发光/阴影) | 易过时、难复现 | 采用扁平、长青设计 |
+| 颜色过多 | 难复现、印刷成本高 | 最多2-3种颜色 |
+| 无目的的不对称 | 显得未完成 | 有意不对称或保持平衡 |
+
+## 文件格式交付
+
+| 格式 | 用途 |
+| --- | --- |
+| SVG | 矢量缩放、网页、编辑 |
+| PNG(透明) | 数字应用、演示 |
+| PNG(白底) | 文档、邮件签名 |
+| ICO / Favicon | 网站favicon(16、32、48px) |
+| 高清PNG(4096px+) | 印刷、广告牌 |
+
+说明:AI生成的是位图(PNG)。若需真正的矢量SVG,应将AI输出作为参考在矢量工具中描摹,或使用AI转SVG工具。
+
+## 错误处理
+
+本技能采用结构化错误码体系,覆盖AI生成、网络、权限等场景:
+
+| 错误码 | 场景 | 原因 | 处理方式 |
+| --- | --- | --- | --- |
+| ERR-001 | AI图像生成失败 | 模型服务不可用或配额耗尽 | 切换备用模型(通义万相↔文心一格),确认账户配额后重试 |
+| ERR-002 | 网络请求超时 | 连接不稳定或服务端响应慢 | 检查网络,增加超时阈值至60s,优先使用国内平台 |
+| ERR-003 | 提示词被安全策略拦截 | 内容触发平台审核 | 移除敏感词,改用中性描述,重写提示词 |
+| ERR-004 | API密钥或权限校验失败 | Key失效、过期或权限不足 | 重新生成密钥,确认调用权限与计费开通状态 |
+| ERR-005 | 输出尺寸/比例不符 | 模型不支持该分辨率 | 改用支持的尺寸(如1024x1024),再用裁剪/缩放调整 |
+| ERR-006 | 生成结果文字乱码 | AI文字渲染固有限制 | 仅生成图标,文字在设计工具中手动添加 |
+
+错误处理原则:遇到ERR-001至ERR-003优先重试(最多3次)并切换平台;ERR-004需人工介入更新凭证;ERR-005与ERR-006属业务约束,调整参数或流程即可解决。
+
+## 常见问题
+
+### Q1: AI生成的logo里文字总是乱码怎么办?
+A: 这是AI图像生成工具的固有限制(见错误码ERR-006)。建议仅用AI生成图标/符号部分,品牌名称、标语等文字在Figma、Illustrator等设计工具中手动排版,既保证拼写正确,也便于后期统一字体。
+
+### Q2: logo应该用几种颜色?
+A: 主logo建议最多2-3种颜色,并必须支持单色(纯黑或纯白)呈现,以适配传真、印章、单色印刷等场景。设计时先用黑色定稿,再上色,可有效避免过度依赖颜色。
+
+### Q3: logo最小可以缩到多大还保持清晰?
+A: 需通过16px favicon的"眯眼测试":在16x16像素下轮廓仍可辨识。若失效,应简化为更纯粹的剪影,去除细线与碎细节。详见"尺寸适配规则"章节。
+
+### Q4: 生成logo时提示词怎么写效果更佳?
+A: 采用"flat vector logo of [主体], [风格], [颜色约束], [背景], [附加细节]"结构,多用 flat vector、minimal、single color、clean lines、negative space 等关键词;避免 photorealistic、3D、gradient、含具体文字等会劣化结果的词。
+
+### Q5: 如何把AI生成的PNG转成矢量SVG?
+A: AI输出本质是位图。可将其作为参考底图,在Illustrator、Inkscape中用钢笔工具描摹重绘为SVG,或使用矢量描摹(Image Trace)功能;也可借助AI转SVG工具,但需人工校验节点与曲线。
+
+### Q6: 国内用户用哪个AI平台生成logo比较好?
+A: 推荐通义万相(wanx-v1)作为首选,中文提示词理解好、访问稳定;文心一格适合含中文品牌命名场景;若需扁平矢量风格且可访问海外服务,Flux系列表现较佳。详见"AI平台适配"章节。
+
+## 能力边界
+
+本技能明确以下边界,超出范围需人工或专业工具介入:
+
+- **文字渲染**:AI无法可靠生成正确文字,品牌名/标语必须人工添加
+- **矢量输出**:AI生成位图(PNG),非真正矢量SVG,需手动描摹
+- **色彩精确**:无法保证Pantone专色精确匹配,印刷级色彩需人工校准
+- **复杂效果**:渐变、光影、3D等效果难以稳定复现,不推荐用于logo
+- **一致性保证**:多版本/多场景的视觉一致性需人工后期统一
+- **商标合规**:商标查重、侵权检索必须由人工或专业商标服务完成,AI不承担法律判断
+- **品牌策略**:logo背后的品牌定位、命名策略属战略决策,需人工主导
+
+## Related Skills
+
+与本技能相关的其他技能方向(在SkillHub平台检索对应名称):
+
+- **brand-guidelines**: 品牌视觉规范制定,logo落地后的色彩/字体/间距体系
+- **color-theory**: 色彩理论与配色方案生成,辅助logo配色决策
+- **vector-illustration**: 矢量插画与图标绘制,AI位图转SVG的描摹技巧
+- **icon-design**: 图标设计规范,App图标与UI图标的尺寸/栅格体系
+- **figma-basics**: Figma操作基础,logo文字排版与多格式导出
 
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Trae Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|---:|---:|---:|---:|
+|:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
+| AI图像生成平台 | API | 必需 | 通义万相 / 文心一格 / Flux等,按需选用 |
+| 设计工具 | 软件 | 可选 | Figma / Illustrator / Inkscape,用于文字排版与SVG描摹 |
 
 ### API Key 配置
-需要配置对应API Key，详见上文环境配置章节
+- 本Skill基于Markdown指令,无需额外API Key
+- 调用AI图像生成平台时,需自行配置对应平台的API Key(如通义万相的 DASHSCOPE_API_KEY)
 
 ### 可用性分类
-- **分类**: MD+EXEC（）
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-**API Key配置方式**:
-```bash
-export API_KEY="your_api_key_here"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
-### 1. 辨识度设计三大要素
-- 简单:能在5秒内被记住,删除所有非必要细节
-- 易记:有独特视觉钩子(形状、色彩、负空间)
-- 易复述:能用语言描述给他人(如"一个咬了一口的苹果")
-- 测试:缩到16x16像素仍可辨认核心特征
-
-**输入**: 用户提供辨识度设计三大要素所需的指令和必要参数.
-**处理**: 解析辨识度设计三大要素的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回辨识度设计三大要素的处理结果,包含执行状态码、结果数据和执行日志.
-### 2. 多格式交付
-| 格式 | 用途 | 特征 |
-|:---:|:---:|:---:|
-| SVG | 矢量源文件、网页 | 无损缩放,文件小,可编辑 |
-| PNG | 透明背景位图 | 支持Alpha通道,通用 |
-| JPG | 摄影背景用 | 不支持透明,有损压缩 |
-| ICO | 浏览器favicon | 多尺寸打包(16/32/48) |
-| WebP | 现代网页 | 比PNG小26%,支持透明 |
-
-**输入**: 用户提供多格式交付所需的指令和必要参数.
-**处理**: 解析多格式交付的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多格式交付的处理结果,包含执行状态码、结果数据和执行日志.
-### 3. 多平台适配尺寸
-- Favicon:`16x16`、`32x32`、`48x48` 像素,打包为 `favicon.ico`
-- Apple Touch Icon:`180x180` 像素,圆角自动应用
-- PWA图标:`192x192`、`512x512` 像素,`manifest.json` 引用
-- 社交分享:`1200x630` 像素,Open Graph 与 Twitter Card
-- App图标:`1024x1024` 像素,应用商店提交
-- 安全区:图标内容需在80%安全区内,留padding
-
-**处理**: 解析多平台适配尺寸的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多平台适配尺寸的处理结果,包含执行状态码、结果数据和执行日志.
-### 4. 色彩系统
-- 品牌主色:1个主色 + 1个辅色,RGB与HEX双标注
-- 单色版:纯黑、纯白版本,用于单色印刷与深色背景
-- 深色背景版:反色或调整对比度,确保可读性
-- 色彩无障碍:前景与背景对比度 ≥ 4.5:1(WCAG AA)
-- 渐变处理:提供明暗两端HEX值与渐变方向
-
-**输出**: 返回色彩系统的处理结果,包含执行状态码、结果数据和执行日志.
-### 5. 布局变体
-- 横版:图标在左,文字在右(默认)
-- 竖版:图标在上,文字在下
-- 方形:图标居中,无文字或文字在下
-- 图标版:纯图形,无文字(用于favicon、app icon)
-- 文字版:纯文字,无图形(用于页脚、水印)
-- 每个变体都有独立的安全边距与最小尺寸
-
-**输入**: 用户提供布局变体所需的指令和必要参数.
-**处理**: 解析布局变体的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回布局变体的处理结果,包含执行状态码、结果数据和执行日志.
-### 6. 字体系统
-- 品牌字体:主标识用字体,标注字体名与授权
-- 字体对:标识字体 + 正文字体,确保层次分明
-- 字距调整:手动调整字母间距(letter-spacing),确保视觉平衡
-- 字重选择:标识用 Bold 或 Semibold,正文用 Regular
-- 降级方案:Web字体加载失败时的系统字体降级栈
-
-**输入**: 用户提供字体系统所需的指令和必要参数.
-**处理**: 解析字体系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回字体系统的处理结果,包含执行状态码、结果数据和执行日志.
-### 7. 矢量优先
-- 源文件用SVG,可无损缩放到任意尺寸
-- 位图由SVG导出,而非反向矢量化
-- SVG优化:移除元数据、简化路径、合并相同路径
-- 矢量化流程:AI生成草图 → 矢量化工具描摹 → 手动调整路径
-
-**输入**: 用户提供矢量优先所需的指令和必要参数.
-**处理**: 解析矢量优先的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-### 8. 一致性指南
-- Clear Space:Logo周围最小留白等于图标x-height,不可有其他元素侵入
-- Minimum Size:印刷最小24px宽,屏幕最小16px宽,低于此尺寸用图标版
-- 误用示例:不拉伸、不旋转、不改色、不加描边、不加阴影、不放在低对比背景
-- 背景使用:浅色背景用原版,深色背景用反色版,复杂背景用纯色底板版
-
-**输入**: 用户提供一致性指南所需的指令和必要参数.
-**处理**: 解析一致性指南的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回一致性指南的处理结果,包含执行状态码、结果数据和执行日志.
-### 9. 制作与优化工具
-- AI生成:用文生图工具生成Logo草图,提示词强调简单、矢量风格
-- 矢量化:用矢量化工具将位图转为SVG路径
-- SVG优化:用工具压缩SVG,移除冗余节点与元数据
-- Favicon打包:用工具将多尺寸PNG打包为 `favicon.ico`
-
-**输入**: 用户提供制作与优化工具所需的指令和必要参数.
-**处理**: 解析制作与优化工具的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-### 输出格式
-
-完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
-- 参考`输出格式`的配置文档进行参数调优
-#
-## 快速开始
-
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
+- logo设计原则与AI图像生成全流程指导
+- 覆盖字标、字母标、图形、抽象、吉祥物、组合型等logo类型
+- 提示词结构、色彩心理学、尺寸适配、文件格式交付
+- 通义万相、文心一格等国内AI平台适配方案
+- 结构化错误码体系(ERR-001至ERR-006)与运行时异常预防
+- AI文字渲染限制识别与应对策略
 
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
-|:------|------:|:------|
-| Logo设计 | 品牌名+行业+风格 | 辨识度设计建议+视觉钩子 |
-| 多平台交付 | SVG源文件 | Favicon/Apple/PWA/Social全尺寸 |
-| 色彩系统 | 品牌主色 | 主色+单色版+深色背景版+对比度 |
-| 一致性规范 | Logo文件 | Clear space+minimum size+误用示例 |
-| 字体选择 | 品牌调性 | 标识字体+正文配对+字距建议 |
+|------|------|------|
+| logo从零设计 | 品牌名+行业+调性 | 提示词+候选logo+交付格式建议 |
+| 已有logo优化 | 现有logo+改进诉求 | 问题诊断+迭代提示词 |
+| 多平台适配 | 单一logo源文件 | 各尺寸/格式输出方案 |
 
-不适用于:复杂插画设计、3D建模、动态Logo动画、商标法律合规审查.
-## 使用流程
+## 运行时异常预防
 
-1. 确认品牌名、行业、调性,设计三大辨识要素
-2. 用AI生成草图,矢量化为SVG源文件
-3. 从SVG导出多平台尺寸(Favicon/PWA/Social)
-4. 定义色彩系统:主色、单色版、深色背景版
-5. 制作布局变体:横版、竖版、图标版、文字版
-6. 撰写一致性指南:clear space、minimum size、误用示例
-7. 打包交付:SVG源 + 各格式位图 + 指南文档
+为提升稳定性,执行过程中应遵循以下预防措施:
 
-#
-## 示例
-
-### 示例1:Favicon多尺寸
-```
-输入: logo.svg
-输出:
-  favicon-16x16.png    // 浏览器标签
-  favicon-32x32.png    // 高分屏标签
-  favicon-48x48.png    // Windows站点图标
-  favicon.ico          // 打包16/32/48
-  apple-touch-icon.png // 180x180 iOS添加到主屏
-```
-
-### 示例2:PWA manifest.json
-```json
-{
-  "name": "MyApp",
-  "icons": [
-    {
-      "src": "/icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
-```
-
-### 示例3:一致性规范片段
-```
-Clear Space:
-  最小留白 = 图标高度(48px Logo留白48px)
-  安全区内不可有文字、图形或其他Logo
-# ...
-Minimum Size:
-  印刷: 24px 宽(图标版16px)
-  屏幕: 16px 宽(favicon专用)
-# ...
-Misuse:
-  ✗ 拉伸或压缩变形
-  ✗ 旋转角度
-  ✗ 改变品牌色
-  ✗ 添加描边或阴影
-  ✗ 放在对比度<4.5:1的背景上
-```
-
-### 示例4:色彩系统
-```
-Primary: #3B82F6 (Blue 500)
-  RGB: 59, 130, 246
-Secondary: #10B981 (Emerald 500)
-  RGB: 16, 185, 129
-Mono Black: #000000
-Mono White: #FFFFFF
-Dark BG Version: #FFFFFF on #1F2937
-  Contrast Ratio: 15.3:1 (AAA)
-```
-
-## 错误处理
-
-| 错误场景 | 原因 | 处理方式 |
-|---:|:---|---:|
-| 16x16 favicon 模糊不可辨 | 细节过多 | 简化为图标版,删除文字与小细节,只保留核心轮廓 |
-| SVG 矢量化后丢失渐变 | 描摹工具不支持渐变 | 手动重建渐变,提供明暗两端HEX与渐变方向 |
-| 深色背景上Logo不可见 | 仅设计了浅色版 | 提供反色版(纯白)与深色背景专用版,对比度≥4.5:1 |
-| PWA 安装后图标缺失 | manifest.json 未引用512x512 | 确认 `icons` 数组含 192x192 与 512x512 两项,type为image/png |
-| Logo被拉伸变形 | 误用或CSS未锁定宽高比 | 在指南中标注误用示例,HTML用 `aspect-ratio: 1` 锁定 |
-| 字体在不同设备不一致 | Web字体未加载降级 | 提供系统字体降级栈:`font-family: 'BrandFont', 'Helvetica Neue', sans-serif` |
-| Apple Touch Icon 无圆角 | 设计稿自带圆角 | iOS自动应用圆角,设计稿用正方形不圆角 |
-
-## 常见问题
-
-### Q1: 辨识度设计的"5秒记忆测试"如何执行?
-A: 展示Logo 5秒后遮挡,让测试者画出核心特征。若多数人能画出主轮廓,辨识度达标;若画不出或画错,说明细节过多或钩子不明确。缩小到16x16像素仍可辨认是最严格测试.
-### Q2: Favicon为何需要16/32/48多尺寸打包?
-A: 不同场景使用不同尺寸:16x16用于旧浏览器标签,32x32用于高分屏标签,48x48用于Windows站点图标。打包为 `favicon.ico` 让浏览器自动选择合适尺寸,避免模糊.
-### Q3: PWA图标192x192与512x512有何区别?
-A: 192x192用于主屏图标显示,512x512用于应用启动屏(splash screen)与更高分辨率设备。`manifest.json` 的 `icons` 数组必须同时包含两者,否则PWA安装会报错或图标缺失.
-### Q4: Clear Space为何等于x-height?
-A: x-height是Logo中字母x的高度,作为相对单位确保不同尺寸Logo的留白比例一致。48px高的Logo留白48px,24px高的Logo留白24px。留白区内不可有其他元素,保证Logo视觉独立.
-### Q5: 对比度4.5:1如何验证?
-A: 用对比度检查工具输入前景与背景HEX值。`#FFFFFF` on `#1F2937` 对比度为15.3:1(超过AAA标准7:1)。低于4.5:1(AA标准)需调整颜色,特别是灰色文字在浅灰背景上常见不达标.
-### Q6: AI生成的Logo如何矢量化?
-A: 用矢量化工具(如在线描摹服务)将AI生成的PNG转为SVG路径。描摹后手动检查路径:删除冗余节点、简化复杂曲线、重建丢失的渐变。最终SVG应能在任意尺寸下清晰显示.
-## 已知限制
-
-- 需要LLM支持生成设计建议,实际绘图需配合理图工具
-- AI生成的位图需手动矢量化,无法直接输出生产级SVG
-- 商标法律合规需专业律师审查,本指南不覆盖
-- 动态Logo动画与3D建模不在范围内
+- **平台降级**:主用平台失败时自动切换备用(通义万相↔文心一格↔Flux),避免单点依赖
+- **重试控制**:网络与生成类错误(ERR-001至ERR-003)最多重试3次,每次间隔递增
+- **输入校验**:提交前校验提示词长度(建议<500字符)、尺寸参数为模型支持值
+- **凭证隔离**:API Key通过环境变量注入,不硬编码在提示词或脚本中
+- **结果校验**:生成后检查图片是否为空、尺寸是否匹配、是否含明显乱码区域
+- **资源回收**:批量生成任务及时清理临时文件,避免磁盘占满导致后续失败

@@ -55,6 +55,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+import db as db_module
+
 # ============================================================
 # 配置
 # ============================================================
@@ -267,26 +269,16 @@ def update_version_in_file(skill_md: Path, new_version: str) -> bool:
 def record_version(skill_id: int, new_version: str, new_hash: str,
                    changelog: str, file_size: int, line_count: int):
     """记录新版本到数据库"""
-    conn = get_db()
-    c = conn.cursor()
-    now = datetime.now().isoformat()
-    c.execute("""
-        UPDATE skills SET current_version = ?, updated_at = ?, current_status = 'updated'
-        WHERE id = ?
-    """, (new_version, now, skill_id))
-    c.execute("""
-        INSERT INTO versions (skill_id, version, created_at, changelog, content_hash,
-                             file_size, line_count, changes_summary)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    """, (skill_id, new_version, now, changelog, new_hash, file_size, line_count,
-          f'Auto-incremented to v{new_version}'))
-    c.execute("""
-        INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (skill_id, 'version_sync', now, 'version_sync_pipeline',
-          f'Version synced to v{new_version}', 'updated'))
-    conn.commit()
-    conn.close()
+    db_module.update_skill_fields(skill_id, current_version=new_version,
+                                  current_status='updated')
+    db_module.add_version(skill_id, new_version, changelog=changelog,
+                          content_hash=new_hash, file_size=file_size,
+                          line_count=line_count,
+                          changes_summary=f'Auto-incremented to v{new_version}')
+    db_module.record_operation(skill_id, 'version_sync',
+                               f'Version synced to v{new_version}',
+                               operator='version_sync_pipeline',
+                               after_state='updated')
 
 
 def record_platform_upload(skill_id: int, version: str, platform: str,
@@ -294,22 +286,13 @@ def record_platform_upload(skill_id: int, version: str, platform: str,
                            http_status: int = None, error: str = None,
                            visibility: str = None, pricing: str = None):
     """记录平台上传结果"""
-    conn = get_db()
-    c = conn.cursor()
-    now = datetime.now().isoformat()
-    c.execute("""
-        INSERT INTO platform_uploads (skill_id, version, platform, platform_slug,
-            upload_date, upload_status, http_status, error_message, visibility, pricing_on_platform)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, (skill_id, version, platform, platform_slug, now, status,
-          http_status, error, visibility, pricing))
-    c.execute("""
-        INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (skill_id, f'sync_{platform}', now, 'version_sync_pipeline',
-          f'Synced {version} to {platform}: {status}', status))
-    conn.commit()
-    conn.close()
+    db_module.record_platform_upload(
+        skill_id, version, platform, platform_slug, status,
+        http_status=http_status, error_message=error, visibility=visibility,
+        pricing_on_platform=pricing, operator='version_sync_pipeline',
+        operation_type=f'sync_{platform}',
+        operation_details=f'Synced {version} to {platform}: {status}'
+    )
 
 
 # ============================================================

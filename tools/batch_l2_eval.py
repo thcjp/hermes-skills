@@ -143,11 +143,8 @@ def save_to_db(slug: str, eval_result: dict):
         return False
 
     skill_id = row['id']
-    # D5修复: 不再DELETE销毁历史，改为标记旧记录为非当前
-    # save_trace_score内部也会UPDATE is_current=0，这里提前标记确保batch_l2_eval的调用也保护历史
-    c.execute("UPDATE scores SET is_current = 0 WHERE skill_id = ? AND score_type = 'trace_llm'", (skill_id,))
-    conn.commit()
     conn.close()
+    # R7-1收口: 移除冗余裸SQL UPDATE，save_trace_score内部通过db.save_score已处理is_current=0
 
     llm_result = {
         'trace_scores': {

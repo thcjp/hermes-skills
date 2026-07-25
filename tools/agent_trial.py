@@ -52,6 +52,7 @@ sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 from config import get_db_connection, DB_PATH
 from trace_llm_scorer import read_skill_md, save_trace_score, static_check, calculate_static_scores
 from llm_validator import find_skill_md, get_skill_id, generate_trigger_test_cases
+import db
 
 
 # ============ 异常输入生成 ============
@@ -381,15 +382,8 @@ def import_trial_result(slug: str, result_file: str) -> Dict[str, Any]:
     with open(final_report_path, 'w', encoding='utf-8') as f:
         json.dump(final_result, f, ensure_ascii=False, indent=2)
 
-    # 写入 DB scores 表 (与 trace_llm_scorer.save_trace_score 保持一致)
+    # 写入 DB scores 表 (使用 db.save_score 收口裸SQL，保持is_current历史保护)
     try:
-        conn = get_db_connection()
-        c = conn.cursor()
-        # D5修复: 不再DELETE销毁历史，改为标记旧记录为非当前
-        c.execute("UPDATE scores SET is_current = 0 WHERE skill_id = ? AND score_type = 'agent_trial'", (skill_id,))
-        # 插入新的评分记录 (使用与 scores 表结构匹配的字段)
-        # L3 评分映射: typical_score→quality_score, edge_score→practicality_score,
-        #              usability_score→simplicity_score, l3_score→total_score
         notes = json.dumps({
             'l3_grade': l3_grade,
             'l3_passed': l3_passed,
@@ -397,24 +391,19 @@ def import_trial_result(slug: str, result_file: str) -> Dict[str, Any]:
             'edge_pass': f"{edge_pass_count}/{edge_total}",
             'usability_pass': usability_pass,
         }, ensure_ascii=False)
-        c.execute("""
-            INSERT INTO scores (skill_id, score_type, total_score,
-                quality_score, practicality_score, simplicity_score,
-                performance_score, debranding_score, differentiation_score,
-                compliance_score, cost_score, scored_at, reviewer, notes, is_pass, pass_threshold, is_current)
-            VALUES (?, 'agent_trial', ?, ?, ?, ?, 0, 0, 0, 0, 0, ?, 'agent_trial_v1', ?, ?, 70, 1)
-        """, (
-            skill_id,
-            int(l3_score),
-            int(typical_score),
-            int(edge_score),
-            int(usability_score),
-            datetime.now().isoformat(),
-            notes,
-            1 if l3_passed else 0
-        ))
-        conn.commit()
-        conn.close()
+        # L3 评分映射: typical_score→quality, edge_score→practicality, usability_score→simplicity
+        db.save_score(
+            skill_id=skill_id,
+            score_type='agent_trial',
+            total_score=int(l3_score),
+            quality=int(typical_score),
+            practicality=int(edge_score),
+            simplicity=int(usability_score),
+            reviewer='agent_trial_v1',
+            notes=notes,
+            is_pass=1 if l3_passed else 0,
+            pass_threshold=70,
+        )
     except Exception as e:
         print(f"  ⚠ DB写入scores表失败: {e}")
 

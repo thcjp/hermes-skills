@@ -48,6 +48,8 @@ if _sys_path not in sys.path:
 
 from auto_discover import get_db, DB_PATH
 
+import db as db_module
+
 # ============================================================
 # 路径常量
 # ============================================================
@@ -411,80 +413,69 @@ def update_database(
 
     返回 skill_id。
     """
-    conn = get_db()
-    c = conn.cursor()
     now = datetime.now().isoformat()
 
     # 检查是否已存在
+    conn = get_db()
+    c = conn.cursor()
     c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
     existing = c.fetchone()
+    conn.close()
 
     if existing:
         skill_id = existing[0]
-        c.execute("""
-            UPDATE skills SET
-                current_name = ?,
-                current_display_name = ?,
-                current_version = ?,
-                category = ?,
-                source = ?,
-                source_slug = ?,
-                source_url = ?,
-                source_license = ?,
-                local_path = ?,
-                updated_at = ?,
-                current_status = ?,
-                is_differentiated = ?,
-                differentiation_date = ?,
-                pricing_model = ?,
-                skill_type = ?,
-                edition = ?,
-                workflow_state = ?
-            WHERE id = ?
-        """, (
-            name, display_name, version, category, source,
-            source_slug, source_url, 'Proprietary',
-            local_path, now, 'differentiated',
-            1, now, pricing_model, 'md',
-            'pro', 'step2_auto_differentiate',
+        db_module.update_skill_fields(
             skill_id,
-        ))
+            current_name=name,
+            current_display_name=display_name,
+            current_version=version,
+            category=category,
+            source=source,
+            source_slug=source_slug,
+            source_url=source_url,
+            source_license='Proprietary',
+            local_path=local_path,
+            current_status='differentiated',
+            is_differentiated=1,
+            differentiation_date=now,
+            pricing_model=pricing_model,
+            skill_type='md',
+            edition='pro',
+            workflow_state='step2_auto_differentiate',
+        )
     else:
-        c.execute("""
-            INSERT INTO skills (
-                slug, current_name, current_display_name, current_version,
-                category, source, source_slug, source_url, source_license,
-                local_path, created_at, updated_at, current_status,
-                is_differentiated, differentiation_date, pricing_model,
-                skill_type, edition, workflow_state
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            slug, name, display_name, version,
-            category, source, source_slug, source_url, 'Proprietary',
-            local_path, now, now, 'differentiated',
-            1, now, pricing_model,
-            'md', 'pro', 'step2_auto_differentiate',
-        ))
-        skill_id = c.lastrowid
+        skill_id = db_module.insert_skill(
+            slug=slug,
+            name=name,
+            display_name=display_name,
+            version=version,
+            category=category,
+            source=source,
+            source_slug=source_slug,
+            source_url=source_url,
+            source_license='Proprietary',
+            local_path=local_path,
+            current_status='differentiated',
+            is_differentiated=1,
+            differentiation_date=now,
+            pricing_model=pricing_model,
+            skill_type='md',
+            edition='pro',
+            workflow_state='step2_auto_differentiate',
+        )
 
     # 记录版本
-    c.execute("""
-        INSERT INTO versions (skill_id, version, created_at, changelog)
-        VALUES (?, ?, ?, ?)
-    """, (skill_id, version, now, f"Auto-differentiated {slug} v{version} ({pricing_tier})"))
+    db_module.add_version(skill_id, version,
+                          changelog=f"Auto-differentiated {slug} v{version} ({pricing_tier})")
 
     # 记录操作
-    c.execute("""
-        INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (
-        skill_id, 'differentiate', now, 'auto_differentiate',
+    db_module.record_operation(
+        skill_id, 'differentiate',
         f'Auto-differentiated from source={source}, source_slug={source_slug}, tier={pricing_tier}',
-        'differentiated',
-    ))
+        operator='auto_differentiate',
+        after_state='differentiated',
+    )
 
-    conn.commit()
-    conn.close()
     return skill_id
 
 

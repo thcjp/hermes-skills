@@ -28,8 +28,9 @@ from project_config import DATA_DIR
 # === End Phase 1 ===
 # D6修复: 从db.py导入record_upload，消除重复实现
 from db import record_upload as db_record_upload
+import db as db_module
 # categoryIds修复: 复用enterprise_uploader的分类逻辑
-from enterprise_uploader import get_team_category_id, get_platform_category
+from enterprise_uploader import get_team_category_id, get_platform_category, CATEGORY_ICONS, DEFAULT_ICON
 SKILLS_ROOT = PROJECT_ROOT
 SKILL_REGISTRY_DIR = TOOLS_DIR
 
@@ -200,32 +201,15 @@ def update_skill_version(skill_id: int, new_version: str, new_hash: str,
                          changelog: str, file_size: int, line_count: int,
                          changes_summary: str):
     """更新skill版本记录"""
-    conn = get_db()
-    c = conn.cursor()
-    now = datetime.now().isoformat()
-
-    # 更新主表
-    c.execute("""
-        UPDATE skills SET current_version = ?, updated_at = ?, current_status = 'updated'
-        WHERE id = ?
-    """, (new_version, now, skill_id))
-
-    # 插入版本记录
-    c.execute("""
-        INSERT INTO versions (skill_id, version, created_at, changelog, content_hash,
-                             file_size, line_count, changes_summary)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    """, (skill_id, new_version, now, changelog, new_hash, file_size, line_count, changes_summary))
-
-    # 记录操作
-    c.execute("""
-        INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (skill_id, 'auto_update', now, 'update_mechanism',
-          f'Auto-updated to v{new_version}: {changes_summary}', 'updated'))
-
-    conn.commit()
-    conn.close()
+    db_module.update_skill_fields(skill_id, current_version=new_version,
+                                  current_status='updated')
+    db_module.add_version(skill_id, new_version, changelog=changelog,
+                          content_hash=new_hash, file_size=file_size,
+                          line_count=line_count, changes_summary=changes_summary)
+    db_module.record_operation(skill_id, 'auto_update',
+                               f'Auto-updated to v{new_version}: {changes_summary}',
+                               operator='update_mechanism',
+                               after_state='updated')
 
 # D6修复: record_upload已迁移至db.py，此处删除重复实现
 # 统一使用 from db import record_upload as db_record_upload
@@ -535,7 +519,7 @@ def generate_payload(slug: str, version: str = None, is_paid: bool = False,
         'description': metadata.get('description', metadata.get('summary', '')),
         'changelog': changelog or f'版本更新: {version or metadata.get("version", "1.0.0")}',
         'tags': metadata.get('tags', []) if isinstance(metadata.get('tags'), list) else [metadata.get('tags', '')],
-        'iconUrl': None,
+        'iconUrl': CATEGORY_ICONS.get(platform_cat, DEFAULT_ICON),
         'categoryIds': [team_cat_id],  # 填充团队分类数字ID，不再为空
     }
 

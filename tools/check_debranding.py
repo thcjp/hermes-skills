@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 import sqlite3
 from datetime import datetime
+import db
 
 # 禁止的标识模式
 # 注意：不使用\b，因为Python 3的\w匹配Unicode含中文，导致\b在中英文边界处失效
@@ -198,12 +199,11 @@ def generate_report(results, output_file=None):
 
 
 def update_database_with_check_results(results):
-    """将检测结果更新到数据库"""
+    """将检测结果更新到数据库 (R7-1收口: 使用db.record_operation替代裸SQL)"""
     conn = sqlite3.connect(DB_PATH)
     conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
 
-    now = datetime.now().isoformat()
     debranding_pass_count = 0
     debranding_fail_count = 0
 
@@ -225,14 +225,20 @@ def update_database_with_check_results(results):
         else:
             debranding_fail_count += 1
 
-        # Record operation
-        c.execute("""
-            INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, (skill_id, 'debranding_check', now, 'script',
-              f'Found {len(issues)} issues', status))
+        # R7-1收口: 使用db.record_operation替代裸INSERT INTO operations
+        conn.close()
+        db.record_operation(
+            skill_id=skill_id,
+            operation_type='debranding_check',
+            details=f'Found {len(issues)} issues',
+            after_state=status,
+            operator='script',
+        )
+        # 重新打开连接用于下一次循环的查询
+        conn = sqlite3.connect(DB_PATH)
+        conn.execute("PRAGMA foreign_keys = ON")
+        c = conn.cursor()
 
-    conn.commit()
     conn.close()
 
     print(f"\nDatabase updated:")

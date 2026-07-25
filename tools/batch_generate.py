@@ -25,6 +25,7 @@ sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
 from config import get_db_connection
 from generate_skill import run_generation_pipeline
+import db
 
 
 def query_candidates(limit: int = 100, category: str = None,
@@ -63,7 +64,7 @@ def query_candidates(limit: int = 100, category: str = None,
 
 
 def update_workflow_state(slug: str, step_name: str, step_number: int):
-    """更新workflow_states表"""
+    """更新workflow_states表 (R7-1收口: 使用db.py业务函数)"""
     conn = get_db_connection()
     c = conn.cursor()
     c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
@@ -72,13 +73,10 @@ def update_workflow_state(slug: str, step_name: str, step_number: int):
         conn.close()
         return
     skill_id = row['id']
-    c.execute("""
-        INSERT OR REPLACE INTO workflow_states (skill_id, step_number, step_name, status, completed_at)
-        VALUES (?, ?, ?, 'completed', ?)
-    """, (skill_id, step_number, step_name, datetime.now().isoformat()))
-    c.execute("UPDATE skills SET workflow_state = ? WHERE id = ?", (step_name, skill_id))
-    conn.commit()
     conn.close()
+    # 使用db.py业务函数替代裸SQL
+    db.update_workflow_state(skill_id, step_number, step_name, 'completed')
+    db.update_skill_fields(skill_id, workflow_state=step_name)
 
 
 def run_batch(candidates: list, batch_size: int = 20) -> dict:

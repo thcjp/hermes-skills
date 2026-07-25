@@ -1088,6 +1088,31 @@ def generate_direct(slug: str, original_content: str) -> str:
     if not re.match(VERSION_PATTERN, str(version)):
         version = '1.0.0'
 
+    # 品牌词和内部系统词清理函数(用于frontmatter字段)
+    # 注意: 不使用\b, 因为Python3的\w匹配Unicode中文, 导致\b在中英文边界失效
+    # 改用ASCII-only lookarounds, 与check_debranding.py一致
+    _brand_words_fm = [
+        'openclaw', 'clawhub', 'clawsec', 'clawdbot', 'clawdhub',
+        'fishclaw', 'narrato', 'dailyhot', 'novel_bridge',
+        'totalreclaw', 'kyaukyuai', 'clawhut', 'clawhob', 'clawhvb',
+    ]
+    _internal_words_fm = [
+        ('PostgreSQL', '关系型数据库'),
+        ('MCP', '协议'),
+        ('tenant', '租户'),
+        ('xianyu', '二手平台'),
+    ]
+
+    def _clean_fm_text(text: str) -> str:
+        """清理frontmatter字段中的品牌词和内部系统词"""
+        if not text:
+            return text
+        for word in _brand_words_fm:
+            text = re.sub(rf'(?i)(?<![A-Za-z0-9_]){word}(?![A-Za-z0-9_])', 'SkillHub', text)
+        for old_word, new_word in _internal_words_fm:
+            text = re.sub(rf'(?i)(?<![A-Za-z0-9_]){old_word}(?![A-Za-z0-9_])', new_word, text)
+        return text
+
     # summary: 使用原始值, 或从description截取, 确保<=100字符
     summary = fm.get('summary', '')
     if not summary:
@@ -1095,6 +1120,8 @@ def generate_direct(slug: str, original_content: str) -> str:
         summary = desc[:MAX_SUMMARY_LEN] if desc else f"{display_name} skill"
     if len(summary) > MAX_SUMMARY_LEN:
         summary = summary[:MAX_SUMMARY_LEN]
+    # 清理品牌词
+    summary = _clean_fm_text(summary)
 
     # description: 使用原始值, 确保150-280字符
     description = str(fm.get('description', ''))
@@ -1115,10 +1142,27 @@ def generate_direct(slug: str, original_content: str) -> str:
             else:
                 description = f"{summary}。提供专业的能力支持,适用于多种工作场景。"
         else:
-            description = f"{summary}。提供专业的能力支持,适用于多种工作场景。"
-        if len(description) > MAX_DESCRIPTION_LEN:
-            description = description[:MAX_DESCRIPTION_LEN]
-    elif len(description) > MAX_DESCRIPTION_LEN:
+            # 从body第一段文字提取
+            body_first_para = ''
+            for line in body.split('\n'):
+                line = line.strip()
+                if line and not line.startswith('#') and not line.startswith('---') and not line.startswith('|'):
+                    body_first_para = line[:100]
+                    break
+            if body_first_para:
+                description = f"{summary}。{body_first_para}。适用于多种工作场景,提供专业的能力支持。"
+            else:
+                description = f"{summary}。提供专业的能力支持,适用于多种工作场景,支持自动化操作和智能化处理。"
+        # 如果仍然太短,添加更多padding
+        if len(description) < MIN_DESCRIPTION_LEN:
+            description = description.rstrip('。') + '。支持多种输入格式,输出结构化结果,适用于独立开发者与一人公司效率提升。'
+    # 最终清理: 无论description是原始值还是从body重建,都必须清理品牌词和内部系统词
+    # 根因修复: 之前仅在原始description上清理,但body重建后的description包含未清理的body文本
+    description = _clean_fm_text(description)
+    # 清理后可能变短,补充padding
+    if len(description) < MIN_DESCRIPTION_LEN:
+        description = description.rstrip('。') + '。支持多种输入格式,输出结构化结果,适用于独立开发者与一人公司效率提升。'
+    if len(description) > MAX_DESCRIPTION_LEN:
         description = description[:MAX_DESCRIPTION_LEN]
 
     # license: 使用原始值, 或默认MIT
@@ -1177,13 +1221,14 @@ def generate_direct(slug: str, original_content: str) -> str:
         cleaned_body = re.sub(pattern, '', cleaned_body)
 
     # 2e: 品牌烙印词清除 (与generate_from_template Step 5.7一致)
+    # 注意: 不使用\b, 改用ASCII-only lookarounds, 与check_debranding.py一致
     brand_words = [
-        'openclaw', 'clawhub', 'clawsec', 'clawdbot',
+        'openclaw', 'clawhub', 'clawsec', 'clawdbot', 'clawdhub',
         'fishclaw', 'narrato', 'dailyhot', 'novel_bridge',
-        'totalreclaw', 'kyaukyuai',
+        'totalreclaw', 'kyaukyuai', 'clawhut', 'clawhob', 'clawhvb',
     ]
     for word in brand_words:
-        cleaned_body = re.sub(rf'(?i)\b{word}\b', 'SkillHub', cleaned_body)
+        cleaned_body = re.sub(rf'(?i)(?<![A-Za-z0-9_]){word}(?![A-Za-z0-9_])', 'SkillHub', cleaned_body)
 
     # 2f: 内部系统词清除 (与generate_from_template Step 5.7.2一致)
     internal_system_words = [

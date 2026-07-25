@@ -38,6 +38,8 @@ from datetime import datetime
 from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple, Set
 
+import db as db_module
+
 # DB_PATH imported from config
 REPORT_PATH = DATA_DIR / "reports" / "governance-report.json"
 
@@ -341,61 +343,39 @@ def execute_merge_pairs(dry_run: bool = True) -> Dict[str, Any]:
         result['details'] = plans[:20]  # 预览前20个
         return result
 
-    conn = get_db()
-    c = conn.cursor()
-    now = datetime.now().isoformat()
-
     for plan in plans:
         try:
             # 1. 更新pro记录为新slug (付费版)
-            c.execute("""
-                UPDATE skills SET 
-                    slug = ?,
-                    edition = 'paid',
-                    pricing_model = ?,
-                    current_display_name = ?,
-                    parent_slug = NULL,
-                    updated_at = ?
-                WHERE id = ?
-            """, (
-                plan['paid_slug'],
-                plan['paid_pricing_model'],
-                plan['paid_display_name'],
-                now,
-                plan['old_pro_id']
-            ))
+            db_module.update_skill_fields(
+                plan['old_pro_id'],
+                slug=plan['paid_slug'],
+                edition='paid',
+                pricing_model=plan['paid_pricing_model'],
+                current_display_name=plan['paid_display_name'],
+                parent_slug=None,
+            )
 
             # 2. 更新free记录为新slug (免费版)，设置parent_slug
-            c.execute("""
-                UPDATE skills SET 
-                    slug = ?,
-                    edition = 'free',
-                    pricing_model = 'free',
-                    current_display_name = ?,
-                    parent_slug = ?,
-                    updated_at = ?
-                WHERE id = ?
-            """, (
-                plan['free_slug'],
-                plan['free_display_name'],
-                plan['paid_slug'],
-                now,
-                plan['old_free_id']
-            ))
+            db_module.update_skill_fields(
+                plan['old_free_id'],
+                slug=plan['free_slug'],
+                edition='free',
+                pricing_model='free',
+                current_display_name=plan['free_display_name'],
+                parent_slug=plan['paid_slug'],
+            )
 
             # 3. 记录操作日志
             for old_id, old_slug, new_slug in [
                 (plan['old_pro_id'], plan['old_pro_slug'], plan['paid_slug']),
                 (plan['old_free_id'], plan['old_free_slug'], plan['free_slug']),
             ]:
-                c.execute("""
-                    INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-                    VALUES (?, ?, ?, ?, ?, ?)
-                """, (
-                    old_id, 'naming_governance', now, 'clean_naming.py',
+                db_module.record_operation(
+                    old_id, 'naming_governance',
                     f'Renamed slug: {old_slug} → {new_slug}',
-                    'renamed'
-                ))
+                    operator='clean_naming.py',
+                    after_state='renamed',
+                )
 
             result['executed'] += 1
         except Exception as e:
@@ -405,8 +385,6 @@ def execute_merge_pairs(dry_run: bool = True) -> Dict[str, Any]:
             })
             result['skipped'] += 1
 
-    conn.commit()
-    conn.close()
     return result
 
 def execute_fix_fields(dry_run: bool = True) -> Dict[str, Any]:
@@ -424,23 +402,14 @@ def execute_fix_fields(dry_run: bool = True) -> Dict[str, Any]:
     if dry_run:
         return result
 
-    conn = get_db()
-    c = conn.cursor()
-    now = datetime.now().isoformat()
-
     for item in inconsistencies:
-        c.execute("""
-            UPDATE skills SET 
-                pricing_model = ?,
-                edition = ?,
-                updated_at = ?
-            WHERE id = ?
-        """, (item['new_pricing_model'], item['new_edition'], now, item['id']))
-
+        db_module.update_skill_fields(
+            item['id'],
+            pricing_model=item['new_pricing_model'],
+            edition=item['new_edition'],
+        )
         result['executed'] += 1
 
-    conn.commit()
-    conn.close()
     return result
 
 def execute_fix_category(dry_run: bool = True) -> Dict[str, Any]:
@@ -458,18 +427,10 @@ def execute_fix_category(dry_run: bool = True) -> Dict[str, Any]:
     if dry_run:
         return result
 
-    conn = get_db()
-    c = conn.cursor()
-    now = datetime.now().isoformat()
-
     for item in polluted:
-        c.execute("""
-            UPDATE skills SET category = ?, updated_at = ? WHERE id = ?
-        """, (item['new_category'], now, item['id']))
+        db_module.update_skill_fields(item['id'], category=item['new_category'])
         result['executed'] += 1
 
-    conn.commit()
-    conn.close()
     return result
 
 # ============================================================

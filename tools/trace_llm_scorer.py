@@ -42,6 +42,7 @@ from config import (
 # A3修复: 从skill_core导入共享解析和规则,消除第三套检查实现
 from skill_core.parser import parse_frontmatter
 from skill_core.rules import EXAGGERATION_WORDS, RESERVED_WORDS
+import db
 
 def get_db():
     conn = sqlite3.connect(DB_PATH)
@@ -374,25 +375,25 @@ def save_trace_score(skill_id, checks, static_scores, llm_result=None):
     differentiation_val = effectiveness_score
     compliance_val = trust_score
     
-    # D5修复: 不再UPDATE-in-place销毁历史，改为标记旧记录is_current=0 + INSERT新记录is_current=1
-    c.execute(
-        f"UPDATE scores SET is_current = 0 WHERE skill_id = ? AND score_type = '{SCORE_TYPE_TRACE_LLM}' AND is_current = 1",
-        (skill_id,)
+    # R7-1收口: 使用db.save_score替代裸SQL，保持is_current历史保护
+    conn.close()  # 关闭前面的连接，save_score内部会自建连接
+    
+    db.save_score(
+        skill_id=skill_id,
+        score_type=SCORE_TYPE_TRACE_LLM,
+        total_score=total,
+        quality=reliability_score,
+        practicality=adaptability_score,
+        simplicity=convention_score,
+        performance=effectiveness_score,
+        debranding=trust_score,
+        differentiation=differentiation_val,
+        compliance=compliance_val,
+        reviewer='trace_llm_scorer_v2',
+        notes=notes,
+        is_pass=is_pass,
+        pass_threshold=TRACE_PASS_THRESHOLD,
     )
-    
-    c.execute(f"""
-        INSERT INTO scores (skill_id, score_type, total_score,
-            quality_score, practicality_score, simplicity_score,
-            performance_score, debranding_score, differentiation_score,
-            compliance_score, cost_score, scored_at, reviewer, notes, is_pass, pass_threshold, is_current)
-        VALUES (?, '{SCORE_TYPE_TRACE_LLM}', ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, 1)
-    """, (skill_id, total, reliability_score, adaptability_score,
-          convention_score, effectiveness_score, trust_score,
-          differentiation_val, compliance_val,
-          now, 'trace_llm_scorer_v2', notes, is_pass, TRACE_PASS_THRESHOLD))
-    
-    conn.commit()
-    conn.close()
     
     return {
         'total': total, 'grade': grade,

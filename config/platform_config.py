@@ -28,7 +28,7 @@ SKILLHUB_STATUSES = {
 # ============ ClawHub 配置 ============
 
 CLAWHUB_CLI_PATH = "npx clawhub"
-CLAWHUB_API_URL = "https://api.clawhub.dev"
+CLAWHUB_API_URL = "https://clawhub.ai/api"  # 修复: api.clawhub.dev DNS无法解析，使用clawhub.ai
 CLAWHUB_DAILY_UPLOAD_LIMIT = 200  # 每24小时上传限制
 CLAWHUB_RATE_LIMIT_HOURS = 24
 CLAWHUB_TOKEN_FILE = PROJECT_ROOT / ".credentials" / "clawhub_token.json"
