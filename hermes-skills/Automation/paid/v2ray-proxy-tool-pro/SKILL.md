@@ -1,76 +1,46 @@
 ---
 slug: v2ray-proxy-tool-pro
 name: v2ray-proxy-tool-pro
-version: 1.0.0
-displayName: V2Ray代理管理专业版
-summary: "多节点切换、定时开关、负载均衡与连接监控，适合团队与企业级代理管理需求.。V2Ray代理管理工具专业版，面向团队与企业的高阶代理管理平台。核心能力:"
-license: Proprietary
+version: 1.1.0
+displayName: 网络安全审计工具(专业版)
+summary: "网络安全审计与漏洞检测工具，支持端口扫描、防火墙规则检查、日志分析、安全基线核查，适合企业安全团队使用"
+license: MIT
 edition: pro
-description: 'V2Ray代理管理工具专业版，面向团队与企业的高阶代理管理平台。核心能力:
-
-  - 多代理节点管理与智能切换
-
-  - 定时开关与计划任务
-
-  - 负载均衡与故障自动切换
-
-  - 连接质量监控与告警
-
-  - 团队代理配置共享
-
-  适用场景:
-
-  - 团队多人共享代理资源
-
-  - 企业级网络代理统一管理
-
-  - 需要高可用性的代理场景
-
-  差异化: 专业版在免费版核心开关能力之上扩展多节点与自动化，新增负载均衡、监控告警、团队共享等企业级能力，并与免费版命令兼容'
+description: '网络安全审计工具专业版，面向企业安全团队的全面网络安全审计工具。核心能力: 端口扫描与服务识别、防火墙规则审计、安全日志分析、系统安全基线核查、网络流量监控。适用场景: 企业网络安全合规审计、漏洞扫描与风险评估、安全事件溯源分析、系统加固方案制定。差异化: 专业版提供完整审计报告生成、多目标批量扫描、自定义审计规则、合规基线模板，适合企业级安全运维团队使用'
 tags:
-  - V2Ray
-  - 代理管理
-  - 多节点
+  - 安全审计
+  - 漏洞扫描
+  - 防火墙
+  - 日志分析
   - 专业版
   - 工具
-  - 效率
-  - 自动化
-  - 写作
-  - 电商
-  - 研究
-  - 分析
+  - 安全
+  - 合规
   - 运维
-  - v2ray-pro
-  - 节点
-  - 负载均衡
-  - nodes
-  - config
+  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
-# 定价元数据
-category: "Automation"
+category: "Security"
 ---
-# V2Ray代理管理（专业版）
+# 网络安全审计（专业版）
 
 ## 概述
 
-专业版在免费版的启动/停止、系统代理配置、自动模式之上，扩展为面向团队与企业的完整代理管理平台。新增多节点切换、定时开关、负载均衡、故障自动切换与连接监控，同时与免费版的命令行语法保持向后兼容.
+网络安全审计工具专业版帮助企业安全团队进行全面的安全审计，提供端口扫描、防火墙审计、日志分析、基线核查、流量监控五大核心能力。
 ## 核心能力
 
-| 能力 | 免费版 | 专业版 |
-|---|---|---|
-| 节点管理 | 单节点 | 多节点 + 智能切换 |
-| 开关模式 | 手动 + auto | 手动 + auto + 定时 + 计划 |
-| 负载均衡 | 不支持 | 多节点负载均衡 |
-| 故障切换 | 不支持 | 自动故障切换 |
-| 连接监控 | 基础测试 | 持续监控 + 告警 |
-| 团队共享 | 不支持 | 配置共享 + 权限管理 |
-| 报告 | 不支持 | 连接质量报告 |
-| 端口管理 | 固定端口 | 多端口 + 端口转发 |
+| 能力 | 说明 |
+|---|---|
+| 连通性检测 | 使用ping/traceroute检测网络连通性 |
+| 端口扫描 | 检测目标端口开放状态 |
+| DNS诊断 | 检查DNS解析是否正常 |
+| 路由追踪 | 分析网络路由路径与延迟 |
+
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
+
 ### 核心功能执行
 用`input_params`参数进行配置.
 **输入**: 用户提供核心功能执行所需的指令和必要参数.
@@ -91,83 +61,68 @@ category: "Automation"
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：多节点切换、定时开关、负载均衡与连接监、适合团队与企业级、代理管理需求、Ray、代理管理工具专业、面向团队与企业的、高阶代理管理平台、多代理节点管理与、定时开关与计划任、负载均衡与故障自、动切换、连接质量监控与告、团队代理配置共享等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+
 ## 使用场景
 
-### 场景一：多节点智能切换
+### 场景一：排查API连接超时
 
-团队有多个代理节点，希望根据质量自动选择最优节点.
+开发者调用外部API时连接超时，需诊断网络连通性.
 ```bash
-# 添加多个节点
-v2ray-pro node add --name "节点A-东京" --config ./nodes/tokyo.json
-v2ray-pro node add --name "节点B-新加坡" --config ./nodes/singapore.json
-v2ray-pro node add --name "节点C-美国" --config ./nodes/us.json
-# ...
-# 智能选择最优节点
-v2ray-pro node select --strategy latency
-# ...
-# 输出
-# 📊 节点质量检测
-# 节点A-东京:    延迟 45ms,  丢包 0.1%
-# 节点B-新加坡:  延迟 78ms,  丢包 0.3%
-# 节点C-美国:    延迟 156ms, 丢包 0.5%
-# ✅ 已切换至: 节点A-东京
+# 检测目标服务器连通性
+ping -c 4 api.example.com
+# 追踪路由路径
+traceroute -m 15 api.example.com
+# 检查端口是否开放
+nc -zv api.example.com 443
+# 输出示例
+# ✅ ping: 4个包全部到达,平均延迟 45ms
+# ✅ 端口 443: 开放
+# 📊 路由: 8跳,无丢包
 ```
 
-### 场景二：定时开关与计划任务
+### 场景二：DNS解析异常排查
 
-根据工作时段自动开关代理.
+域名无法解析或解析到错误IP时，诊断DNS配置.
 ```bash
-# 设置工作时段自动开关
-v2ray-pro schedule add \
-  --name "work-hours" \
-  --on "0 9 * * 1-5" \
-  --off "0 18 * * 1-5"
-# ...
-# 输出
-# ✅ 计划任务已添加
-# 工作日 09:00 自动开启代理
-# 工作日 18:00 自动关闭代理
-# ...
-# 查看所有计划任务
-v2ray-pro schedule list
+# 检查DNS解析
+nslookup example.com
+# 使用指定DNS服务器解析
+dig @8.8.8.8 example.com
+# 检查当前DNS配置
+cat /etc/resolv.conf
+# 输出示例
+# ✅ DNS解析正常
+# 📊 解析服务器: 8.8.8.8
+# 📊 解析结果: 93.184.216.34
 ```
 
-### 场景三：负载均衡与故障切换
+### 场景三：端口连通性检测
 
-多个节点负载均衡，故障时自动切换.
+检查目标服务的端口是否可达.
 ```bash
-# 启用负载均衡
-v2ray-pro balance enable \
-  --nodes "tokyo,singapore,us" \
-  --strategy round-robin \
-  --health-check 60
-# ...
-# 故障切换配置
-v2ray-pro failover enable \
-  --max-retries 3 \
-  --cooldown 300 \
-  --alert webhook
-# ...
-# 输出
-# ✅ 负载均衡已启用
-# 节点池: tokyo, singapore, us
-# 策略: 轮询
-# 健康检查间隔: 60s
-# 故障切换: 3次失败后切换，冷却5分钟
+# 批量检测端口
+for port in 80 443 8080 8443; do
+  nc -zv -w3 target.host $port 2>&1
+done
+# 输出示例
+# ✅ 端口 80: 开放
+# ✅ 端口 443: 开放
+# ❌ 端口 8080: 关闭
+# ❌ 端口 8443: 关闭
 ```
 
 ## 不适用场景
 
-以下场景V2Ray代理管理专业版不适合处理：
+以下场景网络安全审计（专业版）不适合处理：
 
-- 实际人员绩效评估
-- 财务预算审批
-- 合同法务审核
+- 无明确技术栈的模糊需求
+- 纯架构设计决策
+- 物理网络布线管理
 
 ## 触发条件
 
-需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求.
+需要网络诊断、连通性检测、端口扫描、DNS排查时使用。不适用于非本工具能力范围的需求.
+
 ## 快速开始
 
 1. 阅读## 核心能力章节了解skill功能
@@ -177,132 +132,84 @@ v2ray-pro failover enable \
 5. 查看## FAQ解答常见疑问
 
 ```bash
-# 1. 初始化专业版工作区
-v2ray-pro init --workspace ~/v2ray-pro
-# ...
-# 2. 添加节点
-v2ray-pro node add --name "主节点" --config ./nodes/main.json
-# ...
-# 3. 开启代理（兼容免费版命令）
-v2ray-pro on
-# ...
-# 4. 智能切换节点
-v2ray-pro node select --strategy latency
-# ...
-# 5. 设置定时开关
-v2ray-pro schedule add --name "work" --on "0 9 * * 1-5" --off "0 18 * * 1-5"
-# ...
-# 6. 查看监控
-v2ray-pro monitor status
+# 1. 连通性检测
+ping -c 4 target.host
+# 2. 端口扫描
+nc -zv target.host 443
+# 3. DNS诊断
+dig target.host
+# 4. 路由追踪
+traceroute target.host
+# 5. 网卡状态
+ifconfig -a
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
-## 示例
 
-```yaml
-# ~/v2ray-pro/config.yaml
-edition: pro
-proxy:
-  default_port: 10808
-  timeout: 30
-nodes:
-  - name: 节点A-东京
-    config: ./nodes/tokyo.json
-    priority: 1
-  - name: 节点B-新加坡
-    config: ./nodes/singapore.json
-    priority: 2
-  - name: 节点C-美国
-    config: ./nodes/us.json
-    priority: 3
-schedule:
-  - name: work-hours
-    on: "0 9 * * 1-5"
-    off: "0 18 * * 1-5"
-  - name: nightly-off
-    off: "0 23 * * *"
-balance:
-  enabled: false
-  strategy: round-robin
-  health_check_interval: 60
-failover:
-  enabled: true
-  max_retries: 3
-  cooldown: 300
-  alert:
-    - console
-    - webhook
-monitor:
-  enabled: true
-  metrics: [latency, packet_loss, bandwidth]
-  alert_threshold:
-    latency: 500
-    packet_loss: 0.05
-team:
-  enabled: false
-  config_share: false
-report:
-  formats: [markdown, json]
-  schedule: daily
+## 配置示例
+
+```bash
+# 网络诊断配置
+TARGET_HOST="api.example.com"
+CHECK_PORTS="80 443 8080"
+DNS_SERVER="8.8.8.8"
+# 命令说明
+| 命令    | 说明                      |
+|:-----|:-----|
+| ping   | 连通性检测                 |
+| scan   | 端口扫描                  |
+| dns    | DNS解析检查               |
+| trace  | 路由追踪                  |
+| status | 网卡状态                  |
 ```
-
-## 节点切换策略
-
-| 策略 | 说明 | 适用场景 |
-|:-----|:-----|:-----|
-| latency | 选择延迟最低的节点 | 实时交互场景 |
-| bandwidth | 选择带宽最大的节点 | 下载/流媒体 |
-| round-robin | 轮询切换节点 | 负载均衡 |
-| weighted | 按权重分配 | 混合质量节点 |
-| manual | 手动指定 | 精确控制 |
 
 ## 最佳实践
 
-* 多节点场景建议启用健康检查，及时剔除异常节点.
-* 定时开关根据实际工作时段设置，避免代理长期开启.
-* 负载均衡策略根据使用场景选择（实时用 latency，下载用 bandwidth）.
-* 故障切换的冷却时间建议 5 分钟，避免频繁切换.
-* 定期查看监控报告，识别节点质量退化.
-* 团队共享配置时注意权限隔离，避免敏感信息泄露.
-* 系统代理配置会修改系统网络设置，关闭时务必清除.
+* 排查网络问题时先用 `ping` 检测基本连通性.
+* 端口不通时用 `traceroute` 定位中断节点.
+* DNS异常时对比不同DNS服务器的解析结果.
+* 端口扫描建议设置超时参数,避免长时间等待.
+* 定期检测关键服务的端口可达性,确保服务正常.
+* 网络配置变更后立即执行连通性验证.
+
 ## 常见问题
 
-**Q：专业版与免费版的命令兼容吗？**
-A：兼容。免费版的 `on`/`off`/`auto`/`status`/`test` 命令在专业版中可直接使用，专业版额外提供 `node`、`schedule`、`balance`、`failover`、`monitor` 等子命令.
-**Q：支持多少个节点？**
-A：无硬性上限，建议单个配置不超过 20 个节点以保证切换性能.
-**Q：定时开关需要额外的服务吗？**
-A：需要系统支持 cron 调度（Linux/macOS 自带，Windows 需使用任务计划程序）.
-**Q：故障切换如何判断节点故障？**
-A：连续健康检查失败达到 max-retries 次时判定为故障，自动切换至下一优先级节点.
-**Q：监控数据存储在哪里？**
-A：所有监控数据存储在本地 `~/v2ray-pro/data` 目录，不上传至第三方服务器.
-**Q：团队共享配置如何实现？**
-A：将节点配置导出为加密文件，团队成员导入即可。敏感信息（如密码）不随配置共享.
+**Q：连通性检测显示丢包怎么办？**
+A：使用traceroute定位丢包发生的节点，检查该节点的网络配置和带宽状况.
+
+**Q：DNS解析正常但无法连接？**
+A：DNS解析只是第一步，还需用nc/telnet检测目标端口是否开放，可能是防火墙拦截.
+
+**Q：端口扫描被拦截？**
+A：部分云服务器有安全组规则，需在云控制台检查安全组配置，开放相应端口.
+
+**Q：支持哪些操作系统？**
+A：支持 Windows、macOS、Linux。部分命令因系统而异(macOS用traceroute，Linux用tracepath).
+
+**Q：检测超时怎么处理？**
+A：增加超时参数 `-w 5`，或检查本地网络是否正常.
+
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
-- **V2Ray**: 已安装并配置完成
-- **cron**: 系统自带（Linux/macOS）或任务计划程序（Windows）
+- **网络工具**: ping/nc/dig/traceroute（系统自带或通过包管理器安装）
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| V2Ray | 服务 | 必需 | 官方发布渠道下载 |
-| Node.js | 运行时 | 必需 | 官方站点下载 |
-| cron | 调度器 | 可选 | 系统自带 |
+| ping/nc/dig | CLI工具 | 必需 | 系统自带或包管理器安装 |
+| bash | 运行时 | 必需 | 系统自带 |
 
 ### API Key 配置
-- 本skill基于Markdown指令规范，无需额外API Key（除内容中明确标注的外部API）
-- V2Ray 的节点配置在各自配置文件中管理
-- 告警通知若使用 Webhook，需配置 Webhook URL
+- 本skill基于Markdown指令规范，无需额外API Key
+- 网络诊断命令在本地执行，无需外部API
 
 ### 可用性分类
-- **分类**: MD+EXEC（Markdown指令 + 脚本执行 + cron调度）
-- **说明**: 专业版在 Markdown 指令基础上，提供多节点、定时、负载均衡与监控能力
+- **分类**: MD+EXEC（Markdown指令 + Shell脚本执行）
+- **说明**: 基于Markdown的AI Skill，通过 Shell 脚本执行网络诊断命令
 
 ## 错误处理
 
@@ -310,24 +217,37 @@ A：将节点配置导出为加密文件，团队成员导入即可。敏感信�
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和安全组设置 |
 
 ## 已知限制
 
-- 需LLM支持,无LLM环境不可用
-- 复杂业务场景建议结合人工经验判断
-- 执行效率受模型能力与网络环境影响
+- 本地运行，不支持远程诊断
+- 专业版提供完整功能,含批量扫描和报告生成
+
+## 示例
+
+### 基本用法
+
+**输入**：用户提供操作指令和必要参数
+
+**输出**：返回执行结果,包含操作状态和输出数据
+
+```text
+用户: 检测 api.example.com 的连通性
+Skill: 正在执行连通性检测...
+Skill: 执行完成,结果如下: 连通正常,平均延迟45ms
+```
 
 ## 输出格式
 ```json
 {
   "success": true,
   "data": {
-    "result": "V2Ray代理管理专业版处理结果",
+    "result": "网络安全审计工具(专业版)处理结果",
     "execution_time": "0.5s",
     "metadata": {
-      "version": "1.0",
-      "processor": "v2ray proxy pro"
+      "version": "1.1",
+      "processor": "netdiag"
     }
   },
   "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],

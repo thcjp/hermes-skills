@@ -1,0 +1,153 @@
+{
+  "slug": "admapix",
+  "started_at": "2026-07-25T17:31:30.187060",
+  "template_used": "direct_enhance",
+  "l1_result": {
+    "status": "PASS",
+    "passed": true,
+    "score": "13/13",
+    "details": {
+      "skill": "admapix",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\admapix\\SKILL.md",
+      "overall_passed": true,
+      "total_checks": 13,
+      "passed_checks": 13,
+      "failed_checks": 0,
+      "checks": [
+        {
+          "name": "去标识化",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "无标识残留"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "slug==name==folder一致性",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "slug=name=folder='admapix'"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "slug为kebab-case",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "slug='admapix'"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "行数≤500",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "当前242行 (上限500)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "frontmatter 8必需字段",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "8字段齐全: ['slug', 'name', 'version', 'displayName', 'summary', 'license', 'description', 'tools']"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "displayName≤20字符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "当前7字符: 'AdMapix' (上限20)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "summary≤100字符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "当前30字符 (上限100)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "description长度",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "当前151字符 (建议150-280)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "version格式",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "version='1.0.30'"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "tools为YAML数组",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "数组格式: ['read']"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "frontmatter无XML尖括号",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "无尖括号"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "无占位符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "无占位符"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "无夸大词",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "无夸大词"
+          ],
+          "issue_count": 0
+        }
+      ],
+      "checked_at": "2026-07-25T17:31:30.770498"
+    },
+    "duration_sec": 0.57
+  },
+  "dep_verify_result": {
+    "status": "SKIPPED"
+  },
+  "l2_result": {
+    "status": "SKIPPED"
+  },
+  "overall_passed": true,
+  "output_path": "d:\\skills\\packaged-skills\\skillhub\\admapix\\SKILL.md",
+  "errors": [],
+  "llm_generated": false,
+  "template_filled": false,
+  "all_placeholders_filled": true,
+  "completed_at": "2026-07-25T17:31:30.784745",
+  "total_duration_sec": 0.6
+}

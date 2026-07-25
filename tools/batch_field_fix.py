@@ -2,17 +2,25 @@
 """
 SkillHub批量字段修复脚本
 ========================
-因PUT API不可用，需要DELETE+重新上传来更新tags/summary_zh等字段。
+因PUT API不可用，需要DELETE+重新上传来更新tags/summary_zh/categoryIds等字段。
 本脚本支持：
 1. 批量审核通过待审版本（通过浏览器JS）
-2. 批量删除+重新上传skill（补全tags/summary_zh/category等字段）
+2. 批量删除+重新上传skill（补全categoryIds/tags/summary_zh/iconUrl等字段）
 3. 重新上传被删除的skill
+4. 全量DELETE+重传所有skill（带断点续传）
+5. org_only skill对外发布
+6. 企业认证状态检查
 
 使用方式:
-    python batch_field_fix.py check          # 检查哪些skill需要修复
-    python batch_field_fix.py reupload <slug> # 重新上传单个skill
-    python batch_field_fix.py batch <n>       # 批量修复前n个skill
-    python batch_field_fix.py gen-approve-js  # 生成批量审核通过JS脚本
+    python batch_field_fix.py check              # 检查哪些skill需要修复
+    python batch_field_fix.py check-auth         # 检查企业认证状态
+    python batch_field_fix.py reupload <slug>    # 重新上传单个skill
+    python batch_field_fix.py batch <n>          # 批量修复前n个skill
+    python batch_field_fix.py reupload-all-batch # 全量DELETE+重传所有skill
+    python batch_field_fix.py reupload-deleted   # 重新上传被删除的skill
+    python batch_field_fix.py reupload-rejected  # 重新上传38个被拒绝的skill
+    python batch_field_fix.py publish-org-only   # 4个org_only skill对外发布
+    python batch_field_fix.py gen-approve-js     # 生成批量审核通过JS脚本
 """
 
 import json
@@ -37,7 +45,7 @@ from enterprise_uploader import (
     load_cookies, ORG_ID, API_BASE, ORG_SKILLS_API
 )
 
-# 被拒绝的skill slug列表（从通知中提取）
+# 被拒绝的skill slug列表（38个，从通知中提取）
 REJECTED_SLUGS = [
     'ai-writing-style-cloner', 'api-design-architect', 'auth-security-architect',
     'azure-cloud-automator', 'brand-identity-creator', 'c-suite-advisor',
@@ -45,11 +53,22 @@ REJECTED_SLUGS = [
     'code-review-sentinel', 'competitive-ad-spy', 'compliance-manager',
     'content-cms-architect', 'content-refiner', 'copywriting-master',
     'csv-insight-miner', 'drama-hit-producer', 'ebook-factory',
-    'ecommerce-pricing-strategist', 'geo-rank-architect'
+    'ecommerce-pricing-strategist', 'geo-rank-architect', 'hook-retention-master',
+    'intel-sentinel', 'novel-autopilot', 'poetry-craftsman', 'requirement-explorer-pro',
+    'sales-copy-writer', 'seo-doctor', 'seo-rank-monopolizer', 'stealth-browser-assistant',
+    'title-hook-factory', 'topic-hunter', 'viral-decoder', 'viral-prophet',
+    'ai-artist-workstation-pro', 'lead-research-hunter', 'duckdb-analytics-engine',
+    'docx-document-master', 'debug-doctor'
 ]
 
 # 被删除需要重新上传的skill
 DELETED_SLUGS = ['memory-orchestrator-sk']
+
+# org_only需要对外发布的skill
+ORG_ONLY_SLUGS = [
+    'ai-artist-workstation-pro', 'clickhouse-olap-expert',
+    'requirement-explorer-pro', 'lead-research-hunter'
+]
 
 
 def check_skills_needing_fix():
@@ -233,7 +252,7 @@ def batch_reupload(slugs: list, delay: float = 2.0):
 
 def generate_approval_js():
     """生成批量审核通过的浏览器JS脚本"""
-    js_code = """// SkillHub 批量审核通过脚本
+    js_code = """// SkillHub 批量审核通过脚本 v2
 // 在 https://www.skillhub.cn/admin/skill-reviews 页面控制台执行
 (async function() {
   const API_HOST = "https://api.skillhub.cn";
@@ -242,48 +261,57 @@ def generate_approval_js():
   let approved = 0;
   let failed = 0;
   let totalProcessed = 0;
-  
-  console.log("=== SkillHub 批量审核通过 ===");
-  
-  // 获取审核列表总数
+
+  // localStorage进度持久化
+  const STORAGE_KEY = 'skillhub_approve_progress';
+  let progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  let startPage = progress.lastPage || 1;
+
+  console.log("=== SkillHub 批量审核通过 v2 ===");
+  console.log(`从第 ${startPage} 页开始（已处理 ${progress.totalProcessed || 0} 个）`);
+
+  function saveProgress(page, processed) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      lastPage: page,
+      totalProcessed: processed
+    }));
+  }
+
   const allButtons = document.querySelectorAll('button');
   const approveButtons = Array.from(allButtons).filter(b => b.textContent.trim() === '审核通过');
   const totalPages = document.querySelectorAll('[class*="page"], [class*="Page"]');
-  
+
   console.log(`当前页面有 ${approveButtons.length} 个审核按钮`);
-  console.log(`总页数信息:`, totalPages.length);
-  
-  // 逐个点击审核通过
+
   for (let i = 0; i < approveButtons.length; i++) {
     try {
       approveButtons[i].click();
       approved++;
       totalProcessed++;
       console.log(`  [${totalProcessed}] 审核通过已点击`);
-      
-      // 等待页面响应
+
       await new Promise(r => setTimeout(r, 500));
-      
-      // 重新获取按钮（DOM可能已更新）
+
       const newButtons = document.querySelectorAll('button');
       const newApproveButtons = Array.from(newButtons).filter(b => b.textContent.trim() === '审核通过');
       if (newApproveButtons.length > 0 && i < approveButtons.length - 1) {
         approveButtons.length = 0;
         approveButtons.push(...newApproveButtons);
-        i = -1; // 重置索引
+        i = -1;
       }
     } catch(e) {
       failed++;
       console.error(`  审核失败: ${e.message}`);
     }
-    
-    // 每5个等待1秒
+
     if (totalProcessed % BATCH_SIZE === 0) {
       console.log(`已处理 ${totalProcessed} 个, 成功 ${approved}, 失败 ${failed}`);
+      saveProgress(startPage, totalProcessed);
       await new Promise(r => setTimeout(r, 1000));
     }
   }
-  
+
+  saveProgress(startPage + 1, totalProcessed);
   console.log(`\\n=== 完成 ===`);
   console.log(`总计处理: ${totalProcessed}`);
   console.log(`成功: ${approved}`);
@@ -291,23 +319,140 @@ def generate_approval_js():
   console.log(`\\n请刷新页面继续处理下一页`);
 })();
 """
-    
-    js_file = REPORT_DIR / "batch_approve_reviews.js"
+
+    js_file = REPORT_DIR / "batch_approve_reviews_v2.js"
     with open(js_file, 'w', encoding='utf-8') as f:
         f.write(js_code)
     print(f"批量审核JS脚本已生成: {js_file}")
     print("请在 https://www.skillhub.cn/admin/skill-reviews 页面控制台执行")
 
 
+def check_auth():
+    """检查企业认证状态"""
+    cookies = load_cookies()
+    if not cookies:
+        print("错误：无认证cookie，请先设置 ~/.skillhub_cookies.txt")
+        print("  用户需在浏览器登录企业团队账号，导出cookie到文件")
+        return False
+
+    url = f"{API_BASE}/orgs/{ORG_ID}/admin/skills?page=1&pageSize=1"
+    req = Request(url, headers={
+        'Cookie': cookies,
+        'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0'
+    })
+    try:
+        with urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            total = data.get('total', 0)
+            print(f"✅ 认证成功! Skill总数: {total}")
+            return True
+    except HTTPError as e:
+        body = e.read().decode('utf-8', errors='replace')
+        if 'enterprise authentication required' in body.lower():
+            print("❌ 认证失败: 当前cookie为个人账号，需要企业团队账号cookie")
+            print("  请在浏览器登录企业团队账号，导出cookie到 ~/.skillhub_cookies.txt")
+        else:
+            print(f"❌ 认证失败: HTTP {e.code} - {body[:200]}")
+        return False
+    except Exception as e:
+        print(f"❌ 认证失败: {e}")
+        return False
+
+
+def publish_org_only():
+    """将org_only skill切换为public对外发布"""
+    cookies = load_cookies()
+    if not cookies:
+        print("错误：无认证cookie")
+        return
+
+    print(f"准备发布 {len(ORG_ONLY_SLUGS)} 个org_only skill为public...")
+    for slug in ORG_ONLY_SLUGS:
+        url = f"{API_BASE}/orgs/{ORG_ID}/admin/skills/{slug}/visibility"
+        payload = json.dumps({'visibility': 'public'}).encode('utf-8')
+        req = Request(url, data=payload, method='PATCH', headers={
+            'Cookie': cookies,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'User-Agent': 'Mozilla/5.0'
+        })
+        try:
+            with urlopen(req, timeout=15) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+                print(f"  ✅ {slug} 已发布为public")
+        except Exception as e:
+            print(f"  ❌ {slug} 发布失败: {e}")
+        time.sleep(1)
+
+
+def scan_all_differentiated_slugs():
+    """扫描differentiated-skills目录获取所有skill slug"""
+    diff_dir = Path(__file__).parent.parent / "differentiated-skills"
+    all_slugs = []
+
+    if diff_dir.exists():
+        for cat_dir in diff_dir.iterdir():
+            if cat_dir.is_dir():
+                for skill_dir in cat_dir.iterdir():
+                    if skill_dir.is_dir() and (skill_dir / "SKILL.md").exists():
+                        content = (skill_dir / "SKILL.md").read_text(encoding='utf-8')
+                        if content.startswith('\ufeff'):
+                            content = content[1:]
+                        if content.startswith('---'):
+                            parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+                            if len(parts) >= 3:
+                                slug_match = re.search(r'^slug:\s*["\']?(.+?)["\']?\s*$', parts[1], re.MULTILINE)
+                                if slug_match:
+                                    all_slugs.append(slug_match.group(1).strip())
+    return all_slugs
+
+
+def reupload_all_batch():
+    """全量DELETE+重传所有differentiated-skills下的skill（带断点续传）"""
+    if not check_auth():
+        return
+
+    all_slugs = scan_all_differentiated_slugs()
+    print(f"\n扫描到 {len(all_slugs)} 个skill待重传")
+
+    # 断点续传：从已有报告中读取已完成的slug
+    completed = set()
+    for report_file in REPORT_DIR.glob("batch_reupload_*.json"):
+        try:
+            data = json.loads(report_file.read_text(encoding='utf-8'))
+            completed.update(data.get('success', []))
+        except Exception:
+            pass
+
+    if completed:
+        print(f"断点续传: 已完成 {len(completed)} 个，剩余 {len(all_slugs) - len(completed)} 个")
+        all_slugs = [s for s in all_slugs if s not in completed]
+
+    batch_reupload(all_slugs, delay=2.0)
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
+        print("\n可用命令:")
+        print("  check              检查哪些skill需要修复")
+        print("  check-auth         检查企业认证状态")
+        print("  reupload <slug>    重新上传单个skill")
+        print("  batch <n>          批量修复前n个skill")
+        print("  reupload-all-batch 全量DELETE+重传所有skill(带断点续传)")
+        print("  reupload-deleted   重新上传被删除的skill")
+        print("  reupload-rejected  重新上传38个被拒绝的skill")
+        print("  publish-org-only   4个org_only skill对外发布")
+        print("  gen-approve-js     生成批量审核通过JS脚本")
         return
-    
+
     cmd = sys.argv[1]
-    
+
     if cmd == 'check':
         check_skills_needing_fix()
+    elif cmd == 'check-auth':
+        check_auth()
     elif cmd == 'reupload':
         if len(sys.argv) < 3:
             print("用法: python batch_field_fix.py reupload <slug>")
@@ -315,17 +460,18 @@ def main():
         reupload_skill(sys.argv[2])
     elif cmd == 'batch':
         n = int(sys.argv[2]) if len(sys.argv) > 2 else 10
-        # 先检查需要修复的skill
         needs_fix = check_skills_needing_fix()
         if needs_fix:
             slugs = [s['slug'] for s in needs_fix[:n]]
             batch_reupload(slugs)
+    elif cmd == 'reupload-all-batch':
+        reupload_all_batch()
     elif cmd == 'reupload-deleted':
-        # 重新上传被删除的skill
         batch_reupload(DELETED_SLUGS)
     elif cmd == 'reupload-rejected':
-        # 重新上传被拒绝的skill
         batch_reupload(REJECTED_SLUGS)
+    elif cmd == 'publish-org-only':
+        publish_org_only()
     elif cmd == 'gen-approve-js':
         generate_approval_js()
     else:

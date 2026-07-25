@@ -6,14 +6,16 @@
 所有脚本从此模块导入平台配置，消除散乱定义。
 """
 
+import os
 from project_config import PROJECT_ROOT
 
 # ============ SkillHub 配置 ============
 
-SKILLHUB_CLI_PATH = "skillhub"  # CLI命令名
+# SkillHub CLI 实际是 Python 脚本 (非 npm 包)，Windows 兼容路径
+SKILLHUB_CLI_PATH = os.path.expanduser(r"~\.skillhub\skills_store_cli.py")
 SKILLHUB_API_URL = "https://api.skillhub.ai"
 SKILLHUB_WAF_CHAR_LIMIT = 5800  # WAF请求体字符限制
-SKILLHUB_PUBLISH_COMMAND = "skillhub publish"  # 发布命令模板
+SKILLHUB_PUBLISH_COMMAND = f'python "{SKILLHUB_CLI_PATH}" publish'  # 发布命令模板
 SKILLHUB_CREDENTIALS_FILE = PROJECT_ROOT / ".credentials" / "skillhub.json"
 SKILLHUB_MAX_RETRIES = 3
 

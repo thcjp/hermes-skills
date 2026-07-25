@@ -37,6 +37,22 @@ ORG_SKILLS_API = f"{API_BASE}/orgs/{ORG_ID}/skills"
 # ============ 分类映射 ============
 CATEGORY_MAP_FILE = Path(__file__).parent.parent / "data" / "category_mapping.json"
 
+# ============ 团队分类ID映射（API要求的categoryIds字段） ============
+# 从 category_mapping.json 的 team_categories 提取
+# API要求 categoryIds 为数字ID数组，如 [11039]
+TEAM_CATEGORY_IDS = {
+    "通用办公": 11039,
+    "研发工具": 11040,
+    "系统运维": 11041,
+    "质量测试": 11042,
+    "需求设计": 11043,
+    "信息检索": 11044,
+    "项目管理": 11045,
+    "数据分析": 11046,
+    "安全合规": 11047,
+    "其他": 11048,
+}
+
 # ============ 分类图标配置 ============
 # 12个平台分类的图标URL映射
 # 使用腾讯云COS公共资源URL + SVG data URI双重保障
@@ -130,6 +146,26 @@ def get_platform_category(slug: str, fm: dict, body: str) -> str:
     
     # 4. 默认分类
     return 'office-efficiency'
+
+def get_team_category_id(platform_category: str) -> int:
+    """从平台分类键获取团队分类数字ID
+    
+    映射链: platform_category(字符串) → platform_to_team(中文名) → TEAM_CATEGORY_IDS(数字ID)
+    例: "office-efficiency" → "通用办公" → 11039
+    
+    Args:
+        platform_category: 平台分类键，如 "office-efficiency"
+    
+    Returns:
+        团队分类数字ID，如 11039。未知分类返回 11048（其他）
+    """
+    global _CATEGORY_MAP_CACHE
+    if _CATEGORY_MAP_CACHE is None:
+        _CATEGORY_MAP_CACHE = _load_category_map()
+    
+    platform_to_team = _CATEGORY_MAP_CACHE.get('platform_to_team', {})
+    team_name = platform_to_team.get(platform_category, '其他')
+    return TEAM_CATEGORY_IDS.get(team_name, 11048)
 
 def get_subcategories(platform_category: str, fm: dict, body: str) -> list:
     """根据平台分类获取子分类列表"""
@@ -395,6 +431,9 @@ def upload_skill(slug: str, dry_run: bool = False) -> dict:
     if license_val and 'MIT' in license_val.upper() and license_val != 'MIT':
         license_val = 'MIT'
     
+    # 获取团队分类数字ID（API必需字段）
+    team_category_id = get_team_category_id(platform_category)
+    
     payload = {
         'slug': fm.get('slug', slug),
         'name': fm.get('name', slug),
@@ -406,7 +445,8 @@ def upload_skill(slug: str, dry_run: bool = False) -> dict:
         'license': license_val,
         'homepage': fm.get('homepage', ''),
         'tags': tags_list,
-        'category': platform_category,
+        'categoryIds': [team_category_id],  # API必需: 团队分类数字ID数组
+        'category': platform_category,       # 保留作为备份，不影响功能
         'iconUrl': CATEGORY_ICONS.get(platform_category, DEFAULT_ICON),
         'subCategories': subcategories,
         'changelog': changelog,

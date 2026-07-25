@@ -116,8 +116,11 @@ def publish_to_skillhub(slug, dry_run=False):
     if dry_run:
         return {"success": True, "dry_run": True, "command": f"skillhub publish {skill_dir}"}
 
-    # 执行上传 (使用 npx skillhub 确保 CLI 可用)
-    cmd = f'npx skillhub publish "{skill_dir}" --changelog "Automated publish"'
+    # 执行上传 (使用 Python CLI 直调，Windows 兼容)
+    # SkillHub CLI 实际是 Python 脚本: ~/.skillhub/skills_store_cli.py
+    # npx skillhub 是 npm 包，Windows 上不可用
+    from platform_config import SKILLHUB_CLI_PATH
+    cmd = f'python "{SKILLHUB_CLI_PATH}" publish "{skill_dir}" --changelog "Automated publish"'
     try:
         result = subprocess.run(
             cmd, shell=True, capture_output=True, text=True, timeout=120

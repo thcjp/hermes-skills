@@ -28,6 +28,8 @@ from project_config import DATA_DIR
 # === End Phase 1 ===
 # D6修复: 从db.py导入record_upload，消除重复实现
 from db import record_upload as db_record_upload
+# categoryIds修复: 复用enterprise_uploader的分类逻辑
+from enterprise_uploader import get_team_category_id, get_platform_category
 SKILLS_ROOT = PROJECT_ROOT
 SKILL_REGISTRY_DIR = TOOLS_DIR
 
@@ -73,7 +75,7 @@ GITHUB_REPO_PATTERN = re.compile(r"https?://github\.com/([^/]+)/([^/]+)")
 
 # SkillHub API
 SKILLHUB_API_BASE = "https://api.skillhub.cn"
-SKILLHUB_CLI_PATH = os.path.expanduser("~/.local/bin/skillhub")
+SKILLHUB_CLI_PATH = os.path.expanduser(r"~\.skillhub\skills_store_cli.py")  # Windows 兼容: Python 脚本路径
 SKILLHUB_RUNNER = str(SKILLS_ROOT / "run-skillhub.sh")
 
 # 默认定价
@@ -520,6 +522,10 @@ def generate_payload(slug: str, version: str = None, is_paid: bool = False,
 
     metadata, body = parse_skill_md(skill_md)
 
+    # 从SKILL.md内容推断平台分类，再获取团队分类ID
+    platform_cat = get_platform_category(slug, metadata, body)
+    team_cat_id = get_team_category_id(platform_cat)
+
     # 提取字段
     payload = {
         'slug': slug,
@@ -530,7 +536,7 @@ def generate_payload(slug: str, version: str = None, is_paid: bool = False,
         'changelog': changelog or f'版本更新: {version or metadata.get("version", "1.0.0")}',
         'tags': metadata.get('tags', []) if isinstance(metadata.get('tags'), list) else [metadata.get('tags', '')],
         'iconUrl': None,
-        'categoryIds': [],
+        'categoryIds': [team_cat_id],  # 填充团队分类数字ID，不再为空
     }
 
     # 付费版本添加定价

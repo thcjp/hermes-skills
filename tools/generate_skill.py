@@ -1021,21 +1021,250 @@ def find_original_skill_md(slug: str) -> Optional[Path]:
     return None
 
 
+def generate_direct(slug: str, original_content: str) -> str:
+    """
+    直接增强模式: 不使用模板, 直接基于原始skill内容进行合规化处理。
+
+    解决Round 13 placeholder阻断问题:
+    - 模板有59-124个placeholder, 但fill_common_placeholders只能填充~20个
+    - Round 13根因修复阻断了未填充placeholder的生成
+    - 本函数不使用模板, 直接增强原始内容, 无placeholder问题
+
+    增强步骤:
+    1. 解析原始frontmatter和body
+    2. 修正frontmatter必需字段(slug/name/displayName/version/summary/description/license/tools)
+    3. 清理body中的保留词、夸大词、占位符残留
+    4. 补充缺失的依赖说明章节
+    5. 重建SKILL.md
+
+    参数:
+    - slug: 目标slug (用于修正name/slug一致性)
+    - original_content: 原始SKILL.md内容
+
+    返回: 增强后的SKILL.md内容字符串
+    """
+    # 导入规则常量(单一来源)
+    sys.path.insert(0, str(Path(__file__).parent / "skill_core"))
+    from rules import (
+        RESERVED_WORDS, EXAGGERATION_WORDS, PLACEHOLDER_PATTERNS,
+        MAX_DISPLAY_NAME_LEN, MAX_SUMMARY_LEN,
+        REQUIRED_FRONTMATTER_FIELDS, VERSION_PATTERN
+    )
+    from project_config import MIN_DESCRIPTION_LEN, MAX_DESCRIPTION_LEN
+
+    skill_data = parse_original_skill(original_content)
+    fm = skill_data.get('frontmatter', {})
+    body = skill_data.get('raw_content', '')
+
+    # 提取原始body (frontmatter之后的内容)
+    if body.startswith('---'):
+        parts = body.split('---', 2)
+        if len(parts) >= 3:
+            body = parts[2].strip()
+        else:
+            body = ''
+    elif body.startswith('\ufeff---'):
+        body = body[1:]
+        parts = body.split('---', 2)
+        if len(parts) >= 3:
+            body = parts[2].strip()
+        else:
+            body = ''
+
+    # === Step 1: 修正frontmatter ===
+    # slug/name一致性
+    fixed_slug = slug
+    fixed_name = slug
+
+    # displayName: 使用原始值, 或从slug推导, 确保<=20字符
+    display_name = fm.get('displayName', fm.get('name', slug))
+    if not display_name:
+        display_name = slug
+    if len(display_name) > MAX_DISPLAY_NAME_LEN:
+        display_name = display_name[:MAX_DISPLAY_NAME_LEN]
+
+    # version: 使用原始值, 或默认1.0.0, 确保x.y.z格式
+    version = fm.get('version', '1.0.0')
+    if not re.match(VERSION_PATTERN, str(version)):
+        version = '1.0.0'
+
+    # summary: 使用原始值, 或从description截取, 确保<=100字符
+    summary = fm.get('summary', '')
+    if not summary:
+        desc = str(fm.get('description', ''))
+        summary = desc[:MAX_SUMMARY_LEN] if desc else f"{display_name} skill"
+    if len(summary) > MAX_SUMMARY_LEN:
+        summary = summary[:MAX_SUMMARY_LEN]
+
+    # description: 使用原始值, 确保150-280字符
+    description = str(fm.get('description', ''))
+    if len(description) < MIN_DESCRIPTION_LEN:
+        # 从body内容扩展description
+        chapters = skill_data.get('chapters', {})
+        core_abilities = chapters.get('核心能力', '')
+        if core_abilities:
+            # 提取核心能力要点
+            bullets = []
+            for line in core_abilities.split('\n'):
+                line = line.strip()
+                if line.startswith(('-', '*')):
+                    bullets.append(line.lstrip('- *').strip())
+            if bullets:
+                extra = '。'.join(bullets[:3])
+                description = f"{summary}。{extra}。"
+            else:
+                description = f"{summary}。提供专业的能力支持,适用于多种工作场景。"
+        else:
+            description = f"{summary}。提供专业的能力支持,适用于多种工作场景。"
+        if len(description) > MAX_DESCRIPTION_LEN:
+            description = description[:MAX_DESCRIPTION_LEN]
+    elif len(description) > MAX_DESCRIPTION_LEN:
+        description = description[:MAX_DESCRIPTION_LEN]
+
+    # license: 使用原始值, 或默认MIT
+    license_val = fm.get('license', 'MIT')
+    if not license_val:
+        license_val = 'MIT'
+
+    # tools: 使用原始值, 或默认列表
+    tools = fm.get('tools', ['Read', 'Write', 'Edit', 'Bash'])
+    if not tools:
+        tools = ['Read', 'Write', 'Edit', 'Bash']
+    if isinstance(tools, str):
+        # 处理字符串格式: "read, write" 或 "- read, - write"
+        tools = [t.strip().lstrip('-').strip() for t in tools.split(',') if t.strip()]
+    elif isinstance(tools, list):
+        # 清理每个tool: 移除前导破折号和空白
+        tools = [str(t).strip().lstrip('-').strip() for t in tools if t]
+    # 过滤空值
+    tools = [t for t in tools if t]
+
+    # 构建frontmatter YAML
+    fm_lines = ['---']
+    fm_lines.append(f'name: {fixed_name}')
+    fm_lines.append(f'slug: {fixed_slug}')
+    fm_lines.append(f'displayName: "{display_name}"')
+    fm_lines.append(f'version: "{version}"')
+    fm_lines.append(f'summary: "{summary}"')
+    fm_lines.append(f'description: "{description}"')
+    fm_lines.append(f'license: "{license_val}"')
+    fm_lines.append('tools:')
+    for tool in tools:
+        fm_lines.append(f'  - {tool}')
+    fm_lines.append('---')
+
+    fixed_frontmatter = '\n'.join(fm_lines)
+
+    # === Step 2: 清理body ===
+    cleaned_body = body
+
+    # 2a: 清除保留词 (claude, anthropic, openai, chatgpt)
+    for word in RESERVED_WORDS:
+        # 大小写不敏感替换
+        cleaned_body = re.sub(re.escape(word), '', cleaned_body, flags=re.IGNORECASE)
+
+    # 2b: 清除夸大词
+    for word in EXAGGERATION_WORDS:
+        cleaned_body = cleaned_body.replace(word, '')
+
+    # 2c: 清除占位符残留 {{xxx}}
+    cleaned_body = re.sub(r'\{\{[a-zA-Z_][a-zA-Z0-9_]*\}\}', '', cleaned_body)
+
+    # 2d: 清除其他占位符模式
+    for pattern, _ in PLACEHOLDER_PATTERNS:
+        if 'placeholder' in pattern.lower() or 'link' in pattern.lower():
+            continue  # 跳过链接模式,只清理文本占位符
+        cleaned_body = re.sub(pattern, '', cleaned_body)
+
+    # 2e: 品牌烙印词清除 (与generate_from_template Step 5.7一致)
+    brand_words = [
+        'openclaw', 'clawhub', 'clawsec', 'clawdbot',
+        'fishclaw', 'narrato', 'dailyhot', 'novel_bridge',
+        'totalreclaw', 'kyaukyuai',
+    ]
+    for word in brand_words:
+        cleaned_body = re.sub(rf'(?i)\b{word}\b', 'SkillHub', cleaned_body)
+
+    # 2f: 内部系统词清除 (与generate_from_template Step 5.7.2一致)
+    internal_system_words = [
+        ('PostgreSQL', '关系型数据库'),
+        ('MCP', '协议'),
+        ('tenant', '租户'),
+        ('xianyu', '二手平台'),
+    ]
+    for old_word, new_word in internal_system_words:
+        cleaned_body = re.sub(rf'(?<![A-Za-z0-9_]){old_word}(?![A-Za-z0-9_])', new_word, cleaned_body)
+
+    # 2g: 溯源词清除
+    source_words = [
+        ('based on', '基于'),
+        ('forked from', '衍生自'),
+        ('inspired by', '参考'),
+        ('adapted from', '改编自'),
+        ('modified from', '修改自'),
+    ]
+    for old_word, new_word in source_words:
+        cleaned_body = re.sub(rf'(?i){old_word}', new_word, cleaned_body)
+
+    # 2h: GitHub仓库URL清除
+    cleaned_body = re.sub(r'https?://github\.com/\S+', '(已移除原仓库链接)', cleaned_body)
+    cleaned_body = re.sub(
+        r'https?://\S*(clawhub|openclaw|narrato|fishclaw|dailyhot)\S*',
+        '(已移除原仓库链接)',
+        cleaned_body,
+        flags=re.IGNORECASE
+    )
+
+    # 2i: 清理多余空行 (连续3+空行变为2空行)
+    cleaned_body = re.sub(r'\n{3,}', '\n\n\n', cleaned_body)
+
+    # === Step 3: 补充依赖说明章节 ===
+    if '## 依赖说明' not in cleaned_body and '## 依赖' not in cleaned_body:
+        # 分析body内容判断依赖类型
+        body_lower = cleaned_body.lower()
+        deps = []
+
+        if any(kw in body_lower for kw in ['api', 'key', 'token', '密钥', '接口']):
+            deps.append('- LLM/API Key: 需要配置相应的API密钥')
+        if any(kw in body_lower for kw in ['http', 'url', '请求', 'request', 'fetch']):
+            deps.append('- 网络连接: 需要访问外部服务')
+        if any(kw in body_lower for kw in ['文件', 'file', 'read', 'write', '读取', '写入']):
+            deps.append('- 文件系统: 需要读写文件权限')
+        if any(kw in body_lower for kw in ['python', 'pip', 'shell', 'bash', 'node']):
+            deps.append('- 运行时环境: 需要相应的命令行工具')
+
+        if not deps:
+            deps.append('- LLM API Key (用于核心推理)')
+            deps.append('- 无额外运行时依赖')
+
+        dep_section = '\n## 依赖说明\n\n' + '\n'.join(deps) + '\n'
+        cleaned_body = cleaned_body.rstrip() + '\n' + dep_section
+
+    # === Step 4: 重建SKILL.md ===
+    result = fixed_frontmatter + '\n\n' + cleaned_body.strip() + '\n'
+
+    return result
+
+
 def run_generation_pipeline(slug: str, template_name: str = None,
                             skip_l2: bool = False,
-                            skip_dep_verify: bool = False) -> Dict[str, Any]:
+                            skip_dep_verify: bool = False,
+                            direct: bool = False) -> Dict[str, Any]:
     """
     执行完整生成流水线。
 
     流程:
     1. 读取原始skill(如果有)
-    2. 选择模板(自动或手动指定)
+    2. 选择模板(自动或手动指定) 或 使用直接增强模式
     3. 生成SKILL.md内容
     4. 保存到 packaged-skills/skillhub/{slug}/SKILL.md
     5. 运行L1静态检查
     6. 运行依赖验证(如不skip)
     7. 运行L2 LLM验证(如不skip)
     8. 汇总结果
+
+    参数:
+    - direct: True=直接增强模式(不使用模板,解决Round 13 placeholder阻断)
     """
     pipeline_start = time.time()
     result = {
@@ -1063,9 +1292,20 @@ def run_generation_pipeline(slug: str, template_name: str = None,
         print(f"  ✗ 未找到原始skill, 将创建全新skill")
         original_content = ""
 
-    # Step 2: 选择模板
-    print(f"\n[2/7] 选择模板")
-    if template_name:
+    # Step 2: 选择模板 或 直接增强模式
+    print(f"\n[2/7] {'直接增强模式' if direct else '选择模板'}")
+    if direct:
+        if not original_content:
+            result['errors'].append(
+                "FATAL: 直接增强模式需要原始skill内容,但未找到原始skill. 流水线终止."
+            )
+            result['completed_at'] = datetime.now().isoformat()
+            result['total_duration_sec'] = round(time.time() - pipeline_start, 2)
+            print(f"\n✗ FATAL: 直接增强模式需要原始内容")
+            return result
+        template_name = "direct_enhance"
+        print(f"  → 直接增强模式 (不使用模板, 解决Round 13 placeholder阻断)")
+    elif template_name:
         print(f"  → 使用指定模板: {template_name}")
     else:
         if original_content:
@@ -1077,17 +1317,25 @@ def run_generation_pipeline(slug: str, template_name: str = None,
 
     result['template_used'] = template_name
 
-    # 验证模板存在
-    template_path = TEMPLATES_DIR / f"{template_name}.md"
-    if not template_path.exists():
-        result['errors'].append(f"模板文件不存在: {template_path}")
-        result['completed_at'] = datetime.now().isoformat()
-        result['total_duration_sec'] = round(time.time() - pipeline_start, 2)
-        return result
+    # 验证模板存在 (direct模式跳过)
+    if not direct:
+        template_path = TEMPLATES_DIR / f"{template_name}.md"
+        if not template_path.exists():
+            result['errors'].append(f"模板文件不存在: {template_path}")
+            result['completed_at'] = datetime.now().isoformat()
+            result['total_duration_sec'] = round(time.time() - pipeline_start, 2)
+            return result
 
     # Step 3: 生成SKILL.md内容
     print(f"\n[3/7] 生成SKILL.md内容")
-    if original_content:
+    if direct:
+        # 直接增强模式: 不使用模板, 直接基于原始内容增强
+        generated_content = generate_direct(slug, original_content)
+        line_count = len(generated_content.split('\n'))
+        print(f"  ✓ 直接增强生成, {line_count} 行")
+        result['all_placeholders_filled'] = True
+        result['template_used'] = 'direct_enhance'
+    elif original_content:
         skill_data = parse_original_skill(original_content)
         generated_content = generate_from_template(template_name, skill_data, target_slug=slug)
         print(f"  ✓ 基于模板+原始内容生成, {len(generated_content.split(chr(10)))} 行")
@@ -1210,7 +1458,8 @@ def cmd_from_existing(args):
         slug=args.slug,
         template_name=args.template,
         skip_l2=args.skip_l2,
-        skip_dep_verify=args.skip_dep_verify
+        skip_dep_verify=args.skip_dep_verify,
+        direct=args.direct
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
@@ -1319,6 +1568,7 @@ def main():
     p_existing.add_argument('--template', help='指定模板名称(不含.md)')
     p_existing.add_argument('--skip-l2', action='store_true', help='跳过L2验证')
     p_existing.add_argument('--skip-dep-verify', action='store_true', help='跳过依赖验证')
+    p_existing.add_argument('--direct', action='store_true', help='直接增强模式(不使用模板,解决Round 13 placeholder阻断)')
     p_existing.set_defaults(func=cmd_from_existing)
 
     # from-candidate

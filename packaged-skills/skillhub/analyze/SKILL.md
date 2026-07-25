@@ -1,79 +1,72 @@
 ---
-slug: "analyze"
-name: "analyze"
-version: 1.0.1
+name: analyze
+slug: analyze
 displayName: "Analyze"
-summary: "对任意输入做结构化分析,数据/代码/文本/决策/可视化全支持,告别无序堆砌。Structured analysis for any input。Data, code, text, decis"
-summary_zh: "对任意输入做结构化分析,数据/代码/文本/决策/可视化全支持,告别无序堆砌。Structured analysis for any input。Data, code, text, decis"
+version: "1.0.0"
+summary: "对任意输入做结构化分析,数据/代码/文本/决策/可视化"
+description: "对任意输入做结构化分析,数据/代码/文本/决策/可视化。Structured analysis for any input。Data, code, text, decisions, visuals。Prioritize, question, co。"
 license: "MIT"
-description: |-
-  Structured analysis for any input。Data, code, text, decisions, visuals。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
-tags:
-  - Development
-  - 工具
-  - 效率
-  - analyze
-  - api
 tools:
-  - read
-  - exec
-  - write
-homepage: ""
-category: "Automation"
+  - - read
 ---
+
 # Analyze
 
-## 付费版专享能力
+## Pattern
 
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| Analyze任意输入做结构化分析 | 不支持 | 支持 |
-| 代码静态分析与质量评分 | 不支持 | 支持 |
-| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
-| 批量代码审查与报告生成 | 不支持 | 支持 |
-| CI/CD流水线集成 | 不支持 | 支持 |
+```text
+Purpose → Structure → Analyze → Prioritize → Conclude
+```
 
-## 核心能力
+Before analyzing: State what decision this serves. Pick a framework. Note first impression to challenge later.
 
-- Structured analysis for any input
-- Data, code, text, decisions, visuals
-- Prioritize, question, co
-#
-## 快速开始
+## Before
 
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
+* **Purpose in one line**: "This analysis helps decide ___"
+* **What's missing**: 3+ unknowns that would change conclusions
+* **First impression**: Write it — then seek counter-evidence
 
-> 详细的输入输出格式请参考下方章节说明。
+## During
 
-## 适用场景
+* **Prioritize always**: 🔴 Critical (1-2 max) · 🟡 Important (2-3) · ⚪ Minor
+* **Mark sources**: Every claim gets `[from input]` or `[inferred]`
+* **Seek disconfirmation**: Dedicate space to "why I might be wrong"
+* **Distinguish**: Facts vs opinions. Correlation vs causation.
 
-| 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
-| 场景1: 对任意输入做结构化分析 | 用户请求数据 | 结构化处理结果 |
-| 场景2: 数据/代码/文本/决策/可视化全支持 | 用户请求数据 | 结构化处理结果 |
-| 场景3: 告别无序堆砌 | 用户请求数据 | 结构化处理结果 |
+## After
 
-**不适用于**：需要人工判断的复杂决策场景
+* **One-line summary**: Force analysis into one sentence
+* **So what?**: End with action, not summary
+* **Obviousness test**: Would someone say this without reading? → Deeper
 
-## 使用流程
+## Traps
 
-1. **分析代码上下文**: 读取目标代码文件,解析项目结构与依赖关系
-2. **执行开发操作**: 根据用户指令执行编写/审查/重构/测试等开发任务
-3. **验证与反馈**: 运行检查工具确认修改正确性,输出差异与建议
-4. **异常处理**: 如遇错误,参考错误处理章节中对应场景的处理方式
+* **Superficial**: Paraphrasing ≠ analysis
+* **Equal weight**: Everything yellow = nothing prioritized
+* **Confirmation bias**: First impression became conclusion
+* **Missing denominator**: "500 cancellations" of 600 or 50,000?
+* **Invented data**: Stats without source = hallucination
 
-## 输入格式
+## By Domain
 
-| 参数名 | 类型 | 必填 | 说明 |
-|---:|---:|---:|---:|
-| content | string | 否 | analyze处理的内容输入 |,  |
-| content | string | 否 | analyze处理的内容输入 |, 可选值: json/text/markdown |
-| style | string | 否 | 输出风格, 参考 `references/style.md` |
+| Domain | Focus | Watch |
+| --- | --- | --- |
+| Data | Grain, missing, outliers | Centinels, mixed types |
+| Code | Production breaks, dead code | Style ≠ bugs |
+| Text | Thesis, evidence strength | Unsourced claims |
+| Decisions | Unlisted options, reversibility | Status quo bias |
+| Visual | Dominance, consistency | Platform conventions |
 
-## 输出格式
+## Frameworks
+
+Pick one before starting:
+
+* **MECE**: Mutually exclusive, collectively exhaustive
+* **Pros/Cons+**: Add reversibility + cost of inaction
+* **Pre-mortem**: Assume failure — why?
+* **Steel man**: Best opposing argument
+
+## Output
 
 ```text
 🎯 PURPOSE: Decide [X]
@@ -84,58 +77,80 @@ category: "Automation"
 ```
 
 ---
-## 快速开始
-
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 *Channels, not teaches. Ensures prioritization, questioning, and conclusions.*
-
-## 异常处理
-
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
 
 ## 依赖说明
 
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent( Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明(补充)
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:------|------:|:------|:------|
+|:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- 
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC()
-- **说明**: 基于Markdown的AI Skill,
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-**API Key配置方式**:
-```bash
-export API_KEY="your_api_key_here"
+## 核心能力
+
+- Structured analysis for any input
+- Data, code, text, decisions, visuals
+- Prioritize, question, co
+- 触发关键词: analysis, code, data, input, structured, analyze
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+
+### 示例1：基础用法
+
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 常见问题
-
-### Q1: 如何开始使用Analyze？
-A: 
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
 
 ## 错误处理
 
-| 错误场景2 | 原因 | 处理方式 |
-|---:|:---|---:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
+## 常见问题
+
+### Q1: 如何开始使用Analyze？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Analyze有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

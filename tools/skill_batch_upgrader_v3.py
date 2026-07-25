@@ -927,7 +927,7 @@ def auto_fix(skill_md_path):
             fm, body = parse_skill_md(content)
             new_fm, changed = optimize_description(fm)
             if changed:
-                new_content = f'---{new_fm}---{body}'
+                new_content = f'---\n{new_fm}\n---\n{body}'
                 skill_md_path.write_text(new_content, encoding='utf-8')
                 fixes.append('description精简')
         except Exception:
