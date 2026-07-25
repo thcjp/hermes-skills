@@ -4,6 +4,7 @@ name: "json-linter"
 version: 1.0.1
 displayName: "Json Linter"
 summary: "校验工作区JSON语法,排查配置语法错误。Validates JSON syntax across the workspace。Use this skill to check for syn"
+summary_zh: "校验工作区JSON语法,排查配置语法错误。Validates JSON syntax across the workspace。Use this skill to check for syn"
 license: "MIT"
 description: |-
   Validates JSON syntax across the workspace。Use this skill to check

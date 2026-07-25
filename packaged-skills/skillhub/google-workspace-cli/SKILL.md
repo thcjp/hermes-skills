@@ -4,6 +4,7 @@ name: "google-workspace-cli"
 version: 1.0.1
 displayName: "谷歌办公命令行专业版"
 summary: "全功能Google Workspace命令行工具,覆盖六大服务与批量操作,支持企业级多租户场景与自动化工作流。"
+summary_zh: "全功能Google Workspace命令行工具,覆盖六大服务与批量操作,支持企业级多租户场景与自动化工作流。"
 license: "MIT"
 edition: "pro"
 description: |-

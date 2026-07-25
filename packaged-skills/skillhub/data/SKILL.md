@@ -4,6 +4,7 @@ name: "data"
 version: 1.0.2
 displayName: "Data"
 summary: "贯穿数据全生命周期,从抽取清洗到分析可视化,一站处理。Work with data across the full lifecycle from extraction and cleanin"
+summary_zh: "贯穿数据全生命周期,从抽取清洗到分析可视化,一站处理。Work with data across the full lifecycle from extraction and cleanin"
 license: "MIT"
 description: |-
   Work with data across the full lifecycle from extraction and cleaning

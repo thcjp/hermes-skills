@@ -4,6 +4,7 @@ name: "solo-dev-companion"
 version: 1.0.1
 displayName: "独立开发伙伴(专业版)"
 summary: "全功能TDD工作流引擎，含MCP工具集成、多语言质量工具、视觉验证、阶段检查点与高级回滚。。独立开发伙伴专业版是在免费版基础上的全功能升级，为独立开发者与一人公司提供企业级TDD工作流引擎。"
+summary_zh: "全功能TDD工作流引擎，含MCP工具集成、多语言质量工具、视觉验证、阶段检查点与高级回滚。。独立开发伙伴专业版是在免费版基础上的全功能升级，为独立开发者与一人公司提供企业级TDD工作流引擎。"
 license: "MIT"
 edition: "pro"
 description: |-

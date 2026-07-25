@@ -4,6 +4,7 @@ name: "comfyui-painter-free"
 version: 1.0.1
 displayName: "ComfyUI画图基础版"
 summary: "ComfyUI基础画图,支持文生图与本地模型管理,手动调参,不含CivitAI集成。ComfyUI 本地画图基础客户端（免费版）。通过 ComfyUI API 在本地 GPU 上生成图片,"
+summary_zh: "ComfyUI基础画图,支持文生图与本地模型管理,手动调参,不含CivitAI集成。ComfyUI 本地画图基础客户端（免费版）。通过 ComfyUI API 在本地 GPU 上生成图片,"
 license: "MIT"
 description: |-
   ComfyUI 本地画图基础客户端（免费版）。通过 ComfyUI API 在本地 GPU 上生成图片,

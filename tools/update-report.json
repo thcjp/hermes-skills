@@ -1,0 +1,28 @@
+{
+  "check_time": "2026-07-25T12:43:22.164117",
+  "total_checked": 1,
+  "changed": [
+    "ad-creative-intel-free"
+  ],
+  "up_to_date": [],
+  "failed": [],
+  "no_source": [],
+  "details": [
+    {
+      "slug": "ad-creative-intel-free",
+      "display_name": "广告情报(免费版)",
+      "source": "clawhub_differentiated",
+      "source_slug": "admapix",
+      "source_url": null,
+      "current_version": "1.0.1",
+      "last_hash": "8b5f138e65880f9950749639164e5fa63c8253e7516827902d051aed5d3aa344",
+      "status": "changed",
+      "new_hash": "784a0e144e9b42e6036d76f0e32edea81fab2ce9f88d9d255bf7a3780d5e1e3d",
+      "changed": true,
+      "change_type": "clawhub",
+      "error": null,
+      "local_path": "d:\\skills\\differentiated-skills\\Agents\\ad-creative-intel-free",
+      "latest_content": "---\nslug: admapix\nname: admapix\nversion: \"1.0.30\"\ndisplayName: AdMapix\nsummary: \"AdMapix广告原始数据层,广告创意/应用/排名/下载收入\"\nlicense: MIT\ndescription: |-\n  AdMapix raw data layer for ad creatives, apps, rankings, downloads/revenue。核心能力:\n\n  - 智能代理领域的专业化AI辅助工具\n\n  - 基于高人气开源Skill深度优化升级\n\n  - 移除风险代码,增强安全性和稳定性\n\n  适用场景:\n\n  - AI代理增强、记忆管理、自主决策\n\n  - 独立开发者与一人公司效率提升\n\n  - 自动化工作流与智能决策辅助\n\n  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触发关键词,完全适配SkillHub平台规范\ntags:\n- Agents\n- Creative\n- Research\ntools:\n  - - read\n- exec\npricing_tier: "
+    }
+  ]
+}

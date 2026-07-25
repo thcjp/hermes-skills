@@ -4,6 +4,7 @@ name: "security-scanner"
 version: 1.0.1
 displayName: "Security Scanner"
 summary: "安全扫描技能,主动扫描需仅在授权目标运行。This appears to be a legitimate security-scanning skill, but users must on"
+summary_zh: "安全扫描技能,主动扫描需仅在授权目标运行。This appears to be a legitimate security-scanning skill, but users must on"
 license: "MIT"
 description: |-
   This appears to be a legitimate security-scanning skill, but users must

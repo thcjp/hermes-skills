@@ -4,6 +4,7 @@ name: "sqlite-manager"
 version: 1.0.1
 displayName: "SQLite管理(专业版)"
 summary: "面向企业的SQLite管理专业版，含自动备份、连接池监控、Schema迁移、DuckDB集成、灾备恢复与优先支持。"
+summary_zh: "面向企业的SQLite管理专业版，含自动备份、连接池监控、Schema迁移、DuckDB集成、灾备恢复与优先支持。"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "git-toolkit"
 version: 1.0.1
 displayName: "Git工具包专业版"
 summary: "企业级Git管理,支持批量分支操作、自动化审查、Git Hook管理与CI/CD流水线集成。。面向企业研发团队的高级Git管理工具,提供批量分支操作、自动化代码审查、Git Hook管理、历"
+summary_zh: "企业级Git管理,支持批量分支操作、自动化审查、Git Hook管理与CI/CD流水线集成。。面向企业研发团队的高级Git管理工具,提供批量分支操作、自动化代码审查、Git Hook管理、历"
 license: "MIT"
 edition: "pro"
 description: |-

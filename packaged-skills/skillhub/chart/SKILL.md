@@ -5,6 +5,7 @@ name: "chart"
 version: 1.0.1
 displayName: "本地图表生成引擎"
 summary: "本地优先的图表生成引擎，支持bar/line/pie/scatter四种类型，无需联网，输出可复用于报告与幻灯片。"
+summary_zh: "本地优先的图表生成引擎，支持bar/line/pie/scatter四种类型，无需联网，输出可复用于报告与幻灯片。"
 license: "MIT"
 description: |-
   本地优先（local-first）的图表生成引擎，将数字转换为清晰的可视化输出.
@@ -17,7 +18,13 @@ description: |-
   - 历史管理：list_charts.py 查看历史图表记录
   - 存储初始化：init_storage.py 一键初始化本地存储
   - 输出可复用于报告、幻灯片与快速决策
-tags: matplotlib,python3,labels,values,bash,请参考
+tags:
+  - matplotlib
+  - python3
+  - labels
+  - values
+  - bash
+  - 请参考
 tools:
   - read
   - exec

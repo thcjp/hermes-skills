@@ -4,6 +4,7 @@ name: "comfyui-painter"
 version: 2.0.1
 displayName: "ComfyUI本地画图工作流"
 summary: "本地ComfyUI画图工作流+CivitAI集成,API控制文生图/图生视频,支持模型搜索/下载/自动调参"
+summary_zh: "本地ComfyUI画图工作流+CivitAI集成,API控制文生图/图生视频,支持模型搜索/下载/自动调参"
 license: "MIT"
 description: |-
   本地 ComfyUI 画图工作流与 CivitAI 模型管理集成客户端。通过 ComfyUI API 在本地 GPU 上生成图片,

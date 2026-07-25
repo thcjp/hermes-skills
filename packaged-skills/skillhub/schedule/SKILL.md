@@ -4,6 +4,7 @@ name: "schedule"
 version: 1.0.3
 displayName: "Schedule"
 summary: "编程定时或一次性任务,用户定做什么技能管何时。Program recurring or one-time tasks。User defines what to do, skill handl"
+summary_zh: "编程定时或一次性任务,用户定做什么技能管何时。Program recurring or one-time tasks。User defines what to do, skill handl"
 license: "MIT"
 description: |-
   Program recurring or one-time tasks。User defines what to do, skill

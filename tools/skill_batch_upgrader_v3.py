@@ -43,6 +43,9 @@ from skill_batch_upgrader_v2 import (
 
 # DB_PATH imported from config
 
+# A3修复: 从skill_core导入RESERVED_WORDS,消除本地重复硬编码
+from skill_core.rules import RESERVED_WORDS
+
 # v3.0新增: 夸大词替换映射
 EXAGGERATION_MAP = {
     '万能': '全能',
@@ -57,8 +60,7 @@ EXAGGERATION_MAP = {
     '极致': '精细',
 }
 
-# v3.0新增: 保留词检查
-RESERVED_WORDS = ['claude', 'anthropic', 'openai', 'chatgpt']
+# v3.0新增: 保留词检查 (A3修复: 已迁移至skill_core.rules,此处不再重复定义)
 
 # v3.0新增: 摘要式描述模式（需要改写）
 SUMMARY_PATTERNS = [
@@ -954,6 +956,7 @@ def auto_fix(skill_md_path):
 def get_all_skills():
     """获取所有skill路径"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
     c.execute("""
@@ -1057,6 +1060,7 @@ def cmd_fix(args):
         slug = args[1]
         # 查找skill
         conn = sqlite3.connect(DB_PATH)
+        conn.execute("PRAGMA foreign_keys = ON")
         conn.row_factory = sqlite3.Row
         c = conn.cursor()
         c.execute("SELECT local_path FROM skills WHERE slug = ?", (slug,))

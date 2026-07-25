@@ -252,6 +252,43 @@ def generate_ops_report() -> dict:
         }
     }
     
+    # A2修复: 检测到问题后生成修复建议,闭合运维环(检测→报告→建议→人工执行→复验)
+    fix_actions = []
+    for issue in issues:
+        if 'L1覆盖率不足' in issue:
+            fix_actions.append({
+                'action': 'run_l1_quality_gate',
+                'script': 'python quality_gate.py --batch',
+                'reason': issue
+            })
+        elif 'L2 A级比例不足' in issue:
+            fix_actions.append({
+                'action': 'run_l2_evaluation',
+                'script': 'python batch_l2_eval.py --only-unevaluated',
+                'reason': issue
+            })
+        elif '低分skill' in issue:
+            fix_actions.append({
+                'action': 'annotate_low_scores',
+                'script': 'python trace_llm_scorer.py annotate',
+                'reason': issue
+            })
+        elif 'L3覆盖率不足' in issue:
+            fix_actions.append({
+                'action': 'run_l3_trial',
+                'script': 'python agent_trial.py batch --limit 5',
+                'reason': issue
+            })
+        elif '健康检查' in issue:
+            fix_actions.append({
+                'action': 'run_health_check_detail',
+                'script': 'python health_check.py --json',
+                'reason': issue
+            })
+    
+    report['fix_actions'] = fix_actions
+    report['has_fix_actions'] = len(fix_actions) > 0
+    
     return report
 
 
@@ -295,6 +332,15 @@ def print_terminal_report(report: dict):
         for s in l3_skills:
             print(f"  {s['slug']}: {s['score']}/100")
     
+    # A2修复: 输出修复建议
+    fix_actions = report.get('fix_actions', [])
+    if fix_actions:
+        print(f"\n--- 修复建议 ({len(fix_actions)}个) ---")
+        for i, fa in enumerate(fix_actions, 1):
+            print(f"  [{i}] {fa['action']}")
+            print(f"      原因: {fa['reason']}")
+            print(f"      命令: {fa['script']}")
+    
     print(f"\n{'='*70}")
 
 
@@ -310,6 +356,10 @@ def main():
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
         print_terminal_report(report)
+        # A2修复: 如果有修复建议,输出执行提示(不自动执行,由用户/AI决定)
+        if report.get('has_fix_actions'):
+            print(f"\n检测到{len(report['fix_actions'])}个问题,建议执行上述修复脚本")
+            print(f"  复制命令执行后,重新运行 python ops闭环.py 验证修复效果")
     
     if args.output:
         output_path = Path(args.output)

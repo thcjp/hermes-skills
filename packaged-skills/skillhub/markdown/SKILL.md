@@ -4,6 +4,7 @@ name: "markdown"
 version: 1.0.2
 displayName: "Markdown"
 summary: "生成干净可移植Markdown,跨解析器正确渲染。Generate clean, portable Markdown that renders correctly across parser"
+summary_zh: "生成干净可移植Markdown,跨解析器正确渲染。Generate clean, portable Markdown that renders correctly across parser"
 license: "MIT"
 description: |-
   Generate clean, portable Markdown that renders correctly across parsers。核心能力:

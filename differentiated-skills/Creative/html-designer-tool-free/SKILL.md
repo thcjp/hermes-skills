@@ -1,4 +1,5 @@
 ---
+
 slug: html-designer-tool-free
 name: html-designer-tool-free
 version: 1.0.0
@@ -6,7 +7,8 @@ displayName: HTML设计工具免费版
 summary: 专业的HTML/CSS网页图形设计助手,提供视觉层级、配色、排版等核心能力,适合个人开发者快速构建精美页面.
 license: Proprietary
 edition: free
-description: 'HTML设计工具免费版是一款面向个人开发者的网页图形设计辅助工具。通过自然语言指令驱动AI Agent生成符合专业设计原则的HTML页面,
+description: "HTML设计工具免费版是一款面向个人开发者的网页图形设计辅助工具。通过自然语言指令驱动AI Agent生成符合专业设计原则的HTML页面,
+  涵盖视觉层级、配色理论、排版系统、响应式布局等核心设计能力。保障功能正确性，降低缺陷率与回归风险。触发关键词：测试、性能优化、设计、品牌、营销、图片。降低专业门槛，让非专业人员也能快速上手"
 
   涵盖视觉层级、配色理论、排版系统、响应式布局等核心设计能力'
 tags:
@@ -29,6 +31,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
 # HTML设计工具免费版
 

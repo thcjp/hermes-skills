@@ -4,7 +4,8 @@ name: compliance-manager
 version: 1.0.1
 displayName: 合规管理器
 summary: "把合规从一次性审计变成持续运营,SOC2/ISO27001/GDPR/网络安全法审计随时就绪。合规管理器——把企业合规从突击应付审计变成日常持续运营。覆盖ISO 27001/SOC 2/GD"
-license: Proprietary
+summary_zh: "把合规从一次性审计变成持续运营,SOC2/ISO27001/GDPR/网络安全法审计随时就绪。合规管理器——把企业合规从突击应付审计变成日常持续运营。覆盖ISO 27001/SOC 2/GD"
+license: MIT
 description: 合规管理器——把企业合规从突击应付审计变成日常持续运营。覆盖ISO 27001/SOC 2/GDPR/HIPAA及国内网络安全法、数据安全法、个人信息保护法、等保2.0等主流合规框架。Use
   when 需要合规差距分析、审计证据收集、风险整改追踪、合规自查清单生成时使用。不适用于法律意见出具和实时合规监控。
 tags:

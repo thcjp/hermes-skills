@@ -1,4 +1,5 @@
 ---
+
 slug: email-multi-provider-pro
 name: email-multi-provider-pro
 version: 1.0.0
@@ -6,7 +7,8 @@ displayName: 多邮箱管理专业版
 summary: "企业级Gmail与Outlook统一管理，批量操作与多账户隔离。多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于"
 license: Proprietary
 edition: pro
-description: 多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use
+description: "多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use
+  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。减少重复劳动，提升工作效率。触发关键词：自动化、性能优化、监控、搜索、机器学习、邮件"
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 沟通协作
@@ -28,6 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
 # 多邮箱管理专业版
 **版本**: 1.0.0

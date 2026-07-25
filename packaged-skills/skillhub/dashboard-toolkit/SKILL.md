@@ -5,11 +5,17 @@ name: "openclaw-dashboard"
 version: "1.7.3"
 displayName: "SkillHub-dashboard"
 summary: "SkillHub实时运营仪表盘,监控会话/成本/cron/网关。Real-time operations dashboard for SkillHub。Monitors sessions,"
+summary_zh: "SkillHub实时运营仪表盘,监控会话/成本/cron/网关。Real-time operations dashboard for SkillHub。Monitors sessions,"
 license: "MIT"
 description: |-
   Real-time operations dashboard for SkillHub。Monitors sessions, costs,
   cron jobs, and gateway hea。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
-tags: api,按流程执,依赖说明,不支持,agent
+tags:
+  - api
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
 tools:
   - read
   - exec

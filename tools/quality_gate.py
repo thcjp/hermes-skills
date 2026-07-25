@@ -15,7 +15,7 @@ P1-1变更: 从skill_core导入parser/rules/checks, 不再自带重复实现
   5. frontmatter 8必需字段齐全 (skill_core.checks)
   6. displayName <= 20字符 (skill_core.checks)
   7. summary <= 100字符 (skill_core.checks)
-  8. description长度 50-300字符 (skill_core.checks)
+  8. description长度 150-280字符 (skill_core.checks)
   9. version为x.y.z格式 (skill_core.checks)
  10. tools为YAML数组格式 (skill_core.checks)
  11. frontmatter无XML尖括号 (skill_core.checks)
@@ -37,6 +37,8 @@ from datetime import datetime
 # 确保能导入skill_core和check_debranding
 SKILL_REGISTRY_DIR = Path(__file__).parent
 sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+# 确保能导入project_config (config目录)
+sys.path.insert(0, str(SKILL_REGISTRY_DIR.parent / "config"))
 
 # 从skill_core导入(单一来源, P1-1)
 from skill_core.parser import parse_frontmatter
@@ -71,7 +73,7 @@ def check_debranding(skill_md_path: Path) -> dict:
     high_issues = [i for i in issues if i['severity'] == 'high']
     medium_issues = [i for i in issues if i['severity'] == 'medium']
 
-    passed = len(high_issues) == 0
+    passed = len(issues) == 0
     details = []
     for i in issues:
         details.append(f"[{i['severity']}] {i['description']}: {i['match']}")
@@ -122,7 +124,7 @@ def run_quality_gate(skill_md_path: Path) -> dict:
         check_version_format(fm),
         check_tools_format(fm),
         check_no_xml_brackets(fm),
-        check_no_placeholders(content),
+        check_no_placeholders(content, fm['raw']),
         check_no_exaggeration(content),
     ]
 

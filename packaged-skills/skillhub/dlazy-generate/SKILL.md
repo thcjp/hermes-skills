@@ -5,11 +5,18 @@ name: "dlazy-generate"
 version: 1.3.3
 displayName: "Dlazy Generate"
 summary: "综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehensive generation skill。Can generate images, videos, and a"
+summary_zh: "综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehensive generation skill。Can generate images, videos, and a"
 license: "MIT"
 description: |-
   A comprehensive generation skill。Can generate images, videos, and audio\
   \ by automatically selecti。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
-tags: generate,示例数据,agent,依赖说明,不支持,content
+tags:
+  - generate
+  - 示例数据
+  - agent
+  - 依赖说明
+  - 不支持
+  - content
 tools:
   - read
   - exec

@@ -4,6 +4,7 @@ name: "build-game"
 version: 1.2.1
 displayName: "3D Game Builder"
 summary: "自然语言生成并迭代精修3D浏览器游戏,任意类型即说即得。Generate and iteratively develop polished 3D browser games from nat"
+summary_zh: "自然语言生成并迭代精修3D浏览器游戏,任意类型即说即得。Generate and iteratively develop polished 3D browser games from nat"
 license: "MIT"
 description: |-
   Generate and iteratively develop polished 3D browser games from natural

@@ -1,4 +1,5 @@
 ---
+
 slug: infinite-memory-vault-free
 name: infinite-memory-vault-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: 无限记忆库(免费版)
 summary: "与Agent内置记忆并行的无限组织化记忆免费版：自定义分类、索引导航、即写即存.。面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库免费体验版。与 Agent 内置记忆并行工"
 license: Proprietary
 edition: free
-description: 面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库免费体验版。与 Agent 内置记忆并行工作，互不冲突，提供无限分类、索引导航、即写即存能力。Use
+description: "面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库免费体验版。与 Agent 内置记忆并行工作，互不冲突，提供无限分类、索引导航、即写即存能力。Use
+  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。确保设计一致性与专业度。触发关键词：设计、项目管理、机器学习"
   when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
 tags:
   - 智能代理
@@ -28,6 +30,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+
 ---
 **与 Agent 内置记忆并行的无限组织化记忆系统**。你的 Agent 有基础内置记忆，本 Skill 为它添加无限、完美组织的并行记忆系统——互补而非替代，永不冲突.
 ## 痛点与对策速查

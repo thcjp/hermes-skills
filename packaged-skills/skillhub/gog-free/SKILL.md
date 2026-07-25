@@ -4,6 +4,7 @@ name: "gog-free"
 version: "1.0.0"
 displayName: "Gog(免费)"
 summary: "Google Workspace命令行工具基础版,覆盖Gmail搜索与Sheets读写。。Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets"
+summary_zh: "Google Workspace命令行工具基础版,覆盖Gmail搜索与Sheets读写。。Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets"
 license: "MIT"
 description: |-
   Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets 表格读写两类核心操作,

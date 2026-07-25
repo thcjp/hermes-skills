@@ -5,6 +5,7 @@ name: "javascript-skills"
 version: 1.0.3
 displayName: "JavaScript"
 summary: "综合JavaScript风格指南,激活即供最佳实践。A comprehensive JavaScript style guide skill。When activated, it provi"
+summary_zh: "综合JavaScript风格指南,激活即供最佳实践。A comprehensive JavaScript style guide skill。When activated, it provi"
 license: "MIT"
 description: A comprehensive JavaScript style guide skill。When activated, it provides best-practice JavaScrip，可生成提升工作效率
 tags:

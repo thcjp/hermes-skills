@@ -4,6 +4,7 @@ name: "docker-essentials-free"
 version: 1.0.1
 displayName: "Docker核心操作免费版"
 summary: "免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。。Docker核心操作指南免费版，提供容器生命周期管理基础命令. 包含镜像管理、容器调试与常用工作流. 适用于个人开发与学习"
+summary_zh: "免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。。Docker核心操作指南免费版，提供容器生命周期管理基础命令. 包含镜像管理、容器调试与常用工作流. 适用于个人开发与学习"
 license: "MIT"
 description: |-
   Docker核心操作指南免费版，提供容器生命周期管理基础命令.

@@ -4,6 +4,7 @@ name: "cloud-architect"
 version: 0.1.1
 displayName: "云架构师"
 summary: "设计多云架构、规划迁移策略、优化云成本,覆盖 AWS、Azure、GCP 的架构设计与治理。资深云架构师技能,覆盖 AWS、Azure、GCP 三大云平台的企业级架构设计. 核心能力包括多云"
+summary_zh: "设计多云架构、规划迁移策略、优化云成本,覆盖 AWS、Azure、GCP 的架构设计与治理。资深云架构师技能,覆盖 AWS、Azure、GCP 三大云平台的企业级架构设计. 核心能力包括多云"
 license: "MIT"
 description: |-
   资深云架构师技能,覆盖 AWS、Azure、GCP 三大云平台的企业级架构设计.

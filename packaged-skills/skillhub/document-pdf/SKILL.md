@@ -4,6 +4,7 @@ name: "document-pdf"
 version: 1.0.1
 displayName: "Pdf"
 summary: "PDF全操作工具箱,提取文本表格/建PDF/合并拆分/填表。Comprehensive PDF manipulation toolkit for extracting text and ta"
+summary_zh: "PDF全操作工具箱,提取文本表格/建PDF/合并拆分/填表。Comprehensive PDF manipulation toolkit for extracting text and ta"
 license: "MIT"
 description: |-
   Comprehensive PDF manipulation toolkit for extracting text and tables,

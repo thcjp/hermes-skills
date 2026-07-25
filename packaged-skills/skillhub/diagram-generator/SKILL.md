@@ -4,6 +4,7 @@ name: "diagram-generator"
 version: 1.1.7
 displayName: "Diagram生成器"
 summary: "通过MCP工具生成与编辑Draw.io/Mermaid/Excalidraw图表,支持网络拓扑/架构/流程图/UML等"
+summary_zh: "通过MCP工具生成与编辑Draw.io/Mermaid/Excalidraw图表,支持网络拓扑/架构/流程图/UML等"
 license: "MIT"
 description: |-
   diagram-generator 图表生成客户端。通过 mcp-diagram-generator MCP 服务器将自然语言意图转换为结构化 JSON 规范,

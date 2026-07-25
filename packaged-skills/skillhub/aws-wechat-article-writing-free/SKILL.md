@@ -4,6 +4,7 @@ name: "aws-wechat-article-writing-free"
 version: "1.0.0"
 displayName: "公众号写作基础版"
 summary: "公众号长文写作基础功能,从话题生成初稿,支持润色与改写。面向微信公众号长文的基础 AI 写作功能。从选题卡或口述话题生成完整初稿, 支持改写与润色。写作约束来自 .aws-article/c"
+summary_zh: "公众号长文写作基础功能,从话题生成初稿,支持润色与改写。面向微信公众号长文的基础 AI 写作功能。从选题卡或口述话题生成完整初稿, 支持改写与润色。写作约束来自 .aws-article/c"
 license: "MIT"
 description: |-
   面向微信公众号长文的基础 AI 写作功能。从选题卡或口述话题生成完整初稿,

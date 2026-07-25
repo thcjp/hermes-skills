@@ -4,6 +4,7 @@ name: "analytics-dashboard"
 version: 1.0.1
 displayName: "数据分析面板(专业版)"
 summary: "全功能数据可视化系统，含widget构建器、高级分析、多通道告警、报表导出与团队协作，支撑企业级监控。"
+summary_zh: "全功能数据可视化系统，含widget构建器、高级分析、多通道告警、报表导出与团队协作，支撑企业级监控。"
 license: "MIT"
 edition: "pro"
 description: |-

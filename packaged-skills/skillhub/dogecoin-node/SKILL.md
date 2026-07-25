@@ -5,11 +5,17 @@ name: "dogecoin-node"
 version: 1.0.6
 displayName: "Dogecoin Node"
 summary: "搭建运营Dogecoin Core全节点,RPC访问+区块链工具。A skill to set up and operate a Dogecoin Core full node with R"
+summary_zh: "搭建运营Dogecoin Core全节点,RPC访问+区块链工具。A skill to set up and operate a Dogecoin Core full node with R"
 license: "MIT"
 description: |-
   A skill to set up and operate a Dogecoin Core full node with RPC access,
   blockchain tools, and op。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
-tags: api,按流程执,依赖说明,不支持,agent
+tags:
+  - api
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
 tools:
   - read
   - exec

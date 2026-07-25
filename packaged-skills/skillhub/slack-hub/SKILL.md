@@ -4,6 +4,7 @@ name: "slack-hub"
 version: 1.0.1
 displayName: "Slack Hub工具专业版"
 summary: "企业级Slack集成工具，支持批量消息发送、高级搜索、限流处理、消息模板与工作区深度管理。。Slack Hub工具（专业版）—— 面向团队和企业的全功能Slack集成工具。核心能力: - 批"
+summary_zh: "企业级Slack集成工具，支持批量消息发送、高级搜索、限流处理、消息模板与工作区深度管理。。Slack Hub工具（专业版）—— 面向团队和企业的全功能Slack集成工具。核心能力: - 批"
 license: "MIT"
 edition: "pro"
 description: |-

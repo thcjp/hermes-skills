@@ -5,11 +5,18 @@ name: "openai-ai"
 version: 1.0.7
 displayName: "llm-provider"
 summary: "管OpenAI文件/助手/向量库/批次/微调/模型资源。Manage llm-provider files, assistants, vector stores, batches, fine"
+summary_zh: "管OpenAI文件/助手/向量库/批次/微调/模型资源。Manage llm-provider files, assistants, vector stores, batches, fine"
 license: "MIT"
 description: |-
   Manage llm-provider files, assistants, vector stores, batches, fine-tuning
   jobs, and model resources vi。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
-tags: 工作流,llm-provider,bash,clawlink_call_tool,model,按流程执
+tags:
+  - 工作流
+  - llm-provider
+  - bash
+  - clawlink_call_tool
+  - model
+  - 按流程执
 tools:
   - read
   - exec

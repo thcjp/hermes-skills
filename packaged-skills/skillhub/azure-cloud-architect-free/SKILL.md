@@ -4,6 +4,7 @@ name: "azure-cloud-architect-free"
 version: "1.0.0"
 displayName: "Azure云架构师LITE"
 summary: "基于Azure CLI的多订阅导航与资源清单查询,提供只读查询与VM健康检查。。基于 Azure CLI 的基础云资源查询工具（免费版）。提供多订阅导航与资源清单查询两大基础能力. 支持虚拟"
+summary_zh: "基于Azure CLI的多订阅导航与资源清单查询,提供只读查询与VM健康检查。。基于 Azure CLI 的基础云资源查询工具（免费版）。提供多订阅导航与资源清单查询两大基础能力. 支持虚拟"
 license: "MIT"
 description: |-
   基于 Azure CLI 的基础云资源查询工具（免费版）。提供多订阅导航与资源清单查询两大基础能力.

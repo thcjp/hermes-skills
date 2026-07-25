@@ -4,6 +4,7 @@ name: "admapix"
 version: 1.0.31
 displayName: "AdMapix"
 summary: "AdMapix原始数据层，广告创意/应用/榜单/下载收入查询。AdMapix 原始数据层客户端。覆盖广告创意搜索/计数/分布、应用与开发者画像、商店榜单、 下载与收入估算、应用分发与全球推广"
+summary_zh: "AdMapix原始数据层，广告创意/应用/榜单/下载收入查询。AdMapix 原始数据层客户端。覆盖广告创意搜索/计数/分布、应用与开发者画像、商店榜单、 下载与收入估算、应用分发与全球推广"
 license: "MIT"
 description: |-
   AdMapix 原始数据层客户端。覆盖广告创意搜索/计数/分布、应用与开发者画像、商店榜单、

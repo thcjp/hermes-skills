@@ -4,6 +4,7 @@ name: "telegram-messaging-free"
 version: "1.0.0"
 displayName: "Telegram 消息 LITE"
 summary: "Telegram Bot API 基础消息发送与聊天信息查询。。Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、 查询聊天基本信息与成员计"
+summary_zh: "Telegram Bot API 基础消息发送与聊天信息查询。。Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、 查询聊天基本信息与成员计"
 license: "MIT"
 description: |-
   Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、

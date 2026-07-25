@@ -5,11 +5,18 @@ name: "write-my-blog"
 version: 0.1.1
 displayName: "Write My Blog"
 summary: "让Agent自主创建管理并发布全功能博客。Enables the agent to create, manage, and publish a full-featured blog auto"
+summary_zh: "让Agent自主创建管理并发布全功能博客。Enables the agent to create, manage, and publish a full-featured blog auto"
 license: "MIT"
 description: |-
   Enables the agent to create, manage, and publish a full-featured blog
   autonomously。The agent can。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
-tags: bash,api,blog,http,localhost,x-api-key
+tags:
+  - bash
+  - api
+  - blog
+  - http
+  - localhost
+  - x-api-key
 tools:
   - read
   - exec

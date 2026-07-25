@@ -4,6 +4,7 @@ name: "task-queue-manager"
 version: 1.0.1
 displayName: "任务队列管理器(专业版)"
 summary: "全功能持久化任务队列，含分布式处理、优先级调度、数据库存储与监控告警，支持6种角色场景。。任务队列管理器（专业版）是在免费版基础上的全功能升级，为AI Agent提供企业级的持久化任务队列管"
+summary_zh: "全功能持久化任务队列，含分布式处理、优先级调度、数据库存储与监控告警，支持6种角色场景。。任务队列管理器（专业版）是在免费版基础上的全功能升级，为AI Agent提供企业级的持久化任务队列管"
 license: "MIT"
 edition: "pro"
 description: |-

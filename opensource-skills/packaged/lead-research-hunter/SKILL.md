@@ -4,7 +4,8 @@ name: lead-research-hunter
 version: 1.0.1
 displayName: 销售线索猎手
 summary: "3D线索打分模型自动筛选高价值潜客,让销售只打能赢的电话。销售线索猎手——不只是找名单,更会筛选与打分。用3D线索打分模型(Fit+Intent+Engagement)自动筛选高价值潜客,从"
-license: Proprietary
+summary_zh: "3D线索打分模型自动筛选高价值潜客,让销售只打能赢的电话。销售线索猎手——不只是找名单,更会筛选与打分。用3D线索打分模型(Fit+Intent+Engagement)自动筛选高价值潜客,从"
+license: MIT
 description: 销售线索猎手——不只是找名单,更会筛选与打分。用3D线索打分模型(Fit+Intent+Engagement)自动筛选高价值潜客,从公司情报到决策人识别到个性化触达话术全流程。Use
   when 需要B2B销售线索挖掘、客户画像分析、决策人识别、触达话术生成、线索优先级排序时使用。不适用于C端消费者获客和批量邮件群发。
 tags:

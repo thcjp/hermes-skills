@@ -4,6 +4,7 @@ name: performance-optimizer-pro
 version: 1.0.1
 displayName: 性能优化专家
 summary: "测量优先不盲目优化,Core Web Vitals目标驱动的前端性能提升方案。性能优化专家坚持测量优先原则,核心功能包括Core Web Vitals目标设定与基线采集(LCP/CLS/IN"
+summary_zh: "测量优先不盲目优化,Core Web Vitals目标驱动的前端性能提升方案。性能优化专家坚持测量优先原则,核心功能包括Core Web Vitals目标设定与基线采集(LCP/CLS/IN"
 license: Proprietary
 description: 性能优化专家坚持测量优先原则,核心功能包括Core Web Vitals目标设定与基线采集(LCP/CLS/INP/FCP/TTFB)、性能分析工作流(Profiling/瓶颈定位/优化实施/效果验证)、性能反模式检测、持续监控与性能预算。适用于网站性能审计、瓶颈定位、优化实施、性能回归分析、持续监控场景。触发关键词:性能优化、性能调优、Core
   Web Vitals、LCP、CLS、INP、性能分析、性能瓶颈、前端性能、加载速度、渲染性能。

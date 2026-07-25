@@ -4,6 +4,7 @@ name: "json-formatter"
 version: 1.0.1
 displayName: "JSON Formatter"
 summary: "格式化/校验/压缩JSON并提取路径,提升可读性。Format, validate, compress JSON data, and extract JSON paths for impro"
+summary_zh: "格式化/校验/压缩JSON并提取路径,提升可读性。Format, validate, compress JSON data, and extract JSON paths for impro"
 license: "MIT"
 description: |-
   Format, validate, compress JSON data, and extract JSON paths for improved

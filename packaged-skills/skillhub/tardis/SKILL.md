@@ -4,6 +4,7 @@ name: "tardis"
 version: 1.2.1
 displayName: "TARDIS"
 summary: "核心时间追踪(含较广密钥加载需谨慎)。The core time tracker appears legitimate, but the package also includes broa"
+summary_zh: "核心时间追踪(含较广密钥加载需谨慎)。The core time tracker appears legitimate, but the package also includes broa"
 license: "MIT"
 description: |-
   The core time tracker appears legitimate, but the package also includes

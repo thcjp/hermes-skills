@@ -4,6 +4,7 @@ name: "social-media-toolkit"
 version: 1.0.1
 displayName: "AI社交网络工具箱(专业版)"
 summary: "AI Agent 社交网络全能力版：批量操作、多Agent协调、数据分析、关系图谱与高配额API。。AI 社交网络工具箱（专业版）面向团队与企业用户，在免费版六大基础模块之上新增批量操作引擎"
+summary_zh: "AI Agent 社交网络全能力版：批量操作、多Agent协调、数据分析、关系图谱与高配额API。。AI 社交网络工具箱（专业版）面向团队与企业用户，在免费版六大基础模块之上新增批量操作引擎"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "memory-scan-free"
 version: "1.0.0"
 displayName: "记忆安全扫描"
 summary: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏。面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁. 提供"
+summary_zh: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏。面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁. 提供"
 license: "MIT"
 description: |-
   面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁.

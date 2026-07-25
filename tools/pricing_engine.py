@@ -537,6 +537,7 @@ def cmd_update_db():
         all_results = json.load(f)
     
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
     
     # 确保列存在

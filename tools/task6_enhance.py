@@ -27,6 +27,7 @@ def get_l7_audit_stats():
 
 def get_pricing_stats():
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
     s = {"available": False, "tier_distribution": {}, "total_priced": 0,
@@ -70,6 +71,7 @@ def get_marketing_stats():
             s["optimized"] = d.get("summaries_optimized", 0)
             s["pro_tables_added"] = d.get("pro_tables_added", 0)
         conn = sqlite3.connect(DB_PATH)
+        conn.execute("PRAGMA foreign_keys = ON")
         cc = conn.cursor()
         cc.execute("SELECT COUNT(*) FROM skills WHERE slug NOT LIKE ?", ("%-free",))
         s["total_paid"] = cc.fetchone()[0]
@@ -82,6 +84,7 @@ def get_marketing_stats():
 
 def get_license_stats():
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
     s = {"available": False, "proprietary_count": 0, "mit_count": 0,

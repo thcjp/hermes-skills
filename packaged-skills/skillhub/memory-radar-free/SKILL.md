@@ -4,6 +4,7 @@ name: "memory-radar-free"
 version: 1.0.1
 displayName: "记忆雷达"
 summary: "面向AI Agent记忆文件的基础安全扫描工具，检测注入与凭证泄漏等常见威胁。面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威"
+summary_zh: "面向AI Agent记忆文件的基础安全扫描工具，检测注入与凭证泄漏等常见威胁。面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威"
 license: "MIT"
 description: |-
   面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁.

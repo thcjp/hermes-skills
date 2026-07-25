@@ -4,6 +4,7 @@ name: "afrexai-cybersecurity-engine-free"
 version: "1.0.0"
 displayName: "网络安全引擎(免费版)"
 summary: "全面安全评估、STRIDE威胁建模、OWASP Top 10审计、漏洞管理与应急响应体系。免费版。企业级网络安全评估与加固体系（免费版），覆盖安全态势评估、STRIDE威胁建模、 OWASP"
+summary_zh: "全面安全评估、STRIDE威胁建模、OWASP Top 10审计、漏洞管理与应急响应体系。免费版。企业级网络安全评估与加固体系（免费版），覆盖安全态势评估、STRIDE威胁建模、 OWASP"
 license: "MIT"
 description: |-
   企业级网络安全评估与加固体系（免费版），覆盖安全态势评估、STRIDE威胁建模、

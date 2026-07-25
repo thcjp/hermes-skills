@@ -4,6 +4,7 @@ name: "blog-seo-writer"
 version: 1.0.1
 displayName: "blog-seo-writer"
 summary: "写Google高排名SEO博文,内置关键词/元描述/结构化,流量可期。Create SEO-optimized blog posts that rank higher on Google。I"
+summary_zh: "写Google高排名SEO博文,内置关键词/元描述/结构化,流量可期。Create SEO-optimized blog posts that rank higher on Google。I"
 license: "MIT"
 description: |-
   Create SEO-optimized blog posts that rank higher on Google。Includes

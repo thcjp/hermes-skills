@@ -4,6 +4,7 @@ name: "csv-json-converter"
 version: 1.0.1
 displayName: "CSV转JSON(专业版)"
 summary: "企业级CSV转JSON工具，支持批量流式转换、Schema校验、字段映射与数据库直写。。CSV转JSON专业版是一款面向数据团队与企业级ETL场景的全功能表格数据格式转换工具。在免费版的表头"
+summary_zh: "企业级CSV转JSON工具，支持批量流式转换、Schema校验、字段映射与数据库直写。。CSV转JSON专业版是一款面向数据团队与企业级ETL场景的全功能表格数据格式转换工具。在免费版的表头"
 license: "MIT"
 edition: "pro"
 description: |-

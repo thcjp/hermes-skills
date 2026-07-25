@@ -5,9 +5,16 @@ name: "repo-reader-tool"
 version: "1.0.1"
 displayName: "Read GitHub"
 summary: "经gitmcp.io读GitHub仓库(权限较广需谨慎)。This skill is mostly transparent about reading GitHub through gitm"
+summary_zh: "经gitmcp.io读GitHub仓库(权限较广需谨慎)。This skill is mostly transparent about reading GitHub through gitm"
 license: "MIT"
 description: "Read GitHub repositories through gitmcp.io. 自动读取GitHub仓库内容,支持代码结构分析和文件浏览"
-tags: GitHub,gitmcp,仓库,repo,按流程执,依赖说明
+tags:
+  - GitHub
+  - gitmcp
+  - 仓库
+  - repo
+  - 按流程执
+  - 依赖说明
 tools:
   - read
   - exec

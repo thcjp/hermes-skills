@@ -53,6 +53,7 @@ def import_packaged_skills():
         return 0
 
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
@@ -137,6 +138,7 @@ def import_opensource_skills():
         return 0
 
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
@@ -213,6 +215,7 @@ def import_opensource_skills():
 def update_baseline_hashes():
     """为所有skill更新content_hash基线（如果versions表中hash为NULL）"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
@@ -259,6 +262,7 @@ def import_enterprise_skills():
         return 0
 
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
@@ -348,6 +352,7 @@ def main():
 
     # 统计
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
     c.execute("SELECT COUNT(*) FROM skills")
     total = c.fetchone()[0]

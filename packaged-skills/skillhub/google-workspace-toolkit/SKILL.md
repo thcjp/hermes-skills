@@ -4,6 +4,7 @@ name: "google-workspace-toolkit"
 version: 1.0.1
 displayName: "谷歌办公工具接口专业版"
 summary: "全功能Google办公工具接口,49个工具覆盖十大服务,支持企业级批量操作与多租户管理。。谷歌办公工具接口专业版,通过工具协议统一调用 Google Workspace 全部十大服务共 49"
+summary_zh: "全功能Google办公工具接口,49个工具覆盖十大服务,支持企业级批量操作与多租户管理。。谷歌办公工具接口专业版,通过工具协议统一调用 Google Workspace 全部十大服务共 49"
 license: "MIT"
 edition: "pro"
 description: |-

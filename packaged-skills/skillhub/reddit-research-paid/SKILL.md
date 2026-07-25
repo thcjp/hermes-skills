@@ -4,6 +4,7 @@ name: "reddit-research-paid"
 version: 1.0.1
 displayName: "Reddit调研(专业版)"
 summary: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。。Reddit调研专业版是一套面向市场研究团队与内容机构的企业级社区调研解决方案，在免费版基础上扩展出多"
+summary_zh: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。。Reddit调研专业版是一套面向市场研究团队与内容机构的企业级社区调研解决方案，在免费版基础上扩展出多"
 license: "MIT"
 edition: "pro"
 description: |-

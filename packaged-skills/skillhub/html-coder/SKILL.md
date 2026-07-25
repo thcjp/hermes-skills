@@ -4,6 +4,7 @@ name: "html-coder"
 version: 2.0.2
 displayName: "HTML Coder"
 summary: "专家级HTML开发,构建网页/表单/交互内容。Expert HTML development skill for building web pages, forms, and interac"
+summary_zh: "专家级HTML开发,构建网页/表单/交互内容。Expert HTML development skill for building web pages, forms, and interac"
 license: "MIT"
 description: |-
   Expert HTML development skill for building web pages, forms, and interactive

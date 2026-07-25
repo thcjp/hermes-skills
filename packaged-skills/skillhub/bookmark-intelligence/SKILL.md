@@ -4,6 +4,7 @@ name: "bookmark-intelligence"
 version: 1.0.1
 displayName: "书签智析专业版"
 summary: "自动监控X书签、抓取链接文章、AI提取关键概念与行动项,关联个人项目并推送高价值洞察。。X(Twitter)书签自动化分析与知识萃取专业版。持续监控你的 X 书签,抓取推文所链接文章的完整正"
+summary_zh: "自动监控X书签、抓取链接文章、AI提取关键概念与行动项,关联个人项目并推送高价值洞察。。X(Twitter)书签自动化分析与知识萃取专业版。持续监控你的 X 书签,抓取推文所链接文章的完整正"
 license: "MIT"
 description: |-
   X(Twitter)书签自动化分析与知识萃取专业版。持续监控你的 X 书签,抓取推文所链接文章的完整正文,

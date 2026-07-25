@@ -4,6 +4,7 @@ name: "go-linter-configuration"
 version: 1.0.1
 displayName: "Go Linter Configurat"
 summary: "配置排障golangci-lint,处理导入与类型检查问题。Configure and troubleshoot golangci-lint for Go projects。Handle i"
+summary_zh: "配置排障golangci-lint,处理导入与类型检查问题。Configure and troubleshoot golangci-lint for Go projects。Handle i"
 license: "MIT"
 description: |-
   Configure and troubleshoot golangci-lint for Go projects。Handle import

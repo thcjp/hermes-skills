@@ -4,6 +4,7 @@ name: "social-media-scheduler-free"
 version: "1.0.0"
 displayName: "社媒排期 LITE"
 summary: "基础社媒内容排期,支持三平台内容日历与文案生成。。跨平台社媒内容排期免费版。支持 Twitter/X、LinkedIn、Facebook 三平台, 生成按日期/平台组织的基础内容日历与平台适"
+summary_zh: "基础社媒内容排期,支持三平台内容日历与文案生成。。跨平台社媒内容排期免费版。支持 Twitter/X、LinkedIn、Facebook 三平台, 生成按日期/平台组织的基础内容日历与平台适"
 license: "MIT"
 description: |-
   跨平台社媒内容排期免费版。支持 Twitter/X、LinkedIn、Facebook 三平台,

@@ -5,6 +5,7 @@ name: "dlazy-audio"
 version: 1.0.1
 displayName: "音频生成工具-专业版"
 summary: "全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。。音频生成工具专业版，面向专业内容团队的全功能音频生成平台。核心能力： - 15+ 音频模型全覆盖（TTS、"
+summary_zh: "全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。。音频生成工具专业版，面向专业内容团队的全功能音频生成平台。核心能力： - 15+ 音频模型全覆盖（TTS、"
 license: "MIT"
 edition: "pro"
 description: |-
@@ -13,7 +14,13 @@ description: |-
   - 多角色对话一次性渲染（最多10个角色）
   - 语音克隆（ElevenLabs IVC、Qwen、Kling、Vidu）
   - 原创音乐生成（Suno V5
-tags: Audio,dlazy,text,不支持,工具,核心能力
+tags:
+  - Audio
+  - dlazy
+  - text
+  - 不支持
+  - 工具
+  - 核心能力
 tools:
   - read
   - exec

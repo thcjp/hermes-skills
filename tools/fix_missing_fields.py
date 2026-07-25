@@ -606,6 +606,7 @@ def update_db_category(slug, category):
     """Update the skills.category field in the SQLite database"""
     try:
         conn = sqlite3.connect(DB_PATH)
+        conn.execute("PRAGMA foreign_keys = ON")
         c = conn.cursor()
         c.execute("UPDATE skills SET category = ?, updated_at = ? WHERE slug = ?", 
                   (category, datetime.now().strftime("%Y-%m-%dT%H:%M:%S"), slug))

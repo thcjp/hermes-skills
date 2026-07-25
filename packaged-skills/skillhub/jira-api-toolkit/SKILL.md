@@ -4,6 +4,7 @@ name: "jira-api-toolkit"
 version: 1.0.1
 displayName: "Jira工具箱(专业版)"
 summary: "全功能 Jira Cloud 集成，含创建/更新/流转/批量/自动化与多连接管理。。全功能 Jira Cloud 集成，含创建/更新/流转/批量/自动化与多连接管理。核心能力： - 全部只读"
+summary_zh: "全功能 Jira Cloud 集成，含创建/更新/流转/批量/自动化与多连接管理。。全功能 Jira Cloud 集成，含创建/更新/流转/批量/自动化与多连接管理。核心能力： - 全部只读"
 license: "MIT"
 edition: "pro"
 description: |-

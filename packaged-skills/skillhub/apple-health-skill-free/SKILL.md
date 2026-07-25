@@ -5,6 +5,7 @@ name: "apple-health-skill-free"
 version: "1.0.0"
 displayName: "运动健康数据基础版"
 summary: "基础运动健康数据查询，获取训练方案和训练记录。使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录. 适用于基础训练数据查看场景。升级至完整版可解锁AI教练对话"
+summary_zh: "基础运动健康数据查询，获取训练方案和训练记录。使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录. 适用于基础训练数据查看场景。升级至完整版可解锁AI教练对话"
 license: "MIT"
 description: |-
   使用AI与运动健康数据对话的免费版。支持获取每日训练方案（无需认证）和查询训练记录.
@@ -15,7 +16,13 @@ tools:
   - exec
   - write
 homepage: ""
-tags: api,get,key,duration,sport,教练对话
+tags:
+  - api
+  - get
+  - key
+  - duration
+  - sport
+  - 教练对话
 category: "Automation"
 
 ---

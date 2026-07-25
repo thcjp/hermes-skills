@@ -4,6 +4,7 @@ name: "git-cli"
 version: 1.0.2
 displayName: "Git cli"
 summary: "用Git CLI检查/暂存/提交/分支/同步代码变更。Helper for using the Git CLI to inspect, stage, commit, branch, and"
+summary_zh: "用Git CLI检查/暂存/提交/分支/同步代码变更。Helper for using the Git CLI to inspect, stage, commit, branch, and"
 license: "MIT"
 description: |-
   Helper for using the Git CLI to inspect, stage, commit, branch, and

@@ -4,6 +4,7 @@ name: "communication-skill-free"
 version: "1.0.0"
 displayName: "Comm LITE"
 summary: "基础沟通辅助工具,通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息。沟通辅助基础版(免费)。通过简化的3步流程(GATHER-CRAFT-REFINE)帮助用户快速"
+summary_zh: "基础沟通辅助工具,通过3步流程(GATHER-CRAFT-REFINE)帮助撰写得体回应消息。沟通辅助基础版(免费)。通过简化的3步流程(GATHER-CRAFT-REFINE)帮助用户快速"
 license: "MIT"
 edition: "free"
 description: |-

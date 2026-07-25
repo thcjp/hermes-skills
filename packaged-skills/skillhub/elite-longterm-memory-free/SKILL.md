@@ -4,6 +4,7 @@ name: "elite-longterm-memory-free"
 version: "1.0.0"
 displayName: "精英长期记忆免费版"
 summary: "基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。。面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.m"
+summary_zh: "基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。。面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.m"
 license: "MIT"
 description: |-
   面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力.

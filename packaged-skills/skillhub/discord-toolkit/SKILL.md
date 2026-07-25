@@ -4,6 +4,7 @@ name: "discord-toolkit"
 version: 1.0.1
 displayName: "Discord工具箱专业版"
 summary: "企业级 Discord 管理工具,支持批量操作、审核管理、角色权限与自定义表情贴纸。。面向企业运营与社区管理团队的 Discord 全功能管理工具。核心能力: - 批量消息发送、清理与定时发"
+summary_zh: "企业级 Discord 管理工具,支持批量操作、审核管理、角色权限与自定义表情贴纸。。面向企业运营与社区管理团队的 Discord 全功能管理工具。核心能力: - 批量消息发送、清理与定时发"
 license: "MIT"
 edition: "pro"
 description: |-

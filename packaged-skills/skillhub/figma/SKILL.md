@@ -4,6 +4,7 @@ name: "figma"
 version: 2.1.1
 displayName: "Figma"
 summary: "读Figma数据/导出资产/写回请求,设计交付闭环"MIT。This skill does what it advertises: reads Figma data, exp"
+summary_zh: "读Figma数据/导出资产/写回请求,设计交付闭环"MIT。This skill does what it advertises: reads Figma data, exp"
 description: |-
   This skill does what it advertises: reads Figma data, exports assets,
   and writes user-requested r。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.

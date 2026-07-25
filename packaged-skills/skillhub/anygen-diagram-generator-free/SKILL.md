@@ -4,6 +4,7 @@ name: "anygen-diagram-generator-free"
 version: "1.0.0"
 displayName: "AnyGen图表生成器免费版"
 summary: "使用AnyGen CLI生成基础流程图与架构图，支持文本到图表的智能转换，适合快速可视化需求。。基于AnyGen CLI的图表生成技能免费版，通过www.anygen.io服务端 将文本描述"
+summary_zh: "使用AnyGen CLI生成基础流程图与架构图，支持文本到图表的智能转换，适合快速可视化需求。。基于AnyGen CLI的图表生成技能免费版，通过www.anygen.io服务端 将文本描述"
 license: "MIT"
 description: |-
   基于AnyGen CLI的图表生成技能免费版，通过www.anygen.io服务端

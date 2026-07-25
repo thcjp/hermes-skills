@@ -4,6 +4,7 @@ name: "linear-skill"
 version: 1.0.1
 displayName: "Linear"
 summary: "经内置Node CLI与Linear API管项目/issue/任务。Manage Linear projects, issues, and tasks via the bundled No"
+summary_zh: "经内置Node CLI与Linear API管项目/issue/任务。Manage Linear projects, issues, and tasks via the bundled No"
 license: "MIT"
 description: |-
   Manage Linear projects, issues, and tasks via the bundled Node CLI and

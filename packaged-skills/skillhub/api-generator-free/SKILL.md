@@ -4,6 +4,7 @@ name: "api-generator-free"
 version: "1.0.0"
 displayName: "API代码生成器免费版"
 summary: "生成RESTful端点、GraphQL schema与测试套件,快速搭建API代码脚手架。API 代码生成器免费版。从零生成基础 API 代码脚手架,支持 RESTful CRUD 端点（E"
+summary_zh: "生成RESTful端点、GraphQL schema与测试套件,快速搭建API代码脚手架。API 代码生成器免费版。从零生成基础 API 代码脚手架,支持 RESTful CRUD 端点（E"
 license: "MIT"
 description: |-
   API 代码生成器免费版。从零生成基础 API 代码脚手架,支持 RESTful CRUD 端点（Express.js）、

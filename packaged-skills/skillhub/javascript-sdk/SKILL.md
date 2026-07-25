@@ -4,6 +4,7 @@ name: "javascript-sdk"
 version: 0.1.6
 displayName: "Javascript Sdk"
 summary: "inference.sh的JS/TS SDK,跑AI应用/建Agent/集成150+模型。JavaScript/TypeScript SDK for inference。sh - run A"
+summary_zh: "inference.sh的JS/TS SDK,跑AI应用/建Agent/集成150+模型。JavaScript/TypeScript SDK for inference。sh - run A"
 license: "MIT"
 description: |-
   JavaScript/TypeScript SDK for inference。sh - run AI apps, build agents,

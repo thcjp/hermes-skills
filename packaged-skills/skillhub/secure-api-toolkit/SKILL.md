@@ -4,6 +4,7 @@ name: "secure-api-toolkit"
 version: 1.0.1
 displayName: "安全API工具箱Pro"
 summary: "企业级凭据代理方案，含多SDK、团队金库、审计日志、自定义提供商与合规导出。。安全API工具箱（专业版）为团队与企业提供完整的凭据代理治理方案，从架构层杜绝Agent接触真实密钥。核心能力："
+summary_zh: "企业级凭据代理方案，含多SDK、团队金库、审计日志、自定义提供商与合规导出。。安全API工具箱（专业版）为团队与企业提供完整的凭据代理治理方案，从架构层杜绝Agent接触真实密钥。核心能力："
 license: "MIT"
 edition: "pro"
 description: |-

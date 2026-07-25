@@ -4,6 +4,7 @@ name: "telegram-msg-toolkit"
 version: 1.0.1
 displayName: "Telegram消息工具箱(专业版)"
 summary: "Telegram Bot 全能力版：批量操作、群组管理、频道运营、审核与Webhook回调。。Telegram 消息工具箱（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引"
+summary_zh: "Telegram Bot 全能力版：批量操作、群组管理、频道运营、审核与Webhook回调。。Telegram 消息工具箱（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "baidu-netdisk-skills-free"
 version: "2.0.0"
 displayName: "百度网盘 Free"
 summary: "百度网盘基础文件管理，限 /apps/bdpan/，支持查看列表与上传下载。。百度网盘 Free 是百度网盘技能的免费精简版，通过 bdpan 命令行工具对百度网盘进行基础文件操作， 所有操"
+summary_zh: "百度网盘基础文件管理，限 /apps/bdpan/，支持查看列表与上传下载。。百度网盘 Free 是百度网盘技能的免费精简版，通过 bdpan 命令行工具对百度网盘进行基础文件操作， 所有操"
 license: "MIT"
 description: |-
   百度网盘 Free 是百度网盘技能的免费精简版，通过 bdpan 命令行工具对百度网盘进行基础文件操作，

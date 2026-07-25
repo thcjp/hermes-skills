@@ -1,4 +1,5 @@
 ---
+
 slug: automation-recipe-book-free
 name: automation-recipe-book-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: 自动化配方手册(免费版)
 summary: "8个开箱即用的自动化场景配方，含新闻摘要、邮件回复、价格监控等，附配方结构与自定义指南.。自动化配方手册免费版为AI Agent提供8个开箱即用的自动化场景配方。每个配方以YAML格式定义触"
 license: Proprietary
 edition: free
-description: 自动化配方手册免费版为AI Agent提供8个开箱即用的自动化场景配方。每个配方以YAML格式定义触发条件与执行动作，用户复制即可使用，修改参数即可定制。Use
+description: "自动化配方手册免费版为AI Agent提供8个开箱即用的自动化场景配方。每个配方以YAML格式定义触发条件与执行动作，用户复制即可使用，修改参数即可定制。Use
+  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、自动化、测试、监控、设计、机器学习"
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 自动化配方
@@ -26,6 +28,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # 自动化配方手册（免费版）
 

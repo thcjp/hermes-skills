@@ -5,6 +5,7 @@ name: "dns"
 version: 1.0.1
 displayName: "DNS配置专家"
 summary: "DNS记录配置、TTL迁移、邮件认证三件套、CAA证书锁定与Cloudflare代理排障。DNS领域专业配置与排障Skill,覆盖记录生命周期、邮件认证链、证书授权限制与CDN代理行为. 核"
+summary_zh: "DNS记录配置、TTL迁移、邮件认证三件套、CAA证书锁定与Cloudflare代理排障。DNS领域专业配置与排障Skill,覆盖记录生命周期、邮件认证链、证书授权限制与CDN代理行为. 核"
 license: "MIT"
 description: |-
   DNS领域专业配置与排障Skill,覆盖记录生命周期、邮件认证链、证书授权限制与CDN代理行为.
@@ -21,7 +22,13 @@ description: |-
   - 邮件投递率治理(SPF/DKIM/DMARC全链路)
   - 证书安全加固(CAA锁定+iodef告警)
   - Cloudflare代理导致的非HTTP服务故障排查
-tags: 通信,邮件,dig,ttl,caa,com
+tags:
+  - 通信
+  - 邮件
+  - dig
+  - ttl
+  - caa
+  - com
 tools:
   - read
   - exec

@@ -4,6 +4,7 @@ name: "memory-radar"
 version: 1.0.1
 displayName: "记忆雷达"
 summary: "面向AI Agent记忆文件的安全扫描系统，检测注入、凭证泄漏、数据外泄等七大威胁。面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文"
+summary_zh: "面向AI Agent记忆文件的安全扫描系统，检测注入、凭证泄漏、数据外泄等七大威胁。面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文"
 license: "MIT"
 description: |-
   面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文件威胁关联缺失四大痛点.

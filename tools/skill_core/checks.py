@@ -166,12 +166,18 @@ def check_no_xml_brackets(fm: dict) -> dict:
     }
 
 
-def check_no_placeholders(content: str) -> dict:
-    """检查: 无占位符"""
+def check_no_placeholders(content: str, fm_raw: str = '') -> dict:
+    """检查: 无占位符
+
+    链接占位符仅在frontmatter中检查(正文中的Markdown链接合法)
+    其他占位符检查全文
+    """
     issues = []
     for pattern, desc in PLACEHOLDER_PATTERNS:
-        # 跳过链接检查(链接在正文中合法)
         if '未替换链接' in desc:
+            # 链接占位符仅在frontmatter中检查
+            for m in re.finditer(pattern, fm_raw):
+                issues.append(f"{desc}: '{m.group(0)}'")
             continue
         for m in re.finditer(pattern, content):
             issues.append(f"{desc}: '{m.group(0)}'")

@@ -4,6 +4,7 @@ name: "agent-telegram-free"
 version: "1.0.0"
 displayName: "Agent TG LITE"
 summary: "Agent Telegram 基础通信规范，支持 3 类角色消息发送。。Agent Telegram 通信规范免费版。定义 main、backend、frontend 三类基础 Agent"
+summary_zh: "Agent Telegram 基础通信规范，支持 3 类角色消息发送。。Agent Telegram 通信规范免费版。定义 main、backend、frontend 三类基础 Agent"
 license: "MIT"
 description: |-
   Agent Telegram 通信规范免费版。定义 main、backend、frontend 三类基础 Agent 角色的 accountId、

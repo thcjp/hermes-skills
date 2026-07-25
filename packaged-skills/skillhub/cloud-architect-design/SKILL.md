@@ -4,6 +4,7 @@ name: "cloud-architect-design"
 version: 1.0.1
 displayName: "云架构师专业版"
 summary: "企业级云架构设计平台，支持多云策略、迁移规划、FinOps优化、合规设计与灾备方案。。云架构师专业版 —— 面向企业团队与架构师的高级云架构设计平台。核心能力: - 多云架构策略：AWS+A"
+summary_zh: "企业级云架构设计平台，支持多云策略、迁移规划、FinOps优化、合规设计与灾备方案。。云架构师专业版 —— 面向企业团队与架构师的高级云架构设计平台。核心能力: - 多云架构策略：AWS+A"
 license: "MIT"
 edition: "pro"
 description: |-

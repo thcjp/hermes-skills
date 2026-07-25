@@ -4,6 +4,7 @@ name: "reminder-engine"
 version: 1.0.1
 displayName: "提醒引擎(专业版)"
 summary: "一次性提醒创建引擎专业版，含多渠道投递、批量创建、递增提醒、周期性提醒与完整安全校验。。提醒引擎专业版是在免费版基础上的全功能升级，为AI Agent提供企业级提醒创建能力。专业版解锁多渠道"
+summary_zh: "一次性提醒创建引擎专业版，含多渠道投递、批量创建、递增提醒、周期性提醒与完整安全校验。。提醒引擎专业版是在免费版基础上的全功能升级，为AI Agent提供企业级提醒创建能力。专业版解锁多渠道"
 license: "MIT"
 edition: "pro"
 description: |-

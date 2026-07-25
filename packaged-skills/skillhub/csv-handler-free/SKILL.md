@@ -4,6 +4,7 @@ name: "csv-handler-free"
 version: "1.0.0"
 displayName: "CSV文件处理(免费版)"
 summary: "自动检测编码与分隔符，读取并清洗CSV数据，支持基础合并与导出。CSV文件处理免费版，提供基础的CSV读写与清洗能力. 核心能力包括： - 编码自动检测（utf-8、utf-8-sig、la"
+summary_zh: "自动检测编码与分隔符，读取并清洗CSV数据，支持基础合并与导出。CSV文件处理免费版，提供基础的CSV读写与清洗能力. 核心能力包括： - 编码自动检测（utf-8、utf-8-sig、la"
 license: "MIT"
 description: |-
   CSV文件处理免费版，提供基础的CSV读写与清洗能力.

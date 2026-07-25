@@ -4,6 +4,7 @@ name: "bilibili-all-in-one"
 version: 1.0.25
 displayName: "B站全功能工具箱"
 summary: "B站热门监控、视频下载、数据追踪、字幕处理、播放与投稿一体化工具集。。面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、 数据追踪(W"
+summary_zh: "B站热门监控、视频下载、数据追踪、字幕处理、播放与投稿一体化工具集。。面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、 数据追踪(W"
 license: "MIT"
 description: |-
   面向B站的六合一全功能工具技能,集成热门监控(Hot Monitor)、视频下载(Downloader)、

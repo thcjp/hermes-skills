@@ -5,6 +5,7 @@ name: "ai-agent-helper"
 version: 1.0.1
 displayName: "AI Agent Helper"
 summary: "AI Agent设计与优化助手,覆盖Prompt工程、任务拆解、ReAct循环、工具选择与Token优化"
+summary_zh: "AI Agent设计与优化助手,覆盖Prompt工程、任务拆解、ReAct循环、工具选择与Token优化"
 license: "MIT"
 description: |-
   AI Agent设计与优化助手。面向独立开发者与一人公司,提供从System Prompt设计到Agent Loop编排的全流程辅助.
@@ -13,7 +14,12 @@ description: |-
   Output Parsing(JSON/结构化输出与容错)、Token Optimization(上下文裁剪与few-shot精简).
   适用于构建客服Agent、数据分析Agent、代码Agent、自动化工作流Agent等场景。基于Markdown指令驱动,
   无需额外API Key(由Agent内置LLM提供推理能力)。已移除原始风险代码,清理外部依赖引用,适配SkillHub平台规范.
-tags: agent,优化,prompt,token,loop
+tags:
+  - agent
+  - 优化
+  - prompt
+  - token
+  - loop
 tools:
   - read
   - exec

@@ -1,4 +1,5 @@
 ---
+
 slug: podcast-downloader-tool-free
 name: podcast-downloader-tool-free
 version: 1.0.0
@@ -6,7 +7,9 @@ displayName: 播客下载工具免费版
 summary: "从小宇宙平台下载播客音频与节目笔记,自动转换为MP3格式,适合个人离线收听.。面向个人用户的播客下载工具(免费版)。核心能力:"
 license: Proprietary
 edition: free
-description: 面向个人用户的播客下载工具(免费版)。核心能力:，可自动提升工作效率
+description: "面向个人用户的播客下载工具(免费版)。核心能力:，可自动提升工作效率
+  - 从小宇宙(xiaoyuzhoufmUse
+  when 、时使用。'。自动化生成专业文档，提升文档覆盖率。触发关键词：文档生成、自动化、转换、营销。降低专业门槛，让非专业人员也能快速上手。提供结构化方法论与最佳实践。确保输出一致性与专业性"
 
   - 从小宇宙(xiaoyuzhoufmUse
   when 、时使用。'
@@ -28,6 +31,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
 # 播客下载工具 - 免费版
 

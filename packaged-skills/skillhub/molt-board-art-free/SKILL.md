@@ -5,6 +5,7 @@ name: "molt-board-art-free"
 version: "1.0.1"
 displayName: "Board Art Free"
 summary: "基础版协作像素画布技能，支持注册、像素放置和冷却管理。。molt-board-art-free 是协作像素画布技能的基础版本，让 AI Agent 在共享画布上放置像素. 支持机器人注册、像"
+summary_zh: "基础版协作像素画布技能，支持注册、像素放置和冷却管理。。molt-board-art-free 是协作像素画布技能的基础版本，让 AI Agent 在共享画布上放置像素. 支持机器人注册、像"
 license: "MIT"
 description: |-
   molt-board-art-free 是协作像素画布技能的基础版本，让 AI Agent 在共享画布上放置像素.
@@ -15,7 +16,13 @@ tools:
   - exec
   - write
 homepage: ""
-tags: artboard,api,agent,bash,请参考,目录中的
+tags:
+  - artboard
+  - api
+  - agent
+  - bash
+  - 请参考
+  - 目录中的
 category: "Automation"
 
 ---

@@ -4,6 +4,7 @@ name: "sql-master"
 version: 1.0.1
 displayName: "SQL大师工具(专业版)"
 summary: "面向企业的SQL全栈专业版，含自动化迁移、增量压缩备份、Schema对比同步、高可用与读写分离配置。"
+summary_zh: "面向企业的SQL全栈专业版，含自动化迁移、增量压缩备份、Schema对比同步、高可用与读写分离配置。"
 license: "MIT"
 edition: "pro"
 description: |-

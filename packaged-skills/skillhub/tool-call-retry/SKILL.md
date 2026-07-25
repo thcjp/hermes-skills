@@ -4,6 +4,7 @@ name: "tool-call-retry"
 version: 1.0.2
 displayName: "tool-call-retry"
 summary: "指数退避自动重试并修复LLM工具调用,格式校验/纠错。Auto retry & fix LLM tool calls with exponential backoff, format val"
+summary_zh: "指数退避自动重试并修复LLM工具调用,格式校验/纠错。Auto retry & fix LLM tool calls with exponential backoff, format val"
 license: "MIT"
 description: |-
   Auto retry & fix LLM tool calls with exponential backoff, format validation,

@@ -4,6 +4,7 @@ name: "brainz-calendar"
 version: 1.0.1
 displayName: "Calendar"
 summary: "用gcalcli管理Google日历,创建/列出/删除事件,日程不乱。Manage Google Calendar events using `gcalcli`。Create, list,"
+summary_zh: "用gcalcli管理Google日历,创建/列出/删除事件,日程不乱。Manage Google Calendar events using `gcalcli`。Create, list,"
 license: "MIT"
 description: |-
   Manage Google Calendar events using `gcalcli`。Create, list, and delete

@@ -4,6 +4,7 @@ name: "javascript-skills-paid"
 version: 1.0.1
 displayName: "JavaScript规范工具(专业版)"
 summary: "面向团队与企业的全量JavaScript规范套件,含性能优化、安全审查与CI/CD集成。。JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能"
+summary_zh: "面向团队与企业的全量JavaScript规范套件,含性能优化、安全审查与CI/CD集成。。JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能"
 license: "MIT"
 edition: "pro"
 description: |-

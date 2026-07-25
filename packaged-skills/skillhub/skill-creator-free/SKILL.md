@@ -5,6 +5,7 @@ name: "skill-creator-free"
 version: 1.0.1
 displayName: "AI技能创建指南（免费版）"
 summary: "免费版AI Skill创建指南，支持基础SKILL.md结构与Progressive Disclosure设计"
+summary_zh: "免费版AI Skill创建指南，支持基础SKILL.md结构与Progressive Disclosure设计"
 license: "MIT"
 description: |-
   创建有效AI Skill的基础指南（免费版）.
@@ -16,7 +17,13 @@ tools:
   - glob
   - grep
 homepage: ""
-tags: bundled,resources,body,progressive,disclosure,level
+tags:
+  - bundled
+  - resources
+  - body
+  - progressive
+  - disclosure
+  - level
 category: "Automation"
 
 ---

@@ -4,6 +4,7 @@ name: "sql-query"
 version: 1.0.1
 displayName: "SQL查询工具(专业版)"
 summary: "面向团队与企业的SQL查询专业版，含慢查询采集、结果缓存、跨库SQL转换、性能基准测试与优先工单支持。"
+summary_zh: "面向团队与企业的SQL查询专业版，含慢查询采集、结果缓存、跨库SQL转换、性能基准测试与优先工单支持。"
 license: "MIT"
 edition: "pro"
 description: |-

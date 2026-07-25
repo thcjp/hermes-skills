@@ -5,6 +5,7 @@ name: "creator-alpha-feed-free"
 version: "1.0.0"
 displayName: "创作者AI日报(免费版)"
 summary: "每日采集X平台AI内容,基础三档排名,写入Obsidian日报,适合个人创作者快速选题。。面向 AI 内容创作者的每日内容采集 Skill 免费版。按"X 主页 feed → 白名单账号 →"
+summary_zh: "每日采集X平台AI内容,基础三档排名,写入Obsidian日报,适合个人创作者快速选题。。面向 AI 内容创作者的每日内容采集 Skill 免费版。按"X 主页 feed → 白名单账号 →"
 license: "MIT"
 description: |-
   面向 AI 内容创作者的每日内容采集 Skill 免费版。按"X 主页 feed → 白名单账号 → 关键词"
@@ -12,7 +13,13 @@ description: |-
   行业 TOP3 三档基础排名,完整报告以 YYYY-MM-DD_HHMM.md 命名写入 Obsidian Vault.
   适合个人创作者快速搭建每日选题流。高级特性(群频道推送、必追账号校验、API 优先、
   登录拦截处理、降级回退)请升级付费版.
-tags: obsidian,api,日报,报告写入,vault,agent
+tags:
+  - obsidian
+  - api
+  - 日报
+  - 报告写入
+  - vault
+  - agent
 tools:
   - read
   - exec

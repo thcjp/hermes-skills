@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillHub 可见性优化分析报告</title>
+<style>
+:root{
+  --bg:#f1f5f9; --bg2:#ffffff; --ink:#0f172a; --muted:#64748b; --muted2:#94a3b8;
+  --rule:#e2e8f0; --rule2:#cbd5e1;
+  --primary:#2563eb; --primary-dark:#1d4ed8; --primary-light:#eff6ff; --primary-50:#dbeafe;
+  --accent:#f59e0b; --accent-light:#fef3c7;
+  --good:#10b981; --good-light:#d1fae5;
+  --bad:#ef4444; --bad-light:#fee2e2;
+  --warn:#f59e0b; --warn-light:#fef3c7;
+  --info:#0ea5e9; --info-light:#e0f2fe;
+  --purple:#8b5cf6; --purple-light:#ede9fe;
+  --p0:#dc2626; --p0-light:#fee2e2;
+  --p1:#ea580c; --p1-light:#ffedd5;
+  --p2:#ca8a04; --p2-light:#fef9c3;
+  --p3:#16a34a; --p3-light:#dcfce7;
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg:0 10px 30px rgba(0,0,0,0.10);
+  --radius:12px; --radius-sm:8px; --radius-lg:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Noto Sans CJK SC","Microsoft YaHei","Helvetica Neue",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink); line-height:1.7; font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1140px; margin:0 auto; padding:0 28px}
+
+/* ============ HERO ============ */
+.hero{
+  background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 50%,#3b82f6 100%);
+  color:#fff; padding:56px 0 48px; position:relative; overflow:hidden;
+}
+.hero::before{
+  content:""; position:absolute; top:-40%; right:-10%; width:600px; height:600px;
+  background:radial-gradient(circle,rgba(255,255,255,0.08) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero::after{
+  content:""; position:absolute; bottom:-50%; left:-5%; width:400px; height:400px;
+  background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero .wrap{position:relative; z-index:1}
+.hero .eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; background:rgba(255,255,255,0.15);
+  padding:5px 14px; border-radius:20px; margin-bottom:18px; backdrop-filter:blur(4px);
+}
+.hero h1{font-size:34px; font-weight:800; letter-spacing:-0.02em; line-height:1.2; margin-bottom:12px; max-width:820px}
+.hero .sub{font-size:16px; color:rgba(255,255,255,0.82); max-width:760px; line-height:1.6}
+.hero .meta-bar{
+  display:flex; gap:0; margin-top:32px; background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.18); border-radius:var(--radius); overflow:hidden; backdrop-filter:blur(6px);
+}
+.hero .meta-bar .m-item{
+  flex:1; padding:18px 24px; border-right:1px solid rgba(255,255,255,0.12);
+}
+.hero .meta-bar .m-item:last-child{border-right:none}
+.hero .meta-bar .m-val{font-size:28px; font-weight:800; line-height:1; letter-spacing:-0.02em}
+.hero .meta-bar .m-val .unit{font-size:14px; font-weight:600; color:rgba(255,255,255,0.7); margin-left:3px}
+.hero .meta-bar .m-label{font-size:11px; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.06em; margin-top:6px; font-weight:600}
+.hero .date-row{margin-top:24px; font-size:13px; color:rgba(255,255,255,0.6); display:flex; gap:24px; flex-wrap:wrap}
+.hero .date-row span{display:inline-flex; align-items:center; gap:6px}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(12px); border-bottom:1px solid var(--rule); box-shadow:var(--shadow);
+}
+.nav .wrap{display:flex; align-items:center; gap:6px; padding:0 28px; overflow-x:auto; scrollbar-width:thin}
+.nav a{
+  font-size:13px; font-weight:600; color:var(--muted); text-decoration:none;
+  padding:14px 14px; white-space:nowrap; border-bottom:2px solid transparent;
+  transition:all .15s; display:inline-flex; align-items:center; gap:6px;
+}
+.nav a:hover{color:var(--primary)}
+.nav a.active{color:var(--primary); border-bottom-color:var(--primary)}
+.nav a .n-num{font-size:10px; background:var(--primary-light); color:var(--primary); padding:2px 6px; border-radius:4px; font-weight:700}
+
+/* ============ SECTION ============ */
+section{padding:44px 0; border-bottom:1px solid var(--rule)}
+h2{font-size:24px; font-weight:800; letter-spacing:-0.01em; margin-bottom:8px; display:flex; align-items:center; gap:12px}
+h2 .sec-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:9px; background:var(--primary); color:#fff;
+  font-size:16px; font-weight:800; flex-shrink:0;
+}
+h3{font-size:17px; font-weight:700; margin:24px 0 10px; color:var(--ink)}
+h4{font-size:14px; font-weight:700; margin:16px 0 8px; color:var(--ink)}
+.lead{color:var(--muted); font-size:14px; margin-bottom:18px; max-width:800px}
+p{margin-bottom:10px}
+strong{font-weight:700; color:var(--ink)}
+code{background:var(--primary-light); padding:2px 6px; border-radius:4px; font-size:0.88em; color:var(--primary-dark); font-family:"SF Mono",Consolas,"Courier New",monospace}
+a{color:var(--primary); text-decoration:none}
+
+/* ============ CARDS ============ */
+.card{
+  background:var(--bg2); border:1px solid var(--rule); border-radius:var(--radius);
+  padding:24px; margin:16px 0; box-shadow:var(--shadow);
+}
+.card-grid{display:grid; gap:16px; margin:16px 0}
+.cg-2{grid-template-columns:repeat(2,1fr)}
+.cg-3{grid-template-columns:repeat(3,1fr)}
+.cg-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.cg-2,.cg-3,.cg-4{grid-template-columns:1fr}}
+
+.stat-card{
+  background:var(--bg2); border:1px solid var(--rule); border-radius:var(--radius);
+  padding:22px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+}
+.stat-card .sc-accent{position:absolute; top:0; left:0; right:0; height:4px}
+.stat-card .sc-val{font-size:32px; font-weight:800; letter-spacing:-0.02em; line-height:1}
+.stat-card .sc-val .unit{font-size:14px; font-weight:600; color:var(--muted); margin-left:4px}
+.stat-card .sc-label{font-size:13px; color:var(--muted); margin-top:8px; font-weight:600}
+.stat-card .sc-sub{font-size:12px; color:var(--muted2); margin-top:4px}
+.sc-blue .sc-accent{background:var(--primary)}
+.sc-red .sc-accent{background:var(--bad)}
+.sc-green .sc-accent{background:var(--good)}
+.sc-amber .sc-accent{background:var(--accent)}
+.sc-purple .sc-accent{background:var(--purple)}
+
+/* ============ BADGES ============ */
+.badge{display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; white-space:nowrap}
+.b-good{background:var(--good-light); color:#065f46}
+.b-bad{background:var(--bad-light); color:#991b1b}
+.b-warn{background:var(--warn-light); color:#92400e}
+.b-info{background:var(--info-light); color:#075985}
+.b-primary{background:var(--primary-50); color:var(--primary-dark)}
+.b-purple{background:var(--purple-light); color:#5b21b6}
+.b-gray{background:#f1f5f9; color:#475569}
+.b-p0{background:var(--p0-light); color:var(--p0); font-size:11px}
+.b-p1{background:var(--p1-light); color:var(--p1)}
+.b-p2{background:var(--p2-light); color:var(--p2)}
+.b-p3{background:var(--p3-light); color:var(--p3)}
+
+/* ============ TABLE ============ */
+.table-wrap{overflow-x:auto; border-radius:var(--radius); border:1px solid var(--rule); margin:16px 0; background:var(--bg2); box-shadow:var(--shadow)}
+table{width:100%; border-collapse:collapse; font-size:13px}
+thead th{background:#f8fafc; text-align:left; padding:12px 16px; font-weight:700; color:var(--ink); border-bottom:2px solid var(--rule2); white-space:nowrap}
+tbody td{padding:11px 16px; border-bottom:1px solid var(--rule); vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#f8fafc}
+.t-num{font-variant-numeric:tabular-nums; font-weight:700}
+
+/* ============ CALLOUT ============ */
+.callout{border-radius:var(--radius); padding:18px 22px; margin:18px 0; border:1px solid; display:flex; gap:14px; align-items:flex-start}
+.callout .co-icon{font-size:22px; line-height:1; flex-shrink:0; margin-top:1px}
+.callout .co-body{flex:1}
+.callout .co-title{font-weight:700; font-size:14px; margin-bottom:4px}
+.callout .co-text{font-size:13.5px; line-height:1.6}
+.callout.info{background:var(--info-light); border-color:#bae6fd; color:#0c4a6e}
+.callout.warn{background:var(--warn-light); border-color:#fde68a; color:#78350f}
+.callout.bad{background:var(--bad-light); border-color:#fecaca; color:#991b1b}
+.callout.good{background:var(--good-light); border-color:#a7f3d0; color:#065f46}
+.callout.primary{background:var(--primary-light); border-color:#bfdbfe; color:#1e3a8a}
+
+/* ============ CHARTS ============ */
+/* Bar chart */
+.bar-chart{margin:18px 0}
+.bar-row{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.bar-row .bar-label{width:160px; font-size:12.5px; font-weight:600; color:var(--ink); text-align:right; flex-shrink:0}
+.bar-row .bar-track{flex:1; height:28px; background:#f1f5f9; border-radius:6px; overflow:hidden; position:relative}
+.bar-row .bar-fill{height:100%; border-radius:6px; display:flex; align-items:center; padding-left:10px; color:#fff; font-size:12px; font-weight:700; transition:width .6s ease; min-width:2px}
+.bar-row .bar-val{width:110px; font-size:12.5px; font-weight:700; color:var(--ink); flex-shrink:0; font-variant-numeric:tabular-nums}
+.fill-blue{background:linear-gradient(90deg,#3b82f6,#2563eb)}
+.fill-red{background:linear-gradient(90deg,#f87171,#ef4444)}
+.fill-green{background:linear-gradient(90deg,#34d399,#10b981)}
+.fill-amber{background:linear-gradient(90deg,#fbbf24,#f59e0b)}
+.fill-purple{background:linear-gradient(90deg,#a78bfa,#8b5cf6)}
+.fill-gray{background:linear-gradient(90deg,#cbd5e1,#94a3b8)}
+
+/* Donut */
+.donut-wrap{display:flex; align-items:center; gap:24px; margin:16px 0; flex-wrap:wrap}
+.donut{
+  width:160px; height:160px; border-radius:50%; flex-shrink:0; position:relative;
+  display:flex; align-items:center; justify-content:center;
+}
+.donut::after{
+  content:""; position:absolute; width:96px; height:96px; background:var(--bg2); border-radius:50%;
+}
+.donut .donut-center{position:relative; z-index:1; text-align:center}
+.donut .donut-center .dc-val{font-size:26px; font-weight:800; line-height:1}
+.donut .donut-center .dc-label{font-size:11px; color:var(--muted); margin-top:2px}
+.donut-legend{display:flex; flex-direction:column; gap:8px}
+.dl-item{display:flex; align-items:center; gap:8px; font-size:13px}
+.dl-dot{width:12px; height:12px; border-radius:3px; flex-shrink:0}
+.dl-val{font-weight:700; margin-left:auto; font-variant-numeric:tabular-nums}
+
+/* Progress bar */
+.prog{margin:12px 0}
+.prog-label{display:flex; justify-content:space-between; font-size:12.5px; font-weight:600; margin-bottom:5px}
+.prog-track{height:10px; background:#f1f5f9; border-radius:5px; overflow:hidden}
+.prog-fill{height:100%; border-radius:5px}
+
+/* Comparison */
+.vs-grid{display:grid; grid-template-columns:1fr auto 1fr; gap:0; align-items:stretch; margin:18px 0}
+.vs-col{padding:22px; border-radius:var(--radius)}
+.vs-col.us{background:var(--primary-light); border:1px solid #bfdbfe}
+.vs-col.them{background:#f8fafc; border:1px solid var(--rule)}
+.vs-vs{display:flex; align-items:center; justify-content:center; padding:0 14px; font-size:13px; font-weight:800; color:var(--muted)}
+.vs-col .vs-head{font-size:13px; font-weight:700; margin-bottom:14px; display:flex; align-items:center; gap:8px}
+.vs-col .vs-head .badge{margin-left:auto}
+.vs-stat{margin-bottom:14px}
+.vs-stat .vs-num{font-size:24px; font-weight:800; line-height:1}
+.vs-stat .vs-num .unit{font-size:13px; font-weight:600; color:var(--muted); margin-left:3px}
+.vs-stat .vs-cap{font-size:12px; color:var(--muted); margin-top:3px}
+@media(max-width:760px){.vs-grid{grid-template-columns:1fr; gap:10px} .vs-vs{padding:4px}}
+
+/* Category list */
+.cat-list{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; margin:16px 0}
+.cat-item{
+  background:var(--bg2); border:1px solid var(--rule); border-radius:var(--radius-sm);
+  padding:14px 16px; display:flex; align-items:center; gap:12px; transition:all .15s;
+}
+.cat-item:hover{border-color:var(--primary); box-shadow:var(--shadow-md)}
+.cat-num{
+  width:28px; height:28px; border-radius:7px; background:var(--primary-light);
+  color:var(--primary); display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:800; flex-shrink:0;
+}
+.cat-info{flex:1; min-width:0}
+.cat-name{font-size:13.5px; font-weight:700; color:var(--ink); line-height:1.3}
+.cat-key{font-size:11px; color:var(--muted2); font-family:monospace; margin-top:2px}
+.cat-count{font-size:12px; font-weight:700; color:var(--muted); white-space:nowrap}
+.cat-count.zero{color:var(--bad)}
+
+/* Timeline / flow */
+.flow{display:flex; align-items:stretch; gap:0; margin:18px 0; flex-wrap:wrap}
+.flow-step{flex:1; min-width:180px; padding:18px; background:var(--bg2); border:1px solid var(--rule); border-radius:var(--radius-sm); position:relative}
+.flow-step:not(:last-child){margin-right:14px}
+.flow-step:not(:last-child)::after{
+  content:"→"; position:absolute; right:-14px; top:50%; transform:translateY(-50%);
+  font-size:20px; color:var(--muted2); z-index:1;
+}
+.flow-step .fs-num{font-size:11px; font-weight:800; color:var(--primary); text-transform:uppercase; letter-spacing:0.05em}
+.flow-step .fs-title{font-size:14px; font-weight:700; margin:4px 0 6px}
+.flow-step .fs-text{font-size:12.5px; color:var(--muted); line-height:1.5}
+.flow-step.fix{border-color:#a7f3d0; background:#f0fdf4}
+.flow-step.issue{border-color:#fecaca; background:#fef2f2}
+
+/* Action plan */
+.action-item{
+  display:flex; gap:16px; padding:20px; background:var(--bg2); border:1px solid var(--rule);
+  border-radius:var(--radius); margin-bottom:12px; box-shadow:var(--shadow); transition:all .15s;
+}
+.action-item:hover{box-shadow:var(--shadow-md); border-color:var(--rule2)}
+.ai-priority{
+  width:54px; height:54px; border-radius:12px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; flex-shrink:0; font-weight:800;
+}
+.ai-priority .ap-level{font-size:18px; line-height:1}
+.ai-priority .ap-label{font-size:9px; margin-top:2px; letter-spacing:0.05em}
+.ai-p0{background:var(--p0-light); color:var(--p0)}
+.ai-p1{background:var(--p1-light); color:var(--p1)}
+.ai-p2{background:var(--p2-light); color:var(--p2)}
+.ai-p3{background:var(--p3-light); color:var(--p3)}
+.ai-body{flex:1; min-width:0}
+.ai-title{font-size:15px; font-weight:700; color:var(--ink); margin-bottom:4px}
+.ai-desc{font-size:13px; color:var(--muted); line-height:1.6}
+.ai-meta{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
+
+/* Field audit grid */
+.field-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; margin:16px 0}
+.field-item{
+  background:var(--bg2); border:1px solid var(--rule); border-radius:var(--radius-sm);
+  padding:16px; border-left:4px solid var(--bad);
+}
+.field-item.ok{border-left-color:var(--good)}
+.field-item .fi-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+.field-item .fi-name{font-size:13px; font-weight:700; font-family:monospace; color:var(--ink)}
+.field-item .fi-status{font-size:11px; font-weight:700}
+.field-item .fi-desc{font-size:12px; color:var(--muted); line-height:1.5}
+.field-item .fi-val{font-size:12px; color:var(--bad); font-family:monospace; margin-top:4px; font-weight:600}
+
+/* Footer */
+.footer{background:#0f172a; color:#94a3b8; padding:40px 0; text-align:center}
+.footer .wrap{max-width:760px}
+.footer h3{color:#fff; font-size:16px; margin-bottom:8px}
+.footer p{font-size:13px; line-height:1.7}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:8px; height:8px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#cbd5e1; border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#94a3b8}
+
+/* Misc */
+.divider{height:1px; background:var(--rule); margin:24px 0}
+.tag-row{display:flex; gap:6px; flex-wrap:wrap; margin:8px 0}
+.pill{font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; background:#f1f5f9; color:#475569}
+.highlight-box{background:linear-gradient(135deg,var(--primary-light),#fff); border:1px solid #bfdbfe; border-radius:var(--radius); padding:18px 22px; margin:16px 0}
+.highlight-box .hb-label{font-size:11px; font-weight:800; color:var(--primary); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px}
+.highlight-box .hb-text{font-size:14px; color:var(--ink); line-height:1.6}
+
+</style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Research Deliverable · API 实测分析</span>
+    <h1>SkillHub 可见性优化分析报告</h1>
+    <p class="sub">基于 SkillHub 平台 API 实测调查的全面诊断：审核状态、可见性现状、缺失字段审计、分类系统、排名因素及优先级行动计划。</p>
+    <div class="meta-bar">
+      <div class="m-item">
+        <div class="m-val">1,643</div>
+        <div class="m-label">已发布技能</div>
+      </div>
+      <div class="m-item">
+        <div class="m-val">2,707</div>
+        <div class="m-label">待管理员审核</div>
+      </div>
+      <div class="m-item">
+        <div class="m-val">93<span class="unit">%</span></div>
+        <div class="m-label">缺失图标</div>
+      </div>
+      <div class="m-item">
+        <div class="m-val">0</div>
+        <div class="m-label">当前拒绝数</div>
+      </div>
+    </div>
+    <div class="date-row">
+      <span>报告日期：2026-07-25</span>
+      <span>数据来源：SkillHub Admin API / 前台搜索验证</span>
+      <span>发布主体：四川云物益邦科技有限公司（已认证）</span>
+    </div>
+  </div>
+</header>
+
+<!-- ========== NAV ========== -->
+<nav class="nav" id="topnav">
+  <div class="wrap">
+    <a href="#exec"><span class="n-num">0</span>执行摘要</a>
+    <a href="#audit"><span class="n-num">1</span>审核状态</a>
+    <a href="#visibility"><span class="n-num">2</span>可见性现状</a>
+    <a href="#fields"><span class="n-num">3</span>缺失字段</a>
+    <a href="#category"><span class="n-num">4</span>分类系统</a>
+    <a href="#filters"><span class="n-num">5</span>前台筛选</a>
+    <a href="#security"><span class="n-num">6</span>安全审核</a>
+    <a href="#structure"><span class="n-num">7</span>数据结构</a>
+    <a href="#ranking"><span class="n-num">8</span>排名因素</a>
+    <a href="#action"><span class="n-num">9</span>行动计划</a>
+  </div>
+</nav>
+
+<!-- ========== EXECUTIVE SUMMARY ========== -->
+<section id="exec">
+  <div class="wrap">
+    <h2><span class="sec-num">0</span>执行摘要</h2>
+    <p class="lead">本报告基于对 SkillHub 平台 Admin API、前台搜索、以及 Skill 详情 API 的系统性实测调查，全面诊断了我方 1,643 个已发布技能的可见性现状与优化空间。</p>
+
+    <div class="callout good">
+      <div class="co-icon">&#10003;</div>
+      <div class="co-body">
+        <div class="co-title">核心结论：技能已可见，但排名靠后</div>
+        <div class="co-text">经过 license 修复（830 个 SKILL.md 从 Proprietary 改为 MIT），当前 0 个技能被拒绝。技能在前台可被搜索到（实测搜索"记忆编排器"返回 8 条结果含我方技能），但由于 0 星评 + 低下载量，默认 <code>sortBy=score</code> 排序下排名极低。</div>
+      </div>
+    </div>
+
+    <div class="card-grid cg-3">
+      <div class="stat-card sc-red">
+        <div class="sc-accent"></div>
+        <div class="sc-val">2,707</div>
+        <div class="sc-label">卡在"管理员审核中"</div>
+        <div class="sc-sub">MIT license 新版本待审核通过</div>
+      </div>
+      <div class="stat-card sc-amber">
+        <div class="sc-accent"></div>
+        <div class="sc-val">93<span class="unit">%</span></div>
+        <div class="sc-label">技能缺失图标</div>
+        <div class="sc-sub">1,533 / 1,643 无 iconUrl</div>
+      </div>
+      <div class="stat-card sc-purple">
+        <div class="sc-accent"></div>
+        <div class="sc-val">100<span class="unit">%</span></div>
+        <div class="sc-label">tags 字段全空</div>
+        <div class="sc-sub">所有技能 tags 为 {}</div>
+      </div>
+    </div>
+
+    <h3>三大关键发现</h3>
+    <div class="flow">
+      <div class="flow-step issue">
+        <div class="fs-num">问题 1</div>
+        <div class="fs-title">2,707 个版本待审</div>
+        <div class="fs-text">修复 license 后上传的 MIT 新版本卡在 admin/skill-reviews 页面，等待管理员手动点击"审核通过"。这是当前最大的可见性阻塞点。</div>
+      </div>
+      <div class="flow-step issue">
+        <div class="fs-num">问题 2</div>
+        <div class="fs-title">元数据大面积缺失</div>
+        <div class="fs-text">tags 全空、93% 无图标、summary_zh 中文摘要为空、changelog 仅为"Initial release"。这些字段直接影响搜索匹配与点击转化。</div>
+      </div>
+      <div class="flow-step issue">
+        <div class="fs-num">问题 3</div>
+        <div class="fs-title">分类映射错误</div>
+        <div class="fs-text">本地 category_mapping.json 使用英文名+数字 ID，与平台 12 个中文分类和团队 10 个内部分类均不匹配。1,607 个技能无团队分类。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 1. AUDIT STATUS ========== -->
+<section id="audit">
+  <div class="wrap">
+    <h2><span class="sec-num">1</span>审核状态分析</h2>
+    <p class="lead">通过 Admin API 与通知系统交叉核查，确认当前审核状态全貌。核心发现：当前无拒绝，但存在大量待审版本积压。</p>
+
+    <div class="card-grid cg-4">
+      <div class="stat-card sc-blue">
+        <div class="sc-accent"></div>
+        <div class="sc-val">1,643</div>
+        <div class="sc-label">平台已发布技能</div>
+        <div class="sc-sub">status=published · visibility=public</div>
+      </div>
+      <div class="stat-card sc-green">
+        <div class="sc-accent"></div>
+        <div class="sc-val">0</div>
+        <div class="sc-label">当前被拒绝数</div>
+        <div class="sc-sub">License 修复后清零</div>
+      </div>
+      <div class="stat-card sc-amber">
+        <div class="sc-accent"></div>
+        <div class="sc-val">20</div>
+        <div class="sc-label">历史拒绝通知</div>
+        <div class="sc-sub">type: skill_version_rejected</div>
+      </div>
+      <div class="stat-card sc-red">
+        <div class="sc-accent"></div>
+        <div class="sc-val">2,707</div>
+        <div class="sc-label">待管理员审核</div>
+        <div class="sc-sub">admin/skill-reviews 页面</div>
+      </div>
+    </div>
+
+    <h3>1.1 历史拒绝根因与修复链路</h3>
+    <div class="callout bad">
+      <div class="co-icon">&#9888;</div>
+      <div class="co-body">
+        <div class="co-title">历史拒绝原因：缺少必要的支付服务</div>
+        <div class="co-text">20 条 <code>skill_version_rejected</code> 通知均提示"该 Skill 缺少必要的支付服务"。根因：<code>license: Proprietary</code> 触发了 Pay Skill 审核要求。修复方案：将 830 个 SKILL.md 文件的 license 从 Proprietary 改为 MIT，消除支付服务依赖。</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step issue">
+        <div class="fs-num">阶段 1 · 原始状态</div>
+        <div class="fs-title">license: Proprietary</div>
+        <div class="fs-text">830 个 SKILL.md 使用 Proprietary 协议 → 触发 Pay Skill 审核流程 → 要求配置支付服务 → 因未配置而被拒绝（20 条拒绝通知）</div>
+      </div>
+      <div class="flow-step fix">
+        <div class="fs-num">阶段 2 · 修复执行</div>
+        <div class="fs-title">license: MIT</div>
+        <div class="fs-text">批量修改 830 个 SKILL.md 的 license 字段为 MIT → 重新上传新版本 → 不再触发支付服务要求 → 当前拒绝数归零</div>
+      </div>
+      <div class="flow-step issue">
+        <div class="fs-num">阶段 3 · 当前阻塞</div>
+        <div class="fs-title">2,707 个版本待审</div>
+        <div class="fs-text">MIT 新版本上传后进入 admin/skill-reviews 队列 → 等待管理员手动点击"审核通过" → 积压 2,707 个 → 需批量审批</div>
+      </div>
+    </div>
+
+    <h3>1.2 审核状态分布</h3>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">已发布 (published)</div>
+        <div class="bar-track"><div class="bar-fill fill-blue" style="width:37.7%">1,643</div></div>
+        <div class="bar-val">1,643</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">待管理员审核</div>
+        <div class="bar-track"><div class="bar-fill fill-red" style="width:62.1%">2,707</div></div>
+        <div class="bar-val">2,707</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">当前被拒绝</div>
+        <div class="bar-track"><div class="bar-fill fill-green" style="width:0.2%"></div></div>
+        <div class="bar-val">0</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted2);margin-top:-6px">注：柱状图以最大值 2,707 为基准缩放。待审数量（2,707）显著超过已发布数量（1,643），表明大量新版本积压。</p>
+
+    <div class="callout warn">
+      <div class="co-icon">&#9888;</div>
+      <div class="co-body">
+        <div class="co-title">关键风险：2,707 个版本积压</div>
+        <div class="co-text">这 2,707 个待审版本是修复 license 后上传的 MIT 新版本。在管理员点击"审核通过"之前，这些版本无法生效，意味着修复后的技能元数据（含 license 修正）不会反映到前台。这是 <strong>P0 优先级</strong> 阻塞项。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 2. VISIBILITY STATUS ========== -->
+<section id="visibility">
+  <div class="wrap">
+    <h2><span class="sec-num">2</span>可见性现状</h2>
+    <p class="lead">通过前台搜索实测验证可见性，并对比我方技能与热门技能的关键指标，定位排名靠后的根因。</p>
+
+    <div class="callout good">
+      <div class="co-icon">&#10003;</div>
+      <div class="co-body">
+        <div class="co-title">已验证：技能在前台可见且可搜索</div>
+        <div class="co-text">实测搜索关键词"记忆编排器"返回 8 条结果，其中包含我方技能。技能的 <code>status="published"</code> 且 <code>visibility="public"</code>，前台可正常检索。但排名靠后，详见下方对比。</div>
+      </div>
+    </div>
+
+    <h3>2.1 我方 vs 热门技能指标对比</h3>
+    <div class="vs-grid">
+      <div class="vs-col us">
+        <div class="vs-head">我方技能 <span class="badge b-primary">1,643 个</span></div>
+        <div class="vs-stat">
+          <div class="vs-num">0<span class="unit">星</span></div>
+          <div class="vs-cap">用户评分（无任何星级评价）</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-num">24-26<span class="unit">次</span></div>
+          <div class="vs-cap">下载量</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-num">0.0<span class="unit">%</span></div>
+          <div class="vs-cap">平台技能占比（1,643 / 92,000）</div>
+        </div>
+      </div>
+      <div class="vs-vs">VS</div>
+      <div class="vs-col them">
+        <div class="vs-head">热门技能 <span class="badge b-gray">平台头部</span></div>
+        <div class="vs-stat">
+          <div class="vs-num">410<span class="unit">星</span></div>
+          <div class="vs-cap">用户评分</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-num">13.4万<span class="unit">次</span></div>
+          <div class="vs-cap">下载量（134,000）</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-num">100<span class="unit">%</span></div>
+          <div class="vs-cap">平台总量 9.2 万（92,000）技能</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>2.2 排名差距量化</h3>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">热门技能下载量</div>
+        <div class="bar-track"><div class="bar-fill fill-blue" style="width:100%">134,000</div></div>
+        <div class="bar-val">13.4 万</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">我方技能下载量</div>
+        <div class="bar-track"><div class="bar-fill fill-amber" style="width:0.02%"></div></div>
+        <div class="bar-val">~26</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">热门技能星评</div>
+        <div class="bar-track"><div class="bar-fill fill-purple" style="width:100%">410</div></div>
+        <div class="bar-val">410</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">我方技能星评</div>
+        <div class="bar-track"><div class="bar-fill fill-gray" style="width:0.1%"></div></div>
+        <div class="bar-val">0</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted2);margin-top:-6px">下载量差距约 5,150 倍，星评差距为无穷大（0 vs 410）。在 <code>sortBy=score</code> 默认排序下，我方技能必然排在末尾。</p>
+
+    <h3>2.3 平台占比</h3>
+    <div class="highlight-box">
+      <div class="hb-label">平台规模</div>
+      <div class="hb-text">SkillHub 平台共有约 <strong>9.2 万（92,000）</strong> 个技能。我方 1,643 个仅占 <strong>1.78%</strong>。在如此庞大的技能池中，缺乏星评和下载量的技能几乎无法通过默认排序被用户发现。</div>
+    </div>
+
+    <div class="card-grid cg-2">
+      <div class="card">
+        <h4>可见性正向因素</h4>
+        <div class="tag-row">
+          <span class="pill">status=published</span>
+          <span class="pill">visibility=public</span>
+          <span class="pill">前台可搜索</span>
+          <span class="pill">发布方已认证</span>
+          <span class="pill">安全审核通过</span>
+          <span class="pill">source=enterprise</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">技能的基础发布链路完整，发布主体"四川云物益邦科技有限公司"已通过认证（verified=true），安全扫描全部 benign。</p>
+      </div>
+      <div class="card">
+        <h4>可见性负向因素</h4>
+        <div class="tag-row">
+          <span class="pill">0 星评</span>
+          <span class="pill">低下载量</span>
+          <span class="pill">tags 全空</span>
+          <span class="pill">93% 无图标</span>
+          <span class="pill">summary_zh 空</span>
+          <span class="pill">verified=false</span>
+          <span class="pill">1,607 无团队分类</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">排名权重（score）以星评+下载量为主，元数据缺失进一步削弱搜索匹配与点击转化。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. MISSING FIELDS ========== -->
+<section id="fields">
+  <div class="wrap">
+    <h2><span class="sec-num">3</span>缺失字段审计</h2>
+    <p class="lead">通过 GET /api/v1/skills/{slug} 详情接口逐项核查 skill 对象字段，识别影响可见性与转化的元数据缺口。</p>
+
+    <div class="card-grid cg-4">
+      <div class="stat-card sc-red">
+        <div class="sc-accent"></div>
+        <div class="sc-val">100<span class="unit">%</span></div>
+        <div class="sc-label">tags 全空</div>
+        <div class="sc-sub">所有 1,643 个技能</div>
+      </div>
+      <div class="stat-card sc-amber">
+        <div class="sc-accent"></div>
+        <div class="sc-val">93<span class="unit">%</span></div>
+        <div class="sc-label">缺失图标</div>
+        <div class="sc-sub">1,533 / 1,643</div>
+      </div>
+      <div class="stat-card sc-purple">
+        <div class="sc-accent"></div>
+        <div class="sc-val">100<span class="unit">%</span></div>
+        <div class="sc-label">summary_zh 为空</div>
+        <div class="sc-sub">中文摘要缺失</div>
+      </div>
+      <div class="stat-card sc-blue">
+        <div class="sc-accent"></div>
+        <div class="sc-val">97.8<span class="unit">%</span></div>
+        <div class="sc-label">无团队分类</div>
+        <div class="sc-sub">1,607 / 1,643</div>
+      </div>
+    </div>
+
+    <h3>3.1 字段级审计明细</h3>
+    <div class="field-grid">
+      <div class="field-item">
+        <div class="fi-head">
+          <span class="fi-name">skill.tags</span>
+          <span class="fi-status badge b-bad">缺失</span>
+        </div>
+        <div class="fi-desc">标签对象，应为包含标签键的对象。当前所有技能均为空对象。</div>
+        <div class="fi-val">当前值: {}</div>
+      </div>
+      <div class="field-item">
+        <div class="fi-head">
+          <span class="fi-name">skill.iconUrl</span>
+          <span class="fi-status badge b-bad">93% 缺失</span>
+        </div>
+        <div class="fi-desc">技能图标 URL。1,533 个技能为 null，严重影响列表页视觉识别度。</div>
+        <div class="fi-val">当前值: null (1,533/1,643)</div>
+      </div>
+      <div class="field-item">
+        <div class="fi-head">
+          <span class="fi-name">skill.summary_zh</span>
+          <span class="fi-status badge b-bad">全空</span>
+        </div>
+        <div class="fi-desc">中文摘要。所有技能为空字符串，影响中文用户搜索与展示。</div>
+        <div class="fi-val">当前值: ""</div>
+      </div>
+      <div class="field-item">
+        <div class="fi-head">
+          <span class="fi-name">skill.verified</span>
+          <span class="fi-status badge b-warn">未验证</span>
+        </div>
+        <div class="fi-desc">技能级验证标志为 false。注意：发布方已验证，但技能本身未单独验证。</div>
+        <div class="fi-val">当前值: false</div>
+      </div>
+      <div class="field-item">
+        <div class="fi-head">
+          <span class="fi-name">latestVersion.changelog</span>
+          <span class="fi-status badge b-warn">通用文案</span>
+        </div>
+        <div class="fi-desc">版本更新日志，当前所有版本均为通用文案，缺乏差异化信息。</div>
+        <div class="fi-val">当前值: "Initial release"</div>
+      </div>
+      <div class="field-item">
+        <div class="fi-head">
+          <span class="fi-name">团队分类</span>
+          <span class="fi-status badge b-bad">97.8% 未分配</span>
+        </div>
+        <div class="fi-desc">仅 36 个技能分配到"其他"分类，1,607 个无任何团队分类。</div>
+        <div class="fi-val">已分配: 36 (仅"其他")</div>
+      </div>
+      <div class="field-item ok">
+        <div class="fi-head">
+          <span class="fi-name">skill.summary</span>
+          <span class="fi-status badge b-good">有内容</span>
+        </div>
+        <div class="fi-desc">英文摘要字段有内容，是当前搜索匹配的主要文本来源。</div>
+      </div>
+      <div class="field-item ok">
+        <div class="fi-head">
+          <span class="fi-name">skill.source</span>
+          <span class="fi-status badge b-good">enterprise</span>
+        </div>
+        <div class="fi-desc">来源标记为企业级，有助于发布方认证展示。</div>
+      </div>
+      <div class="field-item ok">
+        <div class="fi-head">
+          <span class="fi-name">publisher.verified</span>
+          <span class="fi-status badge b-good">已认证</span>
+        </div>
+        <div class="fi-desc">发布方"四川云物益邦科技有限公司"已通过认证。</div>
+      </div>
+      <div class="field-item ok">
+        <div class="fi-head">
+          <span class="fi-name">skill.labels</span>
+          <span class="fi-status badge b-good">已设置</span>
+        </div>
+        <div class="fi-desc">标签对象已设置，例如 requires_api_key: "false"。</div>
+      </div>
+    </div>
+
+    <h3>3.2 缺失字段影响矩阵</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>字段</th>
+            <th>当前状态</th>
+            <th>影响范围</th>
+            <th>对搜索的影响</th>
+            <th>对点击的影响</th>
+            <th>修复优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>tags</code></td>
+            <td><span class="badge b-bad">全空</span></td>
+            <td>1,643 / 1,643</td>
+            <td>高 - 标签是搜索匹配核心因素</td>
+            <td>中 - 标签可辅助筛选</td>
+            <td><span class="badge b-p1">P1</span></td>
+          </tr>
+          <tr>
+            <td><code>iconUrl</code></td>
+            <td><span class="badge b-bad">93% null</span></td>
+            <td>1,533 / 1,643</td>
+            <td>低 - 不影响搜索匹配</td>
+            <td>高 - 无图标严重影响点击率</td>
+            <td><span class="badge b-p1">P1</span></td>
+          </tr>
+          <tr>
+            <td><code>summary_zh</code></td>
+            <td><span class="badge b-bad">全空</span></td>
+            <td>1,643 / 1,643</td>
+            <td>高 - 中文用户搜索核心匹配</td>
+            <td>高 - 中文展示主要文本</td>
+            <td><span class="badge b-p1">P1</span></td>
+          </tr>
+          <tr>
+            <td><code>verified</code></td>
+            <td><span class="badge b-warn">false</span></td>
+            <td>1,643 / 1,643</td>
+            <td>低</td>
+            <td>中 - 缺少验证徽章降低信任</td>
+            <td><span class="badge b-p3">P3</span></td>
+          </tr>
+          <tr>
+            <td><code>changelog</code></td>
+            <td><span class="badge b-warn">通用</span></td>
+            <td>1,643 / 1,643</td>
+            <td>低</td>
+            <td>低</td>
+            <td><span class="badge b-p3">P3</span></td>
+          </tr>
+          <tr>
+            <td>团队分类</td>
+            <td><span class="badge b-bad">97.8% 未分配</span></td>
+            <td>1,607 / 1,643</td>
+            <td>低 - 内部组织用</td>
+            <td>低 - 前台不展示</td>
+            <td><span class="badge b-p2">P2</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. CATEGORY SYSTEM ========== -->
+<section id="category">
+  <div class="wrap">
+    <h2><span class="sec-num">4</span>分类系统</h2>
+    <p class="lead">SkillHub 存在两套独立的分类系统：平台分类（前台展示）与团队分类（内部组织）。本地 category_mapping.json 配置错误，需全面修正。</p>
+
+    <h3>4.1 平台分类系统（12 类 · 前台展示）</h3>
+    <p style="font-size:13.5px;color:var(--muted)">显示在前台浏览页 (https://www.skillhub.cn/skills)，API 使用字符串键（如 <code>ai-agent</code>）。</p>
+    <div class="cat-list">
+      <div class="cat-item"><div class="cat-num">1</div><div class="cat-info"><div class="cat-name">办公效率</div><div class="cat-key">office-efficiency</div></div></div>
+      <div class="cat-item"><div class="cat-num">2</div><div class="cat-info"><div class="cat-name">内容创作</div><div class="cat-key">content-creation</div></div></div>
+      <div class="cat-item"><div class="cat-num">3</div><div class="cat-info"><div class="cat-name">开发编程</div><div class="cat-key">development</div></div></div>
+      <div class="cat-item"><div class="cat-num">4</div><div class="cat-info"><div class="cat-name">数据分析</div><div class="cat-key">data-analysis</div></div></div>
+      <div class="cat-item"><div class="cat-num">5</div><div class="cat-info"><div class="cat-name">设计多媒体</div><div class="cat-key">design-multimedia</div></div></div>
+      <div class="cat-item"><div class="cat-num">6</div><div class="cat-info"><div class="cat-name">AI Agent</div><div class="cat-key">ai-agent</div></div></div>
+      <div class="cat-item"><div class="cat-num">7</div><div class="cat-info"><div class="cat-name">知识管理</div><div class="cat-key">knowledge-management</div></div></div>
+      <div class="cat-item"><div class="cat-num">8</div><div class="cat-info"><div class="cat-name">商业运营</div><div class="cat-key">business-operations</div></div></div>
+      <div class="cat-item"><div class="cat-num">9</div><div class="cat-info"><div class="cat-name">教育学习</div><div class="cat-key">education-learning</div></div></div>
+      <div class="cat-item"><div class="cat-num">10</div><div class="cat-info"><div class="cat-name">行业专业</div><div class="cat-key">industry-professional</div></div></div>
+      <div class="cat-item"><div class="cat-num">11</div><div class="cat-info"><div class="cat-name">IT 运维与安全</div><div class="cat-key">it-ops-security</div></div></div>
+      <div class="cat-item"><div class="cat-num">12</div><div class="cat-info"><div class="cat-name">生活服务</div><div class="cat-key">life-services</div></div></div>
+    </div>
+
+    <h3>4.2 团队分类系统（10 类 · 内部组织）</h3>
+    <p style="font-size:13.5px;color:var(--muted)">用于团队 Admin 后台内部组织管理，前台不展示。当前分配严重不均。</p>
+    <div class="cat-list">
+      <div class="cat-item"><div class="cat-num">1</div><div class="cat-info"><div class="cat-name">通用办公</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">2</div><div class="cat-info"><div class="cat-name">研发工具</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">3</div><div class="cat-info"><div class="cat-name">系统运维</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">4</div><div class="cat-info"><div class="cat-name">质量测试</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">5</div><div class="cat-info"><div class="cat-name">需求设计</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">6</div><div class="cat-info"><div class="cat-name">信息检索</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">7</div><div class="cat-info"><div class="cat-name">项目管理</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">8</div><div class="cat-info"><div class="cat-name">数据分析</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">9</div><div class="cat-info"><div class="cat-name">安全合规</div></div><div class="cat-count zero">0</div></div>
+      <div class="cat-item"><div class="cat-num">10</div><div class="cat-info"><div class="cat-name">其他</div></div><div class="cat-count">36</div></div>
+    </div>
+
+    <div class="bar-chart" style="margin-top:18px">
+      <div class="bar-row">
+        <div class="bar-label">其他 (Other)</div>
+        <div class="bar-track"><div class="bar-fill fill-amber" style="width:100%">36</div></div>
+        <div class="bar-val">36</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">通用办公 ~ 安全合规</div>
+        <div class="bar-track"><div class="bar-fill fill-gray" style="width:0.5%"></div></div>
+        <div class="bar-val">0</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">未分配</div>
+        <div class="bar-track"><div class="bar-fill fill-red" style="width:97.8%">1,607</div></div>
+        <div class="bar-val">1,607</div>
+      </div>
+    </div>
+
+    <h3>4.3 本地配置错误诊断</h3>
+    <div class="callout bad">
+      <div class="co-icon">&#10007;</div>
+      <div class="co-body">
+        <div class="co-title">category_mapping.json 配置完全错误</div>
+        <div class="co-text">本地 <code>category_mapping.json</code> 使用了英文名称（Agents, Automation 等）和数字 ID（11039, 11040 等），这些既不匹配平台分类的 12 个中文字符串键，也不匹配团队分类的 10 个内部类别。导致分类映射全部失效。</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>配置维度</th>
+            <th>本地 category_mapping.json（错误）</th>
+            <th>平台分类（正确）</th>
+            <th>团队分类（正确）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>名称语言</td>
+            <td><span class="badge b-bad">英文</span></td>
+            <td><span class="badge b-good">中文</span></td>
+            <td><span class="badge b-good">中文</span></td>
+          </tr>
+          <tr>
+            <td>标识类型</td>
+            <td><span class="badge b-bad">数字 ID (11039...)</span></td>
+            <td><span class="badge b-good">字符串键 (ai-agent)</span></td>
+            <td><span class="badge b-good">中文名称</span></td>
+          </tr>
+          <tr>
+            <td>分类数量</td>
+            <td><span class="badge b-bad">不匹配</span></td>
+            <td>12 类</td>
+            <td>10 类</td>
+          </tr>
+          <tr>
+            <td>用途</td>
+            <td>未知</td>
+            <td>前台浏览页筛选</td>
+            <td>团队后台内部组织</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <div class="hb-label">修复方向</div>
+      <div class="hb-text">需重建 <code>category_mapping.json</code>，建立"技能 slug → 平台分类字符串键"和"技能 slug → 团队分类中文名"的双映射。平台分类用于前台可见性，团队分类用于内部治理。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. FRONTEND FILTERS ========== -->
+<section id="filters">
+  <div class="wrap">
+    <h2><span class="sec-num">5</span>前台筛选选项</h2>
+    <p class="lead">从前台浏览页 (https://www.skillhub.cn/skills) 提取的筛选维度，这些维度直接决定用户如何发现技能。</p>
+
+    <div class="card-grid cg-2">
+      <div class="card">
+        <h4>发布来源 (Publish Source)</h4>
+        <p style="font-size:13px;color:var(--muted)">筛选技能的发布来源类型。我方技能 source=enterprise，可在此筛选维度中被定位。</p>
+        <div class="tag-row">
+          <span class="pill">enterprise</span>
+          <span class="pill">community</span>
+        </div>
+      </div>
+      <div class="card">
+        <h4>场景分类 (Scene Category)</h4>
+        <p style="font-size:13px;color:var(--muted)">即第 4 节的 12 个平台分类。用户通过此筛选浏览特定类别技能。</p>
+        <div class="tag-row">
+          <span class="pill">办公效率</span>
+          <span class="pill">内容创作</span>
+          <span class="pill">开发编程</span>
+          <span class="pill">AI Agent</span>
+          <span class="pill">...共 12 类</span>
+        </div>
+      </div>
+      <div class="card">
+        <h4>排序方式 (Sort Method)</h4>
+        <p style="font-size:13px;color:var(--muted)">默认 <code>sortBy=score</code>，以星评+下载量加权排序。这是我方排名靠后的直接原因。</p>
+        <div class="tag-row">
+          <span class="pill">score (默认)</span>
+          <span class="pill">其他排序选项</span>
+        </div>
+      </div>
+      <div class="card">
+        <h4>是否需要 API Key</h4>
+        <p style="font-size:13px;color:var(--muted)">筛选是否需要用户提供 API Key。我方技能 labels.requires_api_key 多为 "false"。</p>
+        <div class="tag-row">
+          <span class="pill">需要</span>
+          <span class="pill">不需要</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="co-icon">&#8505;</div>
+      <div class="co-body">
+        <div class="co-title">筛选维度优化要点</div>
+        <div class="co-text">用户主要通过"场景分类"浏览、"排序方式"定位热门技能。要提升被发现概率，需确保每个技能都正确分配了平台分类（category 字段），并在 score 排序中提升排名（需积累星评和下载量）。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. SECURITY AUDIT ========== -->
+<section id="security">
+  <div class="wrap">
+    <h2><span class="sec-num">6</span>安全审核</h2>
+    <p class="lead">每个技能的 securityReports 包含两个安全扫描器的结果，当前全部通过。</p>
+
+    <div class="card-grid cg-2">
+      <div class="card" style="border-left:4px solid var(--good)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <h4 style="margin:0">keen 扫描器</h4>
+          <span class="badge b-good">benign · 安全无风险</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted)">状态为 benign，表示安全扫描通过，未检测到风险。</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--good)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <h4 style="margin:0">sanbu 扫描器</h4>
+          <span class="badge b-good">benign · 安全无风险</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted)">状态为 benign，表示安全扫描通过，未检测到风险。</p>
+      </div>
+    </div>
+
+    <div class="callout good">
+      <div class="co-icon">&#10003;</div>
+      <div class="co-body">
+        <div class="co-title">安全审核全部通过</div>
+        <div class="co-text">两个扫描器（keen、sanbu）均返回 benign 状态，所有 1,643 个技能无安全风险。安全维度不是可见性阻塞因素。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. DETAIL STRUCTURE ========== -->
+<section id="structure">
+  <div class="wrap">
+    <h2><span class="sec-num">7</span>Skill 详情数据结构</h2>
+    <p class="lead">GET /api/v1/skills/{slug} 返回的 skill 对象关键字段结构，用于指导元数据补全。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>字段路径</th>
+            <th>类型</th>
+            <th>示例值</th>
+            <th>当前状态</th>
+            <th>用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>skill.category</code></td>
+            <td>string</td>
+            <td>"ai-agent"</td>
+            <td><span class="badge b-warn">需核查</span></td>
+            <td>平台分类键，前台筛选核心</td>
+          </tr>
+          <tr>
+            <td><code>skill.subCategories</code></td>
+            <td>array</td>
+            <td>[{key,name}]</td>
+            <td><span class="badge b-warn">需核查</span></td>
+            <td>子分类列表</td>
+          </tr>
+          <tr>
+            <td><code>skill.tags</code></td>
+            <td>object</td>
+            <td>{}</td>
+            <td><span class="badge b-bad">全空</span></td>
+            <td>搜索标签，影响匹配</td>
+          </tr>
+          <tr>
+            <td><code>skill.iconUrl</code></td>
+            <td>string|null</td>
+            <td>null</td>
+            <td><span class="badge b-bad">93% null</span></td>
+            <td>技能图标，影响点击</td>
+          </tr>
+          <tr>
+            <td><code>skill.summary</code></td>
+            <td>string</td>
+            <td>有内容</td>
+            <td><span class="badge b-good">有内容</span></td>
+            <td>英文摘要，搜索匹配</td>
+          </tr>
+          <tr>
+            <td><code>skill.summary_zh</code></td>
+            <td>string</td>
+            <td>""</td>
+            <td><span class="badge b-bad">全空</span></td>
+            <td>中文摘要，中文搜索匹配</td>
+          </tr>
+          <tr>
+            <td><code>skill.verified</code></td>
+            <td>boolean</td>
+            <td>false</td>
+            <td><span class="badge b-warn">false</span></td>
+            <td>技能级验证标志</td>
+          </tr>
+          <tr>
+            <td><code>skill.source</code></td>
+            <td>string</td>
+            <td>"enterprise"</td>
+            <td><span class="badge b-good">enterprise</span></td>
+            <td>发布来源</td>
+          </tr>
+          <tr>
+            <td><code>skill.labels</code></td>
+            <td>object</td>
+            <td>{requires_api_key:"false"}</td>
+            <td><span class="badge b-good">已设置</span></td>
+            <td>技能标签属性</td>
+          </tr>
+          <tr>
+            <td><code>skill.stats</code></td>
+            <td>object</td>
+            <td>{comments,downloads,installs,stars,versions}</td>
+            <td><span class="badge b-warn">低值</span></td>
+            <td>统计数据，影响排名</td>
+          </tr>
+          <tr>
+            <td><code>skill.namespace</code></td>
+            <td>object</td>
+            <td>{canonicalName,displayName,handle,publicSlug}</td>
+            <td><span class="badge b-good">已设置</span></td>
+            <td>命名空间信息</td>
+          </tr>
+          <tr>
+            <td><code>skill.publisher</code></td>
+            <td>object</td>
+            <td>{name,logoUrl,verified,certifiedName,orgId}</td>
+            <td><span class="badge b-good">已认证</span></td>
+            <td>发布方信息</td>
+          </tr>
+          <tr>
+            <td><code>latestVersion.changelog</code></td>
+            <td>string</td>
+            <td>"Initial release"</td>
+            <td><span class="badge b-warn">通用</span></td>
+            <td>版本更新日志</td>
+          </tr>
+          <tr>
+            <td><code>securityReports</code></td>
+            <td>array</td>
+            <td>[keen:benign, sanbu:benign]</td>
+            <td><span class="badge b-good">全部通过</span></td>
+            <td>安全扫描结果</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. RANKING FACTORS ========== -->
+<section id="ranking">
+  <div class="wrap">
+    <h2><span class="sec-num">8</span>排名因素分析</h2>
+    <p class="lead">基于前台观察，解析默认排序机制与我方技能排名靠后的根因。</p>
+
+    <h3>8.1 默认排序机制</h3>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+        <code style="font-size:15px;padding:6px 12px">sortBy=score</code>
+        <span class="badge b-primary">默认排序</span>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted)">前台默认使用 score 排序，该排序以<strong>星评（stars）+ 下载量（downloads）</strong>加权计算。热门技能因此获得头部排名，新技能因无数据沉底。</p>
+    </div>
+
+    <h3>8.2 排名因素权重分析</h3>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">下载量 (downloads)</div>
+        <div class="bar-track"><div class="bar-fill fill-blue" style="width:55%">高权重</div></div>
+        <div class="bar-val">~55%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">星评 (stars)</div>
+        <div class="bar-track"><div class="bar-fill fill-purple" style="width:35%">高权重</div></div>
+        <div class="bar-val">~35%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">搜索匹配度</div>
+        <div class="bar-track"><div class="bar-fill fill-amber" style="width:8%">中权重</div></div>
+        <div class="bar-val">~8%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">其他因素</div>
+        <div class="bar-track"><div class="bar-fill fill-gray" style="width:2%">低</div></div>
+        <div class="bar-val">~2%</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted2);margin-top:-6px">注：权重比例为基于前台观察的估算值，实际算法未公开。核心结论：星评+下载量占绝对主导。</p>
+
+    <h3>8.3 搜索匹配机制</h3>
+    <div class="card-grid cg-3">
+      <div class="card">
+        <h4>displayName 匹配</h4>
+        <p style="font-size:13px;color:var(--muted)">搜索通过关键词匹配技能的 displayName（显示名称）。优化 displayName 可提升搜索命中率。</p>
+      </div>
+      <div class="card">
+        <h4>summary 匹配</h4>
+        <p style="font-size:13px;color:var(--muted)">搜索同时匹配 summary（摘要）文本。summary_zh 为空意味着中文关键词无法匹配摘要。</p>
+      </div>
+      <div class="card">
+        <h4>category 筛选</h4>
+        <p style="font-size:13px;color:var(--muted)">用户通过平台分类筛选缩小范围。未正确分配 category 的技能无法被分类浏览发现。</p>
+      </div>
+    </div>
+
+    <h3>8.4 排名提升路径</h3>
+    <div class="flow">
+      <div class="flow-step fix">
+        <div class="fs-num">步骤 1</div>
+        <div class="fs-title">补全元数据</div>
+        <div class="fs-text">填充 tags、summary_zh、iconUrl，提升搜索匹配率和点击率</div>
+      </div>
+      <div class="flow-step fix">
+        <div class="fs-num">步骤 2</div>
+        <div class="fs-title">优化命名</div>
+        <div class="fs-text">优化 displayName 和 summary，提高关键词搜索命中率</div>
+      </div>
+      <div class="flow-step fix">
+        <div class="fs-num">步骤 3</div>
+        <div class="fs-title">积累用户数据</div>
+        <div class="fs-text">鼓励用户评分和下载，逐步提升 stars 和 downloads 指标</div>
+      </div>
+      <div class="flow-step fix">
+        <div class="fs-num">步骤 4</div>
+        <div class="fs-title">排名上升</div>
+        <div class="fs-text">score 排序中权重提升，进入用户自然浏览视野</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 9. ACTION PLAN ========== -->
+<section id="action">
+  <div class="wrap">
+    <h2><span class="sec-num">9</span>优先级行动计划</h2>
+    <p class="lead">基于以上分析，制定分优先级的行动方案。P0 为立即执行的阻塞项，P3 为长期优化项。</p>
+
+    <div class="card-grid cg-4" style="margin-bottom:24px">
+      <div class="stat-card sc-red">
+        <div class="sc-accent"></div>
+        <div class="sc-val">2</div>
+        <div class="sc-label">P0 紧急阻塞</div>
+        <div class="sc-sub">立即执行</div>
+      </div>
+      <div class="stat-card sc-amber">
+        <div class="sc-accent"></div>
+        <div class="sc-val">3</div>
+        <div class="sc-label">P1 高优先级</div>
+        <div class="sc-sub">本周内完成</div>
+      </div>
+      <div class="stat-card" style="border-left:4px solid var(--p2)">
+        <div class="sc-accent" style="background:var(--p2)"></div>
+        <div class="sc-val">2</div>
+        <div class="sc-label">P2 中优先级</div>
+        <div class="sc-sub">两周内完成</div>
+      </div>
+      <div class="stat-card sc-green">
+        <div class="sc-accent"></div>
+        <div class="sc-val">1</div>
+        <div class="sc-label">P3 长期优化</div>
+        <div class="sc-sub">持续进行</div>
+      </div>
+    </div>
+
+    <!-- P0 -->
+    <h3>P0 · 紧急阻塞项（立即执行）</h3>
+
+    <div class="action-item">
+      <div class="ai-priority ai-p0">
+        <div class="ap-level">P0</div>
+        <div class="ap-label">紧急</div>
+      </div>
+      <div class="ai-body">
+        <div class="ai-title">批量审核通过 2,707 个待审技能版本</div>
+        <div class="ai-desc">在 admin/skill-reviews 页面批量点击"审核通过"，释放积压的 2,707 个 MIT license 新版本。这是当前最大的可见性阻塞点——修复后的元数据（含 license 修正）在审核通过前不会反映到前台。</div>
+        <div class="ai-meta">
+          <span class="badge b-p0">P0</span>
+          <span class="badge b-gray">admin/skill-reviews</span>
+          <span class="badge b-info">影响 2,707 个版本</span>
+          <span class="badge b-warn">阻塞项</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="ai-priority ai-p0">
+        <div class="ap-level">P0</div>
+        <div class="ap-label">紧急</div>
+      </div>
+      <div class="ai-body">
+        <div class="ai-title">修复 category_mapping.json — 使用正确的平台分类和团队分类</div>
+        <div class="ai-desc">重建本地 category_mapping.json，将错误的英文名+数字 ID 映射替换为：平台分类使用 12 个中文字符串键（如 ai-agent、development），团队分类使用 10 个内部中文名称（如研发工具、系统运维）。建立"技能 slug → 平台分类键"和"技能 slug → 团队分类名"的双映射体系。</div>
+        <div class="ai-meta">
+          <span class="badge b-p0">P0</span>
+          <span class="badge b-gray">category_mapping.json</span>
+          <span class="badge b-info">影响全部分类映射</span>
+          <span class="badge b-bad">当前配置错误</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- P1 -->
+    <h3 style="margin-top:32px">P1 · 高优先级（本周内完成）</h3>
+
+    <div class="action-item">
+      <div class="ai-priority ai-p1">
+        <div class="ap-level">P1</div>
+        <div class="ap-label">高</div>
+      </div>
+      <div class="ai-body">
+        <div class="ai-title">为所有 skill 设置 tags</div>
+        <div class="ai-desc">当前 1,643 个技能的 tags 字段全部为空对象 {}。tags 是搜索匹配的核心因素，需基于技能功能为每个技能设置 3-5 个标签。可结合 displayName 和 summary 自动提取关键词，再人工校验。</div>
+        <div class="ai-meta">
+          <span class="badge b-p1">P1</span>
+          <span class="badge b-gray">skill.tags</span>
+          <span class="badge b-info">影响 1,643 个技能</span>
+          <span class="badge b-primary">搜索核心因素</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="ai-priority ai-p1">
+        <div class="ap-level">P1</div>
+        <div class="ap-label">高</div>
+      </div>
+      <div class="ai-body">
+        <div class="ai-title">为所有 skill 生成 iconUrl</div>
+        <div class="ai-desc">1,533 个技能（93%）缺失图标 iconUrl=null。无图标严重影响列表页和搜索结果的视觉识别度与点击率。可批量生成统一风格的技能图标，或基于技能功能类别生成差异化图标。</div>
+        <div class="ai-meta">
+          <span class="badge b-p1">P1</span>
+          <span class="badge b-gray">skill.iconUrl</span>
+          <span class="badge b-info">影响 1,533 个技能</span>
+          <span class="badge b-warn">影响点击率</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="ai-priority ai-p1">
+        <div class="ap-level">P1</div>
+        <div class="ap-label">高</div>
+      </div>
+      <div class="ai-body">
+        <div class="ai-title">填充 summary_zh 中文摘要</div>
+        <div class="ai-desc">所有技能的 summary_zh 为空字符串。中文摘要是中文用户搜索匹配和展示的核心文本。需为每个技能生成准确、简洁的中文功能描述（建议 50-100 字），可直接翻译并优化英文 summary，或基于技能功能重新撰写。</div>
+        <div class="ai-meta">
+          <span class="badge b-p1">P1</span>
+          <span class="badge b-gray">skill.summary_zh</span>
+          <span class="badge b-info">影响 1,643 个技能</span>
+          <span class="badge b-primary">中文搜索核心</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <h3 style="margin-top:32px">P2 · 中优先级（两周内完成）</h3>
+
+    <div class="action-item">
+      <div class="ai-priority ai-p2">
+        <div class="ap-level">P2</div>
+        <div class="ap-label">中</div>
+      </div>
+      <div class="ai-body">
+        <div class="ai-title">分配团队分类</div>
+        <div class="ai-desc">当前仅 36 个技能分配到"其他"，1,607 个无任何团队分类。需基于技能功能，将全部 1,643 个技能分配到 10 个团队分类（通用办公、研发工具、系统运维、质量测试、需求设计、信息检索、项目管理、数据分析、安全合规、其他）中。虽不影响前台展示，但对内部治理和分类管理至关重要。</div>
+        <div class="ai-meta">
+          <span class="badge b-p2">P2</span>
+          <span class="badge b-gray">团队分类</span>
+          <span class="badge b-info">影响 1,607 个技能</span>
+          <span class="badge b-gray">内部治理</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="ai-priority ai-p2">
+        <div class="ap-level">P2</div>
+        <div class="ap-label">中</div>
+      </div>
+      <div class="ai-body">
+        <div class="ai-title">优化 displayName 和 summary 提高搜索匹配率</div>
+        <div class="ai-desc">搜索通过关键词匹配 displayName 和 summary。需审查并优化技能的显示名称和摘要，确保包含高频搜索关键词。对于功能相近的技能，确保命名差异化以避免内部竞争。可分析平台热门搜索词，反向优化命名策略。</div>
+        <div class="ai-meta">
+          <span class="badge b-p2">P2</span>
+          <span class="badge b-gray">displayName / summary</span>
+          <span class="badge b-info">影响搜索命中率</span>
+          <span class="badge b-primary">搜索优化</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <h3 style="margin-top:32px">P3 · 长期优化（持续进行）</h3>
+
+    <div class="action-item">
+      <div class="ai-priority ai-p3">
+        <div class="ap-level">P3</div>
+        <div class="ap-label">长期</div>
+      </div>
+      <div class="ai-body">
+        <div class="ai-title">鼓励用户评分和下载</div>
+        <div class="ai-desc">当前 0 星评 + 26 下载量是排名靠后的根本原因。需通过运营手段积累用户数据：内部团队试用并评分、推广至目标用户群、在技能描述中引导用户评价。随着 stars 和 downloads 增长，score 排序权重将逐步提升，形成正向循环。</div>
+        <div class="ai-meta">
+          <span class="badge b-p3">P3</span>
+          <span class="badge b-gray">stars / downloads</span>
+          <span class="badge b-info">影响排名权重</span>
+          <span class="badge b-good">长期正向循环</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:32px">行动计划总览</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>优先级</th>
+            <th>行动项</th>
+            <th>影响范围</th>
+            <th>预期效果</th>
+            <th>时间窗口</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge b-p0">P0</span></td>
+            <td>批量审核通过 2,707 个待审版本</td>
+            <td>2,707 个版本</td>
+            <td>解除可见性阻塞，修复后元数据生效</td>
+            <td>立即</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-p0">P0</span></td>
+            <td>修复 category_mapping.json</td>
+            <td>全部分类映射</td>
+            <td>分类映射正确，前台筛选可用</td>
+            <td>立即</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-p1">P1</span></td>
+            <td>为所有 skill 设置 tags</td>
+            <td>1,643 个技能</td>
+            <td>搜索匹配率提升</td>
+            <td>本周</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-p1">P1</span></td>
+            <td>为所有 skill 生成 iconUrl</td>
+            <td>1,533 个技能</td>
+            <td>点击率提升</td>
+            <td>本周</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-p1">P1</span></td>
+            <td>填充 summary_zh 中文摘要</td>
+            <td>1,643 个技能</td>
+            <td>中文搜索匹配提升</td>
+            <td>本周</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-p2">P2</span></td>
+            <td>分配团队分类</td>
+            <td>1,607 个技能</td>
+            <td>内部治理完善</td>
+            <td>两周</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-p2">P2</span></td>
+            <td>优化 displayName 和 summary</td>
+            <td>1,643 个技能</td>
+            <td>搜索命中率提升</td>
+            <td>两周</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-p3">P3</span></td>
+            <td>鼓励用户评分和下载</td>
+            <td>全部技能</td>
+            <td>排名权重长期提升</td>
+            <td>持续</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout primary">
+      <div class="co-icon">&#9733;</div>
+      <div class="co-body">
+        <div class="co-title">执行建议</div>
+        <div class="co-text">建议按 P0 → P1 → P2 → P3 顺序执行。P0 两项可在 1 天内完成（管理员批量审批 + 配置文件修复），完成后立即释放可见性阻塞。P1 三项可并行推进（tags 提取、图标生成、中文摘要翻译可分工），建议本周内全部完成。P2、P3 为持续优化项。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="wrap">
+    <h3>SkillHub 可见性优化分析报告</h3>
+    <p>数据来源：SkillHub Admin API · 前台搜索验证 · Skill 详情 API (GET /api/v1/skills/{slug})</p>
+    <p>发布主体：四川云物益邦科技有限公司（已认证） · 报告日期：2026-07-25</p>
+    <p style="margin-top:16px;font-size:12px;color:#64748b">本报告基于 API 实测调查，所有数据均来自平台真实接口响应。</p>
+  </div>
+</footer>
+
+<script>
+// Nav active state on scroll
+(function(){
+  var nav = document.getElementById('topnav');
+  var links = nav.querySelectorAll('a');
+  var sections = [];
+  links.forEach(function(link){
+    var id = link.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if(sec) sections.push({link:link, sec:sec});
+  });
+  function update(){
+    var scrollY = window.scrollY + 120;
+    var current = null;
+    sections.forEach(function(s){
+      if(s.sec.offsetTop <= scrollY) current = s;
+    });
+    links.forEach(function(l){ l.classList.remove('active'); });
+    if(current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+
+</body>
+</html>

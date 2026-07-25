@@ -4,6 +4,7 @@ name: "typescript-skills"
 version: 1.0.7
 displayName: "TypeScript规范"
 summary: "提供TypeScript最佳实践编码规范并生成符合标准的TypeScript代码。。TypeScript编码规范技能提供最佳实践编码约定并生成符合标准的TypeScript代码. 覆盖Nam"
+summary_zh: "提供TypeScript最佳实践编码规范并生成符合标准的TypeScript代码。。TypeScript编码规范技能提供最佳实践编码约定并生成符合标准的TypeScript代码. 覆盖Nam"
 license: "MIT"
 description: |-
   TypeScript编码规范技能提供最佳实践编码约定并生成符合标准的TypeScript代码.

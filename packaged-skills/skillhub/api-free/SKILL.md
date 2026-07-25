@@ -4,6 +4,7 @@ name: "api-free"
 version: "1.0.0"
 displayName: "REST API参考免费版"
 summary: "3大类核心服务的REST API参考,含认证模式与端点示例,快速查阅集成要点。REST API 参考文档库免费版。覆盖 AI/ML、支付、通信 3 大类核心服务的认证模式与端点参考. 提供基"
+summary_zh: "3大类核心服务的REST API参考,含认证模式与端点示例,快速查阅集成要点。REST API 参考文档库免费版。覆盖 AI/ML、支付、通信 3 大类核心服务的认证模式与端点参考. 提供基"
 license: "MIT"
 description: |-
   REST API 参考文档库免费版。覆盖 AI/ML、支付、通信 3 大类核心服务的认证模式与端点参考.

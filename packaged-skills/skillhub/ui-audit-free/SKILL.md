@@ -4,6 +4,7 @@ name: "ui-audit-free"
 version: 1.0.1
 displayName: "UI Audit Free"
 summary: "基础版 UI 审计工具，评估界面的视觉层级、视觉样式和无障碍性。。ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估"
+summary_zh: "基础版 UI 审计工具，评估界面的视觉层级、视觉样式和无障碍性。。ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估"
 license: "MIT"
 description: |-
   ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估界面设计.

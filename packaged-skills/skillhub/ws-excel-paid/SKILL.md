@@ -4,6 +4,7 @@ name: "ws-excel-paid"
 version: 1.0.1
 displayName: "Excel工具(专业版)"
 summary: "Excel 全能力版：多表合并、透视表、图表、大数据处理、自动化流水线与数据库联动。。Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、"
+summary_zh: "Excel 全能力版：多表合并、透视表、图表、大数据处理、自动化流水线与数据库联动。。Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、"
 license: "MIT"
 edition: "pro"
 description: |-

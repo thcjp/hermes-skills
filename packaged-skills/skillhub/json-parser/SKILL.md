@@ -4,6 +4,7 @@ name: "json-parser"
 version: 2.1.1
 displayName: "Json Parser"
 summary: "解析校验建筑API/IoT/BIM的JSON并转表。Parse and validate JSON data from construction APIs, IoT sensors, and"
+summary_zh: "解析校验建筑API/IoT/BIM的JSON并转表。Parse and validate JSON data from construction APIs, IoT sensors, and"
 license: "MIT"
 description: |-
   Parse and validate JSON data from construction APIs, IoT sensors, and

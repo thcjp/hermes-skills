@@ -4,6 +4,7 @@ name: "news-daily-digest"
 version: 1.0.1
 displayName: "每日新闻摘要(专业版)"
 summary: "全功能新闻聚合系统，含8+源、多关键词组合、10+主题、情感分析、多格式导出与品牌定制，支撑企业级资讯场景。"
+summary_zh: "全功能新闻聚合系统，含8+源、多关键词组合、10+主题、情感分析、多格式导出与品牌定制，支撑企业级资讯场景。"
 license: "MIT"
 edition: "pro"
 description: |-

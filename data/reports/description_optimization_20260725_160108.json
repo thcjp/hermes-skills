@@ -1,0 +1,8143 @@
+{
+  "total": 1144,
+  "updated": 119,
+  "ok": 1025,
+  "no_change": 0,
+  "error": 0,
+  "details": {
+    "updated": [
+      {
+        "status": "updated",
+        "slug": "context-vault-manager-free",
+        "old_len": 149,
+        "new_len": 175,
+        "old_desc": "上下文保险库免费版解决长会话Agent\"上下文溢出、记忆混乱、Token浪费\"的核心痛点。采用短期/长期/重要三层记忆分",
+        "new_desc": "上下文保险库免费版解决长会话Agent\"上下文溢出、记忆混乱、Token浪费\"的核心痛点。采用短期/长期/重要三层记忆分"
+      },
+      {
+        "status": "updated",
+        "slug": "infinite-memory-vault-free",
+        "old_len": 129,
+        "new_len": 159,
+        "old_desc": "面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库免费体验版。与 Agent 内置记忆并行工作，互不冲突",
+        "new_desc": "面向需要超越 Agent 内置记忆的长期结构化存储场景的无限记忆库免费体验版。与 Agent 内置记忆并行工作，互不冲突"
+      },
+      {
+        "status": "updated",
+        "slug": "meta-agent-optimizer-free",
+        "old_len": 149,
+        "new_len": 182,
+        "old_desc": "元代理优化器免费版为AI Agent提供结构化的学习闭环系统，将零散的错误、纠正、特性需求转化为可检索、可提升、可复用的",
+        "new_desc": "元代理优化器免费版为AI Agent提供结构化的学习闭环系统，将零散的错误、纠正、特性需求转化为可检索、可提升、可复用的"
+      },
+      {
+        "status": "updated",
+        "slug": "automation-recipe-book-free",
+        "old_len": 131,
+        "new_len": 177,
+        "old_desc": "自动化配方手册免费版为AI Agent提供8个开箱即用的自动化场景配方。每个配方以YAML格式定义触发条件与执行动作，用",
+        "new_desc": "自动化配方手册免费版为AI Agent提供8个开箱即用的自动化场景配方。每个配方以YAML格式定义触发条件与执行动作，用"
+      },
+      {
+        "status": "updated",
+        "slug": "autopilot-flow",
+        "old_len": 54,
+        "new_len": 157,
+        "old_desc": "把重复任务变自动驾驶,看到重复即构建自动化。六步具象化法+三个端到端模板,实现从观察到优化的完整自动化闭环。",
+        "new_desc": "把重复任务变自动驾驶,看到重复即构建自动化。六步具象化法+三个端到端模板,实现从观察到优化的完整自动化闭环。减少重复劳动"
+      },
+      {
+        "status": "updated",
+        "slug": "batchops-commander-free",
+        "old_len": 145,
+        "new_len": 188,
+        "old_desc": "批处理指挥官免费版帮助你安全高效地批量处理大量项目。覆盖批处理全生命周期（开始前-处理中-完成后），提供进度追踪、检查点",
+        "new_desc": "批处理指挥官免费版帮助你安全高效地批量处理大量项目。覆盖批处理全生命周期（开始前-处理中-完成后），提供进度追踪、检查点"
+      },
+      {
+        "status": "updated",
+        "slug": "cloudforge-automation-free",
+        "old_len": 143,
+        "new_len": 181,
+        "old_desc": "云锻造自动化免费版帮助你使用基础设施即代码（IaC）管理云资源。通过Terraform模板定义、一键部署与基础配置管理，",
+        "new_desc": "云锻造自动化免费版帮助你使用基础设施即代码（IaC）管理云资源。通过Terraform模板定义、一键部署与基础配置管理，"
+      },
+      {
+        "status": "updated",
+        "slug": "cron-guard-free",
+        "old_len": 146,
+        "new_len": 171,
+        "old_desc": "定时任务安全防护免费版是面向AI Agent的cron任务安全防护框架。聚焦\"让定时任务不脆弱\"这一核心目标，提供防护栏",
+        "new_desc": "定时任务安全防护免费版是面向AI Agent的cron任务安全防护框架。聚焦\"让定时任务不脆弱\"这一核心目标，提供防护栏"
+      },
+      {
+        "status": "updated",
+        "slug": "flowforge-builder-free",
+        "old_len": 139,
+        "new_len": 179,
+        "old_desc": "流程锻造器为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤和错误处理，将跨平台自动化流程转",
+        "new_desc": "流程锻造器为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤和错误处理，将跨平台自动化流程转"
+      },
+      {
+        "status": "updated",
+        "slug": "macro-pulse",
+        "old_len": 148,
+        "new_len": 183,
+        "old_desc": "每日宏观数据监控与推送机器人。自动巡检免费数据源（Trading Economics、FRED、国家统计局、\n  央行、",
+        "new_desc": "每日宏观数据监控与推送机器人。自动巡检免费数据源（Trading Economics、FRED、国家统计局、\n  央行、"
+      },
+      {
+        "status": "updated",
+        "slug": "office-productivity-hub",
+        "old_len": 141,
+        "new_len": 188,
+        "old_desc": "常见办公流程自动化中枢，覆盖文档处理、数据整理、邮件管理、日程协调、报表生成与工作流编排。聚焦批量操作容错、格式保真、P",
+        "new_desc": "常见办公流程自动化中枢，覆盖文档处理、数据整理、邮件管理、日程协调、报表生成与工作流编排。聚焦批量操作容错、格式保真、P"
+      },
+      {
+        "status": "updated",
+        "slug": "pcb-design-assistant-pro",
+        "old_len": 142,
+        "new_len": 186,
+        "old_desc": "PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与D",
+        "new_desc": "PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与D"
+      },
+      {
+        "status": "updated",
+        "slug": "reminder-engine-free",
+        "old_len": 144,
+        "new_len": 177,
+        "old_desc": "提醒引擎免费版是面向AI Agent的一次性提醒创建引擎。不同于定时任务配置指南，本技能聚焦\"如何安全可靠地创建一次性提",
+        "new_desc": "提醒引擎免费版是面向AI Agent的一次性提醒创建引擎。不同于定时任务配置指南，本技能聚焦\"如何安全可靠地创建一次性提"
+      },
+      {
+        "status": "updated",
+        "slug": "smart-update-agent-free",
+        "old_len": 144,
+        "new_len": 189,
+        "old_desc": "智能更新管家免费版帮助你自动保持Agent运行时与已安装技能的最新状态。通过每日定时检查、版本对比与更新摘要，告别手动更",
+        "new_desc": "智能更新管家免费版帮助你自动保持Agent运行时与已安装技能的最新状态。通过每日定时检查、版本对比与更新摘要，告别手动更"
+      },
+      {
+        "status": "updated",
+        "slug": "task-bot-orchestrator-free",
+        "old_len": 144,
+        "new_len": 192,
+        "old_desc": "任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务调度、基础通知推送三",
+        "new_desc": "任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务调度、基础通知推送三"
+      },
+      {
+        "status": "updated",
+        "slug": "task-queue-manager-free",
+        "old_len": 144,
+        "new_len": 178,
+        "old_desc": "任务队列管理器（免费版）为AI Agent提供持久化任务队列管理能力，支持可恢复、幂等的批量任务执行。采用JSONL追加",
+        "new_desc": "任务队列管理器（免费版）为AI Agent提供持久化任务队列管理能力，支持可恢复、幂等的批量任务执行。采用JSONL追加"
+      },
+      {
+        "status": "updated",
+        "slug": "workflow-catalyst-free",
+        "old_len": 144,
+        "new_len": 194,
+        "old_desc": "工作流催化器为AI Agent提供\"识别重复→抽象模式→设计自动化→实现脚本\"的四步思维框架。免费版提供核心方法论与基础",
+        "new_desc": "工作流催化器为AI Agent提供\"识别重复→抽象模式→设计自动化→实现脚本\"的四步思维框架。免费版提供核心方法论与基础"
+      },
+      {
+        "status": "updated",
+        "slug": "workflow-essentials-free",
+        "old_len": 139,
+        "new_len": 177,
+        "old_desc": "工作流精要为AI Agent提供自动化工作流的入门级方法论。不同于面向特定角色或特定工具的指南，工作流精要聚焦自动化的通",
+        "new_desc": "工作流精要为AI Agent提供自动化工作流的入门级方法论。不同于面向特定角色或特定工具的指南，工作流精要聚焦自动化的通"
+      },
+      {
+        "status": "updated",
+        "slug": "workflow-orchestrator-free",
+        "old_len": 142,
+        "new_len": 182,
+        "old_desc": "工作流编排器免费版为自动化开发者提供轻量级的流水线编排能力，聚焦可复用组件、节点间数据流与状态管理。采用\"文件即状态\"的",
+        "new_desc": "工作流编排器免费版为自动化开发者提供轻量级的流水线编排能力，聚焦可复用组件、节点间数据流与状态管理。采用\"文件即状态\"的"
+      },
+      {
+        "status": "updated",
+        "slug": "workflow-splitter-free",
+        "old_len": 139,
+        "new_len": 187,
+        "old_desc": "工作流分解器免费版为知识工作者提供轻量级的任务拆解能力，聚焦将复杂工作任务分解为详细、可执行的子步骤，并为每个步骤匹配最",
+        "new_desc": "工作流分解器免费版为知识工作者提供轻量级的任务拆解能力，聚焦将复杂工作任务分解为详细、可执行的子步骤，并为每个步骤匹配最"
+      },
+      {
+        "status": "updated",
+        "slug": "email-digest-tool-pro",
+        "old_len": 117,
+        "new_len": 162,
+        "old_desc": "|-\n  邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用",
+        "new_desc": "|-\n  邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用"
+      },
+      {
+        "status": "updated",
+        "slug": "email-multi-provider-free",
+        "old_len": 149,
+        "new_len": 194,
+        "old_desc": "多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook\n  与 Exchange ",
+        "new_desc": "多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook\n  与 Exchange "
+      },
+      {
+        "status": "updated",
+        "slug": "email-multi-provider-pro",
+        "old_len": 129,
+        "new_len": 171,
+        "old_desc": "多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不",
+        "new_desc": "多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不"
+      },
+      {
+        "status": "updated",
+        "slug": "email-toolkit-free",
+        "old_len": 130,
+        "new_len": 172,
+        "old_desc": "邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件\n  自动化发送，支持 Gmail、",
+        "new_desc": "邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件\n  自动化发送，支持 Gmail、"
+      },
+      {
+        "status": "updated",
+        "slug": "feishu-card-builder-free",
+        "old_len": 128,
+        "new_len": 175,
+        "old_desc": "飞书卡片免费版是一款面向个人用户的飞书卡片消息构建与发送工具，支持向飞书用户或\n  群组发送包含 Markdown、标题",
+        "new_desc": "飞书卡片免费版是一款面向个人用户的飞书卡片消息构建与发送工具，支持向飞书用户或\n  群组发送包含 Markdown、标题"
+      },
+      {
+        "status": "updated",
+        "slug": "feishu-file-sender-free",
+        "old_len": 139,
+        "new_len": 187,
+        "old_desc": "飞书文件发送免费版是一款面向个人用户的飞书文件与图片发送工具，通过两步上传流程，可处理提升工作效率\n  （先上传获取 f",
+        "new_desc": "飞书文件发送免费版是一款面向个人用户的飞书文件与图片发送工具，通过两步上传流程，可处理提升工作效率\n  （先上传获取 f"
+      },
+      {
+        "status": "updated",
+        "slug": "social-scheduler-pro-pro",
+        "old_len": 146,
+        "new_len": 192,
+        "old_desc": "社媒内容排期工具（专业版）面向团队与企业用户，在免费版基础模块之上新增跨平台内容编排引擎、发布效果分析、团队协作审批、智",
+        "new_desc": "社媒内容排期工具（专业版）面向团队与企业用户，在免费版基础模块之上新增跨平台内容编排引擎、发布效果分析、团队协作审批、智"
+      },
+      {
+        "status": "updated",
+        "slug": "timer-alert-tool-pro",
+        "old_len": 144,
+        "new_len": 184,
+        "old_desc": "|-\n  定时提醒工具（专业版）面向团队与企业用户，在免费版基础定时能力之上新增循环定时、提醒模板库、多级升级提醒、指定",
+        "new_desc": "|-\n  定时提醒工具（专业版）面向团队与企业用户，在免费版基础定时能力之上新增循环定时、提醒模板库、多级升级提醒、指定"
+      },
+      {
+        "status": "updated",
+        "slug": "whatsapp-msg-tool-pro",
+        "old_len": 140,
+        "new_len": 187,
+        "old_desc": "|-\n  WhatsApp 消息工具（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引擎、历史回填、群",
+        "new_desc": "|-\n  WhatsApp 消息工具（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引擎、历史回填、群"
+      },
+      {
+        "status": "updated",
+        "slug": "dlazy-gen-tool-pro",
+        "old_len": 140,
+        "new_len": 183,
+        "old_desc": "|-\n  综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力：\n  - 40+ 模型全覆盖（图片、视频、音频",
+        "new_desc": "|-\n  综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力：\n  - 40+ 模型全覆盖（图片、视频、音频"
+      },
+      {
+        "status": "updated",
+        "slug": "doubao-image-gen-tool-pro",
+        "old_len": 119,
+        "new_len": 165,
+        "old_desc": "|-\n  豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创",
+        "new_desc": "|-\n  豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创"
+      },
+      {
+        "status": "updated",
+        "slug": "figma-design-tool-pro",
+        "old_len": 20,
+        "new_len": 118,
+        "old_desc": "|-\n  Figma设计集成工具专业版。",
+        "new_desc": "|-\n  Figma设计集成工具专业版。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、设计、品牌、图片。降"
+      },
+      {
+        "status": "updated",
+        "slug": "game-asset-gen-tool-pro",
+        "old_len": 121,
+        "new_len": 179,
+        "old_desc": "|-\n  游戏资产生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人",
+        "new_desc": "|-\n  游戏资产生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人"
+      },
+      {
+        "status": "updated",
+        "slug": "grok-image-tool-pro",
+        "old_len": 123,
+        "new_len": 181,
+        "old_desc": "|-\n  Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需",
+        "new_desc": "|-\n  Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需"
+      },
+      {
+        "status": "updated",
+        "slug": "html-designer-tool-free",
+        "old_len": 101,
+        "new_len": 166,
+        "old_desc": "HTML设计工具免费版是一款面向个人开发者的网页图形设计辅助工具。通过自然语言指令驱动AI Agent生成符合专业设计原",
+        "new_desc": "HTML设计工具免费版是一款面向个人开发者的网页图形设计辅助工具。通过自然语言指令驱动AI Agent生成符合专业设计原"
+      },
+      {
+        "status": "updated",
+        "slug": "html-designer-tool-pro",
+        "old_len": 100,
+        "new_len": 166,
+        "old_desc": "|-\n  HTML设计工具专业版是一款面向企业与专业团队的网页设计系统化解决方案。在免费版核心能力之上,提供完整的设计令",
+        "new_desc": "|-\n  HTML设计工具专业版是一款面向企业与专业团队的网页设计系统化解决方案。在免费版核心能力之上,提供完整的设计令"
+      },
+      {
+        "status": "updated",
+        "slug": "lh-video-gen-tool-free",
+        "old_len": 144,
+        "new_len": 188,
+        "old_desc": "竖版视频生成免费版帮助个人内容创作者从Markdown脚本一键生成\n  9:16竖版短视频。采用\"以图定音\"核心思路,画",
+        "new_desc": "竖版视频生成免费版帮助个人内容创作者从Markdown脚本一键生成\n  9:16竖版短视频。采用\"以图定音\"核心思路,画"
+      },
+      {
+        "status": "updated",
+        "slug": "lh-video-gen-tool-pro",
+        "old_len": 146,
+        "new_len": 192,
+        "old_desc": "|-\n  短视频生成专业版为企业与内容团队提供系统化的竖版短视频生产解决方案。在免费版单视频生成能力之上,增加批量生成、",
+        "new_desc": "|-\n  短视频生成专业版为企业与内容团队提供系统化的竖版短视频生产解决方案。在免费版单视频生成能力之上,增加批量生成、"
+      },
+      {
+        "status": "updated",
+        "slug": "logo-brand-identity-tool-free",
+        "old_len": 89,
+        "new_len": 158,
+        "old_desc": "品牌标识设计免费版帮助个人用户与初创团队通过AI创建完整的品牌标识。不仅仅是Logo,而是包含配色系统、字体方案、品牌指",
+        "new_desc": "品牌标识设计免费版帮助个人用户与初创团队通过AI创建完整的品牌标识。不仅仅是Logo,而是包含配色系统、字体方案、品牌指"
+      },
+      {
+        "status": "updated",
+        "slug": "logo-brand-identity-tool-pro",
+        "old_len": 99,
+        "new_len": 158,
+        "old_desc": "|-\n  品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整",
+        "new_desc": "|-\n  品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整"
+      },
+      {
+        "status": "updated",
+        "slug": "logo-design-guide-tool-free",
+        "old_len": 106,
+        "new_len": 164,
+        "old_desc": "Logo设计指南免费版帮助个人用户掌握AI Logo设计的核心原则与优选实践。提供Logo类型识别、提示词编写技巧、可扩",
+        "new_desc": "Logo设计指南免费版帮助个人用户掌握AI Logo设计的核心原则与优选实践。提供Logo类型识别、提示词编写技巧、可扩"
+      },
+      {
+        "status": "updated",
+        "slug": "logo-design-guide-tool-pro",
+        "old_len": 89,
+        "new_len": 160,
+        "old_desc": "Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,增加批量提示词管理、多",
+        "new_desc": "Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,增加批量提示词管理、多"
+      },
+      {
+        "status": "updated",
+        "slug": "logo-design-tool-free",
+        "old_len": 92,
+        "new_len": 155,
+        "old_desc": "Logo设计工具免费版帮助个人用户使用AI图像生成工具创建专业Logo。提供结构化的提示词框架、多模型对比、视觉验证循环",
+        "new_desc": "Logo设计工具免费版帮助个人用户使用AI图像生成工具创建专业Logo。提供结构化的提示词框架、多模型对比、视觉验证循环"
+      },
+      {
+        "status": "updated",
+        "slug": "logo-design-tool-pro",
+        "old_len": 101,
+        "new_len": 167,
+        "old_desc": "|-\n  Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批",
+        "new_desc": "|-\n  Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批"
+      },
+      {
+        "status": "updated",
+        "slug": "markdown-converter-tool-free",
+        "old_len": 148,
+        "new_len": 193,
+        "old_desc": "Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdown格式。支持PDF、Word、Excel、PP",
+        "new_desc": "Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdown格式。支持PDF、Word、Excel、PP"
+      },
+      {
+        "status": "updated",
+        "slug": "markdown-converter-tool-pro",
+        "old_len": 146,
+        "new_len": 191,
+        "old_desc": "|-\n  Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,增加批量处",
+        "new_desc": "|-\n  Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,增加批量处"
+      },
+      {
+        "status": "updated",
+        "slug": "minimalist-design-tool-free",
+        "old_len": 142,
+        "new_len": 188,
+        "old_desc": "极简设计系统免费版帮助个人开发者将精密设计系统无缝集成到现有代码库。提供设计令牌(色彩/字体/间距/阴影)、组件规范、响",
+        "new_desc": "极简设计系统免费版帮助个人开发者将精密设计系统无缝集成到现有代码库。提供设计令牌(色彩/字体/间距/阴影)、组件规范、响"
+      },
+      {
+        "status": "updated",
+        "slug": "minimalist-design-tool-pro",
+        "old_len": 99,
+        "new_len": 165,
+        "old_desc": "|-\n  极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,增加完整",
+        "new_desc": "|-\n  极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,增加完整"
+      },
+      {
+        "status": "updated",
+        "slug": "music-gen-cellcog-tool-free",
+        "old_len": 146,
+        "new_len": 193,
+        "old_desc": "CellCog音乐生成免费版帮助个人用户通过CellCog AI引擎创建音乐。支持从文本描述或歌词生成完整音乐作品,涵盖",
+        "new_desc": "CellCog音乐生成免费版帮助个人用户通过CellCog AI引擎创建音乐。支持从文本描述或歌词生成完整音乐作品,涵盖"
+      },
+      {
+        "status": "updated",
+        "slug": "music-gen-cellcog-tool-pro",
+        "old_len": 149,
+        "new_len": 196,
+        "old_desc": "|-\n  CellCog音乐生成专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批",
+        "new_desc": "|-\n  CellCog音乐生成专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批"
+      },
+      {
+        "status": "updated",
+        "slug": "music-gen-tool-free",
+        "old_len": 144,
+        "new_len": 181,
+        "old_desc": "音乐生成工具免费版帮助个人用户通过聚合多个AI音乐生成平台创建音乐。支持Suno、Udio、Stable Audio等主",
+        "new_desc": "音乐生成工具免费版帮助个人用户通过聚合多个AI音乐生成平台创建音乐。支持Suno、Udio、Stable Audio等主"
+      },
+      {
+        "status": "updated",
+        "slug": "music-gen-tool-pro",
+        "old_len": 145,
+        "new_len": 190,
+        "old_desc": "|-\n  音乐生成工具专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批量生成、版",
+        "new_desc": "|-\n  音乐生成工具专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批量生成、版"
+      },
+      {
+        "status": "updated",
+        "slug": "podcast-downloader-tool-free",
+        "old_len": 73,
+        "new_len": 158,
+        "old_desc": "面向个人用户的播客下载工具(免费版)。核心能力:，可自动提升工作效率\n  - 从小宇宙(xiaoyuzhoufmUse\n",
+        "new_desc": "面向个人用户的播客下载工具(免费版)。核心能力:，可自动提升工作效率\n  - 从小宇宙(xiaoyuzhoufmUse\n"
+      },
+      {
+        "status": "updated",
+        "slug": "ui-ux-design-tool-pro",
+        "old_len": 114,
+        "new_len": 160,
+        "old_desc": "面向企业设计团队和专业前端的完整UI/UX设计体系,涵盖WCAG 2。2无障碍合规、。可生成提升工作效率\n  设计令牌系",
+        "new_desc": "面向企业设计团队和专业前端的完整UI/UX设计体系,涵盖WCAG 2。2无障碍合规、。可生成提升工作效率\n  设计令牌系"
+      },
+      {
+        "status": "updated",
+        "slug": "ux-design-tool-pro",
+        "old_len": 93,
+        "new_len": 156,
+        "old_desc": "|-\n  面向企业UX团队和专业设计师的完整用户体验设计引擎,涵盖深度流程分析、\n  用户研究方法论、WCAG 2。2无",
+        "new_desc": "|-\n  面向企业UX团队和专业设计师的完整用户体验设计引擎,涵盖深度流程分析、\n  用户研究方法论、WCAG 2。2无"
+      },
+      {
+        "status": "updated",
+        "slug": "video-frames-tool-pro",
+        "old_len": 116,
+        "new_len": 164,
+        "old_desc": "|-\n  视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体",
+        "new_desc": "|-\n  视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体"
+      },
+      {
+        "status": "updated",
+        "slug": "video-producer-tool-pro",
+        "old_len": 113,
+        "new_len": 157,
+        "old_desc": "短视频生成专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。",
+        "new_desc": "短视频生成专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。"
+      },
+      {
+        "status": "updated",
+        "slug": "video-toolkit-free",
+        "old_len": 145,
+        "new_len": 184,
+        "old_desc": "面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、\n  字幕生成、宽高比调整、音频清理等核心功能",
+        "new_desc": "面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、\n  字幕生成、宽高比调整、音频清理等核心功能"
+      },
+      {
+        "status": "updated",
+        "slug": "video-translator-tool-pro",
+        "old_len": 115,
+        "new_len": 156,
+        "old_desc": "|-\n  视频翻译专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内",
+        "new_desc": "|-\n  视频翻译专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内"
+      },
+      {
+        "status": "updated",
+        "slug": "whatsapp-image-tool-pro",
+        "old_len": 127,
+        "new_len": 171,
+        "old_desc": "|-\n  WhatsApp 多媒体消息发送专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不",
+        "new_desc": "|-\n  WhatsApp 多媒体消息发送专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不"
+      },
+      {
+        "status": "updated",
+        "slug": "youtube-watcher-tool-pro",
+        "old_len": 113,
+        "new_len": 153,
+        "old_desc": "|-\n  YouTube 内容分析专业版。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学",
+        "new_desc": "|-\n  YouTube 内容分析专业版。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学"
+      },
+      {
+        "status": "updated",
+        "slug": "git-workflow-cn-tool-pro",
+        "old_len": 136,
+        "new_len": 182,
+        "old_desc": "|-\n  面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、批量处理、工",
+        "new_desc": "|-\n  面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、批量处理、工"
+      },
+      {
+        "status": "updated",
+        "slug": "git-workflows-tool-pro",
+        "old_len": 133,
+        "new_len": 179,
+        "old_desc": "|-\n  面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优",
+        "new_desc": "|-\n  面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优"
+      },
+      {
+        "status": "updated",
+        "slug": "java-reviewer-tool-pro",
+        "old_len": 130,
+        "new_len": 178,
+        "old_desc": "|-\n  面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署",
+        "new_desc": "|-\n  面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署"
+      },
+      {
+        "status": "updated",
+        "slug": "finance-acct-tool-free",
+        "old_len": 142,
+        "new_len": 193,
+        "old_desc": "面向个人用户与小微企业的基础财务会计工具，提供流水账记录、银行对账、\n  增值税计算和标准财务报表生成功能。通过命令行操",
+        "new_desc": "面向个人用户与小微企业的基础财务会计工具，提供流水账记录、银行对账、\n  增值税计算和标准财务报表生成功能。通过命令行操"
+      },
+      {
+        "status": "updated",
+        "slug": "finance-acct-tool-pro",
+        "old_len": 139,
+        "new_len": 186,
+        "old_desc": "|-\n  面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、\n  全税种自动计算、批量电子发票生成、银行A",
+        "new_desc": "|-\n  面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、\n  全税种自动计算、批量电子发票生成、银行A"
+      },
+      {
+        "status": "updated",
+        "slug": "finance-radar-tool-free",
+        "old_len": 134,
+        "new_len": 182,
+        "old_desc": "面向个人投资者的股票与加密货币分析工具，通过Yahoo Finance数据提供\n  价格查询、基本面分析和技术指标评估。",
+        "new_desc": "面向个人投资者的股票与加密货币分析工具，通过Yahoo Finance数据提供\n  价格查询、基本面分析和技术指标评估。"
+      },
+      {
+        "status": "updated",
+        "slug": "finance-report-tool-free",
+        "old_len": 134,
+        "new_len": 184,
+        "old_desc": "面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF\n  文件提取财务数据，自动生成包含趋势走势图",
+        "new_desc": "面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF\n  文件提取财务数据，自动生成包含趋势走势图"
+      },
+      {
+        "status": "updated",
+        "slug": "finance-toolkit-free",
+        "old_len": 128,
+        "new_len": 179,
+        "old_desc": "面向个人投资者的轻量级行情追踪工具，支持股票、ETF、指数、外汇的实时\n  报价与历史序列获取。内置缓存机制避免频率限制",
+        "new_desc": "面向个人投资者的轻量级行情追踪工具，支持股票、ETF、指数、外汇的实时\n  报价与历史序列获取。内置缓存机制避免频率限制"
+      },
+      {
+        "status": "updated",
+        "slug": "financial-literacy-tool-free",
+        "old_len": 144,
+        "new_len": 190,
+        "old_desc": "面向个人用户的金融素养教育工具。通过互动问答、案例分析和知识卡片\n  帮助用户建立基础金融认知。Use when 需要数",
+        "new_desc": "面向个人用户的金融素养教育工具。通过互动问答、案例分析和知识卡片\n  帮助用户建立基础金融认知。Use when 需要数"
+      },
+      {
+        "status": "updated",
+        "slug": "okx-dex-token-tool-free",
+        "old_len": 128,
+        "new_len": 175,
+        "old_desc": "面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器，可自动提升工作效率\n  API获取多链代币的实",
+        "new_desc": "面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器，可自动提升工作效率\n  API获取多链代币的实"
+      },
+      {
+        "status": "updated",
+        "slug": "trading-tool-free",
+        "old_len": 132,
+        "new_len": 177,
+        "old_desc": "面向个人交易者的技术分析工具，基于维加斯通道（Vegas Channel）策略\n  提供趋势识别与买卖信号判断。适合个人",
+        "new_desc": "面向个人交易者的技术分析工具，基于维加斯通道（Vegas Channel）策略\n  提供趋势识别与买卖信号判断。适合个人"
+      },
+      {
+        "status": "updated",
+        "slug": "trading-tool-pro",
+        "old_len": 132,
+        "new_len": 181,
+        "old_desc": "|-\n  面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带\n  等多种技术策略组合，提供批量标的分析",
+        "new_desc": "|-\n  面向专业交易者的多策略交易分析系统。支持维加斯通道、MACD、布林带\n  等多种技术策略组合，提供批量标的分析"
+      },
+      {
+        "status": "updated",
+        "slug": "university-app-tool-pro",
+        "old_len": 148,
+        "new_len": 193,
+        "old_desc": "|-\n  面向命理研究者的专业命理分析系统。支持八字命理、紫微斗数、合婚\n  分析、大运流年推演与批量排盘。Use wh",
+        "new_desc": "|-\n  面向命理研究者的专业命理分析系统。支持八字命理、紫微斗数、合婚\n  分析、大运流年推演与批量排盘。Use wh"
+      },
+      {
+        "status": "updated",
+        "slug": "api-connect-hub-free",
+        "old_len": 146,
+        "new_len": 191,
+        "old_desc": "API连接中心免费版解决独立开发者\"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙\"的痛点。提供统一连接",
+        "new_desc": "API连接中心免费版解决独立开发者\"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙\"的痛点。提供统一连接"
+      },
+      {
+        "status": "updated",
+        "slug": "api-doc-generator-free",
+        "old_len": 131,
+        "new_len": 178,
+        "old_desc": "API文档生成器免费版解决\"接口文档写不动、写了不更新、新人看不懂\"三大痛点。从代码注释、接口签名或自然语言描述出发，自",
+        "new_desc": "API文档生成器免费版解决\"接口文档写不动、写了不更新、新人看不懂\"三大痛点。从代码注释、接口签名或自然语言描述出发，自"
+      },
+      {
+        "status": "updated",
+        "slug": "call-bridge-free",
+        "old_len": 148,
+        "new_len": 197,
+        "old_desc": "通话桥接免费版是一款面向独立开发者的AI电话代理工具，通过语音AI代理拨打美国电话号码，完成通话后返回转写文本、通话结果",
+        "new_desc": "通话桥接免费版是一款面向独立开发者的AI电话代理工具，通过语音AI代理拨打美国电话号码，完成通话后返回转写文本、通话结果"
+      },
+      {
+        "status": "updated",
+        "slug": "canvas-json-handler-free",
+        "old_len": 132,
+        "new_len": 169,
+        "old_desc": "画布JSON处理工具专注于JSON Canvas规范文件的读写、校验与维护，适用于知识图谱、思维导图、流程编排等可视化场",
+        "new_desc": "画布JSON处理工具专注于JSON Canvas规范文件的读写、校验与维护，适用于知识图谱、思维导图、流程编排等可视化场"
+      },
+      {
+        "status": "updated",
+        "slug": "csv-json-converter-free",
+        "old_len": 137,
+        "new_len": 168,
+        "old_desc": "CSV转JSON免费版是一款面向独立开发者与数据工程师的轻量级表格数据格式转换工具。围绕\"表头推断—类型识别—单文件转换",
+        "new_desc": "CSV转JSON免费版是一款面向独立开发者与数据工程师的轻量级表格数据格式转换工具。围绕\"表头推断—类型识别—单文件转换"
+      },
+      {
+        "status": "updated",
+        "slug": "figma-studio-free",
+        "old_len": 114,
+        "new_len": 162,
+        "old_desc": "Figma工作室免费版是一款面向前端工程师与独立设计师的轻量级Figma设计文件读取与协作工具。围绕\"文件读取—评论管理",
+        "new_desc": "Figma工作室免费版是一款面向前端工程师与独立设计师的轻量级Figma设计文件读取与协作工具。围绕\"文件读取—评论管理"
+      },
+      {
+        "status": "updated",
+        "slug": "graph-query-tool-pro",
+        "old_len": 109,
+        "new_len": 153,
+        "old_desc": "|-\n  全功能链上数据查询。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处",
+        "new_desc": "|-\n  全功能链上数据查询。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处"
+      },
+      {
+        "status": "updated",
+        "slug": "json-lint-tool-free",
+        "old_len": 123,
+        "new_len": 163,
+        "old_desc": "JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错误。核心能",
+        "new_desc": "JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错误。核心能"
+      },
+      {
+        "status": "updated",
+        "slug": "json-validator-free",
+        "old_len": 138,
+        "new_len": 163,
+        "old_desc": "JSON校验器免费版是一款面向独立开发者与前端工程师的轻量级JSON数据校验工具。围绕\"语法检查—错误定位—单文件校验—",
+        "new_desc": "JSON校验器免费版是一款面向独立开发者与前端工程师的轻量级JSON数据校验工具。围绕\"语法检查—错误定位—单文件校验—"
+      },
+      {
+        "status": "updated",
+        "slug": "json-yaml-converter-free",
+        "old_len": 138,
+        "new_len": 187,
+        "old_desc": "JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕\"双向转换—缩进规范—注释保留",
+        "new_desc": "JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕\"双向转换—缩进规范—注释保留"
+      },
+      {
+        "status": "updated",
+        "slug": "xml-json-converter-free",
+        "old_len": 138,
+        "new_len": 164,
+        "old_desc": "XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕\"双向转换—属性处理—命名空间",
+        "new_desc": "XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕\"双向转换—属性处理—命名空间"
+      },
+      {
+        "status": "updated",
+        "slug": "aws-cost-optimizer-tool-pro",
+        "old_len": 129,
+        "new_len": 174,
+        "old_desc": "面向企业云财务团队的AWS成本管理平台。支持多账户统一分析、自动\n  优化执行、预留实例（RI）/Savings Pla",
+        "new_desc": "面向企业云财务团队的AWS成本管理平台。支持多账户统一分析、自动\n  优化执行、预留实例（RI）/Savings Pla"
+      },
+      {
+        "status": "updated",
+        "slug": "azure-toolkit-pro",
+        "old_len": 143,
+        "new_len": 191,
+        "old_desc": "面向企业运维团队的Azure全服务管理平台。支持计算/存储/网络/数据库/\n  AI全量Azure服务，提供基础设施即代",
+        "new_desc": "面向企业运维团队的Azure全服务管理平台。支持计算/存储/网络/数据库/\n  AI全量Azure服务，提供基础设施即代"
+      },
+      {
+        "status": "updated",
+        "slug": "docker-toolkit-free",
+        "old_len": 148,
+        "new_len": 196,
+        "old_desc": "面向个人开发者的Docker容器管理工具。支持镜像构建与拉取、容器\n  生命周期管理、数据卷与网络配置。Use when",
+        "new_desc": "面向个人开发者的Docker容器管理工具。支持镜像构建与拉取、容器\n  生命周期管理、数据卷与网络配置。Use when"
+      },
+      {
+        "status": "updated",
+        "slug": "k8s-devops-tool-pro",
+        "old_len": 129,
+        "new_len": 173,
+        "old_desc": "面向企业DevOps团队的K8s清单管理平台。支持Helm Chart与Kustomize\n  完整工作流、策略合规校验",
+        "new_desc": "面向企业DevOps团队的K8s清单管理平台。支持Helm Chart与Kustomize\n  完整工作流、策略合规校验"
+      },
+      {
+        "status": "updated",
+        "slug": "kubernetes-toolkit-free",
+        "old_len": 142,
+        "new_len": 186,
+        "old_desc": "面向个人开发者与小团队的K8s集群管理工具。支持多Agent协作模式，\n  提供Pod/Service/Deployme",
+        "new_desc": "面向个人开发者与小团队的K8s集群管理工具。支持多Agent协作模式，\n  提供Pod/Service/Deployme"
+      },
+      {
+        "status": "updated",
+        "slug": "ocean-chat-tool-pro",
+        "old_len": 145,
+        "new_len": 189,
+        "old_desc": "面向企业与团队的企业级P2P通讯平台。支持群组通讯、多设备同步、\n  大文件传输、语音视频通话与团队管理。Use whe",
+        "new_desc": "面向企业与团队的企业级P2P通讯平台。支持群组通讯、多设备同步、\n  大文件传输、语音视频通话与团队管理。Use whe"
+      },
+      {
+        "status": "updated",
+        "slug": "qq-zone-photo-tool-free",
+        "old_len": 143,
+        "new_len": 182,
+        "old_desc": "面向个人用户的QQ空间相册管理工具。支持登录QQ空间、浏览相册\n  列表、查看照片与单张下载。Use when 需要项目",
+        "new_desc": "面向个人用户的QQ空间相册管理工具。支持登录QQ空间、浏览相册\n  列表、查看照片与单张下载。Use when 需要项目"
+      },
+      {
+        "status": "updated",
+        "slug": "qq-zone-photo-tool-pro",
+        "old_len": 135,
+        "new_len": 175,
+        "old_desc": "面向专业用户的QQ空间相册管理平台。支持批量下载整个相册、创建\n  新相册、批量上传照片、相册管理与多平台迁移（至Goo",
+        "new_desc": "面向专业用户的QQ空间相册管理平台。支持批量下载整个相册、创建\n  新相册、批量上传照片、相册管理与多平台迁移（至Goo"
+      },
+      {
+        "status": "updated",
+        "slug": "css-toolkit-pro",
+        "old_len": 102,
+        "new_len": 168,
+        "old_desc": "CSS 工具箱专业版是一份面向前端工程团队的全功能 CSS 知识体系，在免费版陷阱速查基础上扩展性能优化、无障碍设计、设",
+        "new_desc": "CSS 工具箱专业版是一份面向前端工程团队的全功能 CSS 知识体系，在免费版陷阱速查基础上扩展性能优化、无障碍设计、设"
+      },
+      {
+        "status": "updated",
+        "slug": "data-toolkit-pro",
+        "old_len": 134,
+        "new_len": 183,
+        "old_desc": "数据工具箱专业版是一款面向数据团队的全功能数据工程平台，在免费版基础数据处理能力上扩展统计检验、数据质量监控、工作流自动",
+        "new_desc": "数据工具箱专业版是一款面向数据团队的全功能数据工程平台，在免费版基础数据处理能力上扩展统计检验、数据质量监控、工作流自动"
+      },
+      {
+        "status": "updated",
+        "slug": "diagram-master-free",
+        "old_len": 149,
+        "new_len": 195,
+        "old_desc": "图表制作大师免费版解决技术文档中\"图表绘制效率低、样式不统一、跨平台兼容差\"的核心痛点。图表制作大师生成自包含的SVG文",
+        "new_desc": "图表制作大师免费版解决技术文档中\"图表绘制效率低、样式不统一、跨平台兼容差\"的核心痛点。图表制作大师生成自包含的SVG文"
+      },
+      {
+        "status": "updated",
+        "slug": "diagram-master-pro",
+        "old_len": 133,
+        "new_len": 178,
+        "old_desc": "图表制作大师专业版是技术文档图表制作的完整解决方案。在免费版基础上解锁批量图表生成、自定义配色方案、图表模板库、SVG转",
+        "new_desc": "图表制作大师专业版是技术文档图表制作的完整解决方案。在免费版基础上解锁批量图表生成、自定义配色方案、图表模板库、SVG转"
+      },
+      {
+        "status": "updated",
+        "slug": "doge-node-tool-pro",
+        "old_len": 131,
+        "new_len": 171,
+        "old_desc": "DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系统监控、日志分析、",
+        "new_desc": "DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系统监控、日志分析、"
+      },
+      {
+        "status": "updated",
+        "slug": "file-compressor-free",
+        "old_len": 137,
+        "new_len": 185,
+        "old_desc": "面向长文本场景的语义压缩工具，通过迭代验证与锚点校验机制，在保证关键信息完整的前提下大幅缩减Token占用。核心能力：，",
+        "new_desc": "面向长文本场景的语义压缩工具，通过迭代验证与锚点校验机制，在保证关键信息完整的前提下大幅缩减Token占用。核心能力：，"
+      },
+      {
+        "status": "updated",
+        "slug": "web-content-fetcher-tool-free",
+        "old_len": 142,
+        "new_len": 186,
+        "old_desc": "网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:，可自动提升工作效率\n  - 三种替代服务的降",
+        "new_desc": "网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:，可自动提升工作效率\n  - 三种替代服务的降"
+      },
+      {
+        "status": "updated",
+        "slug": "browser-automation-v2-tool-free",
+        "old_len": 132,
+        "new_len": 163,
+        "old_desc": "浏览器自动化助手免费版是面向个人开发者和轻量任务场景的浏览器自动化工具。聚焦\"打开页面-等待加载-提取数据-关闭标签\"四",
+        "new_desc": "浏览器自动化助手免费版是面向个人开发者和轻量任务场景的浏览器自动化工具。聚焦\"打开页面-等待加载-提取数据-关闭标签\"四"
+      },
+      {
+        "status": "updated",
+        "slug": "company-search-tool-free",
+        "old_len": 129,
+        "new_len": 173,
+        "old_desc": "企业查询助手免费版是面向个人用户的轻量企业信息查询工具。通过内置公用API Key开箱即用，支持查公司基本信息、法人、股",
+        "new_desc": "企业查询助手免费版是面向个人用户的轻量企业信息查询工具。通过内置公用API Key开箱即用，支持查公司基本信息、法人、股"
+      },
+      {
+        "status": "updated",
+        "slug": "daily-news-brief-tool-free",
+        "old_len": 139,
+        "new_len": 179,
+        "old_desc": "每日新闻简报助手免费版是面向个人用户的轻量新闻简报生成工具。聚焦\"搜集-筛选-生成\"三步流程，自动获取国际时事、经济形势",
+        "new_desc": "每日新闻简报助手免费版是面向个人用户的轻量新闻简报生成工具。聚焦\"搜集-筛选-生成\"三步流程，自动获取国际时事、经济形势"
+      },
+      {
+        "status": "updated",
+        "slug": "feed-digest-tool-pro",
+        "old_len": 147,
+        "new_len": 173,
+        "old_desc": "订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度摘要、多源聚",
+        "new_desc": "订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度摘要、多源聚"
+      },
+      {
+        "status": "updated",
+        "slug": "feed-to-md-tool-free",
+        "old_len": 129,
+        "new_len": 168,
+        "old_desc": "RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦\"获取-解析-转换-保存\"四步流程，将RS",
+        "new_desc": "RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦\"获取-解析-转换-保存\"四步流程，将RS"
+      },
+      {
+        "status": "updated",
+        "slug": "file-browser-tool-pro",
+        "old_len": 141,
+        "new_len": 175,
+        "old_desc": "文件浏览器助手专业版是面向企业级场景的完整文件管理与操作工具。在免费版基础操作能力之上，新增批量操作、高级搜索、文件监控",
+        "new_desc": "文件浏览器助手专业版是面向企业级场景的完整文件管理与操作工具。在免费版基础操作能力之上，新增批量操作、高级搜索、文件监控"
+      },
+      {
+        "status": "updated",
+        "slug": "gif-whatsapp-tool-pro",
+        "old_len": 147,
+        "new_len": 190,
+        "old_desc": "企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析。Use when ",
+        "new_desc": "企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析。Use when "
+      },
+      {
+        "status": "updated",
+        "slug": "multi-search-tool-pro",
+        "old_len": 125,
+        "new_len": 168,
+        "old_desc": "多搜索引擎工具专业版，集成20+全球搜索引擎。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用",
+        "new_desc": "多搜索引擎工具专业版，集成20+全球搜索引擎。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用"
+      },
+      {
+        "status": "updated",
+        "slug": "news-aggregator-tool-pro",
+        "old_len": 120,
+        "new_len": 169,
+        "old_desc": "新闻聚合工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源",
+        "new_desc": "新闻聚合工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源"
+      },
+      {
+        "status": "updated",
+        "slug": "news-feed-tool-pro",
+        "old_len": 123,
+        "new_len": 171,
+        "old_desc": "RSS新闻订阅工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工",
+        "new_desc": "RSS新闻订阅工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工"
+      },
+      {
+        "status": "updated",
+        "slug": "parallel-research-tool-pro",
+        "old_len": 120,
+        "new_len": 180,
+        "old_desc": "并行研究助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源",
+        "new_desc": "并行研究助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源"
+      },
+      {
+        "status": "updated",
+        "slug": "read-github-tool-pro",
+        "old_len": 122,
+        "new_len": 177,
+        "old_desc": "代码仓库阅读工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程",
+        "new_desc": "代码仓库阅读工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程"
+      },
+      {
+        "status": "updated",
+        "slug": "research-agent-tool-pro",
+        "old_len": 120,
+        "new_len": 177,
+        "old_desc": "研究代理助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源",
+        "new_desc": "研究代理助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源"
+      },
+      {
+        "status": "updated",
+        "slug": "solo-validate-tool-pro",
+        "old_len": 140,
+        "new_len": 189,
+        "old_desc": "想法验证工具专业版为企业团队提供深度创业想法验证与风险评估能力。核心能力:\n  - S。Use when 需要数据分析、",
+        "new_desc": "想法验证工具专业版为企业团队提供深度创业想法验证与风险评估能力。核心能力:\n  - S。Use when 需要数据分析、"
+      },
+      {
+        "status": "updated",
+        "slug": "stagehand-browser-tool-pro",
+        "old_len": 131,
+        "new_len": 176,
+        "old_desc": "浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理穿透",
+        "new_desc": "浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理穿透"
+      },
+      {
+        "status": "updated",
+        "slug": "tool-finder-tool-free",
+        "old_len": 134,
+        "new_len": 173,
+        "old_desc": "工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台技能和 MCP serve",
+        "new_desc": "工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台技能和 MCP serve"
+      },
+      {
+        "status": "updated",
+        "slug": "use-my-browser-tool-free",
+        "old_len": 148,
+        "new_len": 197,
+        "old_desc": "真实浏览器控制免费版,面向个人用户提供直接控制用户真实 Chrome 浏览器的能力。通过用户脚本注入技术,在页面上下文中",
+        "new_desc": "真实浏览器控制免费版,面向个人用户提供直接控制用户真实 Chrome 浏览器的能力。通过用户脚本注入技术,在页面上下文中"
+      },
+      {
+        "status": "updated",
+        "slug": "verify-claims-tool-pro",
+        "old_len": 129,
+        "new_len": 171,
+        "old_desc": "事实核查助手专业版,面向企业团队和专业研究人员提供深度的事实核查能力。支持批量声明核查、定时监控预警、深度分析报告、团队",
+        "new_desc": "事实核查助手专业版,面向企业团队和专业研究人员提供深度的事实核查能力。支持批量声明核查、定时监控预警、深度分析报告、团队"
+      },
+      {
+        "status": "updated",
+        "slug": "moltbook-firewall-tool-pro",
+        "old_len": 139,
+        "new_len": 172,
+        "old_desc": "Agent防火墙专业版,为企业提供全方位AI Agent安全防护能力。核心能力:上下文感知深度注入检测、沙盒隔离、参数投",
+        "new_desc": "Agent防火墙专业版,为企业提供全方位AI Agent安全防护能力。核心能力:上下文感知深度注入检测、沙盒隔离、参数投"
+      }
+    ],
+    "ok": [
+      {
+        "status": "ok",
+        "slug": "ad-creative-intel-free",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ad-creative-intel-pro",
+        "old_len": 802,
+        "new_len": 802,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ad-insight-hub",
+        "old_len": 208,
+        "new_len": 208,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "agent-copilot-pro",
+        "old_len": 163,
+        "new_len": 163,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aws-agent-orchestrator-free",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aws-agent-orchestrator-pro",
+        "old_len": 1003,
+        "new_len": 1003,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aws-cloud-architect",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aws-cloud-inspector-free",
+        "old_len": 163,
+        "new_len": 163,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aws-cloud-inspector-pro",
+        "old_len": 941,
+        "new_len": 941,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aws-graph-agent",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-cloud-architect",
+        "old_len": 222,
+        "new_len": 222,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-cloud-inspector-free",
+        "old_len": 201,
+        "new_len": 201,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-cloud-inspector-pro",
+        "old_len": 930,
+        "new_len": 930,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "context-compressor-free",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "context-compressor-pro",
+        "old_len": 472,
+        "new_len": 472,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "context-vault-manager-pro",
+        "old_len": 512,
+        "new_len": 512,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "decision-architect",
+        "old_len": 191,
+        "new_len": 191,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-reasoning-analyst-free",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-reasoning-analyst-pro",
+        "old_len": 451,
+        "new_len": 451,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "evolution-engine-v2",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "evolve-loop-free",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "evolve-loop-pro",
+        "old_len": 580,
+        "new_len": 580,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "focus-flow-optimizer-free",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "focus-flow-optimizer-pro",
+        "old_len": 515,
+        "new_len": 515,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "infinite-memory-vault-pro",
+        "old_len": 590,
+        "new_len": 590,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-graph-builder-free",
+        "old_len": 151,
+        "new_len": 151,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-graph-builder-pro",
+        "old_len": 616,
+        "new_len": 616,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-ontology",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "llm-assistant-hub",
+        "old_len": 220,
+        "new_len": 220,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "local-vector-memory-free",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "local-vector-memory-pro",
+        "old_len": 766,
+        "new_len": 766,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "localmemo-pro",
+        "old_len": 252,
+        "new_len": 252,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "longmemo-elite",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "memo-quickstart",
+        "old_len": 220,
+        "new_len": 220,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "memory-distiller-v2",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "memory-fortress-free",
+        "old_len": 189,
+        "new_len": 189,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "memory-fortress-pro",
+        "old_len": 512,
+        "new_len": 512,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "memory-orchestrator-v2",
+        "old_len": 207,
+        "new_len": 207,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "memory-radar",
+        "old_len": 226,
+        "new_len": 226,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "memory-radar-free",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "meta-agent-optimizer-pro",
+        "old_len": 651,
+        "new_len": 651,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "multi-agent-dev-v2",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "netdisk-sync-pro",
+        "old_len": 189,
+        "new_len": 189,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "neural-context-engine-free",
+        "old_len": 178,
+        "new_len": 178,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "neural-context-engine-pro",
+        "old_len": 489,
+        "new_len": 489,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "neurocache-pro",
+        "old_len": 218,
+        "new_len": 218,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pan-file-commander-free",
+        "old_len": 150,
+        "new_len": 150,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pan-file-commander-pro",
+        "old_len": 878,
+        "new_len": 878,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "persistent-memory-engine",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "productivity-boost",
+        "old_len": 178,
+        "new_len": 178,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "prompt-architect-free",
+        "old_len": 197,
+        "new_len": 197,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "prompt-architect-pro",
+        "old_len": 917,
+        "new_len": 917,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "quick-context-saver-free",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "quick-context-saver-pro",
+        "old_len": 522,
+        "new_len": 522,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "redis-cache-master",
+        "old_len": 214,
+        "new_len": 214,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "redis-context-cache-free",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "redis-context-cache-pro",
+        "old_len": 591,
+        "new_len": 591,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "self-evolving-ai",
+        "old_len": 194,
+        "new_len": 194,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "skill-production-standards",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "soul-decision-engine-free",
+        "old_len": 171,
+        "new_len": 171,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "soul-decision-engine-pro",
+        "old_len": 569,
+        "new_len": 569,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "swarm-coder-free",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "swarm-coder-pro",
+        "old_len": 611,
+        "new_len": 611,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "token-economist-free",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "token-economist-pro",
+        "old_len": 515,
+        "new_len": 515,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "token-guard-pro",
+        "old_len": 207,
+        "new_len": 207,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tool-orchestrator",
+        "old_len": 198,
+        "new_len": 198,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "total-recall-ai-free",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "total-recall-ai-pro",
+        "old_len": 472,
+        "new_len": 472,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "batch-processor-pro",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "batchops-commander-pro",
+        "old_len": 571,
+        "new_len": 571,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "biz-auto-hub",
+        "old_len": 153,
+        "new_len": 153,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bizauto-flow-free",
+        "old_len": 155,
+        "new_len": 155,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bizauto-flow-pro",
+        "old_len": 582,
+        "new_len": 582,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-agent-pro-free",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-agent-pro-pro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cad-insight-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cdp-browser-master",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cdp-browser-pilot-free",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cdp-browser-pilot-pro",
+        "old_len": 638,
+        "new_len": 638,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cloud-ops-orchestrator",
+        "old_len": 200,
+        "new_len": 200,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cloudforge-automation-pro",
+        "old_len": 601,
+        "new_len": 601,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-assist",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-expert-free",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-expert-pro",
+        "old_len": 554,
+        "new_len": 554,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-guard",
+        "old_len": 222,
+        "new_len": 222,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-master-pro",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-mate-free",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-mate-pro",
+        "old_len": 530,
+        "new_len": 530,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-scheduler-pro",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-scheduler-pro-free",
+        "old_len": 176,
+        "new_len": 176,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cron-setup-guide-free",
+        "old_len": 169,
+        "new_len": 169,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "desktop-automation-hub-free",
+        "old_len": 151,
+        "new_len": 151,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "desktop-automation-hub-pro",
+        "old_len": 544,
+        "new_len": 544,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "desktop-autopilot",
+        "old_len": 186,
+        "new_len": 186,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "drawing-insight-free",
+        "old_len": 176,
+        "new_len": 176,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "drawing-insight-pro",
+        "old_len": 629,
+        "new_len": 629,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "excel-maestro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "excel-ninja-free",
+        "old_len": 150,
+        "new_len": 150,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "excel-ninja-pro",
+        "old_len": 500,
+        "new_len": 500,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feedstream-monitor-free",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feedstream-monitor-pro",
+        "old_len": 612,
+        "new_len": 612,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "flow-architect",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "flow-control-hub-free",
+        "old_len": 183,
+        "new_len": 183,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "flow-control-hub-pro",
+        "old_len": 512,
+        "new_len": 512,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "flow-editor-pro",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "flow-manager-pro-free",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "flow-manager-pro-pro",
+        "old_len": 534,
+        "new_len": 534,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "flowforge-builder-pro",
+        "old_len": 512,
+        "new_len": 512,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-cli-pro",
+        "old_len": 178,
+        "new_len": 178,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-flow-cli-free",
+        "old_len": 188,
+        "new_len": 188,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-flow-cli-pro",
+        "old_len": 801,
+        "new_len": 801,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-pilot-ai-free",
+        "old_len": 150,
+        "new_len": 150,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-pilot-ai-pro",
+        "old_len": 678,
+        "new_len": 678,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-workflow-bot",
+        "old_len": 155,
+        "new_len": 155,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "macro-sentinel-free",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "macro-sentinel-pro",
+        "old_len": 510,
+        "new_len": 510,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "news-daily-digest-free",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notes-cli-toolkit",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notes-sync-cli-free",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notes-sync-cli-pro",
+        "old_len": 521,
+        "new_len": 521,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "obsidian-essentials-free",
+        "old_len": 192,
+        "new_len": 192,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "obsidian-essentials-pro",
+        "old_len": 518,
+        "new_len": 518,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "obsidian-toolkit-free",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "obsidian-toolkit-pro",
+        "old_len": 659,
+        "new_len": 659,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "office-task-automator-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "office-task-automator-pro",
+        "old_len": 501,
+        "new_len": 501,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pcb-design-assistant-free",
+        "old_len": 207,
+        "new_len": 207,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "schedule-manager-free",
+        "old_len": 183,
+        "new_len": 183,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-radar",
+        "old_len": 188,
+        "new_len": 188,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-reminder-free",
+        "old_len": 155,
+        "new_len": 155,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-update-agent-pro",
+        "old_len": 572,
+        "new_len": 572,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "solo-dev-companion-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "solo-workflow-engine-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "solo-workflow-engine-pro",
+        "old_len": 488,
+        "new_len": 488,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "system-controller",
+        "old_len": 175,
+        "new_len": 175,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "translate-hub-free",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "update-guardian",
+        "old_len": 180,
+        "new_len": 180,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vault-master-pro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vault-sync-engine",
+        "old_len": 189,
+        "new_len": 189,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "workflow-catalyst-pro",
+        "old_len": 468,
+        "new_len": 468,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "workflow-essentials-pro",
+        "old_len": 463,
+        "new_len": 463,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "workflow-lite",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "workflow-symphony",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "alephnet-node-manager-free",
+        "old_len": 198,
+        "new_len": 198,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "alpha-feed-creator-free",
+        "old_len": 248,
+        "new_len": 248,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bookmark-smart-hub-free",
+        "old_len": 196,
+        "new_len": 196,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "calendar-reminder-tool-free",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "calendar-reminder-tool-pro",
+        "old_len": 225,
+        "new_len": 225,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "card-image-builder-free",
+        "old_len": 276,
+        "new_len": 276,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "discord-chat-manager-free",
+        "old_len": 233,
+        "new_len": 233,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "discord-community-hub-free",
+        "old_len": 236,
+        "new_len": 236,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "discord-toolkit-free",
+        "old_len": 244,
+        "new_len": 244,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "discord-voice-tool-free",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "discord-voice-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dns-config-tool-free",
+        "old_len": 266,
+        "new_len": 266,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dns-config-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "email-163-tool-free",
+        "old_len": 153,
+        "new_len": 153,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "email-163-tool-pro",
+        "old_len": 223,
+        "new_len": 223,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "email-digest-tool-free",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "google-workspace-cli-free",
+        "old_len": 197,
+        "new_len": 197,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "google-workspace-toolkit-free",
+        "old_len": 290,
+        "new_len": 290,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "news-sentiment-tool-free",
+        "old_len": 267,
+        "new_len": 267,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "news-sentiment-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "photo-caption-tool-free",
+        "old_len": 270,
+        "new_len": 270,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "photo-caption-tool-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "piper-tts-engine-free",
+        "old_len": 201,
+        "new_len": 201,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pro-comm-toolkit-free",
+        "old_len": 235,
+        "new_len": 235,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-reader-ai-free",
+        "old_len": 263,
+        "new_len": 263,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "slack-hub-tool-free",
+        "old_len": 280,
+        "new_len": 280,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "slack-hub-tool-pro",
+        "old_len": 263,
+        "new_len": 263,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "slack-toolkit-free",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "slack-workspace-manager-free",
+        "old_len": 230,
+        "new_len": 230,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "social-media-toolkit-free",
+        "old_len": 200,
+        "new_len": 200,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "social-scheduler-pro-free",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "telegram-agent-comm-free",
+        "old_len": 199,
+        "new_len": 199,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "telegram-chat-tool-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "telegram-chat-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "telegram-msg-toolkit-free",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tg-body-scan-tool-free",
+        "old_len": 196,
+        "new_len": 196,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tg-body-scan-tool-pro",
+        "old_len": 229,
+        "new_len": 229,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "timeline-digest-tool-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "timeline-digest-tool-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "timer-alert-tool-free",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "whatsapp-msg-manager-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "whatsapp-msg-tool-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "whatsapp-style-guide-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "whatsapp-style-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "whatsapp-style-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ace-music-tool-free",
+        "old_len": 230,
+        "new_len": 230,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ace-music-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "agentvibes-skill-free",
+        "old_len": 286,
+        "new_len": 286,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ai-image-gen-tool-free",
+        "old_len": 233,
+        "new_len": 233,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ai-image-gen-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ai-image-prompt-tool-free",
+        "old_len": 253,
+        "new_len": 253,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ai-image-prompt-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ai-podcast-tool-free",
+        "old_len": 271,
+        "new_len": 271,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ai-podcast-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "anygen-diagram-tool-free",
+        "old_len": 263,
+        "new_len": 263,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "anygen-diagram-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "audio-stream-upload-free",
+        "old_len": 287,
+        "new_len": 287,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-transcription-tool-free",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-transcription-tool-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-voicelive-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-voicelive-tool-pro",
+        "old_len": 192,
+        "new_len": 192,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bilibili-helper-tool-free",
+        "old_len": 250,
+        "new_len": 250,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bilibili-helper-tool-pro",
+        "old_len": 290,
+        "new_len": 290,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bilibili-toolkit-free",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chromecast-control-tool-free",
+        "old_len": 258,
+        "new_len": 258,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chromecast-control-tool-pro",
+        "old_len": 169,
+        "new_len": 169,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cloud-architect-design-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "comfyui-painter-tool-free",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "comfyui-painter-tool-pro",
+        "old_len": 215,
+        "new_len": 215,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "creative-officer-tool-free",
+        "old_len": 271,
+        "new_len": 271,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "creative-officer-tool-pro",
+        "old_len": 155,
+        "new_len": 155,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "design-toolkit-free",
+        "old_len": 256,
+        "new_len": 256,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "diagram-gen-tool-free",
+        "old_len": 220,
+        "new_len": 220,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "diagram-gen-tool-pro",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dlazy-audio-tool-free",
+        "old_len": 214,
+        "new_len": 214,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dlazy-audio-tool-pro",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dlazy-gen-tool-free",
+        "old_len": 210,
+        "new_len": 210,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doubao-image-gen-tool-free",
+        "old_len": 200,
+        "new_len": 200,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "elite-frontend-tool-free",
+        "old_len": 254,
+        "new_len": 254,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "elite-frontend-tool-pro",
+        "old_len": 233,
+        "new_len": 233,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "figma-design-tool-free",
+        "old_len": 225,
+        "new_len": 225,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "frontend-design-ai-provider-free",
+        "old_len": 251,
+        "new_len": 251,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "frontend-design-ai-provider-pro",
+        "old_len": 281,
+        "new_len": 281,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "frontend-design-v3-free",
+        "old_len": 210,
+        "new_len": 210,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-asset-gen-tool-free",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "grok-image-tool-free",
+        "old_len": 269,
+        "new_len": 269,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "heygen-tts-tool-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "heygen-tts-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "html-coder-tool-free",
+        "old_len": 227,
+        "new_len": 227,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "html-coder-tool-pro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "kujiale-design-tool-free",
+        "old_len": 230,
+        "new_len": 230,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "kujiale-design-tool-pro",
+        "old_len": 272,
+        "new_len": 272,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "llm-provider-ai-tool-free",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "llm-provider-ai-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "llm-provider-whisper-tool-free",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "llm-provider-whisper-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "llm-provider-whisper-v1-tool-free",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "llm-provider-whisper-v1-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "meeting-join-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "meeting-join-tool-pro",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "podcast-chaptering-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "podcast-chaptering-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "podcast-downloader-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "podcast-toolkit-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "quark-scan-tool-free",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "quark-scan-tool-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "qwen-video-analyzer-free",
+        "old_len": 228,
+        "new_len": 228,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tailwindcss-toolkit-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tts-whatsapp-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tts-whatsapp-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-design-toolkit-free",
+        "old_len": 287,
+        "new_len": 287,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-design-tool-free",
+        "old_len": 276,
+        "new_len": 276,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-dev-tool-free",
+        "old_len": 273,
+        "new_len": 273,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-dev-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-promax-plus-free",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-promax-plus-pro",
+        "old_len": 291,
+        "new_len": 291,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-promax-v2-free",
+        "old_len": 287,
+        "new_len": 287,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-promax-v2-pro",
+        "old_len": 171,
+        "new_len": 171,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-toolkit-free",
+        "old_len": 286,
+        "new_len": 286,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ux-design-tool-free",
+        "old_len": 276,
+        "new_len": 276,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "video-editing-tool-free",
+        "old_len": 253,
+        "new_len": 253,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "video-editing-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "video-frames-tool-free",
+        "old_len": 227,
+        "new_len": 227,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "video-producer-tool-free",
+        "old_len": 247,
+        "new_len": 247,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "video-stream-upload-free",
+        "old_len": 227,
+        "new_len": 227,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "video-translator-tool-free",
+        "old_len": 223,
+        "new_len": 223,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "wechat-article-writer-free",
+        "old_len": 265,
+        "new_len": 265,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "whatsapp-image-tool-free",
+        "old_len": 212,
+        "new_len": 212,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "youtube-watcher-tool-free",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "actor-identifier-tool-free",
+        "old_len": 249,
+        "new_len": 249,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "actor-identifier-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-cli-toolkit-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cheat-code-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cheat-code-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-analysis-toolkit-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-analyze-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-analyze-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-delegate-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-delegate-tool-pro",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-dev-toolkit-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-dev-v1-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-dev-v1-tool-pro",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-quality-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-quality-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-runner-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-runner-tool-pro",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dns-networking-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dns-networking-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-essentials-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-essentials-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-essentials-v1-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-essentials-v1-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "encryption-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "encryption-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "explain-code-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "explain-code-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-cli-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-cli-tool-pro",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-essentials-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-essentials-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-helper-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-helper-tool-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-toolkit-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-workflow-cn-tool-free",
+        "old_len": 251,
+        "new_len": 251,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "git-workflows-tool-free",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "github-dev-standard-free",
+        "old_len": 244,
+        "new_len": 244,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "golang-toolkit-free",
+        "old_len": 257,
+        "new_len": 257,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "hugo-blog-tool-free",
+        "old_len": 260,
+        "new_len": 260,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "hugo-blog-tool-pro",
+        "old_len": 267,
+        "new_len": 267,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "iris-formatter-tool-free",
+        "old_len": 240,
+        "new_len": 240,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "iris-formatter-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "java-dev-manual-tool-free",
+        "old_len": 233,
+        "new_len": 233,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "java-dev-manual-tool-pro",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "java-reviewer-tool-free",
+        "old_len": 263,
+        "new_len": 263,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "javascript-sdk-tool-free",
+        "old_len": 245,
+        "new_len": 245,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "javascript-sdk-tool-pro",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "javascript-skills-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "javascript-skills-tool-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "javascript-toolkit-free",
+        "old_len": 276,
+        "new_len": 276,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-graph-tool-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-graph-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "markdown-format-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "markdown-format-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "merge-check-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "merge-check-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mermaid-diagram-tool-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mermaid-diagram-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "model-routing-tool-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "model-routing-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "model-switching-tool-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "model-switching-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "node-connect-tool-free",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "node-connect-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "python-toolkit-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "resume-assistant-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "resume-assistant-tool-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ssl-toolkit-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tmux-session-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tmux-session-tool-pro",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "typescript-skills-tool-free",
+        "old_len": 269,
+        "new_len": 269,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "typescript-skills-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "typescript-toolkit-free",
+        "old_len": 256,
+        "new_len": 256,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-component-tool-free",
+        "old_len": 273,
+        "new_len": 273,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-component-tool-pro",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-promax-tool-free",
+        "old_len": 256,
+        "new_len": 256,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-ux-promax-tool-pro",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "universal-translate-tool-free",
+        "old_len": 241,
+        "new_len": 241,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "universal-translate-tool-pro",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vscode-node-tool-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vscode-node-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vue-component-gen-tool-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vue-component-gen-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-dev-toolkit-free",
+        "old_len": 276,
+        "new_len": 276,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ziptax-tool-free",
+        "old_len": 198,
+        "new_len": 198,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ziptax-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "accounting-finance-tool-free",
+        "old_len": 171,
+        "new_len": 171,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "accounting-finance-tool-pro",
+        "old_len": 153,
+        "new_len": 153,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "finance-radar-tool-pro",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "finance-report-tool-pro",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "financial-literacy-tool-pro",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "okx-dex-token-tool-pro",
+        "old_len": 177,
+        "new_len": 177,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "stock-filter-tool-free",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "stock-filter-tool-pro",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "telegram-alert-tool-free",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "telegram-alert-tool-pro",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "university-app-tool-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "analytics-dashboard-free",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "api-magic-gen-free",
+        "old_len": 196,
+        "new_len": 196,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "api-scaffold-gen-free",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "api-toolkit-free",
+        "old_len": 194,
+        "new_len": 194,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "atlas-admin-console-free",
+        "old_len": 162,
+        "new_len": 162,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-gateway-cli-free",
+        "old_len": 199,
+        "new_len": 199,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "blog-writer-tool-free",
+        "old_len": 488,
+        "new_len": 488,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "blog-writer-tool-pro",
+        "old_len": 610,
+        "new_len": 610,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "can-bus-toolkit-free",
+        "old_len": 246,
+        "new_len": 246,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chart-craft-free",
+        "old_len": 219,
+        "new_len": 219,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cloud-manager-free",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "csv-insight-free",
+        "old_len": 197,
+        "new_len": 197,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "csv-processor-free",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "csv-processor-pro",
+        "old_len": 193,
+        "new_len": 193,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "csv-toolkit-free",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "data-analysis-hub-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "data-analyst-chinese-free",
+        "old_len": 274,
+        "new_len": 274,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "data-analyst-expert-free",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "db-admin-console-free",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "db-connector-free",
+        "old_len": 187,
+        "new_len": 187,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "db-schema-designer-free",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "deepseek-assistant-free",
+        "old_len": 205,
+        "new_len": 205,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "discord-master-free",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-guard-free",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doubao-assistant-free",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "encoding-toolkit-free",
+        "old_len": 173,
+        "new_len": 173,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "excel-craft-free",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "excel-expert-free",
+        "old_len": 260,
+        "new_len": 260,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "figma-tw-designer-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "format-converter-free",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-resource-finder-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "gateway-manager-free",
+        "old_len": 186,
+        "new_len": 186,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "github-api-toolkit-free",
+        "old_len": 280,
+        "new_len": 280,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "github-manager-free",
+        "old_len": 281,
+        "new_len": 281,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "grain-crawler-free",
+        "old_len": 256,
+        "new_len": 256,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "graph-knowledge-base-free",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "graph-query-tool-free",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jira-api-toolkit-free",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jira-flow-skill-free",
+        "old_len": 195,
+        "new_len": 195,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "json-beautifier-free",
+        "old_len": 200,
+        "new_len": 200,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "json-lint-tool-pro",
+        "old_len": 176,
+        "new_len": 176,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "json-parse-engine-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "json-repair-tool-free",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "json-repair-tool-pro",
+        "old_len": 185,
+        "new_len": 185,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "json-toolkit-free",
+        "old_len": 267,
+        "new_len": 267,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "key-vault-manager-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-api-toolkit-free",
+        "old_len": 191,
+        "new_len": 191,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-sync-tool-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-sync-tool-pro",
+        "old_len": 197,
+        "new_len": 197,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-workflow-skill-free",
+        "old_len": 187,
+        "new_len": 187,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "md-export-tool-free",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "md-export-tool-pro",
+        "old_len": 169,
+        "new_len": 169,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mongo-manager-free",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "note-process-engine-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "note-process-engine-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-api-toolkit-free",
+        "old_len": 287,
+        "new_len": 287,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-cli-tool-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-cli-tool-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "obsidian-cli-tool-free",
+        "old_len": 193,
+        "new_len": 193,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "obsidian-cli-tool-pro",
+        "old_len": 234,
+        "new_len": 234,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ollama-toolkit-free",
+        "old_len": 188,
+        "new_len": 188,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ops-dashboard-free",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pg-job-queue-free",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pg-mcp-skills-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pipedrive-toolkit-free",
+        "old_len": 201,
+        "new_len": 201,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "py-data-analyzer-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pyx-scanner-free",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "reddit-research-tool-free",
+        "old_len": 150,
+        "new_len": 150,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "reddit-research-tool-pro",
+        "old_len": 195,
+        "new_len": 195,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "remix-auth-tool-free",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "remix-auth-tool-pro",
+        "old_len": 201,
+        "new_len": 201,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "repo-manager-free",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "secure-api-toolkit-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "self-integration-tool-free",
+        "old_len": 187,
+        "new_len": 187,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "self-integration-tool-pro",
+        "old_len": 191,
+        "new_len": 191,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "slack-api-toolkit-free",
+        "old_len": 186,
+        "new_len": 186,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "slack-crawler-free",
+        "old_len": 268,
+        "new_len": 268,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-crawler-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sql-gen-tool-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sql-gen-tool-pro",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sql-master-tool-free",
+        "old_len": 151,
+        "new_len": 151,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sql-master-tool-pro",
+        "old_len": 173,
+        "new_len": 173,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sql-query-tool-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sql-query-tool-pro",
+        "old_len": 177,
+        "new_len": 177,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sqlite-lite-manager-free",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sqlite-manager-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "telegram-toolkit-free",
+        "old_len": 198,
+        "new_len": 198,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "text2sql-engine-free",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tg-bot-builder-free",
+        "old_len": 178,
+        "new_len": 178,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tpn-proxy-tool-free",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tpn-proxy-tool-pro",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "trending-feed-skill-free",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vector-db-manager-free",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vpn-rotator-free",
+        "old_len": 266,
+        "new_len": 266,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vue-toolkit-free",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-crawler-engine-free",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-notepad-free",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "weiyun-toolkit-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "whatsapp-master-free",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ws-excel-tool-free",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ws-excel-tool-pro",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "xlsx-handler-free",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "api-dev-tool-free",
+        "old_len": 211,
+        "new_len": 211,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "api-dev-tool-pro",
+        "old_len": 225,
+        "new_len": 225,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "compress-pdf-tool-free",
+        "old_len": 195,
+        "new_len": 195,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "compress-pdf-tool-pro",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "context-driven-dev-tool-free",
+        "old_len": 207,
+        "new_len": 207,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "context-driven-dev-tool-pro",
+        "old_len": 221,
+        "new_len": 221,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-parse-tool-free",
+        "old_len": 210,
+        "new_len": 210,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-parse-tool-pro",
+        "old_len": 218,
+        "new_len": 218,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docs-toolkit-free",
+        "old_len": 223,
+        "new_len": 223,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docs-toolkit-pro",
+        "old_len": 237,
+        "new_len": 237,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "document-pdf-tool-free",
+        "old_len": 199,
+        "new_len": 199,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "document-pdf-tool-pro",
+        "old_len": 213,
+        "new_len": 213,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "excel-formula-tool-free",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "excel-formula-tool-pro",
+        "old_len": 223,
+        "new_len": 223,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feishu-doc-tool-free",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feishu-doc-tool-pro",
+        "old_len": 216,
+        "new_len": 216,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feishu-doc-write-tool-free",
+        "old_len": 194,
+        "new_len": 194,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feishu-doc-write-tool-pro",
+        "old_len": 208,
+        "new_len": 208,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "figma-toolkit-free",
+        "old_len": 234,
+        "new_len": 234,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "figma-toolkit-pro",
+        "old_len": 248,
+        "new_len": 248,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-capture-tool-free",
+        "old_len": 212,
+        "new_len": 212,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-capture-tool-pro",
+        "old_len": 226,
+        "new_len": 226,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-mgmt-tool-free",
+        "old_len": 207,
+        "new_len": 207,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-mgmt-tool-pro",
+        "old_len": 221,
+        "new_len": 221,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-toolkit-free",
+        "old_len": 201,
+        "new_len": 201,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-toolkit-pro",
+        "old_len": 215,
+        "new_len": 215,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "learn-cog-tool-free",
+        "old_len": 194,
+        "new_len": 194,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "learn-cog-tool-pro",
+        "old_len": 208,
+        "new_len": 208,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "learn-tool-free",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "learn-tool-pro",
+        "old_len": 216,
+        "new_len": 216,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "local-rag-tool-free",
+        "old_len": 228,
+        "new_len": 228,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "local-rag-tool-pro",
+        "old_len": 242,
+        "new_len": 242,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "md-converter-pdf-tool-free",
+        "old_len": 204,
+        "new_len": 204,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "md-converter-pdf-tool-pro",
+        "old_len": 218,
+        "new_len": 218,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "merge-pdf-tool-free",
+        "old_len": 189,
+        "new_len": 189,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "merge-pdf-tool-pro",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mindmap-gen-tool-free",
+        "old_len": 189,
+        "new_len": 189,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mindmap-gen-tool-pro",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "nano-pdf-tool-free",
+        "old_len": 204,
+        "new_len": 204,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "nano-pdf-tool-pro",
+        "old_len": 218,
+        "new_len": 218,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pandoc-convert-tool-free",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pandoc-convert-tool-pro",
+        "old_len": 217,
+        "new_len": 217,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "paper-parse-tool-free",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "paper-parse-tool-pro",
+        "old_len": 216,
+        "new_len": 216,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pdf-processor-cn-tool-free",
+        "old_len": 183,
+        "new_len": 183,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pdf-processor-cn-tool-pro",
+        "old_len": 197,
+        "new_len": 197,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pdf-toolkit-free",
+        "old_len": 216,
+        "new_len": 216,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pdf-toolkit-pro",
+        "old_len": 230,
+        "new_len": 230,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "popeye-prod-tool-free",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "popeye-prod-tool-pro",
+        "old_len": 212,
+        "new_len": 212,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-pdf-font-fix-tool-free",
+        "old_len": 205,
+        "new_len": 205,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-pdf-font-fix-tool-pro",
+        "old_len": 219,
+        "new_len": 219,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "presentation-gen-tool-free",
+        "old_len": 195,
+        "new_len": 195,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "presentation-gen-tool-pro",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "skill-creator-tool-free",
+        "old_len": 223,
+        "new_len": 223,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "skill-creator-tool-pro",
+        "old_len": 237,
+        "new_len": 237,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "solo-audit-tool-free",
+        "old_len": 198,
+        "new_len": 198,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "solo-audit-tool-pro",
+        "old_len": 212,
+        "new_len": 212,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "word-docx-tool-free",
+        "old_len": 192,
+        "new_len": 192,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "word-docx-tool-pro",
+        "old_len": 206,
+        "new_len": 206,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "word-docx-v1-tool-free",
+        "old_len": 198,
+        "new_len": 198,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "word-docx-v1-tool-pro",
+        "old_len": 212,
+        "new_len": 212,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "word-docx-v102-tool-free",
+        "old_len": 208,
+        "new_len": 208,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "word-docx-v102-tool-pro",
+        "old_len": 222,
+        "new_len": 222,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "apple-health-tool-free",
+        "old_len": 235,
+        "new_len": 235,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "apple-health-tool-pro",
+        "old_len": 212,
+        "new_len": 212,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-weather-api-tool-free",
+        "old_len": 183,
+        "new_len": 183,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-weather-api-tool-pro",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-weather-skill-tool-free",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-weather-skill-tool-pro",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-ai-tool-free",
+        "old_len": 201,
+        "new_len": 201,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-ai-tool-pro",
+        "old_len": 214,
+        "new_len": 214,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-builder-tool-free",
+        "old_len": 214,
+        "new_len": 214,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-builder-tool-pro",
+        "old_len": 225,
+        "new_len": 225,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-dev-tool-free",
+        "old_len": 177,
+        "new_len": 177,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-dev-tool-pro",
+        "old_len": 192,
+        "new_len": 192,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-theory-tool-free",
+        "old_len": 173,
+        "new_len": 173,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-theory-tool-pro",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-toolkit-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "game-toolkit-pro",
+        "old_len": 211,
+        "new_len": 211,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "health-toolkit-free",
+        "old_len": 171,
+        "new_len": 171,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "health-toolkit-pro",
+        "old_len": 188,
+        "new_len": 188,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "lifestyle-assistant-tool-free",
+        "old_len": 183,
+        "new_len": 183,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "lifestyle-assistant-tool-pro",
+        "old_len": 199,
+        "new_len": 199,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "live-stream-script-tool-free",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "live-stream-script-tool-pro",
+        "old_len": 196,
+        "new_len": 196,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "music-toolkit-free",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "music-toolkit-pro",
+        "old_len": 192,
+        "new_len": 192,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "personal-health-tool-free",
+        "old_len": 176,
+        "new_len": 176,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "personal-health-tool-pro",
+        "old_len": 191,
+        "new_len": 191,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ping-monitor-tool-free",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ping-monitor-tool-pro",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "shop-culture-tool-free",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "shop-culture-tool-pro",
+        "old_len": 196,
+        "new_len": 196,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "text-game-arcade-tool-free",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "text-game-arcade-tool-pro",
+        "old_len": 192,
+        "new_len": 192,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "travel-assistant-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "travel-assistant-tool-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "weather-toolkit-free",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "weather-toolkit-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "auto-monitor-tool-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "auto-monitor-tool-pro",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aws-cost-optimizer-tool-free",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aws-toolkit-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-toolkit-free",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-ctl-tool-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-ctl-tool-pro",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-sandbox-tool-free",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-sandbox-tool-pro",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docker-toolkit-pro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "k8s-devops-tool-free",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "k8s-toolkit-free",
+        "old_len": 176,
+        "new_len": 176,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "k8s-toolkit-pro",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "kubernetes-toolkit-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "namecheap-dns-tool-free",
+        "old_len": 173,
+        "new_len": 173,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "namecheap-dns-tool-pro",
+        "old_len": 153,
+        "new_len": 153,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ocean-chat-tool-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "token-layer-tool-free",
+        "old_len": 173,
+        "new_len": 173,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "token-layer-tool-pro",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "agent-assistant-free",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "agent-assistant-pro",
+        "old_len": 188,
+        "new_len": 188,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "art-creator-free",
+        "old_len": 176,
+        "new_len": 176,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "art-creator-pro",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "audit-toolkit-free",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "audit-toolkit-pro",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "auto-file-organizer-free",
+        "old_len": 214,
+        "new_len": 214,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "auto-file-organizer-pro",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "auto-updater-tool-free",
+        "old_len": 286,
+        "new_len": 286,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "auto-updater-tool-pro",
+        "old_len": 273,
+        "new_len": 273,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "banner-gen-tool-free",
+        "old_len": 239,
+        "new_len": 239,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "banner-gen-tool-pro",
+        "old_len": 248,
+        "new_len": 248,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "board-art-tool-free",
+        "old_len": 247,
+        "new_len": 247,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "board-art-tool-pro",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "book-illustrator-free",
+        "old_len": 151,
+        "new_len": 151,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "book-illustrator-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chart-gen-free",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chart-gen-pro",
+        "old_len": 272,
+        "new_len": 272,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chat-agent-tool-free",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chat-agent-tool-pro",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chat-toolkit-free",
+        "old_len": 270,
+        "new_len": 270,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "chat-toolkit-pro",
+        "old_len": 239,
+        "new_len": 239,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cloud-storage-manager-free",
+        "old_len": 267,
+        "new_len": 267,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cloud-storage-manager-pro",
+        "old_len": 250,
+        "new_len": 250,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "content-filter-tool-free",
+        "old_len": 246,
+        "new_len": 246,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "content-filter-tool-pro",
+        "old_len": 227,
+        "new_len": 227,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "contract-agent-free",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "contract-agent-pro",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "css-toolkit-free",
+        "old_len": 187,
+        "new_len": 187,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ctxly-chat-tool-free",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ctxly-chat-tool-pro",
+        "old_len": 240,
+        "new_len": 240,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dashboard-builder-free",
+        "old_len": 229,
+        "new_len": 229,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dashboard-builder-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "data-toolkit-free",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "diagram-tool-free",
+        "old_len": 192,
+        "new_len": 192,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "diagram-tool-pro",
+        "old_len": 249,
+        "new_len": 249,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dns-lookup-tool-free",
+        "old_len": 183,
+        "new_len": 183,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dns-lookup-tool-pro",
+        "old_len": 233,
+        "new_len": 233,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-print-tool-free",
+        "old_len": 317,
+        "new_len": 317,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-print-tool-pro",
+        "old_len": 353,
+        "new_len": 353,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-toolkit-free",
+        "old_len": 189,
+        "new_len": 189,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doc-toolkit-pro",
+        "old_len": 217,
+        "new_len": 217,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "doge-node-tool-free",
+        "old_len": 175,
+        "new_len": 175,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "domain-dns-manager-free",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "domain-dns-manager-pro",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "emoji-toolkit-free",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "emoji-toolkit-pro",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "file-compressor-pro",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "file-sorter-tool-free",
+        "old_len": 250,
+        "new_len": 250,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "file-sorter-tool-pro",
+        "old_len": 247,
+        "new_len": 247,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "file-toolkit-free",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "file-toolkit-pro",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "font-manager-free",
+        "old_len": 173,
+        "new_len": 173,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "font-manager-pro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "frontend-design-other-tool-free",
+        "old_len": 244,
+        "new_len": 244,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "frontend-design-other-tool-pro",
+        "old_len": 248,
+        "new_len": 248,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "go-linter-config-tool-free",
+        "old_len": 245,
+        "new_len": 245,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "go-linter-config-tool-pro",
+        "old_len": 271,
+        "new_len": 271,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "go-to-market-tool-free",
+        "old_len": 207,
+        "new_len": 207,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "go-to-market-tool-pro",
+        "old_len": 230,
+        "new_len": 230,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "google-fonts-tool-free",
+        "old_len": 239,
+        "new_len": 239,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "google-fonts-tool-pro",
+        "old_len": 251,
+        "new_len": 251,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "group-agent-tool-free",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "group-agent-tool-pro",
+        "old_len": 211,
+        "new_len": 211,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "html-toolkit-free",
+        "old_len": 233,
+        "new_len": 233,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "html-toolkit-pro",
+        "old_len": 177,
+        "new_len": 177,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "humanizer-tool-free",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "humanizer-tool-pro",
+        "old_len": 227,
+        "new_len": 227,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "interview-sim-tool-free",
+        "old_len": 276,
+        "new_len": 276,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "interview-sim-tool-pro",
+        "old_len": 223,
+        "new_len": 223,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "java-toolkit-free",
+        "old_len": 241,
+        "new_len": 241,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "java-toolkit-pro",
+        "old_len": 241,
+        "new_len": 241,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jinn-node-tool-free",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jinn-node-tool-pro",
+        "old_len": 281,
+        "new_len": 281,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "juejin-tool-free",
+        "old_len": 238,
+        "new_len": 238,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "juejin-tool-pro",
+        "old_len": 221,
+        "new_len": 221,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-toolkit-free",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "linear-toolkit-pro",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "liquidity-mgr-tool-free",
+        "old_len": 262,
+        "new_len": 262,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "liquidity-mgr-tool-pro",
+        "old_len": 206,
+        "new_len": 206,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "log-sanitizer-free",
+        "old_len": 191,
+        "new_len": 191,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "log-sanitizer-pro",
+        "old_len": 180,
+        "new_len": 180,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mac-system-tool-free",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mac-system-tool-pro",
+        "old_len": 273,
+        "new_len": 273,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "markdown-toolkit-free",
+        "old_len": 228,
+        "new_len": 228,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "markdown-toolkit-pro",
+        "old_len": 249,
+        "new_len": 249,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "miniprogram-dev-tool-free",
+        "old_len": 281,
+        "new_len": 281,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "miniprogram-dev-tool-pro",
+        "old_len": 231,
+        "new_len": 231,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "molted-work-tool-free",
+        "old_len": 281,
+        "new_len": 281,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "molted-work-tool-pro",
+        "old_len": 274,
+        "new_len": 274,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "monad-dev-tool-free",
+        "old_len": 265,
+        "new_len": 265,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "monad-dev-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "monitor-toolkit-free",
+        "old_len": 187,
+        "new_len": 187,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "monitor-toolkit-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "photo-webcam-tool-free",
+        "old_len": 271,
+        "new_len": 271,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "photo-webcam-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "plugin-arch-tool-free",
+        "old_len": 283,
+        "new_len": 283,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "plugin-arch-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "port-transfer-tool-free",
+        "old_len": 286,
+        "new_len": 286,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "port-transfer-tool-pro",
+        "old_len": 225,
+        "new_len": 225,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "print-studio-free",
+        "old_len": 177,
+        "new_len": 177,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "print-studio-pro",
+        "old_len": 254,
+        "new_len": 254,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "py-toolkit-free",
+        "old_len": 260,
+        "new_len": 260,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "py-toolkit-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "python-dataviz-tool-free",
+        "old_len": 241,
+        "new_len": 241,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "python-dataviz-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "report-toolkit-free",
+        "old_len": 215,
+        "new_len": 215,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "report-toolkit-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rust-toolkit-free",
+        "old_len": 274,
+        "new_len": 274,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rust-toolkit-pro",
+        "old_len": 284,
+        "new_len": 284,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "safe-encryption-tool-free",
+        "old_len": 185,
+        "new_len": 185,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "safe-encryption-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "screen-monitor-tool-free",
+        "old_len": 260,
+        "new_len": 260,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "screen-monitor-tool-pro",
+        "old_len": 266,
+        "new_len": 266,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sequential-read-tool-free",
+        "old_len": 253,
+        "new_len": 253,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sequential-read-tool-pro",
+        "old_len": 268,
+        "new_len": 268,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "shadcn-ui-tool-free",
+        "old_len": 244,
+        "new_len": 244,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "shadcn-ui-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "shopify-helper-tool-free",
+        "old_len": 238,
+        "new_len": 238,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "shopify-helper-tool-pro",
+        "old_len": 290,
+        "new_len": 290,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "short-story-tool-free",
+        "old_len": 261,
+        "new_len": 261,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "short-story-tool-pro",
+        "old_len": 258,
+        "new_len": 258,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "skill-writer-tool-free",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "skill-writer-tool-pro",
+        "old_len": 246,
+        "new_len": 246,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-cache-tool-free",
+        "old_len": 259,
+        "new_len": 259,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-cache-tool-pro",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-light-controller-free",
+        "old_len": 213,
+        "new_len": 213,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-light-controller-pro",
+        "old_len": 235,
+        "new_len": 235,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sonos-cli-tool-free",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sonos-cli-tool-pro",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "story-analyze-tool-free",
+        "old_len": 249,
+        "new_len": 249,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "story-analyze-tool-pro",
+        "old_len": 246,
+        "new_len": 246,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "story-write-tool-free",
+        "old_len": 241,
+        "new_len": 241,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "story-write-tool-pro",
+        "old_len": 270,
+        "new_len": 270,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tardis-tool-free",
+        "old_len": 271,
+        "new_len": 271,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tardis-tool-pro",
+        "old_len": 263,
+        "new_len": 263,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tarot-reader-tool-free",
+        "old_len": 236,
+        "new_len": 236,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tarot-reader-tool-pro",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tarot-tool-free",
+        "old_len": 257,
+        "new_len": 257,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tarot-tool-pro",
+        "old_len": 279,
+        "new_len": 279,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "text-toolkit-free",
+        "old_len": 251,
+        "new_len": 251,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "text-toolkit-pro",
+        "old_len": 261,
+        "new_len": 261,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "token-manager-tool-free",
+        "old_len": 272,
+        "new_len": 272,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "token-manager-tool-pro",
+        "old_len": 269,
+        "new_len": 269,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tool-call-retry-tool-free",
+        "old_len": 244,
+        "new_len": 244,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tool-call-retry-tool-pro",
+        "old_len": 256,
+        "new_len": 256,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tool-toolkit-free",
+        "old_len": 240,
+        "new_len": 240,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tool-toolkit-pro",
+        "old_len": 253,
+        "new_len": 253,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "trade-assistant-tool-free",
+        "old_len": 258,
+        "new_len": 258,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "trade-assistant-tool-pro",
+        "old_len": 262,
+        "new_len": 262,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "translate-toolkit-free",
+        "old_len": 266,
+        "new_len": 266,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "translate-toolkit-pro",
+        "old_len": 265,
+        "new_len": 265,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-audit-tool-free",
+        "old_len": 262,
+        "new_len": 262,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ui-audit-tool-pro",
+        "old_len": 285,
+        "new_len": 285,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "universal-proxy-free",
+        "old_len": 197,
+        "new_len": 197,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "universal-proxy-pro",
+        "old_len": 190,
+        "new_len": 190,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "v2ray-proxy-tool-free",
+        "old_len": 237,
+        "new_len": 237,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "v2ray-proxy-tool-pro",
+        "old_len": 231,
+        "new_len": 231,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "volcengine-dns-tool-free",
+        "old_len": 226,
+        "new_len": 226,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "volcengine-dns-tool-pro",
+        "old_len": 242,
+        "new_len": 242,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-content-fetcher-tool-pro",
+        "old_len": 244,
+        "new_len": 244,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "word-toolkit-free",
+        "old_len": 261,
+        "new_len": 261,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "word-toolkit-pro",
+        "old_len": 260,
+        "new_len": 260,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "write-toolkit-free",
+        "old_len": 275,
+        "new_len": 275,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "write-toolkit-pro",
+        "old_len": 257,
+        "new_len": 257,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "xml-reader-tool-free",
+        "old_len": 233,
+        "new_len": 233,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "xml-reader-tool-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "xml-toolkit-free",
+        "old_len": 216,
+        "new_len": 216,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "xml-toolkit-pro",
+        "old_len": 178,
+        "new_len": 178,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "yaml-toolkit-free",
+        "old_len": 222,
+        "new_len": 222,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "yaml-toolkit-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "zh-file-organizer-free",
+        "old_len": 215,
+        "new_len": 215,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "zh-file-organizer-pro",
+        "old_len": 186,
+        "new_len": 186,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-devops-tool-free",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-devops-tool-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "blog-seo-writer-tool-free",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "blog-seo-writer-tool-pro",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "blog-writer-tool-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "blog-writer-tool-pro",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "brainz-calendar-tool-free",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "brainz-calendar-tool-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "calendar-skill-tool-free",
+        "old_len": 162,
+        "new_len": 162,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "calendar-skill-tool-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "calendar-toolkit-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "calendar-toolkit-pro",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "comm-skill-tool-free",
+        "old_len": 152,
+        "new_len": 152,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "comm-skill-tool-pro",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "daily-report-tool-free",
+        "old_len": 162,
+        "new_len": 162,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "daily-report-tool-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "diagram-tools-tool-free",
+        "old_len": 169,
+        "new_len": 169,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "diagram-tools-tool-pro",
+        "old_len": 173,
+        "new_len": 173,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dingtalk-calendar-tool-free",
+        "old_len": 163,
+        "new_len": 163,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "dingtalk-calendar-tool-pro",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feishu-calendar-tool-free",
+        "old_len": 162,
+        "new_len": 162,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feishu-calendar-tool-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "glitch-dashboard-tool-free",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "glitch-dashboard-tool-pro",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "image-tool-free",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "image-tool-pro",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jira-pat-tool-free",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jira-pat-tool-pro",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jira-toolkit-free",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jira-toolkit-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "meeting-note-tool-free",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "meeting-note-tool-pro",
+        "old_len": 171,
+        "new_len": 171,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "note-taker-tool-free",
+        "old_len": 163,
+        "new_len": 163,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "note-taker-tool-pro",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "note-toolkit-free",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "note-toolkit-pro",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-pages-tool-free",
+        "old_len": 163,
+        "new_len": 163,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-pages-tool-pro",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-skill-tool-free",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-skill-tool-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-toolkit-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "notion-toolkit-pro",
+        "old_len": 162,
+        "new_len": 162,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "personal-prod-tool-free",
+        "old_len": 162,
+        "new_len": 162,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "personal-prod-tool-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-cn-tool-free",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-cn-tool-pro",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-toolkit-free",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-toolkit-pro",
+        "old_len": 169,
+        "new_len": 169,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-v101-tool-free",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-v101-tool-pro",
+        "old_len": 171,
+        "new_len": 171,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "proactive-agent-tool-free",
+        "old_len": 171,
+        "new_len": 171,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "proactive-agent-tool-pro",
+        "old_len": 175,
+        "new_len": 175,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "prod-helper-v1-tool-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "prod-helper-v1-tool-pro",
+        "old_len": 162,
+        "new_len": 162,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "prod-helper-v4-tool-free",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "prod-helper-v4-tool-pro",
+        "old_len": 163,
+        "new_len": 163,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "prod-improve-tool-free",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "prod-improve-tool-pro",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "python3-tool-free",
+        "old_len": 176,
+        "new_len": 176,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "python3-tool-pro",
+        "old_len": 180,
+        "new_len": 180,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "quant-data-quality-tool-free",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "quant-data-quality-tool-pro",
+        "old_len": 162,
+        "new_len": 162,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "report-builder-tool-free",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "report-builder-tool-pro",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-weekly-report-tool-free",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "smart-weekly-report-tool-pro",
+        "old_len": 160,
+        "new_len": 160,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "task-planner-tool-free",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "task-planner-tool-pro",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "task-toolkit-free",
+        "old_len": 155,
+        "new_len": 155,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "task-toolkit-pro",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "weekly-report-tool-free",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "weekly-report-tool-pro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "work-toolkit-free",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "work-toolkit-pro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "writing-assistant-tool-free",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "writing-assistant-tool-pro",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ws-calendar-tool-free",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ws-calendar-tool-pro",
+        "old_len": 163,
+        "new_len": 163,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ai-news-tool-free",
+        "old_len": 260,
+        "new_len": 260,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "ai-news-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "archive-tool-free",
+        "old_len": 169,
+        "new_len": 169,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "archive-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-agent-framework-tool-free",
+        "old_len": 291,
+        "new_len": 291,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-agent-framework-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bailian-search-tool-free",
+        "old_len": 259,
+        "new_len": 259,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bailian-search-tool-pro",
+        "old_len": 257,
+        "new_len": 257,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "brave-search-tool-free",
+        "old_len": 235,
+        "new_len": 235,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "brave-search-tool-pro",
+        "old_len": 270,
+        "new_len": 270,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-agent-tool-free",
+        "old_len": 242,
+        "new_len": 242,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-agent-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-automation-tool-free",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-automation-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-automation-v2-tool-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-cli-tool-free",
+        "old_len": 228,
+        "new_len": 228,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "browser-cli-tool-pro",
+        "old_len": 276,
+        "new_len": 276,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bsession-tool-free",
+        "old_len": 178,
+        "new_len": 178,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bsession-tool-pro",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cctv-news-tool-free",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cctv-news-tool-pro",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "china-news-tool-free",
+        "old_len": 188,
+        "new_len": 188,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "china-news-tool-pro",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "company-search-tool-pro",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "daily-news-brief-tool-pro",
+        "old_len": 163,
+        "new_len": 163,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feed-digest-tool-free",
+        "old_len": 188,
+        "new_len": 188,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "feed-to-md-tool-pro",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "file-browser-tool-free",
+        "old_len": 153,
+        "new_len": 153,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-google-search-tool-free",
+        "old_len": 177,
+        "new_len": 177,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-google-search-tool-pro",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-web-search-tool-free",
+        "old_len": 276,
+        "new_len": 276,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "free-web-search-tool-pro",
+        "old_len": 195,
+        "new_len": 195,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "gif-whatsapp-tool-free",
+        "old_len": 266,
+        "new_len": 266,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "gitcrawl-tool-free",
+        "old_len": 260,
+        "new_len": 260,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "gitcrawl-tool-pro",
+        "old_len": 258,
+        "new_len": 258,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "google-search-tool-free",
+        "old_len": 252,
+        "new_len": 252,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "google-search-tool-pro",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "hot-news-tool-free",
+        "old_len": 261,
+        "new_len": 261,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "hot-news-tool-pro",
+        "old_len": 257,
+        "new_len": 257,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "in-depth-research-tool-free",
+        "old_len": 262,
+        "new_len": 262,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "in-depth-research-tool-pro",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "internet-search-pro-tool-free",
+        "old_len": 240,
+        "new_len": 240,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "internet-search-pro-tool-pro",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "internet-search-tool-free",
+        "old_len": 262,
+        "new_len": 262,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "internet-search-tool-pro",
+        "old_len": 194,
+        "new_len": 194,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jellyfin-control-tool-free",
+        "old_len": 246,
+        "new_len": 246,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "jellyfin-control-tool-pro",
+        "old_len": 247,
+        "new_len": 247,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "job-auto-apply-tool-free",
+        "old_len": 269,
+        "new_len": 269,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "job-auto-apply-tool-pro",
+        "old_len": 255,
+        "new_len": 255,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-agent-tool-free",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "knowledge-agent-tool-pro",
+        "old_len": 273,
+        "new_len": 273,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "market-news-tool-free",
+        "old_len": 265,
+        "new_len": 265,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "market-news-tool-pro",
+        "old_len": 170,
+        "new_len": 170,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "multi-search-tool-free",
+        "old_len": 260,
+        "new_len": 260,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "multi-source-research-tool-free",
+        "old_len": 267,
+        "new_len": 267,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "multi-source-research-tool-pro",
+        "old_len": 154,
+        "new_len": 154,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "news-aggregator-tool-free",
+        "old_len": 257,
+        "new_len": 257,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "news-feed-tool-free",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "news-tool-free",
+        "old_len": 245,
+        "new_len": 245,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "news-tool-pro",
+        "old_len": 180,
+        "new_len": 180,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "parallel-research-tool-free",
+        "old_len": 282,
+        "new_len": 282,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "read-github-tool-free",
+        "old_len": 188,
+        "new_len": 188,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "research-agent-tool-free",
+        "old_len": 270,
+        "new_len": 270,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-aggregator-tool-free",
+        "old_len": 255,
+        "new_len": 255,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-aggregator-tool-pro",
+        "old_len": 181,
+        "new_len": 181,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-digest-tool-free",
+        "old_len": 271,
+        "new_len": 271,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-digest-tool-pro",
+        "old_len": 240,
+        "new_len": 240,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-feed-digest-tool-free",
+        "old_len": 234,
+        "new_len": 234,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-feed-digest-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-fetcher-tool-free",
+        "old_len": 233,
+        "new_len": 233,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-fetcher-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-reader-tool-free",
+        "old_len": 208,
+        "new_len": 208,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "rss-reader-tool-pro",
+        "old_len": 269,
+        "new_len": 269,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "scrape-web-tool-free",
+        "old_len": 262,
+        "new_len": 262,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "scrape-web-tool-pro",
+        "old_len": 273,
+        "new_len": 273,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "search-assistant-tool-free",
+        "old_len": 254,
+        "new_len": 254,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "search-assistant-tool-pro",
+        "old_len": 259,
+        "new_len": 259,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "search-v2-tool-free",
+        "old_len": 248,
+        "new_len": 248,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "search-v2-tool-pro",
+        "old_len": 247,
+        "new_len": 247,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "social-sentiment-tool-free",
+        "old_len": 270,
+        "new_len": 270,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "social-sentiment-tool-pro",
+        "old_len": 277,
+        "new_len": 277,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "solo-research-tool-free",
+        "old_len": 218,
+        "new_len": 218,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "solo-research-tool-pro",
+        "old_len": 278,
+        "new_len": 278,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "solo-validate-tool-free",
+        "old_len": 274,
+        "new_len": 274,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "stagehand-browser-tool-free",
+        "old_len": 173,
+        "new_len": 173,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "the-news-tool-free",
+        "old_len": 171,
+        "new_len": 171,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "the-news-tool-pro",
+        "old_len": 172,
+        "new_len": 172,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "thesis-helper-tool-free",
+        "old_len": 167,
+        "new_len": 167,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "thesis-helper-tool-pro",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "tool-finder-tool-pro",
+        "old_len": 179,
+        "new_len": 179,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "use-my-browser-tool-pro",
+        "old_len": 168,
+        "new_len": 168,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "verify-claims-tool-free",
+        "old_len": 182,
+        "new_len": 182,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-browsing-tool-free",
+        "old_len": 166,
+        "new_len": 166,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-browsing-tool-pro",
+        "old_len": 169,
+        "new_len": 169,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-learner-tool-free",
+        "old_len": 187,
+        "new_len": 187,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-learner-tool-pro",
+        "old_len": 175,
+        "new_len": 175,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aegis-security-tool-free",
+        "old_len": 215,
+        "new_len": 215,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "aegis-security-tool-pro",
+        "old_len": 251,
+        "new_len": 251,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "amap-jsapi-tool-free",
+        "old_len": 219,
+        "new_len": 219,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "amap-jsapi-tool-pro",
+        "old_len": 238,
+        "new_len": 238,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "block-monitor-tool-free",
+        "old_len": 217,
+        "new_len": 217,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "block-monitor-tool-pro",
+        "old_len": 262,
+        "new_len": 262,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bom-vuln-intel-tool-free",
+        "old_len": 228,
+        "new_len": 228,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "bom-vuln-intel-tool-pro",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cdn-toolkit-free",
+        "old_len": 215,
+        "new_len": 215,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cdn-toolkit-pro",
+        "old_len": 269,
+        "new_len": 269,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cybersecurity-engine-tool-free",
+        "old_len": 229,
+        "new_len": 229,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cybersecurity-engine-tool-pro",
+        "old_len": 264,
+        "new_len": 264,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "firewall-toolkit-free",
+        "old_len": 247,
+        "new_len": 247,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "firewall-toolkit-pro",
+        "old_len": 270,
+        "new_len": 270,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "go-security-vuln-tool-free",
+        "old_len": 239,
+        "new_len": 239,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "go-security-vuln-tool-pro",
+        "old_len": 155,
+        "new_len": 155,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mac-node-snapshot-tool-free",
+        "old_len": 216,
+        "new_len": 216,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mac-node-snapshot-tool-pro",
+        "old_len": 245,
+        "new_len": 245,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "moltbook-firewall-tool-free",
+        "old_len": 236,
+        "new_len": 236,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "multi-search-engine-tool-free",
+        "old_len": 202,
+        "new_len": 202,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "multi-search-engine-tool-pro",
+        "old_len": 242,
+        "new_len": 242,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "password-gen-pro-tool-free",
+        "old_len": 234,
+        "new_len": 234,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "password-gen-pro-tool-pro",
+        "old_len": 253,
+        "new_len": 253,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "password-generator-tool-free",
+        "old_len": 261,
+        "new_len": 261,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "password-generator-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-audit-agent-tool-free",
+        "old_len": 232,
+        "new_len": 232,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-audit-agent-tool-pro",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-audit-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-audit-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-auditor-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-auditor-tool-pro",
+        "old_len": 290,
+        "new_len": 290,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-scanner-tool-free",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-scanner-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-toolkit-free",
+        "old_len": 285,
+        "new_len": 285,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-toolkit-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "skill-vetter-tool-free",
+        "old_len": 285,
+        "new_len": 285,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "skill-vetter-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "straker-verify-tool-free",
+        "old_len": 272,
+        "new_len": 272,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "straker-verify-tool-pro",
+        "old_len": 288,
+        "new_len": 288,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vpn-toolkit-free",
+        "old_len": 287,
+        "new_len": 287,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vpn-toolkit-pro",
+        "old_len": 285,
+        "new_len": 285,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vulnerability-scanner-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "vulnerability-scanner-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-vuln-assess-tool-free",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-vuln-assess-tool-pro",
+        "old_len": 289,
+        "new_len": 289,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "api-design-architect",
+        "old_len": 213,
+        "new_len": 213,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "auth-security-architect",
+        "old_len": 193,
+        "new_len": 193,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "azure-cloud-automator",
+        "old_len": 216,
+        "new_len": 216,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "requirement-explorer-pro",
+        "old_len": 159,
+        "new_len": 159,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "brand-identity-creator",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "c-suite-advisor",
+        "old_len": 184,
+        "new_len": 184,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "canvas-art-designer",
+        "old_len": 201,
+        "new_len": 201,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "clickhouse-olap-expert",
+        "old_len": 203,
+        "new_len": 203,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "cloudflare-edge-developer",
+        "old_len": 251,
+        "new_len": 251,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "code-review-sentinel",
+        "old_len": 191,
+        "new_len": 191,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "competitive-ad-spy",
+        "old_len": 246,
+        "new_len": 246,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "compliance-manager",
+        "old_len": 156,
+        "new_len": 156,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "content-cms-architect",
+        "old_len": 190,
+        "new_len": 190,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "copywriting-master",
+        "old_len": 165,
+        "new_len": 165,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "csv-insight-miner",
+        "old_len": 164,
+        "new_len": 164,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "debug-doctor",
+        "old_len": 158,
+        "new_len": 158,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "deep-research-engine",
+        "old_len": 269,
+        "new_len": 269,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "docx-document-master",
+        "old_len": 271,
+        "new_len": 271,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "duckdb-analytics-engine",
+        "old_len": 208,
+        "new_len": 208,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "lead-research-hunter",
+        "old_len": 161,
+        "new_len": 161,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "legal-doc-reviewer",
+        "old_len": 151,
+        "new_len": 151,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "mcp-toolkit-builder",
+        "old_len": 257,
+        "new_len": 257,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "nextjs-fullstack-guide",
+        "old_len": 263,
+        "new_len": 263,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pdf-workflow-suite",
+        "old_len": 187,
+        "new_len": 187,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "performance-optimizer-pro",
+        "old_len": 225,
+        "new_len": 225,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "plan-architect",
+        "old_len": 178,
+        "new_len": 178,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "pptx-presentation-pro",
+        "old_len": 157,
+        "new_len": 157,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "react-video-composer",
+        "old_len": 208,
+        "new_len": 208,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "research-article-crafter",
+        "old_len": 209,
+        "new_len": 209,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "scientific-research-assistant",
+        "old_len": 174,
+        "new_len": 174,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "security-hardening-shield",
+        "old_len": 177,
+        "new_len": 177,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "seo-audit-master",
+        "old_len": 196,
+        "new_len": 196,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "stripe-payment-integrator",
+        "old_len": 196,
+        "new_len": 196,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "terraform-iac-architect",
+        "old_len": 242,
+        "new_len": 242,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "test-driven-coder",
+        "old_len": 228,
+        "new_len": 228,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "theme-stylist",
+        "old_len": 241,
+        "new_len": 241,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "twitter-viral-optimizer",
+        "old_len": 229,
+        "new_len": 229,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-artifact-studio",
+        "old_len": 216,
+        "new_len": 216,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "web-scraper-engine",
+        "old_len": 235,
+        "new_len": 235,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "xlsx-data-wizard",
+        "old_len": 235,
+        "new_len": 235,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "geo-rank-architect",
+        "old_len": 178,
+        "new_len": 178,
+        "skip": true
+      },
+      {
+        "status": "ok",
+        "slug": "sales-copy-artisan",
+        "old_len": 280,
+        "new_len": 280,
+        "skip": true
+      }
+    ],
+    "no_change": [],
+    "error": [],
+    "skip": []
+  }
+}

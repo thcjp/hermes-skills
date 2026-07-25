@@ -4,6 +4,7 @@ name: "minimalist-design"
 version: 1.0.1
 displayName: "极简设计系统专业版"
 summary: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目"
+summary_zh: "企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目"
 license: "MIT"
 edition: "pro"
 description: |-

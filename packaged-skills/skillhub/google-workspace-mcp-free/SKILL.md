@@ -4,6 +4,7 @@ name: "google-workspace-mcp-free"
 version: "1.0.0"
 displayName: "Workspace MCP免费版"
 summary: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets的基础读取能力,覆盖邮件检索、日程查看、文件下载与文档表格读取。"
+summary_zh: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets的基础读取能力,覆盖邮件检索、日程查看、文件下载与文档表格读取。"
 license: "MIT"
 description: |-
   通过 @presto-ai/google-workspace-mcp 以纯OAuth登录方式访问Google Workspace,跳过Cloud Console建项目、启用API、下载client_secret.json等繁琐步骤。免费版提供Gmail邮件搜索与读取、Calendar日程查看、Drive文件检索与下载、Docs文档检索与文本提取、Sheets表格区域读取等基础能力,适合个人开发者体验Google Workspace自动化办公。写入、发送、会议创建、Chat与Slides等高级能力见付费版.

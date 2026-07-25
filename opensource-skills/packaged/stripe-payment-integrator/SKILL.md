@@ -4,6 +4,7 @@ name: stripe-payment-integrator
 version: 1.0.1
 displayName: 支付集成专家
 summary: "Stripe支付全链路集成,从支付意图到订阅分账,安全合规少踩坑。支付集成专家——基于Stripe官方最佳实践实现全流程支付集成,覆盖支付意图创建、订阅管理、Webhook处理、退款分账全链"
+summary_zh: "Stripe支付全链路集成,从支付意图到订阅分账,安全合规少踩坑。支付集成专家——基于Stripe官方最佳实践实现全流程支付集成,覆盖支付意图创建、订阅管理、Webhook处理、退款分账全链"
 license: Proprietary
 description: 支付集成专家——基于Stripe官方最佳实践实现全流程支付集成,覆盖支付意图创建、订阅管理、Webhook处理、退款分账全链路。同时提供微信支付/支付宝/银联国内替代方案。适用于电商支付、SaaS订阅、退款处理、平台分账、发票管理、Webhook集成场景。触发关键词:支付集成、Stripe、订阅、Webhook、退款、发票、支付意图、3D
   Secure、微信支付、支付宝、分账、支付网关

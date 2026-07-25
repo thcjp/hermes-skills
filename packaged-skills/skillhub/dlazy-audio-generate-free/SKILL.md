@@ -4,6 +4,7 @@ name: "dlazy-audio-generate-free"
 version: "1.0.0"
 displayName: "Dlazy Audio LITE"
 summary: "通过dlazy CLI调用基础TTS模型,支持中英文文本转语音。dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个"
+summary_zh: "通过dlazy CLI调用基础TTS模型,支持中英文文本转语音。dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个"
 license: "MIT"
 description: |-
   dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个基础 TTS 模型,

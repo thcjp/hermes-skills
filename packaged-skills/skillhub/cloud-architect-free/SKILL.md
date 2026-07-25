@@ -4,6 +4,7 @@ name: "cloud-architect-free"
 version: "1.0.0"
 displayName: "云架构师免费版"
 summary: "基础云架构设计,覆盖 AWS、Azure、GCP 服务选型与迁移策略框架。面向云架构入门场景的基础技能,覆盖 AWS、Azure、GCP 三大云平台的 服务选型、迁移策略框架与基础架构设计原"
+summary_zh: "基础云架构设计,覆盖 AWS、Azure、GCP 服务选型与迁移策略框架。面向云架构入门场景的基础技能,覆盖 AWS、Azure、GCP 三大云平台的 服务选型、迁移策略框架与基础架构设计原"
 license: "MIT"
 description: |-
   面向云架构入门场景的基础技能,覆盖 AWS、Azure、GCP 三大云平台的

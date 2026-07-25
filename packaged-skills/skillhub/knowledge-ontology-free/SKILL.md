@@ -5,6 +5,7 @@ name: "knowledge-ontology-free"
 version: "1.0.0"
 displayName: "知识本体"
 summary: "类型化知识图谱基础版：实体关系建模+约束校验+图遍历查询。。面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力. 内置Person/Proje"
+summary_zh: "类型化知识图谱基础版：实体关系建模+约束校验+图遍历查询。。面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力. 内置Person/Proje"
 license: "MIT"
 description: |-
   面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力.
@@ -17,7 +18,13 @@ tools:
   - exec
   - write
 homepage: ""
-tags: 知识,status,task,请参考,目录中的,脚本文件
+tags:
+  - 知识
+  - status
+  - task
+  - 请参考
+  - 目录中的
+  - 脚本文件
 category: "Automation"
 
 ---

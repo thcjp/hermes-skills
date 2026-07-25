@@ -4,6 +4,7 @@ name: "discord-communities-free"
 version: "1.0.0"
 displayName: "Discord社区免费"
 summary: "Discord社区只读查询助手,提供用户身份、公会列表与邀请解析基础能力。Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力. 覆盖当前用户资料、公"
+summary_zh: "Discord社区只读查询助手,提供用户身份、公会列表与邀请解析基础能力。Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力. 覆盖当前用户资料、公"
 license: "MIT"
 description: |-
   Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力.

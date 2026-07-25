@@ -1,4 +1,5 @@
 ---
+
 slug: smart-update-agent-free
 name: smart-update-agent-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: Smart Update Agent
 summary: "每日自动检查并更新Agent运行时与已安装技能，含版本对比、更新摘要与基础故障排查.。智能更新管家免费版帮助你自动保持Agent运行时与已安装技能的最新状态。通过每日定时检查、版本对比与更新"
 license: Proprietary
 edition: free
-description: 智能更新管家免费版帮助你自动保持Agent运行时与已安装技能的最新状态。通过每日定时检查、版本对比与更新摘要，告别手动更新与版本滞后，确保始终使用最新功能与安全补丁。Use
+description: "智能更新管家免费版帮助你自动保持Agent运行时与已安装技能的最新状态。通过每日定时检查、版本对比与更新摘要，告别手动更新与版本滞后，确保始终使用最新功能与安全补丁。Use
+  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。自动化生成专业文档，提升文档覆盖率。触发关键词：文档生成、测试、安全、转换、机器学习、健康"
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 自动更新
@@ -27,6 +29,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # 智能更新管家（免费版）
 

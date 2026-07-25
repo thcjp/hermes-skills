@@ -4,6 +4,7 @@ name: "piper-tts-engine"
 version: 1.0.1
 displayName: "本地语音合成专业版"
 summary: "企业级本地 TTS 引擎，支持批量合成、自定义音色训练、多语言、SSML 标记与 API 服务化。。面向团队与企业的本地离线文字转语音引擎. 核心能力: 批量合成、自定义音色训练、多语言支持"
+summary_zh: "企业级本地 TTS 引擎，支持批量合成、自定义音色训练、多语言、SSML 标记与 API 服务化。。面向团队与企业的本地离线文字转语音引擎. 核心能力: 批量合成、自定义音色训练、多语言支持"
 license: "MIT"
 edition: "pro"
 description: |-

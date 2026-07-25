@@ -4,6 +4,7 @@ name: "pyx-scan"
 version: 1.1.1
 displayName: "技能安全扫描"
 summary: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、数据泄露、"
+summary_zh: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、数据泄露、"
 license: "MIT"
 description: |-
   AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度

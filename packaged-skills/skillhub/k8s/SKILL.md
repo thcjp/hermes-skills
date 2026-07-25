@@ -4,6 +4,7 @@ name: "k8s"
 version: 1.0.1
 displayName: "Kubernetes"
 summary: "规避Kubernetes常见错误,资源限制/探针/选择器。Avoid common Kubernetes mistakes — resource limits, probe configur"
+summary_zh: "规避Kubernetes常见错误,资源限制/探针/选择器。Avoid common Kubernetes mistakes — resource limits, probe configur"
 license: "MIT"
 description: |-
   Avoid common Kubernetes mistakes — resource limits, probe configuration,

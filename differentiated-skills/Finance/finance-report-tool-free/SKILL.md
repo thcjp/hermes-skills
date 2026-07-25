@@ -1,4 +1,5 @@
 ---
+
 slug: finance-report-tool-free
 name: finance-report-tool-free
 version: 1.0.0
@@ -6,7 +7,9 @@ displayName: 财报分析入门工具
 summary: "从Excel/PDF文件分析财务数据，生成含趋势图的HTML分析报告.。面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF"
 license: Proprietary
 edition: free
-description: '面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF
+description: "面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF
+  文件提取财务数据，自动生成包含趋势走势图（sparkline）的交互式HTML
+  分析报告。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：数据分析、自动化、PDF、Excel、机器学习、财务"
 
   文件提取财务数据，自动生成包含趋势走势图（sparkline）的交互式HTML
 
@@ -29,6 +32,7 @@ tools:
   - write
 homepage: ""
 category: "Finance"
+
 ---
 # 财报分析入门工具（免费版）
 

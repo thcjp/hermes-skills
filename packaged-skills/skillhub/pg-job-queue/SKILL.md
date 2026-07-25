@@ -4,6 +4,7 @@ name: "pg-job-queue"
 version: 1.0.1
 displayName: "PG任务队列(专业版)"
 summary: "基于`PostgreSQL`的企业级任务队列，支持DAG编排、分片扩展、死信队列与高可用方案。。PG任务队列专业版是一套面向中大型团队与企业级场景的 `PostgreSQL` 任务队列解决方"
+summary_zh: "基于`PostgreSQL`的企业级任务队列，支持DAG编排、分片扩展、死信队列与高可用方案。。PG任务队列专业版是一套面向中大型团队与企业级场景的 `PostgreSQL` 任务队列解决方"
 license: "MIT"
 edition: "pro"
 description: |-

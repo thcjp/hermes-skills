@@ -1,4 +1,5 @@
 ---
+
 slug: feishu-card-builder-free
 name: feishu-card-builder-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: 飞书卡片免费版
 summary: "飞书富文本卡片消息构建工具，支持Markdown与按钮交互。飞书卡片免费版是一款面向个人用户的飞书卡片消息构建与发送工具，支持向飞书用户或"
 license: Proprietary
 edition: free
-description: '飞书卡片免费版是一款面向个人用户的飞书卡片消息构建与发送工具，支持向飞书用户或
+description: "飞书卡片免费版是一款面向个人用户的飞书卡片消息构建与发送工具，支持向飞书用户或
+  群组发送包含 Markdown、标题、彩色头部、按钮与图片的富交互卡片消息。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。自动识别潜在问题，保障代码质量。触发关键词：API设计、代码审查、自动化、安全、性能优化、写作"
 
   群组发送包含 Markdown、标题、彩色头部、按钮与图片的富交互卡片消息。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。'
 tags:
@@ -28,6 +30,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
 # 飞书卡片免费版
 

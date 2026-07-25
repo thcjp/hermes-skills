@@ -4,6 +4,7 @@ name: "memory"
 version: 1.0.3
 displayName: "记忆管理器"
 summary: "无限分类的长期记忆系统，与内置记忆并行扩展，支持索引导航与即时写入。记忆管理器是一套面向 AI Agent 的无限分类长期记忆系统，与 Agent 内置记忆并行运行、互不冲突. 核心能力包括"
+summary_zh: "无限分类的长期记忆系统，与内置记忆并行扩展，支持索引导航与即时写入。记忆管理器是一套面向 AI Agent 的无限分类长期记忆系统，与 Agent 内置记忆并行运行、互不冲突. 核心能力包括"
 license: "MIT"
 description: |-
   记忆管理器是一套面向 AI Agent 的无限分类长期记忆系统，与 Agent 内置记忆并行运行、互不冲突.

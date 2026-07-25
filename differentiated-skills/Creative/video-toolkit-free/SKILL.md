@@ -1,4 +1,5 @@
 ---
+
 slug: video-toolkit-free
 name: video-toolkit-free
 version: 1.0.1
@@ -6,7 +7,9 @@ displayName: 视频工具箱免费版
 summary: "基于FFmpeg的视频处理工具,支持格式转换、压缩、字幕生成、宽高比调整,适合个人内容创作者。面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、"
 license: Proprietary
 edition: free
-description: '面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、
+description: "面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、
+  字幕生成、宽高比调整、音频清理等核心功能,覆盖主流社交平台规格。核心能力:
+  - 视频格式转换与压缩(H。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。系统性提升系统性能与响应速度。触发关键词：性能优化、转换、设计、视频、机器学习"
 
   字幕生成、宽高比调整、音频清理等核心功能,覆盖主流社交平台规格。核心能力:
 
@@ -32,6 +35,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
 # 视频工具箱 - 免费版
 

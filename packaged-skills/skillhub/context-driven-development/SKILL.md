@@ -4,6 +4,7 @@ name: "context-driven-development"
 version: 1.0.1
 displayName: "Context Driven Devel"
 summary: "把项目上下文当受管制品与代码并行,用结构化文档沉淀。Treat project context as a managed artifact alongside code。Use struct"
+summary_zh: "把项目上下文当受管制品与代码并行,用结构化文档沉淀。Treat project context as a managed artifact alongside code。Use struct"
 license: "MIT"
 description: |-
   Treat project context as a managed artifact alongside code。Use structured

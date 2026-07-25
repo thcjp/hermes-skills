@@ -4,6 +4,7 @@ name: "x-news-daily"
 version: 2.0.1
 displayName: "X News Daily"
 summary: "抓取 X.com 关键词热门新闻 Top 10，生成全屏中文海报，支持多平台分发。。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，为每条新闻生成 1-2"
+summary_zh: "抓取 X.com 关键词热门新闻 Top 10，生成全屏中文海报，支持多平台分发。。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，为每条新闻生成 1-2"
 license: "MIT"
 description: |-
   抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，为每条新闻生成 1-2 句中文摘要，

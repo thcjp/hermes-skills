@@ -4,6 +4,7 @@ name: "solo-validate"
 version: 2.1.2
 displayName: "Validate"
 summary: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分。Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用"
+summary_zh: "用S.E.E.D.利基检查与STREAM六层分析给创业点子打分。Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用"
 license: "MIT"
 description: |-
   Score startup idea through S。E。Use when 用户需要Validate相关功能时使用。不适用于超出本技能能力范围的复杂需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.

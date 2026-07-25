@@ -4,7 +4,8 @@ name: copywriting-master
 version: 1.0.1
 displayName: 营销文案大师
 summary: "12种模板+四大经典框架,转化率导向的营销文案批量生成器。营销文案大师——不只写文字,更关注转化效果。基于12种经典文案模板与AIDA/PAS/FAB/BAB四大转化框架,多场景批量生成以转"
-license: Proprietary
+summary_zh: "12种模板+四大经典框架,转化率导向的营销文案批量生成器。营销文案大师——不只写文字,更关注转化效果。基于12种经典文案模板与AIDA/PAS/FAB/BAB四大转化框架,多场景批量生成以转"
+license: MIT
 description: 营销文案大师——不只写文字,更关注转化效果。基于12种经典文案模板与AIDA/PAS/FAB/BAB四大转化框架,多场景批量生成以转化为导向的营销文案,支持电商详情页、信息流广告、社群话术。Use
   when 需要写商品详情页、广告投流文案、社群裂变话术、品牌slogan、邮件营销文案时使用。不适用于纯文学创作和技术文档撰写。
 tags:

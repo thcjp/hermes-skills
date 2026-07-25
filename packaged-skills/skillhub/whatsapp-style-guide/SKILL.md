@@ -4,6 +4,7 @@ name: "whatsapp-style-guide"
 version: 1.0.1
 displayName: "WhatsApp样式指南-专业版"
 summary: "企业级WhatsApp格式完整规范,含边界场景/高级模式/多语言指南/交互式测试。WhatsApp样式指南专业版,提供完整的WhatsApp消息格式规范体系,面向企业和专业内容团队。核心能力"
+summary_zh: "企业级WhatsApp格式完整规范,含边界场景/高级模式/多语言指南/交互式测试。WhatsApp样式指南专业版,提供完整的WhatsApp消息格式规范体系,面向企业和专业内容团队。核心能力"
 license: "MIT"
 edition: "pro"
 description: |-

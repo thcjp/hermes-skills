@@ -4,6 +4,7 @@ name: "finance"
 version: 1.1.3
 displayName: "finance"
 summary: "跟踪股票/ETF/指数/加密/外汇,带缓存与提供商回退。Track stocks, ETFs, indices, crypto (where available), and FX pairs"
+summary_zh: "跟踪股票/ETF/指数/加密/外汇,带缓存与提供商回退。Track stocks, ETFs, indices, crypto (where available), and FX pairs"
 license: "MIT"
 description: |-
   Track stocks, ETFs, indices, crypto (where available), and FX pairs

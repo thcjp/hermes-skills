@@ -4,6 +4,7 @@ name: "feed-to-md"
 version: 1.2.1
 displayName: "Feed To Md"
 summary: "用内置本地转换器把RSS/Atom订阅转Markdown。Convert RSS or Atom feed URLs into Markdown using the bundled loca"
+summary_zh: "用内置本地转换器把RSS/Atom订阅转Markdown。Convert RSS or Atom feed URLs into Markdown using the bundled loca"
 license: "MIT"
 description: |-
   Convert RSS or Atom feed URLs into Markdown using the bundled local

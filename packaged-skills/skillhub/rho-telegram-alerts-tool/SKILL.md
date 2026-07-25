@@ -5,6 +5,7 @@ name: "rho-telegram-alerts-tool"
 version: "1.0.1"
 displayName: "Telegram Alerts"
 summary: "经Telegram发交易告警/组合更新/市场信号。Send formatted trading alerts, portfolio updates, and market signals v"
+summary_zh: "经Telegram发交易告警/组合更新/市场信号。Send formatted trading alerts, portfolio updates, and market signals v"
 license: "MIT"
 description: Send formatted trading alerts, portfolio updates, and market signals via Telegram。Supports price，可处理提升工作效率
 tags:

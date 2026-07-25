@@ -5,6 +5,7 @@ name: "jira-skill-free"
 version: "1.0.0"
 displayName: "Jira集成助手-免费版"
 summary: "通过Jira Cloud REST API查看事务详情、状态流转与浏览器链接，适合只读浏览场景。。Jira集成助手免费版提供Jira事务的只读浏览能力. 支持模糊搜索、事务详情查看、浏览器链"
+summary_zh: "通过Jira Cloud REST API查看事务详情、状态流转与浏览器链接，适合只读浏览场景。。Jira集成助手免费版提供Jira事务的只读浏览能力. 支持模糊搜索、事务详情查看、浏览器链"
 license: "MIT"
 description: |-
   Jira集成助手免费版提供Jira事务的只读浏览能力.
@@ -16,7 +17,13 @@ description: |-
   - 自己的未关闭事务列表
   升级付费版专享：状态变更、指派、评论、创建、工时记录、多维工时统计.
   适用场景：只读浏览Jira事务、快速定位事务、查看自己的待办.
-tags: Jira,jira,abc-123,请参考,目录中的,脚本文件
+tags:
+  - Jira
+  - jira
+  - abc-123
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec

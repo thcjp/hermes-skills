@@ -4,6 +4,7 @@ name: "jira-pat-toolkit"
 version: "0.0.1"
 displayName: "SkillHub Jira Pat Sk"
 summary: "用PAT管理自托管与企业Jira实例的issue。Manage Jira issues on self-hosted or enterprise Jira instances using P"
+summary_zh: "用PAT管理自托管与企业Jira实例的issue。Manage Jira issues on self-hosted or enterprise Jira instances using P"
 license: "MIT"
 description: |-
   Manage Jira issues on self-hosted or enterprise Jira instances using

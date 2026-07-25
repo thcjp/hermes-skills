@@ -1,4 +1,5 @@
 ---
+
 slug: pcb-design-assistant-pro
 name: pcb-design-assistant-pro
 version: 1.0.0
@@ -6,7 +7,8 @@ displayName: PCB设计助手(专业版)
 summary: EasyEDA全流程PCB设计专业版，支持多页原理图、PCB布局、DRC检查、多层板、自定义库与BOM下单，覆盖从设计到打板.
 license: Proprietary
 edition: pro
-description: PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自动生成与立创下单对接。覆盖从需求到打板的全流程。
+description: "PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自动生成与立创下单对接。覆盖从需求到打板的全流程。
+  when 、品牌视觉时使用。保障功能正确性，降低缺陷率与回归风险。触发关键词：API设计、测试、设计、品牌、机器学习"
   when 、品牌视觉时使用.
 tags:
   - PCB设计
@@ -28,6 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
 > 从需求到打板的全流程副驾驶。多页原理图、PCB布局、DRC检查、BOM下单，让硬件团队的设计效率提升10倍.
 ## 架构总览

@@ -1,4 +1,5 @@
 ---
+
 slug: lh-video-gen-tool-free
 name: lh-video-gen-tool-free
 version: 1.0.0
@@ -6,7 +7,9 @@ displayName: 竖版视频生成免费版
 summary: 从Markdown脚本一键生成9:16竖版短视频,支持TTS配音、字幕烧录与画面同步,适合个人内容创作者.
 license: Proprietary
 edition: free
-description: '竖版视频生成免费版帮助个人内容创作者从Markdown脚本一键生成
+description: "竖版视频生成免费版帮助个人内容创作者从Markdown脚本一键生成
+  9:16竖版短视频。采用\"以图定音\"核心思路,画面说明生成字幕卡片图,
+  口播文案生成TTS配音,音画天然同步。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、自动化、转换、设计、视频、图片"
 
   9:16竖版短视频。采用"以图定音"核心思路,画面说明生成字幕卡片图,
 
@@ -31,6 +34,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
 # 竖版视频生成免费版
 

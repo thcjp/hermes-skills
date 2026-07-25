@@ -4,6 +4,7 @@ name: "whatsapp-styling-guide-free"
 version: "1.0.0"
 displayName: "WhatsApp 排版入门"
 summary: "WhatsApp消息排版基础指南,涵盖核心语法规则、禁用范式与基础通知模板。WhatsApp消息排版基础指南(免费版)。提供WhatsApp原生排版语法的核心规则说明、常见禁用范式与替代方案"
+summary_zh: "WhatsApp消息排版基础指南,涵盖核心语法规则、禁用范式与基础通知模板。WhatsApp消息排版基础指南(免费版)。提供WhatsApp原生排版语法的核心规则说明、常见禁用范式与替代方案"
 license: "MIT"
 description: |-
   WhatsApp消息排版基础指南(免费版)。提供WhatsApp原生排版语法的核心规则说明、常见禁用范式与替代方案,

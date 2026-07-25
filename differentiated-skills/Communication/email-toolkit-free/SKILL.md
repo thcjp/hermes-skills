@@ -1,4 +1,5 @@
 ---
+
 slug: email-toolkit-free
 name: email-toolkit-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: 邮件工具箱免费版
 summary: "跨平台邮件发送与附件管理工具，支持多邮箱服务商。邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件"
 license: Proprietary
 edition: free
-description: '邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件
+description: "邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件
+  自动化发送，支持 Gmail、Outlook、Yahoo、QQ邮箱等主流服务商。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、测试、安全、图片、PDF"
 
   自动化发送，支持 Gmail、Outlook、Yahoo、QQ邮箱等主流服务商。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。'
 tags:
@@ -26,6 +28,7 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
 # 邮件工具箱免费版
 

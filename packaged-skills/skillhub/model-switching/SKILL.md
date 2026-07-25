@@ -4,6 +4,7 @@ name: "model-switching"
 version: 1.0.1
 displayName: "模型切换工具(专业版)"
 summary: "团队级Claude模型切换套件,含成本仪表盘、批量分发、自定义规则与监控告警。。模型切换工具(专业版)面向团队与企业,在三层Claude模型切换基础上,扩展成本分析仪表盘、批量任务分发、自定"
+summary_zh: "团队级Claude模型切换套件,含成本仪表盘、批量分发、自定义规则与监控告警。。模型切换工具(专业版)面向团队与企业,在三层Claude模型切换基础上,扩展成本分析仪表盘、批量任务分发、自定"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "whatsapp-styler"
 version: 1.0.1
 displayName: "WhatsApp Styler"
 summary: "WhatsApp消息格式转换与验证工具,将Markdown转为WhatsApp原生格式,检测违规范式并自动修复"
+summary_zh: "WhatsApp消息格式转换与验证工具,将Markdown转为WhatsApp原生格式,检测违规范式并自动修复"
 license: "MIT"
 description: |-
   WhatsApp消息格式转换与验证工具。将标准Markdown转换为WhatsApp原生排版语法,确保接收方看到干净样式文本而非原始符号.

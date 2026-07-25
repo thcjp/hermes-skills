@@ -4,6 +4,7 @@ name: nextjs-fullstack-guide
 version: 1.0.1
 displayName: Next.js全栈指南
 summary: "基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导。Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、S"
+summary_zh: "基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导。Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、S"
 license: Proprietary
 description: Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、Server/Client组件分层、数据获取策略(SSR/SSG/ISR/Streaming)、Middleware认证、性能优化(Core
   Web Vitals)和部署配置。适用于电商网站、SaaS面板、博客CMS、实时应用等全栈Web场景。触发关键词:Next.js、React、App Router、Server

@@ -4,6 +4,7 @@ name: "whatsapp-msg-manager"
 version: 1.0.1
 displayName: "WhatsApp消息管理-专业版"
 summary: "全功能WhatsApp Business消息平台,支持媒体/交互/模板/批量发送与多账号企业级管理。WhatsApp消息管理专业版,提供完整的WhatsApp Business API能力覆"
+summary_zh: "全功能WhatsApp Business消息平台,支持媒体/交互/模板/批量发送与多账号企业级管理。WhatsApp消息管理专业版,提供完整的WhatsApp Business API能力覆"
 license: "MIT"
 edition: "pro"
 description: |-

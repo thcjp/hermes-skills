@@ -4,6 +4,7 @@ name: "zhuchenggong-doubao-image-gen"
 version: 1.0.1
 displayName: "Zhuchenggong Doubao"
 summary: "Zhuchenggong Doubao提供Zhuchenggong Doubao的核心功能（详见使用流程和示例）等核心能力,付费版独享高级功能与批量处理。"
+summary_zh: "Zhuchenggong Doubao提供Zhuchenggong Doubao的核心功能（详见使用流程和示例）等核心能力,付费版独享高级功能与批量处理。"
 license: "MIT"
 description: |-
   豆包AI图片生成技能 - 视觉设计师专用\n\n核心能力:\n- 创意设计领域的专业化AI辅助工具\n- 基于高人气开源Skill深度优化升级\n\

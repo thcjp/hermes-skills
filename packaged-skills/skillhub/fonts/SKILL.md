@@ -4,6 +4,7 @@ name: "fonts"
 version: 1.0.1
 displayName: "Fonts"
 summary: "选配网页字体,规避渲染/配对/层级常见错误,排版专业。Choose and implement web typography avoiding common rendering, pairi"
+summary_zh: "选配网页字体,规避渲染/配对/层级常见错误,排版专业。Choose and implement web typography avoiding common rendering, pairi"
 license: "MIT"
 description: |-
   Choose and implement web typography avoiding common rendering, pairing,

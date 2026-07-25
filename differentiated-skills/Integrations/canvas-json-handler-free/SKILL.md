@@ -1,4 +1,5 @@
 ---
+
 slug: canvas-json-handler-free
 name: canvas-json-handler-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: 画布JSON处理免费版
 summary: 面向JSON Canvas(.canvas)文件的轻量级处理工具，支持节点、边、分组的创建与编辑校验.
 license: Proprietary
 edition: free
-description: 画布JSON处理工具专注于JSON Canvas规范文件的读写、校验与维护，适用于知识图谱、思维导图、流程编排等可视化场景。核心能力：遵循JSON
+description: "画布JSON处理工具专注于JSON Canvas规范文件的读写、校验与维护，适用于知识图谱、思维导图、流程编排等可视化场景。核心能力：遵循JSON
+  Canvas 1。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：数据分析、自动化、机器学习"
   Canvas 1。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 集成工具
@@ -27,6 +29,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # 画布JSON处理工具（免费版）
 

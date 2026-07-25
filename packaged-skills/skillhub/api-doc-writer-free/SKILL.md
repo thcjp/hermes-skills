@@ -4,6 +4,7 @@ name: "api-doc-writer-free"
 version: "1.0.0"
 displayName: "API文档编写器免费版"
 summary: "编写基础REST API文档,含模板、认证方式、请求响应格式与基础RESTful规范。API 接口文档编写助手免费版。用于编写基础 REST API 文档,提供文档模板、认证方式、请求/响应"
+summary_zh: "编写基础REST API文档,含模板、认证方式、请求响应格式与基础RESTful规范。API 接口文档编写助手免费版。用于编写基础 REST API 文档,提供文档模板、认证方式、请求/响应"
 license: "MIT"
 description: |-
   API 接口文档编写助手免费版。用于编写基础 REST API 文档,提供文档模板、认证方式、请求/响应格式

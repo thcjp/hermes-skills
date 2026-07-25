@@ -4,6 +4,7 @@ name: "ui-component-paid"
 version: 1.0.1
 displayName: "UI组件生成(专业版)"
 summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理。。UI组件生成工具专业版为团队与企业提供端到端UI组件工程能力,涵盖设计系统令牌、批量组件生成、WCAG A"
+summary_zh: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理。。UI组件生成工具专业版为团队与企业提供端到端UI组件工程能力,涵盖设计系统令牌、批量组件生成、WCAG A"
 license: "MIT"
 edition: "pro"
 description: |-

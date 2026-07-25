@@ -4,6 +4,7 @@ name: "whatsapp-messaging-free"
 version: "1.0.0"
 displayName: "WhatsApp 消息（免费版）"
 summary: "通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求。"
+summary_zh: "通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求。"
 license: "MIT"
 description: |-
   通过 WhatsApp Business API 发送基础消息。免费版支持文本消息、图片消息与手机号查询.

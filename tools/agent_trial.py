@@ -385,8 +385,8 @@ def import_trial_result(slug: str, result_file: str) -> Dict[str, Any]:
     try:
         conn = get_db_connection()
         c = conn.cursor()
-        # 先删除旧的 agent_trial 评分记录(避免重复)
-        c.execute("DELETE FROM scores WHERE skill_id = ? AND score_type = 'agent_trial'", (skill_id,))
+        # D5修复: 不再DELETE销毁历史，改为标记旧记录为非当前
+        c.execute("UPDATE scores SET is_current = 0 WHERE skill_id = ? AND score_type = 'agent_trial'", (skill_id,))
         # 插入新的评分记录 (使用与 scores 表结构匹配的字段)
         # L3 评分映射: typical_score→quality_score, edge_score→practicality_score,
         #              usability_score→simplicity_score, l3_score→total_score
@@ -401,8 +401,8 @@ def import_trial_result(slug: str, result_file: str) -> Dict[str, Any]:
             INSERT INTO scores (skill_id, score_type, total_score,
                 quality_score, practicality_score, simplicity_score,
                 performance_score, debranding_score, differentiation_score,
-                compliance_score, cost_score, scored_at, reviewer, notes, is_pass, pass_threshold)
-            VALUES (?, 'agent_trial', ?, ?, ?, ?, 0, 0, 0, 0, 0, ?, 'agent_trial_v1', ?, ?, 70)
+                compliance_score, cost_score, scored_at, reviewer, notes, is_pass, pass_threshold, is_current)
+            VALUES (?, 'agent_trial', ?, ?, ?, ?, 0, 0, 0, 0, 0, ?, 'agent_trial_v1', ?, ?, 70, 1)
         """, (
             skill_id,
             int(l3_score),

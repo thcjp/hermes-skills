@@ -5,6 +5,7 @@ name: "clawprint"
 version: 3.0.2
 displayName: "Skill"
 summary: "Agent发现信任与交换,注册ClawPrint被其他Agent找到并建立信誉。Agent discovery, trust, and exchange。Register on ClawPr"
+summary_zh: "Agent发现信任与交换,注册ClawPrint被其他Agent找到并建立信誉。Agent discovery, trust, and exchange。Register on ClawPr"
 license: "MIT"
 description: Agent discovery, trust, and exchange。Register on ClawPrint to be found by other agents, build re，可处理提升工作效率
 tags:

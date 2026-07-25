@@ -1,4 +1,5 @@
 ---
+
 slug: docker-toolkit-free
 name: docker-toolkit-free
 version: 1.0.1
@@ -6,7 +7,9 @@ displayName: Docker容器入门工具
 summary: "Docker容器管理工具，支持镜像/容器/卷/网络基础操作与简单编排.。面向个人开发者的Docker容器管理工具。支持镜像构建与拉取、容器"
 license: Proprietary
 edition: free
-description: '面向个人开发者的Docker容器管理工具。支持镜像构建与拉取、容器
+description: "面向个人开发者的Docker容器管理工具。支持镜像构建与拉取、容器
+  生命周期管理、数据卷与网络配置。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、数据分析、文档生成、自动化、测试、安全"
 
   生命周期管理、数据卷与网络配置。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
@@ -25,6 +28,7 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
 # Docker容器入门工具（免费版）
 

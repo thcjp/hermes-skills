@@ -4,6 +4,7 @@ name: "writing-assistant"
 version: 0.1.1
 displayName: "Writing Assistant"
 summary: "写作团队组长,经MCP工具管理专业写手并分析写作。You are a Writing Team Lead managing specialized writers via 协议 tools。"
+summary_zh: "写作团队组长,经MCP工具管理专业写手并分析写作。You are a Writing Team Lead managing specialized writers via 协议 tools。"
 license: "MIT"
 description: |-
   You are a Writing Team Lead managing specialized writers via 协议 tools。Please ANALYZE the writin。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.

@@ -4,6 +4,7 @@ name: "self-integration"
 version: 1.1.3
 displayName: "Self-Integration"
 summary: "连任意外部应用并对其执行操作。Connect to any external app and perform actions on it。Use when the user wants to"
+summary_zh: "连任意外部应用并对其执行操作。Connect to any external app and perform actions on it。Use when the user wants to"
 license: "MIT"
 description: |-
   Connect to any external app and perform actions on it。Use when the

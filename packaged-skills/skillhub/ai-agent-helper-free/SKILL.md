@@ -4,6 +4,7 @@ name: "ai-agent-helper-free"
 version: "1.0.0"
 displayName: "AI Agent LITE"
 summary: "AI Agent基础设计助手,提供Prompt工程与ReAct循环设计两大基础能力。AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能"
+summary_zh: "AI Agent基础设计助手,提供Prompt工程与ReAct循环设计两大基础能力。AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能"
 license: "MIT"
 description: |-
   AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能力,

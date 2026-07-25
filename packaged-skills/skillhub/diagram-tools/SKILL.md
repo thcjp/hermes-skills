@@ -6,6 +6,7 @@ displayName: "Diagram Tools"
 summary: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成。图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成
 
 核心"
+summary_zh: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成。图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成"
 license: "MIT"
 description: |-
   图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成\n\n核心能力:\n- 商业工具领域的专业化AI辅助工具\n\

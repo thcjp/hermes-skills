@@ -1,4 +1,5 @@
 ---
+
 slug: qq-zone-photo-tool-free
 name: qq-zone-photo-tool-free
 version: 1.0.0
@@ -6,7 +7,9 @@ displayName: QQ空间相册入门工具
 summary: "QQ空间相册管理工具，支持相册浏览与单张照片下载.。面向个人用户的QQ空间相册管理工具。支持登录QQ空间、浏览相册"
 license: Proprietary
 edition: free
-description: '面向个人用户的QQ空间相册管理工具。支持登录QQ空间、浏览相册
+description: "面向个人用户的QQ空间相册管理工具。支持登录QQ空间、浏览相册
+  列表、查看照片与单张下载。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use
+  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。减少重复劳动，提升工作效率。触发关键词：自动化、安全、项目管理、图片、机器学习"
 
   列表、查看照片与单张下载。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。'
@@ -30,6 +33,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # QQ空间相册入门工具（免费版）
 

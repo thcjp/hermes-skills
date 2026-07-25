@@ -4,6 +4,7 @@ name: "stagehand-browser-cli"
 version: 1.0.1
 displayName: "Stagehand Browser Cl"
 summary: "经CLI用自然语言自动化浏览器交互。Automate web browser interactions using natural language via CLI commands。Use"
+summary_zh: "经CLI用自然语言自动化浏览器交互。Automate web browser interactions using natural language via CLI commands。Use"
 license: "MIT"
 description: |-
   Automate web browser interactions using natural language via CLI commands。Use when the user asks。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.

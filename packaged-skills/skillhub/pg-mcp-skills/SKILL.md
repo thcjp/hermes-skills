@@ -4,6 +4,7 @@ name: "pg-mcp-skills"
 version: 1.0.1
 displayName: "PG-MCP助手(专业版)"
 summary: "企业级`PostgreSQL`数据库管理方案，支持自动化调优、迁移升级、多实例管理与高可用监控。。PG-MCP助手专业版是一套面向中大型团队与企业级场景的 `PostgreSQL` 数据库管"
+summary_zh: "企业级`PostgreSQL`数据库管理方案，支持自动化调优、迁移升级、多实例管理与高可用监控。。PG-MCP助手专业版是一套面向中大型团队与企业级场景的 `PostgreSQL` 数据库管"
 license: "MIT"
 edition: "pro"
 description: |-

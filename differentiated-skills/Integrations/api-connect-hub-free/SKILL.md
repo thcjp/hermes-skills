@@ -1,4 +1,5 @@
 ---
+
 slug: api-connect-hub-free
 name: api-connect-hub-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: API连接中心(免费版)
 summary: "轻量级第三方API连接与凭证管理，覆盖连接器注册、认证、调用模板与错误重试.。API连接中心免费版解决独立开发者"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙"的痛点。提供"
 license: Proprietary
 edition: free
-description: API连接中心免费版解决独立开发者"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙"的痛点。提供统一连接器注册、凭证安全存储、标准化调用模板、错误重试策略四大能力。Use
+description: "API连接中心免费版解决独立开发者\"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙\"的痛点。提供统一连接器注册、凭证安全存储、标准化调用模板、错误重试策略四大能力。Use
+  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。系统性识别风险，保障系统安全合规。触发关键词：API设计、安全、搜索、设计、机器学习、邮件"
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - API集成
@@ -26,6 +28,7 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
 # API连接中心（免费版）
 

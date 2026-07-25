@@ -4,6 +4,7 @@ name: "java-reviewer"
 version: 1.0.1
 displayName: "Java代码审查专业版"
 summary: "企业级 Java 代码审查方案，支持批量审查、自定义规则、HTML 报告与 CI 集成。。面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试"
+summary_zh: "企业级 Java 代码审查方案，支持批量审查、自定义规则、HTML 报告与 CI 集成。。面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试"
 license: "MIT"
 edition: "pro"
 description: |-

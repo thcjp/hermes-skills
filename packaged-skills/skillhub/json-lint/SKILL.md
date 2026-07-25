@@ -4,6 +4,7 @@ name: "json-lint"
 version: 1.0.1
 displayName: "JSON校验工具专业版"
 summary: "企业级JSON校验工具，支持并行扫描、Schema验证、超集兼容、自动修复与监控告警。。JSON校验工具专业版面向企业级场景，在免费版基础上扩展并行扫描、JSON Schema验证、JSON"
+summary_zh: "企业级JSON校验工具，支持并行扫描、Schema验证、超集兼容、自动修复与监控告警。。JSON校验工具专业版面向企业级场景，在免费版基础上扩展并行扫描、JSON Schema验证、JSON"
 license: "MIT"
 edition: "pro"
 description: |-

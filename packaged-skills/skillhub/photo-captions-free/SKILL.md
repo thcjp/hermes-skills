@@ -4,6 +4,7 @@ name: "photo-captions-free"
 version: "1.0.0"
 displayName: "摄影配文免费版"
 summary: "为摄影作品生成 Instagram、Flickr、X、Reddit、VSCO 五个主流平台的差异化配文，根据照片场景与器材适配各社区语调。"
+summary_zh: "为摄影作品生成 Instagram、Flickr、X、Reddit、VSCO 五个主流平台的差异化配文，根据照片场景与器材适配各社区语调。"
 license: "MIT"
 description: |-
   面向摄影爱好者的入门级多平台配文生成助手。当用户分享照片并附带

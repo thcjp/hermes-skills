@@ -4,6 +4,7 @@ name: "merge-pdf"
 version: 1.0.1
 displayName: "Merge PDF"
 summary: "上传多PDF到Cross-Service-Solutions合并,轮询直至完成。Merge multiple user-provided PDF files by uploading the"
+summary_zh: "上传多PDF到Cross-Service-Solutions合并,轮询直至完成。Merge multiple user-provided PDF files by uploading the"
 license: "MIT"
 description: |-
   Merge multiple user-provided PDF files by uploading them to Cross-Service-Solutions,

@@ -4,6 +4,7 @@ name: "rss-feed-digest"
 version: 1.0.1
 displayName: "RSS Feed Digest"
 summary: "抓取/过滤/汇总RSS与Atom为日或周报,支持多源。Fetch, filter, and summarize RSS/Atom feeds into a clean daily or we"
+summary_zh: "抓取/过滤/汇总RSS与Atom为日或周报,支持多源。Fetch, filter, and summarize RSS/Atom feeds into a clean daily or we"
 license: "MIT"
 description: |-
   Fetch, filter, and summarize RSS/Atom feeds into a clean daily or weekly

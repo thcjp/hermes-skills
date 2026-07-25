@@ -4,6 +4,7 @@ name: "whatsapp-master"
 version: 1.0.1
 displayName: "WhatsApp大师(专业版)"
 summary: "WhatsApp 全能力版：消息/交互/群组/多智能体协作/预算调度/历史检索，22 类动作。。WhatsApp 大师（专业版）面向团队与企业用户，提供 WhatsApp 的全部 22 类动"
+summary_zh: "WhatsApp 全能力版：消息/交互/群组/多智能体协作/预算调度/历史检索，22 类动作。。WhatsApp 大师（专业版）面向团队与企业用户，提供 WhatsApp 的全部 22 类动"
 license: "MIT"
 edition: "pro"
 description: |-

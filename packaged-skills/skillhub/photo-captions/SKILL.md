@@ -4,6 +4,7 @@ name: "photo-captions"
 version: 1.2.6
 displayName: "多平台摄影配文"
 summary: "为摄影作品生成Instagram、Flickr、X、Glass、Reddit等12个平台的差异化社交媒体配文，根据照片场景、器材、氛围适配各社区语调与格式。"
+summary_zh: "为摄影作品生成Instagram、Flickr、X、Glass、Reddit等12个平台的差异化社交媒体配文，根据照片场景、器材、氛围适配各社区语调与格式。"
 license: "MIT"
 description: |-
   面向摄影师与影像创作者的多平台配文生成助手。当用户分享照片并附带

@@ -4,6 +4,7 @@ name: "vpn"
 version: 1.0.1
 displayName: "VPN"
 summary: "配置排障VPN连接,保障隐私与远程访问。Configure and troubleshoot VPN connections for privacy and remote access。核心"
+summary_zh: "配置排障VPN连接,保障隐私与远程访问。Configure and troubleshoot VPN connections for privacy and remote access。核心"
 license: "MIT"
 description: |-
   Configure and troubleshoot VPN connections for privacy and remote access。核心能力:

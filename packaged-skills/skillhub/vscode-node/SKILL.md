@@ -4,6 +4,7 @@ name: "vscode-node"
 version: 1.0.3
 displayName: "VS Code Node"
 summary: "经连为SkillHub节点的VS Code与Cursor操作代码,40+命令。Operate on code through a VS Code/Cursor IDE connected a"
+summary_zh: "经连为SkillHub节点的VS Code与Cursor操作代码,40+命令。Operate on code through a VS Code/Cursor IDE connected a"
 license: "MIT"
 description: |-
   Operate on code through a VS Code/Cursor IDE connected as an SkillHub

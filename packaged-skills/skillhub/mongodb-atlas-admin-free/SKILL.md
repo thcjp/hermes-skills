@@ -5,6 +5,7 @@ name: "mongodb-atlas-admin-free"
 version: "1.0.0"
 displayName: "文档数据库管理(免费版)"
 summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用(免费版)。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时"
+summary_zh: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用(免费版)。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时"
 license: "MIT"
 description: |-
   通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、
@@ -17,7 +18,13 @@ tools:
   - glob
   - grep
 homepage: ""
-tags: api,dry-run,分类,schema,请参考,目录中的
+tags:
+  - api
+  - dry-run
+  - 分类
+  - schema
+  - 请参考
+  - 目录中的
 category: "Automation"
 
 ---

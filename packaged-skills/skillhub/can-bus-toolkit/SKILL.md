@@ -4,6 +4,7 @@ name: "can-bus-toolkit"
 version: 1.0.1
 displayName: "CAN总线工具包专业版"
 summary: "企业级数据溯源平台，支持OTS时间戳同步、并行索引、篡改检测告警、多传输协议适配与审计报表。CAN总线工具包专业版是一款面向团队与企业的数据溯源平台，在免费版三列协议基础上，新增OTS外部时"
+summary_zh: "企业级数据溯源平台，支持OTS时间戳同步、并行索引、篡改检测告警、多传输协议适配与审计报表。CAN总线工具包专业版是一款面向团队与企业的数据溯源平台，在免费版三列协议基础上，新增OTS外部时"
 license: "MIT"
 edition: "pro"
 description: |-

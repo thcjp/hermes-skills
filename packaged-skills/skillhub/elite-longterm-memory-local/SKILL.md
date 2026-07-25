@@ -4,6 +4,7 @@ name: "elite-longterm-memory-local"
 version: 1.1.1
 displayName: "本地向量记忆系统"
 summary: "基于 LanceDB 与本地 Embedding 的纯本地向量记忆，零外部 API 依赖。。基于 LanceDB 与纯 JavaScript Embedding 的本地向量记忆系统，无需外部"
+summary_zh: "基于 LanceDB 与本地 Embedding 的纯本地向量记忆，零外部 API 依赖。。基于 LanceDB 与纯 JavaScript Embedding 的本地向量记忆系统，无需外部"
 license: "MIT"
 description: |-
   基于 LanceDB 与纯 JavaScript Embedding 的本地向量记忆系统，无需外部 API 或原生模块.

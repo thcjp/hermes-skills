@@ -4,6 +4,7 @@ name: "ui-ux-design-free"
 version: 1.0.1
 displayName: "UI/UX设计指南免费版"
 summary: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。。UI/UX设计指南免费版，提供基础设计原则与快速参考. 涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求."
+summary_zh: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。。UI/UX设计指南免费版，提供基础设计原则与快速参考. 涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求."
 license: "MIT"
 description: |-
   UI/UX设计指南免费版，提供基础设计原则与快速参考.

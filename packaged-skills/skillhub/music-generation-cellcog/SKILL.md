@@ -4,6 +4,7 @@ name: "music-generation-cellcog"
 version: 1.0.12
 displayName: "Music Generation Cel"
 summary: "CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟。AI music generation powered by CellCog。Original instrumental and"
+summary_zh: "CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟。AI music generation powered by CellCog。Original instrumental and"
 license: "MIT"
 description: |-
   AI music generation powered by CellCog。Original instrumental and vocal

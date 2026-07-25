@@ -1,4 +1,5 @@
 ---
+
 slug: logo-design-guide-tool-pro
 name: logo-design-guide-tool-pro
 version: 1.0.0
@@ -6,7 +7,8 @@ displayName: Logo设计指南专业版
 summary: 企业级AI Logo设计系统指南,支持批量提示词管理、自动矢量化、设计审计与多模型策略,适合团队与商业项目.
 license: Proprietary
 edition: pro
-description: 'Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,增加批量提示词管理、多模型策略、
+description: "Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,增加批量提示词管理、多模型策略、
+  自动矢量化流程、设计质量审计与团队设计规范。减少重复劳动，提升工作效率。触发关键词：自动化、设计、机器学习、自然语言。降低专业门槛，让非专业人员也能快速上手。提供结构化方法论与最佳实践"
 
   自动矢量化流程、设计质量审计与团队设计规范'
 tags:
@@ -31,6 +33,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
 # Logo设计指南专业版
 ## 概述

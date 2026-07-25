@@ -5,6 +5,7 @@ name: "calendar-reminder-free"
 version: 1.0.1
 displayName: "日历提醒(免费版)"
 summary: "每晚22点扫描明日Outlook日历,基础飞书提醒,支持手动运行与cron注册。。面向个人开发者的 Outlook 日历提醒 Skill 免费版。每晚 22:00 扫描明日 Outlook"
+summary_zh: "每晚22点扫描明日Outlook日历,基础飞书提醒,支持手动运行与cron注册。。面向个人开发者的 Outlook 日历提醒 Skill 免费版。每晚 22:00 扫描明日 Outlook"
 license: "MIT"
 description: |-
   面向个人开发者的 Outlook 日历提醒 Skill 免费版。每晚 22:00 扫描明日 Outlook 日历,
@@ -12,7 +13,12 @@ description: |-
   基于 owa-outlook skill 提供的 owa_calendar.py 读取日历数据,通过 skill-platform CLI 注册 cron.
   适用于个人每日日程前置提醒的基础场景。高级特性(跨时区处理、团队群共享、安静时段、
   多渠道通知)请升级付费版.
-tags: cron,skill-platform,api,扫描明日,原因
+tags:
+  - cron
+  - skill-platform
+  - api
+  - 扫描明日
+  - 原因
 tools:
   - read
   - exec

@@ -4,6 +4,7 @@ name: "cashu-emoji"
 version: 0.1.1
 displayName: "Cashu Emoji"
 summary: "用Unicode变体选择符将Cashu令牌编解码藏于emoji,隐秘传递价值。Encode and decode Cashu tokens that are hidden inside em"
+summary_zh: "用Unicode变体选择符将Cashu令牌编解码藏于emoji,隐秘传递价值。Encode and decode Cashu tokens that are hidden inside em"
 license: "MIT"
 description: |-
   Encode and decode Cashu tokens that are hidden inside emojis using Unicode

@@ -4,6 +4,7 @@ name: "x-timeline-digest"
 version: 1.0.3
 displayName: "X 时间线摘要"
 summary: "用bird读X/Twitter时间线,增量去重生中文分类简报与JSON。基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线, 对推文进"
+summary_zh: "用bird读X/Twitter时间线,增量去重生中文分类简报与JSON。基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线, 对推文进"
 license: "MIT"
 description: |-
   基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线,

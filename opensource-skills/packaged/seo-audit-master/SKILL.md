@@ -4,6 +4,7 @@ name: seo-audit-master
 version: 1.0.1
 displayName: SEO审计大师
 summary: "全站SEO体检:技术内容架构链接四维度审计,输出可执行优化清单。SEO审计大师——对网站执行全面SEO审计,覆盖技术SEO+内容SEO+架构验证+链接分析四维度。输出按优先级排序的可执行优化"
+summary_zh: "全站SEO体检:技术内容架构链接四维度审计,输出可执行优化清单。SEO审计大师——对网站执行全面SEO审计,覆盖技术SEO+内容SEO+架构验证+链接分析四维度。输出按优先级排序的可执行优化"
 license: Proprietary
 description: SEO审计大师——对网站执行全面SEO审计,覆盖技术SEO+内容SEO+架构验证+链接分析四维度。输出按优先级排序的可执行优化清单,支持Google与百度双搜索引擎,适用于上线前体检、排名下降诊断、新站优化、竞品对比、迁移检查场景。触发关键词:SEO审计、SEO诊断、技术SEO、内容SEO、SEO优化、网站审计、搜索引擎优化、索引、可抓取性、结构化数据、百度SEO、Google
   SEO

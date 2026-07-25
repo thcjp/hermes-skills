@@ -4,6 +4,7 @@ name: "web-content-fetcher"
 version: 1.0.2
 displayName: "Web Content Fetcher"
 summary: "网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r.jina.ai - 最稳定 2) markdown.new -"
+summary_zh: "网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r.jina.ai - 最稳定 2) markdown.new -"
 license: "MIT"
 description: |-
   网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.

@@ -4,6 +4,7 @@ name: "rest-api-reference"
 version: "1.0.0"
 displayName: "REST API参考手册"
 summary: "147个第三方服务的REST API参考,含认证模式、端点、速率限制、分页与Webhook模式。REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模"
+summary_zh: "147个第三方服务的REST API参考,含认证模式、端点、速率限制、分页与Webhook模式。REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模"
 license: "MIT"
 description: |-
   REST API 参考文档库。覆盖 147 个第三方服务的认证模式、端点参考、速率限制、分页模式与 Webhook 处理.

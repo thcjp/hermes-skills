@@ -1,4 +1,5 @@
 ---
+
 slug: "logo-design-tool-pro"
 name: "logo-design-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,9 @@ displayName: "Logo设计工具专业版"
 summary: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: "|-
+  Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批量生成、自动矢量化、品牌变体管理、
+  多格式导出、设计审计与CI/CD集成能力。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、自动化、性能优化、部署、设计、品牌。降低专业门槛，让非专业人员也能快速上手"
   Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批量生成、自动矢量化、品牌变体管理、
   多格式导出、设计审计与CI/CD集成能力。
 tags:
@@ -30,6 +33,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
 # Logo设计工具专业版
 

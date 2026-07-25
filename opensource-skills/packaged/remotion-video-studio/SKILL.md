@@ -4,6 +4,7 @@ name: remotion-video-studio
 version: 1.0.1
 displayName: 视频创作工作室
 summary: "自然语言转视频,用React代码生成字幕转场配音动画,无需剪辑软件。视频创作工作室将自然语言描述转换为基于React的可渲染视频代码,核心功能包括分镜脚本结构化、React视频代码生成(Co"
+summary_zh: "自然语言转视频,用React代码生成字幕转场配音动画,无需剪辑软件。视频创作工作室将自然语言描述转换为基于React的可渲染视频代码,核心功能包括分镜脚本结构化、React视频代码生成(Co"
 license: Proprietary
 description: 视频创作工作室将自然语言描述转换为基于React的可渲染视频代码,核心功能包括分镜脚本结构化、React视频代码生成(Composition/Sequence/动画原语)、TTS配音与音频转录字幕同步、多规格渲染输出(横屏/竖屏/方形)。适用于文字转视频、字幕同步、数据可视化动画、产品演示视频、社交短视频场景。触发关键词:视频制作、视频生成、React视频、短视频、内容创作、Remotion、字幕同步、视频渲染。
 tags:

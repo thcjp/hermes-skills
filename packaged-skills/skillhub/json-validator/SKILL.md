@@ -4,6 +4,7 @@ name: "json-validator"
 version: 1.0.1
 displayName: "JSON校验器(专业版)"
 summary: "企业级JSON校验工具，支持批量校验、Schema校验、自动修复与CI/CD集成。。JSON校验器专业版是一款面向数据团队与企业级数据质量保障场景的全功能JSON校验工具。在免费版的语法检查"
+summary_zh: "企业级JSON校验工具，支持批量校验、Schema校验、自动修复与CI/CD集成。。JSON校验器专业版是一款面向数据团队与企业级数据质量保障场景的全功能JSON校验工具。在免费版的语法检查"
 license: "MIT"
 edition: "pro"
 description: |-

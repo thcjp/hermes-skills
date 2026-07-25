@@ -4,6 +4,7 @@ name: "workflow-orchestrator"
 version: 1.0.1
 displayName: "工作流编排器(专业版)"
 summary: "全功能工作流编排与调度，含cron调度、DAG并行、熔断器、监控告警与分布式执行。。工作流编排器专业版是在免费版基础上的全功能升级，为自动化团队提供企业级工作流编排与调度能力。除核心编排能力"
+summary_zh: "全功能工作流编排与调度，含cron调度、DAG并行、熔断器、监控告警与分布式执行。。工作流编排器专业版是在免费版基础上的全功能升级，为自动化团队提供企业级工作流编排与调度能力。除核心编排能力"
 license: "MIT"
 edition: "pro"
 description: |-

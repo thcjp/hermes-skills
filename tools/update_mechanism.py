@@ -24,7 +24,10 @@ from project_config import TOOLS_DIR
 from project_config import DB_PATH
 from project_config import CLAWHUB_DOWNLOADED_DIR
 from project_config import PROJECT_ROOT
+from project_config import DATA_DIR
 # === End Phase 1 ===
+# D6修复: 从db.py导入record_upload，消除重复实现
+from db import record_upload as db_record_upload
 SKILLS_ROOT = PROJECT_ROOT
 SKILL_REGISTRY_DIR = TOOLS_DIR
 
@@ -52,11 +55,13 @@ from typing import Any, Dict, List, Optional, Tuple
 # DB_PATH imported from config
 # SKILLS_ROOT = PROJECT_ROOT (imported from config)
 # SKILL_REGISTRY_DIR = TOOLS_DIR (imported from config)
-PAYLOADS_DIR = Path(r"c:\Users\thcd\.trae-cn\work\6a5cf90c2aab822b9b427eb5\payloads")
+PAYLOADS_DIR = DATA_DIR / "payloads"
+PAYLOADS_DIR.mkdir(parents=True, exist_ok=True)
 ENTERPRISE_UPLOAD_DIR = SKILLS_ROOT / "enterprise-upload"
 PACKAGED_SKILLS_DIR = SKILLS_ROOT / "packaged-skills" / "skillhub"
 OPENSOURCE_SKILLS_DIR = SKILLS_ROOT / "opensource-skills" / "packaged"
-# DIFFERENTIATED_SKILLS_DIR = DIFFERENTIATED_DIR (imported from config)
+# 别名: 统一使用 DIFFERENTIATED_SKILLS_DIR 名称, 值来自 config 的 DIFFERENTIATED_DIR
+DIFFERENTIATED_SKILLS_DIR = DIFFERENTIATED_DIR
 # CLAWHUB_DOWNLOADED_DIR imported from config
 
 # clawhub 来源URL模式: https://clawhub.ai/{author}/skills/{slug}
@@ -220,29 +225,8 @@ def update_skill_version(skill_id: int, new_version: str, new_hash: str,
     conn.commit()
     conn.close()
 
-def record_upload(skill_id: int, version: str, platform: str, platform_slug: str,
-                  status: str, http_status: int = None, error: str = None,
-                  visibility: str = None, pricing: str = None):
-    """记录上传结果"""
-    conn = get_db()
-    c = conn.cursor()
-    now = datetime.now().isoformat()
-
-    c.execute("""
-        INSERT INTO platform_uploads (skill_id, version, platform, platform_slug,
-            upload_date, upload_status, http_status, error_message, visibility, pricing_on_platform)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, (skill_id, version, platform, platform_slug, now, status,
-          http_status, error, visibility, pricing))
-
-    c.execute("""
-        INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (skill_id, f'upload_{platform}', now, 'update_mechanism',
-          f'Uploaded {version} to {platform}: {status}', status))
-
-    conn.commit()
-    conn.close()
+# D6修复: record_upload已迁移至db.py，此处删除重复实现
+# 统一使用 from db import record_upload as db_record_upload
 
 # ============================================================
 # 来源检测
@@ -697,16 +681,40 @@ def upload_free_via_cli(slug: str, skill_md_path: Path,
     return result
 
 def upload_paid_via_api(slug: str, payload: Dict[str, Any]) -> Dict[str, Any]:
-    """通过企业API上传付费版本"""
+    """通过企业API上传付费版本
+
+    调用 enterprise_uploader.upload_skill() 发起真实HTTP上传。
+    若上传失败（如无cookie/网络错误），保存payload文件作为备份。
+    """
     result = {'slug': slug, 'platform': 'skillhub_paid', 'method': 'enterprise_api'}
 
-    # 注意: 企业API需要session cookies认证
-    # 这里生成payload文件，实际上传由AI通过浏览器MCP完成
+    # 保存payload到磁盘作为备份（无论上传成功与否，确保失败时可手动重试）
     payload_path = PAYLOADS_DIR / f"{slug}-paid.json"
+    payload_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
     result['payload_path'] = str(payload_path)
     result['payload'] = payload
-    result['status'] = 'payload_ready'
-    result['note'] = '企业API上传需要浏览器session cookies认证，请通过browser_evaluate执行上传'
+
+    # 调用真实上传逻辑
+    try:
+        from enterprise_uploader import upload_skill
+        upload_result = upload_skill(slug)
+
+        if upload_result.get('success'):
+            result['status'] = 'uploaded'
+            result['response'] = upload_result.get('response', {})
+            result['score'] = upload_result.get('score', 0)
+            result['price'] = upload_result.get('price', 0)
+            result['is_paid'] = upload_result.get('is_paid', True)
+        else:
+            # 上传失败，保留payload备份
+            result['status'] = 'payload_ready'
+            result['error'] = upload_result.get('message', '上传失败')
+            result['note'] = '真实上传失败，payload已保存，可手动重试'
+    except Exception as e:
+        # 导入或调用异常，保留payload备份
+        result['status'] = 'payload_ready'
+        result['error'] = f'上传异常: {str(e)}'
+        result['note'] = '企业上传模块异常，payload已保存'
 
     return result
 
@@ -760,10 +768,10 @@ def sync_skill_to_platform(slug: str, skill_id: int, new_version: str,
             results['error'] = f"L1质量门禁未通过: {gate_result.get('failed_checks', 0)}/{gate_result.get('total_checks', 0)}项失败"
             results['failed_checks'] = results['validation']['l1_static']['failed_checks']
             # 记录被阻止的操作到DB
-            record_upload(skill_id, new_version, 'skillhub', slug,
+            db_record_upload(skill_id, new_version, 'skillhub', slug,
                           'blocked_by_l1_quality_gate',
                           http_status=None,
-                          error=results['error'],
+                          error_message=results['error'],
                           visibility='public')
             print(f"✗ L1质量门禁阻止上传: {slug}")
             for c in gate_result.get('checks', []):
@@ -790,9 +798,9 @@ def sync_skill_to_platform(slug: str, skill_id: int, new_version: str,
             results['validation']['l2_llm'] = {'passed': False, 'error': l2_result.get('error', 'L2验证失败')}
             results['status'] = 'blocked_by_l2_validation_error'
             results['error'] = f"L2验证执行错误: {l2_result.get('error')}"
-            record_upload(skill_id, new_version, 'skillhub', slug,
+            db_record_upload(skill_id, new_version, 'skillhub', slug,
                           'blocked_by_l2_validation_error',
-                          http_status=None, error=results['error'], visibility='public')
+                          http_status=None, error_message=results['error'], visibility='public')
             print(f"✗ L2验证执行错误: {slug} - {l2_result.get('error')}")
             return results
 
@@ -808,9 +816,9 @@ def sync_skill_to_platform(slug: str, skill_id: int, new_version: str,
             }
             results['status'] = 'blocked_by_l2_pending'
             results['error'] = f"L2验证待AI评估: 报告已生成在 {l2_report_path}, 请AI执行评估后重试"
-            record_upload(skill_id, new_version, 'skillhub', slug,
+            db_record_upload(skill_id, new_version, 'skillhub', slug,
                           'blocked_by_l2_pending',
-                          http_status=None, error=results['error'], visibility='public')
+                          http_status=None, error_message=results['error'], visibility='public')
             print(f"⚠ L2验证待AI评估: {slug}")
             print(f"  报告路径: {l2_report_path}")
             print(f"  下一步: AI读取报告执行评估, 然后运行 python llm_validator.py import {slug} <评估结果.json>")
@@ -832,9 +840,9 @@ def sync_skill_to_platform(slug: str, skill_id: int, new_version: str,
         if not l2_passed:
             results['status'] = 'blocked_by_l2_validation'
             results['error'] = f"L2验证未通过: TRACE总分{trace_total}/50 (阈值35), 等级{results['validation']['l2_llm']['trace_grade']}"
-            record_upload(skill_id, new_version, 'skillhub', slug,
+            db_record_upload(skill_id, new_version, 'skillhub', slug,
                           'blocked_by_l2_validation',
-                          http_status=None, error=results['error'], visibility='public')
+                          http_status=None, error_message=results['error'], visibility='public')
             print(f"✗ L2验证未通过: {slug} (TRACE {trace_total}/50, 等级{results['validation']['l2_llm']['trace_grade']})")
             return results
         else:
@@ -857,9 +865,9 @@ def sync_skill_to_platform(slug: str, skill_id: int, new_version: str,
             }
             results['status'] = 'blocked_by_l3_pending'
             results['error'] = f"L3试运行待AI执行: 请先运行 python agent_trial.py trial {slug}, AI执行6个用例后import, 再重试上传"
-            record_upload(skill_id, new_version, 'skillhub', slug,
+            db_record_upload(skill_id, new_version, 'skillhub', slug,
                           'blocked_by_l3_pending',
-                          http_status=None, error=results['error'], visibility='public')
+                          http_status=None, error_message=results['error'], visibility='public')
             print(f"⚠ L3试运行待AI执行: {slug}")
             print(f"  下一步: python agent_trial.py trial {slug} → AI执行6用例 → python agent_trial.py import {slug} <结果.json>")
             return results
@@ -880,9 +888,9 @@ def sync_skill_to_platform(slug: str, skill_id: int, new_version: str,
         if not l3_passed:
             results['status'] = 'blocked_by_l3_trial'
             results['error'] = f"L3试运行未通过: 评分{l3_score}/100, 等级{results['validation']['l3_trial']['grade']}"
-            record_upload(skill_id, new_version, 'skillhub', slug,
+            db_record_upload(skill_id, new_version, 'skillhub', slug,
                           'blocked_by_l3_trial',
-                          http_status=None, error=results['error'], visibility='public')
+                          http_status=None, error_message=results['error'], visibility='public')
             print(f"✗ L3试运行未通过: {slug} (评分{l3_score}/100, 等级{results['validation']['l3_trial']['grade']})")
             return results
         else:
@@ -902,10 +910,10 @@ def sync_skill_to_platform(slug: str, skill_id: int, new_version: str,
     if dual.get('free_path'):
         free_result = upload_free_via_cli(slug, skill_md)
         results['free_upload'] = free_result
-        record_upload(skill_id, new_version, 'skillhub', slug,
+        db_record_upload(skill_id, new_version, 'skillhub', slug,
                       free_result['status'],
                       http_status=free_result.get('exit_code'),
-                      error=free_result.get('error'),
+                      error_message=free_result.get('error'),
                       visibility='public')
 
     # 准备付费版上传

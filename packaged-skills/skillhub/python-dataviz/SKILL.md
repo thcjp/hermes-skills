@@ -4,6 +4,7 @@ name: "python-dataviz"
 version: 1.0.1
 displayName: "Python Dataviz"
 summary: "用Python(matplotlib/seaborn/plotly)做专业数据可视化。Professional data visualization using Python (matplo"
+summary_zh: "用Python(matplotlib/seaborn/plotly)做专业数据可视化。Professional data visualization using Python (matplo"
 license: "MIT"
 description: |-
   Professional data visualization using Python (matplotlib, seaborn, plotly)。Create publication-qu。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.

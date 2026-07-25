@@ -5,6 +5,7 @@ name: "dns-free"
 version: "1.0.0"
 displayName: "DNS配置基础版"
 summary: "DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查。DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断. 核心能力: - 迁移前的"
+summary_zh: "DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查。DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断. 核心能力: - 迁移前的"
 license: "MIT"
 description: |-
   DNS配置基础版Skill,提供DNS快速诊断与自动检测能力,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断.
@@ -18,7 +19,13 @@ description: |-
   - 个人域名迁移前的TTL预热
   - 邮件认证SPF/DMARC基础配置
   - DNS记录基础排查
-tags: DNS,DMARC,TTL,SPF,域名迁移,邮件认证
+tags:
+  - DNS
+  - DMARC
+  - TTL
+  - SPF
+  - 域名迁移
+  - 邮件认证
 tools:
   - read
   - exec

@@ -4,6 +4,7 @@ name: "dns-lookup"
 version: 1.0.1
 displayName: "Dns Lookup"
 summary: "用bind-utils的dig把主机名解析为IP,排查域名。Resolve hostnames to IP addresses using `dig` from bind-utils。核心能"
+summary_zh: "用bind-utils的dig把主机名解析为IP,排查域名。Resolve hostnames to IP addresses using `dig` from bind-utils。核心能"
 license: "MIT"
 description: |-
   Resolve hostnames to IP addresses using `dig` from bind-utils。核心能力:

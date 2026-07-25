@@ -1,4 +1,5 @@
 ---
+
 slug: doge-node-tool-pro
 name: doge-node-tool-pro
 version: 1.0.0
@@ -6,7 +7,8 @@ displayName: DOGE节点专业版
 summary: "企业级Dogecoin节点运维引擎，支持转账打赏、健康监控、自动重启与多节点集群管理.。DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系"
 license: Proprietary
 edition: pro
-description: DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
+description: "DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
+  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。减少重复劳动，提升工作效率。触发关键词：自动化、测试、安全、性能优化、部署、监控"
   when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
 tags:
   - Dogecoin
@@ -33,6 +35,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
 # DOGE节点专业版（Doge Node Tool Pro）
 

@@ -5,11 +5,17 @@ name: "smart-reminder-system"
 version: 1.0.6
 displayName: "Reminder"
 summary: "用SkillHub cron建一次性提醒任务,指定时间与内容。Create one-time reminder tasks using SkillHub cron。User specifie"
+summary_zh: "用SkillHub cron建一次性提醒任务,指定时间与内容。Create one-time reminder tasks using SkillHub cron。User specifie"
 license: "MIT"
 description: |-
   Create one-time reminder tasks using SkillHub cron。User specifies reminder
   time and task content。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
-tags: api,依赖说明,agent,不支持,确认运行
+tags:
+  - api
+  - 依赖说明
+  - agent
+  - 不支持
+  - 确认运行
 tools:
   - read
   - exec

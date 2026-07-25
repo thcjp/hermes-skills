@@ -4,6 +4,7 @@ name: "can-free"
 version: "1.0.0"
 displayName: "CAN内容寻址-免费版"
 summary: "基于时钟地址命名协议，对内容加盖时间戳与哈希，本地三列日志记录与自评估。。CAN免费版提供基于Clock Address Naming的核心内容寻址能力. 每条事件一行三列：WHEN（uni"
+summary_zh: "基于时钟地址命名协议，对内容加盖时间戳与哈希，本地三列日志记录与自评估。。CAN免费版提供基于Clock Address Naming的核心内容寻址能力. 每条事件一行三列：WHEN（uni"
 license: "MIT"
 description: |-
   CAN免费版提供基于Clock Address Naming的核心内容寻址能力.

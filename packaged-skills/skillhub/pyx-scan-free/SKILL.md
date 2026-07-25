@@ -4,6 +4,7 @@ name: "pyx-scan-free"
 version: "1.0.0"
 displayName: "技能安全扫描(免费版)"
 summary: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告(免费版)。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、"
+summary_zh: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告(免费版)。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、"
 license: "MIT"
 description: |-
   AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度

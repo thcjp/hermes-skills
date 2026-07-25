@@ -5,6 +5,7 @@ name: "file-browser-tool"
 version: "1.0.0"
 displayName: "file-browser"
 summary: "SkillHub工作区只读文件浏览与读取,安全查看。Read-only file browsing and reading in the SkillHub workspace (/home/"
+summary_zh: "SkillHub工作区只读文件浏览与读取,安全查看。Read-only file browsing and reading in the SkillHub workspace (/home/"
 license: "MIT"
 description: Read-only file browsing and reading in the SkillHub workspace (/home/alfred/。SkillHub/workspace)，可处理提升工作效率
 tags:

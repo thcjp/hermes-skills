@@ -4,6 +4,7 @@ name: "mcporter"
 version: 1.0.1
 displayName: "Mcporter"
 summary: "用mcporter CLI列出/配置/认证/调用MCP服务与工具。Use the mcporter CLI to list, configure, auth, and call 协议 ser"
+summary_zh: "用mcporter CLI列出/配置/认证/调用MCP服务与工具。Use the mcporter CLI to list, configure, auth, and call 协议 ser"
 license: "MIT"
 description: |-
   Use the mcporter CLI to list, configure, auth, and call 协议 servers/tools。核心能力:

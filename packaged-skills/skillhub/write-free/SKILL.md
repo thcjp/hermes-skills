@@ -4,6 +4,7 @@ name: "write-free"
 version: "1.0.0"
 displayName: "版本化写作工具（免费版）"
 summary: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制。带版本控制的写作工具（免费版）. 遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，"
+summary_zh: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制。带版本控制的写作工具（免费版）. 遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，"
 license: "MIT"
 description: |-
   带版本控制的写作工具（免费版）.

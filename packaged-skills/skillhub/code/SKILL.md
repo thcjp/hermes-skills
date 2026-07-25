@@ -4,6 +4,7 @@ name: "code"
 version: 1.0.5
 displayName: "Code"
 summary: "编码工作流含规划/实现/验证/测试,交付干净软件。Coding workflow with planning, implementation, verification, and testi"
+summary_zh: "编码工作流含规划/实现/验证/测试,交付干净软件。Coding workflow with planning, implementation, verification, and testi"
 license: "MIT"
 description: |-
   Coding workflow with planning, implementation, verification, and testing

@@ -4,7 +4,8 @@ name: duckdb-analytics-engine
 version: 1.0.1
 displayName: DuckDB分析引擎
 summary: "本地分析型数据库,免部署秒级启动,GB级数据SQL查询无压力。DuckDB分析引擎——为数据分析而生的嵌入式OLAP数据库,无需部署服务,单文件即用,支持GB级数据秒级SQL查询。覆盖多格式"
-license: Proprietary
+summary_zh: "本地分析型数据库,免部署秒级启动,GB级数据SQL查询无压力。DuckDB分析引擎——为数据分析而生的嵌入式OLAP数据库,无需部署服务,单文件即用,支持GB级数据秒级SQL查询。覆盖多格式"
+license: MIT
 description: DuckDB分析引擎——为数据分析而生的嵌入式OLAP数据库,无需部署服务,单文件即用,支持GB级数据秒级SQL查询。覆盖多格式数据加载(CSV/Parquet/JSON/Excel)、跨源联邦查询、窗口函数、Pandas互操作、Jupyter集成。Use
   when 需要本地大数据分析、CSV/Parquet快速查询、Python数据分析加速、无需数据库服务器的OLAP分析时使用。不适用于高并发在线事务处理。
 tags:

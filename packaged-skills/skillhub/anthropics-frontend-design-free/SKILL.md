@@ -4,6 +4,7 @@ name: "anthropics-frontend-design-free"
 version: "1.0.0"
 displayName: "前端设计LITE"
 summary: "前端设计基础版,生成具有独特美学的HTML/CSS/JS前端界面,避免通用AI美学。前端设计创作基础客户端(免费版)。生成具有基本美学风格的 HTML/CSS/JS 前端代码, 覆盖排版字体"
+summary_zh: "前端设计基础版,生成具有独特美学的HTML/CSS/JS前端界面,避免通用AI美学。前端设计创作基础客户端(免费版)。生成具有基本美学风格的 HTML/CSS/JS 前端代码, 覆盖排版字体"
 license: "MIT"
 description: |-
   前端设计创作基础客户端(免费版)。生成具有基本美学风格的 HTML/CSS/JS 前端代码,

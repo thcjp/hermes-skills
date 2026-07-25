@@ -5,6 +5,7 @@ name: "professional-communication-free"
 version: "1.0.0"
 displayName: "职场沟通写作免费版"
 summary: "为技术团队生成状态更新邮件、升级请求与 Slack/Teams 消息，遵循关键信息优先、可扫描、明确行动项的核心原则。"
+summary_zh: "为技术团队生成状态更新邮件、升级请求与 Slack/Teams 消息，遵循关键信息优先、可扫描、明确行动项的核心原则。"
 license: "MIT"
 description: |-
   面向技术团队的入门级职场沟通写作助手。覆盖状态更新邮件、升级
@@ -15,7 +16,13 @@ description: |-
   拒绝"Just checking in"无上下文、被动语态、文字墙、不必要的回复
   全部等典型职场沟通病灶。覆盖场景与模板深度为本系列免费版本，
   付费版扩展至技术概念转译、异步团队协作、跨文化沟通等更多场景.
-tags: 邮件,agent,slack,项目符号,api,行动请求
+tags:
+  - 邮件
+  - agent
+  - slack
+  - 项目符号
+  - api
+  - 行动请求
 tools:
   - read
   - exec

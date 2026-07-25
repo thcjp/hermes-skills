@@ -5,6 +5,7 @@ name: "merge-check-paid"
 version: 1.0.1
 displayName: "合并检查工具(专业版)"
 summary: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。。合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自"
+summary_zh: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。。合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自"
 license: "MIT"
 edition: "pro"
 description: |-
@@ -21,7 +22,13 @@ description: |-
   - 团队代码质量门禁与SRE治理
   - 贡献者健康度跟踪与导师分配
   - 大型开源项目PR...
-tags: CI/CD,工具,bash,owner,请参考,目录中的
+tags:
+  - CI/CD
+  - 工具
+  - bash
+  - owner
+  - 请参考
+  - 目录中的
 tools:
   - read
   - exec

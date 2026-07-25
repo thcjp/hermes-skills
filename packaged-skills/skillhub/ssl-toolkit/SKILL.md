@@ -4,6 +4,7 @@ name: "ssl-toolkit"
 version: 1.0.1
 displayName: "SSL工具箱(专业版)"
 summary: "企业级TLS套件,含通配符/SAN、全服务器配置、安全审计、自动化监控与告警。。SSL工具箱(专业版)面向团队与企业,提供完整的TLS证书管理、全主流服务器配置、安全审计评分、自动化监控告警"
+summary_zh: "企业级TLS套件,含通配符/SAN、全服务器配置、安全审计、自动化监控与告警。。SSL工具箱(专业版)面向团队与企业,提供完整的TLS证书管理、全主流服务器配置、安全审计评分、自动化监控告警"
 license: "MIT"
 edition: "pro"
 description: |-

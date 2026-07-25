@@ -4,6 +4,7 @@ name: "logo-design"
 version: 1.0.1
 displayName: "Logo设计工具专业版"
 summary: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目"
+summary_zh: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目"
 license: "MIT"
 edition: "pro"
 description: |-

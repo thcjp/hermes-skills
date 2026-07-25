@@ -4,6 +4,7 @@ name: "agentvibes-voice-skill-free"
 version: "1.0.0"
 displayName: "AgentVibes TTS LITE"
 summary: "基础TTS语音合成,支持声音切换、预览、语速控制。AgentVibes TTS 语音合成基础客户端（免费版）。集成 Piper TTS 单一 Provider, 支持声音切换、列出、预览、采"
+summary_zh: "基础TTS语音合成,支持声音切换、预览、语速控制。AgentVibes TTS 语音合成基础客户端（免费版）。集成 Piper TTS 单一 Provider, 支持声音切换、列出、预览、采"
 license: "MIT"
 description: |-
   AgentVibes TTS 语音合成基础客户端（免费版）。集成 Piper TTS 单一 Provider,

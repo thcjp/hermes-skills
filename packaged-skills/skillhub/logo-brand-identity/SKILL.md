@@ -5,12 +5,19 @@ name: "logo-brand-identity"
 version: 1.0.1
 displayName: "品牌标识设计专业版"
 summary: "企业级AI品牌标识设计系统,支持完整品牌套件、多品牌管理、批量生成、品牌审计与CI/CD集成,适合团队与商业项目"
+summary_zh: "企业级AI品牌标识设计系统,支持完整品牌套件、多品牌管理、批量生成、品牌审计与CI/CD集成,适合团队与商业项目"
 license: "MIT"
 edition: "pro"
 description: |-
   品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整品牌系统、多品牌管理、
   批量资产生成、品牌一致性审计与CI/CD集成能力。
-tags: 品牌系统,品牌标识,CI/CD,identity,不支持,master_brand
+tags:
+  - 品牌系统
+  - 品牌标识
+  - CI/CD
+  - identity
+  - 不支持
+  - master_brand
 tools:
   - read
   - exec

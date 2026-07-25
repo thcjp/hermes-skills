@@ -4,6 +4,7 @@ name: "actor-identifier"
 version: 1.0.1
 displayName: "仓库协作分析(专业版)"
 summary: "面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。。仓库协作分析工具专业版为团队与企业提供端到端Git仓库协作分析能力,涵盖多仓库批量分析、自定义指标、CI"
+summary_zh: "面向团队的企业级Git仓库协作分析平台,含批量分析、自定义指标、CI集成与企业报告。。仓库协作分析工具专业版为团队与企业提供端到端Git仓库协作分析能力,涵盖多仓库批量分析、自定义指标、CI"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "remix-auth"
 version: 1.0.1
 displayName: "Remix认证工具Pro"
 summary: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。。Remix认证工具（专业版）为团队与企业提供Remix平台API的完整Bearer Token认证治理"
+summary_zh: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。。Remix认证工具（专业版）为团队与企业提供Remix平台API的完整Bearer Token认证治理"
 license: "MIT"
 edition: "pro"
 description: |-

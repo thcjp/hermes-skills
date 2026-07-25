@@ -4,6 +4,7 @@ name: terraform-iac-architect
 version: 1.0.1
 displayName: IaC架构师
 summary: "Terraform基础设施即代码,模块化多环境CI/CD,云资源一键编排。IaC架构师——基于HashiCorp官方风格规范生成生产级Terraform代码。覆盖模块化设计、状态管理、多环境"
+summary_zh: "Terraform基础设施即代码,模块化多环境CI/CD,云资源一键编排。IaC架构师——基于HashiCorp官方风格规范生成生产级Terraform代码。覆盖模块化设计、状态管理、多环境"
 license: Proprietary
 description: IaC架构师——基于HashiCorp官方风格规范生成生产级Terraform代码。覆盖模块化设计、状态管理、多环境部署、CI/CD集成全流程。同时提供阿里云ROS/腾讯云Terraform/华为云Terraform国内云适配方案。适用于云基础设施搭建、多环境管理、模块化设计、状态迁移、CI/CD集成场景。触发关键词:Terraform、IaC、基础设施即代码、HCL、模块、状态管理、workspace、terragrunt、Provider、云基础设施、资源编排、ROS、阿里云
 tags:

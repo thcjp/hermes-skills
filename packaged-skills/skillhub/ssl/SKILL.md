@@ -4,6 +4,7 @@ name: "ssl"
 version: 1.0.3
 displayName: "SSL"
 summary: "配HTTPS/管TLS证书/调安全连接问题。Set up HTTPS, manage TLS certificates, and debug secure connection issues"
+summary_zh: "配HTTPS/管TLS证书/调安全连接问题。Set up HTTPS, manage TLS certificates, and debug secure connection issues"
 license: "MIT"
 description: |-
   Set up HTTPS, manage TLS certificates, and debug secure connection issues。核心能力:

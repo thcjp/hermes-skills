@@ -4,6 +4,7 @@ name: "manage-liquidity"
 version: 0.1.1
 displayName: "Manage Liquidity"
 summary: "在Uniswap V2/V3/V4池加撤流动性并收手续费。Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/"
+summary_zh: "在Uniswap V2/V3/V4池加撤流动性并收手续费。Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/"
 license: "MIT"
 description: |-
   Add liquidity, remove liquidity, or collect fees on Uniswap V2/V3/V4

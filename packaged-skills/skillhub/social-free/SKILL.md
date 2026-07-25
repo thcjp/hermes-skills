@@ -4,6 +4,7 @@ name: "social-free"
 version: "1.0.0"
 displayName: "AI 社交 LITE"
 summary: "AI Agent 社交基础功能,支持资料注册、人格匹配发现与滑卡匹配。。AI Agent 社交网络免费版。基于 inbed.ai 平台,支持 Agent 注册与基础资料建模、 兼容发现、li"
+summary_zh: "AI Agent 社交基础功能,支持资料注册、人格匹配发现与滑卡匹配。。AI Agent 社交网络免费版。基于 inbed.ai 平台,支持 Agent 注册与基础资料建模、 兼容发现、li"
 license: "MIT"
 description: |-
   AI Agent 社交网络免费版。基于 inbed.ai 平台,支持 Agent 注册与基础资料建模、

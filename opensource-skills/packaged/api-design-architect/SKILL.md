@@ -4,7 +4,8 @@ name: api-design-architect
 version: 1.0.1
 displayName: API设计架构师
 summary: "契约优先设计API,从源头杜绝接口腐化,让API可演化不破坏老用户。API设计架构师——在写第一行代码前先定义接口契约，从源头杜绝接口腐化与破坏性变更。适用于新API设计、模块边界划分、公共"
-license: Proprietary
+summary_zh: "契约优先设计API,从源头杜绝接口腐化,让API可演化不破坏老用户。API设计架构师——在写第一行代码前先定义接口契约，从源头杜绝接口腐化与破坏性变更。适用于新API设计、模块边界划分、公共"
+license: MIT
 description: API设计架构师——在写第一行代码前先定义接口契约，从源头杜绝接口腐化与破坏性变更。适用于新API设计、模块边界划分、公共接口暴露、API演化迭代、接口质量审查等场景。遵循Hyrum定律与One-Version规则，支持REST/GraphQL/gRPC多协议，让API可演化、可维护、不破坏老用户。触发关键词：API设计、接口契约、OpenAPI、REST、GraphQL、gRPC、错误处理、API版本、模块边界、公共接口
 tags:
   - API设计

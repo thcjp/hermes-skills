@@ -5,9 +5,16 @@ name: "ocean-chat-assistant"
 version: "2.20.0"
 displayName: "Ocean Chat"
 summary: "OceanBus驱动的P2P消息/共享通讯录/1v1约见/话题。OceanBus-powered P2P messaging, shared address book, 1v1 meetup"
+summary_zh: "OceanBus驱动的P2P消息/共享通讯录/1v1约见/话题。OceanBus-powered P2P messaging, shared address book, 1v1 meetup"
 license: "MIT"
 description: "OceanBus-powered P2P messaging with shared address book and meetup negotiation. 支持P2P消息通信、管理共享通讯录和约见协商"
-tags: P2P,messaging,通讯录,约见,OceanBus,消息通信
+tags:
+  - P2P
+  - messaging
+  - 通讯录
+  - 约见
+  - OceanBus
+  - 消息通信
 tools:
   - read
   - exec

@@ -4,6 +4,7 @@ name: "bilibili-all-in-one-free"
 version: "1.0.0"
 displayName: "B站工具箱免费版"
 summary: "B站热门监控、标准清晰度下载、数据追踪与弹幕获取基础工具集,无需登录凭据。。B站全功能工具箱的免费基础版,集成热门监控(Hot Monitor)、标准清晰度下载(Downloader)、 数"
+summary_zh: "B站热门监控、标准清晰度下载、数据追踪与弹幕获取基础工具集,无需登录凭据。。B站全功能工具箱的免费基础版,集成热门监控(Hot Monitor)、标准清晰度下载(Downloader)、 数"
 license: "MIT"
 description: |-
   B站全功能工具箱的免费基础版,集成热门监控(Hot Monitor)、标准清晰度下载(Downloader)、

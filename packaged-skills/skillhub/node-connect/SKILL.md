@@ -5,11 +5,17 @@ name: "node-connect"
 version: 1.0.1
 displayName: "node-connect"
 summary: "诊断SkillHub节点连接与配对失败(Android/iOS/macOS)。Diagnose SkillHub node connection and pairing failures f"
+summary_zh: "诊断SkillHub节点连接与配对失败(Android/iOS/macOS)。Diagnose SkillHub node connection and pairing failures f"
 license: "MIT"
 description: |-
   Diagnose SkillHub node connection and pairing failures for Android,
   iOS, and macOS companion apps。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
-tags: api,按流程执,依赖说明,不支持,agent
+tags:
+  - api
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
 tools:
   - read
   - exec

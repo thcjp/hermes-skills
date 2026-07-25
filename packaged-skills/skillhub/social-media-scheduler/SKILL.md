@@ -4,6 +4,7 @@ name: "social-media-scheduler"
 version: 1.0.1
 displayName: "社媒内容排期"
 summary: "跨平台社媒内容排期助手,生成内容日历、平台优化文案、内容支柱、跨平台复用与三阶标签策略。。跨平台社媒内容排期与文案生成 skill。支持 Twitter/X、LinkedIn、Instagr"
+summary_zh: "跨平台社媒内容排期助手,生成内容日历、平台优化文案、内容支柱、跨平台复用与三阶标签策略。。跨平台社媒内容排期与文案生成 skill。支持 Twitter/X、LinkedIn、Instagr"
 license: "MIT"
 description: |-
   跨平台社媒内容排期与文案生成 skill。支持 Twitter/X、LinkedIn、Instagram、TikTok、Facebook 五大平台,

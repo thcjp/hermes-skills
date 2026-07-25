@@ -4,6 +4,7 @@ name: "workflow"
 version: 1.0.1
 displayName: "Workflow"
 summary: "用可复用组件/节点间数据流/状态管理建自动化流水线。Build automated pipelines with reusable components, data flow between"
+summary_zh: "用可复用组件/节点间数据流/状态管理建自动化流水线。Build automated pipelines with reusable components, data flow between"
 license: "MIT"
 description: |-
   Build automated pipelines with reusable components, data flow between

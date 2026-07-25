@@ -5,13 +5,20 @@ name: "beware-piper-tts"
 version: 1.0.2
 displayName: "Piper TTS Pro"
 summary: "本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零 API 密"
+summary_zh: "本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零 API 密"
 license: "MIT"
 description: |-
   基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零 API 密钥、零订阅费用.
   核心能力:多音色切换、长文本自动分段与合并、批量生成、SSML 风格控制(语速/停顿/音高)、
   WAV 与 MP3 双格式输出、跨平台部署(macOS Apple Silicon/Intel、Linux、Windows WSL).
   适用于语音消息投递、有声内容生产、无障碍朗读、播客片段生成、多语言内容本地化等场景.
-tags: 语音合成,mp3,piper,请参考,目录中的,脚本文件
+tags:
+  - 语音合成
+  - mp3
+  - piper
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec

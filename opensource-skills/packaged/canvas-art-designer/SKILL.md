@@ -4,7 +4,8 @@ name: canvas-art-designer
 version: 1.0.1
 displayName: 画布艺术设计器
 summary: "用代码画出海报级视觉作品,原创构图+克制美学,告别通用AI审美。画布艺术设计器——用代码在 PNG/PDF 画布上创作原创视觉艺术，坚持设计哲学，告别千篇一律的 AI 美学。适用于海报设计、"
-license: Proprietary
+summary_zh: "用代码画出海报级视觉作品,原创构图+克制美学,告别通用AI审美。画布艺术设计器——用代码在 PNG/PDF 画布上创作原创视觉艺术，坚持设计哲学，告别千篇一律的 AI 美学。适用于海报设计、"
+license: MIT
 description: 画布艺术设计器——用代码在 PNG/PDF 画布上创作原创视觉艺术，坚持设计哲学，告别千篇一律的 AI 美学。适用于海报设计、艺术作品、信息图、品牌物料、社交配图等场景。支持
   Canvas API/SVG/HTML2Canvas 多渲染方式，输出可打印可分享的 PNG/PDF/SVG。触发关键词：海报设计、视觉设计、画布设计、艺术创作、PNG设计、PDF设计、平面设计、海报制作、视觉艺术、设计稿
 tags:

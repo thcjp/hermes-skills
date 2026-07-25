@@ -4,6 +4,7 @@ name: "json-beautifier"
 version: 1.0.1
 displayName: "JSON美化工具专业版"
 summary: "企业级JSON处理工具，支持大文件流式处理、批量目录扫描、自动修复、差异对比与自定义模板。。JSON美化工具专业版面向企业级场景，在免费版基础上扩展大文件流式处理、批量目录扫描、自动修复、差"
+summary_zh: "企业级JSON处理工具，支持大文件流式处理、批量目录扫描、自动修复、差异对比与自定义模板。。JSON美化工具专业版面向企业级场景，在免费版基础上扩展大文件流式处理、批量目录扫描、自动修复、差"
 license: "MIT"
 edition: "pro"
 description: |-

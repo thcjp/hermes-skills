@@ -5,6 +5,7 @@ name: "notion-cli"
 version: 1.0.1
 displayName: "Notion命令行(专业版)"
 summary: "企业级Notion命令行工具,支持多工作空间、文件上传、Schema管理、批量操作与审计日志,适合团队与企业规模化使用。"
+summary_zh: "企业级Notion命令行工具,支持多工作空间、文件上传、Schema管理、批量操作与审计日志,适合团队与企业规模化使用。"
 license: "MIT"
 edition: "pro"
 description: |-
@@ -18,7 +19,13 @@ description: |-
   - 页面模板列表与使用
   - 自定义输出格式(Jinja2模板)
   - ...
-tags: 命令行,工具,notion,tasks,key,workspace
+tags:
+  - 命令行
+  - 工具
+  - notion
+  - tasks
+  - key
+  - workspace
 tools:
   - read
   - exec

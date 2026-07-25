@@ -62,7 +62,12 @@ def init_database():
             edition TEXT,
             parent_slug TEXT,
             current_score INTEGER DEFAULT 0,
-            workflow_state TEXT DEFAULT 'step1_read_original'
+            workflow_state TEXT DEFAULT 'step1_read_original',
+            suggested_price REAL,
+            pricing_category TEXT,
+            pricing_rationale TEXT,
+            pricing_tier TEXT,
+            is_paid INTEGER DEFAULT 0
         )
     """)
 
@@ -81,6 +86,26 @@ def init_database():
         pass
     try:
         c.execute("ALTER TABLE skills ADD COLUMN workflow_state TEXT DEFAULT 'step1_read_original'")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN suggested_price REAL")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN pricing_category TEXT")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN pricing_rationale TEXT")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN pricing_tier TEXT")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN is_paid INTEGER DEFAULT 0")
     except sqlite3.OperationalError:
         pass
 
@@ -162,6 +187,7 @@ def init_database():
     """)
 
     # 6. sources - 来源信息表
+    # D1+D3修复: 增加 skill_id 字段关联 skills 表，消除发现→入库数据断链
     c.execute("""
         CREATE TABLE IF NOT EXISTS sources (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -173,9 +199,21 @@ def init_database():
             source_version TEXT,
             download_date TEXT,
             original_slug TEXT,
-            notes TEXT
+            notes TEXT,
+            skill_id INTEGER,
+            FOREIGN KEY (skill_id) REFERENCES skills(id)
         )
     """)
+
+    # D3迁移: 为已存在的 sources 表添加 skill_id 列
+    try:
+        c.execute("ALTER TABLE sources ADD COLUMN skill_id INTEGER")
+    except sqlite3.OperationalError:
+        pass  # 列已存在
+
+    # D3: 创建 sources.skill_id 索引
+    c.execute("CREATE INDEX IF NOT EXISTS idx_sources_skill ON sources(skill_id)")
+    c.execute("CREATE INDEX IF NOT EXISTS idx_sources_original_slug ON sources(original_slug)")
 
     # 7. dependencies - skill间依赖关系
     c.execute("""
@@ -209,9 +247,19 @@ def init_database():
             is_pass INTEGER NOT NULL DEFAULT 0,
             reviewer TEXT,
             notes TEXT,
+            is_current INTEGER DEFAULT 1,
             FOREIGN KEY (skill_id) REFERENCES skills(id)
         )
     """)
+
+    # D5迁移: 为已存在的 scores 表添加 is_current 列（保护评分历史）
+    try:
+        c.execute("ALTER TABLE scores ADD COLUMN is_current INTEGER DEFAULT 1")
+    except sqlite3.OperationalError:
+        pass  # 列已存在
+
+    # D5: 创建 scores 历史索引（按 skill_id+score_type+is_current 查询最新评分）
+    c.execute("CREATE INDEX IF NOT EXISTS idx_scores_current ON scores(skill_id, score_type, is_current)")
 
     # 9. workflow_states - 10步工作流状态追踪（v1.1新增，修复工作流无状态机问题）
     c.execute("""
@@ -253,9 +301,85 @@ def init_database():
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_edition ON skills(edition)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_parent_slug ON skills(parent_slug)")
 
+    # D3: 回填 sources.skill_id（将已有发现记录关联到skills表）
+    backfill_source_skill_id(c)
+
     conn.commit()
     conn.close()
     print(f"Database initialized: {DB_PATH}")
+
+
+def backfill_source_skill_id(c):
+    """D3修复: 回填 sources.skill_id
+
+    将 sources 表中 skill_id 为 NULL 的记录，通过 original_slug 关联到 skills 表。
+    匹配策略（按优先级）:
+      1. skills.source_slug = sources.original_slug
+      2. skills.slug = sources.original_slug (直接匹配)
+      3. skills.slug = sources.original_slug + '-free' (免费版)
+      4. skills.slug = sources.original_slug + '-pro' (付费版)
+
+    使用 UPDATE 而非 DELETE+INSERT，保护历史数据。
+    """
+    c.execute("""
+        UPDATE sources
+        SET skill_id = (
+            SELECT s.id FROM skills s
+            WHERE s.source_slug = sources.original_slug
+            LIMIT 1
+        )
+        WHERE skill_id IS NULL
+        AND EXISTS (
+            SELECT 1 FROM skills s WHERE s.source_slug = sources.original_slug
+        )
+    """)
+    matched_source_slug = c.rowcount
+
+    c.execute("""
+        UPDATE sources
+        SET skill_id = (
+            SELECT s.id FROM skills s
+            WHERE s.slug = sources.original_slug
+            LIMIT 1
+        )
+        WHERE skill_id IS NULL
+        AND EXISTS (
+            SELECT 1 FROM skills s WHERE s.slug = sources.original_slug
+        )
+    """)
+    matched_slug = c.rowcount
+
+    c.execute("""
+        UPDATE sources
+        SET skill_id = (
+            SELECT s.id FROM skills s
+            WHERE s.slug = sources.original_slug || '-free'
+            LIMIT 1
+        )
+        WHERE skill_id IS NULL
+        AND EXISTS (
+            SELECT 1 FROM skills s WHERE s.slug = sources.original_slug || '-free'
+        )
+    """)
+    matched_free = c.rowcount
+
+    c.execute("""
+        UPDATE sources
+        SET skill_id = (
+            SELECT s.id FROM skills s
+            WHERE s.slug = sources.original_slug || '-pro'
+            LIMIT 1
+        )
+        WHERE skill_id IS NULL
+        AND EXISTS (
+            SELECT 1 FROM skills s WHERE s.slug = sources.original_slug || '-pro'
+        )
+    """)
+    matched_pro = c.rowcount
+
+    total_matched = matched_source_slug + matched_slug + matched_free + matched_pro
+    if total_matched > 0:
+        print(f"  [backfill] sources.skill_id 回填 {total_matched} 条 (source_slug:{matched_source_slug} slug:{matched_slug} -free:{matched_free} -pro:{matched_pro})")
 
 
 def compute_file_hash(file_path):
@@ -497,6 +621,7 @@ def record_upload(skill_id, version, platform, platform_slug, upload_status,
     """
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
     now = datetime.now().isoformat()
 
     c.execute("""
@@ -523,6 +648,7 @@ def record_operation(skill_id, operation_type, details, before_state=None, after
     """记录操作"""
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
     now = datetime.now().isoformat()
 
     c.execute("""
@@ -539,6 +665,7 @@ def set_pricing(skill_id, edition, price_model, price_amount, price_currency,
     """设置收费策略"""
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
     now = datetime.now().isoformat()
 
     c.execute("""
@@ -557,6 +684,7 @@ def get_skill_status(slug):
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
 
     c.execute("SELECT * FROM skills WHERE slug = ?", (slug,))
     skill = c.fetchone()
@@ -593,6 +721,7 @@ def list_all_skills():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
 
     c.execute("""
         SELECT s.*,
@@ -613,6 +742,7 @@ def get_skills_needing_work():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
 
     # 未差异化的
     c.execute("""

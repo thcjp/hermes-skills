@@ -5,6 +5,7 @@ name: "the-news"
 version: 1.0.18
 displayName: "The News"
 summary: "给Agent实时与归档访问20国头版头条。gives agents real-time and archival access to front-page headlines across"
+summary_zh: "给Agent实时与归档访问20国头版头条。gives agents real-time and archival access to front-page headlines across"
 license: "MIT"
 description: gives agents real-time and archival access to front-page headlines across 20 countries for breaki，可处理提升工作效率
 tags:

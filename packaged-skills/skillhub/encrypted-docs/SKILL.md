@@ -4,6 +4,7 @@ name: "encrypted-docs"
 version: 1.0.1
 displayName: "Encrypted Docs"
 summary: "端到端加密md文档,Agent与人协同编辑,隐私不泄。End-to-end encrypted 。md documents for agents & humans to collaborat"
+summary_zh: "端到端加密md文档,Agent与人协同编辑,隐私不泄。End-to-end encrypted 。md documents for agents & humans to collaborat"
 license: "MIT"
 description: |-
   End-to-end encrypted 。md documents for agents & humans to collaborate。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.

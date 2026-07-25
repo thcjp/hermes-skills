@@ -225,6 +225,7 @@ def import_skills_to_db(skills):
 
         import sqlite3
         conn = sqlite3.connect(DB_PATH)
+        conn.execute("PRAGMA foreign_keys = ON")
         c = conn.cursor()
         c.execute("UPDATE skills SET current_status = ? WHERE id = ?", (status, skill_id))
         conn.commit()
@@ -241,6 +242,7 @@ def import_upload_logs():
     import csv
 
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
 
     # Import clawhub upload log (original)
@@ -313,6 +315,7 @@ def print_stats():
     """打印统计信息"""
     import sqlite3
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
 
     print("\n" + "=" * 60)

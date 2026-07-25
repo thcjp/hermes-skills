@@ -4,6 +4,7 @@ name: "html-designer-paid"
 version: 1.0.1
 displayName: "HTML设计工具专业版"
 summary: "企业级HTML/CSS设计系统,支持设计令牌、组件库、批量生成、主题切换与团队协作,适合团队与商业项目"
+summary_zh: "企业级HTML/CSS设计系统,支持设计令牌、组件库、批量生成、主题切换与团队协作,适合团队与商业项目"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "tool"
 version: 1.0.1
 displayName: "Tool"
 summary: "AI Agent技能,查找/评估/用好可用工具。A comprehensive AI agent skill for finding, evaluating, and getting the"
+summary_zh: "AI Agent技能,查找/评估/用好可用工具。A comprehensive AI agent skill for finding, evaluating, and getting the"
 license: "MIT"
 description: |-
   A comprehensive AI agent skill for finding, evaluating, and getting

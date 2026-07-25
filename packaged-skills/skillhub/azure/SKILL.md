@@ -4,6 +4,7 @@ name: "azure"
 version: 1.0.1
 displayName: "Azure"
 summary: "用经实战检验的模式部署监控管理Azure服务,稳定上云。Deploy, monitor, and manage Azure services with battle-tested patte"
+summary_zh: "用经实战检验的模式部署监控管理Azure服务,稳定上云。Deploy, monitor, and manage Azure services with battle-tested patte"
 license: "MIT"
 description: |-
   Deploy, monitor, and manage Azure services with battle-tested patterns。核心能力:

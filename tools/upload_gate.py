@@ -87,6 +87,7 @@ SECURITY_PATTERNS = [
 def get_trace_score(slug: str) -> Optional[Dict]:
     """从数据库获取TRACE评分 (L2-Cap)"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
 
     c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='scores'")

@@ -4,6 +4,7 @@ name: "csv-toolkit"
 version: 1.0.1
 displayName: "CSV工具箱 专业版"
 summary: "全功能CSV处理工具，支持流式解析、自定义方言、Schema校验与多格式互转。。CSV Toolkit 专业版面向数据工程师与后端开发者，在免费版基础上解锁流式大文件处理、自定义方言、Sch"
+summary_zh: "全功能CSV处理工具，支持流式解析、自定义方言、Schema校验与多格式互转。。CSV Toolkit 专业版面向数据工程师与后端开发者，在免费版基础上解锁流式大文件处理、自定义方言、Sch"
 license: "MIT"
 edition: "pro"
 description: |-

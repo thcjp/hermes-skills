@@ -55,6 +55,9 @@ ENTERPRISE_UPLOAD_DIR = PROJECT_ROOT / "enterprise-upload"
 # 源skill - ClawHub下载
 CLAWHUB_DOWNLOADED_DIR = PROJECT_ROOT / "clawhub-skills" / "downloaded"
 
+# ClawHub每日同步是否干跑模式（False=真实上传，True=仅模拟）
+CLAWHUB_DRY_RUN = False
+
 # 差异化skill目录（含免费版和付费版）
 DIFFERENTIATED_DIR = PROJECT_ROOT / "differentiated-skills"
 
@@ -153,10 +156,14 @@ MAX_PRICE = 99.0
 
 
 def get_db_connection():
-    """获取数据库连接（带row_factory）"""
+    """获取数据库连接（带row_factory）
+
+    D2修复: 统一开启 PRAGMA foreign_keys = ON，确保所有通过此函数的连接都强制FK约束
+    """
     import sqlite3
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys = ON")
     return conn
 
 

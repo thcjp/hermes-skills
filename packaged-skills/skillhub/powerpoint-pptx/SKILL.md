@@ -5,11 +5,17 @@ name: "powerpoint-pptx"
 version: 1.0.2
 displayName: "Powerpoint / PPTX"
 summary: "创建检查编辑PowerPoint演示文稿与PPTX,布局可靠。Create, inspect, and edit Microsoft PowerPoint presentations and"
+summary_zh: "创建检查编辑PowerPoint演示文稿与PPTX,布局可靠。Create, inspect, and edit Microsoft PowerPoint presentations and"
 license: "MIT"
 description: |-
   Create, inspect, and edit Microsoft PowerPoint presentations and PPTX
   decks with reliable layouts。Use when 用户需要Powerpoint / PPTX相关功能时使用。不适用于超出本技能能力范围的复杂需求.
-tags: api,按流程执,依赖说明,不支持,agent
+tags:
+  - api
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
 tools:
   - read
   - exec

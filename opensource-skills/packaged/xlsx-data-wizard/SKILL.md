@@ -4,6 +4,7 @@ name: xlsx-data-wizard
 version: 1.0.1
 displayName: Excel数据魔法师
 summary: "openpyxl全场景Excel处理,读写格式图表透视表公式全搞定。Excel数据魔法师——基于openpyxl实现全场景Excel文件处理。覆盖读取写入、格式化、公式、图表、透视表、多Sh"
+summary_zh: "openpyxl全场景Excel处理,读写格式图表透视表公式全搞定。Excel数据魔法师——基于openpyxl实现全场景Excel文件处理。覆盖读取写入、格式化、公式、图表、透视表、多Sh"
 license: Proprietary
 description: Excel数据魔法师——基于openpyxl实现全场景Excel文件处理。覆盖读取写入、格式化、公式、图表、透视表、多Sheet操作、合并拆分、数据校验、批注、保护全链路。同时提供WPS表格适配说明。适用于数据报表生成、Excel模板填充、批量数据处理、格式美化、图表可视化、财务报表自动化场景。触发关键词:Excel、xlsx、openpyxl、Excel处理、表格处理、数据报表、Excel格式化、Excel图表、透视表、Excel公式、WPS表格、Excel自动化
 tags:

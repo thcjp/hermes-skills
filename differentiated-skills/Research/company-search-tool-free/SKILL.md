@@ -1,4 +1,5 @@
 ---
+
 slug: company-search-tool-free
 name: company-search-tool-free
 version: 1.0.0
@@ -6,7 +7,8 @@ displayName: 企业查询助手(免费版)
 summary: "企业查询免费版，支持公司基本信息、股东、法人、对外投资、工商变更查询.。企业查询助手免费版是面向个人用户的轻量企业信息查询工具。通过内置公用API Key开箱即用，支持查公司基本信息、法人、"
 license: Proprietary
 edition: free
-description: 企业查询助手免费版是面向个人用户的轻量企业信息查询工具。通过内置公用API Key开箱即用，支持查公司基本信息、法人、股东、对外投资、工商变更等核心维度。Use
+description: "企业查询助手免费版是面向个人用户的轻量企业信息查询工具。通过内置公用API Key开箱即用，支持查公司基本信息、法人、股东、对外投资、工商变更等核心维度。Use
+  when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、性能优化、监控、搜索、SEO"
   when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - 企业查询
@@ -28,6 +30,7 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+
 ---
 > **查公司、查法人、查股东、查投资。开箱即用的企业信息查询工具。**
 

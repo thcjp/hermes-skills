@@ -4,6 +4,7 @@ name: scientific-research-assistant
 version: 1.0.1
 displayName: 科研助手
 summary: "134个科学技能库,从文献检索到论文写作,科研全流程AI辅助。科研助手基于134个科学技能库,提供从文献检索到论文发表的全流程科研支持,核心功能包括文献检索与综述(PubMed/Google"
+summary_zh: "134个科学技能库,从文献检索到论文写作,科研全流程AI辅助。科研助手基于134个科学技能库,提供从文献检索到论文发表的全流程科研支持,核心功能包括文献检索与综述(PubMed/Google"
 license: Proprietary
 description: 科研助手基于134个科学技能库,提供从文献检索到论文发表的全流程科研支持,核心功能包括文献检索与综述(PubMed/Google Scholar/arXiv)、数据分析与可视化(统计/生信/绘图)、药物发现流程(靶点/筛选/对接/ADMET)、论文写作与发表(IMRaD/投稿/Cover
   Letter)、基金申请(假设/计划/预算/影响陈述)

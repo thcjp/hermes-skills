@@ -4,6 +4,7 @@ name: "auto-workflow"
 version: 1.0.1
 displayName: "Auto Workflow"
 summary: "从重复任务自动构建工作流,识别瓶颈并自动化,释放人力。Builds automation workflows from repetitive tasks。Use when user ment"
+summary_zh: "从重复任务自动构建工作流,识别瓶颈并自动化,释放人力。Builds automation workflows from repetitive tasks。Use when user ment"
 license: "MIT"
 description: |-
   Builds automation workflows from repetitive tasks。Use when user mentions

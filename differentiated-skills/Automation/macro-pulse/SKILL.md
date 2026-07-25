@@ -1,11 +1,13 @@
 ---
+
 slug: macro-pulse
 name: macro-pulse
 version: 1.0.1
 displayName: 宏观脉搏
 summary: "解决数据源易崩、时区混乱、科普难懂、无预警痛点，每日推送带小白解读的宏观快报。每日宏观数据监控与推送机器人。自动巡检免费数据源（Trading Economics、FRED、国家统计局、"
 license: Proprietary
-description: '每日宏观数据监控与推送机器人。自动巡检免费数据源（Trading Economics、FRED、国家统计局、
+description: "每日宏观数据监控与推送机器人。自动巡检免费数据源（Trading Economics、FRED、国家统计局、
+  央行、财联社等），整合过去 24 小时发布的宏观数据与政策信息，配小白向科普解读后推送。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。提升信息检索效率与准确度。触发关键词：搜索、设计、机器学习、邮件、健康"
 
   央行、财联社等），整合过去 24 小时发布的宏观数据与政策信息，配小白向科普解读后推送。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
@@ -26,6 +28,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
 # 宏观脉搏
 

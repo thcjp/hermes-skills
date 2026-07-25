@@ -4,6 +4,7 @@ name: "ziptax"
 version: 1.0.1
 displayName: "Ziptax Sales Tax"
 summary: "销售税查询(其脚本可本地运行需谨慎)。This sales-tax lookup skill is legitimate in purpose, but its bundled lookup"
+summary_zh: "销售税查询(其脚本可本地运行需谨慎)。This sales-tax lookup skill is legitimate in purpose, but its bundled lookup"
 license: "MIT"
 description: |-
   This sales-tax lookup skill is legitimate in purpose, but its bundled

@@ -4,6 +4,7 @@ name: "notion-api-toolkit"
 version: 1.0.1
 displayName: "Notion API工具箱(专业版)"
 summary: "企业级Notion API集成平台,支持多连接管理、批量操作、Webhook订阅、自动分页与审计日志,适合团队与企业规模化使用。"
+summary_zh: "企业级Notion API集成平台,支持多连接管理、批量操作、Webhook订阅、自动分页与审计日志,适合团队与企业规模化使用。"
 license: "MIT"
 edition: "pro"
 description: |-

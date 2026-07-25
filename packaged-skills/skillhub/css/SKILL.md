@@ -4,6 +4,7 @@ name: "css"
 version: 1.0.2
 displayName: "CSS避坑指南"
 summary: "规避堆叠上下文、布局怪癖与现代CSS特性误用,覆盖flex/grid/响应式/性能。。规避常见CSS陷阱:堆叠上下文失效、margin collapse、flexbox/grid 误解、响应"
+summary_zh: "规避堆叠上下文、布局怪癖与现代CSS特性误用,覆盖flex/grid/响应式/性能。。规避常见CSS陷阱:堆叠上下文失效、margin collapse、flexbox/grid 误解、响应"
 license: "MIT"
 description: |-
   规避常见CSS陷阱:堆叠上下文失效、margin collapse、flexbox/grid

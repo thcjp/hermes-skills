@@ -1,4 +1,5 @@
 ---
+
 slug: json-yaml-converter-free
 name: json-yaml-converter-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: JSON转YAML(免费版)
 summary: "轻量级JSON与YAML互转工具，覆盖缩进规范、注释保留与单文件转换，60秒上手.。JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕"双向转换—缩进"
 license: Proprietary
 edition: free
-description: JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕"双向转换—缩进规范—注释保留—单文件处理"四件事，提供可复制即用的Python/Node。Use
+description: "JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕\"双向转换—缩进规范—注释保留—单文件处理\"四件事，提供可复制即用的Python/Node。Use
+  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。自动化生成专业文档，提升文档覆盖率。触发关键词：API设计、文档生成、安全、转换、数据库、机器学习"
   when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - 数据转换
@@ -25,6 +27,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # JSON转YAML（免费版）
 

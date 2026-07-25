@@ -1,4 +1,5 @@
 ---
+
 slug: json-validator-free
 name: json-validator-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: JSON校验器(免费版)
 summary: "轻量级JSON语法与结构校验工具，覆盖语法检查、错误定位与单文件校验，60秒上手.。JSON校验器免费版是一款面向独立开发者与前端工程师的轻量级JSON数据校验工具。围绕"语法检查—错误定位"
 license: Proprietary
 edition: free
-description: JSON校验器免费版是一款面向独立开发者与前端工程师的轻量级JSON数据校验工具。围绕"语法检查—错误定位—单文件校验—修复建议"四件事，提供可复制即用的Python/Node。Use
+description: "JSON校验器免费版是一款面向独立开发者与前端工程师的轻量级JSON数据校验工具。围绕\"语法检查—错误定位—单文件校验—修复建议\"四件事，提供可复制即用的Python/Node。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。系统性识别风险，保障系统安全合规。触发关键词：安全"
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 数据校验
@@ -27,6 +29,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # JSON校验器（免费版）
 

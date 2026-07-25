@@ -4,6 +4,7 @@ name: "sql-free"
 version: "1.0.0"
 displayName: "SQL查询助手(免费版)"
 summary: "多数据库SQL查询、优化、schema设计与数据分析，支持MySQL/PostgreSQL/SQLite/SQLServer。免费版"
+summary_zh: "多数据库SQL查询、优化、schema设计与数据分析，支持MySQL/PostgreSQL/SQLite/SQLServer。免费版"
 license: "MIT"
 description: |-
   SQL查询与数据库操作辅助引擎（免费版），支持MySQL、PostgreSQL、SQLite、SQLServer.

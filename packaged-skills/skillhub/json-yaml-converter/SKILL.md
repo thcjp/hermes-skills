@@ -4,6 +4,7 @@ name: "json-yaml-converter"
 version: 1.0.1
 displayName: "JSON转YAML(专业版)"
 summary: "企业级JSON与YAML互转工具，支持批量转换、Schema校验、模板渲染与配置中心对接。。JSON转YAML专业版是一款面向DevOps团队与企业级配置管理场景的全功能格式互转工具。在免费"
+summary_zh: "企业级JSON与YAML互转工具，支持批量转换、Schema校验、模板渲染与配置中心对接。。JSON转YAML专业版是一款面向DevOps团队与企业级配置管理场景的全功能格式互转工具。在免费"
 license: "MIT"
 edition: "pro"
 description: |-

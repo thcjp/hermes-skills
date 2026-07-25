@@ -4,6 +4,7 @@ name: "azure-cloud-architect"
 version: 1.0.1
 displayName: "Azure云架构师"
 summary: "基于Azure CLI的多订阅导航、RBAC角色审计、成本分析、合规检查、跨订阅批量操作。。基于 Azure CLI 的智能云基础设施管理助手。提供多订阅导航、RBAC 角色审计与最小权限、"
+summary_zh: "基于Azure CLI的多订阅导航、RBAC角色审计、成本分析、合规检查、跨订阅批量操作。。基于 Azure CLI 的智能云基础设施管理助手。提供多订阅导航、RBAC 角色审计与最小权限、"
 license: "MIT"
 description: |-
   基于 Azure CLI 的智能云基础设施管理助手。提供多订阅导航、RBAC 角色审计与最小权限、

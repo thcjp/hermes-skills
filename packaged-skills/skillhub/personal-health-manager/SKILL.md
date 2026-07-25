@@ -4,6 +4,7 @@ name: "personal-health-manager"
 version: 1.0.1
 displayName: "Personal Health Mana"
 summary: "个人健康管理与养生助手,追踪健康数据。Personal health management and wellness assistant。Use when users want to tra"
+summary_zh: "个人健康管理与养生助手,追踪健康数据。Personal health management and wellness assistant。Use when users want to tra"
 license: "MIT"
 description: |-
   Personal health management and wellness assistant。Use when users want

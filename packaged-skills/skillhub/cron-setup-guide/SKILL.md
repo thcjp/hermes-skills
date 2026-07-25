@@ -4,6 +4,7 @@ name: "cron-setup-guide"
 version: 1.0.1
 displayName: "定时任务设置指南(专业版)"
 summary: "Agent Gateway定时任务设置完全指南专业版，含Webhook投递、模型覆盖、话题投递、退避策略、高级配置项。"
+summary_zh: "Agent Gateway定时任务设置完全指南专业版，含Webhook投递、模型覆盖、话题投递、退避策略、高级配置项。"
 license: "MIT"
 edition: "pro"
 description: |-

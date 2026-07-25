@@ -4,6 +4,7 @@ name: mcp-server-builder
 version: 1.0.1
 displayName: MCP服务器构建器
 summary: "构建生产级MCP服务器,Python/TypeScript双语言,让LLM连接一切外部系统。MCP服务器构建器指导创建生产级MCP(Model Context Protocol)服务器,核心"
+summary_zh: "构建生产级MCP服务器,Python/TypeScript双语言,让LLM连接一切外部系统。MCP服务器构建器指导创建生产级MCP(Model Context Protocol)服务器,核心"
 license: Proprietary
 description: MCP服务器构建器指导创建生产级MCP(Model Context Protocol)服务器,核心功能包括工具定义、资源暴露、提示模板、传输层选择、认证安全和测试部署全流程。适用于让LLM调用外部API、访问数据库、集成SaaS服务、暴露企业内部能力等场景。支持Python(FastMCP)和TypeScript(MCP
   SDK)双语言。触发关键词:MCP、MCP服务器、Model Context Protocol、FastMCP、MCP SDK、工具集成、API集成、LLM集成、MCP开发、协议服务器。

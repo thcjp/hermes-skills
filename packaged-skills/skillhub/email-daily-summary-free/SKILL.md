@@ -4,6 +4,7 @@ name: "email-daily-summary-free"
 version: "1.0.0"
 displayName: "Email Summary Free"
 summary: "基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱, 抓取当日收件"
+summary_zh: "基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱, 抓取当日收件"
 license: "MIT"
 description: |-
   基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱,

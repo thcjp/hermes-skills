@@ -4,6 +4,7 @@ name: "azure-ai-voicelive-py"
 version: 0.1.1
 displayName: "Azure实时语音AI开发"
 summary: "基于Azure VoiceLive SDK构建实时双向语音AI应用,支持流式音频、转写、函数调用与多语音模型。"
+summary_zh: "基于Azure VoiceLive SDK构建实时双向语音AI应用,支持流式音频、转写、函数调用与多语音模型。"
 license: "MIT"
 description: |-
   面向Azure VoiceLive SDK的实时语音AI开发技能,覆盖WebSocket双向通信、流式音频输入输出、

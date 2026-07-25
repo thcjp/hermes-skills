@@ -4,6 +4,7 @@ name: "discrawl"
 version: 1.0.1
 displayName: "Discrawl"
 summary: "Discord归档,搜索/同步新鲜度/私信/频道切片/SQL计数。Discord archive: search, sync freshness, DMs, channel slices,"
+summary_zh: "Discord归档,搜索/同步新鲜度/私信/频道切片/SQL计数。Discord archive: search, sync freshness, DMs, channel slices,"
 license: "MIT"
 description: |-
   Discord archive: search, sync freshness, DMs, channel slices, SQL counts。核心能力:

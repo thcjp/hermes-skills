@@ -4,6 +4,7 @@ name: "aegis-security-free"
 version: 1.0.1
 displayName: "区块链安全基础版"
 summary: "基础区块链安全API，地址声誉检查和代币蜜罐检测。面向AI代理的区块链安全API免费版。提供地址声誉检查、代币蜜罐检测和免费额度查询等基础功能， 支持Ethereum和Base链。适用于基础"
+summary_zh: "基础区块链安全API，地址声誉检查和代币蜜罐检测。面向AI代理的区块链安全API免费版。提供地址声誉检查、代币蜜罐检测和免费额度查询等基础功能， 支持Ethereum和Base链。适用于基础"
 license: "MIT"
 description: |-
   面向AI代理的区块链安全API免费版。提供地址声誉检查、代币蜜罐检测和免费额度查询等基础功能，

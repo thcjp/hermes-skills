@@ -4,6 +4,7 @@ name: "gitcrawl"
 version: 1.0.1
 displayName: "Gitcrawl"
 summary: "GitHub归档,issue/PR搜索/同步新鲜度/重复聚类。GitHub archive: issue/PR search, sync freshness, duplicate clust"
+summary_zh: "GitHub归档,issue/PR搜索/同步新鲜度/重复聚类。GitHub archive: issue/PR search, sync freshness, duplicate clust"
 license: "MIT"
 description: |-
   GitHub archive: issue/PR search, sync freshness, duplicate clusters。核心能力:

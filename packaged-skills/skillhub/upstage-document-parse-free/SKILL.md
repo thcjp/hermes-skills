@@ -4,7 +4,8 @@ name: "upstage-document-parse-free"
 version: "1.0.5"
 displayName: "Document Parse Free"
 summary: "基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。。upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 M"
-license: "MIT-0"
+summary_zh: "基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。。upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 M"
+license: "MIT"
 description: |-
   upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 Markdown 格式.
   支持同步模式解析（最多 100 页/50MB）和基础版面元素识别。不包含异步模式、enhanced 模式、

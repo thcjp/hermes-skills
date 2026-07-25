@@ -5,12 +5,19 @@ name: "beware-piper-tts-free"
 version: "1.0.0"
 displayName: "Piper TTS Lite"
 summary: "基于Piper的本地语音合成基础版,使用默认音色将文本转为MP3语音消息,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成基础版(免费)。全部推理在本地完成,零云端调用、零 AP"
+summary_zh: "基于Piper的本地语音合成基础版,使用默认音色将文本转为MP3语音消息,零云端零密钥。。基于 Piper 神经网络引擎的本地语音合成基础版(免费)。全部推理在本地完成,零云端调用、零 AP"
 license: "MIT"
 description: |-
   基于 Piper 神经网络引擎的本地语音合成基础版(免费)。全部推理在本地完成,零云端调用、零 API 密钥.
   核心能力:单段文本转语音、默认音色(en_US-kusal-medium)朗读、MP3 输出与语音消息封装.
   适用于偶发的语音消息投递与短文本朗读。如需多音色切换、长文本分段合并、批量生成与风格控制,请升级至 beware-piper-tts 付费版.
-tags: 语音合成,piper,mp3,agent,音色,请参考
+tags:
+  - 语音合成
+  - piper
+  - mp3
+  - agent
+  - 音色
+  - 请参考
 tools:
   - read
   - exec

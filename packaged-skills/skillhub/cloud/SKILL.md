@@ -4,6 +4,7 @@ name: "cloud"
 version: 1.0.1
 displayName: "消费级云存储助手"
 summary: "选择、整理、同步、分享与备份iCloud、Google Drive、Dropbox等个人云存储文件。"
+summary_zh: "选择、整理、同步、分享与备份iCloud、Google Drive、Dropbox等个人云存储文件。"
 license: "MIT"
 description: |-
   消费级云存储助手帮助用户在iCloud、Google Drive、Dropbox、OneDrive等个人云存储服务间

@@ -4,6 +4,7 @@ name: "google-fonts"
 version: 1.0.1
 displayName: "Google Fonts指南"
 summary: "Google Fonts字体选择与配对指南，覆盖加载优化、可变字体、子集化与自托管。Google Fonts 字体选择与配对指南，涵盖加载优化、可变字体、子集化、经典字体配对、 按用途选字体"
+summary_zh: "Google Fonts字体选择与配对指南，覆盖加载优化、可变字体、子集化与自托管。Google Fonts 字体选择与配对指南，涵盖加载优化、可变字体、子集化、经典字体配对、 按用途选字体"
 license: "MIT"
 description: |-
   Google Fonts 字体选择与配对指南，涵盖加载优化、可变字体、子集化、经典字体配对、

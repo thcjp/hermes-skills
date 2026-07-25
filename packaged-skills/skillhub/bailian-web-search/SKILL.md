@@ -4,6 +4,7 @@ name: "bailian-web-search"
 version: 1.0.5
 displayName: "Bailian Web Search"
 summary: "调百炼(阿里ModelStudio)API做AI优化网搜,多源精炼结果。AI-optimized web search via Bailian(Alibaba ModelStdio) API"
+summary_zh: "调百炼(阿里ModelStudio)API做AI优化网搜,多源精炼结果。AI-optimized web search via Bailian(Alibaba ModelStdio) API"
 license: "MIT"
 description: |-
   AI-optimized web search via Bailian(Alibaba ModelStdio) API。Returns

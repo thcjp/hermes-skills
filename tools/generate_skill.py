@@ -1048,8 +1048,9 @@ def run_generation_pipeline(slug: str, template_name: str = None,
         'overall_passed': False,
         'output_path': None,
         'errors': [],
-        'llm_generated': False,  # Round 13: 标记是否使用LLM生成
+        'llm_generated': False,  # Round 13: 标记是否使用LLM生成 (A1修复: 保留字段但不再设为True,因无LLM调用)
         'template_filled': False,  # Round 13: 标记是否使用模板默认值填充
+        'all_placeholders_filled': False,  # A1修复: 诚实标记所有placeholder已通过模板规则填充完成
     }
 
     # Step 1: 读取原始skill
@@ -1100,7 +1101,9 @@ def run_generation_pipeline(slug: str, template_name: str = None,
             )
             print(f"  ⚠️ 警告: 仍有 {len(remaining)} 个placeholder未填充 (模板默认值风险)")
         else:
-            result['llm_generated'] = True
+            # A1修复: generate_from_template是纯模板规则填充,未调用LLM API
+            # 原标记名不副实(llm_generated设True但无LLM调用),改为all_placeholders_filled
+            result['all_placeholders_filled'] = True
     else:
         # 无原始内容, 直接用模板 + 填充默认占位符
         # Round 13 根因修复: 此路径必然产生模板垃圾,强制阻断

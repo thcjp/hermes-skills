@@ -4,6 +4,7 @@ name: "markdown-exporter"
 version: 3.6.11
 displayName: "Markdown导出工具"
 summary: "Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。"
+summary_zh: "Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。"
 license: "MIT"
 description: |-
   Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PPTX、XLSX、PDF、PNG、

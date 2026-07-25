@@ -4,6 +4,7 @@ name: "api-gateway-free"
 version: "1.0.0"
 displayName: "API网关路由免费版"
 summary: "通过托管网关连接Slack/Gmail/Stripe等服务的只读路由,含基础连接管理与认证验证。托管式 API 网关路由服务免费版。通过统一的 API 路由地址连接 Slack、Gmail、"
+summary_zh: "通过托管网关连接Slack/Gmail/Stripe等服务的只读路由,含基础连接管理与认证验证。托管式 API 网关路由服务免费版。通过统一的 API 路由地址连接 Slack、Gmail、"
 license: "MIT"
 description: |-
   托管式 API 网关路由服务免费版。通过统一的 API 路由地址连接 Slack、Gmail、Stripe 等第三方服务,

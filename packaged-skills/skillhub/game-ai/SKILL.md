@@ -4,6 +4,7 @@ name: "game-ai"
 version: 1.0.1
 displayName: "Game AI Systems"
 summary: "游戏AI开发指南,行为树/状态机/寻路/决策全覆盖。Game AI development guide covering behavior trees, state machines, pa"
+summary_zh: "游戏AI开发指南,行为树/状态机/寻路/决策全覆盖。Game AI development guide covering behavior trees, state machines, pa"
 license: "MIT"
 description: |-
   Game AI development guide covering behavior trees, state machines, pathfinding,

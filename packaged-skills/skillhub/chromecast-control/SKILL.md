@@ -5,6 +5,7 @@ name: "chromecast-control"
 version: 1.0.1
 displayName: "投屏设备控制"
 summary: "控制局域网投屏设备，发现设备、投放媒体、管理播放和音量。使用catt工具控制局域网内的投屏设备。支持设备发现、媒体投放（视频/音频/网页）、 播放控制、进度跳转、音量调节、队列管理、字幕加载"
+summary_zh: "控制局域网投屏设备，发现设备、投放媒体、管理播放和音量。使用catt工具控制局域网内的投屏设备。支持设备发现、媒体投放（视频/音频/网页）、 播放控制、进度跳转、音量调节、队列管理、字幕加载"
 license: "MIT"
 description: |-
   使用catt工具控制局域网内的投屏设备。支持设备发现、媒体投放（视频/音频/网页）、
@@ -15,7 +16,13 @@ tools:
   - exec
   - write
 homepage: ""
-tags: 工具,catt,cast,url,验证返回,数据的完
+tags:
+  - 工具
+  - catt
+  - cast
+  - url
+  - 验证返回
+  - 数据的完
 category: "Automation"
 
 ---

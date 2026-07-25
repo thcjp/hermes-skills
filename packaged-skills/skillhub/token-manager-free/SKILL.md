@@ -4,6 +4,7 @@ name: "token-manager-free"
 version: 1.0.1
 displayName: "Token用量管理(免费版)"
 summary: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析(免费版)。API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、 余额预警、工具集成和跨"
+summary_zh: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析(免费版)。API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、 余额预警、工具集成和跨"
 license: "MIT"
 description: |-
   API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、

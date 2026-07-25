@@ -4,6 +4,7 @@ name: "logo"
 version: 1.0.1
 displayName: "Logo"
 summary: "用AI图像工具生成logo,含提示结构/校验/导出。Generate logos with AI image tools using effective prompt structures,"
+summary_zh: "用AI图像工具生成logo,含提示结构/校验/导出。Generate logos with AI image tools using effective prompt structures,"
 license: "MIT"
 description: |-
   Generate logos with AI image tools using effective prompt structures,

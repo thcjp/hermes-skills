@@ -4,6 +4,7 @@ name: "doc-parse"
 version: 1.0.1
 displayName: "文档解析工具（专业版）"
 summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。。文档解析工具 - （专业版） 核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document par"
+summary_zh: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。。文档解析工具 - （专业版） 核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document par"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "jira-flow-skill"
 version: 1.0.1
 displayName: "Jira Flow 专业版"
 summary: "全功能Jira任务管理与团队工时分析，支持批量操作、自定义报表与自动化集成。。Jira Flow Skill 专业版面向团队负责人与项目经理，在免费版基础上解锁批量任务操作、多项目工时对比、"
+summary_zh: "全功能Jira任务管理与团队工时分析，支持批量操作、自定义报表与自动化集成。。Jira Flow Skill 专业版面向团队负责人与项目经理，在免费版基础上解锁批量任务操作、多项目工时对比、"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "feishu-doc"
 version: 1.2.8
 displayName: "Feishu Doc"
 summary: "抓取飞书Wiki/文档/表格/多维表格内容,自动解析URL。Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。"
+summary_zh: "抓取飞书Wiki/文档/表格/多维表格内容,自动解析URL。Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。"
 license: "MIT"
 description: |-
   Fetch content from Feishu (Lark) Wiki, Docs, Sheets, and Bitable。Automatically

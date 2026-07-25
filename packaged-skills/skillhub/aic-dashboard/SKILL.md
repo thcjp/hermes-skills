@@ -4,6 +4,7 @@ name: "aic-dashboard"
 version: 1.8.1
 displayName: "AIC仪表盘监控"
 summary: "轻量级只读监控面板,展示入站邮件与浏览器会话状态,token保护,5秒自动刷新。AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 5"
+summary_zh: "轻量级只读监控面板,展示入站邮件与浏览器会话状态,token保护,5秒自动刷新。AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 5"
 license: "MIT"
 description: |-
   AI Commander 配套管理仪表盘。轻量级只读 Web UI,读取 inbox.jsonl 展示最近 50 封入站邮件,

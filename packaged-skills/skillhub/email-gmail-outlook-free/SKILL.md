@@ -4,6 +4,7 @@ name: "email-gmail-outlook-free"
 version: "1.0.0"
 displayName: "Email Free"
 summary: "基于 porteden CLI 读取与搜索 Gmail、Outlook 邮件的基础版。基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook"
+summary_zh: "基于 porteden CLI 读取与搜索 Gmail、Outlook 邮件的基础版。基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook"
 license: "MIT"
 description: |-
   基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook 邮箱邮件,

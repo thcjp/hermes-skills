@@ -9,6 +9,7 @@ from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
 from project_config import DB_PATH
 from project_config import DIFFERENTIATED_DIR
+from project_config import DATA_DIR
 # === End Phase 1 ===
 
 
@@ -199,6 +200,7 @@ def generate_report(results, output_file=None):
 def update_database_with_check_results(results):
     """将检测结果更新到数据库"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
 
     now = datetime.now().isoformat()
@@ -240,7 +242,7 @@ def update_database_with_check_results(results):
 
 if __name__ == '__main__':
 
-    target_dir = sys.argv[1] if len(sys.argv) > 1 else r'str(DIFFERENTIATED_DIR)'
+    target_dir = sys.argv[1] if len(sys.argv) > 1 else str(DIFFERENTIATED_DIR)
 
     # Exclude the skill-production-standards itself (it documents the detection rules)
     exclude_dirs = ['skill-production-standards']

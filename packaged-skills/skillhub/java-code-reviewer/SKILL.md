@@ -4,6 +4,7 @@ name: "java-code-reviewer"
 version: 1.0.1
 displayName: "Java Code Reviewer"
 summary: "Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。 触发场景： (1) 审查 git diff 或代码变更 (2)"
+summary_zh: "Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。 触发场景： (1) 审查 git diff 或代码变更 (2)"
 license: "MIT"
 description: |-
   Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.

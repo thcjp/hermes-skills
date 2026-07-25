@@ -4,6 +4,7 @@ name: "gateway-manager"
 version: 1.0.1
 displayName: "API网关管理器(专业版)"
 summary: "企业级API网关平台，含多租户、熔断、灰度、动态配置、可观测性与插件体系。。API网关管理器专业版是面向企业的全功能API网关平台。在免费版的声明式路由、统一认证、基础限流、监控指标基础上，"
+summary_zh: "企业级API网关平台，含多租户、熔断、灰度、动态配置、可观测性与插件体系。。API网关管理器专业版是面向企业的全功能API网关平台。在免费版的声明式路由、统一认证、基础限流、监控指标基础上，"
 license: "MIT"
 edition: "pro"
 description: |-

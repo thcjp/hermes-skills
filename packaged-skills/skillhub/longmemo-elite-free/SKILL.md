@@ -4,6 +4,7 @@ name: "longmemo-elite-free"
 version: "1.0.0"
 displayName: "精英长记忆"
 summary: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。。面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点. WAL写前日志协议采用"先写状态，再回复用"
+summary_zh: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。。面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点. WAL写前日志协议采用"先写状态，再回复用"
 license: "MIT"
 description: |-
   面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点.

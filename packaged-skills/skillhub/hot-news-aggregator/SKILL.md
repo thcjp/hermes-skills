@@ -4,6 +4,7 @@ name: "hot-news-aggregator"
 version: 1.0.1
 displayName: "hot-news-aggregator"
 summary: "国内外社会科技军事新闻汇总,自动搜索筛选整理要点。国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不"
+summary_zh: "国内外社会科技军事新闻汇总,自动搜索筛选整理要点。国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不"
 license: "MIT"
 description: |-
   国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.

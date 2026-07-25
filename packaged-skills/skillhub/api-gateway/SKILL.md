@@ -4,6 +4,7 @@ name: "api-gateway"
 version: 1.0.1
 displayName: "API网关集成路由"
 summary: "通过托管API网关连接Slack/Gmail/Stripe等外部服务,含连接管理、触发器、事件重放与安全审批"
+summary_zh: "通过托管API网关连接Slack/Gmail/Stripe等外部服务,含连接管理、触发器、事件重放与安全审批"
 license: "MIT"
 description: |-
   托管式 API 网关路由服务。通过统一的 API 路由地址连接 Slack、Gmail、HubSpot、Salesforce、Stripe、

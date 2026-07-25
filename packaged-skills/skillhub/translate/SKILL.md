@@ -4,6 +4,7 @@ name: "translate"
 version: 1.0.1
 displayName: "Translate"
 summary: "准确翻译文本,保格式/处理复数/按地区调语气。Translate text accurately — preserve formatting, handle plurals, and ada"
+summary_zh: "准确翻译文本,保格式/处理复数/按地区调语气。Translate text accurately — preserve formatting, handle plurals, and ada"
 license: "MIT"
 description: |-
   Translate text accurately — preserve formatting, handle plurals, and

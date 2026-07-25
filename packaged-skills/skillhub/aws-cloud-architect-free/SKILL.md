@@ -4,6 +4,7 @@ name: "aws-cloud-architect-free"
 version: "1.0.0"
 displayName: "AWS 架构师免费"
 summary: "AWS 基础架构设计与成本优化助手(免费版)。AWS 云架构师助手(免费版),提供基础架构设计、服务选型与只读资源查询. 覆盖 MVP 阶段技术栈推荐、常用 CLI 只读命令、基础成本陷阱识"
+summary_zh: "AWS 基础架构设计与成本优化助手(免费版)。AWS 云架构师助手(免费版),提供基础架构设计、服务选型与只读资源查询. 覆盖 MVP 阶段技术栈推荐、常用 CLI 只读命令、基础成本陷阱识"
 license: "MIT"
 description: |-
   AWS 云架构师助手(免费版),提供基础架构设计、服务选型与只读资源查询.

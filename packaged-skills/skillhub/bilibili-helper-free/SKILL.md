@@ -4,6 +4,7 @@ name: "bilibili-helper-free"
 version: 1.0.1
 displayName: "B站创作助手-免费版"
 summary: "B站视频运营基础工具，提供标题生成、简介与标签推荐、口播脚本撰写，帮助内容创作者快速完成投稿素材准备。"
+summary_zh: "B站视频运营基础工具，提供标题生成、简介与标签推荐、口播脚本撰写，帮助内容创作者快速完成投稿素材准备。"
 license: "MIT"
 description: |-
   面向B站(Bilibili)内容创作者的基础运营辅助工具，覆盖视频投稿前的核心内容生产环节.

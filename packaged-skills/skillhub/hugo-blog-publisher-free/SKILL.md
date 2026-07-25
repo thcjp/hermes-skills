@@ -4,6 +4,7 @@ name: "hugo-blog-publisher-free"
 version: "1.0.0"
 displayName: "博客发布工具(免费版)"
 summary: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库(免费版)。将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取 标题、标签、分类，生成front"
+summary_zh: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库(免费版)。将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取 标题、标签、分类，生成front"
 license: "MIT"
 description: |-
   将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取

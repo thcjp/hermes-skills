@@ -5,6 +5,7 @@ name: "telegram-chat"
 version: 1.0.1
 displayName: "电报聊天工具专业版"
 summary: "企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。。电报聊天工具专业版,面向团队与企业用户提供多 Bot 管理、主动消息推送、消息归档审计与群组批"
+summary_zh: "企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。。电报聊天工具专业版,面向团队与企业用户提供多 Bot 管理、主动消息推送、消息归档审计与群组批"
 license: "MIT"
 edition: "pro"
 description: |-
@@ -24,7 +25,13 @@ description: |-
   - 消息合规存档与审计追溯
 
   差异化:专业版完全兼容免费版配置与命令体系...
-tags: Telegram,自动化,消息归档,bot,专业版独,请参考
+tags:
+  - Telegram
+  - 自动化
+  - 消息归档
+  - bot
+  - 专业版独
+  - 请参考
 tools:
   - read
   - exec

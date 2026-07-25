@@ -4,6 +4,7 @@ name: "anygen-diagram"
 version: 1.0.1
 displayName: "AnyGen图表生成-专业版"
 summary: "企业级图表生成工具,支持批量生成、自定义模板、团队协作与API集成,适配商业文档生产。。AnyGen图表生成专业版,面向企业团队与专业用户的高级图表与可视化结构生成工具。核心能力: - 批量"
+summary_zh: "企业级图表生成工具,支持批量生成、自定义模板、团队协作与API集成,适配商业文档生产。。AnyGen图表生成专业版,面向企业团队与专业用户的高级图表与可视化结构生成工具。核心能力: - 批量"
 license: "MIT"
 edition: "pro"
 description: |-

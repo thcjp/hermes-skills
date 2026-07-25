@@ -4,6 +4,7 @@ name: "api-connect-hub"
 version: 1.0.1
 displayName: "API连接中心(专业版)"
 summary: "企业级API集成平台，含连接编排、数据同步、Webhook管理、OAuth2刷新与监控告警。。API连接中心专业版是面向企业的全功能API集成平台。在免费版的连接器注册、凭证安全存储、统一调"
+summary_zh: "企业级API集成平台，含连接编排、数据同步、Webhook管理、OAuth2刷新与监控告警。。API连接中心专业版是面向企业的全功能API集成平台。在免费版的连接器注册、凭证安全存储、统一调"
 license: "MIT"
 edition: "pro"
 description: |-

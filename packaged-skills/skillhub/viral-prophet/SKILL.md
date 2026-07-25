@@ -5,6 +5,7 @@ name: viral-prophet
 version: 1.0.1
 displayName: "爆款预言机"
 summary: "发布前预测爆款潜力,6维潜力评分+5大爆款要素+竞品对比,3秒出预测报告。爆款预言机是一款内容爆款潜力预测工具,发布前评估内容表现. 基于6维潜力评分、5大爆款要素分析与竞品对比,3秒生成预"
+summary_zh: "发布前预测爆款潜力,6维潜力评分+5大爆款要素+竞品对比,3秒出预测报告。爆款预言机是一款内容爆款潜力预测工具,发布前评估内容表现. 基于6维潜力评分、5大爆款要素分析与竞品对比,3秒生成预"
 license: "MIT"
 description: |-
   爆款预言机是一款内容爆款潜力预测工具,发布前评估内容表现.
@@ -15,7 +16,13 @@ description: |-
   - 竞品对比分析
   - 优化建议与发布时机推荐
 homepage: ""
-tags: 工具,content,step,platform,发布时机,不支持
+tags:
+  - 工具
+  - content
+  - step
+  - platform
+  - 发布时机
+  - 不支持
 tools:
   - read
   - exec

@@ -4,6 +4,7 @@ name: "vscode-node-paid"
 version: 1.0.1
 displayName: "VSCode节点工具(专业版)"
 summary: "面向团队的企业级IDE远程操作平台,含调试、测试、终端、Agent委托与团队协作能力。。VSCode节点工具专业版为团队与企业提供端到端IDE远程操作能力,涵盖调试、测试、终端、Agent委"
+summary_zh: "面向团队的企业级IDE远程操作平台,含调试、测试、终端、Agent委托与团队协作能力。。VSCode节点工具专业版为团队与企业提供端到端IDE远程操作能力,涵盖调试、测试、终端、Agent委"
 license: "MIT"
 edition: "pro"
 description: |-

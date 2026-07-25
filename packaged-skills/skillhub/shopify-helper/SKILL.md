@@ -5,10 +5,16 @@ name: "shopify-helper"
 version: 2.0.1
 displayName: "Shopify Helper"
 summary: "Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Shopify store builder with setup,"
+summary_zh: "Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Shopify store builder with setup,"
 license: "MIT"
 description: |-
   Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单.
-tags: shopify,api,依赖说明,不支持,agent
+tags:
+  - shopify
+  - api
+  - 依赖说明
+  - 不支持
+  - agent
 tools:
   - read
   - exec

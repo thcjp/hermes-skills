@@ -5,11 +5,18 @@ name: "monad-development"
 version: 1.0.1
 displayName: "Monad Development"
 summary: "在Monad区块链建dapp,部署合约/配前端。Builds dapps on Monad blockchain。Use when deploying contracts, setting"
+summary_zh: "在Monad区块链建dapp,部署合约/配前端。Builds dapps on Monad blockchain。Use when deploying contracts, setting"
 license: "MIT"
 description: |-
   Builds dapps on Monad blockchain。Use when deploying contracts, setting
   up frontends with viem/wa。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
-tags: 开发,代码,mytoken,sol,src,依赖说明
+tags:
+  - 开发
+  - 代码
+  - mytoken
+  - sol
+  - src
+  - 依赖说明
 tools:
   - read
   - exec

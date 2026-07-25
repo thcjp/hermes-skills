@@ -7,7 +7,8 @@ displayName: K8s清单生成专业版
 summary: "企业级K8s清单管理平台，支持Helm/Kustomize、策略校验与CI/CD集成.。面向企业DevOps团队的K8s清单管理平台。支持Helm Chart与Kustomize"
 license: Proprietary
 edition: pro
-description: '面向企业DevOps团队的K8s清单管理平台。支持Helm Chart与Kustomize
+description: "面向企业DevOps团队的K8s清单管理平台。支持Helm Chart与Kustomize
+  完整工作流、策略合规校验、多环境覆盖、GitOps集成与CRD管理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：数据分析、自动化、测试、安全、部署、设计"
 
   完整工作流、策略合规校验、多环境覆盖、GitOps集成与CRD管理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags: DevOps,企业级,自动化,helm,python3,请参考
@@ -19,8 +20,8 @@ homepage: ""
 # 定价元数据
 category: "Automation"
 
----
 
+---
 # K8s清单生成专业版（PRO版）
 
 ## 概述

@@ -5,6 +5,7 @@ name: "join-meeting-free"
 version: "1.0.0"
 displayName: "智能会议机器人免费版"
 summary: "免费版会议机器人，支持基础会议加入、语音状态监听与会议转写。。会议机器人免费版，提供基础的会议参与功能. 支持会议加入、语音状态监听与会议转写. 适用于个人会议记录与基础会议辅助场景."
+summary_zh: "免费版会议机器人，支持基础会议加入、语音状态监听与会议转写。。会议机器人免费版，提供基础的会议参与功能. 支持会议加入、语音状态监听与会议转写. 适用于个人会议记录与基础会议辅助场景."
 license: "MIT"
 description: |-
   会议机器人免费版，提供基础的会议参与功能.
@@ -15,7 +16,13 @@ tools:
   - exec
   - write
 homepage: ""
-tags: api,meeting,加入会议,join,语音状态,会议
+tags:
+  - api
+  - meeting
+  - 加入会议
+  - join
+  - 语音状态
+  - 会议
 category: "Automation"
 
 ---

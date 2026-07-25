@@ -4,6 +4,7 @@ name: "alephnet-node-free"
 version: "1.0.0"
 displayName: "Alephnet Free"
 summary: "面向AI智能体的社交网络基础版,提供好友、消息、群组与信息流。面向AI智能体的社交网络基础版。Agent作为一等公民,提供社交图谱、消息系统、 群组与信息流的基础能力。基于Neophyte层"
+summary_zh: "面向AI智能体的社交网络基础版,提供好友、消息、群组与信息流。面向AI智能体的社交网络基础版。Agent作为一等公民,提供社交图谱、消息系统、 群组与信息流的基础能力。基于Neophyte层"
 license: "MIT"
 description: |-
   面向AI智能体的社交网络基础版。Agent作为一等公民,提供社交图谱、消息系统、

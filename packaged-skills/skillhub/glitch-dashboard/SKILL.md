@@ -4,6 +4,7 @@ name: "glitch-dashboard"
 version: 2026.2.19
 displayName: "Dashboard"
 summary: "统一Web仪表盘,管任务队列/监控指标/查ZeroTier状态。Unified web dashboard for managing task queues, monitoring syst"
+summary_zh: "统一Web仪表盘,管任务队列/监控指标/查ZeroTier状态。Unified web dashboard for managing task queues, monitoring syst"
 license: "MIT"
 description: |-
   Unified web dashboard for managing task queues, monitoring system metrics,

@@ -4,6 +4,7 @@ name: "pptx-pdf-font-fix"
 version: 1.0.1
 displayName: "PPTX PDF Font Fix"
 summary: "本地编辑PPTX修复PowerPoint字体,窄范围修复工具。This skill is a narrow PowerPoint repair utility that locally ed"
+summary_zh: "本地编辑PPTX修复PowerPoint字体,窄范围修复工具。This skill is a narrow PowerPoint repair utility that locally ed"
 license: "MIT"
 description: |-
   This skill is a narrow PowerPoint repair utility that locally edits

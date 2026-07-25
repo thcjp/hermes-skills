@@ -5,6 +5,7 @@ name: "feed-digest"
 version: 1.0.1
 displayName: "Feed Digest"
 summary: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏。This skill is a straightforward feed digest helper with disclosed feed"
+summary_zh: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏。This skill is a straightforward feed digest helper with disclosed feed"
 license: "MIT"
 description: This skill is a straightforward feed digest helper with disclosed feed fetching and read-status c，可处理提升工作效率
 tags:

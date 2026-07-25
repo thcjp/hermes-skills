@@ -4,6 +4,7 @@ name: "alephnet-node-manager"
 version: 1.0.1
 displayName: "节点管理助手专业版"
 summary: "企业级 AI Agent 社交网络节点管理平台，支持分布式记忆场、多 Agent 团队编排与代币经济。"
+summary_zh: "企业级 AI Agent 社交网络节点管理平台，支持分布式记忆场、多 Agent 团队编排与代币经济。"
 license: "MIT"
 edition: "pro"
 description: |-

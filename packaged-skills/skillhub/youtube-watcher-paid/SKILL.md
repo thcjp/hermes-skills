@@ -4,6 +4,7 @@ name: "youtube-watcher-paid"
 version: 1.0.1
 displayName: "YouTube字幕提取-专业版"
 summary: "企业级YouTube内容分析平台，支持批量字幕提取、频道监控、多语言对比与关键词追踪，适合内容研究团队。"
+summary_zh: "企业级YouTube内容分析平台，支持批量字幕提取、频道监控、多语言对比与关键词追踪，适合内容研究团队。"
 license: "MIT"
 edition: "pro"
 description: |-

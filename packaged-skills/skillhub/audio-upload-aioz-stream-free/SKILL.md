@@ -4,6 +4,7 @@ name: "audio-upload-aioz-stream-free"
 version: "1.0.0"
 displayName: "AIOZ音频上传免费版"
 summary: "通过AIOZ Stream API以默认配置上传音频文件，返回HLS流媒体播放链接，适合快速发布。。基于 AIOZ Stream API 的音频上传技能免费版，通过三步流程 (Create"
+summary_zh: "通过AIOZ Stream API以默认配置上传音频文件，返回HLS流媒体播放链接，适合快速发布。。基于 AIOZ Stream API 的音频上传技能免费版，通过三步流程 (Create"
 license: "MIT"
 description: |-
   基于 AIOZ Stream API 的音频上传技能免费版，通过三步流程

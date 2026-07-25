@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillHub审核与展示机制全面分析报告 v3</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        h1 { font-size: 28px; color: #f1f5f9; margin-bottom: 8px; }
+        h2 { font-size: 22px; color: #38bdf8; margin: 32px 0 16px; border-bottom: 1px solid #1e293b; padding-bottom: 8px; }
+        h3 { font-size: 18px; color: #818cf8; margin: 24px 0 12px; }
+        .subtitle { color: #94a3b8; margin-bottom: 24px; font-size: 14px; }
+        .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 16px; border: 1px solid #334155; }
+        .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .badge { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .badge-red { background: #dc2626; color: #fff; }
+        .badge-green { background: #16a34a; color: #fff; }
+        .badge-yellow { background: #ca8a04; color: #fff; }
+        .badge-blue { background: #2563eb; color: #fff; }
+        .badge-purple { background: #7c3aed; color: #fff; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+        th { background: #334155; padding: 10px 12px; text-align: left; color: #cbd5e1; font-weight: 600; }
+        td { padding: 10px 12px; border-bottom: 1px solid #334155; color: #e2e8f0; }
+        tr:hover { background: #1e293b; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 16px 0; }
+        .stat-card { background: #1e293b; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #334155; }
+        .stat-number { font-size: 36px; font-weight: 700; color: #38bdf8; }
+        .stat-label { font-size: 13px; color: #94a3b8; margin-top: 4px; }
+        .stat-card.danger .stat-number { color: #ef4444; }
+        .stat-card.success .stat-number { color: #22c55e; }
+        .stat-card.warning .stat-number { color: #f59e0b; }
+        .progress-bar { height: 8px; background: #334155; border-radius: 4px; margin: 8px 0; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .progress-fill.green { background: #22c55e; }
+        .progress-fill.red { background: #ef4444; }
+        .progress-fill.yellow { background: #f59e0b; }
+        .section { margin-bottom: 32px; }
+        .alert { padding: 12px 16px; border-radius: 8px; margin: 12px 0; }
+        .alert-danger { background: rgba(220, 38, 38, 0.15); border: 1px solid #dc2626; color: #fca5a5; }
+        .alert-warning { background: rgba(202, 138, 4, 0.15); border: 1px solid #ca8a04; color: #fde68a; }
+        .alert-info { background: rgba(37, 99, 235, 0.15); border: 1px solid #2563eb; color: #93c5fd; }
+        .alert-success { background: rgba(22, 163, 74, 0.15); border: 1px solid #16a34a; color: #86efac; }
+        .factor-list { list-style: none; }
+        .factor-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px; border-bottom: 1px solid #334155; }
+        .factor-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+        .factor-content { flex: 1; }
+        .factor-title { font-weight: 600; color: #f1f5f9; margin-bottom: 4px; }
+        .factor-desc { font-size: 13px; color: #94a3b8; }
+        .factor-impact { font-size: 12px; margin-top: 4px; }
+        .impact-high { color: #ef4444; }
+        .impact-medium { color: #f59e0b; }
+        .impact-low { color: #22c55e; }
+        .action-item { display: flex; gap: 16px; padding: 16px; background: #1e293b; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid; }
+        .action-p0 { border-color: #ef4444; }
+        .action-p1 { border-color: #f59e0b; }
+        .action-p2 { border-color: #22c55e; }
+        .action-priority { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+        .priority-p0 { background: #ef4444; color: #fff; }
+        .priority-p1 { background: #f59e0b; color: #fff; }
+        .priority-p2 { background: #22c55e; color: #fff; }
+        .code-block { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px; font-family: 'Courier New', monospace; font-size: 13px; overflow-x: auto; margin: 8px 0; }
+        .footer { text-align: center; color: #64748b; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #334155; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SkillHub审核与展示机制全面分析报告</h1>
+        <p class="subtitle">版本: v3.0 | 日期: 2026-07-25 | 数据来源: SkillHub API + 浏览器调研 + 本地995个skill抽样分析</p>
+
+        <!-- 总览统计 -->
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-number">995</div>
+                <div class="stat-label">本地skill总数</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-number">2,706</div>
+                <div class="stat-label">待管理员审核</div>
+            </div>
+            <div class="stat-card danger">
+                <div class="stat-number">20</div>
+                <div class="stat-label">审核被拒(旧版本)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">9.2万</div>
+                <div class="stat-label">平台skill总量</div>
+            </div>
+            <div class="stat-card danger">
+                <div class="stat-number">0%</div>
+                <div class="stat-label">Verified认证率</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-number">15%</div>
+                <div class="stat-label">IconUrl缺失率</div>
+            </div>
+        </div>
+
+        <!-- 第一部分：审核拒绝原因分析 -->
+        <h2>一、审核拒绝原因深度分析</h2>
+
+        <div class="alert alert-danger">
+            <strong>核心发现：</strong>20个skill被拒绝，全部原因是"缺少必要的支付服务"。拒绝通知建议"使用指南-升级为Pay Skill"。
+        </div>
+
+        <h3>1.1 拒绝通知详情</h3>
+        <div class="card">
+            <p>从SkillHub管理后台通知面板获取到20条审核拒绝通知，全部为18小时前发送：</p>
+            <table>
+                <tr><th>Skill Slug</th><th>被拒版本</th><th>拒绝原因</th><th>当前API状态</th></tr>
+                <tr><td>ai-writing-style-cloner</td><td>v1.0.1</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>api-design-architect</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>auth-security-architect</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>azure-cloud-automator</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>brand-identity-creator</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>c-suite-advisor</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>canvas-art-designer</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>clickhouse-olap-expert</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>cloudflare-edge-developer</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>code-review-sentinel</td><td>v1.1.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>competitive-ad-spy</td><td>v1.0.1</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>compliance-manager</td><td>v1.0.1</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>content-cms-architect</td><td>v1.0.1</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>content-refiner</td><td>v1.0.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>copywriting-master</td><td>v1.0.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>csv-insight-miner</td><td>v1.0.1</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>drama-hit-producer</td><td>v1.0.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>ebook-factory</td><td>v1.0.1</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>ecommerce-pricing-strategist</td><td>v1.0.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+                <tr><td>geo-rank-architect</td><td>v1.0.0</td><td>缺少必要的支付服务</td><td><span class="badge badge-yellow">存在</span></td></tr>
+            </table>
+        </div>
+
+        <h3>1.2 拒绝根因分析</h3>
+        <div class="card">
+            <p><strong>根因1：旧版本Proprietary license残留</strong></p>
+            <p>被拒的20个skill版本为v1.0.0/v1.0.1/v1.1.0，这些版本在上传时使用了Proprietary license。Proprietary license的skill需要绑定支付服务（SkillPay），但当时未配置。虽然后来license已改为MIT并重新上传了新版本，但旧版本的审核拒绝状态仍然保留在通知中。</p>
+            <div style="height:12px"></div>
+            <p><strong>根因2：版本审核状态独立</strong></p>
+            <p>SkillHub的审核是按版本进行的。每个版本上传后都会进入审核队列。旧版本被拒不影响新版本的审核，但旧版本的拒绝通知不会自动清除。</p>
+            <div style="height:12px"></div>
+            <p><strong>根因3：安全审核通过但平台审核未通过</strong></p>
+            <p>从API获取的安全报告显示，所有20个被拒skill的安全状态都是"benign"（安全，无风险）。说明安全审核已通过，但平台审核因"缺少支付服务"未通过。</p>
+        </div>
+
+        <h3>1.3 解决方案</h3>
+        <div class="alert alert-success">
+            <strong>解决方案：</strong>可以删除被拒skill的旧版本，然后重新上传MIT license的新版本。由于API不支持PUT更新，必须使用DELETE + POST策略。
+        </div>
+        <div class="card">
+            <p><strong>DELETE + 重传流程：</strong></p>
+            <div class="code-block">
+DELETE /api/v1/orgs/862/admin/skills/{slug}    # 删除旧版本
+  ↓ 等待1秒
+POST /api/v1/orgs/862/skills                    # 重新上传MIT版本
+  payload包含: license=MIT, tags, summary_zh, category, subCategories
+  ↓
+进入审核队列 (pending_review)
+  ↓
+批量审核通过 (admin/skill-reviews)
+  ↓
+前台可见
+            </div>
+        </div>
+
+        <!-- 第二部分：前台展示影响因素 -->
+        <h2>二、前台展示影响因素全面分析</h2>
+
+        <div class="alert alert-info">
+            <strong>研究方法：</strong>通过前台首页快照分析、API字段对比、推荐位skill特征分析，识别出10个影响前台展示的关键因素。
+        </div>
+
+        <h3>2.1 展示影响因素排名</h3>
+        <div class="card">
+            <ul class="factor-list">
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#dc2626;">1</div>
+                    <div class="factor-content">
+                        <div class="factor-title">审核状态 (Review Status)</div>
+                        <div class="factor-desc">必须通过管理员审核才能在前台可见。当前2,706个版本待审核，导致绝大部分skill前台不可见。</div>
+                        <div class="factor-impact impact-high">影响等级: 极高 | 当前状态: 2,706待审 | 目标: 全部审核通过</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#dc2626;">2</div>
+                    <div class="factor-content">
+                        <div class="factor-title">Verified认证 (Author Verified)</div>
+                        <div class="factor-desc">前台推荐位的skill全部有"已认证"标记。未认证的skill无法进入推荐位，曝光大幅降低。</div>
+                        <div class="factor-impact impact-high">影响等级: 极高 | 当前状态: 0%认证 | 目标: 通过企业认证</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#ca8a04;">3</div>
+                    <div class="factor-content">
+                        <div class="factor-title">Stars星评 + Downloads下载量</div>
+                        <div class="factor-desc">前台默认排序sortBy=score，以星评和下载量加权计算。当前星评0-1，下载53-699，在9.2万skill中排名极低。</div>
+                        <div class="factor-impact impact-medium">影响等级: 高 | 当前状态: 0-1星 | 目标: 提升至3+星</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#ca8a04;">4</div>
+                    <div class="factor-content">
+                        <div class="factor-title">IconUrl图标URL</div>
+                        <div class="factor-desc">列表页展示需要图标。无图标的skill在列表中显示默认图标，视觉吸引力差，降低点击率。clawhub同步的skill有图标，community上传的85%缺失。</div>
+                        <div class="factor-impact impact-medium">影响等级: 高 | 当前状态: 85%有图标 | 目标: 100%有图标</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#2563eb;">5</div>
+                    <div class="factor-content">
+                        <div class="factor-title">DisplayName显示名称</div>
+                        <div class="factor-desc">前台搜索框支持"搜索skill名称、描述"。DisplayName直接影响搜索匹配率。中文名称比英文名称在中文用户搜索中更有优势。</div>
+                        <div class="factor-impact impact-medium">影响等级: 中 | 当前状态: 部分英文 | 目标: 全部中文名称</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#2563eb;">6</div>
+                    <div class="factor-content">
+                        <div class="factor-title">Category分类 + SubCategories子分类</div>
+                        <div class="factor-desc">前台支持按分类筛选。正确的分类让用户在浏览特定类别时能找到skill。平台12个分类使用字符串键。</div>
+                        <div class="factor-impact impact-low">影响等级: 中 | 当前状态: 100%有分类 | 目标: 维持100%</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#2563eb;">7</div>
+                    <div class="factor-content">
+                        <div class="factor-title">Tags标签</div>
+                        <div class="factor-desc">平台tags格式为 {tag_name: version} 字典。tags影响搜索和标签筛选。当前100%有tags，格式正确。</div>
+                        <div class="factor-impact impact-low">影响等级: 中 | 当前状态: 100%有tags | 目标: 维持100%</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#2563eb;">8</div>
+                    <div class="factor-content">
+                        <div class="factor-title">Summary_ZH中文摘要</div>
+                        <div class="factor-desc">中文摘要在列表页展示，影响用户点击意愿。当前100%有中文摘要。</div>
+                        <div class="factor-impact impact-low">影响等级: 中 | 当前状态: 100%有摘要 | 目标: 维持100%</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#22c55e;">9</div>
+                    <div class="factor-content">
+                        <div class="factor-title">Security Reports安全报告</div>
+                        <div class="factor-desc">平台展示安全状态（keen/sanbu两套报告）。当前全部"benign"（安全），不影响展示。</div>
+                        <div class="factor-impact impact-low">影响等级: 低 | 当前状态: 100%安全 | 目标: 维持100%</div>
+                    </div>
+                </li>
+                <li class="factor-item">
+                    <div class="factor-icon" style="background:#22c55e;">10</div>
+                    <div class="factor-content">
+                        <div class="factor-title">Source来源</div>
+                        <div class="factor-desc">community上传的skill和clawhub同步的skill在展示上没有区别，但clawhub同步的skill自动有图标。</div>
+                        <div class="factor-impact impact-low">影响等级: 低 | 当前状态: 5%community | 目标: 不影响</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <h3>2.2 前台展示路径分析</h3>
+        <div class="card">
+            <table>
+                <tr><th>展示位置</th><th>获取方式</th><th>影响因素</th><th>当前状态</th></tr>
+                <tr><td>首页推荐位</td><td>人工/算法精选</td><td>Verified + Stars + 品牌知名度</td><td><span class="badge badge-red">无法进入</span></td></tr>
+                <tr><td>首页"为你推荐"</td><td>个性化推荐</td><td>Stars + Downloads + 相关性</td><td><span class="badge badge-red">排名极低</span></td></tr>
+                <tr><td>搜索结果</td><td>关键词搜索</td><td>DisplayName + Summary + Tags匹配</td><td><span class="badge badge-yellow">可被搜到</span></td></tr>
+                <tr><td>分类浏览</td><td>分类筛选</td><td>Category + SubCategories</td><td><span class="badge badge-green">可被找到</span></td></tr>
+                <tr><td>精选专区</td><td>官方精选</td><td>官方推荐</td><td><span class="badge badge-red">无法进入</span></td></tr>
+            </table>
+        </div>
+
+        <!-- 第三部分：缺失字段审计 -->
+        <h2>三、缺失字段审计</h2>
+
+        <div class="alert alert-warning">
+            <strong>审计方法：</strong>抽样50个本地skill，通过公开API获取详情，逐一检查字段覆盖情况。
+        </div>
+
+        <h3>3.1 字段覆盖率统计</h3>
+        <div class="card">
+            <table>
+                <tr><th>字段名</th><th>覆盖率</th><th>状态</th><th>说明</th></tr>
+                <tr>
+                    <td>Category</td>
+                    <td>100%</td>
+                    <td><span class="badge badge-green">优秀</span></td>
+                    <td>12个平台分类，字符串键格式</td>
+                </tr>
+                <tr>
+                    <td>SubCategories</td>
+                    <td>100%</td>
+                    <td><span class="badge badge-green">优秀</span></td>
+                    <td>每个skill 1-3个子分类</td>
+                </tr>
+                <tr>
+                    <td>Tags</td>
+                    <td>100%</td>
+                    <td><span class="badge badge-green">优秀</span></td>
+                    <td>dict格式 {tag: version}，平台正常格式</td>
+                </tr>
+                <tr>
+                    <td>Summary_ZH</td>
+                    <td>100%</td>
+                    <td><span class="badge badge-green">优秀</span></td>
+                    <td>中文摘要，50-200字</td>
+                </tr>
+                <tr>
+                    <td>IconUrl</td>
+                    <td>85%</td>
+                    <td><span class="badge badge-yellow">需改善</span></td>
+                    <td>community上传的skill 95%无图标</td>
+                </tr>
+                <tr>
+                    <td>Verified</td>
+                    <td>0%</td>
+                    <td><span class="badge badge-red">严重缺失</span></td>
+                    <td>需通过企业认证获得</td>
+                </tr>
+                <tr>
+                    <td>Security Reports</td>
+                    <td>100%</td>
+                    <td><span class="badge badge-green">优秀</span></td>
+                    <td>全部"benign"（安全）</td>
+                </tr>
+                <tr>
+                    <td>API存在性</td>
+                    <td>56%</td>
+                    <td><span class="badge badge-red">严重缺失</span></td>
+                    <td>22/50在API中404，可能在审核中或slug不匹配</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>3.2 404 Skill分析</h3>
+        <div class="card">
+            <p>抽样50个skill中，22个在公开API中返回404。这些skill的特点：</p>
+            <ul style="margin-left:20px; color:#94a3b8;">
+                <li>大部分带有"-free"后缀（如accounting-and-finance-free, ace-music-free）</li>
+                <li>可能是从clawhub下载的开源修改版skill</li>
+                <li>slug可能与SkillHub上的不匹配</li>
+                <li>可能仍在审核队列中，尚未公开</li>
+            </ul>
+            <div class="alert alert-info">
+                <strong>注意：</strong>404并不意味着skill上传失败。审核中的skill在公开API中可能不可见，只有审核通过后才会出现在公开API中。
+            </div>
+        </div>
+
+        <h3>3.3 可设置但未设置的字段</h3>
+        <div class="card">
+            <table>
+                <tr><th>字段</th><th>当前状态</th><th>设置方式</th><th>优先级</th></tr>
+                <tr><td>iconUrl</td><td>85%有(community 5%有)</td><td>上传图标到COS/图床，在payload中设置</td><td>P1</td></tr>
+                <tr><td>verified</td><td>0%认证</td><td>通过企业认证申请</td><td>P1</td></tr>
+                <tr><td>changelog</td><td>部分有"Initial release"</td><td>在payload中设置版本更新说明</td><td>P2</td></tr>
+                <tr><td>billingType</td><td>未设置(MIT免费)</td><td>MIT license不需要</td><td>-</td></tr>
+                <tr><td>price</td><td>0(MIT免费)</td><td>MIT license不需要</td><td>-</td></tr>
+                <tr><td>authorVerifiedHandle</td><td>null</td><td>通过GitHub/ClawHub账号关联</td><td>P2</td></tr>
+                <tr><td>claim_state</td><td>unclaimed</td><td>认领skill所有权</td><td>P2</td></tr>
+            </table>
+        </div>
+
+        <!-- 第四部分：行动计划 -->
+        <h2>四、优先级行动计划</h2>
+
+        <div class="action-item action-p0">
+            <span class="action-priority priority-p0">P0</span>
+            <div>
+                <strong>批量审核通过2,706个待审版本</strong>
+                <p style="color:#94a3b8; font-size:13px; margin-top:4px;">在admin/skill-reviews页面批量点击"审核通过"，或通过API批量审批。这是最高优先级，审核通过后skill才能在前台可见。每批50-100个，271页需要分批处理。</p>
+            </div>
+        </div>
+
+        <div class="action-item action-p0">
+            <span class="action-priority priority-p0">P0</span>
+            <div>
+                <strong>删除重传20个被拒skill</strong>
+                <p style="color:#94a3b8; font-size:13px; margin-top:4px;">DELETE旧版本 → POST重新上传MIT版本（含完整字段）→ 审核通过。使用batch_field_fix.py的reupload-rejected命令。</p>
+            </div>
+        </div>
+
+        <div class="action-item action-p1">
+            <span class="action-priority priority-p1">P1</span>
+            <div>
+                <strong>补全IconUrl图标</strong>
+                <p style="color:#94a3b8; font-size:13px; margin-top:4px;">为community上传的skill生成统一风格图标（按12个分类差异化），上传到图床，在DELETE+重传时设置iconUrl字段。</p>
+            </div>
+        </div>
+
+        <div class="action-item action-p1">
+            <span class="action-priority priority-p1">P1</span>
+            <div>
+                <strong>申请Verified企业认证</strong>
+                <p style="color:#94a3b8; font-size:13px; margin-top:4px;">在admin后台的"认证管理"页面申请企业认证。认证后所有skill获得"已认证"标记，可进入推荐位。</p>
+            </div>
+        </div>
+
+        <div class="action-item action-p1">
+            <span class="action-priority priority-p1">P1</span>
+            <div>
+                <strong>重新上传deleted skill (memory-orchestrator-sk)</strong>
+                <p style="color:#94a3b8; font-size:13px; margin-top:4px;">之前被删除的skill需要重新上传，使用增强后的enterprise_uploader.py。</p>
+            </div>
+        </div>
+
+        <div class="action-item action-p2">
+            <span class="action-priority priority-p2">P2</span>
+            <div>
+                <strong>优化DisplayName和Summary提高搜索匹配</strong>
+                <p style="color:#94a3b8; font-size:13px; margin-top:4px;">确保所有skill的DisplayName为中文，Summary包含高频搜索关键词。</p>
+            </div>
+        </div>
+
+        <div class="action-item action-p2">
+            <span class="action-priority priority-p2">P2</span>
+            <div>
+                <strong>鼓励用户评分和下载</strong>
+                <p style="color:#94a3b8; font-size:13px; margin-top:4px;">通过推广和内容优化提升下载量，获取用户星评，提高sortBy=score排名。</p>
+            </div>
+        </div>
+
+        <div class="action-item action-p2">
+            <span class="action-priority priority-p2">P2</span>
+            <div>
+                <strong>认领skill所有权 (claim_state)</strong>
+                <p style="color:#94a3b8; font-size:13px; margin-top:4px;">在admin后台认领所有skill的所有权，将claim_state从unclaimed改为claimed。</p>
+            </div>
+        </div>
+
+        <!-- 第五部分：前两轮完成情况复核 -->
+        <h2>五、前两轮任务完成情况复核</h2>
+
+        <div class="card">
+            <table>
+                <tr><th>任务</th><th>版本</th><th>状态</th><th>完成情况</th></tr>
+                <tr><td>830个SKILL.md license修复(Proprietary→MIT)</td><td>V52</td><td><span class="badge badge-green">完成</span></td><td>830个文件全部修改，commit 611a1acc0</td></tr>
+                <tr><td>53个source_missing修复</td><td>V53</td><td><span class="badge badge-green">完成</span></td><td>local_path更新为packaged-skills/skillhub/[slug]</td></tr>
+                <tr><td>SkillHub批量上传(994/995)</td><td>V54</td><td><span class="badge badge-green">完成</span></td><td>994个成功上传，1个(dashboard)因保留slug失败</td></tr>
+                <tr><td>category_mapping.json重建</td><td>V54</td><td><span class="badge badge-green">完成</span></td><td>平台12分类字符串键 + 团队10分类中文名 + 映射关系</td></tr>
+                <tr><td>enterprise_uploader.py增强</td><td>V54</td><td><span class="badge badge-green">完成</span></td><td>添加tags/summary_zh/category/subCategories/changelog字段</td></tr>
+                <tr><td>batch_field_fix.py创建</td><td>V55</td><td><span class="badge badge-green">完成</span></td><td>支持check/reupload/batch/gen-approve-js命令</td></tr>
+                <tr><td>批量审核通过2,706版本</td><td>V55</td><td><span class="badge badge-red">未完成</span></td><td>2,706个版本仍在等待审核</td></tr>
+                <tr><td>删除重传20个被拒skill</td><td>V55</td><td><span class="badge badge-red">未完成</span></td><td>20个skill仍处于被拒状态</td></tr>
+                <tr><td>补全tags字段</td><td>V55</td><td><span class="badge badge-green">已完成</span></td><td>API确认100%有tags（dict格式）</td></tr>
+                <tr><td>补全summary_zh字段</td><td>V55</td><td><span class="badge badge-green">已完成</span></td><td>API确认100%有summary_zh</td></tr>
+                <tr><td>补全IconUrl</td><td>V55</td><td><span class="badge badge-yellow">部分完成</span></td><td>85%有图标，community上传的95%缺失</td></tr>
+                <tr><td>重新上传memory-orchestrator-sk</td><td>V55</td><td><span class="badge badge-red">未完成</span></td><td>仍处于删除状态</td></tr>
+                <tr><td>生成统一风格iconUrl</td><td>V55</td><td><span class="badge badge-red">未完成</span></td><td>未生成图标</td></tr>
+                <tr><td>Git提交与v56.0提示词生成</td><td>V55</td><td><span class="badge badge-red">未完成</span></td><td>待执行</td></tr>
+            </table>
+        </div>
+
+        <div class="alert alert-warning">
+            <strong>关键发现：</strong>V55任务清单中的"补全tags"和"补全summary_zh"实际上已经在上传时完成（100%覆盖率）。真正的瓶颈是：
+            <ol style="margin-left:20px; margin-top:8px;">
+                <li><strong>2,706个版本待审核</strong> — 审核通过前前台不可见</li>
+                <li><strong>20个被拒skill</strong> — 需DELETE+重传</li>
+                <li><strong>IconUrl缺失</strong> — community上传的95%无图标</li>
+                <li><strong>Verified认证</strong> — 0%认证，无法进入推荐位</li>
+            </ol>
+        </div>
+
+        <!-- 第六部分：Tags格式研究 -->
+        <h2>六、Tags格式研究</h2>
+        <div class="card">
+            <p><strong>发现：</strong>SkillHub平台的tags字段格式是 <code>{tag_name: version}</code> 字典，不是字符串数组。这是平台的正常格式，不是上传错误。</p>
+            <div class="code-block">
+// API返回的tags格式示例
+{
+    "latest": "1.0.1",        // 版本标记
+    "内容改写": "1.0.1",      // tag名作为key，版本号作为value
+    "原创度": "1.0.1",
+    "多平台分发": "1.0.1"
+}
+            </div>
+            <p style="margin-top:8px;">我们上传时传递的tags字符串数组被平台自动转换为dict格式。tags上传格式正确，无需修改。</p>
+        </div>
+
+        <!-- 第七部分：API能力矩阵 -->
+        <h2>七、API能力矩阵</h2>
+        <div class="card">
+            <table>
+                <tr><th>操作</th><th>方法</th><th>端点</th><th>可用性</th><th>说明</th></tr>
+                <tr><td>获取skill详情</td><td>GET</td><td>/api/v1/skills/{slug}</td><td><span class="badge badge-green">公开</span></td><td>无需认证</td></tr>
+                <tr><td>获取团队skill列表</td><td>GET</td><td>/api/v1/orgs/{id}/admin/skills</td><td><span class="badge badge-yellow">需认证</span></td><td>需企业认证cookie</td></tr>
+                <tr><td>创建skill</td><td>POST</td><td>/api/v1/orgs/{id}/skills</td><td><span class="badge badge-green">可用</span></td><td>FormData上传</td></tr>
+                <tr><td>删除skill</td><td>DELETE</td><td>/api/v1/orgs/{id}/admin/skills/{slug}</td><td><span class="badge badge-green">可用</span></td><td>需企业认证</td></tr>
+                <tr><td>更新skill字段</td><td>PUT</td><td>-</td><td><span class="badge badge-red">不可用</span></td><td>必须DELETE+POST</td></tr>
+                <tr><td>审核通过</td><td>UI</td><td>admin/skill-reviews</td><td><span class="badge badge-green">可用</span></td><td>管理后台页面操作</td></tr>
+                <tr><td>搜索skill</td><td>GET</td><td>/api/v1/skills?keyword=</td><td><span class="badge badge-red">405</span></td><td>公开搜索API不可用，需通过前台搜索框</td></tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>SkillHub审核与展示机制全面分析报告 v3.0 | 生成时间: 2026-07-25</p>
+            <p>数据来源: SkillHub公开API + 管理后台浏览器调研 + 本地995个skill抽样分析</p>
+        </div>
+    </div>
+</body>
+</html>

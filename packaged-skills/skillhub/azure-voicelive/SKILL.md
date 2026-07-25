@@ -4,6 +4,7 @@ name: "azure-voicelive"
 version: 1.0.1
 displayName: "Azure语音交互专业版"
 summary: "企业级实时语音AI工具，支持函数调用、自定义语音、电话音频、高级会话与中断处理。。Azure语音交互专业版 —— 面向企业团队与专业开发者的高级实时语音AI工具。核心能力: - 函数调用（F"
+summary_zh: "企业级实时语音AI工具，支持函数调用、自定义语音、电话音频、高级会话与中断处理。。Azure语音交互专业版 —— 面向企业团队与专业开发者的高级实时语音AI工具。核心能力: - 函数调用（F"
 license: "MIT"
 edition: "pro"
 description: |-

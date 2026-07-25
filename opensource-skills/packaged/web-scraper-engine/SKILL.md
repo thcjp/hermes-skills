@@ -4,6 +4,7 @@ name: web-scraper-engine
 version: 1.0.1
 displayName: 网页抓取引擎
 summary: "Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单。网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数"
+summary_zh: "Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单。网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数"
 license: Proprietary
 description: 网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数据采集。覆盖搜索发现、单页抓取、结构化提取、多步骤浏览器交互全链路。同时提供Crawl4AI开源国内替代方案,无需海外API。适用于竞品分析、价格监控、内容采集、Lead
   Generation、市场调研、结构化提取场景。触发关键词:网页抓取、爬虫、Firecrawl、Playwright、Crawl4AI、网页提取、数据采集、结构化提取、浏览器自动化、竞品监控、价格监控

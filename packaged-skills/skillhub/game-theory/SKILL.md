@@ -4,6 +4,7 @@ name: "game-theory"
 version: 1.0.1
 displayName: "加密协议博弈论分析"
 summary: "面向crypto协议、DeFi机制和治理系统的博弈论分析框架，识别Nash Equilibrium与MEV风险"
+summary_zh: "面向crypto协议、DeFi机制和治理系统的博弈论分析框架，识别Nash Equilibrium与MEV风险"
 license: "MIT"
 description: |-
   面向加密协议、DeFi机制和治理系统的博弈论分析框架.

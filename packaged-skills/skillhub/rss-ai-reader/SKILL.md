@@ -4,6 +4,7 @@ name: "rss-ai-reader"
 version: 1.0.1
 displayName: "RSS AI 摘要推送"
 summary: "RSS自动抓取与LLM摘要生成,推送飞书/Telegram/Email,SQLite去重与定时任务。RSS AI 阅读器。自动抓取 RSS/Atom 订阅源,通过 ai-assistant"
+summary_zh: "RSS自动抓取与LLM摘要生成,推送飞书/Telegram/Email,SQLite去重与定时任务。RSS AI 阅读器。自动抓取 RSS/Atom 订阅源,通过 ai-assistant"
 license: "MIT"
 description: |-
   RSS AI 阅读器。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 或 llm-provider 生成中文摘要,

@@ -1,4 +1,5 @@
 ---
+
 slug: solo-validate-tool-pro
 name: solo-validate-tool-pro
 version: 1.0.0
@@ -6,7 +7,9 @@ displayName: 想法验证工具专业版
 summary: 企业级创业想法验证系统,支持STREAM六层分析、魔鬼代言人、单位经济压力测试与Manifest对齐检查
 license: Proprietary
 edition: pro
-description: '想法验证工具专业版为企业团队提供深度创业想法验证与风险评估能力。核心能力:
+description: "想法验证工具专业版为企业团队提供深度创业想法验证与风险评估能力。核心能力:
+  - S。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when
+  需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：API设计、数据分析、文档生成、自动化、测试、部署"
 
   - S。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when
   需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
@@ -32,6 +35,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
 # 想法验证工具专业版
 

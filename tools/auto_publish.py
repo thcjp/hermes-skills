@@ -734,6 +734,7 @@ def check_visibility():
     识别不可见技能(org_only/NULL visibility)并生成诊断报告。
     """
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
 
     # 1. 总体统计

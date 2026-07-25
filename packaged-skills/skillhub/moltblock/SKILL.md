@@ -4,6 +4,7 @@ name: "moltblock"
 version: 0.11.10
 displayName: "Skill"
 summary: "AI产物验证门禁,策略检查拦截危险模式。Verification gating for AI-generated artifacts。Policy checks to catch dange"
+summary_zh: "AI产物验证门禁,策略检查拦截危险模式。Verification gating for AI-generated artifacts。Policy checks to catch dange"
 license: "MIT"
 description: |-
   Verification gating for AI-generated artifacts。Policy checks to catch

@@ -5,6 +5,7 @@ name: "music"
 version: 1.0.1
 displayName: "Music"
 summary: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆。Build a personal music system for tracking discoveries, favorites, con"
+summary_zh: "建个人音乐系统,追踪发现/收藏/演唱会/听歌记忆。Build a personal music system for tracking discoveries, favorites, con"
 license: "MIT"
 description: |-
   Build a personal music system for tracking discoveries, favorites, concerts,
@@ -25,7 +26,12 @@ description: |-
   - 自动化工作流与智能决策辅助
 
   差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增...
-tags: agent,api,依赖说明,不支持,确认运行
+tags:
+  - agent
+  - api
+  - 依赖说明
+  - 不支持
+  - 确认运行
 tools:
   - read
   - exec

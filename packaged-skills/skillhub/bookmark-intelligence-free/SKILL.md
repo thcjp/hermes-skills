@@ -4,6 +4,7 @@ name: "bookmark-intelligence-free"
 version: "1.0.0"
 displayName: "书签智析基础版"
 summary: "X书签基础监控版,每月10条限额,手动运行,基于关键词启发式分析,无AI与推送。。X(Twitter)书签分析与知识萃取基础版(免费)。手动运行抓取最近的 X 书签,用关键词启发式提取摘要并"
+summary_zh: "X书签基础监控版,每月10条限额,手动运行,基于关键词启发式分析,无AI与推送。。X(Twitter)书签分析与知识萃取基础版(免费)。手动运行抓取最近的 X 书签,用关键词启发式提取摘要并"
 license: "MIT"
 description: |-
   X(Twitter)书签分析与知识萃取基础版(免费)。手动运行抓取最近的 X 书签,用关键词启发式提取摘要并落盘为本地 JSON.

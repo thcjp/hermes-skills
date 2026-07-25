@@ -4,6 +4,7 @@ name: "vue-toolkit"
 version: 1.0.1
 displayName: "Vue工具箱(专业版)"
 summary: "Vue 3 全栈实战：响应式、性能优化、SSR、Pinia、Composable 架构与团队规范。。Vue 工具箱（专业版）面向中高级 Vue 3 开发者与团队，在免费版陷阱清单的基础上新增"
+summary_zh: "Vue 3 全栈实战：响应式、性能优化、SSR、Pinia、Composable 架构与团队规范。。Vue 工具箱（专业版）面向中高级 Vue 3 开发者与团队，在免费版陷阱清单的基础上新增"
 license: "MIT"
 edition: "pro"
 description: |-

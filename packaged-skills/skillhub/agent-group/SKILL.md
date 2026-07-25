@@ -4,6 +4,7 @@ name: "agent-group"
 version: 1.0.4
 displayName: "Agent Group"
 summary: "极简多Agent群组 - 像微信拉群一样简单。极简多Agent群组 - 像微信拉群一样简单 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移"
+summary_zh: "极简多Agent群组 - 像微信拉群一样简单。极简多Agent群组 - 像微信拉群一样简单 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移"
 license: "MIT"
 description: |-
   极简多Agent群组 - 像微信拉群一样简单

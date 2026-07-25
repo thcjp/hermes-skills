@@ -4,7 +4,8 @@ name: auth-security-architect
 version: 1.0.1
 displayName: 认证安全架构师
 summary: "OAuth/2FA/SSO全栈认证安全,基于Better Auth构建企业级认证体系。认证安全架构师——基于Better Auth官方最佳实践设计安全、可扩展的认证授权系统。适用于SaaS认"
-license: Proprietary
+summary_zh: "OAuth/2FA/SSO全栈认证安全,基于Better Auth构建企业级认证体系。认证安全架构师——基于Better Auth官方最佳实践设计安全、可扩展的认证授权系统。适用于SaaS认"
+license: MIT
 description: 认证安全架构师——基于Better Auth官方最佳实践设计安全、可扩展的认证授权系统。适用于SaaS认证、企业SSO、双因素认证、RBAC权限管理、API安全防护、移动端认证等场景。从OAuth集成到2FA，从会话管理到权限控制，全栈安全覆盖。触发关键词：认证、授权、OAuth、2FA、SSO、会话、权限、RBAC、密码、密钥、CSRF、XSS、安全架构、Better
   Auth
 tags:

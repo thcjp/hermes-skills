@@ -22,6 +22,7 @@ from datetime import datetime
 def analyze_status():
     """分析skill状态"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
@@ -169,6 +170,7 @@ def analyze_status():
 def list_skills_to_optimize(limit=None):
     """列出需要优化的skill"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
@@ -190,6 +192,7 @@ def list_skills_to_optimize(limit=None):
 def list_skills_to_upload(platform='clawhub'):
     """列出需要上传到指定平台的skill"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 

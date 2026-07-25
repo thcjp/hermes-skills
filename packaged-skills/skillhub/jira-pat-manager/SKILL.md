@@ -4,6 +4,7 @@ slug: "jira-pat-manager"
 displayName: "Jira PAT管理器"
 version: 0.0.2
 summary: "管理Jira个人访问令牌(PAT),支持创建、撤销和权限配置。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Jira Pat M"
+summary_zh: "管理Jira个人访问令牌(PAT),支持创建、撤销和权限配置。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Jira Pat M"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Jira Pat Manager 智能分析"、Jira Pat Manager 智能分析时使用.

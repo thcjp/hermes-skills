@@ -1,4 +1,5 @@
 ---
+
 slug: trading-tool-free
 name: trading-tool-free
 version: 1.0.0
@@ -6,7 +7,9 @@ displayName: 交易分析入门工具
 summary: "基于维加斯通道的交易分析工具，提供趋势识别与基础买卖信号判断.。面向个人交易者的技术分析工具，基于维加斯通道（Vegas Channel）策略"
 license: Proprietary
 edition: free
-description: '面向个人交易者的技术分析工具，基于维加斯通道（Vegas Channel）策略
+description: "面向个人交易者的技术分析工具，基于维加斯通道（Vegas Channel）策略
+  提供趋势识别与买卖信号判断。适合个人投资者进行单只标的的技术分析
+  与交易决策辅助。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：数据分析、自动化、机器学习、自然语言、财务"
 
   提供趋势识别与买卖信号判断。适合个人投资者进行单只标的的技术分析
 
@@ -26,6 +29,7 @@ tools:
   - write
 homepage: ""
 category: "Finance"
+
 ---
 # 交易分析入门工具（免费版）
 

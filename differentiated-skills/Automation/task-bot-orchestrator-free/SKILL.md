@@ -1,4 +1,5 @@
 ---
+
 slug: task-bot-orchestrator-free
 name: task-bot-orchestrator-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: 任务编排机器人(免费版)
 summary: "数据处理与定时任务核心能力，覆盖CSV/Excel自动化与基础调度，60秒上手任务编排.。任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务"
 license: Proprietary
 edition: free
-description: 任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务调度、基础通知推送三大核心场景。通过简洁的API调用，让重复性效率任务一键完成。Use
+description: "任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务调度、基础通知推送三大核心场景。通过简洁的API调用，让重复性效率任务一键完成。Use
+  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、转换、项目管理、Excel、机器学习"
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 任务编排
@@ -27,6 +29,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # 任务编排机器人（免费版）
 

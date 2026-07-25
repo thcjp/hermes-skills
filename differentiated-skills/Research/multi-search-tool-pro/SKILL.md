@@ -1,4 +1,5 @@
 ---
+
 slug: multi-search-tool-pro
 name: multi-search-tool-pro
 version: 1.0.0
@@ -6,7 +7,8 @@ displayName: 多搜索引擎工具专业版
 summary: "集成20+全球搜索引擎，支持批量搜索、结果自动聚合去重与企业级API集成。多搜索引擎工具专业版，集成20+全球搜索引擎。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时"
 license: Proprietary
 edition: pro
-description: 多搜索引擎工具专业版，集成20+全球搜索引擎。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use
+description: "多搜索引擎工具专业版，集成20+全球搜索引擎。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use
+  when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、性能优化、监控、搜索、转换"
   when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - 搜索
@@ -28,6 +30,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
 # 多搜索引擎工具（专业版）
 ## 概述

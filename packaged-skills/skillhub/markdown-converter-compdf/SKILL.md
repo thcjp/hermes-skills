@@ -4,6 +4,7 @@ name: "markdown-converter-compdf"
 version: 1.2.1
 displayName: "Markdown convert"
 summary: "用ComPDF Cloud API处理/转换/编辑/提取PDF。Process, convert, edit, and extract data from PDF files using t"
+summary_zh: "用ComPDF Cloud API处理/转换/编辑/提取PDF。Process, convert, edit, and extract data from PDF files using t"
 license: "MIT"
 description: |-
   Process, convert, edit, and extract data from PDF files using the ComPDF

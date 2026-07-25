@@ -4,6 +4,7 @@ name: "markdown-converter-paid"
 version: 1.0.1
 displayName: "Markdown转换器专业版"
 summary: "企业级文档批量转换系统,支持目录扫描、批量处理、自定义模板、元数据提取与CI/CD集成,适合团队与商业项目。"
+summary_zh: "企业级文档批量转换系统,支持目录扫描、批量处理、自定义模板、元数据提取与CI/CD集成,适合团队与商业项目。"
 license: "MIT"
 edition: "pro"
 description: |-

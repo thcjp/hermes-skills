@@ -4,6 +4,7 @@ name: "agent"
 version: 1.0.1
 displayName: "Agent"
 summary: "定义Agent身份性格语气与边界,打造风格一致的拟人助手,解决人设漂移难题。Define agent identity, personality, voice, and boundaries"
+summary_zh: "定义Agent身份性格语气与边界,打造风格一致的拟人助手,解决人设漂移难题。Define agent identity, personality, voice, and boundaries"
 license: "MIT"
 description: |-
   Define agent identity, personality, voice, and boundaries to create

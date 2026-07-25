@@ -4,6 +4,7 @@ name: "lh-video-gen-paid"
 version: 1.0.1
 displayName: "短视频生成专业版"
 summary: "企业级竖版短视频批量生成系统,支持多模板、多语言、批量处理、品牌定制与CI/CD集成,适合团队与商业项目。"
+summary_zh: "企业级竖版短视频批量生成系统,支持多模板、多语言、批量处理、品牌定制与CI/CD集成,适合团队与商业项目。"
 license: "MIT"
 edition: "pro"
 description: |-

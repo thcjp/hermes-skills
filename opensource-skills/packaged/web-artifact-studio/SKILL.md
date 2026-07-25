@@ -4,6 +4,7 @@ name: web-artifact-studio
 version: 1.0.1
 displayName: Web工件工作室
 summary: "React+Tailwind+shadcn构建复杂交互Web工件,状态路由组件全搞定。Web工件工作室——用现代前端技术栈(React/TypeScript/Tailwind CSS/sha"
+summary_zh: "React+Tailwind+shadcn构建复杂交互Web工件,状态路由组件全搞定。Web工件工作室——用现代前端技术栈(React/TypeScript/Tailwind CSS/sha"
 license: Proprietary
 description: Web工件工作室——用现代前端技术栈(React/TypeScript/Tailwind CSS/shadcn/ui)构建复杂的多组件HTML工件。覆盖状态管理、路由、shadcn/ui
   组件组合、打包交付全流程,支持交互式演示、数据仪表盘、表单工作流、组件展示、单页应用原型。触发关键词:Web工件、HTML工件、React组件、Tailwind、shadcn、ui组件、前端工件、交互组件、单页应用、SPA、组件库、Vite

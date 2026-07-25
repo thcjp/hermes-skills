@@ -4,6 +4,7 @@ name: "cdn"
 version: 1.0.2
 displayName: "CDN"
 summary: "配置优化排障CDN部署,缓存策略+安全加固,加速又稳。Configure, optimize, and troubleshoot CDN deployments with caching s"
+summary_zh: "配置优化排障CDN部署,缓存策略+安全加固,加速又稳。Configure, optimize, and troubleshoot CDN deployments with caching s"
 license: "MIT"
 description: |-
   Configure, optimize, and troubleshoot CDN deployments with caching strategies,

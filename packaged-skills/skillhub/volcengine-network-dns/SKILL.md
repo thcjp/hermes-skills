@@ -4,6 +4,7 @@ name: "volcengine-network-dns"
 version: 1.0.1
 displayName: "Volcengine Network D"
 summary: "火山引擎网络服务DNS记录管理,区记录查询与更新。DNS record management on Volcengine networking services。Use when users"
+summary_zh: "火山引擎网络服务DNS记录管理,区记录查询与更新。DNS record management on Volcengine networking services。Use when users"
 license: "MIT"
 description: |-
   DNS record management on Volcengine networking services。Use when users

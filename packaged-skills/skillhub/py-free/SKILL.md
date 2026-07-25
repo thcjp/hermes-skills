@@ -4,6 +4,7 @@ name: "py-free"
 version: "1.0.0"
 displayName: "Python基础版"
 summary: "编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、import 规范与基础异常处理。。编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、 import 规范与基础异常"
+summary_zh: "编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、import 规范与基础异常处理。。编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、 import 规范与基础异常"
 license: "MIT"
 description: |-
   编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、

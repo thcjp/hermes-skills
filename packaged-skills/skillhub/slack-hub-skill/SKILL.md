@@ -4,6 +4,7 @@ name: "slack-hub-skill"
 version: 0.1.1
 displayName: "Slack消息中枢"
 summary: "Slack消息发送/线程回复/工作区搜索/频道发现，Bot Token直连Web API。面向团队协作场景的Slack消息与搜索集成技能。通过Slack Bot Token直连Slack W"
+summary_zh: "Slack消息发送/线程回复/工作区搜索/频道发现，Bot Token直连Web API。面向团队协作场景的Slack消息与搜索集成技能。通过Slack Bot Token直连Slack W"
 license: "MIT"
 description: |-
   面向团队协作场景的Slack消息与搜索集成技能。通过Slack Bot Token直连Slack Web API，

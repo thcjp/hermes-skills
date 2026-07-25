@@ -5,11 +5,17 @@ name: "grok-image"
 version: 1.0.1
 displayName: "Grok图片生成-专业版"
 summary: "批量AI图片生成引擎，支持多格式导出、消息平台集成与自动化工作流。。Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判"
+summary_zh: "批量AI图片生成引擎，支持多格式导出、消息平台集成与自动化工作流。。Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判"
 license: "MIT"
 edition: "pro"
 description: |-
   Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
-tags: 创意,self,prompt_data,不支持,def
+tags:
+  - 创意
+  - self
+  - prompt_data
+  - 不支持
+  - def
 tools:
   - read
   - exec

@@ -4,6 +4,7 @@ name: "chart-free"
 version: "1.0.0"
 displayName: "本地图表生成-免费版"
 summary: "本地优先的图表生成免费版，支持bar与line两种基础类型，无需联网，适合快速可视化。。本地优先的图表生成引擎免费版，提供柱状图与折线图两种基础类型. 基于Python与matplotlib"
+summary_zh: "本地优先的图表生成免费版，支持bar与line两种基础类型，无需联网，适合快速可视化。。本地优先的图表生成引擎免费版，提供柱状图与折线图两种基础类型. 基于Python与matplotlib"
 license: "MIT"
 description: |-
   本地优先的图表生成引擎免费版，提供柱状图与折线图两种基础类型.

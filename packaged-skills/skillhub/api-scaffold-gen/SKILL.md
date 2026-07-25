@@ -4,6 +4,7 @@ name: "api-scaffold-gen"
 version: 1.0.1
 displayName: "API脚手架生成器(专业版)"
 summary: "企业级API脚手架平台，含多框架、DDD分层、微服务、ORM、Docker与CI/CD全套模板。。API脚手架生成器专业版是面向研发团队的全功能API脚手架平台。在免费版的REST/Grap"
+summary_zh: "企业级API脚手架平台，含多框架、DDD分层、微服务、ORM、Docker与CI/CD全套模板。。API脚手架生成器专业版是面向研发团队的全功能API脚手架平台。在免费版的REST/Grap"
 license: "MIT"
 edition: "pro"
 description: |-

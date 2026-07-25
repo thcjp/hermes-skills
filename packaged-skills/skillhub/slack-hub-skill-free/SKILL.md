@@ -4,6 +4,7 @@ name: "slack-hub-skill-free"
 version: "1.0.0"
 displayName: "Slack消息中枢LITE"
 summary: "Slack基础消息发送与公共频道列表，Bot Token直连Web API。面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API， 提"
+summary_zh: "Slack基础消息发送与公共频道列表，Bot Token直连Web API。面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API， 提"
 license: "MIT"
 description: |-
   面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API，

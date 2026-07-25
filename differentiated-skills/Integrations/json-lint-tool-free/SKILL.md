@@ -1,4 +1,5 @@
 ---
+
 slug: json-lint-tool-free
 name: json-lint-tool-free
 version: 1.0.2
@@ -6,7 +7,8 @@ displayName: JSON校验工具免费版
 summary: "轻量级JSON语法校验工具，递归扫描工作区.json文件并输出结构化错误报告.。JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错"
 license: Proprietary
 edition: free
-description: JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错误。核心能力：递归扫描指定目录的所有。Use
+description: "JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错误。核心能力：递归扫描指定目录的所有。Use
+  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：数据分析、自动化、部署、机器学习"
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 集成工具
@@ -25,6 +27,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # JSON校验工具（免费版）
 

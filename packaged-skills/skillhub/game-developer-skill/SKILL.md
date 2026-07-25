@@ -5,11 +5,17 @@ name: "game-developer-skill"
 version: 1.0.1
 displayName: "Game Developer Skill"
 summary: "构建游戏系统/实现Unity与Unreal特性/优化性能。Use when building game systems, implementing Unity/Unreal features"
+summary_zh: "构建游戏系统/实现Unity与Unreal特性/优化性能。Use when building game systems, implementing Unity/Unreal features"
 license: "MIT"
 description: |-
   Use when building game systems, implementing Unity/Unreal features,
   or optimizing game performanc。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
-tags: api,按流程执,依赖说明,不支持,agent
+tags:
+  - api
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
 tools:
   - read
   - exec

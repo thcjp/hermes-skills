@@ -4,6 +4,7 @@ name: "xml"
 version: 1.0.1
 displayName: "XML"
 summary: "解析生成转换XML,命名空间与编码处理正确。Parse, generate, and transform XML with correct namespace handling and en"
+summary_zh: "解析生成转换XML,命名空间与编码处理正确。Parse, generate, and transform XML with correct namespace handling and en"
 license: "MIT"
 description: |-
   Parse, generate, and transform XML with correct namespace handling and

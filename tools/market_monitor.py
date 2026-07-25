@@ -239,6 +239,7 @@ def load_market_data() -> List[dict]:
 def load_our_skills() -> List[dict]:
     """从数据库加载我们的skill数据"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
     
     # 加载所有有定价信息的skill

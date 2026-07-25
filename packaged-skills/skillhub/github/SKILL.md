@@ -4,6 +4,7 @@ name: "github"
 version: 1.0.1
 displayName: "Github"
 summary: "用gh CLI操作GitHub,issue/pr/run/api一站管理。Interact with GitHub using the `gh` CLI。Use `gh issue`, `g"
+summary_zh: "用gh CLI操作GitHub,issue/pr/run/api一站管理。Interact with GitHub using the `gh` CLI。Use `gh issue`, `g"
 license: "MIT"
 description: |-
   Interact with GitHub using the `gh` CLI。Use `gh issue`, `gh pr`, `gh

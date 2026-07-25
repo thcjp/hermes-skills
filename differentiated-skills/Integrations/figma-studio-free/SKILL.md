@@ -1,4 +1,5 @@
 ---
+
 slug: figma-studio-free
 name: figma-studio-free
 version: 1.0.1
@@ -6,7 +7,8 @@ displayName: Figma工作室(免费版)
 summary: "轻量级Figma设计文件读取工具，覆盖文件解析、评论管理与图片导出，60秒上手.。Figma工作室免费版是一款面向前端工程师与独立设计师的轻量级Figma设计文件读取与协作工具。围绕"文件读"
 license: Proprietary
 edition: free
-description: Figma工作室免费版是一款面向前端工程师与独立设计师的轻量级Figma设计文件读取与协作工具。围绕"文件读取—评论管理—图片导出—设计令牌提取"四件事，提供可复制即用的Python/Node。
+description: "Figma工作室免费版是一款面向前端工程师与独立设计师的轻量级Figma设计文件读取与协作工具。围绕\"文件读取—评论管理—图片导出—设计令牌提取\"四件事，提供可复制即用的Python/Node。
+  when 、品牌视觉时使用。自动化生成专业文档，提升文档覆盖率。触发关键词：API设计、文档生成、安全、设计、图片、机器学习"
   when 、品牌视觉时使用.
 tags:
   - 设计协作
@@ -25,6 +27,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
 # Figma工作室（免费版）
 

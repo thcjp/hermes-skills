@@ -4,6 +4,7 @@ name: "json-parse-engine"
 version: 1.0.1
 displayName: "JSON解析引擎专业版"
 summary: "企业级JSON解析引擎，支持流式解析、批量处理、DataFrame转换、自定义展平策略与增量解析。。JSON解析引擎专业版面向企业级场景，在免费版基础上扩展流式解析、批量目录处理、DataF"
+summary_zh: "企业级JSON解析引擎，支持流式解析、批量处理、DataFrame转换、自定义展平策略与增量解析。。JSON解析引擎专业版面向企业级场景，在免费版基础上扩展流式解析、批量目录处理、DataF"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "ui"
 version: 1.0.1
 displayName: "UI"
 summary: "设计清晰一致视觉精致的用户界面。Design clear, consistent, and visually polished user interfaces。核心能力: - 创意设计领域的"
+summary_zh: "设计清晰一致视觉精致的用户界面。Design clear, consistent, and visually polished user interfaces。核心能力: - 创意设计领域的"
 license: "MIT"
 description: |-
   Design clear, consistent, and visually polished user interfaces。核心能力:

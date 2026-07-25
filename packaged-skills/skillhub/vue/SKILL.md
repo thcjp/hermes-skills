@@ -4,6 +4,7 @@ name: "vue"
 version: 1.0.2
 displayName: "Vue"
 summary: "规避Vue常见错误,响应式陷阱/ref与reactive/组合式API。Avoid common Vue mistakes — reactivity traps, ref vs reacti"
+summary_zh: "规避Vue常见错误,响应式陷阱/ref与reactive/组合式API。Avoid common Vue mistakes — reactivity traps, ref vs reacti"
 license: "MIT"
 description: |-
   Avoid common Vue mistakes — reactivity traps, ref vs reactive, computed

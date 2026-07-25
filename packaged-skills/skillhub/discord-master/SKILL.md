@@ -4,6 +4,7 @@ name: "discord-master"
 version: 1.0.1
 displayName: "Discord开发大师(专业版)"
 summary: "全功能Discord Bot工程化平台，覆盖网关、限流、组件、安全与多服务器管理。。Discord 开发大师专业版是面向团队与生产环境的全功能 Discord Bot 工程化平台，在免费版基"
+summary_zh: "全功能Discord Bot工程化平台，覆盖网关、限流、组件、安全与多服务器管理。。Discord 开发大师专业版是面向团队与生产环境的全功能 Discord Bot 工程化平台，在免费版基"
 license: "MIT"
 edition: "pro"
 description: |-

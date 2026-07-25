@@ -4,6 +4,7 @@ name: "audit"
 version: 1.0.1
 displayName: "Audit"
 summary: "合成经济最高审计器,自主巡检代码/合约/资产,拦截风险于未然。The Supreme Verifier for the Synthetic Economy。Autonomous inspec"
+summary_zh: "合成经济最高审计器,自主巡检代码/合约/资产,拦截风险于未然。The Supreme Verifier for the Synthetic Economy。Autonomous inspec"
 license: "MIT"
 description: |-
   The Supreme Verifier for the Synthetic Economy。Autonomous inspection

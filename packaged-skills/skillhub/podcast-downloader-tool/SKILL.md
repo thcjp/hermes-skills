@@ -5,6 +5,7 @@ name: "podcast-downloader-tool"
 version: "1.0.0"
 displayName: "Podcast Downloader"
 summary: "小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm.com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。当用户需要下..."
+summary_zh: "小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm.com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。当用户需要下..."
 license: "MIT"
 description: 小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm，可自动提升工作效率
 tags:

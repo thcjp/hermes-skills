@@ -4,6 +4,7 @@ name: "multi-search-engine-simple"
 version: 1.0.1
 displayName: "Multi Search Engine"
 summary: "【国内精简版】多种免费搜索方式在互联网上搜索最新信息，10个国内网站（精简7个国内不能访问的海外网站）"
+summary_zh: "【国内精简版】多种免费搜索方式在互联网上搜索最新信息，10个国内网站（精简7个国内不能访问的海外网站）"
 license: "MIT"
 description: |-
   【国内精简版】多种免费搜索方式在互联网上搜索最新信息，10个国内网站（精简7个国内不能访问的海外网站）\n\n核心能力:\n- 研究工具领域的专业化AI辅助工具\n\

@@ -4,6 +4,7 @@ name: "ollama-integration"
 version: 1.0.1
 displayName: "Ollama Integration"
 summary: "集成运行本地Ollama AI模型,自定义提示与自动模式。Integrate and run local Ollama AI models with custom prompts for A"
+summary_zh: "集成运行本地Ollama AI模型,自定义提示与自动模式。Integrate and run local Ollama AI models with custom prompts for A"
 license: "MIT"
 description: |-
   Integrate and run local Ollama AI models with custom prompts for AI

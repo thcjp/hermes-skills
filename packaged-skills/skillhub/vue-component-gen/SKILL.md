@@ -4,6 +4,7 @@ name: "vue-component-gen"
 version: 1.0.1
 displayName: "Vue组件生成(专业版)"
 summary: "面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。。Vue组件生成工具专业版为团队与企业提供端到端Vue 3组件工程能力,涵盖企业级组件库结构、批"
+summary_zh: "面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。。Vue组件生成工具专业版为团队与企业提供端到端Vue 3组件工程能力,涵盖企业级组件库结构、批"
 license: "MIT"
 edition: "pro"
 description: |-

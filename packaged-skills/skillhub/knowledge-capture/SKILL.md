@@ -4,6 +4,7 @@ name: "knowledge-capture"
 version: 0.1.1
 displayName: "Knowledge Capture"
 summary: "把对话讨论转为结构化Notion文档。Transform conversations and discussions into structured Notion documentation"
+summary_zh: "把对话讨论转为结构化Notion文档。Transform conversations and discussions into structured Notion documentation"
 license: "MIT"
 description: |-
   Transform conversations and discussions into structured Notion documentation

@@ -4,6 +4,7 @@ name: "api-magic-gen"
 version: 1.0.1
 displayName: "接口魔法生成专业版"
 summary: "基于magic-api的接口全功能专业版，含多数据源、拦截器、OpenAPI导出、性能监控与团队协作能力。"
+summary_zh: "基于magic-api的接口全功能专业版，含多数据源、拦截器、OpenAPI导出、性能监控与团队协作能力。"
 license: "MIT"
 edition: "pro"
 description: |-

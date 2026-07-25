@@ -4,6 +4,7 @@ name: "slack-api"
 version: 1.0.12
 displayName: "Slack"
 summary: "Slack API托管OAuth,发消息/管频道/搜会话。Slack API integration with managed OAuth。Send messages, manage cha"
+summary_zh: "Slack API托管OAuth,发消息/管频道/搜会话。Slack API integration with managed OAuth。Send messages, manage cha"
 license: "MIT"
 description: |-
   Slack API integration with managed OAuth。Send messages, manage channels,

@@ -4,6 +4,7 @@ name: "ai-image-gen-free"
 version: 1.0.1
 displayName: "AI图像生成基础版"
 summary: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。。AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成"
+summary_zh: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。。AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成"
 license: "MIT"
 description: |-
   AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成文本生成图像.

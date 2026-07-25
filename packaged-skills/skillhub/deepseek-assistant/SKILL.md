@@ -4,6 +4,7 @@ name: "deepseek-assistant"
 version: 1.0.1
 displayName: "DeepSeek助手(专业版)"
 summary: "全功能DeepSeek API集成平台，支持流式响应、函数调用、批量处理与成本管控。。DeepSeek 助手专业版是面向团队与生产环境的全功能 DeepSeek API 集成平台，在免费版基"
+summary_zh: "全功能DeepSeek API集成平台，支持流式响应、函数调用、批量处理与成本管控。。DeepSeek 助手专业版是面向团队与生产环境的全功能 DeepSeek API 集成平台，在免费版基"
 license: "MIT"
 edition: "pro"
 description: |-

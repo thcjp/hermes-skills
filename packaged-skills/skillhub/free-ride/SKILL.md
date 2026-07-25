@@ -4,6 +4,7 @@ name: "free-ride"
 version: 1.0.12
 displayName: "Free Ride"
 summary: "为SkillHub管理OpenRouter免费AI模型,零成本调用。Manages free AI models from OpenRouter for SkillHub。核心能力: - 集"
+summary_zh: "为SkillHub管理OpenRouter免费AI模型,零成本调用。Manages free AI models from OpenRouter for SkillHub。核心能力: - 集"
 license: "MIT"
 description: |-
   Manages free AI models from OpenRouter for SkillHub。核心能力:

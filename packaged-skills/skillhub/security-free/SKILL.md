@@ -4,6 +4,7 @@ name: "security-free"
 version: "1.0.0"
 displayName: "GoPlus安全扫描免费版"
 summary: "免费版GoPlus安全扫描，支持基础安全扫描与漏洞发现查看。。GoPlus安全扫描免费版，提供基础代码安全检查功能. 支持一次性安全扫描与漏洞发现详情查看. 适用于个人项目的安全自检与漏洞发"
+summary_zh: "免费版GoPlus安全扫描，支持基础安全扫描与漏洞发现查看。。GoPlus安全扫描免费版，提供基础代码安全检查功能. 支持一次性安全扫描与漏洞发现详情查看. 适用于个人项目的安全自检与漏洞发"
 license: "MIT"
 description: |-
   GoPlus安全扫描免费版，提供基础代码安全检查功能.

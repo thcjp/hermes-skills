@@ -4,6 +4,7 @@ name: "ai-podcast-free"
 version: 1.0.1
 displayName: "AI播客生成(免费版)"
 summary: "将文本内容转化为双主持人对话播客的基础工具。基于MagicPodcast API将纯文本内容转化为双主持人对话式播客. 支持多语言生成，返回可分享的播客链接。适用于个人用户快速 将文字内容转"
+summary_zh: "将文本内容转化为双主持人对话播客的基础工具。基于MagicPodcast API将纯文本内容转化为双主持人对话式播客. 支持多语言生成，返回可分享的播客链接。适用于个人用户快速 将文字内容转"
 license: "MIT"
 description: |-
   基于MagicPodcast API将纯文本内容转化为双主持人对话式播客.

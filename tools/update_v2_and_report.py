@@ -20,6 +20,7 @@ from pathlib import Path
 def update_v2_uploads():
     """记录v2 skill的clawhub上传结果"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
     now = datetime.now().isoformat()
 
@@ -95,6 +96,7 @@ def update_v2_uploads():
 def final_report():
     """生成最终报告"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 

@@ -4,6 +4,7 @@ name: "csv-analyzer"
 version: 1.0.1
 displayName: "CSV数据分析器"
 summary: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。。CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果. 仅依赖Python标准库"
+summary_zh: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。。CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果. 仅依赖Python标准库"
 license: "MIT"
 description: |-
   CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果.

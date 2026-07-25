@@ -4,6 +4,7 @@ name: ai-artist-workstation
 version: 1.0.1
 displayName: "AI接单画师工作站"
 summary: "一个人开AI画师工作室,双引擎路由+98%面部保持+接单SOP全闭环。AI接单画师工作站是一款面向商业画师和设计师的AI绘画工具. 支持双引擎智能路由、8种风格模板全覆盖、接单SOP全流程闭"
+summary_zh: "一个人开AI画师工作室,双引擎路由+98%面部保持+接单SOP全闭环。AI接单画师工作站是一款面向商业画师和设计师的AI绘画工具. 支持双引擎智能路由、8种风格模板全覆盖、接单SOP全流程闭"
 license: "MIT"
 description: |-
   AI接单画师工作站是一款面向商业画师和设计师的AI绘画工具.

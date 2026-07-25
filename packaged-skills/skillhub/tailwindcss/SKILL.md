@@ -4,6 +4,7 @@ name: "tailwindcss"
 version: 1.0.1
 displayName: "Tailwind CSS"
 summary: "写Tailwind工具类,响应式/暗色模式/配置得当。Write Tailwind utility classes with proper responsive design, dark m"
+summary_zh: "写Tailwind工具类,响应式/暗色模式/配置得当。Write Tailwind utility classes with proper responsive design, dark m"
 license: "MIT"
 description: |-
   Write Tailwind utility classes with proper responsive design, dark mode,

@@ -4,7 +4,8 @@ name: content-cms-architect
 version: 1.0.1
 displayName: CMS内容架构师
 summary: "Headless CMS内容架构,从内容建模到SEO-AEO,打造可扩展内容平台。CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩"
-license: Proprietary
+summary_zh: "Headless CMS内容架构,从内容建模到SEO-AEO,打造可扩展内容平台。CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩"
+license: MIT
 description: CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩展内容管理系统,从内容建模到GROQ/REST/GraphQL查询,从SEO-AEO优化到内容A/B实验,打造前端自由、内容结构化的现代内容平台。覆盖Schema定义、字段类型设计、引用关系、Portable
   Text、多语言i18n、草稿发布工作流、答案引擎优化全栈
 tags:

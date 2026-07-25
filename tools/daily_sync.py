@@ -29,7 +29,7 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "config"))
 from project_config import (
     DB_PATH, TOOLS_DIR, DATA_DIR, REPORT_DIR,
-    HEALTH_REPORT_DIR, DISCOVERY_DIR
+    HEALTH_REPORT_DIR, DISCOVERY_DIR, CLAWHUB_DRY_RUN
 )
 from platform_config import GITHUB_REPOS
 
@@ -118,7 +118,7 @@ def step_sync_clawhub():
     log("=" * 50)
     log("阶段7: SYNC_CLAWHUB - ClawHub 批量上传")
     log("=" * 50)
-    run_script("clawhub_batch_uploader.py", ["--dry-run"])
+    run_script("clawhub_batch_uploader.py", ["--dry-run"] if CLAWHUB_DRY_RUN else [])
 
 
 def generate_daily_report():
@@ -128,6 +128,7 @@ def generate_daily_report():
     log("=" * 50)
 
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 

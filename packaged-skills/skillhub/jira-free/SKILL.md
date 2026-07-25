@@ -5,6 +5,7 @@ name: "jira-free"
 version: "1.0.0"
 displayName: "Jira集成引擎(免费版)"
 summary: "Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版。Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例. 覆盖问题管"
+summary_zh: "Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版。Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例. 覆盖问题管"
 license: "MIT"
 description: |-
   Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例.
@@ -19,7 +20,13 @@ tools:
   - glob
   - grep
 homepage: ""
-tags: 自动化,api,sprint,rest,key,atlassian
+tags:
+  - 自动化
+  - api
+  - sprint
+  - rest
+  - key
+  - atlassian
 category: "Automation"
 
 ---

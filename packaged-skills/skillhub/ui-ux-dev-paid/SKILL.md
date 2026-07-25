@@ -4,6 +4,7 @@ name: "ui-ux-dev-paid"
 version: 1.0.1
 displayName: "UI/UX开发工具专业版"
 summary: "多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎。面向开发团队和代理机构的专业级React页面生成引擎,支持多页面项目管理、 设计系统持久化、自动化"
+summary_zh: "多页面React项目生成+设计系统持久化+批量截图+Zip导出,面向团队的专业页面开发引擎。面向开发团队和代理机构的专业级React页面生成引擎,支持多页面项目管理、 设计系统持久化、自动化"
 license: "MIT"
 edition: "pro"
 description: |-

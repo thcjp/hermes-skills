@@ -194,9 +194,14 @@ def categorize(name: str, description: str) -> str:
 
 
 def record_source_to_db(candidate: Dict[str, Any]) -> bool:
-    """将发现的候选项记录到数据库 sources 表"""
+    """将发现的候选项记录到数据库 sources 表
+
+    D1修复: 写入时查询 skills 表关联 skill_id，消除发现→入库数据断链。
+    匹配策略: source_slug → slug → slug+'-free' → slug+'-pro'
+    """
     try:
         conn = sqlite3.connect(DB_PATH)
+        conn.execute("PRAGMA foreign_keys = ON")
         c = conn.cursor()
 
         # 检查是否已存在（按 source_type + original_slug 去重）
@@ -209,12 +214,29 @@ def record_source_to_db(candidate: Dict[str, Any]) -> bool:
             conn.close()
             return False
 
+        # D1修复: 查询 skills 表关联 skill_id
+        original_slug = candidate.get('source_id', '')
+        skill_id = None
+        if original_slug:
+            # 按优先级匹配: source_slug → slug → slug-free → slug-pro
+            for query_sql, param in [
+                ("SELECT id FROM skills WHERE source_slug = ? LIMIT 1", original_slug),
+                ("SELECT id FROM skills WHERE slug = ? LIMIT 1", original_slug),
+                ("SELECT id FROM skills WHERE slug = ? LIMIT 1", original_slug + '-free'),
+                ("SELECT id FROM skills WHERE slug = ? LIMIT 1", original_slug + '-pro'),
+            ]:
+                c.execute(query_sql, (param,))
+                row = c.fetchone()
+                if row:
+                    skill_id = row[0]
+                    break
+
         metadata = candidate.get('metadata', {})
         c.execute("""
             INSERT INTO sources (
                 source_type, source_name, source_url, source_author,
-                source_license, source_version, download_date, original_slug, notes
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                source_license, source_version, download_date, original_slug, notes, skill_id
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             candidate.get('source', ''),
             candidate.get('name', ''),
@@ -225,6 +247,7 @@ def record_source_to_db(candidate: Dict[str, Any]) -> bool:
             datetime.now().isoformat(),
             candidate.get('source_id', ''),
             json.dumps(metadata, ensure_ascii=False),
+            skill_id,
         ))
         conn.commit()
         conn.close()

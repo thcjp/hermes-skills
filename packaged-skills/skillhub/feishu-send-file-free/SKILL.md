@@ -4,6 +4,7 @@ name: "feishu-send-file-free"
 version: "1.0.0"
 displayName: "飞书发文件(免费)"
 summary: "飞书发送普通文件附件的基础版,支持file_key两步上传链路。。飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路, 提供脚本化与手动两"
+summary_zh: "飞书发送普通文件附件的基础版,支持file_key两步上传链路。。飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路, 提供脚本化与手动两"
 license: "MIT"
 description: |-
   飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路,

@@ -4,6 +4,7 @@ name: "x-news-daily-free"
 version: "1.0.0"
 displayName: "X News Daily LITE"
 summary: "抓取 X.com 关键词热门新闻 Top 10，生成基础中文海报。。X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文， 渲染"
+summary_zh: "抓取 X.com 关键词热门新闻 Top 10，生成基础中文海报。。X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文， 渲染"
 license: "MIT"
 description: |-
   X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，

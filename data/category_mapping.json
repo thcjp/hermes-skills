@@ -1,32 +1,160 @@
 {
-  "mapping": {
-    "Agents": 11040,
-    "Automation": 11041,
-    "Communication": 11039,
-    "Creative": 11043,
-    "Development": 11040,
-    "Finance": 11046,
-    "Integrations": 11039,
-    "Knowledge": 11044,
-    "Lifestyle": 11039,
-    "Operations": 11045,
-    "Other": 11048,
-    "Productivity": 11039,
-    "Research": 11044,
-    "Security": 11047
+  "_description": "SkillHub分类映射配置 - 2026-07-25修正版",
+  "_platform_categories_note": "平台12分类使用字符串键，用于前台展示和筛选",
+  "_team_categories_note": "团队10分类使用中文名称，用于admin后台内部组织",
+  "_api_category_keys_note": "API实际使用的category字段值（从GET /api/v1/skills/{slug}获取）",
+
+  "platform_categories": {
+    "office-efficiency": "办公效率",
+    "content-creation": "内容创作",
+    "dev-programming": "开发编程",
+    "data-analysis": "数据分析",
+    "design-media": "设计多媒体",
+    "ai-agent": "AI Agent",
+    "knowledge-management": "知识管理",
+    "business-ops": "商业运营",
+    "education": "教育学习",
+    "professional": "行业专业",
+    "it-ops-security": "IT运维与安全",
+    "life-service": "生活服务"
   },
-  "skillhub_categories": {
-    "11039": "通用办公",
-    "11040": "研发工具",
-    "11041": "系统运维",
-    "11042": "质量测试",
-    "11043": "需求设计",
-    "11044": "信息检索",
-    "11045": "项目管理",
-    "11046": "数据分析",
-    "11047": "安全合规",
-    "11048": "其他"
+
+  "team_categories": {
+    "通用办公": 11039,
+    "研发工具": 11040,
+    "系统运维": 11041,
+    "质量测试": 11042,
+    "需求设计": 11043,
+    "信息检索": 11044,
+    "项目管理": 11045,
+    "数据分析": 11046,
+    "安全合规": 11047,
+    "其他": 11048
   },
+
+  "local_to_platform": {
+    "Agents": "ai-agent",
+    "Automation": "it-ops-security",
+    "Communication": "office-efficiency",
+    "Creative": "content-creation",
+    "Development": "dev-programming",
+    "Finance": "data-analysis",
+    "Integrations": "business-ops",
+    "Knowledge": "knowledge-management",
+    "Lifestyle": "life-service",
+    "Operations": "business-ops",
+    "Other": "office-efficiency",
+    "Productivity": "office-efficiency",
+    "Research": "knowledge-management",
+    "Security": "it-ops-security"
+  },
+
+  "local_to_team": {
+    "Agents": "研发工具",
+    "Automation": "系统运维",
+    "Communication": "通用办公",
+    "Creative": "需求设计",
+    "Development": "研发工具",
+    "Finance": "数据分析",
+    "Integrations": "通用办公",
+    "Knowledge": "信息检索",
+    "Lifestyle": "其他",
+    "Operations": "项目管理",
+    "Other": "其他",
+    "Productivity": "通用办公",
+    "Research": "信息检索",
+    "Security": "安全合规"
+  },
+
+  "platform_to_team": {
+    "office-efficiency": "通用办公",
+    "content-creation": "需求设计",
+    "dev-programming": "研发工具",
+    "data-analysis": "数据分析",
+    "design-media": "需求设计",
+    "ai-agent": "研发工具",
+    "knowledge-management": "信息检索",
+    "business-ops": "项目管理",
+    "education": "其他",
+    "professional": "其他",
+    "it-ops-security": "安全合规",
+    "life-service": "其他"
+  },
+
+  "subcategory_mapping": {
+    "ai-agent": [
+      {"key": "agent-workflow", "name": "工作流编排"},
+      {"key": "agent-context", "name": "上下文管理"},
+      {"key": "agent-memory", "name": "记忆增强"},
+      {"key": "agent-planning", "name": "任务规划"},
+      {"key": "agent-tools", "name": "工具调用"}
+    ],
+    "dev-programming": [
+      {"key": "dev-frontend", "name": "前端开发"},
+      {"key": "dev-backend", "name": "后端开发"},
+      {"key": "dev-testing", "name": "测试自动化"},
+      {"key": "dev-cicd", "name": "CI/CD"},
+      {"key": "dev-code-review", "name": "代码审查"}
+    ],
+    "data-analysis": [
+      {"key": "data-sql", "name": "SQL分析"},
+      {"key": "data-viz", "name": "数据可视化"},
+      {"key": "data-etl", "name": "ETL处理"},
+      {"key": "data-bi", "name": "商业智能"}
+    ],
+    "office-efficiency": [
+      {"key": "office-doc", "name": "文档处理"},
+      {"key": "office-sheet", "name": "表格处理"},
+      {"key": "office-presentation", "name": "演示文稿"},
+      {"key": "office-email", "name": "邮件管理"}
+    ],
+    "content-creation": [
+      {"key": "content-writing", "name": "文案写作"},
+      {"key": "content-video", "name": "视频创作"},
+      {"key": "content-design", "name": "设计创作"},
+      {"key": "content-social", "name": "社媒运营"}
+    ],
+    "design-media": [
+      {"key": "design-graphic", "name": "平面设计"},
+      {"key": "design-ui", "name": "UI设计"},
+      {"key": "design-3d", "name": "3D建模"},
+      {"key": "design-video", "name": "视频编辑"}
+    ],
+    "knowledge-management": [
+      {"key": "km-notes", "name": "笔记管理"},
+      {"key": "km-search", "name": "知识检索"},
+      {"key": "km-wiki", "name": "Wiki构建"}
+    ],
+    "business-ops": [
+      {"key": "biz-project", "name": "项目管理"},
+      {"key": "biz-finance", "name": "财务管理"},
+      {"key": "biz-hr", "name": "人力资源"},
+      {"key": "biz-sales", "name": "销售管理"}
+    ],
+    "it-ops-security": [
+      {"key": "ops-devops", "name": "DevOps"},
+      {"key": "ops-monitor", "name": "监控告警"},
+      {"key": "sec-audit", "name": "安全审计"},
+      {"key": "sec-compliance", "name": "合规检查"}
+    ],
+    "education": [
+      {"key": "edu-language", "name": "语言学习"},
+      {"key": "edu-coding", "name": "编程教育"},
+      {"key": "edu-research", "name": "学术研究"}
+    ],
+    "professional": [
+      {"key": "pro-finance", "name": "金融专业"},
+      {"key": "pro-legal", "name": "法律专业"},
+      {"key": "pro-medical", "name": "医疗专业"},
+      {"key": "pro-engineering", "name": "工程专业"}
+    ],
+    "life-service": [
+      {"key": "life-travel", "name": "旅行规划"},
+      {"key": "life-health", "name": "健康生活"},
+      {"key": "life-shopping", "name": "购物决策"}
+    ]
+  },
+
   "differentiated_counts": {
     "Agents": 73,
     "Automation": 106,
@@ -43,6 +171,7 @@
     "Research": 116,
     "Security": 48
   },
+
   "packaged_counts": {
     "Agents": 8,
     "Automation": 2,

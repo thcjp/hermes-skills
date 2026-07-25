@@ -4,6 +4,7 @@ name: theme-stylist
 version: 1.0.1
 displayName: 主题造型师
 summary: "10+预设主题一键应用,幻灯片文档报告HTML统一专业视觉风格。主题造型师——为各类产出物(幻灯片/文档/报告/HTML落地页)应用专业字体与配色主题,内置10+预设主题(Corporate"
+summary_zh: "10+预设主题一键应用,幻灯片文档报告HTML统一专业视觉风格。主题造型师——为各类产出物(幻灯片/文档/报告/HTML落地页)应用专业字体与配色主题,内置10+预设主题(Corporate"
 license: Proprietary
 description: 主题造型师——为各类产出物(幻灯片/文档/报告/HTML落地页)应用专业字体与配色主题,内置10+预设主题(Corporate/Minimal/Warm/Nature/Elegant/Tech/Editorial/Playful/Mono/Sunset),支持自定义品牌色生成完整色板。适用于PPT美化、文档美化、报告配色、HTML落地页主题驱动、品牌主题定制场景。触发关键词:主题、配色主题、字体主题、幻灯片主题、文档主题、报告主题、视觉主题、主题设计、主题应用、配色方案、品牌色
 tags:

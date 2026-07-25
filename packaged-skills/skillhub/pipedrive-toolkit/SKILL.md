@@ -4,6 +4,7 @@ name: "pipedrive-toolkit"
 version: 1.0.1
 displayName: "Pipedrive工具(专业版)"
 summary: "全功能Pipedrive CRM管理工具，支持商机全生命周期、批量操作与多连接管理。Pipedrive工具专业版是面向销售团队的完整CRM管理命令行方案，在免费版基础上解锁商机创建/更新/删"
+summary_zh: "全功能Pipedrive CRM管理工具，支持商机全生命周期、批量操作与多连接管理。Pipedrive工具专业版是面向销售团队的完整CRM管理命令行方案，在免费版基础上解锁商机创建/更新/删"
 license: "MIT"
 edition: "pro"
 description: |-

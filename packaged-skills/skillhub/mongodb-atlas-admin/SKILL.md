@@ -5,6 +5,7 @@ name: "mongodb-atlas-admin"
 version: 1.0.1
 displayName: "文档数据库管理"
 summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时API调用"
+summary_zh: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时API调用"
 license: "MIT"
 description: |-
   通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、
@@ -17,7 +18,13 @@ tools:
   - glob
   - grep
 homepage: ""
-tags: api,bash,请参考,目录中的,脚本文件,node
+tags:
+  - api
+  - bash
+  - 请参考
+  - 目录中的
+  - 脚本文件
+  - node
 category: "Automation"
 
 ---

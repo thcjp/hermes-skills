@@ -4,6 +4,7 @@ name: "git-essentials-free"
 version: 1.0.1
 displayName: "Git基础版"
 summary: "Git 版本控制基础能力，覆盖常用命令、分支管理与协作工作流，适合日常提交与团队协作。。Git 版本控制基础能力，覆盖常用命令、分支管理与团队协作工作流. 核心能力: - 常用 Git 命令"
+summary_zh: "Git 版本控制基础能力，覆盖常用命令、分支管理与协作工作流，适合日常提交与团队协作。。Git 版本控制基础能力，覆盖常用命令、分支管理与团队协作工作流. 核心能力: - 常用 Git 命令"
 license: "MIT"
 description: |-
   Git 版本控制基础能力，覆盖常用命令、分支管理与团队协作工作流.

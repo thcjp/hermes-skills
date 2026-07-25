@@ -4,6 +4,7 @@ name: "ad-insight-hub"
 version: 1.0.1
 displayName: "广告洞察中枢"
 summary: "聚合AdMapix广告情报API，参数翻译/端点编排/缓存/可信度标注四层能力。面向广告投放与市场分析场景的结构化广告情报数据中枢。在AdMapix原始API之上叠加参数自然语言翻译、 端点"
+summary_zh: "聚合AdMapix广告情报API，参数翻译/端点编排/缓存/可信度标注四层能力。面向广告投放与市场分析场景的结构化广告情报数据中枢。在AdMapix原始API之上叠加参数自然语言翻译、 端点"
 license: "MIT"
 description: |-
   面向广告投放与市场分析场景的结构化广告情报数据中枢。在AdMapix原始API之上叠加参数自然语言翻译、

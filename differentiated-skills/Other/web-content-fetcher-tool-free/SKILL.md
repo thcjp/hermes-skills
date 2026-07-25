@@ -1,4 +1,5 @@
 ---
+
 slug: web-content-fetcher-tool-free
 name: web-content-fetcher-tool-free
 version: 1.0.0
@@ -6,7 +7,9 @@ displayName: 网页内容获取免费版
 summary: "当常规爬虫被过滤时，使用替代服务获取网页Markdown内容，支持多服务降级，适合个人开发.。网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:"
 license: Proprietary
 edition: free
-description: 网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:，可自动提升工作效率
+description: "网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:，可自动提升工作效率
+  - 三种替代服务的降级获取策略
+  - 自动按优先级尝试（jina/markdown。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。'。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、性能优化、转换、写作、营销"
 
   - 三种替代服务的降级获取策略
 
@@ -31,6 +34,7 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+
 ---
 # 网页内容获取工具（免费版）
 

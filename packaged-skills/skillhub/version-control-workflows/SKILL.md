@@ -5,6 +5,7 @@ name: "version-control-workflows"
 version: "1.0.1"
 displayName: "Git Workflows"
 summary: "add/commit/push之外的高级git操作,rebase/bisect/worktree。Advanced git operations beyond add/commit/push"
+summary_zh: "add/commit/push之外的高级git操作,rebase/bisect/worktree。Advanced git operations beyond add/commit/push"
 license: "MIT"
 description: Advanced git operations beyond add/commit/push. Use when rebasing, bisecting bugs, using worktree, reflog recovery, subtrees, submodules, sparse checkout, conflict resolution, and monorepo patterns，可自动提升工作效率
 tags:

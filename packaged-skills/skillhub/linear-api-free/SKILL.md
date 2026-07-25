@@ -4,6 +4,7 @@ name: "linear-api-free"
 version: "1.0.0"
 displayName: "Linear API引擎(免费版)"
 summary: "Linear问题跟踪与项目管理，通过GraphQL API操作Issue/Cycle/Project与工作流。免费版"
+summary_zh: "Linear问题跟踪与项目管理，通过GraphQL API操作Issue/Cycle/Project与工作流。免费版"
 license: "MIT"
 description: |-
   Linear项目管理集成引擎（免费版），通过GraphQL API操作Linear实例。覆盖Issue管理、

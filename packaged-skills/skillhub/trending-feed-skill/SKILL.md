@@ -5,6 +5,7 @@ name: "trending-feed-skill"
 version: 1.0.1
 displayName: "热榜订阅(专业版)"
 summary: "全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。。全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。核心能力"
+summary_zh: "全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。。全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。核心能力"
 license: "MIT"
 edition: "pro"
 description: |-
@@ -14,7 +15,12 @@ description: |-
   - GitHub Token 认证，速率限制提升至 5000 次/小时
   - 定时抓取并自动推送到飞书、Discord、Telegram
   - 自定义输出模板与字段映射...
-tags: python,webhook,token,true,api
+tags:
+  - python
+  - webhook
+  - token
+  - "true"
+  - api
 tools:
   - read
   - exec

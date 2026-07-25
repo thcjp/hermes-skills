@@ -4,6 +4,7 @@ name: "elite-longterm-memory-local-free"
 version: "1.0.0"
 displayName: "本地向量记忆免费版"
 summary: "基础本地记忆系统，热内存加文件归档，纯本地运行无外部依赖。。面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.md）抗压缩与"
+summary_zh: "基础本地记忆系统，热内存加文件归档，纯本地运行无外部依赖。。面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.md）抗压缩与"
 license: "MIT"
 description: |-
   面向 AI Agent 的基础本地记忆系统，提供热内存与文件归档两层记忆能力.

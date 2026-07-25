@@ -4,6 +4,7 @@ name: "atlas-admin-console"
 version: 1.0.1
 displayName: "Atlas管理台专业版"
 summary: "MongoDB Atlas全功能管理控制台，含批量API调用、结果导出、历史回放、多API编排与监控告警自动化。"
+summary_zh: "MongoDB Atlas全功能管理控制台，含批量API调用、结果导出、历史回放、多API编排与监控告警自动化。"
 license: "MIT"
 edition: "pro"
 description: |-

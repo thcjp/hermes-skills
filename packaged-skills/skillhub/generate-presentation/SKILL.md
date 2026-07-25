@@ -5,11 +5,17 @@ name: "generate-presentation"
 version: 1.0.1
 displayName: "Generate Presentatio"
 summary: "从Markdown/URL/主题生成专业HTML与PDF演示文稿。Generate professional HTML and PDF presentations from markdown"
+summary_zh: "从Markdown/URL/主题生成专业HTML与PDF演示文稿。Generate professional HTML and PDF presentations from markdown"
 license: "MIT"
 description: |-
   Generate professional HTML and PDF presentations from markdown content,
   URLs, or topics。Creates。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
-tags: api,按流程执,依赖说明,不支持,agent
+tags:
+  - api
+  - 按流程执
+  - 依赖说明
+  - 不支持
+  - agent
 tools:
   - read
   - exec

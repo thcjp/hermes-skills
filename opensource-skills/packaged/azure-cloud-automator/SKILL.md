@@ -4,7 +4,8 @@ name: azure-cloud-automator
 version: 1.0.1
 displayName: Azure云自动化
 summary: "Azure云自动化:基础设施即代码+成本优化+无服务器架构,云上运维一站搞定。Azure云自动化——基于Azure云最佳实践，从基础设施即代码到成本优化，从无服务器架构到安全合规，云上运维一"
-license: Proprietary
+summary_zh: "Azure云自动化:基础设施即代码+成本优化+无服务器架构,云上运维一站搞定。Azure云自动化——基于Azure云最佳实践，从基础设施即代码到成本优化，从无服务器架构到安全合规，云上运维一"
+license: MIT
 description: Azure云自动化——基于Azure云最佳实践，从基础设施即代码到成本优化，从无服务器架构到安全合规，云上运维一站搞定。适用于基础设施部署、成本优化、架构设计、运维自动化、合规审计等场景。支持Bicep/Terraform
   IaC、Azure Functions无服务器、事件驱动架构、监控告警。国内场景可迁移至阿里云/腾讯云。触发关键词：Azure、云自动化、Bicep、ARM模板、无服务器、事件驱动、云成本、云架构、IaC
 tags:

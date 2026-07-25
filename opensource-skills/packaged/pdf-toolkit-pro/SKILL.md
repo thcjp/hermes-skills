@@ -4,6 +4,7 @@ name: pdf-toolkit-pro
 version: 1.1.0
 displayName: PDF工具箱Pro
 summary: "PDF全流程处理:提取合并拆分填表生成,文档数字化一站搞定。PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印"
+summary_zh: "PDF全流程处理:提取合并拆分填表生成,文档数字化一站搞定。PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印"
 license: Apache-2.0
 description: PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印签名、以及从HTML/Markdown/代码生成PDF。适用于文档数字化、合同处理、报表归档、表单自动化、批量PDF处理场景。触发关键词:PDF、PDF处理、文本提取、表格提取、PDF合并、PDF拆分、填表、PDF注释、文档数字化、PDF生成。
 tags:

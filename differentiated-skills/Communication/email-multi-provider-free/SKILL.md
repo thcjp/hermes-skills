@@ -1,4 +1,5 @@
 ---
+
 slug: email-multi-provider-free
 name: email-multi-provider-free
 version: 1.0.1
@@ -6,7 +7,9 @@ displayName: 多邮箱管理免费版
 summary: "Gmail与Outlook多账户邮件管理，支持收发搜索与安全认证。多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook"
 license: Proprietary
 edition: free
-description: '多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook
+description: "多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook
+  与 Exchange 邮箱，支持邮件读取、搜索、发送、回复与转发等核心操作，通过系统密钥环
+  安全存储凭证。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、安全、性能优化、搜索、机器学习"
 
   与 Exchange 邮箱，支持邮件读取、搜索、发送、回复与转发等核心操作，通过系统密钥环
 
@@ -29,6 +32,7 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
 # 多邮箱管理免费版
 

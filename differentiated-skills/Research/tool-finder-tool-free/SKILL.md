@@ -1,4 +1,5 @@
 ---
+
 slug: tool-finder-tool-free
 name: tool-finder-tool-free
 version: 1.0.0
@@ -6,7 +7,8 @@ displayName: 工具发现引擎免费版
 summary: "统一搜索 SkillHub 技能和 MCP server的智能发现工具,支持评分排序与推荐等级。工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台"
 license: Proprietary
 edition: free
-description: 工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台技能和 MCP server,支持评分排序、推荐等级、来源标识等功能。Use
+description: "工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台技能和 MCP server,支持评分排序、推荐等级、来源标识等功能。Use
+  when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。减少重复劳动，提升工作效率。触发关键词：自动化、性能优化、搜索、SEO、数据库"
   when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
 tags:
   - 研究工具
@@ -24,6 +26,7 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+
 ---
 # 工具发现引擎免费版
 

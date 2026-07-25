@@ -4,6 +4,7 @@ name: "notcrawl"
 version: 1.0.2
 displayName: "Notcrawl"
 summary: "Notion归档,搜索/同步/页面数据库/Markdown导出。Notion archive: search, sync freshness, pages/databases, Markdo"
+summary_zh: "Notion归档,搜索/同步/页面数据库/Markdown导出。Notion archive: search, sync freshness, pages/databases, Markdo"
 license: "MIT"
 description: |-
   Notion archive: search, sync freshness, pages/databases, Markdown exports。核心能力:

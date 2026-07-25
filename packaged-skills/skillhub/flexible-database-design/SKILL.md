@@ -7,6 +7,7 @@ summary: "指导Agent与用户设计实现灵活数据库,建模不踩坑。Guid
 
 核心能力:
 - 集成工具领"
+summary_zh: "指导Agent与用户设计实现灵活数据库,建模不踩坑。Guide agents and users to design and implement a"
 license: "MIT"
 description: |-
   Guide agents and users to design and implement a \\\n\n核心能力:\n- 集成工具领域的专业化AI辅助工具\n\

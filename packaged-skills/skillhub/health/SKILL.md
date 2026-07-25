@@ -4,6 +4,7 @@ name: "health"
 version: 1.0.2
 displayName: "健康指导助手"
 summary: "提供个性化健康指导，同时保持严格的安全边界与证据分级。。健康指导助手在严格安全边界下提供个性化健康建议。覆盖Safety Boundary Protocols、 个性化基线建立、Commun"
+summary_zh: "提供个性化健康指导，同时保持严格的安全边界与证据分级。。健康指导助手在严格安全边界下提供个性化健康建议。覆盖Safety Boundary Protocols、 个性化基线建立、Commun"
 license: "MIT"
 description: |-
   健康指导助手在严格安全边界下提供个性化健康建议。覆盖Safety Boundary Protocols、

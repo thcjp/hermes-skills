@@ -4,6 +4,7 @@ name: "analyze-video-by-qwen-free"
 version: "1.0.0"
 displayName: "Qwen视频分析LITE"
 summary: "Qwen多模态模型视频分析基础版,支持本地视频文件场景描述与内容理解。Qwen 视频智能分析基础客户端(免费版)。基于 Qwen 3.5 Plus 多模态模型对本地视频文件进行内容分析, 支"
+summary_zh: "Qwen多模态模型视频分析基础版,支持本地视频文件场景描述与内容理解。Qwen 视频智能分析基础客户端(免费版)。基于 Qwen 3.5 Plus 多模态模型对本地视频文件进行内容分析, 支"
 license: "MIT"
 description: |-
   Qwen 视频智能分析基础客户端(免费版)。基于 Qwen 3.5 Plus 多模态模型对本地视频文件进行内容分析,

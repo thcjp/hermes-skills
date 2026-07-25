@@ -4,6 +4,7 @@ name: "azure-devops"
 version: 1.0.1
 displayName: "Azure DevOps"
 summary: "列Azure DevOps项目/仓库/分支,建PR管工作项,研发协同闭环。List Azure DevOps projects, repositories, and branches; cr"
+summary_zh: "列Azure DevOps项目/仓库/分支,建PR管工作项,研发协同闭环。List Azure DevOps projects, repositories, and branches; cr"
 license: "MIT"
 description: |-
   List Azure DevOps projects, repositories, and branches; create pull

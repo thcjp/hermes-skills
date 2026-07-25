@@ -1,4 +1,5 @@
 ---
+
 slug: "figma-design-tool-pro"
 name: "figma-design-tool-pro"
 version: "1.0.0"
@@ -6,7 +7,8 @@ displayName: "Figma设计集成-专业版"
 summary: "企业级Figma集成平台，支持组件库管理、设计变量提取、批量导出与团队协作工作流,支持多种使用场景和自动化处理"
 license: "Proprietary"
 edition: "pro"
-description: |-
+description: "|-
+  Figma设计集成工具专业版。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、设计、品牌、图片。降低专业门槛，让非专业人员也能快速上手。提供结构化方法论与最佳实践。确保输出一致性与专业性。支持多种输入格式与输出模板"
   Figma设计集成工具专业版。
 tags:
   - Creative
@@ -27,6 +29,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
 # Figma设计集成工具（专业版）
 

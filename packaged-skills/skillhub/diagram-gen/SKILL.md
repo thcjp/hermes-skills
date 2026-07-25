@@ -4,6 +4,7 @@ name: "diagram-gen"
 version: 1.0.1
 displayName: "图表生成工具-专业版"
 summary: "全格式图表生成引擎，支持Draw.io/Mermaid/Excalidraw，覆盖8种图表类型与批量生成。"
+summary_zh: "全格式图表生成引擎，支持Draw.io/Mermaid/Excalidraw，覆盖8种图表类型与批量生成。"
 license: "MIT"
 edition: "pro"
 description: |-

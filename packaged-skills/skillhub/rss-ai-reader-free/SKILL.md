@@ -4,6 +4,7 @@ name: "rss-ai-reader-free"
 version: "1.0.0"
 displayName: "RSS AI 摘要 LITE"
 summary: "RSS抓取与LLM中文摘要生成,推送到飞书,SQLite去重,单次执行模式。RSS AI 阅读器(免费版)。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 生成中文摘要,"
+summary_zh: "RSS抓取与LLM中文摘要生成,推送到飞书,SQLite去重,单次执行模式。RSS AI 阅读器(免费版)。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 生成中文摘要,"
 license: "MIT"
 description: |-
   RSS AI 阅读器(免费版)。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 生成中文摘要,

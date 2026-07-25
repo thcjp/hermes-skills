@@ -4,6 +4,7 @@ name: "security-audit"
 version: 1.0.1
 displayName: "Security Audit"
 summary: "SkillHub部署全面安全审计,扫暴露凭据与开放端口。Comprehensive security auditing for SkillHub deployments。Scans for"
+summary_zh: "SkillHub部署全面安全审计,扫暴露凭据与开放端口。Comprehensive security auditing for SkillHub deployments。Scans for"
 license: "MIT"
 description: |-
   Comprehensive security auditing for SkillHub deployments。Scans for

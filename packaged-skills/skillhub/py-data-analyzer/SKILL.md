@@ -4,6 +4,7 @@ name: "py-data-analyzer"
 version: 1.0.1
 displayName: "Python数据分析(专业版)"
 summary: "企业级Python数据分析方案，支持机器学习建模、时间序列预测、大数据处理与自动化报表。。Python数据分析专业版是一套面向数据科学家与企业级团队的高级数据分析解决方案，在免费版基础上扩展"
+summary_zh: "企业级Python数据分析方案，支持机器学习建模、时间序列预测、大数据处理与自动化报表。。Python数据分析专业版是一套面向数据科学家与企业级团队的高级数据分析解决方案，在免费版基础上扩展"
 license: "MIT"
 edition: "pro"
 description: |-

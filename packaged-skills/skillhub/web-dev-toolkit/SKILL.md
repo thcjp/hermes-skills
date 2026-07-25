@@ -4,6 +4,7 @@ name: "web-dev-toolkit"
 version: 1.0.1
 displayName: "Web开发工具集(专业版)"
 summary: "面向团队的企业级Web开发平台,含性能工程、SEO深度、WCAG审查、企业部署与监控。。Web开发工具集专业版为团队与企业提供端到端Web开发工程能力,涵盖性能工程化、SEO深度优化、WCA"
+summary_zh: "面向团队的企业级Web开发平台,含性能工程、SEO深度、WCAG审查、企业部署与监控。。Web开发工具集专业版为团队与企业提供端到端Web开发工程能力,涵盖性能工程化、SEO深度优化、WCA"
 license: "MIT"
 edition: "pro"
 description: |-

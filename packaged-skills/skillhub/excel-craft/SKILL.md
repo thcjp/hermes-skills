@@ -4,6 +4,7 @@ name: "excel-craft"
 version: 1.0.1
 displayName: "Excel工艺专业版"
 summary: "企业级 Excel 生成引擎，含批量处理、条件格式、高级图表、模板系统与数据源对接。。Excel 工艺专业版在免费版基础上扩展批量生成、多文件合并拆分、条件格式与数据验证、高级图表、模板系统"
+summary_zh: "企业级 Excel 生成引擎，含批量处理、条件格式、高级图表、模板系统与数据源对接。。Excel 工艺专业版在免费版基础上扩展批量生成、多文件合并拆分、条件格式与数据验证、高级图表、模板系统"
 license: "MIT"
 edition: "pro"
 description: |-

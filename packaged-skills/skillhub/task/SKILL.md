@@ -4,6 +4,7 @@ name: "task"
 version: 0.1.1
 displayName: "Task"
 summary: "Tasker docstore任务管理,清单/今日到期/逾期/周计划。Tasker docstore task management via tool-dispatch。Use for ta"
+summary_zh: "Tasker docstore任务管理,清单/今日到期/逾期/周计划。Tasker docstore task management via tool-dispatch。Use for ta"
 license: "MIT"
 description: |-
   Tasker docstore task management via tool-dispatch。Use for task lists,

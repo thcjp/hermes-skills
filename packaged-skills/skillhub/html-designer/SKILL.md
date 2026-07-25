@@ -5,6 +5,7 @@ name: "html-designer"
 version: 1.0.1
 displayName: "HTML Designer"
 summary: "专精HTML/CSS的网页平面设计师,深谙图形设计。Expert web graphic designer specializing in HTML/CSS design with deep"
+summary_zh: "专精HTML/CSS的网页平面设计师,深谙图形设计。Expert web graphic designer specializing in HTML/CSS design with deep"
 license: "MIT"
 description: Expert web graphic designer specializing in HTML/CSS design with deep knowledge of graphic design，可生成提升工作效率
 tags:

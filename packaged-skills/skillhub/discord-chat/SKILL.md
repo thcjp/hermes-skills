@@ -4,6 +4,7 @@ name: "discord-chat"
 version: 1.0.1
 displayName: "Discord Chat"
 summary: "通过message工具在Discord频道发消息、回复、搜索、读取、回应、编辑与删除。discord-chat 通过 message 工具与 Discord 频道交互,覆盖消息发送、线程回复"
+summary_zh: "通过message工具在Discord频道发消息、回复、搜索、读取、回应、编辑与删除。discord-chat 通过 message 工具与 Discord 频道交互,覆盖消息发送、线程回复"
 license: "MIT"
 description: |-
   discord-chat 通过 message 工具与 Discord 频道交互,覆盖消息发送、线程回复、

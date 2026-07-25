@@ -39,8 +39,13 @@ from config import (
     create_backup
 )
 
+# A3修复: 从skill_core导入共享解析和规则,消除第三套检查实现
+from skill_core.parser import parse_frontmatter
+from skill_core.rules import EXAGGERATION_WORDS, RESERVED_WORDS
+
 def get_db():
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -182,70 +187,72 @@ def static_check(skill_content):
         checks['issues'].append('SKILL.md内容为空')
         return checks
     
-    # 解析frontmatter
-    if skill_content.startswith('---'):
-        parts = re.split(r'^---\s*$', skill_content, maxsplit=2, flags=re.MULTILINE)
-        if len(parts) >= 3:
-            fm = parts[1]
-            body = parts[2]
-            checks['has_frontmatter'] = True
-            checks['frontmatter_valid'] = True
-            
-            checks['has_displayName'] = bool(re.search(r'^displayName:', fm, re.MULTILINE))
-            checks['has_summary'] = bool(re.search(r'^summary:', fm, re.MULTILINE))
-            checks['has_license'] = bool(re.search(r'^license:', fm, re.MULTILINE))
-            checks['has_tools'] = bool(re.search(r'^tools:', fm, re.MULTILINE))
-            
-            # description长度
-            desc_match = re.search(r'description:\s*\|-\s*\n((?:\s+.+\n?)+)', fm)
-            if desc_match:
-                desc_text = desc_match.group(1).strip()
-                checks['description_length'] = len(desc_text)
-                checks['has_description'] = True
-            else:
-                desc_match = re.search(r'description:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
-                if desc_match:
-                    checks['description_length'] = len(desc_match.group(1).strip())
-                    checks['has_description'] = True
-            
-            # 检查硬编码凭证（排除代码块）
-            fm_no_code = re.sub(r'```[\s\S]*?```', '', fm)
-            key_patterns = [
-                r'sk-[a-zA-Z0-9]{20,}',
-                r'AKIA[A-Z0-9]{16}',
-                r'ghp_[a-zA-Z0-9]{36}',
-            ]
-            for pattern in key_patterns:
-                if re.search(pattern, fm_no_code):
-                    checks['has_hardcoded_keys'] = True
-                    checks['issues'].append('frontmatter含硬编码凭证')
-                    break
-            
-            # 检查保留词
-            for field in ['displayName', 'summary']:
-                match = re.search(rf'^{field}:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
-                if match:
-                    value = match.group(1).lower()
-                    for word in ['claude', 'anthropic', 'openai', 'chatgpt']:
-                        if re.search(rf'\b{word}\b', value):
-                            checks['has_reserved_words'] = True
-                            checks['issues'].append(f'{field}含保留词{word}')
-                            break
-            
-            # 检查夸大词
-            for field in ['displayName', 'summary']:
-                match = re.search(rf'^{field}:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
-                if match:
-                    for word in ['万能', '超级', '最强', '最好', '最佳', '终极', '完美', '第一', '顶级', '极致']:
-                        if word in match.group(1):
-                            checks['has_exaggeration'] = True
-                            checks['issues'].append(f'{field}含夸大词{word}')
-                            break
+    # A3修复: 使用skill_core.parse_frontmatter替代自行解析
+    parsed = parse_frontmatter(skill_content)
+    if parsed['raw']:
+        fm = parsed['raw']
+        body = parsed['body']
+        checks['has_frontmatter'] = True
+        checks['frontmatter_valid'] = True
+        
+        checks['has_displayName'] = bool(re.search(r'^displayName:', fm, re.MULTILINE))
+        checks['has_summary'] = bool(re.search(r'^summary:', fm, re.MULTILINE))
+        checks['has_license'] = bool(re.search(r'^license:', fm, re.MULTILINE))
+        checks['has_tools'] = bool(re.search(r'^tools:', fm, re.MULTILINE))
+        
+        # description长度
+        desc_match = re.search(r'description:\s*\|-\s*\n((?:\s+.+\n?)+)', fm)
+        if desc_match:
+            desc_text = desc_match.group(1).strip()
+            checks['description_length'] = len(desc_text)
+            checks['has_description'] = True
         else:
-            checks['issues'].append('frontmatter格式错误')
+            desc_match = re.search(r'description:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+            if desc_match:
+                checks['description_length'] = len(desc_match.group(1).strip())
+                checks['has_description'] = True
+        
+        # 检查硬编码凭证（排除代码块）
+        fm_no_code = re.sub(r'```[\s\S]*?```', '', fm)
+        key_patterns = [
+            r'sk-[a-zA-Z0-9]{20,}',
+            r'AKIA[A-Z0-9]{16}',
+            r'ghp_[a-zA-Z0-9]{36}',
+        ]
+        for pattern in key_patterns:
+            if re.search(pattern, fm_no_code):
+                checks['has_hardcoded_keys'] = True
+                checks['issues'].append('frontmatter含硬编码凭证')
+                break
+        
+        # 检查保留词
+        for field in ['displayName', 'summary']:
+            match = re.search(rf'^{field}:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+            if match:
+                value = match.group(1).lower()
+                # A3修复: 使用skill_core.rules.RESERVED_WORDS替代硬编码
+                for word in RESERVED_WORDS:
+                    if re.search(rf'\b{word}\b', value):
+                        checks['has_reserved_words'] = True
+                        checks['issues'].append(f'{field}含保留词{word}')
+                        break
+        
+        # 检查夸大词
+        for field in ['displayName', 'summary']:
+            match = re.search(rf'^{field}:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+            if match:
+                # A3修复: 使用skill_core.rules.EXAGGERATION_WORDS替代硬编码(消除16词vs10词不一致)
+                for word in EXAGGERATION_WORDS:
+                    if word in match.group(1):
+                        checks['has_exaggeration'] = True
+                        checks['issues'].append(f'{field}含夸大词{word}')
+                        break
     else:
-        body = skill_content
-        checks['issues'].append('缺少frontmatter')
+        body = parsed['body']
+        if skill_content.startswith('---'):
+            checks['issues'].append('frontmatter格式错误')
+        else:
+            checks['issues'].append('缺少frontmatter')
     
     # 检查正文章节
     checks['has_core_capability'] = any(kw in body for kw in ['核心能力', '核心功能', '## 功能'])
@@ -367,33 +374,22 @@ def save_trace_score(skill_id, checks, static_scores, llm_result=None):
     differentiation_val = effectiveness_score
     compliance_val = trust_score
     
-    # 检查是否已有trace评分
-    c.execute(f"SELECT id FROM scores WHERE skill_id = ? AND score_type = '{SCORE_TYPE_TRACE_LLM}'", (skill_id,))
-    existing = c.fetchone()
+    # D5修复: 不再UPDATE-in-place销毁历史，改为标记旧记录is_current=0 + INSERT新记录is_current=1
+    c.execute(
+        f"UPDATE scores SET is_current = 0 WHERE skill_id = ? AND score_type = '{SCORE_TYPE_TRACE_LLM}' AND is_current = 1",
+        (skill_id,)
+    )
     
-    if existing:
-        c.execute("""
-            UPDATE scores SET
-                total_score = ?, quality_score = ?, practicality_score = ?,
-                simplicity_score = ?, performance_score = ?, debranding_score = ?,
-                differentiation_score = ?, compliance_score = ?, cost_score = 0,
-                scored_at = ?, reviewer = ?, notes = ?, is_pass = ?
-            WHERE id = ?
-        """, (total, reliability_score, adaptability_score,
-              convention_score, effectiveness_score, trust_score,
-              differentiation_val, compliance_val,
-              now, 'trace_llm_scorer_v2', notes, is_pass, existing['id']))
-    else:
-        c.execute(f"""
-            INSERT INTO scores (skill_id, score_type, total_score,
-                quality_score, practicality_score, simplicity_score,
-                performance_score, debranding_score, differentiation_score,
-                compliance_score, cost_score, scored_at, reviewer, notes, is_pass, pass_threshold)
-            VALUES (?, '{SCORE_TYPE_TRACE_LLM}', ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?)
-        """, (skill_id, total, reliability_score, adaptability_score,
-              convention_score, effectiveness_score, trust_score,
-              differentiation_val, compliance_val,
-              now, 'trace_llm_scorer_v2', notes, is_pass, TRACE_PASS_THRESHOLD))
+    c.execute(f"""
+        INSERT INTO scores (skill_id, score_type, total_score,
+            quality_score, practicality_score, simplicity_score,
+            performance_score, debranding_score, differentiation_score,
+            compliance_score, cost_score, scored_at, reviewer, notes, is_pass, pass_threshold, is_current)
+        VALUES (?, '{SCORE_TYPE_TRACE_LLM}', ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, 1)
+    """, (skill_id, total, reliability_score, adaptability_score,
+          convention_score, effectiveness_score, trust_score,
+          differentiation_val, compliance_val,
+          now, 'trace_llm_scorer_v2', notes, is_pass, TRACE_PASS_THRESHOLD))
     
     conn.commit()
     conn.close()

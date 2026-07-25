@@ -4,6 +4,7 @@ name: "encoding-formats"
 version: 1.0.1
 displayName: "编码格式工具"
 summary: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化。编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解"
+summary_zh: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化。编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解"
 license: "MIT"
 description: |-
   编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解码、

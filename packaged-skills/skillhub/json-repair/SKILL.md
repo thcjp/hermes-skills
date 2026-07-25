@@ -4,6 +4,7 @@ name: "json-repair"
 version: 1.0.1
 displayName: "JSON修复工具专业版"
 summary: "企业级JSON修复工具，支持批量目录修复、流式处理、自定义规则、修复预览与历史回滚。。JSON修复工具专业版面向企业级场景，在免费版基础上扩展批量目录修复、流式处理、自定义修复规则、修复预览"
+summary_zh: "企业级JSON修复工具，支持批量目录修复、流式处理、自定义规则、修复预览与历史回滚。。JSON修复工具专业版面向企业级场景，在免费版基础上扩展批量目录修复、流式处理、自定义修复规则、修复预览"
 license: "MIT"
 edition: "pro"
 description: |-

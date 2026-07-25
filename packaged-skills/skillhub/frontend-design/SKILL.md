@@ -5,6 +5,7 @@ name: "frontend-design"
 version: 1.1.1
 displayName: "Frontend Design"
 summary: "打造独特生产级前端界面,高设计质量,告别AI通用感。Create distinctive, production-grade frontend interfaces with high de"
+summary_zh: "打造独特生产级前端界面,高设计质量,告别AI通用感。Create distinctive, production-grade frontend interfaces with high de"
 license: "MIT"
 description: Create distinctive, production-grade frontend interfaces with high design quality。Use this skill，可生成提升工作效率
 tags:

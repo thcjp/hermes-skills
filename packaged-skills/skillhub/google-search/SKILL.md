@@ -4,6 +4,7 @@ name: "google-search"
 version: 1.0.1
 displayName: "google-search"
 summary: "用Google可编程搜索引擎(PSE)搜实时信息。Search the web using Google Custom Search Engine (PSE)。Use this when y"
+summary_zh: "用Google可编程搜索引擎(PSE)搜实时信息。Search the web using Google Custom Search Engine (PSE)。Use this when y"
 license: "MIT"
 description: |-
   Search the web using Google Custom Search Engine (PSE)。Use this when

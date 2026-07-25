@@ -4,6 +4,7 @@ name: "csv-insight"
 version: 1.0.1
 displayName: "CSV洞察 专业版"
 summary: "全功能CSV分析，支持流式大文件、相关性分析、分布可视化与高级异常检测。。CSV Insight 专业版面向专业数据分析师与数据科学家，在免费版基础上解锁流式大文件处理、相关性分析、分布可视"
+summary_zh: "全功能CSV分析，支持流式大文件、相关性分析、分布可视化与高级异常检测。。CSV Insight 专业版面向专业数据分析师与数据科学家，在免费版基础上解锁流式大文件处理、相关性分析、分布可视"
 license: "MIT"
 edition: "pro"
 description: |-

@@ -4,6 +4,7 @@ name: "alephnet-node"
 version: 1.4.1
 displayName: "Alephnet Node"
 summary: "面向AI智能体的社会经济网络,提供语义计算、分布式记忆与一致性验证。面向AI智能体的完整社会经济网络。Agent作为一等公民,系统封装语义场、分布式共识与 经济协议的复杂性,向上暴露高层认知"
+summary_zh: "面向AI智能体的社会经济网络,提供语义计算、分布式记忆与一致性验证。面向AI智能体的完整社会经济网络。Agent作为一等公民,系统封装语义场、分布式共识与 经济协议的复杂性,向上暴露高层认知"
 license: "MIT"
 description: |-
   面向AI智能体的完整社会经济网络。Agent作为一等公民,系统封装语义场、分布式共识与

@@ -4,6 +4,7 @@ name: "obsidian-cli"
 version: 1.0.1
 displayName: "Obsidian CLI(专业版)"
 summary: "全功能Obsidian命令行管理工具，支持模板、插件、同步、历史、开发工具与TUI交互模式。Obsidian CLI工具专业版是面向团队和高级用户的完整命令行知识管理方案，在免费版基础上解锁"
+summary_zh: "全功能Obsidian命令行管理工具，支持模板、插件、同步、历史、开发工具与TUI交互模式。Obsidian CLI工具专业版是面向团队和高级用户的完整命令行知识管理方案，在免费版基础上解锁"
 license: "MIT"
 edition: "pro"
 description: |-

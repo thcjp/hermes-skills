@@ -4,6 +4,7 @@ name: "pyx-scanner"
 version: 1.0.1
 displayName: "Skill安全扫描(专业版)"
 summary: "企业级Skill安全检测方案，支持批量扫描、持续监控、自定义策略与团队协作审计。。Skill安全扫描专业版是一套面向安全团队与企业级场景的 AI Agent Skill 安全检测解决方案，在"
+summary_zh: "企业级Skill安全检测方案，支持批量扫描、持续监控、自定义策略与团队协作审计。。Skill安全扫描专业版是一套面向安全团队与企业级场景的 AI Agent Skill 安全检测解决方案，在"
 license: "MIT"
 edition: "pro"
 description: |-

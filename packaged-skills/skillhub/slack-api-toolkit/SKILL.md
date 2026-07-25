@@ -4,6 +4,7 @@ name: "slack-api-toolkit"
 version: 1.0.1
 displayName: "Slack API工具箱Pro"
 summary: "Slack全功能集成方案，含文件、搜索、反应、书签、批量操作与审计日志。。Slack API工具箱（专业版）为团队与企业提供Slack API的全功能集成方案，覆盖消息、频道、文件、搜索、反"
+summary_zh: "Slack全功能集成方案，含文件、搜索、反应、书签、批量操作与审计日志。。Slack API工具箱（专业版）为团队与企业提供Slack API的全功能集成方案，覆盖消息、频道、文件、搜索、反"
 license: "MIT"
 edition: "pro"
 description: |-

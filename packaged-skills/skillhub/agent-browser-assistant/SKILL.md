@@ -4,6 +4,7 @@ slug: "agent-browser-assistant"
 displayName: "浏览器代理助手"
 version: 0.1.1
 summary: "AI浏览器代理助手,自动化网页交互与数据采集,支持复杂页面操作流程。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Agent B"
+summary_zh: "AI浏览器代理助手,自动化网页交互与数据采集,支持复杂页面操作流程。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据. Use when 用户说"Agent B"
 description: |-
   API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Agent Browser Assistant 智能分析"、Agent Browser Assistant 智能分析时使用.

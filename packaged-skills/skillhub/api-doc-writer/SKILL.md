@@ -4,6 +4,7 @@ name: "api-doc-writer"
 version: 1.0.2
 displayName: "API文档一键生成规范器"
 summary: "接口文档写不规范?一键生成REST API完整文档,含认证/状态码/安全建议模板,支持多模块结构,开发团队协作必备。"
+summary_zh: "接口文档写不规范?一键生成REST API完整文档,含认证/状态码/安全建议模板,支持多模块结构,开发团队协作必备。"
 license: "MIT"
 description: |-
   API 接口文档编写助手。用于编写 REST API 文档、定义接口规范、生成接口说明.

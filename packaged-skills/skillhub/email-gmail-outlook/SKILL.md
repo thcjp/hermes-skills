@@ -4,6 +4,7 @@ name: "email-gmail-outlook"
 version: 1.0.8
 displayName: "Email Gmail Outlook"
 summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件。基于 porteden CLI(`porteden email` / `porteden ma"
+summary_zh: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件。基于 porteden CLI(`porteden email` / `porteden ma"
 license: "MIT"
 description: |-
   基于 porteden CLI(`porteden email` / `porteden mail`)安全读写 Gmail、Outlook、Exchange 邮箱,

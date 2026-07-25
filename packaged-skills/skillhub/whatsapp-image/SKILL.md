@@ -4,6 +4,7 @@ name: "whatsapp-image"
 version: 1.0.1
 displayName: "WhatsApp图片发送-专业版"
 summary: "企业级WhatsApp多媒体消息平台，支持批量发送、视频音频文档、定时发送、群组消息与模板管理。。WhatsApp 多媒体消息发送专业版。Use when 需要视频处理、音频编辑、媒体转换、"
+summary_zh: "企业级WhatsApp多媒体消息平台，支持批量发送、视频音频文档、定时发送、群组消息与模板管理。。WhatsApp 多媒体消息发送专业版。Use when 需要视频处理、音频编辑、媒体转换、"
 license: "MIT"
 edition: "pro"
 description: |-

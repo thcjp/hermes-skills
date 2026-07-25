@@ -4,6 +4,7 @@ name: "jinn-node-free"
 version: 1.0.1
 displayName: "Jinn Node Free"
 summary: "在自治网络中运行工作节点的基础版本，支持单任务测试和钱包查询。。jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询. 不包含持续工作"
+summary_zh: "在自治网络中运行工作节点的基础版本，支持单任务测试和钱包查询。。jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询. 不包含持续工作"
 license: "MIT"
 description: |-
   jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询.

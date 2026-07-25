@@ -4,6 +4,7 @@ name: "sequential-read"
 version: 1.0.1
 displayName: "Sequential Read"
 summary: "顺序阅读散文并结构化反思,模拟阅读体验。Read prose sequentially with structured reflections to simulate the reading"
+summary_zh: "顺序阅读散文并结构化反思,模拟阅读体验。Read prose sequentially with structured reflections to simulate the reading"
 license: "MIT"
 description: |-
   Read prose sequentially with structured reflections to simulate the

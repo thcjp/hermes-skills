@@ -187,6 +187,7 @@ def parse_frontmatter(content: str) -> Dict[str, Any]:
 def get_existing_source_slugs() -> Set[str]:
     """获取本地DB中已有的source_slug"""
     conn = sqlite3.connect(DB_PATH)
+    conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
     c.execute("""
         SELECT DISTINCT source_slug FROM skills
