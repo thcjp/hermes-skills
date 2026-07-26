@@ -405,6 +405,146 @@ def run_content_quality_gate(skill_md: Path) -> Dict[str, Any]:
         }
 
 
+def run_marketing_gate_check(skill_md: Path) -> Dict[str, Any]:
+    """营销关卡检查(v2.0新增)
+    
+    在L1.5内容质量检查通过后，检查营销数据质量:
+    - displayName中文化且≤20字符
+    - summary营销优化且≤100字符
+    - description 150-280字符, 非模板化
+    - tags 5-10个
+    - categoryIds正确映射
+    - pricing合理性
+    - license合规
+    """
+    try:
+        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+        from quality_gate import run_marketing_gate
+        result = run_marketing_gate(skill_md)
+        failed_checks = [c['name'] for c in result.get('checks', []) if not c['passed']]
+        return {
+            'passed': result.get('overall_passed', False),
+            'score': f"{result.get('passed_checks', 0)}/{result.get('total_checks', 0)}",
+            'failed_checks': failed_checks,
+        }
+    except ImportError:
+        return {
+            'passed': True,
+            'score': 'skipped',
+            'failed_checks': [],
+            'note': 'quality_gate.run_marketing_gate not available, skipped',
+        }
+
+
+def run_anti_hallucination_check(skill_md: Path) -> Dict[str, Any]:
+    """防幻觉机制检查(v2.0新增)
+    
+    检查AI虚假实现和需求理解偏差:
+    - 交叉验证(需L2/L3/L4报告, 无报告时跳过, 不阻止)
+    - 需求理解偏差: description声明 vs body实际内容
+    - 虚假实现检测: 无占位符/无模板/无空代码块
+    """
+    try:
+        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+        from quality_gate import run_anti_hallucination
+        result = run_anti_hallucination(skill_md)
+        failed_checks = [c['name'] for c in result.get('checks', []) if not c['passed']]
+        return {
+            'passed': result.get('overall_passed', False),
+            'score': f"{result.get('passed_checks', 0)}/{result.get('total_checks', 0)}",
+            'failed_checks': failed_checks,
+        }
+    except ImportError:
+        return {
+            'passed': True,
+            'score': 'skipped',
+            'failed_checks': [],
+            'note': 'quality_gate.run_anti_hallucination not available, skipped',
+        }
+
+
+def run_l2_check(slug: str) -> Dict[str, Any]:
+    """L2 LLM验证报告检查(v2.0新增)
+    
+    复用update_mechanism.py的L2检查模式:
+    - 检查l2_final_report_{slug}.json是否存在
+    - 如果存在, 验证TRACE总分≥35
+    - 如果不存在, 标记为pending, 生成AI执行指引
+    """
+    import json as _json
+    l2_final_path = SKILL_REGISTRY_DIR / f'l2_final_report_{slug}.json'
+    
+    if not l2_final_path.exists():
+        return {
+            'passed': None,
+            'status': 'pending_ai_eval',
+            'failed_checks': ['l2_report_missing'],
+            'note': f'L2验证报告不存在: {l2_final_path}',
+            'guide': f'请AI执行L2评估: python llm_validator.py validate {slug} → AI执行 → python llm_validator.py import {slug} <结果.json>',
+        }
+    
+    try:
+        with open(l2_final_path, 'r', encoding='utf-8') as f:
+            l2_final = _json.load(f)
+        
+        l2_passed = l2_final.get('l2_passed', False)
+        trace_total = l2_final.get('trace_total', 0)
+        
+        return {
+            'passed': l2_passed,
+            'trace_total': trace_total,
+            'trace_grade': l2_final.get('trace_grade', 'D'),
+            'failed_checks': [] if l2_passed else [f'TRACE评分{trace_total}/50未通过(阈值35)'],
+        }
+    except Exception as e:
+        return {
+            'passed': False,
+            'status': 'error',
+            'failed_checks': [f'L2报告读取失败: {e}'],
+        }
+
+
+def run_l3_check(slug: str) -> Dict[str, Any]:
+    """L3 Agent试运行报告检查(v2.0新增)
+    
+    复用update_mechanism.py的L3检查模式:
+    - 检查l3_final_report_{slug}.json是否存在
+    - 如果存在, 验证评分≥70
+    - 如果不存在, 标记为pending, 生成AI执行指引
+    """
+    import json as _json
+    l3_final_path = SKILL_REGISTRY_DIR / f'l3_final_report_{slug}.json'
+    
+    if not l3_final_path.exists():
+        return {
+            'passed': None,
+            'status': 'pending_ai_trial',
+            'failed_checks': ['l3_report_missing'],
+            'note': f'L3试运行报告不存在: {l3_final_path}',
+            'guide': f'请AI执行L3试运行: python agent_trial.py trial {slug} → AI执行6个用例 → python agent_trial.py import {slug} <结果.json>',
+        }
+    
+    try:
+        with open(l3_final_path, 'r', encoding='utf-8') as f:
+            l3_final = _json.load(f)
+        
+        l3_passed = l3_final.get('l3_passed', False)
+        l3_score = l3_final.get('l3_score', 0)
+        
+        return {
+            'passed': l3_passed,
+            'score': l3_score,
+            'grade': l3_final.get('l3_grade', 'D'),
+            'failed_checks': [] if l3_passed else [f'L3试运行评分{l3_score}/100未通过(阈值70)'],
+        }
+    except Exception as e:
+        return {
+            'passed': False,
+            'status': 'error',
+            'failed_checks': [f'L3报告读取失败: {e}'],
+        }
+
+
 # ============================================================
 # Phase 4: SYNC_GITHUB - GitHub双仓库同步
 # ============================================================
@@ -696,10 +836,18 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
                                 skip_skillhub: bool = False,
                                 skip_clawhub: bool = False,
                                 skip_content_quality: bool = False,
+                                skip_marketing: bool = False,
+                                skip_l2: bool = False,
+                                skip_l3: bool = False,
                                 force: bool = False) -> Dict[str, Any]:
     """端到端同步单个skill到所有平台
 
-    流程: 检测变更 → 版本递增 → L1质量门禁 → L1.5内容质量门禁 → GitHub → SkillHub → ClawHub
+    流程(v2.0): 检测变更 → 版本递增 → L1质量门禁 → L1.5内容质量 → 营销关卡 → 防幻觉 → L2验证 → L3试运行 → GitHub → SkillHub → ClawHub
+    
+    v2.0新增参数:
+        skip_marketing: 跳过营销关卡(批量场景)
+        skip_l2: 跳过L2 LLM验证(批量场景, 与update_mechanism一致)
+        skip_l3: 跳过L3 Agent试用(批量场景)
     """
     print(f"\n{'='*60}")
     print(f"同步skill: {slug}")
@@ -783,6 +931,75 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
     else:
         result['phases']['content_quality'] = {'status': 'skipped'}
 
+    # 5.2 营销关卡检查(v2.0新增)
+    if not skip_marketing:
+        print(f"  [3.6/7] 营销关卡检查...")
+        mg = run_marketing_gate_check(skill_md)
+        result['phases']['marketing_gate'] = mg
+        if not mg['passed']:
+            print(f"  ✗ 营销关卡未通过: {mg['failed_checks']}")
+            result['status'] = 'blocked_by_marketing_gate'
+            record_platform_upload(skill_id, new_version, 'marketing_gate', slug,
+                                   'blocked', error=str(mg['failed_checks']))
+            return result
+        print(f"  ✓ 营销关卡通过 ({mg['score']})")
+    else:
+        result['phases']['marketing_gate'] = {'status': 'skipped'}
+
+    # 5.3 防幻觉机制检查(v2.0新增)
+    print(f"  [3.7/7] 防幻觉机制检查...")
+    ah = run_anti_hallucination_check(skill_md)
+    result['phases']['anti_hallucination'] = ah
+    if not ah['passed']:
+        print(f"  ✗ 防幻觉机制未通过: {ah['failed_checks']}")
+        result['status'] = 'blocked_by_anti_hallucination'
+        record_platform_upload(skill_id, new_version, 'anti_hallucination', slug,
+                               'blocked', error=str(ah['failed_checks']))
+        return result
+    print(f"  ✓ 防幻觉机制通过 ({ah['score']})")
+
+    # 5.4 L2 LLM验证检查(v2.0新增)
+    if not skip_l2:
+        print(f"  [3.8/7] L2 LLM验证检查...")
+        l2 = run_l2_check(slug)
+        result['phases']['l2_validation'] = l2
+        if l2['passed'] is False:
+            print(f"  ✗ L2验证未通过: {l2['failed_checks']}")
+            result['status'] = 'blocked_by_l2_validation'
+            record_platform_upload(skill_id, new_version, 'l2_validation', slug,
+                                   'blocked', error=str(l2['failed_checks']))
+            return result
+        elif l2['passed'] is None:
+            print(f"  ⚠ L2验证待AI执行: {l2['guide']}")
+            result['status'] = 'blocked_by_l2_pending'
+            record_platform_upload(skill_id, new_version, 'l2_validation', slug,
+                                   'pending', error=l2['note'])
+            return result
+        print(f"  ✓ L2验证通过 (TRACE {l2.get('trace_total', '?')}/50, 等级{l2.get('trace_grade', '?')})")
+    else:
+        result['phases']['l2_validation'] = {'status': 'skipped'}
+
+    # 5.5 L3 Agent试用检查(v2.0新增)
+    if not skip_l3:
+        print(f"  [3.9/7] L3 Agent试用检查...")
+        l3 = run_l3_check(slug)
+        result['phases']['l3_trial'] = l3
+        if l3['passed'] is False:
+            print(f"  ✗ L3试用未通过: {l3['failed_checks']}")
+            result['status'] = 'blocked_by_l3_trial'
+            record_platform_upload(skill_id, new_version, 'l3_trial', slug,
+                                   'blocked', error=str(l3['failed_checks']))
+            return result
+        elif l3['passed'] is None:
+            print(f"  ⚠ L3试用待AI执行: {l3['guide']}")
+            result['status'] = 'blocked_by_l3_pending'
+            record_platform_upload(skill_id, new_version, 'l3_trial', slug,
+                                   'pending', error=l3['note'])
+            return result
+        print(f"  ✓ L3试用通过 (评分{l3.get('score', '?')}/100, 等级{l3.get('grade', '?')})")
+    else:
+        result['phases']['l3_trial'] = {'status': 'skipped'}
+
     # 6. 记录新版本
     record_version(skill_id, new_version, new_hash, changelog,
                    skill_md.stat().st_size, line_count)
@@ -847,8 +1064,11 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
 
 def sync_all_changed_skills(skip_github: bool = False,
                              skip_skillhub: bool = False,
-                             skip_clawhub: bool = False) -> Dict[str, Any]:
-    """同步所有变更的skill"""
+                             skip_clawhub: bool = False,
+                             skip_marketing: bool = False,
+                             skip_l2: bool = True,
+                             skip_l3: bool = True) -> Dict[str, Any]:
+    """同步所有变更的skill(批量模式默认跳过L2/L3,因需AI执行)"""
     print("扫描变更...")
     changed = scan_all_changes()
     print(f"发现 {len(changed)} 个变更skill")
@@ -868,6 +1088,9 @@ def sync_all_changed_skills(skip_github: bool = False,
             skip_github=skip_github,
             skip_skillhub=skip_skillhub,
             skip_clawhub=skip_clawhub,
+            skip_marketing=skip_marketing,
+            skip_l2=skip_l2,
+            skip_l3=skip_l3,
         )
         if sync_result.get('status') in ('all_success', 'partial_success'):
             results['synced'].append(sync_result)
@@ -1004,6 +1227,32 @@ def upgrade_single_skill(slug: str, skip_platforms: bool = False,
     else:
         print(f"  ✓ L1合规检查通过 ({qc['score']})")
 
+    # === Step 5.5: 营销关卡检查(v2.0新增) ===
+    print(f"\n[5.5/6] 营销关卡检查...")
+    mg = run_marketing_gate_check(skill_md)
+    result['phases']['marketing_gate'] = mg
+    if not mg['passed']:
+        print(f"  ⚠ 营销关卡未通过: {mg['failed_checks']}")
+        if not force_sync:
+            result['status'] = 'blocked_by_marketing_gate'
+            result['error'] = f'营销关卡未通过: {mg["failed_checks"]}'
+            return result
+    else:
+        print(f"  ✓ 营销关卡通过 ({mg['score']})")
+
+    # === Step 5.6: 防幻觉机制检查(v2.0新增) ===
+    print(f"\n[5.6/6] 防幻觉机制检查...")
+    ah = run_anti_hallucination_check(skill_md)
+    result['phases']['anti_hallucination'] = ah
+    if not ah['passed']:
+        print(f"  ⚠ 防幻觉机制未通过: {ah['failed_checks']}")
+        if not force_sync:
+            result['status'] = 'blocked_by_anti_hallucination'
+            result['error'] = f'防幻觉机制未通过: {ah["failed_checks"]}'
+            return result
+    else:
+        print(f"  ✓ 防幻觉机制通过 ({ah['score']})")
+
     # === Step 6: 多平台同步 ===
     if skip_platforms:
         print(f"\n[6/6] 跳过平台同步 (skip_platforms=True)")
@@ -1011,8 +1260,10 @@ def upgrade_single_skill(slug: str, skip_platforms: bool = False,
         result['status'] = 'fixed_locally'
     else:
         print(f"\n[6/6] 同步到所有平台...")
+        # 升级流程跳过L2/L3(需AI单独执行), 但保留营销关卡和防幻觉
         sync_result = sync_skill_to_all_platforms(
-            slug, skip_content_quality=True, force=True
+            slug, skip_content_quality=True, skip_marketing=True,
+            skip_l2=True, skip_l3=True, force=True
         )
         result['phases']['platform_sync'] = sync_result
         if sync_result.get('status') == 'success':
@@ -1049,11 +1300,13 @@ def cmd_scan():
 
 
 def cmd_sync(slug: str, skip_github: bool = False, skip_skillhub: bool = False,
-             skip_clawhub: bool = False, force: bool = False):
+             skip_clawhub: bool = False, skip_marketing: bool = False,
+             skip_l2: bool = False, skip_l3: bool = False, force: bool = False):
     """同步单个skill"""
     result = sync_skill_to_all_platforms(
         slug, skip_github=skip_github, skip_skillhub=skip_skillhub,
-        skip_clawhub=skip_clawhub, force=force
+        skip_clawhub=skip_clawhub, skip_marketing=skip_marketing,
+        skip_l2=skip_l2, skip_l3=skip_l3, force=force
     )
     # 保存结果
     result_path = SKILL_REGISTRY_DIR / f"version_sync_{slug}_{NOW.replace(':', '')}.json"
@@ -1063,10 +1316,12 @@ def cmd_sync(slug: str, skip_github: bool = False, skip_skillhub: bool = False,
 
 
 def cmd_sync_all(skip_github: bool = False, skip_skillhub: bool = False,
-                 skip_clawhub: bool = False):
-    """同步所有变更skill"""
+                 skip_clawhub: bool = False, skip_marketing: bool = False,
+                 skip_l2: bool = True, skip_l3: bool = True):
+    """同步所有变更skill(批量模式默认跳过L2/L3,因需AI执行)"""
     results = sync_all_changed_skills(
-        skip_github=skip_github, skip_skillhub=skip_skillhub, skip_clawhub=skip_clawhub
+        skip_github=skip_github, skip_skillhub=skip_skillhub, skip_clawhub=skip_clawhub,
+        skip_marketing=skip_marketing, skip_l2=skip_l2, skip_l3=skip_l3
     )
     result_path = SKILL_REGISTRY_DIR / f"version_sync_all_{NOW.replace(':', '')}.json"
     with open(result_path, 'w', encoding='utf-8') as f:
@@ -1229,12 +1484,18 @@ def main():
     sync_parser.add_argument('--skip-github', action='store_true', help='跳过GitHub同步')
     sync_parser.add_argument('--skip-skillhub', action='store_true', help='跳过SkillHub同步')
     sync_parser.add_argument('--skip-clawhub', action='store_true', help='跳过ClawHub同步')
+    sync_parser.add_argument('--skip-marketing', action='store_true', help='跳过营销关卡检查')
+    sync_parser.add_argument('--skip-l2', action='store_true', help='跳过L2 LLM验证(需L2报告)')
+    sync_parser.add_argument('--skip-l3', action='store_true', help='跳过L3 Agent试用(需L3报告)')
     sync_parser.add_argument('--force', action='store_true', help='强制同步(即使无变更)')
 
-    sync_all_parser = sub.add_parser('sync-all', help='同步所有变更skill')
+    sync_all_parser = sub.add_parser('sync-all', help='同步所有变更skill(批量模式默认跳过L2/L3)')
     sync_all_parser.add_argument('--skip-github', action='store_true')
     sync_all_parser.add_argument('--skip-skillhub', action='store_true')
     sync_all_parser.add_argument('--skip-clawhub', action='store_true')
+    sync_all_parser.add_argument('--skip-marketing', action='store_true', help='跳过营销关卡')
+    sync_all_parser.add_argument('--no-skip-l2', action='store_true', help='不跳过L2验证(默认跳过)')
+    sync_all_parser.add_argument('--no-skip-l3', action='store_true', help='不跳过L3试用(默认跳过)')
 
     gh_parser = sub.add_parser('sync-github', help='仅同步到GitHub')
     gh_parser.add_argument('slug', help='skill slug')
@@ -1249,9 +1510,12 @@ def main():
     if args.command == 'scan':
         cmd_scan()
     elif args.command == 'sync':
-        cmd_sync(args.slug, args.skip_github, args.skip_skillhub, args.skip_clawhub, args.force)
+        cmd_sync(args.slug, args.skip_github, args.skip_skillhub, args.skip_clawhub,
+                 args.skip_marketing, args.skip_l2, args.skip_l3, args.force)
     elif args.command == 'sync-all':
-        cmd_sync_all(args.skip_github, args.skip_skillhub, args.skip_clawhub)
+        cmd_sync_all(args.skip_github, args.skip_skillhub, args.skip_clawhub,
+                     args.skip_marketing,
+                     skip_l2=not args.no_skip_l2, skip_l3=not args.no_skip_l3)
     elif args.command == 'sync-github':
         cmd_sync_github(args.slug)
     elif args.command == 'status':
