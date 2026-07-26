@@ -633,6 +633,23 @@ def add_manual_entry(name: str, platform: str, price: float, downloads: int, cal
         with open(manual_path, 'r', encoding='utf-8') as f:
             entries = json.load(f)
 
+    entries.append({
+        'platform': platform,
+        'name': name,
+        'price': price,
+        'downloads': downloads,
+        'calls': calls,
+        'rating': rating,
+        'category': category,
+        'summary': summary,
+        'scanned_at': datetime.now().isoformat(),
+    })
+
+    with open(manual_path, 'w', encoding='utf-8') as f:
+        json.dump(entries, f, ensure_ascii=False, indent=2)
+
+    print(f"已添加: {name} ({platform}) - {price}元, {downloads}下载")
+
 
 # ============ v2.3: 平台评分同步 + 低评分触发升级 (需求7+8) ============
 
@@ -647,6 +664,7 @@ def _ensure_rating_columns():
         ('platform_rating', 'REAL DEFAULT 0'),
         ('platform_rating_count', 'INTEGER DEFAULT 0'),
         ('platform_downloads', 'INTEGER DEFAULT 0'),
+        ('platform_stars', 'INTEGER DEFAULT 0'),
         ('platform_ai_review', 'TEXT'),
         ('last_platform_sync_at', 'TEXT'),
     ]
@@ -744,22 +762,36 @@ def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
             'comments': comments,
         }, ensure_ascii=False) if keen_status or sanbu_status else None
         
-        # AI评分 (从网页抓取)
+        # AI评分 (从网页抓取, SPA页面需headless browser)
         ai_rating = 0.0
         if scrape_ai_rating:
             ai_rating = _scrape_ai_rating(slug)
             if ai_rating > 0:
                 rating_found += 1
         
-        conn.execute("""
-            UPDATE skills SET 
-                platform_downloads = ?,
-                platform_rating = ?,
-                platform_rating_count = ?,
-                platform_ai_review = ?,
-                last_platform_sync_at = ?
-            WHERE slug = ?
-        """, (downloads, ai_rating, comments, ai_review, now, slug))
+        # 更新DB: scrape_ai_rating=False时保留已有platform_rating, 不覆盖为0
+        if scrape_ai_rating and ai_rating > 0:
+            conn.execute("""
+                UPDATE skills SET 
+                    platform_downloads = ?,
+                    platform_stars = ?,
+                    platform_rating = ?,
+                    platform_rating_count = ?,
+                    platform_ai_review = ?,
+                    last_platform_sync_at = ?
+                WHERE slug = ?
+            """, (downloads, stars, ai_rating, comments, ai_review, now, slug))
+        else:
+            # 批量模式: 只更新API可获取的数据, 保留已有platform_rating
+            conn.execute("""
+                UPDATE skills SET 
+                    platform_downloads = ?,
+                    platform_stars = ?,
+                    platform_rating_count = ?,
+                    platform_ai_review = ?,
+                    last_platform_sync_at = ?
+                WHERE slug = ?
+            """, (downloads, stars, comments, ai_review, now, slug))
         synced += 1
     
     conn.commit()
@@ -771,13 +803,17 @@ def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
             COUNT(CASE WHEN platform_downloads > 0 THEN 1 END) as has_downloads,
             COUNT(CASE WHEN platform_ai_review IS NOT NULL THEN 1 END) as has_review,
             COUNT(CASE WHEN platform_rating > 0 THEN 1 END) as has_rating,
-            SUM(platform_downloads) as total_downloads
+            COUNT(CASE WHEN platform_stars > 0 THEN 1 END) as has_stars,
+            SUM(platform_downloads) as total_downloads,
+            SUM(platform_stars) as total_stars
         FROM skills WHERE skillhub_sync_status = 'synced'
     """).fetchone()
     print(f"  有下载数: {rows['has_downloads']}")
     print(f"  有安全报告: {rows['has_review']}")
     print(f"  有AI评分: {rows['has_rating']}")
+    print(f"  有Stars: {rows['has_stars']}")
     print(f"  总下载量: {rows['total_downloads']}")
+    print(f"  总Stars: {rows['total_stars']}")
     
     # 输出低评分skill
     if scrape_ai_rating:
@@ -888,26 +924,6 @@ def check_low_rating_skills():
     print(f"需手动处理: {len(low_rated) - upgraded} 个skill")
     
     return {'low_rated_count': len(low_rated), 'upgraded': upgraded}
-
-
-
-    
-    entries.append({
-        'platform': platform,
-        'name': name,
-        'price': price,
-        'downloads': downloads,
-        'calls': calls,
-        'rating': rating,
-        'category': category,
-        'summary': summary,
-        'scanned_at': datetime.now().isoformat(),
-    })
-    
-    with open(manual_path, 'w', encoding='utf-8') as f:
-        json.dump(entries, f, ensure_ascii=False, indent=2)
-    
-    print(f"已添加: {name} ({platform}) - {price}元, {downloads}下载")
 
 
 def main():
