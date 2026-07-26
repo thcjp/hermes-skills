@@ -27,6 +27,25 @@ import hashlib
 
 # DB_PATH imported from config
 
+# v2.4: 设置WAL模式提升并发性能 (持久化,只需设置一次)
+# 解决多进程同时写入时"database is locked"问题
+try:
+    _wal_init_conn = sqlite3.connect(DB_PATH, timeout=30)
+    _wal_init_conn.execute("PRAGMA journal_mode = WAL")
+    _wal_init_conn.execute("PRAGMA busy_timeout = 5000")
+    _wal_init_conn.close()
+except Exception:
+    pass  # 数据库可能正在被其他进程初始化
+
+# v2.4: 带重试的连接辅助函数 (强化已有流程,不创建碎片化代码)
+def _get_db_connection(timeout=30):
+    """创建带WAL+busy_timeout的数据库连接,解决并发锁问题"""
+    conn = sqlite3.connect(DB_PATH, timeout=timeout)
+    conn.execute("PRAGMA foreign_keys = ON")
+    conn.execute("PRAGMA busy_timeout = 5000")
+    return conn
+
+
 def init_database():
     """初始化数据库，创建所有表"""
     conn = sqlite3.connect(DB_PATH)
@@ -1015,27 +1034,39 @@ def record_platform_upload(skill_id, version, platform, platform_slug, upload_st
     用于版本同步流水线等多平台同步场景，需要自定义操作记录中的operator和operation_type。
     替代: INSERT INTO platform_uploads + INSERT INTO operations
     """
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
-    now = datetime.now().isoformat()
-    c.execute("""
-        INSERT INTO platform_uploads (
-            skill_id, version, platform, platform_slug, upload_date,
-            upload_status, http_status, error_message, visibility, pricing_on_platform,
-            community_published, download_ready
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, (skill_id, version, platform, platform_slug, now, upload_status,
-          http_status, error_message, visibility, pricing_on_platform,
-          0, None))
-    op_type = operation_type or f'upload_{platform}'
-    op_details = operation_details or f'Uploaded {version} to {platform}: {upload_status}'
-    c.execute("""
-        INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (skill_id, op_type, now, operator, op_details, upload_status))
-    conn.commit()
-    conn.close()
+    import time as _time
+    for attempt in range(3):
+        try:
+            conn = _get_db_connection(timeout=30)
+            c = conn.cursor()
+            now = datetime.now().isoformat()
+            c.execute("""
+                INSERT INTO platform_uploads (
+                    skill_id, version, platform, platform_slug, upload_date,
+                    upload_status, http_status, error_message, visibility, pricing_on_platform,
+                    community_published, download_ready
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (skill_id, version, platform, platform_slug, now, upload_status,
+                  http_status, error_message, visibility, pricing_on_platform,
+                  0, None))
+            op_type = operation_type or f'upload_{platform}'
+            op_details = operation_details or f'Uploaded {version} to {platform}: {upload_status}'
+            c.execute("""
+                INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (skill_id, op_type, now, operator, op_details, upload_status))
+            conn.commit()
+            conn.close()
+            break
+        except sqlite3.OperationalError as e:
+            try:
+                conn.close()
+            except Exception:
+                pass
+            if "locked" in str(e) and attempt < 2:
+                _time.sleep(1)
+                continue
+            raise
 
 
 def set_pricing(skill_id, edition, price_model, price_amount, price_currency,
