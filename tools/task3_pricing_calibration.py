@@ -486,7 +486,7 @@ def main():
     # 含-free suffix skill的全局分布
     print(f"\n全局分布 (含-free suffix skill, 未重新定价):")
     conn2 = sqlite3.connect(DB_PATH)
-    conn.execute("PRAGMA foreign_keys = ON")
+    conn2.execute("PRAGMA foreign_keys = ON")  # 修复: 原代码错误地在conn上设置PRAGMA，应在conn2上设置
     c2 = conn2.cursor()
     c2.execute("SELECT pricing_tier, COUNT(*) FROM skills GROUP BY pricing_tier ORDER BY pricing_tier")
     all_total = 0

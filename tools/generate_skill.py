@@ -52,6 +52,9 @@ sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
 from config import get_db_connection, PACKAGED_SKILLS_DIR, MAX_SKILL_MD_LINES
 import db
+# Q5修复: 统一从skill_core/rules.py导入夸大词列表，消除line 623的硬编码副本
+sys.path.insert(0, str(Path(__file__).parent / "skill_core"))
+from rules import EXAGGERATION_WORDS as _EXAGGERATION_WORDS
 
 # 模板目录
 TEMPLATES_DIR = SKILL_REGISTRY_DIR / "templates"
@@ -620,8 +623,8 @@ def generate_from_template(template_name: str, skill_data: Dict[str, Any],
     )
 
     # Step 5.5: 夸大词清除 (L1 quality_gate检查项: "最佳/最强/万能/超级"等)
-    exaggeration_words = ['最佳', '最强', '万能', '超级', '终极', '完美', '第一', '顶级', '极致', '最好']
-    for word in exaggeration_words:
+    # Q5修复: 使用skill_core/rules.py的统一列表，消除硬编码副本
+    for word in _EXAGGERATION_WORDS:
         # 在正文中替换为中性表达
         template_content = template_content.replace(word, '优秀')
 

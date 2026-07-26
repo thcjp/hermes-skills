@@ -108,6 +108,40 @@ def init_database():
         c.execute("ALTER TABLE skills ADD COLUMN is_paid INTEGER DEFAULT 0")
     except sqlite3.OperationalError:
         pass
+    # v1.4: 三轨关联字段
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN summary TEXT")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN free_slug TEXT")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN paid_slug TEXT")
+    except sqlite3.OperationalError:
+        pass
+    # v1.5: 四平台同步状态字段 (P0-3a)
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN skillhub_sync_status TEXT DEFAULT 'unknown'")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN clawhub_sync_status TEXT DEFAULT 'unknown'")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN github_public_sync_status TEXT DEFAULT 'unknown'")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN github_private_sync_status TEXT DEFAULT 'unknown'")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN last_sync_at TEXT")
+    except sqlite3.OperationalError:
+        pass
 
     # 2. versions - 版本历史表
     c.execute("""
@@ -300,6 +334,83 @@ def init_database():
     c.execute("CREATE INDEX IF NOT EXISTS idx_workflow_status ON workflow_states(status)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_edition ON skills(edition)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_parent_slug ON skills(parent_slug)")
+    c.execute("CREATE INDEX IF NOT EXISTS idx_skills_free_slug ON skills(free_slug)")
+    c.execute("CREATE INDEX IF NOT EXISTS idx_skills_paid_slug ON skills(paid_slug)")
+    # v1.5: 四平台同步状态索引 (P0-3a)
+    c.execute("CREATE INDEX IF NOT EXISTS idx_skills_skillhub_sync ON skills(skillhub_sync_status)")
+    c.execute("CREATE INDEX IF NOT EXISTS idx_skills_clawhub_sync ON skills(clawhub_sync_status)")
+    c.execute("CREATE INDEX IF NOT EXISTS idx_skills_gh_public_sync ON skills(github_public_sync_status)")
+    c.execute("CREATE INDEX IF NOT EXISTS idx_skills_gh_private_sync ON skills(github_private_sync_status)")
+
+    # v1.5: 更新 v_skill_lifecycle 视图 (P0-3a — 修复WHERE子句+添加sync_status列)
+    c.execute("DROP VIEW IF EXISTS v_skill_lifecycle")
+    c.execute("""
+        CREATE VIEW v_skill_lifecycle AS
+        WITH latest_uploads AS (
+            SELECT
+                skill_id, platform, upload_status, visibility,
+                ROW_NUMBER() OVER (PARTITION BY skill_id, platform ORDER BY upload_date DESC) as rn
+            FROM platform_uploads
+        )
+        SELECT
+            s.slug,
+            s.current_display_name as display_name,
+            s.skill_type,
+            s.source_slug,
+            s.free_slug,
+            s.paid_slug,
+            s.current_version as version,
+            s.current_status as status,
+            s.pricing_tier,
+            s.edition,
+            s.is_paid,
+            s.category,
+            s.source,
+            s.skillhub_sync_status,
+            s.clawhub_sync_status,
+            s.github_public_sync_status,
+            s.github_private_sync_status,
+            s.last_sync_at,
+            sh.upload_status as skillhub_upload_status,
+            ch.upload_status as clawhub_upload_status,
+            gh_pub.upload_status as github_public_upload_status,
+            gh_pri.upload_status as github_private_upload_status,
+            s.updated_at as last_updated
+        FROM skills s
+        LEFT JOIN latest_uploads sh ON sh.skill_id = s.id AND sh.platform = 'skillhub' AND sh.rn = 1
+        LEFT JOIN latest_uploads ch ON ch.skill_id = s.id AND ch.platform = 'clawhub' AND ch.rn = 1
+        LEFT JOIN latest_uploads gh_pub ON gh_pub.skill_id = s.id AND gh_pub.platform = 'github_public' AND gh_pub.rn = 1
+        LEFT JOIN latest_uploads gh_pri ON gh_pri.skill_id = s.id AND gh_pri.platform = 'github_private' AND gh_pri.rn = 1
+        WHERE s.current_status IN ('synced_from_skillhub', 'local_only', 'deleted_on_skillhub', 'active', 'updated', 'stale')
+    """)
+
+    # v1.5: 更新 v_three_track_overview 视图 (修复WHERE子句)
+    c.execute("DROP VIEW IF EXISTS v_three_track_overview")
+    c.execute("""
+        CREATE VIEW v_three_track_overview AS
+        SELECT
+            s.slug,
+            s.current_display_name as display_name,
+            s.category,
+            s.pricing_tier,
+            s.edition,
+            s.is_paid,
+            s.source_slug,
+            s.free_slug,
+            s.paid_slug,
+            CASE
+                WHEN s.skill_type = 'source' THEN '源skill'
+                WHEN s.skill_type = 'free' THEN '免费版'
+                WHEN s.skill_type = 'paid' THEN '付费版'
+                WHEN s.skill_type = 'tool' THEN '工具'
+                ELSE '未分类'
+            END as track_name,
+            s.current_status as status,
+            s.updated_at as last_updated
+        FROM skills s
+        WHERE s.current_status IN ('synced_from_skillhub', 'local_only', 'deleted_on_skillhub', 'active', 'updated', 'stale')
+        ORDER BY s.source_slug, s.skill_type
+    """)
 
     # D3: 回填 sources.skill_id（将已有发现记录关联到skills表）
     backfill_source_skill_id(c)
@@ -378,8 +489,36 @@ def backfill_source_skill_id(c):
     matched_pro = c.rowcount
 
     total_matched = matched_source_slug + matched_slug + matched_free + matched_pro
+
+    # 第5级匹配: "owner/repo"格式归一化 (awesome-list/github-search源)
+    # 将"owner/repo"转为kebab-case repo名后再匹配
+    import re as _re
+    c.execute("SELECT id, original_slug FROM sources WHERE skill_id IS NULL")
+    unlinked = c.fetchall()
+    matched_normalized = 0
+    for source_id, original_slug in unlinked:
+        if not original_slug or '/' not in original_slug:
+            continue
+        # 提取repo名并转kebab-case
+        repo = original_slug.split('/')[-1]
+        s = _re.sub(r'([a-z0-9])([A-Z])', r'\1-\2', repo)
+        s = s.replace('_', '-').lower()
+        s = _re.sub(r'[^a-z0-9-]', '', s)
+        s = _re.sub(r'-+', '-', s).strip('-')
+        if not s:
+            continue
+        # 尝试匹配
+        for candidate in [s, s + '-free', s + '-pro']:
+            c.execute("SELECT id FROM skills WHERE slug = ? LIMIT 1", (candidate,))
+            row = c.fetchone()
+            if row:
+                c.execute("UPDATE sources SET skill_id = ? WHERE id = ?", (row[0], source_id))
+                matched_normalized += 1
+                break
+
+    total_matched += matched_normalized
     if total_matched > 0:
-        print(f"  [backfill] sources.skill_id 回填 {total_matched} 条 (source_slug:{matched_source_slug} slug:{matched_slug} -free:{matched_free} -pro:{matched_pro})")
+        print(f"  [backfill] sources.skill_id 回填 {total_matched} 条 (source_slug:{matched_source_slug} slug:{matched_slug} -free:{matched_free} -pro:{matched_pro} normalized:{matched_normalized})")
 
 
 def compute_file_hash(file_path):
@@ -1018,6 +1157,427 @@ def get_skills_needing_work():
 
     conn.close()
     return {'needs_optimization': needs_optimization, 'needs_upload': needs_upload}
+
+
+# ============================================================
+# v1.5: 四平台同步机制函数 (P0-3b/c/d, P1-3)
+# ============================================================
+
+def backfill_sync_status():
+    """P0-3b: 从 platform_uploads 回填 skills 表的四平台同步状态
+
+    幂等操作：可重复执行，每次都基于 platform_uploads 最新数据重新计算。
+    同步状态值: synced / failed / not_applicable / unknown
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    now = datetime.now().isoformat()
+
+    # 回填 skillhub_sync_status
+    c.execute("""
+        UPDATE skills SET skillhub_sync_status = CASE
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'skillhub' AND upload_status = 'success'
+            ) THEN 'synced'
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'skillhub' AND upload_status = 'failed'
+            ) THEN 'failed'
+            WHEN skill_type = 'source' THEN 'not_applicable'
+            ELSE 'unknown'
+        END
+    """)
+
+    # 回填 clawhub_sync_status
+    c.execute("""
+        UPDATE skills SET clawhub_sync_status = CASE
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'clawhub' AND upload_status = 'success'
+            ) THEN 'synced'
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'clawhub' AND upload_status = 'failed'
+            ) THEN 'failed'
+            WHEN skill_type = 'source' THEN 'not_applicable'
+            WHEN is_paid = 1 THEN 'not_applicable'
+            ELSE 'unknown'
+        END
+    """)
+
+    # 回填 github_public_sync_status (hermes-skills 公开引流)
+    c.execute("""
+        UPDATE skills SET github_public_sync_status = CASE
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform IN ('github_public', 'github') AND upload_status = 'success'
+            ) THEN 'synced'
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform IN ('github_public', 'github') AND upload_status = 'failed'
+            ) THEN 'failed'
+            WHEN skill_type = 'source' THEN 'not_applicable'
+            ELSE 'unknown'
+        END
+    """)
+
+    # 回填 github_private_sync_status (origin 私有备份)
+    c.execute("""
+        UPDATE skills SET github_private_sync_status = CASE
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'github_private' AND upload_status = 'success'
+            ) THEN 'synced'
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'github_private' AND upload_status = 'failed'
+            ) THEN 'failed'
+            WHEN skill_type = 'source' THEN 'not_applicable'
+            ELSE 'unknown'
+        END
+    """)
+
+    # 更新 last_sync_at
+    c.execute("""
+        UPDATE skills SET last_sync_at = ?
+        WHERE EXISTS(SELECT 1 FROM platform_uploads WHERE skill_id = skills.id)
+    """, (now,))
+
+    # 统计结果
+    c.execute("""
+        SELECT
+            SUM(CASE WHEN skillhub_sync_status = 'synced' THEN 1 ELSE 0 END) as sh_synced,
+            SUM(CASE WHEN clawhub_sync_status = 'synced' THEN 1 ELSE 0 END) as ch_synced,
+            SUM(CASE WHEN github_public_sync_status = 'synced' THEN 1 ELSE 0 END) as gh_pub_synced,
+            SUM(CASE WHEN github_private_sync_status = 'synced' THEN 1 ELSE 0 END) as gh_pri_synced
+        FROM skills
+    """)
+    row = c.fetchone()
+    conn.commit()
+    conn.close()
+
+    result = {
+        'skillhub_synced': row[0],
+        'clawhub_synced': row[1],
+        'github_public_synced': row[2],
+        'github_private_synced': row[3],
+    }
+    print(f"backfill_sync_status 完成: {result}")
+    return result
+
+
+def migrate_github_to_dual_repo():
+    """P0-3c: 迁移 platform_uploads 中的 github 记录为 github_public
+
+    历史记录使用 'github' 值，现在需要区分 github_public (hermes-skills公开) 和 github_private (origin私有)。
+    所有历史 'github' 记录均为 hermes-skills 公开仓库推送，因此迁移为 'github_public'。
+
+    幂等操作：仅更新 platform='github' 的记录，已迁移的记录不受影响。
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+
+    # 统计迁移前
+    c.execute("SELECT COUNT(*) FROM platform_uploads WHERE platform = 'github'")
+    before_count = c.fetchone()[0]
+
+    if before_count == 0:
+        conn.close()
+        print("migrate_github_to_dual_repo: 无需迁移 (已无 'github' 记录)")
+        return {'migrated': 0, 'already_done': True}
+
+    # 执行迁移
+    c.execute("""
+        UPDATE platform_uploads SET platform = 'github_public'
+        WHERE platform = 'github'
+    """)
+    migrated = c.rowcount
+
+    # 统计迁移后
+    c.execute("SELECT platform, COUNT(*) FROM platform_uploads GROUP BY platform ORDER BY platform")
+    after_dist = {row[0]: row[1] for row in c.fetchall()}
+
+    conn.commit()
+    conn.close()
+
+    result = {'migrated': migrated, 'after_distribution': after_dist}
+    print(f"migrate_github_to_dual_repo 完成: 迁移 {migrated} 条记录, 平台分布: {after_dist}")
+    return result
+
+
+def sync_hermes_from_json():
+    """P0-3d: 从 upload_tracking.json 同步 hermes (GitHub公开) 状态到 DB
+
+    upload_tracking.json 中每个 skill 的 'hermes' 对象包含:
+    - github_published: 是否已推送到 hermes-skills 仓库
+    - github_repo: 仓库URL
+    - github_pushed_at: 推送时间
+
+    将这些状态同步到 platform_uploads 表（platform='github_public'），
+    消除双数据源不一致问题。
+
+    幂等操作：先检查是否已有记录，避免重复插入。
+    """
+    import os
+    json_path = os.path.join(os.path.dirname(DB_PATH), 'data', 'upload_tracking.json')
+    if not os.path.exists(json_path):
+        print(f"sync_hermes_from_json: JSON文件不存在: {json_path}")
+        return {'synced': 0, 'error': 'json_not_found'}
+
+    with open(json_path, 'r', encoding='utf-8') as f:
+        tracking = json.load(f)
+
+    # JSON结构: {"metadata": {...}, "stats": {...}, "skills": {slug: {...}}, "last_updated": "..."}
+    skills_data = tracking.get('skills', tracking)
+
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+
+    synced_count = 0
+    skipped_count = 0
+    now = datetime.now().isoformat()
+
+    for slug, data in skills_data.items():
+        if not isinstance(data, dict):
+            continue
+
+        # 获取 skill_id
+        c.execute("SELECT id, current_version FROM skills WHERE slug = ?", (slug,))
+        row = c.fetchone()
+        if not row:
+            skipped_count += 1
+            continue
+        skill_id, version = row
+
+        # 检查 hermes 数据
+        hermes = data.get('hermes', {})
+        if not hermes:
+            skipped_count += 1
+            continue
+
+        github_published = hermes.get('github_published', False)
+        github_pushed_at = hermes.get('github_pushed_at')
+
+        if not github_published:
+            skipped_count += 1
+            continue
+
+        # 检查是否已有 github_public 记录（幂等）
+        c.execute("""
+            SELECT id FROM platform_uploads
+            WHERE skill_id = ? AND platform = 'github_public' AND upload_status = 'success'
+        """, (skill_id,))
+        existing = c.fetchone()
+
+        if existing:
+            skipped_count += 1
+            continue
+
+        # 插入 github_public 记录
+        upload_date = github_pushed_at or hermes.get('converted_at') or now
+        c.execute("""
+            INSERT INTO platform_uploads (
+                skill_id, version, platform, platform_slug, upload_date,
+                upload_status, http_status, error_message, visibility, pricing_on_platform,
+                community_published, download_ready
+            ) VALUES (?, ?, 'github_public', ?, ?, 'success', 200, NULL, 'public', NULL, 0, NULL)
+        """, (skill_id, version or '1.0.0', slug, upload_date))
+
+        # 记录操作
+        c.execute("""
+            INSERT INTO operations (skill_id, operation_type, operation_date, operator, details, after_state)
+            VALUES (?, 'sync_hermes_from_json', ?, 'system', ?, 'success')
+        """, (skill_id, now, f'Synced hermes status from JSON: github_published=True'))
+
+        synced_count += 1
+
+    conn.commit()
+    conn.close()
+
+    result = {'synced': synced_count, 'skipped': skipped_count}
+    print(f"sync_hermes_from_json 完成: 同步 {synced_count} 条, 跳过 {skipped_count} 条")
+    return result
+
+
+def backfill_three_track_association():
+    """P1-3: 回填 free_slug / paid_slug 三轨关联字段
+
+    策略:
+    1. 付费版 skill (edition in pro/paid): 通过 parent_slug 或命名规则找到对应免费版
+    2. 免费版 skill (edition=free): 通过 pair_slug (JSON) 或命名规则找到对应付费版
+    3. 源 skill: 不需要关联
+
+    命名规则:
+    - 免费版: {base_slug}-free 或 {base_slug}
+    - 付费版: {base_slug}-pro, {base_slug}-paid, 或 {base_slug}
+
+    幂等操作：仅更新 free_slug/paid_slug 为 NULL 的记录。
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+
+    # 1. 通过 parent_slug 回填
+    # 付费版 → 免费版: free_slug = parent_slug (如果 parent_slug 指向一个免费版)
+    c.execute("""
+        UPDATE skills SET free_slug = parent_slug
+        WHERE free_slug IS NULL
+        AND parent_slug IS NOT NULL
+        AND edition IN ('pro', 'paid')
+        AND parent_slug IN (SELECT slug FROM skills WHERE edition = 'free')
+    """)
+    free_via_parent = c.rowcount
+
+    # 免费版 → 付费版: paid_slug = parent_slug (如果 parent_slug 指向一个付费版)
+    c.execute("""
+        UPDATE skills SET paid_slug = parent_slug
+        WHERE paid_slug IS NULL
+        AND parent_slug IS NOT NULL
+        AND edition = 'free'
+        AND parent_slug IN (SELECT slug FROM skills WHERE edition IN ('pro', 'paid'))
+    """)
+    paid_via_parent = c.rowcount
+
+    # 2. 反向回填: 如果 A.free_slug = B, 则 B.paid_slug = A
+    c.execute("""
+        UPDATE skills SET paid_slug = (
+            SELECT s2.slug FROM skills s2
+            WHERE s2.free_slug = skills.slug AND s2.free_slug IS NOT NULL
+            LIMIT 1
+        )
+        WHERE paid_slug IS NULL
+        AND EXISTS (
+            SELECT 1 FROM skills s2 WHERE s2.free_slug = skills.slug AND s2.free_slug IS NOT NULL
+        )
+    """)
+    paid_via_reverse = c.rowcount
+
+    # 3. 反向回填: 如果 A.paid_slug = B, 则 B.free_slug = A
+    c.execute("""
+        UPDATE skills SET free_slug = (
+            SELECT s2.slug FROM skills s2
+            WHERE s2.paid_slug = skills.slug AND s2.paid_slug IS NOT NULL
+            LIMIT 1
+        )
+        WHERE free_slug IS NULL
+        AND EXISTS (
+            SELECT 1 FROM skills s2 WHERE s2.paid_slug = skills.slug AND s2.paid_slug IS NOT NULL
+        )
+    """)
+    free_via_reverse = c.rowcount
+
+    # 4. 命名规则回填: {base}-free → {base}-pro
+    # 查找所有 -free 结尾的skill，尝试匹配 -pro 结尾的skill
+    c.execute("""
+        UPDATE skills SET paid_slug = REPLACE(slug, '-free', '-pro')
+        WHERE paid_slug IS NULL
+        AND slug LIKE '%-free'
+        AND REPLACE(slug, '-free', '-pro') IN (SELECT slug FROM skills WHERE edition IN ('pro', 'paid'))
+    """)
+    paid_via_naming = c.rowcount
+
+    # 反向: {base}-pro → {base}-free
+    c.execute("""
+        UPDATE skills SET free_slug = REPLACE(slug, '-pro', '-free')
+        WHERE free_slug IS NULL
+        AND slug LIKE '%-pro'
+        AND REPLACE(slug, '-pro', '-free') IN (SELECT slug FROM skills WHERE edition = 'free')
+    """)
+    free_via_naming = c.rowcount
+
+    # 5. 从 upload_tracking.json 的 pair_slug 回填
+    import os
+    json_path = os.path.join(os.path.dirname(DB_PATH), 'data', 'upload_tracking.json')
+    json_synced = 0
+    if os.path.exists(json_path):
+        with open(json_path, 'r', encoding='utf-8') as f:
+            tracking = json.load(f)
+
+        # JSON结构: {"metadata": {...}, "stats": {...}, "skills": {slug: {...}}, "last_updated": "..."}
+        skills_data = tracking.get('skills', tracking)
+
+        for slug, data in skills_data.items():
+            if not isinstance(data, dict):
+                continue
+            pair_slug = data.get('pair_slug')
+            if not pair_slug:
+                continue
+
+            is_free = data.get('is_free', False)
+            c.execute("SELECT id FROM skills WHERE slug = ? AND (free_slug IS NULL OR paid_slug IS NULL)", (slug,))
+            row = c.fetchone()
+            if not row:
+                continue
+            skill_id = row[0]
+
+            if is_free:
+                # 免费版 → 付费版
+                c.execute("UPDATE skills SET paid_slug = ? WHERE id = ? AND paid_slug IS NULL", (pair_slug, skill_id))
+            else:
+                # 付费版 → 免费版
+                c.execute("UPDATE skills SET free_slug = ? WHERE id = ? AND free_slug IS NULL", (pair_slug, skill_id))
+            json_synced += c.rowcount
+
+    # 统计结果
+    c.execute("SELECT COUNT(*) FROM skills WHERE free_slug IS NOT NULL")
+    free_total = c.fetchone()[0]
+    c.execute("SELECT COUNT(*) FROM skills WHERE paid_slug IS NOT NULL")
+    paid_total = c.fetchone()[0]
+    c.execute("SELECT COUNT(*) FROM skills")
+    total = c.fetchone()[0]
+
+    conn.commit()
+    conn.close()
+
+    result = {
+        'free_slug_filled': free_total,
+        'paid_slug_filled': paid_total,
+        'total': total,
+        'free_pct': f"{free_total*100//total}%",
+        'paid_pct': f"{paid_total*100//total}%",
+    }
+    print(f"backfill_three_track_association 完成: {result}")
+    return result
+
+
+def get_sync_status_summary():
+    """查询四平台同步状态概览"""
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+
+    c.execute("""
+        SELECT
+            skillhub_sync_status,
+            clawhub_sync_status,
+            github_public_sync_status,
+            github_private_sync_status,
+            COUNT(*) as count
+        FROM skills
+        GROUP BY skillhub_sync_status, clawhub_sync_status, github_public_sync_status, github_private_sync_status
+        ORDER BY count DESC
+        LIMIT 20
+    """)
+    rows = [dict(r) for r in c.fetchall()]
+
+    c.execute("""
+        SELECT
+            SUM(CASE WHEN skillhub_sync_status = 'synced' THEN 1 ELSE 0 END) as sh,
+            SUM(CASE WHEN clawhub_sync_status = 'synced' THEN 1 ELSE 0 END) as ch,
+            SUM(CASE WHEN github_public_sync_status = 'synced' THEN 1 ELSE 0 END) as gh_pub,
+            SUM(CASE WHEN github_private_sync_status = 'synced' THEN 1 ELSE 0 END) as gh_pri,
+            COUNT(*) as total
+        FROM skills
+    """)
+    summary = dict(c.fetchone())
+
+    conn.close()
+    return {'summary': summary, 'distribution': rows}
 
 
 if __name__ == '__main__':

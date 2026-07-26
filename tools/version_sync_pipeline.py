@@ -486,14 +486,14 @@ def sync_to_github(slug: str, skill_md: Path, new_version: str,
         result['status'] = 'timeout'
         result['error'] = 'git operation timed out'
         if skill_id:
-            record_platform_upload(skill_id, new_version, 'github', slug,
+            record_platform_upload(skill_id, new_version, 'github_public', slug,
                                    'timeout', error='git operation timed out')
         return result
     except Exception as e:
         result['status'] = 'error'
         result['error'] = str(e)
         if skill_id:
-            record_platform_upload(skill_id, new_version, 'github', slug,
+            record_platform_upload(skill_id, new_version, 'github_public', slug,
                                    'error', error=str(e)[:200])
         return result
 
