@@ -1,5 +1,5 @@
 """
-Skill质量门禁脚本 (v2.0 — 方案C: 流程+质量门禁架构)
+Skill质量门禁脚本 (v2.2 — 安全检测增强: 科恩实验室+云鼎实验室特有模式)
 
 集成现有check_debranding.py + skill_core/checks.py的9项检查
 任一检查fail则总体fail, 阻止上传
@@ -8,6 +8,22 @@ v2.0新增:
   - 营销关卡 (run_marketing_gate): 7项营销数据质量检查
   - 防幻觉机制 (run_anti_hallucination): 3项AI虚假实现检测
   - 统一质量检查入口 (run_full_quality_check): L1→L1.5→营销→防幻觉
+
+v2.1新增:
+  - 安全审核预检 (run_security_precheck): 10类基础高风险模式 + VPN封禁
+
+v2.2新增 (科恩实验室+云鼎实验室特有检测):
+  - SSRF服务端请求伪造 (云鼎特有)
+  - 数据外泄风险 (云鼎特有)
+  - 混淆代码/编码载荷 (科恩特有)
+  - 反向Shell/Shell反弹 (科恩特有)
+  - 权限提升风险 (科恩特有)
+  - 加密货币挖矿 (云鼎特有)
+  - AI Prompt注入风险 (云鼎特有)
+  - 持久化/自启动 (科恩特有)
+  - 不安全反序列化 (科恩特有)
+  - 依赖混淆/供应链风险 (云鼎特有)
+  安全预检从11项扩展到21项
 
 L1检查项 (13项):
   1. 去标识化检测 (复用check_debranding.check_skill_md)
@@ -24,19 +40,44 @@ L1检查项 (13项):
  12. 无占位符 (skill_core.checks)
  13. 无夸大词 (skill_core.checks)
 
+安全预检关卡 (21项):
+  --- 基础高风险模式 (v2.1, 来自29条安全审核失败分析) ---
+ 14. exec命令执行 (96.6%命中率)
+ 15. API密钥明文处理 (62.1%)
+ 16. 不可信外部API/域名 (51.7%)
+ 17. 引用不存在的脚本 (41.4%)
+ 18. 硬编码服务器地址/IP (27.6%)
+ 19. HTTP不安全通信 (20.7%)
+ 20. tools字段格式错误 (17.2%)
+ 21. 文件系统遍历风险 (17.2%)
+ 22. 敏感信息泄露 (13.8%)
+ 23. eval/代码注入 (10.3%)
+  --- 科恩实验室 + 云鼎实验室特有检测 (v2.2新增) ---
+ 24. SSRF服务端请求伪造 (云鼎特有)
+ 25. 数据外泄风险 (云鼎特有)
+ 26. 混淆代码/编码载荷 (科恩特有)
+ 27. 反向Shell/Shell反弹 (科恩特有)
+ 28. 权限提升风险 (科恩特有)
+ 29. 加密货币挖矿 (云鼎特有)
+ 30. AI Prompt注入风险 (云鼎特有)
+ 31. 持久化/自启动 (科恩特有)
+ 32. 不安全反序列化 (科恩特有)
+ 33. 依赖混淆/供应链风险 (云鼎特有)
+ 34. VPN/翻墙关键词 (直接封禁)
+
 营销关卡 (7项):
-  14. displayName中文化且≤20字符
-  15. summary营销优化且≤100字符
-  16. description 150-280字符, 非模板化
-  17. tags 5-10个, 与功能匹配
-  18. categoryIds正确映射(非空)
-  19. pricing合理性(pricing_tier匹配skill复杂度)
-  20. license合规(free=MIT, paid=Proprietary)
+ 35. displayName中文化且≤20字符
+ 36. summary营销优化且≤100字符
+ 37. description 150-280字符, 非模板化
+ 38. tags 5-10个, 与功能匹配
+ 39. categoryIds正确映射(非空)
+ 40. pricing合理性(pricing_tier匹配skill复杂度)
+ 41. license合规(free=MIT, paid=Proprietary)
 
 防幻觉机制 (3项):
-  21. 交叉验证: L2 TRACE vs L3 Agent vs L4-L9审计评分一致性
-  22. 需求理解偏差: description声明 vs body实际内容
-  23. 虚假实现检测: 无占位符/无模板/无空代码块
+ 42. 交叉验证: L2 TRACE vs L3 Agent vs L4-L9审计评分一致性
+ 43. 需求理解偏差: description声明 vs body实际内容
+ 44. 虚假实现检测: 无占位符/无模板/无空代码块
 
 用法:
   python quality_gate.py <SKILL.md路径>
@@ -44,7 +85,8 @@ L1检查项 (13项):
   python quality_gate.py <path> --json  # 输出JSON报告
   python quality_gate.py <path> --marketing  # 仅营销关卡
   python quality_gate.py <path> --anti-hallucination  # 仅防幻觉检查
-  python quality_gate.py <path> --full  # 完整质量检查(L1+营销+防幻觉)
+  python quality_gate.py <path> --security  # 仅安全预检(21项)
+  python quality_gate.py <path> --full  # 完整质量检查(L1+安全+营销+防幻觉)
 """
 
 import sys
@@ -652,7 +694,456 @@ def run_anti_hallucination(skill_md_path: Path, l2_report: dict = None,
     }
 
 
-# ============ 统一质量检查入口 (v2.0新增) ============
+# ============ 安全审核预检关卡 (v2.1新增) ============
+# SkillHub三线安全审核(内容合规→科恩实验室→云鼎实验室)的10类高风险模式预检
+# 在上传前检测并修复这些模式,避免skill被平台审核拒绝
+# 参考: d:\skills\docs\skillhub-security-avoidance-guide.md
+
+# 10类高风险模式定义 (命中率数据来自29条安全审核失败skill分析)
+_SECURITY_RISK_PATTERNS = [
+    {
+        'name': 'exec命令执行',
+        'severity': 'critical',
+        'hit_rate': '96.6%',
+        'patterns': [
+            r'\bexec\s*\(',
+            r'os\.system\s*\(',
+            r'os\.popen\s*\(',
+            r'subprocess\.(call|run|Popen|check_output)\s*\(.*shell\s*=\s*True',
+            r'child_process\.exec',
+            r'node\s+-e\s',
+        ],
+        'description': '包含exec/subprocess/os.system等命令执行指令,平台扫描判定为任意命令执行风险',
+        'fix_suggestion': '将exec命令替换为描述性文字;如需展示代码示例,使用白名单模式的安全调用',
+    },
+    {
+        'name': 'API密钥明文处理',
+        'severity': 'critical',
+        'hit_rate': '62.1%',
+        'patterns': [
+            r'(?:API_KEY|API_SECRET|SECRET_KEY|ACCESS_TOKEN|PRIVATE_KEY)\s*=\s*["\'][^"\']{8,}["\']',
+            r'export\s+(?:API_KEY|API_SECRET|SECRET_KEY|ACCESS_TOKEN)\s*=\s*["\'][^"\']+["\']',
+            r'(?:sk-|pk-)[a-zA-Z0-9]{20,}',
+            r'Bearer\s+[a-zA-Z0-9_\-\.]{20,}',
+        ],
+        'description': '直接写入API Key/Token,或使用export API_KEY=xxx模式',
+        'fix_suggestion': '使用环境变量引用: export API_KEY="${API_KEY:?请设置环境变量}"',
+    },
+    {
+        'name': '不可信外部API/域名',
+        'severity': 'high',
+        'hit_rate': '51.7%',
+        'patterns': [
+            r'https?://[a-zA-Z0-9\-]+\.(?:cyou|xyz|top|click|loan|work|fit|rest|host|site|online|store|live|stream|download|review|trade|date|party|review)\b',
+            r'https?://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}[:/]',
+        ],
+        'description': '引用非知名域名(特别是可疑TLD)或直接IP地址',
+        'fix_suggestion': '替换为知名API域名;移除可疑域名引用;使用环境变量配置endpoint',
+    },
+    {
+        'name': '引用不存在的脚本',
+        'severity': 'medium',
+        'hit_rate': '41.4%',
+        'patterns': [
+            r'\./scripts/[a-zA-Z_]+\.py',
+            r'node\s+\./scripts/',
+            r'python\s+\./scripts/',
+            r'bash\s+\./scripts/',
+        ],
+        'description': '引用./scripts/xxx.py但包中不含该文件',
+        'fix_suggestion': '移除对不存在脚本的引用;或将脚本内容内联到SKILL.md中',
+    },
+    {
+        'name': '硬编码服务器地址/IP',
+        'severity': 'medium',
+        'hit_rate': '27.6%',
+        'patterns': [
+            r'(?:SERVER|ENDPOINT|HOST|URL)\s*=\s*["\']https?://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}',
+            r'(?:SERVER|ENDPOINT|HOST|URL)\s*=\s*["\']https?://[a-zA-Z0-9\-]+\.example\.com',
+            r'192\.168\.\d{1,3}\.\d{1,3}',
+            r'10\.\d{1,3}\.\d{1,3}\.\d{1,3}',
+            r'localhost:\d{4,5}',
+        ],
+        'description': '硬编码IP地址或特定服务器域名',
+        'fix_suggestion': '使用环境变量: SERVER_URL = os.getenv("SERVER_URL", "")',
+    },
+    {
+        'name': 'HTTP不安全通信',
+        'severity': 'medium',
+        'hit_rate': '20.7%',
+        'patterns': [
+            r'requests\.get\s*\(\s*["\']http://',
+            r'requests\.post\s*\(\s*["\']http://',
+            r'fetch\s*\(\s*["\']http://',
+            r'axios\.\w+\s*\(\s*["\']http://',
+            r'curl\s+["\']?http://',
+        ],
+        'description': '使用http://而非https://进行网络通信',
+        'fix_suggestion': '将所有http://替换为https://',
+    },
+    {
+        'name': 'tools字段格式错误',
+        'severity': 'medium',
+        'hit_rate': '17.2%',
+        'patterns': [
+            r'^tools:\s*["\']',
+            r'^tools:\s*\n\s*-\s*["\'].*["\']\s*$',
+        ],
+        'description': 'frontmatter tools用字符串而非YAML数组',
+        'fix_suggestion': '使用YAML数组格式: tools: ["tool1", "tool2"] 或 tools:\n  - tool1\n  - tool2',
+    },
+    {
+        'name': '文件系统遍历风险',
+        'severity': 'medium',
+        'hit_rate': '17.2%',
+        'patterns': [
+            r'\.\./',
+            r'~/',
+            r'os\.walk\s*\(\s*["\']/',
+            r'glob\.glob\s*\(\s*["\']\*\*',
+            r'shutil\.rmtree\s*\(',
+        ],
+        'description': '使用../、~/、通配符等路径操作,可能被判定为路径遍历风险',
+        'fix_suggestion': '使用安全路径处理: Path.cwd() / "safe_dir";避免使用../和~/',
+    },
+    {
+        'name': '敏感信息泄露',
+        'severity': 'medium',
+        'hit_rate': '13.8%',
+        'patterns': [
+            r'C:\\Users\\[a-zA-Z]',
+            r'/home/[a-z]+/',
+            r'/Users/[a-zA-Z]+/',
+            r'(?:password|passwd|pwd)\s*=\s*["\'][^"\']+["\']',
+        ],
+        'description': '泄露系统路径/用户名/服务器配置',
+        'fix_suggestion': '使用通配符或环境变量替换具体路径',
+    },
+    {
+        'name': 'eval/代码注入',
+        'severity': 'critical',
+        'hit_rate': '10.3%',
+        'patterns': [
+            r'\beval\s*\(',
+            r'Function\s*\(\s*["\']',
+            r'window\.eval\s*\(',
+            r'setTimeout\s*\(\s*["\']',
+            r'setInterval\s*\(\s*["\']',
+        ],
+        'description': '使用eval()、Function()等动态代码执行功能',
+        'fix_suggestion': '移除eval调用;如需动态执行,使用安全解析器或JSON.parse',
+    },
+    # ============ v2.2新增: 科恩实验室 + 云鼎实验室特有检测 ============
+    {
+        'name': 'SSRF服务端请求伪造',
+        'severity': 'critical',
+        'hit_rate': '云鼎特有',
+        'patterns': [
+            r'requests\.(get|post|put|delete)\s*\(\s*(?:user\w*|input\w*|url|endpoint|target|callback|webhook_url)',
+            r'fetch\s*\(\s*(?:user\w*|input\w*|url|endpoint|target)',
+            r'axios\.(get|post)\s*\(\s*(?:user\w*|input\w*|url|endpoint)',
+            r'urlopen\s*\(\s*(?:user\w*|input\w*|url)',
+            r'curl\s+["\']?\$',
+            r'http\.Get\s*\(\s*(?:userInput|req\.|params\.)',
+        ],
+        'description': '从用户输入直接构造HTTP请求URL,存在SSRF风险(云鼎实验室重点检测项)',
+        'fix_suggestion': '对URL进行白名单校验;禁止访问内网IP(10.x/172.16-31.x/192.168.x);使用URL解析验证scheme和host',
+    },
+    {
+        'name': '数据外泄风险',
+        'severity': 'critical',
+        'hit_rate': '云鼎特有',
+        'patterns': [
+            r'(?:send|upload|transmit|exfiltrate|post)\s*(?:_|\s)?(?:data|file|content|secret|key|token|password|env)\b.*(?:http|url|endpoint|api)',
+            r'curl\s+.*(?:secret|key|token|password|\.env|\.ssh|id_rsa|/etc/passwd|/etc/shadow)',
+            r'wget\s+.*(?:post|upload).*(?:secret|key|token|password)',
+            r'requests\.post\s*\([^)]*(?:secret|key|token|password|\.env|/etc/passwd|/etc/shadow)',
+            r'(?:cat|type|Get-Content)\s+(?:/etc/passwd|/etc/shadow|\.env|\.ssh/id_rsa|~/.aws/credentials)',
+            r'curl\s+.*(?:-d|--data).*(?:/etc/passwd|/etc/shadow|\.env)',
+        ],
+        'description': '将敏感数据(密钥/密码/系统文件)发送到外部端点,存在数据外泄风险(云鼎实验室重点检测项)',
+        'fix_suggestion': '禁止将密钥/密码/系统文件内容发送到外部;移除所有读取敏感文件并上传的代码;使用安全存储替代',
+    },
+    {
+        'name': '混淆代码/编码载荷',
+        'severity': 'high',
+        'hit_rate': '科恩特有',
+        'patterns': [
+            r'base64\.b64decode\s*\(\s*["\'][A-Za-z0-9+/=]{20,}["\']',
+            r'atob\s*\(\s*["\'][A-Za-z0-9+/=]{20,}["\']',
+            r'Buffer\.from\s*\(\s*["\'][A-Za-z0-9+/=]{20,}["\'].*base64',
+            r'\\x[0-9a-f]{2}\\x[0-9a-f]{2}\\x[0-9a-f]{2}\\x[0-9a-f]{2}',
+            r'\\u[0-9a-f]{4}\\u[0-9a-f]{4}\\u[0-9a-f]{4}',
+            r'unescape\s*\(\s*["\']%[0-9a-fA-F]{2}',
+            r'chr\s*\(\s*\d+\s*\)\s*\.\s*chr\s*\(\s*\d+\s*\)',
+        ],
+        'description': '使用Base64/Hex/Unicode编码隐藏恶意载荷,科恩实验室静态分析重点检测',
+        'fix_suggestion': '移除所有编码载荷;如需编码说明使用注释而非实际编码;用明文描述替代编码字符串',
+    },
+    {
+        'name': '反向Shell/Shell反弹',
+        'severity': 'critical',
+        'hit_rate': '科恩特有',
+        'patterns': [
+            r'(?:bash|sh|zsh|nc|ncat)\s+.*(?:-i|/dev/tcp/|/dev/udp/)',
+            r'(?:python|perl|ruby|php)\s+.*(?:socket|connect|SOCK_STREAM)',
+            r'0\.0\.0\.0.*(?:listen|bind|accept)',
+            r'(?:mkfifo|mknod)\s+.*\|\s*(?:sh|bash)',
+            r'(?:exec|subprocess)\s*\(\s*["\'](?:/bin/)?(?:bash|sh)\s+-i',
+            r'(?:bash|sh)\s+-i\s*>\s*&\s*(?:/dev/tcp|1>|2>)',
+        ],
+        'description': '包含反向Shell或Shell反弹模式,科恩实验室高危检测项',
+        'fix_suggestion': '完全移除所有反向Shell代码;如为网络工具描述,使用功能说明替代具体命令',
+    },
+    {
+        'name': '权限提升风险',
+        'severity': 'high',
+        'hit_rate': '科恩特有',
+        'patterns': [
+            r'\bsudo\s+(?:chmod|chown|chgrp|rm|dd|mkfs|fdisk|mount|umount)',
+            r'chmod\s+[0-7]?[0-7][0-7][0-7]\s+/(?:etc|usr|var|root|bin|sbin)',
+            r'os\.setuid\s*\(\s*0\b',
+            r'os\.setgid\s*\(\s*0\b',
+            r'(?:chmod|chown)\s+.*(?:777|666|/etc/passwd|/etc/shadow|/etc/sudoers)',
+            r'WriteProcessMemory|SeDebugPrivilege|AdjustTokenPrivileges',
+        ],
+        'description': '尝试提升系统权限或修改关键系统文件权限,科恩实验室检测项',
+        'fix_suggestion': '移除所有权限提升代码;使用描述性语言说明安全要求;不修改系统文件权限',
+    },
+    {
+        'name': '加密货币挖矿',
+        'severity': 'critical',
+        'hit_rate': '云鼎特有',
+        'patterns': [
+            r'(?:xmrig|stratum\+tcp|cryptonight|monero.*mine|eth.*mine)',
+            r'(?:coinhive|coin-hive|crypto-?loot|webminer)',
+            r'(?:pool\.minexmr|pool\.supportxmr|nanopool)',
+            r'(?:stratum\+tcp|stratum\+ssl)://',
+        ],
+        'description': '包含加密货币挖矿程序或矿池连接地址,云鼎实验室高危检测项',
+        'fix_suggestion': '完全移除所有挖矿相关代码和地址;如为安全分析工具,仅描述检测方法不含实际代码',
+    },
+    {
+        'name': 'AI Prompt注入风险',
+        'severity': 'high',
+        'hit_rate': '云鼎特有',
+        'patterns': [
+            r'(?:ignore|disregard)\s+(?:all\s+)?(?:previous|prior|above)\s+instructions',
+            r'(?:system|assistant)[:：]\s*(?:you\s+are|act\s+as|forget)',
+            r'(?:new\s+instructions?|override|jailbreak|DAN)',
+            r'(?:reveal|show|print|output)\s+(?:your|the)\s+(?:system\s+prompt|instructions?|rules?)',
+            r'(?:pretend|simulate)\s+(?:you\s+(?:are|have\s+no)|to\s+be\s+(?:an?\s+)?(?:unrestricted|unlimited))',
+        ],
+        'description': '包含AI Prompt注入攻击模式,云鼎实验室AI安全检测项',
+        'fix_suggestion': '移除所有prompt注入示例;如为安全测试工具,使用描述性语言说明防御方法而非攻击载荷',
+    },
+    {
+        'name': '持久化/自启动',
+        'severity': 'high',
+        'hit_rate': '科恩特有',
+        'patterns': [
+            r'(?:crontab|/etc/cron\.|/etc/rc\.d|/etc/init\.d|systemctl\s+enable)',
+            r'(?:HKLM|HKCU)\\Software\\Microsoft\\Windows\\CurrentVersion\\Run',
+            r'(?:schtasks|at\s+\d|taskschd)',
+            r'(?:~/.bashrc|~/.bash_profile|~/.profile|~/.zshrc).*(?:exec|eval|python|curl|wget)',
+            r'(?:exec|eval|python|curl|wget).*(?:~/.bashrc|~/.bash_profile|~/.profile|~/.zshrc)',
+            r'(?:LaunchAgent|LaunchDaemon|com\.apple\.loginitem)',
+        ],
+        'description': '尝试建立持久化机制(计划任务/注册表自启动/启动脚本),科恩实验室检测项',
+        'fix_suggestion': '移除所有持久化代码;如为系统管理工具,使用描述性语言说明部署方式',
+    },
+    {
+        'name': '不安全反序列化',
+        'severity': 'critical',
+        'hit_rate': '科恩特有',
+        'patterns': [
+            r'pickle\.loads?\s*\(',
+            r'yaml\.load\s*\(\s*(?!.*Loader)',
+            r'marshal\.loads?\s*\(',
+            r'php\s+(?:unserialize|maybe_unserialize)\s*\(',
+            r'(?:ObjectInputStream|readObject|XMLDecoder)',
+            r'eval\s*\(\s*(?:pickle|marshal|yaml)',
+        ],
+        'description': '使用不安全的反序列化方法,可能导致远程代码执行,科恩实验室高危检测项',
+        'fix_suggestion': '使用安全的反序列化方法:json.loads替代pickle.loads;yaml.safe_load替代yaml.load',
+    },
+    {
+        'name': '依赖混淆/供应链风险',
+        'severity': 'high',
+        'hit_rate': '云鼎特有',
+        'patterns': [
+            r'pip\s+install\s+(?:--index-url|--extra-index-url)\s+["\']?http',
+            r'npm\s+install\s+.*--registry\s+["\']?http',
+            r'require\s*\(\s*["\']http://',
+            r'(?:requirements\.txt|package\.json).*(?:git\+http|http://.*\.git)',
+            r'(?:download|install|setup)\s+.*(?:\.sh|\.exe|\.bat|\.ps1)\s+.*(?:curl|wget|http)',
+        ],
+        'description': '从不安全来源安装依赖或下载执行脚本,供应链攻击风险(云鼎实验室检测项)',
+        'fix_suggestion': '仅使用官方包管理器默认源(https://pypi.org, https://registry.npmjs.org);不使用http源',
+    },
+]
+
+# VPN/翻墙关键词 — 直接封禁
+_VPN_BLOCKED_KEYWORDS = [
+    'v2ray', 'vpn', '翻墙', '科学上网', 'proxy chains', 'shadowsocks',
+    'trojan', 'clash', 'surge', 'ssr', 'ss-urls',
+]
+
+
+def _check_security_risk_pattern(body: str, pattern_def: dict) -> dict:
+    """检查单个安全风险模式"""
+    name = pattern_def['name']
+    severity = pattern_def['severity']
+    patterns = pattern_def['patterns']
+    
+    matches = []
+    for pattern in patterns:
+        found = re.findall(pattern, body, re.IGNORECASE | re.MULTILINE)
+        if found:
+            # 去重并限制数量
+            unique = list(set(found))[:5]
+            matches.extend(unique)
+    
+    if matches:
+        return {
+            'name': f'安全审核: {name}',
+            'passed': False,
+            'severity': severity,
+            'details': [
+                f'命中模式({pattern_def["hit_rate"]}命中率): {pattern_def["description"]}',
+                f'匹配到: {", ".join(matches[:3])}' + ('...' if len(matches) > 3 else ''),
+                f'修复建议: {pattern_def["fix_suggestion"]}',
+            ]
+        }
+    
+    return {
+        'name': f'安全审核: {name}',
+        'passed': True,
+        'severity': severity,
+        'details': []
+    }
+
+
+def _check_vpn_keywords(body: str) -> dict:
+    """检查VPN/翻墙关键词(直接封禁)"""
+    body_lower = body.lower()
+    found_keywords = []
+    for kw in _VPN_BLOCKED_KEYWORDS:
+        if kw.lower() in body_lower:
+            found_keywords.append(kw)
+    
+    if found_keywords:
+        return {
+            'name': '安全审核: VPN/翻墙关键词',
+            'passed': False,
+            'severity': 'critical',
+            'details': [
+                f'发现VPN/翻墙关键词(直接封禁): {", ".join(found_keywords)}',
+                '修复建议: 移除所有VPN/翻墙相关内容;如为网络安全工具,转型为诊断类描述',
+            ]
+        }
+    
+    return {
+        'name': '安全审核: VPN/翻墙关键词',
+        'passed': True,
+        'severity': 'critical',
+        'details': []
+    }
+
+
+def run_security_precheck(skill_md_path: Path) -> dict:
+    """安全审核预检关卡 (v2.1新增)
+    
+    在上传前检测SkillHub三线安全审核的10类高风险模式 + VPN关键词封禁。
+    这些模式来自29条安全审核失败skill的深度分析。
+    
+    检查项(21项):
+      --- 基础高风险模式 (v2.1, 来自29条安全审核失败分析) ---
+      1. exec命令执行 (96.6%命中率)
+      2. API密钥明文处理 (62.1%)
+      3. 不可信外部API/域名 (51.7%)
+      4. 引用不存在的脚本 (41.4%)
+      5. 硬编码服务器地址/IP (27.6%)
+      6. HTTP不安全通信 (20.7%)
+      7. tools字段格式错误 (17.2%)
+      8. 文件系统遍历风险 (17.2%)
+      9. 敏感信息泄露 (13.8%)
+     10. eval/代码注入 (10.3%)
+      --- 科恩实验室 + 云鼎实验室特有检测 (v2.2新增) ---
+     11. SSRF服务端请求伪造 (云鼎特有)
+     12. 数据外泄风险 (云鼎特有)
+     13. 混淆代码/编码载荷 (科恩特有)
+     14. 反向Shell/Shell反弹 (科恩特有)
+     15. 权限提升风险 (科恩特有)
+     16. 加密货币挖矿 (云鼎特有)
+     17. AI Prompt注入风险 (云鼎特有)
+     18. 持久化/自启动 (科恩特有)
+     19. 不安全反序列化 (科恩特有)
+     20. 依赖混淆/供应链风险 (云鼎特有)
+      --- 直接封禁 ---
+     21. VPN/翻墙关键词 (直接封禁)
+    
+    参数:
+        skill_md_path: SKILL.md文件路径
+    
+    返回:
+        安全审核预检结果, overall_passed=False时必须修复后才能上传
+    """
+    try:
+        content = skill_md_path.read_text(encoding='utf-8')
+        if content.startswith('\ufeff'):
+            content = content[1:]
+        
+        # 解析frontmatter和body
+        if content.startswith('---'):
+            parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+            fm_str = parts[1] if len(parts) > 1 else ''
+            body = parts[2] if len(parts) > 2 else ''
+            full_text = fm_str + '\n' + body
+        else:
+            fm_str = ''
+            body = content
+            full_text = content
+        
+        # 执行10类高风险模式检查
+        checks = []
+        for pattern_def in _SECURITY_RISK_PATTERNS:
+            check_result = _check_security_risk_pattern(full_text, pattern_def)
+            checks.append(check_result)
+        
+        # VPN关键词检查
+        vpn_check = _check_vpn_keywords(full_text)
+        checks.append(vpn_check)
+        
+        overall_passed = all(c['passed'] for c in checks)
+        
+        return {
+            'skill': skill_md_path.parent.name,
+            'path': str(skill_md_path),
+            'overall_passed': overall_passed,
+            'total_checks': len(checks),
+            'passed_checks': sum(1 for c in checks if c['passed']),
+            'failed_checks': sum(1 for c in checks if not c['passed']),
+            'checks': checks,
+            'gate_type': 'security_precheck',
+            'checked_at': datetime.now().isoformat()
+        }
+    except Exception as e:
+        return {
+            'skill': skill_md_path.parent.name if skill_md_path.parent else 'unknown',
+            'path': str(skill_md_path),
+            'overall_passed': False,
+            'total_checks': 0,
+            'passed_checks': 0,
+            'failed_checks': 0,
+            'checks': [],
+            'gate_type': 'security_precheck',
+            'error': str(e),
+            'checked_at': datetime.now().isoformat()
+        }
+
+
+# ============ 统一质量检查入口 (v2.1增强) ============
 
 def run_full_quality_check(skill_md_path: Path,
                             include_l2l3: bool = False,
@@ -662,7 +1153,7 @@ def run_full_quality_check(skill_md_path: Path,
     """统一质量检查入口 (v2.0新增)
     
     执行完整质量检查链路:
-    L1(13项) → 营销关卡(7项) → 防幻觉(3项)
+    L1(13项) → 安全预检(11项) → 营销关卡(7项) → 防幻觉(3项)
     可选: L2/L3报告检查
     
     参数:
@@ -673,10 +1164,13 @@ def run_full_quality_check(skill_md_path: Path,
         l4_report: L4-L9审计报告(可选)
     
     返回:
-        统一质量检查结果, 包含L1/营销/防幻觉各层结果
+        统一质量检查结果, 包含L1/安全/营销/防幻觉各层结果
     """
     # L1: 静态格式合规
     l1_result = run_quality_gate(skill_md_path)
+    
+    # 安全审核预检 (v2.1新增)
+    security_result = run_security_precheck(skill_md_path)
     
     # 营销关卡
     marketing_result = run_marketing_gate(skill_md_path)
@@ -689,6 +1183,7 @@ def run_full_quality_check(skill_md_path: Path,
     # 汇总
     all_checks = (
         l1_result.get('checks', []) +
+        security_result.get('checks', []) +
         marketing_result.get('checks', []) +
         anti_hallucination_result.get('checks', [])
     )
@@ -709,6 +1204,10 @@ def run_full_quality_check(skill_md_path: Path,
             'L1_static': {
                 'passed': l1_result.get('overall_passed', False),
                 'score': f"{l1_result.get('passed_checks', 0)}/{l1_result.get('total_checks', 0)}",
+            },
+            'security_precheck': {
+                'passed': security_result.get('overall_passed', False),
+                'score': f"{security_result.get('passed_checks', 0)}/{security_result.get('total_checks', 0)}",
             },
             'marketing_gate': {
                 'passed': marketing_result.get('overall_passed', False),
@@ -774,8 +1273,10 @@ def main():
                         help='仅运行营销关卡检查(7项)')
     parser.add_argument('--anti-hallucination', action='store_true',
                         help='仅运行防幻觉检查(3项)')
+    parser.add_argument('--security', action='store_true',
+                        help='仅运行安全审核预检(21项高风险模式: 10基础+10科恩/云鼎+VPN)')
     parser.add_argument('--full', action='store_true',
-                        help='完整质量检查: L1(13项) + 营销关卡(7项) + 防幻觉(3项)')
+                        help='完整质量检查: L1(13项) + 安全预检(21项) + 营销关卡(7项) + 防幻觉(3项)')
     args = parser.parse_args()
 
     target = Path(args.path)
@@ -797,6 +1298,8 @@ def main():
     for sf in skill_files:
         if args.full:
             result = run_full_quality_check(sf)
+        elif args.security:
+            result = run_security_precheck(sf)
         elif args.marketing:
             result = run_marketing_gate(sf)
         elif args.anti_hallucination:

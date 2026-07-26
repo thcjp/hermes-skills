@@ -187,5 +187,36 @@
     "Productivity": 2,
     "Research": 0,
     "Security": 1
-  }
+  },
+
+  "_clawhub_categories_note": "ClawHub标准分类(slug格式),用于npx clawhub publish --categories参数",
+  "clawhub_categories": {
+    "office-efficiency": "productivity",
+    "content-creation": "creative",
+    "dev-programming": "productivity",
+    "data-analysis": "research",
+    "design-media": "creative",
+    "ai-agent": "agents",
+    "knowledge-management": "knowledge",
+    "business-ops": "productivity",
+    "it-ops-security": "security",
+    "education": "knowledge",
+    "professional": "other",
+    "life-service": "lifestyle"
+  },
+
+  "_clawhub_category_slugs_note": "ClawHub所有标准分类slug列表(用于验证)",
+  "clawhub_category_slugs": [
+    "agents",
+    "security",
+    "knowledge",
+    "communication",
+    "productivity",
+    "integrations",
+    "other",
+    "research",
+    "automation",
+    "lifestyle",
+    "creative"
+  ]
 }

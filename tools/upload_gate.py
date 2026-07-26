@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-上传门控检查 v2.0 (重构: 编排L1-L4, 消除冗余)
+上传门控检查 v2.2 (重构: 编排L1-L4, 消除冗余 + 安全预检增强)
 ================================================
 编排四层质量门禁 + 上传特有的合规/定价/安全检查:
-  L1 (quality_gate) → L2-SF (source_fidelity) → L2-Cap (TRACE评分)
+  L1 (quality_gate) → L1.5 (安全预检, 21项) → L2-SF (source_fidelity) → L2-Cap (TRACE评分)
   → L3 (l3_function_checker) → L4 (l4_task_gate)
   → 合规检查 → 定价检查 → 上传
 
@@ -12,6 +12,10 @@ v2.0变更:
   - 编排L1-L4检查器, 不再重新实现
   - 使用skill_core.parser统一解析
   - 保留上传特有的: 合规(安全)、定价、TRACE评分
+
+v2.2变更:
+  - 新增L1.5安全预检层(21项): 10基础风险模式 + 10科恩/云鼎实验室特有 + VPN封禁
+  - 覆盖SSRF/数据外泄/混淆代码/反向Shell/权限提升/挖矿/Prompt注入/持久化/反序列化/供应链风险
 
 Usage:
     python upload_gate.py check <skill_dir>          # 检查单个skill
@@ -238,6 +242,29 @@ def run_gate_check(skill_dir: str) -> Dict:
                         'category': 'L1-format',
                         'message': f"[L1] {check['name']}: {detail}"
                     })
+
+    # === L1.5: 安全审核预检 (quality_gate, 21项) — v2.2新增 ===
+    # 科恩实验室+云鼎实验室特有检测, 防止安全审核被拒
+    try:
+        from quality_gate import run_security_precheck
+        sec_result = run_security_precheck(skill_md)
+        layer_results['L1.5-Security'] = {
+            'passed': sec_result.get('overall_passed', False),
+            'checks': sec_result.get('total_checks', 0),
+            'failed': sec_result.get('failed_checks', 0),
+        }
+        if not sec_result.get('overall_passed'):
+            for check in sec_result.get('checks', []):
+                if not check.get('passed'):
+                    severity = 'BLOCKER' if check.get('severity') in ('critical', 'high') else 'WARN'
+                    for detail in check.get('details', []):
+                        all_issues.append({
+                            'severity': severity,
+                            'category': 'L1.5-Security',
+                            'message': f"[L1.5-安全] {check.get('name', '')}: {detail}"
+                        })
+    except ImportError:
+        layer_results['L1.5-Security'] = {'passed': True, 'note': 'security_precheck不可用, 跳过'}
 
     # === L2-SF: 源保真度 (source_fidelity_checker) ===
     if _has_sf_checker:

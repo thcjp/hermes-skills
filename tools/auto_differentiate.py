@@ -51,6 +51,16 @@ from auto_discover import get_db, DB_PATH
 import db as db_module
 
 # ============================================================
+# 安全预检: 差异化前扫描源skill安全风险 (v2.2新增)
+# 防止基于有安全隐患的源skill生成差异化产物
+# ============================================================
+try:
+    from source_security_scan import scan_content, auto_fix_risks
+    _SECURITY_SCAN_AVAILABLE = True
+except ImportError:
+    _SECURITY_SCAN_AVAILABLE = False
+
+# ============================================================
 # 路径常量
 # ============================================================
 
@@ -534,8 +544,24 @@ def process_candidates(
     candidates: List[Dict[str, Any]],
     limit: int = 50,
     dry_run: bool = False,
+    skip_security: bool = False,
+    auto_fix_security: bool = True,
 ) -> Dict[str, Any]:
     """处理候选列表, 生成差异化 SKILL.md 并更新数据库。
+
+    v2.2新增: 差异化前安全预检
+    - 对每个候选的源内容执行21项安全风险扫描
+    - critical风险(BLOCKED): 跳过差异化
+    - high风险(WARNING): 自动修复后继续
+    - medium风险(NOTICE): 自动修复后继续
+    - safe: 正常差异化
+
+    Args:
+        candidates: 候选 skill 列表
+        limit: 处理上限
+        dry_run: 仅输出计划
+        skip_security: 跳过安全预检(不推荐)
+        auto_fix_security: 自动修复可修复的安全风险
 
     Returns:
         包含处理统计的字典
@@ -554,6 +580,8 @@ def process_candidates(
         'created': 0,
         'skipped': 0,
         'errors': 0,
+        'security_blocked': 0,
+        'security_fixed': 0,
         'details': [],
     }
 
@@ -572,6 +600,46 @@ def process_candidates(
         category = candidate.get('category', 'Other')
         url = candidate.get('url', '')
         content_preview = candidate.get('content_preview', '')
+
+        # ===== v2.2: 差异化前安全预检 =====
+        security_status = 'SAFE'
+        security_fixes = []
+        if not skip_security and _SECURITY_SCAN_AVAILABLE:
+            # 合并所有可扫描内容
+            scan_text = f"{description}\n{content_preview}"
+            scan_result = scan_content(scan_text)
+
+            if scan_result['action'] == 'BLOCKED':
+                # critical风险: 跳过差异化
+                stats['security_blocked'] += 1
+                security_status = 'BLOCKED'
+                failed_names = [c.get('name', '') for c in scan_result.get('checks', [])]
+                print(
+                    f"[{idx:3d}/{len(candidates)}] ✗ BLOCKED  | "
+                    f"source={source:15s} | name={name[:30]}"
+                )
+                for check in scan_result.get('checks', []):
+                    print(f"           → [{check.get('severity', '').upper()}] {check.get('name', '')}")
+
+                stats['details'].append({
+                    'index': idx,
+                    'source': source,
+                    'source_id': source_id,
+                    'name': name,
+                    'status': 'SECURITY_BLOCKED',
+                    'security_risks': failed_names,
+                })
+                continue
+
+            elif scan_result['action'] in ('WARNING', 'NOTICE') and auto_fix_security:
+                # high/medium风险: 自动修复
+                security_status = scan_result['action']
+                fixed_text, fixes = auto_fix_risks(scan_text, scan_result)
+                security_fixes = fixes
+                if fixes:
+                    stats['security_fixed'] += 1
+                    # 使用修复后的description
+                    description = fixed_text[:len(description)] if len(fixed_text) < len(description) * 2 else description
 
         # a. 生成 slug
         base_slug = generate_slug(source_id, name)
@@ -605,13 +673,18 @@ def process_candidates(
             url=url,
         )
 
-        # 状态标记: NEW / CONFLICT / EXISTS
-        if final_slug != base_slug:
+        # 状态标记: NEW / CONFLICT / EXISTS / SECURITY_BLOCKED
+        if security_status == 'BLOCKED':
+            status = 'SECURITY_BLOCKED'
+        elif final_slug != base_slug:
             status = f'CONFLICT ({base_slug} -> {final_slug})'
         elif final_slug in existing_slugs:
             status = 'UPDATE'
         else:
             status = 'NEW'
+
+        if security_status in ('WARNING', 'NOTICE'):
+            status += f' [{security_status}]'
 
         print(
             f"[{idx:3d}/{len(candidates)}] {status:20s} | "
@@ -633,6 +706,8 @@ def process_candidates(
             'category': category,
             'status': status,
             'skill_md_path': str(skill_md_path),
+            'security_status': security_status,
+            'security_fixes': security_fixes,
         }
         stats['details'].append(detail)
 
@@ -679,6 +754,8 @@ def process_candidates(
     print(f"成功创建:  {stats['created']}")
     print(f"跳过(dry): {stats['skipped']}")
     print(f"错误:      {stats['errors']}")
+    print(f"安全阻断:  {stats['security_blocked']}")
+    print(f"安全修复:  {stats['security_fixed']}")
     print(f"{'='*60}\n")
 
     return stats
@@ -715,6 +792,14 @@ def main():
         '--dry-run', action='store_true',
         help='只输出处理计划, 不实际创建文件或更新数据库',
     )
+    parser.add_argument(
+        '--skip-security', action='store_true',
+        help='跳过差异化前安全预检(不推荐, 可能生成有安全风险的skill)',
+    )
+    parser.add_argument(
+        '--no-auto-fix', action='store_true',
+        help='禁用安全风险自动修复(有风险的候选将被跳过而非修复)',
+    )
 
     args = parser.parse_args()
 
@@ -731,6 +816,8 @@ def main():
         candidates=candidates,
         limit=args.limit,
         dry_run=args.dry_run,
+        skip_security=args.skip_security,
+        auto_fix_security=not args.no_auto_fix,
     )
 
 

@@ -1,0 +1,8033 @@
+{
+  "total": 1002,
+  "passed": 256,
+  "failed": 746,
+  "critical": 1068,
+  "high": 63,
+  "medium": 177,
+  "failed_skills": [
+    {
+      "skill": "ace-music",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ace-music\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "反向Shell/Shell反弹",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "ace-music-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ace-music-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "actor-identifier",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\actor-identifier\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "ad-insight-hub",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ad-insight-hub\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "admapix",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\admapix\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "admapix-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\admapix-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "aegis-security",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aegis-security\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "aegis-security-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aegis-security-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "afrexai-cybersecurity-engine",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\afrexai-cybersecurity-engine\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "afrexai-cybersecurity-engine-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\afrexai-cybersecurity-engine-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "afrexai-knowledge-management",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\afrexai-knowledge-management\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agent",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agent-bom-vulnerability-intel",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent-bom-vulnerability-intel\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agent-browser-assistant",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent-browser-assistant\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agent-browser-automation",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent-browser-automation\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agent-browser-stagehand",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent-browser-stagehand\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agent-chat",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent-chat\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agent-commercial-contract",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent-commercial-contract\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agent-framework-azure-ai-py",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent-framework-azure-ai-py\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "agent-knowledge",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agent-knowledge\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agentic-security-audit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agentic-security-audit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agentvibes-content-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agentvibes-content-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agentvibes-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agentvibes-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "agentvibes-voice-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agentvibes-voice-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "agentvibes-voice-skill-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\agentvibes-voice-skill-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ai-agent-helper",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-agent-helper\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "ai-assistant",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-assistant\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "ai-assistant-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-assistant-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "ai-image-gen",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-image-gen\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ai-kujiale-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-kujiale-design\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "ai-kujiale-design-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-kujiale-design-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ai-podcast",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-podcast\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ai-podcast-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-podcast-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ai-writing-style-cloner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ai-writing-style-cloner\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "aic-dashboard",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aic-dashboard\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "不可信外部API/域名"
+      ]
+    },
+    {
+      "skill": "aic-dashboard-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aic-dashboard-free\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "不可信外部API/域名"
+      ]
+    },
+    {
+      "skill": "alephnet-node",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\alephnet-node\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "alephnet-node-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\alephnet-node-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "alibaba-quark-scan-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\alibaba-quark-scan-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "alpha-feed-creator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\alpha-feed-creator\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "analytics-dashboard",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\analytics-dashboard\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "analyze",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\analyze\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "analyze-video-by-qwen",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\analyze-video-by-qwen\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "analyze-video-by-qwen-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\analyze-video-by-qwen-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "anthropics-frontend-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\anthropics-frontend-design\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "anthropics-frontend-design-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\anthropics-frontend-design-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "anygen-diagram",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\anygen-diagram\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "anygen-diagram-generator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\anygen-diagram-generator\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "anygen-diagram-generator-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\anygen-diagram-generator-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-connect-hub",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-connect-hub\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "api-development",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-development\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-doc-generator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-doc-generator\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 3,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "HTTP不安全通信",
+        "文件系统遍历风险",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "api-doc-writer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-doc-writer\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-doc-writer-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-doc-writer-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-gateway",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-gateway\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "api-gateway-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-gateway-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "api-generator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-generator\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-generator-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-generator-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-integration",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-integration\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-integration-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-integration-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "api-magic-gen",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-magic-gen\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "api-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\api-toolkit\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "apple-health-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\apple-health-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "apple-health-skill-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\apple-health-skill-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "archive",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\archive\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "archive-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\archive-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "art",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\art\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "assistant",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\assistant\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "atlas-admin-console",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\atlas-admin-console\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "audio-stream-upload",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\audio-stream-upload\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "audio-upload-aioz-stream",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\audio-upload-aioz-stream\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "audio-upload-aioz-stream-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\audio-upload-aioz-stream-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "audit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\audit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "auto-updater",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\auto-updater\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "auto-workflow",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\auto-workflow\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "automation-recipe-book",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\automation-recipe-book\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "aws",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "aws-cloud-architect",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws-cloud-architect\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "aws-cloud-architect-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws-cloud-architect-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "aws-graph-agent",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws-graph-agent\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "aws-graph-agent-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws-graph-agent-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "aws-infra",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws-infra\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "aws-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws-toolkit\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "aws-wechat-article-writing",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws-wechat-article-writing\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "aws-wechat-article-writing-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\aws-wechat-article-writing-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure-ai-transcription-py",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-ai-transcription-py\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure-ai-voicelive-py",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-ai-voicelive-py\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "azure-ai-voicelive-py-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-ai-voicelive-py-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure-cli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-cli\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure-cli-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-cli-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "azure-cloud-architect",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-cloud-architect\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure-cloud-architect-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-cloud-architect-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure-devops",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-devops\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure-gateway-cli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-gateway-cli\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 3,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "HTTP不安全通信",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "azure-transcription",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-transcription\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "azure-voicelive",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\azure-voicelive\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "baidu-netdisk-skills",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\baidu-netdisk-skills\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "baidu-netdisk-skills-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\baidu-netdisk-skills-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "bailian-web-search",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\bailian-web-search\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "baoyu-diagram",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\baoyu-diagram\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "baoyu-md-formatter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\baoyu-md-formatter\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "beware-piper-tts",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\beware-piper-tts\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "beware-piper-tts-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\beware-piper-tts-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "bilibili-all-in-one",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\bilibili-all-in-one\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "bilibili-all-in-one-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\bilibili-all-in-one-free\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "bilibili-helper-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\bilibili-helper-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "bilibili-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\bilibili-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "blog-seo-writer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\blog-seo-writer\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "blog-writer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\blog-writer\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "blog-writer-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\blog-writer-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "book-painter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\book-painter\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "bookmark-intelligence",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\bookmark-intelligence\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "bookmark-intelligence-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\bookmark-intelligence-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "brainz-calendar",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\brainz-calendar\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "brave-search",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\brave-search\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "browser-automation",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\browser-automation\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "browser-automation-v2",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\browser-automation-v2\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "bsession",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\bsession\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "build-game",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\build-game\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "calendar",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\calendar\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "calendar-reminder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\calendar-reminder\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "calendar-reminder-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\calendar-reminder-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "calendar-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\calendar-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "calendar-sync-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\calendar-sync-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "call-bridge",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\call-bridge\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "can",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\can\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "can-bus-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\can-bus-toolkit\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "can-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\can-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "card-image-builder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\card-image-builder\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "cashu-emoji",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cashu-emoji\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "cctv-news-fetcher",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cctv-news-fetcher\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "cdn",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cdn\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "chart",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\chart\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "chart-craft",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\chart-craft\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "chart-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\chart-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "chart-generator-2-0-0",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\chart-generator-2-0-0\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "chat",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\chat\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "cheat-code-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cheat-code-paid\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "chief-creative-officer-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\chief-creative-officer-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "chromecast-control",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\chromecast-control\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "chromecast-control-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\chromecast-control-free\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "claude-code-runner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\claude-code-runner\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "claude-tmux",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\claude-tmux\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "clawcall",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\clawcall\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "clawcall-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\clawcall-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "clawddocs",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\clawddocs\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "clawprint",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\clawprint\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "cloud",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cloud\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "cloud-architect",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cloud-architect\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "持久化/自启动",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "cloud-architect-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cloud-architect-free\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "cloud-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cloud-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "cloud-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cloud-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "cloud-storage",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cloud-storage\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "code",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\code\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "code-analysis-skills",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\code-analysis-skills\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "code-analyze",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\code-analyze\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "code-delegate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\code-delegate\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "code-quality",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\code-quality\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "code-quality-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\code-quality-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "code-runner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\code-runner\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "comfyui-painter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\comfyui-painter\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "不可信外部API/域名",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "comfyui-painter-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\comfyui-painter-free\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "不可信外部API/域名"
+      ]
+    },
+    {
+      "skill": "communication-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\communication-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "SSRF服务端请求伪造"
+      ]
+    },
+    {
+      "skill": "company-search-fengniao",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\company-search-fengniao\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "compress",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\compress\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "context-driven-development",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\context-driven-development\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "control-ikea-lightbulb",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\control-ikea-lightbulb\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "creator-alpha-feed",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\creator-alpha-feed\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "creator-alpha-feed-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\creator-alpha-feed-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "cron-mastery",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cron-mastery\\SKILL.md",
+      "critical": 1,
+      "high": 2,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "不可信外部API/域名",
+        "文件系统遍历风险",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "cron-precision-scheduler",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cron-precision-scheduler\\SKILL.md",
+      "critical": 1,
+      "high": 2,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "不可信外部API/域名",
+        "文件系统遍历风险",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "cron-setup-guide",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\cron-setup-guide\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "css",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\css\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "css-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\css-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "csv",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\csv\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "csv-handler",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\csv-handler\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "csv-handler-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\csv-handler-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "csv-insight",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\csv-insight\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "ctxly-chat",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ctxly-chat\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "daily-news-brief",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\daily-news-brief\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dashboard",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dashboard\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dashboard-analytics-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dashboard-analytics-tool\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dashboard-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dashboard-toolkit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "data",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\data\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "data-analysis-hub",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\data-analysis-hub\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "data-analysis-litiao-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\data-analysis-litiao-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "data-analyst-chinese",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\data-analyst-chinese\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "data-analyst-cn",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\data-analyst-cn\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "data-analyst-cn-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\data-analyst-cn-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "data-analyst-expert",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\data-analyst-expert\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "data-format-converter-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\data-format-converter-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "不安全反序列化"
+      ]
+    },
+    {
+      "skill": "database-admin",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\database-admin\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "database-admin-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\database-admin-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "db",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\db\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "db-admin-console",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\db-admin-console\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "db-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\db-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "decision-architect",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\decision-architect\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\design\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "design-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\design-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "design-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\design-toolkit\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "diagram",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\diagram\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "diagram-generator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\diagram-generator\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "diagram-generator-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\diagram-generator-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "discord",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "discord-chat",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-chat\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "discord-chat-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-chat-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "discord-chat-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-chat-manager\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "反向Shell/Shell反弹",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "discord-communities",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-communities\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "discord-communities-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-communities-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "discord-community-hub",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-community-hub\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "discord-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "discord-hub",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-hub\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "discord-master",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-master\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "SSRF服务端请求伪造",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "discord-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "discord-voice",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-voice\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "discord-voice-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discord-voice-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "discrawl",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\discrawl\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dlazy-audio-generate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dlazy-audio-generate\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "dlazy-audio-generate-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dlazy-audio-generate-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "dlazy-gen",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dlazy-gen\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "dlazy-generate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dlazy-generate\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dns",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dns\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dns-config",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dns-config\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "dns-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dns-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dns-lookup",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dns-lookup\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dns-networking",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dns-networking\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dns-networking-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dns-networking-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "doc-assistant",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\doc-assistant\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "doc-parse",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\doc-parse\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "docker",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\docker\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "docker-ctl",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\docker-ctl\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "docker-essentials",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\docker-essentials\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "硬编码服务器地址/IP",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "docker-essentials-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\docker-essentials-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "docker-sandbox",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\docker-sandbox\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "document-pdf",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\document-pdf\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "dogecoin-node",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\dogecoin-node\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "domain-dns-ops",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\domain-dns-ops\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "elite-frontend-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\elite-frontend-design\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "elite-longterm-memory",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\elite-longterm-memory\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "email-163",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\email-163\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "email-163-com",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\email-163-com\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "email-163-com-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\email-163-com-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "email-digest",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\email-digest\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "不可信外部API/域名",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "email-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\email-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "email-skill-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\email-skill-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "email-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\email-toolkit\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "encoding-formats-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\encoding-formats-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "encryption",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\encryption\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "evolution-engine",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\evolution-engine\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "evolution-engine-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\evolution-engine-free\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "excel-formula",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\excel-formula\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "excel-studio",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\excel-studio\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "excel-xlsx",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\excel-xlsx\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "expanso-csv-to-json",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\expanso-csv-to-json\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "expanso-json-to-yaml",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\expanso-json-to-yaml\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "expanso-json-validate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\expanso-json-validate\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "expanso-log-sanitize",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\expanso-log-sanitize\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "expanso-xml-to-json",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\expanso-xml-to-json\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "feed-digest",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feed-digest\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "feed-to-md",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feed-to-md\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "feishu-card",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feishu-card\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "feishu-card-builder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feishu-card-builder\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "feishu-card-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feishu-card-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "feishu-doc",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feishu-doc\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "feishu-doc-write",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feishu-doc-write\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "feishu-file-sender",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feishu-file-sender\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "feishu-send-file",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feishu-send-file\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "feishu-send-file-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\feishu-send-file-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "figma",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\figma\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "figma-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\figma-design\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "figma-design-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\figma-design-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "figma-studio",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\figma-studio\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "SSRF服务端请求伪造"
+      ]
+    },
+    {
+      "skill": "figma-tw-designer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\figma-tw-designer\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "file",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\file\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "file-browser-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\file-browser-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "finance",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\finance\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "finance-acct",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\finance-acct\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "finance-radar",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\finance-radar\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "finance-report-analyzer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\finance-report-analyzer\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "financial-literacy",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\financial-literacy\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "firewall",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\firewall\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "flexible-database-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\flexible-database-design\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "fonts",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\fonts\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "format-converter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\format-converter\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "free-google-search-with-browser",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\free-google-search-with-browser\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "free-resource-finder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\free-resource-finder\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "free-ride",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\free-ride\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "free-weather-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\free-weather-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "frontend-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\frontend-design\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "frontend-design-3",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\frontend-design-3\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "frontend-design-3-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\frontend-design-3-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "frontend-design-anthropic",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\frontend-design-anthropic\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "game",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\game\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "game-ai",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\game-ai\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "game-asset-generation-cellcog",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\game-asset-generation-cellcog\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "game-developer-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\game-developer-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "gateway-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\gateway-manager\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "generate-mindmap",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\generate-mindmap\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "generate-presentation",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\generate-presentation\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "gif-whatsapp",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\gif-whatsapp\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "git",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\git\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "git-cli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\git-cli\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "git-cli-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\git-cli-paid\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "git-essentials",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\git-essentials\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "git-helper",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\git-helper\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "git-helper-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\git-helper-paid\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "gitcrawl",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\gitcrawl\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "github",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\github\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "github-api",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\github-api\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "github-api-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\github-api-toolkit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "数据外泄风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "github-dev-standard",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\github-dev-standard\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "github-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\github-manager\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "github-repos",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\github-repos\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "github-trending-feed",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\github-trending-feed\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "glitch-dashboard",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\glitch-dashboard\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "go",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\go\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "go-linter-configuration",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\go-linter-configuration\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "go-security-vulnerability",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\go-security-vulnerability\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "go-to-market",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\go-to-market\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "go-to-market-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\go-to-market-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "gog",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\gog\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "golang-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\golang-toolkit\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "HTTP不安全通信"
+      ]
+    },
+    {
+      "skill": "google-search",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\google-search\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "google-workspace-cli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\google-workspace-cli\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "google-workspace-mcp",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\google-workspace-mcp\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "google-workspace-mcp-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\google-workspace-mcp-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "google-workspace-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\google-workspace-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "graincrawl",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\graincrawl\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "graph-advocate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\graph-advocate\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "graph-knowledge-base",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\graph-knowledge-base\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "health",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\health\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "heygen-tts",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\heygen-tts\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "html",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\html\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "html-coder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\html-coder\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "html-designer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\html-designer\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "html-designer-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\html-designer-paid\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "反向Shell/Shell反弹",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "hugo-blog",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\hugo-blog\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "hugo-blog-publisher",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\hugo-blog-publisher\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "hugo-blog-publisher-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\hugo-blog-publisher-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "humanizer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\humanizer\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "image",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\image\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "in-depth-research",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\in-depth-research\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "in-depth-research-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\in-depth-research-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "intel-sentinel",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\intel-sentinel\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "internet-search",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\internet-search\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "interview-simulator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\interview-simulator\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "iris-code-formatter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\iris-code-formatter\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "iris-formatter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\iris-formatter\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "java-development-manual",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\java-development-manual\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "javascript",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\javascript\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "javascript-sdk",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\javascript-sdk\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "javascript-skills",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\javascript-skills\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "javascript-skills-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\javascript-skills-paid\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "jinn-node",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jinn-node\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "jinn-node-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jinn-node-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "jira",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "jira-api",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira-api\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "jira-flow-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira-flow-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "jira-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "jira-integration-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira-integration-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "jira-pat-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira-pat-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "jira-pat-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira-pat-toolkit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "jira-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "jira-skill-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\jira-skill-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "job-auto-apply",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\job-auto-apply\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "join-meeting",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\join-meeting\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "join-meeting-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\join-meeting-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "json",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\json\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "json-canvas",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\json-canvas\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "json-formatter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\json-formatter\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "json-linter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\json-linter\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "json-parser",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\json-parser\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "json-validator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\json-validator\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "json-yaml-converter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\json-yaml-converter\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "SSRF服务端请求伪造"
+      ]
+    },
+    {
+      "skill": "k8s",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\k8s\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "kai-tw-figma",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\kai-tw-figma\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "key-guard",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\key-guard\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "key-vault-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\key-vault-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "knowledge-capture",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\knowledge-capture\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "knowledge-graph",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\knowledge-graph\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "knowledge-graph-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\knowledge-graph-paid\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "knowledge-graph-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\knowledge-graph-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "kubernetes",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\kubernetes\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "kubernetes-devops",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\kubernetes-devops\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "kujiale-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\kujiale-design\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "learn",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\learn\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "learn-cog",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\learn-cog\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "learn-cog-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\learn-cog-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "lh-video-gen",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\lh-video-gen\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "lh-video-gen-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\lh-video-gen-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "linear",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "linear-api",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear-api\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "linear-api-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear-api-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "linear-api-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear-api-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "linear-integration",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear-integration\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "linear-project-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear-project-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "linear-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "linear-sync",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear-sync\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "linear-workflow-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\linear-workflow-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "lite-sqlite",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\lite-sqlite\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "live-stream-script",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\live-stream-script\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "llm-assistant-hub",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\llm-assistant-hub\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "llm-assistant-hub-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\llm-assistant-hub-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "local-file-rag-basic",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\local-file-rag-basic\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "logo",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\logo\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "logo-brand-identity",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\logo-brand-identity\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "logo-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\logo-design\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "logo-design-guide",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\logo-design-guide\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "longmemo-elite",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\longmemo-elite\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "longmemo-elite-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\longmemo-elite-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "mac-node-snapshot",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\mac-node-snapshot\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "magic-api-generate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\magic-api-generate\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "manage-liquidity",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\manage-liquidity\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "markdown",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\markdown\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "markdown-converter-compdf",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\markdown-converter-compdf\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "markdown-converter-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\markdown-converter-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "markdown-converter-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\markdown-converter-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "markdown-exporter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\markdown-exporter\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "markdown-exporter-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\markdown-exporter-free\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "markdown-format",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\markdown-format\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "mcporter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\mcporter\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "md-export",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\md-export\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "media-server-control",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\media-server-control\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "不可信外部API/域名",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "meeting-join",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\meeting-join\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "meeting-note",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\meeting-note\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "memo-quickstart",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\memo-quickstart\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "memo-quickstart-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\memo-quickstart-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "memory",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\memory\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "memory-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\memory-free\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "memory-scan",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\memory-scan\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "memory-scan-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\memory-scan-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "merge-check",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\merge-check\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "merge-check-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\merge-check-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "merge-pdf",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\merge-pdf\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "mermaid-diagram",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\mermaid-diagram\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "mermaid-diagram-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\mermaid-diagram-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "minimalist-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\minimalist-design\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "minimalist-design-system",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\minimalist-design-system\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "miniprogram-development",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\miniprogram-development\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "model-routing",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\model-routing\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "model-switching",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\model-switching\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "molt-board-art",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\molt-board-art\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "molt-board-art-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\molt-board-art-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "moltblock",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\moltblock\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "moltbook-filter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\moltbook-filter\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "moltbook-filter-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\moltbook-filter-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "moltbook-firewall-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\moltbook-firewall-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "molted-work",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\molted-work\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "monad-development",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\monad-development\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "mongodb",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\mongodb\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "monitor",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\monitor\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "multi-agent-dev-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\multi-agent-dev-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "multi-search-engine",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\multi-search-engine\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "multi-search-engine-simple",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\multi-search-engine-simple\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "music",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\music\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "music-gen",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\music-gen\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "music-gen-cellcog",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\music-gen-cellcog\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "music-generation",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\music-generation\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "music-generation-cellcog",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\music-generation-cellcog\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "namecheap-dns",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\namecheap-dns\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "nano-pdf",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\nano-pdf\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "netpad-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\netpad-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "neural-memory-enhanced",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\neural-memory-enhanced\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "neural-memory-enhanced-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\neural-memory-enhanced-free\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "news",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\news\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "news-aggregator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\news-aggregator\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "news-daily-digest",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\news-daily-digest\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "news-feed",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\news-feed\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "news-sentiment",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\news-sentiment\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "news-sentiment-scan",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\news-sentiment-scan\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "news-sentiment-scan-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\news-sentiment-scan-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "node-connect",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\node-connect\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "node-connect-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\node-connect-paid\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "notcrawl",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\notcrawl\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "note",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\note\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "note-app-cli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\note-app-cli\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "notion",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\notion\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "notion-api-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\notion-api-skill\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "notion-api-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\notion-api-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "notion-cli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\notion-cli\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "notion-pages",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\notion-pages\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "notion-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\notion-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "notioncli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\notioncli\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ocean-chat-assistant",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ocean-chat-assistant\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "okx-dex-token",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\okx-dex-token\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ollama-integration",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ollama-integration\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ollama-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ollama-toolkit\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 3,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "HTTP不安全通信",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "openai-ai",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\openai-ai\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "openai-ai-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\openai-ai-paid\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "openai-whisper",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\openai-whisper\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "openai-whisper-1-0-0",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\openai-whisper-1-0-0\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "openai-whisper-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\openai-whisper-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "openai-whisper-v1",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\openai-whisper-v1\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "ops-dashboard",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ops-dashboard\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "pandoc-converter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pandoc-converter\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "pandoc-document-converter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pandoc-document-converter\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "parallel-ai-research",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\parallel-ai-research\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "pdf",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pdf\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "pdf-compressor-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pdf-compressor-tool\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "pentest-commands",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pentest-commands\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "persistent-memory-engine",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\persistent-memory-engine\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "persistent-memory-engine-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\persistent-memory-engine-free\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "personal-health-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\personal-health-manager\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "pg-job-queue",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pg-job-queue\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "pg-mcp-skills",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pg-mcp-skills\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "photo-captions",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\photo-captions\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "photo-captions-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\photo-captions-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "photo-webcam",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\photo-webcam\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ping-monitor",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ping-monitor\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "pipedrive-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pipedrive-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "piper-tts-engine",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\piper-tts-engine\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP",
+        "反向Shell/Shell反弹",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "plugin-architecture",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\plugin-architecture\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "podcast",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\podcast\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "podcast-chaptering",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\podcast-chaptering\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "podcast-chaptering-highlights",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\podcast-chaptering-highlights\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "podcast-downloader",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\podcast-downloader\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "exec命令执行",
+        "引用不存在的脚本",
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "podcast-downloader-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\podcast-downloader-paid\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "podcast-downloader-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\podcast-downloader-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "podcast-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\podcast-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "postgres-job-queue",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\postgres-job-queue\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "powerpoint",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\powerpoint\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "powerpoint-pptx",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "powerpoint-pptx-cn",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\powerpoint-pptx-cn\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "pptx-pdf-font-fix",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pptx-pdf-font-fix\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "pro-comm-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pro-comm-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "敏感信息泄露",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "proactive-agent",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\proactive-agent\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "proactive-agent-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\proactive-agent-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "productivity",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\productivity\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "productivity-bot",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\productivity-bot\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "productivity-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\productivity-free\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "productivity-improving",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\productivity-improving\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "professional-communication",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\professional-communication\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "professional-communication-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\professional-communication-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "python",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\python\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "python-dataviz",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\python-dataviz\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "python-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\python-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "python3",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\python3\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "pyx-scanner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\pyx-scanner\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "qq-zone-photo",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\qq-zone-photo\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "qq-zone-photo-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\qq-zone-photo-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "quark-scan",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\quark-scan\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "queue-task",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\queue-task\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "qwen-video-analyzer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\qwen-video-analyzer\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "reddit-research",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\reddit-research\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "reminder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\reminder\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "reminder-engine",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\reminder-engine\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "remix-api-key-auth",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\remix-api-key-auth\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "repo-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\repo-manager\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "repo-reader-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\repo-reader-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "report-summary-builder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\report-summary-builder\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "research-agent",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\research-agent\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "rest-api-reference",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rest-api-reference\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "resume-assistant",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\resume-assistant\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "resume-assistant-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\resume-assistant-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "rho-telegram-alerts-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rho-telegram-alerts-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "rss-aggregator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rss-aggregator\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "rss-ai-reader",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rss-ai-reader\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "rss-ai-reader-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rss-ai-reader-free\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "rss-digest",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rss-digest\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "rss-feed-digest",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rss-feed-digest\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "rss-fetcher",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rss-fetcher\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "rss-reader",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rss-reader\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "rss-reader-ai",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rss-reader-ai\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "rust",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\rust\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "safe-encryption-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\safe-encryption-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "schedule",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\schedule\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "schedule-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\schedule-manager\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "screen-monitor",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\screen-monitor\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "search-2",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\search-2\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "searching-assistant",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\searching-assistant\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "secure-api-calls",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\secure-api-calls\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "secure-api-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\secure-api-toolkit\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "security-audit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\security-audit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "security-auditor",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\security-auditor\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "security-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\security-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "security-scanner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\security-scanner\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "self-integration",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\self-integration\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "seo-rank-monopolizer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\seo-rank-monopolizer\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "SSRF服务端请求伪造"
+      ]
+    },
+    {
+      "skill": "sequential-read",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sequential-read\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "shadcn-ui",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\shadcn-ui\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "shop-culture",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\shop-culture\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "shop-culture-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\shop-culture-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "skill-creator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\skill-creator\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "skill-creator-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\skill-creator-free\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "skill-vetter-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\skill-vetter-free\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "eval/代码注入"
+      ]
+    },
+    {
+      "skill": "slack",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "slack-api",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack-api\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "slack-api-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack-api-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "数据外泄风险",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "slack-crawler",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack-crawler\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "slack-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "slack-hub",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack-hub\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "slack-hub-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack-hub-skill\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "slack-hub-skill-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack-hub-skill-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "slack-workspace-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slack-workspace-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "slacrawl",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\slacrawl\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "smart-auto-updater",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\smart-auto-updater\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "smart-cache",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\smart-cache\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "smart-crawler",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\smart-crawler\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "exec命令执行",
+        "硬编码服务器地址/IP",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "smart-model-routing-for-zai",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\smart-model-routing-for-zai\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "smart-model-switching",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\smart-model-switching\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "smart-reminder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\smart-reminder\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "smart-reminder-system",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\smart-reminder-system\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "smart-weekly-report",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\smart-weekly-report\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "social",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\social\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "social-sentiment",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\social-sentiment\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "solo-audit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\solo-audit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "solo-build",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\solo-build\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "solo-build-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\solo-build-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "solo-dev-companion",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\solo-dev-companion\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "solo-research",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\solo-research\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "solo-research-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\solo-research-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "solo-validate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\solo-validate\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "sonoscli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sonoscli\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "sovereign-aws-cost-optimizer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sovereign-aws-cost-optimizer\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "sql",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sql\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "sql-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sql-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "sql-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sql-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "sqlite",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sqlite\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "sqlite-lite-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sqlite-lite-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "sqlite-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\sqlite-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "ssl",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ssl\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ssl-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ssl-toolkit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "exec命令执行",
+        "硬编码服务器地址/IP",
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "stagehand-browser-cli",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\stagehand-browser-cli\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "story-long-write",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\story-long-write\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "straker-verify",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\straker-verify\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tailwindcss",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tailwindcss\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tailwindcss-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tailwindcss-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "tardis",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tardis\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tarot",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tarot\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tarot-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tarot-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "task-bot-orchestrator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\task-bot-orchestrator\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "task-planner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\task-planner\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "task-queue-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\task-queue-manager\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "敏感信息泄露"
+      ]
+    },
+    {
+      "skill": "telegram",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\telegram\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "telegram-agent-comm",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\telegram-agent-comm\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "telegram-bot-builder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\telegram-bot-builder\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "telegram-chat",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\telegram-chat\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "telegram-chat-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\telegram-chat-manager\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "telegram-messaging",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\telegram-messaging\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "text",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\text\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "text-rpg-arcade-v3",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\text-rpg-arcade-v3\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "text-to-speech-heygen",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\text-to-speech-heygen\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "text-to-sql",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\text-to-sql\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tg-body-scan",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tg-body-scan\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "tg-bot-builder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tg-bot-builder\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "the-news",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\the-news\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "timeline-digest",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\timeline-digest\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "timer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\timer\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "timer-alert",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\timer-alert\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "timer-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\timer-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "token-layer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\token-layer\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "token-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\token-manager\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "敏感信息泄露",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "token-manager-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\token-manager-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "token-saver-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\token-saver-skill\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tool-call-retry",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tool-call-retry\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tool-finder",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tool-finder\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "trading-strategy-guide",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\trading-strategy-guide\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "translate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\translate\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "translate-en-zh",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\translate-en-zh\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tts-whatsapp",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tts-whatsapp\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "tts-whatsapp-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tts-whatsapp-paid\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "typescript",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\typescript\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "typescript-skills",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\typescript-skills\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "typescript-skills-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\typescript-skills-paid\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "typescript-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\typescript-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "ui",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "ui-audit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-audit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ui-audit-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-audit-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ui-component-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-component-paid\\SKILL.md",
+      "critical": 1,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "ui-design-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-design-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "ui-ux-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-design\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ui-ux-design-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-design-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ui-ux-dev-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-dev-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "ui-ux-developer-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-developer-tool\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ui-ux-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ui-ux-toolkit\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "AI Prompt注入风险",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "universal-translate",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\universal-translate\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "universal-translate-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\universal-translate-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "upstage-document-parse",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\upstage-document-parse\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "upstage-document-parse-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\upstage-document-parse-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "ux",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ux\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ux-design",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ux-design\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "vector-control",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vector-control\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "verify-claims",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\verify-claims\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "video",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\video\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "video-frames",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\video-frames\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "video-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\video-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "video-translator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\video-translator\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "video-upload-stream-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\video-upload-stream-tool\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "volcengine-network-dns",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\volcengine-network-dns\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "vpn",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vpn\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "vpn-rotate-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vpn-rotate-skill\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "vscode-node",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vscode-node\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "vscode-node-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vscode-node-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "vue",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vue\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "vue-component-gen",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vue-component-gen\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "vue-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vue-toolkit\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "SSRF服务端请求伪造",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "vulnerability-scanner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\vulnerability-scanner\\SKILL.md",
+      "critical": 5,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "eval/代码注入",
+        "不安全反序列化",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "weather",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\weather\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "web",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\web\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "web-browsing",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\web-browsing\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "web-dev-toolkit",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\web-dev-toolkit\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "硬编码服务器地址/IP"
+      ]
+    },
+    {
+      "skill": "web-learner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\web-learner\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "web-notepad",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\web-notepad\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "数据外泄风险"
+      ]
+    },
+    {
+      "skill": "web-vulnerability-assessment",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\web-vulnerability-assessment\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "wechat-article-writer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\wechat-article-writer\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "weekly-report-writer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\weekly-report-writer\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "weiyun-skills",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\weiyun-skills\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "wenxiang-2d5-banner",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\wenxiang-2d5-banner\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "whatsapp-image-send",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-image-send\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "whatsapp-master",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-master\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "whatsapp-messaging",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-messaging\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "whatsapp-messaging-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-messaging-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "whatsapp-msg",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-msg\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "whatsapp-msg-manager",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-msg-manager\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "whatsapp-style",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-style\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "whatsapp-style-guide",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-style-guide\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "whatsapp-styler",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\whatsapp-styler\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "who-is-actor",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\who-is-actor\\SKILL.md",
+      "critical": 2,
+      "high": 1,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "AI Prompt注入风险"
+      ]
+    },
+    {
+      "skill": "word",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\word\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "word-docx",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\word-docx\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "workflow",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\workflow\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "workflow-decomposer",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\workflow-decomposer\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "workflow-orchestrator",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\workflow-orchestrator\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "workflow-splitter",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\workflow-splitter\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "write-a-skill",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\write-a-skill\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "write-a-skill-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\write-a-skill-free\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理",
+        "反向Shell/Shell反弹"
+      ]
+    },
+    {
+      "skill": "write-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\write-free\\SKILL.md",
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "write-my-blog",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\write-my-blog\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 2,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "硬编码服务器地址/IP",
+        "HTTP不安全通信"
+      ]
+    },
+    {
+      "skill": "writing-assistant",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\writing-assistant\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ws-calendar",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ws-calendar\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ws-excel",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ws-excel\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ws-excel-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ws-excel-paid\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "x-news-daily",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\x-news-daily\\SKILL.md",
+      "critical": 0,
+      "high": 1,
+      "medium": 1,
+      "risks": [
+        "文件系统遍历风险",
+        "持久化/自启动"
+      ]
+    },
+    {
+      "skill": "x-timeline-digest",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\x-timeline-digest\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "x-timeline-digest-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\x-timeline-digest-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 1,
+      "risks": [
+        "API密钥明文处理",
+        "文件系统遍历风险"
+      ]
+    },
+    {
+      "skill": "xml",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\xml\\SKILL.md",
+      "critical": 3,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理",
+        "VPN/翻墙关键词"
+      ]
+    },
+    {
+      "skill": "xml-parser-tool",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\xml-parser-tool\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行"
+      ]
+    },
+    {
+      "skill": "yaml",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\yaml\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "youtube-watcher",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\youtube-watcher\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "z-card-image",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\z-card-image\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "z-card-image-free",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\z-card-image-free\\SKILL.md",
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ziptax",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ziptax\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    },
+    {
+      "skill": "ziptax-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\ziptax-paid\\SKILL.md",
+      "critical": 2,
+      "high": 0,
+      "medium": 0,
+      "risks": [
+        "exec命令执行",
+        "API密钥明文处理"
+      ]
+    }
+  ],
+  "scanned_at": "2026-07-26T19:33:11.592703"
+}

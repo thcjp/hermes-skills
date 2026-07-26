@@ -64,6 +64,11 @@ SkillHub完整生命周期:
     python platform_ops.py find-unpaired         # 查找未配对的免费/付费skill
     python platform_ops.py source-skills         # 列出所有源skill及其下载URL
     python platform_ops.py platform-comparison   # 多平台对比分析
+    python platform_ops.py star <slug>...        # 收藏skill (Star API)
+    python platform_ops.py batch-approve [slug...]# 批量审核通过pending (无参数=全部)
+    python platform_ops.py handle-rejected <slug># 分析被拒绝skill的原因并给建议
+    python platform_ops.py platform-status <slug># 查询skill平台实时状态(含前台可见性)
+    python platform_ops.py pipeline <slug>        # 一键流水线: 查询→审核→收藏→标记
 """
 
 # === Phase 1: 统一配置导入 ===
@@ -76,12 +81,46 @@ from project_config import TOOLS_DIR, DATA_DIR, REGISTRY_DIR
 
 import json
 import sys
+import time
+import sqlite3
 from pathlib import Path
 from datetime import datetime
+from urllib.request import urlopen, Request
+from urllib.error import HTTPError
 
 # REGISTRY_DIR imported from config
 DB_FILE = DATA_DIR / "upload_tracking.json"
 NOW = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+
+# ============ SkillHub API配置 (复用enterprise_uploader的认证) ============
+_API_BASE = "https://api.skillhub.cn/api/v1"
+_ADMIN_ORG_ID = 862
+
+def _load_api_auth():
+    """加载SkillHub API认证 — 复用enterprise_uploader的load_cookies"""
+    try:
+        from enterprise_uploader import load_cookies
+        cookies = load_cookies()
+        if not cookies:
+            return None, None
+        if cookies.startswith('BEARER:'):
+            api_key = cookies[len('BEARER:'):]
+            return None, {'Authorization': f'Bearer {api_key}', 'Accept': 'application/json'}
+        return cookies, {'Cookie': cookies, 'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+    except Exception:
+        return None, None
+
+def _api_request(method, url, headers, data=None, timeout=30):
+    """统一API请求封装"""
+    req = Request(url, data=data, method=method, headers=headers)
+    try:
+        with urlopen(req, timeout=timeout) as resp:
+            return True, json.loads(resp.read().decode('utf-8'))
+    except HTTPError as e:
+        body = e.read().decode('utf-8', errors='replace')[:500]
+        return False, {'error': f'HTTP {e.code}: {body}'}
+    except Exception as e:
+        return False, {'error': str(e)}
 
 def load_db():
     with open(DB_FILE, "r", encoding="utf-8") as f:
@@ -897,6 +936,414 @@ def cmd_source_skills():
             print(f"    生产: {s['production_slugs'][:3]}")
     return sources
 
+# ============ 统一平台操作API (P1-1: 平台操作固化) ============
+# 将散落在batch_approve_api.py、auto_publish.py等脚本中的操作统一为单一入口
+# 向后兼容: 现有脚本仍可独立运行
+
+def star_skill(slug: str) -> dict:
+    """收藏SkillHub上的skill (复用V63发现的Star API)
+    
+    API: POST /api/v1/skills/{slug}/star
+    """
+    cookies, headers = _load_api_auth()
+    if not cookies and not headers:
+        return {'success': False, 'slug': slug, 'error': '无认证凭证'}
+    
+    url = f"{_API_BASE}/skills/{slug}/star"
+    success, result = _api_request('POST', url, headers, data=b'{}')
+    
+    if success:
+        # 同步到本地DB
+        db = load_db()
+        if slug in db['skills']:
+            db['skills'][slug].setdefault('skillhub', {})['starred'] = True
+            db['skills'][slug]['skillhub']['starred_at'] = NOW
+            save_db(db)
+        return {'success': True, 'slug': slug, 'message': '已收藏'}
+    else:
+        return {'success': False, 'slug': slug, 'error': result.get('error', 'unknown')}
+
+def batch_approve(slugs: list = None, delay: float = 0.3) -> dict:
+    """批量审核通过SkillHub pending skills (复用batch_approve_api逻辑)
+    
+    API: POST /orgs/{ORG_ID}/admin/skills/{slug}/approve
+    如果slugs为None, 自动获取所有pending skill
+    """
+    cookies, headers = _load_api_auth()
+    if not cookies and not headers:
+        return {'success': False, 'error': '无认证凭证'}
+    
+    # 如果没传slugs, 自动获取所有pending
+    if slugs is None:
+        url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills?reviewStatus=pending&page=1&pageSize=1"
+        success, data = _api_request('GET', url, headers)
+        if not success:
+            return {'success': False, 'error': f'获取pending列表失败: {data.get("error")}'}
+        total = data.get('total', 0)
+        if total == 0:
+            return {'success': True, 'approved': 0, 'message': '无pending skill'}
+        
+        # 分页获取所有pending slug
+        slugs = []
+        pages = (total // 100) + 1
+        for page in range(1, pages + 1):
+            url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills?reviewStatus=pending&page={page}&pageSize=100"
+            success, data = _api_request('GET', url, headers)
+            if not success:
+                break
+            for sk in data.get('skills', []):
+                slug = sk.get('slug', '')
+                if slug:
+                    slugs.append(slug)
+            if page % 5 == 0:
+                print(f"  已扫描 {page}/{pages} 页, 收集 {len(slugs)} 个")
+    
+    if not slugs:
+        return {'success': True, 'approved': 0, 'message': '无pending skill'}
+    
+    print(f"待审核: {len(slugs)} 个")
+    approved = []
+    failed = []
+    
+    for i, slug in enumerate(slugs):
+        url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}/approve"
+        success, result = _api_request('POST', url, headers, data=b'{}', timeout=15)
+        
+        if success:
+            approved.append(slug)
+        else:
+            failed.append({'slug': slug, 'error': result.get('error', 'unknown')})
+        
+        if (i + 1) % 50 == 0:
+            print(f"  [{i+1}/{len(slugs)}] 成功={len(approved)}, 失败={len(failed)}")
+        if delay > 0 and (i + 1) % 10 == 0:
+            time.sleep(delay)
+    
+    # 同步到本地DB
+    db = load_db()
+    for slug in approved:
+        if slug in db['skills']:
+            db['skills'][slug].setdefault('skillhub', {})['review_status'] = 'published'
+            db['skills'][slug]['skillhub']['reviewed_at'] = NOW
+            db['skills'][slug].setdefault('lifecycle', {})['stage'] = 'published'
+    save_db(db)
+    
+    print(f"\n=== 批量审核完成 ===")
+    print(f"✅ 成功: {len(approved)}")
+    print(f"❌ 失败: {len(failed)}")
+    
+    return {'success': len(failed) == 0, 'approved': approved, 'failed': failed}
+
+def handle_rejected(slug: str) -> dict:
+    """处理被拒绝的skill — 分析原因并给出修复建议
+    
+    复用auto_publish.py的retry_rejected逻辑
+    """
+    db = load_db()
+    if slug not in db['skills']:
+        return {'success': False, 'slug': slug, 'error': '不在数据库中'}
+    
+    skill = db['skills'][slug]
+    sh = skill.get('skillhub', {})
+    rs = sh.get('review_status', '')
+    
+    if rs != 'rejected':
+        return {'success': False, 'slug': slug, 'error': f'当前状态不是rejected ({rs})'}
+    
+    # 分析拒绝原因
+    notes = sh.get('notes', '')
+    analysis = {
+        'slug': slug,
+        'status': rs,
+        'notes': notes,
+        'actions': [],
+    }
+    
+    # 常见拒绝原因和修复建议
+    if len(slug) <= 4:
+        analysis['actions'].append(f'名称太短, 建议改名: {slug}-tool 或 {slug}-assistant')
+        analysis['needs_rename'] = True
+    elif 'slug' in notes.lower() or 'conflict' in notes.lower():
+        analysis['actions'].append('slug冲突, 需改名为唯一slug')
+        analysis['needs_rename'] = True
+    
+    # 检查SKILL.md内容质量
+    from pathlib import Path as _P
+    skill_md = None
+    for search_dir in [_P(r'D:\skills\packaged-skills\skillhub'),
+                       _P(r'D:\skills\enterprise-upload')]:
+        candidate = search_dir / slug / 'SKILL.md'
+        if candidate.exists():
+            skill_md = candidate
+            break
+    
+    if skill_md:
+        content = skill_md.read_text(encoding='utf-8', errors='replace')
+        if len(content) < 200:
+            analysis['actions'].append(f'内容过短({len(content)}字符), 需扩充')
+        if 'TODO' in content or 'FIXME' in content or 'placeholder' in content.lower():
+            analysis['actions'].append('含占位符/TODO标记, 需清除')
+        analysis['content_length'] = len(content)
+        analysis['skill_md_path'] = str(skill_md)
+    else:
+        analysis['actions'].append('SKILL.md文件未找到')
+    
+    if not analysis['actions']:
+        analysis['actions'].append('未知拒绝原因, 建议检查内容后DELETE+重传')
+    
+    # 标记为需处理
+    sh['needs_fix'] = True
+    sh['fix_actions'] = analysis['actions']
+    save_db(db)
+    
+    return {'success': True, 'slug': slug, 'analysis': analysis}
+
+def get_platform_status(slug: str) -> dict:
+    """查询skill在SkillHub平台的实时状态 (统一状态查询)"""
+    cookies, headers = _load_api_auth()
+    if not cookies and not headers:
+        return {'success': False, 'slug': slug, 'error': '无认证凭证'}
+    
+    # 1. 查询Admin API获取审核状态
+    url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills?slug={slug}&page=1&pageSize=1"
+    success, data = _api_request('GET', url, headers)
+    
+    platform_info = {'slug': slug, 'timestamp': NOW}
+    
+    if success and data.get('skills'):
+        skill = data['skills'][0]
+        platform_info.update({
+            'review_status': skill.get('reviewStatus', 'unknown'),
+            'visibility': skill.get('visibility', 'unknown'),
+            'download_ready': skill.get('downloadReady', False),
+            'namespace': skill.get('namespace', ''),
+            'version': skill.get('version', ''),
+            'downloads': skill.get('downloadCount', 0),
+            'stars': skill.get('starCount', 0),
+        })
+    else:
+        platform_info['admin_error'] = data.get('error', 'API查询失败')
+    
+    # 2. 查询公开API获取前台可见性
+    url2 = f"{_API_BASE}/skills/{slug}"
+    success2, data2 = _api_request('GET', url2, headers)
+    if success2:
+        platform_info['front_visible'] = True
+        platform_info['front_data'] = {
+            'name': data2.get('name', ''),
+            'summary': data2.get('summary', ''),
+            'version': data2.get('version', ''),
+        }
+    else:
+        platform_info['front_visible'] = False
+        platform_info['front_error'] = data2.get('error', '')
+    
+    # 3. 本地DB状态
+    db = load_db()
+    if slug in db['skills']:
+        sh = db['skills'][slug].get('skillhub', {})
+        platform_info['db_status'] = sh.get('review_status', 'not_uploaded')
+        platform_info['db_starred'] = sh.get('starred', False)
+    
+    platform_info['success'] = True
+    return platform_info
+
+def run_platform_pipeline(slug: str) -> dict:
+    """一键执行平台操作流水线: 查询状态 → 审核 → 收藏 → 标记发布
+    
+    自动化流程:
+    1. 查询平台状态
+    2. 如果pending, 自动approve
+    3. 如果published, 自动star
+    4. 更新本地DB
+    """
+    result = {'slug': slug, 'timestamp': NOW, 'steps': {}}
+    
+    # Step 1: 查询状态
+    status = get_platform_status(slug)
+    result['steps']['status'] = status
+    if not status.get('success'):
+        result['status'] = 'failed'
+        result['error'] = '状态查询失败'
+        return result
+    
+    review_status = status.get('review_status', 'unknown')
+    result['current_status'] = review_status
+    
+    # Step 2: 如果pending, 审核通过
+    if review_status == 'pending':
+        print(f"  [{slug}] pending → approving...")
+        approve_result = batch_approve([slug])
+        result['steps']['approve'] = approve_result
+        if approve_result.get('success') and slug in approve_result.get('approved', []):
+            review_status = 'published'
+        else:
+            result['status'] = 'approve_failed'
+            return result
+    
+    # Step 3: 如果published, 收藏
+    if review_status in ('published', 'approved', 'public_published'):
+        if not status.get('db_starred'):
+            print(f"  [{slug}] published → starring...")
+            star_result = star_skill(slug)
+            result['steps']['star'] = star_result
+        else:
+            result['steps']['star'] = {'success': True, 'message': 'already starred'}
+    
+    # Step 4: 检查前台可见性
+    if not status.get('front_visible'):
+        result['steps']['visibility_warning'] = 'skill在前台不可见, 可能需要设置visibility=public'
+    
+    result['status'] = 'completed'
+    return result
+
+# ============ ClawHub 统一上传入口 (v2.1新增) ============
+# 将 clawhub_batch_uploader.py 的上传逻辑收口到 platform_ops 统一入口
+# 消除碎片化: 后续所有 ClawHub 上传通过 platform_ops.py clawhub-upload 命令调用
+
+def upload_to_clawhub(slug: str, skip_security: bool = False, dry_run: bool = False) -> dict:
+    """上传单个skill到ClawHub (统一入口)
+    
+    集成:
+    1. 安全审核预检 (v2.1新增, 防止高风险skill被平台拒绝)
+    2. 营销参数提取 (分类/标签/显示名)
+    3. CLI上传 (含营销参数)
+    4. DB状态更新
+    
+    参数:
+        slug: skill slug
+        skip_security: 跳过安全预检(批量场景使用, 默认False)
+        dry_run: 试运行模式
+    
+    返回:
+        {'success': bool, 'slug': str, 'message': str, ...}
+    """
+    from clawhub_batch_uploader import (
+        find_skill_dir, upload_skill, get_clawhub_category,
+        get_clawhub_topics, get_display_name
+    )
+    
+    # 加载dir mapping
+    dir_mapping_path = DATA_DIR / "round40_clawhub_dir_mapping.json"
+    dir_mapping = {}
+    if dir_mapping_path.exists():
+        import json as _json
+        data = _json.loads(dir_mapping_path.read_text(encoding='utf-8'))
+        dir_mapping = data.get('found_mapping', {})
+    
+    # Step 1: 找到skill目录
+    skill_dir = find_skill_dir(slug, dir_mapping)
+    if not skill_dir:
+        return {'success': False, 'slug': slug, 'error': 'DIR_NOT_FOUND',
+                'message': f'找不到skill目录: {slug}'}
+    
+    # Step 2: 安全审核预检 (v2.1)
+    if not skip_security:
+        try:
+            from quality_gate import run_security_precheck
+            skill_md = skill_dir / "SKILL.md"
+            if skill_md.exists():
+                sec_result = run_security_precheck(skill_md)
+                if not sec_result.get('overall_passed', False):
+                    failed_checks = [c for c in sec_result.get('checks', []) if not c.get('passed')]
+                    return {
+                        'success': False, 'slug': slug, 'error': 'SECURITY_PRECHECK_FAILED',
+                        'message': f'安全审核预检未通过({len(failed_checks)}项失败)',
+                        'failed_checks': failed_checks,
+                        'skill_dir': str(skill_dir)
+                    }
+        except ImportError:
+            pass  # quality_gate不可用时跳过
+    
+    # Step 3: 提取营销参数(用于日志记录)
+    category = get_clawhub_category(skill_dir)
+    topics = get_clawhub_topics(skill_dir, slug)
+    display_name = get_display_name(skill_dir)
+    
+    # Step 4: 执行上传(含营销参数)
+    result = upload_skill(skill_dir, slug, dry_run=dry_run)
+    
+    # 附加营销参数到结果
+    if isinstance(result, dict):
+        result['marketing'] = {
+            'category': category,
+            'topics': topics,
+            'display_name': display_name,
+        }
+    
+    # Step 5: 更新SQLite DB状态
+    if result.get('success') and not dry_run:
+        try:
+            import sqlite3 as _sqlite3
+            _DB_PATH = Path(__file__).resolve().parent.parent / "skill-registry.db"
+            conn = _sqlite3.connect(str(_DB_PATH))
+            c = conn.cursor()
+            c.execute(
+                "UPDATE skills SET clawhub_sync_status = 'synced', updated_at = ? WHERE slug = ?",
+                (datetime.now().isoformat(), slug)
+            )
+            conn.commit()
+            conn.close()
+        except Exception:
+            pass  # DB更新失败不影响上传结果
+    
+    return result
+
+
+def batch_upload_clawhub(limit: int = 200, skip_security: bool = True, dry_run: bool = False) -> dict:
+    """批量上传pending skills到ClawHub
+    
+    参数:
+        limit: 单次上传上限(默认200, ClawHub每日限制)
+        skip_security: 批量模式默认跳过安全预检(已在生产环节检查)
+        dry_run: 试运行模式
+    
+    返回:
+        {'total': N, 'success': N, 'failed': N, 'skipped': N, 'results': [...]}
+    """
+    conn = sqlite3.connect(str(Path(__file__).resolve().parent.parent / "skill-registry.db"))
+    c = conn.cursor()
+    
+    # 获取pending状态的skill
+    c.execute("SELECT slug FROM skills WHERE clawhub_sync_status = 'pending' ORDER BY slug LIMIT ?", (limit,))
+    slugs = [row[0] for row in c.fetchall()]
+    conn.close()
+    
+    if not slugs:
+        return {'total': 0, 'success': 0, 'failed': 0, 'skipped': 0,
+                'message': '无pending状态的skill'}
+    
+    results = {'success': [], 'failed': [], 'skipped': []}
+    
+    for i, slug in enumerate(slugs):
+        result = upload_to_clawhub(slug, skip_security=skip_security, dry_run=dry_run)
+        
+        if result.get('success'):
+            results['success'].append(slug)
+        elif result.get('error') == 'DIR_NOT_FOUND':
+            results['skipped'].append(slug)
+        else:
+            results['failed'].append({'slug': slug, 'error': result.get('error', 'unknown')})
+        
+        # 进度输出
+        if (i + 1) % 10 == 0:
+            print(f"  [{i+1}/{len(slugs)}] success={len(results['success'])}, "
+                  f"fail={len(results['failed'])}, skip={len(results['skipped'])}")
+        
+        # 限流延迟
+        if not dry_run and i < len(slugs) - 1:
+            import time as _time
+            _time.sleep(2)
+    
+    return {
+        'total': len(slugs),
+        'success': len(results['success']),
+        'failed': len(results['failed']),
+        'skipped': len(results['skipped']),
+        'results': results
+    }
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -996,6 +1443,90 @@ def main():
         cmd_find_unpaired()
     elif cmd == "source-skills":
         cmd_source_skills()
+    elif cmd == "star":
+        if len(sys.argv) < 3:
+            print("用法: python platform_ops.py star <slug> [slug...]")
+            return
+        for slug in sys.argv[2:]:
+            r = star_skill(slug)
+            print(f"{'✅' if r['success'] else '❌'} {slug}: {r.get('message', r.get('error', ''))}")
+    elif cmd == "batch-approve":
+        # 无参数=自动获取所有pending; 有参数=指定slug列表
+        slugs = sys.argv[2:] if len(sys.argv) > 2 else None
+        batch_approve(slugs)
+    elif cmd == "handle-rejected":
+        if len(sys.argv) < 3:
+            print("用法: python platform_ops.py handle-rejected <slug>")
+            return
+        r = handle_rejected(sys.argv[2])
+        if r.get('success'):
+            print(f"\n{sys.argv[2]} 拒绝分析:")
+            for action in r['analysis']['actions']:
+                print(f"  → {action}")
+        else:
+            print(f"❌ {r.get('error', 'unknown')}")
+    elif cmd == "platform-status":
+        if len(sys.argv) < 3:
+            print("用法: python platform_ops.py platform-status <slug>")
+            return
+        r = get_platform_status(sys.argv[2])
+        if r.get('success'):
+            print(f"\n{sys.argv[2]} 平台状态:")
+            print(f"  审核状态: {r.get('review_status', 'unknown')}")
+            print(f"  可见性:   {r.get('visibility', 'unknown')}")
+            print(f"  前台可见: {'是' if r.get('front_visible') else '否'}")
+            print(f"  下载量:   {r.get('downloads', 0)}")
+            print(f"  收藏数:   {r.get('stars', 0)}")
+            print(f"  DB状态:   {r.get('db_status', 'unknown')}")
+            if not r.get('front_visible'):
+                print(f"\n  ⚠ 前台不可见! 需设置visibility=public")
+        else:
+            print(f"❌ {r.get('error', 'unknown')}")
+    elif cmd == "pipeline":
+        if len(sys.argv) < 3:
+            print("用法: python platform_ops.py pipeline <slug>")
+            return
+        r = run_platform_pipeline(sys.argv[2])
+        print(f"\n流水线结果: {r.get('status', 'unknown')}")
+        for step, result in r.get('steps', {}).items():
+            if isinstance(result, dict):
+                print(f"  {step}: {'✅' if result.get('success') else '⚠'} {result.get('message', result.get('error', ''))}")
+            else:
+                print(f"  {step}: {result}")
+    elif cmd == "clawhub-upload":
+        # 上传单个skill到ClawHub (含安全预检+营销参数)
+        if len(sys.argv) < 3:
+            print("用法: python platform_ops.py clawhub-upload <slug> [--skip-security] [--dry-run]")
+            return
+        slug = sys.argv[2]
+        skip_sec = '--skip-security' in sys.argv
+        dry = '--dry-run' in sys.argv
+        r = upload_to_clawhub(slug, skip_security=skip_sec, dry_run=dry)
+        if r.get('success'):
+            print(f"✅ {slug}: {r.get('message', '')[:100]}")
+            if r.get('marketing'):
+                print(f"   分类: {r['marketing']['category']}")
+                print(f"   标签: {r['marketing']['topics']}")
+                print(f"   名称: {r['marketing']['display_name']}")
+        else:
+            print(f"❌ {slug}: {r.get('error', '')} - {r.get('message', '')[:200]}")
+            if r.get('failed_checks'):
+                for fc in r['failed_checks']:
+                    print(f"   ✗ {fc['name']} [{fc['severity']}]")
+    elif cmd == "clawhub-batch":
+        # 批量上传pending skills到ClawHub
+        limit = 200
+        for arg in sys.argv[2:]:
+            if arg.startswith('--limit='):
+                limit = int(arg.split('=')[1])
+        dry = '--dry-run' in sys.argv
+        print(f"批量上传ClawHub (limit={limit}, dry_run={dry})")
+        r = batch_upload_clawhub(limit=limit, skip_security=True, dry_run=dry)
+        print(f"\n=== 批量上传完成 ===")
+        print(f"  总计: {r['total']}")
+        print(f"  成功: {r['success']}")
+        print(f"  失败: {r['failed']}")
+        print(f"  跳过: {r['skipped']}")
     else:
         print(f"未知命令: {cmd}")
         print(__doc__)

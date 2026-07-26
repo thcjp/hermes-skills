@@ -1,7 +1,7 @@
 {
   "metadata": {
     "schema_version": "4.0",
-    "last_updated": "2026-07-23T15:40:48",
+    "last_updated": "2026-07-26T16:57:35",
     "description": "本地技能主数据库 v3.0 - 源skill注册 + 来源追踪 + 升级管理 + 双平台状态",
     "total_skills": 2193,
     "data_sources": [
@@ -71,9 +71,9 @@
     "sh_deleted": 9,
     "sh_not_uploaded": 0,
     "sh_not_applicable": 110,
-    "ch_published": 228,
-    "ch_not_uploaded": 704,
-    "ch_not_eligible": 1153,
+    "ch_published": 652,
+    "ch_not_uploaded": 304,
+    "ch_not_eligible": 1150,
     "ch_withdrawn": 0,
     "ch_paid_promotional": 173,
     "ch_not_applicable": 110,
@@ -394,9 +394,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -2376,9 +2377,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -7077,9 +7079,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -8254,9 +8257,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -8335,9 +8339,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -8659,9 +8664,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -9616,9 +9622,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -9777,9 +9784,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -9938,9 +9946,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -10192,9 +10201,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -10771,9 +10781,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -11087,9 +11098,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -11578,9 +11590,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -11732,9 +11745,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -11968,9 +11982,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -12130,9 +12145,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -13421,9 +13437,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -13995,9 +14012,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -15746,9 +15764,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -16007,9 +16026,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -17037,9 +17057,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -19398,9 +19419,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -19706,9 +19728,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -23057,9 +23080,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -23306,9 +23330,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -23555,9 +23580,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -24761,9 +24787,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -24930,9 +24957,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -25254,9 +25282,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -25408,9 +25437,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -27909,9 +27939,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -28152,9 +28183,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -31274,9 +31306,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -31436,9 +31469,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -31825,9 +31859,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -32231,9 +32266,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -32783,9 +32819,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -33917,9 +33954,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -34843,9 +34881,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -35004,9 +35043,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -35085,9 +35125,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -35319,9 +35360,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -36766,9 +36808,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -37104,9 +37147,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -37442,9 +37486,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -38195,9 +38240,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -38356,9 +38402,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -38602,9 +38649,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -38924,9 +38972,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:42:17"
       },
       "is_source": false,
       "source_origin": {
@@ -39091,9 +39140,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -41994,9 +42044,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -44514,9 +44565,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -44669,9 +44721,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -45285,9 +45338,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -45449,9 +45503,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -46267,9 +46322,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -46429,9 +46485,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -46591,9 +46648,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -46827,9 +46885,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -47549,9 +47608,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -50883,9 +50943,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -51837,9 +51898,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -51998,9 +52060,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -52161,9 +52224,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -54759,9 +54823,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -55003,9 +55068,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -56068,9 +56134,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -56149,9 +56216,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -56383,9 +56451,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -57655,9 +57724,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -57973,9 +58043,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -58291,9 +58362,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -58533,9 +58605,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -58774,9 +58847,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -60340,9 +60414,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -60819,9 +60894,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -61064,9 +61140,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -61308,9 +61385,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -62696,9 +62774,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -63176,9 +63255,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -63330,9 +63410,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -63747,9 +63828,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -63909,9 +63991,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -64143,9 +64226,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -64632,9 +64716,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -65032,9 +65117,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -66482,9 +66568,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -66973,9 +67060,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -67388,9 +67476,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -69699,9 +69788,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -70282,9 +70372,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -70367,9 +70458,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -70611,9 +70703,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -70766,9 +70859,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -71474,9 +71568,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -76419,9 +76514,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -78137,9 +78233,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -78302,9 +78399,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -79738,9 +79836,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -80057,9 +80156,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -80381,9 +80481,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -80704,9 +80805,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -80946,9 +81048,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -81107,9 +81210,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -81268,9 +81372,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -81593,9 +81698,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -81675,9 +81781,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -81829,9 +81936,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -82227,9 +82335,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -82308,9 +82417,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -82634,9 +82744,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -83449,9 +83560,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -83776,9 +83888,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -84102,9 +84215,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -84747,9 +84861,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -84909,9 +85024,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -85381,9 +85497,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -85873,9 +85990,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -86595,9 +86713,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -87079,9 +87198,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -87482,9 +87602,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -88357,9 +88478,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -89366,9 +89488,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -92289,9 +92412,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -92525,9 +92649,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -95047,9 +95172,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -95681,9 +95807,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -96471,9 +96598,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -96699,9 +96827,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -98094,9 +98223,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -98175,9 +98305,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -100359,9 +100490,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -100595,9 +100727,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -100839,9 +100972,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -103278,9 +103412,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -103604,9 +103739,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -104638,9 +104774,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -104800,9 +104937,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -105844,9 +105982,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -106494,9 +106633,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -107051,9 +107191,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -107375,9 +107516,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -108348,9 +108490,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -108665,9 +108808,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -108983,9 +109127,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -110031,9 +110176,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -110193,9 +110339,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -110672,9 +110819,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -111076,9 +111224,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -111237,9 +111386,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -112053,9 +112203,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -112380,9 +112531,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -113669,9 +113821,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -113827,9 +113980,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -114789,9 +114943,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -115259,9 +115414,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -117266,9 +117422,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -117437,9 +117594,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -118260,9 +118418,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -118842,9 +119001,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -119100,9 +119260,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -120531,9 +120692,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -121326,9 +121488,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -121568,9 +121731,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -122719,9 +122883,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -126554,9 +126719,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -128177,9 +128343,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -129146,9 +129313,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -129879,9 +130047,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -130853,9 +131022,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -131018,9 +131188,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -132586,9 +132757,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -134624,9 +134796,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -136349,9 +136522,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -136596,9 +136770,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -136917,9 +137092,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -137145,9 +137321,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -137546,9 +137723,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -137714,9 +137892,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -137961,9 +138140,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -138515,9 +138695,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -138831,9 +139012,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -138913,9 +139095,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -139086,9 +139269,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -142073,9 +142257,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -143051,9 +143236,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -143218,9 +143404,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -143869,9 +144056,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -144258,9 +144446,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -145603,9 +145792,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -146066,9 +146256,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -147595,9 +147786,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -148067,9 +148259,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -148797,9 +148990,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -149039,9 +149233,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -149441,9 +149636,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -149679,9 +149875,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -149924,9 +150121,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -150582,9 +150780,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -151794,9 +151993,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -152597,9 +152797,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -152833,9 +153034,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -154438,9 +154640,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -154849,9 +155052,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -157087,9 +157291,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -157482,9 +157687,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -157800,9 +158006,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -158124,9 +158331,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -158449,9 +158657,10 @@
         "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_eligible",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": "付费版，仅在SkillHub销售"
+        "notes": "付费版，仅在SkillHub销售",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -158531,9 +158740,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -159343,9 +159553,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -159504,9 +159715,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -159909,9 +160121,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -160801,9 +161014,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -161372,9 +161586,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -163206,9 +163421,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -163368,9 +163584,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -163530,9 +163747,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -166362,9 +166580,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -166950,9 +167169,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -167193,9 +167413,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {
@@ -168791,9 +169012,10 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "published",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "published_at": "2026-07-26T16:57:35"
       },
       "is_source": false,
       "source_origin": {

@@ -26,6 +26,161 @@ import re
 from pathlib import Path
 from datetime import datetime
 
+# ClawHub分类映射配置
+CATEGORY_MAP_FILE = Path(__file__).resolve().parent.parent / "data" / "category_mapping.json"
+
+def _load_category_map():
+    """加载分类映射配置"""
+    if CATEGORY_MAP_FILE.exists():
+        with open(CATEGORY_MAP_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+_CATEGORY_MAP_CACHE = None
+
+def get_clawhub_category(skill_dir):
+    """从SKILL.md推断ClawHub分类
+    
+    映射链: SKILL.md frontmatter category → SkillHub平台分类 → ClawHub分类
+    如果没有category字段, 从slug和body内容推断
+    """
+    global _CATEGORY_MAP_CACHE
+    if _CATEGORY_MAP_CACHE is None:
+        _CATEGORY_MAP_CACHE = _load_category_map()
+    
+    skill_md = skill_dir / "SKILL.md"
+    if not skill_md.exists():
+        return "other"
+    
+    content = skill_md.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    
+    # 解析frontmatter
+    fm = {}
+    if content.startswith('---'):
+        parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+        if len(parts) > 1:
+            fm_str = parts[1]
+            for line in fm_str.split('\n'):
+                if ':' in line:
+                    key, _, val = line.partition(':')
+                    fm[key.strip()] = val.strip().strip('"\'')
+    
+    # 1. 从frontmatter category字段获取
+    fm_category = fm.get('category', '')
+    if fm_category:
+        clawhub_map = _CATEGORY_MAP_CACHE.get('clawhub_categories', {})
+        if fm_category in clawhub_map:
+            return clawhub_map[fm_category]
+    
+    # 2. 从slug推断
+    slug = skill_dir.name.lower()
+    keyword_map = {
+        'agents': ['agent', 'ai', 'llm', 'gpt', 'claude', 'memory', 'orchestrat'],
+        'productivity': ['code', 'dev', 'program', 'api', 'doc', 'office', 'pdf', 'word', 'sheet', 'task', 'manage'],
+        'research': ['data', 'analytic', 'csv', 'excel', 'chart', 'search', 'research'],
+        'creative': ['content', 'write', 'copy', 'article', 'design', 'graphic', 'image', 'media', 'video'],
+        'security': ['security', 'audit', 'compliance', 'safe', 'vulnerab'],
+        'knowledge': ['knowledge', 'note', 'wiki', 'bookmark', 'learn', 'edu', 'teach'],
+        'automation': ['auto', 'deploy', 'ci', 'cd', 'monitor', 'devops'],
+        'lifestyle': ['life', 'travel', 'health', 'food', 'weather'],
+        'communication': ['email', 'chat', 'message', 'social', 'notify'],
+        'integrations': ['integrat', 'connect', 'sync', 'webhook', 'api-gateway'],
+    }
+    for cat, keywords in keyword_map.items():
+        for kw in keywords:
+            if kw in slug:
+                return cat
+    
+    # 3. 从body内容推断
+    body_lower = content[:2000].lower()
+    for cat, keywords in keyword_map.items():
+        matches = sum(1 for kw in keywords if kw in body_lower)
+        if matches >= 2:
+            return cat
+    
+    return "other"
+
+
+def get_clawhub_topics(skill_dir, slug=None):
+    """从SKILL.md提取topics(话题标签)
+    
+    ClawHub的topics是真正的搜索曝光标签(不是API里的tags字段,那是版本号)
+    从frontmatter的tags字段和body关键词提取
+    """
+    skill_md = skill_dir / "SKILL.md"
+    if not skill_md.exists():
+        return []
+    
+    content = skill_md.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    
+    topics = []
+    
+    # 解析frontmatter
+    if content.startswith('---'):
+        parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+        if len(parts) > 1:
+            fm_str = parts[1]
+            for line in fm_str.split('\n'):
+                line = line.strip()
+                if line.startswith('tags:'):
+                    # tags可能在同一行或下一行
+                    val = line[5:].strip()
+                    if val.startswith('['):
+                        try:
+                            topics.extend(json.loads(val))
+                        except:
+                            pass
+                    elif val:
+                        # 逗号分隔
+                        topics.extend([t.strip().strip('"\'') for t in val.split(',') if t.strip()])
+    
+    # 从slug提取关键词
+    if slug:
+        slug_parts = slug.split('-')
+        for part in slug_parts:
+            if len(part) > 2 and part not in ['the', 'and', 'for', 'pro', 'sk', 'free', 'paid', 'tool']:
+                topics.append(part)
+    
+    # 去重，最多10个
+    seen = set()
+    unique = []
+    for t in topics:
+        t_lower = t.lower()
+        if t_lower not in seen and t:
+            seen.add(t_lower)
+            unique.append(t)
+        if len(unique) >= 10:
+            break
+    
+    return unique[:10] if unique else ["tool", "automation"]
+
+
+def get_display_name(skill_dir):
+    """从SKILL.md获取displayName"""
+    skill_md = skill_dir / "SKILL.md"
+    if not skill_md.exists():
+        return None
+    
+    content = skill_md.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    
+    if content.startswith('---'):
+        parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+        if len(parts) > 1:
+            fm_str = parts[1]
+            for line in fm_str.split('\n'):
+                if line.strip().startswith('displayName:'):
+                    val = line.strip()[12:].strip().strip('"\'')
+                    if val:
+                        return val
+    
+    return None
+
 # REGISTRY_DIR imported from config
 BATCHES_FILE = DATA_DIR / "clawhub_upload_batches.json"
 RESULTS_FILE = DATA_DIR / "clawhub_upload_results.json"
@@ -60,39 +215,82 @@ def save_json(path, data):
 
 
 def find_skill_dir(slug, dir_mapping):
-    """Find skill directory using mapping or fallback search"""
+    """Find skill directory using mapping or fallback search (v2.1: 增强slug变体匹配)"""
     # Check dir mapping first
     d = dir_mapping.get(slug)
     if d and Path(d).exists() and (Path(d) / "SKILL.md").exists():
         return Path(d)
 
-    # Fallback: search in alternative directories
+    # v2.1: 生成slug变体列表(处理 -sk, -free, -paid 等后缀)
+    slug_variants = [slug]
+    if slug.endswith('-sk'):
+        slug_variants.append(slug[:-3])  # 去掉 -sk 后缀
+    if slug.endswith('-free'):
+        slug_variants.append(slug[:-5])  # 去掉 -free 后缀
+    if slug.endswith('-paid'):
+        slug_variants.append(slug[:-5])  # 去掉 -paid 后缀
+    if slug.endswith('-pro-sk'):
+        slug_variants.append(slug.replace('-pro-sk', '-pro'))
+        slug_variants.append(slug.replace('-pro-sk', ''))
+    # 去掉 -sk 后尝试其他变体
+    base_slug = slug
+    for suffix in ['-sk', '-free', '-paid']:
+        if base_slug.endswith(suffix):
+            base_slug = base_slug[:-len(suffix)]
+            break
+    if base_slug != slug:
+        slug_variants.append(base_slug)
+
+    # Fallback: search in alternative directories with all slug variants
     for base in ALT_DIRS:
         if not base.exists():
             continue
-        # Direct match
-        p = base / slug
-        if p.exists() and (p / "SKILL.md").exists():
-            return p
-        # Search in subdirectories (for differentiated-skills which has category folders)
-        if base.name == "differentiated-skills":
-            for cat_dir in base.iterdir():
-                if not cat_dir.is_dir():
-                    continue
-                p = cat_dir / slug
-                if p.exists() and (p / "SKILL.md").exists():
-                    return p
+        for try_slug in slug_variants:
+            # Direct match
+            p = base / try_slug
+            if p.exists() and (p / "SKILL.md").exists():
+                return p
+            # Search in subdirectories (for differentiated-skills which has category folders)
+            if base.name == "differentiated-skills":
+                for cat_dir in base.iterdir():
+                    if not cat_dir.is_dir():
+                        continue
+                    p = cat_dir / try_slug
+                    if p.exists() and (p / "SKILL.md").exists():
+                        return p
 
     return None
 
 
 def upload_skill(skill_dir, slug, dry_run=False):
-    """Upload a single skill to ClawHub via CLI"""
+    """Upload a single skill to ClawHub via CLI (v2.1: 增加营销参数)
+    
+    营销元素:
+    - --categories: 分类(从SKILL.md推断,映射到ClawHub标准分类)
+    - --topics: 话题标签(从frontmatter tags和slug提取)
+    - --name: 显示名称(从frontmatter displayName获取)
+    """
     if dry_run:
         return {'success': True, 'slug': slug, 'message': 'DRY RUN', 'dry_run': True}
 
-    # Use shell=True on Windows so npx is found in PATH
-    cmd_str = f'npx clawhub --registry "{REGISTRY}" publish "{skill_dir}" --changelog "{CHANGELOG}"'
+    # v2.1: 提取营销参数
+    category = get_clawhub_category(skill_dir)
+    topics = get_clawhub_topics(skill_dir, slug)
+    display_name = get_display_name(skill_dir)
+    
+    # 构建上传命令(含营销参数)
+    cmd_parts = [
+        'npx', 'clawhub',
+        '--registry', f'"{REGISTRY}"',
+        'publish', f'"{skill_dir}"',
+        '--changelog', f'"{CHANGELOG}"',
+        '--categories', f'"{category}"',
+        '--topics', f'"{",".join(topics)}"',
+    ]
+    if display_name:
+        cmd_parts.extend(['--name', f'"{display_name}"'])
+    
+    cmd_str = ' '.join(cmd_parts)
 
     try:
         result = subprocess.run(

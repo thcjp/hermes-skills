@@ -52,15 +52,19 @@ def init_auth():
         return False
 
 def get_pending_skills(page=1, pageSize=100):
-    """获取pending状态的skill列表"""
-    url = f"{API_BASE}/orgs/{ORG_ID}/admin/skills?reviewStatus=pending&page={page}&pageSize={pageSize}"
+    """获取待审核skill列表
+    
+    注意: API的reviewStatus过滤器可能不生效，返回所有skill。
+    调用方需通过skill对象中的reviewStatus字段做二次过滤。
+    """
+    url = f"{API_BASE}/orgs/{ORG_ID}/admin/skills?page={page}&pageSize={pageSize}"
     req = Request(url, headers=HEADERS)
     try:
         with urlopen(req, timeout=30) as resp:
             data = json.loads(resp.read().decode('utf-8'))
             return data
     except Exception as e:
-        print(f"  获取pending列表失败(page={page}): {e}")
+        print(f"  获取skill列表失败(page={page}): {e}")
         return {'skills': [], 'total': 0}
 
 def approve_skill(slug):
@@ -81,36 +85,43 @@ def approve_skill(slug):
         return False, {'error': str(e)}
 
 def batch_approve_all(delay=0.3):
-    """批量审核通过所有pending skill"""
+    """批量审核通过所有admin_review状态的skill
+    
+    修复: API的reviewStatus过滤器不生效，需二次过滤。
+    已发布的skill(visibility=public且reviewStatus为空)自动跳过。
+    """
     # 进度文件
     progress_file = REPORT_DIR / "batch_approve_progress.json"
 
     # 加载已有进度
     approved = []
     failed = []
+    skipped = []
     if progress_file.exists():
         try:
             old = json.loads(progress_file.read_text(encoding='utf-8'))
             approved = old.get('approved', [])
             failed = old.get('failed', [])
-            print(f"断点续传: 已审核 {len(approved)} 个，失败 {len(failed)} 个")
+            skipped = old.get('skipped', [])
+            print(f"断点续传: 已审核 {len(approved)} 个，失败 {len(failed)} 个，跳过 {len(skipped)} 个")
         except Exception:
             pass
 
     approved_set = set(approved)
+    skipped_set = set(skipped)
 
-    # 获取pending总数
+    # 获取总数
     data = get_pending_skills(page=1, pageSize=1)
-    total_pending = data.get('total', 0)
-    print(f"\n待审核总数: {total_pending}")
+    total = data.get('total', 0)
+    print(f"\n平台skill总数: {total}")
 
-    if total_pending == 0:
-        print("✅ 无待审核skill")
+    if total == 0:
+        print("✅ 无skill")
         return
 
-    # 分页获取所有pending slug
-    all_pending = []
-    pages = (total_pending // 100) + 1
+    # 分页获取所有skill，二次过滤出admin_review状态
+    all_admin_review = []
+    pages = (total // 100) + 1
     print(f"需扫描 {pages} 页...")
 
     for page in range(1, pages + 1):
@@ -120,23 +131,40 @@ def batch_approve_all(delay=0.3):
             break
         for sk in skills:
             slug = sk.get('slug', '')
-            if slug and slug not in approved_set:
-                all_pending.append(slug)
+            if not slug or slug in approved_set or slug in skipped_set:
+                continue
+            rs = sk.get('reviewStatus', '')
+            vis = sk.get('visibility', '')
+            # 只审核admin_review状态的skill
+            if rs == 'admin_review':
+                all_admin_review.append(slug)
+            # 已发布的skill跳过(reviewStatus为空 + visibility=public)
+            elif vis == 'public' and not rs:
+                skipped.append(slug)
+                skipped_set.add(slug)
+            # pending状态也尝试审核(某些版本API可能需要)
+            elif rs == 'pending':
+                all_admin_review.append(slug)
         if page % 5 == 0:
-            print(f"  已扫描 {page}/{pages} 页，收集 {len(all_pending)} 个待审核slug")
+            print(f"  已扫描 {page}/{pages} 页，待审核={len(all_admin_review)}，已跳过={len(skipped)}")
 
-    print(f"\n待审核(去除已完成): {len(all_pending)} 个")
+    print(f"\n待审核(admin_review): {len(all_admin_review)} 个")
+    print(f"已发布跳过: {len(skipped)} 个")
 
-    if not all_pending:
-        print("✅ 所有pending skill已审核完成")
+    if not all_admin_review:
+        print("✅ 所有skill已发布或无需审核")
+        # 保存最终进度
+        with open(progress_file, 'w', encoding='utf-8') as f:
+            json.dump({'approved': approved, 'failed': failed, 'skipped': skipped}, f, ensure_ascii=False)
         return
 
     # 批量审核
     success_count = 0
     fail_count = 0
+    skip_count = 0
     start_time = time.time()
 
-    for i, slug in enumerate(all_pending):
+    for i, slug in enumerate(all_admin_review):
         success, result = approve_skill(slug)
 
         if success:
@@ -144,21 +172,28 @@ def batch_approve_all(delay=0.3):
             approved.append(slug)
             approved_set.add(slug)
         else:
-            fail_count += 1
-            failed = [f for f in failed if f.get('slug') != slug]
-            failed.append({'slug': slug, 'error': result.get('error', 'unknown')})
+            error_msg = result.get('error', 'unknown')
+            # "not in admin_review status" = 已发布，跳过不算失败
+            if 'not in admin_review' in error_msg or 'not in admin' in error_msg.lower():
+                skip_count += 1
+                skipped.append(slug)
+                skipped_set.add(slug)
+            else:
+                fail_count += 1
+                failed = [f for f in failed if f.get('slug') != slug]
+                failed.append({'slug': slug, 'error': error_msg})
 
         # 进度输出
         if (i + 1) % 50 == 0:
             elapsed = time.time() - start_time
             rate = (i + 1) / elapsed if elapsed > 0 else 0
-            remaining = (len(all_pending) - i - 1) / rate if rate > 0 else 0
-            print(f"  [{i+1}/{len(all_pending)}] 成功={success_count}, 失败={fail_count}, "
+            remaining = (len(all_admin_review) - i - 1) / rate if rate > 0 else 0
+            print(f"  [{i+1}/{len(all_admin_review)}] 成功={success_count}, 失败={fail_count}, 跳过={skip_count}, "
                   f"速率={rate:.1f}/s, 剩余={remaining:.0f}s")
 
             # 保存进度
             with open(progress_file, 'w', encoding='utf-8') as f:
-                json.dump({'approved': approved, 'failed': failed}, f, ensure_ascii=False)
+                json.dump({'approved': approved, 'failed': failed, 'skipped': skipped}, f, ensure_ascii=False)
 
         # 延迟
         if delay > 0 and (i + 1) % 10 == 0:
@@ -166,11 +201,12 @@ def batch_approve_all(delay=0.3):
 
     # 最终保存
     with open(progress_file, 'w', encoding='utf-8') as f:
-        json.dump({'approved': approved, 'failed': failed}, f, ensure_ascii=False)
+        json.dump({'approved': approved, 'failed': failed, 'skipped': skipped}, f, ensure_ascii=False)
 
     elapsed = time.time() - start_time
     print(f"\n=== 批量审核完成 ===")
     print(f"✅ 成功: {success_count}")
+    print(f"⏭ 已发布跳过: {skip_count}")
     print(f"❌ 失败: {fail_count}")
     print(f"⏱ 耗时: {elapsed:.1f}s")
     print(f"📁 进度文件: {progress_file}")
