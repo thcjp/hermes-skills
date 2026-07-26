@@ -22,7 +22,7 @@ from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "config"))
 from project_config import TOOLS_DIR, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR
-from project_config import CLAWHUB_DOWNLOADED_DIR, DIFFERENTIATED_DIR
+from project_config import CLAWHUB_DOWNLOADED_DIR, DIFFERENTIATED_DIR, DATA_DIR, REPORT_DIR
 # === End Phase 1 ===
 
 NOW = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")

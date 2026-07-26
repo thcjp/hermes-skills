@@ -118,7 +118,34 @@ def step_sync_clawhub():
     log("=" * 50)
     log("阶段7: SYNC_CLAWHUB - ClawHub 批量上传")
     log("=" * 50)
-    run_script("clawhub_batch_uploader.py", ["--dry-run"] if CLAWHUB_DRY_RUN else [])
+    if CLAWHUB_DRY_RUN:
+        run_script("clawhub_batch_uploader.py", ["--dry-run"])
+    else:
+        # v2.6: 使用 --from-db 模式从数据库查询pending skill上传(每日限200)
+        run_script("clawhub_batch_uploader.py", ["--from-db", "--limit", "200"])
+
+
+def step_sync_ratings():
+    """阶段8: 平台评分同步 (v2.6新增)
+
+    从SkillHub公开API同步评分数据到DB, 提升评分覆盖率
+    每次同步200个skill, 可多次执行提升覆盖率
+    """
+    log("=" * 50)
+    log("阶段8: SYNC_RATINGS - 平台评分同步到DB")
+    log("=" * 50)
+    run_script("market_monitor.py", ["sync-ratings", "--limit", "200"])
+
+
+def step_check_low_ratings():
+    """阶段9: 低评分检查 (v2.6新增)
+
+    检查评分低于4.5的skill, 触发自动升级流程
+    """
+    log("=" * 50)
+    log("阶段9: CHECK_LOW_RATINGS - 低评分skill检查与升级触发")
+    log("=" * 50)
+    run_script("market_monitor.py", ["check-low-ratings"])
 
 
 def generate_daily_report():
@@ -200,6 +227,9 @@ def main():
     parser.add_argument("--discover", action="store_true", help="仅执行发现阶段")
     parser.add_argument("--audit", action="store_true", help="仅执行审计阶段")
     parser.add_argument("--report", action="store_true", help="仅生成报告")
+    parser.add_argument("--ratings", action="store_true", help="仅执行评分同步")
+    parser.add_argument("--low-ratings", action="store_true", help="仅执行低评分检查")
+    parser.add_argument("--clawhub", action="store_true", help="仅执行ClawHub上传")
     parser.add_argument("--full", action="store_true", help="完整同步（默认）")
     args = parser.parse_args()
 
@@ -212,12 +242,20 @@ def main():
         step_audit()
     elif args.report:
         generate_daily_report()
+    elif args.ratings:
+        step_sync_ratings()
+    elif args.low_ratings:
+        step_check_low_ratings()
+    elif args.clawhub:
+        step_sync_clawhub()
     else:
-        # 完整流程
+        # 完整流程 (v2.6: 新增评分同步+低评分检查)
         step_discover()
         step_audit()
         step_sync_github()
         step_sync_clawhub()
+        step_sync_ratings()
+        step_check_low_ratings()
         generate_daily_report()
 
     log("\n每日同步完成!")

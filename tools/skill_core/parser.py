@@ -114,3 +114,98 @@ def parse_frontmatter_from_file(skill_md_path: Path) -> dict:
     """
     content = Path(skill_md_path).read_text(encoding='utf-8')
     return parse_frontmatter(content)
+
+
+def find_skill_md(slug: str) -> Path:
+    """根据slug在所有skill目录中查找SKILL.md文件(统一实现)
+
+    搜索目录(按优先级):
+    1. PACKAGED_SKILLS_DIR — 扁平结构: {dir}/{slug}/SKILL.md
+    2. OPENSOURCE_SKILLS_DIR — 扁平结构: {dir}/{slug}/SKILL.md
+    3. ENTERPRISE_UPLOAD_DIR — 扁平结构: {dir}/{slug}/SKILL.md
+    4. DIFFERENTIATED_DIR — 嵌套结构: {dir}/{category}/{slug}/SKILL.md
+
+    快速路径: 先按目录名匹配slug(不读文件内容)
+    准确路径: 如果快速路径未命中, 读取SKILL.md验证slug字段
+
+    Args:
+        slug: skill的slug标识
+
+    Returns:
+        SKILL.md的Path, 未找到返回None
+    """
+    import re as _re
+    import sys as _sys
+
+    # 延迟导入配置, 避免循环依赖
+    _sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "config"))
+    try:
+        from project_config import (
+            PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR,
+            ENTERPRISE_UPLOAD_DIR, DIFFERENTIATED_DIR
+        )
+    except ImportError:
+        # 降级: 使用硬编码路径
+        _project_root = Path(__file__).resolve().parent.parent.parent
+        PACKAGED_SKILLS_DIR = _project_root / "packaged-skills" / "skillhub"
+        OPENSOURCE_SKILLS_DIR = _project_root / "opensource-skills" / "packaged"
+        ENTERPRISE_UPLOAD_DIR = _project_root / "enterprise-upload"
+        DIFFERENTIATED_DIR = _project_root / "differentiated-skills"
+
+    # 快速路径: 按目录名匹配
+    fast_dirs = [
+        PACKAGED_SKILLS_DIR / slug,
+        OPENSOURCE_SKILLS_DIR / slug,
+        ENTERPRISE_UPLOAD_DIR / slug,
+    ]
+    for d in fast_dirs:
+        if d.is_dir():
+            md = d / "SKILL.md"
+            if md.exists():
+                return md
+
+    # 嵌套结构: differentiated-skills/{category}/{slug}/SKILL.md
+    if DIFFERENTIATED_DIR.exists():
+        for cat_dir in DIFFERENTIATED_DIR.iterdir():
+            if not cat_dir.is_dir():
+                continue
+            md = cat_dir / slug / "SKILL.md"
+            if md.exists():
+                return md
+
+    # 准确路径: 读取SKILL.md验证slug字段(慢但可靠)
+    for base_dir in [PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, ENTERPRISE_UPLOAD_DIR]:
+        if not base_dir.exists():
+            continue
+        for d in base_dir.iterdir():
+            if d.is_dir() and (d / "SKILL.md").exists():
+                content = (d / "SKILL.md").read_text(encoding='utf-8')
+                if content.startswith('\ufeff'):
+                    content = content[1:]
+                if content.startswith('---'):
+                    parts = _re.split(r'^---\s*$', content, maxsplit=2, flags=_re.MULTILINE)
+                    if len(parts) >= 3:
+                        fm = parts[1]
+                        slug_match = _re.search(r'^slug:\s*["\']?(.+?)["\']?\s*$', fm, _re.MULTILINE)
+                        if slug_match and slug_match.group(1).strip() == slug:
+                            return d / "SKILL.md"
+
+    # differentiated-skills 嵌套结构(准确路径)
+    if DIFFERENTIATED_DIR.exists():
+        for cat_dir in DIFFERENTIATED_DIR.iterdir():
+            if not cat_dir.is_dir():
+                continue
+            for d in cat_dir.iterdir():
+                if d.is_dir() and (d / "SKILL.md").exists():
+                    content = (d / "SKILL.md").read_text(encoding='utf-8')
+                    if content.startswith('\ufeff'):
+                        content = content[1:]
+                    if content.startswith('---'):
+                        parts = _re.split(r'^---\s*$', content, maxsplit=2, flags=_re.MULTILINE)
+                        if len(parts) >= 3:
+                            fm = parts[1]
+                            slug_match = _re.search(r'^slug:\s*["\']?(.+?)["\']?\s*$', fm, _re.MULTILINE)
+                            if slug_match and slug_match.group(1).strip() == slug:
+                                return d / "SKILL.md"
+
+    return None
