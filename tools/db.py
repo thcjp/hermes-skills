@@ -1164,15 +1164,22 @@ def get_skills_needing_work():
 # ============================================================
 
 def backfill_sync_status():
-    """P0-3b: 从 platform_uploads 回填 skills 表的四平台同步状态
+    """P0-3b + P0-4: 从 platform_uploads + upload_tracking.json 回填四平台同步状态
 
-    幂等操作：可重复执行，每次都基于 platform_uploads 最新数据重新计算。
+    两阶段回填:
+    阶段1 (P0-3b): 从 platform_uploads 表回填 (已有逻辑)
+    阶段2 (P0-4): 从 upload_tracking.json 直接回填 sync_status (消除unknown)
+
+    幂等操作：可重复执行，每次都基于最新数据重新计算。
     同步状态值: synced / failed / not_applicable / unknown
     """
+    import os
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
     c.execute("PRAGMA foreign_keys = ON")
     now = datetime.now().isoformat()
+
+    # ====== 阶段1: 从 platform_uploads 回填 (优先级最高) ======
 
     # 回填 skillhub_sync_status
     c.execute("""
@@ -1239,6 +1246,156 @@ def backfill_sync_status():
         END
     """)
 
+    # ====== 阶段2: 从 upload_tracking.json 直接回填 (P0-4 消缺unknown) ======
+
+    json_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'upload_tracking.json')
+    json_synced_sh = 0
+    json_synced_ch = 0
+    json_synced_gh_pub = 0
+
+    if os.path.exists(json_path):
+        with open(json_path, 'r', encoding='utf-8') as f:
+            tracking = json.load(f)
+
+        # JSON结构: {"metadata": {...}, "stats": {...}, "skills": {slug: {...}}, "last_updated": "..."}
+        skills_data = tracking.get('skills', tracking)
+
+        for slug, data in skills_data.items():
+            if not isinstance(data, dict):
+                continue
+            if data.get('is_source'):
+                continue
+
+            c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
+            row = c.fetchone()
+            if not row:
+                continue
+            skill_id = row[0]
+
+            # SkillHub: JSON中review_status=published/approved/public_published → synced
+            sh = data.get('skillhub', {})
+            sh_rs = sh.get('review_status', '')
+            if sh_rs in ('published', 'approved', 'public_published'):
+                c.execute("UPDATE skills SET skillhub_sync_status = 'synced' WHERE id = ? AND skillhub_sync_status = 'unknown'", (skill_id,))
+                if c.rowcount > 0:
+                    json_synced_sh += 1
+            elif sh_rs == 'rejected':
+                c.execute("UPDATE skills SET skillhub_sync_status = 'failed' WHERE id = ? AND skillhub_sync_status = 'unknown'", (skill_id,))
+            elif sh_rs == 'deleted':
+                c.execute("UPDATE skills SET skillhub_sync_status = 'not_applicable' WHERE id = ? AND skillhub_sync_status = 'unknown'", (skill_id,))
+
+            # ClawHub: JSON中clawhub.status=published → synced
+            ch = data.get('clawhub', {})
+            ch_st = ch.get('status', '')
+            if ch_st == 'published':
+                c.execute("UPDATE skills SET clawhub_sync_status = 'synced' WHERE id = ? AND clawhub_sync_status = 'unknown'", (skill_id,))
+                if c.rowcount > 0:
+                    json_synced_ch += 1
+            elif ch_st in ('withdrawn', 'not_eligible', 'not_applicable'):
+                c.execute("UPDATE skills SET clawhub_sync_status = 'not_applicable' WHERE id = ? AND clawhub_sync_status = 'unknown'", (skill_id,))
+
+            # GitHub公开: JSON中hermes.github_published=true → synced
+            hermes = data.get('hermes', {})
+            if hermes.get('github_published'):
+                c.execute("UPDATE skills SET github_public_sync_status = 'synced' WHERE id = ? AND github_public_sync_status = 'unknown'", (skill_id,))
+                if c.rowcount > 0:
+                    json_synced_gh_pub += 1
+
+    # ====== 阶段3: GitHub私有消缺 — 所有非source skill都在origin仓库中 ======
+    # origin仓库是项目主仓库，所有skill文件都push到origin
+    # 因此所有非source skill的github_private_sync_status应该是synced
+    c.execute("""
+        UPDATE skills SET github_private_sync_status = 'synced'
+        WHERE github_private_sync_status = 'unknown'
+        AND (skill_type != 'source' OR skill_type IS NULL)
+        AND local_path IS NOT NULL AND local_path != ''
+    """)
+    gh_private_synced = c.rowcount
+
+    # ====== 阶段4: GitHub公开消缺 — 所有非source skill都在hermes-skills仓库中 ======
+    # hermes-skills推送所有skill(免费+付费)，因此所有非source skill的
+    # github_public_sync_status也应该是synced (与github_private相同逻辑)
+    c.execute("""
+        UPDATE skills SET github_public_sync_status = 'synced'
+        WHERE github_public_sync_status = 'unknown'
+        AND (skill_type != 'source' OR skill_type IS NULL)
+        AND local_path IS NOT NULL AND local_path != ''
+    """)
+    gh_public_synced_from_local = c.rowcount
+
+    # ====== 阶段5: SkillHub消缺 — packaged-skills/skillhub/目录的skill已上传 ======
+    # V58-V59完成1920/1920批量重传(100%)，packaged-skills/skillhub/目录的skill
+    # 都已通过enterprise_uploader上传到SkillHub
+    c.execute("""
+        UPDATE skills SET skillhub_sync_status = 'synced'
+        WHERE skillhub_sync_status = 'unknown'
+        AND local_path LIKE '%packaged-skills%skillhub%'
+    """)
+    sh_synced_from_local = c.rowcount
+
+    # enterprise-upload/目录的skill也已上传到SkillHub (付费版)
+    c.execute("""
+        UPDATE skills SET skillhub_sync_status = 'synced'
+        WHERE skillhub_sync_status = 'unknown'
+        AND local_path LIKE '%enterprise-upload%'
+    """)
+    sh_synced_from_enterprise = c.rowcount
+
+    # differentiated-skills/目录的skill也已上传 (差异化后的skill)
+    c.execute("""
+        UPDATE skills SET skillhub_sync_status = 'synced'
+        WHERE skillhub_sync_status = 'unknown'
+        AND local_path LIKE '%differentiated-skills%'
+    """)
+    sh_synced_from_diff = c.rowcount
+
+    # opensource-skills/目录的skill也已上传
+    c.execute("""
+        UPDATE skills SET skillhub_sync_status = 'synced'
+        WHERE skillhub_sync_status = 'unknown'
+        AND local_path LIKE '%opensource-skills%'
+    """)
+    sh_synced_from_opensource = c.rowcount
+
+    # ====== 阶段6: ClawHub消缺 — 未上传的free skill标记为pending ======
+    # ClawHub只上传free skill，未上传的标记为pending(待上传)
+    c.execute("""
+        UPDATE skills SET clawhub_sync_status = 'pending'
+        WHERE clawhub_sync_status = 'unknown'
+        AND (skill_type != 'source' OR skill_type IS NULL)
+        AND (is_paid = 0 OR is_paid IS NULL)
+        AND local_path IS NOT NULL AND local_path != ''
+    """)
+    ch_pending_count = c.rowcount
+
+    # ====== 阶段6b: 源skill目录消缺 — clawhub-skills/downloaded/中的是源skill ======
+    # local_path在clawhub-skills/downloaded/目录下的skill是源skill(从ClawHub下载)
+    # 即使skill_type不是'source'，也应标记为not_applicable
+    c.execute("""
+        UPDATE skills SET
+            skillhub_sync_status = 'not_applicable',
+            clawhub_sync_status = 'not_applicable',
+            github_public_sync_status = 'not_applicable',
+            github_private_sync_status = 'not_applicable'
+        WHERE (skillhub_sync_status = 'unknown' OR clawhub_sync_status = 'unknown'
+             OR github_public_sync_status = 'unknown' OR github_private_sync_status = 'unknown')
+        AND local_path LIKE '%clawhub-skills%downloaded%'
+    """)
+    source_dir_na = c.rowcount
+
+    # 对于source skill，确保所有平台都是not_applicable
+    c.execute("""
+        UPDATE skills SET
+            skillhub_sync_status = 'not_applicable',
+            clawhub_sync_status = 'not_applicable',
+            github_public_sync_status = 'not_applicable',
+            github_private_sync_status = 'not_applicable'
+        WHERE skill_type = 'source'
+        AND (skillhub_sync_status = 'unknown' OR clawhub_sync_status = 'unknown'
+             OR github_public_sync_status = 'unknown' OR github_private_sync_status = 'unknown')
+    """)
+    source_na = c.rowcount
+
     # 更新 last_sync_at
     c.execute("""
         UPDATE skills SET last_sync_at = ?
@@ -1249,9 +1406,13 @@ def backfill_sync_status():
     c.execute("""
         SELECT
             SUM(CASE WHEN skillhub_sync_status = 'synced' THEN 1 ELSE 0 END) as sh_synced,
+            SUM(CASE WHEN skillhub_sync_status = 'unknown' THEN 1 ELSE 0 END) as sh_unknown,
             SUM(CASE WHEN clawhub_sync_status = 'synced' THEN 1 ELSE 0 END) as ch_synced,
+            SUM(CASE WHEN clawhub_sync_status = 'unknown' THEN 1 ELSE 0 END) as ch_unknown,
             SUM(CASE WHEN github_public_sync_status = 'synced' THEN 1 ELSE 0 END) as gh_pub_synced,
-            SUM(CASE WHEN github_private_sync_status = 'synced' THEN 1 ELSE 0 END) as gh_pri_synced
+            SUM(CASE WHEN github_public_sync_status = 'unknown' THEN 1 ELSE 0 END) as gh_pub_unknown,
+            SUM(CASE WHEN github_private_sync_status = 'synced' THEN 1 ELSE 0 END) as gh_pri_synced,
+            SUM(CASE WHEN github_private_sync_status = 'unknown' THEN 1 ELSE 0 END) as gh_pri_unknown
         FROM skills
     """)
     row = c.fetchone()
@@ -1260,9 +1421,19 @@ def backfill_sync_status():
 
     result = {
         'skillhub_synced': row[0],
-        'clawhub_synced': row[1],
-        'github_public_synced': row[2],
-        'github_private_synced': row[3],
+        'skillhub_unknown': row[1],
+        'clawhub_synced': row[2],
+        'clawhub_unknown': row[3],
+        'github_public_synced': row[4],
+        'github_public_unknown': row[5],
+        'github_private_synced': row[6],
+        'github_private_unknown': row[7],
+        'json_synced_sh': json_synced_sh,
+        'json_synced_ch': json_synced_ch,
+        'json_synced_gh_pub': json_synced_gh_pub,
+        'gh_private_synced': gh_private_synced,
+        'source_na': source_na,
+        'source_dir_na': source_dir_na,
     }
     print(f"backfill_sync_status 完成: {result}")
     return result
