@@ -69,6 +69,8 @@ SkillHub完整生命周期:
     python platform_ops.py handle-rejected <slug># 分析被拒绝skill的原因并给建议
     python platform_ops.py platform-status <slug># 查询skill平台实时状态(含前台可见性)
     python platform_ops.py pipeline <slug>        # 一键流水线: 查询→审核→收藏→标记
+    python platform_ops.py auto-publish <slug>...  # 自动发布到社区: 查询→审核→社区发布→收藏
+    python platform_ops.py publish-community <slug>... # 单独发布到社区(visibility=public)
 """
 
 # === Phase 1: 统一配置导入 ===
@@ -1197,6 +1199,143 @@ def run_platform_pipeline(slug: str) -> dict:
     result['status'] = 'completed'
     return result
 
+# ============ auto_publish: 自动发布到社区 (P1-1补全) ============
+# 复用auto_publish.py的publish-to-community逻辑, 集成到platform_ops统一入口
+# 解决企业页可见性问题: published → public (前台可见)
+
+_ADMIN_PUBLISHER_ID = 742  # SkillHub发布者Profile ID
+
+def publish_to_community(slug: str) -> dict:
+    """将已上架skill发布到社区 (设置visibility=public)
+    
+    API: POST /orgs/{ORG_ID}/admin/skills/{slug}/publish-to-community
+    复用auto_publish.py的社区发布逻辑, 但通过Python直接调用(无需浏览器JS)
+    
+    参数:
+        slug: skill slug
+    
+    返回:
+        {'success': bool, 'slug': str, 'message': str}
+    """
+    cookies, headers = _load_api_auth()
+    if not cookies and not headers:
+        return {'success': False, 'slug': slug, 'error': '无认证凭证'}
+    
+    url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}/publish-to-community"
+    body = json.dumps({'publisherProfileId': _ADMIN_PUBLISHER_ID}).encode('utf-8')
+    if headers.get('Content-Type') is None:
+        headers['Content-Type'] = 'application/json'
+    
+    success, result = _api_request('POST', url, headers, data=body, timeout=30)
+    
+    if success:
+        # 同步到本地DB
+        db = load_db()
+        if slug in db['skills']:
+            sh = db['skills'][slug].setdefault('skillhub', {})
+            sh['review_status'] = 'public_published'
+            sh['public_published'] = True
+            sh['public_published_at'] = NOW
+            sh['last_sync'] = NOW
+            db['skills'][slug].setdefault('lifecycle', {})['stage'] = 'public_published'
+            save_db(db)
+        return {'success': True, 'slug': slug, 'message': '已发布到社区(visibility=public)'}
+    else:
+        # slug冲突时自动追加-sk后缀重试
+        err_str = str(result.get('error', ''))
+        if '409' in err_str or 'slug' in err_str.lower() or 'conflict' in err_str.lower():
+            new_slug = slug + '-sk'
+            rename_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}/rename-slug"
+            rename_body = json.dumps({'newSlug': new_slug}).encode('utf-8')
+            rename_success, rename_result = _api_request('PUT', rename_url, headers, data=rename_body)
+            if rename_success:
+                retry_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{new_slug}/publish-to-community"
+                retry_success, retry_result = _api_request('POST', retry_url, headers, data=body)
+                if retry_success:
+                    db = load_db()
+                    if slug in db['skills']:
+                        sh = db['skills'][slug].setdefault('skillhub', {})
+                        sh['review_status'] = 'public_published'
+                        sh['public_published'] = True
+                        sh['community_slug'] = new_slug
+                        sh['public_published_at'] = NOW
+                        sh['last_sync'] = NOW
+                        save_db(db)
+                    return {'success': True, 'slug': new_slug, 'original_slug': slug,
+                            'message': f'slug冲突,已改名为{new_slug}并发布到社区'}
+            return {'success': False, 'slug': slug, 'error': f'slug冲突且重命名失败: {err_str}'}
+        return {'success': False, 'slug': slug, 'error': err_str}
+
+def auto_publish(slug: str) -> dict:
+    """自动发布skill到社区 (统一入口: 查询→审核→社区发布→收藏)
+    
+    完整自动化流程:
+    1. 查询平台状态
+    2. 如果pending, 自动approve
+    3. 如果published但不可见(org_only/null), 发布到社区
+    4. 收藏
+    5. 更新本地DB
+    
+    复用auto_publish.py的auto_flow逻辑, 但通过API直接调用(无需浏览器JS)
+    
+    参数:
+        slug: skill slug
+    
+    返回:
+        {'slug': str, 'status': str, 'steps': {...}}
+    """
+    result = {'slug': slug, 'timestamp': NOW, 'steps': {}}
+    
+    # Step 1: 查询状态
+    status = get_platform_status(slug)
+    result['steps']['status'] = status
+    if not status.get('success'):
+        result['status'] = 'failed'
+        result['error'] = '状态查询失败'
+        return result
+    
+    review_status = status.get('review_status', 'unknown')
+    visibility = status.get('visibility', 'unknown')
+    front_visible = status.get('front_visible', False)
+    result['current_status'] = review_status
+    result['current_visibility'] = visibility
+    
+    # Step 2: 如果pending, 审核通过
+    if review_status == 'pending':
+        print(f"  [{slug}] pending → approving...")
+        approve_result = batch_approve([slug])
+        result['steps']['approve'] = approve_result
+        if approve_result.get('success') and slug in approve_result.get('approved', []):
+            review_status = 'published'
+        else:
+            result['status'] = 'approve_failed'
+            return result
+    
+    # Step 3: 如果published但不可见, 发布到社区
+    if review_status in ('published', 'approved', 'public_published'):
+        if visibility != 'public' or not front_visible:
+            print(f"  [{slug}] published → publishing to community...")
+            pub_result = publish_to_community(slug)
+            result['steps']['publish_to_community'] = pub_result
+            if pub_result.get('success'):
+                visibility = 'public'
+                front_visible = True
+            else:
+                result['steps']['publish_to_community_warning'] = pub_result.get('error', '')
+        
+        # Step 4: 收藏
+        if not status.get('db_starred'):
+            print(f"  [{slug}] published → starring...")
+            star_result = star_skill(slug)
+            result['steps']['star'] = star_result
+        else:
+            result['steps']['star'] = {'success': True, 'message': 'already starred'}
+    
+    result['status'] = 'completed'
+    result['final_visibility'] = visibility
+    result['final_front_visible'] = front_visible
+    return result
+
 # ============ ClawHub 统一上传入口 (v2.1新增) ============
 # 将 clawhub_batch_uploader.py 的上传逻辑收口到 platform_ops 统一入口
 # 消除碎片化: 后续所有 ClawHub 上传通过 platform_ops.py clawhub-upload 命令调用
@@ -1493,6 +1632,26 @@ def main():
                 print(f"  {step}: {'✅' if result.get('success') else '⚠'} {result.get('message', result.get('error', ''))}")
             else:
                 print(f"  {step}: {result}")
+    elif cmd == "auto-publish":
+        # 自动发布到社区 (查询→审核→社区发布→收藏)
+        if len(sys.argv) < 3:
+            print("用法: python platform_ops.py auto-publish <slug> [slug...]")
+            return
+        for slug in sys.argv[2:]:
+            r = auto_publish(slug)
+            print(f"\n{'✅' if r.get('status') == 'completed' else '⚠'} {slug}: {r.get('status', 'unknown')}")
+            print(f"  审核状态: {r.get('current_status', 'unknown')} → 最终可见性: {r.get('final_visibility', 'unknown')}")
+            for step, result in r.get('steps', {}).items():
+                if isinstance(result, dict) and 'success' in result:
+                    print(f"  {step}: {'✅' if result.get('success') else '⚠'} {result.get('message', result.get('error', ''))}")
+    elif cmd == "publish-community":
+        # 单独发布到社区 (仅publish-to-community)
+        if len(sys.argv) < 3:
+            print("用法: python platform_ops.py publish-community <slug> [slug...]")
+            return
+        for slug in sys.argv[2:]:
+            r = publish_to_community(slug)
+            print(f"{'✅' if r['success'] else '❌'} {slug}: {r.get('message', r.get('error', ''))}")
     elif cmd == "clawhub-upload":
         # 上传单个skill到ClawHub (含安全预检+营销参数)
         if len(sys.argv) < 3:

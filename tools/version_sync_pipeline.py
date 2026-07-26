@@ -836,14 +836,17 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
                                 skip_skillhub: bool = False,
                                 skip_clawhub: bool = False,
                                 skip_content_quality: bool = False,
+                                skip_security: bool = False,
                                 skip_marketing: bool = False,
                                 skip_l2: bool = False,
                                 skip_l3: bool = False,
                                 force: bool = False) -> Dict[str, Any]:
     """端到端同步单个skill到所有平台
 
-    流程(v2.0): 检测变更 → 版本递增 → L1质量门禁 → L1.5内容质量 → 营销关卡 → 防幻觉 → L2验证 → L3试运行 → GitHub → SkillHub → ClawHub
+    流程(v2.2): 检测变更 → 版本递增 → L1质量门禁 → L1.5内容质量 → 安全预检 → 营销关卡 → 防幻觉 → L2验证 → L3试运行 → GitHub → SkillHub → ClawHub
     
+    v2.2新增参数:
+        skip_security: 跳过安全预检(批量场景, 已在生产环节检查时可跳过)
     v2.0新增参数:
         skip_marketing: 跳过营销关卡(批量场景)
         skip_l2: 跳过L2 LLM验证(批量场景, 与update_mechanism一致)
@@ -930,6 +933,33 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
         print(f"  ✓ 内容质量门禁通过 ({cq['score']})")
     else:
         result['phases']['content_quality'] = {'status': 'skipped'}
+
+    # 5.1.5 安全预检(v2.2新增 — 科恩实验室+云鼎实验室高风险模式检测)
+    if not skip_security:
+        print(f"  [3.55/7] 安全预检检查...")
+        try:
+            from quality_gate import run_security_precheck
+            sec = run_security_precheck(skill_md)
+            result['phases']['security_precheck'] = sec
+            if not sec.get('overall_passed', False):
+                failed_checks = [c['name'] for c in sec.get('checks', []) if not c.get('passed')]
+                critical_checks = [c for c in sec.get('checks', []) if not c.get('passed') and c.get('severity') == 'critical']
+                if critical_checks:
+                    print(f"  ✗ 安全预检未通过(严重风险): {failed_checks}")
+                    result['status'] = 'blocked_by_security_precheck'
+                    record_platform_upload(skill_id, new_version, 'security_precheck', slug,
+                                           'blocked', error=str(failed_checks))
+                    return result
+                else:
+                    # 高/中风险不阻断,仅警告
+                    print(f"  ⚠ 安全预检有风险提示(非阻断): {failed_checks}")
+            else:
+                print(f"  ✓ 安全预检通过 ({sec.get('passed_checks', 0)}/{sec.get('total_checks', 0)})")
+        except ImportError:
+            print(f"  ⚠ 安全预检模块不可用,跳过检查")
+            result['phases']['security_precheck'] = {'status': 'skipped', 'reason': 'module_unavailable'}
+    else:
+        result['phases']['security_precheck'] = {'status': 'skipped'}
 
     # 5.2 营销关卡检查(v2.0新增)
     if not skip_marketing:
@@ -1065,6 +1095,7 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
 def sync_all_changed_skills(skip_github: bool = False,
                              skip_skillhub: bool = False,
                              skip_clawhub: bool = False,
+                             skip_security: bool = False,
                              skip_marketing: bool = False,
                              skip_l2: bool = True,
                              skip_l3: bool = True) -> Dict[str, Any]:
@@ -1088,6 +1119,7 @@ def sync_all_changed_skills(skip_github: bool = False,
             skip_github=skip_github,
             skip_skillhub=skip_skillhub,
             skip_clawhub=skip_clawhub,
+            skip_security=skip_security,
             skip_marketing=skip_marketing,
             skip_l2=skip_l2,
             skip_l3=skip_l3,
@@ -1227,6 +1259,30 @@ def upgrade_single_skill(slug: str, skip_platforms: bool = False,
     else:
         print(f"  ✓ L1合规检查通过 ({qc['score']})")
 
+    # === Step 5.45: 安全预检(v2.2新增 — 科恩实验室+云鼎实验室高风险模式) ===
+    print(f"\n[5.45/6] 安全预检检查...")
+    try:
+        from quality_gate import run_security_precheck
+        sec = run_security_precheck(skill_md)
+        result['phases']['security_precheck'] = sec
+        if not sec.get('overall_passed', False):
+            critical_checks = [c for c in sec.get('checks', []) if not c.get('passed') and c.get('severity') == 'critical']
+            if critical_checks:
+                failed_names = [c['name'] for c in critical_checks]
+                print(f"  ✗ 安全预检发现严重风险: {failed_names}")
+                if not force_sync:
+                    result['status'] = 'blocked_by_security_precheck'
+                    result['error'] = f'安全预检严重风险(不可强制跳过): {failed_names}'
+                    return result
+            else:
+                non_critical = [c['name'] for c in sec.get('checks', []) if not c.get('passed')]
+                print(f"  ⚠ 安全预检有风险提示(非阻断): {non_critical}")
+        else:
+            print(f"  ✓ 安全预检通过 ({sec.get('passed_checks', 0)}/{sec.get('total_checks', 0)})")
+    except ImportError:
+        print(f"  ⚠ 安全预检模块不可用,跳过检查")
+        result['phases']['security_precheck'] = {'status': 'skipped', 'reason': 'module_unavailable'}
+
     # === Step 5.5: 营销关卡检查(v2.0新增) ===
     print(f"\n[5.5/6] 营销关卡检查...")
     mg = run_marketing_gate_check(skill_md)
@@ -1262,7 +1318,7 @@ def upgrade_single_skill(slug: str, skip_platforms: bool = False,
         print(f"\n[6/6] 同步到所有平台...")
         # 升级流程跳过L2/L3(需AI单独执行), 但保留营销关卡和防幻觉
         sync_result = sync_skill_to_all_platforms(
-            slug, skip_content_quality=True, skip_marketing=True,
+            slug, skip_content_quality=True, skip_security=True, skip_marketing=True,
             skip_l2=True, skip_l3=True, force=True
         )
         result['phases']['platform_sync'] = sync_result
@@ -1300,12 +1356,13 @@ def cmd_scan():
 
 
 def cmd_sync(slug: str, skip_github: bool = False, skip_skillhub: bool = False,
-             skip_clawhub: bool = False, skip_marketing: bool = False,
+             skip_clawhub: bool = False, skip_security: bool = False,
+             skip_marketing: bool = False,
              skip_l2: bool = False, skip_l3: bool = False, force: bool = False):
     """同步单个skill"""
     result = sync_skill_to_all_platforms(
         slug, skip_github=skip_github, skip_skillhub=skip_skillhub,
-        skip_clawhub=skip_clawhub, skip_marketing=skip_marketing,
+        skip_clawhub=skip_clawhub, skip_security=skip_security, skip_marketing=skip_marketing,
         skip_l2=skip_l2, skip_l3=skip_l3, force=force
     )
     # 保存结果
@@ -1316,12 +1373,13 @@ def cmd_sync(slug: str, skip_github: bool = False, skip_skillhub: bool = False,
 
 
 def cmd_sync_all(skip_github: bool = False, skip_skillhub: bool = False,
-                 skip_clawhub: bool = False, skip_marketing: bool = False,
+                 skip_clawhub: bool = False, skip_security: bool = False,
+                 skip_marketing: bool = False,
                  skip_l2: bool = True, skip_l3: bool = True):
     """同步所有变更skill(批量模式默认跳过L2/L3,因需AI执行)"""
     results = sync_all_changed_skills(
         skip_github=skip_github, skip_skillhub=skip_skillhub, skip_clawhub=skip_clawhub,
-        skip_marketing=skip_marketing, skip_l2=skip_l2, skip_l3=skip_l3
+        skip_security=skip_security, skip_marketing=skip_marketing, skip_l2=skip_l2, skip_l3=skip_l3
     )
     result_path = SKILL_REGISTRY_DIR / f"version_sync_all_{NOW.replace(':', '')}.json"
     with open(result_path, 'w', encoding='utf-8') as f:
@@ -1484,6 +1542,7 @@ def main():
     sync_parser.add_argument('--skip-github', action='store_true', help='跳过GitHub同步')
     sync_parser.add_argument('--skip-skillhub', action='store_true', help='跳过SkillHub同步')
     sync_parser.add_argument('--skip-clawhub', action='store_true', help='跳过ClawHub同步')
+    sync_parser.add_argument('--skip-security', action='store_true', help='跳过安全预检(科恩+云鼎风险检测)')
     sync_parser.add_argument('--skip-marketing', action='store_true', help='跳过营销关卡检查')
     sync_parser.add_argument('--skip-l2', action='store_true', help='跳过L2 LLM验证(需L2报告)')
     sync_parser.add_argument('--skip-l3', action='store_true', help='跳过L3 Agent试用(需L3报告)')
@@ -1493,6 +1552,7 @@ def main():
     sync_all_parser.add_argument('--skip-github', action='store_true')
     sync_all_parser.add_argument('--skip-skillhub', action='store_true')
     sync_all_parser.add_argument('--skip-clawhub', action='store_true')
+    sync_all_parser.add_argument('--skip-security', action='store_true', help='跳过安全预检')
     sync_all_parser.add_argument('--skip-marketing', action='store_true', help='跳过营销关卡')
     sync_all_parser.add_argument('--no-skip-l2', action='store_true', help='不跳过L2验证(默认跳过)')
     sync_all_parser.add_argument('--no-skip-l3', action='store_true', help='不跳过L3试用(默认跳过)')
@@ -1511,10 +1571,10 @@ def main():
         cmd_scan()
     elif args.command == 'sync':
         cmd_sync(args.slug, args.skip_github, args.skip_skillhub, args.skip_clawhub,
-                 args.skip_marketing, args.skip_l2, args.skip_l3, args.force)
+                 args.skip_security, args.skip_marketing, args.skip_l2, args.skip_l3, args.force)
     elif args.command == 'sync-all':
         cmd_sync_all(args.skip_github, args.skip_skillhub, args.skip_clawhub,
-                     args.skip_marketing,
+                     args.skip_security, args.skip_marketing,
                      skip_l2=not args.no_skip_l2, skip_l3=not args.no_skip_l3)
     elif args.command == 'sync-github':
         cmd_sync_github(args.slug)
